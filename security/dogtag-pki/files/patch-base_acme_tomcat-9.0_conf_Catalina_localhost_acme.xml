@@ -1,0 +1,11 @@
+--- base/acme/tomcat-9.0/conf/Catalina/localhost/acme.xml.orig	2025-08-05 19:20:05 UTC
++++ base/acme/tomcat-9.0/conf/Catalina/localhost/acme.xml
+@@ -4,7 +4,7 @@ -->
+ 
+ SPDX-License-Identifier: GPL-2.0-or-later
+ -->
+-<Context docBase="/usr/share/pki/acme/webapps/acme" crossContext="true">
++<Context docBase="/usr/local/share/pki/acme/webapps/acme" crossContext="true">
+ 
+     <Manager secureRandomProvider="Mozilla-JSS" secureRandomAlgorithm="pkcs11prng"/>
+ 

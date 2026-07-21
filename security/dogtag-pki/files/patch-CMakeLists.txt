@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2026-07-16 18:21:40 UTC
++++ CMakeLists.txt
+@@ -52,6 +52,7 @@ option(WITH_JAVADOC "Build Javadoc package" ON)
+ option(WITH_ACME "Build ACME package" ON)
+ option(WITH_EST "Build EST package" ON)
+ option(WITH_JAVADOC "Build Javadoc package" ON)
++option(WITH_PYTHON_DOCS "Build Python documentation" ON)
+ option(WITH_THEME "Build theme package" ON)
+ option(WITH_META "Build meta package" ON)
+ option(WITH_TESTS "Build tests package" ON)

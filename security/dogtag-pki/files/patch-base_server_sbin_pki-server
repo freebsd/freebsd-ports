@@ -1,0 +1,11 @@
+--- base/server/sbin/pki-server.orig	2026-07-12 08:56:51 UTC
++++ base/server/sbin/pki-server
+@@ -21,7 +21,7 @@
+ 
+ # load default, system-wide, and user-specific PKI configuration and
+ # set NSS_DEFAULT_DB_TYPE.
+-. /usr/share/pki/scripts/config
++. /usr/local/share/pki/scripts/config
+ 
+ ${PYTHON_EXECUTABLE} -I -m pki.server.pkiserver "$@"
+ 

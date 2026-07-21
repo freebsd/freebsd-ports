@@ -1,0 +1,63 @@
+#
+# default PKI configuration
+#
+
+# Python executable
+PYTHON_EXECUTABLE=%%PYTHON_CMD%%
+export PYTHON_EXECUTABLE
+
+# Java home
+JAVA_HOME=%%JAVA_HOME%%
+export JAVA_HOME
+
+# JVM options
+#
+# Command switch we want to tell java to observer fips mode
+# For the moment we want this to be false even if we really are
+# in fips mode, because we want the jss prover instead of the sun
+# fips provider to be selected.
+JAVA_FIPS_ENABLED="-Dcom.redhat.fips=false" # Disable FIPS mode
+
+export JAVA_FIPS_ENABLED
+
+# JNI jar file location
+JNI_JAR_DIR=%%JAVALIBDIR%%
+export JNI_JAR_DIR
+
+# PKI library
+PKI_LIB=%%PREFIX%%/share/pki/lib
+export PKI_LIB
+
+# NSS database format
+NSS_DEFAULT_DB_TYPE="sql"
+export NSS_DEFAULT_DB_TYPE
+
+# logging configuration location
+PKI_LOGGING_CONFIG=%%PREFIX%%/share/pki/etc/logging.properties
+export PKI_LOGGING_CONFIG
+
+# PKI CLI options
+PKI_CLI_OPTIONS=
+export PKI_CLI_OPTIONS
+
+# Key wrapping parameter set
+# This parameter specifies the encryption and key wrapping algorithms to use
+# when storing secrets in the KRA, or creating CRMF data using CRMFPopClient.
+#
+# Parameter sets are:
+# O: (legacy, for interacting with pre-10.4 servers)
+#    Encryption Algorithm: DES3_CBC
+#    Padding: PKCS#1.5 Padding
+#    Key Wrapping: DES3_CBC_PAD
+# 1: AES (default for 10.4+ servers)
+#    Encryption Algorithm: AES_128_CBC
+#    Padding: PKCS#1.5 Padding
+#    Key Wrapping: AES KeyWrap with Padding
+KEY_WRAP_PARAMETER_SET=1
+export KEY_WRAP_PARAMETER_SET
+
+# Auto-enable subsystems
+# This boolean parameter determines whether to automatically enable all
+# subsystems on startup.
+PKI_SERVER_AUTO_ENABLE_SUBSYSTEMS="true"
+export PKI_SERVER_AUTO_ENABLE_SUBSYSTEMS

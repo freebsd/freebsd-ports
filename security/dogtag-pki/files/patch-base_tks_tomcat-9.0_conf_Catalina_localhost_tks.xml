@@ -1,0 +1,11 @@
+--- base/tks/tomcat-9.0/conf/Catalina/localhost/tks.xml.orig	2025-08-05 19:20:05 UTC
++++ base/tks/tomcat-9.0/conf/Catalina/localhost/tks.xml
+@@ -22,7 +22,7 @@ -->
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ -->
+-<Context docBase="/usr/share/pki/tks/webapps/tks" crossContext="true">
++<Context docBase="/usr/local/share/pki/tks/webapps/tks" crossContext="true">
+ 
+     <Manager
+         secureRandomProvider="Mozilla-JSS" secureRandomAlgorithm="pkcs11prng"/>

@@ -1,0 +1,11 @@
+--- base/est/tomcat-9.0/conf/Catalina/localhost/est.xml.orig	2025-08-05 19:20:05 UTC
++++ base/est/tomcat-9.0/conf/Catalina/localhost/est.xml
+@@ -4,7 +4,7 @@ -->
+ 
+ SPDX-License-Identifier: GPL-2.0-or-later
+ -->
+-<Context docBase="/usr/share/pki/est/webapps/est" crossContext="true">
++<Context docBase="/usr/local/share/pki/est/webapps/est" crossContext="true">
+ 
+     <Manager secureRandomProvider="Mozilla-JSS" secureRandomAlgorithm="pkcs11prng"/>
+ 

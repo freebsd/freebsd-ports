@@ -1,0 +1,20 @@
+--- base/common/scripts/config.orig	2026-07-12 09:03:13 UTC
++++ base/common/scripts/config
+@@ -19,14 +19,14 @@
+ #
+ 
+ # default PKI configuration
+-. /usr/share/pki/etc/pki.conf
++. /usr/local/share/pki/etc/pki.conf
+ 
+ # safe NSS_DEFAULT_DB_TYPE
+ _PKI_NSS_DEFAULT_DB_TYPE=${NSS_DEFAULT_DB_TYPE}
+ 
+ # system-wide PKI configuration
+-if [ -f /etc/pki/pki.conf ]; then
+-    . /etc/pki/pki.conf
++if [ -f /usr/local/etc/pki/pki.conf ]; then
++    . /usr/local/etc/pki/pki.conf
+ fi
+ 
+ # user-specific PKI configuration

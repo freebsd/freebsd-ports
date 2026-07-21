@@ -1,0 +1,32 @@
+--- base/common/python/CMakeLists.txt.orig	2026-07-16 18:21:40 UTC
++++ base/common/python/CMakeLists.txt
+@@ -1,3 +1,5 @@
++if(WITH_PYTHON_DOCS)
++
+ find_package(Sphinx REQUIRED)
+ 
+ if(NOT DEFINED SPHINX_THEME)
+@@ -39,6 +41,8 @@ add_custom_target(dogtag_python_client_man_docs ALL
+         ${CMAKE_CURRENT_SOURCE_DIR}
+     COMMENT "Building Python Client Library manual pages")
+ 
++endif(WITH_PYTHON_DOCS)
++
+ install(
+     DIRECTORY
+         pki
+@@ -48,6 +52,8 @@ install(
+         *.py
+ )
+ 
++if(WITH_PYTHON_DOCS)
++
+ install(
+     DIRECTORY
+         ${CMAKE_CURRENT_BINARY_DIR}/html
+@@ -69,3 +75,5 @@ install(
+     PATTERN
+         .doctrees EXCLUDE
+ )
++
++endif(WITH_PYTHON_DOCS)

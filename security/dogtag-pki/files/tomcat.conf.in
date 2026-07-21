@@ -1,0 +1,4 @@
+# systemd environment file for pki-tomcatd and pki-tomcatd-nuxwdog services
+
+# NSS database format
+NSS_DEFAULT_DB_TYPE="sql"

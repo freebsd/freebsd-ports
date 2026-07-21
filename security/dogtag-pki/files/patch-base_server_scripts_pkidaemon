@@ -1,0 +1,44 @@
+--- base/server/scripts/pkidaemon.orig	2026-07-12 08:50:33 UTC
++++ base/server/scripts/pkidaemon
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/bin/env bash
+ #
+ # --- BEGIN COPYRIGHT BLOCK ---
+ # This program is free software; you can redistribute it and/or modify
+@@ -20,7 +20,7 @@
+ #
+ 
+ # The following variables are referenced in the sourced script
+-# /usr/share/pki/scripts/operations, to the error is invalid
++# /usr/local/share/pki/scripts/operations, to the error is invalid
+ 
+ # shellcheck disable=SC2034
+ PROG_NAME=`basename $0`
+@@ -42,11 +42,11 @@ fi
+     pki_instance_name=$pki_instance_id
+ fi
+ 
+-PKI_REGISTRY="/etc/sysconfig/pki/tomcat"
++PKI_REGISTRY="/usr/local/etc/pki/tomcat"
+ PKI_SYSTEMD_TARGET="pki-tomcatd"
+ 
+ # Source the PKI function library
+-. /usr/share/pki/scripts/operations
++. /usr/local/share/pki/scripts/operations
+ 
+ print_usage()
+ {
+@@ -71,10 +71,10 @@ if [[ "$pki_instance_type" = "tomcat" ]]; then
+ # issue.
+ 
+ if [[ "$pki_instance_type" = "tomcat" ]]; then
+-    cd /var/lib/tomcats/${pki_instance_name}
++    cd /var/db/tomcats/${pki_instance_name}
+ 
+ else  # pki-tomcatd
+-    cd /var/lib/pki/${pki_instance_name}
++    cd /var/db/pki/${pki_instance_name}
+ fi
+ 
+ # See how we were called.

@@ -1,0 +1,15 @@
+bin/pki
+bin/pkidaemon
+sbin/pki-server
+sbin/pki-upgrade
+sbin/pkidestroy
+sbin/pkispawn
+%%JAVAJARDIR%%/pki/pki-ca.jar
+%%JAVAJARDIR%%/pki/pki-common.jar
+%%JAVAJARDIR%%/pki/pki-server-webapp.jar
+%%JAVAJARDIR%%/pki/pki-server.jar
+%%JAVAJARDIR%%/pki/pki-tomcat-9.0.jar
+%%JAVAJARDIR%%/pki/pki-tomcat.jar
+%%JAVAJARDIR%%/pki/pki-tools.jar
+@dir /var/log/pki
+lib/libpki-tps.so

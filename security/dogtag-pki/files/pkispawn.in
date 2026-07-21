@@ -1,0 +1,6 @@
+#!/bin/sh
+: ${NSS_DEFAULT_DB_TYPE:=sql}
+export NSS_DEFAULT_DB_TYPE
+: ${JAVA_HOME:=%%JAVA_HOME%%}
+export JAVA_HOME
+exec %%PYTHON_CMD%% -m pki.server.pkispawn "$@"

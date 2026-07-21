@@ -1,0 +1,11 @@
+--- base/common/sbin/pki-upgrade.orig	2026-07-16 17:50:06 UTC
++++ base/common/sbin/pki-upgrade
+@@ -21,7 +21,7 @@
+ 
+ # load default, system-wide, and user-specific PKI configuration and
+ # set NSS_DEFAULT_DB_TYPE.
+-. /usr/share/pki/scripts/config
++. /usr/local/share/pki/scripts/config
+ 
+ ${PYTHON_EXECUTABLE} -I -m pki.cli.upgrade "$@"
+ 

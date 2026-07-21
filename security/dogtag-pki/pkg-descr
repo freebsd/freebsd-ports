@@ -1,2 +1,8 @@
-Dogtag PKI provides Python client and server modules for interacting with
-and administering Dogtag PKI certificate services.
+Dogtag PKI is an enterprise-class open source Certificate Authority (CA).
+It supports all aspects of certificate lifecycle management, including key
+archival, OCSP, and smartcard management.
+
+This port provides the Certificate Authority (CA) subsystem running on
+Apache Tomcat, the pki command line interface, the pkispawn/pkidestroy
+deployment tools, and the Python client and server modules for
+administering Dogtag PKI certificate services.

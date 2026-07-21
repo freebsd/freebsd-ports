@@ -1,0 +1,270 @@
+--- base/CMakeLists.txt.orig	2025-08-05 19:20:05 UTC
++++ base/CMakeLists.txt
+@@ -6,6 +6,7 @@ find_file(SERVLET_JAR
+         servlet-api-3.1.jar
+         tomcat9-servlet-api.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/apache-tomcat-9.0/lib
+         /usr/share/java
+ )
+ 
+@@ -35,7 +36,7 @@ else()
+         PATHS
+             /usr/share/java
+     )
+-    set(JAXRS_API_LINK "../../../..${JAXRS_API_JAR}")
++    set(JAXRS_API_LINK "../../../../..${JAXRS_API_JAR}")
+ 
+ endif (JAXRS_API_VERSION)
+ 
+@@ -43,6 +44,7 @@ find_file(SLF4J_API_JAR
+     NAMES
+         slf4j-api.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/share/java/classes
+         /usr/share/java/slf4j
+         /usr/share/java
+ )
+@@ -51,6 +53,7 @@ find_file(SLF4J_JDK14_JAR
+     NAMES
+         slf4j-jdk14.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/share/java/slf4j
+         /usr/share/java/slf4j
+         /usr/share/java
+ )
+@@ -67,6 +70,7 @@ find_file(COMMONS_CLI_JAR
+     NAMES
+         commons-cli.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/share/java/classes
+         /usr/share/java
+ )
+ 
+@@ -74,6 +78,7 @@ find_file(COMMONS_CODEC_JAR
+     NAMES
+         commons-codec.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/share/java/classes
+         /usr/share/java
+ )
+ 
+@@ -81,6 +86,7 @@ find_file(COMMONS_IO_JAR
+     NAMES
+         commons-io.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/share/java/classes
+         /usr/share/java
+ )
+ 
+@@ -88,6 +94,7 @@ find_file(COMMONS_LANG3_JAR
+     NAMES
+         commons-lang3.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/share/java/classes
+         /usr/share/java
+ )
+ 
+@@ -95,6 +102,7 @@ find_file(COMMONS_LOGGING_JAR
+     NAMES
+         commons-logging.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/share/java/classes
+         /usr/share/java
+ )
+ 
+@@ -102,6 +110,7 @@ find_file(COMMONS_NET_JAR
+     NAMES
+         commons-net.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/share/java/classes
+         /usr/share/java
+ )
+ 
+@@ -117,6 +126,7 @@ find_file(HTTPCLIENT_JAR
+     NAMES
+         httpclient.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/share/java/classes
+         /usr/share/java/httpcomponents
+         /usr/share/java
+ )
+@@ -125,6 +135,7 @@ find_file(HTTPCORE_JAR
+     NAMES
+         httpcore.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/share/java/classes
+         /usr/share/java/httpcomponents
+         /usr/share/java
+ )
+@@ -168,7 +179,7 @@ else()
+         PATHS
+             /usr/share/java
+     )
+-    set(JACKSON_ANNOTATIONS_LINK "../../../..${JACKSON_ANNOTATIONS_JAR}")
++    set(JACKSON_ANNOTATIONS_LINK "../../../../..${JACKSON_ANNOTATIONS_JAR}")
+ 
+     find_file(JACKSON_CORE_JAR
+         NAMES
+@@ -176,7 +187,7 @@ else()
+         PATHS
+             /usr/share/java
+     )
+-    set(JACKSON_CORE_LINK "../../../..${JACKSON_CORE_JAR}")
++    set(JACKSON_CORE_LINK "../../../../..${JACKSON_CORE_JAR}")
+ 
+     find_file(JACKSON_DATABIND_JAR
+         NAMES
+@@ -184,7 +195,7 @@ else()
+         PATHS
+             /usr/share/java
+     )
+-    set(JACKSON_DATABIND_LINK "../../../..${JACKSON_DATABIND_JAR}")
++    set(JACKSON_DATABIND_LINK "../../../../..${JACKSON_DATABIND_JAR}")
+ 
+     find_file(JACKSON_JAXRS_BASE_JAR
+         NAMES
+@@ -193,7 +204,7 @@ else()
+             /usr/share/java/jackson-jaxrs-providers
+             /usr/share/java
+     )
+-    set(JACKSON_JAXRS_BASE_LINK "../../../..${JACKSON_JAXRS_BASE_JAR}")
++    set(JACKSON_JAXRS_BASE_LINK "../../../../..${JACKSON_JAXRS_BASE_JAR}")
+ 
+     find_file(JACKSON_JAXRS_JSON_PROVIDER_JAR
+         NAMES
+@@ -202,7 +213,7 @@ else()
+             /usr/share/java/jackson-jaxrs-providers
+             /usr/share/java
+     )
+-    set(JACKSON_JAXRS_JSON_PROVIDER_LINK "../../../..${JACKSON_JAXRS_JSON_PROVIDER_JAR}")
++    set(JACKSON_JAXRS_JSON_PROVIDER_LINK "../../../../..${JACKSON_JAXRS_JSON_PROVIDER_JAR}")
+ 
+     find_file(JACKSON_MODULE_JAXB_ANNOTATIONS_JAR
+         NAMES
+@@ -211,7 +222,7 @@ else()
+             /usr/share/java/jackson-modules
+             /usr/share/java
+     )
+-    set(JACKSON_MODULE_JAXB_ANNOTATIONS_LINK "../../../..${JACKSON_MODULE_JAXB_ANNOTATIONS_JAR}")
++    set(JACKSON_MODULE_JAXB_ANNOTATIONS_LINK "../../../../..${JACKSON_MODULE_JAXB_ANNOTATIONS_JAR}")
+ 
+ endif (JACKSON_VERSION)
+ 
+@@ -253,12 +264,13 @@ else()
+                 jakarta.xml.bind-api.jar
+                 jaxb-api.jar
+             PATHS
++                ${CMAKE_INSTALL_PREFIX}/share/java/classes
+                 /usr/share/java/jaxb-api4
+                 /usr/share/java/jaxb-api
+                 /usr/share/java
+         )
+     endif(XMVN_RESOLVE)
+-    set(JAXB_API_LINK "../../../..${JAXB_API_JAR}")
++    set(JAXB_API_LINK "../../../../..${JAXB_API_JAR}")
+ 
+ endif (JAXB_API_VERSION)
+ 
+@@ -295,6 +307,7 @@ else()
+                 javax.activation.jar
+                 javax-activation.jar
+             PATHS
++                ${CMAKE_INSTALL_PREFIX}/share/java/classes
+                 /usr/share/java/jakarta-activation
+                 /usr/share/java/jakarta
+                 /usr/share/java/javax-activation
+@@ -302,7 +315,7 @@ else()
+                 /usr/share/java
+         )
+     endif(XMVN_RESOLVE)
+-    set(JAKARTA_ACTIVATION_API_LINK "../../../..${JAKARTA_ACTIVATION_API_JAR}")
++    set(JAKARTA_ACTIVATION_API_LINK "../../../../..${JAKARTA_ACTIVATION_API_JAR}")
+ 
+ endif (JAKARTA_ACTIVATION_API_VERSION)
+ 
+@@ -329,11 +342,12 @@ else()
+             jakarta.annotation-api.jar
+             jboss-annotations-api_1.2_spec.jar
+         PATHS
++            ${CMAKE_INSTALL_PREFIX}/share/java/classes
+             /usr/share/java/jakarta-annotations
+             /usr/share/java/jboss-annotations-1.2-api
+             /usr/share/java
+     )
+-    set(JAKARTA_ANNOTATION_API_LINK "../../../..${JAKARTA_ANNOTATION_API_JAR}")
++    set(JAKARTA_ANNOTATION_API_LINK "../../../../..${JAKARTA_ANNOTATION_API_JAR}")
+ 
+ endif (JAKARTA_ANNOTATION_API_VERSION)
+ 
+@@ -360,10 +374,11 @@ else()
+         NAMES
+             jboss-logging.jar
+         PATHS
++            ${CMAKE_INSTALL_PREFIX}/share/java/classes
+             /usr/share/java/jboss-logging
+             /usr/share/java
+     )
+-    set(JBOSS_LOGGING_LINK "../../../..${JBOSS_LOGGING_JAR}")
++    set(JBOSS_LOGGING_LINK "../../../../..${JBOSS_LOGGING_JAR}")
+ 
+ endif (JBOSS_LOGGING_VERSION)
+ 
+@@ -470,7 +485,7 @@ else()
+             /usr/share/java/resteasy
+             /usr/share/java
+     )
+-    set(RESTEASY_JAXRS_LINK "../../../..${RESTEASY_JAXRS_JAR}")
++    set(RESTEASY_JAXRS_LINK "../../../../..${RESTEASY_JAXRS_JAR}")
+ 
+     find_file(RESTEASY_JACKSON_PROVIDER_JAR
+         NAMES
+@@ -479,7 +494,7 @@ else()
+             /usr/share/java/resteasy
+             /usr/share/java
+     )
+-    set(RESTEASY_JACKSON_PROVIDER_LINK "../../../..${RESTEASY_JACKSON_PROVIDER_JAR}")
++    set(RESTEASY_JACKSON_PROVIDER_LINK "../../../../..${RESTEASY_JACKSON_PROVIDER_JAR}")
+ 
+     find_file(RESTEASY_SERVLET_INITIALIZER_JAR
+         NAMES
+@@ -506,6 +521,7 @@ find_file(TOMCAT_API_JAR
+         tomcat-api.jar
+         tomcat9-api.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/apache-tomcat-9.0/lib
+         /usr/share/java/tomcat
+         /usr/share/java
+ )
+@@ -515,6 +531,7 @@ find_file(TOMCAT_CATALINA_JAR
+         catalina.jar
+         tomcat9-catalina.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/apache-tomcat-9.0/lib
+         /usr/share/java/tomcat
+         /usr/share/java
+ )
+@@ -524,6 +541,7 @@ find_file(TOMCAT_COYOTE_JAR
+         tomcat-coyote.jar
+         tomcat9-coyote.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/apache-tomcat-9.0/lib
+         /usr/share/java/tomcat
+         /usr/share/java
+ )
+@@ -533,6 +551,7 @@ find_file(TOMCAT_UTIL_JAR
+         tomcat-util.jar
+         tomcat9-util.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/apache-tomcat-9.0/lib
+         /usr/share/java/tomcat
+         /usr/share/java
+ )
+@@ -542,6 +561,7 @@ find_file(TOMCAT_UTIL_SCAN_JAR
+         tomcat-util-scan.jar
+         tomcat9-util-scan.jar
+     PATHS
++        ${CMAKE_INSTALL_PREFIX}/apache-tomcat-9.0/lib
+         /usr/share/java/tomcat
+         /usr/share/java
+ )

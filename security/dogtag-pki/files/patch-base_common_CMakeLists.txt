@@ -1,0 +1,50 @@
+--- base/common/CMakeLists.txt.orig	2026-07-16 20:05:45 UTC
++++ base/common/CMakeLists.txt
+@@ -117,14 +117,14 @@ add_custom_command(
+     TARGET pki-lib POST_BUILD
+     COMMAND ${CMAKE_COMMAND} -E make_directory lib
+     COMMAND test ! -d ${CMAKE_SOURCE_DIR}/base/common/lib || cp ${CMAKE_SOURCE_DIR}/base/common/lib/* lib
+-    COMMAND ln -sf ../../../..${COMMONS_CLI_JAR} lib/commons-cli.jar
+-    COMMAND ln -sf ../../../..${COMMONS_CODEC_JAR} lib/commons-codec.jar
+-    COMMAND ln -sf ../../../..${COMMONS_IO_JAR} lib/commons-io.jar
+-    COMMAND ln -sf ../../../..${COMMONS_LANG3_JAR} lib/commons-lang3.jar
+-    COMMAND ln -sf ../../../..${COMMONS_LOGGING_JAR} lib/commons-logging.jar
+-    COMMAND ln -sf ../../../..${COMMONS_NET_JAR} lib/commons-net.jar
+-    COMMAND ln -sf ../../../..${HTTPCLIENT_JAR} lib/httpclient.jar
+-    COMMAND ln -sf ../../../..${HTTPCORE_JAR} lib/httpcore.jar
++    COMMAND ln -sf ../../../../..${COMMONS_CLI_JAR} lib/commons-cli.jar
++    COMMAND ln -sf ../../../../..${COMMONS_CODEC_JAR} lib/commons-codec.jar
++    COMMAND ln -sf ../../../../..${COMMONS_IO_JAR} lib/commons-io.jar
++    COMMAND ln -sf ../../../../..${COMMONS_LANG3_JAR} lib/commons-lang3.jar
++    COMMAND ln -sf ../../../../..${COMMONS_LOGGING_JAR} lib/commons-logging.jar
++    COMMAND ln -sf ../../../../..${COMMONS_NET_JAR} lib/commons-net.jar
++    COMMAND ln -sf ../../../../..${HTTPCLIENT_JAR} lib/httpclient.jar
++    COMMAND ln -sf ../../../../..${HTTPCORE_JAR} lib/httpcore.jar
+     COMMAND ln -sf ${JACKSON_ANNOTATIONS_LINK} lib/jackson-annotations.jar
+     COMMAND ln -sf ${JACKSON_CORE_LINK} lib/jackson-core.jar
+     COMMAND ln -sf ${JACKSON_DATABIND_LINK} lib/jackson-databind.jar
+@@ -136,16 +136,16 @@ add_custom_command(
+     COMMAND ln -sf ${JAXB_API_LINK} lib/jakarta.xml.bind-api.jar
+     COMMAND ln -sf ${JAXRS_API_LINK} lib/jboss-jaxrs-api_2.0_spec.jar
+     COMMAND ln -sf ${JBOSS_LOGGING_LINK} lib/jboss-logging.jar
+-    COMMAND ln -sf ../../../..${JSS_JAR} lib/jss.jar
+-    COMMAND ln -sf ../../../..${LDAPJDK_JAR} lib/ldapjdk.jar
+-    COMMAND ln -sf ../../../..${P11_KIT_TRUST} lib/p11-kit-trust.so
+-    COMMAND ln -sf ../../../..${JAVA_JAR_INSTALL_DIR}/pki/pki-common.jar lib/pki-common.jar
+-    COMMAND ln -sf ../../../..${JAVA_JAR_INSTALL_DIR}/pki/pki-tools.jar lib/pki-tools.jar
++    COMMAND ln -sf ../../../../..${JSS_JAR} lib/jss.jar
++    COMMAND ln -sf ../../../../..${LDAPJDK_JAR} lib/ldapjdk.jar
++    COMMAND ln -sf ../../../../..${P11_KIT_TRUST} lib/p11-kit-trust.so
++    COMMAND ln -sf ../../../../..${JAVA_JAR_INSTALL_DIR}/pki/pki-common.jar lib/pki-common.jar
++    COMMAND ln -sf ../../../../..${JAVA_JAR_INSTALL_DIR}/pki/pki-tools.jar lib/pki-tools.jar
+     COMMAND ln -sf ${RESTEASY_JACKSON_PROVIDER_LINK} lib/resteasy-jackson2-provider.jar
+     COMMAND ln -sf ${RESTEASY_JAXRS_LINK} lib/resteasy-jaxrs.jar
+-    COMMAND ln -sf ../../../..${SERVLET_JAR} lib/servlet.jar
+-    COMMAND ln -sf ../../../..${SLF4J_API_JAR} lib/slf4j-api.jar
+-    COMMAND ln -sf ../../../..${SLF4J_JDK14_JAR} lib/slf4j-jdk14.jar
++    COMMAND ln -sf ../../../../..${SERVLET_JAR} lib/servlet.jar
++    COMMAND ln -sf ../../../../..${SLF4J_API_JAR} lib/slf4j-api.jar
++    COMMAND ln -sf ../../../../..${SLF4J_JDK14_JAR} lib/slf4j-jdk14.jar
+ )
+ 
+ add_custom_target(pki-man ALL

@@ -1,0 +1,74 @@
+--- base/server/scripts/operations.orig	2026-07-14 06:22:12 UTC
++++ base/server/scripts/operations
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/bash -X
++#!/usr/bin/env bash
+ 
+ # From "http://fedoraproject.org/wiki/FCNewInit/Initscripts":
+ #
+@@ -32,7 +32,7 @@
+ 
+ # load default, system-wide, and user-specific PKI configuration and
+ # set NSS_DEFAULT_DB_TYPE.
+-. /usr/share/pki/scripts/config
++. /usr/local/share/pki/scripts/config
+ 
+ default_error=0
+ 
+@@ -41,7 +41,7 @@ else
+     SYSCONFIG_PKI=/etc/dogtag
+ else
+     debian=false
+-    SYSCONFIG_PKI=/etc/sysconfig/pki
++    SYSCONFIG_PKI=/usr/local/etc/pki
+ fi
+ 
+ case $command in
+@@ -78,7 +78,7 @@ usage()
+ 
+ usage()
+ {
+-    echo "Usage: /usr/bin/pkidaemon start <instance-name>"
++    echo "Usage: /usr/local/bin/pkidaemon start <instance-name>"
+     echo
+ }
+ 
+@@ -211,7 +211,7 @@ backup_instance_configuration_files()
+         #
+         if [ -f ${backup_file} ] ; then
+             # 'CS.cfg.bak' is a regular file or a symlink
+-            cmp --silent ${pki_instance_configuration_file} ${backup_file}
++            cmp -s ${pki_instance_configuration_file} ${backup_file}
+             rv=$?
+             if [ $rv -eq 0 ] ; then
+                 # 'CS.cfg' is identical to 'CS.cfg.bak';
+@@ -260,7 +260,7 @@ backup_instance_configuration_files()
+         # Backup 'CS.cfg'
+         if [ "${archive_configuration_file}" != "true" ] ; then
+             # Always backup 'CS.cfg' to 'CS.cfg.bak'
+-            cp -b ${pki_instance_configuration_file} ${backup_file}
++            cp ${pki_instance_configuration_file} ${backup_file}
+         else
+             # Archive parameters
+             archive_dir=${config_dir}/archives
+@@ -272,7 +272,7 @@ backup_instance_configuration_files()
+             fi
+ 
+             # Archive 'CS.cfg' to 'CS.cfg.bak.${timestamp}'
+-            cp -a ${pki_instance_configuration_file} ${archived_file}
++            cp -p ${pki_instance_configuration_file} ${archived_file}
+             if [ ! -s ${archived_file} ] ; then
+                 # Issue a warning that the archived backup failed
+                 echo "WARNING:  Failed to archive '${pki_instance_configuration_file}' to '${archived_file}'!"
+@@ -312,9 +312,9 @@ check_deprecated_algorithms() {
+     # Exclude NSS database files and links to Tomcat standard config files.
+     # The result will appear in systemd journal when the server is started.
+ 
+-    FILES=$(find /etc/pki/${pki_instance_id} -type f -not -path "/etc/pki/${pki_instance_id}/alias/*")
++    FILES=$(find /usr/local/etc/pki/${pki_instance_id} -type f ! -path "/usr/local/etc/pki/${pki_instance_id}/alias/*")
+ 
+-    grep -n -E "SHA\s*$|SHA\s*,|SHAwith|SHA1|SHA-1|SHA_1" $FILES | awk -F: '{ print "WARNING: Deprecated algorithm in " $1 ":" $2 ": " $3 }'
++    grep -n -E "SHA[[:space:]]*$|SHA[[:space:]]*,|SHAwith|SHA1|SHA-1|SHA_1" $FILES | awk -F: '{ print "WARNING: Deprecated algorithm in " $1 ":" $2 ": " $3 }'
+ }
+ 
+ start_instance()

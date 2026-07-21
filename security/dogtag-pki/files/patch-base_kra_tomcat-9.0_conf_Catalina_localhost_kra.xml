@@ -1,0 +1,11 @@
+--- base/kra/tomcat-9.0/conf/Catalina/localhost/kra.xml.orig	2025-08-05 19:20:05 UTC
++++ base/kra/tomcat-9.0/conf/Catalina/localhost/kra.xml
+@@ -22,7 +22,7 @@ -->
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ -->
+-<Context docBase="/usr/share/pki/kra/webapps/kra" crossContext="true">
++<Context docBase="/usr/local/share/pki/kra/webapps/kra" crossContext="true">
+ 
+     <Manager
+         secureRandomProvider="Mozilla-JSS" secureRandomAlgorithm="pkcs11prng"/>

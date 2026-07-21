@@ -1,0 +1,11 @@
+--- base/server/share/conf/pki.policy.orig	2025-08-05 19:20:05 UTC
++++ base/server/share/conf/pki.policy
+@@ -20,7 +20,7 @@ grant codeBase "file:${catalina.home}/bin/tomcat-juli.
+ grant codeBase "file:${catalina.home}/bin/tomcat-juli.jar" {
+ 
+         // Allow Tomcat JULI to read shared PKI files including logging.properties.
+-        permission java.io.FilePermission "/usr/share/pki/-", "read";
++        permission java.io.FilePermission "/usr/local/share/pki/-", "read";
+ 
+         // Allow Tomcat JULI to generate subsystem log files.
+         permission java.io.FilePermission "${catalina.base}/logs/-", "read,write";
