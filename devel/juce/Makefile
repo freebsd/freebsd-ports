@@ -1,6 +1,6 @@
 PORTNAME=	juce
 DISTVERSION=	8.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -96,5 +96,8 @@ do-install-DEMOS-on:
 .for e in ${DEMO_FILES}
 	${INSTALL_PROGRAM} `${FIND} ${BUILD_WRKSRC} -name ${e}` ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${e}
 .endfor
+
+post-install: # remove files with .orig suffix
+	@${FIND} ${STAGEDIR}${PREFIX} -name '*.orig' -delete
 
 .include <bsd.port.mk>

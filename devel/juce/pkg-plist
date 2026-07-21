@@ -957,11 +957,9 @@ include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/plu
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/falignpop.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/falignpush.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/fplatform.h
-include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/fplatform.h.orig
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/fstrdefs.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/ftypes.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/funknown.cpp
-include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/funknown.cpp.orig
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/funknown.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/funknownimpl.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/futils.h
