@@ -1,7 +1,7 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.050
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -59,6 +59,9 @@ pre-configure:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/verilator_bin
+	# pass compile and link flags to the verilated program so that it can find liblz4, see https://github.com/verilator/verilator/issues/7969
+	@${REINPLACE_CMD} -E 's|^PYTHON3 = .*|&\n\CXXFLAGS = ${CXXFLAGS}\n\CPPFLAGS = ${CPPFLAGS}\nLDFLAGS = ${LDFLAGS}|' \
+		${STAGEDIR}${PREFIX}/share/verilator/include/verilated.mk
 
 post-install-INSTALL_DBG_EXECUTABLES-off:
 	@${RM} \
