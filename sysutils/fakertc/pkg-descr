@@ -7,3 +7,6 @@ date/time again.
 
 Note that systems using UFS for the root fs won't need this, as the
 clock is already restored from info in the UFS superblock.
+Since __FreeBSD_version 1600020 ZFS also restores the wall-clock time
+from the rootfs.
+https://cgit.freebsd.org/src/commit/?id=d0b3ecdc274930e190ea233b6b69ff03782eaf8d
