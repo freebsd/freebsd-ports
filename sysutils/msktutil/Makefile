@@ -29,10 +29,10 @@ OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 OPTIONS_DEFAULT=	GSSAPI_BASE
 
 GSSAPI_BASE_USES=		gssapi
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500047
-GSSAPI_BASE_CONFIGURE_ON=	--with-krb5=heimdal
-.else
+.if exists(/usr/libdata/pkgconfig/mit-krb5.pc)
 GSSAPI_BASE_CONFIGURE_ON=	--with-krb5=mit
+.else
+GSSAPI_BASE_CONFIGURE_ON=	--with-krb5=heimdal
 .endif
 
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
