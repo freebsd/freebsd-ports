@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Sisimai/ARF.pm
 %%SITE_PERL%%/Sisimai/Address.pm
 %%SITE_PERL%%/Sisimai/DateTime.pm
+%%SITE_PERL%%/Sisimai/Eb.pm
 %%SITE_PERL%%/Sisimai/Fact.pm
 %%SITE_PERL%%/Sisimai/Fact/JSON.pm
 %%SITE_PERL%%/Sisimai/Fact/YAML.pm
@@ -129,6 +130,7 @@
 %%PERL5_MAN3%%/Sisimai::ARF.3.gz
 %%PERL5_MAN3%%/Sisimai::Address.3.gz
 %%PERL5_MAN3%%/Sisimai::DateTime.3.gz
+%%PERL5_MAN3%%/Sisimai::Eb.3.gz
 %%PERL5_MAN3%%/Sisimai::Fact.3.gz
 %%PERL5_MAN3%%/Sisimai::Fact::JSON.3.gz
 %%PERL5_MAN3%%/Sisimai::Fact::YAML.3.gz
