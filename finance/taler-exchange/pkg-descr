@@ -1,0 +1,14 @@
+GNU Taler is a privacy-preserving payment system. Customers can stay
+anonymous, but merchants can not hide their income through payments
+with GNU Taler. This helps to avoid tax evasion and money laundering.
+
+The primary use case of GNU Taler is payments; it is not meant as a
+store of value. Payments are always backed by an existing currency.
+
+Payments are made after exchanging existing money into electronic money
+with the help of an Exchange service, that is, a payment service
+provider for Taler.
+
+When making a payment, customers only need a loaded wallet. A merchant
+can accept payments without making their customers register on the
+merchant's Website. 

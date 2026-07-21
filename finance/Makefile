@@ -205,6 +205,7 @@
     SUBDIR += rubygem-money
     SUBDIR += skrooge
     SUBDIR += sql-ledger
+    SUBDIR += taler-exchange
     SUBDIR += ticker
     SUBDIR += tickrs
     SUBDIR += venice
