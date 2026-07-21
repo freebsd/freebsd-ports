@@ -1,0 +1,3 @@
+JBoss Logging is a Java logging facade which can bind to different logging
+managers. It allows applications to remain independent of a particular
+logging implementation.
