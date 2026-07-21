@@ -1,7 +1,7 @@
 PORTNAME=	code-minimap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	textproc
 
 MAINTAINER=	dereks@lifeofadishwasher.com

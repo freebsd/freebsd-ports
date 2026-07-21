@@ -1,6 +1,7 @@
 PORTNAME=	markdown-oxide
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.25.11
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	lbartoletti@FreeBSD.org

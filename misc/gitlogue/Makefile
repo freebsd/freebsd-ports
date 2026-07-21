@@ -1,7 +1,7 @@
 PORTNAME=	gitlogue
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0 # make patch cargo-crates
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 MAINTAINER=	nxjoseph@FreeBSD.org

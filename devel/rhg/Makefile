@@ -1,5 +1,6 @@
 PORTNAME=	rhg
 PORTVERSION=	7.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.mercurial-scm.org/release/
 DISTFILES=	mercurial-${PORTVERSION}.tar.gz

@@ -1,5 +1,6 @@
 PORTNAME=	cfait
 DISTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://codeberg.org/trougnouf/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-source-v${DISTVERSION}

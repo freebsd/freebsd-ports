@@ -2,6 +2,7 @@ PORTNAME=	croft
 # No upstream releases; version is the Cargo.toml version plus the
 # pinned commit's date (see CROFT_COMMIT below).
 DISTVERSION=	0.1.271.20260602
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://codeberg.org/vitali87/${PORTNAME}/archive/${CROFT_COMMIT}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

@@ -1,6 +1,6 @@
 PORTNAME=	bustle
 DISTVERSION=	0.13.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	https://gitlab.gnome.org/World/${PORTNAME}/-/releases/${DISTVERSION}/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

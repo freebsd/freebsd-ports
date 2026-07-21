@@ -1,5 +1,6 @@
 PORTNAME=	libchewing
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://github.com/chewing/libchewing/releases/download/v${PORTVERSION}/
 DISTFILES=	libchewing-${PORTVERSION}${EXTRACT_SUFX}

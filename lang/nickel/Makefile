@@ -1,5 +1,6 @@
 PORTNAME=	nickel
 DISTVERSION=	1.17.0
+PORTREVISION=	1
 CATEGORIES=	lang devel
 
 MAINTAINER=	ports@nxtrn.dev

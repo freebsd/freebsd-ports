@@ -1,7 +1,7 @@
 PORTNAME=	flipperbit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.3 # version only on crates.io, not on GitHub
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org

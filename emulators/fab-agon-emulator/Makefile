@@ -1,5 +1,6 @@
 PORTNAME=	fab-agon-emulator
 DISTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	alexey@pentode.fi
