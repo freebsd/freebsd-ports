@@ -1,0 +1,3 @@
+The Java API for RESTful Web Services (JAX-RS) defines portable APIs for
+developing RESTful web services and clients. This port provides the classic
+javax.ws.rs namespace used by Java EE applications.
