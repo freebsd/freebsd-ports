@@ -1,3 +1,39 @@
+  <vuln vid="037b7b00-84d4-11f1-8f76-345a6001a2f9">
+    <topic>srt -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>srt</name>
+	<range><lt>1.5.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The SRT project reports:</p>
+	<blockquote cite="https://github.com/Haivision/srt/releases/tag/v1.5.6">
+	  <ul>
+	    <li>CVE-2026-55869: Heap-Based Buffer Overflow in KMREQ Handling.
+	      A remote attacker may be able to trigger a heap-based buffer
+	      overflow during key material request processing, leading to a
+	      denial of service or potentially arbitrary code execution.</li>
+	    <li>CVE-2026-55868: Encryption State Machine Downgrade.
+	      A flaw in the encryption state machine may allow an attacker to
+	      downgrade the negotiated encryption, weakening confidentiality
+	      protections for the SRT stream.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-55869</cvename>
+      <cvename>CVE-2026-55868</cvename>
+      <url>https://github.com/Haivision/srt/releases/tag/v1.5.6</url>
+    </references>
+    <dates>
+      <discovery>2026-07-20</discovery>
+      <entry>2026-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4c57c5a-845a-11f1-b72c-8447094a420f">
     <topic>Weechat -- Multiple vulnerabilities</topic>
     <affects>
