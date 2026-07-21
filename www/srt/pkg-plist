@@ -1,4 +1,4 @@
-bin/srt-ffplay
+%%SRTFFPLAY%%bin/srt-ffplay
 bin/srt-file-transmit
 bin/srt-live-transmit
 bin/srt-tunnel
