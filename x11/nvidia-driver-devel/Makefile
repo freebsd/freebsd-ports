@@ -1,4 +1,4 @@
-DISTVERSION?=	610.43.02
+DISTVERSION?=	610.43.03
 # Explicitly set PORTREVISION as it can be overridden by the master port
 PORTREVISION=	0
 
