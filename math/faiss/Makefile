@@ -1,6 +1,7 @@
 PORTNAME=	faiss
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.14.3
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +26,7 @@ USES=		cmake:testing compiler:c++11-lang localbase:ldflags # tests fail to compi
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookresearch
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS FAISS_ENABLE_C_API
 CMAKE_OFF=	BUILD_TESTING FAISS_ENABLE_GPU FAISS_ENABLE_PYTHON
 
 post-extract: # workaround for https://github.com/facebookresearch/faiss/issues/3913
