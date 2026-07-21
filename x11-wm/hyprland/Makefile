@@ -1,7 +1,6 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.55.4
-PORTREVISION=	2
+DISTVERSION=	0.56.0
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	source-${DISTVERSIONFULL}
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		hyprwayland-scanner>=0.3.10:devel/hyprwayland-scanner \
 		glslang>0:graphics/glslang \
 		hyprland-protocols>=0.6.4:graphics/hyprland-protocols \
-		wayland-protocols>=1.47:graphics/wayland-protocols
+		wayland-protocols>=1.49:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libhyprwire.so:devel/hyprwire \
@@ -33,13 +32,14 @@ LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libuuid.so:misc/libuuid \
 		libaquamarine.so:x11-toolkits/aquamarine \
 		libhyprcursor.so:x11/hyprcursor \
+		libeis.so:x11/libei \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	hyprland-dialog:x11/hyprland-guiutils
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++23-lang gl gnome lua:55 pkgconfig \
-		python:build xorg
+		python:build readline xorg
 
 USE_GL=		egl gbm opengl
 USE_GNOME=	cairo glib20 pango
