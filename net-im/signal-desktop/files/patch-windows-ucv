@@ -1,0 +1,40 @@
+For whatever reason Signal-desktop has started to error out if windows-ucv
+is not present, this is the case on FreeBSD, just get rid of it
+
+--- ts/util/os/promptOSAuthMain.main.ts	2026-07-13 15:08:34 UTC
++++ ts/util/os/promptOSAuthMain.main.ts
+@@ -3,10 +3,6 @@ import { exec } from 'node:child_process';
+ 
+ import { app, systemPreferences } from 'electron';
+ import { exec } from 'node:child_process';
+-import {
+-  checkAvailability as checkAvailabilityWindowsUcv,
+-  requestVerification as requestVerificationWindowsUcv,
+-} from '@signalapp/windows-ucv';
+ 
+ import { createLogger } from '../../logging/log.std.ts';
+ import OS from './osMain.node.ts';
+@@ -70,23 +66,7 @@ async function promptOSAuthWindows(
+ async function promptOSAuthWindows(
+   text: string
+ ): Promise<PromptOSAuthResultType> {
+-  // For Windows a verification device is required for the UserConsentVerifier API.
+-  const availability = await checkAvailabilityWindowsUcv();
+-  log.info(`Windows UCV availability=${availability}`);
+-  if (availability !== 'available') {
+     return 'unsupported';
+-  }
+-
+-  try {
+-    const result = await requestVerificationWindowsUcv(text);
+-    if (result === 'verified') {
+-      return 'success';
+-    }
+-    return 'unauthorized';
+-  } catch (error) {
+-    log.error('Error requesting Windows UCV', toLogFormat(error));
+-    return 'error';
+-  }
+ }
+ 
+ async function promptOSAuthLinux(

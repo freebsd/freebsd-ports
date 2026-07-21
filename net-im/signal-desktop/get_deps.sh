@@ -1,7 +1,10 @@
 #!/bin/sh
-SIGNAL_VERS=v8.14.0
+SIGNAL_VERS=8.18.0
 
-fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json
+printf "DISTVERSION=\t${SIGNAL_VERS}\n" | portedit merge -i Makefile
+printf "DISTVERSION=\t${SIGNAL_VERS}\n" | portedit merge -i Makefile.online
+
+fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/v${SIGNAL_VERS}/package.json
 
 ############ NODE ############
 node_version=$(awk /'"node":'/'{print $2}' /tmp/package.json | head -n 1 | sed 's/"//g')
