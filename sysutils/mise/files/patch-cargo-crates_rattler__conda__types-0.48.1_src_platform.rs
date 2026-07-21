@@ -1,5 +1,5 @@
---- cargo-crates/rattler_conda_types-0.47.2/src/platform.rs.orig
-+++ cargo-crates/rattler_conda_types-0.47.2/src/platform.rs
+--- cargo-crates/rattler_conda_types-0.48.1/src/platform.rs.orig
++++ cargo-crates/rattler_conda_types-0.48.1/src/platform.rs
 @@ -35,6 +35,8 @@
      FreeBsd32,
      FreeBsd64,
