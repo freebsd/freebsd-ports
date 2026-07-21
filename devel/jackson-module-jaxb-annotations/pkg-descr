@@ -1,0 +1,3 @@
+Jackson Module JAXB Annotations adds support for using JAXB annotations
+with Jackson data binding. This module targets the legacy javax.xml.bind
+namespace provided by JAXB 2.3.
