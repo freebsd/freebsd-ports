@@ -1,0 +1,98 @@
+--- CMakeLists.txt.orig	2026-07-16 15:13:37 UTC
++++ CMakeLists.txt
+@@ -110,6 +110,95 @@ add_subdirectory(tools)
+ 
+ add_subdirectory(tools)
+ 
++# Build jss-tomcat.jar.
++set(JSS_TOMCAT_CLASSES_DIR "${CMAKE_BINARY_DIR}/classes/jss-tomcat")
++set(JSS_TOMCAT_BUILD_JAR_PATH "${CMAKE_BINARY_DIR}/jss-tomcat-staging.jar")
++set(JSS_TOMCAT_JAR_PATH "${CMAKE_BINARY_DIR}/jss-tomcat.jar")
++file(MAKE_DIRECTORY "${JSS_TOMCAT_CLASSES_DIR}")
++
++javac(jss-tomcat-classes
++    SOURCE_DIR
++        ${CMAKE_SOURCE_DIR}/tomcat/src/main/java
++    SOURCES
++        *.java
++    CLASSPATH
++        ${JSS_JAR_PATH}
++        ${LANG_JAR}
++        ${SLF4J_API_JAR}
++    OUTPUT_DIR
++        ${JSS_TOMCAT_CLASSES_DIR}
++    DEPENDS
++        generate_jar
++)
++
++jar(jss-tomcat-build-jar
++    CREATE
++        ${JSS_TOMCAT_BUILD_JAR_PATH}
++    INPUT_DIR
++        ${JSS_TOMCAT_CLASSES_DIR}
++    DEPENDS
++        jss-tomcat-classes
++)
++
++add_custom_target(
++    jss-tomcat-jar
++    COMMAND "${PROJECT_SOURCE_DIR}/tools/reproducible_jar.sh"
++        "${JSS_TOMCAT_BUILD_JAR_PATH}"
++        "${CMAKE_BINARY_DIR}/reproducible-jss-tomcat"
++        "${JSS_TOMCAT_JAR_PATH}"
++    DEPENDS
++        jss-tomcat-build-jar
++)
++
++# Build jss-tomcat-9.0.jar.
++set(JSS_TOMCAT_9_0_CLASSES_DIR "${CMAKE_BINARY_DIR}/classes/jss-tomcat-9.0")
++set(JSS_TOMCAT_9_0_BUILD_JAR_PATH "${CMAKE_BINARY_DIR}/jss-tomcat-9.0-staging.jar")
++set(JSS_TOMCAT_9_0_JAR_PATH "${CMAKE_BINARY_DIR}/jss-tomcat-9.0.jar")
++file(MAKE_DIRECTORY "${JSS_TOMCAT_9_0_CLASSES_DIR}")
++
++javac(jss-tomcat-9.0-classes
++    SOURCE_DIR
++        ${CMAKE_SOURCE_DIR}/tomcat-9.0/src/main/java
++    SOURCES
++        *.java
++    CLASSPATH
++        ${JSS_JAR_PATH}
++        ${JSS_TOMCAT_JAR_PATH}
++        ${SLF4J_API_JAR}
++        ${TOMCAT_CATALINA_JAR}
++        ${TOMCAT_COYOTE_JAR}
++        ${TOMCAT_UTIL_JAR}
++        ${TOMCAT_JULI_JAR}
++    OUTPUT_DIR
++        ${JSS_TOMCAT_9_0_CLASSES_DIR}
++    DEPENDS
++        jss-tomcat-jar
++)
++
++jar(jss-tomcat-9.0-build-jar
++    CREATE
++        ${JSS_TOMCAT_9_0_BUILD_JAR_PATH}
++    INPUT_DIR
++        ${JSS_TOMCAT_9_0_CLASSES_DIR}
++    DEPENDS
++        jss-tomcat-9.0-classes
++)
++
++add_custom_target(
++    jss-tomcat-9.0-jar
++    COMMAND "${PROJECT_SOURCE_DIR}/tools/reproducible_jar.sh"
++        "${JSS_TOMCAT_9_0_BUILD_JAR_PATH}"
++        "${CMAKE_BINARY_DIR}/reproducible-jss-tomcat-9.0"
++        "${JSS_TOMCAT_9_0_JAR_PATH}"
++    DEPENDS
++        jss-tomcat-9.0-build-jar
++)
++
++add_dependencies(java
++    jss-tomcat-jar
++    jss-tomcat-9.0-jar
++)
++
+ if(WITH_TESTS)
+     add_dependencies(native generate_test_so)
+ endif(WITH_TESTS)

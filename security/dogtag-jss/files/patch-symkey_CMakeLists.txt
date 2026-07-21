@@ -1,0 +1,11 @@
+--- symkey/CMakeLists.txt.orig	2026-07-16 09:37:55 UTC
++++ symkey/CMakeLists.txt
+@@ -41,7 +41,7 @@ target_link_libraries(${SYMKEY_SHARED_LIBRARY}
+ )
+ 
+ target_link_libraries(${SYMKEY_SHARED_LIBRARY}
+-    smime3 ssl3 nss3 nssutil3 plc4 plds4 nspr4 pthread dl)
++    smime3 ssl3 nss3 nssutil3 plc4 plds4 nspr4 pthread)
+ 
+ if(WITH_NATIVE)
+     install(

@@ -1,0 +1,4 @@
+Java Security Services provides a Java interface to Mozilla NSS.
+It includes a Java security provider and native JNI libraries for
+cryptographic operations, certificate handling, and symmetric-key
+operations used by Dogtag PKI.
