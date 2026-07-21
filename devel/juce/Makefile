@@ -91,13 +91,12 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/JUCE-${PORTVERSION}/juceaide
 	# workaround for https://github.com/juce-framework/JUCE/issues/1502
 	@${REINPLACE_CMD} -e 's|.*VST3_HELPER\.cmake.*||' ${STAGEDIR}${PREFIX}/lib/cmake/JUCE-8.0.6/JUCEConfig.cmake
+	# remove files with .orig suffix
+	@${FIND} ${STAGEDIR}${PREFIX} -name '*.orig' -delete
 
 do-install-DEMOS-on:
 .for e in ${DEMO_FILES}
 	${INSTALL_PROGRAM} `${FIND} ${BUILD_WRKSRC} -name ${e}` ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${e}
 .endfor
-
-post-install: # remove files with .orig suffix
-	@${FIND} ${STAGEDIR}${PREFIX} -name '*.orig' -delete
 
 .include <bsd.port.mk>
