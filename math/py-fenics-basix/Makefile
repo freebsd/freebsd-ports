@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nanobind>0:devel/py-nanobind@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.11:devel/py-scikit-build-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
-		cmake:devel/cmake-core
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libbasix.so:math/fenics-basix
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numba>0:devel/py-numba@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
@@ -23,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fenics-ufl>=2026.1.0:math/py-fenics-ufl@${P
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 
-USES=		localbase python
+USES=		cmake:indirect localbase python
 USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
