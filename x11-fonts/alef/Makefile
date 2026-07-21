@@ -1,19 +1,20 @@
 PORTNAME=	alef
-PORTVERSION=	1.0
-PORTREVISION=	4
+DISTVERSION=	1.001
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://alef.hagilda.com/
-DISTNAME=	Alef
+MASTER_SITES=	https://dev-www.libreoffice.org/src/
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Free multi-lingual font designed for screens
-WWW=		http://alef.hagilda.com/
+WWW=		https://wiki.documentfoundation.org/Fonts
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/OFL-license.txt
 
-USES=		fonts zip
+USES=		fonts
 FONTNAME=	Alef
+
+EXTRACT_AFTER_ARGS=	--strip-components 1 \
+			--no-same-owner --no-same-permissions
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -21,17 +22,9 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	${FONTSDIR}/Alef-Bold.ttf \
 		${FONTSDIR}/Alef-Regular.ttf
-PORTDOCS=	COMING-SOON.txt readme.txt
-
-OPTIONS_DEFINE=	DOCS
-
-post-extract:
-	@${MV} ${WRKSRC}/--COMING-SOON--.txt ${WRKSRC}/COMING-SOON.txt
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/TTF/* ${STAGEDIR}${FONTSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
