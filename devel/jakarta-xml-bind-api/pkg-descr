@@ -1,0 +1,3 @@
+Jakarta XML Binding defines a standard API for mapping Java classes to XML
+representations. It supports marshalling Java objects into XML documents and
+unmarshalling XML documents back into Java objects.

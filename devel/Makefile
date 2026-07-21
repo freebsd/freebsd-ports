@@ -1108,6 +1108,7 @@
     SUBDIR += jackson-core
     SUBDIR += jakarta-activation-api
     SUBDIR += jakarta-annotation-api
+    SUBDIR += jakarta-xml-bind-api
     SUBDIR += jam
     SUBDIR += janet-lsp
     SUBDIR += jansson
