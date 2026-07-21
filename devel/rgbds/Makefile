@@ -1,7 +1,7 @@
 PORTNAME=	rgbds
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	devel games
-MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}+hotfix/
 DISTNAME=	${PORTNAME}-source
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
@@ -12,15 +12,20 @@ WWW=		https://rgbds.gbdev.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	gmake>0:devel/gmake
 LIB_DEPENDS=	libpng16.so:graphics/png
-TEST_DEPENDS=	bash>0:shells/bash \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
+		bash>0:shells/bash \
 		git>0:devel/git \
 		xxd>0:sysutils/xxd
 
-USES=		bison cmake:testing pkgconfig shebangfix
+USES=		bison cmake:testing pkgconfig python:test shebangfix
 SHEBANG_FILES=	contrib/view_palettes.sh src/bison.sh test/*.sh test/*/*.sh
 
-CMAKE_OFF=	USE_NONFREE_TESTS
+CMAKE_OFF=	BUILD_TESTING
+CMAKE_TESTING_ARGS=	-DCMAKE_CTEST_ARGUMENTS:STRING="--label-exclude;nonfree"
+
+BINARY_ALIAS=	make=${GMAKE} python3=${PYTHON_CMD} # Needed for external tests
 
 WRKSRC=		${WRKDIR}/rgbds
 
