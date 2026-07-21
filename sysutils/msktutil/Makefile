@@ -1,9 +1,10 @@
 PORTNAME=	msktutil
 DISTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/msktutil/${PORTNAME}/releases/download/${DISTVERSION}/
 
-MAINTAINER=	zi@FreeBSD.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Utility to manage Active Directory interoperability
 WWW=		https://github.com/msktutil/msktutil
 
@@ -19,17 +20,20 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	sbin/msktutil \
 		share/man/man1/msktutil.1.gz
 
-CONFIGURE_ARGS=	--with-krb5-config=${KRB5CONFIG} \
-		--with-sasldir=${LOCALBASE} \
-		--with-ldapdir=${LOCALBASE} \
+CONFIGURE_ARGS=		--with-krb5-config=${KRB5CONFIG} \
+			--with-ldapdir=${LOCALBASE} \
+			--with-sasldir=${LOCALBASE}
+OPTIONS_SINGLE=		GSSAPI
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
-OPTIONS_SINGLE=			GSSAPI
-OPTIONS_SINGLE_GSSAPI=		GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
-
-OPTIONS_DEFAULT=		GSSAPI_BASE
+OPTIONS_DEFAULT=	GSSAPI_BASE
 
 GSSAPI_BASE_USES=		gssapi
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500047
 GSSAPI_BASE_CONFIGURE_ON=	--with-krb5=heimdal
+.else
+GSSAPI_BASE_CONFIGURE_ON=	--with-krb5=mit
+.endif
 
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-krb5=heimdal
