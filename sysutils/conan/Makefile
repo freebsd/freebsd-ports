@@ -1,5 +1,6 @@
 PORTNAME=	conan
 DISTVERSION=	2.30.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 
@@ -18,7 +19,6 @@ PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}deprecation>=2.0:devel/py-deprecation@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>1.4.0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fasteners>=0.15:devel/py-fasteners@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}future>=0.16.0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}node-semver>=0.6.1:devel/py-node-semver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}patch-ng>=1.18.0:devel/py-patch-ng@${PY_FLAVOR} \
