@@ -1,0 +1,6 @@
+Jakarta Activation defines APIs for determining the type of arbitrary data,
+encapsulating access to it, discovering the operations available on it, and
+instantiating appropriate components to perform operations on the data.
+
+This port provides the Jakarta Activation API. The implementation is provided
+separately by Eclipse Angus Activation.
