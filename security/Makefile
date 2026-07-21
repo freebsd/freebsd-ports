@@ -273,6 +273,7 @@
     SUBDIR += keychain
     SUBDIR += keyprint
     SUBDIR += keysmith
+    SUBDIR += keyward
     SUBDIR += kf5-kdesu
     SUBDIR += kf6-kdesu
     SUBDIR += kgpg

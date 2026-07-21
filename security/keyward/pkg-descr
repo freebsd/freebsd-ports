@@ -1,0 +1,10 @@
+Keyward is a keyboard-driven terminal UI that centralizes SSH key
+management, config editing, and security auditing in a single interface.
+
+It discovers and displays all SSH keys with their types, sizes, and
+fingerprints, and produces an A-F graded security audit that flags weak
+keys, missing passphrases, and risky configuration settings.  Hosts in
+~/.ssh/config can be edited with validation and automatic backups, and
+metadata and full backup archives are encrypted with age.
+
+Keyward is a single static binary with no daemon and works offline.
