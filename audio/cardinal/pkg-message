@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+You installed Cardinal: Audio plugin wrapper around VCV Rack.
+
+* Cardinal and xdg-desktop-portal
+
+Cardinal uses the dbus service xdg-desktop-portal in order to save/export files.
+You will be not able to save your projects without it.
+xdg-desktop-portal uses one or more backend like x11/xdg-desktop-portal-gtk, which
+provides the "Save File" widget expected.
+In order to use this dbus service, you will have to launch Cardinal using dbus:
+
+$ dbus-launch Cardinal
+
+* HDPI Display
+
+The default font size of the main gui is too small for 4K screen display.
+The Cardinal env variable DPF_SCALE_FACTOR has to be set before running Cardinal, eg:
+
+$ dbus-launch env DPF_SCALE_FACTOR=2.5 Cardinal
+
+EOM
+}
+]
