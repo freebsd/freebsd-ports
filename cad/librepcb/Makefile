@@ -17,8 +17,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
-		libtbb.so:devel/onetbb \
-		libTKService.so:cad/opencascade
+		libtbb.so:devel/onetbb
 
 USES=		cargo cmake:noninja,testing compiler:c++17-lang desktop-file-utils gl \
 		gmake localbase:ldflags qt:6 shared-mime-info xorg #zip
@@ -851,6 +850,13 @@ CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE}/lib # workaround for https://bugs
 CMAKE_OFF=		BUILD_TESTS
 CMAKE_TESTING_ON=	BUILD_TESTS
 CMAKE_TESTING_TARGET=
+
+OPTIONS_DEFINE=			OPENCASCADE
+OPTIONS_DEFAULT=		OPENCASCADE
+
+OPENCASCADE_DESC=		Enable OpenCascade support (3D CAD kernel)
+OPENCASCADE_CMAKE_BOOL=		USE_OPENCASCADE
+OPENCASCADE_LIB_DEPENDS=	libTKService.so:cad/opencascade
 
 post-configure:
 	@${ECHO_MSG} "===>   Creating cargo config for all Rust subprojects"
