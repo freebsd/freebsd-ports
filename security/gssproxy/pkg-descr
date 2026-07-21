@@ -1,0 +1,6 @@
+GSSProxy provides a privileged GSS-API proxy daemon. Applications can use
+the proxy to perform GSS-API operations without direct access to service
+credentials and keytab files.
+
+The package also provides a GSS-API interposer mechanism for redirecting
+credential operations to the proxy daemon.

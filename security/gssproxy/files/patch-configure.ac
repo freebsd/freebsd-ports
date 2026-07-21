@@ -1,0 +1,52 @@
+--- configure.ac.orig	2022-07-26 10:17:29 UTC
++++ configure.ac
+@@ -82,7 +82,7 @@ LIBS="$PTHREAD_LIBS $LIBS"
+ AX_PTHREAD(,[AC_MSG_ERROR([Could not find Pthreads support])])
+ 
+ LIBS="$PTHREAD_LIBS $LIBS"
+-LIBS="$PTHREAD_CFLAGS $CFLAGS"
++CFLAGS="$PTHREAD_CFLAGS $CFLAGS"
+ CC="$PTHREAD_CC"
+ 
+ AC_CHECK_HEADERS([gssapi/gssapi.h],,[AC_MSG_ERROR([Could not find GSSAPI headers])])
+@@ -135,15 +135,31 @@ if test x$only_gss_module != xyes; then
+ if test x$only_gss_module != xyes; then
+     WITH_POPT
+ 
+-    PKG_CHECK_MODULES([VERTO], [libverto >= 0.2.2],
+-      [
+-        AC_CHECK_LIB(verto, verto_free,,
+-            AC_MSG_ERROR(["Error: libverto is not found or lacks verto_free"]))
+-        AC_CHECK_FUNCS(verto_cleanup,,
+-            AC_MSG_WARN(["Warning: libverto lacks verto_cleanup function"]))
+-      ], [
+-        AC_MSG_ERROR([Could not find VERTO headers])
+-      ])
++    case "$host_os" in
++    freebsd*)
++        AC_CHECK_HEADERS([verto.h], [],
++                         [AC_MSG_ERROR([Could not find VERTO headers])])
++        VERTO_CFLAGS=""
++        VERTO_LIBS="-lverto"
++        AC_CHECK_LIB([verto], [verto_free], [],
++                     [AC_MSG_ERROR([Error: libverto is not found or lacks verto_free])])
++        AC_CHECK_FUNCS([verto_cleanup], [],
++                       [AC_MSG_WARN([Warning: libverto lacks verto_cleanup function])])
++        AC_SUBST([VERTO_CFLAGS])
++        AC_SUBST([VERTO_LIBS])
++        ;;
++    *)
++        PKG_CHECK_MODULES([VERTO], [libverto >= 0.2.2],
++          [
++            AC_CHECK_LIB(verto, verto_free,,
++                AC_MSG_ERROR(["Error: libverto is not found or lacks verto_free"]))
++            AC_CHECK_FUNCS(verto_cleanup,,
++                AC_MSG_WARN(["Warning: libverto lacks verto_cleanup function"]))
++          ], [
++            AC_MSG_ERROR([Could not find VERTO headers])
++          ])
++        ;;
++    esac
+ 
+ 
+     WITH_LIBINI_CONFIG

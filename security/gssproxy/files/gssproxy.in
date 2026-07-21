@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# PROVIDE: gssproxy
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="gssproxy"
+rcvar="gssproxy_enable"
+
+load_rc_config "${name}"
+
+: ${gssproxy_enable:=NO}
+: ${gssproxy_config:=%%PREFIX%%/etc/gssproxy/gssproxy.conf}
+: ${gssproxy_configdir:=%%PREFIX%%/etc/gssproxy}
+: ${gssproxy_flags:=}
+
+command="%%PREFIX%%/sbin/gssproxy"
+pidfile="/var/run/gssproxy.pid"
+required_files="${gssproxy_config}"
+command_args="-D -c ${gssproxy_config} -C ${gssproxy_configdir}"
+gssproxy_env="KRB5RCACHEDIR=/var/db/gssproxy/rcache"
+
+extra_commands="reload"
+start_precmd="gssproxy_prestart"
+stop_postcmd="gssproxy_poststop"
+
+gssproxy_prestart()
+{
+/usr/bin/install -d -m 0755 /var/db/gssproxy
+/usr/bin/install -d -m 0700 /var/db/gssproxy/clients
+/usr/bin/install -d -m 0700 /var/db/gssproxy/rcache
+/usr/bin/install -d -m 0755 /var/log/gssproxy
+/bin/rm -f "${pidfile}" /var/run/gssproxy.sock
+}
+
+gssproxy_poststop()
+{
+/bin/rm -f "${pidfile}" /var/run/gssproxy.sock
+}
+
+run_rc_command "$1"

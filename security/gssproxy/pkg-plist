@@ -1,0 +1,14 @@
+@sample etc/gss/mech.d/proxymech.conf.sample
+@sample etc/gssproxy/gssproxy.conf.sample
+lib/gssproxy/proxymech.so
+sbin/gssproxy
+%%EXAMPLESDIR%%/24-nfs-server.conf
+%%EXAMPLESDIR%%/80-httpd.conf
+%%EXAMPLESDIR%%/99-network-fs-clients.conf
+share/man/man5/gssproxy.conf.5.gz
+share/man/man8/gssproxy-mech.8.gz
+share/man/man8/gssproxy.8.gz
+@dir(root,wheel,0700) /var/db/gssproxy/clients
+@dir(root,wheel,0700) /var/db/gssproxy/rcache
+@dir(root,wheel,0755) /var/db/gssproxy
+@dir(root,wheel,0755) /var/log/gssproxy

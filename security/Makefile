@@ -215,6 +215,7 @@
     SUBDIR += gsa
     SUBDIR += gsad
     SUBDIR += gsasl
+    SUBDIR += gssproxy
     SUBDIR += gstreamer1-plugins-dtls
     SUBDIR += gtkpasman
     SUBDIR += gvm

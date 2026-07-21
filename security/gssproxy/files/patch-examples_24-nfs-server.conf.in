@@ -1,0 +1,12 @@
+--- examples/24-nfs-server.conf.in.orig	2026-07-21 10:54:51 UTC
++++ examples/24-nfs-server.conf.in
+@@ -1,7 +1,8 @@
+ [service/nfs-server]
+   mechs = krb5
+-  socket = /run/gssproxy.sock
++  socket = @socketname@
+   cred_store = keytab:/etc/krb5.keytab
+   trusted = yes
++  # This option has no effect on FreeBSD.
+   kernel_nfsd = yes
+   euid = 0

@@ -1,0 +1,11 @@
+--- examples/80-httpd.conf.in.orig	2026-07-21 10:54:51 UTC
++++ examples/80-httpd.conf.in
+@@ -1,5 +1,5 @@
+ [service/HTTP]
+   mechs = krb5
+-  cred_store = keytab:/etc/gssproxy/http.keytab
+-  cred_store = ccache:/var/lib/gssproxy/clients/krb5cc_%U
+-  euid = apache
++  cred_store = keytab:@sysconfdir@/gssproxy/http.keytab
++  cred_store = ccache:@gpclidir@/krb5cc_%U
++  euid = www
