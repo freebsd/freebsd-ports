@@ -61,7 +61,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytemuck-1.25.0 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
-		bytes-1.12.0 \
+		bytes-1.12.1 \
 		bzip2-0.5.2 \
 		bzip2-sys-0.1.13+1.0.8 \
 		camino-1.2.2 \
@@ -226,7 +226,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		icu_provider-2.1.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
-		ignore-0.4.27 \
+		ignore-0.4.28 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
 		imagesize-0.14.0 \
@@ -245,8 +245,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.10.5 \
 		itertools-0.14.0 \
 		itoa-1.0.17 \
-		jiff-0.2.31 \
-		jiff-static-0.2.31 \
+		jiff-0.2.32 \
+		jiff-static-0.2.32 \
 		jiff-tzdb-0.1.6 \
 		jiff-tzdb-platform-0.1.3 \
 		jni-0.22.4 \
@@ -274,7 +274,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		markdown-1.0.0 \
 		matchers-0.2.0 \
 		md-5-0.10.6 \
-		memchr-2.8.2 \
+		memchr-2.8.3 \
 		memmap2-0.9.10 \
 		memoffset-0.9.1 \
 		miette-7.6.0 \
@@ -389,8 +389,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
 		reflink-copy-0.1.30 \
-		regex-1.12.4 \
-		regex-automata-0.4.14 \
+		regex-1.13.0 \
+		regex-automata-0.4.15 \
 		regex-syntax-0.8.11 \
 		rend-0.5.3 \
 		reqsign-0.20.0 \
@@ -576,7 +576,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		usvg-0.47.0 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.4 \
+		uuid-1.23.5 \
 		valuable-0.1.1 \
 		version_check-0.9.5 \
 		vte-0.14.1 \
