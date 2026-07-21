@@ -4,8 +4,8 @@ CATEGORIES=	finance
 MASTER_SITES=	http://ftpmirror.gnu.org/taler/
 
 MAINTAINER=	adridg@FreeBSD.org
-COMMENT=	Alternative network stack for building secure, decentralized and privacy-preserving distributed applications.
-WWW=		https://www.gnunet.org/en/
+COMMENT=	Privacy-preserving distributed payment system
+WWW=		https://www.taler.net/en/index.html
 
 LICENSE=	GPLv3
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
@@ -23,20 +23,20 @@ LIB_DEPENDS+=	libjansson.so:devel/jansson \
 		libgpg-error.so:security/libgpg-error \
 		libsodium.so:security/libsodium
 
+EXTRACT_SUFX=	.tar.gz
 USES=		compiler:c11 cpe gettext-runtime libtool pgsql pkgconfig python \
 		shebangfix sqlite tar
-EXTRACT_SUFX=	.tar.gz
 
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBRARY_PATH=$(PREFIX)/lib
-CONFIGURE_ARGS=	--with-gnunet=$(PREFIX) \
-		--with-microhttpd=$(PREFIX) \
-		--with-microhttpd2=$(PREFIX)
+CONFIGURE_ENV=	LIBRARY_PATH=${PREFIX}/lib
+CONFIGURE_ARGS=	--with-gnunet=${PREFIX} \
+		--with-microhttpd=${PREFIX} \
+		--with-microhttpd2=${PREFIX}
 
-CFLAGS+=	-I$(PREFIX)
-LDFLAGS+=	-L$(PREFIX) -pthread
+CFLAGS+=	-I${PREFIX}
+LDFLAGS+=	-L${PREFIX} -pthread
 
 SHEBANG_FILES=	src/kyclogic/taler-exchange-helper-measure-challenger-email-context-check \
 		src/kyclogic/taler-exchange-helper-measure-challenger-postal-context-check \

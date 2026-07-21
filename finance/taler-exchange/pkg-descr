@@ -11,4 +11,4 @@ provider for Taler.
 
 When making a payment, customers only need a loaded wallet. A merchant
 can accept payments without making their customers register on the
-merchant's Website. 
+merchant's Website.
