@@ -1,0 +1,5 @@
+Dogtag LDAP SDK provides Java classes for accessing and managing LDAP
+directory servers. It includes LDAP protocol support, controls, SASL,
+and TLS integration with Dogtag JSS.
+
+This port installs ldapjdk.jar for use by Dogtag PKI.
