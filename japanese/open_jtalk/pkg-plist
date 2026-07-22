@@ -15,4 +15,3 @@ bin/open_jtalk
 %%DATADIR%%/dic/right-id.def
 @dir %%DATADIR%%/dic
 @dir %%DOCSDIR%%
-@dir share/licenses/ja-open_jtalk-1.11
