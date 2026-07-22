@@ -6,7 +6,8 @@ CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cairo Language Server
-WWW=		https://docs.swmansion.com/cairols
+WWW=		https://docs.swmansion.com/cairols \
+		https://github.com/software-mansion/cairols
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
