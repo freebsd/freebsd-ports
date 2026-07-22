@@ -368,6 +368,7 @@
     SUBDIR += lambdamoo
     SUBDIR += latd
     SUBDIR += lavinmq
+    SUBDIR += lazyrsync
     SUBDIR += ldap-stats
     SUBDIR += ldapbrowser
     SUBDIR += ldapdiff

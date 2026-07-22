@@ -1,0 +1,7 @@
+A terminal UI for rsync. Manage reusable profiles, preview a transfer
+as a structured diff before running it, and watch a live run with
+progress and cancellation.
+
+All from the terminal, including over SSH where a desktop GUI can't
+reach. lazyrsync keeps rsync's power while making its flags harder to
+get wrong.
