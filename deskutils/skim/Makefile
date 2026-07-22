@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.3.2
+DISTVERSION=	5.4.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -177,7 +177,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		kasuari-0.4.12 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.186 \
+		libc-0.2.188 \
 		libm-0.2.16 \
 		libmimalloc-sys-0.1.44 \
 		line-clipping-0.3.7 \
@@ -288,7 +288,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde-1.0.229 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
-		serde_json-1.0.150 \
+		serde_json-1.0.151 \
 		serial2-0.2.37 \
 		serial_test-3.5.0 \
 		serial_test_derive-3.5.0 \
@@ -332,7 +332,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.53.1 \
 		tokio-macros-2.7.1 \
-		tokio-util-0.7.18 \
+		tokio-util-0.7.19 \
 		tui-term-0.3.4 \
 		typeid-1.0.3 \
 		typenum-1.20.1 \
