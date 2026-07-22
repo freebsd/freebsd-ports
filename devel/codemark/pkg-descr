@@ -1,0 +1,9 @@
+Codemark is a semantic code bookmarking system for humans and agents.
+
+It uses tree-sitter to create durable, structure-based references to
+code that survive refactoring and shifting line numbers, instead of
+fragile file:line pointers.  Bookmarks are stored in a local SQLite
+database with optional local embeddings for semantic search.
+
+The port installs both the codemark command-line tool and its companion
+terminal UI, codemark-tui.

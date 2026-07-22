@@ -484,6 +484,7 @@
     SUBDIR += cocogitto
     SUBDIR += codebase-memory-mcp
     SUBDIR += codeblocks
+    SUBDIR += codemark
     SUBDIR += codequery
     SUBDIR += codesearch-py
     SUBDIR += collada-dom
