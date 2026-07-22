@@ -44,6 +44,7 @@ GH_TUPLE=	emscripten-core:emsdk:0742117:emsdk/cmake/external/emsdk \
 
 CXXFLAGS+=	-Wno-array-bounds # workaround for https://github.com/microsoft/onnxruntime/issues/23410
 CXXFLAGS+=	-I${WRKSRC}/include/onnxruntime/core/common/logging # otherwise logging.h isn't found
+CXXFLAGS_powerpc64le=	-Wno-error=deprecated-declarations
 
 DEPS_FILE=	${WRKSRC}/cmake/deps.txt
 
