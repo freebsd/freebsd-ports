@@ -117,6 +117,7 @@
     SUBDIR += handbrake
     SUBDIR += haruna
     SUBDIR += harvid
+    SUBDIR += hdrprobe
     SUBDIR += helvum
     SUBDIR += hyprpwcenter
     SUBDIR += intel-media-sdk
