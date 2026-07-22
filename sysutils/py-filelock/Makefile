@@ -1,5 +1,5 @@
 PORTNAME=	filelock
-DISTVERSION=	3.31.1
+DISTVERSION=	3.32.0
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -39,6 +39,6 @@ PYTEST_BROKEN_TESTS=	test_process_start_token_is_int_for_self \
 			test_owner_is_stale_live_process_mismatched_token_reclaimed \
 			test_final_symlink_backend_refuses_to_lock
 
-# tests as of 3.31.1: 1228 passed, 56 skipped, 4 deselected in 107.62s
+# tests as of 3.32.0: 1234 passed, 56 skipped, 4 deselected in 130.76s (0:02:10)
 
 .include <bsd.port.mk>
