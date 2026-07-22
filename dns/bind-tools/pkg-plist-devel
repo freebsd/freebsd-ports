@@ -18,11 +18,11 @@ bin/named-rrchecker
 bin/nsec3hash
 bin/nslookup
 bin/nsupdate
-lib/bind-tools/libdns-9.21.23.so
-lib/bind-tools/libisc-9.21.23.so
-lib/bind-tools/libisccc-9.21.23.so
-lib/bind-tools/libisccfg-9.21.23.so
-lib/bind-tools/libns-9.21.23.so
+lib/bind-tools/libdns-9.21.24.so
+lib/bind-tools/libisc-9.21.24.so
+lib/bind-tools/libisccc-9.21.24.so
+lib/bind-tools/libisccfg-9.21.24.so
+lib/bind-tools/libns-9.21.24.so
 share/man/man1/arpaname.1.gz
 share/man/man1/delv.1.gz
 share/man/man1/dig.1.gz
@@ -57,4 +57,5 @@ share/man/man1/nsupdate.1.gz
 @comment share/man/man8/named.8.gz
 @comment share/man/man8/rndc-confgen.8.gz
 @comment share/man/man8/rndc.8.gz
+@comment share/man/man8/synthrecord.8.gz
 @comment share/man/man8/tsig-keygen.8.gz
