@@ -225,6 +225,7 @@
 %%MANPAGES%%share/man/man1/glab-securefile-get.1.gz
 %%MANPAGES%%share/man/man1/glab-securefile-list.1.gz
 %%MANPAGES%%share/man/man1/glab-securefile-remove.1.gz
+%%MANPAGES%%share/man/man1/glab-securefile-update.1.gz
 %%MANPAGES%%share/man/man1/glab-securefile.1.gz
 %%MANPAGES%%share/man/man1/glab-security-config-disable.1.gz
 %%MANPAGES%%share/man/man1/glab-security-config-enable.1.gz
@@ -269,6 +270,7 @@
 %%MANPAGES%%share/man/man1/glab-variable-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-variable-export.1.gz
 %%MANPAGES%%share/man/man1/glab-variable-get.1.gz
+%%MANPAGES%%share/man/man1/glab-variable-import.1.gz
 %%MANPAGES%%share/man/man1/glab-variable-list.1.gz
 %%MANPAGES%%share/man/man1/glab-variable-set.1.gz
 %%MANPAGES%%share/man/man1/glab-variable-update.1.gz
