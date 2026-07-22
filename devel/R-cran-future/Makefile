@@ -1,5 +1,5 @@
 PORTNAME=	future
-DISTVERSION=	1.70.0
+DISTVERSION=	1.75.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -7,7 +7,7 @@ MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Unified Parallel and Distributed Processing in R for Everyone
 WWW=		https://cran.r-project.org/package=future
 
-LICENSE=	LGPL21+
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	R-cran-digest>0:security/R-cran-digest \
 		R-cran-globals>=0.18.0:devel/R-cran-globals \
