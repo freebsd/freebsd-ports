@@ -1,0 +1,9 @@
+TIMESTAMP = 1795254445
+SHA256 (zig/cova-0.10.1.tar.gz) = dbe701a81ca60919346d52d22a001eefec7d5d7dc1f01c3f9e84c7ca267e45cd
+SIZE (zig/cova-0.10.1.tar.gz) = 6531702
+SHA256 (zig/ghext-0.7.7.tar.gz) = f7a72e8fa48dca509c12e983ee223df1b4efa4ceeb228b9e8f2a95d3642a76bc
+SIZE (zig/ghext-0.7.7.tar.gz) = 9663
+SHA256 (zig/libstray-0.4.2.tar.gz) = 407052963c2dd9b63d43776c3475c6e09077c58f58e67e5ef869359b19aa244b
+SIZE (zig/libstray-0.4.2.tar.gz) = 23057
+SHA256 (zig/charlesrocket-dfs-0.8.2_FJ0.tar.gz) = c0af0a686971a8abf2893f5e40d6458cf0890797a37dfcec2a77c2abce9812fa
+SIZE (zig/charlesrocket-dfs-0.8.2_FJ0.tar.gz) = 53629

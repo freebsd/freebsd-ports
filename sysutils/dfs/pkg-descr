@@ -1,0 +1,6 @@
+This is a configuration (dotfiles) manager with a template
+engine and a true 2-way synchronization. It uses a git
+repository as a configuration source and mirrors its
+content into a destination directory (usually $HOME).
+Any changes in rendered files are translated
+back into templates.
