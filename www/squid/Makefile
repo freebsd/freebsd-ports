@@ -1,5 +1,5 @@
 PORTNAME=	squid
-DISTVERSION=	7.4
+DISTVERSION=	7.6
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}-cache/${PORTNAME}/releases/download/${PORTNAME:tu}_${DISTVERSION:S|.|_|g}/
 
@@ -193,7 +193,7 @@ VIA_DB_CONFIGURE_ENABLE=	forw-via-db
 WCCPV2_CONFIGURE_ENABLE=	wccpv2
 WCCP_CONFIGURE_ENABLE=		wccp
 
-MYDOCS=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
+MYDOCS= QUICKSTART README ChangeLog doc/debug-sections.txt
 
 change_files=	ChangeLog errors/Makefile.am errors/Makefile.in src/Makefile.am \
 		src/Makefile.in src/cf_gen.cc src/squid.8.in \
