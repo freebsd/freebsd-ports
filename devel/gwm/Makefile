@@ -1,7 +1,6 @@
 PORTNAME=	gwm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -26,7 +25,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.103 \
+		anyhow-1.0.104 \
 		approx-0.5.1 \
 		arrayvec-0.7.6 \
 		assert_cmd-2.2.2 \
@@ -53,8 +52,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
+		clap-4.6.2 \
+		clap_builder-4.6.2 \
 		clap_complete-4.6.7 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
@@ -213,8 +212,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.5.2 \
-		regex-1.13.0 \
-		regex-automata-0.4.14 \
+		regex-1.13.1 \
+		regex-automata-0.4.16 \
 		regex-syntax-0.8.11 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
@@ -223,10 +222,10 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.28 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.150 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.151 \
 		serde_spanned-1.1.1 \
 		serde_yaml_ng-0.10.0 \
 		serial2-0.2.37 \
@@ -248,6 +247,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
 		syn-2.0.117 \
+		syn-3.0.2 \
 		tempfile-3.27.0 \
 		termina-0.3.3 \
 		terminfo-0.9.0 \
@@ -255,17 +255,17 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		termtree-0.5.1 \
 		termwiz-0.23.3 \
 		thiserror-1.0.69 \
-		thiserror-2.0.18 \
+		thiserror-2.0.19 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.18 \
+		thiserror-impl-2.0.19 \
 		time-0.3.47 \
 		time-core-0.1.8 \
 		tinytemplate-1.2.1 \
-		toml-1.1.2+spec-1.1.0 \
+		toml-1.1.3+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.12+spec-1.1.0 \
+		toml_edit-0.25.13+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
-		toml_writer-1.1.1+spec-1.1.0 \
+		toml_writer-1.1.2+spec-1.1.0 \
 		tui-term-0.3.4 \
 		typenum-1.20.0 \
 		ucd-trie-0.1.7 \
