@@ -1,15 +1,14 @@
---- tests/makefile.orig	2019-03-28 17:05:25 UTC
+--- tests/makefile.orig	2026-04-12 17:17:27 UTC
 +++ tests/makefile
-@@ -104,10 +106,10 @@ giffilter-regress:
+@@ -106,9 +106,9 @@ giffix-rebuild:
  
  giffix-rebuild:
  	@echo "Rebuilding giffix test."
 -	@head --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d >giffixed.ico
 +	@ghead --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d >giffixed.ico
  giffix-regress:
- 	@echo "giffix: Testing giffix behavior"
--	@head --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d | diff -u giffixed.ico -
-+	@ghead --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d | diff -u giffixed.ico -
+-	@head --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d | ./tapdiffer "giffix: Testing giffix behavior" giffixed.ico
++	@ghead --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d | ./tapdiffer "giffix: Testing giffix behavior" giffixed.ico
  
  gifinto-regress:
- 	@echo "gifinto: Checking behavior on short files."
+ 	@rm -f $@.giflib.tmp

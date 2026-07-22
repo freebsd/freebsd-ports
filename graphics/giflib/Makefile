@@ -1,7 +1,7 @@
 PORTNAME=	giflib
-PORTVERSION=	5.2.2
+PORTVERSION=	6.1.3
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/giflib-6.x
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Tools and library routines for working with GIF images
@@ -28,17 +28,17 @@ CONFLICTS_INSTALL=	giftool
 
 OPTIONS_DEFINE=	DOCS
 
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
-		"! ( -name Makefile -o -name *\.[17] -o -name *\.xml )"
-	${MV} ${STAGEDIR}${DOCSDIR}/index.html.in ${STAGEDIR}${DOCSDIR}/index.html
-
-pre-build:
+post-extract:
 	${CP} ${FILESDIR}/giflib-logo.gif ${WRKSRC}/doc
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	${STRIP_CMD} --strip-unneeded ${STAGEDIR}${PREFIX}/lib/libgif.so.7.2.0
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
+		"! ( -name Makefile -o -name *\.[17] -o -name *\.xml )"
+	${MV} ${STAGEDIR}${DOCSDIR}/index.html.in ${STAGEDIR}${DOCSDIR}/index.html
 
 .include <bsd.port.mk>
