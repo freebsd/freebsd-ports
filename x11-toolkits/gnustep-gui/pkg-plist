@@ -1194,5 +1194,4 @@ GNUstep/System/Tools/gopen
 GNUstep/System/Tools/make_services
 GNUstep/System/Tools/say
 GNUstep/System/Tools/set_show_service
-libdata/ldconfig/gnustep-gui
 @dir GNUstep/System/Library/Themes
