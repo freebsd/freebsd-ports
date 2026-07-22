@@ -11,15 +11,19 @@ WWW=		http://opennurbs.org/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	mcneel
+BROKEN_i386	= error: constructor cannot be redeclared
 
 LIB_DEPENDS=	libuuid.so:misc/libuuid
 
 USES=		cmake compiler:c++17-lang iconv:build localbase
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mcneel
+
+USE_LDCONFIG=	yes
+
 CFLAGS+=	-DON_COMPILER_CLANG	\
 		-DON_SIZEOF_WCHAR_T=4
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
