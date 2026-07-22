@@ -93,6 +93,7 @@ sbin/debootstrap
 %%DATADIR%%/scripts/slaine
 %%DATADIR%%/scripts/squeeze
 %%DATADIR%%/scripts/stable
+%%DATADIR%%/scripts/stonking
 %%DATADIR%%/scripts/stretch
 %%DATADIR%%/scripts/taranis
 %%DATADIR%%/scripts/testing
