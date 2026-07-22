@@ -347,7 +347,7 @@ rtorrent:*:397:397::0:0:rtorrent Daemon User:/nonexistent:/usr/sbin/nologin
 tiarra:*:398:398::0:0:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
 # free: 399
 evcc:*:400:400::0:0:evcc Daemon:/nonexistent:/usr/sbin/nologin
-# free: 401
+spectrumknx:*:401:401::0:0:SpectrumKNX Daemon:/var/db/spectrumknx:/usr/sbin/nologin
 # free: 402
 # free: 403
 # free: 404

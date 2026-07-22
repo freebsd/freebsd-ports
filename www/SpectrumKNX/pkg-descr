@@ -1,0 +1,6 @@
+An elegant, high-performance bus traffic monitor and visualizer for KNX Home
+Automation.
+
+Spectrum KNX is a dedicated tool to record, store, search, and visualize KNX bus
+telegrams indefinitely. Built for speed and reliability, it merges a robust
+TimescaleDB backend with a premium, real-time React web interface.

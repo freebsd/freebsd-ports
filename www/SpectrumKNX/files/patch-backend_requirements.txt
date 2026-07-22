@@ -1,0 +1,11 @@
+--- backend/requirements.txt.orig	2026-07-22 06:06:04 UTC
++++ backend/requirements.txt
+@@ -3,7 +3,7 @@ anyio==4.14.2
+ annotated-doc==0.0.4
+ annotated-types==0.7.0
+ anyio==4.14.2
+-asyncpg==0.31.0
++asyncpg<0.31
+ cffi==2.1.0
+ click==8.4.2
+ cryptography==49.0.0

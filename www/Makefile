@@ -25,6 +25,7 @@
     SUBDIR += R-cran-webshot
     SUBDIR += R-cran-webutils
     SUBDIR += SNIP
+    SUBDIR += SpectrumKNX
     SUBDIR += UniversalFeedCreator
     SUBDIR += access-log-exporter
     SUBDIR += adguardhome

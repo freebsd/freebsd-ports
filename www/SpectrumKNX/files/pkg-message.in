@@ -1,0 +1,49 @@
+[
+{
+  message: <<EOM
+SpectrumKNX installed successfully.
+
+Please configure SpectrumKNX using export commands in:
+%%PREFIX%%/etc/spectrumknx.conf
+
+for more details check the configuration options (some useful ones are already define or must be changed):
+https://github.com/martinhoefling/SpectrumKNX/blob/main/DEPLOYMENT.md
+
+Create postgres DB, user and enable timescaledb (make sure you have postgresql18-server and timescaledb installed and configured):
+psql -U postgres
+CREATE ROLE knxuser LOGIN PASSWORD 'knxpassword';
+CREATE DATABASE knx_analyzer OWNER knxuser;
+\c knx_analyzer
+CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+\q
+
+To enable SpectrumKNX on startup:
+sysrc spectrumknx_enable="YES"
+
+You should put a reverse proxy like nginx in front of it.
+In the default configuration SpectrumKNX listens on http://localhost:8095/
+
+You can modify this with:
+sysrc spectrumknx_listen_ip="localhost"
+sysrc spectrumknx_listen_port="8095"
+
+To start SpectrumKNX:
+service spectrumknx start
+
+Logfile are on:
+/var/log/spectrumknx/spectrumknx.log
+
+EOM
+  type: install
+}
+{
+  message: <<EOM
+To apply required python lib upgrade, restart SpectrumKNX:
+
+service spectrumknx restart
+
+EOM
+  type: upgrade
+}
+]
+

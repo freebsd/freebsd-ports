@@ -1,0 +1,47 @@
+# Please check this site for more details:
+# https://github.com/martinhoefling/SpectrumKNX/blob/main/DEPLOYMENT.md
+
+# Logging verbosity (DEBUG, INFO, WARNING, ERROR, CRITICAL).
+export LOG_LEVEL="INFO"
+
+# DB Connection
+#export POSTGRES_USER="knxuser"
+export POSTGRES_PASSWORD=""
+#export POSTGRES_DB="knx_analyser"
+#export POSTGRES_HOST="localhost"
+#export POSTGRES_PORT="5432"
+
+# KNX Settings (normally no change required)
+# IP address of your KNX IP Gateway/Router. Use AUTO to scan the network automatically
+export KNX_GATEWAY_IP="AUTO"
+#Port of your KNX IP Gateway
+export KNX_GATEWAY_PORT="3671"
+# Password for the ETS project file
+export KNX_PASSWORD=""
+# Local IP or interface name to bind to
+export KNX_LOCAL_IP=""
+# Individual address (e.g. 1.1.100)
+export KNX_INDIVIDUAL_ADDRESS=""
+# Multicast group for routing
+export KNX_MULTICAST_GROUP="224.0.23.12"
+# Multicast port for routing
+export KNX_MULTICAST_PORT="3671"
+# Path to the .knxkeys file (auto-detected at /project/knx_keys.knxkeys if not set) or upload via UI
+export KNX_KNXKEYS_FILE=""
+# Password for the .knxkeys file or upload via UI
+export KNX_KNXKEYS_PASSWORD=""
+# User ID for Secure Tunneling
+export KNX_SECURE_USER_ID=""
+# User Password for Secure Tunneling
+export KNX_SECURE_USER_PASSWORD=""
+# Device Password for Secure Tunneling
+export KNX_SECURE_DEVICE_PASSWORD=""
+# Backbone Key (hex) for Secure Routing
+export KNX_SECURE_BACKBONE_KEY=""
+# Latency in ms for Secure Routing
+export KNX_SECURE_LATENCY_MS=""
+
+# Do not change
+export KNX_PROJECT_PATH=/var/db/spectrumknx/knx_project.knxproj
+
+

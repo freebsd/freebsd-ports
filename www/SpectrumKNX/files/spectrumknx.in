@@ -1,0 +1,62 @@
+#!/bin/sh
+# PROVIDE: spectrumknx
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+export PATH=$PATH:/usr/local/bin
+export HOME=${workingdir}
+
+name="spectrumknx"
+rcvar="${name}_enable"
+
+load_rc_config $name
+: ${spectrumknx_enable:=no}
+: ${spectrumknx_user:="%%SPECTRUMKNX_USER%%"}
+: ${spectrumknx_group:="%%SPECTRUMKNX_GROUP%%"}
+: ${spectrumknx_listen_ip:="localhost"}
+: ${spectrumknx_listen_port:="8765"}
+
+logfile="/var/log/${name}/${name}.log"
+pidfile="/var/run/${name}/${name}.pid"
+workingdir="%%WWWDIR%%"
+venvdir="${workingdir}/venv"
+
+command="/usr/sbin/daemon"
+command_args="-H -o ${logfile} -t ${name} -P ${pidfile} \
+	bash -c 'cd $workingdir && source venv/bin/activate && source /usr/local/etc/spectrumknx.conf && APP_VERSION="%%APP_VERSION%%" uvicorn main:app --host ${spectrumknx_listen_ip} --port ${spectrumknx_listen_port}'"
+
+start_precmd="${name}_precmd"
+start_cmd="${name}_start"
+
+spectrumknx_precmd()
+{
+  # Ensure pid directory exists
+  install -d -g "${spectrumknx_group}" -o "${spectrumknx_user}" "$(dirname "${pidfile}")"
+
+  # Ensure log directory exists
+  install -d -g "${spectrumknx_group}" -o "${spectrumknx_user}" "$(dirname "${logfile}")"
+
+  # Ensure DB directory exists
+  install -d -g "${spectrumknx_group}" -o "${spectrumknx_user}" -m 0750 "/var/db/spectrumknx"
+
+  # Ensure virtualenv exists
+  if [ ! -d "${venvdir}/bin" ]; then
+	  echo "Creating Python virtual environment..."
+	  mkdir -p "${venvdir}"
+	  chown ${spectrumknx_user}:${spectrumknx_group} "${venvdir}"
+	  su -m "${spectrumknx_user}" -c "%%PYTHON_CMD%% -m venv ${venvdir}" || return 1
+  fi
+
+  echo "Installing Python requirements..."
+  su -m "${spectrumknx_user}" -c "cd ${workingdir} && ${venvdir}/bin/python -m pip install -r ${workingdir}/requirements.txt" || return 1
+}
+
+spectrumknx_start()
+{
+  su -m ${spectrumknx_user} -c "${command} ${command_args}"
+}
+
+run_rc_command "$1"
+
