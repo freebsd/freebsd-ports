@@ -1,4 +1,4 @@
-TIMESTAMP = 1771195969
+TIMESTAMP = 1784679892
 SHA256 (rust/crates/ab_glyph-0.2.32.crate) = 01c0457472c38ea5bd1c3b5ada5e368271cb550be7a4ca4a0b4634e9913f6cc2
 SIZE (rust/crates/ab_glyph-0.2.32.crate) = 20967
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.10.crate) = 366ffbaa4442f4684d91e2cd7c5ea7c4ed8add41959a31447066e279e432b618
@@ -271,5 +271,5 @@ SHA256 (rust/crates/zerocopy-0.8.31.crate) = fd74ec98b9250adb3ca554bdde269adf631
 SIZE (rust/crates/zerocopy-0.8.31.crate) = 257633
 SHA256 (rust/crates/zerocopy-derive-0.8.31.crate) = d8a8d209fdf45cf5138cbb5a506f6b52522a25afccc534d1475dad8e31105c6a
 SIZE (rust/crates/zerocopy-derive-0.8.31.crate) = 90835
-SHA256 (Supreeeme-xwayland-satellite-v0.8.1_GH0.tar.gz) = 44d4ed941f99b88be6655d9c31db90d2a44e2deec52da7446237354508369caf
-SIZE (Supreeeme-xwayland-satellite-v0.8.1_GH0.tar.gz) = 213937
+SHA256 (Supreeeme-xwayland-satellite-v0.8.2_GH0.tar.gz) = cb50bb6948582d5ec3aa511d2d66ad622989bb14bef94e3bb81bae8b64c120b1
+SIZE (Supreeeme-xwayland-satellite-v0.8.2_GH0.tar.gz) = 219701
