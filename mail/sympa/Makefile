@@ -1,6 +1,5 @@
 PORTNAME=	sympa
-DISTVERSION=	6.2.76
-PORTREVISION=	1
+DISTVERSION=	6.2.78
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-med.fr
@@ -52,6 +51,7 @@ RUN_DEPENDS=	mhonarc>=0:www/mhonarc \
 		p5-Unicode-LineBreak>=2019.001:textproc/p5-Unicode-LineBreak \
 		p5-Unicode-UTF8>=0.62:converters/p5-Unicode-UTF8 \
 		p5-URI>=1.35:net/p5-URI \
+		p5-URI-Find>0:textproc/p5-URI-Find \
 		p5-XML-LibXML>=1.70:textproc/p5-XML-LibXML
 
 # Shebang is corrected by configure script
