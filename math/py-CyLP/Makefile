@@ -1,15 +1,13 @@
 PORTNAME=	CyLP
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.92.3
-PORTREVISION=	3
+DISTVERSION=	0.94.0
 CATEGORIES=	math python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python interface to CLP, CBC, and CGL to solve LPs and MIPs
 WWW=		https://github.com/coin-or/CyLP
-
-BROKEN=		fails to build with NumPy 2.x
 
 LICENSE=	CPL10
 LICENSE_NAME=	Common Public License Version 1.0
@@ -38,10 +36,16 @@ GH_ACCOUNT=	coin-or
 
 MAKE_ENV=	COIN_INSTALL_DIR=${LOCALBASE}
 
-TEST_WRKSRC=	${WRKSRC}/cylp
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cylp/cy/Cy*.so
+do-test:
+	# deselect tests:
+	# * test_PySolve.py: it SEGVs, see https://github.com/coin-or/CyLP/issues/232
+	# * test_removeVar2: it fails with Python error, see https://github.com/coin-or/CyLP/issues/231
+	@cd ${WRKDIR} && ${SETENV} ${TEST_ENV} pytest -rs --pyargs cylp \
+		--ignore=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cylp/py/test_PySolve.py \
+		-k 'not test_removeVar2'
+
+# tests as of 0.94.0: 12 passed, 1 deselected, 36 warnings in 0.20s
 
 .include <bsd.port.mk>

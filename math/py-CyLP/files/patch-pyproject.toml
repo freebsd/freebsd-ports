@@ -1,15 +1,23 @@
---- pyproject.toml.orig	2024-08-20 08:36:08 UTC
+-- Set the project name to match the FreeBSD PORTNAME so the built wheel
+-- is staged as CyLP-${PORTVERSION}*.whl instead of cylp-*.
+-- Fix pyproject.toml project.license for older setuptools.
+-- The in-tree setuptools does not yet support PEP 639 SPDX license strings,
+-- so use the legacy PEP 621 `license = {text = "..."}` form instead.
+--- pyproject.toml.orig	2025-12-03 14:09:23 UTC
 +++ pyproject.toml
-@@ -1,10 +1,10 @@ requires = [
- [build-system]
- requires = [
-   'setuptools',
--  'Cython == 3.0.10',
-+  'Cython >= 3.0.10',
-   # https://numpy.org/devdocs/user/depending_on_numpy.html#build-time-dependency
-   # from https://github.com/scipy/oldest-supported-numpy/pull/78#issuecomment-1747936818:
--  "oldest-supported-numpy; platform_python_implementation != 'PyPy'",
-+  "numpy; platform_python_implementation != 'PyPy'",
-   "numpy < 2.0.0; platform_python_implementation=='PyPy'",
-   'hypothesis'
+@@ -1,5 +1,5 @@
+ [project]
+-name = "cylp"
++name = "CyLP"
+ version = "0.94.0"
+ description="A Python interface for CLP, CBC, and CGL"
+ readme="README.rst"
+@@ -12,7 +12,7 @@ dependencies = [
+   "numpy >= 1.26.0",
+   "scipy >= 0.10.0",
  ]
+-license='EPL-2.0'
++license={text='EPL-2.0'}
+ 
+ [project.urls]
+ "Home Page"="https://github.com/coin-or/CyLP"
