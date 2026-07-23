@@ -1,6 +1,5 @@
 PORTNAME=	exchange-calendars
-DISTVERSION=	4.9
-PORTREVISION=	2
+DISTVERSION=	4.13.2
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,6 +29,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 4.9: 8330 passed, 1 xfailed in 4621.81s (1:17:01)
+# tests as of 4.13.2: 10042 passed, 1 xfailed in 527.55s
 
 .include <bsd.port.mk>

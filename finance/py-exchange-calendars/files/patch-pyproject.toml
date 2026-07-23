@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-07-22 21:58:56 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.0", "wheel", "setuptools_scm[toml]>=6.2"]
++requires = ["setuptools>=61.0", "wheel", "setuptools_scm[toml]>=6.2"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -10,7 +10,7 @@ readme = "README.md"
+   {name = "Gerry Manoim"}
+ ]
+ readme = "README.md"
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ keywords = ["finance", "security", "calendar", "exchange"]
+ requires-python = ">=3.10, <4"
+ classifiers = [
