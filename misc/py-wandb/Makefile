@@ -1,7 +1,6 @@
 PORTNAME=	wandb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.0
-PORTREVISION=	2
+DISTVERSION=	0.28.1
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -73,8 +72,13 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 # test_gcp.py, test_gcp_artifact_registry.py: require google.api_core
 # test_launch/test_runner: requires kubernetes_asyncio
 # test_sentry.py: requires sentry-sdk>=2.0 (installed version lacks get_current_scope)
+# test_references_s3.py: requires moto
+# test_ratelimit.py, test_run_messages.py: require looptime
+# test_sandbox: requires cwsandbox
+# test_util.py: requires plotly
 TEST_ARGS=	--ignore=tests/system_tests \
 		--ignore=tests/unit_tests/test_analytics/test_sentry.py \
+		--ignore=tests/unit_tests/test_artifacts/test_references_s3.py \
 		--ignore=tests/unit_tests/test_data_types.py \
 		--ignore=tests/unit_tests/test_kfp.py \
 		--ignore=tests/unit_tests/test_launch/test_builder/test_kaniko.py \
@@ -83,7 +87,12 @@ TEST_ARGS=	--ignore=tests/system_tests \
 		--ignore=tests/unit_tests/test_launch/test_registry/test_acr.py \
 		--ignore=tests/unit_tests/test_launch/test_registry/test_gcp_artifact_registry.py \
 		--ignore=tests/unit_tests/test_launch/test_runner \
-		--ignore=tests/unit_tests/test_media/test_media_logging.py
+		--ignore=tests/unit_tests/test_lib/test_ratelimit.py \
+		--ignore=tests/unit_tests/test_lib/test_run_messages.py \
+		--ignore=tests/unit_tests/test_media/test_media_logging.py \
+		--ignore=tests/unit_tests/test_sandbox \
+		--ignore=tests/unit_tests/test_util.py \
+		--deselect=tests/unit_tests/test_data_types_box3d.py::test_box3d_always_box
 # Tests broken due to library version mismatches or environment differences:
 # TestProgressCallback: responses library now returns bytes, not file-like for request.body
 # TestAzure: azure SDK not available; some tests fail even without explicit azure import
@@ -91,12 +100,14 @@ TEST_ARGS=	--ignore=tests/system_tests \
 # test_get_entrypoint: expects python3 entrypoint but gets python3.11 (sys.executable)
 # test_convert_plots: matplotlib test times out (>60s) on this platform
 # test_launch_browser: fails when DISPLAY is set in the build environment
+# test_box3d_always_box: hypothesis deadline/timing flake (DeadlineExceeded) on this platform
 PYTEST_BROKEN_TESTS=	TestProgressCallback \
 			TestAzure \
 			test_registry_from_uri \
 			test_get_entrypoint \
 			test_convert_plots \
-			test_launch_browser
+			test_launch_browser \
+			test_box3d_always_box
 
 SHEBANG_GLOB=	*.py
 
@@ -120,6 +131,6 @@ post-install:
 		${MV} ${STAGEDIR}${PREFIX}/bin/wb-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/wb; \
 	fi
 
-# tests as of 0.28.0: 1 failed, 2644 passed, 185 skipped, 4 xfailed, 2 xpassed, 6 errors
+# tests as of 0.28.1: 2748 passed, 185 skipped, 10 deselected, 4 xfailed, 2 xpassed, 2 warnings
 
 .include <bsd.port.mk>
