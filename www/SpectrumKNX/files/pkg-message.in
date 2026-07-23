@@ -21,11 +21,11 @@ To enable SpectrumKNX on startup:
 sysrc spectrumknx_enable="YES"
 
 You should put a reverse proxy like nginx in front of it.
-In the default configuration SpectrumKNX listens on http://localhost:8095/
+In the default configuration SpectrumKNX listens on http://localhost:8765/
 
 You can modify this with:
 sysrc spectrumknx_listen_ip="localhost"
-sysrc spectrumknx_listen_port="8095"
+sysrc spectrumknx_listen_port="8765"
 
 To start SpectrumKNX:
 service spectrumknx start
