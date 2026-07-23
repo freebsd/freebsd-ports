@@ -1,5 +1,5 @@
 PORTNAME=	qcelemental
-DISTVERSION=	0.50.3
+DISTVERSION=	0.50.4
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,6 +36,6 @@ NO_ARCH=	yes
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} pytest -rs --pyargs qcelemental
 
-# tests as of 0.50.3: 2151 passed, 126 skipped, 2 xpassed, 2 warnings in 13.48s
+# tests as of 0.50.4: 2008 passed, 270 skipped, 2 xpassed, 2 warnings in 12.82s
 
 .include <bsd.port.mk>
