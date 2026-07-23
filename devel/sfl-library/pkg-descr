@@ -1,0 +1,28 @@
+This is a header-only C++11 library that provides several new or
+lesser-known containers, most of which can be used in C++20 constant
+expressions.
+
+Sequence containers: vector, devector, small_vector, static_vector,
+compact_vector, segmented_vector, segmented_devector.
+
+Associative containers based on red-black trees: map, set, multimap,
+multiset, small_map, small_set, small_multimap, small_multiset,
+static_map, static_set, static_multimap, static_multiset.
+
+Unordered associative containers based on hash tables with separate
+chaining: unordered_map, unordered_set, unordered_multimap,
+unordered_multiset, small_unordered_map, small_unordered_set
+small_unordered_multimap, small_unordered_multiset,
+static_unordered_map, static_unordered_set, static_unordered_multimap,
+static_unordered_multiset.
+
+Associative containers based on sorted vectors: flat_map, flat_set,
+flat_multimap, flat_multiset, small_flat_map, small_flat_set,
+small_flat_multimap, small_flat_multiset, static_flat_map,
+static_flat_set, static_flat_multimap, static_flat_multiset.
+
+Unordered associative containers based on unsorted vectors:
+small_unordered_linear_map, small_unordered_linear_set,
+small_unordered_linear_multimap, small_unordered_linear_multiset,
+static_unordered_linear_map, static_unordered_linear_set,
+static_unordered_linear_multimap, static_unordered_linear_multiset.
