@@ -21,6 +21,7 @@
     SUBDIR += NBlood
     SUBDIR += Nanosaur
     SUBDIR += OpenLara
+    SUBDIR += OpenLoco
     SUBDIR += OpenTomb
     SUBDIR += SRB2
     SUBDIR += SpaceCadetPinball

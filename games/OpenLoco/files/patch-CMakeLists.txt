@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-07-24 11:08:25 UTC
++++ CMakeLists.txt
+@@ -60,7 +60,7 @@ check_ipo_supported(RESULT ipo_supported OUTPUT ipo_er
+ include(CheckIPOSupported)
+ check_ipo_supported(RESULT ipo_supported OUTPUT ipo_error)
+ 
+-if(ipo_supported)
++if(ipo_supported AND ENABLE_IPO)
+     # Enable IPO globally for all Release builds
+     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE TRUE)
+     message(STATUS "IPO/LTO enabled for all Release targets.")
