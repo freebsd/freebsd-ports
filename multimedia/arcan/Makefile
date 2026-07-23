@@ -1,5 +1,6 @@
 PORTNAME=	arcan
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://codeberg.org/letoram/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 

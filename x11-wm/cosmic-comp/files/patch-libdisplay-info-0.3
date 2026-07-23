@@ -1,0 +1,20 @@
+thread 'main' (117587) panicked at cargo-crates/libdisplay-info-sys-0.3.0/build.rs:9:51:
+called `Result::unwrap()` on an `Err` value: PkgConfig(
+pkg-config exited with status code 1
+> pkg-config --libs --cflags libdisplay-info 'libdisplay-info >= 0.1.0' 'libdisplay-info < 0.4.0'
+
+pkg-config output:
+  Package dependency requirement 'libdisplay-info < 0.4.0' could not be satisfied.
+  Package 'libdisplay-info' has version '0.4.0', required version is '< 0.4.0'
+
+--- cargo-crates/libdisplay-info-sys-0.3.0/Cargo.toml~	1970-01-01 00:00:01.000000000 +0000
++++ cargo-crates/libdisplay-info-sys-0.3.0/Cargo.toml	2026-07-24 09:23:34.989371500 +0000
+@@ -42,7 +42,7 @@ name = "libdisplay-info"
+ 
+ [package.metadata.system-deps.libdisplay-info]
+ name = "libdisplay-info"
+-version = ">= 0.1.0, < 0.4.0"
++version = ">= 0.1.0"
+ 
+ [package.metadata.system-deps.libdisplay-info.v0_2]
+ version = "0.2.0"
