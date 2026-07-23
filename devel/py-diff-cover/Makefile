@@ -1,5 +1,5 @@
 PORTNAME=	diff-cover
-DISTVERSION=	10.2.1
+DISTVERSION=	10.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,6 +36,8 @@ TEST_ARGS=	-p pytest_mock -p pytest_datadir.plugin tests
 
 NO_ARCH=	yes
 
-# tests as of 10.2.0: 352 passed in 4.82s
+PYTEST_BROKEN_TESTS=	test_latin_one_undeclared # see https://github.com/Bachmann1234/diff_cover/issues/610
+
+# tests as of 10.4.0: 365 passed, 1 broken in 5.09s
 
 .include <bsd.port.mk>
