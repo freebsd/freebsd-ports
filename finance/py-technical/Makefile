@@ -1,5 +1,5 @@
 PORTNAME=	technical
-DISTVERSION=	1.5.2
+DISTVERSION=	1.7.0
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no test data
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,11 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.5.3:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ta-lib>=0.4.25:finance/py-ta-lib@${PY_FLAVOR}
-
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip-audit>0:devel/py-pip-audit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-random-order>0:devel/py-pytest-random-order@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}syrupy>0:devel/py-syrupy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
@@ -26,5 +28,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	freqtrade
 
 NO_ARCH=	yes
+
+# tests as of 1.7.0: 1 failed, 53 passed in 31.93s (1 faiure is pip-audit finding a vulnerability in some dependencies, not the package itself)
 
 .include <bsd.port.mk>
