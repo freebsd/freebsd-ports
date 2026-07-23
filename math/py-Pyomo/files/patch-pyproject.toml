@@ -1,0 +1,22 @@
+--- pyproject.toml.orig	2026-07-22 22:03:21 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+     # setuptools 77 for core-metadata version 2.4
+-    "setuptools>=77",
++    "setuptools>=61.0",
+     "wheel",
+     # leave Cython as an optional, runtime‑selectable extra
+     # setuptools will still import it from setup.py when requested
+@@ -16,8 +16,8 @@ readme = "README.md"
+ name = "pyomo"
+ description = "The Pyomo optimization modeling framework"
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = [ "LICENSE.md" ]
++license = {text = "BSD-3-Clause"}
++# license-files removed
+ authors = [{name = "Pyomo Development Team", email = "pyomo-developers@googlegroups.com"}]
+ requires-python = ">=3.10"
+ keywords=['optimization']
