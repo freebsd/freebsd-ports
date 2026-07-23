@@ -92,6 +92,7 @@ libexec/sympa/Sympa/Family.pm
 libexec/sympa/Sympa/HTML/FormatText.pm
 libexec/sympa/Sympa/HTMLDecorator.pm
 libexec/sympa/Sympa/HTMLSanitizer.pm
+libexec/sympa/Sympa/HTML/URIFind.pm
 libexec/sympa/Sympa/Internals.pod
 libexec/sympa/Sympa/Internals/Workflow.pod
 libexec/sympa/Sympa/Language.pm
@@ -331,6 +332,7 @@ share/man/man3/Sympa::DataSource::SQL.3Sympa.gz
 share/man/man3/Sympa::Family.3Sympa.gz
 share/man/man3/Sympa::HTMLDecorator.3Sympa.gz
 share/man/man3/Sympa::HTMLSanitizer.3Sympa.gz
+share/man/man3/Sympa::HTML::URIFind.3Sympa.gz
 share/man/man3/Sympa::Internals.3Sympa.gz
 share/man/man3/Sympa::Internals::Workflow.3Sympa.gz
 share/man/man3/Sympa::Language.3Sympa.gz
