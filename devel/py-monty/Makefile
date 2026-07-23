@@ -1,6 +1,6 @@
 PORTNAME=	monty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.18
+DISTVERSION=	2026.7.16
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +35,10 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
 
-# tests as of 2025.3.3: 3 failed, 197 passed, 4 skipped, 4 warnings in 34.20s, see https://github.com/materialsvirtuallab/monty/issues/765
-# tests as of 2026.2.18: 2 failed, 198 passed, 6 skipped, 5 warnings im in 5.30s, see https://github.com/materialyzeai/monty/issues/765#issuecomment-3941522044
+# 3 tests fail, see https://github.com/materialyzeai/monty/issues/804
+PYTEST_BROKEN_TESTS=	test_pandas test_extended_json test_command \
+			test_update_allowed
+
+# tests as of 2026.7.16: 246 passed, 5 deselected, 31 warnings in 26.02s
 
 .include <bsd.port.mk>
