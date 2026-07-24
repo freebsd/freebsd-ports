@@ -1,7 +1,6 @@
 PORTNAME=	pipewire-spa-oss-ng
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.10
-PORTREVISION=	1
+DISTVERSION=	0.9.11
 CATEGORIES=	audio
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -26,23 +25,23 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		anstyle-1.0.14 \
 		bindgen-0.72.1 \
 		bitflags-2.13.1 \
-		cc-1.2.67 \
+		cc-1.4.0 \
 		cexpr-0.6.0 \
 		cfg-expr-0.20.8 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.2 \
 		clang-sys-1.8.1 \
 		cookie-factory-0.3.3 \
-		either-1.16.0 \
+		either-1.17.0 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		find-msvc-tools-0.1.9 \
-		glob-0.3.3 \
+		glob-0.3.4 \
 		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		indexmap-2.14.0 \
 		itertools-0.13.0 \
-		libc-0.2.186 \
+		libc-0.2.189 \
 		libloading-0.8.9 \
 		libspa-0.10.0 \
 		libspa-sys-0.10.0 \
@@ -53,20 +52,21 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		pkg-config-0.3.33 \
-		proc-macro2-1.0.106 \
-		quote-1.0.46 \
+		proc-macro2-1.0.107 \
+		quote-1.0.47 \
 		regex-1.13.1 \
 		regex-automata-0.4.16 \
 		regex-syntax-0.8.11 \
 		rustc-hash-2.1.3 \
 		rustix-1.1.4 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
 		serde_spanned-1.1.1 \
 		shlex-1.3.0 \
 		shlex-2.0.1 \
 		smallvec-1.15.2 \
 		syn-2.0.119 \
+		syn-3.0.3 \
 		system-deps-7.0.8 \
 		target-lexicon-0.13.5 \
 		toml-1.1.3+spec-1.1.0 \
