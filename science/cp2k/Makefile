@@ -1,7 +1,6 @@
 PORTNAME=	cp2k
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.1
-PORTREVISION=	3
+DISTVERSION=	2026.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,10 +10,6 @@ WWW=		https://www.cp2k.org/ \
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-.if !exists(/usr/include/omp.h)
-BROKEN=		requires OpenMP support that is missing on this architecture
-.endif
 
 BUILD_DEPENDS=	fypp:devel/py-fypp@${PY_FLAVOR}
 LIB_DEPENDS=	libdbcsr.so:math/dbcsr \
@@ -56,6 +51,10 @@ MPIX_VARS_OFF=		EXE_VERSION=ssmp
 
 PLIST_SUB=		SUFFIX=.${EXE_VERSION}
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 do-test: install
 	@cd ${WRKSRC}/ && \
 		${SETENV} ${MAKE_ENV} CP2K_STEM=${PREFIX}/bin/cp2k \
@@ -63,13 +62,8 @@ do-test: install
 
 # build instructions: https://github.com/cp2k/cp2k/blob/master/INSTALL.md
 
-# tests as of 2026.1:
-# Number of FAILED  tests 0
-# Number of WRONG   tests 0
-# Number of CORRECT tests 3038
-# Total number of   tests 3038
-#
-# Summary: correct: 3038 / 3038; 20min
+# tests as of 2026.2:
+# Summary: correct: 3096 / 3096; 23min
 # Status: OK
 
 .include <bsd.port.mk>

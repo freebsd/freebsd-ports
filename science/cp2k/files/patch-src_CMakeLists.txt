@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2024-09-04 05:09:22 UTC
+--- src/CMakeLists.txt.orig	2026-07-24 05:26:45 UTC
 +++ src/CMakeLists.txt
-@@ -1840,7 +1840,7 @@ if(NOT CMAKE_INSTALL_Fortran_MODULES)
+@@ -2123,7 +2123,7 @@ if(NOT CMAKE_INSTALL_Fortran_MODULES)
  
  if(NOT CMAKE_INSTALL_Fortran_MODULES)
    set(CMAKE_INSTALL_Fortran_MODULES
