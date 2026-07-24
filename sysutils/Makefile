@@ -489,6 +489,7 @@
     SUBDIR += gomplate
     SUBDIR += gonzo
     SUBDIR += google-compute-engine-oslogin
+    SUBDIR += google-guest-agent
     SUBDIR += goreman
     SUBDIR += gotop
     SUBDIR += govmomi
