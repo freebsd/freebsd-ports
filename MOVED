@@ -5506,3 +5506,4 @@ net/proxychains|net/proxychains-ng|2026-07-16|Has expired: Use net/proxychains-n
 x11/swww|x11/awww|2026-07-17|Upstream renamed
 misc/py-fastavro|textproc/py-fastavro|2026-07-20|Remove duplicate port, use textproc/py-fastavro instead
 net/nitroshare||2026-07-21|Deprecated upstream, the author is working on the new GoLang nitroshare2 which is not ready yet
+databases/mysql-connector-java51|databases/mysql-connector-j|2026-07-24|Has expired: Superseded by mysql-connector-j, no users in the tree
