@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# PROVIDE: google_guest_agent
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="google_guest_agent"
+rcvar="google_guest_agent_enable"
+
+load_rc_config $name
+
+procname="%%PREFIX%%/sbin/google_guest_agent"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} -S -T ${name} ${procname}"
+
+
+run_rc_command "$1"

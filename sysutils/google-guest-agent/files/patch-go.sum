@@ -1,0 +1,24 @@
+--- go.sum.orig	2026-07-15 20:29:27.262330000 +0000
++++ go.sum	2026-07-15 20:24:17.225033000 +0000
+@@ -73,10 +73,10 @@
+ github.com/google/go-configfs-tsm v0.3.3/go.mod h1:in2lmJDGaYEiPOJY4vlq4lGXjkR/GcxN1k7o5oR2qn0=
+ github.com/google/go-eventlog v0.0.3-0.20260617163629-883cc5652c69 h1:vW9PSMcZvz7XqNdndKzk5TmsZcD/i5Z1EmxUHMMAmqk=
+ github.com/google/go-eventlog v0.0.3-0.20260617163629-883cc5652c69/go.mod h1:7huE5P8w2NTObSwSJjboHmB7ioBNblkijdzoVa2skfQ=
+-github.com/google/go-sev-guest v0.15.0 h1:Xzfut5mbhcVb7TyPiyc5PolLUzdai7VH3QpyvXwcW9Y=
+-github.com/google/go-sev-guest v0.15.0/go.mod h1:SK9vW+uyfuzYdVN0m8BShL3OQCtXZe/JPF7ZkpD3760=
+-github.com/google/go-tdx-guest v0.3.2-0.20250814004405-ffb0869e6f4d h1:Ff8goEP/ue2/rZT5qyoRicuySCYDbAXEZS8Cf1fgsUo=
+-github.com/google/go-tdx-guest v0.3.2-0.20250814004405-ffb0869e6f4d/go.mod h1:uHy3VaNXNXhl0fiPxKqTxieeouqQmW6A0EfLcaeCYBk=
++github.com/google/go-sev-guest v0.15.1-0.20260714230530-c930ed67bebf h1:R9r8Y4qRcXmTqigNKcNezYca1eFvvwC3Um/xhKq0oCc=
++github.com/google/go-sev-guest v0.15.1-0.20260714230530-c930ed67bebf/go.mod h1:SK9vW+uyfuzYdVN0m8BShL3OQCtXZe/JPF7ZkpD3760=
++github.com/google/go-tdx-guest v0.3.2-0.20260714160433-fff6cc779034 h1:oviOaQtlWCtY7C0UW9T4aL0/zUVkiMRB7RvnW9VMKH4=
++github.com/google/go-tdx-guest v0.3.2-0.20260714160433-fff6cc779034/go.mod h1:uHy3VaNXNXhl0fiPxKqTxieeouqQmW6A0EfLcaeCYBk=
+ github.com/google/go-tpm v0.9.8 h1:slArAR9Ft+1ybZu0lBwpSmpwhRXaa85hWtMinMyRAWo=
+ github.com/google/go-tpm v0.9.8/go.mod h1:h9jEsEECg7gtLis0upRBQU+GhYVH6jMjrFxI8u6bVUY=
+ github.com/google/go-tpm-tools v0.4.9 h1:jZEhnE4WRFbomSssBH2gWaIViIHU1gjH1jz76+xC9bI=
+@@ -190,4 +190,4 @@
+ gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
+ gopkg.in/yaml.v3 v3.0.1/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
+ software.sslmate.com/src/go-pkcs12 v0.7.3 h1:JBQD3FDqYjTeyDAeZQklj2ar88ykBLtALloPJHyAauU=
+-software.sslmate.com/src/go-pkcs12 v0.7.3/go.mod h1:Qiz0EyvDRJjjxGyUQa2cCNZn/wMyzrRJ/qcDXOQazLI=
+\ No newline at end of file
++software.sslmate.com/src/go-pkcs12 v0.7.3/go.mod h1:Qiz0EyvDRJjjxGyUQa2cCNZn/wMyzrRJ/qcDXOQazLI=

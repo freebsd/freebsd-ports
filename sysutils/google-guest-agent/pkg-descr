@@ -1,0 +1,4 @@
+Google Guest Agent is a service that handles account management, clock skew,
+and network so that VMs can run smoothly on Google Compute Engine (GCE).
+This port also contains the google-metadata-script-runner binary to run
+user-provided scripts at VM startup and shutdown.
