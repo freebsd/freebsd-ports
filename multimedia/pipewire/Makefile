@@ -71,7 +71,7 @@ ONNX_DESC=		ONNX filter-graph plugin
 ONNX_LIB_DEPENDS=	libonnxruntime.so:misc/onnxruntime
 ONNX_MESON_ENABLED=	onnxruntime
 
-PULSEAUDIO_DESC=		Enable PulseAudio emulation
+PULSEAUDIO_DESC=		Enable streaming to a remote PulseAudio daemon
 PULSEAUDIO_MESON_ENABLED=	libpulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
