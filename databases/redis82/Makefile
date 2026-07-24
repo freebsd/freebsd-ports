@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	8.2.7
+DISTVERSION=	8.2.8
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	82
