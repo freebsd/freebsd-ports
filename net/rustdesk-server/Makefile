@@ -1,9 +1,8 @@
 PORTNAME=	rustdesk-server
-DISTVERSION=	1.1.15
-PORTREVISION=	5
+DISTVERSION=	1.1.16
 CATEGORIES=	net
 
-MAINTAINER=	madpilot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Self hosted RustDesk server
 WWW=		https://rustdesk.com/server/
 
