@@ -1,0 +1,15 @@
+--- src/geometry/CMakeLists.txt.orig	2026-07-24 21:10:30 UTC
++++ src/geometry/CMakeLists.txt
+@@ -9,7 +9,11 @@ message(STATUS "BOOST_DIR: ${BOOST_DIR}")
+ # include_directories(${absl_INCLUDE_DIR})
+ message(STATUS "BOOST_DIR: ${BOOST_DIR}")
+ 
+-if(NOT BOOST_DIR STREQUAL "" AND EXISTS ${BOOST_DIR})
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++	message(STATUS "FreeBSD detected, using system Boost")
++	find_package(Boost REQUIRED)
++	include_directories(${Boost_INCLUDE_DIRS})
++elseif(NOT BOOST_DIR STREQUAL "" AND EXISTS ${BOOST_DIR})
+  	message(STATUS "BOOST_DIR is not empty: ${BOOST_DIR}")
+ 	include_directories(${BOOST_DIR})
+ else()

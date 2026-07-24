@@ -1,6 +1,6 @@
---- src/redis_index.c.orig	2023-09-11 20:00:48 UTC
+--- src/redis_index.c.orig	2024-09-12 09:26:06 UTC
 +++ src/redis_index.c
-@@ -114,7 +114,7 @@ int InvertedIndex_RegisterType(RedisModuleCtx *ctx) {
+@@ -121,7 +121,7 @@ int InvertedIndex_RegisterType(RedisModuleCtx *ctx) {
                                 .rdb_load = InvertedIndex_RdbLoad,
                                 .rdb_save = InvertedIndex_RdbSave,
                                 .aof_rewrite = GenericAofRewrite_DisabledHandler,
