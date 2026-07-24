@@ -1,5 +1,5 @@
 PORTNAME=	bogofilter
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-kc
 
 COMMENT=	Fast, teachable, learning spam detector (KyotoCabinet database)

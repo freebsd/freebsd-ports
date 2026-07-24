@@ -1,5 +1,5 @@
 PORTNAME=	bogofilter
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-sqlite
 
 COMMENT?=	Fast, teachable, learning spam detector (SQLite3 database)
