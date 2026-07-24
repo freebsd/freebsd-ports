@@ -1,10 +1,10 @@
 PORTNAME=	google-guest-agent
 DISTVERSION=	20260724.00
 CATEGORIES=	sysutils
-WWW=		https://github.com/GoogleCloudPlatform/guest-agent
 
 MAINTAINER=	spadhi@google.com
 COMMENT=	Google Compute Engine Guest Agent
+WWW=		https://github.com/GoogleCloudPlatform/guest-agent
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
