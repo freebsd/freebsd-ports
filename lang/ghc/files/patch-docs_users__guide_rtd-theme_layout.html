@@ -1,4 +1,4 @@
---- docs/users_guide/rtd-theme/layout.html.orig	2026-04-18 08:43:54 UTC
+--- docs/users_guide/rtd-theme/layout.html.orig	2026-03-26 05:06:13 UTC
 +++ docs/users_guide/rtd-theme/layout.html
 @@ -29,15 +29,19 @@
      <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
@@ -9,7 +9,7 @@
 +    {%- if css|attr("filename") %}
 +      {{css_tag(css) }}
      {%- else %}
-       <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" />
+       <link rel="stylesheet" href="{{ pathto(css.filename, 1) }}" type="text/css" />
      {%- endif %}
    {%- endfor %}
  

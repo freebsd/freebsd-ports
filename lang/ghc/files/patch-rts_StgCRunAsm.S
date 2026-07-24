@@ -1,16 +1,6 @@
---- rts/StgCRunAsm.S.orig
+--- rts/StgCRunAsm.S.orig	2026-03-26 05:06:13 UTC
 +++ rts/StgCRunAsm.S
-@@ -6,7 +6,7 @@
- #if !defined(USE_MINIINTERPRETER)
-
--#if defined(powerpc64le_HOST_ARCH)
--# if defined(linux_HOST_OS)
-+#if defined(powerpc64le_HOST_ARCH) || defined(powerpc64_HOST_ARCH)
-+# if defined(linux_HOST_OS) || defined(freebsd_HOST_OS)
- /* 64-bit PowerPC ELF V2 ABI Revision 1.4
-  *
-  * Stack frame organization (see Figure 2.18, ELF V2 ABI Revision 1.4, p 31)
-@@ -66,6 +66,94 @@
+@@ -66,6 +66,94 @@ StgReturn:
          addi 12,1,-(8*18)
          bl _restgpr1_14
          b _restfpr_14
@@ -102,6 +92,6 @@
 +	lfd 31,-8(1)
 +	blr
 +#  endif
- # else // linux_HOST_OS
- # error Only Linux support for power64 little endian right now.
- # endif
+ 
+ 	.section	.note.GNU-stack,"",@progbits
+ # else // Not ELF v2

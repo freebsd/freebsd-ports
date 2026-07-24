@@ -1,6 +1,6 @@
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION?=	3
+PORTREVISION?=	0
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -29,7 +29,7 @@ CONFIGURE_ENV=		CC=${CC} CXX=${CXX} CPP=${CPP} GHC=${BOOT_GHC} \
 CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
 NO_CCACHE=		yes
 OPTIONS_SUB=		yes
-SHEBANG_FILES=		${BOOT_SCRIPT} \
+SHEBANG_FILES=		boot.source \
 			hadrian/bootstrap/bootstrap.py
 
 OPTIONS_DEFINE?=	DYNAMIC GMP PROFILE DOCS PDFDOCS
@@ -71,24 +71,25 @@ GMP_VARS_OFF=		hadrian_gmp_arg=--bignum=native
 
 PROFILE_OFF_FLAVOUR=	+no_profiled_libs
 
-GHC_VERSION?=		9.10.3
+GHC_VERSION?=		9.12.4
 LLVM_VERSION?=		15
 BOOT_GHC_VERSION?=	9.6.7
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION?=	12
 
-BASE_PACKAGES?=		Cabal-3.12.1.0 array-0.5.8.0 base-4.20.2.0 binary-0.8.9.3 \
-			bytestring-0.12.2.0 containers-0.7 deepseq-1.5.0.0 \
-			directory-1.3.8.5 exceptions-0.10.9 filepath-1.5.4.0 \
-			ghc-${GHC_VERSION} ghc-bignum-1.3 ghc-compact-0.1.0.0 \
-			ghc-experimental-9.1003.0 ghc-internal-9.1003.0 \
-			ghc-platform-0.1.0.0 ghc-prim-0.12.0 ghc-toolchain-0.1.0.0 \
-			haskeline-0.8.2.1 hpc-0.7.0.2 integer-gmp-1.1 mtl-2.3.1 \
-			os-string-2.0.7 parsec-3.1.18.0 pretty-1.1.3.6 \
-			process-1.6.26.1 stm-2.5.3.1 semaphore-compat-1.0.0 \
-			template-haskell-2.22.0.0 terminfo-0.4.1.7 text-2.1.3 \
-			time-1.12.2 transformers-0.6.1.1 unix-2.8.7.0 \
-			xhtml-3000.2.2.1
+BASE_PACKAGES?=		Cabal-3.14.2.0 array-0.5.8.0 base-4.21.2.0 binary-0.8.9.3 \
+			bytestring-0.12.2.0 containers-0.7 deepseq-1.5.1.0 \
+			directory-1.3.10.1 exceptions-0.10.12 file-io-0.1.6 \
+			filepath-1.5.5.0 ghc-${GHC_VERSION} ghc-bignum-1.3 \
+			ghc-compact-0.1.0.0 ghc-experimental-9.1204.0 \
+			ghc-internal-9.1204.0 ghc-platform-0.1.0.0 ghc-prim-0.13.0 \
+			ghc-toolchain-0.1.0.0 haddock-api-2.32.0 \
+			haddock-library-1.11.0 haskeline-0.8.4.1 hpc-0.7.0.2 \
+			integer-gmp-1.1 mtl-2.3.2 os-string-2.0.10 parsec-3.1.18.0 \
+			pretty-1.1.3.6 process-1.6.26.1 stm-2.5.3.1 \
+			semaphore-compat-1.0.0 template-haskell-2.23.0.0 \
+			terminfo-0.4.1.7 text-2.1.4 time-1.14 \
+			transformers-0.6.3.0 unix-2.8.8.0 xhtml-3000.2.2.1
 
 .for pkg in ${BASE_PACKAGES}
 PLIST_SUB+=	${pkg:C/-([0-9.])+//:tu}_VERSION=${pkg:C/^([^\.]*-)+//}
@@ -101,9 +102,6 @@ PLIST_SUB+=		GHC_ARCH=${GHC_ARCH}
 .if ${OSVERSION} >= 1500000
 BUILD_DEPENDS+=		${LOCALBASE}/lib/compat/libutil.so.9:misc/compat14x
 .endif
-
-# GHC 9.2 has a different name for this
-BOOT_SCRIPT?=	./boot.source
 
 .if ${SLAVE_PORT} != "yes"
 PORTDOCS=		*
@@ -163,7 +161,7 @@ HADRIAN_BOOT_TARBALL=   hadrian-9.6.7-boot-powerpc64le.tar.gz
 
 pre-configure:
 # Call the bootstrap script
-	cd ${WRKSRC} && ${BOOT_SCRIPT}
+	cd ${WRKSRC} && ./boot.source
 .if ! ${PORT_OPTIONS:MBOOT}
 # If we are using bootstrap compiler, configure and install it into ${BOOT_DIR}
 	cd ${BOOT_DIR} && ${SETENVI} ${CONFIGURE_ENV} ${CONFIGURE_CMD} --prefix=${BOOT_INSTALL_DIR}
