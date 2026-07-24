@@ -5507,3 +5507,4 @@ x11/swww|x11/awww|2026-07-17|Upstream renamed
 misc/py-fastavro|textproc/py-fastavro|2026-07-20|Remove duplicate port, use textproc/py-fastavro instead
 net/nitroshare||2026-07-21|Deprecated upstream, the author is working on the new GoLang nitroshare2 which is not ready yet
 databases/mysql-connector-java51|databases/mysql-connector-j|2026-07-24|Has expired: Superseded by mysql-connector-j, no users in the tree
+devel/log4j|devel/apache-log4j2|2026-07-24|Has expired: EOL since 2015, superseded by devel/apache-log4j2; https://news.apache.org/foundation/entry/apache_logging_services_project_announces

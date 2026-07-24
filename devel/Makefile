@@ -1655,7 +1655,6 @@
     SUBDIR += log4cplus
     SUBDIR += log4cpp
     SUBDIR += log4cxx
-    SUBDIR += log4j
     SUBDIR += log4net
     SUBDIR += log4sh
     SUBDIR += log4shib
