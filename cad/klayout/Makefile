@@ -1,11 +1,11 @@
 PORTNAME=	klayout
-PORTVERSION=	0.28.17
-DISTVERSIONPREFIX=	v
+DISTVERSION=	0.30.9
 CATEGORIES=	cad
+MASTER_SITES=	https://www.klayout.org/downloads/source/
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Qt-based chip mask layout viewing and editing tool
-WWW=		http://www.klayout.de/index.html
+WWW=		https://www.klayout.de/
 
 LICENSE=	GPLv2
 
@@ -14,73 +14,42 @@ BROKEN_powerpc=	type 'hash<long long>' does not provide a call operator
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++0x gmake gl python ruby qt:5
-USE_GITHUB=	yes
-GH_ACCOUNT=	KLayout
-USE_GL=		gl
-USE_QT=		core buildtools designer gui multimedia network printsupport \
-		qmake sql svg testlib uitools widgets xml xmlpatterns
-USE_LDCONFIG=	yes
+USES=		compiler:c++0x gmake gl python ruby qt:6 shebangfix tar:bz2
+USE_GL=		opengl
+USE_QT=		5compat base multimedia svg tools
+SHEBANG_FILES=	build.sh
 
-CXXFLAGS+=	-fdeclspec -fPIC -I${LOCALBASE}/include/qt5 \
-		${QT5MODULES:S,^,-I${LOCALBASE}/include/qt5/Qt,}
-LDFLAGS+=	${LIBS} ${QT5MODULES:S,^,-lQt5,} \
-		-L${LOCALBASE}/lib/qt5 -lpthread
-QT5MODULES=	Core Designer Gui Multimedia MultimediaWidgets \
-		Network PrintSupport Sql Svg Test Widgets Xml XmlPatterns
-MAKE_ENV=	INSTALLROOT=${STAGEDIR} \
-		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
+HAS_CONFIGURE=		yes
+CONFIGURE_SCRIPT=	build.sh
+CONFIGURE_ARGS=		-qmake qmake6 \
+			-with-qtbinding \
+			-prefix '${PREFIX}/${PORTNAME}' \
+			-python ${PYTHON_CMD} \
+			-ruby ${RUBY} \
+			-nolibgit2 \
+			-dry-run
+# need both due to project quirk
+MAKE_ARGS=		INSTALL_ROOT=${STAGEDIR} \
+			INSTALLROOT=${STAGEDIR}
+
+EXTRACT_AFTER_ARGS=	--exclude .git* \
+			--exclude Jenkinsfile* \
+			--exclude *mac.py \
+			--exclude macbuild \
+			--exclude ci-scripts \
+			--exclude dropbox-deployment.yml \
+			--exclude scripts \
+			--exclude src/gsiqt/qt4 \
+			--exclude src/gsiqt/qt5 \
+			--exclude travis-build.sh \
+			--no-same-owner --no-same-permissions
+
 BUILD_WRKSRC=	${WRKSRC}/build-release
 INSTALL_WRKSRC=	${WRKSRC}/build-release
-TEST_WRKSRC=	${WRKSRC}/build-release
-PLIST_SUB=	PORTVERSION=${PORTVERSION} PORTVERSION_R=${PORTVERSION:R}
-
-CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
-
-do-configure:
-	cd ${WRKSRC} && \
-	    ${SETENV} ${MAKE_ENV} ${CONFIGURE_SHELL} build.sh \
-		-with-qtbinding \
-		-rpath "${PREFIX}/lib/klayout" \
-		-prefix "${PREFIX}" \
-		-python ${PYTHON_CMD} \
-		-ruby ${RUBY} \
-		-nolibgit2 \
-		-dry-run
-
-post-configure:
-	${ECHO_CMD} "#define PLUGINS_BASEDIR \"${PREFIX}/lib/klayout\"" \
-	    > ${WRKSRC}/src/lay/lay/laySystemPathsDefaults.h
-
-pre-install:
-	for D in lib db tl rdb pya; do \
-	    ${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/klayout/$${D}; \
-	done
-	for D in db_plugins lay_plugins; do \
-	    ${MKDIR} ${STAGEDIR}${PREFIX}/lib/klayout/$${D}; \
-	done
+PLIST_SUB=	DISTVERSION=${DISTVERSION} DISTVERSION_R=${DISTVERSION:R}
 
 post-install:
-	cd ${INSTALL_WRKSRC} && \
-	    ${STRIP_CMD} `${FIND} libklayout*so* -type f` && \
-	    ${MV} libklayout*so* ${STAGEDIR}${PREFIX}/lib/klayout
-.for D in db_plugins lay_plugins
-	cd ${INSTALL_WRKSRC}/$D && \
-	    ${STRIP_CMD} `${FIND} *so* -type f` && \
-	    ${MV} *so* ${STAGEDIR}${PREFIX}/lib/klayout/$D
-.endfor
-	cd ${INSTALL_WRKSRC}/pymod && \
-	    ${STRIP_CMD} `${FIND} lib*so* -type f` && \
-	    ${MV} lib*so* ${STAGEDIR}${PREFIX}/lib/klayout
-	cd ${STAGEDIR}${PYTHON_SITELIBDIR}/klayout && \
-	    ${STRIP_CMD} `${FIND} *.so -type f`
-	cd ${INSTALL_WRKSRC} && \
-	    ${INSTALL_PROGRAM} klayout strm* ${STAGEDIR}${PREFIX}/bin
-
-do-test:
-	cd ${TEST_WRKSRC} && \
-	    ${SETENV} QT_QPA_PLATFORM=offscreen TESTTMP=testtmp TESTSRC=.. \
-	    LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib/klayout/db_plugins:${STAGEDIR}${PREFIX}/lib/klayout/lay_plugins \
-	    ./ut_runner
+	${RLN} ${STAGEDIR}${PREFIX}/${PORTNAME}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PORTNAME}/pymod/${PORTNAME}/*${PYTHON_TAG}.so
 
 .include <bsd.port.mk>
