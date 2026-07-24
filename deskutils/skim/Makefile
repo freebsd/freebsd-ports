@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.4.0
+DISTVERSION=	5.5.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -64,11 +64,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.6.3 \
+		clap-4.6.4 \
 		clap_builder-4.6.2 \
 		clap_complete-4.6.7 \
 		clap_complete_nushell-4.6.1 \
-		clap_derive-4.6.3 \
+		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		clap_mangen-0.3.0 \
 		color_quant-1.1.0 \
@@ -177,7 +177,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		kasuari-0.4.12 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.188 \
+		libc-0.2.189 \
 		libm-0.2.16 \
 		libmimalloc-sys-0.1.44 \
 		line-clipping-0.3.7 \
@@ -217,10 +217,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		pastey-0.2.3 \
-		pest-2.8.7 \
-		pest_derive-2.8.7 \
-		pest_generator-2.8.7 \
-		pest_meta-2.8.7 \
+		pest-2.8.8 \
+		pest_derive-2.8.8 \
+		pest_generator-2.8.8 \
+		pest_meta-2.8.8 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
@@ -236,8 +236,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		portable-pty-0.9.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
-		proc-macro-error-attr3-3.0.2 \
-		proc-macro-error3-3.0.2 \
+		proc-macro-error-attr3-3.0.3 \
+		proc-macro-error3-3.0.3 \
 		proc-macro2-1.0.107 \
 		pulldown-cmark-0.13.4 \
 		pxfm-0.1.30 \
@@ -313,7 +313,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
 		syn-2.0.119 \
-		syn-3.0.2 \
+		syn-3.0.3 \
 		tap-1.0.1 \
 		tempfile-3.27.0 \
 		termina-0.3.3 \
