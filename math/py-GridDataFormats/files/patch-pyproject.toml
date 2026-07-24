@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-05-23 02:52:48 UTC
++++ pyproject.toml
+@@ -8,8 +8,6 @@ description = "Reading and writing of data on regular 
+ [project]
+ name = "GridDataFormats"
+ description = "Reading and writing of data on regular grids in Python"
+-license = "LGPL-3.0-or-later"
+-license-files = ["COPYING", "COPYING.LESSER", "AUTHORS"]
+ authors = [
+     {name = "Oliver Beckstein", email = "orbeckst@gmail.com"},
+ ]
+@@ -47,6 +45,9 @@ dynamic = [
+ dynamic = [
+     "version",
+ ]
++
++[tool.setuptools.dynamic]
++version = {file = ["VERSION"]}
+ 
+ [project.optional-dependencies]
+ test = [
