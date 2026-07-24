@@ -1,5 +1,5 @@
 PORTNAME=	bogofilter
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-lmdb1
 
 COMMENT=	Fast, teachable, learning spam detector (LMDB 1.0 database)
