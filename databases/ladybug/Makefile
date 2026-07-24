@@ -1,6 +1,6 @@
 PORTNAME=	ladybug
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.1
+DISTVERSION=	0.18.3
 CATEGORIES=	databases
 
 MAINTAINER=	mahlon@martini.nu
@@ -33,8 +33,5 @@ PLIST_SUB=	VERSION=${DISTVERSION}
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/include/cppjieba ${STAGEDIR}${PREFIX}/share/cppjieba
-	${MV}  ${STAGEDIR}${PREFIX}/lib/liblbug.so ${STAGEDIR}${PREFIX}/lib/liblbug.so.${DISTVERSION}
-	${RLN} liblbug.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/liblbug.so
-	${RLN} liblbug.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/liblbug.so.0
 
 .include <bsd.port.mk>
