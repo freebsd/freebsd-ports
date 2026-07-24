@@ -1,5 +1,5 @@
 PORTNAME=	hgtools
-DISTVERSION=	7.0
+DISTVERSION=	8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,9 @@ EXPIRATION_DATE=	2026-09-30
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=1.9:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco.classes>0:devel/py-jaraco.classes@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}more-itertools>=3.7:devel/py-more-itertools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
