@@ -1,36 +1,26 @@
 PORTNAME=	evolvotron
-DISTVERSION=	0.8.1
-PORTREVISION=	9
+DISTVERSION=	0.8.3
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
-		SF/nemysisfreebsdp/${CATEGORIES}/:icons
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}_icons${EXTRACT_SUFX}:icons
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION:R}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Generative software that evolves images/textures/patterns
-WWW=		http://www.bottlenose.net/share/evolvotron/
+WWW=		https://github.com/WickedSmoke/evolvotron
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
+LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
-USES=		compiler:c++11-lib gl gnome python qmake qt:5
-USE_CXXSTD=	c++11
-USE_GL=		gl
-USE_QT=		core gui widgets xml buildtools:build
+USES=		compiler:c++17-lang gl gnome python qmake qt:6
+USE_CXXSTD=	c++17
+USE_GL=		opengl
+USE_QT=		base tools
 
-QMAKE_ARGS=		VERSION_NUMBER="${PORTVERSION}"
+QMAKE_ARGS=		VERSION_NUMBER="${DISTVERSION}"
 QMAKE_SOURCE_PATH=	${WRKSRC}/main.pro
 
-ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
-DESKTOP_ENTRIES=	"Evolvotron" \
-			"Interactive image generator" \
-			"${PORTNAME}" \
-			"${PORTNAME}" \
-			"Graphics;2DGraphics;" \
-			""
+ICON_SIZES=	48x48 128x128
 
 PORTDOCS=	NEWS README.md TODO USAGE evolvotron.html
 OPTIONS_DEFINE=	DOCS
@@ -42,11 +32,11 @@ do-install:
 .endfor
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
+	${INSTALL_DATA} ${WRKSRC}/dist/icon-${s:C/x.*//}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
