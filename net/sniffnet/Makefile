@@ -1,12 +1,11 @@
 PORTNAME=	sniffnet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
-PORTREVISION=	3
+DISTVERSION=	1.5.1
 CATEGORIES=	net wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Comfortably monitor your Internet traffic
-WWW=		https://www.sniffnet.net/
+WWW=		https://sniffnet.app/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
