@@ -1,5 +1,5 @@
-TIMESTAMP = 1784820457
-SHA256 (SpectrumKNX-npm-cache-1.16.1.tar.gz) = 68b0feaec116ce2a18de58a1fbb5653b7d5614b8b3ec90383ea0d0d627aa7f9f
-SIZE (SpectrumKNX-npm-cache-1.16.1.tar.gz) = 41297289
-SHA256 (martinhoefling-SpectrumKNX-v1.16.1_GH0.tar.gz) = b6e43b32fabbf0c7ff77eee8bb94318e9bee57a6d6a3036c97d57cc15c790cad
-SIZE (martinhoefling-SpectrumKNX-v1.16.1_GH0.tar.gz) = 10857590
+TIMESTAMP = 1784956632
+SHA256 (SpectrumKNX-npm-cache-1.16.2.tar.gz) = ae71a107878c724f969c3296cf9f9823047be51c29a437b746f7b62d958bba15
+SIZE (SpectrumKNX-npm-cache-1.16.2.tar.gz) = 41294578
+SHA256 (martinhoefling-SpectrumKNX-v1.16.2_GH0.tar.gz) = 68ffb865d8361ea8544d48912ae77862d8b195611cc40ff386cedfb4dbae0da7
+SIZE (martinhoefling-SpectrumKNX-v1.16.2_GH0.tar.gz) = 10864919
