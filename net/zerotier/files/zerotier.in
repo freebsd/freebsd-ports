@@ -12,6 +12,11 @@
 #				Set it to YES to enable zerotier.
 # zerotier_wait_for_net (bool):	Set to NO by default. Use for DHCP interfaces only
 #				Set it to YES to require zerotier to wait until online
+# zerotier_alias_6addrs (str):	Space-separated list of inet6 addresses to alias onto
+#				the ZeroTier interface after it comes up. Useful for
+#				containers using --network=host that need a specific
+#				6plane address assigned. Example:
+#				zerotier_alias_6addrs="fc::9/128"
 
 . /etc/rc.subr
 
@@ -23,6 +28,7 @@ load_rc_config $name
 
 : ${zerotier_enable:=NO}
 : ${zerotier_wait_for_net:=NO}
+: ${zerotier_alias_6addrs:=}
 
 required_modules=%%ZEROTIER_IF_TAP%%
 
@@ -53,6 +59,18 @@ start_postcmd()
             warn ${name} still not ONLINE, stopped blocking
         else
             warn ${name} is ONLINE
+        fi
+    fi
+    if [ -n "${zerotier_alias_6addrs}" ]; then
+        zerotier_iface=$(%%PREFIX%%/bin/zerotier-cli -j listnetworks 2>/dev/null \
+            | %%PREFIX%%/bin/jq -r '.[0].portDeviceName // empty')
+        if [ -n "${zerotier_iface}" ]; then
+            for addr in ${zerotier_alias_6addrs}; do
+                ifconfig ${zerotier_iface} inet6 ${addr} alias || \
+                    warn "${name}: failed to alias ${addr} on ${zerotier_iface}"
+            done
+        else
+            warn "${name}: zerotier_alias_6addrs set but no ZeroTier interface found"
         fi
     fi
 }
