@@ -1,3 +1,37 @@
+  <vuln vid="68b8de3a-8821-11f1-b72c-8447094a420f">
+    <topic>Vaultwarden -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>vaultwarden</name>
+	<range><lt>1.37.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Vaultwarden project reports:</p>
+	<blockquote cite="https://github.com/dani-garcia/vaultwarden/releases/tag/1.37.0">
+	  <ul>
+	    <li>SSRF via the icon endpoint [GHSA-hw4g-2v3f-74x5] [GHSA-vh5m-fc9v-m84g] (Medium, 5.8 / 6.3)</li>
+	    <li>Cross-Organization Cipher Access [GHSA-xwf8-pjh7-h589] (Medium, 5.9)</li>
+	    <li>Organization Policy Bypass on Directory Import [GHSA-88qc-6ch9-mc3j] (Medium, 5.5)</li>
+	    <li>Send Access-Count Bypass [GHSA-rxhg-2pw9-vf25] (Medium, 5.3)</li>
+	    <li>Unauthenticated WebSocket Flooding DDOS [GHSA-96f7-78q5-j345] (Medium, 5.3)</li>
+	    <li>Cross-Organization Secret Sharing [GHSA-455c-vgg9-jxw8] (Medium, 4.3)</li>
+	    <li>Organization Import Authorization [GHSA-f3qw-qg77-hmm4][GHSA-jq2g-h4xr-4mcr] (Medium, 4.3)</li>
+	    <li>Organization Data Enumeration via the Manager role [GHSA-rqf8-2568-r7mc] (Medium, 4.3)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/dani-garcia/vaultwarden/releases/tag/1.37.0</url>
+    </references>
+    <dates>
+      <discovery>2026-07-24</discovery>
+      <entry>2026-07-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f63b4b88-6901-4c12-b13d-5a821e25e9bf">
     <topic>unbound -- multiple vulnerabilities</topic>
     <affects>
