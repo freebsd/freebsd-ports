@@ -61,8 +61,6 @@ GALLIUM_DRIVERS:=       ${GALLIUM_DRIVERS:Nr600:Nradeonsi}
 MESON_ARGS+=	-Dgallium-drivers=${GALLIUM_DRIVERS:ts,}
 MESON_ARGS+=	-Dvulkan-drivers=""
 
-MESON_ARGS+=	-Dvideo-codecs="all"
-
 MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
 		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \

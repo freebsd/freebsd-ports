@@ -74,3 +74,9 @@ LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_VERSION}/lib
 MESON_ARGS+=	-Dllvm=enabled \
 		-Dlibunwind=disabled \
 		-Dgallium-mediafoundation=disabled
+
+# Enable all video codecs so RADV/ANV expose the full set of Vulkan Video
+# decode/encode extensions (H.264, H.265, AV1) and the gallium VA-API path
+# gets them too. Upstream default is 'all_free', which strips
+# patent-encumbered codecs.
+MESON_ARGS+=	-Dvideo-codecs=all
