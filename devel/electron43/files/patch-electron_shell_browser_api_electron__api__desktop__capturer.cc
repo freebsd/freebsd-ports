@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_desktop_capturer.cc.orig	2026-05-08 13:54:01 UTC
+--- electron/shell/browser/api/electron_api_desktop_capturer.cc.orig	2026-07-21 15:33:01 UTC
 +++ electron/shell/browser/api/electron_api_desktop_capturer.cc
-@@ -51,7 +51,7 @@ namespace {
+@@ -55,7 +55,7 @@ namespace {
  #endif
  
  namespace {

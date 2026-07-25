@@ -1,6 +1,6 @@
---- electron/script/spec-runner.js.orig	2026-06-29 20:35:15 UTC
+--- electron/script/spec-runner.js.orig	2026-07-21 15:33:01 UTC
 +++ electron/script/spec-runner.js
-@@ -356,7 +356,7 @@ async function runTestUsingElectron(specDir, testName,
+@@ -543,7 +543,7 @@ async function runTestUsingElectron(specDir, testName,
      );
    }
    const runnerArgs = [`electron/${specDir}`, ...argsToPass, ...additionalArgs];
@@ -9,7 +9,7 @@
      runnerArgs.unshift(path.resolve(__dirname, 'dbus_mock.py'), exe);
      exe = 'python3';
    }
-@@ -427,7 +427,7 @@ async function installSpecModules(dir) {
+@@ -614,7 +614,7 @@ async function installSpecModules(dir) {
      process.exit(1);
    }
  
