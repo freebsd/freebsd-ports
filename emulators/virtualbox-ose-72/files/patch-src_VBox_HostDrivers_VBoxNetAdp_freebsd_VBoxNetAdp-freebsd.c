@@ -1,4 +1,4 @@
---- src/VBox/HostDrivers/VBoxNetAdp/freebsd/VBoxNetAdp-freebsd.c.orig	2024-01-11 12:25:08 UTC
+--- src/VBox/HostDrivers/VBoxNetAdp/freebsd/VBoxNetAdp-freebsd.c.orig	2026-07-17 13:46:45 UTC
 +++ src/VBox/HostDrivers/VBoxNetAdp/freebsd/VBoxNetAdp-freebsd.c
 @@ -216,7 +216,11 @@ static void VBoxNetAdpFreeBSDNetinit(void *priv)
      PVBOXNETADP pThis = priv;
@@ -128,7 +128,7 @@
 +#else
      ifp->if_baudrate = 0;
  
-     strncpy(pThis->szName, ifp->if_xname, VBOXNETADP_MAX_NAME_LEN);
+     vboxNetAdpStrncpy(pThis->szName, ifp->if_xname, VBOXNETADP_MAX_NAME_LEN);
 +#endif
      pThis->u.s.ifp = ifp;
      VBOXCURVNET_RESTORE();
