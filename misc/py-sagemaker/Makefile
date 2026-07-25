@@ -1,5 +1,5 @@
 PORTNAME=	sagemaker
-DISTVERSION=	3.15.0
+DISTVERSION=	3.17.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sagemaker-core>=2.14.0:misc/py-sagemaker-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sagemaker-mlops>=1.14.0:misc/py-sagemaker-mlops@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sagemaker-serve>=1.14.0:misc/py-sagemaker-serve@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sagemaker-train>=1.14.0:misc/py-sagemaker-train@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sagemaker-core>=2.17.0:misc/py-sagemaker-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sagemaker-mlops>=1.17.0:misc/py-sagemaker-mlops@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sagemaker-serve>=1.17.0:misc/py-sagemaker-serve@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sagemaker-train>=1.17.0:misc/py-sagemaker-train@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist
