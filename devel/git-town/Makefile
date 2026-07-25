@@ -1,7 +1,6 @@
 PORTNAME=	git-town
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.0.3
-PORTREVISION=	1
+DISTVERSION=	24.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,12 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:modules
+USES=		go:1.26,modules
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:sys:v0.6.0:sys
 MAKE_ENV=	GOWORK=off
 
-GO_MODULE=	github.com/git-town/git-town/v23
+GO_MODULE=	github.com/git-town/git-town/v24
 
 PLIST_FILES=	bin/${PORTNAME}
 
