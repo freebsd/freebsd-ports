@@ -1,14 +1,12 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20270422
-PORTREVISION=	0  # leave in even if 0 to avoid accidental PORTEPOCH bumps
-PORTEPOCH=	1
+DISTVERSION=	g20260721
+#PORTREVISION=	0  # leave in even if 0 to avoid accidental PORTEPOCH bumps
+PORTEPOCH=	2
 CATEGORIES=	security net net-vpn
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	gert@greenie.muc.de
-# let's use ?= in spite of portlint WARNings because this might become
-# security/openvpn one day which would then have a slave port:
-COMMENT?=	Secure IP/Ethernet tunnel daemon
+COMMENT=	Secure IP/Ethernet tunnel daemon
 WWW=		https://openvpn.net/community/
 
 LICENSE=	GPLv2
@@ -21,16 +19,17 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_TAGNAME=	64fae9d82989ede6c92e230c594ab9335c05df8d
+GL_TAGNAME=	4ad3c71ec4bdad706332d0281a3bb3bba0234288
 USE_RC_SUBR=	openvpn
 
-SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
-		sample/sample-scripts/totpauth.py sample/sample-scripts/ucn.pl \
+SHEBANG_FILES=	sample/sample-plugins/keying-material-exporter-demo/http-client.py \
+		sample/sample-plugins/keying-material-exporter-demo/http-server.py \
+		sample/sample-scripts/auth-pam.pl \
+		sample/sample-scripts/totpauth.py \
+		sample/sample-scripts/ucn.pl \
 		sample/sample-scripts/verify-cn
 
 GNU_CONFIGURE=			yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS+=		--enable-strict
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CONFIGURE_ENV+=			PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 
@@ -149,8 +148,9 @@ post-install-DOCS-on:
 .endfor
 
 post-install-EXAMPLES-on:
-	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
-	${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
-	${RM} ${STAGEDIR}${EXAMPLESDIR}/sample-config-files/*.orig
+	(cd ${WRKSRC}/sample && \
+		${COPYTREE_SHARE} "sample-config-files sample-keys sample-plugins" \
+			${STAGEDIR}${EXAMPLESDIR}/ '! -name "*.orig"' && \
+		 ${COPYTREE_BIN} sample-scripts ${STAGEDIR}${EXAMPLESDIR}/ '! -name "*.orig"')
 
 .include <bsd.port.mk>
