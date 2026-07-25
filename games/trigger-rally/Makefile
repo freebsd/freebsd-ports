@@ -4,7 +4,7 @@ PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/trigger-rally/trigger-${PORTVERSION}
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Rally car racing game
 WWW=		http://trigger-rally.sourceforge.net
 

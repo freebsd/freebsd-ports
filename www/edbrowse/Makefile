@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8.12
 CATEGORIES=	www editors accessibility
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Line-oriented web browser and text editor
 WWW=		https://edbrowse.org/
 

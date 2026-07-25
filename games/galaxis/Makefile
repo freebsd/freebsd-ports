@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/galaxis/
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Clone of the nifty little Macintosh game
 WWW=		http://www.catb.org/~esr/galaxis/
 

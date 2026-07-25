@@ -3,7 +3,7 @@ DISTVERSION=	20221211
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Kernel sysctl MIB-Tree interface
 WWW=		https://gitlab.com/alfix/sysctlinfo
 

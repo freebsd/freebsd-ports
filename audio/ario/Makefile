@@ -4,7 +4,7 @@ PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	GTK client for MPD
 WWW=		https://ario-player.sourceforge.net/
 

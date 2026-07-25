@@ -2,7 +2,7 @@ PORTNAME=	bsddialog
 DISTVERSION=	1.1
 CATEGORIES=	devel
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Text User Interface Widgets
 WWW=		https://gitlab.com/alfix/bsddialog
 

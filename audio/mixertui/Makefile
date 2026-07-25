@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5
 CATEGORIES=	audio
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Audio Mixer with a Terminal User Interface
 WWW=		https://gitlab.com/alfix/mixertui/
 

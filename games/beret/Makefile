@@ -2,7 +2,7 @@ PORTNAME=	beret
 PORTVERSION=	1.2.1
 CATEGORIES=	games
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	2D puzzle-platformer game
 WWW=		https://kiwisauce.com/beret/
 

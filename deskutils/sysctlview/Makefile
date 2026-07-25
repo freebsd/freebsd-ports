@@ -3,7 +3,7 @@ PORTVERSION=	2.1
 PORTREVISION=	4
 CATEGORIES=	deskutils
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Graphical sysctl MIB explorer
 WWW=		https://gitlab.com/alfix/sysctlview/
 

@@ -2,7 +2,7 @@ PORTNAME=	sysctlbyname-improved-kmod
 DISTVERSION=	20221211
 CATEGORIES=	sysutils
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Internal sysctl object to implement an improved sysctlbyname(3)
 WWW=		https://gitlab.com/alfix/sysctlbyname-improved/
 

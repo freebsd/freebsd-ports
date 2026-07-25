@@ -2,7 +2,7 @@ PORTNAME=	nsysctl
 DISTVERSION=	2.2
 CATEGORIES=	sysutils
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Utility to get and set kernel state at runtime
 WWW=		https://gitlab.com/alfix/nsysctl/
 

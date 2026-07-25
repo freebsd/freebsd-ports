@@ -3,7 +3,7 @@ DISTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Sysctl MIB-Tree API
 WWW=		https://gitlab.com/alfix/sysctlmibinfo/
 

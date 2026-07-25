@@ -3,7 +3,7 @@ PORTVERSION=	2.11
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Battleships solitaire game with a color interface
 WWW=		http://www.catb.org/~esr/bs/
 

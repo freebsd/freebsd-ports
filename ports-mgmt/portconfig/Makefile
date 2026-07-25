@@ -3,7 +3,7 @@ DISTVERSION=	0.6.2
 PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Utility to set up FreeBSD port options
 WWW=		https://gitlab.com/alfix/portconfig
 

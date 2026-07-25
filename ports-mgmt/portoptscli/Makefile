@@ -3,7 +3,7 @@ DISTVERSION=	0.0.1
 PORTREVISION=	1
 CATEGORIES=	ports-mgmt accessibility
 
-MAINTAINER=	alfix86@gmail.com
+MAINTAINER=	asiciliano@FreeBSD.org
 COMMENT=	Utility to set up FreeBSD ports options
 WWW=		https://gitlab.com/alfix/portoptscli
 
