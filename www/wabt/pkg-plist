@@ -81,6 +81,7 @@ lib/cmake/wabt/wabt-config-version.cmake
 lib/cmake/wabt/wabt-config.cmake
 lib/cmake/wabt/wabt-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/wabt/wabt-targets.cmake
+%%FUZZ_TOOLS%%lib/libwabt-fuzz.so
 lib/libwabt.so
 lib/libwasm-rt-impl.so
 share/man/man1/spectest-interp.1.gz
