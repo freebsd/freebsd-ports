@@ -79,16 +79,16 @@ def get_fixed_version_from_detail(url):
         pass
     return None
 
-def auto_detect_boundaries(soup, fixed_version, user_tip_sa=None, user_base_sa=None, max_lookahead=4):
+def auto_detect_boundaries(soup, fixed_version, user_base_sa=None, user_tip_sa=None, max_lookahead=4):
     """
     Crawls the index top-down to find the contiguous batch of SAs.
-    Uses user_tip_sa as a strict start point (ceiling) and user_base_sa as a strict end point (floor).
+    Uses user_base_sa as a strict end point (floor/oldest) and user_tip_sa as a strict start point (ceiling/newest).
     """
     print(f"[*] Auto-detecting SA range for version {fixed_version} (and newer)...", file=sys.stderr)
-    if user_tip_sa:
-        print(f"[*] Hard ceiling (tip) set to: {user_tip_sa}", file=sys.stderr)
     if user_base_sa:
         print(f"[*] Hard floor (base) set to: {user_base_sa}", file=sys.stderr)
+    if user_tip_sa:
+        print(f"[*] Hard ceiling (tip) set to: {user_tip_sa}", file=sys.stderr)
 
     target_v_tuple = parse_version_string(fixed_version)
 
@@ -97,16 +97,25 @@ def auto_detect_boundaries(soup, fixed_version, user_tip_sa=None, user_base_sa=N
     base_id = parse_sa_id(user_base_sa) if user_base_sa else None
 
     sa_links = []
+    seen_sa_ids = set()
+
     for tr in soup.find_all('tr'):
         tds = tr.find_all(['td', 'th'])
         if len(tds) >= 4:
             raw_id_col = tds[0].get_text(separator=' ', strip=True)
             sa_match = re.search(r'GStreamer-SA-(\d{4}-\d{4})', raw_id_col, re.IGNORECASE)
             if sa_match:
+                sa_id_str = f"GStreamer-SA-{sa_match.group(1)}"
+
+                # Keep top-down unique instances only to ensure we stop at the newest duplicate slot
+                if sa_id_str in seen_sa_ids:
+                    continue
+                seen_sa_ids.add(sa_id_str)
+
                 a_tag = tds[3].find('a')
                 if a_tag and 'href' in a_tag.attrs:
                     sa_links.append({
-                        'id': f"GStreamer-SA-{sa_match.group(1)}",
+                        'id': sa_id_str,
                         'url': requests.compat.urljoin(GST_SECURITY_URL, a_tag['href'])
                     })
 
@@ -166,22 +175,29 @@ def fetch_and_parse_advisories(sa1, sa2, fixed_version, auto_mode):
     soup = BeautifulSoup(response.text, 'html.parser')
 
     if auto_mode:
-        # Pass sa1 strictly as the tip (start) and sa2 strictly as the base (end)
-        sa1, sa2 = auto_detect_boundaries(soup, fixed_version, user_tip_sa=sa1, user_base_sa=sa2)
+        # Pass sa1 strictly as the base (floor/oldest) and sa2 strictly as the tip (ceiling/newest)
+        sa1, sa2 = auto_detect_boundaries(soup, fixed_version, user_base_sa=sa1, user_tip_sa=sa2)
 
-    id1 = parse_sa_id(sa1)
-    id2 = parse_sa_id(sa2)
+    def normalize_sa(sa):
+        if not sa: return None
+        m = re.search(r'(\d{4}-\d{4})', sa)
+        return f"GStreamer-SA-{m.group(1)}" if m else None
 
-    start_id = min(id1, id2)
-    end_id = max(id1, id2)
+    bound1 = normalize_sa(sa1)
+    bound2 = normalize_sa(sa2)
+
+    # Create a target set for positional boundary tracking to ignore errant numeric IDs
+    boundaries = set([b for b in (bound1, bound2) if b])
 
     cves = set()
     sa_items = []
+    seen_sa_ids = set()
     affected_packages = set()
     dates = []
     urls = set()
 
     target_v_tuple = parse_version_string(fixed_version)
+    in_range = False
 
     for tr in soup.find_all('tr'):
         tds = tr.find_all(['td', 'th'])
@@ -193,81 +209,92 @@ def fetch_and_parse_advisories(sa1, sa2, fixed_version, auto_mode):
                 continue
 
             sa_id = f"GStreamer-SA-{sa_match.group(1)}"
-            current_id = parse_sa_id(sa_id)
 
-            if start_id <= current_id <= end_id:
-                summary_text = tds[1].get_text(separator=' ', strip=True)
+            # Check if current row physically matches one of our targets to toggle tracking
+            is_boundary = sa_id in boundaries
 
-                if "Reserved" in summary_text or "tbd" in summary_text.lower():
-                    continue
+            if is_boundary and not in_range:
+                in_range = True
 
-                a_tag = tds[3].find('a') if len(tds) > 3 else None
-                detail_url = None
-                if a_tag and 'href' in a_tag.attrs:
-                    detail_url = requests.compat.urljoin(GST_SECURITY_URL, a_tag['href'])
+            if in_range:
+                # Deduplicate identical occurrences immediately
+                if sa_id not in seen_sa_ids:
+                    seen_sa_ids.add(sa_id)
 
-                skip_sa = False
-                det_text = ""
+                    summary_text = tds[1].get_text(separator=' ', strip=True)
 
-                if detail_url:
-                    try:
-                        det_resp = requests.get(detail_url, timeout=5)
-                        det_resp.raise_for_status()
+                    if "Reserved" not in summary_text and "tbd" not in summary_text.lower():
+                        a_tag = tds[3].find('a') if len(tds) > 3 else None
+                        detail_url = None
+                        if a_tag and 'href' in a_tag.attrs:
+                            detail_url = requests.compat.urljoin(GST_SECURITY_URL, a_tag['href'])
 
-                        # Extract and check the version
-                        match = re.search(r'(?:<|&lt;)\s*([0-9]+\.[0-9]+\.[0-9]+)', det_resp.text)
-                        found_ver = match.group(1) if match else None
-                        current_v_tuple = parse_version_string(found_ver)
+                        skip_sa = False
+                        det_text = ""
 
-                        if current_v_tuple < target_v_tuple:
-                            print(f"[*] Skipping {sa_id} (fixes {found_ver} < {fixed_version})", file=sys.stderr)
-                            skip_sa = True
-                        else:
-                            det_soup = BeautifulSoup(det_resp.text, 'html.parser')
-                            det_text = det_soup.get_text(separator=' ', strip=True)
+                        if detail_url:
+                            try:
+                                det_resp = requests.get(detail_url, timeout=5)
+                                det_resp.raise_for_status()
 
-                    except requests.RequestException as e:
-                        print(f"[!] Warning: Failed to fetch {detail_url}: {e}", file=sys.stderr)
+                                # Extract and check the version
+                                match = re.search(r'(?:<|&lt;)\s*([0-9]+\.[0-9]+\.[0-9]+)', det_resp.text)
+                                found_ver = match.group(1) if match else None
+                                current_v_tuple = parse_version_string(found_ver)
 
-                if skip_sa:
-                    continue
+                                if current_v_tuple < target_v_tuple:
+                                    print(f"[*] Skipping {sa_id} (fixes {found_ver} < {fixed_version})", file=sys.stderr)
+                                    skip_sa = True
+                                else:
+                                    det_soup = BeautifulSoup(det_resp.text, 'html.parser')
+                                    det_text = det_soup.get_text(separator=' ', strip=True)
 
-                # If we made it here, the SA is valid. Append to arrays.
-                date_text = tds[2].get_text(strip=True)
-                found_cves = re.findall(r'(CVE-\d{4}-\d{4,7})', raw_id_col, re.IGNORECASE)
-                cves.update([cve.upper() for cve in found_cves if "XXXX" not in cve.upper()])
+                            except requests.RequestException as e:
+                                print(f"[!] Warning: Failed to fetch {detail_url}: {e}", file=sys.stderr)
 
-                if date_text and re.match(r'\d{4}-\d{2}-\d{2}', date_text):
-                    dates.append(date_text)
+                        if not skip_sa:
+                            # If we made it here, the SA is valid. Append to arrays.
+                            date_text = tds[2].get_text(strip=True)
+                            found_cves = re.findall(r'(CVE-\d{4}-\d{4,7})', raw_id_col, re.IGNORECASE)
+                            cves.update([cve.upper() for cve in found_cves if "XXXX" not in cve.upper()])
 
-                clean_summary = " ".join(summary_text.split())
-                sa_items.append((sa_id, clean_summary))
+                            if date_text and re.match(r'\d{4}-\d{2}-\d{2}', date_text):
+                                dates.append(date_text)
 
-                if detail_url:
-                    urls.add(detail_url)
+                            clean_summary = " ".join(summary_text.split())
+                            sa_items.append((sa_id, clean_summary))
 
-                # Parse affected packages using the text we already downloaded
-                if det_text:
-                    patterns = [
-                        r'Affected\s+Version[s]?[\s:]*(?:GStreamer\s+)?(gst-[a-z0-9-]+|gstreamer)',
-                        r'Affected\s+module[s]?[\s:]*(?:GStreamer\s+)?([a-z0-9-,\s]+)',
-                        r'Module[s]?[\s:]*(?:GStreamer\s+)?([a-z0-9-,\s]+)'
-                    ]
+                            if detail_url:
+                                urls.add(detail_url)
 
-                    found_for_this_sa = False
-                    for pat in patterns:
-                        matches = re.findall(pat, det_text, re.IGNORECASE)
-                        for match_str in matches:
-                            for mod in re.split(r'[,\s]+', match_str):
-                                mod = mod.strip().lower()
-                                if mod in PACKAGE_MAP or mod == 'gst-python':
-                                    affected_packages.update(map_module_to_port(mod))
-                                    found_for_this_sa = True
+                            # Parse affected packages using the text we already downloaded
+                            if det_text:
+                                patterns = [
+                                    r'Affected\s+Version[s]?[\s:]*(?:GStreamer\s+)?(gst-[a-z0-9-]+|gstreamer)',
+                                    r'Affected\s+module[s]?[\s:]*(?:GStreamer\s+)?([a-z0-9-,\s]+)',
+                                    r'Module[s]?[\s:]*(?:GStreamer\s+)?([a-z0-9-,\s]+)'
+                                ]
 
-                    if not found_for_this_sa:
-                        for mod in list(PACKAGE_MAP.keys()) + ['gst-python']:
-                            if mod != 'gstreamer' and re.search(r'\b' + re.escape(mod) + r'\b', det_text, re.IGNORECASE):
-                                affected_packages.update(map_module_to_port(mod))
+                                found_for_this_sa = False
+                                for pat in patterns:
+                                    matches = re.findall(pat, det_text, re.IGNORECASE)
+                                    for match_str in matches:
+                                        for mod in re.split(r'[,\s]+', match_str):
+                                            mod = mod.strip().lower()
+                                            if mod in PACKAGE_MAP or mod == 'gst-python':
+                                                affected_packages.update(map_module_to_port(mod))
+                                                found_for_this_sa = True
+
+                                if not found_for_this_sa:
+                                    for mod in list(PACKAGE_MAP.keys()) + ['gst-python']:
+                                        if mod != 'gstreamer' and re.search(r'\b' + re.escape(mod) + r'\b', det_text, re.IGNORECASE):
+                                            affected_packages.update(map_module_to_port(mod))
+
+            # Discard boundary immediately after processing row and sever top-down loop if complete
+            if is_boundary and in_range:
+                boundaries.discard(sa_id)
+                if not boundaries:
+                    break
 
     if not sa_items:
         print(f"[!] Error: No valid security advisories found in the specified range matching >= {fixed_version}.", file=sys.stderr)
@@ -333,7 +360,8 @@ def generate_vuxml(cves, sa_items, affected_packages, fixed_version, dates, urls
     print('    </description>')
     print('    <references>')
 
-    for cve in sorted(cves):
+    # Sort CVEs chronologically by year and sequence number
+    for cve in sorted(cves, key=lambda x: (int(x.split('-')[1]), int(x.split('-')[2]))):
         print(f'      <cvename>{cve}</cvename>')
 
     if urls:
@@ -351,8 +379,8 @@ def generate_vuxml(cves, sa_items, affected_packages, fixed_version, dates, urls
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-1", "--sa1", help="First GStreamer SA ID boundary (with --auto, this is the ceiling)", required=False)
-    parser.add_argument("-2", "--sa2", help="Second GStreamer SA ID boundary (with --auto, this is the floor)", required=False)
+    parser.add_argument("-1", "--sa1", help="First GStreamer SA ID boundary (with --auto, this is the floor)", required=False)
+    parser.add_argument("-2", "--sa2", help="Second GStreamer SA ID boundary (with --auto, this is the ceiling)", required=False)
     parser.add_argument("-v", "--fixed-version", help="The version where these issues are fixed (e.g., 1.28.4)", required=True)
     parser.add_argument("-a", "--auto", help="Automatically detect SA range based on fixed-version", action="store_true")
 

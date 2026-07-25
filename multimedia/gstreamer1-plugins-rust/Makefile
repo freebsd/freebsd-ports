@@ -1,6 +1,5 @@
 PORTNAME=	gstreamer1-plugins-rust
-DISTVERSION=	${gst-rust_VERSION}
-PORTREVISION=	2
+DISTVERSION=	${_GST_VERSION}
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -22,6 +21,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	gstreamer
 GL_PROJECT=	gst-plugins-rs
+GL_TAGNAME=	gstreamer-${DISTVERSION}
 USE_GNOME=	glib20
 USE_GSTREAMER=	webrtc
 

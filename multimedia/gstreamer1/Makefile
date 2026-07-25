@@ -60,33 +60,45 @@ PTP_MESON_ENABLED=	ptp-helper
 MESON_ARGS+=	-D ptp-helper=disabled
 .endif
 
+# Define standard ports requiring a basic makesum
+_GST_MAKESUM_PORTS=	devel/gstreamer1-devtools \
+			multimedia/gstreamer1-editing-services \
+			multimedia/gstreamer1-libav \
+			multimedia/gstreamer1-rtsp-server \
+			multimedia/py-gstreamer1
+
 # Custom target to update distinfo for all gstreamer1 ports under control of
 # _GST1_VERSION set in Mk/Uses/gstreamer.mk
 makesum-all: makesum
-.for p in editing-services libav rtsp-server
-	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-${p} makesum
+.for p in ${_GST_MAKESUM_PORTS}
+	@${MAKE} -C ${.CURDIR:H:H}/${p} makesum
 .endfor
-	@${MAKE} -C ${.CURDIR:H:H}/devel/gstreamer1-devtools makesum
 	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-plugins makesum-all
-	@${MAKE} -C ${.CURDIR:H:H}/multimedia/py-gstreamer1 makesum
+	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-plugins-rust cargo-crates-merge
+
+# Custom target to check for python mods needed by generate-vuxml-entry.py.
+# This is a helper, since the FreeBSD ports infrastructure doesn't currently
+# have a built-in method to deal with dependencies required by custom targets.
+generate-vuxml-py-mod-check:
+	@for mod in "bs4,beautifulsoup" "requests,requests"; do \
+	    IFS=","; \
+	    set -- $${mod}; \
+	    if ! ${PYTHON_CMD} -c "import $${1}" 2>/dev/null; then \
+		${ECHO_MSG} "====> Error: Missing Python module $${1}. Please install it: \`pkg install ${PYTHON_PKGNAMEPREFIX}$${2}\`"; \
+		exit 1; \
+	    else \
+		${ECHO_MSG} "====> Found Python module $${1}"; \
+	    fi \
+	done
 
 # Automatically creates a VuXML entry for the GSreamer suite. This uses a
 # python script to scrape https://gstreamer.freedesktop.org/security/
 # and is pretty good in auto mode, but the output should still be verifed.
 # The script can be run manually with finer parameters for quirky cases.
-create-vuxml:
-	@if ! ${PYTHON_CMD} -c "import bs4" 2>/dev/null; then \
-		${ECHO_MSG} "====>  Error: create-vuxml target requires the bs4 Python module."; \
-		${ECHO_MSG} "====>  Please install it: pkg install ${PYTHON_PKGNAMEPREFIX}beautifulsoup4"; \
-		exit 1; \
-	fi
-	@if ! ${PYTHON_CMD} -c "import requests" 2>/dev/null; then \
-		${ECHO_MSG} "====>  Error: create-vuxml target requires the requests Python module."; \
-		${ECHO_MSG} "====>  Please install it: pkg install ${PYTHON_PKGNAMEPREFIX}requests"; \
-		exit 1; \
-	fi
+generate-vuxml: generate-vuxml-py-mod-check
 	@${ECHO_MSG} "===>  Auto-generating VuXML entry for GStreamer ${PORTVERSION}..."
 	@if [ -f "${FILESDIR}/generate-vuxml-entry.py" ]; then \
+		set -e; \
 		current_year=$$(date +%Y); \
 		vuxml_file="${.CURDIR:H:H}/security/vuxml/vuln/$${current_year}.xml"; \
 		tmp_vuxml=$$(${MKTEMP} -t gst_vuxml); \
