@@ -15,7 +15,7 @@ USES=		cpe php:web shebangfix zip
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	${PORTNAME}\!
 
-CONFLICTS_INSTALL=	joomla4
+CONFLICTS_INSTALL=	joomla4 joomla6
 
 NO_ARCH=	yes
 NO_BUILD=	yes
