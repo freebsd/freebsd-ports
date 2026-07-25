@@ -1,9 +1,5 @@
-TIMESTAMP = 1709136968
-SHA256 (cabal/cpphs-1.20.9.1/cpphs-1.20.9.1.tar.gz) = 7f59b10bc3374004cee3c04fa4ee4a1b90d0dca84a3d0e436d5861a1aa3b919f
-SIZE (cabal/cpphs-1.20.9.1/cpphs-1.20.9.1.tar.gz) = 45496
-SHA256 (cabal/cpphs-1.20.9.1/revision/1.cabal) = 0ad26fef4e6be4cb13e1df93aab7bdbe9c3d3bc6c63b84d9e29cc0f691fe12b9
-SIZE (cabal/cpphs-1.20.9.1/revision/1.cabal) = 3331
-SHA256 (cabal/polyparse-1.13/polyparse-1.13.tar.gz) = 1c4c72980e1e5a4f07fea65ca08b2399581d2a6aa21eb1078f7ad286c279707b
-SIZE (cabal/polyparse-1.13/polyparse-1.13.tar.gz) = 33144
-SHA256 (cabal/polyparse-1.13/revision/9.cabal) = 4960fad39d3edcc3827ca93546dbf42eb59c1a022ec06a8d756e6a0558c47f29
-SIZE (cabal/polyparse-1.13/revision/9.cabal) = 2754
+TIMESTAMP = 1784988392
+SHA256 (cabal/cpphs-1.20.10/cpphs-1.20.10.tar.gz) = 7fa78ae9a2a1d1c69179238e8849340ad26be6496b763a489bf2e0eb5b7c4c19
+SIZE (cabal/cpphs-1.20.10/cpphs-1.20.10.tar.gz) = 45622
+SHA256 (cabal/polyparse-1.13.1/polyparse-1.13.1.tar.gz) = 395b89ed9901e9b19eaa652d2a17b9d1ed04c111b2cd92b8996868bea642bfd6
+SIZE (cabal/polyparse-1.13.1/polyparse-1.13.1.tar.gz) = 33421
