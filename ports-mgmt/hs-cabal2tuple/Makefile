@@ -1,6 +1,7 @@
 PORTNAME=	cabal2tuple
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.0.4.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt haskell
 
 MAINTAINER=	arrowd@FreeBSD.org
