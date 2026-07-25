@@ -35,7 +35,7 @@
 #   Path to the graylog installation.
 #
 # graylog_data_dir (string):
-#   Default vaule: %%GRAYLOG_DATA_DIR%%
+#   Default value: %%GRAYLOG_DATA_DIR%%
 #   Storage location for the graylog journal
 #
 # graylog_run_dir (string):
