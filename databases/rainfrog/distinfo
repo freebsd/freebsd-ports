@@ -1,4 +1,4 @@
-TIMESTAMP = 1784463533
+TIMESTAMP = 1784972336
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -1199,5 +1199,5 @@ SHA256 (rust/crates/zlib-rs-0.5.5.crate) = 40990edd51aae2c2b6907af74ffb635029d57
 SIZE (rust/crates/zlib-rs-0.5.5.crate) = 207080
 SHA256 (rust/crates/zopfli-0.8.3.crate) = f05cd8797d63865425ff89b5c4a48804f35ba0ce8d125800027ad6017d2b5249
 SIZE (rust/crates/zopfli-0.8.3.crate) = 51589
-SHA256 (achristmascarl-rainfrog-v0.3.20_GH0.tar.gz) = a38f4d1bed46ee4c81a36cec0c8999532c7f8900717b87b7f5bd5b02a93defd8
-SIZE (achristmascarl-rainfrog-v0.3.20_GH0.tar.gz) = 1840625
+SHA256 (achristmascarl-rainfrog-v0.4.1_GH0.tar.gz) = 57a11a6a2287a9cd180f72f71e5f57617ded89ee1d22ab5e7ffe59d124ab9ef3
+SIZE (achristmascarl-rainfrog-v0.4.1_GH0.tar.gz) = 3599485
