@@ -1,6 +1,6 @@
-TIMESTAMP = 1784152692
-SHA256 (cbor2-6.1.0.tar.gz) = 7a988431ef0e0e24dab2c701d78b48d23389c24b96a7c82dbd90353af335e141
-SIZE (cbor2-6.1.0.tar.gz) = 85870
+TIMESTAMP = 1784948366
+SHA256 (cbor2-6.1.1.tar.gz) = 6f0644869e0fdcd6f3874330b8f1cebd009f33191de43acf609dc2409cd362c4
+SIZE (cbor2-6.1.1.tar.gz) = 86297
 SHA256 (rust/crates/autocfg-1.5.0.crate) = c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8
 SIZE (rust/crates/autocfg-1.5.0.crate) = 18729
 SHA256 (rust/crates/bigdecimal-0.4.10.crate) = 4d6867f1565b3aad85681f1015055b087fcfd840d6aeee6eee7f2da317603695
