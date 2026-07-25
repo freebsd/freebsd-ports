@@ -28,9 +28,6 @@ CONFLICTS_INSTALL=	giftool
 
 OPTIONS_DEFINE=	DOCS
 
-post-extract:
-	${CP} ${FILESDIR}/giflib-logo.gif ${WRKSRC}/doc
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 	${STRIP_CMD} --strip-unneeded ${STAGEDIR}${PREFIX}/lib/libgif.so.7.2.0
