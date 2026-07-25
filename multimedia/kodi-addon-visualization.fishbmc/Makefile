@@ -1,5 +1,5 @@
 PORTNAME=	visualization.fishbmc
-PORTVERSION=	22.0.1.20260227
+PORTVERSION=	22.1.0.20260525
 DISTVERSIONSUFFIX=	-Piers
 CATEGORIES=	multimedia
 
@@ -15,7 +15,7 @@ USES=		cmake localbase compiler:c++14-lang gl kodi
 USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
-GH_TAGNAME=	a5d84d7b150a9cd36cb999ca26a3fd0226757645
+GH_TAGNAME=	d00849a2a1f0db54ec6cdde8774df74eda24bbf4
 USE_GL=		egl gl glu
 
 PLIST_SUB=	SOVERSION=${PORTVERSION}
