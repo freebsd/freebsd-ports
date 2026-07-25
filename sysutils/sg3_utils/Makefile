@@ -1,10 +1,15 @@
 PORTNAME=	sg3_utils
-DISTVERSION=	1.48
-PORTREVISION=	2
+DISTVERSION=	1.49
 CATEGORIES=	sysutils
-MASTER_SITES=	http://sg.danny.cz/sg/p/
+MASTER_SITES=	https://sg.danny.cz/sg/p/
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_SITES=	https://github.com/doug-gilbert/sg3_utils/commit/
+PATCHFILES=	958434a1d2b5b2f4f465c9196c3c4ecf362eeb22.patch:-p1 \
+		c32e19f52e7b5c75bd2a9b222c072eef16a4e583.patch:-p1 \
+		c60834d53313f3796f43fdf874db98a9e8b03b6e.patch:-p1 \
+		840637b1c402a02ea56a5447fb616200f5314a51.patch:-p1
+
+MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Set of utilities that send SCSI commands to devices
 WWW=		https://sg.danny.cz/sg/sg3_utils.html
 
@@ -13,16 +18,10 @@ LICENSE_COMB=	multi
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/BSD_LICENSE
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
-USES=		gmake libtool shebangfix tar:tgz
-USE_LDCONFIG=	yes
+USES=		cmake shebangfix tar:xz
 SHEBANG_FILES=	scripts/*
-
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	SOVERSION=${DISTVERSION}
-
-post-install:
-		@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsgutils2*.so.*
 
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-bin/rescan-scsi-bus.sh
-bin/scsi_logging_level
 bin/scsi_mandat
 bin/scsi_readcap
 bin/scsi_ready
@@ -77,13 +75,13 @@ include/scsi/sg_json_sg_lib.h
 include/scsi/sg_lib.h
 include/scsi/sg_lib_data.h
 include/scsi/sg_lib_names.h
+include/scsi/sg_nvme.h
 include/scsi/sg_pr2serr.h
 include/scsi/sg_pt.h
-include/scsi/sg_pt_nvme.h
+include/scsi/sg_snt.h
 include/scsi/sg_unaligned.h
 lib/libsgutils2-%%SOVERSION%%.so.2
 lib/libsgutils2-%%SOVERSION%%.so.2.0.0
-lib/libsgutils2.a
 lib/libsgutils2.so
 share/man/man8/scsi_mandat.8.gz
 share/man/man8/scsi_readcap.8.gz
