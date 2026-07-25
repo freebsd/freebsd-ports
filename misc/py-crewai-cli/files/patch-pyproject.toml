@@ -1,14 +1,14 @@
---- pyproject.toml.orig	2026-07-17 21:05:33 UTC
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
-@@ -8,22 +8,22 @@ dependencies = [
+@@ -8,20 +8,20 @@ dependencies = [
  ]
  requires-python = ">=3.10, <3.14"
  dependencies = [
--    "crewai-core==1.15.4",
-+    "crewai-core>=1.15.2",
+-    "crewai-core==1.15.6",
++    "crewai-core>=1.15.6",
      "click>=8.1.7,<9",
 -    "pydantic>=2.11.9,<2.13",
--    "pydantic-settings~=2.10.1",
+-    "pydantic-settings>=2.14.2,<3",
 -    "appdirs~=1.4.4",
 +    "pydantic>=2.11.9",
 +    "pydantic-settings>=2.10.1",
@@ -23,13 +23,10 @@
 +    "tomli>=2.0.2",
 +    "tomli-w>=1.1.0",
      "packaging>=23.0",
-     "python-dotenv>=1.2.2,<2",
+-    "python-dotenv>=1.2.2,<2",
 -    "uv~=0.11.6",
--    "textual>=7.5.0",
--    "certifi",
++    "python-dotenv>=1.2.2",
 +    "uv>=0.11.6",
-+    "textual>=6.12.0",
-+    "certifi>=0",
+     "textual>=7.5.0",
+     "certifi",
  ]
- 
- [project.urls]
