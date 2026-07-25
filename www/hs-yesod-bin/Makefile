@@ -1,5 +1,6 @@
 PORTNAME=	yesod-bin
 DISTVERSION=	1.6.2.4
+PORTREVISION=	1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
