@@ -1,5 +1,5 @@
 PORTNAME=	osslsigncode
-DISTVERSION=	2.13
+DISTVERSION=	2.14
 CATEGORIES=	security devel
 
 MAINTAINER=	bofh@FreeBSD.org
