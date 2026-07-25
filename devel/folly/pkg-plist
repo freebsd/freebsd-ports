@@ -649,6 +649,7 @@ include/folly/io/async/TimeoutManager.h
 include/folly/io/async/TimerFD.h
 include/folly/io/async/TimerFDTimeoutManager.h
 include/folly/io/async/VirtualEventBase.h
+include/folly/io/async/WriteCallbackWithState.h
 include/folly/io/async/WriteChainAsyncTransportWrapper.h
 include/folly/io/async/WriteFlags.h
 include/folly/io/async/fdsock/AsyncFdSocket.h
