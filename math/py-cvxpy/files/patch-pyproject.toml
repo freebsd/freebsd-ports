@@ -1,7 +1,18 @@
 -- Use inline table format for license field; the SPDX string format (PEP 639)
 -- is only supported by setuptools >= 78.0, which is not yet in the ports tree.
+-- Drop the setuptools version floor so the port builds with the version of
+-- devel/py-setuptools currently in the ports tree.
 --- pyproject.toml.orig	2026-05-19 08:06:52 UTC
 +++ pyproject.toml
+@@ -67,7 +67,7 @@ requires = [
+     "numpy >= 2.0.0",
+     "scipy >= 1.13.0",
+     # 68.1.0 Promoted pyproject.toml's [tool.setuptools] out of beta.
+-    "setuptools >= 68.1.0",
++    "setuptools",
+     "wheel",
+     "pybind11"
+ ]
 @@ -89,7 +89,7 @@ urls = {Homepage = "https://github.com/cvxpy/cvxpy"}
  ]
  requires-python = ">=3.11"
