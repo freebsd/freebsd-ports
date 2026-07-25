@@ -1,5 +1,5 @@
 PORTNAME=	meka
-DISTVERSION=	0.34.0
+DISTVERSION=	0.35.0
 CATEGORIES=	shells # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
