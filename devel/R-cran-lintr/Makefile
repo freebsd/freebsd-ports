@@ -1,5 +1,5 @@
 PORTNAME=	lintr
-DISTVERSION=	3.3.0-1
+DISTVERSION=	3.4.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -30,8 +30,5 @@ TEST_DEPENDS=	R-cran-cyclocomp>0:devel/R-cran-cyclocomp \
 		R-cran-withr>=2.5.0:devel/R-cran-withr
 
 USES=		cran:auto-plist
-
-post-install:
-	@${ECHO_CMD} "@dir ${R_MOD_DIR}/help/figures" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
