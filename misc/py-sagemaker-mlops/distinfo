@@ -1,3 +1,3 @@
-TIMESTAMP = 1782630551
-SHA256 (sagemaker_mlops-1.15.0.tar.gz) = 8b73ee194f793eb2d68424529c559b5aee139edd8564f6fb9f84e4e5b4222f58
-SIZE (sagemaker_mlops-1.15.0.tar.gz) = 163813
+TIMESTAMP = 1784963267
+SHA256 (sagemaker_mlops-1.17.0.tar.gz) = 6ac183f6c6f093208d0d803e627b6f9a18dfe49932ae63a463b04d6a5d0049b3
+SIZE (sagemaker_mlops-1.17.0.tar.gz) = 165868
