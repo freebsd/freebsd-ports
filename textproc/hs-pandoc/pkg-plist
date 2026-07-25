@@ -126,6 +126,7 @@ share/man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.s5
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.slideous
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.slidy
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.t2t
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.tei
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.texinfo
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.textile
