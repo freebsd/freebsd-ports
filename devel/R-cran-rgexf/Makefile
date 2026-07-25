@@ -1,5 +1,5 @@
 PORTNAME=	rgexf
-PORTVERSION=	0.16.3
+PORTVERSION=	0.17.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,7 +9,9 @@ WWW=		https://cran.r-project.org/web/packages/rgexf/
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	R-cran-igraph>0:math/R-cran-igraph \
+RUN_DEPENDS=	R-cran-htmlwidgets>0:www/R-cran-htmlwidgets \
+		R-cran-igraph>0:math/R-cran-igraph \
+		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-servr>0:www/R-cran-servr \
 		R-cran-XML>0:textproc/R-cran-XML
 
