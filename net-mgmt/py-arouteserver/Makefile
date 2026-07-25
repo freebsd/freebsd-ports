@@ -1,5 +1,5 @@
 PORTNAME=	arouteserver
-DISTVERSION=	1.16.1
+DISTVERSION=	1.17.0
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,8 @@ WWW=		https://github.com/pierky/arouteserver
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aggregate6>=1.0:net-mgmt/py-aggregate6@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=21.0:devel/py-packaging@${PY_FLAVOR} \
@@ -23,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aggregate6>=1.0:net-mgmt/py-aggregate6@${PY_
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.3.7:devel/py-nose@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 SHEBANG_FILES=	pierky/arouteserver/config.d/rtt_getter.sh
 NO_ARCH=	yes
