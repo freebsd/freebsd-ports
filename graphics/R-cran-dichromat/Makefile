@@ -1,6 +1,5 @@
 PORTNAME=	dichromat
-DISTVERSION=	2.0-0.1
-PORTREVISION=	1
+DISTVERSION=	2.0-1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/dichromat/
 
 LICENSE=	GPLv2
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
