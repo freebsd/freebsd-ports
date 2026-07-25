@@ -1,3 +1,108 @@
+  <vuln vid="f63b4b88-6901-4c12-b13d-5a821e25e9bf">
+    <topic>unbound -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.25.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs reports:</p>
+	<blockquote cite="https://github.com/NLnetLabs/unbound/releases/tag/release-1.25.2">
+	  <p>This release consolidates security fixes for issues reported
+	    over a period of time. There are fixes for:</p>
+	  <ul>
+	    <li>CVE-2026-14586: Assertion in libngtcp2 when under pressure
+	      in high concurrency DNS-over-QUIC environments.</li>
+	    <li>CVE-2026-32665: Remote DNS-over-QUIC denial of service due to
+	      quic-size budget bypass.</li>
+	    <li>CVE-2026-40691: Packet of death for DNSCrypt over TCP.</li>
+	    <li>CVE-2026-41637: Degradation of resolution service from
+	      improperly accounted client-terminated DNS-over-QUIC
+	      queries.</li>
+	    <li>CVE-2026-42955: Extra fix for CVE-2026-40622 to also clamp the
+	      TTL of A/AAAA records disallowing a one-time 'ghost domain'
+	      delegation renewal via glue records.</li>
+	    <li>CVE-2026-44621: Libunbound applications configured with
+	      'unwanted-reply-threshold' could eventually be abruptly
+	      terminated.</li>
+	    <li>CVE-2026-44687: Off-by-one error in 'harden-below-nxdomain'
+	      logic can shadow a stub/forward zone by a legitimate parent's
+	      NXDOMAIN.</li>
+	    <li>CVE-2026-44690: Cross-zone wildcard cache poisoning via
+	      RRSIG.labels manipulation.</li>
+	    <li>CVE-2026-46582: A wildcard replay, as another piece of data,
+	      triggers poisoning in the serve expired reply path.</li>
+	    <li>CVE-2026-50045: 'max-global-quota' reset by DNSSEC validation
+	      restarts.</li>
+	    <li>CVE-2026-50046: Possible heap use-after-free in an error path
+	      when a DoT forwarded query is jostled out.</li>
+	    <li>CVE-2026-50243: 'response-ip'/'rpz' can rewrite BOGUS answers
+	      instead of returning SERVFAIL.</li>
+	    <li>CVE-2026-50248: BOGUS configured primary hostname accepted for
+	      XFR in auth/rpz zones.</li>
+	    <li>CVE-2026-50251: Attacker supplied 0.0.0.0/:: glue triggers
+	      defensive full-cache flush.</li>
+	    <li>CVE-2026-50252: Possible cache poisoning attack by mapping
+	      source port population per thread.</li>
+	    <li>CVE-2026-52863: Memory corruption could lead to crash and
+	      denial of service.</li>
+	    <li>CVE-2026-54478: DNS Cookie bypass when combined with
+	      proxy-protocol use.</li>
+	    <li>CVE-2026-55708: Privacy/configuration issue when adding local
+	      data in views through 'unbound-control'.</li>
+	    <li>CVE-2026-55717: 'serve-expired-client-timeout' and 'response-ip'
+	      CNAME redirect could lead to a crash.</li>
+	    <li>CVE-2026-55973: 'dns-error-reporting: yes' leads to stack
+	      buffer overflow.</li>
+	    <li>CVE-2026-55990: Packet of death for a DNSCrypt misconfigured
+	      Unbound.</li>
+	    <li>CVE-2026-55991: Remote DNS-over-QUIC (DoQ) flow-control
+	      assertion failure in libngtcp2.</li>
+	    <li>CVE-2026-56416: Possible heap buffer overflow when validator
+	      canonicalizes RDATA that contains domain name.</li>
+	    <li>CVE-2026-56444: Degradation of resolution service when
+	      'discard-timeout' and 'serve-expired-client-timeout' are
+	      combined in unusual configuration.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-14586</cvename>
+      <cvename>CVE-2026-32665</cvename>
+      <cvename>CVE-2026-40691</cvename>
+      <cvename>CVE-2026-41637</cvename>
+      <cvename>CVE-2026-42955</cvename>
+      <cvename>CVE-2026-44621</cvename>
+      <cvename>CVE-2026-44687</cvename>
+      <cvename>CVE-2026-44690</cvename>
+      <cvename>CVE-2026-46582</cvename>
+      <cvename>CVE-2026-50045</cvename>
+      <cvename>CVE-2026-50046</cvename>
+      <cvename>CVE-2026-50243</cvename>
+      <cvename>CVE-2026-50248</cvename>
+      <cvename>CVE-2026-50251</cvename>
+      <cvename>CVE-2026-50252</cvename>
+      <cvename>CVE-2026-52863</cvename>
+      <cvename>CVE-2026-54478</cvename>
+      <cvename>CVE-2026-55708</cvename>
+      <cvename>CVE-2026-55717</cvename>
+      <cvename>CVE-2026-55973</cvename>
+      <cvename>CVE-2026-55990</cvename>
+      <cvename>CVE-2026-55991</cvename>
+      <cvename>CVE-2026-56416</cvename>
+      <cvename>CVE-2026-56444</cvename>
+      <url>https://github.com/NLnetLabs/unbound/releases/tag/release-1.25.2</url>
+      <url>https://www.nlnetlabs.nl/projects/unbound/security-advisories/</url>
+    </references>
+    <dates>
+      <discovery>2026-07-22</discovery>
+      <entry>2026-07-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6eee35e6-fca5-4db2-ab73-f27add3e3ef1">
     <topic>gstreamer1 -- multiple vulnerabilities</topic>
     <affects>
