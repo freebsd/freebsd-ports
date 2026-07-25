@@ -11,7 +11,7 @@
  		tools.NewMultiEditTool(nil, env.permissions, env.history, *env.filetracker, env.workingDir),
 --- internal/agent/coordinator.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/agent/coordinator.go
-@@ -665,7 +665,7 @@ func (c *coordinator) buildTools(ctx context.Context, 
+@@ -709,7 +709,7 @@ func (c *coordinator) buildTools(ctx context.Context, 
  
  	allTools = append(
  		allTools,
