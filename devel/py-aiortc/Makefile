@@ -1,6 +1,5 @@
 PORTNAME=	aiortc
-DISTVERSION=	1.14.0
-PORTREVISION=	3
+DISTVERSION=	1.15.0
 CATEGORIES=	devel multimedia python www
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +11,10 @@ WWW=		https://github.com/aiortc/aiortc/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PY_SETUPTOOLS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aioice>=0.10.1:devel/py-aioice@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aioice>=0.10.2:devel/py-aioice@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}av>=14.0.0:multimedia/py-av@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-crc32c>=1.1:devel/py-google-crc32c@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyee>=13.0.0:devel/py-pyee@${PY_FLAVOR} \
