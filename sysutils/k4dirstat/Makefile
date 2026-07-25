@@ -10,6 +10,9 @@ WWW=		https://github.com/jeromerobert/k4dirstat
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on EOL Qt5 and upstream recommends migrating to sysutils/qdirstat
+EXPIRATION_DATE=	2026-08-31
+
 USES=		cmake compiler:c++11-lang cpe kde:5 qt:5
 CPE_VENDOR=	kdirstat_project
 CPE_PRODUCT=	kdirstat
