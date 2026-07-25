@@ -1,4 +1,4 @@
---- src/ucs/sys/event_set.c.orig	2026-02-04 09:52:46 UTC
+--- src/ucs/sys/event_set.c.orig	2026-07-24 17:53:50 UTC
 +++ src/ucs/sys/event_set.c
 @@ -19,9 +19,14 @@
  #include <string.h>
@@ -30,8 +30,8 @@
 +#if defined(__FreeBSD__)
 +static inline int ucs_event_set_map_to_raw_flags(ucs_event_set_types_t events)
 +{
-+    /* Approximate edge-triggered behavior with EV_CLEAR */
-+    return (events & UCS_EVENT_SET_EDGE_TRIGGERED) ? EV_CLEAR : 0;
++    (void)events;
++    return 0;
 +}
 +
 +static inline int ucs_event_set_map_to_events(const struct kevent *kev)
@@ -98,7 +98,7 @@
                                 void *callback_data)
  {
 +#if defined(__FreeBSD__)
-+    int kq = event_set->event_fd;
++    int kq        = event_set->event_fd;
 +    int raw_flags = ucs_event_set_map_to_raw_flags(events);
 +
 +    if (events & UCS_EVENT_SET_EVREAD) {
@@ -120,7 +120,7 @@
      struct epoll_event raw_event;
      int ret;
  
-@@ -144,12 +216,18 @@ ucs_status_t ucs_event_set_add(ucs_sys_event_set_t *ev
+@@ -144,12 +216,45 @@ ucs_status_t ucs_event_set_add(ucs_sys_event_set_t *ev
      }
  
      return UCS_OK;
@@ -132,14 +132,41 @@
                                 void *callback_data)
  {
 +#if defined(__FreeBSD__)
-+    /* Simplest: delete then re-add with new mask */
-+    (void)ucs_event_set_del(event_set, fd);
-+    return ucs_event_set_add(event_set, fd, events, callback_data);
++    int kq        = event_set->event_fd;
++    int raw_flags = ucs_event_set_map_to_raw_flags(events);
++
++    if (events & UCS_EVENT_SET_EVREAD) {
++        if (ucs_kqueue_ctl(kq, fd, EVFILT_READ,
++                           EV_ADD | EV_ENABLE | raw_flags,
++                           0, 0, callback_data) < 0) {
++            ucs_error("kevent(kq=%d, MOD, fd=%d, READ) failed: %m", kq, fd);
++            return UCS_ERR_IO_ERROR;
++        }
++    } else {
++        if ((ucs_kqueue_ctl(kq, fd, EVFILT_READ, EV_DELETE, 0, 0, NULL) < 0) &&
++            (errno != ENOENT)) {
++            ucs_error("kevent(kq=%d, DEL READ, fd=%d) failed: %m", kq, fd);
++        }
++    }
++    if (events & UCS_EVENT_SET_EVWRITE) {
++        if (ucs_kqueue_ctl(kq, fd, EVFILT_WRITE,
++                           EV_ADD | EV_ENABLE | raw_flags,
++                           0, 0, callback_data) < 0) {
++            ucs_error("kevent(kq=%d, MOD, fd=%d, WRITE) failed: %m", kq, fd);
++            return UCS_ERR_IO_ERROR;
++        }
++    } else {
++        if ((ucs_kqueue_ctl(kq, fd, EVFILT_WRITE, EV_DELETE, 0, 0, NULL) < 0) &&
++            (errno != ENOENT)) {
++            ucs_error("kevent(kq=%d, DEL WRITE, fd=%d) failed: %m", kq, fd);
++        }
++    }
++    return UCS_OK;
 +#else
      struct epoll_event raw_event;
      int ret;
  
-@@ -165,10 +243,28 @@ ucs_status_t ucs_event_set_mod(ucs_sys_event_set_t *ev
+@@ -165,10 +270,28 @@ ucs_status_t ucs_event_set_mod(ucs_sys_event_set_t *ev
      }
  
      return UCS_OK;
@@ -168,7 +195,7 @@
      int ret;
  
      ret = epoll_ctl(event_set->event_fd, EPOLL_CTL_DEL, fd, NULL);
-@@ -179,6 +275,7 @@ ucs_status_t ucs_event_set_del(ucs_sys_event_set_t *ev
+@@ -179,6 +302,7 @@ ucs_status_t ucs_event_set_del(ucs_sys_event_set_t *ev
      }
  
      return UCS_OK;
@@ -176,7 +203,7 @@
  }
  
  ucs_status_t ucs_event_set_wait(ucs_sys_event_set_t *event_set,
-@@ -186,6 +283,45 @@ ucs_status_t ucs_event_set_wait(ucs_sys_event_set_t *e
+@@ -186,6 +310,45 @@ ucs_status_t ucs_event_set_wait(ucs_sys_event_set_t *e
                                  ucs_event_set_handler_t event_set_handler,
                                  void *arg)
  {
@@ -222,7 +249,7 @@
      struct epoll_event *events;
      int nready, i, io_events;
  
-@@ -217,6 +353,7 @@ ucs_status_t ucs_event_set_wait(ucs_sys_event_set_t *e
+@@ -217,6 +380,7 @@ ucs_status_t ucs_event_set_wait(ucs_sys_event_set_t *e
  
      *num_events = nready;
      return UCS_OK;
