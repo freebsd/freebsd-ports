@@ -1,10 +1,10 @@
-%%PYTHON_SITELIBDIR%%/diplib-3.6.0.dist-info/LICENSE.txt
-%%PYTHON_SITELIBDIR%%/diplib-3.6.0.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/diplib-3.6.0.dist-info/README.md
-%%PYTHON_SITELIBDIR%%/diplib-3.6.0.dist-info/RECORD
-%%PYTHON_SITELIBDIR%%/diplib-3.6.0.dist-info/WHEEL
-%%PYTHON_SITELIBDIR%%/diplib-3.6.0.dist-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/diplib-3.6.0.dist-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/diplib-3.6.1.dist-info/LICENSE.txt
+%%PYTHON_SITELIBDIR%%/diplib-3.6.1.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/diplib-3.6.1.dist-info/README.md
+%%PYTHON_SITELIBDIR%%/diplib-3.6.1.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/diplib-3.6.1.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/diplib-3.6.1.dist-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/diplib-3.6.1.dist-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/diplib/PyDIP_bin%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/diplib/PyDIP_py.py
 %%PYTHON_SITELIBDIR%%/diplib/__init__.py

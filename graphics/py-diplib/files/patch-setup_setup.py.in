@@ -1,0 +1,18 @@
+--- setup/setup.py.in.orig	2026-06-27 21:12:34 UTC
++++ setup/setup.py.in
+@@ -1,7 +1,6 @@ import setuptools
+ import os
+ import sysconfig
+ import setuptools
+-import setuptools.command.bdist_wheel
+ 
+ 
+ # https://stackoverflow.com/a/62351713
+@@ -67,7 +66,6 @@ setup_kwargs = dict(
+     options={
+         "bdist_wheel": {
+             # For some reason, this is necessary now on Windows???
+-            "plat_name": setuptools.command.bdist_wheel.get_platform(bdist_root),
+         },
+     },
+ )

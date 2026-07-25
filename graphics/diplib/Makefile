@@ -1,5 +1,5 @@
 PORTNAME=	diplib
-DISTVERSION=	3.6.0
+DISTVERSION=	3.6.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	DIPlib
 
 CXXFLAGS_powerpc64=	-mvsx
-CMAKE_OFF=	DIP_BUILD_PYDIP
+CMAKE_OFF=	DIP_BUILD_PYDIP \
+		DIP_BUILD_EXAMPLES
 CMAKE_TESTING_ON=	DIP_ENABLE_DOCTEST
 CMAKE_TESTING_TARGET=	check # one test fails, see https://github.com/DIPlib/diplib/issues/120
 
