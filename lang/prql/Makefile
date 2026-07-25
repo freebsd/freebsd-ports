@@ -1,6 +1,6 @@
 PORTNAME=	prql
-DISTVERSION=	0.13.13
-PORTREVISION=	1
+DISTVERSION=	0.13.14
+PORTREVISION=	0
 CATEGORIES=	lang databases
 PKGNAMESUFFIX=	-compiler
 
@@ -32,7 +32,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.102 \
+		anyhow-1.0.104 \
 		arbitrary-1.4.2 \
 		ariadne-0.5.1 \
 		arrayvec-0.7.6 \
@@ -75,7 +75,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cesu8-1.1.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		chrono-0.4.44 \
+		chrono-0.4.45 \
 		chumsky-0.13.0 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
@@ -151,22 +151,22 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		form_urlencoded-1.2.2 \
 		fsevent-sys-4.1.0 \
 		funty-2.0.0 \
-		futures-0.3.32 \
-		futures-channel-0.3.32 \
-		futures-core-0.3.32 \
-		futures-executor-0.3.32 \
-		futures-io-0.3.32 \
-		futures-macro-0.3.32 \
-		futures-sink-0.3.32 \
-		futures-task-0.3.32 \
+		futures-0.3.33 \
+		futures-channel-0.3.33 \
+		futures-core-0.3.33 \
+		futures-executor-0.3.33 \
+		futures-io-0.3.33 \
+		futures-macro-0.3.33 \
+		futures-sink-0.3.33 \
+		futures-task-0.3.33 \
 		futures-timer-3.0.3 \
-		futures-util-0.3.32 \
+		futures-util-0.3.33 \
 		generic-array-0.14.7 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
 		gimli-0.31.1 \
 		glob-0.3.3 \
-		globset-0.4.18 \
+		globset-0.4.19 \
 		half-2.4.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.15.5 \
@@ -204,8 +204,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		indoc-2.0.7 \
 		inotify-0.10.2 \
 		inotify-sys-0.1.5 \
-		insta-1.47.2 \
-		insta-cmd-0.6.0 \
+		insta-1.48.0 \
+		insta-cmd-0.7.0 \
 		instant-0.1.13 \
 		inventory-0.3.22 \
 		io-enum-1.2.0 \
@@ -215,6 +215,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
+		itertools-0.15.0 \
 		itoa-1.0.17 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
@@ -231,18 +232,18 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lexical-write-integer-1.0.6 \
 		libc-0.2.186 \
 		libduckdb-sys-1.10501.0 \
-		libloading-0.8.9 \
+		libloading-0.9.0 \
 		libm-0.2.16 \
-		libredox-0.1.12 \
+		libredox-0.1.17 \
 		libsqlite3-sys-0.37.0 \
 		libz-sys-1.1.24 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.7.4 \
 		lock_api-0.4.14 \
-		log-0.4.29 \
+		log-0.4.33 \
 		lru-0.16.3 \
 		lru-slab-0.1.2 \
-		lsp-server-0.7.9 \
+		lsp-server-0.8.0 \
 		lsp-types-0.97.0 \
 		md-5-0.10.6 \
 		mdbook-core-0.5.2 \
@@ -251,7 +252,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		memo-map-0.3.3 \
 		memoffset-0.9.1 \
 		minicov-0.3.8 \
-		minijinja-2.20.0 \
+		minijinja-2.21.0 \
 		miniz_oxide-0.8.9 \
 		mio-1.2.0 \
 		mysql-28.0.0 \
@@ -267,6 +268,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
+		objc2-core-foundation-0.3.2 \
+		objc2-system-configuration-0.3.2 \
 		object-0.36.7 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
@@ -279,15 +282,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		parking_lot_core-0.9.12 \
 		pem-3.0.6 \
 		percent-encoding-2.3.2 \
-		phf-0.11.3 \
-		phf_shared-0.11.3 \
+		phf-0.13.1 \
+		phf_shared-0.13.1 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.32 \
+		plain-0.2.3 \
 		portable-atomic-1.13.1 \
-		postgres-0.19.10 \
-		postgres-protocol-0.6.8 \
-		postgres-types-0.2.9 \
+		postgres-0.19.12 \
+		postgres-protocol-0.6.10 \
+		postgres-types-0.2.12 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
 		pretty-hex-0.3.0 \
@@ -317,13 +321,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
 		redox_syscall-0.5.18 \
-		redox_syscall-0.7.2 \
+		redox_syscall-0.8.1 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		regex-1.12.3 \
+		regex-1.12.4 \
 		regex-automata-0.4.14 \
 		regex-lite-0.1.9 \
-		regex-syntax-0.8.10 \
+		regex-syntax-0.8.11 \
 		relative-path-1.9.3 \
 		rend-0.4.2 \
 		reqwest-0.12.28 \
@@ -339,8 +343,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustler-0.37.0 \
-		rustler_codegen-0.37.3 \
+		rustler-0.38.0 \
+		rustler_codegen-0.38.0 \
 		rustls-0.21.12 \
 		rustls-0.23.37 \
 		rustls-native-certs-0.6.3 \
@@ -361,13 +365,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		security-framework-2.11.1 \
 		security-framework-sys-2.17.0 \
 		semver-1.0.28 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.149 \
+		serde_json-1.0.151 \
 		serde_repr-0.1.20 \
-		serde_spanned-1.0.4 \
+		serde_spanned-1.1.1 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.9.34+deprecated \
 		sha1-0.10.6 \
@@ -382,13 +386,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		siphasher-1.0.2 \
 		slab-0.4.12 \
 		smallvec-1.15.1 \
-		socket2-0.5.10 \
 		socket2-0.6.3 \
 		sqlformat-0.3.5 \
 		sqlite-wasm-rs-0.5.2 \
 		sqlparser-0.62.0 \
 		stable_deref_trait-1.2.1 \
 		stringprep-0.1.5 \
+		strip-ansi-escapes-0.2.1 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum-0.27.2 \
@@ -398,7 +402,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		strum_macros-0.28.0 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.117 \
+		syn-2.0.118 \
+		syn-3.0.2 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		tap-1.0.1 \
@@ -424,15 +429,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.52.3 \
 		tokio-macros-2.7.0 \
-		tokio-postgres-0.7.13 \
+		tokio-postgres-0.7.16 \
 		tokio-rustls-0.24.1 \
 		tokio-rustls-0.26.4 \
 		tokio-util-0.7.18 \
 		toml-0.9.12+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
 		toml_edit-0.23.5 \
-		toml_parser-1.0.9+spec-1.1.0 \
-		toml_writer-1.0.6+spec-1.1.0 \
+		toml_parser-1.1.2+spec-1.1.0 \
+		toml_writer-1.1.2+spec-1.1.0 \
 		tower-0.5.3 \
 		tower-http-0.6.8 \
 		tower-layer-0.3.3 \
@@ -469,11 +474,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		vergen-gitcl-1.0.8 \
 		vergen-lib-0.1.6 \
 		version_check-0.9.5 \
+		vte-0.14.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasi-0.14.4+wasi-0.2.4 \
 		wasip2-1.0.2+wasi-0.2.9 \
-		wasite-0.1.0 \
+		wasite-1.0.2 \
 		wasm-bindgen-0.2.114 \
 		wasm-bindgen-futures-0.4.64 \
 		wasm-bindgen-macro-0.2.114 \
@@ -485,7 +492,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		web-sys-0.3.91 \
 		web-time-1.1.0 \
 		webpki-roots-1.0.6 \
-		whoami-1.6.1 \
+		whoami-2.1.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
@@ -531,6 +538,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.6.26 \
 		winnow-0.7.14 \
+		winnow-1.0.3 \
+		wit-bindgen-0.45.1 \
 		wit-bindgen-0.51.0 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
