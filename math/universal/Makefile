@@ -1,6 +1,6 @@
 PORTNAME=	universal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.7.2
+DISTVERSION=	4.7.5
 CATEGORIES=	math
 PKGNAMESUFFIX=	-fp-library
 
@@ -26,6 +26,6 @@ TOOLS_DESC=		Build command line tools
 TOOLS_CMAKE_BOOL=	UNIVERSAL_BUILD_TOOLS_CMD_LINE
 TOOLS_VARS_OFF=		NO_ARCH=yes # header-only library w/out executables
 
-# tests as of 4.7.2: 100% tests passed, 0 tests failed out of 38
+# tests as of 4.7.5: 100% tests passed, 0 tests failed out of 38
 
 .include <bsd.port.mk>
