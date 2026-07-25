@@ -10,7 +10,7 @@ WWW=		https://github.com/gateway-of-last-resort/keyward
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.26+,modules
 GO_MODULE=	github.com/gateway-of-last-resort/keyward
 GO_TARGET=	./cmd/keyward
 
