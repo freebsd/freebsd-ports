@@ -1,5 +1,5 @@
 PORTNAME=	sagemaker-train
-DISTVERSION=	1.15.0
+DISTVERSION=	1.17.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}graphene>=3:devel/py-graphene@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.28.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sagemaker-core>=2.14.0:misc/py-sagemaker-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sagemaker-core>=2.17.0:misc/py-sagemaker-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sagemaker-mlflow>=0.0.1:misc/py-sagemaker-mlflow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tblib>=1.7.0:devel/py-tblib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.9.0:devel/py-typing-extensions@${PY_FLAVOR}
