@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-07-25 05:16:18 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["scikit-build-core", "setuptools >= 77.0.3", "trove-classifiers>=2025.8.6.13"]
++requires = ["scikit-build-core", "setuptools", "trove-classifiers>=2025.8.6.13"]
+ build-backend = "scikit_build_core.setuptools.build_meta"
+ 
+ [project]
+@@ -13,8 +13,6 @@ readme = "README.md"
+ ]
+ requires-python = ">=3.10"
+ readme = "README.md"
+-license = "MIT"
+-license-files = ["LICENSE"]
+ keywords = [
+     "gpu",
+     "optimizers",
