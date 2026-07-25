@@ -1,4 +1,4 @@
-TIMESTAMP = 1784193677
+TIMESTAMP = 1784713107
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
@@ -585,5 +585,5 @@ SHA256 (rust/crates/zune-core-0.5.1.crate) = cb8a0807f7c01457d0379ba880ba6322660
 SIZE (rust/crates/zune-core-0.5.1.crate) = 27883
 SHA256 (rust/crates/zune-jpeg-0.5.15.crate) = 27bc9d5b815bc103f142aa054f561d9187d191692ec7c2d1e2b4737f8dbd7296
 SIZE (rust/crates/zune-jpeg-0.5.15.crate) = 88879
-SHA256 (ahkohd-oyo-v0.1.51_GH0.tar.gz) = 9b8e061b3b39a7ed0fabf44c748d15496c4e099b8794849fc68c5d91bf784be7
-SIZE (ahkohd-oyo-v0.1.51_GH0.tar.gz) = 5198008
+SHA256 (ahkohd-oyo-v0.1.54_GH0.tar.gz) = 7873cbf11ee776785d4cd038fb25f34f7f2e59fd00e48f6c607ee27a7e9bb112
+SIZE (ahkohd-oyo-v0.1.54_GH0.tar.gz) = 5208376
