@@ -11,6 +11,9 @@ WWW=		https://www.joomla.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upstream EOL
+EXPIRATION_DATE=2026-08-31
+
 USES=		cpe php:web shebangfix zip
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	${PORTNAME}\!
