@@ -1,5 +1,5 @@
 PORTNAME=	libosip2
-PORTVERSION=	5.3.1
+DISTVERSION=	5.3.2
 CATEGORIES=	net
 MASTER_SITES=	GNU/osip
 
@@ -14,7 +14,9 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-trace
+
 INSTALL_TARGET=	install-strip
+
 PLIST_SUB=	ABIVER=15
 
 post-patch:
