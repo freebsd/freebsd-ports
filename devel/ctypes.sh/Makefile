@@ -1,6 +1,5 @@
 PORTNAME=	ctypes.sh
-PORTVERSION=	1.2
-PORTREVISION=	2
+DISTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/taviso/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	ctypes-sh-${PORTVERSION}
