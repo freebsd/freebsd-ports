@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Qt6 version silently convert settings to UTF-8. Running a Qt5 version
+afterwards corrupts all non-ASCII strings in settings. If unsure, backup
+your ~/.config/qolibri before running the new version.
+EOM
+}
+]
