@@ -1,8 +1,9 @@
 PORTNAME=	pytest-rerunfailures
-DISTVERSION=	15.0
+DISTVERSION=	15.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:C/-/_/}-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Re-run tests to eliminate flaky failures
