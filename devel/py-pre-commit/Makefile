@@ -1,5 +1,5 @@
 PORTNAME=	pre-commit
-DISTVERSION=	4.6.0
+DISTVERSION=	4.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +12,8 @@ WWW=		https://pre-commit.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cfgv>=2.0.0:devel/py-cfgv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}identify>=1.0.0:devel/py-identify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nodeenv>=0.11.1:devel/py-nodeenv@${PY_FLAVOR} \
@@ -20,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cfgv>=2.0.0:devel/py-cfgv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.1:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 SHEBANG_FILES=	pre_commit/resources/hook-tmpl
 
