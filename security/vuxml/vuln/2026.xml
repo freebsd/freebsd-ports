@@ -1,3 +1,72 @@
+  <vuln vid="6eee35e6-fca5-4db2-ab73-f27add3e3ef1">
+    <topic>gstreamer1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-plugins</name>
+	<name>gstreamer1-plugins-bad</name>
+	<name>gstreamer1-plugins-good</name>
+	<name>gstreamer1-plugins-ugly</name>
+	<range><lt>1.28.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer project reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>Multiple security issues were identified and fixed in the GStreamer framework.</p>
+	  <ul>
+	    <li>GStreamer-SA-2026-0044: Out-of-bounds read in RTP CELT audio depayloader</li>
+	    <li>GStreamer-SA-2026-0049: Heap buffer overflow in MPEG-4 Video parser</li>
+	    <li>GStreamer-SA-2026-0050: Heap buffer overflow in MOV/MP4 moov recovery tool</li>
+	    <li>GStreamer-SA-2026-0051: Out-of-bounds read in RTP SBC depayloader</li>
+	    <li>GStreamer-SA-2026-0052: Heap buffer overflow in GdkPixbuf image decoder due to dimension changes</li>
+	    <li>GStreamer-SA-2026-0053: Stack and heap buffer overflow in Opus audio decoder</li>
+	    <li>GStreamer-SA-2026-0054: Heap buffer overflow in encoding-target loader on malformed UTF-8 input</li>
+	    <li>GStreamer-SA-2026-0055: Out-of-bounds read in H.266/VVC parser PPS tile slice loop</li>
+	    <li>GStreamer-SA-2026-0056: Heap-based buffer overflow in H.266 video parser slice header processing</li>
+	    <li>GStreamer-SA-2026-0057: Out-of-bounds read in RTP JPEG depayloader</li>
+	    <li>GStreamer-SA-2026-0058: Out-of-bounds read in ASF demuxer packet payload parsing</li>
+	    <li>GStreamer-SA-2026-0059: Out-of-bounds read in VP9 parser superframe index parsing</li>
+	    <li>GStreamer-SA-2026-0060: Stack-based out-of-bounds write in closed caption converter</li>
+	    <li>GStreamer-SA-2026-0061: Possible authentication bypass in WebRTC SDP fingerprint validation</li>
+	    <li>GStreamer-SA-2026-0062: Stack buffer overflow in DTLS certificate verification</li>
+	    <li>GStreamer-SA-2026-0063: Heap out-of-bounds write in RFB source when decoding framebuffer updates</li>
+	    <li>GStreamer-SA-2026-0064: NULL pointer dereference in WAV parser during adtl chunk parsing in streaming mode</li>
+	    <li>GStreamer-SA-2026-0065: Integer overflow in Matroska LZO1X decompressor</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-2920</cvename>
+      <cvename>CVE-2026-14935</cvename>
+      <cvename>CVE-2026-59691</cvename>
+      <cvename>CVE-2026-59692</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0044.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0049.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0050.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0051.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0052.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0053.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0054.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0055.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0056.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0057.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0058.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0059.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0060.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0061.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0062.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0063.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0064.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0065.html</url>
+    </references>
+    <dates>
+      <discovery>2026-07-08</discovery>
+      <entry>2026-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dd6096e6-8555-11f1-b4c7-00a0980083d7">
     <topic>giflib -- Buffer Overflow vulnerability</topic>
     <affects>
