@@ -1,5 +1,5 @@
 PORTNAME=	gomuks
-DISTVERSION=	26.06
+DISTVERSION=	26.07
 CATEGORIES=	net-im
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -8,6 +8,8 @@ WWW=		https://github.com/gomuks/gomuks
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libolm.so:security/olm
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg

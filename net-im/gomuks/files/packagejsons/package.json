@@ -2,7 +2,7 @@
 	"name": "gomuks-web",
 	"private": true,
 	"license": "AGPL-3.0-or-later",
-	"version": "26.06.0",
+	"version": "26.07.0",
 	"description": "Web frontend for gomuks",
 	"type": "module",
 	"scripts": {
@@ -34,7 +34,7 @@
 		"@eslint/js": "^9.11.1",
 		"@types/katex": "^0.16.7",
 		"@types/leaflet": "^1.9.14",
-		"@types/node": "^25.0.3",
+		"@types/node": "^26.1.0",
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
 		"@types/golang-wasm-exec": "^1.15.2",
