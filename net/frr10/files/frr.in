@@ -225,14 +225,30 @@ case "${frr_cmd}" in
 		;;
     restart)
 		if checkyesno frr_enable; then
-			# watchfrr calls "service frr restart all" at startup
-			# to start all services
-			frr_daemons=$(reverse_list ${frr_daemons})
-			frr_cmd=stop
-			loop_do_cmd
-			frr_daemons=$(reverse_list ${frr_daemons})
-			frr_cmd=start
-			loop_do_cmd
+			# "service frr restart all" (watchfrr's -r hook) arrives
+			# with the full daemon list: stop then start each daemon.
+			#
+			# "service frr restart" (no arg) has frr_daemons=watchfrr.
+			# Restarting watchfrr alone does NOT bounce the daemons it
+			# supervises; it only re-attaches to the ones still running.
+			# Mirror upstream frrinit.sh "restart" (stop watchfrr, stop
+			# all daemons, start watchfrr) so the whole stack cycles.
+			if [ "${frr_daemons}" = "watchfrr" ]; then
+				frr_cmd=stop
+				loop_do_cmd
+				frr_daemons=$(reverse_list ${watchfrr_daemons})
+				loop_do_cmd
+				frr_daemons=watchfrr
+				frr_cmd=start
+				loop_do_cmd
+			else
+				frr_daemons=$(reverse_list ${frr_daemons})
+				frr_cmd=stop
+				loop_do_cmd
+				frr_daemons=$(reverse_list ${frr_daemons})
+				frr_cmd=start
+				loop_do_cmd
+			fi
 		fi
 		;;
     reload)
