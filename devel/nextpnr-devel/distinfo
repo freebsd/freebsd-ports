@@ -1,5 +1,5 @@
-TIMESTAMP = 1783117184
-SHA256 (YosysHQ-nextpnr-g20260619-2b560ad0ccc6e7e93ad8bd6cb0f88f925bbb314b_GH0.tar.gz) = 00b62af7bb96708a2d5e2a448dea4054b177d78d9b9d1824f67d8ac1d0990e69
-SIZE (YosysHQ-nextpnr-g20260619-2b560ad0ccc6e7e93ad8bd6cb0f88f925bbb314b_GH0.tar.gz) = 3525348
+TIMESTAMP = 1784983896
+SHA256 (YosysHQ-nextpnr-g20260724-fb95bb8ea1949deba5e9b0e79daa9bba92b634b8_GH0.tar.gz) = f22bc02edde67c67de88854a7198688840528cc5917ffad55f8ec34f0138bffb
+SIZE (YosysHQ-nextpnr-g20260724-fb95bb8ea1949deba5e9b0e79daa9bba92b634b8_GH0.tar.gz) = 3530402
 SHA256 (YosysHQ-nextpnr-tests-ce15412_GH0.tar.gz) = 84b7e926d97ce1aae3a2b9115b9030fce483a8b6d8b6cde060046a93f24966fe
 SIZE (YosysHQ-nextpnr-tests-ce15412_GH0.tar.gz) = 1032708
