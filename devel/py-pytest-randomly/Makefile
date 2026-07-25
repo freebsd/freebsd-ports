@@ -1,5 +1,5 @@
 PORTNAME=	pytest-randomly
-DISTVERSION=	3.16.0
+DISTVERSION=	4.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,9 @@ USES=		python
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} '/license-files/d; s|^license = "MIT"|license = { text = "MIT" }|; s|77|63|g' \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
