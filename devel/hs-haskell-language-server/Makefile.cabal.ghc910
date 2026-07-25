@@ -1,10 +1,11 @@
-ghc96_USE_CABAL=	Diff-0.5_1 \
+ghc910_USE_CABAL=	Cabal-3.14.2.0_2 \
+			Cabal-syntax-3.14.2.0_1 \
+			Diff-1.0.2 \
 			Glob-0.10.2_3 \
 			HsYAML-0.2.1.5_1 \
 			HsYAML-aeson-0.2.0.2 \
 			ListLike-4.7.8.4 \
 			MemoTrie-0.6.11 \
-			MonadRandom-0.6.2.1 \
 			OneTuple-0.4.3 \
 			Only-0.1_2 \
 			QuickCheck-2.18.0.0 \
@@ -15,10 +16,8 @@ ghc96_USE_CABAL=	Diff-0.5_1 \
 			aeson-pretty-0.8.10 \
 			alex-3.5.4.2 \
 			algebraic-graphs-0.8 \
-			ansi-terminal-1.0.2 \
-			ansi-terminal-types-0.11.5_1 \
-			ansi-wl-pprint-0.6.9_4 \
-			apply-refact-0.15.0.0 \
+			ansi-terminal-1.1.5 \
+			ansi-terminal-types-1.1.3 \
 			assoc-1.1.1_2 \
 			async-2.2.6 \
 			atomic-counter-0.1.2.4 \
@@ -39,12 +38,13 @@ ghc96_USE_CABAL=	Diff-0.5_1 \
 			blaze-textual-0.2.3.1 \
 			boring-0.2.2.1 \
 			cabal-add-0.2_1 \
-			cabal-install-parsers-0.6.1.1 \
+			cabal-install-parsers-0.6.3 \
 			call-stack-0.4.0 \
 			case-insensitive-1.2.1.0 \
 			cereal-0.5.8.3 \
 			character-ps-0.1 \
 			charset-0.3.12 \
+			choice-0.2.4.2 \
 			clay-0.16.1_1 \
 			clock-0.8.4 \
 			cmdargs-0.10.22 \
@@ -59,19 +59,13 @@ ghc96_USE_CABAL=	Diff-0.5_1 \
 			constraints-0.14.4 \
 			constraints-extras-0.4.0.2_1 \
 			contravariant-1.5.6 \
-			cpphs-1.20.10 \
 			cryptohash-sha1-0.11.101.0_6 \
 			cryptohash-sha256-0.11.102.1_6 \
-			data-default-0.7.1.3 \
-			data-default-class-0.1.2.2 \
-			data-default-instances-containers-0.1.0.3 \
-			data-default-instances-dlist-0.0.1.2 \
-			data-default-instances-old-locale-0.0.1.2 \
+			data-default-0.8.0.2 \
 			data-fix-0.3.4_2 \
 			deferred-folds-0.9.18.10 \
 			dependent-map-0.4.0.1 \
 			dependent-sum-0.7.2.0_2 \
-			deriving-aeson-0.2.10 \
 			dir-traverse-0.2.3.0 \
 			direct-sqlite-2.3.29 \
 			directory-ospath-streaming-0.3_1 \
@@ -80,27 +74,25 @@ ghc96_USE_CABAL=	Diff-0.5_1 \
 			edit-distance-0.2.2.1_1 \
 			entropy-0.4.1.11_1 \
 			enummapset-0.7.3.0_2 \
-			extensions-0.1.0.1_1 \
+			extensions-0.1.1.0_3 \
 			extra-1.8.1 \
-			fail-4.9.0.0 \
 			file-embed-0.0.16.0 \
 			file-io-0.1.6 \
-			filemanip-0.3.6.3_1 \
 			filepattern-0.1.3 \
 			fingertree-0.1.6.3 \
 			fmlist-0.9.4 \
 			focus-1.0.3.2 \
 			foldl-1.4.18_2 \
-			fourmolu-0.15.0.0_1 \
+			fourmolu-0.19.0.1_1 \
 			free-5.2_8 \
 			fuzzy-0.1.1.0 \
 			generic-arbitrary-1.0.1.2 \
 			generic-deriving-1.14.7 \
 			generic-lens-2.3.0.0 \
 			generic-lens-core-2.3.0.0 \
-			ghc-exactprint-1.7.1.0 \
-			ghc-lib-parser-9.8.5.20250214 \
-			ghc-lib-parser-ex-9.8.0.2 \
+			ghc-exactprint-1.10.0.0 \
+			ghc-lib-parser-9.12.3.20251228 \
+			ghc-lib-parser-ex-9.12.0.0 \
 			ghc-paths-0.1.0.12_8 \
 			ghc-trace-events-0.1.2.10 \
 			ghcide-2.14.0.0_1 \
@@ -116,13 +108,11 @@ ghc96_USE_CABAL=	Diff-0.5_1 \
 			hie-bios-0.19.0 \
 			hie-compat-0.3.1.2_2 \
 			hiedb-0.8.0.0 \
-			hlint-3.8 \
 			hls-graph-2.14.0.0 \
 			hls-plugin-api-2.14.0.0 \
 			hls-test-utils-2.14.0.0 \
 			hsc2hs-0.68.10_5 \
-			hscolour-1.25 \
-			hw-fingertree-0.1.2.1_2 \
+			hw-fingertree-0.1.1.0 \
 			hw-prim-0.6.3.2_3 \
 			implicit-hie-0.1.4.0 \
 			indexed-profunctors-0.1.1.1 \
@@ -146,7 +136,6 @@ ghc96_USE_CABAL=	Diff-0.5_1 \
 			lsp-types-2.4.0.0 \
 			lucid-2.11.20260427 \
 			lukko-0.1.2_1 \
-			markdown-unlit-0.6.0 \
 			megaparsec-9.7.1 \
 			microaeson-0.1.0.3_1 \
 			mmap-0.5.9 \
@@ -161,15 +150,12 @@ ghc96_USE_CABAL=	Diff-0.5_1 \
 			old-locale-1.0.0.7_2 \
 			old-time-1.1.1.0 \
 			opentelemetry-0.8.0 \
-			optparse-applicative-0.17.1.0_1 \
+			optparse-applicative-0.18.1.0_1 \
 			optparse-simple-0.1.1.4 \
-			ordered-containers-0.2.4 \
-			ormolu-0.7.4.0_5 \
-			os-string-2.0.10 \
+			ormolu-0.8.0.2_2 \
 			parallel-3.3.0.0_1 \
 			parser-combinators-1.3.1 \
 			parsers-0.12.12_1 \
-			polyparse-1.13.1 \
 			pretty-simple-4.1.4.0 \
 			prettyprinter-1.7.2 \
 			prettyprinter-ansi-terminal-1.1.4 \
@@ -181,8 +167,6 @@ ghc96_USE_CABAL=	Diff-0.5_1 \
 			profunctors-5.6.3 \
 			quickcheck-instances-0.4_2 \
 			random-1.3.1 \
-			random-shuffle-0.0.4 \
-			refact-0.3.0.2 \
 			reflection-2.1.9_1 \
 			regex-1.1.0.2 \
 			regex-base-0.94.0.3 \
@@ -190,7 +174,6 @@ ghc96_USE_CABAL=	Diff-0.5_1 \
 			regex-tdfa-1.3.2.5 \
 			relude-1.2.2.2_3 \
 			resourcet-1.3.0 \
-			retrie-1.2.3 \
 			row-types-1.0.1.2_1 \
 			safe-0.3.21_1 \
 			safe-exceptions-0.1.7.4_1 \
@@ -212,7 +195,7 @@ ghc96_USE_CABAL=	Diff-0.5_1 \
 			streaming-commons-0.2.3.1 \
 			strict-0.5.1_1 \
 			string-interpolate-0.3.4.0_6 \
-			stylish-haskell-0.14.6.0 \
+			stylish-haskell-0.15.1.0 \
 			syb-0.7.4 \
 			tagged-0.8.10_1 \
 			tar-0.6.4.0_4 \
