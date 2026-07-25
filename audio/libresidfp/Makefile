@@ -1,9 +1,10 @@
 PORTNAME=	libresidfp
 DISTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/libsidplayfp/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	fluffy@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Reverse engineered software emulation of MOS6581/8580 SID chip
 WWW=		https://github.com/libsidplayfp/libresidfp
 
