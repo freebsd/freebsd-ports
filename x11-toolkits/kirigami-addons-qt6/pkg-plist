@@ -120,6 +120,13 @@ lib/libKirigamiApp.so.6
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/libcomponentslabsplugin.so
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/qmldir
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/onboarding/OnboardToolTip.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/onboarding/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/onboarding/libonboardingplugin.so
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/onboarding/onboardingplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/onboarding/private/OnboardingEffect.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/onboarding/private/OnboardingOverlay.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/onboarding/qmldir
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/settings/CategorizedSettings.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/settings/ConfigurationModule.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/settings/ConfigurationView.qml
@@ -223,6 +230,7 @@ share/locale/sl/LC_MESSAGES/kirigami-addons6.mo
 share/locale/sv/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ta/LC_MESSAGES/kirigami-addons6.mo
 share/locale/tr/LC_MESSAGES/kirigami-addons6.mo
+share/locale/ug/LC_MESSAGES/kirigami-addons6.mo
 share/locale/uk/LC_MESSAGES/kirigami-addons6.mo
 share/locale/zh_CN/LC_MESSAGES/kirigami-addons6.mo
 share/locale/zh_TW/LC_MESSAGES/kirigami-addons6.mo
