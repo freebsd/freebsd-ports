@@ -1,0 +1,14 @@
+--- node_modules/@vscode/os-proxy-resolver/package.json.orig	2026-07-24 12:34:20 UTC
++++ node_modules/@vscode/os-proxy-resolver/package.json
+@@ -38,6 +38,8 @@
+     "@vscode/os-proxy-resolver-linux-x64-gnu": "0.3.0",
+     "@vscode/os-proxy-resolver-linux-x64-musl": "0.3.0",
+     "@vscode/os-proxy-resolver-win32-arm64-msvc": "0.3.0",
+-    "@vscode/os-proxy-resolver-win32-x64-msvc": "0.3.0"
++    "@vscode/os-proxy-resolver-win32-x64-msvc": "0.3.0",
++    "@vscode/os-proxy-resolver-freebsd-arm64": "0.3.0",
++    "@vscode/os-proxy-resolver-freebsd-x64": "0.3.0"
+   }
+-}
+\ No newline at end of file
++}

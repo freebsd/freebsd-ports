@@ -4124,6 +4124,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/@github/copilot-freebsd-x64/clipboard/node_modules/@teddyzhu/clipboard/clipboard.win32-x64-msvc.node
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/@github/copilot-freebsd-x64/clipboard/node_modules/@teddyzhu/clipboard/index.js
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/@github/copilot-freebsd-x64/clipboard/node_modules/@teddyzhu/clipboard/package.json
+%%DATADIR%%/resources/app/extensions/copilot/node_modules/@github/copilot-freebsd-x64/copilot
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/@github/copilot-freebsd-x64/copilot-sdk/extension.js
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/@github/copilot-freebsd-x64/copilot-sdk/index.js
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/@github/copilot-freebsd-x64/definitions/code-review.agent.yaml
@@ -23437,6 +23438,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@github/copilot-freebsd-x64/tree-sitter-typescript.wasm
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@github/copilot-freebsd-x64/tree-sitter.wasm
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@github/copilot-linux-x64/LICENSE.md
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/@github/copilot-linux-x64/README.md
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@github/copilot-linux-x64/app.js
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@github/copilot-linux-x64/builtin-skills/customize-cloud-agent/SKILL.md
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@github/copilot-linux-x64/builtin/customize-cloud-agent/SKILL.md
@@ -23549,6 +23551,8 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/deviceid/build/Release/windows.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/diff/dist/diff_wasm_bg-c6YkaZRL.wasm
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/native-watchdog/build/Release/watchdog.node
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/os-proxy-resolver-freebsd-x64/os_proxy_resolver.node
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/os-proxy-resolver-linux-x64-gnu/os_proxy_resolver.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/policy-watcher/build/Release/vscode-policy-watcher.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/freebsd-x64/rg
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/ripgrep-universal/bin/linux-x64/rg
@@ -23571,6 +23575,12 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/node-pty/lib/shared/conout.js
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/node-pty/lib/worker/conoutSocketWorker.js
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/node-pty/package.json
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/onnxruntime-node/bin/napi-v6/linux/x64/libonnxruntime.so.1
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/onnxruntime-node/bin/napi-v6/linux/x64/onnxruntime_binding.node
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/onnxruntime-web/dist/ort-wasm-simd-threaded.asyncify.wasm
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/onnxruntime-web/dist/ort-wasm-simd-threaded.jsep.wasm
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/onnxruntime-web/dist/ort-wasm-simd-threaded.jspi.wasm
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/vscode-oniguruma/release/onig.wasm
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/windows-foreground-love/build/Release/foreground_love.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/windows-foreground-love/build/Release/obj.target/foreground_love.node
@@ -24012,6 +24022,8 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/platform/browserView/electron-browser/preload-browserView.js.map
 %%DATADIR%%/resources/app/out/vs/platform/files/node/watcher/watcherMain.js
 %%DATADIR%%/resources/app/out/vs/platform/files/node/watcher/watcherMain.js.map
+%%DATADIR%%/resources/app/out/vs/platform/localTranscription/node/localTranscriptionMain.js
+%%DATADIR%%/resources/app/out/vs/platform/localTranscription/node/localTranscriptionMain.js.map
 %%DATADIR%%/resources/app/out/vs/platform/profiling/electron-browser/profileAnalysisWorkerMain.js
 %%DATADIR%%/resources/app/out/vs/platform/profiling/electron-browser/profileAnalysisWorkerMain.js.map
 %%DATADIR%%/resources/app/out/vs/platform/terminal/node/ptyHostMain.js

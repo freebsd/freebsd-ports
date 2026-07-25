@@ -1,12 +1,13 @@
 PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules \
-		https://github.com/github/copilot-cli/releases/download/v${COPILOT_CLI_VERSION}/:copilot_cli
+		https://registry.npmjs.org/@github/copilot-linux-${ELECTRON_ARCH}/-/:copilot_cli \
+		https://registry.npmjs.org/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu/-/:os_proxy_resolver
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
 		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
-		github-copilot-${COPILOT_CLI_VERSION}-linux-${ELECTRON_ARCH}.tgz:copilot_cli
+		copilot-linux-${ELECTRON_ARCH}-${COPILOT_CLI_VERSION}.tgz:copilot_cli \
+		os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu-${OS_PROXY_RESOLVER_VERSION}.tgz:os_proxy_resolver
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -21,10 +22,10 @@ ONLY_FOR_ARCHS=	amd64
 EXTRACT_DEPENDS=jq:textproc/jq \
 		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION}
 BUILD_DEPENDS=	zip:archivers/zip \
-		typescript-go>=7.0.0.g20260609:lang/typescript-go \
 		jq:textproc/jq \
 		rg:textproc/ripgrep \
-		tgrep:textproc/tgrep
+		tgrep:textproc/tgrep \
+		wasm2c:www/wabt
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libasound.so:audio/alsa-lib \
@@ -68,10 +69,15 @@ USES=		cargo desktop-file-utils display:test electron:42,build,test \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
-GH_TUPLE=	web-infra-dev:rspack:v${RSPACK_VERSION}:rspack/rspack
+GH_TUPLE=	web-infra-dev:rspack:v${RSPACK_VERSION}:rspack/rspack \
+		microsoft:os-proxy-resolver:v${OS_PROXY_RESOLVER_VERSION}:os_proxy_resolver/os-proxy-resolver
 
-CARGO_CARGOTOML=${WRKSRC}/rspack/Cargo.toml
-CARGO_CARGOLOCK=${WRKSRC}/rspack/Cargo.lock
+CARGO_CARGOTOML=	${WRKSRC}/rspack/Cargo.toml
+CARGO_CARGOTOML_RSPACK=	${WRKSRC}/rspack/Cargo.toml
+CARGO_CARGOTOML_OS_PROXY_RESOLVER=	\
+			${WRKSRC}/os-proxy-resolver/npm/native/Cargo.toml
+CARGO_CARGOLOCKS=	${WRKSRC}/rspack/Cargo.lock \
+			${WRKSRC}/os-proxy-resolver/npm/native/Cargo.lock
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
@@ -92,6 +98,9 @@ PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
 DATADIR=	${PREFIX}/share/code-oss
 TMPDIR=		${WRKDIR}
 BUNDLE_LIBS=	yes
+
+# These patches are only required for vscode editor, not for REH
+EXTRA_PATCHES=	${PATCHDIR}/patches-os-proxy-resolver
 
 MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
 		VSCODE_QUALITY=stable
@@ -132,15 +141,25 @@ post-extract:
 	# copy contents of @github/copilot-linux-x64 to @github/copilot-freebsd-x64
 	# note: this is just for the build process to pass. GitHub Copilot CLI
 	# is a closed-source product and not usable on FreeBSD
-	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH} \
-		${WRKSRC}/node_modules/@github/copilot-linux-${ELECTRON_ARCH} \
+	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot-linux-${ELECTRON_ARCH} \
+		${WRKSRC}/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH} \
 		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}
-	@${CP} -R ${WRKDIR}/package/* \
-		${WRKSRC}/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}
-	@${CP} -R ${WRKDIR}/package/* \
-		${WRKSRC}/node_modules/@github/copilot-linux-${ELECTRON_ARCH}
-	@${CP} -R ${WRKDIR}/package/* \
-		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}
+	@(DISTFILE_copilot=${DISTDIR}/${DIST_SUBDIR}/copilot-linux-${ELECTRON_ARCH}-${COPILOT_CLI_VERSION}.tgz; \
+	${TAR} -xzf $${DISTFILE_copilot} \
+		--strip-components 1 -C ${WRKSRC}/node_modules/@github/copilot-linux-${ELECTRON_ARCH}; \
+	${TAR} -xzf $${DISTFILE_copilot} \
+		--strip-components 1 -C ${WRKSRC}/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}; \
+	${TAR} -xzf $${DISTFILE_copilot} \
+		--strip-components 1 -C ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH})
+	# copy contents of @vscode/os-proxy-resolver-linux-x64-gnu
+	# note: again, this is just for the build process to pass.
+	@${MKDIR} ${WRKSRC}/node_modules/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu \
+		${WRKSRC}/node_modules/@vscode/os-proxy-resolver-freebsd-${ELECTRON_ARCH}
+	@(DISTFILE_os_proxy_resolver=${DISTDIR}/${DIST_SUBDIR}/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu-${OS_PROXY_RESOLVER_VERSION}.tgz; \
+	${TAR} -xzf $${DISTFILE_os_proxy_resolver} \
+		--strip-components 1 -C ${WRKSRC}/node_modules/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu; \
+	${TAR} -xzf $${DISTFILE_os_proxy_resolver} \
+		--strip-components 1 -C ${WRKSRC}/node_modules/@vscode/os-proxy-resolver-freebsd-${ELECTRON_ARCH})
 
 post-patch:
 	@${REINPLACE_CMD} -E 's|^(target=").*(")$$|\1${ELECTRON_VER}\2|' \
@@ -152,8 +171,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/%%DISTVERSION%%/${DISTVERSION}/g' \
 		${WRKSRC}/build/gulpfile.reh.ts \
 		${WRKSRC}/build/gulpfile.vscode.ts
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/node_modules/@typescript/native-preview/lib/getExePath.js
 	@(cd ${WRKSRC} && \
 		${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
 			-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
@@ -183,7 +200,26 @@ post-patch:
 	@${SETENV} FILESDIR=${FILESDIR} \
 		${SH} ${FILESDIR}/update-product-json.sh ${WRKSRC}
 
+post-configure:
+	@${ECHO_MSG} "===>   Updating Cargo.lock for ${CARGO_CARGOTOML_OS_PROXY_RESOLVER}"
+	@${CARGO_CARGO_RUN} update --manifest-path ${CARGO_CARGOTOML_OS_PROXY_RESOLVER} \
+		--verbose --verbose ${CARGO_UPDATE_ARGS}
+
 pre-build:
+# # build native node module for @rspack/binding
+#	@${CARGO_CARGO_RUN} build \
+#		--manifest-path ${CARGO_CARGOTOML_RSPACK} \
+#		--verbose --verbose \
+#		${CARGO_BUILD_ARGS}
+#	${CP} ${CARGO_TARGET_DIR}/*/librspack.so \
+#		${WRKSRC}/build/rspack/node_modules/@rspack/binding/rspack.freebsd-${ELECTRON_ARCH}.node
+# build native node modules for @vscode/os-proxy-resolver
+	@${CARGO_CARGO_RUN} build \
+		--manifest-path ${CARGO_CARGOTOML_OS_PROXY_RESOLVER} \
+		--verbose --verbose \
+		${CARGO_BUILD_ARGS}
+	${CP} ${CARGO_TARGET_DIR}/*/libos_proxy_resolver_node.so \
+		${WRKSRC}/node_modules/@vscode/os-proxy-resolver-freebsd-${ELECTRON_ARCH}/os_proxy_resolver.node
 # rebuild native node modules in top directory
 	@for subdir in `${FIND} ${WRKSRC}/node_modules -type f -name binding.gyp -exec ${DIRNAME} {} ';'`; do \
 		${ECHO_MSG} "===>   Rebuilding native modules in $${subdir}"; \
@@ -230,13 +266,6 @@ pre-build:
 			fi; \
 		done; \
 	done
-	# # build native node module for @rspack/binding
-	# @${CARGO_CARGO_RUN} build \
-	# 	--manifest-path ${CARGO_CARGOTOML_RSPACK} \
-	# 	--verbose --verbose \
-	# 	${CARGO_BUILD_ARGS}
-	# ${CP} ${CARGO_TARGET_DIR}/*/librspack.so \
-	# 	${WRKSRC}/build/rspack/node_modules/@rspack/binding/rspack.freebsd-${ELECTRON_ARCH}.node
 # copy rg binary file
 	@${MKDIR} ${WRKSRC}/node_modules/@vscode/ripgrep/bin \
 		${WRKSRC}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
@@ -327,7 +356,7 @@ make-node-modules-archive: extract patch-package-json
 	@${ECHO_MSG} "===>  Fetching and installing node modules in ${WRKSRC}"
 	@cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} npm install \
-		--ignore-scripts --no-progress --no-audit --no-fund --no-update-notifier && \
+		--force --ignore-scripts --no-progress --no-audit --no-fund --no-update-notifier && \
 	${TAR} -czf ${WRKDIR}/vscode-.-node-modules${EXTRACT_SUFX} node_modules
 	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
 		cd ${WRKSRC}/$${dir} && \
@@ -346,5 +375,14 @@ make-marketplace-exts-archive: extract
 	@cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} npm run download-builtin-extensions
 	@${TAR} -czf ${WRKDIR}/vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX} -C ${WRKSRC}/.build builtInExtensions
+
+cargo-crates-from-multiple-lockfiles: extract
+	@for lf in ${CARGO_CARGOLOCKS}; do \
+		${_CARGO_AWK} ${SCRIPTSDIR}/cargo-crates.awk $${lf}; \
+	done | \
+	${SED} -E 's/^CARGO_CRATES=\t+/\t\t/; s/ \\$$//' | \
+	${SORT} -u | \
+	${SED} -e '1s/^\t\t/CARGO_CRATES=\t/; s/$$/ \\/' | \
+	${SED} -e '$$s/ \\//'
 
 .include <bsd.port.post.mk>

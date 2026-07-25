@@ -1,6 +1,6 @@
---- build/gulpfile.vscode.ts.orig	2026-06-15 22:24:03 UTC
+--- build/gulpfile.vscode.ts.orig	2026-07-22 14:55:04 UTC
 +++ build/gulpfile.vscode.ts
-@@ -312,6 +312,7 @@ function packageTask(platform: string, arch: string, s
+@@ -333,6 +333,7 @@ function packageTask(platform: string, arch: string, s
  				if (Object.keys(agentSdks).length > 0) {
  					json.agentSdks = agentSdks;
  				}

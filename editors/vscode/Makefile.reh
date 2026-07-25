@@ -2,10 +2,10 @@ PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules \
-		https://github.com/github/copilot-cli/releases/download/v${COPILOT_CLI_VERSION}/:copilot_cli
+		https://registry.npmjs.org/@github/copilot-linux-${NODEJS_ARCH}/-/:copilot_cli
 PKGNAMESUFFIX=	-reh
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
-		github-copilot-${COPILOT_CLI_VERSION}-linux-${NODEJS_ARCH}.tgz:copilot_cli
+		copilot-linux-${NODEJS_ARCH}-${COPILOT_CLI_VERSION}.tgz:copilot_cli
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -19,8 +19,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 
 EXTRACT_DEPENDS=jq:textproc/jq \
 		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION}
-BUILD_DEPENDS=	typescript-go>=7.0.0.g20260609:lang/typescript-go \
-		jq:textproc/jq \
+BUILD_DEPENDS=	jq:textproc/jq \
 		rg:textproc/ripgrep \
 		tgrep:textproc/tgrep
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
@@ -84,15 +83,16 @@ post-extract:
 	# copy contents for @github/copilot-linux-x64 to @github/copilot-freebsd-x64
 	# note: this is just for the build process to pass. GitHub Copilot CLI
 	# is a closed-source product and not usable on FreeBSD
-	@${MKDIR} ${WRKSRC}/remote/node_modules/@github/copilot-freebsd-${NODEJS_ARCH} \
-		${WRKSRC}/remote/node_modules/@github/copilot-linux-${NODEJS_ARCH} \
+	@${MKDIR} ${WRKSRC}/remote/node_modules/@github/copilot-linux-${NODEJS_ARCH} \
+		${WRKSRC}/remote/node_modules/@github/copilot-freebsd-${NODEJS_ARCH} \
 		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}
-	@${CP} -R ${WRKDIR}/package/* \
-		${WRKSRC}/remote/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}
-	@${CP} -R ${WRKDIR}/package/* \
-		${WRKSRC}/remote/node_modules/@github/copilot-linux-${NODEJS_ARCH}
-	@${CP} -R ${WRKDIR}/package/* \
-		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}
+	@(DISTFILE_copilot=${DISTDIR}/${DIST_SUBDIR}/copilot-linux-${NODEJS_ARCH}-${COPILOT_CLI_VERSION}.tgz; \
+	${TAR} -xzf $${DISTFILE_copilot} \
+		--strip-components 1 -C ${WRKSRC}/remote/node_modules/@github/copilot-linux-${NODEJS_ARCH}; \
+	${TAR} -xzf $${DISTFILE_copilot} \
+		--strip-components 1 -C ${WRKSRC}/remote/node_modules/@github/copilot-freebsd-${NODEJS_ARCH}; \
+	${TAR} -xzf $${DISTFILE_copilot} \
+		--strip-components 1 -C ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${NODEJS_ARCH})
 
 post-patch:
 	@${REINPLACE_CMD} -E 's|^(target=").*(")$$|\1${NODEJS_PORTVERSION}\2|' \
@@ -100,8 +100,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/%%DISTVERSION%%/${DISTVERSION}/g' \
 		${WRKSRC}/build/gulpfile.reh.ts \
 		${WRKSRC}/build/gulpfile.vscode.ts
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/node_modules/@typescript/native-preview/lib/getExePath.js
 	@(cd ${WRKSRC} && \
 	${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
 		-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
