@@ -1,6 +1,7 @@
 bin/duckdb
 include/duckdb.h
 include/duckdb.hpp
+include/duckdb_extension.h
 include/duckdb/catalog/catalog.hpp
 include/duckdb/catalog/catalog_entry.hpp
 include/duckdb/catalog/catalog_entry/aggregate_function_catalog_entry.hpp
