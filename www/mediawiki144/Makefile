@@ -11,7 +11,10 @@ WWW=		https://www.mediawiki.org/
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki139 mediawiki143 mediawiki145
+CONFLICTS=	mediawiki143 mediawiki145 mediawiki146
+
+DEPRECATED=	Upstream EOL
+EXPIRATION_DATE=2026-07-31
 
 USES=		cpe php:flavors shebangfix
 SHEBANG_FILES=	maintenance/storage/make-blobs
