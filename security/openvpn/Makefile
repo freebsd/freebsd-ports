@@ -1,12 +1,12 @@
 PORTNAME=		openvpn
 DISTVERSION=		2.7.5
-PORTREVISION?=		0
+PORTREVISION=		1
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/
 
 MAINTAINER=		mandree@FreeBSD.org
-COMMENT?=		Secure IP/Ethernet tunnel daemon
+COMMENT=		Secure IP/Ethernet tunnel daemon
 WWW=			https://openvpn.net/community/
 
 LICENSE=		GPLv2
@@ -14,24 +14,24 @@ LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL
 
 BUILD_DEPENDS+=		cmocka>=0:sysutils/cmocka \
 			rst2man:textproc/py-docutils@${PY_FLAVOR}
-
 TEST_DEPENDS=		fping:net/fping
 
 USES=			cpe libtool localbase:ldflags pkgconfig python:build shebangfix ssl
 USE_RC_SUBR=		openvpn
 
-SHEBANG_FILES=		sample/sample-scripts/auth-pam.pl \
+SHEBANG_FILES=		sample/sample-plugins/keying-material-exporter-demo/http-client.py \
+			sample/sample-plugins/keying-material-exporter-demo/http-server.py \
+			sample/sample-scripts/auth-pam.pl \
 			sample/sample-scripts/totpauth.py \
 			sample/sample-scripts/ucn.pl \
 			sample/sample-scripts/verify-cn
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--with-crypto-library=openssl
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 
-CONFLICTS_INSTALL?=	openvpn-devel
+CONFLICTS_INSTALL=	openvpn-devel
 
 SUB_FILES=		pkg-message openvpn-client
 
@@ -117,9 +117,6 @@ post-patch:
 		${WRKSRC}/doc/man-sections/generic-options.rst
 
 pre-configure:
-	# just too many of sign-compare; bitwise-instead-of-logical was audited and is intentional,
-	# and unused-function affects test---these are developer-side warnings, not relevant on end systems
-	${REINPLACE_CMD} 's/-Wsign-compare/-Wno-unknown-warning-option -Wno-sign-compare -Wno-bitwise-instead-of-logical -Wno-unused-function/' ${WRKSRC}/configure
 .ifdef (LOG_OPENVPN)
 	@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
 .else
@@ -168,8 +165,9 @@ post-install-DOCS-on:
 .endif
 
 post-install-EXAMPLES-on:
-	(cd ${WRKSRC}/sample && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}/)
-	${CHMOD} ${BINMODE} ${STAGEDIR}${EXAMPLESDIR}/sample-scripts/*
-	${RM} ${STAGEDIR}${EXAMPLESDIR}/sample-config-files/*.orig
+	(cd ${WRKSRC}/sample && \
+		${COPYTREE_SHARE} "sample-config-files sample-keys sample-plugins" \
+			${STAGEDIR}${EXAMPLESDIR} '! -name "*.orig"' && \
+		${COPYTREE_BIN} sample-scripts ${STAGEDIR}${EXAMPLESDIR} '! -name "*.orig"')
 
 .include <bsd.port.post.mk>
