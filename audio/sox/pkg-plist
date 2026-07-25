@@ -1,11 +1,12 @@
-bin/play
-bin/rec
+%%SYMLINK%%bin/play
+%%SYMLINK%%bin/rec
 bin/sox
-bin/soxi
+%%SYMLINK%%bin/soxi
 include/sox.h
 lib/libsox.so
 lib/libsox.so.3
 lib/libsox.so.3.0.0
+libdata/pkgconfig/sox.pc
 share/man/man1/play.1.gz
 share/man/man1/rec.1.gz
 share/man/man1/sox.1.gz
@@ -13,4 +14,3 @@ share/man/man1/soxi.1.gz
 share/man/man3/libsox.3.gz
 share/man/man7/soxeffect.7.gz
 share/man/man7/soxformat.7.gz
-libdata/pkgconfig/sox.pc
