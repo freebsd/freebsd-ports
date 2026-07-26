@@ -1,3 +1,3 @@
-TIMESTAMP = 1784498600
-SHA256 (langchain_google_genai-4.2.7.tar.gz) = 03b1463ffe4d42435f43c7870467f2215f684bb46400d2543435d10157c80ac7
-SIZE (langchain_google_genai-4.2.7.tar.gz) = 281605
+TIMESTAMP = 1785090264
+SHA256 (langchain_google_genai-4.3.1.tar.gz) = 623cd4329f6a3e4e0397ccacc6fa355728362572688ff9a8e522bf21519e9964
+SIZE (langchain_google_genai-4.3.1.tar.gz) = 285426
