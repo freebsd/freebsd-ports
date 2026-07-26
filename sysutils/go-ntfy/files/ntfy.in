@@ -25,8 +25,9 @@ load_rc_config $name
 : ${ntfy_args=""}
 
 pidfile="/var/run/${name}.pid"
+supervisor_pidfile="/var/run/${name}d.pid"
 procname="%%LOCALBASE%%/bin/${name}"
 command="/usr/sbin/daemon"
-command_args="-c -u '${ntfy_runas}' -p '${pidfile}' -t '${desc}' -o '${ntfy_log}' '${procname}' serve ${ntfy_args}"
+command_args="-cH -u '${ntfy_runas}' -P '${supervisor_pidfile}' -p '${pidfile}' -t '${name}: ${desc}' -o '${ntfy_log}' '${procname}' serve ${ntfy_args}"
 
 run_rc_command "$1"

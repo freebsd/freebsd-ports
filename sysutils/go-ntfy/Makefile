@@ -32,6 +32,7 @@ CONFLICTS_INSTALL=	sysutils/ntfy
 
 PLIST_FILES=	"@sample ${ETCDIR}/client.yml.sample" \
 		"@sample ${ETCDIR}/server.yml.sample" \
+		"@sample etc/newsyslog.conf.d/${PORTNAME}.conf.sample" \
 		bin/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
@@ -64,5 +65,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/server/server.yml ${STAGEDIR}${ETCDIR}/server.yml.sample
 	${INSTALL_DATA} ${WRKSRC}/client/client.yml ${STAGEDIR}${ETCDIR}/client.yml.sample
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${INSTALL_DATA} ${FILESDIR}/newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>
