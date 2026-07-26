@@ -10,7 +10,8 @@ LICENSE=	GPLv3
 
 MY_DEPENDS=	git:devel/git \
 		rsync:net/rsync
-BUILD_DEPENDS=	${MY_DEPENDS}
+BUILD_DEPENDS=	${MY_DEPENDS} \
+		ghc-9.10.3:lang/ghc910
 RUN_DEPENDS=	${MY_DEPENDS}
 
 USES=		cabal perl5
