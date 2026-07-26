@@ -120,6 +120,8 @@ lib/slurm/http_auth_local.a
 lib/slurm/http_auth_local.so
 lib/slurm/http_parser_libhttp_parser.a
 lib/slurm/http_parser_libhttp_parser.so
+lib/slurm/http_parser_llhttp_parser.a
+lib/slurm/http_parser_llhttp_parser.so
 lib/slurm/job_submit_all_partitions.a
 lib/slurm/job_submit_all_partitions.so
 lib/slurm/job_submit_defaults.a
