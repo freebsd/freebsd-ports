@@ -1,0 +1,5 @@
+TIMESTAMP = 1785087208
+SHA256 (go/sysutils_goreman/mattn-goreman-v0.3.19_GH0/go.mod) = 5b37ecc0566c8cd27b4d30f954422a0fe6059af82b288c13347b5b9bc4b2cefd
+SIZE (go/sysutils_goreman/mattn-goreman-v0.3.19_GH0/go.mod) = 235
+SHA256 (go/sysutils_goreman/mattn-goreman-v0.3.19_GH0/mattn-goreman-v0.3.19_GH0.tar.gz) = d5076b8844a4e29815b557927c326d8683ca4a91c8b3ffdad6fd33f238149e43
+SIZE (go/sysutils_goreman/mattn-goreman-v0.3.19_GH0/mattn-goreman-v0.3.19_GH0.tar.gz) = 54684

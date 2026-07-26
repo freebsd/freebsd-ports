@@ -1,0 +1,5 @@
+Goreman is a Go-based clone of Foreman designed to manage and run
+applications based on a Procfile. It reads process definitions,
+spawns each command, aggregates standard output streams with prefixed
+tags, and forwards signals (such as SIGINT, SIGTERM, and SIGHUP)
+down to all managed child processes.
