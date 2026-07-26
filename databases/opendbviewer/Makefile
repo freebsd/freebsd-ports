@@ -1,10 +1,10 @@
 PORTNAME=	opendbviewer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple database explorer
 WWW=		https://github.com/Jet1oeil/opendbviewer
 
