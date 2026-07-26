@@ -1,7 +1,6 @@
 PORTNAME=	tinyauth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.7
-PORTREVISION=	3
+DISTVERSION=	5.1.2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
@@ -39,11 +38,12 @@ USERS=		${TINYAUTH_USER}
 GROUPS=		${TINYAUTH_GROUP}
 
 PLIST_FILES=	bin/${PORTNAME} \
-		"@dir(${TINYAUTH_USER},${TINYAUTH_GROUP},0750) /var/db/${PORTNAME}"
+		"@dir(${TINYAUTH_USER},${TINYAUTH_GROUP},0750) /var/db/${PORTNAME}" \
+		"@sample etc/newsyslog.conf.d/${PORTNAME}.conf.sample"
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
 # in the Tinyauth repository to get the value of GITID.
-GITID=		479f1657812b7bf01438607464dedaa148155301
+GITID=		c7077a7c845dc71f9cbab55dc15151920887881e
 
 BUILD_DATE=	$$(date -u '+%Y-%m-%dT%H:%M:%S')
 
@@ -58,5 +58,7 @@ post-extract:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${INSTALL_DATA} ${FILESDIR}/newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>

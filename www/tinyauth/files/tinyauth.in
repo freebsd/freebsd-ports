@@ -29,11 +29,12 @@ load_rc_config $name
 : ${tinyauth_env_file:="%%PREFIX%%/etc/tinyauth.env"}
 : ${tinyauth_logfile:="/var/log/tinyauth.log"}
 : ${tinyauth_pidfile:="/var/run/tinyauth.pid"}
+: ${tinyauth_supervisor_pidfile:="/var/run/tinyauthd.pid"}
 : ${tinyauth_runas:="%%USER%%"}
 
 pidfile="${tinyauth_pidfile}"
 procname="%%LOCALBASE%%/bin/tinyauth"
 command="/usr/sbin/daemon"
-command_args="-o '${tinyauth_logfile}' -p '${pidfile}' -u '${tinyauth_runas}' -t '${desc}' -- '${procname}'"
+command_args="-o '${tinyauth_logfile}' -P '${tinyauth_supervisor_pidfile}' -p '${pidfile}' -u '${tinyauth_runas}' -t '${name}: ${desc}' -- '${procname}'"
 
 run_rc_command "$1"
