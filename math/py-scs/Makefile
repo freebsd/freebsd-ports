@@ -1,6 +1,5 @@
 PORTNAME=	scs
-DISTVERSION=	3.2.9
-PORTREVISION=	3
+DISTVERSION=	3.2.11
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,5 +28,7 @@ post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_direct${PYTHON_TAG}.so  \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_indirect${PYTHON_TAG}.so 
+
+# tests as of 3.2.11: 28 passed in 10.63s
 
 .include <bsd.port.mk>
