@@ -1,11 +1,10 @@
 PORTNAME=	go-yq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.50.1
-PORTREVISION=	8
+DISTVERSION=	4.53.3
 CATEGORIES=	textproc
 
 MAINTAINER=	timp87@gmail.com
-COMMENT=	Portable commandline YAML processor written in go
+COMMENT=	Portable commandline YAML,JSON,TOML,INI,XML,CSV,HCL processor
 WWW=		https://github.com/mikefarah/yq
 
 LICENSE=	MIT
