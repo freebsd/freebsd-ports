@@ -1,7 +1,6 @@
 PORTNAME=	pgweb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.7
-PORTREVISION=	42
+DISTVERSION=	0.17.0
 CATEGORIES=	databases www
 PKGNAMEPREFIX=	go-
 
@@ -11,12 +10,13 @@ WWW=		https://github.com/sosedoff/pgweb
 
 LICENSE=	MIT
 
-USES=		go
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	sosedoff
 USE_RC_SUBR=	${PORTNAME}
 
-GO_PKGNAME=	github.com/sosedoff/pgweb
+GO_MOD_DIST=	github
+GO_MODULE=	github.com/sosedoff/pgweb
 
 SUB_FILES+=	pkg-message
 SUB_LIST+=	PGWEBGROUP=${GROUPS} \
