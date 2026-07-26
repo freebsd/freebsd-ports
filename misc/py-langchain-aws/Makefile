@@ -1,5 +1,5 @@
 PORTNAME=	langchain-aws
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.3
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.42.42:www/py-boto3@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.43.32:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.4.7:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.0.0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.10.6:devel/py-pydantic2@${PY_FLAVOR}
@@ -35,6 +35,6 @@ NO_ARCH=	yes
 
 TEST_WRKSRC=	${WRKSRC}/tests/unit_tests
 
-# tests as of 1.6.2: 862 passed, 3 skipped, 1 xfailed, 29 warnings in 11.80s
+# tests as of 1.6.3: 890 passed, 3 skipped, 1 xfailed, 3 warnings in 11.34s
 
 .include <bsd.port.mk>
