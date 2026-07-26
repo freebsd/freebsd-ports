@@ -7,7 +7,6 @@ DISTNAME=	userspace-rcu-${DISTVERSION}
 
 PATCH_SITES=	https://github.com/urcu/userspace-rcu/commit/
 PATCHFILES=	16b21287ee99c4f79d49f1840dddb8cc050abee1.patch:-p1 \
-		ca541c6b8c6ce1c166329fa1c19345d8f7794a5a.patch:-p1 \
 		5c33a80edb016c2241cebabc07fc42698ee5d513.patch:-p1 \
 		f240cba1dbadd0649f523953cd53fada508d82b5.patch:-p1 \
 		d5ffaf362824a7cfeda8c7f0479bfb1c7688e65d.patch:-p1 \
