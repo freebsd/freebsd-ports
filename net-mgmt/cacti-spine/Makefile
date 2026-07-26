@@ -1,7 +1,7 @@
 PORTNAME=	spine
-DISTVERSION=	1.2.30
+DISTVERSION=	1.2.31
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
+MASTER_SITES=	https://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
