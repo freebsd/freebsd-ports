@@ -1,6 +1,6 @@
 PORTNAME=	mctc-lib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +21,6 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 TESTING_UNSAFE=	yes
 
-# tests as of 0.5.1: 100% tests passed, 0 tests failed out of 32
+# tests as of 0.5.2: 100% tests passed, 0 tests failed out of 33
 
 .include <bsd.port.mk>

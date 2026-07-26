@@ -10,6 +10,7 @@ include/mctc-lib/modules/mctc_env_accuracy.mod
 include/mctc-lib/modules/mctc_env_error.mod
 include/mctc-lib/modules/mctc_env_system.mod
 include/mctc-lib/modules/mctc_env_testing.mod
+include/mctc-lib/modules/mctc_env_timer.mod
 include/mctc-lib/modules/mctc_io.mod
 include/mctc-lib/modules/mctc_io_codata2018.mod
 include/mctc-lib/modules/mctc_io_constants.mod
@@ -65,5 +66,5 @@ lib/cmake/mctc-lib/mctc-lib-targets.cmake
 lib/cmake/mctc-lib/mctc-utils.cmake
 lib/libmctc-lib.so
 lib/libmctc-lib.so.0
-lib/libmctc-lib.so.0.5.1
+lib/libmctc-lib.so.0.5.2
 libdata/pkgconfig/mctc-lib.pc
