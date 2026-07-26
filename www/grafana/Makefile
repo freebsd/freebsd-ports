@@ -1,7 +1,6 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	13.0.1
-PORTREVISION=	3
+DISTVERSION=	13.1.1
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/ \
 		https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
@@ -34,14 +33,14 @@ DISTFILES=	grafana-${DISTVERSION}.linux-amd64${EXTRACT_SUFX} \
 		pkg/aggregator/go.mod:gomod \
 		pkg/apimachinery/go.mod:gomod \
 		pkg/apiserver/go.mod:gomod \
-		pkg/build/go.mod:gomod \
 		pkg/build/wire/go.mod:gomod \
 		pkg/codegen/go.mod:gomod \
 		pkg/infra/features/go.mod:gomod \
 		pkg/plugins/codegen/go.mod:gomod \
 		pkg/plugins/go.mod:gomod \
-		pkg/semconv/go.mod:gomod \
-		pkg/storage/unified/resource/kv/go.mod:gomod
+		pkg/storage/unified/resource/kv/go.mod:gomod \
+		pkg/storage/unified/resourcepb/go.mod:gomod \
+		pkg/util/sqlite/go.mod:gomod
 EXTRACT_ONLY=	${DISTFILES:N*.mod\:*:N*.mod:C/:.*//:Ngo.work}
 
 MAINTAINER=	drtr0jan@yandex.ru
@@ -54,12 +53,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 riscv64
 
-USES=		cpe go:modules
+USES=		cpe go:1.26+,modules
 
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		a100054
+TAG=		a9cee6e
 
 GO_MOD_DIST=	github
 GO_MODULE=	github.com/grafana/grafana

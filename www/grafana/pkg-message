@@ -1,0 +1,21 @@
+[
+{
+  type: install
+  message: <<EOM
+There's a regression in Grafana 13+: Some bundled plugins
+are built separately and don't support FreeBSD
+(https://github.com/grafana/grafana/issues/108486). There're
+errors in the log while Grafana starting
+(https://bugs.freebsd.org/296083) like:
+===
+fork/exec ... gpx_grafana_elasticsearch_datasource_freebsd_amd64:
+no such file or directory
+===
+To avoid the error specify in grafana.conf:
+===
+[plugins]
+disable_plugins = elasticsearch, zipkin
+===
+EOM
+}
+]
