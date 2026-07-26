@@ -1,10 +1,10 @@
 PORTNAME=	fraqtive
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draws Mandelbrot and Julia fractals
 WWW=		https://fraqtive.mimec.org/
 
