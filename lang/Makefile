@@ -369,6 +369,7 @@
     SUBDIR += solidity
     SUBDIR += spidermonkey128
     SUBDIR += spidermonkey140
+    SUBDIR += spidermonkey153
     SUBDIR += squeak
     SUBDIR += squirrel
     SUBDIR += starlark-rust
