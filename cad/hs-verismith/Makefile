@@ -11,6 +11,8 @@ WWW=		https://github.com/ymherklotz/verismith/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	ghc-9.10.3:lang/ghc910
+
 USES=		cabal
 USE_GITHUB=	yes
 GH_ACCOUNT=	ymherklotz
