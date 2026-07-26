@@ -5,7 +5,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple DNA/protein sequence alignment editor
 WWW=		https://doua.prabi.fr/software/seaview
 
@@ -32,7 +32,6 @@ DESKTOP_ENTRIES=	"SeaView" \
 			"seaview" \
 			"Biology;Science;" \
 			true
-PORTSCOUT=	skipv:4.6.1.3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
