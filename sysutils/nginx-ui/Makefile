@@ -1,6 +1,6 @@
 PORTNAME=	nginx-ui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.2
+DISTVERSION=	2.4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:
@@ -38,7 +38,7 @@ BUILD_DATE=	$$(date -u +%s)
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
 # in the NGINX UI repository to get the value of GITID.
-GITID=		5ddf4e41be7a8d8e6d3754734450a4577ad5733e
+GITID=		eb9495bdf4d98075bc00f221c7731d6f9f0b0a26
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/vendor
