@@ -32,7 +32,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		block-buffer-0.10.4 \
 		block2-0.6.2 \
 		boxcar-0.2.14 \
-		bstr-1.12.3 \
+		bstr-1.13.0 \
 		bumpalo-3.19.0 \
 		bytecheck-0.8.2 \
 		bytecheck_derive-0.8.2 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		collection_literals-1.0.2 \
 		colorchoice-1.0.4 \
 		colored-3.1.1 \
-		compact_str-0.9.1 \
+		compact_str-0.10.0 \
 		condtype-1.3.0 \
 		console-0.16.4 \
 		console_error_panic_hook-0.1.7 \
@@ -131,10 +131,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		futures-core-0.3.32 \
 		futures-task-0.3.32 \
 		futures-util-0.3.32 \
-		gen-lsp-types-0.9.0 \
+		gen-lsp-types-0.10.0 \
 		generic-array-0.14.7 \
-		get-size-derive2-0.10.1 \
-		get-size2-0.10.1 \
+		get-size-derive2-0.10.3 \
+		get-size2-0.10.3 \
 		getopts-0.2.24 \
 		getrandom-0.2.16 \
 		getrandom-0.3.4 \
@@ -183,8 +183,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.14.0 \
 		itertools-0.15.0 \
 		itoa-1.0.15 \
-		jiff-0.2.31 \
-		jiff-static-0.2.31 \
+		jiff-0.2.32 \
+		jiff-static-0.2.32 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.34 \
@@ -205,9 +205,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libz-rs-sys-0.5.5 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.0 \
-		lock_api-0.4.13 \
+		lock_api-0.4.14 \
 		log-0.4.33 \
-		lsp-server-0.8.0 \
+		lsp-server-0.10.0 \
 		manyhow-0.11.4 \
 		manyhow-macros-0.11.4 \
 		markdown-1.0.0 \
@@ -242,11 +242,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		os_pipe-1.2.2 \
 		os_str_bytes-7.1.1 \
 		page_size-0.6.0 \
-		parking_lot-0.12.4 \
-		parking_lot_core-0.9.11 \
+		parking_lot-0.12.5 \
+		parking_lot_core-0.9.12 \
 		paste-1.0.15 \
-		path-absolutize-3.1.1 \
-		path-dedot-3.1.1 \
+		path-absolutize-4.0.1 \
+		path-dedot-4.0.1 \
 		path-slash-0.2.1 \
 		pathdiff-0.2.3 \
 		peg-0.8.5 \
@@ -306,8 +306,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		regex-1.12.4 \
-		regex-automata-0.4.14 \
+		regex-1.13.0 \
+		regex-automata-0.4.15 \
 		regex-lite-0.1.7 \
 		regex-syntax-0.8.11 \
 		rend-0.5.3 \
@@ -320,9 +320,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
-		salsa-0.28.0 \
-		salsa-macro-rules-0.28.0 \
-		salsa-macros-0.28.0 \
+		salsa-0.28.1 \
+		salsa-macro-rules-0.28.1 \
+		salsa-macros-0.28.1 \
 		same-file-1.0.6 \
 		schemars-1.2.1 \
 		schemars_derive-1.2.1 \
@@ -357,7 +357,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		supports-hyperlinks-3.2.0 \
-		syn-2.0.118 \
+		syn-2.0.119 \
 		synstructure-0.13.2 \
 		tap-1.0.1 \
 		tempfile-3.27.0 \
@@ -382,12 +382,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
 		toml-0.9.12+spec-1.1.0 \
-		toml-1.1.2+spec-1.1.0 \
+		toml-1.1.3+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.25.12+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
-		toml_writer-1.1.1+spec-1.1.0 \
+		toml_writer-1.1.2+spec-1.1.0 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
@@ -415,7 +415,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.4 \
+		uuid-1.23.5 \
 		valuable-0.1.1 \
 		version-ranges-0.1.1 \
 		version_check-0.9.5 \
