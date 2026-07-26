@@ -1,6 +1,6 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.5.2.39
+DISTVERSION=	26.5.3.52
 DISTVERSIONSUFFIX=-stable
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
@@ -98,6 +98,8 @@ SUB_LIST+=	LEGACY_LIMITS="" \
 .endif
 
 SOVERSION=	${PORTVERSION}
+
+PORTSCOUT=             limit:.^v.*-stable$
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/programs/server/config.xml
