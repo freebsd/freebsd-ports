@@ -1,7 +1,6 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.31.0
-PORTREVISION=	6
+DISTVERSION=	1.53.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
 		https://Lindera.dev/:dic_upstream \
@@ -44,7 +43,7 @@ USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 #GH_TUPLE=		meilisearch:lmdb:6a01c0a:lmdb/../lmdb-rs-501aa34a1ab7f092e3ff54a6c22ff6c55931a2d8/lmdb-sys/lmdb
-DASHBOARD_VERSION=	0.2.22
+DASHBOARD_VERSION=	0.4.2
 MINIDASHBOARDFILE=	meilisearch-mini-dashboard-build-${DASHBOARD_VERSION}.zip
 CARGO_INSTALL_PATH=	crates/meilisearch
 CARGO_ENV=		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
