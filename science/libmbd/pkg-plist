@@ -5,6 +5,7 @@ include/mbd/mbd_constants.mod
 include/mbd/mbd_coulomb.mod
 include/mbd/mbd_damping.mod
 include/mbd/mbd_defaults.mod
+include/mbd/mbd_density.mod
 include/mbd/mbd_dipole.mod
 include/mbd/mbd_formulas.mod
 include/mbd/mbd_geom.mod
@@ -23,3 +24,5 @@ include/mbd/mbd_version.mod
 lib/cmake/mbd/MbdConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mbd/MbdConfig.cmake
 lib/libmbd.so
+lib/libmbd.so.0
+lib/libmbd.so.0.15.0
