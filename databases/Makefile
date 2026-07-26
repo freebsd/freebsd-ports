@@ -123,6 +123,7 @@
     SUBDIR += ldb28
     SUBDIR += ldb29
     SUBDIR += leo_center
+    SUBDIR += letos
     SUBDIR += leveldb
     SUBDIR += libcouchbase
     SUBDIR += libdbi
@@ -1145,7 +1146,6 @@
     SUBDIR += sqlitecpp
     SUBDIR += sqlitemanager
     SUBDIR += sqliteodbc
-    SUBDIR += sqlitestudio
     SUBDIR += sqlrelay
     SUBDIR += sqlx-cli
     SUBDIR += sqsh
