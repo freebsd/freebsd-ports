@@ -65,6 +65,7 @@ include/tblite/tblite_disp_d4.mod
 include/tblite/tblite_disp_type.mod
 include/tblite/tblite_double_dictionary.mod
 include/tblite/tblite_external_field.mod
+include/tblite/tblite_features.mod
 include/tblite/tblite_fit_newuoa.mod
 include/tblite/tblite_fit_settings.mod
 include/tblite/tblite_integral_diat_trafo.mod
@@ -73,6 +74,12 @@ include/tblite/tblite_integral_multipole.mod
 include/tblite/tblite_integral_overlap.mod
 include/tblite/tblite_integral_trafo.mod
 include/tblite/tblite_integral_type.mod
+include/tblite/tblite_io_data.mod
+include/tblite/tblite_io_data_hdf5.mod
+include/tblite/tblite_io_data_npz.mod
+include/tblite/tblite_io_data_type.mod
+include/tblite/tblite_io_hdf5.mod
+include/tblite/tblite_io_molden.mod
 include/tblite/tblite_io_numpy.mod
 include/tblite/tblite_io_numpy_constants.mod
 include/tblite/tblite_io_numpy_crc32.mod
@@ -83,6 +90,7 @@ include/tblite/tblite_io_numpy_savez.mod
 include/tblite/tblite_io_numpy_utils.mod
 include/tblite/tblite_io_numpy_zip.mod
 include/tblite/tblite_io_tag.mod
+include/tblite/tblite_io_trexio.mod
 include/tblite/tblite_lapack.mod
 include/tblite/tblite_lapack_getrf.mod
 include/tblite/tblite_lapack_getri.mod
@@ -134,6 +142,7 @@ include/tblite/tblite_scf_info.mod
 include/tblite/tblite_scf_iterator.mod
 include/tblite/tblite_scf_mixer.mod
 include/tblite/tblite_scf_mixer_broyden.mod
+include/tblite/tblite_scf_mixer_input.mod
 include/tblite/tblite_scf_mixer_type.mod
 include/tblite/tblite_scf_potential.mod
 include/tblite/tblite_scf_solver.mod
@@ -142,12 +151,11 @@ include/tblite/tblite_solvation_alpb.mod
 include/tblite/tblite_solvation_born.mod
 include/tblite/tblite_solvation_cds.mod
 include/tblite/tblite_solvation_cm5.mod
-include/tblite/tblite_solvation_cpcm.mod
-include/tblite/tblite_solvation_cpcm_dd.mod
 include/tblite/tblite_solvation_data.mod
 include/tblite/tblite_solvation_data_alpb.mod
 include/tblite/tblite_solvation_data_cds.mod
 include/tblite/tblite_solvation_data_shift.mod
+include/tblite/tblite_solvation_ddx.mod
 include/tblite/tblite_solvation_input.mod
 include/tblite/tblite_solvation_shift.mod
 include/tblite/tblite_solvation_surface.mod
@@ -187,5 +195,5 @@ lib/cmake/tblite/tblite-targets.cmake
 lib/cmake/tblite/tblite-utils.cmake
 lib/libtblite.so
 lib/libtblite.so.0
-lib/libtblite.so.0.6.0
+lib/libtblite.so.0.7.0
 libdata/pkgconfig/tblite.pc
