@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.4
+DISTVERSION=	0.11.0
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +19,7 @@ GH_ACCOUNT=	Decodetalkers
 
 CARGO_BUILDDEP=	no
 CARGO_CRATES=	aho-corasick-1.1.4 \
+		android_system_properties-0.1.5 \
 		anstream-1.0.0 \
 		anstyle-1.0.14 \
 		anstyle-parse-1.0.0 \
@@ -27,11 +28,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		anyhow-1.0.102 \
 		assert_cmd-2.2.0 \
 		auto_impl-1.3.0 \
+		autocfg-1.5.1 \
 		bitflags-2.11.0 \
 		bstr-1.12.1 \
+		bumpalo-3.20.3 \
 		bytes-1.11.1 \
 		cc-1.2.58 \
 		cfg-if-1.0.4 \
+		chrono-0.4.45 \
 		clap-4.6.0 \
 		clap_builder-4.6.0 \
 		clap_complete-4.6.0 \
@@ -40,8 +44,10 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		cli-table-0.5.0 \
 		cli-table-derive-0.5.0 \
 		colorchoice-1.0.5 \
+		console-0.16.4 \
 		const-random-0.1.18 \
 		const-random-macro-0.1.16 \
+		core-foundation-sys-0.8.7 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
@@ -49,9 +55,11 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		csv-1.4.0 \
 		csv-core-0.1.13 \
 		dashmap-6.2.1 \
+		dialoguer-0.12.0 \
 		difflib-0.4.0 \
 		displaydoc-0.2.5 \
 		dlv-list-0.5.2 \
+		encode_unicode-1.0.0 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		etcetera-0.11.0 \
@@ -67,6 +75,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		futures-sink-0.3.32 \
 		futures-task-0.3.32 \
 		futures-util-0.3.32 \
+		fuzzy-matcher-0.3.7 \
 		gen-lsp-types-0.9.0 \
 		getrandom-0.2.17 \
 		getrandom-0.4.2 \
@@ -77,6 +86,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		hashbrown-0.16.1 \
 		heck-0.5.0 \
 		httparse-1.10.1 \
+		iana-time-zone-0.1.65 \
+		iana-time-zone-haiku-0.1.2 \
 		icu_collections-2.2.0 \
 		icu_locale_core-2.2.0 \
 		icu_normalizer-2.2.0 \
@@ -93,6 +104,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		is_executable-1.0.5 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
+		js-sys-0.3.103 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.184 \
@@ -103,13 +115,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		memchr-2.8.0 \
 		mio-1.2.0 \
 		nu-ansi-term-0.50.3 \
+		num-traits-0.2.19 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		ordered-multimap-0.7.3 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
-		path-absolutize-3.1.1 \
-		path-dedot-3.1.1 \
+		path-absolutize-4.0.1 \
+		path-dedot-4.0.1 \
 		pathdiff-0.2.3 \
 		percent-encoding-2.3.2 \
 		pin-project-lite-0.2.17 \
@@ -122,9 +135,9 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		quote-1.0.45 \
 		r-efi-6.0.0 \
 		redox_syscall-0.5.18 \
-		regex-1.12.3 \
-		regex-automata-0.4.14 \
-		regex-syntax-0.8.10 \
+		regex-1.13.1 \
+		regex-automata-0.4.16 \
+		regex-syntax-0.8.11 \
 		rust-ini-0.21.3 \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
@@ -138,6 +151,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		serde_json-1.0.150 \
 		serde_spanned-1.1.1 \
 		sharded-slab-0.1.7 \
+		shell-words-1.1.1 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.8 \
 		slab-0.4.12 \
@@ -172,7 +186,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.23 \
 		tree-sitter-0.26.8 \
-		tree-sitter-cmake-0.7.1 \
+		tree-sitter-cmake-0.7.2 \
 		tree-sitter-language-0.1.7 \
 		treesitter_kind_collector-0.2.0 \
 		unicode-ident-1.0.24 \
@@ -187,11 +201,20 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.2+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+		wasm-bindgen-0.2.126 \
+		wasm-bindgen-macro-0.2.126 \
+		wasm-bindgen-macro-support-0.2.126 \
+		wasm-bindgen-shared-0.2.126 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
 		winapi-util-0.1.11 \
+		windows-core-0.62.2 \
+		windows-implement-0.60.2 \
+		windows-interface-0.59.3 \
 		windows-link-0.2.1 \
+		windows-result-0.4.1 \
+		windows-strings-0.5.1 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.53.5 \
@@ -215,6 +238,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		yoke-derive-0.8.2 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
+		zeroize-1.9.0 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
