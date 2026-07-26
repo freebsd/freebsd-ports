@@ -1,6 +1,5 @@
 PORTNAME=	pymbd
-DISTVERSION=	0.12.5
-PORTREVISION=	2
+DISTVERSION=	0.15.0
 CATEGORIES=	science # chemistry
 MASTER_SITES=	https://github.com/libmbd/libmbd/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +11,21 @@ WWW=		https://github.com/libmbd/libmbd
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>:devel/py-cffi@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}poetry-dynamic-versioning>0:devel/py-poetry-dynamic-versioning@${PY_FLAVOR} \
+		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libmbd.so:science/libmbd
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>:devel/py-cffi@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.20,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.6:science/py-scipy@${PY_FLAVOR}
 
-USES=		localbase python
-USE_PYTHON=	distutils autoplist
+USES=		localbase python shebangfix
+USE_PYTHON=	pep517 autoplist
+
+SHEBANG_FILES=	src/pymbd/benchmark.py
+
+MAKE_ENV=	LIBMBD_PREFIX=${LOCALBASE}
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
