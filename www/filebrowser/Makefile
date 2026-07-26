@@ -1,6 +1,6 @@
 PORTNAME=	filebrowser
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.63.18
+DISTVERSION=	2.63.21
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
@@ -35,7 +35,7 @@ PLIST_SUB=	GROUP=${GROUPS:[1]} \
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
 # in the File Browser repository to get the value of GITID.
-GITID=			fe7efb2e6afe66774cd86a5b0a03033bd514d0c0
+GITID=			f6fb8f6bf52d714b2215534033a3c96316069efc
 
 FILEBROWSER_USER=	${PORTNAME}
 FILEBROWSER_GROUP=	${FILEBROWSER_USER}
