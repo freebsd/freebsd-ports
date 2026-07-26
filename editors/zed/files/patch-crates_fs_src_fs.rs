@@ -1,6 +1,6 @@
---- crates/fs/src/fs.rs.orig	2026-05-20 14:31:42 UTC
+--- crates/fs/src/fs.rs.orig	2026-07-22 23:04:41 UTC
 +++ crates/fs/src/fs.rs
-@@ -443,7 +443,7 @@ impl FileHandle for std::fs::File {
+@@ -444,7 +444,7 @@ impl FileHandle for std::fs::File {
          Ok(new_path)
      }
  
@@ -9,7 +9,7 @@
      fn current_path(&self, _: &Arc<dyn Fs>) -> Result<PathBuf> {
          use std::{
              ffi::{CStr, OsStr},
-@@ -452,7 +452,10 @@ impl FileHandle for std::fs::File {
+@@ -453,7 +453,10 @@ impl FileHandle for std::fs::File {
  
          let fd = self.as_fd();
          let mut kif = MaybeUninit::<libc::kinfo_file>::uninit();
@@ -21,7 +21,7 @@
  
          let result = unsafe { libc::fcntl(fd.as_raw_fd(), libc::F_KINFO, kif.as_mut_ptr()) };
          anyhow::ensure!(result != -1, "fcntl returned -1");
-@@ -464,6 +467,11 @@ impl FileHandle for std::fs::File {
+@@ -465,6 +468,11 @@ impl FileHandle for std::fs::File {
          Ok(path)
      }
  
@@ -33,7 +33,7 @@
      #[cfg(target_os = "windows")]
      fn current_path(&self, _: &Arc<dyn Fs>) -> Result<PathBuf> {
          use std::ffi::OsString;
-@@ -554,7 +562,7 @@ impl RealFs {
+@@ -555,7 +563,7 @@ impl RealFs {
      }
  }
  
@@ -42,7 +42,7 @@
  fn rename_without_replace(source: &Path, target: &Path) -> io::Result<()> {
      let source = path_to_c_string(source)?;
      let target = path_to_c_string(target)?;
-@@ -574,6 +582,27 @@ fn rename_without_replace(source: &Path, target: &Path
+@@ -575,6 +583,27 @@ fn rename_without_replace(source: &Path, target: &Path
          )
      };
  
@@ -70,7 +70,7 @@
      if result == 0 {
          Ok(())
      } else {
-@@ -601,7 +630,7 @@ fn rename_without_replace(source: &Path, target: &Path
+@@ -602,7 +631,7 @@ fn rename_without_replace(source: &Path, target: &Path
      .map_err(|_| io::Error::last_os_error())
  }
  
@@ -79,7 +79,7 @@
  fn path_to_c_string(path: &Path) -> io::Result<CString> {
      CString::new(path.as_os_str().as_bytes()).map_err(|_| {
          io::Error::new(
-@@ -705,7 +734,12 @@ impl Fs for RealFs {
+@@ -706,7 +735,12 @@ impl Fs for RealFs {
          }
  
          let use_metadata_fallback = {
@@ -93,7 +93,7 @@
              {
                  let source = source.to_path_buf();
                  let target = target.to_path_buf();
-@@ -738,7 +772,12 @@ impl Fs for RealFs {
+@@ -739,7 +773,12 @@ impl Fs for RealFs {
                  }
              }
  

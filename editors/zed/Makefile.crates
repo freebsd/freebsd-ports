@@ -65,7 +65,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		async-std-1.13.2 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
-		async-tar-0.5.1 \
+		async-tar-0.6.1 \
 		async-trait-0.1.89 \
 		async-tungstenite-0.31.0 \
 		async_zip-0.0.18 \
@@ -331,7 +331,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		dispatch-0.2.0 \
 		dispatch2-0.3.1 \
 		displaydoc-0.2.5 \
-		dlib-0.5.2 \
+		dlib-0.5.3 \
 		document-features-0.2.12 \
 		documented-0.9.2 \
 		documented-macros-0.9.2 \
@@ -359,6 +359,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		endi-1.1.0 \
 		enumflags2-0.7.12 \
 		enumflags2_derive-0.7.12 \
+		enumn-0.1.14 \
 		env_filter-0.1.4 \
 		env_logger-0.10.2 \
 		env_logger-0.11.8 \
@@ -383,7 +384,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		failspot-0.2.0 \
 		fallible-iterator-0.3.0 \
 		fancy-regex-0.16.2 \
-		fancy-regex-0.17.0 \
+		fancy-regex-0.18.0 \
 		fast-srgb8-1.0.0 \
 		fastrand-1.9.0 \
 		fastrand-2.3.0 \
@@ -393,7 +394,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		fdeflate-0.3.7 \
 		ff-0.12.1 \
 		filedescriptor-0.8.3 \
-		filetime-0.2.26 \
+		filetime-0.2.29 \
 		find-msvc-tools-0.1.5 \
 		fixedbitset-0.4.2 \
 		fixedbitset-0.5.7 \
@@ -403,6 +404,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		float_next_after-1.0.0 \
 		fluent-uri-0.4.1 \
 		flume-0.11.1 \
+		flume-0.12.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
@@ -686,7 +688,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		naga-29.0.4 \
 		nalgebra-0.34.2 \
 		nanoid-0.4.0 \
-		nanorand-0.7.0 \
 		native-tls-0.2.18 \
 		nbformat-1.2.0 \
 		ndk-0.9.0 \
@@ -925,8 +926,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		rdrand-0.4.0 \
 		read-fonts-0.35.0 \
 		read-fonts-0.37.0 \
-		redox_syscall-0.2.16 \
 		redox_syscall-0.5.18 \
+		redox_syscall-0.7.5 \
 		redox_users-0.4.6 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
@@ -934,7 +935,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		referencing-0.37.4 \
 		regalloc2-0.12.2 \
 		regex-1.12.3 \
-		regex-automata-0.4.13 \
+		regex-automata-0.4.14 \
 		regex-lite-0.1.8 \
 		regex-syntax-0.8.8 \
 		rend-0.4.2 \
@@ -1008,6 +1009,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		sea-query-binder-0.7.0 \
 		seahash-4.1.0 \
 		sec1-0.3.0 \
+		seccompiler-0.5.0 \
 		secrecy-0.10.3 \
 		security-framework-2.11.1 \
 		security-framework-3.5.1 \
@@ -1329,14 +1331,14 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		wasmtime-wasi-io-36.0.12 \
 		wast-35.0.2 \
 		wax-0.7.0 \
-		wayland-backend-0.3.11 \
+		wayland-backend-0.3.15 \
 		wayland-client-0.31.11 \
 		wayland-cursor-0.31.11 \
 		wayland-protocols-0.32.9 \
 		wayland-protocols-plasma-0.3.9 \
 		wayland-protocols-wlr-0.3.9 \
 		wayland-scanner-0.31.7 \
-		wayland-sys-0.31.7 \
+		wayland-sys-0.31.11 \
 		web-sys-0.3.97 \
 		web-time-1.1.0 \
 		web_atoms-0.1.3 \
@@ -1475,7 +1477,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		x11-clipboard-0.9.3 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
-		xattr-0.2.3 \
+		xattr-1.6.1 \
 		xcb-1.6.0 \
 		xcursor-0.3.10 \
 		xkbcommon-0.8.0 \

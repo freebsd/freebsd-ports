@@ -1,6 +1,6 @@
---- crates/workspace/src/status_bar.rs.orig	2026-05-20 14:31:42 UTC
+--- crates/workspace/src/status_bar.rs.orig	2026-07-22 23:04:41 UTC
 +++ crates/workspace/src/status_bar.rs
-@@ -131,13 +131,13 @@ impl Render for StatusBar {
+@@ -168,13 +168,13 @@ impl Render for StatusBar {
                      // This border is to avoid a transparent gap in the rounded corners
                      .mb(px(-1.))
                      .mt({

@@ -1,4 +1,4 @@
---- crates/gpui/src/platform.rs.orig	2026-07-15 17:12:50 UTC
+--- crates/gpui/src/platform.rs.orig	2026-07-22 23:04:41 UTC
 +++ crates/gpui/src/platform.rs
 @@ -2,7 +2,7 @@ mod keystroke;
  mod keyboard;
@@ -9,7 +9,7 @@
  #[expect(missing_docs)]
  pub mod layer_shell;
  
-@@ -22,7 +22,7 @@ pub mod scap_screen_capture;
+@@ -25,7 +25,7 @@ pub mod scap_screen_capture;
  pub mod scap_screen_capture;
  
  #[cfg(all(
@@ -18,7 +18,16 @@
      feature = "screen-capture"
  ))]
  pub(crate) type PlatformScreenCaptureFrame = scap::frame::Frame;
-@@ -1700,7 +1700,7 @@ pub enum WindowKind {
+@@ -801,7 +801,7 @@ pub trait PlatformWindow: HasWindowHandle + HasDisplay
+     fn start_window_move(&self) {}
+     fn start_window_resize(&self, _edge: ResizeEdge) {}
+     fn set_exclusive_zone(&self, _zone: Pixels) {}
+-    #[cfg(all(target_os = "linux", feature = "wayland"))]
++    #[cfg(all(any(target_os = "linux", target_os = "freebsd"), feature = "wayland"))]
+     fn set_exclusive_edge(&self, _edge: layer_shell::Anchor) {}
+     fn set_input_region(&self, _region: Option<&[Bounds<Pixels>]>) {}
+     fn window_decorations(&self) -> Decorations {
+@@ -1899,7 +1899,7 @@ pub enum WindowKind {
  
      /// A Wayland LayerShell window, used to draw overlays or backgrounds for applications such as
      /// docks, notifications or wallpapers.
