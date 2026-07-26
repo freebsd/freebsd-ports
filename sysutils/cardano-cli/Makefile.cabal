@@ -1,5 +1,5 @@
-USE_CABAL=	Cabal-3.16.1.0 \
-		Cabal-syntax-3.16.1.0_1 \
+USE_CABAL=	Cabal-3.16.1.0_1 \
+		Cabal-syntax-3.16.1.0_2 \
 		Diff-1.0.2 \
 		FailT-0.1.2.0 \
 		Glob-0.10.2_3 \
@@ -31,7 +31,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		atomic-counter-0.1.2.4 \
 		atomic-primops-0.8.8 \
 		attoparsec-0.14.4_6 \
-		attoparsec-aeson-2.2.2.0 \
+		attoparsec-aeson-2.2.2.0_1 \
 		auto-update-0.2.6 \
 		barbies-2.1.1.0 \
 		base-compat-0.14.1 \
@@ -42,7 +42,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		base16-bytestring-1.0.2.0_1 \
 		base58-bytestring-0.1.0 \
 		base64-bytestring-1.2.1.0_1 \
-		base64-bytestring-type-1.0.1_25 \
+		base64-bytestring-type-1.0.1_26 \
 		basement-0.0.16:chap \
 		bech32-1.1.10:chap \
 		bech32-th-1.1.10:chap \
@@ -119,13 +119,13 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		conduit-1.3.6.1 \
 		conduit-extra-1.3.8_1 \
 		constraints-0.14.4 \
-		constraints-extras-0.4.0.2 \
+		constraints-extras-0.4.0.2_1 \
 		contra-tracer-0.1.0.2:chap \
 		contravariant-1.5.6 \
 		cookie-0.5.1 \
 		crc32c-0.2.2 \
-		criterion-1.6.5.0 \
-		criterion-measurement-0.2.4.0 \
+		criterion-1.6.5.0_1 \
+		criterion-measurement-0.2.4.0_1 \
 		cryptohash-md5-0.11.101.0_6 \
 		crypton-1.0.6 \
 		crypton-connection-0.4.5_1 \
@@ -139,7 +139,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		data-default-class-0.2.0.0 \
 		data-elevator-0.2_1 \
 		data-fix-0.3.4_2 \
-		dec-0.0.6_1 \
+		dec-0.0.6_2 \
 		dense-linear-algebra-0.1.0.0 \
 		dependent-map-0.4.0.1 \
 		dependent-sum-0.7.2.0_2 \
@@ -147,7 +147,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		deriving-aeson-0.2.10 \
 		deriving-compat-0.6.8 \
 		dictionary-sharing-0.1.0.0_4 \
-		diff-containers-1.3.0.0:chap \
+		diff-containers-1.3.0.0_1:chap \
 		digest-0.0.2.1 \
 		directory-ospath-streaming-0.3_1 \
 		distributive-0.6.3 \
@@ -166,9 +166,8 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		fast-logger-3.2.6 \
 		fgl-5.8.3.0_2 \
 		file-embed-0.0.16.0 \
-		file-io-0.1.6 \
 		filelock-0.1.1.9 \
-		fin-0.3.2_1 \
+		fin-0.3.2_2 \
 		fingertree-0.1.6.3 \
 		fingertree-rm-1.0.0.4:chap \
 		fmt-0.6.3.0 \
@@ -201,7 +200,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		heapwords-0.1.0.2:chap \
 		hedgehog-1.7_1:chap \
 		hedgehog-extras-0.10.1.0:chap \
-		hedgehog-quickcheck-0.1.1_10 \
+		hedgehog-quickcheck-0.1.1_11 \
 		heredoc-0.2.0.0 \
 		hinotify-0.4.2 \
 		hostname-1.0 \
@@ -220,8 +219,8 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		http-conduit-2.3.9.1_1 \
 		http-date-0.0.11 \
 		http-semantics-0.4.0 \
-		http-types-0.12.4 \
-		http2-5.4.0 \
+		http-types-0.12.4_1 \
+		http2-5.4.0_1 \
 		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.4_2 \
 		indexed-traversable-instances-0.1.2.1 \
@@ -308,7 +307,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		primes-0.2.1.0 \
 		primitive-0.9.1.0_1 \
 		profunctors-5.6.3 \
-		psqueues-0.2.8.3 \
+		psqueues-0.2.8.3_2 \
 		pvar-1.0.0.0_1 \
 		quickcheck-instances-0.3.33_1 \
 		quickcheck-io-0.2.0 \
@@ -316,10 +315,10 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		quickcheck-state-machine-0.10.3 \
 		quickcheck-transformer-0.3.1.2_1 \
 		quiet-0.2 \
-		ral-0.2.2_2 \
+		ral-0.2.2_3 \
 		random-1.3.1 \
 		random-shuffle-0.0.4 \
-		rawlock-0.1.2.0_1 \
+		rawlock-0.1.2.0_2 \
 		recursion-schemes-5.2.3_2 \
 		recv-0.1.1 \
 		reducers-3.12.5_1 \
@@ -350,7 +349,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		sop-extras-0.4.1.0_1:chap \
 		split-0.2.5 \
 		splitmix-0.1.3.2 \
-		statistics-0.16.5.0 \
+		statistics-0.16.5.0_1 \
 		statistics-linreg-0.3 \
 		stm-chans-3.0.0.11 \
 		streaming-0.2.4.0:chap \
@@ -361,7 +360,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		strict-checked-vars-0.2.1.0:chap \
 		strict-list-1.0.0.1 \
 		strict-sop-core-0.1.3.0_1:chap \
-		string-interpolate-0.3.4.0_6 \
+		string-interpolate-0.3.4.0_7 \
 		syb-0.7.4 \
 		tagged-0.8.10_1 \
 		tar-0.7.0.0_2 \
@@ -397,7 +396,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		time-locale-compat-0.1.1.5 \
 		time-manager-0.3.2 \
 		tls-2.1.14 \
-		tomland-1.3.3.3_5 \
+		tomland-1.3.3.3_6 \
 		trace-dispatcher-2.12.1:chap \
 		transformers-base-0.4.6.1 \
 		transformers-compat-0.7.2 \
@@ -421,7 +420,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		validity-0.12.1.0 \
 		vary-0.1.1.3 \
 		vault-0.3.1.6 \
-		vector-0.13.2.0_2 \
+		vector-0.13.2.0_5 \
 		vector-algorithms-0.9.1.0_1:chap \
 		vector-binary-instances-0.2.5.2_5 \
 		vector-map-1.2.0.0:chap \
@@ -435,7 +434,7 @@ USE_CABAL=	Cabal-3.16.1.0 \
 		with-utf8-1.1.0.0_2 \
 		witherable-0.5_2 \
 		wl-pprint-annotated-0.1.0.1_4 \
-		wl-pprint-text-1.2.0.2_3 \
+		wl-pprint-text-1.2.0.2_4 \
 		word8-0.1.3 \
 		yaml-0.11.11.2_2 \
 		zlib-0.7.1.1
