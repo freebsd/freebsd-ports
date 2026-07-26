@@ -145,7 +145,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		deriving-aeson-0.2.10 \
 		deriving-compat-0.6.8 \
 		dictionary-sharing-0.1.0.0_4 \
-		diff-containers-1.3.0.0:chap \
+		diff-containers-1.3.0.0_1:chap \
 		digest-0.0.2.1.0.0.0.1_1:chap \
 		distributive-0.6.3 \
 		dlist-1.0_2 \
@@ -309,7 +309,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		profunctors-5.6.3 \
 		prometheus-2.3.0 \
 		protolude-0.3.5 \
-		psqueues-0.2.8.3_1 \
+		psqueues-0.2.8.3_2 \
 		pvar-1.0.0.0_1 \
 		quickcheck-instances-0.3.33_1 \
 		quickcheck-io-0.2.0 \
@@ -320,7 +320,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		ral-0.2.2_3 \
 		random-1.3.1 \
 		random-shuffle-0.0.4 \
-		rawlock-0.1.2.0_1 \
+		rawlock-0.1.2.0_2 \
 		recursion-schemes-5.2.3_2 \
 		recv-0.1.1 \
 		reflection-2.1.9_1 \
@@ -363,7 +363,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		strict-sop-core-0.1.3.0_1:chap \
 		string-conv-0.2.0 \
 		string-conversions-0.4.0.1_1 \
-		string-interpolate-0.3.4.0_6 \
+		string-interpolate-0.3.4.0_7 \
 		syb-0.7.4 \
 		tagged-0.8.10_1 \
 		tasty-1.5.4 \

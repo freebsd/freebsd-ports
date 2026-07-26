@@ -1,6 +1,6 @@
 PORTNAME=	ogmios
 PORTVERSION=	7.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
