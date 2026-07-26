@@ -1,4 +1,5 @@
 @dir(%%USER%%,%%GROUP%%,0700) /var/db/filebrowser-quantum
 @dir(%%USER%%,%%GROUP%%,0700) %%WWWDIR%%
 @sample(,%%GROUP%%,0640) etc/filebrowser-quantum.yaml.sample
+@sample etc/newsyslog.conf.d/filebrowser-quantum.conf.sample
 bin/filebrowser-quantum

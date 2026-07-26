@@ -27,8 +27,9 @@ load_rc_config $name
 
 filebrowser_quantum_env="FILEBROWSER_CONFIG=${filebrowser_quantum_config}"
 pidfile="/var/run/filebrowser-quantum.pid"
+supervisor_pidfile="/var/run/${name}d.pid"
 procname="%%LOCALBASE%%/bin/filebrowser-quantum"
 command="/usr/sbin/daemon"
-command_args="-c -u ${filebrowser_quantum_runas} -o ${filebrowser_quantum_log} -p ${pidfile} -t \"${desc}\" ${procname}"
+command_args="-cH -u ${filebrowser_quantum_runas} -o ${filebrowser_quantum_log} -P ${supervisor_pidfile} -p ${pidfile} -t \"${name}: ${desc}\" ${procname}"
 
 run_rc_command "$1"
