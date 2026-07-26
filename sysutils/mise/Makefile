@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.7.13
+DISTVERSION=	2026.7.14
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,7 +35,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		aes-gcm-0.10.3 \
 		aes-kw-0.2.1 \
 		age-0.11.5 \
+		age-0.12.1 \
 		age-core-0.11.0 \
+		age-core-0.12.0 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.4 \
 		alloc-no-stdlib-2.0.4 \
@@ -70,19 +72,19 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		async-spooled-tempfile-0.1.0 \
 		async-trait-0.1.91 \
 		atomic-waker-1.1.2 \
-		aube-1.32.0 \
-		aube-codes-1.32.0 \
-		aube-linker-1.32.0 \
-		aube-lockfile-1.32.0 \
-		aube-manifest-1.32.0 \
-		aube-registry-1.32.0 \
-		aube-resolver-1.32.0 \
-		aube-runtime-1.32.0 \
-		aube-scripts-1.32.0 \
-		aube-settings-1.32.0 \
-		aube-store-1.32.0 \
-		aube-util-1.32.0 \
-		aube-workspace-1.32.0 \
+		aube-1.33.1 \
+		aube-codes-1.33.1 \
+		aube-linker-1.33.1 \
+		aube-lockfile-1.33.1 \
+		aube-manifest-1.33.1 \
+		aube-registry-1.33.1 \
+		aube-resolver-1.33.1 \
+		aube-runtime-1.33.1 \
+		aube-scripts-1.33.1 \
+		aube-settings-1.33.1 \
+		aube-store-1.33.1 \
+		aube-util-1.33.1 \
+		aube-workspace-1.33.1 \
 		autocfg-1.5.1 \
 		aws-config-1.8.14 \
 		aws-credential-types-1.2.13 \
@@ -120,6 +122,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		basic-toml-0.1.10 \
 		bcrypt-pbkdf-0.10.0 \
 		bech32-0.9.1 \
+		bech32-0.11.1 \
 		beef-0.5.2 \
 		bindgen-0.72.1 \
 		binstall-tar-0.4.42 \
@@ -183,7 +186,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		clap_lex-1.1.0 \
 		clap_usage-2.0.3 \
 		clru-0.6.3 \
-		clx-2.1.1 \
+		clx-3.0.0 \
 		cmac-0.7.2 \
 		cmake-0.1.58 \
 		cmov-0.5.4 \
@@ -258,7 +261,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		defmt-1.1.1 \
 		defmt-macros-1.1.1 \
 		defmt-parser-1.0.0 \
-		demand-2.0.3 \
+		demand-2.0.4 \
 		der-0.7.10 \
 		der-0.8.1 \
 		der_derive-0.7.3 \
@@ -326,9 +329,12 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		flate2-1.1.9 \
 		float-cmp-0.10.0 \
 		fluent-0.16.1 \
+		fluent-0.17.0 \
 		fluent-bundle-0.15.3 \
+		fluent-bundle-0.16.0 \
 		fluent-langneg-0.13.1 \
 		fluent-syntax-0.11.1 \
+		fluent-syntax-0.12.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
@@ -436,6 +442,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		hmac-0.12.1 \
 		hmac-0.13.0 \
 		homedir-0.3.6 \
+		hpke-0.12.0 \
 		http-0.2.12 \
 		http-1.4.2 \
 		http-auth-0.1.10 \
@@ -450,6 +457,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		human_format-1.2.1 \
 		humansize-2.1.3 \
 		humantime-2.4.0 \
+		hybrid-array-0.2.3 \
 		hybrid-array-0.4.13 \
 		hyper-1.11.0 \
 		hyper-rustls-0.27.9 \
@@ -457,7 +465,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		hyper-util-0.1.20 \
 		i18n-config-0.4.8 \
 		i18n-embed-0.15.4 \
+		i18n-embed-0.16.0 \
 		i18n-embed-fl-0.9.4 \
+		i18n-embed-fl-0.10.1 \
 		i18n-embed-impl-0.8.4 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
@@ -514,6 +524,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		k256-0.13.4 \
 		kdl-6.5.0 \
 		keccak-0.1.6 \
+		kem-0.3.0-pre.0 \
 		known-folders-1.4.2 \
 		kstring-2.0.2 \
 		landlock-0.4.5 \
@@ -562,6 +573,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		minisign-verify-0.2.5 \
 		miniz_oxide-0.8.9 \
 		mio-1.2.2 \
+		ml-kem-0.2.3 \
 		mlua-0.12.0 \
 		mlua-sys-0.11.0 \
 		mlua_derive-0.12.0 \
@@ -617,8 +629,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		parse-zoneinfo-0.3.1 \
 		password-hash-0.5.0 \
 		pastey-0.2.3 \
-		path-absolutize-3.1.1 \
-		path-dedot-3.1.1 \
+		path-absolutize-4.0.1 \
+		path-dedot-4.0.1 \
 		path_resolver-0.2.12 \
 		pathdiff-0.2.3 \
 		pbkdf2-0.12.2 \
@@ -664,7 +676,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		prettyplease-0.2.37 \
 		primeorder-0.13.6 \
 		proc-macro-error-attr2-2.0.0 \
+		proc-macro-error-attr3-3.0.3 \
 		proc-macro-error2-2.0.1 \
+		proc-macro-error3-3.0.3 \
 		proc-macro2-1.0.107 \
 		prodash-31.0.0 \
 		proptest-1.11.0 \
@@ -963,7 +977,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		url-2.5.8 \
 		urlencoding-2.1.3 \
 		usage-lib-2.18.2 \
-		usage-lib-3.5.6 \
+		usage-lib-4.0.0 \
 		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
