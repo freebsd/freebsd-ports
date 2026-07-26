@@ -1,10 +1,9 @@
 PORTNAME=	texlab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.0
-PORTREVISION=	36
+DISTVERSION=	5.26.0
 CATEGORIES=	devel
 
-MAINTAINER=	kfv@kfv.io
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Language Server Protocol for LaTeX
 WWW=		https://texlab.netlify.app/
 
@@ -19,21 +18,19 @@ GH_ACCOUNT=	latex-lsp
 # this crate's panic strategy `abort`
 WITHOUT_LTO=	yes # XXX bug 277333
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/man/man1/${PORTNAME}.1.gz
-PORTDOCS=	CHANGELOG.md README.md docs/*
+PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
-		${STAGEDIR}${PREFIX}/share/man/man1
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/target/release/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG.md ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
