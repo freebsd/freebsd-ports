@@ -1,6 +1,6 @@
---- doc/CMakeLists.txt.orig	2023-07-08 00:20:16 UTC
+--- doc/CMakeLists.txt.orig	2026-07-25 14:03:25 UTC
 +++ doc/CMakeLists.txt
-@@ -44,12 +44,12 @@ endif()
+@@ -40,12 +40,12 @@ endif()
  # Always install a minimalistic README and LICENSE file:
  #
  

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-07-08 00:20:16 UTC
+--- CMakeLists.txt.orig	2026-07-25 14:03:25 UTC
 +++ CMakeLists.txt
-@@ -76,7 +76,7 @@ if(EXISTS ${CMAKE_SOURCE_DIR}/doc/CMakeLists.txt)
+@@ -93,7 +93,7 @@ if(EXISTS ${CMAKE_SOURCE_DIR}/tests/CMakeLists.txt)
  endif()
  
  if(EXISTS ${CMAKE_SOURCE_DIR}/tests/CMakeLists.txt)

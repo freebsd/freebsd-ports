@@ -18,31 +18,32 @@ BROKEN_aarch64=		error: use of undeclared identifier '__TBB_machine_fetchadd4'
 BROKEN_armv7=		clang runs out of memory
 BROKEN_i386=		compilation fails: Kokkos assumes 64-bit build; i.e., 8-byte pointers
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/config.hpp:devel/boost-libs
-LIB_DEPENDS=	libblis.so:math/blis \
-		libboost_serialization.so:devel/boost-libs \
+BUILD_DEPENDS=	cgal>0:math/cgal \
+		taskflow>0:devel/taskflow
+LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
+		libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
 		libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis \
 		libtbb.so:devel/onetbb \
-		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
-#		libkokkoscore.so:devel/kokkos TMP commented out for bundled kokkos, tests fail for non-bundled kokkos, see https://github.com/dealii/dealii/issues/15692
+		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R} \
+		libkokkoscore.so:devel/kokkos # TMP commented out for bundled kokkos, tests fail for non-bundled kokkos, see https://github.com/dealii/dealii/issues/15692
 
-USES=		blaslapack cmake:testing compiler:c++17-lang localbase:ldflags xorg
+USES=		blaslapack:openblas cmake:testing compiler:c++23-lang localbase:ldflags xorg
+
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	DEAL_II_ALLOW_BUNDLED DEAL_II_COMPONENT_EXAMPLES \
 		DEAL_II_WITH_P4EST DEAL_II_WITH_TRILINOS DEAL_II_WITH_UMFPACK \
-		DEAL_II_WITH_NANOFLANN DEAL_II_WITH_MUPARSER DEAL_II_WITH_ASSIMP \
-		DEAL_II_WITH_HDF5 \
-		DEAL_II_FORCE_BUNDLED_TBB
-CMAKE_ON+=	DEAL_II_FORCE_BUNDLED_KOKKOS \
-		DEAL_II_FORCE_BUNDLED_TASKFLOW
+		DEAL_II_WITH_MUPARSER DEAL_II_WITH_ASSIMP
+#CMAKE_ON=	FORCE_BUNDLED_KOKKOS # TMP turn on bundled kokkos
 CMAKE_TESTING_ON=	FREEBSD_ENABLE_TESTS
 
+USE_CXXSTD=	c++23
 LDFLAGS+=	-lomp
 LDFLAGS+=	-lexecinfo # TMP for bundled kokkos
 
-XARCH!=		uname -p
+XARCH=		${ARCH}
 
 OPTIONS_DEFINE=		ADOLC ARPACK GSL LAPACK MPI OPENCASCADE PETSC SCALAPACK SLEPC SUNDIALS # for all options see contrib/docker/Dockerfile, TODO some of them need to be enabled here
 OPTIONS_DEFAULT=	GSL LAPACK MPI OPENCASCADE PETSC SCALAPACK SLEPC SUNDIALS
@@ -105,8 +106,8 @@ SUNDIALS_DESC=		Compile with SUNDIALS
 SUNDIALS_CMAKE_BOOL=	DEAL_II_WITH_SUNDIALS
 SUNDIALS_LIB_DEPENDS=	libsundials_arkode.so:math/sundials
 
-post-patch: # unbundle boost
-	@${RM} -r ${WRKSRC}/bundled/boost-*
+pre-configure: # unbundle boost
+	${RM} -r ${WRKSRC}/bundled/boost-*
 
 post-stage:
 	@${RM} ${STAGEDIR}${PREFIX}/*.log
