@@ -143,6 +143,7 @@ lib/cairo-lang/corelib/src/test/language_features/other_paths/inner/b.cairo
 lib/cairo-lang/corelib/src/test/language_features/panics_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/path_attr_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/trait_test.cairo
+lib/cairo-lang/corelib/src/test/language_features/tuple_test.cairo
 lib/cairo-lang/corelib/src/test/language_features/while_test.cairo
 lib/cairo-lang/corelib/src/test/let_else_test.cairo
 lib/cairo-lang/corelib/src/test/math_test.cairo
