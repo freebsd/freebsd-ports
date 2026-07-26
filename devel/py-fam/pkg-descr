@@ -1,2 +1,14 @@
-Python FAM provides a Python module to use the File Alteration
-Monitor(ports/devel/fam) in Python.
+A simple Python ORM for CouchDB and Couchbase Sync Gateway.
+
+Fam adds a type and namespace to each document:
+* type - A lower case string derived from the class name
+* namespace - An opaque string to help avoid class name clashes and
+  allow versioning of classes
+
+And uses them to provide:
+- A class to bind methods to documents
+- Automatic generation of design documents for relationships between classes
+- Lookup of related documents
+- Validation of documents
+- Document life-cycle callbacks for creation, updates and deletion
+- Optional cascading deletion through relationships

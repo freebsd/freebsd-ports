@@ -1,34 +1,27 @@
 PORTNAME=	fam
-PORTVERSION=	1.1.1
-PORTREVISION=	4
+DISTVERSION=	1.1.3
 CATEGORIES=	devel python
-MASTER_SITES=	SF/python-${PORTNAME}/python-${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-fam-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	Python Interface to the File Alteration Monitor
-WWW=		https://python-fam.sourceforge.net/
+COMMENT=	Python ORM for CouchDB and Couchbase Sync Gateway
+WWW=		https://github.com/paulharter/fam/
 
-LICENSE=	LGPL21+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libfam.so.0:devel/gamin
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=0:devel/py-simplejson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}slimit>=0:www/py-slimit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ply>=3.4:devel/py-ply@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-CFLAGS+=	-Wno-error=int-conversion
-CFLAGS+=	-Wno-error=incompatible-function-pointer-types
-.endif
-
-pre-patch:
-	${INSTALL_DATA} ${FILESDIR}/setup.py ${WRKSRC}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_fam*.so
+USE_PYTHON=	autoplist pep517
 
 .include <bsd.port.mk>
