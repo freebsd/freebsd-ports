@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2026-07-26 20:26:36 UTC
++++ pyproject.toml
+@@ -7,7 +7,6 @@ requires-python = ">=3.10"
+ dynamic = ["version"]
+ authors = []
+ requires-python = ">=3.10"
+-license-files = ["LICENSE"]
+ readme="README.rst"
+ description="Calculate Root-mean-square deviation (RMSD) of two molecules, using rotation, in xyz or pdb format "
+ classifiers = [
