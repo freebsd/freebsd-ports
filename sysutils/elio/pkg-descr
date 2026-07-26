@@ -1,0 +1,5 @@
+elio is a snappy, batteries-included terminal file manager written in Rust.
+
+It provides rich previews, inline images, bulk actions, trash support,
+themes, shell integration, and a fast TUI workflow for managing files
+from the terminal.
