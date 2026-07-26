@@ -1,6 +1,6 @@
 PORTNAME=	jmref
-PORTVERSION=	19.0
-PORTREVISION=	1
+DISTVERSION=	19.0
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://iphome.hhi.de/suehring/tml/download/
 DISTNAME=	jm${PORTVERSION}
@@ -17,6 +17,9 @@ LICENSE_FILE_ISO_IEC=	${WRKSRC}/COPYRIGHT_ISO_IEC.txt
 LICENSE_FILE_ITU=	${WRKSRC}/COPYRIGHT_ISO_IEC.txt
 LICENSE_PERMS_ISO_IEC=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_ITU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=2026-08-26
 
 USES=		dos2unix gmake zip
 
