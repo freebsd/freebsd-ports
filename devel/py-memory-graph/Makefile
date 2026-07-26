@@ -1,5 +1,5 @@
 PORTNAME=	memory-graph
-DISTVERSION=	0.3.65
+DISTVERSION=	0.3.86
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 0.3.65: 6 passed in 0.74s
+# tests as of 0.3.86: 6 passed in 0.63s
 
 .include <bsd.port.mk>
