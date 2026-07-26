@@ -1,7 +1,6 @@
 bin/lightgbm
 include/LightGBM/application.h
 include/LightGBM/arrow.h
-include/LightGBM/arrow.tpp
 include/LightGBM/bin.h
 include/LightGBM/boosting.h
 include/LightGBM/c_api.h
@@ -10,8 +9,10 @@ include/LightGBM/cuda/cuda_algorithms.hpp
 include/LightGBM/cuda/cuda_column_data.hpp
 include/LightGBM/cuda/cuda_metadata.hpp
 include/LightGBM/cuda/cuda_metric.hpp
+include/LightGBM/cuda/cuda_nccl_topology.hpp
 include/LightGBM/cuda/cuda_objective_function.hpp
 include/LightGBM/cuda/cuda_random.hpp
+include/LightGBM/cuda/cuda_rocm_interop.h
 include/LightGBM/cuda/cuda_row_data.hpp
 include/LightGBM/cuda/cuda_split_info.hpp
 include/LightGBM/cuda/cuda_tree.hpp

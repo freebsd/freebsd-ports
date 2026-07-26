@@ -1,6 +1,6 @@
 PORTNAME=	lightgbm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.0
+DISTVERSION=	4.7.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,8 @@ USES=		cmake:testing compiler:c++11-lang eigen:3
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 GH_PROJECT=	LightGBM
-GH_TUPLE=	boostorg:compute:36350b7:boostorg_compute/external_libs/compute \
+GH_TUPLE=	apache:arrow-nanoarrow:a579fbf:nanoarrow/external_libs/nanoarrow \
+		boostorg:compute:36350b7:boostorg_compute/external_libs/compute \
 		fmtlib:fmt:f5e5435:fmt/external_libs/fmt \
 		lemire:fast_double_parser:efec035:fast_double_parser/external_libs/fast_double_parser
 
