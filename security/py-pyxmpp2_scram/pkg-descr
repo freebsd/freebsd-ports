@@ -1,0 +1,4 @@
+SCRAM implementation from PyXMPP2.
+
+This project contains pyxmpp2.sasl.scram from PyXMPP2, packaged as a
+standalone library.

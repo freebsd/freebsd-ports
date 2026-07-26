@@ -1082,6 +1082,7 @@
     SUBDIR += py-python3-saml
     SUBDIR += py-pyvex
     SUBDIR += py-pywinrm
+    SUBDIR += py-pyxmpp2_scram
     SUBDIR += py-requests-credssp
     SUBDIR += py-requests-kerberos
     SUBDIR += py-ropgadget
