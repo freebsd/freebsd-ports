@@ -1,6 +1,5 @@
 PORTNAME=	zstd
-DISTVERSION=	1.5.5.1
-PORTREVISION=	1
+DISTVERSION=	1.5.7.2
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +10,7 @@ WWW=		https://github.com/sergey-dryabzhinsky/python-zstd
 
 LICENSE=	BSD2CLAUSE
 
+BUILD_DEPENDS=	pkgconf>0:devel/pkgconf
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
