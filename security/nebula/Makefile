@@ -1,7 +1,6 @@
 PORTNAME=	nebula
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.3
-PORTREVISION=	1
+DISTVERSION=	1.11.0
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -11,11 +10,11 @@ WWW=		https://github.com/slackhq/nebula
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:modules
+USES=		cpe go:1.26+,modules
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:net:v0.19.0:net \
-		golang:term:v0.15.0:term \
-		golang:sys:v0.15.0:sys
+GH_TUPLE=	golang:net:v0.57.0:net \
+		golang:term:v0.45.0:term \
+		golang:sys:v0.47.0:sys
 
 CPE_VENDOR=	slack
 GO_MODULE=	github.com/slackhq/nebula
