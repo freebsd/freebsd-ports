@@ -126,6 +126,9 @@ pre-configure:
 .else
 	${ECHO_CMD} BINARY=64 >> ${WRKSRC}/Makefile.rule
 .endif
+.if ${ARCH} == "i386"
+	${ECHO_CMD} FCOMMON_OPT+=-mpreferred-stack-boundary=2 >> ${WRKSRC}/Makefile.rule
+.endif
 .for f in exports/Makefile Makefile.system
 	${REINPLACE_CMD} -e 's|-lgfortran|${LDFLAGS} -lgfortran|' ${WRKSRC}/${f}
 .endfor
