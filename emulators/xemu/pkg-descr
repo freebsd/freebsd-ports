@@ -1,0 +1,21 @@
+xemu is a free and open-source application that emulates the original
+Microsoft Xbox game console, enabling people to play their original
+Xbox games cross-platform.
+
+It is a fork of the XQEMU project, itself built on QEMU's full-system
+emulation, with a focus on usability and performance.
+
+Supports:
+- Low-Level Emulation for superior compatibility with kernels, titles,
+  and homebrew applications.
+- Snapshots for saving machine states and loading them at any time.
+- Network connectivity to other xemu instances and real Xboxes, both
+  locally and over the Internet. Supports tunneling services and Xbox
+  Live recreation projects.
+- Controller support via SDL3. Connect up to 4 controllers at any time,
+  just like a real Xbox.
+- Render Scaling support by increasing the resolution that games render
+  at, on the fly. Scale up from 480p to 1080p at the click of a button.
+
+A BIOS/MCPX boot ROM dump and an EEPROM/HDD image from an original
+Xbox console are required to run games and are not included.

@@ -1,0 +1,45 @@
+Teach xemu's hardcoded host_os switches about FreeBSD: GL links
+against -lGL as on Linux, Vulkan resolves via pkg-config, and the
+membarrier probe uses FreeBSD's sys/membarrier.h and SYS_membarrier
+(see also patch-util_sys__membarrier.c for the runtime side).
+
+--- meson.build.orig    2026-06-08 04:08:51 UTC
++++ meson.build
+@@ -1891,7 +1891,7 @@ if not get_option('opengl').auto() or have_system or h
+     opengl_libs=['-framework', 'OpenGL']
+   elif host_os == 'windows'
+     opengl_libs=['-lopengl32', '-lgdi32']
+-  elif host_os == 'linux'
++  elif host_os == 'linux' or host_os == 'freebsd'
+     opengl_libs=['-lGL']
+   else
+     error('Unknown GL platform')
+@@ -2389,7 +2389,7 @@ if host_os == 'windows'
+ 
+ if host_os == 'windows'
+   vulkan = declare_dependency(compile_args: ['-DVK_USE_PLATFORM_WIN32_KHR'])
+-elif host_os == 'linux'
++elif host_os == 'linux' or host_os == 'freebsd'
+   vulkan = dependency('vulkan')
+ endif
+ 
+@@ -3356,15 +3356,15 @@ elif host_os == 'windows'
+   have_membarrier = false
+ elif host_os == 'windows'
+   have_membarrier = true
+-elif host_os == 'linux'
++elif host_os == 'linux' or host_os == 'freebsd'
+   have_membarrier = cc.compiles('''
+-    #include <linux/membarrier.h>
++    #include <sys/membarrier.h>
+     #include <sys/syscall.h>
+     #include <unistd.h>
+     #include <stdlib.h>
+     int main(void) {
+-        syscall(__NR_membarrier, MEMBARRIER_CMD_QUERY, 0);
+-        syscall(__NR_membarrier, MEMBARRIER_CMD_SHARED, 0);
++        syscall(SYS_membarrier, MEMBARRIER_CMD_QUERY, 0);
++        syscall(SYS_membarrier, MEMBARRIER_CMD_SHARED, 0);
+         exit(0);
+     }''')
+ endif

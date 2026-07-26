@@ -194,6 +194,7 @@
     SUBDIR += x49gp
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
+    SUBDIR += xemu
     SUBDIR += xen-kernel
     SUBDIR += xhomer
     SUBDIR += xsystem35

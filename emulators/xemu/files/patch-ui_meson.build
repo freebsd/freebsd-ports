@@ -1,0 +1,11 @@
+--- ui/meson.build.orig	2026-06-08 04:08:51 UTC
++++ ui/meson.build
+@@ -47,6 +47,8 @@
+ 
+ if host_os == 'linux'
+   xemu_ss.add([gtk, files('xemu-os-utils-linux.c')])
++elif host_os == 'freebsd'
++  xemu_ss.add([gtk, files('xemu-os-utils-freebsd.c')])
+ elif host_os == 'windows'
+   xemu_ss.add(files('xemu-os-utils-windows.c'))
+ elif host_os == 'darwin'
