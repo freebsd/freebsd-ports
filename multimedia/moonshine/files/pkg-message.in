@@ -1,0 +1,49 @@
+[
+{ type: install
+  message: <<EOM
+moonshine has been installed. Notes for setting it up:
+
+1. Configuration lives in %%PREFIX%%/etc/moonshine/moonshine.toml
+   (a moonshine.toml.sample is installed as a starting point).
+
+2. Enable the service with:
+     service moonshine enable
+     service moonshine start
+   By default it runs as root. Set moonshine_user in rc.conf to run it as an
+   unprivileged user (see the rc script for all variables).
+   A non-root moonshine_user must be in the 'video' and 'audio' groups so it
+   can open the GPU/DRM render device and the virtual_oss(8) audio loopback;
+   without them moonshine aborts the session (and kills the launched app)
+   at stream setup:
+     pw groupmod video -m <moonshine_user>
+     pw groupmod audio -m <moonshine_user>
+
+3. Pairing a client: when a Moonlight client requests pairing, moonshine logs
+   a banner with a URL to open in a browser to enter the PIN, e.g.
+     PAIRING REQUESTED - open this URL in a browser to enter the PIN:
+         http://<this-host>:47989/pin?uniqueid=...
+   When run as a service this banner goes to the log file, not the console
+   (default /var/log/moonshine.log, see moonshine_log_file in the rc script):
+     tail -f /var/log/moonshine.log
+   Open that URL, type the PIN shown on the client, and the pairing completes.
+
+4. Gamepad support uses /dev/uinput, which is not group-accessible by default.
+   To reach it as a non-root user, expose it to the 'video' group (see item 2)
+   via /etc/devfs.rules:
+     [localrules=10]
+     add path 'uinput' mode 0660 group video
+   with devfs_system_ruleset="localrules" in /etc/rc.conf, then
+   'service devfs restart'.
+
+5. Audio capture reads the game's audio from the virtual_oss(8) loopback
+   device /dev/dsp.loop. Enable it before starting moonshine:
+     service virtual_oss enable
+     service virtual_oss start
+   The default virtual_oss configuration creates /dev/dsp.loop; point your
+   playback applications at it so their audio is streamed to the client.
+
+6. To bind a dual-stack address ("::" in the config), also set:
+     sysctl net.inet6.ip6.v6only=0
+EOM
+}
+]

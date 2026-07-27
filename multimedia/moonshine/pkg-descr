@@ -1,0 +1,10 @@
+Moonshine is a self-hosted game streaming host compatible with the Moonlight
+client, an open alternative to Sunshine/GameStream.
+
+It runs a headless Wayland compositor, captures the rendered frames via dmabuf,
+encodes them on the GPU with Vulkan Video (H.264/H.265), and streams video,
+Opus audio, and keyboard/mouse/gamepad input to a Moonlight client over the
+GameStream protocol.
+
+This is the FreeBSD fork, which uses a native virtual_oss, /dev/uinput backend
+for gamepad injection and Vulkan Video encode via Mesa/RADV.

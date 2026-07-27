@@ -1,0 +1,74 @@
+name = "Moonshine"
+# Bind address. Use "::" for dual-stack (also set
+# net.inet6.ip6.v6only=0), or a specific address.
+address = "0.0.0.0"
+
+[webserver]
+port = 47989
+port_https = 47984
+enable_pairing = true
+certificate = "$HOME/.config/moonshine/cert.pem"
+private_key = "$HOME/.config/moonshine/key.pem"
+
+[stream]
+port = 48010
+timeout = 60
+
+[stream.video]
+port = 47998
+fec_percentage = 20
+encrypt = false
+log_frame_spikes = false
+
+[stream.audio]
+port = 48000
+
+[stream.control]
+port = 47999
+
+[stream.control.gamepad.home_button]
+hold_ms = 0
+rumble_duration_ms = 50
+rumble_intensity = 0.5
+suppress_home = false
+
+# Define one [[application]] block per launchable app. Example:
+#
+# [[application]]
+# title = "Desktop"
+# command = ["/usr/local/bin/foot"]
+# launch_timeout_secs = 2
+# # Optional cover image shown as the app's tile in the Moonlight client.
+# # Path to a local image file (e.g. PNG); omit for no boxart.
+# boxart = "/usr/local/etc/moonshine/boxart/desktop.png"
+# # Optional commands run before launch and after the session ends
+# # (each is its own argv array):
+# pre_command = [["/usr/local/bin/setup-display"]]
+# post_command = [["/usr/local/bin/teardown-display"]]
+
+# Instead of (or in addition to) listing apps by hand, an
+# [[application_scanner]] auto-discovers them.  Boxart is resolved
+# automatically where the scanner can find it.
+#
+# Scan freedesktop .desktop launchers (resolves icons into boxart):
+#
+# [[application_scanner]]
+# type = "desktop"
+# directories = ["/usr/local/share/applications", "$HOME/.local/share/applications"]
+# resolve_icons = true
+# include_terminal = false
+#
+# Scan a Steam library (reads libraryfolders.vdf; boxart from Steam's cache):
+#
+# [[application_scanner]]
+# type = "steam"
+# library = "$HOME/.steam/steam"
+# command = ["/usr/local/bin/steam", "steam://rungameid/{game_id}"]
+
+[compositor]
+hdr = true
+
+[compositor.keyboard]
+layout = "us"
+variant = ""
+model = ""

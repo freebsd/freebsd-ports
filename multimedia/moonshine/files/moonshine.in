@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# PROVIDE: moonshine
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# moonshine_enable (bool):	Set to NO by default.
+#				Set it to YES to enable moonshine.
+# moonshine_user (user):	User to run moonshine as.
+#				Default is "root".
+# moonshine_config (path):	Path to the configuration file.
+#				Default: %%PREFIX%%/etc/moonshine/moonshine.toml
+# moonshine_runtime (path):	XDG runtime directory.
+#				Default: /var/run/moonshine
+# moonshine_log_file (path):	Log file.
+#				Default: /var/log/moonshine.log
+# moonshine_log_level (str):	Log verbosity (MOONSHINE_LOG env filter).
+#				Default: "info".  Moonshine's own default is
+#				"error", which logs nothing in normal operation
+#				(including the pairing-PIN URL banner).
+# moonshine_args (str):		Extra arguments.
+
+. /etc/rc.subr
+
+name=moonshine
+rcvar=moonshine_enable
+
+load_rc_config $name
+
+: ${moonshine_enable:="NO"}
+: ${moonshine_user:="root"}
+: ${moonshine_config="%%PREFIX%%/etc/moonshine/moonshine.toml"}
+: ${moonshine_runtime="/var/run/moonshine"}
+: ${moonshine_log_file="/var/log/moonshine.log"}
+: ${moonshine_log_level="info"}
+
+moonshine_home=$(pw usershow -n "${moonshine_user}" 2>/dev/null | cut -d: -f9)
+: ${moonshine_home:="/root"}
+
+pidfile=/var/run/moonshine.pid
+procname="%%PREFIX%%/bin/moonshine"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} -o ${moonshine_log_file} \
+	/usr/bin/env PATH=%%LOCALBASE%%/bin:/usr/bin:/bin \
+	HOME=${moonshine_home} XDG_RUNTIME_DIR=${moonshine_runtime} \
+	MOONSHINE_LOG=${moonshine_log_level} \
+	${procname} ${moonshine_config} ${moonshine_args}"
+
+start_precmd=moonshine_startprecmd
+
+moonshine_startprecmd()
+{
+	if [ ! -e ${pidfile} ]; then
+		install -o ${moonshine_user} /dev/null ${pidfile}
+	fi
+
+	if [ ! -e ${moonshine_log_file} ]; then
+		install -o ${moonshine_user} /dev/null ${moonshine_log_file}
+	fi
+
+	# moonshine needs an XDG runtime directory for its Wayland socket;
+	# it is passed to the daemon via env(1) in command_args.
+	if [ ! -d ${moonshine_runtime} ]; then
+		install -d -o ${moonshine_user} -m 0700 ${moonshine_runtime}
+	fi
+
+	# moonshine stores its TLS certificate under $HOME/.config/moonshine
+	# (see the sample config); create it owned by moonshine_user so the
+	# daemon can write cert.pem/key.pem on first start.
+	if [ ! -d "${moonshine_home}/.config/moonshine" ]; then
+		install -d -o ${moonshine_user} -m 0700 \
+			"${moonshine_home}/.config/moonshine"
+	fi
+}
+
+run_rc_command "$1"
