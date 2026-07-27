@@ -1,6 +1,5 @@
 PORTNAME=	dropbear
-PORTVERSION=	2025.89
-PORTREVISION=	1
+PORTVERSION=	2026.94
 CATEGORIES=	security
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
@@ -83,7 +82,7 @@ LIB_DEPENDS=	libtomcrypt.so:security/libtomcrypt \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,_PRIV_FILENAME \"/etc/,_PRIV_FILENAME \"${PREFIX}/etc/,g; \
-		s,/usr/bin/X11/,${LOCALBASE}/,g; s,/usr/bin/dbclient,${LOCALBASE}/bin/dbclient,g" \
+		s,/usr/bin/xauth,${LOCALBASE}/bin/xauth,g; s,/usr/bin/dbclient,${LOCALBASE}/bin/dbclient,g" \
 		${WRKSRC}/src/default_options.h
 
 post-patch-SMALL_CODE-off:
@@ -141,7 +140,7 @@ post-patch-ECDSA-off:
 	@${ECHO} "#define DROPBEAR_ECDSA 0" >> ${WRKSRC}/localoptions.h
 
 post-patch-ED25519-off:
-	@${ECHO} "#define DROPBEAR_E25519 0" >> ${WRKSRC}/localoptions.h
+	@${ECHO} "#define DROPBEAR_ED25519 0" >> ${WRKSRC}/localoptions.h
 
 post-patch-MD5-on:
 	@${ECHO} "#define DROPBEAR_MD5_HMAC 1" >> ${WRKSRC}/localoptions.h
