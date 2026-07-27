@@ -15,7 +15,7 @@
  // `__attribute__((nothrow))` to be present or `noexcept`.
  __attribute__((nothrow))
  #endif
-+#if !defined(__FreeBSD__) || __FreeBSD_version < 1600000
++#if !defined(__FreeBSD__) || __FreeBSD_version < 1500000
  __attribute__((weak)) void free_sized(void *ptr, size_t) {
 +#else
 +__attribute__((weak)) void free_sized(void *ptr, size_t) throw() {
