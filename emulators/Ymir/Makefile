@@ -1,6 +1,7 @@
 PORTNAME=	Ymir
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -29,6 +30,7 @@ BUILD_DEPENDS=	cereal>0:devel/cereal \
 LIB_DEPENDS=	libchdr.so:devel/libchdr \
 		libcurl.so:ftp/curl \
 		libfmt.so:devel/libfmt \
+		libfreetype.so:print/freetype2 \
 		libglfw.so:graphics/glfw \
 		libimgui.so:x11-toolkits/imgui \
 		liblz4.so:archivers/liblz4 \
