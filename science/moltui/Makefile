@@ -1,5 +1,5 @@
 PORTNAME=	moltui
-DISTVERSION=	0.5.1
+DISTVERSION=	0.6.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 
@@ -25,9 +25,6 @@ NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 0.5.1:
-# Results (22.04s):
-#      320 passed
-#        3 skipped
+# tests as of 0.6.0: 329 passed, 7 skipped, 1 warning in 21.66s
 
 .include <bsd.port.mk>
