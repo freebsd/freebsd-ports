@@ -1,5 +1,5 @@
 PORTNAME=	hiawatha
-DISTVERSION=	12.2
+DISTVERSION=	12.3
 CATEGORIES=	www
 MASTER_SITES=	https://hiawatha.leisink.net/files/download/
 
