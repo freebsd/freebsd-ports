@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260813:
+  AFFECTS: users of security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  For FreeBSD 15+, the option BLACKLISTD has been renamed to BLOCKLISTD.
+  The option is enabled by default. If you had this option disabled you
+  will need to disable the new spelling as well.
+
+  The ssh config file supports both UseBlacklist and UseBlocklist.
+
 20260724:
   AFFECTS: users of news/inn, news/inn-current
   AUTHOR: kbowling@FreeBSD.org

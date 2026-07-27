@@ -1272,6 +1272,6 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	if ((r = kex_exchange_identification(ssh, -1,
 -	    options.version_addendum)) != 0) {
 +	    options.version_addendum, options.hpn_disabled)) != 0) {
- 		BLOCKLIST_NOTIFY(ssh, BLOCKLIST_AUTH_FAIL, "Banner exchange");
+ 		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL, "Banner exchange");
  		sshpkt_fatal(ssh, r, "banner exchange");
  	}

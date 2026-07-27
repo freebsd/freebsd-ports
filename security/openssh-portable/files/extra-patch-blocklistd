@@ -5,7 +5,7 @@
  FIXALGORITHMSCMD= $(SHELL) $(srcdir)/fixalgorithms $(SED) \
  		     @UNSUPPORTED_ALGORITHMS@
 +
-+LIBSSH_OBJS+=	blacklist.o
++LIBSSH_OBJS+=	blocklist.o
  
  all: $(CONFIGFILES) $(MANPAGES) $(TARGETS)
  
@@ -15,7 +15,7 @@
  #endif
  #include "monitor_wrap.h"
  #include "srclimit.h"
-+#include "blacklist_client.h"
++#include "blocklist_client.h"
  
  extern ServerOptions options;
  extern struct sshbuf *loginmsg;
@@ -23,7 +23,7 @@
  				sshbuf_free(buffer);
  				return (0);
  			}
-+			BLACKLIST_NOTIFY(NULL, BLACKLIST_AUTH_FAIL,
++			BLOCKLIST_NOTIFY(NULL, BLOCKLIST_AUTH_FAIL,
 +			    "PAM illegal user");
  			error("PAM: %s for %s%.100s from %.100s", msg,
  			    sshpam_authctxt->valid ? "" : "illegal user ",
@@ -34,7 +34,7 @@
  #include "monitor_wrap.h"
  #include "ssherr.h"
  #include "channels.h"
-+#include "blacklist_client.h"
++#include "blocklist_client.h"
  
  /* import */
  extern ServerOptions options;
@@ -46,7 +46,7 @@
 +	else {
  		authmsg = authenticated ? "Accepted" : "Failed";
 +		if (authenticated)
-+			BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_OK,
++			BLOCKLIST_NOTIFY(ssh, BLOCKLIST_AUTH_OK,
 +			    "Authenticated");
 +	}
  
@@ -56,7 +56,7 @@
  {
  	Authctxt *authctxt = (Authctxt *)ssh->authctxt;
  
-+	BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL, "Maximum attempts exceeded");
++	BLOCKLIST_NOTIFY(ssh, BLOCKLIST_AUTH_FAIL, "Maximum attempts exceeded");
  	error("maximum authentication attempts exceeded for "
  	    "%s%.100s from %.200s port %d ssh2",
  	    authctxt->valid ? "" : "invalid user ",
@@ -64,13 +64,13 @@
  	aix_restoreauthdb();
  #endif
  	if (pw == NULL) {
-+		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL,
++		BLOCKLIST_NOTIFY(ssh, BLOCKLIST_AUTH_FAIL,
 +		    "Invalid user");
  		logit("Invalid user %.100s from %.100s port %d",
  		    user, ssh_remote_ipaddr(ssh), ssh_remote_port(ssh));
  #ifdef CUSTOM_FAILED_LOGIN
---- blacklist.c.orig	2025-10-02 12:00:00.000000000
-+++ blacklist.c	2025-10-02 12:00:00.000000000
+--- blocklist.c.orig	2025-10-02 12:00:00.000000000
++++ blocklist.c	2025-10-02 12:00:00.000000000
 @@ -0,0 +1,97 @@
 +/*-
 + * Copyright (c) 2015 The NetBSD Foundation, Inc.
@@ -120,16 +120,16 @@
 +#include "log.h"
 +#include "misc.h"
 +#include "servconf.h"
-+#include <blacklist.h>
-+#include "blacklist_client.h"
++#include <blocklist.h>
++#include "blocklist_client.h"
 +
-+static struct blacklist *blstate = NULL;
++static struct blocklist *blstate = NULL;
 +
 +/* import */
 +extern ServerOptions options;
 +
 +/* internal definition from bl.h */
-+struct blacklist *bl_create(bool, char *, void (*)(int, const char *, va_list));
++struct blocklist *bl_create(bool, char *, void (*)(int, const char *, va_list));
 +
 +/* impedence match vsyslog() to sshd's internal logging levels */
 +void
@@ -154,23 +154,23 @@
 +}
 +
 +void
-+blacklist_init(void)
++blocklist_init(void)
 +{
 +
-+	if (options.use_blacklist)
++	if (options.use_blocklist)
 +		blstate = bl_create(false, NULL, im_log);
 +}
 +
 +void
-+blacklist_notify(struct ssh *ssh, int action, const char *msg)
++blocklist_notify(struct ssh *ssh, int action, const char *msg)
 +{
 +
 +	if (blstate != NULL && ssh_packet_connection_is_on_socket(ssh))
-+		(void)blacklist_r(blstate, action,
++		(void)blocklist_r(blstate, action,
 +		ssh_packet_get_connection_in(ssh), msg);
 +}
---- blacklist_client.h.orig	2025-10-02 12:00:00.000000000
-+++ blacklist_client.h	2025-10-02 12:00:00.000000000
+--- blocklist_client.h.orig	2025-10-02 12:00:00.000000000
++++ blocklist_client.h	2025-10-02 12:00:00.000000000
 @@ -0,0 +1,61 @@
 +/*-
 + * Copyright (c) 2015 The NetBSD Foundation, Inc.
@@ -205,41 +205,41 @@
 + * POSSIBILITY OF SUCH DAMAGE.
 + */
 +
-+#ifndef BLACKLIST_CLIENT_H
-+#define BLACKLIST_CLIENT_H
++#ifndef BLOCKLIST_CLIENT_H
++#define BLOCKLIST_CLIENT_H
 +
-+#ifndef BLACKLIST_API_ENUM
++#ifndef BLOCKLIST_API_ENUM
 +enum {
-+	BLACKLIST_AUTH_OK = 0,
-+	BLACKLIST_AUTH_FAIL,
-+	BLACKLIST_ABUSIVE_BEHAVIOR,
-+	BLACKLIST_BAD_USER
++	BLOCKLIST_AUTH_OK = 0,
++	BLOCKLIST_AUTH_FAIL,
++	BLOCKLIST_ABUSIVE_BEHAVIOR,
++	BLOCKLIST_BAD_USER
 +};
 +#endif
 +
-+#ifdef USE_BLACKLIST
-+void blacklist_init(void);
-+void blacklist_notify(struct ssh *, int, const char *);
++#ifdef USE_BLOCKLIST
++void blocklist_init(void);
++void blocklist_notify(struct ssh *, int, const char *);
 +
-+#define BLACKLIST_INIT() blacklist_init()
-+#define BLACKLIST_NOTIFY(ssh,x,msg) blacklist_notify(ssh,x,msg)
++#define BLOCKLIST_INIT() blocklist_init()
++#define BLOCKLIST_NOTIFY(ssh,x,msg) blocklist_notify(ssh,x,msg)
 +
 +#else
 +
-+#define BLACKLIST_INIT()
-+#define BLACKLIST_NOTIFY(ssh,x,msg)
++#define BLOCKLIST_INIT()
++#define BLOCKLIST_NOTIFY(ssh,x,msg)
 +
 +#endif
 +
 +
-+#endif /* BLACKLIST_CLIENT_H */
++#endif /* BLOCKLIST_CLIENT_H */
 --- monitor.c.orig	2025-10-02 12:00:00.000000000
 +++ monitor.c	2025-10-02 12:00:00.000000000
 @@ -75,6 +75,8 @@
  #include "misc.h"
  #include "servconf.h"
  #include "monitor.h"
-+#include "blacklist_client.h"
++#include "blocklist_client.h"
 +
  #ifdef GSSAPI
  #include "ssh-gss.h"
@@ -248,7 +248,7 @@
  			}
  		}
  		if (authctxt->failures > options.max_authtries) {
-+			BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL,
++			BLOCKLIST_NOTIFY(ssh, BLOCKLIST_AUTH_FAIL,
 +			    "Too many authentication attempts");
  			/* Shouldn't happen */
  			fatal_f("privsep child made too many authentication "
@@ -260,12 +260,12 @@
 -		fatal_f("authenticated invalid user");
 -	if (strcmp(auth_method, "unknown") == 0)
 +	if (!authctxt->valid) {
-+		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL,
++		BLOCKLIST_NOTIFY(ssh, BLOCKLIST_AUTH_FAIL,
 +		    "Authenticated invalid user");
 +		fatal_f("authenticated invalid user");
 +	}
 +	if (strcmp(auth_method, "unknown") == 0) {
-+		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL,
++		BLOCKLIST_NOTIFY(ssh, BLOCKLIST_AUTH_FAIL,
 +		    "Authentication method name unknown");
  		fatal_f("authentication method name unknown");
 +	}
@@ -279,8 +279,8 @@
  		multistate_ptr = multistate_flag;
  		goto parse_multistate;
 +
-+	case sUseBlacklist:
-+		intptr = &options->use_blacklist;
++	case sUseBlocklist:
++		intptr = &options->use_blocklist;
 +		goto parse_flag;
  
  	case sDeprecated:
@@ -289,7 +289,7 @@
  	dump_cfg_fmtint(sCompression, o->compression);
  	dump_cfg_fmtint(sGatewayPorts, o->fwd_opts.gateway_ports);
  	dump_cfg_fmtint(sUseDNS, o->use_dns);
-+	dump_cfg_fmtint(sUseBlacklist, o->use_blacklist);
++	dump_cfg_fmtint(sUseBlocklist, o->use_blocklist);
  	dump_cfg_fmtint(sAllowTcpForwarding, o->allow_tcp_forwarding);
  	dump_cfg_fmtint(sAllowAgentForwarding, o->allow_agent_forwarding);
  	dump_cfg_fmtint(sDisableForwarding, o->disable_forwarding);
@@ -299,7 +299,7 @@
  SSHCONF_INT(max_sessions, MaxSessions, SSHCFG_ALL, NULL, DEFAULT_SESSIONS_MAX, SSHCFG_COPY_MATCH) \
  SSHCONF_STRING(banner, Banner, SSHCFG_ALL, SSHCFG_COPY_MATCH) \
  SSHCONF_INTFLAG(use_dns, UseDNS, SSHCFG_GLOBAL, 0, SSHCFG_COPY_NONE) \
-+SSHCONF_INTFLAG(use_blacklist, UseBlacklist, SSHCFG_GLOBAL, 0, SSHCFG_COPY_NONE) \
++SSHCONF_INTFLAG(use_blocklist, UseBlocklist, SSHCFG_GLOBAL, 0, SSHCFG_COPY_NONE) \
  SSHCONF_INT(client_alive_interval, ClientAliveInterval, SSHCFG_ALL, NULL, 0, SSHCFG_COPY_MATCH) \
  SSHCONF_INT(client_alive_count_max, ClientAliveCountMax, SSHCFG_ALL, NULL, 3, SSHCFG_COPY_MATCH) \
  SSHCONF_STRARRAY(authorized_keys_files, num_authkeys_files, AuthorizedKeysFile, SSHCFG_ALL, SSHCFG_COPY_MATCH) \
@@ -307,7 +307,7 @@
  SSHCONF_ALIAS(DSAAuthentication, PubkeyAuthentication, SSHCFG_GLOBAL) \
  SSHCONF_ALIAS(ChallengeResponseAuthentication, KbdInteractiveAuthentication, SSHCFG_ALL) \
  SSHCONF_ALIAS(SKeyAuthentication, KbdInteractiveAuthentication, SSHCFG_ALL) \
-+SSHCONF_ALIAS(UseBlocklist, UseBlacklist, SSHCFG_GLOBAL) \
++SSHCONF_ALIAS(UseBlacklist, UseBlocklist, SSHCFG_GLOBAL) \
  SSHCONF_ALIAS(KeepAlive, TCPKeepAlive, SSHCFG_GLOBAL)
  
  #define SSHD_CONFIG_ENTRIES_BASE \
@@ -317,7 +317,7 @@
  #include "sk-api.h"
  #include "srclimit.h"
  #include "dh.h"
-+#include "blacklist_client.h"
++#include "blocklist_client.h"
  
  /* Re-exec fds */
  #define REEXEC_DEVCRYPTO_RESERVED_FD	(STDERR_FILENO + 1)
@@ -326,7 +326,7 @@
  	ssh_signal(SIGCHLD, SIG_DFL);
  	ssh_signal(SIGINT, SIG_DFL);
 +
-+	BLACKLIST_INIT();
++	BLOCKLIST_INIT();
  
  	/*
  	 * Register our connection.  This turns encryption off because we do
@@ -336,7 +336,7 @@
  	/* Override default fatal exit value when auth was attempted */
 -	if (i == 255 && monitor_auth_attempted())
 +	if (i == 255 && monitor_auth_attempted()) {
-+		BLACKLIST_NOTIFY(the_active_state, BLACKLIST_AUTH_FAIL,
++		BLOCKLIST_NOTIFY(the_active_state, BLOCKLIST_AUTH_FAIL,
 +		    "Fatal exit");
  		_exit(EXIT_AUTH_ATTEMPTED);
 +	}
@@ -349,20 +349,20 @@
  is to never expire connections for having no open channels.
  This option may be useful in conjunction with
  .Cm ChannelTimeout .
-+.It Cm UseBlacklist
++.It Cm UseBlocklist
 +Specifies whether
 +.Xr sshd 8
 +attempts to send authentication success and failure messages
 +to the
-+.Xr blacklistd 8
++.Xr blocklistd 8
 +daemon.
 +The default is
 +.Cm no .
-+For forward compatibility with an upcoming
-+.Xr blacklistd
-+rename, the
-+.Cm UseBlocklist
-+alias can be used instead.
++For backward compatibility with
++.Xr blocklistd 8 ,
++the
++.Cm UseBlacklist
++alias can still be used.
  .It Cm UseDNS
  Specifies whether
  .Xr sshd 8
@@ -372,7 +372,7 @@
  #MaxStartups 10:30:100
  #PermitTunnel no
  #ChrootDirectory none
-+#UseBlacklist no
++#UseBlocklist no
  #VersionAddendum none
  
  # no default banner path
@@ -382,7 +382,7 @@
  #include "srclimit.h"
  #include "ssh-sandbox.h"
  #include "dh.h"
-+#include "blacklist_client.h"
++#include "blocklist_client.h"
  
  /* Privsep fds */
  #define PRIVSEP_MONITOR_FD		(STDERR_FILENO + 1)
@@ -392,7 +392,7 @@
  	if ((r = kex_exchange_identification(ssh, -1,
 -	    options.version_addendum)) != 0)
 +	    options.version_addendum)) != 0) {
-+		BLACKLIST_NOTIFY(ssh, BLACKLIST_AUTH_FAIL, "Banner exchange");
++		BLOCKLIST_NOTIFY(ssh, BLOCKLIST_AUTH_FAIL, "Banner exchange");
  		sshpkt_fatal(ssh, r, "banner exchange");
 +	}
  	mm_sshkey_setcompat(ssh); /* tell monitor */
