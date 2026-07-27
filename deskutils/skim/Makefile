@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.5.0
+DISTVERSION=	5.6.1
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -56,7 +56,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytes-1.12.1 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.3.0 \
+		cc-1.4.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.2 \
@@ -66,7 +66,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-ll-0.2.2 \
 		clap-4.6.4 \
 		clap_builder-4.6.2 \
-		clap_complete-4.6.7 \
+		clap_complete-4.6.8 \
 		clap_complete_nushell-4.6.1 \
 		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
@@ -110,7 +110,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		doctest-file-1.1.1 \
 		document-features-0.2.12 \
 		downcast-rs-1.2.1 \
-		either-1.16.0 \
+		either-1.17.0 \
 		either-or-both-0.3.1 \
 		encode_unicode-1.0.0 \
 		env_filter-2.0.0 \
@@ -169,9 +169,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
-		jiff-0.2.34 \
+		jiff-0.2.35 \
 		jiff-core-0.1.0 \
-		jiff-static-0.2.34 \
+		jiff-static-0.2.35 \
 		js-sys-0.3.103 \
 		kanal-0.1.1 \
 		kasuari-0.4.12 \
