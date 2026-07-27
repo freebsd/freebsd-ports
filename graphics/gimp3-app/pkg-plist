@@ -1353,6 +1353,7 @@ libexec/gimp-debug-tool-%%ABIVER%%
 %%PORTDOCS%%%%DOCSDIR%%-%%APIVER%%/libgimp-%%APIVER%%/func.range_estimate_settings.html
 %%PORTDOCS%%%%DOCSDIR%%-%%APIVER%%/libgimp-%%APIVER%%/func.rectangle_intersect.html
 %%PORTDOCS%%%%DOCSDIR%%-%%APIVER%%/libgimp-%%APIVER%%/func.rectangle_union.html
+%%PORTDOCS%%%%DOCSDIR%%-%%APIVER%%/libgimp-%%APIVER%%/func.resources_loaded.html
 %%PORTDOCS%%%%DOCSDIR%%-%%APIVER%%/libgimp-%%APIVER%%/func.show_help_button.html
 %%PORTDOCS%%%%DOCSDIR%%-%%APIVER%%/libgimp-%%APIVER%%/func.smudge.html
 %%PORTDOCS%%%%DOCSDIR%%-%%APIVER%%/libgimp-%%APIVER%%/func.smudge_default.html

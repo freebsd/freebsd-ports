@@ -1,4 +1,4 @@
---- libgimp/gimp.c.orig	2025-05-17 22:51:03 UTC
+--- libgimp/gimp.c.orig	2026-04-17 08:37:38 UTC
 +++ libgimp/gimp.c
 @@ -28,6 +28,7 @@
  #include <stdlib.h>
@@ -8,7 +8,7 @@
  
  #ifdef HAVE_SYS_TIME_H
  #include <sys/time.h>
-@@ -348,6 +349,9 @@ gimp_main (GType  plug_in_type,
+@@ -408,6 +409,9 @@ gimp_main (GType  plug_in_type,
    gimp_env_init (TRUE);
  
    progname = argv[ARG_PROGNAME];

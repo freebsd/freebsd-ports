@@ -1,6 +1,6 @@
---- meson.build.orig	2025-10-05 17:14:02 UTC
+--- meson.build.orig	2026-04-17 08:37:38 UTC
 +++ meson.build
-@@ -168,7 +168,8 @@ platform_linux = (
+@@ -177,7 +177,8 @@ platform_linux = (
  message('Host os: ' + host_os)
  
  platform_linux = (
@@ -10,7 +10,7 @@
  )
  
  platform_windows = (
-@@ -1127,7 +1128,7 @@ if have_lua
+@@ -1264,7 +1265,7 @@ if have_lua
  if have_lua
    have_lua_lgi = false
  
@@ -19,7 +19,7 @@
      lua = find_program(lua_bin, required: false)
  
      if lua.found() and meson.can_run_host_binaries()
-@@ -1166,7 +1167,7 @@ if have_lua
+@@ -1303,7 +1304,7 @@ if have_lua
        if is_supported_lua
          have_lua_lgi = run_command(lua, '-e',
                                     '''
@@ -28,3 +28,11 @@
                                     ''',
                                     check: false).returncode() == 0
        endif
+@@ -1612,6 +1613,7 @@ conf.set('NO_FD_SET',
+   not platform_windows
+   and not cc.compiles('''
+     #include <sys/types.h>
++    #include <sys/select.h>
+     int main() { fd_set readMask, writeMask; return 0; }
+   ''')
+ )
