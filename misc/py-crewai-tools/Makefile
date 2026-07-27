@@ -1,5 +1,5 @@
 PORTNAME=	crewai-tools
-DISTVERSION=	1.15.6
+DISTVERSION=	1.15.7
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.13.4:www/py-beautifulsoup@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai>=1.15.5:misc/py-crewai@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai>=1.15.7:misc/py-crewai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymupdf>=1.26.6:print/py-PyMuPDF@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-docx>=1.2.0:textproc/py-python-docx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytube>=15.0.0:multimedia/py-pytube@${PY_FLAVOR} \
@@ -51,6 +51,6 @@ TEST_ARGS=	--ignore=adapters/mcp_adapter_test.py \
 		--ignore=tools/test_search_tools.py \
 		--ignore=utilities/test_safe_path.py
 
-# tests as of 1.15.5: 348 passed, 1 skipped, 10 warnings in 22.38s
+# tests as of 1.15.7: 348 passed, 1 skipped, 10 warnings in 22.38s
 
 .include <bsd.port.mk>
