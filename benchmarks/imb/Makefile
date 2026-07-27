@@ -1,10 +1,11 @@
 PORTNAME=	IMB
 DISTVERSIONPREFIX=	IMB-v
 DISTVERSION=	2021.11
+PORTREVISION=	2
 CATEGORIES=	benchmarks parallel
 
 MAINTAINER=	laurent@FreeBSD.org
-COMMENT=	Intel(R) MPI Benchmark
+COMMENT=	Intel(R) MPI Benchmarks
 WWW=		https://software.intel.com/en-us/imb-user-guide
 
 LICENSE=	BSD3CLAUSE
@@ -17,7 +18,7 @@ FLAVORS=		mpich openmpi
 FLAVOR?=		${FLAVORS:[1]}
 openmpi_PKGNAMESUFFIX=	-openmpi
 
-USES=		gmake localbase mpi:${FLAVOR}
+USES=		gmake localbase mpi:${FLAVOR} pkgconfig
 USE_CXXSTD=	c++14
 
 USE_GITHUB=	yes
