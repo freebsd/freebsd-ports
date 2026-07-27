@@ -31,6 +31,8 @@ RUN_DEPENDS=	epstool:graphics/epstool \
 
 USES=		bison compiler:c++20-lang fortran localbase:ldflags meson pkgconfig tar:xz
 
+LDFLAGS+=	-Wl,-z,execstack # workaround for error on 16: ld.lld: error: libheterogeneity.a(libheterogeneity.a.p/mex_sources_heterogeneity_utils_time_iteration_tensor.f08.o): requires an executable stack, but -z execstack is not specified
+
 MESON_ARGS=	-Dbuild_for=octave \
 		-Dpardiso=disabled
 
