@@ -1,3 +1,352 @@
+  <vuln vid="445c61c0-89e1-11f1-b35c-4c526214c986">
+    <topic>Erlang/OTP -- (D)TLS-1.2 server certificate verification bypass</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>28.5.0.4,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.15</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-c6cw-pr89-w882 reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-c6cw-pr89-w882">
+	  <p>The OTP TLS/DTLS client (pre TLS-1.3) does not verify that
+	  the cipher suite selected by the server in ServerHello is one
+	  of those offered in ClientHello. A man-in-the-middle attacker
+	  can select an anonymous cipher suite such as ECDH_anon that
+	  was never offered by the client. Since anonymous suites do not
+	  require a server certificate, this completely bypasses the
+	  client's verify_peer setting, giving the attacker a fully
+	  established connection without possessing any trusted
+	  certificate, and thus complete read and modify access to the
+	  transmitted data. TLS-1.3 is not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-55953</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-c6cw-pr89-w882</url>
+    </references>
+    <dates>
+      <discovery>2026-07-27</discovery>
+      <entry>2026-07-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="445d3f14-89e1-11f1-b35c-4c526214c986">
+    <topic>Erlang/OTP -- TLS denial of service using invalid certificate chains</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><ge>23.2,4</ge><lt>28.5.0.4,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.15</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-r5jr-mq46-vmhw reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-r5jr-mq46-vmhw">
+	  <p>A TLS/DTLS peer can crash the remote node by sending a
+	  certificate chain containing two mutually cross-signed
+	  certificates in unordered form. When the receiving side
+	  attempts to build a valid chain path, it enters unbounded
+	  recursion between the two certificates (A issues B, B issues
+	  A) with no cycle detection or depth limit. The call stack and
+	  chain accumulator grow without bound until the process
+	  exhausts available memory and the BEAM node crashes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58227</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-r5jr-mq46-vmhw</url>
+    </references>
+    <dates>
+      <discovery>2026-07-27</discovery>
+      <entry>2026-07-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="445d674f-89e1-11f1-b35c-4c526214c986">
+    <topic>Erlang/OTP -- denial of service via exponential certificate policy tree growth</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><ge>26.2,4</ge><lt>28.5.0.4,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.15</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-622p-qfh6-c352 reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-622p-qfh6-c352">
+	  <p>A remote attacker can trigger a denial of service through
+	  TLS certificate handling. By sending a specially crafted
+	  certificate chain with multiple certificate policies at each
+	  level, the policy tree expands exponentially during validation,
+	  growing as M^K nodes (where M is the number of policies per
+	  certificate and K is the chain depth). This pins schedulers
+	  and exhausts memory without any authentication. Any
+	  application using SSL/TLS that validates certificate paths is
+	  affected, as are direct calls to
+	  public_key:pkix_path_validation/3.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-59251</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-622p-qfh6-c352</url>
+    </references>
+    <dates>
+      <discovery>2026-07-27</discovery>
+      <entry>2026-07-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="445da2cc-89e1-11f1-b35c-4c526214c986">
+    <topic>Erlang/OTP -- megaco flex scanner buffer overflow</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>28.5.0.4,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.15</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-7xgh-gmgf-q2g7 reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-7xgh-gmgf-q2g7">
+	  <p>A remote unauthenticated attacker can crash Erlang nodes
+	  running the megaco text codec with the flex scanner option by
+	  sending an H.248/Megaco message with a property parm name
+	  exceeding 452 bytes. The overflow occurs in a C linked-in
+	  driver, causing the entire BEAM VM process to terminate. It is
+	  reachable pre-authentication, as the flex scanner processes
+	  raw TCP payloads before protocol validation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-59250</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-7xgh-gmgf-q2g7</url>
+    </references>
+    <dates>
+      <discovery>2026-07-27</discovery>
+      <entry>2026-07-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="445dc6b9-89e1-11f1-b35c-4c526214c986">
+    <topic>Erlang/OTP -- binary_to_term crash on crafted BIT_BINARY_EXT input</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><ge>27.0,4</ge><lt>28.5.0.4,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.15</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-54pw-5645-jh86 reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-54pw-5645-jh86">
+	  <p>A specially crafted External Term Format (ETF) payload of
+	  merely 7 bytes triggers a crash in the BEAM virtual machine
+	  when processed by binary_to_term/1,2. The BIT_BINARY_EXT tag
+	  with specific parameters causes an unsigned integer underflow
+	  during bitstring size calculation, resulting in an enormous
+	  memory allocation attempt that immediately terminates the VM.
+	  This is a full system crash, not a recoverable process
+	  exception: Erlang supervision mechanisms, the [safe] option
+	  and standard error handling cannot prevent it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-54890</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-54pw-5645-jh86</url>
+    </references>
+    <dates>
+      <discovery>2026-07-27</discovery>
+      <entry>2026-07-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="445df078-89e1-11f1-b35c-4c526214c986">
+    <topic>Erlang/OTP -- heap corruption decoding invalidly encoded large tuples</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>28.5.0.4,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.15</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Erlang/OTP team reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/releases/tag/OTP-29.0.4">
+	  <p>Fixed heap corruption when an invalidly encoded tuple with
+	  an arity of 2^31 or larger is decoded from Erlang's External
+	  Term Format (binary_to_term).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-55737</cvename>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-29.0.4</url>
+    </references>
+    <dates>
+      <discovery>2026-07-27</discovery>
+      <entry>2026-07-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="445e11d4-89e1-11f1-b35c-4c526214c986">
+    <topic>Erlang/OTP -- relative path traversal in the zip module</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>28.5.0.4,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.15</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Erlang/OTP team reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/releases/tag/OTP-29.0.4">
+	  <p>Fixed a bug where zip:unzip/1,2 and zip:extract/1,2 were
+	  vulnerable to a relative path traversal attack. A crafted zip
+	  archive containing entry names such as ../x/y could have
+	  caused files to be written outside the intended extraction
+	  directory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-47078</cvename>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-29.0.4</url>
+    </references>
+    <dates>
+      <discovery>2026-07-27</discovery>
+      <entry>2026-07-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="445e3324-89e1-11f1-b35c-4c526214c986">
+    <topic>Erlang/OTP -- denial of service in epmd</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>28.5.0.4,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.15</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Erlang/OTP team reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/releases/tag/OTP-29.0.4">
+	  <p>Mitigated a denial of service attack in epmd.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42792</cvename>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-29.0.4</url>
+    </references>
+    <dates>
+      <discovery>2026-07-27</discovery>
+      <entry>2026-07-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68b8de3a-8821-11f1-b72c-8447094a420f">
     <topic>Vaultwarden -- multiple vulnerabilities</topic>
     <affects>
