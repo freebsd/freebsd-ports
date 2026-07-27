@@ -1,5 +1,5 @@
 PORTNAME=	squid
-DISTVERSION=	7.4
+DISTVERSION=	7.6
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}-cache/${PORTNAME}/releases/download/${PORTNAME:tu}_${DISTVERSION:S|.|_|g}/
 
@@ -263,6 +263,7 @@ post-patch-IPV6-off:
 		-e'/acl localnet src f[ce][08]0::/d' \
 		-e's| 2001:DB8::[^[:space:]]+$$||' \
 		-e'/tcp_outgoing_address 2001:db8::/d' \
+		-e's| fe80::/10||' \
 		${WRKSRC}/src/cf.data.pre
 
 post-install:
