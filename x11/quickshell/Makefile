@@ -65,7 +65,7 @@ GIT_COMMIT_HASH=	59e9c47b0eb48a9e4bcf9631fa062ee939bd2e83
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${ARCH} == i386
+.if ${OPSYS} == FreeBSD && (${ARCH} == i386 || ${ARCH:Marmv?} || ${ARCH} == powerpc)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_wayland_buffer_dmabuf.cpp
 .endif
 
