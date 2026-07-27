@@ -1,5 +1,5 @@
-TIMESTAMP = 1769982645
-SHA256 (go/www_tgpt/tgpt-v2.11.1/v2.11.1.mod) = 882e96c2db446ba01f0b903000cf895855e2ee5bfc7b3355c1f348c63e15d6f8
-SIZE (go/www_tgpt/tgpt-v2.11.1/v2.11.1.mod) = 3350
-SHA256 (go/www_tgpt/tgpt-v2.11.1/v2.11.1.zip) = ca42960816b7ab56b40629222328d34d9624494c5ec1f4df840fe55cd3262673
-SIZE (go/www_tgpt/tgpt-v2.11.1/v2.11.1.zip) = 85915
+TIMESTAMP = 1785132412
+SHA256 (go/www_tgpt/tgpt-v2.12.0/v2.12.0.mod) = 8bf1fcb4d9e48081bd4f2e5799ee6adf844a02e33228f0c93a94cf6ef8d1abb9
+SIZE (go/www_tgpt/tgpt-v2.12.0/v2.12.0.mod) = 2740
+SHA256 (go/www_tgpt/tgpt-v2.12.0/v2.12.0.zip) = bd74dabb85266060cb8d8dfffdc11b6d510eb44e34fcc97d67fcaf6f5e1121c2
+SIZE (go/www_tgpt/tgpt-v2.12.0/v2.12.0.zip) = 95226
