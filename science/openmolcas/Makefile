@@ -1,6 +1,5 @@
 PORTNAME=	openmolcas
-DISTVERSION=	26.02
-PORTREVISION=	1
+DISTVERSION=	26.06
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,8 +14,11 @@ BROKEN_i386=	build breaks: Symbol 'maxfilesize' at (1) has no IMPLICIT type; did
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR} \
 		chemps2:science/chemps2
-LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libhdf5.so:science/hdf5 \
+		libmpfr.so:math/mpfr \
 		libsz.so:science/libaec \
+		libwignernj.so:science/libwignernj \
 		libxc.so:science/libxc
 
 USES=		cmake:testing fortran python shebangfix
@@ -25,7 +27,7 @@ USE_GCC=	yes # see https://gitlab.com/Molcas/OpenMolcas/-/issues/351
 USE_GITLAB=	yes
 GL_ACCOUNT=	Molcas
 GL_PROJECT=	OpenMolcas
-GL_TAGNAME=	3cb6f2cd61a5d482611d85c47dcb61f8d51d50ba
+GL_TAGNAME=	8355057f32d65706a35996b5ab07cac2962bb728
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	Reference-LAPACK:lapack:04b044e0:lapack/External/lapack \

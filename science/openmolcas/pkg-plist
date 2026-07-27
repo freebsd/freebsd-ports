@@ -204,6 +204,7 @@
 %%DATADIR%%/data/seward.prgm
 %%DATADIR%%/data/single_aniso.prgm
 %%DATADIR%%/data/slapaf.prgm
+%%DATADIR%%/data/spin_data.txt
 %%DATADIR%%/data/surfacehop.prgm
 %%DATADIR%%/data/symmetrize.prgm
 %%DATADIR%%/data/vibrot.prgm
