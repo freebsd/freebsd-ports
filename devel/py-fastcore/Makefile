@@ -1,5 +1,5 @@
 PORTNAME=	fastcore
-DISTVERSION=	2.1.6
+DISTVERSION=	2.1.11
 CATEGORIES=	devel python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,11 @@ WWW=		https://fastcore.fast.ai/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
-USE_PYTHON=	pep517 autoplist
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
 
