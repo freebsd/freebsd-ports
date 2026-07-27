@@ -29,7 +29,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
 		libspeexdsp.so:audio/speexdsp
-RUN_DEPENDS=	xdg-desktop-portal:deskutils/xdg-desktop-portal
+RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal
 
 USES=		compiler:c++17-lang gl gmake libarchive localbase:ldflags pkgconfig python sdl shebangfix tar:xz xorg
 USE_XORG=	x11 xcursor xext xrandr
