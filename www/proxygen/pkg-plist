@@ -194,6 +194,7 @@ include/proxygen/lib/http/coro/client/HTTPCoroConnector.h
 include/proxygen/lib/http/coro/client/HTTPCoroSessionPool.h
 include/proxygen/lib/http/coro/client/HTTPSessionFactory.h
 include/proxygen/lib/http/coro/client/ProxygenCertVerifier.h
+include/proxygen/lib/http/coro/client/TLS.h
 include/proxygen/lib/http/coro/filters/CompressionFilter.h
 include/proxygen/lib/http/coro/filters/CompressionFilterFactory.h
 include/proxygen/lib/http/coro/filters/DecompressionFilter.h
