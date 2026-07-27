@@ -11,8 +11,10 @@ WWW=		https://lapce.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	armv7 i386
+NOT_FOR_ARCHS_REASON_armv7=	[cranelift-codegen 0.101.4] error when identifying target: "no supported isa found for arch `armv7`"
 NOT_FOR_ARCHS_REASON_i386=	doesn't build: [zstd-sys 2.0.1+zstd.1.5.2] AR_i686_unknown_freebsd = None
+NOT_FOR_ARCHS_REASON=	${NOT_FOR_ARCHS_REASON_${ARCH}}
 
 LIB_DEPENDS=	libssh2.so:security/libssh2 \
 		libgit2.so:devel/libgit2
