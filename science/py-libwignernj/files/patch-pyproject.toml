@@ -1,0 +1,16 @@
+--- pyproject.toml.orig	2026-06-29 18:06:40 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ # SPDX-License-Identifier: BSD-3-Clause
+ # Copyright (c) 2026 Susi Lehtola
+ [build-system]
+-requires = ["setuptools>=77", "wheel"]
++requires = ["setuptools>=63", "wheel"]
+ build-backend = "setuptools.build_meta"
+@@ -10,5 +10,4 @@ description = "Exact Wigner 3j/6j/9j, Clebsch-Gordan,
+ description = "Exact Wigner 3j/6j/9j, Clebsch-Gordan, Racah W, Fano X, and Gaunt coefficients via prime factorization"
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = { text = "BSD-3-Clause" }

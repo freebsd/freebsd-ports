@@ -377,6 +377,7 @@
     SUBDIR += py-liac-arff
     SUBDIR += py-libgetar
     SUBDIR += py-libpysal
+    SUBDIR += py-libwignernj
     SUBDIR += py-lifelines
     SUBDIR += py-mdp
     SUBDIR += py-mercantile
