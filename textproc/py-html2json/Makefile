@@ -1,6 +1,5 @@
 PORTNAME=	html2json
-DISTVERSION=	0.2.4.1
-PORTREVISION=	1
+DISTVERSION=	0.3.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +11,11 @@ WWW=		https://github.com/chuanconggao/html2json
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.16.0:devel/py-future@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyquery>=1.4.0:devel/py-pyquery@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyquery>=2.0.1:devel/py-pyquery@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
 
