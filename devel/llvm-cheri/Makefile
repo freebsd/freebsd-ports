@@ -188,6 +188,10 @@ USES+=		${_USES_PYTHON}
 
 .include <bsd.port.pre.mk>
 
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 210
+EXTRA_PATCHES+=	${PATCHDIR}/clang21-patch-llvm_tools_sancov_sancov.cpp
+.endif
+
 .if exists(${PATCHDIR}/llvm${LLVM_MAJOR})
 EXTRA_PATCHES+=	${PATCHDIR}/llvm${LLVM_MAJOR}
 .endif
