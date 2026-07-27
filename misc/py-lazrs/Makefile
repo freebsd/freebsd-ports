@@ -1,6 +1,5 @@
 PORTNAME=	lazrs
-DISTVERSION=	0.8.1
-PORTREVISION=	3
+DISTVERSION=	0.8.2
 CATEGORIES=	misc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,34 +19,30 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	laz-rs
 GH_PROJECT=	laz-rs-python
 
-CARGO_CRATES=	autocfg-1.5.0 \
+CARGO_CRATES=	autocfg-1.5.1 \
 		byteorder-1.5.0 \
-		crossbeam-deque-0.8.6 \
-		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.21 \
-		either-1.15.0 \
+		crossbeam-deque-0.8.7 \
+		crossbeam-epoch-0.9.20 \
+		crossbeam-utils-0.8.22 \
+		either-1.17.0 \
 		heck-0.5.0 \
-		indoc-2.0.7 \
-		laz-0.11.1 \
-		libc-0.2.185 \
-		memoffset-0.9.1 \
+		laz-0.12.2 \
+		libc-0.2.189 \
 		num-traits-0.2.19 \
 		once_cell-1.21.4 \
-		portable-atomic-1.13.1 \
-		proc-macro2-1.0.106 \
-		pyo3-0.27.2 \
-		pyo3-build-config-0.27.2 \
-		pyo3-ffi-0.27.2 \
-		pyo3-macros-0.27.2 \
-		pyo3-macros-backend-0.27.2 \
-		quote-1.0.45 \
+		portable-atomic-1.14.0 \
+		proc-macro2-1.0.107 \
+		pyo3-0.29.0 \
+		pyo3-build-config-0.29.0 \
+		pyo3-ffi-0.29.0 \
+		pyo3-macros-0.29.0 \
+		pyo3-macros-backend-0.29.0 \
+		quote-1.0.47 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
-		rustversion-1.0.22 \
-		syn-2.0.117 \
+		syn-2.0.119 \
 		target-lexicon-0.13.5 \
-		unicode-ident-1.0.24 \
-		unindent-0.2.4
+		unicode-ident-1.0.24
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
