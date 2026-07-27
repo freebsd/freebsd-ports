@@ -20,6 +20,7 @@ sbin/robots2policy
 %%DATADIR%%/clients/docker-client.yaml
 %%DATADIR%%/clients/git.yaml
 %%DATADIR%%/clients/go-get.yaml
+%%DATADIR%%/clients/google-user-triggered-fetchers.yaml
 %%DATADIR%%/clients/mistral-mistralai-user.yaml
 %%DATADIR%%/clients/openai-chatgpt-user.yaml
 %%DATADIR%%/clients/perplexity-user.yaml
@@ -54,6 +55,8 @@ sbin/robots2policy
 %%DATADIR%%/crawlers/perplexitybot.yaml
 %%DATADIR%%/crawlers/qwantbot.yaml
 %%DATADIR%%/crawlers/tencent-cloud.yaml
+%%DATADIR%%/crawlers/wikimedia-citoid.yaml
+%%DATADIR%%/crawlers/xai.yaml
 %%DATADIR%%/crawlers/yandexbot.yaml
 %%DATADIR%%/embed.go
 %%DATADIR%%/embed_test.go
