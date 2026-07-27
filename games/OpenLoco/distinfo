@@ -1,5 +1,5 @@
-TIMESTAMP = 1784838438
-SHA256 (OpenLoco-OpenLoco-v26.05_GH0.tar.gz) = c5d036bc6a290e34b4430621621ba230534820cdf663e6c859654fe944574609
-SIZE (OpenLoco-OpenLoco-v26.05_GH0.tar.gz) = 2762519
-SHA256 (OpenLoco-OpenGraphics-v0.1.8_GH0.tar.gz) = 60d83b3b621788c45d4f6bd18e1ed6c1e51bd54b905bbc57f211c6843692b2d6
-SIZE (OpenLoco-OpenGraphics-v0.1.8_GH0.tar.gz) = 118000125
+TIMESTAMP = 1785316725
+SHA256 (OpenLoco-OpenLoco-v26.07.1_GH0.tar.gz) = 6d2e4b0248778102d80a2459fd820af06095f398768aeddfc0ce2bab16f2038d
+SIZE (OpenLoco-OpenLoco-v26.07.1_GH0.tar.gz) = 2784696
+SHA256 (OpenLoco-OpenGraphics-v0.1.9_GH0.tar.gz) = d79added846b1334e09d4af241870031933bd903370bb17498758c429ff447de
+SIZE (OpenLoco-OpenGraphics-v0.1.9_GH0.tar.gz) = 150910799

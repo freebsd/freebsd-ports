@@ -393,6 +393,131 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSTAR/98.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSTAR/99.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSTAR/OG_BRDGSTAR.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/0.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/1.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/10.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/100.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/101.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/102.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/103.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/104.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/105.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/106.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/107.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/108.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/109.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/11.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/110.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/111.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/112.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/113.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/114.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/115.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/116.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/117.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/118.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/119.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/12.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/120.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/121.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/122.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/123.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/13.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/14.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/15.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/16.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/17.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/18.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/19.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/2.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/20.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/21.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/22.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/23.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/24.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/25.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/26.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/27.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/28.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/29.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/3.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/30.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/31.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/32.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/33.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/34.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/35.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/36.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/37.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/38.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/39.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/4.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/40.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/41.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/42.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/43.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/44.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/45.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/46.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/47.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/48.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/49.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/5.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/50.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/51.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/52.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/53.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/54.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/55.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/56.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/57.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/58.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/59.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/6.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/60.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/61.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/62.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/63.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/64.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/65.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/66.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/67.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/68.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/69.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/7.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/70.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/71.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/72.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/73.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/74.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/75.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/76.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/77.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/78.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/79.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/8.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/80.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/81.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/82.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/83.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/84.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/85.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/86.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/87.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/88.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/89.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/9.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/90.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/91.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/92.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/93.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/94.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/95.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/96.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/97.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/98.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/99.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP/OG_BRDGSUSP.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGWOOD/0.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGWOOD/1.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGWOOD/10.png
@@ -1884,6 +2009,94 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Land/GRASSBR/98.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Land/GRASSBR/99.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Land/GRASSBR/OG_GRASSBR.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/0.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/1.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/10.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/11.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/12.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/13.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/14.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/15.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/16.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/17.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/18.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/19.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/2.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/20.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/21.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/22.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/23.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/24.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/25.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/26.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/27.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/28.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/29.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/3.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/30.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/31.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/32.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/33.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/34.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/35.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/36.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/37.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/38.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/39.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/4.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/40.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/41.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/42.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/43.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/44.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/45.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/46.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/47.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/48.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/49.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/5.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/50.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/51.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/52.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/53.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/54.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/55.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/56.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/57.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/58.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/59.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/6.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/60.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/61.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/62.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/63.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/64.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/65.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/66.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/67.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/68.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/69.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/7.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/70.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/71.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/72.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/73.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/74.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/75.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/76.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/77.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/78.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/79.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/8.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/80.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/81.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/82.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/83.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/84.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/85.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/9.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/OG_VOID.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/OG_VOID/sprites.json
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Land/ROCK1/0.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Land/ROCK1/1.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Land/ROCK1/10.png
@@ -2173,94 +2386,6 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Land/SAND1/93.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Land/SAND1/94.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Land/SAND1/OG_SAND1.dat
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/0.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/1.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/10.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/11.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/12.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/13.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/14.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/15.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/16.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/17.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/18.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/19.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/2.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/20.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/21.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/22.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/23.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/24.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/25.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/26.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/27.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/28.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/29.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/3.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/30.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/31.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/32.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/33.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/34.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/35.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/36.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/37.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/38.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/39.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/4.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/40.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/41.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/42.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/43.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/44.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/45.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/46.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/47.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/48.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/49.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/5.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/50.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/51.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/52.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/53.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/54.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/55.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/56.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/57.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/58.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/59.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/6.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/60.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/61.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/62.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/63.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/64.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/65.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/66.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/67.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/68.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/69.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/7.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/70.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/71.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/72.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/73.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/74.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/75.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/76.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/77.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/78.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/79.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/8.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/80.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/81.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/82.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/83.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/84.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/85.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/9.png
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/OG_VOID.dat
-%%DATADIR%%/data/objects/openloco_objects-src/objects/Land/VOID/sprites.json
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADONE/0.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADONE/1.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADONE/10.png
@@ -2483,6 +2608,205 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADTMC/8.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADTMC/9.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADTMC/OG_ROADTMC.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/0.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/1.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/10.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/100.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/101.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/102.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/103.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/104.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/105.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/106.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/107.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/108.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/109.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/11.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/110.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/111.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/112.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/113.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/114.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/115.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/116.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/117.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/118.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/119.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/12.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/120.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/121.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/122.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/123.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/13.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/14.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/15.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/16.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/17.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/18.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/19.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/2.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/20.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/21.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/22.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/23.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/24.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/25.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/26.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/27.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/28.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/29.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/3.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/30.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/31.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/32.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/33.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/34.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/35.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/36.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/37.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/38.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/39.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/4.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/40.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/41.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/42.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/43.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/44.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/45.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/46.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/47.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/48.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/49.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/5.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/50.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/51.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/52.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/53.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/54.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/55.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/56.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/57.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/58.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/59.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/6.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/60.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/61.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/62.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/63.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/64.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/65.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/66.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/67.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/68.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/69.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/7.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/70.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/71.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/72.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/73.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/74.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/75.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/76.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/77.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/78.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/79.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/8.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/80.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/81.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/82.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/83.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/84.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/85.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/86.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/87.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/88.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/89.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/9.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/90.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/91.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/92.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/93.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/94.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/95.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/96.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/97.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/98.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/99.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1/OG_ROADUS1.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/0.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/1.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/10.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/11.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/12.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/13.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/14.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/15.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/16.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/17.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/18.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/19.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/2.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/20.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/21.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/22.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/23.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/24.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/25.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/26.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/27.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/28.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/29.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/3.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/30.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/31.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/32.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/33.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/34.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/35.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/36.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/37.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/38.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/39.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/4.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/40.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/41.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/42.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/43.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/44.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/45.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/46.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/47.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/48.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/49.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/5.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/50.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/51.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/52.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/53.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/54.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/55.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/56.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/57.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/58.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/59.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/6.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/60.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/61.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/62.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/63.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/64.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/65.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/66.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/67.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/68.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/69.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/7.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/70.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/71.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/72.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/8.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/9.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2/OG_ROADUS2.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/RoadStation/BUSSTOP/0.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/RoadStation/BUSSTOP/1.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/RoadStation/BUSSTOP/10.png
@@ -2806,6 +3130,14 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/StreetLight/SLIGHT1/8.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/StreetLight/SLIGHT1/9.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/StreetLight/SLIGHT1/OG_SLIGHT1.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/ATOWNNAM/OG_ATOWNNAM.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/ETOWNNAM/OG_ETOWNNAM.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/FTOWNNAM/OG_FTOWNNAM.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/GTOWNNAM/OG_GTOWNNAM.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/LTOWNNAM/OG_LTOWNNAM.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/STOWNNAM/OG_STOWNNAM.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Track/TRACKST/OG_TRACKST.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Track/TRACKST/OG_TrackST.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Tunnel/TUNNEL1/0.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Tunnel/TUNNEL1/1.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Tunnel/TUNNEL1/2.png
@@ -2836,6 +3168,15 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/APT2/README.md
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/APT3/OG_APT3.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/APT3/README.md
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/BALDWIN1/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/BALDWIN1/OG_BALDWIN1.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/BALDWIN1/OG_BALDWIN1.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/C33/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/C33/OG_C33.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/C33/OG_C33.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/C56/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/C56/OG_C56.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/C56/OG_C56.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CATTLE1/CATTLE1-body.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CATTLE1/OG_CATTLE1-roof.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CATTLE1/OG_CATTLE1.blend
@@ -2845,6 +3186,9 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CATTLEN1/OG_CATTLEN1.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CE68/OG_CE68.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CE68/OG_CE68.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL67/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL67/OG_CL67.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL67/OG_CL67.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL71/C1Noisemap.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL71/OG_CL71.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL71/OG_CL71.dat
@@ -2852,8 +3196,14 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/COAL1/OG_COAL1.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/DASH7/OG_DASH7.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/DASH7/OG_DASH7.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/DEH46/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/DEH46/OG_DEH46.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/DEH46/OG_DEH46.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/E8/OG_E8.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/E8/OG_E8.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/EB35/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/EB35/OG_EB35.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/EB35/OG_EB35.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/ESTAR1/OG_ESTAR.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/ESTAR1/OG_ESTAR1.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/ESTAR2/OG_ESTAR2.dat
@@ -2873,6 +3223,14 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/FLTBEDN1/C1Noisemap.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/FLTBEDN1/OG_FLTBEDN1.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/FLTBEDN1/OG_NGFlatbed1.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE442/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE442/OG_GE442.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE442/OG_GE442.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE443/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE443/OG_GE443.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE443/OG_GE443.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE66/OG_GE66.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE66/OG_GE66.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GOODS1/OG_GOODS1-body_v11.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GOODS1/OG_GOODS1-chassis.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GOODS1/OG_GOODS1-roof_v2.png
@@ -2881,6 +3239,8 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GOODS3/GOODS3-body.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GOODS3/OG_GOODS3.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GOODS3/OG_GOODS3.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GOODSN1/OG_GOODSN1.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GOODSN1/OG_GOODSN1.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GRAINHP1/GRAINHP1-body_v3.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GRAINHP1/GRAINHP1-body_v4.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GRAINHP1/OG_GRAINHP1-chassis.png
@@ -2891,6 +3251,18 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GRAINHP2/OG_GRAINHP2-chassis.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GRAINHP2/OG_GRAINHP2.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GRAINHP2/OG_GRAINHP2.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HG23/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HG23/OG_HG23.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HG23/OG_HG23.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HGE44/OG_HGE44.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HGE44/OG_HGE44.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HGE442/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HGE442/OG_HGE442.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HGE442/OG_HGE442.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HOPPER/OG_HOPPER.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HOPPER/OG_HOPPER.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HOPPER2/OG_HOPPER2.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HOPPER2/OG_HOPPER2.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HST/OG_HST.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HST/OG_HST.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HST/OG_HST_revision.blend
@@ -2966,6 +3338,7 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/RE442/OG_RE442.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/SD70MAC/OG_SD70MAC.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/SD70MAC/OG_SD70MAC.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/SPECIAL/C1Noisemap.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/SPECIAL/OG_SPECIAL.blend
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/SPECIAL/OG_SPECIAL.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/ST8FT/OG_ST8FT.blend
@@ -2986,6 +3359,24 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/TGV1/OG_TGV1.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/TGV2/OG_TGV2.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/TGV2/README.md
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/USPACIF/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/USPACIF/OG_USPACIF.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/USPACIF/OG_USPACIF.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM1/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM1/OG_TRAM1.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM1/OG_TRAM1.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM2/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM2/OG_TRAM2.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM2/OG_TRAM2.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM3/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM3/OG_TRAM3.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM3/OG_TRAM3.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM4/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM4/OG_TRAM4.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM4/OG_TRAM4.dat
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAMCOMB/C1Noisemap.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAMCOMB/OG_TRAMCOMB.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAMCOMB/OG_TRAMCOMB.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Wall/BRWNWALG/0.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Wall/BRWNWALG/1.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Wall/BRWNWALG/2.png
@@ -3141,7 +3532,6 @@ share/icons/hicolor/scalable/apps/openloco.svg
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Airport/AIRPORT2
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Airport/AIRPORT3
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Airport/HPORT1
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Bridge/BRDGSUSP
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Building/BLDALP1
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Building/BLDALP10
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Building/BLDALP11
@@ -3306,8 +3696,6 @@ share/icons/hicolor/scalable/apps/openloco.svg
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Region/REGUK
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Region/REGUS
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADTRAM
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS1
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Road/ROADUS2
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/RoadExtra/RDEXCAT1
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/ScenarioText/STEX000
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/ScenarioText/STEX001
@@ -3401,14 +3789,7 @@ share/icons/hicolor/scalable/apps/openloco.svg
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Steam/SPARK1
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Steam/STEAM
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Steam/WWAKE1
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/ATOWNNAM
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/ETOWNNAM
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/FTOWNNAM
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/GTOWNNAM
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/LTOWNNAM
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/STOWNNAM
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Track/TRACKNG
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Track/TRACKST
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TrackExtra/TREX3RL
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TrackExtra/TREXCAT1
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TrackExtra/TREXRACK
@@ -3510,10 +3891,7 @@ share/icons/hicolor/scalable/apps/openloco.svg
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/4MT
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/508
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/A4
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/BALDWIN1
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/BLACK5
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/C33
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/C56
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CATTLE2
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CATTLE3
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL20
@@ -3521,33 +3899,15 @@ share/icons/hicolor/scalable/apps/openloco.svg
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL47
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL55
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL58
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL67
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL85
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL86
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/CL90
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/DEH46
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/EB35
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/EMU1
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE442
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE443
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GE66
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GOODS2
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/GOODSN1
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HG23
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HGE44
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HGE442
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HOPPER
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/HOPPER2
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/JUBILEE
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/PVAN2
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/STANCORR
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/USPACIF
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Train/V2
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM1
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM2
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM3
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAM4
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Tram/TRAMCOMB
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Truck/CTRUCK1
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Truck/CTRUCK2
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/Vehicle/Truck/CTRUCK3
