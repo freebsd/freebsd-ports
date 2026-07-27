@@ -1,5 +1,5 @@
 PORTNAME=	litedown
-DISTVERSION=	0.9
+DISTVERSION=	0.10
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -14,6 +14,7 @@ RUN_DEPENDS=	R-cran-commonmark>=2.0.0:textproc/R-cran-commonmark \
 		R-cran-xfun>=0.55:misc/R-cran-xfun
 TEST_DEPENDS=	R-cran-rbibutils>0:textproc/R-cran-rbibutils \
 		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
+		R-cran-testit>0:devel/R-cran-testit \
 		R-cran-tinytex>0:print/R-cran-tinytex
 
 USES=		cran:auto-plist
