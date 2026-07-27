@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	12.0.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -63,25 +63,25 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_TERMINFO=OFF
 
 OPTIONS_DEFINE=	BE_AMDGPU BE_WASM CLANG DOCS EXTRAS LIT LLD PYCLANG
 OPTIONS_DEFINE_aarch64=	OPENMP
-OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD LLDB OPENMP
-OPTIONS_DEFINE_i386=	COMPILER_RT LLDB OPENMP
-OPTIONS_DEFINE_powerpc=	GOLD
-OPTIONS_DEFINE_powerpc64=	GOLD OPENMP
-OPTIONS_DEFINE_powerpc64le=	GOLD OPENMP
+OPTIONS_DEFINE_amd64=	COMPILER_RT OPENMP
+OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
+OPTIONS_DEFINE_powerpc=
+OPTIONS_DEFINE_powerpc64=	OPENMP
+OPTIONS_DEFINE_powerpc64le=	OPENMP
 OPTIONS_DEFINE_riscv64=	OPENMP
-OPTIONS_DEFAULT=	BE_AMDGPU BE_STANDARD BE_WASM CLANG EXTRAS LIT LLD PYCLANG
+OPTIONS_DEFAULT=	BE_AMDGPU BE_FREEBSD BE_WASM CLANG EXTRAS LLD
 OPTIONS_DEFAULT_aarch64=	OPENMP
-OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD LLDB OPENMP
-OPTIONS_DEFAULT_i386=	COMPILER_RT LLDB OPENMP
-OPTIONS_DEFAULT_powerpc=	GOLD
-OPTIONS_DEFAULT_powerpc64=	GOLD OPENMP
-OPTIONS_DEFAULT_powerpc64le=	GOLD OPENMP
+OPTIONS_DEFAULT_amd64=	COMPILER_RT OPENMP
+OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
+OPTIONS_DEFAULT_powerpc=
+OPTIONS_DEFAULT_powerpc64=	OPENMP
+OPTIONS_DEFAULT_powerpc64le=	OPENMP
 OPTIONS_DEFAULT_riscv64=	OPENMP
 OPTIONS_SINGLE=		BACKENDS
 OPTIONS_SINGLE_BACKENDS=BE_FREEBSD BE_NATIVE BE_STANDARD
 OPTIONS_SUB=	yes
 # All non-backend options
-_ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS GOLD LIT LLD LLDB PYCLANG OPENMP
+_ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS LIT LLD PYCLANG OPENMP
 
 BE_AMDGPU_DESC=		AMD GPU backend (required by mesa)
 BE_FREEBSD_DESC=	Backends for FreeBSD architectures
@@ -121,26 +121,9 @@ DOCS_CMAKE_ON= \
 DOCS_PLIST_FILES=	${MAN1SRCS:S|^|share/man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 EXTRAS_DESC=		Extra clang tools
 EXTRAS_IMPLIES=		CLANG
-GOLD_DESC=		Build the LLVM Gold plugin for LTO
-GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
-GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
-GOLD_EXTRA_PATCHES_OFF=	${PATCHDIR}/gold-off-llvm_tools_CMakeLists.txt
 LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker
-LLDB_BUILD_DEPENDS=	swig:devel/swig
-LLDB_CMAKE_ON= \
-	-DLUA_INCLUDE_DIR=${LOCALBASE}/include/lua${LUA_VER_STR} \
-	-DLUA_LIBRARY=${LOCALBASE}/lib/liblua-${LUA_VER}.so \
-	-DCURSES_INCLUDE_PATH=/usr/include \
-	-DCURSES_CURSES_LIBRARY=/usr/lib/libcurses.so \
-	-DCURSES_FORM_LIBRARY=/usr/lib/libform.so \
-	-DCURSES_NCURSES_LIBRARY=/usr/lib/libncurses.so \
-	-DPANEL_LIBRARIES=/usr/lib/libpanel.so
-LLDB_DESC=		Install lldb, the LLVM debugger
-LLDB_IMPLIES=		CLANG
-LLDB_USES=		lua:53 libedit
-LLDB_VARS=		_USES_PYTHON=python
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CMAKE_ON= \
 	-DLIBOMPTARGET_DEP_LIBELF_INCLUDE_DIR="/usr/include/libelf.h" \
@@ -239,11 +222,6 @@ MAN1SRCS+=	${LIT_MAN1SRCS}
 LLVM_ENABLE_PROJECTS+=	lld
 COMMANDS+=	${LLD_COMMANDS}
 PORTDOCS+=	lld
-.endif
-
-.if ${PORT_OPTIONS:MLLDB}
-LLVM_ENABLE_PROJECTS+=	lldb
-COMMANDS+=	${LLDB_COMMANDS}
 .endif
 
 .if ${PORT_OPTIONS:MOPENMP}
@@ -497,6 +475,9 @@ do-test:
 		${SH} -c ${TEST_CMD}; \
 	fi
 
+post-install-OPENMP-on:
+	${RMDIR} ${STAGEDIR}/${DOCSDIR}/openmp/html/_sources
+
 build-plist:
 	${RM} ${PLIST} ${PLIST}.tmp
 	${ECHO_CMD} "@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<" >> ${PLIST}.tmp
@@ -534,9 +515,7 @@ build-plist:
 		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /(bin\/(ld|lld|wasm-ld))|liblld[^b]|\/lld\// && $$0 !~ /(lldb)/) {printf "%%%%LLD%%%%"} \
-	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /(${OPENMP_PATTERN})/) {printf "%%%%OPENMP%%%%"} \
-	    if ($$0 ~ /(LLVMgold)/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 ~ /${PYCLANG_PATTERN}/) {printf "%%%%PYCLANG%%%%"} \
 	    if ($$0 !~ /(libclang_rt)/ && $$0 !~ /(${BE_PATTERN})$$/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}

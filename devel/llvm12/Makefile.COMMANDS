@@ -103,10 +103,3 @@ LLD_COMMANDS=	\
 		lld \
 		lld-link \
 		wasm-ld
-
-LLDB_COMMANDS=	\
-		lldb \
-		lldb-argdumper \
-		lldb-instr \
-		lldb-server \
-		lldb-vscode
