@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris.longros@gmail.com
 COMMENT=	Functions to solve Quadratic Programming Problems
 WWW=		https://cran.r-project.org/web/packages/quadprog/
 
