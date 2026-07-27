@@ -153,9 +153,6 @@ post-patch-PORT_LLVM-on:
 		${WRKSRC}/compiler/rustc_target/src/spec/base/wasm.rs
 
 do-configure:
-# Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
-	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
-		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
 .for _component in cargo rust-std rustc
 	@cd ${WRKDIR}/${_component}-*-${OPSYS:tl} && \
 		${SH} install.sh --prefix=${WRKDIR}/bootstrap --verbose

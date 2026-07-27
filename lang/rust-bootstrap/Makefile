@@ -76,9 +76,6 @@ post-patch:
 		${_CARGO_VENDOR_DIR}/*/.cargo-checksum.json
 
 do-configure:
-# Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
-	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
-		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
 	@${ECHO_CMD} '# https://github.com/rust-lang/rust/issues/135358 (bug #947897)' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'profile="dist"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[build]' >> ${WRKSRC}/config.toml
