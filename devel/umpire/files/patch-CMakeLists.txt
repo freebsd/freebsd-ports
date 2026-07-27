@@ -1,0 +1,13 @@
+-- fix build because camp-2026.07.0 uses C++ feature 'concept' which is standardized only in C++20
+
+--- CMakeLists.txt.orig	2026-07-27 20:11:17 UTC
++++ CMakeLists.txt
+@@ -27,7 +27,7 @@ include(cmake/SetupUmpireOptions.cmake)
+ include(cmake/SetupUmpireOptions.cmake)
+ 
+ # Default to c++17 if not specified by the user.
+-set(BLT_CXX_STD "c++17" CACHE STRING "Version of C++ standard")
++set(BLT_CXX_STD "c++20" CACHE STRING "Version of C++ standard")
+ 
+ # If BLT_CXX_STD is set by the user, check that it is at least 17.
+ if("${BLT_CXX_STD}" STREQUAL "c++98" OR
