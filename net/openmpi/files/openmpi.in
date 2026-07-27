@@ -1,4 +1,5 @@
 #%Module
+family mpi
 
 proc ModulesHelp { } {
    puts stderr "This module adds Open MPI/SHMEM v%%DISTVERSION%% to various paths"

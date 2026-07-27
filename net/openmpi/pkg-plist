@@ -1,4 +1,4 @@
-etc/modulefiles/openmpi
+etc/modulefiles/mpi/openmpi
 libdata/pkgconfig/ompi-c.pc
 libdata/pkgconfig/ompi-cxx.pc
 libdata/pkgconfig/ompi-f77.pc

@@ -1,8 +1,11 @@
 PORTNAME=	openmpi
 DISTVERSION=	5.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${DISTVERSION:R}/
+
+PATCH_SITES=	https://github.com/open-mpi/ompi/commit/
+PATCHFILES+=	c46e33470c9490670118fce101809d52d76ee478.patch:-p1 # https://github.com/open-mpi/ompi/pull/14058
 
 MAINTAINER=	laurent@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
@@ -42,8 +45,7 @@ CONFIGURE_ARGS+=	--enable-mca-no-build=verbs,btl_openib,oob_ud \
 			--with-pmix=${LOCALBASE} \
 			--with-prrte=${LOCALBASE} \
 			--with-wrapper-ldflags=-Wl,-rpath=-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
-			--without-ofi \
-			--without-ucx
+			--without-ofi
 TEST_TARGET=		check
 CFLAGS+=		${CFLAGS_F2018}
 LDFLAGS+=		-lpthread
@@ -59,21 +61,22 @@ SUB_LIST=	DISTVERSION=${DISTVERSION} \
 PLIST_SUB+=	MPIDIR=${MPIDIR}
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		AVX DEBUG DOCS IPV6 ROMIO SLURM
+OPTIONS_DEFINE=		AVX DEBUG DOCS IPV6 ROMIO SLURM UCX
 OPTIONS_DEFAULT=	ROMIO SLURM
 OPTIONS_EXCLUDE_aarch64=	AVX
 OPTIONS_EXCLUDE_armv6=	AVX SLURM
 OPTIONS_EXCLUDE_armv7=	AVX SLURM
 OPTIONS_EXCLUDE_i386=	SLURM
 OPTIONS_EXCLUDE_powerpc=	AVX SLURM
-OPTIONS_EXCLUDE_powerpc64=	AVX
+OPTIONS_EXCLUDE_powerpc64=	AVX UCX
 OPTIONS_EXCLUDE_powerpc64le=	AVX
-OPTIONS_EXCLUDE_riscv64=	AVX
+OPTIONS_EXCLUDE_riscv64=	AVX UCX
 OPTIONS_SUB=		yes
 
 AVX_DESC=	Enable AVX instructions
 ROMIO_DESC=	Enable romio mpi-io support
 SLURM_DESC=	Enable SLURM support
+UCX_DESC=	Enable UCX support
 
 AVX_CONFIGURE_OFF=	--enable-mca-no-build=op-avx
 
@@ -91,6 +94,10 @@ ROMIO_CONFIGURE_OFF=	--disable-io-romio
 SLURM_CONFIGURE_WITH=	slurm
 # Slurm integration in OpenMPI is handled through the PMIx interface
 #SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
+
+UCX_LIB_DEPENDS=	libucp.so:net/ucx
+UCX_CONFIGURE_ON=	--with-ucx
+UCX_CONFIGURE_OFF=	--without-ucx
 
 .include <bsd.port.pre.mk>
 
@@ -126,8 +133,8 @@ pre-configure:
 .endfor
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/modulefiles
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/modulefiles/mpi
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/etc/modulefiles/${PORTNAME}
+		${STAGEDIR}${PREFIX}/etc/modulefiles/mpi/${PORTNAME}
 
 .include <bsd.port.post.mk>

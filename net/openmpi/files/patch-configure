@@ -1,0 +1,10 @@
+--- configure.orig	2026-06-21 10:16:29 UTC
++++ configure
+@@ -102229,6 +102229,7 @@ fi
+ fi
+ 
+         ac_fn_check_decl "$LINENO" "__syscall" "ac_cv_have_decl___syscall" "#include <sys/syscall.h>
++      #include <unistd.h>
+ " "$ac_c_undeclared_builtin_options" "CFLAGS"
+ if test "x$ac_cv_have_decl___syscall" = xyes
+ then :
