@@ -1,0 +1,7 @@
+PocketBase is an open source backend consisting of embedded database (SQLite)
+with realtime subscriptions, built-in files and users management, convenient
+Admin dashboard UI, and simple REST-ish API.
+
+It runs as a single portable binary with no external dependencies, making it
+suitable for small to medium-scale applications, prototyping, and self-hosted
+deployments.
