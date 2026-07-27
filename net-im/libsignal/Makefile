@@ -16,6 +16,8 @@ BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
+BROKEN_i386= 	bindgen for boring-ssl fail
+#CFLAGS_i386=	-DOPENSSL_NO_ASM
 USE_LDCONFIG=	yes
 
 # to get the GH_TUPLE
