@@ -1,5 +1,5 @@
 PORTNAME=	crewai-core
-PORTVERSION=	1.15.6
+PORTVERSION=	1.15.7
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,6 +35,6 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
 
-# tests as of 1.15.6: 16 passed in 0.18s
+# tests as of 1.15.7: 16 passed in 0.18s
 
 .include <bsd.port.mk>
