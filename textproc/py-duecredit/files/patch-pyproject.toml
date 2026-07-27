@@ -1,0 +1,21 @@
+-- Fix invalid pyproject.toml license field format
+-- PEP 621 requires license to be either {text = "..."} or {file = "..."}
+
+--- pyproject.toml.orig	2025-11-26 21:36:02 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3", "setuptools-scm"]
++requires = ["setuptools", "setuptools-scm"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -11,8 +11,6 @@ requires-python = ">=3.9"
+ description = "Publications (and donations) tracer"
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
+ keywords= ["citation tracing"]
+ classifiers = [
+     "Development Status :: 4 - Beta",
