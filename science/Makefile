@@ -165,6 +165,7 @@
     SUBDIR += libsvm
     SUBDIR += libsvm-python
     SUBDIR += libvdwxc
+    SUBDIR += libwignernj
     SUBDIR += libxc
     SUBDIR += liggghts
     SUBDIR += linearelasticity

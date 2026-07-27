@@ -1,0 +1,44 @@
+PORTNAME=	libwignernj
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.0
+CATEGORIES=	science
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Library for exact evaluation of Wigner/Clebsch-Gordan coefficients
+WWW=		https://github.com/susilehtola/libwignernj
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake:testing
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	susilehtola
+
+CMAKE_OFF=		WIGNERNJ_BUILD_TESTS \
+			WIGNERNJ_BUILD_CXX_TESTS \
+			WIGNERNJ_BUILD_EXAMPLES
+CMAKE_TESTING_ON=	WIGNERNJ_BUILD_TESTS \
+			WIGNERNJ_BUILD_CXX_TESTS \
+			WIGNERNJ_BUILD_EXAMPLES
+
+OPTIONS_DEFINE=		FORTRAN MPFR FLINT
+OPTIONS_DEFAULT=	FORTRAN MPFR FLINT
+OPTIONS_SUB=		yes
+
+FORTRAN_USES=		fortran
+FORTRAN_CMAKE_BOOL=	WIGNERNJ_BUILD_FORTRAN
+
+MPFR_DESC=		MPFR backend support
+MPFR_LIB_DEPENDS=	libmpfr.so:math/mpfr \
+			libgmp.so:math/gmp
+MPFR_CMAKE_BOOL=	WIGNERNJ_BUILD_MPFR
+
+FLINT_DESC=		Flint backend support
+FLINT_LIB_DEPENDS=	libflint.so:math/flint
+FLINT_CMAKE_BOOL=	WIGNERNJ_BUILD_FLINT
+
+# tests as of 0.8.0: 100% tests passed, 0 tests failed out of 20
+
+.include <bsd.port.mk>

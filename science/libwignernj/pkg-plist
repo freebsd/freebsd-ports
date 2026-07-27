@@ -1,0 +1,16 @@
+include/wignernj.h
+include/wignernj.hpp
+%%FORTRAN%%include/wignernj/fortran/wignernj.mod
+%%MPFR%%include/wignernj_mpfr.h
+lib/cmake/wignernj/wignernjConfig.cmake
+lib/cmake/wignernj/wignernjConfigVersion.cmake
+lib/cmake/wignernj/wignernjTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/wignernj/wignernjTargets.cmake
+lib/libwignernj.so
+lib/libwignernj.so.0
+lib/libwignernj.so.0.8.0
+%%FORTRAN%%lib/libwignernj_f03.so
+%%FORTRAN%%lib/libwignernj_f03.so.0
+%%FORTRAN%%lib/libwignernj_f03.so.0.8.0
+libdata/pkgconfig/libwignernj.pc
+%%FORTRAN%%libdata/pkgconfig/libwignernj_f03.pc

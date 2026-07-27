@@ -1,0 +1,5 @@
+libwignernj is an open-source, BSD-licensed C99 library designed for
+the exact evaluation of various angular-momentum coefficients (Wigner
+3j, 6j, and 9j symbols, Clebsch-Gordan coefficients, Racah W-coefficients,
+Fano X-coefficients, and Gaunt coefficients) used in atomic, molecular,
+nuclear, and electromagnetic-scattering applications.
