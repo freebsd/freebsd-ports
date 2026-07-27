@@ -1,7 +1,7 @@
 PORTNAME=	immudb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -14,6 +14,9 @@ WWW=		https://immudb.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Not actively maintained. Multiple versions behind on upstream. Please take maintainership if you use this.
+EXPIRATION_DATE=	2026-10-27
 
 BUILD_DEPENDS=	bash:shells/bash
 
