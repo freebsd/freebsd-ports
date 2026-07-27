@@ -1,5 +1,5 @@
 PORTNAME=	oclgrind
-PORTVERSION=	21.10
+PORTVERSION=	26.03.1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 PORTEPOCH=	1
@@ -12,7 +12,7 @@ WWW=		https://github.com/jrprice/Oclgrind
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LLVM_VER=	12
+LLVM_VER=	${LLVM_DEFAULT}
 BUILD_DEPENDS=	opencl>=0:devel/opencl \
 		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
