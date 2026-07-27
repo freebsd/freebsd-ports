@@ -2,7 +2,7 @@ PORTNAME=	exo
 PORTVERSION=	2
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://ndiscovered.com/archives/
+MASTER_SITES=	https://web.archive.org/web/20190802223635if_/http://www.ndiscovered.com/archives/
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Geometric sans serif font with a technological feel
