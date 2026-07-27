@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.pdf
 
 BROKEN_armv7=	configure fails: error when running a program linked with GMP: Segmentation fault
+BROKEN_FreeBSD_16=	requires LLVM 14 which is incompatible with FreeBSD 16's libc++ headers, see https://github.com/NASA-SW-VnV/ikos/issues/337
 
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
 LIB_DEPENDS=	libapron.so:math/apron \
