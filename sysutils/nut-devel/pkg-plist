@@ -2,6 +2,7 @@
 %%CGI%%%%CGIDIR%%/upsset.cgi
 %%CGI%%%%CGIDIR%%/upsstats.cgi
 %%CGI%%@sample %%CGIETCDIR%%hosts.conf.sample
+%%CGI%%@sample %%CGIETCDIR%%nutauth.conf.sample
 %%CGI%%@sample %%CGIETCDIR%%upsset.conf.sample
 %%CGI%%@sample %%CGIETCDIR%%upsstats.html.sample
 %%CGI%%@sample %%CGIETCDIR%%upsstats-modern-list.html.sample
@@ -32,6 +33,7 @@ bin/upslog
 bin/upsrw
 bin/upssched-cmd
 %%BASH%%etc/bash_completion.d/nut.bash_completion
+%%DEV%%include/authconf.h
 %%DEV%%include/nut-scan.h
 %%DEV%%include/nutclient.h
 %%DEV%%include/nutclientmem.h
@@ -56,7 +58,7 @@ lib/libnutclientstub.so.1.0.1
 lib/libnutscan.a
 lib/libnutscan.so
 lib/libnutscan.so.4
-lib/libnutscan.so.4.1.0
+lib/libnutscan.so.4.2.0
 %%DEV%%libdata/pkgconfig/libnutclient.pc
 %%DEV%%libdata/pkgconfig/libnutscan.pc
 %%DEV%%libdata/pkgconfig/libupsclient.pc
@@ -181,6 +183,23 @@ lib/libnutscan.so.4.1.0
 %%MANPAGES%%%%DEV%%share/man/man3/%%NUT_USER%%scan_upslog_setprocname.3.gz
 %%MANPAGES%%%%DEV%%share/man/man3/%%NUT_USER%%scan_upslog_setproctag.3.gz
 %%MANPAGES%%%%DEV%%share/man/man3/%%NUT_USER%%scan_upslog_start_sync.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_add_host_port_cert.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_authenticate.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_authenticate_authconf.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_clone_authconf_item.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_create_authconf_item.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_dump_authconf_item.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_dump_authconf_list.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_find_authconf_item.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_free_authconf_item.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_free_authconf_list.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_get_authconf_item.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_get_authconf_list.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_init_authconf.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_merge_authconf_item.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_normalize_authconf_section_parts.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_read_authconf_file.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_split_authconf_section.3.gz
 %%MANPAGES%%%%DEV%%share/man/man3/upscli_upslog_cookie.3.gz
 %%MANPAGES%%%%DEV%%share/man/man3/upscli_upslog_get_debug_level.3.gz
 %%MANPAGES%%%%DEV%%share/man/man3/upscli_upslog_getproctag.3.gz
@@ -356,6 +375,7 @@ lib/libnutscan.so.4.1.0
 %%MANPAGES%%%%USB%%share/man/man8/tripplite_usb.8.gz
 %%MANPAGES%%%%USB%%share/man/man8/usbhid-ups.8.gz
 %%MANPAGES%%share/man/man5/nut.conf.5.gz
+%%MANPAGES%%share/man/man5/nutauth.conf.5.gz
 %%MANPAGES%%share/man/man5/ups.conf.5.gz
 %%MANPAGES%%share/man/man5/upsd.conf.5.gz
 %%MANPAGES%%share/man/man5/upsd.users.5.gz
