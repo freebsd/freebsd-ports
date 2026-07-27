@@ -1,5 +1,5 @@
 PORTNAME=	cproto
-PORTVERSION=	4.8
+PORTVERSION=	4.8a
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/\
 		https://invisible-mirror.net/archives/${PORTNAME}/
