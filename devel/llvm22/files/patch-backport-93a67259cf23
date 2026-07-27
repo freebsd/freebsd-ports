@@ -1,0 +1,87 @@
+commit 93a67259cf23a555bf3905ce0f6ff349014689f0
+Author: aokblast <aokblast@FreeBSD.org>
+Date:   Tue Apr 14 13:10:08 2026 +0800
+
+    [ToolChains][FreeBSD] Set default Linker to LLD for FreeBSD (#190596)
+    
+    When the linker is specified as ld, toolchain applies special handling
+    by invoking (triple)-ld instead of resolving ld via standard PATH
+    lookup. This causes GNU ld installed via the system package manager to
+    take the precedence (since (triple)-ld appears earlier in the search
+    path), effectively overriding ld.lld.
+    
+    As a result, we set the default Linker on FreeBSD to ld.lld to indicate
+    we want to use lld by default.
+
+diff --git clang/lib/Driver/ToolChains/FreeBSD.h clang/lib/Driver/ToolChains/FreeBSD.h
+index 7d090ba682b3..60ce0bdbfc31 100644
+--- clang/lib/Driver/ToolChains/FreeBSD.h
++++ clang/lib/Driver/ToolChains/FreeBSD.h
+@@ -91,6 +91,10 @@ public:
+   // Until dtrace (via CTF) and LLDB can deal with distributed debug info,
+   // FreeBSD defaults to standalone/full debug info.
+   bool GetDefaultStandaloneDebug() const override { return true; }
++  // On FreeBSD, `/usr/bin/ld` is `ld.lld`, but other things may be installed in
++  // the path named `ld`  or `{triple}-ld`, which may be picked by preference if
++  // we default to `ld` here.
++  const char *getDefaultLinker() const override { return "ld.lld"; }
+ 
+ protected:
+   Tool *buildAssembler() const override;
+diff --git clang/test/Driver/coverage-ld.c clang/test/Driver/coverage-ld.c
+index be1d8320ab8b..4f0f96425075 100644
+--- clang/test/Driver/coverage-ld.c
++++ clang/test/Driver/coverage-ld.c
+@@ -32,7 +32,7 @@
+ // RUN:     --sysroot=%S/Inputs/basic_freebsd64_tree \
+ // RUN:   | FileCheck --check-prefix=CHECK-FREEBSD-X86-64 %s
+ //
+-// CHECK-FREEBSD-X86-64: "{{(.*[^-.0-9A-Z_a-z])?}}ld{{(.exe)?}}"
++// CHECK-FREEBSD-X86-64: "{{(.*[^.0-9A-Z_a-z])?}}ld.lld{{(.exe)?}}"
+ // CHECK-FREEBSD-X86-64: "{{.*}}/Inputs/resource_dir{{/|\\\\}}lib{{/|\\\\}}x86_64-unknown-freebsd{{/|\\\\}}libclang_rt.profile.a"
+ //
+ // RUN: %clang -### %s 2>&1 \
+diff --git clang/test/Driver/instrprof-ld.c clang/test/Driver/instrprof-ld.c
+index a96bba4a1e76..25b185bcd209 100644
+--- clang/test/Driver/instrprof-ld.c
++++ clang/test/Driver/instrprof-ld.c
+@@ -33,7 +33,7 @@
+ // RUN:     --sysroot=%S/Inputs/basic_freebsd64_tree \
+ // RUN:   | FileCheck --check-prefix=CHECK-FREEBSD-X86-64 %s
+ //
+-// CHECK-FREEBSD-X86-64: "{{(.*[^-.0-9A-Z_a-z])?}}ld{{(.exe)?}}"
++// CHECK-FREEBSD-X86-64: "{{(.*[^.0-9A-Z_a-z])?}}ld.lld{{(.exe)?}}"
+ // CHECK-FREEBSD-X86-64: "{{.*}}/Inputs/resource_dir{{/|\\\\}}lib{{/|\\\\}}x86_64-unknown-freebsd{{/|\\\\}}libclang_rt.profile.a"
+ //
+ // RUN: %clang -### %s 2>&1 \
+@@ -81,7 +81,7 @@
+ // RUN:     --sysroot=%S/Inputs/basic_freebsd64_tree \
+ // RUN:   | FileCheck --check-prefix=CHECK-FREEBSD-X86-64-SHARED %s
+ //
+-// CHECK-FREEBSD-X86-64-SHARED: "{{(.*[^-.0-9A-Z_a-z])?}}ld{{(.exe)?}}"
++// CHECK-FREEBSD-X86-64-SHARED: "{{(.*[^.0-9A-Z_a-z])?}}ld.lld{{(.exe)?}}"
+ // CHECK-FREEBSD-X86-64-SHARED: "{{.*}}/Inputs/resource_dir{{/|\\\\}}lib{{/|\\\\}}x86_64-unknown-freebsd{{/|\\\\}}libclang_rt.profile.a"
+ //
+ // RUN: %clang -### %s 2>&1 \
+diff --git clang/test/Driver/sanitizer-ld.c clang/test/Driver/sanitizer-ld.c
+index 53a138e31b80..a292b93a5c71 100644
+--- clang/test/Driver/sanitizer-ld.c
++++ clang/test/Driver/sanitizer-ld.c
+@@ -115,7 +115,7 @@
+ // RUN:     --sysroot=%S/Inputs/basic_freebsd_tree \
+ // RUN:   | %{filecheck} --check-prefix=CHECK-ASAN-FREEBSD
+ //
+-// CHECK-ASAN-FREEBSD: "{{(.*[^-.0-9A-Z_a-z])?}}ld{{(.exe)?}}"
++// CHECK-ASAN-FREEBSD: "{{(.*[^.0-9A-Z_a-z])?}}ld.lld{{(.exe)?}}"
+ // CHECK-ASAN-FREEBSD-NOT: "-lc"
+ // CHECK-ASAN-FREEBSD: freebsd{{/|\\+}}libclang_rt.asan_static.a"
+ // CHECK-ASAN-FREEBSD: freebsd{{/|\\+}}libclang_rt.asan.a"
+@@ -130,7 +130,7 @@
+ // RUN:     --sysroot=%S/Inputs/basic_freebsd_tree \
+ // RUN:   | %{filecheck} --check-prefix=CHECK-ASAN-FREEBSD-LDL
+ //
+-// CHECK-ASAN-FREEBSD-LDL: "{{(.*[^-.0-9A-Z_a-z])?}}ld{{(.exe)?}}"
++// CHECK-ASAN-FREEBSD-LDL: "{{(.*[^.0-9A-Z_a-z])?}}ld.lld{{(.exe)?}}"
+ // CHECK-ASAN-FREEBSD-LDL-NOT: "-ldl"
+ // CHECK-ASAN-FREEBSD-LDL: "--whole-archive" "{{.*}}libclang_rt.asan_static.a" "--no-whole-archive"
+ // CHECK-ASAN-FREEBSD-LDL: "--whole-archive" "{{.*}}libclang_rt.asan.a" "--no-whole-archive"
