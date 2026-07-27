@@ -3,7 +3,7 @@ PORTVERSION=	20130920
 PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://gsdview.appspot.com/chromeos-localmirror/distfiles/ \
-		https://commondatastorage.googleapis.com/chromeos-localmirror/distfiles
+		https://commondatastorage.googleapis.com/chromeos-localmirror/distfiles/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Font created by Google for ChromeOS to replace MS Calibri
