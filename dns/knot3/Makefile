@@ -1,6 +1,5 @@
 PORTNAME=	knot
 DISTVERSION=	${KNOT_VERSION}
-PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
