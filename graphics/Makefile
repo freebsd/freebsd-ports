@@ -1273,6 +1273,7 @@
     SUBDIR += viewnior
     SUBDIR += vigra
     SUBDIR += vips
+    SUBDIR += virtio-gpu-qemu-kmod
     SUBDIR += visprint
     SUBDIR += viu
     SUBDIR += vkrunner

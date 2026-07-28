@@ -1,0 +1,42 @@
+[
+{ type: install
+  message: <<EOM
+The virtio_gpu_qemu driver has been installed, but it does nothing until it is
+preloaded.  Add the following to /boot/loader.conf and reboot:
+
+	virtio_gpu_qemu_load="YES"
+
+Optionally override the display resolution advertised by the host, and set the
+framebuffer flush rate in frames per second:
+
+	hw.virtio_gpu_qemu.width="1536"
+	hw.virtio_gpu_qemu.height="864"
+	hw.virtio_gpu_qemu.refresh_rate="30"
+
+The module MUST be preloaded by loader(8).  Loading it later from kld_list in
+rc.conf is not enough: by then the in-kernel VirtIO GPU driver has already
+claimed the device and taken the console.
+
+To run an X server on this display you also need the scfb video driver, which
+is provided by one of two mutually exclusive ports.  Install whichever matches
+your X server:
+
+	x11-drivers/xf86-video-scfb		for Xorg
+	x11-drivers/xlibre-xf86-video-scfb	for Xlibre
+
+The X configuration selecting it has been installed as:
+
+	%%PREFIX%%/share/X11/xorg.conf.d/20-virtio-gpu-qemu.conf
+
+It is only read when an X server runs.  To override it, place a file of the
+same name in %%PREFIX%%/etc/X11/xorg.conf.d, which is searched first; to
+disable it, remove it.
+
+Note that the module cannot be unloaded once it owns the system console;
+kldunload(8) will fail with EBUSY.  Changing the resolution therefore requires
+editing loader.conf and rebooting.
+
+See virtio_gpu_qemu(4) for details.
+EOM
+}
+]
