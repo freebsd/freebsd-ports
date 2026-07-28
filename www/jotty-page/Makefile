@@ -1,5 +1,5 @@
 PORTNAME=	jotty-page
-DISTVERSION=	1.24.0
+DISTVERSION=	1.25.1
 CATEGORIES=	www
 
 MAINTAINER=	h2+fbsdports@fsfe.org
@@ -102,20 +102,5 @@ do-install:
 	${LN} -sf /var/db/jotty-page ${STAGEDIR}${DATADIR}/data
 	${INSTALL_DATA} ${FILESDIR}/jotty-page.env.sample \
 		${STAGEDIR}${PREFIX}/etc/jotty-page.env.sample
-
-# Maintainer helper -------------------------------------------------------
-# Run this target once after bumping PORTVERSION / GH_TAGNAME to produce a
-# fresh node_modules snapshot used to verify reproducibility:
-#   make fetch extract
-#   make create-nodemodules-listing
-create-nodemodules-listing:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile
-	${SETENV} ${MAKE_ENV} node -e \
-		"const fs=require('fs'); \
-		 const nm='${WRKSRC}/node_modules'; \
-		 const pkgs=fs.readdirSync(nm).filter(f=>!f.startsWith('.')); \
-		 console.log(pkgs.join('\n'));" \
-		> ${WRKDIR}/nodemodules-listing.txt
-	@${ECHO_MSG} "Node module listing written to ${WRKDIR}/nodemodules-listing.txt"
 
 .include <bsd.port.mk>
