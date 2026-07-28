@@ -1,0 +1,14 @@
+-- Fix pyproject.toml license field to conform to PEP 621/setuptools validation.
+-- setuptools rejects a bare SPDX string; it requires either a file or text key.
+
+--- pyproject.toml.orig	2026-06-22 09:24:18 UTC
++++ pyproject.toml
+@@ -10,7 +10,7 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "Example HEP files for testing and demonstrating"
+ readme = "README.md"
+-license = "BSD-3-Clause"
++license = {text = "BSD-3-Clause"}
+ requires-python = ">=3.10"
+ authors = [
+     { name = "Ben Krikler", email = "b.krikler@cern.ch" },

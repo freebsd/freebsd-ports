@@ -6168,6 +6168,7 @@
     SUBDIR += py-scikit-base
     SUBDIR += py-scikit-build
     SUBDIR += py-scikit-build-core
+    SUBDIR += py-scikit-hep-testdata
     SUBDIR += py-scooby
     SUBDIR += py-scripttest
     SUBDIR += py-scverse-misc
