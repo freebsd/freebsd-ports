@@ -5512,3 +5512,4 @@ devel/apache-commons-configuration||2026-07-26|Has expired: 'The 1.x codebase no
 databases/sqlitestudio|databases/letos|2026-07-26|Project renamed upstream
 net/jicmp6||2026-07-28|Has expired: several years behind on upstream, no maintainer, moved to https://github.com/OpenNMS/jicmp6
 net/jicmp||2026-07-28|Has expired: several years behind on upstream, no maintainer, moved to https://github.com/OpenNMS/jicmp
+java/sqlitejdbc|databases/sqlite-jdbc|2026-07-28|Has expired: Dead old upstream, replaced by databases/sqlite-jdbc

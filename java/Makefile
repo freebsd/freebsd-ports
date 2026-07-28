@@ -90,7 +90,6 @@
     SUBDIR += phpeclipse
     SUBDIR += proguard
     SUBDIR += sigar
-    SUBDIR += sqlitejdbc
     SUBDIR += trove4j
     SUBDIR += veditor
     SUBDIR += visualvm
