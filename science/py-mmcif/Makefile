@@ -1,28 +1,31 @@
 PORTNAME=	mmcif
-DISTVERSION=	0.90.0
-PORTREVISION=	1
+DISTVERSION=	1.1.1
 CATEGORIES=	science biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	mmCIF Core Access Library
+COMMENT=	Library for accessing mmCIF data
 WWW=		https://mmcif.wwpdb.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.25:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS} \
-		cmake:devel/cmake-core
-RUN_DEPENDS=	${PY_DEPENDS}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.25:www/py-requests@${PY_FLAVOR}
 
-USES=		bison python
-USE_PYTHON=	distutils concurrent autoplist pytest # tests fail to run, see https://github.com/rcsb/py-mmcif/issues/18
+USES=		bison cmake:indirect python
+USE_PYTHON=	pep517 autoplist
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+do-test:
+	@${MKDIR} ${WRKDIR}/.test-run && \
+		cd ${WRKDIR}/.test-run && \
+		${SETENV} ${TEST_ENV} ${PYTHON_CMD} -c "from mmcif.io.IoAdapterCore import IoAdapterCore as IoAdapter"
+
+# tests as of 1.1.1: upstream sdist contains no Python test suite; smoke import from mmcif.io.IoAdapterCore passed.
 
 .include <bsd.port.mk>
