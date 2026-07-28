@@ -1,3 +1,33 @@
+  <vuln vid="52a3f202-8a77-11f1-ac5d-0897988a1c07">
+    <topic>mailpit -- WebSocket origin check bypass via percent-encoded path</topic>
+    <affects>
+      <package>
+	<name>mailpit</name>
+	<range><lt>1.30.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/security/advisories/GHSA-8r62-w5wh-fc5m">
+	  <p>The cross-site WebSocket hijacking fix was reimplemented
+	  as an origin check gated on a raw-URI prefix test, but
+	  Go's ServeMux routes on the percent-decoded path, so
+	  requesting /%61pi/events reaches the WebSocket handler
+	  while skipping the only origin control, and the upgrader
+	  itself accepts every origin.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-8r62-w5wh-fc5m</url>
+    </references>
+    <dates>
+      <discovery>2026-07-28</discovery>
+      <entry>2026-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="445c61c0-89e1-11f1-b35c-4c526214c986">
     <topic>Erlang/OTP -- (D)TLS-1.2 server certificate verification bypass</topic>
     <affects>
