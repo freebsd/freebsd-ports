@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.1
 PORTREVISION=	0
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
@@ -92,7 +92,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		calloop-wayland-source-0.3.0 \
 		calloop-wayland-source-0.4.1 \
 		cast-0.3.0 \
-		cc-1.3.0 \
+		cc-1.4.0 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-0.1.10 \
@@ -103,9 +103,9 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		clang-sys-1.8.1 \
-		clap-4.6.3 \
+		clap-4.6.4 \
 		clap_builder-4.6.2 \
-		clap_derive-4.6.3 \
+		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		clipboard-win-5.4.1 \
 		codespan-reporting-0.13.1 \
@@ -168,7 +168,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		dtor-0.8.1 \
 		dunce-1.0.5 \
 		dwrote-0.11.5 \
-		either-1.16.0 \
+		either-1.17.0 \
 		encoding_rs-0.8.35 \
 		endi-1.1.1 \
 		enumflags2-0.7.12 \
@@ -178,7 +178,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
 		euclid-0.22.14 \
-		event-listener-5.4.1 \
+		event-listener-5.4.2 \
 		event-listener-strategy-0.5.4 \
 		fastrand-2.5.0 \
 		fax-0.2.7 \
@@ -191,10 +191,10 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		foldhash-0.2.0 \
 		font-kit-0.14.3 \
 		font-types-0.10.1 \
-		font-types-0.12.1 \
+		font-types-0.12.2 \
 		fontconfig-parser-0.5.8 \
 		foreign-types-0.5.0 \
-		foreign-types-macros-0.2.3 \
+		foreign-types-macros-0.2.4 \
 		foreign-types-shared-0.3.1 \
 		form_urlencoded-1.2.2 \
 		freetype-sys-0.20.1 \
@@ -270,7 +270,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		kqueue-1.2.0 \
 		kqueue-sys-1.1.2 \
 		lazy_static-1.5.0 \
-		libc-0.2.188 \
+		libc-0.2.189 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		librashader-0.12.0 \
@@ -314,7 +314,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		ndk-context-0.1.1 \
 		ndk-sys-0.5.0+25.2.9519653 \
 		ndk-sys-0.6.0+11769913 \
-		net2-0.2.39 \
 		nix-0.29.0 \
 		nom-7.1.3 \
 		nom-8.0.0 \
@@ -328,7 +327,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		num_enum_derive-0.7.6 \
 		objc-0.2.7 \
 		objc-rs-0.2.8 \
-		objc-rs-0.3.1 \
+		objc-rs-0.3.2 \
 		objc-sys-0.3.5 \
 		objc2-0.5.2 \
 		objc2-0.6.4 \
@@ -397,7 +396,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		profiling-1.0.18 \
 		pxfm-0.1.30 \
 		quick-error-2.0.1 \
-		quick-xml-0.39.4 \
+		quick-xml-0.41.0 \
 		quote-1.0.47 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
@@ -467,6 +466,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		smithay-client-toolkit-0.20.0 \
 		smithay-clipboard-0.7.3 \
 		smol_str-0.3.6 \
+		socket2-0.6.5 \
 		softbuffer-0.4.8 \
 		spirv-0.4.0+sdk-1.4.341.0 \
 		spirv-cross-sys-0.7.2+38681a3 \
@@ -480,7 +480,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		svg_fmt-0.4.5 \
 		swash-0.2.10 \
 		syn-2.0.119 \
-		syn-3.0.2 \
+		syn-3.0.3 \
 		synstructure-0.13.2 \
 		taffy-0.10.1 \
 		tempdir-0.3.7 \
@@ -506,7 +506,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		toml_datetime-0.7.5+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.25.13+spec-1.1.0 \
-		toml_parser-1.1.2+spec-1.1.0 \
+		toml_parser-1.1.3+spec-1.1.0 \
 		toml_writer-1.1.2+spec-1.1.0 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
@@ -543,8 +543,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wasm-bindgen-test-0.3.76 \
 		wasm-bindgen-test-macro-0.3.76 \
 		wasm-bindgen-test-shared-0.2.126 \
-		wayland-backend-0.3.15 \
-		wayland-client-0.31.14 \
+		wayland-backend-0.3.16 \
+		wayland-client-0.31.15 \
 		wayland-csd-frame-0.3.0 \
 		wayland-cursor-0.31.14 \
 		wayland-protocols-0.32.13 \
@@ -552,7 +552,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wayland-protocols-misc-0.3.12 \
 		wayland-protocols-plasma-0.3.12 \
 		wayland-protocols-wlr-0.3.12 \
-		wayland-scanner-0.31.10 \
+		wayland-scanner-0.31.11 \
 		wayland-sys-0.31.11 \
 		web-sys-0.3.103 \
 		web-time-1.1.0 \
