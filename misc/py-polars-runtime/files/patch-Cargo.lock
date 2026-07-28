@@ -7,7 +7,7 @@
 -- so git sources must be removed. The default allocator is used
 -- instead of jemalloc to avoid runtime TLS errors.
 
---- Cargo.lock.orig	2026-06-29 14:09:18 UTC
+--- Cargo.lock.orig	2026-07-27 08:25:56 UTC
 +++ Cargo.lock
 @@ -1016,7 +1016,6 @@ version = "0.7.2"
  [[package]]
@@ -21,11 +21,11 @@
  [[package]]
  name = "object_store"
  version = "0.13.2"
--source = "git+https://github.com/kdn36/arrow-rs-object-store?branch=feat_with_dns_resolver#f50a6e5c564b2b5933eca15cd20ff9b5614374a1"
+-source = "git+https://github.com/kdn36/arrow-rs-object-store?rev=f50a6e5c564b2b5933eca15cd20ff9b5614374a1#f50a6e5c564b2b5933eca15cd20ff9b5614374a1"
  dependencies = [
   "async-trait",
   "base64",
-@@ -3408,7 +3406,6 @@ dependencies = [
+@@ -3410,7 +3408,6 @@ dependencies = [
   "rand 0.10.1",
   "rand_distr",
   "thread_local",
@@ -33,7 +33,7 @@
   "tokio",
   "uuid",
  ]
-@@ -5095,16 +5092,6 @@ dependencies = [
+@@ -5098,16 +5095,6 @@ dependencies = [
  dependencies = [
   "cc",
   "libc",

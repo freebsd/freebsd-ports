@@ -1,6 +1,6 @@
 PORTNAME=	polars-runtime
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	1.42.1
+DISTVERSION=	1.43.1
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -137,7 +137,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crc32fast-1.5.0 \
 		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
-		crossbeam-epoch-0.9.18 \
+		crossbeam-epoch-0.9.20 \
 		crossbeam-queue-0.3.12 \
 		crossbeam-utils-0.8.21 \
 		crossterm-0.29.0 \
@@ -415,7 +415,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		smallvec-1.15.1 \
 		snap-1.1.1 \
 		socket2-0.6.4 \
-		spin-0.10.0 \
+		spin-0.10.1 \
 		spki-0.7.3 \
 		sqlparser-0.62.0 \
 		sqlparser_derive-0.5.0 \
@@ -568,7 +568,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
-		object_store@git+https://github.com/kdn36/arrow-rs-object-store?branch=feat_with_dns_resolver\#f50a6e5c564b2b5933eca15cd20ff9b5614374a1 \
+		object_store@git+https://github.com/kdn36/arrow-rs-object-store?rev=f50a6e5c564b2b5933eca15cd20ff9b5614374a1\#f50a6e5c564b2b5933eca15cd20ff9b5614374a1 \
 		color-backtrace@git+https://github.com/orlp/color-backtrace?rev=bb62ccf1e9eb1f6b7af5f16acff1fd7151a876dd\#bb62ccf1e9eb1f6b7af5f16acff1fd7151a876dd \
 		tikv-jemalloc-sys@git+https://github.com/pola-rs/jemallocator?rev=0d683dfb157097e2075d5e0eaf25f71f514a7552\#0d683dfb157097e2075d5e0eaf25f71f514a7552
 CARGO_TARGET_DIR=	${WRKSRC}/target
