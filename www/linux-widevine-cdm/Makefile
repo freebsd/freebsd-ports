@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	google-chrome-stable_${CHROME_VERSION}_${ARCH}
+DISTNAME=	google-chrome-stable_${CHROME_VERSION}_${ARCH:S/aarch64/arm64/}
 EXTRACT_SUFX=	.deb
 
 MAINTAINER=	arrowd@FreeBSD.org
