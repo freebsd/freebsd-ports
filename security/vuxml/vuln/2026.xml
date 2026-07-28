@@ -1,3 +1,118 @@
+  <vuln vid="b579bbde-8aa2-11f1-a744-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>152.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.12</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>140.13</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>https://www.mozilla.org/en-US/security/advisories/mfsa2026-68/#CVE-2026-16360 reports:</p>
+	  <blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2026-68/#CVE-2026-16360">
+	  <p>
+	    Memory safety bugs present in Firefox ESR 115.37,
+	    Firefox ESR 140.12 and Firefox 152. Some of these bugs
+	    showed evidence of memory corruption and we presume that
+	    with enough effort some of these could have been
+	    exploited to run arbitrary code.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-16360</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-16360</url>
+    </references>
+    <dates>
+      <discovery>2026-07-21</discovery>
+      <entry>2026-07-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b36c7feb-8aa2-11f1-a744-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>153.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.13</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>153.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>https://www.mozilla.org/en-US/security/advisories/mfsa2026-68/#CVE-2026-16412 reports:</p>
+	  <blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2026-68/#CVE-2026-16412">
+	  <p>
+	    Memory safety bugs present in Firefox ESR 140.12 and
+	    Firefox 152. Some of these bugs showed evidence of
+	    memory corruption and we presume that with enough effort
+	    some of these could have been exploited to run arbitrary
+	    code.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-16412</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-16412</url>
+    </references>
+    <dates>
+      <discovery>2026-07-21</discovery>
+      <entry>2026-07-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="aca6684f-8aa2-11f1-a744-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>153.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>153.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>https://www.mozilla.org/en-US/security/advisories/mfsa2026-68/#CVE-2026-16411 reports</p>
+	  <blockquote cite="https://www.mozilla.org/en-US/security/advisories/mfsa2026-68/#CVE-2026-16411">
+	  <p>
+	    Memory safety bugs present in Firefox 152. Some of
+	    these bugs showed evidence of memory corruption and we
+	    presume that with enough effort some of these could have
+	    been exploited to run arbitrary code.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-16411</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-16411</url>
+    </references>
+    <dates>
+      <discovery>2026-07-21</discovery>
+      <entry>2026-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="52a3f202-8a77-11f1-ac5d-0897988a1c07">
     <topic>mailpit -- WebSocket origin check bypass via percent-encoded path</topic>
     <affects>
