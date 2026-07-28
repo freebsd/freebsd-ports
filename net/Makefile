@@ -308,7 +308,6 @@
     SUBDIR += jcifs
     SUBDIR += jgroups
     SUBDIR += jicmp
-    SUBDIR += jicmp6
     SUBDIR += jose
     SUBDIR += jotta-cli
     SUBDIR += jrdesktop
