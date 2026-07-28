@@ -1,5 +1,6 @@
 PORTNAME=	monitoring-plugins
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ \
 		LOCAL/mat/${PORTNAME}
