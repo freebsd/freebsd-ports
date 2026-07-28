@@ -1,6 +1,6 @@
 PORTNAME=	cachebox
-DISTVERSION=	6.1.1
-PORTREVISION=	1
+DISTVERSION=	6.2.1
+PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,13 +19,14 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${
 USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
-CARGO_CRATES=	android_system_properties-0.1.5 \
+CARGO_CRATES=	allocator-api2-0.4.0 \
+		android_system_properties-0.1.5 \
 		autocfg-1.5.1 \
-		bitflags-2.11.1 \
+		bitflags-2.13.0 \
 		bumpalo-3.20.3 \
-		cc-1.2.62 \
+		cc-1.2.64 \
 		cfg-if-1.0.4 \
-		chrono-0.4.44 \
+		chrono-0.4.45 \
 		core-foundation-sys-0.8.7 \
 		fastrand-2.4.1 \
 		find-msvc-tools-0.1.9 \
@@ -35,10 +36,10 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		heck-0.5.0 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
-		js-sys-0.3.99 \
+		js-sys-0.3.102 \
 		libc-0.2.186 \
 		lock_api-0.4.14 \
-		log-0.4.29 \
+		log-0.4.32 \
 		num-traits-0.2.19 \
 		once_cell-1.21.4 \
 		parking_lot-0.12.5 \
@@ -46,26 +47,25 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		pin-project-lite-0.2.17 \
 		portable-atomic-1.13.1 \
 		proc-macro2-1.0.106 \
-		pyo3-0.28.3 \
-		pyo3-build-config-0.28.3 \
-		pyo3-ffi-0.28.3 \
-		pyo3-macros-0.28.3 \
-		pyo3-macros-backend-0.28.3 \
-		python3-dll-a-0.2.15 \
+		pyo3-0.29.0 \
+		pyo3-build-config-0.29.0 \
+		pyo3-ffi-0.29.0 \
+		pyo3-macros-0.29.0 \
+		pyo3-macros-backend-0.29.0 \
 		quote-1.0.45 \
 		redox_syscall-0.5.18 \
 		rustversion-1.0.22 \
 		scopeguard-1.2.0 \
-		shlex-1.3.0 \
+		shlex-2.0.1 \
 		slab-0.4.12 \
-		smallvec-1.15.1 \
+		smallvec-1.15.2 \
 		syn-2.0.117 \
 		target-lexicon-0.13.5 \
 		unicode-ident-1.0.24 \
-		wasm-bindgen-0.2.122 \
-		wasm-bindgen-macro-0.2.122 \
-		wasm-bindgen-macro-support-0.2.122 \
-		wasm-bindgen-shared-0.2.122 \
+		wasm-bindgen-0.2.125 \
+		wasm-bindgen-macro-0.2.125 \
+		wasm-bindgen-macro-support-0.2.125 \
+		wasm-bindgen-shared-0.2.125 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
