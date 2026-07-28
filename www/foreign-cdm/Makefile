@@ -11,7 +11,7 @@ WWW=		https://github.com/shkhln/foreign-cdm
 
 LICENSE=	MIT
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	cmake:devel/cmake-core
 
@@ -32,11 +32,13 @@ SUB_FILES=	fcdm-setup-env
 PLIST_FILES=	libexec/fcdm-jail \
 		libexec/fcdm-worker \
 		lib/foreign-cdm/fcdm-fbsd.so \
-		share/chromium/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so \
+		share/chromium/WidevineCdm/_platform_specific/linux_${LINUX_ARCH}/libwidevinecdm.so \
 		share/chromium/WidevineCdm/manifest.json \
 		share/foreign-cdm/fcdm-setup-env
 
 CDM_INT_HASH=	06395a2863cb1ebdb47617a995b73f95c14fe120
+
+LINUX_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/}
 
 .include <bsd.port.pre.mk>
 
@@ -44,7 +46,7 @@ CDM_INT_HASH=	06395a2863cb1ebdb47617a995b73f95c14fe120
 BUILD_DEPENDS+=	linux-c7-devtoolset>0:devel/linux-c7-devtoolset
 MAKE_ENV+=	LINUX_CC=/compat/linux/opt/rh/devtoolset-11/root/usr/bin/g++
 .else
-MAKE_ENV+=	LINUX_CC=/compat/linux/usr/bin/x86_64-redhat-linux-g++
+MAKE_ENV+=	LINUX_CC=/compat/linux/usr/bin/${ARCH:S/amd64/x86_64/}-redhat-linux-g++
 .endif
 
 post-extract:
@@ -65,8 +67,8 @@ do-install:
 	${CP} ${WRKSRC}/build/fcdm-fbsd.so ${STAGEDIR}${PREFIX}/lib/foreign-cdm/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/foreign-cdm/fcdm-fbsd.so
 
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/_platform_specific/linux_x64
-	${LN} -s ${PREFIX}/lib/foreign-cdm/fcdm-fbsd.so ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/_platform_specific/linux_${LINUX_ARCH}
+	${LN} -s ${PREFIX}/lib/foreign-cdm/fcdm-fbsd.so ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/_platform_specific/linux_${LINUX_ARCH}/libwidevinecdm.so
 	${LN} -s ${PREFIX}/lib/WidevineCdm/manifest.json ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/manifest.json
 
 .include <bsd.port.post.mk>
