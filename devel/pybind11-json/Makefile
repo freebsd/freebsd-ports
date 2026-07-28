@@ -1,5 +1,6 @@
 PORTNAME=	pybind11-json
 DISTVERSION=	0.2.15
+PORTREVISION=	1
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
