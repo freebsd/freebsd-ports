@@ -1,5 +1,5 @@
 PORTNAME=	tcpreplay
-DISTVERSION=	4.5.5
+DISTVERSION=	4.6.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/appneta/${PORTNAME}/releases/download/v${DISTVERSION}/
 
