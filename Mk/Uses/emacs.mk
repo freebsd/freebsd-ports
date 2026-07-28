@@ -64,7 +64,7 @@ _EMACS_VER=		32.0.50
 _EMACS_PORTDIR=		editors/emacs-devel
 _EMACS_FLAVOR=		${EMACS_DEFAULT:C/devel_//}
 .    else
-_EMACS_VER=		30.2
+_EMACS_VER=		31.0.91
 _EMACS_PORTDIR=		editors/emacs
 _EMACS_FLAVOR=		${EMACS_DEFAULT:Unox}
 .    endif
