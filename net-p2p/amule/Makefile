@@ -75,4 +75,10 @@ post-patch:
 		-e 's|VERSION "GIT"|VERSION "${DISTVERSION}"|g' \
 		${WRKSRC}/CMakeLists.txt
 
+.if ${ARCH} == i386
+LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
+CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${LOCALBASE}/lib/gcc${GCC_DEFAULT}
+LDFLAGS+=	-L${LOCALBASE}/lib/gcc${GCC_DEFAULT}
+.endif
+
 .include <bsd.port.mk>
