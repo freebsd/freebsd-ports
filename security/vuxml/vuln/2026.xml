@@ -1,3 +1,39 @@
+  <vuln vid="35a830f6-8aab-11f1-a744-b42e991fc52e">
+    <topic>GoLand -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>jetbrains-goland</name>
+	<range><lt>2026.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://www.jetbrains.com/privacy-security/issues-fixed/ reports:</p>
+	<blockquote cite="https://www.jetbrains.com/privacy-security/issues-fixed/">
+	<ul>
+	<li>
+	  In JetBrains GoLand before 2026.2 arbitrary code execution
+	  was possible before granting project trust in the Go
+	  Modules integration
+	</li>
+	<li>
+	  In JetBrains GoLand before 2026.2 sensitive configuration
+	  values written to log files by default
+	</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-64802</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-64802</url>
+    </references>
+    <dates>
+      <discovery>2026-07-23</discovery>
+      <entry>2026-07-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b579bbde-8aa2-11f1-a744-b42e991fc52e">
     <topic>Mozilla -- Memory safety bugs</topic>
     <affects>
