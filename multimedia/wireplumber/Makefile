@@ -1,5 +1,5 @@
 PORTNAME=	wireplumber
-DISTVERSION=	0.5.14
+DISTVERSION=	0.5.15
 CATEGORIES=	multimedia
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -18,6 +18,7 @@ GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	pipewire
 
 USE_GNOME=	glib20
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS DOXYGEN NLS
 
