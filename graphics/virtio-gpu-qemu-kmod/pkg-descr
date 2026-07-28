@@ -1,0 +1,12 @@
+A VirtIO GPU display driver for FreeBSD guests running under QEMU or UTM.
+
+This driver replaces and enhances the VirtIO GPU driver built into the kernel,
+by enabling /dev/fb0, i.e. registering the framebuffer as a device, such
+that programs in the user address space can mmap(2). This allows an X server
+to drive the display through the xf86-video-scfb driver.
+
+The driver supports overriding the display resolution advertised by the
+host, and flushes the framebuffer to the host at a configurable rate.
+
+The driver must be preloaded from loader.conf; see virtio_gpu_qemu(4) for
+more information.
