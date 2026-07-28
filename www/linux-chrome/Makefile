@@ -1,10 +1,12 @@
 PORTNAME=	chrome
 PORTVERSION=	${CHROME_VER}
 CATEGORIES=	www linux
-MASTER_SITES=	https://dl.google.com/linux/chrome/rpm/stable/x86_64/
+MASTER_SITES=	https://dl.google.com/linux/chrome/rpm/stable/%SUBDIR%/:DEFAULT,aarch64,amd64
+MASTER_SITE_SUBDIR+=	aarch64/:DEFAULT,aarch64 \
+			x86_64/:DEFAULT,amd64
 PKGNAMEPREFIX=	linux-
 DISTNAME=	google-${PORTNAME}-stable-${CHROME_VER}-${CHROME_BUILD}
-#DISTFILES_aarch64?=	${DISTNAME:S/$/${EXTRACT_SUFX_aarch64}/}
+DISTFILES_aarch64?=	${DISTNAME:S/$/${EXTRACT_SUFX_aarch64}/}
 DISTFILES_amd64?=	${DISTNAME:S/$/${EXTRACT_SUFX_amd64}/}
 EXTRACT_ONLY?=		${DISTFILES_${ARCH}:C/:[^:]+$//}
 
@@ -25,7 +27,7 @@ USE_LINUX=	alsalib alsa-plugins-oss alsa-plugins-pulseaudio at-spi2-atk \
 		ca-certificates cairo cups-libs curl dbuslibs dri expat \
 		ffmpeg-libs gnupg gstreamer1-libav gtk3 libxkbcommon \
 		nspr nss p11-kit pango sqlite3 wget xorglibs
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 SHEBANG_FILES=	opt/google/chrome/google-chrome
 
@@ -37,7 +39,7 @@ EXTRACT_SUFX_amd64?=	.x86_64.rpm
 
 REINPLACE_ARGS=	-i ""
 
-CHROME_VER?=	150.0.7871.114
+CHROME_VER?=	150.0.7871.186
 CHROME_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
@@ -46,6 +48,15 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	google-chrome
+
+PLIST_SUB=	ARCH=${ARCH:S/amd/x/:S/aarch/arm/}
+
+.if make(makesum) || make(checksum)
+_ALL_DISTFILES=		${DISTFILES_aarch64} ${DISTFILES_amd64}
+DISTFILES=		${_ALL_DISTFILES:O:u}
+.      else
+DISTFILES=		${DISTFILES_${ARCH}}
+.endif
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|/usr/bin/google-chrome-stable|${LOCALBASE}/bin/google-chrome|' \

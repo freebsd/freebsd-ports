@@ -8,7 +8,7 @@ share/applications/google-chrome.desktop
 %%DATADIR%%/PrivacySandboxAttestationsPreloaded/manifest.json
 %%DATADIR%%/PrivacySandboxAttestationsPreloaded/privacy-sandbox-attestations.dat
 %%DATADIR%%/WidevineCdm/LICENSE
-%%DATADIR%%/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so
+%%DATADIR%%/WidevineCdm/_platform_specific/linux_%%ARCH%%/libwidevinecdm.so
 %%DATADIR%%/WidevineCdm/manifest.json
 %%DATADIR%%/apparmor.d/google-chrome-stable
 %%DATADIR%%/chrome
