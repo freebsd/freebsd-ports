@@ -1,5 +1,5 @@
 PORTNAME=	slock
-DISTVERSION=	1.6
+DISTVERSION=	1.7
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
