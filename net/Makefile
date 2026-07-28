@@ -307,7 +307,6 @@
     SUBDIR += java-beepcore
     SUBDIR += jcifs
     SUBDIR += jgroups
-    SUBDIR += jicmp
     SUBDIR += jose
     SUBDIR += jotta-cli
     SUBDIR += jrdesktop
