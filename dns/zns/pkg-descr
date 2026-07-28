@@ -4,7 +4,9 @@ that includes type, name, TTL, and value.
 
 Features:
 
-- Supports various DNS record types
+- Supports all DNS record types
+- DNSSEC support, including chain-of-trust validation
+- Reverse lookups and delegation tracing from the root nameservers
 - Colorized and tabular output for easy reading
 - Concurrent queries for improved performance
 - JSON output format for machine-readable results
