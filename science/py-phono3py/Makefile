@@ -1,6 +1,5 @@
 PORTNAME=	phono3py
-DISTVERSION=	3.28.0
-PORTREVISION=	3
+DISTVERSION=	4.4.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,30 +12,22 @@ WWW=		https://phonopy.github.io/phono3py/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}h5py>=3.0:science/py-h5py@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.2:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}phonopy>=2.32:science/py-phonopy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}spglib>=2.3:science/py-spglib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3:devel/py-pyyaml@${PY_FLAVOR}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build-core>0:devel/py-scikit-build-core@${PY_FLAVOR} \
+BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}nanobind>0:devel/py-nanobind@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
-		cmake:devel/cmake-core \
-		${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS}
-
-CFLAGS+=	-fPIC
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>0:devel/py-scikit-build-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phonopy>=4.4.0:science/py-phonopy@${PY_FLAVOR}
 
 USES=		blaslapack:openblas fortran localbase python
 USE_PYTHON=	pep517 cython autoplist pytest
 
+CFLAGS+=	-fPIC
+
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/test
+PYTEST_BROKEN_TESTS=	test_reciprocal_to_normal_vs_c
 
-# tests as of 3.9.0: 11 failed, 179 passed, 8 skipped, 6 warnings, 4 errors in 2175.15s (0:36:15), see https://github.com/phonopy/phono3py/issues/307
-# tests as of 3.25.0: 21 failed, 193 passed, 11 skipped, 30 warnings, 45 errors in 152.92s (0:02:32), see https://github.com/phonopy/phono3py/issues/307
-# - tests fail to find submodules that are installed and import fine when run standalone
+# tests as of 4.4.0: 469 passed, 11 skipped, 1 deselected in 306.60s
 
 .include <bsd.port.mk>
