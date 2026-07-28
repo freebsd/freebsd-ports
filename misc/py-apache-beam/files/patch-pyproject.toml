@@ -1,0 +1,43 @@
+--- Relax exact version requirements and comment out code generation tools
+--- in build-system dependencies.
+---
+--- 1. Comment out grpcio-tools and mypy-protobuf as these are only needed for
+---    generating protobuf code, which is already included in the distribution
+---    tarball. Including them would require protobuf>=7.35.1 which conflicts
+---    with the version available in ports (6.33.6).
+---
+--- 2. Relax exact version requirements (==) to allow using newer versions
+---    available in FreeBSD ports:
+---    - distlib 0.4.3 instead of exactly 0.4.2
+---    - yapf 0.43.0 or newer
+---
+--- These changes allow the package to build successfully with the dependency
+--- versions available in FreeBSD ports.
+
+--- pyproject.toml.orig	2026-07-28 21:58:05 UTC
++++ pyproject.toml
+@@ -24,11 +24,11 @@ requires = [
+     # Note: after upgrading to grpcio-tools, we must bump protobuf to >=5.0.
+     # Currently Blocked on old dependencies of Beam tft extra:
+     # https://github.com/apache/beam/issues/37854
+-    "grpcio-tools==1.62.1; python_version <= '3.12'",
+-    "grpcio-tools==1.71.0; python_version >= '3.13'",
+-    "mypy-protobuf==3.5.0",
++    # "grpcio-tools==1.62.1; python_version <= '3.12'"  # Not needed for building (proto files already generated),
++    # "grpcio-tools==1.71.0; python_version >= '3.13'"  # Not needed for building,
++    # "mypy-protobuf==3.5.0"  # Not needed for building,
+     # Avoid https://github.com/pypa/virtualenv/issues/2006
+-    "distlib==0.4.2",
++    "distlib>=0.4.2",
+     # Numpy headers
+     "numpy>=1.14.3,<2.5.0", # Update setup.py as well.
+     # having cython here will create wheels that are platform dependent.
+@@ -38,7 +38,7 @@ requires = [
+     'pyyaml>=3.12,<7.0.0',
+     # also update Jinja2 bounds in test-suites/xlang/build.gradle (look for xlangWrapperValidation task)
+     "jinja2>=2.7.1,<4.0.0",
+-    'yapf==0.43.0'
++    'yapf>=0.43.0'
+ ]
+ 
+ 
