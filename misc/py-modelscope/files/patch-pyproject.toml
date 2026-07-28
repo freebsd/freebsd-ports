@@ -1,8 +1,10 @@
--- Fix pyproject.toml for compatibility with setuptools 63.1.0:
+-- Fix pyproject.toml for compatibility with the setuptools version available in ports:
 -- - Convert license string to PEP 621 table format.
 -- - Remove license-files property (not supported by setuptools<69).
 -- - Lower setuptools build requirement from >=69 to >=63.1.0.
---- pyproject.toml.orig	2026-05-22 05:56:16 UTC
+-- - Remove [project.scripts] entries because they conflict with the modelscope-hub
+--   dependency, which provides the same CLI scripts.
+--- pyproject.toml.orig	2026-07-06 15:13:12 UTC
 +++ pyproject.toml
 @@ -3,8 +3,7 @@ readme = {file = "README.md", content-type = "text/mar
  dynamic = ["version", "dependencies", "optional-dependencies"]
@@ -14,8 +16,19 @@
  authors = [
    {name = "ModelScope team"},
    {email = "contact@modelscope.cn"}
-@@ -28,7 +27,7 @@ ms = "modelscope.cli.cli:run_cmd"
- ms = "modelscope.cli.cli:run_cmd"
+@@ -23,10 +22,6 @@ Homepage = "https://github.com/modelscope/modelscope"
+ [project.urls]
+ Homepage = "https://github.com/modelscope/modelscope"
+ 
+-[project.scripts]
+-modelscope = "modelscope.cli.cli:run_cmd"
+-ms = "modelscope.cli.cli:run_cmd"
+-
+ [project.entry-points."modelscope_hub.cli_plugins"]
+ pipeline = "modelscope.cli.pipeline:PipelineCMD"
+ server = "modelscope.cli.server:ServerCMD"
+@@ -37,7 +32,7 @@ studio = "modelscope.cli.studio:StudioCMD"
+ studio = "modelscope.cli.studio:StudioCMD"
  
  [build-system]
 -requires = ["setuptools>=69", "wheel"]
