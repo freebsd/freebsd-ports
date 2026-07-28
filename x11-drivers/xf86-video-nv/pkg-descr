@@ -1,1 +1,2 @@
-This package contains the X.Org xf86-video-nv driver.
+This is the legacy NVIDIA video driver for the Xorg server, for devices
+not supported by a kernel driver.
