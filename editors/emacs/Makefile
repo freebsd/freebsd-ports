@@ -1,13 +1,12 @@
 PORTNAME=	emacs
-DISTVERSION=	30.2
-PORTREVISION=	4
+DISTVERSION=	31.0.91
 PORTEPOCH=	3
 CATEGORIES=	editors
-MASTER_SITES=	GNU
+MASTER_SITES=	GNU_ALPHA/emacs/pretest
 
 .if ${FLAVOR:U} == canna
-PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs30canna/:canna
-PATCHFILES+=	emacs30.1-canna-20250224.diff.gz:-p1:canna
+PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs31canna/:canna
+PATCHFILES+=	emacs31.0.91canna-20260808.diff.gz:-p1:canna
 .endif
 
 MAINTAINER=	emacs@FreeBSD.org
@@ -90,7 +89,8 @@ INFO=		auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
 		modus-themes newsticker nxml-mode octave-mode org pcl-cvs pgg \
 		rcirc reftex remember sasl sc semantic ses sieve smtpmail \
 		speedbar srecode todo-mode tramp transient url use-package \
-		vhdl-mode vip viper vtable widget wisent woman
+		vhdl-mode viper vtable widget wisent woman
+
 INFO_PATH=	${DATADIR_REL}/info
 .if ${FLAVOR:U} == canna
 PLIST_FILES+=	${DATADIR}/${DISTVERSION}/lisp/canna.el.gz \
