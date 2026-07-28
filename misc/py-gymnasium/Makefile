@@ -1,6 +1,5 @@
 PORTNAME=	gymnasium
-DISTVERSION=	1.2.2
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=1.2.0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Farama-Notifications>=0.0.1:devel/py-Farama-Notifications@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.21.0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.3.0:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.3.7:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.7.3:science/py-scipy@${PY_FLAVOR}
@@ -29,6 +28,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as of 1.2.0: 9 passed in 2.09s
+# tests as of 1.3.0: 9 passed in 0.55s
 
 .include <bsd.port.mk>
