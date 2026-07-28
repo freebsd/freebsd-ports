@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2026-07-28 08:33:38 UTC
++++ src/Makefile.in
+@@ -492,7 +492,7 @@ noinst_HEADERS = libp11-int.h pkcs11.h p11_pthread.h p
+ 
+ # Headers
+ noinst_HEADERS = libp11-int.h pkcs11.h p11_pthread.h provider_helpers.h util.h
+-include_HEADERS = libp11.h p11_err.h
++include_HEADERS = libp11.h p11_err.h p11_ver.h
+ lib_LTLIBRARIES = libp11.la $(am__append_2)
+ enginesexec_LTLIBRARIES = $(am__append_1)
+ pkgconfig_DATA = libp11.pc
