@@ -83,7 +83,6 @@
     SUBDIR += py-naarad
     SUBDIR += py-reframe-hpc
     SUBDIR += py-throughpy
-    SUBDIR += py-zopkio
     SUBDIR += raidtest
     SUBDIR += randomio
     SUBDIR += rubygem-benchmark
