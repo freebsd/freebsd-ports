@@ -1,0 +1,28 @@
+-- Force libc++ to use name-based type_info comparison.  On FreeBSD/Clang the
+-- default compares type_info object addresses, but the same C++ class
+-- template instantiations are emitted into both libdwave-optimization.so and
+-- each Cython extension module, producing distinct type_info objects for the
+-- same type.  This breaks cross-DSO std::type_index lookups and dynamic_cast.
+-- The "non-unique" implementation compares mangled type names, so types match
+-- across shared libraries.
+
+--- meson.build.orig	2026-07-23 19:58:12 UTC
++++ meson.build
+@@ -22,6 +22,17 @@ add_project_arguments(['-g1'], language: ['cpp'])
+ # We want some debugging symbols
+ add_project_arguments(['-g1'], language: ['cpp'])
+ 
++# On FreeBSD/Clang libc++ defaults to comparing type_info object addresses. The
++# same C++ class template instantiations are emitted into both
++# libdwave-optimization.so and the individual Cython extension modules, so
++# each shared object gets its own type_info copy and cross-DSO dynamic_cast
++# and std::type_index lookups fail. Force the "non-unique" implementation,
++# which compares mangled type names, so types match across shared libraries.
++add_project_arguments(
++    '-D_LIBCPP_TYPEINFO_COMPARISON_IMPLEMENTATION=2',
++    language: 'cpp',
++)
++
+ cpp = meson.get_compiler('cpp')
+ py = import('python').find_installation(pure: false)
+ 
