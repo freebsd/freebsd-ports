@@ -1,0 +1,4 @@
+The dot1ag-utils software package is an Open Source (new BSD License)
+implementation of the IEEE 802.1ag protocol and is supported on Arista Networks
+switches and Linux, FreeBSD and MacOSX servers. It provides several debugging
+tools that interact with IEEE 802.1ag enabled routers and switches.

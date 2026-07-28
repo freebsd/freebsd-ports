@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# PROVIDE: dot1agd
+# REQUIRE: NETWORKING mountall quota
+#
+# Add the following lines to /etc/rc.conf to enable dot1agd
+#
+# dot1agd_enable (bool):     Set to "NO" by default.
+#                            Set it to "YES" to enable dot1agd.
+# dot1agd_interface (str):   Interface to listen on.
+#
+
+. /etc/rc.subr
+
+name="dot1agd"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${dot1agd_enable="NO"}
+: ${dot1agd_interface=""}
+
+
+start_cmd="${name}_start"
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/${name}"
+
+dot1agd_start() {
+	echo "Starting ${name}."
+	/usr/sbin/daemon -p $pidfile ${command} -i ${dot1agd_interface}
+}
+
+run_rc_command "$1"
+

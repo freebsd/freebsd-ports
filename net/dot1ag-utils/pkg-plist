@@ -1,0 +1,16 @@
+bin/dot1ag_ccd
+bin/dot1agd
+bin/ethping
+bin/ethtrace
+%%MANPAGES%%share/man/man1/ethping.1.gz
+%%MANPAGES%%share/man/man1/ethtrace.1.gz
+%%MANPAGES%%share/man/man1/dot1ag_ccd.1.gz
+%%MANPAGES%%share/man/man1/dot1agd.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/IMPLEMENTATION
+%%PORTDOCS%%%%DOCSDIR%%/INSTALLATION
+%%PORTDOCS%%%%DOCSDIR%%/INSTALLATION-ARISTA
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
+%%PORTDOCS%%%%DOCSDIR%%/TODO

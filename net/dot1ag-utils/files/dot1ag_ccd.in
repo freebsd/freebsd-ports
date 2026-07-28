@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# PROVIDE: dot1ag_ccd
+# REQUIRE: NETWORKING mountall quota
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dot1ag_ccd_enable (bool):     Set to "NO" by default.
+#                               Set it to "YES" to enable dot1ag_ccd.
+# dot1ag_ccd_interface (str):   Interface to listen on.
+# dot1ag_ccd_flags (str):       Additional arguments to dot1ag_ccd
+# 
+# See dot1ag_ccd(8) for flags
+#
+
+. /etc/rc.subr
+
+name="dot1ag_ccd"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${dot1ag_ccd_enable="NO"}
+: ${dot1ag_ccd_interface=""}
+: ${dot1ag_ccd_flags=""}
+
+
+start_cmd="${name}_start"
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/${name}"
+
+dot1ag_ccd_start() {
+	echo "Starting ${name}."
+	/usr/sbin/daemon -p $pidfile ${command} -i ${dot1ag_ccd_interface} ${dot1ag_ccd_flags}
+}
+
+run_rc_command "$1"
+
