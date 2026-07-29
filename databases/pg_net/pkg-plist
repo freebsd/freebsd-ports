@@ -21,7 +21,8 @@ share/postgresql/extension/pg_net--0.2--0.3.sql
 share/postgresql/extension/pg_net--0.20.0--0.20.1.sql
 share/postgresql/extension/pg_net--0.20.1--0.20.2.sql
 share/postgresql/extension/pg_net--0.20.2--0.20.3.sql
-share/postgresql/extension/pg_net--0.20.3.sql
+share/postgresql/extension/pg_net--0.20.3--0.20.4.sql
+share/postgresql/extension/pg_net--0.20.4.sql
 share/postgresql/extension/pg_net--0.3--0.4.sql
 share/postgresql/extension/pg_net--0.4--0.5.sql
 share/postgresql/extension/pg_net--0.5--0.5.1.sql
@@ -33,3 +34,9 @@ share/postgresql/extension/pg_net--0.7.3--0.8.0.sql
 share/postgresql/extension/pg_net--0.8.0--0.9.3.sql
 share/postgresql/extension/pg_net--0.9.3--0.10.0.sql
 share/postgresql/extension/pg_net.control
+include/postgresql/server/extension/pg_net/core.h
+include/postgresql/server/extension/pg_net/curl_prelude.h
+include/postgresql/server/extension/pg_net/errors.h
+include/postgresql/server/extension/pg_net/event.h
+include/postgresql/server/extension/pg_net/pg_prelude.h
+include/postgresql/server/extension/pg_net/util.h
