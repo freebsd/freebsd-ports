@@ -1,6 +1,6 @@
 PORTNAME=	r7-office
-PORTVERSION=	2025.3.1
-DISTVERSIONSUFFIX=	-923.el8
+PORTVERSION=	2026.1.2
+DISTVERSIONSUFFIX=	-1942.el8
 CATEGORIES=	editors linux russian
 MASTER_SITES=	https://download.r7-office.ru/centos/
 PKGNAMEPREFIX=	linux-
@@ -30,8 +30,7 @@ STRIP=
 post-patch:
 	${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKDIR}/usr/bin/r7-office-*
 	${REINPLACE_CMD} -i '' -e 's|/usr/bin/|${PREFIX}/bin/|' -e 's|P7|Р7|' \
-		${WRKDIR}/usr/share/applications/*.desktop \
-		${WRKDIR}/opt/r7-office/desktopeditors/app/*.desktop
+		${WRKDIR}/usr/share/applications/*.desktop
 	${REINPLACE_CMD} -i '' -e 's|/bin/bash|/bin/sh|' \
 		${WRKDIR}/opt/r7-office/desktopeditors/testbird.sh
 
