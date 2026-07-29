@@ -1,0 +1,6 @@
+reliable is a C library that adds acknowledgement of received packets,
+fragmentation and reassembly of large packets, and connection
+statistics (RTT, jitter, packet loss) on top of an unreliable packet
+transport such as UDP.
+
+It is the reliability layer used by the yojimbo network library.

@@ -1253,6 +1253,7 @@
     SUBDIR += redir
     SUBDIR += redpanda-connect
     SUBDIR += relayd
+    SUBDIR += reliable
     SUBDIR += remarkable-devd
     SUBDIR += remmina
     SUBDIR += remotebox
