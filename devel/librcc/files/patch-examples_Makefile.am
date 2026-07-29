@@ -1,0 +1,11 @@
+--- examples/Makefile.am.orig	2026-07-29 17:03:07 UTC
++++ examples/Makefile.am
+@@ -22,7 +22,7 @@ rcc_gtk3_config_SOURCES = rcc-gtk-config.c
+ if HAVE_GTK3
+ bin_PROGRAMS+= rcc-gtk3-config
+ rcc_gtk3_config_SOURCES = rcc-gtk-config.c
+-rcc_gtk3_config_LDADD=../ui/librccgtk3.la @GTK3_LIBS@
++rcc_gtk3_config_LDADD= ../src/librcc.la ../ui/librccgtk3.la @GTK3_LIBS@
+ rcc_gtk3_config_CPPFLAGS = @GTK3_CFLAGS@ -I${top_srcdir}/src -I${top_srcdir}/ui
+ endif
+ 
