@@ -1096,6 +1096,7 @@ FreeCAD/Mod/Draft/drafttests/test_dimension_gui.py
 FreeCAD/Mod/Draft/drafttests/test_draftgeomutils.py
 FreeCAD/Mod/Draft/drafttests/test_dwg.py
 FreeCAD/Mod/Draft/drafttests/test_dxf.py
+FreeCAD/Mod/Draft/drafttests/test_grid_settings.py
 FreeCAD/Mod/Draft/drafttests/test_import.py
 FreeCAD/Mod/Draft/drafttests/test_import_gui.py
 FreeCAD/Mod/Draft/drafttests/test_import_tools.py
@@ -2218,6 +2219,7 @@ FreeCAD/include/OndselSolver/BasicUserFunction.h
 FreeCAD/include/OndselSolver/CADSystem.h
 FreeCAD/include/OndselSolver/CREATE.h
 FreeCAD/include/OndselSolver/CartesianFrame.h
+FreeCAD/include/OndselSolver/CoaxialGearConstraintIJ.h
 FreeCAD/include/OndselSolver/CompoundJoint.h
 FreeCAD/include/OndselSolver/ConstVelConstraintIJ.h
 FreeCAD/include/OndselSolver/ConstVelConstraintIqcJc.h
