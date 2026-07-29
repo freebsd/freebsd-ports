@@ -8,7 +8,7 @@ WWW=		https://github.com/tesseract-ocr/tesseract
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		xsltproc:textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 LIB_DEPENDS=	liblept.so:graphics/leptonica \
