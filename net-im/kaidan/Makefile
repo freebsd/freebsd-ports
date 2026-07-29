@@ -1,6 +1,5 @@
 PORTNAME=	kaidan
-DISTVERSION=	0.15.0
-PORTREVISION=	3
+DISTVERSION=	0.16.0
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/unstable/${PORTNAME}/${DISTVERSION}
 
@@ -23,7 +22,7 @@ USES=		cmake compiler:c++23-lang desktop-file-utils gl \
 		gstreamer kde:6 pkgconfig qt:6 tar:xz xorg
 USE_GL=		gl opengl # GLX
 USE_GSTREAMER=	qt6
-USE_KDE=	completion config coreaddons crash jobwidgets kio \
+USE_KDE=	completion config coreaddons crash itemmodels jobwidgets kio \
 		kirigami-addons kirigami2 notifications prison \
 		qqc2-desktop-style service solid widgetsaddons \
 		windowsystem \
