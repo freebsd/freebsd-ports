@@ -2,7 +2,7 @@ PORTNAME=	quazip
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.1
 CATEGORIES=	archivers
-PKGNAMESUFFIX=	-${FLAVOR}
+PKGNAMESUFFIX=	-qt6
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt/C++ wrapper for ZIP/UNZIP package
@@ -11,25 +11,17 @@ WWW=		https://github.com/stachenov/quazip
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	qt6 qt5
-FLAVOR?=	qt6
-
-USES=		cmake:testing compiler:c++${"${FLAVOR:Mqt6}" != "":?17:14}-lang \
-		cpe qt:${FLAVOR:S/qt//}
+USES=		cmake:testing compiler:c++17-lang cpe qt:6
 CPE_VENDOR=	quazip_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	stachenov
 USE_LDCONFIG=	yes
-_USE_QT_qt5=	core \
-		buildtools:build qmake:build \
-		network:test testlib:test
-_USE_QT_qt6=	5compat base
-USE_QT=		${_USE_QT_${FLAVOR}}
+USE_QT=		5compat base
 
-CMAKE_ARGS=	-DQUAZIP_QT_MAJOR_VERSION=${FLAVOR:S/qt//}
+CMAKE_ARGS=	-DQUAZIP_QT_MAJOR_VERSION=6
 CMAKE_TESTING_ON=	QUAZIP_ENABLE_TESTS
 
-PLIST_SUB=	QTVER_SUFFIX=${FLAVOR:S/qt//} \
+PLIST_SUB=	QTVER_SUFFIX=6 \
 		QUAZIP_VER=${DISTVERSION:R} \
 		QUAZIP_VERSION=${DISTVERSION}
 
