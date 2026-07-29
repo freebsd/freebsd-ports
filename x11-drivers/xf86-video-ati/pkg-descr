@@ -1,1 +1,2 @@
-This package contains the X.Org xf86-video-ati driver.
+This package contains the Xorg driver for ATI/AMD Radeon GPUs using the
+radeon kernel driver.
