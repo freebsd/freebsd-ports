@@ -1,19 +1,9 @@
 PORTNAME=	social-auth-core
-DISTVERSION=	4.8.5
-PORTREVISION=	5
+DISTVERSION=	5.0.2
 CATEGORIES=	security www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	social_auth_core-${DISTVERSION}
-
-PATCH_SITES=	https://github.com/python-social-auth/social-core/commit/
-PATCHFILES=	44f15058c0b030b4f6212033f7db275739c86078.patch:-p1 \
-		57105742439f046270c9dc404020620a5d4d7cdd.patch:-p1 \
-		6496d8dd88ab99017dbe64f65b0058fd21e1bc90.patch:-p1 \
-		9725f8f306beedc31062bfde359239740713f271.patch:-p1 \
-		d447bd570e25b0a20ebc4687f48ca4d60718fafc.patch:-p1 \
-		4188a5f03e274b76adf58d7b45ef8a45f8ddb7fa.patch:-p1 \
-		acf7394ecbe33e49b278fd1faf35eaf655af24f6.patch:-p1
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Social authentication/registration mechanism for several frameworks
@@ -43,7 +33,7 @@ NO_ARCH=	yes
 # An SHOPIFY option would still be possible as well, but the ports tree does
 # not yet have all the required dependencies for this.
 OPTIONS_DEFINE=		GOOGLE-ONETAP SAML
-OPTIONS_DEFAULT=	GOOGLE-ONETAP SAML
+OPTIONS_DEFAULT=	SAML
 
 GOOGLE-ONETAP_DESC=	Google One Tap support
 SAML_DESC?=	SAML Support
