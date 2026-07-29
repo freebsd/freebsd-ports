@@ -1,4 +1,4 @@
-TIMESTAMP = 1784673084
+TIMESTAMP = 1785306461
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
 SIZE (rust/crates/addr2line-0.25.1.crate) = 43134
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -271,5 +271,5 @@ SHA256 (rust/crates/winnow-0.7.15.crate) = df79d97927682d2fd8adb29682d1140b343be
 SIZE (rust/crates/winnow-0.7.15.crate) = 187092
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (westpoint-io-lazyrsync-v0.1.1_GH0.tar.gz) = 57af447bbabf56105d4e966b87fd5dbd737b4a8ebc86deb017a2d774e28793af
-SIZE (westpoint-io-lazyrsync-v0.1.1_GH0.tar.gz) = 7522962
+SHA256 (westpoint-io-lazyrsync-v0.2.0_GH0.tar.gz) = 4ce106e10a258ccb4fdf8958b49746f7a1f9386592ede441f620a7f41ffb7d75
+SIZE (westpoint-io-lazyrsync-v0.2.0_GH0.tar.gz) = 8810607
