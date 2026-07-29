@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.9
+DISTVERSION=	2.6.10
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -28,14 +28,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
 GH_TUPLE=	RedisAI:VectorSimilarity:d784136:vectorsimilarity/deps/VectorSimilarity \
-			RedisLabsModules:readies:ffc4fd0:readies/deps/readies
+			RedisLabsModules:readies:c3905d7:readies/deps/readies
 
 CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
 		-DOS=freebsd
 
 CFLAGS+=	-DCLOCK_MONOTONIC_RAW=CLOCK_MONOTONIC
 CXXFLAGS+=	-Wno-vla-cxx-extension -I${LOCALBASE}/include/cpu_features
-LDFLAGS+=      -lcpu_features
+LDFLAGS+=	-lcpu_features
 
 CONFLICTS_INSTALL=	redisearch*
 
