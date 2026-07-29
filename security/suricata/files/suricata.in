@@ -39,7 +39,7 @@ suricata_flags=${suricata_flags:-"-D"}
 suricata_divertport=${suricata_divertport:-"8000"}
 suricata_netmap=${suricata_netmap:-"NO"}
 : ${suricata_svcj_options:="net_all"}
-$suricata_user=${suricata_user:-"root"}
+suricata_user=${suricata_user:-"root"}
 suricata_pidfile=${suricata_pidfile:-"/var/run/suricata.pid"}
 
 if [ -n "$suricata_interface" ]; then
