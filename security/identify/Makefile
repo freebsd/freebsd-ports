@@ -1,11 +1,11 @@
 PORTNAME=	identify
 PORTVERSION=	0.7
 CATEGORIES=	security
-MASTER_SITES=	http://ftp.nluug.nl/ftp/pub/pub/security/coast/daemons/pidentd/tools/
+MASTER_SITES=	https://ftp.nluug.nl/pub/security/coast/daemons/pidentd/tools/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Client side ident protocol daemon wrapper
-WWW=		http://ftp.nluug.nl/ftp/pub/pub/security/coast/daemons/pidentd/tools/
+WWW=		https://ftp.nluug.nl/pub/security/coast/daemons/pidentd/tools/
 
 LICENSE=	PD
 
