@@ -1,11 +1,11 @@
 PORTNAME=	hexbin
-DISTVERSION=	1.28.5
+DISTVERSION=	1.28.6
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Hexagonal Binning Routines
-WWW=		https://cran.r-project.org/web/packages/hexbin/
+WWW=		https://cran.r-project.org/package=hexbin
 
 LICENSE=	GPLv2
 
