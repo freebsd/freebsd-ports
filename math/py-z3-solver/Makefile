@@ -1,6 +1,6 @@
 PORTNAME=	z3-solver
-DISTVERSIONPREFIX=	z3-
-DISTVERSION=	4.16.0
+DISTVERSION=	5.0.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,6 +19,7 @@ USE_PYTHON=	flavors autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	Z3Prover
 GH_PROJECT=	z3
+GH_TAGNAME=	z3-5.0.0
 
 WRKSRC_SUBDIR=	src/api/python
 WRKSRC_top=	${WRKSRC}/../../..
@@ -26,6 +27,8 @@ WRKSRC_top=	${WRKSRC}/../../..
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
+
+PLIST_FILES=	${PYTHON_SITELIBDIR:S,^${PREFIX}/,,}/z3/z3regex.py
 
 post-patch:
 	@${RLN} ${WRKSRC_top}/scripts ${WRKSRC}/scripts
@@ -46,5 +49,7 @@ do-test:
 		${ECHO} "... example ${e} succeeded"
 	@${ECHO} "All tests succeeded."
 .endfor
+
+# tests as of 5.0.0.0: z3/z3num unit tests + kinematics, power-of-two, dog-cat-mouse, sudoku, eight-queens examples all passed.
 
 .include <bsd.port.mk>
