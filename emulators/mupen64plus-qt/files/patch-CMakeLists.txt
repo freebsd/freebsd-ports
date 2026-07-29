@@ -1,0 +1,49 @@
+--- CMakeLists.txt.orig	2024-11-17 16:27:11 UTC
++++ CMakeLists.txt
+@@ -8,6 +8,8 @@ find_package(Qt6 REQUIRED COMPONENTS Gui Network Sql W
+ 
+ find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core)
+ find_package(Qt6 REQUIRED COMPONENTS Gui Network Sql Widgets Xml)
++find_package(SDL2)
++include(GNUInstallDirs)
+ 
+ qt_standard_project_setup()
+ 
+@@ -51,7 +53,7 @@ target_link_libraries(mupen64plus-qt PRIVATE
+     Qt::Sql
+     Qt::Widgets
+     Qt::Xml
+-    SDL2
++    SDL2::SDL2
+ )
+ 
+ 
+@@ -95,9 +97,23 @@ install(TARGETS mupen64plus-qt
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+ )
+ 
+-qt_generate_deploy_app_script(
+-    TARGET mupen64plus-qt
+-    FILENAME_VARIABLE deploy_script
+-    NO_UNSUPPORTED_PLATFORM_ERROR
++
++install(FILES resources/images/mupen64plus-qt.png
++        DESTINATION ${CMAKE_INSTALL_DATADIR}/pixmaps
+ )
+-install(SCRIPT ${deploy_script})
++install(FILES resources/mupen64plus-qt.desktop
++        DESTINATION ${CMAKE_INSTALL_DATADIR}/applications
++)
++install(FILES resources/mupen64plus-qt.6
++        DESTINATION ${CMAKE_INSTALL_MANDIR}/man6
++)
++install(FILES README.md
++        DESTINATION ${CMAKE_INSTALL_DOCDIR}
++)
++
++# qt_generate_deploy_app_script(
++#     TARGET mupen64plus-qt
++#     FILENAME_VARIABLE deploy_script
++#     NO_UNSUPPORTED_PLATFORM_ERROR
++# )
++# install(SCRIPT ${deploy_script})

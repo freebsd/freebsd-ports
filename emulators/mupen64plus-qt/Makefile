@@ -1,16 +1,15 @@
 PORTNAME=	mupen64plus-qt
-DISTVERSION=	1.14
-PORTREVISION=	6
+DISTVERSION=	1.17
 CATEGORIES=	emulators
 
-MAINTAINER=	maintainer@hasting.email
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Basic launcher for Mupen64Plus
 WWW=		https://github.com/dh4/mupen64plus-qt
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libquazip1-qt5.so:archivers/quazip@qt5
+LIB_DEPENDS=	libquazip1-qt6.so:archivers/quazip@qt6
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:emulators/mupen64plus-audio-sdl \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-input-sdl.so:emulators/mupen64plus-input-sdl \
@@ -18,11 +17,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-video-rice.so:emulators/mupen64plus-video-rice \
 		mupen64plus:emulators/mupen64plus-ui-console
 
-USES=		gl pkgconfig qmake qt:5
+USES=		cmake compiler:c++17-lang gl pkgconfig qt:6 sdl
 USE_GL=		gl
-USE_QT=		core gui network sql widgets xml \
-		buildtools:build \
-		sql-sqlite3:run
+USE_QT=		base \
+		sqldriver-sqlite:run
+USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dh4
@@ -34,16 +33,6 @@ PLIST_FILES=	bin/mupen64plus-qt \
 		share/applications/mupen64plus-qt.desktop \
 		share/pixmaps/mupen64plus-qt.png
 
-OPTIONS_DEFINE=		DOCS
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/resources/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/resources/images/mupen64plus.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
-	${INSTALL_MAN} ${WRKSRC}/resources/${PORTNAME}.6 ${STAGEDIR}${PREFIX}/share/man/man6
-
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
