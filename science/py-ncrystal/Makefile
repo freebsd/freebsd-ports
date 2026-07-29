@@ -28,6 +28,12 @@ TEST_ENV=	${MAKE_ENV} \
 		PATH=${STAGEDIR}${PREFIX}/bin:${PATH}
 #TEST_WRKSRC=	${WRKSRC}/ncrystal_python
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1500000
+BROKEN_i386=	error: static assertion failed due to requirement 'std::numeric_limits<unsigned int>::max() >= std::numeric_limits<unsigned long long>::max()': NCrystal is no longer supported on 32bit systems
+.endif
+
 post-install:
 	# strip binary
 	#@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/NCrystal/ncrystal_pyinst_data/lib/libNCrystal.so
@@ -36,4 +42,4 @@ do-test:
 	@cd ${TEST_WRKSRC} && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m NCrystal.test all
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
