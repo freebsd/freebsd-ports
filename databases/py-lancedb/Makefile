@@ -1,7 +1,6 @@
 PORTNAME=	lancedb
 DISTVERSIONPREFIX=	python-v
-DISTVERSION=	0.34.0
-PORTREVISION=	1
+DISTVERSION=	0.36.0
 CATEGORIES=	databases python # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -55,7 +54,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.103 \
+		anyhow-1.0.104 \
 		approx-0.5.1 \
 		ar_archive_writer-0.5.1 \
 		arc-swap-1.9.1 \
@@ -84,7 +83,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		async-lock-3.4.2 \
 		async-openai-0.20.0 \
 		async-recursion-1.1.1 \
-		async-trait-0.1.89 \
+		async-trait-0.1.91 \
 		async_cell-0.2.3 \
 		atoi-2.0.0 \
 		atoi_simd-0.15.6 \
@@ -134,7 +133,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bit-vec-0.8.0 \
 		bitflags-1.3.2 \
 		bitflags-2.11.1 \
-		bitpacking-0.9.3 \
 		bitvec-1.0.1 \
 		blake2-0.10.6 \
 		blake3-1.8.5 \
@@ -152,7 +150,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bytemuck-1.25.0 \
 		bytemuck_derive-1.10.2 \
 		byteorder-1.5.0 \
-		bytes-1.12.0 \
+		bytes-1.12.1 \
 		bytes-utils-0.1.4 \
 		candle-core-0.9.2 \
 		candle-nn-0.9.2 \
@@ -211,7 +209,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		criterion-plot-0.8.2 \
 		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
-		crossbeam-epoch-0.9.18 \
+		crossbeam-epoch-0.9.20 \
 		crossbeam-queue-0.3.12 \
 		crossbeam-skiplist-0.1.3 \
 		crossbeam-utils-0.8.21 \
@@ -236,36 +234,36 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		darling_macro-0.20.11 \
 		darling_macro-0.23.0 \
 		dashmap-6.1.0 \
-		datafusion-53.1.0 \
-		datafusion-catalog-53.1.0 \
-		datafusion-catalog-listing-53.1.0 \
-		datafusion-common-53.1.0 \
-		datafusion-common-runtime-53.1.0 \
-		datafusion-datasource-53.1.0 \
-		datafusion-datasource-arrow-53.1.0 \
-		datafusion-datasource-csv-53.1.0 \
-		datafusion-datasource-json-53.1.0 \
-		datafusion-doc-53.1.0 \
-		datafusion-execution-53.1.0 \
-		datafusion-expr-53.1.0 \
-		datafusion-expr-common-53.1.0 \
-		datafusion-functions-53.1.0 \
-		datafusion-functions-aggregate-53.1.0 \
-		datafusion-functions-aggregate-common-53.1.0 \
-		datafusion-functions-nested-53.1.0 \
-		datafusion-functions-table-53.1.0 \
-		datafusion-functions-window-53.1.0 \
-		datafusion-functions-window-common-53.1.0 \
-		datafusion-macros-53.1.0 \
-		datafusion-optimizer-53.1.0 \
-		datafusion-physical-expr-53.1.0 \
-		datafusion-physical-expr-adapter-53.1.0 \
-		datafusion-physical-expr-common-53.1.0 \
-		datafusion-physical-optimizer-53.1.0 \
-		datafusion-physical-plan-53.1.0 \
-		datafusion-pruning-53.1.0 \
-		datafusion-session-53.1.0 \
-		datafusion-sql-53.1.0 \
+		datafusion-54.1.0 \
+		datafusion-catalog-54.1.0 \
+		datafusion-catalog-listing-54.1.0 \
+		datafusion-common-54.1.0 \
+		datafusion-common-runtime-54.1.0 \
+		datafusion-datasource-54.1.0 \
+		datafusion-datasource-arrow-54.1.0 \
+		datafusion-datasource-csv-54.1.0 \
+		datafusion-datasource-json-54.1.0 \
+		datafusion-doc-54.1.0 \
+		datafusion-execution-54.1.0 \
+		datafusion-expr-54.1.0 \
+		datafusion-expr-common-54.1.0 \
+		datafusion-functions-54.1.0 \
+		datafusion-functions-aggregate-54.1.0 \
+		datafusion-functions-aggregate-common-54.1.0 \
+		datafusion-functions-nested-54.1.0 \
+		datafusion-functions-table-54.1.0 \
+		datafusion-functions-window-54.1.0 \
+		datafusion-functions-window-common-54.1.0 \
+		datafusion-macros-54.1.0 \
+		datafusion-optimizer-54.1.0 \
+		datafusion-physical-expr-54.1.0 \
+		datafusion-physical-expr-adapter-54.1.0 \
+		datafusion-physical-expr-common-54.1.0 \
+		datafusion-physical-optimizer-54.1.0 \
+		datafusion-physical-plan-54.1.0 \
+		datafusion-pruning-54.1.0 \
+		datafusion-session-54.1.0 \
+		datafusion-sql-54.1.0 \
 		debugid-0.8.0 \
 		der-0.6.1 \
 		der-0.7.10 \
@@ -292,6 +290,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		encode_unicode-1.0.0 \
 		encoding_rs-0.8.35 \
 		encoding_rs_io-0.1.7 \
+		endian-type-0.1.2 \
 		enum-as-inner-0.6.1 \
 		enum_dispatch-0.3.13 \
 		env_filter-2.0.0 \
@@ -323,7 +322,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		foreign_vec-0.1.0 \
 		form_urlencoded-1.2.2 \
 		fs_extra-1.3.0 \
-		fsst-8.0.0 \
+		fsst-9.0.0 \
 		fst-0.4.7 \
 		funty-2.0.0 \
 		futures-0.3.32 \
@@ -354,6 +353,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		git-version-macro-0.3.9 \
 		glob-0.3.3 \
 		gloo-timers-0.3.0 \
+		goosefs-sdk-0.1.5 \
 		group-0.12.1 \
 		h2-0.3.27 \
 		h2-0.4.14 \
@@ -373,10 +373,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		hmac-0.12.1 \
 		hmac-0.13.0 \
 		home-0.5.12 \
+		hostname-0.4.2 \
 		http-0.2.12 \
 		http-1.4.2 \
 		http-body-0.4.6 \
-		http-body-1.0.1 \
+		http-body-1.1.0 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
 		httpdate-1.0.3 \
@@ -386,6 +387,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		hyper-1.9.0 \
 		hyper-rustls-0.24.2 \
 		hyper-rustls-0.27.9 \
+		hyper-timeout-0.5.2 \
 		hyper-util-0.1.20 \
 		hyperloglogplus-0.4.1 \
 		iana-time-zone-0.1.65 \
@@ -438,27 +440,28 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		kanaria-0.2.0 \
 		konst-0.4.3 \
 		konst_proc_macros-0.4.1 \
-		lance-8.0.0 \
-		lance-arrow-8.0.0 \
+		lance-9.0.0 \
+		lance-arrow-9.0.0 \
 		lance-arrow-scalar-58.0.0 \
 		lance-arrow-stats-58.0.0 \
-		lance-bitpacking-8.0.0 \
-		lance-core-8.0.0 \
-		lance-datafusion-8.0.0 \
-		lance-datagen-8.0.0 \
-		lance-derive-8.0.0 \
-		lance-encoding-8.0.0 \
-		lance-file-8.0.0 \
-		lance-index-8.0.0 \
-		lance-io-8.0.0 \
-		lance-linalg-8.0.0 \
-		lance-namespace-8.0.0 \
-		lance-namespace-impls-8.0.0 \
+		lance-bitpacking-9.0.0 \
+		lance-core-9.0.0 \
+		lance-datafusion-9.0.0 \
+		lance-datagen-9.0.0 \
+		lance-derive-9.0.0 \
+		lance-encoding-9.0.0 \
+		lance-file-9.0.0 \
+		lance-index-9.0.0 \
+		lance-index-core-9.0.0 \
+		lance-io-9.0.0 \
+		lance-linalg-9.0.0 \
+		lance-namespace-9.0.0 \
+		lance-namespace-impls-9.0.0 \
 		lance-namespace-reqwest-client-0.8.6 \
-		lance-select-8.0.0 \
-		lance-table-8.0.0 \
-		lance-testing-8.0.0 \
-		lance-tokenizer-8.0.0 \
+		lance-select-9.0.0 \
+		lance-table-9.0.0 \
+		lance-testing-9.0.0 \
+		lance-tokenizer-9.0.0 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		lexical-core-1.0.6 \
@@ -467,7 +470,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		lexical-util-1.0.7 \
 		lexical-write-float-1.0.6 \
 		lexical-write-integer-1.0.6 \
-		libc-0.2.186 \
+		libc-0.2.189 \
 		libloading-0.9.0 \
 		libm-0.2.16 \
 		libredox-0.1.16 \
@@ -499,6 +502,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		memchr-2.8.0 \
 		memmap2-0.7.1 \
 		memmap2-0.9.10 \
+		metrics-0.24.6 \
+		metrics-util-0.19.1 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
@@ -513,12 +518,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		multiversion-macros-0.7.4 \
 		munge-0.4.7 \
 		munge_macro-0.4.7 \
-		napi-3.9.4 \
+		napi-3.11.0 \
 		napi-build-2.3.2 \
-		napi-derive-3.5.7 \
-		napi-derive-backend-5.0.5 \
-		napi-sys-3.2.2 \
+		napi-derive-3.6.0 \
+		napi-derive-backend-6.0.0 \
+		napi-sys-3.3.0 \
 		ndarray-0.16.1 \
+		nibble_vec-0.1.0 \
 		nix-0.26.4 \
 		nohash-hasher-0.2.0 \
 		nom-7.1.3 \
@@ -557,12 +563,15 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		opendal-service-azblob-0.57.0 \
 		opendal-service-azdls-0.57.0 \
 		opendal-service-azure-common-0.57.0 \
+		opendal-service-cos-0.57.0 \
 		opendal-service-gcs-0.57.0 \
+		opendal-service-goosefs-0.57.0 \
 		opendal-service-hf-0.57.0 \
 		opendal-service-oss-0.57.0 \
 		opendal-service-s3-0.57.0 \
 		openssl-probe-0.2.1 \
 		option-ext-0.2.0 \
+		ordered-float-4.6.0 \
 		ordered-float-5.3.0 \
 		ordered-multimap-0.7.3 \
 		os_str_bytes-6.6.1 \
@@ -625,6 +634,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		portable-atomic-util-0.2.7 \
 		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
+		pprof-0.14.1 \
 		pprof-0.15.0 \
 		ppv-lite86-0.2.21 \
 		prettyplease-0.2.37 \
@@ -646,9 +656,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		pyo3-ffi-0.28.3 \
 		pyo3-macros-0.28.3 \
 		pyo3-macros-backend-0.28.3 \
+		quanta-0.12.6 \
 		quick-xml-0.26.0 \
-		quick-xml-0.38.4 \
 		quick-xml-0.39.4 \
+		quick-xml-0.40.1 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.14 \
 		quinn-udp-0.5.14 \
@@ -656,9 +667,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		radium-0.7.0 \
+		radix_trie-0.2.1 \
 		rancor-0.1.1 \
 		rand-0.8.6 \
-		rand-0.9.4 \
+		rand-0.9.5 \
 		rand-0.10.1 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
@@ -670,6 +682,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rand_xoshiro-0.7.0 \
 		random_word-0.4.3 \
 		rangemap-1.7.1 \
+		rapidhash-4.5.1 \
 		raw-cpuid-11.6.0 \
 		rawpointer-0.2.1 \
 		rayon-1.12.0 \
@@ -683,8 +696,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		regex-1.12.4 \
-		regex-automata-0.4.14 \
+		regex-1.13.1 \
+		regex-automata-0.4.16 \
 		regex-lite-0.1.9 \
 		regex-syntax-0.8.11 \
 		relative-path-1.9.3 \
@@ -695,6 +708,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		reqsign-core-3.0.0 \
 		reqsign-file-read-tokio-3.0.0 \
 		reqsign-google-3.0.0 \
+		reqsign-tencent-cos-3.0.0 \
 		reqwest-0.12.28 \
 		reqwest-0.13.3 \
 		reqwest-eventsource-0.6.0 \
@@ -741,10 +755,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		security-framework-sys-2.17.0 \
 		semver-1.0.28 \
 		seq-macro-0.3.6 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.150 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.151 \
 		serde_path_to_error-0.1.20 \
 		serde_plain-1.0.2 \
 		serde_repr-0.1.20 \
@@ -771,6 +785,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		simdutf8-0.1.5 \
 		simple_asn1-0.6.4 \
 		siphasher-1.0.3 \
+		sketches-ddsketch-0.3.1 \
 		slab-0.4.12 \
 		smallvec-1.15.1 \
 		smartstring-1.0.1 \
@@ -781,13 +796,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		socket2-0.5.10 \
 		socket2-0.6.3 \
 		socks-0.3.4 \
-		spin-0.9.8 \
-		spin-0.10.0 \
+		spin-0.9.9 \
+		spin-0.10.1 \
 		spki-0.6.0 \
 		spki-0.7.3 \
 		spm_precompiled-0.1.4 \
 		sqlparser-0.39.0 \
-		sqlparser-0.61.0 \
+		sqlparser-0.62.0 \
 		sqlparser_derive-0.5.0 \
 		stable_deref_trait-1.2.1 \
 		stacker-0.1.24 \
@@ -812,6 +827,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		symlink-0.1.0 \
 		syn-1.0.109 \
 		syn-2.0.117 \
+		syn-3.0.3 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		sysctl-0.6.0 \
@@ -842,7 +858,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
 		tokenizers-0.19.1 \
-		tokio-1.52.3 \
+		tokio-1.53.1 \
 		tokio-macros-2.7.0 \
 		tokio-retry-0.3.1 \
 		tokio-rustls-0.24.1 \
@@ -852,6 +868,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.25.11+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
+		tonic-0.14.6 \
+		tonic-prost-0.14.6 \
 		tower-0.5.3 \
 		tower-http-0.5.2 \
 		tower-http-0.6.10 \
@@ -888,7 +906,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		utf8-ranges-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.4 \
+		uuid-1.24.0 \
 		valuable-0.1.1 \
 		version_check-0.9.5 \
 		vsimd-0.8.0 \
