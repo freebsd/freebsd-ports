@@ -1,3 +1,203 @@
+  <vuln vid="c4005254-b922-430f-b94a-dac9f59a527b">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>150.0.7871.186</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>150.0.7871.186</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/07/stable-channel-update-for-desktop_01320465736.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[518237034] High CVE-2026-16807: Out of bounds write in Codecs.</li>
+	    <li>[522064153] High CVE-2026-16806: Use after free in WebMCP.</li>
+	    <li>[523292588] High CVE-2026-16805: Use after free in Blink.</li>
+	    <li>[524721670] High CVE-2026-16804: Use after free in Input.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-16807</cvename>
+      <cvename>CVE-2026-16806</cvename>
+      <cvename>CVE-2026-16805</cvename>
+      <cvename>CVE-2026-16804</cvename>
+      <url>https://chromereleases.googleblog.com/2026/07/stable-channel-update-for-desktop_01320465736.html</url>
+    </references>
+    <dates>
+      <discovery>2026-07-23</discovery>
+      <entry>2026-07-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="82122f4b-6fad-4b83-bd1a-5b036b135080">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>150.0.7871.181</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>150.0.7871.181</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/07/stable-channel-update-for-desktop_0256605430.html">
+	 <p>This update includes 12 security fixes:</p>
+	 <ul>
+	    <li>[527930356] High CVE-2026-16420: Type Confusion in WebAudio.</li>
+	    <li>[528276487] High CVE-2026-16421: Inappropriate implementation in WebAudio.</li>
+	    <li>[517359779] High CVE-2026-16413: Out of bounds write in ANGLE.</li>
+	    <li>[517651910] High CVE-2026-16414: Insufficient validation of untrusted input in Chromecast.</li>
+	    <li>[519244446] High CVE-2026-16415: Insufficient validation of untrusted input in Extensions.</li>
+	    <li>[520172356] High CVE-2026-16416: Integer overflow in Chromecast.</li>
+	    <li>[521491024] High CVE-2026-16417: Uninitialized Use in Skia.</li>
+	    <li>[522125255] High CVE-2026-16418: Stack buffer overflow in V8.</li>
+	    <li>[523435970] High CVE-2026-16419: Out of bounds read and write in ANGLE.</li>
+	    <li>[533515002] High CVE-2026-16422: Insufficient validation of untrusted input in Certificate.</li>
+	    <li>[534582496] High CVE-2026-16423: Use after free in UI.</li>
+	    <li>[534858939] High CVE-2026-16424: Use after free in GPU.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-16420</cvename>
+      <cvename>CVE-2026-16421</cvename>
+      <cvename>CVE-2026-16413</cvename>
+      <cvename>CVE-2026-16414</cvename>
+      <cvename>CVE-2026-16415</cvename>
+      <cvename>CVE-2026-16416</cvename>
+      <cvename>CVE-2026-16417</cvename>
+      <cvename>CVE-2026-16418</cvename>
+      <cvename>CVE-2026-16419</cvename>
+      <cvename>CVE-2026-16422</cvename>
+      <cvename>CVE-2026-16423</cvename>
+      <cvename>CVE-2026-16424</cvename>
+      <url>https://chromereleases.googleblog.com/2026/07/stable-channel-update-for-desktop_0256605430.html</url>
+    </references>
+    <dates>
+      <discovery>2026-07-21</discovery>
+      <entry>2026-07-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3acf4890-b59c-4265-9867-2cf1ae6869f2">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>150.0.7871.128</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>150.0.7871.128</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/07/stable-channel-update-for-desktop_049796704.html">
+	 <p>This update includes 7 security fixes:</p>
+	 <ul>
+	    <li>[516987782] Critical CVE-2026-15899: Use after free in CameraCapture.</li>
+	    <li>[523750584] Critical CVE-2026-15900: Use after free in GPU.</li>
+	    <li>[533446300] Critical CVE-2026-15901: Use after free in Network.</li>
+	    <li>[522436154] High CVE-2026-15902: Use after free in Cast.</li>
+	    <li>[531503216] High CVE-2026-15903: Out of bounds read and write in V8.</li>
+	    <li>[532925350] High CVE-2026-15904: Use after free in Ozone.</li>
+	    <li>[532970574] High CVE-2026-15905: Use after free in Aura.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-15899</cvename>
+      <cvename>CVE-2026-15900</cvename>
+      <cvename>CVE-2026-15901</cvename>
+      <cvename>CVE-2026-15902</cvename>
+      <cvename>CVE-2026-15903</cvename>
+      <cvename>CVE-2026-15904</cvename>
+      <cvename>CVE-2026-15905</cvename>
+      <url>https://chromereleases.googleblog.com/2026/07/stable-channel-update-for-desktop_049796704.html</url>
+    </references>
+    <dates>
+      <discovery>2026-07-16</discovery>
+      <entry>2026-07-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5e1d97cf-4b04-48ae-9eb4-57a943d2d3ea">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>150.0.7871.124</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>150.0.7871.124</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/07/stable-channel-update-for-desktop_0353146366.html">
+	 <p>This update includes 15 security fixes:</p>
+	 <ul>
+	    <li>[517100492] Critical CVE-2026-15764: Use after free in Ozone.</li>
+	    <li>[518007484] Critical CVE-2026-15765: Use after free in Ozone.</li>
+	    <li>[514010477] High CVE-2026-15766: Uninitialized Use in Skia.</li>
+	    <li>[514748734] High CVE-2026-15767: Heap buffer overflow in libyuv.</li>
+	    <li>[517931625] High CVE-2026-15768: Insufficient policy enforcement in HTML-in-Canvas.</li>
+	    <li>[519731111] High CVE-2026-15769: Insufficient validation of untrusted input in Linux Toolkit Theming.</li>
+	    <li>[524792614] High CVE-2026-15770: Uninitialized Use in V8.</li>
+	    <li>[525177160] High CVE-2026-15771: Insufficient validation of untrusted input in Media.</li>
+	    <li>[525317502] High CVE-2026-15772: Use after free in GPU.</li>
+	    <li>[527676561] High CVE-2026-15773: Use after free in Core.</li>
+	    <li>[530646115] High CVE-2026-15774: Use after free in Skia.</li>
+	    <li>[531319201] High CVE-2026-15775: Insufficient policy enforcement in V8.</li>
+	    <li>[532595489] High CVE-2026-15776: Type Confusion in V8.</li>
+	    <li>[532929679] High CVE-2026-15777: Use after free in UI.</li>
+	    <li>[513795122] Medium CVE-2026-15778: Insufficient validation of untrusted input in Navigation.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-15764</cvename>
+      <cvename>CVE-2026-15765</cvename>
+      <cvename>CVE-2026-15766</cvename>
+      <cvename>CVE-2026-15767</cvename>
+      <cvename>CVE-2026-15768</cvename>
+      <cvename>CVE-2026-15769</cvename>
+      <cvename>CVE-2026-15770</cvename>
+      <cvename>CVE-2026-15771</cvename>
+      <cvename>CVE-2026-15772</cvename>
+      <cvename>CVE-2026-15773</cvename>
+      <cvename>CVE-2026-15774</cvename>
+      <cvename>CVE-2026-15775</cvename>
+      <cvename>CVE-2026-15776</cvename>
+      <cvename>CVE-2026-15777</cvename>
+      <cvename>CVE-2026-15778</cvename>
+      <url>https://chromereleases.googleblog.com/2026/07/stable-channel-update-for-desktop_0353146366.html</url>
+    </references>
+    <dates>
+      <discovery>2026-07-14</discovery>
+      <entry>2026-07-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="35a830f6-8aab-11f1-a744-b42e991fc52e">
     <topic>GoLand -- Multiple vulnerabilities</topic>
     <affects>
