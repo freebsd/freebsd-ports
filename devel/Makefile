@@ -908,6 +908,7 @@
     SUBDIR += gitu
     SUBDIR += gitui
     SUBDIR += glab
+    SUBDIR += glab-tui
     SUBDIR += glade
     SUBDIR += glaze
     SUBDIR += glib20
