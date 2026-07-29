@@ -119,8 +119,6 @@ CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 WHEEL_TAG=	${:!uname -rm | sed -e 's/[.-]/_/g' -e 's/ /_/g' -e 's/^/freebsd_/' | tr '[:upper:]' '[:lower:]'!}
 PLIST_SUB+=	WHEEL_TAG=${WHEEL_TAG}
 
-#MAKE_JOBS_UNSAFE= 	yes
-
 # The cmake build generates CMakeLists.txt files in the source tree (at configure
 # time) that are listed as cmake RERUN_CMAKE dependencies. cmake uses
 # copy-if-different when writing build.ninja, so build.ninja keeps its old mtime
