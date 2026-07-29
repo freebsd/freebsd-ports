@@ -14,7 +14,7 @@ BUILD_DEPENDS=	boost-libs>1.52:devel/boost-libs \
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libngspice.so:cad/ngspice_rework@shlib \
 		libpolyclipping.so:graphics/polyclipping \
-		libquazip1-qt6.so:archivers/quazip@qt6
+		libquazip1-qt6.so:archivers/quazip
 
 USES=		compiler:c++17-lang desktop-file-utils gl gmake pkgconfig \
 		qmake qt:6 shared-mime-info ssl xorg

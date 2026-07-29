@@ -14,7 +14,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libpoppler.so:graphics/poppler \
 		libpoppler-cpp.so:graphics/poppler \
-		libquazip1-qt6.so:archivers/quazip@qt6 \
+		libquazip1-qt6.so:archivers/quazip \
 		libswresample.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg
 

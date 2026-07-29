@@ -13,7 +13,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
 		libopencv_core.so:graphics/opencv \
 		libopencv_imgproc.so:graphics/opencv \
-		libquazip1-qt6.so:archivers/quazip@qt6
+		libquazip1-qt6.so:archivers/quazip
 
 USES=		cmake compiler:c++17-lang cpe desktop-file-utils dos2unix gl \
 		kde:6 pkgconfig qt:6

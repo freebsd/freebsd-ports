@@ -13,7 +13,7 @@ BROKEN_armv6=	fails to compile: error: no member named mc_eip in __mcontext
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt6.so:graphics/poppler-qt6 \
-		libquazip1-qt6.so:archivers/quazip@qt6
+		libquazip1-qt6.so:archivers/quazip
 
 USES=		cmake compiler:c++20-lang desktop-file-utils dos2unix \
 		ghostscript:run gl pkgconfig qt:6 tex xorg

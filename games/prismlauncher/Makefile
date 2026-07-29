@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libqrencode.so:graphics/libqrencode \
-		libquazip1-qt6.so:archivers/quazip@qt6 \
+		libquazip1-qt6.so:archivers/quazip \
 		libtomlplusplus.so:devel/tomlplusplus
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		lwjgl3>0:games/lwjgl3 \

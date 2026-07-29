@@ -36,7 +36,7 @@ LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt6.so:graphics/poppler-qt6 \
-		libquazip1-qt6.so:archivers/quazip@qt6 \
+		libquazip1-qt6.so:archivers/quazip \
 		libtiff.so:graphics/tiff \
 		libturbojpeg.so:graphics/libjpeg-turbo \
 		libunibreak.so:textproc/libunibreak \

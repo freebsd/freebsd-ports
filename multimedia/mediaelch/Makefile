@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo	\
 		libcurl.so:ftp/curl			\
-		libquazip1-qt6.so:archivers/quazip@qt6
+		libquazip1-qt6.so:archivers/quazip
 
 USES=		cmake gl localbase:ldflags qt:6
 
