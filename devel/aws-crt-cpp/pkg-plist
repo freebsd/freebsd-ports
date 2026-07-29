@@ -42,6 +42,7 @@ include/aws/crt/io/SocketOptions.h
 include/aws/crt/io/Stream.h
 include/aws/crt/io/TlsOptions.h
 include/aws/crt/io/Uri.h
+include/aws/crt/mqtt/IoTSDKMetrics.h
 include/aws/crt/mqtt/Mqtt5Client.h
 include/aws/crt/mqtt/Mqtt5Packets.h
 include/aws/crt/mqtt/Mqtt5Types.h
