@@ -1,19 +1,20 @@
 PORTNAME=	stalwart
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.5
-PORTREVISION=	5
+DISTVERSION=	0.16.15
 CATEGORIES=	mail
 
 MAINTAINER=	orville@anislet.dev
 COMMENT=	Stalwart Mail Server
 WWW=		https://stalw.art/
 
-LICENSE=		AGPLv3 SELv1
+LICENSE=		AGPLv3 SELv2
 LICENSE_COMB=		multi
-LICENSE_NAME_SELv1=	Stalwart Enterprise License 1.0
+LICENSE_NAME_SELv2=	Stalwart Enterprise License 2.0
 LICENSE_FILE_AGPLv3=	${WRKSRC}/LICENSES/AGPL-3.0-only.txt
-LICENSE_FILE_SELv1=	${WRKSRC}/LICENSES/LicenseRef-SEL.txt
-LICENSE_PERMS_SELv1=	pkg-mirror auto-accept
+LICENSE_FILE_SELv2=	${WRKSRC}/LICENSES/LicenseRef-SEL.txt
+LICENSE_PERMS_SELv2=	pkg-mirror auto-accept
+
+BROKEN_i386=	rustc-LLVM ERROR: out of memory
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
@@ -21,7 +22,6 @@ USES=		cpe cargo
 CPE_VENDOR=	stalw
 USE_GITHUB=	yes
 GH_ACCOUNT=	stalwartlabs
-GH_PROJECT=	stalwart
 USE_RC_SUBR=	stalwart
 
 SUB_LIST=	USERS=${USERS} \
@@ -29,7 +29,7 @@ SUB_LIST=	USERS=${USERS} \
 
 CARGO_FEATURES=	--no-default-features
 
-CARGO_INSTALL_PATH=	crates/main crates/cli
+CARGO_INSTALL_PATH=	crates/main
 
 OPTIONS_DEFINE=		ENTERPRISE
 OPTIONS_DEFAULT=	SQLITE POSTGRES MYSQL ROCKSDB S3 REDIS
@@ -60,8 +60,8 @@ FOUNDATIONDB_VARS=	CARGO_FEATURES+=foundationdb
 MYSQL_VARS=		CARGO_FEATURES+=mysql
 POSTGRES_VARS=		CARGO_FEATURES+=postgres
 REDIS_VARS=		CARGO_FEATURES+=redis
-ROCKSDB_BUILD_DEPENDS=	${LOCALBASE}/llvm21/lib/libclang.so:devel/llvm21
 ROCKSDB_LIB_DEPENDS=	librocksdb.so:databases/rocksdb
+ROCKSDB_USES=		llvm:21
 ROCKSDB_VARS=		CARGO_FEATURES+=rocks
 S3_VARS=		CARGO_FEATURES+=s3
 SQLITE_VARS=		CARGO_FEATURES+=sqlite
@@ -73,10 +73,8 @@ GROUPS=	stalwart
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/resources/config/config.toml \
-		${STAGEDIR}${ETCDIR}/config.toml.sample
-
 	@${MKDIR} ${STAGEDIR}/var/db/stalwart
 	@${MKDIR} ${STAGEDIR}/var/db/stalwart/data
+	@${MKDIR} ${STAGEDIR}/var/log/stalwart
 
 .include <bsd.port.mk>
