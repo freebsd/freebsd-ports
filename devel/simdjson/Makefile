@@ -1,7 +1,7 @@
 PORTNAME=	simdjson
 DISTVERSIONPREFIX=	v
-PORTVERSION=	4.6.4
-CATEGORIES=	devel
+PORTVERSION=	4.6.5
+CATEGORIES=	devel textproc
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Parsing gigabytes of JSON per second
