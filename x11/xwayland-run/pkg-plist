@@ -4,7 +4,9 @@ bin/xwfb-run
 %%PYTHON_SITELIBDIR%%/wlheadless/__init__.py
 %%PYTHON_SITELIBDIR%%/wlheadless/cage.py
 %%PYTHON_SITELIBDIR%%/wlheadless/gnome-kiosk.py
+%%PYTHON_SITELIBDIR%%/wlheadless/kwin.py
 %%PYTHON_SITELIBDIR%%/wlheadless/mutter.py
+%%PYTHON_SITELIBDIR%%/wlheadless/phoc.py
 %%PYTHON_SITELIBDIR%%/wlheadless/weston.py
 %%PYTHON_SITELIBDIR%%/wlheadless/wlheadless_common.py
 %%PYTHON_SITELIBDIR%%/wlheadless/xwayland.py
