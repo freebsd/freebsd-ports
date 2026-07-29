@@ -11,6 +11,8 @@ WWW=		https://users.wfu.edu/natalie/papers/pwpaw/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		compilation fails: Fatal Error: Cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
+
 USES=		blaslapack:openblas fortran gmake libtool
 MAKE_JOBS_UNSAFE=yes
 GNU_CONFIGURE=	yes
