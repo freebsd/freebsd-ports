@@ -5514,3 +5514,5 @@ net/jicmp6||2026-07-28|Has expired: several years behind on upstream, no maintai
 net/jicmp||2026-07-28|Has expired: several years behind on upstream, no maintainer, moved to https://github.com/OpenNMS/jicmp
 java/sqlitejdbc|databases/sqlite-jdbc|2026-07-28|Has expired: Dead old upstream, replaced by databases/sqlite-jdbc
 benchmarks/py-zopkio||2026-07-28|Has expired: Upstream last activity was in 2016, and the project has been moved to the LinkedInAttic GitHub account
+archivers/quazip@qt5||2026-07-29|Unflavorize, remove Qt5 flavor
+archivers/quazip@qt6|archivers/quazip|2026-07-29|Unflavorize
