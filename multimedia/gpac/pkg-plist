@@ -44,6 +44,7 @@ include/gpac/internal/odf_parse_common.h
 include/gpac/internal/ogg.h
 include/gpac/internal/reedsolomon.h
 include/gpac/internal/scenegraph_dev.h
+include/gpac/internal/scte35.h
 include/gpac/internal/swf_dev.h
 include/gpac/internal/vobsub.h
 include/gpac/iso639.h
@@ -91,7 +92,7 @@ include/gpac/xml.h
 lib/gpac/gm_validator.so
 lib/libgpac.so
 lib/libgpac.so.16
-lib/libgpac.so.16.5.0
+lib/libgpac.so.16.21.0
 lib/libgpac_static.a
 %%ALSA%%lib/gpac/gm_alsa.so
 %%JACK%%lib/gpac/gm_jack.so
@@ -200,6 +201,8 @@ libdata/pkgconfig/gpac.pc
 %%DATADIR%%/res/gpac.png
 %%DATADIR%%/res/gpac_cfg_test.mp4
 %%DATADIR%%/res/gpac_highres.png
+%%DATADIR%%/res/gpac_ng.png
+%%DATADIR%%/res/gpac_ng.svg
 %%DATADIR%%/rmtws/index.html
 %%DATADIR%%/rmtws/jsrmt.js
 %%DATADIR%%/rmtws/nodermt.js
