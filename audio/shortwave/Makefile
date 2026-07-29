@@ -1,6 +1,6 @@
 PORTNAME=	shortwave
 DISTVERSION=	5.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	decke@FreeBSD.org
@@ -31,10 +31,5 @@ OPTIONS_DEFINE=	PULSEAUDIO
 OPTIONS_DEFAULT=PULSEAUDIO
 
 PULSEAUDIO_USE=	GSTREAMER=pulse
-
-post-patch:
-	@${REINPLACE_CMD} -e '/gstreamer.*bad/d' \
-		-e "/vcs_tag/s/=.*/= '${DISTVERSIONFULL}'/" \
-		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
