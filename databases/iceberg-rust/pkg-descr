@@ -1,1 +1,6 @@
 iceberg-rust is a Rust implementation of Apache Iceberg.
+
+Apache Iceberg is a high-performance, open-source table format for massive
+analytic datasets that brings SQL table reliability and ACID transactions
+to cloud object storage. It features hidden partitioning, schema evolution,
+and time travel.
