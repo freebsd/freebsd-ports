@@ -743,6 +743,7 @@
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
     SUBDIR += stalwart
+    SUBDIR += stalwart-cli
     SUBDIR += surblhost
     SUBDIR += swaks
     SUBDIR += sylpheed

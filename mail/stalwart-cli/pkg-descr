@@ -1,0 +1,3 @@
+stalwart-cli is the command line interface tool for managing a
+Stalwart Mail Server installation. It interacts with the server's
+JMAP-based administration API.
