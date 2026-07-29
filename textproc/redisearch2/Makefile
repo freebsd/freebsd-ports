@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.8
+DISTVERSION=	2.10.9
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:R}
 
@@ -42,8 +42,6 @@ CXXFLAGS+=	-Wno-vla-cxx-extension -fPIC -I${LOCALBASE}/include/cpu_features
 LDFLAGS+=      -lcpu_features
 
 post-patch:
-	#@${REINPLACE_CMD} -e '/conan_toolchain.cmake/d' \
-	#	${WRKSRC}/src/geometry/CMakeLists.txt
 	${ECHO_CMD} "find_package(CpuFeatures REQUIRED)" > ${WRKSRC}/deps/VectorSimilarity/cmake/cpu_features.cmake
 
 do-install:
