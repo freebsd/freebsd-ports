@@ -132,6 +132,7 @@ share/icons/hicolor/scalable/apps/org.xfce.panel.windowmenu.svg
 %%NLS%%share/locale/am/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/az/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/xfce4-panel.mo
@@ -162,6 +163,7 @@ share/icons/hicolor/scalable/apps/org.xfce.panel.windowmenu.svg
 %%NLS%%share/locale/ka/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/lo/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/xfce4-panel.mo
