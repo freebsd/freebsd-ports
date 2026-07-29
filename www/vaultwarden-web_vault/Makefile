@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 # Ugly hack to prevent confusion "build" as "beta"
 # 2025.12.1 > 2025.12.1+b3/2025.12.1+build.3
 # Comment out BW_WEB_BUILD when no build suffix is needed
-BW_WEB_VERSION=	2026.4.1
+BW_WEB_VERSION=	2026.6.4
 #BW_WEB_BUILD=   +build.3
 
 WRKSRC=		${WRKDIR}/web-vault
