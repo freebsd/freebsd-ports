@@ -1,5 +1,5 @@
 PORTNAME=	rpi-firmware
-PORTVERSION=	1.20230405.g20230405
+PORTVERSION=	1.20260521.g20260521
 CATEGORIES=	sysutils
 
 MAINTAINER=	uboot@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	raspberrypi freebsd:pscimon
 GH_PROJECT=	firmware rpi3-psci-monitor:pscimon
-FW_TAG=		055e044
+FW_TAG=		09267f5
 PSCI_TAG=	558620c
 GH_TAGNAME=	${FW_TAG} ${PSCI_TAG}:pscimon
 
@@ -41,6 +41,8 @@ post-patch:
 	${RM} ${WRKSRC}/boot/kernel7.img
 	${RM} ${WRKSRC}/boot/kernel7l.img
 	${RM} ${WRKSRC}/boot/kernel8.img
+	${RM} ${WRKSRC}/boot/kernel8_rt.img
+	${RM} ${WRKSRC}/boot/kernel_2712.img
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${INSTALL_DIR}
