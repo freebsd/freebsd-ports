@@ -1,0 +1,8 @@
+netcode is a C library implementing a secure client/server connection
+protocol over UDP, designed for real-time multiplayer games. Clients
+authenticate with short-lived connect tokens issued by a trusted
+backend, and all packets are encrypted and authenticated with
+libsodium. Unauthenticated traffic is rejected before any per-client
+state is allocated.
+
+It is the transport layer used by the yojimbo network library.
