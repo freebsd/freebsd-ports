@@ -1,0 +1,52 @@
+--- src/CMakeLists.txt	2021-11-21 08:31:43.000000000 -0500
++++ src/CMakeLists.txt	2024-01-08 16:26:18.691451000 -0500
+@@ -344,5 +344,7 @@
+ enable_testing()
+ add_test(NAME libtest COMMAND libtest dummy.flif)
++if(BUILD_STATIC_LIBS)
+ add_test(NAME libtest_static COMMAND libtest_static dummy.flif)
++endif(BUILD_STATIC_LIBS)
+ 
+ if(UNIX)
+--- tools/test-roundtrip_anim.sh	2021-11-21 08:31:43.000000000 -0500
++++ tools/test-roundtrip_anim.sh	2024-01-08 16:31:04.059054000 -0500
+@@ -1,10 +1,10 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # compare $1 (base name without .png extension, could be multiple frames) one by one to the rest of the arguments
+-function check {
++check () {
+         one=$1*.png
+         for c in $one
+         do
+-                    if [[ $(compare -metric mepp $c $2 null: 2>&1) == "0 (0, 0)" ]]
++                    if [ "$(compare -metric mepp $c $2 null: 2>&1)" = "0 (0, 0)" ]
+                     then
+                       #echo "OK-compare (identical decoded images)"
+@@ -22,7 +22,7 @@
+ set -ex
+ 
+-FLIF=$1
+-IN=$2
+-OUTF=$3
++FLIF=./flif
++IN=$1
++OUTF=$2
+ 
+ runtest() {
+--- tools/test-roundtrip.sh	2021-11-21 08:31:43.000000000 -0500
++++ tools/test-roundtrip.sh	2024-01-08 17:20:08.287375000 -0500
+@@ -3,8 +3,8 @@
+ set -ex
+ 
+-FLIF=$1
+-IN=$2
+-OUTF=$3
+-OUTP=$4
++FLIF=./flif
++IN=$1
++OUTF=$2
++OUTP=$3
+ 
+ runtest() {

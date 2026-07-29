@@ -5,13 +5,14 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Free Lossless Image Format
-WWW=		https://flif.info/
+WWW=		https://flif.info/ \
+		https://github.com/FLIF-hub/FLIF
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/../LICENSE_Apache2
+LICENSE_FILE=	${WRKSRC:H}/LICENSE_Apache2
 
-LIB_DEPENDS=	libinotify.so:devel/libinotify \
-		libpng.so:graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png
+TEST_DEPENDS=	convert:graphics/ImageMagick7
 
 USES=		cmake compiler:c++11-lang cpe gettext-runtime gnome localbase:ldflags pkgconfig sdl shared-mime-info
 USE_GNOME=	gdkpixbuf glib20
@@ -24,6 +25,9 @@ GH_PROJECT=	FLIF
 
 CMAKE_OFF=	BUILD_STATIC_LIBS
 
+TEST_TARGET=	test
+
 WRKSRC_SUBDIR=	src
+PATCH_WRKSRC=	${WRKSRC:H}
 
 .include <bsd.port.mk>
