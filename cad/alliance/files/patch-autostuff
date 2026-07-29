@@ -1,6 +1,6 @@
---- autostuff.orig	2019-09-30 12:32:32 UTC
+--- autostuff.orig	2022-01-13 11:37:28 UTC
 +++ autostuff
-@@ -237,12 +237,6 @@ XM_LIBS=""
+@@ -246,12 +246,6 @@ then
  XP_LIBS=""
  if test "$motif_includes" != "no" && test "$motif_libraries" != "no"
  then
