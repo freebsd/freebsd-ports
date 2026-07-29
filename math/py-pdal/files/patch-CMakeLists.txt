@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2026-07-29 20:00:00 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.11.0)
++cmake_minimum_required(VERSION 3.15.0)
+ project(pdal-python VERSION ${SKBUILD_PROJECT_VERSION}
+                     DESCRIPTION "PDAL Python bindings"
+                     HOMEPAGE_URL "https://github.com/PDAL/Python")

@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2024-08-29 06:50:13 UTC
+--- pyproject.toml.orig	2022-11-09 12:37:21 UTC
 +++ pyproject.toml
 @@ -48,7 +48,7 @@ changelog = "https://github.com/PDAL/python/blob/main/
  changelog = "https://github.com/PDAL/python/blob/main/README.rst"
@@ -9,3 +9,11 @@
  build-backend = "scikit_build_core.build"
  
  
+@@ -61,7 +61,6 @@ sdist.include = [
+   "src",
+   "CMakeLists.txt"
+ ]
+-cmake.verbose = false
+ logging.level = "ERROR"
+ 
+ [tool.scikit-build.metadata.version]
