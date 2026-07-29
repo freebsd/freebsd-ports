@@ -4,6 +4,7 @@ bin/chdig
 bin/chl
 bin/clickhouse
 bin/clickhouse-benchmark
+bin/clickhouse-oom-canary
 bin/clickhouse-chdig
 bin/clickhouse-check-marks
 bin/clickhouse-checksum-for-compressed-block
