@@ -1,6 +1,6 @@
 PORTNAME=	cryptol
 DISTVERSION=	3.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
