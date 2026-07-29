@@ -39,6 +39,12 @@ IVERILOG_RUN_DEPENDS=	iverilog:cad/iverilog
 VERILATOR_DESC=		Verilator dependency
 VERILATOR_RUN_DEPENDS=	verilator:cad/verilator
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1500000
+BROKEN_i386=	error: "don't know how to determine endian-ness on this machine!"
+.endif
+
 post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/simulator${PYTHON_TAG}.so \
@@ -48,4 +54,4 @@ post-install:
 do-test: # some tests fail, see https://github.com/cocotb/cocotb/issues/3236, https://github.com/cocotb/cocotb/issues/3435
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${GMAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
