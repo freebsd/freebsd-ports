@@ -1,5 +1,5 @@
 PORTNAME=	klayout
-DISTVERSION=	0.30.9
+DISTVERSION=	0.30.10
 CATEGORIES=	cad
 MASTER_SITES=	https://www.klayout.org/downloads/source/
 
