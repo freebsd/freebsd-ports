@@ -598,6 +598,7 @@
     SUBDIR += pgtop
     SUBDIR += pguri
     SUBDIR += pgvector
+    SUBDIR += php-memvector
     SUBDIR += php-tarantool
     SUBDIR += php-xapian
     SUBDIR += php82-dba

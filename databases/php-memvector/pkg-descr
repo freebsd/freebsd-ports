@@ -1,0 +1,8 @@
+Local Vector API, Storage & Embedding Engine for PHP
+
+A high-performance PHP extension that brings local AI infrastructure and AI API
+to PHP developers and optimized for AI workload. Vector similarity search,
+text embedding, and cross-encoder reranking - all running directly in
+your PHP process. Built in C++17 with AVX2 SIMD acceleration. No external
+vector database, no embedding API, no network round-trips. Embed, store,
+search, and rerank in under 10 ms.
