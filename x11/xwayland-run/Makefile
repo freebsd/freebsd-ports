@@ -1,6 +1,6 @@
 PORTNAME=	xwayland-run
 PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -10,7 +10,8 @@ WWW=		https://gitlab.freedesktop.org/ofourdan/xwayland-run
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	cage>0:x11-wm/cage
+RUN_DEPENDS=	cage>0:x11-wm/cage \
+		xauth:x11/xauth
 
 USES=		meson pkgconfig python shebangfix tar:xz
 
