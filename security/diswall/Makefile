@@ -12,6 +12,8 @@ WWW=		https://diswall.stream \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	ld: error: undefined symbol: __atomic_compare_exchange
+
 BUILD_DEPENDS=	gmake:devel/gmake
 
 USES=		cargo perl5 sqlite
