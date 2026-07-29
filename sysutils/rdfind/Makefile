@@ -16,6 +16,14 @@ USES=		autoreconf localbase:ldflags
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
+OPTIONS_DEFINE=	XXHASH
+OPTIONS_DEFAULT=XXHASH
+
+XXHASH_DESC=		Enable support for faster xxhash128 checksum
+XXHASH_BUILD_DEPENDS=	xxhash>0:devel/xxhash
+XXHASH_RUN_DEPENDS=	xxhash>0:devel/xxhash
+XXHASH_CONFIGURE_WITH=	xxhash
+
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
 
