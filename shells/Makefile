@@ -26,6 +26,7 @@
     SUBDIR += heirloom-sh
     SUBDIR += ibsh
     SUBDIR += ion
+    SUBDIR += iris
     SUBDIR += jailkit
     SUBDIR += klish
     SUBDIR += ksh

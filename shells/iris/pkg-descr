@@ -1,0 +1,13 @@
+IRIS is built on top of TTY, so it runs everywhere. It just needs a
+terminal!
+
+Run iris wherever you already work; your local machine, a remote
+server, or anywhere you can ssh. Each suggestion menu renders directly
+inline inside your real terminal session, not an app's imitation of
+one, so it never breaks full-screen TUIs or terminal
+formatting. Automatically index your aliases and shell history to
+suggest commands that match your actual workflow in real time. Change
+configurations and propagate them instantly without restarting your
+shell. One single local native Go binary, not an app: no gui, no
+electron, no mac-only wrapper, no account, no telemetry. (if you've
+used fig: it's that, rebuilt to run purely on TTY)
