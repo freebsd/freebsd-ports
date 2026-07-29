@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2026-07-01 06:24:19 UTC
+--- v8/BUILD.gn.orig	2026-08-12 09:02:10 UTC
 +++ v8/BUILD.gn
-@@ -1047,6 +1047,8 @@ external_v8_defines = [
+@@ -1052,6 +1052,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
    "V8_TARGET_OS_WIN",
    "V8_TARGET_OS_CHROMEOS",
@@ -9,7 +9,7 @@
    "V8_TARGET_ARCH_ARM64",
    "V8_TARGET_ARCH_PPC64",
    "V8_TARGET_ARCH_MIPS64",
-@@ -1131,6 +1133,12 @@ if (target_os == "android") {
+@@ -1139,6 +1141,12 @@ if (target_os == "android") {
  } else if (target_os == "chromeos") {
    enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
    enabled_external_v8_defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -22,7 +22,7 @@
  }
  
  # Some V8_TARGET_ARCH_ defines that affect Api constants (see usages of
-@@ -1806,7 +1814,7 @@ config("toolchain") {
+@@ -1824,7 +1832,7 @@ config("toolchain") {
      # don't block compiler updates in Chromium. We'll resolve these when
      # rolling the compiler update into V8 instead.
      if (!build_with_chromium && v8_current_cpu != "ppc64" &&
@@ -31,7 +31,7 @@
        cflags += [ "-Wlifetime-safety-permissive" ]
      }
  
-@@ -1909,9 +1917,6 @@ config("strict_warnings") {
+@@ -1927,9 +1935,6 @@ config("strict_warnings") {
        cflags += [ "-Wshorten-64-to-32" ]
      }
      cflags += [ "-Wmissing-field-initializers" ]
@@ -41,7 +41,7 @@
    }
  }
  
-@@ -2837,6 +2842,12 @@ template("run_mksnapshot") {
+@@ -2856,6 +2861,12 @@ template("run_mksnapshot") {
        if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
          args += [ "--reorder-builtins" ]
        }
@@ -54,7 +54,7 @@
      }
  
      # This is needed to distinguish between generating code for the simulator
-@@ -7286,7 +7297,7 @@ v8_component("v8_libbase") {
+@@ -7321,7 +7332,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -63,7 +63,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -7297,6 +7308,18 @@ v8_component("v8_libbase") {
+@@ -7332,6 +7343,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

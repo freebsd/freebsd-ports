@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/layout/browser_view_tabbed_layout_impl.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/ui/views/frame/layout/browser_view_tabbed_layout_impl.cc.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/ui/views/frame/layout/browser_view_tabbed_layout_impl.cc
-@@ -250,7 +250,7 @@ int BrowserViewTabbedLayoutImpl::GetHorizontalTabStrip
+@@ -254,7 +254,7 @@ int BrowserViewTabbedLayoutImpl::GetHorizontalTabStrip
  }
  
  bool BrowserViewTabbedLayoutImpl::AvoidCrackingForFractionalDisplay() const {

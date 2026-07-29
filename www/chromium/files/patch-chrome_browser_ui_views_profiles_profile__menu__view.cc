@@ -1,15 +1,15 @@
---- chrome/browser/ui/views/profiles/profile_menu_view.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/ui/views/profiles/profile_menu_view.cc.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/ui/views/profiles/profile_menu_view.cc
-@@ -110,7 +110,7 @@
- #include "ui/views/accessibility/view_accessibility.h"
- #include "ui/views/widget/widget.h"
+@@ -119,7 +119,7 @@
+ #include "chrome/browser/signin/cross_device_signin_promo_manager.h"
+ #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
  
-@@ -593,7 +593,7 @@ void ProfileMenuView::SetMenuTitleForAccessibility() {
+@@ -603,7 +603,7 @@ void ProfileMenuView::SetMenuTitleForAccessibility() {
      case signin_util::SignedInState::kSignedOut:
      case signin_util::SignedInState::kWebOnlySignedIn: {
        std::string profile_user_display_name, profile_user_email;

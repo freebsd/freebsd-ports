@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/web_applications/test/os_integration_test_override_impl.cc
 @@ -49,7 +49,7 @@
  #include "testing/gtest/include/gtest/gtest.h"
@@ -63,7 +63,7 @@
    WebAppProvider* provider = WebAppProvider::GetForLocalAppsUnchecked(profile);
    if (!provider) {
      return std::nullopt;
-@@ -543,7 +543,7 @@ base::FilePath OsIntegrationTestOverrideImpl::GetShort
+@@ -544,7 +544,7 @@ base::FilePath OsIntegrationTestOverrideImpl::GetShort
        return bundle.bundle_path();
      }
    }
@@ -72,7 +72,7 @@
    std::string shortcut_filename =
        "chrome-" + app_id + "-" + profile->GetBaseName().value() + ".desktop";
    base::i18n::ReplaceIllegalCharactersInPath(&shortcut_filename, '_');
-@@ -570,7 +570,7 @@ bool OsIntegrationTestOverrideImpl::IsShortcutCreated(
+@@ -571,7 +571,7 @@ bool OsIntegrationTestOverrideImpl::IsShortcutCreated(
    base::FilePath app_shortcut_path =
        GetShortcutPath(profile, chrome_apps_folder(), app_id, app_name);
    return base::PathExists(app_shortcut_path);
@@ -81,7 +81,7 @@
    base::FilePath desktop_shortcut_path =
        GetShortcutPath(profile, desktop(), app_id, app_name);
    return base::PathExists(desktop_shortcut_path);
-@@ -784,7 +784,7 @@ void OsIntegrationTestOverrideImpl::EnableOrDisablePat
+@@ -785,7 +785,7 @@ void OsIntegrationTestOverrideImpl::EnableOrDisablePat
  }
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -90,7 +90,7 @@
  base::FilePath OsIntegrationTestOverrideImpl::desktop() {
    return desktop_.GetPath();
  }
-@@ -835,7 +835,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
+@@ -836,7 +836,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
    success = chrome_apps_folder_.CreateUniqueTempDirUnderPath(
        outer_temp_dir_.GetPath());
    CHECK(success);
@@ -99,7 +99,7 @@
    success = desktop_.CreateUniqueTempDirUnderPath(outer_temp_dir_.GetPath());
    CHECK(success);
    success = startup_.CreateUniqueTempDirUnderPath(outer_temp_dir_.GetPath());
-@@ -848,7 +848,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
+@@ -849,7 +849,7 @@ OsIntegrationTestOverrideImpl::OsIntegrationTestOverri
    CHECK(success);
  #endif
  
@@ -108,7 +108,7 @@
    auto callback = base::BindRepeating([](base::FilePath filename_in,
                                           std::string xdg_command,
                                           std::string file_contents) {
-@@ -920,7 +920,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
+@@ -921,7 +921,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
    EXPECT_TRUE(!startup_.IsValid() || startup_.Delete());
  #elif BUILDFLAG(IS_MAC)
    EXPECT_TRUE(!chrome_apps_folder_.IsValid() || DeleteChromeAppsDir());

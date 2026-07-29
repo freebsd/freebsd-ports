@@ -1,4 +1,4 @@
---- media/ffmpeg/scripts/build_ffmpeg.py.orig	2026-05-07 17:02:56 UTC
+--- media/ffmpeg/scripts/build_ffmpeg.py.orig	2026-08-12 09:02:10 UTC
 +++ media/ffmpeg/scripts/build_ffmpeg.py
 @@ -33,7 +33,7 @@ NDK_ROOT_DIR = os.path.abspath(
  SUCCESS_TOKEN = 'THIS_BUILD_WORKED'
@@ -36,7 +36,7 @@
          pre_make_rewrites += [
              (r'(#define HAVE_SYSCTL [01])',
               r'#define HAVE_SYSCTL 0 /* \1 -- forced to 0 for Fuchsia */'),
-@@ -598,7 +600,7 @@ def main(argv):
+@@ -604,7 +606,7 @@ def main(argv):
      configure_args = args[2:]
  
      if target_os not in ('android', 'linux', 'linux-noasm', 'mac', 'win',
@@ -45,7 +45,15 @@
          parser.print_help()
          return 1
  
-@@ -712,7 +714,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -678,7 +680,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+         '--disable-faan',
+         '--disable-alsa',
+         '--disable-iamf',
+-        '--disable-checkasm',
+ 
+ 
+         # Disable automatically detected external libraries. This prevents
+@@ -720,7 +721,7 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
              '--optflags="-O2"',
          ])
  
@@ -54,7 +62,7 @@
          if target_arch == 'x64':
              if target_os == 'android':
                  configure_flags['Common'].extend([
-@@ -808,9 +810,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
+@@ -816,9 +817,6 @@ def ConfigureAndBuild(target_arch, target_os, host_os,
  
                  configure_flags['Common'].extend([
                      '--target-os=linux',

@@ -1,6 +1,6 @@
---- chrome/browser/extensions/component_extensions_allowlist/allowlist.cc.orig	2026-06-04 10:12:25 UTC
+--- chrome/browser/extensions/component_extensions_allowlist/allowlist.cc.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/extensions/component_extensions_allowlist/allowlist.cc
-@@ -53,7 +53,7 @@ bool IsComponentExtensionAllowlisted(const std::string
+@@ -55,7 +55,7 @@ bool IsComponentExtensionAllowlisted(const std::string
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // BUILDFLAG(IS_CHROMEOS)
        extension_misc::kReadingModeGDocsHelperExtensionId,

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/projects/projects_panel_thread_item_view.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/ui/views/tabs/projects/projects_panel_thread_item_view.cc.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/ui/views/tabs/projects/projects_panel_thread_item_view.cc
-@@ -117,7 +117,7 @@ void ProjectsPanelThreadItemView::OnMouseEntered(const
+@@ -114,7 +114,7 @@ void ProjectsPanelThreadItemView::OnMouseEntered(const
  }
  
  void ProjectsPanelThreadItemView::OnMouseExited(const ui::MouseEvent& event) {

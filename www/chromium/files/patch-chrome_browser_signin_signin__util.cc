@@ -1,6 +1,6 @@
---- chrome/browser/signin/signin_util.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/signin/signin_util.cc.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/signin/signin_util.cc
-@@ -49,7 +49,7 @@
+@@ -48,7 +48,7 @@
  #include "services/network/public/mojom/cookie_manager.mojom.h"
  #include "ui/base/l10n/l10n_util.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/dialogs/browser_dialogs.h"
  #include "components/strings/grit/components_strings.h"
  #include "ui/base/interaction/element_identifier.h"
-@@ -99,7 +99,7 @@ CookiesMover::CookiesMover(base::WeakPtr<Profile> sour
+@@ -98,7 +98,7 @@ CookiesMover::CookiesMover(base::WeakPtr<Profile> sour
  CookiesMover::~CookiesMover() = default;
  
  void CookiesMover::StartMovingCookies() {
@@ -18,7 +18,7 @@
    bool allow_cookies_to_be_moved = base::FeatureList::IsEnabled(
        profile_management::features::kThirdPartyProfileManagement);
  #else
-@@ -401,7 +401,7 @@ bool IsSyncingUserSelectableTypesAllowedByPolicy(
+@@ -400,7 +400,7 @@ bool IsSyncingUserSelectableTypesAllowedByPolicy(
    return true;
  }
  

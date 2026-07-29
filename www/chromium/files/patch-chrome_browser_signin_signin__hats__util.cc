@@ -1,4 +1,4 @@
---- chrome/browser/signin/signin_hats_util.cc.orig	2026-05-07 17:02:56 UTC
+--- chrome/browser/signin/signin_hats_util.cc.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/signin/signin_hats_util.cc
 @@ -45,7 +45,7 @@
  
@@ -9,7 +9,7 @@
  constexpr char kChannel[] = "Channel";
  constexpr char kChromeVersion[] = "Chrome Version";
  constexpr char kNumberOfChromeProfiles[] = "Number of Chrome Profiles";
-@@ -224,7 +224,7 @@ void LaunchHatsSurveyForProfileInternal(
+@@ -231,7 +231,7 @@ void LaunchHatsSurveyForProfileInternal(
      Profile* profile,
      bool defer_if_no_browser,
      base::OnceCallback<SurveyStringData()> data_factory) {
@@ -18,7 +18,7 @@
    if (!profile || !IsSurveyEnabledForHatsTrigger(trigger)) {
      return;
    }
-@@ -270,7 +270,7 @@ void LaunchHatsSurveyForProfile(const std::string& tri
+@@ -277,7 +277,7 @@ void LaunchHatsSurveyForProfile(const std::string& tri
                                      access_point_for_data_type_promo) {
    LaunchHatsSurveyForProfileInternal(
        trigger, profile, defer_if_no_browser,
