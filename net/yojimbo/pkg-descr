@@ -1,0 +1,10 @@
+yojimbo is a C++ client/server network library for real-time
+multiplayer games. It provides cryptographically secure client
+authentication and encrypted packets (via netcode), reliable-ordered
+messages and data blocks (via reliable), a bitpacked message
+serialization system (via serialize), client slot management, and
+pluggable allocators that silo each client into its own heap.
+
+Encryption and authentication are on by default: clients connect with
+short-lived connect tokens issued by a trusted backend, so only
+authenticated clients can talk to the server.
