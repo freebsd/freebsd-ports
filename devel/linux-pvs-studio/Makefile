@@ -1,10 +1,10 @@
 PORTNAME=	pvs-studio
-PORTVERSION=	7.39
-DISTVERSIONSUFFIX=	.99307.684
+PORTVERSION=	7.43
+DISTVERSIONSUFFIX=	.107281.803
 CATEGORIES=	devel linux
 MASTER_SITES=	https://cdn.pvs-studio.com/
 PKGNAMEPREFIX=	linux-
-EXTRACT_SUFX=	-x86_64.rpm
+EXTRACT_SUFX=	-x86_64.tgz
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	PVS-Studio is a static analyzer tool for C, C++, C# and Java
@@ -26,11 +26,11 @@ NO_BUILD=	yes
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
 STRIP=
 
-PLIST_SUB+=	QT=${DISTVERSIONFULL:R:R}.99095.1484 VSCODE=${DISTVERSIONFULL:R:R}.99113
+PLIST_SUB+=	QT=${DISTVERSIONFULL:R:R}.107142.1505 VSCODE=${DISTVERSIONFULL:R:R}.107165
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/pvs-* ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/plog-* ${STAGEDIR}${PREFIX}/bin/
-	cd ${WRKDIR}/usr/lib && ${CP} -r pvs-studio ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/pvs-* ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/plog-* ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKDIR}/lib && ${CP} -r pvs-studio ${STAGEDIR}${PREFIX}/lib
 
 .include <bsd.port.mk>
