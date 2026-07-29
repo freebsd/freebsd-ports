@@ -1,15 +1,15 @@
 PORTNAME=	spirv-llvm-translator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
-DISTVERSION_llvm22=	22.1.4
-DISTVERSION_llvm21=	21.1.9
-DISTVERSION_llvm20=	20.1.15
-DISTVERSION_llvm19=	19.1.20
-DISTVERSION_llvm18=	18.1.25
-DISTVERSION_llvm17=	17.0.25
-DISTVERSION_llvm16=	16.0.26
-DISTVERSION_llvm15=	15.0.25
-DISTVERSION_llvm14=	14.0.25
+DISTVERSION_llvm22=	22.1.5
+DISTVERSION_llvm21=	21.1.10
+DISTVERSION_llvm20=	20.1.16
+DISTVERSION_llvm19=	19.1.21
+DISTVERSION_llvm18=	18.1.26
+DISTVERSION_llvm17=	17.0.26
+DISTVERSION_llvm16=	16.0.27
+DISTVERSION_llvm15=	15.0.26
+DISTVERSION_llvm14=	14.0.26
 DISTVERSION_llvm13=	13.0.5
 DISTVERSION_llvm12=	12.0.1
 CATEGORIES=	devel
@@ -37,7 +37,7 @@ GH_PROJECT=	SPIRV-LLVM-Translator
 .elif ${FLAVOR:U} == llvm13
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-411-gaa6cef1:headers/projects/SPIRV-Headers
 .else
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-474-g948a3b0:headers/projects/SPIRV-Headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-493-g575b651:headers/projects/SPIRV-Headers
 .endif
 DISTINFO_FILE=	${.CURDIR}/distinfo.${FLAVOR}
 PATCHDIR=	${.CURDIR}/files.${FLAVOR}
