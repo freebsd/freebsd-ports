@@ -109,7 +109,7 @@ LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
 MAKE_ENV+=	RUSTFLAGS="-L/usr/local/lib/gcc${GCC_DEFAULT}"
 .endif
 
-.if ${ARCH} != powerpc64le
+.if ${ARCH} != powerpc64le || (${ARCH} == powerpc64le && ${OSVERSION} >= 1600019)
 MAKE_ENV+=	RUST_BACKTRACE=1
 .endif
 
