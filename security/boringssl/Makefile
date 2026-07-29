@@ -1,5 +1,5 @@
 PORTNAME=	boringssl
-DISTVERSION=	0.20260713.0
+DISTVERSION=	0.20260728.0
 CATEGORIES=	security
 EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-${DISTVERSION}_GH0.tar.gz
 
@@ -40,7 +40,9 @@ DISTFILES+=	filippo.io/edwards25519/@v/v1.2.0.zip:gomods \
 		golang.org/x/crypto/@v/v0.52.0.zip:gomods \
 		golang.org/x/crypto/@v/v0.52.0.mod:gomods \
 		golang.org/x/sys/@v/v0.45.0.zip:gomods \
-		golang.org/x/sys/@v/v0.45.0.mod:gomods
+		golang.org/x/sys/@v/v0.45.0.mod:gomods \
+		golang.org/x/term/@v/v0.43.0.zip:gomods \
+		golang.org/x/term/@v/v0.43.0.mod:gomods
 .endif
 
 post-install:
