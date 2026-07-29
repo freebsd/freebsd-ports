@@ -10,6 +10,8 @@ WWW=		https://github.com/ouch-org/ouch
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error[E0080]: attempt to compute `16_usize - 20_usize`, which would overflow
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo llvm pkgconfig
