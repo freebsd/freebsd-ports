@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2026-07-01 06:24:19 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2026-07-29 11:06:49 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -32,7 +32,7 @@ bool IsOnDeviceStorageEnabled() {
  }
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  BASE_FEATURE(kEsbDownloadRowPromoFeature,
               "EsbDownloadRowPromo",
-@@ -932,7 +932,7 @@ BASE_FEATURE(kIPHiOSActiveDaysTrackingFeature,
+@@ -935,7 +935,7 @@ BASE_FEATURE(kIPHiOSActiveDaysTrackingFeature,
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
  BASE_FEATURE(kIPHAutofillAtMemoryFeature,
               "IPH_AutofillAtMemory",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -1005,7 +1005,7 @@ BASE_FEATURE(kIPHLauncherSearchHelpUiFeature,
+@@ -1008,7 +1008,7 @@ BASE_FEATURE(kIPHLauncherSearchHelpUiFeature,
               base::FEATURE_ENABLED_BY_DEFAULT);
  #endif
  

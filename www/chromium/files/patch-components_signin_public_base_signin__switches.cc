@@ -1,4 +1,4 @@
---- components/signin/public/base/signin_switches.cc.orig	2026-07-01 06:24:19 UTC
+--- components/signin/public/base/signin_switches.cc.orig	2026-07-29 11:06:49 UTC
 +++ components/signin/public/base/signin_switches.cc
 @@ -33,7 +33,7 @@ const char kForceFreFeatureShowcaseSteps[] = "force-fr
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
@@ -45,7 +45,7 @@
  BASE_FEATURE(kDisableU18FeedbackDesktop, base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -474,7 +474,7 @@ const base::FeatureParam<base::TimeDelta>
+@@ -481,7 +481,7 @@ const base::FeatureParam<base::TimeDelta>
          base::Hours(8)};
  #endif
  
@@ -54,7 +54,7 @@
  BASE_FEATURE(kFirstRunDesktopRefresh, base::FEATURE_DISABLED_BY_DEFAULT);
  BASE_FEATURE(kFirstRunDesktopChoiceScreenRefresh,
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -502,11 +502,11 @@ constexpr base::FeatureParam<FirstRunDesktopSignInProm
+@@ -509,11 +509,11 @@ constexpr base::FeatureParam<FirstRunDesktopSignInProm
          &kFirstRunDesktopSignInPromoVariations};
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
@@ -68,7 +68,7 @@
  BASE_FEATURE(kFirstRunDesktopRevamp, base::FEATURE_DISABLED_BY_DEFAULT);
  bool IsFirstRunDesktopRevampEnabled(bool is_in_search_engine_choice_region) {
    return IsFirstRunDesktopRefreshEnabled(is_in_search_engine_choice_region) &&
-@@ -573,12 +573,12 @@ BASE_FEATURE(kNoAccountWebSignin, base::FEATURE_DISABL
+@@ -580,12 +580,12 @@ BASE_FEATURE(kNoAccountWebSignin, base::FEATURE_DISABL
  BASE_FEATURE(kNonDefaultGaiaOriginCheck, base::FEATURE_ENABLED_BY_DEFAULT);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -83,7 +83,7 @@
  BASE_FEATURE(kProfileCreationDeclineSigninCTAExperiment,
               base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -619,7 +619,7 @@ const base::FeatureParam<int> kContextualSigninPromoDi
+@@ -626,7 +626,7 @@ const base::FeatureParam<int> kContextualSigninPromoDi
      "contextual_signin_promo_dismissed_threshold",
      2);
  
@@ -92,7 +92,7 @@
  BASE_FEATURE(kSignInPromoMaterialNextUI, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -689,7 +689,7 @@ BASE_FEATURE(kStableDeviceId, base::FEATURE_DISABLED_B
+@@ -696,7 +696,7 @@ BASE_FEATURE(kStableDeviceId, base::FEATURE_DISABLED_B
  BASE_FEATURE(kSupportAddSessionEmailPrefill, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif
  

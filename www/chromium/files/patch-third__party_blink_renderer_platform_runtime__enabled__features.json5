@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-07-01 06:24:19 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-07-29 11:06:49 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -431,7 +431,7 @@
        name: "AIPromptAPILegacyParams",
@@ -63,7 +63,7 @@
        status: "experimental",
        public: true,
      },
-@@ -2353,7 +2353,7 @@
+@@ -2364,7 +2364,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -72,7 +72,7 @@
        base_feature: "none",
      },
      {
-@@ -2700,7 +2700,7 @@
+@@ -2711,7 +2711,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -81,7 +81,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3534,7 +3534,7 @@
+@@ -3545,7 +3545,7 @@
        name: "InstallElement",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "InstallElement",
@@ -90,7 +90,7 @@
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6279,7 +6279,7 @@
+@@ -6291,7 +6291,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -99,7 +99,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -6377,7 +6377,7 @@
+@@ -6389,7 +6389,7 @@
        status: "experimental",
        origin_trial_feature_name: "UserMediaElement",
        public: true,
@@ -108,7 +108,7 @@
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
      },
-@@ -6492,7 +6492,7 @@
+@@ -6504,7 +6504,7 @@
        name: "WebAppInstallation",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "WebAppInstallation",
@@ -117,7 +117,7 @@
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6506,7 +6506,7 @@
+@@ -6518,7 +6518,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",

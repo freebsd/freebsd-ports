@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.h.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/flag_descriptions.h.orig	2026-07-29 11:06:49 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -8514,6 +8514,18 @@ inline constexpr char kEnableDlpFileSystemApiDescripti
+@@ -8523,6 +8523,18 @@ inline constexpr char kEnableDlpFileSystemApiDescripti
      "Enable DLP upload scan support for FileSystem API-backed cloud storage on "
      "ChromeOS.";
  

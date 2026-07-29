@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_list.cc.orig	2026-07-01 06:24:19 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2026-07-29 11:06:49 UTC
 +++ components/feature_engagement/public/feature_list.cc
 @@ -242,7 +242,7 @@ const base::Feature* const kAllFeatures[] = {
  #endif  // BUILDFLAG(IS_IOS)
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
      &kEsbDownloadRowPromoFeature,
  #endif
-@@ -328,7 +328,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -329,7 +329,7 @@ const base::Feature* const kAllFeatures[] = {
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
      // keep-sorted start case=no
      &kIPHAutofillAccountNameEmailSuggestionFeature,
      &kIPHAutofillAiOptInFeature,
-@@ -361,7 +361,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -362,7 +362,7 @@ const base::Feature* const kAllFeatures[] = {
  
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
