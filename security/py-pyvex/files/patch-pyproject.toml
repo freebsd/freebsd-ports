@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2026-07-29 17:55:04 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["scikit-build-core ~= 0.12.2", "cffi >= 1.0.3;implementation_name == 'cpython'"]
++requires = ["scikit-build-core >= 0.12.2", "cffi >= 1.0.3;implementation_name == 'cpython'"]
+ build-backend = "scikit_build_core.build"
+ 
+ [project]
