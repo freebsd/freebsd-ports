@@ -1,0 +1,9 @@
+--- tmesh/Makefile.am.orig	2003-06-27 21:05:20 UTC
++++ tmesh/Makefile.am
+@@ -15,5 +15,5 @@ bin_PROGRAMS = tmesh
+ libtmesh_la_LIBADD = $(top_builddir)/libtme/libtme.la
+ 
+ bin_PROGRAMS = tmesh
+-tmesh_LDADD = libtmesh.la $(GTK_LIBS)
++tmesh_LDADD = libtmesh.la $(GTK_LIBS) $(top_builddir)/libtme/libtme.la
+ tmesh_LDFLAGS = -dlpreopen self @TME_PREOPEN@
