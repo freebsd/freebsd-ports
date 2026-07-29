@@ -10,8 +10,9 @@ WWW=		https://smart-pattern.com.ua/en/ \
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt
 
-BUILD_DEPENDS=	qbs:devel/qbs
+BROKEN_i386=	compilation fails: constructor cannot be redeclared
 
+BUILD_DEPENDS=	qbs:devel/qbs
 LIB_DEPENDS=	libxerces-c-3.3.so:textproc/xerces-c3
 
 USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gmake qt:6
