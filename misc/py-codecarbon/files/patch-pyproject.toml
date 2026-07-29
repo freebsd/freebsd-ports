@@ -1,16 +1,16 @@
---- pyproject.toml.orig	2025-08-22 17:52:23 UTC
+--- pyproject.toml.orig	2026-07-29 05:16:50 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools>=61", "wheel"]
+-requires = ["setuptools>=77", "wheel"]
 +requires = ["setuptools", "wheel"]
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -7,8 +7,6 @@ requires-python = ">=3.7"
+@@ -7,8 +7,6 @@ requires-python = ">=3.10"
  dynamic = ["version"]
  readme = "README.md"
- requires-python = ">=3.7"
+ requires-python = ">=3.10"
 -license = "MIT"
 -license-files = ["LICENSE"]
  authors = [
