@@ -1,4 +1,4 @@
-TIMESTAMP = 1783516478
+TIMESTAMP = 1784583895
 SHA256 (chromium-150.0.7871.100-lite.tar.xz) = e0e26cffe3196dd08ce119994ec650faaf36f683a42d85460c3138ed61f69be7
 SIZE (chromium-150.0.7871.100-lite.tar.xz) = 1668003676
 SHA256 (pulseaudio-16.1.tar.gz) = 027266c62f2a84422ac45fa721a649508f0f1628fb1fd9242315ac54ce2d7c92
@@ -415,5 +415,5 @@ SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff89263923
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
 SHA256 (rollup-rollup-v4.60.4_GH0.tar.gz) = c129324ecef83a1c4d829c8b876751c72a6fa2dfe707f32f0b55c311cf29ee91
 SIZE (rollup-rollup-v4.60.4_GH0.tar.gz) = 2249970
-SHA256 (evanw-esbuild-v0.28.0_GH0.tar.gz) = 7aae83b197db3fd695e6f378d30fd6cbddeb93e4b1057b2c41d36ecb1dfebbc2
-SIZE (evanw-esbuild-v0.28.0_GH0.tar.gz) = 1993306
+SHA256 (evanw-esbuild-v0.28.1_GH0.tar.gz) = 65c756fa87d43178ac4a5242454c2bd0fde325f8ecf77997f8fa4b88f94d5cd2
+SIZE (evanw-esbuild-v0.28.1_GH0.tar.gz) = 1997481
