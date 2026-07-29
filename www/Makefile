@@ -222,6 +222,9 @@
     SUBDIR += freenginx
     SUBDIR += freenginx-acme
     SUBDIR += freenginx-devel
+    SUBDIR += freeunit
+    SUBDIR += freeunit-php
+    SUBDIR += freeunit-python
     SUBDIR += fswiki
     SUBDIR += fusionpbx
     SUBDIR += g-cows

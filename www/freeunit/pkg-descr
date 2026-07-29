@@ -1,0 +1,3 @@
+FreeUnit is a dynamic web application server, designed to run applications
+in multiple languages. It is lightweight, polyglot, and dynamically configured
+via an API.
