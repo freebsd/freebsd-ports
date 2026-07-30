@@ -1,12 +1,12 @@
 PORTNAME=	oyo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.54
+DISTVERSION=	0.1.56
 PORTREVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Step-through diff viewer
-WWW=		https://github.com/ahkohd/oyo
+WWW=		https://oyo.victorare.mu/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
