@@ -1313,6 +1313,7 @@
 %%WWWDIR%%/include/classes/validators/CIdValidator.php
 %%WWWDIR%%/include/classes/validators/CItemKeyValidator.php
 %%WWWDIR%%/include/classes/validators/CJsonValidator.php
+%%WWWDIR%%/include/classes/validators/CJsRpcInputValidator.php
 %%WWWDIR%%/include/classes/validators/CLdapAuthValidator.php
 %%WWWDIR%%/include/classes/validators/CLimitedSetValidator.php
 %%WWWDIR%%/include/classes/validators/CMathFunctionValidator.php
