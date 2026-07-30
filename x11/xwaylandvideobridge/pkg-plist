@@ -1,7 +1,7 @@
 bin/xwaylandvideobridge
 etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop
 share/applications/org.kde.xwaylandvideobridge.desktop
-share/icons/hicolor/scalable/apps/xwaylandvideobridge.svg
+share/icons/hicolor/scalable/apps/org.kde.xwaylandvideobridge.svg
 share/locale/ar/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/ca/LC_MESSAGES/xwaylandvideobridge.mo
 share/locale/ca@valencia/LC_MESSAGES/xwaylandvideobridge.mo
