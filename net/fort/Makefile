@@ -1,5 +1,6 @@
 PORTNAME=	fort
-DISTVERSION=	1.6.8
+DISTVERSION=	1.7.0
+DISTVERSIONSUFFIX=	.experimental
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/NICMx/FORT-validator/releases/download/${DISTVERSION}/
 
