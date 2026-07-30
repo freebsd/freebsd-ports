@@ -3,7 +3,7 @@ PORTVERSION=	0.2.3
 PORTREVISION=	9
 CATEGORIES=	polish multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt5 based subtitle downloader
 WWW=		https://qnapi.github.io/
 
