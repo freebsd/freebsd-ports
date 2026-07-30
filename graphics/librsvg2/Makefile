@@ -1,8 +1,6 @@
 PORTNAME=	librsvg
-PORTVERSION=	2.40.21
-PORTREVISION=	6
+PORTVERSION=	2.40.23
 CATEGORIES=	graphics gnome
-MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2
 DIST_SUBDIR=	gnome
 
@@ -13,25 +11,25 @@ WWW=		https://live.gnome.org/LibRsvg
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	${LOCALBASE}/share/gtk-doc/data/gtk-doc.make:textproc/gtk-doc
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
 		libcroco-0.6.so:textproc/libcroco
 
-USES=		cpe gmake gnome libtool localbase pathfix pkgconfig tar:xz
-
+USES=		autoreconf cpe gmake gnome libtool pathfix pkgconfig
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.gnome.org
+GL_ACCOUNT=	GNOME
+GL_TAGNAME=	${PORTNAME}-gtk-${PORTVERSION}
 USE_GNOME=	cairo gnomeprefix gdkpixbuf introspection:build \
 		libxml2 pango
 CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 CONFIGURE_ARGS=	--disable-Bsymbolic
-
-DOCSDIR?=	${PREFIX}/share/doc
-GNOME_HTML_DIR=	${DOCSDIR}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
@@ -40,19 +38,19 @@ CONFLICTS_INSTALL=	librsvg2-rust
 # FreeBSD archs. So limit pure C version 2.40.x.
 PORTSCOUT=	limit:^2\.40\.
 
-OPTIONS_DEFINE=		DOCS VAPI
-OPTIONS_DEFAULT=	DOCS VAPI
+OPTIONS_DEFINE=		VAPI
+OPTIONS_DEFAULT=	VAPI
 OPTIONS_SUB=		yes
-
-DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
-DOCS_CONFIGURE_ENABLE=	gtk-doc gtk-doc-html
 
 VAPI_USES=		vala:build
 VAPI_CONFIGURE_ON=	--enable-vala=yes
 VAPI_CONFIGURE_OFF=	--enable-vala=no
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|GTK3_REQUIRED=3.[0-9][0-9].[0-9]|GTK3_REQUIRED=9.90.0|g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^GTK3_REQUIRED/s|=3\.[0-9]|=9.9|' \
+		${WRKSRC}/configure.ac
+
+pre-test:
+	@${LN} -sf librsvg/rsvg.h ${WRKSRC}
 
 .include <bsd.port.mk>
