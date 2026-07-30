@@ -4497,6 +4497,7 @@
     SUBDIR += py-aiortc
     SUBDIR += py-aiorwlock
     SUBDIR += py-aiosignal
+    SUBDIR += py-aiothreads
     SUBDIR += py-airspeed
     SUBDIR += py-airspeed-ext
     SUBDIR += py-airtable-python-wrapper

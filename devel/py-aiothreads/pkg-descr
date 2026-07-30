@@ -1,0 +1,5 @@
+aiothreads is a library that provides a glue between async and thread worlds.
+
+It offers decorators and helpers for running functions in threads, iterating
+and generating values asynchronously using thread executors with backpressure
+support.
