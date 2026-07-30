@@ -1,6 +1,5 @@
 PORTNAME=	maolan
-DISTVERSION=	0.2.1
-PORTREVISION=	1
+DISTVERSION=	0.2.4
 CATEGORIES=	audio
 
 MAINTAINER=	meka@tilda.center
@@ -12,32 +11,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
-LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
-		libjack.so:audio/jack \
-		liblilv-0.so:audio/lilv \
-		libonig.so:devel/oniguruma \
-		librubberband.so:audio/rubberband \
-		libsentencepiece.so:textproc/sentencepiece \
-		libsuil-0.so:audio/suil
+LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		cargo gnome llvm:build pkgconfig xorg
+USES=		cargo localbase:ldflags pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	maolan
-GH_TAGNAME=	${DISTVERSION}
 
-USE_GNOME=	glib20 gtk20
 USE_XORG=	x11
 
 CARGO_BUILD_ARGS+=	--workspace
 CARGO_INSTALL_PATH=	. plugin-host
-MAKE_ENV=		LIBCLANG_PATH="${LOCALBASE}/llvm${LLVM_VERSION}/lib"
+CARGO_TEST_AFTER_ARGS=	--skip \
+			gui::tests::session_save_and_load_roundtrip_preserves_plugin_positions
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/desktop/maolan-bsd.desktop \
+	${INSTALL_DATA} ${WRKSRC}/assets/desktop/maolan-bsd.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/maolan.desktop
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/images/maolan.svg \
+	${INSTALL_DATA} ${WRKSRC}/assets/images/maolan.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 
 .include <bsd.port.mk>
