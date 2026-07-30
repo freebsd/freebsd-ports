@@ -1,1 +1,5 @@
-caio is Python bindings for AIO API and simple asyncio wrapper.
+caio is a Python library providing asynchronous file I/O operations for Linux,
+macOS, and Windows. It offers efficient asynchronous I/O through various backend
+implementations and integrates with asyncio. The library provides both low-level
+AIO API bindings and a high-level asyncio wrapper for convenient asynchronous
+file operations.
