@@ -1,0 +1,3 @@
+This package provides the userspace components for Remote Direct Memory Access
+(RDMA) subsystem. The components consist of daemons and libraries for operating
+InfiniBand, iWARP, and RDMA over Converged Ethernet (RoCE).
