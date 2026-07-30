@@ -1,0 +1,3 @@
+aiomisc is a collection of miscellaneous utilities for asyncio-based
+applications. It includes helpers for running services, log formatting,
+worker pools, periodic tasks, configuration parsing, and more.
