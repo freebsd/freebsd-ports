@@ -1,3 +1,3 @@
-TIMESTAMP = 1777745905
-SHA256 (aws_sam_translator-1.109.0.tar.gz) = 0c5e60223ae8434ce0c6bdb9a491d69ba3ec97e15c0d825d3803f7806382d804
-SIZE (aws_sam_translator-1.109.0.tar.gz) = 369016
+TIMESTAMP = 1785251567
+SHA256 (aws_sam_translator-1.111.0.tar.gz) = 6884d94e28dc20384e5e0396e9386a456fe59303d706924deb2646329b4d97d3
+SIZE (aws_sam_translator-1.111.0.tar.gz) = 374368
