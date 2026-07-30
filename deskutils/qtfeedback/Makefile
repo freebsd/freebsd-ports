@@ -8,6 +8,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Tactile Feedback Add-on Module
 WWW=		https://github.com/qt/qtfeedback
 
+DEPRECATED=	Development discontinued, does not support Qt 6
+EXPIRATION_DATE=	2026-12-31
+
 USES=		gl perl5 qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	qtproject
