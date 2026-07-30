@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2026-07-29 22:58:39 UTC
++++ pyproject.toml
+@@ -414,5 +414,5 @@ formatter-cmds = ["ruff check --exit-zero --fix $file"
+ formatter-cmds = ["ruff check --exit-zero --fix $file", "ruff format $file"]
+ 
+ [build-system]
+-requires = ["uv_build>=0.11,<0.12"]
++requires = ["uv_build>=0.11"]
+ build-backend = "uv_build"

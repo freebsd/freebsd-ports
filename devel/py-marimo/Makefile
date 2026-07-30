@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0<9:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.22.0:www/py-uvicorn \
 		${PYTHON_PKGNAMEPREFIX}websockets>=14.2.0:devel/py-websockets
 BUILD_DEPENDS:=	${RUN_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}uv-build>=0.8.3<0.12.0:devel/py-uv-build
+		${PYTHON_PKGNAMEPREFIX}uv-build>=0.8.3:devel/py-uv-build@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist noflavors pep517
