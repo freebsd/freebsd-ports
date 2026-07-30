@@ -1,0 +1,2 @@
+aiohttp-asgi is an adapter that allows running ASGI applications on top of
+aiohttp.

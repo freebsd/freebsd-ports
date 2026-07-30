@@ -4489,6 +4489,7 @@
     SUBDIR += py-aiofile
     SUBDIR += py-aiofiles
     SUBDIR += py-aiohttp-apispec
+    SUBDIR += py-aiohttp-asgi
     SUBDIR += py-aioice
     SUBDIR += py-aioitertools
     SUBDIR += py-aiologger
