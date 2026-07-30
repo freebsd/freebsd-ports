@@ -1,5 +1,5 @@
 PORTNAME=	pkg_rmleaves
-PORTVERSION=	20260412
+PORTVERSION=	20260730
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	https://files.wittig.name/${PORTNAME}/ \
 		http://files.wittig.name/${PORTNAME}/
