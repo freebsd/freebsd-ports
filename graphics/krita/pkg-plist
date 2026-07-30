@@ -454,7 +454,6 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/bundles/Krita_Artists_SeExpr_examples.bundle
 %%DATADIR%%/bundles/README
 %%DATADIR%%/bundles/RGBA_brushes.bundle
-%%DATADIR%%/donation/banner.png
 %%DATADIR%%/dtd/krita.dtd
 %%DATADIR%%/gamutmasks/Atmosphere_With_Accent.kgm
 %%DATADIR%%/gamutmasks/Atmospheric_Triad.kgm
