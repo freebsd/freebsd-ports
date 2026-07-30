@@ -42,12 +42,14 @@ include/flatcc/portable/pendian.h
 include/flatcc/portable/pendian_detect.h
 include/flatcc/portable/pinline.h
 include/flatcc/portable/pinttypes.h
+include/flatcc/portable/pmemaccess.h
 include/flatcc/portable/portable.h
 include/flatcc/portable/portable_basic.h
 include/flatcc/portable/pparsefp.h
 include/flatcc/portable/pparseint.h
 include/flatcc/portable/pprintfp.h
 include/flatcc/portable/pprintint.h
+include/flatcc/portable/prestrict.h
 include/flatcc/portable/pstatic_assert.h
 include/flatcc/portable/pstatic_assert_scope.h
 include/flatcc/portable/pstdalign.h

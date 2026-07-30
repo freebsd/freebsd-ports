@@ -1,6 +1,6 @@
 PORTNAME=	flatcc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,5 +27,7 @@ do-test:
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DFLATCC_TEST:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 0.6.3: 100% tests passed, 0 tests failed out of 23
 
 .include <bsd.port.mk>
