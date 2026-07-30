@@ -16,6 +16,8 @@ WWW=		https://www.kornia.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error: literal out of range for `usize`
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>0:devel/py-maturin@${PY_FLAVOR} \
 		nasm:devel/nasm
 
