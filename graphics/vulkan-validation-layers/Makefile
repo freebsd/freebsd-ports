@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.356
+DISTVERSION=	1.4.357
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -19,7 +19,7 @@ USES=		cmake compiler:c++11-lib localbase pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ValidationLayers
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1e770e7de8373a8dd49f23416cf7ca4001d01040:headers/SPIRV-Headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:29981f65241605e08b0ede4cfeb999fe3b723c6a:headers/SPIRV-Headers
 CMAKE_OFF=	BUILD_TESTS UPDATE_DEPS
 
 PLIST_FILES=	lib/libVkLayer_khronos_validation.so \
