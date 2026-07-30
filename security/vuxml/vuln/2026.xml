@@ -1,3 +1,28 @@
+  <vuln vid="ef71114e-8c1c-11f1-a221-3c7c3fba4204">
+    <topic>NetBird -- Local Privilege Escalation via Unauthenticated IPC Socket</topic>
+    <affects>
+      <package>
+       <name>netbird</name>
+       <range><gt>0.5.0</gt><lt>0.76.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The NetBird Team reports:</p>
+	<blockquote cite="https://github.com/netbirdio/netbird/security/advisories/GHSA-qcpp-8vwj-hhwr">
+	  <p>The NetBird client daemon exposes its gRPC control interface to any local process with no authentication, in all versions from 0.5.0 (March 2022) to 0.75.1. On Linux, macOS and FreeBSD the interface is a Unix domain socket (/var/run/netbird.sock) with world-readable/writable permissions (0666). On Windows it is a loopback TCP listener (127.0.0.1:41731), where the transport carries no caller identity at all. Any unprivileged local user can connect and invoke all daemon RPCs without credentials.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/netbirdio/netbird/security/advisories/GHSA-qcpp-8vwj-hhwr</url>
+    </references>
+    <dates>
+      <discovery>2026-07-29</discovery>
+      <entry>2026-07-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="20683bca-e344-4348-a033-db862123615d">
     <topic>chromium -- security fixes</topic>
     <affects>
