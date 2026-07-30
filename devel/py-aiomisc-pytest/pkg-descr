@@ -1,0 +1,2 @@
+aiomisc-pytest provides pytest integration for aiomisc, including fixtures
+and helpers for testing asyncio services and components built with aiomisc.
