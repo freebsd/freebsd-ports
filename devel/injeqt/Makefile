@@ -7,6 +7,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Dependency injection framework for Qt
 WWW=		https://github.com/vogel/injeqt/
 
+DEPRECATED=	Development discontinued, does not support Qt 6
+EXPIRATION_DATE=	2026-12-31
+
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
