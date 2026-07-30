@@ -38,6 +38,7 @@
 %%ETCDIR%%/snomasks.default.conf
 %%ETCDIR%%/spamfilter.conf
 %%ETCDIR%%/tls/curl-ca-bundle.crt
+%%ETCDIR%%/tls/tls.cnf
 lib/unreal/account-notify.so
 lib/unreal/account-tag.so
 lib/unreal/addmotd.so
@@ -52,9 +53,9 @@ lib/unreal/blacklist.so
 lib/unreal/bot-tag.so
 lib/unreal/botmotd.so
 lib/unreal/cap.so
-lib/unreal/certfp.so
 lib/unreal/central-api.so
 lib/unreal/central-blocklist.so
+lib/unreal/certfp.so
 lib/unreal/chanmodes/censor.so
 lib/unreal/chanmodes/chanadmin.so
 lib/unreal/chanmodes/chanop.so
@@ -111,10 +112,12 @@ lib/unreal/dccdeny.so
 lib/unreal/echo-message.so
 lib/unreal/eos.so
 lib/unreal/extbans/account.so
+lib/unreal/extbans/asn.so
 lib/unreal/extbans/certfp.so
 lib/unreal/extbans/country.so
 lib/unreal/extbans/flood.so
 lib/unreal/extbans/inchannel.so
+lib/unreal/extbans/inherit.so
 lib/unreal/extbans/join.so
 lib/unreal/extbans/msgbypass.so
 lib/unreal/extbans/nickchange.so
@@ -125,14 +128,13 @@ lib/unreal/extbans/realname.so
 lib/unreal/extbans/securitygroup.so
 lib/unreal/extbans/textban.so
 lib/unreal/extbans/timedban.so
-lib/unreal/extbans/asn.so
-lib/unreal/extbans/inherit.so
+lib/unreal/extended-isupport.so
 lib/unreal/extended-monitor.so
 lib/unreal/extjwt.so
 lib/unreal/geoip-tag.so
 lib/unreal/geoip_base.so
 lib/unreal/geoip_csv.so
-lib/unreal/geoip_maxmind.so
+lib/unreal/geoip_mmdb.so
 lib/unreal/globops.so
 lib/unreal/help.so
 lib/unreal/hideserver.so
@@ -144,6 +146,7 @@ lib/unreal/invite.so
 lib/unreal/ircops.so
 lib/unreal/ison.so
 lib/unreal/issued-by-tag.so
+lib/unreal/isupport.so
 lib/unreal/join.so
 lib/unreal/jointhrottle.so
 lib/unreal/json-log-tag.so
@@ -160,6 +163,7 @@ lib/unreal/locops.so
 lib/unreal/lusers.so
 lib/unreal/map.so
 lib/unreal/max-unknown-connections-per-ip.so
+lib/unreal/maxperip.so
 lib/unreal/md.so
 lib/unreal/message-ids.so
 lib/unreal/message-tags.so
@@ -168,11 +172,12 @@ lib/unreal/mkpasswd.so
 lib/unreal/mode.so
 lib/unreal/monitor.so
 lib/unreal/motd.so
+lib/unreal/multiline.so
 lib/unreal/names.so
 lib/unreal/netinfo.so
 lib/unreal/nick.so
-lib/unreal/nocodes.so
 lib/unreal/no-implicit-names.so
+lib/unreal/nocodes.so
 lib/unreal/oper.so
 lib/unreal/operinfo.so
 lib/unreal/opermotd.so
@@ -180,6 +185,7 @@ lib/unreal/part.so
 lib/unreal/pass.so
 lib/unreal/pingpong.so
 lib/unreal/plaintext-policy.so
+lib/unreal/portinfo.so
 lib/unreal/protoctl.so
 lib/unreal/quit.so
 lib/unreal/real-quit-reason.so
@@ -190,8 +196,10 @@ lib/unreal/restrict-commands.so
 lib/unreal/rmtkl.so
 lib/unreal/rpc/channel.so
 lib/unreal/rpc/log.so
+lib/unreal/rpc/message.so
 lib/unreal/rpc/name_ban.so
 lib/unreal/rpc/rpc.so
+lib/unreal/rpc/security_group.so
 lib/unreal/rpc/server.so
 lib/unreal/rpc/server_ban.so
 lib/unreal/rpc/server_ban_exception.so
@@ -271,6 +279,8 @@ lib/unreal/usermodes/secureonlymsg.so
 lib/unreal/usermodes/servicebot.so
 lib/unreal/usermodes/showwhois.so
 lib/unreal/usermodes/wallops.so
+lib/unreal/utf8functions.so
+lib/unreal/utf8only.so
 lib/unreal/vhost.so
 lib/unreal/watch-backend.so
 lib/unreal/watch.so

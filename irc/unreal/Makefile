@@ -1,6 +1,5 @@
 PORTNAME=	unreal
-DISTVERSION=	6.1.9.1
-PORTREVISION=	2
+DISTVERSION=	6.2.6
 CATEGORIES=	irc
 MASTER_SITES=	https://www.unrealircd.org/downloads/
 DISTNAME=	${PORTNAME}ircd-${DISTVERSION}
@@ -16,9 +15,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libpcre2-8.so:devel/pcre2 \
 		libargon2.so:security/libargon2 \
 		libsodium.so:security/libsodium \
-		libjansson.so:devel/jansson \
-		libmaxminddb.so:net/libmaxminddb
-RUN_DEPENDS=	${LOCALBASE}/bin/geoipupdate:net/geoipupdate
+		libjansson.so:devel/jansson
 
 USES=		cpe gmake pkgconfig ssl
 CPE_VENDOR=	unrealircd
@@ -61,7 +58,6 @@ CONFIGURE_ARGS=	--with-nick-history=2000 \
 		--with-system-cares \
 		--with-system-argon2 \
 		--enable-dynamic-linking \
-		--enable-libmaxminddb=yes \
 		--enable-ssl
 
 OPTIONS_DEFINE=	DOCS
