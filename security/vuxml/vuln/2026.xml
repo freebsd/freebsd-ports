@@ -1,3 +1,213 @@
+  <vuln vid="ced14fa7-8bb8-11f1-a6ab-bc241121aa0a">
+    <topic>FreeBSD -- Race condition in ELF core dump segment counting</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_2</lt></range>
+	<range><ge>15.0</ge><lt>15.0_12</lt></range>
+	<range><ge>14.4</ge><lt>14.4_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The ELF core dump code counted the number of dumpable VM map
+	  entries, allocated a buffer for the corresponding program headers,
+	  then iterated over the map a second time to populate them.  A process
+	  sharing the address space via rfork(2) can mutate the map between
+	  the two passes, causing the second pass to write program headers
+	  past the end of the buffer.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user sharing an address space with a
+	  process that dumps core can trigger an out-of-bounds write on the
+	  kernel heap, potentially leading to privilege escalation.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58088</cvename>
+      <freebsdsa>SA-26:55.elf</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-07-29</discovery>
+      <entry>2026-07-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="aa5f956e-8bb8-11f1-a6ab-bc241121aa0a">
+    <topic>FreeBSD -- Heap out-of-bounds access in semctl(2)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_2</lt></range>
+	<range><ge>15.0</ge><lt>15.0_12</lt></range>
+	<range><ge>14.4</ge><lt>14.4_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The GETALL and SETALL commands in semctl(2) recorded the number
+	  of semaphores in the target set, dropped the lock protecting the
+	  set, allocated a buffer sized for that count, and reacquired the
+	  lock.  A sequence-number check was used to verify that the set had
+	  not been replaced in the interim, but the sequence number wraps
+	  after 0x8000 create/destroy cycles.  By rapidly destroying and
+	  recreating semaphore sets at the same index, another process can
+	  cause the sequence number to wrap, allowing a set with a different
+	  number of semaphores to pass validation.  The subsequent copy then
+	  reads or writes past the end of the allocated buffer.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can trigger out-of-bounds reads and
+	  writes on kernel heap memory, potentially leading to privilege
+	  escalation.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58087</cvename>
+      <freebsdsa>SA-26:54.sysvsem</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-07-29</discovery>
+      <entry>2026-07-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="73482c83-8bb8-11f1-a6ab-bc241121aa0a">
+    <topic>FreeBSD -- ktrace(2) privilege incorrectly validated in jails</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_2</lt></range>
+	<range><ge>15.0</ge><lt>15.0_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>As an inadvertent side effect of an unrelated code change,
+	  PRIV_KTRACE was always denied to a jailed root user.  Tracing
+	  configured by a jailed root user was therefore not flagged as
+	  privileged.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged user in a jail that has permission to debug the
+	  target process can modify the jailed root user's ktrace(2) flags,
+	  or disable tracing outright.  A jailed root user therefore cannot
+	  reliably trace unprivileged processes.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58086</cvename>
+      <freebsdsa>SA-26:53.ktrace</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-07-29</discovery>
+      <entry>2026-07-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3840a83e-8bb8-11f1-a6ab-bc241121aa0a">
+    <topic>FreeBSD -- Missing MAC validation in wg(4) packet decryption</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_2</lt></range>
+	<range><ge>15.0</ge><lt>15.0_12</lt></range>
+	<range><ge>14.4</ge><lt>14.4_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>After dispatching a decrypt operation to OCF and receiving the
+	  result, the wg(4) driver failed to check whether the MAC verification
+	  step succeeded.  The driver thus silently accepted packets with an
+	  invalid Poly1305 authentication tag.</p>
+	<h1>Impact:</h1>
+	  <p>A remote attacker who can send UDP packets to a WireGuard
+	  endpoint, and who can guess the bounds of the receiver's replay
+	  window, can inject forged or modified transport data packets into
+	  the tunnel.</p>
+	  <p>A remote attacker who can intercept WireGuard packets bound for a
+	  FreeBSD host can modify the ciphertext and authenticated data without
+	  detection by the receiver.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58085</cvename>
+      <freebsdsa>SA-26:52.if_wg</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-07-29</discovery>
+      <entry>2026-07-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="eab90fc5-8bb7-11f1-a6ab-bc241121aa0a">
+    <topic>FreeBSD -- Kernel stack disclosure via timer_settime(2)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_2</lt></range>
+	<range><ge>15.0</ge><lt>15.0_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>To retrieve the previous timer value, the kernel calls
+	  realtimer_gettime(), which obtains the current time for the timer's
+	  clock.  For a timer using CLOCK_TAI this can fail when no TAI offset
+	  has been configured, but the error return was not checked, so the
+	  uninitialized output buffer was copied to userspace.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can obtain uninitialized kernel stack
+	  memory by creating a POSIX timer with CLOCK_TAI and calling
+	  timer_settime(2), potentially disclosing sensitive kernel data.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58084</cvename>
+      <freebsdsa>SA-26:51.ktimer</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-07-29</discovery>
+      <entry>2026-07-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a4e4a74c-8bb7-11f1-a6ab-bc241121aa0a">
+    <topic>FreeBSD -- Use-after-free in kqueue copy-on-fork</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>While the kernel was copying knotes during fork, a knote with
+	  a timer-based filter could fire and be enqueued on the kqueue's
+	  active list before the copy was complete.  The copy routine did not
+	  account for this and could enqueue the new knote a second time,
+	  corrupting the active list.  In addition, the copy routine did not
+	  hold the appropriate locks while reading knote state, allowing
+	  further races.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can trigger a use-after-free in the
+	  kernel, potentially leading to privilege escalation.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58083</cvename>
+      <freebsdsa>SA-26:50.kqueue</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-07-29</discovery>
+      <entry>2026-07-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c4005254-b922-430f-b94a-dac9f59a527b">
     <topic>chromium -- security fixes</topic>
     <affects>
