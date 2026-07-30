@@ -84,7 +84,9 @@ HIGHLIGHT_MESON_TRUE=	html-highlight
 LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent
 LIBEVENT_MESON_TRUE=	libevent
 
-LIBRSVG2_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
+LIBRSVG2_IMPLIES=	SIXEL
+LIBRSVG2_USES=		gnome
+LIBRSVG2_USE=		gnome=cairo,gdkpixbuf,librsvg2
 LIBRSVG2_MESON_TRUE=	librsvg
 
 LOCAL_CGI_MESON_TRUE=	cgi
@@ -106,6 +108,7 @@ PERL_MESON_TRUE=	perl
 
 PYTHON_USES=		python:run
 PYTHON_MESON_TRUE=	python
+PYTHON_BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 
 QUICKJSNG_LIB_DEPENDS=	libqjs.so:lang/quickjs-ng
 QUICKJSNG_MESON_TRUE=	quickjs
@@ -121,8 +124,8 @@ SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libmozjs-140.so:lang/spidermonkey14
 SPIDERMONKEY_LIB_DEPENDS=	libmozjs-140.so:lang/spidermonkey140
 SPIDERMONKEY_USES=		compiler:c++17-lang sqlite
 SPIDERMONKEY_MESON_TRUE=	sm-scripting spidermonkey
-SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/js-140
-SPIDERMONKEY_CXXFLAGS=		-I${LOCALBASE}/include/js-140
+SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/js-140 -DRUST_BINDGEN
+SPIDERMONKEY_CXXFLAGS=		-I${LOCALBASE}/include/js-140 -DRUST_BINDGEN
 SPIDERMONKEY_LDFLAGS=		-lm -lpthread
 
 TRE_LIB_DEPENDS=	libtre.so:textproc/libtre
@@ -133,5 +136,9 @@ XBELMARKS_MESON_TRUE=	xbel
 
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_MESON_TRUE=	zstd
+
+post-patch-PYTHON-on:
+	${REINPLACE_CMD} -e '/python3deps/s,python3-embed,python-${PYTHON_VER}-embed,g' \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
