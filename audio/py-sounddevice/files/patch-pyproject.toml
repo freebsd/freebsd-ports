@@ -1,0 +1,15 @@
+-- Fix PEP 621 license declaration that the installed setuptools rejects.
+-- Upstream uses the string form accepted by newer tools; convert it to the
+-- table form so the port builds with the setuptools version in the tree.
+
+--- pyproject.toml.orig	2026-07-29 23:30:00 UTC
++++ pyproject.toml
+@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
+
+ [project]
+ name = "sounddevice"
+-license = "MIT"
++license = { text = "MIT" }
+ dynamic = ["version"]
+ description = "Play and Record Sound with Python"
+ readme = "README.rst"
