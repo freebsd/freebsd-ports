@@ -2151,7 +2151,7 @@
     <affects>
 <package>
 <name>tailscale</name>
-<range><lt>1.98.9</lt></range>
+<range><lt>1.98.10</lt></range>
 </package>
     </affects>
     <description>
