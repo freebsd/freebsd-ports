@@ -12,6 +12,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Database connectivity and creation framework
 WWW=		https://community.kde.org/KDb
 
+DEPRECATED=	Development discontinued, does not support Qt 6
+EXPIRATION_DATE=	2026-12-31
+
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
