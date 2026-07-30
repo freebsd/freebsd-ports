@@ -1,0 +1,13 @@
+Tauri is a framework for building tiny, fast, and secure desktop
+applications with a web frontend. Developers can use any frontend
+framework that compiles to HTML, JavaScript, and CSS, while the backend
+is written in Rust.
+
+Tauri produces small binaries by using the operating system's native
+webview instead of bundling a full browser engine. It supports creating
+installers for Linux (.deb, AppImage), macOS (.app, .dmg), and Windows
+(.exe, .msi), and provides features such as auto-updating, app signing,
+system trays, multi-window mode, and transparent or frameless windows.
+
+This port builds the Tauri command-line interface (CLI), used to create,
+develop, and package Tauri applications.
