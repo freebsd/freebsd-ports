@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+codebase-memory-mcp is a stdio MCP server. This package installs only the
+binary; it does not touch your home directory or any AI-agent configuration.
+
+To register it with your installed AI coding agents (Claude Code, Codex CLI,
+Gemini CLI, and others), run as your normal user (not root):
+
+    codebase-memory-mcp install
+
+This detects supported agents and edits their own config files (for example
+~/.claude.json or ~/.codex/config.toml). Then restart the agent and tell it
+"index this project". To wire a single agent by hand instead, add an
+mcpServers entry pointing at %%PREFIX%%/bin/codebase-memory-mcp.
+
+Indexing the FreeBSD src tree? contrib/llvm-project is the vendored LLVM
+toolchain, ~27% of the tree's C/C++ files and rarely worth indexing. Copy the
+sample ignore file to the src root to exclude it and cut the graph by roughly
+half, while keeping FreeBSD-critical vendored code (sys/contrib/openzfs, the
+device drivers under sys/contrib/dev, crypto/openssh, jemalloc) queryable:
+
+    cp %%DOCSDIR%%/freebsd-src.cbmignore /path/to/freebsd/src/.cbmignore
+
+The sample lists further upstreams you can add for an even smaller graph.
+Editing .cbmignore only takes effect on a full re-index, not an incremental
+one; ask the agent to delete and re-index the project after adding it.
+
+EOM
+}
+]

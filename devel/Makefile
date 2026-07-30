@@ -482,6 +482,7 @@
     SUBDIR += cmph
     SUBDIR += coccinelle
     SUBDIR += cocogitto
+    SUBDIR += codebase-memory-mcp
     SUBDIR += codeblocks
     SUBDIR += codequery
     SUBDIR += codesearch-py

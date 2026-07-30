@@ -1,0 +1,28 @@
+# .cbmignore for the FreeBSD src tree (github.com/freebsd/freebsd-src).
+#
+# Copy this to the root of your src checkout as .cbmignore, then have your
+# agent delete and re-index the project (editing .cbmignore does NOT take
+# effect on an incremental re-index, only on a full one).
+#
+# contrib/llvm-project is the vendored LLVM/Clang/LLD/LLDB toolchain: ~13,900
+# C/C++ files, about 27% of every C/C++ file in the tree, and code you almost
+# never navigate via the FreeBSD graph (you read it in an editor when hacking
+# the toolchain itself). Excluding it keeps queries focused on FreeBSD's own
+# kernel and userland while leaving every other vendored tree searchable.
+#
+# Deliberately NOT excluded, because they are FreeBSD-critical or FreeBSD-
+# patched code you do query:
+#   sys/contrib/openzfs   - the ZFS kernel subsystem (wired into sys/conf/files)
+#   sys/contrib/dev       - device driver glue + firmware (ath, iwlwifi, qat...)
+#   crypto/openssh        - OpenSSH with FreeBSD-local patches
+#   contrib/jemalloc      - the system malloc
+#
+# Want a smaller graph? Add clearly-external upstreams you never navigate, e.g.:
+#   /contrib/ntp/
+#   /contrib/sendmail/
+#   /contrib/tcpdump/
+#   /contrib/ncurses/
+#   /contrib/unbound/
+# To rescue part of an excluded tree back, negate it (last match wins):
+#   !/contrib/llvm-project/clang/
+/contrib/llvm-project/

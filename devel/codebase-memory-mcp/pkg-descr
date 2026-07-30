@@ -1,0 +1,7 @@
+codebase-memory-mcp is a high-performance Model Context Protocol (MCP) server
+that indexes source code into a persistent knowledge graph for use by AI
+coding agents.
+
+It parses code with tree-sitter, resolves semantic relationships across files,
+and persists the graph in a local SQLite store. Queries are exposed via
+JSON-RPC 2.0 over stdio and integrate with MCP-aware clients.
