@@ -1,6 +1,6 @@
 PORTNAME=	github-copilot-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.75
+DISTVERSION=	1.0.76
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/github/copilot-cli/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:amd64 \
 		https://github.com/github/copilot-cli/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:aarch64
