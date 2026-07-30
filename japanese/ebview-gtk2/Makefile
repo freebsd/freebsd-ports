@@ -1,6 +1,6 @@
 PORTNAME=	ebview
-PORTVERSION=	0.3.6
-PORTREVISION=	20
+DISTVERSION=	0.3.6
+PORTREVISION=	21
 CATEGORIES=	japanese
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-gtk2
@@ -10,17 +10,18 @@ COMMENT=	Electronic Book Viewer
 WWW=		https://ebview.sourceforge.net/
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libeb.so:japanese/eb
 
-USES=		gettext gmake gnome localbase:ldflags pkgconfig
+USES=		gettext gmake gnome iconv:wchar_t localbase:ldflags pkgconfig \
+		xorg
 USE_CSTD=	gnu89
 USE_GNOME=	gtk20 pangox-compat
+USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-eb-conf=${LOCALBASE}/etc/eb.conf
-
-CONFLICTS=	ja-ebview
 
 SUB_FILES=	ebview.desktop
 
@@ -31,10 +32,6 @@ OPTIONS_DEFINE=	DOCS
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=int-conversion
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|#define GTK_DISABLE_DEPRECATED 1||g' \
-		${WRKSRC}/src/ebview.c
 
 post-install:
 	(cd ${WRKDIR} && ${INSTALL_DATA} ${SUB_FILES} \
