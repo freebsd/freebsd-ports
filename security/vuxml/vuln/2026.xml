@@ -1,3 +1,30 @@
+  <vuln vid="0d5b4884-8c2b-11f1-8144-8447094a420f">
+    <topic>Weechat -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>weechat</name>
+	<range><lt>4.9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Weechat project reports:</p>
+	<blockquote cite="https://weechat.org/doc/weechat/security/">
+	  <p>Use-after-free and double free when a remote relay sends an event with an array as body.</p>
+	  <p>Use-after-free in the irc plugin when a batched message disconnects the server.</p>
+	  <p>Stack buffer overflow when building a JOIN command with channel keys.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://weechat.org/doc/weechat/security/</url>
+    </references>
+    <dates>
+      <discovery>2026-07-26</discovery>
+      <entry>2026-07-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ef71114e-8c1c-11f1-a221-3c7c3fba4204">
     <topic>NetBird -- Local Privilege Escalation via Unauthenticated IPC Socket</topic>
     <affects>
