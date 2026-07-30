@@ -1,7 +1,7 @@
 PORTNAME=	git-mfc
-PORTVERSION=	0.20260725
+PORTVERSION=	0.20260730
 CATEGORIES=	devel
-HASH=		b86e36493469ded108ad616ebc094886b33851c4
+HASH=		2c98dc4e5ca9ac8d8c9d3d874d118ded38957b4f
 MASTER_SITES=	https://raw.githubusercontent.com/freebsd/freebsd-src/${HASH}/tools/tools/git/
 PKGNAMEPREFIX=	freebsd-
 DISTFILES=	git-mfc \
