@@ -1,20 +1,18 @@
 PORTNAME=	sigi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.1
-PORTREVISION=	19
-
+DISTVERSION=	3.8.0
 CATEGORIES=	deskutils
 
-MAINTAINER=	hiljusti@so.dang.cool
+MAINTAINER=	justin@so.dang.cool
 COMMENT=	Organizing tool for terminal lovers who hate organizing
-WWW=		https://github.com/sigi-cli/sigi
+WWW=		https://github.com/so-dang-cool/sigi
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
 USE_GITHUB=	yes
-GH_ACCOUNT=	sigi-cli
+GH_ACCOUNT=	so-dang-cool
 
 CARGO_BUILD_ARGS=	--all
 
