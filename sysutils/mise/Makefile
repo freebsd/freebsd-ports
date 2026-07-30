@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.7.16
+DISTVERSION=	2026.7.17
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -72,19 +72,19 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		async-spooled-tempfile-0.1.0 \
 		async-trait-0.1.91 \
 		atomic-waker-1.1.2 \
-		aube-1.35.0 \
-		aube-codes-1.35.0 \
-		aube-linker-1.35.0 \
-		aube-lockfile-1.35.0 \
-		aube-manifest-1.35.0 \
-		aube-registry-1.35.0 \
-		aube-resolver-1.35.0 \
-		aube-runtime-1.35.0 \
-		aube-scripts-1.35.0 \
-		aube-settings-1.35.0 \
-		aube-store-1.35.0 \
-		aube-util-1.35.0 \
-		aube-workspace-1.35.0 \
+		aube-1.36.0 \
+		aube-codes-1.36.0 \
+		aube-linker-1.36.0 \
+		aube-lockfile-1.36.0 \
+		aube-manifest-1.36.0 \
+		aube-registry-1.36.0 \
+		aube-resolver-1.36.0 \
+		aube-runtime-1.36.0 \
+		aube-scripts-1.36.0 \
+		aube-settings-1.36.0 \
+		aube-store-1.36.0 \
+		aube-util-1.36.0 \
+		aube-workspace-1.36.0 \
 		autocfg-1.5.1 \
 		aws-config-1.8.14 \
 		aws-credential-types-1.2.13 \
