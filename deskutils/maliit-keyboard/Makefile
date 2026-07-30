@@ -8,6 +8,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual keyboard based on Maliit framework
 WWW=		https://maliit.github.io/
 
+DEPRECATED=	Development discontinued, does not support Qt 6
+EXPIRATION_DATE=	2026-12-31
+
 BUILD_DEPENDS=	hunspell:textproc/hunspell
 LIB_DEPENDS=	libmaliit-plugins.so:deskutils/maliit-framework \
 		libpresage.so:deskutils/presage \

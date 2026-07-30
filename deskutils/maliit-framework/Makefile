@@ -8,6 +8,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Core libraries of Maliit and server
 WWW=		https://maliit.github.io/
 
+DEPRECATED=	Development discontinued, does not support Qt 6
+EXPIRATION_DATE=	2026-12-31
+
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
