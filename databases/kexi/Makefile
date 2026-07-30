@@ -10,7 +10,7 @@ COMMENT=		Visual database applications creator
 WWW=		https://www.kexi-project.org/
 
 DEPRECATED=		Abandoned, unlikely to be ported to Qt6
-# EXPIRATION_DATE=	# to be removed along with KDE Frameworks 5 ports
+EXPIRATION_DATE=	2026-12-31
 
 LIB_DEPENDS=		libKDb3.so:databases/kdb \
 			libKPropertyCore3.so:x11-toolkits/kproperty \
