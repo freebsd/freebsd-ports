@@ -64,6 +64,8 @@ include/camutils/Bookmark.h
 include/camutils/Manipulator.h
 include/camutils/compiler.h
 include/filamat/Enums.h
+include/filament/FramePacer.h
+include/filament/FramePipelineEstimator.h
 include/filamat/MaterialBuilder.h
 include/filamat/Package.h
 include/filament-generatePrefilterMipmap/generatePrefilterMipmap.h
@@ -199,6 +201,7 @@ include/utils/algorithm.h
 include/utils/bitset.h
 include/utils/compiler.h
 include/utils/compressed_pair.h
+include/utils/debug/Mutex.h
 include/utils/debug.h
 include/utils/generic/Mutex.h
 include/utils/getopt.h
