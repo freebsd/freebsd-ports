@@ -9,7 +9,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.103 \
+		anyhow-1.0.104 \
 		approx-0.5.1 \
 		arcstr-1.2.0 \
 		arrayref-0.3.9 \
@@ -46,7 +46,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		base64ct-1.8.3 \
 		bit-vec-0.9.1 \
 		bitflags-1.3.2 \
-		bitflags-2.13.0 \
+		bitflags-2.13.1 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.1 \
@@ -62,8 +62,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
 		bytes-1.12.1 \
-		bzip2-0.5.2 \
-		bzip2-sys-0.1.13+1.0.8 \
 		camino-1.2.2 \
 		cargo-util-0.2.30 \
 		cast-0.3.0 \
@@ -76,12 +74,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		cipher-0.4.4 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
+		clap-4.6.3 \
+		clap_builder-4.6.2 \
 		clap_complete-4.6.0 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.6.0 \
-		clap_derive-4.6.1 \
+		clap_derive-4.6.3 \
 		clap_lex-1.1.0 \
 		cmake-0.1.57 \
 		cmov-0.5.4 \
@@ -160,7 +158,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		euclid-0.22.13 \
 		event-listener-5.4.1 \
 		event-listener-strategy-0.5.4 \
-		fastrand-2.4.1 \
+		fastrand-2.5.0 \
 		fdeflate-0.3.7 \
 		filetime-0.2.29 \
 		find-msvc-tools-0.1.9 \
@@ -177,23 +175,23 @@ CARGO_CRATES=	adler2-2.0.1 \
 		form_urlencoded-1.2.2 \
 		fs-err-3.3.1 \
 		fs_extra-1.3.0 \
-		futures-0.3.32 \
-		futures-channel-0.3.32 \
-		futures-core-0.3.32 \
-		futures-executor-0.3.32 \
-		futures-io-0.3.32 \
+		futures-0.3.33 \
+		futures-channel-0.3.33 \
+		futures-core-0.3.33 \
+		futures-executor-0.3.33 \
+		futures-io-0.3.33 \
 		futures-lite-2.6.1 \
-		futures-macro-0.3.32 \
-		futures-sink-0.3.32 \
-		futures-task-0.3.32 \
-		futures-util-0.3.32 \
+		futures-macro-0.3.33 \
+		futures-sink-0.3.33 \
+		futures-task-0.3.33 \
+		futures-util-0.3.33 \
 		generic-array-0.14.7 \
 		getrandom-0.2.16 \
 		getrandom-0.3.4 \
 		getrandom-0.4.3 \
 		gif-0.14.1 \
 		glob-0.3.3 \
-		globset-0.4.18 \
+		globset-0.4.19 \
 		globwalk-0.9.1 \
 		gloo-timers-0.3.0 \
 		goblin-0.10.7 \
@@ -212,7 +210,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		html-escape-0.2.14 \
 		http-1.4.2 \
 		http-body-1.0.1 \
-		http-body-util-0.1.3 \
+		http-body-util-0.1.4 \
 		http-content-range-0.2.4 \
 		httparse-1.10.1 \
 		httpdate-1.0.3 \
@@ -229,7 +227,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		icu_provider-2.1.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
-		ignore-0.4.28 \
+		ignore-0.4.31 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
 		imagesize-0.14.0 \
@@ -248,8 +246,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.10.5 \
 		itertools-0.14.0 \
 		itoa-1.0.17 \
-		jiff-0.2.32 \
-		jiff-static-0.2.32 \
+		jiff-0.2.34 \
+		jiff-core-0.1.0 \
+		jiff-static-0.2.34 \
 		jiff-tzdb-0.1.8 \
 		jiff-tzdb-platform-0.1.3 \
 		jni-0.22.4 \
@@ -271,7 +270,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
 		lru-slab-0.1.2 \
-		lzma-sys-0.1.20 \
 		mailparse-0.16.1 \
 		markdown-1.0.0 \
 		matchers-0.2.0 \
@@ -360,7 +358,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		proc-macro-crate-3.5.0 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
-		proc-macro2-1.0.106 \
+		proc-macro2-1.0.107 \
 		procfs-0.18.0 \
 		procfs-core-0.18.0 \
 		ptr_meta-0.3.1 \
@@ -372,7 +370,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.15 \
 		quinn-udp-0.5.15 \
-		quote-1.0.46 \
+		quote-1.0.47 \
 		quoted_printable-0.5.1 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
@@ -388,11 +386,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rcgen-0.14.8 \
 		redox_syscall-0.5.15 \
 		redox_users-0.5.2 \
-		ref-cast-1.0.25 \
-		ref-cast-impl-1.0.25 \
+		ref-cast-1.0.26 \
+		ref-cast-impl-1.0.26 \
 		reflink-copy-0.1.30 \
-		regex-1.13.0 \
-		regex-automata-0.4.15 \
+		regex-1.13.1 \
+		regex-automata-0.4.16 \
 		regex-syntax-0.8.11 \
 		rend-0.5.3 \
 		reqsign-0.20.2 \
@@ -421,7 +419,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rusticata-macros-4.1.0 \
 		rustix-0.38.44 \
 		rustix-1.1.4 \
-		rustls-0.23.41 \
+		rustls-0.23.42 \
 		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.15.0 \
 		rustls-platform-verifier-0.7.0 \
@@ -447,10 +445,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		seize-0.5.1 \
 		self-replace-1.5.0 \
 		semver-1.0.27 \
-		serde-1.0.228 \
+		serde-1.0.229 \
 		serde-untagged-0.1.9 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
 		serde_derive_internals-0.29.1 \
 		serde_json-1.0.150 \
 		serde_repr-0.1.20 \
@@ -495,6 +493,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		svg-0.18.0 \
 		svgtypes-0.16.1 \
 		syn-2.0.118 \
+		syn-3.0.3 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		system-configuration-0.7.0 \
@@ -512,8 +511,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		test-log-core-0.2.20 \
 		test-log-macros-0.2.20 \
 		textwrap-0.16.2 \
-		thiserror-2.0.18 \
-		thiserror-impl-2.0.18 \
+		thiserror-2.0.19 \
+		thiserror-impl-2.0.19 \
 		thread_local-1.1.9 \
 		tikv-jemalloc-sys-0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
 		tikv-jemallocator-0.6.1 \
@@ -527,16 +526,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.52.3 \
+		tokio-1.53.1 \
 		tokio-macros-2.7.0 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.18 \
 		tokio-util-0.7.18 \
-		toml-1.1.2+spec-1.1.0 \
+		toml-1.1.3+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.12+spec-1.1.0 \
+		toml_edit-0.25.13+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
-		toml_writer-1.1.1+spec-1.1.0 \
+		toml_writer-1.1.2+spec-1.1.0 \
 		tower-0.5.3 \
 		tower-http-0.6.8 \
 		tower-layer-0.3.3 \
@@ -576,7 +575,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		usvg-0.47.0 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.5 \
+		uuid-1.24.0 \
 		valuable-0.1.1 \
 		version_check-0.9.5 \
 		vte-0.14.1 \
@@ -594,9 +593,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasmtimer-0.4.3 \
 		web-sys-0.3.91 \
 		web-time-1.1.0 \
-		webpki-root-certs-1.0.8 \
+		webpki-root-certs-1.0.9 \
 		weezl-0.1.12 \
-		which-8.0.4 \
+		which-8.0.5 \
 		widestring-1.2.1 \
 		winapi-util-0.1.11 \
 		windows-0.61.3 \
@@ -632,7 +631,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		xattr-1.6.1 \
 		xml-rs-0.8.28 \
 		xmlwriter-0.1.0 \
-		xz2-0.1.7 \
 		yansi-1.0.1 \
 		yasna-0.6.0 \
 		yoke-0.8.1 \

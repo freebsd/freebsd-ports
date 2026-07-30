@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-07-15 17:05:42 UTC
+--- pyproject.toml.orig	2026-07-28 18:26:36 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@
  [build-system]
@@ -18,7 +18,7 @@
  classifiers = [
    "Development Status :: 5 - Production/Stable",
    "Environment :: Console",
-@@ -42,59 +40,6 @@ Discord = "https://discord.gg/astral-sh"
+@@ -42,60 +40,6 @@ Discord = "https://discord.gg/astral-sh"
  Releases = "https://github.com/astral-sh/uv/releases"
  Discord = "https://discord.gg/astral-sh"
  
@@ -58,6 +58,7 @@
 -  "docs/guides/integration/github.md",
 -  "docs/guides/integration/gitlab.md",
 -  "docs/guides/integration/aws-lambda.md",
+-  "docs/guides/projects.md",
 -  "docs/concepts/build-backend.md",
 -  "docs/concepts/projects/init.md",
 -  "docs/concepts/projects/workspaces.md",
@@ -78,7 +79,7 @@
  [dependency-groups]
  docs = [
    "black>=23.10.0",
-@@ -122,6 +67,13 @@ cache-keys = [
+@@ -123,6 +67,13 @@ cache-keys = [
      { file = "crates/**/*.rs" },
      { file = "crates/**/Cargo.toml" },
  ]
