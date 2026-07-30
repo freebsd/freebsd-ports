@@ -1,6 +1,6 @@
---- electron/spec/api-native-image-spec.ts.orig	2026-05-07 20:19:20 UTC
+--- electron/spec/api-native-image-spec.ts.orig	2026-07-28 14:50:45 UTC
 +++ electron/spec/api-native-image-spec.ts
-@@ -433,7 +433,7 @@ describe('nativeImage module', () => {
+@@ -512,7 +512,7 @@ describe('nativeImage module', () => {
      });
    });
  
