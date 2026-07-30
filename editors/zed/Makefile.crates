@@ -8,8 +8,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		addr2line-0.25.1 \
 		adler2-2.0.1 \
 		aes-0.8.4 \
-		agent-client-protocol-1.1.0 \
-		agent-client-protocol-derive-1.1.0 \
+		agent-client-protocol-1.3.0 \
+		agent-client-protocol-derive-1.3.0 \
 		agent-client-protocol-schema-1.4.0 \
 		ahash-0.7.8 \
 		ahash-0.8.12 \
@@ -83,8 +83,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		avif-serialize-0.8.6 \
 		aws-config-1.8.14 \
 		aws-credential-types-1.2.12 \
-		aws-lc-rs-1.16.3 \
-		aws-lc-sys-0.40.0 \
+		aws-lc-rs-1.17.1 \
+		aws-lc-sys-0.42.0 \
 		aws-runtime-1.7.0 \
 		aws-sdk-bedrockruntime-1.125.0 \
 		aws-sdk-kinesis-1.100.0 \
@@ -127,7 +127,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		bit-vec-0.9.1 \
 		bit_field-0.10.3 \
 		bitflags-1.3.2 \
-		bitflags-2.10.0 \
+		bitflags-2.13.1 \
 		bitstream-io-4.9.0 \
 		bitvec-1.0.1 \
 		block-0.1.6 \
@@ -555,7 +555,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
 		imagesize-0.14.0 \
-		imara-diff-0.1.8 \
+		imara-diff-0.2.0 \
 		imgref-1.12.0 \
 		indenter-0.3.4 \
 		indexmap-1.9.3 \
@@ -599,8 +599,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		jupyter-websocket-client-1.1.0 \
 		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
-		kqueue-1.1.1 \
-		kqueue-sys-1.0.4 \
+		kqueue-1.2.0 \
+		kqueue-sys-1.1.2 \
 		kurbo-0.9.5 \
 		kurbo-0.13.1 \
 		kv-log-macro-1.0.7 \
@@ -648,6 +648,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		lyon_path-1.0.16 \
 		lyon_tessellation-1.0.16 \
 		mac-0.1.1 \
+		mac-notification-sys-0.6.15 \
 		mach2-0.4.3 \
 		mach2-0.5.0 \
 		malloc_buf-0.0.6 \
@@ -703,6 +704,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		normpath-1.5.0 \
 		notify-6.1.1 \
 		notify-debouncer-mini-0.4.1 \
+		notify-rust-4.18.0 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.50.3 \
 		nucleo-0.5.0 \
@@ -738,6 +740,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		objc2-core-data-0.2.2 \
 		objc2-core-foundation-0.3.2 \
 		objc2-core-image-0.2.2 \
+		objc2-core-location-0.3.2 \
 		objc2-core-services-0.3.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.2.2 \
@@ -747,6 +750,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		objc2-metal-0.3.2 \
 		objc2-quartz-core-0.2.2 \
 		objc2-quartz-core-0.3.2 \
+		objc2-user-notifications-0.3.2 \
 		objc_exception-0.1.2 \
 		objc_id-0.1.1 \
 		object-0.37.3 \
@@ -1144,12 +1148,13 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		system-configuration-sys-0.6.0 \
 		system-deps-7.0.7 \
 		system-interface-0.27.3 \
-		taffy-0.10.1 \
+		taffy-0.12.2 \
 		tagptr-0.2.0 \
 		take-until-0.2.0 \
 		tao-core-video-sys-0.2.0 \
 		tap-1.0.1 \
 		target-lexicon-0.13.3 \
+		tauri-winrt-notification-0.7.3 \
 		tempfile-3.23.0 \
 		tendril-0.4.3 \
 		term-0.7.0 \
@@ -1344,6 +1349,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		web_atoms-0.1.3 \
 		webpki-root-certs-0.26.8 \
 		webpki-roots-0.26.8 \
+		webpki-roots-1.0.8 \
 		weezl-0.1.10 \
 		wgpu-29.0.4 \
 		wgpu-core-29.0.4 \
@@ -1409,6 +1415,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		windows-targets-0.53.5 \
 		windows-threading-0.1.0 \
 		windows-threading-0.2.1 \
+		windows-version-0.1.7 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
@@ -1490,7 +1497,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		y4m-0.8.0 \
 		yaml-rust2-0.8.1 \
 		yansi-1.0.1 \
-		yawc-0.2.5 \
 		yazi-0.2.1 \
 		yeslogic-fontconfig-sys-6.0.0 \
 		yoke-0.8.0 \
@@ -1524,9 +1530,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		zvariant-5.11.0 \
 		zvariant_derive-5.11.0 \
 		zvariant_utils-3.3.1 \
-		notify,notify-types@git+https://github.com/zed-industries/notify?rev=faecbc33db4f59313e5225ef766bfd9e54a54cfd\#faecbc33db4f59313e5225ef766bfd9e54a54cfd \
 		trash@git+https://github.com/zed-industries/trash-rs?rev=47761739192828a66b11a94ba5420b82d63c03c5\#47761739192828a66b11a94ba5420b82d63c03c5 \
 		pet,pet-conda,pet-core,pet-env-var-path,pet-fs,pet-global-virtualenvs,pet-homebrew,pet-jsonrpc,pet-linux-global-python,pet-mac-commandlinetools,pet-mac-python-org,pet-mac-xcode,pet-pipenv,pet-pixi,pet-poetry,pet-pyenv,pet-python-utils,pet-reporter,pet-telemetry,pet-uv,pet-venv,pet-virtualenv,pet-virtualenvwrapper,pet-windows-registry,pet-windows-store,pet-winpython@git+https://github.com/microsoft/python-environment-tools.git?rev=9e61a22af989fe54937bf07c9f9cff1bc53d9056\#9e61a22af989fe54937bf07c9f9cff1bc53d9056 \
+		notify,notify-types@git+https://github.com/zed-industries/notify?rev=0890bbb8ca40a4b5d1f67031698dd7918b37d991\#0890bbb8ca40a4b5d1f67031698dd7918b37d991 \
 		async-task@git+https://github.com/smol-rs/async-task.git?rev=b4486cd71e4e94fbda54ce6302444de14f4d190e\#b4486cd71e4e94fbda54ce6302444de14f4d190e \
 		windows-capture@git+https://github.com/zed-industries/windows-capture.git?rev=f0d6c1b6691db75461b732f6d5ff56eed002eeb9\#f0d6c1b6691db75461b732f6d5ff56eed002eeb9 \
 		lsp-types@git+https://github.com/zed-industries/lsp-types?rev=f4dfa89a21ca35cd929b70354b1583fabae325f8\#f4dfa89a21ca35cd929b70354b1583fabae325f8 \
@@ -1534,6 +1540,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		proptest,proptest-macro@git+https://github.com/proptest-rs/proptest?rev=3dca198a8fef1b32e3a66f1e1897c955b4dc5b5b\#3dca198a8fef1b32e3a66f1e1897c955b4dc5b5b \
 		zed-scap@git+https://github.com/zed-industries/scap?rev=4afea48c3b002197176fb19cd0f9b180dd36eaac\#4afea48c3b002197176fb19cd0f9b180dd36eaac \
 		libwebrtc,livekit,livekit-api,livekit-protocol,livekit-runtime,webrtc-sys,webrtc-sys-build@git+https://github.com/zed-industries/livekit-rust-sdks?rev=d0e27be0cdad89eadab3e36207cda0a2b6e359ee\#d0e27be0cdad89eadab3e36207cda0a2b6e359ee \
+		yawc@git+https://github.com/zed-industries/yawc?rev=71a452f551cac178367eaac5d7418a09afa1f3a2\#71a452f551cac178367eaac5d7418a09afa1f3a2 \
 		tree-sitter-gitcommit@git+https://github.com/zed-industries/tree-sitter-git-commit?rev=88309716a69dd13ab83443721ba6e0b491d37ee9\#88309716a69dd13ab83443721ba6e0b491d37ee9 \
 		rodio@git+https://github.com/RustAudio/rodio?rev=e50e726ddd0292f6ef9de0dda6b90af4ed1fb66a\#e50e726ddd0292f6ef9de0dda6b90af4ed1fb66a \
 		tree-sitter-md@git+https://github.com/zed-industries/tree-sitter-markdown?rev=b596e737286780d7bfa9fcddceaeeb754574b352\#b596e737286780d7bfa9fcddceaeeb754574b352 \
