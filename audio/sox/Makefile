@@ -18,7 +18,6 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 USES=		autoreconf cpe libtool localbase:ldflags pkgconfig zip
 USE_LDCONFIG=	yes
 
-CONFLICTS=	play
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=	yes
@@ -103,6 +102,18 @@ VORBIS_CONFIGURE_ENABLE=	oggvorbis
 
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CONFIGURE_ENABLE=	wavpack
+
+.include <bsd.port.options.mk>
+
+PLIST_SUB+=	PLAYREC=${PLAYREC}
+
+.if ${PORT_OPTIONS:MALSA} || ${PORT_OPTIONS:MAO} || ${PORT_OPTIONS:MOSS} || \
+    ${PORT_OPTIONS:MPULSEAUDIO} || ${PORT_OPTIONS:MSNDIO}
+CONFLICTS=	play
+PLAYREC=
+.else
+PLAYREC="@comment "
+.endif
 
 post-patch:
 	# rename sox's custom EX/EE macros so they don't get overridden by

@@ -1,5 +1,5 @@
-%%SYMLINK%%bin/play
-%%SYMLINK%%bin/rec
+%%SYMLINK%%%%PLAYREC%%bin/play
+%%SYMLINK%%%%PLAYREC%%bin/rec
 bin/sox
 %%SYMLINK%%bin/soxi
 include/sox.h
