@@ -17,6 +17,7 @@ WWW?=		https://www.denx.de/wiki/U-Boot
 LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	gsed:textproc/gsed \
+		gdate:sysutils/coreutils \
 		swig:devel/swig \
 		dtc>=1.4.1:sysutils/dtc \
 		mkimage:sysutils/u-boot-tools \
@@ -29,7 +30,12 @@ LIB_DEPENDS+=	libuuid.so:misc/libuuid
 
 USES=		bison compiler:c11 gmake python:build pkgconfig shebangfix ssl \
 		tar:bz2
-BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed python3=${PYTHON_CMD}
+BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison \
+		date=${LOCALBASE}/bin/gdate \
+		dtc=${LOCALBASE}/bin/dtc \
+		python3=${PYTHON_CMD} \
+		sed=${LOCALBASE}/bin/gsed \
+		touch=${LOCALBASE}/bin/gtouch
 
 SHEBANG_FILES=	tools/binman/binman
 SSP_UNSAFE=	yes
