@@ -1,9 +1,10 @@
---- pyproject.toml.orig	2026-06-18 03:24:50 UTC
+--- pyproject.toml.orig	2026-07-29 23:41:54 UTC
 +++ pyproject.toml
-@@ -7,7 +7,6 @@ readme = {file = "README.md", content-type = "text/mar
+@@ -7,8 +7,6 @@ readme = {file = "README.md", content-type = "text/mar
      "numpy>=1.16.0,<3"
  ]
  readme = {file = "README.md", content-type = "text/markdown"}
+-license = "Apache-2.0"
 -license-files = ["LICENSE"]
  classifiers=[
      "Intended Audience :: Developers",

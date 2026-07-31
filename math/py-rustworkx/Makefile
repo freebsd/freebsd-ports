@@ -1,6 +1,5 @@
 PORTNAME=	rustworkx
-DISTVERSION=	0.18.0
-PORTREVISION=	1
+DISTVERSION=	0.18.1
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -172,9 +171,15 @@ CARGO_TARGET_DIR=	${WRKSRC}/target
 
 MAKE_ENV=	${CARGO_ENV}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${BUILD_WRKDIR}
+TEST_ARGS=	--ignore=visualization -p no:aiomisc -p no:relaxed
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+do-test:
+	@${RM} -rf ${WRKSRC}/rustworkx
+	@cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} pytest ${TEST_ARGS} .
+
+# tests as of 0.18.1: 2358 passed in 5.39s
 
 # The upstream Cargo.lock has pyo3 resolved to hashbrown 0.15.5,
 # but cargo update re-resolves it to 0.17.1 causing type mismatches.
