@@ -1,5 +1,5 @@
 PORTNAME=	php86
-DISTVERSION=	8.6.0alpha2
+DISTVERSION=	8.6.0alpha3
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 #MASTER_SITES=	PHP/distributions

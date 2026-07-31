@@ -91,6 +91,7 @@ include/php/Zend/zend_objects.h
 include/php/Zend/zend_objects_API.h
 include/php/Zend/zend_observer.h
 include/php/Zend/zend_operators.h
+include/php/Zend/zend_partial.h
 include/php/Zend/zend_perf_stat.h
 include/php/Zend/zend_portability.h
 include/php/Zend/zend_property_hooks.h
@@ -508,6 +509,7 @@ include/php/main/php_glob.h
 include/php/main/php_globals.h
 include/php/main/php_ini.h
 include/php/main/php_ini_builder.h
+include/php/main/php_io.h
 include/php/main/php_main.h
 include/php/main/php_memory_streams.h
 include/php/main/php_network.h
