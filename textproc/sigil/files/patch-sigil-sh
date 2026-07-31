@@ -1,0 +1,16 @@
+
+Add workaround for:
+   https://github.com/Sigil-Ebook/Sigil/issues/874
+
+--- src/Resource_Files/bash/sigil-sh_install.orig	2026-07-22 07:53:34.831031000 +1200
++++ src/Resource_Files/bash/sigil-sh_install	2026-07-22 07:54:41.043039000 +1200
+@@ -24,6 +24,9 @@
+ #  export SIGIL_EXTRA_ROOT
+ #fi
+ 
++# Workaround for crash-on-close
++export QT_QUICK_BACKEND=software
++
+ export LD_LIBRARY_PATH
+ 
+ exec ${CMAKE_INSTALL_FULL_LIBDIR}/sigil/sigil "$@"
