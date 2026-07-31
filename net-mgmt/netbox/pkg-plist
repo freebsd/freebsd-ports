@@ -53,6 +53,8 @@
 %%DATADIR%%/circuits/migrations/0055_add_comments_to_organizationalmodel.py
 %%DATADIR%%/circuits/migrations/0056_gfk_indexes.py
 %%DATADIR%%/circuits/migrations/0057_default_ordering_indexes.py
+%%DATADIR%%/circuits/migrations/0058_clear_stale_cable_profile_data.py
+%%DATADIR%%/circuits/migrations/0059_nullify_empty_cable_end.py
 %%DATADIR%%/circuits/migrations/__init__.py
 %%DATADIR%%/circuits/models/__init__.py
 %%DATADIR%%/circuits/models/base.py
@@ -300,6 +302,10 @@
 %%DATADIR%%/dcim/migrations/0235_cabletermination_circuit_site_cache.py
 %%DATADIR%%/dcim/migrations/0236_moduletype_component_counts.py
 %%DATADIR%%/dcim/migrations/0237_module_remove_local_context_data.py
+%%DATADIR%%/dcim/migrations/0238_alter_cable__abs_length.py
+%%DATADIR%%/dcim/migrations/0239_add_portmapping_objectchange.py
+%%DATADIR%%/dcim/migrations/0240_clear_stale_cable_profile_data.py
+%%DATADIR%%/dcim/migrations/0241_nullify_empty_cable_end.py
 %%DATADIR%%/dcim/migrations/__init__.py
 %%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/cpu.json
 %%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/expansion_card.json
@@ -346,6 +352,7 @@
 %%DATADIR%%/dcim/tests/test_management_commands.py
 %%DATADIR%%/dcim/tests/test_models.py
 %%DATADIR%%/dcim/tests/test_natural_ordering.py
+%%DATADIR%%/dcim/tests/test_port_mappings.py
 %%DATADIR%%/dcim/tests/test_search.py
 %%DATADIR%%/dcim/tests/test_signals.py
 %%DATADIR%%/dcim/tests/test_tables.py
@@ -882,6 +889,7 @@
 %%DATADIR%%/ipam/migrations/0090_vlangroup_recompute_total_vlan_ids.py
 %%DATADIR%%/ipam/migrations/0091_alter_service_index_and_ordering.py
 %%DATADIR%%/ipam/migrations/0092_iprange_host_indexes.py
+%%DATADIR%%/ipam/migrations/0093_alter_prefix__region_alter_prefix__site_group.py
 %%DATADIR%%/ipam/migrations/__init__.py
 %%DATADIR%%/ipam/models/__init__.py
 %%DATADIR%%/ipam/models/asns.py
@@ -2024,6 +2032,7 @@
 %%DATADIR%%/virtualization/migrations/0054_virtualmachinetype.py
 %%DATADIR%%/virtualization/migrations/0055_default_ordering_indexes.py
 %%DATADIR%%/virtualization/migrations/0056_virtualmachine_render_config_permission.py
+%%DATADIR%%/virtualization/migrations/0057_alter_cluster__region_alter_cluster__site_group.py
 %%DATADIR%%/virtualization/migrations/__init__.py
 %%DATADIR%%/virtualization/models/__init__.py
 %%DATADIR%%/virtualization/models/clusters.py
@@ -2139,6 +2148,7 @@
 %%DATADIR%%/wireless/migrations/0017_gfk_indexes.py
 %%DATADIR%%/wireless/migrations/0018_add_mptt_tree_indexes.py
 %%DATADIR%%/wireless/migrations/0019_default_ordering_indexes.py
+%%DATADIR%%/wireless/migrations/0020_alter_wirelesslan__region_and_more.py
 %%DATADIR%%/wireless/migrations/__init__.py
 %%DATADIR%%/wireless/models.py
 %%DATADIR%%/wireless/search.py
