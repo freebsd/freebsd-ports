@@ -1,5 +1,5 @@
 PORTNAME=	mkdocs-material
-DISTVERSION=	9.7.6
+DISTVERSION=	9.7.7
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,8 @@ WWW=		https://github.com/squidfunk/mkdocs-material
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Material for MkDocs is scheduled to reach end of life on November 5, 2026. Please use textproc/py-zensical instead
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatch-requirements-txt>0:devel/py-hatch-requirements-txt@${PY_FLAVOR} \
