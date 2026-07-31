@@ -1,4 +1,4 @@
-TIMESTAMP = 1770584168
+TIMESTAMP = 1785494380
 SHA256 (openjdk21-21.0.9+10.1.aarch64.tar.xz) = 052d140fea683803564374814f9feb1b0cee701d22727e8d2a6680befa8693d3
 SIZE (openjdk21-21.0.9+10.1.aarch64.tar.xz) = 169292956
 SHA256 (openjdk21-21.0.9+10.1.ppc64.tar.xz) = 64c4a6387290c5d478d1244f838996dda9679eebc8b34a167d2e9a5909ce06b8
@@ -9,5 +9,5 @@ SHA256 (openjdk21-21.0.9+10.1.x86.tar.xz) = cba9629d42a7e4dc8ac62f0c4e81d5e77984
 SIZE (openjdk21-21.0.9+10.1.x86.tar.xz) = 165180812
 SHA256 (openjdk21-21.0.9+10.1.x86_64.tar.xz) = d62c90a58d5acf486e62ff2460708ec7d9ef8704de8e88a5a3551ef8dbae0587
 SIZE (openjdk21-21.0.9+10.1.x86_64.tar.xz) = 171175000
-SHA256 (battleblow-jdk21u-jdk-21.0.10+7-1_GH0.tar.gz) = d31d9624b56c0091f5d8c8c108822b0491417b29cebfc22f896d76c6ae8c36c5
-SIZE (battleblow-jdk21u-jdk-21.0.10+7-1_GH0.tar.gz) = 114068913
+SHA256 (battleblow-jdk21u-jdk-21.0.12+8-2_GH0.tar.gz) = ac74fa27c3e368d5a3af4f537f8b68a830907a8da1541d167dccf27aa7ea7037
+SIZE (battleblow-jdk21u-jdk-21.0.12+8-2_GH0.tar.gz) = 114276355
