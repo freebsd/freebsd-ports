@@ -1,0 +1,13 @@
+-- Relax the setuptools minimum version in pyproject.toml
+-- The port is built against the FreeBSD py-setuptools version, which may be
+-- older than 64, so drop the lower bound while keeping the required packages.
+
+--- pyproject.toml.orig	2026-04-30 15:57:26 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 64", "wheel", "setuptools_scm[toml] >= 7"]
++requires = ["setuptools", "wheel", "setuptools_scm[toml] >= 7"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
