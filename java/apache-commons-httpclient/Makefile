@@ -1,6 +1,6 @@
 PORTNAME=	commons-httpclient
 DISTVERSION=	3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	java www
 MASTER_SITES=	APACHE/httpcomponents/${PORTNAME}/source
 PKGNAMEPREFIX=	apache-
@@ -13,6 +13,7 @@ WWW=		https://hc.apache.org/httpclient-3.x/
 LICENSE=	APACHE20
 
 DEPRECATED=	The Commons HttpClient project is end of life. Replaced by the Apache HttpComponents project in port www/httpclient.
+EXPIRATION_DATE=	2026-10-31
 
 BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 BUILD_DEPENDS+=	${JAVALIBDIR}/commons-codec.jar:java/apache-commons-codec
