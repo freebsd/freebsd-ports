@@ -1,5 +1,5 @@
 PORTNAME=	bitmap2pp
-DISTVERSION=	4.40.0
+DISTVERSION=	4.41.0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${DISTVERSION}
 DISTNAME=	dktools-${DISTVERSION}
