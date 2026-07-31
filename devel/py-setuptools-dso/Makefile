@@ -19,8 +19,10 @@ RUN_DEPENDS=	${PY_SETUPTOOLS}
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
+TEST_ARGS=	-p no:relaxed
+
 NO_ARCH=	yes
 
-# tests as of 2.12.3: 7 passed, 1 warning in 0.70s
+# tests as of 2.12.3: 7 passed, 1 warning in 1.11s
 
 .include <bsd.port.mk>
