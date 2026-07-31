@@ -1,5 +1,5 @@
 PORTNAME=	histoprint
-DISTVERSION=	2.6.0
+DISTVERSION=	2.7.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,6 @@ NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 2.6.0: 5 passed, 2 skipped in 0.51s
+# tests as of 2.7.0: 6 passed, 2 skipped in 0.44s
 
 .include <bsd.port.mk>
