@@ -291,7 +291,6 @@
     SUBDIR += freedink-data
     SUBDIR += freedink-dfarc
     SUBDIR += freedink-engine
-    SUBDIR += freedoko
     SUBDIR += freedroid
     SUBDIR += freedroidrpg
     SUBDIR += freeorion

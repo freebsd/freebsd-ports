@@ -5521,3 +5521,4 @@ benchmarks/py-naarad||2026-07-31|Has expired: Upstream last activity was in 2016
 security/libpreludedb||2026-07-31|Has expired: Upstream project is dead
 devel/plasma|lang/rizin|2026-07-31|Has expired: Upstream inactive since +7 years. Please use lang/rizin instead
 net-im/pidgin-fetion||2026-07-31|Has expired: Fetion service is no longer available after 2022
+games/freedoko||2026-07-31|Has expired: plist issues and error messages during install stage
