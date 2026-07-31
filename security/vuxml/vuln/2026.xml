@@ -1,3 +1,34 @@
+  <vuln vid="1976b049-8ccc-11f1-b333-901b0edee044">
+    <topic>py-mkdocs-material -- DOM XSS vulnerability</topic>
+    <affects>
+<package>
+    <name>py311-mkdocs-material</name>
+    <name>py312-mkdocs-material</name>
+    <name>py313-mkdocs-material</name>
+    <name>py313t-mkdocs-material</name>
+    <name>py314-mkdocs-material</name>
+    <name>py314t-mkdocs-material</name>
+    <name>py315-mkdocs-material</name>
+<range><lt>9.7.7</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Martin Donath reports:</p>
+	<blockquote cite="https://github.com/squidfunk/mkdocs-material/security/advisories/GHSA-xvg9-69gf-fjrf">
+	  <p>Material for MkDocs 7.2.0 through 9.7.6 contains a DOM-based cross-site scripting vulnerability in the optional search.suggest feature. A crafted q URL parameter could execute JavaScript in the documentation site's origin after user interaction.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/squidfunk/mkdocs-material/security/advisories/GHSA-xvg9-69gf-fjrf</url>
+    </references>
+    <dates>
+      <discovery>2026-07-17</discovery>
+      <entry>2026-07-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0d5b4884-8c2b-11f1-8144-8447094a420f">
     <topic>Weechat -- Multiple vulnerabilities</topic>
     <affects>
