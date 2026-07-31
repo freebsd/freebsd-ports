@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
+BROKEN_i386=	compilation fails: error: static assertion failed due to requirement 'alignof(odb::_dbITerm) % 8 == 0'
 
 BUILD_DEPENDS=	base64:converters/base64 \
 		bash:shells/bash \
