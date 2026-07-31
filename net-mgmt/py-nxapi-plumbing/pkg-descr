@@ -1,4 +1,0 @@
-Low-level library for managing Cisco devices through NX-API using JSON-RPC and
-XML.
-
-It's the successor of net-mgmt/py-pynxos with a more open license.

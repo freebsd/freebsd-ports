@@ -5526,3 +5526,4 @@ net-mgmt/py-pynxos|net-mgmt/py-napalm|2026-07-31|Has expired: Upstream inactive 
 security/proxycheck||2026-07-31|Has expired: dnsbl.org has been shut down
 www/mediawiki144||2026-07-31|Has expired: Upstream EOL
 math/py-luminol||2026-07-31|Has expired: Upstream last activity was in 2016, and the project has been moved to the LinkedInAttic GitHub account
+net-mgmt/py-nxapi-plumbing|net-mgmt/py-napalm|2026-07-31|Has expired: Upstream inactive since +8 years, code was integrated into py-napalm. Please use net-mgmt/py-napalm instead
