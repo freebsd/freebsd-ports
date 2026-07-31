@@ -876,7 +876,6 @@
     SUBDIR += please
     SUBDIR += portacl-rc
     SUBDIR += proftpd-mod_clamav
-    SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pssh
     SUBDIR += pulledpork
