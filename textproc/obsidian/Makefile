@@ -7,7 +7,7 @@
 # make USE_PACKAGE_DEPENDS_ONLY=yes install clean
 
 PORTNAME=	obsidian
-PORTVERSION=	1.12.7
+PORTVERSION=	1.13.4
 CATEGORIES=	textproc
 # Icon is taken from the Nix build recipe
 # https://github.com/NixOS/nixpkgs/blob/de5448dab588ad41aef40f8c7c0c230981656698/pkgs/applications/misc/obsidian/default.nix#L31-L34
@@ -26,10 +26,7 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_TEXT=	See https://obsidian.md/terms
 LICENSE_PERMS=
 
-DEPRECATED=	Depends on expired devel/electron39
-EXPIRATION_DATE=2026-09-30
-
-USES=		electronfix:39
+USES=		electronfix:43
 
 ELECTRONFIX_MAIN_EXECUTABLE=	obsidian
 SUB_FILES=	obsidian
