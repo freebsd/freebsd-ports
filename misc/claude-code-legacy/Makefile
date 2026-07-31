@@ -23,6 +23,10 @@ PLIST_SUB=	JS_ARCH=${JS_ARCH}
 
 OPTIONS_DEFINE=		AUDIO_CAPTURE USE_CURL_USER_AGENT
 OPTIONS_DEFAULT=	AUDIO_CAPTURE USE_CURL_USER_AGENT
+# same issue as 0c9905d54dedcf8763df802a01beb2ea3d4ac4a0
+# that is, type error in cpal-0.17.3/src/host/alsa/mod.rs
+# but rust won't let me patch it
+OPTIONS_EXCLUDE_armv7=	AUDIO_CAPTURE
 OPTIONS_SUB=		yes
 
 AUDIO_CAPTURE_DESC=		Build native audio capture module for FreeBSD
