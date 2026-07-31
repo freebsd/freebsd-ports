@@ -1,5 +1,6 @@
 PORTNAME=	faustlive
 DISTVERSION=	2.5.19
+PORTREVISION=	1
 #MASTER_SITES=	https://github.com/grame-cncm/faustlive/releases/download/${DISTVERSION}/
 #DISTFILES=	FaustLive-${DISTVERSION}${EXTRACT_SUFX}
 CATEGORIES=	audio
@@ -20,8 +21,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libqrencode.so:graphics/libqrencode \
 		libsndfile.so:audio/libsndfile # audio/alsa-lib isn't really needed: https://github.com/grame-cncm/faustlive/issues/3
 
-USES=		compiler:c++11-lang desktop-file-utils gl ncurses pkgconfig qmake qt:5 shebangfix
-USE_QT=		core gui network widgets buildtools:build
+USES=		compiler:c++11-lang desktop-file-utils gl ncurses pkgconfig qmake qt:6 shebangfix
+USE_QT=		base tools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes
