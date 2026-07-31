@@ -14,7 +14,10 @@
 # Use the following variables to override smartctl_exporter's defaults:
 #
 # smartctl_exporter_listen_address (string): 	Set address to listen on, default is localhost:9633
-# smartctl_exporter_devices (string):		Shell glob (like /dev/ada[0-9]) for all devices
+# smartctl_exporter_devices (string):		Space-separated list of devices (e.g., /dev/ada0 /dev/nvme0).
+#						If not set, smartctl_exporter auto-discovers devices.
+# smartctl_exporter_device_exclude (string):	Regexp to exclude devices from auto-discovery, default is "nda"
+#						to filter out NVMe CAM devices (use nvme controller instead).
 # smartctl_exporter_log_level (string):		Only log messages with the given severity or above. One of: [debug, info, warn, error]
 # smartctl_exporter_log_format (string):	Output format of log messages. One of: [logfmt, json]
 
@@ -28,7 +31,8 @@ load_rc_config $name
 : ${smartctl_exporter_enable:="NO"}
 : ${smartctl_exporter_user:="root"}
 : ${smartctl_exporter_listen_address:="localhost:9633"}
-: ${smartctl_exporter_devices:="$(geom disk status -s | grep -vE 'cd[0-9]' | awk '{print $1;}' | sed -e s,^,/dev/,g)"}
+: ${smartctl_exporter_devices:=""}
+: ${smartctl_exporter_device_exclude:="nda"}
 : ${smartctl_exporter_log_level:=""}
 : ${smartctl_exporter_log_format:=""}
 
@@ -41,6 +45,7 @@ command_args="-c -f -P ${pidfile} \
 	%%PREFIX%%/libexec/smartctl_exporter \
 	${smartctl_exporter_listen_address:+--web.listen-address="${smartctl_exporter_listen_address}"} \
 	${smartctl_exporter_devices:+$(for diskdev in $(echo "${smartctl_exporter_devices}"); do echo --smartctl.device="${diskdev}"; done | xargs )} \
+	${smartctl_exporter_device_exclude:+--smartctl.device-exclude="${smartctl_exporter_device_exclude}"} \
 	${smartctl_exporter_log_level:+--log.level="${smartctl_exporter_log_level}"} \
 	${smartctl_exporter_log_format:+--log.format="${smartctl_exporter_log_format}"} \
 	${smartctl_exporter_args}"
