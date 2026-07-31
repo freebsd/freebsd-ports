@@ -155,7 +155,6 @@
     SUBDIR += dokuwiki
     SUBDIR += dolibarr
     SUBDIR += dolibarr16
-    SUBDIR += dolibarr17
     SUBDIR += dolibarr18
     SUBDIR += dolibarr19
     SUBDIR += dolibarr20
