@@ -127,7 +127,3 @@ post-patch:
 	linenum=$$(${SED} -ne '/^#if __FreeBSD_version/ { = ; q ; }' \
 			${WRKSRC}/../nvidia/nv-freebsd.h) ; ${REINPLACE_CMD} \
 			-e "$$linenum,+2d" ${WRKSRC}/../nvidia/nv-freebsd.h
-	# Workaround for build failure on any base without pm_vt_switch_required().
-	# 13.5, 14.3 and 15.0 doesn't have the stub (blank) function.
-	${REINPLACE_CMD} -e 's/.*pm_vt_switch_required(dev->dev, true);.*/#if __FreeBSD_version >= 1403507 \&\& __FreeBSD_version < 1500000 || __FreeBSD_version >= 1500504\n&\n#endif/' \
-		${WRKSRC}/nvidia-drm-drv.c
