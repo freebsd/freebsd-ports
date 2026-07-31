@@ -43,8 +43,6 @@ BINARY_ALIAS=	make=${GMAKE} \
 		python=${PYTHON_CMD} \
 		sed=${LOCALBASE}/bin/gsed
 
-.include <bsd.port.pre.mk>
-
 CMAKE_ARGS+=	-DLEANTAR=${LOCALBASE}/bin/leantar
 
 post-configure:
@@ -52,11 +50,6 @@ post-configure:
 	@${MKDIR} ${BUILD_WRKSRC}/stage0/bin ${BUILD_WRKSRC}/stage1/bin
 	@${CP} ${LOCALBASE}/bin/leantar ${BUILD_WRKSRC}/stage0/bin/
 	@${CP} ${LOCALBASE}/bin/leantar ${BUILD_WRKSRC}/stage1/bin/
-
-# fails to build on 14 w/out this:
-.if ${OSREL:R} <= 14
-BINARY_ALIAS+=	ar=llvm-ar
-.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -112,4 +105,4 @@ post-install:
 # tests as of 4.31.0: 99% tests passed, 2 tests failed out of 3858
 # 2 failures are not port issues: cache/test.sh, ltar/test.sh: leantar panic (math/leangz bug, see reproducer-leangz/)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
