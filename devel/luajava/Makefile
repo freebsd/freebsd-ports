@@ -1,12 +1,15 @@
 PORTNAME=	luajava
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel java
 MASTER_SITES=	http://luaforge.net/frs/download.php/2105/
 
-MAINTAINER=	sunghyuk@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lua scripting tool for Java
 WWW=		http://www.keplerproject.org/luajava/
+
+DEPRECATED=	No new version since 2008, upstream website is gone, JDK8 only, old Lua version.
+EXPIRATION_DATE=	2026-10-28
 
 USES=		gmake dos2unix java lua:51
 JAVA_VERSION=	8
