@@ -5534,3 +5534,4 @@ www/py-django-configurations|www/py-django-configurator|2026-07-31|Has expired: 
 www/dolibarr16||2026-07-31|Has expired: php81 is the recommended max version for run it
 www/dolibarr18||2026-07-31|Has expired: php81 is the recommended max version for run it
 databases/cassandra3|databases/cassandra4|2026-07-31|Has expired: Cassandra 3.x is no longer maintained upstream, superseded by databases/cassandra4
+devel/py-python-jsonrpc-server||2026-07-31|Has expired: There is no new version in 6 years, the upstream build and CI are failing and nothing depends on this port, hence the removal
