@@ -13,6 +13,7 @@ share/man/man1/i2pd.1.gz
 %%DATADIR%%/certificates/family/stormycloud.crt
 %%DATADIR%%/certificates/family/volatile.crt
 %%DATADIR%%/certificates/reseed/acetone_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/admin_at_likogan.dev.crt
 %%DATADIR%%/certificates/reseed/admin_at_stormycloud.org.crt
 %%DATADIR%%/certificates/reseed/creativecowpat_at_mail.i2p.crt
 %%DATADIR%%/certificates/reseed/diyarciftci_at_protonmail.com.crt
