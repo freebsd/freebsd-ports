@@ -1,6 +1,6 @@
 PORTNAME=	essentials-openapi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.4.0
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Neoteroi
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	-p no:relaxed
 
-# tests as of 1.2.1: 157 passed in 8.00s
+# tests as of 1.4.0: 258 passed, 1 warning in 3.28s
 
 .include <bsd.port.mk>
