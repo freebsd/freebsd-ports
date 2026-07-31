@@ -166,14 +166,14 @@ CARGO_CRATES=	ahash-0.8.12 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
 		zmij-1.0.21 \
-		zrx-0.0.24 \
+		zrx-0.0.26 \
 		zrx-diagnostic-0.0.2 \
 		zrx-executor-0.0.6 \
-		zrx-graph-0.0.12 \
-		zrx-id-0.0.20 \
-		zrx-module-0.0.8 \
+		zrx-graph-0.0.13 \
+		zrx-id-0.0.22 \
+		zrx-module-0.0.10 \
 		zrx-path-0.0.1 \
-		zrx-scheduler-0.0.21 \
+		zrx-scheduler-0.0.22 \
 		zrx-storage-0.0.4 \
 		zrx-store-0.0.10 \
-		zrx-stream-0.0.21
+		zrx-stream-0.0.23
