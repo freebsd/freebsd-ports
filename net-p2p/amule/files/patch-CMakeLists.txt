@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-07-31 13:00:04 UTC
++++ CMakeLists.txt
+@@ -296,7 +296,7 @@ set (LIBATOMIC "")
+ # atomic references actually do need the library (see #643). Just
+ # require libatomic unconditionally on 32-bit builds.
+ set (LIBATOMIC "")
+-if (CMAKE_SIZEOF_VOID_P EQUAL 4)
++if (FALSE AND CMAKE_SIZEOF_VOID_P EQUAL 4)
+ 	# Accept either the unversioned `libatomic.so` (Debian / Fedora /
+ 	# Arch ship it via the -dev / -devel package) or the versioned-only
+ 	# `libatomic.so.1` (openSUSE ships only the latter -- there's no
