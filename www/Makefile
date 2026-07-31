@@ -106,7 +106,6 @@
     SUBDIR += castget
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
-    SUBDIR += cgicc
     SUBDIR += cgiwrap
     SUBDIR += chawan
     SUBDIR += checkbot
