@@ -300,7 +300,7 @@ npm-archive-node-modules:
 		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} \
 			-C ${WRKDIR} @node-modules-cache.mtree; \
-		if [ ${TMPDIR} != ${WRKDIR} ]; then \
+		if [ "${TMPDIR}" != "${WRKDIR}" ]; then \
 			${RM} -r ${WRKDIR}; \
 		fi; \
 	fi
@@ -416,7 +416,7 @@ npm-archive-node-modules:
 			node-modules-cache.mtree && \
 		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} @node-modules-cache.mtree; \
-		if [ ${TMPDIR} != ${WRKDIR} ]; then \
+		if [ "${TMPDIR}" != "${WRKDIR}" ]; then \
 			${RM} -r ${WRKDIR}; \
 		fi; \
 	fi
