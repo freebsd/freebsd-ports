@@ -1,0 +1,3 @@
+SDRangel is a Qt based software defined radio application. It supports
+receiving, transmitting and analyzing radio signals through devices such
+as HackRF, RTL-SDR, Airspy and SoapySDR compatible hardware.

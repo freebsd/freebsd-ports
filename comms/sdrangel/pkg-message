@@ -1,0 +1,32 @@
+[
+{ type: install
+message: <<EOM
+SDRangel has been installed.
+Supported and tested SDR devices on FreeBSD include:
+
+- HackRF
+- RTL-SDR
+- Airspy
+
+Support for additional SDR devices may be available through SoapySDR.
+To use SoapySDR devices, install the appropriate modules, for example:
+
+# pkg install SoapySDR SoapyHackRF SoapyRTLSDR
+
+To access USB SDR devices as a regular user, make sure your account has
+permission to access USB devices. Depending on your system configuration,
+you may need to configure devfs rules and add your user to the
+appropriate group, for example:
+
+# pw groupmod operator -m <username>
+
+Log out and log back in after changing group membership.
+
+To verify that a HackRF device is detected correctly, run:
+$ hackrf_info
+
+If SDRangel cannot detect an SDR device, first verify that the vendor
+utility (such as hackrf_info or rtl_test) can access the hardware.
+EOM
+}
+]
