@@ -342,7 +342,6 @@
     SUBDIR += py-pdagent-integrations
     SUBDIR += py-phonebox-plugin
     SUBDIR += py-prometheus-client
-    SUBDIR += py-pyIOSXR
     SUBDIR += py-pyang
     SUBDIR += py-pyeapi
     SUBDIR += py-pyixapi
