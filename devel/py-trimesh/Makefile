@@ -1,6 +1,6 @@
 PORTNAME=	trimesh
 PORTVERSION=	3.5.25
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel cad python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,9 @@ WWW=		https://pypi.org/project/trimesh/\#description
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+DEPRECATED=	Depends on expiring math/py-python-fcl
+EXPIRATION_DATE=2026-09-15
 
 # This order of dependancies directly lifted from setup.py please do not change!
 NEEDED_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \

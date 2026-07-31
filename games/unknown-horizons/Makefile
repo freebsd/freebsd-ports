@@ -1,6 +1,6 @@
 PORTNAME=	unknown-horizons
 PORTVERSION=	2019.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 
 MAINTAINER=	fiziologus@gmail.com
@@ -9,6 +9,9 @@ WWW=		https://www.unknown-horizons.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/licenses/GPL
+
+DEPRECATED=	Depends on expiring net/py-pyenet (ENET option)
+EXPIRATION_DATE=2026-09-15
 
 BUILD_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}

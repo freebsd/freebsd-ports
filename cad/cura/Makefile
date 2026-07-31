@@ -1,6 +1,6 @@
 PORTNAME=	Cura
 DISTVERSION=	5.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
@@ -11,6 +11,9 @@ WWW=		https://github.com/Ultimaker/Cura/wiki
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Depends on expiring devel/py-trimesh
+EXPIRATION_DATE=2026-09-15
 
 BUILD_DEPENDS=	Uranium>0,1:cad/uranium
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf@${PY_FLAVOR} \

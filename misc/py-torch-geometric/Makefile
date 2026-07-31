@@ -1,5 +1,6 @@
 PORTNAME=	torch-geometric
 DISTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +13,9 @@ WWW=		https://pyg.org/ \
 		https://github.com/pyg-team/pytorch_geometric
 
 LICENSE=	MIT
+
+DEPRECATED=	Depends on expiring math/py-dgl
+EXPIRATION_DATE=2026-09-15
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>0:devel/py-flit-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
