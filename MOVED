@@ -5525,3 +5525,4 @@ games/freedoko||2026-07-31|Has expired: plist issues and error messages during i
 net-mgmt/py-pynxos|net-mgmt/py-napalm|2026-07-31|Has expired: Upstream inactive since +7 years, was used by py-napalm for a while, until it was replaced by py-nxapi-plumbing. Please use net-mgmt/py-napalm instead
 security/proxycheck||2026-07-31|Has expired: dnsbl.org has been shut down
 www/mediawiki144||2026-07-31|Has expired: Upstream EOL
+math/py-luminol||2026-07-31|Has expired: Upstream last activity was in 2016, and the project has been moved to the LinkedInAttic GitHub account

@@ -1053,7 +1053,6 @@
     SUBDIR += py-lmfit
     SUBDIR += py-logical-unification
     SUBDIR += py-lrcalc
-    SUBDIR += py-luminol
     SUBDIR += py-mapbox-earcut
     SUBDIR += py-math-verify
     SUBDIR += py-mathics
