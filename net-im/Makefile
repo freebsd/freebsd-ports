@@ -93,7 +93,6 @@
     SUBDIR += pecl-stomp2
     SUBDIR += pidgin
     SUBDIR += pidgin-bot-sentry
-    SUBDIR += pidgin-fetion
     SUBDIR += pidgin-hotkeys
     SUBDIR += pidgin-latex
     SUBDIR += pidgin-libnotify
