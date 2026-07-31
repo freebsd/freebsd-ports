@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-jwt
-MODULE_VERSION=	3.4.4
-MODULE_PORTREVISION=	7
+MODULE_VERSION=	3.4.5
+MODULE_PORTREVISION=	0
 GH_TUPLE=	max-lt:nginx-jwt-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie JWT dynamic module
