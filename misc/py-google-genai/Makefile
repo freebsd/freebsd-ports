@@ -1,6 +1,6 @@
 PORTNAME=	google-genai
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.0
+DISTVERSION=	2.16.0
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -48,5 +48,6 @@ GH_PROJECT=	python-genai
 NO_ARCH=	yes
 
 TEST_ENV=	GOOGLE_GENAI_REPLAYS_DIRECTORY=${WRKDIR}/replays
+TEST_ARGS=	-p no:relaxed
 
 .include <bsd.port.mk>
