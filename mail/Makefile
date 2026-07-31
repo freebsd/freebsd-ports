@@ -507,7 +507,6 @@
     SUBDIR += procmail
     SUBDIR += procmail-bgrb
     SUBDIR += proxsmtp
-    SUBDIR += py-afew
     SUBDIR += py-aiosmtpd
     SUBDIR += py-alot
     SUBDIR += py-authheaders
