@@ -5530,3 +5530,4 @@ net-mgmt/py-nxapi-plumbing|net-mgmt/py-napalm|2026-07-31|Has expired: Upstream i
 devel/py-patch|devel/py-patch-ng|2026-07-31|Has expired: Upstream no longer active, project is abandoned, please used devel/py-patch-ng instead
 net-mgmt/py-pyIOSXR|net-mgmt/py-napalm|2026-07-31|Has expired: Upstream inactive since +8 years, code was integrated into py-napalm. Please use net-mgmt/py-napalm instead
 www/dolibarr17||2026-07-31|Has expired: php81 is the recommended max version for run it
+www/py-django-configurations|www/py-django-configurator|2026-07-31|Has expired: Upstream no longer active, project is abandoned, please use www/py-django-configurator instead
