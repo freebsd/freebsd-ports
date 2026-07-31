@@ -3,9 +3,12 @@ bin/remotetrx
 bin/siglevdetcal
 bin/svxlink
 bin/svxreflector
+bin/svxreflector-status
 @sample %%ETCDIR%%/.procmailrc.sample
 @sample %%ETCDIR%%/TclVoiceMail.conf.sample
+@sample %%ETCDIR%%/ca-hook.yaml.sample
 @sample %%ETCDIR%%/gpio.conf.sample
+%%ETCDIR%%/node_info.json
 @sample %%ETCDIR%%/remotetrx.conf.sample
 @sample %%ETCDIR%%/svxlink.conf.sample
 @sample %%ETCDIR%%/svxlink.d/ModuleDtmfRepeater.conf.sample
@@ -24,6 +27,10 @@ include/svxlink/AsyncAtTimer.h
 include/svxlink/AsyncAudioAmp.h
 include/svxlink/AsyncAudioClipper.h
 include/svxlink/AsyncAudioCompressor.h
+include/svxlink/AsyncAudioContainer.h
+include/svxlink/AsyncAudioContainerOpus.h
+include/svxlink/AsyncAudioContainerPcm.h
+include/svxlink/AsyncAudioContainerWav.h
 include/svxlink/AsyncAudioDebugger.h
 include/svxlink/AsyncAudioDecimator.h
 include/svxlink/AsyncAudioDecoder.h
@@ -53,21 +60,36 @@ include/svxlink/AsyncAudioStreamStateDetector.h
 include/svxlink/AsyncAudioValve.h
 include/svxlink/AsyncConfig.h
 include/svxlink/AsyncCppApplication.h
+include/svxlink/AsyncDigest.h
 include/svxlink/AsyncDnsLookup.h
+include/svxlink/AsyncDnsResourceRecord.h
+include/svxlink/AsyncEncryptedUdpSocket.h
 include/svxlink/AsyncExec.h
+include/svxlink/AsyncFactory.h
 include/svxlink/AsyncFdWatch.h
 include/svxlink/AsyncFileReader.h
 include/svxlink/AsyncFramedTcpConnection.h
+include/svxlink/AsyncHttpServerConnection.h
 include/svxlink/AsyncIpAddress.h
 include/svxlink/AsyncMsg.h
+include/svxlink/AsyncPlugin.h
 include/svxlink/AsyncPty.h
 include/svxlink/AsyncPtyStreamBuf.h
 include/svxlink/AsyncSerial.h
 include/svxlink/AsyncSigCAudioSink.h
 include/svxlink/AsyncSigCAudioSource.h
+include/svxlink/AsyncSslCertSigningReq.h
+include/svxlink/AsyncSslContext.h
+include/svxlink/AsyncSslKeypair.h
+include/svxlink/AsyncSslX509.h
+include/svxlink/AsyncSslX509ExtSubjectAltName.h
+include/svxlink/AsyncSslX509Extensions.h
+include/svxlink/AsyncStateMachine.h
 include/svxlink/AsyncTcpClient.h
 include/svxlink/AsyncTcpClientBase.h
 include/svxlink/AsyncTcpConnection.h
+include/svxlink/AsyncTcpPrioClient.h
+include/svxlink/AsyncTcpPrioClientBase.h
 include/svxlink/AsyncTcpServer.h
 include/svxlink/AsyncTcpServerBase.h
 include/svxlink/AsyncTimer.h
@@ -78,20 +100,26 @@ include/svxlink/EchoLinkDispatcher.h
 include/svxlink/EchoLinkProxy.h
 include/svxlink/EchoLinkQso.h
 include/svxlink/EchoLinkStationData.h
+include/svxlink/LogWriter.h
 include/svxlink/common.h
+%%STATIC%%lib/libasyncaudio.a
 lib/libasyncaudio.so
-lib/libasyncaudio.so.1.6
-lib/libasyncaudio.so.1.6.0
+lib/libasyncaudio.so.1.9
+lib/libasyncaudio.so.1.9.1
+%%STATIC%%lib/libasynccore.a
 lib/libasynccore.so
-lib/libasynccore.so.1.6
-lib/libasynccore.so.1.6.0
+lib/libasynccore.so.1.9
+lib/libasynccore.so.1.9.1
+%%STATIC%%lib/libasynccpp.a
 lib/libasynccpp.so
-lib/libasynccpp.so.1.6
-lib/libasynccpp.so.1.6.0
+lib/libasynccpp.so.1.9
+lib/libasynccpp.so.1.9.1
+%%STATIC%%lib/libecholib.a
 lib/libecholib.so
 lib/libecholib.so.1.3
-lib/libecholib.so.1.3.3
+lib/libecholib.so.1.3.7
 lib/libsvxmisc.a
+lib/svxlink/DummyLogic.so
 lib/svxlink/ModuleDtmfRepeater.so
 lib/svxlink/ModuleEchoLink.so
 lib/svxlink/ModuleFrn.so
@@ -100,33 +128,12 @@ lib/svxlink/ModuleMetarInfo.so
 lib/svxlink/ModuleParrot.so
 lib/svxlink/ModuleTcl.so
 lib/svxlink/ModuleTrx.so
-%%STATIC%%lib/libasyncaudio.a
-%%STATIC%%lib/libasynccore.a
-%%STATIC%%lib/libasynccpp.a
-%%STATIC%%lib/libecholib.a
-%%DATADIR%%/events.tcl
-%%DATADIR%%/events.d/RepeaterLogic.tcl
-%%DATADIR%%/events.d/SimplexLogic.tcl
-%%DATADIR%%/events.d/Module.tcl
-%%DATADIR%%/events.d/Logic.tcl
-%%DATADIR%%/events.d/CW.tcl
-%%DATADIR%%/events.d/SelCall.tcl
-%%DATADIR%%/events.d/locale.tcl
-%%DATADIR%%/events.d/Help.tcl
-%%DATADIR%%/events.d/Parrot.tcl
-%%DATADIR%%/events.d/EchoLink.tcl
-%%DATADIR%%/events.d/Frn.tcl
-%%DATADIR%%/events.d/Tcl.tcl.example
-%%DATADIR%%/events.d/TclVoiceMail.tcl
-%%DATADIR%%/events.d/DtmfRepeater.tcl
-%%DATADIR%%/events.d/MetarInfo.tcl
-%%DATADIR%%/events.d/PropagationMonitor.tcl
-%%DATADIR%%/events.d/SelCallEnc.tcl
-%%DATADIR%%/events.d/Trx.tcl
-%%DATADIR%%/modules.d/ModuleTcl.tcl.example
-%%DATADIR%%/modules.d/ModuleTclVoiceMail.tcl
-%%DATADIR%%/modules.d/ModulePropagationMonitor.tcl
-%%DATADIR%%/modules.d/ModuleSelCallEnc.tcl
+lib/svxlink/ReflectorLogic.so
+lib/svxlink/ReflectorV2Logic.so
+lib/svxlink/RepeaterLogic.so
+lib/svxlink/SimplexLogic.so
+sbin/svxlink_gpio_down
+sbin/svxlink_gpio_up
 share/man/man1/devcal.1.gz
 share/man/man1/remotetrx.1.gz
 share/man/man1/siglevdetcal.1.gz
@@ -144,10 +151,46 @@ share/man/man5/ModuleTrx.conf.5.gz
 share/man/man5/remotetrx.conf.5.gz
 share/man/man5/svxlink.conf.5.gz
 share/man/man5/svxreflector.conf.5.gz
-sbin/svxlink_gpio_down
-sbin/svxlink_gpio_up
+%%DATADIR%%/ca-hook.py
+%%DATADIR%%/events.d/CW.tcl
+%%DATADIR%%/events.d/DtmfRepeater.tcl
+%%DATADIR%%/events.d/EchoLink.tcl
+%%DATADIR%%/events.d/EchoLinkCommon.tcl
+%%DATADIR%%/events.d/EchoLinkRemote.tcl
+%%DATADIR%%/events.d/Frn.tcl
+%%DATADIR%%/events.d/Help.tcl
+%%DATADIR%%/events.d/Logic.tcl
+%%DATADIR%%/events.d/LogicBase.tcl
+%%DATADIR%%/events.d/MetarInfo.tcl
+%%DATADIR%%/events.d/Module.tcl
+%%DATADIR%%/events.d/Parrot.tcl
+%%DATADIR%%/events.d/PropagationMonitor.tcl
+%%DATADIR%%/events.d/ReflectorLogic.tcl
+%%DATADIR%%/events.d/ReflectorLogicType.tcl
+%%DATADIR%%/events.d/ReflectorV2LogicType.tcl
+%%DATADIR%%/events.d/RepeaterLogic.tcl
+%%DATADIR%%/events.d/RepeaterLogicType.tcl
+%%DATADIR%%/events.d/SelCall.tcl
+%%DATADIR%%/events.d/SelCallEnc.tcl
+%%DATADIR%%/events.d/SimplexLogic.tcl
+%%DATADIR%%/events.d/SimplexLogicType.tcl
+%%DATADIR%%/events.d/Tcl.tcl.example
+%%DATADIR%%/events.d/TclModule.tcl
+%%DATADIR%%/events.d/TclVoiceMail.tcl
+%%DATADIR%%/events.d/Trx.tcl
+%%DATADIR%%/events.d/globals.tcl
+%%DATADIR%%/events.d/locale.tcl
+%%DATADIR%%/events.d/squelch_timeout.tcl
+%%DATADIR%%/events.tcl
+%%DATADIR%%/modules.d/ModulePropagationMonitor.tcl
+%%DATADIR%%/modules.d/ModuleSelCallEnc.tcl
+%%DATADIR%%/modules.d/ModuleTcl.tcl.example
+%%DATADIR%%/modules.d/ModuleTclVoiceMail.tcl
 @dir %%DATADIR%%/sounds
+@dir /var/lib/svxlink/pki
+@dir /var/lib/svxlink
+@dir /var/lib
 @dir(svxlink,svxlink,755) /var/spool/svxlink/propagation_monitor
 @dir(svxlink,svxlink,755) /var/spool/svxlink/qso_recorder
 @dir(svxlink,svxlink,755) /var/spool/svxlink/voice_mail
-@dir(svxlink,svxlink,755) /var/spool/svxlink
+@dir /var/spool/svxlink

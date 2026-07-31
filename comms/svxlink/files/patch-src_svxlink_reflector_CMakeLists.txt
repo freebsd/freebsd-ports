@@ -1,0 +1,23 @@
+--- src/svxlink/reflector/CMakeLists.txt.orig	2026-06-07 15:05:16 UTC
++++ src/svxlink/reflector/CMakeLists.txt
+@@ -11,13 +11,13 @@ add_definitions(${POPT_DEFINITIONS})
+ #add_definitions(${GCRYPT_DEFINITIONS})
+ 
+ # Find jsoncpp library
+-#find_package(jsoncpp REQUIRED)
+-#get_target_property(JSONCPP_INC_PATH jsoncpp_lib INTERFACE_INCLUDE_DIRECTORIES)
+-#include_directories(${JSONCPP_INC_PATH})
+-#set(LIBS ${LIBS} jsoncpp_lib)
+-pkg_check_modules (JSONCPP REQUIRED jsoncpp)
+-include_directories(${JSONCPP_INCLUDE_DIRS})
+-set(LIBS ${LIBS} ${JSONCPP_LIBRARIES})
++find_package(jsoncpp REQUIRED)
++get_target_property(JSONCPP_INC_PATH jsoncpp_lib INTERFACE_INCLUDE_DIRECTORIES)
++include_directories(${JSONCPP_INC_PATH})
++set(LIBS ${LIBS} jsoncpp_lib)
++##pkg_check_modules (JSONCPP REQUIRED jsoncpp)
++##include_directories(${JSONCPP_INCLUDE_DIRS})
++##set(LIBS ${LIBS} ${JSONCPP_LIBRARIES})
+ 
+ # Add project libraries
+ set(LIBS asynccpp asyncaudio asynccore svxmisc ${LIBS})

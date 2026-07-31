@@ -1,6 +1,6 @@
---- src/qtel/CMakeLists.txt.orig	2018-03-04 18:59:29 UTC
+--- src/qtel/CMakeLists.txt.orig	2026-05-23 14:59:55 UTC
 +++ src/qtel/CMakeLists.txt
-@@ -16,7 +16,14 @@ set(FORMS MainWindowBase.ui ComDialogBase.ui SettingsD
+@@ -16,7 +16,14 @@ set(RESOURCES qtel.qrc)
  set(RESOURCES qtel.qrc)
  
  # Libraries

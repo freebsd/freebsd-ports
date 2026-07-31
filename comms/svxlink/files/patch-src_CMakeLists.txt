@@ -1,6 +1,25 @@
---- src/CMakeLists.txt.orig	2019-09-01 20:12:38 UTC
+--- src/CMakeLists.txt.orig	2026-05-23 14:59:55 UTC
 +++ src/CMakeLists.txt
-@@ -37,6 +37,7 @@ set(RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin
+@@ -27,6 +27,18 @@ set(PROJECT_INCLUDE_DIR ${PROJECT_BINARY_DIR}/include)
+ 
+ # The path to the project global include directory
+ set(PROJECT_INCLUDE_DIR ${PROJECT_BINARY_DIR}/include)
++# Set up include directories
++include_directories(
++  ${PROJECT_INCLUDE_DIR}
++  ${CMAKE_BINARY_DIR}
++if(QT_ONLY)
++  ${CMAKE_SOURCE_DIR}/echolib
++  ${CMAKE_SOURCE_DIR}/async/audio
++  ${CMAKE_SOURCE_DIR}/async/core
++  ${CMAKE_SOURCE_DIR}/async/cpp
++  ${INCLUDE_INSTALL_DIR}/svxlink/svxlink
++endif(QT_ONLY)
++)
+ 
+ # Where to put library files
+ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+@@ -43,6 +55,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cma
  list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/")
  
  # Optional parts
@@ -8,7 +27,7 @@
  option(USE_QT "Build Qt applications and libs" ON)
  option(BUILD_STATIC_LIBS "Build static libraries in addition to dynamic" OFF)
  
-@@ -46,12 +47,6 @@ if(NOT DEFINED INTERNAL_SAMPLE_RATE)
+@@ -52,12 +65,6 @@ add_definitions(-DINTERNAL_SAMPLE_RATE=${INTERNAL_SAMP
  endif(NOT DEFINED INTERNAL_SAMPLE_RATE)
  add_definitions(-DINTERNAL_SAMPLE_RATE=${INTERNAL_SAMPLE_RATE})
  
@@ -21,7 +40,7 @@
  # Warnings should be enabled for GCC. Also turning off the NDEBUG flag
  # since that remove asserts.
  if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
-@@ -79,7 +74,6 @@ if(NOT CMAKE_BUILD_TYPE)
+@@ -85,7 +92,6 @@ endif(NOT CMAKE_BUILD_TYPE)
        FORCE)
  endif(NOT CMAKE_BUILD_TYPE)
  
@@ -29,7 +48,7 @@
  ##############################################################################
  # Install targets properties setup
  ##############################################################################
-@@ -93,6 +87,18 @@ if(NOT DEFINED INCLUDE_INSTALL_DIR)
+@@ -99,6 +105,18 @@ endif(NOT DEFINED INCLUDE_INSTALL_DIR)
    set(INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_FULL_INCLUDEDIR})
  endif(NOT DEFINED INCLUDE_INSTALL_DIR)
  
@@ -48,16 +67,24 @@
  # Where to install libraries
  if(NOT DEFINED LIB_INSTALL_DIR)
    #set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
-@@ -333,21 +339,23 @@ set(LIBS ${LIBS} ${SIGC2_LIBRARIES})
- # Find the chown utility
- include(FindCHOWN)
+@@ -297,11 +315,11 @@ configure_file(${CMAKE_SOURCE_DIR}/config.h.in
+   )
  
--set(SVXLINK_USER "svxlink" CACHE STRING "Set SvxLink system user")
--set(SVXLINK_GROUP "svxlink" CACHE STRING "Set SvxLink system group")
--message(STATUS "SvxLink user = ${SVXLINK_USER}")
--message(STATUS "SvxLink group = ${SVXLINK_GROUP}")
--
- # Add directories to build
+ # Find the Sigc++ library
+-find_package(SIGC REQUIRED)
+-include_directories(${SIGC_INCLUDE_DIRS})
+-add_definitions(${SIGC_DEFINITIONS})
++find_package(SIGC2 REQUIRED)
++include_directories(${SIGC2_INCLUDE_DIRS})
++add_definitions(${SIGC2_DEFINITIONS})
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SIGC_CXX_FLAGS}")
+-set(LIBS ${LIBS} ${SIGC_LIBRARIES})
++set(LIBS ${LIBS} ${SIGC2_LIBRARIES})
+ 
+ find_package(LADSPA)
+ if(LADSPA_FOUND)
+@@ -331,9 +349,11 @@ add_subdirectory(misc)
+ add_subdirectory(doc)
  add_subdirectory(async)
  add_subdirectory(misc)
 +if(NOT QT_ONLY)
@@ -68,12 +95,3 @@
  if(USE_QT)
    add_subdirectory(qtel)
  endif(USE_QT)
- add_subdirectory(doc)
-+
-+set(SVXLINK_USER "svxlink" CACHE STRING "Set SvxLink system user")
-+set(SVXLINK_GROUP "daemon" CACHE STRING "Set SvxLink system group")
-+message(STATUS "SvxLink user = ${SVXLINK_USER}")
-+message(STATUS "SvxLink group = ${SVXLINK_GROUP}")
- 
- # Experimental CPack package building
- set(CPACK_SET_DESTDIR "ON")

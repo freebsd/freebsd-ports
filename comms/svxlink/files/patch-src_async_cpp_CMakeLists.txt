@@ -1,0 +1,11 @@
+--- src/async/cpp/CMakeLists.txt.orig	2026-06-03 15:52:20 UTC
++++ src/async/cpp/CMakeLists.txt
+@@ -16,7 +16,7 @@ set(LIBS ${LIBS} ${CMAKE_THREAD_LIBS_INIT})
+ set(LIBS ${LIBS} ${CMAKE_THREAD_LIBS_INIT})
+ 
+ # Find libresolv for real?
+-set(LIBS ${LIBS} resolv)
++#set(LIBS ${LIBS} resolv)
+ 
+ # Set up additional defines
+ # FIXME: Do we need this?

@@ -1,0 +1,24 @@
+--- src/svxlink/trx/CMakeLists.txt.orig	2026-05-23 14:59:55 UTC
++++ src/svxlink/trx/CMakeLists.txt
+@@ -78,14 +78,13 @@ endif (GPIOD_FOUND)
+ endif (GPIOD_FOUND)
+ 
+ # Find jsoncpp library
+-#find_package(jsoncpp REQUIRED)
+-#get_target_property(JSONCPP_INC_PATH jsoncpp_lib INTERFACE_INCLUDE_DIRECTORIES)
+-#include_directories(${JSONCPP_INC_PATH})
+-#set(LIBS ${LIBS} jsoncpp_lib)
+-pkg_check_modules (JSONCPP REQUIRED jsoncpp)
+-include_directories(${JSONCPP_INCLUDE_DIRS})
+-set(LIBS ${LIBS} ${JSONCPP_LIBRARIES})
+-
++find_package(jsoncpp REQUIRED)
++get_target_property(JSONCPP_INC_PATH jsoncpp_lib INTERFACE_INCLUDE_DIRECTORIES)
++include_directories(${JSONCPP_INC_PATH})
++set(LIBS ${LIBS} jsoncpp_lib)
++#pkg_check_modules (JSONCPP REQUIRED jsoncpp)
++#include_directories(${JSONCPP_INCLUDE_DIRS})
++#set(LIBS ${LIBS} ${JSONCPP_LIBRARIES})
+ # Build only a static library
+ add_library(${LIBNAME} STATIC ${LIBSRC} ${VERSION_DEPENDS})
+ target_link_libraries(${LIBNAME} ${LIBS})

@@ -1,0 +1,12 @@
+--- src/misc/CMakeLists.txt.orig	2026-05-23 14:59:55 UTC
++++ src/misc/CMakeLists.txt
+@@ -13,5 +13,7 @@ target_link_libraries(${LIBNAME} ${LIBS})
+ target_link_libraries(${LIBNAME} ${LIBS})
+ 
+ # Install targets
+-install(TARGETS ${LIBNAME} DESTINATION ${LIB_INSTALL_DIR})
+-install(FILES ${EXPINC} DESTINATION ${SVX_INCLUDE_INSTALL_DIR})
++if(NOT QT_ONLY)
++  install(TARGETS ${LIBNAME} DESTINATION ${LIB_INSTALL_DIR})
++  install(FILES ${EXPINC} DESTINATION ${SVX_INCLUDE_INSTALL_DIR})
++endif(NOT QT_ONLY)

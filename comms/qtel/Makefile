@@ -9,9 +9,9 @@ LIB_DEPENDS=	libecholib.so:comms/svxlink \
 		libgsm.so:audio/gsm
 
 MASTERDIR=	${.CURDIR}/../svxlink
-USES=		qt:5 gnome
-USE_QT=		buildtools core gui linguisttools network qmake widgets
-USE_GNOME=	libsigc++20
+USES=		qt:6
+USE_QT=		base 5compat tools
+USE_GL=		gl opengl
 PKGDIR=		${.CURDIR}
 CMAKE_ARGS+=	-DUSE_QT:BOOL=YES \
 		-DQT_ONLY:BOOL=YES

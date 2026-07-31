@@ -1,12 +1,22 @@
---- src/svxlink/svxlink/CMakeLists.txt.orig	2021-03-09 23:15:07 UTC
+--- src/svxlink/svxlink/CMakeLists.txt.orig	2026-05-23 14:59:55 UTC
 +++ src/svxlink/svxlink/CMakeLists.txt
-@@ -55,6 +55,9 @@ add_version_target(SVXLINK VERSION_DEPENDS)
- set(VERSION_DEPENDS)
- add_version_target(SVXLINK VERSION_DEPENDS)
+@@ -78,6 +78,9 @@ set(LIBS trx locationinfo asynccpp asyncaudio asynccor
+ # Add project libraries
+ set(LIBS trx locationinfo asynccpp asyncaudio asynccore svxmisc ${LIBS})
  
 +# Needed on FreeBSD
-+string(PREPEND CMAKE_CXX_FLAGS "-Wl,-export-dynamic ")
++string(PREPEND CMAKE_CXX_FLAGS "-Wl,-export-dynamic,-L${LOCALBASE}/lib ")
 +
  # Build the executable
- add_executable(svxlink
-   MsgHandler.cpp Module.cpp Logic.cpp SimplexLogic.cpp RepeaterLogic.cpp
+ add_executable(svxlink ${SVXLINK_SRCS} ${VERSION_DEPENDS})
+ target_link_libraries(svxlink ${LIBS})
+@@ -109,6 +112,9 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/svxlink_gpi
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/svxlink_gpio_down.in
+ 	${RUNTIME_OUTPUT_DIRECTORY}/svxlink_gpio_down
+         @ONLY)
++
++# Set up standard GNU installation directories
++include(GNUInstallDirs)
+ 
+ # Install targets
+ install(TARGETS svxlink DESTINATION ${BIN_INSTALL_DIR})

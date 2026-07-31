@@ -1,6 +1,5 @@
 PORTNAME?=	svxlink
-PORTVERSION=	19.09.2
-PORTREVISION?=	2
+PORTVERSION=	26.05.1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -11,15 +10,19 @@ LICENSE?=	GPLv2
 
 LIB_DEPENDS?=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error \
 		libgsm.so:audio/gsm \
+		libogg.so:audio/libogg \
 		libopus.so:audio/opus \
 		libpopt.so:devel/popt \
+		libjsoncpp.so:devel/jsoncpp \
 		librtlsdr.so:comms/rtl-sdr \
 		libspeex.so:audio/speex
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+		anytopnm:graphics/netpbm
 
-USES+=		cmake:noninja compiler:c++11-lang gnome groff pkgconfig tcl:86
+USES+=		cmake:noninja compiler:c++11-lang ghostscript gnome groff pkgconfig \
+		python tcl:86 ssl shebangfix
+SHEBANG_FILES=	src/svxlink/reflector/ca-hook.py.in src/svxlink/reflector/svxreflector-status
 USE_GITHUB=	yes
 GH_ACCOUNT=	sm0svx
 GH_PROJECT=	svxlink
@@ -62,11 +65,9 @@ PORTDOCS=		*
 post-patch:
 	@${GREP} -lr /dev/ttyS0 ${WRKSRC} | ${GREP} -v .bak | ${GREP} -v .orig | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/dev/ttyS0|/dev/ttyu0|'
-	@${REINPLACE_CMD} -e 's|/usr/share/icons|${PREFIX}/share/icons|' \
-		${WRKSRC}/src/qtel/qtel.desktop
 	@${REINPLACE_CMD} -e 's|/usr/share/svxlink|${DOCSDIR}|' \
 		${WRKSRC}/src/doc/man/svxlink.conf.5
-	@${REINPLACE_CMD} -e 's|/usr/bin/|${PREFIX}/bin/|' ${WRKSRC}/src/qtel/qtel.desktop \
+	@${REINPLACE_CMD} -e 's|/usr/bin/|${PREFIX}/bin/|' \
 		${WRKSRC}/src/doc/man/svxlink.conf.5 \
 		${WRKSRC}/src/svxlink/svxlink/svxlink.conf.in
 	@${REINPLACE_CMD} -e 's|/usr/lib|${PREFIX}/lib|' \
@@ -81,6 +82,8 @@ post-patch-OSS-on:
 post-install:
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/.procmailrc \
 		${STAGEDIR}${PREFIX}/etc/svxlink/.procmailrc.sample
+	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/ca-hook.yaml \
+		${STAGEDIR}${PREFIX}/etc/svxlink/ca-hook.yaml.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/gpio.conf \
 		${STAGEDIR}${PREFIX}/etc/svxlink/gpio.conf.sample
 	${MV}	${STAGEDIR}${PREFIX}/etc/svxlink/TclVoiceMail.conf \
@@ -116,12 +119,6 @@ post-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/doc/README-19.09.adoc ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORTNAME} == qtel
-post-install:
-	${RM}	${STAGEDIR}${PREFIX}/include/svxlink/CppStdCompat.h
-	${RM}	${STAGEDIR}${PREFIX}/include/svxlink/common.h
-	${RM}	${STAGEDIR}${PREFIX}/lib/libsvxmisc.a
 .endif
 
 .include <bsd.port.mk>
