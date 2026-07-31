@@ -1,0 +1,7 @@
+--- src/cfnlint/data/schemas/version.json.orig	2026-07-28 16:25:31 UTC
++++ src/cfnlint/data/schemas/version.json
+@@ -1 +1,3 @@
+-{"schema_date": "2026-07-28T14:54:37Z"}
++{
++ "schema_date": "2026-07-28T14:54:37Z"
++}

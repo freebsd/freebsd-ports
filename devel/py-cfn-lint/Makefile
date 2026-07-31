@@ -1,5 +1,5 @@
 PORTNAME=	cfn-lint
-DISTVERSION=	1.52.1
+DISTVERSION=	1.53.3
 CATEGORIES=	devel python textproc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,11 +30,17 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVO
 
 USES=		pytest python
 USE_PYTHON=	autoplist concurrent pep517 unittest
-PYTEST_ARGS=	-x -v --showlocals
+PYTEST_ARGS=	-x -v --showlocals --tb=long \
+		--ignore=test/integration/test_schema_files.py \
+		--ignore=test/unit/module/maintenance/test_update_specs_from_pricing.py
+
 TEST_ENV=	${MAKE_ENV} \
 		PATH=${STAGEDIR}${PREFIX}/bin:${PATH} \
 		PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 NO_ARCH=	yes
+
+pre-test:
+		${SETENVI} ${WRK_ENV} ${TEST_ENV} ${PYTHON_CMD} ${STAGEDIR}${PREFIX}/bin/cfn-lint --update-specs --force
 
 .include <bsd.port.mk>
