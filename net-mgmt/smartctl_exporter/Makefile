@@ -1,7 +1,7 @@
 PORTNAME=		smartctl_exporter
 PORTVERSION=		0.14.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		delphij@FreeBSD.org
@@ -9,6 +9,7 @@ COMMENT=		Prometheus metrics exporter for smartctl
 WWW=			https://github.com/prometheus-community/smartctl_exporter
 
 LICENSE=		APACHE20
+LICENSE_FILE=		${WRKSRC}/LICENSE
 
 USES=			go:modules
 USE_GITHUB=		yes
@@ -51,7 +52,7 @@ GH_TUPLE=	\
 		xhit:go-str2duration:v2.1.0:xhit_go_str2duration_v2/vendor/github.com/xhit/go-str2duration/v2
 
 pre-patch:
-	${REINPLACE_CMD} -i '' -e 's|/usr/sbin/smartctl|${LOCALBASE}/sbin/smartctl|g' \
+	${REINPLACE_CMD} -e 's|/usr/sbin/smartctl|${LOCALBASE}/sbin/smartctl|g' \
 		${WRKSRC}/README.md ${WRKSRC}/main.go
 
 .include <bsd.port.mk>
