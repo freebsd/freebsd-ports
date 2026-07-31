@@ -37,6 +37,7 @@ share/icons/hicolor/scalable/apps/xfw.svg
 %%NLS%%share/locale/hu/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/no/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xfe.mo
