@@ -5648,7 +5648,6 @@
     SUBDIR += py-parsy
     SUBDIR += py-parver
     SUBDIR += py-pastel
-    SUBDIR += py-patch
     SUBDIR += py-patch-ng
     SUBDIR += py-path
     SUBDIR += py-path.py
