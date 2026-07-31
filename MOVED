@@ -5533,3 +5533,4 @@ www/dolibarr17||2026-07-31|Has expired: php81 is the recommended max version for
 www/py-django-configurations|www/py-django-configurator|2026-07-31|Has expired: Upstream no longer active, project is abandoned, please use www/py-django-configurator instead
 www/dolibarr16||2026-07-31|Has expired: php81 is the recommended max version for run it
 www/dolibarr18||2026-07-31|Has expired: php81 is the recommended max version for run it
+databases/cassandra3|databases/cassandra4|2026-07-31|Has expired: Cassandra 3.x is no longer maintained upstream, superseded by databases/cassandra4
