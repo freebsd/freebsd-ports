@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-06-18 04:17:37 UTC
++++ pyproject.toml
+@@ -14,7 +14,7 @@ description = "A simple in-process python scheduler li
+     { name = "Jendrik Potyka", email = "jpotyka@digon.io" },
+ ]
+ description = "A simple in-process python scheduler library with asyncio, threading and timezone support."
+-license = "LGPL-3.0-only"
++license = { text = "LGPL-3.0-only" }
+ keywords = [
+     "scheduler",
+     "schedule",

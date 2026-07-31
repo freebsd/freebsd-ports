@@ -1,5 +1,5 @@
 PORTNAME=	scheduler
-DISTVERSION=	0.8.8
+DISTVERSION=	0.8.11
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,11 +16,20 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typeguard>=3.0.0:devel/py-typeguard@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # tests fail to run, see https://gitlab.com/DigonIO/scheduler/-/issues/28
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}:${WRKSRC}
+TEST_ARGS=	-p no:relaxed \
+		--ignore=tests/test_jobtimer.py \
+		--ignore=tests/test_misc.py \
+		--ignore=tests/test_readme.py \
+		tests/
+
+pre-test:
+	@${TOUCH} ${WRKSRC}/tests/__init__.py
+
+# tests as of 0.8.11: 34 passed in 0.39s (after ignoring tests that need helpers.py missing from the sdist)
 
 .include <bsd.port.mk>
