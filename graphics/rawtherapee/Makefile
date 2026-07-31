@@ -119,7 +119,7 @@ _RANLIB=	${RANLIB}
 CMAKE_ARGS+=	-DPROC_TARGET_NUMBER="1"
 .endif
 
-.if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1500000)
+.if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1600000)
 # don't waste everybody's time with Tier-2 and moving targets.
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=only amd64 is supported on non-released FreeBSD versions
