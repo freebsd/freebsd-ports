@@ -404,7 +404,6 @@
     SUBDIR += mattermost-webapp
     SUBDIR += mcp-server-browserbase
     SUBDIR += mediawiki143
-    SUBDIR += mediawiki144
     SUBDIR += mediawiki145
     SUBDIR += mediawiki146
     SUBDIR += mergelog
