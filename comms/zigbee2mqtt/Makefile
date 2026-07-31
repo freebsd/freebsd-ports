@@ -1,5 +1,6 @@
 PORTNAME=	zigbee2mqtt
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	LOCAL/otis/:nodemodules
 DISTFILES=	${DISTCACHEFILES_nodemodules}:nodemodules
@@ -10,6 +11,9 @@ WWW=		https://github.com/Koenkk/zigbee2mqtt
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Depends on expired www/node20
+EXPIRATION_DATE=2026-09-30
 
 BUILD_DEPENDS=	node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION} \
 		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
