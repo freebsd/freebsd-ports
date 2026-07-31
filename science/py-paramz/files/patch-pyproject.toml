@@ -1,0 +1,26 @@
+-- Convert the PEP 621 license string to the table form so the installed
+-- setuptools accepts the pyproject.toml configuration, remove the
+-- license-files key that the installed setuptools does not recognise,
+-- and relax the build-system setuptools requirement to the version that
+-- is provided by the devel/py-setuptools port.
+
+--- pyproject.toml.orig	2026-07-29 23:32:22.347627000 -0700
++++ pyproject.toml	2026-07-29 23:32:22.349457000 -0700
+@@ -5,8 +5,7 @@
+     {name = "Max Zwiessele", email = "ibinbei@gmail.com"},
+ ]
+ description = "The Parameterization Framework"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = { text = "BSD-3-Clause" }
+ requires-python = ">=3.11"
+ keywords = ["machine-learning", "gaussian-processes", "kernels"]
+ classifiers = [
+@@ -50,5 +49,5 @@
+ readme = {file = ["README.rst"]}
+
+ [build-system]
+-requires = ["setuptools>=77", "wheel"]
++requires = ["setuptools>=63.1.0", "wheel"]
+ build-backend = "setuptools.build_meta"
+\ No newline at end of file
