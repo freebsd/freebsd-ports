@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.41 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-19431-g40e9ee5af0
+DISTVERSION=	0.0.42 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-19675-gcd814f8c92
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -36,8 +36,8 @@ GH_TUPLE=	RPCS3:soundtouch:2.3.1-87-ga0fba77:soundtouch/3rdparty/SoundTouch/soun
 		Megamouse:VulkanMemoryAllocator:1d8f600:vkalloc/3rdparty/GPUOpen/VulkanMemoryAllocator \
 		nothings:stb:013ac3b:stb/3rdparty/stblib/stb \
 		protocolbuffers:protobuf:edaa823d8b36:protobuf/3rdparty/protobuf/protobuf \
-		wolfSSL:wolfssl:v5.9.1-stable:wolfssl/3rdparty/wolfssl/wolfssl \
-		xioTechnologies:Fusion:v1.2.11:fusion/3rdparty/fusion/fusion
+		wolfSSL:wolfssl:v5.9.2-stable:wolfssl/3rdparty/wolfssl/wolfssl \
+		xioTechnologies:Fusion:v1.3.2:fusion/3rdparty/fusion/fusion
 
 USES=		cmake gl iconv:wchar_t llvm:min=20,${LLVM_DEP} localbase:ldflags \
 		openal:soft pkgconfig python:build qt:6 xorg
@@ -51,8 +51,8 @@ CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS USE_PRECOMPILED_HEADERS
 CMAKE_ARGS+=	-DLLVM_DIR:PATH="${LOCALBASE}/${LIB_DEPENDS:M*llvm*:T}/lib/cmake/llvm"
 LDFLAGS+=	-Wl,--as-needed # GLU
 
-OPTIONS_DEFINE=	ALSA EVDEV FAUDIO JACK LLVM19 LTO OPENCV PULSEAUDIO SDL SNDIO VULKAN
-OPTIONS_DEFAULT=EVDEV FAUDIO JACK LLVM19 LTO OPENCV PULSEAUDIO SDL SNDIO VULKAN
+OPTIONS_DEFINE=	ALSA EVDEV FAUDIO JACK LLVM22 LTO OPENCV PULSEAUDIO SDL SNDIO VULKAN
+OPTIONS_DEFAULT=EVDEV FAUDIO JACK LLVM22 LTO OPENCV PULSEAUDIO SDL SNDIO VULKAN
 
 ALSA_BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib
 ALSA_CMAKE_BOOL=	USE_ALSA
@@ -71,10 +71,10 @@ JACK_BUILD_DEPENDS=	jackit>0:audio/jack
 JACK_CMAKE_BOOL=	USE_JACK
 
 # https://github.com/RPCS3/rpcs3/commits/master/3rdparty/llvm/llvm
-LLVM19_DESC=		LLVM version recommended by upstream
-LLVM19_LIB_DEPENDS=	libLLVM-19.so:devel/llvm19
-LLVM19_VARS=		LLVM_DEP=build
-LLVM19_VARS_OFF=	LLVM_DEP=lib
+LLVM22_DESC=		LLVM version recommended by upstream
+LLVM22_LIB_DEPENDS=	libLLVM-22.so:devel/llvm22
+LLVM22_VARS=		LLVM_DEP=build
+LLVM22_VARS_OFF=	LLVM_DEP=lib
 
 LTO_CMAKE_BOOL=		USE_LTO
 
