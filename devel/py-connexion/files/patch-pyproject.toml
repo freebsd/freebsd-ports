@@ -1,0 +1,15 @@
+-- Fix version in pyproject.toml for GitHub source
+-- On the main development branch, the version is set to 3.0.dev0
+-- We need to patch it to 3.3.0 to match the tag and distversion
+
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ [tool.poetry]
+ name = "connexion"
+-version = "3.0.dev0"
++version = "3.3.0"
+ description = "Connexion - API first applications with OpenAPI/Swagger"
+ readme = "README.md"
+ keywords = ["api", "swagger", "openapi"]
+ license = "Apache-2.0"
