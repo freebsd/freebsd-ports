@@ -5532,3 +5532,4 @@ net-mgmt/py-pyIOSXR|net-mgmt/py-napalm|2026-07-31|Has expired: Upstream inactive
 www/dolibarr17||2026-07-31|Has expired: php81 is the recommended max version for run it
 www/py-django-configurations|www/py-django-configurator|2026-07-31|Has expired: Upstream no longer active, project is abandoned, please use www/py-django-configurator instead
 www/dolibarr16||2026-07-31|Has expired: php81 is the recommended max version for run it
+www/dolibarr18||2026-07-31|Has expired: php81 is the recommended max version for run it

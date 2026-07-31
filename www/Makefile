@@ -154,7 +154,6 @@
     SUBDIR += dojo
     SUBDIR += dokuwiki
     SUBDIR += dolibarr
-    SUBDIR += dolibarr18
     SUBDIR += dolibarr19
     SUBDIR += dolibarr20
     SUBDIR += dolibarr21
