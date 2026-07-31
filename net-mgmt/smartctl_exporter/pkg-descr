@@ -1,1 +1,3 @@
-smartctl_exporter exports smartctl json metrics to Prometheus.
+smartctl_exporter exports smartctl JSON metrics to Prometheus.
+
+It supports automatic devices rescanning, and does not require running smartd.

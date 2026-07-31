@@ -1,28 +1,22 @@
-PORTNAME=		smartctl_exporter
-PORTVERSION=		0.14.0
+PORTNAME=	smartctl_exporter
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.14.0
 PORTREVISION=	10
-CATEGORIES=		net-mgmt
+CATEGORIES=	net-mgmt
 
-MAINTAINER=		delphij@FreeBSD.org
-COMMENT=		Prometheus metrics exporter for smartctl
-WWW=			https://github.com/prometheus-community/smartctl_exporter
+MAINTAINER=	delphij@FreeBSD.org
+COMMENT=	Prometheus metrics exporter for smartctl
+WWW=		https://github.com/prometheus-community/smartctl_exporter
 
-LICENSE=		APACHE20
-LICENSE_FILE=		${WRKSRC}/LICENSE
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=			go:modules
-USE_GITHUB=		yes
-GH_ACCOUNT=		prometheus-community
+RUN_DEPENDS+=	smartctl:sysutils/smartmontools
 
-USE_RC_SUBR=		smartctl_exporter
-RUN_DEPENDS+=		smartctl:sysutils/smartmontools
-GO_MODULES=		github.com/prometheus-community/smartctl_exporter
-GO_TARGET=		${PORTNAME}:${PREFIX}/libexec/${PORTNAME}
-PLIST_FILES=		libexec/${PORTNAME}
-
-GH_TUPLE=	\
-		alecthomas:kingpin:v2.4.0:alecthomas_kingpin_v2/vendor/github.com/alecthomas/kingpin/v2 \
+USES=		go:modules
+USE_GITHUB=	yes
+GH_ACCOUNT=	prometheus-community
+GH_TUPLE=	alecthomas:kingpin:v2.4.0:alecthomas_kingpin_v2/vendor/github.com/alecthomas/kingpin/v2 \
 		alecthomas:units:b94a6e3cc137:alecthomas_units/vendor/github.com/alecthomas/units \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		cespare:xxhash:v2.3.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
@@ -50,6 +44,10 @@ GH_TUPLE=	\
 		tidwall:match:v1.1.1:tidwall_match/vendor/github.com/tidwall/match \
 		tidwall:pretty:v1.2.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		xhit:go-str2duration:v2.1.0:xhit_go_str2duration_v2/vendor/github.com/xhit/go-str2duration/v2
+USE_RC_SUBR=	${PORTNAME}
+
+GO_TARGET=	${PORTNAME}:${PREFIX}/libexec/${PORTNAME}
+PLIST_FILES=	libexec/${PORTNAME}
 
 pre-patch:
 	${REINPLACE_CMD} -e 's|/usr/sbin/smartctl|${LOCALBASE}/sbin/smartctl|g' \
