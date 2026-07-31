@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-auth-jwt
-MODULE_VERSION=	0.14.1
-MODULE_PORTREVISION=	0
+MODULE_VERSION=	0.14.2
+MODULE_PORTREVISION=	1
 GH_TUPLE=	kjdev:nginx-auth-jwt:${MODULE_VERSION}:module
 GH_TUPLE+=	kjdev:nxe-json:0.5.0:nxe_json/../nginx-auth-jwt-${MODULE_VERSION}/nxe-json
 GH_TUPLE+=	kjdev:nxe-jwx:0.1.0:nxe_jwx/../nginx-auth-jwt-${MODULE_VERSION}/nxe-jwx
