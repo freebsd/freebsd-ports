@@ -1,18 +1,19 @@
 PORTNAME=	social-auth-core
-DISTVERSION=	5.0.2
+DISTVERSION=	4.8.5
 CATEGORIES=	security www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	4
 DISTNAME=	social_auth_core-${DISTVERSION}
 
-MAINTAINER=	ultima@FreeBSD.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Social authentication/registration mechanism for several frameworks
 WWW=		https://github.com/python-social-auth/social-core
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7.1:devel/py-defusedxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python3-openid>=3.2.0:security/py-python3-openid@${PY_FLAVOR} \
@@ -28,19 +29,21 @@ USE_PYTHON=	autoplist cryptography pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}social-auth-core4
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}social-auth-core
 
 NO_ARCH=	yes
+
+PORTSCOUT=	ignore:1
 
 # An SHOPIFY option would still be possible as well, but the ports tree does
 # not yet have all the required dependencies for this.
 OPTIONS_DEFINE=		GOOGLE-ONETAP SAML
-OPTIONS_DEFAULT=	SAML
+OPTIONS_DEFAULT=	GOOGLE-ONETAP SAML
 
 GOOGLE-ONETAP_DESC=	Google One Tap support
 SAML_DESC?=	SAML Support
 
-GOOGLE-ONETAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.40.0<2.56:security/py-google-auth@${PY_FLAVOR}
+GOOGLE-ONETAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.40.0<3:security/py-google-auth@${PY_FLAVOR}
 SAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python3-saml>=1.16.0:security/py-python3-saml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
