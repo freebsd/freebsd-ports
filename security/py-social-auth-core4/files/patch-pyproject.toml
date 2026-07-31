@@ -3,7 +3,7 @@
 
 * Also relax version requirements for py-google-auth.
 
---- pyproject.toml.orig	2026-02-10 09:05:58 UTC
+--- pyproject.toml.orig	2026-04-23 11:38:22 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -24,10 +24,10 @@
  readme = "README.md"
  requires-python = ">=3.10"
 @@ -95,7 +94,7 @@ google-onetap = [
-   "types-requests==2.32.4.20260107"
+   "types-requests==2.33.0.20260408"
  ]
  google-onetap = [
--  "google-auth>=2.40.0,<2.49"
+-  "google-auth>=2.40.0,<2.50"
 +  "google-auth>=2.40.0,<3"
  ]
  saml = [
