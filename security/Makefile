@@ -327,7 +327,6 @@
     SUBDIR += libp11
     SUBDIR += libpki
     SUBDIR += libprelude
-    SUBDIR += libpreludedb
     SUBDIR += libpwquality
     SUBDIR += libressl
     SUBDIR += libressl-devel
