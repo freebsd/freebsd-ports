@@ -931,6 +931,7 @@
     SUBDIR += redis82
     SUBDIR += redis84
     SUBDIR += redis86
+    SUBDIR += redis88
     SUBDIR += redis_exporter
     SUBDIR += redisbloom
     SUBDIR += redisjson

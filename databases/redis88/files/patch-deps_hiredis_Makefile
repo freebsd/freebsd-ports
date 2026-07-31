@@ -1,0 +1,41 @@
+--- deps/hiredis/Makefile.orig	2025-08-04 11:05:03 UTC
++++ deps/hiredis/Makefile
+@@ -15,7 +15,7 @@ HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h |
+ HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
+ 
+ # Installation related variables and target
+-PREFIX?=/usr/local
++PREFIX?=${PREFIX}
+ INCLUDE_PATH?=include/hiredis
+ LIBRARY_PATH?=lib
+ PKGCONF_PATH?=pkgconfig
+@@ -43,10 +43,9 @@ CXX:=$(shell sh -c 'type $${CXX%% *} >/dev/null 2>/dev
+ # Fallback to gcc when $CC is not in $PATH.
+ CC:=$(shell sh -c 'type $${CC%% *} >/dev/null 2>/dev/null && echo $(CC) || echo gcc')
+ CXX:=$(shell sh -c 'type $${CXX%% *} >/dev/null 2>/dev/null && echo $(CXX) || echo g++')
+-OPTIMIZATION?=-O3
+ WARNINGS=-Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers
+ DEBUG_FLAGS?= -g -ggdb
+-REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CPPFLAGS) $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(PLATFORM_FLAGS) $(HIREDIS_CFLAGS)
++REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(PLATFORM_FLAGS) $(HIREDIS_CFLAGS)
+ REAL_LDFLAGS=$(LDFLAGS) $(HIREDIS_LDFLAGS)
+ 
+ DYLIBSUFFIX=so
+@@ -127,7 +126,16 @@ endif
+ else
+   REAL_CFLAGS+=-pedantic
+ endif
+-
++ifeq ($(uname_S),FreeBSD)
++  CFLAGS?=$(CFLAGS)
++  CCLINK?=pthread
++  LDFLAGS?=-L. -Wl,-rpath,.
++  DYLIBNAME?=libhiredis.so
++  DYLIB_MAKE_CMD?=$(CC) -o ${DYLIBNAME} ${OBJ}
++  STLIBNAME?=libhiredis.a
++  STLIB_MAKE_CMD?=ar rcs ${STLIBNAME} ${OBJ}
++  SSL_LDFLAGS+=${OPENSSL_LDFLAGS}
++endif
+ ifeq ($(uname_S),SunOS)
+   IS_SUN_CC=$(shell sh -c '$(CC) -V 2>&1 |egrep -i -c "sun|studio"')
+   ifeq ($(IS_SUN_CC),1)

@@ -1,0 +1,19 @@
+--- src/Makefile.orig	2026-05-25 09:26:50 UTC
++++ src/Makefile
+@@ -69,7 +69,7 @@ endif
+ 	STD+=-std=c99
+ endif
+ 
+-PREFIX?=/usr/local
++PREFIX:=$(PREFIX)
+ INSTALL_BIN=$(PREFIX)/bin
+ INSTALL=install
+ PKG_CONFIG?=pkg-config
+@@ -152,7 +152,6 @@ FINAL_LIBS=-lm
+ FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(REDIS_CFLAGS)
+ FINAL_LDFLAGS=$(LDFLAGS) $(OPT) $(REDIS_LDFLAGS) $(DEBUG)
+ FINAL_LIBS=-lm
+-DEBUG=-g -ggdb
+ 
+ # Linux ARM32 needs -latomic at linking time
+ ifneq (,$(findstring armv,$(uname_M)))
