@@ -62,6 +62,7 @@ share/info/gawk_statist.jpg
 %%NLS%%share/locale/he/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gawk.mo
@@ -80,6 +81,7 @@ share/man/man3/filefuncs.3am.gz
 share/man/man3/fnmatch.3am.gz
 share/man/man3/fork.3am.gz
 share/man/man3/inplace.3am.gz
+share/man/man3/intdiv.3am.gz
 share/man/man3/ordchr.3am.gz
 share/man/man3/readdir.3am.gz
 share/man/man3/readfile.3am.gz
