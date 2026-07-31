@@ -4,7 +4,7 @@ CATEGORIES=	security
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client side implementation for TREZOR Bitcoin hardware wallets
 WWW=		https://pypi.org/project/trezor/
 
