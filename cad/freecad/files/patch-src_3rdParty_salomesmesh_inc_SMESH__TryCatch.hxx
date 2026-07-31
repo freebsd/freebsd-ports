@@ -1,6 +1,6 @@
 --- src/3rdParty/salomesmesh/inc/SMESH_TryCatch.hxx.orig	2026-04-14 22:09:59 UTC
 +++ src/3rdParty/salomesmesh/inc/SMESH_TryCatch.hxx
-@@ -65,11 +65,46 @@
+@@ -65,11 +65,45 @@
  // Two onExceptionFun() are defined here: SMESH::throwSalomeEx() and SMESH::doNothing().
  // To add your own catch close, define SMY_OWN_CATCH macro before including this file.
  
@@ -38,7 +38,6 @@
 +    SMESH_CAUGHT onExceptionFun("Unknown Exception caught");            \
 +  }
 +#else
-+#define SMESH_CATCH( onExceptionFun )                                   \
 +#define SMESH_CATCH( onExceptionFun )                                   \
 +  }                                                                     \
 +  catch (Standard_Failure& ex)                                          \

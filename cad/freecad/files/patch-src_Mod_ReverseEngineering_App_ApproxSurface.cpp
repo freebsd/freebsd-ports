@@ -45,3 +45,18 @@
      }
      // kth derivatives (k> degrees) are zero
      if (iMax >= _iOrder) {
+@@ -649,10 +649,10 @@ ParameterCorrection::ParameterCorrection(
+     , _usUCtrlpoints(usUCtrlpoints)
+     , _usVCtrlpoints(usVCtrlpoints)
+     , _vCtrlPntsOfSurf(0, usUCtrlpoints - 1, 0, usVCtrlpoints - 1)
+-    , _vUKnots(0, usUCtrlpoints - usUOrder + 1)
+-    , _vVKnots(0, usVCtrlpoints - usVOrder + 1)
+-    , _vUMults(0, usUCtrlpoints - usUOrder + 1)
+-    , _vVMults(0, usVCtrlpoints - usVOrder + 1)
++    , _vUKnots(0, (int)(usUCtrlpoints - usUOrder + 1))
++    , _vVKnots(0, (int)(usVCtrlpoints - usVOrder + 1))
++    , _vUMults(0, (int)(usUCtrlpoints - usUOrder + 1))
++    , _vVMults(0, (int)(usVCtrlpoints - usVOrder + 1))
+ {
+     _bGetUVDir = false;
+     _bSmoothing = false;
