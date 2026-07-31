@@ -1,6 +1,5 @@
 PORTNAME=	ejabberd
-PORTVERSION=	26.04
-PORTREVISION=	1
+PORTVERSION=	26.07
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/twbs/bootstrap/releases/download/v5.3.8/:bootstrap
 DISTFILES=	bootstrap-${BOOTSTRAP_VER}-dist.zip:bootstrap
@@ -120,7 +119,7 @@ PKIX_VER=	1.0.10
 SQLITE3_VER=	1.1.15
 STRINGPREP_VER=	1.0.34
 STUN_VER=	1.2.22
-XMPP_VER=	1.13.3
+XMPP_VER=	1.13.4
 YCONF_VER=	1.0.23
 ERLYDTL_VER=	0.15.0
 BOOTSTRAP_VER=	5.3.8
