@@ -5519,3 +5519,4 @@ archivers/quazip@qt6|archivers/quazip|2026-07-29|Unflavorize
 graphics/libkdcraw-qt5||2026-07-30|Removed: the last consumer has been switched to Qt6-based libkdcraw
 benchmarks/py-naarad||2026-07-31|Has expired: Upstream last activity was in 2016, and the project has been moved to the LinkedInAttic GitHub account
 security/libpreludedb||2026-07-31|Has expired: Upstream project is dead
+devel/plasma|lang/rizin|2026-07-31|Has expired: Upstream inactive since +7 years. Please use lang/rizin instead
