@@ -1,0 +1,34 @@
+* Relax version requirements for py-setuptools and enable build for
+  older versions of it
+
+* Also relax version requirements for py-google-auth.
+
+--- pyproject.toml.orig	2026-02-10 09:05:58 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=78.0.2"]
++requires = ["setuptools>=63.1.0"]
+ 
+ [dependency-groups]
+ dev = [
+@@ -54,8 +54,7 @@ keywords = ["oauth", "openid", "saml", "social auth"]
+ ]
+ description = "Python social authentication made simple."
+ keywords = ["oauth", "openid", "saml", "social auth"]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = { text="BSD-3-Clause" }
+ name = "social-auth-core"
+ readme = "README.md"
+ requires-python = ">=3.10"
+@@ -95,7 +94,7 @@ google-onetap = [
+   "types-requests==2.32.4.20260107"
+ ]
+ google-onetap = [
+-  "google-auth>=2.40.0,<2.49"
++  "google-auth>=2.40.0,<3"
+ ]
+ saml = [
+   "python3-saml>=1.16.0"
