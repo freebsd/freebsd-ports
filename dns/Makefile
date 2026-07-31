@@ -174,6 +174,7 @@
     SUBDIR += pear-Horde_Idna
     SUBDIR += pear-Net_DNS2
     SUBDIR += pear-Net_DNS21
+    SUBDIR += poweradmin
     SUBDIR += powerdns
     SUBDIR += powerdns-recursor
     SUBDIR += prometheus-dnssec-exporter

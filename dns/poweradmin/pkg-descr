@@ -1,0 +1,4 @@
+Poweradmin is a friendly web-based DNS administration tool for PowerDNS
+server.  The interface supports most of the features of PowerDNS. It can
+work directly against the PowerDNS database (with API-assisted DNSSEC)
+or run entirely through the PowerDNS API in API backend mode.
