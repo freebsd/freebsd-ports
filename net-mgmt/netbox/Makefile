@@ -1,6 +1,7 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.6.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -63,7 +64,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.7<6.1:www/py-django60@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}redis>=7.4.0<8:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.34.2<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rq>=2.10<3:devel/py-rq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}social-auth-core>=4.8.5<5:security/py-social-auth-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}social-auth-core4>=4.8.5<5:security/py-social-auth-core4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.9.0<4:textproc/py-tablib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzdata>=2026.3:devel/py-tzdata@${PY_FLAVOR} \
