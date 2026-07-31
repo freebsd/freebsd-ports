@@ -1,5 +1,5 @@
 PORTNAME=	mupdf
-DISTVERSION=	1.27.2
+DISTVERSION=	1.28.0
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -32,6 +32,7 @@ _VERSION_MINOR=	${DISTVERSION:E}
 _VERSION_MAJOR=	${DISTVERSION:R:E}
 MAKE_ARGS=	AR=${LOCALBASE}/bin/ar \
 		build=release \
+		html=no \
 		mandir=${PREFIX}/share/man \
 		prefix=${PREFIX} \
 		shared=yes \
