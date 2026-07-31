@@ -1,8 +1,9 @@
 PORTNAME=	freeciv21
-PORTVERSION=	${FC21_VERSION:S/^v//:S/-rc./.r/}
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.1.2
 CATEGORIES=	games
-MASTER_SITES=	https://github.com/longturn/${PORTNAME}/releases/download/${FC21_VERSION}/
-DISTNAME=	${PORTNAME:S/^f/F/}-${FC21_VERSION}
+MASTER_SITES=	https://github.com/longturn/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
+DISTNAME=	${PORTNAME:S/^f/F/}-${DISTVERSIONFULL}
 
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Freeciv for the 21st century
@@ -21,8 +22,6 @@ USES=		cmake desktop-file-utils kde:5 lua pkgconfig python qt:5 \
 USE_KDE=	archive
 USE_QT=		core gui network svg widgets buildtools:build qmake:build
 USE_SDL=	mixer2 sdl2
-
-FC21_VERSION=	v3.1.1
 
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git
 CMAKE_OFF=	FREECIV_DOWNLOAD_FONTS
