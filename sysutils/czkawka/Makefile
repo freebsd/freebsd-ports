@@ -33,6 +33,13 @@ PLIST_FILES=	bin/${PORTNAME}_cli \
 		share/metainfo/com.github.qarmin.czkawka.metainfo.xml \
 		share/metainfo/io.github.qarmin.krokiet.metainfo.xml
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/*.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
@@ -43,4 +50,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/*.metainfo.xml \
 		${STAGEDIR}${PREFIX}/share/metainfo
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
