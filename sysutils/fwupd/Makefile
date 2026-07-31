@@ -1,5 +1,5 @@
 PORTNAME=	fwupd
-DISTVERSION=	2.1.5
+DISTVERSION=	2.1.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
