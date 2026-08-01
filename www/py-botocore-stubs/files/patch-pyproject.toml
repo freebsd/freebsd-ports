@@ -1,0 +1,15 @@
+-- Convert the deprecated string form of project.license to the PEP 621
+-- table form and remove project.license-files, both required by the
+-- setuptools version available in the ports tree.
+--- pyproject.toml.orig	2026-07-31 21:08:28.714256000 -0700
++++ pyproject.toml
+@@ -4,8 +4,7 @@
+ requires-python = ">=3.9"
+ description = "Type annotations and code completion for botocore"
+ authors = [{ name = "Vlad Emelianov", email = "vlad.emelianov.nz@gmail.com" }]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ readme = "README.md"
+ keywords = ["botocore", "type-annotations", "pyright", "mypy", "boto3"]
+ classifiers = [
