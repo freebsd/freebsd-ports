@@ -1,8 +1,9 @@
 PORTNAME=	QtPy
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	qtpy-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Abstraction layer on top of the various Qt bindings
@@ -23,6 +24,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# 30 tests fails, see https://github.com/spyder-ide/qtpy/issues/479
+# tests as of 2.4.3: 10 failed, 47 passed, 16 skipped, tests failures are due to test runners crashimng, needs to be investigated
 
 .include <bsd.port.mk>
