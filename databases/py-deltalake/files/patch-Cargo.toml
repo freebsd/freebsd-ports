@@ -1,0 +1,31 @@
+-- Remove jemallocator and mimalloc target dependencies now that the
+-- Python extension uses the Rust system allocator.
+--- Cargo.toml.orig	2026-08-01 05:06:52 UTC
++++ Cargo.toml
+@@ -68,26 +68,6 @@ tracing-subscriber = { workspace = true }
+ opentelemetry_sdk = { workspace = true }
+ tracing-subscriber = { workspace = true }
+ 
+-# Non-unix or emscripten os
+-[target.'cfg(any(not(target_family = "unix"), target_os = "emscripten"))'.dependencies]
+-mimalloc = { version = "0.1", default-features = false }
+-
+-# Unix (excluding macOS, emscripten & FreeBSD) → jemalloc
+-# FreeBSD's system malloc is already jemalloc-derived, and the bundled
+-# jemallocator's `dlsym(RTLD_NEXT, "pthread_create")` initialization fails on
+-# FreeBSD (jemalloc aborts during DSO init). Fall back to the system allocator
+-# on FreeBSD instead — no performance regression since the system allocator
+-# is the same family.
+-[target.'cfg(all(target_family = "unix", not(target_os = "macos"), not(target_os = "emscripten"), not(target_os = "freebsd")))'.dependencies]
+-tikv-jemallocator = { version = "0.7.0", features = [
+-    "disable_initial_exec_tls",
+-    "background_threads",
+-] }
+-
+-# macOS → jemalloc (without background_threads) (https://github.com/jemalloc/jemalloc/issues/843)
+-[target.'cfg(all(target_family = "unix", target_os = "macos"))'.dependencies]
+-tikv-jemallocator = { version = "0.7.0", features = ["disable_initial_exec_tls"] }
+-
+ [dependencies.pyo3]
+ version = "0.28"
+ features = ["extension-module", "abi3", "abi3-py310"]

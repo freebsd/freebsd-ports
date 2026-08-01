@@ -1,0 +1,3 @@
+deltalake is a native Delta Lake Python binding based on delta-rs.
+It supports reading, writing, and managing Delta Lake tables without
+Apache Spark.

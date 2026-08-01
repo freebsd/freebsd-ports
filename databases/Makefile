@@ -784,6 +784,7 @@
     SUBDIR += py-dbt-semantic-interfaces
     SUBDIR += py-dbt-snowflake
     SUBDIR += py-dbutils
+    SUBDIR += py-deltalake
     SUBDIR += py-duckdb
     SUBDIR += py-duckdb_engine
     SUBDIR += py-fakeredis
