@@ -1,6 +1,5 @@
 PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules \
 		https://registry.npmjs.org/@github/copilot-linux-${ELECTRON_ARCH}/-/:copilot_cli \
@@ -357,7 +356,7 @@ make-node-modules-archive: extract patch-package-json
 	@${ECHO_MSG} "===>  Fetching and installing node modules in ${WRKSRC}"
 	@cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} npm install \
-		--force --ignore-scripts --no-progress --no-audit --no-fund --no-update-notifier && \
+		--ignore-scripts --no-progress --no-audit --no-fund --no-update-notifier && \
 	${TAR} -czf ${WRKDIR}/vscode-.-node-modules${EXTRACT_SUFX} node_modules
 	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
 		cd ${WRKSRC}/$${dir} && \

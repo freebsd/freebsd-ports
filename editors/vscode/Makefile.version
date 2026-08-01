@@ -1,8 +1,8 @@
-VSCODE_VERSION=		1.130.0
-SOURCE_COMMIT_HASH=	1b6a188127eeaf9194f945eb6eb89a657e93c54c
+VSCODE_VERSION=		1.131.0
+SOURCE_COMMIT_HASH=	3a03d6f72d628a7741c29f456b4ddbb5ae68502c
 # See ${WRKSRC}/build/rspack/node_modules/@rspack/binding/package.json for rspack version
 RSPACK_VERSION=		2.1.2
 # See ${WRKSRC}/node_modules/@github/copilot/package.json for copilot cli version
-COPILOT_CLI_VERSION=	1.0.70-0
+COPILOT_CLI_VERSION=	1.0.73
 # See ${WRKSRC}/node_modules/@vscode/os-proxy-resolver/package.json for os-proxy-resolver version
 OS_PROXY_RESOLVER_VERSION=	0.3.0
