@@ -1,5 +1,5 @@
 PORTNAME=	mpz
-PORTVERSION=	2.0.14
+PORTVERSION=	2.1.2
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -9,7 +9,6 @@ WWW=		https://mpz-player.org/
 LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
-		libqhotkey.so:x11-toolkits/qhotkey@qt5 \
 		libtag.so:audio/taglib \
 		libyaml-cpp.so:devel/yaml-cpp
 
@@ -18,12 +17,19 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	olegantonyan
 USE_GSTREAMER=	flac libav mpg123 ogg opus vorbis
 USE_QT=		buildtools:build qmake:build concurrent core dbus gui \
-		multimedia network widgets x11extras
+		multimedia network svg widgets
 
-CMAKE_ON=	USE_QT5 USE_SYSTEM_LIBMPDCLIENT USE_SYSTEM_TAGLIB \
-		USE_SYSTEM_YAMLCPP
+CMAKE_ON=	USE_QT5 USE_SYSTEM_LIBMPDCLIENT USE_SYSTEM_QHOTKEY \
+		USE_SYSTEM_TAGLIB USE_SYSTEM_YAMLCPP
+
+OPTIONS_DEFINE=	QHOTKEY
+OPTIONS_DEFAULT=	QHOTKEY
+
+QHOTKEY_DESC=	Global media-key hotkeys via QHotkey
+QHOTKEY_LIB_DEPENDS=	libqhotkey.so:x11-toolkits/qhotkey@qt5
+QHOTKEY_CMAKE_OFF=	-DENABLE_QHOTKEY:BOOL=OFF
 
 post-extract:
-	@${RM} -r ${WRKSRC}/3rdparty/[^q]*
+	@${RM} -r ${WRKSRC}/3rdparty/[^i]*
 
 .include <bsd.port.mk>
