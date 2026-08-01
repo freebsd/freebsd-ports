@@ -10,9 +10,12 @@ include/audi/gdual.hpp
 include/audi/invert_map.hpp
 include/audi/io.hpp
 include/audi/real128.hpp
+include/audi/taylor_model.hpp
+include/audi/taylor_model_bounding.hpp
+include/audi/taylor_model_functions.hpp
+include/audi/taylor_model_utilities.hpp
 include/audi/type_traits.hpp
 include/audi/vectorized.hpp
-lib/cmake/audi/AudiFindBoost.cmake
 lib/cmake/audi/FindEigen3.cmake
 lib/cmake/audi/audi-config-version.cmake
 lib/cmake/audi/audi-config.cmake

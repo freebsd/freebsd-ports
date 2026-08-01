@@ -1,8 +1,6 @@
 PORTNAME=	pyaudi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.2-1
-DISTVERSIONSUFFIX=	-g899eb78
-PORTREVISION=	19
+DISTVERSION=	1.10.1
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,8 +9,10 @@ COMMENT=	Library implementing the algebra of Taylor polynomials
 WWW=		http://darioizzo.github.io/audi/ \
 		https://github.com/darioizzo/audi
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/../LICENSE
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3=	${WRKSRC}/../COPYING.gpl3
+LICENSE_FILE_LGPL3=	${WRKSRC}/../COPYING.lgpl3
 
 BROKEN_armv7=	compilation fails: constraints not satisfied for class template 'd_packed_monomial' [with T = unsigned long long, PSize = 8]
 BROKEN_i386=	not for 32-bit systems, see https://github.com/darioizzo/audi/issues/62
@@ -46,5 +46,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-test:
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test.py
+
+# tests as of 1.10.1: custom upstream test script completed successfully
 
 .include <bsd.port.mk>
