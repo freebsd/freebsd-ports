@@ -1,0 +1,2 @@
+arro3-core provides core Apache Arrow utilities for Python, including
+zero-copy data exchange and minimal in-memory representations.

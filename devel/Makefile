@@ -4540,6 +4540,7 @@
     SUBDIR += py-arpeggio
     SUBDIR += py-array-api-compat
     SUBDIR += py-array-api-strict
+    SUBDIR += py-arro3-core
     SUBDIR += py-arrow
     SUBDIR += py-asciimatics
     SUBDIR += py-asgi-lifespan
