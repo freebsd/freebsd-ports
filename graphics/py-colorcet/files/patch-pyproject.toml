@@ -1,0 +1,23 @@
+-- Use PEP 621 compliant license declaration so that the current setuptools
+-- in FreeBSD can parse the pyproject.toml file.
+
+--- pyproject.toml.orig	2026-04-28 16:21:52 UTC
++++ pyproject.toml
+@@ -10,8 +10,7 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "Collection of perceptually uniform colormaps"
+ readme = "README.md"
+-license = "CC-BY-4.0"
+-license-files = ["LICENSE.txt"]
++license = {text = "CC-BY-4.0"}
+ requires-python = ">=3.10"
+ authors = [
+     { name = "James A. Bednar", email = "jbednar@anaconda.com" },
+@@ -77,6 +76,7 @@ all = [
+ ]
+ 
+ [tool.setuptools]
++license-files = ["LICENSE.txt"]
+ # To exclude PNG files in colorcet/tests/baseline
+ include-package-data = false
+ 
