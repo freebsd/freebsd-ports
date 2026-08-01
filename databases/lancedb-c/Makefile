@@ -10,6 +10,8 @@ WWW=		https://github.com/lancedb/lancedb-c
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error[E0425]: cannot find function `_mm256_insert_epi64` in this scope
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/protoc:devel/protobuf
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
