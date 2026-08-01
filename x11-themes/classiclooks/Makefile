@@ -1,6 +1,5 @@
 PORTNAME=	classiclooks
-DISTVERSION=	2.2.0
-PORTREVISION=	1
+DISTVERSION=	2.4.0
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -15,7 +14,7 @@ RUN_DEPENDS=	fontconfig>0:x11-fonts/fontconfig \
 		gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 		qt5-style-plugins>0:x11-themes/qt5-style-plugins
 
-USES=		shebangfix gnome zip
+USES=		gnome shebangfix zip
 USE_GNOME=	gtk20
 
 SHEBANG_REGEX=	00.[0-4]0
