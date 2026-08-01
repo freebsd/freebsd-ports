@@ -11,7 +11,7 @@
  		tools.NewMultiEditTool(nil, env.permissions, env.history, *env.filetracker, env.workingDir),
 --- internal/agent/coordinator.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/agent/coordinator.go
-@@ -712,7 +712,7 @@ func (c *coordinator) buildTools(ctx context.Context, 
+@@ -714,7 +714,7 @@ func (c *coordinator) buildTools(ctx context.Context, 
  
  	allTools = append(
  		allTools,
@@ -100,7 +100,7 @@
  func TestBashTool_ChainedCommandsRequirePermission(t *testing.T) {
 --- internal/config/config.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/config/config.go
-@@ -309,6 +309,7 @@ type Options struct {
+@@ -319,6 +319,7 @@ type Options struct {
  	Debug                bool        `json:"debug,omitempty" jsonschema:"description=Enable debug logging,default=false"`
  	DebugLSP             bool        `json:"debug_lsp,omitempty" jsonschema:"description=Enable debug logging for LSP servers,default=false"`
  	DisableAutoSummarize bool        `json:"disable_auto_summarize,omitempty" jsonschema:"description=Disable automatic conversation summarization,default=false"`
