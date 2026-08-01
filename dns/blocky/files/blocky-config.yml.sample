@@ -1,21 +1,17 @@
-upstreams:
-  groups:
-    default:
-      - 8.8.8.8
-      - 1.1.1.1
-      - https://dns.digitale-gesellschaft.ch/dns-query
-
-queryLog:
-  type: none
-
+upstream:
+  default:
+    - 8.8.8.8
+    - 1.1.1.1
+    - https://dns.digitale-gesellschaft.ch/dns-query
 blocking:
-  denylists:
+  blackLists:
     ads:
       - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
   clientGroupsBlock:
     default:
       - ads
-
+statistics:
+  enable: true
 ports:
   dns: 53
   http: 4000
