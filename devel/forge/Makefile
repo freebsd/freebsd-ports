@@ -1,6 +1,6 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.6
+DISTVERSION=	0.6.8
 CATEGORIES=	devel elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -11,14 +11,14 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	closql>=2.4:databases/closql \
-		compat.el>=30.1.0.0:misc/compat.el \
-		cond-let>=0.2:devel/cond-let \
-		emacsql>=4.3.1:databases/emacsql \
-		ghub>=5.1:devel/ghub \
+		compat.el>=31.0:misc/compat.el \
+		cond-let>=1.1:devel/cond-let \
+		emacsql>=4.4:databases/emacsql \
+		ghub>=5.3:devel/ghub \
 		llama.el>=1.0:devel/llama.el \
-		magit>=4.5:devel/magit \
-		markdown-mode.el>=2.7:textproc/markdown-mode.el \
-		transient>=0.12:devel/transient \
+		magit>=4.7:devel/magit \
+		markdown-mode.el>=2.8:textproc/markdown-mode.el \
+		transient>=0.13:devel/transient \
 		yaml.el>=1.2.0:textproc/yaml.el
 
 USES=		emacs:build gmake makeinfo
