@@ -1,7 +1,7 @@
 PORTNAME=	noctavox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.8
-PORTREVISION=	1
+DISTVERSION=	0.3.3
+PORTREVISION=	0
 CATEGORIES=	audio
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libdbus-1.so:devel/dbus
 RUN_DEPENDS=	alsa-plugins>=1.2.12:audio/alsa-plugins
 
-USES=		cargo
+USES=		cargo llvm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jaxx497
