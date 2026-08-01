@@ -1,0 +1,2 @@
+Type annotations for awscrt (AWS Common Runtime Python bindings).
+These stubs are used by type checkers such as mypy and pyright.
