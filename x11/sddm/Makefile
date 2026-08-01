@@ -2,7 +2,7 @@ PORTNAME=	sddm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.0-36
 DISTVERSIONSUFFIX=	-gc2b97dd
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
@@ -24,7 +24,8 @@ RUN_DEPENDS=	consolekit2>1.2.5:sysutils/consolekit2 \
 		xauth:x11/xauth \
 		xmessage:x11/xmessage \
 		xrdb:x11/xrdb \
-		xsetroot:x11/xsetroot
+		xsetroot:x11/xsetroot \
+		setxkbmap:x11/setxkbmap
 
 USES=		cmake compiler:c++17-lang cpe gl pkgconfig python:build qt:6 xorg
 CPE_VENDOR=	${PORTNAME}_project

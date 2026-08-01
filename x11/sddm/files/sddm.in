@@ -15,6 +15,10 @@ rcvar=sddm_enable
 
 load_rc_config ${name}
 
+# sddm_lang also controls the list of keyboard layouts in the breeze theme
+# if your layouts are messed up you can override it by setting
+# sddm_xkb_layout="us,de,fr,it,ru"
+# in /etc/rc.conf
 : ${sddm_lang="en_US"} # .UTF-8 suffix will be added later to comply with locale format
 : ${sddm_enable="NO"}
 

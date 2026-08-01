@@ -1,0 +1,20 @@
+--- data/scripts/Xsetup.orig	2025-01-31 09:57:01 UTC
++++ data/scripts/Xsetup
+@@ -1,3 +1,17 @@
+ #!/bin/sh
+ # Xsetup - run as root before the login dialog appears
+ 
++if /usr/sbin/sysrc -ne sddm_xkb_layout; then
++    sddm_xkb_layout=$(/usr/sbin/sysrc -ne sddm_xkb_layout)
++elif /usr/sbin/sysrc -ne sddm_lang; then
++    sddm_lang=$(/usr/sbin/sysrc -ne sddm_lang)
++    sddm_xkb_layout=$(echo $sddm_lang | sed 's/.*_//' | tr '[:upper:]' '[:lower:]')
++else
++    sddm_xkb_layout="us"
++fi
++
++if [ "$sddm_xkb_layout" != "us" ]; then
++    sddm_xkb_layout="us,${sddm_xkb_layout}"
++fi
++
++setxkbmap -layout $sddm_xkb_layout
