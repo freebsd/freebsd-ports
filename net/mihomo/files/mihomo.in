@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+# PROVIDE: mihomo
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mihomo_enable (bool):		Set to YES to enable mihomo.
+#				Default is NO.
+# mihomo_config (path):		Path to the configuration file.
+#				Default is %%PREFIX%%/etc/mihomo/config.yaml.
+# mihomo_datadir (path):	Path to the runtime data directory.
+#				Default is /var/db/mihomo.
+# mihomo_user (user):		User to run mihomo.
+#				Default is root.
+# mihomo_group (group):		Group to run mihomo.
+#				Default is wheel.
+# mihomo_flags (str):		Additional flags to pass to mihomo.
+#				Default is "".
+#
+
+. /etc/rc.subr
+
+name=mihomo
+desc="mihomo proxy server"
+rcvar=mihomo_enable
+
+load_rc_config $name
+
+: ${mihomo_enable:=NO}
+: ${mihomo_user:=root}
+: ${mihomo_group:=wheel}
+: ${mihomo_config:=%%PREFIX%%/etc/mihomo/config.yaml}
+: ${mihomo_datadir:=/var/db/mihomo}
+: ${mihomo_pidfile:=/var/run/mihomo.pid}
+: ${mihomo_logfile:=/var/log/mihomo.log}
+: ${mihomo_flags:=""}
+
+command=/usr/sbin/daemon
+procname="%%PREFIX%%/bin/mihomo"
+pidfile=${mihomo_pidfile}
+command_args="-f -p ${pidfile} -o ${mihomo_logfile} -u ${mihomo_user} ${procname} -d ${mihomo_datadir} -f ${mihomo_config} ${mihomo_flags}"
+
+required_files=${mihomo_config}
+
+start_precmd=mihomo_precmd
+mihomo_precmd()
+{
+	if [ ! -d "${mihomo_datadir}" ]; then
+		install -d -m 0750 -o ${mihomo_user} -g ${mihomo_group} "${mihomo_datadir}"
+	fi
+	if [ ! -e "${mihomo_logfile}" ]; then
+		install -m 0640 -o ${mihomo_user} -g ${mihomo_group} /dev/null "${mihomo_logfile}"
+	fi
+}
+
+run_rc_command "$1"
