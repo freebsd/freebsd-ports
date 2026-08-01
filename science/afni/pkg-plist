@@ -271,6 +271,7 @@ bin/3dvolreg
 bin/4swap
 bin/adjunct_refacer_make_master_addendum2
 bin/afni_refacer2
+bin/asymm_report.csh
 bin/@1dDiffMag
 bin/@2dwarper
 bin/@2dwarper.Allin
