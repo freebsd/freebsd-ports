@@ -430,6 +430,7 @@
     SUBDIR += py-pymatgen
     SUBDIR += py-pymatgen-analysis-alloys
     SUBDIR += py-pymatgen-core
+    SUBDIR += py-pymatgen-io-validation
     SUBDIR += py-pymbd
     SUBDIR += py-pymol
     SUBDIR += py-pynrrd

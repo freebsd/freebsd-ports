@@ -1,0 +1,38 @@
+-- Replace versioningit with setuptools-scm, lower the setuptools
+-- requirement to the version available in the FreeBSD ports tree, pin the
+-- version statically, and exclude the top-level examples directory from
+-- package discovery. The sdist has no git history, so dynamic versioning via
+-- setuptools-scm falls back to an incorrect 0.1.0rc0, and examples/ otherwise
+-- installs a conflicting site-packages/examples/ directory.
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools >= 65.0.0", "versioningit >= 1,< 4", "wheel"]
++requires = ["setuptools >= 63.1.0", "setuptools-scm >= 8", "wheel"]
+
+ [project]
+ authors = [
+@@ -32,10 +32,11 @@
+   "pydantic-settings>=2.0.0",
+ ]
+ description = "A comprehensive I/O validator for electronic structure calculations"
+-dynamic = ["version"]
++dynamic = []
+ keywords = ["io", "validation", "dft", "vasp"]
+ license = { text = "modified BSD" }
+ name = "pymatgen-io-validation"
++version = "0.1.2"
+ readme = "README.md"
+ requires-python = '>=3.8'
+
+@@ -53,7 +54,7 @@
+ #repository = "https://github.com/materialsproject/pymatgen-io-validation"
+
+ [tool.setuptools.packages.find]
+-exclude = ["tests"]
++exclude = ["tests", "examples", "examples.*"]
+ where = ["./"]
+
+ [tool.versioningit.vcs]

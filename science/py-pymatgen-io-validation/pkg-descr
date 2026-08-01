@@ -1,0 +1,3 @@
+pymatgen-io-validation performs input/output validation for pymatgen
+calculations and structures, ensuring that files and data meet the
+expected schemas.
