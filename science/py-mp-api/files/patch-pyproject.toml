@@ -1,0 +1,13 @@
+-- Fix invalid PEP 621 license declaration.
+-- Upstream uses license = "BSD-3-Clause-LBNL" which newer setuptools rejects.
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -10,7 +10,7 @@
+ description = "API Client for the Materials Project"
+ readme = "README.md"
+ requires-python = ">=3.11"
+-license = "BSD-3-Clause-LBNL"
++license = {text = "BSD-3-Clause-LBNL"}
+ classifiers = [
+   "Programming Language :: Python :: 3",
+   "Development Status :: 4 - Beta",
