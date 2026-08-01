@@ -1,5 +1,5 @@
 PORTNAME=	check_mk_agent
-PORTVERSION=	2.4.0p20
+PORTVERSION=	2.5.0p9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://raw.githubusercontent.com/Checkmk/checkmk/${_TAG}/agents/:agent \
 		https://raw.githubusercontent.com/Checkmk/checkmk/${_TAG}/doc/agents/:doc \
@@ -49,7 +49,7 @@ _CHECKMK_AGENT=		${PORTNAME}.freebsd
 _CHECKMK_LIBDIR=	${PREFIX}/lib/check_mk_agent
 _CHECKMK_CONFDIR=	${PREFIX}/etc/check_mk
 _CHECKMK_VARDIR=	/var/db/check_mk_agent
-_TAG=			7e6a4f8
+_TAG=			d2d9245
 
 post-patch:
 	@${REINPLACE_CMD} \
