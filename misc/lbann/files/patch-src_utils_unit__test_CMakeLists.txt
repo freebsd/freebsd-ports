@@ -1,0 +1,26 @@
+-- python_test.cpp requires Python.h and embedded Python support.
+-- The port disables LBANN_WITH_EMBEDDED_PYTHON, so only build the test
+-- when embedded Python is actually enabled.
+
+--- src/utils/unit_test/CMakeLists.txt.orig	2026-08-01 17:42:04 UTC
++++ src/utils/unit_test/CMakeLists.txt
+@@ -36,7 +36,6 @@ set_full_path(THIS_DIR_SEQ_CATCH2_TEST_FILES
+   hash_test.cpp
+   output_helpers_test.cpp
+   protobuf_utils_test.cpp
+-  python_test.cpp
+   random_test.cpp
+   serialize_matrix_test.cpp
+   statistics_test.cpp
+@@ -46,6 +45,11 @@ set_full_path(THIS_DIR_SEQ_CATCH2_TEST_FILES
+   stubs/preset_env_accessor.hpp
+   stubs/preset_env_accessor.cpp
+   )
++
++if (LBANN_HAS_EMBEDDED_PYTHON)
++  list(APPEND THIS_DIR_SEQ_CATCH2_TEST_FILES
++    ${CMAKE_CURRENT_SOURCE_DIR}/python_test.cpp)
++endif ()
+ 
+ set_full_path(THIS_DIR_MPI_CATCH2_TEST_FILES
+   random_fill_test.cpp

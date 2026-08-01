@@ -1,0 +1,29 @@
+-- KFAC execution algorithm relies on the Aluminum (::Al) library, which
+-- is only available when LBANN_HAS_ALUMINUM is enabled. Skip compiling
+-- the KFAC implementation when Aluminum is disabled to avoid build errors
+-- from undefined ::Al types.
+
+--- src/execution_algorithms/CMakeLists.txt.orig	2026-08-01 17:36:16 UTC
++++ src/execution_algorithms/CMakeLists.txt
+@@ -27,7 +27,6 @@ set_full_path(THIS_DIR_SOURCES
+ set_full_path(THIS_DIR_SOURCES
+   execution_context.cpp
+   factory.cpp
+-  kfac.cpp
+   ltfb.cpp
+   sgd_execution_context.cpp
+   sgd_training_algorithm.cpp
+@@ -35,8 +34,12 @@ set_full_path(THIS_DIR_SOURCES
+   )
+ 
+ # Add the support class implementations
+-add_subdirectory(kfac)
+ add_subdirectory(ltfb)
++
++if (LBANN_HAS_ALUMINUM)
++  list(APPEND THIS_DIR_SOURCES kfac.cpp)
++  add_subdirectory(kfac)
++endif ()
+ 
+ # Propagate the files up the tree
+ set(SOURCES "${SOURCES}" "${THIS_DIR_SOURCES}" PARENT_SCOPE)

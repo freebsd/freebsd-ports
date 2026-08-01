@@ -1,8 +1,6 @@
 PORTNAME=	lbann
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.102-254
-DISTVERSIONSUFFIX=	-g2e3012a9a
-PORTREVISION=	6
+DISTVERSION=	0.104
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,12 +9,15 @@ WWW=		https://github.com/LLNL/lbann
 
 LICENSE=	APACHE20
 
-BROKEN=		many C++ errors, broken until the upstream would help, see https://github.com/LLNL/lbann/issues/2407
-
 BUILD_DEPENDS=	cereal>0:devel/cereal \
 		dihydrogen>0:math/dihydrogen \
 		zstr>0:archivers/zstr
-LIB_DEPENDS=	libconduit.so:science/conduit \
+LIB_DEPENDS=	libabsl_hash.so:devel/abseil \
+		libabsl_log_internal_message.so:devel/abseil \
+		libabsl_log_internal_nullguard.so:devel/abseil \
+		libabsl_spinlock_wait.so:devel/abseil \
+		libconduit.so:science/conduit \
+		libgcc_s.so:lang/gcc14 \
 		libhdf5.so:science/hdf5 \
 		libHydrogen_CXX.so:math/hydrogen \
 		libopenblas.so:math/openblas \
@@ -53,6 +54,16 @@ OPTIONS_DEFAULT=	MPICH # should be same as in conduit, hydrogen, dihydrogen
 MPICH_USES=		mpi:mpich
 
 OPENMPI_USES=		mpi:openmpi
+
+PLIST_SUB=	VER=${DISTVERSION:C/\-.*//}
+
+post-test: # CMake/ctest does not register the Catch2 binaries; run them manually
+	@${ECHO_MSG} "===> Running LBANN sequential unit tests"
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${TEST_ENV} ./unit_test/seq-catch-tests
+	@${ECHO_MSG} "===> Running LBANN MPI unit tests"
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${TEST_ENV} ${MPIEXEC} -n 2 ./unit_test/mpi-catch-tests
+
+# tests as of 0.104: seq-catch-tests: All tests passed (38857 assertions in 82 test cases); mpi-catch-tests: All tests passed (18907 assertions in 185 test cases)
 
 post-install: # remove unnecessary files
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc

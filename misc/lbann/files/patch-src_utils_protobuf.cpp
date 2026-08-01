@@ -1,4 +1,4 @@
---- src/utils/protobuf.cpp.orig	2022-11-12 00:17:51 UTC
+--- src/utils/protobuf.cpp.orig	2023-11-08 01:08:28 UTC
 +++ src/utils/protobuf.cpp
 @@ -41,9 +41,8 @@
  // should be refactored to use the specialized "zero-copy" streams
@@ -58,7 +58,7 @@
    return remove_scope_from_type(full_type);
  }
  
-@@ -171,7 +170,7 @@ void lbann::protobuf::text::fill(std::istream& is,
+@@ -171,7 +170,7 @@ void lbann::protobuf::text::fill(std::string const& st
  void lbann::protobuf::text::fill(std::string const& str,
                                   google::protobuf::Message& msg)
  {
