@@ -1,0 +1,33 @@
+Fix build on FreeBSD/i386 where time_t is int
+
+--- configure.orig	2024-05-26 20:34:22 UTC
++++ configure
+@@ -280,6 +280,19 @@ int test(void)
+ }
+ '
+ 
++check_cc_snippet time_d '
++#define _FILE_OFFSET_BITS 64
++#define _TIME_BITS 64
++#include <stdio.h>
++#include <time.h>
++#define TEST test
++int test(void)
++{
++  printf("%d", (time_t)1);
++  return 0;
++}
++' '-Wformat -Werror=format'
++
+ check_cc_snippet time_ld '
+ #define _FILE_OFFSET_BITS 64
+ #define _TIME_BITS 64
+@@ -310,6 +323,8 @@ elif enabled time_ld; then
+   printf "    ^ using time_t format 'lld'\n"
+ elif enabled time_ld; then
+   printf "    ^ using time_t format 'ld'\n"
++elif enabled time_d; then
++  printf "    ^ using time_t format 'd'\n"
+ else
+   die 'Unable to determine size of "time_t"'
+ fi

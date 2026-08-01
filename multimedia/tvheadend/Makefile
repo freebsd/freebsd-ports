@@ -1,7 +1,6 @@
 PORTNAME=	tvheadend
-PORTVERSION=	4.2.8
+PORTVERSION=	4.3.0.20260709
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
@@ -14,24 +13,28 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake-core \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+LIB_DEPENDS=	libdvbcsa.so:multimedia/libdvbcsa \
+		libcurl.so:ftp/curl \
 		liburiparser.so:net/uriparser \
 		libunwind.so:devel/libunwind
 RUN_DEPENDS=	dtv-scan-tables>=0:multimedia/dtv-scan-tables
 
 USES=		compiler:c++11-lang gettext gmake pkgconfig python shebangfix ssl
 USE_GITHUB=	yes
+GH_TAGNAME=	8ddfe27
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 MAKE_JOBS_UNSAFE=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	${WRKSRC}/Autobuild.sh \
 		${WRKSRC}/configure \
+		${WRKSRC}/lib/py/tvh/tv_meta_tmdb.py \
+		${WRKSRC}/lib/py/tvh/tv_meta_tvdb.py \
 		${WRKSRC}/support/apt-update \
 		${WRKSRC}/support/configure.inc \
 		${WRKSRC}/support/getmuxlist \
+		${WRKSRC}/support/tvhmeta \
 		${WRKSRC}/support/version
 
 TVHUSER?=	tvheadend
@@ -48,14 +51,10 @@ CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib --disable-hdhomerun_static \
 CFLAGS+=	-I${LOCALBASE}/include -Wno-conversion -Wno-int-to-pointer-cast
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lcrypto -lz
 
-OPTIONS_DEFINE=	AVAHI DVBCSA DVBEN50221 HDHOMERUN INOTIFY TRANSCODING XMLTV
-OPTIONS_DEFAULT=DVBCSA HDHOMERUN INOTIFY
+OPTIONS_DEFINE=	AVAHI DVBEN50221 HDHOMERUN INOTIFY TRANSCODING XMLTV
+OPTIONS_DEFAULT=HDHOMERUN INOTIFY
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
-
-DVBCSA_DESC=		Replace internal ffdecsa with dvbcsa
-DVBCSA_LIB_DEPENDS=	libdvbcsa.so:multimedia/libdvbcsa
-DVBCSA_CONFIGURE_ENABLE=	dvbcsa
 
 DVBEN50221_DESC=	Hardware CAM support
 DVBEN50221_LIB_DEPENDS=	libdvben50221.so:multimedia/dvb-apps
@@ -80,8 +79,6 @@ XMLTV_RUN_DEPENDS=	p5-xmltv>=0:textproc/p5-xmltv
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} 's|-ldl||' \
-		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|-Werror||' \
 		${WRKSRC}/Makefile
 
