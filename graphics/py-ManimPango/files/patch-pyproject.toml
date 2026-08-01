@@ -1,9 +1,11 @@
---- pyproject.toml.orig	2023-10-15 04:53:07 UTC
+-- Relax Cython version requirement to work with available Cython ports
+
+--- pyproject.toml.orig	2026-08-01 19:19:46 UTC
 +++ pyproject.toml
-@@ -1,6 +1,6 @@
+@@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
  [build-system]
  build-backend = "setuptools.build_meta"
--requires = ["Cython>=3.0.2", "setuptools>=59.2.0", "wheel"]
+-requires = ["Cython>=3.0.2,<3.1", "setuptools>=59.2.0", "wheel"]
 +requires = ["Cython>0", "setuptools>=59.2.0", "wheel"]
  
  [tool.isort]
