@@ -1,0 +1,15 @@
+-- Convert the deprecated string form of project.license to the PEP 621
+-- table form and remove project.license-files, both required by the
+-- setuptools version available in the ports tree.
+--- pyproject.toml.orig	2026-07-31 21:30:43.120920000 -0700
++++ pyproject.toml
+@@ -10,8 +10,7 @@
+ dynamic = ["version"]
+ readme = "README.md"
+ description = "Python package common tasks for users (e.g. copy examples, fetch data, ...)"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text = "BSD-3-Clause"}
+ requires-python = ">=3.8"
+ authors = [
+     {name = "HoloViz", email = "developers@holoviz.org"}
