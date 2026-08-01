@@ -1,5 +1,5 @@
 PORTNAME=	aq
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +23,7 @@ CARGO_CRATES=	anyhow-1.0.103 \
 		hashbrown-0.17.1 \
 		indexmap-2.14.0 \
 		itoa-1.0.18 \
+		libc-0.2.186 \
 		libyaml-rs-0.3.0 \
 		memchr-2.8.2 \
 		proc-macro2-1.0.106 \
