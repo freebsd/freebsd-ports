@@ -1,5 +1,5 @@
 PORTNAME=	cssselect
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.28.0:devel/py-hatchling@${PY_FLAVOR}
-# tests: 24 passed 10 warnings
+# tests: 20 passed
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml-stubs>=0.5.1:devel/py-lxml-stubs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruff>=0.14.10_1:devel/py-ruff@${PY_FLAVOR}
 
