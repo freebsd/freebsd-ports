@@ -1,6 +1,6 @@
 PORTNAME=	with-editor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.1
+DISTVERSION=	3.5.3
 CATEGORIES=	editors elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -11,7 +11,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	compat.el>=31.0:misc/compat.el \
-		cond-let>=1.0:devel/cond-let
+		cond-let>=1.1:devel/cond-let \
+		llama.el>=1.0:devel/llama.el
 
 USES=		emacs:build gmake makeinfo
 USE_GITHUB=	yes
