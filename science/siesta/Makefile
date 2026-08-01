@@ -1,5 +1,6 @@
 PORTNAME=	siesta
 DISTVERSION=	5.4.2
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 MASTER_SITES=	https://gitlab.com/siesta-project/${PORTNAME}/-/releases/${DISTVERSION}/downloads/
 DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.gz
@@ -51,7 +52,8 @@ CMAKE_ARGS=	-DSIESTA_WITH_MPI=OFF \
 		-Dmstore_FIND_METHOD=source \
 		-Dtoml-f_FIND_METHOD=source \
 		-Dtest-drive_FIND_METHOD=source
-CMAKE_OFF=	SIESTA_TESTS
+CMAKE_OFF=	SIESTA_TESTS \
+		SIESTA_WITH_HOST_OPTIMIZATION
 CMAKE_TESTING_ON=	SIESTA_TESTS
 
 .include <bsd.port.pre.mk>
