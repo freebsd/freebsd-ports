@@ -1,0 +1,35 @@
+-- Normalize the project name to lowercase and fix invalid PEP 621 license
+-- declaration. Upstream places license-files under [project], which is not
+-- allowed by PEP 621, and uses license = "MIT" instead of the PEP 621 text
+-- form. Newer setuptools rejects the resulting [project] table. Lowercasing
+-- the name also makes the produced wheel match the filename the ports
+-- PEP 517 installer expects.
+-- The setuptools requirement is lowered to the version available in ports.
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,11 +1,10 @@
+ [project]
+-name = "PubChemPy"
++name = "pubchempy"
+ version = "1.0.5"
+ description = "A simple Python wrapper around the PubChem PUG REST API."
+ readme = "README.md"
+ authors = [{ name = "Matt Swain", email = "m.swain@me.com" }]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ requires-python = ">=3.10"
+ dependencies = []
+ keywords = ["pubchem", "python", "rest", "api", "chemistry", "cheminformatics"]
+@@ -54,9 +53,10 @@
+
+ [tool.setuptools]
+ py-modules = ["pubchempy"]
++license-files = ["LICENSE"]
+
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=61.0"]
+ build-backend = "setuptools.build_meta"
+
+ [tool.pytest.ini_options]
