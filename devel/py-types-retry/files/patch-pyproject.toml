@@ -1,0 +1,26 @@
+-- Convert the deprecated string form of project.license to the PEP 621
+-- table form, remove project.license-files, and drop the [tool.setuptools]
+-- configuration that the setuptools version in the ports tree does not accept.
+-- Package metadata is supplied by the generated setup.py instead.
+--- pyproject.toml.orig	2026-07-31 21:19:26.267079000 -0700
++++ pyproject.toml
+@@ -5,8 +5,7 @@
+ [project]
+ name = "types-retry"
+ version = "0.9.9.20260408"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = {text = "Apache-2.0"}
+ description = "Typing stubs for retry"
+ readme = { text = """\
+ ## Typing stubs for retry
+@@ -45,9 +44,3 @@
+ "Issue tracker" = "https://github.com/python/typeshed/issues"
+ "Chat" = "https://gitter.im/python/typeshed"
+
+-[tool.setuptools]
+-packages = ['retry-stubs']
+-include-package-data = false
+-
+-[tool.setuptools.package-data]
+-'retry-stubs' = ['__init__.pyi', 'api.pyi', 'METADATA.toml', 'py.typed']
