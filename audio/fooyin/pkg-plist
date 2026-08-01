@@ -11,6 +11,7 @@ lib/fooyin/plugins/fyplugin_libarchive.so
 lib/fooyin/plugins/fyplugin_lyrics.so
 lib/fooyin/plugins/fyplugin_mpris.so
 lib/fooyin/plugins/fyplugin_notify.so
+lib/fooyin/plugins/fyplugin_oscilloscope.so
 lib/fooyin/plugins/fyplugin_quicktagger.so
 lib/fooyin/plugins/fyplugin_radiobrowser.so
 lib/fooyin/plugins/fyplugin_rawaudio.so
@@ -18,6 +19,7 @@ lib/fooyin/plugins/fyplugin_rgscanner.so
 lib/fooyin/plugins/fyplugin_scrobbler.so
 lib/fooyin/plugins/fyplugin_sdl.so
 lib/fooyin/plugins/fyplugin_sleepinhibitor.so
+lib/fooyin/plugins/fyplugin_spectrogram.so
 lib/fooyin/plugins/fyplugin_spectrum.so
 lib/fooyin/plugins/fyplugin_tageditor.so
 lib/fooyin/plugins/fyplugin_vumeter.so
@@ -27,6 +29,7 @@ share/applications/org.fooyin.fooyin.desktop
 %%DATADIR%%/translations/fooyin_ca.qm
 %%DATADIR%%/translations/fooyin_cs.qm
 %%DATADIR%%/translations/fooyin_de.qm
+%%DATADIR%%/translations/fooyin_el.qm
 %%DATADIR%%/translations/fooyin_en.qm
 %%DATADIR%%/translations/fooyin_en_GB.qm
 %%DATADIR%%/translations/fooyin_en_US.qm
