@@ -1,0 +1,15 @@
+-- Convert the deprecated string form of project.license to the PEP 621
+-- table form and remove project.license-files, which the setuptools version
+-- in the ports tree does not accept.
+--- pyproject.toml.orig	2026-07-31 21:30:25.202514000 -0700
++++ pyproject.toml
+@@ -8,8 +8,7 @@
+ description = "Permutations of finitely many positive integers"
+ readme = "README.rst"
+ requires-python = ">=3.8"
+-license = "MIT"
+-license-files = { paths = ["LICENSE"] }
++license = {text = "MIT"}
+ authors = [
+     { name = "John Thorvald Wodder II", email = "permutation@varonathe.org" }
+ ]
