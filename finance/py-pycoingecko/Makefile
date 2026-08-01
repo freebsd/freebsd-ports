@@ -1,6 +1,5 @@
 PORTNAME=	pycoingecko
-DISTVERSION=	3.1.0
-PORTREVISION=	1
+DISTVERSION=	3.2.0
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	man-c
 
 NO_ARCH=	yes
+
+# tests as of 3.2.0: 38 passed, 1 warning in 4.81s
 
 .include <bsd.port.mk>
