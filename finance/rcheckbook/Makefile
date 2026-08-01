@@ -5,7 +5,7 @@ CATEGORIES=	finance
 
 MAINTAINER=	tonyhawk2100@gmail.com
 COMMENT=	CLI based checkbook ledger
-WWW=		https://github.com/bryceac/rcheckbook
+WWW=		https://rcheckbook.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
