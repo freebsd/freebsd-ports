@@ -5,6 +5,7 @@ share/examples/mpop/mpoprc.example
 %%NLS%%share/locale/eo/LC_MESSAGES/mpop.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mpop.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mpop.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/mpop.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/mpop.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/mpop.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/mpop.mo
