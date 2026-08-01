@@ -1,5 +1,5 @@
 PORTNAME=	compat.el
-DISTVERSION=	31.0.0.1
+DISTVERSION=	31.0.0.2
 CATEGORIES=	misc elisp
 
 MAINTAINER=	jrm@FreeBSD.org
