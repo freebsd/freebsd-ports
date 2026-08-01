@@ -1,0 +1,21 @@
+-- Fix invalid PEP 621 license declaration and lower the setuptools
+-- build-system requirement to the version available in the FreeBSD ports tree.
+-- Upstream uses license = "BSD-3-Clause-LBNL" which newer setuptools rejects.
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=80.0.0","setuptools-scm>=8"]
++requires = ["setuptools>=63.1.0","setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+
+ [tool.setuptools_scm]
+@@ -25,7 +25,7 @@
+ dynamic = ["version"]
+ requires-python = ">=3.11"
+ description="Core Emmet Library"
+-license = "BSD-3-Clause-LBNL"
++license = {text = "BSD-3-Clause-LBNL"}
+ authors = [
+     {name = "The Materials Project", email="feedback@materialsproject.org"},
+ ]
