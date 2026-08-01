@@ -1,9 +1,9 @@
 PORTNAME=	citeproc-py
-DISTVERSION=	0.6.0
-PORTREVISION=	3
+DISTVERSION=	0.10.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	citeproc_py-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Citation Style Language (CSL) processor for Python
