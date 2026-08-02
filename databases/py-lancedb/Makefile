@@ -12,6 +12,8 @@ WWW=		https://lancedb.com \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	compilation fails: cannot find module or crate `aarch64`, see https://github.com/lancedb/lancedb/issues/3764
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/protoc:devel/protobuf \
 		${PYTHON_PKGNAMEPREFIX}maturin>=1.4:devel/py-maturin@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecation>=2.1.0:devel/py-deprecation@${PY_FLAVOR} \
