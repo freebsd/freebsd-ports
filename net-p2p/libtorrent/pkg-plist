@@ -20,7 +20,6 @@ include/torrent/download/group_entry.h
 include/torrent/download/resource_manager.h
 include/torrent/download/types.h
 include/torrent/download_info.h
-include/torrent/event.h
 include/torrent/exceptions.h
 include/torrent/hash_string.h
 include/torrent/net/address_info.h
@@ -53,6 +52,8 @@ include/torrent/runtime/proxy_manager.h
 include/torrent/runtime/runtime.h
 include/torrent/runtime/socket_manager.h
 include/torrent/system/callbacks.h
+include/torrent/system/common.h
+include/torrent/system/event.h
 include/torrent/system/poll.h
 include/torrent/system/thread.h
 include/torrent/system/types.h
@@ -79,6 +80,6 @@ include/torrent/utils/string_manip.h
 include/torrent/utils/unordered_vector.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.48
-lib/libtorrent.so.48.0.0
+lib/libtorrent.so.49
+lib/libtorrent.so.49.0.0
 libdata/pkgconfig/libtorrent.pc
