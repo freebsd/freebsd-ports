@@ -37,3 +37,4 @@
 %%WWWDIR%%/playwright.config.js
 %%WWWDIR%%/speedtest.js
 %%WWWDIR%%/speedtest_worker.js
+%%WWWDIR%%/stability_worker.js
