@@ -1,4 +1,4 @@
-TIMESTAMP = 1784985581
+TIMESTAMP = 1785627079
 SHA256 (traefik-3.7.1.tar.xz) = eec16fb917306b27537ca3ab585182c058373eaf5c7fc8f42e95003ea94ab699
 SIZE (traefik-3.7.1.tar.xz) = 25827640
 SHA256 (traefik-3.7.1-3.7.5.patch.xz) = 86159c1523cab76444494c8e406ac8004b660280191bbdebce8b7a77a956aacb
@@ -9,3 +9,5 @@ SHA256 (traefik-3.7.6-3.7.8.patch.xz) = 22de42ee935da073a6470cad98544dac92d366ee
 SIZE (traefik-3.7.6-3.7.8.patch.xz) = 224120
 SHA256 (traefik-3.7.8-3.7.9.patch.xz) = c252d3894f18cd5361ed2f8a0ff3b851e82879adb89b28406af1e3022ae56e54
 SIZE (traefik-3.7.8-3.7.9.patch.xz) = 23936
+SHA256 (traefik-3.7.9-3.7.10.patch.xz) = b83d7b7bc6cbd7e46dc76c99427dfee6134efb3100294922c97e5319154c25f7
+SIZE (traefik-3.7.9-3.7.10.patch.xz) = 1037836
