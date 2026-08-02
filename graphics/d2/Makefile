@@ -12,7 +12,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		go:modules
-GO_MODULE=	github.com/terrastruct/d2
+GO_MODULE=	github.com/d2lang/d2
 
 PLIST_FILES=	bin/d2
 
