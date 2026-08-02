@@ -1,5 +1,5 @@
 PORTNAME=	mecab-jawiki
-DISTVERSION=	2026.06.21.141122
+DISTVERSION=	2026.08.01.150202
 CATEGORIES=	japanese
 MASTER_SITES=	https://github.com/tokuhirom/jawiki-kana-kanji-dict/releases/download/v${DISTVERSION}/
 DISTFILES=	mecab-userdic.csv
