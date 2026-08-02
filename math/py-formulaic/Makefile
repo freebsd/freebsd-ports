@@ -1,5 +1,5 @@
 PORTNAME=	formulaic
-DISTVERSION=	1.0.2
+DISTVERSION=	1.2.2
 CATEGORIES=	math python # statistics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +11,10 @@ WWW=		https://github.com/matthewwardrop/formulaic
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astor>=0.8:devel/py-astor@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}interface-meta>=1.2.0:devel/py-interface-meta@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}interface-meta>=1.2.0:devel/py-interface-meta@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}narwhals>=1.17:math/py-narwhals@${PY_FLAVOR} \
 		${PYNUMY} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=1.0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=1.3:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.6:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.2.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=1.0:devel/py-wrapt@${PY_FLAVOR}
