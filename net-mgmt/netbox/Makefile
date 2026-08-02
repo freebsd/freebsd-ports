@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.6
+DISTVERSION=	4.6.7
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -69,7 +69,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.7<6.1:www/py-django60@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}tzdata>=2026.3:devel/py-tzdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.3<7:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=26.0.0:www/py-gunicorn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zensical>=0.0.51<1:textproc/py-zensical@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}zensical>=0.0.52<1:textproc/py-zensical@${PY_FLAVOR}
 
 USES=		cpe pgsql:14+ python:3.12+
 CPE_VENDOR=	netbox
