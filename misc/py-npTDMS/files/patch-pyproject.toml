@@ -1,0 +1,21 @@
+-- Fix pyproject.toml license format for compatibility with older setuptools
+-- The old setuptools in FreeBSD ports requires license = {text = "..."} instead of license = "..."
+
+--- pyproject.toml.orig	2026-06-24 15:25:32 UTC
++++ pyproject.toml
+@@ -11,8 +11,6 @@ readme = "README.rst"
+ description = "Cross-platform, NumPy based module for reading TDMS files produced by LabView"
+ authors = [{ name = "Adam Reeve", email = "adreeve@gmail.com" }]
+ readme = "README.rst"
+-license = "LGPL-3.0-only"
+-license-files = ["COPYING.LESSER"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Operating System :: OS Independent",
+@@ -59,4 +57,4 @@ packages = [
+     "nptdms",
+     "nptdms.export",
+     "nptdms.test",
+-]
+\ No newline at end of file
++]
