@@ -1,0 +1,9 @@
+The NumKong project implements portable mixed-precision math, linear-algebra,
+& retrieval library with 2'000+ SIMD kernels for x86, Arm, RISC-V, LoongArch,
+Power, & WebAssembly, leveraging rare algebraic transforms with both 1D & 2D
+registers like AMX & SME, covering 15+ numeric types from 4-bit integers &
+6-bit floats to 128-bit complex numbers, validated against 118-bit
+extended-precision baselines with saturation, casting, & rounding edge-case
+coverage, in a 5-100x smaller binary than other BLAS-like alternatives,
+co-designed with Tensor abstractions in C++, Python, Rust, JavaScript, GoLang,
+& Swift.
