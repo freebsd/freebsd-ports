@@ -5542,3 +5542,4 @@ devel/electron39||2026-07-31|Has expired: EOLed upstream, switch to newer versio
 www/p5-Apache-DB||2026-08-02|Has expired: uses hidden Perl functions that are hidden after 5.37.0
 devel/p5-Data-Thunk||2026-08-02|Removed: no updates in years, depends on expired devel/p5-Data-Swap
 math/p5-Set-IntSpan-Fast-XS||2026-08-02|Removed: no updates in years, depends on expired devel/p5-Data-Swap
+devel/p5-Data-Swap||2026-08-02|Has expired: uses hidden Perl functions that are hidden after 5.37.0
