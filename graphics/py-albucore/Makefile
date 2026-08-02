@@ -1,6 +1,5 @@
 PORTNAME=	albucore
-DISTVERSION=	0.0.24
-PORTREVISION=	2
+DISTVERSION=	0.2.9
 CATEGORIES=	graphics python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +11,9 @@ WWW=		https://github.com/albumentations-team/albucore
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}simsimd>=5.9.2:devel/py-simsimd@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numkong>=7.4.5:devel/py-numkong@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stringzilla>=3.10.4:devel/py-stringzilla@${PY_FLAVOR} \
 		opencv>0:graphics/opencv
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.1.0:devel/py-pytest-cov@${PY_FLAVOR} \
@@ -30,6 +28,6 @@ GH_ACCOUNT=	albumentations-team
 
 NO_ARCH=	yes
 
-# tests as of 0.0.24: 734 passed in 7.56s
+# tests as of 0.2.9: 2040 passed
 
 .include <bsd.port.mk>
