@@ -3944,6 +3944,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/iris-ansi.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/iris-ansi.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/kmscon.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/kmscon.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/konsole.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/konsole.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/linux.el.gz
