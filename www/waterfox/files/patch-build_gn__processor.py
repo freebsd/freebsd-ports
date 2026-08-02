@@ -1,13 +1,13 @@
-commit 0e5bcbefae64b35a5c8df360e3980258a565fa72
-Author: Christoph Moench-Tegeder <cmt@burggraben.net>
+commit fd751cfbeaf9e78c2b525c3f5226eb73aa90f0cd
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
-    chase gn_processor.py move
+    FreeBSD workings for webrtc configure (gn_processor.py)
 
 diff --git build/gn_processor.py build/gn_processor.py
-index 2ba8b92c2751..91170efb9a5d 100644
+index 9f7f51c9f93f..ab7b60ee725f 100644
 --- build/gn_processor.py
 +++ build/gn_processor.py
-@@ -186,6 +186,7 @@ def filter_gn_config(path, gn_result, sandbox_vars, input_vars, gn_target):
+@@ -215,6 +215,7 @@ def filter_gn_config(path, gn_result, sandbox_vars, input_vars, gn_target):
      }
      oses = {
          "android": "Android",
@@ -15,12 +15,12 @@ index 2ba8b92c2751..91170efb9a5d 100644
          "linux": "Linux",
          "mac": "Darwin",
          "openbsd": "OpenBSD",
-@@ -780,17 +781,17 @@ def main():
+@@ -1035,17 +1036,17 @@ def generate_gn_configs(topsrcdir, config):
  
      vars_set = []
      for is_debug in (True, False):
 -        for target_os in ("android", "linux", "mac", "openbsd", "win"):
-+        for target_os in ("freebsd",):
++        for target_os in ("freebsd", ):
              target_cpus = ["x64"]
 -            if target_os in ("android", "linux", "mac", "win", "openbsd"):
 +            if target_os in ("android", "freebsd", "linux", "mac", "win", "openbsd"):
@@ -38,12 +38,12 @@ index 2ba8b92c2751..91170efb9a5d 100644
                  target_cpus.extend(["loong64", "ppc64", "mipsel", "mips64el"])
              for target_cpu in target_cpus:
                  vars = {
-@@ -799,7 +800,7 @@ def main():
-                     "target_cpu": target_cpu,
-                     "target_os": target_os,
-                 }
+@@ -1059,7 +1060,7 @@ def generate_gn_configs(topsrcdir, config):
+                 vars.update(config_args.get("*", {}))
+                 vars.update(config_args.get(target_os, {}))
+ 
 -                if target_os == "linux":
 +                if target_os in ("freebsd", "linux"):
-                     for use_x11 in (True, False):
-                         vars["use_x11"] = use_x11
+                     for enable_x11 in (True, False):
+                         vars["ozone_platform_x11"] = enable_x11
                          vars_set.append(vars.copy())
