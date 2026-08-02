@@ -1,0 +1,7 @@
+curl-impersonate is a special build of curl that can impersonate the four major
+browsers: Chrome, Edge, Safari & Firefox. curl-impersonate is able to perform
+TLS and HTTP handshakes that are identical to that of a real browser.
+
+curl-impersonate can be used either as a command line tool, similar to the
+regular curl, or as a library that can be integrated instead of the regular
+libcurl.

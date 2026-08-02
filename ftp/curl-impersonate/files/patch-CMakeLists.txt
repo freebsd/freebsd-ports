@@ -1,0 +1,63 @@
+--- CMakeLists.txt.orig	2026-08-01 23:39:17 UTC
++++ CMakeLists.txt
+@@ -195,6 +195,7 @@ ExternalProject_Add(zlib
+     -DBUILD_SHARED_LIBS=OFF
+     -DZLIB_BUILD_EXAMPLES=OFF
+   BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --parallel ${SUBJOBS}
++  INSTALL_COMMAND ${CMAKE_COMMAND} -E env DESTDIR= ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
+ )
+ 
+ # zstd
+@@ -214,6 +215,7 @@ ExternalProject_Add(zstd
+     -DZSTD_BUILD_CONTRIB=OFF
+     -DZSTD_BUILD_TESTS=OFF
+   BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --parallel ${SUBJOBS}
++  INSTALL_COMMAND ${CMAKE_COMMAND} -E env DESTDIR= ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
+ )
+ 
+ # brotli
+@@ -234,7 +236,7 @@ ExternalProject_Add(brotli
+     -DBROTLI_BUILD_TOOLS=OFF
+     -DCMAKE_MACOSX_BUNDLE=OFF
+   BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --parallel ${SUBJOBS}
+-  INSTALL_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
++  INSTALL_COMMAND ${CMAKE_COMMAND} -E env DESTDIR= ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
+ )
+ 
+ # boringssl
+@@ -270,7 +272,7 @@ ExternalProject_Add(boringssl
+   PATCH_COMMAND ${PATCH_EXE} -p1 -i "${_boringssl_patch_file}"
+   CMAKE_ARGS ${_boringssl_cmake_args}
+   BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target ssl crypto --parallel ${SUBJOBS}
+-  INSTALL_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
++  INSTALL_COMMAND ${CMAKE_COMMAND} -E env DESTDIR= ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
+ )
+ 
+ ExternalProject_Get_Property(boringssl source_dir binary_dir)
+@@ -308,7 +310,7 @@ ExternalProject_Add(nghttp2
+     -DENABLE_DOC=OFF
+     -DBUILD_TESTING=OFF
+   BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --parallel ${SUBJOBS}
+-  INSTALL_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
++  INSTALL_COMMAND ${CMAKE_COMMAND} -E env DESTDIR= ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
+ )
+ 
+ # nghttp3
+@@ -330,7 +332,7 @@ ExternalProject_Add(nghttp3
+     -DBUILD_TESTING=OFF
+   BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --parallel ${SUBJOBS}
+   INSTALL_COMMAND
+-    ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
++    ${CMAKE_COMMAND} -E env DESTDIR= ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
+     COMMAND ${CMAKE_COMMAND} -E copy_if_different
+       <SOURCE_DIR>/lib/includes/nghttp3/nghttp3.h
+       <INSTALL_DIR>/include/nghttp3/nghttp3.h
+@@ -370,7 +372,7 @@ ExternalProject_Add(ngtcp2
+     -DBORINGSSL_INCLUDE_DIR=${BORINGSSL_INCLUDE_DIR}
+     ${_ngtcp2_boringssl_libs_arg}
+   BUILD_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --parallel ${SUBJOBS}
+-  INSTALL_COMMAND ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
++  INSTALL_COMMAND ${CMAKE_COMMAND} -E env DESTDIR= ${CMAKE_COMMAND} --build <BINARY_DIR> --config Release --target install --parallel ${SUBJOBS}
+ )
+ 
+ # libidn2

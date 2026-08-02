@@ -10,6 +10,7 @@
     SUBDIR += cmdftp
     SUBDIR += coeurl
     SUBDIR += curl
+    SUBDIR += curl-impersonate
     SUBDIR += curlie
     SUBDIR += curlpp
     SUBDIR += dmachine

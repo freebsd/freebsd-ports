@@ -1,0 +1,31 @@
+--- patches/curl.patch.orig	2026-08-01 23:27:43 UTC
++++ patches/curl.patch
+@@ -11817,3 +11817,28 @@ +  NV1(CURLOPT_TLS_STATUS_REQUEST, 1),
+    NV1(CURLOPT_TCP_NODELAY, 1),
+    NV1(CURLOPT_PROXY_SSL_VERIFYPEER, 1),
+    NV1(CURLOPT_PROXY_SSL_VERIFYHOST, 1),
++diff --git a/CMakeLists.txt b/CMakeLists.txt
++index c96af1dc7b..d8e8474f82 100644
++--- a/CMakeLists.txt
+++++ b/CMakeLists.txt
++@@ -824,6 +824,20 @@ if(CURL_USE_OPENSSL)
++ 
++   # Depend on OpenSSL via imported targets. This allows our dependents to
++   # get our dependencies transitively.
+++
+++  # Create OpenSSL::SSL and OpenSSL::Crypto targets manually if they don't exist (for BoringSSL)
+++  if(NOT TARGET OpenSSL::SSL)
+++    add_library(OpenSSL::SSL UNKNOWN IMPORTED)
+++    set_target_properties(OpenSSL::SSL PROPERTIES
+++      IMPORTED_LOCATION "${OPENSSL_SSL_LIBRARY}"
+++      INTERFACE_INCLUDE_DIRECTORIES "${OPENSSL_INCLUDE_DIR}")
+++  endif()
+++  if(NOT TARGET OpenSSL::Crypto)
+++    add_library(OpenSSL::Crypto UNKNOWN IMPORTED)
+++    set_target_properties(OpenSSL::Crypto PROPERTIES
+++      IMPORTED_LOCATION "${OPENSSL_CRYPTO_LIBRARY}"
+++      INTERFACE_INCLUDE_DIRECTORIES "${OPENSSL_INCLUDE_DIR}")
+++  endif()
++   list(APPEND CURL_LIBS OpenSSL::SSL OpenSSL::Crypto)
++ 
++   if(CURL_DEFAULT_SSL_BACKEND AND CURL_DEFAULT_SSL_BACKEND STREQUAL "openssl")
