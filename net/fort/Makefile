@@ -2,7 +2,7 @@ PORTNAME=	fort
 DISTVERSION=	1.7.0
 DISTVERSIONSUFFIX=	.experimental
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/NICMx/FORT-validator/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/NICMx/FORT-validator/releases/download/${DISTVERSIONFULL}/
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	FORT Validator is an open source RPKI validator
