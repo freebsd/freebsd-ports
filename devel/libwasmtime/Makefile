@@ -29,8 +29,6 @@ GH_PROJECT=	wasmtime
 CARGO_BUILD_ARGS=	-p wasmtime-c-api
 CMAKE_SOURCE_PATH=	${WRKSRC}/crates/c-api
 
-.include "${.CURDIR}/Makefile.cargo"
-
 GH_TUPLE=	WebAssembly:component-model:dac7805:component_model/tests/component-model \
 		WebAssembly:testsuite:3453673:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:26ea2ff:wasi_testsuite/tests/wasi_testsuite/wasi-common \
