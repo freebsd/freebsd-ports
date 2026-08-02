@@ -1,6 +1,5 @@
 PORTNAME=	crengine-ng
-DISTVERSION=	0.9.12
-PORTREVISION=	1
+DISTVERSION=	0.9.13
 CATEGORIES=	deskutils
 
 MAINTAINER=	kenrap@FreeBSD.org
@@ -31,5 +30,10 @@ CMAKE_ARGS=	-D CRE_BUILD_STATIC=OFF \
 .if defined(WITH_LTO)
 CMAKE_ARGS+= -D ENABLE_LTO=ON
 .endif
+
+OPTIONS_DEFINE=		WEBP
+OPTIONS_DEFAULT=	WEBP
+
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 .include <bsd.port.mk>

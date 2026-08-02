@@ -86,7 +86,7 @@ lib/cmake/crengine-ng/crengine-ng-config.cmake
 lib/cmake/crengine-ng/crengine-ng-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/crengine-ng/crengine-ng-targets.cmake
 lib/libcrengine-ng.so
-lib/libcrengine-ng.so.0.9.12
+lib/libcrengine-ng.so.0.9.13
 lib/libcrengine-ng.so.7
 libdata/pkgconfig/crengine-ng.pc
 %%DATADIR%%/chm.css
