@@ -2531,7 +2531,6 @@
     SUBDIR += p5-Devel-ArgNames
     SUBDIR += p5-Devel-Autoflush
     SUBDIR += p5-Devel-Backtrace
-    SUBDIR += p5-Devel-BeginLift
     SUBDIR += p5-Devel-CallChecker
     SUBDIR += p5-Devel-Caller
     SUBDIR += p5-Devel-Caller-IgnoreNamespaces
