@@ -1,9 +1,7 @@
 PORTNAME=	octave-forge-strings
-PORTVERSION=	1.3.1
-PORTREVISION=	5
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	1.3.2
 CATEGORIES=	math
-MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
-DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
@@ -14,7 +12,12 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
-USES=		octave pkgconfig
+USES=		octave pkgconfig autoreconf
+USE_GITHUB=	yes
+GH_ACCOUNT= 	gnu-octave
+GH_PROJECT=	octave-strings
+
+OCTAVE_SRC=	${GH_PROJECT}-release-${DISTVERSION}
 
 GNU_CONFIGURE=	yes
 
