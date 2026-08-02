@@ -1,6 +1,5 @@
 PORTNAME=	iminuit
-DISTVERSION=	2.30.1
-PORTREVISION=	2
+DISTVERSION=	2.32.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -41,6 +40,6 @@ USE_PYTHON=	pep517 cython_test autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 2.30.1: 4 failed, 674 passed in 53.97s, see https://github.com/scikit-hep/iminuit/issues/1063
+# tests as of 2.32.0: 2 failed, 686 passed, 2 skipped in 7.49s, see https://github.com/scikit-hep/iminuit/issues/1153
 
 .include <bsd.port.mk>
