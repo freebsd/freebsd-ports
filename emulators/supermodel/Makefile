@@ -1,7 +1,7 @@
 PORTNAME=	supermodel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3a-20260506
-DISTVERSIONSUFFIX=	-git-9c9e7b7
+DISTVERSION=	0.3a-20260726
+DISTVERSIONSUFFIX=	-git-b7d8acd
 CATEGORIES=	emulators
 
 MAINTAINER=	owlandrews@protonmail.com
@@ -17,6 +17,7 @@ USES=		compiler gl gmake localbase:ldflags sdl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trzy
+GH_PROJECT=	Supermodel
 
 USE_GL=		glu opengl
 USE_SDL=	net2 sdl2
@@ -30,8 +31,6 @@ DESKTOP_ENTRIES=	"Supermodel" \
 			"Game;ArcadeGame;Emulator;" \
 			false
 SUB_FILES=	pkg-message
-
-WRKSRC=		${WRKDIR}/Supermodel-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 PORTDOCS=	README.txt
 
