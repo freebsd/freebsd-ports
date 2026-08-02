@@ -1,0 +1,14 @@
+-- Fix pyproject.toml license format for compatibility with older setuptools
+-- The old setuptools in FreeBSD ports requires license = {text = "MIT"} instead of license = "MIT"
+
+--- pyproject.toml.orig	2026-08-02 19:42:46 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ requires-python = ">=3.10"
+ description = "Dux Distributed Global Search. A metasearch library that aggregates results from diverse web search services."
+ readme = "README.md"
+ requires-python = ">=3.10"
+-license = "MIT"
++license = {text = "MIT"}
+ keywords = ["python", "search", "metasearch"]
+ authors = [
+   {name = "deedy5"}
