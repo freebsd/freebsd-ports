@@ -1,5 +1,5 @@
-TIMESTAMP = 1783838383
-SHA256 (BrowserWorks-waterfox-6.6.16.1_GH0.tar.gz) = b0b4086cbff68cc1dc0e28321a99055482f19a243f14fa674adc8800b5b83d84
-SIZE (BrowserWorks-waterfox-6.6.16.1_GH0.tar.gz) = 926640559
-SHA256 (BrowserWorks-l10n-a2e5c9b_GH0.tar.gz) = b59e1ad5a16b3fcfb4266edb7a641098c511ce593b8f2ff291cc7dc3ca054b03
-SIZE (BrowserWorks-l10n-a2e5c9b_GH0.tar.gz) = 25811834
+TIMESTAMP = 1785511261
+SHA256 (BrowserWorks-waterfox-6.7.0-beta.3_GH0.tar.gz) = f79f539de265e2ed17115adb4d9b4b29b1d4814d5aa9e366bbab4da226191ada
+SIZE (BrowserWorks-waterfox-6.7.0-beta.3_GH0.tar.gz) = 1053034744
+SHA256 (BrowserWorks-l10n-cc8b91c_GH0.tar.gz) = 4e1edf9d95cb273003778cb798c0adfe039a5716a0242078da552aae3b5573d0
+SIZE (BrowserWorks-l10n-cc8b91c_GH0.tar.gz) = 94276518

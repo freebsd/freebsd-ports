@@ -1,4 +1,4 @@
-commit be323da0618d99573ef61a096fa4ae1b147378d9
+commit c6452bc491ef6b531ae4e948926bd8d863ad1fc3
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
     enable resolving HTTPS RRs via the OS's resolver on FreeBSD
@@ -7,10 +7,10 @@ Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
     on HTTPS RRs.
 
 diff --git netwerk/dns/moz.build netwerk/dns/moz.build
-index b2456d23a6df..3785da5d6e87 100644
+index 2369794f2407..7e3bff4b5092 100644
 --- netwerk/dns/moz.build
 +++ netwerk/dns/moz.build
-@@ -58,6 +58,8 @@ if CONFIG["MOZ_WIDGET_TOOLKIT"] == "windows":
+@@ -56,6 +56,8 @@ if CONFIG["MOZ_WIDGET_TOOLKIT"] == "windows":
  elif CONFIG["OS_TARGET"] == "Linux":
      SOURCES += ["PlatformDNSUnix.cpp"]
      OS_LIBS += ["resolv"]
@@ -20,10 +20,10 @@ index b2456d23a6df..3785da5d6e87 100644
      SOURCES += ["PlatformDNSMac.cpp"]
  elif CONFIG["MOZ_WIDGET_TOOLKIT"] == "android":
 diff --git netwerk/dns/nsHostResolver.cpp netwerk/dns/nsHostResolver.cpp
-index b7e3763ffeb5..a36edf32dc76 100644
+index 2ef4006a3b17..29c4c7cf5730 100644
 --- netwerk/dns/nsHostResolver.cpp
 +++ netwerk/dns/nsHostResolver.cpp
-@@ -213,7 +213,7 @@ nsresult nsHostResolver::Init() MOZ_NO_THREAD_SAFETY_ANALYSIS {
+@@ -175,7 +175,7 @@ nsresult nsHostResolver::Init() MOZ_NO_THREAD_SAFETY_ANALYSIS {
  #elif defined(MOZ_WIDGET_ANDROID)
    // android_res_nquery only got added in API level 29
    sNativeHTTPSSupported = jni::GetAPIVersion() >= 29;
