@@ -1,0 +1,6 @@
+python-cffi is a Python binding for curl-impersonate fork via cffi.
+
+curl_cffi is the most popular Python binding for curl. Unlike other pure python
+http clients like httpx or requests, curl_cffi can impersonate browsers' TLS/JA3
+and HTTP/2 fingerprints. If you are blocked by some website for no obvious
+reason, you can give curl_cffi a try.

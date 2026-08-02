@@ -1,0 +1,59 @@
+--- libs.json.orig	2025-12-16 02:55:22 UTC
++++ libs.json
+@@ -122,6 +122,56 @@
+         "so_arch": "arm"
+     },
+     {
++        "system": "FreeBSD",
++        "machine": "amd64",
++        "pointer_size": 64,
++        "libdir": "",
++        "sysname": "freebsd",
++        "link_type": "static",
++        "so_name": "libcurl-impersonate-chrome.so",
++        "so_arch": "amd64"
++    },
++    {
++        "system": "FreeBSD",
++        "machine": "i686",
++        "pointer_size": 32,
++        "libdir": "",
++        "sysname": "freebsd",
++        "link_type": "static",
++        "so_name": "libcurl-impersonate-chrome.so",
++        "so_arch": "i386"
++    },
++    {
++        "system": "FreeBSD",
++        "machine": "aarch64",
++        "pointer_size": 64,
++        "libdir": "",
++        "sysname": "freebsd",
++        "link_type": "static",
++        "so_name": "libcurl-impersonate-chrome.so",
++        "so_arch": "aarch64"
++    },
++    {
++        "system": "FreeBSD",
++        "machine": "aarch64",
++        "pointer_size": 64,
++        "libdir": "~/.local/lib",
++        "sysname": "freebsd",
++        "link_type": "dynamic",
++        "so_name": "libcurl-impersonate-chrome.so",
++        "so_arch": "aarch64"
++    },
++    {
++        "system": "FreeBSD",
++        "machine": "armv7l",
++        "pointer_size": 32,
++        "libdir": "",
++        "sysname": "freebsd",
++        "link_type": "static",
++        "so_name": "libcurl-impersonate-chrome.so",
++        "so_arch": "arm"
++    },
++    {
+         "system": "Linux",
+         "machine": "armv7l",
+         "pointer_size": 32,

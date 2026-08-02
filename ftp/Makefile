@@ -68,6 +68,7 @@
     SUBDIR += profxp
     SUBDIR += pure-ftpd
     SUBDIR += py-aioftp
+    SUBDIR += py-curl-cffi
     SUBDIR += py-ftputil
     SUBDIR += py-parfive
     SUBDIR += py-pycurl
