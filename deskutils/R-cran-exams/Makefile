@@ -1,5 +1,5 @@
 PORTNAME=	exams
-DISTVERSION=	2.4-3
+DISTVERSION=	2.4-4
 CATEGORIES=	deskutils education
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	hs-pandoc>0:textproc/hs-pandoc \
 		R-cran-magick>0:graphics/R-cran-magick \
 		R-cran-openxlsx>0:textproc/R-cran-openxlsx \
 		R-cran-png>0:graphics/R-cran-png \
+		R-cran-qpdf>0:graphics/R-cran-qpdf \
 		R-cran-RCurl>0:ftp/R-cran-RCurl \
 		R-cran-RJSONIO>0:converters/R-cran-RJSONIO \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
