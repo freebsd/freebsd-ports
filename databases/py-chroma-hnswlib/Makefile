@@ -1,5 +1,6 @@
 PORTNAME=	chroma-hnswlib
 DISTVERSION=	0.7.6
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.10.0:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
+
+MAKE_ENV=	HNSWLIB_NO_NATIVE=1
 
 .include <bsd.port.mk>
