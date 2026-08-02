@@ -11,6 +11,8 @@ WWW=		https://delta-io.github.io/delta-rs/ \
 
 LICENSE=	APACHE20
 
+BROKEN_i386=	compilation fails: error[E0425]: cannot find function `_mm256_insert_epi64` in this scope
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1,<2:devel/py-maturin@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arro3-core>=0.5.0:devel/py-arro3-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.18:devel/py-deprecated@${PY_FLAVOR}
