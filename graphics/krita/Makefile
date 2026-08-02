@@ -18,6 +18,7 @@ BUILD_DEPENDS=	boost-libs>=1.65:devel/boost-libs \
 BUILD_DEPENDS+=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_aarch64=	xsimd>=8.1:devel/xsimd
 BUILD_DEPENDS_amd64=	xsimd>=8.1:devel/xsimd
+BUILD_DEPENDS_powerpc64le=	xsimd>=8.1:devel/xsimd
 LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 		libexiv2.so:graphics/exiv2 \
 		libfftw3.so:math/fftw3 \
