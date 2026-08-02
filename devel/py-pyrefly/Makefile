@@ -1,6 +1,5 @@
 PORTNAME=	pyrefly
-DISTVERSION=	1.1.1
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,6 +30,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		allocative-0.3.6 \
 		allocative_derive-0.3.6 \
 		allocator-api2-0.2.21 \
+		anes-0.1.6 \
 		anstream-0.6.21 \
 		anstream-1.0.0 \
 		anstyle-1.0.14 \
@@ -38,12 +38,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.102 \
+		anyhow-1.0.103 \
 		append-only-vec-0.1.8 \
-		arc-swap-1.9.1 \
+		approx-0.5.1 \
+		arc-swap-1.9.2 \
 		argfile-0.2.1 \
 		arrayref-0.3.9 \
-		arrayvec-0.7.6 \
+		arrayvec-0.7.8 \
 		atomic-0.5.3 \
 		attribute-derive-0.10.5 \
 		attribute-derive-macro-0.10.5 \
@@ -51,40 +52,53 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		backtrace-on-stack-overflow-0.3.0 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
-		bitflags-2.13.0 \
+		bitflags-2.13.1 \
 		blake3-1.8.2 \
 		block-buffer-0.10.4 \
 		bs58-0.5.1 \
-		bstr-1.12.1 \
+		bstr-1.13.0 \
 		bumpalo-3.20.3 \
 		byteorder-1.5.0 \
-		bytes-1.11.1 \
-		capnp-0.25.5 \
+		bytes-1.12.1 \
+		capnp-0.25.6 \
+		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.2.63 \
+		cc-1.2.67 \
 		cfg-if-1.0.4 \
-		chacha20-0.10.0 \
+		cfg_aliases-0.2.2 \
+		chacha20-0.10.1 \
+		char_str-0.0.2 \
 		chrono-0.4.45 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
+		ciborium-0.2.2 \
+		ciborium-io-0.2.2 \
+		ciborium-ll-0.2.2 \
+		clap-4.6.2 \
+		clap_builder-4.6.2 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
+		codspeed-5.0.1 \
+		codspeed-criterion-compat-5.0.1 \
+		codspeed-criterion-compat-walltime-5.0.1 \
 		collection_literals-1.0.3 \
 		colorchoice-1.0.5 \
+		colored-3.1.1 \
 		compact_str-0.9.1 \
+		compact_str-0.10.0 \
 		configparser-3.2.0 \
-		console-0.16.1 \
+		console-0.16.4 \
 		console_error_panic_hook-0.1.7 \
 		constant_time_eq-0.3.1 \
 		convert_case-0.11.0 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
-		crossbeam-channel-0.5.15 \
-		crossbeam-deque-0.8.6 \
-		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.21 \
+		criterion-plot-0.5.0 \
+		crossbeam-channel-0.5.16 \
+		crossbeam-deque-0.8.7 \
+		crossbeam-epoch-0.9.20 \
+		crossbeam-utils-0.8.22 \
+		crunchy-0.2.4 \
 		crypto-common-0.1.7 \
-		ctor-1.0.7 \
+		ctor-1.0.8 \
 		darling-0.23.0 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
@@ -95,6 +109,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		displaydoc-0.2.6 \
+		drop_bomb-0.1.5 \
 		dupe-0.9.1 \
 		dupe_derive-0.9.1 \
 		either-1.16.0 \
@@ -126,20 +141,22 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		fuzzy-matcher-0.3.7 \
 		fxhash-0.2.1 \
 		generic-array-0.14.7 \
-		get-size-derive2-0.9.0 \
-		get-size2-0.9.0 \
+		get-size-derive2-0.10.3 \
+		get-size2-0.10.3 \
 		getopts-0.2.24 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
 		getrandom-0.4.2 \
 		gimli-0.32.3 \
 		glob-0.3.3 \
-		globset-0.4.18 \
+		globset-0.4.19 \
+		half-2.7.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
 		heck-0.5.0 \
+		hermit-abi-0.5.2 \
 		hex-0.4.3 \
 		home-0.5.12 \
 		human_bytes-0.4.3 \
@@ -154,56 +171,60 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
-		ignore-0.4.26 \
+		ignore-0.4.29 \
 		index_vec-0.1.4 \
 		indexmap-2.14.0 \
-		indicatif-0.18.4 \
-		inotify-0.11.2 \
-		inotify-sys-0.1.5 \
+		indicatif-0.18.6 \
+		inotify-0.11.4 \
+		inotify-sys-0.1.8 \
 		interpolator-0.5.0 \
 		is-macro-0.3.7 \
+		is-terminal-0.4.17 \
 		is_terminal_polyfill-1.70.2 \
-		itertools-0.14.0 \
+		itertools-0.10.5 \
+		itertools-0.15.0 \
 		itoa-0.4.8 \
 		itoa-1.0.18 \
-		jobserver-0.1.34 \
-		js-sys-0.3.100 \
+		jobserver-0.1.35 \
+		js-sys-0.3.103 \
 		kqueue-1.2.0 \
 		kqueue-sys-1.1.2 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.186 \
 		libmimalloc-sys-0.1.49 \
-		link-section-0.18.2 \
+		link-section-0.19.0 \
 		linktime-proc-macro-0.2.0 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.2 \
 		lock_api-0.4.14 \
 		lock_free_hashtable-0.1.4 \
-		log-0.4.32 \
+		log-0.4.33 \
 		lsp-server-0.7.9 \
 		manyhow-0.11.4 \
 		manyhow-macros-0.11.4 \
 		maplit-1.0.2 \
 		matchers-0.2.0 \
-		memchr-2.8.1 \
-		memmap2-0.9.10 \
+		memchr-2.8.3 \
+		memmap2-0.9.11 \
 		memoffset-0.6.5 \
 		memory-stats-1.2.0 \
 		mimalloc-0.1.52 \
 		miniz_oxide-0.8.8 \
-		mio-1.2.1 \
+		mio-1.2.2 \
 		nix-0.23.1 \
+		nix-0.31.3 \
 		notify-8.2.0 \
 		notify-types-2.1.0 \
-		num-bigint-0.4.6 \
+		num-bigint-0.4.8 \
 		num-conv-0.2.2 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
 		object-0.37.3 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
+		oorandom-11.1.5 \
 		ordermap-1.2.0 \
 		os_str_bytes-7.1.1 \
 		parking_lot-0.12.5 \
@@ -221,6 +242,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		phf_shared-0.11.3 \
 		pin-project-lite-0.2.17 \
 		pkg-config-0.3.33 \
+		plotters-0.3.7 \
+		plotters-backend-0.3.7 \
+		plotters-svg-0.3.7 \
 		portable-atomic-1.13.1 \
 		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
@@ -231,13 +255,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		proc-macro2-1.0.106 \
 		pulldown-cmark-0.13.4 \
 		pulldown-cmark-escape-0.11.0 \
-		quote-1.0.45 \
+		quote-1.0.46 \
 		quote-use-0.8.4 \
 		quote-use-macros-0.8.4 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
-		rand-0.8.6 \
-		rand-0.10.1 \
+		rand-0.8.7 \
+		rand-0.10.2 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rand_core-0.10.1 \
@@ -246,14 +270,24 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		redox_syscall-0.5.18 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		regex-1.12.3 \
-		regex-automata-0.4.14 \
+		regex-1.13.1 \
+		regex-automata-0.4.16 \
 		regex-syntax-0.7.5 \
-		regex-syntax-0.8.10 \
-		rustc-demangle-0.1.27 \
-		rustc-hash-2.1.2 \
+		regex-syntax-0.8.11 \
+		ruff_annotate_snippets-0.0.6 \
+		ruff_cache-0.0.6 \
+		ruff_diagnostics-0.0.6 \
+		ruff_notebook-0.0.6 \
+		ruff_python_ast-0.0.6 \
+		ruff_python_parser-0.0.6 \
+		ruff_python_trivia-0.0.6 \
+		ruff_source_file-0.0.6 \
+		ruff_text_size-0.0.6 \
+		rustc-demangle-0.1.28 \
+		rustc-hash-2.1.3 \
 		rustix-0.38.44 \
 		rustix-1.1.4 \
+		rustversion-1.0.23 \
 		ryu-0.2.8 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
@@ -278,12 +312,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		signal-hook-registry-1.4.8 \
 		siphasher-1.0.3 \
 		slab-0.4.12 \
-		smallvec-1.15.1 \
-		socket2-0.6.4 \
+		smallvec-1.15.2 \
+		socket2-0.6.5 \
 		stable_deref_trait-1.2.1 \
 		starlark_map-0.14.2 \
 		static_assertions-1.1.0 \
 		static_interner-0.1.3 \
+		statrs-0.18.0 \
 		strong_hash-0.1.0 \
 		strong_hash_derive-0.1.0 \
 		strsim-0.11.1 \
@@ -291,7 +326,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		structmeta-derive-0.2.0 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.117 \
+		syn-2.0.119 \
 		synstructure-0.13.2 \
 		tar-0.4.46 \
 		tempfile-3.27.0 \
@@ -301,22 +336,23 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		thiserror-2.0.18 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.18 \
-		thread_local-1.1.9 \
+		thread_local-1.1.10 \
 		tikv-jemalloc-sys-0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
 		tikv-jemallocator-0.6.1 \
-		time-0.3.47 \
-		time-core-0.1.8 \
+		time-0.3.53 \
+		time-core-0.1.9 \
 		tinystr-0.8.3 \
-		tinyvec-1.11.0 \
+		tinytemplate-1.2.1 \
+		tinyvec-1.12.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.52.3 \
+		tokio-1.53.0 \
 		tokio-macros-2.7.0 \
 		tokio-util-0.6.10 \
-		toml-1.1.2+spec-1.1.0 \
+		toml-1.1.3+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.12+spec-1.1.0 \
+		toml_edit-0.25.13+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
-		toml_writer-1.1.1+spec-1.1.0 \
+		toml_writer-1.1.2+spec-1.1.0 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
@@ -334,23 +370,24 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		url-2.5.8 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.3 \
-		uuid-rng-internal-1.23.3 \
+		uuid-1.24.0 \
+		uuid-rng-internal-1.24.0 \
 		valuable-0.1.1 \
 		vec1-1.12.1 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.3+wasi-0.2.9 \
+		wasip2-1.0.4+wasi-0.2.12 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.123 \
-		wasm-bindgen-macro-0.2.123 \
-		wasm-bindgen-macro-support-0.2.123 \
-		wasm-bindgen-shared-0.2.123 \
+		wasm-bindgen-0.2.126 \
+		wasm-bindgen-macro-0.2.126 \
+		wasm-bindgen-macro-support-0.2.126 \
+		wasm-bindgen-shared-0.2.126 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
 		watchman_client-0.9.0 \
+		web-sys-0.3.103 \
 		web-time-1.1.0 \
 		which-4.4.2 \
 		winapi-0.3.9 \
@@ -390,25 +427,23 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wit-parser-0.244.0 \
 		writeable-0.6.3 \
 		xattr-1.6.1 \
-		xxhash-rust-0.8.15 \
+		xxhash-rust-0.8.17 \
 		yansi-1.0.1 \
 		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
-		zerocopy-0.8.50 \
-		zerocopy-derive-0.8.50 \
+		zerocopy-0.8.54 \
+		zerocopy-derive-0.8.54 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
-		zmij-1.0.21 \
+		zmij-1.0.23 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
-		lsp-types@git+https://github.com/astral-sh/lsp-types?rev=e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c\#e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c \
-		rustversion@git+https://github.com/fbsource/rustversion?rev=3f072e049635b7463275fc4edebbbed3840d9297\#3f072e049635b7463275fc4edebbbed3840d9297 \
-		ruff_annotate_snippets,ruff_cache,ruff_diagnostics,ruff_notebook,ruff_python_ast,ruff_python_parser,ruff_python_trivia,ruff_source_file,ruff_text_size@git+https://github.com/astral-sh/ruff/?rev=db5aa0a5f1b92cb91d910bf0866a967554dd94f5\#db5aa0a5f1b92cb91d910bf0866a967554dd94f5 \
-		backtrace@git+https://github.com/rust-lang/backtrace-rs?rev=df979dcf80027eb047d7bb9e0874710c15009f31\#df979dcf80027eb047d7bb9e0874710c15009f31
+		backtrace@git+https://github.com/rust-lang/backtrace-rs?rev=df979dcf80027eb047d7bb9e0874710c15009f31\#df979dcf80027eb047d7bb9e0874710c15009f31 \
+		lsp-types@git+https://github.com/yangdanny97/lsp-types?rev=395d6bfcd6c3696a64cfe9cd93b86f981fb85112\#395d6bfcd6c3696a64cfe9cd93b86f981fb85112
 
 CARGO_TEST=	no
 
