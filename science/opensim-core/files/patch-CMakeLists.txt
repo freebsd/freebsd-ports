@@ -1,6 +1,96 @@
---- CMakeLists.txt.orig	2018-11-12 23:49:48 UTC
+--- CMakeLists.txt.orig	2026-06-18 22:26:24 UTC
 +++ CMakeLists.txt
-@@ -766,8 +766,10 @@ endif(WIN32)
+@@ -789,13 +789,6 @@ if(OPENSIM_WITH_CASADI)
+     # Copy CasADi into our installation.
+     OpenSimCopyDependencyDLLsForWin(DEP_NAME casadi
+             DEP_BIN_DIR "${CASADI_BIN_DIR}")
+-    if(OPENSIM_COPY_DEPENDENCIES AND NOT WIN32)
+-        # OpenSimCopyDependencyDLLsForWin() only copies DLLs for Windows, but 
+-        # we still need the CasADi shared libraries on other platforms.
+-        install(DIRECTORY "${CASADI_CMAKE_DIR}/../../../"
+-            DESTINATION "${CMAKE_INSTALL_PREFIX}/${OPENSIM_INSTALL_CASADIDIR}"
+-                USE_SOURCE_PERMISSIONS)
+-    endif()
+ endif()
+ 
+ # IPOPT
+@@ -837,23 +830,6 @@ if (OPENSIM_WITH_CASADI)
+                 ${libquadmath_name}
+                 ${libgcc_name}
+                 DESTINATION ${CMAKE_INSTALL_LIBDIR})
+-        elseif(OPENSIM_COPY_DEPENDENCIES)
+-            get_filename_component(gcc_libdir "${pkgcfg_lib_IPOPT_gfortran}" DIRECTORY)
+-
+-            file(GLOB gfortran "${gcc_libdir}/../../../x86_64-linux-gnu/libgfortran*.so*")
+-            file(GLOB quadmath "${gcc_libdir}/../../../x86_64-linux-gnu/libquadmath*.so*")
+-
+-            install(FILES
+-                ${IPOPT_LIBDIR}/libipopt.so.3.14.16
+-                ${IPOPT_LIBDIR}/libipopt.so.3
+-                ${IPOPT_LIBDIR}/libipopt.so
+-                ${IPOPT_LIBDIR}/libcoinmumps.so.3.0.5
+-                ${IPOPT_LIBDIR}/libcoinmumps.so.3
+-                ${IPOPT_LIBDIR}/libcoinmumps.so
+-                ${IPOPT_LIBDIR}/libmetis.so
+-                ${gfortran}
+-                ${quadmath}
+-                DESTINATION ${CMAKE_INSTALL_LIBDIR})
+         endif()
+         if(BUILD_PYTHON_WRAPPING AND OPENSIM_PYTHON_STANDALONE)
+             OpenSimInstallDependencyLibraries(ipopt "${IPOPT_LIBDIR}"
+@@ -908,40 +884,6 @@ if(${OPENSIM_COPY_DEPENDENCIES})
+         # folders; we would prefer to only copy to the former, but
+         # SimbodyTargets-*.cmake expect dlls in sdk/Simbody/bin. In the future,
+         # we can edit the *.cmake files to no longer expect these DLLs.
+-    else()
+-        # We would have liked to use install(DIRECTORY) on UNIX, but the
+-        # dependencies may be installed in system-wide locations and we don't
+-        # want to copy extraneous files/directories; install(DIRECTORY) creates
+-        # a directory in DESTINATION for *every* directory in DIRECTORY, even
+-        # if we do not want to copy any files from some of the directories in
+-        # DIRECTORY.
+-
+-        # include
+-        file(RELATIVE_PATH install_simbodyincludedir
+-            "${Simbody_ROOT_DIR}" "${Simbody_INCLUDE_DIR}")
+-        install(DIRECTORY "${Simbody_INCLUDE_DIR}/"
+-                DESTINATION "${OPENSIM_INSTALL_SIMBODYDIR}/${install_simbodyincludedir}")
+-    
+-        # lib (and cmake, pkgconfig)
+-        file(RELATIVE_PATH install_simbodylibdir 
+-            "${Simbody_ROOT_DIR}/" "${Simbody_LIB_DIR}/")
+-        file(GLOB_RECURSE simbody_desired_lib_files
+-            RELATIVE "${Simbody_LIB_DIR}"
+-            "${Simbody_LIB_DIR}/*SimTK*" "${Simbody_LIB_DIR}/*Simbody*.cmake"
+-            "${Simbody_LIB_DIR}/*SampleCMakeLists.txt*")
+-        foreach(simbody_lib_file ${simbody_desired_lib_files})
+-            get_filename_component(subdir "${simbody_lib_file}" DIRECTORY)
+-            install(FILES "${Simbody_LIB_DIR}/${simbody_lib_file}"
+-                DESTINATION "${OPENSIM_INSTALL_SIMBODYDIR}/${install_simbodylibdir}/${subdir}")
+-        endforeach()
+-    
+-        # simbody-visualizer
+-        file(RELATIVE_PATH install_simbodyvizdir 
+-            "${Simbody_ROOT_DIR}" "${Simbody_VIZ_DIR}")
+-        install(DIRECTORY "${Simbody_VIZ_DIR}/"
+-                DESTINATION "${OPENSIM_INSTALL_SIMBODYDIR}/${install_simbodyvizdir}"
+-                USE_SOURCE_PERMISSIONS
+-                FILES_MATCHING PATTERN "*simbody-visualizer*")
+     endif()
+ 
+     # EZC3D
+@@ -953,10 +895,6 @@ if(${OPENSIM_COPY_DEPENDENCIES})
+                 DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+     endif()
+ 
+-    # spdlog
+-    # ------
+-    install(DIRECTORY "${spdlog_DIR}/../../../"
+-            DESTINATION "${OPENSIM_INSTALL_SPDLOGDIR}")
+ endif()
+ 
+ if(BUILD_PYTHON_WRAPPING AND OPENSIM_PYTHON_STANDALONE)
+@@ -976,8 +914,10 @@ endif(WIN32)
  
  
  ## The following are required to uses Dart and the Cdash dashboard per Jesse
@@ -13,7 +103,7 @@
  
  # Sets the number of concurrent jobs that testing can use.
  if(MSVC OR XCODE)
-@@ -834,4 +836,6 @@ endif()
+@@ -1044,7 +984,9 @@ add_subdirectory(cmake)
  add_subdirectory(Bindings)
  
  add_subdirectory(cmake)
@@ -21,3 +111,6 @@
 +if (INSTALL_DOCS)
 +    add_subdirectory(doc)
 +endif()
+ 
+ # Print a list of the dependencies that were found, and the features the user
+ # chose.

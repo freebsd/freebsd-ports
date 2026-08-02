@@ -1,0 +1,11 @@
+--- cmake/CMakeLists.txt.orig	2026-06-18 22:26:24 UTC
++++ cmake/CMakeLists.txt
+@@ -59,7 +59,7 @@ if(UNIX AND OPENSIM_COPY_DEPENDENCIES AND OPENSIM_WITH
+     # is installed (add_subdirectory(cmake) must be after
+     # add_subdirectory(Moco)).
+     if (OPENSIM_WITH_CASADI)
+-        get_target_property(CASADI_LIBRARY_LOCATION casadi LOCATION)
++        get_target_property(CASADI_LIBRARY_LOCATION casadi::casadi LOCATION)
+         get_filename_component(CASADI_LIBDIR "${CASADI_LIBRARY_LOCATION}" DIRECTORY)
+     endif()
+ 

@@ -1,0 +1,33 @@
+--- cmake/OpenSimMocoInstallLinuxDependencyLibraries.cmake.in.orig	2026-06-18 22:26:24 UTC
++++ cmake/OpenSimMocoInstallLinuxDependencyLibraries.cmake.in
+@@ -6,21 +6,21 @@ macro(install_name_tool_add_rpath lib)
+ set(libdir "@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@")
+ 
+ macro(install_name_tool_add_rpath lib)
+-    execute_process(COMMAND bash "-c" "patchelf --force-rpath --set-rpath '$ORIGIN/:$ORIGIN/../../sdk/Simbody/lib' '${libdir}/lib${lib}'"
+-        OUTPUT_VARIABLE res)
+-    message(STATUS "patchelf --set-rpath '$ORIGIN/:../../sdk/Simbody/lib' '${libdir}/lib${lib}' '${res}'")
++    #execute_process(COMMAND bash "-c" "patchelf --force-rpath --set-rpath '$ORIGIN/:$ORIGIN/../../sdk/Simbody/lib' '${libdir}/lib${lib}'"
++    #    OUTPUT_VARIABLE res)
++    #message(STATUS "patchelf --set-rpath '$ORIGIN/:../../sdk/Simbody/lib' '${libdir}/lib${lib}' '${res}'")
+ endmacro()
+ 
+ macro(install_name_tool_delete_rpath lib)
+-    execute_process(COMMAND bash "-c" "patchelf --remove-rpath '${libdir}/lib${lib}'"
+-        OUTPUT_VARIABLE res)
+-    message(STATUS "patchelf --remove-rpath '${libdir}/lib${lib}' '${res}'")
++    #execute_process(COMMAND bash "-c" "patchelf --remove-rpath '${libdir}/lib${lib}'"
++    #    OUTPUT_VARIABLE res)
++    #message(STATUS "patchelf --remove-rpath '${libdir}/lib${lib}' '${res}'")
+ endmacro()
+ 
+ macro(install_name_tool_print_rpath lib)
+-    execute_process(COMMAND bash "-c" "patchelf --print-rpath '${libdir}/lib${lib}'"
+-        OUTPUT_VARIABLE created_rpath)
+-    message(STATUS "RPATH = '${created_rpath}'")
++    #execute_process(COMMAND bash "-c" "patchelf --print-rpath '${libdir}/lib${lib}'"
++    #    OUTPUT_VARIABLE created_rpath)
++    #message(STATUS "RPATH = '${created_rpath}'")
+ endmacro()
+ 
+ if (OPENSIM_WITH_CASADI)
