@@ -1,4 +1,4 @@
---- src/ucs/vfs/fuse/vfs_fuse.c.orig	2026-06-26 16:34:01 UTC
+--- src/ucs/vfs/fuse/vfs_fuse.c.orig	2026-07-27 15:46:30 UTC
 +++ src/ucs/vfs/fuse/vfs_fuse.c
 @@ -37,6 +37,7 @@ static struct {
  
@@ -36,23 +36,16 @@
  static void ucs_vfs_enum_dir_cb(const char *name, void *arg)
  {
      ucs_vfs_enum_dir_context_t *ctx = arg;
-@@ -302,9 +308,15 @@ static ucs_status_t ucs_vfs_fuse_wait_for_path(const c
+@@ -300,7 +306,7 @@ static ucs_status_t ucs_vfs_fuse_wait_for_path(const c
+      * deleted explicitly or implicitly */
+     ucs_vfs_fuse_context.watch_desc = inotify_add_watch(
              ucs_vfs_fuse_context.inotify_fd, watch_dirname,
-             IN_CREATE | IN_IGNORED);
+-            IN_CREATE | IN_IGNORED);
++            IN_CREATE);
      if (ucs_vfs_fuse_context.watch_desc < 0) {
-+#ifdef __FreeBSD__
-+		ucs_warn("inotify_add_watch(%s) failed: %m. Disabling VFS live updates.", watch_dirname);
-+		status = UCS_OK;
-+		goto out_close_inotify_fd;
-+#else
          ucs_error("inotify_add_watch(%s) failed: %m", watch_dirname);
          status = UCS_ERR_IO_ERROR;
-         goto out_close_inotify_fd;
-+#endif
-     }
- 
-     /* Read events from inotify channel and exit when either the main thread set
-@@ -492,10 +504,10 @@ static void ucs_fuse_thread_stop()
+@@ -492,10 +498,10 @@ static void ucs_fuse_thread_stop()
  
  static void ucs_fuse_thread_stop()
  {
@@ -65,7 +58,7 @@
  
      pthread_mutex_lock(&ucs_vfs_fuse_context.mutex);
  
-@@ -518,15 +530,20 @@ static void ucs_fuse_thread_stop()
+@@ -518,15 +524,20 @@ static void ucs_fuse_thread_stop()
      if (ucs_vfs_fuse_context.fuse != NULL) {
          fuse_exit(ucs_vfs_fuse_context.fuse);
          ucs_fuse_replace_fd_devnull();
@@ -91,7 +84,7 @@
      }
  
      signal(SIGUSR1, orig_handler);
-@@ -536,11 +553,11 @@ static void ucs_vfs_fuse_atfork_child()
+@@ -536,11 +547,11 @@ static void ucs_vfs_fuse_atfork_child()
  {
      /* Reset thread context at fork, since doing inotify_rm_watch() from child
         will prevent doing it later from the parent */
@@ -108,7 +101,7 @@
  }
  
  void UCS_F_CTOR ucs_vfs_fuse_init()
-@@ -549,12 +566,13 @@ void UCS_F_CTOR ucs_vfs_fuse_init()
+@@ -549,12 +560,13 @@ void UCS_F_CTOR ucs_vfs_fuse_init()
          pthread_atfork(NULL, NULL, ucs_vfs_fuse_atfork_child);
          ucs_pthread_create(&ucs_vfs_fuse_context.thread_id,
                             ucs_vfs_fuse_thread_func, NULL, "fuse");
