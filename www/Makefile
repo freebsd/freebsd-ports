@@ -579,7 +579,6 @@
     SUBDIR += p5-Apache-Config-Preproc
     SUBDIR += p5-Apache-ConfigFile
     SUBDIR += p5-Apache-ConfigParser
-    SUBDIR += p5-Apache-DB
     SUBDIR += p5-Apache-DBI
     SUBDIR += p5-Apache-Defaults
     SUBDIR += p5-Apache-Htgroup

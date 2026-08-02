@@ -5539,3 +5539,4 @@ security/libprelude||2026-07-31|Has expired: Upstream project is dead
 www/cgicc||2026-07-31|Has expired: Unmaintained upstream
 mail/py-afew||2026-07-31|Has expired: Fails to build with sphinx-9.0.4, does not support Python 3.13
 devel/electron39||2026-07-31|Has expired: EOLed upstream, switch to newer version
+www/p5-Apache-DB||2026-08-02|Has expired: uses hidden Perl functions that are hidden after 5.37.0
