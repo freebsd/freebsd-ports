@@ -196,10 +196,12 @@ include/cryptopp/xwing.h
 include/cryptopp/zdeflate.h
 include/cryptopp/zinflate.h
 include/cryptopp/zlib.h
-lib/cmake/cryptopp-modern/cryptopp-modern-static-targets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/cryptopp-modern/cryptopp-modern-static-targets.cmake
+lib/cmake/cryptopp-modern/cryptopp-modern-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/cryptopp-modern/cryptopp-modern-shared-targets.cmake
 lib/cmake/cryptopp-modern/cryptopp-modernConfig.cmake
 lib/cmake/cryptopp-modern/cryptopp-modernConfigVersion.cmake
-lib/libcryptopp.a
+lib/libcryptopp.so
+lib/libcryptopp.so.2026.8.0
+lib/libcryptopp.so.9
 libdata/pkgconfig/cryptopp-modern.pc
 libdata/pkgconfig/libcryptopp.pc
