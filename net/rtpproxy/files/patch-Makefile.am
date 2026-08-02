@@ -1,0 +1,17 @@
+--- Makefile.am.orig	2025-02-25 20:08:44 UTC
++++ Makefile.am
+@@ -21,13 +21,9 @@ endif
+ SUB_LIBRE=	libre
+ endif
+ 
+-SUBDIRS=	libexecinfo libucl libxxHash $(SUB_LIBRE) makeann $(SUBD_MOD) \
++SUBDIRS=	libexecinfo $(SUB_LIBRE) makeann $(SUBD_MOD) \
+   $(SUBD_ELP) src $(SUBD_UDCNT) \
+   $(SUBD_EAUD) ${SUBD_DOCS}
+-
+-if TESTS_EXIST
+-SUBDIRS += tests
+-endif
+ 
+ dist_man_MANS=	rtpproxy.8
+ EXTRA_DIST=	README.remote doc rpm/rtpproxy.init rpm/rtpproxy.spec \

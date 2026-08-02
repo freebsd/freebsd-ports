@@ -1,4 +1,4 @@
---- scripts/rtpproxy.in.freebsd.orig	2015-03-09 17:40:27 UTC
+--- scripts/rtpproxy.in.freebsd.orig	2025-02-25 20:08:44 UTC
 +++ scripts/rtpproxy.in.freebsd
 @@ -1,28 +1,36 @@
  #!/bin/sh
@@ -20,12 +20,12 @@
  
  name=rtpproxy
 -rcvar=`set_rcvar`
--
--command="${prefix}/bin/rtpproxy"
--pidfile="/var/run/rtpproxy.pid"
 +desc="rtpproxy daemon startup script"
 +rcvar=rtpproxy_enable
  
+-command="${prefix}/bin/rtpproxy"
+-pidfile="/var/run/rtpproxy.pid"
+-
  load_rc_config ${name}
  
 +prefix=%%PREFIX%%

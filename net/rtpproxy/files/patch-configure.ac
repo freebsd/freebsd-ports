@@ -1,0 +1,19 @@
+--- configure.ac.orig	2025-02-25 20:08:44 UTC
++++ configure.ac
+@@ -477,14 +477,10 @@ AC_CONFIG_FILES([Makefile src/Makefile makeann/Makefil
+ AC_CONFIG_FILES([Makefile src/Makefile makeann/Makefile
+  extractaudio/Makefile libexecinfo/Makefile modules/Makefile
+  modules/acct_csv/Makefile modules/acct_rtcp_hep/Makefile
+- modules/catch_dtmf/Makefile modules/badmod/Makefile libxxHash/Makefile
++ modules/catch_dtmf/Makefile modules/badmod/Makefile
+  libre/Makefile modules/dtls_gw/Makefile modules/ice_lite/Makefile
+- pertools/Makefile pertools/udp_contention/Makefile libucl/Makefile
++ pertools/Makefile pertools/udp_contention/Makefile
+  python/sippy_lite/sippy/Time/clock_dtime.py doc/Makefile])
+-
+-AM_COND_IF([TESTS_EXIST], [
+-  AC_CONFIG_FILES([tests/Makefile])
+-])
+ 
+ AM_COND_IF([BUILD_ELPERIODIC], [
+   ac_configure_args="$ac_configure_args \"CFLAGS=$CFLAGS\""

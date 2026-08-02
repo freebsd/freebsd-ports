@@ -1,28 +1,45 @@
 PORTNAME=	rtpproxy
-PORTVERSION=	2.1.1
-DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	net
+MASTER_SITES=	https://github.com/sippy/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	farrokhi@FreeBSD.org
-COMMENT=	High-performance RTP proxy server for the SIP Express Router (SER)
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	RTP proxy server for OpenSIPS, Kamailio or Sippy B2BUA
 WWW=		https://www.rtpproxy.org/
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libgsm.so:audio/gsm
+LIB_DEPENDS=	libg722.so:audio/libg722 \
+		libgsm.so:audio/gsm \
+		libsndfile.so:audio/libsndfile \
+		libbcg729.so:audio/bcg729 \
+		libsrtp2.so:net/libsrtp2 \
+		libucl.so:textproc/libucl \
+		libunwind.so:devel/libunwind \
+		libxxhash.so:devel/xxhash
 
-USES+=		cpe libtool
-USE_GITHUB=	yes
-GH_ACCOUNT=	sippy
+USES=		autoreconf cpe libtool pkgconfig localbase:ldflags ssl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
+
+OPTIONS_DEFINE=	LTO
+OPTIONS_DEFAULT=	LTO
+LTO_CONFIGURE_ENABLE=	lto
+
+.include <bsd.port.pre.mk>
+
+# utility udp_contention requires rdtsc, an x86-only feature
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+PLIST_SUB+=	X86=""
+.else
+PLIST_SUB+=	X86="@comment "
+.endif
+
+post-extract:
+	${RM} -r ${WRKSRC}/external/libucl
+	${RM} -r ${WRKSRC}/external/xxHash
 
 post-build:
 	${SED} 's|%%PREFIX%%|${PREFIX}|g ; s|%%RC_SUBR%%|/etc/rc.subr|g' \
@@ -31,4 +48,4 @@ post-build:
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/rtpproxy ${STAGEDIR}${PREFIX}/etc/rc.d/rtpproxy
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

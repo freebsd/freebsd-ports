@@ -1,0 +1,29 @@
+--- src/Makefile.am.orig	2025-02-25 20:08:44 UTC
++++ src/Makefile.am
+@@ -78,8 +78,8 @@ rtpproxy_LDADD=librtpproxy.la -lm -lpthread
+ BASE_SOURCES+=rtpp_modman.c
+ 
+ rtpproxy_LDADD=librtpproxy.la -lm -lpthread
+-rtpproxy_debug_LDADD=-lm -lpthread @LIBS_ELPERIODIC@ $(top_srcdir)/libucl/libucl_debug.la \
+-  $(XXH_DIR)/libxxHash_debug.la $(RTPP_MEMDEB_LDADD)
++rtpproxy_debug_LDADD=-lm -lpthread @LIBS_ELPERIODIC@ -lucl \
++  -lxxhash $(RTPP_MEMDEB_LDADD)
+ rtpproxy_debug_LDFLAGS=-Wl,--export-dynamic $(LTO_FLAG)
+ rtpproxy_LDFLAGS=$(LTO_FLAG)
+ 
+@@ -178,12 +178,12 @@ librtpproxy_la_SOURCES = $(BASE_SOURCES) $(SRCS_AUTOGE
+ 
+ librtpproxy_la_SOURCES = $(BASE_SOURCES) $(SRCS_AUTOGEN) \
+   rtpp_refcnt.c rtpp_refcnt.h rtpp_mallocs.c rtpp_mallocs.h \
+-  $(top_srcdir)/libucl/libucl.la $(XXH_DIR)/libxxHash.la \
++  -lucl -lxxhash \
+   rtpp_module_if_static.c rtpp_module_if_static.h
+ librtpproxy_la_CFLAGS = $(rtpproxy_CFLAGS) -fPIC
+ librtpproxy_la_CPPFLAGS = $(rtpproxy_CPPFLAGS) -DLIBRTPPROXY
+-librtpproxy_la_LIBADD = $(top_srcdir)/libucl/libucl.la \
+-  $(XXH_DIR)/libxxHash.la
++librtpproxy_la_LIBADD = -lucl \
++  -lxxhash
+ if BUILD_MODULES
+ librtpproxy_la_LIBADD += $(MOD_DIR)/catch_dtmf/librtpp_catch_dtmf.la \
+   $(MOD_DIR)/acct_csv/librtpp_acct_csv.la \
