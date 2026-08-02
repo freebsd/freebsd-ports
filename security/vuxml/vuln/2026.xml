@@ -1,3 +1,53 @@
+  <vuln vid="12d42997-8e54-11f1-8144-8447094a420f">
+    <topic>Weechat -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>weechat</name>
+	<range><lt>4.10.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Weechat project reports:</p>
+	<blockquote cite="https://github.com/weechat/weechat/releases/tag/v4.10.0">
+	  <ul>
+	    <li>core: fix buffer overflow in display of time in chat area with a custom time format</li>
+	    <li>core: fix integer overflow in size calculation when evaluating "${hide:...}" and "${base_encode:...}"</li>
+	    <li>core: fix possible buffer overflow in command /color alias</li>
+	    <li>core: fix possible buffer overflow in list of commands displayed by /help</li>
+	    <li>irc: fix heap use-after-free when a batched message causes a disconnection from the server (GHSA-rfmh-3r7f-jpx5)</li>
+	    <li>irc: fix stack buffer overflow when splitting a JOIN message with a large list of channels and keys (GHSA-q2xg-9ggx-77mr)</li>
+	    <li>irc: limit size of data received from the server to prevent memory exhaustion</li>
+	    <li>irc: fix out-of-bounds read on incoming DCC command with a quoted filename ending the message</li>
+	    <li>logger: fix path traversal in log file name when a buffer local variable contains the char used internally to protect directory separators</li>
+	    <li>relay: fix use-after-free and double free on remote buffer (GHSA-hx59-4hq9-6vmw)</li>
+	    <li>relay: fix authentication bypass with the "plain" password hash algorithm (GHSA-68ff-gq39-pqjm)</li>
+	    <li>relay: limit size of decompressed websocket frame with permessage-deflate to prevent memory exhaustion (GHSA-v2v4-45wm-5cr3, CVE-2026-53524)</li>
+	    <li>relay: limit size of received websocket frame and HTTP body to prevent memory exhaustion</li>
+	    <li>relay: limit size of partial message received while reading an HTTP request to prevent memory exhaustion</li>
+	    <li>relay: fix timing attack on password authentication (GHSA-vhv8-g2r9-cwcc, CVE-2026-53525)</li>
+	    <li>relay: fix out-of-bounds read in dump of data</li>
+	    <li>relay/api: fix memory leak in resources "handshake", "input" and "completion" (GHSA-wmpc-m6g9-fwj8)</li>
+	    <li>relay: fix read of uncompressed websocket frame</li>
+	    <li>api, relay: fix timing attack on TOTP validation (GHSA-vhv8-g2r9-cwcc, CVE-2026-53525)</li>
+	    <li>xfer: replace directory separator in remote nick by underscore in download filename to prevent writing the file outside the download directory</li>
+	    <li>xfer: fix out-of-bounds read when receiving empty line in DCC chat</li>
+	    <li>xfer: fix out-of-bounds write in xfer file transfer resume</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-53524</cvename>
+      <cvename>CVE-2026-53525</cvename>
+      <url>https://github.com/weechat/weechat/releases/tag/v4.10.0</url>
+    </references>
+    <dates>
+      <discovery>2026-08-02</discovery>
+      <entry>2026-08-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca42379d-8d45-11f1-a129-901b0e9408dc">
     <topic>ejabberd -- Multiple security vulnerabilities</topic>
     <affects>
