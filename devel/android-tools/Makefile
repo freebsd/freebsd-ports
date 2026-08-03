@@ -28,4 +28,8 @@ SHEBANG_FILES=	vendor/avb/avbtool.py \
 
 CMAKE_ARGS=	-DANDROID_TOOLS_PATCH_VENDOR:BOOL=OFF
 
+# BoringSSL ships no PowerPC assembly, so use the portable C implementations.
+CFLAGS_powerpc64le=	-DOPENSSL_NO_ASM
+CXXFLAGS_powerpc64le=	-DOPENSSL_NO_ASM
+
 .include <bsd.port.mk>
