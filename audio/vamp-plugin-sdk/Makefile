@@ -1,12 +1,12 @@
 PORTNAME=	vamp-plugin-sdk
-DISTVERSION=	2.9.0
-PORTREVISION=	2
+DISTVERSION=	2.10.0
 CATEGORIES=	audio
-MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/2588/
+MASTER_SITES=	https://github.com/vamp-plugins/vamp-plugin-sdk/releases/download/vamp-plugin-sdk-v${DISTVERSION:R}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Vamp audio analysis plugin SDK
-WWW=		https://www.vamp-plugins.org/
+WWW=		https://www.vamp-plugins.org/ \
+		https://github.com/vamp-plugins/vamp-plugin-sdk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
