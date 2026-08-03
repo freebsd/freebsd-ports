@@ -11,14 +11,18 @@ WWW=		https://www.dokuwiki.org/
 
 LICENSE=			BSD3CLAUSE GPLv2 GPLv2+ GPLv3 MIT
 LICENSE_COMB=			multi
-LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/vendor/simplepie/simplepie/LICENSE.txt
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/vendor/simplepie/simplepie/LICENSES/BSD-3-Clause.txt
 LICENSE_FILE_GPLv2=		${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2+ =		${WRKSRC}/vendor/geshi/geshi/LICENSE
 LICENSE_FILE_MIT=		${WRKSRC}/vendor/composer/LICENSE
 
-DIST_VER=	${PORTNAME}-2025-05-14b
+DIST_VER=	${PORTNAME}-2026-07-14a
+
+OPTIONS_DEFINE=	TEST
+OPTIONS_SUB=	yes
+
 USES=		cpe php:web,flavors shebangfix tar:tgz
-USE_PHP=	ctype filter gd iconv mbstring ldap pdo_mysql session simplexml xml zlib
+USE_PHP=	ctype filter gd iconv mbstring session simplexml xml zlib
 NO_ARCH=	YES
 NO_BUILD=	YES
 
@@ -32,6 +36,14 @@ REINPLACE_ARGS=	-i ''
 
 post-patch:
 	@${RM} ${WRKSRC}/data/deleted.files
+
+post-patch-TEST-off:
+	@${FIND} ${WRKSRC} -type d -name '_test' -prune -exec ${RM} -rf {} \;
+	@${RM} -rf ${WRKSRC}/lib/plugins/testing
+	@${RM} ${WRKSRC}/lib/scripts/linkwiz.test.js
+	@${RM} ${WRKSRC}/vendor/simplepie/simplepie/phpstan.dist.neon
+	@${RM} -rf ${WRKSRC}/vendor/simplepie/simplepie/utils/PHPStan
+	@${RMDIR} ${WRKSRC}/vendor/simplepie/simplepie/utils
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
