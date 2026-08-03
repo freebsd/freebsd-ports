@@ -1,5 +1,4 @@
 bin/klog
-share/applications/klog.desktop
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/Changelog
 %%DOCSDIR%%/NEWS
@@ -7,6 +6,7 @@ share/applications/klog.desktop
 %%DOCSDIR%%/README-DEVEL
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/TROUBLESHOOTING
+share/applications/klog.desktop
 share/icons/hicolor/scalable/apps/klog.svg
 %%DATADIR%%/translations/klog_ca.qm
 %%DATADIR%%/translations/klog_cs.qm
