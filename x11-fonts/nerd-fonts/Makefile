@@ -1,6 +1,6 @@
 PORTNAME=	nerd-fonts
-DISTVERSION=	3.4.0
-PORTREVISION?=	1
+DISTVERSION=	3.5.0
+PORTREVISION?=	0
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	bsdcode@disroot.org
@@ -40,6 +40,7 @@ RUN_DEPENDS=	nerd-fonts-0xproto>0:x11-fonts/nerd-fonts-0xproto \
 		nerd-fonts-3270>0:x11-fonts/nerd-fonts-3270 \
 		nerd-fonts-adwaitamono>0:x11-fonts/nerd-fonts-adwaitamono \
 		nerd-fonts-agave>0:x11-fonts/nerd-fonts-agave \
+		nerd-fonts-annotationmono>0:x11-fonts/nerd-fonts-annotationmono \
 		nerd-fonts-anonymicepro>0:x11-fonts/nerd-fonts-anonymicepro \
 		nerd-fonts-arimo>0:x11-fonts/nerd-fonts-arimo \
 		nerd-fonts-atkynsonmono>0:x11-fonts/nerd-fonts-atkynsonmono \
@@ -53,7 +54,7 @@ RUN_DEPENDS=	nerd-fonts-0xproto>0:x11-fonts/nerd-fonts-0xproto \
 		nerd-fonts-comicshannsmono>0:x11-fonts/nerd-fonts-comicshannsmono \
 		nerd-fonts-commitmono>0:x11-fonts/nerd-fonts-commitmono \
 		nerd-fonts-cousine>0:x11-fonts/nerd-fonts-cousine \
-		nerd-fonts-d2coding>0:x11-fonts/nerd-fonts-d2coding \
+		nerd-fonts-d2koding>0:x11-fonts/nerd-fonts-d2koding \
 		nerd-fonts-daddytimemono>0:x11-fonts/nerd-fonts-daddytimemono \
 		nerd-fonts-dejavusansmono>0:x11-fonts/nerd-fonts-dejavusansmono \
 		nerd-fonts-departuremono>0:x11-fonts/nerd-fonts-departuremono \
@@ -65,6 +66,7 @@ RUN_DEPENDS=	nerd-fonts-0xproto>0:x11-fonts/nerd-fonts-0xproto \
 		nerd-fonts-geistmono>0:x11-fonts/nerd-fonts-geistmono \
 		nerd-fonts-gohu>0:x11-fonts/nerd-fonts-gohu \
 		nerd-fonts-gomono>0:x11-fonts/nerd-fonts-gomono \
+		nerd-fonts-googlesanscode>0:x11-fonts/nerd-fonts-googlesanscode \
 		nerd-fonts-hack>0:x11-fonts/nerd-fonts-hack \
 		nerd-fonts-hasklug>0:x11-fonts/nerd-fonts-hasklug \
 		nerd-fonts-heavydata>0:x11-fonts/nerd-fonts-heavydata \

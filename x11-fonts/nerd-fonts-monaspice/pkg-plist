@@ -1,5 +1,7 @@
 %%FONTSDIR%%/MonaspiceArNerdFont-Bold.otf
 %%FONTSDIR%%/MonaspiceArNerdFont-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceArNerdFont-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceArNerdFont-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceArNerdFont-Italic.otf
 %%FONTSDIR%%/MonaspiceArNerdFont-Light.otf
 %%FONTSDIR%%/MonaspiceArNerdFont-LightItalic.otf
@@ -8,6 +10,8 @@
 %%FONTSDIR%%/MonaspiceArNerdFont-Regular.otf
 %%FONTSDIR%%/MonaspiceArNerdFontMono-Bold.otf
 %%FONTSDIR%%/MonaspiceArNerdFontMono-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceArNerdFontMono-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceArNerdFontMono-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceArNerdFontMono-Italic.otf
 %%FONTSDIR%%/MonaspiceArNerdFontMono-Light.otf
 %%FONTSDIR%%/MonaspiceArNerdFontMono-LightItalic.otf
@@ -16,6 +20,8 @@
 %%FONTSDIR%%/MonaspiceArNerdFontMono-Regular.otf
 %%FONTSDIR%%/MonaspiceArNerdFontPropo-Bold.otf
 %%FONTSDIR%%/MonaspiceArNerdFontPropo-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceArNerdFontPropo-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceArNerdFontPropo-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceArNerdFontPropo-Italic.otf
 %%FONTSDIR%%/MonaspiceArNerdFontPropo-Light.otf
 %%FONTSDIR%%/MonaspiceArNerdFontPropo-LightItalic.otf
@@ -24,6 +30,8 @@
 %%FONTSDIR%%/MonaspiceArNerdFontPropo-Regular.otf
 %%FONTSDIR%%/MonaspiceKrNerdFont-Bold.otf
 %%FONTSDIR%%/MonaspiceKrNerdFont-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceKrNerdFont-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceKrNerdFont-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceKrNerdFont-Italic.otf
 %%FONTSDIR%%/MonaspiceKrNerdFont-Light.otf
 %%FONTSDIR%%/MonaspiceKrNerdFont-LightItalic.otf
@@ -32,6 +40,8 @@
 %%FONTSDIR%%/MonaspiceKrNerdFont-Regular.otf
 %%FONTSDIR%%/MonaspiceKrNerdFontMono-Bold.otf
 %%FONTSDIR%%/MonaspiceKrNerdFontMono-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceKrNerdFontMono-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceKrNerdFontMono-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceKrNerdFontMono-Italic.otf
 %%FONTSDIR%%/MonaspiceKrNerdFontMono-Light.otf
 %%FONTSDIR%%/MonaspiceKrNerdFontMono-LightItalic.otf
@@ -40,6 +50,8 @@
 %%FONTSDIR%%/MonaspiceKrNerdFontMono-Regular.otf
 %%FONTSDIR%%/MonaspiceKrNerdFontPropo-Bold.otf
 %%FONTSDIR%%/MonaspiceKrNerdFontPropo-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceKrNerdFontPropo-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceKrNerdFontPropo-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceKrNerdFontPropo-Italic.otf
 %%FONTSDIR%%/MonaspiceKrNerdFontPropo-Light.otf
 %%FONTSDIR%%/MonaspiceKrNerdFontPropo-LightItalic.otf
@@ -48,6 +60,8 @@
 %%FONTSDIR%%/MonaspiceKrNerdFontPropo-Regular.otf
 %%FONTSDIR%%/MonaspiceNeNerdFont-Bold.otf
 %%FONTSDIR%%/MonaspiceNeNerdFont-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceNeNerdFont-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceNeNerdFont-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceNeNerdFont-Italic.otf
 %%FONTSDIR%%/MonaspiceNeNerdFont-Light.otf
 %%FONTSDIR%%/MonaspiceNeNerdFont-LightItalic.otf
@@ -56,6 +70,8 @@
 %%FONTSDIR%%/MonaspiceNeNerdFont-Regular.otf
 %%FONTSDIR%%/MonaspiceNeNerdFontMono-Bold.otf
 %%FONTSDIR%%/MonaspiceNeNerdFontMono-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceNeNerdFontMono-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceNeNerdFontMono-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceNeNerdFontMono-Italic.otf
 %%FONTSDIR%%/MonaspiceNeNerdFontMono-Light.otf
 %%FONTSDIR%%/MonaspiceNeNerdFontMono-LightItalic.otf
@@ -64,6 +80,8 @@
 %%FONTSDIR%%/MonaspiceNeNerdFontMono-Regular.otf
 %%FONTSDIR%%/MonaspiceNeNerdFontPropo-Bold.otf
 %%FONTSDIR%%/MonaspiceNeNerdFontPropo-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceNeNerdFontPropo-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceNeNerdFontPropo-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceNeNerdFontPropo-Italic.otf
 %%FONTSDIR%%/MonaspiceNeNerdFontPropo-Light.otf
 %%FONTSDIR%%/MonaspiceNeNerdFontPropo-LightItalic.otf
@@ -72,6 +90,8 @@
 %%FONTSDIR%%/MonaspiceNeNerdFontPropo-Regular.otf
 %%FONTSDIR%%/MonaspiceRnNerdFont-Bold.otf
 %%FONTSDIR%%/MonaspiceRnNerdFont-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceRnNerdFont-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceRnNerdFont-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceRnNerdFont-Italic.otf
 %%FONTSDIR%%/MonaspiceRnNerdFont-Light.otf
 %%FONTSDIR%%/MonaspiceRnNerdFont-LightItalic.otf
@@ -80,6 +100,8 @@
 %%FONTSDIR%%/MonaspiceRnNerdFont-Regular.otf
 %%FONTSDIR%%/MonaspiceRnNerdFontMono-Bold.otf
 %%FONTSDIR%%/MonaspiceRnNerdFontMono-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceRnNerdFontMono-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceRnNerdFontMono-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceRnNerdFontMono-Italic.otf
 %%FONTSDIR%%/MonaspiceRnNerdFontMono-Light.otf
 %%FONTSDIR%%/MonaspiceRnNerdFontMono-LightItalic.otf
@@ -88,6 +110,8 @@
 %%FONTSDIR%%/MonaspiceRnNerdFontMono-Regular.otf
 %%FONTSDIR%%/MonaspiceRnNerdFontPropo-Bold.otf
 %%FONTSDIR%%/MonaspiceRnNerdFontPropo-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceRnNerdFontPropo-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceRnNerdFontPropo-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceRnNerdFontPropo-Italic.otf
 %%FONTSDIR%%/MonaspiceRnNerdFontPropo-Light.otf
 %%FONTSDIR%%/MonaspiceRnNerdFontPropo-LightItalic.otf
@@ -96,6 +120,8 @@
 %%FONTSDIR%%/MonaspiceRnNerdFontPropo-Regular.otf
 %%FONTSDIR%%/MonaspiceXeNerdFont-Bold.otf
 %%FONTSDIR%%/MonaspiceXeNerdFont-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceXeNerdFont-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceXeNerdFont-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceXeNerdFont-Italic.otf
 %%FONTSDIR%%/MonaspiceXeNerdFont-Light.otf
 %%FONTSDIR%%/MonaspiceXeNerdFont-LightItalic.otf
@@ -104,6 +130,8 @@
 %%FONTSDIR%%/MonaspiceXeNerdFont-Regular.otf
 %%FONTSDIR%%/MonaspiceXeNerdFontMono-Bold.otf
 %%FONTSDIR%%/MonaspiceXeNerdFontMono-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceXeNerdFontMono-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceXeNerdFontMono-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceXeNerdFontMono-Italic.otf
 %%FONTSDIR%%/MonaspiceXeNerdFontMono-Light.otf
 %%FONTSDIR%%/MonaspiceXeNerdFontMono-LightItalic.otf
@@ -112,6 +140,8 @@
 %%FONTSDIR%%/MonaspiceXeNerdFontMono-Regular.otf
 %%FONTSDIR%%/MonaspiceXeNerdFontPropo-Bold.otf
 %%FONTSDIR%%/MonaspiceXeNerdFontPropo-BoldItalic.otf
+%%FONTSDIR%%/MonaspiceXeNerdFontPropo-ExtraLight.otf
+%%FONTSDIR%%/MonaspiceXeNerdFontPropo-ExtraLightItalic.otf
 %%FONTSDIR%%/MonaspiceXeNerdFontPropo-Italic.otf
 %%FONTSDIR%%/MonaspiceXeNerdFontPropo-Light.otf
 %%FONTSDIR%%/MonaspiceXeNerdFontPropo-LightItalic.otf
