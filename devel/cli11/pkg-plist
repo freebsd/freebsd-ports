@@ -25,7 +25,9 @@ include/CLI/impl/Formatter_inl.hpp
 include/CLI/impl/Option_inl.hpp
 include/CLI/impl/Split_inl.hpp
 include/CLI/impl/StringTools_inl.hpp
+include/CLI/impl/TypeTools_inl.hpp
 include/CLI/impl/Validators_inl.hpp
 share/cmake/CLI11/CLI11Config.cmake
 share/cmake/CLI11/CLI11ConfigVersion.cmake
+share/cmake/CLI11/CLI11Targets.cmake
 share/pkgconfig/CLI11.pc
