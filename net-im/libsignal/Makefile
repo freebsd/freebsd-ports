@@ -14,6 +14,10 @@ BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		protoc:devel/protobuf
 
 USES=		cargo
+
+# BoringSSL ships no PowerPC assembly, so use the portable C implementations.
+CFLAGS_powerpc64le=	-DOPENSSL_NO_ASM
+CXXFLAGS_powerpc64le=	-DOPENSSL_NO_ASM
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
 BROKEN_i386= 	bindgen for boring-ssl fail
