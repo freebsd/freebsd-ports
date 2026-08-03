@@ -1,12 +1,13 @@
 PORTNAME=	phalcon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.18.0
+DISTVERSION=	5.18.1
 CATEGORIES=	www
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Phalcon PHP Framework written in C-language
-WWW=		https://phalcon.io/
+WWW=		https://github.com/phalcon/cphalcon \
+		https://phalcon.io/
 
 LICENSE=	BSD3CLAUSE
 
