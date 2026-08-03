@@ -232,11 +232,6 @@ lib/php/arcanist/src/future/aws/PhutilAWSS3Future.php
 lib/php/arcanist/src/future/aws/PhutilAWSv4Signature.php
 lib/php/arcanist/src/future/aws/PhutilCloudWatchMetric.php
 lib/php/arcanist/src/future/aws/__tests__/PhutilAWSv4SignatureTestCase.php
-lib/php/arcanist/src/future/aws/management/PhutilAWSManagementWorkflow.php
-lib/php/arcanist/src/future/aws/management/PhutilAWSS3DeleteManagementWorkflow.php
-lib/php/arcanist/src/future/aws/management/PhutilAWSS3GetManagementWorkflow.php
-lib/php/arcanist/src/future/aws/management/PhutilAWSS3ManagementWorkflow.php
-lib/php/arcanist/src/future/aws/management/PhutilAWSS3PutManagementWorkflow.php
 lib/php/arcanist/src/future/exec/CommandException.php
 lib/php/arcanist/src/future/exec/ExecFuture.php
 lib/php/arcanist/src/future/exec/PhutilBacktraceSignalHandler.php
@@ -310,7 +305,6 @@ lib/php/arcanist/src/internationalization/__tests__/PhutilTranslatorTestCase.php
 lib/php/arcanist/src/internationalization/locales/PhutilAllCapsEnglishLocale.php
 lib/php/arcanist/src/internationalization/locales/PhutilBritishEnglishLocale.php
 lib/php/arcanist/src/internationalization/locales/PhutilCzechLocale.php
-lib/php/arcanist/src/internationalization/locales/PhutilEmojiLocale.php
 lib/php/arcanist/src/internationalization/locales/PhutilEnglishCanadaLocale.php
 lib/php/arcanist/src/internationalization/locales/PhutilFrenchLocale.php
 lib/php/arcanist/src/internationalization/locales/PhutilGermanLocale.php
@@ -325,7 +319,6 @@ lib/php/arcanist/src/internationalization/locales/PhutilTraditionalChineseLocale
 lib/php/arcanist/src/internationalization/locales/PhutilUSEnglishLocale.php
 lib/php/arcanist/src/internationalization/locales/PhutilVeryWowEnglishLocale.php
 lib/php/arcanist/src/internationalization/pht.php
-lib/php/arcanist/src/internationalization/translation/LibphutilUSEnglishTranslation.php
 lib/php/arcanist/src/ip/PhutilCIDRBlock.php
 lib/php/arcanist/src/ip/PhutilCIDRList.php
 lib/php/arcanist/src/ip/PhutilIPAddress.php
@@ -403,7 +396,6 @@ lib/php/arcanist/src/lint/linter/ArcanistLesscLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistMergeConflictLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistNoLintLinter.php
-lib/php/arcanist/src/lint/linter/ArcanistPEP8Linter.php
 lib/php/arcanist/src/lint/linter/ArcanistPHPASTLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistPhpLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistPhpcsLinter.php
@@ -437,7 +429,6 @@ lib/php/arcanist/src/lint/linter/__tests__/ArcanistLesscLinterTestCase.php
 lib/php/arcanist/src/lint/linter/__tests__/ArcanistLinterTestCase.php
 lib/php/arcanist/src/lint/linter/__tests__/ArcanistMergeConflictLinterTestCase.php
 lib/php/arcanist/src/lint/linter/__tests__/ArcanistNoLintLinterTestCase.php
-lib/php/arcanist/src/lint/linter/__tests__/ArcanistPEP8LinterTestCase.php
 lib/php/arcanist/src/lint/linter/__tests__/ArcanistPHPASTLinterTestCase.php
 lib/php/arcanist/src/lint/linter/__tests__/ArcanistPhpLinterTestCase.php
 lib/php/arcanist/src/lint/linter/__tests__/ArcanistPhpcsLinterTestCase.php
@@ -551,7 +542,6 @@ lib/php/arcanist/src/lint/linter/__tests__/lessc/variables.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/mergeconflict/mergeconflict.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/nolint/lint.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/nolint/nolint.lint-test
-lib/php/arcanist/src/lint/linter/__tests__/pep8/imports.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/php/fatal.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/php/no-errors.lint-test
 lib/php/arcanist/src/lint/linter/__tests__/php/syntax.lint-test
@@ -1003,6 +993,7 @@ lib/php/arcanist/src/lint/linter/phpast/rules/__tests__/self-member-reference/ph
 lib/php/arcanist/src/lint/linter/phpast/rules/__tests__/self-member-reference/php54.lint-test
 lib/php/arcanist/src/lint/linter/phpast/rules/__tests__/self-member-reference/self-member-reference.lint-test
 lib/php/arcanist/src/lint/linter/phpast/rules/__tests__/semicolon-spacing/semicolon-spacing.lint-test
+lib/php/arcanist/src/lint/linter/phpast/rules/__tests__/slowness/php-80-slowness.lint-test
 lib/php/arcanist/src/lint/linter/phpast/rules/__tests__/slowness/slowness.lint-test
 lib/php/arcanist/src/lint/linter/phpast/rules/__tests__/static-this/static-this.lint-test
 lib/php/arcanist/src/lint/linter/phpast/rules/__tests__/tautological-expression/tautological-expression.lint-test
@@ -1630,6 +1621,7 @@ lib/php/arcanist/src/parser/argument/__tests__/PhutilArgumentSpellingCorrectorTe
 lib/php/arcanist/src/parser/argument/exception/PhutilArgumentParserException.php
 lib/php/arcanist/src/parser/argument/exception/PhutilArgumentSpecificationException.php
 lib/php/arcanist/src/parser/argument/exception/PhutilArgumentUsageException.php
+lib/php/arcanist/src/parser/argument/exception/PhutilArgumentUsageInvalidCommandException.php
 lib/php/arcanist/src/parser/argument/workflow/PhutilArgumentWorkflow.php
 lib/php/arcanist/src/parser/argument/workflow/PhutilHelpArgumentWorkflow.php
 lib/php/arcanist/src/parser/diff/ArcanistDiffChange.php
@@ -1832,6 +1824,8 @@ lib/php/arcanist/src/repository/remote/__tests__/ArcanistRepositoryURINormalizer
 lib/php/arcanist/src/repository/state/ArcanistGitLocalState.php
 lib/php/arcanist/src/repository/state/ArcanistMercurialLocalState.php
 lib/php/arcanist/src/repository/state/ArcanistRepositoryLocalState.php
+lib/php/arcanist/src/repository/worktree/ArcanistGitWorktree.php
+lib/php/arcanist/src/repository/worktree/__tests__/ArcanistGitWorktreeTestCase.php
 lib/php/arcanist/src/runtime/ArcanistRuntime.php
 lib/php/arcanist/src/serviceprofiler/PhutilServiceProfiler.php
 lib/php/arcanist/src/symbols/PhutilClassMapQuery.php
@@ -1908,6 +1902,7 @@ lib/php/arcanist/src/utils/PhutilDirectedScalarGraph.php
 lib/php/arcanist/src/utils/PhutilEditDistanceMatrix.php
 lib/php/arcanist/src/utils/PhutilExampleBufferedIterator.php
 lib/php/arcanist/src/utils/PhutilExecutionEnvironment.php
+lib/php/arcanist/src/utils/PhutilGitHubReleaseDownloader.php
 lib/php/arcanist/src/utils/PhutilHashingIterator.php
 lib/php/arcanist/src/utils/PhutilLunarPhase.php
 lib/php/arcanist/src/utils/PhutilProxyIterator.php
@@ -2015,9 +2010,10 @@ lib/php/arcanist/support/init/init-script.php
 lib/php/arcanist/support/lib/extract-symbols-with-php-parser.php
 lib/php/arcanist/support/lib/extract-symbols.php
 lib/php/arcanist/support/lib/rebuild-map.php
+lib/php/arcanist/support/lib/rebuild-symbol-information.php
 lib/php/arcanist/support/php-parser/api/PHPASTCallVisitor.php
 lib/php/arcanist/support/php-parser/api/PHPASTDeclarationVisitor.php
-lib/php/arcanist/support/php-parser/api/PHPASTDocBlockVisitor.php
+lib/php/arcanist/support/php-parser/api/PHPASTExternalSymbolVisitor.php
 lib/php/arcanist/support/php-parser/api/PHPASTTypesVisitor.php
 lib/php/arcanist/support/php-parser/build-php-parser.php
 lib/php/arcanist/support/shell/hooks/bash-completion.sh
