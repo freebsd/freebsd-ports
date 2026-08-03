@@ -1,5 +1,5 @@
 PORTNAME=	zchunk
-DISTVERSION=	1.5.3
+DISTVERSION=	1.5.4
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,12 +30,9 @@ ZSTD_MESON_ON=		-Dwith-zstd=enabled
 ZSTD_MESON_OFF=		-Dwith-zstd=disabled
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-# tests as of 1.5.3:
-# Ok:                 36  
-# Expected Fail:      1   
-# Fail:               0   
-# Unexpected Pass:    0   
-# Skipped:            0   
-# Timeout:            0   
+# tests as of 1.5.4:
+Ok:                36
+Expected Fail:     1
+Fail:              0
 
 .include <bsd.port.mk>
