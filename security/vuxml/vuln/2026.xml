@@ -1,3 +1,35 @@
+  <vuln vid="347fe124-8f53-11f1-9f4f-3c7c3fba4204">
+    <topic>Angie -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>angie</name>
+       <range><lt>1.12.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Angie Software Team reports:</p>
+	<blockquote cite="https://en.angie.software/angie/docs/oss_changes/#angie-1-12-1">
+	  <p>When evaluating a string expression in which unnamed capture variables ($1, $2, etc.) preceded a map directive variable whose value is determined by a regular expression, or when using a non-cacheable (volatile) map directive variable whose key contained a capture variable also used in the value of the same directive, worker process memory corruption or a worker process crash could occur (CVE-2026-42533); the fix was ported from nginx 1.31.3.</p>
+	  <p>When using the slice directive or background cache update, if unnamed capture variables ($1, $2, etc.) were used together with a non-cacheable (volatile) map directive variable with a regular expression, the value of an unnamed capture variable could contain arbitrary bytes from worker process memory, or a worker process crash could occur (CVE-2026-60005); the fix was ported from nginx 1.31.3.</p>
+	  <p>When using the SSI module with unbuffered proxying, worker process memory corruption or a worker process crash could occur (CVE-2026-56434); the fix was ported from nginx 1.31.3.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42533</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-42533</url>
+      <cvename>CVE-2026-60005</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-60005</url>
+      <cvename>CVE-2026-56434</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-56434</url>
+    </references>
+    <dates>
+      <discovery>2026-07-17</discovery>
+      <entry>2026-08-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12d42997-8e54-11f1-8144-8447094a420f">
     <topic>Weechat -- Multiple vulnerabilities</topic>
     <affects>
