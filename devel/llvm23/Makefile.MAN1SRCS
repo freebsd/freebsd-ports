@@ -1,10 +1,10 @@
 LLVM_MAN1SRCS= \
-	bugpoint.1 \
 	clang-tblgen.1 \
 	dsymutil.1 \
 	llc.1 \
 	lldb-tblgen.1 \
 	lli.1 \
+	llubi.1 \
 	llvm-addr2line.1 \
 	llvm-ar.1 \
 	llvm-as.1 \
@@ -20,6 +20,7 @@ LLVM_MAN1SRCS= \
 	llvm-dwarfdump.1 \
 	llvm-dwarfutil.1 \
 	llvm-exegesis.1 \
+	llvm-extract-bundle-entry.1 \
 	llvm-extract.1 \
 	llvm-ifs.1 \
 	llvm-install-name-tool.1 \

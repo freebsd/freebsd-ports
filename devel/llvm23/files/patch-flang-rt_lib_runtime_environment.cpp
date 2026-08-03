@@ -2,8 +2,8 @@
 +++ flang-rt/lib/runtime/environment.cpp
 @@ -18,6 +18,7 @@
  #ifdef _WIN32
- extern char **_environ;
- #elif defined(__FreeBSD__)
+ #include <stdlib.h>
+ #elif defined(__FreeBSD__) || RT_GPU_TARGET
 +#include <dlfcn.h>
  // FreeBSD has environ in crt rather than libc. Using "extern char** environ"
  // in the code of a shared library makes it fail to link with -Wl,--no-undefined

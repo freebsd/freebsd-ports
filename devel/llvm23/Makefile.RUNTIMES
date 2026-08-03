@@ -35,6 +35,8 @@ LIBCLANG_RT_LIBS_aarch64= \
 	tsan.so \
 	tsan_cxx.a \
 	tsan_cxx.a.syms \
+	ubsan_loop_detect.a \
+	ubsan_loop_detect.a.syms \
 	ubsan_minimal.a \
 	ubsan_minimal.a.syms \
 	ubsan_minimal.so \
@@ -90,6 +92,7 @@ LIBCLANG_RT_LIBS_powerpc64= \
 	profile.a \
 	stats.a \
 	stats_client.a \
+	ubsan_loop_detect.a \
 	ubsan_minimal.a \
 	ubsan_minimal.a.syms \
 	ubsan_minimal.so \
@@ -112,6 +115,8 @@ LIBCLANG_RT_LIBS_powerpc64le= \
 	profile.a \
 	stats.a \
 	stats_client.a \
+	ubsan_loop_detect.a \
+	ubsan_loop_detect.a.syms \
 	ubsan_minimal.a \
 	ubsan_minimal.a.syms \
 	ubsan_minimal.so \
@@ -138,6 +143,8 @@ LIBCLANG_RT_LIBS_riscv64= \
 	profile.a \
 	stats.a \
 	stats_client.a \
+	ubsan_loop_detect.a \
+	ubsan_loop_detect.a.syms \
 	ubsan_minimal.a \
 	ubsan_minimal.a.syms \
 	ubsan_minimal.so \
@@ -182,6 +189,8 @@ LIBCLANG_RT_LIBS_x86_64= \
 	tsan.so \
 	tsan_cxx.a \
 	tsan_cxx.a.syms \
+	ubsan_loop_detect.a \
+	ubsan_loop_detect.a.syms \
 	ubsan_minimal.a \
 	ubsan_minimal.a.syms \
 	ubsan_minimal.so \
