@@ -1,17 +1,24 @@
 PORTNAME=	tclvfs
-PORTVERSION=	20080503
-PORTREVISION=	1
+DISTVERSION=	1.5.0
 CATEGORIES=	filesystems devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	https://core.tcl-lang.org/tclvfs/tarball/
+DISTNAME=	${PORTNAME}-${SNAPSHOT}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl VirtualFileSystem layer
-WWW=		https://sourceforge.net/projects/tclvfs/
+WWW=		https://core.tcl-lang.org/tclvfs
+
+LICENSE=       TclTk
+LICENSE_NAME=  Tcl/Tk License
+LICENSE_FILE=  ${WRKSRC}/license.terms
+LICENSE_PERMS= dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libTrf2.1.4.so:devel/tcl-trf
 
 USES+=		gmake tcl:tea
-TCL_PKG=	vfs1.3
+TEST_TARGET=	test
+
+SNAPSHOT=	20260403165307-75a2672991
 
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
