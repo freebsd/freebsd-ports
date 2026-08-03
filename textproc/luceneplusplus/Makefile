@@ -1,6 +1,6 @@
 PORTNAME=	lucene++
 PORTVERSION=	3.0.9
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=	rel_
 CATEGORIES=	textproc
 
@@ -11,6 +11,8 @@ WWW=		https://github.com/luceneplusplus/LucenePlusPlus
 PATCH_SITES+=	https://github.com/luceneplusplus/LucenePlusPlus/commit/
 PATCHFILES+=	c18ead2b0c4aa62af01450cb12353a0baa51411f.patch:-p1
 PATCHFILES+=	e6a376836e5c891577eae6369263152106b9bc02.patch:-p1
+PATCHFILES+=	f11e0895cf1dd7d6a68a0a736f13414f1e37ef7a.patch:-p1
+PATCHFILES+=	27f81879228f1a5ad6e41909465a1868d313d2d9.patch:-p1
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LGPL.license
