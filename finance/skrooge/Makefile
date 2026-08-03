@@ -1,5 +1,5 @@
 PORTNAME=	skrooge
-DISTVERSION=	25.10.0
+DISTVERSION=	26.4.0
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -27,8 +27,8 @@ USE_KDE=	activities archive attica auth bookmarks codecs colorscheme \
 		completion config configwidgets coreaddons dbusaddons \
 		guiaddons i18n iconthemes itemviews jobwidgets \
 		kio newstuff notifications notifyconfig package parts \
-		runner service solid sonnet texttemplate textwidgets \
-		wallet widgetsaddons windowsystem xmlgui \
+		runner service solid sonnet statusnotifieritem texttemplate \
+		textwidgets wallet widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build
 USE_LDCONFIG=	yes
 USE_QT=		5compat base declarative positioning svg \
