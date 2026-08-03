@@ -1,9 +1,9 @@
 PORTNAME=	serd
-DISTVERSION=	0.32.8
+DISTVERSION=	0.32.10
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
-MAINTAINER=	meka@tilda.center
+MAINTAINER=	meka@sys.it.com
 COMMENT=	C library for RDF syntax
 WWW=		https://drobilla.net/software/serd.html
 
