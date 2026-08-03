@@ -1,6 +1,6 @@
 PORTNAME=	syslog-ng
 DISTVERSION=	4.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 # official master site:
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -108,8 +108,8 @@ SQL_PLIST_FILES=		lib/syslog-ng/libafsql.so
 
 MONGO_CONFIGURE_ENABLE=		mongodb
 MONGO_CONFIGURE_ON=		--with-mongoc=system
-MONGO_LIB_DEPENDS=		libmongoc-1.0.so:devel/mongo-c-driver
-MONGO_LIB_DEPENDS+=		libbson-1.0.so:devel/libbson
+MONGO_LIB_DEPENDS=		libmongoc2.so:devel/mongo-c-driver
+MONGO_LIB_DEPENDS+=		libbson2.so:devel/libbson
 MONGO_PLIST_FILES=		lib/syslog-ng/libafmongodb.so
 
 JSON_CONFIGURE_ENABLE=		json
