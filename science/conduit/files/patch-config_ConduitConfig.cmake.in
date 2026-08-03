@@ -1,0 +1,11 @@
+--- config/ConduitConfig.cmake.in.orig	2026-05-11 14:45:51.851143000 -0400
++++ config/ConduitConfig.cmake.in	2026-05-11 14:46:43.772858000 -0400
+@@ -56,6 +56,8 @@
+ include(${CONDUIT_CMAKE_CONFIG_DIR}/conduit_setup_deps.cmake)
+ 
+ # include targets exported by cmake
++include(CMakeFindDependencyMacro)
++find_dependency(MPI COMPONENTS C)
+ include(${CONDUIT_CMAKE_CONFIG_DIR}/conduit.cmake)
+ 
+ # finally setup our final imported targets

@@ -1,7 +1,6 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.5
-PORTREVISION=	2
+DISTVERSION=	0.9.6
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,6 +44,10 @@ MPICH_CMAKE_ON=		-DENABLE_MPI=ON
 
 OPENMPI_USES=		mpi:openmpi
 OPENMPI_CMAKE_ON=	-DENABLE_MPI=ON
+# workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=297240:
+OPENMPI_CMAKE_ON+=	-DMPI_C_COMPILER:PATH=${MPICC} \
+			-DMPI_CXX_COMPILER:PATH=${MPICXX} \
+			-DMPI_CXX_HEADER_DIR:PATH=${MPI_HOME}/include
 
 # tests as of 0.9.5: 100% tests passed, 0 tests failed out of 3
 
