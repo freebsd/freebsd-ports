@@ -226,6 +226,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/I18N/LangTags.pm
 %%PRIV_LIB%%/I18N/LangTags/Detect.pm
 %%PRIV_LIB%%/I18N/LangTags/List.pm
+%%PRIV_LIB%%/IO/Compress.pm
 %%PRIV_LIB%%/IO/Compress/Adapter/Bzip2.pm
 %%PRIV_LIB%%/IO/Compress/Adapter/Deflate.pm
 %%PRIV_LIB%%/IO/Compress/Adapter/Identity.pm
@@ -1124,6 +1125,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5402delta.1.gz
 %%MAN1%%/perl5403delta.1.gz
 %%MAN1%%/perl5404delta.1.gz
+%%MAN1%%/perl5405delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1499,6 +1501,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/I18N::LangTags::List.3.gz
 %%MAN3%%/I18N::Langinfo.3.gz
 %%MAN3%%/IO.3.gz
+%%MAN3%%/IO::Compress.3.gz
 %%MAN3%%/IO::Compress::Base.3.gz
 %%MAN3%%/IO::Compress::Bzip2.3.gz
 %%MAN3%%/IO::Compress::Deflate.3.gz
@@ -2069,6 +2072,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5402delta.pod
 %%PRIV_LIB%%/pod/perl5403delta.pod
 %%PRIV_LIB%%/pod/perl5404delta.pod
+%%PRIV_LIB%%/pod/perl5405delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
