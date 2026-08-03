@@ -1,0 +1,225 @@
+-- Add FreeBSD support and make optional dependencies controllable via the
+-- port option framework. The upstream meson build hardcodes these as
+-- Linux-only and always enables them; this patch maps them to the same
+-- options that the previous GNU configure port provided.
+-- Also force the use of the system vamp-hostsdk instead of the bundled
+-- copy, and remove bundled include directories that are deleted by the
+-- port's post-patch step.  Finally, install the main binary with the
+-- lowercase name on FreeBSD.
+
+--- meson.build.orig	2026-08-03 03:46:29 UTC
++++ meson.build
+@@ -94,19 +94,19 @@ dl_dep = meson.get_compiler('c').find_library('dl', re
+ server_dependencies = []
+ 
+ dl_dep = meson.get_compiler('c').find_library('dl', required: false)
+-vamphostsdk_dep = dependency('vamp-hostsdk', version: '>= 2.10', required: false)
++vamphostsdk_dep = dependency('vamp-hostsdk', version: '>= 2.10', required: true)
+ 
+ unwind_dep = []
+ with_unwind = false
+ 
+-if system == 'linux'
++if system == 'linux' or system == 'freebsd'
+ 
+   capnp = find_program('capnp')
+   capnp_additional_args = []
+   capnp_cpp_plugin = 'c++'
+ 
+   rc = []
+-  
++
+   bzip2_dep = dependency('bzip2', required: false)
+ 
+   if not bzip2_dep.found()
+@@ -123,21 +123,60 @@ if system == 'linux'
+   capnp_dep = dependency('capnp', version: '>= 0.6')
+   lrdf_dep = dependency('lrdf', version: '>= 0.2')
+   oggz_dep = dependency('oggz', version: '>= 1.0.0')
+-  fishsound_dep = dependency('fishsound', version: '>= 1.0.0')
+-  mad_dep = dependency('mad', version: '>= 0.15.0')
+-  id3tag_dep = dependency('id3tag', version: '>= 0.15.0')
+   opus_dep = dependency('opusfile')
+   opusenc_dep = dependency('opusenc', required: false)
+   if not opusenc_dep.found()
+     opusenc_dep = dependency('libopusenc', required: false)
+   endif
+-  lo_dep = dependency('liblo')
+-  jack_dep = dependency('jack', version: '>= 0.100')
+-  libpulse_dep = dependency('libpulse', version: '>= 0.9')
+-  alsa_dep = dependency('alsa')
+-  
+-  portaudio_dep = dependency('portaudio-2.0', version: '>= 19', required: false)
+-  
++
++  with_fishsound = get_option('fishsound')
++  with_id3tag = get_option('id3tag')
++  with_mad = get_option('mad')
++  with_jack = get_option('jack')
++  with_osc = get_option('osc')
++  with_portaudio = get_option('portaudio')
++  with_pulse = get_option('pulse')
++
++  fishsound_dep = []
++  if with_fishsound
++    fishsound_dep = dependency('fishsound', version: '>= 1.0.0')
++  endif
++
++  id3tag_dep = []
++  if with_id3tag
++    id3tag_dep = dependency('id3tag', version: '>= 0.15.0')
++  endif
++
++  mad_dep = []
++  if with_mad
++    mad_dep = dependency('mad', version: '>= 0.15.0')
++  endif
++
++  lo_dep = []
++  if with_osc
++    lo_dep = dependency('liblo')
++  endif
++
++  jack_dep = []
++  if with_jack
++    jack_dep = dependency('jack', version: '>= 0.100')
++  endif
++
++  libpulse_dep = []
++  if with_pulse
++    libpulse_dep = dependency('libpulse', version: '>= 0.9')
++  endif
++
++  portaudio_dep = []
++  if with_portaudio
++    portaudio_dep = dependency('portaudio-2.0', version: '>= 19', required: false)
++  endif
++
++  alsa_dep = []
++  if system == 'linux'
++    alsa_dep = dependency('alsa')
++  endif
++
+   unwind_dep = dependency('libunwind', required: false)
+ 
+   feature_dependencies = [
+@@ -152,11 +191,11 @@ if system == 'linux'
+     capnp_dep,
+     lrdf_dep,
+     oggz_dep,
++    opus_dep,
++    opusenc_dep,
+     fishsound_dep,
+     mad_dep,
+     id3tag_dep,
+-    opus_dep,
+-    opusenc_dep,
+     lo_dep,
+     portaudio_dep,
+     jack_dep,
+@@ -171,7 +210,7 @@ if system == 'linux'
+     serd_dep,
+     dl_dep,
+   ]
+-  
++
+   feature_defines = [
+     '-DHAVE_BZ2',
+     '-DHAVE_FFTW3',
+@@ -184,17 +223,35 @@ if system == 'linux'
+     '-DHAVE_CAPNP',
+     '-DHAVE_LRDF',
+     '-DHAVE_OGGZ',
+-    '-DHAVE_FISHSOUND',
+-    '-DHAVE_MAD',
+-    '-DHAVE_ID3TAG',
+     '-DHAVE_OPUS',
+-    '-DHAVE_LIBLO',
+-    '-DHAVE_JACK', '-DDYNAMIC_JACK',
+-    '-DHAVE_LIBPULSE',
+-    '-D__LINUX_ALSASEQ__',
+-    '-D__LINUX_ALSA__' # for RtMidi
+   ]
+ 
++  if with_fishsound
++    feature_defines += [ '-DHAVE_FISHSOUND' ]
++  endif
++  if with_mad
++    feature_defines += [ '-DHAVE_MAD' ]
++    svcore_moc_args += [ '-DHAVE_MAD' ]
++  endif
++  if with_id3tag
++    feature_defines += [ '-DHAVE_ID3TAG' ]
++  endif
++  if with_osc
++    feature_defines += [ '-DHAVE_LIBLO' ]
++  endif
++  if with_jack
++    feature_defines += [ '-DHAVE_JACK', '-DDYNAMIC_JACK' ]
++  endif
++  if with_pulse
++    feature_defines += [ '-DHAVE_LIBPULSE' ]
++  endif
++  if system == 'linux'
++    feature_defines += [
++      '-D__LINUX_ALSASEQ__',
++      '-D__LINUX_ALSA__' # for RtMidi
++    ]
++  endif
++
+   if unwind_dep.found() and buildtype.startswith('debug')
+     with_unwind = true
+     feature_defines += [
+@@ -204,7 +261,7 @@ if system == 'linux'
+     unwind_dep = []
+   endif
+ 
+-  if portaudio_dep.found()
++  if with_portaudio and portaudio_dep.found()
+     feature_defines += [
+       '-DHAVE_PORTAUDIO',
+     ]
+@@ -215,10 +272,6 @@ if system == 'linux'
+       '-DHAVE_OPUS_READ_ONLY'
+     ]
+   endif
+-
+-  svcore_moc_args = [
+-    '-DHAVE_MAD'
+-  ]
+   
+ elif system == 'darwin'
+ 
+@@ -539,7 +592,6 @@ all_include_dirs = include_directories(
+     'svcore',
+     'svgui',
+     'svapp',
+-    'vamp-plugin-sdk',
+   ]
+ )
+ 
+@@ -1193,7 +1245,7 @@ if with_qt
+   if system == 'linux'
+     sv_main_name = 'sonic-visualiser'
+   else
+-    sv_main_name = 'Sonic Visualiser'
++    sv_main_name = 'sonic-visualiser'
+   endif # system
+ 
+   install_data(
+@@ -1360,7 +1412,6 @@ executable(
+   capnp_gen_cpp_target,
+   vamphostsdk_files,
+   include_directories: [
+-    'vamp-plugin-sdk',
+     'piper-vamp-cpp',
+     'piper-vamp-cpp/ext',
+     feature_include_dirs,
+@@ -1389,7 +1440,6 @@ executable(
+   capnp_gen_cpp_target,
+   vamphostsdk_files,
+   include_directories: [
+-    'vamp-plugin-sdk',
+     'piper-vamp-cpp',
+     'piper-vamp-cpp/ext',
+     feature_include_dirs,

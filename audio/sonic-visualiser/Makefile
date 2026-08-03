@@ -1,21 +1,19 @@
 PORTNAME=	sonic-visualiser
-DISTVERSION=	4.0.1
-PORTREVISION=	14
+DISTVERSION=	5.2.1
 CATEGORIES=	audio
-MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/2607/
+MASTER_SITES=	https://github.com/sonic-visualiser/sonic-visualiser/releases/download/sv_v${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Program for viewing and analysing the contents of music audio files
-WWW=		https://www.sonicvisualiser.org/
+WWW=		https://www.sonicvisualiser.org/ \
+		https://github.com/sonic-visualiser/sonic-visualiser
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcapnp.so:devel/capnproto \
 		libfftw3.so:math/fftw3 \
-		libfftw3f.so:math/fftw3-float \
 		liblrdf.so:textproc/liblrdf \
-		libogg.so:audio/libogg \
 		liboggz.so:audio/liboggz \
 		libopusfile.so:audio/opusfile \
 		librubberband.so:audio/rubberband \
@@ -25,64 +23,50 @@ LIB_DEPENDS=	libcapnp.so:devel/capnproto \
 		libsord-0.so:devel/sord \
 		libvamp-hostsdk.so:audio/vamp-plugin-sdk
 
-USES=		autoreconf compiler:c++11-lang desktop-file-utils dos2unix gmake gl pkgconfig qt:5 xorg
-DOS2UNIX_FILES=	convert.pro
-USE_QT=		buildtools:build core gui network qmake:build svg testlib widgets xml
+USES=		compiler:c++11-lang desktop-file-utils dos2unix gl meson pkgconfig qt:6 xorg
+USE_QT=		base svg tools:build
 USE_XORG=	x11
 USE_GL=		gl
 
-GNU_CONFIGURE=	yes
-
-OPTIONS_DEFINE=		DEBUG FISHSOUND ID3TAG JACK MAD OSC PORTAUDIO PULSEAUDIO
+OPTIONS_DEFINE=		FISHSOUND ID3TAG JACK MAD OSC PORTAUDIO PULSEAUDIO
 OPTIONS_DEFAULT=	FISHSOUND ID3TAG JACK MAD PORTAUDIO
 OPTIONS_SUB=		yes
 
-DEBUG_CONFIGURE_ENABLE=	debug
-
 FISHSOUND_DESC=		FLAC, Speex and Vorbis codecs support
-FISHSOUND_CONFIGURE_WITH=	fishsound
-FISHSOUND_LIB_DEPENDS=	libfishsound.so:audio/libfishsound \
-			libvorbis.so:audio/libvorbis \
-			libspeex.so:audio/speex \
-			libFLAC.so:audio/flac
+FISHSOUND_MESON_TRUE=	fishsound
+FISHSOUND_LIB_DEPENDS=	libfishsound.so:audio/libfishsound
 
-ID3TAG_CONFIGURE_WITH=	id3tag
+ID3TAG_MESON_TRUE=	id3tag
 ID3TAG_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
 
-JACK_CONFIGURE_WITH=	jack
+JACK_MESON_TRUE=	jack
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
-MAD_CONFIGURE_WITH=	mad
+MAD_MESON_TRUE=		mad
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 
 OSC_DESC=		OpenSound Control support
-OSC_CONFIGURE_WITH=	lo
+OSC_MESON_TRUE=		osc
 OSC_LIB_DEPENDS=	liblo.so:audio/liblo
 
-PORTAUDIO_CONFIGURE_WITH=	portaudio
+PORTAUDIO_MESON_TRUE=	portaudio
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
-PULSEAUDIO_CONFIGURE_WITH=	pulse
+PULSEAUDIO_MESON_TRUE=	pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 post-patch: # remove the bundled vamp-plugin-sdk to avoid possible confusion
 	@${RM} -r ${WRKSRC}/vamp-plugin-sdk
-	# workaround for https://sourceforge.net/p/sv1/bugs/280/, also see Bug#236000
-	@${FIND} ${WRKSRC} -name "*.pro" -o -name "*.pri" | ${XARGS} ${REINPLACE_CMD} -e 's|-Werror| |'
 
-do-install:
-.for f in sonic-visualiser piper-vamp-simple-server piper-convert checker/vamp-plugin-load-checker
-	${INSTALL_PROGRAM} ${WRKSRC}/$f ${STAGEDIR}${PREFIX}/bin
-.endfor
-.for f in sonic-visualiser.desktop x-sonicvisualiser.desktop x-sonicvisualiser-layer.desktop
-	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${PREFIX}/share/applications
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/icons/sv-icon.svg ${STAGEDIR}${PREFIX}/share/pixmaps
+post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/README
+.for f in x-sonicvisualiser.desktop x-sonicvisualiser-layer.desktop
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${PREFIX}/share/applications
+.endfor
 
-do-install-OSC-on:
-	${INSTALL_DATA} ${WRKSRC}/README.OSC ${STAGEDIR}${DOCSDIR}
+post-install-OSC-on:
+	${INSTALL_DATA} ${WRKSRC}/README_OSC.md ${STAGEDIR}${DOCSDIR}/README.OSC
 
 .include <bsd.port.mk>

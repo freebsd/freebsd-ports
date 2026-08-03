@@ -1,0 +1,45 @@
+-- Add meson options that mirror the options from the previous GNU configure
+-- based port (fishsound, id3tag, jack, mad, osc, portaudio, pulse). The
+-- defaults match the previous OPTIONS_DEFAULT.
+
+--- meson_options.txt	2025-03-21 07:36:40.000000000 -0700
++++ meson_options.txt	2026-08-02 20:24:59.300404000 -0700
+@@ -3,3 +3,38 @@
+        value: 'false',
+        description: 'Build only the small utilities that do not use Qt.')
+ 
++option('fishsound',
++       type: 'boolean',
++       value: 'true',
++       description: 'Enable FLAC, Speex and Vorbis codecs support through libfishsound.')
++
++option('id3tag',
++       type: 'boolean',
++       value: 'true',
++       description: 'Enable ID3 tag support through libid3tag.')
++
++option('jack',
++       type: 'boolean',
++       value: 'true',
++       description: 'Enable JACK audio support.')
++
++option('mad',
++       type: 'boolean',
++       value: 'true',
++       description: 'Enable MP3 decoding support through libmad.')
++
++option('osc',
++       type: 'boolean',
++       value: 'false',
++       description: 'Enable OpenSound Control support through liblo.')
++
++option('portaudio',
++       type: 'boolean',
++       value: 'true',
++       description: 'Enable PortAudio playback support.')
++
++option('pulse',
++       type: 'boolean',
++       value: 'false',
++       description: 'Enable PulseAudio playback support.')
++

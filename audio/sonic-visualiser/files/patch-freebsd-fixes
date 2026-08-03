@@ -1,0 +1,97 @@
+-- Fix Qt6 compatibility issues and FreeBSD-specific compilation errors.
+--
+-- * Use .load() on std::atomic<float/int> values passed to QString::arg,
+--   because Qt6's arg() templates no longer accept std::atomic types.
+-- * On FreeBSD include <cstdlib> instead of <alloca.h> for alloca().
+-- * Cast Qt::KeyboardModifiers to int before passing to QString::arg().
+
+--- svcore/data/model/SparseTimeValueModel.h	2025-03-21 07:36:49.000000000 -0700
++++ svcore/data/model/SparseTimeValueModel.h	2026-08-02 20:29:09.285282000 -0700
+@@ -342,8 +342,8 @@
+              .arg("true") // always true after model reaches 100% -
+                           // subsequent events are always notified
+              .arg(m_events.getExportId())
+-             .arg(m_valueMinimum)
+-             .arg(m_valueMaximum)
++             .arg(m_valueMinimum.load())
++             .arg(m_valueMaximum.load())
+              .arg(encodeEntities(m_units))
+              .arg(extraAttributes));
+         
+--- svcore/data/model/RegionModel.h	2025-03-21 07:36:49.000000000 -0700
++++ svcore/data/model/RegionModel.h	2026-08-02 20:29:15.109250000 -0700
+@@ -335,8 +335,8 @@
+              .arg(m_events.getExportId())
+              .arg("region")
+              .arg(m_valueQuantization)
+-             .arg(m_valueMinimum)
+-             .arg(m_valueMaximum)
++             .arg(m_valueMinimum.load())
++             .arg(m_valueMaximum.load())
+              .arg(encodeEntities(m_units))
+              .arg(extraAttributes));
+         
+--- svcore/data/model/NoteModel.h	2025-03-21 07:36:49.000000000 -0700
++++ svcore/data/model/NoteModel.h	2026-08-02 20:29:20.648718000 -0700
+@@ -403,8 +403,8 @@
+              .arg(m_events.getExportId())
+              .arg(m_subtype == FLEXI_NOTE ? "flexinote" : "note")
+              .arg(m_valueQuantization)
+-             .arg(m_valueMinimum)
+-             .arg(m_valueMaximum)
++             .arg(m_valueMinimum.load())
++             .arg(m_valueMaximum.load())
+              .arg(encodeEntities(m_units))
+              .arg(extraAttributes));
+         
+--- svcore/data/model/EditableDenseThreeDimensionalModel.cpp	2025-03-21 07:36:49.000000000 -0700
++++ svcore/data/model/EditableDenseThreeDimensionalModel.cpp	2026-08-02 20:30:50.093315000 -0700
+@@ -458,10 +458,10 @@
+     Model::toXml
+         (out, indent,
+          QString("type=\"dense\" dimensions=\"3\" windowSize=\"%1\" yBinCount=\"%2\" minimum=\"%3\" maximum=\"%4\" dataset=\"%5\" startFrame=\"%6\" %7")
+-         .arg(m_resolution)
+-         .arg(m_yBinCount)
+-         .arg(m_minimum)
+-         .arg(m_maximum)
++         .arg(m_resolution.load())
++         .arg(m_yBinCount.load())
++         .arg(m_minimum.load())
++         .arg(m_maximum.load())
+          .arg(getExportId())
+          .arg(m_startFrame)
+          .arg(extraAttributes));
+--- bqvec/src/VectorOpsComplex.cpp	2025-03-21 07:37:34.000000000 -0700
++++ bqvec/src/VectorOpsComplex.cpp	2026-08-02 20:29:54.751287000 -0700
+@@ -50,6 +50,8 @@
+ #ifndef alloca
+ #define alloca _alloca
+ #endif
++#elif defined(__FreeBSD__)
++#include <cstdlib>
+ #else
+ #include <alloca.h>
+ #endif
+--- svcore/plugin/DSSIPluginInstance.cpp	2025-03-21 07:36:49.000000000 -0700
++++ svcore/plugin/DSSIPluginInstance.cpp	2026-08-02 20:29:57.272823000 -0700
+@@ -28,7 +28,9 @@
+ #include <cstdlib>
+ 
+ #ifndef Q_OS_WIN32
++#ifndef __FreeBSD__
+ #include <alloca.h>
++#endif
+ #else
+ #include <memory.h>
+ #endif
+--- svgui/view/Pane.cpp	2025-03-21 07:36:58.000000000 -0700
++++ svgui/view/Pane.cpp	2026-08-02 20:31:39.504290000 -0700
+@@ -1423,7 +1423,7 @@
+     if (m & Qt::GroupSwitchModifier) s << "GroupSwitch";
+     m &= (~ (Qt::ShiftModifier | Qt::ControlModifier | Qt::AltModifier |
+              Qt::MetaModifier | Qt::KeypadModifier | Qt::GroupSwitchModifier));
+-    if (m) s << QString(" (residue %1)").arg(m);
++    if (m) s << QString(" (residue %1)").arg(int(m));
+     if (s.empty()) return "(none)";
+     else return s.join(" | ");
+ }
