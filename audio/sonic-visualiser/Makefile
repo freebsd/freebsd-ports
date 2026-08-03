@@ -4,7 +4,7 @@ PORTREVISION=	14
 CATEGORIES=	audio
 MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/2607/
 
-MAINTAINER=	uddka@student.kit.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for viewing and analysing the contents of music audio files
 WWW=		https://www.sonicvisualiser.org/
 

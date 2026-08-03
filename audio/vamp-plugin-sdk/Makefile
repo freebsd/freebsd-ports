@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/2588/
 
-MAINTAINER=	uddka@student.kit.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vamp audio analysis plugin SDK
 WWW=		https://www.vamp-plugins.org/
 
