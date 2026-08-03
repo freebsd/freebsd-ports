@@ -13,6 +13,9 @@ WWW=		https://ammonite.io/
 
 LICENSE=	MIT
 
+DEPRECATED=	Upstream ceased development
+EXPIRATION_DATE=	2026-08-31
+
 USES=		java
 
 EXTRACT_CMD=		${CP}
