@@ -1,5 +1,5 @@
 PORTNAME=	fuse
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -55,7 +55,7 @@ SDL2_CONFIGURE_WITH=	sdl
 SDL_CONFIGURE_ENABLE=	sdl2
 ROMS_RUN_DEPENDS=	fuse-roms>0:emulators/fuse-roms
 
-PORTDOCS=	AUTHORS ChangeLog README THANKS README.copyright
+PORTDOCS=	AUTHORS ChangeLog README README.copyright THANKS
 
 .include <bsd.port.options.mk>
 
