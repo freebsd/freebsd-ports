@@ -1,5 +1,5 @@
 PORTNAME=	phorge
-PORTVERSION=	2025.51
+PORTVERSION=	2026.27
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	phorgeit
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git \
-		phorgeit-arcanist-lib${PHP_PKGNAMESUFFIX}>=2024.35,1:devel/phorgeit-arcanist-lib@${PHP_FLAVOR}
+		phorgeit-arcanist-lib${PHP_PKGNAMESUFFIX}>=2026.27,1:devel/phorgeit-arcanist-lib@${PHP_FLAVOR}
 
 USES=		php:cli,flavors shebangfix
 USE_GITHUB=	yes
