@@ -26,6 +26,10 @@ CARGO_TEST_ARGS+=	--all-targets
 
 MAKE_ENV+=	BORING_BSSL_RUST_CPPLIB=c++
 
+# BoringSSL ships no PowerPC assembly, so use the portable C implementations.
+CFLAGS_powerpc64le=	-DOPENSSL_NO_ASM
+CXXFLAGS_powerpc64le=	-DOPENSSL_NO_ASM
+
 RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
 PLIST_FILES=	bin/quiche-client \
