@@ -14,6 +14,9 @@ USES=		gmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	DeusData
 
+# Assumes a 64-bit size_t; fails to build on 32-bit archs
+ONLY_FOR_ARCHS=	aarch64 amd64
+
 PLIST_FILES=	bin/codebase-memory-mcp
 SUB_FILES=	pkg-message
 
