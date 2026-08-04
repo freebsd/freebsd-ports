@@ -2572,7 +2572,7 @@ lib/wine/i386-windows/wineps16.drv16
 lib/wine/i386-windows/wineusb.sys
 lib/wine/i386-windows/winevdm.exe
 lib/wine/i386-windows/winevulkan.dll
-lib/wine/i386-windows/winewayland.drv
+%%WAYLAND%%lib/wine/i386-windows/winewayland.drv
 lib/wine/i386-windows/winex11.drv
 lib/wine/i386-windows/winexinput.sys
 lib/wine/i386-windows/wing.dll16
@@ -2958,7 +2958,7 @@ lib/wine/%%WINEARCH%%-unix/wineps.so
 %%PULSEAUDIO%%lib/wine/%%WINEARCH%%-unix/winepulse.so
 lib/wine/%%WINEARCH%%-unix/wineusb.so
 lib/wine/%%WINEARCH%%-unix/winevulkan.so
-lib/wine/%%WINEARCH%%-unix/winewayland.so
+%%WAYLAND%%lib/wine/%%WINEARCH%%-unix/winewayland.so
 lib/wine/%%WINEARCH%%-unix/winex11.so
 lib/wine/%%WINEARCH%%-unix/winspool.so
 lib/wine/%%WINEARCH%%-unix/ws2_32.so
