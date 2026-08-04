@@ -5546,3 +5546,4 @@ devel/p5-Data-Swap||2026-08-02|Has expired: uses hidden Perl functions that are 
 devel/p5-Devel-BeginLift||2026-08-02|Has expired: uses hidden Perl functions that are hidden after 5.37.0
 textproc/p5-Text-ClearSilver||2026-08-02|Has expired: uses hidden Perl functions that are hidden after 5.37.0
 x11-fonts/nerd-fonts-d2coding|x11-fonts/nerd-fonts-d2koding|2026-08-03|Renamed by upstream due to licensing reasons
+math/topaz||2026-08-04|Has expired: Last release was in 2011 and WWW is unavailable

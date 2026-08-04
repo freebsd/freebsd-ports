@@ -1309,7 +1309,6 @@
     SUBDIR += tlfloat
     SUBDIR += tmv
     SUBDIR += tomsfastmath
-    SUBDIR += topaz
     SUBDIR += topcom
     SUBDIR += topologic
     SUBDIR += triangle
