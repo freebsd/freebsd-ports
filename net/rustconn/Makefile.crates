@@ -78,8 +78,8 @@ CARGO_CRATES=	addchain-0.2.1 \
 		ciborium-ll-0.2.2 \
 		cipher-0.4.4 \
 		cipher-0.5.2 \
-		clap-4.6.4 \
-		clap_builder-4.6.2 \
+		clap-4.6.5 \
+		clap_builder-4.6.5 \
 		clap_complete-4.6.8 \
 		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
@@ -564,7 +564,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.19 \
 		thread_local-1.1.10 \
-		time-0.3.54 \
+		time-0.3.55 \
 		time-core-0.1.9 \
 		time-macros-0.2.32 \
 		tiny-skia-0.12.0 \
