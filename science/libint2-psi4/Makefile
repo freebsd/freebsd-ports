@@ -1,8 +1,9 @@
 PORTNAME=	libint2-psi4
 DISTVERSION=	0.1-${VERSION}
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/loriab/libint/releases/download/v${DISTVERSION:C/-.*//}/
-DISTFILES=	libint-${VERSION}-5-4-3-6-5-4_mm10f12ob2_0.tgz
+DISTFILES=	libint-${VERSION}-7-7-4-12-7-5_mm10f12ob2_0.tgz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Evaluate the integrals in modern atomic and molecular theory (psi4)
