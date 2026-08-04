@@ -5068,6 +5068,7 @@
     SUBDIR += py-filemagic
     SUBDIR += py-filetype
     SUBDIR += py-find-libpython
+    SUBDIR += py-findblas
     SUBDIR += py-findlibs
     SUBDIR += py-findpython
     SUBDIR += py-fire

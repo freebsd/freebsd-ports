@@ -1,0 +1,3 @@
+Python package to find an installed BLAS library and obtain its headers
+and linker flags. It is typically used as a build helper for Python
+extensions that need to link against a BLAS implementation.
