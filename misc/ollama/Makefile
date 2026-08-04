@@ -46,7 +46,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 OPTIONS_GROUP=		BACKENDS
 OPTIONS_GROUP_BACKENDS=	CPU VULKAN MLX
-OPTIONS_DEFAULT=	CPU VULKAN MLX
+OPTIONS_DEFAULT=	CPU MLX
 
 CPU_DESC=		Build CPU backend shared libraries for various SIMD instruction sets
 CPU_PLIST_FILES=	lib/ollama/llama-server \
@@ -91,6 +91,7 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			${LOCALBASE}/share/cmake/SPIRV-Headers/SPIRV-HeadersConfig.cmake:graphics/spirv-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_PLIST_FILES=	lib/ollama/vulkan/libggml-vulkan.so
+VULKAN_BROKEN=		shaderc doesn't support latest features of glslc, see https://github.com/google/shaderc/issues/1590
 
 MLX_DESC=		Build MLX backend for image generation (CPU)
 MLX_BUILD_DEPENDS=	${LOCALBASE}/lib/cmake/fmt/fmt-config.cmake:devel/libfmt
