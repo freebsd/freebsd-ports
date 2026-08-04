@@ -1,2 +1,12 @@
 # Disable virtual keyboard by default
 InputMethod=""
+
+# Uncomment lines below to make SDDM start its greeter on Wayland
+# This requires x11-wm/plasma6-kwin to be installed
+
+#[General]
+#DisplayServer=wayland
+#GreeterEnvironment=QT_WAYLAND_SHELL_INTEGRATION=layer-shell
+
+#[Wayland]
+#CompositorCommand=dbus-run-session ck-launch-session -- kwin_wayland --drm --no-lockscreen --no-global-shortcuts
