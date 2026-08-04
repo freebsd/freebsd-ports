@@ -1,5 +1,5 @@
 TIMESTAMP = 1783348674
 SHA256 (turn.extra.docs-2.0.0.1.tar.gz) = 3a86600fd0a30ce7aeb547e80402ce68ea9959f7dd58697e5b47fda6e33ab9ce
 SIZE (turn.extra.docs-2.0.0.1.tar.gz) = 485379
-SHA256 (coturn-coturn-4.14.0_GH0.tar.gz) = dc575988326274eb46256b04ef8dad698df8c8e053a35d9e5596fa8f2208bf81
-SIZE (coturn-coturn-4.14.0_GH0.tar.gz) = 712150
+SHA256 (coturn-coturn-4.16.0_GH0.tar.gz) = 4782c1560c2dfa4697dd3fbd85f2f8b506beb48f1d738351464300ef1e294760
+SIZE (coturn-coturn-4.16.0_GH0.tar.gz) = 788671
