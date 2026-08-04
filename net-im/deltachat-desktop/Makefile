@@ -1,7 +1,7 @@
 PORTNAME=	deltachat-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.53.1
-PORTREVISION=	3
+DISTVERSION=	2.57.0
+PORTREVISION=	0
 CATEGORIES=	net-im
 
 MAINTAINER=	feld@FreeBSD.org
@@ -12,11 +12,11 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Important to keep the RPC server core in sync with the Desktop release
-RUN_DEPENDS=	deltachat-rpc-server>=2.53<2.54:net/deltachat-rpc-server
+RUN_DEPENDS=	deltachat-rpc-server>=2.57<2.58:net/deltachat-rpc-server
 USES=		electron:42,build,run desktop-file-utils nodejs:22,build \
 		npm:pnpm pkgconfig
 
-NPM_VER=	10.33.2
+NPM_VER=	11.9.0
 
 # Possible to support more arches, but need their binary
 # esbuilds included in the npmcache
@@ -43,7 +43,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && node bin/writeFlatDependencies.js packages/target-electron ${STAGEDIR}${DATADIR}/node_modules
+	cd ${WRKSRC} && node bin/build/writeFlatDependencies.js packages/target-electron ${STAGEDIR}${DATADIR}/node_modules
 
 	# Shell for-loop to find first matching module at runtime
 	# Sometimes there are multiple copies of this module and we just need one
