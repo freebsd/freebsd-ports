@@ -1,7 +1,6 @@
 PORTNAME=	precice
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.2
-PORTREVISION=	5
+DISTVERSION=	3.4.1
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,14 +10,12 @@ WWW=		https://precice.org/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with Boost>=1.87
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libmpicxx.so:net/mpich
+		libgcc_s.so:lang/gcc${GCC_DEFAULT}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
-USES=		cmake:noninja,testing compiler:c++14-lang eigen:3 gnome pkgconfig python shebangfix # fails with ninja: phony target 'binprecice' names itself as an input; ignoring
+USES=		cmake:noninja,testing compiler:c++14-lang eigen:3 gnome mpi:openmpi pkgconfig python shebangfix # fails with ninja: phony target 'binprecice' names itself as an input; ignoring
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
@@ -28,21 +25,13 @@ SHEBANG_FILES=	tools/profiling/precice-profiling
 
 CMAKE_OFF=	BUILD_TESTING PRECICE_ENABLE_FORTRAN PRECICE_PythonActions
 
-OPTIONS_DEFINE=	MPI PETSC EXAMPLES
-
-MPI_CMAKE_BOOL=		PRECICE_MPICommunication
-MPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
-MPI_RUN_DEPENDS=	openmpi>0:net/openmpi
-MPI_BROKEN=		all tests crash with MPI, see https://github.com/precice/precice/issues/1331
+OPTIONS_DEFINE=	PETSC EXAMPLES
 
 PETSC_DESC=		Use PETSc linear algebra library
 PETSC_CMAKE_BOOL=	PRECICE_FEATURE_PETSC_MAPPING
 PETSC_LIB_DEPENDS=	libpetsc.so:science/PETSc
-PETSC_IMPLIES=		MPI
 
 PORTEXAMPLES=		*
-
-# 3 tests time out, see https://github.com/precice/precice/issues/1331
 
 post-install: # remove files which aren't docs
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
