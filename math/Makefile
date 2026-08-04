@@ -1148,6 +1148,7 @@
     SUBDIR += py-rustworkx
     SUBDIR += py-rvlib
     SUBDIR += py-scikit-datasets
+    SUBDIR += py-scikit-fda
     SUBDIR += py-scikit-fem
     SUBDIR += py-scikit-umfpack
     SUBDIR += py-scs
