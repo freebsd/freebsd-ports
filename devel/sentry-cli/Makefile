@@ -1,5 +1,5 @@
 PORTNAME=	sentry-cli
-DISTVERSION=	3.6.1
+DISTVERSION=	3.6.2
 CATEGORIES=	devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzstd.so:archivers/zstd
 
 USES=		cargo ssl
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	getsentry
 
