@@ -1,6 +1,6 @@
 PORTNAME=	psi4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.2
+DISTVERSION=	1.11
 CATEGORIES=	science # quantum-chemistry
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -55,7 +55,7 @@ NATIVE_CMAKE_BOOL=	ENABLE_XHOST
 post-patch:
 	# correct the default data dir
 	@${REINPLACE_CMD} \
-		-e 's|/usr/local/share/psi4|${DATADIR}|' \
+		-e 's|%%DATADIR%%|${DATADIR}|' \
 		${WRKSRC}/psi4/run_psi4.py
 
 do-install: # project fails to install itself into a stage directory due to a convoluted cmake code structure (DESTDIR isn't handled correctly)
@@ -78,8 +78,8 @@ do-install: # project fails to install itself into a stage directory due to a co
 	# psi4 sometimes fails to print its version: https://github.com/psi4/psi4/issues/2831
 
 do-test:
-	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest # tests can run without this target too, but this way tests output is more concise and it looks more appealing
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest -p no:black -p no:ruff -p no:mypy # tests can run without this target too, but this way tests output is more concise and it looks more appealing
 
-# tests as of 1.10.1: 27 failed, 6072 passed, 1380 skipped, 51 xfailed in 6365.46s (1:46:05), see https://github.com/psi4/psi4/issues/3421
+# tests as of 1.11: 6102 passed, 1509 skipped, 52 xfailed in 5305.43s (1:28:25)
 
 .include <bsd.port.mk>
