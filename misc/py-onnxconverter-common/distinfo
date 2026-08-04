@@ -1,3 +1,3 @@
-TIMESTAMP = 1742018366
-SHA256 (onnxconverter-common-1.14.0.tar.gz) = 6e431429bd15325c5b2c3eab61bed0d5634c23ed58f8823961be448d629d014a
-SIZE (onnxconverter-common-1.14.0.tar.gz) = 82146
+TIMESTAMP = 1785732524
+SHA256 (microsoft-onnxconverter-common-v1.16.0_GH0.tar.gz) = c9a9058f904042ae211e120259690dfeaa5e480e410fa6037ef560ad1411ed6b
+SIZE (microsoft-onnxconverter-common-v1.16.0_GH0.tar.gz) = 57381939
