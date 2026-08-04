@@ -32,7 +32,7 @@ CMAKE_TESTING_ON=	ENABLE_TESTING
 
 # Workaround the Python problem
 # OSError: /usr/local/lib/libstp.so: No space available for static Thread Local Storage
-TEST_ENV=	LD_PRELOAD=${BUILD_WRKSRC}/lib/libstp.so
+TEST_ENV=	LD_STATIC_TLS_EXTRA=1024
 
 TESTING_UNSAFE=	llvm-lit based tests fail because our LLVM package does not ship "not"
 
