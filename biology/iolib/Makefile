@@ -22,4 +22,7 @@ INSTALL_TARGET=	install-strip
 
 CONFLICTS_INSTALL=	filters scramble # bin/scramble
 
+pre-configure:
+	cd ${WRKSRC}/htscodecs && ${AUTORECONF} -f -i
+
 .include <bsd.port.mk>
