@@ -1,0 +1,28 @@
+-- Relax the setuptools version requirement to match the version available in the
+-- FreeBSD ports tree (devel/py-setuptools). Also adapt the PEP 621 license
+-- fields to the form supported by that setuptools version.
+
+--- pyproject.toml.orig	2025-11-18 00:00:00 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ [build-system]
+ # keep in sync with .github/workflows/wheels.yaml
+ requires = [
+-  "setuptools>=77.0.0",
++  "setuptools>=63.1.0",
+   "Cython>=3.0.3",
+   "numpy>=2.0.0",
+   "ewah-bool-utils>=1.2.0",
+@@ -15,11 +15,7 @@
+ authors = [
+     { name = "The yt project", email = "yt-dev@python.org" },
+ ]
+-license = "BSD-3-Clause"
+-license-files = [
+-    "COPYING.txt",
+-    "yt/frontends/artio/artio_headers/LICENSE",
+-]
++license = {text = "BSD-3-Clause"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Console",
