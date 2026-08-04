@@ -1,5 +1,5 @@
 PORTNAME=	finvizfinance
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,14 +18,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils cython autoplist pytest
+USE_PYTHON=	distutils cython autoplist
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|packages=find_packages()|packages=find_packages(exclude=["test", "test.*"])|' ${WRKSRC}/setup.py
 
 post-extract:
 	@${TOUCH} ${WRKSRC}/README_pypi.md
 
-# tests as of 1.1.0: 20 passed in 32.56s
-# tests as of 1.2.0: 12 passed, 58 warnings, 7 errors in 7.21, see https://github.com/lit26/finvizfinance/issues/140
+# tests disabled: upstream test suite relies on live finviz.com HTML which
+# has changed, causing 7 errors and 1 failure, see
+# https://github.com/lit26/finvizfinance/issues/140
 
 .include <bsd.port.mk>
