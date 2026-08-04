@@ -1,6 +1,6 @@
---- hermes_cli/uninstall.py.orig	2026-07-08 03:11:08 UTC
+--- hermes_cli/uninstall.py.orig	2026-08-03 16:57:23 UTC
 +++ hermes_cli/uninstall.py
-@@ -261,7 +261,22 @@ def uninstall_gateway_service():
+@@ -265,7 +265,22 @@ def uninstall_gateway_service():
          except Exception as e:
              log_warn(f"Could not remove launchd gateway service: {e}")
  

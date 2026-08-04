@@ -1,6 +1,6 @@
---- hermes_cli/gateway.py.orig	2026-07-08 03:11:08 UTC
+--- hermes_cli/gateway.py.orig	2026-08-03 16:57:23 UTC
 +++ hermes_cli/gateway.py
-@@ -1638,6 +1638,45 @@ def supports_systemd_services() -> bool:
+@@ -1714,6 +1714,45 @@ def supports_systemd_services() -> bool:
      return True
  
  
@@ -46,7 +46,7 @@
  def is_macos() -> bool:
      return sys.platform == "darwin"
  
-@@ -4405,6 +4444,129 @@ def launchd_status(deep: bool = False):
+@@ -4687,6 +4726,129 @@ def launchd_status(deep: bool = False):
  
  
  # =============================================================================
@@ -176,7 +176,7 @@
  # Gateway Runner
  # =============================================================================
  
-@@ -6535,6 +6697,18 @@ def _gateway_command_inner(args):
+@@ -6932,6 +7094,18 @@ def _gateway_command_inner(args):
              )
              if start_now:
                  systemd_start(system=system)
@@ -195,7 +195,7 @@
          elif is_macos():
              launchd_install(force)
          elif is_windows():
-@@ -6609,6 +6783,8 @@ def _gateway_command_inner(args):
+@@ -7006,6 +7180,8 @@ def _gateway_command_inner(args):
              sys.exit(1)
          if supports_systemd_services():
              systemd_uninstall(system=system)
@@ -204,7 +204,7 @@
          elif is_macos():
              launchd_uninstall()
          elif is_windows():
-@@ -6662,6 +6838,8 @@ def _gateway_command_inner(args):
+@@ -7059,6 +7235,8 @@ def _gateway_command_inner(args):
              sys.exit(1)
          if supports_systemd_services():
              systemd_start(system=system)
@@ -213,7 +213,7 @@
          elif is_macos():
              launchd_start()
          elif is_windows():
-@@ -6739,6 +6917,12 @@ def _gateway_command_inner(args):
+@@ -7136,6 +7314,18 @@ def _gateway_command_inner(args):
                      service_available = True
                  except subprocess.CalledProcessError:
                      pass
@@ -223,13 +223,6 @@
 +                    service_available = True
 +                except subprocess.CalledProcessError:
 +                    pass
-             elif is_macos() and get_launchd_plist_path().exists():
-                 try:
-                     launchd_stop()
-@@ -6772,6 +6956,12 @@ def _gateway_command_inner(args):
-                     service_available = True
-                 except subprocess.CalledProcessError:
-                     pass
 +            elif supports_freebsd_rc():
 +                try:
 +                    freebsd_rc_stop()
@@ -239,7 +232,7 @@
              elif is_macos() and get_launchd_plist_path().exists():
                  try:
                      launchd_stop()
-@@ -6836,6 +7026,12 @@ def _gateway_command_inner(args):
+@@ -7233,6 +7423,12 @@ def _gateway_command_inner(args):
                      service_stopped = True
                  except subprocess.CalledProcessError:
                      pass
@@ -252,7 +245,7 @@
              elif is_macos() and get_launchd_plist_path().exists():
                  try:
                      launchd_stop()
-@@ -6864,6 +7060,8 @@ def _gateway_command_inner(args):
+@@ -7261,6 +7457,8 @@ def _gateway_command_inner(args):
                  or get_systemd_unit_path(system=True).exists()
              ):
                  systemd_start(system=system)
@@ -261,7 +254,7 @@
              elif is_macos() and get_launchd_plist_path().exists():
                  launchd_start()
              elif is_windows():
-@@ -6890,6 +7088,13 @@ def _gateway_command_inner(args):
+@@ -7287,6 +7485,13 @@ def _gateway_command_inner(args):
                  service_available = True
              except subprocess.CalledProcessError:
                  pass
@@ -275,7 +268,7 @@
          elif is_macos() and get_launchd_plist_path().exists():
              service_configured = True
              try:
-@@ -6972,6 +7177,9 @@ def _gateway_command_inner(args):
+@@ -7369,6 +7574,9 @@ def _gateway_command_inner(args):
              or get_systemd_unit_path(system=True).exists()
          ):
              systemd_status(deep, system=system, full=full)

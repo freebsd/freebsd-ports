@@ -1,5 +1,5 @@
 PORTNAME=	hermes-agent
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	misc python
 MASTER_SITES+=	LOCAL/olivier:webdist
 DISTFILES+=	${PORTNAME}-web-dist-${PORTVERSION}${EXTRACT_SUFX}:webdist
@@ -41,7 +41,7 @@ USES=		python:3.11+,run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	NousResearch
 GH_PROJECT=	hermes-agent
-GH_TAGNAME=	v2026.7.7.2
+GH_TAGNAME=	v2026.8.3
 
 USE_RC_SUBR=	hermes_dashboard hermes_gateway
 

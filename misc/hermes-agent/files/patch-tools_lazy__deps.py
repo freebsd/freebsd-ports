@@ -1,6 +1,6 @@
---- tools/lazy_deps.py.orig	2026-07-08 03:11:08 UTC
+--- tools/lazy_deps.py.orig	2026-08-03 16:57:23 UTC
 +++ tools/lazy_deps.py
-@@ -443,7 +443,9 @@ def _allow_lazy_installs() -> bool:
+@@ -514,7 +514,9 @@ def _allow_lazy_installs() -> bool:
          cfg = None
      if cfg is not None:
          sec = cfg.get("security") or {}

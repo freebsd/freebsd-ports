@@ -1,6 +1,15 @@
---- hermes_cli/config.py.orig	2026-07-08 03:11:08 UTC
-+++ hermes_cli/config.py
-@@ -2554,8 +2554,10 @@ DEFAULT_CONFIG = {
+--- hermes_cli/config_defaults.py.orig	2026-08-04 14:52:16 UTC
++++ hermes_cli/config_defaults.py
+@@ -4,6 +4,8 @@ verbatim from hermes_cli/config.py. Must not import fr
+ verbatim from hermes_cli/config.py. Must not import from hermes_cli.config.
+ """
+ 
++import sys
++
+ DEFAULT_CONFIG = {
+     "model": "",
+     "providers": {},
+@@ -2153,8 +2155,10 @@ DEFAULT_CONFIG = {
          # their TTS provider). Set to false to require explicit
          # ``pip install`` for everything beyond the base set — appropriate
          # for restricted networks, audited environments, or air-gapped
