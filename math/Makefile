@@ -989,6 +989,7 @@
     SUBDIR += py-cyipopt
     SUBDIR += py-cypari2
     SUBDIR += py-daqp
+    SUBDIR += py-dcor
     SUBDIR += py-deap
     SUBDIR += py-dgl
     SUBDIR += py-diffcp
