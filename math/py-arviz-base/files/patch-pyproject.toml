@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-04-17 15:46:57 UTC
+--- pyproject.toml.orig	2026-06-12 15:47:52 UTC
 +++ pyproject.toml
 @@ -5,7 +5,7 @@ readme = "README.md"
  [project]
@@ -17,4 +17,4 @@
 +  "numpy>=1.26.4",
    "xarray>=2024.11.0",
    "typing-extensions>=3.10",
- ]
+   "lazy_loader>=0.4",
