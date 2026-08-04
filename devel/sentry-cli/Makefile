@@ -1,9 +1,8 @@
 PORTNAME=	sentry-cli
-DISTVERSION=	3.6.0
-PORTREVISION=	1
+DISTVERSION=	3.6.1
 CATEGORIES=	devel
 
-MAINTAINER=	lcook@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Command line utility to work with Sentry
 WWW=		https://docs.sentry.io/cli/ \
 		https://github.com/getsentry/sentry-cli
