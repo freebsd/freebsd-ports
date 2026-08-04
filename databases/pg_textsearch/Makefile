@@ -9,6 +9,9 @@ WWW=		https://github.com/timescale/pg_textsearch
 
 LICENSE=	PostgreSQL
 
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	metapage layout assumes 8-byte alignment of uint64 (offsetof asserts fail)
+
 USES=		gmake pgsql:17-18
 
 WANT_PGSQL=	server
