@@ -1,5 +1,5 @@
 PORTNAME=	qwen-code
-DISTVERSION=	0.19.6
+DISTVERSION=	0.21.5
 CATEGORIES=	misc
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -18,6 +18,8 @@ USES=		nodejs:run
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+PLIST_FILES=	bin/qwen
 
 PACKAGE_NAME=	@qwen-code/qwen-code
 
@@ -52,5 +54,11 @@ do-install:
 	@${ECHO_CMD} '#!/bin/sh' > ${STAGEDIR}${PREFIX}/bin/qwen
 	@${ECHO_CMD} 'exec ${PREFIX}/lib/node_modules/${PACKAGE_NAME}/cli-entry.js "$$@"' >> ${STAGEDIR}${PREFIX}/bin/qwen
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/qwen
+
+# The bundled node_modules tree contains hundreds of hash-named files that
+# churn every release; generate the plist for it instead of hand-listing.
+post-install:
+	@cd ${STAGEDIR}${PREFIX} && \
+		${FIND} lib/node_modules \( -type f -o -type l \) | ${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.mk>
