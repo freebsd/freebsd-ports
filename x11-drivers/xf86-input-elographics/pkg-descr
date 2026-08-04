@@ -1,1 +1,3 @@
-This package contains the X.Org xf86-input-elographics driver.
+Elographics is a Xorg input driver for Elographics touchscreen devices.
+The elographics driver functions as a pointer input device, and may be
+used as the X server's core pointer.
