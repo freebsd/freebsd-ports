@@ -113,7 +113,7 @@ ghc910_USE_CABAL=	Cabal-3.14.2.0_2 \
 			hls-test-utils-2.14.0.0 \
 			hsc2hs-0.68.10_5 \
 			hw-fingertree-0.1.1.0 \
-			hw-prim-0.6.3.2_3 \
+			hw-prim-0.6.3.2_4 \
 			implicit-hie-0.1.4.0 \
 			indexed-profunctors-0.1.1.1 \
 			indexed-traversable-0.1.5 \
