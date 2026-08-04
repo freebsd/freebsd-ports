@@ -1,0 +1,33 @@
+-- Fix PEP 621 license declaration and remove setuptools-git-versioning.
+-- The port distfile is not a git checkout, so dynamic git-based versioning fails.
+-- Use a static version matching DISTVERSION instead.
+--- pyproject.toml.orig	2026-08-04 00:44:13 UTC
++++ pyproject.toml
+@@ -1,14 +1,13 @@
+ [build-system]
+-requires = ["setuptools>=61", "wheel", "Cython>=0.29", "numpy", "mpi4py", "pkgconfig", "setuptools-git-versioning"]
++requires = ["setuptools>=61", "wheel", "Cython>=0.29", "numpy", "mpi4py", "pkgconfig"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "pyprecice"
+-dynamic = [ "version" ]
++version = "3.4.0"
+ readme = "README.md"
+ description="Python language bindings for the preCICE coupling library"
+-license = "LGPL-3.0"
+-license-files = ["LICENSE.txt"]
++license = {text = "LGPL-3.0"}
+ 
+ requires-python = ">= 3.10"
+ dependencies = [
+@@ -27,9 +26,6 @@ sponsor = "https://precice.org/community-support-preci
+ issues = "https://github.com/precice/python-bindings/issues"
+ repository = "https://github.com/precice/python-bindings.git"
+ sponsor = "https://precice.org/community-support-precice.html"
+-
+-[tool.setuptools-git-versioning]
+-enabled = true
+ 
+ [tool.setuptools]
+ packages = ["precice"]
