@@ -1286,7 +1286,6 @@
     SUBDIR += vulkan-tools
     SUBDIR += vulkan-utility-libraries
     SUBDIR += vulkan-validation-layers
-    SUBDIR += vv
     SUBDIR += waffle
     SUBDIR += waifu2x-converter-cpp
     SUBDIR += waifu2x-ncnn-vulkan
