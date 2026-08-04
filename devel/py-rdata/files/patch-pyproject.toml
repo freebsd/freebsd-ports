@@ -1,0 +1,16 @@
+-- Make pyproject.toml valid for the setuptools version in the FreeBSD
+-- ports tree.  Expand the short-string license form to PEP-621 {text = "..."}
+-- and remove the license-files key that older setuptools does not accept.
+
+--- pyproject.toml.orig	2026-08-03 15:45:26 UTC
++++ pyproject.toml
+@@ -3,8 +3,7 @@ requires-python = ">=3.11"
+ description = "Read R datasets from Python."
+ readme = "README.rst"
+ requires-python = ">=3.11"
+-license = "MIT"
+-license-files = [ "LICENSE" ]
++license = {text = "MIT"}
+ keywords = [
+ 	"rdata",
+ 	"r",

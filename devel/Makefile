@@ -6093,6 +6093,7 @@
     SUBDIR += py-ratelimiter
     SUBDIR += py-raven
     SUBDIR += py-rchitect
+    SUBDIR += py-rdata
     SUBDIR += py-re-assert
     SUBDIR += py-readerwriterlock
     SUBDIR += py-readme-renderer
