@@ -1,3 +1,9 @@
-TIMESTAMP = 1718440069
-SHA256 (stp-stp-2.3.4-2.3.4_cadical_GH0.tar.gz) = 9cf16be7613554c96dec74123dcfdb6905636c10b4b7cddaf8b25474bfc9e966
-SIZE (stp-stp-2.3.4-2.3.4_cadical_GH0.tar.gz) = 3543795
+TIMESTAMP = 1785840204
+SHA256 (stp-stp-2.4.1_GH0.tar.gz) = 6f8bca3612e3d61868450dbf7771897b2a909f446e8de460bdf31f13a6cd0318
+SIZE (stp-stp-2.4.1_GH0.tar.gz) = 3243916
+SHA256 (berkeley-abc-abc-95393064368b7c05da4d6f0264fc3419c175c7cb_GH0.tar.gz) = b23f9384edb297a27cb0420d9f99ca4cf4e2a2a301ac10b41418f770a839cb9e
+SIZE (berkeley-abc-abc-95393064368b7c05da4d6f0264fc3419c175c7cb_GH0.tar.gz) = 6266682
+SHA256 (google-googletest-v1.17.0_GH0.tar.gz) = 65fab701d9829d38cb77c14acdc431d2108bfdbf8979e40eb8ae567edf10b27c
+SIZE (google-googletest-v1.17.0_GH0.tar.gz) = 885595
+SHA256 (stp-OutputCheck-e0133ed42b091a7ddea6b901055e142447819a9e_GH0.tar.gz) = 5a65302bc13c46a204c353f25ce76ce4d29dafab660126be7bd2613f64290da7
+SIZE (stp-OutputCheck-e0133ed42b091a7ddea6b901055e142447819a9e_GH0.tar.gz) = 16516
