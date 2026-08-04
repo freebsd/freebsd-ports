@@ -1,5 +1,6 @@
 PORTNAME=	deal.II
 DISTVERSION=	9.7.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/dealii/dealii/releases/download/v${DISTVERSION}/
 DISTNAME=	dealii-${DISTVERSION}
@@ -28,6 +29,8 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libtbb.so:devel/onetbb \
 		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R} \
 		libkokkoscore.so:devel/kokkos # TMP commented out for bundled kokkos, tests fail for non-bundled kokkos, see https://github.com/dealii/dealii/issues/15692
+RUN_DEPENDS=	cgal>0:math/cgal \
+		taskflow>0:devel/taskflow
 
 USES=		blaslapack:openblas cmake:testing compiler:c++23-lang localbase:ldflags xorg
 
