@@ -1,0 +1,13 @@
+-- Lower the setuptools build requirement to match the version available in
+-- the FreeBSD ports tree.  Upstream asks for setuptools>=64, but
+-- devel/py-setuptools currently provides 63.1.0.
+
+--- pyproject.toml.orig	2026-08-03 15:43:55 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=64", "setuptools_scm[toml]>=6.2"]
++requires = ["setuptools>=63.1.0", "setuptools_scm[toml]>=6.2"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]

@@ -1,0 +1,4 @@
+Finite difference derivatives in any number of dimensions.
+
+It supports arbitrary stencil operators and automatic differentiation
+helpers for numpy arrays.
