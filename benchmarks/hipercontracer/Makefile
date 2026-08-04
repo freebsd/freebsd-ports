@@ -1,6 +1,5 @@
 PORTNAME=	hipercontracer
-DISTVERSION=	2.2.6
-PORTREVISION=	1
+DISTVERSION=	2.2.8
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.nntb.no/~dreibh/hipercontracer/download/
 
@@ -19,8 +18,7 @@ USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/results-examples/r-install-dependencies \
 		src/results-examples/r-ping-example \
-		src/results-examples/r-traceroute-example \
-		src/TestDB/generate-test-certificates
+		src/results-examples/r-traceroute-example
 
 # Work-around for build issue on ARM (https://bugs.freebsd.org/285706):
 MAKE_ENV=	OMP_NUM_THREADS=1
