@@ -1,5 +1,5 @@
 PORTNAME=	erlang
-PORTVERSION=	28.5.0.4
+PORTVERSION=	28.5.0.5
 CATEGORIES=	lang parallel
 MASTER_SITES=	https://github.com/erlang/otp/releases/download/OTP-${PORTVERSION}/
 PKGNAMESUFFIX=	-man
