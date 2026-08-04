@@ -1,3 +1,5 @@
-TIMESTAMP = 1739083532
-SHA256 (simplejpeg-1.8.0.tar.gz) = 43f78b0e7304a24751e14c429a8179a06623167e161e34ed7456dca9b36832cd
-SIZE (simplejpeg-1.8.0.tar.gz) = 5482647
+TIMESTAMP = 1785775991
+SHA256 (simplejpeg-1.9.0.tar.gz) = 5ac7d9489eeb812c2e7ea5c283994a29d9fefdfe5ed7b86c09d485e0dd366689
+SIZE (simplejpeg-1.9.0.tar.gz) = 3965764
+SHA256 (libjpeg-turbo-3.1.2.tar.gz) = 560f6338b547544c4f9721b18d8b87685d433ec78b3c644c70d77adad22c55e6
+SIZE (libjpeg-turbo-3.1.2.tar.gz) = 2512033

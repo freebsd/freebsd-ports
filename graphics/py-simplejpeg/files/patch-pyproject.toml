@@ -1,17 +1,25 @@
---- pyproject.toml.orig	2025-02-08 13:37:27 UTC
+-- Lower the build-system version requirements and fix the PEP 621 license
+-- field so that simplejpeg builds with the versions available in FreeBSD Ports.
+--- pyproject.toml.orig	2025-10-10 10:46:58 UTC
 +++ pyproject.toml
-@@ -29,11 +29,10 @@ requires = [
+@@ -7,7 +7,7 @@ requires-python = ">=3.9"
+     "Intended Audience :: Science/Research",
+ ]
+ requires-python = ">=3.9"
+-license = "MIT"
++license = {text = "MIT"}
+ authors = [{ name = "Joachim Folz", email = "joachim.folz@dfki.de" }]
+ keywords = [
+     "the",
+@@ -28,9 +28,9 @@ requires = [
  
  [build-system]
  requires = [
--    "setuptools>=74.1.1",
-+    "setuptools",
+-    "setuptools>=77.0.0",
++    "setuptools>=63.1.0",
      "wheel",
--    "cmake>=3.6.3",
--    "cython~=3.0.0",
--    "numpy>=2.0.0",
+-    "cython~=3.1.0",
 +    "cython>=3.1.0",
-+    "numpy",
+     "numpy>=2.0.0",
  ]
- build-backend = "setuptools.build_meta"
- 
+ backend-path = ["custom_build_backend"]
