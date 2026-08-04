@@ -1,0 +1,66 @@
+--- alberta/src/alberta_1d/Makefile.am.orig	2018-11-12 11:36:13 UTC
++++ alberta/src/alberta_1d/Makefile.am
+@@ -49,7 +49,7 @@ nodist_libalberta_1d_la_SOURCES = $(sources)
+ sources += $(lowdim_sources)
+ 
+ nodist_libalberta_1d_la_SOURCES = $(sources)
+-libalberta_1d_la_LIBADD =
++libalberta_1d_la_LIBADD = -lltdl
+ libalberta_1d_la_CPPFLAGS = \
+  $(CPPFLAGS) -DDIM_OF_WORLD=1 \
+  -DALBERTA_DEBUG=0 \
+--- alberta/src/alberta_1d_debug/Makefile.am.orig	2018-11-12 11:36:13 UTC
++++ alberta/src/alberta_1d_debug/Makefile.am
+@@ -49,7 +49,7 @@ nodist_libalberta_1d_debug_la_SOURCES = $(sources)
+ sources += $(lowdim_sources)
+ 
+ nodist_libalberta_1d_debug_la_SOURCES = $(sources)
+-libalberta_1d_debug_la_LIBADD =
++libalberta_1d_debug_la_LIBADD = -lltdl
+ libalberta_1d_debug_la_CPPFLAGS = \
+  $(CPPFLAGS) -DDIM_OF_WORLD=1 \
+  -DALBERTA_DEBUG=1 \
+--- alberta/src/alberta_2d/Makefile.am.orig	2018-11-12 11:36:13 UTC
++++ alberta/src/alberta_2d/Makefile.am
+@@ -49,7 +49,7 @@ nodist_libalberta_2d_la_SOURCES = $(sources)
+ sources += $(lowdim_sources)
+ 
+ nodist_libalberta_2d_la_SOURCES = $(sources)
+-libalberta_2d_la_LIBADD =
++libalberta_2d_la_LIBADD = -lltdl
+ libalberta_2d_la_CPPFLAGS = \
+  $(CPPFLAGS) -DDIM_OF_WORLD=2 \
+  -DALBERTA_DEBUG=0 \
+--- alberta/src/alberta_2d_debug/Makefile.am.orig	2018-11-12 11:36:13 UTC
++++ alberta/src/alberta_2d_debug/Makefile.am
+@@ -49,7 +49,7 @@ nodist_libalberta_2d_debug_la_SOURCES = $(sources)
+ sources += $(lowdim_sources)
+ 
+ nodist_libalberta_2d_debug_la_SOURCES = $(sources)
+-libalberta_2d_debug_la_LIBADD =
++libalberta_2d_debug_la_LIBADD = -lltdl
+ libalberta_2d_debug_la_CPPFLAGS = \
+  $(CPPFLAGS) -DDIM_OF_WORLD=2 \
+  -DALBERTA_DEBUG=1 \
+--- alberta/src/alberta_3d/Makefile.am.orig	2018-11-12 11:36:13 UTC
++++ alberta/src/alberta_3d/Makefile.am
+@@ -49,7 +49,7 @@ nodist_libalberta_3d_la_SOURCES = $(sources)
+ sources += $(lowdim_sources)
+ 
+ nodist_libalberta_3d_la_SOURCES = $(sources)
+-libalberta_3d_la_LIBADD =
++libalberta_3d_la_LIBADD = -lltdl
+ libalberta_3d_la_CPPFLAGS = \
+  $(CPPFLAGS) -DDIM_OF_WORLD=3 \
+  -DALBERTA_DEBUG=0 \
+--- alberta/src/alberta_3d_debug/Makefile.am.orig	2018-11-12 11:36:13 UTC
++++ alberta/src/alberta_3d_debug/Makefile.am
+@@ -49,7 +49,7 @@ nodist_libalberta_3d_debug_la_SOURCES = $(sources)
+ sources += $(lowdim_sources)
+ 
+ nodist_libalberta_3d_debug_la_SOURCES = $(sources)
+-libalberta_3d_debug_la_LIBADD =
++libalberta_3d_debug_la_LIBADD = -lltdl
+ libalberta_3d_debug_la_CPPFLAGS = \
+  $(CPPFLAGS) -DDIM_OF_WORLD=3 \
+  -DALBERTA_DEBUG=1 \
