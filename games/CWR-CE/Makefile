@@ -11,6 +11,9 @@ MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Arma: Cold War Assault - Remastered Community Edition
 WWW=		https://github.com/ofpisnotdead-com/CWR-CE
 
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
+ONLY_FOR_ARCHS_REASON=	requires SSE intrinsics, light porting work for other architectures
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
@@ -51,7 +54,9 @@ SUB_FILES=	pkg-message
 CMAKE_ARGS=	-DVCPKG_MANIFEST_MODE=OFF \
 		-DCMAKE_DISABLE_FIND_PACKAGE_VCPKG=ON
 
-CMAKE_OFF=	POSEIDON_DISABLE_PCH POSEIDON_BUILD_FUZZERS
+CMAKE_OFF=	POSEIDON_BUILD_FUZZERS
+# https://github.com/llvm/llvm-project/issues/69524
+CMAKE_ON=	POSEIDON_DISABLE_PCH
 CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 
 PLIST_FILES=	bin/PoseidonGame \
@@ -79,7 +84,7 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == aarch64
+.if ${ARCH} == aarch64 || ${ARCH:Marmv?}
 BUILD_DEPENDS+=	${LOCALBASE}/include/sse2neon.h:devel/sse2neon
 .endif
 
