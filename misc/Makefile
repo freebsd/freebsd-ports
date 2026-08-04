@@ -302,6 +302,7 @@
     SUBDIR += mate-user-guide
     SUBDIR += mbuffer
     SUBDIR += mc
+    SUBDIR += mc6
     SUBDIR += mcp-inspector
     SUBDIR += mcp-probe
     SUBDIR += mdp

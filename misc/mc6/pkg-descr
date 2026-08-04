@@ -1,0 +1,3 @@
+Midnight Commander fork which adds panel plugins so its contents can be
+supplied by a dynamically loaded plugin, e.g. git, docker, MongoDB, S3,
+FTP/FTPS, SFTP, Samba, shell connections, archive manager, etc.
