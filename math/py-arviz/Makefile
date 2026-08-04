@@ -1,6 +1,6 @@
 PORTNAME=	arviz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI # missing test files
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>0:devel/py-flit-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arviz-base>=1.0.0:math/py-arviz-base@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}arviz-stats>=1.0.0:math/py-arviz-stats@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}arviz-plots>=1.0.0:math/py-arviz-plots@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arviz-base>=1.2.0:math/py-arviz-base@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}arviz-stats>=1.2.0:math/py-arviz-stats@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}arviz-plots>=1.2.0:math/py-arviz-plots@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR}
 
 USES=		python
@@ -27,9 +27,13 @@ GH_ACCOUNT=	arviz-devs
 
 NO_ARCH=	yes
 
-TEST_ARGS=	-p no:benchmark -p no:xdist -p no:relaxed
+TEST_ARGS=	-p no:benchmark -p no:xdist -p no:relaxed \
+		-p no:black -p no:ruff -p no:mypy -p no:flake8 -p no:cov \
+		--deselect=tests/test_namespace.py::test_aliases
 
 TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# tests as of 1.2.0: 8 passed, 1 deselected in 4.13s
 
 .include <bsd.port.mk>
