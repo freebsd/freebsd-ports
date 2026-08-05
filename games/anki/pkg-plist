@@ -87,6 +87,7 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/_aqt/data/web/imgs/text_super.png
 %%DATADIR%%/_aqt/data/web/imgs/text_under.png
 %%DATADIR%%/_aqt/data/web/js/deckbrowser.js
+%%DATADIR%%/_aqt/data/web/js/editable.js
 %%DATADIR%%/_aqt/data/web/js/editor.js
 %%DATADIR%%/_aqt/data/web/js/mathjax.js
 %%DATADIR%%/_aqt/data/web/js/reviewer-bottom.js
@@ -361,6 +362,7 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/_macos_helper.py
 %%DATADIR%%/aqt/about.py
 %%DATADIR%%/aqt/addcards.py
+%%DATADIR%%/aqt/addcards_legacy.py
 %%DATADIR%%/aqt/addons.py
 %%DATADIR%%/aqt/ankihub.py
 %%DATADIR%%/aqt/browser/__init__.py
@@ -392,7 +394,9 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/deckdescription.py
 %%DATADIR%%/aqt/deckoptions.py
 %%DATADIR%%/aqt/editcurrent.py
+%%DATADIR%%/aqt/editcurrent_legacy.py
 %%DATADIR%%/aqt/editor.py
+%%DATADIR%%/aqt/editor_legacy.py
 %%DATADIR%%/aqt/emptycards.py
 %%DATADIR%%/aqt/errors.py
 %%DATADIR%%/aqt/exporting.py

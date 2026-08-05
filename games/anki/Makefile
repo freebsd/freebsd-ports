@@ -1,10 +1,7 @@
 PORTNAME=	anki
-DISTVERSION=	26.05
-PORTREVISION=	1
+DISTVERSION=	26.08
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
-MASTER_SITES=	LOCAL/kai/:yarncache
-DISTFILES=	anki-yarn-cache-${DISTVERSION}${EXTRACT_SUFX}:yarncache
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Flashcard trainer with spaced repetition
@@ -19,7 +16,6 @@ NOT_FOR_ARCHS_REASON=	the provided build system written in Rust (= runner) accep
 BUILD_DEPENDS=	protoc:devel/protobuf \
 		rsync:net/rsync \
 		uv:devel/uv \
-		yarn:www/yarn \
 		${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
@@ -43,13 +39,13 @@ RUN_DEPENDS=	lame:audio/lame \
 		${PYTHON_PKGNAMEPREFIX}waitress>=2.0.0:www/py-waitress@${PY_FLAVOR}
 
 # USES=ssl is required for the compilation of the Rust code
-USES=		cargo desktop-file-utils ninja nodejs:build pyqt:6 python \
-		shebangfix ssl
+USES=		cargo desktop-file-utils ninja nodejs:build npm:yarn1,build pyqt:6 \
+	        python shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ankitects
 # Translation files
-GH_TUPLE=	ankitects:anki-core-i18n:af7c60d:ftlrslib \
-		ankitects:anki-desktop-ftl:3a35d0a:ftlextra
+GH_TUPLE=	ankitects:anki-core-i18n:1eb7a27:ftlrslib \
+		ankitects:anki-desktop-ftl:b08fcc5:ftlextra
 
 USE_PYQT=	pyqt6 sip:build webengine
 
@@ -93,13 +89,13 @@ MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH=	e64c6b1a
+_MY_BUILDHASH=	666c2c64
 # Remove ${CARGO_BUILD_TARGET} from ${CARGO_ENV} to avoid problems with
 # hardcoded paths as the "runner" build system expects its components
 # in ${WRKSRC}/out/rust/debug
 _MY_CARGO_ENV=	${CARGO_ENV:C/CARGO_BUILD_TARGET=.+//}
 # Path of the cache that is used by www/yarn
-_MY_YARNCACHE=	${WRKDIR}/.yarn
+_MY_YARNCACHE=	${WRKDIR}/.cache/yarn
 
 post-extract:
 # Some parts of the runner build system expects to be in a git repository
@@ -117,6 +113,8 @@ pre-configure:
 	# Create paths for the Python pseudo venv and link some binaries to it.
 	${MKDIR} ${WRKSRC}/out/pyenv/bin
 	${LN} -s ${PYTHON_CMD} ${WRKSRC}/out/pyenv/bin/python
+	# Also move NodeJS modules to the pseudo venv to save some build time
+	${MV} -i ${WRKSRC}/node_modules ${WRKSRC}/out/node_modules
 
 # Overview of the build process
 #
@@ -157,7 +155,7 @@ do-install:
 		&& ${COPYTREE_SHARE} _aqt ${STAGEDIR}${DATADIR} "! -name .gitignore" \
 		&& ${COPYTREE_SHARE} anki ${STAGEDIR}${DATADIR} "! -name .gitignore" \
 		&& ${COPYTREE_SHARE} aqt ${STAGEDIR}${DATADIR} "! -name .gitignore"
-	cd ${WRKSRC}/qt/launcher/lin \
+	cd ${WRKSRC}/qt/installer/linux-template/\{\{\ cookiecutter.format\ \}\}/\{\{\ cookiecutter.app_name\ \}\} \
 		&& ${INSTALL_DATA} anki.xpm anki.png ${STAGEDIR}${PREFIX}/share/pixmaps \
 		&& ${INSTALL_DATA} anki.desktop ${STAGEDIR}${PREFIX}/share/applications \
 		&& ${INSTALL_MAN} anki.1 ${STAGEDIR}${PREFIX}/share/man/man1
@@ -171,14 +169,5 @@ post-install:
 	@${FIND} ${STAGEDIR}${DATADIR}/_aqt/data/web/sveltekit/_app/immutable/ -type f -name "*.css" -o -name "*.mjs" | \
 		${SORT} | ${SED} -e 's|${STAGEDIR}||' \
 		>> ${TMPPLIST}
-
-# Helper target to make the generation of the yarn cache easier
-make-yarn-cache: patch
-	@${RM} -r ${_MY_YARNCACHE}
-	@cd ${WRKSRC} \
-		&& ${LOCALBASE}/bin/yarn --cache-folder ${_MY_YARNCACHE} install --ignore-scripts
-	@cd ${WRKDIR} \
-		&& ${TAR} -czf ${PORTNAME}-yarn-cache-${DISTVERSION}${EXTRACT_SUFX} .yarn \
-		&& ${ECHO_CMD} "Please upload the file ${WRKDIR}/${PORTNAME}-yarn-cache-${DISTVERSION}${EXTRACT_SUFX}"
 
 .include <bsd.port.mk>
