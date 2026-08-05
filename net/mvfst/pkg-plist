@@ -76,6 +76,9 @@ include/quic/common/events/FollyQuicEventBase.h
 include/quic/common/events/HighResQuicTimer.h
 include/quic/common/events/LibevQuicEventBase.h
 include/quic/common/events/QuicEventBase.h
+include/quic/common/events/QuicExecutor.h
+include/quic/common/events/QuicFollyExecutorImpl.h
+include/quic/common/events/QuicLibevExecutorImpl.h
 include/quic/common/events/QuicTimer.h
 include/quic/common/testutil/MockAsyncUDPSocket.h
 include/quic/common/third-party/enum.h
@@ -210,6 +213,7 @@ include/quic/state/QuicTransportStatsCallback.h
 include/quic/state/SimpleFrameFunctions.h
 include/quic/state/StateData.h
 include/quic/state/StreamData.h
+include/quic/state/TimestampFrameFunctions.h
 include/quic/state/TransportSettings.h
 include/quic/state/TransportSettingsFunctions.h
 include/quic/state/stream/StreamReceiveHandlers.h
