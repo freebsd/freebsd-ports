@@ -1,9 +1,12 @@
 PORTNAME=	libxfce4windowing
 DISTVERSION=	4.20.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
+
+PATCH_SITES=	https://gitlab.xfce.org/xfce/${PORTNAME}/-/commit/
+PATCHFILES+=	83ffd4ac83920.patch:-p1 # https://gitlab.xfce.org/xfce/xfce4-panel/-/work_items/987
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Windowing concept abstraction library for X11 and Wayland
@@ -13,8 +16,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info
 
-USES=		gettext-tools gnome meson pkgconfig python:build shebangfix \
-		tar:bz2 xfce xorg
+USES=		gettext-tools gnome localbase:ldflags meson pkgconfig \
+		python:build shebangfix tar:bz2 xfce xorg
 USE_GNOME=	glib20 gtk30 libwnck3
 USE_LDCONFIG=	yes
 USE_XFCE=	xdt
