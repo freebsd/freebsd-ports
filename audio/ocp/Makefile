@@ -1,5 +1,5 @@
 PORTNAME=	ocp
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.0
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://stian.cubic.org/ocp/
@@ -44,8 +44,8 @@ CONFLICTS_INSTALL=	alliance # man/man1/ocp.1.gz
 
 INFO=		ocp
 
-OPTIONS_DEFINE=		ADPLUG ALSA DOCS FLAC GME MIDI OSS SDL X11
-OPTIONS_DEFAULT=	ADPLUG ALSA FLAC GME MIDI OSS SDL X11
+OPTIONS_DEFINE=		ADPLUG ALSA DOCS FLAC GME MIDI OSS SDL SPEEX X11
+OPTIONS_DEFAULT=	ADPLUG ALSA FLAC GME MIDI OSS SDL SPEEX X11
 OPTIONS_SUB=		yes
 
 ADPLUG_DESC=	adplug support
@@ -79,6 +79,9 @@ SDL_CONFIGURE_WITH=	sdl2 \
 			unifontdir=${LOCALBASE}/share/fonts/gnu-unifont-otf
 SDL_PLIST_SUB=		DESKTOP=''
 SDL_PLIST_SUB_OFF=	DESKTOP='@comment '
+
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
+SPEEX_CONFIGURE_WITH=	speex
 
 X11_BUILD_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont-otf/unifont.otf:x11-fonts/gnu-unifont-otf
 X11_LIB_DEPENDS=	libfreetype.so:print/freetype2
