@@ -5549,3 +5549,4 @@ x11-fonts/nerd-fonts-d2coding|x11-fonts/nerd-fonts-d2koding|2026-08-03|Renamed b
 math/topaz||2026-08-04|Has expired: Last release was in 2011 and WWW is unavailable
 graphics/vv||2026-08-04|Has expired: depends on expired science/InsightToolkit501
 science/InsightToolkit501|science/InsightToolkit|2026-08-04|Has expired: Fails to build, error: no template named 'binary_function' in namespace 'std'
+science/py-pubchempy|science/py-PubChemPy|2026-08-05|Remove duplicate port

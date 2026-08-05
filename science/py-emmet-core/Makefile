@@ -1,5 +1,6 @@
 PORTNAME=	emmet-core
 DISTVERSION=	0.87.1
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pubchempy>0:science/py-pubchempy@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PubChemPy>0:science/py-PubChemPy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blake3>0:security/py-blake3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}inflect>=7.5.0:devel/py-inflect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}monty>=2024.2.2:devel/py-monty@${PY_FLAVOR} \
