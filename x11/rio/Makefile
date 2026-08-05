@@ -1,6 +1,6 @@
 PORTNAME=	rio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.3
+DISTVERSION=	0.5.10
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-terminal-emulator
 
@@ -29,7 +29,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		adler2-2.0.1 \
 		adler32-1.2.0 \
 		ahash-0.8.12 \
-		aho-corasick-1.1.4 \
+		aho-corasick-1.1.5 \
 		allocator-api2-0.2.21 \
 		alsa-0.9.1 \
 		alsa-sys-0.3.1 \
@@ -61,7 +61,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.1 \
 		baremetal-0.33.0 \
-		base64-0.22.1 \
+		base64-0.23.0 \
 		bincode-2.0.1 \
 		bincode_derive-2.0.1 \
 		bindgen-0.70.1 \
@@ -101,9 +101,9 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clang-sys-1.8.1 \
-		clap-4.6.4 \
-		clap_builder-4.6.2 \
+		clang-sys-1.9.1 \
+		clap-4.6.5 \
+		clap_builder-4.6.5 \
 		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		clipboard-win-5.4.1 \
@@ -145,7 +145,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		cursor-icon-1.2.0 \
 		dashmap-6.2.1 \
 		dasp_sample-0.11.0 \
-		data-encoding-2.11.0 \
+		data-encoding-2.11.1 \
 		deflate-1.0.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
@@ -155,7 +155,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		dirs-sys-next-0.1.2 \
 		dispatch-0.2.0 \
 		dispatch2-0.3.1 \
-		displaydoc-0.2.6 \
+		displaydoc-0.2.7 \
 		dlib-0.5.3 \
 		document-features-0.2.12 \
 		downcast-rs-1.2.1 \
@@ -281,7 +281,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		librashader-reflect-0.12.0 \
 		librashader-runtime-0.12.0 \
 		librashader-runtime-wgpu-0.12.0 \
-		libredox-0.1.18 \
+		libredox-0.1.19 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.9.4 \
@@ -418,7 +418,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		read-fonts-0.41.0 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.18 \
-		redox_syscall-0.9.0 \
+		redox_syscall-0.9.1 \
 		redox_users-0.4.6 \
 		redox_users-0.5.2 \
 		regex-1.13.1 \
@@ -564,7 +564,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		wgpu-hal-30.0.0 \
 		wgpu-naga-bridge-30.0.0 \
 		wgpu-types-30.0.0 \
-		wide-1.5.0 \
+		wide-1.6.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
@@ -627,7 +627,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		x11-dl-2.21.0 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
-		xcursor-0.3.10 \
+		xcursor-0.3.11 \
 		xdg-home-1.3.0 \
 		xkbcommon-dl-0.4.2 \
 		xkeysym-0.2.1 \
