@@ -1,3 +1,49 @@
+  <vuln vid="d12eeeb9-a7f0-49fe-83aa-699fe44378f6">
+    <topic>netcode -- AEAD nonce reuse when a server is restarted in-process</topic>
+    <affects>
+      <package>
+	<name>netcode</name>
+	<range><lt>1.4.0</lt></range>
+      </package>
+      <package>
+	<name>yojimbo</name>
+	<range><lt>1.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Glenn Fiedler reports:</p>
+	<blockquote cite="https://github.com/mas-bandwidth/netcode/security/advisories/GHSA-3x95-24j9-7448">
+	  <p>Global packets (connection challenge, connection denied) are
+	    encrypted with the same per-connect-token server-to-client key as
+	    per-client packets. The server's global packet sequence was seeded
+	    only when the server was created, not when it was started. A server
+	    that was stopped and started again in the same process could
+	    therefore emit global packets at sequence numbers already used
+	    under the same key.</p>
+	  <p>netcode uses the packet sequence as the AEAD nonce. Repeating a
+	    (key, nonce) pair under ChaCha20-Poly1305 voids both
+	    confidentiality and integrity: it leaks the XOR of the two
+	    plaintexts, and it can permit recovery of the Poly1305 one-time
+	    key, enabling forgery of packets under that key.</p>
+	</blockquote>
+	<p>Upstream yojimbo releases before 1.7.0 vendor the affected netcode
+	  source; yojimbo 1.7.0 is the first release to vendor the fixed
+	  netcode 1.4.0. The FreeBSD package builds yojimbo against the system
+	  netcode library, so it is affected when running against a netcode
+	  package earlier than 1.4.0.</p>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/mas-bandwidth/netcode/security/advisories/GHSA-3x95-24j9-7448</url>
+      <url>https://github.com/mas-bandwidth/yojimbo/security/advisories/GHSA-hqp3-fj6v-hrpc</url>
+      <url>https://github.com/mas-bandwidth/netcode/pull/159</url>
+    </references>
+    <dates>
+      <discovery>2026-07-12</discovery>
+      <entry>2026-08-04</entry>
+    </dates>
+  </vuln>
   <vuln vid="347fe124-8f53-11f1-9f4f-3c7c3fba4204">
     <topic>Angie -- multiple vulnerabilities</topic>
     <affects>
