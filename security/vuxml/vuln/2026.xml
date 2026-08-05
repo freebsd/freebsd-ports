@@ -1,3 +1,49 @@
+  <vuln vid="9096f6e4-3a2f-4d16-89fb-f909aa0a7760">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>jenkins</name>
+	<range><lt>2.576</lt></range>
+    </package>
+    <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.568.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory 2026-08-05:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2026-08-05/">
+	  <ul>
+	    <li>SECURITY-3911 / CVE-2026-70426: Agent-to-controller
+	    deserialization filter bypass (Critical)</li>
+	    <li>SECURITY-3930 / CVE-2026-70427: Link following vulnerability
+	    allows arbitrary file creation (High)</li>
+	    <li>SECURITY-3927 / CVE-2026-70428: Path traversal vulnerability in
+	    file parameters (High)</li>
+	    <li>SECURITY-3924 / CVE-2026-70429: Improper handling of case
+	    sensitivity allows privilege escalation (High)</li>
+	    <li>SECURITY-3916 / CVE-2026-70430: Users with Overall/Manage
+	    permission can instantiate any types related to configuration
+	    (Low)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-70426</cvename>
+      <cvename>CVE-2026-70427</cvename>
+      <cvename>CVE-2026-70428</cvename>
+      <cvename>CVE-2026-70429</cvename>
+      <cvename>CVE-2026-70430</cvename>
+      <url>https://www.jenkins.io/security/advisory/2026-08-05/</url>
+    </references>
+    <dates>
+      <discovery>2026-08-05</discovery>
+      <entry>2026-08-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="10f5d195-90a5-11f1-bc30-3497f65b111b">
     <topic>MySQL 8.4 -- Multiple vulnerabilities</topic>
     <affects>
