@@ -1,5 +1,5 @@
 PORTNAME=	lyx
-PORTVERSION=	${MAJOR_VERSION}.5
+PORTVERSION=	${MAJOR_VERSION}.1
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libmythes-1.2.so:textproc/mythes
 
-MAJOR_VERSION=	2.4
+MAJOR_VERSION=	2.5
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake iconv \
 		pkgconfig perl5 python:build qt:5 shebangfix tar:xz xorg
