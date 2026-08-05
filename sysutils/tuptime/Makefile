@@ -1,6 +1,5 @@
 PORTNAME=	tuptime
-DISTVERSION=	5.2.3
-PORTREVISION=	1
+DISTVERSION=	5.2.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	jeremy@smart-serv.net
@@ -13,19 +12,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		python:run shebangfix
-SHEBANG_FILES=	${WRKSRC}/src/tuptime
 USE_GITHUB=	yes
 GH_ACCOUNT=	rfmoz
 USE_RC_SUBR=	${PORTNAME}
+SHEBANG_FILES=	${WRKSRC}/src/tuptime
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-USERS=         _tuptime
-GROUPS=        _tuptime
+USERS=		_tuptime
+GROUPS=		_tuptime
 
-PLIST_FILES=    bin/tuptime \
+PLIST_FILES=	bin/tuptime \
 		"@rmtry /var/lib/tuptime/tuptime.db" \
 		"@dir /var/lib" \
 		"@dir(${USERS},${GROUPS},755) /var/lib/tuptime" \
