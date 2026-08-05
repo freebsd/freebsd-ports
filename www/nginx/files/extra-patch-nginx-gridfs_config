@@ -5,8 +5,8 @@
  ngx_module_name=ngx_http_gridfs_module
 -ngx_module_incs="/usr/include/libmongoc-1.0 /usr/include/libbson-1.0"
 -ngx_module_libs="-lmongoc-1.0 -lbson-1.0"
-+ngx_module_incs="%%LOCALBASE%%/include/mongoc-%%MONGOC_VERSION%% %%LOCALBASE%%/include/bson-%%MONGOC_VERSION%%"
-+ngx_module_libs="-lmongoc2 -lbson2"
++ngx_module_incs=`pkg-config --cflags-only-I mongoc2 bson2 | sed -e 's/-I//g'`
++ngx_module_libs=`pkg-config --libs mongoc2 bson2`
  ngx_module_srcs="$ngx_addon_dir/ngx_http_gridfs_module.c"
  . auto/module
 -ngx_addon_name=$ngx_module_name
