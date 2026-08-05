@@ -1,5 +1,5 @@
 PORTNAME=	aq
-DISTVERSION=	0.5.2
+DISTVERSION=	0.6.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,13 +19,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rossmacarthur
 
 CARGO_CRATES=	anyhow-1.0.103 \
+		diff-0.1.13 \
 		equivalent-1.0.2 \
+		goldie-0.7.0 \
 		hashbrown-0.17.1 \
 		indexmap-2.14.0 \
 		itoa-1.0.18 \
 		libc-0.2.186 \
 		libyaml-rs-0.3.0 \
 		memchr-2.8.2 \
+		pretty_assertions-1.4.1 \
 		proc-macro2-1.0.106 \
 		quote-1.0.46 \
 		ryu-1.0.23 \
@@ -43,6 +46,7 @@ CARGO_CRATES=	anyhow-1.0.103 \
 		unicode-ident-1.0.24 \
 		winnow-1.0.3 \
 		yaml_serde-0.10.4 \
+		yansi-1.0.1 \
 		zmij-1.0.21
 
 PLIST_FILES=	bin/${PORTNAME}
