@@ -201,7 +201,7 @@ lib/cmake/cryptopp-modern/cryptopp-modern-shared-targets.cmake
 lib/cmake/cryptopp-modern/cryptopp-modernConfig.cmake
 lib/cmake/cryptopp-modern/cryptopp-modernConfigVersion.cmake
 lib/libcryptopp.so
-lib/libcryptopp.so.2026.8.0
+lib/libcryptopp.so.%%SOVERSION%%
 lib/libcryptopp.so.9
 libdata/pkgconfig/cryptopp-modern.pc
 libdata/pkgconfig/libcryptopp.pc
