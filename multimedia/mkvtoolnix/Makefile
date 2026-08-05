@@ -11,7 +11,7 @@ WWW=		https://www.bunkus.org/videotools/mkvtoolnix/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=	fails to build: IO::TimeoutError: Blocking operation timed out!
+#BROKEN_aarch64=	fails to build: IO::TimeoutError: Blocking operation timed out!
 
 BUILD_DEPENDS=	rake:devel/rubygem-rake \
 		docbook-xsl>=0:textproc/docbook-xsl \
@@ -39,6 +39,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
 		--with-docbook-xsl-root=${PREFIX}/share/xsl/docbook \
+		--disable-precompiled-headers \
 		${_CONFIGURE_ARGS_${FLAVOR}}
 MAKE_ENV=	V=1
 MAKE_CMD=	rake -v
