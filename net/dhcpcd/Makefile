@@ -1,5 +1,5 @@
 PORTNAME=	dhcpcd
-DISTVERSION=	10.3.2
+DISTVERSION=	10.5.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/NetworkConfiguration/${PORTNAME}/releases/download/v${DISTVERSION}/
 
