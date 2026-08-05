@@ -54,9 +54,9 @@ lib/libcupsimage.so.2
 libdata/pkgconfig/cups.pc
 %%AVAHI%%libexec/cups/backend/dnssd
 libexec/cups/backend/http
-%%GNUTLS%%libexec/cups/backend/https
+%%TLS%%libexec/cups/backend/https
 libexec/cups/backend/ipp
-%%GNUTLS%%libexec/cups/backend/ipps
+%%TLS%%libexec/cups/backend/ipps
 libexec/cups/backend/lpd
 libexec/cups/backend/snmp
 libexec/cups/backend/socket
