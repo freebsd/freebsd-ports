@@ -1,3 +1,34 @@
+  <vuln vid="575ddefc-9085-11f1-b295-98b78501ef2a">
+    <topic>PowerDNS Recursor -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2026-10.html">
+	  <ul>
+	    <li>CVE-2026-52688: RRSIGs with too few labels can lead to bypass of DNSSEC wildcard validation</li>
+	    <li>CVE-2026-52686: Wildcard CNAME proof validation bypass¶</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-52868</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-52688</url>
+      <cvename>CVE-2026-52686</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-52686</url>
+    </references>
+    <dates>
+      <discovery>2026-07-22</discovery>
+      <entry>2026-08-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="347fe124-8f53-11f1-9f4f-3c7c3fba4204">
     <topic>Angie -- multiple vulnerabilities</topic>
     <affects>
