@@ -225,6 +225,7 @@ lib/mysql/plugin/test_services_command_services.so
 lib/mysql/plugin/test_services_host_application_signal.so
 lib/mysql/plugin/test_services_plugin_registry.so
 lib/mysql/plugin/test_udf_services.so
+lib/mysql/plugin/thread_pool.so
 lib/mysql/plugin/udf_example.so
 lib/mysql/plugin/validate_password.so
 lib/mysql/private/libprotobuf-lite.so.24.4.0
