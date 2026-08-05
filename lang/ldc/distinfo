@@ -7,3 +7,5 @@ SHA256 (ldc2-1.42.0-freebsd-ppc64le.tar.xz) = 7f14ca7c6d7b717f905ad6ffdbe5446ced
 SIZE (ldc2-1.42.0-freebsd-ppc64le.tar.xz) = 16168864
 SHA256 (ldc2-1.42.0-freebsd-ppc64.tar.xz) = 3c635430a169d85e11c46eaed84d4fd3348ed096a89f221e8f188900a5708f8d
 SIZE (ldc2-1.42.0-freebsd-ppc64.tar.xz) = 14346472
+SHA256 (ldc2-1.42.0-freebsd-ppc64le-ld128.tar.xz) = 2e48907ac953620de7c378a82c92fecdb1fdd3dbe27e8bc1a2e88be84c81c3b5
+SIZE (ldc2-1.42.0-freebsd-ppc64le-ld128.tar.xz) = 16342464

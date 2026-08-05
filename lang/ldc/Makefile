@@ -39,7 +39,11 @@ MASTER_SITES+=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v
 BOOTSTRAP_ARCH=	ppc64
 MASTER_SITES+=	LOCAL/pkubaj:bootstrap
 .elif ${ARCH} == powerpc64le
+.  if ${OSVERSION} >= 1600019
+BOOTSTRAP_ARCH=	ppc64le-ld128
+.  else
 BOOTSTRAP_ARCH=	ppc64le
+.  endif
 MASTER_SITES+=	LOCAL/pkubaj:bootstrap
 .endif
 
