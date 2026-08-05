@@ -326,6 +326,7 @@ include/thrift/lib/cpp2/dynamic/detail/Datum.h
 include/thrift/lib/cpp2/dynamic/detail/DatumHash.h
 include/thrift/lib/cpp2/dynamic/detail/DigestHasher.h
 include/thrift/lib/cpp2/dynamic/detail/ListIteratorBase.h
+include/thrift/lib/cpp2/dynamic/detail/ServiceCatalogEnumConversion.h
 include/thrift/lib/cpp2/dynamic/detail/SmallBuffer.h
 include/thrift/lib/cpp2/dynamic/detail/Traits.h
 include/thrift/lib/cpp2/dynamic/detail/TypeSystem.h
@@ -344,6 +345,8 @@ include/thrift/lib/cpp2/fast_thrift/channel_pipeline/BufferAllocator.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/Channel.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/Common.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/Context.h
+include/thrift/lib/cpp2/fast_thrift/channel_pipeline/ContextHandle.h
+include/thrift/lib/cpp2/fast_thrift/channel_pipeline/CoroContextHandle.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/EndpointAdapter.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/Event.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/Handler.h
@@ -354,6 +357,13 @@ include/thrift/lib/cpp2/fast_thrift/channel_pipeline/PipelineImpl.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/TypeErasedBox.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/detail/ContextImpl.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/detail/HandlerNode.h
+include/thrift/lib/cpp2/fast_thrift/channel_pipeline/detail/TypedContext.h
+include/thrift/lib/cpp2/fast_thrift/channel_pipeline/rust/CallbackContext.h
+include/thrift/lib/cpp2/fast_thrift/channel_pipeline/rust/PipelineTestHelper.h
+include/thrift/lib/cpp2/fast_thrift/channel_pipeline/rust/RustBenchHarness.h
+include/thrift/lib/cpp2/fast_thrift/channel_pipeline/rust/RustHandler.h
+include/thrift/lib/cpp2/fast_thrift/channel_pipeline/rust/RustMessageAdapter.h
+include/thrift/lib/cpp2/fast_thrift/channel_pipeline/rust/RustTypeErasedBox.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/test/MockAdapters.h
 include/thrift/lib/cpp2/fast_thrift/channel_pipeline/test/MockHandler.h
 include/thrift/lib/cpp2/fast_thrift/common/CompactVariant.h
@@ -408,6 +418,7 @@ include/thrift/lib/cpp2/fast_thrift/frame/write/handler/FrameLengthEncoderHandle
 include/thrift/lib/cpp2/fast_thrift/frame/write/handler/IntervalBatchingFrameHandler.h
 include/thrift/lib/cpp2/fast_thrift/frame/write/handler/LoopBatchingFrameHandler.h
 include/thrift/lib/cpp2/fast_thrift/frame/write/handler/WriteCompletionTracker.h
+include/thrift/lib/cpp2/fast_thrift/frame/write/util/BatchFlushScheduler.h
 include/thrift/lib/cpp2/fast_thrift/interface/debug/DebugServerInterface.h
 include/thrift/lib/cpp2/fast_thrift/interface/monitor/MonitoringServerInterface.h
 include/thrift/lib/cpp2/fast_thrift/interface/status/StatusServerInterface.h
@@ -424,6 +435,7 @@ include/thrift/lib/cpp2/fast_thrift/rocket/client/handler/RocketClientRequestRes
 include/thrift/lib/cpp2/fast_thrift/rocket/client/handler/RocketClientSetupFrameHandler.h
 include/thrift/lib/cpp2/fast_thrift/rocket/client/handler/RocketClientStatsHandler.h
 include/thrift/lib/cpp2/fast_thrift/rocket/client/handler/RocketClientStreamStateHandler.h
+include/thrift/lib/cpp2/fast_thrift/rocket/common/RocketStreamContext.h
 include/thrift/lib/cpp2/fast_thrift/rocket/common/TypeErasedPtr.h
 include/thrift/lib/cpp2/fast_thrift/rocket/common/handler/RocketMetricsHandler.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/Event.h
@@ -433,9 +445,11 @@ include/thrift/lib/cpp2/fast_thrift/rocket/server/RocketServerEventFactory.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/adapter/RocketServerAppAdapter.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/common/RocketServerAppAdapter.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/common/RocketServerConnection.h
+include/thrift/lib/cpp2/fast_thrift/rocket/server/handler/RocketServerKeepAliveHandler.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/handler/RocketServerMessageMarshalHandler.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/handler/RocketServerRequestResponseHandler.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/handler/RocketServerSetupFrameHandler.h
+include/thrift/lib/cpp2/fast_thrift/rocket/server/handler/RocketServerStreamHandler.h
 include/thrift/lib/cpp2/fast_thrift/rocket/server/handler/RocketServerStreamStateHandler.h
 include/thrift/lib/cpp2/fast_thrift/security/FizzHandshakeHelper.h
 include/thrift/lib/cpp2/fast_thrift/security/FizzServerCertConfig.h
@@ -470,6 +484,7 @@ include/thrift/lib/cpp2/fast_thrift/thrift/client/util/RocketFrameDecoder.h
 include/thrift/lib/cpp2/fast_thrift/thrift/client/util/RpcKindMapping.h
 include/thrift/lib/cpp2/fast_thrift/thrift/common/RequestMetadata.h
 include/thrift/lib/cpp2/fast_thrift/thrift/common/ResponseMetadata.h
+include/thrift/lib/cpp2/fast_thrift/thrift/common/ServerPushMetadata.h
 include/thrift/lib/cpp2/fast_thrift/thrift/common/StreamPayloadMetadata.h
 include/thrift/lib/cpp2/fast_thrift/thrift/common/ThriftControlPayloads.h
 include/thrift/lib/cpp2/fast_thrift/thrift/common/ThriftPayloadConcept.h
@@ -481,6 +496,7 @@ include/thrift/lib/cpp2/fast_thrift/thrift/server/FastThriftChannelServer.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/FastThriftServer.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/FastThriftServerConfig.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/FastThriftServerRegistry.h
+include/thrift/lib/cpp2/fast_thrift/thrift/server/SetupResponseBuilder.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/ThriftServerChannel.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/ThriftServerConnectionFactory.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/adapter/MetadataAppAdapter.h
@@ -495,6 +511,7 @@ include/thrift/lib/cpp2/fast_thrift/thrift/server/common/ServerAppAdapter.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/common/ThriftServerConnection.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/common/context/ThriftConnContext.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/common/context/ThriftRequestContext.h
+include/thrift/lib/cpp2/fast_thrift/thrift/server/handler/ThriftServerChecksumHandler.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/handler/ThriftServerConnectionCloseHandler.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/handler/ThriftServerConnectionContextHandler.h
 include/thrift/lib/cpp2/fast_thrift/thrift/server/handler/ThriftServerRequestContextHandler.h
@@ -714,7 +731,6 @@ include/thrift/lib/cpp2/server/DecoratorDataKey.h
 include/thrift/lib/cpp2/server/DecoratorDataRuntime.h
 include/thrift/lib/cpp2/server/DecoratorDataStorage.h
 include/thrift/lib/cpp2/server/ExecutorToThreadManagerAdaptor.h
-include/thrift/lib/cpp2/server/IOUringUtil.h
 include/thrift/lib/cpp2/server/IOWorkerContext.h
 include/thrift/lib/cpp2/server/IResourcePoolAcceptor.h
 include/thrift/lib/cpp2/server/LazyDynamicArguments.h
@@ -816,6 +832,7 @@ include/thrift/lib/cpp2/transcode/JsonIntrinsics.h
 include/thrift/lib/cpp2/transcode/ProtobufIntrinsics.h
 include/thrift/lib/cpp2/transcode/ReadHelpers.h
 include/thrift/lib/cpp2/transcode/TranscodeErrc.h
+include/thrift/lib/cpp2/transcode/TranscodeInput.h
 include/thrift/lib/cpp2/transcode/TranscodeInterpreter.h
 include/thrift/lib/cpp2/transcode/TranscodePlan.h
 include/thrift/lib/cpp2/transcode/Transcoder.h
