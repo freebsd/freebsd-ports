@@ -1,5 +1,5 @@
 PORTNAME=	cryptopp-modern
-DISTVERSION=	2026.8.0
+DISTVERSION=	2026.8.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/cryptopp-modern/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -17,8 +17,8 @@ CMAKE_ON=	CRYPTOPP_BUILD_SHARED
 CMAKE_OFF=	CRYPTOPP_BUILD_TESTING
 CMAKE_TESTING_ON=	CRYPTOPP_BUILD_TESTING
 
-TESTING_UNSAFE=	https://github.com/cryptopp-modern/cryptopp-modern/issues/64
-
 CONFLICTS_INSTALL=	cryptopp
+
+PLIST_SUB=	SOVERSION=${DISTVERSION}
 
 .include <bsd.port.mk>
