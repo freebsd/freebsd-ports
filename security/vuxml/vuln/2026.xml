@@ -1747,7 +1747,7 @@
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.12</lt></range>
+	<range><lt>140.12,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
@@ -1787,7 +1787,7 @@
     </package>
     <package>
 	<name>firefox-esr</name>
-	<range><lt>140.13</lt></range>
+	<range><lt>140.13,2</lt></range>
     </package>
     <package>
 	<name>thunderbird</name>
