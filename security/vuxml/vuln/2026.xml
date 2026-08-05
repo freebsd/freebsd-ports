@@ -11656,7 +11656,7 @@ affected.</p>
     </package>
     <package>
 	<name>thunderbird</name>
-	<range><lt>150.0.0,2</lt></range>
+	<range><lt>150.0.0</lt></range>
     </package>
     </affects>
     <description>
