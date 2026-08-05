@@ -23,6 +23,10 @@ USE_GNOME=	cairo gdkpixbuf glib20 gtk20
 LLD_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
+# attempt to fix build error on aarch64: /usr/local/bin/ld: unrecognized option '-Wl,--fix-cortex-a53-843419'
+# it's not clear where does this option come from (is it set in /etc/make.conf ?)
+LDFLAGS_aarch64=	-Wl,--no-fix-cortex-a53-843419
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/*/*.so
 
