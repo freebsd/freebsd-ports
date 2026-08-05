@@ -7,6 +7,7 @@ include/qschematic/commands/item_visibility.hpp
 include/qschematic/commands/label_rename.hpp
 include/qschematic/commands/rectitem_resize.hpp
 include/qschematic/commands/rectitem_rotate.hpp
+include/qschematic/commands/scene_restore.hpp
 include/qschematic/commands/wirenet_rename.hpp
 include/qschematic/commands/wirepoint_move.hpp
 include/qschematic/items/bezierwire.hpp
