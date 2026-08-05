@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grizzled"
+version = "%%PORTVERSION%%"
+dynamic = [
+    "description",
+    "license",
+    "authors",
+    "classifiers",
+    "readme",
+]
+
+[tool.setuptools.packages.find]
+exclude = ["test", "test.*"]
+
