@@ -1,6 +1,6 @@
 PORTNAME=	mimalloc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.4
+DISTVERSION=	3.4.5
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/microsoft/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-source
