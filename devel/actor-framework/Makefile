@@ -1,10 +1,11 @@
 PORTNAME=	actor-framework
-DISTVERSION=	0.19.6
+DISTVERSION=	1.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open Source implementation of the Actor Model in C++
-WWW=		https://www.actor-framework.org/
+WWW=		https://www.actor-framework.org/ \
+		https://github.com/actor-framework/actor-framework
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -35,5 +36,7 @@ LOG_LEVEL_WARN_CMAKE_ON=	-DCAF_LOG_LEVEL:STRING=WARN
 LOG_LEVEL_INFO_CMAKE_ON=	-DCAF_LOG_LEVEL:STRING=INFO
 LOG_LEVEL_DEBUG_CMAKE_ON=	-DCAF_LOG_LEVEL:STRING=DEBUG
 LOG_LEVEL_TRACE_CMAKE_ON=	-DCAF_LOG_LEVEL:STRING=TRACE
+
+# tests as of 1.1.0: 100% tests passed, 0 tests failed out of 231
 
 .include <bsd.port.mk>
