@@ -1,5 +1,6 @@
 PORTNAME=	bunkerweb
 DISTVERSION=	1.6.13
+PORTREVISION=	1
 CATEGORIES=	www security
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -25,12 +26,13 @@ RUN_DEPENDS=	openresty:www/openresty \
 		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
 		${LUA_MODLIBDIR}/cjson.so:devel/lua-cjson@${LUA_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}biscuit-auth>0:security/py-biscuit-auth \
+		${PYTHON_PKGNAMEPREFIX}biscuit-auth>0:security/py-biscuit-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docker>0:sysutils/py-docker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kubernetes>0:sysutils/py-kubernetes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedcsv>=3.0.0:devel/py-defusedcsv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qrcode>0:textproc/py-qrcode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}regex>0:textproc/py-regex@${PY_FLAVOR} \
