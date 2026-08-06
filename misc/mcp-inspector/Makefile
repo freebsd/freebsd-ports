@@ -1,6 +1,5 @@
 PORTNAME=	mcp-inspector
-DISTVERSION=	0.22.0
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
@@ -10,7 +9,7 @@ WWW=		https://github.com/modelcontextprotocol/inspector
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/node_modules/${PACKAGE_NAME}/LICENSE
+#LICENSE_FILE=	${WRKSRC}/node_modules/${PACKAGE_NAME}/LICENSE
 
 FETCH_DEPENDS=	npm:www/npm \
 		jq:textproc/jq \
@@ -41,14 +40,14 @@ do-fetch:
 	fi
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib
 	cd ${WRKSRC} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib
-	@${FIND} ${STAGEDIR}${PREFIX}/lib -type f -and -name "README.md" -delete
+	${FIND} ${STAGEDIR}${PREFIX}/lib -type f -and -name "README.md" -delete
 	@${REINPLACE_CMD} -i '' \
 		-e "s|#!/usr/bin/env node|#!${PREFIX}/bin/node|" \
-		${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/cli/build/cli.js
-	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/cli/build/cli.js
+		${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/clients/launcher/build/index.js
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/clients/launcher/build/index.js
 	@${LN} -s ${PREFIX}/lib/node_modules/.bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	# remove stray file
 	@${RM} \
