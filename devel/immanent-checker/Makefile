@@ -1,10 +1,13 @@
 PORTNAME=	immanent-checker
-DISTVERSION=	0.23
+DISTVERSION=	0.42
 CATEGORIES=	devel
-MASTER_SITES=	https://gitlab.p.variablis.de/api/v4/projects/open-source%2Fimmanent-checker/packages/generic/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	https://gitlab.p.variablis.de/api/v4/projects/open-source%2Fimmanent-checker/packages/generic/${PORTNAME}/${DISTVERSION}/:phar \
+		https://gitlab.p.variablis.de/open-source/immanent-checker/-/raw/${DISTVERSION}/man/man1/:manpage
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
-DISTFILES=	immanent-checker-${DISTVERSION} \
-		immanent-parser-${DISTVERSION}
+DISTFILES=	immanent-checker-${DISTVERSION}:phar \
+		immanent-parser-${DISTVERSION}:phar \
+		immanent-checker.1:manpage
+DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	tz@FreeBSD.org
@@ -20,12 +23,15 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/immanent-checker \
-		bin/immanent-parser
+		bin/immanent-parser \
+		share/man/man1/immanent-checker.1.gz
 
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/immanent-checker-${DISTVERSION} \
+	${INSTALL_SCRIPT} ${_DISTDIR}/immanent-checker-${DISTVERSION} \
 		${STAGEDIR}${PREFIX}/bin/immanent-checker
-	${INSTALL_SCRIPT} ${DISTDIR}/immanent-parser-${DISTVERSION} \
+	${INSTALL_SCRIPT} ${_DISTDIR}/immanent-parser-${DISTVERSION} \
 		${STAGEDIR}${PREFIX}/bin/immanent-parser
+	${INSTALL_MAN} ${_DISTDIR}/immanent-checker.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

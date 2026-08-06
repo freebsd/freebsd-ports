@@ -1,5 +1,7 @@
-TIMESTAMP = 1783897876
-SHA256 (immanent-checker-0.23) = 2c5b4f29e3da0974fdb769b2c2d15985d7e931c18e8289be3a36cfc51b4b69f0
-SIZE (immanent-checker-0.23) = 64262
-SHA256 (immanent-parser-0.23) = d942c3ec9330fe69f6fbb84927efa291d1eac3339cce71c6e1b01427e7988c6c
-SIZE (immanent-parser-0.23) = 65455
+TIMESTAMP = 1786058382
+SHA256 (immanent-checker/0.42/immanent-checker-0.42) = b7829c8efa35c11517dd6bf133a88a4089c0760b87f74f33978850354564bcaa
+SIZE (immanent-checker/0.42/immanent-checker-0.42) = 87974
+SHA256 (immanent-checker/0.42/immanent-parser-0.42) = af9ed1dcd79f1c746f778d14d4a01ca58f5f6127c3f26d6276b44c455b2fa5a2
+SIZE (immanent-checker/0.42/immanent-parser-0.42) = 88669
+SHA256 (immanent-checker/0.42/immanent-checker.1) = d75f202e59b505e1a3ee3ad1571c9ff60f7bf3913bc730919b6d5a3beab84d56
+SIZE (immanent-checker/0.42/immanent-checker.1) = 3626
