@@ -1,5 +1,6 @@
 PORTNAME=	lwjgl
 DISTVERSION=	3.4.1.g20260203
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	https://repo1.maven.org/:source1
 PKGNAMESUFFIX=	3
