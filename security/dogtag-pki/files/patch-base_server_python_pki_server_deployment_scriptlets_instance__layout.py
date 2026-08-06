@@ -1,4 +1,4 @@
---- base/server/python/pki/server/deployment/scriptlets/instance_layout.py.orig	2026-07-12 10:34:10 UTC
+--- base/server/python/pki/server/deployment/scriptlets/instance_layout.py.orig	2025-08-05 19:20:05 UTC
 +++ base/server/python/pki/server/deployment/scriptlets/instance_layout.py
 @@ -160,15 +160,6 @@ class PkiScriptlet(pkiscriptlet.AbstractBasePkiScriptl
  
@@ -49,16 +49,15 @@
      def destroy(self, deployer):
  
          instance = self.instance
-@@ -246,21 +214,9 @@ class PkiScriptlet(pkiscriptlet.AbstractBasePkiScriptl
+@@ -246,27 +214,11 @@ class PkiScriptlet(pkiscriptlet.AbstractBasePkiScriptl
  
          logger.info('Removing %s instance', instance.name)
  
 -        logger.info('Removing %s', deployer.systemd.systemd_link)
 -        pki.util.unlink(link=deployer.systemd.systemd_link,
-+        logger.info('Removing %s', instance.rc_script)
-+        pki.util.unlink(link=instance.rc_script,
-                         force=deployer.force)
--
+-                        force=deployer.force)
++        instance.remove_rc_service(force=deployer.force)
+ 
 -        if os.path.exists(deployer.systemd.base_override_dir):
 -            logger.info('Removing %s', deployer.systemd.base_override_dir)
 -            pki.util.rmtree(path=deployer.systemd.base_override_dir,
@@ -70,6 +69,12 @@
 -                            force=deployer.force)
 -
 -        deployer.systemd.daemon_reload()
- 
+-
          if config.str2bool(deployer.mdict['pki_registry_enable']):
              instance.remove_registry(force=deployer.force)
+ 
+-        logger.info('Removing %s', instance.service_conf)
+-        pki.util.remove(instance.service_conf, force=deployer.force)
+ 
+         logger.info('Removing %s', instance.work_dir)
+         pki.util.rmtree(instance.work_dir, force=deployer.force)

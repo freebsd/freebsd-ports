@@ -1,0 +1,26 @@
+--- base/acme/bin/pki-acme-run.orig	2025-08-05 19:20:05 UTC
++++ base/acme/bin/pki-acme-run
+@@ -5,7 +5,7 @@
+ # SPDX-License-Identifier: GPL-2.0-or-later
+ #
+ 
+-. /usr/share/pki/scripts/config
++. /usr/local/share/pki/scripts/config
+ 
+ # Allow the owner of the container (who might not be in the root group)
+ # to manage the config and log files.
+@@ -16,7 +16,7 @@ then
+ if [ -z "$(ls -A /conf 2> /dev/null)" ]
+ then
+     echo "INFO: Installing default config files"
+-    cp -r /var/lib/pki/pki-tomcat/conf.default/* /conf
++    cp -r /var/db/pki/pki-tomcat/conf.default/* /conf
+ fi
+ 
+ mkdir -p /conf/acme
+@@ -120,4 +120,4 @@ fi
+     echo "INFO: Using default realm configuration"
+ fi
+ 
+-/usr/share/pki/server/bin/pki-server-run
++/usr/local/share/pki/server/bin/pki-server-run

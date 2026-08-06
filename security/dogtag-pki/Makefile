@@ -1,7 +1,7 @@
 PORTNAME=	dogtag-pki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	11.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security java python
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -114,9 +114,9 @@ CMAKE_ARGS=	-DAPP_SERVER=tomcat-9.0 \
 		-DVERSION=${DISTVERSION} \
 		-DWITH_PYTHON_DOCS=OFF
 
-CMAKE_ON=	WITH_CA WITH_JAVA WITH_SERVER
+CMAKE_ON=	WITH_ACME WITH_CA WITH_JAVA WITH_SERVER
 
-CMAKE_OFF=	RUN_TESTS WITH_ACME WITH_CONSOLE WITH_EST WITH_JAVADOC WITH_KRA \
+CMAKE_OFF=	RUN_TESTS WITH_CONSOLE WITH_EST WITH_JAVADOC WITH_KRA \
 		WITH_META WITH_OCSP WITH_TESTS WITH_THEME WITH_TKS WITH_TPS \
 		WITH_WURST
 
@@ -136,15 +136,17 @@ PORTDATA=	*
 
 _JAVA_BUILD_DIR=	${WRKDIR}/java-build
 
-_JAVA_TARGETS=	tps_library java pki-ca-links pki-lib pki-server-common-lib \
+_JAVA_TARGETS=	pki-acme-links tps_library java pki-ca-links pki-lib pki-server-common-lib \
 		pki-server-lib pki-server-webapp-lib
 
-_DOGTAG_JARS=	pki-ca.jar pki-common.jar pki-server-webapp.jar pki-server.jar \
+_DOGTAG_JARS=	pki-acme.jar pki-ca.jar pki-common.jar pki-server-webapp.jar pki-server.jar \
 		pki-tomcat-9.0.jar pki-tomcat.jar pki-tools.jar
 
 _RLN_PLACEHOLDERS=${JAVAJARDIR}/jss-tomcat.jar \
 ${JAVAJARDIR}/jss-tomcat-9.0.jar \
-${JAVAJARDIR}/resteasy-servlet-initializer.jar
+${JAVAJARDIR}/resteasy-servlet-initializer.jar \
+${JAVAJARDIR}/jaxb-api.jar \
+${JAVAJARDIR}/javax.activation-api.jar
 
 post-build:
 # Configure the Java build tree
@@ -248,7 +250,24 @@ post-install-ca: post-install-server
 		${COPYTREE_SHARE} conf ${STAGEDIR}${DATADIR}/ca \
 		"! -name CMakeLists.txt"
 
-post-install-links: post-install-ca
+post-install-acme: post-install-ca
+	@${MKDIR} ${STAGEDIR}${DATADIR}/acme \
+		${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF
+	cd ${WRKSRC}/base/acme && \
+		${COPYTREE_BIN} bin ${STAGEDIR}${DATADIR}/acme
+.for dir in conf database issuer openshift realm webapps
+	cd ${WRKSRC}/base/acme && \
+		${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}/acme \
+		"! -name CMakeLists.txt"
+.endfor
+	cd ${WRKSRC}/base/acme/tomcat-9.0 && \
+		${COPYTREE_SHARE} conf ${STAGEDIR}${DATADIR}/acme \
+		"! -name CMakeLists.txt"
+	cd ${_JAVA_BUILD_DIR}/base/acme/webapp && \
+		${COPYTREE_SHARE} lib \
+		${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF
+
+post-install-links: post-install-acme
 	@${MKDIR} ${STAGEDIR}${DATADIR}/ca/webapps/ca/WEB-INF \
 		${STAGEDIR}${DATADIR}/ca/webapps/ca/admin \
 		${STAGEDIR}${DATADIR}/server/common \
@@ -271,6 +290,14 @@ post-install-links: post-install-ca
 
 	# Replace fragile upstream links with FreeBSD relative symlinks.
 	@${TOUCH} ${_RLN_PLACEHOLDERS:S,^,${STAGEDIR},}
+	@${RM} ${STAGEDIR}${DATADIR}/lib/jaxb-api.jar
+	${RLN} ${STAGEDIR}${JAVAJARDIR}/jaxb-api.jar ${STAGEDIR}${DATADIR}/lib/jaxb-api.jar
+	@${RM} ${STAGEDIR}${DATADIR}/lib/javax.activation-api.jar
+	${RLN} ${STAGEDIR}${JAVAJARDIR}/javax.activation-api.jar ${STAGEDIR}${DATADIR}/lib/javax.activation-api.jar
+	@${RM} ${STAGEDIR}${DATADIR}/server/common/lib/jaxb-api.jar
+	${RLN} ${STAGEDIR}${DATADIR}/lib/jaxb-api.jar ${STAGEDIR}${DATADIR}/server/common/lib/jaxb-api.jar
+	@${RM} ${STAGEDIR}${DATADIR}/server/common/lib/javax.activation-api.jar
+	${RLN} ${STAGEDIR}${DATADIR}/lib/javax.activation-api.jar ${STAGEDIR}${DATADIR}/server/common/lib/javax.activation-api.jar
 	@${RM} ${STAGEDIR}${DATADIR}/server/common/lib/jss-tomcat.jar
 	${RLN} ${STAGEDIR}${JAVAJARDIR}/jss-tomcat.jar ${STAGEDIR}${DATADIR}/server/common/lib/jss-tomcat.jar
 	@${RM} ${STAGEDIR}${DATADIR}/server/common/lib/jss-tomcat-9.0.jar
@@ -295,6 +322,11 @@ post-install-links: post-install-ca
 	${RLN} ${STAGEDIR}${JAVAJARDIR}/resteasy-servlet-initializer.jar ${STAGEDIR}${DATADIR}/server/webapps/pki/WEB-INF/lib/resteasy-servlet-initializer.jar
 	@${RM} ${STAGEDIR}${DATADIR}/ca/webapps/ca/admin/console
 	${RLN} ${STAGEDIR}${DATADIR}/server/webapps/pki/admin/console ${STAGEDIR}${DATADIR}/ca/webapps/ca/admin/console
+
+	@${RM} ${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF/lib/pki-server.jar
+	${RLN} ${STAGEDIR}${JAVAJARDIR}/pki/pki-server.jar ${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF/lib/pki-server.jar
+	@${RM} ${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF/lib/pki-acme.jar
+	${RLN} ${STAGEDIR}${JAVAJARDIR}/pki/pki-acme.jar ${STAGEDIR}${DATADIR}/acme/webapps/acme/WEB-INF/lib/pki-acme.jar
 
 	@${RM} ${_RLN_PLACEHOLDERS:S,^,${STAGEDIR},}
 
