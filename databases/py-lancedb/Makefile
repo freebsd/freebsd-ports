@@ -23,12 +23,28 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecation>=2.1.0:devel/py-deprecation@${PY
 		${PYTHON_PKGNAMEPREFIX}pyarrow>=16:databases/py-pyarrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=1.10:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.27.0:misc/py-tqdm@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.0:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}boto3>=1.28.57:www/py-boto3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}datafusion>=54<55:databases/py-datafusion@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}duckdb>=0.9.0:databases/py-duckdb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.30.0:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=1.4:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}polars>=0.19:misc/py-polars@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyarrow-stubs>=16.0:databases/py-pyarrow-stubs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyarrow>0:databases/py-pyarrow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pylance>=9.0.0:databases/py-pylance@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0.21:devel/py-pytest-asyncio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.10:devel/py-pytest-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=7.0:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=2023.3:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.31.0:www/py-requests@${PY_FLAVOR}
 
 USES=		python cargo
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ENV=	${MAKE_ENV} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/python/tests
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lancedb
@@ -1008,9 +1024,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7
 
-NO_ARCH_IGNORE=	_lancedb.abi3.so
-NO_ARCH=	yes
-
 # tests as of 0.34.0: 82 passed in 1.69s
+# in 0.36.0: tests hang, see https://github.com/lancedb/lancedb/issues/3868
 
 .include <bsd.port.mk>
