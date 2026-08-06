@@ -1918,6 +1918,7 @@ FreeCAD/Mod/PartDesign/InvoluteGearFeature.ui
 FreeCAD/Mod/PartDesign/PartDesignTests/Fixtures/InternalInvoluteGear_v0-20.FCStd
 FreeCAD/Mod/PartDesign/PartDesignTests/Fixtures/InvoluteGear_v0-20.FCStd
 FreeCAD/Mod/PartDesign/PartDesignTests/TestActiveObject.py
+FreeCAD/Mod/PartDesign/PartDesignTests/TestBaseFeature.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestBoolean.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestChamfer.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestDatum.py
@@ -3719,6 +3720,7 @@ bin/FreeCAD
 bin/FreeCADCmd
 %%PYTHON_SITELIBDIR%%/freecad/UiTools.py
 %%PYTHON_SITELIBDIR%%/freecad/__init__.py
+%%PYTHON_SITELIBDIR%%/freecad/deprecation.py
 %%PYTHON_SITELIBDIR%%/freecad/freecad_doc.py
 %%PYTHON_SITELIBDIR%%/freecad/module_io.py
 %%PYTHON_SITELIBDIR%%/freecad/part.py
