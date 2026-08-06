@@ -1,1 +1,4 @@
-This package contains miscellaneous X.Org Mutt fonts.
+This set of fonts provides a 12pt proportional font with many of the
+glyphs needed for Unicode text. The creator, Mark Leisher, calls the
+typeface "ClearlyU" and it was influenced by Donald Knuth's Computer
+Modern.

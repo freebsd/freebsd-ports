@@ -1,14 +1,14 @@
 PORTNAME=	font-mutt-misc
-PORTVERSION=	1.0.3
-PORTREVISION=	4
+DISTVERSION=	1.0.4
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org miscellaneous Mutt fonts
-WWW=		https://www.x.org/
+WWW=		https://gitlab.freedesktop.org/xorg/font/mutt-misc
 
-USES=		xorg-cat:font
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_ARCH=	yes
+USES=		tar:xz xorg-cat:font
 
 .include <bsd.port.mk>
