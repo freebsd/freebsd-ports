@@ -1,1 +1,6 @@
 scikits-sparse is a Python module for sparse matrix calculations.
+
+The scikit-sparse package is a companion to the scipy.sparse package for sparse
+matrix manipulation in Python. It provides routines that are not suitable for
+inclusion in scipy.sparse proper, typically because they depend on external
+libraries with GPL licenses, such as SuiteSparse.
