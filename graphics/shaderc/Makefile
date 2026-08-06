@@ -1,7 +1,6 @@
 PORTNAME=	shaderc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.2
-PORTREVISION=	2
+DISTVERSION=	2026.3
 CATEGORIES=	graphics devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -23,7 +22,7 @@ GH_ACCOUNT=	google
 # for GH_TAGNAME in GH_TUPLE
 # git clone --filter=blob:none --no-checkout --quiet https://github.com/KhronosGroup/SPIRV-Headers.git && git -C SPIRV-Headers describe <COMMIT_HASH>
 # for COMMIT_HASH see ${WRKSRC}/DEPS
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-472-gad9184e:headers/third_party/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-498-g29981f6:headers/third_party/spirv-headers
 
 USE_LDCONFIG=	yes
 
