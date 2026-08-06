@@ -1,6 +1,6 @@
 PORTNAME=		ucx
 DISTVERSION=		1.20.1
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		net
 MASTER_SITES=		https://github.com/openucx/ucx/releases/download/v${DISTVERSION}/
 
@@ -59,8 +59,6 @@ UMAD_CONFIGURE_OFF=	--with-mad=no
 post-patch:
 	${REINPLACE_CMD} 's|^examplesdir = $$(pkgdatadir)/examples$$|examplesdir = ${EXAMPLESDIR}|' \
 		${WRKSRC}/examples/Makefile.am
-	${REINPLACE_CMD} 's|/run/user|/var/run/user|' \
-		${WRKSRC}/src/ucs/vfs/sock/vfs_sock.h
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/ucx.conf ${STAGEDIR}${ETCDIR}/ucx.conf.sample
