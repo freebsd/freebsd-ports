@@ -1,0 +1,6 @@
+mod_lookup_identity retrieves additional information about users authenticated
+by the Apache HTTP Server. It queries the SSSD InfoPipe service over D-Bus and
+stores user attributes and group membership in request notes or environment
+variables for use by web applications.
+
+The module can also map client certificates to user identities through SSSD.

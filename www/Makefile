@@ -447,6 +447,7 @@
     SUBDIR += mod_jk
     SUBDIR += mod_limitipconn2
     SUBDIR += mod_log_sql
+    SUBDIR += mod_lookup_identity
     SUBDIR += mod_maxminddb
     SUBDIR += mod_memcache
     SUBDIR += mod_memcache_block
