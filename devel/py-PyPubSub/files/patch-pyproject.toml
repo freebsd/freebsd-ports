@@ -1,0 +1,24 @@
+-- Make the port build with the setuptools version available in FreeBSD ports,
+-- keep using setuptools-scm with SETUPTOOLS_SCM_PRETEND_VERSION because the
+-- GitHub tarball is not a git checkout, drop the Python 2 contrib package from
+-- the wheel, and keep the distribution name consistent with the port origin.
+
+--- pyproject.toml.orig	2025-12-07 05:01:32 UTC
++++ pyproject.toml
+@@ -1,9 +1,9 @@
+ [build-system]
+-requires = ["setuptools>=68,<77", "wheel", "setuptools-scm>=7"]
++requires = ["setuptools", "wheel", "setuptools-scm>=7"]
+ build-backend = "setuptools.build_meta"
+
+ [project]
+-name = "Pypubsub"
++name = "PyPubSub"
+ dynamic = ["version"]
+ description = "Python Publish-Subscribe Package"
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+@@ -62,3 +62,4 @@
+
+ [tool.setuptools.packages.find]
+ where = ["src"]
++exclude = ["contrib"]
