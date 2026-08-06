@@ -1,0 +1,15 @@
+-- Use the setuptools version available in FreeBSD ports, and set a static
+-- version instead of dynamic one that imports the package during the build.
+
+--- pyproject.toml.orig	2026-08-05 06:53:36 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ 
+-requires = [ "setuptools>=61", "wheel" ]
++requires = [ "setuptools", "setuptools-scm", "wheel" ]
+ 
+ [project]
+ name = "papermill"
+
