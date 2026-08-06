@@ -16,7 +16,7 @@ load_rc_config $name
 
 pidfile="${bunkerweb_ui_pidfile}"
 command="/usr/sbin/daemon"
-procname="/usr/local/bin/python3.11"
+procname="%%PREFIX%%/bin/%%PYTHON_VERSION%%"
 command_args="-f -p ${pidfile} -o ${bunkerweb_ui_logfile} /usr/bin/env ENABLE_HEALTHCHECK=yes LISTEN_ADDR=0.0.0.0 LISTEN_PORT=7000 PYTHONPATH=/usr/local/share/bunkerweb/ui:/usr/local/share/bunkerweb/common/utils:/usr/local/share/bunkerweb/common/db:/usr/local/share/bunkerweb/common/api /usr/local/bin/gunicorn --bind 0.0.0.0:7000 -c /usr/local/share/bunkerweb/ui/utils/gunicorn.conf.py main:app"
 
 start_precmd="${name}_prestart"

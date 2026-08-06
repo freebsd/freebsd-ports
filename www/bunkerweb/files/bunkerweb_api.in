@@ -12,7 +12,7 @@ rcvar="${name}_enable"
 load_rc_config "$name"
 
 : ${bunkerweb_api_enable:="NO"}
-: ${bunkerweb_api_python:="/usr/local/bin/python3.11"}
+: ${bunkerweb_api_python:="%%PREFIX%%/bin/%%PYTHON_VERSION%%"}
 : ${bunkerweb_api_pidfile:="/var/run/${name}.pid"}
 : ${bunkerweb_api_logfile:="/var/log/bunkerweb/api.log"}
 : ${bunkerweb_api_env:=""}

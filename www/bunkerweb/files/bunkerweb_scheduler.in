@@ -14,15 +14,15 @@ load_rc_config "$name"
 : ${bunkerweb_scheduler_enable:="NO"}
 
 pidfile="/var/run/${name}.pid"
-procname="/usr/local/bin/python3.11"
+procname="%%PREFIX%%/bin/%%PYTHON_VERSION%%"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} /usr/bin/env PYTHONPATH=/usr/local/share/bunkerweb/common/utils:/usr/local/share/bunkerweb/common/db:/usr/local/share/bunkerweb/common/api:/usr/local/share/bunkerweb/deps/python /usr/local/bin/python3.11 /usr/local/share/bunkerweb/scheduler/main.py"
+command_args="-f -p ${pidfile} /usr/bin/env PYTHONPATH=/usr/local/share/bunkerweb/common/utils:/usr/local/share/bunkerweb/common/db:/usr/local/share/bunkerweb/common/api:/usr/local/share/bunkerweb/deps/python %%PREFIX%%/bin/%%PYTHON_VERSION%% /usr/local/share/bunkerweb/scheduler/main.py"
 
 bunkerweb_scheduler_precmd()
 {
 	mkdir -p /var/cache/bunkerweb/misc
 	mkdir -p /usr/local/share/bunkerweb/misc
-	mkdir -p /var/log/bunkerweb
+	mkdir -p /var/log/bunkerweb /var/run/bunkerweb
 
 	if [ ! -f /var/cache/bunkerweb/misc/default-server-cert.pem ] || \
 	   [ ! -f /var/cache/bunkerweb/misc/default-server-cert.key ]; then
@@ -50,6 +50,7 @@ bunkerweb_scheduler_precmd()
 	chmod 640 /usr/local/share/bunkerweb/misc/root-ca.key
 	chmod 644 /usr/local/share/bunkerweb/misc/root-ca.pem
 
+	chown bunkerweb:bunkerweb /var/run/bunkerweb
 	chown -R bunkerweb:bunkerweb /var/log/bunkerweb
 }
 
