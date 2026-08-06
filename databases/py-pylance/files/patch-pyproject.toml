@@ -1,0 +1,14 @@
+-- Relax the overly-strict lance-namespace upper bound so the port can be
+-- used with the current 0.9.x release in the FreeBSD package collection.
+
+--- pyproject.toml.orig	2026-08-06 02:24:28 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ dynamic = ["version"]
+ [project]
+ name = "pylance"
+ dynamic = ["version"]
+-dependencies = ["pyarrow>=14", "numpy>=1.22", "lance-namespace>=0.8.5,<0.9"]
++dependencies = ["pyarrow>=14", "numpy>=1.22", "lance-namespace>=0.8.5"]
+ description = "python wrapper for Lance columnar format"
+ authors = [{ name = "Lance Devs", email = "dev@lance.org" }]
+ license = { file = "LICENSE" }
