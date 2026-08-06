@@ -19,7 +19,7 @@ USE_GITHUB=     yes
 GH_ACCOUNT=     eclipse-biscuit
 GH_PROJECT=     biscuit-python
 GH_TAGNAME=     ${DISTVERSION}
-USE_PYTHON=     autoplist concurrent
+USE_PYTHON=     autoplist concurrent flavors
 
 CARGO_BUILD=    no
 CARGO_INSTALL=  no
