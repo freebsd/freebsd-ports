@@ -1,6 +1,6 @@
---- electron/spec/api-protocol-spec.ts.orig	2026-06-29 04:13:32 UTC
+--- electron/spec/api-protocol-spec.ts.orig	2026-07-29 06:07:17 UTC
 +++ electron/spec/api-protocol-spec.ts
-@@ -2095,7 +2095,7 @@ describe('protocol module', () => {
+@@ -2178,7 +2178,7 @@ describe('protocol module', () => {
  
      // TODO(nornagon): this test doesn't pass on Linux currently, investigate.
      // test is also flaky on CI on macOS so it is currently disabled there as well.
