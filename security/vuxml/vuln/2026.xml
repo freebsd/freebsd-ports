@@ -1,3 +1,39 @@
+  <vuln vid="e1208b90-91c3-11f1-a0bc-3c7c3fba4204">
+    <topic>Keycloak -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>keycloak</name>
+	<range><lt>26.7.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Keycloak Team reports:</p>
+	<blockquote cite="https://www.keycloak.org/2026/08/keycloak-2671-released">
+	  <ul>
+	    <li>CVE-2026-9793: JWE request object bypasses requestObjectSignatureAlg enforcement</li>
+	    <li>CVE-2026-4629: Privilege escalation via hardcoded role mapper injection in manage-clients</li>
+	    <li>CVE-2026-14209: Keycloak Admin UI Extension `brute-force-user` User Disclosure via `search=id:` under FGAP v2</li>
+	    <li>CVE-2026-14614: Keycloak 26.6.3 Fine-Grained Admin Permissions Bypass in Client Scope Assignment</li>
+	    <li>CVE-2026-14615: FGAP v2 parent group children endpoint bypasses per-child view permission filter</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-9793</cvename>
+      <cvename>CVE-2026-4629</cvename>
+      <cvename>CVE-2026-14209</cvename>
+      <cvename>CVE-2026-14614</cvename>
+      <cvename>CVE-2026-14615</cvename>
+      <url>https://www.keycloak.org/2026/08/keycloak-2671-released</url>
+    </references>
+    <dates>
+      <discovery>2026-08-05</discovery>
+      <entry>2026-08-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b58454e-8ff3-11f1-b35c-4c526214c986">
     <topic>erlang -- SSH plaintext recovery attack against CBC ciphers</topic>
     <affects>
