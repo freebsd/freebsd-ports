@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	backuppc
 
 USE_PERL5=	build
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
