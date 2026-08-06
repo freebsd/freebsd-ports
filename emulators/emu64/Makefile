@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg \
 		libquazip1-qt6.so:archivers/quazip
 
-USES=		compiler:c++11-lang desktop-file-utils dos2unix gl pkgconfig \
+USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig \
 		qmake:outsource qt:6 sdl
 USE_GL=		gl glu
 USE_QT=		base 5compat tools translations
