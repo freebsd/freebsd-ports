@@ -1,6 +1,7 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	18.18.1
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +21,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	atuinsh
 
-CARGO_BUILD_ARGS=	-p atuin
+CARGO_BUILD_ARGS=	-p atuin -p atuin-server
 CARGO_CRATES=	aead-0.5.2 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.4 \
@@ -655,12 +656,14 @@ CARGO_CRATES=	aead-0.5.2 \
 		zerovec-derive-0.11.3 \
 		zmij-1.0.23
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}-server
 
 do-install:
-	# binaries (workaround for error: found a virtual manifest at `xx` instead of a package manifest)
-	${INSTALL_PROGRAM} \
-		${WRKDIR}/target/release/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin
+	@for bin in ${PORTNAME} ${PORTNAME}-server; do \
+		${INSTALL_PROGRAM} \
+			${WRKDIR}/target/release/$${bin} \
+			${STAGEDIR}${PREFIX}/bin; \
+	done
 
 .include <bsd.port.mk>
