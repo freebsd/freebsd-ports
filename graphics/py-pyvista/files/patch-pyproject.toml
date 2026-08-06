@@ -1,0 +1,45 @@
+-- Adjust pyproject.toml for compatibility with the setuptools version in the FreeBSD ports tree.
+-- Remove the high setuptools version requirement and use the PEP 621 license.text form
+-- supported by the available setuptools. Also remove pytest-pyvista-specific options
+-- because the pytest-pyvista helper is not packaged for FreeBSD yet; the remaining
+-- tests do not need it.
+
+--- pyproject.toml.orig	2026-05-18 02:25:26 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = 'setuptools.build_meta'
+ [build-system]
+ build-backend = 'setuptools.build_meta'
+-requires = ['setuptools>=77.0.3']
++requires = ['setuptools']
+ 
+ [project]
+ authors = [{ name = 'PyVista Developers', email = 'info@pyvista.org' }]
+@@ -33,7 +33,7 @@ keywords = ['mesh', 'numpy', 'plotting', 'vtk']
+ description = '3D visualization and mesh analysis for science and engineering.'
+ dynamic = ['version']
+ keywords = ['mesh', 'numpy', 'plotting', 'vtk']
+-license = 'MIT'
++license = {text = 'MIT'}
+ name = 'pyvista'
+ readme = 'README.md'
+ requires-python = '>=3.10'
+@@ -300,19 +300,6 @@ xfail_strict = true
+ testpaths = 'tests'
+ xfail_strict = true
+ 
+-# pytest-pyvista options
+-doc_failed_image_dir = '_doc_failed_test_images'
+-doc_generated_image_dir = '_doc_generated_test_images'
+-doc_image_cache_dir = 'tests/doc/doc_image_cache'
+-doc_image_format = 'jpg'
+-doc_images_dir = 'doc/_build/html/_images'
+-failed_image_dir = '_failed_test_images'
+-generated_image_dir = '_generated_test_images'
+-image_cache_dir = 'tests/plotting/image_cache'
+-image_format = 'png'
+-include_vtksz = true
+-max_image_size = 400 # pixels
+-max_vtksz_file_size = 25 # MB
+ 
+ [tool.mypy]
+ check_untyped_defs = true
