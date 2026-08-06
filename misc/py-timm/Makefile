@@ -1,5 +1,5 @@
 PORTNAME=	timm
-DISTVERSION=	1.0.22
+DISTVERSION=	1.0.28
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,20 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}expecttest>0:devel/py-expecttest@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # some tests fail, tests consume gigabytes of disk space
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+
+TEST_ARGS=	-p no:black -p no:mypy -p no:cov -p no:benchmark \
+		tests/test_checkpoint_loading.py tests/test_dataset_info.py \
+		tests/test_layers.py tests/test_layers_drop.py \
+		tests/test_layers_pool.py tests/test_optim.py \
+		tests/test_scheduler.py tests/test_task.py tests/test_utils.py
+PYTEST_IGNORED_TESTS=	test_kron
+
+# tests as of 1.0.28: 356 passed in 30.79s
+# test_models.py is excluded because it downloads large pretrained model
+# weights and consumes gigabytes of disk space.
+# test_kron is ignored because torch.compile/inductor fails on FreeBSD.
 
 .include <bsd.port.mk>
