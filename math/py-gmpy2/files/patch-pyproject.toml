@@ -1,0 +1,22 @@
+-- Allow building with the setuptools version available in FreeBSD ports,
+-- use a static version instead of setuptools-scm, and use the legacy
+-- license form supported by older setuptools.
+
+--- pyproject.toml.orig	2026-06-24 00:39:59 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ['setuptools>=77,<80', 'setuptools_scm[toml]>=6.0']
++requires = ['setuptools', 'setuptools_scm[toml]>=6.0']
+ build-backend = 'setuptools.build_meta'
+ 
+ [project]
+@@ -8,7 +8,7 @@ keywords = ['gmp', 'mpfr', 'mpc', 'multiple-precision'
+ description = 'gmpy2 interface to GMP, MPFR, and MPC for Python'
+ keywords = ['gmp', 'mpfr', 'mpc', 'multiple-precision',
+             'arbitrary-precision', 'precision', 'bignum']
+-license = 'LGPL-3.0-or-later'
++license = {text = 'LGPL-3.0-or-later'}
+ authors = [{name = 'Alex Martelli'},
+            {name = 'Case Van Horsen'}]
+ maintainers = [{name = 'Matthias Köppe', email='mkoeppe@math.ucdavis.edu'},
