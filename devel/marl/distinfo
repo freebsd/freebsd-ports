@@ -1,6 +1,6 @@
-TIMESTAMP = 1704327882
-SHA256 (google-marl-g20231218-dbf097e_GH0.tar.gz) = 7420862dee528e77f4cf4cb0483da61f867683fcfe79918784a9a25089db4ec0
-SIZE (google-marl-g20231218-dbf097e_GH0.tar.gz) = 108223
+TIMESTAMP = 1786050379
+SHA256 (google-marl-g20260427-b8406ab_GH0.tar.gz) = e7e23cbed31d88a3942239c24d9ab4276d94ae3920db04736aedf76573bff43c
+SIZE (google-marl-g20260427-b8406ab_GH0.tar.gz) = 108158
 SHA256 (google-benchmark-2dd015d_GH0.tar.gz) = 8ba5709151bf1578c7599a6d7b535aaa3951515d9096e56973e3bb2dded46d83
 SIZE (google-benchmark-2dd015d_GH0.tar.gz) = 204703
 SHA256 (google-googletest-fb49e6c_GH0.tar.gz) = 9dea59892fff919ab6c005f36971e76b4bb4e399a6b22fbf85a30352d8a52be2

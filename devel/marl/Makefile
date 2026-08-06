@@ -1,5 +1,5 @@
 PORTNAME=	marl
-PORTVERSION=	g20231218
+PORTVERSION=	g20260427
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	dbf097e
+GH_TAGNAME=	b8406ab
 GH_TUPLE=	google:benchmark:2dd015d:benchmark/third_party/benchmark \
 		google:googletest:fb49e6c:googletest/third_party/googletest
 
