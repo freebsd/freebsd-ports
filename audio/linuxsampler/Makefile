@@ -1,6 +1,5 @@
 PORTNAME=	linuxsampler
-DISTVERSION=	2.4.2
-PORTREVISION=	1
+DISTVERSION=	2.5.0
 CATEGORIES=	audio
 MASTER_SITES=	https://download.linuxsampler.org/packages/
 
