@@ -36,6 +36,7 @@ include/fluent-bit/flb_custom_plugin.h
 include/fluent-bit/flb_dlfcn_win32.h
 include/fluent-bit/flb_downstream.h
 include/fluent-bit/flb_downstream_conn.h
+include/fluent-bit/flb_downstream_worker.h
 include/fluent-bit/flb_dump.h
 include/fluent-bit/flb_endian.h
 include/fluent-bit/flb_engine.h
@@ -48,6 +49,7 @@ include/fluent-bit/flb_event_loop.h
 include/fluent-bit/flb_file.h
 include/fluent-bit/flb_filter.h
 include/fluent-bit/flb_filter_plugin.h
+include/fluent-bit/flb_fips.h
 include/fluent-bit/flb_fstore.h
 include/fluent-bit/flb_gzip.h
 include/fluent-bit/flb_hash.h
@@ -116,6 +118,7 @@ include/fluent-bit/flb_parser.h
 include/fluent-bit/flb_parser_decoder.h
 include/fluent-bit/flb_pipe.h
 include/fluent-bit/flb_plugin.h
+include/fluent-bit/flb_plugin_alias.h
 include/fluent-bit/flb_plugin_proxy.h
 include/fluent-bit/flb_processor.h
 include/fluent-bit/flb_processor_plugin.h
@@ -200,6 +203,7 @@ include/monkey/mk_core/mk_thread_channel.h
 include/monkey/mk_core/mk_uio.h
 include/monkey/mk_core/mk_unistd.h
 include/monkey/mk_core/mk_utils.h
+include/monkey/mk_core/mk_win32_socketpair.h
 include/settings.h
 lib/fluent-bit/libfluent-bit.so
 @comment libdata/pkgconfig/msgpack.pc
