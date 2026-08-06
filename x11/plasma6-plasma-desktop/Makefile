@@ -37,8 +37,7 @@ USE_KDE=	activities activities-stats attica auth baloo bookmarks \
 USE_QT=		5compat base declarative svg wayland
 USE_XORG=	x11 xcb xcursor xext xfixes xi xrender
 
-OPTIONS_DEFINE=		SDL X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=		SDL
 OPTIONS_GROUP=		IM
 IM_DESC=		Input Method Support
 OPTIONS_GROUP_IM=	IBUS SCIM
@@ -56,7 +55,5 @@ SDL_DESC=		Enable gamecontroller System Settings module
 SDL_USES=		sdl
 SDL_USE=		sdl=sdl2
 SDL_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_SDL2
-
-X11_RUN_DEPENDS=	xf86-input-libinput>0:x11-drivers/xf86-input-libinput
 
 .include <bsd.port.mk>
