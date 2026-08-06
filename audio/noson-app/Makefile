@@ -1,5 +1,5 @@
 PORTNAME=	noson-app
-DISTVERSION=	5.6.24
+DISTVERSION=	5.7.3
 CATEGORIES=	audio net
 
 MAINTAINER=	arved@FreeBSD.org
@@ -10,11 +10,11 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
-		libnoson.so:audio/noson
+		libnoson.so:audio/noson \
+		libGLX.so:graphics/libglvnd
 
-USES=		cmake compiler:c++11-lang qt:5 ssl
-USE_QT=		core dbus declarative graphicaleffects gui network \
-		quickcontrols2 svg widgets xml buildtools:build qmake:build
+USES=		cmake compiler:c++11-lang qt:6 ssl
+USE_QT=		5compat base declarative svg
 USE_GITHUB=	yes
 GH_ACCOUNT=	janbar
 CMAKE_OFF =	BUILD_LIBNOSON
