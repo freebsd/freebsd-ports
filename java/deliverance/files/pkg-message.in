@@ -1,0 +1,42 @@
+[
+{ type: install
+  message: <<EOM
+Deliverance installs a command-line launcher and an rc.d service.
+
+Manual run:
+  service deliverance onestart
+  or
+  deliverance
+
+User tools:
+  deliverance-nanocode
+  deliverance-antares --repo /path/to/repo --cwe CWE-78
+  deliverance-dead-to-rights
+
+Configuration:
+  %%ETCDIR%%/deliverance.properties
+  %%ETCDIR%%/nanocode-qwen3-0.6b-jq4.json
+  %%ETCDIR%%/nanocode-antares-1b.json
+
+Documentation:
+  https://github.com/edwardcapriolo/deliverance#readme
+  https://github.com/edwardcapriolo/deliverance/tree/main/deliverance-antares-cli#readme
+  https://github.com/edwardcapriolo/deliverance/tree/main/nanocode-deliverance#readme
+
+The sample configuration uses the Java/Panama tensor provider because this
+package installs the Maven Central jar and does not include FreeBSD native SIMD
+libraries. Models are downloaded under /var/db/deliverance/.deliverance by
+default.
+
+To enable the service at boot:
+  sysrc deliverance_enable=YES
+  service deliverance start
+
+Future FreeBSD work that may interest contributors:
+  * Port the native C SIMD build for faster CPU tensor kernels.
+  * Port the WebGPU/Dawn path to enable GPU decode/output-head optimization.
+  * Split native acceleration into optional packages once FreeBSD libraries are
+    available and tested.
+EOM
+}
+]

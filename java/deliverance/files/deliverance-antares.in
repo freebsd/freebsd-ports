@@ -1,0 +1,11 @@
+#!/bin/sh
+
+: ${DELIVERANCE_ANTARES_ENDPOINT:="http://127.0.0.1:8080/v1"}
+: ${DELIVERANCE_ANTARES_MODEL:="antares-1b-JQ4"}
+: ${DELIVERANCE_ANTARES_JAVA_OPTS:=""}
+
+exec "%%JAVA%%" ${DELIVERANCE_ANTARES_JAVA_OPTS} \
+    -jar "%%ANTARES_JAR%%" \
+    --endpoint "${DELIVERANCE_ANTARES_ENDPOINT}" \
+    --model "${DELIVERANCE_ANTARES_MODEL}" \
+    "$@"
