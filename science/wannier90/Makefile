@@ -1,46 +1,55 @@
 PORTNAME=	wannier90
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
-PORTREVISION=	5
+DISTVERSION=	4.0.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Maximally-localized Wannier functions (MLWFs) and Wannier90
-WWW=		http://www.wannier.org/
+WWW=		http://www.wannier.org/ \
+		https://github.com/wannier-developers/wannier90
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		blaslapack:netlib fortran gmake python:test shebangfix
-USE_GITHUB=	yes
-GH_ACCOUNT=	wannier-developers
-SHEBANG_FILES=	test-suite/run_tests test-suite/clean_tests	\
-		test-suite/tools/fprettify-wrapper.py	\
-		test-suite/testcode/bin/testcode.py	\
-		test-suite/library-mode-test/compare_results.py	\
-		utility/k_mapper.py utility/gw2wannier90.py
+TEST_DEPENDS=	gmake:devel/gmake
+
+USES=		cmake:testing blaslapack:netlib fortran python:test shebangfix
 USE_LDCONFIG=	yes
 
-MAKE_ARGS=	FCOPTS="-fPIC -O3" LDOPTS="-L${LOCALBASE}/lib"
+USE_GITHUB=	yes
+GH_ACCOUNT=	wannier-developers
 
-TEST_TARGET=	tests # most tests using --numprocs=4 fail: https://github.com/wannier-developers/wannier90/issues/351
+SHEBANG_FILES=	test-suite/run_tests test-suite/clean_tests
+SHEBANG_GLOB=	*.py
 
-PLIST_FILES=	bin/postw90.x \
-		bin/w90chk2chk.x \
-		bin/wannier90.x \
-		lib/libwannier.so \
-		lib/libwannier.so.0
+CMAKE_OFF=		WANNIER90_TEST
+CMAKE_TESTING_ON=	WANNIER90_TEST
 
-post-patch:
-	@${REINPLACE_CMD} 's|F90 = gfortran|F90 = ${FC}|' ${WRKSRC}/config/make.inc.gfort
-	@${RLN} ${WRKSRC}/config/make.inc.gfort ${WRKSRC}/make.inc
-	@${REINPLACE_CMD} 's|make|${GMAKE}|' ${WRKSRC}/test-suite/run_tests
+OPTIONS_DEFINE=		WITH_C
+OPTIONS_DEFAULT=	WITH_C
+OPTIONS_RADIO=		BLAS_SIZE MPI
+OPTIONS_RADIO_MPI=	NOMPI MPICH OPENMPI
+OPTIONS_DEFAULT+=	NOMPI
+OPTIONS_SUB=		yes
 
-do-install:
-.for p in wannier90.x postw90.x w90chk2chk.x
-	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${STAGEDIR}${PREFIX}/bin/${p}
-.endfor
-	${INSTALL_LIB} ${WRKSRC}/src/obj/libwannier.so ${STAGEDIR}${PREFIX}/lib/libwannier.so.0
-	${LN} -sf libwannier.so.0 ${STAGEDIR}${PREFIX}/lib/libwannier.so
+WITH_C_DESC=		Build C interface
+WITH_C_CMAKE_BOOL=	WANNIER90_WITH_C
+WITH_C_CFLAGS=		-I${LOCALBASE}/include/gcc${GCC_DEFAULT}
+
+NOMPI_DESC=		MPI isn't used
+
+MPICH_USES=		mpi:mpich
+MPICH_CMAKE_ON=		-DWANNIER90_MPI=ON -DWANNIER90_MPIH=ON
+BUILD_LIB_DEPENDS=	libmpich.so:net/mpich
+MPICH_LIB_DEPENDS=	libmpich.so:net/mpich
+MMPICH_BROKEN=		https://github.com/wannier-developers/wannier90/issues/662
+
+OPENMPI_USES=		mpi:mpich
+OPENMPI_CMAKE_ON=	-DWANNIER90_MPI=ON -DWANNIER90_MPIH=ON
+OPENMPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
+OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
+OPENMPI_BROKEN=		https://github.com/wannier-developers/wannier90/issues/662
+
+# tests as of 4.0.1: 100% tests passed, 0 tests failed out of 93
 
 .include <bsd.port.mk>

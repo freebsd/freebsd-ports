@@ -1,0 +1,21 @@
+--- test-suite/run_tests.orig	2026-08-06 15:35:39 UTC
++++ test-suite/run_tests
+@@ -134,15 +134,15 @@ if __name__ == "__main__":
+         if args.verbose:
+             print("Creating needed files in {}...".format(folder))
+             return_code = subprocess.call(
+-                ['make', '-C', folderabspath],
++                ['gmake', '-C', folderabspath],
+                 stdout=sys.stdout, stderr=sys.stderr)
+         else:
+             FNULL = open(os.devnull, 'w')
+             return_code = subprocess.call(
+-                ['make', '-C', folderabspath],
++                ['gmake', '-C', folderabspath],
+                 stdout=FNULL, stderr=sys.stderr)
+             if return_code:
+-                print("*** WARNING!! make failed... continuing anyway, but your tests might fail")
++                print("*** WARNING!! gmake failed... continuing anyway, but your tests might fail")
+ 
+ 
+     the_category = args.category

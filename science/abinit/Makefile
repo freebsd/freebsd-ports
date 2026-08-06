@@ -1,5 +1,6 @@
 PORTNAME=	abinit
 DISTVERSION=	10.8.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +26,7 @@ LIB_DEPENDS=	libelpa.so:math/elpa		\
 		libhdf5.so:science/hdf5		\
 		libnetcdf.so:science/netcdf	\
 		libxmlf90.so:textproc/xmlf90	\
-		libwannier.so:science/wannier90	\
+		libwannier90.so:science/wannier90	\
 		libnetcdff.so:science/netcdf-fortran
 RUN_DEPENDS=	atompaw:science/atompaw
 TEST_DEPENDS=	bash:shells/bash \
@@ -46,7 +47,7 @@ CONFIGURE_ENV=	H5CC="${LOCALBASE}/bin/h5cc" \
 		LINALG_LIBS="${BLASLIB}  ${LAPACKLIB} -lelpa"	\
 		NETCDF_FORTRAN_FCFLAGS=-I${LOCALBASE}/include	\
 		XMLF90_FCFLAGS=-I${LOCALBASE}/include/xmlf90	\
-		WANNIER90_LIBS="${BLASLIB}  ${LAPACKLIB} -lwannier"
+		WANNIER90_LIBS="${BLASLIB}  ${LAPACKLIB} -lwannier90"
 CONFIGURE_ARGS=	--with-fft --with-libxc --with-libxml2 --with-netcdf	\
 		--with-netcdf-fortran --with-wannier90 --with-xmlf90
 FCFLAGS+=	-ffree-line-length-none

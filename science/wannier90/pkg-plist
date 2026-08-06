@@ -1,0 +1,12 @@
+bin/postw90.x
+bin/wannier90.x
+%%WITH_C%%include/wannier90.h
+lib/GNU-14.2.0/modules/Wannier90/w90_library.mod
+lib/cmake/Wannier90/Wannier90Config.cmake
+lib/cmake/Wannier90/Wannier90ConfigVersion.cmake
+lib/cmake/Wannier90/Wannier90Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Wannier90/Wannier90Targets.cmake
+lib/libwannier90.so
+lib/libwannier90.so.4
+lib/libwannier90.so.4.0.0
+libdata/pkgconfig/wannier90.pc
