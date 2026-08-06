@@ -1,7 +1,6 @@
 PORTNAME=	thewalrus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
-PORTREVISION=	3
+DISTVERSION=	0.22.0
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # doesn't contain tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +13,10 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dask>0:devel/py-dask@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numba>0:devel/py-numba@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}numba>=0.61.2:devel/py-numba@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=2.0.0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.15.3:science/py-scipy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sympy>=1.14.0:math/py-sympy@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	gmake:devel/gmake \
@@ -34,7 +33,6 @@ NO_ARCH=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-do-test: # testsuite fails to run: https://github.com/XanaduAI/thewalrus/issues/344
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} test
+# tests run successfully to 60% and then hang, see https://github.com/XanaduAI/thewalrus/issues/411
 
 .include <bsd.port.mk>
