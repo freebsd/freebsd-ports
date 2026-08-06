@@ -113,5 +113,5 @@ lib/cmake/ReactPhysics3D/ReactPhysics3DConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ReactPhysics3D/ReactPhysics3DConfig.cmake
 lib/cmake/ReactPhysics3D/ReactPhysics3DConfigVersion.cmake
 lib/libreactphysics3d.so
-lib/libreactphysics3d.so.0.10
-lib/libreactphysics3d.so.0.10.0
+lib/libreactphysics3d.so.
+lib/libreactphysics3d.so.0.10.2
