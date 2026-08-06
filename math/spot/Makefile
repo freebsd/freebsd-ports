@@ -1,6 +1,5 @@
 PORTNAME=	spot
-DISTVERSION=	2.14.5
-PORTREVISION=	1
+DISTVERSION=	2.15.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
-		syfco:math/hs-syfco
+		gcut:sysutils/coreutils
 
 USES=		charsetfix compiler:c++17-lang gmake libtool python:test
 USE_LDCONFIG=	yes
@@ -37,13 +36,13 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 # ============================================================================
-# Testsuite summary for spot 2.14.5
+# Testsuite summary for spot 2.15.1
 # ============================================================================
-# TOTAL: 211
-# PASS:  189
-# SKIP:  20
+# TOTAL: 213
+# PASS:  192
+# SKIP:  21
 # XFAIL: 0
-# FAIL:  2
+# FAIL:  0
 # XPASS: 0
 # ERROR: 0
 
