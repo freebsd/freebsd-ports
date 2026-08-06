@@ -142,7 +142,7 @@ CARGO_ENV+= \
 	RUSTDOC=${RUSTDOC} \
 	RUSTFLAGS="${RUSTFLAGS} -C linker=${CC} ${LDFLAGS:C/.+/-C link-args=&/}"
 
-.  if ${ARCH} != powerpc64le
+.  if ${ARCH} != powerpc64le || (${ARCH} == powerpc64le && ${OSVERSION} >= 1600019)
 CARGO_ENV+=	RUST_BACKTRACE=1
 .  endif
 
