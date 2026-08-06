@@ -1,6 +1,6 @@
---- modules/juce_core/native/juce_SystemStats_linux.cpp.orig	2026-07-15 11:00:01 UTC
+--- modules/juce_core/native/juce_SystemStats_linux.cpp.orig	2026-07-21 10:18:06 UTC
 +++ modules/juce_core/native/juce_SystemStats_linux.cpp
-@@ -20,6 +20,10 @@
+@@ -32,6 +32,10 @@
    ==============================================================================
  */
  
@@ -8,6 +8,6 @@
 +#include <sys/user.h>
 +#endif
 +
- #if JUCE_BELA
- extern "C" int cobalt_thread_mode();
- #endif
+ namespace juce
+ {
+ 

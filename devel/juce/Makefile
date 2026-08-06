@@ -1,6 +1,5 @@
 PORTNAME=	juce
-DISTVERSION=	8.0.6
-PORTREVISION=	4
+DISTVERSION=	9.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_NAME=	JUCE 6 End User License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
-BROKEN_riscv64=	Hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension (ignoring target-abi)
+BROKEN_riscv64=	hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension (ignoring target-abi)
 
 BUILD_DEPENDS=	ladspa>0:audio/ladspa
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
@@ -28,7 +27,12 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 
 USES=		cmake compiler:c++17-lang dos2unix gl gnome localbase:ldflags pkgconfig xorg
 DOS2UNIX_FILES=	modules/juce_core/juce_core.h \
-		modules/juce_dsp/containers/juce_AudioBlock_test.cpp
+		modules/juce_core/native/juce_BasicNativeHeaders.h \
+		modules/juce_core/native/juce_SystemStats_linux.cpp \
+		modules/juce_audio_processors_headless/format_types/juce_VST3Headers.h \
+		modules/juce_dsp/containers/juce_AudioBlock_test.cpp \
+		extras/NetworkGraphicsDemo/Source/Demos.h \
+		extras/NetworkGraphicsDemo/Source/SharedCanvas.h
 USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 pango
 USE_GL=		gl
 USE_XORG=	x11 xcomposite xcursor xext xinerama xorgproto xrandr
@@ -45,15 +49,13 @@ LDFLAGS+=	-pthread -lfreetype -lpng16
 LDFLAGS+=	-lGL # while building NetworkGraphicsDemo ld: error: undefined symbol: glXGetCurrentContext referenced by ld-temp.o
 LDFLAGS+=	-lasound # while building AudioPerformanceTest ld: error: undefined symbol: snd_seq_system_info_sizeof
 LDFLAGS+=	-lsysinfo # while building Projucer ld: error: undefined symbol: sysinfo
-
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS} -lexecinfo" # for the step 'Building juceaide' during configure phase: https://github.com/juce-framework/JUCE/issues/877
+LDFLAGS+=	-lexecinfo # for the step 'Building juceaide' during configure phase: https://github.com/juce-framework/JUCE/issues/877
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=		DEMOS
 
 DEMOS_DESC=		Build and install demo programs
-DEMOS_USES=		gnome pkgconfig
 DEMOS_CMAKE_BOOL=	JUCE_BUILD_EXAMPLES
 DEMOS_LDFLAGS=		-lexecinfo
 DEMOS_USE=		GNOME=atk,cairo,gdkpixbuf,gtk30,pango
@@ -89,8 +91,6 @@ post-install:
 .endfor
 	# strip juceaide
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/JUCE-${PORTVERSION}/juceaide
-	# workaround for https://github.com/juce-framework/JUCE/issues/1502
-	@${REINPLACE_CMD} -e 's|.*VST3_HELPER\.cmake.*||' ${STAGEDIR}${PREFIX}/lib/cmake/JUCE-8.0.6/JUCEConfig.cmake
 	# remove files with .orig suffix
 	@${FIND} ${STAGEDIR}${PREFIX} -name '*.orig' -delete
 
