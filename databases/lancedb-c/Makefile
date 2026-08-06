@@ -10,6 +10,7 @@ WWW=		https://github.com/lancedb/lancedb-c
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	compilation fails: error[E0433]: cannot find module or crate `aarch64` in this scope, see https://github.com/lancedb/lancedb/issues/3764
 BROKEN_i386=	compilation fails: error[E0425]: cannot find function `_mm256_insert_epi64` in this scope
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/protoc:devel/protobuf
