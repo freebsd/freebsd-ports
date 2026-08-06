@@ -55,6 +55,8 @@ include/torrent/system/callbacks.h
 include/torrent/system/common.h
 include/torrent/system/event.h
 include/torrent/system/poll.h
+include/torrent/system/scheduler.h
+include/torrent/system/spawn_process.h
 include/torrent/system/thread.h
 include/torrent/system/types.h
 include/torrent/throttle.h
@@ -75,7 +77,6 @@ include/torrent/utils/option_strings.h
 include/torrent/utils/random.h
 include/torrent/utils/ranges.h
 include/torrent/utils/resume.h
-include/torrent/utils/scheduler.h
 include/torrent/utils/string_manip.h
 include/torrent/utils/unordered_vector.h
 include/torrent/utils/uri_parser.h
