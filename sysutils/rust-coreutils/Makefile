@@ -1,6 +1,5 @@
 PORTNAME=	rust-coreutils
-DISTVERSION=	0.9.0
-PORTREVISION=	2
+DISTVERSION=	0.10.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -12,12 +11,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 
-USES=		cargo pkgconfig
+USES=		cargo pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	uutils
 GH_PROJECT=	coreutils
 
-CARGO_FEATURES=	unix
+CARGO_FEATURES=	unix openssl
+# Use the base system OpenSSL rather than the bundled openssl-src copy.
+CARGO_ENV=	OPENSSL_NO_VENDOR=1
 BINPREFIX=	uu-
 PLIST_SUB=	BINPREFIX=${BINPREFIX}
 
