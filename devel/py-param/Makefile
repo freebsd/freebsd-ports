@@ -1,5 +1,5 @@
 PORTNAME=	param
-DISTVERSION=	2.1.1
+DISTVERSION=	2.4.1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,16 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 2 tests fail, see https://github.com/holoviz/param/issues/952
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+
+TEST_ARGS=	-o filterwarnings=default -p no:benchmark -p no:cov -p no:black -p no:mypy
+PYTEST_IGNORED_TESTS=	test_parameterized_warns_explicit_no_ref test_reactive_lazy_gen_pipe
+
+# tests as of 2.4.1: 1515 passed, 1 skipped, 2 xfailed in 21.92s
+# test_parameterized_warns_explicit_no_ref and test_reactive_lazy_gen_pipe are
+# ignored because they are known upstream failures/flaky tests, see
+# https://github.com/holoviz/param/issues/952
 
 .include <bsd.port.mk>
