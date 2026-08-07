@@ -1,6 +1,6 @@
 PORTNAME=	pybind11
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.4
+DISTVERSION=	3.1.0
 CATEGORIES=	devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,6 +26,6 @@ CMAKE_TESTING_TARGET=	pytest
 
 NO_ARCH=	yes
 
-# tests as of 3.0.4: 1291 passed, 27 skipped, 3 xfailed, 1 xpassed in 22.92s
+# tests as of 3.1.0: 1319 passed, 26 skipped, 3 xfailed, 1 xpassed in 21.73s
 
 .include <bsd.port.mk>

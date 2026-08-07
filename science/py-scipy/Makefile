@@ -1,6 +1,6 @@
 PORTNAME=	scipy
 DISTVERSION=	1.17.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	science python
 MASTER_SITES=	https://docs.scipy.org/doc/${PORTNAME}-1.17.0/:doc \
@@ -83,6 +83,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|pythran>=0.14.0,<0.19.0|pythran>=0.14.0|' \
 		-e 's|Cython>=3.0.8,<3.3.0|Cython>=3.0.8|' \
 		-e 's|numpy>=2.0.0|numpy>=1.26.4|g' \
+		-e 's|pybind11>=2.13.2,<3.1.0|pybind11>=2.13.2|g' \
 		${WRKSRC}/pyproject.toml
 	@${REINPLACE_CMD} -e "s|'boost', version : '1.89.0'|'boost'|g" \
 		${WRKSRC}/meson.build
