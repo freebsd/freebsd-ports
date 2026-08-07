@@ -1,5 +1,6 @@
 PORTNAME=	bouncycastle
 DISTVERSION=	1.83
+PORTREVISION=	1
 CATEGORIES=	java security
 MASTER_SITES=	https://github.com/bcgit/bc-java/archive/refs/tags/
 DISTNAME=	r${DVERSION1}rv${DVERSION2}
@@ -14,9 +15,7 @@ LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.html
 
-BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit \
-		${JAVALIBDIR}/mail.jar:java/javamail
-RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail
+BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 
 USES=		cpe java:ant,run
 CPE_VENDOR=	${PORTNAME}
