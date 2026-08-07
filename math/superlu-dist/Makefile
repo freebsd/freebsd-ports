@@ -1,7 +1,6 @@
 PORTNAME=	superlu-dist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1.0
-PORTREVISION=	2
+DISTVERSION=	9.2.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -51,7 +50,7 @@ post-install-FORTRAN-on:
 	# workaround for https://github.com/xiaoyeli/superlu_dist/issues/112
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/FORTRAN/CMakeFiles
 	# move .mod files to a proper location
-	@cd ${STAGEDIR}${PREFIX}/include && \
+	#@cd ${STAGEDIR}${PREFIX}/include && \
 		${MV} FORTRAN/* . && \
 		${RMDIR} FORTRAN
 
