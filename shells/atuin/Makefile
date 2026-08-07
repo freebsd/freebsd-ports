@@ -1,7 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.18.1
-PORTREVISION=	1
+DISTVERSION=	18.19.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +22,8 @@ GH_ACCOUNT=	atuinsh
 
 CARGO_BUILD_ARGS=	-p atuin -p atuin-server
 CARGO_CRATES=	aead-0.5.2 \
+		aes-0.8.4 \
+		aes-gcm-0.10.3 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.4 \
 		allocator-api2-0.2.21 \
@@ -38,6 +39,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		argon2-0.5.3 \
 		arraydeque-0.5.1 \
 		arrayvec-0.7.8 \
+		assert-json-diff-2.0.2 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
 		async-trait-0.1.89 \
@@ -45,6 +47,9 @@ CARGO_CRATES=	aead-0.5.2 \
 		atomic-0.6.1 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.1 \
+		axoprocess-0.2.1 \
+		axotag-0.3.0 \
+		axoupdater-0.10.0 \
 		axum-0.8.9 \
 		axum-core-0.5.6 \
 		base64-0.22.1 \
@@ -59,13 +64,14 @@ CARGO_CRATES=	aead-0.5.2 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.1 \
-		brunch-0.5.3 \
 		bs58-0.5.1 \
 		bumpalo-3.20.3 \
 		by_address-1.2.1 \
 		bytemuck-1.25.0 \
 		byteorder-1.5.0 \
+		byteorder-lite-0.1.0 \
 		bytes-1.12.1 \
+		camino-1.2.5 \
 		castaway-0.2.4 \
 		cc-1.2.64 \
 		cfg-if-1.0.4 \
@@ -84,13 +90,17 @@ CARGO_CRATES=	aead-0.5.2 \
 		clap_lex-1.1.0 \
 		clipboard-win-5.4.1 \
 		cmov-0.5.4 \
+		codspeed-5.0.1 \
+		codspeed-divan-compat-5.0.1 \
+		codspeed-divan-compat-macros-5.0.1 \
+		codspeed-divan-compat-walltime-5.0.1 \
 		colorchoice-1.0.5 \
 		colored-2.2.0 \
-		combine-4.6.7 \
+		colored-3.1.1 \
 		compact_str-0.9.0 \
 		concurrent-queue-2.5.0 \
 		condtype-1.3.0 \
-		config-0.15.21 \
+		config-0.15.25 \
 		console-0.16.3 \
 		const-oid-0.9.6 \
 		convert_case-0.10.0 \
@@ -111,15 +121,18 @@ CARGO_CRATES=	aead-0.5.2 \
 		crypto-common-0.2.2 \
 		crypto_secretbox-0.1.1 \
 		csscolorparser-0.6.2 \
+		ctr-0.9.2 \
 		ctutils-0.4.2 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
-		dactyl-0.7.4 \
 		daemonize-0.5.0 \
 		darling-0.23.0 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
 		dashmap-6.2.1 \
+		data-encoding-2.11.1 \
+		deadpool-0.12.3 \
+		deadpool-runtime-0.1.4 \
 		deltae-0.3.2 \
 		der-0.7.10 \
 		deranged-0.5.8 \
@@ -134,8 +147,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.1 \
 		displaydoc-0.2.6 \
-		divan-0.1.21 \
-		divan-macros-0.1.21 \
+		divan-macros-0.1.17 \
 		document-features-0.2.12 \
 		dotenvy-0.15.7 \
 		downcast-rs-1.2.1 \
@@ -145,6 +157,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		either-1.16.0 \
 		encode_unicode-1.0.0 \
 		encoding_rs-0.8.35 \
+		enum_dispatch-0.3.13 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
@@ -152,8 +165,8 @@ CARGO_CRATES=	aead-0.5.2 \
 		euclid-0.22.13 \
 		event-listener-5.4.1 \
 		eventsource-stream-0.2.3 \
-		eye_declare-0.6.3 \
-		eye_declare_engine-0.6.3 \
+		eye_declare-0.6.4 \
+		eye_declare_engine-0.6.4 \
 		eyre-0.6.12 \
 		fake-5.1.0 \
 		fancy-regex-0.11.0 \
@@ -169,8 +182,12 @@ CARGO_CRATES=	aead-0.5.2 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.2 \
+		frizbee-0.12.0 \
 		fs-err-3.3.1 \
+		fs4-0.13.1 \
 		fsevent-sys-4.1.0 \
 		futures-0.3.32 \
 		futures-channel-0.3.33 \
@@ -183,13 +200,13 @@ CARGO_CRATES=	aead-0.5.2 \
 		futures-task-0.3.33 \
 		futures-timer-3.0.4 \
 		futures-util-0.3.33 \
-		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.7 \
 		gethostname-1.1.0 \
 		getopts-0.2.24 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
 		getrandom-0.4.3 \
+		ghash-0.5.1 \
 		glob-0.3.3 \
 		glob-match-0.2.1 \
 		h2-0.4.15 \
@@ -200,11 +217,13 @@ CARGO_CRATES=	aead-0.5.2 \
 		hashbrown-0.17.1 \
 		hashlink-0.11.0 \
 		heck-0.5.0 \
+		hermit-abi-0.5.2 \
 		hex-0.4.3 \
 		hkdf-0.13.0 \
 		hmac-0.12.1 \
 		hmac-0.13.0 \
-		http-1.4.2 \
+		homedir-0.3.6 \
+		http-1.5.0 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
@@ -212,8 +231,8 @@ CARGO_CRATES=	aead-0.5.2 \
 		humantime-2.3.0 \
 		hybrid-array-0.4.13 \
 		hyper-1.10.1 \
-		hyper-rustls-0.27.9 \
 		hyper-timeout-0.5.2 \
+		hyper-tls-0.6.0 \
 		hyper-util-0.1.20 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
@@ -227,6 +246,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
+		image-0.25.10 \
 		imara-diff-0.2.0 \
 		indenter-0.3.4 \
 		indexmap-1.9.3 \
@@ -244,11 +264,8 @@ CARGO_CRATES=	aead-0.5.2 \
 		is_terminal_polyfill-1.70.2 \
 		iso8601-0.6.3 \
 		itertools-0.14.0 \
+		itertools-0.15.0 \
 		itoa-1.0.18 \
-		jni-0.22.4 \
-		jni-macros-0.22.4 \
-		jni-sys-0.4.1 \
-		jni-sys-macros-0.4.1 \
 		js-sys-0.3.100 \
 		kasuari-0.4.12 \
 		kqueue-1.1.1 \
@@ -288,9 +305,13 @@ CARGO_CRATES=	aead-0.5.2 \
 		minimal-lexical-0.2.1 \
 		minspan-0.1.5 \
 		mio-1.2.1 \
+		moxcms-0.8.1 \
 		multimap-0.10.1 \
+		native-tls-0.2.18 \
 		nix-0.28.0 \
 		nix-0.29.0 \
+		nix-0.30.1 \
+		nix-0.31.3 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		norm-0.1.1 \
@@ -301,6 +322,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		num-conv-0.2.2 \
 		num-derive-0.4.2 \
 		num-traits-0.2.19 \
+		num_cpus-1.17.0 \
 		num_threads-0.1.7 \
 		objc2-0.6.4 \
 		objc2-app-kit-0.3.2 \
@@ -314,7 +336,11 @@ CARGO_CRATES=	aead-0.5.2 \
 		once_cell_polyfill-1.70.2 \
 		opaque-debug-0.3.1 \
 		open-5.3.5 \
+		openssl-0.10.81 \
+		openssl-macros-0.1.1 \
 		openssl-probe-0.2.1 \
+		openssl-src-300.6.1+3.6.3 \
+		openssl-sys-0.9.117 \
 		option-ext-0.2.0 \
 		ordered-float-4.6.0 \
 		os_pipe-1.2.3 \
@@ -344,6 +370,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.33 \
 		poly1305-0.8.0 \
+		polyval-0.6.2 \
 		portable-atomic-1.14.0 \
 		portable-pty-0.9.0 \
 		potential_utf-0.1.5 \
@@ -361,9 +388,10 @@ CARGO_CRATES=	aead-0.5.2 \
 		prost-types-0.14.3 \
 		protox-0.9.1 \
 		protox-parse-0.9.0 \
-		pulldown-cmark-0.13.3 \
+		pulldown-cmark-0.13.4 \
 		pulldown-cmark-escape-0.11.0 \
 		pulldown-cmark-to-cmark-22.0.0 \
+		pxfm-0.1.30 \
 		quanta-0.12.6 \
 		quick-error-1.2.3 \
 		quick-xml-0.39.4 \
@@ -399,6 +427,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		regex-syntax-0.8.11 \
 		relative-path-1.9.3 \
 		reqwest-0.13.4 \
+		reqwest-middleware-0.5.2 \
 		ring-0.17.14 \
 		rmcp-2.1.0 \
 		rmp-0.8.15 \
@@ -410,12 +439,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.42 \
-		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.14.1 \
-		rustls-platform-verifier-0.7.0 \
-		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.13 \
 		rustversion-1.0.22 \
 		rusty-fork-0.3.1 \
 		rusty_paserk-0.5.0 \
@@ -430,6 +454,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		scopeguard-1.2.0 \
 		security-framework-3.7.0 \
 		security-framework-sys-2.17.0 \
+		self-replace-1.5.0 \
 		semver-1.0.28 \
 		serde-1.0.229 \
 		serde_core-1.0.229 \
@@ -443,6 +468,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		serde_with-3.21.0 \
 		serde_with_macros-3.21.0 \
 		serial2-0.2.36 \
+		sha1-0.10.7 \
 		sha1-0.11.0 \
 		sha2-0.10.9 \
 		sha2-0.11.0 \
@@ -456,8 +482,6 @@ CARGO_CRATES=	aead-0.5.2 \
 		signal-hook-mio-0.2.5 \
 		signal-hook-registry-1.4.8 \
 		signature-2.2.0 \
-		simd_cesu8-1.1.1 \
-		simdutf8-0.1.5 \
 		siphasher-1.0.3 \
 		sketches-ddsketch-0.3.1 \
 		slab-0.4.12 \
@@ -476,11 +500,13 @@ CARGO_CRATES=	aead-0.5.2 \
 		sqlx-sqlite-0.9.0 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
+		statrs-0.18.0 \
 		streaming-iterator-0.1.9 \
 		stringprep-0.1.5 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
 		strum_macros-0.27.2 \
+		strum_macros-0.28.0 \
 		subtle-2.6.1 \
 		symlink-0.1.0 \
 		syn-1.0.109 \
@@ -495,9 +521,9 @@ CARGO_CRATES=	aead-0.5.2 \
 		termios-0.3.3 \
 		termwiz-0.23.3 \
 		thiserror-1.0.69 \
-		thiserror-2.0.18 \
+		thiserror-2.0.19 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.18 \
+		thiserror-impl-2.0.19 \
 		thread_local-1.1.9 \
 		time-0.3.49 \
 		time-core-0.1.9 \
@@ -508,8 +534,9 @@ CARGO_CRATES=	aead-0.5.2 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.52.3 \
 		tokio-macros-2.7.0 \
-		tokio-rustls-0.26.4 \
+		tokio-native-tls-0.3.1 \
 		tokio-stream-0.1.18 \
+		tokio-tungstenite-0.24.0 \
 		tokio-util-0.7.18 \
 		toml-1.1.2+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
@@ -520,7 +547,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		tonic-build-0.14.6 \
 		tonic-prost-0.14.6 \
 		tonic-prost-build-0.14.6 \
-		tonic-types-0.14.5 \
+		tonic-types-0.14.6 \
 		tower-0.5.3 \
 		tower-http-0.6.11 \
 		tower-layer-0.3.3 \
@@ -540,6 +567,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		tree_magic_mini-3.2.2 \
 		try-lock-0.2.5 \
 		tui-textarea-2-0.10.2 \
+		tungstenite-0.24.0 \
 		typed-builder-0.23.2 \
 		typed-builder-macro-0.23.2 \
 		typenum-1.20.1 \
@@ -559,6 +587,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		universal-hash-0.5.1 \
 		untrusted-0.9.0 \
 		url-2.5.8 \
+		utf-8-0.7.6 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		uuid-1.23.2 \
@@ -589,8 +618,6 @@ CARGO_CRATES=	aead-0.5.2 \
 		wayland-sys-0.31.10 \
 		web-sys-0.3.100 \
 		web-time-1.1.0 \
-		webpki-root-certs-1.0.7 \
-		webpki-roots-1.0.7 \
 		wezterm-bidi-0.2.3 \
 		wezterm-blob-leases-0.1.1 \
 		wezterm-color-types-0.3.0 \
@@ -598,17 +625,26 @@ CARGO_CRATES=	aead-0.5.2 \
 		wezterm-dynamic-derive-0.1.1 \
 		wezterm-input-types-0.1.0 \
 		whoami-2.1.1 \
+		widestring-1.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.52.0 \
+		windows-0.61.3 \
+		windows-collections-0.2.0 \
 		windows-core-0.52.0 \
+		windows-core-0.61.2 \
 		windows-core-0.62.2 \
+		windows-future-0.2.1 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
+		windows-link-0.1.3 \
 		windows-link-0.2.1 \
+		windows-numerics-0.2.0 \
+		windows-result-0.3.4 \
 		windows-result-0.4.1 \
+		windows-strings-0.4.2 \
 		windows-strings-0.5.1 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
@@ -616,6 +652,7 @@ CARGO_CRATES=	aead-0.5.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.5 \
+		windows-threading-0.1.0 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
@@ -632,9 +669,9 @@ CARGO_CRATES=	aead-0.5.2 \
 		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
-		winnow-0.7.15 \
 		winnow-1.0.3 \
 		winreg-0.10.1 \
+		wiremock-0.6.5 \
 		wit-bindgen-0.57.1 \
 		wl-clipboard-rs-0.9.3 \
 		writeable-0.6.3 \
@@ -655,6 +692,9 @@ CARGO_CRATES=	aead-0.5.2 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
 		zmij-1.0.23
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-server
