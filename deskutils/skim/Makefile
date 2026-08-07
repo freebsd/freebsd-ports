@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.6.1
+DISTVERSION=	5.6.3
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -21,7 +21,7 @@ GH_ACCOUNT=	lotabout
 
 CARGO_BUILDDEP=	no
 CARGO_CRATES=	adler2-2.0.1 \
-		aho-corasick-1.1.4 \
+		aho-corasick-1.1.5 \
 		alloca-0.4.0 \
 		allocator-api2-0.2.21 \
 		anes-0.1.6 \
@@ -50,7 +50,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bumpalo-3.20.3 \
 		by_address-1.2.1 \
 		bytemuck-1.25.2 \
-		bytemuck_derive-1.11.0 \
+		bytemuck_derive-1.12.0 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
 		bytes-1.12.1 \
@@ -64,13 +64,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.6.4 \
-		clap_builder-4.6.2 \
-		clap_complete-4.6.8 \
+		clap-4.6.6 \
+		clap_builder-4.6.6 \
+		clap_complete-4.6.9 \
 		clap_complete_nushell-4.6.1 \
 		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
-		clap_mangen-0.3.0 \
+		clap_mangen-0.3.2 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.5 \
 		compact_str-0.9.1 \
@@ -91,11 +91,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crypto-common-0.1.7 \
 		csscolorparser-0.6.2 \
 		darling-0.20.11 \
-		darling-0.23.0 \
+		darling-0.24.0 \
 		darling_core-0.20.11 \
-		darling_core-0.23.0 \
+		darling_core-0.24.0 \
 		darling_macro-0.20.11 \
-		darling_macro-0.23.0 \
+		darling_macro-0.24.0 \
 		defmt-1.1.1 \
 		defmt-macros-1.1.1 \
 		defmt-parser-1.0.0 \
@@ -120,7 +120,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		euclid-0.22.14 \
 		eyre-0.6.12 \
 		fancy-regex-0.11.0 \
-		fast-srgb8-1.0.0 \
 		fastrand-2.5.0 \
 		fdeflate-0.3.7 \
 		filedescriptor-0.8.3 \
@@ -130,7 +129,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		flate2-1.1.9 \
 		fnv-1.0.7 \
 		foldhash-0.2.0 \
-		frizbee-0.11.0 \
+		frizbee-0.12.0 \
 		funty-2.0.0 \
 		futures-0.3.33 \
 		futures-channel-0.3.33 \
@@ -163,8 +162,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		indexmap-2.14.0 \
 		indoc-2.0.7 \
 		insta-1.48.0 \
-		instability-0.3.12 \
-		interprocess-2.4.2 \
+		instability-0.3.13 \
+		interprocess-2.4.3 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
@@ -180,13 +179,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libc-0.2.189 \
 		libm-0.2.16 \
 		libmimalloc-sys-0.1.44 \
-		line-clipping-0.3.7 \
+		line-clipping-0.3.8 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.12.1 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
 		log-0.4.33 \
-		lru-0.18.1 \
+		lru-0.18.2 \
 		mac_address-1.1.8 \
 		memchr-2.8.3 \
 		memmem-0.1.1 \
@@ -212,8 +211,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ordered-float-5.3.0 \
 		outref-0.5.2 \
 		page_size-0.6.0 \
-		palette-0.7.6 \
-		palette_derive-0.7.6 \
+		palette-0.7.7 \
+		palette_derive-0.7.7 \
+		palette_math-0.7.7 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		pastey-0.2.3 \
@@ -236,8 +236,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		portable-pty-0.9.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
-		proc-macro-error-attr3-3.0.3 \
-		proc-macro-error3-3.0.3 \
+		proc-macro-error-attr3-3.1.0 \
+		proc-macro-error3-3.1.0 \
 		proc-macro2-1.0.107 \
 		pulldown-cmark-0.13.4 \
 		pxfm-0.1.30 \
@@ -271,7 +271,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ref-cast-1.0.26 \
 		ref-cast-impl-1.0.26 \
 		regex-1.13.1 \
-		regex-automata-0.4.16 \
+		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
 		roff-1.1.1 \
 		ron-0.12.2 \
@@ -289,7 +289,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_json-1.0.151 \
-		serial2-0.2.37 \
+		serial2-0.2.38 \
 		serial_test-3.5.0 \
 		serial_test_derive-3.5.0 \
 		sha2-0.10.9 \
@@ -325,13 +325,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.19 \
 		thread_local-1.1.10 \
-		time-0.3.54 \
+		time-0.3.55 \
 		time-core-0.1.9 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.12.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.53.1 \
-		tokio-macros-2.7.1 \
+		tokio-macros-2.7.2 \
 		tokio-util-0.7.19 \
 		tui-term-0.3.4 \
 		typeid-1.0.3 \
@@ -396,8 +396,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winreg-0.10.1 \
 		wit-bindgen-0.57.1 \
 		wyz-0.5.1 \
-		zerocopy-0.8.55 \
-		zerocopy-derive-0.8.55 \
+		zerocopy-0.8.56 \
+		zerocopy-derive-0.8.56 \
 		zmij-1.0.23 \
 		zune-core-0.5.1 \
 		zune-jpeg-0.5.15
