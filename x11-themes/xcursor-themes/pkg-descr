@@ -1,1 +1,3 @@
-This package contains X.org cursors themes.
+This is a default set of cursor themes for use with libXcursor,
+originally created for the XFree86 Project, and now shipped as part
+of the X.Org software distribution.
