@@ -1,9 +1,10 @@
 PORTNAME=	libskk
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	https://github.com/ueno/${PORTNAME}/releases/download/${DISTVERSION}/
 
-MAINTAINER=	hiroto.kagotani@gmail.com
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Library to deal with Japanese Kana-to-Kanji conversion method
 WWW=		https://github.com/ueno/libskk
 
