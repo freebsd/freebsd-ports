@@ -1,7 +1,6 @@
 PORTNAME=	convco
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	1
+DISTVERSION=	0.7.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,21 +23,23 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		anyhow-1.0.103 \
 		arc-swap-1.9.2 \
 		assert_cmd-2.2.2 \
+		bisync-0.3.0 \
+		bisync_macros-0.2.3 \
 		bitflags-1.3.2 \
 		bitflags-2.13.0 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.1 \
 		block2-0.6.2 \
-		bstr-1.12.3 \
+		bstr-1.13.0 \
 		byteorder-1.5.0 \
 		bytes-1.12.0 \
 		cc-1.2.65 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
-		clap_complete-4.6.7 \
-		clap_derive-4.6.1 \
+		clap-4.6.4 \
+		clap_builder-4.6.2 \
+		clap_complete-4.6.8 \
+		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		clru-0.6.3 \
 		cmake-0.1.58 \
@@ -47,6 +48,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
 		crc32fast-1.5.0 \
+		crossbeam-channel-0.5.16 \
 		crossbeam-utils-0.8.21 \
 		crypto-common-0.1.7 \
 		crypto-common-0.2.2 \
@@ -84,54 +86,55 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		getrandom-0.3.4 \
 		getrandom-0.4.3 \
 		git2-0.21.0 \
-		gix-0.85.0 \
-		gix-actor-0.41.1 \
-		gix-attributes-0.33.2 \
-		gix-bitmap-0.3.2 \
-		gix-chunk-0.7.2 \
+		gix-0.86.0 \
+		gix-actor-0.41.2 \
+		gix-attributes-0.34.0 \
+		gix-bitmap-0.3.3 \
+		gix-chunk-0.7.3 \
 		gix-command-0.9.1 \
-		gix-commitgraph-0.37.1 \
-		gix-config-0.58.0 \
-		gix-config-value-0.18.1 \
-		gix-date-0.15.5 \
-		gix-diff-0.65.0 \
-		gix-discover-0.53.0 \
-		gix-error-0.2.4 \
-		gix-features-0.48.1 \
-		gix-filter-0.32.0 \
-		gix-fs-0.21.2 \
-		gix-glob-0.26.1 \
-		gix-hash-0.25.1 \
-		gix-hashtable-0.15.2 \
-		gix-ignore-0.21.1 \
-		gix-imara-diff-0.2.3 \
-		gix-index-0.53.0 \
-		gix-lock-23.0.1 \
-		gix-object-0.62.0 \
-		gix-odb-0.82.0 \
-		gix-pack-0.72.0 \
-		gix-packetline-0.21.5 \
-		gix-path-0.12.1 \
-		gix-pathspec-0.18.1 \
-		gix-protocol-0.63.0 \
+		gix-commitgraph-0.38.0 \
+		gix-config-0.59.0 \
+		gix-config-value-0.19.0 \
+		gix-date-0.15.6 \
+		gix-diff-0.66.0 \
+		gix-discover-0.54.0 \
+		gix-error-0.2.5 \
+		gix-features-0.49.0 \
+		gix-filter-0.33.0 \
+		gix-fs-0.22.0 \
+		gix-glob-0.27.0 \
+		gix-hash-0.26.0 \
+		gix-hashtable-0.16.0 \
+		gix-ignore-0.22.0 \
+		gix-imara-diff-0.2.4 \
+		gix-index-0.54.0 \
+		gix-lock-24.0.0 \
+		gix-object-0.63.0 \
+		gix-odb-0.83.0 \
+		gix-pack-0.73.0 \
+		gix-packetline-0.22.0 \
+		gix-path-0.12.3 \
+		gix-pathspec-0.19.0 \
+		gix-protocol-0.64.0 \
 		gix-quote-0.7.2 \
-		gix-ref-0.65.0 \
-		gix-refspec-0.43.0 \
-		gix-revision-0.47.0 \
-		gix-revwalk-0.33.0 \
-		gix-sec-0.14.1 \
-		gix-shallow-0.12.1 \
-		gix-submodule-0.32.0 \
-		gix-tempfile-23.0.2 \
-		gix-trace-0.1.20 \
-		gix-transport-0.57.2 \
-		gix-traverse-0.59.0 \
-		gix-url-0.36.1 \
-		gix-utils-0.3.3 \
-		gix-validate-0.11.2 \
-		gix-worktree-0.54.0 \
-		gix-worktree-stream-0.34.0 \
-		handlebars-6.4.2 \
+		gix-ref-0.66.0 \
+		gix-refspec-0.44.0 \
+		gix-revision-0.48.0 \
+		gix-revwalk-0.34.0 \
+		gix-sec-0.14.2 \
+		gix-shallow-0.13.0 \
+		gix-submodule-0.33.0 \
+		gix-tempfile-24.0.0 \
+		gix-trace-0.1.21 \
+		gix-transport-0.58.0 \
+		gix-traverse-0.60.0 \
+		gix-url-0.37.0 \
+		gix-utils-0.3.5 \
+		gix-validate-0.11.3 \
+		gix-worktree-0.55.0 \
+		gix-worktree-stream-0.35.0 \
+		gix-zlib-0.1.0 \
+		handlebars-6.4.3 \
 		hash32-0.3.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.16.1 \
@@ -158,7 +161,6 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		jiff-tzdb-0.1.6 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.34 \
-		kstring-2.0.2 \
 		libc-0.2.186 \
 		libgit2-sys-0.18.5+1.9.4 \
 		libssh2-sys-0.3.1 \
@@ -167,7 +169,6 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		litemap-0.8.2 \
 		lock_api-0.4.14 \
 		log-0.4.33 \
-		maybe-async-0.2.11 \
 		memchr-2.8.2 \
 		memmap2-0.9.11 \
 		nix-0.31.3 \
@@ -201,8 +202,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		redox_syscall-0.5.18 \
-		regex-1.12.4 \
-		regex-automata-0.4.14 \
+		regex-1.13.1 \
+		regex-automata-0.4.16 \
 		regex-syntax-0.8.11 \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
@@ -210,9 +211,9 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
 		semver-1.0.28 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
 		serde_json-1.0.150 \
 		serde_norway-0.9.42 \
 		sha1-0.10.6 \
@@ -224,14 +225,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		similar-2.7.0 \
 		smallvec-1.15.2 \
 		stable_deref_trait-1.2.1 \
-		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		syn-2.0.118 \
+		syn-3.0.2 \
 		synstructure-0.13.2 \
 		tempfile-3.27.0 \
 		termtree-0.5.1 \
-		thiserror-2.0.18 \
-		thiserror-impl-2.0.18 \
+		thiserror-2.0.19 \
+		thiserror-impl-2.0.19 \
 		thread_local-1.1.9 \
 		tinystr-0.8.3 \
 		tinyvec-1.11.0 \
