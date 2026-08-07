@@ -1,6 +1,6 @@
 PORTNAME=	pylance
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.1 # machine-learning
+DISTVERSION=	10.0.0 # machine-learning
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
