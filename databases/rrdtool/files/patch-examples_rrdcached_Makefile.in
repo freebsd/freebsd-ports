@@ -1,6 +1,6 @@
---- examples/rrdcached/Makefile.in.orig	2026-05-19 19:34:45 UTC
+--- examples/rrdcached/Makefile.in.orig	2026-08-07 13:48:57 UTC
 +++ examples/rrdcached/Makefile.in
-@@ -372,7 +372,7 @@ top_srcdir = @top_srcdir@
+@@ -373,7 +373,7 @@ top_srcdir = @top_srcdir@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@

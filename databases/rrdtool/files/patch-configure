@@ -1,6 +1,6 @@
---- configure.orig	2026-05-19 19:34:43 UTC
+--- configure.orig	2026-08-07 13:48:56 UTC
 +++ configure
-@@ -24003,7 +24003,7 @@ else $as_nop
+@@ -24004,7 +24004,7 @@ else $as_nop
  then :
    enableval=$enable_ruby_site_install; RUBY_MAKE_OPTIONS=
  else $as_nop
@@ -9,7 +9,7 @@
  fi
  
  
-@@ -30583,19 +30583,6 @@ printf "%s\n" "and out again" >&6; }
+@@ -30596,19 +30596,6 @@ printf "%s\n" "and out again" >&6; }
  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: and out again" >&5
  printf "%s\n" "and out again" >&6; }
  
