@@ -1,6 +1,6 @@
-PORTNAME=	PyNE
-DISTVERSION=	0.7.8
-PORTREVISION=	6
+PORTNAME=	PyNE # it currently combines python and C++ libs
+DISTVERSION=	0.7.8-226
+DISTVERSIONSUFFIX=	-g760c695d
 CATEGORIES=	science # physics
 MASTER_SITES=	https://raw.githubusercontent.com/pyne/data/master/:decay \
 		https://raw.githubusercontent.com/pyne/data/master/:cram \
@@ -33,22 +33,26 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tables>0:devel/py-tables@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} # the dependency list is only in ubuntu.sh, see https://github.com/pyne/pyne/issues/1518
-PY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}OpenMC>0:science/py-OpenMC@${PY_FLAVOR}
+PY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openmc>0:science/py-OpenMC@${PY_FLAVOR}
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PY_DEPENDS}
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-		libMOAB.so:math/moab
+		libMOAB.so:math/moab \
+		libopenblas.so:math/openblas
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		compiler:c++17-lang fortran python
-USE_PYTHON=	distutils cython flavors
+USE_PYTHON=	distutils cython flavors pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pyne
 GH_PROJECT=	pyne
 
 MAKE_ENV=	DESTDIR=${STAGEDIR}
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		LD_LIBRARY_PATH=${STAGEDIR}${LOCALBASE}/lib
+TEST_WRKSRC=	${WRKSRC}/tests
 FFLAGS+=	-fallow-argument-mismatch
 
 # all arguments are described here: http://pyne.io/install/source.html#source
@@ -82,7 +86,6 @@ do-install:
 		${STAGEDIR}${PYTHON_SITELIBDIR}/pyne/*.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/pyne/xs/models.so
 
-# CAVEAT: due to the failure to find MOAB-5.5.1 the file pyne/source_sampling.so isn't built, and is removed from plist
-#         - see https://github.com/pyne/pyne/issues/1537
+# tests as of 0.7.8-226: 1 failed, 924 passed, 67 skipped, 29 warnings in 14.96s, see https://github.com/pyne/pyne/issues/1584
 
 .include <bsd.port.mk>
