@@ -1,6 +1,7 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.27.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
@@ -14,12 +15,22 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
-		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.21.6:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.21.6:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=4.25.8:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flatbuffers>=0:devel/py-flatbuffers@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang python
-USE_PYTHON=	pep517
+USE_PYTHON=	pep517 autoplist concurrent
 
-# Build using the official build.py script
+# Build using the official build.py script; wheel is left in ${WRKDIR}/build/Release/dist.
+PEP517_BUILD_DEPEND=
+PEP517_INSTALL_CMD=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${WRKDIR}/build/Release/dist/onnxruntime-${DISTVERSION}*.whl
+
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${PYTHON_CMD} tools/ci_build/build.py \
@@ -29,12 +40,19 @@ do-build:
 		--skip_tests \
 		--skip_submodule_sync \
 		--allow_running_as_root \
+		--enable_pybind \
+		--build_wheel \
 		--cmake_extra_defines CMAKE_INSTALL_PREFIX=${PREFIX} \
-		--cmake_extra_defines onnxruntime_BUILD_UNIT_TESTS=OFF
+		--cmake_extra_defines onnxruntime_BUILD_UNIT_TESTS=OFF \
+		--cmake_extra_defines ONNXRUNTIME_NUMPY_INCLUDE_DIR=${PYTHONPREFIX_SITELIBDIR}/numpy/_core/include
 
-do-install:
-	cd ${WRKDIR}/build/Release && ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} install DESTDIR=${STAGEDIR}
+# The upstream wheel build does not include the native pybind extension, so
+# install it alongside the pure-Python files and add it to the autoplist.
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/build/Release/onnxruntime/capi/onnxruntime_pybind11_state.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/onnxruntime/capi/
+	@${ECHO_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/onnxruntime/capi/onnxruntime_pybind11_state.so \
+		>> ${_PYTHONPKGLIST}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
