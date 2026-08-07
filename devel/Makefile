@@ -8832,6 +8832,7 @@
     SUBDIR += trio
     SUBDIR += trompeloeil
     SUBDIR += truc
+    SUBDIR += tuicr
     SUBDIR += tup
     SUBDIR += tvision
     SUBDIR += typeshare

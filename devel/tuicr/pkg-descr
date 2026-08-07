@@ -1,0 +1,14 @@
+tuicr is an interactive code review tool, providing a portion of the
+Github experience in a TUI. And, most importantly it has Vi-ish
+keybindings.
+
+* GitHub-style continuous diff in the terminal. Scroll through every
+  changed file in one stream.
+* PR-style comments at the line, range, file, and review level.
+* Review tracking at file or hunk granularity, persisted across
+  sessions.
+* Three export targets: push a real review to GitHub, GitLab, or
+  Bitbucket; copy structured markdown to your clipboard; or pipe to
+  stdout.
+* Works with git, jj, and mercurial. Reviews uncommitted changes,
+  commit ranges, or any GitHub PR, GitLab MR, or Bitbucket PR.
