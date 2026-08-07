@@ -514,6 +514,7 @@
     <topic>py-mkdocs-material -- DOM XSS vulnerability</topic>
     <affects>
 <package>
+    <name>py310-mkdocs-material</name>
     <name>py311-mkdocs-material</name>
     <name>py312-mkdocs-material</name>
     <name>py313-mkdocs-material</name>
@@ -538,6 +539,7 @@
     <dates>
       <discovery>2026-07-17</discovery>
       <entry>2026-07-31</entry>
+      <modified>2026-08-07</modified>
     </dates>
   </vuln>
 
