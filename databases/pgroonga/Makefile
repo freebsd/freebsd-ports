@@ -1,5 +1,5 @@
 PORTNAME=	pgroonga
-DISTVERSION=	4.0.6
+DISTVERSION=	4.0.8
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
