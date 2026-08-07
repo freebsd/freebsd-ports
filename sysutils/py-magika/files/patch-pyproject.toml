@@ -1,0 +1,118 @@
+-- Replace maturin/Rust-based build configuration with hatchling for a pure
+-- Python package. The Python package uses onnxruntime directly and does not
+-- require the Rust CLI binary. The PyPI sdist already ships this hatchling
+-- pyproject.toml, but the GitHub source used by the port references the
+-- ../rust/cli/Cargo.toml maturin build, which is unsupported on FreeBSD.
+-- This patch mirrors the upstream PyPI sdist configuration.
+
+--- pyproject.toml.orig	2026-05-04 08:32:03 UTC
++++ pyproject.toml
+@@ -2,12 +2,14 @@ authors = [
+ name = "magika"
+ description = "A tool to determine the content type of a file with deep learning"
+ authors = [
+-    {name = "Magika Developers", email = "magika-dev@google.com"},
++    { name = "Magika Developers", email = "magika-dev@google.com" },
+ ]
+ readme = "README.md"
+-license = {"text" = "Apache-2.0"}
+ requires-python = ">=3.8"
+-keywords = ["content type detection", "machine learning"]
++keywords = [
++    "content type detection",
++    "machine learning",
++]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Console",
+@@ -33,22 +35,17 @@ version = "1.0.3"
+     "Typing :: Typed",
+ ]
+ version = "1.0.3"
+-
+ dependencies = [
+     "click>=8.1.7",
+-
+-    # Python 3.14+: Min version 1.24.1
+     "onnxruntime>=1.24.1 ; python_version >= '3.14'",
+-    # Python 3.13: Min version 1.21.0
+     "onnxruntime>=1.21.0 ; python_version == '3.13'",
+-    # Python 3.11 - 3.12: Min version 1.17.0
+     "onnxruntime>=1.17.0 ; python_version >= '3.11' and python_version < '3.13'",
+-    # Python 3.10: Support dropped in 1.24.1 (use latest compatible)
+     "onnxruntime>=1.17.0, <1.24.1 ; python_version == '3.10'",
+-    # Python 3.9: Support dropped in 1.20.0
+     "onnxruntime>=1.17.0, <1.20.0 ; python_version <= '3.9'",
+ ]
+ 
++[project.license]
++text = "Apache-2.0"
+ 
+ [project.urls]
+ Homepage = "https://github.com/google/magika"
+@@ -57,6 +54,9 @@ Changelog = "https://github.com/google/magika/blob/mai
+ Issues = "https://github.com/google/magika/issues"
+ Changelog = "https://github.com/google/magika/blob/main/python/CHANGELOG.md"
+ 
++[project.scripts]
++magika-python-client = "magika.cli.magika_client:main"
++magika = "magika.cli.magika_rust_client_not_found_warning:main"
+ 
+ [dependency-groups]
+ dev = [
+@@ -72,30 +72,36 @@ dev = [
+ ]
+ 
+ [build-system]
+-requires = ["maturin>=1.12.2"]
+-build-backend = "maturin"
++requires = [
++    "hatchling",
++]
++build-backend = "hatchling.build"
+ 
+-[[tool.uv.index]]
+-url = "https://pypi.org/simple"
+-default = true
++[tool.uv]
++index = [
++    { url = "https://pypi.org/simple", default = true },
++]
+ 
+-[tool.maturin]
+-python-source = "src"
+-module-name = "magika"
+-bindings = "bin"
+-manifest-path = "../rust/cli/Cargo.toml"
+-locked = true
+-
+ [tool.ruff.lint]
+-# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+-# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+-# McCabe complexity (`C901`) by default.
+-select = ["D", "E4", "E7", "E9", "F", "I001"]
+-ignore = ["D105"]
++select = [
++    "D",
++    "E4",
++    "E7",
++    "E9",
++    "F",
++    "I001",
++]
++ignore = [
++    "D105",
++]
+ 
+ [tool.ruff.lint.per-file-ignores]
+-"scripts/*" = ["D"]
+-"tests/*" = ["D"]
++"scripts/*" = [
++    "D",
++]
++"tests/*" = [
++    "D",
++]
+ 
+ [tool.ruff.lint.pydocstyle]
+ convention = "google"
