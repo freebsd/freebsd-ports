@@ -1,5 +1,5 @@
-TIMESTAMP = 1784487337
-SHA256 (go/security_cosign/cosign-v3.1.2/v3.1.2.mod) = 62ee3f278a7ee61f5a4b5aedd6af3291465ff45035267afc1224c04bd206a939
-SIZE (go/security_cosign/cosign-v3.1.2/v3.1.2.mod) = 15707
-SHA256 (go/security_cosign/cosign-v3.1.2/v3.1.2.zip) = 6d98f8a1d414529a59a166b1fa8cbc8bb5ec087e95f1c12152d27a0ed954ca22
-SIZE (go/security_cosign/cosign-v3.1.2/v3.1.2.zip) = 1314583
+TIMESTAMP = 1786106588
+SHA256 (go/security_cosign/cosign-v3.1.3/v3.1.3.mod) = 821fc219a64faa956b3051c2288a6f04bf50aa00fe397e3dd64a003fb43f9c25
+SIZE (go/security_cosign/cosign-v3.1.3/v3.1.3.mod) = 15707
+SHA256 (go/security_cosign/cosign-v3.1.3/v3.1.3.zip) = fbf05afe62db35ca00129ff65fab6f7ad8b7851ae1cf7dbb4b1789b6ccd65db2
+SIZE (go/security_cosign/cosign-v3.1.3/v3.1.3.zip) = 1348651
