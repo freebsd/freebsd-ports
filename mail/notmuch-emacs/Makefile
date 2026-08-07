@@ -1,4 +1,4 @@
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail elisp
 PKGNAMESUFFIX=	-emacs
 COMMENT=	Emacs major-mode for the Notmuch email search and tagging application
@@ -64,7 +64,6 @@ do-configure:
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/notmuch -name "*.elc" -delete
-	@${GZIP_CMD} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/notmuch/*.el
 
 # keep poudriere testport happy
 post-install-DOCS-on:
