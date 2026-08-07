@@ -1,6 +1,6 @@
 PORTNAME=	timewarrior
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.1
+DISTVERSION=	1.10.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		cmake:insource compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GothenburgBitFactory
-GH_TUPLE=	GothenburgBitFactory:libshared:7604fd2:libshared/src/libshared
+GH_TUPLE=	GothenburgBitFactory:libshared:8693555:libshared/src/libshared
 
 CMAKE_ARGS+=	-DTIMEW_DOCDIR=${DOCSDIR}
 
