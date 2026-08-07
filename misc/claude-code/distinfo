@@ -1,5 +1,5 @@
-TIMESTAMP = 1785992389
-SHA256 (claude-code-2.1.223/linux-x64/claude) = 98226474f802e3094d6a86c5ade8883c16206d0fcb5c400b7401c800063e99d7
-SIZE (claude-code-2.1.223/linux-x64/claude) = 290728968
-SHA256 (claude-code-2.1.223/linux-arm64/claude) = 60e83d8db0e894d0e54413e5e7daa256d180db660f51e139a51b614fc30cf3ac
-SIZE (claude-code-2.1.223/linux-arm64/claude) = 287423416
+TIMESTAMP = 1786085613
+SHA256 (claude-code-2.1.224/linux-x64/claude) = a2b5add7dc4bcd8eaa029f4e8bdac4df7769b4073698db7989d206baf9419c2d
+SIZE (claude-code-2.1.224/linux-x64/claude) = 295676936
+SHA256 (claude-code-2.1.224/linux-arm64/claude) = 3e50836e227868746273653e0f8115cf5fc9cb34a081847c6040c81d80812c33
+SIZE (claude-code-2.1.224/linux-arm64/claude) = 292404152
