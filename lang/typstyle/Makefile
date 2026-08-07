@@ -1,7 +1,6 @@
 PORTNAME=	typstyle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
-PORTREVISION=	1
+DISTVERSION=	0.15.1
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -116,7 +115,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		displaydoc-0.2.6 \
 		dyn-clone-1.0.20 \
 		ecow-0.2.6 \
-		ecow-0.3.0 \
 		either-1.16.0 \
 		encode_unicode-1.0.0 \
 		enum-ordinalize-4.3.2 \
@@ -414,22 +412,22 @@ CARGO_CRATES=	adler2-2.0.1 \
 		two-face-0.4.5 \
 		typed-arena-2.0.2 \
 		typenum-1.20.1 \
-		typst-0.15.0 \
-		typst-assets-0.15.0 \
+		typst-0.15.1 \
+		typst-assets-0.15.1 \
 		typst-bundle-0.15.0 \
-		typst-eval-0.15.0 \
-		typst-html-0.15.0 \
-		typst-layout-0.15.0 \
-		typst-library-0.15.0 \
-		typst-macros-0.15.0 \
+		typst-eval-0.15.1 \
+		typst-html-0.15.1 \
+		typst-layout-0.15.1 \
+		typst-library-0.15.1 \
+		typst-macros-0.15.1 \
 		typst-pdf-0.15.0 \
-		typst-realize-0.15.0 \
-		typst-render-0.15.0 \
+		typst-realize-0.15.1 \
+		typst-render-0.15.1 \
 		typst-shim-0.15.0 \
-		typst-svg-0.15.0 \
-		typst-syntax-0.15.0 \
-		typst-timing-0.15.0 \
-		typst-utils-0.15.0 \
+		typst-svg-0.15.1 \
+		typst-syntax-0.15.1 \
+		typst-timing-0.15.1 \
+		typst-utils-0.15.1 \
 		unic-langid-0.9.6 \
 		unic-langid-impl-0.9.6 \
 		unic-langid-macros-0.9.6 \
@@ -537,7 +535,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zmij-1.0.21 \
 		zune-core-0.5.1 \
 		zune-jpeg-0.5.15 \
-		wasm-minimal-protocol@git+https://github.com/astrale-sharp/wasm-minimal-protocol\#e8150000ef6bf51c103fbd5f7c7d8371557f179c
+		wasm-minimal-protocol@git+https://github.com/astrale-sharp/wasm-minimal-protocol\#cc29630ac15ffe7c0a8f7f459316edca6ef5a5da
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
