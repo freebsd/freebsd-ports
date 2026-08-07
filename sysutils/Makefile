@@ -715,6 +715,7 @@
     SUBDIR += mac_rtprio
     SUBDIR += mackerel-agent
     SUBDIR += magicrescue
+    SUBDIR += magika
     SUBDIR += manck
     SUBDIR += mapchan
     SUBDIR += mapdir
