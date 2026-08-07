@@ -1,7 +1,6 @@
 PORTNAME=	git-repo-manager
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	2
+DISTVERSION=	0.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,18 +31,22 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		base64-0.22.1 \
 		bitflags-2.11.1 \
 		bytes-1.11.1 \
-		camino-1.2.2 \
+		camino-1.2.5 \
 		cc-1.2.62 \
+		cesu8-1.1.0 \
 		cfg-if-1.0.4 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
-		clap_derive-4.6.1 \
+		clap-4.6.5 \
+		clap_builder-4.6.5 \
+		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		colorchoice-1.0.5 \
-		comfy-table-7.2.2 \
-		console-0.16.3 \
+		combine-4.6.7 \
+		comfy-table-8.0.0 \
+		console-0.16.4 \
 		cookie-0.18.1 \
 		cookie_store-0.22.0 \
+		core-foundation-0.10.1 \
+		core-foundation-sys-0.8.7 \
 		deranged-0.5.5 \
 		displaydoc-0.2.5 \
 		document-features-0.2.11 \
@@ -72,6 +75,10 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		indexmap-2.14.0 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
+		jni-0.21.1 \
+		jni-sys-0.3.1 \
+		jni-sys-0.4.1 \
+		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
 		lazy_static-1.5.0 \
 		libc-0.2.186 \
@@ -83,11 +90,12 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		litrs-0.4.2 \
 		lock_api-0.4.13 \
 		log-0.4.29 \
-		memchr-2.8.0 \
+		memchr-2.8.1 \
 		num-conv-0.1.0 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		openssl-probe-0.1.6 \
+		openssl-probe-0.2.1 \
 		openssl-src-300.5.1+3.5.1 \
 		openssl-sys-0.9.116 \
 		parking_lot-0.12.4 \
@@ -101,20 +109,27 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		redox_syscall-0.5.17 \
-		regex-1.12.3 \
-		regex-automata-0.4.14 \
-		regex-syntax-0.8.10 \
+		regex-1.13.1 \
+		regex-automata-0.4.18 \
+		regex-syntax-0.8.11 \
 		ring-0.17.14 \
 		rustix-1.1.4 \
 		rustls-0.23.40 \
+		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.14.1 \
+		rustls-platform-verifier-0.6.2 \
+		rustls-platform-verifier-android-0.1.1 \
 		rustls-webpki-0.103.13 \
 		ryu-1.0.20 \
+		same-file-1.0.6 \
+		schannel-0.1.29 \
 		scopeguard-1.2.0 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.149 \
+		security-framework-3.7.0 \
+		security-framework-sys-2.17.0 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.151 \
 		serde_spanned-1.1.1 \
 		serde_yaml-0.9.34+deprecated \
 		shellexpand-3.1.2 \
@@ -123,19 +138,22 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		stable_deref_trait-1.2.1 \
 		subtle-2.6.1 \
 		syn-2.0.117 \
+		syn-3.0.3 \
 		synstructure-0.13.2 \
 		temp-env-0.3.6 \
 		tempfile-3.27.0 \
+		thiserror-1.0.69 \
 		thiserror-2.0.12 \
+		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.12 \
 		time-0.3.45 \
 		time-core-0.1.7 \
 		time-macros-0.2.25 \
 		tinystr-0.8.3 \
-		toml-1.1.2+spec-1.1.0 \
+		toml-1.1.4+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_parser-1.1.2+spec-1.1.0 \
-		toml_writer-1.1.1+spec-1.1.0 \
+		toml_parser-1.1.3+spec-1.1.0 \
+		toml_writer-1.1.2+spec-1.1.0 \
 		unicode-ident-1.0.24 \
 		unicode-segmentation-1.13.2 \
 		unicode-width-0.2.2 \
@@ -144,28 +162,40 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		ureq-3.3.0 \
 		ureq-proto-0.6.0 \
 		url-2.5.8 \
-		url-escape-0.1.1 \
+		url-escape-0.1.2 \
 		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
+		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.2+wasi-0.2.9 \
+		webpki-root-certs-1.0.8 \
 		webpki-roots-1.0.7 \
+		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
+		windows-sys-0.45.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.61.2 \
+		windows-targets-0.42.2 \
 		windows-targets-0.52.6 \
+		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.52.6 \
+		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-1.0.2 \
+		winnow-1.0.3 \
 		wit-bindgen-0.51.0 \
 		writeable-0.6.3 \
 		yoke-0.8.2 \
