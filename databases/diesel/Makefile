@@ -1,7 +1,7 @@
 PORTNAME=	diesel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.11
-PORTREVISION=	1
+DISTVERSION=	2.3.12
+PORTREVISION=	0
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -23,8 +23,8 @@ GH_ACCOUNT=	diesel-rs
 CARGO_BUILD_ARGS=	--package=diesel_cli
 CARGO_INSTALL_PATH=	diesel_cli
 CARGO_CRATES=	accessory-2.1.0 \
-		aho-corasick-1.1.4 \
-		android_system_properties-0.1.5 \
+		aho-corasick-1.1.5 \
+		android_system_properties-0.1.6 \
 		anstream-1.0.0 \
 		anstyle-1.0.14 \
 		anstyle-parse-1.0.0 \
@@ -33,27 +33,27 @@ CARGO_CRATES=	accessory-2.1.0 \
 		argon2-0.5.3 \
 		assert_cmd-2.2.2 \
 		assert_matches-1.5.0 \
-		async-trait-0.1.89 \
+		async-trait-0.1.91 \
 		autocfg-1.5.1 \
 		base64ct-1.8.3 \
 		bigdecimal-0.4.10 \
-		bitflags-2.13.0 \
+		bitflags-2.13.1 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
-		bstr-1.12.3 \
+		bstr-1.13.0 \
 		bumpalo-3.20.3 \
 		byteorder-1.5.0 \
-		camino-1.2.4 \
+		camino-1.2.5 \
 		cargo-platform-0.3.3 \
 		cargo_metadata-0.23.1 \
 		cast-0.3.0 \
-		cc-1.2.67 \
+		cc-1.4.1 \
 		cfg-if-1.0.4 \
 		chrono-0.4.45 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
-		clap_complete-4.6.7 \
-		clap_derive-4.6.1 \
+		clap-4.6.6 \
+		clap_builder-4.6.6 \
+		clap_complete-4.6.9 \
+		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		cmake-0.1.58 \
 		colorchoice-1.0.5 \
@@ -72,25 +72,25 @@ CARGO_CRATES=	accessory-2.1.0 \
 		difflib-0.4.0 \
 		diffy-0.4.2 \
 		digest-0.10.7 \
-		displaydoc-0.2.6 \
+		displaydoc-0.2.7 \
 		dotenvy-0.15.7 \
 		downcast-rs-2.0.2 \
 		dunce-1.0.5 \
-		either-1.16.0 \
+		either-1.17.0 \
 		encode_unicode-1.0.0 \
 		env_filter-2.0.0 \
 		env_logger-0.11.11 \
 		errno-0.3.14 \
 		fancy_constructor-2.1.0 \
-		fastrand-2.4.1 \
+		fastrand-2.5.0 \
 		fd-lock-4.0.4 \
-		find-msvc-tools-0.1.9 \
+		find-msvc-tools-0.1.10 \
 		fnv-1.0.7 \
 		foldhash-0.2.0 \
 		form_urlencoded-1.2.2 \
-		futures-core-0.3.32 \
-		futures-task-0.3.32 \
-		futures-util-0.3.32 \
+		futures-core-0.3.33 \
+		futures-task-0.3.33 \
+		futures-util-0.3.33 \
 		generic-array-0.14.7 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
@@ -113,15 +113,15 @@ CARGO_CRATES=	accessory-2.1.0 \
 		indexed_db_futures-0.6.4 \
 		indexed_db_futures_macros_internal-1.0.0 \
 		insta-1.48.0 \
-		ipnet-2.12.0 \
+		ipnet-2.12.1 \
 		ipnetwork-0.21.1 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
 		js-sys-0.3.103 \
 		lazy_static-1.5.0 \
-		libc-0.2.186 \
+		libc-0.2.189 \
 		libm-0.2.16 \
-		libsqlite3-sys-0.37.0 \
+		libsqlite3-sys-0.38.1 \
 		link-cplusplus-1.0.12 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.2 \
@@ -161,9 +161,9 @@ CARGO_CRATES=	accessory-2.1.0 \
 		predicates-core-1.0.10 \
 		predicates-tree-1.0.13 \
 		prettyplease-0.2.37 \
-		proc-macro2-1.0.106 \
+		proc-macro2-1.0.107 \
 		quickcheck-1.1.0 \
-		quote-1.0.46 \
+		quote-1.0.47 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		r2d2-0.8.10 \
@@ -174,8 +174,8 @@ CARGO_CRATES=	accessory-2.1.0 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
 		redox_syscall-0.5.18 \
-		regex-1.13.0 \
-		regex-automata-0.4.15 \
+		regex-1.13.1 \
+		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
 		rsqlite-vfs-0.1.1 \
 		rustc_version-0.4.1 \
@@ -186,11 +186,11 @@ CARGO_CRATES=	accessory-2.1.0 \
 		scopeguard-1.2.0 \
 		sealed-0.6.0 \
 		semver-1.0.28 \
-		serde-1.0.228 \
+		serde-1.0.229 \
 		serde-wasm-bindgen-0.6.5 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.150 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.151 \
 		serde_regex-1.2.0 \
 		serde_spanned-1.1.1 \
 		sharded-slab-0.1.7 \
@@ -204,21 +204,22 @@ CARGO_CRATES=	accessory-2.1.0 \
 		stable_deref_trait-1.2.1 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		syn-2.0.118 \
+		syn-2.0.119 \
+		syn-3.0.3 \
 		synstructure-0.13.2 \
 		tempfile-3.27.0 \
 		termtree-0.5.1 \
-		thiserror-2.0.18 \
-		thiserror-impl-2.0.18 \
+		thiserror-2.0.19 \
+		thiserror-impl-2.0.19 \
 		thread_local-1.1.10 \
-		time-0.3.53 \
+		time-0.3.55 \
 		time-core-0.1.9 \
-		time-macros-0.2.31 \
+		time-macros-0.2.32 \
 		tinystr-0.8.3 \
-		tokio-1.52.3 \
-		toml-1.1.2+spec-1.1.0 \
+		tokio-1.53.1 \
+		toml-1.1.4+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_parser-1.1.2+spec-1.1.0 \
+		toml_parser-1.1.3+spec-1.1.0 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
@@ -231,7 +232,7 @@ CARGO_CRATES=	accessory-2.1.0 \
 		url-2.5.8 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.23.4 \
+		uuid-1.24.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
@@ -266,19 +267,19 @@ CARGO_CRATES=	accessory-2.1.0 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-1.0.3 \
+		winnow-1.0.4 \
 		wit-bindgen-0.57.1 \
 		writeable-0.6.3 \
 		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
-		zerocopy-0.8.54 \
-		zerocopy-derive-0.8.54 \
+		zerocopy-0.8.56 \
+		zerocopy-derive-0.8.56 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
-		zmij-1.0.21
+		zmij-1.0.23
 
 PLIST_FILES=	bin/${PORTNAME}
 
