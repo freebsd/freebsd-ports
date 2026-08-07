@@ -1,0 +1,5 @@
+Python bindings for the Rust Vtracer raster-to-vector library.
+
+Vtracer converts raster images into scalable vector graphics (SVG). The Python
+bindings expose the cmdapp crate as a Python module built with PyO3 and
+maturin.

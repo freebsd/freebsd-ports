@@ -1082,6 +1082,7 @@
     SUBDIR += py-vecrec
     SUBDIR += py-vispy
     SUBDIR += py-visvis
+    SUBDIR += py-vtracer
     SUBDIR += py-vulkan
     SUBDIR += py-wand
     SUBDIR += py-webcolors
