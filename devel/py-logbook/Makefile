@@ -1,6 +1,5 @@
 PORTNAME=	logbook
-PORTVERSION=	1.9.2
-PORTREVISION=	5
+PORTVERSION=	1.10.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,16 +12,15 @@ WWW=		https://logbook.readthedocs.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust@${PY_FLAVOR}
+BUILD_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		cargo python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent pep517
 WRKSRC=		${WRKDIR}/logbook-${PORTVERSION}
 
 CARGO_BUILD=   no
 CARGO_INSTALL= no
-
-PLIST_FILES+=	${PYTHON_SITELIBDIR}/logbook/_speedups${PYTHON_TAG}.so
 
 post-install:
 		@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/logbook/_speedups${PYTHON_TAG}.so
