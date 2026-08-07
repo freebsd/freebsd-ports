@@ -1,6 +1,6 @@
 PORTNAME=	iceberg-rust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.10.1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	apache-
 
@@ -169,7 +169,7 @@ CARGO_CRATES=	abi_stable-0.11.3 \
 		crc32c-0.6.8 \
 		crc32fast-1.5.0 \
 		crossbeam-channel-0.5.15 \
-		crossbeam-epoch-0.9.18 \
+		crossbeam-epoch-0.9.20 \
 		crossbeam-queue-0.3.12 \
 		crossbeam-utils-0.8.21 \
 		crunchy-0.2.4 \
