@@ -1,0 +1,31 @@
+-- Fix build with the setuptools version in the ports tree and match the
+-- wheel name to PORTNAME. Drop PEP 639 license-files which the current
+-- setuptools does not recognise and remove the spurious runtime dependency
+-- on the 'build' package. Keep Cython in the build-system requires so local
+-- builds regenerate _ta_lib.c against the installed NumPy headers; the
+-- bundled copy references NumPy 2.x internal C-API macros that are not
+-- declared in the ports tree NumPy package, so it is replaced with a
+-- regenerated copy via files/patch-talib___ta__lib.c.
+--- pyproject.toml.orig	2026-07-16 18:33:25 UTC
++++ pyproject.toml
+@@ -3,11 +3,10 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "TA-Lib"
++name = "ta-lib"
+ version = "0.7.1"
+ description = "Python wrapper for TA-Lib"
+ readme = "README.md"
+-license-files = ["LICENSE"]
+ authors = [
+     {name = "John Benediktsson", email = "mrjbq7@gmail.com"}
+ ]
+@@ -34,7 +33,6 @@ dependencies = [
+     "Intended Audience :: Financial and Insurance Industry",
+ ]
+ dependencies = [
+-    "build",
+     "numpy",
+ ]
+ requires-python = '>=3.9'
