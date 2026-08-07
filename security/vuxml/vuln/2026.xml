@@ -1,3 +1,36 @@
+  <vuln vid="7e45952f-9268-11f1-ab2f-3c7c3fba4204">
+    <topic>DNSDist, PowerDNS, PowerDNS Recursor -- vulnerability</topic>
+    <affects>
+      <package>
+	<name>dnsdist</name>
+	<range><lt>2.1.1</lt></range>
+      </package>
+      <package>
+	<name>powerdns</name>
+	<range><lt>5.1.4</lt></range>
+      </package>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://blog.powerdns.com/2026/08/06/powerdns-security-advisory-2026-11-for-powerdns-authoritative-server-recursor-and-dnsdist">
+	<p>CVE-2026-52682: A crafted DNS packet can cause increased memory and CPU consumption.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-52682</cvename>
+      <url>https://blog.powerdns.com/2026/08/06/powerdns-security-advisory-2026-11-for-powerdns-authoritative-server-recursor-and-dnsdist</url>
+    </references>
+    <dates>
+      <discovery>2026-07-28</discovery>
+      <entry>2026-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ce58e67-919a-11f1-b333-901b0edee044">
     <topic>py-djangorestframework -- two vulnerabilities</topic>
     <affects>
