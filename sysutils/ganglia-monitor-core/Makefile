@@ -1,6 +1,6 @@
 PORTNAME=	monitor-core
 PORTVERSION=	3.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils net
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-

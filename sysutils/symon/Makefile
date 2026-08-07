@@ -1,6 +1,6 @@
 PORTNAME=	symon
 DISTVERSION=	2.90
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://wpd.home.xs4all.nl/symon/philes/
 
