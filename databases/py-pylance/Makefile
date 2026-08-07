@@ -1,6 +1,6 @@
 PORTNAME=	pylance
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.0.0 # machine-learning
+DISTVERSION=	9.0.1 # machine-learning
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -823,6 +823,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/dynamic = \["version"\]/version = "${DISTVERSION}"/g' ${WRKSRC}/pyproject.toml
 
 # tests as of 9.0.0: 1182 passed, 1188 skipped, 63 deselected, 13 warnings
 
