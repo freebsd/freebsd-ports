@@ -1,6 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.57.0
-PORTREVISION=	1
+DISTVERSION=	1.58.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	casey
 
-CARGO_CRATES=	aho-corasick-1.1.4 \
+CARGO_CRATES=	aho-corasick-1.1.5 \
 		android_system_properties-0.1.5 \
 		anstream-1.0.0 \
 		anstyle-1.0.14 \
@@ -34,16 +33,16 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		bstr-1.13.0 \
 		bumpalo-3.20.3 \
 		bytecount-0.6.9 \
-		camino-1.2.4 \
-		cc-1.3.0 \
+		camino-1.2.5 \
+		cc-1.4.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.2 \
 		chacha20-0.10.1 \
 		chrono-0.4.45 \
-		clap-4.6.2 \
-		clap_builder-4.6.2 \
-		clap_complete-4.6.7 \
-		clap_derive-4.6.1 \
+		clap-4.6.5 \
+		clap_builder-4.6.5 \
+		clap_complete-4.6.8 \
+		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		clap_mangen-0.3.0 \
 		colorchoice-1.0.5 \
@@ -65,7 +64,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		dotenvy-0.15.7 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
-		fastrand-2.4.1 \
+		fastrand-2.5.0 \
 		find-msvc-tools-0.1.9 \
 		fnv-1.0.7 \
 		futures-core-0.3.33 \
@@ -78,7 +77,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
-		hybrid-array-0.4.13 \
+		hybrid-array-0.4.14 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
 		indexmap-2.14.0 \
@@ -86,8 +85,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
 		js-sys-0.3.103 \
-		libc-0.2.186 \
-		libredox-0.1.18 \
+		libc-0.2.189 \
+		libredox-0.1.19 \
 		linux-raw-sys-0.12.1 \
 		log-0.4.33 \
 		memchr-2.8.3 \
@@ -128,20 +127,20 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		serde-1.0.229 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
-		serde_json-1.0.150 \
+		serde_json-1.0.151 \
 		serde_yaml-0.9.34+deprecated \
 		sha2-0.11.0 \
 		shellexpand-3.1.2 \
 		shlex-2.0.1 \
 		similar-3.1.1 \
 		slab-0.4.12 \
-		snafu-0.9.1 \
-		snafu-derive-0.9.1 \
+		snafu-0.9.2 \
+		snafu-derive-0.9.2 \
 		strsim-0.11.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		syn-2.0.119 \
-		syn-3.0.0 \
+		syn-3.0.3 \
 		tabled-0.18.0 \
 		tabled_derive-0.10.0 \
 		tempfile-3.27.0 \
