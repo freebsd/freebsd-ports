@@ -1,3 +1,33 @@
+  <vuln vid="1fae5869-9275-11f1-83e9-901b0e13f1a0">
+    <topic>libXfont2 -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>libXfont2</name>
+<range><lt>2.0.9</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Zhixi "Jace" Sun, independent security researcher reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-August/003734.html">
+	  <ul>
+	    <li>CVE-2026-44950: Font Server Client Cumulative Glyph Data Heap Buffer Overflow</li>
+	    <li>CVE-2026-59679: Font Server Client encoding Out-Of-Bounds Read/Write</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-44950</cvename>
+      <cvename>CVE-2026-59679</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2026-August/003734.html</url>
+    </references>
+    <dates>
+      <discovery>2026-08-05</discovery>
+      <entry>2026-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7e45952f-9268-11f1-ab2f-3c7c3fba4204">
     <topic>DNSDist, PowerDNS, PowerDNS Recursor -- vulnerability</topic>
     <affects>
