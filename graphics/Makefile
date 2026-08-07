@@ -1280,6 +1280,7 @@
     SUBDIR += volpack
     SUBDIR += vp
     SUBDIR += vpaint
+    SUBDIR += vtracer
     SUBDIR += vulkan-caps-viewer
     SUBDIR += vulkan-extension-layer
     SUBDIR += vulkan-headers
