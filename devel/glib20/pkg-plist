@@ -102,6 +102,8 @@ include/glib-2.0/gio/giomodule.h
 include/glib-2.0/gio/gioscheduler.h
 include/glib-2.0/gio/giostream.h
 include/glib-2.0/gio/giotypes.h
+include/glib-2.0/gio/giptosmessage.h
+include/glib-2.0/gio/gipv6tclassmessage.h
 include/glib-2.0/gio/glistmodel.h
 include/glib-2.0/gio/gliststore.h
 include/glib-2.0/gio/gloadableicon.h
@@ -474,6 +476,8 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/class.FilterOutputStream.html
 %%DOCS%%share/doc/gio-2.0/class.IOModule.html
 %%DOCS%%share/doc/gio-2.0/class.IOStream.html
+%%DOCS%%share/doc/gio-2.0/class.IPTosMessage.html
+%%DOCS%%share/doc/gio-2.0/class.IPv6TclassMessage.html
 %%DOCS%%share/doc/gio-2.0/class.InetAddress.html
 %%DOCS%%share/doc/gio-2.0/class.InetAddressMask.html
 %%DOCS%%share/doc/gio-2.0/class.InetSocketAddress.html
@@ -713,6 +717,8 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/ctor.FileInfo.new.html
 %%DOCS%%share/doc/gio-2.0/ctor.FilenameCompleter.new.html
 %%DOCS%%share/doc/gio-2.0/ctor.IOModule.new.html
+%%DOCS%%share/doc/gio-2.0/ctor.IPTosMessage.new.html
+%%DOCS%%share/doc/gio-2.0/ctor.IPv6TclassMessage.new.html
 %%DOCS%%share/doc/gio-2.0/ctor.InetAddress.new_any.html
 %%DOCS%%share/doc/gio-2.0/ctor.InetAddress.new_from_bytes.html
 %%DOCS%%share/doc/gio-2.0/ctor.InetAddress.new_from_bytes_with_ipv6_info.html
@@ -804,13 +810,13 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/enum.DataStreamByteOrder.html
 %%DOCS%%share/doc/gio-2.0/enum.DataStreamNewlineType.html
 %%DOCS%%share/doc/gio-2.0/enum.DriveStartStopType.html
+%%DOCS%%share/doc/gio-2.0/enum.EcnCodePoint.html
 %%DOCS%%share/doc/gio-2.0/enum.EmblemOrigin.html
 %%DOCS%%share/doc/gio-2.0/enum.FileAttributeStatus.html
 %%DOCS%%share/doc/gio-2.0/enum.FileAttributeType.html
 %%DOCS%%share/doc/gio-2.0/enum.FileMonitorEvent.html
 %%DOCS%%share/doc/gio-2.0/enum.FileType.html
 %%DOCS%%share/doc/gio-2.0/enum.FilesystemPreviewType.html
-%%DOCS%%share/doc/gio-2.0/enum.IOModuleScopeFlags.html
 %%DOCS%%share/doc/gio-2.0/enum.MemoryMonitorWarningLevel.html
 %%DOCS%%share/doc/gio-2.0/enum.MountOperationResult.html
 %%DOCS%%share/doc/gio-2.0/enum.NetworkConnectivity.html
@@ -824,9 +830,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/enum.SocketProtocol.html
 %%DOCS%%share/doc/gio-2.0/enum.SocketType.html
 %%DOCS%%share/doc/gio-2.0/enum.TlsAuthenticationMode.html
-%%DOCS%%share/doc/gio-2.0/enum.TlsCertificateRequestFlags.html
 %%DOCS%%share/doc/gio-2.0/enum.TlsChannelBindingType.html
-%%DOCS%%share/doc/gio-2.0/enum.TlsDatabaseLookupFlags.html
 %%DOCS%%share/doc/gio-2.0/enum.TlsInteractionResult.html
 %%DOCS%%share/doc/gio-2.0/enum.TlsProtocolVersion.html
 %%DOCS%%share/doc/gio-2.0/enum.TlsRehandshakeMode.html
@@ -865,6 +869,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/flags.FileMeasureFlags.html
 %%DOCS%%share/doc/gio-2.0/flags.FileMonitorFlags.html
 %%DOCS%%share/doc/gio-2.0/flags.FileQueryInfoFlags.html
+%%DOCS%%share/doc/gio-2.0/flags.IOModuleScopeFlags.html
 %%DOCS%%share/doc/gio-2.0/flags.IOStreamSpliceFlags.html
 %%DOCS%%share/doc/gio-2.0/flags.MountMountFlags.html
 %%DOCS%%share/doc/gio-2.0/flags.MountUnmountFlags.html
@@ -877,6 +882,8 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/flags.SubprocessFlags.html
 %%DOCS%%share/doc/gio-2.0/flags.TestDBusFlags.html
 %%DOCS%%share/doc/gio-2.0/flags.TlsCertificateFlags.html
+%%DOCS%%share/doc/gio-2.0/flags.TlsCertificateRequestFlags.html
+%%DOCS%%share/doc/gio-2.0/flags.TlsDatabaseLookupFlags.html
 %%DOCS%%share/doc/gio-2.0/flags.TlsDatabaseVerifyFlags.html
 %%DOCS%%share/doc/gio-2.0/flags.TlsPasswordFlags.html
 %%DOCS%%share/doc/gio-2.0/fonts.css
@@ -934,6 +941,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_ENUMERATOR_IN_2_82_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_ENUMERATOR_IN_2_84_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_ENUMERATOR_IN_2_86_FOR.html
+%%DOCS%%share/doc/gio-2.0/func.DEPRECATED_ENUMERATOR_IN_2_88_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_IN_2_26_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_IN_2_28_FOR.html
@@ -966,6 +974,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_IN_2_82_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_IN_2_84_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_IN_2_86_FOR.html
+%%DOCS%%share/doc/gio-2.0/func.DEPRECATED_IN_2_88_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_MACRO_IN_2_26_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_MACRO_IN_2_28_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_MACRO_IN_2_30_FOR.html
@@ -997,6 +1006,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_MACRO_IN_2_82_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_MACRO_IN_2_84_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_MACRO_IN_2_86_FOR.html
+%%DOCS%%share/doc/gio-2.0/func.DEPRECATED_MACRO_IN_2_88_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_TYPE_IN_2_26_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_TYPE_IN_2_28_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_TYPE_IN_2_30_FOR.html
@@ -1028,6 +1038,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_TYPE_IN_2_82_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_TYPE_IN_2_84_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.DEPRECATED_TYPE_IN_2_86_FOR.html
+%%DOCS%%share/doc/gio-2.0/func.DEPRECATED_TYPE_IN_2_88_FOR.html
 %%DOCS%%share/doc/gio-2.0/func.TEST_DBUS.html
 %%DOCS%%share/doc/gio-2.0/func.UNAVAILABLE.html
 %%DOCS%%share/doc/gio-2.0/func.UNAVAILABLE_STATIC_INLINE.html
@@ -1899,6 +1910,10 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/method.IOStream.is_closed.html
 %%DOCS%%share/doc/gio-2.0/method.IOStream.set_pending.html
 %%DOCS%%share/doc/gio-2.0/method.IOStream.splice_async.html
+%%DOCS%%share/doc/gio-2.0/method.IPTosMessage.get_dscp.html
+%%DOCS%%share/doc/gio-2.0/method.IPTosMessage.get_ecn.html
+%%DOCS%%share/doc/gio-2.0/method.IPv6TclassMessage.get_dscp.html
+%%DOCS%%share/doc/gio-2.0/method.IPv6TclassMessage.get_ecn.html
 %%DOCS%%share/doc/gio-2.0/method.Icon.equal.html
 %%DOCS%%share/doc/gio-2.0/method.Icon.hash.html
 %%DOCS%%share/doc/gio-2.0/method.Icon.serialize.html
@@ -3246,6 +3261,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gio-2.0/vfunc.DBusInterfaceSkeleton.get_info.html
 %%DOCS%%share/doc/gio-2.0/vfunc.DBusInterfaceSkeleton.get_properties.html
 %%DOCS%%share/doc/gio-2.0/vfunc.DBusInterfaceSkeleton.get_vtable.html
+%%DOCS%%share/doc/gio-2.0/vfunc.DBusInterfaceSkeleton.method_dispatch.html
 %%DOCS%%share/doc/gio-2.0/vfunc.DBusObject.get_interface.html
 %%DOCS%%share/doc/gio-2.0/vfunc.DBusObject.get_interfaces.html
 %%DOCS%%share/doc/gio-2.0/vfunc.DBusObject.get_object_path.html
@@ -3966,6 +3982,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_ENUMERATOR_IN_2_82_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_ENUMERATOR_IN_2_84_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_ENUMERATOR_IN_2_86_FOR.html
+%%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_ENUMERATOR_IN_2_88_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_IN_2_26_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_IN_2_28_FOR.html
@@ -3998,6 +4015,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_IN_2_82_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_IN_2_84_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_IN_2_86_FOR.html
+%%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_IN_2_88_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_MACRO_IN_2_26_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_MACRO_IN_2_28_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_MACRO_IN_2_30_FOR.html
@@ -4029,6 +4047,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_MACRO_IN_2_82_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_MACRO_IN_2_84_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_MACRO_IN_2_86_FOR.html
+%%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_MACRO_IN_2_88_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_TYPE_IN_2_26_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_TYPE_IN_2_28_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_TYPE_IN_2_30_FOR.html
@@ -4060,6 +4079,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_TYPE_IN_2_82_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_TYPE_IN_2_84_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_TYPE_IN_2_86_FOR.html
+%%DOCS%%share/doc/girepository-2.0/func.DEPRECATED_TYPE_IN_2_88_FOR.html
 %%DOCS%%share/doc/girepository-2.0/func.UNAVAILABLE.html
 %%DOCS%%share/doc/girepository-2.0/func.UNAVAILABLE_STATIC_INLINE.html
 %%DOCS%%share/doc/girepository-2.0/func.VFUNC_INFO.html
@@ -4494,6 +4514,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-2.0/const.MININT8.html
 %%DOCS%%%%DOCSDIR%%-2.0/const.MINOR_VERSION.html
 %%DOCS%%%%DOCSDIR%%-2.0/const.MODULE_SUFFIX.html
+%%DOCS%%%%DOCSDIR%%-2.0/const.NSEC_PER_SEC.html
 %%DOCS%%%%DOCSDIR%%-2.0/const.OPTION_REMAINING.html
 %%DOCS%%%%DOCSDIR%%-2.0/const.PDP_ENDIAN.html
 %%DOCS%%%%DOCSDIR%%-2.0/const.PI.html
@@ -4542,6 +4563,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-2.0/cross-compiling.html
 %%DOCS%%%%DOCSDIR%%-2.0/ctor.BookmarkFile.new.html
 %%DOCS%%%%DOCSDIR%%-2.0/ctor.Bytes.new.html
+%%DOCS%%%%DOCSDIR%%-2.0/ctor.Bytes.new_from_bytes.html
 %%DOCS%%%%DOCSDIR%%-2.0/ctor.Bytes.new_static.html
 %%DOCS%%%%DOCSDIR%%-2.0/ctor.Bytes.new_take.html
 %%DOCS%%%%DOCSDIR%%-2.0/ctor.Bytes.new_with_free_func.html
@@ -4678,7 +4700,8 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-2.0/error.ThreadError.html
 %%DOCS%%%%DOCSDIR%%-2.0/error.UriError.html
 %%DOCS%%%%DOCSDIR%%-2.0/error.VariantParseError.html
-%%DOCS%%%%DOCSDIR%%-2.0/file-name-encodings.png
+%%DOCS%%%%DOCSDIR%%-2.0/file-name-encodings-dark.svg
+%%DOCS%%%%DOCSDIR%%-2.0/file-name-encodings-light.svg
 %%DOCS%%%%DOCSDIR%%-2.0/file-utils.html
 %%DOCS%%%%DOCSDIR%%-2.0/flags.AsciiType.html
 %%DOCS%%%%DOCSDIR%%-2.0/flags.FileSetContentsFlags.html
@@ -4908,7 +4931,6 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-2.0/func.clear_pointer.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.clear_slist.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.close.html
-%%DOCS%%%%DOCSDIR%%-2.0/func.closefrom.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.compute_checksum_for_bytes.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.compute_checksum_for_data.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.compute_checksum_for_string.html
@@ -4966,7 +4988,6 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-2.0/func.environ_setenv.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.environ_unsetenv.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.error.html
-%%DOCS%%%%DOCSDIR%%-2.0/func.fdwalk_set_cloexec.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.file_error_from_errno.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.file_error_quark.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.file_get_contents.html
@@ -5005,6 +5026,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-2.0/func.get_language_names_with_category.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.get_locale_variants.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.get_monotonic_time.html
+%%DOCS%%%%DOCSDIR%%-2.0/func.get_monotonic_time_ns.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.get_num_processors.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.get_os_info.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.get_prgname.html
@@ -5367,6 +5389,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-2.0/func.test_trap_assertions.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.test_trap_fork.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.test_trap_has_passed.html
+%%DOCS%%%%DOCSDIR%%-2.0/func.test_trap_has_skipped.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.test_trap_reached_timeout.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.test_trap_subprocess.html
 %%DOCS%%%%DOCSDIR%%-2.0/func.test_trap_subprocess_with_envp.html
@@ -5584,7 +5607,6 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-2.0/method.Bytes.get_region.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.Bytes.get_size.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.Bytes.hash.html
-%%DOCS%%%%DOCSDIR%%-2.0/method.Bytes.new_from_bytes.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.Bytes.ref.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.Bytes.unref.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.Bytes.unref_to_array.html
@@ -5840,7 +5862,9 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-2.0/method.MarkupParseContext.free.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.MarkupParseContext.get_element.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.MarkupParseContext.get_element_stack.html
+%%DOCS%%%%DOCSDIR%%-2.0/method.MarkupParseContext.get_offset.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.MarkupParseContext.get_position.html
+%%DOCS%%%%DOCSDIR%%-2.0/method.MarkupParseContext.get_tag_start.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.MarkupParseContext.get_user_data.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.MarkupParseContext.parse.html
 %%DOCS%%%%DOCSDIR%%-2.0/method.MarkupParseContext.pop.html
@@ -6843,6 +6867,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-unix-2.0/func.error_quark.html
 %%DOCS%%%%DOCSDIR%%-unix-2.0/func.fd_add.html
 %%DOCS%%%%DOCSDIR%%-unix-2.0/func.fd_add_full.html
+%%DOCS%%%%DOCSDIR%%-unix-2.0/func.fd_query_path.html
 %%DOCS%%%%DOCSDIR%%-unix-2.0/func.fd_source_new.html
 %%DOCS%%%%DOCSDIR%%-unix-2.0/func.fdwalk_set_cloexec.html
 %%DOCS%%%%DOCSDIR%%-unix-2.0/func.get_passwd_entry.html
@@ -6857,17 +6882,17 @@ share/bash-completion/completions/gsettings
 %%DOCS%%%%DOCSDIR%%-unix-2.0/index.html
 %%DOCS%%%%DOCSDIR%%-unix-2.0/index.json
 %%DOCS%%%%DOCSDIR%%-unix-2.0/main.js
+%%DOCS%%%%DOCSDIR%%-unix-2.0/method.Pipe.clear.html
+%%DOCS%%%%DOCSDIR%%-unix-2.0/method.Pipe.close.html
+%%DOCS%%%%DOCSDIR%%-unix-2.0/method.Pipe.get.html
+%%DOCS%%%%DOCSDIR%%-unix-2.0/method.Pipe.open.html
+%%DOCS%%%%DOCSDIR%%-unix-2.0/method.Pipe.steal.html
 %%DOCS%%%%DOCSDIR%%-unix-2.0/opensearch.xml
 %%DOCS%%%%DOCSDIR%%-unix-2.0/search.js
 %%DOCS%%%%DOCSDIR%%-unix-2.0/solarized-dark.css
 %%DOCS%%%%DOCSDIR%%-unix-2.0/solarized-light.css
 %%DOCS%%%%DOCSDIR%%-unix-2.0/struct.Pipe.html
 %%DOCS%%%%DOCSDIR%%-unix-2.0/style.css
-%%DOCS%%%%DOCSDIR%%-unix-2.0/type_func.Pipe.clear.html
-%%DOCS%%%%DOCSDIR%%-unix-2.0/type_func.Pipe.close.html
-%%DOCS%%%%DOCSDIR%%-unix-2.0/type_func.Pipe.get.html
-%%DOCS%%%%DOCSDIR%%-unix-2.0/type_func.Pipe.open.html
-%%DOCS%%%%DOCSDIR%%-unix-2.0/type_func.Pipe.steal.html
 %%DOCS%%%%DOCSDIR%%-unix-2.0/unix.html
 %%DOCS%%%%DOCSDIR%%-unix-2.0/urlmap.js
 %%DOCS%%share/doc/gmodule-2.0/RedHatDisplay-Black.woff
@@ -6941,6 +6966,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_ENUMERATOR_IN_2_82_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_ENUMERATOR_IN_2_84_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_ENUMERATOR_IN_2_86_FOR.html
+%%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_ENUMERATOR_IN_2_88_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_IN_2_26_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_IN_2_28_FOR.html
@@ -6973,6 +6999,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_IN_2_82_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_IN_2_84_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_IN_2_86_FOR.html
+%%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_IN_2_88_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_MACRO_IN_2_26_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_MACRO_IN_2_28_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_MACRO_IN_2_30_FOR.html
@@ -7004,6 +7031,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_MACRO_IN_2_82_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_MACRO_IN_2_84_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_MACRO_IN_2_86_FOR.html
+%%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_MACRO_IN_2_88_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_TYPE_IN_2_26_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_TYPE_IN_2_28_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_TYPE_IN_2_30_FOR.html
@@ -7035,6 +7063,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_TYPE_IN_2_82_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_TYPE_IN_2_84_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_TYPE_IN_2_86_FOR.html
+%%DOCS%%share/doc/gmodule-2.0/func.DEPRECATED_TYPE_IN_2_88_FOR.html
 %%DOCS%%share/doc/gmodule-2.0/func.UNAVAILABLE.html
 %%DOCS%%share/doc/gmodule-2.0/func.UNAVAILABLE_STATIC_INLINE.html
 %%DOCS%%share/doc/gmodule-2.0/fzy.js
@@ -7265,6 +7294,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_ENUMERATOR_IN_2_82_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_ENUMERATOR_IN_2_84_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_ENUMERATOR_IN_2_86_FOR.html
+%%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_ENUMERATOR_IN_2_88_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_IN_2_26_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_IN_2_28_FOR.html
@@ -7297,6 +7327,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_IN_2_82_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_IN_2_84_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_IN_2_86_FOR.html
+%%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_IN_2_88_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_MACRO_IN_2_26_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_MACRO_IN_2_28_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_MACRO_IN_2_30_FOR.html
@@ -7328,6 +7359,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_MACRO_IN_2_82_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_MACRO_IN_2_84_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_MACRO_IN_2_86_FOR.html
+%%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_MACRO_IN_2_88_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_TYPE_IN_2_26_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_TYPE_IN_2_28_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_TYPE_IN_2_30_FOR.html
@@ -7359,6 +7391,7 @@ share/bash-completion/completions/gsettings
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_TYPE_IN_2_82_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_TYPE_IN_2_84_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_TYPE_IN_2_86_FOR.html
+%%DOCS%%share/doc/gobject-2.0/func.DEPRECATED_TYPE_IN_2_88_FOR.html
 %%DOCS%%share/doc/gobject-2.0/func.ENUM_CLASS_TYPE.html
 %%DOCS%%share/doc/gobject-2.0/func.ENUM_CLASS_TYPE_NAME.html
 %%DOCS%%share/doc/gobject-2.0/func.FLAGS_CLASS_TYPE.html
