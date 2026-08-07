@@ -9,7 +9,7 @@ WWW=		https://github.com/linux-rdma/rdma-core
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/COPYING.BSD_MIT
-LICENSE_FILE_GPLv2=		${WRKSRC}/COPYING.BSD_MIT
+LICENSE_FILE_GPLv2=		${WRKSRC}/COPYING.GPL2
 
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libudev.so:devel/libudev-devd
