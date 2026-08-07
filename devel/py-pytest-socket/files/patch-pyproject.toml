@@ -1,0 +1,14 @@
+-- Relax the uv_build upper bound so the port builds with the uv_build version
+-- available in the FreeBSD ports tree (currently 0.12.0).
+-- Upstream pins <0.12.0, but FreeBSD has moved past that release.
+
+--- pyproject.toml.orig	2026-08-07 00:00:00 UTC
++++ pyproject.toml
+@@ -40,5 +40,5 @@
+ ignore_names = ["pytest_*"]
+ paths = ["src/pytest_socket"]
+
+ [build-system]
+-requires = ["uv_build>=0.7.20,<0.12.0"]
++requires = ["uv_build>=0.7.20"]
+ build-backend = "uv_build"
