@@ -1,5 +1,5 @@
 PORTNAME=	httpx2
-DISTVERSION=	2.5.0
+DISTVERSION=	2.9.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>=0:devel/py-hatch-
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uv-dynamic-versioning>=0.8.0:devel/py-uv-dynamic-versioning@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>0:devel/py-anyio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpcore2>=2.4.0:www/py-httpcore2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpcore2>=2.9.1:www/py-httpcore2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}truststore>=0.10:security/py-truststore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.5.0:devel/py-typing-extensions@${PY_FLAVOR}
