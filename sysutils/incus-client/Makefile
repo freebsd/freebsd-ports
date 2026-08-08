@@ -10,7 +10,7 @@ WWW=		https://github.com/lxc/incus
 
 LICENSE=	APACHE20
 
-USES=		cpe go:1.25+,modules
+USES=		cpe go:modules
 CPE_PRODUCT=	incus
 
 GO_MODULE=	github.com/lxc/incus/v7

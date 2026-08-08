@@ -11,7 +11,7 @@ WWW=		https://www.serf.io/
 
 LICENSE=	MPL20
 
-USES=		go:1.25+,modules
+USES=		go:modules
 USE_RC_SUBR=	serf
 
 GO_MODULE=	github.com/hashicorp/serf

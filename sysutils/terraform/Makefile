@@ -22,7 +22,7 @@ MAINTAINER=	dutra@FreeBSD.org
 COMMENT=	Provides a common configuration to launch infrastructure
 WWW=		https://terraform.io/
 
-USES=		cpe go:1.25+,modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 GH_PROJECT=	terraform

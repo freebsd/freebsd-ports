@@ -16,7 +16,7 @@ LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE-gotk4
 LIB_DEPENDS=	libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		gnome go:1.25+,modules pkgconfig
+USES=		gnome go:modules pkgconfig
 
 USE_GNOME=	cairo gdkpixbuf gtk30
 

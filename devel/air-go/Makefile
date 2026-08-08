@@ -11,7 +11,7 @@ WWW=		https://github.com/air-verse/air
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 GO_MODULE=	github.com/air-verse/air
 
 CONFLICTS_INSTALL=	air

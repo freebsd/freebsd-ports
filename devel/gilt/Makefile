@@ -11,7 +11,7 @@ WWW=		https://retr0h.github.io/gilt/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 GO_MODULE=	github.com/retr0h/gilt/v2
 
 PLIST_FILES=	bin/gilt

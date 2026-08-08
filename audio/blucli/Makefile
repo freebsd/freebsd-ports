@@ -11,7 +11,7 @@ WWW=		https://github.com/steipete/blucli
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/steipete/blucli
 GO_TARGET=	./cmd/blu

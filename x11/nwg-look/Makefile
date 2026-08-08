@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	xcur2png:x11/xcur2png
 
-USES=		gnome go:1.25+,modules pkgconfig
+USES=		gnome go:modules pkgconfig
 
 USE_GNOME=	cairo gdkpixbuf gtk30
 

@@ -11,7 +11,7 @@ WWW=		https://github.com/hashicorp/terraform-ls
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/hashicorp/terraform-ls
 

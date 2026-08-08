@@ -11,7 +11,7 @@ WWW=		https://k6.io/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 NOT_FOR_ARCHS=	armv6 armv7 i386
 

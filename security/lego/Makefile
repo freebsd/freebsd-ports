@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		go:1.25+,modules
+USES=		go:modules
 GO_MODULE=	github.com/go-acme/lego/v5
 GO_LDFLAGS=	-X main.version=${DISTVERSION}
 

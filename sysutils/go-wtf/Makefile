@@ -12,7 +12,7 @@ WWW=		https://wtfutil.com
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cpe go:1.25+,modules
+USES=		cpe go:modules
 
 GO_MODULE=      github.com/wtfutil/wtf
 GO_BUILDFLAGS=	-ldflags "-X main.version=${DISTVERSION}"

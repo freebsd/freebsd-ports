@@ -21,7 +21,7 @@ RUN_DEPENDS=	conmon:sysutils/conmon \
 		containers-common>=0:sysutils/containers-common \
 		ocijail:sysutils/ocijail
 
-USES=		gmake go:1.25+,no_targets pkgconfig python:build shebangfix
+USES=		gmake go:no_targets pkgconfig python:build shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	containers
 USE_RC_SUBR=	podman podman_service

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/steipete/songsee
 

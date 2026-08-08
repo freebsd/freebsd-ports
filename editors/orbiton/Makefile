@@ -12,7 +12,7 @@ WWW=		https://roboticoverlords.org/orbiton/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/xyproto/orbiton/v2
 

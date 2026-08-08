@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	go-delve

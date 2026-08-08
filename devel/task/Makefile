@@ -11,7 +11,7 @@ WWW=		https://taskfile.dev/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/go-task/task/v3
 GO_TARGET=	./cmd/task

@@ -11,7 +11,7 @@ WWW=		https://github.com/peco/peco
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/peco/peco
 GO_TARGET=	./cmd/peco

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	nomad:sysutils/nomad \
 		podman:sysutils/podman
 
-USES=		go:1.25+,modules
+USES=		go:modules
 GO_MODULE=	github.com/hashicorp/nomad-driver-podman
 GO_TARGET=	:${PREFIX}/libexec/nomad/plugins/nomad-driver-podman
 

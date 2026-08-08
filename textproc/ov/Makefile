@@ -10,7 +10,7 @@ WWW=		https://github.com/noborus/ov
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 _BUILD_VERSION=		${DISTVERSION}
 _BUILD_REVISION=	0a791c8

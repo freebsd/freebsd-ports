@@ -12,7 +12,7 @@ WWW=		https://caddyserver.com
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.25+,modules
+USES=		cpe go:modules
 CPE_VENDOR=	caddyserver
 USE_RC_SUBR=	caddy
 

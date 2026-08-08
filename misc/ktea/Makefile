@@ -11,7 +11,7 @@ WWW=		https://github.com/jonas-grgt/ktea
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/jonas-grgt/ktea
 GO_TARGET=	./cmd/${PORTNAME}

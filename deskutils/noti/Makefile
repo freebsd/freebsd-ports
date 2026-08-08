@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/MIT.txt
 
 RUN_DEPENDS=	notify-send:devel/libnotify
 
-USES=		go:1.25+,modules
+USES=		go:modules
 
 GO_TARGET=	./cmd/noti
 GO_LDFLAGS=	-w -X codeberg.org/roble/noti/internal/command.Version=${DISTVERSION}
