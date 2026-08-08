@@ -1,5 +1,5 @@
 PORTNAME=	code-server
-DISTVERSION=	4.129.0
+DISTVERSION=	4.131.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-CodeServer/releases/download/code-server-${DISTVERSION}/:code_server \
 		https://github.com/github/copilot-cli/releases/download/v${COPILOT_CLI_VERSION}/:copilot_cli
@@ -51,7 +51,7 @@ PORTDOCS=	README.md
 
 NO_CCACHE=	yes
 
-VSCODE_VERSION=		1.129.0
+VSCODE_VERSION=		1.131.0
 # Copilot CLI SDK, only needed so the VS Code extension build passes.
 # GitHub Copilot is closed-source and not usable on FreeBSD.
 COPILOT_CLI_VERSION=	1.0.70
