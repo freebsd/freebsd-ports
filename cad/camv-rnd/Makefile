@@ -1,5 +1,5 @@
 PORTNAME=	camv-rnd
-DISTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 CATEGORIES=	cad
 MASTER_SITES=	http://www.repo.hu/projects/${PORTNAME}/releases/
 
