@@ -1,16 +1,16 @@
 PORTNAME=	vid.stab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Video stabilization library
-WWW=		http://public.hronopik.de/vid.stab/
+WWW=		https://github.com/georgmartius/vid.stab
 
+# Future releases will be LGPL2.1+ (https://github.com/georgmartius/vid.stab/blob/master/RELICENSE.md)
 LICENSE=	GPLv2+
 
-USES=		cmake pathfix
-PATHFIX_CMAKELISTSTXT=	create_pkgconfig_file.cmake
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	georgmartius
 USE_LDCONFIG=	yes
