@@ -12,8 +12,9 @@ import (
 var envoyBinaryPath = "%%PREFIX%%/libexec/pomerium-envoy"
 
 func init() {
-	// rawBinary is nil; checksum and version are informational only.
-	files.SetFiles(nil, "freebsd-system-envoy _", "system")
+	// rawBinary and rawLockfile are nil; the system envoy binary is used
+	// via a symlink created by the extract function below.
+	files.SetFiles(nil, []byte(`{"version":"system","digest":"sha256:0"}`))
 }
 
 // extract creates a symlink at dstName pointing to the system envoy binary.
