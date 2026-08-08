@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--with-x
 # See r468320 to determine if/when the next line can be removed
 CONFIGURE_ENV=		ac_cv_header_sys_sysinfo_h=no
 
-CONFLICTS_INSTALL=	emacs emacs-canna emacs-nox
+CONFLICTS_INSTALL=	emacs emacs-canna emacs-nox emacs-wayland
 
 SUB_FILES=	default.el pkg-message site-start.el
 SUB_LIST=	EMACS_VER=${DISTVERSION:R} \
