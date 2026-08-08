@@ -1,7 +1,7 @@
---- electron/shell/browser/native_window_views.cc.orig	2026-06-29 20:35:15 UTC
+--- electron/shell/browser/native_window_views.cc.orig	2026-08-04 15:35:15 UTC
 +++ electron/shell/browser/native_window_views.cc
-@@ -58,7 +58,7 @@
- #include "ui/wm/core/shadow_types.h"
+@@ -57,7 +57,7 @@
+ #include "ui/views/window/non_client_view.h"
  #include "ui/wm/core/window_util.h"
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "base/notimplemented.h"
  #include "shell/browser/browser.h"
  #include "shell/browser/linux/unity_service.h"
-@@ -288,7 +288,7 @@ NativeWindowViews::NativeWindowViews(const int32_t bas
+@@ -296,7 +296,7 @@ NativeWindowViews::NativeWindowViews(const int32_t bas
    // If a client frame, we need to draw our own shadows.
    if (transparent() || has_client_frame())
      params.opacity = InitParams::WindowOpacity::kTranslucent;
@@ -18,7 +18,7 @@
    // Resize handles and shadows on frameless windows need translucent insets.
    if (!has_frame())
      params.opacity = InitParams::WindowOpacity::kTranslucent;
-@@ -307,7 +307,7 @@ NativeWindowViews::NativeWindowViews(const int32_t bas
+@@ -315,7 +315,7 @@ NativeWindowViews::NativeWindowViews(const int32_t bas
      params.parent = parent->GetNativeWindow();
  
    params.native_widget = new ElectronDesktopNativeWidgetAura{this, widget()};
@@ -27,7 +27,7 @@
    // Set the WM_CLASS and XDG App ID to the same value
    // for best compatibility with both X11 and Wayland.
    const auto app_id = platform_util::GetXdgAppId();
-@@ -337,7 +337,7 @@ NativeWindowViews::NativeWindowViews(const int32_t bas
+@@ -345,7 +345,7 @@ NativeWindowViews::NativeWindowViews(const int32_t bas
    std::string window_type;
    options.Get(options::kType, &window_type);
  
@@ -36,7 +36,7 @@
    // Set _GTK_THEME_VARIANT to dark if we have "dark-theme" option set.
    if (options.ValueOrDefault(options::kDarkTheme, false))
      SetGTKDarkThemeEnabled(true);
-@@ -409,7 +409,7 @@ NativeWindowViews::NativeWindowViews(const int32_t bas
+@@ -417,7 +417,7 @@ NativeWindowViews::NativeWindowViews(const int32_t bas
    ::SetWindowLong(GetAcceleratedWidget(), GWL_EXSTYLE, ex_style);
  #endif
  
@@ -45,7 +45,7 @@
    options.Get(options::kRoundedCorners, &rounded_corner_);
  #endif
  
-@@ -529,7 +529,7 @@ void NativeWindowViews::SetTitleBarOverlay(
+@@ -537,7 +537,7 @@ void NativeWindowViews::SetTitleBarOverlay(
      auto* fv = widget()->non_client_view()->frame_view();
      if (auto* frameless = views::AsViewClass<FramelessView>(fv)) {
        frameless->InvalidateCaptionButtons();
@@ -54,7 +54,7 @@
      } else if (auto* fvl = views::AsViewClass<views::FrameViewLinux>(fv)) {
        fvl->InvalidateLayout();
        fvl->SchedulePaint();
-@@ -539,7 +539,7 @@ void NativeWindowViews::SetGTKDarkThemeEnabled(bool us
+@@ -547,7 +547,7 @@ void NativeWindowViews::SetGTKDarkThemeEnabled(bool us
  }
  
  void NativeWindowViews::SetGTKDarkThemeEnabled(bool use_dark_theme) {
@@ -63,7 +63,7 @@
    if (x11_util::IsX11()) {
      const std::string color = use_dark_theme ? "dark" : "light";
      auto* connection = x11::Connection::Get();
-@@ -600,7 +600,7 @@ void NativeWindowViews::Show() {
+@@ -608,7 +608,7 @@ void NativeWindowViews::Show() {
  
    NotifyWindowShow();
  
@@ -72,7 +72,7 @@
    if (global_menu_bar_)
      global_menu_bar_->OnWindowMapped();
  
-@@ -616,7 +616,7 @@ void NativeWindowViews::ShowInactive() {
+@@ -624,7 +624,7 @@ void NativeWindowViews::ShowInactive() {
  
    NotifyWindowShow();
  
@@ -81,7 +81,7 @@
    if (global_menu_bar_)
      global_menu_bar_->OnWindowMapped();
  
-@@ -635,7 +635,7 @@ void NativeWindowViews::Hide() {
+@@ -643,7 +643,7 @@ void NativeWindowViews::Hide() {
  
    NotifyWindowHide();
  
@@ -90,7 +90,7 @@
    if (global_menu_bar_)
      global_menu_bar_->OnWindowUnmapped();
  #endif
-@@ -666,7 +666,7 @@ bool NativeWindowViews::IsEnabled() const {
+@@ -674,7 +674,7 @@ bool NativeWindowViews::IsEnabled() const {
  bool NativeWindowViews::IsEnabled() const {
  #if BUILDFLAG(IS_WIN)
    return ::IsWindowEnabled(GetAcceleratedWidget());
@@ -99,7 +99,7 @@
    if (x11_util::IsX11())
      return !event_disabler_.get();
    NOTIMPLEMENTED();
-@@ -891,7 +891,7 @@ void NativeWindowViews::SetBounds(const gfx::Rect& bou
+@@ -899,7 +899,7 @@ void NativeWindowViews::SetBounds(const gfx::Rect& bou
    }
  #endif
  
@@ -108,7 +108,7 @@
    // On Linux and Windows the minimum and maximum size should be updated with
    // window size when window is not resizable.
    if (!CanResize()) {
-@@ -946,7 +946,7 @@ void NativeWindowViews::SetContentSizeConstraints(
+@@ -954,7 +954,7 @@ void NativeWindowViews::SetContentSizeConstraints(
    // of this to determine whether native widget has initialized.
    if (widget() && widget()->widget_delegate())
      widget()->OnSizeConstraintsChanged();
@@ -117,7 +117,7 @@
    if (resizable_)
      old_size_constraints_ = GetSizeConstraints();
  #endif
-@@ -1166,7 +1166,7 @@ bool NativeWindowViews::IsClosable() const {
+@@ -1174,7 +1174,7 @@ bool NativeWindowViews::IsClosable() const {
      return false;
    }
    return !(info.fState & MFS_DISABLED);
@@ -126,7 +126,7 @@
    return true;
  #endif
  }
-@@ -1306,7 +1306,7 @@ void NativeWindowViews::SetBackgroundColor(SkColor bac
+@@ -1314,7 +1314,7 @@ void NativeWindowViews::SetBackgroundColor(SkColor bac
    InvalidateRect(GetAcceleratedWidget(), nullptr, 1);
  #endif
  
@@ -135,25 +135,16 @@
    // Widget and root view need to be transparent for CSD to draw shadow regions
    // and custom edges and corners. The web contents view will still be
    // painted with the true background color, which is cached in state.
-@@ -1325,7 +1325,7 @@ void NativeWindowViews::SetHasShadow(bool has_shadow) 
- }
+@@ -1337,7 +1337,7 @@ void NativeWindowViews::SetHasShadow(bool has_shadow) 
+   // so we no longer call wm::SetShadowElevation and similar to avoid
+   // artifacts. https://github.com/electron/electron/issues/51456.
  
- void NativeWindowViews::SetHasShadow(bool has_shadow) {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    auto* efvl = views::AsViewClass<ElectronFrameViewLinux>(
        widget()->non_client_view()->frame_view());
-   gfx::Rect visible_bounds;
-@@ -1341,7 +1341,7 @@ void NativeWindowViews::SetHasShadow(bool has_shadow) 
-                          has_shadow ? wm::kShadowElevationInactiveWindow
-                                     : wm::kShadowElevationNone);
- 
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    if (efvl) {
-     efvl->SetWantsFrame(!IsTranslucent() &&
-                         (has_shadow || IsWindowControlsOverlayEnabled()));
-@@ -1457,7 +1457,7 @@ void NativeWindowViews::SetMenu(ElectronMenuModel* men
+@@ -1464,7 +1464,7 @@ void NativeWindowViews::SetMenu(ElectronMenuModel* men
  }
  
  void NativeWindowViews::SetMenu(ElectronMenuModel* menu_model) {
@@ -162,7 +153,7 @@
    // Remove global menu bar.
    if (global_menu_bar_ && menu_model == nullptr) {
      global_menu_bar_.reset();
-@@ -1513,7 +1513,7 @@ void NativeWindowViews::SetParentWindow(NativeWindow* 
+@@ -1520,7 +1520,7 @@ void NativeWindowViews::SetParentWindow(NativeWindow* 
  void NativeWindowViews::SetParentWindow(NativeWindow* parent) {
    NativeWindow::SetParentWindow(parent);
  
@@ -171,7 +162,7 @@
    if (x11_util::IsX11()) {
      auto* connection = x11::Connection::Get();
      connection->SetProperty(
-@@ -1567,7 +1567,7 @@ gfx::Insets NativeWindowViews::GetRestoredFrameBorderI
+@@ -1574,7 +1574,7 @@ gfx::Insets NativeWindowViews::GetRestoredFrameBorderI
    if (auto* frameless = views::AsViewClass<FramelessView>(frame_view))
      return frameless->RestoredFrameBorderInsets();
  
@@ -180,7 +171,7 @@
    if (auto* fvl = views::AsViewClass<views::FrameViewLinux>(frame_view))
      return fvl->GetRestoredFrameBorderInsets();
  #endif
-@@ -1579,7 +1579,7 @@ void NativeWindowViews::SetProgressBar(double progress
+@@ -1586,7 +1586,7 @@ void NativeWindowViews::SetProgressBar(double progress
                                         NativeWindow::ProgressState state) {
  #if BUILDFLAG(IS_WIN)
    taskbar_host_.SetProgressBar(GetAcceleratedWidget(), progress, state);
@@ -189,7 +180,7 @@
    if (unity::IsRunning()) {
      unity::SetProgressFraction(progress);
    }
-@@ -1705,7 +1705,7 @@ content::DesktopMediaID NativeWindowViews::GetDesktopM
+@@ -1712,7 +1712,7 @@ content::DesktopMediaID NativeWindowViews::GetDesktopM
  #if BUILDFLAG(IS_WIN)
    window_handle =
        reinterpret_cast<content::DesktopMediaID::Id>(accelerated_widget);
@@ -198,7 +189,7 @@
    window_handle = static_cast<uint32_t>(accelerated_widget);
  #endif
    aura::WindowTreeHost* const host =
-@@ -1835,7 +1835,7 @@ void NativeWindowViews::SetIcon(HICON window_icon, HIC
+@@ -1842,7 +1842,7 @@ void NativeWindowViews::SetIcon(HICON window_icon, HIC
    SendMessage(hwnd, WM_SETICON, ICON_BIG,
                reinterpret_cast<LPARAM>(app_icon_.get()));
  }
@@ -207,7 +198,7 @@
  void NativeWindowViews::SetIcon(const gfx::ImageSkia& icon) {
    auto* tree_host = views::DesktopWindowTreeHostLinux::GetHostForWidget(
        GetAcceleratedWidget());
-@@ -1956,7 +1956,7 @@ bool NativeWindowViews::CanMinimize() const {
+@@ -1963,7 +1963,7 @@ bool NativeWindowViews::CanMinimize() const {
  bool NativeWindowViews::CanMinimize() const {
  #if BUILDFLAG(IS_WIN)
    return minimizable_;
@@ -216,7 +207,7 @@
    return true;
  #endif
  }
-@@ -2003,7 +2003,7 @@ std::unique_ptr<views::FrameView> NativeWindowViews::C
+@@ -2010,7 +2010,7 @@ std::unique_ptr<views::FrameView> NativeWindowViews::C
  #endif
  }
  
@@ -225,7 +216,7 @@
  views::FrameViewLinux* NativeWindowViews::GetFrameViewLinux() const {
    auto* ncv = widget()->non_client_view();
    if (!ncv)
-@@ -2022,7 +2022,7 @@ void NativeWindowViews::HandleKeyboardEvent(
+@@ -2029,7 +2029,7 @@ void NativeWindowViews::HandleKeyboardEvent(
    if (widget_destroyed_)
      return;
  
@@ -234,7 +225,7 @@
    if (event.windows_key_code == ui::VKEY_BROWSER_BACK)
      NotifyWindowExecuteAppCommand(kBrowserBackward);
    else if (event.windows_key_code == ui::VKEY_BROWSER_FORWARD)
-@@ -2041,7 +2041,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
+@@ -2048,7 +2048,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
    // Alt+Click should not toggle menu bar.
    root_view_.ResetAltState();
  
