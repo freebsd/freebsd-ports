@@ -1,0 +1,11 @@
+--- bash_completion.d/cluset.orig	2026-07-16 22:06:42 UTC
++++ bash_completion.d/cluset
+@@ -70,7 +70,7 @@ _cluset()
+ 		return;;
+ 	esac
+ 	# get all options from help text... not 100% accurate but good enough.
+-	[ -n "$options" ] || options="$(cluset --help | grep -oP -- '(?<=[ \t])(-[a-z]|--[^= \t]*)')"
++	[ -n "$options" ] || options="$(cluset --help | grep -Eo -- '[[:space:]](-[a-z]|--[^=[:space:]]*)' | sed 's/^[[:space:]]//')"
+ 
+ 	# append space for everything that doesn't end in `:` (likely a groupsource)
+ 	mapfile -t COMPREPLY < <(compgen -W "$options" -- "$cur" | sed -e 's/[^:]$/& /')

@@ -1,0 +1,11 @@
+--- bash_completion.d/clush.orig	2026-07-16 22:06:42 UTC
++++ bash_completion.d/clush
+@@ -140,7 +140,7 @@ _clush()
+ 		case "$cur" in
+ 		-*)
+ 			# starts with dash - get all options from help text...
+-			options="$(clush --help | grep -oP -- '(?<=[ \t])(-[a-z]|--[^= \t]*)')"
++			options=$(clush --help | grep -Eo -- '[[:space:]](-[a-z]|--[^=[:space:]]*)' | sed 's/^[[:space:]]//')
+ 			;;
+ 		*)
+ 			# otherwise complete command or file if appropriate and stop here
