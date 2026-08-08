@@ -1,9 +1,10 @@
 PORTNAME=	fossmixer
-PORTVERSION=	0.0.3
-PORTREVISION=	5
+DISTVERSION=	0.0.6
 CATEGORIES=	audio
 MASTER_SITES=	SF/detroit
-DISTNAME=	detroit-0.2.3
+DISTNAME=	detroit-0.2.9
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} detroit-data-0.1.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	salojan@goto10.co
 COMMENT=	Graphical mixer application for OSS
@@ -11,41 +12,41 @@ WWW=		https://detroit.sourceforge.net/app_fossmixer.html
 
 LICENSE=	BSD3CLAUSE
 
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	noto-basic>0:x11-fonts/noto-basic
-LIB_DEPENDS=	libao.so:audio/libao \
-		libportaudio.so:audio/portaudio \
-		libpulse-simple.so:audio/pulseaudio \
-		libiconv.so:converters/libiconv \
-		libltdl.so:devel/libltdl \
-		libfreetype.so:print/freetype2
 
-USES=		gettext-runtime gl perl5 pkgconfig tar:xz xorg
+USES=		gettext-runtime gl gmake iconv:wchar_t pkgconfig tar:xz xorg
 USE_GL=		gl
-USE_PERL5=	patch build
 USE_XORG=	x11 xext xrandr
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-bob \
+		--disable-collect \
 		--disable-color \
 		--disable-coords \
 		--disable-draw \
+		--disable-extended \
 		--disable-image \
+		--disable-input \
+		--disable-log \
 		--disable-math \
-		--disable-menu \
+		--disable-message \
+		--disable-output \
 		--disable-remote \
+		--disable-store \
 		--sysconfdir="${ETCDIR}" \
-		--with-libiconv="${LOCALBASE}" \
-		--with-libintl="${LOCALBASE}" \
-		--with-libltdl="${LOCALBASE}"
+		--with-libiconv="${ICONV_PREFIX}" \
+		--with-libintl="${LOCALBASE}"
 
 ALL_TARGET=
 INSTALL_TARGET=	install-strip
 CFLAGS_i386=	-msse2
 
 post-patch:
+	@(cd ${WRKSRC} && tar -zxf ${DISTDIR}/detroit-data-0.1.tar.gz)
 	@(cd ${WRKSRC}/apps && ./build.sh fossmixer)
 
-	@for i in alsa flac samplerate gnutls openssl librsvg-2.0; do \
+	@for i in alsa ao flac gnutls openssl portaudio-2.0 libpulse-simple sndio; do \
 		${REINPLACE_CMD} -e "s|$${i}|$${i}_EXCLUDE|g" ${WRKSRC}/configure ; \
 	done
 
