@@ -11,7 +11,7 @@ WWW=		https://tinygo.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		port not updated in years, and current port version incompatible with Go 1.26+
+# BROKEN=		port not updated in years, and current port version incompatible with Go 1.26+
 
 TEST_DEPENDS=	qemu-system-arm:emulators/qemu
 
