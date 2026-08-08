@@ -8,7 +8,15 @@ arithmetic with substr() safely bypasses the undefined behavior.
 
 --- src/util.h.orig	2026-07-20 13:07:38 UTC
 +++ src/util.h
-@@ -76,7 +76,7 @@ static inline std::vector<std::string_view> split(cons
+@@ -40,7 +40,6 @@
+ 
+ #include <gpgme.h>
+ 
+-#include <memory>
+ #include <string>
+ #include <vector>
+ 
+@@ -76,7 +75,7 @@ static inline std::vector<std::string_view> split(cons
          if (end == s.npos) {
              end = s.size();
          }
