@@ -1,6 +1,8 @@
 @dir %%DATADIR%%/hlibrary
 bin/boxsym-rnd
 bin/sch-rnd
+bin/sch-rnd-abst2tsv
+bin/sch-rnd-fptool
 %%ETCDIR%%/adialogs.conf
 %%ETCDIR%%/export_bom.conf
 %%ETCDIR%%/funcmap.conf
@@ -18,6 +20,7 @@ bin/sch-rnd
 %%ETCDIR%%/sim_gui.conf
 %%ETCDIR%%/std_cschem.conf
 %%ETCDIR%%/std_devmap.conf
+%%ETCDIR%%/suite.conf
 %%ETCDIR%%/target_pcb.conf
 %%ETCDIR%%/target_spice.conf
 lib/sch-rnd/boxsym-rnd/generator.awk
@@ -32,6 +35,10 @@ lib/sch-rnd/plugins/export_ps.pup
 lib/sch-rnd/plugins/export_ps.so
 lib/sch-rnd/plugins/export_svg.pup
 lib/sch-rnd/plugins/export_svg.so
+lib/sch-rnd/plugins/export_web2.pup
+lib/sch-rnd/plugins/export_web2.so
+lib/sch-rnd/plugins/extobj_chart.pup
+lib/sch-rnd/plugins/extobj_chart.so
 lib/sch-rnd/plugins/gui.pup
 lib/sch-rnd/plugins/gui.so
 lib/sch-rnd/plugins/io_eeschema.pup
@@ -89,6 +96,7 @@ share/man/man5/boxsym-rnd.5.gz
 %%DATADIR%%/symbol/mech/switch
 %%DATADIR%%/symbol/mech/switch.awk
 %%DATADIR%%/symbol/mech/testpoint.ry
+%%DATADIR%%/symbol/misc/sch-rnd.ry
 %%DATADIR%%/symbol/misc/shterm_in.ry
 %%DATADIR%%/symbol/misc/shterm_inout.ry
 %%DATADIR%%/symbol/misc/shterm_out.ry

@@ -1,5 +1,5 @@
 PORTNAME=	sch-rnd
-DISTVERSION=	1.0.10
+DISTVERSION=	1.0.11
 CATEGORIES=	cad
 MASTER_SITES=	http://www.repo.hu/projects/${PORTNAME}/releases/
 
