@@ -1753,7 +1753,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_bundled/pip-26.1.2-py3-none-any.whl
+%%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_bundled/pip-26.2.1-py3-none-any.whl
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_uninstall.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/enum.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/filecmp.py
@@ -1807,7 +1807,6 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/CREDITS.txt
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/ChangeLog
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/HISTORY.txt
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/News3.txt
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/Icons/README.txt
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/Icons/folder.gif
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/Icons/idle.ico
@@ -1824,6 +1823,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/Icons/python.gif
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/Icons/tk.gif
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/NEWS2x.txt
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/News3.txt
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/README.txt
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/TODO.txt
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__init__.py
@@ -1926,7 +1926,6 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/multicall%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/outwin%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/outwin%%PYTHON_TAG%%.opt-2.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/percolator%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/outwin%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/parenmatch%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/parenmatch%%PYTHON_TAG%%.opt-2.pyc
@@ -1934,9 +1933,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/pathbrowser%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/pathbrowser%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/pathbrowser%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/percolator%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/percolator%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/percolator%%PYTHON_TAG%%.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/zzdummy%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/pyparse%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/pyparse%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/pyparse%%PYTHON_TAG%%.pyc
@@ -2006,10 +2005,10 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/zoomheight%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/zoomheight%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/zoomheight%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/zzdummy%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/zzdummy%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/__pycache__/zzdummy%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/autocomplete.py
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_browser%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/autocomplete_w.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/autoexpand.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/browser.py
@@ -2071,7 +2070,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_autoexpand%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_browser%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_browser%%PYTHON_TAG%%.opt-2.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_editmenu%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_browser%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_calltip%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_calltip%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_calltip%%PYTHON_TAG%%.pyc
@@ -2110,7 +2109,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_delegator%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_editmenu%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_editmenu%%PYTHON_TAG%%.opt-2.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_help%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_editmenu%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_editor%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_editor%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_editor%%PYTHON_TAG%%.pyc
@@ -2125,7 +2124,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_grep%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_help%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_help%%PYTHON_TAG%%.opt-2.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_run%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_help%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_help_about%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_help_about%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_help_about%%PYTHON_TAG%%.pyc
@@ -2177,13 +2176,14 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_rpc%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_rpc%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_rpc%%PYTHON_TAG%%.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_scrolledlist%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_run%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_run%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_run%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_runscript%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_runscript%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_runscript%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_scrolledlist%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_scrolledlist%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_scrolledlist%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_search%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_search%%PYTHON_TAG%%.opt-2.pyc
@@ -2236,6 +2236,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy_user%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy_user%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy_user%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/tkinter_testing_utils%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/tkinter_testing_utils%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/tkinter_testing_utils%%PYTHON_TAG%%.pyc
@@ -2304,6 +2307,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_window.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_zoomheight.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_zzdummy.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_zzdummy_user.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/tkinter_testing_utils.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/iomenu.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/macosx.py
@@ -2780,6 +2784,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/__main__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/__main__%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/__main__%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/_isolated_sample%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/_isolated_sample%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/_isolated_sample%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/_test_atexit%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/_test_atexit%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/_test_atexit%%PYTHON_TAG%%.pyc
@@ -4100,6 +4107,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/xpickle_worker%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/xpickle_worker%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/xpickle_worker%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/_isolated_sample.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/_test_atexit.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/_test_eintr.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/_test_embed_set_config.py
@@ -4527,6 +4535,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mathdata/math_testcases.txt
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/memory_watchdog.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mime.types
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/mime.types2
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mock_socket.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mp_fork_bomb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mp_preload.py
@@ -4617,6 +4626,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/import_helper%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/import_helper%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/import_helper%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/isolation%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/isolation%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/isolation%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/logging_helper%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/logging_helper%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/logging_helper%%PYTHON_TAG%%.pyc
@@ -4641,6 +4653,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/socket_helper%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/socket_helper%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/socket_helper%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/subprocess_runner%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/subprocess_runner%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/subprocess_runner%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/testcase%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/testcase%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/__pycache__/testcase%%PYTHON_TAG%%.pyc
@@ -4689,6 +4704,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/interpreters/_crossinterp.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/interpreters/channels.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/interpreters/queues.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/isolation.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/logging_helper.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/numbers.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/os_helper.py
@@ -4697,6 +4713,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/script_helper.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/smtpd.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/socket_helper.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/subprocess_runner.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/testcase.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/threading_helper.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/support/venv.py
@@ -4924,6 +4941,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_bytes%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_bytes%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_bytes%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_capsule%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_capsule%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_capsule%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_codecs%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_codecs%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_codecs%%PYTHON_TAG%%.pyc
@@ -5015,6 +5035,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_abstract.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_bytearray.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_bytes.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_capsule.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_codecs.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_complex.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_dict.py
@@ -6846,6 +6867,12 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_colorchooser%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_colorchooser%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_colorchooser%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_dnd%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_dnd%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_dnd%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_filedialog%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_filedialog%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_filedialog%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_font%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_font%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_font%%PYTHON_TAG%%.pyc
@@ -6864,12 +6891,18 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_misc%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_misc%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_misc%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_scrolledtext%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_scrolledtext%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_scrolledtext%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_simpledialog%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_simpledialog%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_simpledialog%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_text%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_text%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_text%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_tkinter_pipe%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_tkinter_pipe%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_tkinter_pipe%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_variables%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_variables%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/test_variables%%PYTHON_TAG%%.pyc
@@ -6881,14 +6914,18 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/__pycache__/widget_tests%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/support.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_colorchooser.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_dnd.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_filedialog.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_font.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_geometry_managers.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_images.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_loadtk.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_messagebox.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_misc.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_scrolledtext.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_simpledialog.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_text.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_tkinter_pipe.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_variables.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/test_widgets.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_tkinter/widget_tests.py
