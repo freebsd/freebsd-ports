@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+claude is a closed-source Linux binary that runs under the Linuxulator.
+
+One-time host setup:
+
+  # pkg install linux_base-rl9
+  # sysrc linux_enable=YES
+  # service linux start
+
+service linux mounts the required filesystems, including fdescfs with
+linrdlnk. Without linrdlnk, claude hangs silently at startup.
+
+Self-update is disabled (DISABLE_AUTOUPDATER); upgrade via ports/pkg.
+EOM
+}
+]

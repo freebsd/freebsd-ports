@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# FreeBSD ports wrapper for Anthropic Claude Code (Linux ELF via Linuxulator)
+#
+
+export DISABLE_AUTOUPDATER=1
+export DISABLE_UPDATES=1
+
+#
+# Required Linuxulator mounts. Without linrdlnk on fdescfs, Bun resolves cwd
+# via open(path, O_PATH) + readlink("/dev/fd/N"), gets EINVAL, and hangs.
+# service linux start mounts these correctly; hand-rolled fstab often does not.
+#
+if [ ! -e /compat/linux/proc/version ]; then
+	echo "claude: error: linprocfs is not mounted on /compat/linux/proc" >&2
+	echo "claude: enable with: sysrc linux_enable=YES && service linux start" >&2
+	exit 1
+fi
+if [ ! -d /compat/linux/dev/fd ]; then
+	echo "claude: error: fdescfs is not mounted on /compat/linux/dev/fd" >&2
+	echo "claude: enable with: sysrc linux_enable=YES && service linux start" >&2
+	exit 1
+fi
+if ! [ -L /compat/linux/dev/fd/2 ]; then
+	echo "claude: error: fdescfs must be mounted with linrdlnk (claude will hang otherwise)" >&2
+	echo "claude: /etc/fstab: fdescfs /compat/linux/dev/fd fdescfs rw,linrdlnk 0 0" >&2
+	echo "claude: then: umount /compat/linux/dev/fd && mount /compat/linux/dev/fd" >&2
+	echo "claude: (or: sysrc linux_enable=YES && service linux start)" >&2
+	exit 1
+fi
+
+#
+# Bake-in of:
+#   alias claude='SHELL=/usr/local/bin/bash bash --noprofile --norc -c claude'
+#
+# Claude's shell-detection child inherits stdin; bash startup files that read
+# fd 0 make the TUI fall through to --print mode (anthropics/claude-code#12507).
+# Launch from a clean bash; keep SHELL=bash for the tool runner.
+#
+export SHELL=%%LOCALBASE%%/bin/bash
+exec %%LOCALBASE%%/bin/bash --noprofile --norc -c 'exec "$@"' bash %%PREFIX%%/libexec/claude "$@"
