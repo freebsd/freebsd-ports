@@ -1,8 +1,33 @@
 PORTNAME=	pomerium-envoy-custom
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.36.8-p1
-PORTREVISION=	1
+DISTVERSIONPREFIX=
+DISTVERSION=	1.37.0.20260618
 CATEGORIES=	www
+MASTER_SITES+=	https://github.com/envoyproxy/envoy/archive/:envoy_src \
+		https://github.com/openssh/openssh-portable/archive/:openssh_portable \
+		https://github.com/Neargye/magic_enum/archive/refs/tags/:magic_enum \
+		https://github.com/cameron314/readerwriterqueue/archive/:readerwriterqueue \
+		https://github.com/bazelbuild/bazel-skylib/releases/download/1.9.0/:envoy_api_bazel_skylib \
+		https://github.com/bufbuild/protoc-gen-validate/archive/refs/tags/:envoy_api_pgv \
+		https://github.com/bazelbuild/rules_jvm_external/releases/download/6.10/:envoy_api_rules_jvm_external \
+		https://github.com/googleapis/googleapis/archive/:envoy_api_googleapis \
+		https://github.com/prometheus/client_model/archive/:envoy_api_prometheus_metrics_model \
+		https://github.com/bazelbuild/rules_proto/archive/refs/tags/:envoy_api_rules_proto \
+		https://github.com/bufbuild/buf/releases/download/v1.61.0/:envoy_api_buf \
+		https://github.com/google/cel-spec/archive/:envoy_api_dev_cel \
+		https://github.com/envoyproxy/toolshed/releases/download/bazel-v0.3.35/:envoy_api_toolshed
+DISTFILES+=	${ENVOY_SRC_COMMIT}.zip:envoy_src \
+		V_10_3_P1.tar.gz:openssh_portable \
+		v0.9.8.tar.gz:magic_enum \
+		v1.0.7.tar.gz:readerwriterqueue \
+		bazel-skylib-1.9.0.tar.gz:envoy_api_bazel_skylib \
+		v1.3.3.zip:envoy_api_pgv \
+		rules_jvm_external-6.10.tar.gz:envoy_api_rules_jvm_external \
+		fd52b5754b2b268bc3a22a10f29844f206abb327.tar.gz:envoy_api_googleapis \
+		v0.6.2.tar.gz:envoy_api_prometheus_metrics_model \
+		7.1.0.tar.gz:envoy_api_rules_proto \
+		buf-Linux-x86_64.tar.gz:envoy_api_buf \
+		v0.25.1.tar.gz:envoy_api_dev_cel \
+		toolshed-bazel-v0.3.35.tar.gz:envoy_api_toolshed
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -12,29 +37,22 @@ WWW=		https://pomerium.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ENVOY_SRC_COMMIT=	ee7784f95f506e2a606ae668f0d9f70f9d26af83
-ENVOY_API_COMMIT=	f8b75d1efa92bbf534596a013d9ca5873f79dd30
-
-USES=		cmake:indirect compiler:c++20-lang gmake go:no_targets java \
-		ninja:build python:build
-
-BUILD_DEPENDS=	${LOCALBASE}/bin/buf:devel/buf \
+BUILD_DEPENDS=	${LOCALBASE}/bin/autoconf:devel/autoconf \
+		${LOCALBASE}/bin/automake:devel/automake \
+		${LOCALBASE}/bin/buf:devel/buf \
 		${LOCALBASE}/bin/yq:textproc/go-yq \
+		${LOCALBASE}/include/flatbuffers/flatbuffers.h:devel/flatbuffers \
 		${LOCALBASE}/include/fmt/format.h:devel/libfmt \
 		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json \
 		${LOCALBASE}/include/spdlog/spdlog.h:devel/spdlog \
 		${LOCALBASE}/include/tclap/CmdLine.h:devel/tclap12 \
-		${LOCALBASE}/include/flatbuffers/flatbuffers.h:devel/flatbuffers \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${UNZIP_CMD}:archivers/unzip \
-		autoconf>=2.71:devel/autoconf \
-		automake>=1.16:devel/automake \
 		bash:shells/bash \
 		bazel:devel/bazel7 \
 		git:devel/git \
 		m4:devel/m4 \
 		zip:archivers/zip
-
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
 		libmaxminddb.so:net/libmaxminddb \
@@ -44,147 +62,125 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libyaml-cpp.so:devel/yaml-cpp \
 		libzstd.so:archivers/zstd
 
-JAVA_VERSION=	21
-ZLIBBASE=	${LOCALBASE:H}
-
-SUB_LIST+=	WRKSRC=${WRKSRC} \
-		PYTHON_CMD=${PYTHON_CMD}
-SUB_FILES+=	workspace_status.sh \
-		rules_python_py_runtime_info_freebsd.patch \
-		rules_python_py_executable_freebsd.patch \
-		rules_python_runtime_env_toolchain_freebsd.patch
-
+USES=		cmake:indirect compiler:c++20-lang gmake go:no_targets \
+		java:build ninja:build python:build
 USE_GITHUB=	yes
+
+ENVOY_SRC_COMMIT=	f387231af8dd7274e37c5ae2cc797cb09a948818
+ZLIBBASE=		${LOCALBASE:H}
+
 GH_ACCOUNT=	pomerium
 GH_PROJECT=	envoy-custom
-
-# Top-level WORKSPACE archives fetched directly by Bazel.
-# These are not covered by repository_locations.bzl, so they must be vendored
-# explicitly for offline builds.
-DISTFILES+=	${ENVOY_SRC_COMMIT}.zip:envoy_src
-MASTER_SITES+=	https://github.com/envoyproxy/envoy/archive/:envoy_src
-DISTFILES+=	V_10_2_P1.zip:openssh_portable
-MASTER_SITES+=	https://github.com/openssh/openssh-portable/archive/:openssh_portable
-DISTFILES+=	a413fcc9c46a020a746907136a384c227f3cd095.zip:magic_enum
-MASTER_SITES+=	https://github.com/Neargye/magic_enum/archive/:magic_enum
-DISTFILES+=	v1.0.7.zip:readerwriterqueue
-MASTER_SITES+=	https://github.com/cameron314/readerwriterqueue/archive/:readerwriterqueue
-
-# Envoy API repository_locations.bzl exact versions used by this wrapper build.
-DISTFILES+=	bazel-skylib-1.7.1.tar.gz:envoy_api_bazel_skylib
-MASTER_SITES+=	https://github.com/bazelbuild/bazel-skylib/releases/download/1.7.1/:envoy_api_bazel_skylib
-DISTFILES+=	v1.0.4.zip:envoy_api_pgv
-MASTER_SITES+=	https://github.com/bufbuild/protoc-gen-validate/archive/refs/tags/:envoy_api_pgv
-DISTFILES+=	rules_jvm_external-6.1.tar.gz:envoy_api_rules_jvm_external
-MASTER_SITES+=	https://github.com/bazelbuild/rules_jvm_external/releases/download/6.1/:envoy_api_rules_jvm_external
-DISTFILES+=	114a745b2841a044e98cdbb19358ed29fcf4a5f1.tar.gz:envoy_api_googleapis
-MASTER_SITES+=	https://github.com/googleapis/googleapis/archive/:envoy_api_googleapis
-DISTFILES+=	v0.4.1.tar.gz:envoy_api_opencensus_proto
-MASTER_SITES+=	https://github.com/census-instrumentation/opencensus-proto/archive/:envoy_api_opencensus_proto
-DISTFILES+=	v0.6.1.tar.gz:envoy_api_prometheus_metrics_model
-MASTER_SITES+=	https://github.com/prometheus/client_model/archive/:envoy_api_prometheus_metrics_model
-DISTFILES+=	5.3.0-21.7.tar.gz:envoy_api_rules_proto
-MASTER_SITES+=	https://github.com/bazelbuild/rules_proto/archive/refs/tags/:envoy_api_rules_proto
-DISTFILES+=	buf-Linux-x86_64.tar.gz:envoy_api_buf
-MASTER_SITES+=	https://github.com/bufbuild/buf/releases/download/v1.32.2/:envoy_api_buf
-DISTFILES+=	v0.15.0.tar.gz:envoy_api_dev_cel
-MASTER_SITES+=	https://github.com/google/cel-spec/archive/:envoy_api_dev_cel
-DISTFILES+=	bazel-v0.1.3.tar.gz:envoy_api_toolshed
-MASTER_SITES+=	https://github.com/envoyproxy/toolshed/archive/:envoy_api_toolshed
+GH_TAGNAME=	16ede7a56f2f2c4de7011337193495e32d57ce3b
 
 # Bazel-managed dependencies (GitHub archive format).
 # These are fetched by Bazel as http_archive during the build, sourced from
 # the codeload.github.com CDN, which produces the same sha256 as GitHub's
 # archive download.
-GH_TUPLE+=	aspect-build:bazel-lib:v2.16.0:aspect_bazel_lib \
-		grailbio:bazel-compilation-database:40864791135333e1446a04553b63cbe744d358d0:bazel_compdb \
+GH_TUPLE+=	grailbio:bazel-compilation-database:40864791135333e1446a04553b63cbe744d358d0:bazel_compdb \
 		bazelbuild:bazel-toolchains:v5.1.2:bazel_toolchains \
-		google:boringssl:0.20250514.0:boringssl \
+		google:boringssl:0.20260413.0:boringssl \
 		civetweb:civetweb:v1.16:civetweb \
 		Kitware:CMake:v3.23.2:cmake_src \
 		aignas:rules_shellcheck:0.4.0:com_github_aignas_rules_shellcheck \
 		alibaba:hessian2-codec:6f5a64770f0374a761eece13c8863b80dc5adcd8:com_github_alibaba_hessian2_codec \
 		awslabs:aws-c-auth:v0.9.1:com_github_awslabs_aws_c_auth \
-		bazelbuild:buildtools:v8.2.1:com_github_bazelbuild_buildtools \
+		bazelbuild:buildtools:v8.5.1:com_github_bazelbuild_buildtools \
 		cncf:xds:8bfbf64dc13ee1a570be4fbdcfccbdd8532463f0:com_github_cncf_xds \
 		curl:curl:curl-8_5_0:com_github_curl \
-		DataDog:dd-trace-cpp:v0.2.2:com_github_datadog_dd_trace_cpp \
+		DataDog:dd-trace-cpp:v2.0.0:com_github_datadog_dd_trace_cpp \
 		envoyproxy:sql-parser:3b40ba2d106587bdf053a292f7e3bb17e818a57f:com_github_envoyproxy_sqlparser \
-		FDio:vpp:8ca922e1d6d0fe8af28e539505d3c3a211642a91:com_github_fdio_vpp_vcl \
+		FDio:vpp:85abefb55ee931fa4e45c0b6a9fc8c43118651b3:com_github_fdio_vpp_vcl \
 		google:jwt_verify_lib:b59e8075d4a4f975ba6f109e1916d6e60aeb5613:com_github_google_jwt_verify \
 		google:libsxg:beaa3939b76f8644f6833267e9f2462760838f18:com_github_google_libsxg \
-		google:perfetto:v52.0:com_github_google_perfetto \
-		google:quiche:9d155f645b33e283ca741ba16002a71ed382cbf0:com_github_google_quiche \
-		google:tcmalloc:0c3faab546c22d67e11327c6c6c7c34c1707c5db:com_github_google_tcmalloc \
-		grpc:grpc:v1.72.0:com_github_grpc_grpc \
+		google:perfetto:v54.0:com_github_google_perfetto \
+		google:quiche:e68fe05e70da74a3ea282d927c76f76b4bc4e710:com_github_google_quiche \
+		google:tcmalloc:12f255231938d30493186b0a037feedd70f5a1c1:com_github_google_tcmalloc \
+		grpc:grpc:v1.76.0:com_github_grpc_grpc \
 		libevent:libevent:62c152d9a7cd264b993dad730c4163c6ede2e0a3:com_github_libevent_libevent \
 		LuaJIT:LuaJIT:871db2c84ecefd70a850e03a6c340214a81739f0:com_github_luajit_luajit \
 		ncopa:su-exec:v0.3:com_github_ncopa_suexec \
-		openhistogram:libcircllhist:39f9db724a81ba78f5d037f1cae79c5a07107c8e:com_github_openhistogram_libcircllhist \
+		openhistogram:libcircllhist:py-0.3.2:com_github_openhistogram_libcircllhist \
 		openzipkin:zipkin-api:1.0.0:com_github_openzipkin_zipkinapi \
 		SkyAPM:cpp2sky:v0.6.0:com_github_skyapm_cpp2sky \
-		unicode-org:icu:release-77-1:com_github_unicode_org_icu \
 		zlib-ng:zlib-ng:2.2.5:com_github_zlib_ng_zlib_ng \
-		abseil:abseil-cpp:20250814.1:com_google_absl \
-		google:cel-cpp:v0.13.0:com_google_cel_cpp \
+		abseil:abseil-cpp:20260107.1:com_google_absl \
+		google:cel-cpp:v0.14.0:com_google_cel_cpp \
 		google:cel-spec:v0.24.0:com_google_cel_spec \
 		googleapis:googleapis:fd52b5754b2b268bc3a22a10f29844f206abb327:com_google_googleapis \
 		confluentinc:librdkafka:v2.6.0:confluentinc_librdkafka \
 		cython:cython:0.29.35:cython \
-		envoyproxy:examples:v0.1.2:envoy_examples \
-		envoyproxy:data-plane-api:f8b75d1efa92bbf534596a013d9ca5873f79dd30:envoy_api \
-		envoyproxy:toolshed:bazel-v0.3.3:envoy_toolshed \
+		envoyproxy:examples:v0.2.3:envoy_examples \
+		envoyproxy:toolshed:bazel-v0.3.35:envoy_toolshed \
 		fastfloat:fast_float:v7.0.0:fast_float \
 		ninja-build:ninja:v1.13.1:fips_ninja \
 		google:gurl:dd4080fec0b443296c0ed0036e1e776df8813aa7:googleurl \
 		grpc-ecosystem:grpc-httpjson-transcoding:a6e226f9a2e656a973df3ad48f0ee5efacce1a28:grpc_httpjson_transcoding \
 		google:highway:1.2.0:highway \
-		open-telemetry:opentelemetry-cpp:v1.23.0:io_opentelemetry_cpp \
+		open-telemetry:opentelemetry-cpp:v1.26.0:io_opentelemetry_cpp \
 		ninja-build:ninja:v1.11.1:ninja_build_src \
 		numactl:numactl:v2.0.19:numactl \
-		open-telemetry:opentelemetry-proto:v1.9.0:opentelemetry_proto \
+		open-telemetry:opentelemetry-proto:v1.10.0:opentelemetry_proto \
 		prometheus:client_model:v0.6.2:prometheus_metrics_model \
-		proxy-wasm:proxy-wasm-cpp-host:65bb78fbf8beb6d3670701d35711e691c0c4c4ce:proxy_wasm_cpp_host \
-		proxy-wasm:proxy-wasm-cpp-sdk:dc4f37efacd2ff7bf2e8f36632f22e1e99347f3e:proxy_wasm_cpp_sdk \
+		proxy-wasm:proxy-wasm-cpp-host:beb8a4ece9eede4ab21d89d723359607600296d4:proxy_wasm_cpp_host \
+		proxy-wasm:proxy-wasm-cpp-sdk:e5256b0c5463ea9961965ad5de3e379e00486640:proxy_wasm_cpp_sdk \
 		bufbuild:rules_buf:v0.5.2:rules_buf \
 		bazelbuild:rules_foreign_cc:0.15.1:rules_foreign_cc \
 		bazelbuild:rules_fuzzing:v0.6.0:rules_fuzzing \
-		bazelbuild:rules_python:1.6.3:rules_python \
+		bazelbuild:rules_python:1.9.0:rules_python \
 		protocolbuffers:rules_ruby:37cf5900d0b0e44fa379c0ea3f5fcee0035d77ca:rules_ruby \
-		apache:skywalking-data-collect-protocol:v10.2.0:skywalking_data_collect_protocol \
-		apache:thrift:v0.22.0:thrift \
+		apache:skywalking-data-collect-protocol:v10.4.0:skywalking_data_collect_protocol \
+		apache:thrift:v0.23.0:thrift \
 		census-instrumentation:opencensus-cpp:5501a1a255805e0be83a41348bb5f2630d5ed6b3:io_opencensus_cpp \
 		census-instrumentation:opencensus-proto:v0.3.0:opencensus_proto \
 		Linaro:uadk:v2.9:uadk \
 		protocolbuffers:utf8_range:de0b4a8ff9b5d4c98108bdfe723291a33c52c54f:utf8_range \
-		v8:v8:13.8.258.26:v8 \
-		bytecodealliance:wasm-micro-runtime:WAMR-2.2.0:com_github_wamr \
-		bytecodealliance:wasmtime:v24.0.4:com_github_wasmtime \
+		v8:v8:14.6.202.10:v8 \
+		bytecodealliance:wasm-micro-runtime:WAMR-2.4.4:com_github_wamr \
+		bytecodealliance:wasmtime:v24.0.7:com_github_wasmtime \
 		intel:ittapi:a3911fff01a775023a06af8754f9ec1e5977dd97:intel_ittapi
+
+JAVA_VERSION=	21+
+
+SUB_FILES+=	rules_python_py_executable_freebsd.patch \
+		rules_python_py_runtime_info_freebsd.patch \
+		rules_python_runtime_env_toolchain_freebsd.patch \
+		workspace_status.sh
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD} \
+		WRKSRC=${WRKSRC}
 
 # Non-GitHub Bazel dependencies (not expressible via GH_TUPLE).
 # These use releases/download or .zip archives; GH_TUPLE downloads codeload
 # archives with different SHA256 values that would not match the checksums
 # in repository_locations.bzl.
-DISTFILES+=	bazel_features-v1.36.0.tar.gz:bazel_features
-MASTER_SITES+=	https://github.com/bazel-contrib/bazel_features/releases/download/v1.36.0/:bazel_features
-DISTFILES+=	bazel-gazelle-v0.45.0.tar.gz:bazel_gazelle
-MASTER_SITES+=	https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.45.0/:bazel_gazelle
+# argparse: pomerium-envoy-custom WORKSPACE http_archive dependency
+DISTFILES+=	v3.2.tar.gz:argparse
+MASTER_SITES+=	https://github.com/p-ranav/argparse/archive/refs/tags/:argparse
+# aspect_bazel_lib: WORKSPACE envoy_http_archive overrides envoy's version; must match
+# the releases/download sha256, not the codeload archive sha256.
+DISTFILES+=	bazel-lib-v2.21.2.tar.gz:aspect_bazel_lib
+MASTER_SITES+=	https://github.com/aspect-build/bazel-lib/releases/download/v2.21.2/:aspect_bazel_lib
+DISTFILES+=	bazel_features-v1.45.0.tar.gz:bazel_features
+MASTER_SITES+=	https://github.com/bazel-contrib/bazel_features/releases/download/v1.45.0/:bazel_features
+DISTFILES+=	bazel-gazelle-v0.47.0.tar.gz:bazel_gazelle
+MASTER_SITES+=	https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.47.0/:bazel_gazelle
 # package_metadata: registered by gazelle_dependencies() in bazel_gazelle/deps.bzl (not in repository_locations.bzl)
 DISTFILES+=	supply-chain-v0.0.5.tar.gz:package_metadata
 MASTER_SITES+=	https://github.com/bazel-contrib/supply-chain/releases/download/v0.0.5/:package_metadata
-DISTFILES+=	bazel-skylib-1.8.2.tar.gz:bazel_skylib
-MASTER_SITES+=	https://github.com/bazelbuild/bazel-skylib/releases/download/1.8.2/:bazel_skylib
-DISTFILES+=	msgpack-cxx-6.1.0.tar.gz:com_github_msgpack_cpp
-MASTER_SITES+=	https://github.com/msgpack/msgpack-c/releases/download/cpp-6.1.0/:com_github_msgpack_cpp
+DISTFILES+=	msgpack-cxx-7.0.0.tar.gz:com_github_msgpack_cpp
+MASTER_SITES+=	https://github.com/msgpack/msgpack-c/releases/download/cpp-7.0.0/:com_github_msgpack_cpp
 DISTFILES+=	googletest-1.17.0.tar.gz:com_google_googletest
 MASTER_SITES+=	https://github.com/google/googletest/releases/download/v1.17.0/:com_google_googletest
-DISTFILES+=	gperftools-2.17.2.tar.gz:gperftools
-MASTER_SITES+=	https://github.com/gperftools/gperftools/releases/download/gperftools-2.17.2/:gperftools
-DISTFILES+=	rules_go-v0.59.0.zip:io_bazel_rules_go
-MASTER_SITES+=	https://github.com/bazelbuild/rules_go/releases/download/v0.59.0/:io_bazel_rules_go
-DISTFILES+=	rules_cc-0.2.8.tar.gz:rules_cc
-MASTER_SITES+=	https://github.com/bazelbuild/rules_cc/releases/download/0.2.8/:rules_cc
+DISTFILES+=	gperftools-2.18.1.tar.gz:gperftools
+MASTER_SITES+=	https://github.com/gperftools/gperftools/releases/download/gperftools-2.18.1/:gperftools
+# icu: envoy downloads icu4c-{version}-sources.zip from releases/download; the git tag archive
+# from codeload would have a different SHA256 and would not match repository_locations.bzl.
+DISTFILES+=	icu4c-78.2-sources.zip:com_github_unicode_org_icu
+MASTER_SITES+=	https://github.com/unicode-org/icu/releases/download/release-78.2/:com_github_unicode_org_icu
+DISTFILES+=	rules_go-v0.60.0.zip:io_bazel_rules_go
+MASTER_SITES+=	https://github.com/bazelbuild/rules_go/releases/download/v0.60.0/:io_bazel_rules_go
+DISTFILES+=	rules_cc-0.2.17.tar.gz:rules_cc
+MASTER_SITES+=	https://github.com/bazelbuild/rules_cc/releases/download/0.2.17/:rules_cc
 DISTFILES+=	rules_java-7.12.5.tar.gz:rules_java
 MASTER_SITES+=	https://github.com/bazelbuild/rules_java/releases/download/7.12.5/:rules_java
 # remote_java_tools: registered by rules_java_builtin (Bazel-embedded) via DEFAULT.WORKSPACE.SUFFIX
@@ -193,31 +189,41 @@ DISTFILES+=	java_tools-v13.6.1.zip:remote_java_tools
 MASTER_SITES+=	https://github.com/bazelbuild/java_tools/releases/download/java_13.6.1/:remote_java_tools
 DISTFILES+=	rules_license-1.0.0.tar.gz:rules_license
 MASTER_SITES+=	https://github.com/bazelbuild/rules_license/releases/download/1.0.0/:rules_license
-# rules_proto: used via api/bazel/repository_locations.bzl with refs/tags URL (sha differs from GH_TUPLE codeload)
-DISTFILES+=	7.1.0.tar.gz:rules_proto_src
-MASTER_SITES+=	https://github.com/bazelbuild/rules_proto/archive/refs/tags/:rules_proto_src
+# rules_proto 7.1.0: used by both the main WORKSPACE (pre-registered by patch-WORKSPACE) and
+# api/bazel/repository_locations.bzl; single download handles both uses.
 DISTFILES+=	rules_proto_grpc-4.6.0.tar.gz:rules_proto_grpc
 MASTER_SITES+=	https://github.com/rules-proto-grpc/rules_proto_grpc/releases/download/4.6.0/:rules_proto_grpc
-DISTFILES+=	rules_rust-0.56.0.tar.gz:rules_rust
-MASTER_SITES+=	https://github.com/bazelbuild/rules_rust/releases/download/0.56.0/:rules_rust
-DISTFILES+=	rules_shell-v0.6.1.tar.gz:rules_shell
-MASTER_SITES+=	https://github.com/bazelbuild/rules_shell/releases/download/v0.6.1/:rules_shell
+DISTFILES+=	rules_rust-0.69.0.tar.gz:rules_rust
+MASTER_SITES+=	https://github.com/bazelbuild/rules_rust/releases/download/0.69.0/:rules_rust
+DISTFILES+=	rules_shell-v0.7.1.tar.gz:rules_shell
+MASTER_SITES+=	https://github.com/bazelbuild/rules_shell/releases/download/v0.7.1/:rules_shell
 DISTFILES+=	singleheader.zip:simdutf
-MASTER_SITES+=	https://github.com/simdutf/simdutf/releases/download/v7.3.4/:simdutf
-DISTFILES+=	toolchains_llvm-v1.6.0.tar.gz:toolchains_llvm
-MASTER_SITES+=	https://github.com/bazel-contrib/toolchains_llvm/releases/download/v1.6.0/:toolchains_llvm
-DISTFILES+=	v1.3.0.zip:com_envoyproxy_protoc_gen_validate
-MASTER_SITES+=	https://github.com/bufbuild/protoc-gen-validate/archive/refs/tags/:com_envoyproxy_protoc_gen_validate
+MASTER_SITES+=	https://github.com/simdutf/simdutf/releases/download/v8.1.0/:simdutf
+DISTFILES+=	toolchains_llvm-v1.7.0.tar.gz:toolchains_llvm
+MASTER_SITES+=	https://github.com/bazel-contrib/toolchains_llvm/releases/download/v1.7.0/:toolchains_llvm
+# nghttp2: built from source with envoy's custom patches (adds nghttp2_option_set_max_hd_nv_size)
+DISTFILES+=	nghttp2-1.66.0.tar.gz:nghttp2_src
+MASTER_SITES+=	https://github.com/nghttp2/nghttp2/releases/download/v1.66.0/:nghttp2_src
+# helly25_bzl: transitive dep of toolchains_llvm v1.7.0 (version comparison utility)
+DISTFILES+=	bzl-0.3.1.tar.gz:helly25_bzl
+MASTER_SITES+=	https://github.com/helly25/bzl/releases/download/0.3.1/:helly25_bzl
+# aspect_bazel_lib transitive deps (loaded eagerly by aspect_bazel_lib_dependencies)
+DISTFILES+=	tar.bzl-v0.5.1.tar.gz:tar_bzl
+MASTER_SITES+=	https://github.com/bazel-contrib/tar.bzl/releases/download/v0.5.1/:tar_bzl
+DISTFILES+=	jq.bzl-v0.1.0.tar.gz:jq_bzl
+MASTER_SITES+=	https://github.com/bazel-contrib/jq.bzl/releases/download/v0.1.0/:jq_bzl
+DISTFILES+=	yq.bzl-v0.1.1.tar.gz:yq_bzl
+MASTER_SITES+=	https://github.com/bazel-contrib/yq.bzl/releases/download/v0.1.1/:yq_bzl
 DISTFILES+=	7680e4998426e62b6896995ff73d4d91cc5fb13c.zip:com_github_chrusty_protoc_gen_jsonschema
 MASTER_SITES+=	https://github.com/norbjd/protoc-gen-jsonschema/archive/:com_github_chrusty_protoc_gen_jsonschema
 # packages with conflicting URL basenames: use releases/download for unique filenames
-DISTFILES+=	1.1.0.tar.gz:rules_pkg
+DISTFILES+=	1.2.0.tar.gz:rules_pkg
 MASTER_SITES+=	https://github.com/bazelbuild/rules_pkg/archive/:rules_pkg
 # platforms (1.0.0.tar.gz) conflicts with com_github_openzipkin_zipkinapi (1.0.0.tar.gz)
 DISTFILES+=	platforms-1.0.0.tar.gz:platforms
 MASTER_SITES+=	https://github.com/bazelbuild/platforms/releases/download/1.0.0/:platforms
-DISTFILES+=	protobuf-29.3.tar.gz:com_google_protobuf
-MASTER_SITES+=	https://github.com/protocolbuffers/protobuf/releases/download/v29.3/:com_google_protobuf
+DISTFILES+=	protobuf-33.2.tar.gz:com_google_protobuf
+MASTER_SITES+=	https://github.com/protocolbuffers/protobuf/releases/download/v33.2/:com_google_protobuf
 DISTFILES+=	glib-2.26.1.tar.gz:glib_src
 MASTER_SITES+=	https://download.gnome.org/sources/glib/2.26/:glib_src
 DISTFILES+=	pkg-config-0.29.2.tar.gz:pkgconfig_src
@@ -232,11 +238,11 @@ DISTFILES+=	279353cfab372ac7f268ae529df29c4d546ca18d.zip:com_google_protoprocess
 MASTER_SITES+=	https://github.com/grpc-ecosystem/proto_processing_lib/archive/:com_google_protoprocessinglib
 DISTFILES+=	6c7c925b571d54486b9ffae8d9d18a822801cbda.zip:dragonbox
 MASTER_SITES+=	https://github.com/jk-jeon/dragonbox/archive/:dragonbox
-DISTFILES+=	0a92994d729ff76a58f692d3028ca1b64b145d91.zip:fp16
+DISTFILES+=	3d2de1816307bac63c16a297e8c4dc501b4076df.zip:fp16
 MASTER_SITES+=	https://github.com/Maratyszcza/FP16/archive/:fp16
 DISTFILES+=	e965ac0ac6db6686169678e2a6c77ede904fa82c.zip:ocp
 MASTER_SITES+=	https://github.com/opencomputeproject/ocp-diag-core/archive/:ocp
-DISTFILES+=	3.9.1.zip:kafka_source
+DISTFILES+=	3.9.2.zip:kafka_source
 MASTER_SITES+=	https://github.com/apache/kafka/archive/:kafka_source
 # antlr4_jar: http_jar in cel-cpp/bazel/deps.bzl; the first distfiles loop symlinks by basename
 DISTFILES+=	antlr-4.13.1-complete.jar:antlr4_jar
@@ -315,7 +321,7 @@ DISTFILES+=	v0.0.0-20210508222113-6edffad5e616.zip:org_golang_x_lint
 MASTER_SITES+=	https://proxy.golang.org/golang.org/x/lint/@v/:org_golang_x_lint
 DISTFILES+=	v0.9.0.zip:org_golang_x_mod
 MASTER_SITES+=	https://proxy.golang.org/golang.org/x/mod/@v/:org_golang_x_mod
-DISTFILES+=	v0.7.0.zip:org_golang_x_sys
+DISTFILES+=	v0.38.0.zip:org_golang_x_sys
 MASTER_SITES+=	https://proxy.golang.org/golang.org/x/sys/@v/:org_golang_x_sys
 DISTFILES+=	v0.0.0-20191204190536-9bdfabe68543.zip:org_golang_x_xerrors
 MASTER_SITES+=	https://proxy.golang.org/golang.org/x/xerrors/@v/:org_golang_x_xerrors
@@ -347,20 +353,35 @@ BAZEL_BUILD_OPTS=	--distdir=${WRKDIR}/bazel-distdir \
 			--host_action_env=PATH=${WRKDIR}/bin:${LOCALBASE}/bin:/usr/bin:/bin \
 			--host_action_env=PYTHONPATH=${PYTHON_SITELIBDIR} \
 			--override_repository=com_github_fmtlib_fmt=${WRKDIR}/sys_repos/fmt \
+			--override_repository=fmt=${WRKDIR}/sys_repos/fmt \
 			--override_repository=com_github_mirror_tclap=${WRKDIR}/sys_repos/tclap \
+			--override_repository=tclap=${WRKDIR}/sys_repos/tclap \
 			--override_repository=com_github_nlohmann_json=${WRKDIR}/sys_repos/nlohmann-json \
+			--override_repository=nlohmann_json=${WRKDIR}/sys_repos/nlohmann-json \
+			--override_repository=nlohmann-json=${WRKDIR}/sys_repos/nlohmann-json \
 			--override_repository=com_github_gabime_spdlog=${WRKDIR}/sys_repos/spdlog \
+			--override_repository=spdlog=${WRKDIR}/sys_repos/spdlog \
 			--override_repository=com_github_cyan4973_xxhash=${WRKDIR}/sys_repos/xxhash \
+			--override_repository=xxhash=${WRKDIR}/sys_repos/xxhash \
 			--override_repository=com_github_cares_cares=${WRKDIR}/sys_repos/c-ares \
+			--override_repository=c_ares=${WRKDIR}/sys_repos/c-ares \
+			--override_repository=c-ares=${WRKDIR}/sys_repos/c-ares \
 			--override_repository=com_github_jbeder_yaml_cpp=${WRKDIR}/sys_repos/yaml-cpp \
+			--override_repository=yaml_cpp=${WRKDIR}/sys_repos/yaml-cpp \
+			--override_repository=yaml-cpp=${WRKDIR}/sys_repos/yaml-cpp \
 			--override_repository=com_googlesource_code_re2=${WRKDIR}/sys_repos/re2 \
+			--override_repository=re2=${WRKDIR}/sys_repos/re2 \
 			--override_repository=zstd=${WRKDIR}/sys_repos/zstd \
 			--override_repository=org_brotli=${WRKDIR}/sys_repos/brotli \
+			--override_repository=brotli=${WRKDIR}/sys_repos/brotli \
 			--override_repository=com_github_google_flatbuffers=${WRKDIR}/sys_repos/flatbuffers \
+			--override_repository=flatbuffers=${WRKDIR}/sys_repos/flatbuffers \
 			--override_repository=zlib=${WRKDIR}/sys_repos/zlib \
 			--override_repository=net_zlib=${WRKDIR}/sys_repos/zlib \
-			--override_repository=com_github_nghttp2_nghttp2=${WRKDIR}/sys_repos/nghttp2 \
+			--override_repository=zlib_ng=${WRKDIR}/sys_repos/zlib \
+			--override_repository=zlib-ng=${WRKDIR}/sys_repos/zlib \
 			--override_repository=com_github_maxmind_libmaxminddb=${WRKDIR}/sys_repos/libmaxminddb \
+			--override_repository=libmaxminddb=${WRKDIR}/sys_repos/libmaxminddb \
 			--override_repository=build_bazel_rules_apple=${WRKDIR}/sys_repos/apple_stub \
 			--override_repository=base_pip3=${WRKDIR}/sys_repos/base_pip3 \
 			--override_repository=io_hyperscan=${WRKDIR}/sys_repos/hyperscan \
@@ -370,6 +391,7 @@ BAZEL_BUILD_OPTS=	--distdir=${WRKDIR}/bazel-distdir \
 			--override_repository=emsdk=${WRKDIR}/sys_repos/emsdk \
 			--override_repository=proxy_wasm_rust_sdk=${WRKDIR}/sys_repos/proxy_wasm_rust_sdk \
 			--override_repository=com_github_axboe_liburing=${WRKDIR}/sys_repos/empty_stub \
+			--override_repository=liburing=${WRKDIR}/sys_repos/empty_stub \
 			--override_repository=fips_cmake_linux_aarch64=${WRKDIR}/sys_repos/empty_stub \
 			--override_repository=fips_cmake_linux_x86_64=${WRKDIR}/sys_repos/empty_stub \
 			--override_repository=fips_go_linux_amd64=${WRKDIR}/sys_repos/empty_stub \
@@ -388,8 +410,13 @@ BAZEL_BUILD_OPTS=	--distdir=${WRKDIR}/bazel-distdir \
 			--override_repository=rules_fuzzing=${WRKDIR}/sys_repos/rules_fuzzing \
 			--override_repository=rules_buf=${WRKDIR}/sys_repos/rules_buf \
 			--override_repository=opentelemetry_proto=${WRKDIR}/sys_repos/opentelemetry_proto \
+			--override_repository=opentelemetry-proto=${WRKDIR}/sys_repos/opentelemetry_proto \
 			--override_repository=ninja_build_src=${WRKDIR}/sys_repos/ninja_build_src \
-			--override_repository=envoy_toolshed=${WRKDIR}/sys_repos/envoy_toolshed \
+			--override_repository=envoy_toolshed=${WRKDIR}/sys_repos/envoy_toolshed/bazel \
+			--override_repository=yq=${WRKDIR}/sys_repos/yq \
+			--override_repository=proxy_wasm_cpp_host=${WRKDIR}/sys_repos/proxy_wasm_cpp_host \
+			--override_repository=envoy-examples=${WRKDIR}/sys_repos/envoy_examples \
+			--override_repository=rules_pkg=${WRKDIR}/sys_repos/rules_pkg \
 			--override_repository=com_google_googleapis=${WRKDIR}/sys_repos/com_google_googleapis \
 			--override_repository=org_golang_google_protobuf=${WRKDIR}/sys_repos/org_golang_google_protobuf \
 			--override_repository=org_golang_x_text=${WRKDIR}/sys_repos/org_golang_x_text \
@@ -399,14 +426,19 @@ BAZEL_BUILD_OPTS=	--distdir=${WRKDIR}/bazel-distdir \
 			--override_repository=fuzzing_pip3=${WRKDIR}/sys_repos/pip3_stub \
 			--override_repository=io_bazel_rules_go=${WRKDIR}/sys_repos/io_bazel_rules_go \
 			--override_repository=com_google_absl=${WRKDIR}/sys_repos/com_google_absl \
+			--override_repository=abseil-cpp=${WRKDIR}/sys_repos/com_google_absl \
 			--override_repository=envoy=${WRKDIR}/envoy-src \
 			--action_env=MAKE=${GMAKE} --host_linkopt=-lm \
-			--linkopt=-lm --linkopt=-L${LOCALBASE}/lib \
+			--linkopt=-lm --linkopt=-lgcc_eh \
+			--linkopt=-L${LOCALBASE}/lib \
 			--cxxopt=-Wno-nullability-completeness \
 			--host_cxxopt=-Wno-nullability-completeness \
 			--copt=-fPIC --cxxopt=-fPIC --host_copt=-fPIC \
 			--host_cxxopt=-fPIC --define tcmalloc=gperftools \
 			--define hot_restart=disabled \
+			--extra_toolchains=@local_config_cc//:all \
+			--repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=0 \
+			--repo_env=GOROOT=${LOCALBASE}/go125 \
 			--repo_env=GOPROXY=file://${WRKDIR}/goproxy,off \
 			--repo_env=GONOSUMDB=* \
 			--workspace_status_command=${WRKDIR}/workspace_status.sh \
@@ -415,8 +447,8 @@ BAZEL_BUILD_OPTS=	--distdir=${WRKDIR}/bazel-distdir \
 BAZEL_ENV=	HOME=${WRKDIR}/.home XDG_CACHE_HOME=${WRKDIR}/.cache
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500051
-BUILD_DEPENDS+=	${LOCALBASE}/include/sys/inotify.h:devel/libinotify
-LIB_DEPENDS+=	libinotify.so:devel/libinotify
+BUILD_DEPENDS+=		${LOCALBASE}/include/sys/inotify.h:devel/libinotify
+LIB_DEPENDS+=		libinotify.so:devel/libinotify
 LIBINOTIFY_IS_REAL=	yes
 .endif
 
@@ -433,14 +465,8 @@ post-patch:
 # source) and is referenced by the @envoy http_archive patches list in WORKSPACE.
 	${CP} ${FILESDIR}/envoy_freebsd-dependency-imports.patch \
 		${WRKSRC}/patches/envoy/freebsd-dependency-imports.patch
-	for f in go-sdk \
-	    foreign-cc-ares \
-	    foreign-cc-zlib \
-	    foreign-cc-zstd \
-	    foreign-cc-nghttp2 \
-	    foreign-cc-maxmind \
+	for f in foreign-cc-maxmind \
 	    maxmind-extension \
-	    foreign-cc-luajit \
 	    luajit \
 	    platform \
 	    terminate-thread \
@@ -450,11 +476,32 @@ post-patch:
 	    io-socket-handle-impl-cc \
 	    lz4-qat-removal \
 	    inotify \
-	    rules-foreign-cc \
-	    envoy-cmake-generate-args; do \
+	    repositories; do \
 	    ${CP} ${FILESDIR}/patches_envoy_freebsd-$$f.patch \
 	        ${WRKSRC}/patches/envoy/freebsd-$$f.patch; \
 	done
+# FreeBSD: copy per-dependency FreeBSD patches to WRKSRC/bazel/ so Bazel can
+# reference them as @pomerium_envoy//bazel:<name> from the http_archive patches
+# lists injected by freebsd-repositories.patch (v8, msgpack, dd_trace,
+# rules_foreign_cc) and the WORKSPACE luajit definition.
+	${CP} ${FILESDIR}/v8_freebsd.patch \
+		${WRKSRC}/bazel/v8_freebsd.patch
+	${CP} ${FILESDIR}/msgpack_freebsd.patch \
+		${WRKSRC}/bazel/msgpack_freebsd.patch
+	${CP} ${FILESDIR}/dd_trace_freebsd.patch \
+		${WRKSRC}/bazel/dd_trace_freebsd.patch
+	${CP} ${FILESDIR}/luajit_freebsd.patch \
+		${WRKSRC}/patches/luajit/freebsd.patch
+	${CP} ${FILESDIR}/luajit_getentropy_freebsd.patch \
+		${WRKSRC}/patches/luajit/getentropy_freebsd.patch
+	${CP} ${FILESDIR}/toolchains_llvm_freebsd.patch \
+		${WRKSRC}/patches/toolchains_llvm/freebsd.patch
+# FreeBSD openssh config.h: differs from Linux (no utmp.h, no lastlog.h, sys/endian.h)
+	@${MKDIR} ${WRKSRC}/bazel/foreign_cc/openssh/include/config_freebsd
+	${CP} ${FILESDIR}/openssh_config_freebsd.h \
+		${WRKSRC}/bazel/foreign_cc/openssh/include/config_freebsd/config.h
+	@echo 'exports_files(["config.h"])' > \
+		${WRKSRC}/bazel/foreign_cc/openssh/include/config_freebsd/BUILD
 
 pre-build:
 # Pre-extract @envoy upstream source and apply all patches ourselves.
@@ -469,25 +516,29 @@ pre-build:
 		-C ${WRKDIR}/envoy-src
 	for f in \
 	    0001-revert-deps-drop-BoringSSL-linkstatic-patch-38621.patch \
-	    0002-bump-dependencies.patch \
-	    0003-envoy-copts.patch \
-	    0004-pgv.patch \
-	    0005-suppress-duplicate-wip-warnings.patch \
-	    0006-coverage-format.patch \
-	    0007-user-space-io-handle.patch \
-	    0008-cel-cpp-compatibility.patch \
-	    tmp-envoy-41815.patch \
-	    tmp-transport-socket-options.patch \
-	    freebsd-rules-foreign-cc.patch \
+	    0002-envoy-copts.patch \
+	    0003-add-external-patches.patch \
+	    0004-suppress-duplicate-wip-warnings.patch \
+	    0005-user-space-io-handle.patch \
+	    0006-fake-upstream.patch \
+	    0007-coverage-format.patch \
+	    0008-sanitizer-deps.patch \
+	    0009-luajit.patch \
+	    0011-integration-tcp-client-write.patch \
+	    0012-generic-proxy-trace-logs.patch \
+	    0013-fuzz-toolchain-path.patch \
+	    fix-allow-dev-shm.patch \
+	    fix-antlr4-cpp-runtime.patch \
+	    fix-integration-test-server-exit.patch \
+	    fix-lua-wrappers-test.patch \
+	    fix-missing-symbolizer-env.patch \
+	    fix-static-libgcc-flag.patch \
+	    fix-tcmalloc-macos-constraints.patch \
+	    fix-transport-socket-options.patch \
 	    freebsd-dependency-imports.patch \
-	    freebsd-envoy-cmake-generate-args.patch \
-	    freebsd-foreign-cc-ares.patch \
-	    freebsd-foreign-cc-nghttp2.patch \
+	    freebsd-repositories.patch \
 	    freebsd-foreign-cc-maxmind.patch \
 	    freebsd-maxmind-extension.patch \
-	    freebsd-foreign-cc-zlib.patch \
-	    freebsd-foreign-cc-zstd.patch \
-	    freebsd-foreign-cc-luajit.patch \
 	    freebsd-luajit.patch \
 	    freebsd-platform.patch \
 	    freebsd-terminate-thread.patch \
@@ -499,6 +550,11 @@ pre-build:
 	    freebsd-inotify.patch; do \
 	    ${PATCH} -p1 -d ${WRKDIR}/envoy-src < ${WRKSRC}/patches/envoy/$$f || exit 1; \
 	done
+# FreeBSD: Inject our protoc_gen_validate FreeBSD patch into the api_dependencies() patches list.
+# 0003-add-external-patches.patch adds fix-utf8-len.patch; we append our FreeBSD-specific patch.
+	${REINPLACE_CMD} -e \
+		's|"@pomerium_envoy//patches/protoc_gen_validate:fix-utf8-len.patch"\]|"@pomerium_envoy//patches/protoc_gen_validate:fix-utf8-len.patch", "//bazel:protoc_gen_validate_freebsd.patch"]|' \
+		${WRKDIR}/envoy-src/api/bazel/repositories.bzl
 # Also clear any stale Bazel-cached @envoy tree (safety net).
 	${RM} -rf ${WRKDIR}/bazel-out/external/envoy \
 	           ${WRKDIR}/bazel-out/external/envoy.marker
@@ -541,7 +597,7 @@ pre-build:
 	@${RM} -r ${WRKDIR}/sys_repos/com_github_golang_protobuf/github.com
 	@echo 'workspace(name = "com_github_golang_protobuf")' > \
 		${WRKDIR}/sys_repos/com_github_golang_protobuf/WORKSPACE
-	@bsdtar -xOf ${DISTDIR}/${DIST_SUBDIR}/rules_go-v0.59.0.zip \
+	@bsdtar -xOf ${DISTDIR}/${DIST_SUBDIR}/rules_go-v0.60.0.zip \
 		third_party/com_github_golang_protobuf-gazelle.patch \
 		> ${WRKDIR}/com_github_golang_protobuf-gazelle.patch
 	@cd ${WRKDIR}/sys_repos/com_github_golang_protobuf && \
@@ -556,8 +612,7 @@ pre-build:
 		-C ${WRKDIR}/sys_repos/com_github_cncf_xds
 	@echo 'workspace(name = "com_github_cncf_xds")' > \
 		${WRKDIR}/sys_repos/com_github_cncf_xds/WORKSPACE
-# com_github_iancoleman_strcase: patched nested Envoy requests v0.2.0 via go_repository,
-# but the port already vendors v0.3.0.  Override with a tiny local repo exposing //:strcase.
+# com_github_iancoleman_strcase: envoy's dependency_imports.bzl now uses v0.3.0 directly.
 	@${MKDIR} ${WRKDIR}/sys_repos/com_github_iancoleman_strcase
 	@${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/v0.3.0.zip \
 		-d ${WRKDIR}/sys_repos/com_github_iancoleman_strcase
@@ -570,27 +625,14 @@ pre-build:
 		${WRKDIR}/sys_repos/com_github_iancoleman_strcase/WORKSPACE
 	${CP} ${FILESDIR}/sys_repos_iancoleman_strcase.BUILD.bazel \
 		${WRKDIR}/sys_repos/com_github_iancoleman_strcase/BUILD.bazel
-# fmt: header-only (FMT_HEADER_ONLY), devel/libfmt
-	@${MKDIR} ${WRKDIR}/sys_repos/fmt
-	@echo "" > ${WRKDIR}/sys_repos/fmt/WORKSPACE
-	${CP} ${FILESDIR}/sys_repos_fmt.BUILD.bazel ${WRKDIR}/sys_repos/fmt/BUILD.bazel
-	${LN} -sf ${LOCALBASE}/include ${WRKDIR}/sys_repos/fmt/include
-# tclap: header-only, devel/tclap12
-	@${MKDIR} ${WRKDIR}/sys_repos/tclap
-	@echo "" > ${WRKDIR}/sys_repos/tclap/WORKSPACE
-	${CP} ${FILESDIR}/sys_repos_tclap.BUILD.bazel ${WRKDIR}/sys_repos/tclap/BUILD.bazel
-	${LN} -sf ${LOCALBASE}/include ${WRKDIR}/sys_repos/tclap/include
-# nlohmann-json: header-only, devel/nlohmann-json
-	@${MKDIR} ${WRKDIR}/sys_repos/nlohmann-json
-	@echo "" > ${WRKDIR}/sys_repos/nlohmann-json/WORKSPACE
-	${CP} ${FILESDIR}/sys_repos_nlohmann-json.BUILD.bazel \
-		${WRKDIR}/sys_repos/nlohmann-json/BUILD.bazel
-	${LN} -sf ${LOCALBASE}/include ${WRKDIR}/sys_repos/nlohmann-json/include
-# spdlog: header-only from Bazel's perspective, devel/spdlog
-	@${MKDIR} ${WRKDIR}/sys_repos/spdlog
-	@echo "" > ${WRKDIR}/sys_repos/spdlog/WORKSPACE
-	${CP} ${FILESDIR}/sys_repos_spdlog.BUILD.bazel ${WRKDIR}/sys_repos/spdlog/BUILD.bazel
-	${LN} -sf ${LOCALBASE}/include ${WRKDIR}/sys_repos/spdlog/include
+# Header-only system libraries: each uses a BUILD.bazel from files/
+# and symlinks ${LOCALBASE}/include into the override repo.
+.for _lib in fmt tclap nlohmann-json spdlog
+	@${MKDIR} ${WRKDIR}/sys_repos/${_lib}
+	@echo "" > ${WRKDIR}/sys_repos/${_lib}/WORKSPACE
+	${CP} ${FILESDIR}/sys_repos_${_lib}.BUILD.bazel ${WRKDIR}/sys_repos/${_lib}/BUILD.bazel
+	${LN} -sf ${LOCALBASE}/include ${WRKDIR}/sys_repos/${_lib}/include
+.endfor
 # xxhash: static lib, devel/xxhash
 	@${MKDIR} ${WRKDIR}/sys_repos/xxhash
 	@echo "" > ${WRKDIR}/sys_repos/xxhash/WORKSPACE
@@ -710,18 +752,18 @@ pre-build:
 		${WRKDIR}/sys_repos/apple_stub/apple/testing/default_runner/ios_test_runner.bzl
 	@echo 'def apple_rules_dependencies(**kwargs): pass' > \
 		${WRKDIR}/sys_repos/apple_stub/apple/repositories.bzl
-# base_pip3 stub: envoy's v8.patch rewrites @v8_python_deps -> @base_pip3 in v8/BUILD.bazel.
-# v8/BUILD.bazel loads @base_pip3//:requirements.bzl at package load time (blocking @v8//
-# evaluation even for C++ targets). Provide a stub so the load succeeds. The requirement()
-# function returns a stub py_library; jinja2 is the only package referenced.
-	@${MKDIR} ${WRKDIR}/sys_repos/base_pip3
-	@echo 'workspace(name = "base_pip3")' > ${WRKDIR}/sys_repos/base_pip3/WORKSPACE
+# pip stubs: base_pip3 (v8's @v8_python_deps rewrite) and pip3_stub
+# (pip3/dev_pip3/fuzzing_pip3 overrides). Each exposes a no-op requirements.bzl
+# with a stub jinja2 py_library so module-level load()s succeed.
+.for _pip_stub in base_pip3 pip3_stub
+	@${MKDIR} ${WRKDIR}/sys_repos/${_pip_stub}
+	@echo 'workspace(name = "${_pip_stub}")' > ${WRKDIR}/sys_repos/${_pip_stub}/WORKSPACE
 	@echo 'py_library(name = "jinja2", srcs = [], visibility = ["//visibility:public"])' > \
-		${WRKDIR}/sys_repos/base_pip3/BUILD.bazel
-	@echo 'def install_deps(): pass' > \
-		${WRKDIR}/sys_repos/base_pip3/requirements.bzl
-	@echo 'def requirement(name): return "@base_pip3//:" + name' >> \
-		${WRKDIR}/sys_repos/base_pip3/requirements.bzl
+		${WRKDIR}/sys_repos/${_pip_stub}/BUILD.bazel
+	@echo 'def install_deps(): pass' > ${WRKDIR}/sys_repos/${_pip_stub}/requirements.bzl
+	@echo 'def requirement(name): return "@${_pip_stub}//:" + name' >> \
+		${WRKDIR}/sys_repos/${_pip_stub}/requirements.bzl
+.endfor
 # emsdk stub: dependency_imports.bzl loads emscripten_deps.bzl/toolchains.bzl;
 # repositories_extra.bzl loads deps.bzl. Provide no-op stubs — WASM not built on FreeBSD.
 	@${MKDIR} ${WRKDIR}/sys_repos/emsdk
@@ -797,7 +839,7 @@ pre-build:
 # io_bazel_rules_go: extract rules_go 0.59.0 which already fixed the GOEXPERIMENT
 # coverageredesign issue and has correct BUILD.bazel files for org_golang_google_protobuf v1.36.x.
 	@${MKDIR} ${WRKDIR}/sys_repos/io_bazel_rules_go
-	@${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/rules_go-v0.59.0.zip \
+	@${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/rules_go-v0.60.0.zip \
 		-d ${WRKDIR}/sys_repos/io_bazel_rules_go
 # opentelemetry_proto: the data-plane-api's api_dependencies() registers opentelemetry_proto
 # with build content using api_cc_py_proto_library(name="trace",...) which creates "trace" and
@@ -806,7 +848,7 @@ pre-build:
 # directory that provides both old-style aliases and new-style cc_proto_library targets.
 # Uses the v1.9.0 archive (from GH_TUPLE) which has all required .proto source files.
 	@${MKDIR} ${WRKDIR}/sys_repos/opentelemetry_proto
-	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/open-telemetry-opentelemetry-proto-v1.9.0_GH0.tar.gz \
+	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/open-telemetry-opentelemetry-proto-v1.10.0_GH0.tar.gz \
 		--strip-components=1 \
 		-C ${WRKDIR}/sys_repos/opentelemetry_proto
 	@echo 'workspace(name = "opentelemetry_proto")' > \
@@ -843,7 +885,7 @@ pre-build:
 .else
 	@${MKDIR} ${WRKDIR}/sys_repos/libinotify
 	@echo "" > ${WRKDIR}/sys_repos/libinotify/WORKSPACE
-	@printf 'cc_library(name = "libinotify", visibility = ["//visibility:public"])\n' \
+	@${PRINTF} 'cc_library(name = "libinotify", visibility = ["//visibility:public"])\n' \
 		> ${WRKDIR}/sys_repos/libinotify/BUILD.bazel
 .endif
 # python3_11 stub: envoy_toolshed/packages.bzl loads @python3_11//:defs.bzl at module level.
@@ -853,20 +895,10 @@ pre-build:
 	@echo "" > ${WRKDIR}/sys_repos/python3_11/WORKSPACE
 	@echo "" > ${WRKDIR}/sys_repos/python3_11/BUILD.bazel
 	@echo 'interpreter = "@python3_11//:python"' > ${WRKDIR}/sys_repos/python3_11/defs.bzl
-# pip3_stub: stubs for pip repos created by pip_parse() in envoy_python_dependencies().
-# pip3 = load_packages() result; dev_pip3/fuzzing_pip3 = development tooling; all unused
-# for building the static envoy binary. Use same no-op pattern as base_pip3.
-	@${MKDIR} ${WRKDIR}/sys_repos/pip3_stub
-	@echo "" > ${WRKDIR}/sys_repos/pip3_stub/WORKSPACE
-	@echo 'py_library(name = "jinja2", srcs = [], visibility = ["//visibility:public"])' > \
-		${WRKDIR}/sys_repos/pip3_stub/BUILD.bazel
-	@echo 'def install_deps(): pass' > ${WRKDIR}/sys_repos/pip3_stub/requirements.bzl
-	@echo 'def requirement(name): return "@pip3_stub//:" + name' >> \
-		${WRKDIR}/sys_repos/pip3_stub/requirements.bzl
 # com_google_absl: the pomerium SSH wire extension enables -Wimplicit-int-conversion which triggers
 # a truncation warning in absl's civil_time_detail.h on FreeBSD where int_fast8_t=int but
 # int_least8_t=signed char.  Override with a patched copy that adds static_casts.
-	@${LN} -sf ${WRKDIR}/abseil-cpp-20250814.1 ${WRKDIR}/sys_repos/com_google_absl
+	@${LN} -sf ${WRKDIR}/abseil-cpp-20260107.1 ${WRKDIR}/sys_repos/com_google_absl
 	@echo 'workspace(name = "com_google_absl")' > \
 		${WRKDIR}/sys_repos/com_google_absl/WORKSPACE
 	@${REINPLACE_CMD} -e \
@@ -894,7 +926,7 @@ pre-build:
 	@${RM} -r ${WRKDIR}/sys_repos/org_golang_google_protobuf/google.golang.org
 	@echo 'workspace(name = "org_golang_google_protobuf")' > \
 		${WRKDIR}/sys_repos/org_golang_google_protobuf/WORKSPACE
-	@bsdtar -xOf ${DISTDIR}/${DIST_SUBDIR}/rules_go-v0.59.0.zip \
+	@bsdtar -xOf ${DISTDIR}/${DIST_SUBDIR}/rules_go-v0.60.0.zip \
 		third_party/org_golang_google_protobuf-gazelle.patch \
 		> ${WRKDIR}/org_golang_google_protobuf-gazelle.patch
 	@cd ${WRKDIR}/sys_repos/org_golang_google_protobuf && \
@@ -940,31 +972,38 @@ pre-build:
 		${WRKDIR}/sys_repos/prometheus_metrics_model/WORKSPACE
 	${CP} ${FILESDIR}/sys_repos_prometheus_metrics_model.BUILD.bazel \
 		${WRKDIR}/sys_repos/prometheus_metrics_model/BUILD.bazel
-# envoy_toolshed stub: the real toolshed v0.3.3 has coverage/grcov/ and compile/ packages
-# but Bazel 7 fails to recognise them as sub-packages (no-package error at load time).
-# Also, packages.bzl in v0.3.3 loads @python3_11 at module level, creating a cycle because
-# envoy registers python3_12, not python3_11.  Provide a minimal stub with no-op versions
-# of all symbols loaded by the envoy source.
-	@${MKDIR} ${WRKDIR}/sys_repos/envoy_toolshed/compile
-	@${MKDIR} ${WRKDIR}/sys_repos/envoy_toolshed/coverage/grcov
-	@${MKDIR} ${WRKDIR}/sys_repos/envoy_toolshed/dependency
-	@echo 'workspace(name = "envoy_toolshed")' > \
-		${WRKDIR}/sys_repos/envoy_toolshed/WORKSPACE
-	@echo "" > ${WRKDIR}/sys_repos/envoy_toolshed/BUILD
-	@echo 'def json_data(**kwargs): pass' > \
-		${WRKDIR}/sys_repos/envoy_toolshed/macros.bzl
-	@echo 'def load_packages(**kwargs): pass' > \
-		${WRKDIR}/sys_repos/envoy_toolshed/packages.bzl
-	@echo "" > ${WRKDIR}/sys_repos/envoy_toolshed/compile/BUILD
-	@echo 'def setup_sanitizer_libs(**kwargs): pass' > \
-		${WRKDIR}/sys_repos/envoy_toolshed/compile/sanitizer_libs.bzl
-	@echo "" > ${WRKDIR}/sys_repos/envoy_toolshed/coverage/BUILD
-	@echo "" > ${WRKDIR}/sys_repos/envoy_toolshed/coverage/grcov/BUILD
-	@echo 'def grcov_repository(**kwargs): pass' > \
-		${WRKDIR}/sys_repos/envoy_toolshed/coverage/grcov/grcov_repository.bzl
-	@echo "" > ${WRKDIR}/sys_repos/envoy_toolshed/dependency/BUILD
-	@echo 'def updater(**kwargs): pass' > \
-		${WRKDIR}/sys_repos/envoy_toolshed/dependency/macros.bzl
+# envoy_toolshed: extract the real toolshed from the GH_TUPLE archive.
+# The archive has toolshed-bazel-v0.3.35/{bazel/,...}; the Bazel repo root
+# is the bazel/ subdirectory (contains WORKSPACE, BUILD, versions.bzl, etc.).
+# --override_repository points to ${WRKDIR}/sys_repos/envoy_toolshed/bazel.
+	@${MKDIR} ${WRKDIR}/sys_repos/envoy_toolshed
+	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/envoyproxy-toolshed-bazel-v0.3.35_GH0.tar.gz \
+		--strip-components=1 \
+		-C ${WRKDIR}/sys_repos/envoy_toolshed
+# yq: envoy_repo uses @yq to parse CI config YAML.  aspect_bazel_lib's
+# register_yq_toolchains downloads platform binaries (no FreeBSD support).
+# Provide the system yq (textproc/go-yq) via override instead.
+	@${MKDIR} ${WRKDIR}/sys_repos/yq
+	@echo 'exports_files(["yq"])' > ${WRKDIR}/sys_repos/yq/BUILD.bazel
+	@echo "" > ${WRKDIR}/sys_repos/yq/WORKSPACE
+	@${LN} -sf ${LOCALBASE}/bin/yq ${WRKDIR}/sys_repos/yq/yq
+# proxy_wasm_cpp_host: loaded eagerly by envoy's repositories_extra.bzl at WORKSPACE
+# evaluation time; override_repository bypasses the http_archive SHA mismatch.
+# rules_pkg: Bazel's DEFAULT.WORKSPACE.SUFFIX may pre-register rules_pkg with a
+# different version; override to ensure the correct 1.2.0 version is used.
+	@${MKDIR} ${WRKDIR}/sys_repos/rules_pkg
+	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/1.2.0.tar.gz \
+		--strip-components=1 \
+		-C ${WRKDIR}/sys_repos/rules_pkg
+	@${MKDIR} ${WRKDIR}/sys_repos/proxy_wasm_cpp_host
+	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/proxy-wasm-proxy-wasm-cpp-host-beb8a4ece9eede4ab21d89d723359607600296d4_GH0.tar.gz \
+		--strip-components=1 \
+		-C ${WRKDIR}/sys_repos/proxy_wasm_cpp_host
+# envoy-examples: loaded eagerly by envoy's repositories_extra.bzl
+	@${MKDIR} ${WRKDIR}/sys_repos/envoy_examples
+	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/envoyproxy-examples-v0.2.3_GH0.tar.gz \
+		--strip-components=1 \
+		-C ${WRKDIR}/sys_repos/envoy_examples
 	@${ECHO_MSG} "===> Setting up Go module proxy for offline go_repository builds"
 	@${MKDIR} ${WRKDIR}/goproxy
 # proxy.golang.org-format zips: extract go.mod, create .info and list, symlink .zip
@@ -995,7 +1034,7 @@ pre-build:
 	    "gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c v3.0.0-20200313102051-9f266ea9e77c.zip" \
 	    "golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 v0.0.0-20210508222113-6edffad5e616.zip" \
 	    "golang.org/x/mod v0.9.0 v0.9.0.zip" \
-	    "golang.org/x/sys v0.7.0 v0.7.0.zip" \
+	    "golang.org/x/sys v0.38.0 v0.38.0.zip" \
 	    "golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 v0.0.0-20191204190536-9bdfabe68543.zip" \
 	; do \
 	    set -- $$entry; modpath=$$1; ver=$$2; zipf=$$3; \
@@ -1068,145 +1107,68 @@ pre-build:
 	    [ -f "$$f" ] || continue; \
 	    ${LN} -sf "$$f" ${WRKDIR}/bazel-distdir/$$(basename "$$f"); \
 	done
-# @envoy_api http_archive URL basename is <commit>.tar.gz; GH_TUPLE names it with a prefix.
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/envoyproxy-data-plane-api-${ENVOY_API_COMMIT}_GH0.tar.gz \
-	    ${WRKDIR}/bazel-distdir/${ENVOY_API_COMMIT}.tar.gz
-# Embedded envoy_api dependencies: link exact upstream basenames expected by bazel/repositories.bzl.
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/bazel-skylib-1.7.1.tar.gz \
-	    ${WRKDIR}/bazel-distdir/bazel-skylib-1.7.1.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/rules_jvm_external-6.1.tar.gz \
-	    ${WRKDIR}/bazel-distdir/rules_jvm_external-6.1.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/v1.0.4.zip \
-	    ${WRKDIR}/bazel-distdir/v1.0.4.zip
-# Embedded envoy_api dependency: com_google_googleapis is fetched as <commit>.tar.gz.
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/114a745b2841a044e98cdbb19358ed29fcf4a5f1.tar.gz \
-	    ${WRKDIR}/bazel-distdir/114a745b2841a044e98cdbb19358ed29fcf4a5f1.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/v0.4.1.tar.gz \
-	    ${WRKDIR}/bazel-distdir/v0.4.1.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/v0.6.1.tar.gz \
-	    ${WRKDIR}/bazel-distdir/v0.6.1.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/5.3.0-21.7.tar.gz \
-	    ${WRKDIR}/bazel-distdir/5.3.0-21.7.tar.gz
-# Embedded envoy_api dependency: com_github_openzipkin_zipkinapi is fetched as 1.0.0.tar.gz.
+# GH_TUPLE entries need explicit distdir symlinks when their distdir basename
+# differs from what Bazel expects (the generic loop above handles DISTFILES).
 	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/openzipkin-zipkin-api-1.0.0_GH0.tar.gz \
 	    ${WRKDIR}/bazel-distdir/1.0.0.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/buf-Linux-x86_64.tar.gz \
-	    ${WRKDIR}/bazel-distdir/buf-Linux-x86_64.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/7680e4998426e62b6896995ff73d4d91cc5fb13c.zip \
-	    ${WRKDIR}/bazel-distdir/7680e4998426e62b6896995ff73d4d91cc5fb13c.zip
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/v0.15.0.tar.gz \
-	    ${WRKDIR}/bazel-distdir/v0.15.0.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/rules_proto_grpc-4.6.0.tar.gz \
-	    ${WRKDIR}/bazel-distdir/rules_proto_grpc-4.6.0.tar.gz
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/bazel-v0.1.3.tar.gz \
-	    ${WRKDIR}/bazel-distdir/bazel-v0.1.3.tar.gz
-# Patched dep: com_github_google_tcmalloc bumped by patches/envoy/0002-bump-dependencies.patch.
-# The auto-detection loop reads the unpatched repository_locations.bzl and won't find the new
-# sha, so we create the symlink explicitly here.
-	${LN} -sf ${DISTDIR}/${DIST_SUBDIR}/google-tcmalloc-0c3faab546c22d67e11327c6c6c7c34c1707c5db_GH0.tar.gz \
-	    ${WRKDIR}/bazel-distdir/0c3faab546c22d67e11327c6c6c7c34c1707c5db.tar.gz
-	@for locations in ${WRKSRC}/bazel/repository_locations.bzl \
-	    ${WRKSRC}/api/bazel/repository_locations.bzl; do \
-	    [ -f "$$locations" ] || continue; \
-	    ${AWK} '\
-	        /^[A-Z0-9_]+ = "/ { \
-	            split($$0, parts, " = "); \
+# Parse all repository_locations.bzl files (local WRKSRC and envoy source
+# archive) and symlink distfiles by their expected basenames for Bazel's
+# distdir.  A single AWK + distinfo-lookup pipeline handles both sources.
+	@( \
+	    for locations in ${WRKSRC}/bazel/repository_locations.bzl \
+	        ${WRKSRC}/api/bazel/repository_locations.bzl; do \
+	        [ -f "$$locations" ] && ${CAT} "$$locations"; \
+	    done; \
+	    for member in bazel/repository_locations.bzl \
+	        api/bazel/repository_locations.bzl; do \
+	        ${TAR} -xOf "${DISTDIR}/${DIST_SUBDIR}/${ENVOY_SRC_COMMIT}.zip" \
+	            "envoy-${ENVOY_SRC_COMMIT}/$$member" 2>/dev/null; \
+	    done; \
+	) | ${AWK} '\
+	    /^[A-Z0-9_]+ = "/ { \
+	        split($$0, parts, " = "); \
+	        split($$0, fields, "\""); \
+	        consts[parts[1]] = fields[2]; \
+	        next; \
+	    } \
+	    index($$0, "version = \"") { \
+	        split($$0, fields, "\""); \
+	        version = fields[2]; \
+	        next; \
+	    } \
+	    index($$0, "version = ") && index($$0, "\"") == 0 { \
+	        split($$0, parts, " = "); \
+	        symbol = parts[2]; \
+	        sub(/,.*/, "", symbol); \
+	        version = consts[symbol]; \
+	        next; \
+	    } \
+	    index($$0, "sha256 = \"") { \
+	        split($$0, fields, "\""); \
+	        sha = fields[2]; \
+	        next; \
+	    } \
+	    index($$0, "urls = [") { \
+	        if (sha != "") { \
 	            split($$0, fields, "\""); \
-	            consts[parts[1]] = fields[2]; \
-	            next; \
+	            url = fields[2]; \
+	            gsub(/\{version\}/, version, url); \
+	            sub(/^.*\//, "", url); \
+	            print sha " " url; \
+	            sha = ""; \
+	            version = ""; \
 	        } \
-		        index($$0, "version = \"") { \
-		            split($$0, fields, "\""); \
-		            version = fields[2]; \
-		            next; \
-		        } \
-		        index($$0, "version = ") && index($$0, "\"") == 0 { \
-		            split($$0, parts, " = "); \
-		            symbol = parts[2]; \
-		            sub(/,.*/, "", symbol); \
-	            version = consts[symbol]; \
-	            next; \
-	        } \
-	        /sha256 = "/ { \
-	            split($$0, fields, "\""); \
-	            sha = fields[2]; \
-	            next; \
-	        } \
-	        /urls = \[/ { \
-	            if (sha != "") { \
-	                split($$0, fields, "\""); \
-	                url = fields[2]; \
-	                gsub(/\{version\}/, version, url); \
-	                sub(/^.*\//, "", url); \
-	                print sha " " url; \
-	                sha = ""; \
-	                version = ""; \
-	            } \
-	        }' "$$locations" | while read -r sha name; do \
-	            [ -n "$$sha" ] || continue; \
-	            src=$$(${AWK} -v sha="$$sha" '\
-	                $$1 == "SHA256" && index($$0, sha) { \
-	                    sub(/^SHA256 \(/, ""); \
-	                    sub(/\).*/, ""); \
-	                    print; \
-	                    exit; \
-	                }' ${.CURDIR}/distinfo); \
-	            [ -n "$$src" ] || continue; \
-	            ${LN} -sf ${DISTDIR}/$$src ${WRKDIR}/bazel-distdir/$$name; \
-	        done; \
-	done
-	@for spec in \
-	    "${DISTDIR}/${DIST_SUBDIR}/${ENVOY_SRC_COMMIT}.zip|envoy-${ENVOY_SRC_COMMIT}/bazel/repository_locations.bzl" \
-	    "${DISTDIR}/${DIST_SUBDIR}/envoyproxy-data-plane-api-${ENVOY_API_COMMIT}_GH0.tar.gz|data-plane-api-${ENVOY_API_COMMIT}/bazel/repository_locations.bzl"; do \
-	    archive=$${spec%%|*}; \
-	    member=$${spec#*|}; \
-	    [ -f "$$archive" ] || continue; \
-	    ${TAR} -xOf "$$archive" "$$member" 2>/dev/null | ${AWK} '\
-	        /^[A-Z0-9_]+ = "/ { \
-	            split($$0, parts, " = "); \
-	            split($$0, fields, "\""); \
-	            consts[parts[1]] = fields[2]; \
-	            next; \
-	        } \
-	        index($$0, "version = \"") { \
-	            split($$0, fields, "\""); \
-	            version = fields[2]; \
-	            next; \
-	        } \
-	        index($$0, "version = ") && index($$0, "\"") == 0 { \
-	            split($$0, parts, " = "); \
-	            symbol = parts[2]; \
-	            sub(/,.*/, "", symbol); \
-	            version = consts[symbol]; \
-	            next; \
-	        } \
-	        /sha256 = "/ { \
-	            split($$0, fields, "\""); \
-	            sha = fields[2]; \
-	            next; \
-	        } \
-	        /urls = \[/ { \
-	            if (sha != "") { \
-	                split($$0, fields, "\""); \
-	                url = fields[2]; \
-	                gsub(/\{version\}/, version, url); \
-	                sub(/^.*\//, "", url); \
-	                print sha " " url; \
-	                sha = ""; \
-	                version = ""; \
-	            } \
-	        }' | while read -r sha name; do \
-	            [ -n "$$sha" ] || continue; \
-	            src=$$(${AWK} -v sha="$$sha" '\
-	                $$1 == "SHA256" && index($$0, sha) { \
-	                    sub(/^SHA256 \(/, ""); \
-	                    sub(/\).*/, ""); \
-	                    print; \
-	                    exit; \
-	                }' ${.CURDIR}/distinfo); \
-	            [ -n "$$src" ] || continue; \
-	            ${LN} -sf ${DISTDIR}/$$src ${WRKDIR}/bazel-distdir/$$name; \
-	        done; \
+	    }' | while read -r sha name; do \
+	    [ -n "$$sha" ] || continue; \
+	    src=$$(${AWK} -v sha="$$sha" '\
+	        $$1 == "SHA256" && index($$0, sha) { \
+	            sub(/^SHA256 \(/, ""); \
+	            sub(/\).*/, ""); \
+	            print; \
+	            exit; \
+	        }' ${.CURDIR}/distinfo); \
+	    [ -n "$$src" ] || continue; \
+	    ${LN} -sf ${DISTDIR}/$$src ${WRKDIR}/bazel-distdir/$$name; \
 	done
 
 do-build:
@@ -1214,7 +1176,6 @@ do-build:
 		${BAZEL_STARTUP_OPTS} \
 		build \
 		${BAZEL_BUILD_OPTS} \
-		--repo_env=GOROOT=$$(${GO_CMD} env GOROOT) \
 		//:envoy
 
 do-install:

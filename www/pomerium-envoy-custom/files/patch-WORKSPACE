@@ -1,6 +1,6 @@
---- WORKSPACE.orig	2026-06-25 04:52:37 UTC
+--- WORKSPACE.orig	2026-06-18 18:08:19 UTC
 +++ WORKSPACE
-@@ -2,31 +2,6 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "
+@@ -2,31 +2,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "
  
  load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
  
@@ -8,11 +8,11 @@
 -# https://github.com/hedronvision/bazel-compile-commands-extractor
 -http_archive(
 -    name = "hedron_compile_commands",
--    strip_prefix = "bazel-compile-commands-extractor-f5fbd4cee671d8d908f37c83abaf70fba5928fc7",
--    url = "https://github.com/mikael-s-persson/bazel-compile-commands-extractor/archive/f5fbd4cee671d8d908f37c83abaf70fba5928fc7.tar.gz",
--    sha256 = "ba3feefdf57b6d4c749e3c4abfa86f3673e7db364cb13acfc3496dce6ea801a3",
+-    sha256 = "e875b18876190b172ab59eaf193c2eec16fff8c46306c5eb0577ef7d1f8a65f7",
+-    strip_prefix = "bazel-compile-commands-extractor-9f69112e3f61b9df76a8275085dabad36ef37c96",
+-    url = "https://github.com/kralicky/bazel-compile-commands-extractor/archive/9f69112e3f61b9df76a8275085dabad36ef37c96.tar.gz",
 -)
--
+ 
 -load("@hedron_compile_commands//:workspace_setup.bzl", "hedron_compile_commands_setup")
 -
 -hedron_compile_commands_setup()
@@ -29,39 +29,61 @@
 -
 -hedron_compile_commands_setup_transitive_transitive_transitive()
 -
- envoy_version = "ee7784f95f506e2a606ae668f0d9f70f9d26af83"
+ envoy_version = "f387231af8dd7274e37c5ae2cc797cb09a948818"
  
- openssh_version = "V_10_2_P1"
-@@ -57,6 +32,26 @@ http_archive(
-         "//patches/envoy:0008-cel-cpp-compatibility.patch",
-         "//patches/envoy:tmp-envoy-41815.patch",
-         "//patches/envoy:tmp-transport-socket-options.patch",
-+        "//patches/envoy:freebsd-rules-foreign-cc.patch",
-+        "//patches/envoy:freebsd-dependency-imports.patch",
-+        "//patches/envoy:freebsd-envoy-cmake-generate-args.patch",
-+        "//patches/envoy:freebsd-go-sdk.patch",
-+        "//patches/envoy:freebsd-foreign-cc-ares.patch",
-+        "//patches/envoy:freebsd-foreign-cc-nghttp2.patch",
-+        "//patches/envoy:freebsd-foreign-cc-maxmind.patch",
-+        "//patches/envoy:freebsd-maxmind-extension.patch",
-+        "//patches/envoy:freebsd-foreign-cc-zlib.patch",
-+        "//patches/envoy:freebsd-foreign-cc-zstd.patch",
-+        "//patches/envoy:freebsd-foreign-cc-luajit.patch",
-+        "//patches/envoy:freebsd-luajit.patch",
-+        "//patches/envoy:freebsd-platform.patch",
-+        "//patches/envoy:freebsd-terminate-thread.patch",
-+        "//patches/envoy:freebsd-thread-impl.patch",
-+        "//patches/envoy:freebsd-address-impl.patch",
-+        "//patches/envoy:freebsd-io-socket-handle-impl-h.patch",
-+        "//patches/envoy:freebsd-io-socket-handle-impl-cc.patch",
-+        "//patches/envoy:freebsd-lz4-qat-removal.patch",
-+        "//patches/envoy:freebsd-inotify.patch",
+ openssh_version = "V_10_3_P1"
+@@ -35,8 +11,6 @@ readerwriterqueue_version = "1.0.7"
+ 
+ readerwriterqueue_version = "1.0.7"
+ 
+-rules_oci_version = "2.3.1"
+-
+ local_repository(
+     name = "envoy_build_config",
+     path = "bazel/envoy_build_config",
+@@ -106,6 +80,8 @@ external_http_archive(
+         "@envoy_toolshed//:patches/toolchains_llvm.patch",
+         # linux->darwin cross-compile support
+         "//patches/toolchains_llvm:0002-darwin.patch",
++        # FreeBSD OS support in toolchains_llvm
++        "//patches/toolchains_llvm:freebsd.patch",
      ],
-     sha256 = "6064371695a3cae6819f45407d275dc432ce59b95bb18071cfd2e981295baa80",
-     strip_prefix = "envoy-" + envoy_version,
-@@ -89,7 +84,28 @@ load("@envoy//bazel:dependency_imports.bzl", "envoy_de
+ )
  
- load("@envoy//bazel:dependency_imports.bzl", "envoy_dependency_imports")
+@@ -116,6 +92,8 @@ external_http_archive(
+     patches = [
+         "//patches/luajit:0001-libunwind-fde-offset.patch",
+         "//patches/luajit:fix-luajit-asan.patch",
++        "//patches/luajit:freebsd.patch",
++        "//patches/luajit:getentropy_freebsd.patch",
+     ],
+ )
+ 
+@@ -125,21 +103,6 @@ patch_antlr4_runtimes()
+ 
+ patch_antlr4_runtimes()
+ 
+-http_archive(
+-    name = "rules_oci",
+-    sha256 = "6d47e0bb9d3c269695cbb35abb603d1db08434376a1210867da8f6f4a9c630ba",
+-    strip_prefix = "rules_oci-" + rules_oci_version,
+-    url = "https://github.com/bazel-contrib/rules_oci/releases/download/v" + rules_oci_version + "/rules_oci-v" + rules_oci_version + ".tar.gz",
+-)
+-
+-load("@rules_oci//oci:dependencies.bzl", "rules_oci_dependencies")
+-
+-rules_oci_dependencies()
+-
+-load("@rules_oci//oci:repositories.bzl", "oci_register_toolchains")
+-
+-oci_register_toolchains(name = "oci")
+-
+ load("@envoy//bazel:bazel_deps.bzl", "envoy_bazel_dependencies")
+ 
+ envoy_bazel_dependencies()
+@@ -152,33 +115,39 @@ envoy_python_dependencies()
+ 
+ envoy_python_dependencies()
  
 +# FreeBSD: Pre-register rules_proto 7.1.0 before envoy_dependency_imports() runs.
 +# rules_proto_grpc_toolchains() (called inside envoy_dependency_imports) would otherwise
@@ -76,8 +98,11 @@
 +    url = "https://github.com/bazelbuild/rules_proto/archive/refs/tags/7.1.0.tar.gz",
 +)
 +
+ load("@envoy//bazel:dependency_imports.bzl", "envoy_dependency_imports")
+ 
  envoy_dependency_imports()
-+
+ 
+-load("@envoy//bazel:repo.bzl", "envoy_repo")
 +# FreeBSD: Register @local_jdk compile toolchains before DEFAULT.WORKSPACE.SUFFIX
 +# adds the remote JDK toolchains. The @local_jdk toolchains have
 +# exec_compatible_with = HOST_CONSTRAINTS (FreeBSD) and use local_jdk as runtime
@@ -86,5 +111,33 @@
 +# register_toolchains here is lazy and resolves during build analysis.
 +register_toolchains("@local_jdk//:all")
  
- load("@envoy_api//bazel:envoy_http_archive.bzl", "envoy_http_archive")
+-envoy_repo()
++# FreeBSD: Register the system C++ compiler toolchain.  The pomerium-envoy-custom
++# WORKSPACE normally downloads a custom LLVM toolchain and registers it via
++# llvm_register_toolchains(); on FreeBSD we use the base system Clang instead.
++register_toolchains("@local_config_cc//:all")
  
+-load("//bazel:toolchains.bzl", "pomerium_envoy_toolchains")
++load("@envoy//bazel:repo.bzl", "envoy_repo")
+ 
+-pomerium_envoy_toolchains()
+-
+-load("//bazel/sysroots:load_sysroots.bzl", "load_sysroots")
+-
+-load_sysroots()
+-
+-load("//bazel/cxx_libs:load_cxx_cross_libs.bzl", "load_cxx_cross_libs")
+-
+-load_cxx_cross_libs()
+-
+-load("//bazel/llvm_extras:load_llvm_extras.bzl", "load_llvm_extras")
+-
+-load_llvm_extras()
+-
+-load("@llvm_toolchain//:toolchains.bzl", "llvm_register_toolchains")
+-
+-llvm_register_toolchains()
++envoy_repo()
+ 
+ envoy_http_archive(
+     name = "openssh_portable",

@@ -1,24 +1,67 @@
---- BUILD.orig	2026-03-16 21:25:50 UTC
+--- BUILD.orig	2026-06-18 18:08:19 UTC
 +++ BUILD
-@@ -2,7 +2,6 @@ load(
+@@ -2,9 +2,7 @@ load(
      "@envoy//bazel:envoy_build_system.bzl",
      "envoy_cc_binary",
  )
 -load("@hedron_compile_commands//:refresh_compile_commands.bzl", "refresh_compile_commands")
  load("@rules_foreign_cc//foreign_cc:configure.bzl", "configure_make")
+-load("//bazel/ci/images:oci.bzl", "image")
  
  package(default_visibility = ["//visibility:public"])
-@@ -11,6 +10,7 @@ envoy_cc_binary(
-     name = "envoy",
+ 
+@@ -25,6 +23,9 @@ envoy_cc_binary(
+             # https://github.com/bazelbuild/bazel/pull/16414
+             "-Wl,-undefined,error",
+         ],
++        "@platforms//os:freebsd": [
++            "-fPIE",
++        ],
+         "//conditions:default": [
+             "-fPIE",
+             "-Wl,-E",
+@@ -48,6 +49,7 @@ envoy_cc_binary(
+     name = "envoy.static",
      features = select({
          "@platforms//os:macos": [],
 +        "@platforms//os:freebsd": [],
          "@envoy//bazel:asan_build": [],
          "@envoy//bazel:tsan_build": [],
          "//conditions:default": ["fully_static_link"],
-@@ -70,13 +70,4 @@ configure_make(
-         "@envoy//bazel:boringcrypto",
-         "@envoy//bazel:boringssl",
+@@ -59,30 +61,6 @@ envoy_cc_binary(
+     ],
+ )
+ 
+-image(
+-    name = "envoy.image",
+-    srcs = [":envoy"],
+-    repository = "ghcr.io/pomerium/envoy-custom-debug",
+-)
+-
+-image(
+-    name = "envoy.stripped.image",
+-    srcs = [":envoy.stripped"],
+-    repository = "ghcr.io/pomerium/envoy-custom",
+-)
+-
+-image(
+-    name = "envoy.static.image",
+-    srcs = [":envoy.static"],
+-    repository = "ghcr.io/pomerium/envoy-custom-static-debug",
+-)
+-
+-image(
+-    name = "envoy.static.stripped.image",
+-    srcs = [":envoy.static.stripped"],
+-    repository = "ghcr.io/pomerium/envoy-custom-static",
+-)
+-
+ configure_make(
+     name = "openssh_config_h",
+     autoreconf = True,
+@@ -109,14 +87,4 @@ configure_make(
+         "@envoy//bazel:crypto",
+         "@envoy//bazel:ssl",
      ],
 -)
 -
@@ -28,5 +71,6 @@
 -    targets = {
 -        "//:envoy": "",
 -        "//test/...": "",
+-        "//tools/...": "",
 -    },
  )

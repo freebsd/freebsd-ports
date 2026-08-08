@@ -1,0 +1,29 @@
+--- a/src/lj_prng.c
++++ b/src/lj_prng.c
+@@ -129,20 +129,22 @@
+ #define LJ_TARGET_HAS_GETENTROPY	1
+ #endif
+ 
++/* For the /dev/urandom fallback. */
++#include <fcntl.h>
++#include <unistd.h>
++
+ #if LJ_TARGET_HAS_GETENTROPY
++#if !defined(__FreeBSD__)
+ extern int getentropy(void *buf, size_t len)
+ #ifdef __ELF__
+   __attribute__((weak))
+ #endif
+ ;
+ #endif
++#endif
+ 
+ #endif
+ 
+-/* For the /dev/urandom fallback. */
+-#include <fcntl.h>
+-#include <unistd.h>
+-
+ #endif
+ 
+ #if LUAJIT_SECURITY_PRNG == 0
