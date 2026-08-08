@@ -1,4 +1,4 @@
-TIMESTAMP = 1783851755
+TIMESTAMP = 1786196360
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/allocator-api2-0.2.21.crate) = 683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923
@@ -585,5 +585,5 @@ SHA256 (rust/crates/zerovec-0.11.6.crate) = 90f911cbc359ab6af17377d242225f4d7511
 SIZE (rust/crates/zerovec-0.11.6.crate) = 128583
 SHA256 (rust/crates/zerovec-derive-0.11.3.crate) = 625dc425cab0dca6dc3c3319506e6593dcb08a9f387ea3b284dbd52a92c40555
 SIZE (rust/crates/zerovec-derive-0.11.3.crate) = 22115
-SHA256 (514-labs-dnsglobe-v0.4.0_GH0.tar.gz) = 7e63f170acc2af62923de0c368b3c7d95ef9851b81f5b53c82bd529595def523
-SIZE (514-labs-dnsglobe-v0.4.0_GH0.tar.gz) = 2693127
+SHA256 (514-labs-dnsglobe-v0.5.0_GH0.tar.gz) = 6bbcf1204abeb556bc502956f37c4b43ae0e1400ae1ce4550fabd215eca05b69
+SIZE (514-labs-dnsglobe-v0.5.0_GH0.tar.gz) = 2501906
