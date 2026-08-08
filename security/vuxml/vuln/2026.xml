@@ -14864,6 +14864,8 @@ affected.</p>
     <package><name>python313</name> <range><ge>0</ge></range></package>
     <package><name>python313t</name> <range><ge>0</ge></range></package>
     <package><name>python314</name> <range><ge>0</ge></range></package>
+    <package><name>python314t</name> <range><ge>0</ge></range></package>
+    <package><name>python315</name> <range><ge>0</ge></range></package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -14882,7 +14884,7 @@ affected.</p>
     <dates>
       <discovery>2026-01-20</discovery>
       <entry>2026-04-01</entry>
-      <modified>2026-04-04</modified>
+      <modified>2026-08-08</modified>
     </dates>
   </vuln>
 
@@ -14892,9 +14894,11 @@ affected.</p>
     <package><name>python310</name> <range><ge>0</ge></range></package>
     <package><name>python311</name> <range><ge>0</ge></range></package>
     <package><name>python312</name> <range><ge>0</ge></range></package>
-    <package><name>python313</name> <range><ge>0</ge></range></package>
-    <package><name>python313t</name> <range><ge>0</ge></range></package>
-    <package><name>python314</name> <range><ge>0</ge></range></package>
+    <package><name>python313</name> <range><lt>3.13.15</lt></range></package>
+    <package><name>python313t</name> <range><lt>3.13.15</lt></range></package>
+    <package><name>python314</name> <range><lt>3.14.7</lt></range></package>
+    <package><name>python314t</name> <range><lt>3.14.7</lt></range></package>
+    <package><name>python315</name> <range><lt>3.15.0.b4</lt></range></package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -14902,7 +14906,7 @@ affected.</p>
 	<blockquote cite="https://github.com/python/cpython/issues/143921">
 	  <p>The imaplib module, when passed a user-controlled command, can have
 	  additional commands injected using newlines.  Mitigation rejects
-	  commands containing control characters.</p>
+	  commands containing specific control characters.</p>
 	</blockquote>
 	</body>
     </description>
@@ -14913,7 +14917,7 @@ affected.</p>
     <dates>
       <discovery>2026-01-20</discovery>
       <entry>2026-04-01</entry>
-      <modified>2026-04-04</modified>
+      <modified>2026-08-08</modified>
     </dates>
   </vuln>
 
