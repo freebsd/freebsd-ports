@@ -1,6 +1,5 @@
 PORTNAME=	gstreamer
 PORTVERSION=	${_GST_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1
@@ -75,7 +74,7 @@ makesum-all: makesum
 	@${MAKE} -C ${.CURDIR:H:H}/${p} makesum
 .endfor
 	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-plugins makesum-all
-	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-plugins-rust cargo-crates-merge
+	@${MAKE} -C ${.CURDIR:H:H}/multimedia/gstreamer1-plugins-rust makesum cargo-crates-merge
 
 # Custom target to check for python mods needed by generate-vuxml-entry.py.
 # This is a helper, since the FreeBSD ports infrastructure doesn't currently
