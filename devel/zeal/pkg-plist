@@ -3,6 +3,11 @@ share/applications/org.zealdocs.zeal.desktop
 share/icons/hicolor/128x128/apps/zeal.png
 share/icons/hicolor/16x16/apps/zeal.png
 share/icons/hicolor/24x24/apps/zeal.png
+share/icons/hicolor/256x256/apps/zeal.png
 share/icons/hicolor/32x32/apps/zeal.png
+share/icons/hicolor/48x48/apps/zeal.png
+share/icons/hicolor/512x512/apps/zeal.png
 share/icons/hicolor/64x64/apps/zeal.png
+share/icons/hicolor/scalable/apps/zeal-tray.svg
+share/icons/hicolor/scalable/apps/zeal.svg
 share/metainfo/org.zealdocs.zeal.appdata.xml
