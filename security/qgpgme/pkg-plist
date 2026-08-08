@@ -1,3 +1,5 @@
+include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/ADQueryJob
+include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/ADQueryResult
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/AbstractImportJob
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/AddExistingSubkeyJob
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/AddUserIDJob
@@ -50,6 +52,8 @@ include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/QGpgME/WKSPublishJob
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/abstractimportjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/addexistingsubkeyjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/adduseridjob.h
+include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/adqueryjob.h
+include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/adqueryresult.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/changeexpiryjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/changeownertrustjob.h
 include/qgpgme-%%QGPGME_INCLUDE_SUFFIX%%/qgpgme/changepasswdjob.h
@@ -106,4 +110,4 @@ lib/cmake/QGpgme%%QGPGME_CMAKE_SUFFIX%%/QGpgme%%QGPGME_CMAKE_SUFFIX%%Targets-%%C
 lib/cmake/QGpgme%%QGPGME_CMAKE_SUFFIX%%/QGpgme%%QGPGME_CMAKE_SUFFIX%%Targets.cmake
 lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so
 lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so.15
-lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so.15.8.0
+lib/libqgpgme%%QGPGME_LIB_SUFFIX%%.so.15.9.0
