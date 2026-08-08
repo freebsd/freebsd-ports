@@ -1,3 +1,53 @@
+  <vuln vid="dde0fb16-2731-4d3c-aabf-459357235745">
+    <topic>gstreamer1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-libav</name>
+	<name>gstreamer1-plugins-bad</name>
+	<name>gstreamer1-plugins-good</name>
+	<name>gstreamer1-plugins-ugly</name>
+	<range><lt>1.28.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer project reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>Multiple security issues were identified and fixed in the GStreamer framework.</p>
+	  <ul>
+	    <li>GStreamer-SA-2026-0067: Heap buffer overflow and memory leak in JPEG 2000 decoder</li>
+	    <li>GStreamer-SA-2026-0068: Heap buffer overflow in QCELP RTP depayloader</li>
+	    <li>GStreamer-SA-2026-0069: Heap buffer overflow in FFmpeg demuxer wrapper</li>
+	    <li>GStreamer-SA-2026-0070: Out-of bounds write in H.265/HEVC parser short-term RPS parsing</li>
+	    <li>GStreamer-SA-2026-0071: Heap buffer overflow in DVD subpicture decoder</li>
+	    <li>GStreamer-SA-2026-0072: Multiple out-of-bounds reads, out-of-bounds writes, and integer overflow vulnerabilities in the AVI demuxer</li>
+	    <li>GStreamer-SA-2026-0073: Out-of-bounds read in Matroska demuxer FLAC header parser</li>
+	    <li>GStreamer-SA-2026-0075: Integer overflow and underflow in ASF demuxer bounds checks</li>
+	    <li>GStreamer-SA-2026-0076: Unbounded memory growth in H.264/H.265 RTP depayloaders during fragmented NAL unit reassembly</li>
+	    <li>GStreamer-SA-2026-0077: Heap out-of-bounds write in IMA ADPCM audio decoder</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-18649</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0067.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0068.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0069.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0070.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0071.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0072.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0073.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0075.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0076.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0077.html</url>
+    </references>
+    <dates>
+      <discovery>2026-08-05</discovery>
+      <entry>2026-08-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1fae5869-9275-11f1-83e9-901b0e13f1a0">
     <topic>libXfont2 -- multiple vulnerabilities</topic>
     <affects>
