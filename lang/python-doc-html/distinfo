@@ -1,4 +1,4 @@
-TIMESTAMP = 1781357454
+TIMESTAMP = 1786226645
 SHA256 (python/python-2.7.18-docs-html.tar.bz2) = 20445e9a571cacdd350f702f0980e4dc559b6ff81f1d69affe9b0a862fef2f0e
 SIZE (python/python-2.7.18-docs-html.tar.bz2) = 4634932
 SHA256 (python/python-2.7.18-docs-text.tar.bz2) = c86f5b5a2bd8f90158523efd350198d6cde7353965ef5a6ca5e54e5174af47f2
@@ -19,7 +19,7 @@ SHA256 (python/python-3.13.14-docs-html.tar.bz2) = ab2900e071fe3a934e8e09d0e9445
 SIZE (python/python-3.13.14-docs-html.tar.bz2) = 10489722
 SHA256 (python/python-3.13.14-docs-text.tar.bz2) = e58bd76df94f03a431a5472fce369332553c46e13e110282fee3665c7603a796
 SIZE (python/python-3.13.14-docs-text.tar.bz2) = 3086348
-SHA256 (python/python-3.14.6-docs-html.tar.bz2) = 304b300fe9831bd4cb1458be5a9365dfe92bb89e061741909afd9bd88a4fa442
-SIZE (python/python-3.14.6-docs-html.tar.bz2) = 11003726
-SHA256 (python/python-3.14.6-docs-text.tar.bz2) = ef9f84a01b41598e0784b99288b6bb41e4eeed27a0c63fd64324619726c1983a
-SIZE (python/python-3.14.6-docs-text.tar.bz2) = 3251962
+SHA256 (python/python-3.14.7-docs-html.tar.bz2) = d484b784ec35c5776c5ff55f81fa984b5251a38b532b24bb00e43148bd73ffe9
+SIZE (python/python-3.14.7-docs-html.tar.bz2) = 11177897
+SHA256 (python/python-3.14.7-docs-text.tar.bz2) = 0936adfe558b69767fe749cccbf99d741c4c1bc092d7783aa465b65748d1328a
+SIZE (python/python-3.14.7-docs-text.tar.bz2) = 3327933
