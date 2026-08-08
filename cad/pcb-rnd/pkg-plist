@@ -35,6 +35,8 @@ lib/pcb-rnd/plugins/draw_csect.pup
 lib/pcb-rnd/plugins/draw_csect.so
 lib/pcb-rnd/plugins/draw_fontsel.pup
 lib/pcb-rnd/plugins/draw_fontsel.so
+lib/pcb-rnd/plugins/export_dxf.pup
+lib/pcb-rnd/plugins/export_dxf.so
 lib/pcb-rnd/plugins/export_lpr.pup
 lib/pcb-rnd/plugins/export_lpr.so
 lib/pcb-rnd/plugins/export_png.pup
@@ -43,6 +45,8 @@ lib/pcb-rnd/plugins/export_ps.pup
 lib/pcb-rnd/plugins/export_ps.so
 lib/pcb-rnd/plugins/export_svg.pup
 lib/pcb-rnd/plugins/export_svg.so
+lib/pcb-rnd/plugins/export_web2.pup
+lib/pcb-rnd/plugins/export_web2.so
 lib/pcb-rnd/plugins/fp_wget.pup
 lib/pcb-rnd/plugins/fp_wget.so
 lib/pcb-rnd/plugins/import_accel_net.pup
@@ -85,6 +89,7 @@ share/man/man1/txt2bxl.1.gz
 %%DATADIR%%/footprint/connector/DSUB.scad
 %%DATADIR%%/footprint/connector/pwrjack.fp
 %%DATADIR%%/footprint/connector/pwrjack.scad
+%%DATADIR%%/footprint/misc/pcb-rnd.rf
 %%DATADIR%%/footprint/parametric/acy
 %%DATADIR%%/footprint/parametric/acy.awk
 %%DATADIR%%/footprint/parametric/acy.scad
