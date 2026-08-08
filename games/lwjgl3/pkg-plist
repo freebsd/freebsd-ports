@@ -32,6 +32,8 @@ lib/lwjgl%%MAJORVERSION%%/liblwjgl_zstd.so
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-fmod.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-freetype-sources.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-freetype.jar
+@comment %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-jemalloc-sources.jar
+@comment %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-jemalloc.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-glfw-sources.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-glfw.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-harfbuzz-sources.jar
@@ -40,8 +42,6 @@ lib/lwjgl%%MAJORVERSION%%/liblwjgl_zstd.so
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-hwloc.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-jawt-sources.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-jawt.jar
-%%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-jemalloc-sources.jar
-%%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-jemalloc.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-ktx-sources.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-ktx.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-llvm-natives-freebsd.jar
@@ -56,6 +56,8 @@ lib/lwjgl%%MAJORVERSION%%/liblwjgl_zstd.so
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-meshoptimizer-natives-freebsd.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-meshoptimizer-sources.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-meshoptimizer.jar
+%%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-mimalloc-sources.jar
+%%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-mimalloc.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-msdfgen-natives-freebsd.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-msdfgen-sources.jar
 %%JAVAJARDIR%%/lwjgl%%MAJORVERSION%%/lwjgl-msdfgen.jar

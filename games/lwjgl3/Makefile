@@ -1,14 +1,13 @@
 PORTNAME=	lwjgl
-DISTVERSION=	3.4.1.g20260203
-PORTREVISION=	1
+DISTVERSION=	3.4.2
 CATEGORIES=	games java
 MASTER_SITES=	https://repo1.maven.org/:source1
 PKGNAMESUFFIX=	3
 DISTFILES=	maven2/com/beust/jcommander/1.78/jcommander-1.78.jar:source1 \
 		maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:source1 \
 		maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:source1 \
-		maven2/org/joml/joml/1.10.8/joml-1.10.8-sources.jar:source1 \
-		maven2/org/joml/joml/1.10.8/joml-1.10.8.jar:source1 \
+		maven2/org/joml/joml/1.10.9/joml-1.10.9-sources.jar:source1 \
+		maven2/org/joml/joml/1.10.9/joml-1.10.9.jar:source1 \
 		maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0-sources.jar:source1 \
 		maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:source1 \
 		maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37-sources.jar:source1 \
@@ -21,10 +20,6 @@ DISTFILES=	maven2/com/beust/jcommander/1.78/jcommander-1.78.jar:source1 \
 		maven2/org/webjars/jquery/3.5.1/jquery-3.5.1.jar:source1
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	cfbba981b7ed955dae9b1b1dee57b59df8e93e28.patch:-p1 \
-		b800ccffab14396fc529ddb6c931b7c5c5226763.patch:-p1
-
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Lightweight Java Game Library
 WWW=		https://www.lwjgl.org
@@ -35,13 +30,14 @@ ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	Upstream support FreeBSD on amd64 only: https://github.com/LWJGL/lwjgl3/issues/421
 
 BUILD_DEPENDS=		${LOCALBASE}/openjdk8/bin/java:java/openjdk8 \
-			kotlinc-jvm:lang/kotlin22
+			kotlinc-jvm:lang/kotlin
 LIB_DEPENDS=		libdraco.so:archivers/draco \
 			libopenal.so:audio/openal-soft \
 			libopus.so:audio/opus \
 			libdbus-1.so:devel/dbus \
 			libhwloc.so:devel/hwloc2 \
 			libffi.so:devel/libffi \
+			libmimalloc.so:devel/mimalloc \
 			libOpenCL.so:devel/ocl-icd \
 			libbgfx.so:graphics/bgfx \
 			libglfw.so:graphics/glfw \
@@ -60,7 +56,6 @@ USES=		gl gnome java:ant,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
-GH_TAGNAME=	6818ff9
 USE_GL=		gl
 USE_GNOME=	glib20 gtk30
 JAVA_VERSION=	25+
@@ -90,9 +85,9 @@ post-extract:
 		${WRKSRC}/bin/libs/java/jopt-simple.jar
 	${LN} -s ${DISTDIR}/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar \
 		${WRKSRC}/bin/libs/java/commons-math3.jar
-	${LN} -s ${DISTDIR}/maven2/org/joml/joml/1.10.8/joml-1.10.8-sources.jar \
+	${LN} -s ${DISTDIR}/maven2/org/joml/joml/1.10.9/joml-1.10.9-sources.jar \
 		${WRKSRC}/bin/libs/java/joml-sources.jar
-	${LN} -s ${DISTDIR}/maven2/org/joml/joml/1.10.8/joml-1.10.8.jar \
+	${LN} -s ${DISTDIR}/maven2/org/joml/joml/1.10.9/joml-1.10.9.jar \
 		${WRKSRC}/bin/libs/java/joml.jar
 	${LN} -s ${DISTDIR}/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0-sources.jar \
 		${WRKSRC}/bin/libs/java/jspecify-sources.jar
@@ -122,6 +117,7 @@ do-install:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${ANT} release ${MAKE_ARGS}
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}${PKGNAMESUFFIX} \
 		 ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
+	${RM} -r ${WRKSRC}/bin/RELEASE/lwjgl-jemalloc
 	${INSTALL_DATA} ${WRKSRC}/bin/RELEASE/lwjgl*/*.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}${PKGNAMESUFFIX}
 	${INSTALL_LIB} ${LIBSDIR}/liblwjgl.so ${LIBSDIR}/*/liblwjgl*.so \

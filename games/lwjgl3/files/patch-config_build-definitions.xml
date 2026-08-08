@@ -1,12 +1,22 @@
---- config/build-definitions.xml.orig	2025-01-04 19:11:17 UTC
+--- config/build-definitions.xml.orig	2026-07-13 17:21:04 UTC
 +++ config/build-definitions.xml
-@@ -121,7 +121,8 @@ -->
+@@ -120,7 +120,8 @@ -->
+     <property name="build.output" location="${env.LWJGL_BUILD_OUTPUT}" relative="false" if:set="env.LWJGL_BUILD_OUTPUT"/>
  
      <property name="lib" location="bin/libs" relative="true"/>
- 
--    <property name="kotlinc" location="${lib}/kotlinc" relative="true"/>
-+    <property name="kotlinc" location="${lib}/kotlinc" relative="true" unless:set="local.kotlin"/>
+-    <property name="kotlinc" location="${lib}/java/kotlinc" relative="true"/>
++    <property name="kotlinc" location="${lib}/java/kotlinc" relative="true" unless:set="local.kotlin"/>
 +    <property name="kotlinc" location="${local.kotlin}" relative="false" if:set="local.kotlin"/>
  
      <property name="module.lwjgl" location="modules/lwjgl" relative="true"/>
+ 
+@@ -208,7 +209,8 @@ -->
+                 <pathelement path="${kotlinc}/lib/kotlin-reflect.jar"/>
+                 <pathelement path="${kotlinc}/lib/kotlinx-coroutines-core-jvm.jar"/>
+                 <!--<pathelement path="${kotlinc}/lib/kotlin-script-runtime.jar"/>-->
+-                <pathelement path="${kotlinc}/kotlin-compiler-embeddable.jar"/>
++                <pathelement path="${kotlinc}/kotlin-compiler-embeddable.jar" unless:set="local.kotlin"/>
++                <pathelement path="${kotlinc}/lib/kotlin-compiler.jar" if:set="local.kotlin"/>
+                 <!--<pathelement path="${kotlinc}/kotlin-scripting-compiler-embeddable.jar"/>-->
+             </classpath>
  
