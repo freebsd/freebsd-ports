@@ -1,6 +1,5 @@
 PORTNAME=	calibreweb
-PORTVERSION=	0.6.26
-PORTREVISION=	1
+PORTVERSION=	0.6.27
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,17 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}APScheduler>=0:devel/py-apscheduler@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bleach>=0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-babel>=0:devel/py-flask-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-HTTPAuth>=0:security/py-flask-httpauth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Principal>=0:www/py-flask-principal@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Flask_Limiter3<3.13:www/py-flask-limiter3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask_limiter>=0:www/py-flask-limiter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask_wtf>=0:www/py-flask-wtf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso-639>=0:textproc/py-iso-639@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces-plus>=0:net/py-netifaces-plus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nh3>=0:www/py-nh3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycountry>=0:textproc/py-pycountry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pypdf>=0:print/py-pypdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-magic>=0:devel/py-python-magic@${PY_FLAVOR} \
