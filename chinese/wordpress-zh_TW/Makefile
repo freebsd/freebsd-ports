@@ -1,12 +1,11 @@
 CATEGORIES=	chinese
 MASTER_SITES=	https://cn.wordpress.org/
 
+MASTERDIR=	${.CURDIR}/../../www/wordpress
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
-
-WORDPRESS_LANG=	zh_TW
 
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-MASTERDIR=	${.CURDIR}/../../www/wordpress
+WORDPRESS_LANG=	zh_TW
 
 .include "${MASTERDIR}/Makefile"

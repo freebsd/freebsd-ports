@@ -3,10 +3,10 @@ MASTER_SITES=	https://ru.wordpress.org/
 
 CONFLICTS_INSTALL=	wordpress de-wordpress fr-wordpress ja-wordpress
 
-WORDPRESS_LANG=	ru_RU
+MASTERDIR=	${.CURDIR}/../../www/wordpress
 
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-MASTERDIR=	${.CURDIR}/../../www/wordpress
+WORDPRESS_LANG=	ru_RU
 
 .include "${MASTERDIR}/Makefile"
