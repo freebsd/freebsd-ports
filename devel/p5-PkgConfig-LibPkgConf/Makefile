@@ -13,6 +13,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Incompatible with pkgconf 3.0 and newer
+
 BUILD_DEPENDS=	pkgconf>=1.5.0:devel/pkgconf
 LIB_DEPENDS=	libpkgconf.so:devel/pkgconf
 
