@@ -1,5 +1,5 @@
-CLIENT_ONLY=		yes
+MASTERDIR=	${.CURDIR}/../openldap26-server
 
-MASTERDIR=		${.CURDIR}/../openldap26-server
+CLIENT_ONLY=	yes
 
 .include "${MASTERDIR}/Makefile"
