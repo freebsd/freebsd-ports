@@ -13,6 +13,9 @@ WWW=		https://kotlinlang.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/license/LICENSE.txt
 
+DEPRECATED=		The only port that needed Kotlin 2.2 now requires 2.4, use lang/kotlin instead
+EXPIRATION_DATE=	2026-09-30
+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=	java zip
