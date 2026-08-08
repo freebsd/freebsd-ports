@@ -176,7 +176,8 @@ HTTP_UPSTREAM_CHECK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-http-modules-ngx_
 					${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_ip_hash_module.c \
 					${PATCHDIR}/extra-patch-src-http-modules-ngx_http_upstream_least_conn_module.c \
 					${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.c \
-					${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.h
+					${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.h \
+					${PATCHDIR}/extra-patch-ngx_http_upstream_check_module.c
 
 HTTP_UPSTREAM_FAIR_GH_TUPLE=		jaygooby:nginx-upstream-fair:10ecdcf:upstreamfair
 HTTP_UPSTREAM_FAIR_VARS=		DSO_EXTMODS+=upstreamfair
