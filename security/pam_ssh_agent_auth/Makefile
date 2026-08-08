@@ -1,14 +1,22 @@
 PORTNAME=	pam_ssh_agent_auth
 PORTVERSION=	0.10.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	PAM module which permits authentication via ssh-agent
 WWW=		https://github.com/jbeverly/pam_ssh_agent_auth
 
-# Note: if you need support for hardware token backed ecdsa-sk or
-# ed25519-sk SSH keys, see devel/pam_rssh
+# Note: This port is abandonware: there have been no updates to the
+# code in the main GitHub repository for 8+ years, and compilation
+# against a modern OpenSSL implementation depends on patches from a
+# 3rd party that have not been added to a release version in 6+ years.
+# Users are advised to consider the alternatives of security/pam_rssh
+# or security/pam_ssh_agent which provide almost identical
+# functionality, but are actively maintained.
+
+DEPRECATED=	Abandonware.  Consider security/pam_rssh or securit/pam_ssh_agent instead.
+EXPIRATION_DATE=	2026-12-31
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jbeverly
