@@ -110,7 +110,7 @@
 %%WWWDIR%%/js/pastemeta.jsonld
 %%WWWDIR%%/js/prettify.js
 %%WWWDIR%%/js/privatebin.js
-%%WWWDIR%%/js/purify-3.4.1.js
+%%WWWDIR%%/js/purify-3.4.12.js
 %%WWWDIR%%/js/showdown-2.1.0.js
 %%WWWDIR%%/js/types.jsonld
 %%WWWDIR%%/js/zlib-1.3.2.js
@@ -124,7 +124,6 @@
 %%WWWDIR%%/lib/Data/Filesystem.php
 %%WWWDIR%%/lib/Data/GoogleCloudStorage.php
 %%WWWDIR%%/lib/Data/S3Storage.php
-%%WWWDIR%%/lib/Exception/JsonException.php
 %%WWWDIR%%/lib/Exception/TranslatedException.php
 %%WWWDIR%%/lib/Filter.php
 %%WWWDIR%%/lib/FormatV2.php

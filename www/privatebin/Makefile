@@ -1,5 +1,5 @@
 PORTNAME=	privatebin
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	www security
 
 MAINTAINER=	dvl@FreeBSD.org
