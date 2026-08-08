@@ -1755,7 +1755,6 @@
     SUBDIR += py-flask-jwt
     SUBDIR += py-flask-jwt-extended
     SUBDIR += py-flask-limiter
-    SUBDIR += py-flask-limiter3
     SUBDIR += py-flask-login
     SUBDIR += py-flask-marshmallow
     SUBDIR += py-flask-migrate
