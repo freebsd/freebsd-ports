@@ -1,0 +1,5 @@
+TIMESTAMP = 1785949054
+SHA256 (go/security_mkcert/FiloSottile-mkcert-v1.4.4_GH0/go.mod) = 4b3d2a3c5b5a228638ee9b38587d43f4ee468dd0954d3cd58284431e81a86752
+SIZE (go/security_mkcert/FiloSottile-mkcert-v1.4.4_GH0/go.mod) = 287
+SHA256 (go/security_mkcert/FiloSottile-mkcert-v1.4.4_GH0/FiloSottile-mkcert-v1.4.4_GH0.tar.gz) = 32bd5519581bf0b03f53e5b22721692b99f39ab5b161dc27532c51eafa512ca9
+SIZE (go/security_mkcert/FiloSottile-mkcert-v1.4.4_GH0/FiloSottile-mkcert-v1.4.4_GH0.tar.gz) = 17604
