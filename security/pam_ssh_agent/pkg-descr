@@ -1,0 +1,11 @@
+A PAM authentication module determining the identity of a user based
+on a signature request and response sent via the ssh-agent protocol to
+a potentially remote ssh-agent.
+
+This project is a re-implementation of the pam_ssh_agent_auth module
+but does not share any code with that project. We are pretty close to
+covering all the features of the original implementation, along with
+some additional features such as authentication using SSH
+Certificates.
+
+See also: security/pam_rssh security/pam_ssh_agent_auth

@@ -1,0 +1,190 @@
+PORTNAME=	pam-ssh-agent
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.7
+CATEGORIES=	security
+
+MAINTAINER=	matthew@FreeBSD.org
+COMMENT=	PAM module for authenticating using ssh-agent
+WWW=		https://github.com/nresare/pam-ssh-agent
+
+LICENSE=	MIT APACHE20
+LICENSE_COMB=	dual
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+
+USES=		cargo ssl
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	nresare
+
+CARGO_CRATES=	aho-corasick-1.1.4 \
+		anstream-1.0.0 \
+		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
+		anyhow-1.0.102 \
+		autocfg-1.5.1 \
+		base16ct-0.2.0 \
+		base64-0.22.1 \
+		base64ct-1.8.3 \
+		bitflags-2.13.0 \
+		block-buffer-0.10.4 \
+		bytes-1.11.1 \
+		cc-1.2.63 \
+		cfg-if-1.0.4 \
+		cipher-0.4.4 \
+		colorchoice-1.0.5 \
+		const-oid-0.9.6 \
+		cpufeatures-0.2.17 \
+		crypto-bigint-0.5.5 \
+		crypto-common-0.1.6 \
+		curve25519-dalek-4.1.3 \
+		curve25519-dalek-derive-0.1.1 \
+		der-0.7.10 \
+		deranged-0.5.8 \
+		digest-0.10.7 \
+		doctest-file-1.1.1 \
+		ecdsa-0.16.9 \
+		ed25519-2.2.3 \
+		ed25519-dalek-2.2.0 \
+		elliptic-curve-0.13.8 \
+		env_filter-1.0.1 \
+		env_logger-0.11.10 \
+		equivalent-1.0.2 \
+		error-chain-0.12.4 \
+		ff-0.13.1 \
+		fiat-crypto-0.2.9 \
+		find-msvc-tools-0.1.9 \
+		foldhash-0.1.5 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		generic-array-0.14.9 \
+		getrandom-0.2.17 \
+		getrandom-0.4.2 \
+		group-0.13.0 \
+		hashbrown-0.15.5 \
+		hashbrown-0.17.1 \
+		heck-0.5.0 \
+		hkdf-0.12.4 \
+		hmac-0.12.1 \
+		hostname-0.3.1 \
+		hostname-0.4.2 \
+		id-arena-2.3.0 \
+		indexmap-2.14.0 \
+		inout-0.1.4 \
+		interprocess-2.4.2 \
+		is_terminal_polyfill-1.70.2 \
+		itoa-1.0.18 \
+		jiff-0.2.28 \
+		jiff-static-0.2.28 \
+		lazy_static-1.5.0 \
+		leb128fmt-0.1.0 \
+		libc-0.2.186 \
+		libm-0.2.16 \
+		log-0.4.32 \
+		match_cfg-0.1.0 \
+		memchr-2.8.1 \
+		num-bigint-dig-0.8.6 \
+		num-conv-0.2.2 \
+		num-integer-0.1.46 \
+		num-iter-0.1.45 \
+		num-traits-0.2.19 \
+		num_threads-0.1.7 \
+		once_cell_polyfill-1.70.2 \
+		openssl-0.10.80 \
+		openssl-macros-0.1.1 \
+		openssl-sys-0.9.116 \
+		p256-0.13.2 \
+		p384-0.13.1 \
+		p521-0.13.3 \
+		pam-bindings-0.3.0 \
+		pem-rfc7468-0.7.0 \
+		pkcs1-0.7.5 \
+		pkcs8-0.10.2 \
+		pkg-config-0.3.33 \
+		portable-atomic-1.13.1 \
+		portable-atomic-util-0.2.7 \
+		powerfmt-0.2.0 \
+		ppv-lite86-0.2.21 \
+		prettyplease-0.2.37 \
+		primeorder-0.13.6 \
+		proc-macro2-1.0.106 \
+		quote-1.0.45 \
+		r-efi-6.0.0 \
+		rand-0.8.6 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		recvmsg-1.0.0 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.10 \
+		rfc6979-0.4.0 \
+		rsa-0.9.10 \
+		rustc_version-0.4.1 \
+		sec1-0.7.3 \
+		semver-1.0.28 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.150 \
+		sha2-0.10.9 \
+		shlex-2.0.1 \
+		signature-2.2.0 \
+		smallvec-1.15.1 \
+		spin-0.9.8 \
+		spki-0.7.3 \
+		ssh-agent-client-rs-1.1.3 \
+		ssh-cipher-0.2.0 \
+		ssh-encoding-0.2.0 \
+		ssh-key-0.6.7 \
+		subtle-2.6.1 \
+		syn-2.0.117 \
+		syslog-6.1.1 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
+		time-0.3.47 \
+		time-core-0.1.8 \
+		time-macros-0.2.27 \
+		typenum-1.20.1 \
+		unicode-ident-1.0.24 \
+		unicode-xid-0.2.6 \
+		utf8parse-0.2.2 \
+		uzers-0.12.2 \
+		vcpkg-0.2.15 \
+		version_check-0.9.5 \
+		wait-timeout-0.2.1 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasip2-1.0.3+wasi-0.2.9 \
+		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
+		wasm-encoder-0.244.0 \
+		wasm-metadata-0.244.0 \
+		wasmparser-0.244.0 \
+		widestring-1.2.1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-link-0.2.1 \
+		windows-sys-0.61.2 \
+		wit-bindgen-0.51.0 \
+		wit-bindgen-0.57.1 \
+		wit-bindgen-core-0.51.0 \
+		wit-bindgen-rust-0.51.0 \
+		wit-bindgen-rust-macro-0.51.0 \
+		wit-component-0.244.0 \
+		wit-parser-0.244.0 \
+		zerocopy-0.8.50 \
+		zerocopy-derive-0.8.50 \
+		zeroize-1.8.2 \
+		zmij-1.0.21
+
+PLIST_FILES=	lib/pam_ssh_agent.so
+
+do-install:
+.ifdef WITH_DEBUG
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/debug/libpam_ssh_agent.so ${STAGEDIR}${PREFIX}/lib/pam_ssh_agent.so
+.else
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/libpam_ssh_agent.so ${STAGEDIR}${PREFIX}/lib/pam_ssh_agent.so
+.endif
+
+.include <bsd.port.mk>
