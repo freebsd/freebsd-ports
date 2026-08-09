@@ -10,6 +10,9 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 WWW=		https://www.firefox.com/
 
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	fails to build: rust needs more address space than platform can provide
+
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.125:security/nss \
 		libevent>=2.1.8:devel/libevent \

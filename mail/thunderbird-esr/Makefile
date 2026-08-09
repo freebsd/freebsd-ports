@@ -10,6 +10,9 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 WWW=		https://www.thunderbird.net/
 
+NOT_FOR_ARCHS=		i386
+NOT_FOR_ARCHS_REASON=	fails to build: rust needs more address space than platform can provide
+
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.125:security/nss \
 		libevent>=2.1.8:devel/libevent \
