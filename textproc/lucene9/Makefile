@@ -1,91 +1,56 @@
 PORTNAME=	lucene
-PORTVERSION=	5.5.5
-PORTREVISION=	2
+PORTVERSION=	9.12.2	# Java 21+ required for Lucene 10.*
 CATEGORIES=	textproc java devel
-MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/java/${PORTVERSION}
-PKGNAMESUFFIX=	5
+MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/java/${PORTVERSION}/
+PKGNAMESUFFIX=	9
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Full-text search engine for Java, 5.x branch
+COMMENT=	Full-text search engine for Java, 9.x branch
 WWW=		https://lucene.apache.org/core/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS=	lucene-[0-9].*
+USES=		cpe java:run tar:tgz
+JAVA_VERSION=	11+
 
-USES=		cpe java tar:tgz
+CONFLICTS=	lucene-[0-9].*
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 CPE_VENDOR=	apache
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
 PORTDOCS=	*
-PORTEXAMPLES=	*
+PORTDATA=	*
 
-CONTRIBS=	backward-codecs \
-		benchmark \
-		classification \
-		codecs \
-		demo \
-		expressions \
-		facet	\
-		grouping \
-		highlighter \
-		join \
-		memory \
-		misc \
-		queries \
-		queryparser \
-		replicator \
-		sandbox \
-		spatial \
-		spatial3d \
-		suggest
-
-EXTRA_CONTRIBS_DIRS= \
-		common \
-		icu \
-		kuromoji \
-		morfologik \
-		phonetic \
-		smartcn \
-		stempel \
-		uima
-
-OPTIONS_DEFINE=	CONTRIB DOCS EXAMPLES
+OPTIONS_DEFINE=	CONTRIB DOCS
 OPTIONS_DEFAULT=CONTRIB
+OPTIONS_SUB=	yes
 CONTRIB_DESC=	Install contributed jars
 
-.for f in ${CONTRIBS}
-CONTRIB_PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}-${f}-${PORTVERSION}.jar
-.endfor
-.for g in ${EXTRA_CONTRIBS_DIRS}
-CONTRIB_PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}-analyzers-${g}-${PORTVERSION}.jar
-.endfor
-
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/core/${PORTNAME}-core-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/modules/${PORTNAME}-core-${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}
 
 do-install-CONTRIB-on:
-.for f in ${CONTRIBS}
-	${INSTALL_DATA} ${WRKSRC}/${f}/${PORTNAME}-${f}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}
-.endfor
-.for d in ${EXTRA_CONTRIBS_DIRS}
-	${INSTALL_DATA} ${WRKSRC}/analysis/${d}/${PORTNAME}-analyzers-${d}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}
-.endfor
+	${FIND} ${WRKSRC}/modules -name "*.jar" -a ! -name "lucene-core*" -exec \
+		${INSTALL_DATA} {} ${STAGEDIR}${JAVAJARDIR} \;
+	${FIND} ${WRKSRC}/modules-thirdparty -name "*.jar" -exec \
+		${INSTALL_DATA} {} ${STAGEDIR}${JAVAJARDIR} \;
+	@${MKDIR} ${STAGEDIR}${DATADIR}/licenses
+	${FIND} ${WRKSRC}/licenses -name "*.txt" -exec \
+		${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/licenses \;
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in CHANGES.txt NOTICE.txt README.txt
+.for i in CHANGES.txt JRE_VERSION_MIGRATION.md MIGRATE.md NOTICE.txt README.md \
+	SYSTEM_REQUIREMENTS.md
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-
-do-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demo/${PORTNAME}-demo-${PORTVERSION}.jar ${STAGEDIR}${EXAMPLESDIR}
+	${RM} -r ${STAGEDIR}${DOCSDIR}/misc/org/apache/lucene/misc/search/similarity \
+		${STAGEDIR}${DOCSDIR}/test-framework/org/apache/lucene/tests/util/hnsw
 
 .include <bsd.port.mk>
