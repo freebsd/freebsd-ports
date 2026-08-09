@@ -11,7 +11,7 @@ MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Arma: Cold War Assault - Remastered Community Edition
 WWW=		https://github.com/ofpisnotdead-com/CWR-CE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc64le
 ONLY_FOR_ARCHS_REASON=	requires SSE intrinsics, light porting work for other architectures
 
 LICENSE=	GPLv3+
