@@ -1,0 +1,10 @@
+--- ../ngx_aws_auth-f3d9862/aws_functions.h.orig
++++ ../ngx_aws_auth-f3d9862/aws_functions.h
+@@ -401,5 +401,6 @@
+ 	struct AwsSignedRequestDetails retval;
+
+-	const ngx_str_t *date = ngx_aws_auth__compute_request_time(pool, &req->start_sec);
++	time_t now = ngx_time();
++	const ngx_str_t *date = ngx_aws_auth__compute_request_time(pool, &now);
+ 	const struct AwsCanonicalRequestDetails canon_request =
+ 		ngx_aws_auth__make_canonical_request(pool, req, s3_bucket_name, date, s3_endpoint);

@@ -30,7 +30,7 @@ BROTLI_GH_TUPLE=	google:ngx_brotli:a71f931:brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 
-CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:a84b0f3:cache_purge
+CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:3.0.2:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:4eeda3c:echo
@@ -39,7 +39,7 @@ ECHO_VARS=		DSO_EXTMODS+=echo
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
 DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
-DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:c631276:drizzle
+DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:v0.1.14:drizzle
 DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
 DRIZZLE_VARS=		DSO_EXTMODS+=drizzle
 
