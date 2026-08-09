@@ -5,9 +5,9 @@
 - cd xtask && cargo update -p clap --precise x.y.z
   to get updated deps for clap: clap_mangen and roff
 
---- Cargo.lock.orig	2026-04-22 20:29:48 UTC
+--- Cargo.lock.orig	2026-08-08 21:50:16 UTC
 +++ Cargo.lock
-@@ -647,3 +647,19 @@ dependencies = [
+@@ -646,3 +646,19 @@ dependencies = [
   "log",
   "simd-adler32",
  ]
@@ -27,7 +27,7 @@
 +version = "1.1.1"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
 +checksum = "323c417e1d9665a65b263ec744ba09030cfb277e9daa0b018a4ab62e57bc8189"
---- xtask/Cargo.toml.orig	2026-04-22 20:29:48 UTC
+--- xtask/Cargo.toml.orig	2026-08-08 21:50:16 UTC
 +++ xtask/Cargo.toml
 @@ -6,6 +6,6 @@ publish = false
  publish = false
