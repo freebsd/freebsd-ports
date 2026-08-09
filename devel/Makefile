@@ -1118,6 +1118,7 @@
     SUBDIR += java-findbugs
     SUBDIR += javax-activation-api
     SUBDIR += javax-ws-rs-api
+    SUBDIR += javax.annotation-api
     SUBDIR += jaxb-api
     SUBDIR += jboss-logging
     SUBDIR += jclassinfo
