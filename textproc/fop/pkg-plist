@@ -1,4 +1,10 @@
 bin/fop
+%%JAVAJARDIR%%/fop-core.jar
+%%JAVAJARDIR%%/fop-hyph.jar
+%%JAVAJARDIR%%/fop-sandbox.jar
+%%JAVAJARDIR%%/fop-transcoder-allinone.jar
+%%JAVAJARDIR%%/fop-transcoder.jar
+%%JAVAJARDIR%%/fop.jar
 %%DATADIR%%/build/fop-hyph.jar
 %%DATADIR%%/build/fop-sandbox.jar
 %%DATADIR%%/build/fop-transcoder-allinone.jar
