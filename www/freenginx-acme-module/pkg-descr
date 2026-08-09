@@ -1,0 +1,6 @@
+ngx_http_acme_module adds automatic ACME (RFC 8555) certificate
+management to freenginx.  Certificates are obtained and renewed
+automatically from an ACME certificate authority such as Let's Encrypt,
+directly by the server.
+
+This port builds the module against the stable www/freenginx.

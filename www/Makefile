@@ -217,6 +217,7 @@
     SUBDIR += free-sa-devel
     SUBDIR += freenginx
     SUBDIR += freenginx-acme
+    SUBDIR += freenginx-acme-module
     SUBDIR += freenginx-devel
     SUBDIR += freeunit
     SUBDIR += freeunit-php

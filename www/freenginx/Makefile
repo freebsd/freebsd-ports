@@ -1,5 +1,6 @@
 PORTNAME=	freenginx
-PORTVERSION=	1.30.1
+PORTVERSION=	${NGINX_VERSION}
+.include "version.mk"
 PORTREVISION?=	7
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
