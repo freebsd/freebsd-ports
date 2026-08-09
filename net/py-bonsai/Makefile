@@ -11,16 +11,13 @@ WWW=		https://github.com/noirello/bonsai
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MY_DEPENDS=	openldap26-client>=0:net/openldap26-client
-BUILD_DEPENDS=	${MY_DEPENDS} \
-		${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${MY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=0:devel/py-pytest-timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=0:www/py-tornado@${PY_FLAVOR}
 
-USES=		localbase python
+USES=		ldap localbase python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 PYTEST_IGNORED_TESTS=	TornadoLDAPConnectionTest.test_connection test_abandon \
 			test_acl_from_binary test_acl_to_binary \
