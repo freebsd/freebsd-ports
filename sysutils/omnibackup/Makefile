@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=	\
 	MYSQL
 
 OPENLDAP_DESC=	OpenLDAP support
-OPENLDAP_USES=	ldap
+OPENLDAP_USES=	ldap:server
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -49,9 +49,6 @@ PLIST_FILES+=	${DOCSDIR}/README.md
 	|| ${PORT_OPTIONS:MPGSQL} \
 	|| ${PORT_OPTIONS:MMYSQL}
 USES+=	sudo
-.if ${PORT_OPTIONS:MOPENLDAP}
-RUN_DEPENDS+=	slapcat:net/openldap${OPENLDAP_VER}-server
-.endif
 .if ${PORT_OPTIONS:MPGSQL}
 USES+=	pgsql
 RUN_DEPENDS+=	pg_dump:databases/postgresql${PGSQL_VER_NODOT}-client
