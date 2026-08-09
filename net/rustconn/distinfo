@@ -1,4 +1,4 @@
-TIMESTAMP = 1786204546
+TIMESTAMP = 1786292501
 SHA256 (rust/crates/addchain-0.2.1.crate) = 2e33f6a175ec6a9e0aca777567f9ff7c3deefc255660df887e7fa3585e9801d8
 SIZE (rust/crates/addchain-0.2.1.crate) = 9287
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -1451,5 +1451,5 @@ SHA256 (rust/crates/zvariant_derive-5.13.1.crate) = 38a708216a18780796770bfe3f47
 SIZE (rust/crates/zvariant_derive-5.13.1.crate) = 17734
 SHA256 (rust/crates/zvariant_utils-3.5.0.crate) = 90cb9383f9b45290407a1258b202d3f8f01db719eb60b4e4055c6375af4fc7c7
 SIZE (rust/crates/zvariant_utils-3.5.0.crate) = 16990
-SHA256 (totoshko88-RustConn-v0.19.16_GH0.tar.gz) = a95a0a4c95a7656303d60d0508bc4cc2e1f45906e08b5c4b706a47795162bef9
-SIZE (totoshko88-RustConn-v0.19.16_GH0.tar.gz) = 13828960
+SHA256 (totoshko88-RustConn-v0.19.18_GH0.tar.gz) = 7a9ad616e0fb1d303ffa3c7ae340c3efff3b32b9e7ee811942653f1ab8311902
+SIZE (totoshko88-RustConn-v0.19.18_GH0.tar.gz) = 13837478
