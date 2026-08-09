@@ -1,0 +1,5 @@
+Audio management library providing decoding of many popular audio file
+formats, mixing, various DSP processing effects and positional audio.
+Audio data can be preloaded, or streamed on-the-fly into the mixer.
+SDL3_mixer supports multiple audio devices, and can mix to a memory
+buffer instead of feeding audio hardware in real time.

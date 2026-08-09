@@ -726,6 +726,7 @@
     SUBDIR += screcord-lv2
     SUBDIR += sdl2_mixer
     SUBDIR += sdl2_sound
+    SUBDIR += sdl3_mixer
     SUBDIR += sdl_audiolib
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
