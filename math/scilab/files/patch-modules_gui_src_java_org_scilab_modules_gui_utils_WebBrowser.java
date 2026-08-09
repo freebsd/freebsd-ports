@@ -1,4 +1,4 @@
---- modules/gui/src/java/org/scilab/modules/gui/utils/WebBrowser.java.orig	2020-02-25 09:59:55 UTC
+--- modules/gui/src/java/org/scilab/modules/gui/utils/WebBrowser.java.orig	2026-05-19 09:32:07 UTC
 +++ modules/gui/src/java/org/scilab/modules/gui/utils/WebBrowser.java
 @@ -101,14 +101,14 @@ public final class WebBrowser implements XConfiguratio
                      // We have <pierre.marechal@scilab.org>

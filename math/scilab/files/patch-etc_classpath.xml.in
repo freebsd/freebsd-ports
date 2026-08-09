@@ -1,0 +1,19 @@
+--- etc/classpath.xml.in.orig	2026-05-19 09:32:07 UTC
++++ etc/classpath.xml.in
+@@ -102,13 +102,13 @@ -->
+ 
+ <!-- java.lang.NoClassDefFoundError: jakarta/activation/MimetypesFileTypeMap -->
+ <!-- java.lang.RuntimeException: Provider for jakarta.activation.spi.MimeTypeRegistryProvider cannot be found -->
+-<path value="@JAKARTA_ACTIVATION@" load="onUse"> 
++<path value="@JAKARTA_ACTIVATION@" load="onUse">
+     <load on="documentationGeneration"/>
+ </path>
+ 
+-<!--<path value="@JAKARTA_ACTIVATION_API@" load="onUse"> 
++<path value="@JAKARTA_ACTIVATION_API@" load="onUse">
+     <load on="documentationGeneration"/>
+-</path>-->
++</path>
+ 
+ <path value="@SCIRENDERER_CP@"/>
+ 

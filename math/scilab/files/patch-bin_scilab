@@ -1,6 +1,6 @@
---- bin/scilab.orig	2020-02-25 10:59:42.000000000 +0100
-+++ bin/scilab	2021-01-25 02:36:29.251977000 +0100
-@@ -184,7 +187,7 @@
+--- bin/scilab.orig	2026-05-19 09:32:07 UTC
++++ bin/scilab
+@@ -184,7 +184,7 @@ detect_os() {
          OS=$(uname -s) # Retrieve the Operating System
      fi
      if test "${MODEL}" = ""; then
@@ -9,8 +9,8 @@
      fi
  
      if test $SCIVERBOSE -ne 0; then
-@@ -622,7 +625,20 @@
-                     set_macosx_java_vm
+@@ -605,7 +605,20 @@ detect_java_vm() {
+                     JAVA_SHLIB="jvm.dll"
                      ;;
                  *FreeBSD*)
 -                    proc=$MODEL
@@ -29,5 +29,5 @@
 +			    ;;
 +		    esac
                      ;;
-                 *)
-                     echo "Could not find the Java configuration for the OS <${OS}>. Please contact us or submit a bug report with your detailed configuration http://bugzilla.scilab.org/"
+                 Darwin)
+                     proc=$MODEL
