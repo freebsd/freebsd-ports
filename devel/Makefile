@@ -1120,6 +1120,7 @@
     SUBDIR += javax-ws-rs-api
     SUBDIR += javax.annotation-api
     SUBDIR += jaxb-api
+    SUBDIR += jaxb-impl
     SUBDIR += jboss-logging
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
