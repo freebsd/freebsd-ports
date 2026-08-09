@@ -1,3 +1,41 @@
+  <vuln vid="e87b74fa-940d-11f1-b046-3c7c3fba4204">
+    <topic>Calibre Web -- two vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py310-calibreweb</name>
+	<name>py311-calibreweb</name>
+	<name>py312-calibreweb</name>
+	<name>py313-calibreweb</name>
+	<name>py313t-calibreweb</name>
+	<name>py314-calibreweb</name>
+	<name>py314t-calibreweb</name>
+	<name>py315-calibreweb</name>
+	<range><ge>0.6.24</ge><lt>0.6.27</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Calibre Web Team reports:</p>
+	<blockquote cite="https://github.com/advisories/GHSA-2g7m-ph9x-7q7m">
+	  <p>ReDoS in strip_whitespaces() function in cps/string_helper.py in Calibre Web and Autocaliweb allows unauthenticated remote attackers to cause denial of service via specially crafted username parameter that triggers catastrophic backtracking during login.<br/>This issue affects Calibre Web: 0.6.24 (Nicolette); Autocaliweb: from 0.7.0 before 0.7.1.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/advisories/GHSA-qc4j-v7h6-xr5h">
+	  <p>Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in Calibre Web, Autocaliweb allows Blind OS Command Injection.<br/>This issue affects Calibre Web: 0.6.24 (Nicolette); Autocaliweb: from 0.7.0 before 0.7.1.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-6998</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-6998</url>
+      <cvename>CVE-2025-7404</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-7404</url>
+    </references>
+    <dates>
+      <discovery>2025-07-24</discovery>
+      <entry>2026-08-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="54d19b85-93d4-11f1-8144-8447094a420f">
     <topic>Roundcube -- Multiple vulnerabilities</topic>
     <affects>
