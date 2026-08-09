@@ -1,7 +1,7 @@
-TIMESTAMP = 1565821971
-SHA256 (jogl-v2.3.2.tar.xz) = 88cd468a1401ac6e32f6fb850b59328aff6808ddfa0a579fae53e2fe3b446c06
-SIZE (jogl-v2.3.2.tar.xz) = 35467924
-SHA256 (gluegen-v2.3.2.tar.xz) = d235d5d4c9b8e17d9029be2d9b9e3f2839a67f4f23dd3871fe10c4b5f04091d3
-SIZE (gluegen-v2.3.2.tar.xz) = 64053832
-SHA256 (jcpp-v2.3.2.tar.xz) = 67f889200e438789b2987d4e6c876a1ad6b8cfe3d5cb07a5f9de0d250ab73c46
-SIZE (jcpp-v2.3.2.tar.xz) = 39024
+TIMESTAMP = 1785594628
+SHA256 (jogl-v2.6.0.tar.xz) = 248c5b8fefe94dc115f4d8b0a1a919cf1f2485de0ab71f94b7aea62fd9ca43a1
+SIZE (jogl-v2.6.0.tar.xz) = 41794880
+SHA256 (gluegen-v2.6.0.tar.xz) = 2d4d58094bc34e32fa7d414cda87665ac1ee00623f988ef7829d957b04792526
+SIZE (gluegen-v2.6.0.tar.xz) = 57358972
+SHA256 (jcpp-v2.6.0.tar.xz) = ae2a418d644adf9946702a930cbb0673e5f92d6515ddf9e07433b24c25f13944
+SIZE (jcpp-v2.6.0.tar.xz) = 2745716

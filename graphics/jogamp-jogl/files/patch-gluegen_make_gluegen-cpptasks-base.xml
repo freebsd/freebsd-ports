@@ -1,6 +1,6 @@
---- gluegen/make/gluegen-cpptasks-base.xml.orig	2015-10-09 04:18:28 UTC
+--- gluegen/make/gluegen-cpptasks-base.xml.orig	2025-08-30 23:30:24 UTC
 +++ gluegen/make/gluegen-cpptasks-base.xml
-@@ -317,6 +317,18 @@
+@@ -334,6 +334,18 @@
          <istrue value="${isAMD64}" />
        </and>
      </condition>
@@ -19,16 +19,7 @@
      <condition property="isHPUX">
        <os name="HP-UX" />
      </condition>
-@@ -581,6 +593,8 @@
-     <echo message="FreeBSD=${isFreeBSD}" />
-     <echo message="FreeBSDX86=${isFreeBSDX86}" />
-     <echo message="FreeBSDAMD64=${isFreeBSDAMD64}" />
-+    <echo message="FreeBSDPpc64=${isFreeBSDPpc64}" />
-+    <echo message="FreeBSDPpc64le=${isFreeBSDPpc64le}" />
-     <echo message="HPUX=${isHPUX}" />
-     <echo message="IA64=${isIA64}" />
-     <echo message="Android=${isAndroid}" />
-@@ -633,8 +647,16 @@
+@@ -638,8 +650,16 @@
      <property name="os.and.arch" value="freebsd-amd64" />
    </target>
  
@@ -46,7 +37,16 @@
    <target name="gluegen.cpptasks.detect.os.hpux" unless="gluegen.cpptasks.detected.os.2" if="isHPUX">
      <property name="os.and.arch" value="hpux-hppa" />
    </target>
-@@ -1292,6 +1314,14 @@
+@@ -854,6 +874,8 @@
+     <echo message="FreeBSD=${isFreeBSD}" />
+     <echo message="FreeBSDX86=${isFreeBSDX86}" />
+     <echo message="FreeBSDAMD64=${isFreeBSDAMD64}" />
++    <echo message="FreeBSDPpc64=${isFreeBSDPpc64}" />
++    <echo message="FreeBSDPpc64le=${isFreeBSDPpc64le}" />
+     <echo message="HPUX=${isHPUX}" />
+     <echo message="IA64=${isIA64}" />
+     <echo message="Android=${isAndroid}" />
+@@ -1456,6 +1478,14 @@
        <linkerarg value="-m64"/>
      </linker>
  
@@ -58,11 +58,11 @@
 +      <linkerarg value="-m64"/>
 +    </linker>
 +
-     <!-- SOLARIS linker configuration --> 
+     <!-- SOLARIS linker configuration -->
  
-     <linker id="linker.cfg.solaris" name="${gcc.compat.compiler}"> 
-@@ -1580,7 +1610,21 @@
-       <property name="java.lib.dir.platform"         value="${java.home.dir}/jre/lib/amd64" />
+     <linker id="linker.cfg.solaris" name="${gcc.compat.compiler}">
+@@ -1873,7 +1903,21 @@
+       <property name="java.lib.dir.platform"         value="${java.home.dir}/lib"/> <!-- new default -->
      </target>
  
 -    <target name="gluegen.cpptasks.declare.compiler.freebsd" depends="gluegen.cpptasks.declare.compiler.freebsd.x86,gluegen.cpptasks.declare.compiler.freebsd.amd64" if="isFreeBSD">
