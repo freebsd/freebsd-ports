@@ -1109,6 +1109,7 @@
     SUBDIR += jackson-databind
     SUBDIR += jackson-jaxrs-providers
     SUBDIR += jackson-module-jaxb-annotations
+    SUBDIR += jakarta-activation
     SUBDIR += jakarta-activation-api
     SUBDIR += jakarta-annotation-api
     SUBDIR += jakarta-xml-bind-api
