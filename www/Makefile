@@ -295,6 +295,7 @@
     SUBDIR += httpasyncclient
     SUBDIR += httpclient
     SUBDIR += httpcore
+    SUBDIR += httpcore5
     SUBDIR += httptunnel
     SUBDIR += httpx
     SUBDIR += httrack
