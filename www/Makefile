@@ -308,6 +308,7 @@
     SUBDIR += iocaine
     SUBDIR += iridium
     SUBDIR += janus
+    SUBDIR += jcef
     SUBDIR += jericho-html
     SUBDIR += jesred
     SUBDIR += jetty10
