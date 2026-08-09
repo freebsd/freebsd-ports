@@ -92,8 +92,6 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/paperlist%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/preferences%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/preferences%%PYTHON_TAG%%.pyc
-%%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/renumber%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/renumber%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/sane%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/sane%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/save%%PYTHON_TAG%%.opt-1.pyc
@@ -104,7 +102,6 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/pagecontrols.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/paperlist.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/preferences.py
-%%PYTHON_SITELIBDIR%%/scantpaper/dialog/renumber.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/sane.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/save.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/scan.py
