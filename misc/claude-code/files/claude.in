@@ -34,7 +34,8 @@ fi
 #   alias claude='SHELL=/usr/local/bin/bash bash --noprofile --norc -c claude'
 #
 # Claude's shell-detection child inherits stdin; bash startup files that read
-# fd 0 make the TUI fall through to --print mode (anthropics/claude-code#12507).
+# fd 0 make the TUI fall through to --print mode (see
+# https://github.com/anthropics/claude-code/issues/12507 for more details).
 # Launch from a clean bash; keep SHELL=bash for the tool runner.
 #
 export SHELL=%%LOCALBASE%%/bin/bash
