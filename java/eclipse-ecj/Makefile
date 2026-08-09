@@ -1,11 +1,10 @@
 PORTNAME=	ecj
-PORTVERSION=	4.4.2
-PORTREVISION=	5
+PORTVERSION=	4.40
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/eclipse/downloads/drops4/R-${PORTVERSION}-${DROPDATE}/
+MASTER_SITES=	https://archive.eclipse.org/eclipse/downloads/drops4/R-${DISTVERSION}-${DROPDATE}/
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	ecjsrc-${PORTVERSION}
 EXTRACT_SUFX=	.jar
+EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse Java Compiler
@@ -13,27 +12,28 @@ WWW=		https://www.eclipse.org/
 
 LICENSE=	EPL
 
-DEPRECATED=	No maintainer, last update was 2015, does not build with Java 11, only usage in the ports tree (math/scilab) was just deprecated. Mail the maintainer if you use this.
-EXPIRATION_DATE=	2026-11-09
+USES=		java:run
+#JAVA_VERSION=	25
 
-EXTRACT_CMD=	${TAR}
-EXTRACT_BEFORE_ARGS=	xf
-EXTRACT_AFTER_ARGS=	-C ${WRKSRC}
-
-USES=		java:ant,run
-JAVA_VERSION=	8
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_FILES=	ecj.sh
 SUB_LIST=	PORTVERSION=${PORTVERSION}
 NO_WRKSUBDIR=	yes
 
-DROPDATE=	201502041700
-PLIST_FILES=	bin/${PORTNAME}.sh \
+DROPDATE=	202606010713
+
+PLIST_FILES=	bin/ecj.sh \
+		%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${PORTNAME}-${PORTVERSION}.jar
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-${PORTVERSION}.jar
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/
+	${RLN} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/ecj.sh ${STAGEDIR}/${PREFIX}/bin
 
 .include <bsd.port.mk>
