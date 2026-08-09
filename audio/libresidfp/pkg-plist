@@ -3,5 +3,5 @@ include/residfp/residfp_defs.h
 include/residfp/sidversion.h
 lib/libresidfp.so
 lib/libresidfp.so.0
-lib/libresidfp.so.0.1.2
+lib/libresidfp.so.0.2.1
 libdata/pkgconfig/libresidfp.pc

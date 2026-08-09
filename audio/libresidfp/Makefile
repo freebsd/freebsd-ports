@@ -1,6 +1,5 @@
 PORTNAME=	libresidfp
-DISTVERSION=	1.1.2
-PORTREVISION=	1
+DISTVERSION=	1.2.1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/libsidplayfp/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -15,6 +14,8 @@ USES=		compiler:c++23-lang libtool pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+
+LDFLAGS+=	-lpthread
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
