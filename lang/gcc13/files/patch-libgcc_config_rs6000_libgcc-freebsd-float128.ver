@@ -1,0 +1,40 @@
+--- /dev/null
++++ libgcc/config/rs6000/libgcc-freebsd-float128.ver
+@@ -0,0 +1,37 @@
++# IEEE-128 (__float128 / KFmode) software helpers exported from libgcc_s.so on
++# FreeBSD, where there is no float128 IFUNC.  Attached to GCC_7.0.0, the version
++# where PowerPC __float128 support was introduced.
++GCC_7.0.0 {
++  __addkf3
++  __subkf3
++  __mulkf3
++  __divkf3
++  __negkf2
++  __unordkf2
++  __eqkf2
++  __gekf2
++  __lekf2
++  __extendsfkf2
++  __extenddfkf2
++  __trunckfsf2
++  __trunckfdf2
++  __fixkfsi
++  __fixkfdi
++  __fixunskfsi
++  __fixunskfdi
++  __floatsikf
++  __floatdikf
++  __floatunsikf
++  __floatundikf
++  __floattikf
++  __floatuntikf
++  __fixkfti
++  __fixunskfti
++  __extendkftf2
++  __trunctfkf2
++  __mulkc3
++  __divkc3
++  __multc3
++  __divtc3
++  __powikf2
++}
