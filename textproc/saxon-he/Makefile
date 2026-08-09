@@ -1,6 +1,6 @@
 PORTNAME=	saxon-he
 DISTVERSION=	12-8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc java
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/SaxonHE-${DISTVERSION}/
 DISTNAME=	SaxonHE${DISTVERSION}J
@@ -23,7 +23,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 _XMLRESOLVER_VER=5.3.3
-JARFILES=	${JARFILES1} ${JARFILES2}
+JARFILES=	${JARFILES1} ${JARFILES2} Saxon-HE.jar
 JARFILES1=	saxon-he-${PORTVERSION}.jar \
 		saxon-he-test-${PORTVERSION}.jar \
 		saxon-he-xqj-${PORTVERSION}.jar
@@ -42,6 +42,8 @@ do-install:
 	${INSTALL_DATA} ${JARFILES2:S,^,${WRKSRC}/lib/,} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/saxon.sh ${STAGEDIR}${PREFIX}/bin/saxon
 	${RLN} ${STAGEDIR}${PREFIX}/bin/saxon ${STAGEDIR}${PREFIX}/bin/saxon-xquery
+	${RLN} ${STAGEDIR}${JAVAJARDIR}/saxon-he-${PORTVERSION}.jar	\
+		${STAGEDIR}${JAVAJARDIR}/Saxon-HE.jar
 
 post-stage:
 # smoke test so we're sure we can load all required classes
