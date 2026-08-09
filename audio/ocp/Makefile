@@ -1,5 +1,5 @@
 PORTNAME=	ocp
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://stian.cubic.org/ocp/
