@@ -1116,6 +1116,7 @@
     SUBDIR += janet-lsp
     SUBDIR += jansson
     SUBDIR += java-findbugs
+    SUBDIR += javafx-jars
     SUBDIR += javax-activation-api
     SUBDIR += javax-ws-rs-api
     SUBDIR += javax.annotation-api

@@ -1,0 +1,6 @@
+This port installs only the .jar files provided by the project OpenJFX.
+
+OpenJFX is an open source, next generation client application platform for
+desktop, mobile and embedded systems based on JavaSE.
+
+See also the port java/openjfx14: it installs everything for a legacy version.
