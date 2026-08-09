@@ -294,6 +294,7 @@
     SUBDIR += http_post
     SUBDIR += httpasyncclient
     SUBDIR += httpclient
+    SUBDIR += httpclient5
     SUBDIR += httpcore
     SUBDIR += httpcore5
     SUBDIR += httptunnel
