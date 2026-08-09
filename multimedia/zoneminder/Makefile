@@ -1,6 +1,5 @@
 PORTNAME=	zoneminder
-DISTVERSION=	1.38.1
-PORTREVISION=	1
+DISTVERSION=	1.38.3
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -25,12 +24,10 @@ ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-Number-Bytes-Human>=0:devel/p5-Number-Bytes-Human \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS
 BUILD_DEPENDS=	${ZM_DEPENDS} \
+		soapcpp2:devel/gsoap \
 		${LOCALBASE}/include/jwt-cpp/jwt.h:devel/jwt-cpp \
 		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json
-LIB_DEPENDS=	libx264.so:multimedia/libx264 \
-		libmp4v2.so:multimedia/mp4v2 \
-		libgcrypt.so:security/libgcrypt \
-		libavcodec.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libunwind.so:devel/libunwind
 RUN_DEPENDS=	${ZM_DEPENDS} \

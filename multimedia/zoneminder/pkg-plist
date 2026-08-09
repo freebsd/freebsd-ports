@@ -3069,8 +3069,8 @@ etc/zm.conf
 %%SITE_PERL%%/ZoneMinder/Control/M8640.pm
 %%SITE_PERL%%/ZoneMinder/Control/MaginonIPC.pm
 %%SITE_PERL%%/ZoneMinder/Control/Ncs370.pm
-%%SITE_PERL%%/ZoneMinder/Control/ONVIF.pm
 %%SITE_PERL%%/ZoneMinder/Control/Netcat.pm
+%%SITE_PERL%%/ZoneMinder/Control/ONVIF.pm
 %%SITE_PERL%%/ZoneMinder/Control/PSIA.pm
 %%SITE_PERL%%/ZoneMinder/Control/PanasonicIP.pm
 %%SITE_PERL%%/ZoneMinder/Control/PelcoD.pm
