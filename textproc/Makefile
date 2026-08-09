@@ -474,7 +474,7 @@
     SUBDIR += lua-luaexpat
     SUBDIR += lua-lyaml
     SUBDIR += lucene
-    SUBDIR += lucene5
+    SUBDIR += lucene9
     SUBDIR += luceneplusplus
     SUBDIR += lv-aspell
     SUBDIR += makefaq

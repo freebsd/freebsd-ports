@@ -5550,3 +5550,4 @@ math/topaz||2026-08-04|Has expired: Last release was in 2011 and WWW is unavaila
 graphics/vv||2026-08-04|Has expired: depends on expired science/InsightToolkit501
 science/InsightToolkit501|science/InsightToolkit|2026-08-04|Has expired: Fails to build, error: no template named 'binary_function' in namespace 'std'
 science/py-pubchempy|science/py-PubChemPy|2026-08-05|Remove duplicate port
+textproc/lucene5|textproc/lucene9|2026-08-09|Recent Scilab uses this version
