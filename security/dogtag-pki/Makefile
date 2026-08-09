@@ -43,7 +43,6 @@ BUILD_DEPENDS=	${_JAVA_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
-		libldap.so:net/openldap26-client \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss
 
@@ -57,7 +56,7 @@ RUN_DEPENDS=	${_JAVA_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		bash:shells/bash
 
-USES=		cmake:indirect java:build,run pkgconfig python shebangfix
+USES=		cmake:indirect java:build,run ldap pkgconfig python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	dogtagpki
 GH_PROJECT=	pki
