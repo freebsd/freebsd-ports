@@ -5,8 +5,8 @@
 #
 # version	If no version is given (by the maintainer via the port), try to
 #		find the currently installed version.  Fall back to default if
-#		necessary (OpenLDAP-2.6 = 26, look at bsd.default-versions.mk for
-#		possible values).
+#		necessary (OpenLDAP-2.6 = 26, OpenLDAP-2.7 = 27, look at
+#		bsd.default-versions.mk for possible values).
 # client	Depends on the libldap library (default)
 # server
 #		Depend on the server at runtime. If none of these is
@@ -55,6 +55,7 @@ DEFAULT_OPENLDAP_VER?=	${OPENLDAP_DEFAULT:S/.//}
 # OpenLDAP client versions currently supported
 OPENLDAP25_LIB=		libldap-2.5.so.0
 OPENLDAP26_LIB=		libldap.so.2
+OPENLDAP27_LIB=		libldap.so.2
 
 .  if exists(${LOCALBASE}/bin/ldapwhoami)
 _OPENLDAP_VER!=	${LOCALBASE}/bin/ldapwhoami -VV 2>&1 | ${GREP} ldapwhoami | ${SED} -E 's/.*OpenLDAP: ldapwhoami (2)\.([0-9]).*/\1\2/'
@@ -83,8 +84,14 @@ IGNORE=	cannot install: OpenLDAP versions mismatch: openldap${_OPENLDAP_VER}-cli
 
 CFLAGS+=	-DLDAP_DEPRECATED
 
-_OPENLDAP_CLIENT=	net/openldap${OPENLDAP_VER}-client
-_OPENLDAP_SERVER=	net/openldap${OPENLDAP_VER}-server
+# OpenLDAP 27+ lives in databases/, older versions in net/
+.  if ${OPENLDAP_VER} >= 27
+_OPENLDAP_CATEGORY=	databases
+.  else
+_OPENLDAP_CATEGORY=	net
+.  endif
+_OPENLDAP_CLIENT=	${_OPENLDAP_CATEGORY}/openldap${OPENLDAP_VER}-client
+_OPENLDAP_SERVER=	${_OPENLDAP_CATEGORY}/openldap${OPENLDAP_VER}-server
 
 # And now we are checking if we can use it
 .  if defined(OPENLDAP${OPENLDAP_VER}_LIB)
