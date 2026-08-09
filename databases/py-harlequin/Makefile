@@ -1,5 +1,5 @@
 PORTNAME=	harlequin
-DISTVERSION=	2.5.2
+DISTVERSION=	2.8.0
 PORTREVISION=	0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.28.0:devel/py-hatchling@${PY_
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.7_1:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=2.3.3,1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.5.1:devel/py-platformdirs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.11.0:devel/py-pyperclip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}questionary>=2.1.1:devel/py-questionary@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich-click>=1.8.5:devel/py-rich-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shandy-sqlfmt>=0.29.0:devel/py-shandy-sqlfmt@${PY_FLAVOR} \
