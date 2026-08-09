@@ -1643,7 +1643,6 @@ archivers/ppmd-7z|archivers/7-zip|2022-09-11|ppmd-7z was a mis-named p7zip proje
 science/R-cran-AMORE||2022-09-12|Has expired: Upstream no longer maintained
 www/moodle310|www/moodle311|2022-09-12|Has expired: Upstream no longer maintained, upgrade to next LTS
 security/s2n|security/s2n-tls|2022-09-13|Renamed to match upstream naming
-audio/kid3-kf5|audio/kid3@kf5|2022-09-13|Merged into flavorized version
 audio/kid3-qt5|audio/kid3@qt6|2022-09-13|Merged into flavorized version
 audio/phaserotate-lv2|audio/x42-plugins-lv2|2022-09-13|phaserotate-lv2 LV2 plugin is included in the x42-plugins-lv2 plugin collection
 graphics/darktable40|graphics/darktable|2022-09-22|Obsolete. Use graphics/darktable, which is the same version
@@ -2093,8 +2092,6 @@ www/rubygem-asana0|www/rubygem-asana|2023-05-27|Remove obsoleted port. Use www/r
 www/rubygem-jwt25|www/rubygem-jwt|2023-05-27|Remove obsoleted port. Use www/rubygem-jwt instead
 www/rubygem-webrick17|www/rubygem-webrick|2023-05-27|Remove obsoleted port. Use www/rubygem-webrick instead
 textproc/rtf2html||2023-05-28|Has expired: Abandonware, please use something modern like markdown
-databases/mariadb103-server|databases/mariadb106-server|2023-05-28|Has expired: Use databases/mariadb106-server
-databases/mariadb103-client|databases/mariadb106-client|2023-05-28|Has expired: Use databases/mariadb106-server
 net-mgmt/chronograf||2023-05-28|Has expired: Requires upstream EOL node14
 textproc/opensearch-dashboards13|textproc/opensearch-dashboards|2023-05-28|Has expired: Requires upstream EOL node14
 www/yarn-node14||2023-05-28|Has expired: Requires upstream EOL node14
@@ -5551,3 +5548,4 @@ graphics/vv||2026-08-04|Has expired: depends on expired science/InsightToolkit50
 science/InsightToolkit501|science/InsightToolkit|2026-08-04|Has expired: Fails to build, error: no template named 'binary_function' in namespace 'std'
 science/py-pubchempy|science/py-PubChemPy|2026-08-05|Remove duplicate port
 textproc/lucene5|textproc/lucene9|2026-08-09|Recent Scilab uses this version
+www/py-flask-limiter3||2026-08-09|No need to keep v3 as www/py-calibreweb now supports v4
