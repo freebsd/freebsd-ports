@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+In order to view Mermaid graphics you need to install
+mermaid-cli. Follow the instructions at
+
+https://people.freebsd.org/~nivit/presenterm/install-mermaid-cli-on-freebsd.txt
+
+EOM
+}
+]
