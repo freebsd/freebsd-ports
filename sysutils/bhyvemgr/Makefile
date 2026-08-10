@@ -1,6 +1,6 @@
 PORTNAME=	bhyvemgr
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.15.0
+PORTVERSION=	2.0.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -11,11 +11,12 @@ WWW=		https://github.com/alonsobsd/bhyvemgr
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	tigervnc-viewer>0:net/tigervnc-viewer \
-		swtpm>0:sysutils/swtpm
+		swtpm>0:sysutils/swtpm \
+		bhyvemgrd:sysutils/bhyvemgrd
 
 ONLY_FOR_ARCHS?=amd64
 
-USES=		desktop-file-utils fpc lazarus:flavors sudo xorg
+USES=		desktop-file-utils fpc lazarus:flavors xorg
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	alonsobsd

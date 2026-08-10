@@ -3,7 +3,8 @@
   message: <<EOM
 bhyvemgr was installed
 
-1) bhyvemgr config file is located at ~/.config/bhyvemgr
+1) bhyvemgr gui and common config files are located at ~/.config/bhyvemgr and
+   %%LOCALBASE%%/etc/bhyvemgrd directories
 
 2) Log messages are saved to ~/.config/bhyvemgr/bhyvemgr.log file
 
@@ -25,12 +26,20 @@ bhyvemgr was installed
    They will be replaced with virtual machine values depending on of the selected
    options.
 
-7) For an optimal use of bhyvemgr, some settings must be applied to your system.
-   Take a look at the following url:
+7) Since version 2.0.0, bhyvemgr runs under a client/server architecture so the
+   bhyvemgrd privileged helper daemon is a new server component.
+
+8) For an optimal use of bhyvemgr and bhyvemgrd, some settings must be applied
+   to your system. Take a look at the following urls:
 
    https://github.com/alonsobsd/bhyvemgr/blob/main/README.md
+   https://github.com/alonsobsd/bhyvemgrd/blob/main/README.md
 
-8) Enjoy it ;)
+   Dont't forget see the migration guide at:
+
+   https://github.com/alonsobsd/bhyvemgr/wiki/new_version_migration
+
+9) Enjoy it ;)
 EOM
 }
 ]
