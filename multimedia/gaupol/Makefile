@@ -1,5 +1,5 @@
 PORTNAME=	gaupol
-DISTVERSION=	1.16
+DISTVERSION=	2.0
 CATEGORIES=	multimedia python
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -10,32 +10,22 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=2.0:textproc/py-charset-normalizer@${PY_FLAVOR} \
-		gspell>=1.0.0:textproc/gspell \
-		iso-codes>=3.67:misc/iso-codes
+		libspelling>=0.2:x11-toolkits/libspelling \
+		iso-codes>=3.67:misc/iso-codes \
+		gstreamer1-plugins-rust>=0:multimedia/gstreamer1-plugins-rust
 
-USES=		desktop-file-utils gnome gstreamer python
+USES=		desktop-file-utils gettext-tools gnome gstreamer python
 USE_GITHUB=	yes
 GH_ACCOUNT=	otsaloma
 USE_GNOME=	gtk30 intltool pygobject3
 USE_GSTREAMER=	bad good gtk libav pango ugly
-USE_PYTHON=	autoplist distutils flavors
+USE_PYTHON=	autoplist flavors
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-
-NLS_USES=	gettext-runtime gettext-tools
-NLS_USES_OFF=	gettext-tools
-
-.include <bsd.port.pre.mk>
-
-# PYDISTUTILS_INSTALLNOSINGLE is deprecated so...
-PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS:N--single-version-externally-managed}
+ALL_TARGET=	build
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%STAGEDIR%%|"${STAGEDIR}"|' \
-		-e 's|%%PREFIX%%|"${PREFIX}"|' \
-		-e 's|#!/usr/bin/env python3|#!${PYTHON_CMD}|' \
-		${WRKSRC}/setup.py
+	@${REINPLACE_CMD} 's|#!/usr/bin/env python3|#!${PYTHON_CMD}|' \
+		${WRKSRC}/bin/gaupol.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
