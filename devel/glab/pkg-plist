@@ -60,6 +60,9 @@
 %%MANPAGES%%share/man/man1/glab-container-registry-tag-view.1.gz
 %%MANPAGES%%share/man/man1/glab-container-registry-tag.1.gz
 %%MANPAGES%%share/man/man1/glab-container-registry.1.gz
+%%MANPAGES%%share/man/man1/glab-dependency-firewall-ci-summary.1.gz
+%%MANPAGES%%share/man/man1/glab-dependency-firewall-configure.1.gz
+%%MANPAGES%%share/man/man1/glab-dependency-firewall.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key-add.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key-get.1.gz
