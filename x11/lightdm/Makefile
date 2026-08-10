@@ -1,8 +1,6 @@
 PORTNAME=	lightdm
-PORTVERSION=	1.32.0
-PORTREVISION=	7
+PORTVERSION=	1.33.0
 CATEGORIES=	x11
-MASTER_SITES=	https://github.com/canonical/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Lightweight Display Manager
@@ -21,30 +19,33 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 RUN_DEPENDS=	accountsservice>=0:sysutils/accountsservice \
 		ck-launch-session:sysutils/consolekit2
 
-USES=		autoreconf compiler:c++11-lang cpe gettext-tools gmake gnome \
+USES=		autoreconf compiler:c++17-lang cpe gettext-tools gmake gnome \
 		libtool localbase pathfix pkgconfig tar:xz xorg
 CPE_VENDOR=	${PORTNAME}_project
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++17
+USE_GITHUB=	yes
+GH_ACCOUNT=	ubuntu
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	lightdm
 USE_XORG=	x11 xcb xdmcp
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-# tests causes PAM errors
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+# tests cause PAM errors
 CONFIGURE_ARGS=		--disable-libaudit \
 			--disable-tests
 INSTALL_TARGET=		install-strip
 LIBS=			-lutil
 CONFLICTS_INSTALL=	sddm
-PORTSCOUT=		limitw:1,even
 SUB_FILES=		Xsession
 USERS=			lightdm
 GROUPS=			lightdm video
 
-OPTIONS_DEFINE=		DOCS NLS QT5 VAPI
+OPTIONS_DEFINE=		DOCS NLS VAPI
 OPTIONS_DEFAULT=	VAPI
+OPTIONS_RADIO=		QT
+OPTIONS_RADIO_QT=	QT5 QT6
 OPTIONS_SUB=		yes
 
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools \
@@ -58,14 +59,20 @@ QT5_USES=		qt:5
 QT5_USE=		QT=buildtools,core,dbus,gui
 QT5_CONFIGURE_ENABLE=	liblightdm-qt5
 
+QT6_USES=		qt:6
+QT6_USE=		QT=base
+QT6_CONFIGURE_ENABLE=	liblightdm-qt6
+
 VAPI_USES=		vala:build
 VAPI_USE=		GNOME=introspection:build
 VAPI_CONFIGURE_ENABLE=	vala
 
 post-patch:
-	@${REINPLACE_CMD} -i "" -e 's,%%PREFIX%%,${PREFIX},' \
+	@${REINPLACE_CMD} -i "" -e 's,%%PREFIX%%,${PREFIX},g' \
 		${WRKSRC}/data/lightdm.1 \
 		${WRKSRC}/data/lightdm.conf
+	@${REINPLACE_CMD} -i "" -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+		${WRKSRC}/src/session-child.c
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^GTK_DOC_CHECK/d' \
@@ -75,6 +82,10 @@ post-patch-DOCS-off:
 		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s/ doc help//' \
 		${WRKSRC}/Makefile.am
+
+post-patch-QT6-on:
+	@${REINPLACE_CMD} -i "" -e 's,%%QT6MOC%%,${MOC},g' \
+		${WRKSRC}/m4/qt-validate-moc.m4
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/etc/init
