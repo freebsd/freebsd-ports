@@ -1,7 +1,7 @@
 PORTNAME=	nvmupdate
-DISTVERSION=	4_30
+DISTVERSION=	5_01
 CATEGORIES=	sysutils
-MASTER_SITES=	https://downloadmirror.intel.com/786048/
+MASTER_SITES=	https://downloadmirror.intel.com/923633/
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-100g
 DISTNAME=	E810_NVMUpdatePackage_v${DISTVERSION}_FreeBSD
