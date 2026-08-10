@@ -28,8 +28,8 @@ MAKE_ARGS+=	cxxflags="${CXXFLAGS:N-O*}" cflags="${CFLAGS:N-O*}" linkflags="${LDF
 MAKE_ARGS+=	--toolset=${CHOSEN_COMPILER_TYPE} \
 		${_MAKE_JOBS}
 
-DEBUG_MAKE_ARGS=	debug
-DEBUG_MAKE_ARGS_OFF=	release
+DEBUG_MAKE_ARGS=	variant=debug
+DEBUG_MAKE_ARGS_OFF=	variant=release
 
 MAKE_ARGS+=	threading=multi \
 		link=shared,static
@@ -38,9 +38,7 @@ MAKE_ARGS+=	optimization=speed
 OPTIMIZED_CFLAGS_MAKE_ARGS=	inlining=full
 
 # ccache build fails when using precompiled headers, on a cached build.
-#
-# base gcc 4.2.1 fails when using precompiled headers on 11.0+ kernel.
-# https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
+# pch enabled build is generally fragile and breaks with RELRO
 MAKE_ARGS+=	pch=off
 
 .include <bsd.port.options.mk>
