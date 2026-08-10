@@ -1,5 +1,6 @@
 PORTNAME=	orthanc-webviewer
 DISTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-webviewer/:webviewer \
 		https://orthanc.uclouvain.be/downloads/sources/orthanc/:orthanc \

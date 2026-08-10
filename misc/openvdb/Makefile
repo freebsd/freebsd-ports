@@ -1,7 +1,7 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	13.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 PATCH_SITES=	https://github.com/AcademySoftwareFoundation/openvdb/commit/

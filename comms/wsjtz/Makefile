@@ -1,5 +1,6 @@
 PORTNAME=	wsjtz
 DISTVERSION=	2.7.0-rc7-1.48
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt-z/Source
 

@@ -1,6 +1,6 @@
 PORTNAME=	orthanc-mysql
 DISTVERSION=	5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-mysql/:mysql \
 		https://orthanc.uclouvain.be/downloads/sources/orthanc/:orthanc \

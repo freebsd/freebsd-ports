@@ -1,5 +1,6 @@
 PORTNAME=	blender
 DISTVERSION=	5.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \

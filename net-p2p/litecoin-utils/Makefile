@@ -1,5 +1,5 @@
 MASTERDIR=	${.CURDIR}/../litecoin
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMESUFFIX=	-utils
 
 COMMENT=	Virtual Peer-to-Peer Currency (CLI and Utilities)

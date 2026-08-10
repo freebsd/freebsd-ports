@@ -1,7 +1,7 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
 DISTVERSION=	2025_09_2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/schrodinger/maeparser/archive/:maeparser \
 		https://github.com/schrodinger/coordgenlibs/archive/:coordgen \

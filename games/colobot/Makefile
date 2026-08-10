@@ -1,6 +1,7 @@
 PORTNAME=	colobot
 DISTVERSIONPREFIX=	${PORTNAME}-gold-
 DISTVERSION=	0.2.2
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-alpha
 CATEGORIES=	games education
 MASTER_SITES=	https://github.com/colobot/colobot-data/archive/refs/tags/:data \
