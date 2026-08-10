@@ -676,6 +676,8 @@ include/wine/windows/fileapi.h
 include/wine/windows/filter.h
 include/wine/windows/filter.idl
 include/wine/windows/fltdefs.h
+include/wine/windows/fltuser.h
+include/wine/windows/fltuserstructures.h
 include/wine/windows/fontsub.h
 include/wine/windows/fusion.h
 include/wine/windows/fusion.idl
