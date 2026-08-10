@@ -127,6 +127,7 @@
     SUBDIR += go
     SUBDIR += go125
     SUBDIR += go126
+    SUBDIR += go127
     SUBDIR += gomacro
     SUBDIR += gprolog
     SUBDIR += gptscript
