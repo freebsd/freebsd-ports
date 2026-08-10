@@ -1,0 +1,11 @@
+--- libs/msm/test/Jamfile.v2.orig	2026-04-15 14:38:58 UTC
++++ libs/msm/test/Jamfile.v2
+@@ -19,7 +19,7 @@ project
+     requirements
+        <library>/boost/msm//boost_msm
+        <include>.
+-       <toolset>gcc:<cxxflags>"-ftemplate-depth-300 -g0"
++       <toolset>gcc:<cxxflags>"-ftemplate-depth-300 -g0 -std=c++20"
+        <toolset>darwin:<cxxflags>"-ftemplate-depth-300 -g0"
+        <toolset>intel:<cxxflags>"-g0"
+        <toolset>gcc:<optimization>off

@@ -1,0 +1,10 @@
+--- libs/cobalt/test/Jamfile.jam.orig	2026-04-15 14:38:53 UTC
++++ libs/cobalt/test/Jamfile.jam
+@@ -10,6 +10,7 @@ project : requirements
+ 
+ project : requirements
+   <define>BOOST_ASIO_NO_DEPRECATED
++  <toolset>gcc:<cxxflags>"-std=c++20 -fcoroutines"
+   <toolset>msvc:<define>_SCL_SECURE_NO_WARNINGS
+   <toolset>msvc:<define>_CRT_SECURE_NO_DEPRECATE
+   <toolset>msvc:<cxxflags>/bigobj
