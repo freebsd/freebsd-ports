@@ -1,6 +1,5 @@
 PORTNAME=	seaweedfs
-DISTVERSION=	4.12
-PORTREVISION=	5
+DISTVERSION=	4.41
 CATEGORIES=	net sysutils
 
 MAINTAINER=	drtr0jan@yandex.ru
@@ -14,28 +13,34 @@ USES=		go:modules
 
 USE_RC_SUBR=	seaweedfs
 
-GO_MODULE=	github.com/seaweedfs/seaweedfs@v0.0.0-20260210021559-0b80f055c285
+GO_MODULE=	github.com/seaweedfs/seaweedfs@v0.0.0-20260806073920-de34a1a87c02
 GO_TARGET=	./weed
 GO_BUILDFLAGS=	-ldflags "-s -w -X github.com/seaweedfs/seaweedfs/weed/util/version.COMMIT=${GO_MODULE:C/.*-//}"
 CGO_CFLAGS=	-I.
 
 SEAWEEDFS_DIR?=		/var/db/${PORTNAME}
-SEAWEEDFS_USER?=	seaweedfs
-SEAWEEDFS_GROUP?=	seaweedfs
+SEAWEEDFS_USER?=	${PORTNAME}
+SEAWEEDFS_GROUP?=	${PORTNAME}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	GROUP=${SEAWEEDFS_GROUP} \
 		SEAWEEDFS_DIR=${SEAWEEDFS_DIR} \
 		USER=${SEAWEEDFS_USER}
 
+.if ${SEAWEEDFS_USER} == ${PORTNAME}
 USERS=		${SEAWEEDFS_USER}
+.endif
+.if ${SEAWEEDFS_GROUP} == ${PORTNAME}
 GROUPS=		${SEAWEEDFS_GROUP}
+.endif
 
-OPTIONS_DEFINE=		GOCDK RCLONE
+OPTIONS_DEFINE=		COMMANDS GOCDK RCLONE
 OPTIONS_DEFAULT=	ELASTIC GOCDK RCLONE SQLITE
 OPTIONS_GROUP=		FILERS
 OPTIONS_GROUP_FILERS=	ELASTIC SQLITE TARANTOOL TIKV YDB
+OPTIONS_SUB=		yes
 
+COMMANDS_DESC=	SQL engine and PostgreSQL server (weed-db and weed-sql)
 ELASTIC_DESC=	Elasticsearch support
 FILERS_DESC=	Filer store engines
 GOCDK_DESC=	Go CDK PubSub API support
@@ -44,6 +49,7 @@ TARANTOOL_DESC=	Tarantool support
 TIKV_DESC=	TiKV database support
 YDB_DESC=	YDB support
 
+COMMANDS_VARS=	GO_TARGET+="./cmd/weed-db ./cmd/weed-sql"
 ELASTIC_VARS=	GO_TAGS+=elastic
 GOCDK_VARS=	GO_TAGS+=gocdk
 RCLONE_VARS=	GO_TAGS+=rclone
@@ -52,7 +58,8 @@ TARANTOOL_VARS=	GO_TAGS+=tarantool
 TIKV_VARS=	GO_TAGS+=tikv
 YDB_VARS=	GO_TAGS+=ydb
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
 .if !empty (GO_TAGS)
 GO_BUILDFLAGS+=	-tags "${GO_TAGS}"
 .endif
@@ -69,4 +76,4 @@ post-install:
 		${STAGEDIR}${ETCDIR}/${cfg}.toml.sample
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

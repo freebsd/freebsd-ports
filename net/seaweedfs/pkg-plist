@@ -6,3 +6,5 @@
 %%ETCDIR%%/replication.toml.sample
 %%ETCDIR%%/security.toml.sample
 bin/weed
+%%COMMANDS%%bin/weed-db
+%%COMMANDS%%bin/weed-sql
