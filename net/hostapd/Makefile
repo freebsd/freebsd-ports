@@ -1,6 +1,5 @@
 PORTNAME=	hostapd
-PORTVERSION=	2.11
-PORTREVISION=	3
+PORTVERSION=	2.12
 CATEGORIES=	net
 MASTER_SITES=	https://w1.fi/releases/
 
@@ -13,8 +12,11 @@ LICENSE=	BSD3CLAUSE
 USES=		cpe gmake ssl
 CPE_VENDOR=	w1.fi
 BUILD_WRKSRC=	${WRKSRC}/hostapd
+CFLAGS+=	-Wno-incompatible-function-pointer-types
+CFLAGS+=	-Wno-int-conversion
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	sbin/hostapd sbin/hostapd_cli share/man/man1/hostapd_cli.1.gz \
 		share/man/man8/hostapd.8.gz
@@ -25,8 +27,14 @@ USE_RC_SUBR=	hostapd
 post-patch:
 	@${REINPLACE_CMD} -e 's|@$$(E) "  CC " $$<|@$$(E) "  $$(CC) " $$<|' \
 		${BUILD_WRKSRC}/Makefile
-	@${SED} -e 's|@PREFIX@|${PREFIX}|g' ${FILESDIR}/config \
+	@${SED} -e 's|/usr/local|${PREFIX}|g;s|^CONFIG_DRIVER_NL80211|#CONFIG_DRIVER_NL80211|' ${BUILD_WRKSRC}/defconfig \
 		>> ${WRKSRC}/hostapd/.config
+	@${ECHO_CMD} 'CONFIG_L2_FREEBSD=y' >> ${WRKSRC}/hostapd/.config
+	@${ECHO_CMD} 'CONFIG_DNET_PCAP=y' >> ${WRKSRC}/hostapd/.config
+	@${ECHO_CMD} 'CONFIG_IEEE80211BE=y' >> ${WRKSRC}/hostapd/.config
+	@${ECHO_CMD} 'CONFIG_IEEE80211AC=y' >> ${WRKSRC}/hostapd/.config
+	@${ECHO_CMD} 'CONFIG_SAE=y' >> ${WRKSRC}/hostapd/.config
+	@${ECHO_CMD} 'NEED_AP_MLME=y' >> ${WRKSRC}/hostapd/.config
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hostapd/hostapd ${STAGEDIR}${PREFIX}/sbin
