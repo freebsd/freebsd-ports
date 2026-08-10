@@ -1,6 +1,6 @@
---- meson.build.orig	2026-08-04 22:20:30 UTC
+--- meson.build.orig	2026-08-06 13:57:36 UTC
 +++ meson.build
-@@ -1,13 +1,13 @@ project('x264', 'c',
+@@ -1,13 +1,13 @@
  project('x264', 'c',
 -  version: run_command(find_program('version.py'), '--package-version', check: true).stdout().strip(),
 -  default_options: ['optimization=2', 'c_std=c11'],
@@ -17,3 +17,39 @@
  
  message('build: ' + x264_build)
  message('commit: ' + x264_commit)
+@@ -218,20 +218,20 @@
+     asflags += ['-DARCH_X86_64=1']
+     stack_alignment = 16
+   endif
+-elif host_cpu.startswith('ppc')
+-  cdata.set10('altivec', true)
++elif host_cpu.startswith('ppc') and asm_allowed
++  cdata.set10('HAVE_ALTIVEC', true)
+ 
+   if host_system == 'darwin'
+     add_project_arguments('-faltivec', '-fastf', '-mcpu=G4', language: 'c')
+   else
+-    add_project_arguments('-maltivec', '-mabi=altivec', language: 'c')
+-    cdata.set10('altivec_h', true)
++    add_project_arguments('-maltivec', language: 'c')
++    cdata.set10('HAVE_ALTIVEC_H', true)
+   endif
+ 
+   if not get_option('vsx').disabled()
+-    if cc.has_argument('-mvsx')
++    if cc.compiles('int main(void){return 0;}', args: ['-maltivec', '-mvsx'], name: 'VSX with AltiVec')
+       add_project_arguments('-mvsx', language: 'c')
+-      cdata.set10('vsx', true)
++      cdata.set10('HAVE_VSX', true)
+     endif
+   endif
+ elif host_cpu == 'aarch64'
+@@ -955,7 +955,7 @@
+   elif host_cpu.startswith('ppc')
+     sources_x += files(
+       'common/ppc/dct.c',
+-      'common/ppc/debloc4k.c',
++      'common/ppc/deblock.c',
+       'common/ppc/mc.c',
+       'common/ppc/pixel.c',
+       'common/ppc/predict.c',

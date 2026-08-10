@@ -59,8 +59,12 @@ SWSCALE_MESON_ENABLED=	swscale
 
 .include <bsd.port.options.mk>
 
-.if !defined(PKGNAMEPREFIX) || (${ARCH} != "aarch64" && ${ARCH} != "amd64")
+.if !defined(PKGNAMEPREFIX) || (${ARCH} != "aarch64" && ${ARCH} != "amd64" && empty(ARCH:Mpowerpc64*))
 MESON_ARGS+=   -Dasm=disabled -Dvsx=disabled
+.endif
+
+.if defined(PKGNAMEPREFIX) && ${ARCH} == "powerpc64" && ${PORT_OPTIONS:MASM} && empty(MACHINE_CPU:Mvsx)
+IGNORE=	ASM requires VSX on powerpc64; set CPUTYPE=power7 or newer, or disable the ASM option
 .endif
 
 post-patch:
