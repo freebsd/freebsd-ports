@@ -1,0 +1,3 @@
+@sample %%ETCDIR%%/daemon.conf.sample
+sbin/bhyvemgrd
+@dir(root,bhyvemgrd,770) %%ETCDIR%%

@@ -775,7 +775,7 @@ cirrus:*:828:
 # free: 830
 # free: 831
 beehive:*:832:
-# free: 833
+bhyvemgrd:*:833:
 pocket-id:*:834:
 filebrowser:*:835:
 tinyauth:*:836:

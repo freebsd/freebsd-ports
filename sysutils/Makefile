@@ -124,6 +124,7 @@
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc
     SUBDIR += bhyvemgr
+    SUBDIR += bhyvemgrd
     SUBDIR += bin
     SUBDIR += biosfont
     SUBDIR += bkpupsd

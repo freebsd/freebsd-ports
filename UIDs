@@ -780,7 +780,7 @@ cirrus:*:828:828::0:0:Cirrus CI:/usr/local/cirrus:/bin/sh
 # free: 830
 # free: 831
 beehive:*:832:832::0:0:beehive user:/nonexistent:/usr/sbin/nologin
-# free: 833
+bhyvemgrd:*:833:833::0:0:bhyvemgrd daemon user:/nonexistent:/usr/sbin/nologin
 pocket-id:*:834:834::0:0:OIDC provider that allows users to authenticate with their passkeys:/var/db/pocket-id:/usr/sbin/nologin
 filebrowser:*:835:835::0:0:Web File Browser:/var/db/filebrowser:/usr/sbin/nologin
 tinyauth:*:836:836::0:0:Simplest way to protect your apps with a login screen:/var/db/tinyauth:/usr/sbin/nologin
