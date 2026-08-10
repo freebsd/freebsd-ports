@@ -1,6 +1,5 @@
 PORTNAME=	libbacktrace
-DISTVERSION=	1.0-20221130 # from README: This is version 1.0. It is likely that this will always be version 1.0.
-PORTREVISION=	1
+DISTVERSION=	1.0-20250929 # from README: This is version 1.0. It is likely that this will always be version 1.0.
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,11 +14,10 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ianlancetaylor
-GH_TAGNAME=	14818b7
+GH_TAGNAME=	2f67a3a
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
-
 CFLAGS+=	-fPIC
 
 INSTALL_TARGET=	install-strip
