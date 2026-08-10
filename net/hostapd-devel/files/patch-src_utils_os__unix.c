@@ -1,15 +1,16 @@
---- src/utils/os_unix.c.orig	2024-05-10 09:57:55.000000000 -0700
-+++ src/utils/os_unix.c	2024-06-01 22:28:22.467129000 -0700
-@@ -103,10 +103,12 @@
- 			break;
+--- src/utils/os_unix.c.orig	2026-08-09 02:28:34.000000000 -0700
++++ src/utils/os_unix.c	2026-08-10 08:33:03.420436000 -0700
+@@ -124,11 +124,13 @@
  #endif
+ 
  #ifdef CLOCK_MONOTONIC
 +#if !(defined(CLOCK_BOOTTIME) && CLOCK_BOOTTIME == CLOCK_MONOTONIC)
- 		case CLOCK_MONOTONIC:
+ 		if (clock_id == CLOCK_MONOTONIC) {
  			clock_id = CLOCK_REALTIME;
- 			break;
+ 			continue;
+ 		}
  #endif
 +#endif
- 		case CLOCK_REALTIME:
- 			return -1;
- 		}
+ 
+ 		/* No additional clockid_t values to fall back to */
+ 		return -1;
