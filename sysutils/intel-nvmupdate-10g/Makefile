@@ -1,7 +1,7 @@
 PORTNAME=	nvmupdate
-DISTVERSION=	3_60
+DISTVERSION=	3_70
 CATEGORIES=	sysutils
-MASTER_SITES=	https://downloadmirror.intel.com/727467/
+MASTER_SITES=	https://downloadmirror.intel.com/843925/
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-10g
 DISTNAME=	X550_NVMUpdatePackage_v${DISTVERSION}_FreeBSD
