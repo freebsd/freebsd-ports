@@ -8,9 +8,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		addr2line-0.25.1 \
 		adler2-2.0.1 \
 		aes-0.8.4 \
-		agent-client-protocol-1.3.0 \
-		agent-client-protocol-derive-1.3.0 \
-		agent-client-protocol-schema-1.4.0 \
+		agent-client-protocol-2.0.0 \
+		agent-client-protocol-derive-2.0.0 \
+		agent-client-protocol-schema-1.5.0 \
 		ahash-0.7.8 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.3 \
@@ -1135,6 +1135,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		symphonia-utils-xiph-0.5.5 \
 		syn-1.0.109 \
 		syn-2.0.117 \
+		syn-3.0.3 \
 		sync_wrapper-0.1.2 \
 		sync_wrapper-1.0.2 \
 		synchronoise-1.0.1 \
@@ -1308,7 +1309,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		wasm-metadata-0.227.1 \
 		wasm-metadata-0.244.0 \
 		wasm-streams-0.4.2 \
-		wasm_thread-0.3.3 \
 		wasmparser-0.201.0 \
 		wasmparser-0.227.1 \
 		wasmparser-0.236.1 \
@@ -1530,7 +1530,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		zvariant-5.11.0 \
 		zvariant_derive-5.11.0 \
 		zvariant_utils-3.3.1 \
-		trash@git+https://github.com/zed-industries/trash-rs?rev=47761739192828a66b11a94ba5420b82d63c03c5\#47761739192828a66b11a94ba5420b82d63c03c5 \
 		pet,pet-conda,pet-core,pet-env-var-path,pet-fs,pet-global-virtualenvs,pet-homebrew,pet-jsonrpc,pet-linux-global-python,pet-mac-commandlinetools,pet-mac-python-org,pet-mac-xcode,pet-pipenv,pet-pixi,pet-poetry,pet-pyenv,pet-python-utils,pet-reporter,pet-telemetry,pet-uv,pet-venv,pet-virtualenv,pet-virtualenvwrapper,pet-windows-registry,pet-windows-store,pet-winpython@git+https://github.com/microsoft/python-environment-tools.git?rev=9e61a22af989fe54937bf07c9f9cff1bc53d9056\#9e61a22af989fe54937bf07c9f9cff1bc53d9056 \
 		notify,notify-types@git+https://github.com/zed-industries/notify?rev=0890bbb8ca40a4b5d1f67031698dd7918b37d991\#0890bbb8ca40a4b5d1f67031698dd7918b37d991 \
 		async-task@git+https://github.com/smol-rs/async-task.git?rev=b4486cd71e4e94fbda54ce6302444de14f4d190e\#b4486cd71e4e94fbda54ce6302444de14f4d190e \
@@ -1542,6 +1541,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		libwebrtc,livekit,livekit-api,livekit-protocol,livekit-runtime,webrtc-sys,webrtc-sys-build@git+https://github.com/zed-industries/livekit-rust-sdks?rev=d0e27be0cdad89eadab3e36207cda0a2b6e359ee\#d0e27be0cdad89eadab3e36207cda0a2b6e359ee \
 		yawc@git+https://github.com/zed-industries/yawc?rev=71a452f551cac178367eaac5d7418a09afa1f3a2\#71a452f551cac178367eaac5d7418a09afa1f3a2 \
 		tree-sitter-gitcommit@git+https://github.com/zed-industries/tree-sitter-git-commit?rev=88309716a69dd13ab83443721ba6e0b491d37ee9\#88309716a69dd13ab83443721ba6e0b491d37ee9 \
+		trash@git+https://github.com/zed-industries/trash-rs?rev=41c6c800d884a89351f3b8856d12894cccee261d\#41c6c800d884a89351f3b8856d12894cccee261d \
 		rodio@git+https://github.com/RustAudio/rodio?rev=e50e726ddd0292f6ef9de0dda6b90af4ed1fb66a\#e50e726ddd0292f6ef9de0dda6b90af4ed1fb66a \
 		tree-sitter-md@git+https://github.com/zed-industries/tree-sitter-markdown?rev=b596e737286780d7bfa9fcddceaeeb754574b352\#b596e737286780d7bfa9fcddceaeeb754574b352 \
 		zed-reqwest@git+https://github.com/zed-industries/reqwest.git?rev=c15662463bda39148ba154100dd44d3fba5873a4\#c15662463bda39148ba154100dd44d3fba5873a4 \
@@ -1550,6 +1550,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		xim-ctext,xim-parser,zed-xim@git+https://github.com/zed-industries/xim-rs.git?rev=16f35a2c881b815a2b6cdfd6687988e84f8447d8\#16f35a2c881b815a2b6cdfd6687988e84f8447d8 \
 		tree-sitter-cpp@git+https://github.com/tree-sitter/tree-sitter-cpp?rev=5cb9b693cfd7bfacab1d9ff4acac1a4150700609\#5cb9b693cfd7bfacab1d9ff4acac1a4150700609 \
 		tree-sitter-heex@git+https://github.com/zed-industries/tree-sitter-heex?rev=1dd45142fbb05562e35b2040c6129c9bca346592\#1dd45142fbb05562e35b2040c6129c9bca346592 \
+		wasm_thread@git+https://github.com/zed-industries/wasm_thread?rev=0cf96c7708dfb97ccf3da50347e25edcf75d6937\#0cf96c7708dfb97ccf3da50347e25edcf75d6937 \
 		dap-types@git+https://github.com/zed-industries/dap-types?rev=1b461b310481d01e02b2603c16d7144b926339f8\#1b461b310481d01e02b2603c16d7144b926339f8 \
 		async-pipe@git+https://github.com/zed-industries/async-pipe-rs?rev=82d00a04211cf4e1236029aa03e6b6ce2a74c553\#82d00a04211cf4e1236029aa03e6b6ce2a74c553 \
 		wprcontrol@git+https://github.com/zed-industries/wprcontrol?rev=cd811f7\#cd811f7d744f65291e13131b1d907fda63ed91a1 \
