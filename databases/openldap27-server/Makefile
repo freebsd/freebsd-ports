@@ -371,7 +371,7 @@ post-patch:
 .if !${PORT_OPTIONS:MDEBUG}
 	@${REINPLACE_CMD} -E \
 		-e '/ldap_dump_(connection|requests_and_responses);/d' \
-		${WRKSRC}/libraries/libldap/ldap.map
+		${WRKSRC}/libraries/libldap/ldap.map.in
 .endif
 
 post-patch-NSSOV-on:
