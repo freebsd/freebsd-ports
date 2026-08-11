@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-03-15 15:20:17 UTC
+--- CMakeLists.txt.orig	2026-08-11 17:13:15 UTC
 +++ CMakeLists.txt
-@@ -56,7 +56,6 @@ else(CMAKE_BUILD_TYPE MATCHES Debug)
+@@ -64,7 +64,6 @@ else(CMAKE_BUILD_TYPE MATCHES Debug)
  		set(CMAKE_EXE_LINKER_FLAGS "-pg")
  	else(CMAKE_BUILD_TYPE MATCHES Profile)
  		message("Build type: Release")
