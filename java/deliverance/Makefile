@@ -38,6 +38,10 @@ WEB_JAR=	web-${DISTVERSION}.jar
 ANTARES_JAR=	deliverance-antares-cli-${DISTVERSION}-all.jar
 NANOCODE_JAR=	nanocode-deliverance-${DISTVERSION}-all.jar
 DELIVERANCE_LONGTEST?=	no
+# Long test model cache location. Default reuses the invoking user's normal
+# Deliverance cache, usually ~/.deliverance. For isolated test downloads use:
+# LONG_TEST_HOME_DIR=${WRKDIR}/deliverance-longhome
+LONG_TEST_HOME_DIR?=	${HOME}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-antares \
@@ -115,12 +119,13 @@ do-test:
 	fi; \
 	printf '%s\n' 'Long inference test enabled.'; \
 	printf '%s\n' 'First run will fetch the Qwen3-0.6B-JQ4 model into the temporary test home.'; \
-	printf '%s\n' 'Server-sent keepalives are filtered from the displayed stream.'; \
+	printf '%s\n' 'The streaming response is printed exactly as the server sends it.'; \
 	kill $${PID} >/dev/null 2>&1 || true; \
 	wait $${PID} >/dev/null 2>&1 || true; \
 	PORT=18081; \
 	CONFIG=${WRKDIR}/deliverance-longtest.properties; \
-	HOME_DIR=$$(mktemp -d ${WRKDIR}/deliverance-longhome.XXXXXX); \
+	HOME_DIR=${LONG_TEST_HOME_DIR}; \
+	${MKDIR} $${HOME_DIR}; \
 	LOG=${WRKDIR}/deliverance-longtest.log; \
 	${RM} -f $${CONFIG}; \
 	printf '%s\n' "server.port=$${PORT}" \

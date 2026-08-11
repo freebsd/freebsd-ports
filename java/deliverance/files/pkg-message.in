@@ -32,6 +32,15 @@ To enable the service at boot:
   sysrc deliverance_enable=YES
   service deliverance start
 
+Port tests:
+  make test
+  make test DELIVERANCE_LONGTEST=yes
+
+The long test loads Qwen3-0.6B-JQ4. By default it reuses the invoking user's
+normal Deliverance cache, usually ~/.deliverance. To force an isolated test
+cache instead, run:
+  make test DELIVERANCE_LONGTEST=yes LONG_TEST_HOME_DIR=/tmp/deliverance-test-home
+
 Future FreeBSD work that may interest contributors:
   * Port the native C SIMD build for faster CPU tensor kernels.
   * Port the WebGPU/Dawn path to enable GPU decode/output-head optimization.
