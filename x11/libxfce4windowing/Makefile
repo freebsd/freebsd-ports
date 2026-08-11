@@ -1,12 +1,8 @@
 PORTNAME=	libxfce4windowing
-DISTVERSION=	4.20.6
-PORTREVISION=	2
+DISTVERSION=	4.20.7
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
-
-PATCH_SITES=	https://gitlab.xfce.org/xfce/${PORTNAME}/-/commit/
-PATCHFILES+=	83ffd4ac83920.patch:-p1 # https://gitlab.xfce.org/xfce/xfce4-panel/-/work_items/987
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Windowing concept abstraction library for X11 and Wayland

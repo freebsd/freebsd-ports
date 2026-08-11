@@ -1,5 +1,3 @@
-TIMESTAMP = 1785879971
-SHA256 (xfce4/libxfce4windowing-4.20.6.tar.bz2) = 2d06b6a567c965afbca1a51419fc728fd83bd0460e30ab62c34564d5e0aac9e3
-SIZE (xfce4/libxfce4windowing-4.20.6.tar.bz2) = 595011
-SHA256 (xfce4/83ffd4ac83920.patch) = 7088c098dd9bc9c6f32c1125b5df2124b76153fcc1b0b5a4d99bd17ffcba1aab
-SIZE (xfce4/83ffd4ac83920.patch) = 1764
+TIMESTAMP = 1786446406
+SHA256 (xfce4/libxfce4windowing-4.20.7.tar.bz2) = 01320b279648ab5b13263f8d260bc5958be599e1eaac77c4503598dfcf96c8bb
+SIZE (xfce4/libxfce4windowing-4.20.7.tar.bz2) = 616625
