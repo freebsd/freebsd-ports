@@ -183,7 +183,6 @@
     SUBDIR += py-libnuml
     SUBDIR += py-libsedml
     SUBDIR += py-loompy
-    SUBDIR += py-macs2
     SUBDIR += py-macs3
     SUBDIR += py-mrcfile
     SUBDIR += py-multiqc
