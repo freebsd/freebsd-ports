@@ -118,7 +118,6 @@ do-test:
 		exit 0; \
 	fi; \
 	printf '%s\n' 'Long inference test enabled.'; \
-	printf '%s\n' 'First run will fetch the Qwen3-0.6B-JQ4 model into the temporary test home.'; \
 	printf '%s\n' 'The streaming response is printed exactly as the server sends it.'; \
 	kill $${PID} >/dev/null 2>&1 || true; \
 	wait $${PID} >/dev/null 2>&1 || true; \
@@ -127,6 +126,7 @@ do-test:
 	HOME_DIR=${LONG_TEST_HOME_DIR}; \
 	${MKDIR} $${HOME_DIR}; \
 	LOG=${WRKDIR}/deliverance-longtest.log; \
+	printf '%s\n' "First run will fetch the Qwen3-0.6B-JQ4 model under: $${HOME_DIR}/.deliverance"; \
 	${RM} -f $${CONFIG}; \
 	printf '%s\n' "server.port=$${PORT}" \
 		"deliverance.tensor.operations.type=jvector" \
@@ -159,7 +159,7 @@ do-test:
 	printf '%s\n' 'Streaming Qwen3-0.6B-JQ4 response:'; \
 	${LOCALBASE}/bin/curl -fsS --no-buffer -H 'Content-Type: application/json' \
 		-d '{"model":"Qwen3-0.6B-JQ4","stream":true,"max_tokens":384,"chat_template_kwargs":{"enable_thinking":false},"messages":[{"role":"user","content":"Why are FreeBSD and the Java based Deliverance awesome for AI?"}]}' \
-		http://127.0.0.1:$${PORT}/chat/completions | /usr/bin/tee $${RESPONSE} | /usr/bin/perl -ne 'print $$1 if /"content":"((?:\\.|[^"\\])*)"/'; \
+		http://127.0.0.1:$${PORT}/chat/completions | /usr/bin/tee $${RESPONSE} | /usr/bin/sed -n 's/^data:.*"content":"\([^"]*\)".*/\1/p'; \
 	printf '\n'; \
 	if ${GREP} -q '\[DONE\]' $${RESPONSE}; then \
 		exit 0; \
