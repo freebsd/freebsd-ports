@@ -1,5 +1,5 @@
-TIMESTAMP = 1728992410
-SHA256 (go/net_gotify-cli/cli/v2.3.2.mod) = da5cdace2bce1b94337c260f532103b3ed04aa04aed79b2d7bb621995a4b3fd1
-SIZE (go/net_gotify-cli/cli/v2.3.2.mod) = 1543
-SHA256 (go/net_gotify-cli/cli/v2.3.2.zip) = 521527e56d9b9abfe6ba0e4b9dbcfa456823e65a4340f073b8656a2126ba640f
-SIZE (go/net_gotify-cli/cli/v2.3.2.zip) = 457529
+TIMESTAMP = 1786442629
+SHA256 (go/net_gotify-cli/cli/v2.4.0.mod) = c24edd050deb63a6fc0f46988b260ac691b625aca150b17d3e64e05022f30317
+SIZE (go/net_gotify-cli/cli/v2.4.0.mod) = 2160
+SHA256 (go/net_gotify-cli/cli/v2.4.0.zip) = 524770273dc8430e8c150ac4aa55898ee5b7c978b5cf333f61c06f984ebc2303
+SIZE (go/net_gotify-cli/cli/v2.4.0.zip) = 459886
