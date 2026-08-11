@@ -1,3 +1,39 @@
+  <vuln vid="20655058-9565-11f1-8144-8447094a420f">
+    <topic>OpenSSH -- Multiple vulnerbilities</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range><lt>10.5.p1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSH project reports:</p>
+	<blockquote cite="https://www.openssh.org/txt/release-10.5">
+	  <ul>
+	    <li>ssh-agent(1): fix an interaction between agent locking and the
+	      session-bind@openssh.com extension that is used to identify
+	      forwarded agents.</li>
+	    <li>ssh(1): avoid potential realloc use-after-free in the client if a
+	      remote forwarding is added via the local session multiplexing
+	      socket while a remote forwarding open request is pending with the
+	      server.</li>
+	    <li>sshd(8): make the authorized_keys "restrict" keyword apply
+	      correctly to tunnel forwarding too (which is administratively
+	      disabled by default).</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://www.openssh.org/txt/release-10.5</url>
+    </references>
+    <dates>
+      <discovery>2026-08-11</discovery>
+      <entry>2026-08-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e87b74fa-940d-11f1-b046-3c7c3fba4204">
     <topic>Calibre Web -- two vulnerabilities</topic>
     <affects>
