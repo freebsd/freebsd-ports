@@ -1,3 +1,76 @@
+  <vuln vid="ab10c9c9-95ac-11f1-a6f7-b42e991fc52e">
+  <topic>chromium -- Multiple vulnerabilities</topic>
+  <affects>
+    <package>
+      <name>chromium</name>
+      <range><lt>151.0.7922.109</lt></range>
+    </package>
+  </affects>
+  <description>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Google has released Chrome 151.0.7922.109 to address multiple critical vulnerabilities.</p>
+	<p>
+	CVE-2026-19172:
+	  Use after free in Views in Google Chrome prior to
+	  151.0.7922.109 allowed a remote attacker who had
+	  compromised the renderer process to potentially perform a
+	  sandbox escape via a crafted HTML page. (Chromium security
+	  severity: Critical)
+	</p>
+	<p>
+	CVE-2026-19170:
+	  Use after free in WebGL in Google Chrome on Android
+	  prior to 151.0.7922.109 allowed a remote attacker to
+	  potentially perform a sandbox escape via a crafted HTML
+	  page. (Chromium security severity: Critical)
+	</p>
+	<p>
+	CVE-2026-19157:
+	  Out of bounds write in ANGLE in Google Chrome on Android
+	  prior to 151.0.7922.109 allowed a remote attacker to
+	  potentially perform a sandbox escape via a crafted HTML
+	  page. (Chromium security severity: Critical)
+	</p>
+	<p>
+	CVE-2026-19154:
+	  Use after free in Skia in Google Chrome on Android prior
+	  to 151.0.7922.109 allowed a remote attacker who had
+	  compromised the renderer process to potentially perform a
+	  sandbox escape via a crafted HTML page. (Chromium security
+	  severity: Critical)
+	</p>
+	<p>
+	CVE-2026-19149:
+	  Use after free in Aura in Google Chrome on Linux prior to
+	  151.0.7922.109 allowed a remote attacker to potentially
+	  perform a sandbox escape via a crafted HTML page.
+	  (Chromium security severity: Critical)
+	</p>
+	<p>
+	CVE-2026-19137:
+	  Use after free in WebGL in Google Chrome on Android prior
+	  to 151.0.7922.109 allowed a remote attacker who had
+	  compromised the renderer process to potentially perform a
+	  sandbox escape via a crafted HTML page. (Chromium security
+	  severity: Critical)
+	</p>
+    </body>
+  </description>
+  <references>
+    <cvename>CVE-2026-19172</cvename>
+    <cvename>CVE-2026-19170</cvename>
+    <cvename>CVE-2026-19157</cvename>
+    <cvename>CVE-2026-19154</cvename>
+    <cvename>CVE-2026-19149</cvename>
+    <cvename>CVE-2026-19137</cvename>
+    <url>https://chromereleases.googleblog.com/2026/08/stable-channel-update-for-desktop_01193673229.html</url>
+  </references>
+  <dates>
+    <discovery>2026-08-06</discovery>
+    <entry>2026-08-11</entry>
+  </dates>
+</vuln>
+
   <vuln vid="20655058-9565-11f1-8144-8447094a420f">
     <topic>OpenSSH -- Multiple vulnerbilities</topic>
     <affects>
