@@ -15,8 +15,6 @@ GH_PROJECT=	nmh
 GH_TAGNAME=	9ce14752
 NMH_COMMIT_DATE=	2026.01.20
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}
-
 LICENSE=	BSD3CLAUSE
 
 USES=		autoreconf:build cpe gmake iconv ncurses readline shebangfix
