@@ -1,7 +1,6 @@
 PORTNAME=	gotify-server
-PORTVERSION=	2.9.1
+PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/mfechner/freebsd-net-gotify-server/raw/refs/heads/main/:yarn_cache
 DISTNAME=	server
@@ -19,7 +18,11 @@ ONLY_FOR_ARCHS_REASON=	Npm cache only for amd64 generated
 BUILD_DEPENDS=	yarn${NODEJS_SUFFIX}>=1.10.0:www/yarn${NODEJS_SUFFIX} \
 
 USES=		go:modules nodejs:build
+USE_GITHUB=	yes
+GH_ACCOUNT=	gotify
+GH_PROJECT=	server
 USE_RC_SUBR=	gotify_server
+GO_MOD_DIST=	github
 GO_MODULE=	github.com/gotify/server/v2
 
 _BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
@@ -52,15 +55,15 @@ pre-install:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/bin/gotify-server ${STAGEDIR}${PREFIX}/bin/gotify-server
-	@${MV} ${WRKSRC}/config.example.yml ${WRKSRC}/config.yml.sample
+	@${MV} ${WRKSRC}/gotify-server.env.example ${WRKSRC}/server.env.sample
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-.for x in config.yml.sample
+.for x in server.env.sample
 	@${CP} ${WRKSRC}/${x} ${STAGEDIR}${ETCDIR}/${x}
 .endfor
 	@${MKDIR} ${STAGEDIR}/var/db/gotify
 
 post-install:
-	@${ECHO} "@sample ${ETCDIR}/config.yml.sample" >> ${TMPPLIST}
+	@${ECHO} "@sample ${ETCDIR}/server.env.sample" >> ${TMPPLIST}
 	@${ECHO_CMD} "@owner gotify" >> ${TMPPLIST}
 	@${ECHO_CMD} "@group gotify" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir /var/db/gotify" >> ${TMPPLIST}
