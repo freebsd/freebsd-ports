@@ -1,0 +1,178 @@
+--- src/SWIG_files/wrapper/GeomFill.i.orig	2026-08-04 19:52:44 UTC
++++ src/SWIG_files/wrapper/GeomFill.i
+@@ -3696,173 +3696,9 @@ Returns the resulting Gordon B-spline surface.
+ 	}
+ };
+ 
+-/*******************************
+-* class GeomFill_GordonBuilder *
+-*******************************/
+-class GeomFill_GordonBuilder {
+-	public:
+-		/****** GeomFill_GordonBuilder::GeomFill_GordonBuilder ******/
+-		/****** md5 signature: 8cfff7419d8602124f7a3bb0671c8e11 ******/
+-		%feature("compactdefaultargs") GeomFill_GordonBuilder;
+-		%feature("autodoc", "Return
+--------
+-None
++/* Begin remove GeomFill_GordonBuilder  */
+ 
+-Description
+------------
+-Creates an empty Gordon builder.
+-") GeomFill_GordonBuilder;
+-		 GeomFill_GordonBuilder();
+-
+-		/****** GeomFill_GordonBuilder::GuideSurface ******/
+-		/****** md5 signature: f7188aa3d7330d2975199a54b7a0e3ff ******/
+-		%feature("compactdefaultargs") GuideSurface;
+-		%feature("autodoc", "Return
+--------
+-opencascade::handle<Geom_BSplineSurface>
+-
+-Description
+------------
+-Returns the intermediate surface skinned through guides.
+-") GuideSurface;
+-		const opencascade::handle<Geom_BSplineSurface> & GuideSurface();
+-
+-		/****** GeomFill_GordonBuilder::Init ******/
+-		/****** md5 signature: cf6c78e4bb888a09ebec543dbd8e0ccb ******/
+-		%feature("compactdefaultargs") Init;
+-		%feature("autodoc", "
+-Parameters
+-----------
+-theProfiles: TColGeom_Array1OfBSplineCurve
+-theGuides: TColGeom_Array1OfBSplineCurve
+-theProfileParams: TColStd_Array1OfReal
+-theGuideParams: TColStd_Array1OfReal
+-theTolerance: double
+-theIsUClosed: bool (optional, default to false)
+-theIsVClosed: bool (optional, default to false)
+-
+-Return
+--------
+-None
+-
+-Description
+------------
+-Initializes the builder with compatible BSpline curves and intersection parameters. 
+-Input parameter: theProfiles array of profile curves (V-direction sections), must share  the same degree and knot vector 
+-Input parameter: theGuides array of guide curves (U-direction sections), must share  the same degree and knot vector 
+-Input parameter: theProfileParams parameter values at which profiles are positioned  (in V-direction), size must equal theProfiles.Length() 
+-Input parameter: theGuideParams parameter values at which guides are positioned  (in U-direction), size must equal theGuides.Length() 
+-Input parameter: theTolerance geometric tolerance for validation 
+-Input parameter: theIsUClosed if true, the U-direction (guides) forms a closed loop 
+-Input parameter: theIsVClosed if true, the V-direction (profiles) forms a closed loop.
+-") Init;
+-		void Init(const TColGeom_Array1OfBSplineCurve & theProfiles, const TColGeom_Array1OfBSplineCurve & theGuides, const TColStd_Array1OfReal & theProfileParams, const TColStd_Array1OfReal & theGuideParams, double theTolerance, bool theIsUClosed = false, bool theIsVClosed = false);
+-
+-		/****** GeomFill_GordonBuilder::IsDone ******/
+-		/****** md5 signature: 05e29e49040d98b489fbc7af11aabb8e ******/
+-		%feature("compactdefaultargs") IsDone;
+-		%feature("autodoc", "Return
+--------
+-bool
+-
+-Description
+------------
+-Returns true if the surface was successfully constructed.
+-") IsDone;
+-		bool IsDone();
+-
+-		/****** GeomFill_GordonBuilder::IsParallelMode ******/
+-		/****** md5 signature: 8f26eb5f23a1592f8117f2bf9193e47d ******/
+-		%feature("compactdefaultargs") IsParallelMode;
+-		%feature("autodoc", "Return
+--------
+-bool
+-
+-Description
+------------
+-Returns true if internal parallel processing is enabled.
+-") IsParallelMode;
+-		bool IsParallelMode();
+-
+-		/****** GeomFill_GordonBuilder::Perform ******/
+-		/****** md5 signature: c04b01412cba7220c024b5eb4532697f ******/
+-		%feature("compactdefaultargs") Perform;
+-		%feature("autodoc", "Return
+--------
+-None
+-
+-Description
+------------
+-Performs the Gordon surface construction.
+-") Perform;
+-		void Perform();
+-
+-		/****** GeomFill_GordonBuilder::ProfileSurface ******/
+-		/****** md5 signature: 7fd4d3d18e51b899c482734ee0a7b127 ******/
+-		%feature("compactdefaultargs") ProfileSurface;
+-		%feature("autodoc", "Return
+--------
+-opencascade::handle<Geom_BSplineSurface>
+-
+-Description
+------------
+-Returns the intermediate surface skinned through profiles.
+-") ProfileSurface;
+-		const opencascade::handle<Geom_BSplineSurface> & ProfileSurface();
+-
+-		/****** GeomFill_GordonBuilder::SetParallelMode ******/
+-		/****** md5 signature: dfd8184bddd5dc09e9a96572f87e3ce5 ******/
+-		%feature("compactdefaultargs") SetParallelMode;
+-		%feature("autodoc", "
+-Parameters
+-----------
+-theToUseParallel: bool
+-
+-Return
+--------
+-None
+-
+-Description
+------------
+-Enables/disables parallel processing in internal stages. By default, single-thread mode is used.
+-") SetParallelMode;
+-		void SetParallelMode(bool theToUseParallel);
+-
+-		/****** GeomFill_GordonBuilder::Surface ******/
+-		/****** md5 signature: 671a5de971e9a6baf08b4e111daa768f ******/
+-		%feature("compactdefaultargs") Surface;
+-		%feature("autodoc", "Return
+--------
+-opencascade::handle<Geom_BSplineSurface>
+-
+-Description
+------------
+-Returns the resulting Gordon surface. 
+-Return: handle to the constructed B-spline surface.
+-") Surface;
+-		const opencascade::handle<Geom_BSplineSurface> & Surface();
+-
+-		/****** GeomFill_GordonBuilder::TensorSurface ******/
+-		/****** md5 signature: eb73bf4ca862fd8c7260a69831a03769 ******/
+-		%feature("compactdefaultargs") TensorSurface;
+-		%feature("autodoc", "Return
+--------
+-opencascade::handle<Geom_BSplineSurface>
+-
+-Description
+------------
+-Returns the intermediate tensor product surface.
+-") TensorSurface;
+-		const opencascade::handle<Geom_BSplineSurface> & TensorSurface();
+-
+-};
+-
+-
+-%extend GeomFill_GordonBuilder {
+-	%pythoncode {
+-	__repr__ = _dumps_object
+-	}
+-};
++/*  end of remove GeomFill_GordonBuilder  */
+ 
+ /**********************
+ * class GeomFill_Line *
