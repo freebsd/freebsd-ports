@@ -1,9 +1,3 @@
-===>  License MPL20 accepted by the user
-===>   deltachat-rpc-server-2.57.0 depends on file: /usr/local/sbin/pkg - found
-===> Fetching all distfiles required by deltachat-rpc-server-2.57.0 for building
-===>  Extracting for deltachat-rpc-server-2.57.0
-=> SHA256 Checksum OK for chatmail-core-v2.57.0_GH0.tar.gz.
-===>  Moving crates to /usr/local/poudriere/ports/default/net/deltachat-rpc-server/work/core-2.57.0//cargo-crates
 CARGO_CRATES=	addr2line-0.25.1 \
 		adler2-2.0.0 \
 		aead-0.5.2 \
