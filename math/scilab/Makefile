@@ -13,7 +13,8 @@ LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING-BSD
 
 BUILD_DEPENDS=	bash:shells/bash \
 		splint:devel/splint \
-		rapidjson>0:devel/rapidjson
+		rapidjson>0:devel/rapidjson \
+		fast_float>0:math/fast_float
 LIB_DEPENDS=	libpcre2-32.so:devel/pcre2 \
 		libcurl.so:ftp/curl \
 		libhdf5.so:science/hdf5 \
