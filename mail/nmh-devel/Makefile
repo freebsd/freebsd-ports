@@ -9,7 +9,10 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Cleaned up MH mailer suite
 WWW=		https://savannah.nongnu.org/projects/nmh/
 
-GIT_TAGNAME=	9ce1475
+USE_GITHUB=	yes
+GH_ACCOUNT=	cschuber
+GH_PROJECT=	nmh
+GH_TAGNAME=	9ce14752
 NMH_COMMIT_DATE=	2026.01.20
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}
@@ -101,13 +104,6 @@ DEBUG_FLAGS+=	-O0 -Wall -Wextra -g
 .endif
 
 CONFLICTS_INSTALL=	ali ja-mh pixie p5-Dist-Joseki nmh-1.*
-
-do-fetch:
-	@cd ${DISTDIR} && \
-	if [ ! -f ${DISTNAME}${EXTRACT_SUFX} ]; then \
-		fetch -6 -o ${DISTNAME}${EXTRACT_SUFX} \
-		    "https://git.savannah.gnu.org/gitweb/?p=nmh.git;a=snapshot;h=${GIT_TAGNAME};sf=tgz"; \
-	fi
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
