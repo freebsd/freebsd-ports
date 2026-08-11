@@ -1,7 +1,7 @@
 Match FreeBSD base defaults.
 
---- servconf.h.orig	2026-07-06 13:41:09.300286000 -0700
-+++ servconf.h	2026-07-06 13:43:13.161664000 -0700
+--- servconf.h.orig	2026-08-11 15:11:01.587859000 -0700
++++ servconf.h	2026-08-11 15:11:41.015171000 -0700
 @@ -157,6 +157,12 @@ SSHCONF_NONCONF(timingsecret)
  SSHCONF_CUSTOM(PerSourcePenalties, persourcepenalties, SSHCFG_GLOBAL, SSHCFG_COPY_NONE) \
  SSHCONF_CUSTOM(RekeyLimit, rekeylimit, SSHCFG_ALL, SSHCFG_COPY_MATCH) \
@@ -39,6 +39,6 @@ Match FreeBSD base defaults.
  #define SSHD_CONFIG_ENTRIES_PAM \
 -SSHCONF_INTFLAG(use_pam, UsePAM, SSHCFG_GLOBAL, 0, SSHCFG_COPY_NONE) \
 +SSHCONF_INTFLAG(use_pam, UsePAM, SSHCFG_GLOBAL, 1, SSHCFG_COPY_NONE) \
- SSHCONF_STRING(pam_service_name, PAMServiceName, SSHCFG_GLOBAL, SSHCFG_COPY_NONE)
+ SSHCONF_STRING(pam_service_name, PAMServiceName, SSHCFG_ALL, SSHCFG_COPY_NONE)
  #else
  #define SSHD_CONFIG_ENTRIES_PAM \

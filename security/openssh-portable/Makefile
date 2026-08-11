@@ -1,5 +1,5 @@
 PORTNAME=	openssh
-DISTVERSION=	10.4p1
+DISTVERSION=	10.5p1
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -96,11 +96,7 @@ ETCDIR?=		${PREFIX}/etc/ssh
 
 .include <bsd.port.pre.mk>
 
-PATCH_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,hpn,gsskex,github_openssh
-
-# This needs to be applied first, before the gsskex patch at least.
-PATCH_SITES+=	https://github.com/openssh/openssh-portable/commit/:github_openssh
-PATCHFILES+=	c147093565634eae9f91e4df99e04a6b3513f9c6.patch:-p1:github_openssh
+PATCH_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,hpn,gsskex
 
 .if ${FLAVOR:U} == hpn || ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 DEPRECATED=	HPN patch is deprecated. Removed in base in 2016, and does not match official HPN-SSH implementation
@@ -118,7 +114,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-no-blocklistd-hpn-glue
 
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI} || ${FLAVOR:U} == gssapi
-# BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
+BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
 .  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 # Needed glue for applying HPN patch without conflict
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue

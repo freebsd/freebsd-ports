@@ -510,20 +510,18 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  	/*
  	 * Permit one packet in or out per rekey - this allows us to
---- work.clean/openssh-6.8p1/packet.h	2015-03-17 00:49:20.000000000 -0500
-+++ work/openssh-6.8p1/packet.h	2015-04-03 16:10:34.728161000 -0500
-@@ -206,6 +206,11 @@ int	sshpkt_get_end(struct ssh *ssh);
- void	sshpkt_fmt_connection_id(struct ssh *ssh, char *s, size_t l);
+--- work.orig/openssh/packet.h.orig	2026-08-10 19:22:17.000000000 -0700
++++ work/openssh/packet.h	2026-08-11 15:53:39.430108000 -0700
+@@ -207,4 +207,9 @@ char	*connection_info_message(struct ssh *ssh);
  const u_char	*sshpkt_ptr(struct ssh *, size_t *lenp);
+ char	*connection_info_message(struct ssh *ssh);
  
 +#ifdef NONE_CIPHER_ENABLED
 +void  packet_request_rekeying(void);
 +int   ssh_packet_authentication_state(struct ssh *ssh);
 +#endif
 +
- #if !defined(WITH_OPENSSL)
- # undef BIGNUM
- # undef EC_KEY
+ #endif				/* PACKET_H */
 --- work/openssh/readconf.c.orig	2025-04-09 00:02:43.000000000 -0700
 +++ work/openssh/readconf.c	2025-04-10 22:29:45.138038000 -0700
 @@ -71,6 +71,9 @@
@@ -1251,9 +1249,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  struct kex *kex_new(void);
  int	 kex_ready(struct ssh *, char *[PROPOSAL_MAX]);
---- work/openssh/sshd-auth.c.orig	2026-04-25 16:58:23.868827000 -0700
-+++ work/openssh/sshd-auth.c	2026-04-25 16:59:29.116215000 -0700
-@@ -799,6 +799,14 @@ do_ssh2_kex(struct ssh *ssh)
+--- work.orig/openssh/sshd-auth.c.orig	2026-08-11 15:51:34.569391000 -0700
++++ work/openssh/sshd-auth.c	2026-08-11 15:55:01.241174000 -0700
+@@ -773,6 +773,14 @@ do_ssh2_kex(struct ssh *ssh)
  	struct kex *kex;
  	int r;
  
@@ -1265,10 +1263,10 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +		free(old_ciphers);
 +	}
 +#endif
- 	if (options.rekey_limit || options.rekey_interval)
- 		ssh_packet_set_rekey_limits(ssh, options.rekey_limit,
- 		    options.rekey_interval);
-@@ -813,7 +821,7 @@ do_ssh2_kex(struct ssh *ssh)
+ 	ssh_packet_set_rekey_limits(ssh, options.rekey_limit,
+ 	    options.rekey_interval);
+ 
+@@ -786,7 +794,7 @@ do_ssh2_kex(struct ssh *ssh)
  	free(hkalgs);
  
  	if ((r = kex_exchange_identification(ssh, -1,
