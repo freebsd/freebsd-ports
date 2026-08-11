@@ -8,10 +8,13 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Multi-screen window manager
 WWW=		https://www.gnu.org/software/screen/
 
-CONFLICTS=	screen-[0-9]*
-
-GIT_TAGNAME=	e9206ef
+USE_GITHUB=	yes
+GH_ACCOUNT=	cschuber
+GH_PROJECT=	screen
+GH_TAGNAME=	e9206ef
 SCREEN_COMMIT_DATE=	20260711
+
+CONFLICTS=	screen-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}/src
 
@@ -81,13 +84,6 @@ CONFIGURE_ARGS+=	--disable-socket-dir
 .if defined(SCREEN_SOCKET_DIR)
 CONFIGURE_ARGS+=	--with-socket-dir=${SCREEN_SOCKET_DIR}
 .endif
-
-do-fetch:
-	@cd ${DISTDIR} && \
-	if [ ! -f ${DISTNAME}${EXTRACT_SUFX} ]; then \
-		fetch -o ${DISTNAME}${EXTRACT_SUFX} \
-		    "https://git.savannah.gnu.org/gitweb/?p=screen.git;a=snapshot;h=${GIT_TAGNAME};sf=tgz"; \
-	fi    
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*
