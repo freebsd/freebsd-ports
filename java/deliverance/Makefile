@@ -158,8 +158,9 @@ do-test:
 	fi; \
 	printf '%s\n' 'Streaming Qwen3-0.6B-JQ4 response:'; \
 	${LOCALBASE}/bin/curl -fsS --no-buffer -H 'Content-Type: application/json' \
-		-d '{"model":"Qwen3-0.6B-JQ4","stream":true,"max_tokens":96,"chat_template_kwargs":{"enable_thinking":false},"messages":[{"role":"user","content":"Why are FreeBSD and the Java based Deliverance awesome for AI?"}]}' \
-		http://127.0.0.1:$${PORT}/chat/completions | /usr/bin/tee $${RESPONSE}; \
+		-d '{"model":"Qwen3-0.6B-JQ4","stream":true,"max_tokens":384,"chat_template_kwargs":{"enable_thinking":false},"messages":[{"role":"user","content":"Why are FreeBSD and the Java based Deliverance awesome for AI?"}]}' \
+		http://127.0.0.1:$${PORT}/chat/completions | /usr/bin/tee $${RESPONSE} | /usr/bin/perl -ne 'print $$1 if /"content":"((?:\\.|[^"\\])*)"/'; \
+	printf '\n'; \
 	if ${GREP} -q '\[DONE\]' $${RESPONSE}; then \
 		exit 0; \
 	fi; \
