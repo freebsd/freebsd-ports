@@ -1349,6 +1349,13 @@ you update your ports collection, before attempting any port upgrades.
 
   pkg remove glib-bootstrap gobject-introspection-bootstrap
 
+  When updating these ports outside of Poudriere, make sure to
+  * remove bootstrap packages
+  * clean working dirs of bootstrap flavors (make clean FLAVOR=bootstrap) of
+    both ports
+  * sometimes it is additionally required to run "pkg remove -f glib20" before
+    building a new version
+
 20250327:
   AFFECTS: users of thunderbird
   AUTHOR: cmt@FreeBSD.org
