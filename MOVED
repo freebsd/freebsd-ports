@@ -5549,3 +5549,4 @@ science/InsightToolkit501|science/InsightToolkit|2026-08-04|Has expired: Fails t
 science/py-pubchempy|science/py-PubChemPy|2026-08-05|Remove duplicate port
 textproc/lucene5|textproc/lucene9|2026-08-09|Recent Scilab uses this version
 www/py-flask-limiter3||2026-08-09|No need to keep v3 as www/py-calibreweb now supports v4
+biology/py-macs2||2026-08-11|Upstream end of life, depends on expired lang/cython0, switch to biology/py-macs3
