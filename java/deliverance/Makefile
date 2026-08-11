@@ -158,7 +158,7 @@ do-test:
 	fi; \
 	printf '%s\n' 'Streaming Qwen3-0.6B-JQ4 response:'; \
 	${LOCALBASE}/bin/curl -fsS --no-buffer -H 'Content-Type: application/json' \
-		-d '{"model":"Qwen3-0.6B-JQ4","stream":true,"max_tokens":384,"chat_template_kwargs":{"enable_thinking":false},"messages":[{"role":"user","content":"Why are FreeBSD and the Java based Deliverance awesome for AI?"}]}' \
+		-d '{"model":"Qwen3-0.6B-JQ4","stream":true,"max_tokens":384,"chat_template_kwargs":{"enable_thinking":false},"messages":[{"role":"user","content":"Deliverance is an AI Inference engine that runs on Java and can leverage native code for optimizations. Tell me why FreeBSD is a great operating system to run Deliverance."}]}' \
 		http://127.0.0.1:$${PORT}/chat/completions | /usr/bin/tee $${RESPONSE} | /usr/bin/awk 'match($$0, /"content":"[^"]*"/) { s=substr($$0, RSTART+11, RLENGTH-12); printf "%s", s; fflush() }'; \
 	printf '\n'; \
 	if ${GREP} -q '\[DONE\]' $${RESPONSE}; then \
