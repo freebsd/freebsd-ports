@@ -642,6 +642,7 @@
     SUBDIR += ldap-account-manager
     SUBDIR += ldapvi
     SUBDIR += leaf
+    SUBDIR += leaves
     SUBDIR += ledit
     SUBDIR += less
     SUBDIR += lfm
