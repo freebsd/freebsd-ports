@@ -438,7 +438,7 @@ BAZEL_BUILD_OPTS=	--distdir=${WRKDIR}/bazel-distdir \
 			--define hot_restart=disabled \
 			--extra_toolchains=@local_config_cc//:all \
 			--repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=0 \
-			--repo_env=GOROOT=${LOCALBASE}/go125 \
+			--repo_env=GOROOT=${LOCALBASE}/go${GO_SUFFIX} \
 			--repo_env=GOPROXY=file://${WRKDIR}/goproxy,off \
 			--repo_env=GONOSUMDB=* \
 			--workspace_status_command=${WRKDIR}/workspace_status.sh \
