@@ -1,3 +1,41 @@
+  <vuln vid="f4af92f7-95ae-11f1-a6f7-b42e991fc52e">
+    <topic>gitea -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+    <name>gitea</name>
+    <range><lt>1.27.1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitea reports</p>
+	<blockquote cite="https://blog.gitea.com/release-of-1.27.1/">
+	<p>This release addresses the following security
+	vulnerabilities. Please upgrade as soon as possible.
+	</p>
+	<p>
+	Unauthenticated arbitrary file read via the Org-mode
+	#INCLUDE directive.
+	</p>
+	<p>
+	Remote code execution via the diffpatch API through Git hook
+	installation.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-59774</cvename>
+      <url>https://github.com/go-gitea/gitea/security/advisories/GHSA-6v53-hr58-556r</url>
+      <cvename>CVE-2026-60004</cvename>
+      <url>https://github.com/go-gitea/gitea/security/advisories/GHSA-rcr6-4jqh-j84m</url>
+    </references>
+    <dates>
+      <discovery>2026-08-11</discovery>
+      <entry>2026-08-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab10c9c9-95ac-11f1-a6f7-b42e991fc52e">
   <topic>chromium -- Multiple vulnerabilities</topic>
   <affects>
