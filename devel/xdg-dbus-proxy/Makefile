@@ -1,5 +1,5 @@
 PORTNAME=	xdg-dbus-proxy
-DISTVERSION=	0.1.7
+DISTVERSION=	0.1.8
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
