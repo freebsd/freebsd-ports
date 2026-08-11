@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2026-07-13 12:37:14.000000000 -0700
-+++ pyproject.toml	2026-07-13 21:44:54.600345000 -0700
+--- pyproject.toml.orig	2026-08-10 08:52:54.000000000 -0700
++++ pyproject.toml	2026-08-11 06:53:29.022878000 -0700
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools >= 77.0.3, <= 83.0.0"]  # lower bound to support license/license-files (PEP 639), upper bound for latest version tested at release
-+requires = ["setuptools >= 63.1.0, <= 83.0.0"]  # lower bound to support license/license-files (PEP 639), upper bound for latest version tested at release
+-requires = ["setuptools >= 77.0.3, <= 84.0.0"]  # lower bound to support license/license-files (PEP 639), upper bound for latest version tested at release
++requires = ["setuptools >= 63.1.0, <= 84.0.0"]  # lower bound to support license/license-files (PEP 639), upper bound for latest version tested at release
  build-backend = "setuptools.build_meta"
  
  [project]
