@@ -1845,6 +1845,7 @@
     SUBDIR += qprint
     SUBDIR += qr
     SUBDIR += qrcodegen
+    SUBDIR += qrtfreader
     SUBDIR += qstardict
     SUBDIR += qt5-xml
     SUBDIR += qt5-xmlpatterns
