@@ -1,7 +1,6 @@
 PORTNAME=	doublecmd
-PORTVERSION=	1.1.32
+PORTVERSION=	1.2.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -11,7 +10,7 @@ WWW=		https://doublecmd.sourceforge.io
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 i386 amd64 powerpc64 powerpc64le
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt6
@@ -29,19 +28,19 @@ USE_BINUTILS=	yes
 DCHELP=		1.1.30
 
 LAZARUS_PROJECT_FILES=	components/chsdet/chsdet.lpk \
+			components/doublecmd/doublecmd_common.lpk \
 			components/multithreadprocs/multithreadprocslaz.lpk \
 			components/kascrypt/kascrypt.lpk \
-			components/doublecmd/doublecmd_common.lpk \
+			components/gifview/gifview.lpk \
 			components/Image32/Image32.lpk \
 			components/KASToolBar/kascomp.lpk \
-			components/viewer/viewerpackage.lpk \
-			components/gifanim/pkg_gifanim.lpk \
 			components/synunihighlighter/synuni.lpk \
+			components/viewer/viewerpackage.lpk \
 			components/virtualterminal/virtualterminal.lpk
 LAZBUILD_ARGS=		--pcp=${WRKSRC}/tmppcp -d
 LAZARUS_NO_FLAVORS=	gtk3
 
-MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
+#MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
 #MAKE_ENV+=	CPU_TARGET=x86_64
 
 PLIST=		${WRKDIR}/pkg-plist
@@ -156,7 +155,7 @@ LAZARUS_PROJECT_FILES+=	plugins/wfx/samba/src/samba.lpi
 .endif
 
 .if ${PORT_OPTIONS:MWLX_MPLAYER}
-LAZARUS_PROJECT_FILES+=	plugins/wlx/WlxMplayer/src/wlxMplayer.lpi
+LAZARUS_PROJECT_FILES+=	plugins/wlx/wlxmplayer/src/wlxmplayer.lpi
 .endif
 
 .if ${PORT_OPTIONS:MDSX_LOCATE}
@@ -173,7 +172,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/src/uGlobsPaths.pas
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/plugins/wlx/WlxMplayer/src/wlxMplayer.lpr
+		${WRKSRC}/plugins/wlx/wlxmplayer/src/wlxMplayer.lpr
 	@${REINPLACE_CMD} -e 's| Default="True"||g' \
 		-e 's|Name="NoDebug Full Optimizations"|Name="NoDebug Full Optimizations" Default="True"|g' \
 			${WRKSRC}/src/${PORTNAME}.lpi

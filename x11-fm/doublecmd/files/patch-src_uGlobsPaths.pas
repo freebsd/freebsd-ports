@@ -1,4 +1,4 @@
---- src/uGlobsPaths.pas.orig	2025-01-24 23:48:47 UTC
+--- src/uGlobsPaths.pas.orig	2026-07-20 08:31:44 UTC
 +++ src/uGlobsPaths.pas
 @@ -3,7 +3,7 @@ var
  interface
@@ -18,8 +18,8 @@
  //Global Configuration Filename
  const
 @@ -87,7 +88,7 @@ begin
- begin
    gpExeFile := ParamStr(0);
+   OnGetApplicationName := @GetAppName;
    gpExeFile := TryReadAllLinks(gpExeFile);
 -  gpExePath := ExtractFilePath(gpExeFile);
 +  //gpExePath := ExtractFilePath(gpExeFile);
