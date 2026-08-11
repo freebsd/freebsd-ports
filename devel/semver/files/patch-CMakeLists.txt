@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2026-08-11 07:57:30 UTC
++++ CMakeLists.txt
+@@ -74,9 +74,6 @@ if(SEMVER_OPT_INSTALL)
+     install(FILES "${INCLUDES}/semver.hpp"
+         DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+     )
+-    install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE"
+-        DESTINATION "${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}"
+-    )
+ 
+     install(EXPORT "${PROJECT_NAME}"
+         FILE "${CMAKE_CONFIG_FILE_BASENAME}"
