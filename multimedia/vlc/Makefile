@@ -1,6 +1,5 @@
 PORTNAME=	vlc
-DISTVERSION=	3.0.22
-PORTREVISION=	2
+DISTVERSION=	3.0.23
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -28,12 +27,11 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libebml.so:textproc/libebml
 RUN_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg
 
-EXTRA_PATCHES=	${FILESDIR}/vlc-3.0.22-ffmpeg8.patch:-p1
-
-USES=		compiler:c++17-lang cpe desktop-file-utils elfctl gettext-tools \
-		gl gmake gnome iconv:wchar_t libtool localbase pathfix pkgconfig \
-		tar:xz
+USES=		compiler:c++17-lang cpe desktop-file-utils dos2unix \
+		elfctl gettext-tools gl gmake gnome iconv:wchar_t \
+		libtool localbase pathfix pkgconfig tar:xz
 USE_GL=		opengl
+DOS2UNIX_FILES=	modules/gui/qt/qt6.pro
 
 CPE_VENDOR=	videolan
 
@@ -58,9 +56,14 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--with-kde-solid=${PREFIX}/share/solid/actions \
 		ac_cv_search_pthread_rwlock_init=-pthread \
 		BUILDCC="${CC}"
+
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--enable-debug
+CONFIGURE_ARGS+=--enable-debug --disable-optimizations
+CFLAGS+=	-g -O0
+CXXFLAGS+=	-g -O0
 .endif
+
+MAKE_ENV=	MAKE=${GMAKE}
 INSTALL_TARGET=	install-strip
 CFLAGS+=	-Wno-unreachable-code-generic-assoc
 CFLAGS_i386=	-fomit-frame-pointer
@@ -71,17 +74,20 @@ PORTDATA=	*
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	A52 AALIB AOM ARIBSUB ASS AVAHI CACA CHROMECAST DAV1D DBUS DCA \
-		DEBUG DOCS DVDNAV DVDREAD DEBUG FAAD FLAC FLUID FREERDP FRIBIDI \
+		DOCS DVDNAV DVDREAD FAAD FLAC FLUID FREERDP FRIBIDI \
 		GME GNUTLS GOOM HARFBUZZ JACK JPEG LIBBLURAY LIBPLACEBO LIBRSVG2 \
 		LIBSSH2 LIRC LIVEMEDIA LUA MAD MFX MODPLUG MPEG2 MTP \
 		NCURSES NFS NLS NOTIFY OGGSPOTS OGG OPTIMIZED_CFLAGS OPUS PNG \
-		PULSEAUDIO QT5 REALRTSP RUNROOT SAMPLERATE SDL SHOUTCAST \
+		PULSEAUDIO QT REALRTSP RUNROOT SAMPLERATE SDL SHOUTCAST \
 		SKINS SMB SNDIO SPEEX SRT STREAM TAGLIB THEORA TWOLAME UPNP V4L \
 		VAAPI VCD VDPAU VORBIS VPX WAYLAND X11 X264 X265 ZVBI
 OPTIONS_DEFINE_powerpc=		ALTIVEC
 OPTIONS_DEFINE_powerpc64=	ALTIVEC
-OPTIONS_DEFAULT=ASS AVAHI CHROMECAST DAV1D DBUS DVDNAV DVDREAD GNUTLS HARFBUZZ \
-		JPEG LIVEMEDIA LUA OGG OPTIMIZED_CFLAGS OPUS PNG QT5 SAMPLERATE \
+OPTIONS_RADIO=		QTVER
+OPTIONS_RADIO_QTVER=	QT5 QT6
+
+OPTIONS_DEFAULT=ASS AVAHI CHROMECAST DAV1D DBUS DVDNAV DVDREAD FRIBIDI GNUTLS HARFBUZZ \
+		JPEG LIVEMEDIA LUA OGG OPTIMIZED_CFLAGS OPUS PNG QT QT5 SAMPLERATE \
 		SKINS SPEEX STREAM TAGLIB THEORA TWOLAME UPNP V4L VAAPI VCD \
 		VDPAU VORBIS WAYLAND X11
 OPTIONS_DEFAULT_powerpc=	ALTIVEC
@@ -106,9 +112,12 @@ LIBPLACEBO_DESC=	HDR tonemapping support through libplacebo
 LIBSSH2_DESC=		SCP/SFTP support via libssh2
 MFX_DESC=		Intel MediaSDK (aka Quick Sync Video)
 OGGSPOTS_DESC=		Experimental OggSpots codec
+QT_DESC=		Qt toolkit support (requires either QT5 or QT6)
+QT6_DESC=		Qt 6 toolkit support (experimental)
+QTVER_DESC=		Select Qt GUI engine version
 REALRTSP_DESC=		Real RTSP access module
 RUNROOT_DESC=		Enable running as root
-SKINS_DESC=		Build skins2 interface module (implies QT5)
+SKINS_DESC=		Build skins2 interface module (implies QT)
 SRT_DESC=		Secure Reliable Transport support
 STREAM_DESC=		stream output
 TAGLIB_DESC=		ID3 tag and Ogg comment support
@@ -191,6 +200,7 @@ GNUTLS_CONFIGURE_ENABLE=gnutls
 GOOM_LIB_DEPENDS=	libgoom2.so:graphics/goom
 GOOM_CONFIGURE_ENABLE=	goom
 
+HARFBUZZ_IMPLIES=	FRIBIDI
 HARFBUZZ_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 HARFBUZZ_CONFIGURE_ENABLE=	harfbuzz
 
@@ -282,10 +292,18 @@ PNG_CONFIGURE_ENABLE=	png
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
-QT5_IMPLIES=		X11
+QT_IMPLIES=		X11
+QT_CONFIGURE_ENABLE=	qt
+QT_CONFIGURE_ENV=	QTDIR="${QT_ARCHDIR}" QMAKE="${QMAKE}" \
+			MOC="${MOC}" RCC="${RCC}" UIC="${UIC}" \
+
+QT5_IMPLIES=		QT
 QT5_USES=		qt:5
 QT5_USE=		QT=gui,core,svg,widgets,x11extras,buildtools:build
-QT5_CONFIGURE_ENABLE=	qt
+
+QT6_IMPLIES=		QT
+QT6_USES=		qt:6
+QT6_USE=		QT=base,svg
 
 REALRTSP_CONFIGURE_ENABLE=	realrtsp
 
@@ -301,7 +319,7 @@ SDL_CONFIGURE_ENABLE=	sdl-image
 SHOUTCAST_LIB_DEPENDS=	libshout.so:audio/libshout
 SHOUTCAST_CONFIGURE_ENABLE=	shout
 
-SKINS_IMPLIES=		QT5
+SKINS_IMPLIES=		QT
 SKINS_USES=		libarchive xorg
 SKINS_USE=		XORG=xext,xinerama,xpm
 SKINS_CONFIGURE_ENABLE=	archive skins2
@@ -352,6 +370,7 @@ VORBIS_CONFIGURE_ENABLE=	vorbis
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CONFIGURE_ENABLE=	vpx
 
+# Incomplete Wayland support
 WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
@@ -377,29 +396,30 @@ WITH_DVD_DEVICE?=/dev/cd0
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug --disable-optimizations
-CFLAGS+=-g -O0
-CXXFLAGS+=-g -O0
+.if ${PORT_OPTIONS:MQT}
+.  if empty(PORT_OPTIONS:MQT5) && empty(PORT_OPTIONS:MQT6)
+IGNORE=		cannot be installed: QT option requires either QT5 or QT6
+.  endif
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e '\|LIBS|s|-lrt||' \
-		-e 's|LIBS="-llirc_client|LIBS="$$LIBS_lirc|' \
-		-e '/PKG_CONFIG/s|\"gl\"|"opengl"|g' \
+pre-configure-QT6-on:
+	${REINPLACE_CMD} 's|Qt5|Qt6}|g;s|qt5|qt6|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|make -s|${MAKE_CMD} -s|' \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \
 		${WRKSRC}/src/libvlc-module.c
-	@${RM} -r ${WRKSRC}/modules/access/v4l2/linux
+	${RM} -r ${WRKSRC}/modules/access/v4l2/linux
 # XXX FreeBSD doesn't have strerror_l() - use the android version of error.c
-	@${CP} ${WRKSRC}/src/android/error.c ${WRKSRC}/src/posix
+	${CP} ${WRKSRC}/src/android/error.c ${WRKSRC}/src/posix
 
 post-install:
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} -s lib/vlc -not -name '*.la' \
 		-type f -o -type l >> ${TMPPLIST})
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/vlc/plugins/*/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/vlc/plugins/*/*.so
 	# plugin cache becomes stale after strip. Regenerate it:
 	${WRKSRC}/bin/vlc-cache-gen ${STAGEDIR}${PREFIX}/lib/vlc/plugins
 

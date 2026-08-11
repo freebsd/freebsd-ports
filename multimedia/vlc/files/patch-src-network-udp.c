@@ -1,6 +1,6 @@
---- src/network/udp.c.orig	2018-01-17 13:29:46 UTC
+--- src/network/udp.c.orig	2025-12-23 10:49:21 UTC
 +++ src/network/udp.c
-@@ -315,7 +315,7 @@ net_SourceSubscribe (vlc_object_t *obj, 
+@@ -316,7 +316,7 @@ net_SourceSubscribe (vlc_object_t *obj, int fd,
  {
  /* MCAST_JOIN_SOURCE_GROUP was introduced to OS X in v10.7, but it doesn't work,
   * so ignore it to use the same code path as on 10.5 or 10.6 */

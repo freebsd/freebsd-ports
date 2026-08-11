@@ -1,4 +1,4 @@
---- modules/access/rdp.c.orig	2016-07-22 12:10:45 UTC
+--- modules/access/rdp.c.orig	2025-12-23 10:49:20 UTC
 +++ modules/access/rdp.c
 @@ -45,18 +45,6 @@
  # include <freerdp/version.h>
@@ -19,7 +19,7 @@
  #include <errno.h>
  #ifdef HAVE_POLL
  # include <poll.h>
-@@ -140,6 +128,7 @@ static void desktopResizeHandler( rdpCon
+@@ -144,6 +132,7 @@ static void desktopResizeHandler( rdpContext *p_contex
      vlcrdp_context_t * p_vlccontext = (vlcrdp_context_t *) p_context;
      demux_sys_t *p_sys = p_vlccontext->p_demux->p_sys;
      rdpGdi *p_gdi = p_context->gdi;
@@ -27,7 +27,7 @@
  
      if ( p_sys->es )
      {
-@@ -149,17 +138,21 @@ static void desktopResizeHandler( rdpCon
+@@ -153,17 +142,21 @@ static void desktopResizeHandler( rdpContext *p_contex
  
      /* Now init and fill es format */
      vlc_fourcc_t i_chroma;
@@ -53,7 +53,7 @@
              break;
      }
      es_format_t fmt;
-@@ -172,7 +165,7 @@ static void desktopResizeHandler( rdpCon
+@@ -176,7 +169,7 @@ static void desktopResizeHandler( rdpContext *p_contex
      fmt.video.i_height = p_gdi->height;
      fmt.video.i_frame_rate_base = 1000;
      fmt.video.i_frame_rate = 1000 * p_sys->f_fps;
@@ -62,7 +62,7 @@
  
      if ( p_sys->p_block )
          p_sys->p_block = block_Realloc( p_sys->p_block, 0, p_sys->i_framebuffersize );
-@@ -233,28 +226,19 @@ static bool postConnectHandler( freerdp 
+@@ -237,28 +230,19 @@ static bool postConnectHandler( freerdp *p_instance )
      vlcrdp_context_t * p_vlccontext = (vlcrdp_context_t *) p_instance->context;
  
      msg_Dbg( p_vlccontext->p_demux, "connected to desktop %dx%d (%d bpp)",
@@ -95,7 +95,7 @@
  
      desktopResizeHandler( p_instance->context );
      return true;
-@@ -428,10 +412,6 @@ static int Open( vlc_object_t *p_this )
+@@ -432,10 +416,6 @@ static int Open( vlc_object_t *p_this )
      if ( p_sys->f_fps <= 0 ) p_sys->f_fps = 1.0;
      p_sys->i_frame_interval = 1000000 / p_sys->f_fps;
  
@@ -106,7 +106,7 @@
      p_sys->p_instance = freerdp_new();
      if ( !p_sys->p_instance )
      {
-@@ -506,9 +486,6 @@ static void Close( vlc_object_t *p_this 
+@@ -512,9 +492,6 @@ static void Close( vlc_object_t *p_this )
  
      freerdp_disconnect( p_sys->p_instance );
      freerdp_free( p_sys->p_instance );
