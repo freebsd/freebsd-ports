@@ -8,7 +8,7 @@ share/icons/hicolor/32x32/apps/kstars.png
 share/icons/hicolor/48x48/apps/kstars.png
 share/icons/hicolor/64x64/apps/kstars.png
 share/icons/hicolor/scalable/apps/kstars.svgz
-share/knotifications5/kstars.notifyrc
+share/knotifications6/kstars.notifyrc
 %%DATADIR%%/Henry-Draper.idx
 %%DATADIR%%/Interesting.dat
 %%DATADIR%%/OpenNGC.kscat
@@ -407,6 +407,7 @@ share/knotifications5/kstars.notifyrc
 %%DATADIR%%/moonB.dat
 %%DATADIR%%/moonLR.dat
 %%DATADIR%%/moonless-night.colors
+%%DATADIR%%/mount_types.json
 %%DATADIR%%/namedstars.dat
 %%DATADIR%%/nds/info_url.dat
 %%DATADIR%%/neptune.B0.vsop
