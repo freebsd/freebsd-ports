@@ -1,5 +1,6 @@
 PORTNAME=	nextcloud
 PORTVERSION=	34.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/server/releases/download/v${PORTVERSION}/ \
 		https://download.nextcloud.com/server/releases/
@@ -75,6 +76,7 @@ post-patch:
 	@${RM} ${WRKSRC}/config/config.documented.php.* \
 		 ${WRKSRC}/updater/updater.phar
 	@${MV} ${WRKSRC}/apps ${WRKSRC}/apps-pkg
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}
