@@ -15,6 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	memvector
 GH_PROJECT=	ext-memvector
 
+IGNORE_WITH_PHP=	86
+
 CONFIGURE_ARGS=	--enable-memvector
 
 .include <bsd.port.mk>
