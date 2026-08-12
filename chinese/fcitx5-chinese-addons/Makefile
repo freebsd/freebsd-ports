@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5-chinese-addons
-DISTVERSION=	5.1.11
-PORTREVISION=	2
+DISTVERSION=	5.1.13
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:py_stroke,py_table
@@ -9,7 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PY_TABLE_TAR}:py_table
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Pinyin and table input method support for Fcitx5
 WWW=		https://github.com/fcitx/fcitx5-chinese-addons
 

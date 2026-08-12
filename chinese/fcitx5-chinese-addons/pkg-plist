@@ -37,6 +37,7 @@ share/fcitx5/inputmethod/wbx.conf
 share/fcitx5/inputmethod/zrm.conf
 share/fcitx5/lua/imeapi/extensions/pinyin.lua
 share/fcitx5/pinyin/chaizi.dict
+share/fcitx5/pinyin/sp.dat.example
 share/fcitx5/pinyin/symbols
 share/fcitx5/pinyinhelper/py_stroke.mb
 share/fcitx5/pinyinhelper/py_table.mb
@@ -193,6 +194,7 @@ share/locale/de/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/fr/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/he/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/ja/LC_MESSAGES/fcitx5-chinese-addons.mo
+share/locale/ka/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/ko/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/ru/LC_MESSAGES/fcitx5-chinese-addons.mo
 share/locale/vi/LC_MESSAGES/fcitx5-chinese-addons.mo
