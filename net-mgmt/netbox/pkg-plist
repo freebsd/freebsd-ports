@@ -660,6 +660,7 @@
 %%DATADIR%%/extras/api/__init__.py
 %%DATADIR%%/extras/api/customfields.py
 %%DATADIR%%/extras/api/mixins.py
+%%DATADIR%%/extras/api/routers.py
 %%DATADIR%%/extras/api/serializers.py
 %%DATADIR%%/extras/api/serializers_/__init__.py
 %%DATADIR%%/extras/api/serializers_/attachments.py
@@ -795,6 +796,7 @@
 %%DATADIR%%/extras/tests/__init__.py
 %%DATADIR%%/extras/tests/query_counts.json
 %%DATADIR%%/extras/tests/test_api.py
+%%DATADIR%%/extras/tests/test_api_routers.py
 %%DATADIR%%/extras/tests/test_conditions.py
 %%DATADIR%%/extras/tests/test_custom_validation.py
 %%DATADIR%%/extras/tests/test_customfields.py
@@ -890,6 +892,7 @@
 %%DATADIR%%/ipam/migrations/0091_alter_service_index_and_ordering.py
 %%DATADIR%%/ipam/migrations/0092_iprange_host_indexes.py
 %%DATADIR%%/ipam/migrations/0093_alter_prefix__region_alter_prefix__site_group.py
+%%DATADIR%%/ipam/migrations/0094_ipaddress_host_index.py
 %%DATADIR%%/ipam/migrations/__init__.py
 %%DATADIR%%/ipam/models/__init__.py
 %%DATADIR%%/ipam/models/asns.py
@@ -985,6 +988,7 @@
 %%DATADIR%%/netbox/graphql/filter_lookups.py
 %%DATADIR%%/netbox/graphql/filter_mixins.py
 %%DATADIR%%/netbox/graphql/filters.py
+%%DATADIR%%/netbox/graphql/optimization.py
 %%DATADIR%%/netbox/graphql/pagination.py
 %%DATADIR%%/netbox/graphql/scalars.py
 %%DATADIR%%/netbox/graphql/schema.py
