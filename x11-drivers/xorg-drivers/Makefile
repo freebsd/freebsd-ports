@@ -46,12 +46,11 @@ ${a:tu}_DESC=		Install ${a} ${type} driver
 OPTIONS_DEFINE_amd64=	AMDGPU ATI INTEL VMMOUSE VMWARE
 OPTIONS_DEFAULT_amd64=	VESA
 
-OPTIONS_DEFINE_i386:=	${OPTIONS_DEFINE_amd64} GEODE
+OPTIONS_DEFINE_i386:=	${OPTIONS_DEFINE_amd64}
 OPTIONS_DEFAULT_i386:=	${OPTIONS_DEFAULT_amd64}
 
 AMDGPU_DESC=		Install amdgpu video driver
 ATI_DESC=		Install ati (radeon) video driver
-GEODE_DESC=		Install geode video driver
 INTEL_DESC=		Install intel video driver
 VMMOUSE_DESC=		Install vmmouse input driver
 VMWARE_DESC=		Install vmware video driver
