@@ -1,0 +1,15 @@
+--- pyproject.toml.orig	2026-08-09 05:37:50 UTC
++++ pyproject.toml
+@@ -1,10 +1,10 @@
+ [build-system]
+-requires = ['setuptools >= 77.0']
++requires = ['setuptools >= 63.1']
+ build-backend = 'setuptools.build_meta'
+ 
+ [project]
+ name = 'python-socks'
+-license = 'Apache-2.0'
++license = { text = 'Apache-2.0' }
+ description = 'Proxy (SOCKS4, SOCKS5, HTTP CONNECT) client for Python'
+ readme = 'README.md'
+ authors = [{ name = 'Roman Snegirev', email = 'snegiryev@gmail.com' }]
