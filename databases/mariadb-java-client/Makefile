@@ -1,9 +1,10 @@
 PORTNAME=	mariadb-java-client
-DISTVERSION=	3.5.8
+DISTVERSION=	3.5.10
 CATEGORIES=	databases java
-MASTER_SITES=	https://dlm.mariadb.com/4639714/Connectors/java/connector-java-${DISTVERSION}/ \
+MASTER_SITES=	https://dlm.mariadb.com/4787586/Connectors/java/connector-java-${DISTVERSION}/ \
 		https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/${DISTVERSION}/
 EXTRACT_SUFX=	.jar
+EXTRACT_ONLY=
 
 MAINTAINER=	dmayoss@gmail.com
 COMMENT=	MariaDB JDBC driver for Java applications
@@ -18,12 +19,9 @@ CPE_PRODUCT=	mariadb_connector/j
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar \
-		${JAVAJARDIR}/${DISTNAME}.jar
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
-	${RLN} ${STAGEDIR}${JAVAJARDIR}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
 .include <bsd.port.mk>
