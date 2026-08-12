@@ -1,24 +1,15 @@
-* Relax version requirements for py-setuptools and enable build for
-  older versions of it
+* Relax upper bound of py-uv-build, because from a downstream perspective it's
+  set too tightly due to the its frequent releases.
 
---- pyproject.toml.orig	2025-06-22 10:34:17 UTC
+* Also relax lower bound to prevent issues with MFHs.
+
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -1,7 +1,7 @@ requires = [
+@@ -1,6 +1,6 @@ build-backend = "uv_build"
  [build-system]
- build-backend = "setuptools.build_meta"
- requires = [
--  "setuptools>=77",
-+  "setuptools",
- ]
+ build-backend = "uv_build"
+-requires = ["uv-build>=0.12.1,<0.13"]
++requires = ["uv-build>=0.11.28"]
  
  [project]
-@@ -12,8 +12,7 @@ keywords = [
- keywords = [
-   "Django",
- ]
--license = "MIT"
--license-files = [ "LICENSE" ]
-+license = { text="MIT" }
- authors = [
-   { name = "Adam Johnson", email = "me@adamj.eu" },
- ]
+ name = "django-htmx"
