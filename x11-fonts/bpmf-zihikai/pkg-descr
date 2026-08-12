@@ -1,0 +1,12 @@
+BpmfZihiKaiStd is a Bopomofo IVS build of the Zihi Kai Std standard kai
+typeface: each Han character that has more than one Bopomofo reading
+carries Ideographic Variation Sequences and Private Use Area glyphs that
+render the character together with its reading.
+
+Input methods that implement the Bopomofo IVS specification, such as
+chinese/fcitx5-mcbopomofo in its Bopomofo font annotation mode, use these
+fonts to produce Bopomofo-annotated text for teaching material and
+publishing.
+
+The Han glyphs are licensed under CC-BY 4.0 and the remaining glyphs under
+the SIL Open Font License 1.1.
