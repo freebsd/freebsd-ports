@@ -1,9 +1,9 @@
 PORTNAME=	fcitx5-hangul
-DISTVERSION=	5.1.8
+DISTVERSION=	5.1.10
 CATEGORIES=	korean textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Hangul support for Fcitx5
 WWW=		https://github.com/fcitx/fcitx5-hangul
 
