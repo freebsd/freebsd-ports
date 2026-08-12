@@ -1,5 +1,5 @@
 PORTNAME=	vms-empire
-DISTVERSION=	1.22
+DISTVERSION=	1.23
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 
