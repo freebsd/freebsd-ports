@@ -1,9 +1,9 @@
 PORTNAME=	fcitx5-table-other
-DISTVERSION=	5.1.5
+DISTVERSION=	5.1.7
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Other table support for Fcitx5
 WWW=		https://github.com/fcitx/fcitx5-table-other
 
