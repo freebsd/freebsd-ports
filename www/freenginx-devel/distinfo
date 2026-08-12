@@ -1,4 +1,4 @@
-TIMESTAMP = 1784237676
+TIMESTAMP = 1786544238
 SHA256 (freenginx-1.31.3.tar.gz) = 74ea2ea1c6eb2e04f0f29a5629c1e3b6ebf2e511051ddd284a6a9f98b035b624
 SIZE (freenginx-1.31.3.tar.gz) = 1255777
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -35,8 +35,8 @@ SHA256 (calio-form-input-nginx-module-v0.12_GH0.tar.gz) = 5c1869d55897075adb3fdf
 SIZE (calio-form-input-nginx-module-v0.12_GH0.tar.gz) = 11090
 SHA256 (nieoding-nginx-gridfs-059bdc3_GH0.tar.gz) = 9b059b5ae7b602d12d32d5ebe2700827ea625f22c0fb3b9956242e11de63845b
 SIZE (nieoding-nginx-gridfs-059bdc3_GH0.tar.gz) = 4674
-SHA256 (openresty-headers-more-nginx-module-v0.39_GH0.tar.gz) = dde68d3fa2a9fc7f52e436d2edc53c6d703dcd911283965d889102d3a877c778
-SIZE (openresty-headers-more-nginx-module-v0.39_GH0.tar.gz) = 29616
+SHA256 (openresty-headers-more-nginx-module-v0.40_GH0.tar.gz) = c14cb5e6c998590c209efbf77bd7637ce2cab02332e4192756a8af5b26ba4284
+SIZE (openresty-headers-more-nginx-module-v0.40_GH0.tar.gz) = 29982
 SHA256 (dvershinin-nginx_accept_language_module-5683967_GH0.tar.gz) = a58feb576f2231498b8a3863d3c6fba45c7d48bc48735fa714e07a7bfbedb6e3
 SIZE (dvershinin-nginx_accept_language_module-5683967_GH0.tar.gz) = 3425
 SHA256 (atomx-nginx-http-auth-digest-ac91c88_GH0.tar.gz) = 31b2a737d3d5d118a286a0b8a6e2637eda313dba07a9a5824e4c6e33ea6e2b80

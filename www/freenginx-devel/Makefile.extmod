@@ -77,7 +77,7 @@ GRIDFS_VARS=		DSO_EXTMODS+=gridfs GRIDFS_SUBDIR=/nginx-gridfs
 GRIDFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-gridfs_config \
 			${PATCHDIR}/extra-patch-nginx-gridfs_ngx_http_gridfs_module.c
 
-HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:v0.39:headers_more
+HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:v0.40:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
 
 HTTP_ACCEPT_LANGUAGE_GH_TUPLE=	dvershinin:nginx_accept_language_module:5683967:accept_language
