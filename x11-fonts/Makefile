@@ -32,6 +32,7 @@
     SUBDIR += bpmf-genryu
     SUBDIR += bpmf-genseki
     SUBDIR += bpmf-gensen
+    SUBDIR += bpmf-genwan
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += cascadia-code
