@@ -2,7 +2,7 @@ bin/syncthingctl
 bin/syncthingtray
 %%PLASMA%%lib/libc++utilities.so
 %%PLASMA%%lib/libc++utilities.so.5
-%%PLASMA%%lib/libc++utilities.so.5.34.2
+%%PLASMA%%lib/libc++utilities.so.5.35.0
 %%PLASMA%%lib/libqtforkawesome.so
 %%PLASMA%%lib/libqtforkawesome.so.0.3.4
 %%PLASMA%%lib/libqtforkawesome.so.1
@@ -11,16 +11,16 @@ bin/syncthingtray
 %%PLASMA%%lib/libqtquickforkawesome.so.1
 %%PLASMA%%lib/libqtutilities.so
 %%PLASMA%%lib/libqtutilities.so.6
-%%PLASMA%%lib/libqtutilities.so.6.21.3
+%%PLASMA%%lib/libqtutilities.so.6.22.0
 %%PLASMA%%lib/libsyncthingconnector.so
 %%PLASMA%%lib/libsyncthingconnector.so.%%LIBVERSION%%
-%%PLASMA%%lib/libsyncthingconnector.so.38
+%%PLASMA%%lib/libsyncthingconnector.so.39
 %%PLASMA%%lib/libsyncthingmodel.so
 %%PLASMA%%lib/libsyncthingmodel.so.%%LIBVERSION%%
-%%PLASMA%%lib/libsyncthingmodel.so.38
+%%PLASMA%%lib/libsyncthingmodel.so.39
 %%PLASMA%%lib/libsyncthingwidgets.so
 %%PLASMA%%lib/libsyncthingwidgets.so.%%LIBVERSION%%
-%%PLASMA%%lib/libsyncthingwidgets.so.38
+%%PLASMA%%lib/libsyncthingwidgets.so.39
 %%PLASMA%%%%QT_PLUGINDIR%%/kf6/kfileitemaction/libsyncthingfileitemaction.so
 %%PLASMA%%%%QT_PLUGINDIR%%/plasma/applets/martchus.syncthingplasmoid.so
 share/applications/syncthingtray.desktop
@@ -36,6 +36,7 @@ share/metainfo/io.github.martchus.syncthingtray.metainfo.xml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/DevicesPage.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/DirectoriesPage.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/DownloadsPage.qml
+%%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/FilterTextField.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/FullRepresentation.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/IconLabel.qml
 %%PLASMA%%share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/RecentChangesPage.qml
