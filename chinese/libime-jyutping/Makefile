@@ -1,6 +1,5 @@
 PORTNAME=	libime-jyutping
-DISTVERSION=	1.0.16
-PORTREVISION=	1
+DISTVERSION=	1.0.17
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict,model
@@ -9,7 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${MODEL_TAR}:model
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Library to support Jyutping through libime
 WWW=		https://github.com/fcitx/libime-jyutping
 
