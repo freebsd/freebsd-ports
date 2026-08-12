@@ -1,6 +1,7 @@
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.34
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/timing/:lapack_tmg
@@ -80,11 +81,6 @@ CFLAGS+=		-lm
 .if ${ARCH} == powerpc
 USE_GCC=		yes
 TARGET_CPU_ARCH=	PPCG4
-.endif
-
-.if ${ARCH} == powerpc64le
-CFLAGS+=		-lm
-USE_GCC=		yes
 .endif
 
 MAXTHREADS?=	64
