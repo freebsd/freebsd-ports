@@ -1,5 +1,5 @@
 PORTNAME=	tt-rss
-DISTVERSION=	g20260622
+DISTVERSION=	g20260805
 PORTEPOCH=	2
 CATEGORIES=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -11,11 +11,13 @@ WWW=		https://github.com/tt-rss/tt-rss/
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	git:devel/git
+TEST_DEPENDS=	${PHP_PKGNAMEPREFIX}zlib>=0:archivers/${PHP_PKGNAMEPREFIX}zlib \
+		phpunit:devel/phpunit11
 
 USES=		gettext-tools php:cli,web,flavors shebangfix
 
 USE_GITHUB=	yes
-GH_TAGNAME=	87b42eb3db253b233dc2c8df75d243705c12ee66
+GH_TAGNAME=	f0d6de8c0be610583993e3c1e75a40bbb6fc6ffa
 # phe json/openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring pcntl pdo \
 		pdo_pgsql phar posix session simplexml sockets sodium tokenizer \
@@ -78,5 +80,20 @@ do-install:
 	${MKDIR} ${STAGEDIR}/var/tt-rss/local/plugins/af_comics
 	${MV} ${STAGEDIR}${WWWDIR}/plugins/af_comics/filters.local \
 		${STAGEDIR}/var/tt-rss/local/plugins/af_comics
+
+do-test:
+	cd ${WRKSRC} && \
+		phpunit \
+			--do-not-cache-result \
+			--do-not-fail-on-phpunit-deprecation \
+			--do-not-fail-on-deprecation \
+			; \
+		phpunit --no-configuration \
+			--bootstrap tests/MockedDepsBootstrap.php \
+			\
+			--do-not-cache-result \
+			--do-not-fail-on-phpunit-deprecation \
+			--do-not-fail-on-deprecation \
+			tests/mocked/
 
 .include <bsd.port.mk>
