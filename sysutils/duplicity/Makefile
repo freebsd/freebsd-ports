@@ -1,5 +1,5 @@
 PORTNAME=	duplicity
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	PYPI
 
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pipx>0:devel/py-pipx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-gettext>0:devel/py-setuptools-gettext@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	librsync.so:net/librsync
@@ -20,19 +21,20 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-gnupg>0:security/py-python-gnupg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
 
-USES=		cpe localbase python shebangfix
+USES=		cpe gettext-tools localbase python shebangfix
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 USE_PYTHON=	autoplist noflavors pep517
 
 SHEBANG_FILES=	duplicity/__main__.py
 
-PORTDOCS=	AUTHORS.md README-LOG.md README-REPO.md README.md
+PORTDOCS=	AUTHORS.md README-REPO.md README.md
 
-OPTIONS_DEFINE=		B2 DOCS DROPBOX FTP FTPS NLS S3
+OPTIONS_DEFINE=		B2 DOCS DROPBOX FTP FTPS S3
 OPTIONS_DEFAULT=	B2 DROPBOX GNUPG2 S3
 OPTIONS_GROUP=		GPG
 OPTIONS_SINGLE=		GPG
@@ -53,8 +55,6 @@ FTP_RUN_DEPENDS=	ncftp>=3.2.2:ftp/ncftp3
 FTPS_RUN_DEPENDS=	lftp>=3.7.15:ftp/lftp
 GNUPG_RUN_DEPENDS=	gnupg1>=1.4.7:security/gnupg1
 GNUPG2_RUN_DEPENDS=	gpg2:security/gnupg
-NLS_USES=		gettext-tools
-NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-setup.py
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR}
 
 post-install:

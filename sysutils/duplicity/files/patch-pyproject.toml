@@ -1,15 +1,34 @@
---- pyproject.toml.orig	2026-06-16 16:27:24 UTC
+--- pyproject.toml.orig	2026-08-27 11:55:49 UTC
 +++ pyproject.toml
-@@ -33,10 +33,10 @@ requires = [
+@@ -33,8 +33,8 @@ requires = [
  [build-system]
  requires = [
      "build>=1.1",
 -    "pip>=24.0",
-+    "pip>=23.3.2",
-     "pipx>=1.5",
-     "packaging>=20.0",
 -    "setuptools>=78.1.0",
++    "pip>=23.3.2",
 +    "setuptools>=63.1.0",
+     "setuptools-gettext>=0.1.18",
      "wheel>=0.42.0",
  ]
- build-backend = "setuptools.build_meta"
+@@ -64,20 +64,6 @@ compiler = "msgfmt"
+ ]
+ [tool.setuptools-gettext]
+ compiler = "msgfmt"
+-[tool.setuptools.data-files]
+-"share/doc/duplicity" = [
+-    "CHANGELOG.md",
+-    "AUTHORS.md",
+-    "COPYING",
+-    "README.md",
+-    "README-ARCH.md",
+-    "README-INSTALL.md",
+-    "README-LOG.md",
+-    "README-RELEASE.md",
+-    "README-REPO.md",
+-    "README-SNAP.md",
+-    "README-TESTING.md",
+-]
+ "share/man/man1" =  [
+     "man/duplicity.1",
+ ]
