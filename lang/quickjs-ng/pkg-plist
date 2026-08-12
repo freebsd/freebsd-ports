@@ -16,3 +16,5 @@ lib/libqjs.so.%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/examples/point.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/test_fib.js
 %%PORTDOCS%%%%DOCSDIR%%/examples/test_point.js
+share/man/man1/qjs.1.gz
+share/man/man1/qjsc.1.gz
