@@ -35,9 +35,9 @@ post-patch:
 	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dub.json
 
 do-build:
-	@cd ${WRKSRC} && DC=${DC} ${DUB_CMD} --config=${DUB_CONFIG}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DC=${DC} ${DUB_CMD} --config=${DUB_CONFIG}
 .if ${PKGNAMESUFFIX} == "-server"
-	@cd ${WRKSRC} && DC=${DC} ${DUB_CMD} --config=library
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DC=${DC} ${DUB_CMD} --config=library
 .endif
 
 do-install:
