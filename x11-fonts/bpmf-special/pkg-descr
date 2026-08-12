@@ -1,0 +1,13 @@
+Two special Bopomofo IVS fonts from the Bopomofo IVS font specification:
+BpmfZihiBox draws each Han character and its Bopomofo reading inside a box,
+and BpmfZihiOnly renders only the Bopomofo reading with the Han character
+omitted.
+
+They are meant to be used together with a regular Bopomofo IVS font, for
+worksheets and other teaching material where the reading has to be shown on
+its own or in a ruled frame.
+
+Input methods that implement the Bopomofo IVS specification, such as
+chinese/fcitx5-mcbopomofo in its Bopomofo font annotation mode, use these
+fonts to produce Bopomofo-annotated text for teaching material and
+publishing.

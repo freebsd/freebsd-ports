@@ -37,6 +37,7 @@
     SUBDIR += bpmf-genyog
     SUBDIR += bpmf-huninn
     SUBDIR += bpmf-iansui
+    SUBDIR += bpmf-special
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += cascadia-code
