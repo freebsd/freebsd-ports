@@ -40,6 +40,7 @@
     SUBDIR += bpmf-special
     SUBDIR += bpmf-zihikai
     SUBDIR += bpmf-zihisans
+    SUBDIR += bpmf-zihiserif
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += cascadia-code
