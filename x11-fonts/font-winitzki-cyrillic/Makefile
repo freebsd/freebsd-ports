@@ -1,14 +1,16 @@
 PORTNAME=	font-winitzki-cyrillic
-PORTVERSION=	1.0.3
-PORTREVISION=	4
+DISTVERSION=	1.0.4
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org Winitzki Cyrillic font
-WWW=		https://www.x.org/
+WWW=		https://gitlab.freedesktop.org/xorg/font/winitzki-cyrillic
 
-USES=		xorg-cat:font
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_ARCH=	yes
+USES=		tar:xz xorg-cat:font
+
+PLIST_FILES=	${FONTSDIR}/proof9x16.pcf.gz
 
 .include <bsd.port.mk>
