@@ -1,3 +1,74 @@
+  <vuln vid="7a691536-968b-11f1-9863-50ebf6bdf8e9">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq-php83</name>
+	<name>phpmyfaq-php84</name>
+	<name>phpmyfaq-php85</name>
+	<range><lt>4.1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyFAQ team reports:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2026-08-04/">
+	  <p>The WebAuthn login flow never persists the challenge it issues, so
+	    the replay guard never runs. An attacker who captures a valid
+	    assertion can replay it to authenticate as the victim.</p>
+	  <p>The brute-force throttle protecting the administration two-factor
+	    prompt is scoped to the session. An attacker who starts with a fresh
+	    cookie jar resets the counter and can guess TOTP codes without any
+	    effective rate limit.</p>
+	  <p>An LDAP login silently reactivates a local account that an
+	    administrator has blocked, and the state change is not written to the
+	    audit log, so a revoked user regains access unnoticed.</p>
+	  <p>The remember-me cookie is issued before the second factor has been
+	    verified. An attacker who knows only the password can keep the cookie
+	    from the incomplete login and use it to return as the fully
+	    authenticated user, bypassing two-factor authentication.</p>
+	  <p>Glossary input is escaped before it is truncated. Truncation can cut
+	    an escape sequence in half, which allows an authenticated user to
+	    inject SQL into the resulting query.</p>
+	  <p>A tracking file below the document root is served without
+	    authentication and contains password reset tokens, allowing an
+	    unauthenticated visitor to take over the accounts those tokens belong
+	    to.</p>
+	  <p>The public PDF export does not check whether a FAQ record is active,
+	    so an unauthenticated visitor can retrieve the title and solution of
+	    drafts and unpublished entries.</p>
+	  <p>Comment endpoints do not verify authorization for the parent FAQ
+	    record, exposing the comments, the personal data of the commenters,
+	    and attachment metadata of restricted records.</p>
+	  <p>The PostgreSQL search backend declares the wrong LIKE ESCAPE
+	    character, which makes the wildcard-escaping fix ineffective on that
+	    backend.</p>
+	  <p>The administration API endpoints that read the LDAP, Elasticsearch,
+	    OpenSearcr, and dashboard configuration only require a login instead
+	    of the CONFIGURATION_EDIT permission, so any authenticated user can
+	    read these settings.</p>
+	  <p>An authenticated FAQ editor can reference a local file as an image in
+	    a FAQ entry and have the PDF export embed and disclose its contents.</p>
+	  <p>The registration endpoints remain reachable even when
+	    security.enableRegistration is turned off, so visitors can still create
+	     accounts on an installation that is meant to be closed.</p>
+	  <p>The content backup is written as a ZIP archive into the web-accessible
+	    document root, where anyone who guesses or learns its name can download
+	    the full contents of the installation.</p>
+	  <p>The backup, database migration, and maintenance mode endpoints can be
+	    reached without authentication, allowing an unauthenticated attacker
+	    to export data or put the installation into maintenance mode.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://www.phpmyfaq.de/security/advisory-2026-08-04/</url>
+    </references>
+    <dates>
+      <discovery>2026-08-04</discovery>
+      <entry>2026-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4af92f7-95ae-11f1-a6f7-b42e991fc52e">
     <topic>gitea -- Multiple vulnerabilities</topic>
     <affects>
