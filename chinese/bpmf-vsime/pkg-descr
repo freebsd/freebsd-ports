@@ -1,0 +1,13 @@
+Offline reading selection tool from the Bopomofo IVS font specification.
+Paste a Chinese text into the browser page, and every Han character that has
+more than one Bopomofo reading is highlighted so that the intended reading
+can be picked; the tool guesses common readings from a bundled phrase
+database.  The result is plain text carrying Ideographic Variation Sequences,
+which can be pasted into any application that renders it with a Bopomofo IVS
+font.
+
+The bundled dictionary comes from the Ministry of Education Concised Mandarin
+Dictionary and is shown through the ToneOZ dictionary front end.
+
+The page is rendered with x11-fonts/bpmf-zihikai, which is installed as a
+dependency.

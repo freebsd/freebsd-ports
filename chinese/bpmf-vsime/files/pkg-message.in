@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+The reading selection tool is installed as a local web page.  Open it with a
+browser, for example:
+
+	xdg-open file://%%DATADIR%%/index.html
+EOM
+}
+]

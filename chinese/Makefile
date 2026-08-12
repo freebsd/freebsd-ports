@@ -11,6 +11,7 @@
     SUBDIR += autoconvert
     SUBDIR += big5width
     SUBDIR += bitchx
+    SUBDIR += bpmf-vsime
     SUBDIR += bsdconv-opencc
     SUBDIR += bug5
     SUBDIR += c2t
