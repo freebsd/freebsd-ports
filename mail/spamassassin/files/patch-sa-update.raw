@@ -1,0 +1,10 @@
+--- sa-update.raw.orig	2025-08-27 06:17:52.000000000 -0700
++++ sa-update.raw	2026-08-12 11:20:04.390250000 -0700
+@@ -60,6 +60,7 @@
+ POSIX::setlocale(LC_TIME,'C');
+ 
+ BEGIN {                          # see comments in "spamassassin.raw" for doco
++  delete $ENV{'ENV'};
+   my @bin = File::Spec->splitpath($0);
+   my $bin = ($bin[0] ? File::Spec->catpath(@bin[0..1], '') : $bin[1])
+             || File::Spec->curdir;
