@@ -23,6 +23,8 @@ share/locale/he/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/he/LC_MESSAGES/kcm_fcitx5.mo
 share/locale/ja/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/ja/LC_MESSAGES/kcm_fcitx5.mo
+share/locale/ka/LC_MESSAGES/fcitx5-configtool.mo
+share/locale/ka/LC_MESSAGES/kcm_fcitx5.mo
 share/locale/ko/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/ko/LC_MESSAGES/kcm_fcitx5.mo
 share/locale/ru/LC_MESSAGES/fcitx5-configtool.mo
