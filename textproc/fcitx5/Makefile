@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5
-DISTVERSION=	5.1.17
+DISTVERSION=	5.1.21
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict
@@ -8,7 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	New implementation of the Fcitx IME framework
 WWW=		https://github.com/fcitx/fcitx5
 
@@ -52,7 +52,8 @@ X11_LIB_DEPENDS=	libxcb-ewmh.so:x11/xcb-util-wm \
 X11_RUN_DEPENDS=	xcb-imdkit>=1.0.3:x11/xcb-imdkit
 X11_CMAKE_BOOL=		ENABLE_X11
 
-WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
+WAYLAND_BUILD_DEPENDS=	plasma-wayland-protocols>=1.20:x11/plasma-wayland-protocols \
+			wayland-protocols>=1.46:graphics/wayland-protocols \
 			wayland-scanner:graphics/wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND
