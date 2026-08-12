@@ -1,10 +1,9 @@
 PORTNAME=	fcitx5-anthy
-DISTVERSION=	5.1.9
-PORTREVISION=	1
+DISTVERSION=	5.1.10
 CATEGORIES=	japanese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Anthy support for Fcitx5
 WWW=		https://github.com/fcitx/fcitx5-anthy
 
