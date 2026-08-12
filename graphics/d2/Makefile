@@ -1,7 +1,6 @@
 PORTNAME=	d2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
-PORTREVISION=	13
+DISTVERSION=	0.8.1
 CATEGORIES=	graphics
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		go:modules
-GO_MODULE=	github.com/terrastruct/d2
+GO_MODULE=	github.com/d2lang/d2
 
 PLIST_FILES=	bin/d2
 
