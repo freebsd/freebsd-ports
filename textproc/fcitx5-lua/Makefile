@@ -1,9 +1,9 @@
 PORTNAME=	fcitx5-lua
-DISTVERSION=	5.0.15
+DISTVERSION=	5.0.17
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Lua support for Fcitx5
 WWW=		https://github.com/fcitx/fcitx5-lua
 
