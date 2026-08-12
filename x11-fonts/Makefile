@@ -29,6 +29,7 @@
     SUBDIR += bitstream-vera
     SUBDIR += bitter
     SUBDIR += blackout
+    SUBDIR += bpmf-genryu
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += cascadia-code
