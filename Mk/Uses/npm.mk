@@ -94,7 +94,7 @@ _NPM_TEST_DEP=	yes
 _NPM_ARGS:=	${_NPM_ARGS:Ntest}
 .  endif
 # If no dependencies are specified, assume build and test are required
-.  if !defined(_NPM_FETCH_DEP) && !defied(_NPM_EXTRACT_DEP) && \
+.  if !defined(_NPM_FETCH_DEP) && !defined(_NPM_EXTRACT_DEP) && \
 	!defined(_NPM_BUILD_DEP) && !defined(_NPM_RUN_DEP) && \
 	!defined(_NPM_TEST_DEP)
 _NPM_BUILD_DEP=	yes
