@@ -1,5 +1,5 @@
 PORTNAME=	jotty-page
-DISTVERSION=	1.25.1
+DISTVERSION=	1.26.0
 CATEGORIES=	www
 
 MAINTAINER=	h2+fbsdports@fsfe.org
