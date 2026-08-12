@@ -3,6 +3,9 @@
 %%MANPAGES%%share/man/man1/glab-alias-set.1.gz
 %%MANPAGES%%share/man/man1/glab-alias.1.gz
 %%MANPAGES%%share/man/man1/glab-api.1.gz
+%%MANPAGES%%share/man/man1/glab-artifact-registry-get-token.1.gz
+%%MANPAGES%%share/man/man1/glab-artifact-registry-status.1.gz
+%%MANPAGES%%share/man/man1/glab-artifact-registry.1.gz
 %%MANPAGES%%share/man/man1/glab-attestation-verify.1.gz
 %%MANPAGES%%share/man/man1/glab-attestation.1.gz
 %%MANPAGES%%share/man/man1/glab-auth-configure-docker.1.gz
