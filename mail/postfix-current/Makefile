@@ -1,6 +1,6 @@
 PORTNAME=	postfix
-DISTVERSION=	3.12-20260706
-PORTREVISION?=	1
+DISTVERSION=	3.12-20260805
+PORTREVISION?=	0
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -136,8 +136,7 @@ SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=			sqlite
 TLSRPT_LIB_DEPENDS=		libtlsrpt.so:mail/libtlsrpt
 
-MONGOC_VERSION!=		cd ${.CURDIR}/../../devel/mongo-c-driver; \
-				make -V DISTVERSION
+MONGOC_VERSION!=		${MAKE} -C ${.CURDIR:H:H}/devel/mongo-c-driver -V DISTVERSION
 
 ALL_TARGET=	default
 
