@@ -1,9 +1,9 @@
 PORTNAME=	fcitx5-rime
-DISTVERSION=	5.1.12
+DISTVERSION=	5.1.14
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
-MAINTAINER=	khng@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	RIME support for Fcitx5
 WWW=		https://github.com/fcitx/fcitx5-rime
 
