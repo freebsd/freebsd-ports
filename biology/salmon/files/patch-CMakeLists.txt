@@ -1,5 +1,28 @@
---- CMakeLists.txt.orig	2025-07-26 11:52:41 UTC
+--- CMakeLists.txt.orig	2024-03-15 20:01:14 UTC
 +++ CMakeLists.txt
+@@ -19,16 +19,16 @@ if(NOT DEFINED USE_ARM)
+ 
+ # detect host architecture 
+ if(NOT DEFINED USE_ARM)
+-  if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(aarch64.*|AARCH64.*|arm64.*|ARM64.*)")
+-    message("Detected 64-bit ARM host. Setting USE_ARM to true.")
++  if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(x86_64|amd64|AMD64|i[3-6]86)$")
++    message("Detected x86 host. Setting USE_ARM to false.")
++    set(USE_ARM FALSE)
++    set(SCHAR_FLAG "")
++  else()
++    message("Detected non-x86 host. Setting USE_ARM to true.")
+     set(USE_ARM TRUE)
+     # set char to be signed
+     add_compile_options(-fsigned-char)
+     set(SCHAR_FLAG "-fsigned-char")
+-  else()
+-    message("Detected non-ARM host. Setting USE_ARM to false.")
+-    set(USE_ARM FALSE)
+-    set(SCHAR_FLAG "")
+   endif()
+ endif()
+ 
 @@ -310,14 +310,16 @@ endif()
  #  Grab pufferfish source --- DURING CONFIGURE TIME!
  #
