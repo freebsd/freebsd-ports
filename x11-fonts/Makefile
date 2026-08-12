@@ -39,6 +39,7 @@
     SUBDIR += bpmf-iansui
     SUBDIR += bpmf-special
     SUBDIR += bpmf-zihikai
+    SUBDIR += bpmf-zihisans
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += cascadia-code
