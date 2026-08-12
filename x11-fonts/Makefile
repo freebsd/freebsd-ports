@@ -31,6 +31,7 @@
     SUBDIR += blackout
     SUBDIR += bpmf-genryu
     SUBDIR += bpmf-genseki
+    SUBDIR += bpmf-gensen
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += cascadia-code
