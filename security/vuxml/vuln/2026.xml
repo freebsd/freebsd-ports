@@ -1,3 +1,56 @@
+  <vuln vid="2c73b6d5-971c-11f1-bdc8-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.2.0</ge><lt>19.2.2</lt></range>
+	<range><ge>19.1.0</ge><lt>19.1.4</lt></range>
+	<range><ge>12.0.0</ge><lt>19.0.6</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-2-released/?nav=19.2.2">
+	  <p>Cross-site Scripting issue in Analytics Dashboards table field configuration impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in Analytics Dashboards pagination controls impacts GitLab CE/EE GitLab</p>
+	  <p>Improper Authorization issue in CI/CD pipeline API impacts GitLab CE/EE</p>
+	  <p>Authorization Bypass issue in Duo Workflow Service impacts GitLab EE</p>
+	  <p>Cross-site Scripting issue in CI manual job confirmation modal impacts GitLab CE/E</p>
+	  <p>Missing Authorization issue in ProjectsController impacts GitLab EE</p>
+	  <p>Denial of Service issue in GraphQL API JSON parser impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in merge requests API impacts GitLab EE</p>
+	  <p>Missing Authorization issue in external status check API impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in npm dist-tags endpoint impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in GitLab Duo settings page impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in AI Tool Rules GraphQL resolver impacts GitLab EE</p>
+	  <p>Incorrect Privilege Assignment issue in custom roles impacts GitLab EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-15217</cvename>
+      <cvename>CVE-2026-15216</cvename>
+      <cvename>CVE-2026-15423</cvename>
+      <cvename>CVE-2026-19228</cvename>
+      <cvename>CVE-2026-16627</cvename>
+      <cvename>CVE-2026-16494</cvename>
+      <cvename>CVE-2026-7427</cvename>
+      <cvename>CVE-2026-6821</cvename>
+      <cvename>CVE-2026-4879</cvename>
+      <cvename>CVE-2026-8667</cvename>
+      <cvename>CVE-2026-18244</cvename>
+      <cvename>CVE-2026-18433</cvename>
+      <cvename>CVE-2025-9486</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-2-2-released/?nav=19.2.2</url>
+    </references>
+    <dates>
+      <discovery>2026-08-12</discovery>
+      <entry>2026-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4e5cc5f-d4bc-4f67-ad8e-0f6a9e37064f">
     <topic>chromium -- security fixes</topic>
     <affects>
