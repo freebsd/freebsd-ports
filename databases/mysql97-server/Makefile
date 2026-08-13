@@ -1,6 +1,6 @@
 PORTNAME?=		mysql
 PORTVERSION=		9.7.2
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-9.7
 PKGNAMESUFFIX?=		97-server
@@ -164,6 +164,8 @@ post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/keyring
 	${MKDIR} ${STAGEDIR}${MY_SECDIR}
 	${MKDIR} ${STAGEDIR}${MY_TMPDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MV} ${STAGEDIR}${PREFIX}/LICENSE.router ${STAGEDIR}${PREFIX}/README.router ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,3 @@
-LICENSE.router
-README.router
 bin/ibd2sdi
 bin/innochecksum
 bin/myisam_ftdump
@@ -181,6 +179,8 @@ lib/mysql/private/libprotobuf-lite.so.24.4.0
 lib/mysql/private/libprotobuf.so.24.4.0
 lib/mysql/libprotobuf-lite.so.24.4.0
 libexec/mysqld
+%%DOCSDIR%%/LICENSE.router
+%%DOCSDIR%%/README.router
 @comment share/man/man1/ibd2sdi.1.gz
 @comment share/man/man1/innochecksum.1.gz
 @comment share/man/man1/my_print_defaults.1.gz
