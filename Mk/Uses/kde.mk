@@ -5,6 +5,8 @@
 #
 # 5:		Depend on KDE Frameworks 5 components and variables.
 # 6:		Depend on KDE Frameworks 6 components and variables.
+#		The version may be omitted when all required components are
+#		indifferent to the Frameworks version, e.g. ecm or breeze-icons.
 #
 # Variables that can be set by a port:
 #
@@ -52,25 +54,33 @@
 .if !defined(_INCLUDE_USES_KDE_MK)
 _INCLUDE_USES_KDE_MK=	yes
 
-_KDE_SUPPORTED=		5 6
+# The first value must be the latest stable version of KDE Frameworks.
+_KDE_SUPPORTED=		6 5
 
-.  if empty(kde_ARGS)
-IGNORE=	kde needs a version (${_KDE_SUPPORTED})
-.  endif
+# List of shared components. The latest stable version will be used
+# if KDE Frameworks version is not specified.
+_USE_KDE_LATEST=	apidox breeze-icons ecm oxygen-sounds
 
 .  for ver in ${_KDE_SUPPORTED:O:u}
 .    if ${kde_ARGS:M${ver}}
 .      if !defined(_KDE_VERSION)
 _KDE_VERSION=	${ver}
 .      else
-IGNORE?=	cannot be installed: different KDE versions specified via kde:[${_KDE_SUPPORTED:S/ //g}] #'
+IGNORE?=	cannot be installed: different KDE Frameworks versions specified via kde:[${_KDE_SUPPORTED:S/ //g}] #'
 .      endif
 .    endif
 .  endfor
 
+# Allow ports to not specify KDE Frameworks version only for shared components
+# listed in _USE_KDE_LATEST.
 .  if empty(_KDE_VERSION)
-IGNORE?=	kde:[${_KDE_SUPPORTED:S/ //g}] needs an argument  #'
-.  else
+.    for component in ${USE_KDE:O:u:C/:.+//}
+.      if empty(_USE_KDE_LATEST:M${component})
+IGNORE?=	cannot be installed: KDE Frameworks version must be specified via kde:[${_KDE_SUPPORTED:S/ //g}] for USE_KDE=${component}
+.      endif
+.    endfor
+_KDE_VERSION=	${_KDE_SUPPORTED:[1]}
+.  endif
 
 _KDE_RELNAME=		KDE${_KDE_VERSION}
 
@@ -1055,5 +1065,4 @@ IGNORE=				cannot be installed: unknown USE_KDE component '${component}'
 .      endif # ${_USE_KDE_ALL:M${component}} != ""
 .    endfor
 
-.  endif
 .endif
