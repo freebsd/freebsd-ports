@@ -10,7 +10,7 @@ COMMENT=	Supplicant (client) for WPA/802.1x protocols
 WWW=		https://w1.fi/wpa_supplicant/
 
 DEPRECATED=	Unsupported by upstream
-EXPIRATION_DATE=2026-12-31
+EXPIRATION_DATE=2026-09-30
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README
