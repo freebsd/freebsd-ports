@@ -333,6 +333,11 @@ post-patch-SFLOW-on:
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
 
+pre-configure-LUA-on:
+	@${RM} -rf ${WRKSRC_lua}
+	@cd ${LOCALBASE}/share/nginx/modules/nginx-module-lua && \
+		${COPYTREE_SHARE} . ${WRKSRC_lua}
+
 pre-configure-LUASTREAM-on:
 	@${RM} -rf ${WRKSRC_luastream}
 	@cd ${LOCALBASE}/share/nginx/modules/lua-stream-nginx-module && \
