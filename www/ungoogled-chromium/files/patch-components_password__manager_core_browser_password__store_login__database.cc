@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_store/login_database.cc.orig	2026-06-05 13:45:06 UTC
+--- components/password_manager/core/browser/password_store/login_database.cc.orig	2026-08-13 07:41:05 UTC
 +++ components/password_manager/core/browser/password_store/login_database.cc
-@@ -1013,7 +1013,7 @@ bool ShouldDeleteUndecryptablePasswords(
+@@ -1015,7 +1015,7 @@ bool ShouldDeleteUndecryptablePasswords(
      bool is_enabled_by_policy,
      IsAccountStore is_account_store,
      const os_crypt_async::Encryptor* encryptor) {
@@ -9,7 +9,7 @@
    std::unique_ptr<base::Environment> environment(base::Environment::Create());
    // On Linux user data directory ca be specified using an env variable. If it
    // exists, passwords shouldn't be deleted.
-@@ -1027,7 +1027,7 @@ bool ShouldDeleteUndecryptablePasswords(
+@@ -1029,7 +1029,7 @@ bool ShouldDeleteUndecryptablePasswords(
      return false;
    }
  

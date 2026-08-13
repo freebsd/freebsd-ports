@@ -1,6 +1,6 @@
---- ui/base/x/x11_cursor_loader.cc.orig	2026-06-12 07:58:04 UTC
+--- ui/base/x/x11_cursor_loader.cc.orig	2026-08-13 07:41:05 UTC
 +++ ui/base/x/x11_cursor_loader.cc
-@@ -37,7 +37,7 @@
+@@ -39,7 +39,7 @@
  #include "ui/gfx/x/connection.h"
  #include "ui/gfx/x/xproto.h"
  
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -79,7 +79,11 @@ std::string CursorPathFromLibXcursor() {
+@@ -81,7 +81,11 @@ std::string CursorPathFromLibXcursor() {
      void operator()(void* ptr) const { dlclose(ptr); }
    };
  

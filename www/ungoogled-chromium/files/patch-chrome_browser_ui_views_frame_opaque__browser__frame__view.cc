@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2026-04-15 11:25:12 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2026-08-13 07:41:05 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
-@@ -58,7 +58,7 @@
+@@ -60,7 +60,7 @@
  #include "ui/views/window/vector_icons/vector_icons.h"
  #include "ui/views/window/window_shape.h"
  
@@ -9,7 +9,7 @@
  #include "ui/views/controls/menu/menu_runner.h"
  #endif
  
-@@ -588,7 +588,7 @@ bool OpaqueBrowserFrameView::IsFrameCondensed() const 
+@@ -599,7 +599,7 @@ bool OpaqueBrowserFrameView::IsFrameCondensed() const 
  
  OpaqueBrowserFrameView::FrameButtonStyle
  OpaqueBrowserFrameView::GetFrameButtonStyle() const {
@@ -18,7 +18,7 @@
    return FrameButtonStyle::kMdButton;
  #else
    return FrameButtonStyle::kImageButton;
-@@ -607,7 +607,7 @@ bool OpaqueBrowserFrameView::ShouldDrawRestoredFrameSh
+@@ -618,7 +618,7 @@ bool OpaqueBrowserFrameView::ShouldDrawRestoredFrameSh
    return false;
  }
  
@@ -27,7 +27,7 @@
  bool OpaqueBrowserFrameView::IsTiled() const {
    return browser_widget()->tiled();
  }
-@@ -848,7 +848,7 @@ gfx::Rect OpaqueBrowserFrameView::GetIconBounds() cons
+@@ -862,7 +862,7 @@ gfx::Rect OpaqueBrowserFrameView::GetIconBounds() cons
  }
  
  void OpaqueBrowserFrameView::WindowIconPressed() {

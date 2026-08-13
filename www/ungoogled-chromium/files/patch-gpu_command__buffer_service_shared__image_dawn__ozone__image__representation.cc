@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/dawn_ozone_image_representation.cc.orig	2026-05-09 18:09:27 UTC
+--- gpu/command_buffer/service/shared_image/dawn_ozone_image_representation.cc.orig	2026-08-13 07:41:05 UTC
 +++ gpu/command_buffer/service/shared_image/dawn_ozone_image_representation.cc
-@@ -193,6 +193,7 @@ void DawnOzoneImageRepresentation::EndAccess() {
+@@ -194,6 +194,7 @@ void DawnOzoneImageRepresentation::EndAccess() {
    if (!texture_) {
      return;
    }
@@ -8,7 +8,7 @@
    wgpu::SharedTextureMemoryEndAccessState end_access_desc = {};
    wgpu::SharedTextureMemoryVkImageLayoutEndState end_layout{};
    end_access_desc.nextInChain = &end_layout;
-@@ -240,6 +241,12 @@ void DawnOzoneImageRepresentation::EndAccess() {
+@@ -243,6 +244,12 @@ void DawnOzoneImageRepresentation::EndAccess() {
  
    texture_.Destroy();
    texture_ = nullptr;

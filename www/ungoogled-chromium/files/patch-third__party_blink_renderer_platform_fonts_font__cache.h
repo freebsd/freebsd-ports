@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2026-02-15 10:01:45 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2026-08-13 07:41:05 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.h
-@@ -53,7 +53,7 @@
+@@ -54,7 +54,7 @@
  #include "third_party/skia/include/core/SkFontMgr.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  
@@ -9,7 +9,7 @@
  #include "ui/gfx/font_fallback_linux.h"
  #endif
  
-@@ -150,7 +150,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -148,7 +148,7 @@ class PLATFORM_EXPORT FontCache final {
  
    static void MaybePreloadSystemFonts();
  
@@ -27,7 +27,7 @@
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -311,7 +311,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -323,7 +323,7 @@ class PLATFORM_EXPORT FontCache final {
    static int32_t status_font_height_;
  #endif  // BUILDFLAG(IS_WIN)
  

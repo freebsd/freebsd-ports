@@ -1,6 +1,6 @@
---- components/policy/core/common/cloud/cloud_policy_client.cc.orig	2026-03-15 18:32:51 UTC
+--- components/policy/core/common/cloud/cloud_policy_client.cc.orig	2026-08-13 07:41:05 UTC
 +++ components/policy/core/common/cloud/cloud_policy_client.cc
-@@ -849,11 +849,11 @@ void CloudPolicyClient::FetchPolicyInternal(
+@@ -852,11 +852,11 @@ void CloudPolicyClient::FetchPolicyInternal(
  
    // Build policy fetch requests.
    em::DevicePolicyRequest* policy_request = request->mutable_policy_request();

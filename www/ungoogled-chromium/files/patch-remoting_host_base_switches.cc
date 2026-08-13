@@ -1,6 +1,6 @@
---- remoting/host/base/switches.cc.orig	2026-05-09 18:09:27 UTC
+--- remoting/host/base/switches.cc.orig	2026-08-13 07:41:05 UTC
 +++ remoting/host/base/switches.cc
-@@ -24,13 +24,13 @@ const char kProcessTypeEvaluateCapability[] = "evaluat
+@@ -25,13 +25,13 @@ const char kProcessTypeEvaluateCapability[] = "evaluat
  const char kProcessTypeFileChooser[] = "file_chooser";
  const char kProcessTypeUrlForwarderConfigurator[] =
      "url_forwarder_configurator";

@@ -1,4 +1,4 @@
---- chrome/browser/ui/startup/url_util.cc.orig	2026-06-05 13:45:06 UTC
+--- chrome/browser/ui/startup/url_util.cc.orig	2026-08-13 07:41:05 UTC
 +++ chrome/browser/ui/startup/url_util.cc
 @@ -13,7 +13,7 @@
  #include "url/gurl.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/headless/headless_mode_util.h"
  #endif
  
-@@ -39,7 +39,7 @@ bool ValidateLaunchUrl(const GURL& url) {
+@@ -59,7 +59,7 @@ bool ValidateLaunchUrlWebUnsafe(const GURL& url) {
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
    bool url_scheme_is_chrome = false;

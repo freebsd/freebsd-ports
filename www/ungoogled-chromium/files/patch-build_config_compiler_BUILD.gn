@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2026-06-05 13:45:06 UTC
+--- build/config/compiler/BUILD.gn.orig	2026-08-13 07:41:05 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -203,7 +203,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
@@ -9,7 +9,7 @@
  
    # This switch is used to enable -Wexit-time-destructors by default. This
    # warning serves as a flip switch to allow a gradual migration of targets
-@@ -293,7 +293,7 @@ assert(is_bot ||
+@@ -284,7 +284,7 @@ assert(is_bot ||
  #
  # Since this is referenced both when passing the file and when deciding which
  # warnings to enable, store it in a separate variable here.
@@ -18,7 +18,7 @@
      is_clang && clang_warning_suppression_file != ""
  
  # default_include_dirs ---------------------------------------------------------
-@@ -311,13 +311,16 @@ config("default_include_dirs") {
+@@ -302,13 +302,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -36,7 +36,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -553,6 +556,10 @@ config("compiler") {
+@@ -541,6 +544,10 @@ config("compiler") {
      }
    }
  
@@ -47,19 +47,19 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (is_linux || is_chromeos) {
-@@ -588,9 +595,9 @@ config("compiler") {
-   if (is_clang) {
+@@ -577,9 +584,9 @@ config("compiler") {
      # Flags for diagnostics.
      cflags += [ "-fcolor-diagnostics" ]
--    if (!is_win) {
-+    if (!is_win && !is_bsd) {
-       cflags += [ "-fdiagnostics-show-inlining-chain" ]
--    } else {
-+    } else if (!is_bsd) {
-       # Combine after https://github.com/llvm/llvm-project/pull/192241
-       cflags += [ "/clang:-fdiagnostics-show-inlining-chain" ]
-     }
-@@ -615,7 +622,7 @@ config("compiler") {
+     if (!is_wasm) {
+-      if (!is_win) {
++      if (!is_win && !is_bsd) {
+         cflags += [ "-fdiagnostics-show-inlining-chain" ]
+-      } else {
++      } else if (!is_bsd) {
+         # Combine after https://github.com/llvm/llvm-project/pull/192241
+         cflags += [ "/clang:-fdiagnostics-show-inlining-chain" ]
+       }
+@@ -605,7 +612,7 @@ config("compiler") {
      }
    }
  
@@ -68,43 +68,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -1350,7 +1357,7 @@ config("compiler_cpu_abi") {
-     # CPU architecture. We may or may not be doing a cross compile now, so for
-     # simplicity we always explicitly set the architecture.
-     if (current_cpu == "x64") {
--      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
-+      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_bsd) {
-         cflags += [ "--target=x86_64-unknown-linux-gnu" ]
-         ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
-       } else {
-@@ -1364,7 +1371,7 @@ config("compiler_cpu_abi") {
-         ldflags += [ "-march=$cros_target_cpu_arch" ]
-       }
-     } else if (current_cpu == "x86") {
--      if (is_clang && !is_android && !is_chromeos_device) {
-+      if (is_clang && !is_android && !is_chromeos_device && !Is_bsd) {
-         cflags += [ "--target=i386-unknown-linux-gnu" ]
-         ldflags += [ "--target=i386-unknown-linux-gnu" ]
-       } else {
-@@ -1376,7 +1383,7 @@ config("compiler_cpu_abi") {
-         "-msse3",
-       ]
-     } else if (current_cpu == "arm") {
--      if (is_clang && !is_android && !is_chromeos_device) {
-+      if (is_clang && !is_android && !is_chromeos_device && !is_bsd) {
-         cflags += [ "--target=arm-linux-gnueabihf" ]
-         ldflags += [ "--target=arm-linux-gnueabihf" ]
-       }
-@@ -1385,7 +1392,7 @@ config("compiler_cpu_abi") {
-         "-mfloat-abi=$arm_float_abi",
-       ]
-     } else if (current_cpu == "arm64") {
--      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
-+      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_bsd) {
-         cflags += [ "--target=aarch64-linux-gnu" ]
-         ldflags += [ "--target=aarch64-linux-gnu" ]
-       }
-@@ -1797,7 +1804,7 @@ config("compiler_deterministic") {
+@@ -1464,7 +1471,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
@@ -113,34 +77,34 @@
        current_os != "zos") {
      _perform_consistency_checks = current_toolchain == default_toolchain
      if (llvm_force_head_revision) {
-@@ -1911,7 +1918,7 @@ config("clang_warning_suppression") {
+@@ -1578,7 +1585,7 @@ config("clang_warning_suppression") {
  # See also: https://crbug.com/40891132#comment10
  ubsan_hardening("c_array_bounds") {
    sanitizer = "array-bounds"
--  condition = !(is_asan && target_cpu == "x86")
-+  condition = !(is_bsd || (is_asan && target_cpu == "x86"))
+-  condition = !(is_asan && target_cpu == "x86") && !is_wasm
++  condition = !(is_asan && target_cpu == "x86") && !is_wasm && !is_bsd
  
    # Because we've enabled array-bounds sanitizing we also want to suppress
    # the related warning about "unsafe-buffer-usage-in-static-sized-array",
-@@ -1925,6 +1932,7 @@ ubsan_hardening("c_array_bounds") {
+@@ -1592,7 +1599,7 @@ ubsan_hardening("c_array_bounds") {
  # `NOTREACHED()` at the end of such functions.
  ubsan_hardening("return") {
    sanitizer = "return"
-+  condition = !is_bsd
+-  condition = !is_wasm
++  condition = !is_wasm && !is_bsd
  }
  
  config("rustc_revision") {
-@@ -2259,9 +2267,6 @@ config("default_warnings") {
- 
-       # TODO(crbug.com/432275627): Fix and re-enable.
-       "-Wno-uninitialized-const-pointer",
--
--      # TODO(crbug.com/495753203): Fix and re-enable.
--      "-Wno-unused-but-set-global",
+@@ -1929,7 +1936,7 @@ config("default_warnings") {
+       "-Wno-nontrivial-memcall",
      ]
  
-     cflags_cc += [
-@@ -3067,7 +3072,7 @@ config("afdo_optimize_size") {
+-    if (!is_wasm) {
++    if (!is_wasm && !is_bsd) {
+       cflags += [
+         # TODO(crbug.com/432275627): Fix and re-enable.
+         "-Wno-uninitialized-const-pointer",
+@@ -2755,7 +2762,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -149,7 +113,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -3094,7 +3099,7 @@ config("afdo") {
+@@ -2782,7 +2789,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
