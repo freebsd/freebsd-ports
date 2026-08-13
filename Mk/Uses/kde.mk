@@ -128,11 +128,11 @@ KDE_APPLICATIONS6_BRANCH?=	stable
 # Provide more variables to ease their maintenance.
 KDE_APPS_MAJOR=		${KDE_APPLICATIONS_VERSION:R:R}
 KDE_APPS_MINOR=		${KDE_APPLICATIONS_VERSION:R:E}
-.    if ${KDE_APPLICATIONS_BRANCH:Mstable}
+.  if ${KDE_APPLICATIONS_BRANCH:Mstable}
 KDE_APPS_MICRO=			0${KDE_APPLICATIONS_VERSION:E}
-.    else
+.  else
 KDE_APPS_MICRO=			${KDE_APPLICATIONS_VERSION:E}
-.    endif
+.  endif
 KDE_APPS_BASED_PATCHLEVEL?=	${KDE_APPS_MAJOR}${KDE_APPS_MINOR}${KDE_APPS_MICRO}
 
 # ==============================================================================
@@ -145,43 +145,43 @@ KDE_PREFIX=	${LOCALBASE}
 # === CATEGORIES HANDLING -- SETTING DEFAULT VALUES ============================
 # Doing MASTER_SITES magic based on the category of the port
 _KDE_CATEGORIES_SUPPORTED=	kde-applications kde-frameworks kde-plasma kde-devel
-.    for cat in ${_KDE_CATEGORIES_SUPPORTED:Nkde-devel}
-.      if ${CATEGORIES:M${cat}}
-.        if !defined(_KDE_CATEGORY)
+.  for cat in ${_KDE_CATEGORIES_SUPPORTED:Nkde-devel}
+.    if ${CATEGORIES:M${cat}}
+.      if !defined(_KDE_CATEGORY)
 _KDE_CATEGORY=	${cat}
-.        else
+.      else
 IGNORE?=	cannot be installed: multiple kde-<...> categories specified via CATEGORIES=${CATEGORIES} #'
-.        endif
 .      endif
-.    endfor
+.    endif
+.  endfor
 
 # Doing source-selection if the sources are on KDE invent
-.    if defined(KDE_INVENT)
+.  if defined(KDE_INVENT)
 _invent_hash=		${KDE_INVENT:[1]}
 _invent_category=	${KDE_INVENT:[2]}
 _invent_name=		${KDE_INVENT:[3]}
 
 # Fill in default values if bits are missing
-.      if empty(_invent_category)
+.    if empty(_invent_category)
 _invent_category=	${CATEGORIES:Nkde:[1]}
-.      endif
-.      if empty(_invent_name)
+.    endif
+.    if empty(_invent_name)
 _invent_name=		${PORTNAME}
-.      endif
+.    endif
 
 # If valid, use it for GitLab
-.      if empty(_invent_hash) || empty(_invent_category) || empty(_invent_name)
+.    if empty(_invent_hash) || empty(_invent_category) || empty(_invent_name)
 IGNORE?=		invalid KDE_INVENT value '${KDE_INVENT}'
-.      else
+.    else
 USE_GITLAB=		yes
 GL_SITE=		https://invent.kde.org
 GL_ACCOUNT=		${_invent_category}
 GL_PROJECT=		${_invent_name}
 GL_TAGNAME=		${_invent_hash}
-.      endif
 .    endif
+.  endif
 
-.    if defined(_KDE_CATEGORY)
+.  if defined(_KDE_CATEGORY)
 # KDE is normally licensed under the LGPL 2.0.
 LICENSE?=		LGPL20
 
@@ -190,7 +190,7 @@ LICENSE?=		LGPL20
 #    vendor is therefore kde.
 CPE_VENDOR?=		kde
 
-.      if ${_KDE_CATEGORY:Mkde-applications}
+.    if ${_KDE_CATEGORY:Mkde-applications}
 PORTVERSION?=		${KDE_APPLICATIONS_VERSION}
 MASTER_SITES?=		KDE/${KDE_APPLICATIONS_BRANCH}/release-service/${KDE_APPLICATIONS_VERSION}/src
 # Let bsd.port.mk create the plist-entries for the documentation.
@@ -199,54 +199,54 @@ MASTER_SITES?=		KDE/${KDE_APPLICATIONS_BRANCH}/release-service/${KDE_APPLICATION
 # defines OPTION DOCS -- the _KDE_OPTIONS here is to
 # avoid make errors when there are no options defined at all.
 _KDE_OPTIONS=		bogus ${OPTIONS_DEFINE}
-.        if ${_KDE_OPTIONS:MDOCS}
+.      if ${_KDE_OPTIONS:MDOCS}
 DOCSDIR=		${PREFIX}/share/doc
 PORTDOCS?=		HTML/*
 USE_KDE+=		doctools:build
-.        endif
+.      endif
 # Further pass along a SHLIB_VER PLIST_SUB
 PLIST_SUB+=		KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER} \
 			KDE_APPLICATIONS_VERSION_SHORT="${KDE_APPLICATIONS_VERSION:R:R}"
-.        if defined(_${PORTNAME}_PROJECT_VERSION)
+.      if defined(_${PORTNAME}_PROJECT_VERSION)
 PLIST_SUB+=		SHLIB_VER_LONG=${_${PORTNAME}_PROJECT_VERSION}.${KDE_APPS_BASED_PATCHLEVEL}
-.        endif
+.      endif
 DIST_SUBDIR?=		KDE/release-service/${KDE_APPLICATIONS_VERSION}
-.      elif ${_KDE_CATEGORY:Mkde-plasma}
+.    elif ${_KDE_CATEGORY:Mkde-plasma}
 PORTVERSION?=		${KDE_PLASMA_VERSION}
 PKGNAMEPREFIX?=		plasma${_KDE_VERSION}-
 MASTER_SITES?=		KDE/${KDE_PLASMA_BRANCH}/plasma/${KDE_PLASMA_VERSION}
 DIST_SUBDIR?=		KDE/plasma/${KDE_PLASMA_VERSION}
 WWW?=			https://kde.org/plasma-desktop/
-.        if ${_KDE_VERSION:M6}
+.      if ${_KDE_VERSION:M6}
 DESCR=			${.CURDIR:H:H}/x11/plasma6-plasma/pkg-descr
-.        endif
-.      elif ${_KDE_CATEGORY:Mkde-frameworks}
+.      endif
+.    elif ${_KDE_CATEGORY:Mkde-frameworks}
 PORTVERSION?=		${KDE_FRAMEWORKS_VERSION}
 PKGNAMEPREFIX?=		kf${_KDE_VERSION}-
 WWW?=			https://api.kde.org/${PORTNAME}-index.html
 # This is a slight duplication of _USE_PORTINGAIDS_ALL
 _PORTINGAIDS=		kjs kjsembed kdelibs4support kdesignerplugin khtml kmediaplayer kross kxmlrpcclient
-.        if ${_KDE_VERSION:M5}
-.          if ${_PORTINGAIDS:M*${PORTNAME}*}
+.      if ${_KDE_VERSION:M5}
+.        if ${_PORTINGAIDS:M*${PORTNAME}*}
 MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}/portingAids
-.          else
-MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}
-.          endif
 .        else
 MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}
 .        endif
+.      else
+MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}
+.      endif
 DIST_SUBDIR?=		KDE/frameworks/${KDE_FRAMEWORKS_VERSION}
-.        if ${_KDE_VERSION:M6}
+.      if ${_KDE_VERSION:M6}
 DIST_SUBDIR=		KDE/frameworks/${KDE_FRAMEWORKS_VERSION:R}
 DESCR=			${.CURDIR:H:H}/x11/kf6-frameworks/pkg-descr
-.        endif
-.        if ${_KDE_VERSION:M5}
-PORTSCOUT=	limit:^5\.
-.        endif
-.      else
-IGNORE?=		unknown CATEGORY value '${_KDE_CATEGORY}' #'
 .      endif
-.    endif #defined(_KDE_CATEGORY)
+.      if ${_KDE_VERSION:M5}
+PORTSCOUT=	limit:^5\.
+.      endif
+.    else
+IGNORE?=		unknown CATEGORY value '${_KDE_CATEGORY}' #'
+.    endif
+.  endif #defined(_KDE_CATEGORY)
 
 # ==============================================================================
 
@@ -266,9 +266,9 @@ KDE_MAN_PREFIX?=	${KDE_PREFIX}/share/man
 CMAKE_ARGS+=	-DQT_MAJOR_VERSION=${_QT_VER}
 
 # Disable autotests unless TEST_TARGET is defined.
-.    if !defined(TEST_TARGET)
+.  if !defined(TEST_TARGET)
 CMAKE_ARGS+=	-DBUILD_TESTING:BOOL=false
-.    endif
+.  endif
 # ==============================================================================
 
 # === SET UP PLIST_SUB =========================================================
@@ -1027,42 +1027,42 @@ kde-phonon-vlc_TYPE=	run
 _USE_KDE_ALL=	${_USE_${_KDE_RELNAME}_ALL}
 
 # Iterate through components deprived of suffix.
-.    for component in ${USE_KDE:O:u:C/:.+//}
+.  for component in ${USE_KDE:O:u:C/:.+//}
   # Check that the component is valid.
-.      if ${_USE_KDE_ALL:M${component}} != ""
+.    if ${_USE_KDE_ALL:M${component}} != ""
    # Skip meta-components (currently none).
-.        if defined(kde-${component}_PORT) && (defined(kde-${component}_PATH) || defined(kde-${component}_LIB))
+.      if defined(kde-${component}_PORT) && (defined(kde-${component}_PATH) || defined(kde-${component}_LIB))
     # Check if a dependency type is explicitly requested.
-.          if ${USE_KDE:M${component}\:*} != "" && ${USE_KDE:M${component}} == ""
+.        if ${USE_KDE:M${component}\:*} != "" && ${USE_KDE:M${component}} == ""
 kde-${component}_TYPE=	# empty
-.            if ${USE_KDE:M${component}\:build} != ""
+.          if ${USE_KDE:M${component}\:build} != ""
 kde-${component}_TYPE+=	build
-.            endif
-.            if ${USE_KDE:M${component}\:run} != ""
-kde-${component}_TYPE+=	run
-.            endif
-.          endif # ${USE_KDE:M${component}_*} != "" && ${USE_KDE:M${component}} == ""
-    # If no dependency type is set, default to full dependency.
-.          if !defined(kde-${component}_TYPE)
-kde-${component}_TYPE=	build run
 .          endif
+.          if ${USE_KDE:M${component}\:run} != ""
+kde-${component}_TYPE+=	run
+.          endif
+.        endif # ${USE_KDE:M${component}_*} != "" && ${USE_KDE:M${component}} == ""
+    # If no dependency type is set, default to full dependency.
+.        if !defined(kde-${component}_TYPE)
+kde-${component}_TYPE=	build run
+.        endif
     # Set real dependencies.
-.          if defined(kde-${component}_LIB) && ${kde-${component}_TYPE:Mbuild} && ${kde-${component}_TYPE:Mrun}
+.        if defined(kde-${component}_LIB) && ${kde-${component}_TYPE:Mbuild} && ${kde-${component}_TYPE:Mrun}
 LIB_DEPENDS+=			${kde-${component}_LIB}:${kde-${component}_PORT}
-.          else
+.        else
 kde-${component}_PATH?=		${KDE_PREFIX}/lib/${kde-${component}_LIB}
 kde-${component}_DEPENDS=	${kde-${component}_PATH}:${kde-${component}_PORT}
-.            if ${kde-${component}_TYPE:Mbuild} != ""
+.          if ${kde-${component}_TYPE:Mbuild} != ""
 BUILD_DEPENDS+=			${kde-${component}_DEPENDS}
-.            endif
-.            if ${kde-${component}_TYPE:Mrun} != ""
+.          endif
+.          if ${kde-${component}_TYPE:Mrun} != ""
 RUN_DEPENDS+=			${kde-${component}_DEPENDS}
-.            endif
-.          endif # ${kde-${component}_LIB} && ${kde-${component}_TYPE:Mbuild} && ${kde-${component}_TYPE:Mrun}
-.        endif # defined(kde-${component}_PORT) && defined(kde-${component}_PATH)
-.      else # ! ${_USE_KDE_ALL:M${component}} != ""
+.          endif
+.        endif # ${kde-${component}_LIB} && ${kde-${component}_TYPE:Mbuild} && ${kde-${component}_TYPE:Mrun}
+.      endif # defined(kde-${component}_PORT) && defined(kde-${component}_PATH)
+.    else # ! ${_USE_KDE_ALL:M${component}} != ""
 IGNORE=				cannot be installed: unknown USE_KDE component '${component}'
-.      endif # ${_USE_KDE_ALL:M${component}} != ""
-.    endfor
+.    endif # ${_USE_KDE_ALL:M${component}} != ""
+.  endfor
 
 .endif
