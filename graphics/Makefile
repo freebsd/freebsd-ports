@@ -1066,6 +1066,7 @@
     SUBDIR += py-spectra
     SUBDIR += py-sqlalchemy-imageattach
     SUBDIR += py-svg.path
+    SUBDIR += py-svg.py
     SUBDIR += py-svgelements
     SUBDIR += py-svgwrite
     SUBDIR += py-term-image

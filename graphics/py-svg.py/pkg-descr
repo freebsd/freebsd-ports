@@ -1,0 +1,4 @@
+svg.py is a type-safe library to generate SVG files with Python.
+All SVG elements and attributes are provided as Python classes with
+type annotations, which allows static analysis and editor
+auto-completion when building SVG documents programmatically.
