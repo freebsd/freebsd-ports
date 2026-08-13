@@ -1,8 +1,5 @@
 PORTNAME=	wordpress
-DISTVERSION=	7.0.3
-.ifdef WORDPRESS_LANG
-DISTVERSIONSUFFIX=	-${WORDPRESS_LANG}
-.endif
+PORTVERSION=	7.0.4
 PORTREVISION?=	0
 .ifndef WORDPRESS_LANG
 PORTEPOCH=	1
@@ -16,6 +13,7 @@ MASTER_SITES?=	https://${WORDPRESS_LANG}.wordpress.org/
 .ifdef WORDPRESS_LANG
 PKGNAMESUFFIX=	-${WORDPRESS_LANG}
 .endif
+DISTNAME=	wordpress-7.0.3${PKGNAMESUFFIX}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
@@ -27,8 +25,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
 
 USES=		cpe php:web
-.if ${DISTVERSION:N*.*.*}
-CPE_VERSION=	${DISTVERSION}.0
+.if ${PORTVERSION:N*.*.*}
+CPE_VERSION=	${PORTVERSION}.0
 .endif
 .ifdef WORDPRESS_LANG
 CPE_LANG=	${WORDPRESS_LANG}
