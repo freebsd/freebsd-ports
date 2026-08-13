@@ -1,5 +1,5 @@
 PORTNAME=	wheel
-PORTVERSION=	0.47.0
+PORTVERSION=	0.48.0
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=24.0:devel/py-packaging@${PY_FLAV
 USES=		cpe python
 CPE_VENDOR=	wheel_project
 USE_PYTHON=	allflavors autoplist concurrent pep517
-# tests: 62 passed
+# tests: 70 passed
 USE_PYTHON+=	pytest
 
 .if make(test)
