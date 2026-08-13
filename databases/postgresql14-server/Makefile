@@ -1,4 +1,4 @@
-DISTVERSION?=	14.23
+DISTVERSION?=	14.24
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
@@ -21,4 +21,4 @@ PG_USER?=	postgres
 PG_GROUP?=	postgres
 PG_UID?=	770
 
-.include "${.CURDIR}/../postgresql18-server/Makefile"
+.include "${.CURDIR}/../postgresql19-server/Makefile"
