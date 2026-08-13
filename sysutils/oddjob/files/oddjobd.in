@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: oddjobd
+# REQUIRE: dbus
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="oddjobd"
+desc="oddjob D-Bus privileged helper daemon"
+rcvar="oddjobd_enable"
+
+command="%%PREFIX%%/sbin/oddjobd"
+pidfile="/var/run/${name}.pid"
+command_args="-p ${pidfile}"
+
+load_rc_config "${name}"
+
+: ${oddjobd_enable:="NO"}
+
+run_rc_command "$1"

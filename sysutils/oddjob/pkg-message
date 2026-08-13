@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+oddjob installed a D-Bus system policy.  Reload the system message bus so
+oddjobd is allowed to claim its bus name:
+
+	service dbus reload
+
+To run the daemon standalone (FreeIPA starts it for you via ipactl):
+
+	sysrc oddjobd_enable=YES
+	service oddjobd start
+EOM
+}
+]
