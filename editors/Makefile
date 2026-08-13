@@ -293,6 +293,7 @@
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim
+    SUBDIR += vim-classic
     SUBDIR += vim-colorschemes-legacy
     SUBDIR += vim-lsp
     SUBDIR += vis

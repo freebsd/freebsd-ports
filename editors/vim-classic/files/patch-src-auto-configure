@@ -1,0 +1,48 @@
+--- src/auto/configure.orig	2025-05-10 17:54:52 UTC
++++ src/auto/configure
+@@ -936,7 +936,7 @@ localedir='${datarootdir}/locale'
+ psdir='${docdir}'
+ libdir='${exec_prefix}/lib'
+ localedir='${datarootdir}/locale'
+-mandir='${datarootdir}/man'
++mandir='${prefix}/man'
+ 
+ ac_prev=
+ ac_dashdash=
+@@ -5955,7 +5955,7 @@ else case e in #(
+ then :
+   printf %s "(cached) " >&6
+ else case e in #(
+-  e)  vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //'`  ;;
++  e)  vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //' | tr -d '/'`  ;;
+ esac
+ fi
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_lua_luajit" >&5
+@@ -6017,7 +6017,7 @@ else case e in #(
+ then :
+   printf %s "(cached) " >&6
+ else case e in #(
+-  e)  vi_cv_version_plain_lua=`${vi_cv_path_plain_lua} -e "print(_VERSION)" | sed 's/.* //'`  ;;
++  e)  vi_cv_version_plain_lua=`${vi_cv_path_plain_lua} -e "print(_VERSION)" | sed 's/.* //' | tr -d '.'`  ;;
+ esac
+ fi
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_plain_lua" >&5
+@@ -6138,7 +6138,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
+       LIBS=$libs_save
+     fi
+     if test "x$lua_ok" = "xyes"; then
+-      LUA_CFLAGS="-I${vi_cv_path_lua_pfx}/include${LUA_INC}"
++      LUA_CFLAGS="-I${LUA_INCDIR}"
+       LUA_SRC="if_lua.c"
+       LUA_OBJ="objects/if_lua.o"
+       LUA_PRO="if_lua.pro"
+@@ -6195,7 +6195,8 @@ printf "%s\n" "yes" >&6; }
+       printf "%s\n" "#define DYNAMIC_LUA 1" >>confdefs.h
+ 
+       LUA_LIBS=""
+-      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"${vi_cv_dll_name_lua}\\\" $LUA_CFLAGS"
++      vi_cv_version_lua=${LUA_VER}
++      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"liblua-${vi_cv_dll_name_lua}.so\\\" $LUA_CFLAGS"
+     fi
+     if test "X$LUA_CFLAGS$LUA_LIBS" != "X" && \
+        test "x$MACOS_X" = "xyes" && test "x$vi_cv_with_luajit" != "xno" && \
