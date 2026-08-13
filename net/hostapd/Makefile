@@ -1,6 +1,6 @@
 PORTNAME=	hostapd
 PORTVERSION=	2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://w1.fi/releases/
 
@@ -30,6 +30,7 @@ post-patch:
 		${BUILD_WRKSRC}/Makefile
 	@${SED} -e 's|/usr/local|${PREFIX}|g;s|^CONFIG_DRIVER_NL80211|#CONFIG_DRIVER_NL80211|' ${BUILD_WRKSRC}/defconfig \
 		>> ${WRKSRC}/hostapd/.config
+	@${ECHO_CMD} 'CONFIG_DRIVER_BSD=y' >> ${WRKSRC}/hostapd/.config
 	@${ECHO_CMD} 'CONFIG_L2_FREEBSD=y' >> ${WRKSRC}/hostapd/.config
 	@${ECHO_CMD} 'CONFIG_DNET_PCAP=y' >> ${WRKSRC}/hostapd/.config
 	@${ECHO_CMD} 'CONFIG_IEEE80211BE=y' >> ${WRKSRC}/hostapd/.config
