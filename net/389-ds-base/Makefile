@@ -1,6 +1,6 @@
 PORTNAME=	389-ds-base
 DISTVERSION=	3.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/389ds/389-ds-base/releases/download/${PORTNAME}-${DISTVERSION}/
 
@@ -29,8 +29,8 @@ LIB_DEPENDS=	libcrack.so:security/cracklib \
 		libpkg.so:ports-mgmt/pkg \
 		libsasl2.so:security/cyrus-sasl2
 
-USES=		autoreconf gmake ldap libtool localbase:ldflags perl5 pkgconfig \
-		python:3.12+ shebangfix ssl tar:bzip2
+USES=		autoreconf gmake gssapi:mit ldap libtool localbase:ldflags \
+		perl5 pkgconfig python:3.12+ shebangfix ssl tar:bzip2
 
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/dirsrv
 USE_PERL5=	run
