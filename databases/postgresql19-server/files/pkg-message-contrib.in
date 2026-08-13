@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+The PostgreSQL contrib utilities have been installed. Please see
+%%DOCSDIR%%/README-contrib
+for more information.
+EOM
+}
+]
