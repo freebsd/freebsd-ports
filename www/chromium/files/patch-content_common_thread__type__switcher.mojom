@@ -1,10 +1,11 @@
---- content/common/thread_type_switcher.mojom.orig	2025-04-04 08:52:13 UTC
+--- content/common/thread_type_switcher.mojom.orig	2026-08-12 09:02:10 UTC
 +++ content/common/thread_type_switcher.mojom
-@@ -10,6 +10,6 @@ import "mojo/public/mojom/base/thread_type.mojom";
- // occur in a child process due to its sandbox, e.g. on Linux and ChromeOS.
- interface ThreadTypeSwitcher {
-   // Asks the browser to change the type of thread.
--  SetThreadType(int32 platform_thread_id,
-+  SetThreadType(uint64 platform_thread_id,
-                 mojo_base.mojom.ThreadType thread_type);
+@@ -8,7 +8,7 @@ import "mojo/public/mojom/base/thread_type.mojom";
+ 
+ // A single thread type change request.
+ struct ThreadTypeChange {
+-  int32 platform_thread_id;
++  uint64 platform_thread_id;
+   mojo_base.mojom.ThreadType thread_type;
  };
+ 

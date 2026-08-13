@@ -1,5 +1,5 @@
---- components/supervised_user/core/browser/kids_chrome_management_url_checker_client.cc.orig	2026-03-13 06:02:14 UTC
-+++ components/supervised_user/core/browser/kids_chrome_management_url_checker_client.cc
+--- components/supervised_user/core/browser/supervised_user_url_checker_client.cc.orig	2026-08-12 09:02:10 UTC
++++ components/supervised_user/core/browser/supervised_user_url_checker_client.cc
 @@ -65,7 +65,7 @@ void OnResponse(
  
  FetcherConfig GetFetcherConfig(

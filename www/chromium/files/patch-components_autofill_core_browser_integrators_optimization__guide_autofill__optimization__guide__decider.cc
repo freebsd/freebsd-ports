@@ -1,6 +1,6 @@
---- components/autofill/core/browser/integrators/optimization_guide/autofill_optimization_guide_decider.cc.orig	2026-07-01 06:24:19 UTC
+--- components/autofill/core/browser/integrators/optimization_guide/autofill_optimization_guide_decider.cc.orig	2026-08-12 09:02:10 UTC
 +++ components/autofill/core/browser/integrators/optimization_guide/autofill_optimization_guide_decider.cc
-@@ -216,7 +216,7 @@ void AddOptimizationTypesForBnplIssuers(
+@@ -232,7 +232,7 @@ void AddOptimizationTypesForBnplIssuers(
      base::flat_set<optimization_guide::proto::OptimizationType>&
          optimization_types) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

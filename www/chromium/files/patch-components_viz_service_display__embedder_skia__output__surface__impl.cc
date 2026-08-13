@@ -1,6 +1,6 @@
---- components/viz/service/display_embedder/skia_output_surface_impl.cc.orig	2026-06-04 10:12:25 UTC
+--- components/viz/service/display_embedder/skia_output_surface_impl.cc.orig	2026-08-12 09:02:10 UTC
 +++ components/viz/service/display_embedder/skia_output_surface_impl.cc
-@@ -1537,7 +1537,7 @@ GrBackendFormat SkiaOutputSurfaceImpl::GetGrBackendFor
+@@ -1530,7 +1530,7 @@ GrBackendFormat SkiaOutputSurfaceImpl::GetGrBackendFor
                                          VK_IMAGE_TILING_OPTIMAL, vk_format,
                                          si_format, image_context->color_space(),
                                          image_context->ycbcr_info());

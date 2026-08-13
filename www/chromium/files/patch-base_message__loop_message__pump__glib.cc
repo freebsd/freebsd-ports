@@ -1,8 +1,8 @@
---- base/message_loop/message_pump_glib.cc.orig	2025-10-30 15:44:36 UTC
+--- base/message_loop/message_pump_glib.cc.orig	2026-08-12 09:02:10 UTC
 +++ base/message_loop/message_pump_glib.cc
-@@ -8,6 +8,11 @@
+@@ -7,6 +7,11 @@
+ #include <fcntl.h>
  #include <glib.h>
- #include <math.h>
  
 +#if BUILDFLAG(IS_BSD)
 +#include <pthread.h>
@@ -19,8 +19,8 @@
 +#if BUILDFLAG(IS_BSD)
 +  return pthread_main_np();
 +#else
-   auto pid = getpid();
-   auto tid = PlatformThread::CurrentId().raw();
+   pid_t pid = getpid();
+   pid_t tid = PlatformThread::CurrentId().raw();
    return pid > 0 && tid > 0 && pid == tid;
 +#endif
  }

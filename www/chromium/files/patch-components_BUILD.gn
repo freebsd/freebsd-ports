@@ -1,14 +1,14 @@
---- components/BUILD.gn.orig	2026-07-01 06:24:19 UTC
+--- components/BUILD.gn.orig	2026-08-12 09:02:10 UTC
 +++ components/BUILD.gn
 @@ -226,7 +226,6 @@ test("components_unittests") {
      "//components/contextual_search/internal:unit_tests",
      "//components/contextual_tasks:unit_tests",
      "//components/country_codes:unit_tests",
 -    "//components/crash/core/common:unit_tests",
+     "//components/critical_actions/core/browser:unit_tests",
      "//components/cross_device/logging:unit_tests",
      "//components/crx_file:unit_tests",
-     "//components/data_sharing:unit_tests",
-@@ -658,7 +657,7 @@ test("components_unittests") {
+@@ -662,7 +661,7 @@ test("components_unittests") {
        "//components/user_data_importer/content:unit_tests",
      ]
  
@@ -17,7 +17,7 @@
        deps += [
          "//components/crash/content/browser:unit_tests",
          "//components/crash/core/app:unit_tests",
-@@ -842,7 +841,7 @@ test("components_unittests") {
+@@ -852,7 +851,7 @@ test("components_unittests") {
      deps += [ "//components/constrained_window:unit_tests" ]
    }
  

@@ -1,4 +1,4 @@
---- remoting/base/crash/crashpad_database_manager.cc.orig	2026-07-01 06:24:19 UTC
+--- remoting/base/crash/crashpad_database_manager.cc.orig	2026-08-12 09:02:10 UTC
 +++ remoting/base/crash/crashpad_database_manager.cc
 @@ -24,7 +24,7 @@
  #if BUILDFLAG(IS_WIN)
@@ -27,7 +27,7 @@
  
  inline base::FilePath GetDaemonProcessCrashpadDatabasePath() {
    return GetVarLibDir().Append("crashpad.daemon");
-@@ -131,7 +131,7 @@ base::FilePath GetCrashpadDatabasePath() {
+@@ -138,7 +138,7 @@ base::FilePath GetCrashpadDatabasePath() {
      base::FilePath path;
      base::PathService::Get(base::BasePathKey::DIR_ASSETS, &path);
      return path.Append(kChromotingCrashpadDatabasePath);
@@ -36,7 +36,7 @@
      if (getuid() == 0) {
        return GetDaemonProcessCrashpadDatabasePath();
      }
-@@ -186,7 +186,7 @@ CrashpadDatabaseManager::CrashpadDatabaseManager(Logge
+@@ -196,7 +196,7 @@ CrashpadDatabaseManager::CrashpadDatabaseManager(Logge
  CrashpadDatabaseManager::~CrashpadDatabaseManager() = default;
  
  bool CrashpadDatabaseManager::InitializeCrashpadDatabase() {

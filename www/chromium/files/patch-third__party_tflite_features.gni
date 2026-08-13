@@ -1,6 +1,6 @@
---- third_party/tflite/features.gni.orig	2026-06-04 10:12:25 UTC
+--- third_party/tflite/features.gni.orig	2026-08-12 09:02:10 UTC
 +++ third_party/tflite/features.gni
-@@ -14,7 +14,7 @@ declare_args() {
+@@ -15,7 +15,7 @@ declare_args() {
    use_litert_tflite = false
  
    # This enables building TFLite with XNNPACK.

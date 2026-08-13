@@ -1,8 +1,8 @@
---- chrome/browser/flag_descriptions.h.orig	2026-07-29 11:06:49 UTC
+--- chrome/browser/flag_descriptions.h.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -8523,6 +8523,18 @@ inline constexpr char kEnableDlpFileSystemApiDescripti
-     "Enable DLP upload scan support for FileSystem API-backed cloud storage on "
-     "ChromeOS.";
+@@ -8551,6 +8551,18 @@ inline constexpr char kAntivirusTelemetryForDownloadsD
+     "Enables antivirus product info to be included in Safe Browsing download "
+     "pings.";
  
 +#if BUILDFLAG(IS_BSD)
 +inline constexpr char kAudioBackendName[] =

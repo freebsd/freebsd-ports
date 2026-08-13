@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/graphics/gpu/image_layer_bridge.cc.orig	2026-04-09 06:05:42 UTC
-+++ third_party/blink/renderer/platform/graphics/gpu/image_layer_bridge.cc
-@@ -45,7 +45,7 @@ scoped_refptr<StaticBitmapImage> MakeAccelerated(
+--- third_party/blink/renderer/modules/canvas/imagebitmap/image_bitmap_rendering_context.cc.orig	2026-08-12 09:02:10 UTC
++++ third_party/blink/renderer/modules/canvas/imagebitmap/image_bitmap_rendering_context.cc
+@@ -59,7 +59,7 @@ scoped_refptr<StaticBitmapImage> ImageBitmapRenderingC
      return source;
    }
  

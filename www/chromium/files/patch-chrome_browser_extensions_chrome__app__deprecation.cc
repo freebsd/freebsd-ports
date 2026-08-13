@@ -1,8 +1,8 @@
---- chrome/browser/web_applications/extensions/extension_status_utils.cc.orig	2026-04-09 06:05:42 UTC
-+++ chrome/browser/web_applications/extensions/extension_status_utils.cc
-@@ -93,7 +93,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
-   return prefs && prefs->IsExternalExtensionUninstalled(extension_id);
- }
+--- chrome/browser/extensions/chrome_app_deprecation.cc.orig	2026-08-12 09:02:10 UTC
++++ chrome/browser/extensions/chrome_app_deprecation.cc
+@@ -16,7 +16,7 @@ namespace testing {
+ bool g_enable_chrome_apps_for_testing = false;
+ }  // namespace testing
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

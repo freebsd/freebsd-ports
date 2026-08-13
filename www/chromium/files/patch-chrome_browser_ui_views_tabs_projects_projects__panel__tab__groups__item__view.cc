@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/projects/projects_panel_tab_groups_item_view.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/ui/views/tabs/projects/projects_panel_tab_groups_item_view.cc.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/ui/views/tabs/projects/projects_panel_tab_groups_item_view.cc
-@@ -249,7 +249,7 @@ void ProjectsPanelTabGroupsItemView::OnMouseEntered(
+@@ -247,7 +247,7 @@ void ProjectsPanelTabGroupsItemView::OnMouseEntered(
  
  void ProjectsPanelTabGroupsItemView::OnMouseExited(
      const ui::MouseEvent& event) {

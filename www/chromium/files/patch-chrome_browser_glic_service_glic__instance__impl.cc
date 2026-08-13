@@ -1,15 +1,15 @@
---- chrome/browser/glic/service/glic_instance_impl.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/glic/service/glic_instance_impl.cc.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/glic/service/glic_instance_impl.cc
-@@ -18,7 +18,7 @@
- #include "chrome/browser/actor/actor_keyed_service_factory.h"
- #include "chrome/browser/background/glic/glic_launcher_configuration.h"
- #include "chrome/browser/browser_process.h"
+@@ -72,7 +72,7 @@
+ #include "third_party/abseil-cpp/absl/functional/overload.h"
+ #include "ui/base/l10n/l10n_util.h"
+ 
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/enterprise/reporting/saas_usage/saas_usage_reporting_controller_factory.h"
  #endif
- #include "chrome/browser/glic/common/future_browser_features.h"
-@@ -132,7 +132,7 @@ EmbedderKey CreateSidePanelEmbedderKey(tabs::TabInterf
+ 
+@@ -139,7 +139,7 @@ EmbedderKey CreateSidePanelEmbedderKey(tabs::TabInterf
  
  enterprise_reporting::SaasUsageReportingController*
  GetSaasUsageReportingController(Profile* profile) {

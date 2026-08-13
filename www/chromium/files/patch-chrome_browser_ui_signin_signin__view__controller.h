@@ -1,6 +1,6 @@
---- chrome/browser/ui/signin/signin_view_controller.h.orig	2026-03-13 06:02:14 UTC
+--- chrome/browser/ui/signin/signin_view_controller.h.orig	2026-08-12 09:02:10 UTC
 +++ chrome/browser/ui/signin/signin_view_controller.h
-@@ -171,7 +171,7 @@ class SigninViewController {
+@@ -177,7 +177,7 @@ class SigninViewController {
    void ShowModalSyncConfirmationDialog(bool is_signin_intercept,
                                         bool is_sync_promo);
  

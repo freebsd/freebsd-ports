@@ -1,6 +1,6 @@
---- third_party/pdfium/pdfium.gni.orig	2026-04-09 06:05:42 UTC
+--- third_party/pdfium/pdfium.gni.orig	2026-08-12 09:02:10 UTC
 +++ third_party/pdfium/pdfium.gni
-@@ -42,7 +42,7 @@ declare_args() {
+@@ -45,7 +45,7 @@ declare_args() {
    # PDFium will use PartitionAlloc partitions to separate strings, scalars,
    # etc. from other allocations. However, the use of PartitionAlloc for new or
    # malloc is controlled by args in build_overrides/partition_alloc.gni.

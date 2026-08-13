@@ -1,5 +1,5 @@
---- remoting/tools/magi-mode/tests/testdata/mock_app.cc.orig	2026-07-01 06:24:19 UTC
-+++ remoting/tools/magi-mode/tests/testdata/mock_app.cc
+--- agents/skills/magi-mode/tests/testdata/mock_app.cc.orig	2026-08-12 09:02:10 UTC
++++ agents/skills/magi-mode/tests/testdata/mock_app.cc
 @@ -14,7 +14,7 @@
  #include "file_manager_win.h"
  #endif
