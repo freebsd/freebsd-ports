@@ -289,6 +289,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
 		rfc6979-0.4.0 \
+		rs-release-0.1.11 \
 		rsa-0.9.10 \
 		rustc-demangle-0.1.27 \
 		rustc-hash-1.1.0 \
