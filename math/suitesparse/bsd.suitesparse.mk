@@ -4,7 +4,7 @@
 
 PKGNAMEPREFIX=	suitesparse-
 SSPNAME=	suitesparse
-SSPVERSION=	7.12.3
+SSPVERSION=	7.13.0
 DISTVERSIONPREFIX=	v
 
 MAINTAINER=	fortran@FreeBSD.org
