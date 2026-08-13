@@ -10,6 +10,7 @@ bin/wasm-opt
 bin/wasm-reduce
 bin/wasm-shell
 bin/wasm-split
+bin/wasm2c
 bin/wasm2js
 include/binaryen-c.h
 include/wasm-delegations.def
