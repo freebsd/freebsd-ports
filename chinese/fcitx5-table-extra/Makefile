@@ -1,5 +1,6 @@
 PORTNAME=	fcitx5-table-extra
 DISTVERSION=	5.1.12
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
@@ -13,9 +14,9 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
 		libIMETable.so:chinese/libime
 
-USES=		cmake gettext-tools kde:5 tar:zst
+USES=		cmake gettext-tools kde tar:zst
 
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 
 INSTALL_TARGET=	install
 

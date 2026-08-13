@@ -1,5 +1,6 @@
 PORTNAME=	fcitx5-mcbopomofo
 DISTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -14,12 +15,12 @@ LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
 		libicuuc.so:devel/icu \
 		libjson-c.so:devel/json-c
 
-USES=		cmake compiler:c++17-lang gettext-tools kde:5 pkgconfig
+USES=		cmake compiler:c++17-lang gettext-tools kde pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openvanilla
 
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 
 CMAKE_OFF=	ENABLE_TEST
 

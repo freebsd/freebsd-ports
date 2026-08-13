@@ -55,7 +55,7 @@ WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 			wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 WAYLAND_RUN_DEPENDS=	libxkbcommon>0:x11/libxkbcommon
-WAYLAND_USES=		kde:5 pkgconfig
+WAYLAND_USES=		kde pkgconfig
 WAYLAND_USE=		KDE=ecm:build
 WAYLAND_CMAKE_BOOL=	GLFW_BUILD_WAYLAND
 

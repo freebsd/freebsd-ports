@@ -56,7 +56,7 @@ NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
 
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-WAYLAND_USES=		kde:5
+WAYLAND_USES=		kde
 WAYLAND_USE=		KDE=ecm:build
 WAYLAND_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Wayland:BOOL=ON
 

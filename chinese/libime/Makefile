@@ -1,5 +1,6 @@
 PORTNAME=	libime
 DISTVERSION=	1.1.15
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:opengram_lm,opengram_dict,table_dict
@@ -18,14 +19,14 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libFcitx5Utils.so:textproc/fcitx5
 
-USES=		cmake compiler:c++17-lang kde:5 pkgconfig tar:zst
+USES=		cmake compiler:c++17-lang kde pkgconfig tar:zst
 
 PLIST_SUB=	VER=${PORTVERSION} \
 		VER_MAJOR=${PORTVERSION:R:R}
 
 USE_LDCONFIG=	yes
 
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 
 CMAKE_OFF=	ENABLE_TEST
 MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE

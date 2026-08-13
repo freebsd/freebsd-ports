@@ -1,5 +1,6 @@
 PORTNAME=	fcitx5-rime
 DISTVERSION=	5.1.14
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
@@ -15,10 +16,10 @@ LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
 		librime.so:chinese/librime
 RUN_DEPENDS=	${_SCHEMA_DEPENDS}
 
-USES=		cmake compiler:c++17-lang gettext-tools kde:5 localbase \
+USES=		cmake compiler:c++17-lang gettext-tools kde localbase \
 		pkgconfig tar:zst
 
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 
 CONFLICTS_INSTALL=	zh-fcitx-rime # share/icons/hicolor/48x48/apps/fcitx-rime-deploy.png
 

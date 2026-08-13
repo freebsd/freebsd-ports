@@ -1,5 +1,6 @@
 PORTNAME=	fcitx5
 DISTVERSION=	5.1.21
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict
@@ -28,7 +29,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 
 # gettext-tools for both build-time hard requirement and Fcitx5 helper shell scripts
 USES=		cmake compiler:c++20-lang gettext-runtime \
-		gettext-tools:build,run gnome kde:5 pkgconfig tar:zst
+		gettext-tools:build,run gnome kde pkgconfig tar:zst
 
 CXXFLAGS+=	-fexperimental-library
 
@@ -67,7 +68,7 @@ CMAKE_OFF=	ENABLE_TEST
 MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 
 USE_GNOME=	cairo gdkpixbuf glib20 pango
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 
 USE_LDCONFIG=	yes
 

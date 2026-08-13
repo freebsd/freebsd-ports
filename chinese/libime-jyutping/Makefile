@@ -1,5 +1,6 @@
 PORTNAME=	libime-jyutping
 DISTVERSION=	1.0.17
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict,model
@@ -21,14 +22,14 @@ LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libIMECore.so:chinese/libime
 RUN_DEPENDS=	${LOCALBASE}/lib/fcitx5/libpunctuation.so:chinese/fcitx5-chinese-addons
 
-USES=		cmake compiler:c++17-lang gettext-tools kde:5 localbase \
+USES=		cmake compiler:c++17-lang gettext-tools kde localbase \
 		pkgconfig tar:zst
 
 PLIST_SUB=	VER=${PORTVERSION}
 
 USE_LDCONFIG=	yes
 
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 
 CMAKE_ON=	ENABLE_ENGINE
 CMAKE_OFF=	ENABLE_DOC ENABLE_TEST
