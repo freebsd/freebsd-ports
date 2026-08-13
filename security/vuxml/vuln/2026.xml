@@ -1,3 +1,157 @@
+  <vuln vid="a4e5cc5f-d4bc-4f67-ad8e-0f6a9e37064f">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>151.0.7922.137</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>151.0.7922.137</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/08/stable-channel-update-for-desktop_01815628406.html">
+	 <p>This update includes 5 security fixes:</p>
+	 <ul>
+	    <li>[535000102] High CVE-2026-19556: Use after free in V8.</li>
+	    <li>[534867485] High CVE-2026-19557: Use after free in TabStrip.</li>
+	    <li>[536676756] High CVE-2026-19558: Use after free in Extensions.</li>
+	    <li>[540100588] High CVE-2026-19559: Use after free in HTML.</li>
+	    <li>[540482895] High CVE-2026-19560: Use after free in Blink.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-19556</cvename>
+      <cvename>CVE-2026-19557</cvename>
+      <cvename>CVE-2026-19558</cvename>
+      <cvename>CVE-2026-19559</cvename>
+      <cvename>CVE-2026-19560</cvename>
+      <url>https://chromereleases.googleblog.com/2026/08/stable-channel-update-for-desktop_01815628406.html</url>
+    </references>
+    <dates>
+      <discovery>2026-08-11</discovery>
+      <entry>2026-08-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8acd79a5-35ee-4076-b107-3550bbd7d118">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>151.0.7922.108</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>151.0.7922.108</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/08/stable-channel-update-for-desktop_01193673229.html">
+	 <p>This update includes 41 security fixes:</p>
+	 <ul>
+	    <li>[499602793] Critical CVE-2026-19137: Use after free in WebGL.</li>
+	    <li>[524824288] Critical CVE-2026-19149: Use after free in ura.</li>
+	    <li>[532941869] Critical CVE-2026-19154: Use after free in Skia.</li>
+	    <li>[534903095] Critical CVE-2026-19157: Out of bounds write in GLE.</li>
+	    <li>[537729021] Critical CVE-2026-19170: Use after free in WebGL.</li>
+	    <li>[537838324] Critical CVE-2026-19172: Use after free in Views.</li>
+	    <li>[537390933] High CVE-2026-19169: Insufficient validation of untrusted input in Contextual Tasks.</li>
+	    <li>[536945254] High CVE-2026-19168: Inappropriate implementation in V8.</li>
+	    <li>[500097298] High CVE-2026-19138: Heap buffer overflow in CrashReporting.</li>
+	    <li>[511731805] High CVE-2026-19139: Race in CredentialProvider.</li>
+	    <li>[513044017] High CVE-2026-19140: Use after free in GPU.</li>
+	    <li>[513602949] High CVE-2026-19141: Use after free in Resources.</li>
+	    <li>[515428251] High CVE-2026-19142: Use after free in Views.</li>
+	    <li>[517772612] High CVE-2026-19143: Insufficient validation of untrusted input in WebPKs.</li>
+	    <li>[520167277] High CVE-2026-19144: Use after free in HTML.</li>
+	    <li>[521878431] High CVE-2026-19145: Use after free in Translate.</li>
+	    <li>[523713150] High CVE-2026-19146: Uninitialized Use in GPU.</li>
+	    <li>[524439798] High CVE-2026-19147: Use after free in ura.</li>
+	    <li>[524460000] High CVE-2026-19148: Out of bounds write in GPU.</li>
+	    <li>[526380803] High CVE-2026-19150: Inappropriate implementation in V8.</li>
+	    <li>[530663440] High CVE-2026-19151: Use after free in V8.</li>
+	    <li>[531165110] High CVE-2026-19152: Inappropriate implementation in avigation.</li>
+	    <li>[532939327] High CVE-2026-19153: Insufficient validation of untrusted input in Workers.</li>
+	    <li>[533053621] High CVE-2026-19155: Use after free in Payments.</li>
+	    <li>[533331920] High CVE-2026-19156: Heap buffer overflow in Base.</li>
+	    <li>[535749174] High CVE-2026-19158: Use after free in Views.</li>
+	    <li>[536067175] High CVE-2026-19159: Use after free in Views.</li>
+	    <li>[536068737] High CVE-2026-19160: Uninitialized Use in Skia.</li>
+	    <li>[536165038] High CVE-2026-19161: Uninitialized Use in Skia.</li>
+	    <li>[536271629] High CVE-2026-19162: Out of bounds write in V8.</li>
+	    <li>[536449742] High CVE-2026-19163: Use after free in Media.</li>
+	    <li>[536470854] High CVE-2026-19164: Insufficient validation of untrusted input in Codecs.</li>
+	    <li>[536512612] High CVE-2026-19165: Use after free in Extensions.</li>
+	    <li>[536584251] High CVE-2026-19166: Use after free in Web uthentication.</li>
+	    <li>[536666274] High CVE-2026-19167: Integer overflow in GPU.</li>
+	    <li>[537832446] High CVE-2026-19171: Use after free in Media.</li>
+	    <li>[538332338] High CVE-2026-19173: Out of bounds write in Skia.</li>
+	    <li>[538378084] High CVE-2026-19174: Integer overflow in V8.</li>
+	    <li>[540138836] High CVE-2026-19175: Use after free in Payments.</li>
+	    <li>[540157141] High CVE-2026-19176: Use after free in Skia.</li>
+	    <li>[540289900] High CVE-2026-19177: Insufficient validation of untrusted input in UI.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-19137</cvename>
+      <cvename>CVE-2026-19149</cvename>
+      <cvename>CVE-2026-19154</cvename>
+      <cvename>CVE-2026-19157</cvename>
+      <cvename>CVE-2026-19170</cvename>
+      <cvename>CVE-2026-19172</cvename>
+      <cvename>CVE-2026-19169</cvename>
+      <cvename>CVE-2026-19168</cvename>
+      <cvename>CVE-2026-19138</cvename>
+      <cvename>CVE-2026-19139</cvename>
+      <cvename>CVE-2026-19140</cvename>
+      <cvename>CVE-2026-19141</cvename>
+      <cvename>CVE-2026-19142</cvename>
+      <cvename>CVE-2026-19143</cvename>
+      <cvename>CVE-2026-19144</cvename>
+      <cvename>CVE-2026-19145</cvename>
+      <cvename>CVE-2026-19146</cvename>
+      <cvename>CVE-2026-19147</cvename>
+      <cvename>CVE-2026-19148</cvename>
+      <cvename>CVE-2026-19150</cvename>
+      <cvename>CVE-2026-19151</cvename>
+      <cvename>CVE-2026-19152</cvename>
+      <cvename>CVE-2026-19153</cvename>
+      <cvename>CVE-2026-19155</cvename>
+      <cvename>CVE-2026-19156</cvename>
+      <cvename>CVE-2026-19158</cvename>
+      <cvename>CVE-2026-19159</cvename>
+      <cvename>CVE-2026-19160</cvename>
+      <cvename>CVE-2026-19161</cvename>
+      <cvename>CVE-2026-19162</cvename>
+      <cvename>CVE-2026-19163</cvename>
+      <cvename>CVE-2026-19164</cvename>
+      <cvename>CVE-2026-19165</cvename>
+      <cvename>CVE-2026-19166</cvename>
+      <cvename>CVE-2026-19167</cvename>
+      <cvename>CVE-2026-19171</cvename>
+      <cvename>CVE-2026-19173</cvename>
+      <cvename>CVE-2026-19174</cvename>
+      <cvename>CVE-2026-19175</cvename>
+      <cvename>CVE-2026-19176</cvename>
+      <cvename>CVE-2026-19177</cvename>
+      <url>https://chromereleases.googleblog.com/2026/08/stable-channel-update-for-desktop_01193673229.html</url>
+    </references>
+    <dates>
+      <discovery>2026-08-06</discovery>
+      <entry>2026-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a691536-968b-11f1-9863-50ebf6bdf8e9">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
