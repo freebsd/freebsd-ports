@@ -1,7 +1,6 @@
 bin/js%%SP_VER%%
 bin/js%%SP_VER%%-config
 include/mozjs-%%SP_VER%%/PHC.h
-include/mozjs-%%SP_VER%%/ProfilingCategoryList.h
 include/mozjs-%%SP_VER%%/double-conversion/double-conversion.h
 include/mozjs-%%SP_VER%%/double-conversion/double-to-string.h
 include/mozjs-%%SP_VER%%/double-conversion/string-to-double.h
@@ -75,11 +74,11 @@ include/mozjs-%%SP_VER%%/js/NativeStackLimits.h
 include/mozjs-%%SP_VER%%/js/Object.h
 include/mozjs-%%SP_VER%%/js/ObjectWithStashedPointer.h
 include/mozjs-%%SP_VER%%/js/Prefs.h
+include/mozjs-%%SP_VER%%/js/PrefsGenerated.h
 include/mozjs-%%SP_VER%%/js/Principals.h
 include/mozjs-%%SP_VER%%/js/Printer.h
 include/mozjs-%%SP_VER%%/js/Printf.h
 include/mozjs-%%SP_VER%%/js/ProfilingCategory.h
-include/mozjs-%%SP_VER%%/js/ProfilingCategoryList.h
 include/mozjs-%%SP_VER%%/js/ProfilingFrameIterator.h
 include/mozjs-%%SP_VER%%/js/ProfilingSources.h
 include/mozjs-%%SP_VER%%/js/ProfilingStack.h
@@ -285,6 +284,7 @@ include/mozjs-%%SP_VER%%/mozilla/ProfileBufferEntrySerialization.h
 include/mozjs-%%SP_VER%%/mozilla/ProfileBufferIndex.h
 include/mozjs-%%SP_VER%%/mozilla/ProfileChunkedBuffer.h
 include/mozjs-%%SP_VER%%/mozilla/ProfileChunkedBufferDetail.h
+include/mozjs-%%SP_VER%%/mozilla/ProfilingCategoryList.h
 include/mozjs-%%SP_VER%%/mozilla/ProfilerBufferSize.h
 include/mozjs-%%SP_VER%%/mozilla/ProfilerPlatformMacros.h
 include/mozjs-%%SP_VER%%/mozilla/ProgressLogger.h
@@ -428,6 +428,8 @@ include/mozjs-%%SP_VER%%/mozilla/intl/calendar/ICU4XDangiCalendar.h
 include/mozjs-%%SP_VER%%/mozilla/intl/calendar/ICU4XUniquePtr.h
 include/mozjs-%%SP_VER%%/mozilla/intl/calendar/ISODate.h
 include/mozjs-%%SP_VER%%/mozilla/intl/calendar/MonthCode.h
+include/mozjs-%%SP_VER%%/mozilla/intl/collator_glue.h
+include/mozjs-%%SP_VER%%/mozilla/intl/unicode_bidi_ffi_generated.h
 include/mozjs-%%SP_VER%%/mozilla/leb128iterator.h
 include/mozjs-%%SP_VER%%/mozilla/mozalloc.h
 include/mozjs-%%SP_VER%%/mozilla/mozalloc_abort.h
