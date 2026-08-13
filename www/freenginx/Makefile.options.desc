@@ -89,6 +89,7 @@ MEMC_DESC=			3rd party memc (memcached) module
 MODSECURITY3_DESC=		3rd party modsecurity3 module
 NAXSI_DESC=			3rd party naxsi module
 NJS_DESC=			Enable javascript (NJS) module
+NJS_QJS_DESC=			Enable QuickJS engine in NJS module
 NJS_XML_DESC=			Enable XML functionality in NJS module
 OTEL_DESC=			Enable OpenTELemetry module
 PASSENGER_DESC=			3rd party passenger module
