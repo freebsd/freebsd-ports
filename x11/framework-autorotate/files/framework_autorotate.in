@@ -1,0 +1,143 @@
+#!/bin/sh
+
+# PROVIDE: framework_autorotate
+# REQUIRE: LOGIN
+# KEYWORD: nojail shutdown
+#
+# Framework Laptop 12 autorotate (Chrome EC accel + TBMD -> RandR/CTM).
+# Safe with XDM greeter.  KDE/GNOME/XFCE typically need no chrome hook;
+# optional ~/.framework_autorotate is opt-in (e.g. FVWM taskbar refresh).
+#
+# Enable in /etc/rc.conf:
+#	framework_autorotate_enable="YES"
+#
+# Mode (always vs tablet-gated):
+#	framework_autorotate_mode="always"	# default: rotate whenever accel says
+#	framework_autorotate_mode="tablet"	# only while EC TBMD=1; else normal
+#
+# Optional:
+#	framework_autorotate_display=":0"
+#	framework_autorotate_hook=".framework_autorotate"	# under $HOME
+#	framework_autorotate_flags=""
+#	framework_autorotate_xlogin_recenter="%%PREFIX%%/libexec/framework_autorotate/xlogin_recenter"
+#	framework_autorotate_logfile="/var/log/framework_autorotate.log"	# opt-in; empty = no log
+#
+# Chrome-hook login is always auto-detected (non-root X client; FvwmMFL
+# owner if present).
+#
+# Per-user chrome hook (~/.framework_autorotate), spirit of .xinitrc:
+# if that file exists in the logged-in user's home, it is run after each
+# rotate as that user with CHROME_WIDTH / CHROME_HEIGHT /
+# FRAMEWORK_AUTOROTATE_ROTATION set.  Absent = no-op (usual for KDE/GNOME/XFCE).
+#
+# daemon(8) note: -p/-o/-P enable supervision mode.  The pidfile must track
+# the *supervisor* (-P), not the child (-p).  With -p, stop waits for the
+# child then start races the still-locked supervisor -> "already running"
+# and status says not running (child gone, lock remains).
+#
+
+. /etc/rc.subr
+
+name="framework_autorotate"
+rcvar=framework_autorotate_enable
+desc="Framework Laptop 12 display autorotate"
+
+load_rc_config $name
+
+: ${framework_autorotate_enable:=NO}
+: ${framework_autorotate_mode:=always}
+: ${framework_autorotate_display:=:0}
+: ${framework_autorotate_hook:=.framework_autorotate}
+: ${framework_autorotate_flags:=}
+: ${framework_autorotate_xlogin_recenter:=%%PREFIX%%/libexec/framework_autorotate/xlogin_recenter}
+: ${framework_autorotate_logfile:=}
+
+pidfile="/var/run/${name}.pid"
+# Supervisor is what holds the pidfile lock under daemon(8) -P.
+procname="/usr/sbin/daemon"
+command="/usr/sbin/daemon"
+framework_autorotate_bin="%%PREFIX%%/sbin/framework_autorotate"
+start_precmd="${name}_prestart"
+start_cmd="${name}_start"
+
+framework_autorotate_prestart()
+{
+	if [ ! -x "$framework_autorotate_bin" ]; then
+		err 1 "$framework_autorotate_bin not installed"
+	fi
+	case "$framework_autorotate_mode" in
+	always|tablet) : ok ;;
+	*)
+		err 1 "framework_autorotate_mode must be always or tablet"
+		;;
+	esac
+	if [ ! -c /dev/io ]; then
+		warn "/dev/io missing; autorotate needs io privilege"
+	fi
+}
+
+framework_autorotate_start()
+{
+	local auth
+
+	#
+	# XDM often starts from ttys after LOGIN.  The daemon itself pauses
+	# until DISPLAY is ready; pick the newest :0 cookie if present.
+	# Chrome-hook login is resolved per-rotate inside the binary.
+	#
+	auth=$( ls -t /var/db/xdm/authdir/authfiles/A:0-* 2> /dev/null |
+	    head -1 )
+
+	# -P: supervisor PID in pidfile (rc.subr stop/status target).
+	# -t: setproctitle for admin visibility.
+	# -o: opt-in log capture only when framework_autorotate_logfile is set.
+	# -v on the binary likewise only when logging (otherwise discarded).
+	if [ -n "$framework_autorotate_logfile" ]; then
+		/usr/sbin/daemon -f -P "$pidfile" -t framework_autorotate \
+		    -o "$framework_autorotate_logfile" \
+		    /usr/bin/env \
+		    DISPLAY="$framework_autorotate_display" \
+		    ${auth:+XAUTHORITY="$auth"} \
+		    FRAMEWORK_AUTOROTATE_HOOK_NAME="$framework_autorotate_hook" \
+		    FRAMEWORK_AUTOROTATE_XLOGIN_RECENTER="$framework_autorotate_xlogin_recenter" \
+		    PATH="/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/sbin:%%PREFIX%%/bin" \
+		    "$framework_autorotate_bin" -i 500 -m "$framework_autorotate_mode" -v \
+		    $framework_autorotate_flags
+	else
+		/usr/sbin/daemon -f -P "$pidfile" -t framework_autorotate \
+		    /usr/bin/env \
+		    DISPLAY="$framework_autorotate_display" \
+		    ${auth:+XAUTHORITY="$auth"} \
+		    FRAMEWORK_AUTOROTATE_HOOK_NAME="$framework_autorotate_hook" \
+		    FRAMEWORK_AUTOROTATE_XLOGIN_RECENTER="$framework_autorotate_xlogin_recenter" \
+		    PATH="/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/sbin:%%PREFIX%%/bin" \
+		    "$framework_autorotate_bin" -i 500 -m "$framework_autorotate_mode" \
+		    $framework_autorotate_flags
+	fi
+
+	#
+	# daemon(8) creates pidfile/logfile mode 0600 regardless of umask.
+	# World-readable like xdm.pid/sshd.pid so unprivileged
+	# `service framework_autorotate status` works (rc.subr check_pidfile
+	# does `read < pidfile`; unreadable yields a spurious
+	# "eval: cannot open … Permission denied" from /bin/sh — not an eval
+	# in this script).
+	#
+	chmod 644 "$pidfile" 2> /dev/null || true
+	if [ -n "$framework_autorotate_logfile" ]; then
+		chmod 644 "$framework_autorotate_logfile" 2> /dev/null || true
+	fi
+}
+
+#
+# rc.subr snapshots ${name}_user for su(1) before start_precmd. Chrome-hook
+# login is resolved inside the binary — never via this knob — so drop it
+# before run_rc_command lest a curious rc.conf entry wrap start/stop in su
+# and break stop/restart.
+#
+if [ "${framework_autorotate_user:-}" ]; then
+	warn "ignoring framework_autorotate_user (rc.subr su target;" \
+	    "chrome-hook login is auto-detected)"
+	unset framework_autorotate_user
+fi
+run_rc_command "$1"

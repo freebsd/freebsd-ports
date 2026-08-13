@@ -91,6 +91,7 @@
     SUBDIR += flruler
     SUBDIR += fnott
     SUBDIR += foot
+    SUBDIR += framework-autorotate
     SUBDIR += fstobdf
     SUBDIR += fuzzel
     SUBDIR += gbsddialog

@@ -1,0 +1,8 @@
+framework-autorotate orients the built-in display of a Framework Laptop 12
+under FreeBSD X11 by reading the Chrome Embedded Controller (EC) memmap
+accelerometer and tablet-mode bit (TBMD), applying xrandr to the internal
+panel (eDP/LVDS/DSI), and remapping absolute touch and stylus devices.
+
+It is intended for use with an X display manager greeter as well as an
+interactive session.  Framework Laptop 13 Pro, even with the touchscreen
+kit, is a clamshell, not a convertible.
