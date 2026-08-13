@@ -1,8 +1,8 @@
-A fast, driver-less TUI to browse, query, and edit PostgreSQL databases — no
-drivers, no setup, just psql.
-Sabiql wraps your existing psql CLI - no Rust database drivers, no connection
-pools, no extra dependencies. Point it at your database and get a full-featured
-TUI with vim-like keybindings.
+A fast, driver-less TUI to browse, query, and edit PostgreSQL or SQLite
+databases — no drivers, no setup, just psql or sqlite3.
+Sabiql wraps your existing psql or sqlite3 CLI - no Rust database drivers, no
+connection pools, no extra dependencies. Point it at your database and get a
+full-featured TUI with vim-like keybindings.
 
 Features:
 

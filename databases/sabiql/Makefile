@@ -1,11 +1,11 @@
 PORTNAME=	sabiql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.1
-PORTREVISION=	1
+DISTVERSION=	2.0.0
+PORTREVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Fast, driver-less TUI to browse, query, and edit PostgreSQL databases
+COMMENT=	Fast PostgreSQL and SQLite TUI to browse, query, and edit databases
 WWW=		https://github.com/riii111/sabiql
 
 LICENSE=	APACHE20 BSD0CLAUSE BSD2CLAUSE BSD3CLAUSE BSL CDLA20 ISCL MIT \
