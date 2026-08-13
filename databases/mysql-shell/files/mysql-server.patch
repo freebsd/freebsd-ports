@@ -1,0 +1,43 @@
+--- sql/server_component/mysql_file_imp.cc.orig	2026-02-13 13:01:31.241903000 +0100
++++ sql/server_component/mysql_file_imp.cc	2026-02-13 13:01:58.180903000 +0100
+@@ -24,6 +24,7 @@
+ #include "sql/server_component/mysql_file_imp.h"
+
+ #include <fcntl.h>
++#include <sys/stat.h>
+ #include <mysql/components/service_implementation.h>
+ #include "my_io.h"
+ #include "my_sys.h"
+--- sql/server_component/mysql_json_encode_imp.cc.orig	2026-08-13 21:40:00.000000000 +0200
++++ sql/server_component/mysql_json_encode_imp.cc	2026-08-13 21:40:00.000000000 +0200
+@@ -21,6 +21,8 @@
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301  USA */
+
++#include <cstdio>
++
+ #include "mysql_json_encode_imp.h"
+ #include "my_inttypes.h"
+ #include "mysql/strings/m_ctype.h"
+--- router/src/rest_host_cache/src/rest_host_cache_entries.cc.orig	2026-08-13 21:50:00.000000000 +0200
++++ router/src/rest_host_cache/src/rest_host_cache_entries.cc	2026-08-13 21:50:00.000000000 +0200
+@@ -63,7 +63,8 @@
+             (remaining_ttl > k_zero_seconds) ? remaining_ttl : k_zero_seconds;
+         rapidjson::Value object(rapidjson::kObjectType);
+
+-        object.AddMember("secondsRemainingTtl", remaining_ttl.count(),
++        object.AddMember<int64_t>("secondsRemainingTtl",
++                         static_cast<int64_t>(remaining_ttl.count()),
+                          allocator);
+         object.AddMember<uint64_t>("ttl", e.ttl_.count(), allocator);
+         object.AddMember<uint64_t>("cacheHits", e.cache_hits_.load(),
+--- components/group_replication_resource_manager/resource_manager_memory_stats.h.orig	2026-08-13 21:30:00.000000000 +0200
++++ components/group_replication_resource_manager/resource_manager_memory_stats.h	2026-08-13 21:30:00.000000000 +0200
+@@ -8,6 +8,7 @@
+ #include <cerrno>
+ #include <cstdint>
+ #include <cstring>
++#include <ctime>
+ #include <string>
+ #include "resource_manager_procfs.h"
+

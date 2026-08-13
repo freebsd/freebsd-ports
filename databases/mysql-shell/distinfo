@@ -1,0 +1,5 @@
+TIMESTAMP = 1786647102
+SHA256 (mysql-shell-9.7.1-src.tar.gz) = edb4606f7081bb7a108999b9c5ee94e83bd7e7177d896aaa78d3c3c08f816114
+SIZE (mysql-shell-9.7.1-src.tar.gz) = 185793904
+SHA256 (mysql-9.7.1.tar.gz) = dabff263022be6a09151c21812322873437e0d77aec8c4cc7381882c3ea1aeae
+SIZE (mysql-9.7.1.tar.gz) = 428890334
