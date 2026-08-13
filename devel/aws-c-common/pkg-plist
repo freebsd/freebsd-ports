@@ -97,5 +97,5 @@ lib/cmake/aws-c-common/modules/AwsTestHarness.cmake
 lib/cmake/aws-c-common/shared/aws-c-common-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/aws-c-common/shared/aws-c-common-targets.cmake
 lib/libaws-c-common.so
+lib/libaws-c-common.so.0.14.5
 lib/libaws-c-common.so.1
-lib/libaws-c-common.so.1.0.0
