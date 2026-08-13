@@ -15,7 +15,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 		Carla>0:audio/carla \
 		help2man:misc/help2man \
 		${LOCALBASE}/lib/libbacktrace.a:devel/libbacktrace \
-		kf6-breeze-icons>0:x11-themes/kf6-breeze-icons \
 		sassc:textproc/sassc
 LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libavcodec.so:multimedia/ffmpeg \
@@ -53,14 +52,14 @@ LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libzix-0.so:devel/zix \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	Carla>0:audio/carla \
-		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
-		kf6-breeze-icons>0:x11-themes/kf6-breeze-icons
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gettext-runtime \
-		guile:2.2,3.0,alias,conflicts gnome libtool localbase:ldflags \
+		guile:2.2,3.0,alias,conflicts gnome kde libtool localbase:ldflags \
 		meson pkgconfig python:build shared-mime-info shebangfix xorg
 USE_GITHUB=	yes
 USE_GNOME=	atk cairo gdkpixbuf glib20 gtk40 gtksourceview5 libadwaita libxml2 pango
+USE_KDE=	breeze-icons
 USE_XORG=	x11
 
 SHEBANG_FILES=	scripts/collect_translatables.sh
