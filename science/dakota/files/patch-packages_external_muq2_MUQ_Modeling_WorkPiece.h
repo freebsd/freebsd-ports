@@ -1,6 +1,6 @@
 --- packages/external/muq2/MUQ/Modeling/WorkPiece.h.orig	2022-05-09 04:14:50 UTC
 +++ packages/external/muq2/MUQ/Modeling/WorkPiece.h
-@@ -9,6 +9,7 @@
+@@ -9,9 +9,11 @@
  #include<cassert>
  #include<memory>
  #include<string>
@@ -8,3 +8,7 @@
  
  #include "boost/any.hpp"
  #include "boost/optional.hpp"
++#include "boost/core/demangle.hpp"
+ 
+ #include <Eigen/Dense>
+ 
