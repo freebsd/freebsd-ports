@@ -383,14 +383,14 @@ npm-archive-node-modules:
 		while [ $${i} -le $${total_files} ]; do \
 			real_key=`${CAT} $${tmpdir}/$${i}.key`; \
 			{ \
-				${PRINTF} "INSERT INTO package_index (key, data) VALUES ('%s', x'" "$${real_key}"; \
+				${PRINTF} "INSERT INTO package_index (key, data) VALUES ('%s', X'" "$${real_key}"; \
 				hexdump -v -e '/1 "%02x"' $${tmpdir}/$${i}.normalized.msgpack; \
 				${PRINTF} "');\n"; \
 			} | sqlite3 $${output_db}; \
 			i=$$((i + 1)); \
 		done; \
 		sqlite3 $${output_db} "REINDEX; VACUUM;"; \
-		sqlite3 $${output_db} ".dump" > $${output_db_dump}; \
+		sqlite3 $${output_db} ".dump" | ${SED} -e "s/x'/X'/" > $${output_db_dump}; \
 		${RM} -r $${input_db} $${storedir}/tmp; \
 	fi
 .        else
