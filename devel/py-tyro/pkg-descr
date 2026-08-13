@@ -1,0 +1,11 @@
+tyro provides a lightweight, ergonomic way to build CLI interfaces and
+config objects directly from Python type annotations. It wraps argparse
+with a clean, type-driven API and sensible defaults, letting you turn
+dataclasses, attrs classes, or Pydantic models into CLI interfaces.
+
+Features:
+- Declare CLI arguments with Python type hints and dataclasses
+- Automatic --help generation from docstrings
+- Shell completion for bash, zsh, fish, and PowerShell
+- Nested subcommands with minimal boilerplate
+- Hierarchical / modular configuration structures
