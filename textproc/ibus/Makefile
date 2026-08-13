@@ -1,5 +1,6 @@
 PORTNAME=	ibus
 DISTVERSION=	1.5.34
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -109,6 +110,10 @@ PLIST_SUB+=	COMPDIR=""
 .else
 PLIST_SUB+=	COMPDIR="@comment "
 .endif
+
+# avoid generating "*.cpython3*.opt-2.pyc" by -OO on byte compiling
+post-patch:
+	@${REINPLACE_CMD} -e '/PYTHON/ s|-OO|-O|' ${WRKSRC}/py-compile
 
 post-configure:
 	# Clean pre-generated source code, which may not match the options selected.
