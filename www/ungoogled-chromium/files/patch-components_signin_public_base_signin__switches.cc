@@ -1,6 +1,6 @@
---- components/signin/public/base/signin_switches.cc.orig	2026-06-05 13:45:06 UTC
+--- components/signin/public/base/signin_switches.cc.orig	2026-08-13 07:41:05 UTC
 +++ components/signin/public/base/signin_switches.cc
-@@ -27,7 +27,7 @@ const char kForceFreDefaultBrowserStep[] = "force-fre-
+@@ -32,7 +32,7 @@ const char kForceFreFeatureShowcaseSteps[] = "force-fr
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,16 +9,16 @@
  // Feature param to pass probability for identity surveys.
  constexpr char kHatsSurveyProbabilityName[] = "probability";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
-@@ -75,7 +75,7 @@ base::TimeDelta GetAvatarSyncPromoFeatureMinimumCookeA
- #endif
- }
+@@ -83,7 +83,7 @@ base::TimeDelta GetAvatarSyncPromoFeatureMinimumCookeA
+ BASE_FEATURE(kAvoidAutoTriggerListAccountsOnStale,
+              base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kBeforeFirstRunDesktopRefreshSurvey,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -142,7 +142,7 @@ BASE_FEATURE_PARAM(double,
+@@ -159,7 +159,7 @@ BASE_FEATURE_PARAM(double,
                     0.42);
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -27,7 +27,7 @@
  constexpr double kMediumSurveyProbability = 0.08;
  constexpr double kLowSurveyProbability = 0.008;
  BASE_FEATURE(kChromeIdentitySurveyAddressBubbleSignin,
-@@ -234,7 +234,7 @@ BASE_FEATURE_PARAM(
+@@ -251,7 +251,7 @@ BASE_FEATURE_PARAM(
      kMediumSurveyProbability);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
@@ -36,25 +36,43 @@
  BASE_FEATURE(kChromeIdentitySurveyLaunchWithDelay,
               base::FEATURE_ENABLED_BY_DEFAULT);
  BASE_FEATURE_PARAM(base::TimeDelta,
-@@ -250,7 +250,7 @@ const base::FeatureParam<std::string> kCrossDeviceSign
+@@ -266,7 +266,7 @@ BASE_FEATURE(kChromeOsUseConsentLevelSigninForNewUsers
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif  // BUILDFLAG(IS_CHROMEOS)
+ 
+-#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)
++#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kCrossDeviceSignin, base::FEATURE_DISABLED_BY_DEFAULT);
+ const base::FeatureParam<std::string> kCrossDeviceSigninUrl{&kCrossDeviceSignin,
                                                              "url", ""};
- #endif  // BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)
+@@ -276,7 +276,7 @@ const base::FeatureParam<std::string> kCrossDeviceSign
+ BASE_FEATURE(kDiceLinkedAccounts, base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kCrossDeviceSigninFromDesktop, base::FEATURE_DISABLED_BY_DEFAULT);
+ const base::FeatureParam<std::string> kCrossDeviceSigninFromDesktopUrl{
+     &kCrossDeviceSigninFromDesktop, "url",
+@@ -285,7 +285,7 @@ const base::FeatureParam<bool> kCrossDeviceSigninFromD
+     &kCrossDeviceSigninFromDesktop, "show_new_badge", true};
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kDisableU18FeedbackDesktop, base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -429,7 +429,7 @@ const base::FeatureParam<base::TimeDelta>
-         base::Hours(8)};
- #endif
+@@ -519,7 +519,7 @@ const base::FeatureParam<base::TimeDelta>
+ 
+ BASE_FEATURE(kFetchAccountInfoOnRestart, base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kFirstRunDesktopRefresh, base::FEATURE_DISABLED_BY_DEFAULT);
  BASE_FEATURE(kFirstRunDesktopChoiceScreenRefresh,
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -457,11 +457,11 @@ constexpr base::FeatureParam<FirstRunDesktopSignInProm
+@@ -547,11 +547,11 @@ constexpr base::FeatureParam<FirstRunDesktopSignInProm
          &kFirstRunDesktopSignInPromoVariations};
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
@@ -68,34 +86,37 @@
  BASE_FEATURE(kFirstRunDesktopRevamp, base::FEATURE_DISABLED_BY_DEFAULT);
  bool IsFirstRunDesktopRevampEnabled(bool is_in_search_engine_choice_region) {
    return IsFirstRunDesktopRefreshEnabled(is_in_search_engine_choice_region) &&
-@@ -528,7 +528,7 @@ BASE_FEATURE(kNoAccountWebSignin, base::FEATURE_DISABL
- 
- BASE_FEATURE(kNonDefaultGaiaOriginCheck, base::FEATURE_ENABLED_BY_DEFAULT);
- 
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kPasswordUploadUiUpdate, base::FEATURE_DISABLED_BY_DEFAULT);
- 
- BASE_FEATURE(kProfileCreationDeclineSigninCTAExperiment,
-@@ -539,7 +539,7 @@ BASE_FEATURE(kProfileCreationDeclineSigninCTAExperimen
- BASE_FEATURE(kProfileDiscOnAllPages, base::FEATURE_DISABLED_BY_DEFAULT);
- #endif  // BUILDFLAG(IS_ANDROID)
+@@ -559,12 +559,12 @@ bool IsFirstRunDesktopRevampEnabled(bool is_in_search_
+ }
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kProfilePickerTextVariations, base::FEATURE_DISABLED_BY_DEFAULT);
- constexpr base::FeatureParam<ProfilePickerVariation>::Option
-     kProfilePickerVariations[] = {
-@@ -571,7 +571,7 @@ BASE_FEATURE(kRestrictDeviceManagementServiceOAuthScop
-              base::FEATURE_ENABLED_BY_DEFAULT);
- #endif  // !BUILDFLAG(IS_ANDROID)
- 
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kShowProfilePickerToAllUsersExperiment,
+ BASE_FEATURE(kFirstRunDesktopRevampNoFeatureShowcaseSurvey,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -592,7 +592,7 @@ const base::FeatureParam<int> kContextualSigninPromoDi
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kFirstRunDesktopRevampSurvey, base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 
+@@ -647,12 +647,12 @@ BASE_FEATURE(kNoAccountWebSignin, base::FEATURE_DISABL
+ BASE_FEATURE(kNonDefaultGaiaOriginCheck, base::FEATURE_ENABLED_BY_DEFAULT);
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kPasswordUploadUiUpdate, base::FEATURE_ENABLED_BY_DEFAULT);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
+         // BUILDFLAG(IS_CHROMEOS)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kProfileCreationDeclineSigninCTAExperiment,
+              base::FEATURE_ENABLED_BY_DEFAULT);
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+@@ -694,7 +694,7 @@ const base::FeatureParam<int> kContextualSigninPromoDi
      "contextual_signin_promo_dismissed_threshold",
      2);
  
@@ -104,7 +125,7 @@
  BASE_FEATURE(kSignInPromoMaterialNextUI, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -662,7 +662,7 @@ BASE_FEATURE(kStableDeviceId, base::FEATURE_DISABLED_B
+@@ -764,7 +764,7 @@ BASE_FEATURE(kStableDeviceId, base::FEATURE_DISABLED_B
  BASE_FEATURE(kSupportAddSessionEmailPrefill, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif
  

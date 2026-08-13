@@ -1,6 +1,6 @@
---- chrome/browser/policy/policy_value_and_status_aggregator.cc.orig	2026-06-05 13:45:06 UTC
+--- chrome/browser/policy/policy_value_and_status_aggregator.cc.orig	2026-08-13 07:41:05 UTC
 +++ chrome/browser/policy/policy_value_and_status_aggregator.cc
-@@ -53,7 +53,7 @@
+@@ -54,7 +54,7 @@
  #include "chrome/browser/policy/value_provider/extension_policies_value_provider.h"
  #endif  // BUILDFLAG(ENABLE_EXTENSIONS_CORE)
  

@@ -1,6 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	149.0.7827.200
-PORTREVISION=	1
+PORTVERSION=	151.0.7922.137
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 UGVERSION=	${DISTVERSION}-1
@@ -81,9 +80,9 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
-USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gmake gnome \
-		iconv:wchar_t jpeg localbase:ldflags ninja perl5 pkgconfig \
-		python:build qt:5 shebangfix tar:xz xorg
+USES=		bison compiler:c++17-lang cpe desktop-file-utils gl go:no_targets \
+		gmake gnome iconv:wchar_t jpeg localbase:ldflags ninja perl5 \
+		pkgconfig python:build qt:5 shebangfix tar:xz xorg
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
@@ -287,6 +286,9 @@ WRKSRC=		${WRKDIR}/chromium-${DISTVERSION}
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
 		rust_sysroot_absolute="${LOCALBASE}"
+
+# go
+MAKE_ENV+=	GOCACHE=${WRKDIR}/go-cache
 
 pre-everything::
 	@${ECHO_MSG}

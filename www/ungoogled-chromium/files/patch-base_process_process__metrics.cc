@@ -1,4 +1,4 @@
---- base/process/process_metrics.cc.orig	2025-09-10 13:22:16 UTC
+--- base/process/process_metrics.cc.orig	2026-08-13 07:41:05 UTC
 +++ base/process/process_metrics.cc
 @@ -17,7 +17,7 @@ namespace base {
  namespace {
@@ -9,7 +9,7 @@
  int CalculateEventsPerSecond(uint64_t event_count,
                               uint64_t* last_event_count,
                               base::TimeTicks* last_calculated) {
-@@ -54,7 +54,7 @@ SystemMetrics SystemMetrics::Sample() {
+@@ -56,7 +56,7 @@ SystemMetrics SystemMetrics::Sample() {
    SystemMetrics system_metrics;
  
    system_metrics.committed_memory_ = GetSystemCommitCharge();
@@ -18,7 +18,7 @@
    GetSystemMemoryInfo(&system_metrics.memory_info_);
    GetVmStatInfo(&system_metrics.vmstat_info_);
    GetSystemDiskInfo(&system_metrics.disk_info_);
-@@ -79,7 +79,7 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+@@ -81,7 +81,7 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
  #endif  // !BUILDFLAG(IS_MAC)
  }
  
@@ -27,7 +27,7 @@
  double ProcessMetrics::GetPlatformIndependentCPUUsage(
      TimeDelta cumulative_cpu) {
    TimeTicks time = TimeTicks::Now();
-@@ -112,7 +112,7 @@ ProcessMetrics::GetPlatformIndependentCPUUsage() {
+@@ -114,7 +114,7 @@ ProcessMetrics::GetPlatformIndependentCPUUsage() {
  #endif
  
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

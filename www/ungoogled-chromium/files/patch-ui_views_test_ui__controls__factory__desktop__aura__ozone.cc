@@ -1,6 +1,6 @@
---- ui/views/test/ui_controls_factory_desktop_aura_ozone.cc.orig	2025-01-25 09:34:31 UTC
+--- ui/views/test/ui_controls_factory_desktop_aura_ozone.cc.orig	2026-08-13 07:41:05 UTC
 +++ ui/views/test/ui_controls_factory_desktop_aura_ozone.cc
-@@ -237,7 +237,7 @@ bool SendMouseClick(MouseButton type, gfx::NativeWindo
+@@ -241,7 +241,7 @@ bool SendMouseClick(MouseButton type, gfx::NativeWindo
                           window_hint);
  }
  

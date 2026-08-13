@@ -1,0 +1,11 @@
+--- buildtools/third_party/libc++abi/BUILD.gn.orig	2026-08-13 07:41:05 UTC
++++ buildtools/third_party/libc++abi/BUILD.gn
+@@ -62,7 +62,7 @@ target(libcxxabi_target_type, "libc++abi") {
+   # TODO(crbug.com/469458284): Remove this once libc++abi is rolled again.
+   defines += [ "_LIBCPP_CONSTINIT=constinit" ]
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux || is_android) && !is_freebsd) {
+     defines += [ "_LIBCXXABI_USE_FUTEX" ]
+   }
+ 

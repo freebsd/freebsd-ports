@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2026-06-05 13:45:06 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2026-08-13 07:41:05 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
-@@ -99,7 +99,7 @@ if (current_cpu == "x64" || current_cpu == "arm64" || 
+@@ -110,7 +110,7 @@ if (current_cpu == "x64" || current_cpu == "arm64" || 
  # TODO(crbug.com/329199197): Clean this up when experiments are complete.
  use_large_empty_slot_span_ring = true
  
@@ -9,7 +9,7 @@
                       !is_hwasan && (is_linux || is_android)
  
  declare_args() {
-@@ -521,7 +521,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
+@@ -542,7 +542,7 @@ assert(!use_asan_backup_ref_ptr || use_raw_ptr_hookabl
  # dependencies that use partition_allocator are compiled in AOSP against a
  # version of glibc that does not include pkeys syscall numbers.
  is_pkeys_available =

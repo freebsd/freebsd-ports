@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/page/context_menu_controller.cc.orig	2026-06-05 13:45:06 UTC
+--- third_party/blink/renderer/core/page/context_menu_controller.cc.orig	2026-08-13 07:41:05 UTC
 +++ third_party/blink/renderer/core/page/context_menu_controller.cc
-@@ -660,7 +660,7 @@ bool ContextMenuController::ShowContextMenu(
+@@ -692,7 +692,7 @@ bool ContextMenuController::ShowContextMenu(
      if (potential_image_node != nullptr &&
          IsA<HTMLCanvasElement>(potential_image_node)) {
        data.media_type = mojom::blink::ContextMenuDataMediaType::kCanvas;

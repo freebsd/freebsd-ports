@@ -1,6 +1,6 @@
---- components/autofill/core/browser/webdata/payments/payments_sync_bridge_util.cc.orig	2026-06-05 13:45:06 UTC
+--- components/autofill/core/browser/webdata/payments/payments_sync_bridge_util.cc.orig	2026-08-13 07:41:05 UTC
 +++ components/autofill/core/browser/webdata/payments/payments_sync_bridge_util.cc
-@@ -1288,7 +1288,7 @@ bool AreMaskedBankAccountSupported() {
+@@ -1289,7 +1289,7 @@ bool AreMaskedBankAccountSupported() {
  
  bool IsBnplIssuerSupported() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
