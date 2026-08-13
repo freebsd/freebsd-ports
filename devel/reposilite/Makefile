@@ -1,6 +1,5 @@
 PORTNAME=	reposilite
-DISTVERSION=	3.5.28
-PORTREVISION=	1
+DISTVERSION=	3.6.2
 DISTVERSIONSUFFIX=	-all
 CATEGORIES=	devel www java
 MASTER_SITES=	https://maven.reposilite.com/releases/com/reposilite/reposilite/${DISTVERSION}/
@@ -13,9 +12,14 @@ WWW=		https://reposilite.com
 
 LICENSE=	APACHE20
 
+EXTRACT_DEPENDS=	zip:archivers/zip
+LIB_DEPENDS=	libsqlitejdbc.so:databases/sqlite-jdbc
+
 USES=		cpe java
 CPE_VENDOR=	dzikoysk
-JAVA_VERSION=	11+
+JAVA_VERSION=	17+
+
+ZIP_CMD?=	${LOCALBASE}/bin/zip
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -47,8 +51,11 @@ PLIST_SUB=	JARFILE=${JAVAJARDIR}/${DISTNAME}.jar \
 			LOGDIR=${REPOSILITE_LOGDIR} \
 			WORKDIR=${REPOSILITE_WORKDIR}
 
+do-extract:
+	${CP} ${DISTDIR}/${DISTNAME}.jar ${WRKDIR}/
+
 post-extract:
-	@${TAR} -C ${WRKDIR} -xzf ${DISTDIR}/${DISTNAME}.jar tinylog.properties
+	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${DISTNAME}.jar tinylog.properties
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -56,6 +63,7 @@ post-patch:
 		-e '28s#= .+$$#= ${REPOSILITE_LOGDIR}/${PORTNAME}-latest.log#' \
 		-e '30s#monthly: 03:00$$#daily: 00:00#' \
 		${WRKDIR}/tinylog.properties
+	@${ZIP_CMD} -d ${WRKDIR}/${DISTNAME}.jar org/sqlite/native/*
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
@@ -64,6 +72,6 @@ do-install:
 	${MKDIR} ${STAGEDIR}${REPOSILITE_RUNDIR}
 	${INSTALL_DATA} ${FILESDIR}/configuration.cdn.sample ${STAGEDIR}${ETCDIR}/
 	${INSTALL_DATA} ${WRKDIR}/tinylog.properties ${STAGEDIR}${ETCDIR}/tinylog.properties.sample
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/
 
 .include <bsd.port.mk>
