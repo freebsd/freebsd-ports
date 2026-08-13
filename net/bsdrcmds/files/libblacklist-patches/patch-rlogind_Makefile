@@ -1,0 +1,15 @@
+--- rlogind/Makefile.orig	2026-08-13 18:13:34 UTC
++++ rlogind/Makefile
+@@ -13,9 +13,9 @@ CFLAGS+= -DINET6
+ CFLAGS+= -DINET6
+ .endif
+ 
+-.ifdef USE_LIBBLOCKLIST
+-CFLAGS+=	-DUSE_BLOCKLIST
+-LDADD+=		-lblocklist
++.ifdef USE_LIBBLACKLIST
++CFLAGS+=	-DUSE_BLACKLIST
++LDADD+=		-lblacklist
+ .endif
+ 
+ .include <bsd.prog.mk>
