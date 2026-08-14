@@ -1,30 +1,24 @@
 PORTNAME=	xwpe
-PORTVERSION=	1.5.30a
-PORTREVISION=	1
+DISTVERSION=	1.6.9
 CATEGORIES=	devel
-MASTER_SITES=	SUNSITE/apps/editors/X \
-		http://www.identicalsoftware.com/xwpe/ \
-		ftp://ftp.identicalsoftware.com/pub/linux/xwpe/
+MASTER_SITES=	https://codeberg.org/mendezr/xwpe/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	juan.mendezr@proton.me
 COMMENT=	Borland-like IDE programming environment
-WWW=		http://www.identicalsoftware.com/xwpe/
+WWW=		https://codeberg.org/mendezr/xwpe
 
-USES=		desthack ncurses xorg
-DESTDIRNAME=	STAGEDIR
-USE_XORG=	sm ice x11
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libvterm.so:devel/libvterm \
+		libjson-c.so:devel/json-c \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		desktop-file-utils gmake gnome localbase ncurses pkgconfig xorg
+USE_GNOME=	cairo pango
+USE_XORG=	x11 xext xft
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir=\$${STAGEDIR}${PREFIX}/share
-ALL_TARGET=	# none
-
-post-patch:
-.for file in we_prog.c we_fl_unix.c
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/${file}
-.endfor
-	${REINPLACE_CMD} -e 's|$$(INSTALL_PROGRAM)|${INSTALL_PROGRAM}|g' \
-	    ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|$$(INSTALL_DATA)|${INSTALL_DATA}|g' \
-	    ${WRKSRC}/Makefile.in
+INFO=		xwpe
 
 .include <bsd.port.mk>

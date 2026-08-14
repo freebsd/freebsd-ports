@@ -2,10 +2,13 @@ bin/we
 bin/wpe
 bin/xwe
 bin/xwpe
+lib/xwpe/help.key
+lib/xwpe/help.xwpe
+lib/xwpe/syntax_def
+share/applications/xwpe.desktop
+share/icons/hicolor/scalable/apps/xwpe.svg
 share/man/man1/we.1.gz
 share/man/man1/wpe.1.gz
 share/man/man1/xwe.1.gz
 share/man/man1/xwpe.1.gz
-%%DATADIR%%/help.key
-%%DATADIR%%/help.xwpe
-%%DATADIR%%/syntax_def
+share/metainfo/io.codeberg.mendezr.xwpe.metainfo.xml
