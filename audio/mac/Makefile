@@ -1,5 +1,5 @@
 PORTNAME=	mac
-PORTVERSION=	13.24
+PORTVERSION=	13.25
 CATEGORIES=	audio
 MASTER_SITES=	https://www.monkeysaudio.com/files/
 DISTNAME=	${PORTNAME:tu}_${PORTVERSION:S|.||}_SDK
