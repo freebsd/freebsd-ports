@@ -1,5 +1,6 @@
 bin/OpenLoco
 %%DATADIR%%/OpenLoco
+%%DATADIR%%/data/language/ca-ES.yml
 %%DATADIR%%/data/language/cs-CZ.yml
 %%DATADIR%%/data/language/de-DE.yml
 %%DATADIR%%/data/language/en-GB.yml
@@ -3138,6 +3139,43 @@ bin/OpenLoco
 %%DATADIR%%/data/objects/openloco_objects-src/objects/TownNames/STOWNNAM/OG_STOWNNAM.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Track/TRACKST/OG_TRACKST.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Track/TRACKST/OG_TrackST.blend
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/0.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/1.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/10.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/11.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/12.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/13.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/14.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/15.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/16.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/17.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/18.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/19.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/2.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/20.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/21.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/22.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/23.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/24.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/25.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/26.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/27.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/28.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/29.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/3.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/30.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/31.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/32.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/33.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/34.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/35.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/4.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/5.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/6.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/7.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/8.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/9.png
+%%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2/OG_TRSTAT2.dat
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Tunnel/TUNNEL1/0.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Tunnel/TUNNEL1/1.png
 %%DATADIR%%/data/objects/openloco_objects-src/objects/Tunnel/TUNNEL1/2.png
@@ -3804,7 +3842,6 @@ share/icons/hicolor/scalable/apps/openloco.svg
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TrainSignal/SIGSUS
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TrainSignal/SIGSW
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT1
-@dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT2
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT3
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT4
 @dir %%DATADIR%%/data/objects/openloco_objects-src/objects/TrainStation/TRSTAT5

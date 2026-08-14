@@ -1,6 +1,6 @@
 PORTNAME=	OpenLoco
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.07.1
+DISTVERSION=	26.08
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 
 USES=		cmake localbase:ldflags openal pkgconfig
 USE_GITHUB=	yes
-GH_TUPLE=	OpenLoco:OpenGraphics:v0.1.9:graphics
+GH_TUPLE=	OpenLoco:OpenGraphics:v0.1.10:graphics
 
 # for std::execution::par
 CXXFLAGS+=	-fexperimental-library
