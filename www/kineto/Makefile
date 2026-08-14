@@ -1,6 +1,5 @@
 PORTNAME=	kineto
-DISTVERSION=	g20211104
-PORTREVISION=	42
+DISTVERSION=	g20250122
 CATEGORIES=	www
 
 MAINTAINER=	corey@electrickite.org
@@ -11,16 +10,17 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		go:modules
-USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
-		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text
+GH_TUPLE=	golang:net:v0.57.0:golang_net/vendor/golang.org/x/net \
+		golang:text:v0.40.0:golang_text/vendor/golang.org/x/text
 
-SH_COMMIT=	857f8c97ebc5
+SH_COMMIT=	1f4e0667
 # Additional distfiles to fetch from https://git.sr.ht
 _SRHT_TUPLE=	sircmpwn:${PORTNAME}:${SH_COMMIT}:"" \
-		adnano:go-gemini:v0.1.17:vendor/git.sr.ht/~adnano/go-gemini \
-		sircmpwn:getopt:23622cc906b3:vendor/git.sr.ht/~sircmpwn/getopt
+		adnano:go-gemini:v0.2.5:vendor/git.sr.ht/~adnano/go-gemini \
+		sircmpwn:getopt:v1.0.0:vendor/git.sr.ht/~sircmpwn/getopt
+
+USE_RC_SUBR=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${SH_COMMIT}
 
