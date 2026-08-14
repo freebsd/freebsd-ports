@@ -673,7 +673,7 @@ share/man/man1/onboard.1.gz
 %%DATADIR%%/emojione/svg/1f30e.svg
 %%DATADIR%%/emojione/svg/1f30f.svg
 %%DATADIR%%/emojione/svg/1f310.svg
-%%DATADIR%%/emojione/svg/1f%%PYTHON_SUFFIX%%.svg
+%%DATADIR%%/emojione/svg/1f311.svg
 %%DATADIR%%/emojione/svg/1f312.svg
 %%DATADIR%%/emojione/svg/1f313.svg
 %%DATADIR%%/emojione/svg/1f314.svg
