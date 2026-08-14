@@ -13,3 +13,10 @@ makedist:
 	@${ECHO_CMD} 'mv /tmp/${PORTNAME}-* ${PORTSDIR}/distfiles/'
 	@${ECHO_CMD} adjust PORTVERSION accordingly and run
 	@${ECHO_CMD} ${MAKE} -C ${.CURDIR} makesum
+
+.if make(makesum)
+.  undef DISTNAME
+.  for arch in ${ONLY_FOR_ARCHS}
+DISTFILES+=    ${PORTNAME}-${arch}-${PORTVERSION}${EXTRACT_SUFX}
+.  endfor
+.endif
