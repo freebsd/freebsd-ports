@@ -1,28 +1,28 @@
 PORTNAME=	rtl-sdr
-PORTVERSION=	2.0.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.3
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
+MASTER_SITES=	https://downloads.osmocom.org/releases/rtl-sdr/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Command-line tool that performs SDR with RTL2832-based USB sticks
-WWW=		https://sdr.osmocom.org/trac/wiki/rtl-sdr
+WWW=		https://osmocom.org/projects/rtl-sdr/wiki/ \
+		https://gitea.osmocom.org/sdr/rtl-sdr/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf pkgconfig libtool tar:tgz
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	steve-m
-GH_PROJECT=	librtlsdr
-
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		autoreconf pkgconfig libtool localbase tar:bz2
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
+
 DOCSDIR=	${PREFIX}/share/doc/librtlsdr
+
+WRKSRC=		${WRKDIR}/librtlsdr-${DISTVERSION}
 
 OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_SUB=	yes
