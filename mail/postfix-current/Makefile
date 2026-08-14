@@ -1,5 +1,5 @@
 PORTNAME=	postfix
-DISTVERSION=	3.12-20260805
+DISTVERSION=	3.12-20260812
 PORTREVISION?=	0
 PORTEPOCH=	6
 CATEGORIES=	mail
@@ -74,7 +74,10 @@ sqlite_CONFLICTS_INSTALL=	postfix-current postfix-current-base \
 				postfix-current-sasl postfix-current-base-sasl
 
 COMMENT_ldap=	(with OpenLDAP support)
+COMMENT_mysql=	(with MySQL support)
+COMMENT_pgsql=	(with PostgreSQL support)
 COMMENT_sasl=	(with Cyrus SASL support)
+COMMENT_sqlite=	(with SQLite support)
 
 USES=		cpe shebangfix ssl
 USE_RC_SUBR=	postfix
@@ -84,10 +87,11 @@ SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
+PORTSCOUT=	limit:^3\.12\.
+
 CONFLICTS_INSTALL=	courier-0.* opensmtpd opensmtpd-devel \
 			postfix postfix-base postfix-ldap-sasl \
-			postfix-sasl postfix35 sendmail \
-			sendmail-devel
+			postfix-sasl sendmail sendmail-devel
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
@@ -99,8 +103,16 @@ OPTIONS_RADIO=		RG1
 OPTIONS_RADIO_RG1=	SASLKMIT SASLKRB5
 .if ${FLAVOR:U} == ldap
 OPTIONS_SLAVE=		LDAP
+.elif ${FLAVOR:U} == mysql
+OPTIONS_SLAVE=		MYSQL
+.elif ${FLAVOR:U} == pgsql
+OPTIONS_SLAVE=		PGSQL
 .elif ${FLAVOR:U} == sasl
 OPTIONS_SLAVE=		SASL
+.elif ${FLAVOR:U} == sqlite
+OPTIONS_SLAVE=		SQLITE
+.elif ${FLAVOR:U} == mongo
+OPTIONS_SLAVE=		MONGO
 .endif
 .if !empty(FLAVOR) && ${FLAVOR:U} != default
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
@@ -136,9 +148,7 @@ SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=			sqlite
 TLSRPT_LIB_DEPENDS=		libtlsrpt.so:mail/libtlsrpt
 
-MONGOC_VERSION!=		${MAKE} -C ${.CURDIR:H:H}/devel/mongo-c-driver -V DISTVERSION
-
-ALL_TARGET=	default
+ALL_TARGET=		default
 
 .include <bsd.port.options.mk>
 
@@ -171,8 +181,16 @@ BROKEN=		error: OpenSSL-1.1.1 is the minimum supported version. LibreSSL is not 
 .if ${PORT_OPTIONS:MINST_BASE}
 .if ${FLAVOR:U} == ldap
 PKGNAMESUFFIX=	-current-base-ldap
+.elif ${FLAVOR:U} == mysql
+PKGNAMESUFFIX=	-current-base-mysql
+.elif ${FLAVOR:U} == pgsql
+PKGNAMESUFFIX=	-current-base-pgsql
 .elif ${FLAVOR:U} == sasl
 PKGNAMESUFFIX=	-current-base-sasl
+.elif ${FLAVOR:U} == sqlite
+PKGNAMESUFFIX=	-current-base-sqlite
+.elif ${FLAVOR:U} == mongo
+PKGNAMESUFFIX=	-current-base-mongo
 .else
 PKGNAMESUFFIX=	-current-base
 .endif
@@ -198,7 +216,7 @@ READMEDIR=	${DOCSDIR}
 READMEDIR=	no
 .endif
 
-# dynamic direcory location
+# dynamic directory location
 DAEMONDIR=		${PREFIX}/libexec/postfix
 SHLIB_DIRECTORY=	${PREFIX}/lib/postfix
 # new proposed location is ETCDIR (see README_FILES/INSTALL)
@@ -298,10 +316,10 @@ IGNORE=		blocklistd is only supported on FreeBSD
 .endif
 
 .if ${PORT_OPTIONS:MMONGO}
+USES+=			pkgconfig
 DYN_EXT+=		mongodb
-POSTFIX_CCARGS+=	-DHAS_MONGODB -I${LOCALBASE}/include/mongoc-${MONGOC_VERSION} \
-			-I${LOCALBASE}/include/bson-${MONGOC_VERSION}
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=-L${LOCALBASE}/lib -lmongoc2 -lbson2"
+POSTFIX_CCARGS+=	-DHAS_MONGODB `pkg-config --cflags mongoc2`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=`pkg-config --libs mongoc2`"
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -368,7 +386,7 @@ REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}
 		\!^\#alias_database = dbm:/etc/mail/aliases$$!d;\
 		s!(:|= )/etc/postfix!\1$$config_directory!g;\
 		s!/etc/postfix!${ETCDIR}!g;\
-		s!^(sample_directory =)!\1 ${ETCDIR}!g; \
+		s!^(sample_directory =)!\1 ${ETCDIR}!g;\
 		s!($$config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
 
 post-patch:
