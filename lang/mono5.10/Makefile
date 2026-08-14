@@ -45,11 +45,12 @@ USES=	autoreconf bison compiler:c11 cpe elfctl gmake iconv libtool \
 	pathfix perl5 python shebangfix tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/mono-heapviz mono/mini/genmdesc.py mono/tests/test_lldb.py
 BINARY_ALIAS=	python=${PYTHON_CMD}
 ELF_FEATURES=	+wxneeded:mono/mini/mono-sgen
+# workaround build failure with libtool >= 2.6
+MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_ARGS=	--disable-dtrace
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
