@@ -1,0 +1,13 @@
+--- Linphone/CMakeLists.txt.orig
++++ Linphone/CMakeLists.txt
+@@ -7,6 +7,11 @@
+ set(LINPHONE_PACKAGES Mediastreamer2 LinphoneCxx BCToolbox LibLinphone)
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules")
++
++# LibLinphone's installed CMake target exports jsoncpp_lib in its link
++# interface.  Load jsoncpp's package first so that name resolves to the
++# imported target instead of being emitted literally as -ljsoncpp_lib.
++find_package(jsoncpp CONFIG REQUIRED)
+ foreach(PACKAGE ${LINPHONE_PACKAGES})
+ 	message(STATUS "Trying to find ${PACKAGE}")
+ 	find_package(${PACKAGE} REQUIRED)

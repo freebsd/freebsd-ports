@@ -1,23 +1,23 @@
---- CMakeLists.txt.orig	2025-11-12 12:55:13 UTC
+--- CMakeLists.txt.orig	2026-07-15 12:43:54 UTC
 +++ CMakeLists.txt
-@@ -228,13 +228,13 @@ if(NOT APPLE OR MONO_ARCH)
- 					set(CMAKE_POLICY_DEFAULT_CMP0077 NEW) # Prevent project from overriding the options we just set here
- 					add_subdirectory("linphone-sdk")
- 			endfunction()
--			add_linphone_sdk()
-+			# add_linphone_sdk()
- 
- 			if(ENABLE_QT_KEYCHAIN)
- 					function(add_linphone_keychain)
- 						add_subdirectory("external/qtkeychain")
- 					endfunction()
--					add_linphone_keychain()
-+					# add_linphone_keychain()
+@@ -253,8 +253,11 @@ if(NOT APPLE OR MONO_ARCH)
+ 	endif()
+ 	function(add_linphone_app)
+ 			set(CMAKE_POLICY_DEFAULT_CMP0077 NEW) # Prevent project from overriding the options we just set here
+-			if(UNIX)
++			if(UNIX AND NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+ 					set(CMAKE_INSTALL_RPATH "$ORIGIN:$ORIGIN/lib64:$ORIGIN/../lib64:$ORIGIN/lib:$ORIGIN/../lib")
++			elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++					# System Qt and Linphone SDK libraries are resolved through rtld/ldconfig.
++					set(CMAKE_SKIP_INSTALL_RPATH ON)
  			endif()
- 			if(NOT APPLE AND NOT WIN32)
- 				function(add_linphone_ispell)
-@@ -276,4 +276,3 @@ endif()
- else()
-     include(cmake/TasksMacos.cmake)
- endif()
--
+ 			add_subdirectory("Linphone")
+ 	endfunction()
+@@ -293,4 +296,6 @@ endif()
+ # endif()
+ 
+ 
+-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/cmake/hook/pre-commit" DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/.git/hooks/")
++if(IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/.git/hooks")
++	file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/cmake/hook/pre-commit" DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/.git/hooks/")
++endif()

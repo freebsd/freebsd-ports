@@ -1,0 +1,53 @@
+--- Linphone/CMakeLists.txt.orig
++++ Linphone/CMakeLists.txt
+@@ -39,7 +39,8 @@
+ ################################################################
+ #						CONFIGS
+ ################################################################
+-if(NOT WIN32)
++# Qt 6.11 adds deprecations that are warnings, not FreeBSD port failures.
++if(NOT WIN32 AND NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+ 	add_compile_options(-Werror=deprecated-declarations)
+ endif()
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+@@ -58,22 +59,26 @@
+ bc_parse_full_version(${LINPHONEAPP_VERSION} LINPHONE_MAJOR_VERSION LINPHONE_MINOR_VERSION LINPHONE_MICRO_VERSION LINPHONE_BRANCH_VERSION)
+ 
+ set(LINPHONEAPP_SHORT_VERSION "${LINPHONE_MAJOR_VERSION}.${LINPHONE_MINOR_VERSION}.${LINPHONE_MICRO_VERSION}")
+ 
+-set(GIT_BRANCH_NAME)
+-execute_process(
+-    COMMAND git name-rev --name-only HEAD
+-	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+-    OUTPUT_VARIABLE GIT_BRANCH_NAME
+-    OUTPUT_STRIP_TRAILING_WHITESPACE
+-)
++set(GIT_BRANCH_NAME "release/6.1")
++if(IS_DIRECTORY "${CMAKE_SOURCE_DIR}/.git")
++	execute_process(
++		COMMAND git name-rev --name-only HEAD
++		WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
++		OUTPUT_VARIABLE GIT_BRANCH_NAME
++		OUTPUT_STRIP_TRAILING_WHITESPACE
++	)
++endif()
+ 
+-set(LINPHONESDK_VERSION)
+-execute_process(
+-    COMMAND git describe
+-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/external/linphone-sdk
+-    OUTPUT_VARIABLE LINPHONESDK_VERSION
+-    OUTPUT_STRIP_TRAILING_WHITESPACE
+-)
++set(LINPHONESDK_VERSION "system")
++if(IS_DIRECTORY "${CMAKE_SOURCE_DIR}/external/linphone-sdk/.git")
++	execute_process(
++		COMMAND git describe
++		WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/external/linphone-sdk
++		OUTPUT_VARIABLE LINPHONESDK_VERSION
++		OUTPUT_STRIP_TRAILING_WHITESPACE
++	)
++endif()
+ 
+ include(application_info.cmake)
+ string(TIMESTAMP CURRENT_YEAR "%Y")
