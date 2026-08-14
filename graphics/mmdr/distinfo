@@ -1,4 +1,4 @@
-TIMESTAMP = 1784620576
+TIMESTAMP = 1786724759
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -281,5 +281,5 @@ SHA256 (rust/crates/zune-core-0.5.1.crate) = cb8a0807f7c01457d0379ba880ba6322660
 SIZE (rust/crates/zune-core-0.5.1.crate) = 27883
 SHA256 (rust/crates/zune-jpeg-0.5.11.crate) = 2959ca473aae96a14ecedf501d20b3608d2825ba280d5adb57d651721885b0c2
 SIZE (rust/crates/zune-jpeg-0.5.11.crate) = 85683
-SHA256 (1jehuang-mermaid-rs-renderer-v0.3.0_GH0.tar.gz) = 81d9f403a677a959d4e7d6b8c2aea90f85a070b441fab4560a6cfbf8542bfff9
-SIZE (1jehuang-mermaid-rs-renderer-v0.3.0_GH0.tar.gz) = 10956186
+SHA256 (1jehuang-mermaid-rs-renderer-v0.3.1_GH0.tar.gz) = c29983e23a1e9503eddf243d7688faf3408d84dab37362b6b66d701f87cec9fa
+SIZE (1jehuang-mermaid-rs-renderer-v0.3.1_GH0.tar.gz) = 10968339
