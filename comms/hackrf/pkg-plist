@@ -16,5 +16,13 @@ lib/cmake/HackRF/HackRFTargets.cmake
 lib/libhackrf.a
 lib/libhackrf.so
 lib/libhackrf.so.0
-lib/libhackrf.so.0.9.1
+lib/libhackrf.so.0.9.2
 libdata/pkgconfig/libhackrf.pc
+%%DATADIR%%/firmware-bin/hackrf_jawbreaker_usb.bin
+%%DATADIR%%/firmware-bin/hackrf_jawbreaker_usb.dfu
+%%DATADIR%%/firmware-bin/hackrf_one_usb.bin
+%%DATADIR%%/firmware-bin/hackrf_one_usb.dfu
+%%DATADIR%%/firmware-bin/hackrf_pro_usb.bin
+%%DATADIR%%/firmware-bin/hackrf_pro_usb.dfu
+%%DATADIR%%/firmware-bin/hackrf_rad1o_usb.bin
+%%DATADIR%%/firmware-bin/hackrf_rad1o_usb.dfu
