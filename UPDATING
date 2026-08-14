@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260814:
+  AFFECTS: users of sysutils/screen*
+  AUTHOR: cy@FreeBSD.org
+
+  sysutils/screen no longer sets the MULTUSER option by default anymore.
+  MUTIUSER installs a setuid root screen binary. This introduces an exploit
+  vector. Users who need multi-user functionality should either build
+  screen with the MULTIUSER option or binary package users should add the
+  setuid bit to the screen binary.
+
 20260813:
   AFFECTS: users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
