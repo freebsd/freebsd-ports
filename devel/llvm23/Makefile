@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	23.1.0-rc2
+DISTVERSION=	23.1.0-rc3
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
@@ -428,17 +428,9 @@ _BE_LIBS_${BE}+=	${_BE_LIBS_COMMON:S/^/${BE_ARCH}/} \
 			${_BE_LIBS_${BE_ARCH}:S/^/${BE_ARCH}/} \
 			${_BE_LIBS_BACKWARDS_${BE_ARCH}:S/$/${BE_ARCH}/}
 _BE_INCS_${BE}+=	${_BE_INCS_${BE_ARCH}}
-_BE_MODS_${BE}+=	${_BE_MODS_${BE_ARCH}}
 .endfor
 .endfor
-BE_PATTERN=LLVM(${_BE_LIBS_STANDARD:O:S/$/.a/:ts|})|${_BE_INCS_STANDARD:ts|}|${_BE_MODS_STANDARD:ts|}
-
-.if ${PORT_OPTIONS:MFLANG}
-.for BE in FREEBSD NATIVE STANDARD
-BE_${BE}_PLIST_FILES+= \
-	${_BE_MODS_${BE}:S|^|${LLVM_DIR}/include/flang/|:N${LLVM_DIR}/include/flang/$}
-.endfor
-.endif
+BE_PATTERN=LLVM(${_BE_LIBS_STANDARD:O:S/$/.a/:ts|})|${_BE_INCS_STANDARD:ts|}
 
 .if ${ARCH} == "aarch64"
 COMPILER_RT_ARCHS=	aarch64
