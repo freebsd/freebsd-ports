@@ -1,4 +1,4 @@
-PORTNAME=	lua-stream-nginx-module
+PORTNAME=	nginx-module-lua-stream
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.17
 CATEGORIES=	www

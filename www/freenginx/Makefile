@@ -48,7 +48,7 @@ SUB_LIST+=	WWWOWN=${WWWOWN} \
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${ETCDIR} \
-		--with-cc-opt="-I ${LOCALBASE}/include ${NJS_QJS_CFLAGS}" \
+		--with-cc-opt="-I ${LOCALBASE}/include ${_NJS_QJS_CFLAGS}" \
 		--conf-path=${ETCDIR}/nginx.conf \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
@@ -125,7 +125,7 @@ DEBUGLOG_CONFIGURE_ON=	--with-debug
 DSO_CONFIGURE_ON=	--modules-path=${MODULESDIR}
 DSO_VARS=		MODULESDIR=${PREFIX}/libexec/${PORTNAME}
 FILE_AIO_CONFIGURE_ON=	--with-file-aio
-IPV6_CONFIGURE_OFF=	--with-cc-opt="-DNGX_HAVE_INET6=0 -I ${LOCALBASE}/include ${NJS_QJS_CFLAGS}"
+IPV6_CONFIGURE_OFF=	--with-cc-opt="-DNGX_HAVE_INET6=0 -I ${LOCALBASE}/include ${_NJS_QJS_CFLAGS}"
 THREADS_CONFIGURE_ON=	--with-threads
 
 # Bundled modules
@@ -254,7 +254,7 @@ NJS_CONFIGURE_ARGS=	--no-libxml2
 .endif
 
 .if ${PORT_OPTIONS:MNJS_QJS}
-NJS_QJS_CFLAGS=		-I ${LOCALBASE}/include/quickjs
+_NJS_QJS_CFLAGS=		-I ${LOCALBASE}/include/quickjs
 NJS_CONFIGURE_ARGS+=	--cc-opt="${CFLAGS} -I${LOCALBASE}/include/quickjs" \
 			--ld-opt="-L${LOCALBASE}/lib" \
 			--with-quickjs
@@ -341,7 +341,7 @@ pre-configure-LUA-on:
 
 pre-configure-LUASTREAM-on:
 	@${RM} -rf ${WRKSRC_luastream}
-	@cd ${LOCALBASE}/share/nginx/modules/lua-stream-nginx-module && \
+	@cd ${LOCALBASE}/share/nginx/modules/nginx-module-lua-stream && \
 		${COPYTREE_SHARE} . ${WRKSRC_luastream}
 
 do-configure-NJS-on:
