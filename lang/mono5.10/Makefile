@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	5.10.1.57
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.10
@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Ports default to a newer version, no consumers left
-EXPIRATION_DATE=2026-11-31
+EXPIRATION_DATE=2026-11-30
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
