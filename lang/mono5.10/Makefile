@@ -13,6 +13,9 @@ WWW=		https://www.mono-project.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Ports default to a newer version, no consumers left
+EXPIRATION_DATE=2026-11-31
+
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
