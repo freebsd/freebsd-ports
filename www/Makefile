@@ -249,6 +249,7 @@
     SUBDIR += glpi
     SUBDIR += gnome-user-share
     SUBDIR += go-anubis
+    SUBDIR += go-away
     SUBDIR += go-www
     SUBDIR += gobuffalo
     SUBDIR += gohugo

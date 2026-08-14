@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+The go_away_flags rc.conf variable MUST be set appropriately for your site.
+A full list of flags for go-away is documented at:
+https://git.gammaspectra.live/git/go-away/wiki/Installation#command-line-usage
+
+An example for local testing:
+go_away_flags="--slog-level DEBUG --bind :8080 \
+--backend *=http://localhost:3030 \
+--client-ip-header X-Client-Ip \
+--policy ${LOCALBASE}/share/examples/generic.yml \
+--policy-snippets ${LOCALBASE}/share/examples/snippets \
+--challenge-template anubis"
+
+EOM
+}
+]

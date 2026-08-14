@@ -1,0 +1,5 @@
+TIMESTAMP = 1786708259
+SHA256 (go/www_go-away/go-away-v0.7.0/v0.7.0.tar.gz) = 1c330c0fa07aaf59011710c8bbc64d93f5a4a828cc6899ea42edb02fa4fe323e
+SIZE (go/www_go-away/go-away-v0.7.0/v0.7.0.tar.gz) = 358863
+SHA256 (go/www_go-away/go-away-v0.7.0/go.mod) = f6595671bfe56462f4db4decf085bc5e55444ae478f5a2a3d350d2406c02b05f
+SIZE (go/www_go-away/go-away-v0.7.0/go.mod) = 1556
