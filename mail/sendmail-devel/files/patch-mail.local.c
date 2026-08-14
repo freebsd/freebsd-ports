@@ -1,4 +1,4 @@
---- mail.local/mail.local.c.orig	2026-03-09 16:19:10 UTC
+--- mail.local/mail.local.c.orig	2026-03-17 06:40:58 UTC
 +++ mail.local/mail.local.c
 @@ -154,6 +154,8 @@ bool	BounceQuota = false;		/* permanent error when ove
  bool	HoldErrs = false;		/* Hold errors in ErrBuf */
@@ -9,7 +9,7 @@
  bool	CloseMBDB = false;
  char	*HomeMailFile = NULL;		/* store mail in homedir */
  
-@@ -234,12 +236,12 @@ main(int argc, char *argv[])
+@@ -232,12 +234,12 @@ main(int argc, char *argv[])
  
  	/* HACK: add U to all options - this should be only for USE_EAI */
  #if HASHSPOOL
@@ -25,7 +25,7 @@
  # endif
  #endif /* HASHSPOOL */
  	{
-@@ -249,6 +251,10 @@ main(int argc, char *argv[])
+@@ -247,6 +249,10 @@ main(int argc, char *argv[])
  			EightBitMime = false;
  			break;
  
@@ -36,7 +36,7 @@
  		  case 'b':		/* bounce mail when over quota. */
  			BounceQuota = true;
  			break;
-@@ -358,6 +364,10 @@ main(int argc, char *argv[])
+@@ -356,6 +362,10 @@ main(int argc, char *argv[])
  #endif
  			break;
  
@@ -47,7 +47,7 @@
  		  case '?':
  		  default:
  			usage();
-@@ -367,7 +377,8 @@ main(int argc, char *argv[])
+@@ -365,7 +375,8 @@ main(int argc, char *argv[])
  	argv += optind;
  
  	/* initialize biff structures */
@@ -57,7 +57,7 @@
  
  	err = sm_mbdb_initialize(mbdbname);
  	if (err != EX_OK)
-@@ -1290,6 +1301,7 @@ tryagain:
+@@ -1288,6 +1299,7 @@ tryagain:
  
  	/* Get the starting offset of the new message */
  	curoff = lseek(mbfd, (off_t) 0, SEEK_END);
@@ -65,7 +65,7 @@
  	(void) sm_snprintf(biffmsg, sizeof(biffmsg), "%s@%lld\n",
  			   name, (LONGLONG_T) curoff);
  
-@@ -1352,7 +1364,7 @@ tryagain:
+@@ -1350,7 +1362,7 @@ tryagain:
  	}
  
  	/* Flush to disk, don't wait for update. */
@@ -74,7 +74,7 @@
  	{
  		mailerr("450 4.2.0", "Sync %s: %s", path, sm_errstring(errno));
  err3:
-@@ -1423,7 +1435,7 @@ err0:
+@@ -1421,7 +1433,7 @@ err0:
  		/* Attempt to truncate back to pre-write size */
  		goto err3;
  	}
@@ -83,7 +83,7 @@
  		notifybiff(biffmsg);
  
  	if (
-@@ -1604,9 +1616,9 @@ usage(void)
+@@ -1602,9 +1614,9 @@ usage(void)
  {
  	/* XXX add U to options for USE_EAI */
  #if _FFR_SPOOL_PATH

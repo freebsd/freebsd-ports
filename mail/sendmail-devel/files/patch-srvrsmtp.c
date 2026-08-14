@@ -1,6 +1,6 @@
---- sendmail/srvrsmtp.c.orig	2026-03-09 16:19:10 UTC
+--- sendmail/srvrsmtp.c.orig	2026-04-20 17:18:50 UTC
 +++ sendmail/srvrsmtp.c
-@@ -932,6 +932,9 @@ do								\
+@@ -930,6 +930,9 @@ do								\
  # define SHOWCMDINREPLY(inp) inp
  # define SHOWSHRTCMDINREPLY(inp) shortenstring(inp, MAXSHORTSTR)
  #endif
@@ -10,7 +10,7 @@
  
  void
  smtp(char *volatile nullserver, BITMAP256 d_flags,
-@@ -1523,6 +1526,8 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -1521,6 +1524,8 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  			/* check if data is on the socket during the pause */
  			if ((tp = channel_readable(InChannel, msecs)) != NULL)
  			{
@@ -19,7 +19,7 @@
  				greetcode = "554";
  				nullserver = "Command rejected";
  				sm_syslog(LOG_INFO, e->e_id,
-@@ -1532,6 +1537,8 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -1530,6 +1535,8 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  					  (int) tp->tv_sec +
  						(tp->tv_usec >= 500000 ? 1 : 0)
  					 );
@@ -28,7 +28,7 @@
  			}
  		}
  	}
-@@ -1651,6 +1658,10 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -1649,6 +1656,10 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  		SmtpPhase = "server cmd read";
  		sm_setproctitle(true, e, "server %s cmd read", CurSmtpClient);
  
@@ -39,7 +39,7 @@
  		/* handle errors */
  		if (sm_io_error(OutChannel) ||
  		    (p = sfgets(inp, sizeof(inp), InChannel,
-@@ -1966,8 +1977,11 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -1964,8 +1975,11 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  #define LOGAUTHFAIL	\
  	do	\
  	{	\
@@ -51,7 +51,7 @@
  		if (LogLevel >= 9)	\
  			sm_syslog(LOG_WARNING, e->e_id,	\
  				  "AUTH failure (%s): %s (%d) %s%s%.*s, relay=%.100s",	\
-@@ -2066,6 +2080,13 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -2064,6 +2078,13 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  			  case CMDEHLO:
  			  case CMDNOOP:
  			  case CMDRSET:
@@ -65,7 +65,7 @@
  			  case CMDERROR:
  				/* process normally */
  				break;
-@@ -2093,6 +2114,11 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -2091,6 +2112,11 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  #endif /* MAXBADCOMMANDS > 0 */
  				if (nullserver != NULL)
  				{
@@ -77,7 +77,7 @@
  					if (ISSMTPREPLY(nullserver))
  					{
  						/* Can't use ("%s", ...) due to usrerr() requirements */
-@@ -2117,6 +2143,9 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -2115,6 +2141,9 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  			DELAY_CONN("AUTH");
  			if (!sasl_ok || n_mechs <= 0)
  			{
@@ -87,7 +87,7 @@
  				message("503 5.3.3 AUTH not available");
  				break;
  			}
-@@ -3906,10 +3935,17 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -3904,10 +3933,17 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  				**  timeouts for the same connection.
  				*/
  
@@ -105,7 +105,7 @@
  			if (tTd(93, 100))
  			{
  				/* return to handle next connection */
-@@ -3991,7 +4027,10 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -3989,7 +4025,10 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  #if MAXBADCOMMANDS > 0
  			if (++n_badcmds > MAXBADCOMMANDS)
  			{
@@ -116,7 +116,7 @@
  				message("421 4.7.0 %s Too many bad commands; closing connection",
  					MyHostName);
  
-@@ -4045,6 +4084,9 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -4043,6 +4082,9 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  		}
  #if SASL
  		}

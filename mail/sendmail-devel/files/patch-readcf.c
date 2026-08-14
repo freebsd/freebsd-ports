@@ -1,6 +1,6 @@
---- sendmail/readcf.c.orig	2026-03-09 16:19:10 UTC
+--- sendmail/readcf.c.orig	2026-04-20 17:18:50 UTC
 +++ sendmail/readcf.c
-@@ -3175,6 +3175,11 @@ static struct optioninfo
+@@ -3172,6 +3172,11 @@ static struct optioninfo
  	{ "SameDomainOnly",		O_SAMEDOMAINONLY,	OI_NONE	},
  #endif
  
@@ -12,7 +12,7 @@
  	{ NULL,				'\0',		OI_NONE	}
  };
  
-@@ -4901,6 +4906,12 @@ setoption(int opt, char *val, bool safe, bool sticky, 
+@@ -4898,6 +4903,12 @@ setoption(int opt, char *val, bool safe, bool sticky, 
  #if _FFR_MTA_STS
  	  case O_MTASTS:
  		StrictTransportSecurity = atobool(val);
