@@ -205,7 +205,7 @@ DEBUG_VARS_OFF=		BUILDTYPE=Release \
 
 DRIVER_MAKE_ARGS=	chromedriver
 
-HEIMDAL_LIB_DEPENDS=	libkrb.so.26:security/heimdal
+HEIMDAL_LIB_DEPENDS=	libkrb5.so.26:security/heimdal
 KERBEROS_VARS=		GN_ARGS+=use_kerberos=true
 KERBEROS_VARS_OFF=	GN_ARGS+=use_kerberos=false
 
@@ -215,7 +215,7 @@ LTO_VARS=		GN_ARGS+=use_thin_lto=true \
 			WANTMEM="16 GB"
 LTO_VARS_OFF=		GN_ARGS+=use_thin_lto=false
 
-MIT_LIB_DEPENDS=	libkrb.so.3:security/krb5
+MIT_LIB_DEPENDS=	libkrb5.so.3:security/krb5
 
 PIPEWIRE_DESC=		Screen capture via PipeWire
 PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
