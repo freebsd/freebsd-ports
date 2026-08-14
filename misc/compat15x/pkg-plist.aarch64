@@ -1,2 +1,3 @@
 lib/compat/libtpool.so.2
+lib/compat/libusb.so.3
 lib/compat/libuutil.so.2
