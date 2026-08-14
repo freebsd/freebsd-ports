@@ -2,9 +2,8 @@ PORTNAME=	vim-classic
 PORTVERSION=	8.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
-MASTER_SITES=	https://git.sr.ht/~sircmpwn/vim-classic/archive/ \
-		https://mirror.sonologic.net/vim-classic/
-DISTNAME=	${DISTVERSIONPREFIX}${PORTVERSION}
+MASTER_SITES=	https://git.sr.ht/~sircmpwn/vim-classic/archive/v${DISTVERSION}.tar.gz?dummy=/ \
+		https://mirror.sonologic.net/vim-classic/v${DISTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kmartens@sonologic.se
@@ -17,7 +16,6 @@ LICENSE_NAME=	VIM License
 LICENSE_FILE=	${WRKSRC}/runtime/doc/uganda.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-# Flavors {{{1
 # FLAVORS are used to build various Vim GUIs. The default flavor (`vim') is
 # console-only.
 FLAVORS=		console gtk2 gtk3 motif x11 tiny
@@ -27,7 +25,6 @@ CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/vim-/}
 
 USES=		cpe desktop-file-utils iconv ncurses pkgconfig shebangfix
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 DATADIR=	${PREFIX}/share/vim
 
 # Vim will try to link against libcanberra if it's installed
@@ -116,7 +113,6 @@ CFLAGS+=		-DPy_DEBUG -DPy_DEBUG_NO_PYMALLOC
 .  endif
 .endif
 
-# Options {{{1
 # The bulk of the OPTIONS are for normal (non-tiny) vim
 ### Make sure any new options are excluded below in CONSOLE/TINY
 OPTIONS_DEFAULT=	CTAGS_BASE XXD
@@ -174,7 +170,6 @@ TCL_CONFIGURE_ENABLE=	tclinterp
 TCL_CONFIGURE_WITH=	tclsh=tclsh${TCL_VER}
 TCL_USES=		tcl
 
-# Targets {{{1
 .include <bsd.port.pre.mk>
 
 post-extract:
