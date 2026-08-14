@@ -188,6 +188,8 @@ PKGNAMESUFFIX=	-base-pgsql
 PKGNAMESUFFIX=	-base-sasl
 .elif ${FLAVOR:U} == sqlite
 PKGNAMESUFFIX=	-base-sqlite
+.elif ${FLAVOR:U} == mongo
+PKGNAMESUFFIX=	-base-mongo
 .else
 PKGNAMESUFFIX=	-base
 .endif
