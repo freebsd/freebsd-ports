@@ -1,12 +1,8 @@
 PORTNAME=	qgis
-DISTVERSION=	3.40.15
-PORTREVISION=	6
+DISTVERSION=	3.44.13
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
-
-PATCH_SITES=	https://github.com/qgis/QGIS/commit/
-PATCHFILES=	ac1443a90bb295cfb179de969b07b885c64e6252.patch:-p1
 
 MAINTAINER=	rhurlin@FreeBSD.org
 COMMENT=	Free and Open Source Geographic Information System
@@ -54,10 +50,10 @@ LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libpdalcpp.so:math/pdal \
 		libproj.so:graphics/proj \
 		libprotobuf-lite.so:devel/protobuf \
-		libqca-qt5.so:devel/qca@qt5 \
-		libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
-		libqt5keychain.so:security/qtkeychain@qt5 \
-		libqwt.so:x11-toolkits/qwt6@qt5 \
+		libqca-qt6.so:devel/qca@qt6 \
+		libqscintilla2_qt6.so:devel/qscintilla2@qt6 \
+		libqt6keychain.so:security/qtkeychain@qt6 \
+		libqwt.so:x11-toolkits/qwt6@qt6 \
 		librttopo.so:devel/librttopo \
 		libspatialite.so:databases/spatialite \
 		libsz.so:science/libaec \
@@ -112,39 +108,39 @@ RUN_DEPENDS=	astyle:devel/astyle \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features desktop-file-utils \
-		fortran gl gmake gnome iconv pgsql pyqt:5 python qt:5 \
+		fortran gl gmake gnome iconv pgsql pyqt:6 python qt:6 \
 		shebangfix sqlite:3 tar:bz2
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_PYQT=	pyqt5 pysip qscintilla2 qtbuilder:build sip:build webengine
-USE_QT=		3d buildtools:build core concurrent dbus declarative \
-		designer:build qdoc:build gamepad gui linguist:build location \
-		multimedia network printsupport qmake:build script serialport \
-		sql sql-pgsql sql-sqlite3 svg testlib uitools:build \
-		webchannel webengine widgets xml
+USE_PYQT=	pyqt6 pysip qscintilla2 qtbuilder:build sip:build webengine
+USE_QT=		3d 5compat base declarative location multimedia pdf positioning \
+		sensors serialport sqldriver-psql sqldriver-sqlite svg tools \
+		webchannel webengine
+# https://www.freebsd.org/doc/de_DE.ISO8859-1/books/porters-handbook/dads-pthread.html
+#MAKE_ARGS=	PTHREAD_LIBS="-lpthread"
+#CONFIGURE_ENV=	LD=${CC}
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
 # Python_EXECUTABLE: Use the default version if multiple Pythons are available
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DHAVE_PGCONFIG=1 \
-		-DPYRCC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER} \
-		-DPYUIC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		-DPython_EXECUTABLE=${PYTHON_CMD} \
 		-DQSCI_SIP_DIR:PATH=${PYQT_SIPDIR}/Qsci \
-		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
-		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt.so \
+		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt6/qwt6 \
+		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt6/libqwt.so \
 		-DQGIS_MANUAL_SUBDIR:PATH=share/man
-# [2025-10-25] Use internal spatialindex, as the one in the ports is too new:
-# -- Found Spatialindex: /usr/local/lib/libspatialindex.so (2.1.0)
-# CMake Error at CMakeLists.txt:460 (message):
-#   Cannot build QGIS using libspatialindex >= 2.1, see
-#   https://github.com/libspatialindex/libspatialindex/issues/276
-CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE WITH_BINDINGS WITH_COPC \
-		WITH_CUSTOM_WIDGETS WITH_DRACO WITH_EPT WITH_INTERNAL_LAZPERF \
-		WITH_POSTGRESQL WITH_QTWEBENGINE WITH_INTERNAL_SPATIALINDEX
-CMAKE_OFF=	ENABLE_TESTS USE_CCACHE WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
+# BINDINGS_GLOBAL_INSTALL SIP_GLOBAL_INSTALL
+CMAKE_ON=	BUILD_WITH_QT6 USE_OPENCL WITH_3D WITH_ANALYSIS WITH_ASTYLE \
+		WITH_AUTH WITH_BINDINGS WITH_COPC WITH_CUSTOM_WIDGETS WITH_DRACO \
+		WITH_EPT WITH_INTERNAL_LAZPERF WITH_INTERNAL_SPATIALINDEX \
+		WITH_PDAL WITH_POSTGRESQL WITH_PYTHON \
+		WITH_QTWEBENGINE WITH_QUICK \
+		WITH_SPATIALITE WITH_STAGED_PLUGINS
+CMAKE_ON+=	WITH_PDF4QT
+CMAKE_OFF=	ENABLE_TESTS USE_CCACHE PDF4QT_INSTALL_TO_USR WITH_QSPATIALITE WITH_QTWEBKIT
+#CMAKE_OFF+=	WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis
 
@@ -152,22 +148,27 @@ PLIST_SUB=	DISTVERSION=${PORTVERSION}
 
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-Wno-dev
-CMAKE_OFF+=	SUPPRESS_QT_WARNINGS
 .endif
 
-OPTIONS_DEFINE=		SERVER GRASS
+OPTIONS_DEFINE=		SERVER MDAL GRASS
 OPTIONS_DEFAULT=	SERVER GRASS
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=		yes
 
 GRASS_DESC=		Add GRASS GIS to processing tools
+MDAL_DESC=		Use external MDAL
 SERVER_DESC=		Enable QGIS server
 
 GRASS_BUILD_DEPENDS=	grass8:databases/grass8
 GRASS_RUN_DEPENDS=	${GRASS_BUILD_DEPENDS}
 GRASS_CMAKE_BOOL=	WITH_GRASS8
+
+MDAL_LIB_DEPENDS=	libmdal.so:math/mdal
+MDAL_CMAKE_ON=		-DWITH_INTERNAL_MDAL:BOOL=false
+MDAL_CMAKE_OFF=		-DWITH_INTERNAL_MDAL:BOOL=true
+
 SERVER_LIB_DEPENDS=	libfcgi.so:www/fcgi
-SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
+SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS
 
 .include <bsd.port.pre.mk>
 

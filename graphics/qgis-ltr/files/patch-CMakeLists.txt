@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2026-07-31 12:30:19 UTC
++++ CMakeLists.txt
+@@ -449,6 +449,7 @@ if(WITH_CORE)
+   IF(WITH_INTERNAL_SPATIALINDEX)
+     message(STATUS "Using internal spatialindex")
+     set(SPATIALINDEX_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/spatialindex/include)
++    include_directories(BEFORE SYSTEM ${CMAKE_SOURCE_DIR}/external/spatialindex/include)
+   else()
+     find_package(Spatialindex REQUIRED)
+     if(SPATIALINDEX_VERSION VERSION_GREATER_EQUAL "2.1")
