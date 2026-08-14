@@ -1,5 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.44.13
+DISTVERSION=	4.2.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -34,11 +34,13 @@ BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=3.7.16:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.4.1:devel/py-pyyaml@${PY_FLAVOR}
 LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
+		libblend2d.so:graphics/blend2d \
 		libdraco.so:archivers/draco \
 		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
 		libfreexl.so:textproc/freexl \
 		libgdal.so:graphics/gdal \
+		libGeographicLib.so:astro/geographiclib \
 		libgeos.so:graphics/geos \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
@@ -48,11 +50,12 @@ LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libpdalcpp.so:math/pdal \
 		libproj.so:graphics/proj \
 		libprotobuf-lite.so:devel/protobuf \
-		libqca-qt5.so:devel/qca@qt5 \
-		libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
-		libqt5keychain.so:security/qtkeychain@qt5 \
-		libqwt.so:x11-toolkits/qwt6@qt5 \
+		libqca-qt6.so:devel/qca@qt6 \
+		libqscintilla2_qt6.so:devel/qscintilla2@qt6 \
+		libqt6keychain.so:security/qtkeychain@qt6 \
+		libqwt.so:x11-toolkits/qwt6@qt6 \
 		librttopo.so:devel/librttopo \
+		libSFCGAL.so:databases/sfcgal \
 		libspatialite.so:databases/spatialite \
 		libsz.so:science/libaec \
 		libxerces-c.so:textproc/xerces-c3 \
@@ -79,6 +82,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 		${PYTHON_PKGNAMEPREFIX}netCDF4>=1.6.2:science/py-netCDF4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.8.8:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nltk>=3.7:textproc/py-nltk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nose2>=0.10.0:devel/py-nose2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}OWSLib>=0.27.2:graphics/py-OWSLib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.5.0:math/py-pandas@${PY_FLAVOR} \
@@ -106,17 +110,15 @@ RUN_DEPENDS=	astyle:devel/astyle \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features desktop-file-utils \
-		fortran gl gmake gnome iconv pgsql pyqt:5 python qt:5 \
+		fortran gl gmake gnome iconv pgsql pyqt:6 python qt:6 \
 		shebangfix sqlite:3 tar:bz2
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_PYQT=	pyqt5 pysip qscintilla2 qtbuilder:build sip:build webengine
-USE_QT=		3d buildtools:build core concurrent dbus declarative \
-		designer:build qdoc:build gamepad gui linguist:build location \
-		multimedia network printsupport qmake:build script serialport \
-		sql sql-pgsql sql-sqlite3 svg testlib uitools:build \
-		webchannel webengine widgets xml
+USE_PYQT=	pyqt6 pysip qscintilla2 qtbuilder:build sip:build webengine
+USE_QT=		3d 5compat base declarative location multimedia pdf positioning \
+		sensors serialport sqldriver-psql sqldriver-sqlite svg tools \
+		webchannel webengine
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
@@ -125,20 +127,19 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DHAVE_PGCONFIG=1 \
 		-DPython_EXECUTABLE=${PYTHON_CMD} \
 		-DQSCI_SIP_DIR:PATH=${PYQT_SIPDIR}/Qsci \
-		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
-		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt.so \
+		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt6/qwt6 \
+		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt6/libqwt.so \
 		-DQGIS_MANUAL_SUBDIR:PATH=share/man
-# [2025-10-25] Use internal spatialindex, as the one in the ports is too new:
-# -- Found Spatialindex: /usr/local/lib/libspatialindex.so (2.1.0)
-# CMake Error at CMakeLists.txt:460 (message):
-#   Cannot build QGIS using libspatialindex >= 2.1, see
-#   https://github.com/libspatialindex/libspatialindex/issues/276
-CMAKE_ON=	USE_OPENCL WITH_ASTYLE WITH_BINDINGS WITH_COPC \
-		WITH_CUSTOM_WIDGETS WITH_DRACO WITH_EPT \
-		WITH_INTERNAL_LAZPERF WITH_INTERNAL_MDAL \
-		WITH_POSTGRESQL WITH_QTWEBENGINE WITH_INTERNAL_SPATIALINDEX
-CMAKE_OFF=	BUILD_WITH_QT6 ENABLE_TESTS USE_CCACHE WITH_QTWEBKIT \
-		WITH_QWTPOLAR
+# BINDINGS_GLOBAL_INSTALL SIP_GLOBAL_INSTALL
+CMAKE_ON=	USE_OPENCL WITH_3D WITH_ANALYSIS WITH_AUTH \
+		WITH_BINDINGS WITH_COPC WITH_CUSTOM_WIDGETS WITH_DRACO \
+		WITH_EPT WITH_INTERNAL_LAZPERF WITH_INTERNAL_SPATIALINDEX \
+		WITH_GEOGRAPHICLIB WITH_PDAL WITH_POSTGRESQL WITH_PYTHON \
+		WITH_QSPATIALITE WITH_QTWEBENGINE WITH_QUICK WITH_SFCGAL \
+		WITH_SPATIALITE WITH_STAGED_PLUGINS
+CMAKE_ON+=	WITH_PDF4QT 
+CMAKE_OFF=	ENABLE_TESTS USE_CCACHE PDF4QT_INSTALL_TO_USR
+#CMAKE_OFF+=	WITH_QSPATIALITE WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis-ltr
 
@@ -146,7 +147,6 @@ PLIST_SUB=	DISTVERSION=${PORTVERSION}
 
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-Wno-dev
-#CMAKE_OFF+=	SUPPRESS_QT_WARNINGS
 .endif
 
 OPTIONS_DEFINE=		SERVER GRASS
