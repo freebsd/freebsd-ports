@@ -21,7 +21,9 @@ include/hyprutils/memory/WeakPtr.hpp
 include/hyprutils/misc/HyprAssert.hpp
 include/hyprutils/os/File.hpp
 include/hyprutils/os/FileDescriptor.hpp
+include/hyprutils/os/ProcLock.hpp
 include/hyprutils/os/Process.hpp
+include/hyprutils/os/Semaphore.hpp
 include/hyprutils/path/Path.hpp
 include/hyprutils/signal/Listener.hpp
 include/hyprutils/signal/Signal.hpp
