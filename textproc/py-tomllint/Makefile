@@ -1,5 +1,5 @@
 PORTNAME=	tomllint
-DISTVERSION=	0.3.3
+DISTVERSION=	0.3.6
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,10 +17,16 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0_3:devel/py-setuptools@$
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
-# tests: 16 passed
+# tests: 18 passed
 TEST_ENV=	PYTHONIOENCODING=utf-8 \
 		PYTHONPATH="${STAGEDIR}${PYTHON_SITELIBDIR}"
 
 NO_ARCH=	yes
+
+post-patch:
+	${REINPLACE_CMD} -E \
+		-e 's/^(license = )"([^"]+)"/\1{ text = "\2" }/1' \
+		-e '/^license-files/d' \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
