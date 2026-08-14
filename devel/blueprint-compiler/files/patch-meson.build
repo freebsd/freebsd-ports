@@ -1,11 +1,22 @@
---- meson.build.orig	2026-02-26 23:51:22 UTC
+--- meson.build.orig	2026-07-10 22:13:10 UTC
 +++ meson.build
-@@ -14,7 +14,7 @@ configure_file(
-   output: 'blueprint-compiler.pc',
-   configuration: { 'VERSION': meson.project_version() },
-   install: not meson.is_subproject(),
--  install_dir: join_paths(datadir, 'pkgconfig'),
-+  install_dir: join_paths(get_option('prefix'), 'libdata', 'pkgconfig'),
- )
+@@ -53,17 +53,13 @@ else
  
- config = configuration_data({
+   meson.override_find_program('blueprint-compiler', blueprint_compiler)
+ else
+-  if get_option('python_wheel')
+-    pkgconfig_path = 'share' / 'pkgconfig'
+-  else
+-    pkgconfig_path = 'pkgconfig'
+-  endif
++  pkgconfig_path = 'libdata/pkgconfig'
+ 
+   blueprint_compiler_pc = configure_file(
+     input: 'data/blueprint-compiler.pc.in',
+     output: 'blueprint-compiler.pc',
+     configuration: { 'VERSION': meson.project_version() },
+-    install_dir: get_option('datadir') / pkgconfig_path,
++    install_dir: get_option('prefix') / pkgconfig_path,
+   )
+ 
+   install_subdir(
