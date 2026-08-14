@@ -1385,6 +1385,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/patterns/triangle_b.dxf
 %%DATADIR%%/plugins/libalign.so
 %%DATADIR%%/plugins/libasciifile.so
+%%DATADIR%%/plugins/libcircletools.so
 %%DATADIR%%/plugins/libdivide.so
 %%DATADIR%%/plugins/libgear.so
 %%DATADIR%%/plugins/liblist.so
@@ -1429,7 +1430,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/librecad_he.qm
 %%DATADIR%%/qm/librecad_hi.qm
 %%DATADIR%%/qm/librecad_hu.qm
-%%DATADIR%%/qm/librecad_id_ID.qm
+%%DATADIR%%/qm/librecad_id_id.qm
 %%DATADIR%%/qm/librecad_it.qm
 %%DATADIR%%/qm/librecad_ja.qm
 %%DATADIR%%/qm/librecad_ka.qm
@@ -1490,7 +1491,7 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_gl.qm
 %%DATADIR%%/qm/plugins_hi.qm
 %%DATADIR%%/qm/plugins_hu.qm
-%%DATADIR%%/qm/plugins_id_ID.qm
+%%DATADIR%%/qm/plugins_id_id.qm
 %%DATADIR%%/qm/plugins_it.qm
 %%DATADIR%%/qm/plugins_ja.qm
 %%DATADIR%%/qm/plugins_ko.qm
