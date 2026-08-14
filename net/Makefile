@@ -133,6 +133,7 @@
     SUBDIR += dico
     SUBDIR += dictd
     SUBDIR += dogtag-ldap-sdk
+    SUBDIR += dot1ag-utils
     SUBDIR += dpdk
     SUBDIR += dpdk-20.11
     SUBDIR += dpinger
