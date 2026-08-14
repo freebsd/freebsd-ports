@@ -8,6 +8,8 @@ LLVM_COMMANDS=	\
 		llvm-as \
 		llvm-bcanalyzer \
 		llvm-bitcode-strip \
+		llvm-c-test \
+		llvm-calc-occupancy \
 		llvm-cas \
 		llvm-cat \
 		llvm-cfi-verify \
@@ -60,7 +62,6 @@ LLVM_COMMANDS=	\
 		llvm-reduce \
 		llvm-remarkutil \
 		llvm-rtdyld \
-		llvm-sim \
 		llvm-size \
 		llvm-split \
 		llvm-stress \

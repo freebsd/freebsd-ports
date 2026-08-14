@@ -124,6 +124,7 @@ COMPILER_RT_IMPLIES=	CLANG
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS}
 COMPILER_RT_CONFLICTS_BUILD=${ARCH}-binutils
 DOCS_BUILD_DEPENDS= \
+	${PYTHON_PKGNAMEPREFIX}furo:textproc/py-furo@@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}myst-parser>0:textproc/py-myst-parser@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}sphinx-markdown-tables>=0:textproc/py-sphinx-markdown-tables@${PY_FLAVOR}
@@ -347,7 +348,7 @@ _COMPILER_RT_LIBS=
 _COMPILER_RT_LIBS:= ${_COMPILER_RT_LIBS} ${COMPILER_RT_LIBS_${CRT_ARCH}:S|^|${_CRTLIBDIR}/${CRT_ARCH}-portbld-${OPSYS:tl}${OSREL}/|}
 .endfor
 
-COMPILER_RT_IGNORELISTS=
+COMPILER_RT_IGNORELISTS=hwasan_ignorelist.txt
 .for RT in asan cfi msan
 .if ${_COMPILER_RT_LIBS:M*/libclang_rt.${RT}.a}
 COMPILER_RT_IGNORELISTS:=	${COMPILER_RT_IGNORELISTS} ${RT}_ignorelist.txt
@@ -433,7 +434,6 @@ post-install-CLANG-on:
 post-install-EXTRAS-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang-tidy/cert
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang-tidy/misc/ConfusableTable
-	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang-tidy/zircon
 
 post-install-FLANG-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CodeGen/CMakeFiles
