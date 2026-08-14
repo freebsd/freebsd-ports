@@ -1,6 +1,6 @@
---- src/fapplication.cpp.orig	2025-10-07 13:46:45 UTC
+--- src/fapplication.cpp.orig	2026-07-28 07:36:38 UTC
 +++ src/fapplication.cpp
-@@ -897,19 +897,7 @@ bool FApplication::loadReferenceModel(const QString & 
+@@ -989,19 +989,7 @@ bool FApplication::loadReferenceModel(const QString & 
  
  	QFileInfo info(dbPath);
  	bool dbExists = (info.size() > 0) && !fullLoad;
