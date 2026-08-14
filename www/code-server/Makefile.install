@@ -15,3 +15,6 @@ do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/README.md \
 		${STAGEDIR}${DOCSDIR}
+
+post-stage:
+	@${FIND} ${STAGEDIR}${DATADIR} -name '*.node' -type f | while read f; do /usr/bin/file -b "$${f}" | ${GREP} -q 'ELF.*FreeBSD' && ${STRIP_CMD} "$${f}" || ${TRUE}; done
