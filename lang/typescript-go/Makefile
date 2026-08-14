@@ -1,6 +1,7 @@
 PORTNAME=	typescript-go
 DISTVERSIONPREFIX=	typescript/v
 DISTVERSION=	7.0.2
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	tagattie@FreeBSD.org

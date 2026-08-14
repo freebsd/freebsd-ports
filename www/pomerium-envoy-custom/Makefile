@@ -1,6 +1,7 @@
 PORTNAME=	pomerium-envoy-custom
 DISTVERSIONPREFIX=
 DISTVERSION=	1.37.0.20260618
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES+=	https://github.com/envoyproxy/envoy/archive/:envoy_src \
 		https://github.com/openssh/openssh-portable/archive/:openssh_portable \

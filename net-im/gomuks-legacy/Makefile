@@ -1,6 +1,7 @@
 PORTNAME=	gomuks-legacy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	dereks@lifeofadishwasher.com

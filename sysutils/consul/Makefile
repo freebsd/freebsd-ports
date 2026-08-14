@@ -1,7 +1,7 @@
 PORTNAME=	consul
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/consul/${DISTVERSIONFULL}/
 DISTFILES=	go.mod \

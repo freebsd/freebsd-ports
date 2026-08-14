@@ -1,5 +1,6 @@
 PORTNAME=	noti
 DISTVERSION=	3.9.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://codeberg.org/roble/noti/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}${DISTVERSION}

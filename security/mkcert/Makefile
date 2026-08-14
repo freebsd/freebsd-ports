@@ -1,6 +1,7 @@
 PORTNAME=	mkcert
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	owlandrews@protonmail.com
