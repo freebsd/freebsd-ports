@@ -17,6 +17,8 @@ LICENSE_NAME=	ATKINSON HYPERLEGIBLE FONT LICENSE
 LICENSE_FILE=	${DISTDIR}/${AHF}-License-2020-1104.pdf
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+BROKEN=		Fails to fetch
+
 USES=		fonts zip
 
 OPTIONS_DEFINE=		OTF TTF WEB
