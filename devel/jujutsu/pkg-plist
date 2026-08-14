@@ -177,6 +177,8 @@ share/man/man1/jj-status.1.gz
 share/man/man1/jj-tag-delete.1.gz
 share/man/man1/jj-tag-list.1.gz
 share/man/man1/jj-tag-set.1.gz
+share/man/man1/jj-tag-track.1.gz
+share/man/man1/jj-tag-untrack.1.gz
 share/man/man1/jj-tag.1.gz
 share/man/man1/jj-undo.1.gz
 share/man/man1/jj-unsign.1.gz
