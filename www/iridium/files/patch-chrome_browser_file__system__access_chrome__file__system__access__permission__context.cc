@@ -1,6 +1,6 @@
---- chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc.orig	2026-06-10 12:51:34 UTC
+--- chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc.orig	2026-08-13 16:48:13 UTC
 +++ chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc
-@@ -412,7 +412,7 @@ GenerateBlockPaths(bool should_normalize_file_path) {
+@@ -415,7 +415,7 @@ GenerateBlockPaths(bool should_normalize_file_path) {
            FILE_PATH_LITERAL("Library/Mobile Documents/com~apple~CloudDocs"),
            BlockType::kDontBlockChildren),
  #endif

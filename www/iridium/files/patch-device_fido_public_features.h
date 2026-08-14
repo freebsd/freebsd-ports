@@ -1,11 +1,11 @@
---- device/fido/public/features.h.orig	2026-02-16 10:45:29 UTC
+--- device/fido/public/features.h.orig	2026-08-13 16:48:13 UTC
 +++ device/fido/public/features.h
-@@ -13,7 +13,7 @@
+@@ -14,7 +14,7 @@
  namespace device {
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- // Enables the Passkey Unlock Manager.
+ // Allows the passkey unlock error UI to be shown.
  COMPONENT_EXPORT(FIDO_PUBLIC)
- BASE_DECLARE_FEATURE(kPasskeyUnlockManager);
+ BASE_DECLARE_FEATURE(kPasskeyUnlockErrorUi);

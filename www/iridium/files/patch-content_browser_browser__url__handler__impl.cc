@@ -1,4 +1,4 @@
---- content/browser/browser_url_handler_impl.cc.orig	2025-12-10 15:04:57 UTC
+--- content/browser/browser_url_handler_impl.cc.orig	2026-08-13 16:48:13 UTC
 +++ content/browser/browser_url_handler_impl.cc
 @@ -13,6 +13,7 @@
  #include "content/browser/webui/web_ui_impl.h"
@@ -16,6 +16,6 @@
 +	if (!command_line->HasSwitch(switches::kTrk))
 +		return;
 +
- 	auto browser = chrome::FindLastActive();
+ 	auto browser = GlobalBrowserCollection::GetInstance()->GetLastActiveBrowser();
  	if (browser == nullptr)
  		return;

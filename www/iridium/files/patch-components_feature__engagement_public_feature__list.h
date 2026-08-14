@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2026-06-10 12:51:34 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2026-08-13 16:48:13 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -379,7 +379,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSPinMostVisitedSiteFeatur
+@@ -401,7 +401,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSPinMostVisitedSiteFeatur
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,25 +9,34 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  DEFINE_VARIATION_PARAM(kEsbDownloadRowPromoFeature, "EsbDownloadRowPromo");
  #endif
-@@ -510,7 +510,7 @@ DEFINE_VARIATION_PARAM(kIPHTabGroupsSharedTabFeedbackF
+@@ -545,7 +545,7 @@ DEFINE_VARIATION_PARAM(kIPHTabGroupsSharedTabFeedbackF
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+ DEFINE_VARIATION_PARAM(kIPHAutofillAccountNameEmailSuggestionFeature,
+                        "IPH_AutofillAccountNameEmailSuggestion");
  DEFINE_VARIATION_PARAM(kIPHAutofillAiOptInFeature, "IPH_AutofillAiOptIn");
- DEFINE_VARIATION_PARAM(kIPHAutofillAiValuablesFeature,
-                        "IPH_AutofillAiValuables");
-@@ -553,7 +553,7 @@ DEFINE_VARIATION_PARAM(kIPHLauncherSearchHelpUiFeature
-                        "IPH_LauncherSearchHelpUi");
+@@ -591,7 +591,7 @@ DEFINE_VARIATION_PARAM(kIPHLauncherSearchHelpUiFeature
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLaunch,
                         "IPH_DesktopPWAsLinkCapturingLaunch");
  DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLaunchAppInTab,
-@@ -782,7 +782,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+@@ -599,7 +599,7 @@ DEFINE_VARIATION_PARAM(kIPHDesktopPWAsLinkCapturingLau
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+         // BUILDFLAG(IS_CHROMEOS)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ DEFINE_VARIATION_PARAM(kIPHSignInBenefitsFeature, "IPH_SignInBenefits");
+ DEFINE_VARIATION_PARAM(kIPHSupervisedUserProfileSigninFeature,
+                        "IPH_SupervisedUserProfileSignin");
+@@ -837,7 +837,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          VARIATION_ENTRY(kIPHWhatsNewUpdatedFeature),
  // keep-sorted end
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,7 +45,7 @@
  #if BUILDFLAG(ENABLE_EXTENSIONS)
          VARIATION_ENTRY(kIPHExtensionsMenuFeature),
          VARIATION_ENTRY(kIPHExtensionsRequestAccessButtonFeature),
-@@ -849,7 +849,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+@@ -910,7 +910,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -45,12 +54,19 @@
  // keep-sorted start case=no
          VARIATION_ENTRY(kIPHAutofillAccountNameEmailSuggestionFeature),
          VARIATION_ENTRY(kIPHAutofillAiOptInFeature),
-@@ -877,7 +877,7 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
+@@ -939,13 +939,13 @@ inline constexpr flags_ui::FeatureEntry::FeatureVariat
          VARIATION_ENTRY(kIPHLauncherSearchHelpUiFeature),
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
          VARIATION_ENTRY(kIPHDesktopPWAsLinkCapturingLaunch),
          VARIATION_ENTRY(kIPHDesktopPWAsLinkCapturingLaunchAppInTab),
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+         // BUILDFLAG(IS_CHROMEOS)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
          VARIATION_ENTRY(kIPHSignInBenefitsFeature),
+         VARIATION_ENTRY(kIPHSupervisedUserProfileSigninFeature),
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

@@ -1,9 +1,9 @@
---- components/eye_dropper/eye_dropper_view.cc.orig	2026-01-16 14:21:21 UTC
+--- components/eye_dropper/eye_dropper_view.cc.orig	2026-08-13 16:48:13 UTC
 +++ components/eye_dropper/eye_dropper_view.cc
-@@ -214,7 +214,7 @@ EyeDropperView::EyeDropperView(gfx::NativeView parent,
-   // EyeDropper/WidgetDelegate.
-   set_owned_by_client(OwnedByClientPassKey());
-   SetPreferredSize(GetSize());
+@@ -350,7 +350,7 @@ EyeDropperView::EyeDropperView(gfx::NativeView parent,
+   contents_view->SetPreferredSize(contents_view->GetSize());
+   delegate_->SetContentsView(std::move(contents_view));
+ 
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Use TYPE_MENU for Linux to ensure that the eye dropper view is displayed

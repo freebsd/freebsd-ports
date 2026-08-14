@@ -1,15 +1,15 @@
---- content/common/features.h.orig	2026-06-10 12:51:34 UTC
+--- content/common/features.h.orig	2026-08-13 16:48:13 UTC
 +++ content/common/features.h
 @@ -82,7 +82,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kDumpOnOriginHeaderMismatch);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kDumpOnUnexpectedOriginHeader);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kEditContextSelectionSync);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kKillOnUnexpectedOriginHeader);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnforceSameDocumentOriginInvariants);
-@@ -121,8 +121,8 @@ enum class FontDataServiceTypefaceType {
+@@ -122,8 +122,8 @@ enum class FontDataServiceTypefaceType {
  CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServiceTypefaceType,
                                            kFontDataServiceTypefaceType);
  #endif  // BUILDFLAG(IS_WIN)
@@ -20,9 +20,9 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceLinux);
  #else
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceChromeOS);
-@@ -135,7 +135,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
-                                           kFontDataServiceTypefaceType);
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+@@ -138,7 +138,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
+ 
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceForCSSLocalFonts);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

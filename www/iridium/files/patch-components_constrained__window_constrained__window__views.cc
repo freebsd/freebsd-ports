@@ -1,6 +1,6 @@
---- components/constrained_window/constrained_window_views.cc.orig	2025-12-10 15:04:57 UTC
+--- components/constrained_window/constrained_window_views.cc.orig	2026-08-13 16:48:13 UTC
 +++ components/constrained_window/constrained_window_views.cc
-@@ -380,7 +380,7 @@ bool SupportsGlobalScreenCoordinates() {
+@@ -419,7 +419,7 @@ bool SupportsGlobalScreenCoordinates() {
  }
  
  bool PlatformClipsChildrenToViewport() {

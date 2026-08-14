@@ -1,6 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2026.06.149.5
-PORTREVISION=	1
+PORTVERSION=	2026.08.151.2
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
@@ -13,7 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	rollup:rollup:v4.22.4:rollup/rollup \
+GH_TUPLE=	rollup:rollup:v4.60.4:rollup/rollup \
 		evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/esbuild
 
 MAINTAINER=	chromium@FreeBSD.org
@@ -81,8 +80,8 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
 USES=		bison cargo compiler:c++17-lang cpe desktop-file-utils gl gmake \
-		gnome iconv:wchar_t jpeg localbase:ldflags ninja perl5 pkgconfig \
-		python:build qt:5 shebangfix tar:xz xorg
+		go:no_targets gnome iconv:wchar_t jpeg localbase:ldflags ninja perl5 \
+		pkgconfig python:build qt:5 shebangfix tar:xz xorg
 
 WITHOUT_FBSD10_FIX=	Yes
 
@@ -270,6 +269,9 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
 		rust_sysroot_absolute="${LOCALBASE}"
+
+# go
+MAKE_ENV+=	GOCACHE=${WRKDIR}/go-cache
 
 pre-everything::
 	@${ECHO_MSG}

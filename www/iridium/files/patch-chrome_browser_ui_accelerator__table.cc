@@ -1,4 +1,4 @@
---- chrome/browser/ui/accelerator_table.cc.orig	2026-06-10 12:51:34 UTC
+--- chrome/browser/ui/accelerator_table.cc.orig	2026-08-13 16:48:13 UTC
 +++ chrome/browser/ui/accelerator_table.cc
 @@ -77,11 +77,11 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_S, ui::EF_PLATFORM_ACCELERATOR, IDC_SAVE_PAGE},
@@ -23,8 +23,8 @@
      {ui::VKEY_1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_NUMPAD1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0},
      {ui::VKEY_2, ui::EF_ALT_DOWN, IDC_SELECT_TAB_1},
-@@ -160,7 +160,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
-      IDC_SHOW_AVATAR_MENU},
+@@ -162,7 +162,7 @@ const AcceleratorMapping kAcceleratorMap[] = {
+      IDC_TOGGLE_VERTICAL_TABS_COLLAPSE},
  
  // Platform-specific key maps.
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -32,7 +32,7 @@
      {ui::VKEY_BROWSER_BACK, ui::EF_NONE, IDC_BACK},
      {ui::VKEY_BROWSER_FORWARD, ui::EF_NONE, IDC_FORWARD},
      {ui::VKEY_BROWSER_HOME, ui::EF_NONE, IDC_HOME},
-@@ -315,7 +315,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
+@@ -317,7 +317,7 @@ std::vector<AcceleratorMapping> GetAcceleratorList() {
                           std::begin(kDevToolsAcceleratorMap),
                           std::end(kDevToolsAcceleratorMap));
  

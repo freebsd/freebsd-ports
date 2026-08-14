@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.h.orig	2026-06-10 12:51:34 UTC
+--- chrome/common/chrome_paths.h.orig	2026-08-13 16:48:13 UTC
 +++ chrome/common/chrome_paths.h
 @@ -55,7 +55,7 @@ enum {
                       // to set policies for chrome. This directory
@@ -18,7 +18,7 @@
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -104,7 +104,7 @@ enum {
+@@ -102,7 +102,7 @@ enum {
  
  #if BUILDFLAG(ENABLE_EXTENSIONS_CORE) &&                                   \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

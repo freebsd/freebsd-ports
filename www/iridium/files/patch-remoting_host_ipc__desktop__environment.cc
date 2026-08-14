@@ -1,6 +1,6 @@
---- remoting/host/ipc_desktop_environment.cc.orig	2026-06-10 12:51:34 UTC
+--- remoting/host/ipc_desktop_environment.cc.orig	2026-08-13 16:48:13 UTC
 +++ remoting/host/ipc_desktop_environment.cc
-@@ -367,7 +367,7 @@ void IpcDesktopEnvironmentFactory::OnTerminalDisconnec
+@@ -371,7 +371,7 @@ void IpcDesktopEnvironmentFactory::OnTerminalDisconnec
    }
  }
  

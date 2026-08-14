@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main.cc.orig	2026-06-10 12:51:34 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2026-08-13 16:48:13 UTC
 +++ chrome/browser/chrome_browser_main.cc
 @@ -173,7 +173,7 @@
  #endif
@@ -114,7 +114,7 @@
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsLinux>());
  #elif BUILDFLAG(IS_OZONE)
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsOzone>());
-@@ -1275,7 +1275,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1285,7 +1285,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  
  #if BUILDFLAG(ENABLE_EXTENSIONS_CORE) &&                                   \
      (BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -123,7 +123,7 @@
    // Create directory for user-level Native Messaging manifest files. This
    // makes it less likely that the directory will be created by third-party
    // software with incorrect owner or permission. See crbug.com/41321051 .
-@@ -1319,7 +1319,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1329,7 +1329,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -132,7 +132,7 @@
    metrics::DesktopSessionDurationTracker::Initialize();
    ProfileActivityMetricsRecorder::Initialize();
    TouchUIControllerStatsTracker::Initialize(
-@@ -1565,7 +1565,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+@@ -1575,7 +1575,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
  #endif  // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || \
@@ -141,7 +141,7 @@
    // Delete the media history database if it still exists.
    // TODO(crbug.com/40177301): Remove this.
    base::ThreadPool::PostTask(
-@@ -1616,7 +1616,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+@@ -1626,7 +1626,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
        *UrlLanguageHistogramFactory::GetForBrowserContext(profile));
  #endif
  
@@ -150,7 +150,7 @@
    if (headless::IsHeadlessMode()) {
      headless::ReportHeadlessActionMetrics();
    }
-@@ -1703,7 +1703,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1713,7 +1713,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
  #endif
  
    // Should be done before starting metrics recording.
@@ -159,7 +159,7 @@
    // On Linux, the EULA dialog requires Views, so it is shown here rather than
    // when applying the first-run prefs.
    if (first_run::IsChromeFirstRun() && master_prefs_->eula_required &&
-@@ -1739,7 +1739,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1749,7 +1749,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
    // In headless mode provide alternate SelectFileDialog factory overriding
    // any platform specific SelectFileDialog implementation that may have been
    // set.

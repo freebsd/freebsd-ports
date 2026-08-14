@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_manual_fallback_flow.cc.orig	2026-06-10 12:51:34 UTC
+--- components/password_manager/core/browser/password_manual_fallback_flow.cc.orig	2026-08-13 16:48:13 UTC
 +++ components/password_manager/core/browser/password_manual_fallback_flow.cc
-@@ -47,7 +47,7 @@ std::u16string GetUsernameFromLabel(const std::u16stri
+@@ -52,7 +52,7 @@ std::u16string GetUsernameFromLabel(const std::u16stri
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
  // Returns the password form corresponding to the `payload` data. In most
  // cases there is only one such form stored, but having more than one or no
  // forms is also possible. If there is more than one form, showing any of them
-@@ -316,7 +316,7 @@ void PasswordManualFallbackFlow::DidAcceptSuggestion(
+@@ -344,7 +344,7 @@ void PasswordManualFallbackFlow::DidAcceptSuggestion(
      }
      case autofill::SuggestionType::kViewPasswordDetails: {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -18,7 +18,7 @@
        std::optional<password_manager::PasswordForm> credentials =
            GetCorrespondingPasswordForm(
                suggestion.GetPayload<Suggestion::PasswordSuggestionDetails>(),
-@@ -462,7 +462,7 @@ void PasswordManualFallbackFlow::EnsureCrossDomainPass
+@@ -491,7 +491,7 @@ void PasswordManualFallbackFlow::EnsureCrossDomainPass
      const Suggestion::PasswordSuggestionDetails& payload,
      base::OnceClosure on_allowed) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

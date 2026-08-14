@@ -1,4 +1,4 @@
---- content/public/common/content_switches.h.orig	2026-06-10 12:51:34 UTC
+--- content/public/common/content_switches.h.orig	2026-08-13 16:48:13 UTC
 +++ content/public/common/content_switches.h
 @@ -108,6 +108,8 @@ CONTENT_EXPORT extern const char kEnableGpuMemoryBuffe
  CONTENT_EXPORT extern const char kEnableIsolatedWebAppsInRenderer[];
@@ -9,7 +9,7 @@
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableCanvas2DLayers[];
  CONTENT_EXPORT extern const char kEnablePluginPlaceholderTesting[];
-@@ -258,7 +260,7 @@ CONTENT_EXPORT extern const char kJavalessRenderers[];
+@@ -259,7 +261,7 @@ CONTENT_EXPORT extern const char kJavalessRenderers[];
  CONTENT_EXPORT extern const char kPreventResizingContentsForTesting[];
  #endif
  

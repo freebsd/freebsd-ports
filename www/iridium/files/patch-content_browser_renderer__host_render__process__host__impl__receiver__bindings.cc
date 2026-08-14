@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc.orig	2026-04-15 12:07:04 UTC
+--- content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc.orig	2026-08-13 16:48:13 UTC
 +++ content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc
 @@ -56,7 +56,7 @@
  #include "content/browser/renderer_host/p2p/socket_dispatcher_host.h"
@@ -18,7 +18,7 @@
  #include "components/services/font_data/font_data_service_impl.h"
  #endif
  
-@@ -345,7 +345,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
+@@ -350,7 +350,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
      }
    }
  
@@ -27,7 +27,7 @@
    if (features::IsFontDataServiceEnabled()) {
      if (auto font_data_receiver =
              receiver.As<font_data_service::mojom::FontDataService>()) {
-@@ -356,7 +356,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
+@@ -361,7 +361,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
    }
  #endif
  
@@ -36,7 +36,7 @@
    if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
      ConnectToFontService(std::move(font_receiver));
      return;
-@@ -384,7 +384,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
+@@ -389,7 +389,7 @@ void RenderProcessHostImpl::IOThreadHostImpl::BindHost
    }
  #endif
  

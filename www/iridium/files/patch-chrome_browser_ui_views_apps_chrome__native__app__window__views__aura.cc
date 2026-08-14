@@ -1,7 +1,7 @@
---- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig	2026-08-13 16:48:13 UTC
 +++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
-@@ -19,7 +19,7 @@
- #include "ui/menus/simple_menu_model.h"
+@@ -17,7 +17,7 @@
+ #include "ui/base/mojom/window_show_state.mojom.h"
  #include "ui/views/widget/widget.h"
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -49,7 +49,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
+@@ -47,7 +47,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
      const AppWindow::CreateParams& create_params,
      views::Widget::InitParams* init_params,
      views::Widget* widget) {

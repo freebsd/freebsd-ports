@@ -1,15 +1,15 @@
---- remoting/host/audio_injector.cc.orig	2026-06-10 12:51:34 UTC
+--- remoting/host/audio_injector.cc.orig	2026-08-13 16:48:13 UTC
 +++ remoting/host/audio_injector.cc
-@@ -8,7 +8,7 @@
+@@ -7,7 +7,7 @@
  #include "build/build_config.h"
- #include "remoting/proto/audio.pb.h"
+ #include "remoting/base/fifo_buffer.h"
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "remoting/host/linux/pipewire_audio_injector.h"
  #endif
  
-@@ -26,7 +26,7 @@ void AudioInjector::ProcessAudioPacket(std::unique_ptr
+@@ -19,7 +19,7 @@ AudioInjector::~AudioInjector() = default;
  
  // static
  bool AudioInjector::IsSupported() {
@@ -18,3 +18,12 @@
    // On Linux, we check if PipeWire is available and can be initialized.
    // Note that in multi-process mode, this may return true in the network
    // process because the libraries are loadable, even though the virtual audio
+@@ -34,7 +34,7 @@ bool AudioInjector::IsSupported() {
+ // static
+ std::unique_ptr<AudioInjector> AudioInjector::Create(
+     std::unique_ptr<FifoBufferReader> audio_reader) {
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   return PipewireAudioInjector::Create(std::move(audio_reader));
+ #else
+   return nullptr;

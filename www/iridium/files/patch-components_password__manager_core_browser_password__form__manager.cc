@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_form_manager.cc.orig	2026-05-11 13:57:04 UTC
+--- components/password_manager/core/browser/password_form_manager.cc.orig	2026-08-13 16:48:13 UTC
 +++ components/password_manager/core/browser/password_form_manager.cc
-@@ -236,7 +236,7 @@ bool ShouldUploadCrowdsourcingVotes(const FormOrDigest
+@@ -239,7 +239,7 @@ bool ShouldUploadCrowdsourcingVotes(const FormOrDigest
    return false;
  }
  
@@ -9,7 +9,7 @@
  bool ShouldShowKeychainErrorBubble(
      std::optional<PasswordStoreBackendError> backend_error) {
    if (!backend_error.has_value()) {
-@@ -944,7 +944,7 @@ void PasswordFormManager::OnFetchCompleted() {
+@@ -948,7 +948,7 @@ void PasswordFormManager::OnFetchCompleted() {
          error.value().type);
    }
  
