@@ -30,6 +30,7 @@ CFLAGS+=	${CPPFLAGS} # USES=readline only augments CPPFLAGS and LDFLAGS
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lutil
 MAKE_ENV=	V=1
+ALL_TARGET+=	all
 
 SUB_FILES=	pkg-message
 PORTDOCS=	README ChangeLog
@@ -142,6 +143,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	libdbus-1.so:devel/dbus
 .endif
 
+.if ${PORT_OPTIONS:MEAPOL_TEST}
+ALL_TARGET+=	eapol_test
+.endif
+
 post-patch:
 	@${CP} ${FILESDIR}/Packet32.[ch] ${FILESDIR}/ntddndis.h \
 		${WRKSRC}/src/utils
@@ -203,9 +208,6 @@ post-patch:
 	@${ECHO_CMD} CONFIG_BACKEND=file >> ${CFG}
 	@${ECHO_CMD} CONFIG_L2_PACKET=freebsd >> ${CFG}
 	@${ECHO_CMD} CONFIG_TLS=openssl >> ${CFG}
-
-post-build-EAPOL_TEST-on:
-	cd ${BUILD_WRKSRC} && ${GMAKE} eapol_test
 
 do-install:
 	(cd ${BUILD_WRKSRC} && ${INSTALL_PROGRAM} wpa_supplicant wpa_cli \
