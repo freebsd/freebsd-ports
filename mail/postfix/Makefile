@@ -1,5 +1,5 @@
 PORTNAME=	postfix
-DISTVERSION=	3.11.5
+DISTVERSION=	3.11.6
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail
@@ -110,6 +110,8 @@ OPTIONS_SLAVE=		PGSQL
 OPTIONS_SLAVE=		SASL
 .elif ${FLAVOR:U} == sqlite
 OPTIONS_SLAVE=		SQLITE
+.elif ${FLAVOR:U} == mongo
+OPTIONS_SLAVE=		MONGO
 .endif
 .if !empty(FLAVOR) && ${FLAVOR:U} != default
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
@@ -311,10 +313,10 @@ IGNORE=		blocklistd is only supported on FreeBSD
 .endif
 
 .if ${PORT_OPTIONS:MMONGO}
+USES+=			pkgconfig
 DYN_EXT+=		mongodb
-POSTFIX_CCARGS+=	-DHAS_MONGODB -I${LOCALBASE}/include/libmongoc-1.0 \
-			-I${LOCALBASE}/include/libbson-1.0
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=-L${LOCALBASE}/lib -lmongoc-1.0 -lbson-1.0"
+POSTFIX_CCARGS+=	-DHAS_MONGODB `pkg-config --cflags mongoc2`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=`pkg-config --libs mongoc2`"
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
