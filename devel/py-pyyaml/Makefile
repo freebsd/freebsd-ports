@@ -1,5 +1,6 @@
 PORTNAME=	pyyaml
 DISTVERSION=	6.0.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +12,11 @@ WWW=		https://pyyaml.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		cpe localbase python
-USE_PYTHON=	autoplist concurrent cython distutils
+USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 OPTIONS_DEFINE=	LIBYAML EXAMPLES
 OPTIONS_DEFAULT=LIBYAML
@@ -23,12 +27,10 @@ LIBYAML_LIB_DEPENDS=	libyaml.so:textproc/libyaml
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLIBYAML}
-PYDISTUTILS_SETUP+=		--with-libyaml
-PYDISTUTILS_BUILD_TARGET=	build_ext
-PYDISTUTILS_BUILDARGS+=		--include-dirs=${LOCALBASE}/include \
-				--library-dirs=${LOCALBASE}/lib
+PEP517_BUILD_CONFIG_SETTING=	--config-json '{"pyyaml_build_config": "{\"include_dirs\": [\"${LOCALBASE}/include\"], \"library_dirs\": [\"${LOCALBASE}/lib\"]}"}'
+MAKE_ENV+=			PYYAML_FORCE_LIBYAML=1
 .else
-PYDISTUTILS_SETUP+=		--without-libyaml
+MAKE_ENV+=			PYYAML_FORCE_LIBYAML=0
 NO_ARCH=			yes
 .endif
 
@@ -38,7 +40,5 @@ post-install-EXAMPLES-on:
 post-install-LIBYAML-on:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/yaml/_yaml*.so
 
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
-
 .include <bsd.port.post.mk>
+
