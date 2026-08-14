@@ -1,6 +1,6 @@
 PORTNAME=	postfix
-DISTVERSION=	3.11.5
-PORTREVISION?=	1
+DISTVERSION=	3.11.6
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -110,6 +110,8 @@ OPTIONS_SLAVE=		PGSQL
 OPTIONS_SLAVE=		SASL
 .elif ${FLAVOR:U} == sqlite
 OPTIONS_SLAVE=		SQLITE
+.elif ${FLAVOR:U} == mongo
+OPTIONS_SLAVE=		MONGO
 .endif
 .if !empty(FLAVOR) && ${FLAVOR:U} != default
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
@@ -144,9 +146,6 @@ SASLKMIT_LIB_DEPENDS=		libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=			sqlite
 TLSRPT_LIB_DEPENDS=		libtlsrpt.so:mail/libtlsrpt
-
-MONGOC_VERSION!=		cd ${.CURDIR}/../../devel/mongo-c-driver; \
-				make -V DISTVERSION
 
 ALL_TARGET=		default
 
@@ -314,10 +313,10 @@ IGNORE=		blocklistd is only supported on FreeBSD
 .endif
 
 .if ${PORT_OPTIONS:MMONGO}
+USES+=			pkgconfig
 DYN_EXT+=		mongodb
-POSTFIX_CCARGS+=	-DHAS_MONGODB -I${LOCALBASE}/include/mongoc-${MONGOC_VERSION} \
-			-I${LOCALBASE}/include/bson-${MONGOC_VERSION}
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=-L${LOCALBASE}/lib -lmongoc2 -lbson2"
+POSTFIX_CCARGS+=	-DHAS_MONGODB `pkg-config --cflags mongoc2`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=`pkg-config --libs mongoc2`"
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
