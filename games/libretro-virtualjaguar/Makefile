@@ -1,5 +1,6 @@
 PORTNAME=	libretro-virtualjaguar
-DISTVERSION=	0.20230601
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.3.0
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,13 +9,18 @@ WWW=		https://github.com/libretro/virtualjaguar-libretro
 
 LICENSE=	GPLv3
 
-USES=		compiler:c++11-lib gmake
-USE_LDCONFIG=	yes
+BUILD_DEPENDS=	bash:shells/bash
 
+USES=		compiler:c++11-lib gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	virtualjaguar-libretro
-GH_TAGNAME=	8126e5c504ac7217a638f38e4cd9190822c8abdd
+USE_LDCONFIG=	yes
+
+EXTRACT_AFTER_ARGS=	--exclude .github \
+			--exclude docs \
+			--exclude site \
+			--no-same-owner --no-same-permissions
 
 PLIST_FILES=	lib/libretro/virtualjaguar_libretro.so
 
