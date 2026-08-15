@@ -1,6 +1,5 @@
 PORTNAME=	glfw
-DISTVERSION=	3.4
-PORTREVISION=	3
+DISTVERSION=	3.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${DISTVERSION}/
 
@@ -19,8 +18,8 @@ CMAKE_OFF=	GLFW_BUILD_DOCS
 
 CONFLICTS_INSTALL=	glfw2
 
-PLIST_SUB=	MAJVER=${DISTVERSION:R} \
-		VERSION=${DISTVERSION}
+PLIST_SUB=	MAJVER=${DISTVERSION:R:R} \
+		VERSION=${DISTVERSION:R}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -35,20 +34,29 @@ EXAMPLES_CMAKE_BOOL=	GLFW_BUILD_EXAMPLES GLFW_BUILD_TESTS
 
 # Patches to support running applications such as Minecraft with games/lwjgl3
 PREEDIT_PATCH_SITES=	https://github.com/glfw/glfw/commit/
-PREEDIT_PATCHFILES=	bf945f1213728a98f7647380616f9cff9f6b3611.patch:-p1 \
-			0d7379403edd2f3a3476ce76fba4ac8c6d8410b7.patch:-p1 \
-			55cdeb59029d51be4b622d3b66a9735e4cf07a3b.patch:-p1 \
-			5f2118a2fa052f4361c6129378d5e8d0c923b118.patch:-p1 \
-			4da43dd83e1d16055107f91d9c34df3b114ab6f4.patch:-p1 \
-			11fd72171161e77f8c85a4ce51370ae8b813532d.patch:-p1 \
-			d8d0e52de8fb7c4f9879c2ff3599e0ba13ce8bc6.patch:-p1 \
-			d793a873a0fa740fa832917f99de35d5e09e7987.patch:-p1 \
-			d1f1b2a88de2a6d1701558c732164f5e070030a5.patch:-p1 \
-			cef608cf56c2fb88ff3eded4240f7a609610abad.patch:-p1 \
-			a66cc4d8805fc2857edf75812ba702e39e2873d7.patch:-p1 \
-			c4ba4cd58ea4e3eb6686a34596998de65330f71c.patch:-p1 \
-			0729aacc8cc6ff888f593108fdf70ce3fc2800b2.patch:-p1 \
-			6be88608b1ddbc42d5c59448dc15852f9de7ec26.patch:-p1
+PREEDIT_PATCHFILES=	a8e21e28da2c336052f4c99e82c621d985c35d02.patch:-p1 \
+			1f532f8f3fb5c2c86304ac4b63528ad79bb9e3f4.patch:-p1 \
+			542bee1306cc7662df2a964862a77d0a7ca90eb5.patch:-p1 \
+			5e8231a4bffd24c3f9da87292bef24d70c3b4d00.patch:-p1 \
+			b6deacdc67016750692e28318d9863df3c742566.patch:-p1 \
+			065cb103b4966cdc8b20fd1106859df942c57498.patch:-p1 \
+			ff5010b755e7aabfdf9484b52c1be62aa328ebb5.patch:-p1 \
+			9e6045b1fa63a605b7413b31d4f345730d545f35.patch:-p1 \
+			f1070efb181e788187f3c8a5652c029f1ae86d8e.patch:-p1 \
+			38943c2156d8dce810ca19f8c97be51e60295559.patch:-p1 \
+			c2bccfda0a24f040b7120eec64197895d196b12f.patch:-p1 \
+			f42598e2a126c51c245905a971fabda33103985b.patch:-p1 \
+			ad485c296e38e0f5cdb4f0b05123669fc42c76ff.patch:-p1 \
+			a3e006b4535b1059abeab34c7be22a17f0389355.patch:-p1 \
+			c923d1be92aa50b9480a9651ba06ea4d4f2f8556.patch:-p1 \
+			e9aa24f1d494f95426fa217b853c0b96b2c013f1.patch:-p1 \
+			5863b8f546796da4c4f27dd9c7c7e2d06c0633f4.patch:-p1 \
+			b30a503e4efbd5e37fcfbb8ca578f473dafbc631.patch:-p1 \
+			934a37bf1f9b68f39573bbf5160eef73c7af442a.patch:-p1 \
+			1e8c9544591b684e60c4d4d8f7963124b7d637c4.patch:-p1 \
+			a1ca6f0bc098d1b5123eb3b0055757b49c261723.patch:-p1 \
+			744c3de3658a9929bcb5378d3f373a37f046fb11.patch:-p1 \
+			9af719e6073a317f2dfa17f6cf0c373619b1ec8c.patch:-p1
 
 WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 			libxkbcommon>0:x11/libxkbcommon \
