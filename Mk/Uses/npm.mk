@@ -55,6 +55,17 @@
 #	modules archive must be copied into PKGJSONSDIR with directory hierarchy
 #	preserved.
 #
+# NPM_PREFETCH_ARCHS: The prepared node modules archive may vary depending on
+#		the architecture, especially if the archive includes
+#		architecture-specific node modules. This variable can be used to
+#		indicate which architectures the node module archives are
+#		prepared for.
+#
+#	NOTE: A node package manager does not typically support the creation of
+#	a node modules archive which works across multiple architectures.
+#	Therefore, please note that node module archives must be created
+#	separately for each architecture.
+#
 # NPM_EXTRACT:	Installs the prefetched node modules into the port's working
 #		source directory.
 #
@@ -67,6 +78,8 @@ _INCLUDE_USES_NPM_MK=	yes
 .include "${USESDIR}/nodejs.mk"
 _NODEJS_PKGNAME=node${NODEJS_VERSION}
 _NODEJS_PORT=	www/node${NODEJS_VERSION}
+_NPM_NODEJS_ARCH_CONV_STR=	S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/
+NPM_NODEJS_ARCH=		${ARCH:${_NPM_NODEJS_ARCH_CONV_STR}}
 
 _VALID_NPM_NAMES=npm yarn1 yarn2 yarn4 pnpm
 
@@ -225,8 +238,9 @@ NPM_REBUILD_CMD?=	${NPM_CMDNAME} rebuild
 .  endif
 
 # Use utility targets?
-NPM_PREFETCH?=	${_NPM_EXISTS_PKGFILE}
-NPM_EXTRACT?=	${NPM_PREFETCH}
+NPM_PREFETCH?=		${_NPM_EXISTS_PKGFILE}
+NPM_PREFETCH_ARCHS?=
+NPM_EXTRACT?=		${NPM_PREFETCH}
 
 # Bootstrap node package manager for yarn >2 or pnpm
 .  if ${_NPM_NAME} == yarn2 || ${_NPM_NAME} == yarn4 || ${_NPM_NAME} == pnpm
@@ -260,8 +274,19 @@ IGNORE=	does not store ${NPM_PKGFILE} in ${PKGJSONSDIR} for prefetching node mod
 _USES_fetch+=	491:npm-fetch-node-modules \
 		492:npm-archive-node-modules
 
+.    if empty(NPM_PREFETCH_ARCHS)
 _DISTFILE_prefetch=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-node-modules${EXTRACT_SUFX}
 DISTFILES+=		${_DISTFILE_prefetch}:prefetch
+.    else
+_DISTFILE_prefetch=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-node-modules-${NPM_NODEJS_ARCH}${EXTRACT_SUFX}
+.      if !make(makesum)
+DISTFILES+=		${_DISTFILE_prefetch}:prefetch
+.      else
+.        for arch in ${NPM_PREFETCH_ARCHS}
+DISTFILES+=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}-node-modules-${arch:${_NPM_NODEJS_ARCH_CONV_STR}}${EXTRACT_SUFX}:prefetch
+.        endfor
+.      endif
+.    endif
 
 .    if ${_NPM_NAME} == npm || ${_NPM_NAME} == yarn1
 FETCH_DEPENDS+= ${_NPM_PKGNAME}>0:${_NPM_PORTDIR}
