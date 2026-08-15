@@ -124,6 +124,7 @@
     SUBDIR += py-verilog-parser
     SUBDIR += py-vunit-hdl
     SUBDIR += python-gdsii
+    SUBDIR += pythonocc-core
     SUBDIR += qcad
     SUBDIR += qcadjsapi
     SUBDIR += qcsxcad
