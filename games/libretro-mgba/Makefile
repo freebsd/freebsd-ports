@@ -1,8 +1,9 @@
 PORTNAME=	libretro-mgba
 DISTVERSION=	0.20251013
+PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	tilde@ultros.pro
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game Boy Advance Emulator for libretro
 WWW=		https://github.com/libretro/mgba
 

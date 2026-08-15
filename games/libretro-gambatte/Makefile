@@ -1,8 +1,9 @@
 PORTNAME=	libretro-gambatte
 DISTVERSION=	0.20260515
+PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	tilde@ultros.pro
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libretro Implementation of libgambatte, a Game Boy Color emulator
 WWW=		https://github.com/libretro/gambatte-libretro
 

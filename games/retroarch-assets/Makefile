@@ -1,9 +1,10 @@
 PORTNAME=	retroarch-assets
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.22.0
+PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	tilde@ultros.pro
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical assets and official branding for RetroArch
 WWW=		https://github.com/libretro/retroarch-assets
 

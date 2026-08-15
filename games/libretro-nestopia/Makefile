@@ -1,8 +1,9 @@
 PORTNAME=	libretro-nestopia
 DISTVERSION=	0.20260228
+PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	tilde@ultros.pro
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NEStopia emulator for libretro
 WWW=		https://github.com/libretro/nestopia
 
