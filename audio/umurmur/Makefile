@@ -1,7 +1,6 @@
 PORTNAME=	umurmur
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
-PORTREVISION=	3
+DISTVERSION=	0.4.0
 CATEGORIES=	audio net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -30,7 +29,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/conf.c
 	@${REINPLACE_CMD} \
 		-e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/umurmur.conf.example
-	@${REINPLACE_CMD} -e 's|0.3.0|0.3.1|g' ${WRKSRC}/src/version.h
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/umurmur
