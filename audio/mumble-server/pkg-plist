@@ -1,3 +1,4 @@
 bin/mumble-server
 @sample(,%%GROUPS%%,0640) etc/mumble/mumble-server.ini.sample
 share/man/man1/mumble-server.1.gz
+%%ICE%%share/mumble-server/MumbleServer.ice
