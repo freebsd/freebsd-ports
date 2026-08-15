@@ -1,5 +1,5 @@
 PORTNAME=	urlscan
-DISTVERSION=	1.0.9
+DISTVERSION=	1.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,7 @@ WWW=		https://github.com/firecat53/urlscan
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.4.0:devel/py-hatch-vcs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hatchling>=1.25:devel/py-hatchling@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.25:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid>=1.2.1:devel/py-urwid@${PY_FLAVOR}
 
 USES=		python
@@ -22,7 +21,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} \
-		-e '/^LICENSE =/d' ${WRKSRC}/pyproject.toml
+		-e '/^license =/d' ${WRKSRC}/pyproject.toml
 
 post-patch-DOCS-off:
 	${REINPLACE_CMD} \
