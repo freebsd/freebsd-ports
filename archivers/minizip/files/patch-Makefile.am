@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2012-03-27 03:17:41 UTC
++++ Makefile.am
+@@ -27,6 +27,7 @@ minizip_include_HEADERS = \
+ minizip_includedir = $(includedir)/minizip
+ minizip_include_HEADERS = \
+ 	crypt.h \
++	ints.h \
+ 	ioapi.h \
+ 	mztools.h \
+ 	unzip.h \
