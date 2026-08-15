@@ -51,6 +51,7 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/systems/fedora.png
 %%DATADIR%%/images/systems/freebsd.png
 %%DATADIR%%/images/systems/ghostbsd.png
+%%DATADIR%%/images/systems/haiku.png
 %%DATADIR%%/images/systems/kalilinux.png
 %%DATADIR%%/images/systems/linux.png
 %%DATADIR%%/images/systems/linuxmint.png
