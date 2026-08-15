@@ -89,6 +89,7 @@ USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xrandr \
 		xrender xscrnsaver xtst
 USE_QT=		buildtools:build core:build widgets:build
+NPM_PREFETCH_ARCHS=	aarch64 amd64
 NPM_EXTRACT_WRKSRC=	${WRKDIR}/${PORTNAME}-${ELECTRON_VER}
 
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-format
