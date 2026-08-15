@@ -1,5 +1,6 @@
 bin/parla
 share/applications/io.github.trufae.Parla.desktop
+share/dbus-1/services/io.github.trufae.Parla.service
 share/icons/hicolor/scalable/apps/io.github.trufae.Parla.svg
 share/icons/hicolor/scalable/apps/parla-tray.svg
 share/icons/hicolor/scalable/apps/parla-welcome.svg
