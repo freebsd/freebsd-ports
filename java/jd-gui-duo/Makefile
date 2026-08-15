@@ -1,5 +1,5 @@
 PORTNAME=	jd-gui-duo
-DISTVERSION=	2.0.113
+DISTVERSION=	2.0.114
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/nbauma109/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://raw.githubusercontent.com/nbauma109/${PORTNAME}/refs/tags/${DISTVERSION}/src/launch4j/resources/images/:ico
@@ -28,7 +28,8 @@ SUB_LIST=	JAVA=${JAVA}
 NO_WRKSUBDIR=	yes
 
 post-patch:
-	${REINPLACE_CMD} 's|%%JAVAJARDIR%%|${JAVAJARDIR}|' ${WRKSRC}/jd-gui-duo.sh
+	${REINPLACE_CMD} 's|%%JAVAJARDIR%%|${JAVAJARDIR}|; \
+		s|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/jd-gui-duo.sh
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
