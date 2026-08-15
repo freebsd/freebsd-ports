@@ -14639,8 +14639,8 @@ affected.</p>
   <vuln vid="30bda1c3-369b-11f1-b51c-6dd25bec137b">
     <topic>Python -- HTTP proxy CONNECT tunnel does not sanitize CR/LF</topic>
     <affects>
-      <package><name>python310</name><range><ge>0</ge></range></package>
-      <package><name>python311</name><range><ge>0</ge></range></package>
+      <package><name>python310</name><range><lt>3.10.21</lt></range></package>
+      <package><name>python311</name><range><lt>3.11.16</lt></range></package>
       <package><name>python312</name><range><lt>3.12.13_3</lt></range></package>
       <package><name>python313</name><range><lt>3.13.14</lt></range></package>
       <package><name>python313t</name><range><lt>3.13.14</lt></range></package>
@@ -14661,15 +14661,15 @@ affected.</p>
     <dates>
       <discovery>2026-03-20</discovery>
       <entry>2026-04-12</entry>
-      <modified>2026-06-19</modified>
+      <modified>2026-08-14</modified>
     </dates>
    </vuln>
 
   <vuln vid="5ec4dcf6-3588-11f1-b51c-6dd25bec137b">
     <topic>Python -- configparser vulnerable to excessive CPU use</topic>
     <affects>
-      <package><name>python310</name><range><ge>0</ge></range></package>
-      <package><name>python311</name><range><ge>0</ge></range></package>
+      <package><name>python310</name><range><lt>3.10.21</lt></range></package>
+      <package><name>python311</name><range><lt>3.11.16</lt></range></package>
       <package><name>python312</name><range><lt>3.12.13_4</lt></range></package>
       <package><name>python313</name><range><lt>3.13.14</lt></range></package>
       <package><name>python313t</name><range><lt>3.13.14</lt></range></package>
@@ -14689,7 +14689,7 @@ affected.</p>
     <dates>
       <discovery>2026-03-23</discovery>
       <entry>2026-04-12</entry>
-      <modified>2026-08-09</modified>
+      <modified>2026-08-14</modified>
     </dates>
   </vuln>
 
