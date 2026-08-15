@@ -38,6 +38,6 @@ DISTFILES=	\
 		v1.12.0.zip:cudnn_frontend \
 		ec7b457e5bb1fcec6f59733c4f3dd84d2f885a38.zip:dawn \
 		v1.20.0.tar.gz:kleidiai \
-		2f10c9a8d32f81ffeeb6d4885a29cc35d2b0da87.zip:kleidiai-qmx \
+		2f10c9a8d32f81ffeeb6d4885a29cc35d2b0da87.zip:kleidiai_qmx \
 		duktape-2.7.0.tar.xz:duktape \
 		v1.4.344:vulkan_headers \
