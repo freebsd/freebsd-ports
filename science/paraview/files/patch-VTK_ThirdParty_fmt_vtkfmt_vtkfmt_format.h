@@ -1,6 +1,6 @@
---- VTK/ThirdParty/fmt/vtkfmt/vtkfmt/format.h.orig	2025-09-25 09:24:50 UTC
+--- VTK/ThirdParty/fmt/vtkfmt/vtkfmt/format.h.orig	2026-05-22 16:18:17 UTC
 +++ VTK/ThirdParty/fmt/vtkfmt/vtkfmt/format.h
-@@ -44,6 +44,7 @@
+@@ -52,6 +52,7 @@
  #  include <cmath>    // std::signbit
  #  include <cstddef>  // std::byte
  #  include <cstdint>  // uint32_t

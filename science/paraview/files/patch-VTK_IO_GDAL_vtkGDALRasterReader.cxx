@@ -1,4 +1,4 @@
---- VTK/IO/GDAL/vtkGDALRasterReader.cxx.orig	2025-09-25 09:24:50 UTC
+--- VTK/IO/GDAL/vtkGDALRasterReader.cxx.orig	2026-05-22 16:18:17 UTC
 +++ VTK/IO/GDAL/vtkGDALRasterReader.cxx
 @@ -182,7 +182,7 @@ void vtkGDALRasterReader::vtkGDALRasterReaderInternal:
      this->Reader->DriverShortName = GDALGetDriverShortName(driver);
@@ -9,7 +9,7 @@
      if (CSLCount(papszMetaData) > 0)
      {
        for (int i = 0; papszMetaData[i] != nullptr; ++i)
-@@ -878,7 +878,7 @@ std::vector<std::string> vtkGDALRasterReader::GetDomai
+@@ -882,7 +882,7 @@ std::vector<std::string> vtkGDALRasterReader::GetDomai
  {
    std::vector<std::string> domainMetaData;
  
