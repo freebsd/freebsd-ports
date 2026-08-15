@@ -1,7 +1,6 @@
 PORTNAME=	nextpnr
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.10
-PORTREVISION=	1
+DISTVERSION=	0.11
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -17,7 +16,7 @@ NOT_FOR_ARCHS_REASON=	clang segfault
 
 BUILD_DEPENDS=	${LOCALBASE}/share/trellis/database:devel/trellis \
 		${LOCALBASE}/share/icebox:devel/icestorm \
-		${LOCALBASE}/share/prjpeppercorn:devel/prjpeppercorn112
+		${LOCALBASE}/share/prjpeppercorn:devel/prjpeppercorn113
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs
 
