@@ -1,4 +1,4 @@
-TIMESTAMP = 1786103010
+TIMESTAMP = 1786795112
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/ahash-0.7.8.crate) = 891477e0c6a8957309ee5c45a6368af3ae14bb510732d2684ffa19af310920f9
@@ -1261,5 +1261,5 @@ SHA256 (rust/crates/zune-inflate-0.2.54.crate) = 73ab332fe2f6680068f3582b16a24f9
 SIZE (rust/crates/zune-inflate-0.2.54.crate) = 37973
 SHA256 (rust/crates/zune-jpeg-0.5.15.crate) = 27bc9d5b815bc103f142aa054f561d9187d191692ec7c2d1e2b4737f8dbd7296
 SIZE (rust/crates/zune-jpeg-0.5.15.crate) = 88879
-SHA256 (getzola-zola-v0.23.0_GH0.tar.gz) = 7995829c3182b6dc11292125ad369add3a81794a431c45717fe06df0424da238
-SIZE (getzola-zola-v0.23.0_GH0.tar.gz) = 52285718
+SHA256 (getzola-zola-v0.23.1_GH0.tar.gz) = 331240b037bbef0a15e6c1db5a2eb572097f12a362deb075a331dbb849928f83
+SIZE (getzola-zola-v0.23.1_GH0.tar.gz) = 52286543

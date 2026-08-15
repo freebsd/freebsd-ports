@@ -1,6 +1,6 @@
 PORTNAME=	zola
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.0
+DISTVERSION=	0.23.1
 CATEGORIES=	www
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -14,7 +14,8 @@ NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	the ring crate requires SSE2 instruction on intel cpu
 
 LIB_DEPENDS=	libonig.so:devel/oniguruma \
-		libsass.so:textproc/libsass
+		libsass.so:textproc/libsass \
+		libzstd.so:archivers/zstd
 
 USES=		cargo ssl
 USE_GITHUB=	yes
