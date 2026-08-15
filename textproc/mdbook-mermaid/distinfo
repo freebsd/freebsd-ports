@@ -1,4 +1,4 @@
-TIMESTAMP = 1763919184
+TIMESTAMP = 1786736565
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/anstream-0.6.21.crate) = 43d5b281e737544384e969a5ccad3f1cdd24b48086a0fc1b2a5262a26b8f4f4a
@@ -183,5 +183,5 @@ SHA256 (rust/crates/xshell-macros-0.2.7.crate) = 32ac00cd3f8ec9c1d33fb3e7958a82d
 SIZE (rust/crates/xshell-macros-0.2.7.crate) = 2890
 SHA256 (rust/crates/yansi-1.0.1.crate) = cfe53a6657fd280eaa890a3bc59152892ffa3e30101319d168b781ed6529b049
 SIZE (rust/crates/yansi-1.0.1.crate) = 75497
-SHA256 (badboy-mdbook-mermaid-v0.17.0_GH0.tar.gz) = ed155c57d4356b90c26806a8699a1287712831e45c0cc6e5eb7ed4cc7fd4ada7
-SIZE (badboy-mdbook-mermaid-v0.17.0_GH0.tar.gz) = 797379
+SHA256 (badboy-mdbook-mermaid-v0.17.1_GH0.tar.gz) = 5b0242092325a383c46ad9fcd15f2f6972ccc549b640fcb74bc02cf3d2cf45d4
+SIZE (badboy-mdbook-mermaid-v0.17.1_GH0.tar.gz) = 797504
