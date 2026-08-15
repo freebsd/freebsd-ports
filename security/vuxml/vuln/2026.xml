@@ -15426,7 +15426,7 @@ affected.</p>
     <package><name>python313t</name> <range><ge>0</ge></range></package>
     <package><name>python314</name> <range><ge>0</ge></range></package>
     <package><name>python314t</name> <range><ge>0</ge></range></package>
-    <package><name>python315</name> <range><ge>0</ge></range></package>
+    <package><name>python315</name> <range><lt>3.15.0.a6</lt></range></package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -15445,7 +15445,7 @@ affected.</p>
     <dates>
       <discovery>2026-01-20</discovery>
       <entry>2026-04-01</entry>
-      <modified>2026-08-08</modified>
+      <modified>2026-08-14</modified>
     </dates>
   </vuln>
 
