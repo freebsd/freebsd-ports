@@ -8613,7 +8613,7 @@
     SUBDIR += sccache
     SUBDIR += sccs
     SUBDIR += schilybase
-    SUBDIR += scn
+    SUBDIR += scnlib
     SUBDIR += scons
     SUBDIR += sdbus-cpp
     SUBDIR += sdl12
