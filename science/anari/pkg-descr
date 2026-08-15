@@ -1,0 +1,8 @@
+ANARI significantly simplifies the development of applications in domains such
+as scientific visualization by providing high-level functionality to build an
+in-memory scene representation to be rendered without need for low-level
+graphics code, and enabling the use of any 3D rendering engine that supports the
+ANARI API. ANARI has already been widely integrated into scientific
+visualization applications, and is expected to be used by diverse applications
+needing portable access to multiple rendering engines delivering sophisticated
+3D functionality such as ray tracing and global illumination.

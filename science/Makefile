@@ -25,6 +25,7 @@
     SUBDIR += agrum
     SUBDIR += aircraft-datcom
     SUBDIR += amrex
+    SUBDIR += anari
     SUBDIR += antioch
     SUBDIR += apbs
     SUBDIR += arbor
