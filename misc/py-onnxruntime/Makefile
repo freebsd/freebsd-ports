@@ -1,7 +1,7 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.27.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
@@ -27,9 +27,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.21.6:math/py-numpy@${PY_FLAVOR} \
 USES=		compiler:c++17-lang python
 USE_PYTHON=	pep517 autoplist concurrent
 
-# Build using the official build.py script; wheel is left in ${WRKDIR}/build/Release/dist.
+# Build using the official build.py script
 PEP517_BUILD_DEPEND=
-PEP517_INSTALL_CMD=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${WRKDIR}/build/Release/dist/onnxruntime-${DISTVERSION}*.whl
+
+MAKE_ENV+=	ORT_DIST_DIR=${WRKSRC}/dist
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
@@ -45,14 +46,6 @@ do-build:
 		--cmake_extra_defines CMAKE_INSTALL_PREFIX=${PREFIX} \
 		--cmake_extra_defines onnxruntime_BUILD_UNIT_TESTS=OFF \
 		--cmake_extra_defines ONNXRUNTIME_NUMPY_INCLUDE_DIR=${PYTHONPREFIX_SITELIBDIR}/numpy/_core/include
-
-# The upstream wheel build does not include the native pybind extension, so
-# install it alongside the pure-Python files and add it to the autoplist.
-post-install:
-	${INSTALL_DATA} ${WRKDIR}/build/Release/onnxruntime/capi/onnxruntime_pybind11_state.so \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/onnxruntime/capi/
-	@${ECHO_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/onnxruntime/capi/onnxruntime_pybind11_state.so \
-		>> ${_PYTHONPKGLIST}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
