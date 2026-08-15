@@ -1,0 +1,12 @@
+--- gmp-h.in.orig	2023-07-29 13:42:16 UTC
++++ gmp-h.in
+@@ -268,7 +268,8 @@ typedef const __gmp_randstate_struct *gmp_randstate_sr
+   || defined (_ISO_STDIO_ISO_H)       /* Sun C++ */		\
+   || defined (__STDIO_LOADED)         /* VMS */			\
+   || defined (_STDIO)                 /* HPE NonStop */         \
+-  || defined (__DEFINED_FILE)         /* musl */
++  || defined (__DEFINED_FILE)         /* musl */                \
++  || defined (__STDC_VERSION_STDIO_H__) /* C23 */
+ #define _GMP_H_HAVE_FILE 1
+ #endif
+ 
