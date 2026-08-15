@@ -1,5 +1,5 @@
 PORTNAME=	sqlite-jdbc
-DISTVERSION=	3.53.1.0
+DISTVERSION=	3.53.2.1
 CATEGORIES=	databases java
 MASTER_SITES+=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${DISTVERSION}/:jar
 DISTFILES+=	${DISTJAR}:jar
