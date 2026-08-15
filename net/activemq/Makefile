@@ -1,5 +1,5 @@
 PORTNAME=	activemq
-DISTVERSION=	6.2.9
+DISTVERSION=	6.3.1
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${DISTVERSION}
 DISTNAME=	apache-${PORTNAME}-${DISTVERSION}-bin
@@ -40,10 +40,10 @@ do-install:
 	${REINPLACE_CMD} -i '' -e 's|$${sys:activemq.data}/audit.log|$${sys:activemq.logs}/audit.log|g; \
 			s|$${sys:activemq.data}/activemq.log|$${sys:activemq.logs}/activemq.log|g' \
 		${WRKSRC}/conf/log4j2.properties
-	${MKDIR} ${STAGEDIR}${ETCDIR} \
+	${MKDIR} ${STAGEDIR}${ETCDIR}/jetty \
 		 ${STAGEDIR}${DATADIR}/bin \
 		 ${STAGEDIR}/var/db/${PORTNAME}
-	cd ${WRKSRC}/conf && for f in *; do \
+	cd ${WRKSRC}/conf && for f in *.* jetty/*; do \
 		${INSTALL_DATA} ${WRKSRC}/conf/$$f ${STAGEDIR}${ETCDIR}/$$f.sample; \
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/activemq* ${STAGEDIR}${DATADIR}/bin
