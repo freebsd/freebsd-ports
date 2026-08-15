@@ -1,5 +1,5 @@
 PORTNAME=	groonga
-DISTVERSION=	16.0.8
+DISTVERSION=	16.0.9
 CATEGORIES=	textproc
 MASTER_SITES=	https://packages.groonga.org/source/groonga/
 
@@ -11,7 +11,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/document.h:devel/rapidjson
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cmake libedit libtool localbase:ldflags pathfix pkgconfig shebangfix ssl

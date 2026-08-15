@@ -88,6 +88,7 @@ lib/cmake/Groonga/GroongaConfig.cmake
 lib/cmake/Groonga/GroongaConfigVersion.cmake
 lib/cmake/Groonga/GroongaTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Groonga/GroongaTargets.cmake
+lib/groonga/plugins/functions/binary.so
 lib/groonga/plugins/functions/index_column.so
 lib/groonga/plugins/functions/math.so
 lib/groonga/plugins/functions/number.so
