@@ -1,5 +1,5 @@
 PORTNAME=	slib
-PORTVERSION=	3c1
+DISTVERSION=	3c2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
