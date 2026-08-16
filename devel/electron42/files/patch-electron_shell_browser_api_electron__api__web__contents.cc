@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2026-08-04 15:02:58 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2026-08-10 18:14:56 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
-@@ -175,11 +175,11 @@
+@@ -174,11 +174,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
  #endif
  
@@ -14,7 +14,7 @@
  #include "ui/aura/window.h"
  #include "ui/gfx/font_render_params.h"
  #endif
-@@ -211,7 +211,7 @@
+@@ -208,7 +208,7 @@
  #include "content/public/browser/plugin_service.h"
  #endif
  
@@ -23,7 +23,7 @@
  #include "chrome/browser/hang_monitor/hang_crash_dump.h"  // nogncheck
  #endif
  
-@@ -648,7 +648,7 @@ std::optional<base::TimeDelta> GetCursorBlinkInterval(
+@@ -629,7 +629,7 @@ std::optional<base::TimeDelta> GetCursorBlinkInterval(
        ui::TextInsertionCaretBlinkPeriodFromDefaults());
    if (system_value)
      return *system_value;
@@ -32,7 +32,7 @@
    if (auto* native_theme = ui::NativeTheme::GetInstanceForNativeUi())
      return native_theme->caret_blink_interval();
  #elif BUILDFLAG(IS_WIN)
-@@ -1033,7 +1033,7 @@ void WebContents::InitWithSessionAndOptions(
+@@ -1014,7 +1014,7 @@ void WebContents::InitWithSessionAndOptions(
    accept_languages.pop_back();
    prefs->accept_languages = accept_languages;
  
@@ -41,7 +41,7 @@
    // Update font settings.
    static const gfx::FontRenderParams params(
        gfx::GetFontRenderParams(gfx::FontRenderParamsQuery(), nullptr));
-@@ -3012,13 +3012,13 @@ void WebContents::ForcefullyCrashRenderer() {
+@@ -2993,13 +2993,13 @@ void WebContents::ForcefullyCrashRenderer() {
  
    content::RenderProcessHost* rph = rwh->GetProcess();
    if (rph) {
@@ -57,7 +57,7 @@
      CrashDumpHungChildProcess(rph->GetProcess().Handle());
  #endif
      rph->Shutdown(content::RESULT_CODE_HUNG);
-@@ -3728,7 +3728,7 @@ void WebContents::Focus() {
+@@ -3632,7 +3632,7 @@ void WebContents::Focus() {
  void WebContents::Focus() {
    // Focusing on WebContents does not automatically focus the window on macOS
    // and Linux, do it manually to match the behavior on Windows.
@@ -66,7 +66,7 @@
    if (owner_window())
      owner_window()->Focus(true);
  #endif
-@@ -4629,7 +4629,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
+@@ -4533,7 +4533,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
  }
  #endif
  
