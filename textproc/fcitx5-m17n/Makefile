@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
 		libm17n.so:devel/m17n-lib
 
-USES=		cmake gettext pkgconfig tar:zst
+USES=		cmake gettext kde pkgconfig tar:zst
+
+USE_KDE=	ecm:build
 
 .include <bsd.port.mk>
