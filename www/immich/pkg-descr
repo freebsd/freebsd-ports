@@ -1,0 +1,12 @@
+Immich is a high performance self-hosted photo and video management
+solution. It is designed as a privacy-friendly replacement for cloud
+photo services and offers automatic mobile backup (iOS/Android apps),
+a fast web interface, albums, sharing, timeline and map views,
+duplicate detection, smart search and facial recognition.
+
+This port contains the Immich server including the bundled web
+frontend. It requires a PostgreSQL database with the pgvector and
+vchord extensions and a Redis-compatible cache such as valkey.
+Smart search, duplicate detection and facial recognition
+additionally require the machine-learning service from
+www/immich-ml.

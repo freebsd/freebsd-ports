@@ -334,7 +334,7 @@ ldap:*:389:
 bunkerweb:*:390:
 dirsrv:*:391:
 _turnserver:*:392:
-# free: 393
+immich:*:393:
 # free: 394
 # free: 395
 # free: 396

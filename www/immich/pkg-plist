@@ -1,0 +1,11 @@
+%%WWWDIR%%/build-data/geodata/admin1CodesASCII.txt
+%%WWWDIR%%/build-data/geodata/admin2Codes.txt
+%%WWWDIR%%/build-data/geodata/cities500.txt
+%%WWWDIR%%/build-data/geodata/geodata-date.txt
+%%WWWDIR%%/build-data/geodata/ne_10m_admin_0_countries.geojson
+%%WWWDIR%%/build-data/plugins/immich-plugin-core/dist/index.d.ts
+%%WWWDIR%%/build-data/plugins/immich-plugin-core/dist/index.js
+%%WWWDIR%%/build-data/plugins/immich-plugin-core/dist/plugin.wasm
+%%WWWDIR%%/build-data/plugins/immich-plugin-core/manifest.json
+@dir(immich,immich,750) /var/db/immich
+@dir(immich,immich,750) /var/log/immich

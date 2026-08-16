@@ -339,7 +339,7 @@ ldap:*:389:389::0:0:OpenLDAP Server:/nonexistent:/usr/sbin/nologin
 bunkerweb:*:390:390::0:0:Bunkerweb Service:/nonexistent:/usr/sbin/nologin
 dirsrv:*:391:391::0:0:389 Directory Server:/usr/local/share/dirsrv:/usr/sbin/nologin
 _turnserver:*:392:392::0:0:Coturn Turnserver Daemon:/nonexistent:/usr/sbin/nologin
-# free: 393
+immich:*:393:393::0:0:Immich Daemon:/nonexistent:/usr/sbin/nologin
 # free: 394
 # free: 395
 # free: 396

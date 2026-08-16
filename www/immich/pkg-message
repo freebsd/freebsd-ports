@@ -1,0 +1,45 @@
+[
+{ type: install
+  message: <<EOM
+Immich server was installed.
+
+Requirements:
+ * PostgreSQL with the extensions pgvector and vchord, e.g.:
+     pkg install postgresql18-server postgresql18-contrib \
+         postgresql18-pgvector postgresql18-vchord
+ * Redis-compatible cache, e.g.:
+     pkg install valkey && sysrc valkey_enable=YES
+
+Configuration:
+ 1. VectorChord must be preloaded. Add to postgresql.conf:
+      shared_preload_libraries = 'vchord.so'
+    and restart PostgreSQL.
+ 2. Create a database and user for immich, then create the
+    extensions as superuser in that database:
+      CREATE EXTENSION vector;
+      CREATE EXTENSION vchord CASCADE;
+      CREATE EXTENSION cube;
+      CREATE EXTENSION earthdistance;
+      CREATE EXTENSION pg_trgm;
+    The immich role needs superuser during schema migrations,
+    or pre-create the extensions as shown above.
+ 3. Put the connection settings into %%PREFIX%%/etc/immich.env:
+      DB_HOSTNAME=localhost
+      DB_USERNAME=immich
+      DB_PASSWORD=secret
+      DB_DATABASE_NAME=immich
+      REDIS_HOSTNAME=localhost
+ 4. Enable and start the service:
+      sysrc immich_server_enable=YES
+      service immich_server start
+ 5. Optional: install www/immich-ml for smart search, duplicate
+    detection and facial recognition, then set the machine-learning
+    URL in the admin web UI (Administration > Settings >
+    Machine Learning) to http://127.0.0.1:3003
+
+The web interface listens on port 2283 by default. The upload
+location defaults to /var/db/immich and can be changed with
+sysrc immich_server_media_location=/path.
+EOM
+}
+]

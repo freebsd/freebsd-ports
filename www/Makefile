@@ -310,6 +310,7 @@
     SUBDIR += ikiwiki
     SUBDIR += ilias
     SUBDIR += imaginary
+    SUBDIR += immich
     SUBDIR += iocaine
     SUBDIR += iridium
     SUBDIR += janus

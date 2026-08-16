@@ -1,0 +1,70 @@
+#!/bin/sh
+
+# PROVIDE: immich_server
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# immich_server_enable (bool):		Set to NO by default.
+#					Set it to YES to enable immich-server.
+# immich_server_media_location (str):	Upload/media location.
+#					Default: /var/db/immich
+# immich_server_port (int):		Listen port. Default: 2283
+# immich_server_env_file (str):		Environment file with additional
+#					IMMICH_*/DB_*/REDIS_* variables.
+#					Default: %%PREFIX%%/etc/immich.env
+
+. /etc/rc.subr
+
+name=immich_server
+rcvar=immich_server_enable
+
+load_rc_config $name
+
+: ${immich_server_enable:=NO}
+: ${immich_server_user:=immich}
+: ${immich_server_group:=immich}
+: ${immich_server_media_location:=/var/db/immich}
+: ${immich_server_port:=2283}
+: ${immich_server_env_file:=%%PREFIX%%/etc/immich.env}
+: ${immich_server_env:="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+	HOME=${immich_server_media_location} \
+	NODE_ENV=production \
+	IMMICH_BUILD_DATA=%%PREFIX%%/www/immich/build-data \
+	IMMICH_MEDIA_LOCATION=${immich_server_media_location} \
+	IMMICH_PORT=${immich_server_port}"}
+
+pidfile=/var/run/immich/${name}.pid
+required_dirs="%%PREFIX%%/www/immich/server"
+
+immich_server_chdir=%%PREFIX%%/www/immich/server
+start_precmd=immich_server_precmd
+stop_cmd=immich_server_stop
+command=/usr/sbin/daemon
+command_args="-f -S -P ${pidfile} \
+	-o /var/log/immich/${name}.log \
+	%%NODE%% dist/main"
+
+immich_server_stop()
+{
+	local pid
+	pid=$(check_pidfile ${pidfile} ${command})
+	if [ -z "$pid" ]; then
+		echo "${name} not running? (check ${pidfile})."
+		return 1
+	fi
+	echo "Stopping ${name}."
+	kill -TERM -- -${pid} 2>/dev/null || kill -TERM ${pid}
+	wait_for_pids ${pid}
+	rm -f ${pidfile}
+}
+
+immich_server_precmd()
+{
+	install -d -o ${immich_server_user} -g ${immich_server_group} \
+		/var/run/immich /var/log/immich ${immich_server_media_location}
+}
+
+run_rc_command "$1"
