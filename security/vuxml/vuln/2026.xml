@@ -1,3 +1,78 @@
+  <vuln vid="2f3568eb-999e-11f1-a655-3497f65b111b">
+    <topic>gitea -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+    <name>gitea</name>
+    <range><lt>1.27.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitea reports</p>
+	<blockquote cite="https://blog.gitea.com/release-of-1.27.0/">
+	<p>This release contains fixes for 45 security issues,
+	including privilege escalation, remote denial of service,
+	server-side request forgery, authorization and token scope
+	bypasses, and information disclosure vulnerabilities.
+	Please upgrade as soon as possible.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-23603</cvename>
+      <cvename>CVE-2026-42931</cvename>
+      <cvename>CVE-2026-50105</cvename>
+      <cvename>CVE-2026-54481</cvename>
+      <cvename>CVE-2026-55982</cvename>
+      <cvename>CVE-2026-55984</cvename>
+      <cvename>CVE-2026-55986</cvename>
+      <cvename>CVE-2026-55987</cvename>
+      <cvename>CVE-2026-56443</cvename>
+      <cvename>CVE-2026-56654</cvename>
+      <cvename>CVE-2026-56657</cvename>
+      <cvename>CVE-2026-56750</cvename>
+      <cvename>CVE-2026-56755</cvename>
+      <cvename>CVE-2026-57886</cvename>
+      <cvename>CVE-2026-57894</cvename>
+      <cvename>CVE-2026-57897</cvename>
+      <cvename>CVE-2026-58314</cvename>
+      <cvename>CVE-2026-58416</cvename>
+      <cvename>CVE-2026-58417</cvename>
+      <cvename>CVE-2026-58420</cvename>
+      <cvename>CVE-2026-58425</cvename>
+      <cvename>CVE-2026-58427</cvename>
+      <cvename>CVE-2026-58428</cvename>
+      <cvename>CVE-2026-58429</cvename>
+      <cvename>CVE-2026-58431</cvename>
+      <cvename>CVE-2026-58432</cvename>
+      <cvename>CVE-2026-58433</cvename>
+      <cvename>CVE-2026-58434</cvename>
+      <cvename>CVE-2026-58435</cvename>
+      <cvename>CVE-2026-58436</cvename>
+      <cvename>CVE-2026-58437</cvename>
+      <cvename>CVE-2026-58438</cvename>
+      <cvename>CVE-2026-58439</cvename>
+      <cvename>CVE-2026-58440</cvename>
+      <cvename>CVE-2026-58441</cvename>
+      <cvename>CVE-2026-58442</cvename>
+      <cvename>CVE-2026-58443</cvename>
+      <cvename>CVE-2026-58444</cvename>
+      <cvename>CVE-2026-58445</cvename>
+      <cvename>CVE-2026-58507</cvename>
+      <cvename>CVE-2026-58508</cvename>
+      <cvename>CVE-2026-58510</cvename>
+      <cvename>CVE-2026-58511</cvename>
+      <cvename>CVE-2026-59763</cvename>
+      <cvename>CVE-2026-59765</cvename>
+      <url>https://blog.gitea.com/release-of-1.27.0/</url>
+    </references>
+    <dates>
+      <discovery>2026-07-13</discovery>
+      <entry>2026-08-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="05d311bc-9991-11f1-bc50-6cc21735f730">
     <topic>PostgreSQL -- Multiple vulnerabilities</topic>
     <affects>
