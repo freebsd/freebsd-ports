@@ -1,28 +1,24 @@
 PORTNAME=	aerc
-DISTVERSION=	0.21.0
-PORTREVISION=	13
+DISTVERSION=	0.22.0
 CATEGORIES=	mail
 
-MAINTAINER=	iamsleepy@ryuki.me
+MAINTAINER=	herbert@gojira.at
 COMMENT=	Email client for your terminal
 WWW=		https://aerc-mail.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	base64:converters/base64 \
-		scdoc:textproc/scdoc
+BUILD_DEPENDS=	scdoc:textproc/scdoc
 
-USES=		desktop-file-utils gmake go:modules ncurses:port python \
-		shebangfix
+USES=		desktop-file-utils gmake go:modules python shebangfix
 
 USE_GITHUB=	nodefault
 
-GH_TUPLE=	ProtonMail:go-crypto:v1.3.0:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
-		arran4:golang-ical:v0.3.2:arran4_golang_ical/vendor/github.com/arran4/golang-ical \
-		cloudflare:circl:v1.6.1:cloudflare_circl/vendor/github.com/cloudflare/circl \
-		containerd:console:v1.0.5:containerd_console/vendor/github.com/containerd/console \
-		creack:pty:v1.1.24:creack_pty/vendor/github.com/creack/pty \
+GH_TUPLE=	ProtonMail:go-crypto:v1.4.1:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
+		arran4:golang-ical:v0.3.5:arran4_golang_ical/vendor/github.com/arran4/golang-ical \
+		clipperhouse:uax29:v2.7.0:clipperhouse_uax29_v2/vendor/github.com/clipperhouse/uax29/v2 \
+		cloudflare:circl:v1.6.4:cloudflare_circl/vendor/github.com/cloudflare/circl \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		emersion:go-imap-sortthread:v1.2.0:emersion_go_imap_sortthread/vendor/github.com/emersion/go-imap-sortthread \
@@ -35,39 +31,39 @@ GH_TUPLE=	ProtonMail:go-crypto:v1.3.0:protonmail_go_crypto/vendor/github.com/Pro
 		emersion:go-sasl:b788ff22d5a6:emersion_go_sasl/vendor/github.com/emersion/go-sasl \
 		emersion:go-smtp:v0.24.0:emersion_go_smtp/vendor/github.com/emersion/go-smtp \
 		fsnotify:fsevents:v0.2.0:fsnotify_fsevents/vendor/github.com/fsnotify/fsevents \
-		fsnotify:fsnotify:v1.9.0:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		fsnotify:fsnotify:v1.10.1:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-check:check:10cb98267c6c:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.67.0:go_ini_ini/vendor/github.com/go-ini/ini \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:v0.41.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:image:v0.30.0:golang_image/vendor/golang.org/x/image \
-		golang:mod:v0.27.0:golang_mod/vendor/golang.org/x/mod \
-		golang:oauth2:v0.30.0:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:crypto:v0.54.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:image:v0.44.0:golang_image/vendor/golang.org/x/image \
+		golang:mod:v0.38.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.57.0:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:v0.36.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:snappy:v1.0.0:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:v0.16.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.35.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.28.0:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.36.0:golang_tools/vendor/golang.org/x/tools \
+		golang:sync:v0.22.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.47.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.45.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.40.0:golang_text/vendor/golang.org/x/text \
+		golang:tools:v0.48.0:golang_tools/vendor/golang.org/x/tools \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		lithammer:fuzzysearch:v1.1.8:lithammer_fuzzysearch/vendor/github.com/lithammer/fuzzysearch \
-		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.16:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mattn:go-sixel:v0.0.5:mattn_go_sixel/vendor/github.com/mattn/go-sixel \
+		mattn:go-isatty:v0.0.23:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.24:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		onsi:gomega:v1.20.0:onsi_gomega/vendor/github.com/onsi/gomega \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		rivo:uniseg:v0.4.7:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		riywo:loginshell:7d26008be1ab:riywo_loginshell/vendor/github.com/riywo/loginshell \
+		rockorager:go-uucode:v1.2.0:rockorager_go_uucode/vendor/github.com/rockorager/go-uucode \
+		rockorager:vaxis:v0.17.1:rockorager_vaxis/vendor/go.rockorager.dev/vaxis \
 		rogpeppe:go-internal:v1.8.1:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
-		soniakeys:quant:v1.0.0:soniakeys_quant/vendor/github.com/soniakeys/quant \
 		stretchr:testify:v1.11.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		syndtr:goleveldb:v1.0.0:syndtr_goleveldb/vendor/github.com/syndtr/goleveldb
 
 # Additional distfiles to fetch from https://git.sr.ht
 _SRHT_TUPLE=	rjarry:aerc:${DISTVERSIONFULL}:"" \
-		rjarry:go-opt:v2.1.0:vendor/git.sr.ht/~rjarry/go-opt/v2 \
-		rockorager:go-jmap:v0.5.2:vendor/git.sr.ht/~rockorager/go-jmap \
-		rockorager:vaxis:v0.15.0:vendor/git.sr.ht/~rockorager/vaxis
+		rjarry:go-opt:v2.2.0:vendor/git.sr.ht/~rjarry/go-opt/v2 \
+		rockorager:go-jmap:v0.5.3:vendor/git.sr.ht/~rockorager/go-jmap
 
 SHEBANG_FILES=	contrib/carddav-query filters/show-ics-details.py
 
