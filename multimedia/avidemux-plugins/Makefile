@@ -11,6 +11,8 @@ PATCHFILES+=	c16d32a67cdb012db093472ad3776713939a30d1.patch:-p1
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor (Plugins)
 
+BROKEN=		Fails to build after multimedia/vapoursynth update (R66 => R73, a5e4dc2)
+
 LIB_DEPENDS=	libADM6avutil.so.56:multimedia/avidemux
 
 MASTERDIR=	${.CURDIR}/../avidemux
