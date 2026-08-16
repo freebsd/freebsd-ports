@@ -5229,6 +5229,7 @@
     SUBDIR += py-icalendar-searcher
     SUBDIR += py-ice
     SUBDIR += py-ice37
+    SUBDIR += py-icecream
     SUBDIR += py-id
     SUBDIR += py-identify
     SUBDIR += py-ijson
