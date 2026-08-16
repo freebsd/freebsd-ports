@@ -14,7 +14,7 @@ WWW=		https://robo-code.blogspot.com.br
 
 LICENSE=	EPL
 
-PORTSCOUT=	limit:^\d+\.\d+\.\d+$$
+PORTSCOUT=	ignore:1
 
 USES=		cpe dos2unix java:extract,run zip
 DOS2UNIX_GLOB=	*.css *.team *.properties package-list MANIFEST.MF
