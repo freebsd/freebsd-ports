@@ -1,11 +1,12 @@
 PORTNAME=	xcircuit
-DISTVERSION=	3.10.44
+DISTVERSION=	3.10.45
 PORTEPOCH=	1
 CATEGORIES=	cad
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	X11 circuit schematics drawing program
-WWW=		http://opencircuitdesign.com/xcircuit/
+WWW=		https://opencircuitdesign.com/xcircuit/ \
+		https://github.com/RTimothyEdwards/XCircuit/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
