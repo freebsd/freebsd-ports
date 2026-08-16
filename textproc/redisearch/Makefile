@@ -1,7 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.8.0
-PORTREVISION=	2
+DISTVERSION=	8.10.0
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -21,17 +20,19 @@ NOT_FOR_ARCHS_REASON=	Requires 64-bit architecture
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs \
 		bash:shells/bash
+LIB_DEPENDS=	libuv.so:devel/libuv
 
-USES=	cargo cmake llvm:min=21,build python:build ssl
+USES=	cargo cmake llvm:min=21,build localbase pkgconfig python:build ssl
 CARGO_SRC_SUBDIR=	src/redisearch_rs
 USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
-GH_TUPLE=	libuv:libuv:e9f29cb:libuv/deps/libuv \
+
+GH_TUPLE=	\
 		redis:hiredis:bd01f10:hiredis/deps/hiredis \
 		snowballstem:snowball:4764395:snowball/deps/snowball \
-		RedisAI:VectorSimilarity:8c5791f:vectorsimilarity/deps/VectorSimilarity \
-		intel:ScalableVectorSearch:02dea9d:scalablevectorsearch/deps/VectorSimilarity/deps/ScalableVectorSearch \
+		RedisAI:VectorSimilarity:dd6879e:vectorsimilarity/deps/VectorSimilarity \
+		intel:ScalableVectorSearch:7786d43:scalablevectorsearch/deps/VectorSimilarity/deps/ScalableVectorSearch \
 		jfalcou:eve:v2023.02.15:eve/deps/eve \
 		Tessil:robin-map:v1.4.0:robin_map/deps/robin-map \
 		fmtlib:fmt:12.1.0:fmt/deps/fmt \
@@ -40,9 +41,10 @@ GH_TUPLE=	libuv:libuv:e9f29cb:libuv/deps/libuv \
 		google:cpu_features:v0.10.1:cpu_features/deps/cpu_features
 
 CMAKE_ARGS=	-DBOOST_DIR=${PREFIX} \
-			-Wno-dev --no-warn-unused-cli \
-			-DSVS_INSTALL=OFF \
-			-DCMAKE_SKIP_INSTALL_RULES=ON
+		-Wno-dev --no-warn-unused-cli \
+		-DSVS_INSTALL=OFF \
+		-DCMAKE_SKIP_INSTALL_RULES=ON \
+		-DREDISEARCH_GENERATE_HEADERS=OFF
 
 CFLAGS+=	-DCLOCK_MONOTONIC_RAW=CLOCK_MONOTONIC
 
