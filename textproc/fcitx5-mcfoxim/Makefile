@@ -13,7 +13,9 @@ BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 
 LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5
 
-USES=		cmake pkgconfig
+USES=		cmake gettext-tools:build kde pkgconfig
+
+USE_KDE=	ecm:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openvanilla
