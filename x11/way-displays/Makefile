@@ -1,5 +1,5 @@
 PORTNAME=	way-displays
-DISTVERSION=	1.15.0
+DISTVERSION=	2.0.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libinotify.so:devel/libinotify \
 		libudev.so:devel/libudev-devd \
-		libyaml-cpp.so:devel/yaml-cpp \
 		libwayland-client.so:graphics/wayland \
+		libyaml.so:textproc/libyaml \
 		libinput.so:x11/libinput
 TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 
@@ -26,12 +26,13 @@ MAKE_ARGS=	CC="${CC}" CXX="${CXX}" OFLAGS=
 TEST_TARGET=	test
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz \
+		 share/man/man5/${PORTNAME}.5.gz \
 		"@sample ${ETCDIR}/cfg.yaml.sample"
 
 post-patch:
 # Respect PREFIX for system-wide config
 	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' \
-		${WRKSRC}/src/cfg.c \
+		${WRKSRC}/src/cfg/file.c \
 		${WRKSRC}/tst/tst-cfg.c
 
 post-install:
