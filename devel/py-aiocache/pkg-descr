@@ -1,0 +1,4 @@
+Aiocache is an asyncio cache framework for Python with multiple
+backends (in-memory, Redis, Memcached) behind a common interface.
+It provides decorators to cache function results, pluggable
+serializers and cache managers for asyncio applications.
