@@ -1,7 +1,6 @@
 PORTNAME=	redisbloom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.8.0
-PORTREVISION=	1
+DISTVERSION=	8.10.0
 CATEGORIES=	databases
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -24,7 +23,7 @@ GH_PROJECT=	RedisBloom
 GH_TUPLE=	RedisBloom:t-digest-c:5b89d70:t_digest_c/deps/t-digest-c \
 		RedisLabsModules:readies:f31347b:readies/deps/readies \
 		RedisLabsModules:RedisModulesSDK:3b2f684:RedisModulesSDK/deps/RedisModulesSDK \
-		google:benchmark:8982e1e:benchmark/deps/t-digest-c/tests/vendor/google/benchmark
+		google:benchmark:37be1e8:benchmark/deps/t-digest-c/tests/vendor/google/benchmark
 
 CFLAGS+=	-fPIC -fblocks \
 		-D_GNU_SOURCE -DREDIS_MODULE_TARGET -DREDISMODULE_SDK_RLEC \
