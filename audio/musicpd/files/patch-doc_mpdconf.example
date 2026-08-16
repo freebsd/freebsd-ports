@@ -1,4 +1,4 @@
---- doc/mpdconf.example.orig	2025-03-11 10:05:29 UTC
+--- doc/mpdconf.example.orig	2026-08-13 09:54:31 UTC
 +++ doc/mpdconf.example
 @@ -11,7 +11,7 @@
  # file:// protocol) or streaming files over an accepted protocol.
@@ -55,7 +55,7 @@
  # The location of the sticker database.  This is a database which
  # manages dynamic information attached to songs.
  #
- #sticker_file			"$XDG_CACHE_HOME/sticker.sql"
+ #sticker_file			"$XDG_CACHE_HOME/mpd/sticker.sql"
 -#sticker_file			"~/.mpd/sticker.sql"
 +sticker_file			"/var/mpd/.mpd/sticker.sql"
  #
@@ -68,9 +68,9 @@
 -#user				"nobody"
 +user				"%%MPDUSER%%"
  #
- # This setting specifies the group that MPD will run as. If not specified
- # primary group of user specified with "user" setting will be used (if set).
-@@ -93,7 +93,7 @@
+ # This setting sets the address for the daemon to listen on. Careful attention
+ # should be paid if this is assigned to anything other than the default, any.
+@@ -86,7 +86,7 @@
  #
  # And for Unix Socket
  #bind_to_address		"$XDG_RUNTIME_DIR/mpd/socket"
@@ -79,7 +79,7 @@
  #
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
-@@ -189,8 +189,8 @@
+@@ -182,8 +182,8 @@
  #
  #database {
  #       plugin "simple"
@@ -90,7 +90,7 @@
  #}
  #
  # An example of database config for a satellite setup
-@@ -235,14 +235,14 @@ input {
+@@ -228,14 +228,14 @@ input {
  #
  # An example of an OSS output:
  #
