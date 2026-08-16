@@ -17,12 +17,16 @@ USES=		desktop-file-utils gettext-tools gnome gstreamer python
 USE_GITHUB=	yes
 GH_ACCOUNT=	otsaloma
 USE_GNOME=	gtk40 intltool pygobject3
-USE_GSTREAMER=	bad good gtk libav pango ugly rust
-USE_PYTHON=	autoplist flavors
+USE_GSTREAMER=	bad good gtk libav pango ugly
+USE_PYTHON=	flavors
 
 ALL_TARGET=	build
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	RUST
+RUST_DESC=	Depend on gstreamer1-plugins-rust for embedded video playing through gtk4paintablesink
+RUST_USE=	GSTREAMER=rust
 
 post-patch:
 	@${REINPLACE_CMD} 's|#!/usr/bin/env python3|#!${PYTHON_CMD}|' \
