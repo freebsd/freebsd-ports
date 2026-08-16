@@ -1,6 +1,6 @@
 PORTNAME=	denominator
-PORTVERSION=	4.7.1
-PORTREVISION=	2
+DISTVERSION=	4.7.1
+PORTREVISION=	3
 CATEGORIES=	dns java
 MASTER_SITES=	https://bintray.com/artifact/download/netflixoss/maven/com/netflix/${PORTNAME}/${PORTNAME}-cli/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-cli-${PORTVERSION}-fat.jar
@@ -10,10 +10,14 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Portably control DNS clouds
 WWW=		https://github.com/Netflix/denominator
 
+DEPRECATED=	Project has been archived use dns/py-dns-lexicon
+EXPIRATION_DATE=	2026-09-30
+
 USES=		java
 
-NO_BUILD=	yes
 STRIP=		# none
+NO_BUILD=	yes
+
 PLIST_FILES=	bin/${PORTNAME}
 
 do-extract:
