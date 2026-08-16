@@ -1,12 +1,12 @@
 PORTNAME=	irsim
 DISTVERSION=	9.7.121
 CATEGORIES=	cad
-MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
+MASTER_SITES=	https://opencircuitdesign.com/irsim/archive/
 PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Event-driven logic-level simulator for MOS circuis
-WWW=		http://opencircuitdesign.com/irsim/
+WWW=		https://opencircuitdesign.com/irsim/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
