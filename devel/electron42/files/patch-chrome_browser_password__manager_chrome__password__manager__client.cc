@@ -1,4 +1,4 @@
---- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2026-06-02 17:55:02 UTC
+--- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2026-08-15 04:49:03 UTC
 +++ chrome/browser/password_manager/chrome_password_manager_client.cc
 @@ -703,7 +703,7 @@ bool ChromePasswordManagerClient::IsReauthBeforeFillin
  bool ChromePasswordManagerClient::IsReauthBeforeFillingRequired(
@@ -18,7 +18,7 @@
    PasswordsClientUIDelegate* manage_passwords_ui_controller =
        PasswordsClientUIDelegateFromWebContents(web_contents());
    if (manage_passwords_ui_controller) {
-@@ -2043,7 +2043,7 @@ bool ChromePasswordManagerClient::IsPasswordManagement
+@@ -2044,7 +2044,7 @@ bool ChromePasswordManagerClient::IsPasswordManagement
  bool ChromePasswordManagerClient::IsPasswordManagementEnabledForCurrentPage(
      const GURL& url) const {
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
    if (IsPasswordManagerForUrlDisallowedByPolicy(url)) {
      return false;
    }
-@@ -2082,7 +2082,7 @@ bool ChromePasswordManagerClient::IsPasswordManagement
+@@ -2083,7 +2083,7 @@ bool ChromePasswordManagerClient::IsPasswordManagement
  }
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
