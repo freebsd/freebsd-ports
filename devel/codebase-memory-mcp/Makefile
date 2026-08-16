@@ -1,6 +1,6 @@
 PORTNAME=	codebase-memory-mcp
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.4
 CATEGORIES=	devel
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -33,7 +33,7 @@ do-build:
 		${SETENV} ${MAKE_ENV} \
 		${GMAKE} -f Makefile.cbm cbm \
 		CC="${CC}" CXX="${CXX}" \
-		CFLAGS_EXTRA='-DCBM_VERSION=\"${DISTVERSION}\" -DCBM_PACKAGE_MANAGED'
+		CFLAGS_EXTRA='-DCBM_VERSION=\"${DISTVERSION}\" -DCBM_PKG_PREFIX=\"${PREFIX}\"'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/c/codebase-memory-mcp \

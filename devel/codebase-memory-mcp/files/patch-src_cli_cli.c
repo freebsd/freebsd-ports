@@ -1,87 +1,56 @@
---- src/cli/cli.c.orig	2026-07-29 06:28:47 UTC
+--- src/cli/cli.c.orig	2026-08-14 04:11:37 UTC
 +++ src/cli/cli.c
-@@ -74,6 +74,10 @@ enum {
- #ifdef __APPLE__
- #include <mach-o/dyld.h>
- #endif
-+#ifdef __FreeBSD__
-+#include <sys/sysctl.h> // KERN_PROC_PATHNAME — /proc-free self-path detection
-+#include <sys/types.h>
-+#endif
- #include "foundation/compat_fs.h"
+@@ -7963,7 +7963,12 @@ static void cbm_agent_installed_binary_path(const char
  
- #ifndef CBM_VERSION
-@@ -3651,6 +3655,14 @@ static void cbm_detect_self_path(char *buf, size_t buf
-     if (_NSGetExecutablePath(buf, &sp_sz) != 0) {
-         buf[0] = '\0';
-     }
-+#elif defined(__FreeBSD__)
-+    /* FreeBSD has no /proc by default; sysctl KERN_PROC_PATHNAME returns the
-+     * running executable's path without it. */
-+    int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1};
-+    size_t sp_sz = buf_sz;
-+    if (sysctl(mib, 4, buf, &sp_sz, NULL, 0) != 0) {
-+        buf[0] = '\0';
-+    }
+ static void cbm_agent_installed_binary_path(const char *home, char *binary_path,
+                                             size_t binary_path_size) {
+-#ifdef _WIN32
++#if defined(__FreeBSD__) && defined(CBM_PKG_PREFIX)
++    /* The port/pkg install the binary under ${PREFIX}/bin, not ~/.local/bin, so
++     * agent configs (mcp.json, hooks) must point there. */
++    (void)home;
++    snprintf(binary_path, binary_path_size, CBM_PKG_PREFIX "/bin/codebase-memory-mcp");
++#elif defined(_WIN32)
+     snprintf(binary_path, binary_path_size, "%s/.local/bin/codebase-memory-mcp.exe", home);
  #else
-     ssize_t sp_len = readlink("/proc/self/exe", buf, buf_sz - SKIP_ONE);
-     if (sp_len > 0) {
-@@ -3821,6 +3833,18 @@ int cbm_cmd_install(int argc, char **argv) {
-     snprintf(bin_target, sizeof(bin_target), "%s/.local/bin/codebase-memory-mcp", home);
- #endif
- 
-+    /* A package manager (FreeBSD ports, Homebrew, distro pkg) already placed the
-+     * binary on PATH under its own prefix and owns that file. Install must not
-+     * copy it into ~/.local/bin (a duplicate, unmanaged binary in $HOME), and
-+     * agent configs must reference the real binary the manager installed, not
-+     * the ~/.local/bin path. Point bin_target at the running executable. */
-+#ifdef CBM_PACKAGE_MANAGED
-+    if (self_path[0]) {
-+        snprintf(bin_target, sizeof(bin_target), "%s", self_path);
+     snprintf(binary_path, binary_path_size, "%s/.local/bin/codebase-memory-mcp", home);
+@@ -9472,6 +9477,16 @@ static const char *cli_external_manager_name(const cha
+     if (strstr(self_path, "/.cargo/bin/")) {
+         return "cargo";
+     }
++#if defined(__FreeBSD__) && defined(CBM_PKG_PREFIX)
++    /* FreeBSD ports/pkg install the binary under ${PREFIX}/bin (CBM_PKG_PREFIX
++     * is the port's PREFIX, default /usr/local). pkg owns that file, so install
++     * must not copy it into ~/.local/bin or edit PATH, and update must refuse
++     * and defer to pkg(8). Match only ${PREFIX}/bin/ so a manual --dir install
++     * elsewhere is still treated as ours. */
++    if (strstr(self_path, CBM_PKG_PREFIX "/bin/") == self_path) {
++        return "FreeBSD pkg";
 +    }
 +#endif
-+
-+#ifndef CBM_PACKAGE_MANAGED
-     if (!cbm_same_file(self_path, bin_target)) {
-         struct stat tgt_st;
-         bool target_exists = (stat(bin_target, &tgt_st) == 0);
-@@ -3849,6 +3873,7 @@ int cbm_cmd_install(int argc, char **argv) {
+     return NULL;
+ }
+ 
+@@ -9890,6 +9905,13 @@ int cbm_cmd_install(int argc, char **argv) {
+                    manager ? " by " : "", manager ? manager : "", self_path, bin_dir);
+         }
+         skip_binary = true;
++        /* We are not placing a binary, so agent configs must reference the one
++         * that is actually running, not the ~/.local/bin default that no file
++         * lives at (#pkg: FreeBSD ports install under /usr/local/bin). Retarget
++         * to the OS-reported self path when we have it. */
++        if (self_path_exact && self_path[0]) {
++            snprintf(bin_target, sizeof(bin_target), "%s", self_path);
++        }
+     }
+ 
+     /* NOT stat(): on Windows it goes through the ANSI code page, so an
+@@ -11939,6 +11961,8 @@ int cbm_cmd_update(int argc, char **argv) {
+                 (void)fprintf(stderr, "  update it with: mise upgrade codebase-memory-mcp\n");
+             } else if (manager && strcmp(manager, "Homebrew") == 0) {
+                 (void)fprintf(stderr, "  update it with: brew upgrade codebase-memory-mcp\n");
++            } else if (manager && strcmp(manager, "FreeBSD pkg") == 0) {
++                (void)fprintf(stderr, "  update it with: pkg upgrade codebase-memory-mcp\n");
+             } else {
+                 (void)fprintf(stderr, "  update it through whichever tool installed it.\n");
              }
-         }
-     }
-+#endif /* !CBM_PACKAGE_MANAGED */
- 
-     /* Step 1d: macOS ad-hoc signing of the installed binary. A freshly
-      * clang-built arm64 binary is linker-signed (flags=0x20002) and gets
-@@ -3869,10 +3894,14 @@ int cbm_cmd_install(int argc, char **argv) {
-     /* Step 3: Install/refresh all agent configs, pointing at the install target. */
-     cbm_install_agent_configs(home, bin_target, force, dry_run);
- 
--    /* Step 4: Ensure PATH */
-+    /* Step 4: Ensure PATH. Skipped under CBM_PACKAGE_MANAGED: the package
-+     * manager owns PATH via its prefix, so install must not append
-+     * `export PATH=...` to the user's shell rc. */
-+    const char *rc = "";
-+#ifndef CBM_PACKAGE_MANAGED
-     char bin_dir[CLI_BUF_1K];
-     snprintf(bin_dir, sizeof(bin_dir), "%s/.local/bin", home);
--    const char *rc = cbm_detect_shell_rc(home);
-+    rc = cbm_detect_shell_rc(home);
-     if (rc[0]) {
-         int path_rc = cbm_ensure_path(bin_dir, rc, dry_run);
-         if (path_rc == 0) {
-@@ -3881,9 +3910,12 @@ int cbm_cmd_install(int argc, char **argv) {
-             printf("\nPATH already includes %s\n", bin_dir);
-         }
-     }
-+#endif
- 
--    printf("\nInstall complete. Restart your shell or run:\n");
--    printf("  source %s\n", rc);
-+    printf("\nInstall complete.\n");
-+    if (rc[0]) {
-+        printf("Restart your shell or run:\n  source %s\n", rc);
-+    }
-     if (dry_run) {
-         printf("\n(dry-run — no files were modified)\n");
-     }
