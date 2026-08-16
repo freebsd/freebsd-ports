@@ -138,6 +138,7 @@
     SUBDIR += p5-plutil
     SUBDIR += pear-Services_JSON
     SUBDIR += pecl-igbinary
+    SUBDIR += pecl-igbinary-session
     SUBDIR += php-bsdconv
     SUBDIR += php82-iconv
     SUBDIR += php82-mbstring
