@@ -6561,7 +6561,6 @@
     SUBDIR += py-yarg
     SUBDIR += py-yaspin
     SUBDIR += py-yattag
-    SUBDIR += py-yg.lockfile
     SUBDIR += py-ytmusicapi
     SUBDIR += py-yunomi
     SUBDIR += py-zarr

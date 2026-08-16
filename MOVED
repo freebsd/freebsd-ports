@@ -5552,3 +5552,4 @@ www/py-flask-limiter3||2026-08-09|No need to keep v3 as www/py-calibreweb now su
 biology/py-macs2||2026-08-11|Upstream end of life, depends on expired lang/cython0, switch to biology/py-macs3
 www/lua-stream-nginx-module|www/nginx-module-lua-stream|2026-08-14|Renamed to follow the nginx-module-* naming scheme
 devel/prjpeppercorn112||2026-08-15|No longer supported by devel/nextpnr
+devel/py-yg.lockfile|devel/py-fasteners|2026-08-16|Has expired: Upstream inactive since 8+ years, please use devel/py-fasteners instead
