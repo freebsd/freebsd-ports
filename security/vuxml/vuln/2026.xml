@@ -1,3 +1,203 @@
+  <vuln vid="05d311bc-9991-11f1-bc50-6cc21735f730">
+    <topic>PostgreSQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>postgresql14-server</name>
+       <range><lt>14.24</lt></range>
+      </package>
+      <package>
+       <name>postgresql15-server</name>
+       <range><lt>15.19</lt></range>
+      </package>
+      <package>
+       <name>postgresql16-server</name>
+       <range><lt>16.15</lt></range>
+      </package>
+      <package>
+       <name>postgresql17-server</name>
+       <range><lt>17.11</lt></range>
+      </package>
+      <package>
+       <name>postgresql18-server</name>
+       <range><lt>18.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL project reports:</p>
+	<blockquote cite="https://www.postgresql.org/about/news/postgresql-186-1711-1615-1519-1424-and-19-beta-3-released-3365/">
+	<p>
+	  CVE-2026-6464: psql COPY FROM STDIN, if the copy fails
+	  before data rows begin, processes the following data lines
+	  as psql commands.
+	</p>
+	<p>
+	  CVE-2026-6469: ALTER TABLE ALTER TYPE incorrectly reassigns
+	  ownership of dependent extended statistics objects to the
+	  current user.
+	</p>
+	<p>
+	  CVE-2026-6470: Missing privilege check for type USAGE allows
+	  denial of service against ALTER and DROP of the type.
+	</p>
+	<p>
+	  CVE-2026-6471: Logical decoding lets a REPLICATION-
+	  privileged user dlopen an arbitrary file via the decoding
+	  plugin choice, running arbitrary code as the server's OS
+	  user.
+	</p>
+	<p>
+	  CVE-2026-14662: Integer wraparound in tsvector and tsquery
+	  functions can undersize an allocation, causing a buffer
+	  overflow and arbitrary code execution.
+	</p>
+	<p>
+	  CVE-2026-14663: pgcrypto silently encrypts to and decrypts
+	  from cleartext for ciphers OpenSSL has disabled, letting an
+	  attacker recover cleartext.
+	</p>
+	<p>
+	  CVE-2026-14664: Heap buffer overflow in the regexp engine
+	  allows arbitrary code execution via crafted input text.
+	</p>
+	<p>
+	  CVE-2026-14666: Row-level security policy caching can retain
+	  a stale policy after role changes, letting a user complete
+	  now-forbidden reads or writes.
+	</p>
+	<p>
+	  CVE-2026-14668: Type confusion in the ctid selectivity
+	  estimator discloses a derivative of an arbitrary 4-byte span
+	  of server memory.
+	</p>
+	<p>
+	  CVE-2026-14669: Heap buffer overflow in to_char(timestamptz)
+	  via a long POSIX timezone abbreviation allows arbitrary code
+	  execution.
+	</p>
+	<p>
+	  CVE-2026-14670: Heap buffer overflow in plperl, on return of
+	  a tied hash, allows the function owner to execute arbitrary
+	  code.
+	</p>
+	<p>
+	  CVE-2026-14671: Type confusion in module "refint" allows an
+	  object creator to execute arbitrary code.
+	</p>
+	<p>
+	  CVE-2026-14672: SCRAM authentication reveals whether a role
+	  exists via an observable difference in the reported
+	  iteration count.
+	</p>
+	<p>
+	  CVE-2026-14673: amcheck fails to clear an untrusted search
+	  path, letting an EXECUTE grantee run arbitrary functions as
+	  an expression index's owner.
+	</p>
+	<p>
+	  CVE-2026-14676: Heap buffer overflow in pg_stat_statements
+	  via crafted queries with array constants allows arbitrary
+	  code execution.
+	</p>
+	<p>
+	  CVE-2026-14677: Integer wraparound in 32-bit pltcl/plperl
+	  builds can undersize an allocation, allowing arbitrary code
+	  execution.
+	</p>
+	<p>
+	  CVE-2026-14678: pg_trgm's picksplit function reads past the
+	  end of a heap buffer, potentially disclosing limited memory.
+	</p>
+	<p>
+	  CVE-2026-14679: Stack buffer overflow in argument-name
+	  matching lets an object creator write a few attacker-
+	  influenced bytes into server memory.
+	</p>
+	<p>
+	  CVE-2026-14680: Type confusion via "internal"-typed function
+	  arguments allows any user to execute arbitrary code.
+	</p>
+	<p>
+	  CVE-2026-14681: GSSAPI encryption is not properly enforced
+	  when coupled with an initial direct SSL connection.
+	</p>
+	<p>
+	  CVE-2026-15741: Expression deparse of EXTRACT() allows SQL
+	  injection via a hostile object definition, affecting pg_dump
+	  and psql.
+	</p>
+	<p>
+	  CVE-2026-15742: Integer wraparound in fuzzystrmatch's
+	  levenshtein() functions allows writes to arbitrary addresses
+	  and code execution.
+	</p>
+	<p>
+	  CVE-2026-16238: Type confusion in
+	  pg_restore_attribute_stats() allows arbitrary code execution
+	  via conflated range/multirange values.
+	</p>
+	<p>
+	  CVE-2026-16239: Type confusion via cursor DECLARE and CLOSE
+	  allows a user to execute arbitrary code.
+	</p>
+	<p>
+	  CVE-2026-16241: Integer underflow in ECPG can crash the
+	  client via a bytea value lacking its mandatory prefix.
+	</p>
+	<p>
+	  CVE-2026-18024: The ascii() function reads past the end of a
+	  buffer, disclosing a few bytes of server memory.
+	</p>
+	<p>
+	  CVE-2026-18408: psql's \unrestrict lets a malicious pg_dump
+	  origin-server superuser execute arbitrary code in the
+	  restoring client.
+	</p>
+	<p>
+	  CVE-2026-19385: Heap buffer overflow in pg_dump, when
+	  dumping long function transform lists, allows arbitrary code
+	  execution.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-6464</cvename>
+      <cvename>CVE-2026-6469</cvename>
+      <cvename>CVE-2026-6470</cvename>
+      <cvename>CVE-2026-6471</cvename>
+      <cvename>CVE-2026-14662</cvename>
+      <cvename>CVE-2026-14663</cvename>
+      <cvename>CVE-2026-14664</cvename>
+      <cvename>CVE-2026-14666</cvename>
+      <cvename>CVE-2026-14668</cvename>
+      <cvename>CVE-2026-14669</cvename>
+      <cvename>CVE-2026-14670</cvename>
+      <cvename>CVE-2026-14671</cvename>
+      <cvename>CVE-2026-14672</cvename>
+      <cvename>CVE-2026-14673</cvename>
+      <cvename>CVE-2026-14676</cvename>
+      <cvename>CVE-2026-14677</cvename>
+      <cvename>CVE-2026-14678</cvename>
+      <cvename>CVE-2026-14679</cvename>
+      <cvename>CVE-2026-14680</cvename>
+      <cvename>CVE-2026-14681</cvename>
+      <cvename>CVE-2026-15741</cvename>
+      <cvename>CVE-2026-15742</cvename>
+      <cvename>CVE-2026-16238</cvename>
+      <cvename>CVE-2026-16239</cvename>
+      <cvename>CVE-2026-16241</cvename>
+      <cvename>CVE-2026-18024</cvename>
+      <cvename>CVE-2026-18408</cvename>
+      <cvename>CVE-2026-19385</cvename>
+      <url>https://www.postgresql.org/about/news/postgresql-186-1711-1615-1519-1424-and-19-beta-3-released-3365/</url>
+    </references>
+    <dates>
+      <discovery>2026-08-13</discovery>
+      <entry>2026-08-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="56449320-97c5-11f1-84d7-3c7c3fba4204">
     <topic>OpenEXR -- 3.4.14 fixes multiple vulnerabilities</topic>
     <affects>
