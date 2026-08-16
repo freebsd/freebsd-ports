@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# PROVIDE: immich_ml
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# immich_ml_enable (bool):	Set to NO by default.
+#				Set it to YES to enable immich-ml.
+# immich_ml_cache_folder (str):	Model cache directory.
+#				Default: /var/db/immich-ml
+# immich_ml_host (str):		Listen address. Default: 127.0.0.1
+# immich_ml_port (int):		Listen port. Default: 3003
+
+. /etc/rc.subr
+
+name=immich_ml
+rcvar=immich_ml_enable
+
+load_rc_config $name
+
+: ${immich_ml_enable:=NO}
+: ${immich_ml_user:=immich}
+: ${immich_ml_group:=immich}
+: ${immich_ml_cache_folder:=/var/db/immich-ml}
+: ${immich_ml_host:=127.0.0.1}
+: ${immich_ml_port:=3003}
+: ${immich_ml_env:="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+	HOME=${immich_ml_cache_folder} \
+	MACHINE_LEARNING_CACHE_FOLDER=${immich_ml_cache_folder} \
+	IMMICH_HOST=${immich_ml_host} \
+	IMMICH_PORT=${immich_ml_port}"}
+
+pidfile=/var/run/immich/${name}.pid
+
+start_precmd=immich_ml_precmd
+stop_cmd=immich_ml_stop
+command=/usr/sbin/daemon
+command_args="-f -S -P ${pidfile} \
+	-o /var/log/immich/${name}.log \
+	%%PYTHON_CMD%% -m immich_ml"
+
+immich_ml_stop()
+{
+	local pid
+	pid=$(check_pidfile ${pidfile} ${command})
+	if [ -z "$pid" ]; then
+		echo "${name} not running? (check ${pidfile})."
+		return 1
+	fi
+	echo "Stopping ${name}."
+	kill -TERM -- -${pid} 2>/dev/null || kill -TERM ${pid}
+	wait_for_pids ${pid}
+	rm -f ${pidfile}
+}
+
+immich_ml_precmd()
+{
+	install -d -o ${immich_ml_user} -g ${immich_ml_group} \
+		/var/run/immich /var/log/immich ${immich_ml_cache_folder}
+}
+
+run_rc_command "$1"

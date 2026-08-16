@@ -1,0 +1,10 @@
+The Immich machine-learning service provides smart search (CLIP),
+duplicate detection and facial recognition for an Immich server.
+It is a FastAPI application that executes ONNX models with
+onnxruntime on the CPU. Models are downloaded automatically on
+first use into the cache directory.
+
+The service listens on port 3003 by default and is consumed by
+www/immich; point the Immich server at it via its machine-learning
+URL setting. OCR (text search in images) is currently not
+available on FreeBSD because rapidocr is not ported yet.
