@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	8.8.1
+DISTVERSION=	8.10.0
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
@@ -49,17 +49,19 @@ PLIST_SUB=	REDIS_DBDIR=${REDIS_DBDIR} \
 OPTIONS_DEFINE=		JEMALLOC TLS
 OPTIONS_DEFAULT=	TLS
 OPTIONS_GROUP=		MODULES
-OPTIONS_GROUP_MODULES=		REDISBLOOM REDISJSON
+OPTIONS_GROUP_MODULES=		REDISBLOOM REDISJSON REDISEARCH
 OPTIONS_SUB=		yes
 
 JEMALLOC_DESC=	Use jemalloc
 REDISBLOOM_DESC=	RedisBLOOM module
 REDISJSON_DESC=		RedisJSON module
+REDISEARCH_DESC=	Redisearch module
 TLS_DESC=	Use TLS (openssl req.)
 
 JEMALLOC_MAKE_ENV=	USE_JEMALLOC=yes
 REDISBLOOM_LIB_DEPENDS=		redisbloom.so>=0:databases/redisbloom
 REDISJSON_LIB_DEPENDS=		librejson.so>=0:databases/redisjson
+REDISEARCH_LIB_DEPENDS=		redisearch.so>=0:textproc/redisearch
 TLS_USES=		ssl
 TLS_MAKE_ENV=		BUILD_TLS=yes
 
@@ -70,8 +72,9 @@ REDIS_DBDIR?=	/var/db/redis
 REDIS_RUNDIR?=	/var/run/redis
 REDIS_LOGDIR?=	/var/log/redis
 
-post-patch-JEMALLOC-on:
-	@${REINPLACE_CMD} '78s!Linux!FreeBSD!g' ${WRKSRC}/src/Makefile
+post-patch:
+	${REINPLACE_CMD} -e 's|^cloned=.*|cloned=""|g' \
+		${WRKSRC}/scripts/build.sh
 
 post-build:
 	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \

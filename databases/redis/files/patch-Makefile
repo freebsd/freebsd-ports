@@ -1,0 +1,19 @@
+--- Makefile.orig	2026-07-29 17:14:07 UTC
++++ Makefile
+@@ -23,7 +23,6 @@ SUBDIRS = src
+ # per-module builds via modules/common.mk. The `sync-redis-conf` target lives
+ # in this top-level Makefile (not in manifest.mk) so per-module builds —
+ # which include common.mk → manifest.mk — don't see it as their default goal.
+-include modules/manifest.mk
+ 
+ # ----------------------------------------------------------------------------
+ # Positional-arg capture for goals that take a list of module/test names.
+@@ -35,8 +34,6 @@ GOALS_WITH_ARGS := \
+ # targets fall out automatically.
+ # ----------------------------------------------------------------------------
+ GOALS_WITH_ARGS := \
+-    modules-update:MODULES_ARGS \
+-    modules-shallow:SHALLOW_ARGS \
+     run:RUN_ARGS \
+     build:BUILD_ARGS \
+     clean:CLEAN_ARGS \
