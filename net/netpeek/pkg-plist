@@ -3,6 +3,7 @@ share/applications/io.github.zingytomato.netpeek.desktop
 share/dbus-1/services/io.github.zingytomato.netpeek.service
 share/icons/hicolor/scalable/apps/io.github.zingytomato.netpeek.svg
 share/icons/hicolor/symbolic/apps/io.github.zingytomato.netpeek-symbolic.svg
+share/locale/cs/LC_MESSAGES/netpeek.mo
 share/locale/es/LC_MESSAGES/netpeek.mo
 share/locale/et/LC_MESSAGES/netpeek.mo
 share/locale/fr/LC_MESSAGES/netpeek.mo
