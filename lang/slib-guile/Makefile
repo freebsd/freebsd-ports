@@ -1,5 +1,5 @@
 PORTNAME=	slib
-PORTVERSION=	3b7 # Keep this in sync with lang/slib
+DISTVERSION=	3c2 # Keep this in sync with lang/slib
 CATEGORIES=	lang scheme
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -9,10 +9,12 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SLIB installation for Guile
 WWW=		https://people.csail.mit.edu/jaffer/SLIB.html
 
+LICENSE=	PD
+
 BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:lang/slib
 RUN_DEPENDS=	${LOCALBASE}/share/slib/require.scm:lang/slib
 
-USES=		guile:1.8,2.2,3.0,flavors,build,run
+USES=		guile:2.2,3.0,flavors,build,run
 
 NO_ARCH=	yes
 NO_BUILD=	yes
