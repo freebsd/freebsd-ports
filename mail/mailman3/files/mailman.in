@@ -25,10 +25,11 @@ load_rc_config $name
 command_interpreter=%%PYTHON_CMD%%
 command=%%PREFIX%%/bin/${name}
 
+start_precmd="mailman_prestart"
 start_cmd="mailman_command start"
 stop_cmd="mailman_command stop"
 restart_cmd="mailman_command restart"
-status_cmd="mailman_command status"
+status_cmd="mailman_status"
 info_cmd="mailman_command info"
 extra_commands=info
 
@@ -37,6 +38,28 @@ pidfile="%%PREFIX%%/${name}/master.pid"
 
 command_args="-C ${mailman_config}"
 
+mailman_prestart()
+{
+	rc_pid=$(check_pidfile ${pidfile} ${command_interpreter})
+	if [ -n "$rc_pid" ]; then
+		echo "Mailman already running"
+		return 1
+	fi
+}
+mailman_status()
+{
+	# Mailman status return codes:
+	# 0: No lock has been acquired by any process
+	# 1: Another master watcher is running
+	# 2: No conflicting process exists
+	# 3: Hostname from lock file doesn't match
+	mailman_command status
+	if [ $? -eq 1 ]; then
+		return 0
+	else
+		return 1
+	fi
+}
 mailman_command()
 {
 	LANG=en_US.UTF-8 /usr/bin/su -m ${name} -c "${command_interpreter} ${command} ${command_args} ${rc_arg}"
