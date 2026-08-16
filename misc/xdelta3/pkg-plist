@@ -1,0 +1,9 @@
+bin/xdelta3
+include/xdelta3.h
+lib/cmake/xdelta3/xdelta3Config.cmake
+lib/cmake/xdelta3/xdelta3ConfigVersion.cmake
+lib/cmake/xdelta3/xdelta3Targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/xdelta3/xdelta3Targets.cmake
+lib/libxdelta3.a
+libdata/pkgconfig/xdelta3.pc
+share/man/man1/xdelta3.1.gz

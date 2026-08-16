@@ -1,4 +1,3 @@
-Xdelta is a tool and library for differential compression.  Xdelta
-release version 3 supports VCDIFF encoding and decoding.  This is a BETA
-release, but almost stable.  Supports compressing 64 bit files on
-Windows, *nux, etc.
+Xdelta3 is a binary differencing tool and library that implements VCDIFF
+(RFC 3284) delta compression. It encodes and decodes deltas for large files
+and provides command-line and reusable static-library interfaces.

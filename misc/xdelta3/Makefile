@@ -1,26 +1,29 @@
 PORTNAME=	xdelta
-PORTVERSION=	3.1.0
-PORTREVISION=	4
-DISTVERSIONPREFIX=	v
+DISTVERSION=	3.2.0
 PORTEPOCH=	1
-CATEGORIES?=	misc devel
+CATEGORIES=	misc devel
+MASTER_SITES=	https://github.com/jmacd/xdelta/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	3
+DISTNAME=	xdelta3-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
-WWW=		http://xdelta.org/
+MAINTAINER=	oss@tbarabosch.com
+COMMENT=	Binary diff and VCDIFF/RFC 3284 delta compression tool
+WWW=		https://github.com/jmacd/xdelta
 
-LICENSE=	GPLv2+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf compiler:c++11-lang gmake
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-USE_GITHUB=	yes
-GH_ACCOUNT=	jmacd
+LIB_DEPENDS=	libblake3.so:devel/libblake3
+
+USES=		cmake:testing compiler:c++11-lang pathfix
+
+CMAKE_ARGS=	-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS \
+		-DXD3_LZMA_MODE=on
+CMAKE_ON=	XD3_ARMOR XD3_BUILD_LIB
+CMAKE_OFF=	XD3_BUILD_TESTS XD3_LZMA_FETCH
+CMAKE_TESTING_ON=	XD3_BUILD_TESTS
 
 WRKSRC_SUBDIR=	xdelta3
-
-PLIST_FILES=	bin/xdelta3 share/man/man1/xdelta3.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
