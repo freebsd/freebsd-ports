@@ -6,14 +6,14 @@ network:
     # Must be "unknown" for a generic icon or a valid browser name if you want a specific icon.
     # List of valid browser names: https://github.com/tulir/whatsmeow/blob/efc632c008604016ddde63bfcfca8de4e5304da9/binary/proto/def.proto#L43-L64
     browser_name: unknown
-
+    
     # Proxy to use for all WhatsApp connections.
     proxy: null
     # Alternative to proxy: an HTTP endpoint that returns the proxy URL to use for WhatsApp connections.
     get_proxy_url: null
     # Whether the proxy options should only apply to the login websocket and not to authenticated connections.
     proxy_only_login: false
-
+    
     # Displayname template for WhatsApp users.
     # {{.PushName}}      - nickname set by the WhatsApp user
     # {{.BusinessName}}  - validated WhatsApp business name
@@ -21,7 +21,7 @@ network:
     # {{.RedactedPhone}} - phone number with middle digits replaced by "∙"
     # {{.FullName}}      - Name you set in the contacts list
     displayname_template: '{{or .BusinessName .PushName .Phone .RedactedPhone "Unknown user"}} (WA)'
-
+    
     # Should incoming calls send a message to the Matrix room?
     call_start_notices: true
     # Should another user's cryptographic identity changing send a message to Matrix?
@@ -71,7 +71,7 @@ network:
     # the bridge? By default, the bridge only stores messages in memory, and therefore can't accept
     # retry receipts if the bridge is restarted after the message is sent.
     use_whatsapp_retry_store: false
-
+    
     # Settings for converting animated stickers.
     animated_sticker:
         # Format to which animated stickers should be converted.
@@ -86,7 +86,7 @@ network:
             width: 320
             height: 320
             fps: 25 # only for webm, webp and gif (2, 5, 10, 20 or 25 recommended)
-
+    
     # Settings for handling history sync payloads.
     history_sync:
         # How many conversations should the bridge create after login?
@@ -126,7 +126,7 @@ network:
         # Use on-demand history sync requests for fetching older messages?
         # This only applies when using the backfill queue, never for forward backfills.
         backwards_on_demand: false
-
+    
 
 # Config options that affect the central bridge module.
 bridge:
@@ -156,6 +156,9 @@ bridge:
     # These contain the same data that can be posted to an external HTTP server using homeserver -> status_endpoint.
     # Allowed values: none, errors, all
     bridge_status_notices: errors
+    # How long should TRANSIENT_DISCONNECT and CONNECTING states be held back before being reported?
+    # If another state update occurs while waiting, the previous state won't be reported at all.
+    transient_state_debounce: 0s
     # How long after an unknown error should the bridge attempt a full reconnect?
     # Must be at least 1 minute. The bridge will add an extra ±20% jitter to this value.
     unknown_error_auto_reconnect: null
@@ -233,10 +236,15 @@ bridge:
         allow_bridge: true
         # List of user login IDs which anyone can set as a relay, as long as the relay user is in the room.
         default_relays: []
+        # An array of possible values for the .Sender.Distinguisher variable in message formats.
+        # Each user gets one of the values here, based on a hash of their Matrix user ID.
+        # If the array is empty, .Sender.Distinguisher will also be empty.
+        user_distinguishers: ["🟦", "🟣", "🟩", "⭕️", "🔶", "⬛️", "🔵", "🟢"]
         # The formats to use when sending messages via the relaybot.
         # Available variables:
         #   .Sender.UserID - The Matrix user ID of the sender.
         #   .Sender.Displayname - The display name of the sender (if set).
+        #   .Sender.Distinguisher - The stable distinguisher selected from user_distinguishers.
         #   .Sender.RequiresDisambiguation - Whether the sender's name may be confused with the name of another user in the room.
         #   .Sender.DisambiguatedName - The disambiguated name of the sender. This will be the displayname if set,
         #                               plus the user ID in parentheses if the displayname is not unique.
@@ -295,6 +303,7 @@ database:
     #           https://github.com/mattn/go-sqlite3#connection-string
     #   Postgres: Connection string. For example, postgres://user:password@host/database?sslmode=disable
     #             To connect via Unix socket, use something like postgres:///dbname?host=/var/run/postgresql
+    #             Using special characters in the password is strongly discouraged (but should work with manual URL encoding)
     uri: postgres://user:password@host/database?sslmode=disable
     # Maximum number of connections.
     max_open_conns: 5
@@ -427,6 +436,13 @@ provisioning:
     # Enable session transfers between bridges. Note that this only validates Matrix or shared secret
     # auth before passing live network client credentials down in the response.
     enable_session_transfers: false
+    # Should the provisioning API fail immediately if a webauthn step is returned?
+    # This is mostly useful for clients that don't yet support it and want a trackable error instead.
+    fail_on_webauthn: false
+    # The header that the request ID is sent back in.
+    request_id_header: Request-Id
+    # Should the request ID be read from the above header of incoming requests
+    trust_incoming_request_id: false
 
 # Some networks require publicly accessible media download links (e.g. for user avatars when using Discord webhooks).
 # These settings control whether the bridge will provide such public media access.
@@ -633,8 +649,8 @@ logging:
         - type: stdout
           format: pretty-colored
 #        - type: file
-#           format: json
-#           filename: ./logs/bridge.log
-#           max_size: 100
-#           max_backups: 10
-#           compress: false
+#          format: json
+#          filename: ./logs/bridge.log
+#          max_size: 100
+#          max_backups: 10
+#          compress: false
