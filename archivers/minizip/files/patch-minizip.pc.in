@@ -1,0 +1,8 @@
+--- minizip.pc.in.orig	2026-02-11 20:19:30 UTC
++++ minizip.pc.in
+@@ -10,4 +10,4 @@ Libs.private: -lz
+ License: Zlib
+ Libs: -L${libdir} -lminizip
+ Libs.private: -lz
+-Cflags: -I${includedir}
++Cflags: -I${includedir}/minizip -I${includedir}
