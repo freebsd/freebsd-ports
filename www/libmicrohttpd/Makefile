@@ -1,5 +1,5 @@
 PORTNAME=	libmicrohttpd
-DISTVERSION=	1.0.5
+DISTVERSION=	1.0.10
 CATEGORIES=	www
 MASTER_SITES=	GNU
 
@@ -11,17 +11,15 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe libtool localbase pathfix pkgconfig
-USE_LDCONFIG=	yes
 CPE_VENDOR=	gnu
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-
-INFO=		libmicrohttpd libmicrohttpd-tutorial
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
-
 CONFIGURE_ARGS=	--disable-examples \
 		--disable-static
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+INFO=		libmicrohttpd libmicrohttpd-tutorial
 
 OPTIONS_DEFINE=		GNUTLS TESTCURL
 OPTIONS_DEFAULT=	GNUTLS
