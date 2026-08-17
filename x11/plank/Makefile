@@ -1,5 +1,5 @@
 PORTNAME=	plank
-DISTVERSION=	0.11.167
+DISTVERSION=	0.11.172
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libbamf3.so:sysutils/bamf \
 		libgee-0.8.so:devel/libgee \
-		libgnome-menu-3.so:x11/gnome-menus
+		libgnome-menu-3.so:x11/gnome-menus \
+		libcanberra.so:audio/libcanberra
 RUN_DEPENDS=	upower>0:sysutils/upower
 
 USES=		desktop-file-utils gettext-runtime gettext-tools gnome \
@@ -21,6 +22,7 @@ GH_ACCOUNT=	zquestz
 GH_PROJECT=	plank-reloaded
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 libwnck3
 GLIB_SCHEMAS=	net.launchpad.plank.gschema.xml
+USE_LDCONFIG=	yes
 USE_XORG=	x11 xfixes xi
 
 MESON_ARGS=	-Dproduction-release=true \
