@@ -3,16 +3,16 @@
 actions: []
 arguments: true
 post-install: <<EOD
-	hints="${PKG_ROOTDIR}/var/run/ld-elf.so.hints"
-	flags="-f ${hints}"
+	hints="${PKG_ROOTDIR}/var/run/ld-elf32.so.hints"
+	flags="-f ${hints} -32"
 	[ -n "${INSTALL_AS_USER}" ] && flags="${flags} -i"
 	for dir in %@; do
 		/sbin/ldconfig ${flags} ${dir}
 	done
 EOD
 post-deinstall: <<EOD
-	hints="${PKG_ROOTDIR}/var/run/ld-elf.so.hints"
-	flags="-f ${hints}"
+	hints="${PKG_ROOTDIR}/var/run/ld-elf32.so.hints"
+	flags="-f ${hints} -32"
 	[ -n "${INSTALL_AS_USER}" ] && flags="${flags} -i"
 	for dir in %@; do
 		/sbin/ldconfig ${flags} ${dir}
