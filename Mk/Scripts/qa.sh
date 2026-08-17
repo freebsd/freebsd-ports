@@ -116,6 +116,15 @@ baselibs() {
 	local rc
 	local found_openssl
 	local file
+
+	# list_stagedir_elfs() enters ${STAGEDIR}, but only inside the subshell
+	# that runs find.  In the pipeline below that feeds the while loop, the
+	# paths find prints are relative, so file(1) and readelf must be in
+	# ${STAGEDIR} too, hence the cd ${STAGEDIR} before the whole pipeline.
+	#
+	# readelf prints "File:" headers only when given two or more operands,
+	# hence the trailing ld-elf.so.1.
+
 	[ "${PKGBASE}" = "pkg" -o "${PKGBASE}" = "pkg-devel" ] && return
 
 	while read -r f; do
@@ -136,7 +145,12 @@ baselibs() {
 			;;
 		esac
 	done <<-EOF
-	$(list_stagedir_elfs -exec readelf -d {} \; 2>/dev/null)
+	$(cd ${STAGEDIR} && list_stagedir_elfs | \
+		file -F $'\1' -f - | \
+		grep -a 'ELF.*FreeBSD.*dynamically linked' | \
+		cut -f 1 -d $'\1' | \
+		{ tr '\n' '\000'; printf '%s\000' /libexec/ld-elf.so.1; } | \
+		xargs -0 readelf -d)
 	EOF
 
 	if ! list_stagedir_elfs | egrep -q 'lib(crypto|ssl).so*'; then
