@@ -1,5 +1,5 @@
 PORTNAME=	openroad
-DISTVERSION=	26Q2
+DISTVERSION=	26Q3
 PORTEPOCH=	1
 CATEGORIES=	cad
 
@@ -47,30 +47,36 @@ LIB_DEPENDS+=	libicudata.so:devel/icu
 
 TEST_DEPENDS=	${LOCALBASE}/lib/tcllib/json/json.tcl:devel/tcllib
 
-USES=		bison compiler:c++20-lang cmake eigen:3 qt:5 \
-		localbase:ldflags pkgconfig python:build readline tcl:86
-USE_QT=		core gui widgets buildtools:build qmake:build
+USES=		bison cmake compiler:c++20-lang eigen:3 gl localbase:ldflags \
+		pkgconfig python:build readline tcl:86
+USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	The-OpenROAD-Project
 GH_PROJECT=	OpenROAD
-GH_TUPLE=	The-OpenROAD-Project:OpenSTA:43177bb:The_OpenROAD_Project_OpenSTA/src/sta \
-		The-OpenROAD-Project:abc:17cadca:abc/third-party/abc
+GH_TUPLE=	The-OpenROAD-Project:OpenSTA:8572175ac4:opensta/src/sta \
+		The-OpenROAD-Project:abc:d527cfab4a:abc/third-party/abc \
+		povik:sv-elab:82effc8d95:svelab/third-party/slang-elab \
+		fmtlib:fmt:553ec11:fmt/third-party/slang-elab/third_party/fmt \
+		MikePopoloski:slang:f04e815:slang/third-party/slang-elab/third_party/slang
 
-CMAKE_OFF=	BUILD_PYTHON \
-		ENABLE_TESTS
+CMAKE_ARGS=	-DFREEBSD_TCL_INCLUDEDIR=${TCL_INCLUDEDIR} -DFREEBSD_TCL_VER=${TCL_VER:S/.//}
 CMAKE_ON=	BUILD_TCL
-CMAKE_ARGS=	-DFREEBSD_TCL_VER=${TCL_VER:S/.//} -DFREEBSD_TCL_INCLUDEDIR=${TCL_INCLUDEDIR}
+CMAKE_OFF=	BUILD_PYTHON ENABLE_TESTS
 
-CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 \
-		-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED
+CXXFLAGS+=	-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH} make=${GMAKE}
+BINARY_ALIAS=	make=${GMAKE} python3=${PYTHON_CMD} tclsh=${TCLSH}
+PORTSCOUT=	limit:^[0-9][0-9]Q
 
 PLIST_FILES=	bin/openroad \
 		bin/sta
 
-PORTSCOUT=	limit:^[0-9][0-9]Q
+OPTIONS_DEFINE=		GUI
+OPTIONS_DEFAULT=	GUI
+
+GUI_USES=	qt:5
+GUI_USE=	QT=charts,core,gui,widgets,buildtools:build,qmake:build
 
 post-patch: # override the TCL version to be the same as USES=tcl sets
 	@${FIND} ${WRKSRC} -name FindTCL.cmake \
