@@ -1,11 +1,11 @@
 PORTNAME=	pot
-DISTVERSION=	0.16.1
+DISTVERSION=	0.16.2
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/bsdpot/pot/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://codeberg.org/bsdpot/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Container framework for FreeBSD
-WWW=		https://github.com/bsdpot/pot/
+WWW=		https://codeberg.org/bsdpot/pot
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -33,6 +33,9 @@ OPTIONS_DEFAULT=	ZSH
 OPTIONS_SUB=		yes
 
 ZSH_DESC=	Zsh Autocompletion support
+
+post-extract:
+	${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/pot \
