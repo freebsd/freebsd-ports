@@ -1,5 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	26.7.0
+PORTVERSION=	26.8.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -53,7 +53,7 @@ SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/buil
 		poller-wrapper.py poller.php renamehost.php \
 		scripts/auth_test.php scripts/bash_lint.sh \
 		scripts/check_requirements.py scripts/collect-port-polling.php \
-		scripts/collect-snmp-data.php scripts/composer_wrapper.php \
+		scripts/composer_wrapper.php \
 		scripts/dynamic_check_requirements.py scripts/gen_rancid.php \
 		scripts/gen_smokeping.php scripts/git-pre-commit-hook.sh \
 		scripts/github-remove scripts/ifAlias scripts/json-app-tool.php \
