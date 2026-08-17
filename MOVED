@@ -5553,3 +5553,4 @@ biology/py-macs2||2026-08-11|Upstream end of life, depends on expired lang/cytho
 www/lua-stream-nginx-module|www/nginx-module-lua-stream|2026-08-14|Renamed to follow the nginx-module-* naming scheme
 devel/prjpeppercorn112||2026-08-15|No longer supported by devel/nextpnr
 devel/py-yg.lockfile|devel/py-fasteners|2026-08-16|Has expired: Upstream inactive since 8+ years, please use devel/py-fasteners instead
+www/pecl-solr|www/php-solr|2026-08-17|Converted to standard extension from pecl extension
