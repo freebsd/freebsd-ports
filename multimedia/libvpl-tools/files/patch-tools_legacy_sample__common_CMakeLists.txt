@@ -1,0 +1,20 @@
+--- tools/legacy/sample_common/CMakeLists.txt.orig	2026-06-25 23:06:43 UTC
++++ tools/legacy/sample_common/CMakeLists.txt
+@@ -4,7 +4,7 @@ set(TOOLS_DEFAULT ON)
+ # SPDX-License-Identifier: MIT
+ # ##############################################################################
+ set(TOOLS_DEFAULT ON)
+-if(CMAKE_SYSTEM_NAME MATCHES Linux)
++if(UNIX AND NOT APPLE)
+   # Check dependencies up-front so we can set option defaults
+   find_package(PkgConfig REQUIRED)
+   # note: pkg-config version for libva is *API* version
+@@ -189,7 +189,7 @@ endif()
+   target_compile_definitions(${TARGET} PUBLIC -DONEVPL_EXPERIMENTAL)
+ endif()
+
+-if(CMAKE_SYSTEM_NAME MATCHES Linux)
++if(UNIX AND NOT APPLE)
+   target_compile_definitions(${TARGET} PUBLIC LINUX64)
+
+   if(NOT ENABLE_VA)

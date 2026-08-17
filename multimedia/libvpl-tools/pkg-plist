@@ -1,0 +1,12 @@
+bin/sample_decode
+bin/sample_encode
+bin/sample_multi_transcode
+bin/sample_vpp
+bin/system_analyzer
+bin/val-surface-sharing
+bin/vpl-import-export
+bin/vpl-inspect
+lib/vpl-tools/libvpl_wayland.so
+lib/vpl-tools/libvpl_wayland.so.1.0.0
+%%DATADIR%%-tools/licensing/license.txt
+%%DATADIR%%-tools/licensing/third-party-programs.txt

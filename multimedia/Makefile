@@ -194,6 +194,7 @@
     SUBDIR += libvdpau-va-gl
     SUBDIR += libvlcpp
     SUBDIR += libvpl
+    SUBDIR += libvpl-tools
     SUBDIR += libvpx
     SUBDIR += libwebm
     SUBDIR += libx264

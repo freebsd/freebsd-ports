@@ -1,0 +1,9 @@
+Intel Video Processing Library (Intel VPL) tools provide access to hardwa
+re accelerated video decode, encode, and processing capabilities on Intel GPU
+from the command line.
+
+The tools require the Intel VPL base library and a runtime library installe.
+Current runtime implementations:
+
+- Intel VPL GPU Runtime for use on Intel Iris Xe graphics and newner
+- Intel Media SDK for use on legacy Intel graphic

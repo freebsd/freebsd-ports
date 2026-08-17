@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-06-25 23:06:43 UTC
++++ CMakeLists.txt
+@@ -206,7 +206,7 @@ endif()
+   message(
+     STATUS "  USE_MSVC_STATIC_RUNTIME         : ${USE_MSVC_STATIC_RUNTIME}")
+ endif()
+-if(CMAKE_SYSTEM_NAME MATCHES Linux)
++if(UNIX AND NOT APPLE)
+   message(STATUS "  ENABLE_VA                       : ${ENABLE_VA}")
+   message(STATUS "  ENABLE_DRM                      : ${ENABLE_DRM}")
+   message(STATUS "  ENABLE_WAYLAND                  : ${ENABLE_WAYLAND}")
