@@ -1,6 +1,6 @@
---- electron/shell/browser/browser.h.orig	2026-06-29 20:35:15 UTC
+--- electron/shell/browser/browser.h.orig	2026-08-10 18:14:50 UTC
 +++ electron/shell/browser/browser.h
-@@ -293,10 +293,10 @@ class Browser : private WindowListObserver {
+@@ -296,10 +296,10 @@ class Browser : private WindowListObserver {
    PCWSTR GetAppUserModelID();
  #endif  // BUILDFLAG(IS_WIN)
  
