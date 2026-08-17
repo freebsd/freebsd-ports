@@ -3833,4 +3833,3 @@ etc/rc.d/jotty_page
 @dir %%DATADIR%%/.next/server/app/auth
 @dir %%DATADIR%%/.next/server/app/settings/admin
 @dir %%DATADIR%%/user_patches
-@dir /var/db/jotty-page
