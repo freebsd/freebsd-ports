@@ -1,0 +1,162 @@
+From ab7b7d29f68298ae17f412220b92054c6806695e Mon Sep 17 00:00:00 2001
+From: CoraleSoft <82213665+Coralesoft@users.noreply.github.com>
+Date: Sun, 16 Aug 2026 15:43:54 +1200
+Subject: [PATCH 1/2] Fix cryptest's compiled-in data path
+
+Load GNUInstallDirs before defining CRYPTOPP_DATA_DIR and use its full data-root path. This lets cryptest invoked through PATH find its installed data on FreeBSD when executable-relative lookup is unavailable.
+---
+ CMakeLists.txt | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git CMakeLists.txt CMakeLists.txt
+index 8c37f6ae..2cffbb79 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -1495,6 +1495,9 @@ target_link_libraries(
+ # Tests
+ # ============================================================================
+ 
++# CRYPTOPP_DATA_DIR below depends on CMAKE_INSTALL_FULL_DATAROOTDIR.
++include(GNUInstallDirs)
++
+ if(CRYPTOPP_BUILD_TESTING)
+     add_executable(cryptest ${cryptopp_SOURCES_TEST})
+     target_link_libraries(cryptest PRIVATE cryptopp::cryptopp)
+@@ -1534,7 +1537,7 @@ if(CRYPTOPP_BUILD_TESTING)
+         ${cryptopp_SOURCE_DIR}/src/test/validat9.cpp
+         APPEND PROPERTY
+             COMPILE_DEFINITIONS
+-                CRYPTOPP_DATA_DIR="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}/cryptopp/"
++                CRYPTOPP_DATA_DIR="${CMAKE_INSTALL_FULL_DATAROOTDIR}/cryptopp/"
+     )
+ 
+     add_test(
+@@ -1580,8 +1583,6 @@ endif()
+ # Deployment instructions
+ # ==============================================================================
+ 
+-include(GNUInstallDirs)
+-
+ if(CRYPTOPP_INSTALL)
+     set(TARGETS_EXPORT_NAME "cryptopp-modern_Targets")
+     set(runtime "cryptopp-modern_runtime")
+
+From 835ac5f82b813dc5f3a9cb852afd188a1b15df60 Mon Sep 17 00:00:00 2001
+From: CoraleSoft <82213665+Coralesoft@users.noreply.github.com>
+Date: Sun, 16 Aug 2026 15:45:07 +1200
+Subject: [PATCH 2/2] Add a CRYPTOPP_INSTALL_CRYPTEST option
+
+Allow cryptest and its data to be installed without registering the CTest suite. The default follows CRYPTOPP_BUILD_TESTING, preserving the existing install contents for fresh configurations.
+
+Install cryptest and its data as part of the runtime component.
+---
+ .github/workflows/branch-build-and-test.yml | 26 +++++++++++++++++++++
+ .github/workflows/build-and-test.yml        | 26 +++++++++++++++++++++
+ CMAKE.md                                    |  9 ++++---
+ CMakeLists.txt                              | 26 +++++++++++++++++----
+ 4 files changed, 80 insertions(+), 7 deletions(-)
+
+diff --git CMAKE.md CMAKE.md
+index d517165f..0a59c8af 100644
+--- CMAKE.md
++++ CMAKE.md
+@@ -91,12 +91,15 @@ cmake --build --preset=debug
+ 
+ | Option | Default | Description |
+ |--------|---------|-------------|
+-| `CRYPTOPP_BUILD_TESTING` | `ON` | Build the test executable (cryptest.exe) |
++| `CRYPTOPP_BUILD_TESTING` | `ON` | Build the test executable (cryptest.exe) and register the CTest suite |
+ | `CRYPTOPP_INSTALL` | `ON` | Generate install targets |
++| `CRYPTOPP_INSTALL_CRYPTEST` | `CRYPTOPP_BUILD_TESTING` | Install cryptest.exe with its TestData and TestVectors. Set explicitly to install cryptest without the test suite, or to run the suite without installing cryptest |
+ | `CRYPTOPP_BUILD_SHARED` | `OFF` | Build a shared library (Unix-like platforms only; not supported on Windows) |
+ | `CRYPTOPP_USE_OPENMP` | `OFF` | Enable OpenMP for parallel algorithms |
+ | `CRYPTOPP_INCLUDE_PREFIX` | `cryptopp` | Header installation directory name |
+ 
++`CRYPTOPP_INSTALL_CRYPTEST` takes its default from `CRYPTOPP_BUILD_TESTING` on the first configure of a build directory. Like all CMake options the value is then cached, so changing `CRYPTOPP_BUILD_TESTING` in an existing build directory does not re-derive it; set it explicitly or start from a fresh build directory. Installing cryptest also requires `CRYPTOPP_INSTALL` (which is `ON` by default).
++
+ ### x86/x64 SIMD Options
+ 
+ | Option | Default | Description |
+@@ -227,8 +230,8 @@ cmake --install build
+ | `lib/` | Static library (`libcryptopp.a` or `cryptopp.lib`) |
+ | `lib/pkgconfig/` | pkg-config files (`libcryptopp.pc` and the `cryptopp-modern.pc` alias) |
+ | `lib/cmake/cryptopp-modern/` | CMake config files for `find_package()` |
+-| `share/cryptopp/` | TestData and TestVectors |
+-| `bin/` | Test executable (`cryptest.exe`) |
++| `share/cryptopp/` | TestData and TestVectors (with `CRYPTOPP_INSTALL_CRYPTEST`) |
++| `bin/` | Test executable (`cryptest.exe`, with `CRYPTOPP_INSTALL_CRYPTEST`) |
+ 
+ ## SIMD Auto-Detection
+ 
+diff --git CMakeLists.txt CMakeLists.txt
+index 2cffbb79..91a5b8a0 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -111,6 +111,12 @@ option(CRYPTOPP_DISABLE_POWER9 "Disable POWER9" OFF)
+ 
+ option(CRYPTOPP_BUILD_TESTING "Build library tests" ON)
+ 
++# Keep this after CRYPTOPP_BUILD_TESTING because its default follows that option.
++option(CRYPTOPP_INSTALL_CRYPTEST
++    "Install the cryptest tool and its test data"
++    "${CRYPTOPP_BUILD_TESTING}"
++)
++
+ # Override the CRYPTOPP_INSTALL option to ON/OFF to respectively force
+ # install/no-install behavior for cryptopp module.
+ option(CRYPTOPP_INSTALL "Generate the install target for this project." ON)
+@@ -1498,7 +1504,10 @@ target_link_libraries(
+ # CRYPTOPP_DATA_DIR below depends on CMAKE_INSTALL_FULL_DATAROOTDIR.
+ include(GNUInstallDirs)
+ 
+-if(CRYPTOPP_BUILD_TESTING)
++if(
++    CRYPTOPP_BUILD_TESTING
++    OR (CRYPTOPP_INSTALL AND CRYPTOPP_INSTALL_CRYPTEST)
++)
+     add_executable(cryptest ${cryptopp_SOURCES_TEST})
+     target_link_libraries(cryptest PRIVATE cryptopp::cryptopp)
+ 
+@@ -1514,7 +1523,7 @@ if(CRYPTOPP_BUILD_TESTING)
+         )
+     endif()
+ 
+-    # Copy TestData and TestVectors to build directory so tests can run from there
++    # Keep build-tree cryptest runnable without relying on the source tree.
+     add_custom_command(
+         TARGET cryptest POST_BUILD
+         COMMAND ${CMAKE_COMMAND} -E copy_directory
+@@ -1540,6 +1549,9 @@ if(CRYPTOPP_BUILD_TESTING)
+                 CRYPTOPP_DATA_DIR="${CMAKE_INSTALL_FULL_DATAROOTDIR}/cryptopp/"
+     )
+ 
++endif()
++
++if(CRYPTOPP_BUILD_TESTING)
+     add_test(
+         NAME cryptopp-modern-build_cryptest
+         COMMAND
+@@ -1640,15 +1652,21 @@ if(CRYPTOPP_INSTALL)
+     )
+ 
+     # Tests
+-    if(CRYPTOPP_BUILD_TESTING)
+-        install(TARGETS cryptest DESTINATION ${CMAKE_INSTALL_BINDIR})
++    if(CRYPTOPP_INSTALL_CRYPTEST)
++        install(
++            TARGETS cryptest
++            DESTINATION ${CMAKE_INSTALL_BINDIR}
++            COMPONENT ${runtime}
++        )
+         install(
+             DIRECTORY ${cryptopp_SOURCE_DIR}/TestData
+             DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cryptopp
++            COMPONENT ${runtime}
+         )
+         install(
+             DIRECTORY ${cryptopp_SOURCE_DIR}/TestVectors
+             DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cryptopp
++            COMPONENT ${runtime}
+         )
+     endif()
+ endif()
