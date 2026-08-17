@@ -1,6 +1,7 @@
 PORTNAME=	oneVPL
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2022.1.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +10,9 @@ WWW=		https://software.intel.com/content/www/us/en/develop/tools/oneapi/componen
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream has been renamed to libvpl and libvpl-tools. Use multimedia/libvpl and multimedia/libvpl-tools instead.
+EXPIRATION_DATE=	2026-09-30
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
@@ -27,6 +31,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	x11 xcb
 
 CMAKE_TESTING_ON=	BUILD_TESTS
+CONFLICTS_INSTALL=      libvpl
 DATADIR=	${PREFIX}/share/vpl
 
 OPTIONS_DEFINE=		PYTHON
