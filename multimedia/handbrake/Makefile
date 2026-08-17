@@ -1,6 +1,6 @@
 PORTNAME=	handbrake
 DISTVERSION=	1.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/HandBrake/HandBrake/releases/download/${DISTVERSION}/
 MASTER_SITES+=	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib
@@ -96,7 +96,7 @@ X11_DESC=	Build GTK 3 based GUI program
 FDK_AAC_CONFIGURE_ENABLE=	fdk-aac
 FDK_AAC_VARS=			LICENSE+=FDK_AAC LICENSE_COMB=multi
 
-VPL_LIB_DEPENDS=	libvpl.so:multimedia/onevpl \
+VPL_LIB_DEPENDS=	libvpl.so:multimedia/libvpl \
 			libmfx.so:multimedia/intel-media-sdk \
 			libva-drm.so:multimedia/libva
 VPL_CONFIGURE_ON=	--enable-qsv

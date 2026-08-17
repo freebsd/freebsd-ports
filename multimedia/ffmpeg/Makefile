@@ -164,7 +164,7 @@ THEORA_DESC=	Encoding support for theora via libtheora
 VAPOURSYNTH_DESC=	VapourSynth demuxer
 VIDSTAB_DESC=	Video stabilization filter
 VMAF_DESC=	VMAF filter via libvmaf
-VPL_DESC=	Intel oneVPL (aka Quick Sync Video)
+VPL_DESC=	Intel libvpl (aka Quick Sync Video)
 VULKAN_DESC=	Vulkan filters
 VVENC_DESC=	H.266/VVC encoding support via VVenC
 XCB_DESC=	X11 grabbing using XCB
@@ -593,8 +593,8 @@ VO_AMRWBENC_IMPLIES=	GPL3
 VORBIS_LIB_DEPENDS=	libvorbisenc.so:audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=	libvorbis
 
-# Intel oneVPL
-VPL_LIB_DEPENDS=	libvpl.so:multimedia/onevpl
+# Intel libvpl
+VPL_LIB_DEPENDS=	libvpl.so:multimedia/libvpl
 VPL_CONFIGURE_ENABLE=	libvpl
 
 # VP8 and VP9 de/encoding via libvpx
