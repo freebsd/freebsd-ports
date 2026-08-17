@@ -4414,10 +4414,17 @@ missing-packages:
 	done
 
 # Install missing dependencies from package
+# Preserve the interactive pkg prompt unless running in BATCH mode, in
+# which case -o cannot reopen stdin from /dev/tty and is not wanted.
+.    if defined(BATCH)
+_INSTALL_MISSING_PKGS=	${XARGS} ${PKG_BIN} install -yA
+.    else
+_INSTALL_MISSING_PKGS=	${XARGS} -o ${PKG_BIN} install -A
+.    endif
 install-missing-packages:
 	@_dirs=$$(${MISSING-DEPENDS-LIST}); \
 	${ECHO_CMD} "$${_dirs}" | ${SED} "s%${PORTSDIR}/%%g" | \
-		${SU_CMD} "${XARGS} -o ${PKG_BIN} install -A"
+		${SU_CMD} "${_INSTALL_MISSING_PKGS}"
 
 ################################################################
 # Everything after here are internal targets and really
