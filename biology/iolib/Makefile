@@ -1,8 +1,8 @@
 PORTNAME=	io_lib
-DISTVERSION=	1-15-1
+DISTVERSION=	1.16.0
 CATEGORIES=	biology
 MASTER_SITES=	https://github.com/jkbonfield/${PORTNAME}/releases/download/${DISTNAME:S/./-/g}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	alven@FreeBSD.org
 COMMENT=	General purpose trace file (and Experiment File) reading interface
@@ -11,9 +11,10 @@ WWW=		https://staden.sourceforge.net/ \
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libhts.so:biology/htslib
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf gmake libtool localbase
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -21,8 +22,5 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 CONFLICTS_INSTALL=	filters scramble # bin/scramble
-
-pre-configure:
-	cd ${WRKSRC}/htscodecs && ${AUTORECONF} -f -i
 
 .include <bsd.port.mk>
