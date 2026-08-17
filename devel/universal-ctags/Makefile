@@ -1,5 +1,5 @@
 PORTNAME=	universal-ctags
-PORTVERSION=	p6.2.20260607.0
+PORTVERSION=	p6.2.20260816.0
 CATEGORIES=	devel
 
 MAINTAINER=	dereks@lifeofadishwasher.com
