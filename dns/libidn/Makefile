@@ -1,5 +1,5 @@
 PORTNAME=	libidn
-DISTVERSION=	1.43
+DISTVERSION=	1.44
 CATEGORIES=	dns
 MASTER_SITES=	GNU
 
@@ -14,13 +14,12 @@ LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSERv3
 
 USES=		cpe gmake iconv libtool localbase makeinfo pathfix perl5 pkgconfig
 CPE_VENDOR=	gnu
-USE_PERL5=	build
 USE_LDCONFIG=	yes
+USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
-
-INFO=		libidn
 INSTALL_TARGET=	install-strip
+INFO=		libidn
 
 OPTIONS_DEFINE=	DOCS NLS
 
@@ -31,8 +30,6 @@ NLS_CONFIGURE_ENABLE=	nls
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in FAQ NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${FAQ NEWS README:L:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
