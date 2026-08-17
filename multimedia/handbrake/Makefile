@@ -90,7 +90,7 @@ OPTIONS_EXCLUDE_powerpc64le=	VPL
 OPTIONS_SUB=	yes
 
 FDK_AAC_DESC=	Enable non-free Fraunhofer FDK AAC codec
-VPL_DESC=	Intel oneVPL (aka Quick Sync Video)
+VPL_DESC=	Intel libvpl (aka Quick Sync Video)
 X11_DESC=	Build GTK 3 based GUI program
 
 FDK_AAC_CONFIGURE_ENABLE=	fdk-aac
