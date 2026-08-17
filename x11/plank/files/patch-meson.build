@@ -1,4 +1,4 @@
---- meson.build.orig	2025-08-28 03:55:28 UTC
+--- meson.build.orig	2026-08-04 01:49:12 UTC
 +++ meson.build
 @@ -138,10 +138,8 @@ add_project_arguments(
  )
@@ -11,7 +11,7 @@
  
      '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
      '-DGMENU_I_KNOW_THIS_IS_UNSTABLE',
-@@ -284,11 +282,6 @@ endif
+@@ -307,11 +305,6 @@ endif
      ],
    )
  endif
