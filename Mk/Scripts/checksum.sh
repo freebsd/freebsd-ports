@@ -55,6 +55,9 @@ if [ -f "${dp_DISTINFO_FILE}" ]; then
 				ignored="false"
 			else
 				${dp_ECHO_MSG} "=> $alg Checksum mismatch for $file."
+				${dp_ECHO_MSG} "   expected: $CKSUM"
+				${dp_ECHO_MSG} "   fetched:  $MKSUM"
+				${dp_ECHO_MSG} "   size:     $(stat -f %z "$file")"
 				refetchlist="$refetchlist $file "
 				OK="${OK:-retry}"
 				[ "${OK}" = "retry" -a "${dp_FETCH_REGET}" -gt 0 ] && rm -f "${file}"
