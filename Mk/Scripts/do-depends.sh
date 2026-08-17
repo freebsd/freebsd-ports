@@ -98,8 +98,17 @@ find_lib()
 	echo " - found (${libfile})"
 }
 
+record_error()
+{
+	ecnt=$((ecnt + 1))
+	_err="Error #${ecnt}: $*"
+	printf '%b\n' "${_err}" >&2
+	err="${err}${_err}\n"
+}
+
 anynotfound=0
-err=0
+err=""
+ecnt=0
 for _line in ${dp_RAWDEPENDS} ; do
 	# ensure we never leak flavors
 	unset FLAVOR
@@ -108,10 +117,7 @@ for _line in ${dp_RAWDEPENDS} ; do
 	set -- ${_line}
 	IFS=${myifs}
 	if [ $# -lt 2 -o $# -gt 3 ]; then
-		echo "Error: bad dependency syntax in ${dp_DEPTYPE}" >&2
-		echo "expecting: pattern:origin[@flavour][:target]" >&2
-		echo "got: ${_line}" >&2
-		err=1
+		record_error "bad dependency syntax in ${dp_DEPTYPE}\n         expecting: pattern:origin[@flavour][:target]\n         got: ${_line}"
 		continue
 	fi
 	pattern=$1
@@ -119,14 +125,12 @@ for _line in ${dp_RAWDEPENDS} ; do
 	last=${3:-}
 
 	if [ -z "${pattern}" ]; then
-		echo "Error: there is an empty port dependency in ${dp_DEPTYPE}" >&2
-		err=1
+		record_error "there is an empty port dependency in ${dp_DEPTYPE}"
 		continue
 	fi
 
 	if [ -z "${origin}" ]; then
-		echo "Error: a dependency has an empty origin in ${dp_DEPTYPE}" >&2
-		err=1
+		record_error "a dependency has an empty origin in ${dp_DEPTYPE}"
 		continue
 	fi
 
@@ -182,8 +186,7 @@ for _line in ${dp_RAWDEPENDS} ; do
 	    case ${pattern} in
 	      lib*.so*)      fct=find_lib ;;
 	      *)
-		echo "Error: pattern ${pattern} in LIB_DEPENDS is not valid"
-		err=1
+		record_error "pattern ${pattern} in LIB_DEPENDS is not valid"
 		continue
 		;;
 	    esac ;;
@@ -201,8 +204,7 @@ for _line in ${dp_RAWDEPENDS} ; do
 	[ ${pattern} = "/nonexistent" ] || anynotfound=1
 
 	if [ ! -f "${origin}/Makefile" ]; then
-		echo "Error a dependency refers to a non existing origin: ${origin} in ${dp_DEPTYPE}" >&2
-		err=1
+		record_error "a dependency refers to a non existing origin: ${origin} in ${dp_DEPTYPE}"
 		continue
 	fi
 
@@ -213,8 +215,8 @@ for _line in ${dp_RAWDEPENDS} ; do
 	echo "===>   Returning to build of ${dp_PKGNAME}"
 done
 
-if [ $err -eq 1 ]; then
-	echo "Errors with dependencies."
+if [ $ecnt -ne 0 ]; then
+	printf 'Found %s error(s) with dependencies:\n%b' "${ecnt}" "${err}"
 	exit 1
 fi
 
