@@ -23,7 +23,7 @@ USES=		compiler java:ant,run tar:xz xorg
 USE_XORG=	x11 xcursor xi xrandr xrender xxf86vm
 NO_SHLIB_REQUIRES_GLOB=	libjawt.so libjvm.so
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 PATCH_WRKSRC=	${WRKDIR}
 BUILD_WRKSRC=	${WRKDIR}/jogl/make

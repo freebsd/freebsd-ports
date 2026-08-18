@@ -1,9 +1,15 @@
 --- jogl/make/build-nativewindow.xml.orig	2025-08-30 10:26:30 UTC
 +++ jogl/make/build-nativewindow.xml
-@@ -508,6 +508,18 @@
+@@ -508,6 +508,24 @@
          <syslibset dir="/usr/local/lib" libs="Xrender"/>
        </linker>
  
++      <linker id="linker.cfg.freebsd.arm64.nativewindow.x11" extends="linker.cfg.freebsd.arm64">
++        <syslibset dir="/usr/local/lib" libs="X11" />
++        <syslibset dir="/usr/local/lib" libs="Xxf86vm" />
++        <syslibset dir="/usr/local/lib" libs="Xrender"/>
++      </linker>
++
 +      <linker id="linker.cfg.freebsd.ppc64.nativewindow.x11" extends="linker.cfg.freebsd.ppc64">
 +        <syslibset dir="/usr/local/lib" libs="X11" />
 +        <syslibset dir="/usr/local/lib" libs="Xxf86vm" />
@@ -19,11 +25,17 @@
        <linker id="linker.cfg.linux.nativewindow.drm" extends="linker.cfg.linux">
          <syslibset libs="drm"/>
          <syslibset libs="gbm"/>
-@@ -783,7 +795,19 @@
+@@ -783,7 +801,25 @@
        <property name="linker.cfg.id.oswin"                  value="linker.cfg.freebsd.amd64.nativewindow.x11" />
      </target>
  
 -    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.x11" if="isFreeBSD" />
++    <target name="c.configure.freebsd.arm64" if="isFreeBSDARM64">
++      <echo message="FreeBSD.ARM64" />
++      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.nativewindow" />
++      <property name="linker.cfg.id.oswin"                  value="linker.cfg.freebsd.arm64.nativewindow.x11" />
++    </target>
++
 +    <target name="c.configure.freebsd.ppc64" if="isFreeBSDPpc64">
 +      <echo message="FreeBSD.Ppc64" />
 +      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.nativewindow" />
@@ -36,7 +48,7 @@
 +      <property name="linker.cfg.id.oswin"                  value="linker.cfg.freebsd.ppc64le.nativewindow.x11" />
 +    </target>
 +
-+    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.x11,c.configure.freebsd.ppc64,c.configure.freebsd.ppc64le" if="isFreeBSD" />
++    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.freebsd.arm64,c.configure.x11,c.configure.freebsd.ppc64,c.configure.freebsd.ppc64le" if="isFreeBSD" />
  
      <target name="c.configure.hpux" depends="c.configure.x11" if="isHPUX">
        <echo message="HP-UX" />

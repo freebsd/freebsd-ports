@@ -19,10 +19,14 @@
          <syslibset dir="/usr/local/lib" libs="X11"/>
        </linker>
  
-@@ -1267,6 +1266,14 @@
+@@ -1267,6 +1266,18 @@
          <syslibset dir="/usr/local/lib" libs="X11"/>
        </linker>
  
++      <linker id="linker.cfg.freebsd.arm64.jogl.x11" extends="linker.cfg.freebsd.arm64">
++        <syslibset dir="/usr/local/lib" libs="X11"/>
++      </linker>
++
 +      <linker id="linker.cfg.freebsd.ppc64.jogl.x11" extends="linker.cfg.freebsd.ppc64">
 +        <syslibset dir="/usr/local/lib" libs="X11"/>
 +      </linker>
@@ -34,7 +38,7 @@
        <linker id="linker.cfg.linux.jogl.x11" extends="linker.cfg.linux">
          <syslibset libs="X11"/>
        </linker>
-@@ -1489,7 +1496,7 @@
+@@ -1489,7 +1500,7 @@
      <target name="c.configure.freebsd.x86" depends="c.configure.x11" if="isFreeBSDX86">
        <echo message="FreeBSD" />
        <property name="compiler.cfg.id"                     value="compiler.cfg.freebsd.jogl" />
@@ -43,11 +47,17 @@
      </target>
  
      <target name="c.configure.freebsd.amd64" depends="c.configure.x11" if="isFreeBSDAMD64">
-@@ -1498,7 +1505,19 @@
+@@ -1498,7 +1509,25 @@
        <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.amd64.jogl.x11" />
      </target>
  
 -    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.x11" if="isFreeBSD" />
++    <target name="c.configure.freebsd.arm64" depends="c.configure.x11" if="isFreeBSDARM64">
++      <echo message="FreeBSD" />
++      <property name="compiler.cfg.id"                     value="compiler.cfg.freebsd.jogl" />
++      <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.arm64.jogl.x11" />
++    </target>
++
 +    <target name="c.configure.freebsd.ppc64" depends="c.configure.x11" if="isFreeBSDPpc64">
 +      <echo message="FreeBSD" />
 +      <property name="compiler.cfg.id"                     value="compiler.cfg.freebsd.jogl" />
@@ -60,7 +70,7 @@
 +      <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.ppc64le.jogl.x11" />
 +    </target>
 +
-+    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.freebsd.ppc64,c.configure.x11,c.configure.freebsd.ppc64le" if="isFreeBSD" />
++    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.freebsd.arm64,c.configure.freebsd.ppc64,c.configure.x11,c.configure.freebsd.ppc64le" if="isFreeBSD" />
  
      <target name="c.configure.hpux" depends="c.configure.x11" if="isHPUX">
        <echo message="HP-UX" />

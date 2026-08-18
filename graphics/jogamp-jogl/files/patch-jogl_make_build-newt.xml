@@ -9,10 +9,18 @@
          <linkerarg value="-L/usr/local/lib"/>
          <syslibset libs="X11"/>
          <syslibset libs="Xrandr"/>
-@@ -509,6 +509,20 @@
+@@ -509,6 +509,28 @@
          <syslibset libs="Xi"/>
        </linker>
  
++      <linker id="linker.cfg.freebsd.arm64.newt.x11" extends="linker.cfg.freebsd.arm64">
++        <linkerarg value="-L/usr/local/lib"/>
++        <syslibset libs="X11"/>
++        <syslibset libs="Xrandr"/>
++        <syslibset libs="Xcursor"/>
++        <syslibset libs="Xi"/>
++      </linker>
++
 +      <linker id="linker.cfg.freebsd.ppc64.newt.x11" extends="linker.cfg.freebsd.ppc64">
 +        <linkerarg value="-L/usr/local/lib"/>
 +        <syslibset libs="X11"/>
@@ -30,7 +38,7 @@
        <linker id="linker.cfg.linux.newt.bcm_egl" extends="linker.cfg.linux">
          <syslibset libs="EGL"/>
          <syslibset libs="GLES_CM"/>
-@@ -837,8 +851,8 @@
+@@ -837,8 +859,8 @@
      <target name="c.configure.freebsd.x86" if="isFreeBSDX86">
        <echo message="FreeBSD.x86" />
        <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.newt" />
@@ -41,11 +49,21 @@
            <isset property="isX11" />
        </condition>
        <echo message="linker.cfg.id.oswin ${linker.cfg.id.oswin}" />
-@@ -854,7 +868,27 @@
+@@ -854,7 +876,37 @@
        <echo message="linker.cfg.id.oswin ${linker.cfg.id.oswin}" />
      </target>
  
 -    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.x11" if="isFreeBSD"/>
++    <target name="c.configure.freebsd.arm64" if="isFreeBSDARM64">
++      <echo message="FreeBSD.ARM64" />
++      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.newt" />
++      <condition property="linker.cfg.id.oswin"             value="linker.cfg.freebsd.arm64.newt.x11"
++                                                            else="linker.cfg.freebsd.arm64">
++          <isset property="isX11" />
++      </condition>
++      <echo message="linker.cfg.id.oswin ${linker.cfg.id.oswin}" />
++    </target>
++
 +    <target name="c.configure.freebsd.ppc64" if="isFreeBSDPpc64">
 +      <echo message="FreeBSD.Ppc64" />
 +      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.newt" />
@@ -66,7 +84,7 @@
 +      <echo message="linker.cfg.id.oswin ${linker.cfg.id.oswin}" />
 +    </target>
 +
-+    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.freebsd.ppc64,c.configure.x11,c.configure.freebsd.ppc64le" if="isFreeBSD"/>
++    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.freebsd.arm64,c.configure.freebsd.ppc64,c.configure.x11,c.configure.freebsd.ppc64le" if="isFreeBSD"/>
  
      <target name="c.configure.hpux" depends="c.configure.x11" if="isHPUX">
        <echo message="HP-UX" />
