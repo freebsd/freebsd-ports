@@ -1,5 +1,5 @@
 PORTNAME=	vkquake
-DISTVERSION=	1.34.1
+DISTVERSION=	1.35.0
 CATEGORIES=	games
 
 MAINTAINER=	seafork@disroot.org
@@ -25,7 +25,7 @@ CFLAGS+=	-DDATADIR='\"${Q1DIR}\"' -Wno-error=atomic-alignment
 LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=			DEBUG FLAC OPUS USERDIRS VORBIS WAVE
-OPTIONS_DEFAULT=		FLAC MP3 OPUS SDL2 USERDIRS VORBIS WAVE
+OPTIONS_DEFAULT=		FLAC MP3 OPUS SDL3 USERDIRS VORBIS WAVE
 OPTIONS_RADIO=			MP3LIBRARY
 OPTIONS_RADIO_MP3LIBRARY=	MAD MP3
 OPTIONS_SINGLE=			SDL
@@ -51,7 +51,7 @@ OPUS_LIB_DEPENDS=	libopus.so:audio/opus \
 			libopusfile.so:audio/opusfile
 OPUS_MESON_ENABLED=	use_codec_opus
 SDL2_USE=		SDL=sdl2
-SDL2_MESON_FALSE=	use_sdl3
+SDL3_MESON_ENABLED=	use_sdl3
 SDL3_USE=		SDL=sdl3
 USERDIRS_MESON_ENABLED=	do_userdirs
 VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
@@ -66,8 +66,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${Q1DIR} \
 		 ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps \
 		 ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps
-	${INSTALL_DATA} ${WRKSRC}/_build/vkquake.pak \
-		${STAGEDIR}${Q1DIR}
 	${INSTALL_DATA} ${WRKSRC}/Misc/vkQuake_256.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/vkquake.png
 	${INSTALL_DATA} ${WRKSRC}/Misc/vkQuake_512.png \
