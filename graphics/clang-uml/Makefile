@@ -1,5 +1,5 @@
 PORTNAME=	clang-uml
-PORTVERSION=	0.6.2
+DISTVERSION=	0.6.3
 CATEGORIES=	graphics lang textproc
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -13,16 +13,15 @@ LIB_DEPENDS=	libyaml-cpp.so:devel/yaml-cpp
 
 USES=		cmake:testing compiler:c++17-lang llvm:noexport,lib \
 		localbase:ldflags
-
-CMAKE_ARGS=	-DCLANG_UML_ENABLE_BACKTRACE=OFF \
-		-DBUILD_TESTS=OFF
-CMAKE_TESTING_ON=BUILD_TESTS
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	bkryza
 
-BUILD_WRKSRC_TESTS=	${BUILD_WRKSRC}/tests
+CMAKE_OFF=		BUILD_TESTS CLANG_UML_ENABLE_BACKTRACE
+CMAKE_TESTING_ON=	BUILD_TESTS
+
 TESTING_UNSAFE=		some tests fail
+
+BUILD_WRKSRC_TESTS=	${BUILD_WRKSRC}/tests
 
 pre-test:
 	@if [ "${BUILD_WRKSRC_TESTS:H:H}" != "${WRKDIR}" ]; then \
