@@ -1,6 +1,5 @@
 PORTNAME=	octave-forge-octave_ffmpeg_free
-DISTVERSION=	1.0.0
-PORTREVISION=	2
+DISTVERSION=	2.0.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
