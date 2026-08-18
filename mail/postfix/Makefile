@@ -1,6 +1,6 @@
 PORTNAME=	postfix
 DISTVERSION=	3.11.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -315,10 +315,10 @@ IGNORE=		blocklistd is only supported on FreeBSD
 .endif
 
 .if ${PORT_OPTIONS:MMONGO}
-USES+=			pkgconfig
 DYN_EXT+=		mongodb
-POSTFIX_CCARGS+=	-DHAS_MONGODB `pkg-config --cflags mongoc2`
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=`pkg-config --libs mongoc2`"
+POSTFIX_CCARGS+=	-DHAS_MONGODB -I${LOCALBASE}/include/libbson-1.0 \
+			-I${LOCALBASE}/include/libmongoc-1.0
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=-L${LOCALBASE}/lib -lbson-1.0 -lmongoc-1.0"
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
