@@ -836,6 +836,7 @@
     SUBDIR += pecl-ssh2
     SUBDIR += pecl-xxtea
     SUBDIR += peda
+    SUBDIR += periodic-filter-vuxml
     SUBDIR += pev
     SUBDIR += pgpdump
     SUBDIR += pgpgpg

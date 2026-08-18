@@ -1,0 +1,118 @@
+#!/bin/sh -f
+# shellcheck disable=SC3043,SC3037
+#
+# Copyright (c) 2026 Michael Gmelin. All rights reserved.
+#
+# Based on work done by:
+#
+# Copyright (c) 2004 Oliver Eikemeier. All rights reserved.
+# Copyright (c) 2014 Matthew Seaman <matthew@FreeBSD.org>
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#
+# 1. Redistributions of source code must retain the above copyright notice
+#    this list of conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# 3. Neither the name of the author nor the names of its contributors may be
+#    used to endorse or promote products derived from this software without
+#    specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+# AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+# COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+if [ -r /etc/defaults/periodic.conf ]; then
+	. /etc/defaults/periodic.conf
+	source_periodic_confs
+fi
+
+: "${security_status_filter_vuxml_enable:=NO}"
+: "${security_status_filter_vuxml_period:=daily}"
+: "${security_status_filter_vuxml_expiry:=1}"
+: "${security_status_filter_vuxml_suppress_vids:=}"
+: "${security_status_filter_vuxml_suppress_cves:=}"
+
+# Compute PKG_DBDIR from the config file.
+pkgcmd=%%PREFIX%%/sbin/pkg
+PKG_DBDIR=$(${pkgcmd} config PKG_DBDIR)
+auditfile="${PKG_DBDIR}/vuln.xml"
+auditfile_prefilter="${PKG_DBDIR}/vuln_prefilter.xml"
+
+filter_vuxml() {
+	local modtime
+	local now
+	local rc
+
+	modtime=$(stat -f '%m' "$auditfile_prefilter" 2>/dev/null) || rc=3
+	now=$(date +%s) || return 3
+	# Add plenty of padding
+	if [ "$rc" != 0 ] ||
+		[ $(( 86400 * "${security_status_filter_vuxml_expiry}" )) \
+		  -le $(( now - modtime + 600 )) ]
+	then
+		# When non-interactive, sleep to reduce congestion on mirrors
+		anticongestion
+		${pkgcmd} audit -Fqd /var/empty -f "$auditfile_prefilter" \
+		  || return 3
+		modtime=$(stat -f '%m' "$auditfile_prefilter" 2>/dev/null) \
+		  || return 3
+	fi
+
+	echo -n 'Downloaded database created: '
+	date -r "${modtime}" -Iminutes || return 3
+
+	set --
+	echo 'Filtered vids: '
+	for vid in $security_status_filter_vuxml_suppress_vids; do
+		echo "- $vid"
+		set -- "$@" "-d" "_:vuxml/_:vuln[@vid='$vid']"
+	done
+
+	echo 'Filtered CVEs: '
+	for cve in $security_status_filter_vuxml_suppress_cves; do
+		echo "- $cve"
+		set -- "$@" "-d" \
+		  "_:vuxml/_:vuln/_:references/_:cvename[text()='$cve']"
+	done
+
+	if [ "$#" = 0 ]; then
+		echo "Nothing to filter"
+		cp "$auditfile_prefilter" "$auditfile" || return 3
+	else
+		%%PREFIX%%/bin/xml ed "$@" "$auditfile_prefilter" \
+		  >"$auditfile" || return 3
+	fi
+
+	return 0
+}
+
+rc=0
+
+if check_yesno_period security_status_filter_vuxml_enable
+then
+	echo
+	echo 'Installing filtered vulnerability database:'
+
+	if ! ${pkgcmd} -N >/dev/null 2>&1 ; then
+		echo 'pkg-audit is enabled but pkg is not used'
+		rc=2
+	else
+		filter_vuxml ; rc=$?
+	fi
+fi
+
+exit "$rc"

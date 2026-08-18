@@ -1,0 +1,2 @@
+FreeBSD periodic script to fetch and filter the VuXML database
+to allow silencing specific vids and CVEs.

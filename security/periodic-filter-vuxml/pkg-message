@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+Configuration is done in /etc/periodic.conf.
+
+Example:
+
+  sysrc -f /etc/periodic.conf security_status_filter_vuxml_enable=YES
+  sysrc -f /etc/periodic.conf security_status_filter_vuxml_suppress_vids+="
+    3a65fb7e-9ac2-11f1-bdc8-2cf05da270f3"
+  sysrc -f /etc/periodic.conf security_status_filter_vuxml_suppress_vids+="
+    05d311bc-9991-11f1-bc50-6cc21735f730"
+  sysrc -f /etc/periodic.conf security_status_filter_vuxml_suppress_cves+="
+    CVE-2026-5274"
+  sysrc -f /etc/periodic.conf security_status_filter_vuxml_suppress_cves+="
+    CVE-2026-5274"
+
+Note that suppressing CVEs is useful in case a VuXML entry contains
+multiple CVEs and only some should be ignored, otherwise the whole
+VuXML entry should be suppressed by vid.
+
+Use at you own risk.
+EOM
+}
+]
