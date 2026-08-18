@@ -1,20 +1,19 @@
-commit 4ae638d5bbcaa34f67b316bc79eb9c1fe14ec362
+commit 89784e00bea215965b7fa41635b3ddc5b6a0af38
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
-Date:   Tue Jun 9 21:44:59 2026 +0200
 
     avoid problems with python modules in mach
 
 diff --git python/sites/mach.txt python/sites/mach.txt
-index 8f4aa95dbd04..045c15136680 100644
+index d5cdce88869a..6192acecf116 100644
 --- python/sites/mach.txt
 +++ python/sites/mach.txt
 @@ -58,15 +58,15 @@ pth:xpcom/geckoprocesstypes_generator
  pth:xpcom/idl-parser
  # glean-sdk may not be installable if a wheel isn't available
  # and it has to be built from source.
--pypi-optional:glean-sdk==67.3.2:telemetry will not be collected
+-pypi-optional:glean-sdk==68.0.1:telemetry will not be collected
 -pypi-optional:orjson>=3.10:json operations will be slower in various tools
-+# pypi-optional:glean-sdk==67.3.2:telemetry will not be collected
++# pypi-optional:glean-sdk==68.0.1:telemetry will not be collected
 +# pypi-optional:orjson>=3.10:json operations will be slower in various tools
  # Mach gracefully handles the case where `psutil` is unavailable.
  # We aren't (yet) able to pin packages in automation, so we have to
