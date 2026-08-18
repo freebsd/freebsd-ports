@@ -1,9 +1,11 @@
+bin/esd2esi
 bin/exonerate
-bin/ipcress
 bin/exonerate-server
+bin/fasta2esd
+bin/fastaannotatecdna
+bin/fastachecksum
 bin/fastaclean
 bin/fastaclip
-bin/fastachecksum
 bin/fastacomposition
 bin/fastadiff
 bin/fastaexplode
@@ -22,10 +24,8 @@ bin/fastasplit
 bin/fastasubseq
 bin/fastatranslate
 bin/fastavalidcds
-bin/fasta2esd
-bin/fastaannotatecdna
-bin/esd2esi
+bin/ipcress
 share/man/man1/exonerate-server.1.gz
-share/man/man1/fastautils.1.gz
 share/man/man1/exonerate.1.gz
+share/man/man1/fastautils.1.gz
 share/man/man1/ipcress.1.gz
