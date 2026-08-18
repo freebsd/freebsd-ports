@@ -8,7 +8,7 @@
 +elsif ( $mailq eq "opensmtp" ) {
 +       ## open mailq
 +       if ( defined $utils::PATH_TO_MAILQ && -x $utils::PATH_TO_MAILQ ) {
-+               if (! open (MAILQ, "$sudo $utils::PATH_TO_MAILQ | " ) ) {
++               if (! open (MAILQ, "$utils::PATH_TO_MAILQ | " ) ) {
 +                       print "ERROR: could not open $utils::PATH_TO_MAILQ \n";
 +                       exit $ERRORS{'UNKNOWN'};
 +               }
