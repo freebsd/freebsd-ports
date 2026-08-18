@@ -1,6 +1,6 @@
 PORTNAME=	moon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.1
 CATEGORIES=	devel
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	protoc:devel/protobuf
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo llvm ssl
 USE_GITHUB=	yes
