@@ -49,8 +49,8 @@ lib/cmake/simdutf/simdutf-config.cmake
 lib/cmake/simdutf/simdutfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/simdutf/simdutfTargets.cmake
 lib/libsimdutf.so
-lib/libsimdutf.so.34
-lib/libsimdutf.so.34.0.0
+lib/libsimdutf.so.35
+lib/libsimdutf.so.35.0.0
 libdata/pkgconfig/simdutf.pc
 %%TOOLS%%share/man/man1/fastbase64.1.gz
 %%TOOLS%%share/man/man1/fastbase64.coreutils.1.gz
