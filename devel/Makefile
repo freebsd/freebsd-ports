@@ -8896,6 +8896,7 @@
     SUBDIR += violet
     SUBDIR += vipack
     SUBDIR += vitables
+    SUBDIR += vite-plus
     SUBDIR += volk
     SUBDIR += vstr
     SUBDIR += vxlog

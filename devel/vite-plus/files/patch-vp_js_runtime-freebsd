@@ -1,0 +1,77 @@
+--- crates/vp_js_runtime/src/platform.rs
++++ crates/vp_js_runtime/src/platform.rs
+@@ -13,6 +13,7 @@
+     Linux,
+     Darwin,
+     Windows,
++    FreeBSD,
+ }
+ 
+ /// CPU architecture
+@@ -59,10 +60,19 @@
+         {
+             Self::Windows
+         }
+-        #[cfg(not(any(target_os = "linux", target_os = "macos", target_os = "windows")))]
++        #[cfg(target_os = "freebsd")]
+         {
++            Self::FreeBSD
++        }
++        #[cfg(not(any(
++            target_os = "linux",
++            target_os = "macos",
++            target_os = "windows",
++            target_os = "freebsd"
++        )))]
++        {
+             compile_error!(
+-                "Unsupported operating system. vp_js_runtime only supports Linux, macOS, and Windows."
++                "Unsupported operating system. vp_js_runtime only supports Linux, macOS, Windows, and FreeBSD."
+             )
+         }
+     }
+@@ -74,6 +84,7 @@
+             Self::Linux => write!(f, "linux"),
+             Self::Darwin => write!(f, "darwin"),
+             Self::Windows => write!(f, "windows"),
++            Self::FreeBSD => write!(f, "freebsd"),
+         }
+     }
+ }
+
+--- crates/vp_js_runtime/src/providers/node.rs
++++ crates/vp_js_runtime/src/providers/node.rs
+@@ -172,7 +172,7 @@
+     const fn archive_format(platform: Platform) -> ArchiveFormat {
+         match platform.os {
+             Os::Windows => ArchiveFormat::Zip,
+-            Os::Linux | Os::Darwin => ArchiveFormat::TarGz,
++            Os::Linux | Os::Darwin | Os::FreeBSD => ArchiveFormat::TarGz,
+         }
+     }
+ 
+@@ -601,6 +601,7 @@
+             Os::Linux => "linux",
+             Os::Darwin => "darwin",
+             Os::Windows => "win",
++            Os::FreeBSD => "linux",
+         };
+         let arch = match platform.arch {
+             crate::platform::Arch::X64 => "x64",
+@@ -655,14 +656,14 @@
+     fn binary_relative_path(&self, platform: Platform) -> Str {
+         match platform.os {
+             Os::Windows => "node.exe".into(),
+-            Os::Linux | Os::Darwin => "bin/node".into(),
++            Os::Linux | Os::Darwin | Os::FreeBSD => "bin/node".into(),
+         }
+     }
+ 
+     fn bin_dir_relative_path(&self, platform: Platform) -> Str {
+         match platform.os {
+             Os::Windows => "".into(),
+-            Os::Linux | Os::Darwin => "bin".into(),
++            Os::Linux | Os::Darwin | Os::FreeBSD => "bin".into(),
+         }
+     }
+ 

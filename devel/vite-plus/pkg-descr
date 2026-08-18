@@ -1,0 +1,19 @@
+Vite+ is the unified entry point for local web development. It combines Vite,
+Vitest, Oxlint, Oxfmt, Rolldown, tsdown, and Vite Task into one zero-config
+toolchain that also manages runtime and package manager workflows:
+
+    vp env: Manage Node.js globally and per project
+    vp install: Install dependencies with automatic package manager detection
+    vp dev: Run Vite's fast native ESM dev server with instant HMR
+    vp check: Run formatting, linting, and type checks in one command
+    vp test: Run tests through bundled Vitest
+    vp build: Build applications for production with Vite + Rolldown
+    vp run: Run package.json scripts and monorepo tasks with caching and
+           dependency-aware scheduling
+    vp pack: Build libraries for npm publishing or standalone app binaries
+    vp toolchain: Show the versions of Vite+, Vite, Rolldown, Oxc, and other
+           tools
+    vp create / vp migrate: Scaffold new projects and migrate existing ones
+
+All of this is configured from your project root and works across Vite's
+framework ecosystem. Vite+ is fully open-source under the MIT license.

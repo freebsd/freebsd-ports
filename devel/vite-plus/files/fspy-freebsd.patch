@@ -1,0 +1,205 @@
+--- a/crates/fspy/Cargo.toml	2026-08-22 07:37:18.927518000 +0200
++++ b/crates/fspy/Cargo.toml	2026-08-23 07:47:29.239819000 +0200
+@@ -8,9 +8,11 @@
+ [dependencies]
+ wincode = { workspace = true }
+ bstr = { workspace = true, features = ["alloc", "std"] }
+-bumpalo = { workspace = true }
++# `bumpalo` (arena) and `materialized_artifact` (preload embedding) are only
++# used by the Linux seccomp supervisor and macOS Detours paths. They are gated
++# to those targets below so FreeBSD (which builds a no-op backend, see
++# src/freebsd.rs) does not compile them.
+ derive_more = { workspace = true, features = ["debug"] }
+-materialized_artifact = { workspace = true }
+ fspy_shared = { workspace = true }
+ futures-util = { workspace = true }
+ libc = { workspace = true }
+@@ -24,10 +26,20 @@
+ 
+ [target.'cfg(target_os = "linux")'.dependencies]
+ fspy_seccomp_unotify = { workspace = true, features = ["supervisor"] }
++# `nix` here (with the `uio` feature) is used by the Linux syscall handler.
+ nix = { workspace = true, features = ["uio"] }
+ tokio = { workspace = true, features = ["bytes"] }
+ 
+-[target.'cfg(unix)'.dependencies]
++# The supervision machinery is shared by the Linux supervisor and the macOS
++# Detours backend, and is only needed on non-FreeBSD unix targets. FreeBSD
++# builds the no-op backend in `src/freebsd.rs` and does not compile the
++# `unix/` supervision modules, so `bumpalo` (PathAccessArena),
++# `materialized_artifact` (preload/Detours embedding), `fspy_shared_unix`
++# (Exec/Payload/PreExec), `nix` and `fspy_preload_unix` (the LD_PRELOAD
++# interposer) are all gated off FreeBSD to keep its build graph small.
++[target.'cfg(all(unix, not(target_os = "freebsd")))'.dependencies]
++bumpalo = { workspace = true }
++materialized_artifact = { workspace = true }
+ fspy_shared_unix = { workspace = true }
+ nix = { workspace = true, features = ["fs", "process", "socket", "feature"] }
+ 
+@@ -42,7 +54,7 @@
+ # preload) don't build a useless empty cdylib. Scoping artifact deps under
+ # `[target.cfg…]` is only safe for normal deps: the same shape under
+ # `[target.cfg….build-dependencies]` panics cargo's resolver on cross-compile.
+-[target.'cfg(all(unix, not(target_env = "musl")))'.dependencies]
++[target.'cfg(all(unix, not(target_env = "musl"), not(target_os = "freebsd")))'.dependencies]
+ fspy_preload_unix = { workspace = true }
+ 
+ [target.'cfg(target_os = "windows")'.dependencies]
+--- a/crates/fspy/src/lib.rs	2026-08-22 07:37:18.927262000 +0200
++++ b/crates/fspy/src/lib.rs	2026-08-23 07:49:11.265958000 +0200
+@@ -2,18 +2,27 @@
+ 
+ pub mod error;
+ 
+-#[cfg(not(target_env = "musl"))]
++#[cfg(all(not(target_env = "musl"), not(target_os = "freebsd")))]
+ mod ipc;
+ 
+-#[cfg(unix)]
++// The `unix/` supervision backend (seccomp supervisor on Linux, Detours
++// artifacts + LD_PRELOAD interposer on macOS) is implemented for those two
++// platforms only. FreeBSD compiles a no-op backend (below) that runs the
++// command without file-access tracing, so the supervision modules and their
++// preload/shared-UNIX dependencies are excluded from the FreeBSD build graph.
++#[cfg(all(unix, not(target_os = "freebsd")))]
+ #[path = "./unix/mod.rs"]
+ mod os_impl;
+ 
++#[cfg(target_os = "freebsd")]
++#[path = "./freebsd.rs"]
++mod os_impl;
++
+ #[cfg(target_os = "windows")]
+ #[path = "./windows/mod.rs"]
+ mod os_impl;
+ 
+-#[cfg(unix)]
++#[cfg(all(unix, not(target_os = "freebsd")))]
+ mod arena;
+ mod command;
+ 
+--- a/crates/fspy/src/command.rs	2026-08-22 07:37:18.927002000 +0200
++++ b/crates/fspy/src/command.rs	2026-08-23 07:50:42.993883000 +0200
+@@ -4,7 +4,7 @@
+     process::Stdio,
+ };
+ 
+-#[cfg(unix)]
++#[cfg(all(unix, not(target_os = "freebsd")))]
+ use fspy_shared_unix::exec::Exec;
+ use rustc_hash::FxHashMap;
+ use tokio::process::Command as TokioCommand;
+@@ -50,7 +50,7 @@
+         }
+     }
+ 
+-    #[cfg(unix)]
++    #[cfg(all(unix, not(target_os = "freebsd")))]
+     #[must_use]
+     pub(crate) fn get_exec(&self) -> Exec {
+         use std::{
+@@ -74,7 +74,7 @@
+         }
+     }
+ 
+-    #[cfg(unix)]
++    #[cfg(all(unix, not(target_os = "freebsd")))]
+     pub(crate) fn set_exec(&mut self, mut exec: Exec) {
+         use std::os::unix::ffi::OsStringExt;
+ 
+--- a/crates/fspy/src/freebsd.rs	2026-08-23 07:59:38.697112000 +0200
++++ b/crates/fspy/src/freebsd.rs	2026-08-23 07:51:04.262030000 +0200
+@@ -0,0 +1,93 @@
++//! FreeBSD backend for `fspy`.
++//!
++//! Linux uses a seccomp-user-notifications supervisor and macOS uses Detours
++//! + `LD_PRELOAD` interposition to record the file-system accesses of a child
++//! process. FreeBSD has neither of those facilities in this crate, so it
++//! provides a no-op backend: the child process is spawned and waited on
++//! normally, and [`PathAccessIterable::iter`] returns an empty iterator.
++//!
++//! Callers (e.g. `vp_command::run_command_with_fspy`) keep working on
++//! FreeBSD — they simply observe zero path accesses, which is an honest
++//! result for a platform without tracing support.
++
++use std::io;
++
++use futures_util::future::FutureExt;
++use tokio_util::sync::CancellationToken;
++
++use crate::{ChildTermination, Command, TrackedChild, error::SpawnError};
++use fspy_shared::ipc::PathAccess;
++
++/// No-op backend: initialize without creating any on-disk artifacts.
++pub struct SpyImpl;
++
++impl SpyImpl {
++    /// Initialize the (empty) backend. `dir` is unused on FreeBSD because
++    /// there is no preload library or Detours artifact to materialize.
++    #[allow(clippy::unused_self, reason = "init_in takes a directory for parity with the other backends")]
++    pub fn init_in(_dir: &std::path::Path) -> io::Result<Self> {
++        Ok(Self)
++    }
++
++    /// Spawn the command and wait for its status; report no path accesses.
++    pub async fn spawn(
++        &self,
++        command: Command,
++        cancellation_token: CancellationToken,
++    ) -> Result<TrackedChild, SpawnError> {
++        // `into_tokio_command` applies `current_dir`, `arg0`, args, envs,
++        // stdio, and any pre_exec closures the caller registered. On FreeBSD
++        // none of the supervision machinery is attached, so this is a plain
++        // spawn. `tokio::process::Command::spawn` is synchronous (and the
++        // pre_exec closures may block), so run it off the async runtime the
++        // same way the Linux/macOS backends do.
++        let mut tokio_command = command.into_tokio_command();
++
++        let mut child = tokio::task::spawn_blocking(move || tokio_command.spawn())
++            .await
++            .map_err(|err| SpawnError::OsSpawn(err.into()))?
++            .map_err(SpawnError::OsSpawn)?;
++
++        // Take the stdio handles before `child` is moved into the background
++        // wait task, matching the Linux/macOS backends.
++        let stdin = child.stdin.take();
++        let stdout = child.stdout.take();
++        let stderr = child.stderr.take();
++
++        // Keep polling for the child to exit in the background even if the
++        // caller never awaits the wait handle; this matches the Linux/macOS
++        // backends (which also need to release supervision resources on
++        // exit).
++        let wait_handle = tokio::spawn(async move {
++            let status = tokio::select! {
++                status = child.wait() => status?,
++                () = cancellation_token.cancelled() => {
++                    child.start_kill()?;
++                    child.wait().await?
++                }
++            };
++            io::Result::Ok(ChildTermination {
++                status,
++                path_accesses: PathAccessIterable,
++            })
++        })
++        .map(|f| f?) // flatten JoinError and io::Result
++        .boxed();
++
++        Ok(TrackedChild {
++            stdin,
++            stdout,
++            stderr,
++            wait_handle,
++        })
++    }
++}
++
++/// No-op path-access iterator: yields no entries on FreeBSD.
++pub struct PathAccessIterable;
++
++impl PathAccessIterable {
++    pub fn iter(&self) -> impl Iterator<Item = PathAccess<'_>> {
++        std::iter::empty()
++    }
++}
