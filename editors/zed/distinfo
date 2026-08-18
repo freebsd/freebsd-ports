@@ -1,4 +1,4 @@
-TIMESTAMP = 1786347429
+TIMESTAMP = 1787059664
 SHA256 (rust/crates/accesskit-0.24.1.crate) = d3b7f7f85a7e5f68090000ed7622545829afd484d210358702ae4cb97dd0c320
 SIZE (rust/crates/accesskit-0.24.1.crate) = 36947
 SHA256 (rust/crates/accesskit_atspi_common-0.18.0.crate) = 842fd8203e6dfcf531d24f5bac792088edfba7d6b35844fead191603fb32a260
@@ -2713,6 +2713,8 @@ SHA256 (rust/crates/wgpu-core-deps-apple-29.0.4.crate) = f5e39e26c4c0e07589e67d1
 SIZE (rust/crates/wgpu-core-deps-apple-29.0.4.crate) = 11985
 SHA256 (rust/crates/wgpu-core-deps-emscripten-29.0.4.crate) = 01e09be551dc939498bdd5f6b2c66e55ab275dad25825267a08605a80fc9f0af
 SIZE (rust/crates/wgpu-core-deps-emscripten-29.0.4.crate) = 10698
+SHA256 (rust/crates/wgpu-core-deps-wasm-29.0.4.crate) = af1fb1798be2a912497d4c224f72d39bb0cb34af50e8bcc29865bc339c943059
+SIZE (rust/crates/wgpu-core-deps-wasm-29.0.4.crate) = 10719
 SHA256 (rust/crates/wgpu-core-deps-windows-linux-android-29.0.4.crate) = 4e592c1bbef6ad047647ae6e666ebd8cee7a32bb4544d9700ec96cbf73230257
 SIZE (rust/crates/wgpu-core-deps-windows-linux-android-29.0.4.crate) = 12049
 SHA256 (rust/crates/wgpu-hal-29.0.4.crate) = 97ace1c17727311c22a46e4e3faf56ea6de81af99dcc839bdfb54857b94d448d
@@ -3127,5 +3129,5 @@ SHA256 (zed-industries-tree-sitter-yaml-baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a
 SIZE (zed-industries-tree-sitter-yaml-baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a_GH0.tar.gz) = 145319
 SHA256 (zed-industries-calloop-eb6b4fd17b9af5ecc226546bdd04185391b3e265_GH0.tar.gz) = 8698ebc194a6c3ee377cde94f4fdff590f6a7973bc7987c880801fa7fd69e5c3
 SIZE (zed-industries-calloop-eb6b4fd17b9af5ecc226546bdd04185391b3e265_GH0.tar.gz) = 94768
-SHA256 (zed-industries-zed-v1.14.2_GH0.tar.gz) = 2a76e45be06708e719d71aa37cab887c2fcf34e5d5cad8c41ef2be5b70ba2e02
-SIZE (zed-industries-zed-v1.14.2_GH0.tar.gz) = 23745558
+SHA256 (zed-industries-zed-v1.15.0_GH0.tar.gz) = 9f347990d067c375d93f9d8251a2bbe21e11d6b408adf0df1531d16b024e318a
+SIZE (zed-industries-zed-v1.15.0_GH0.tar.gz) = 23822228
