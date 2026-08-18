@@ -1,0 +1,10 @@
+The helm-docs tool auto-generates documentation from helm charts into markdown
+files. The resulting files contain metadata about their respective chart and a
+table with each of the chart's values, their defaults, and an optional
+description parsed from comments.
+
+The markdown generation is entirely gotemplate driven. The tool parses metadata
+from charts and generates a number of sub-templates that can be referenced in a
+template file (by default README.md.gotmpl). If no template file is provided,
+the tool has a default internal template that will generate a reasonably
+formatted README.
