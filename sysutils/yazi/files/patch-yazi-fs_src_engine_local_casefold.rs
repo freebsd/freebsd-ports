@@ -1,5 +1,5 @@
---- yazi-fs/src/provider/local/casefold.rs.orig	2026-01-22 15:31:21 UTC
-+++ yazi-fs/src/provider/local/casefold.rs
+--- yazi-fs/src/engine/local/casefold.rs.orig	2026-08-15 07:32:46 UTC
++++ yazi-fs/src/engine/local/casefold.rs
 @@ -10,7 +10,7 @@ pub(super) async fn casefold(path: impl AsRef<Path>) -
  	tokio::task::spawn_blocking(move || casefold_impl(path)).await?
  }
@@ -27,20 +27,23 @@
  fn final_path(path: &Path) -> io::Result<PathBuf> {
  	use std::{ffi::{CStr, CString, OsString}, os::{fd::{AsRawFd, FromRawFd, OwnedFd}, unix::ffi::{OsStrExt, OsStringExt}}};
  
-@@ -221,6 +221,7 @@ fn final_path(path: &Path) -> io::Result<PathBuf> {
+@@ -240,8 +240,9 @@ fn final_path(path: &Path) -> io::Result<PathBuf> {
+ }
+ 
  #[cfg(any(
- 	target_os = "linux",
+-	target_os = "linux",
  	target_os = "android",
 +	target_os = "freebsd",
++	target_os = "linux",
  	target_os = "netbsd",
  	target_os = "openbsd"
  ))]
-@@ -229,6 +230,8 @@ fn try_from_fd(fd: std::os::fd::RawFd, needle: &Path) 
- 
- 	#[cfg(any(target_os = "linux", target_os = "android"))]
+@@ -252,7 +253,7 @@ fn try_from_fd(fd: std::os::fd::RawFd, needle: &Path) 
  	let cand = format!("/proc/self/fd/{fd}");
-+	#[cfg(target_os = "freebsd")]
-+	let cand = format!("/dev/fd/{fd}");
  	#[cfg(target_os = "netbsd")]
  	let cand = format!("/proc/curproc/fd/{fd}");
- 	#[cfg(target_os = "openbsd")]
+-	#[cfg(target_os = "openbsd")]
++	#[cfg(any(target_os = "openbsd", target_os = "freebsd"))]
+ 	let cand = format!("/dev/fd/{fd}");
+ 
+ 	if let Ok(p) = std::fs::read_link(cand)

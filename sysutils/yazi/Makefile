@@ -1,7 +1,7 @@
 PORTNAME=	yazi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.5.6
-PORTREVISION=	2
+DISTVERSION=	26.8.15
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -25,6 +25,7 @@ USES=		cargo desktop-file-utils gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	sxyazi
 
+MAKE_ENV=	VERGEN_GIT_SHA=1f3588d6f4ef80122089db70e670a0eb757f20fe # git commit id for this version
 CARGO_INSTALL_PATH=	yazi-fm yazi-cli
 
 OPTIONS_DEFINE=	AUXTOOLS EXAMPLES
