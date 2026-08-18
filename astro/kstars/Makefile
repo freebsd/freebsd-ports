@@ -10,6 +10,9 @@ WWW=		https://edu.kde.org/kstars
 
 LICENSE=	GPLv2
 
+# ld: error: failed to open kstars/kstars: Cannot allocate memory
+IGNORE_i386=	fails to build on i386
+
 LIB_DEPENDS=	libXISF.so:graphics/libxisf \
 		libcfitsio.so:astro/cfitsio \
 		libqt6keychain.so:security/qtkeychain@qt6 \
