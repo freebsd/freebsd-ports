@@ -1,0 +1,66 @@
+--- jogl/make/build-jogl.xml.orig	2025-08-30 10:26:30 UTC
++++ jogl/make/build-jogl.xml
+@@ -1239,8 +1239,7 @@
+       <!-- Note that we can use the base setups in the gluegen-cpptasks for most of these -->
+ 
+       <compiler id="compiler.cfg.freebsd.jogl" extends="compiler.cfg.freebsd">
+-        <!-- Need to force X11R6 headers on to include path after stub_includes -->
+-        <includepath path="stub_includes/opengl"/>
++        <!-- Force /usr/local/include headers on to include path after all others to fix build with clang -->
+         <compilerarg value="-idirafter" />
+         <compilerarg value="/usr/local/include" />
+       </compiler>
+@@ -1259,7 +1258,7 @@
+ 
+       <!-- linker configuration -->
+ 
+-      <linker id="linker.cfg.freebsd.jogl.x11" extends="linker.cfg.freebsd">
++      <linker id="linker.cfg.freebsd.x86.jogl.x11" extends="linker.cfg.freebsd.x86">
+         <syslibset dir="/usr/local/lib" libs="X11"/>
+       </linker>
+ 
+@@ -1267,6 +1266,14 @@
+         <syslibset dir="/usr/local/lib" libs="X11"/>
+       </linker>
+ 
++      <linker id="linker.cfg.freebsd.ppc64.jogl.x11" extends="linker.cfg.freebsd.ppc64">
++        <syslibset dir="/usr/local/lib" libs="X11"/>
++      </linker>
++
++      <linker id="linker.cfg.freebsd.ppc64le.jogl.x11" extends="linker.cfg.freebsd.ppc64le">
++        <syslibset dir="/usr/local/lib" libs="X11"/>
++      </linker>
++
+       <linker id="linker.cfg.linux.jogl.x11" extends="linker.cfg.linux">
+         <syslibset libs="X11"/>
+       </linker>
+@@ -1489,7 +1496,7 @@
+     <target name="c.configure.freebsd.x86" depends="c.configure.x11" if="isFreeBSDX86">
+       <echo message="FreeBSD" />
+       <property name="compiler.cfg.id"                     value="compiler.cfg.freebsd.jogl" />
+-      <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.jogl.x11" />
++      <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.x86.jogl.x11" />
+     </target>
+ 
+     <target name="c.configure.freebsd.amd64" depends="c.configure.x11" if="isFreeBSDAMD64">
+@@ -1498,7 +1505,19 @@
+       <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.amd64.jogl.x11" />
+     </target>
+ 
+-    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.x11" if="isFreeBSD" />
++    <target name="c.configure.freebsd.ppc64" depends="c.configure.x11" if="isFreeBSDPpc64">
++      <echo message="FreeBSD" />
++      <property name="compiler.cfg.id"                     value="compiler.cfg.freebsd.jogl" />
++      <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.ppc64.jogl.x11" />
++    </target>
++
++    <target name="c.configure.freebsd.ppc64le" depends="c.configure.x11" if="isFreeBSDPpc64le">
++      <echo message="FreeBSD" />
++      <property name="compiler.cfg.id"                     value="compiler.cfg.freebsd.jogl" />
++      <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.ppc64le.jogl.x11" />
++    </target>
++
++    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.freebsd.ppc64,c.configure.x11,c.configure.freebsd.ppc64le" if="isFreeBSD" />
+ 
+     <target name="c.configure.hpux" depends="c.configure.x11" if="isHPUX">
+       <echo message="HP-UX" />
