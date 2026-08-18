@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# PROVIDE: ipa_custodia
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=ipa_custodia
+desc="FreeIPA Custodia service"
+rcvar=ipa_custodia_enable
+
+load_rc_config ${name}
+
+: ${ipa_custodia_enable:="NO"}
+: ${ipa_custodia_config:="%%PREFIX%%/etc/ipa/custodia/custodia.conf"}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+: ${ipa_custodia_logfile:="/var/log/ipa-custodia.log"}
+
+procname="%%PREFIX%%/libexec/ipa/ipa-custodia"
+command_interpreter="%%PYTHON_CMD%%"
+required_files="${ipa_custodia_config}"
+command_args="-p ${pidfile} ${procname} ${ipa_custodia_config} >> ${ipa_custodia_logfile} 2>&1"
+
+run_rc_command "$1"

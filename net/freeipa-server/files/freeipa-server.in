@@ -1,0 +1,100 @@
+#!/bin/sh
+
+# PROVIDE: freeipa_server
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable the FreeIPA server:
+#
+# freeipa_server_enable="YES"
+#
+# The whole stack (dirsrv, krb5kdc, kadmind, pki-tomcatd, httpd, custodia,
+# ipa-otpd) is orchestrated by IPA's own controller, ipactl.  Enabling this
+# single service is enough; the back-end services are started via
+# "service <name> onestart" and need no individual rc.conf entry.
+
+. /etc/rc.subr
+
+name="freeipa_server"
+desc="FreeIPA server control service"
+rcvar="freeipa_server_enable"
+
+load_rc_config "${name}"
+
+: ${freeipa_server_enable:="NO"}
+
+command="%%PREFIX%%/sbin/ipactl"
+ipa_config="%%PREFIX%%/etc/ipa/default.conf"
+
+extra_commands="prepare"
+prepare_cmd="${name}_prepare"
+start_precmd="${name}_prestart"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+restart_cmd="${name}_restart"
+status_cmd="${name}_status"
+
+freeipa_server_prepare()
+{
+	/usr/bin/install -d -o root -g wheel -m 0711 /var/run/ipa
+	/usr/bin/install -d -o ipaapi -g ipaapi -m 6770 /var/run/ipa/ccaches
+	# mod_wsgi socket directory for httpd; must be traversable by the www
+	# worker user so it can reach the /ipa WSGI daemon sockets (else 503).
+	/usr/bin/install -d -o root -g wheel -m 0755 /var/run/httpd
+
+	if [ ! -f /var/run/ipa/services.list ]; then
+		/usr/bin/printf '[]\n' > /var/run/ipa/services.list
+		/bin/chmod 0644 /var/run/ipa/services.list
+	fi
+}
+
+freeipa_server_prestart()
+{
+	# FreeIPA is not usable until ipa-server-install has run.
+	if [ ! -f "${ipa_config}" ]; then
+		warn "FreeIPA is not configured yet - run 'ipa-server-install' first"
+		return 1
+	fi
+
+	# FreeIPA requires a fully-qualified hostname that resolves to a real
+	# address.  A short name breaks Kerberos and Dogtag (certificate
+	# hostname mismatch, wrong TLS-key passphrase lookup).
+	_fqdn=$(/bin/hostname)
+	case "${_fqdn}" in
+	*.*)	;;
+	*)	warn "hostname '${_fqdn}' is not a FQDN - FreeIPA expects e.g. ipa.example.com" ;;
+	esac
+
+	freeipa_server_prepare
+}
+
+freeipa_server_start()
+{
+	# Start the whole stack detached from the boot rc's session/process
+	# group.  FreeBSD job-control cleanup (killjobc) sends SIGHUP to the rc
+	# process group when a boot subshell exits, and 389-ds (ns-slapd) treats
+	# SIGHUP as a shutdown -- so the Directory Server would die ~10-20s into
+	# the boot.  daemon(8) puts ipactl, and thus every service it starts,
+	# into its own session so that SIGHUP never reaches them.
+	# --ignore-service-failures lets the stack come up even if the slow
+	# Dogtag/Java CA times out on a cold boot.
+	/usr/sbin/daemon -f "${command}" start --ignore-service-failures
+}
+
+freeipa_server_stop()
+{
+	"${command}" stop
+}
+
+freeipa_server_restart()
+{
+	"${command}" restart
+}
+
+freeipa_server_status()
+{
+	"${command}" status
+}
+
+run_rc_command "$1"

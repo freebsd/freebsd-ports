@@ -1,0 +1,11 @@
+--- install/updates/80-schema_compat.update.orig	2026-08-10 18:01:22 UTC
++++ install/updates/80-schema_compat.update
+@@ -9,7 +9,7 @@ default:cn: Schema Compatibility
+ default:objectclass: nsSlapdPlugin
+ default:objectclass: extensibleObject
+ default:cn: Schema Compatibility
+-default:nsslapd-pluginpath: /usr/lib$LIBARCH/dirsrv/plugins/schemacompat-plugin.so
++default:nsslapd-pluginpath: /usr/local/lib/dirsrv/plugins/schemacompat-plugin.so
+ default:nsslapd-plugininitfunc: schema_compat_plugin_init
+ default:nsslapd-plugintype: object
+ default:nsslapd-pluginenabled: on

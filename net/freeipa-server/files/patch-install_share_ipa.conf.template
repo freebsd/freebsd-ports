@@ -1,0 +1,128 @@
+--- install/share/ipa.conf.template.orig	2025-12-04 10:21:14 UTC
++++ install/share/ipa.conf.template
+@@ -1,5 +1,5 @@
+ #
+-# VERSION 34 - DO NOT REMOVE THIS LINE
++# VERSION 35 - DO NOT REMOVE THIS LINE
+ #
+ # This file may be overwritten on upgrades.
+ #
+@@ -7,7 +7,7 @@
+ # Load lookup_identity module in case it has not been loaded yet
+ # The module is used to search users according the certificate.
+ <IfModule !lookup_identity_module>
+-    LoadModule lookup_identity_module modules/mod_lookup_identity.so
++    LoadModule lookup_identity_module libexec/apache24/mod_lookup_identity.so
+ </IfModule>
+ 
+ ProxyRequests Off
+@@ -40,10 +40,15 @@ WSGISocketPrefix $WSGI_PREFIX_DIR
+ WSGISocketPrefix $WSGI_PREFIX_DIR
+ 
+ # Configure mod_wsgi handler for /ipa
++# FreeBSD: keep socket-timeout well below INT_MAX. mod_wsgi/apr convert the
++# value to milliseconds in a 32-bit context; INT_MAX seconds overflows and
++# yields a tiny/negative socket timeout, which truncates large daemon-mode
++# responses (e.g. the API schema) after ~64KB. 86400s (1 day) is effectively
++# unlimited for a single request and does not overflow.
+ WSGIDaemonProcess ipa processes=$WSGI_PROCESSES threads=1 maximum-requests=500 \
+-  user=ipaapi group=ipaapi display-name=%{GROUP} socket-timeout=2147483647 \
+-  lang=C.UTF-8 locale=C.UTF-8
+-WSGIScriptAlias /ipa /usr/share/ipa/wsgi.py process-group=ipa \
++  user=ipaapi group=ipaapi display-name=%{GROUP} socket-timeout=86400 \
++  lang=C.UTF-8 locale=C.UTF-8 home=/var/empty
++WSGIScriptAlias /ipa $USR_SHARE_IPA_DIR/wsgi.py process-group=ipa \
+   application-group=%{GLOBAL}
+ WSGIScriptReloading Off
+ 
+@@ -73,6 +78,8 @@ WSGIScriptReloading Off
+   GssapiSessionKey file:$GSSAPI_SESSION_KEY
+ 
+   GssapiImpersonate On
++  GssapiCredStore keytab:/var/db/ipa/gssproxy/http.keytab
++  GssapiCredStore client_keytab:/var/db/ipa/gssproxy/http.keytab
+   GssapiDelegCcacheDir $IPA_CCACHES
+   GssapiDelegCcachePerms mode:0660
+   GssapiDelegCcacheUnique On
+@@ -97,7 +104,7 @@ WSGIScriptReloading Off
+ </Location>
+ 
+ # Target for login with internal connections
+-Alias /ipa/session/cookie "/usr/share/ipa/gssapi.login"
++Alias /ipa/session/cookie "$USR_SHARE_IPA_DIR/gssapi.login"
+ 
+ # Turn off Apache authentication for i18n messages
+ <Location "/ipa/i18n_messages">
+@@ -122,8 +129,10 @@ Alias /ipa/session/cookie "/usr/share/ipa/gssapi.login
+   LookupUserByCertificate On
+   LookupUserByCertificateParamName "username"
+   WSGIProcessGroup ipa
+-  WSGIApplicationGroup ipa
++  WSGIApplicationGroup %{GLOBAL}
+   GssapiImpersonate On
++  GssapiCredStore keytab:/var/db/ipa/gssproxy/http.keytab
++  GssapiCredStore client_keytab:/var/db/ipa/gssproxy/http.keytab
+ 
+   GssapiUseSessions On
+   Session On
+@@ -154,13 +163,13 @@ Alias /ipa/session/cookie "/usr/share/ipa/gssapi.login
+ </Location>
+ 
+ # This is where we redirect on failed auth
+-Alias /ipa/errors "/usr/share/ipa/html"
++Alias /ipa/errors "$USR_SHARE_IPA_DIR/html"
+ 
+ # For the MIT Windows config files
+-Alias /ipa/config "/usr/share/ipa/html"
++Alias /ipa/config "$USR_SHARE_IPA_DIR/html"
+ 
+ # Do no authentication on the directory that contains error messages
+-<Directory "/usr/share/ipa/html">
++<Directory "$USR_SHARE_IPA_DIR/html">
+   SetHandler None
+   AllowOverride None
+   Satisfy Any
+@@ -195,8 +204,8 @@ Alias /ipa/ui/fonts/fontawesome "${FONTS_FONTAWESOME_D
+ 
+ 
+ #  webUI  is now completely static, and served out of that directory
+-Alias /ipa/ui "/usr/share/ipa/ui"
+-<Directory "/usr/share/ipa/ui">
++Alias /ipa/ui "$USR_SHARE_IPA_DIR/ui"
++<Directory "$USR_SHARE_IPA_DIR/ui">
+   SetHandler None
+   AllowOverride None
+   Satisfy Any
+@@ -209,8 +218,8 @@ Alias /ipa/ui "/usr/share/ipa/ui"
+ </Directory>
+ 
+ # Modern WebUI
+-Alias /ipa/modern-ui "/usr/share/ipa/modern-ui"
+-<Directory "/usr/share/ipa/modern-ui">
++Alias /ipa/modern-ui "$USR_SHARE_IPA_DIR/modern-ui"
++<Directory "$USR_SHARE_IPA_DIR/modern-ui">
+   SetHandler None
+   AllowOverride None
+   Satisfy Any
+@@ -222,8 +231,8 @@ Alias /ipa/modern-ui "/usr/share/ipa/modern-ui"
+ </Directory>
+ 
+ #  Simple wsgi scripts required by ui
+-Alias /ipa/wsgi "/usr/share/ipa/wsgi"
+-<Directory "/usr/share/ipa/wsgi">
++Alias /ipa/wsgi "$USR_SHARE_IPA_DIR/wsgi"
++<Directory "$USR_SHARE_IPA_DIR/wsgi">
+     AllowOverride None
+     Satisfy Any
+     Require all granted
+@@ -232,8 +241,8 @@ Alias /ipa/wsgi "/usr/share/ipa/wsgi"
+ </Directory>
+ 
+ # migration related pages
+-Alias /ipa/migration "/usr/share/ipa/migration"
+-<Directory "/usr/share/ipa/migration">
++Alias /ipa/migration "$USR_SHARE_IPA_DIR/migration"
++<Directory "$USR_SHARE_IPA_DIR/migration">
+     AllowOverride None
+     Satisfy Any
+     Require all granted

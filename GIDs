@@ -540,7 +540,7 @@ avahi-autoipd:*:588:
 # free: 595
 # free: 596
 # free: 597
-# free: 598
+ipaapi:*:598:www
 pkiuser:*:599:
 _xsi:*:600:
 _tss:*:601:
@@ -548,7 +548,7 @@ _pkcs11:*:602:
 _acme:*:603:
 _lego:*:604:
 _hockeypuck:*:605:
-# free: 606
+kdcproxy:*:606:
 # free: 607
 # free: 608
 # free: 609

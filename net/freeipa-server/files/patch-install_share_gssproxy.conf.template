@@ -1,0 +1,18 @@
+--- install/share/gssproxy.conf.template.orig	2025-01-15 09:52:51 UTC
++++ install/share/gssproxy.conf.template
+@@ -11,6 +11,7 @@
+ [service/ipa-api]
+   mechs = krb5
+   cred_store = keytab:$HTTP_KEYTAB
++  cred_store = client_keytab:$HTTP_KEYTAB
+   allow_constrained_delegation = true
+   allow_client_ccache_sync = true
+   cred_usage = initiate
+@@ -19,6 +20,7 @@
+ [service/ipa-sweeper]
+   mechs = krb5
+   cred_store = keytab:$HTTP_KEYTAB
++  cred_store = client_keytab:$HTTP_KEYTAB
+   socket = $SWEEPER_SOCKET
+   euid = $IPAAPI_USER
+   cred_usage = initiate

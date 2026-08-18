@@ -1,0 +1,10 @@
+--- daemons/ipa-slapi-plugins/ipa-extdom-extop/Makefile.am.orig	2025-01-15 09:52:51 UTC
++++ daemons/ipa-slapi-plugins/ipa-extdom-extop/Makefile.am
+@@ -84,3 +84,7 @@ EXTRA_DIST =			\
+ 	test_data		\
+ 	$(app_DATA)		\
+ 	$(NULL)
++
++# FreeBSD: resolve 389-ds SLAPI symbols from libslapd.
++libipa_extdom_extop_la_LIBADD += -L$(libdir)/dirsrv -lslapd $(LIBICONV)
++libipa_extdom_extop_la_LDFLAGS += -Wl,-rpath,$(libdir)/dirsrv

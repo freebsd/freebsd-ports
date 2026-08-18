@@ -1,0 +1,10 @@
+--- daemons/ipa-slapi-plugins/ipa-otp-lasttoken/Makefile.am.orig	2025-01-15 09:52:47 UTC
++++ daemons/ipa-slapi-plugins/ipa-otp-lasttoken/Makefile.am
+@@ -19,3 +19,7 @@ libipa_otp_lasttoken_la_LIBADD =		\
+ libipa_otp_lasttoken_la_LIBADD =		\
+ 	$(LDAP_LIBS)				\
+ 	$(builddir)/../libotp/libotp.la
++
++# FreeBSD: resolve 389-ds SLAPI symbols from libslapd.
++libipa_otp_lasttoken_la_LIBADD += -L$(libdir)/dirsrv -lslapd $(LIBICONV)
++libipa_otp_lasttoken_la_LDFLAGS += -Wl,-rpath,$(libdir)/dirsrv

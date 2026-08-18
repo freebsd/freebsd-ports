@@ -1,0 +1,43 @@
+--- install/share/ipa-kdc-proxy.conf.template.orig	2025-01-15 09:52:51 UTC
++++ install/share/ipa-kdc-proxy.conf.template
+@@ -1,29 +1,29 @@
+ #
+-# VERSION 2 - DO NOT REMOVE THIS LINE
++# VERSION 4 - DO NOT REMOVE THIS LINE
+ #
+ # Kerberos over HTTP / MS-KKDCP support (Kerberos KDC Proxy)
+ #
+-# The symlink from /etc/ipa/kdcproxy/ to /etc/httpd/conf.d/ is maintained
+-# by the ExecStartPre script /usr/libexec/ipa/ipa-httpd-kdcproxy in
+-# httpd.service. The service also sets the environment variable
++# The symlink from /usr/local/etc/ipa/kdcproxy/ipa-kdc-proxy.conf to
++# /usr/local/etc/apache24/Includes/ipa-kdc-proxy.conf is maintained by
++# /usr/local/libexec/ipa/ipa-httpd-kdcproxy in the apache24 RC start and
++# restart hooks. The service also sets the environment variable
+ # KDCPROXY_CONFIG to $KDCPROXY_CONFIG.
+ #
+ # Disable KDC Proxy on the current host:
+-#   # ipa-ldap-updater /usr/share/ipa/kdcproxy-disable.uldif
+-#   # systemctl restart httpd.service
++#   # ipa-ldap-updater $USR_SHARE_IPA_DIR/kdcproxy-disable.uldif
++#   # service apache24 restart
+ #
+ # Enable KDC Proxy on the current host:
+-#   # ipa-ldap-updater /usr/share/ipa/kdcproxy-enable.uldif
+-#   # systemctl restart httpd.service
++#   # ipa-ldap-updater $USR_SHARE_IPA_DIR/kdcproxy-enable.uldif
++#   # service apache24 restart
+ #
+ 
+ WSGIDaemonProcess kdcproxy processes=2 threads=15 maximum-requests=5000 \
+-  user=kdcproxy group=kdcproxy display-name=%{GROUP}
+-WSGIScriptAlias /KdcProxy /usr/share/ipa/kdcproxy.wsgi \
++  user=kdcproxy group=kdcproxy display-name=%{GROUP} home=/var/empty
++WSGIScriptAlias /KdcProxy $USR_SHARE_IPA_DIR/kdcproxy.wsgi \
+   process-group=kdcproxy application-group=%{GLOBAL}
+ WSGIScriptReloading Off
+ 
+ <Location "/KdcProxy">
+-  Satisfy Any
+   Require all granted
+ </Location>

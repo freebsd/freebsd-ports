@@ -545,7 +545,7 @@ avahi-autoipd:*:588:588::0:0:Avahi Autoipd Daemon user:/nonexistent:/usr/sbin/no
 # free: 595
 # free: 596
 # free: 597
-# free: 598
+ipaapi:*:598:598::0:0:IPA Framework User:/nonexistent:/usr/sbin/nologin
 pkiuser:*:599:599::0:0:Dogtag PKI user:/nonexistent:/usr/sbin/nologin
 _xsi:*:600:600::0:0:XMLSysInfo User:/nonexistent:/usr/sbin/nologin
 _tss:*:601:601:daemon:0:0:TCG Software Stack user:/var/empty:/usr/sbin/nologin
@@ -553,7 +553,7 @@ _pkcs11:*:602:602:daemon:0:0:opencryptoki user:/var/empty:/usr/sbin/nologin
 _acme:*:603:603::0:0:ACME client user:/var/empty:/usr/sbin/nologin
 _lego:*:604:604::0:0:lego client user:/nonexistent:/usr/sbin/nologin
 _hockeypuck:*:605:605::0:0:hockeypuck pgp keyserver user:/var/empty:/usr/sbin/nologin
-# free: 606
+kdcproxy:*:606:606::0:0:IPA KDC Proxy User:/nonexistent:/usr/sbin/nologin
 # free: 607
 # free: 608
 # free: 609

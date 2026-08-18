@@ -1,0 +1,18 @@
+--- install/tools/ipa-httpd-kdcproxy.in.orig	2025-01-15 09:52:51 UTC
++++ install/tools/ipa-httpd-kdcproxy.in
+@@ -18,10 +18,12 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ #
+-"""ipa-httpd-kdproxy
++"""ipa-httpd-kdcproxy
+ 
+-This script creates or removes the symlink from /etc/ipa/ipa-kdc-proxy.conf
+-to /etc/httpd/conf.d/. It's called from ExecStartPre hook in httpd.service.
++This script creates or removes the symlink from
++/usr/local/etc/ipa/kdcproxy/ipa-kdc-proxy.conf to
++/usr/local/etc/apache24/Includes/ipa-kdc-proxy.conf. It is called from the
++apache24 RC start and restart hooks.
+ """
+ import logging
+ import os
