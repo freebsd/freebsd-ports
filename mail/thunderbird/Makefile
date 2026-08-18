@@ -1,8 +1,8 @@
 PORTNAME=	thunderbird
-DISTVERSION=	153.0.3
+DISTVERSION=	154.0
 CATEGORIES=	mail news net-im wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}${DISTVERSIONSUFFIX}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}${DISTVERSIONSUFFIX}-candidates/build1/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}${DISTVERSIONSUFFIX}-candidates/build2/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -13,7 +13,7 @@ NOT_FOR_ARCHS=		i386
 NOT_FOR_ARCHS_REASON=	fails to build: rust needs more address space than platform can provide
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.125:security/nss \
+		nss>=3.126:security/nss \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=10.1.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \

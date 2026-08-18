@@ -1,0 +1,36 @@
+commit 06b2489a8a44a6f3f7bf4c523689a78e78b52c83
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    angle build target for FreeBSD
+
+diff --git third_party/angle/angle_common_gn/moz.build third_party/angle/angle_common_gn/moz.build
+index e3220891a415..b39166f60958 100644
+--- third_party/angle/angle_common_gn/moz.build
++++ third_party/angle/angle_common_gn/moz.build
+@@ -134,6 +134,26 @@ if CONFIG["OS_TARGET"] == "Linux":
+         "/third_party/angle/src/common/system_utils_posix.cpp"
+     ]
+ 
++if CONFIG["OS_TARGET"] == "FreeBSD":
++
++    DEFINES["ANGLE_USE_VULKAN_DISPLAY"] = True
++    DEFINES["ANGLE_VULKAN_DISPLAY_MODE_HEADLESS"] = True
++    DEFINES["USE_GLIB"] = "1"
++    DEFINES["USE_OZONE"] = "1"
++    DEFINES["_FILE_OFFSET_BITS"] = "64"
++    DEFINES["_LARGEFILE64_SOURCE"] = True
++    DEFINES["_LARGEFILE_SOURCE"] = True
++    DEFINES["__STDC_CONSTANT_MACROS"] = True
++    DEFINES["__STDC_FORMAT_MACROS"] = True
++
++    OS_LIBS += [
++        "dl"
++    ]
++
++    UNIFIED_SOURCES += [
++        "/third_party/angle/src/common/system_utils_posix.cpp"
++    ]
++
+ if CONFIG["OS_TARGET"] == "OpenBSD":
+ 
+     DEFINES["USE_GLIB"] = "1"
