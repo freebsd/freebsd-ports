@@ -168,7 +168,6 @@ OBSENSOR_IMPLIES=	V4L
 
 V4L_DESC=		Enable support for Video for Linux
 V4L_CMAKE_BOOL=		WITH_LIBV4L WITH_V4L
-V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 VULKAN_DESC=		Add Vulkan Support
@@ -217,6 +216,10 @@ _IPPICV_i386=	ippicv/ippicv_2021.12.0_lnx_ia32_20240425_general.tgz
 
 .if ${ARCH} == powerpc64le && defined(MACHINE_CPU) && ${MACHINE_CPU:Mvsx3}
 CMAKE_ARGS+=	-DCPU_BASELINE:STRING="VSX;VSX3;"
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1600020 && ${PORT_OPTIONS:MV4L}
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 .endif
 
 post-extract:
