@@ -1,0 +1,22 @@
+--- pyproject.toml.orig	2026-04-27 20:40:10 UTC
++++ pyproject.toml
+@@ -1,9 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+-	"setuptools>=77",
++	"setuptools>=61",
+ 	"setuptools_scm[toml]>=3.4.1",
+-	# jaraco/skeleton#174
+-	"coherent.licensed",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -27,7 +25,7 @@ requires-python = ">=3.10"
+ 	"Topic :: Text Processing :: Markup :: HTML",
+ ]
+ requires-python = ">=3.10"
+-license = "LGPL-3.0-or-later"
++license = { text = "LGPL-3.0-or-later" }
+ dependencies = [
+ 	"more_itertools",
+ 	"encutils",
