@@ -1,5 +1,5 @@
 PORTNAME=	io-stream
-PORTVERSION=	0.13.1
+PORTVERSION=	0.13.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,8 @@ WWW=		https://socketry.github.io/io-stream/ \
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
+
+RUN_DEPENDS=	rubygem-openssl>=3.3:security/rubygem-openssl
 
 USES=		gem
 
