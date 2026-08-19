@@ -1,17 +1,17 @@
 PORTNAME=	gperiodic
-PORTVERSION=	3.0.3
-PORTREVISION=	1
-CATEGORIES=	biology
+DISTVERSION=	3.0.3
+PORTREVISION=	2
+CATEGORIES=	biology education
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Displays a periodic table of the elements
+MAINTAINER=	alven@FreeBSD.org
+COMMENT=	A graphical application for browsing the periodic table
 WWW=		https://sourceforge.net/projects/gperiodic/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig\
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		gnome pkgconfig
@@ -19,12 +19,12 @@ USE_GNOME=	cairo gdkpixbuf gtk20
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-LANGS=		be cs da de es fi fr gl is it ms pl pt ru sv tr uk zh_CN
-
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
+
+LANGS=		be cs da de es fi fr gl is it ms pl pt ru sv tr uk zh_CN
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} `pkg-config --cflags --libs gtk+-2.0` \
@@ -37,8 +37,12 @@ do-build-NLS-on:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gperiodic ${STAGEDIR}${PREFIX}/bin
-	(cd ${WRKSRC}/icons && ${INSTALL_DATA} gperiodic-crystal.png gperiodic.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps)
+	cd ${WRKSRC}/icons && ${INSTALL_DATA} gperiodic-crystal.png gperiodic.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 do-install-NLS-on:
 .for lang in ${LANGS}
@@ -46,9 +50,5 @@ do-install-NLS-on:
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
