@@ -1,8 +1,9 @@
 PORTNAME=	lazy-object-proxy
-PORTVERSION=	1.10.0
+PORTVERSION=	1.12.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	lazy_object_proxy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast and thorough lazy object proxy

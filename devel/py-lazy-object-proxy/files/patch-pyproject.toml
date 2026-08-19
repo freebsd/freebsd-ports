@@ -1,10 +1,20 @@
---- pyproject.toml.orig	2023-12-13 17:32:08 UTC
+--- pyproject.toml.orig	2025-08-22 13:12:02 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ requires = [
  [build-system]
  requires = [
--    "setuptools>=64",
+-    "setuptools>=80",
 +    "setuptools>=61",
      "setuptools_scm>=8",
  ]
  build-backend = "setuptools.build_meta"
+@@ -11,8 +11,7 @@ name = "lazy-object-proxy"
+     "version",
+ ]
+ name = "lazy-object-proxy"
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = { text = "BSD-2-Clause" }
+ description = "A fast and thorough lazy object proxy."
+ authors = [
+     { name = "Ionel Cristian Mărieș", email = "contact@ionelmc.ro" },
