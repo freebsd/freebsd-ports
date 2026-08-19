@@ -1,6 +1,5 @@
 PORTNAME=	cma
-PORTVERSION=	4.0.0
-PORTREVISION=	2
+PORTVERSION=	4.4.4
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,9 +9,9 @@ COMMENT=	CMA-ES for non-linear numerical optimization in Python
 WWW=		https://github.com/CMA-ES/pycma
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/cma/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
