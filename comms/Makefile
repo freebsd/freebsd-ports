@@ -184,8 +184,8 @@
     SUBDIR += rxtx
     SUBDIR += scmxx
     SUBDIR += scrcpy
-    SUBDIR += sdrangel
     SUBDIR += sdr++
+    SUBDIR += sdrangel
     SUBDIR += ser2net
     SUBDIR += serialoverip
     SUBDIR += sigdigger
