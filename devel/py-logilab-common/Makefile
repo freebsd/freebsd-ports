@@ -1,13 +1,13 @@
 PORTNAME=	logilab-common
-PORTVERSION=	1.11.0
-PORTREVISION=	2
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	logilab_common-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common low-level libraries shared among logilab projects
-WWW=		https://logilab-common.readthedocs.io/en/latest/
+WWW=		https://forge.extranet.logilab.fr/open-source/logilab-common
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
