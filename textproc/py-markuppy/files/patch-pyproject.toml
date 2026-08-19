@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-03-19 21:45:34 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "MarkupPy"
++name = "markuppy"
+ version = "1.18"
+ description = "An HTML/XML generator"
+ readme = "README.md"
+@@ -31,4 +31,4 @@ Documentation = "https://tylerbakke.github.io/MarkupPy
+ "Bug Tracker" = "https://github.com/tylerbakke/MarkupPy/issues"
+ 
+ [tool.setuptools]
+-packages = ["MarkupPy"] 
+\ No newline at end of file
++packages = ["MarkupPy"] 
