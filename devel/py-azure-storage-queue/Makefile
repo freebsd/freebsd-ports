@@ -1,9 +1,9 @@
 PORTNAME=	azure-storage-queue
-DISTVERSION=	12.17.0b1
+PORTVERSION=	12.17.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	azure_storage_queue-${DISTVERSION}
+DISTNAME=	azure_storage_queue-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Azure Queue Storage Client Library for Python
