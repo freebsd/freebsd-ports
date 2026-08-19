@@ -1,21 +1,19 @@
 PORTNAME=	markups
-PORTVERSION=	4.0.0
-PORTREVISION=	3
+PORTVERSION=	4.1.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Markups-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper around various text markup languages
-WWW=		https://github.com/retext-project/pymarkups
+WWW=		https://pymarkups.readthedocs.io/en/latest/ \
+		https://github.com/retext-project/pymarkups
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.2:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-markdown-math>=0:textproc/py-python-markdown-math@${PY_FLAVOR}
 TEST_DEPENDS=	asciidoc>=0:textproc/asciidoc \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0,1:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
