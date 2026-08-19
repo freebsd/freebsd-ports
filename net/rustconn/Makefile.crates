@@ -99,7 +99,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		coreaudio-rs-0.14.2 \
-		cpal-0.18.1 \
+		cpal-0.18.2 \
 		cpubits-0.1.1 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
@@ -230,7 +230,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		gtk4-0.11.4 \
 		gtk4-macros-0.11.4 \
 		gtk4-sys-0.11.4 \
-		h2-0.4.15 \
+		h2-0.4.16 \
 		half-2.7.1 \
 		harfrust-0.12.0 \
 		hash32-0.2.1 \
@@ -623,7 +623,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		usvg-0.48.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.24.0 \
+		uuid-1.24.1 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version-compare-0.2.1 \
@@ -724,4 +724,4 @@ CARGO_CRATES=	addchain-0.2.1 \
 		zune-jpeg-0.5.15 \
 		zvariant-5.14.0 \
 		zvariant_derive-5.14.0 \
-		zvariant_utils-4.0.0
+		zvariant_utils-4.1.0
