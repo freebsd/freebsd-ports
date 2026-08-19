@@ -1,5 +1,5 @@
 PORTNAME=	libpsl
-PORTVERSION=	0.22.0
+PORTVERSION=	0.23.0
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/rockdaboot/libpsl/releases/download/${PORTVERSION}/
 
