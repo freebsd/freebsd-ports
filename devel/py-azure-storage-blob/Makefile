@@ -1,9 +1,9 @@
 PORTNAME=	azure-storage-blob
-DISTVERSION=	12.30.0b1
+PORTVERSION=	12.30.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	azure_storage_blob-${DISTVERSION}
+DISTNAME=	azure_storage_blob-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Blob Storage Client Library for Python
