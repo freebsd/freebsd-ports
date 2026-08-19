@@ -20,6 +20,8 @@ bin/sload_f2fs
 bin/unpack_bootimg
 share/bash-completion/completions/adb
 share/bash-completion/completions/fastboot
+share/zsh/site-functions/_adb
+share/zsh/site-functions/_fastboot
 share/man/man1/adb.1.gz
 %%DATADIR%%/completions/adb
 %%DATADIR%%/completions/fastboot
