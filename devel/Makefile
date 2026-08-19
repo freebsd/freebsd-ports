@@ -5019,6 +5019,7 @@
     SUBDIR += py-electrum-aionostr
     SUBDIR += py-electrum-ecc
     SUBDIR += py-eliot
+    SUBDIR += py-encutils
     SUBDIR += py-enlighten
     SUBDIR += py-entrypoint2
     SUBDIR += py-entrypoints

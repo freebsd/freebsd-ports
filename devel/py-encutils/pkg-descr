@@ -1,0 +1,2 @@
+encutils provides a collection of helper functions to detect encodings of text
+files (like HTML, XHTML, XML, CSS, etc.) retrieved via HTTP, file or string.
