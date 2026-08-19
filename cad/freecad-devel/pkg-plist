@@ -11,7 +11,6 @@ FreeCAD/Ext/freecad/gui/RemoteDebugger.py
 FreeCAD/Ext/freecad/gui/RemoteDebugger.ui
 FreeCAD/Ext/lazy_loader/__init__.py
 FreeCAD/Ext/lazy_loader/lazy_loader.py
-FreeCAD/Mod/AddonManager/ALLOWED_PYTHON_PACKAGES.txt
 FreeCAD/Mod/AddonManager/Addon.py
 FreeCAD/Mod/AddonManager/AddonCatalog.py
 FreeCAD/Mod/AddonManager/AddonCatalog.schema.json
@@ -122,6 +121,7 @@ FreeCAD/Mod/AddonManager/addonmanager_metadata.py
 FreeCAD/Mod/AddonManager/addonmanager_package_details_controller.py
 FreeCAD/Mod/AddonManager/addonmanager_preferences_defaults.json
 FreeCAD/Mod/AddonManager/addonmanager_preferences_migrations.py
+FreeCAD/Mod/AddonManager/addonmanager_python_constraints.py
 FreeCAD/Mod/AddonManager/addonmanager_python_deps.py
 FreeCAD/Mod/AddonManager/addonmanager_python_deps_commands.py
 FreeCAD/Mod/AddonManager/addonmanager_python_deps_gui.py
@@ -153,6 +153,7 @@ FreeCAD/Mod/AddonManager/update_all_progress.ui
 FreeCAD/Mod/Assembly/Assembly/__init__.py
 FreeCAD/Mod/Assembly/AssemblyImport.py
 FreeCAD/Mod/Assembly/AssemblyTests/MockGui.py
+FreeCAD/Mod/Assembly/AssemblyTests/TestCommandCreateView.py
 FreeCAD/Mod/Assembly/AssemblyTests/TestCommandInsertLink.py
 FreeCAD/Mod/Assembly/AssemblyTests/TestCore.py
 FreeCAD/Mod/Assembly/AssemblyTests/TestSimulationExport.py
@@ -397,6 +398,8 @@ FreeCAD/Mod/BIM/nativeifc/ifc_viewproviders.py
 FreeCAD/Mod/CAM/CAMTests/Drilling_1.FCStd
 FreeCAD/Mod/CAM/CAMTests/FilePathTestUtils.py
 FreeCAD/Mod/CAM/CAMTests/Fixtures/OpHelix_v0-21.FCStd
+FreeCAD/Mod/CAM/CAMTests/Fixtures/test_17748_cam_profile.FCStd
+FreeCAD/Mod/CAM/CAMTests/Fixtures/test_28534_truncated_pocket.FCStd
 FreeCAD/Mod/CAM/CAMTests/PathTestUtils.py
 FreeCAD/Mod/CAM/CAMTests/PostTestMocks.py
 FreeCAD/Mod/CAM/CAMTests/TestAreaOperations.py
@@ -441,6 +444,7 @@ FreeCAD/Mod/CAM/CAMTests/TestPathHelix.py
 FreeCAD/Mod/CAM/CAMTests/TestPathHelixGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathHelpers.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLanguage.py
+FreeCAD/Mod/CAM/CAMTests/TestPathLeadInOutGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLog.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLogNew.py
 FreeCAD/Mod/CAM/CAMTests/TestPathOpDeburr.py
@@ -492,6 +496,7 @@ FreeCAD/Mod/CAM/CAMTests/TestPostOutput.py
 FreeCAD/Mod/CAM/CAMTests/TestPostProcessor.py
 FreeCAD/Mod/CAM/CAMTests/TestPostToolProcessing.py
 FreeCAD/Mod/CAM/CAMTests/TestSVGPost.py
+FreeCAD/Mod/CAM/CAMTests/TestSlicer.py
 FreeCAD/Mod/CAM/CAMTests/TestSnapmakerPost.py
 FreeCAD/Mod/CAM/CAMTests/TestTSPSolver.py
 FreeCAD/Mod/CAM/CAMTests/TestTestPost.py
@@ -535,6 +540,7 @@ FreeCAD/Mod/CAM/Path/Base/Generator/dogboneII.py
 FreeCAD/Mod/CAM/Path/Base/Generator/drill.py
 FreeCAD/Mod/CAM/Path/Base/Generator/facing_common.py
 FreeCAD/Mod/CAM/Path/Base/Generator/helix.py
+FreeCAD/Mod/CAM/Path/Base/Generator/leadinout.py
 FreeCAD/Mod/CAM/Path/Base/Generator/linking.py
 FreeCAD/Mod/CAM/Path/Base/Generator/ramp_entry.py
 FreeCAD/Mod/CAM/Path/Base/Generator/rotary_dropcutter.py
@@ -1266,7 +1272,9 @@ FreeCAD/Mod/Fem/femexamples/frequency_beamsimple.py
 FreeCAD/Mod/Fem/femexamples/gmsh_adaptive.py
 FreeCAD/Mod/Fem/femexamples/gmsh_transfinite_automation.py
 FreeCAD/Mod/Fem/femexamples/gmsh_transfinite_manual.py
+FreeCAD/Mod/Fem/femexamples/inductive_heating_axisymmetric.py
 FreeCAD/Mod/Fem/femexamples/magnetic_shielding_2D.py
+FreeCAD/Mod/Fem/femexamples/magnetization_3D.py
 FreeCAD/Mod/Fem/femexamples/manager.py
 FreeCAD/Mod/Fem/femexamples/material_multiple_bendingbeam_fiveboxes.py
 FreeCAD/Mod/Fem/femexamples/material_multiple_bendingbeam_fivefaces.py

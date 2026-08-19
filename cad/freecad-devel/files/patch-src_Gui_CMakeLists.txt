@@ -1,4 +1,4 @@
---- src/Gui/CMakeLists.txt.orig	2026-06-22 10:15:48 UTC
+--- src/Gui/CMakeLists.txt.orig	2026-08-19 16:27:43 UTC
 +++ src/Gui/CMakeLists.txt
 @@ -116,7 +116,7 @@ else(MSVC)
          FreeCADApp
@@ -9,7 +9,7 @@
          ${3DCONNEXION_LINKFLAGS}
      )
  endif(MSVC)
-@@ -1521,13 +1521,13 @@ else(WIN32)
+@@ -1544,13 +1544,13 @@ else(WIN32)
      INSTALL(TARGETS FreeCADGui
          LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
      )
