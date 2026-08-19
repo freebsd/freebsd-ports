@@ -1,5 +1,6 @@
 PORTNAME=	libhangul
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	korean
 
 MAINTAINER=	jkim@FreeBSD.org
