@@ -2,9 +2,8 @@
   "private": "true",
   "name": "deltachat-desktop",
   "type": "module",
-  "version": "2.57.0",
+  "version": "2.59.0",
   "scripts": {
-    "preinstall": "node ./bin/check-nodejs-version.js",
     "check": "pnpm check:types && pnpm check:lint && pnpm check:format && pnpm check:target-versions",
     "check:types": "pnpm -r --no-bail check:types",
     "check:lint": "eslint . --cache",
@@ -58,5 +57,5 @@
     "xml-js": "^1.6.11",
     "yaml": "^2.8.3"
   },
-  "packageManager": "pnpm@11.9.0"
+  "packageManager": "pnpm@11.21.0"
 }

@@ -560,11 +560,6 @@ share/applications/deltachat.desktop
 %%DATADIR%%/node_modules/braces/package.json
 %%DATADIR%%/node_modules/chokidar/LICENSE
 %%DATADIR%%/node_modules/chokidar/README.md
-%%DATADIR%%/node_modules/chokidar/esm/handler.d.ts
-%%DATADIR%%/node_modules/chokidar/esm/handler.js
-%%DATADIR%%/node_modules/chokidar/esm/index.d.ts
-%%DATADIR%%/node_modules/chokidar/esm/index.js
-%%DATADIR%%/node_modules/chokidar/esm/package.json
 %%DATADIR%%/node_modules/chokidar/handler.d.ts
 %%DATADIR%%/node_modules/chokidar/handler.js
 %%DATADIR%%/node_modules/chokidar/index.d.ts
@@ -644,7 +639,6 @@ share/applications/deltachat.desktop
 %%DATADIR%%/node_modules/node-addon-api/tools/clang-format.js
 %%DATADIR%%/node_modules/node-addon-api/tools/conversion.js
 %%DATADIR%%/node_modules/node-addon-api/tools/eslint-format.js
-%%DATADIR%%/node_modules/picomatch/CHANGELOG.md
 %%DATADIR%%/node_modules/picomatch/LICENSE
 %%DATADIR%%/node_modules/picomatch/README.md
 %%DATADIR%%/node_modules/picomatch/index.js
@@ -787,9 +781,6 @@ share/applications/deltachat.desktop
 %%DATADIR%%/node_modules/preact/test-utils/src/index.js
 %%DATADIR%%/node_modules/readdirp/LICENSE
 %%DATADIR%%/node_modules/readdirp/README.md
-%%DATADIR%%/node_modules/readdirp/esm/index.d.ts
-%%DATADIR%%/node_modules/readdirp/esm/index.js
-%%DATADIR%%/node_modules/readdirp/esm/package.json
 %%DATADIR%%/node_modules/readdirp/index.d.ts
 %%DATADIR%%/node_modules/readdirp/index.js
 %%DATADIR%%/node_modules/readdirp/package.json
