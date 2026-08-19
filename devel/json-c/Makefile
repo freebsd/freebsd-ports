@@ -1,8 +1,8 @@
 PORTNAME=	json-c
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://s3.amazonaws.com/json-c_releases/releases/ \
-		LOCAL/sunpoet
+#MASTER_SITES=	https://s3.amazonaws.com/json-c_releases/releases/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON (JavaScript Object Notation) implementation in C
@@ -31,5 +31,8 @@ CMAKE_ON=	BUILD_APPS \
 		DISABLE_EXTRA_LIBS \
 		DISABLE_WERROR
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_TAGNAME=	81092b3
 
 .include <bsd.port.mk>
