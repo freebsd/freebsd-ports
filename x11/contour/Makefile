@@ -1,6 +1,6 @@
 PORTNAME=	contour
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3.8249
+DISTVERSION=	0.7.0.8982
 CATEGORIES=	x11
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -20,11 +20,12 @@ LIB_DEPENDS=	libunicode.so:devel/libunicode-contour \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libssh2.so:security/libssh2 \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libxkbcommon.so:x11/libxkbcommon
 TEST_DEPENDS=	${LOCALBASE}/lib/cmake/Catch2/Catch2Config.cmake:devel/catch2
 
 USES=		cmake:testing compiler desktop-file-utils gl gnome pkgconfig \
-		qt:6 xorg
+		qt:6 ssl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	contour-terminal
@@ -32,7 +33,7 @@ GH_ACCOUNT=	contour-terminal
 USE_XORG=	xcb
 USE_GL=		opengl
 USE_GNOME=	cairo
-USE_QT=		base declarative multimedia tools:build
+USE_QT=		base declarative multimedia speech tools:build
 
 CMAKE_ON=		CONTOUR_INSTALL_TOOLS
 CMAKE_OFF=		CONTOUR_USE_CPM
@@ -44,8 +45,8 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${ARCH} == i386
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_crispy_read__selector.h
+.if ${ARCH} == i386
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_crispy_ReadSelector.hpp
 .endif
 
 .if ${ARCH:Mpowerpc*}
@@ -57,11 +58,11 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/src/contour/shell-integration/shell-integration.bash \
+	${INSTALL_DATA} ${WRKSRC}/src/contour/cli/shell-integration/shell-integration.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/contour/shell-integration/shell-integration.fish \
+	${INSTALL_DATA} ${WRKSRC}/src/contour/cli/shell-integration/shell-integration.fish \
 		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/${PORTNAME}.fish
-	${INSTALL_DATA} ${WRKSRC}/src/contour/shell-integration/shell-integration.zsh \
+	${INSTALL_DATA} ${WRKSRC}/src/contour/cli/shell-integration/shell-integration.zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 post-install-DOCS-on:
