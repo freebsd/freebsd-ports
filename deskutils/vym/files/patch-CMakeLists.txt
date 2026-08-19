@@ -1,26 +1,62 @@
---- CMakeLists.txt.orig	2023-03-22 15:26:14 UTC
+--- CMakeLists.txt.orig	2026-07-04 22:56:25 UTC
 +++ CMakeLists.txt
-@@ -123,7 +123,8 @@ message(STATUS "CMAKE_BINARY_DIR: ${CMAKE_BINARY_DIR}"
- message(STATUS "ts_files: ${ts_files}")
- message(STATUS "qm_files: ${qm_files}")
+@@ -62,32 +62,6 @@ find_package(Qt6 COMPONENTS ${QtComponents} REQUIRED)
+ find_package(Qt6 REQUIRED COMPONENTS Core)
+ find_package(Qt6 COMPONENTS ${QtComponents} REQUIRED)
  
--ADD_COMPILE_DEFINITIONS(VYMBASEDIR="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}")
+-find_package (Git)
+-if (GIT_FOUND)
+-      message("git found: ${GIT_EXECUTABLE} in version ${GIT_VERSION_STRING}")
+-
+-    execute_process(
+-        COMMAND ${GIT_EXECUTABLE} -C ${CMAKE_SOURCE_DIR} branch --show-current
+-        RESULT_VARIABLE RESULT
+-        OUTPUT_VARIABLE GIT_BRANCH)
+-
+-    execute_process(
+-        COMMAND ${GIT_EXECUTABLE} -C ${CMAKE_SOURCE_DIR} rev-parse --short HEAD
+-        RESULT_VARIABLE RESULT
+-        OUTPUT_VARIABLE GIT_COMMIT_HASH)
+-
+-    string (STRIP ${GIT_BRANCH} GIT_BRANCH)
+-    string (STRIP ${GIT_COMMIT_HASH} GIT_COMMIT_HASH)
+-
+-    message(STATUS "vym: git branch: ${OUTPUT} - commit: ${GIT_COMMIT_HASH}")
+-
+-    add_compile_definitions(
+-        GIT_BRANCH="${GIT_BRANCH}"
+-        GIT_COMMIT_HASH="${GIT_COMMIT_HASH}")
+-
+-    configure_file(${CMAKE_SOURCE_DIR}/src/git.h.in ${CMAKE_SOURCE_DIR}/src/git.h)
+-endif (GIT_FOUND)
+-
+ # Translations
+ #
+ # To update the translation files based on source code changes
+@@ -169,9 +143,11 @@ set(VYM_SHARE_SUBDIR "vym")
+ # On Unix-like systems, place app data under a dedicated subdir
+ # so runtime looks in .../share/vym for resources.
+ set(VYM_SHARE_SUBDIR "vym")
+-ADD_COMPILE_DEFINITIONS(VYMBASEDIR="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}/${VYM_SHARE_SUBDIR}")
 +ADD_COMPILE_DEFINITIONS(VYMBASEDIR="${DATADIR}")
++if (VYM_DOCS)
 +ADD_COMPILE_DEFINITIONS(VYM_DOCDIR="${DOCSDIR}")
- 
- add_executable(vym ${VymSources} vym.qrc ${qm_files})
- target_link_libraries(vym ${QtLibraries})
-@@ -156,9 +157,11 @@ add_custom_target(make-translations-directory ALL
- add_dependencies(vym make-translations-directory)
- 
- install(DIRECTORY demos DESTINATION ${CMAKE_INSTALL_DATAROOTDIR})
--install(DIRECTORY doc DESTINATION ${CMAKE_INSTALL_DOCDIR})
-+if(VYM_DOCS)
-+install(DIRECTORY doc/ DESTINATION ${CMAKE_INSTALL_DOCDIR} FILES_MATCHING PATTERN "*.pdf")
-+install(FILES README.md DESTINATION ${CMAKE_INSTALL_DOCDIR})
 +endif()
- install(FILES doc/vym.1.gz DESTINATION ${CMAKE_INSTALL_MANDIR})
--install(FILES README.md LICENSE.txt DESTINATION ${CMAKE_INSTALL_DOCDIR})
- install(DIRECTORY exports flags icons macros ${CMAKE_BINARY_DIR}/translations scripts styles DESTINATION ${CMAKE_INSTALL_DATAROOTDIR})
+ 
+-
+ # FIXME qm_files needed?
+ #add_executable(vym ${VymSources} vym.qrc ${qm_files})
+ qt_add_executable(vym MACOSX_BUNDLE ${VymSources} vym.qrc ${qm_files} ) # FIXME Icon missing?
+@@ -263,9 +239,11 @@ install(DIRECTORY demos DESTINATION ${CMAKE_INSTALL_DA
+ 
+ 
+ install(DIRECTORY demos DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${VYM_SHARE_SUBDIR})
++if(VYM_DOCS)
+ install(DIRECTORY doc DESTINATION ${CMAKE_INSTALL_DOCDIR} FILES_MATCHING PATTERN "*.pdf")
+-install(FILES doc/vym.1.gz DESTINATION ${CMAKE_INSTALL_MANDIR})
+ install(FILES README.md LICENSE.txt DESTINATION ${CMAKE_INSTALL_DOCDIR})
++endif()
++install(FILES doc/vym.1.gz DESTINATION ${CMAKE_INSTALL_MANDIR})
+ install(DIRECTORY exports flags icons macros ${CMAKE_BINARY_DIR}/translations scripts styles DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${VYM_SHARE_SUBDIR})
  
  if(UNIX)
