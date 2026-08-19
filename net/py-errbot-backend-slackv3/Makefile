@@ -1,9 +1,9 @@
 PORTNAME=	errbot-backend-slackv3
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	errbot_backend_slackv3-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Errbot SlackV3 backend plugin
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.6:textproc/py-markdown@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}slack-sdk>=3.12.0:net-im/py-slack-sdk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}slack-sdk>=3.33.5:net-im/py-slack-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}slackeventsapi>=3.0.0:net-im/py-slackeventsapi@${PY_FLAVOR}
 
 USES=		python
