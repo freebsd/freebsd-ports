@@ -1,4 +1,3 @@
-libexec/nginx/ngx_http_lua_module.so
 share/nginx/modules/nginx-module-lua/config
 share/nginx/modules/nginx-module-lua/src/api/ngx_http_lua_api.h
 share/nginx/modules/nginx-module-lua/src/ddebug.h
@@ -7,7 +6,6 @@ share/nginx/modules/nginx-module-lua/src/ngx_http_lua_accessby.h
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_api.c
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_args.c
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_args.h
-share/nginx/modules/nginx-module-lua/src/ngx_http_lua_autoconf.h
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_balancer.c
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_balancer.h
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_bodyfilterby.c

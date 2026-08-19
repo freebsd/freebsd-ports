@@ -335,13 +335,13 @@ pre-configure-SMALL_LIGHT-on:
 
 pre-configure-LUA-on:
 	@${RM} -rf ${WRKSRC_lua}
-	@cd ${LOCALBASE}/share/nginx/modules/nginx-module-lua && \
-		${COPYTREE_SHARE} . ${WRKSRC_lua}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-lua ${WRKSRC_lua}
+	@${CHMOD} -R u+w ${WRKSRC_lua}
 
 pre-configure-LUASTREAM-on:
 	@${RM} -rf ${WRKSRC_luastream}
-	@cd ${LOCALBASE}/share/nginx/modules/nginx-module-lua-stream && \
-		${COPYTREE_SHARE} . ${WRKSRC_luastream}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-lua-stream ${WRKSRC_luastream}
+	@${CHMOD} -R u+w ${WRKSRC_luastream}
 
 do-configure-NJS-on:
 	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} )
