@@ -1,8 +1,10 @@
 PORTNAME=	argparse-manpage
-PORTVERSION=	4.6
+PORTVERSION=	4.7
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/praiskup/argparse-manpage/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	argparse_manpage-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Build manual page from python's ArgumentParser object
