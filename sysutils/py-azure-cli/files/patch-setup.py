@@ -1,6 +1,6 @@
 --- setup.py.orig	2026-06-30 11:02:08 UTC
 +++ setup.py
-@@ -51,96 +51,96 @@ DEPENDENCIES = [
+@@ -51,117 +51,117 @@ DEPENDENCIES = [
  ]
  
  DEPENDENCIES = [
@@ -185,7 +185,9 @@
      # On Linux, the distribution (Ubuntu, Debian, etc) and version are checked for `az feedback`
      'distro; sys_platform == "linux"',
      'fabric~=3.2.2',
-@@ -149,19 +149,19 @@ DEPENDENCIES = [
+     'javaproperties~=0.5.1',
+-    'jsondiff~=2.0.0',
++    'jsondiff>=2.0.0',
      'packaging>=20.9',
      'paramiko>=2.0.8,<4.0.0',
      'pycomposefile>=0.0.34',
