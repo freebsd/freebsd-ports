@@ -1,10 +1,9 @@
 PORTNAME=	pylint-django
-PORTVERSION=	2.7.0
-DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTVERSION=	2.8.0
 CATEGORIES=	devel python
-#MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pylint_django-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pylint plugin to understand the Django web framework
@@ -21,9 +20,6 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	pylint-dev
 
 OPTIONS_DEFINE=	DJANGO
 DJANGO_DESC=	Django support
