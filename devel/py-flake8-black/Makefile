@@ -1,9 +1,9 @@
 PORTNAME=	flake8-black
-PORTVERSION=	0.3.6
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	flake8_black-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	flake8 plugin to call black as a code style validator
