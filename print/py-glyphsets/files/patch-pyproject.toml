@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-06-29 09:58:29 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+    "setuptools>=45",
+-   "setuptools_scm[toml]>=8.1.0,<8.2"
++   "setuptools_scm[toml]>=8.1.0"
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -52,7 +52,7 @@ dependencies = [
+    "requests",
+    "setuptools",
+    "FontTools[ufo]",
+-   "glyphsLib>=6.9.5",
++   "glyphsLib",
+    "defcon",
+    "unicodedata2",
+    "gflanguages>=0.7.9",
