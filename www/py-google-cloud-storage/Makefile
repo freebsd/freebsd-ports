@@ -38,7 +38,7 @@ GRPC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=2.27.0<3.0.0:www/py-go
 			${PYTHON_PKGNAMEPREFIX}grpcio-status>=1.75.1<2.0.0:devel/py-grpcio-status@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}proto-plus>=1.25.0<2.0.0:devel/py-proto-plus@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}protobuf>=4.25.8,1<8.0.0,1:devel/py-protobuf@${PY_FLAVOR}
-PROTOBUF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3.20.2,1<7.0.0,1:devel/py-protobuf@${PY_FLAVOR}
+PROTOBUF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=4.25.8,1<8.0.0,1:devel/py-protobuf@${PY_FLAVOR}
 TRACING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.1.0<2.0.0:devel/py-opentelemetry-api@${PY_FLAVOR}
 
 .include <bsd.port.mk>
