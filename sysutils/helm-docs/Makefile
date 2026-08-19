@@ -1,6 +1,7 @@
 PORTNAME=	helm-docs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.14.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	owlandrews@protonmail.com

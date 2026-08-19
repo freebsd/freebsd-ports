@@ -1,7 +1,7 @@
 PORTNAME=	gol
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.35
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:

@@ -1,7 +1,7 @@
 PORTNAME=	please
 DISTVERSIONPREFIX=	v
 DISTVERSION=	17.30.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/thought-machine/please/${DISTVERSIONFULL}/
 DISTFILES=	go.mod

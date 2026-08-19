@@ -1,6 +1,6 @@
 PORTNAME=	amneziawg-go
 DISTVERSION=	0.2.16
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://github.com/amnezia-vpn/amneziawg-go/
 
