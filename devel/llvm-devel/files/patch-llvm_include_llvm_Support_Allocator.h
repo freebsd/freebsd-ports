@@ -4,7 +4,7 @@
  /// CurPtr when the requested alignment is no greater than MinAlign.
  template <typename AllocatorT = MallocAllocator, size_t SlabSize = 4096,
            size_t SizeThreshold = SlabSize, size_t GrowthDelay = 128,
-+#ifdef __ILP32__
++#ifdef __i386__
 +          size_t MinAlign = 4>
 +#else
            size_t MinAlign = 8>
