@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-03-09 11:30:49 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "ImageIO"
++name = "imageio"
+ version = "2.37.3"
+ authors = [
+     {name = "ImageIO contributors"}
+@@ -15,8 +15,7 @@ description = "Read and write images and video across 
+ dynamic = ["readme"]
+ description = "Read and write images and video across all major formats. Supports scientific and volumetric data."
+ 
+-license = "BSD-2-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-2-Clause"}
+ requires-python = ">=3.10"
+ dependencies = [
+     "numpy",
