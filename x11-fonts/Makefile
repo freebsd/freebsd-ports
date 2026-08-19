@@ -63,6 +63,7 @@
     SUBDIR += cyr-rfx
     SUBDIR += datalegreya
     SUBDIR += dejavu
+    SUBDIR += departure-mono
     SUBDIR += dina
     SUBDIR += doulos
     SUBDIR += doulos-compact
