@@ -59,11 +59,11 @@ lib/httrack/libsimple.so.1.0.0
 lib/libhtsjava.a
 lib/libhtsjava.so
 lib/libhtsjava.so.3
-lib/libhtsjava.so.3.0.3
+lib/libhtsjava.so.3.0.4
 lib/libhttrack.a
 lib/libhttrack.so
 lib/libhttrack.so.3
-lib/libhttrack.so.3.0.3
+lib/libhttrack.so.3.0.4
 share/applications/WebHTTrack-Websites.desktop
 share/applications/WebHTTrack.desktop
 %%PORTDOCS%%%%DOCSDIR%%/abuse.html
