@@ -1,6 +1,5 @@
 PORTNAME=	389-ds-base
-DISTVERSION=	3.2.1
-PORTREVISION=	4
+DISTVERSION=	3.2.2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/389ds/389-ds-base/releases/download/${PORTNAME}-${DISTVERSION}/
 
