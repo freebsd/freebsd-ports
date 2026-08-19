@@ -1,29 +1,24 @@
 PORTNAME=	opengist
-PORTVERSION=	1.13.1
-PORTREVISION=	2
+PORTVERSION=	1.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www textproc
-MASTER_SITES=	LOCAL/fox/:js
-DISTFILES=	opengist-${DISTVERSION}-node_modules.tgz:js
+
+# prebuilt frontend assets published upstream (see upstream PR #768)
+MASTER_SITES+=	https://github.com/thomiceli/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webdist
+DISTFILES+=	${PORTNAME}${DISTVERSION}-webdist.tar.gz:webdist
 
 MAINTAINER=	fox@FreeBSD.org
-COMMENT=	Self-hosted pastebin powered by Git, open-source alternative to Github Gist.
+COMMENT=	Self-hosted pastebin powered by Git, open-source alternative to Github Gist
 WWW=		https://opengist.io/
 
 LICENSE=	AGPLv3
 
 BROKEN_i386=	fails to build
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64
 
-BUILD_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:1.26+,modules nodejs:24,build
-
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	thomiceli
-GH_PROJECT=	opengist
-USE_RC_SUBR=	opengist
+USES=		go:1.26+,modules
 
 GO_MODULE=	github.com/thomiceli/opengist
 GO_ENV+=	GOTOOLCHAIN=local+path
@@ -31,20 +26,21 @@ GO_TARGET=	.
 GO_BUILDFLAGS=	-tags fs_embed \
 		-ldflags="-X github.com/thomiceli/opengist/internal/config.OpengistVersion=v${DISTVERSION}"
 
+USE_RC_SUBR=	opengist
+
 GROUPS=		opengist
 USERS=		opengist
 
+# The go:modules source zip extracts to WRKSRC; unpack prebuilt web assets
+# there.  The tarball wraps everything in a top-level opengist-webdist/
+# directory, so strip it to land .vite/ and assets/ directly under public/.
 post-extract:
-	@${RLN} ${WRKDIR}/node_modules ${WRKSRC}/node_modules
+	@${TAR} -xzf ${_DISTDIR}/${PORTNAME}${DISTVERSION}-webdist.tar.gz \
+		--strip-components=1 -C ${WRKSRC}/public
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|opengist.db|file:/var/db/${PORTNAME}/opengist.db|g' \
 		${WRKSRC}/config.yml
-
-pre-build:
-	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} npx --offline vite -c public/vite.config.js \
-		build
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
@@ -52,26 +48,5 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/config.yml.sample
 	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
 	${MKDIR} ${STAGEDIR}/var/run/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${WWWDIR}/assets
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} public/assets/* \
-		${STAGEDIR}${WWWDIR}/assets
-
-#
-# To update the opengist-${DISTVERSION}-node_modules.tgz archive:
-# 1. Comment out the DISTFILES and post-extract lines
-# 2. Run 'make makesum regenerate-node_modules-distfile clean'
-# 3. Upload the archive
-# 4. Uncomment the lines from step #1
-# 5. Run 'make makesum'
-#
-
-regenerate-node_modules-distfile: patch
-	cd ${WRKSRC} && \
-		${RM} -r node_modules && \
-		${MAKE_ENV} npm install --prefix ${WRKSRC} && \
-		${TAR} czf ${DISTDIR}/opengist-${DISTVERSION}-node_modules.tgz \
-		node_modules && \
-		${ECHO} "Please upload the file ${DISTDIR}/opengist-${DISTVERSION}-node_modules.tgz"
 
 .include <bsd.port.mk>

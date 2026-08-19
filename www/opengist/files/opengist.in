@@ -8,8 +8,6 @@
 #
 # opengist_enable (bool):			Set it to "YES" to enable opengist server.
 # 						Default is "NO".
-# opengist_home (str):				Set the home directory for opengist server.
-#						Default is "%%WWWDIR%%".
 # opengist_user (str):				Set the user for running opengist server.
 #						Default is "opengist".
 # opengist_group (str):				Set the group for running opengist server.
@@ -22,6 +20,8 @@
 #						Default is "info"
 # opengist_syslog_output_facility (str):	Set logging facility
 #						Default is "daemon"
+# opengist_args (str):				Extra arguments passed to opengist.
+#						Default is "".
 
 . /etc/rc.subr
 
@@ -33,13 +33,13 @@ load_rc_config ${name}
 : ${opengist_enable:="NO"}
 : ${opengist_user:="opengist"}
 : ${opengist_group:="opengist"}
-: ${opengist_files:="/var/db/opengist/"}
-: ${opengist_home:="%%WWWDIR%%"}
 : ${opengist_config_file:="%%PREFIX%%/etc/${name}/config.yml"}
 : ${opengist_syslog_output_enable:="NO"}
 : ${opengist_syslog_output_priority:="info"}
 : ${opengist_syslog_output_facility:="daemon"}
+: ${opengist_args:=""}
 
+opengist_syslog_output_flags=""
 if checkyesno opengist_syslog_output_enable; then
 	opengist_syslog_output_flags="-t ${name} -T ${name}"
 
@@ -52,24 +52,38 @@ if checkyesno opengist_syslog_output_enable; then
 	fi
 fi
 
-pidfile=/var/run/opengist/${name}.pid
+pidfile="/var/run/${name}.pid"
+daemon_pidfile="/var/run/${name}-daemon.pid"
 procname="%%PREFIX%%/bin/${name}"
+command="/usr/sbin/daemon"
+command_args="-f -c ${opengist_syslog_output_flags} -p ${pidfile} -P ${daemon_pidfile} \
+    /usr/bin/env -i PATH=%%PREFIX%%/bin:${PATH} \
+    ${procname} -c ${opengist_config_file} ${opengist_args}"
 
-start_precmd="${name}_precmd"
+start_precmd=opengist_startprecmd
+stop_postcmd=opengist_stoppostcmd
 
-opengist_precmd()
+opengist_startprecmd()
 {
 	if [ ! -f ${opengist_config_file} ]; then
-		echo ${opengist_config_file} missing.
+		echo "${opengist_config_file} missing."
 		return 1
+	fi
+	if [ ! -e ${daemon_pidfile} ]; then
+		install -o ${opengist_user} -g ${opengist_group} /dev/null ${daemon_pidfile}
+	fi
+	if [ ! -e ${pidfile} ]; then
+		install -o ${opengist_user} -g ${opengist_group} /dev/null ${pidfile}
 	fi
 }
 
-command="/usr/sbin/daemon"
-command_args="-f ${opengist_syslog_output_flags} -p ${pidfile} \
-    /usr/bin/env -i \"PATH=%%PREFIX%%/bin:${PATH}\" \
-    ${procname} -c ${opengist_config_file}"
-
-cd ${opengist_home}
+opengist_stoppostcmd()
+{
+	if [ -f "${daemon_pidfile}" ]; then
+		pids=$( pgrep -F ${daemon_pidfile} 2>&1 )
+		_err=$?
+		[ ${_err} -eq 0 ] && kill -9 ${pids}
+	fi
+}
 
 run_rc_command "$1"
