@@ -111,6 +111,7 @@
     SUBDIR += ghmm
     SUBDIR += gnudatalanguage
     SUBDIR += gpaw-setups
+    SUBDIR += gperiodic
     SUBDIR += gramps
     SUBDIR += gromacs
     SUBDIR += gsmc

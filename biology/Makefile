@@ -78,7 +78,6 @@
     SUBDIR += gffread
     SUBDIR += gkl
     SUBDIR += gmap
-    SUBDIR += gperiodic
     SUBDIR += graphlan
     SUBDIR += groopm
     SUBDIR += haplohseq
