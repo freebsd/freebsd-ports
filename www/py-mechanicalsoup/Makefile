@@ -1,14 +1,13 @@
 PORTNAME=	mechanicalsoup
-PORTVERSION=	1.3.0
-PORTREVISION=	3
+PORTVERSION=	1.4.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	MechanicalSoup-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library for automating interaction with websites
-WWW=		https://github.com/MechanicalSoup/MechanicalSoup
+WWW=		https://mechanicalsoup.readthedocs.io/en/stable/ \
+		https://github.com/MechanicalSoup/MechanicalSoup
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,15 +15,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.7:www/py-beautifulsoup@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>=2022.12.7:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.22.0:www/py-requests@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.22.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>=2.2.2,1:net/py-urllib3@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-flake8>=1.3.0:devel/py-pytest-flake8@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-httpbin>=0:devel/py-pytest-httpbin@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-mock>=0:www/py-requests-mock@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests-mock>=1.3.0:www/py-requests-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}werkzeug>=3.0.3:www/py-werkzeug@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
