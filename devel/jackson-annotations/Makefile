@@ -1,5 +1,5 @@
 PORTNAME=	jackson-annotations
-DISTVERSION=	2.14.2
+DISTVERSION=	2.19.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/com/fasterxml/jackson/core/${PORTNAME}/${DISTVERSION}/
 EXTRACT_SUFX=	.jar
