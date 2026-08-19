@@ -14,6 +14,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		Incompatible with pkgconf 3.0 and newer
+DEPRECATED=	Upstream is inactive for 5 years.
+EXPIRATION_DATE=2026-09-30
 
 BUILD_DEPENDS=	pkgconf>=1.5.0:devel/pkgconf
 LIB_DEPENDS=	libpkgconf.so:devel/pkgconf
