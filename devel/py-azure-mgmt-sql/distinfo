@@ -1,3 +1,3 @@
-TIMESTAMP = 1782966296
-SHA256 (azure_mgmt_sql-4.0.0b25.tar.gz) = cc9cb3422d0b437abc611b228cce513403c04d7d0e587b6296a8a09d298b91b2
-SIZE (azure_mgmt_sql-4.0.0b25.tar.gz) = 556572
+TIMESTAMP = 1784005116
+SHA256 (azure_mgmt_sql-4.0.0.tar.gz) = b39756f9cf8acee72764f1c745211c6c635fa5f6bfc27174de2a58690917262b
+SIZE (azure_mgmt_sql-4.0.0.tar.gz) = 640741
