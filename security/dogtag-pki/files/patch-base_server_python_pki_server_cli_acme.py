@@ -1,6 +1,6 @@
---- base/server/python/pki/server/cli/acme.py.orig	2025-08-05 19:20:05 UTC
+--- base/server/python/pki/server/cli/acme.py.orig	2026-07-28 16:37:15 UTC
 +++ base/server/python/pki/server/cli/acme.py
-@@ -437,7 +437,7 @@ class ACMEMetadataShowCLI(pki.cli.CLI):
+@@ -440,7 +440,7 @@ class ACMEMetadataShowCLI(pki.cli.CLI):
          config = {}
  
          if not os.path.exists(metadata_conf):
@@ -9,7 +9,7 @@
          else:
              source = metadata_conf
  
-@@ -524,7 +524,7 @@ class ACMEMetadataModifyCLI(pki.cli.CLI):
+@@ -527,7 +527,7 @@ class ACMEMetadataModifyCLI(pki.cli.CLI):
          config = {}
  
          if not os.path.exists(metadata_conf):
@@ -18,7 +18,7 @@
          else:
              source = metadata_conf
  
-@@ -810,7 +810,7 @@ class ACMEDatabaseModifyCLI(pki.cli.CLI):
+@@ -901,7 +901,7 @@ class ACMEDatabaseModifyCLI(pki.cli.CLI):
              pki.server.subsystem.ACME_DATABASE_CLASSES.get(database_type))
  
          if orig_database_type != database_type:
@@ -27,7 +27,7 @@
              logger.info('Loading %s', source)
              pki.util.load_properties(source, config)
  
-@@ -1143,7 +1143,7 @@ class ACMEIssuerModifyCLI(pki.cli.CLI):
+@@ -1321,7 +1321,7 @@ class ACMEIssuerModifyCLI(pki.cli.CLI):
              pki.server.subsystem.ACME_ISSUER_CLASSES.get(issuer_type))
  
          if orig_issuer_type != issuer_type:
@@ -36,7 +36,7 @@
              logger.info('Loading %s', source)
              pki.util.load_properties(source, config)
  
-@@ -1488,7 +1488,7 @@ class ACMERealmModifyCLI(pki.cli.CLI):
+@@ -1742,7 +1742,7 @@ class ACMERealmModifyCLI(pki.cli.CLI):
              pki.server.subsystem.ACME_REALM_CLASSES.get(realm_type))
  
          if orig_realm_type != realm_type:

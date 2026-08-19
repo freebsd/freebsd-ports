@@ -1,4 +1,4 @@
---- base/acme/bin/pki-acme-run.orig	2025-08-05 19:20:05 UTC
+--- base/acme/bin/pki-acme-run.orig	2026-07-28 16:37:15 UTC
 +++ base/acme/bin/pki-acme-run
 @@ -5,7 +5,7 @@
  # SPDX-License-Identifier: GPL-2.0-or-later
@@ -18,7 +18,7 @@
  fi
  
  mkdir -p /conf/acme
-@@ -120,4 +120,4 @@ fi
+@@ -115,4 +115,4 @@ fi
      echo "INFO: Using default realm configuration"
  fi
  

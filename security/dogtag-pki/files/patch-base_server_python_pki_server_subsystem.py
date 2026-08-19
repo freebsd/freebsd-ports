@@ -1,6 +1,6 @@
---- base/server/python/pki/server/subsystem.py.orig	2026-07-12 13:46:52 UTC
+--- base/server/python/pki/server/subsystem.py.orig	2026-07-28 16:37:15 UTC
 +++ base/server/python/pki/server/subsystem.py
-@@ -910,9 +910,14 @@ class PKISubsystem(object):
+@@ -850,9 +850,14 @@ class PKISubsystem(object):
  
          try:
              # export audit-events.properties from pki-server.jar
@@ -17,16 +17,8 @@
 +                'pki-server.jar')
  
              cmd = [
-                 'jar',
-@@ -2218,23 +2223,31 @@ class PKISubsystem(object):
- 
-         classpath = [
-             pki.server.Tomcat.SHARE_DIR + '/bin/tomcat-juli.jar',
--            '/usr/share/java/tomcat-servlet-api.jar',
-+            pki.server.Tomcat.SHARE_DIR + '/lib/servlet-api.jar',
-             pki.server.PKIServer.SHARE_DIR + '/' +
-             self.name + '/webapps/' + self.name + '/WEB-INF/lib/*',
-             self.instance.common_lib_dir + '/*',
+                 'unzip',
+@@ -2476,16 +2481,25 @@ class PKISubsystem(object):
              pki.server.PKIServer.SHARE_DIR + '/lib/*'
          ]
  
@@ -39,9 +31,10 @@
  
 -            # switch to systemd user if different from current user
 +            # switch to service user if different from current user
++            # (FreeBSD has no runuser, use subprocess privilege switching)
              username = pwd.getpwuid(os.getuid()).pw_name
              if username != self.instance.user:
--                cmd.extend(['/usr/sbin/runuser', '-u', self.instance.user, '--'])
+-                cmd.extend(['runuser', '-u', self.instance.user, '--'])
 +                subprocess_kwargs.update({
 +                    'user': self.instance.user,
 +                    'group': self.instance.group,
@@ -55,7 +48,7 @@
          cmd.extend([java_home + '/bin/java'])
  
          cmd.extend([
-@@ -2270,7 +2283,8 @@ class PKISubsystem(object):
+@@ -2520,7 +2534,8 @@ class PKISubsystem(object):
                  input=input,
                  stdout=stdout,
                  stderr=stderr,

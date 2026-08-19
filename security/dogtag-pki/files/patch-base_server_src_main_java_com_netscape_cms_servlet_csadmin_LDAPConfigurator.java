@@ -1,6 +1,6 @@
---- base/server/src/main/java/com/netscape/cms/servlet/csadmin/LDAPConfigurator.java.orig	2025-08-05 19:20:05 UTC
+--- base/server/src/main/java/com/netscape/cms/servlet/csadmin/LDAPConfigurator.java.orig	2026-07-28 16:37:15 UTC
 +++ base/server/src/main/java/com/netscape/cms/servlet/csadmin/LDAPConfigurator.java
-@@ -97,34 +97,34 @@ public class LDAPConfigurator {
+@@ -101,34 +101,34 @@ public class LDAPConfigurator {
  
      public void configureServer() throws Exception {
          logger.info("Configuring DS server");
@@ -41,7 +41,7 @@
          File tmpFile = File.createTempFile("pki-" + subsystem + "-reindex-", ".ldif");
  
          try {
-@@ -151,7 +151,7 @@ public class LDAPConfigurator {
+@@ -155,7 +155,7 @@ public class LDAPConfigurator {
          Map<String, String> params = new HashMap<>();
          params.put("dbuser", dn);
  
@@ -50,7 +50,7 @@
      }
  
      public void revokeDatbaseAccess(String dn) throws Exception {
-@@ -161,7 +161,7 @@ public class LDAPConfigurator {
+@@ -165,7 +165,7 @@ public class LDAPConfigurator {
          Map<String, String> params = new HashMap<>();
          params.put("dbuser", dn);
  
@@ -59,7 +59,7 @@
      }
  
      public List<LDAPEntry> findVLVs() throws Exception {
-@@ -190,7 +190,7 @@ public class LDAPConfigurator {
+@@ -194,7 +194,7 @@ public class LDAPConfigurator {
  
      public void addVLVs(String subsystem) throws Exception {
          logger.info("Add VLVs");
@@ -68,7 +68,7 @@
      }
  
      public void deleteVLVs() throws Exception {
-@@ -211,7 +211,7 @@ public class LDAPConfigurator {
+@@ -215,7 +215,7 @@ public class LDAPConfigurator {
          logger.info("Reindex VLVs");
  
          Collection<LDIFRecord> records = importLDIF(

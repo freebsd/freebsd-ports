@@ -7,7 +7,7 @@
 -    name='Dogtag PKI',
 -    version='10',
 +    name='dogtag-pki',
-+    version='11.7.0',
++    version='11.10.1',
      description='Dogtag Certificate System',
      license='GPL',
      keywords='pki',
