@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2025-10-11 17:33:21 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 77.0.3"]
++requires = ["setuptools >= 61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ authors = [{name = "Mike Bayer", email = "mike_mp@zzzc
+ readme = "README.rst"
+ keywords = ["caching"]
+ authors = [{name = "Mike Bayer", email = "mike_mp@zzzcomputing.com"}]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",
