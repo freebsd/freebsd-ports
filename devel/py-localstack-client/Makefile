@@ -1,9 +1,9 @@
 PORTNAME=	localstack-client
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.11
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	localstack_client-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight Python client for LocalStack
