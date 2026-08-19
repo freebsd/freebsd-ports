@@ -1059,6 +1059,7 @@
     SUBDIR += py-rawkit
     SUBDIR += py-rawpy
     SUBDIR += py-rich-pixels
+    SUBDIR += py-rioxarray
     SUBDIR += py-rlpycairo
     SUBDIR += py-s2
     SUBDIR += py-sane
