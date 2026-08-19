@@ -1,9 +1,9 @@
 PORTNAME=	cython-test-exception-raiser
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	26.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	cython_test_exception_raiser-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Trivial extension that just raises an exception
