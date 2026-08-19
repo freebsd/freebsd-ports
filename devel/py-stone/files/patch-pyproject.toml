@@ -1,9 +1,11 @@
---- pyproject.toml.orig	2026-07-10 16:54:24 UTC
+--- pyproject.toml.orig	2026-07-13 16:57:53 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
- [build-system]
- # setuptools>=77 is required for the SPDX ``license`` expression used in
- # setup.py (see PEP 639).
--requires = ["setuptools>=77"]
-+requires = ["setuptools>=61"]
+@@ -3,7 +3,7 @@
+ # setup.py (see PEP 639). setuptools-scm derives the version from the latest
+ # git tag (e.g. ``v3.5.0`` -> ``3.5.0``), so releases only require tagging,
+ # and writes it to stone/_version.py for runtime access.
+-requires = ["setuptools>=77", "setuptools-scm>=8,<9"]
++requires = ["setuptools>=61", "setuptools-scm>=8"]
  build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]
