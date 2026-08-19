@@ -1,5 +1,14 @@
---- pyproject.toml.orig	2024-04-10 17:45:30 UTC
+--- pyproject.toml.orig	2025-08-01 12:38:23 UTC
 +++ pyproject.toml
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+     "wheel",
+-    "setuptools >= 77.0.3",
++    "setuptools >= 61",
+     "Cython >= 0.29.24",
+     # numpy requirement for wheel builds for distribution on PyPI - building
+     # against 2.x yields wheels that are also compatible with numpy 1.x at
 @@ -15,7 +15,7 @@ build-backend = "setuptools.build_meta"
  build-backend = "setuptools.build_meta"
  
@@ -9,3 +18,13 @@
  authors = [
      {name = "UK Met Office"},
  ]
+@@ -23,8 +23,7 @@ keywords = ["cartography", "map", "transform", "projec
+ readme = "README.md"
+ requires-python = ">=3.10"
+ keywords = ["cartography", "map", "transform", "projection", "pyproj", "shapely", "shapefile"]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-3-Clause"}
+ classifiers = [
+     'Development Status :: 4 - Beta',
+     'Framework :: Matplotlib',
