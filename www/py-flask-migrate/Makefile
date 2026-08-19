@@ -1,10 +1,9 @@
 PORTNAME=	flask-migrate
-PORTVERSION=	4.0.7
-PORTREVISION=	1
+PORTVERSION=	4.1.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Flask-Migrate-${PORTVERSION}
+DISTNAME=	flask_migrate-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database schema migrations for Flask applications
