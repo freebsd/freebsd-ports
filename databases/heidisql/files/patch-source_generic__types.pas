@@ -1,4 +1,4 @@
---- source/generic_types.pas.orig	2026-01-30 17:33:07 UTC
+--- source/generic_types.pas.orig	2026-08-03 17:17:06 UTC
 +++ source/generic_types.pas
 @@ -5,7 +5,11 @@ uses fpjson, jsonparser, SysUtils, RegExpr, SynEditHig
  interface
@@ -13,7 +13,7 @@
  
  type
    TThreeStateBoolean = (nbUnset, nbFalse, nbTrue);
-@@ -140,7 +144,11 @@ var
+@@ -153,7 +157,11 @@ var
  procedure TAppColorScheme.LoadFromSettings;
  var
    i: Integer;
@@ -25,7 +25,7 @@
    dtc: TDBDatatypeCategoryIndex;
  begin
    Name := _('Current custom settings');
-@@ -179,7 +187,11 @@ var
+@@ -192,7 +200,11 @@ var
  procedure TAppColorScheme.Apply;
  var
    i: Integer;

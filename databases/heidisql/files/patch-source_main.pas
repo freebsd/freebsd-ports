@@ -1,4 +1,4 @@
---- source/main.pas.orig	2026-06-09 17:25:49 UTC
+--- source/main.pas.orig	2026-08-03 17:17:06 UTC
 +++ source/main.pas
 @@ -15,9 +15,12 @@ uses
    LazStringUtils, dbconnection, dbstructures, dbstructures.mysql, generic_types,
@@ -15,7 +15,7 @@
  type
  
    // Bind parameters for query tabs
-@@ -7129,7 +7132,11 @@ var
+@@ -7287,7 +7290,11 @@ var
    Editor: TSynMemo;
    Token: String;
    CaretStart, CaretTokenTypeInt: Integer;
@@ -24,10 +24,10 @@
 +{$ELSE}
    Attri: TSynHighlighterAttributes;
 +{$ENDIF}
-   Proposal: TSynCompletion;
-   p: TPoint;
    LineIdx, ColIdx, StartCol, EndCol: Integer;
-@@ -7345,7 +7352,11 @@ var
+   TableIndex: Integer;
+   LineText, Word, Replacement: string;
+@@ -7516,7 +7523,11 @@ var
  var
    Edit: TSynEdit;
    Token: String;
@@ -39,7 +39,7 @@
    TokenType, TokenStart: Integer;
    RowColPos: TPoint;
    SQLFunc: TSQLFunction;
-@@ -13403,7 +13414,11 @@ var
+@@ -13634,7 +13645,11 @@ var
    Editors: TComponentList;
    BaseEditor: TSynMemo;
    KeyStroke: TSynEditKeyStroke;
