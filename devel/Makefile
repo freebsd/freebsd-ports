@@ -6449,6 +6449,7 @@
     SUBDIR += py-validators
     SUBDIR += py-validictory
     SUBDIR += py-vcrpy
+    SUBDIR += py-vcs-versioning
     SUBDIR += py-vcver
     SUBDIR += py-vcversioner
     SUBDIR += py-vendy
