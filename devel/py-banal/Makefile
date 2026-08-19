@@ -1,8 +1,6 @@
 PORTNAME=	banal
-DISTVERSION=	1.0.6
-PORTREVISION=	1
+DISTVERSION=	1.1.2
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
@@ -12,8 +10,12 @@ WWW=		https://github.com/pudo/banal
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_GITHUB=	yes
+GH_ACCOUNT=	pudo
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
