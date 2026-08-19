@@ -1,7 +1,7 @@
 PORTNAME=	freeipa-server
-DISTVERSION=	4.13.1
+DISTVERSION=	4.13.2
 CATEGORIES=	net
-MASTER_SITES=	https://releases.pagure.org/freeipa/
+MASTER_SITES=	https://codeberg.org/freeipa/freeipa/releases/download/release-${DISTVERSION:S/./-/g}/
 DISTNAME=	freeipa-${DISTVERSION}
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -18,8 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/getopt:misc/getopt \
 		${PYTHON_PKGNAMEPREFIX}lesscpy>0:www/py-lesscpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rjsmin>0:archivers/py-rjsmin@${PY_FLAVOR} \
-		bash:shells/bash \
-		samba416>=0:net/samba416
+		bash:shells/bash
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libini_config.so:devel/ding-libs \
@@ -31,8 +30,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpwquality.so:security/libpwquality \
 		libsasl2.so:security/cyrus-sasl2 \
 		libsss_nss_idmap.so:security/sssd2 \
-		libtalloc.so:devel/talloc \
-		libtevent.so:devel/tevent \
+		libtalloc.so:${SAMBA_TALLOC_PORT} \
+		libtevent.so:${SAMBA_TEVENT_PORT} \
 		libunistring.so:devel/libunistring \
 		libuuid.so:misc/libuuid \
 		libxmlrpc.so:net/xmlrpc-c
@@ -67,12 +66,12 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/apache24/mod_auth_gssapi.so:www/freeipa-auth-g
 		${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
 		389-ds-base>=0:net/389-ds-base \
 		dogtag-pki>0:security/dogtag-pki \
-		samba416>=0:net/samba416 \
-		slapi-nis>=0.70.0:net/slapi-nis
+		slapi-nis>=0.70.0:net/slapi-nis \
+		sssd2>=2.13.1_2:security/sssd2
 
 USES=		autoreconf gettext-runtime gettext-tools gmake gssapi:mit iconv \
 		ldap libtool localbase:ldflags nodejs:build pkgconfig python \
-		shebangfix ssl
+		samba shebangfix ssl
 
 USE_RC_SUBR=	ipa-custodia freeipa-server
 
@@ -102,6 +101,8 @@ SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 USERS=		ipaapi kdcproxy
 GROUPS=		ipaapi kdcproxy
+
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 

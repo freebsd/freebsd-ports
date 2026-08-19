@@ -1,10 +1,10 @@
-%%PYTHON_SITELIBDIR%%/ipaclient-4.13.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/ipaclient-4.13.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/ipaclient-4.13.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/ipaclient-4.13.1-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/ipaclient-4.13.1-py%%PYTHON_VER%%.egg-info/not-zip-safe
-%%PYTHON_SITELIBDIR%%/ipaclient-4.13.1-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/ipaclient-4.13.1-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/ipaclient-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/ipaclient-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/ipaclient-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/ipaclient-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/ipaclient-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/not-zip-safe
+%%PYTHON_SITELIBDIR%%/ipaclient-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/ipaclient-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/ipaclient/__init__.py
 %%PYTHON_SITELIBDIR%%/ipaclient/__main__.py
 %%PYTHON_SITELIBDIR%%/ipaclient/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -728,11 +728,11 @@
 %%PYTHON_SITELIBDIR%%/ipaclient/remote_plugins/__pycache__/schema%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipaclient/remote_plugins/compat.py
 %%PYTHON_SITELIBDIR%%/ipaclient/remote_plugins/schema.py
-%%PYTHON_SITELIBDIR%%/ipalib-4.13.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/ipalib-4.13.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/ipalib-4.13.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/ipalib-4.13.1-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/ipalib-4.13.1-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/ipalib-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/ipalib-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/ipalib-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/ipalib-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/ipalib-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/ipalib/__init__.py
 %%PYTHON_SITELIBDIR%%/ipalib/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipalib/__pycache__/__init__%%PYTHON_TAG%%.pyc
@@ -841,11 +841,11 @@
 %%PYTHON_SITELIBDIR%%/ipalib/text.py
 %%PYTHON_SITELIBDIR%%/ipalib/util.py
 %%PYTHON_SITELIBDIR%%/ipalib/x509.py
-%%PYTHON_SITELIBDIR%%/ipaplatform-4.13.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/ipaplatform-4.13.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/ipaplatform-4.13.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/ipaplatform-4.13.1-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/ipaplatform-4.13.1-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/ipaplatform-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/ipaplatform-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/ipaplatform-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/ipaplatform-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/ipaplatform-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/ipaplatform/__init__.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipaplatform/__pycache__/__init__%%PYTHON_TAG%%.pyc
@@ -1068,11 +1068,11 @@
 %%PYTHON_SITELIBDIR%%/ipaplatform/test_fedora_legacy/paths.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/test_fedora_legacy/services.py
 %%PYTHON_SITELIBDIR%%/ipaplatform/test_fedora_legacy/tasks.py
-%%PYTHON_SITELIBDIR%%/ipapython-4.13.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/ipapython-4.13.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/ipapython-4.13.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/ipapython-4.13.1-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/ipapython-4.13.1-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/ipapython-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/ipapython-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/ipapython-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/ipapython-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/ipapython-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/ipapython/__init__.py
 %%PYTHON_SITELIBDIR%%/ipapython/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipapython/__pycache__/__init__%%PYTHON_TAG%%.pyc
@@ -1163,12 +1163,12 @@
 %%PYTHON_SITELIBDIR%%/ipapython/session_storage.py
 %%PYTHON_SITELIBDIR%%/ipapython/ssh.py
 %%PYTHON_SITELIBDIR%%/ipapython/version.py
-%%PYTHON_SITELIBDIR%%/ipaserver-4.13.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/ipaserver-4.13.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/ipaserver-4.13.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/ipaserver-4.13.1-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/ipaserver-4.13.1-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/ipaserver-4.13.1-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/ipaserver-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/ipaserver-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/ipaserver-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/ipaserver-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/ipaserver-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/ipaserver-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/ipaserver/__init__.py
 %%PYTHON_SITELIBDIR%%/ipaserver/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipaserver/__pycache__/__init__%%PYTHON_TAG%%.pyc
@@ -1799,22 +1799,22 @@
 %%PYTHON_SITELIBDIR%%/ipaserver/servroles.py
 %%PYTHON_SITELIBDIR%%/ipaserver/topology.py
 %%PYTHON_SITELIBDIR%%/ipaserver/wsgi.py
-%%PYTHON_SITELIBDIR%%/ipasphinx-4.13.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/ipasphinx-4.13.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/ipasphinx-4.13.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/ipasphinx-4.13.1-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/ipasphinx-4.13.1-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/ipasphinx-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/ipasphinx-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/ipasphinx-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/ipasphinx-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/ipasphinx-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/ipasphinx/__init__.py
 %%PYTHON_SITELIBDIR%%/ipasphinx/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipasphinx/__pycache__/__init__%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipasphinx/__pycache__/ipabase%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipasphinx/__pycache__/ipabase%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipasphinx/ipabase.py
-%%PYTHON_SITELIBDIR%%/ipatests-4.13.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/ipatests-4.13.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/ipatests-4.13.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/ipatests-4.13.1-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/ipatests-4.13.1-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/ipatests-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/ipatests-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/ipatests-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/ipatests-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/ipatests-%%DISTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/ipatests/__init__.py
 %%PYTHON_SITELIBDIR%%/ipatests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/__pycache__/__init__%%PYTHON_TAG%%.pyc
@@ -2003,6 +2003,8 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_dns_locations%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_dnssec%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_dnssec%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ds_migration%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ds_migration%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_edns%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_edns%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_epn%%PYTHON_TAG%%.opt-1.pyc
@@ -2031,10 +2033,14 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_installation_client%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipa_cert_fix%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipa_cert_fix%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipa_getcert%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipa_getcert%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipa_idrange_fix%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipa_idrange_fix%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipa_ipa_migration%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipa_ipa_migration%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipa_join%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipa_join%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipahealthcheck%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipahealthcheck%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_kerberos_flags%%PYTHON_TAG%%.opt-1.pyc
@@ -2112,6 +2118,9 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_winsyncmigrate%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_winsyncmigrate%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/base.py
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/data/ds_migration/instance1.ldif
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/data/ds_migration/instance_hashedpwd.ldif
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/data/ds_migration/instance_negative.ldif
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/example_cli.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_32bit_idranges.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_acme.py
@@ -2132,6 +2141,7 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_dns.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_dns_locations.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_dnssec.py
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_ds_migration.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_edns.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_epn.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_external_ca.py
@@ -2146,8 +2156,10 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_installation.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_installation_client.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_ipa_cert_fix.py
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_ipa_getcert.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_ipa_idrange_fix.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_ipa_ipa_migration.py
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_ipa_join.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_ipahealthcheck.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_kerberos_flags.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_krbtpolicy.py
@@ -2617,6 +2629,8 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/__pycache__/test_host_plugin%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/__pycache__/test_hostgroup_plugin%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/__pycache__/test_hostgroup_plugin%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/__pycache__/test_i18n_user_plugin%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/__pycache__/test_i18n_user_plugin%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/__pycache__/test_idp_plugin%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/__pycache__/test_idp_plugin%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/__pycache__/test_idviews_plugin%%PYTHON_TAG%%.opt-1.pyc
@@ -2726,6 +2740,7 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/test_hbactest_plugin.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/test_host_plugin.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/test_hostgroup_plugin.py
+%%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/test_i18n_user_plugin.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/test_idp_plugin.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/test_idviews_plugin.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/test_kerberos_principal_aliases.py
@@ -2833,23 +2848,6 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/tracker/user_plugin.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_xmlrpc/xmlrpc_test.py
 %%PYTHON_SITELIBDIR%%/ipatests/util.py
-@dir /var/db/ipa
-@dir /var/db/ipa-client
-@dir /var/db/ipa-client/pki
-@dir /var/db/ipa-client/sysrestore
-@dir /var/db/ipa/backup
-@dir /var/db/ipa/certs
-@dir /var/db/ipa/gssproxy
-@dir /var/db/ipa/passwds
-@dir /var/db/ipa/pki-ca
-@dir /var/db/ipa/private
-@dir /var/db/ipa/sysrestore
-@dir /var/db/ipa/sysupgrade
-@dir etc/ipa/custodia
-@dir etc/ipa/dnssec
-@dir share/ipa/client
-@dir share/ipa/ui/js/plugins
-@dir share/selinux/packages/targeted
 bin/ipa
 bin/ipa-run-tests
 bin/ipa-test-config
@@ -2860,7 +2858,6 @@ etc/dbus-1/system.d/org.freeipa.server.conf
 etc/ipa/html/ssbrowser.html
 etc/ipa/html/unauthorized.html
 etc/ipa/kdcproxy/kdcproxy.conf
-@sample etc/newsyslog.conf.d/freeipa-server.conf.sample
 etc/oddjobd.conf.d/ipa-server.conf
 etc/oddjobd.conf.d/oddjobd-ipa-trust.conf
 etc/sysconfig/ipa-dnskeysyncd
@@ -3105,6 +3102,12 @@ share/ipa/ui/ipa.css
 share/ipa/ui/js/dojo/dojo.js
 share/ipa/ui/js/freeipa/app.js
 share/ipa/ui/js/freeipa/core.js
+share/ipa/ui/js/inline/ipa_inline.js
+share/ipa/ui/js/inline/migration_inline.js
+share/ipa/ui/js/inline/reset_password_inline.js
+share/ipa/ui/js/inline/ssbrowser_inline.js
+share/ipa/ui/js/inline/sync_otp_inline.js
+share/ipa/ui/js/inline/unauthorized_inline.js
 share/ipa/ui/js/libs/bootstrap-datepicker.js
 share/ipa/ui/js/libs/bootstrap.js
 share/ipa/ui/js/libs/browser.js
@@ -3255,3 +3258,21 @@ share/man/man1/ipa-winsync-migrate.1.gz
 share/man/man8/ipactl.8.gz
 share/ipa/client/freeipa-realm.template
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+@dir /var/db/ipa
+@dir /var/db/ipa-client
+@dir /var/db/ipa-client/pki
+@dir /var/db/ipa-client/sysrestore
+@dir /var/db/ipa/backup
+@dir /var/db/ipa/certs
+@dir /var/db/ipa/gssproxy
+@dir /var/db/ipa/passwds
+@dir /var/db/ipa/pki-ca
+@dir /var/db/ipa/private
+@dir /var/db/ipa/sysrestore
+@dir /var/db/ipa/sysupgrade
+@dir etc/ipa/custodia
+@dir etc/ipa/dnssec
+@dir share/ipa/client
+@dir share/ipa/ui/js/plugins
+@dir share/selinux/packages/targeted
+@sample etc/newsyslog.conf.d/freeipa-server.conf.sample

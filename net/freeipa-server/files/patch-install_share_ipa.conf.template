@@ -1,9 +1,9 @@
---- install/share/ipa.conf.template.orig	2025-12-04 10:21:14 UTC
+--- install/share/ipa.conf.template.orig	2026-07-16 09:36:59 UTC
 +++ install/share/ipa.conf.template
 @@ -1,5 +1,5 @@
  #
--# VERSION 34 - DO NOT REMOVE THIS LINE
-+# VERSION 35 - DO NOT REMOVE THIS LINE
+-# VERSION 40 - DO NOT REMOVE THIS LINE
++# VERSION 41 - DO NOT REMOVE THIS LINE
  #
  # This file may be overwritten on upgrades.
  #
@@ -15,8 +15,8 @@
 +    LoadModule lookup_identity_module libexec/apache24/mod_lookup_identity.so
  </IfModule>
  
- ProxyRequests Off
-@@ -40,10 +40,15 @@ WSGISocketPrefix $WSGI_PREFIX_DIR
+ TraceEnable Off
+@@ -42,10 +42,15 @@ WSGISocketPrefix $WSGI_PREFIX_DIR
  WSGISocketPrefix $WSGI_PREFIX_DIR
  
  # Configure mod_wsgi handler for /ipa
@@ -35,7 +35,7 @@
    application-group=%{GLOBAL}
  WSGIScriptReloading Off
  
-@@ -73,6 +78,8 @@ WSGIScriptReloading Off
+@@ -78,6 +83,8 @@ ServerTokens Prod
    GssapiSessionKey file:$GSSAPI_SESSION_KEY
  
    GssapiImpersonate On
@@ -44,7 +44,7 @@
    GssapiDelegCcacheDir $IPA_CCACHES
    GssapiDelegCcachePerms mode:0660
    GssapiDelegCcacheUnique On
-@@ -97,7 +104,7 @@ WSGIScriptReloading Off
+@@ -104,7 +111,7 @@ ServerTokens Prod
  </Location>
  
  # Target for login with internal connections
@@ -53,7 +53,7 @@
  
  # Turn off Apache authentication for i18n messages
  <Location "/ipa/i18n_messages">
-@@ -122,8 +129,10 @@ Alias /ipa/session/cookie "/usr/share/ipa/gssapi.login
+@@ -129,8 +136,10 @@ Alias /ipa/session/cookie "/usr/share/ipa/gssapi.login
    LookupUserByCertificate On
    LookupUserByCertificateParamName "username"
    WSGIProcessGroup ipa
@@ -65,7 +65,7 @@
  
    GssapiUseSessions On
    Session On
-@@ -154,13 +163,13 @@ Alias /ipa/session/cookie "/usr/share/ipa/gssapi.login
+@@ -161,13 +170,13 @@ Alias /ipa/session/cookie "/usr/share/ipa/gssapi.login
  </Location>
  
  # This is where we redirect on failed auth
@@ -82,7 +82,7 @@
    SetHandler None
    AllowOverride None
    Satisfy Any
-@@ -195,8 +204,8 @@ Alias /ipa/ui/fonts/fontawesome "${FONTS_FONTAWESOME_D
+@@ -202,8 +211,8 @@ Alias /ipa/ui/fonts/fontawesome "${FONTS_FONTAWESOME_D
  
  
  #  webUI  is now completely static, and served out of that directory
@@ -93,7 +93,7 @@
    SetHandler None
    AllowOverride None
    Satisfy Any
-@@ -209,8 +218,8 @@ Alias /ipa/ui "/usr/share/ipa/ui"
+@@ -216,8 +225,8 @@ Alias /ipa/ui "/usr/share/ipa/ui"
  </Directory>
  
  # Modern WebUI
@@ -104,7 +104,7 @@
    SetHandler None
    AllowOverride None
    Satisfy Any
-@@ -222,8 +231,8 @@ Alias /ipa/modern-ui "/usr/share/ipa/modern-ui"
+@@ -230,8 +239,8 @@ Alias /ipa/modern-ui "/usr/share/ipa/modern-ui"
  </Directory>
  
  #  Simple wsgi scripts required by ui
@@ -115,7 +115,7 @@
      AllowOverride None
      Satisfy Any
      Require all granted
-@@ -232,8 +241,8 @@ Alias /ipa/wsgi "/usr/share/ipa/wsgi"
+@@ -240,8 +249,8 @@ Alias /ipa/wsgi "/usr/share/ipa/wsgi"
  </Directory>
  
  # migration related pages

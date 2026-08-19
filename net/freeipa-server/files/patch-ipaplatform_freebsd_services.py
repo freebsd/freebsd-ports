@@ -1,6 +1,6 @@
---- ipaplatform/freebsd/services.py.orig	2026-08-11 14:55:32 UTC
+--- ipaplatform/freebsd/services.py.orig	2026-08-19 14:16:07 UTC
 +++ ipaplatform/freebsd/services.py
-@@ -0,0 +1,522 @@
+@@ -0,0 +1,576 @@
 +#
 +# Copyright (C) 2026  FreeIPA Contributors see COPYING for license
 +#
@@ -34,15 +34,29 @@
 +    "ipa-custodia": "ipa_custodia",
 +}
 +
-+freebsd_kerberos_rcvars = {
++# certmonger and oddjobd talk to the system message bus.  On Linux dbus
++# is socket-activated and therefore always available; on FreeBSD it is an
++# ordinary rc service that is disabled by default.  Without it certmonger
++# refuses to start and oddjobd retries forever, which stalls the boot
++# before sshd.  Treat the bus as a hard prerequisite of both.
++freebsd_dbus_consumers = ("certmonger", "oddjobd")
++
++freebsd_kerberos_rc_programs = {
 +    "kdc": {
 +        "kdc_program": "/usr/local/sbin/krb5kdc",
-+        "kdc_enable": "YES",
 +    },
 +    "kadmind": {
 +        "kdc_program": "/usr/local/sbin/krb5kdc",
-+        "kdc_enable": "YES",
 +        "kadmind_program": "/usr/local/sbin/kadmind",
++    },
++}
++
++freebsd_kerberos_rc_enables = {
++    "kdc": {
++        "kdc_enable": "YES",
++    },
++    "kadmind": {
++        "kdc_enable": "YES",
 +        "kadmind_enable": "YES",
 +    },
 +}
@@ -63,10 +77,38 @@
 +            except ipautil.CalledProcessError:
 +                pass
 +
++    def _ensure_message_bus(self):
++        try:
++            ipautil.run([paths.SBIN_SYSRC, "dbus_enable=YES"])
++        except ipautil.CalledProcessError:
++            pass
++        try:
++            ipautil.run([paths.SBIN_SERVICE, "dbus", "onestatus"],
++                        capture_output=True)
++        except ipautil.CalledProcessError:
++            try:
++                ipautil.run([paths.SBIN_SERVICE, "dbus", "onestart"],
++                            skip_output=True)
++            except ipautil.CalledProcessError:
++                logger.warning("Could not start the D-Bus system bus; "
++                               "certmonger and oddjobd will not work")
++
 +    def _prepare_rc_service(self, action):
++        # The *_program variables tell rc(8) which binary belongs to a
++        # service.  /etc/rc.d/kadmind defines no command of its own, so
++        # without kadmind_program even "onestatus" cannot see a running
++        # daemon.  The paths are a static property of the MIT krb5
++        # installation, hence assert them before every rc action rather
++        # than only before a start; the *_enable flags stay the business
++        # of enable() and disable().
++        self._set_rcvars(
++            freebsd_kerberos_rc_programs.get(self.rc_name, {}))
 +        if action not in ("onestart", "onerestart", "start", "restart"):
 +            return
-+        self._set_rcvars(freebsd_kerberos_rcvars.get(self.rc_name, {}))
++        if self.rc_name in freebsd_dbus_consumers:
++            self._ensure_message_bus()
++        self._set_rcvars(
++            freebsd_kerberos_rc_enables.get(self.rc_name, {}))
 +
 +    def _run_service(self, action, capture_output=True):
 +        self._prepare_rc_service(action)
@@ -133,7 +175,12 @@
 +
 +    def enable(self, instance_name=""):
 +        try:
-+            self._set_rcvars(freebsd_kerberos_rcvars.get(self.rc_name, {}))
++            if self.rc_name in freebsd_dbus_consumers:
++                self._ensure_message_bus()
++            self._set_rcvars(
++                freebsd_kerberos_rc_programs.get(self.rc_name, {}))
++            self._set_rcvars(
++                freebsd_kerberos_rc_enables.get(self.rc_name, {}))
 +            ipautil.run([paths.SBIN_SYSRC, "%s_enable=YES" % self.rc_enable_name])
 +        except ipautil.CalledProcessError:
 +            pass
@@ -145,11 +192,10 @@
 +            # Kerberos services (kdc_program/kadmind_program and their
 +            # *_enable flags) so an uninstall leaves no stale rc.conf
 +            # entries behind.
-+            for key in freebsd_kerberos_rcvars.get(self.rc_name, {}):
-+                if key.endswith("_enable"):
-+                    ipautil.run([paths.SBIN_SYSRC, "%s=NO" % key])
-+                else:
-+                    ipautil.run([paths.SBIN_SYSRC, "-x", key])
++            for key in freebsd_kerberos_rc_enables.get(self.rc_name, {}):
++                ipautil.run([paths.SBIN_SYSRC, "%s=NO" % key])
++            for key in freebsd_kerberos_rc_programs.get(self.rc_name, {}):
++                ipautil.run([paths.SBIN_SYSRC, "-x", key])
 +        except ipautil.CalledProcessError:
 +            pass
 +
@@ -418,8 +464,15 @@
 +        # instead of the unreadable default keytab.
 +        env = dict(os.environ)
 +        env["KRB5_KTNAME"] = paths.DS_KEYTAB
++        cmd = [paths.DSCTL, instance_name, action]
++        if action == "start":
++            # Give ns-slapd its own session.  Started directly it inherits
++            # the process group of whatever runs us, and the SIGHUP that
++            # group receives when a subshell exits takes the Directory
++            # Server down again, e.g. in the middle of ipa-server-upgrade.
++            cmd = [paths.SBIN_DAEMON, "-f"] + cmd
 +        ipautil.run(
-+            [paths.DSCTL, instance_name, action],
++            cmd,
 +            skip_output=not capture_output,
 +            env=env
 +        )
@@ -428,12 +481,13 @@
 +    def _wait_until_running(self, instance_name, wait, ldapi):
 +        if not wait:
 +            return
-+        if ldapi:
-+            socket_name = paths.SLAPD_INSTANCE_SOCKET_TEMPLATE % instance_name
-+            ipautil.wait_for_open_socket(
-+                socket_name, self.api.env.startup_timeout
-+            )
-+        elif not self.is_running(instance_name, wait=False):
++        # ns-slapd is started detached, so dsctl returns before the server
++        # is ready.  Wait for its LDAPI socket in any case.
++        socket_name = paths.SLAPD_INSTANCE_SOCKET_TEMPLATE % instance_name
++        ipautil.wait_for_open_socket(
++            socket_name, self.api.env.startup_timeout
++        )
++        if not ldapi and not self.is_running(instance_name, wait=False):
 +            raise RuntimeError(
 +                "Directory Server instance %s is not running" % instance_name
 +            )

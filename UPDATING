@@ -5,6 +5,43 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260819:
+  AFFECTS: users of net/freeipa-server and security/dogtag-pki
+  AUTHOR: joneum@FreeBSD.org
+
+  net/freeipa-server has been updated to 4.13.2, which also brings
+  security/dogtag-pki 11.10.1.  Two of the changes concern the configuration
+  of an already deployed pki-tomcat instance, which no package may rewrite:
+  dogtag-pki now builds with Java 21 instead of Java 17, and FreeIPA
+  corrects the ACME paths, which used to point at the Linux location
+  /etc/pki.  A server installed from scratch needs none of this.  On an
+  existing one run the following as root, in this order:
+
+    # ipactl stop
+    # pkg upgrade
+    # sysrc -f /etc/rc.conf.d/pki_tomcatd_pki_tomcat \
+        pki_tomcatd_pki_tomcat_java_home=/usr/local/openjdk21
+    # sed -i '' -e 's|/usr/local/openjdk17|/usr/local/openjdk21|' \
+        /var/db/pki/pki-tomcat/conf/tomcat.conf
+    # sed -i '' -e 's|/etc/pki/pki-tomcat/|/var/db/pki/pki-tomcat/conf/|g' \
+        /var/db/pki/pki-tomcat/conf/acme/database.conf \
+        /var/db/pki/pki-tomcat/conf/acme/realm.conf \
+        /var/db/pki/pki-tomcat/conf/acme/configsources.conf
+    # ipa-server-upgrade
+    # ipactl status
+
+  The last command has to list all seven services as RUNNING, and neither of
+  these two checks may print anything:
+
+    # grep openjdk17 /etc/rc.conf.d/pki_tomcatd_pki_tomcat \
+        /var/db/pki/pki-tomcat/conf/tomcat.conf
+    # grep -r /etc/pki /var/db/pki/pki-tomcat/conf/acme
+
+  A missed JDK change makes pki-tomcatd fail with "UnsupportedClassVersion-
+  Error: class file version 65.0"; missed ACME paths keep the ACME web
+  application from starting, which in turn blocks the shutdown of
+  pki-tomcatd.
+
 20260814:
   AFFECTS: users of sysutils/screen*
   AUTHOR: cy@FreeBSD.org

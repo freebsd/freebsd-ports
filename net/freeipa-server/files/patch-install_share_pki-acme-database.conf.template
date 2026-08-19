@@ -1,0 +1,8 @@
+--- install/share/pki-acme-database.conf.template.orig	2026-07-16 09:36:59 UTC
++++ install/share/pki-acme-database.conf.template
+@@ -1,4 +1,4 @@ basedn=ou=acme,o=ipaca
+ # VERSION 2 - DO NOT REMOVE THIS LINE
+ class=org.dogtagpki.acme.database.LDAPDatabase
+ basedn=ou=acme,o=ipaca
+-configFile=/etc/pki/pki-tomcat/ca/CS.cfg
++configFile=/var/db/pki/pki-tomcat/conf/ca/CS.cfg

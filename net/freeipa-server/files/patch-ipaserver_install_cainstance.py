@@ -1,4 +1,4 @@
---- ipaserver/install/cainstance.py.orig	2026-01-16 09:23:37 UTC
+--- ipaserver/install/cainstance.py.orig	2026-07-16 09:44:02 UTC
 +++ ipaserver/install/cainstance.py
 @@ -719,6 +719,9 @@ class CAInstance(DogtagInstance):
      def add_ipa_wait(self):
@@ -10,7 +10,7 @@
          conf = paths.SYSTEMD_PKI_TOMCAT_IPA_CONF
          directory = os.path.dirname(conf)
          if not os.path.isdir(directory):
-@@ -1598,7 +1601,7 @@ class CAInstance(DogtagInstance):
+@@ -1608,7 +1611,7 @@ class CAInstance(DogtagInstance):
              return False
  
          logger.debug('Deploying ACME')
@@ -19,7 +19,7 @@
  
          configure_acme_acls()
  
-@@ -1633,7 +1636,7 @@ class CAInstance(DogtagInstance):
+@@ -1643,7 +1646,7 @@ class CAInstance(DogtagInstance):
          ensure_acme_containers()
  
          # create ACME service instance
@@ -28,7 +28,7 @@
  
          # write configuration files
          sub_dict = dict(
-@@ -1651,7 +1654,7 @@ class CAInstance(DogtagInstance):
+@@ -1661,7 +1664,7 @@ class CAInstance(DogtagInstance):
                  self.service_user.chown(f.fileno())
  
          # deploy ACME Tomcat application
@@ -37,7 +37,7 @@
  
          return True
  
-@@ -1908,7 +1911,7 @@ def minimum_acme_support(data=None):
+@@ -1918,7 +1921,7 @@ def minimum_acme_support(data=None):
                    reading from the filesystem.
      """
      if not data:
@@ -46,7 +46,7 @@
              data = fd.read()
  
      groups = re.match(r'.*\nSpecification-Version: ([\d+\.]*)\n.*', data)
-@@ -2070,9 +2073,9 @@ def __get_profile_config(profile_id):
+@@ -2080,9 +2083,9 @@ def __get_profile_config(profile_id):
      # Select UPGRADE version if we are in the 'updates' API context
      # and an upgrade-specific version of the profile exists.
      #

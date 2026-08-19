@@ -1,6 +1,6 @@
---- ipaplatform/freebsd/paths.py.orig	2026-08-11 16:06:37 UTC
+--- ipaplatform/freebsd/paths.py.orig	2026-08-19 13:55:40 UTC
 +++ ipaplatform/freebsd/paths.py
-@@ -0,0 +1,220 @@
+@@ -0,0 +1,221 @@
 +#
 +# Copyright (C) 2026  FreeIPA Contributors see COPYING for license
 +#
@@ -216,6 +216,7 @@
 +    SYSTEMCTL = None
 +    SYSTEMD_TMPFILES = None
 +    SBIN_INETD = "/usr/sbin/inetd"
++    SBIN_DAEMON = "/usr/sbin/daemon"
 +    SBIN_SERVICE = "/usr/sbin/service"
 +    SBIN_SYSRC = "/usr/sbin/sysrc"
 +

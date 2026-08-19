@@ -1,4 +1,4 @@
---- configure.ac.orig	2025-12-04 10:21:07 UTC
+--- configure.ac.orig	2026-07-16 09:36:59 UTC
 +++ configure.ac
 @@ -45,6 +45,16 @@ AM_CONDITIONAL([ENABLE_SERVER], [test x$enable_server 
      [enable_server=yes])
@@ -27,17 +27,18 @@
  AC_ARG_WITH([systemdsystemunitdir],
              AS_HELP_STRING([--with-systemdsystemunitdir=DIR],
                 [Directory for systemd service files]),
-@@ -405,6 +417,13 @@ if test "x${IPAPLATFORM}" == "xdebian"; then
-     ODS_GROUP="opendnssec"
-     # see https://www.debian.org/doc/packaging-manuals/python-policy/ap-packaging_tools.html
-     PYTHON_INSTALL_EXTRA_OPTIONS="--install-layout=deb"
+@@ -414,6 +426,14 @@ if test "x${IPAPLATFORM}" == "xdebian"; then
+ 	ODS_GROUP="opendnssec"
+ 	# see https://www.debian.org/doc/packaging-manuals/python-policy/ap-packaging_tools.html
+ 	PYTHON_INSTALL_EXTRA_OPTIONS="--install-layout=deb"
 +elif test "x${IPAPLATFORM}" == "xfreebsd"; then
-+    HTTPD_GROUP="www"
-+    KRB5KDC_SERVICE="krb5kdc"
-+    NAMED_GROUP="bind"
-+    ODS_USER="opendnssec"
-+    ODS_GROUP="opendnssec"
-+    PYTHON_INSTALL_EXTRA_OPTIONS=""
++	HTTPD_USER="www"
++	HTTPD_GROUP="www"
++	KRB5KDC_SERVICE="krb5kdc"
++	NAMED_GROUP="bind"
++	ODS_USER="opendnssec"
++	ODS_GROUP="opendnssec"
++	PYTHON_INSTALL_EXTRA_OPTIONS=""
  else
-     HTTPD_GROUP="apache"
-     KRB5KDC_SERVICE="krb5kdc.service"
+ 	HTTPD_USER="apache"
+ 	HTTPD_GROUP="apache"
