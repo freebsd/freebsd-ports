@@ -20,12 +20,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wassima>=1<3:security/py-wassima@${PY_FLAVOR
 USES=		cargo llvm:build python
 USE_PYTHON=	autoplist concurrent pep517
 
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
 # BoringSSL ships no PowerPC assembly, so use the portable C implementations.
 CFLAGS_powerpc64le=	-DOPENSSL_NO_ASM
 CXXFLAGS_powerpc64le=	-DOPENSSL_NO_ASM
-
-CARGO_BUILD=	no
-CARGO_INSTALL=	no
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	google:boringssl:e2a57cf:google_boringssl # https://github.com/cloudflare/boring/tree/931385ed41df448c82d150219f69af56e3c8399f/boring-sys/deps
