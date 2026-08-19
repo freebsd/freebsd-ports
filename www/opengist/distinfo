@@ -1,7 +1,7 @@
-TIMESTAMP = 1784995426
-SHA256 (go/www_opengist/opengist-v1.14.0/opengist1.14.0-webdist.tar.gz) = 10595dfcd0b55a89c8c7d1c7a39cb38caebca627093f78512ae5b3f7cef86e2b
-SIZE (go/www_opengist/opengist-v1.14.0/opengist1.14.0-webdist.tar.gz) = 1919094
-SHA256 (go/www_opengist/opengist-v1.14.0/v1.14.0.mod) = 8058902ecfea909764b339f2ba859e61854298dacd210fb39ea7390aba956679
-SIZE (go/www_opengist/opengist-v1.14.0/v1.14.0.mod) = 5782
-SHA256 (go/www_opengist/opengist-v1.14.0/v1.14.0.zip) = 2c0e8d0f005b5ee4e994e34b99969f5690010811a6fa224bad7aaab530ce44d3
-SIZE (go/www_opengist/opengist-v1.14.0/v1.14.0.zip) = 1830674
+TIMESTAMP = 1787133854
+SHA256 (go/www_opengist/opengist-v1.15.1/opengist1.15.1-webdist.tar.gz) = 770491196c91ab1d450d48090c085d0ca1f3fee3559a57a5667c75f707e47341
+SIZE (go/www_opengist/opengist-v1.15.1/opengist1.15.1-webdist.tar.gz) = 1988948
+SHA256 (go/www_opengist/opengist-v1.15.1/v1.15.1.mod) = d7831243f3ebe11bdc8722ddaa90fdafeb7843cce902d1d9cfaa4773d1d78e38
+SIZE (go/www_opengist/opengist-v1.15.1/v1.15.1.mod) = 5782
+SHA256 (go/www_opengist/opengist-v1.15.1/v1.15.1.zip) = 0aa094ac9cffd47d954a762bf4ce1cb7f61384ca693e4004773990406bebdce2
+SIZE (go/www_opengist/opengist-v1.15.1/v1.15.1.zip) = 1874349
