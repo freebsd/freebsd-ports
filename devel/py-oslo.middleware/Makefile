@@ -32,4 +32,13 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	TRACING_GRPC TRACING_HTTP
+TRACING_GRPC_DESC=	OpenTelemetry HTTP tracing middleware
+TRACING_HTTP_DESC=	OpenTelemetry gRPC tracing middleware
+
+TRACING_GRPC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-proto-grpc>=1.0.0:devel/py-opentelemetry-exporter-otlp-proto-grpc@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.0.0:devel/py-opentelemetry-sdk@${PY_FLAVOR}
+TRACING_HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-proto-http>=1.0.0:devel/py-opentelemetry-exporter-otlp-proto-http@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.0.0:devel/py-opentelemetry-sdk@${PY_FLAVOR}
+
 .include <bsd.port.mk>
