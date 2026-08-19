@@ -188,6 +188,10 @@ BUILD_DEPENDS+=		cmocka>0:sysutils/cmocka
 CONFIGURE_ENV+=	ac_cv_path_SPHINX_BUILD=
 .endif
 
+.if ${OSREL:R} >= 15 && ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
+BROKEN=	Does not build
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
