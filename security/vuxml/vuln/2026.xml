@@ -1,3 +1,33 @@
+  <vuln vid="01c15468-9b7b-11f1-a75c-589cfc10a551">
+    <topic>podman -- podman quadlet install --replace does not fully replace the old file</topic>
+    <affects>
+	<package>
+	<name>podman</name>
+	<range><ge>5.7.0</ge><lt>5.8.6</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Podman developers report:</p>
+	<blockquote cite="https://github.com/podman-container-tools/podman/security/advisories/GHSA-fx76-2j3w-2mx6">
+	  <p>When running podman quadlet install --replace to replace a
+	   Quadlet file, if the original Quadlet is larger than the new
+	   Quadlet, the file would not be truncated and content from the
+	   original would be preserved.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-19730</cvename>
+      <url>https://github.com/podman-container-tools/podman/releases/tag/v5.8.6</url>
+      <url>https://github.com/podman-container-tools/podman/security/advisories/GHSA-fx76-2j3w-2mx6</url>
+    </references>
+    <dates>
+      <discovery>2026-08-13</discovery>
+      <entry>2026-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3a65fb7e-9ac2-11f1-bdc8-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
