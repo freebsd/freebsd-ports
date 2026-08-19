@@ -1,6 +1,6 @@
-TIMESTAMP = 1783784396
-SHA256 (ddtrace-4.10.8.tar.gz) = f5b27eb1092b60e9242f3e5f1c99a8878e82b669e45abf82b5fe9d9ec22bc45a
-SIZE (ddtrace-4.10.8.tar.gz) = 2347517
+TIMESTAMP = 1784005146
+SHA256 (ddtrace-4.11.0.tar.gz) = 260c5b46e80565f4fd08cec2650f707627fb57cd6f8951a2d8c9e6a02b490074
+SIZE (ddtrace-4.11.0.tar.gz) = 2422158
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -865,5 +865,5 @@ SHA256 (rust/crates/zstd-safe-7.2.4.crate) = 8f49c4d5f0abb602a93fb8736af2a4f4dd9
 SIZE (rust/crates/zstd-safe-7.2.4.crate) = 29350
 SHA256 (rust/crates/zstd-sys-2.0.16+zstd.1.5.7.crate) = 91e19ebc2adc8f83e43039e79776e3fda8ca919132d68a1fed6a5faca2683748
 SIZE (rust/crates/zstd-sys-2.0.16+zstd.1.5.7.crate) = 775620
-SHA256 (DataDog-libdatadog-37d17ee71ae396782242d45e1b31af2887bbbbd3_GH0.tar.gz) = 589e3c9b338a8228e3161b8e4f4fe3a2d950c2fb089a84daa3b0f2564083426d
-SIZE (DataDog-libdatadog-37d17ee71ae396782242d45e1b31af2887bbbbd3_GH0.tar.gz) = 2287431
+SHA256 (DataDog-libdatadog-3cc5a96ee3edeb512d141e79cad2ac0b0fded434_GH0.tar.gz) = 7758ddde44168391ad9b96d25785362cddb095ccac95b7ea8d36d20c715d2127
+SIZE (DataDog-libdatadog-3cc5a96ee3edeb512d141e79cad2ac0b0fded434_GH0.tar.gz) = 2357468

@@ -1,6 +1,5 @@
 PORTNAME=	ddtrace
-PORTVERSION=	4.10.8
-PORTREVISION=	1
+PORTVERSION=	4.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -52,7 +51,7 @@ OPENTELEMETRY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp>=1
 OPENTRACING_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}opentracing>=2<3:devel/py-opentracing@${PY_FLAVOR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py ${WRKSRC}/../libdatadog-37d17ee71ae396782242d45e1b31af2887bbbbd3/libdd-library-config/src/lib.rs
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py ${WRKSRC}/../libdatadog-3cc5a96ee3edeb512d141e79cad2ac0b0fded434/libdd-library-config/src/lib.rs
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
