@@ -1,3 +1,3 @@
-TIMESTAMP = 1717568452
-SHA256 (imageio-ffmpeg-0.5.1.tar.gz) = 0ed7a9b31f560b0c9d929c5291cd430edeb9bed3ce9a497480e536dd4326484c
-SIZE (imageio-ffmpeg-0.5.1.tar.gz) = 17704
+TIMESTAMP = 1784005258
+SHA256 (imageio_ffmpeg-0.6.0.tar.gz) = e2556bed8e005564a9f925bb7afa4002d82770d6b08825078b7697ab88ba1755
+SIZE (imageio_ffmpeg-0.6.0.tar.gz) = 25210
