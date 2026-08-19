@@ -1,11 +1,11 @@
 PORTNAME=	gperiodic
 DISTVERSION=	3.0.3
-PORTREVISION=	2
-CATEGORIES=	biology education
+PORTREVISION=	3
+CATEGORIES=	science education
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	alven@FreeBSD.org
-COMMENT=	A graphical application for browsing the periodic table
+COMMENT=	Graphical application for browsing the periodic table
 WWW=		https://sourceforge.net/projects/gperiodic/
 
 LICENSE=	GPLv2+
@@ -41,12 +41,12 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/pixmaps
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 do-install-NLS-on:
 .for lang in ${LANGS}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor

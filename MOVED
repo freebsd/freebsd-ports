@@ -5554,3 +5554,4 @@ www/lua-stream-nginx-module|www/nginx-module-lua-stream|2026-08-14|Renamed to fo
 devel/prjpeppercorn112||2026-08-15|No longer supported by devel/nextpnr
 devel/py-yg.lockfile|devel/py-fasteners|2026-08-16|Has expired: Upstream inactive since 8+ years, please use devel/py-fasteners instead
 www/pecl-solr|www/php-solr|2026-08-17|Converted to standard extension from pecl extension
+biology/gperiodic|science/gperiodic|2026-08-19|Move to a more appropriate category
