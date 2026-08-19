@@ -1,3 +1,3 @@
-TIMESTAMP = 1764600127
-SHA256 (azure-mgmt-cdn-13.1.1.tar.gz) = 4663304f31b6672dec320c7ce7ba9715c2b99e7d8b684b375f0b4effda90210c
-SIZE (azure-mgmt-cdn-13.1.1.tar.gz) = 223461
+TIMESTAMP = 1784005096
+SHA256 (azure_mgmt_cdn-14.0.0.tar.gz) = afc626507ced2c6beca912cb1a6233bf515af538121ecd21501aaa5dc82602f5
+SIZE (azure_mgmt_cdn-14.0.0.tar.gz) = 288530
