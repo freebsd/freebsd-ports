@@ -1,5 +1,5 @@
 PORTNAME=	resteasy
-DISTVERSION=	3.0.26
+DISTVERSION=	3.15.6
 DISTVERSIONSUFFIX=	.Final
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/jboss/resteasy/resteasy-jaxrs/${DISTVERSIONFULL}/:jaxrs
