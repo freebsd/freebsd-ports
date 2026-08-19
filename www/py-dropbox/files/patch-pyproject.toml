@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-07-14 04:57:44 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ requires-python = ">=3.11"
+ description = "Official Dropbox API Client"
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+ requires-python = ">=3.11"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ authors = [{ name = "Dropbox", email = "dev-platform@dropbox.com" }]
+ dependencies = [
+     "requests>=2.16.2",
