@@ -1,9 +1,9 @@
 PORTNAME=	django-markdownx
-PORTVERSION=	4.0.9
-PORTREVISION=	2
+PORTVERSION=	4.0.11
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	django_markdownx-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Comprehensive Markdown editor built for Django
