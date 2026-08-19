@@ -1,10 +1,9 @@
 PORTNAME=	syncplay
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.4a
-PORTREVISION=	3
+DISTVERSION=	1.7.6
 CATEGORIES=	multimedia
 
-MAINTAINER=	heckendorfc@gmail.com
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Synchronize video playback over networks
 WWW=		https://syncplay.pl/
 
@@ -17,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service-identity>=0:security/py-service-identity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=0:dns/py-idna@${PY_FLAVOR}
 
-USES=		desktop-file-utils gmake python shebangfix
+USES=		gmake python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	Syncplay
 
@@ -36,10 +35,11 @@ CLIENT_DESC=	Client mode
 SERVER_DESC=	Server mode
 VLC_DESC=	Support for VLC media player
 
-GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyside2>=0:devel/pyside2@${PY_FLAVOR}
+GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyside6>=0:devel/pyside6@${PY_FLAVOR}
 VLC_MAKE_ARGS=		VLC_SUPPORT=true
 VLC_MAKE_ARGS_OFF=	VLC_SUPPORT=false
 CLIENT_INSTALL_TARGET=	install-client
+CLIENT_USES=		desktop-file-utils
 SERVER_INSTALL_TARGET=	install-server
 
 post-patch:
