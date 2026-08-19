@@ -1,0 +1,7 @@
+neatnet offers a set of tools pre-processing of street network geometry aimed at
+its simplification. This typically means removal of dual carrieageways,
+roundabouts and similar transportation-focused geometries and their replacement
+with a new geometry representing the street space via its centerline. The
+resulting geometry shall be closer to a morphological representation of space
+than the original source, that is typically drawn with transportation in mind
+(e.g. OpenStreetMap).

@@ -987,6 +987,7 @@
     SUBDIR += py-mpl-scatter-density
     SUBDIR += py-napari-console
     SUBDIR += py-napari-plugin-engine
+    SUBDIR += py-neatnet
     SUBDIR += py-nwdiag
     SUBDIR += py-olmocr
     SUBDIR += py-opencolorio
