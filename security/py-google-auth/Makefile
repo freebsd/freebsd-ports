@@ -32,12 +32,12 @@ REQUESTS_DESC=	Transport adapter for requests
 RSA_DESC=	RSA support (deprecated)
 URLLIB3_DESC=	Transport adapter for urllib3
 
-AIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8.0<4.0.0:www/py-aiohttp@${PY_FLAVOR}
+AIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.0<4.0.0:www/py-aiohttp@${PY_FLAVOR}
 PYJWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyjwt>=2.0:www/py-pyjwt@${PY_FLAVOR}
 REAUTH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyu2f>=0.1.5:net/py-pyu2f@${PY_FLAVOR}
-REQUESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.20.0<3.0.0:www/py-requests@${PY_FLAVOR}
-RSA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rsa>=3.1.4<5:security/py-rsa@${PY_FLAVOR}
-URLLIB3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}urllib3>=0,1:net/py-urllib3@${PY_FLAVOR}
+REQUESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.30.0<3.0.0:www/py-requests@${PY_FLAVOR}
+RSA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rsa>=4.0.0<5:security/py-rsa@${PY_FLAVOR}
+URLLIB3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.15,1<3.0.0,1:net/py-urllib3@${PY_FLAVOR}
 
 .include <bsd.port.mk>
