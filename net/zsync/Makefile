@@ -1,16 +1,16 @@
 PORTNAME=	zsync
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.6
 CATEGORIES=	net
-MASTER_SITES=	http://zsync.moria.org.uk/download/
+MASTER_SITES=	https://zsync.moria.org.uk/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris.longros@gmail.com
 COMMENT=	File transfer program
-WWW=		http://zsync.moria.org.uk/
+WWW=		https://zsync.moria.org.uk/
 
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf tar:bzip2
+USES=		autoreconf ssl tar:bzip2
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/zsync \
