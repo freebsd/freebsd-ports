@@ -19,6 +19,8 @@ LICENSE_NAME=	CYBERBIT
 LICENSE_TEXT=	Redistribution not permitted; single user license only
 LICENSE_PERMS=	auto-accept
 
+BROKEN=		does not fetch
+
 USES=		fonts zip
 
 NO_BUILD=	yes
