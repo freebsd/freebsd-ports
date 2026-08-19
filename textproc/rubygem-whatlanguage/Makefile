@@ -1,5 +1,5 @@
 PORTNAME=	whatlanguage
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,10 @@ WWW=		https://github.com/peterc/whatlanguage
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+USES=		gem
+
 NO_ARCH=	yes
 
-USES=		gem
+PLIST_FILES=	bin/whatlanguage
 
 .include <bsd.port.mk>
