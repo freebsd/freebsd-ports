@@ -10,6 +10,6 @@ include/libxls/xlstypes.h
 include/xls.h
 lib/libxlsreader.so
 lib/libxlsreader.so.8
-lib/libxlsreader.so.8.0.2
+lib/libxlsreader.so.8.0.3
 libdata/pkgconfig/libxls.pc
 share/man/man1/xls2csv.1.gz
