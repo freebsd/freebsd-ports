@@ -1,3 +1,70 @@
+  <vuln vid="e6a17802-cda9-4f53-8870-b629e4ac3d40">
+    <topic>zeek -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>zeek</name>
+<range><lt>8.0.10</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v8.0.10">
+	  <p> HIGH: SMB: Chains of AndX messages can crash Zeek </p>
+	  <p> HIGH: DNP3: Memory exhaustion via file control (g70v1)
+	  fields </p>
+	  <p> HIGH: SIP: Memory exhaustion from long request/response
+	  paths </p>
+	  <p> HIGH: DHCP: Memory exhaustion from retained options
+	  after analyzer violation </p>
+	  <p> HIGH: SMTP: Memory exhaustion from large numbers of
+	  rcptto/to/cc/path entries </p>
+	  <p> HIGH: SMB: DCE/RPC memory exhaustion from fragment
+	  state </p>
+	  <p> HIGH: Analyzer manager: Equivalent scheduled analyzers
+	  could exhaust memory </p>
+	  <p> HIGH: ZIP: Unbounded decompression </p>
+	  <p> HIGH: Redis: Parsed Redis traffic memory exhaustion
+	  </p>
+	  <p> HIGH: Invalid IPv6 fragments can lead to unbounded
+	  state growth </p>
+	  <p> HIGH: SSH: Quadratic KEX algorithm CPU exhaustion
+	  </p>
+	  <p> HIGH: NVT: Oversized line recovery writes before heap
+	  buffer </p>
+	  <p> HIGH: DHCP: Unbounded state growth via join_data </p>
+	  <p> HIGH: FTP: Unbounded state growth via ftp_data_expected
+	  </p>
+	  <p> HIGH: OCSP: Empty byName responder ID crashes Zeek </p>
+	  <p> HIGH: ARP: Tunneled ARP traffic crashes Zeek </p>
+	  <p> HIGH: LDAP: Unbounded per-connection script state </p>
+	  <p> HIGH: IRC DCC SEND has unbounded state growth </p>
+	  <p> HIGH: tunnel_changed event limit bypass on direct/tunneled
+	  toggles </p>
+	  <p> HIGH: Recursive stack exhaustion from deep packet
+	  analyzer chains </p>
+	  <p> MEDIUM: Telnet: AUTH STATUS options before a NAME is
+	  received results in event argument mismatch </p>
+	  <p> MEDIUM: UDP: udp_contents events could trigger
+	  out-of-bounds reads </p>
+	  <p> MEDIUM: NetBIOS: Memory exhaustion from declared
+	  session lengths </p>
+	  <p> MEDIUM: IRC: Single DCC Send packet can result in
+	  scripting error </p>
+	  <p> MEDIUM: IRC: Invalid DCC Send host/port fields can
+	  lead to unexpected parsing results </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v8.0.10</url>
+    </references>
+    <dates>
+      <discovery>2026-08-19</discovery>
+      <entry>2026-08-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="01c15468-9b7b-11f1-a75c-589cfc10a551">
     <topic>podman -- podman quadlet install --replace does not fully replace the old file</topic>
     <affects>
@@ -4337,7 +4404,7 @@
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Tim Wojtulewicz of Corelight reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v8.0.9">
 	  <p> The NVT, Rlogin, and RSH analyzers have received fixes
 	  to avoid unbounded state growth. Due to the fact that
 	  these packets can be received from remote hosts, these
