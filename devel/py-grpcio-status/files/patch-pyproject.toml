@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-07-02 07:51:29 UTC
++++ pyproject.toml
+@@ -14,14 +14,14 @@ requires = [
+ 
+ [build-system]
+ requires = [
+-    "setuptools>=77.0.1",
++    "setuptools>=61",
+     "wheel",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "grpcio-status"
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ description = "Status proto mapping for gRPC"
+ readme = {file = "README.rst", content-type = "text/x-rst"}
+ authors = [{name = "The gRPC Authors", email = "grpc-io@googlegroups.com"}]
