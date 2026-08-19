@@ -177,6 +177,10 @@ MESON_ARGS+=	-Dcmocka=disabled \
 		-Ddeveloper=disabled
 .endif
 
+.if ${OSREL:R} >= 15 && ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
+BROKEN=	Does not build
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
