@@ -1,6 +1,6 @@
 PORTNAME=	dogtag-ldap-sdk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.6.0
+DISTVERSION=	5.7.0
 CATEGORIES=	net java
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dogtagpki
 GH_PROJECT=	ldap-sdk
 
-JAVA_VERSION=	17
+JAVA_VERSION=	21
 
 MAKE_ARGS=	-Djss.lib=${JAVAJARDIR}/jss.jar \
 		-Dslf4j.lib=${JAVAJARDIR}/slf4j-api.jar
