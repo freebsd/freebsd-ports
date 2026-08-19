@@ -1,5 +1,6 @@
 PORTNAME=	aerc
 DISTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	herbert@gojira.at

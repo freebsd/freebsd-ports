@@ -1,7 +1,7 @@
 PORTNAME=	mysqld_exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	mr.deadlystorm@gmail.com

@@ -1,5 +1,6 @@
 PORTNAME=	kineto
 DISTVERSION=	g20250122
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	corey@electrickite.org

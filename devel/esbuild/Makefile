@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 # DO NOT UPDATE WITHOUT THIS BEING DONE
 # post to phabricator & chromium@ before committing so they can update
 DISTVERSION=	0.28.1 # post to phabricator & chromium@ before committing so they can update
-PORTREVISION=	1
+PORTREVISION=	2
 # post to phabricator & chromium@ before committing so they can update
 CATEGORIES=	devel www
 

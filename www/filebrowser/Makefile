@@ -1,7 +1,7 @@
 PORTNAME=	filebrowser
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.63.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
