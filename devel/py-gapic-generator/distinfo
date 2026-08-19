@@ -1,3 +1,3 @@
-TIMESTAMP = 1775587280
-SHA256 (gapic_generator-1.30.14.tar.gz) = b8f7943ab5fa098488f0855197cb13a828062b0ec9eea366b196314092ee3988
-SIZE (gapic_generator-1.30.14.tar.gz) = 1514991
+TIMESTAMP = 1784005166
+SHA256 (gapic_generator-1.37.0.tar.gz) = 5119ae4a92a138eb86481fafd8e620cd111ceab74dec432e2c6fedb1d05b39c7
+SIZE (gapic_generator-1.37.0.tar.gz) = 1690178
