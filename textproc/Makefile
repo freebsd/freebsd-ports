@@ -1889,6 +1889,7 @@
     SUBDIR += rubygem-creole
     SUBDIR += rubygem-cronex
     SUBDIR += rubygem-css_parser
+    SUBDIR += rubygem-css_parser1
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-cucumber-gherkin
     SUBDIR += rubygem-cucumber-gherkin39
