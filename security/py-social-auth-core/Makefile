@@ -1,9 +1,13 @@
 PORTNAME=	social-auth-core
 DISTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	security www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	social_auth_core-${DISTVERSION}
+
+PATCH_SITES=	https://github.com/python-social-auth/social-core/commit/
+PATCHFILES=	f84ddbe18d997d12f000027d3825472b85a14da2.patch:-p1
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Social authentication/registration mechanism for several frameworks
@@ -40,7 +44,7 @@ OPTIONS_DEFAULT=	SAML
 GOOGLE-ONETAP_DESC=	Google One Tap support
 SAML_DESC?=	SAML Support
 
-GOOGLE-ONETAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.40.0<2.56:security/py-google-auth@${PY_FLAVOR}
+GOOGLE-ONETAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.40.0<2.57:security/py-google-auth@${PY_FLAVOR}
 SAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python3-saml>=1.16.0:security/py-python3-saml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
