@@ -1,0 +1,16 @@
+--- pyproject.toml.orig	2026-05-12 14:50:10 UTC
++++ pyproject.toml
+@@ -7,11 +7,11 @@ build-backend = "setuptools.build_meta"
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "GeoAlchemy2"
++name = "geoalchemy2"
+ dynamic = ["version"]
+ description = "Using SQLAlchemy with Spatial Databases"
+ readme = "README.rst"
+-license = "MIT"
++license = {text = "MIT"}
+ requires-python = ">=3.10"
+ authors = [
+     {name = "Eric Lemoine", email = "eric.lemoine@gmail.com"},
