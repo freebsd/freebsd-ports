@@ -1,8 +1,9 @@
 PORTNAME=	linkify-it-py
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	linkify_it_py-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Links recognition library with FULL unicode support
