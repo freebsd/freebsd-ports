@@ -997,6 +997,7 @@
     SUBDIR += py-openslide-python
     SUBDIR += py-optimize-images
     SUBDIR += py-osmnet
+    SUBDIR += py-osmnx
     SUBDIR += py-pandana
     SUBDIR += py-pandarm
     SUBDIR += py-pdf2image
