@@ -1,9 +1,9 @@
 PORTNAME=	python-binary-memcached
-PORTVERSION=	0.31.2
-PORTREVISION=	1
+PORTVERSION=	0.32.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	python_binary_memcached-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Pure python module to access memcached via its binary protocol
