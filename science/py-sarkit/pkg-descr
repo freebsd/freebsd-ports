@@ -1,0 +1,10 @@
+SARkit is a suite of Synthetic Aperture Radar (SAR)-related tools in Python
+developed and maintained by Valkyrie Systems Corporation to encourage the use of
+National Geospatial-Intelligence Agency (NGA) SAR data standards.
+
+With SARkit, you can:
+- read and write SAR standards files (CRSD, CPHD, SICD, SIDD)
+- interact with SAR XML metadata using more convenient Python objects
+- check SAR data/metadata files for inconsistencies
+
+This project was developed as the modern successor to SarPy.
