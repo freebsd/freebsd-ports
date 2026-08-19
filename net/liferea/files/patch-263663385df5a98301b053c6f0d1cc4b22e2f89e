@@ -1,0 +1,18 @@
+commit 263663385df5a98301b053c6f0d1cc4b22e2f89e
+Author: Lars Windolf <lars.windolf@gmx.de>
+Date:   Wed Aug 19 22:48:49 2026 +0200
+
+    Fix missing OPML install
+
+diff --git meson.build meson.build
+index 20827dfa..83394637 100644
+--- meson.build
++++ meson.build
+@@ -95,6 +95,7 @@ endforeach
+ 
+ install_subdir('plugins', install_dir: libdir)
+ install_subdir('css', install_dir: datadir)
++install_subdir('opml', install_dir: datadir)
+ install_subdir('resources/help', install_dir: datadir)
+ 
+ dbus_service_file = configure_file(

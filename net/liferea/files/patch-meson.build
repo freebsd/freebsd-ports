@@ -1,0 +1,20 @@
+commit 0823bf205e9daf50e070ab11fabf7796ba2b8e9b
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    lower adwaita dependency to 1.8.5
+    
+    we don't have 1.9 in FreeBSD ports yet
+
+diff --git meson.build meson.build
+index 032aaf23..beb4b001 100644
+--- meson.build
++++ meson.build
+@@ -41,7 +41,7 @@ liferea_deps = [
+   dependency('glib-2.0', version: '>= 2.74.0'),
+   dependency('gsettings-desktop-schemas'),
+   dependency('gtk4', version: '>= 4.12.0'),
+-  dependency('libadwaita-1', version: '>=1.9'),
++  dependency('libadwaita-1', version: '>=1.8.5'),
+   dependency('json-glib-1.0', version: '>= 1.6'),
+   dependency('libxml-2.0', version: '>= 2.6.12'),
+   dependency('libxslt', version: '>= 1.1.19'),
