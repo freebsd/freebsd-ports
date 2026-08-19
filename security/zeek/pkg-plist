@@ -987,6 +987,8 @@ include/zeek/cluster/serializer/broker/Plugin.h
 include/zeek/cluster/serializer/broker/Serializer.h
 include/zeek/cluster/websocket/Plugin.h
 include/zeek/cluster/websocket/WebSocket.h
+include/zeek/cluster/websocket/auxil/IXWebSocket/common/IXLog.h
+include/zeek/cluster/websocket/auxil/IXWebSocket/common/IXPdu.h
 include/zeek/cluster/websocket/auxil/IXWebSocket/ixwebsocket/IXBase64.h
 include/zeek/cluster/websocket/auxil/IXWebSocket/ixwebsocket/IXBench.h
 include/zeek/cluster/websocket/auxil/IXWebSocket/ixwebsocket/IXCancellationRequest.h
@@ -1141,6 +1143,7 @@ include/zeek/packet_analysis/Analyzer.h
 include/zeek/packet_analysis/Component.h
 include/zeek/packet_analysis/Dispatcher.h
 include/zeek/packet_analysis/Manager.h
+include/zeek/packet_analysis/consts.bif.h
 include/zeek/packet_analysis/protocol/arp/ARP.h
 include/zeek/packet_analysis/protocol/arp/events.bif.h
 include/zeek/packet_analysis/protocol/ayiya/AYIYA.h
@@ -1476,6 +1479,7 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/comm.bif.zeek
 %%DATADIR%%/base/bif/communityid.bif.zeek
 %%DATADIR%%/base/bif/const.bif.zeek
+%%DATADIR%%/base/bif/consts.bif.zeek
 %%DATADIR%%/base/bif/data.bif.zeek
 %%DATADIR%%/base/bif/event.bif.zeek
 %%DATADIR%%/base/bif/file_analysis.bif.zeek
