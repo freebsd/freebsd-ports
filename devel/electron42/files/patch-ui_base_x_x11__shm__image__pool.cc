@@ -1,4 +1,4 @@
---- ui/base/x/x11_shm_image_pool.cc.orig	2025-01-27 17:37:37 UTC
+--- ui/base/x/x11_shm_image_pool.cc.orig	2026-08-19 23:17:14 UTC
 +++ ui/base/x/x11_shm_image_pool.cc
 @@ -16,6 +16,7 @@
  #include "base/functional/callback.h"
@@ -51,7 +51,7 @@
  }
  #endif  // !BUILDFLAG(IS_CHROMEOS)
  
-@@ -182,7 +193,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
+@@ -191,7 +202,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
          shmctl(state.shmid, IPC_RMID, nullptr);
          return false;
        }
@@ -60,7 +60,7 @@
        // On Linux, a shmid can still be attached after IPC_RMID if otherwise
        // kept alive.  Detach before XShmAttach to prevent a memory leak in case
        // the process dies.
-@@ -201,7 +212,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
+@@ -210,7 +221,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
          return false;
        state.shmseg = shmseg;
        state.shmem_attached_to_server = true;
