@@ -1,84 +1,80 @@
 PORTNAME=	nmap
-DISTVERSION=	7.99
-PORTREVISION=	1
+DISTVERSION=	7.991
 CATEGORIES=	security
-MASTER_SITES=	https://nmap.org/dist/ \
-		LOCAL/ohauer
+MASTER_SITES=	https://nmap.org/dist/
 
-MAINTAINER?=	cy@FreeBSD.org
-COMMENT?=	Port scanning utility for large networks
+PATCH_SITES=	https://github.com/nmap/nmap/commit/
+PATCHFILES=	9e88dd2da292ddd9f9d6ed836bc3ef443b4d35e7.patch:-p1 \
+		d0fa89658c74607b6fd6fddc3df709e39ddffa3d.patch:-p1
+
+MAINTAINER=	cy@FreeBSD.org
+COMMENT=	Port scanning utility for large networks
 WWW=		https://nmap.org/
 
-# nmap-6.47 => svn.nmap.org/nmap-releases/nmap-6.47 (r33605)
-# https://nmap.org/book/man-legal.html
-# Install the nmap modified license because of
-# http://insecure.org/news/download-com-fiasco.html
 LICENSE=	NPSL
 LICENSE_NAME=	Nmap Public Source License
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror pkg-sell
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpcre2-16.so:devel/pcre2
+LIB_DEPENDS=	libpcap.so.1:net/libpcap \
+		libpcre2-8.so:devel/pcre2
 
-.if !defined(MASTERDIR)
+USES=		cpe gmake libtool lua:54 tar:bzip2
 
-USES=		tar:bzip2 gmake cpe
-
-# XXX limit results if we do a grep in the sources!
-EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/mswin32 \
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/liblua \
+			--exclude ${DISTNAME}/libpcap \
+			--exclude ${DISTNAME}/libpcre \
+			--exclude ${DISTNAME}/libssh2 \
+			--exclude ${DISTNAME}/libz \
+			--exclude ${DISTNAME}/macosx \
+			--exclude ${DISTNAME}/mswin32 \
 			--no-same-owner --no-same-permissions
 
-MAKE_JOBS_UNSAFE=	yes
+GNU_CONFIGURE=		yes
 
-GNU_CONFIGURE=	yes
+DOCS=			CHANGELOG HACKING
 
-OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	DOCS NLS PCAP SSH2 SSL
-OPTIONS_DEFAULT=NLS SSH2 SSL
+CONFIGURE_ARGS=		--with-libpcap=${LOCALBASE} \
+			--with-libpcre=${LOCALBASE} \
+			--with-zlib=/usr \
+			--without-ndiff \
+			--without-zenmap \
+			--with-liblua=${LUA_INCDIR} \
+			--without-nmap-update
 
-PCAP_DESC=		Build with libpcap from nmap
-SSH2_DESC=		SSH2 protocol support
+OPTIONS_DEFINE=		DOCS NLS LIBSSH2 OPENSSL
+OPTIONS_DEFAULT=	NLS LIBSSH2 OPENSSL
+OPTIONS_SUB=		yes
+
+LIBSSH2_DESC=		SSH2 protocol support
 
 NLS_CONFIGURE_ENABLE=	nls
-PCAP_CONFIGURE_ON=	--with-libpcap=included
-PCAP_LIB_DEPENDS=	libdbus-1.so:devel/dbus
-PCAP_USES=		localbase:ldflags
-PCAP_LDFLAGS=		-ldbus-1
-SSH2_CONFIGURE_ON=	--with-libssh2=included
-SSH2_CONFIGURE_OFF=	--without-libssh2
-SSH2_IMPLIES=		SSL
-SSL_USES=		ssl
-SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
-SSL_CONFIGURE_OFF=	--without-openssl
-SSL_CFLAGS=		-I${OPENSSLINC}
-SSL_VARS=		STRIP_FILES+=ncat
 
-DOCS=	CHANGELOG HACKING
-STRIP_FILES+=	nmap nping
+LIBSSH2_LIB_DEPENDS=	libssh2.so:security/libssh2
+LIBSSH2_CONFIGURE_ON=	--with-libssh2=${LOCALBASE}
+LIBSSH2_CONFIGURE_OFF=	--without-libssh2
+LIBSSH2_IMPLIES=	OPENSSL
 
-CONFIGURE_ARGS+=--without-localdirs \
-		--without-zenmap \
-		--without-ndiff \
-		--with-liblua=included \
-		--without-nmap-update \
-		--with-libpcre=${LOCALBASE}
+OPENSSL_USES=		ssl
+OPENSSL_CFLAGS=		-I${OPENSSLINC}
+OPENSSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
+OPENSSL_CONFIGURE_OFF=	--without-openssl
 
 .include <bsd.port.options.mk>
 
-.if defined(SSL_DEFAULT)
-.if ${SSL_DEFAULT} == libressl
-BROKEN=	error: OpenSSL-3.0.0 is the minimum supported version. LibreSSL is not supported
-.endif
+.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mlibressl*}
+IGNORE=	LibreSSL is not supported
 .endif
 
-.if exists(/usr/lib/libibverbs.a)
-# Link with libibverbs is needed by static libpcap
-post-patch-PCAP-on:
-	@${REINPLACE_CMD} -E -e "s|(PCAP_LIBS=['\"].*)(['\"])$$|\1 -libverbs\2|" \
-		${WRKSRC}/configure \
-		${WRKSRC}/nping/configure \
-		${WRKSRC}/ncat/configure
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e '\
+		s|with_liblua\/include|with_liblua|g; \
+		s|$$with_liblua\/lib |${LUA_LIBDIR} -llua-${LUA_VER} |g' \
+	    ${PATCH_WRKSRC}/configure
+	@${REINPLACE_CMD} -e '\
+		s|with_liblua\/include|with_liblua|g; \
+		s|$$with_liblua\/lib |${LUA_LIBDIR} -llua-${LUA_VER} |g' \
+	    ${PATCH_WRKSRC}/ncat/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|" ${WRKSRC}/Makefile
@@ -87,12 +83,12 @@ pre-install:
 	${FIND} ${WRKSRC} -type f \( -name \*.orig -o -name \*.bak \) -delete
 
 post-install:
-	${STRIP_CMD} ${STRIP_FILES:S|^|${STAGEDIR}${PREFIX}/bin/|}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ncat
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nmap
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nping
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-
-.endif
 
 .include <bsd.port.mk>

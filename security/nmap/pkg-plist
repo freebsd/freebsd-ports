@@ -20,7 +20,7 @@ share/man/man1/nping.1.gz
 %%NLS%%share/man/zh/man1/nmap.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%SSL%%share/ncat/ca-bundle.crt
+%%OPENSSL%%share/ncat/ca-bundle.crt
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
 %%DATADIR%%/nmap-protocols
@@ -368,7 +368,6 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/hbase-region-info.nse
 %%DATADIR%%/scripts/hddtemp-info.nse
 %%DATADIR%%/scripts/hnap-info.nse
-%%DATADIR%%/scripts/hostmap-bfk.nse
 %%DATADIR%%/scripts/hostmap-crtsh.nse
 %%DATADIR%%/scripts/hostmap-robtex.nse
 %%DATADIR%%/scripts/http-adobe-coldfusion-apsa1301.nse
