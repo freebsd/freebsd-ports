@@ -1,6 +1,6 @@
 PORTNAME=	libretro-virtualjaguar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0
+DISTVERSION=	3.4.0
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
