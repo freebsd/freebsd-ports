@@ -1,5 +1,5 @@
 PORTNAME=	keeweb
-PORTVERSION=	0.6.27
+PORTVERSION=	0.6.28
 CATEGORIES=	www security
 MASTER_SITES?=	https://github.com/jhass/${PKGNAMEPREFIX}${PORTNAME}/releases/download/v${PORTVERSION}/
 
