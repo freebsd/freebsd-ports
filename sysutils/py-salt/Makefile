@@ -30,7 +30,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}timelib>0:devel/py-timelib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}immutables>0:devel/py-immutables@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>0:devel/py-virtualenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jaraco.text>=4.0.0:devel/py-jaraco.text@${PY_FLAVOR}
