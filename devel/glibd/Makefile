@@ -4,7 +4,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	arrowd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	D language bindings for the GLib Utility Library
 WWW=		https://github.com/gtkd-developers/GlibD
 
