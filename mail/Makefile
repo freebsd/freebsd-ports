@@ -106,6 +106,7 @@
     SUBDIR += dovecot-fts-xapian
     SUBDIR += dovecot-pigeonhole
     SUBDIR += dovecot-xaps
+    SUBDIR += dovecot24
     SUBDIR += dspam
     SUBDIR += ecartis
     SUBDIR += elm

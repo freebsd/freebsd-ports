@@ -1,0 +1,43 @@
+[
+{ type: install
+  message: <<EOM
+ Please check the configuration file at %%ETCDIR%%/dovecot.conf
+ and edit it as desired.
+ The default configuration includes IMAP and POP3 services, will
+ authenticate users agains the system's passwd file, and will use
+ the default /var/mail/$USER mbox files.
+
+ Next, enable dovecot in /etc/rc.conf:
+
+	dovecot_enable="YES"
+
+
+ To avoid a risk of mailbox corruption, do not set the
+ security.bsd.see_other_uids or .see_other_gids sysctls to 0
+ if Dovecot is storing mail for multiple concurrent users (PR 218392).
+
+ Similarly, setting sysctls security.bsd.hardlink_check_uid or
+ security.bsd.hardlink_check_gid to 1 might result in non-working
+ mailboxes, depending on what mailbox locking mechanism is used
+ (PR 242223).
+
+ If you want to be able to search within attachments using the
+ decode2text plugin, you'll need to install textproc/catdoc, and
+ one of graphics/xpdf or graphics/poppler-utils.
+
+
+ There are some breaking changes in Dovecot 2.4.x. If you  are
+ upgrading from earlier version of Dovecot, make sure to read
+ the upgrade guide and adjust the configuration accordingly:
+
+   * https://doc.dovecot.org/%%DISTVERSION%%/installation/upgrade/overview.html
+EOM
+}
+{
+  type: remove
+  message: <<EOM
+If you are removing dovecot permanently, you should 'rm -rf /var/db/dovecot' to
+clear out any remaining data.
+EOM
+}
+]

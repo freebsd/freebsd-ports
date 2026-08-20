@@ -1,0 +1,94 @@
+#!/bin/sh
+
+# PROVIDE: dovecot
+# REQUIRE: LOGIN
+# BEFORE:  mail
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable dovecot:
+# dovecot_enable (bool):        Set it to YES to enable dovecot.
+#                               Default: NO
+# dovecot_config (str):         Path to dovecot.conf.
+#                               Default: %%PREFIX%%/etc/dovecot/dovecot.conf
+#                               Set it to a space-separated list to start
+#                               multiple dovecot instances.
+# dovecot_flags (str):          Extra flags to pass to dovecot.
+#                               Default: empty
+
+. %%RC_SUBR%%
+
+name=dovecot
+rcvar=dovecot_enable
+
+# Read configuration and set defaults
+load_rc_config ${name}
+: ${dovecot_enable:="NO"}
+: ${dovecot_config:="%%PREFIX%%/etc/dovecot/${name}.conf"}
+
+# Service Jail support
+dovecot_svcj_options="net_basic"
+
+command="%%PREFIX%%/sbin/${name}"
+doveconf="%%PREFIX%%/bin/doveconf"
+
+# Use standard prestart hook for directory preparation
+start_precmd="dovecot_prestart"
+dovecot_prestart()
+{
+	if [ -n "${base_dir}" ]; then
+		/usr/bin/install -o root -g wheel -m 0755 -d "${base_dir}"
+	fi
+}
+
+# Custom stop function using dovecot's native stop command
+dovecot_stop()
+{
+	echo "Stopping dovecot."
+	# Execute native stop command within the specific configuration context
+	${command} ${command_args} stop 2>/dev/null
+
+	# Safely wait for the master process to completely release the pidfile
+	if [ -n "${pidfile}" ]; then
+		local i=0
+		while [ -s "${pidfile}" -a $i -lt 14 ]; do
+			sleep 0.5
+			i=$((i + 1))
+		done
+	fi
+
+	# Clean up base_dir after successful shutdown
+	if [ -n "${base_dir}" ] && [ -d "${base_dir}" ]; then
+		/usr/bin/find "${base_dir}" ! -type l -delete 2>/dev/null
+	fi
+}
+
+# Main loop over all defined configurations
+for config in ${dovecot_config}; do
+	required_files="${config}"
+	command_args="-c ${config}"
+
+	if [ -s "${config}" ]; then
+		doveconf_settings="$(${doveconf} -c ${config} -a 2>/dev/null)"
+		if [ $? -ne 0 ]; then
+			echo "==Error== Configuration file check failed for ${config}"
+			continue
+		fi
+
+		# Parse base_dir and fall back to historical/standard location if empty
+		base_dir="$(echo "$doveconf_settings" | /usr/bin/awk -F '= ' '/^base_dir =/ { print $2 }')"
+		if [ -z "${base_dir}" ]; then
+			base_dir="/var/run/dovecot"
+		fi
+		pidfile="${base_dir}/master.pid"
+	else
+		# Fallback context for administrative actions when config doesn't exist yet
+		base_dir=""
+		pidfile=""
+	fi
+
+	# Dynamically define stop_cmd inside the loop context.
+	# This ensures rc.subr executes dovecot_stop with the correct $command_args.
+	stop_cmd="dovecot_stop"
+
+	run_rc_command "$1"
+done
