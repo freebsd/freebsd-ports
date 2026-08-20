@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		tar:xz xorg xorg-cat:util
 USE_XORG=	xorgproto
 
+TEST_TARGET=	check
+
 PLIST_FILES=	bin/makedepend share/man/man1/makedepend.1.gz
 
 .include <bsd.port.mk>
