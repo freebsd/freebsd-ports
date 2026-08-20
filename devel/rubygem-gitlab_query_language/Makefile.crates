@@ -84,4 +84,4 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows-result-0.4.1 \
 		windows-strings-0.5.1 \
 		yaml-rust2-0.10.4 \
-		glql@git+https://gitlab.com/gitlab-org/glql.git?tag=v0.29.0\#c6d1c6bca3967bae552de63ddf3e2d1e69886b08
+		glql@git+https://gitlab.com/gitlab-org/glql.git?tag=v0.34.0\#05fce443d46c035de5f23d7599facb8954c9207d
