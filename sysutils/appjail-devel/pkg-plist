@@ -50,6 +50,7 @@ libexec/appjail/juexec/juexec
 %%DATADIR%%/cmd/restart
 %%DATADIR%%/cmd/rstop
 %%DATADIR%%/cmd/run
+%%DATADIR%%/cmd/secrets
 %%DATADIR%%/cmd/service
 %%DATADIR%%/cmd/start
 %%DATADIR%%/cmd/startup
@@ -222,6 +223,7 @@ share/man/man1/appjail-quick.1.gz
 share/man/man1/appjail-restart.1.gz
 share/man/man1/appjail-rstop.1.gz
 share/man/man1/appjail-run.1.gz
+share/man/man1/appjail-secrets.1.gz
 share/man/man1/appjail-service.1.gz
 share/man/man1/appjail-start.1.gz
 share/man/man1/appjail-startup.1.gz
