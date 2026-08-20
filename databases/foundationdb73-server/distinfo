@@ -1,0 +1,5 @@
+TIMESTAMP = 1786440980
+SHA256 (boost_1_78_0.tar.gz) = 94ced8b72956591c4775ae2207a9763d3600b30d9d7446562c552f0a14a63be7
+SIZE (boost_1_78_0.tar.gz) = 131140716
+SHA256 (apple-foundationdb-7.3.77_GH0.tar.gz) = 5e5a5c6d9d0e7f510861aa8aa39f00ff0f35ad0bbb53340207cf9ddfcdf27300
+SIZE (apple-foundationdb-7.3.77_GH0.tar.gz) = 13152243
