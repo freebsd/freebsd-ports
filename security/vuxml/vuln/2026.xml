@@ -1,3 +1,64 @@
+  <vuln vid="d14c86b6-9ca3-11f1-bf98-a8a1599412c6">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>151.0.7922.169</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>151.0.7922.169</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/08/stable-channel-update-for-desktop_0826575033.html">
+	 <p>This update includes 15 security fixes:</p>
+	 <ul>
+	    <li>[534923522] Critical CVE-2026-76034: Buffer overflow in WebGL.</li>
+	    <li>[540087398] Critical CVE-2026-76036: Buffer overflow in Dawn.</li>
+	    <li>[516715010] High CVE-2026-76033: Inappropriate implementation in CORS.</li>
+	    <li>[517612295] High CVE-2026-76037: Link following in CredentialProvider.</li>
+	    <li>[522732244] High CVE-2026-76044: Race condition in USB.</li>
+	    <li>[525167753] High CVE-2026-76039: Incorrect reference resolution in Core.</li>
+	    <li>[534862220] High CVE-2026-76040: Use after free in Browser.</li>
+	    <li>[536439844] High CVE-2026-76035: Inappropriate implementation in Media.</li>
+	    <li>[536460270] High CVE-2026-76042: Use of uninitialized resource in GPU.</li>
+	    <li>[536581050] High CVE-2026-76046: Buffer overflow in ANGLE.</li>
+	    <li>[539350801] High CVE-2026-76043: Incorrect calculation in V8.</li>
+	    <li>[540027341] High CVE-2026-76041: Information leak in Skia.</li>
+	    <li>[541251902] High CVE-2026-76047: Type confusion in V8.</li>
+	    <li>[541926503] High CVE-2026-76038: Type confusion in V8.</li>
+	    <li>[543082390] High CVE-2026-76045: Use after free in WebGL.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-76034</cvename>
+      <cvename>CVE-2026-76036</cvename>
+      <cvename>CVE-2026-76033</cvename>
+      <cvename>CVE-2026-76037</cvename>
+      <cvename>CVE-2026-76044</cvename>
+      <cvename>CVE-2026-76039</cvename>
+      <cvename>CVE-2026-76040</cvename>
+      <cvename>CVE-2026-76035</cvename>
+      <cvename>CVE-2026-76042</cvename>
+      <cvename>CVE-2026-76046</cvename>
+      <cvename>CVE-2026-76043</cvename>
+      <cvename>CVE-2026-76041</cvename>
+      <cvename>CVE-2026-76047</cvename>
+      <cvename>CVE-2026-76038</cvename>
+      <cvename>CVE-2026-76045</cvename>
+      <url>https://chromereleases.googleblog.com/2026/08/stable-channel-update-for-desktop_0826575033.html</url>
+    </references>
+    <dates>
+      <discovery>2026-08-18</discovery>
+      <entry>2026-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e6a17802-cda9-4f53-8870-b629e4ac3d40">
     <topic>zeek -- multiple vulnerabilities</topic>
     <affects>
