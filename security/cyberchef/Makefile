@@ -1,9 +1,8 @@
 PORTNAME=	cyberchef
-PORTVERSION=	11.0.0
-DISTVERSIONPREFIX=	v
+DISTVERSION=	11.4.0
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
-DISTNAME=	CyberChef_${DISTVERSIONPREFIX}${PORTVERSION}
+MASTER_SITES=	https://github.com/gchq/CyberChef/releases/download/v${DISTVERSION}/
+DISTNAME=	CyberChef_49d1a5634a67a3b806c6db0fdca7dcecb41a776c
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Cyber operations within a web browser
@@ -14,18 +13,15 @@ LICENSE=	APACHE20
 USES=		cpe zip
 CPE_VENDOR=	gchq
 
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	gchq
-GH_PROJECT=	CyberChef
-
 NO_BUILD=	yes
 NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
-	${INSTALL} ${WRKDIR}/${DISTNAME}.html ${STAGEDIR}${WWWDIR}/index.html
-	${CP} -R ${WRKDIR}/images ${STAGEDIR}${WWWDIR}/
-	${CP} -R ${WRKDIR}/modules ${STAGEDIR}${WWWDIR}/
-	${CP} -R ${WRKDIR}/assets ${STAGEDIR}${WWWDIR}/
+	${INSTALL} ${WRKSRC}/CyberChef_v${DISTVERSION}.html \
+		${STAGEDIR}${WWWDIR}/index.html
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "images modules assets" \
+		${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>

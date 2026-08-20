@@ -63,6 +63,10 @@
 %%WWWDIR%%/modules/Encodings.js.LICENSE.txt
 %%WWWDIR%%/modules/Encodings.js.br
 %%WWWDIR%%/modules/Encodings.js.gz
+%%WWWDIR%%/modules/File.js
+%%WWWDIR%%/modules/File.js.LICENSE.txt
+%%WWWDIR%%/modules/File.js.br
+%%WWWDIR%%/modules/File.js.gz
 %%WWWDIR%%/modules/Handlebars.js
 %%WWWDIR%%/modules/Handlebars.js.LICENSE.txt
 %%WWWDIR%%/modules/Handlebars.js.br
