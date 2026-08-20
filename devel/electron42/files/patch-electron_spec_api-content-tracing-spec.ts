@@ -1,6 +1,6 @@
---- electron/spec/api-content-tracing-spec.ts.orig	2026-05-07 20:19:20 UTC
+--- electron/spec/api-content-tracing-spec.ts.orig	2026-08-17 14:38:13 UTC
 +++ electron/spec/api-content-tracing-spec.ts
-@@ -13,7 +13,7 @@ const fixturesPath = path.resolve(__dirname, 'fixtures
+@@ -14,7 +14,7 @@ const fixturesPath = path.resolve(__dirname, 'fixtures
  const fixturesPath = path.resolve(__dirname, 'fixtures');
  
  // FIXME: The tests are skipped on linux arm/arm64
@@ -9,7 +9,7 @@
    const record = async (
      options: TraceConfig | TraceCategoriesAndOptions,
      outputFilePath: string | undefined,
-@@ -99,7 +99,7 @@ ifdescribe(!['arm', 'arm64'].includes(process.arch) ||
+@@ -105,7 +105,7 @@ ifdescribe(!['arm', 'arm64'].includes(process.arch) ||
      });
    });
  
