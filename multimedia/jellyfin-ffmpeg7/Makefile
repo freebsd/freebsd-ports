@@ -1,5 +1,6 @@
 PORTNAME=	jellyfin-ffmpeg7
 PORTVERSION=	7.1.4.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	michaeljohnson@ahze.net
@@ -8,6 +9,9 @@ WWW=		https://github.com/jellyfin/jellyfin-ffmpeg
 
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
+
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	upstream jellyfin-ffmpeg targets 64-bit; 32-bit builds non-PIC asm that lld rejects
 
 BUILD_DEPENDS=	nasm:devel/nasm \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
@@ -55,20 +59,10 @@ GH_PROJECT=	jellyfin-ffmpeg
 GH_TAGNAME=	v${PORTVERSION:C/\.([0-9]+)$/-\1/}
 
 # Everything installs into a private subdir so nothing collides with
-# multimedia/ffmpeg or with jellyfin-ffmpeg8. Standard PREFIX is untouched:
-#   ${PREFIX}/lib/jellyfin-ffmpeg7/bin/ffmpeg   <- real binary
-#   ${PREFIX}/lib/jellyfin-ffmpeg7/lib/libav*   <- bundled libs (ldconfig)
-#   ${PREFIX}/bin/jellyfin-ffmpeg7              <- version-suffixed symlink
-# The only files outside the private dir are the suffixed bin/ symlinks.
-# --enable-rpath (below) makes the binary load these bundled libs even when
-# base multimedia/ffmpeg is installed with the same soname.
-# The bundled headers stay under the private prefix so they do not collide
-# with multimedia/ffmpeg's include/libav*. The pkg-config files are relocated
-# in post-install to libdata/pkgconfig with a jellyfin-ffmpeg7- filename prefix
-# (Requires tokens rewritten to match) so they are discoverable system-wide
-# without colliding with multimedia/ffmpeg's libav*.pc.
+# multimedia/ffmpeg or jellyfin-ffmpeg8; only the suffixed bin/ symlinks land
+# in PREFIX. --enable-rpath lets the binary load the bundled libs without
+# ldconfig even when base ffmpeg shares the same soname.
 JFFMPEG_DIR=	${PREFIX}/lib/jellyfin-ffmpeg7
-USE_LDCONFIG=	${JFFMPEG_DIR}/lib
 
 post-patch:
 	cd ${WRKSRC} && QUILT_PATCHES=debian/patches quilt push -a || \
@@ -128,7 +122,7 @@ CONFIGURE_ARGS=	--prefix="${JFFMPEG_DIR}" \
 		--enable-vdpau \
 		--disable-ffnvcodec
 
-INSTALL_TARGET=	install-progs install-data install-libs install-headers
+INSTALL_TARGET=	install-progs install-data install-libs
 
 post-install:
 	# Version-suffixed symlinks in /usr/local/bin for PATH access
@@ -138,16 +132,5 @@ post-install:
 	# (jellyfin, immich) reference the stable /usr/local/bin/jellyfin-ffmpeg.
 	${LN} -sf ../lib/jellyfin-ffmpeg7/bin/ffmpeg ${STAGEDIR}${PREFIX}/bin/jellyfin-ffmpeg
 	${LN} -sf ../lib/jellyfin-ffmpeg7/bin/ffprobe ${STAGEDIR}${PREFIX}/bin/jellyfin-ffprobe
-	# Relocate the private pkg-config files to libdata/pkgconfig under a
-	# jellyfin-ffmpeg7- prefix. Rewrite Name and the Requires cross-refs so
-	# pkg-config resolves them to each other, not to multimedia/ffmpeg.
-	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	@cd ${STAGEDIR}${JFFMPEG_DIR}/lib/pkgconfig && for pc in *.pc; do \
-		${SED} -E \
-			-e 's/^(Name: )/\1jellyfin-ffmpeg7-/' \
-			-e '/^Requires/ s/lib(avcodec|avdevice|avfilter|avformat|avutil|postproc|swresample|swscale)/jellyfin-ffmpeg7-lib\1/g' \
-			$${pc} > ${STAGEDIR}${PREFIX}/libdata/pkgconfig/jellyfin-ffmpeg7-$${pc}; \
-	done
-	${RM} -r ${STAGEDIR}${JFFMPEG_DIR}/lib/pkgconfig
 
 .include <bsd.port.mk>
