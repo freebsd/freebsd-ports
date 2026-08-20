@@ -1,4 +1,4 @@
-GITLAB_VERSION=		19.2.4
+GITLAB_VERSION=		19.3.0
 GITLAB_PORTREVISION=	0	# decrease this only if GITLAB_KAS_GRPC_VERSION is upgraded
 
 # Git version gitaly should use (from gitlab mirror)
@@ -13,7 +13,7 @@ GITLAB_GIT_VERSION_MVCC=	259367dc2d128a4e0dc4b6d0f67ee9711bde8cc2
 
 # Overwrite version for gitlab-kas-grpc
 #GITLAB_KAS_GRPC_VERSION=	${GITLAB_VERSION}
-GITLAB_KAS_GRPC_VERSION=	19.2.0.pre.rc1
+GITLAB_KAS_GRPC_VERSION=	19.3.0.pre.rc4
 
 # Rails version
 RAILS_VERSION=	7.2.3.1
