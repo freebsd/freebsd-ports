@@ -40,7 +40,7 @@ firstboot_pkg_upgrade_run()
 
 	state_orig=`pkg info | sha256`
 
-	env AUTOCLEAN=ON pkg upgrade ${repo_args} -y
+	env AUTOCLEAN=ON IGNORE_OSVERSION=yes pkg upgrade ${repo_args} -y
 
 	state_new=`pkg info | sha256`
 
