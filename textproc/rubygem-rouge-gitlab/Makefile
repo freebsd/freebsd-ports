@@ -1,5 +1,5 @@
 PORTNAME=	rouge
-PORTVERSION=	4.7.0
+PORTVERSION=	5.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -12,11 +12,12 @@ LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	rubygem-strscan>=3.1<4:devel/rubygem-strscan
+
 USES=		gem
 
 NO_ARCH=	yes
 
-post-install:
-	${RM} ${STAGEDIR}${PREFIX}/bin/rougify
+PLIST_FILES=	bin/rougify
 
 .include <bsd.port.mk>
