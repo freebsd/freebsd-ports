@@ -1,6 +1,6 @@
 PORTNAME=	stalwart
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.15
+DISTVERSION=	0.16.18
 CATEGORIES=	mail
 
 MAINTAINER=	orville@anislet.dev
@@ -54,6 +54,7 @@ SQLITE_DESC=		Enable SQLite backend
 
 AZURE_VARS=		CARGO_FEATURES+=azure
 ELASTIC_VARS=		CARGO_FEATURES+=elastic
+ELASTIC_BROKEN=		none of the selected packages contains this feature
 ENTERPRISE_VARS=	CARGO_FEATURES+=enterprise
 FOUNDATIONDB_LIB_DEPENDS=		libfdb_c.so:databases/foundationdb73-client
 FOUNDATIONDB_VARS=	CARGO_FEATURES+=foundationdb
