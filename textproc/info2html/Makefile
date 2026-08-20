@@ -7,6 +7,9 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Translate GNU info files into HTML pages
 
+DEPRECATED=	Not updated for years
+EXPIRATION_DATE=2026-08-31
+
 USES=		shebangfix
 NO_BUILD=	yes
 
