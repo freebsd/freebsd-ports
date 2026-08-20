@@ -1,4 +1,4 @@
-TIMESTAMP = 1787104477
+TIMESTAMP = 1787186165
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/allocator-api2-0.2.21.crate) = 683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923
@@ -329,5 +329,5 @@ SHA256 (rust/crates/zerocopy-derive-0.8.48.crate) = 70e3cd084b1788766f53af483dd2
 SIZE (rust/crates/zerocopy-derive-0.8.48.crate) = 97646
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (microsoft-tgrep-v1.0.0_GH0.tar.gz) = 605e66b6bfe912b1489ea346c14491785b60707069cae3d4e9e52aa01cf2f16b
-SIZE (microsoft-tgrep-v1.0.0_GH0.tar.gz) = 153448
+SHA256 (microsoft-tgrep-v1.0.1_GH0.tar.gz) = d67760e41f9d6230c2f8f55a198df02a0f371ed81b73648cfe1044d6d8889d6b
+SIZE (microsoft-tgrep-v1.0.1_GH0.tar.gz) = 192273
