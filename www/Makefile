@@ -2093,6 +2093,7 @@
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-acts_as_taggable
     SUBDIR += rubygem-addressable
+    SUBDIR += rubygem-addressable28
     SUBDIR += rubygem-adsf
     SUBDIR += rubygem-akami
     SUBDIR += rubygem-amazon-ecs
