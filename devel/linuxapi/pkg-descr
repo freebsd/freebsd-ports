@@ -1,0 +1,5 @@
+linuxapi is a project intended to provide a subset of system headers usually
+found on Linux systems. linuxapi serves as a compatibility shim for projects
+that are heavily using Linux-specific headers and preprocessor macros, allowing
+for a faster porting process. It also improves maintainability of such ports
+without encumbering the upstream with FreeBSD-specific changes.

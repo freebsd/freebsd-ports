@@ -1628,6 +1628,7 @@
     SUBDIR += linux-rl9-systemd-libs
     SUBDIR += linux-sublime-merge
     SUBDIR += linux_libusb
+    SUBDIR += linuxapi
     SUBDIR += listserialc
     SUBDIR += liteide
     SUBDIR += llama.el
