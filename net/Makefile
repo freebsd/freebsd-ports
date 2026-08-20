@@ -1293,6 +1293,7 @@
     SUBDIR += rubygem-amq-protocol
     SUBDIR += rubygem-amqp
     SUBDIR += rubygem-amqp-utils
+    SUBDIR += rubygem-apnotic
     SUBDIR += rubygem-apollo_upload_server
     SUBDIR += rubygem-app_store_connect
     SUBDIR += rubygem-asset_sync
@@ -1357,6 +1358,7 @@
     SUBDIR += rubygem-gitlab-kas-grpc
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-gitlab_omniauth-ldap-gitlab
+    SUBDIR += rubygem-gitlab-orbit-proto
     SUBDIR += rubygem-google-cloud-bigquery
     SUBDIR += rubygem-google-cloud-bigtable
     SUBDIR += rubygem-google-cloud-bigtable-admin-v2
@@ -1397,6 +1399,7 @@
     SUBDIR += rubygem-grpc-tools
     SUBDIR += rubygem-grpc_reflection
     SUBDIR += rubygem-hangouts-chat
+    SUBDIR += rubygem-http-2
     SUBDIR += rubygem-http-parser
     SUBDIR += rubygem-http_parser.rb
     SUBDIR += rubygem-httpauth
@@ -1409,6 +1412,8 @@
     SUBDIR += rubygem-maxmind-db
     SUBDIR += rubygem-mqtt
     SUBDIR += rubygem-nats-pure
+    SUBDIR += rubygem-nats-pure-gitlab
+    SUBDIR += rubygem-net-http2
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-ldap017
     SUBDIR += rubygem-net-netrc

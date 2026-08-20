@@ -1,0 +1,13 @@
+AnonymousLoader evaluates Ruby source files inside fresh anonymous modules. It
+is useful when a tool needs to inspect or reuse code that declares constants
+whose top-level names may collide with the host process.
+
+The loaded source keeps its normal constant nesting, but that nesting starts
+inside the returned anonymous namespace. For example, source that declares
+Auth::Sanitizer becomes namespace::Auth::Sanitizer, and does not create
+Object::Auth.
+
+AnonymousLoader can load explicitly named files, or resolve a file using
+RubyGems metadata with a $LOAD_PATH fallback. The fallback is intended for
+Bundler standalone and similar environments where code is loadable but a gem is
+not visible through Gem.loaded_specs or the normal RubyGems index.

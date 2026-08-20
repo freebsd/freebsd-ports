@@ -5551,3 +5551,4 @@ devel/prjpeppercorn112||2026-08-15|No longer supported by devel/nextpnr
 devel/py-yg.lockfile|devel/py-fasteners|2026-08-16|Has expired: Upstream inactive since 8+ years, please use devel/py-fasteners instead
 www/pecl-solr|www/php-solr|2026-08-17|Converted to standard extension from pecl extension
 biology/gperiodic|science/gperiodic|2026-08-19|Move to a more appropriate category
+devel/rubygem-grape20|devel/rubygem-grape-gitlab|2026-08-20|Make clear it is used for Gitlab only
