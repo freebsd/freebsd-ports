@@ -1,6 +1,6 @@
---- configure.ac.orig	2022-07-05 09:38:08 UTC
+--- configure.ac.orig	2026-08-16 14:25:19 UTC
 +++ configure.ac
-@@ -91,10 +91,9 @@ fi
+@@ -95,10 +95,9 @@ if test $backend = freebsd; then
  ])
  
  if test $backend = freebsd; then
