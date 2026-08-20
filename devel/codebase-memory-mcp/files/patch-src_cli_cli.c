@@ -1,6 +1,6 @@
---- src/cli/cli.c.orig	2026-08-14 04:11:37 UTC
+--- src/cli/cli.c.orig	2026-08-18 20:39:59 UTC
 +++ src/cli/cli.c
-@@ -7963,7 +7963,12 @@ static void cbm_agent_installed_binary_path(const char
+@@ -8178,7 +8178,12 @@ static void cbm_agent_installed_binary_path(const char
  
  static void cbm_agent_installed_binary_path(const char *home, char *binary_path,
                                              size_t binary_path_size) {
@@ -14,7 +14,7 @@
      snprintf(binary_path, binary_path_size, "%s/.local/bin/codebase-memory-mcp.exe", home);
  #else
      snprintf(binary_path, binary_path_size, "%s/.local/bin/codebase-memory-mcp", home);
-@@ -9472,6 +9477,16 @@ static const char *cli_external_manager_name(const cha
+@@ -9699,6 +9704,16 @@ static const char *cli_external_manager_name(const cha
      if (strstr(self_path, "/.cargo/bin/")) {
          return "cargo";
      }
@@ -31,7 +31,7 @@
      return NULL;
  }
  
-@@ -9890,6 +9905,13 @@ int cbm_cmd_install(int argc, char **argv) {
+@@ -10117,6 +10132,13 @@ int cbm_cmd_install(int argc, char **argv) {
                     manager ? " by " : "", manager ? manager : "", self_path, bin_dir);
          }
          skip_binary = true;
@@ -45,7 +45,7 @@
      }
  
      /* NOT stat(): on Windows it goes through the ANSI code page, so an
-@@ -11939,6 +11961,8 @@ int cbm_cmd_update(int argc, char **argv) {
+@@ -12227,6 +12249,8 @@ int cbm_cmd_update(int argc, char **argv) {
                  (void)fprintf(stderr, "  update it with: mise upgrade codebase-memory-mcp\n");
              } else if (manager && strcmp(manager, "Homebrew") == 0) {
                  (void)fprintf(stderr, "  update it with: brew upgrade codebase-memory-mcp\n");

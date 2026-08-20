@@ -1,6 +1,6 @@
 PORTNAME=	codebase-memory-mcp
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.10.6
+DISTVERSION=	0.10.8
 CATEGORIES=	devel
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -27,6 +27,13 @@ OPTIONS_DEFINE=	DOCS
 .if ${PORT_OPTIONS:MDOCS}
 PLIST_FILES+=	${DOCSDIR_REL}/freebsd-src.cbmignore
 .endif
+
+# FreeBSD sysctl OID-tree extractor: two source files added by the port (wired
+# into Makefile.cbm and the pipeline via patches). Not shippable as patches
+# because patch(1) cannot create new files.
+post-extract:
+	${CP} ${FILESDIR}/extract_sysctl.c ${WRKSRC}/internal/cbm/extract_sysctl.c
+	${CP} ${FILESDIR}/pass_sysctl.c ${WRKSRC}/src/pipeline/pass_sysctl.c
 
 do-build:
 	@cd ${WRKSRC} && \
