@@ -1,7 +1,6 @@
 PORTNAME=	pomerium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.0
-PORTREVISION=	2
+DISTVERSION=	0.33.1
 PORTEPOCH=	1
 CATEGORIES=	www
 # Custom distfiles for packages not on GitHub
@@ -130,29 +129,29 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		goccy:go-json:v0.10.5:goccy_go_json/vendor/github.com/goccy/go-json \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-jwt:jwt:v5.3.1:golang_jwt_jwt_v5/vendor/github.com/golang-jwt/jwt/v5 \
-		golang:crypto:v0.53.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.54.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:74f9aab9d74a:golang_exp/vendor/golang.org/x/exp \
 		golang:freetype:e2365dfdc4a0:golang_freetype/vendor/github.com/golang/freetype \
 		golang:groupcache:2c02b8208cf8:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:v0.42.0:golang_image/vendor/golang.org/x/image \
-		golang:mod:v0.36.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.55.0:golang_net/vendor/golang.org/x/net \
+		golang:mod:v0.37.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.57.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.36.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:snappy:v1.0.0:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:v0.21.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.46.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.44.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.38.0:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.22.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.47.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.45.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.40.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.15.0:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.45.0:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.47.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:7835f813f4da:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:btree:v1.1.3:google_btree/vendor/github.com/google/btree \
 		google:cel-go:v0.28.1:google_cel_go/vendor/github.com/google/cel-go \
 		google:cel-spec:v0.25.2:google_cel_spec/vendor/cel.dev/expr \
 		google:go-cmp:v0.7.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:d00831a3d3e7:google_go_genproto/vendor/google.golang.org/genproto \
-		google:go-genproto:3dc84a4a5aaa:google_go_genproto_api/vendor/google.golang.org/genproto/googleapis/api \
-		google:go-genproto:3dc84a4a5aaa:google_go_genproto_rpc/vendor/google.golang.org/genproto/googleapis/rpc \
+		google:go-genproto:0afa2a65878a:google_go_genproto_api/vendor/google.golang.org/genproto/googleapis/api \
+		google:go-genproto:0afa2a65878a:google_go_genproto_rpc/vendor/google.golang.org/genproto/googleapis/rpc \
 		google:go-jsonnet:v0.22.0:google_go_jsonnet/vendor/github.com/google/go-jsonnet \
 		google:go-tpm:v0.9.8:google_go_tpm/vendor/github.com/google/go-tpm \
 		google:gnostic:e0e09f706281:google_gnostic/vendor/github.com/google/gnostic \
@@ -177,8 +176,8 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		gorilla:websocket:e064f32e3674:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		gregjones:httpcache:901d90724c79:gregjones_httpcache/vendor/github.com/gregjones/httpcache \
 		grpc-ecosystem:go-grpc-middleware:v2.3.3:grpc_ecosystem_go_grpc_middleware_v2/vendor/github.com/grpc-ecosystem/go-grpc-middleware/v2 \
-		grpc-ecosystem:grpc-gateway:v2.28.0:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
-		grpc:grpc-go:v1.82.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc-ecosystem:grpc-gateway:v2.29.0:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
+		grpc:grpc-go:v1.82.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-hclog:v1.6.2:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
 		hashicorp:go-immutable-radix:v1.0.0:hashicorp_go_immutable_radix/vendor/github.com/hashicorp/go-immutable-radix \
@@ -246,16 +245,16 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		onsi:ginkgo:v1.16.5:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		open-policy-agent:opa:v1.15.1:open_policy_agent_opa/vendor/github.com/open-policy-agent/opa \
 		open-telemetry:opentelemetry-go-contrib:detectors/gcp/v1.43.0:open_telemetry_opentelemetry_go_contrib/vendor/go.opentelemetry.io/contrib \
-		open-telemetry:opentelemetry-go-contrib:instrumentation/google.golang.org/grpc/otelgrpc/v0.68.0:open_telemetry_opentelemetry_go_contrib_1 \
-		open-telemetry:opentelemetry-go-contrib:instrumentation/net/http/otelhttp/v0.68.0:open_telemetry_opentelemetry_go_contrib_2 \
-		open-telemetry:opentelemetry-go-contrib:propagators/autoprop/v0.68.0:open_telemetry_opentelemetry_go_contrib_3 \
+		open-telemetry:opentelemetry-go-contrib:instrumentation/google.golang.org/grpc/otelgrpc/v0.69.0:open_telemetry_opentelemetry_go_contrib_1 \
+		open-telemetry:opentelemetry-go-contrib:instrumentation/net/http/otelhttp/v0.69.0:open_telemetry_opentelemetry_go_contrib_2 \
+		open-telemetry:opentelemetry-go-contrib:propagators/autoprop/v0.69.0:open_telemetry_opentelemetry_go_contrib_3 \
 		open-telemetry:opentelemetry-go-instrumentation:sdk/v1.2.1:open_telemetry_opentelemetry_go_instrumentation \
-		open-telemetry:opentelemetry-go:v1.43.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
-		open-telemetry:opentelemetry-proto-go:v1.10.0:open_telemetry_opentelemetry_proto_go \
+		open-telemetry:opentelemetry-go:v1.44.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
+		open-telemetry:opentelemetry-proto-go:v1.11.0:open_telemetry_opentelemetry_proto_go \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.1.1:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
-		oras-project:oras-go:v2.6.0:oras_project_oras_go/vendor/oras.land/oras-go/v2 \
-		pelletier:go-toml:v2.2.4:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
+		oras-project:oras-go:v2.6.2:oras_project_oras_go/vendor/oras.land/oras-go/v2 \
+		pelletier:go-toml:v2.4.3:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		peterbourgon:ff:v3.4.0:peterbourgon_ff_v3/vendor/github.com/peterbourgon/ff/v3 \
 		philhofer:fwd:v1.2.0:philhofer_fwd/vendor/github.com/philhofer/fwd \
 		pierrec:lz4:v4.1.21:pierrec_lz4_v4/vendor/github.com/pierrec/lz4/v4 \
@@ -394,7 +393,11 @@ VENDOR_SUBMOD_PAIRS+=	${WRKSRC_moby_moby}/api:github.com/moby/moby/api \
 # opentelemetry-go-contrib submodules
 VENDOR_SUBMOD_PAIRS+=	${WRKSRC_open_telemetry_opentelemetry_go_contrib_1}/instrumentation/google.golang.org/grpc/otelgrpc:go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc \
 			${WRKSRC_open_telemetry_opentelemetry_go_contrib_2}/instrumentation/net/http/otelhttp:go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp \
-			${WRKSRC_open_telemetry_opentelemetry_go_contrib_3}/propagators/autoprop:go.opentelemetry.io/contrib/propagators/autoprop
+			${WRKSRC_open_telemetry_opentelemetry_go_contrib_3}/propagators/autoprop:go.opentelemetry.io/contrib/propagators/autoprop \
+			${WRKSRC_open_telemetry_opentelemetry_go_contrib_3}/propagators/aws:go.opentelemetry.io/contrib/propagators/aws \
+			${WRKSRC_open_telemetry_opentelemetry_go_contrib_3}/propagators/b3:go.opentelemetry.io/contrib/propagators/b3 \
+			${WRKSRC_open_telemetry_opentelemetry_go_contrib_3}/propagators/jaeger:go.opentelemetry.io/contrib/propagators/jaeger \
+			${WRKSRC_open_telemetry_opentelemetry_go_contrib_3}/propagators/ot:go.opentelemetry.io/contrib/propagators/ot
 # opentelemetry-go-instrumentation sdk submodule
 VENDOR_SUBMOD_PAIRS+=	${WRKSRC_open_telemetry_opentelemetry_go_instrumentation}/sdk:go.opentelemetry.io/auto/sdk
 # opentelemetry-proto-go otlp submodule
