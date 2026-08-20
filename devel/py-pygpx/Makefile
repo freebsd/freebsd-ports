@@ -9,6 +9,9 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Python Module For Parsing GPS Exchange Format (GPX) File
 WWW=		https://pypi.org/project/pygpx/
 
+DEPRECATED=	Not updated for years
+EXPIRATION_DATE=2026-08-31
+
 PLIST_SUB=	GPX_INFO=${PYDISTUTILS_EGGINFO}
 
 USES=		python
