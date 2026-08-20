@@ -1,5 +1,5 @@
 PORTNAME=	bootsnap
-PORTVERSION=	1.24.6
+PORTVERSION=	1.25.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -11,7 +11,7 @@ WWW=		https://github.com/rails/bootsnap
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-msgpack>=1.2<2:devel/rubygem-msgpack
+RUN_DEPENDS=	rubygem-msgpack>=1.5<2:devel/rubygem-msgpack
 
 USES=		gem
 
