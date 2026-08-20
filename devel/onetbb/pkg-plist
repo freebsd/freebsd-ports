@@ -1,3 +1,4 @@
+include/oneapi/tbb.cppm
 include/oneapi/tbb.h
 include/oneapi/tbb/blocked_nd_range.h
 include/oneapi/tbb/blocked_range.h
@@ -70,6 +71,7 @@ include/oneapi/tbb/memory_pool.h
 include/oneapi/tbb/mutex.h
 include/oneapi/tbb/null_mutex.h
 include/oneapi/tbb/null_rw_mutex.h
+include/oneapi/tbb/numa_allocation.h
 include/oneapi/tbb/parallel_for.h
 include/oneapi/tbb/parallel_for_each.h
 include/oneapi/tbb/parallel_invoke.h
@@ -119,6 +121,7 @@ include/tbb/memory_pool.h
 include/tbb/mutex.h
 include/tbb/null_mutex.h
 include/tbb/null_rw_mutex.h
+include/tbb/numa_allocation.h
 include/tbb/parallel_for.h
 include/tbb/parallel_for_each.h
 include/tbb/parallel_invoke.h
@@ -149,14 +152,14 @@ lib/cmake/TBB/TBBTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/TBB/TBBTargets.cmake
 lib/libtbb%%DBGSUFX%%.so
 lib/libtbb%%DBGSUFX%%.so.12
-lib/libtbb%%DBGSUFX%%.so.12.18
+lib/libtbb%%DBGSUFX%%.so.12.19
 lib/libtbbbind_2_5%%DBGSUFX%%.so
 lib/libtbbbind_2_5%%DBGSUFX%%.so.3
-lib/libtbbbind_2_5%%DBGSUFX%%.so.3.18
+lib/libtbbbind_2_5%%DBGSUFX%%.so.3.19
 lib/libtbbmalloc%%DBGSUFX%%.so
 lib/libtbbmalloc%%DBGSUFX%%.so.2
-lib/libtbbmalloc%%DBGSUFX%%.so.2.18
+lib/libtbbmalloc%%DBGSUFX%%.so.2.19
 lib/libtbbmalloc_proxy%%DBGSUFX%%.so
 lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2
-lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2.18
+lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2.19
 libdata/pkgconfig/tbb%%PCSUFX%%.pc
