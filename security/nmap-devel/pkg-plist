@@ -368,7 +368,6 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/hbase-region-info.nse
 %%DATADIR%%/scripts/hddtemp-info.nse
 %%DATADIR%%/scripts/hnap-info.nse
-%%DATADIR%%/scripts/hostmap-bfk.nse
 %%DATADIR%%/scripts/hostmap-crtsh.nse
 %%DATADIR%%/scripts/hostmap-robtex.nse
 %%DATADIR%%/scripts/http-adobe-coldfusion-apsa1301.nse
