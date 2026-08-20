@@ -5492,3 +5492,4 @@ lang/perl5.38||2026-07-03|Has expired: Support ends three years after .0 release
 graphics/gimp-jxl-plugin||2026-07-03|Integrated into graphics/gimp-app
 textproc/pecl-pspell|textproc/php-pspell|2026-07-05|Converted to standard extension from pecl extension
 biology/gperiodic|science/gperiodic|2026-08-19|Move to a more appropriate category
+devel/rubygem-grape20|devel/rubygem-grape-gitlab|2026-08-20|Make clear it is used for Gitlab only

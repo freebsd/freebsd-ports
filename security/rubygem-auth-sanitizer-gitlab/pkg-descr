@@ -1,0 +1,10 @@
+auth-sanitizer provides small, dependency-light helpers for keeping OAuth and
+authentication secrets out of object inspection and log output.
+
+The gem is intentionally narrow in scope. It does not change HTTP requests,
+token objects, persistence, or application configuration for you. Instead, it
+gives host gems and applications two reusable redaction surfaces:
+- Auth::Sanitizer::FilteredAttributes redacts selected instance variables from
+  #inspect.
+- Auth::Sanitizer::SanitizedLogger wraps an existing logger and redacts
+  sensitive values from string log messages.
