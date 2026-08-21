@@ -1,6 +1,6 @@
 PORTNAME=	qmapshack
 DISTVERSIONPREFIX=	V_
-DISTVERSION=	1.20.3
+DISTVERSION=	1.21.0
 CATEGORIES=	astro
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libalglib.so:math/alglib \
+		libblend2d.so:graphics/blend2d \
 		libgdal.so:graphics/gdal \
 		libproj.so:graphics/proj \
 		libquazip1-qt6.so:archivers/quazip \

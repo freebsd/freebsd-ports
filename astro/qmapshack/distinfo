@@ -1,3 +1,7 @@
-TIMESTAMP = 1780938847
-SHA256 (Maproom-qmapshack-V_1.20.3_GH0.tar.gz) = faae6d10c8aa3fd00efad5f571697aa56ae71543cebbc1a52130ec545a2208b0
-SIZE (Maproom-qmapshack-V_1.20.3_GH0.tar.gz) = 58030217
+TIMESTAMP = 1787330794
+SHA256 (Maproom-qmapshack-V_1.21.0_GH0.tar.gz) = 4ead3014837e19be7657cbc76025853c5f5c6a69c79720490a76bbc6c14961aa
+SIZE (Maproom-qmapshack-V_1.21.0_GH0.tar.gz) = 53477721
+SHA256 (asmjit-asmjit-0bd5787b54b575ed94bf32ac452153b34385c514_GH0.tar.gz) = 8d642612b05d0fd932beee8bdb8c9559c675cb4d2db2946b9636a1fef32b3fb9
+SIZE (asmjit-asmjit-0bd5787b54b575ed94bf32ac452153b34385c514_GH0.tar.gz) = 1366294
+SHA256 (blend2d-blend2d-def0d1238c3e5d0983bb848e5676049d829e435b_GH0.tar.gz) = fac3fc318d5236b6cfeec9124995f3e5866166cad37febb520517ebdc97cd100
+SIZE (blend2d-blend2d-def0d1238c3e5d0983bb848e5676049d829e435b_GH0.tar.gz) = 1525821
