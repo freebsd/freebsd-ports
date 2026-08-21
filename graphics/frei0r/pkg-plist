@@ -101,6 +101,7 @@ lib/frei0r-1/overlay.so
 lib/frei0r-1/partik0l.so
 lib/frei0r-1/perspective.so
 lib/frei0r-1/pixeliz0r.so
+lib/frei0r-1/pixels0rt.so
 lib/frei0r-1/pixs0r.so
 lib/frei0r-1/plasma.so
 lib/frei0r-1/posterize.so
