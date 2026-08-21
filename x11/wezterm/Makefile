@@ -1,7 +1,6 @@
 PORTNAME=	wezterm
-DISTVERSION=	20250730-110715
-DISTVERSIONSUFFIX=	-6a493f88
-PORTREVISION=	8
+DISTVERSION=	20260820-095106
+DISTVERSIONSUFFIX=	-770d8e1a
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	vladislav.movchan@gmail.com
@@ -24,7 +23,7 @@ USE_GITHUB=	yes
 USE_XORG=	x11 xcb
 GH_ACCOUNT=	wez vladmovchan:build_docs_offline
 GH_PROJECT=	wezterm freebsd-wezterm-port-extra-files:build_docs_offline
-GH_TAGNAME=	6a493f88fab06a792308e0c704790390fd3c6232 0cf07e1:build_docs_offline
+GH_TAGNAME=	770d8e1a7519a9a698090cd7d717d0c64aa0a755 26d2c627:build_docs_offline
 
 GH_TUPLE=	freetype:freetype:42608f77f:freetype2/deps/freetype/freetype2 \
 		nyorain:dlg:72dfcc858:dlg/deps/freetype/freetype2/subprojects/dlg \
@@ -60,10 +59,7 @@ PLIST_FILES+=	share/site-terminfo/w/wezterm
 OPTIONS_DEFINE=	DOCS
 
 DOCS_USES=		python:build
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-material@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}mkdocs-macros-plugin>0:textproc/py-mkdocs-macros-plugin@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}mkdocs-include-markdown-plugin>0:textproc/py-mkdocs-include-markdown-plugin@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}mkdocs-exclude>0:textproc/py-mkdocs-exclude@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zensical>0:textproc/py-zensical@${PY_FLAVOR}
 PORTDOCS=		html
 
 .include <bsd.port.pre.mk>
@@ -93,12 +89,12 @@ do-build-DOCS-on:
 	${MKDIR} ${WRKSRC}/docs/fonts
 	${CP} ${WRKSRC}/assets/fonts/SymbolsNerdFontMono-Regular.ttf \
 		${WRKSRC}/docs/fonts/
-	(cd ${WRKSRC} && mkdocs build)
+	(cd ${WRKSRC} && zensical build)
 
 do-install-DOCS-on:
 	(cd ${WRKSRC}/gh_pages && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${PORTDOCS} \
-		"! -name *\.orig ! -name sitemap\.xml*")
+		"! -name *\.orig ! -name sitemap.xml ! -name index.markdown")
 
 post-install:
 # Install assets similar to ci/deploy.sh
