@@ -1,6 +1,6 @@
---- src/miscmods/radius.c.orig	2025-12-18 03:23:48.333630000 +0100
-+++ src/miscmods/radius.c	2025-12-18 03:28:22.528909000 +0100
-@@ -104,37 +104,37 @@
+--- src/miscmods/radius.c.orig	2026-08-20 08:39:08 UTC
++++ src/miscmods/radius.c
+@@ -103,37 +103,37 @@ if (rc_read_config(RADIUS_CONFIG_FILE) != 0)
  
  #ifdef RADIUS_LIB_RADIUSCLIENT
  if (rc_read_config(RADIUS_CONFIG_FILE) != 0)
@@ -15,7 +15,7 @@
 -  *errptr = US"RADIUS: add user name failed";
 +  *errptr = string_sprintf("%","RADIUS: add user name failed");
  
- else if (!rc_avpair_add(&send, PW_USER_PASSWORD, CS radius_args, 0))
+ else if (!rc_avpair_add(&send, PW_USER_PASSWORD, pwd, 0))
 -  *errptr = US"RADIUS: add password failed");
 +  *errptr = string_sprintf("%","RADIUS: add password failed");
  
@@ -48,7 +48,7 @@
  
  #endif  /* RADIUS_LIB_RADIUSCLIENT */
  
-@@ -167,7 +167,7 @@
+@@ -166,7 +166,7 @@ switch (result)
  
    case BADRESP_RC:
    default:
@@ -57,7 +57,7 @@
      return ERROR;
    }
  
-@@ -177,7 +177,7 @@
+@@ -176,7 +176,7 @@ if (!(h = rad_auth_open()))
  
  if (!(h = rad_auth_open()))
    {
@@ -66,7 +66,7 @@
    return ERROR;
    }
  if (rad_config(h, RADIUS_CONFIG_FILE) != 0 ||
-@@ -187,7 +187,7 @@
+@@ -186,7 +186,7 @@ if (rad_config(h, RADIUS_CONFIG_FILE) != 0 ||
      rad_put_int(h, RAD_SERVICE_TYPE, RAD_AUTHENTICATE_ONLY) != 0 ||
      rad_put_string(h, RAD_NAS_IDENTIFIER, CS primary_hostname) != 0)
    {
@@ -75,7 +75,7 @@
    result = ERROR;
    }
  else
-@@ -202,12 +202,12 @@
+@@ -201,12 +201,12 @@ else
        break;
  
      case -1:

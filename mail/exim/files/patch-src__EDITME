@@ -1,5 +1,5 @@
---- src/EDITME.orig	2025-12-14 13:38:51.000000000 +0100
-+++ src/EDITME	2025-12-18 03:31:28.070641000 +0100
+--- src/EDITME.orig	2026-08-20 08:39:08 UTC
++++ src/EDITME
 @@ -104,7 +104,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
@@ -9,7 +9,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -120,7 +120,7 @@
+@@ -120,7 +120,7 @@ BIN_DIRECTORY=/usr/exim/bin
  # don't exist. It will also install a default runtime configuration if this
  # file does not exist.
  
@@ -18,7 +18,7 @@
  
  # It is possible to specify a colon-separated list of files for CONFIGURE_FILE.
  # In this case, Exim will use the first of them that exists when it is run.
-@@ -137,7 +137,7 @@
+@@ -137,7 +137,7 @@ CONFIGURE_FILE=/usr/exim/configure
  # deliveries. (Local deliveries run as various non-root users, typically as the
  # owner of a local mailbox.) Specifying these values as root is not supported.
  
@@ -27,7 +27,7 @@
  
  # If you specify EXIM_USER as a name, this is looked up at build time, and the
  # uid number is built into the binary. However, you can specify that this
-@@ -158,7 +158,7 @@
+@@ -158,7 +158,7 @@ EXIM_USER=
  # for EXIM_USER (e.g. EXIM_USER=exim), you don't need to set EXIM_GROUP unless
  # you want to use a group other than the default group for the given user.
  
@@ -36,7 +36,7 @@
  
  # Many sites define a user called "exim", with an appropriate default group,
  # and use
-@@ -476,6 +476,7 @@
+@@ -475,6 +475,7 @@ LOOKUP_DNSDB=yes
  # LDAP_LIB_TYPE=OPENLDAP2
  # LDAP_LIB_TYPE=NETSCAPE
  # LDAP_LIB_TYPE=SOLARIS
@@ -44,13 +44,10 @@
  
  # If you don't set any of these, Exim assumes the original University of
  # Michigan (OpenLDAP 1) library.
-@@ -524,9 +525,10 @@
- # LSEARCH, DSEARCH & CDB have no external library needs.
- # DNSDB needs the resolver library which the core uses anyway.
- 
--# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
--# LOOKUP_INCLUDE +=-I /usr/local/include
--# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq -lgds -lsqlite3 -llmdb
+@@ -526,6 +527,10 @@ SUPPORT_DANE=yes
+ # LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
+ # LOOKUP_INCLUDE +=-I /usr/local/include
+ # LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq -lsqlite3 -llmdb
 +INCLUDE=-IXX_LOCALBASE_XX/include XX_DB_INCLUDES_XX XX_LMDB_INCLUDES_XX
 +LOOKUP_INCLUDE=XX_MYSQL_INCLUDE_XX XX_PGSQL_INCLUDE_XX XX_LDAP_INCLUDE_XX
 +LOOKUP_LIBS=XX_MYSQL_LIBS_XX XX_PGSQL_LIBS_XX XX_LDAP_LIBS_XX XX_LMDB_LIBS_XX
@@ -58,15 +55,15 @@
  
  # LOOKUP_LIBS=-L/usr/local/lib -lldap -llber
  # Some platforms may need this for LOOKUP_NIS:
-@@ -715,6 +717,7 @@
- # Uncomment the following line to add XCLIENT support
+@@ -704,6 +709,7 @@ SUPPORT_DANE=yes
+ # Set to 2 for a dynamic-load module.
  # EXPERIMENTAL_XCLIENT=yes
  
 +# EXPERIMENTAL_DCC=yes
  ###############################################################################
  #                 THESE ARE THINGS YOU MIGHT WANT TO SPECIFY                  #
  ###############################################################################
-@@ -809,6 +812,7 @@
+@@ -800,6 +806,7 @@ FIXED_NEVER_USERS=root
  
  # ALT_CONFIG_PREFIX=/some/directory/
  # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
@@ -74,7 +71,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -917,7 +921,7 @@
+@@ -908,7 +915,7 @@ FIXED_NEVER_USERS=root
  # one that is set in the headers_charset option. The default setting is
  # defined by this setting:
  
@@ -83,7 +80,7 @@
  
  # If you are going to make use of $header_xxx expansions in your configuration
  # file, or if your users are going to use them in filter files, and the normal
-@@ -950,6 +954,8 @@
+@@ -941,6 +948,8 @@ HEADERS_CHARSET="ISO-8859-1"
  #
  # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
  # as well.
@@ -92,7 +89,7 @@
  #
  # nb: FreeBSD as of 4.89 defines LIBICONV_PLUG to pick up the system iconv
  # more reliably.  If you explicitly want the libiconv Port then as well
-@@ -1013,7 +1019,7 @@
+@@ -1004,7 +1013,7 @@ HEADERS_CHARSET="ISO-8859-1"
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -101,7 +98,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -1026,7 +1032,7 @@
+@@ -1017,7 +1026,7 @@ HEADERS_CHARSET="ISO-8859-1"
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -110,7 +107,7 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -1114,7 +1120,7 @@
+@@ -1105,7 +1114,7 @@ ZCAT_COMMAND=/usr/bin/zcat
  # that the local_scan API is made available by the linker. You may also need
  # to add -ldl to EXTRALIBS so that dlopen() is available to Exim.
  
@@ -119,9 +116,9 @@
  
  
  #------------------------------------------------------------------------------
-@@ -1180,7 +1186,15 @@
- # CFLAGS  += -I/usr/local/include
- # LDFLAGS += -lspf2
+@@ -1156,7 +1165,15 @@ ZCAT_COMMAND=/usr/bin/zcat
+ # SUPPORT_I18N_2008_PC=libidn2
+ # LDFLAGS += -lidn2
  
 +# IPv6 is coming. Exim has experimental support that has been tried out on
 +# one or two OS. See the file README.IPV6 for the current status of this
@@ -133,9 +130,9 @@
 +
 +
  #------------------------------------------------------------------------------
- # Support for authentication via Radius is also available. The Exim support,
- # which is intended for use in conjunction with the SMTP AUTH facilities,
-@@ -1534,7 +1548,7 @@
+ # Uncomment the following lines to add SPF support. You need to have libspf2
+ # installed on your system (www.libspf2.org). Depending on where it is installed
+@@ -1511,7 +1528,7 @@ EXIM_TMPDIR="/tmp"
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  
