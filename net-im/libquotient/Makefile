@@ -1,5 +1,6 @@
 PORTNAME=	libquotient
 DISTVERSION=	0.9.6.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	kde@FreeBSD.org
