@@ -1,5 +1,5 @@
 PORTNAME=	adns
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~ian/adns/ftp/
 
@@ -22,8 +22,8 @@ BINARY_ALIAS=	m4=${LOCALBASE}/bin/gm4
 LIBVERSION=	1
 PLIST_SUB+=	LIBVERSION="${LIBVERSION}"
 
-CFLAGS+=		-Ds6_addr16=__u6_addr.__u6_addr16
-CFLAGS+=		-Ds6_addr32=__u6_addr.__u6_addr32
+CFLAGS+=	-Ds6_addr16=__u6_addr.__u6_addr16
+CFLAGS+=	-Ds6_addr32=__u6_addr.__u6_addr32
 
 DOCS=		COPYING GPL-vs-LGPL INSTALL README \
 		README.html TODO changelog
@@ -40,9 +40,9 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
-post-install:
-.for f in ${TOSTRIP}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
-.endfor
+#post-install:
+#.for f in ${TOSTRIP}
+#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
+#.endfor
 
 .include <bsd.port.mk>

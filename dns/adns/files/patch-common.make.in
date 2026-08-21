@@ -1,0 +1,29 @@
+--- common.make.in.orig	2024-05-05 21:28:40 UTC
++++ common.make.in
+@@ -47,16 +47,16 @@ includedir	:= @includedir@
+ libdir		:= @libdir@
+ includedir	:= @includedir@
+ 
+-ifneq ($(DESTDIR),)
+-# autoconf likes to define some of these in terms of each other
+-# so if we want to add a prefix to each one we have to do it this way:
+-destdir_prefix=$(DESTDIR)/
+-prefix		:= ${destdir_prefix}${prefix}
+-exec_prefix	:= ${destdir_prefix}${exec_prefix}
+-bindir		:= ${destdir_prefix}${bindir}
+-libdir		:= ${destdir_prefix}${libdir}
+-includedir	:= ${destdir_prefix}${includedir}
+-endif
++#ifneq ($(DESTDIR),)
++## autoconf likes to define some of these in terms of each other
++## so if we want to add a prefix to each one we have to do it this way:
++#destdir_prefix=$(DESTDIR)/
++#prefix		:= ${destdir_prefix}${prefix}
++#exec_prefix	:= ${destdir_prefix}${exec_prefix}
++#bindir		:= ${destdir_prefix}${bindir}
++#libdir		:= ${destdir_prefix}${libdir}
++#includedir	:= ${destdir_prefix}${includedir}
++#endif
+ 
+ AC_INSTALL=	@INSTALL@
+ ifeq ($(AC_INSTALL),./install-sh -c)
