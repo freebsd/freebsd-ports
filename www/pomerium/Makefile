@@ -150,8 +150,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		google:cel-spec:v0.25.2:google_cel_spec/vendor/cel.dev/expr \
 		google:go-cmp:v0.7.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:d00831a3d3e7:google_go_genproto/vendor/google.golang.org/genproto \
-		google:go-genproto:0afa2a65878a:google_go_genproto_api/vendor/google.golang.org/genproto/googleapis/api \
-		google:go-genproto:0afa2a65878a:google_go_genproto_rpc/vendor/google.golang.org/genproto/googleapis/rpc \
+		google:go-genproto:0afa2a65878a:google_go_genproto_apirpc \
 		google:go-jsonnet:v0.22.0:google_go_jsonnet/vendor/github.com/google/go-jsonnet \
 		google:go-tpm:v0.9.8:google_go_tpm/vendor/github.com/google/go-tpm \
 		google:gnostic:e0e09f706281:google_gnostic/vendor/github.com/google/gnostic \
@@ -409,6 +408,9 @@ VENDOR_SUBMOD_PAIRS+=	${WRKSRC_azure_azure_sdk_for_go}/sdk/azcore:github.com/Azu
 			${WRKSRC_azure_azure_sdk_for_go}/sdk/azidentity:github.com/Azure/azure-sdk-for-go/sdk/azidentity \
 			${WRKSRC_azure_azure_sdk_for_go}/sdk/internal:github.com/Azure/azure-sdk-for-go/sdk/internal \
 			${WRKSRC_azure_azure_sdk_for_go}/sdk/storage/azblob:github.com/Azure/azure-sdk-for-go/sdk/storage/azblob
+# google/go-genproto api+rpc (same commit, single download)
+VENDOR_SUBMOD_PAIRS+=	${WRKSRC_google_go_genproto_apirpc}/googleapis/api:google.golang.org/genproto/googleapis/api \
+			${WRKSRC_google_go_genproto_apirpc}/googleapis/rpc:google.golang.org/genproto/googleapis/rpc
 # Local replace modules: go -mod=vendor expects replaced code in vendor/
 VENDOR_SUBMOD_PAIRS+=	${WRKSRC}/pkg/grpc/config:github.com/pomerium/pomerium/pkg/grpc/config \
 			${WRKSRC}/pkg/grpc/databroker:github.com/pomerium/pomerium/pkg/grpc/databroker
