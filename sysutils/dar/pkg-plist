@@ -155,6 +155,7 @@ libdata/pkgconfig/libdar64.pc
 %%PORTDOCS%%%%DOCSDIR%%/samples/index.html
 %%PORTDOCS%%%%DOCSDIR%%/samples/pause_every_n_slice.duc
 %%PORTDOCS%%%%DOCSDIR%%/samples/sample1.txt
+%%PORTDOCS%%%%DOCSDIR%%/samples/slicer.py
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/usage_notes.html
 %%NLS%%share/locale/fr/LC_MESSAGES/dar.mo
