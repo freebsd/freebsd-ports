@@ -1,6 +1,6 @@
---- electron/spec/index.js.orig	2026-05-19 01:17:05 UTC
+--- electron/spec/index.js.orig	2026-08-18 19:28:27 UTC
 +++ electron/spec/index.js
-@@ -179,7 +179,7 @@ async function killOrphanedElectronProcesses(suiteName
+@@ -181,7 +181,7 @@ async function killOrphanedElectronProcesses(suiteName
          try {
            // On Linux, skip any process that is a descendant of the current
            // Electron instance (GPU, renderer, zygote, crashpad, etc.).
