@@ -1,5 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	18.0.2
+DISTVERSION=	20.0.1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -23,8 +23,9 @@ USES=		cmake compiler:c++20-lang desktop-file-utils gl \
 		python qt:6 shebangfix tar:xz
 USE_GL=		opengl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
-USE_QT=		base declarative quick3d quicktimeline serialport \
-		shadertools sqldriver-sqlite svg tools translations websockets
+USE_QT=		base declarative httpserver quick3d quicktimeline serialport \
+		shadertools sqldriver-sqlite svg tasktree tools translations \
+		websockets
 
 SHEBANG_GLOB=	*.pl *.py *.sh
 SHEBANG_FILES=	src/plugins/terminal/tests/* \
