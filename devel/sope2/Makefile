@@ -11,6 +11,9 @@ WWW=		https://sogo.nu/
 
 LICENSE=		LGPL20
 
+DEPRECATED=		No longer actively developed since 2022
+EXPIRATION_DATE=	2026-09-30
+
 LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 
 WRKSRC=			${WRKDIR}/SOPE

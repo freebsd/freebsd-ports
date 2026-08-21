@@ -11,6 +11,9 @@ WWW?=			https://sogo.nu/
 
 LICENSE=		GPLv2
 
+DEPRECATED=		No longer actively developed since 2022
+EXPIRATION_DATE=	2026-09-30
+
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: SOGoMailCoreInfoKeys
 
 LIB_DEPENDS=		libmemcached.so:databases/libmemcached \
