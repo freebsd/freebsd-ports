@@ -1,5 +1,5 @@
 PORTNAME=	calceph
-DISTVERSION=	4.0.5
+DISTVERSION=	5.0.0
 CATEGORIES=	astro devel
 MASTER_SITES=	https://www.imcce.fr/content/medias/recherche/equipes/asd/calceph/
 
