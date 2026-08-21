@@ -1,6 +1,6 @@
 PORTNAME=	healthchecks
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2
+DISTVERSION=	4.3
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -59,7 +59,9 @@ ALL_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosmtpd>=0:mail/py-aiosmtpd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyotp>=0:security/py-pyotp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}segno>=0:textproc/py-segno@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}statsd>=0:devel/py-statsd@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}whitenoise>=0:www/py-whitenoise@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}whitenoise>=0:www/py-whitenoise@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}argon2-cffi>=0:security/py-argon2-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fido2>=0:security/py-fido2@${PY_FLAVOR}
 
 do-build:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
