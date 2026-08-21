@@ -7,7 +7,7 @@
 #    - graphics/mesa-dri
 #    - graphics/mesa-libs
 
-MESAVERSION=	26.1.7
+MESAVERSION=	26.2.1
 
 MASTER_SITES=	https://mesa.freedesktop.org/archive/
 

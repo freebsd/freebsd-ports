@@ -98,6 +98,7 @@ post-install:
 	@${ECHO_CMD} "libGLX_indirect.so.0 libGLX_mesa.so.0" \
 		>${STAGEDIR}${PREFIX}/etc/libmap.d/mesa.conf
 # Strip the per-hardware DRI shims; they are owned by graphics/mesa-dri.
-	${RM} -rf ${STAGEDIR}${PREFIX}/lib/dri
+	${RM} -rf ${STAGEDIR}${PREFIX}/lib/dri \
+		${STAGEDIR}${PREFIX}/share/drirc.d
 
 .include <bsd.port.post.mk>
