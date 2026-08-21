@@ -1,3 +1,46 @@
+  <vuln vid="4496ae0c-9d7d-11f1-a655-3497f65b111b">
+    <topic>terraform -- exclusion bypass in .terraformignore handling</topic>
+    <affects>
+      <package>
+	<name>terraform</name>
+	<range><lt>1.15.9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>HashiCorp reports:</p>
+	<blockquote cite="https://discuss.hashicorp.com/t/hcsec-2026-31-go-slug-vulnerable-to-exclusion-bypass-in-terraformignore-handling/77668">
+	  <p>Terraform bundles the go-slug library, which builds the
+	  archive uploaded to HCP Terraform or Terraform Enterprise
+	  when a run is started.  In go-slug before v0.18.3, matching
+	  of .terraformignore rules does not consistently treat
+	  canonically equivalent Unicode filenames as the same path.
+	  On filesystems that normalize filenames, a file whose
+	  displayed name appears to match an exclusion rule can still
+	  end up in the generated upload bundle, so local files an
+	  operator intended to keep out of remote runs may be
+	  transmitted.</p>
+	  <p>Exploitation requires local control over the working
+	  directory contents, use of .terraformignore, and filenames
+	  and ignore patterns that differ only by Unicode
+	  normalization form.  Setups that do not use
+	  .terraformignore, use ASCII-only filenames and patterns, or
+	  run on filesystems that do not perform this normalization
+	  are not affected.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-14978</cvename>
+      <url>https://discuss.hashicorp.com/t/hcsec-2026-31-go-slug-vulnerable-to-exclusion-bypass-in-terraformignore-handling/77668</url>
+      <url>https://github.com/hashicorp/terraform/releases/tag/v1.15.9</url>
+    </references>
+    <dates>
+      <discovery>2026-08-20</discovery>
+      <entry>2026-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4bf4495e-9d4e-11f1-a129-901b0e9408dc">
     <topic>tailscale -- Insufficient validation of 4via6 subnet router destinations</topic>
     <affects>
