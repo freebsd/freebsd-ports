@@ -1,0 +1,14 @@
+facl is an interactive editor for NFSv4 access control lists, modelled
+after the Windows "Advanced Security Settings" dialog: one row per ACL
+entry, an entry editor with "Applies to" (this folder, subfolders and
+files, ...), basic and advanced permissions, and apply scopes that
+propagate or replace the inherited entries of a whole tree. Changes are
+previewed as the exact setfacl(1) commands before they run.
+
+It reads ACLs with getfacl(1) and writes them with setfacl(1), and works
+on ZFS, UFS with nfsv4acls and NFSv4 mounts. On ZFS the dataset's
+aclinherit and aclmode properties are honoured when computing what
+descendants inherit and what chmod(1) would do to an ACL. It also shows
+the effective access of a user or group, audits a tree for inheritance
+drift, changes ownership, keeps ACL templates, and offers all of that
+non-interactively for scripts (dry run, -set, -audit, -effective, ...).
