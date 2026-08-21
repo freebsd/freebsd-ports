@@ -15,6 +15,7 @@ sbin/robots2policy
 %%DATADIR%%/bots/headless-browsers.yaml
 %%DATADIR%%/bots/irc-bots/archlinux-phrik.yaml
 %%DATADIR%%/bots/irc-bots/gentoo-chat.yaml
+%%DATADIR%%/bots/lyrenth.yaml
 %%DATADIR%%/bots/us-ai-scraper.yaml
 %%DATADIR%%/clients/ai.yaml
 %%DATADIR%%/clients/docker-client.yaml
@@ -25,6 +26,7 @@ sbin/robots2policy
 %%DATADIR%%/clients/openai-chatgpt-user.yaml
 %%DATADIR%%/clients/perplexity-user.yaml
 %%DATADIR%%/clients/small-internet-browsers/_permissive.yaml
+%%DATADIR%%/clients/small-internet-browsers/dillo.yaml
 %%DATADIR%%/clients/small-internet-browsers/netsurf.yaml
 %%DATADIR%%/clients/small-internet-browsers/palemoon.yaml
 %%DATADIR%%/clients/telegram-preview.yaml
@@ -41,6 +43,7 @@ sbin/robots2policy
 %%DATADIR%%/crawlers/ai-training.yaml
 %%DATADIR%%/crawlers/alibaba-cloud.yaml
 %%DATADIR%%/crawlers/applebot.yaml
+%%DATADIR%%/crawlers/arquivo-pt.yaml
 %%DATADIR%%/crawlers/bingbot.yaml
 %%DATADIR%%/crawlers/commoncrawl.yaml
 %%DATADIR%%/crawlers/duckduckbot.yaml
