@@ -1,7 +1,6 @@
 PORTNAME=	supersonic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.1
-PORTREVISION=	4
+DISTVERSION=	0.22.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -11,6 +10,8 @@ WWW=		https://github.com/dweymouth/${PORTNAME}/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# TODO: For wayland support.
+#BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USES=		desktop-file-utils gl go:modules localbase:ldflags pkgconfig \
@@ -18,6 +19,8 @@ USES=		desktop-file-utils gl go:modules localbase:ldflags pkgconfig \
 USE_GL=		gl
 USE_XORG=	x11 xau xcb xcursor xdmcp xi
 GO_MODULE=	github.com/dweymouth/${PORTNAME}
+# TODO: Adding the 'wayland' tag won't compile. I need to investigate further to find out why.
+GO_BUILDFLAGS=	-tags "migrated_fynedo,x11"
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/supersonic-desktop.desktop \
