@@ -1,6 +1,6 @@
 PORTNAME=	mod_dnssd
 PORTVERSION=	0.6
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	www
 MASTER_SITES=	http://0pointer.de/lennart/projects/mod_dnssd/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -11,6 +11,9 @@ WWW=		https://0pointer.de/lennart/projects/mod_dnssd/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Abandoned upstream, last release 0.6 in 2008
+EXPIRATION_DATE=	2026-09-30
 
 LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
