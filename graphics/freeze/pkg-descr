@@ -1,0 +1,8 @@
+Freeze generates images of code and terminal output.  It reads a source
+file (or ANSI output captured from a command) and renders it as a PNG,
+SVG or WebP image, with syntax highlighting, configurable themes, fonts,
+window decorations, padding, margins and shadows.
+
+Code is highlighted with Chroma, and JetBrains Mono is embedded by
+default, so images are self-contained.  Terminal output can be captured
+directly with the --execute flag.

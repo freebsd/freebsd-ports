@@ -226,6 +226,7 @@
     SUBDIR += freeglut
     SUBDIR += freeimage
     SUBDIR += freetype-gl
+    SUBDIR += freeze
     SUBDIR += frei0r
     SUBDIR += frei0r-plugins
     SUBDIR += frei0r-plugins-cairo
