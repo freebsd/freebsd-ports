@@ -1,8 +1,8 @@
 # Based on the graphics/ilmbase port that was done by: nork@FreeBSD.org
 
 PORTNAME=	Imath
-PORTVERSION=	3.2.2
-PORTREVISION=	5
+PORTVERSION=	3.2.3
+PORTREVISION=	0
 CATEGORIES=	math devel graphics
 MASTER_SITES=	https://github.com/AcademySoftwareFoundation/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/mandree/
@@ -60,5 +60,11 @@ post-install:
 
 do-test:
 	cd ${BUILD_WRKSRC} && ctest -j ${MAKE_JOBS_NUMBER}
+
+verify-sigstore: ${DISTFILES}.sigstore.json
+	sigstore verify github --cert-identity https://github.com/AcademySoftwareFoundation/Imath/.github/workflows/release-sign.yml@refs/tags/v${PORTVERSION} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} --bundle ${DISTFILES}.sigstore.json
+
+${DISTFILES}.sigstore.json:
+	${FETCH_CMD} https://github.com/AcademySoftwareFoundation/Imath/releases/download/v${PORTVERSION}/${DISTFILES}.sigstore.json
 
 .include <bsd.port.mk>
