@@ -12,6 +12,9 @@ WWW=		http://wapiti.sourceforge.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Outdated, pip install wapiti3 in a venv if needed
+EXPIRATION_DATE=	2026-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tld>=0:dns/py-tld@${PY_FLAVOR} \
