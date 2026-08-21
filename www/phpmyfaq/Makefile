@@ -1,5 +1,5 @@
 PORTNAME=	phpmyfaq
-DISTVERSION=	4.1.7
+DISTVERSION=	4.1.8
 CATEGORIES=	www
 MASTER_SITES=	https://download.phpmyfaq.de/files/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
