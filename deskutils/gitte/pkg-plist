@@ -6,6 +6,11 @@ share/dbus-1/services/de.wwwtech.gitte.service
 share/icons/hicolor/scalable/apps/de.wwwtech.gitte.svg
 share/icons/hicolor/symbolic/apps/de.wwwtech.gitte-symbolic.svg
 share/locale/de/LC_MESSAGES/gitte.mo
+share/locale/eu/LC_MESSAGES/gitte.mo
+share/locale/fi/LC_MESSAGES/gitte.mo
 share/locale/kw/LC_MESSAGES/gitte.mo
+share/locale/sl/LC_MESSAGES/gitte.mo
+share/locale/sr/LC_MESSAGES/gitte.mo
 share/locale/uk/LC_MESSAGES/gitte.mo
+share/locale/zh_CN/LC_MESSAGES/gitte.mo
 share/metainfo/de.wwwtech.gitte.metainfo.xml
