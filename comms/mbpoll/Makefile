@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmodbus.so:comms/libmodbus
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	epsilonrt
 
