@@ -11,6 +11,9 @@ WWW=		https://www.aff4.org/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	No longer depended upon
+EXPIRATION_DATE=	2026-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-snappy>=0.5.1:archivers/py-python-snappy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rdflib>=4.2.2:textproc/py-rdflib@${PY_FLAVOR} \
