@@ -1,5 +1,5 @@
 PORTNAME=	inline-snapshot
-DISTVERSION=	0.34.1
+DISTVERSION=	0.35.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,7 +31,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=6.75.5:devel/py-hypothesis@${PY
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 # These tests require www/node
-PYTEST_IGNORED_TESTS=	test_compare test_typing_args[pyright] test_typing_call[pyright]
+PYTEST_IGNORED_TESTS=	test_typing_args[pyright] test_typing_call[pyright] \
+			test_docs[categories.md] test_docs[code_generation.md] \
+			test_docs[README.md]
 
 NO_ARCH=	yes
 
