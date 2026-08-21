@@ -4,6 +4,7 @@ libexec/nagios/check_mssql
 %%SSH%%libexec/nagios/check_by_ssh
 libexec/nagios/check_clamd
 libexec/nagios/check_cluster
+%%CURL%%libexec/nagios/check_curl
 %%DBI%%libexec/nagios/check_dbi
 @(,,04555) libexec/nagios/check_dhcp
 libexec/nagios/check_dig

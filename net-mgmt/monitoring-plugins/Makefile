@@ -41,13 +41,14 @@ LIBS+=		-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL=	nagios-plugins
 
-OPTIONS_DEFINE=		DBI EXTRAOPTS FPING IPV6 LDAP MYSQL NETSNMP NLS PGSQL \
-			QSTAT RADIUS SSH_PORTABLE
+OPTIONS_DEFINE=		CURL DBI EXTRAOPTS FPING IPV6 LDAP MYSQL NETSNMP NLS \
+			PGSQL QSTAT RADIUS SSH_PORTABLE
 OPTIONS_DEFAULT=	DNS_BASE EXTRAOPTS
 OPTIONS_SINGLE=		DNS
 OPTIONS_SINGLE_DNS=	DNS_BASE DNS_BINDTOOLS
 OPTIONS_SUB=		yes
 
+CURL_DESC=		libcurl support (check_curl, replaces check_http)
 DBI_DESC=		Check database using DBI
 DNS_BASE_DESC=		Use drill for check_dig and no check_dns
 DNS_BINDTOOLS_DESC=	Use dig and nslookup from dns/bind-tools
@@ -61,6 +62,11 @@ PGSQL_DESC=		PostgreSQL support (check_pgsql)
 QSTAT_DESC=		Game server query support (check_game)
 RADIUS_DESC=		Radius support (check_radius)
 SSH_PORTABLE_DESC=	Build check_ssh with ports openssh (instead of base)
+
+CURL_USES=		pkgconfig
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl \
+			liburiparser.so:net/uriparser
+CURL_CONFIGURE_WITH=	libcurl uriparser
 
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
 DBI_CONFIGURE_WITH=	dbi
