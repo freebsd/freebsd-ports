@@ -1,28 +1,35 @@
 PORTNAME=	monaspace
-DISTVERSION=	1.101
+DISTVERSION=	1.400
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/githubnext/monaspace/releases/download/v${DISTVERSION}/
-DISTNAME=	${PORTNAME}-v${DISTVERSION}
+DISTFILES=	${PORTNAME}-static-v${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-variable-v${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Innovative superfamily of fonts for code
 WWW=		https://monaspace.githubnext.com
 
 LICENSE=	OFL11
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		fonts zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 
-	${INSTALL_DATA} ${WRKSRC}/fonts/otf/*.otf ${STAGEDIR}${FONTSDIR}
-	${LS} ${STAGEDIR}${FONTSDIR}/*.otf | ${SED} -e's,^${STAGEDIR},,' >> ${TMPPLIST}
+	@cd ${WRKSRC}/"Static Fonts" && ${FIND} . -name '*.otf' | while read f; do \
+		${INSTALL_DATA} "$$f" ${STAGEDIR}${FONTSDIR}; \
+	done
 
-	${INSTALL_DATA} ${WRKSRC}/fonts/variable/*.ttf ${STAGEDIR}${FONTSDIR}
-	${LS} ${STAGEDIR}${FONTSDIR}/*.ttf | ${SED} -e's,^${STAGEDIR},,' >> ${TMPPLIST}
+	@cd ${WRKSRC}/"Variable Fonts" && ${FIND} . -name '*.ttf' | while read f; do \
+		${INSTALL_DATA} "$$f" \
+			${STAGEDIR}${FONTSDIR}/`${BASENAME} "$$f" | ${TR} -d ' '`; \
+	done
+
+	${LS} ${STAGEDIR}${FONTSDIR}/*.otf ${STAGEDIR}${FONTSDIR}/*.ttf | \
+		${SED} -e's,^${STAGEDIR},,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

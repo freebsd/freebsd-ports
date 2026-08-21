@@ -1,3 +1,5 @@
-TIMESTAMP = 1715336011
-SHA256 (monaspace-v1.101.zip) = 7ff2317c7bdaed8e81dcbe1314e6ab12ad9641b7ddf921e996a227ff4ec7752f
-SIZE (monaspace-v1.101.zip) = 36830244
+TIMESTAMP = 1787347331
+SHA256 (monaspace-static-v1.400.zip) = ab66d71be751495f679727332a3345597943bd4d7beebca03f5cde04bf994de7
+SIZE (monaspace-static-v1.400.zip) = 55607551
+SHA256 (monaspace-variable-v1.400.zip) = b69a7f2a3c455c89dcb6cc23b61bb3fb8beecba728ccdebeccd80577e58de0c8
+SIZE (monaspace-variable-v1.400.zip) = 4208172
