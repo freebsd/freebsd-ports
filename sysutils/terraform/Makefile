@@ -1,7 +1,6 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.3
-PORTREVISION=	4
+DISTVERSION=	1.15.9
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	${DISTVERSIONFULL}${EXTRACT_SUFX} \
@@ -27,6 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 GH_PROJECT=	terraform
 
+LICENSE=	BUSL11
 LICENSE_NAME=	Business Source License 1.1
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror pkg-sell auto-accept
