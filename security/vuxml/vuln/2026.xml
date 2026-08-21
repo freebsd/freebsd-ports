@@ -1,3 +1,30 @@
+  <vuln vid="4bf4495e-9d4e-11f1-a129-901b0e9408dc">
+    <topic>tailscale -- Insufficient validation of 4via6 subnet router destinations</topic>
+    <affects>
+<package>
+<name>tailscale</name>
+<range><lt>1.102.3</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tailscale team reports:</p>
+	<blockquote cite="https://tailscale.com/security-bulletins#ts-2026-011">
+	  <p>Insufficient validation of 4via6 subnet router
+	  destinations permitted access to host-scoped addresses,
+	  including cloud metadata and loopback services. TS-2026-11</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://tailscale.com/security-bulletins#ts-2026-011</url>
+    </references>
+    <dates>
+      <discovery>2026-08-18</discovery>
+      <entry>2026-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a188c081-9ce8-11f1-8fc6-cb9659fdabad">
     <topic>qt6-webengine -- multiple vulnerabilities</topic>
     <affects>
