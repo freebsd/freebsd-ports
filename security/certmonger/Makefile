@@ -1,6 +1,6 @@
 PORTNAME=	certmonger
 DISTVERSION=	0.79.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://pagure.io/certmonger/archive/${DISTVERSION}/
 
@@ -30,6 +30,12 @@ CFLAGS+=	-L${PREFIX}/lib -lintl
 
 # There appears to be some hardcoded gettext dependencies
 #OPTIONS_DEFINE=	NLS
+
+post-patch:
+		${REINPLACE_CMD} -e 's|"/etc/ipa|"${PREFIX}/etc/ipa|g' \
+			${WRKSRC}/src/dogtag-ipa.c \
+			${WRKSRC}/src/dogtag.c \
+			${WRKSRC}/src/ipa.c
 
 post-install:
 		${MV}	${STAGEDIR}${ETCDIR}/${PORTNAME}.conf \
