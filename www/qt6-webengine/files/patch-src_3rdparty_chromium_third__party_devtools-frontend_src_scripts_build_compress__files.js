@@ -1,7 +1,7 @@
 Reduce Brotli compression on i386 to have more memory available. Otherwise,
 node.js stops with either SIGSEGV or SIGABRT after ~530 processed files.
 
---- src/3rdparty/chromium/third_party/devtools-frontend/src/scripts/build/compress_files.js.orig	2025-10-02 00:36:39 UTC
+--- src/3rdparty/chromium/third_party/devtools-frontend/src/scripts/build/compress_files.js.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/third_party/devtools-frontend/src/scripts/build/compress_files.js
 @@ -4,6 +4,7 @@ const fs = require('fs');
  
@@ -11,7 +11,7 @@ node.js stops with either SIGSEGV or SIGABRT after ~530 processed files.
  const {pipeline, Readable} = require('stream');
  const zlib = require('zlib');
  
-@@ -52,9 +53,16 @@ async function brotli(sourceData, compressedFilename) 
+@@ -57,9 +58,16 @@ async function brotli(sourceData, compressedFilename) 
    output.write(Buffer.from(brotliConst));
    output.write(Buffer.from(sizeHeader));
    return new Promise((resolve, reject) => {

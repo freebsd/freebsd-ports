@@ -60,7 +60,7 @@ qtopenapi-create-maven-deps:
 		${WRKDIR}/mvn-wrapper.sh clean package; \
 	    cd ${WRKDIR} && tar --uname qt --gname qt -cJf ${DISTDIR}/${DIST_SUBDIR}/${_MAVEN_DEPS} m2; \
 	    ${MAKE} -C ${.CURDIR} clean; \
-	    ${ECHO_CMD} "===> Maven deps tarball successfully created: ${DISTDIR}/${DIST_SUBDIR}/${_MAVEN_DEPS}}"; \
+	    ${ECHO_CMD} "===> Maven deps tarball successfully created: ${DISTDIR}/${DIST_SUBDIR}/${_MAVEN_DEPS}"; \
 	else \
 	    ${ECHO_CMD} "===> ${DISTDIR}/${DIST_SUBDIR}/${_MAVEN_DEPS} already exists. Skipping creation."; \
 	fi

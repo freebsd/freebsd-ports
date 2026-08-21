@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/utility/utility_main.cc.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/content/utility/utility_main.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/content/utility/utility_main.cc
 @@ -42,17 +42,21 @@
  #include "services/tracing/public/cpp/trace_startup.h"
@@ -55,7 +55,7 @@
  std::vector<std::string> GetNetworkContextsParentDirectories() {
    base::MemoryMappedFile::Region region;
    base::ScopedFD read_pipe_fd = base::FileDescriptorStore::GetInstance().TakeFD(
-@@ -289,7 +298,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -290,7 +299,7 @@ int UtilityMain(MainFunctionParams parameters) {
    }
  #endif
  
@@ -64,7 +64,7 @@
  
  #if BUILDFLAG(USE_LINUX_VIDEO_ACCELERATION) && BUILDFLAG(USE_VAAPI)
    // Regardless of the sandbox status, the VaapiWrapper needs to be initialized
-@@ -304,7 +313,10 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -305,7 +314,10 @@ int UtilityMain(MainFunctionParams parameters) {
    // thread type change in ChildProcess constructor. It also needs to be
    // registered before the process has multiple threads, which may race with
    // application of the sandbox.
@@ -75,7 +75,7 @@
  
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
-@@ -340,7 +352,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -341,7 +353,7 @@ int UtilityMain(MainFunctionParams parameters) {
            base::BindOnce(&speech::SpeechRecognitionPreSandboxHook);
  #endif
        break;
@@ -84,7 +84,7 @@
      case sandbox::mojom::Sandbox::kOnDeviceTranslation:
        pre_sandbox_hook = base::BindOnce(
            &on_device_translation::OnDeviceTranslationSandboxHook);
-@@ -356,7 +368,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -357,7 +369,7 @@ int UtilityMain(MainFunctionParams parameters) {
  #else
        NOTREACHED();
  #endif
@@ -93,7 +93,7 @@
      case sandbox::mojom::Sandbox::kVideoEffects:
  #if BUILDFLAG(ENABLE_VIDEO_EFFECTS)
        pre_sandbox_hook =
-@@ -364,7 +376,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -365,7 +377,7 @@ int UtilityMain(MainFunctionParams parameters) {
  #endif
        break;
  #endif  // BUILDFLAG(IS_LINUX)
@@ -102,7 +102,7 @@
      case sandbox::mojom::Sandbox::kShapeDetection:
        pre_sandbox_hook =
            base::BindOnce(&shape_detection::ShapeDetectionPreSandboxHook);
-@@ -399,6 +411,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -400,6 +412,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -110,7 +110,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox_options.use_amd_specific_policies =
-@@ -406,6 +419,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -407,6 +420,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

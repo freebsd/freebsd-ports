@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/gpu/gpu_main.cc.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/content/gpu/gpu_main.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/content/gpu/gpu_main.cc
 @@ -107,10 +107,14 @@
  #include "sandbox/win/src/sandbox.h"
@@ -36,7 +36,7 @@
      return StartSandboxWindows(sandbox_info_);
 @@ -306,7 +310,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
-               gpu_preferences.message_pump_type);
+               gpu_preferences.message_pump_type, /*is_main_thread=*/true);
      }
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

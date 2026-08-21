@@ -1,4 +1,4 @@
---- cmake/QtToolchainHelpers.cmake.orig	2026-02-26 14:39:03 UTC
+--- cmake/QtToolchainHelpers.cmake.orig	2026-08-11 12:42:19 UTC
 +++ cmake/QtToolchainHelpers.cmake
 @@ -95,6 +95,8 @@ function(get_gn_os result)
          set(${result} "mac" PARENT_SCOPE)
@@ -9,7 +9,7 @@
      else()
          message(DEBUG "Unrecognized OS")
      endif()
-@@ -478,7 +480,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -492,7 +494,7 @@ macro(append_compiler_linker_sdk_setup)
          )
      endif()
      get_gn_arch(cpu ${TEST_architecture_arch})
@@ -18,7 +18,7 @@
  
          extend_gn_list_cflag(gnArgArg
              ARG arm_tune
-@@ -587,7 +589,7 @@ macro(append_toolchain_setup)
+@@ -601,7 +603,7 @@ macro(append_toolchain_setup)
          endif()
          unset(host_cpu)
          unset(target_cpu)

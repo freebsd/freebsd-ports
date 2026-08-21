@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/base/media_switches.cc.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/media/base/media_switches.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/media/base/media_switches.cc
 @@ -19,7 +19,7 @@
  #include "ui/gl/gl_features.h"
@@ -9,7 +9,7 @@
  #include "base/cpu.h"
  #endif
  
-@@ -381,8 +381,8 @@ BASE_FEATURE(kUseSCContentSharingPicker,
+@@ -386,8 +386,8 @@ BASE_FEATURE(kUseSCContentSharingPicker,
               "UseSCContentSharingPicker",
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_MAC)
@@ -20,7 +20,7 @@
  // Enables system audio mirroring using pulseaudio.
  BASE_FEATURE(kPulseaudioLoopbackForCast,
               "PulseaudioLoopbackForCast",
-@@ -392,6 +392,28 @@ BASE_FEATURE(kPulseaudioLoopbackForScreenShare,
+@@ -397,6 +397,28 @@ BASE_FEATURE(kPulseaudioLoopbackForScreenShare,
  BASE_FEATURE(kPulseaudioLoopbackForScreenShare,
               "PulseaudioLoopbackForScreenShare",
               base::FEATURE_DISABLED_BY_DEFAULT);
@@ -49,7 +49,7 @@
  #endif  // BUILDFLAG(IS_LINUX)
  
  // When enabled, MediaCapabilities will check with GPU Video Accelerator
-@@ -715,7 +737,7 @@ BASE_FEATURE(kFileDialogsTuckPictureInPicture,
+@@ -720,7 +742,7 @@ BASE_FEATURE(kFileDialogsTuckPictureInPicture,
  #endif  // !BUILDFLAG(IS_ANDROID)
  
  // Show toolbar button that opens dialog for controlling media sessions.
@@ -58,7 +58,7 @@
  BASE_FEATURE(kGlobalMediaControls,
               "GlobalMediaControls",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -739,7 +761,7 @@ BASE_FEATURE(kGlobalMediaControlsUpdatedUI,
+@@ -744,7 +766,7 @@ BASE_FEATURE(kGlobalMediaControlsUpdatedUI,
  
  #if !BUILDFLAG(IS_ANDROID)
  // If enabled, users can request Media Remoting without fullscreen-in-tab.
@@ -67,7 +67,7 @@
  BASE_FEATURE(kMediaRemotingWithoutFullscreen,
               "MediaRemotingWithoutFullscreen",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -752,7 +774,7 @@ BASE_FEATURE(kMediaRemotingWithoutFullscreen,
+@@ -757,7 +779,7 @@ BASE_FEATURE(kMediaRemotingWithoutFullscreen,
  
  // Show picture-in-picture button in Global Media Controls.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -76,7 +76,7 @@
  BASE_FEATURE(kGlobalMediaControlsPictureInPicture,
               "GlobalMediaControlsPictureInPicture",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -790,7 +812,7 @@ BASE_FEATURE(kUnifiedAutoplay,
+@@ -795,7 +817,7 @@ BASE_FEATURE(kUnifiedAutoplay,
               "UnifiedAutoplay",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -85,7 +85,7 @@
  // Enable vaapi/v4l2 video decoding on linux. This is already enabled by default
  // on chromeos, but needs an experiment on linux.
  BASE_FEATURE(kAcceleratedVideoDecodeLinux,
-@@ -869,7 +891,7 @@ BASE_FEATURE(kVSyncMjpegDecoding,
+@@ -874,7 +896,7 @@ BASE_FEATURE(kVSyncMjpegDecoding,
               "VSyncMjpegDecoding",
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // defined(ARCH_CPU_X86_FAMILY) && BUILDFLAG(IS_CHROMEOS)
@@ -94,7 +94,7 @@
  // Enable H264 temporal layer encoding with V4L2 HW encoder on ChromeOS.
  BASE_FEATURE(kV4L2H264TemporalLayerHWEncoding,
               "V4L2H264TemporalLayerHWEncoding",
-@@ -1472,7 +1494,7 @@ BASE_FEATURE(kUseOutOfProcessVideoDecoding,
+@@ -1477,7 +1499,7 @@ BASE_FEATURE(kUseOutOfProcessVideoDecoding,
  #endif
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  
@@ -103,7 +103,7 @@
  // Spawn utility processes to perform hardware encode acceleration instead of
  // using the GPU process.
  BASE_FEATURE(kUseOutOfProcessVideoEncoding,
-@@ -1556,7 +1578,7 @@ BASE_FEATURE(kRecordWebAudioEngagement,
+@@ -1561,7 +1583,7 @@ BASE_FEATURE(kRecordWebAudioEngagement,
               "RecordWebAudioEngagement",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -112,7 +112,7 @@
  // Reduces the number of buffers needed in the output video frame pool to
  // populate the Renderer pipeline for hardware accelerated VideoDecoder in
  // non-low latency scenarios.
-@@ -1879,7 +1901,7 @@ bool IsSystemLoopbackCaptureSupported() {
+@@ -1890,7 +1912,7 @@ bool IsSystemLoopbackCaptureSupported() {
  #elif BUILDFLAG(IS_MAC)
    return (IsMacSckSystemLoopbackCaptureSupported() ||
            IsMacCatapSystemLoopbackCaptureSupported());

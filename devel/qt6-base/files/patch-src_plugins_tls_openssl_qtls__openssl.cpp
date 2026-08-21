@@ -1,6 +1,6 @@
---- src/plugins/tls/openssl/qtls_openssl.cpp.orig	2025-05-14 09:43:58 UTC
+--- src/plugins/tls/openssl/qtls_openssl.cpp.orig	2026-05-11 20:54:55 UTC
 +++ src/plugins/tls/openssl/qtls_openssl.cpp
-@@ -1435,13 +1435,13 @@ bool TlsCryptographOpenSSL::initSslContext()
+@@ -1438,13 +1438,13 @@ bool TlsCryptographOpenSSL::initSslContext()
      else if (mode == QSslSocket::SslServerMode)
          q_SSL_set_psk_server_callback(ssl, &q_ssl_psk_server_callback);
  

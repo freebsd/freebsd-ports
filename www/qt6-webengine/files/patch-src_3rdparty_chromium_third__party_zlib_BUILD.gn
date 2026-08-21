@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
 @@ -140,7 +140,7 @@ if (use_arm_neon_optimizations) {
      defines = [ "CRC32_ARMV8_CRC32" ]
      if (is_android) {
        defines += [ "ARMV8_OS_ANDROID" ]
--    } else if (is_linux || is_chromeos) {
-+    } else if ((is_linux || is_chromeos) && !is_bsd) {
+-    } else if (is_linux || is_chromeos || is_ohos) {
++    } else if ((is_linux || is_chromeos || is_ohos) && !is_bsd) {
        defines += [ "ARMV8_OS_LINUX" ]
      } else if (is_mac) {
        defines += [ "ARMV8_OS_MACOS" ]
@@ -20,7 +20,7 @@
      } else {
        assert(false, "Unsupported ARM OS")
      }
-@@ -473,7 +477,7 @@ static_library("bundled_minizip") {
+@@ -475,7 +479,7 @@ static_library("bundled_minizip") {
      ]
    }
  

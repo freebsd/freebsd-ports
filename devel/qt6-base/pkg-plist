@@ -533,6 +533,7 @@ bin/wasmdeployqt6
 %%QT_INCDIR%%/QtCore/QTypeInfo
 %%QT_INCDIR%%/QtCore/QTypeInfoMerger
 %%QT_INCDIR%%/QtCore/QTypeRevision
+%%QT_INCDIR%%/QtCore/QTypedArrayAllocationResult
 %%QT_INCDIR%%/QtCore/QTypedArrayData
 %%QT_INCDIR%%/QtCore/QUnhandledException
 %%QT_INCDIR%%/QtCore/QUntypedBindable
@@ -1635,6 +1636,7 @@ bin/wasmdeployqt6
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhostinfo_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhsts_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhstsstore_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttp2configuration_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttp2connection_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttp2protocolhandler_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhttpheaderparser_p.h
@@ -2769,6 +2771,7 @@ lib/cmake/Qt6/FindWrapSystemJpeg.cmake
 lib/cmake/Qt6/FindWrapSystemMd4c.cmake
 lib/cmake/Qt6/FindWrapSystemPCRE2.cmake
 lib/cmake/Qt6/FindWrapSystemPNG.cmake
+lib/cmake/Qt6/FindWrapSystemSQLite3.cmake
 lib/cmake/Qt6/FindWrapSystemZLIB.cmake
 lib/cmake/Qt6/FindWrapVulkan.cmake
 lib/cmake/Qt6/FindWrapVulkanHeaders.cmake
@@ -2865,12 +2868,14 @@ lib/cmake/Qt6/QtPublicAndroidHelpers.cmake
 lib/cmake/Qt6/QtPublicAppleHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeHelpers.cmake
+lib/cmake/Qt6/QtPublicCMakeIncludeGuardHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake
 lib/cmake/Qt6/QtPublicDependencyHelpers.cmake
 lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake
 lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake
 lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake
 lib/cmake/Qt6/QtPublicGitHelpers.cmake
+lib/cmake/Qt6/QtPublicJsonHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake
 lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake
@@ -4252,7 +4257,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DOCDIR%%/config/exampleurl-qtx11extras.qdocconf
 %%QT_DOCDIR%%/config/exampleurl-qtxmlpatterns.qdocconf
 %%QT_DOCDIR%%/global/app-examples-template/README.md
-%%QT_DOCDIR%%/global/app-examples-template/app-examples-template.qdoc
+%%QT_DOCDIR%%/global/app-examples-template/app-examples.qdoc.template
 %%QT_DOCDIR%%/global/compat.qdocconf
 %%QT_DOCDIR%%/global/config.qdocconf
 %%QT_DOCDIR%%/global/cpp-doc-macros.qdocconf
@@ -4263,6 +4268,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DOCDIR%%/global/externalsites/qtcreator.qdoc
 %%QT_DOCDIR%%/global/externalsites/qtdesignstudio.qdoc
 %%QT_DOCDIR%%/global/externalsites/rfc.qdoc
+%%QT_DOCDIR%%/global/externalsites/vscodeext.qdoc
 %%QT_DOCDIR%%/global/fileextensions.qdocconf
 %%QT_DOCDIR%%/global/grid.qdocconf
 %%QT_DOCDIR%%/global/html-config.qdocconf

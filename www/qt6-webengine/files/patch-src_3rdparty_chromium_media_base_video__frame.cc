@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/base/video_frame.cc.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/media/base/video_frame.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/media/base/video_frame.cc
 @@ -87,7 +87,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -36,7 +36,7 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -1548,7 +1548,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
+@@ -1568,7 +1568,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
    return wrapped_frame_ ? wrapped_frame_->shared_image() : shared_image_;
  }
  

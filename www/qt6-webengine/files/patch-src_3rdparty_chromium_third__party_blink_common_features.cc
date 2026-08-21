@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/common/features.cc.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/third_party/blink/common/features.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/third_party/blink/common/features.cc
-@@ -684,7 +684,7 @@ BASE_FEATURE(kDevToolsImprovedNetworkError,
+@@ -695,7 +695,7 @@ BASE_FEATURE(kDevToolsImprovedNetworkError,
               "DevToolsImprovedNetworkError",
               base::FEATURE_DISABLED_BY_DEFAULT);
  

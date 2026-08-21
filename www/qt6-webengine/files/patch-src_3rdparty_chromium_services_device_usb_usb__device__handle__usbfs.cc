@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/device/usb/usb_device_handle_usbfs.cc.orig	2025-08-07 06:57:29 UTC
+--- src/3rdparty/chromium/services/device/usb/usb_device_handle_usbfs.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/services/device/usb/usb_device_handle_usbfs.cc
 @@ -38,7 +38,7 @@
  #include "chromeos/dbus/permission_broker/permission_broker_client.h"
@@ -9,7 +9,7 @@
  #include "base/metrics/histogram_macros.h"
  #include "services/device/public/cpp/device_features.h"
  #include "services/device/usb/usb_interface_detach_allowlist.h"
-@@ -55,7 +55,7 @@ using mojom::UsbTransferType;
+@@ -55,7 +55,7 @@ namespace {
  
  namespace {
  
@@ -36,7 +36,7 @@
    if (base::FeatureList::IsEnabled(features::kAutomaticUsbDetach)) {
      const mojom::UsbConfigurationInfo* config =
          device_->GetActiveConfiguration();
-@@ -979,7 +979,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
+@@ -986,7 +986,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
      return;
    }
  #endif

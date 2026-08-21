@@ -43,7 +43,8 @@ USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 CONFIGURE_ENV=	NODEJS_EXECUTABLE="${LOCALBASE}/bin/node"
 
 CMAKE_ARGS=	-DQWELibClang_BIN_PATH="${LOCALBASE}/bin"
-CMAKE_ON=	QT_FEATURE_webengine_system_ffmpeg \
+CMAKE_ON=	QT_FEATURE_webengine_extensions \
+		QT_FEATURE_webengine_system_ffmpeg \
 		QT_FEATURE_webengine_proprietary_codecs
 CMAKE_OFF=	QT_FEATURE_webengine_precompiled_headers
 

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/config/BUILDCONFIG.gn.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/build/config/BUILDCONFIG.gn.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/build/config/BUILDCONFIG.gn
 @@ -136,7 +136,8 @@ declare_args() {
    is_official_build = false
@@ -21,16 +21,16 @@
    } else {
      assert(false, "Unsupported host_os: $host_os")
    }
-@@ -306,6 +311,8 @@ if (target_os == "android") {
-   assert(
-       false,
+@@ -308,6 +313,8 @@ if (target_os == "android") {
        "emscripten is not a supported target_os. It is available only as secondary toolchain.")
+ } else if (target_os == "ohos") {
+   _default_toolchain = "//build/toolchain/ohos:ohos_clang_$target_cpu"
 +} else if (target_os == "openbsd" || target_os == "freebsd") {
 +  _default_toolchain = host_toolchain
  } else {
    assert(false, "Unsupported target_os: $target_os")
  }
-@@ -340,7 +347,11 @@ is_ios = current_os == "ios"
+@@ -342,7 +349,11 @@ is_ios = current_os == "ios"
  is_chromeos = current_os == "chromeos"
  is_fuchsia = current_os == "fuchsia"
  is_ios = current_os == "ios"
@@ -41,5 +41,5 @@
 +is_freebsd = current_os == "freebsd"
 +is_bsd = current_os == "openbsd" || current_os == "freebsd"
  is_mac = current_os == "mac"
+ is_ohos = current_os == "ohos"
  
- # TODO(crbug.com/40511454): Remove is_nacl from all build files, then

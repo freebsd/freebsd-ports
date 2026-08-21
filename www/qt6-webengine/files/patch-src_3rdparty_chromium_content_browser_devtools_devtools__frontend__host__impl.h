@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/devtools/devtools_frontend_host_impl.h.orig	2024-05-21 18:07:39 UTC
+--- src/3rdparty/chromium/content/browser/devtools/devtools_frontend_host_impl.h.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/content/browser/devtools/devtools_frontend_host_impl.h
-@@ -34,7 +34,7 @@ class DevToolsFrontendHostImpl : public DevToolsFronte
+@@ -33,7 +33,7 @@ class DevToolsFrontendHostImpl : public DevToolsFronte
  
    void BadMessageReceived() override;
  

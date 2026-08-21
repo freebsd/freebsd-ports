@@ -1,4 +1,4 @@
---- cmake/Functions.cmake.orig	2026-02-26 14:39:03 UTC
+--- cmake/Functions.cmake.orig	2026-08-11 12:42:19 UTC
 +++ cmake/Functions.cmake
 @@ -103,7 +103,7 @@ function(add_linker_options target buildDir completeSt
      set(ldir_rsp "${buildDir}/${ninjaTarget}_ldir.rsp")
@@ -7,9 +7,9 @@
 -    if(LINUX OR ANDROID)
 +    if(LINUX OR ANDROID OR FREEBSD)
           get_gn_arch(cpu ${TEST_architecture_arch})
-          if(CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm" AND ${config} STREQUAL "Debug")
-              target_link_options(${cmakeTarget} PRIVATE "LINKER:--long-plt")
-@@ -501,6 +501,20 @@ function(add_gn_build_artifacts_to_target)
+ 
+          #QTBUG-145054#
+@@ -507,6 +507,20 @@ function(add_gn_build_artifacts_to_target)
              set_target_properties(${arg_CMAKE_TARGET} PROPERTIES
                  LINK_DEPENDS ${arg_BUILDDIR}/${config}/${arch}/${arg_NINJA_STAMP}
              )

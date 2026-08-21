@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/device/public/cpp/device_features.cc.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/services/device/public/cpp/device_features.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/services/device/public/cpp/device_features.cc
-@@ -147,7 +147,7 @@ BASE_FEATURE(kAutomaticUsbDetach,
+@@ -197,7 +197,7 @@ BASE_FEATURE(kAutomaticUsbDetach,
  BASE_FEATURE(kAutomaticUsbDetach,
               "AutomaticUsbDetach",
               base::FEATURE_ENABLED_BY_DEFAULT);

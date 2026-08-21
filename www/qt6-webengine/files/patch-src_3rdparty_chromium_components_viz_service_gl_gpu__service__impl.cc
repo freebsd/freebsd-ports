@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/viz/service/gl/gpu_service_impl.cc.orig	2026-02-26 14:39:03 UTC
+--- src/3rdparty/chromium/components/viz/service/gl/gpu_service_impl.cc.orig	2026-08-11 12:42:19 UTC
 +++ src/3rdparty/chromium/components/viz/service/gl/gpu_service_impl.cc
 @@ -509,7 +509,7 @@ void GpuServiceImpl::InitializeWithHostInternal(
  
@@ -9,7 +9,7 @@
    gpu_extra_info_.is_gmb_nv12_supported = IsGMBNV12Supported();
  #endif
  
-@@ -1276,7 +1276,7 @@ bool GpuServiceImpl::OnBeginFrameDerivedImpl(const Beg
+@@ -1277,7 +1277,7 @@ bool GpuServiceImpl::OnBeginFrameDerivedImpl(const Beg
    return true;
  }
  
