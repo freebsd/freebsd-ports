@@ -1,3 +1,3 @@
-TIMESTAMP = 1778664539
-SHA256 (gunicorn-26.0.0.tar.gz) = ca9346f85e3a4aeeb64d491045c16b9a35647abd37ea15efe53080eb8b090baf
-SIZE (gunicorn-26.0.0.tar.gz) = 727286
+TIMESTAMP = 1787347594
+SHA256 (gunicorn-26.1.0.tar.gz) = 1413d777bf99d31ebeb08acd354b01f1ecc44db0aa7b811ae7b86c669232e4f7
+SIZE (gunicorn-26.1.0.tar.gz) = 755923
