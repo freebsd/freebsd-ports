@@ -318,7 +318,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		two-face-0.4.3 \
 		typed-arena-2.0.2 \
 		typed-path-0.12.3 \
-		typst-assets-0.15.0 \
+		typst-assets-0.15.1 \
 		unic-langid-0.9.6 \
 		unic-langid-impl-0.9.6 \
 		unic-langid-macros-0.9.6 \
@@ -401,4 +401,4 @@ CARGO_CRATES=	adler2-2.0.0 \
 		zopfli-0.8.3 \
 		zune-core-0.5.1 \
 		zune-jpeg-0.5.15 \
-		typst-dev-assets@git+https://github.com/typst/typst-dev-assets?tag=v0.15.0\#29753d6069349e7fe4e5f75dcb2e77ff1adc5fac
+		typst-dev-assets@git+https://github.com/typst/typst-dev-assets?tag=v0.15.1\#53c12796fc6c62e12af8788ab80ebed686d5eedb
