@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-05-28 11:09:46 UTC
+--- pyproject.toml.orig	2026-05-19 08:25:26 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [project]
@@ -7,3 +7,21 @@
  description = "Pure Python MySQL Driver"
  authors = [
      {name = "Inada Naoki", email = "songofacandy@gmail.com"},
+@@ -9,7 +9,7 @@ readme = "README.md"
+ 
+ requires-python = ">=3.9"
+ readme = "README.md"
+-license = "MIT"
++license = {text = "MIT"}
+ keywords = ["MySQL"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+@@ -34,7 +34,7 @@ dynamic = ["version"]
+ "Changelog" = "https://github.com/PyMySQL/PyMySQL/blob/main/CHANGELOG.md"
+ 
+ [build-system]
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools.packages.find]
