@@ -1,7 +1,6 @@
 PORTNAME=	gleam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.0
-PORTREVISION=	1
+DISTVERSION=	1.18.1
 CATEGORIES=	lang
 
 MAINTAINER=	dch@FreeBSD.org
@@ -19,7 +18,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	gleam-lang
 
-CARGO_UPDATE_ARGS=	--frozen
+CARGO_UPDATE_ARGS=	--offline
 RUSTFLAGS+=		--cap-lints=warn
 
 PORTSCOUT=	limit:[0-9.]+
@@ -30,10 +29,10 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-PORTSCOUT=	limit:[0-9.]+
-
 do-build:
-	(cd ${WRKSRC} && env HOME=${WRKDIR} cargo install --path gleam-bin --force --locked)
+	(cd ${WRKSRC} && \
+		env HOME=${WRKDIR} cargo install --path gleam-bin --force \
+		--locked)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin/
