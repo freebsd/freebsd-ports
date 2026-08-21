@@ -30,6 +30,10 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CONFIGURE_ARGS+=	--enable-icu-6x
 
+# GitHub tags are vX.Y.Z.W-NNNNN; portscout normalizes that to X.Y.Z.W.NNNNN
+# and treats it as newer than DISTVERSION. Skip the current tag in both forms.
+PORTSCOUT=	skipv:${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX},${DISTVERSION}${DISTVERSIONSUFFIX:S|-|.|}
+
 #INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DEBUG SNMP
