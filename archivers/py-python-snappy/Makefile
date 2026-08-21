@@ -12,6 +12,9 @@ WWW=		https://github.com/andrix/python-snappy
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer depended upon
+EXPIRATION_DATE=	2026-09-30
+
 LIB_DEPENDS=	libsnappy.so:archivers/snappy
 
 USES=		python
