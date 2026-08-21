@@ -65,7 +65,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		async-std-1.13.2 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
-		async-tar-0.6.1 \
 		async-trait-0.1.89 \
 		async-tungstenite-0.31.0 \
 		async_zip-0.0.18 \
@@ -284,7 +283,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		cssparser-0.35.0 \
 		cssparser-0.36.0 \
 		cssparser-macros-0.6.1 \
-		ctor-1.0.6 \
+		ctor-1.0.12 \
 		ctrlc-3.5.0 \
 		cursor-icon-1.2.0 \
 		cxx-1.0.187 \
@@ -623,9 +622,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		libsqlite3-sys-0.30.1 \
 		linebender_resource_handle-0.1.1 \
 		link-cplusplus-1.0.12 \
-		link-section-0.17.2 \
+		link-section-0.19.2 \
 		linkify-0.10.0 \
-		linktime-proc-macro-0.1.0 \
+		linktime-proc-macro-0.2.2 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.11.0 \
 		litemap-0.8.0 \
@@ -788,7 +787,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		pastey-0.1.1 \
 		pathdiff-0.2.3 \
 		pathfinder_geometry-0.5.1 \
-		pathfinder_simd-0.5.5 \
+		pathfinder_simd-0.5.6 \
 		pbjson-0.6.0 \
 		pbjson-build-0.6.2 \
 		pbjson-types-0.6.0 \
@@ -859,9 +858,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		proc-macro-crate-3.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-error-attr2-2.0.0 \
-		proc-macro-error2-2.0.1 \
-		proc-macro2-1.0.101 \
+		proc-macro2-1.0.107 \
 		proc-macro2-diagnostics-0.10.1 \
 		procfs-core-0.17.0 \
 		profiling-1.0.17 \
@@ -900,7 +897,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.14 \
 		quinn-udp-0.5.14 \
-		quote-1.0.41 \
+		quote-1.0.47 \
 		r-efi-5.3.0 \
 		radium-0.7.0 \
 		rand-0.3.23 \
@@ -1006,7 +1003,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		scroll_derive-0.12.1 \
 		sct-0.7.1 \
 		sdd-4.6.2 \
-		sea-bae-0.2.1 \
+		sea-bae-0.2.2 \
 		sea-orm-1.1.10 \
 		sea-orm-macros-1.1.10 \
 		sea-query-0.32.7 \
@@ -1091,9 +1088,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		sqlx-postgres-0.8.6 \
 		sqlx-sqlite-0.8.6 \
 		stable_deref_trait-1.2.1 \
-		stacker-0.1.23 \
-		stacksafe-0.1.4 \
-		stacksafe-macro-0.1.4 \
+		stacker-0.1.25 \
+		stacksafe-1.0.3 \
+		stacksafe-macro-1.0.3 \
 		static_assertions-1.1.0 \
 		streaming-iterator-0.1.9 \
 		strict-num-0.1.1 \
@@ -1536,7 +1533,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		async-task@git+https://github.com/smol-rs/async-task.git?rev=b4486cd71e4e94fbda54ce6302444de14f4d190e\#b4486cd71e4e94fbda54ce6302444de14f4d190e \
 		windows-capture@git+https://github.com/zed-industries/windows-capture.git?rev=f0d6c1b6691db75461b732f6d5ff56eed002eeb9\#f0d6c1b6691db75461b732f6d5ff56eed002eeb9 \
 		lsp-types@git+https://github.com/zed-industries/lsp-types?rev=f4dfa89a21ca35cd929b70354b1583fabae325f8\#f4dfa89a21ca35cd929b70354b1583fabae325f8 \
+		dugong,dugong-graphlib,manatee,merman,merman-core,merman-render,roughr-merman@git+https://github.com/zed-industries/merman?tag=v0.7.0-with-patches\#a3ed8d9f3fd1d74c802f25ed9edd501743796504 \
 		tree-sitter-gomod@git+https://github.com/camdencheek/tree-sitter-go-mod?rev=2e886870578eeba1927a2dc4bd2e2b3f598c5f9a\#2e886870578eeba1927a2dc4bd2e2b3f598c5f9a \
+		async-tar@git+https://github.com/zed-industries/async-tar?rev=bd3ad6f89df9a9da7a8535958756d6bf465936a0\#bd3ad6f89df9a9da7a8535958756d6bf465936a0 \
 		proptest,proptest-macro@git+https://github.com/proptest-rs/proptest?rev=3dca198a8fef1b32e3a66f1e1897c955b4dc5b5b\#3dca198a8fef1b32e3a66f1e1897c955b4dc5b5b \
 		zed-scap@git+https://github.com/zed-industries/scap?rev=4afea48c3b002197176fb19cd0f9b180dd36eaac\#4afea48c3b002197176fb19cd0f9b180dd36eaac \
 		libwebrtc,livekit,livekit-api,livekit-protocol,livekit-runtime,webrtc-sys,webrtc-sys-build@git+https://github.com/zed-industries/livekit-rust-sdks?rev=d0e27be0cdad89eadab3e36207cda0a2b6e359ee\#d0e27be0cdad89eadab3e36207cda0a2b6e359ee \
@@ -1547,7 +1546,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		tree-sitter-md@git+https://github.com/zed-industries/tree-sitter-markdown?rev=b596e737286780d7bfa9fcddceaeeb754574b352\#b596e737286780d7bfa9fcddceaeeb754574b352 \
 		zed-reqwest@git+https://github.com/zed-industries/reqwest.git?rev=c15662463bda39148ba154100dd44d3fba5873a4\#c15662463bda39148ba154100dd44d3fba5873a4 \
 		tree-sitter-gowork@git+https://github.com/zed-industries/tree-sitter-go-work?rev=acb0617bf7f4fda02c6217676cc64acb89536dc7\#acb0617bf7f4fda02c6217676cc64acb89536dc7 \
-		dugong,dugong-graphlib,manatee,merman,merman-core,merman-render,roughr-merman@git+https://github.com/zed-industries/merman?tag=v0.6.2-with-patches\#9acc3960f04a7deeb08079d60fa8183f15e8bde1 \
 		xim-ctext,xim-parser,zed-xim@git+https://github.com/zed-industries/xim-rs.git?rev=16f35a2c881b815a2b6cdfd6687988e84f8447d8\#16f35a2c881b815a2b6cdfd6687988e84f8447d8 \
 		tree-sitter-cpp@git+https://github.com/tree-sitter/tree-sitter-cpp?rev=5cb9b693cfd7bfacab1d9ff4acac1a4150700609\#5cb9b693cfd7bfacab1d9ff4acac1a4150700609 \
 		tree-sitter-heex@git+https://github.com/zed-industries/tree-sitter-heex?rev=1dd45142fbb05562e35b2040c6129c9bca346592\#1dd45142fbb05562e35b2040c6129c9bca346592 \
