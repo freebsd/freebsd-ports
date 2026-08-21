@@ -1,6 +1,5 @@
 PORTNAME=	butt
-PORTVERSION=	1.45.0
-PORTREVISION=	3
+PORTVERSION=	1.47.0
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	https://danielnoethen.de/butt/release/${PORTVERSION}/
 
