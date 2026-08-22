@@ -1,7 +1,6 @@
 PORTNAME=	tinyauth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.2
-PORTREVISION=	2
+DISTVERSION=	5.1.3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
@@ -44,7 +43,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
 # in the Tinyauth repository to get the value of GITID.
-GITID=		c7077a7c845dc71f9cbab55dc15151920887881e
+GITID=		ad700e75e065e7d966f0ba4cb16fc851cad224c6
 
 BUILD_DATE=	$$(date -u '+%Y-%m-%dT%H:%M:%S')
 
