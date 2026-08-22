@@ -288,6 +288,7 @@
     SUBDIR += linux-rl9-sdl12-extralibs
     SUBDIR += linux-rl9-sdl20-extralibs
     SUBDIR += llama-cpp
+    SUBDIR += llama-model
     SUBDIR += locale-en_DK
     SUBDIR += localedata
     SUBDIR += logsurfer
