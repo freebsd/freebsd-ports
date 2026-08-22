@@ -40,9 +40,9 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
-#post-install:
-#.for f in ${TOSTRIP}
-#	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
-#.endfor
+post-install:
+.for f in ${TOSTRIP}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
+.endfor
 
 .include <bsd.port.mk>
