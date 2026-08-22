@@ -2953,6 +2953,7 @@ lib/wine/%%WINEARCH%%-unix/wine
 %%ALSA%%lib/wine/%%WINEARCH%%-unix/winealsa.so
 lib/wine/%%WINEARCH%%-unix/winebth.so
 lib/wine/%%WINEARCH%%-unix/winebus.so
+lib/wine/%%WINEARCH%%-unix/wined3d.so
 lib/wine/%%WINEARCH%%-unix/winedmo.so
 %%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/winegstreamer.so
 %%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.so
