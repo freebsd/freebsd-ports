@@ -1,7 +1,6 @@
 PORTNAME=	nginx-prometheus-exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
-PORTREVISION=	10
+DISTVERSION=	1.5.3
 CATEGORIES=	www
 
 MAINTAINER=	arcade@b1t.name
@@ -14,11 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 USE_RC_SUBR=	${PORTNAME}
-GO_MODULE=	github.com/nginxinc/nginx-prometheus-exporter
-GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
-
-LD_FLAG_X_PREFIX=	-X main
-LD_FLAG_STRING=		${STRIP} ${LD_FLAG_X_PREFIX}.version=${DISTVERSION}
+GO_MODULE=	github.com/nginxinc/${PORTNAME}
+GO_BUILDFLAGS=	-v -ldflags "${GO_LD_FLAGS:S|^|-X github.com/prometheus/common/version.|}"
+DATETIMENOW=	%FT%T%z
+GO_LD_FLAGS=	Version=${DISTVERSION} \
+		BuildDate=${DATETIMENOW:gmtime} \
+		Revision=79d3115
 
 PLIST_FILES=	bin/${PORTNAME}
 
