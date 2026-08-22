@@ -76,6 +76,7 @@ bin/cpu_rec_rs
 %%DATADIR%%/X86-64.corpus
 %%DATADIR%%/X86.corpus
 %%DATADIR%%/Xtensa.corpus
+%%DATADIR%%/XtensaEB.corpus
 %%DATADIR%%/Z80.corpus
 %%DATADIR%%/_mask1.corpus
 %%DATADIR%%/_ones.corpus

@@ -1,11 +1,10 @@
 PORTNAME=	cpu_rec_rs
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.0.0
-PORTREVISION=	27
+DISTVERSION=	1.0.1
 CATEGORIES=	devel
 
-PATCH_SITES=	https://github.com/trou/${PORTNAME}/commit/
-PATCHFILES=	2b0cf547ce1eaa4b153c812f51bb9ab6928784cd.patch:-p1
+#PATCH_SITES=	https://github.com/trou/${PORTNAME}/commit/
+#PATCHFILES=	2b0cf547ce1eaa4b153c812f51bb9ab6928784cd.patch:-p1
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Determine which CPU architecture is used in a binary file

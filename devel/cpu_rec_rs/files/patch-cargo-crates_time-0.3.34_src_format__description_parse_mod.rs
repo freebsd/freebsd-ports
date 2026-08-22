@@ -4,14 +4,8 @@ Date: Fri, 15 Mar 2024 20:47:22 -0700
 Subject: [PATCH] Delete identity conversion in format_description::parse_owned
  (#671)
 
----
- time/src/format_description/parse/mod.rs | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
-
-diff --git a/time/src/format_description/parse/mod.rs b/time/src/format_description/parse/mod.rs
-index 1fcc577c9..22ca52591 100644
---- cargo-crates/time-0.3.22/src/format_description/parse/mod.rs
-+++ cargo-crates/time-0.3.22/src/format_description/parse/mod.rs
+--- cargo-crates/time-0.3.34/src/format_description/parse/mod.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/time-0.3.34/src/format_description/parse/mod.rs
 @@ -80,9 +80,7 @@ pub fn parse_owned<const VERSION: usize>(
      let mut lexed = lexer::lex::<VERSION>(s.as_bytes());
      let ast = ast::parse::<_, VERSION>(&mut lexed);
