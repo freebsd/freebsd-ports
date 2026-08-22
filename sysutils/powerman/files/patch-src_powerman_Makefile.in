@@ -1,0 +1,10 @@
+--- src/powerman/Makefile.in.orig	2024-09-11 18:51:19 UTC
++++ src/powerman/Makefile.in
+@@ -1067,6 +1067,6 @@ pm$(EXEEXT): powerman
+ pm$(EXEEXT): powerman
+ 	rm -f $@
+-	$(LN_S) $< $@
++	$(LN_S) $^ $@
+ 
+ parse_lex.c : parse_tab.h
+ 
