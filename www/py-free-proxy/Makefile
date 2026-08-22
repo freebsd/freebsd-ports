@@ -1,9 +1,9 @@
 PORTNAME=	free-proxy
-PORTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	free_proxy-${PORTVERSION}
+DISTNAME=	free_proxy-${DISTVERSION}
 
 MAINTAINER=	matthew@wener.org
 COMMENT=	Proxy scraper for further use
