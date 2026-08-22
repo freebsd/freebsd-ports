@@ -1,4 +1,5 @@
 bin/skrooge
+bin/skroogecompanion
 bin/skroogeconvert
 lib/libskgbankgui.so.2
 lib/libskgbankgui.so.%%SHLIB_VER%%
@@ -22,6 +23,7 @@ lib/libskgbasemodeler.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/skg_gui/skg_selectall.so
 %%QT_PLUGINDIR%%/skg_gui/skg_statistic.so
 %%QT_PLUGINDIR%%/skg_gui/skg_undoredo.so
+%%QT_PLUGINDIR%%/skg_gui/skrooge_aiassistant.so
 %%QT_PLUGINDIR%%/skg_gui/skrooge_bank.so
 %%QT_PLUGINDIR%%/skg_gui/skrooge_budget.so
 %%QT_PLUGINDIR%%/skg_gui/skrooge_calculator.so
@@ -54,6 +56,8 @@ lib/libskgbasemodeler.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/skrooge_import/skrooge_import_xml.so
 %%QT_PLUGINDIR%%/sqldrivers/libskgsqlcipher.so
 share/applications/org.kde.skrooge.desktop
+share/applications/org.kde.skroogecompanion.desktop
+share/config.kcfg/skgassistant_settings.kcfg
 share/config.kcfg/skgbasegui_settings.kcfg
 share/config.kcfg/skgbookmark_settings.kcfg
 share/config.kcfg/skgfile_settings.kcfg
@@ -72,6 +76,7 @@ share/doc/HTML/ca/skrooge/index.docbook
 share/doc/HTML/de/skrooge/index.cache.bz2
 share/doc/HTML/de/skrooge/index.docbook
 share/doc/HTML/en/skrooge/after_mass_update.png
+share/doc/HTML/en/skrooge/ai_assistant.png
 share/doc/HTML/en/skrooge/alarm.png
 share/doc/HTML/en/skrooge/analysis_build_report.png
 share/doc/HTML/en/skrooge/analysis_build_transport_report.png
@@ -165,6 +170,7 @@ share/doc/HTML/en/skrooge/scheduled.png
 share/doc/HTML/en/skrooge/search.png
 share/doc/HTML/en/skrooge/search_result.png
 share/doc/HTML/en/skrooge/secondary_unit_display.png
+share/doc/HTML/en/skrooge/settings_ai_assistant.png
 share/doc/HTML/en/skrooge/settings_bookmarks.png
 share/doc/HTML/en/skrooge/settings_file.png
 share/doc/HTML/en/skrooge/settings_general.png
@@ -408,6 +414,7 @@ share/kxmlgui5/skg_properties/skg_properties.rc
 share/kxmlgui5/skg_selectall/skg_selectall.rc
 share/kxmlgui5/skg_statistic/skg_statistic.rc
 share/kxmlgui5/skg_undoredo/skg_undoredo.rc
+share/kxmlgui5/skrooge_aiassistant/skrooge_aiassistant.rc
 share/kxmlgui5/skrooge_bank/skrooge_bank.rc
 share/kxmlgui5/skrooge_budget/skrooge_budget.rc
 share/kxmlgui5/skrooge_calculator/skrooge_calculator.rc
@@ -421,7 +428,6 @@ share/kxmlgui5/skrooge_search/skrooge_search.rc
 share/kxmlgui5/skrooge_tracker/skrooge_tracker.rc
 share/kxmlgui5/skrooge_unit/skrooge_unit.rc
 share/locale/ar/LC_MESSAGES/skrooge.mo
-share/locale/bg/LC_MESSAGES/skrooge.mo
 share/locale/bs/LC_MESSAGES/skrooge.mo
 share/locale/ca/LC_MESSAGES/skrooge.mo
 share/locale/ca@valencia/LC_MESSAGES/skrooge.mo
@@ -464,6 +470,7 @@ share/locale/uk/LC_MESSAGES/skrooge.mo
 share/locale/zh_CN/LC_MESSAGES/skrooge.mo
 share/locale/zh_TW/LC_MESSAGES/skrooge.mo
 share/metainfo/org.kde.skrooge.appdata.xml
+share/metainfo/org.kde.skroogecompanion.appdata.xml
 share/mime/packages/x-skg.xml
 %%DATADIR%%/ISO20022.xslt
 %%DATADIR%%/categories/fr/associations.qif
@@ -906,6 +913,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/skrooge-exchangerates_apilayer.py
 %%DATADIR%%/skrooge-sabb.py
 %%DATADIR%%/skrooge-woob.py
+%%DATADIR%%/skrooge_system_prompt.md
 share/skrooge_import_backend/org.kde.skrooge-import-backend-aqbanking.json
 share/skrooge_import_backend/org.kde.skrooge-import-backend-weboob.json
 share/skrooge_import_backend/org.kde.skrooge-import-backend-weboob_coming.json
