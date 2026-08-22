@@ -1,5 +1,5 @@
 PORTNAME=	elgg
-PORTVERSION=	7.0.0
+PORTVERSION=	7.0.5
 CATEGORIES=	www
 MASTER_SITES=	http://elgg.org/download/
 
@@ -16,9 +16,24 @@ USE_PHP=	curl dom fileinfo filter gd intl \
 IGNORE_WITH_PHP=	86
 
 NO_BUILD=	yes
+PLIST=		${WRKDIR}/plist
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
+
+ELGGDIR=	www/elgg
 ELGGDATADIR=	${WWWDIR}/data
+
+pre-install:
+	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${ELGGDIR}?g" >>${PLIST}
+	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dir ${ELGGDIR}?g" >> ${PLIST}
+
+	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
+	@${ECHO_CMD} "@group ${WWWGRP}" >> ${PLIST}
+	@${ECHO_CMD} "@mode 755" >> ${PLIST}
+	@${ECHO} @dir ${ELGGDATADIR} >> ${PLIST}
+	@${ECHO_CMD} "@mode" >> ${PLIST}
+	@${ECHO_CMD} "@group" >> ${PLIST}
+	@${ECHO_CMD} "@owner" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
