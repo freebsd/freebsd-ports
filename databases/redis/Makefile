@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	8.10.0
+DISTVERSION=	8.10.1
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
@@ -59,9 +59,9 @@ REDISEARCH_DESC=	Redisearch module
 TLS_DESC=	Use TLS (openssl req.)
 
 JEMALLOC_MAKE_ENV=	USE_JEMALLOC=yes
-REDISBLOOM_LIB_DEPENDS=		redisbloom.so>=0:databases/redisbloom
-REDISJSON_LIB_DEPENDS=		librejson.so>=0:databases/redisjson
-REDISEARCH_LIB_DEPENDS=		redisearch.so>=0:textproc/redisearch
+REDISBLOOM_RUN_DEPENDS=		${LOCALBASE}/lib/redisbloom.so>=0:databases/redisbloom
+REDISJSON_RUN_DEPENDS=		${LOCALBASE}/lib/librejson.so>=0:databases/redisjson
+REDISEARCH_RUN_DEPENDS=		${LOCALBASE}/lib/redisearch.so>=0:textproc/redisearch
 TLS_USES=		ssl
 TLS_MAKE_ENV=		BUILD_TLS=yes
 
