@@ -9,7 +9,7 @@ DISTFILES=	${WEB_JAR}:web \
 		${NANOCODE_JAR}:nanocode
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	edlinuxguru@gmail.com
 COMMENT=	Java AI inference engine
 WWW=		https://github.com/edwardcapriolo/deliverance
 
