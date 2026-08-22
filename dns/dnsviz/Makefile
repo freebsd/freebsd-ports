@@ -1,6 +1,5 @@
 PORTNAME=	dnsviz
-PORTVERSION=	0.9.4
-PORTREVISION=	4
+PORTVERSION=	0.11.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	dns
 
@@ -10,10 +9,10 @@ WWW=		https://dnsviz.net/
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.1:graphics/py-pygraphviz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}m2crypto>=0.24.0:security/py-m2crypto@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dnspython>=1.11.0:dns/py-dnspython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}libnacl>=1.5.2:security/py-libnacl@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygraphviz>=1.6:graphics/py-pygraphviz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cryptography>=48.0.1:security/py-cryptography@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dnspython>=2.8.0:dns/py-dnspython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libnacl>=2.1.0:security/py-libnacl@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils concurrent optsuffix
