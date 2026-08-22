@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-08-21 00:52:02 UTC
++++ pyproject.toml
+@@ -4,8 +4,7 @@ readme = "README.rst"
+ description = "bcj filter library"
+ keywords = ["lzma", "bcj"]
+ readme = "README.rst"
+-license = "LGPL-2.1-or-later"
+-license-files = ["LICENSE"]
++license = {text = "LGPL-2.1-or-later"}
+ authors = [
+     {name = "Hiroshi Miura", email = "miurahr@linux.com"},
+ ]
