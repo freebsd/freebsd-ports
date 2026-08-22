@@ -1,17 +1,18 @@
 PORTNAME=	nginx-ui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.3
-PORTREVISION=	2
+DISTVERSION=	2.5.10
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
+MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
 #   https://github.com/DtxdF/port-assets-makejails/tree/main/nginx-ui
-DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX} \
-		${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.vendor${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX}:assets \
+		${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.vendor${EXTRACT_SUFX}:assets
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Yet another WebUI for Nginx
 WWW=		https://nginxui.com
+
+BROKEN_i386=	mapping output file failed: cannot allocate memory
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -39,14 +40,13 @@ BUILD_DATE=	$$(date -u +%s)
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
 # in the NGINX UI repository to get the value of GITID.
-GITID=		eb9495bdf4d98075bc00f221c7731d6f9f0b0a26
+GITID=		ff2253c59cdbfc0741866cd66a1f147ad8292791
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/vendor
 	@cd ${WRKDIR}/${PORTNAME}-vendor && ${COPYTREE_SHARE} . ${WRKSRC}/vendor
 	@${MKDIR} ${WRKSRC}/app/dist
 	@cd ${WRKDIR}/${PORTNAME}-frontend && ${COPYTREE_SHARE} . ${WRKSRC}/app/dist
-	@${MV} ${WRKSRC}/app/dist/dist.tar.xz ${WRKSRC}/app/dist.tar.xz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/newLineSymbol/"\\n"/g' \
