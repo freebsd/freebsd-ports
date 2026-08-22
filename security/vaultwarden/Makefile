@@ -1,5 +1,5 @@
 PORTNAME=	vaultwarden
-DISTVERSION=	1.37.1
+DISTVERSION=	1.37.2
 CATEGORIES=	security
 
 MAINTAINER=	mr@FreeBSD.org
