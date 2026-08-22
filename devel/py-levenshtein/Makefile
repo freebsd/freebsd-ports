@@ -1,5 +1,5 @@
 PORTNAME=	levenshtein
-PORTVERSION=	0.27.3
+DISTVERSION=	0.27.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,6 @@ USES=		cmake:indirect python
 USE_PYTHON=	autoplist pep517
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/Levenshtein/levenshtein*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/Levenshtein/${PORTNAME}_cpp${PYTHON_TAG}.so
 
 .include <bsd.port.mk>
