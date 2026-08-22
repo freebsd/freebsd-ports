@@ -9,6 +9,9 @@ WWW=		https://github.com/FrauBSD/framework-autorotate
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	requires x86 inb/outb for Chrome EC LPC access
+
 RUN_DEPENDS=	xdpyinfo:x11/xdpyinfo \
 		xinput:x11/xinput \
 		xrandr:x11/xrandr \
