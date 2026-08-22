@@ -1,11 +1,7 @@
 PORTNAME=	givaro
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	ed91ee0dc2d41f3ceb72abc375ad5c0fec62ed56.patch:-p1 # Add libc++ support for macOS and Linux
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	C++ library for computer algebra

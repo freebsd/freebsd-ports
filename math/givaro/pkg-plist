@@ -226,7 +226,7 @@ include/recint/rutools.h
 lib/libgivaro.a
 lib/libgivaro.so
 lib/libgivaro.so.9
-lib/libgivaro.so.9.2.1
+lib/libgivaro.so.9.2.2
 libdata/pkgconfig/givaro.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/givaro.html
 %%DATADIR%%/givaro-makefile
