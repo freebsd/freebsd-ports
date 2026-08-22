@@ -1,5 +1,5 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.2.14
+DISTVERSION=	7.2.16
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
 DISTNAME=	VirtualBox-${DISTVERSION}
@@ -109,10 +109,11 @@ post-patch:
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \
 	    ${WRKSRC}/kBuild/header.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
 	    ${WRKSRC}/kBuild/units/qt5.kmk ${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
-	    ${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
 	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
 	    ${WRKSRC}/src/VBox/Additions/x11/vboxmouse/Makefile.kmk \
 	    ${WRKSRC}/src/VBox/Additions/x11/vboxvideo/Makefile.kmk
+	@${REINPLACE_CMD} -e 's|/usr/bin/VBoxClient|${PREFIX}/bin/VBoxClient|' \
+	    ${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient
 	@${REINPLACE_CMD} \
 	    -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' \
 	    ${WRKSRC}/configure
