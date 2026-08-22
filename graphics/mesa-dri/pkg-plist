@@ -27,6 +27,7 @@
 %%X11%%lib/dri/mxsfb-drm_dri.so
 %%X11%%lib/dri/panel-mipi-dbi_dri.so
 %%X11%%%%panfrost%%lib/dri/panfrost_dri.so
+%%X11%%%%panfrost%%lib/dri/panthor_dri.so
 %%X11%%lib/dri/pl111_dri.so
 %%X11%%%%r300%%lib/dri/r300_dri.so
 %%X11%%%%r600%%lib/dri/r600_dri.so
@@ -76,6 +77,7 @@ lib/dri/virtio_gpu_drv_video.so
 %%iris%%share/drirc.d/00-iris-defaults.conf
 %%X11%%%%swrast_vk%%share/drirc.d/00-lavapipe-defaults.conf
 share/drirc.d/00-mesa-defaults.conf
+%%X11%%%%panfrost%%share/drirc.d/00-panfrost-defaults.conf
 %%r300%%share/drirc.d/00-r300-defaults.conf
 %%r600%%share/drirc.d/00-r600-defaults.conf
 %%radeonsi%%share/drirc.d/00-radeonsi-defaults.conf
