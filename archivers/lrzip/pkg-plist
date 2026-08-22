@@ -3,7 +3,6 @@
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README-NOT-BACKWARD-COMPATIBLE
-%%DOCSDIR%%/README.Assembler
 %%DOCSDIR%%/README.benchmarks
 %%DOCSDIR%%/README.lzo_compresses.test.txt
 %%DOCSDIR%%/README.md
