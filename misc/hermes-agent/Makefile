@@ -1,5 +1,5 @@
 PORTNAME=	hermes-agent
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	misc python
 MASTER_SITES+=	LOCAL/olivier:webdist
 DISTFILES+=	${PORTNAME}-web-dist-${PORTVERSION}${EXTRACT_SUFX}:webdist
@@ -41,7 +41,7 @@ USES=		python:3.11+,run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	NousResearch
 GH_PROJECT=	hermes-agent
-GH_TAGNAME=	v2026.8.3
+GH_TAGNAME=	v2026.8.18
 
 USE_RC_SUBR=	hermes_dashboard hermes_gateway
 
@@ -92,15 +92,15 @@ PLIST_SUB+=	HERMES_LIBDIR=${HERMES_LIBDIR:S,^${PREFIX}/,,}
 #      into ${DISTDIR} so `make makesum` picks it up locally.
 #   5. cd ${.CURDIR} && make makesum
 
-# Python packages and bare modules that constitute the runtime app.
+# Python packages that constitute the runtime app.  The bare top-level
+# modules (cli.py, run_agent.py, registration_lifecycle.py, ...) are not
+# listed: do-install globs every top-level *.py except setup.py, because
+# upstream adds new leaf modules on most releases and a hardcoded list
+# silently drops them (ModuleNotFoundError at runtime).
 HERMES_PKGS=	acp_adapter agent cron gateway hermes_cli plugins providers \
 		tools tui_gateway
-HERMES_MODS=	batch_runner.py cli.py hermes_bootstrap.py hermes_constants.py \
-		hermes_logging.py hermes_state.py hermes_time.py model_tools.py \
-		run_agent.py toolset_distributions.py toolsets.py \
-		trajectory_compressor.py utils.py
 
-SHEBANG_FILES=	${HERMES_MODS}
+SHEBANG_FILES=	*.py
 
 PORTDOCS=	README.md SECURITY.md CONTRIBUTING.md AGENTS.md
 OPTIONS_DEFINE=	DOCS
@@ -122,9 +122,10 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${HERMES_LIBDIR} \
 		"! -name __pycache__ ! -name *.pyc"
 .endfor
-.for f in ${HERMES_MODS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${HERMES_LIBDIR}
-.endfor
+	cd ${WRKSRC} && for f in *.py; do \
+		[ "$$f" = setup.py ] && continue; \
+		${INSTALL_DATA} $$f ${STAGEDIR}${HERMES_LIBDIR}; \
+	done
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${SED} -e 's|%%HERMES_LIBDIR%%|${HERMES_LIBDIR}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
