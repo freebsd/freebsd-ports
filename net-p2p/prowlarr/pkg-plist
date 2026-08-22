@@ -202,7 +202,9 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/Microsoft.Extensions.Options.dll
 %%DATADIR%%/bin/Microsoft.Extensions.Primitives.dll
 %%DATADIR%%/bin/Microsoft.Extensions.WebEncoders.dll
+%%DATADIR%%/bin/Microsoft.Identity.Client.Broker.dll
 %%DATADIR%%/bin/Microsoft.Identity.Client.Extensions.Msal.dll
+%%DATADIR%%/bin/Microsoft.Identity.Client.NativeInterop.dll
 %%DATADIR%%/bin/Microsoft.Identity.Client.dll
 %%DATADIR%%/bin/Microsoft.IdentityModel.Abstractions.dll
 %%DATADIR%%/bin/Microsoft.IdentityModel.JsonWebTokens.dll
@@ -449,10 +451,10 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/UI/194-4b970a3e3dd59743b5ea.js
 %%DATADIR%%/bin/UI/194-4b970a3e3dd59743b5ea.js.LICENSE.txt
 %%DATADIR%%/bin/UI/194-4b970a3e3dd59743b5ea.js.map
-%%DATADIR%%/bin/UI/195-9b5e92c9172ec7406271.js
-%%DATADIR%%/bin/UI/195-9b5e92c9172ec7406271.js.map
-%%DATADIR%%/bin/UI/Content/195-429be677181e931bd77f.css
-%%DATADIR%%/bin/UI/Content/195-429be677181e931bd77f.css.map
+%%DATADIR%%/bin/UI/195-52684a3d346ef5a9481b.js
+%%DATADIR%%/bin/UI/195-52684a3d346ef5a9481b.js.map
+%%DATADIR%%/bin/UI/Content/195-9c0c50c26f96c1aa3463.css
+%%DATADIR%%/bin/UI/Content/195-9c0c50c26f96c1aa3463.css.map
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.ttf
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff2
@@ -494,8 +496,8 @@ etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-f406f68d8df178e3031d.js
-%%DATADIR%%/bin/UI/index-f406f68d8df178e3031d.js.map
+%%DATADIR%%/bin/UI/index-6d6652ccfd2792e7fb4c.js
+%%DATADIR%%/bin/UI/index-6d6652ccfd2792e7fb4c.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html
