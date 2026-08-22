@@ -1,10 +1,10 @@
 PORTNAME=	readchar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.1
+DISTVERSION=	4.2.2
 CATEGORIES=	textproc devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris.longros@gmail.com
 COMMENT=	Python library to read characters and key strokes
 WWW=		https://github.com/magmax/python-readchar
 
@@ -19,14 +19,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		dos2unix localbase python
-USE_PYTHON=	autoplist pep517 pytest
-
+USES=		localbase python
 USE_GITHUB=	yes
 GH_ACCOUNT=	magmax
 GH_PROJECT=	python-${PORTNAME}
-
-DOS2UNIX_GLOB=	*.py
+USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes
 
