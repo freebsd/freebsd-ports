@@ -4,6 +4,9 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/swesterfeld/${PORTNAME}/releases/download/${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/swesterfeld/audiowmark/commit/
+PATCHFILES=	c9d1f8ccb0da91954b3362a0652a8770259ade73.patch:-p1
+
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Audio and video watermarking tool
 WWW=		https://github.com/swesterfeld/audiowmark
