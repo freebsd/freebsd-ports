@@ -23,7 +23,7 @@ load_rc_config $name
 
 pidfile="/var/run/kanidmd.pid"
 command=/usr/sbin/daemon
-command_args="-u %%USER%% -p /var/run/kanidmd.pid -T kanidmd %%PREFIX%%/libexec/${name} server --config-path ${kanidmd_config}"
+command_args="-u %%USER%% -P /var/run/kanidmd.supervisor.pid -p /var/run/kanidmd.pid -T kanidmd -H -o /var/log/kanidmd %%PREFIX%%/libexec/${name} server --config-path ${kanidmd_config}"
 procname=%%PREFIX%%/libexec/${name}
 extra_commands="reload"
 

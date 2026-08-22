@@ -1,0 +1,8 @@
+# kanidm-client configuration file for newsyslog.conf
+# commented out by default
+#
+# see newsyslog.conf(5) for details
+#
+# logfilename                [owner:group]        mode count  size    when  flags [/pid_file] [sig_num]
+#/var/log/kanidm_unixd       %%USER%%:%%GROUP%%   640  7      1000    @T00  JC    /var/run/kanidm_unixd.supervisor.pid
+#/var/log/kanidm_unixd_tasks root:wheel           640  7      1000    @T00  JC    /var/run/kanidm_unixd_tasks.supervisor.pid
