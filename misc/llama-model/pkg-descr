@@ -1,0 +1,11 @@
+llama-model is a POSIX sh wrapper around llama.cpp's llama-server. It gives
+local GGUF model files short, stable aliases and assembles the right
+llama-server invocation - model path, mmproj path, and layered argument
+files - for each alias.
+
+Each alias is a directory under a catalog root containing a symlink to the
+downloaded model file (and, for a vision model, a second symlink to its
+multimodal projector), so a model keeps its descriptive download name while
+commands use a memorable alias. Models can also be run detached as
+background services, with commands to list, start, stop, restart, and tail
+their logs.
