@@ -1,6 +1,6 @@
 PORTNAME=	opencc
 DISTVERSIONPREFIX=	ver.
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	chinese converters
 
 MAINTAINER=	lichray@gmail.com
