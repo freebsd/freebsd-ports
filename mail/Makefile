@@ -507,6 +507,7 @@
     SUBDIR += prepflog
     SUBDIR += procmail
     SUBDIR += procmail-bgrb
+    SUBDIR += protonmail-bridge
     SUBDIR += proxsmtp
     SUBDIR += py-aiosmtpd
     SUBDIR += py-alot

@@ -1,0 +1,11 @@
+--- vendor/modules.txt.orig	2026-08-23 12:45:39 UTC
++++ vendor/modules.txt
+@@ -504,7 +504,7 @@ github.com/keybase/go-keychain/secretservice
+ github.com/keybase/go-keychain
+ github.com/keybase/go-keychain/secretservice
+ # github.com/keys-pub/go-libfido2 v1.5.4-0.20250104233141-2534349bd685 => github.com/ProtonMail/go-libfido2 v0.0.0-20250916110427-df894d6d07a1
+-## explicit; go 1.13
++## explicit; go 1.17
+ github.com/keys-pub/go-libfido2
+ # github.com/klauspost/cpuid/v2 v2.3.0
+ ## explicit; go 1.22
