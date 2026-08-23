@@ -49,6 +49,7 @@ share/applications/org.fooyin.fooyin.desktop
 %%DATADIR%%/translations/fooyin_ru.qm
 %%DATADIR%%/translations/fooyin_sk.qm
 %%DATADIR%%/translations/fooyin_sv.qm
+%%DATADIR%%/translations/fooyin_ta.qm
 %%DATADIR%%/translations/fooyin_th.qm
 %%DATADIR%%/translations/fooyin_tr.qm
 %%DATADIR%%/translations/fooyin_uk.qm
