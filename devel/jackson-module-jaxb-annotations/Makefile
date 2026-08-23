@@ -1,5 +1,5 @@
 PORTNAME=	jackson-module-jaxb-annotations
-DISTVERSION=	2.19.0
+DISTVERSION=	2.22.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://repo1.maven.org/maven2/com/fasterxml/jackson/module/${PORTNAME}/${DISTVERSION}/
 EXTRACT_SUFX=	.jar
