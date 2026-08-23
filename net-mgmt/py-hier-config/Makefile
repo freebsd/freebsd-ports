@@ -21,4 +21,8 @@ USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
+# The 3.x release contains breaking changes and its both consumers,
+# py-ciscoconfparse{2}, aren't compatible with it, yet.
+PORTSCOUT=	limit:2\.
+
 .include <bsd.port.mk>
