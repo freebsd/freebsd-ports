@@ -1,6 +1,7 @@
 PORTNAME=	dogtag-pki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	11.10.1
+PORTREVISION=	1
 CATEGORIES=	security java python
 
 MAINTAINER=	joneum@FreeBSD.org

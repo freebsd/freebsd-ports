@@ -1,0 +1,10 @@
+--- base/tomcat-9.0/CMakeLists.txt.orig	2026-08-23 17:19:34 UTC
++++ base/tomcat-9.0/CMakeLists.txt
+@@ -8,6 +8,7 @@ javac(pki-tomcat-9.0-classes
+         ${JAXRS_API_JAR}
+         ${JASPIC_API_JAR}
+         ${COMMONS_LANG3_JAR}
++        ${JACKSON_ANNOTATIONS_JAR}
+         ${TOMCAT_API_JAR} ${TOMCAT_CATALINA_JAR} ${TOMCAT_COYOTE_JAR} ${TOMCAT_UTIL_SCAN_JAR}
+         ${SLF4J_API_JAR}
+         ${JSS_JAR}
