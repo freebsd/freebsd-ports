@@ -1,0 +1,14 @@
+zfs-set is a terminal UI and scripting front-end for ZFS dataset properties
+(zfs get / zfs set / zfs inherit). It lists every property of a dataset with
+its value and where the value comes from (local, received, inherited,
+default, temporary), explains each one, edits it through a list of the
+allowed values with their meaning or a validated text field, and shows the
+exact zfs set / zfs inherit commands before running them. Pre-flight checks
+point out what zfs will refuse (a quota below the used space, a volsize that
+is not a multiple of volblocksize, a pool feature not enabled, a property
+the dataset type does not have) and what a change implies (mount point
+changes remount, canmount=off unmounts, compression and checksum affect only
+new data, sync=disabled is unsafe, Linux-only properties do nothing on
+FreeBSD). Received values can be reverted to with zfs inherit -S. All of it
+is also available non-interactively for scripts (-set, -inherit, -tree,
+-where, -dump/-restore, dry run, -check).
