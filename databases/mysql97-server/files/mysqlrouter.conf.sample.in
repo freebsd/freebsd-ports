@@ -1,0 +1,41 @@
+# MySQL Router default configuration for FreeBSD.
+#
+# This template starts the router, but it does not route anything yet.  Either
+# add a [routing] or [metadata_cache] section by hand, or let
+# "mysqlrouter --bootstrap" generate a complete configuration.  A commented
+# upstream example is installed as
+#	%%DATADIR%%router/docs/sample_mysqlrouter.conf
+#
+# The paths below have to stay in sync with these two files:
+#	%%PREFIX%%/etc/rc.d/mysqlrouter		creates the directories
+#	%%PREFIX%%/etc/logrotate.d/mysqlrouter	rotates the log, sends SIGHUP
+#
+# Do NOT set "pid_file" here.  The PID file is written by daemon(8) through the
+# rc script.  With an own pid_file entry mysqlrouter aborts the next start with
+# "PID file ... found. Already running?" after an unclean shutdown.
+#
+# Do NOT set "user" here.  The rc script drops privileges with "daemon -u"
+# before mysqlrouter is executed.
+
+[DEFAULT]
+logging_folder = /var/log/mysqlrouter
+runtime_folder = /var/run/mysqlrouter
+data_folder = /var/db/mysqlrouter
+plugin_folder = %%PREFIX%%/lib/mysql/mysqlrouter
+config_folder = %%PREFIX%%/etc/mysqlrouter
+
+[logger]
+level = INFO
+filename = mysqlrouter.log
+
+# Without a plugin that provides a service mysqlrouter exits immediately.
+# keepalive keeps it alive until real [routing] or [metadata_cache] sections
+# are configured, afterwards it can be removed.
+[keepalive]
+interval = 60
+
+#[routing:example]
+#bind_address = 127.0.0.1
+#bind_port = 6446
+#destinations = 192.0.2.1:3306,192.0.2.2:3306
+#routing_strategy = first-available

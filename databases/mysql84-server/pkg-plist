@@ -20,6 +20,7 @@ bin/mysqltest
 bin/mysqltest_safe_process
 bin/mysqlxtest
 etc/logrotate.d/mysqlrouter
+@sample etc/mysqlrouter/mysqlrouter.conf.sample
 %%ETCDIR%%/my.cnf.sample
 lib/mysql/libmysqlharness.so
 lib/mysql/libmysqlharness.so.1

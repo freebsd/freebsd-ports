@@ -20,6 +20,7 @@ bin/mysqlrouter_plugin_info
 bin/mysqlxtest
 bin/mysqltest_safe_process
 etc/logrotate.d/mysqlrouter
+@sample etc/mysqlrouter/mysqlrouter.conf.sample
 %%ETCDIR%%/my.cnf.sample
 lib/mysql/mysqlrouter/rest_host_cache.so
 lib/mysql/plugin/component_group_replication_elect_prefers_most_updated.so

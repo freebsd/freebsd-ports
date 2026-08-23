@@ -340,7 +340,7 @@ bunkerweb:*:390:390::0:0:Bunkerweb Service:/nonexistent:/usr/sbin/nologin
 dirsrv:*:391:391::0:0:389 Directory Server:/usr/local/share/dirsrv:/usr/sbin/nologin
 _turnserver:*:392:392::0:0:Coturn Turnserver Daemon:/nonexistent:/usr/sbin/nologin
 immich:*:393:393::0:0:Immich Daemon:/nonexistent:/usr/sbin/nologin
-# free: 394
+mysqlrouter:*:394:394::0:0:MySQL Router Daemon:/nonexistent:/usr/sbin/nologin
 # free: 395
 # free: 396
 rtorrent:*:397:397::0:0:rtorrent Daemon User:/nonexistent:/usr/sbin/nologin
