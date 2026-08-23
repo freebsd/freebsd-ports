@@ -19,11 +19,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ggreer
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pcre2 LZMA_LIBS=-llzma
-CONFIGURE_ARGS+=LZMA_CFLAGS=-I/usr/include
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-LDFLAGS+=	-L/usr/lib -llzma
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS=	--with-pcre2 \
+		LZMA_CFLAGS=-I/usr/include \
+		LZMA_LIBS=-llzma
 TEST_TARGET=	test
+LDFLAGS+=	-L/usr/lib -llzma
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
