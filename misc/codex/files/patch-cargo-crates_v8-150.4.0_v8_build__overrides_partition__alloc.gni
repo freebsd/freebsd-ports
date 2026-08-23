@@ -1,0 +1,11 @@
+--- cargo-crates/v8-150.4.0/v8/build_overrides/partition_alloc.gni.orig	2026-08-22 13:10:38 UTC
++++ cargo-crates/v8-150.4.0/v8/build_overrides/partition_alloc.gni
+@@ -23,7 +23,7 @@ _supported_platform =
+ _supported_build_type = !is_win || (!is_component_build && !is_debug)
+ 
+ _supported_platform =
+-    is_android || is_chromeos || is_fuchsia || is_linux || is_mac || is_win
++    !is_bsd && (is_android || is_chromeos || is_fuchsia || is_linux || is_mac || is_win)
+ 
+ # Sanitizers are already replacing the allocator with their own. We shouldn't
+ # enable partition_alloc when this happens

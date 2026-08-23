@@ -1,0 +1,15 @@
+--- cargo-crates/v8-150.4.0/third_party/partition_alloc/src/partition_alloc/page_allocator_constants.h.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-150.4.0/third_party/partition_alloc/src/partition_alloc/page_allocator_constants.h
+@@ -26,9 +26,9 @@
+ #define PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR __attribute__((const))
+ 
+ #elif (PA_BUILDFLAG(IS_ANDROID) && PA_BUILDFLAG(PA_ARCH_CPU_64_BITS)) || \
+-    (PA_BUILDFLAG(IS_LINUX) && PA_BUILDFLAG(PA_ARCH_CPU_ARM64)) ||       \
+-    (PA_BUILDFLAG(IS_LINUX) && PA_BUILDFLAG(PA_ARCH_CPU_PPC64)) ||       \
+-    (PA_BUILDFLAG(IS_LINUX) && PA_BUILDFLAG(PA_ARCH_CPU_LOONGARCH64))
++    ((PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_BSD)) && PA_BUILDFLAG(PA_ARCH_CPU_ARM64)) ||       \
++    ((PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_BSD)) && PA_BUILDFLAG(PA_ARCH_CPU_PPC64)) ||       \
++    ((PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_BSD)) && PA_BUILDFLAG(PA_ARCH_CPU_LOONGARCH64))
+ // This should work for all POSIX (if needed), but currently all other
+ // supported OS/architecture combinations use either hard-coded values
+ // (such as x86) or have means to determine these values without needing

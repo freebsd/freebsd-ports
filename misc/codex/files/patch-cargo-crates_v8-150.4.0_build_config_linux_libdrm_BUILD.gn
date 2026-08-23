@@ -1,0 +1,11 @@
+--- cargo-crates/v8-150.4.0/build/config/linux/libdrm/BUILD.gn.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-150.4.0/build/config/linux/libdrm/BUILD.gn
+@@ -15,7 +15,7 @@ if (use_system_libdrm) {
+ }
+ 
+ if (use_system_libdrm) {
+-  assert(!is_linux, "System libdrm is not supported in linux")
++#  assert(!is_linux, "System libdrm is not supported in linux")
+   pkg_config("libdrm_config") {
+     packages = [ "libdrm" ]
+   }
