@@ -1,12 +1,11 @@
 PORTNAME=	django-constance
-PORTVERSION=	4.3.4
-PORTREVISION=	1
+DISTVERSION=	4.3.5
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	django_constance-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris.longros@gmail.com
 COMMENT=	Dynamic Django settings
 WWW=		https://github.com/jazzband/django-constance
 
