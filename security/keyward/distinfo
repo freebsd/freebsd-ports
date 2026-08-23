@@ -1,5 +1,5 @@
-TIMESTAMP = 1784672717
-SHA256 (go/security_keyward/keyward-v1.0.1/v1.0.1.mod) = 4337190dd0b11151908bb2f0eab89400f582fa642f35a7681e23bd5fe952b1fd
-SIZE (go/security_keyward/keyward-v1.0.1/v1.0.1.mod) = 1449
-SHA256 (go/security_keyward/keyward-v1.0.1/v1.0.1.zip) = 475dbf2b2645c2fa34ccdf8ff70f7d1e1129c9f330978a284ae22498096e9f24
-SIZE (go/security_keyward/keyward-v1.0.1/v1.0.1.zip) = 4712635
+TIMESTAMP = 1787496563
+SHA256 (go/security_keyward/keyward-v1.0.3/v1.0.3.mod) = ea15aebc122a74d2f27c15e15bb56498619cd6221fd687506c49c9576c29dd3a
+SIZE (go/security_keyward/keyward-v1.0.3/v1.0.3.mod) = 1449
+SHA256 (go/security_keyward/keyward-v1.0.3/v1.0.3.zip) = e2d5b9ad0ad8ec421b904f6ebe974a45f3dcd7747aa6a31949579773905ff411
+SIZE (go/security_keyward/keyward-v1.0.3/v1.0.3.zip) = 4865371
