@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	No upstream development since 2016
-EXPIRATION_DATE=2026-09-31
+EXPIRATION_DATE=2026-09-30
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libconfuse.so:devel/libconfuse \
