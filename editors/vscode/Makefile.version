@@ -1,5 +1,5 @@
-VSCODE_VERSION=		1.133.0
-SOURCE_COMMIT_HASH=	a5b500951314efd502d07465bd138dfbd714a960
+VSCODE_VERSION=		1.134.0
+SOURCE_COMMIT_HASH=	474a349ad5b745e512ef86b864d1c74f7264dd7a
 # See ${WRKSRC}/build/rspack/node_modules/@rspack/binding/package.json for rspack version
 RSPACK_VERSION=		2.1.2
 # See ${WRKSRC}/extensions/copilot/node_modules/@github/copilot/package.json for copilot cli version

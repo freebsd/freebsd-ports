@@ -1,6 +1,5 @@
 PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules \
 		https://registry.npmjs.org/@github/copilot-linux-${ELECTRON_ARCH}/-/:copilot_cli \
