@@ -1,5 +1,5 @@
 PORTNAME=	codemark
-DISTVERSION=	0.7.23
+DISTVERSION=	0.7.29
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 
-USES=		cargo
+USES=		cargo cmake:indirect
 USE_GITHUB=	yes
 GH_ACCOUNT=	DanielCardonaRojas
 
