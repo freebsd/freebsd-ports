@@ -1,4 +1,4 @@
-USE_CABAL=	HTTP-4000.4.1_6 \
+USE_CABAL=	HTTP-4000.5.0_1 \
 		HUnit-1.6.2.0 \
 		OneTuple-0.4.3 \
 		Only-0.1_2 \
@@ -17,7 +17,7 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		atomic-primops-0.8.8 \
 		attoparsec-0.14.4_6 \
 		attoparsec-aeson-2.2.2.0_1 \
-		auto-update-0.2.6 \
+		auto-update-0.2.7 \
 		base-compat-0.14.1 \
 		base-compat-batteries-0.14.1 \
 		base-orphans-0.9.4 \
@@ -25,7 +25,6 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		base16-1.0_4 \
 		base64-1.0_3 \
 		base64-bytestring-1.2.1.0_1 \
-		basement-0.0.16 \
 		bifunctors-5.6.3_1 \
 		binary-parser-0.5.7.7 \
 		blaze-builder-0.4.4.1 \
@@ -48,12 +47,12 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		cookie-0.5.1 \
 		cryptohash-md5-0.11.101.0_6 \
 		cryptohash-sha1-0.11.101.0_6 \
-		crypton-1.0.6 \
+		crypton-1.1.4 \
 		crypton-asn1-encoding-0.10.0 \
 		crypton-asn1-parse-0.10.0 \
 		crypton-asn1-types-0.4.1 \
 		crypton-pem-0.3.0 \
-		crypton-x509-1.8.0_1 \
+		crypton-x509-1.9.1 \
 		data-default-0.7.1.3 \
 		data-default-class-0.1.2.2 \
 		data-default-instances-containers-0.1.0.3 \
@@ -69,7 +68,7 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		either-5.0.3_2 \
 		entropy-0.4.1.11_1 \
 		extra-1.8.1 \
-		fast-logger-3.2.6 \
+		fast-logger-3.2.7 \
 		focus-1.0.3.2 \
 		foldl-1.4.18_2 \
 		free-5.2_8 \
@@ -79,7 +78,7 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		hashtables-1.4.2 \
 		hasql-1.9.3.1 \
 		hasql-dynamic-statements-0.3.1.8 \
-		hasql-implicits-0.2.0.2 \
+		hasql-implicits-0.2.0.3 \
 		hasql-notifications-0.2.4.0 \
 		hasql-pool-1.3.0.4 \
 		hasql-transaction-1.2.1 \
@@ -87,9 +86,9 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		http-client-0.7.19 \
 		http-date-0.0.11 \
 		http-media-0.8.1.1_3 \
-		http-semantics-0.4.0 \
+		http-semantics-0.4.1 \
 		http-types-0.12.5 \
-		http2-5.4.1_1 \
+		http2-5.4.3 \
 		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.5 \
 		indexed-traversable-instances-0.1.2.1 \
@@ -98,14 +97,13 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		integer-logarithms-1.0.5 \
 		invariant-0.6.5 \
 		iproute-1.7.15 \
-		jose-jwt-0.10.0_1 \
+		jose-jwt-0.11.0 \
 		kan-extensions-5.2.8 \
 		lens-5.3.6 \
 		lens-aeson-1.2.3_3 \
 		list-t-1.0.5.7 \
 		logict-0.8.2.0 \
 		megaparsec-9.7.1 \
-		memory-0.18.0_1 \
 		mime-types-0.1.2.2 \
 		mmorph-1.2.2_2 \
 		monad-control-1.0.3.1 \
@@ -120,7 +118,7 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		optics-core-0.4.2 \
 		optics-extra-0.4.2.1_5 \
 		optics-th-0.4.1_11 \
-		optparse-applicative-0.18.1.0_1 \
+		optparse-applicative-0.19.0.0_1 \
 		os-string-2.0.11 \
 		parallel-3.3.0.0_1 \
 		parser-combinators-1.3.1 \
@@ -138,6 +136,7 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		protolude-0.3.5 \
 		psqueues-0.2.8.3_2 \
 		ptr-0.16.8.8 \
+		ram-0.22.1 \
 		random-1.3.1 \
 		recv-0.1.1 \
 		reflection-2.1.9_1 \
@@ -182,11 +181,11 @@ USE_CABAL=	HTTP-4000.4.1_6 \
 		vault-0.3.2.0 \
 		vector-0.13.2.0_5 \
 		vector-stream-0.1.0.1_4 \
-		wai-3.2.4 \
+		wai-3.2.5 \
 		wai-cors-0.2.7 \
 		wai-extra-3.1.18 \
 		wai-logger-2.5.0 \
-		warp-3.4.14 \
+		warp-3.4.15 \
 		witherable-0.5_2 \
 		word8-0.1.3 \
 		zlib-0.7.1.1
