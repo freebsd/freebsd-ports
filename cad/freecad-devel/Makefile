@@ -11,6 +11,7 @@ WWW=		https://www.freecadweb.org/
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build due to missing Python package defusedxml
 CONFLICTS_INSTALL=      freecad # bin/FreeCAD
 
 BUILD_DEPENDS=	doxygen:devel/doxygen \
