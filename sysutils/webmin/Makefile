@@ -1,6 +1,5 @@
 PORTNAME=	webmin
-PORTVERSION=	2.652
-PORTREVISION=	1
+PORTVERSION=	2.660
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf
@@ -59,6 +58,6 @@ do-build:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/webmin
-	${CP} -r ${WRKSRC}/* ${STAGEDIR}${PREFIX}/lib/webmin
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${PREFIX}/lib/webmin
 
 .include <bsd.port.mk>
