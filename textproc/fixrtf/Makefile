@@ -11,11 +11,15 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Patch making it possible to embed PNGs into RTFs
-WWW=		http://www.freebsd.org.cn
+WWW=		https://wiki.freebsd.org/Doc/Translation/SimplifiedChinese
+
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		uidfix
+
+PLIST_FILES=	bin/fixrtf
 WRKSRC=		${WRKDIR}/src
 SRC=		${.CURDIR}/src
 
