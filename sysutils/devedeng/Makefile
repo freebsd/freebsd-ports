@@ -1,5 +1,5 @@
 PORTNAME=	devedeng
-DISTVERSION=	4.21.3
+DISTVERSION=	4.22.0
 CATEGORIES=	sysutils multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,6 +10,9 @@ WWW=		https://rastersoft.com/programas/devede.html
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-gettext>0:devel/py-setuptools-gettext@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycairo>0:graphics/py-pycairo@${PY_FLAVOR} \
@@ -22,7 +25,7 @@ USES=		python gettext-tools gnome
 USE_GITLAB=	yes
 GL_ACCOUNT=	rastersoft
 USE_GNOME=	gtk30 pygobject3:run
-USE_PYTHON=	concurrent distutils autoplist
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
