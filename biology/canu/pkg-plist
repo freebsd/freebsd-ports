@@ -16,6 +16,7 @@ bin/findErrors-Dump
 bin/fixErrors
 bin/generateCorrectionLayouts
 bin/layoutReads
+bin/layoutToPackage
 bin/loadCorrectedReads
 bin/loadErates
 bin/loadTrimmedReads
@@ -31,13 +32,12 @@ bin/ovStoreIndexer
 bin/ovStoreSorter
 bin/ovStoreStats
 bin/overlapAlign
-bin/overlapCheck
 bin/overlapConvert
 bin/overlapImport
 bin/overlapInCore
 bin/overlapInCorePartition
 bin/overlapPair
-bin/prefixEditDistance-matchLimitGenerate
+bin/seqrequester
 bin/splitHaplotype
 bin/splitReads
 bin/sqStoreCreate
