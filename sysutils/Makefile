@@ -514,6 +514,7 @@
     SUBDIR += gstat-rs
     SUBDIR += gstopd
     SUBDIR += gstreamer1-plugins-cdio
+    SUBDIR += gtime
     SUBDIR += handlr
     SUBDIR += hardlink
     SUBDIR += hare
