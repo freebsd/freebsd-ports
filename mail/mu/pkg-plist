@@ -1,4 +1,5 @@
 bin/mu
+share/bash-completion/completions/mu
 %%MANPAGES%%share/man/man1/mu-add.1.gz
 %%MANPAGES%%share/man/man1/mu-cfind.1.gz
 %%MANPAGES%%share/man/man1/mu-extract.1.gz
@@ -58,5 +59,7 @@ bin/mu
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-view.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e-window.el
 %%MU4E%%share/emacs/site-lisp/mu4e/mu4e.el
+share/icons/hicolor/scalable/apps/mu-icon.svg
 %%GUILE%%%%DATADIR%%/scm/mu-scm-repl.scm
 %%GUILE%%%%DATADIR%%/scm/mu-scm.scm
+share/zsh/site-functions/_mu

@@ -1,9 +1,9 @@
 PORTNAME=	mu
-DISTVERSION=	1.14.2
+DISTVERSION=	1.14.3
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/djcb/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	rwn@mailo.com
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Mail searching frontend for Xapian
 WWW=		https://www.djcbsoftware.nl/code/mu/
 
@@ -19,6 +19,7 @@ USES=		compiler:c++20-lang gnome meson pkgconfig python:build \
 		readline shebangfix tar:xz
 USE_GNOME=	glib20
 SHEBANG_FILES=	build-aux/date.py
+MESON_ARGS=	-Dbash-completion=enabled -Dzsh-completion=enabled
 
 OPTIONS_DEFINE=		CLD2 DOCS GUILE MANPAGES MU4E
 OPTIONS_DEFAULT=	MANPAGES MU4E
