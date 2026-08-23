@@ -328,6 +328,7 @@
     SUBDIR += py-ciscoconfparse
     SUBDIR += py-dnsdiag
     SUBDIR += py-gstat_exporter
+    SUBDIR += py-hier-config
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
     SUBDIR += py-junos-eznc
