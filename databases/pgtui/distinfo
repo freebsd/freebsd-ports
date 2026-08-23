@@ -1,0 +1,5 @@
+TIMESTAMP = 1787515457
+SHA256 (go/databases_pgtui/pgtui-v0.3.0/v0.3.0.mod) = 60a9e96e269c75ff144a621ad32c7e30130739b0254136e78ed862863b2efe7f
+SIZE (go/databases_pgtui/pgtui-v0.3.0/v0.3.0.mod) = 2635
+SHA256 (go/databases_pgtui/pgtui-v0.3.0/v0.3.0.zip) = 1afb2219904fdbe7088368b0ddde97c131c313d2f7d1c1d372a825fa982243a4
+SIZE (go/databases_pgtui/pgtui-v0.3.0/v0.3.0.zip) = 9730907
