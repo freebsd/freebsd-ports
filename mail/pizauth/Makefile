@@ -1,6 +1,6 @@
 PORTNAME=	pizauth
-DISTVERSION=	1.0.7
-PORTREVISION=	10
+DISTVERSION=	1.1.0
+PORTREVISION=	0
 CATEGORIES=	mail
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -18,13 +18,13 @@ GH_TAGNAME=	${DISTNAME}
 
 RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
-PLIST_FILES=	bin/pizauth \
-		share/man/man1/pizauth.1.gz \
-		share/man/man5/pizauth.conf.5.gz
-
 post-install:
 	(cd ${WRKSRC} && \
 		${INSTALL_MAN} pizauth.1 ${STAGEDIR}${PREFIX}/share/man/man1/ && \
 		${INSTALL_MAN} pizauth.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5/)
+	(cd ${WRKSRC} && \
+		${INSTALL_DATA} share/bash/completion.bash ${STAGEDIR}${PREFIX}/share/bash-completion/completions/pizauth && \
+		${INSTALL_DATA} share/fish/pizauth.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/pizauth.fish && \
+		${INSTALL_DATA} share/zsh/_pizauth ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_pizauth)
 
 .include <bsd.port.mk>
