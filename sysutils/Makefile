@@ -1706,6 +1706,7 @@
     SUBDIR += zeroer
     SUBDIR += zetaback
     SUBDIR += zetaback-devel
+    SUBDIR += zfs-allow
     SUBDIR += zidrav
     SUBDIR += zli
     SUBDIR += znapzend
