@@ -8,10 +8,12 @@ share/man/man7/cmake-compile-features.7.gz
 share/man/man7/cmake-configure-log.7.gz
 share/man/man7/cmake-cxxmodules.7.gz
 share/man/man7/cmake-developer.7.gz
+share/man/man7/cmake-diagnostics.7.gz
 share/man/man7/cmake-env-variables.7.gz
 share/man/man7/cmake-file-api.7.gz
 share/man/man7/cmake-generator-expressions.7.gz
 share/man/man7/cmake-generators.7.gz
+share/man/man7/cmake-instrumentation.7.gz
 share/man/man7/cmake-language.7.gz
 share/man/man7/cmake-modules.7.gz
 share/man/man7/cmake-packages.7.gz
