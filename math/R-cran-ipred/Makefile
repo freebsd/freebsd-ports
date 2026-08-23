@@ -1,11 +1,11 @@
 PORTNAME=	ipred
-DISTVERSION=	0.9-15
+DISTVERSION=	0.9-16
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Improved Predictors
-WWW=		https://cran.r-project.org/web/packages/ipred/
+WWW=		https://cran.r-project.org/package=ipred
 
 LICENSE=	GPLv2+
 
