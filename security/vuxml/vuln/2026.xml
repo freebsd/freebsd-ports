@@ -1,3 +1,33 @@
+  <vuln vid="b22fee3d-9f14-11f1-b948-5404a68ad561">
+    <topic>traefik -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+      <name>traefik</name>
+      <range><lt>3.7.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>The traefik project releases a new version addressing multiple vulnerabilities:</p>
+      <blockquote cite="https://github.com/traefik/traefik/releases/tag/v3.7.11">
+      <ul>
+      <li>GHSA-5w68-77r2-r64c (Complete authentication bypass in the `digestAuth` middleware)</li>
+      <li>GHSA-g55h-rg46-x9c5 (TLS option confusion in multi-host routers can bypass mTLS for protected hosts)</li>
+      <li>GHSA-j994-9gqj-9hwq (Same-host Ingress TLS option conflict disables client-certificate authentication)</li>
+      <li>GHSA-m6wx-622r-48r9 (Kubernetes Ingress service middleware bypasses crossProviderNamespaces)</li>
+      </ul>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/traefik/traefik/releases/tag/v3.7.11</url>
+    </references>
+    <dates>
+      <discovery>2026-08-19</discovery>
+      <entry>2026-08-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4496ae0c-9d7d-11f1-a655-3497f65b111b">
     <topic>terraform -- exclusion bypass in .terraformignore handling</topic>
     <affects>
