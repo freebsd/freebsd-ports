@@ -1,5 +1,5 @@
 PORTNAME=	crystal
-DISTVERSION=	1.20.2
+DISTVERSION=	1.21.0
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${_BOOTSTRAP_VERSION}/:bootstrap \
 		LOCAL/dmgk/crystal:bootstrap
@@ -17,6 +17,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${_BOOTSTRAP_LLVM_VERSION}:devel/llvm${_BOOTSTRAP_LLVM_VERSION} \
+		asciidoctor:textproc/rubygem-asciidoctor \
 		git:devel/git
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libLLVM-${_LLVM_VERSION}.so:devel/llvm${_LLVM_VERSION} \
@@ -49,6 +50,7 @@ MAKE_ARGS=	CRYSTAL_CACHE_DIR="${WRKDIR}/cache" \
 TEST_ARGS=	${MAKE_ARGS:S/release=1//}
 TEST_TARGET=	spec
 
+# NB no need to re-add PORTDOCS to pkg-plist
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DEBUG DOCS INTERPRETER
@@ -76,6 +78,12 @@ post-extract:
 pre-test:
 	@${CHMOD} +x ${WRKSRC}/src/llvm/ext/find-llvm-config
 
+# since 1.21.0 upstream ships only asciidoc sources, man pages are generated
+post-build:
+	@${MKDIR} ${WRKSRC}/man
+	(cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} man/)
+
 post-build-DOCS-on:
 	(cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} docs)
@@ -83,14 +91,17 @@ post-build-DOCS-on:
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/.build/crystal \
 		${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${INSTALL_WRKSRC}/man/crystal.1 \
+	${INSTALL_MAN} ${INSTALL_WRKSRC}/man/*.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1/
 	(cd ${INSTALL_WRKSRC}/src && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/bash_completion.d
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/fish/vendor_completions.d
 	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/zsh/site-functions
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/etc/completion.bash \
 		${STAGEDIR}${LOCALBASE}/etc/bash_completion.d/_crystal.bash
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/etc/completion.fish \
+		${STAGEDIR}${LOCALBASE}/share/fish/vendor_completions.d/crystal.fish
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/etc/completion.zsh \
 		${STAGEDIR}${LOCALBASE}/share/zsh/site-functions/_crystal
 
