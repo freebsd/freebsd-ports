@@ -1,5 +1,6 @@
 PORTNAME=	wine
 DISTVERSION=	11.17
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/11.x/
@@ -16,6 +17,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
+
+.if exists(/usr/include/dev/ntsync/ntsync.h)
+HAS_NTSYNC=	yes
+.endif
+
+.if ${HAS_NTSYNC}
+BUILD_DEPENDS+=	${LOCALBASE}/include/linuxapi/linux/ntsync.h:devel/linuxapi
+.endif
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2
 
 FLAVORS=	default allaudio
@@ -59,6 +68,10 @@ CONFIGURE_ARGS=	--verbose \
 		--with-usb
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 
+.if ${HAS_NTSYNC}
+CFLAGS+=	-I${WRKDIR}/include/linuxapi
+CXXFLAGS+=	-I${WRKDIR}/include/linuxapi
+.endif
 PIE_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	wine
@@ -146,6 +159,14 @@ PLIST_SUB+=		GSTREAMER="@comment "
 # --libdir is required since Wine defaults to "${PREFIX}/lib64" on amd64.
 CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
 PLIST_SUB+=		WINEARCH="x86_64"
+.endif
+
+.if ${HAS_NTSYNC}
+pre-configure:
+	@${MKDIR} ${WRKDIR}/include/linuxapi/linux
+	@${CP} ${LOCALBASE}/include/linuxapi/linux/ntsync.h ${WRKDIR}/include/linuxapi/linux/
+	@${CP} ${LOCALBASE}/include/linuxapi/linux/types.h ${WRKDIR}/include/linuxapi/linux/
+	@${CP} ${LOCALBASE}/include/linuxapi/linux/stddef.h ${WRKDIR}/include/linuxapi/linux/
 .endif
 
 pre-build:
