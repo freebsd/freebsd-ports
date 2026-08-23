@@ -326,6 +326,7 @@
     SUBDIR += py-aggregate6
     SUBDIR += py-arouteserver
     SUBDIR += py-ciscoconfparse
+    SUBDIR += py-ciscoconfparse2
     SUBDIR += py-dnsdiag
     SUBDIR += py-gstat_exporter
     SUBDIR += py-hier-config

@@ -1,0 +1,48 @@
+* Relax various pinned version requirements so as not to block minor updates
+  and set an upper limit for major updates, which usually also contain breaking
+  changes.
+
+* Switch back to py-passlib, as py-libpass (not in Ports tree, yet) uses
+  the same namespace as py-passlib.
+
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -10,22 +10,22 @@ dependencies = [
+ dependencies = [
+   # NOTE changing attrs versions may require code / test changes
+   "attrs>25.4.0,<27.0.0",
+-  "dnspython==2.8.0",
++  "dnspython>=2.8.0,<3",
+   "macaddress==2.0.2",
+-  "traitlets==5.15.0",
++  "traitlets>=5.15.0,<6",
+   "loguru>=0.7.2",
+   "hier_config==2.3.1",
+-  "pyparsing==3.3.2",
+-  "toml==0.10.2",
++  "pyparsing>=3.3.2,<4",
++  "toml>=0.10.2,<1",
+   # NOTE changing typeguard versions may require code / test changes
+-  "typeguard==4.5.2",
++  "typeguard>=4.5.2,<5",
+   "PyYAML>=6.0.3",
+   "rich>=14.3.3",
+-  # "passlib==1.7.4",   <-- deprecating passlib (now unmaintained) in favor of libpass
++  "passlib>=1.7.4", # <-- deprecating passlib (now unmaintained) in favor of libpass
+   #     https://github.com/notypecheck/passlib
+-  "libpass==1.9.3",
++  #"libpass==1.9.3",
+   # Hypothesis for hard-core ip_address tests
+-  "hypothesis==6.152.7",
++  "hypothesis>=6.152.7,<7",
+ ]
+ authors = [
+   { name = "Mike Pennington", email = "mike@pennington.net" },
+@@ -115,7 +115,6 @@ packages = [
+ [tool.hatch.build.targets.wheel]
+ packages = [
+     "ciscoconfparse2/",
+-    "tests/",
+ ]
+ 
+ [tool.hatch.envs.default.scripts]
