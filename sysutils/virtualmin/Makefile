@@ -1,6 +1,5 @@
 PORTNAME=	virtualmin
-PORTVERSION=	7.2
-PORTREVISION=	0
+PORTVERSION=	8.1.0
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/download/virtualmin/
@@ -20,16 +19,14 @@ SHEBANG_FILES=	*.cgi
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/virtual-server
 
-post-build:
-	cd ${WRKSRC} && ${CC} procmail-wrapper.c -o procmail-wrapper
-
 post-extract:
-	@${RM} -r ${WRKSRC}/images/.xvpics ${WRKSRC}/.gitignore
+	@${RM} -r ${WRKSRC}/images/.xvpics ${WRKSRC}/.gitignore \
+		${WRKSRC}/.github ${WRKSRC}/.editorconfig ${WRKSRC}/FUNDING.yml
 	@${FIND} ${WRKSRC} -name "*.swp" -delete
 	@${FIND} ${WRKSRC} -name "*.cgi" | ${XARGS} ${REINPLACE_CMD} -e "s@/usr/local/bin/perl@${PERL}@"
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 	@${FIND} ${WRKSRC} -name "*.cgi" | ${XARGS} ${CHMOD} 755
-	@${FIND} ${WRKSRC} -type d -empty | ${XARGS} ${RMDIR}
+	@${FIND} ${WRKSRC} -type d -empty -delete
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/webmin
