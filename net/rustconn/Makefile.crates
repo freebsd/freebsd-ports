@@ -68,9 +68,9 @@ CARGO_CRATES=	addchain-0.2.1 \
 		cast-0.3.0 \
 		cbc-0.1.2 \
 		cbc-0.2.1 \
-		cc-1.4.3 \
+		cc-1.4.4 \
 		cfg-expr-0.15.8 \
-		cfg-expr-0.20.8 \
+		cfg-expr-0.20.9 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.2 \
 		chacha20-0.10.1 \
@@ -103,7 +103,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		cpubits-0.1.1 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
-		crc32fast-1.5.0 \
+		crc32fast-1.5.1 \
 		criterion-0.8.2 \
 		criterion-plot-0.8.2 \
 		critical-section-1.2.0 \
@@ -147,7 +147,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		ecdsa-0.17.0-rc.22 \
 		ed25519-3.0.0 \
 		ed25519-dalek-3.0.0-rc.1 \
-		either-1.17.0 \
+		either-1.18.0 \
 		elliptic-curve-0.14.1 \
 		endi-1.1.1 \
 		enumflags2-0.7.12 \
@@ -168,7 +168,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		flate2-1.1.9 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
-		font-types-0.12.3 \
+		font-types-0.12.4 \
 		fontconfig-parser-0.5.8 \
 		fontdb-0.24.0 \
 		foreign-types-0.3.2 \
@@ -230,7 +230,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		gtk4-0.11.4 \
 		gtk4-macros-0.11.4 \
 		gtk4-sys-0.11.4 \
-		h2-0.4.16 \
+		h2-0.4.18 \
 		half-2.7.1 \
 		harfrust-0.12.0 \
 		hash32-0.2.1 \
@@ -261,7 +261,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		icu_normalizer_data-2.3.0 \
 		icu_properties-2.3.0 \
 		icu_properties_data-2.3.0 \
-		icu_provider-2.3.0 \
+		icu_provider-2.3.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
 		image-webp-0.2.4 \
@@ -310,7 +310,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.35 \
 		js-sys-0.3.104 \
-		keccak-0.2.1 \
+		keccak-0.2.2 \
 		keyboard-types-0.7.0 \
 		kqueue-1.2.1 \
 		kqueue-sys-1.1.2 \
@@ -334,7 +334,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		litemap-0.8.3 \
 		locale_config-0.3.0 \
 		lock_api-0.4.14 \
-		log-0.4.33 \
+		log-0.4.34 \
 		lzma-rust2-0.16.5 \
 		mach2-0.6.0 \
 		malloc_buf-0.0.6 \
@@ -489,7 +489,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		rustix-1.1.4 \
 		rustls-0.23.43 \
 		rustls-pki-types-1.15.1 \
-		rustls-webpki-0.103.14 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.23 \
 		rusty-fork-0.3.1 \
 		ryu-1.0.23 \
@@ -623,7 +623,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		usvg-0.48.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.24.1 \
+		uuid-1.25.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version-compare-0.2.1 \
@@ -711,8 +711,8 @@ CARGO_CRATES=	addchain-0.2.1 \
 		zeroize-1.9.0 \
 		zeroize_derive-1.5.0 \
 		zerotrie-0.2.5 \
-		zerovec-0.11.7 \
-		zerovec-derive-0.11.4 \
+		zerovec-0.11.8 \
+		zerovec-derive-0.11.6 \
 		zip-8.6.0 \
 		zlib-rs-0.6.7 \
 		zmij-1.0.23 \
@@ -722,6 +722,6 @@ CARGO_CRATES=	addchain-0.2.1 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
 		zune-core-0.5.3 \
 		zune-jpeg-0.5.15 \
-		zvariant-5.14.0 \
-		zvariant_derive-5.14.0 \
-		zvariant_utils-4.1.0
+		zvariant-5.15.0 \
+		zvariant_derive-5.15.0 \
+		zvariant_utils-4.2.0

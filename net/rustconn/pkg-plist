@@ -13,6 +13,7 @@ share/icons/hicolor/scalable/apps/io.github.totoshko88.RustConn.svg
 %%NLS%%share/locale/es/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rustconn.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/rustconn.mo
