@@ -1,5 +1,5 @@
 PORTNAME=	stevedore
-PORTVERSION=	5.9.0
+PORTVERSION=	5.9.1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ USES=		python
 USE_PYTHON=	autoplist distutils pytest
 
 .if make(test)
-# tests: 92 passed
+# tests: 94 passed
 TEST_ENV=	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 		PYTHONPATH="${STAGEDIR}${PYTHON_SITELIBDIR}"
 .endif
