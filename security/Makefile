@@ -908,7 +908,7 @@
     SUBDIR += py-badkeys
     SUBDIR += py-base58
     SUBDIR += py-bcrypt
-    SUBDIR += py-biscuit-auth
+    SUBDIR += py-biscuit-python
     SUBDIR += py-bitbox02
     SUBDIR += py-blake3
     SUBDIR += py-btchip-python

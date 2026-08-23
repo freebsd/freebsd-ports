@@ -1,6 +1,6 @@
 PORTNAME=	bunkerweb
 DISTVERSION=	1.6.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www security
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -26,7 +26,7 @@ RUN_DEPENDS=	openresty:www/openresty \
 		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
 		${LUA_MODLIBDIR}/cjson.so:devel/lua-cjson@${LUA_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}biscuit-auth>0:security/py-biscuit-auth@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}biscuit-python>0:security/py-biscuit-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docker>0:sysutils/py-docker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kubernetes>0:sysutils/py-kubernetes@${PY_FLAVOR} \
