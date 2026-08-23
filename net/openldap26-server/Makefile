@@ -34,7 +34,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 # :keepla because port uses lt_dlopen
-USES=		cpe gmake libtool:keepla localbase ssl tar:tgz
+USES=		cpe gmake libtool:keepla localbase:ldflags ssl tar:tgz
 BUILD_DEPENDS+=	autoconf>0:devel/autoconf
 
 .if defined(CLIENT_ONLY)
@@ -192,7 +192,6 @@ SLP_CONFIGURE_ENABLE=		slp
 SOCK_CONFIGURE_ENABLE=		sock=mod
 SQL_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 SQL_CONFIGURE_ENABLE=		sql=mod
-SQL_LDFLAGS=			-L${LOCALBASE}/lib
 SSSVLV_CONFIGURE_ENABLE=	sssvlv=mod
 SYNCPROV_CONFIGURE_ENABLE=	syncprov=yes
 TRANSLUCENT_CONFIGURE_ENABLE=	translucent=mod
@@ -243,8 +242,6 @@ USE_RC_SUBR=	slapd
 
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-Makefile.in
 
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 SED_MODULES=	-e 's/\(moduleload[ 	]*back_[a-z]*\)\.la/\1/' -e \
 		's/\# *\(modulepath\)/\1/'
 
@@ -285,9 +282,6 @@ LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-spasswd \
 			--with-cyrus-sasl
 MAKE_ENV+=		STRIP=${STRIP}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
 PLIST_SUB+=	${SUB_LIST} \
 		SHLIB_MAJOR=${OPENLDAP_SHLIB_MAJOR} \

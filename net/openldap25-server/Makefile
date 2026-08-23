@@ -21,12 +21,12 @@ PKGNAMESUFFIX=		25-server
 .endif
 
 MAINTAINER=		delphij@FreeBSD.org
-WWW=		https://www.OpenLDAP.org/
 .if defined(CLIENT_ONLY)
 COMMENT=		Open source LDAP client implementation
 .else
 COMMENT=		Open source LDAP server implementation
 .endif
+WWW=		https://www.OpenLDAP.org/
 
 LICENSE=		OPENLDAP
 LICENSE_NAME=		OpenLDAP Public License
@@ -34,7 +34,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 # :keepla because port uses lt_dlopen
-USES=			cpe gmake libtool:keepla localbase ssl tar:tgz
+USES=			cpe gmake libtool:keepla localbase:ldflags ssl tar:tgz
 BUILD_DEPENDS+=		autoconf>0:devel/autoconf
 
 .if defined(CLIENT_ONLY)
@@ -224,7 +224,6 @@ SLP_CONFIGURE_ENABLE=		slp
 SLP_LIB_DEPENDS=		libslp.so:net/openslp
 SOCK_CONFIGURE_ENABLE=		sock=mod
 SQL_CONFIGURE_ENABLE=		sql=mod
-SQL_LDFLAGS=			-L${LOCALBASE}/lib
 SQL_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 SSSVLV_CONFIGURE_ENABLE=	sssvlv=mod
 SYNCPROV_CONFIGURE_ENABLE=	syncprov=yes
@@ -275,8 +274,6 @@ USE_RC_SUBR=		slapd
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
 
-LDFLAGS+=		-L${LOCALBASE}/lib
-
 SED_MODULES=		-e 's/\(moduleload[ 	]*back_[a-z]*\)\.la/\1/' \
 			-e 's/\# *\(modulepath\)/\1/'
 
@@ -315,9 +312,6 @@ CONFIGURE_ARGS+=	--with-threads=posix \
 LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl --enable-spasswd
 MAKE_ENV+=		STRIP=${STRIP}
-
-CPPFLAGS+=		-I${LOCALBASE}/include
-LIBS+=			-L${LOCALBASE}/lib
 
 PLIST_SUB+=		${SUB_LIST}
 PLIST_SUB+=		SHLIB_MAJOR=${OPENLDAP_SHLIB_MAJOR}
