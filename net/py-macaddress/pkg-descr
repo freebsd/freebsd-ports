@@ -1,0 +1,11 @@
+This Python module is used for handling hardware identifiers like MAC addresses
+and makes it easy to:
+
+* check if a string represents a valid MAC address, or a similar hardware
+  identifier like an EUI-64, OUI, etc,
+* convert between string and binary forms of MAC addresses and other hardware
+  identifiers,
+
+and so on.
+
+Heavily inspired by the ipaddress module, but not yet quite as featureful.
