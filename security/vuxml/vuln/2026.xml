@@ -1,3 +1,103 @@
+  <vuln vid="0cb401f9-9f19-11f1-a655-3497f65b111b">
+    <topic>jackson-databind -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jackson-databind</name>
+	<range><lt>2.22.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Jackson project reports:</p>
+	<blockquote cite="https://github.com/FasterXML/jackson-databind/blob/2.x/release-notes/VERSION-2.x">
+	  <p>PolymorphicTypeValidator needs to validate generic type
+	  parameters too</p>
+	  <p>BasicPolymorphicTypeValidator setting allowIfSubTypeIsArray()
+	  should validate element type</p>
+	  <p>Add java.lang.Comparable in set of "unsafe" polymorphic base
+	  types</p>
+	  <p>@JsonView by-passed for @JsonUnwrapped Field/Setter
+	  properties</p>
+	  <p>@JsonView by-passed for some "setterless" creator
+	  properties</p>
+	  <p>@JsonView by-passed for unwrapped creator parameters</p>
+	  <p>Honor @JsonView for external-type-id (EXTERNAL_PROPERTY)
+	  properties</p>
+	  <p>Renamed @JsonIgnore'd setters can deserialize via private
+	  fields</p>
+	  <p>@JsonIgnore on Record property ignored with
+	  PropertyNamingStrategy</p>
+	  <p>Case-insensitive deserialization may use wrong
+	  @JsonIgnoreProperties</p>
+	  <p>Do not allow DNS resolution when deserializing
+	  InetAddress</p>
+	  <p>Improve InetSocketAddress deserialization</p>
+	  <p>Limit the supported URL schemes for java.nio.file.Path
+	  deserialization</p>
+	  <p>Add StreamReadConstraints number len constraint to
+	  javax.xml.datatype.XMLGregorianCalendar and
+	  javax.xml.datatype.Duration</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-19032</cvename>
+      <cvename>CVE-2026-54512</cvename>
+      <cvename>CVE-2026-54513</cvename>
+      <cvename>CVE-2026-54514</cvename>
+      <cvename>CVE-2026-54515</cvename>
+      <cvename>CVE-2026-54516</cvename>
+      <cvename>CVE-2026-54517</cvename>
+      <cvename>CVE-2026-54518</cvename>
+      <cvename>CVE-2026-59888</cvename>
+      <cvename>CVE-2026-59889</cvename>
+      <cvename>CVE-2026-68497</cvename>
+      <cvename>CVE-2026-77310</cvename>
+      <url>https://github.com/advisories/GHSA-mhm7-754m-9p8w</url>
+      <url>https://github.com/FasterXML/jackson-databind/blob/2.x/release-notes/VERSION-2.x</url>
+    </references>
+    <dates>
+      <discovery>2026-05-28</discovery>
+      <entry>2026-08-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0cb42b4a-9f19-11f1-a655-3497f65b111b">
+    <topic>jackson-core -- StreamReadConstraints can be bypassed</topic>
+    <affects>
+      <package>
+	<name>jackson-core</name>
+	<range><lt>2.22.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Jackson project reports:</p>
+	<blockquote cite="https://github.com/FasterXML/jackson-core/blob/2.x/release-notes/VERSION-2.x">
+	  <p>Enforce maxNameLength incrementally in
+	  ReaderBasedJsonParser</p>
+	  <p>Fail parsing from DataInput if
+	  StreamReadConstraints.getMaxDocumentLength() set</p>
+	  <p>Fix maxDocumentLength bypass in async parser single
+	  feedInput() case</p>
+	  <p>Enforce StreamReadConstraints.maxNumberLength for
+	  non-blocking (async) parser</p>
+	  <p>UTF8DataInputJsonParser needs to enforce
+	  StreamReadConstraints.maxNameLength limit</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-68498</cvename>
+      <url>https://github.com/advisories/GHSA-2m67-wjpj-xhg9</url>
+      <url>https://github.com/FasterXML/jackson-core/blob/2.x/release-notes/VERSION-2.x</url>
+    </references>
+    <dates>
+      <discovery>2026-03-20</discovery>
+      <entry>2026-08-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b22fee3d-9f14-11f1-b948-5404a68ad561">
     <topic>traefik -- Multiple vulnerabilities</topic>
     <affects>
