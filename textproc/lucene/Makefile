@@ -1,6 +1,6 @@
 PORTNAME=	lucene
 PORTVERSION=	3.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 # Be sure to chase devel/openoffice-devel and textproc/py-lucene
 # when updating this
 CATEGORIES=	textproc java devel
@@ -11,6 +11,9 @@ COMMENT=	Full-text search engine for Java
 WWW=		https://lucene.apache.org/core/
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Release from 2013. Unsupported upstream. Lucene is now at version 10.X. Superseded in ports by textproc/lucene9.
+EXPIRATION_DATE=	2026-10-31
 
 USES=		cpe java tar:tgz
 
