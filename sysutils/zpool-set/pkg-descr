@@ -1,0 +1,12 @@
+zpool-set is a terminal UI and scripting front-end for ZFS pool properties
+(zpool get / zpool set). It lists every property of a pool with its value
+and source, explains each one and each pool feature, edits it through a
+list of the allowed values with their meaning or a validated text field,
+and shows the exact zpool set commands before running them. Pre-flight
+checks point out what zpool will refuse (an import-time property, a feature
+that cannot be disabled, a bootfs outside the pool, multihost without a
+hostid, a compatibility file that does not exist) and what a change implies
+(enabling a feature is irreversible and can make the pool unreadable for
+older systems and boot loaders, failmode=panic, cachefile=none,
+delegation=off). All of it is also available non-interactively for scripts
+(-set, -reset, -enable, -where, -dump/-restore, dry run, -check).
