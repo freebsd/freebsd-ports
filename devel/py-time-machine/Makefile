@@ -1,5 +1,6 @@
 PORTNAME=	time-machine
-DISTVERSION=	2.13.0
+# See XXX below
+DISTVERSION=	3.4.0
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -20,6 +21,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.2:devel/py-python-dateu
 
 USES=		python
 USE_PYTHON=	autoplist pep517
+
+# XXX: remove this target if the version of devel/py-setuptools is >= 77
+post-patch:
+	${REINPLACE_CMD} \
+		-e '/^license-files/d' \
+		-e 's/^\(license = \)\("MIT"\)/\1{ text = \2 }/1' \
+		-e 's/\(setuptools>=\)77/\163/1' \
+		${WRKSRC}/pyproject.toml
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_time_machine${PYTHON_TAG}.so
