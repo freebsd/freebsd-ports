@@ -1,5 +1,5 @@
 PORTNAME=	Text-Hogan
-PORTVERSION=	2.04
+PORTVERSION=	2.06
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EDF
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Clone>=0.37:devel/p5-Clone \
+RUN_DEPENDS=	p5-Clone>=0.50:devel/p5-Clone \
 		p5-HTML-Escape>=1.11:www/p5-HTML-Escape \
 		p5-Ref-Util>=0.204:devel/p5-Ref-Util \
 		p5-Text-Trim>=1.02:textproc/p5-Text-Trim
