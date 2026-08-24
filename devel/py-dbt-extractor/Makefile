@@ -1,6 +1,6 @@
 PORTNAME=	dbt-extractor
 DISTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,6 @@ WWW=		https://github.com/dbt-labs/dbt-extractor/
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	maturin:devel/py-maturin@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tree-sitter>0:devel/py-tree-sitter@${PY_FLAVOR} \
 		${PY_SETUPTOOLS}
 
 USES=		cargo python
@@ -24,12 +23,7 @@ CARGO_BUILD=	no
 CARGO_INSTALL=	no
 
 post-extract:
-	${LN} -s ${WRKDIR}/tree-sitter-jinja2-*/ ${WRKSRC}/tree-sitter-dbt-jinja
-
-pre-build:
-	cd ${WRKSRC} && maturin build -f
-	${MKDIR} ${WRKSRC}/dist
-	${CP} ${WRKSRC}/target/wheels/${DISTNAME}-*freebsd*.whl ${WRKSRC}/dist/
+	${RM} ${WRKSRC}/build.py
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} PYO3_PYTHON=${PYTHON_CMD} ${CARGO} test)
