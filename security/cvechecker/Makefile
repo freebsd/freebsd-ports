@@ -1,7 +1,7 @@
 PORTNAME=	cvechecker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -9,6 +9,9 @@ COMMENT=	Check CVE database for vulnerabilities affecting installed packages
 WWW=		https://github.com/sjvermeu/cvechecker/wiki
 
 LICENSE=	GPLv3
+
+DEPRECATED=	The project has been declared EOL by its author.
+EXPIRATION_DATE=	2026-09-28
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libconfig.so:devel/libconfig
