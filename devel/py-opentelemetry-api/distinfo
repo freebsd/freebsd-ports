@@ -1,3 +1,3 @@
-TIMESTAMP = 1782966394
-SHA256 (opentelemetry_api-1.43.0.tar.gz) = 107d0d03857ea8fc7c5fcbbbd83f800c281f0d560553d61c1d675fccfd1761c1
-SIZE (opentelemetry_api-1.43.0.tar.gz) = 73476
+TIMESTAMP = 1787268104
+SHA256 (opentelemetry_api-1.44.0.tar.gz) = 67647e5e9566edcf421166fdf022b3537f818635daa852b289e34604dc6fb33a
+SIZE (opentelemetry_api-1.44.0.tar.gz) = 72406
