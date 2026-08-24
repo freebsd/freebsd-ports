@@ -1,5 +1,5 @@
---- ../libdatadog-3cc5a96ee3edeb512d141e79cad2ac0b0fded434/libdd-common/src/threading.rs.orig	2026-05-07 19:55:05 UTC
-+++ ../libdatadog-3cc5a96ee3edeb512d141e79cad2ac0b0fded434/libdd-common/src/threading.rs
+--- ../libdatadog-86b7f5700d3db4e58076794b5e8073a40d780083/libdd-common/src/threading.rs.orig	2026-06-29 17:33:11 UTC
++++ ../libdatadog-86b7f5700d3db4e58076794b5e8073a40d780083/libdd-common/src/threading.rs
 @@ -2,6 +2,16 @@
  // SPDX-License-Identifier: Apache-2.0
  
@@ -24,8 +24,8 @@
 -#[cfg(not(any(target_os = "linux", target_os = "macos", target_os = "windows")))]
 +#[cfg(not(any(target_os = "freebsd", target_os = "linux", target_os = "macos", target_os = "windows")))]
  compile_error!("libdd_common::threading::get_current_thread_id is unsupported on this platform");
---- ../libdatadog-3cc5a96ee3edeb512d141e79cad2ac0b0fded434/libdd-common/src/unix_utils/fork.rs.orig	2026-05-07 19:55:05 UTC
-+++ ../libdatadog-3cc5a96ee3edeb512d141e79cad2ac0b0fded434/libdd-common/src/unix_utils/fork.rs
+--- ../libdatadog-86b7f5700d3db4e58076794b5e8073a40d780083/libdd-common/src/unix_utils/fork.rs.orig	2026-06-29 17:33:11 UTC
++++ ../libdatadog-86b7f5700d3db4e58076794b5e8073a40d780083/libdd-common/src/unix_utils/fork.rs
 @@ -1,7 +1,7 @@
  // Copyright 2025-Present Datadog, Inc. https://www.datadoghq.com/
  // SPDX-License-Identifier: Apache-2.0
@@ -35,8 +35,8 @@
  pub fn alt_fork() -> i32 {
      // There is a lower-level `__fork()` function in macOS, and we can call it from Rust, but the
      // runtime is much stricter about which operations (e.g., no malloc) are allowed in the child.
---- ../libdatadog-3cc5a96ee3edeb512d141e79cad2ac0b0fded434/libdd-library-config/src/lib.rs.orig	2026-05-07 19:55:05 UTC
-+++ ../libdatadog-3cc5a96ee3edeb512d141e79cad2ac0b0fded434/libdd-library-config/src/lib.rs
+--- ../libdatadog-86b7f5700d3db4e58076794b5e8073a40d780083/libdd-library-config/src/lib.rs.orig	2026-06-29 17:33:11 UTC
++++ ../libdatadog-86b7f5700d3db4e58076794b5e8073a40d780083/libdd-library-config/src/lib.rs
 @@ -409,14 +409,19 @@ pub enum Target {
  }
  
@@ -74,7 +74,7 @@
  
      pub const fn local_stable_configuration_path(target: Target) -> &'static str {
          match target {
-+            Target::FreeBSD => "%%LOCALBASE%%/etc/datadog-agent/application_monitoring.yaml",
++            Target::FreeBSD => "/usr/local/etc/datadog-agent/application_monitoring.yaml",
              Target::Linux => "/etc/datadog-agent/application_monitoring.yaml",
              Target::Macos => "/opt/datadog-agent/etc/application_monitoring.yaml",
              Target::Windows => "C:\\ProgramData\\Datadog\\application_monitoring.yaml",
@@ -82,7 +82,7 @@
  
      pub const fn fleet_stable_configuration_path(target: Target) -> &'static str {
          match target {
-+            Target::FreeBSD => "%%LOCALBASE%%/etc/datadog-agent/managed/datadog-agent/stable/application_monitoring.yaml",
++            Target::FreeBSD => "/usr/local/etc/datadog-agent/managed/datadog-agent/stable/application_monitoring.yaml",
              Target::Linux => "/etc/datadog-agent/managed/datadog-agent/stable/application_monitoring.yaml",
              Target::Macos => "/opt/datadog-agent/etc/stable/application_monitoring.yaml",
              Target::Windows => "C:\\ProgramData\\Datadog\\managed\\datadog-agent\\stable\\application_monitoring.yaml",

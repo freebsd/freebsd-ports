@@ -1,5 +1,5 @@
 PORTNAME=	ddtrace
-PORTVERSION=	4.11.0
+PORTVERSION=	4.13.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,16 +42,18 @@ PORTSCOUT=	limit:^[0-9]*\.[0-9]*\.[0-9]*
 
 SHEBANG_GLOB=	*.sh
 
-OPTIONS_DEFINE=	OPENTELEMETRY OPENTRACING
-OPTIONS_DEFAULT=OPENTELEMETRY OPENTRACING
+OPTIONS_DEFINE=	OPENFEATURE OPENTELEMETRY OPENTRACING
+OPTIONS_DEFAULT=OPENFEATURE OPENTELEMETRY OPENTRACING
+OPENFEATURE_DESC=	Evaluate feature flags support
 OPENTELEMETRY_DESC=	OpenTelemetry support
 OPENTRACING_DESC=	OpenTracing support
 
+OPENFEATURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openfeature-sdk>=0.8<1:devel/py-openfeature-sdk@${PY_FLAVOR}
 OPENTELEMETRY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp>=1<2:devel/py-opentelemetry-exporter-otlp@${PY_FLAVOR}
 OPENTRACING_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}opentracing>=2<3:devel/py-opentracing@${PY_FLAVOR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py ${WRKSRC}/../libdatadog-3cc5a96ee3edeb512d141e79cad2ac0b0fded434/libdd-library-config/src/lib.rs
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py ${WRKSRC}/../libdatadog-86b7f5700d3db4e58076794b5e8073a40d780083/libdd-library-config/src/lib.rs
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
