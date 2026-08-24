@@ -1,5 +1,5 @@
 PORTNAME=	yar
-PORTVERSION=	2.3.4
+PORTVERSION=	2.4.0
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,7 +14,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		localbase:ldflags php:build,pecl
 USE_PHP=	curl
-IGNORE_WITH_PHP=	86
+
+IGNORE_WITH_PHP=86
 
 OPTIONS_DEFINE=	MSGPACK
 OPTIONS_DEFAULT=MSGPACK
