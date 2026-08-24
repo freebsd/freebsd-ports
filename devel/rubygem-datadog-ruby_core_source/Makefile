@@ -1,5 +1,5 @@
 PORTNAME=	datadog-ruby_core_source
-PORTVERSION=	3.5.2
+PORTVERSION=	3.5.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
