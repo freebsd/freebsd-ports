@@ -1,9 +1,9 @@
 PORTNAME=	pytest-mypy-plugins
-PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTVERSION=	4.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pytest_mypy_plugins-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	pytest plugin for writing tests for mypy plugins
