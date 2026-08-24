@@ -18,6 +18,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodome>=0:security/py-pycryptodome@${P
 USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
 
+OPTIONS_DEFINE=	VECTOR ZSTD
+VECTOR_DESC=	VECTOR type support
+
+VECTOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
+ZSTD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzstd>=0:archivers/py-pyzstd@${PY_FLAVOR}
+
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
