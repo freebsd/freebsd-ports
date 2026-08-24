@@ -1,8 +1,6 @@
 PORTNAME=	airsaned
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.4-0
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g7ecfff3
+DISTVERSION=	0.4.12
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@freebsd.org
@@ -32,6 +30,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${RC_SUBR} >${STAGEDIR}${PREFIX}/etc/rc.d/${PORTNAME}
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/etc/rc.d/${PORTNAME}
+	@${MV} ${STAGEDIR}${PREFIX}/etc/airsane/access.conf ${STAGEDIR}${PREFIX}/etc/airsane/access.conf.sample
 	@${MV} ${STAGEDIR}${PREFIX}/etc/airsane/ignore.conf ${STAGEDIR}${PREFIX}/etc/airsane/ignore.conf.sample
 	@${MV} ${STAGEDIR}${PREFIX}/etc/airsane/options.conf ${STAGEDIR}${PREFIX}/etc/airsane/options.conf.sample
 
