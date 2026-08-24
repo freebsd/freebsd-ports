@@ -1,5 +1,6 @@
 PORTNAME=	phpmailer
 PORTVERSION=	5.2.28
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -9,6 +10,9 @@ WWW=		https://github.com/PHPMailer/PHPMailer
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Unsupported upstream even for security fixes, use phpmailer6 or 7
+EXPIRATION_DATE=	2026-12-31
 
 USES=		cpe dos2unix php
 
