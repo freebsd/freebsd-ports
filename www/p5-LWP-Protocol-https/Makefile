@@ -1,5 +1,5 @@
 PORTNAME=	LWP-Protocol-https
-PORTVERSION=	6.15
+PORTVERSION=	6.17
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OALDERS
@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-IO-Socket-SSL>=1.970:security/p5-IO-Socket-SSL \
 		p5-Net-HTTP>=6:net/p5-Net-HTTP \
 		p5-libwww>=6.06:www/p5-libwww
-TEST_DEPENDS=	p5-Test-Needs>=0.002010:devel/p5-Test-Needs \
-		p5-Test-RequiresInternet>=0:devel/p5-Test-RequiresInternet
+TEST_DEPENDS=	p5-Test-Needs>=0.002010:devel/p5-Test-Needs
 
 USES=		perl5
 USE_PERL5=	configure
