@@ -1,3 +1,34 @@
+  <vuln vid="a7b4cdfc-9f9d-11f1-a655-3497f65b111b">
+    <topic>mod_gnutls -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ap24-mod_gnutls</name>
+	<range><lt>0.13.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The mod_gnutls project reports:</p>
+	<blockquote cite="https://github.com/airtower-luna/mod_gnutls/releases/tag/mod_gnutls/0.13.0">
+	  <p>Security fix (CVE-2026-33307): Fix out-of-bounds write when
+	    receiving a client certificate chain longer than the buffer.</p>
+	  <p>Security fix (CVE-2026-33308): Check Key Purpose during client
+	    certificate verification.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-33307</cvename>
+      <cvename>CVE-2026-33308</cvename>
+      <url>https://github.com/airtower-luna/mod_gnutls/security/advisories/GHSA-gjpm-55p4-c76r</url>
+      <url>https://github.com/airtower-luna/mod_gnutls/security/advisories/GHSA-hm2g-m958-8qgh</url>
+    </references>
+    <dates>
+      <discovery>2026-03-20</discovery>
+      <entry>2026-08-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0cb401f9-9f19-11f1-a655-3497f65b111b">
     <topic>jackson-databind -- multiple vulnerabilities</topic>
     <affects>
