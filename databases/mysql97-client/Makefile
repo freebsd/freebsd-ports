@@ -6,6 +6,9 @@ COMMENT=	Multithreaded SQL database (client)
 
 LICENSE+=	LGPL21
 
+# Slave port of databases/mysql97-server; see the note there on repology
+# reporting this series as outdated.
+
 # MySQL8.2+ supports only 64-bit platforms
 # Review list after 13.x EoL
 NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
