@@ -1,5 +1,5 @@
 PORTNAME=	tifffile
-PORTVERSION=	2026.6.1
+PORTVERSION=	2026.8.16
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
 		https://github.com/cgohlke/tifffile/releases/download/v${PORTVERSION}/
@@ -22,17 +22,20 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	CODECS PLOT XML # ZARR
+OPTIONS_DEFINE=	CODECS PLOT XML ZARR
+ALL_DESC=	All optional dependencies
+ALL_IMPLIES=	CODECS PLOT XML ZARR
 CODECS_DESC=	Codec for compression and predictor schemes
 PLOT_DESC=	Plotting support
 XML_DESC=	Validate and print XML
 ZARR_DESC=	Access zarr store
 
-CODECS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imagecodecs>=2026.5.10:graphics/py-imagecodecs@${PY_FLAVOR}
+ALL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xarray>=0:devel/py-xarray@${PY_FLAVOR}
+CODECS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imagecodecs>=2026.8.16:graphics/py-imagecodecs@${PY_FLAVOR}
 PLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}
 XML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 ZARR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0:filesystems/py-fsspec@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}kerchunk>=0:filesystems/py-kerchunk@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}zarr>=3.2.0:devel/py-zarr@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}zarr>=3.3.0:devel/py-zarr@${PY_FLAVOR}
 
 .include <bsd.port.mk>
