@@ -1,12 +1,12 @@
 PORTNAME=	emacs
-DISTVERSION=	31.0.91
+DISTVERSION=	31.1
 PORTEPOCH=	3
 CATEGORIES=	editors
-MASTER_SITES=	GNU_ALPHA/emacs/pretest
+MASTER_SITES=	GNU
 
 .if ${FLAVOR:U} == canna
 PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs31canna/:canna
-PATCHFILES+=	emacs31.0.91canna-20260808.diff.gz:-p1:canna
+PATCHFILES+=	emacs31.1canna-20260824.diff.gz:-p1:canna
 .endif
 
 MAINTAINER=	emacs@FreeBSD.org

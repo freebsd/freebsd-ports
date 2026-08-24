@@ -23,8 +23,8 @@
 #                             editors/emacs.
 #
 # Variables, which can be read by ports:
-# EMACS_CMD:                  Emacs command with full path (e.g. /usr/local/bin/emacs-30.2)
-# EMACS_MAJOR_VER:            Emacs major version (e.g. 30)
+# EMACS_CMD:                  Emacs command with full path (e.g. /usr/local/bin/emacs-31.1)
+# EMACS_MAJOR_VER:            Emacs major version (e.g. 31)
 # EMACS_LIBDIR:               Emacs Library directory without ${PREFIX} (e.g. share/emacs)
 # EMACS_SITE_LISPDIR:         Emacs site-lisp directory without ${PREFIX} (e.g. share/emacs/site-lisp)
 #
@@ -64,7 +64,7 @@ _EMACS_VER=		32.0.50
 _EMACS_PORTDIR=		editors/emacs-devel
 _EMACS_FLAVOR=		${EMACS_DEFAULT:C/devel_//}
 .    else
-_EMACS_VER=		31.0.91
+_EMACS_VER=		31.1
 _EMACS_PORTDIR=		editors/emacs
 _EMACS_FLAVOR=		${EMACS_DEFAULT:Unox}
 .    endif
