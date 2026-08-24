@@ -1,13 +1,16 @@
 PORTNAME=	zkgroup
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.4
-PORTREVISION=	46
+PORTREVISION=	47
 PORTEPOCH=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Library for the Signal Private Group System
 WWW=		https://github.com/signalapp/zkgroup
+
+DEPRECATED=	Merged into libsignal by upstream
+EXPIRATION_DATE=2026-08-31
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
