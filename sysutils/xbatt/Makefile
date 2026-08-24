@@ -1,11 +1,13 @@
 PORTNAME=	xbatt
-PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.clave.gr.jp/~eto/xbatt/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Laptop battery status display for X11
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	plutonull
+GH_TAGNAME=	1.3final2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
