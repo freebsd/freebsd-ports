@@ -1,6 +1,6 @@
 PORTNAME=	pytype
 PORTVERSION=	2024.10.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	ninja:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	ninja>=1.10.2:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}attrs>=21.4.0:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}immutabledict>=3.0.0:devel/py-immutabledict@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}immutabledict>=4.1.0:devel/py-immutabledict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlab>=0.8:devel/py-importlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.2:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libcst>=1.0.1:devel/py-libcst@${PY_FLAVOR} \
