@@ -2,7 +2,7 @@ PORTNAME=	aquaria
 DISTVERSIONPREFIX=	OSE-v
 DISTVERSION=	1.002-22
 DISTVERSIONSUFFIX=	-g84366ad
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/AquariaOSE/Aquaria/commit/
@@ -13,6 +13,9 @@ COMMENT=	Underwater 2D fantasy action-adventure (game engine)
 WWW=		https://github.com/AquariaOSE/Aquaria
 
 LICENSE=	GPLv2+
+
+DEPRECATED=	Does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
