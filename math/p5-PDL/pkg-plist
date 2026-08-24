@@ -104,6 +104,7 @@ bin/pptemplate
 %%SITE_ARCH%%/PDL/Parallel/threads.pm
 %%SITE_ARCH%%/PDL/Parallel/threads/SIMD.pm
 %%SITE_ARCH%%/PDL/ParallelCPU.pod
+%%SITE_ARCH%%/PDL/Pdldoc/PDL.db
 %%SITE_ARCH%%/PDL/Philosophy.pod
 %%SITE_ARCH%%/PDL/Primitive.pm
 %%SITE_ARCH%%/PDL/QuickStart.pod
