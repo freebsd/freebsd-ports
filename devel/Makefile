@@ -6840,6 +6840,7 @@
     SUBDIR += rubygem-aws-sdk-accountaccess
     SUBDIR += rubygem-aws-sdk-acm
     SUBDIR += rubygem-aws-sdk-acmpca
+    SUBDIR += rubygem-aws-sdk-agentregistry
     SUBDIR += rubygem-aws-sdk-aiops
     SUBDIR += rubygem-aws-sdk-amplify
     SUBDIR += rubygem-aws-sdk-amplifybackend
