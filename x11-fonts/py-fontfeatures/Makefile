@@ -22,4 +22,10 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	SHAPER
+SHAPER_DESC=	Unicode shaping engine support
+
+SHAPER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfont>=3.0.0:x11-fonts/py-babelfont@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}youseedee>=0.3.0:textproc/py-youseedee@${PY_FLAVOR}
+
 .include <bsd.port.mk>
