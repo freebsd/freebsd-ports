@@ -28,4 +28,20 @@ USE_PYTHON=	autoplist concurrent pep517 unittest
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	ASCIIDOC HIGHLIGHTING MARKDOWN RESTRUCTUREDTEXT TEXTILE
+ASCIIDOC_DESC=		AsciiDoc support
+HIGHLIGHTING_DESC=	Highlighting support
+MARKDOWN_DESC=		Markdown support
+RESTRUCTUREDTEXT_DESC=	reStructuredText (reST) support
+TEXTILE_DESC=		Textile support
+
+ASCIIDOC_RUN_DEPENDS=	asciidoc:textproc/asciidoc \
+			${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
+HIGHLIGHTING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
+MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>=3:textproc/py-markdown@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}python-markdown-math>=0:textproc/py-python-markdown-math@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
+RESTRUCTUREDTEXT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0,1:textproc/py-docutils@${PY_FLAVOR}
+TEXTILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}textile>=0:www/py-textile@${PY_FLAVOR}
+
 .include <bsd.port.mk>
