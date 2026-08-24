@@ -146,7 +146,7 @@ WZPYTHONWHEELS=	cffi-2.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		psutil-6.1.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		pyarrow-24.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		pyyaml-6.0.3-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		regex-2026.5.9-cp311-cp311-freebsd_16_0_current_amd64.whl \
+		regex-2026.5.9-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		rpds_py-0.15.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		uvloop-0.19.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl
 
