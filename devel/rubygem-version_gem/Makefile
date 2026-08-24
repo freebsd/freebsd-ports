@@ -1,5 +1,5 @@
 PORTNAME=	version_gem
-PORTVERSION=	1.1.13
+PORTVERSION=	1.1.15
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,6 @@ WWW=		https://version-gem.galtzo.com/ \
 		https://github.com/ruby-oauth/version_gem
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		gem
 
