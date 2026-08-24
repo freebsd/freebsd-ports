@@ -6,12 +6,11 @@ PKGNAMESUFFIX=  -devel
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
-WWW=		https://www.freecadweb.org/
+WWW=		https://www.freecad.org/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Fails to build due to missing Python package defusedxml
 CONFLICTS_INSTALL=      freecad # bin/FreeCAD
 
 BUILD_DEPENDS=	doxygen:devel/doxygen \
@@ -22,6 +21,7 @@ BUILD_DEPENDS=	doxygen:devel/doxygen \
 		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lark>0:devel/py-lark@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR} \
 		swig:devel/swig
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \

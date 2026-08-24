@@ -402,6 +402,7 @@ FreeCAD/Mod/CAM/CAMTests/Fixtures/test_17748_cam_profile.FCStd
 FreeCAD/Mod/CAM/CAMTests/Fixtures/test_28534_truncated_pocket.FCStd
 FreeCAD/Mod/CAM/CAMTests/PathTestUtils.py
 FreeCAD/Mod/CAM/CAMTests/PostTestMocks.py
+FreeCAD/Mod/CAM/CAMTests/TestAdaptiveCommonGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestAreaOperations.py
 FreeCAD/Mod/CAM/CAMTests/TestCAMSanity.py
 FreeCAD/Mod/CAM/CAMTests/TestCentroidLegacyPost.py
@@ -437,6 +438,7 @@ FreeCAD/Mod/CAM/CAMTests/TestPathDressupDogboneII.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDressupHoldingTags.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDrillGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDrillable.py
+FreeCAD/Mod/CAM/CAMTests/TestPathEngrave.py
 FreeCAD/Mod/CAM/CAMTests/TestPathFacingGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathGeneratorDogboneII.py
 FreeCAD/Mod/CAM/CAMTests/TestPathGeom.py
@@ -498,9 +500,18 @@ FreeCAD/Mod/CAM/CAMTests/TestPostToolProcessing.py
 FreeCAD/Mod/CAM/CAMTests/TestSVGPost.py
 FreeCAD/Mod/CAM/CAMTests/TestSlicer.py
 FreeCAD/Mod/CAM/CAMTests/TestSnapmakerPost.py
+FreeCAD/Mod/CAM/CAMTests/TestSurfaceCommonGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestSurfaceDropCutterGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestSurfaceGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestSurfaceMeshGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestSurfacePatternGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestSurfacePostprocessGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestSurfaceWaterlineGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestSurfaceZLevelGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestTSPSolver.py
 FreeCAD/Mod/CAM/CAMTests/TestTestPost.py
 FreeCAD/Mod/CAM/CAMTests/TestToolBitRecomputeState.py
+FreeCAD/Mod/CAM/CAMTests/TestUpdateDocumentTools.py
 FreeCAD/Mod/CAM/CAMTests/Tools/Bit/test-path-tool-bit-bit-00.fctb
 FreeCAD/Mod/CAM/CAMTests/Tools/Library/test-path-tool-bit-library-00.fctl
 FreeCAD/Mod/CAM/CAMTests/Tools/Shape/test-path-tool-bit-shape-00.fcstd
@@ -534,6 +545,7 @@ FreeCAD/Mod/CAM/Machine/ui/editor/output_options_layout.py
 FreeCAD/Mod/CAM/Machine/ui/editor/postprocessor_properties.py
 FreeCAD/Mod/CAM/Path/Base/Drillable.py
 FreeCAD/Mod/CAM/Path/Base/FeedRate.py
+FreeCAD/Mod/CAM/Path/Base/Generator/adaptive_common.py
 FreeCAD/Mod/CAM/Path/Base/Generator/bidirectional_facing.py
 FreeCAD/Mod/CAM/Path/Base/Generator/directional_facing.py
 FreeCAD/Mod/CAM/Path/Base/Generator/dogboneII.py
@@ -551,6 +563,13 @@ FreeCAD/Mod/CAM/Path/Base/Generator/rotary_wrap.py
 FreeCAD/Mod/CAM/Path/Base/Generator/rotation.py
 FreeCAD/Mod/CAM/Path/Base/Generator/spiral.py
 FreeCAD/Mod/CAM/Path/Base/Generator/spiral_facing.py
+FreeCAD/Mod/CAM/Path/Base/Generator/surface_common.py
+FreeCAD/Mod/CAM/Path/Base/Generator/surface_dropcutter.py
+FreeCAD/Mod/CAM/Path/Base/Generator/surface_mesh.py
+FreeCAD/Mod/CAM/Path/Base/Generator/surface_pattern.py
+FreeCAD/Mod/CAM/Path/Base/Generator/surface_postprocess.py
+FreeCAD/Mod/CAM/Path/Base/Generator/surface_waterline.py
+FreeCAD/Mod/CAM/Path/Base/Generator/surface_zlevel.py
 FreeCAD/Mod/CAM/Path/Base/Generator/tapping.py
 FreeCAD/Mod/CAM/Path/Base/Generator/threadmilling.py
 FreeCAD/Mod/CAM/Path/Base/Generator/toolchange.py
@@ -641,7 +660,7 @@ FreeCAD/Mod/CAM/Path/Op/Gui/FeatureExtension.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Helix.py
 FreeCAD/Mod/CAM/Path/Op/Gui/MillFace.py
 FreeCAD/Mod/CAM/Path/Op/Gui/MillFacing.py
-FreeCAD/Mod/CAM/Path/Op/Gui/PathShapeTC.py
+FreeCAD/Mod/CAM/Path/Op/Gui/PathShape.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Pocket.py
 FreeCAD/Mod/CAM/Path/Op/Gui/PocketBase.py
 FreeCAD/Mod/CAM/Path/Op/Gui/PocketShape.py
@@ -738,7 +757,9 @@ FreeCAD/Mod/CAM/Path/Tool/FeedsSpeeds/types.py
 FreeCAD/Mod/CAM/Path/Tool/Gui/Controller.py
 FreeCAD/Mod/CAM/Path/Tool/Gui/FeedsSpeedsDialog.py
 FreeCAD/Mod/CAM/Path/Tool/Gui/MaterialPicker.py
+FreeCAD/Mod/CAM/Path/Tool/Gui/UpdateDocumentToolsDlg.py
 FreeCAD/Mod/CAM/Path/Tool/Gui/__init__.py
+FreeCAD/Mod/CAM/Path/Tool/UpdateDocumentTools.py
 FreeCAD/Mod/CAM/Path/Tool/__init__.py
 FreeCAD/Mod/CAM/Path/Tool/assets/__init__.py
 FreeCAD/Mod/CAM/Path/Tool/assets/asset.py
@@ -2532,6 +2553,7 @@ FreeCAD/lib/libSMESHDS.so
 FreeCAD/lib/libStdMeshers.so
 FreeCAD/lib/libarea-native.so
 FreeCAD/lib/pkgconfig/Clipper2Z.pc
+FreeCAD/lib/surface_generator.so
 FreeCAD/lib/tsp_solver.so
 FreeCAD/share/3Dconnexion/3DConnexion.xml
 FreeCAD/share/Gui/PreferencePackTemplates/Arch_Colors.cfg
