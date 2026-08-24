@@ -1,8 +1,9 @@
 PORTNAME=	pytest-twisted
-PORTVERSION=	1.14.1
+PORTVERSION=	1.14.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pytest_twisted-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Twisted plugin for pytest
