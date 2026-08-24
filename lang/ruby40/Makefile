@@ -1,6 +1,5 @@
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_DISTVERSION}
-PORTREVISION=	1
 PORTEPOCH=	${RUBY_PORTEPOCH}
 CATEGORIES=	lang ruby
 MASTER_SITES=	RUBY/${MASTER_SITE_SUBDIR_RUBY}
@@ -57,9 +56,9 @@ INSTALLED_MANUALS=	ruby
 INSTALLED_SCRIPTS=	ruby
 # Macros to change variables in rbconfig.rb
 # NOTE: The last argument RB_SET_CONF_VAR is a dummy argument. See bug 222872.
-RB_SET_CONF_VAR=	${SH} -c \
-			'${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' \
-			RB_SET_CONF_VAR
+RB_SET_CONF_VAR=${SH} -c \
+		'${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' \
+		RB_SET_CONF_VAR
 
 OPTIONS_DEFINE=	CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC YJIT
 OPTIONS_DEFAULT=RDOC
@@ -72,8 +71,8 @@ YJIT_DESC=	Enable YJIT (Yet Another Ruby JIT)
 CAPIDOCS_BUILD_DEPENDS=	dot:graphics/graphviz \
 			doxygen>=1.8.13,2:devel/doxygen
 CAPIDOCS_CONFIGURE_ENABLE=	install-capi
-GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 GMP_CONFIGURE_WITH=	gmp
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 RDOC_CONFIGURE_ENABLE=	install-rdoc
 YJIT_BUILD_DEPENDS=	${RUST_DEFAULT}>=1.58.0:lang/${RUST_DEFAULT}
 YJIT_CONFIGURE_ENABLE=	yjit

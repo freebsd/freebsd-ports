@@ -3604,6 +3604,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/checksums-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/contents-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/copy_to-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Package/create_symlink-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/data_mode-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/dir_mode-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/extract_files-i.ri
