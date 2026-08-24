@@ -8,9 +8,9 @@
 #
 # comentario_enable (bool):	Set to YES to enable comentario.
 #				Default: NO
-# comentario_user (str):	User to run comentario as.
+# comentario_run_user (str):	User to run comentario as.
 #				Default: %%COMENTARIO_USER%%
-# comentario_group (str):	Group to run comentario as.
+# comentario_run_group (str):	Group to run comentario as.
 #				Default: %%COMENTARIO_GROUP%%
 # comentario_conf (str):	Path to the static configuration file.
 #				Default: %%ETCDIR%%/comentario.conf
@@ -26,15 +26,15 @@ desc="Self-hosted comment engine"
 load_rc_config ${name}
 
 : ${comentario_enable:="NO"}
-: ${comentario_user:="%%COMENTARIO_USER%%"}
-: ${comentario_group:="%%COMENTARIO_GROUP%%"}
+: ${comentario_run_user:="%%COMENTARIO_USER%%"}
+: ${comentario_run_group:="%%COMENTARIO_GROUP%%"}
 : ${comentario_conf:="%%ETCDIR%%/comentario.conf"}
 : ${comentario_flags:=""}
 
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 comentario_command="%%PREFIX%%/bin/${name}"
-command_args="-P ${pidfile} -r -f -T ${name} -t ${name} -u ${comentario_user} -- ${comentario_command} ${comentario_flags}"
+command_args="-P ${pidfile} -r -f -T ${name} -t ${name} -u ${comentario_run_user} -- ${comentario_command} ${comentario_flags}"
 required_files="${comentario_conf}"
 
 start_precmd=comentario_prestart
@@ -47,7 +47,7 @@ comentario_prestart()
 		. "${comentario_conf}"
 		set +a
 	fi
-	install -d -m 0700 -o "${comentario_user}" -g "${comentario_group}" \
+	install -d -m 0700 -o "${comentario_run_user}" -g "${comentario_run_group}" \
 		%%COMENTARIO_DBDIR%%
 }
 
