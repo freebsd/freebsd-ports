@@ -1,3 +1,3 @@
-TIMESTAMP = 1710712484
-SHA256 (pytest-subtests-0.12.1.tar.gz) = d6605dcb88647e0b7c1889d027f8ef1c17d7a2c60927ebfdc09c7b0d8120476d
-SIZE (pytest-subtests-0.12.1.tar.gz) = 15303
+TIMESTAMP = 1787268192
+SHA256 (pytest_subtests-0.15.0.tar.gz) = cb495bde05551b784b8f0b8adfaa27edb4131469a27c339b80fd8d6ba33f887c
+SIZE (pytest_subtests-0.15.0.tar.gz) = 18525
