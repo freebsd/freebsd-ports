@@ -1,11 +1,11 @@
---- pyproject.toml.orig	2026-07-13 16:57:53 UTC
+--- pyproject.toml.orig	2026-08-03 21:27:10 UTC
 +++ pyproject.toml
 @@ -3,7 +3,7 @@
  # setup.py (see PEP 639). setuptools-scm derives the version from the latest
  # git tag (e.g. ``v3.5.0`` -> ``3.5.0``), so releases only require tagging,
  # and writes it to stone/_version.py for runtime access.
--requires = ["setuptools>=77", "setuptools-scm>=8,<9"]
-+requires = ["setuptools>=61", "setuptools-scm>=8"]
+-requires = ["setuptools>=83.0.0", "setuptools-scm>=10.2.1,<11"]
++requires = ["setuptools>=61", "setuptools-scm>=9"]
  build-backend = "setuptools.build_meta"
  
  [tool.setuptools_scm]
