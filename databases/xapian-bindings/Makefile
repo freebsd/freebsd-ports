@@ -1,10 +1,12 @@
 PORTNAME=	xapian-bindings
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bindings allowing Xapian to be used from various programming languages
-WWW=		https://xapian.org/
+WWW=		https://xapian.org/ \
+		https://github.com/xapian/xapian/tree/main/xapian-bindings \
+		https://github.com/xapian/xapian
 
 LICENSE=	GPLv2
 
