@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+Fcitx5-karukan has been installed.
+
+You can start using it as is, but it is recommended creating and
+installing a system dictionary to improve the efficiency of kana-kanji
+conversion. To do so, please follow the instructions below.
+
+1. Download Sudachi Dictionary sources and unzip them
+$ for type in small core notcore; do
+      fetch http://sudachi.s3-website-ap-northeast-1.amazonaws.com/sudachidict-raw/<YYYYMMDD>/${type}_lex.zip
+      unzip ${type}_lex.zip
+  done
+
+# Note: Replace <YYYYMMDD> with the latest release date at:
+# http://sudachi.s3-website-ap-northeast-1.amazonaws.com/sudachidict-raw/
+
+2. Generate JSON-formatted dictionary from Sudachi Dict CSV data
+$ sudachi-dict small_lex.csv core_lex.csv notcore_lex.csv
+
+3. Generate binary-formatted system dictionary
+$ karukan-dict build scored.json
+
+4. Store the system dictionary under a user's home directory
+$ mkdir -p ${HOME}/.local/share/karukan-im
+$ mv dict.bin ${HOME}/.local/share/karukan-im
+
+EOM
+}
+]

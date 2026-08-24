@@ -1,0 +1,5 @@
+Karukan is a Japanese Input Method Engine for Linux that uses neural
+kana-kanji conversion powered by llama.cpp. It provides a fcitx5 addon
+for romaji-to-hiragana conversion and intelligent kana-kanji
+conversion using small neural network models (auto-downloaded on first
+use).
