@@ -144,7 +144,7 @@ RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 #
 # Ruby 3.3
 #
-RUBY_DISTVERSION=	3.3.11
+RUBY_DISTVERSION=	3.3.12
 
 .      elif ${RUBY_VER} == 3.4
 #
