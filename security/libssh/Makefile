@@ -1,6 +1,5 @@
 PORTNAME=	libssh
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTVERSION=	0.12.2
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.libssh.org/files/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
