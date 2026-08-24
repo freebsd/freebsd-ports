@@ -23,4 +23,9 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	DATES
+DATES_DESC=	Date/time support
+
+DATES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=2019.1,1:devel/py-pytz@${PY_FLAVOR}
+
 .include <bsd.port.mk>
