@@ -1,5 +1,5 @@
 PORTNAME=	pylint
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pylint-dev/pylint/releases/download/v${PORTVERSION}/
