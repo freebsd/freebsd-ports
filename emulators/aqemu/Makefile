@@ -1,7 +1,7 @@
 PORTNAME=	aqemu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://github.com/tobimensch/aqemu
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Abandoned upstream, uses Qt 5, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libvncclient.so:net/libvncserver
 
