@@ -24,6 +24,18 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	BMEMCACHED MEMCACHED PYMEMCACHE REDIS VALKEY
+BMEMCACHED_DESC=Memcached support via python-binary-memcached
+MEMCACHED_DESC=	Memcached support via python-memcached
+PYMEMCACHE_DESC=Memcached support via pymemcache
+VALKEY_DESC=	Valkey key-value store database support
+
+BMEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-binary-memcached>=0:databases/py-python-binary-memcached@${PY_FLAVOR}
+MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=0:databases/py-python-memcached@${PY_FLAVOR}
+PYMEMCACHE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymemcache>=0:databases/py-pymemcache@${PY_FLAVOR}
+REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=0:databases/py-redis@${PY_FLAVOR}
+VALKEY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}valkey>=0:databases/py-valkey@${PY_FLAVOR}
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31100
