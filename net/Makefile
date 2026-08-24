@@ -1357,9 +1357,9 @@
     SUBDIR += rubygem-gitlab-fog-azure-rm
     SUBDIR += rubygem-gitlab-gkg-proto
     SUBDIR += rubygem-gitlab-kas-grpc
+    SUBDIR += rubygem-gitlab-orbit-proto
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-gitlab_omniauth-ldap-gitlab
-    SUBDIR += rubygem-gitlab-orbit-proto
     SUBDIR += rubygem-google-cloud-bigquery
     SUBDIR += rubygem-google-cloud-bigtable
     SUBDIR += rubygem-google-cloud-bigtable-admin-v2
