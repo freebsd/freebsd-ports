@@ -1,5 +1,5 @@
 PORTNAME=	Geo-Address-Formatter
-PORTVERSION=	1.9993
+PORTVERSION=	1.9994
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EDF
@@ -14,13 +14,13 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Clone>=0.50:devel/p5-Clone \
-		p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
+RUN_DEPENDS=	p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
 		p5-Ref-Util>=0.204:devel/p5-Ref-Util \
-		p5-Text-Hogan>=2.04:textproc/p5-Text-Hogan \
+		p5-Text-Hogan>=2.05:textproc/p5-Text-Hogan \
 		p5-Try-Catch>=1.1.0:lang/p5-Try-Catch \
-		p5-YAML-LibYAML>=0.907.0:textproc/p5-YAML-LibYAML
-TEST_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper \
+		p5-YAML-LibYAML>=0.910.0:textproc/p5-YAML-LibYAML
+TEST_DEPENDS=	p5-Clone>=0.50:devel/p5-Clone \
+		p5-File-Slurper>=0:devel/p5-File-Slurper \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
