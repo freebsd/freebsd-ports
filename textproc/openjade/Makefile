@@ -5,7 +5,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.3.3
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-pre/}
 
-MAINTAINER=	cy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 WWW=		http://www.netfolder.com/DSSSL/
 
