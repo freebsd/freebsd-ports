@@ -1,6 +1,5 @@
 PORTNAME=	django-filer
-DISTVERSION=	3.4.4
-PORTREVISION=	1
+DISTVERSION=	3.5.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=3.2:www/py-django52@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-easy-thumbnails>0:graphics/py-django-easy-thumbnails@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-polymorphic<5:www/py-django-polymorphic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}svglib>=1.5.1:converters/py-svglib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}py_svg_hush>0:graphics/py-py_svg_hush@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
