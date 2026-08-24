@@ -1,7 +1,11 @@
 name: FreeBSD Lua Test
 on:
   push:
+    paths:
+      - '.github/workflows/luarocks_on_freebsd.yml'
   pull_request:
+    paths:
+      - '.github/workflows/luarocks_on_freebsd.yml'
   workflow_dispatch:
 jobs:
   freebsd-test:
