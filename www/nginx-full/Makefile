@@ -5,6 +5,10 @@ PKGNAMESUFFIX=	-full
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Robust and small WWW server (full package)
 
+# Slave port of www/nginx (stable branch); mainline is www/nginx-devel.
+# repology measures the flavored slave ports against mainline and reports them
+# as outdated, while unflavored www/nginx with the same version is not.
+
 MASTERDIR=	${.CURDIR}/../nginx
 
 CONFLICTS=	nginx-1.* \
