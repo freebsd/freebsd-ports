@@ -1,5 +1,5 @@
 PORTNAME=	rdoc
-PORTVERSION=	6.17.0
+PORTVERSION=	8.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.rdoc
 
 RUN_DEPENDS=	rubygem-erb>=0:devel/rubygem-erb \
-		rubygem-psych>=4.0.0:textproc/rubygem-psych \
+		rubygem-prism>=1.6.0:textproc/rubygem-prism \
+		rubygem-rbs>=4.0.0:devel/rubygem-rbs \
 		rubygem-tsort>=0:devel/rubygem-tsort
 
 USES=		cpe gem
