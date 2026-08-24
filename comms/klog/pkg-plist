@@ -1,12 +1,12 @@
 bin/klog
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/Changelog
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README-DEVEL
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/TROUBLESHOOTING
-share/applications/klog.desktop
+share/applications/io.github.ea4k.klog.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-DEVEL
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/TROUBLESHOOTING
 share/icons/hicolor/scalable/apps/klog.svg
 %%DATADIR%%/translations/klog_ca.qm
 %%DATADIR%%/translations/klog_cs.qm
@@ -25,5 +25,5 @@ share/icons/hicolor/scalable/apps/klog.svg
 %%DATADIR%%/translations/klog_ru.qm
 %%DATADIR%%/translations/klog_uk.qm
 share/man/man1/klog.1.gz
-share/metainfo/klog.metainfo.xml
+share/metainfo/io.github.ea4k.klog.metainfo.xml
 share/pixmaps/klog.png
