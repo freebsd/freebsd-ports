@@ -1,5 +1,5 @@
 PORTNAME=	Test2-Harness
-PORTVERSION=	1.000172
+PORTVERSION=	1.000174
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-App-Yath-Script>=2.000011:devel/p5-App-Yath-Script \
+RUN_DEPENDS=	p5-App-Yath-Script>=2.000017:devel/p5-App-Yath-Script \
 		p5-Data-UUID>=0:devel/p5-Data-UUID \
 		p5-Importer>=0.025:devel/p5-Importer \
 		p5-Long-Jump>=0.000001:devel/p5-Long-Jump \
