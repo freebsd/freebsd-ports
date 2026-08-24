@@ -1,3 +1,3 @@
-TIMESTAMP = 1776095121
-SHA256 (ansible_compat-26.3.0.tar.gz) = 15f0ea5ff6fcc5587b6b11a4a436fdeefd0fd4a46afe92d4e483c28370082ae0
-SIZE (ansible_compat-26.3.0.tar.gz) = 216754
+TIMESTAMP = 1787584315
+SHA256 (ansible_compat-26.8.0.tar.gz) = 1254bd1db72dcc93b74774f54b81e272260d3cd34ba5d595d42ca2dd9c46f7de
+SIZE (ansible_compat-26.8.0.tar.gz) = 235350
