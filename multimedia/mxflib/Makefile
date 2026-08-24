@@ -9,4 +9,6 @@ WWW=		http://www.freemxf.org/
 
 GNU_CONFIGURE=	yes
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 .include <bsd.port.mk>
