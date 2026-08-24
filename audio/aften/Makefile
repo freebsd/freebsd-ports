@@ -7,6 +7,8 @@ MAINTAINER=	Gabor@Zahemszky.HU
 COMMENT=	ATSC A/52 audio encoder
 WWW=		https://aften.sourceforge.net/
 
+BROKEN=		Fails to build with CMake 4
+
 USES=		tar:bzip2 cmake
 
 CONFLICTS_INSTALL=	wavbreaker # bin/wavinfo
