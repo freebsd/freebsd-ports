@@ -1,5 +1,5 @@
 PORTNAME=	ots
-PORTVERSION=	9.2.0
+PORTVERSION=	9.3.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/khaledhosny/ots/releases/download/v${PORTVERSION}/
 
@@ -21,14 +21,14 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		liblz4.so:archivers/liblz4 \
 		libwoff2dec.so:devel/woff2
 
-USES=		compiler:c++14-lang meson pkgconfig tar:xz
+USES=		compiler:c++17-lang meson pkgconfig tar:xz
 
 MESON_ARGS=	--default-library=both \
 		-Dcolr-cycle-check=true \
 		-Ddebug=false \
 		-Dgraphite=true \
 		-Dsynthesize-gvar=true
-USE_CXXSTD=	c++14
+USE_CXXSTD=	c++17
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
