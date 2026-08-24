@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-05-18 06:01:43 UTC
+--- pyproject.toml.orig	2026-08-16 02:49:57 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -8,14 +8,14 @@
  
  [project]
  name = "types-protobuf"
- version = "7.34.1.20260518"
+ version = "7.34.1.20260816"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
  description = "Typing stubs for protobuf"
  readme = { text = """\
  ## Typing stubs for protobuf
-@@ -52,8 +51,4 @@ dependencies = []
+@@ -56,8 +55,4 @@ dependencies = []
  "Chat" = "https://gitter.im/python/typing"
  
  [tool.setuptools]
