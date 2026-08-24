@@ -1,5 +1,5 @@
 PORTNAME=	Xapian
-PORTVERSION=	2.0.0.0
+PORTVERSION=	2.1.0.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
@@ -8,7 +8,9 @@ DISTNAME=	xapian-bindings-${PORTVERSION:R}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl binding for Xapian
-WWW=		https://xapian.org/
+WWW=		https://xapian.org/ \
+		https://github.com/xapian/xapian/tree/main/xapian-bindings \
+		https://github.com/xapian/xapian
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
