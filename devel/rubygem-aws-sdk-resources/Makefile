@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.267.0
+PORTVERSION=	3.270.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessanalyzer \
 		rubygem-aws-sdk-account>=1<2:devel/rubygem-aws-sdk-account \
+		rubygem-aws-sdk-accountaccess>=1<2:devel/rubygem-aws-sdk-accountaccess \
 		rubygem-aws-sdk-acm>=1<2:devel/rubygem-aws-sdk-acm \
 		rubygem-aws-sdk-acmpca>=1<2:devel/rubygem-aws-sdk-acmpca \
+		rubygem-aws-sdk-agentregistry>=1<2:devel/rubygem-aws-sdk-agentregistry \
+		rubygem-aws-sdk-agentregistrycontrol>=1<2:devel/rubygem-aws-sdk-agentregistrycontrol \
 		rubygem-aws-sdk-aiops>=1<2:devel/rubygem-aws-sdk-aiops \
 		rubygem-aws-sdk-amplify>=1<2:devel/rubygem-aws-sdk-amplify \
 		rubygem-aws-sdk-amplifybackend>=1<2:devel/rubygem-aws-sdk-amplifybackend \
@@ -322,6 +325,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-pipes>=1<2:devel/rubygem-aws-sdk-pipes \
 		rubygem-aws-sdk-polly>=1<2:devel/rubygem-aws-sdk-polly \
 		rubygem-aws-sdk-pricing>=1<2:devel/rubygem-aws-sdk-pricing \
+		rubygem-aws-sdk-pricingplanmanager>=1<2:devel/rubygem-aws-sdk-pricingplanmanager \
 		rubygem-aws-sdk-prometheusservice>=1<2:devel/rubygem-aws-sdk-prometheusservice \
 		rubygem-aws-sdk-proton>=1<2:devel/rubygem-aws-sdk-proton \
 		rubygem-aws-sdk-qapps>=1<2:devel/rubygem-aws-sdk-qapps \
