@@ -3713,6 +3713,7 @@
 %%DATADIR%%/handheld/color-mod/dslite-color.slangp
 %%DATADIR%%/handheld/color-mod/gbMicro-color.slangp
 %%DATADIR%%/handheld/color-mod/gba-color.slangp
+%%DATADIR%%/handheld/color-mod/gba-fast-color-fix.slangp
 %%DATADIR%%/handheld/color-mod/gbc-color.slangp
 %%DATADIR%%/handheld/color-mod/gbc-gambatte-color.slangp
 %%DATADIR%%/handheld/color-mod/nds-color.slangp
@@ -3789,6 +3790,9 @@
 %%DATADIR%%/handheld/lcd1x_nds.slangp
 %%DATADIR%%/handheld/lcd1x_psp.slangp
 %%DATADIR%%/handheld/lcd3x.slangp
+%%DATADIR%%/handheld/mega-Tetrix.slangp
+%%DATADIR%%/handheld/mega-blocks-brick.slangp
+%%DATADIR%%/handheld/mega-blocks-dome.slangp
 %%DATADIR%%/handheld/nds-lcd-grid-v2.slangp
 %%DATADIR%%/handheld/pixel_transparency.slangp
 %%DATADIR%%/handheld/retro-tiles.slangp
@@ -3810,6 +3814,7 @@
 %%DATADIR%%/handheld/shaders/color/gbMicro-color.slang
 %%DATADIR%%/handheld/shaders/color/gba-color-old.slang
 %%DATADIR%%/handheld/shaders/color/gba-color.slang
+%%DATADIR%%/handheld/shaders/color/gba-fast-color-fix.slang
 %%DATADIR%%/handheld/shaders/color/gbc-color.slang
 %%DATADIR%%/handheld/shaders/color/gbc-dev.slang
 %%DATADIR%%/handheld/shaders/color/gbc-gambatte-color.slang
@@ -3873,6 +3878,9 @@
 %%DATADIR%%/handheld/shaders/lcd1x_nds.slang
 %%DATADIR%%/handheld/shaders/lcd1x_psp.slang
 %%DATADIR%%/handheld/shaders/lcd3x.slang
+%%DATADIR%%/handheld/shaders/mega-Tetrix.slang
+%%DATADIR%%/handheld/shaders/mega-blocks-brick.slang
+%%DATADIR%%/handheld/shaders/mega-blocks-dome.slang
 %%DATADIR%%/handheld/shaders/mgba/agb001.slang
 %%DATADIR%%/handheld/shaders/mgba/ags001-light.slang
 %%DATADIR%%/handheld/shaders/mgba/ags001.slang
@@ -4027,6 +4035,7 @@
 %%DATADIR%%/include/quad-pixel-communication.h
 %%DATADIR%%/include/special-functions.h
 %%DATADIR%%/include/subpixel_masks.h
+%%DATADIR%%/interpolation/Bicubic-Custom-B-Blur.slangp
 %%DATADIR%%/interpolation/EWA-Cubics.slangp
 %%DATADIR%%/interpolation/EWA-Custom-B-Blur.slangp
 %%DATADIR%%/interpolation/b-spline-4-taps-fast.slangp
@@ -4066,6 +4075,7 @@
 %%DATADIR%%/interpolation/linear-gamma-presets/spline16-fast.slangp
 %%DATADIR%%/interpolation/linear-gamma-presets/spline36-fast.slangp
 %%DATADIR%%/interpolation/quilez.slangp
+%%DATADIR%%/interpolation/shaders/Bicubic-Custom-B-Blur.slang
 %%DATADIR%%/interpolation/shaders/EWA-Cubics.slang
 %%DATADIR%%/interpolation/shaders/EWA-Custom-B-Blur.slang
 %%DATADIR%%/interpolation/shaders/b-spline-4-taps.slang
@@ -4157,6 +4167,8 @@
 %%DATADIR%%/misc/night-mode.slangp
 %%DATADIR%%/misc/ntsc-colors.slangp
 %%DATADIR%%/misc/patchy-color.slangp
+%%DATADIR%%/misc/pixel-weave-4x2.slangp
+%%DATADIR%%/misc/pixel-weave-sync.slangp
 %%DATADIR%%/misc/print-resolution.slangp
 %%DATADIR%%/misc/relief.slangp
 %%DATADIR%%/misc/retro-palettes.slangp
@@ -4189,6 +4201,8 @@
 %%DATADIR%%/misc/shaders/natural-vision.slang
 %%DATADIR%%/misc/shaders/night_mode.slang
 %%DATADIR%%/misc/shaders/ntsc-colors.slang
+%%DATADIR%%/misc/shaders/pixel-weave-4x2.slang
+%%DATADIR%%/misc/shaders/pixel-weave-sync.slang
 %%DATADIR%%/misc/shaders/print-resolution/print-resolution-apply.slang
 %%DATADIR%%/misc/shaders/print-resolution/print-resolution-generate-and-cache.slang
 %%DATADIR%%/misc/shaders/relief.slang
@@ -4444,6 +4458,10 @@
 %%DATADIR%%/pixel-art-scaling/smuberstep.slangp
 %%DATADIR%%/pixel-art-scaling/soft-pixel-art.slangp
 %%DATADIR%%/pixel-art-scaling/uniform-nearest.slangp
+%%DATADIR%%/presets/MMPX-sharp-weave-4x2.slangp
+%%DATADIR%%/presets/MMPX-sharp-weave-sync.slangp
+%%DATADIR%%/presets/MMPX-smooth-weave-4x2.slangp
+%%DATADIR%%/presets/MMPX-smooth-weave-sync.slangp
 %%DATADIR%%/presets/apple-monitor-II.slangp
 %%DATADIR%%/presets/authentic-gbc-frontlit.slangp
 %%DATADIR%%/presets/black-and-white-tv.slangp
@@ -4466,6 +4484,7 @@
 %%DATADIR%%/presets/crt-beam-simulator/crt-beam-simulator-fsr-sony-crt-megatron-hdr.slangp
 %%DATADIR%%/presets/crt-beam-simulator/crt-beam-simulator-nnedi3-nns16-4x-luma-fsr-crtroyale.slangp
 %%DATADIR%%/presets/crt-geom-simple.slangp
+%%DATADIR%%/presets/crt-guest-philips-27ps55-syboxez.slangp
 %%DATADIR%%/presets/crt-hyllian-sinc-smartblur-sgenpt.slangp
 %%DATADIR%%/presets/crt-hyllian-smartblur-sgenpt.slangp
 %%DATADIR%%/presets/crt-lottes-multipass-interlaced-glow.slangp
