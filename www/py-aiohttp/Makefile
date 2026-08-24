@@ -1,5 +1,6 @@
 PORTNAME=	aiohttp
 PORTVERSION=	3.14.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/aio-libs/aiohttp/releases/download/v${PORTVERSION}/
@@ -42,8 +43,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=3.3.0:dns/py-aiodns@${PY_FLAVOR} \
 USES=		cpe python
 USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
-MAKE_ENV=	AIOHTTP_CYTHON_TRACE=1 \
-		USE_SYSTEM_DEPS=1
+MAKE_ENV=	AIOHTTP_CYTHON_TRACE='' \
+		AIOHTTP_NO_EXTENSIONS='' \
+		AIOHTTP_USE_SYSTEM_DEPS=1
 
 OPTIONS_DEFINE=	SPEEDUPS
 SPEEDUPS_DESC=	Performance speedups
