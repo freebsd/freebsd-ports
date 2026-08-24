@@ -1,6 +1,7 @@
 PORTNAME=	avida
-PORTVERSION=	2.12.4
+DISTVERSION=	2.12.4
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
@@ -9,6 +10,9 @@ COMMENT=	Auto-adaptive genetic system designed for ALife research
 WWW=		https://avida.devosoft.org/
 
 LICENSE=	GPLv3
+
+DEPRECATED=	Does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 BROKEN_aarch64=		invokes x86 assembler
 BROKEN_armv6=		invokes x86 assembler
