@@ -1,0 +1,4 @@
+This package implements the OpenTelemetry declarative configuration
+specification for the Python SDK. It parses a YAML or JSON configuration file
+(or programmatically-constructed configuration model) into typed dataclasses and
+applies the result to the global SDK providers.

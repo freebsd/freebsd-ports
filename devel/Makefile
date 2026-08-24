@@ -5578,6 +5578,7 @@
     SUBDIR += py-openfeature-sdk
     SUBDIR += py-openstacksdk
     SUBDIR += py-opentelemetry-api
+    SUBDIR += py-opentelemetry-configuration
     SUBDIR += py-opentelemetry-distro
     SUBDIR += py-opentelemetry-exporter-credential-provider-gcp
     SUBDIR += py-opentelemetry-exporter-otlp
