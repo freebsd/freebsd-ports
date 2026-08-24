@@ -1,3 +1,3 @@
-TIMESTAMP = 1782966416
-SHA256 (opentelemetry_instrumentation_fastapi-0.64b0.tar.gz) = 05f75149929e433c1630de381688e650bf651c1e1cce7f9a7b649a807dac8a98
-SIZE (opentelemetry_instrumentation_fastapi-0.64b0.tar.gz) = 26236
+TIMESTAMP = 1787268126
+SHA256 (opentelemetry_instrumentation_fastapi-0.65b0.tar.gz) = 10a3a95486036230413a58fe4fdf4a83fa6bba46918407e527476994bd92bd97
+SIZE (opentelemetry_instrumentation_fastapi-0.65b0.tar.gz) = 26236
