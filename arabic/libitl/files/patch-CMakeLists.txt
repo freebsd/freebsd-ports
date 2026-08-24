@@ -1,6 +1,15 @@
 --- CMakeLists.txt.orig	2017-10-31 20:26:09 UTC
 +++ CMakeLists.txt
-@@ -12,7 +12,7 @@ set(LIBRARY_VERSION_FULL "${LIBRARY_VERS
+@@ -1,7 +1,7 @@
+ # CMake build file for ITL
+ # By: Mohamed A.M. Bamakhrama (mohamed@alumni.tum.de)
+ 
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.5)
+ project( itl )
+ include(GNUInstallDirs)
+ set(LIBRARY_VERSION_MAJOR "0")
+@@ -12,7 +12,7 @@ message( "To override this value, use 'make -DCMAKE_IN
  message( "Installation target directory is: " ${CMAKE_INSTALL_PREFIX} )
  message( "To override this value, use 'make -DCMAKE_INSTALL_PREFIX=$DIR'" )
  
@@ -9,7 +18,7 @@
  set( CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} ${COMPILE_FLAGS}" )
  
  # Specify header files
-@@ -43,9 +43,9 @@ set(VERSION "${LIBRARY_VERSION_FULL}")
+@@ -43,9 +43,9 @@ install( FILES ${HEADER_FILES} DESTINATION "${CMAKE_IN
  configure_file("libitl.pc.in" "libitl.pc" @ONLY)
  
  install( FILES ${HEADER_FILES} DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/itl" )
