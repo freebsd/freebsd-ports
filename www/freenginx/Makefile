@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
@@ -243,9 +243,8 @@ CONFIGURE_ENV+=	EXTRA_PRE_CXXFLAGS="-std=c++14"
 .if empty(PORT_OPTIONS:MMODSECURITY3)
 CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib"
 .else
-
-ONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre2-8"
-IB_DEPENDS+=		libpcre2-8.so:devel/pcre2
+CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre2-8"
+LIB_DEPENDS+=		libpcre2-8.so:devel/pcre2
 .endif
 
 .if ${PORT_OPTIONS:MNJS} && empty(PORT_OPTIONS:MNJS_XML)
