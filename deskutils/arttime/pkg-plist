@@ -113,6 +113,8 @@ bin/arttime
 %%DATADIR%%/textart/cow4
 %%DATADIR%%/textart/crow
 %%DATADIR%%/textart/cubesonparade
+%%DATADIR%%/textart/deer
+%%DATADIR%%/textart/deer2
 %%DATADIR%%/textart/demon
 %%DATADIR%%/textart/dental
 %%DATADIR%%/textart/desktop
@@ -138,6 +140,7 @@ bin/arttime
 %%DATADIR%%/textart/eagle
 %%DATADIR%%/textart/einstein
 %%DATADIR%%/textart/einstein2
+%%DATADIR%%/textart/elephant
 %%DATADIR%%/textart/elephant2
 %%DATADIR%%/textart/elephant3
 %%DATADIR%%/textart/elephant4
@@ -158,6 +161,7 @@ bin/arttime
 %%DATADIR%%/textart/fish
 %%DATADIR%%/textart/fizzer
 %%DATADIR%%/textart/floorplan
+%%DATADIR%%/textart/flower
 %%DATADIR%%/textart/footsteps
 %%DATADIR%%/textart/fractals
 %%DATADIR%%/textart/freebsd1
@@ -191,6 +195,7 @@ bin/arttime
 %%DATADIR%%/textart/horse2
 %%DATADIR%%/textart/horse3
 %%DATADIR%%/textart/horse4
+%%DATADIR%%/textart/horse5
 %%DATADIR%%/textart/hourglass
 %%DATADIR%%/textart/house
 %%DATADIR%%/textart/house2
@@ -309,6 +314,7 @@ bin/arttime
 %%DATADIR%%/textart/pattern3
 %%DATADIR%%/textart/peacock
 %%DATADIR%%/textart/peacock2
+%%DATADIR%%/textart/peacock3
 %%DATADIR%%/textart/pharoah
 %%DATADIR%%/textart/phonenix
 %%DATADIR%%/textart/phonenix2
