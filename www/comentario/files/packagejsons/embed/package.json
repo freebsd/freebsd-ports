@@ -1,0 +1,40 @@
+{
+    "name": "comentario-embed",
+    "version": "3.0.0",
+    "main": "gulpfile.mjs",
+    "scripts": {
+        "clean": "gulp clean",
+        "build": "env NODE_ENV=development gulp",
+        "build:prod": "gulp",
+        "lint": "gulp lint",
+        "start": "env NODE_ENV=development gulp start",
+        "test": "gulp test",
+        "test:watch": "gulp testWatch"
+    },
+    "private": true,
+    "devDependencies": {
+        "@popperjs/core": "^2.11.8",
+        "@types/jest": "^30.0.0",
+        "@types/node": "^24.13.3",
+        "comentario-frontend": "3.0.0",
+        "gulp": "^5.0.1",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-cli": "^3.1.0",
+        "gulp-eslint-new": "^2.6.2",
+        "gulp-if": "^3.0.0",
+        "gulp-jest": "^4.0.4",
+        "gulp-sass": "^6.0.1",
+        "gulp-sourcemaps": "^3.0.0",
+        "html-minifier": "^4.0.0",
+        "jest": "^30.4.2",
+        "jest-environment-jsdom": "^30.4.1",
+        "sass": "^1.102.0",
+        "ts-jest": "^29.4.12",
+        "ts-loader": "^9.6.2",
+        "ts-node": "^10.9.2",
+        "typescript": "~6.0.3",
+        "webpack": "^5.109.2",
+        "webpack-cli": "^7.2.2",
+        "webpack-stream": "^7.0.0"
+    }
+}

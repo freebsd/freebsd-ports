@@ -1,0 +1,4 @@
+Comentario is a privacy-focused, self-hosted comment engine for websites.
+It adds threaded Markdown comments with optional anonymous posting, local
+and social login (including OIDC and SSO), moderation, live updates, and
+statistics. Data can be stored in PostgreSQL or SQLite.

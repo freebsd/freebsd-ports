@@ -1,0 +1,18 @@
+{
+    "name": "comentario-docs",
+    "version": "3.0.0",
+    "description": "Comentario documentation website",
+    "private": true,
+    "scripts": {
+        "clean": "rm -rf ../build/docs/",
+        "build": "yarn run clean && hugo -DF --gc --minify --environment=edge",
+        "build:prod": "yarn run clean && hugo --gc --minify --environment=production",
+        "start": "hugo server -DFO"
+    },
+    "devDependencies": {
+        "@fortawesome/fontawesome-free": "^7.3.1",
+        "@popperjs/core": "^2.11.8",
+        "bootstrap": "^5.3.8",
+        "jquery": "^4.0.0"
+    }
+}

@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+Comentario has been installed.
+
+1. Review and edit:
+
+     %%ETCDIR%%/comentario.conf
+     %%ETCDIR%%/secrets.yaml
+
+   The sample configuration listens on 127.0.0.1:8080 and uses SQLite
+   at %%COMENTARIO_DBDIR%%/comentario.sqlite3. Set postgres: in
+   secrets.yaml if you prefer PostgreSQL.
+
+2. Enable and start the service:
+
+     sysrc comentario_enable=YES
+     service comentario start
+
+3. Open http://127.0.0.1:8080/ to complete setup.
+
+Documentation: https://docs.comentario.app/
+EOM
+}
+]

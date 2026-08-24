@@ -1,0 +1,49 @@
+{
+    "name": "comentario",
+    "version": "3.0.0",
+    "repository": "git@gitlab.com:comentario/comentario.git",
+    "author": "Dmitry Kann, Adhityaa Chandrasekar, Anton Linevych",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "build": "yarn workspaces foreach --topological-dev -W run build",
+        "build:prod": "yarn workspaces foreach --topological-dev -W run build:prod",
+        "cy": "cypress open --e2e --browser chrome",
+        "cy:ci": "cypress run --config video=false",
+        "generate": "yarn workspace comentario-frontend run generate",
+        "lint": "yarn workspaces foreach -W -p run lint",
+        "ng": "yarn workspace comentario-frontend run ng",
+        "start": "yarn workspace comentario-frontend run start",
+        "test": "yarn workspaces foreach -W -p run test",
+        "test:watch": "yarn workspace comentario-frontend run test"
+    },
+    "workspaces": [
+        "embed",
+        "frontend",
+        "docs"
+    ],
+    "devDependencies": {
+        "@eslint/js": "^9.39.5",
+        "@types/node": "^24.13.3",
+        "@types/yamljs": "^0.2.34",
+        "@typescript-eslint/eslint-plugin": "^8.67.0",
+        "@typescript-eslint/parser": "^8.67.0",
+        "@typescript-eslint/types": "^8.67.0",
+        "@typescript-eslint/utils": "^8.67.0",
+        "baseline-browser-mapping": "^2.11.13",
+        "cypress": "^15.20.1",
+        "cypress-terminal-report": "^7.3.3",
+        "eslint": "^9.39.5",
+        "eslint-plugin-cypress": "^6.4.4",
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-jsdoc": "^64.1.0",
+        "eslint-plugin-mocha": "^11.3.0",
+        "eslint-plugin-no-only-tests": "^3.4.0",
+        "eslint-plugin-prefer-arrow": "^1.2.3",
+        "eslint-scope": "^9.1.2",
+        "typescript": "~6.0.3",
+        "typescript-eslint": "^8.67.0",
+        "yamljs": "^0.3.0"
+    },
+    "packageManager": "yarn@4.17.1"
+}
