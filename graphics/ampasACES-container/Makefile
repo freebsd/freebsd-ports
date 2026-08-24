@@ -12,6 +12,9 @@ LICENSE_NAME=	AMPAS
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Ancient software, archived upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ampas
 GH_PROJECT=	aces_container
