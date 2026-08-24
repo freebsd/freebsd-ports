@@ -1,11 +1,11 @@
 PORTNAME=	drupal10
-PORTVERSION=	10.6.11
+PORTVERSION=	10.6.15
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
 DIST_SUBDIR=	drupal
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database driven web content management system (CMS)
 WWW=		https://www.drupal.org/
 
