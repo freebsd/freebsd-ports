@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-08-24 19:33:58 UTC
++++ CMakeLists.txt
+@@ -3,7 +3,7 @@ project(anese)
+ # I mean, that's how you learn, right?
+ 
+ project(anese)
+-cmake_minimum_required(VERSION 2.8.3)
++cmake_minimum_required(VERSION 3.5)
+ 
+ if(APPLE)
+   set(GUI_TYPE MACOSX_BUNDLE)
