@@ -28,17 +28,16 @@ LIBYAML_LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 .if ${PORT_OPTIONS:MLIBYAML}
 PEP517_BUILD_CONFIG_SETTING=	--config-json '{"pyyaml_build_config": "{\"include_dirs\": [\"${LOCALBASE}/include\"], \"library_dirs\": [\"${LOCALBASE}/lib\"]}"}'
-MAKE_ENV+=			PYYAML_FORCE_LIBYAML=1
+MAKE_ENV+=	PYYAML_FORCE_LIBYAML=1
 .else
-MAKE_ENV+=			PYYAML_FORCE_LIBYAML=0
-NO_ARCH=			yes
+MAKE_ENV+=	PYYAML_FORCE_LIBYAML=0
+NO_ARCH=	yes
 .endif
 
 post-install-EXAMPLES-on:
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 
 post-install-LIBYAML-on:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/yaml/_yaml*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/yaml/_yaml*.so
 
 .include <bsd.port.post.mk>
-
