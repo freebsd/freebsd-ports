@@ -1,24 +1,26 @@
 PORTNAME=	mod_gnutls
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+DISTVERSION=	0.13.0
 CATEGORIES=	www security
-MASTER_SITES=	https://mod.gnutls.org/downloads/
+MASTER_SITES=	https://github.com/airtower-luna/${PORTNAME}/releases/download/${PORTNAME}/${DISTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Extension for Apache httpd using GnuTLS library to provide HTTPS
-WWW=		https://mod.gnutls.org
+WWW=		https://github.com/airtower-luna/mod_gnutls
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=3.13:devel/py-pyyaml@${PY_FLAVOR}
-LIB_DEPENDS=	libgnutls.so:security/gnutls
+LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+		libgnutls.so:security/gnutls
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyyaml>=3.13:devel/py-pyyaml@${PY_FLAVOR}
 
-GNU_CONFIGURE=	yes
-USES=		apache compiler:c++11-lang cpe libtool pkgconfig python tar:bzip2
+USES=		apache compiler:c11 cpe meson pkgconfig python:build,test \
+		tar:bzip2
 CPE_VENDOR=	${PORTNAME}_project
+
+MESON_ARGS=	-Dapxs-bin=${APXS} \
+		-Dpdf-doc=false
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
@@ -26,11 +28,6 @@ DBDIR=		${PREFIX}/var/db/${PORTNAME}
 PLIST_SUB=	SED="${SED}" WWWGRP=${WWWGRP} WWWOWN=${WWWOWN}
 SUB_FILES=	pkg-message
 SUB_LIST=	DBDIR="${DBDIR}"
-
-CFLAGS+=	-Wno-deprecated-declarations -Wno-null-pointer-subtraction
-CONFIGURE_ARGS=	--with-apxs="${APXS}"
-
-INSTALL_TARGET=	install-strip
 
 post-install:
 	${MKDIR} "${STAGEDIR}${DBDIR}"
