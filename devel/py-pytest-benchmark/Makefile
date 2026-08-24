@@ -1,8 +1,9 @@
 PORTNAME=	pytest-benchmark
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pytest_benchmark-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	pytest fixture for benchmarking code

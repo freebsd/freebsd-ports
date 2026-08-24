@@ -1,3 +1,3 @@
-TIMESTAMP = 1730387096
-SHA256 (pytest-benchmark-5.1.0.tar.gz) = 9ea661cdc292e8231f7cd4c10b0319e56a2118e2c09d9f50e1b3d150d2aca105
-SIZE (pytest-benchmark-5.1.0.tar.gz) = 337810
+TIMESTAMP = 1787268166
+SHA256 (pytest_benchmark-5.2.3.tar.gz) = deb7317998a23c650fd4ff76e1230066a76cb45dcece0aca5607143c619e7779
+SIZE (pytest_benchmark-5.2.3.tar.gz) = 341340
