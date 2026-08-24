@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.19.14
+PORTVERSION=	3.19.17
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -10,7 +10,7 @@ COMMENT=	Tools and API for translation and localization engineering
 WWW=		https://toolkit.translatehouse.org/ \
 		https://github.com/translate/translate
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
@@ -20,7 +20,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		msghack:devel/gettext-msghack \
 		${PYTHON_PKGNAMEPREFIX}lxml>=6.1.0<7.0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}unicode-segmentation-rs>=0.2.0<0.3:textproc/py-unicode-segmentation-rs@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}unicode-segmentation-rs>=0.2.0<0.4:textproc/py-unicode-segmentation-rs@${PY_FLAVOR}
 
 USES=		gettext python:3.11+ shebangfix
 USE_PYTHON=	autoplist noflavors pep517
@@ -45,6 +45,7 @@ MANPAGES=	android2po \
 		mdx2po \
 		moz2po \
 		mozlang2po \
+		odf2po \
 		odf2xliff \
 		oo2po \
 		oo2xliff \

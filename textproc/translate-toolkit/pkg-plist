@@ -16,6 +16,7 @@ share/man/man1/mdx2po.1.gz
 share/man/man1/moz2po.1.gz
 @comment share/man/man1/mozfunny2prop.1.gz
 share/man/man1/mozlang2po.1.gz
+share/man/man1/odf2po.1.gz
 share/man/man1/odf2xliff.1.gz
 share/man/man1/oo2po.1.gz
 share/man/man1/oo2xliff.1.gz
