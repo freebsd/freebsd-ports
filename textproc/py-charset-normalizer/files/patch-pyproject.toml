@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2026-04-02 07:38:28 UTC
+--- pyproject.toml.orig	2026-08-15 06:34:17 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools>=68,<83.1"]
-+requires = ["setuptools>=61,<83.1"]
+-requires = ["setuptools>=68,<84.1"]
++requires = ["setuptools>=61,<84.1"]
  build-backend = "backend"
- backend-path = ["_mypyc_hook"]
+ backend-path = ["_build_hook"]
  
