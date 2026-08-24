@@ -19,7 +19,7 @@
 
 PORTNAME=	webengine
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -79,7 +79,7 @@ SNDIO_VARS_OFF=		QMAKE_CONFIGURE_ARGS+=-no-sndio
 # We pass `norecursive' to USES=qmake because src/plugins/plugins.pro checks
 # whether webenginewidgets is available, which fails when qmake processes all
 # .pro files at once.
-USES=		gl gnome gperf jpeg minizip ninja:build \
+USES=		gl gnome gperf jpeg localbase:ldflags minizip ninja:build \
 		perl5 pkgconfig python:build qmake:norecursive,outsource \
 		qt-dist:5,webengine shebangfix xorg
 USE_GL=		gl
@@ -117,6 +117,7 @@ CONFIGURE_ENV+=	NINJAFLAGS="-j${MAKE_JOBS_NUMBER}" \
 MAKE_ENV+=	CC="${CC}" CXX="${CXX}"			\
 		C_INCLUDE_PATH=${LOCALBASE}/include	\
 		CPLUS_INCLUDE_PATH=${LOCALBASE}/include	\
+		LIBRARY_PATH=${LOCALBASE}/lib		\
 		${CONFIGURE_ENV}
 
 QT_BINARIES=	yes
