@@ -1,5 +1,5 @@
 PORTNAME=	gcsfs
-PORTVERSION=	2026.7.0
+PORTVERSION=	2026.8.0
 CATEGORIES=	filesystems devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.27.0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}decorator>=4.1.2:devel/py-decorator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fsspec>=2026.6.0:filesystems/py-fsspec@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fsspec>=2026.7.0:filesystems/py-fsspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth-oauthlib>=0:security/py-google-auth-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=1.2:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-storage>=3.11.0:www/py-google-cloud-storage@${PY_FLAVOR} \
