@@ -27,8 +27,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		av1-grain-0.2.5 \
 		avif-parse-2.1.0 \
 		avif-serialize-0.8.9 \
-		aws-lc-rs-1.17.3 \
-		aws-lc-sys-0.43.0 \
+		aws-lc-rs-1.18.0 \
+		aws-lc-sys-0.44.0 \
 		axum-0.8.9 \
 		axum-core-0.5.6 \
 		base64-0.22.1 \
@@ -46,7 +46,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		block-buffer-0.10.4 \
 		block-buffer-0.12.1 \
 		block2-0.6.2 \
-		bstr-1.13.0 \
+		bstr-1.13.1 \
 		build_const-0.2.2 \
 		built-0.8.1 \
 		bumpalo-3.19.0 \
@@ -59,7 +59,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytes-1.12.1 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.4.0 \
+		cc-1.4.2 \
 		cedarwood-0.4.6 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.2 \
@@ -155,7 +155,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fdeflate-0.3.7 \
 		file-id-0.2.3 \
 		filetime-0.2.29 \
-		find-msvc-tools-0.1.9 \
+		find-msvc-tools-0.1.10 \
 		flate2-1.1.9 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.2 \
@@ -241,7 +241,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.35 \
-		js-sys-0.3.103 \
+		js-sys-0.3.104 \
 		json-escape-simd-3.1.1 \
 		kamadak-exif-0.6.1 \
 		kqueue-1.2.1 \
@@ -377,7 +377,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
 		png-0.18.1 \
-		portable-atomic-1.14.0 \
+		portable-atomic-1.15.0 \
 		portable-atomic-util-0.2.7 \
 		postcard-1.1.3 \
 		potential_utf-0.1.5 \
@@ -499,7 +499,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tauri-winres-0.3.6 \
 		tempfile-3.27.0 \
 		tendril-0.5.1 \
-		tera-2.1.0 \
+		tera-2.1.1 \
 		tera-contrib-0.2.0 \
 		termcolor-1.4.1 \
 		test-case-3.3.1 \
@@ -507,9 +507,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		test-case-macros-3.3.1 \
 		textwrap-0.16.2 \
 		thiserror-1.0.69 \
-		thiserror-2.0.19 \
+		thiserror-2.0.20 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.19 \
+		thiserror-impl-2.0.20 \
 		tiff-0.11.3 \
 		time-0.3.55 \
 		time-core-0.1.9 \
@@ -562,14 +562,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.4+wasi-0.2.12 \
-		wasm-bindgen-0.2.126 \
-		wasm-bindgen-futures-0.4.76 \
-		wasm-bindgen-macro-0.2.126 \
-		wasm-bindgen-macro-support-0.2.126 \
-		wasm-bindgen-shared-0.2.126 \
-		web-sys-0.3.103 \
+		wasm-bindgen-0.2.127 \
+		wasm-bindgen-futures-0.4.77 \
+		wasm-bindgen-macro-0.2.127 \
+		wasm-bindgen-macro-support-0.2.127 \
+		wasm-bindgen-shared-0.2.127 \
+		web-sys-0.3.104 \
 		web-time-1.1.0 \
-		web_atoms-0.2.5 \
+		web_atoms-0.2.6 \
 		webp-0.3.1 \
 		webpki-root-certs-1.0.9 \
 		weezl-0.1.12 \
@@ -626,6 +626,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
-		zune-core-0.5.1 \
+		zune-core-0.5.3 \
 		zune-inflate-0.2.54 \
 		zune-jpeg-0.5.15
