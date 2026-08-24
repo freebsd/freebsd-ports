@@ -1,6 +1,7 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/postgres/postgres/archive/refs/tags/:postgres_sources
 DISTFILES=	REL_15_13.tar.gz:postgres_sources
@@ -85,7 +86,6 @@ OPTIONS_DEFAULT+=	${opt}
 ${opt}_DESC=		Build the ${opt} extension
 DUCKDB_EXTENSIONS+=	${PORT_OPTIONS:M${opt}:S/${opt}/;${opt:tl}/}
 ${opt}_PLIST_FILES=	${PORT_OPTIONS:M${opt}:S/${opt}/lib\/lib${opt:tl}_extension.a/}
-LIB_DEPENDS+=		${PORT_OPTIONS:M${opt}:?${${opt}_LIB_DEPENDS}:}
 .endfor
 
 CMAKE_ARGS+=	-DBUILD_EXTENSIONS="${DUCKDB_EXTENSIONS:tW:S/ //g:S/^;//}" \
