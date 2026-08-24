@@ -1,10 +1,7 @@
-diff --git a/Imakefile.orig b/Imakefile
-index 96d7fd6..73497f4 100644
---- Imakefile.orig
-+++ Imakefile
-@@ -11,7 +11,7 @@
- 
- 
+--- Imakefile.orig	2014-08-11 12:15:00.000000000 -0700
++++ Imakefile	2026-08-24 11:42:30.895767000 -0700
+@@ -1,6 +1,6 @@
+ CCOPTIONS =		-ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
  INCLUDES =		-I. -I$(TOP) -I$(TOP)/X11 -I$(TOP)/X11/bitmaps
 -LOCAL_LIBRARIES =	$(XLIB)
 +LOCAL_LIBRARIES =	$(XLIB) -lcompat -lutil
