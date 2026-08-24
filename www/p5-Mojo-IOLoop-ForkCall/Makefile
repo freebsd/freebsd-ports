@@ -12,6 +12,9 @@ WWW=		https://metacpan.org/release/Mojo-IOLoop-ForkCall
 LICENSE=		ART10 GPLv1+
 LICENSE_COMB=		dual
 
+DEPRECATED=		Deprecated upstream in favor of Mojo::IOLoop::Subprocess, last release 0.21 in 2021
+EXPIRATION_DATE=	2027-02-28
+
 RUN_DEPENDS=		p5-Mojolicious>=5.08:www/p5-Mojolicious \
 			p5-IO-Pipely>=0.005:devel/p5-IO-Pipely \
 			p5-Perl-OSType>=0:devel/p5-Perl-OSType \
