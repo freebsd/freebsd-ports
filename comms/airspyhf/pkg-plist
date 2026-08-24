@@ -9,5 +9,5 @@ include/libairspyhf/iqbalancer.h
 lib/libairspyhf.a
 lib/libairspyhf.so
 lib/libairspyhf.so.0
-lib/libairspyhf.so.1.6.8
+lib/libairspyhf.so.1.8.1
 libdata/pkgconfig/libairspyhf.pc
