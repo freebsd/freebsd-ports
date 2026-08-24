@@ -1,5 +1,5 @@
-TIMESTAMP = 1784353029
+TIMESTAMP = 1787576081
 SHA256 (nginx-1.30.4.tar.gz) = 4261dc90e9e47c1c4041276e9aaa3d48ebe2e664f728e14fa95ae6c67d57a08b
 SIZE (nginx-1.30.4.tar.gz) = 1328314
-SHA256 (SpiderLabs-ModSecurity-nginx-e6a568a_GH0.tar.gz) = 0680f0c025b91e0f233cd908eac7da0f08ff5042f941c570d4ad8c8a94eea533
-SIZE (SpiderLabs-ModSecurity-nginx-e6a568a_GH0.tar.gz) = 1161281
+SHA256 (owasp-modsecurity-ModSecurity-nginx-9eb44fd_GH0.tar.gz) = 24981d81e119662acf3b949d132ba1afdd9845e7ba8c2fd084fcdf763c805802
+SIZE (owasp-modsecurity-ModSecurity-nginx-9eb44fd_GH0.tar.gz) = 1162429
