@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-06-13 05:39:25 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=77.0.3",
++    "setuptools>=61",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -13,8 +13,7 @@ keywords = [
+     "pytest",
+     "ordering",
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ requires-python = ">=3.9"
+ dynamic = ["version"]
+ dependencies = [
