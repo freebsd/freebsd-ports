@@ -1,7 +1,7 @@
 PORTNAME=	schematics-patched
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.2-patch
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +11,9 @@ WWW=		https://github.com/pombredanne/schematics
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream inactive since +8 years.  Please use devel/py-cattrs instead
+EXPIRATION_DATE=2026-09-24
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.7.3:devel/py-six@${PY_FLAVOR}
 
