@@ -25,9 +25,6 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e '/set(all_libs/s/$$/ m/' ${WRKSRC}/CMakeLists.txt
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.1ST ${STAGEDIR}${DOCSDIR}/
