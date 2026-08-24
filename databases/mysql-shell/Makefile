@@ -13,6 +13,10 @@ WWW=		https://dev.mysql.com/doc/mysql-shell/9.7/en/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# Version follows the MySQL release series this belongs to. repology measures
+# it against the newest train upstream ships instead, so its outdated report is
+# an artifact, not a pending update.
+
 # Only 64-bit systems are supported
 NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
 
