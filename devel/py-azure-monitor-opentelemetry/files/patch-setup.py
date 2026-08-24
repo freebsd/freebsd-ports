@@ -1,0 +1,25 @@
+--- setup.py.orig	2026-07-01 17:00:53 UTC
++++ setup.py
+@@ -85,14 +85,14 @@ setup(
+         "azure-core-tracing-opentelemetry~=1.0.0b11",
+         "azure-monitor-opentelemetry-exporter~=1.0.0b54",
+         "opentelemetry-sdk~=1.43.0",
+-        "opentelemetry-instrumentation-django>=0.64b0,<0.65.0",
+-        "opentelemetry-instrumentation-fastapi>=0.64b0,<0.65.0",
+-        "opentelemetry-instrumentation-flask>=0.64b0,<0.65.0",
+-        "opentelemetry-instrumentation-psycopg2>=0.64b0,<0.65.0",
+-        "opentelemetry-instrumentation-requests>=0.64b0,<0.65.0",
+-        "opentelemetry-instrumentation-urllib>=0.64b0,<0.65.0",
+-        "opentelemetry-instrumentation-urllib3>=0.64b0,<0.65.0",
+-        "opentelemetry-instrumentation-logging>=0.64b0,<0.65.0",
++        "opentelemetry-instrumentation-django>=0.65b0,<0.66.0",
++        "opentelemetry-instrumentation-fastapi>=0.65b0,<0.66.0",
++        "opentelemetry-instrumentation-flask>=0.65b0,<0.66.0",
++        "opentelemetry-instrumentation-psycopg2>=0.65b0,<0.66.0",
++        "opentelemetry-instrumentation-requests>=0.65b0,<0.66.0",
++        "opentelemetry-instrumentation-urllib>=0.65b0,<0.66.0",
++        "opentelemetry-instrumentation-urllib3>=0.65b0,<0.66.0",
++        "opentelemetry-instrumentation-logging>=0.65b0,<0.66.0",
+         "opentelemetry-resource-detector-azure<1.0.0,>=0.1.5",
+     ],
+     entry_points={
