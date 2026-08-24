@@ -1,5 +1,5 @@
 PORTNAME=	securesystemslib
-DISTVERSION=	1.4.0
+DISTVERSION=	1.5.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,8 @@ USES=		python shebangfix
 USE_PYTHON=	autoplist cryptography pep517 pytest
 
 SHEBANG_FILES=	securesystemslib/_vendor/test-ed25519-upstream.sh \
-	securesystemslib/hash.py \
-	securesystemslib/formats.py
+		securesystemslib/hash.py \
+		securesystemslib/formats.py
 
 NO_ARCH=	yes
 TEST_ARGS=	tests
