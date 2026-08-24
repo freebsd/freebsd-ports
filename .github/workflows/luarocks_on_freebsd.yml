@@ -1,0 +1,47 @@
+name: FreeBSD Lua Test
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  freebsd-test:
+    name: Test on FreeBSD
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        lua-version: [51, 52, 53, 54, 55]
+    steps:
+      - uses: actions/checkout@v7
+      - name: Run in FreeBSD VM
+        uses: vmactions/freebsd-vm@v1
+        with:
+          # release: "14.1"
+          usesh: true
+          prepare: |
+            pkg install -y lua${{ matrix.lua-version }}-luarocks
+          run: |
+            echo "--- START... --------"
+            echo "--- lua${{ matrix.lua-version }} -v"
+            lua${{ matrix.lua-version }} -v
+
+            # Demonstrate failure of luarocks51...
+            echo "--- luarocks${{ matrix.lua-version }} --version"
+            echo "---> luarocks51 only FAILS here."
+            luarocks${{ matrix.lua-version }} --version || true
+
+            echo "--- luarocks${{ matrix.lua-version }}"
+            echo "---> luarocks51 and luarocks52 both FAIL here."
+            luarocks${{ matrix.lua-version }}
+
+            # For Lua 5.3, 5.4, and 5.5...
+            # Demonstrate that luarocks{{ matrix.lua-version }} --lua-version=5.5 works as expected.
+            echo "--- pkg install -y lua55 && lua55 -v"
+            pkg install -y lua55
+            lua55 -v
+
+            echo "--- luarocks${{ matrix.lua-version }} --lua-version=5.5 --version"
+            luarocks${{ matrix.lua-version }} --lua-version=5.5 --version
+
+            echo "--- luarocks${{ matrix.lua-version }} --lua-version=5.5"
+            luarocks${{ matrix.lua-version }} --lua-version=5.5
