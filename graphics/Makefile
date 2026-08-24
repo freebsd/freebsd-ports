@@ -1014,6 +1014,7 @@
     SUBDIR += py-pointpats
     SUBDIR += py-projpicker
     SUBDIR += py-proplot
+    SUBDIR += py-py_svg_hush
     SUBDIR += py-pycairo
     SUBDIR += py-pycha
     SUBDIR += py-pycollada

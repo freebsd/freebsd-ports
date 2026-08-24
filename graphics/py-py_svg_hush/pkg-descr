@@ -1,0 +1,2 @@
+py-svg-hush is a Python package for sanitizing SVG files using the svg-hush
+Rust library.
