@@ -11,6 +11,10 @@ WWW=		https://www.mysql.com/
 
 LICENSE=		GPLv2
 
+# Tracks one MySQL release series; the others are separate mysql*-server ports.
+# repology merges all series into one project and measures against the newest
+# train upstream ships, so its outdated report is an artifact, not an update.
+
 # MySQL8.2+ supports only 64-bit platforms
 # Review list after 13.x EoL
 NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
