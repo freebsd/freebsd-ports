@@ -1,6 +1,6 @@
-TIMESTAMP = 1776187096
-SHA256 (LuaLS-lua-language-server-3.18.2_GH0.tar.gz) = fa561fad84fe44f6e0fda2eabef6b133464a324a67a57a7d5a9a89dcb7722519
-SIZE (LuaLS-lua-language-server-3.18.2_GH0.tar.gz) = 3103105
+TIMESTAMP = 1787575788
+SHA256 (LuaLS-lua-language-server-3.19.1_GH0.tar.gz) = 1bd25aabb83f41c36ba99be29fe0abb71a4e6056f6cdaafbd241d4c315809f88
+SIZE (LuaLS-lua-language-server-3.19.1_GH0.tar.gz) = 3176108
 SHA256 (CppCXY-EmmyLuaCodeStyle-8c4289b7_GH0.tar.gz) = b37d54f3f86eaa5fbdf988b756767d3e7cb9628b9e0d3e8598353eed73a19fe4
 SIZE (CppCXY-EmmyLuaCodeStyle-8c4289b7_GH0.tar.gz) = 5424097
 SHA256 (actboy168-bee.lua-f55b6988_GH0.tar.gz) = 0438c3f87b3d81e3443fc64c0a792c4d4453a45f24a18b4d489db2f8ad611dd6
