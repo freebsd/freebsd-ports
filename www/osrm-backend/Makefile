@@ -29,17 +29,18 @@ GH_ACCOUNT=	Project-OSRM
 GH_TAGNAME=	0ae940c31566df2aec0ecd679c84c11ede9831ef
 USE_RC_SUBR=	osrm
 CMAKE_ON=	BUILD_STATIC_LIBS
+CXXFLAGS+=	-Wno-deprecated-declarations
 USERS=		osrm
 GROUPS=		osrm
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror=all -Werror=extra|-Werror=extra|g' \
+		${PATCH_WRKSRC}/CMakeLists.txt
 
 pre-configure:
 	${REINPLACE_CMD} \
 		-e 's,$${CMAKE_CURRENT_SOURCE_DIR}/third_party/sol2/include,${LOCALBASE}/include/sol,' \
 		${WRKSRC}/CMakeLists.txt
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror=all -Werror=extra|-Werror=extra|g' \
-		${PATCH_WRKSRC}/CMakeLists.txt
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}/var/db/osrm-backend
