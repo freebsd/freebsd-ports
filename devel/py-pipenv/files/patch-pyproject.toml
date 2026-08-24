@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-12-17 01:52:26 UTC
+--- pyproject.toml.orig	2026-08-04 00:05:50 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@ requires = [
  [build-system]
@@ -15,10 +15,10 @@
    "packaging>=22",
 -  "setuptools>=67",
 +  "setuptools>=61",
-   "virtualenv>=20.24.2",
+   "virtualenv>=20.26.6",
  ]
- optional-dependencies.dev = [
-@@ -61,7 +61,7 @@ where = [ "." ]
+ optional-dependencies.completion = [
+@@ -64,7 +64,7 @@ where = [ "." ]
  
  [tool.setuptools.packages.find]
  where = [ "." ]
