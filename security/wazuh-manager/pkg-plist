@@ -53,7 +53,6 @@
 /var/ossec/bin/wazuh-control
 /var/ossec/bin/wazuh-csyslogd
 /var/ossec/bin/wazuh-db
-/var/ossec/bin/wazuh-dbd
 /var/ossec/bin/wazuh-execd
 /var/ossec/bin/wazuh-integratord
 /var/ossec/bin/wazuh-keystore
@@ -3158,9 +3157,9 @@
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/xxlimited_35%%PYTHON_TAG%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/zlib%%PYTHON_TAG%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/Grammar%%PYTHON_VER%%.15.final.0.pickle
+/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/Grammar%%PYTHON_VER%%.16.final.0.pickle
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar%%PYTHON_VER%%.15.final.0.pickle
+/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar%%PYTHON_VER%%.16.final.0.pickle
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/__init__.py
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/__main__.py
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib2to3/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -4545,13 +4544,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/streams/tls.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_process.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_thread.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.6.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.6.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.6.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.6.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.6.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.6.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.6.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -7845,14 +7844,14 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cffi/vengine_cpy.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cffi/vengine_gen.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cffi/verifier.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.4.3.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.4.3.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.4.3.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.4.3.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.4.3.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.4.3.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.4.3.dist-info/entry_points.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.4.3.dist-info/licenses/LICENSE
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.6.0.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.6.0.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.6.0.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.6.0.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.6.0.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.6.0.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.6.0.dist-info/entry_points.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.6.0.dist-info/licenses/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__main__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -7861,6 +7860,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/__main__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/__main__%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/__main__%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/_kernel%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/_kernel%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/_kernel%%PYTHON_TAG%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/_utils%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/_utils%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/_utils%%PYTHON_TAG%%.pyc
@@ -7879,18 +7881,26 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/equivalences%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/equivalences%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/equivalences%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/evaluation%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/evaluation%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/evaluation%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/output_names%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/output_names%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/output_names%%PYTHON_TAG%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/registry%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/registry%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/registry%%PYTHON_TAG%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/universaldetector%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/universaldetector%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/__pycache__/universaldetector%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/_kernel.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/_utils.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/_version.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/cli.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/detector.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/enums.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/equivalences.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/evaluation.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/models/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/models/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/models/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -7898,7 +7908,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/models/confusion.bin
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/models/idf.bin
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/models/models.bin
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/models/rowmax.bin
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/models/training_metadata.yaml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/output_names.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -7918,6 +7930,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/escape%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/escape%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/escape%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/language%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/language%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/language%%PYTHON_TAG%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/magic%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/magic%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/magic%%PYTHON_TAG%%.pyc
@@ -7927,6 +7942,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/orchestrator%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/orchestrator%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/orchestrator%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/postprocess%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/postprocess%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/postprocess%%PYTHON_TAG%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/statistical%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/statistical%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__/statistical%%PYTHON_TAG%%.pyc
@@ -7947,9 +7965,11 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/bom.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/confusion.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/escape.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/language.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/magic.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/markup.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/orchestrator.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/postprocess.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/statistical.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/structural.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/utf1632.py
@@ -20182,15 +20202,15 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pycparser/ply/ygen.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pycparser/plyparser.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pycparser/yacctab.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info/licenses/AUTHORS.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info/licenses/LICENSE
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info/licenses/AUTHORS.rst
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info/licenses/LICENSE
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyparsing-2.4.7.dist-info/INSTALLER
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyparsing-2.4.7.dist-info/LICENSE
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyparsing-2.4.7.dist-info/METADATA
@@ -20217,13 +20237,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_json_logger-2.0.2.dist-info/WHEEL
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_json_logger-2.0.2.dist-info/direct_url.json
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_json_logger-2.0.2.dist-info/top_level.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.27.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.27.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.27.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.27.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.27.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.27.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.27.dist-info/licenses/LICENSE.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.31.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.31.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.31.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.31.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.31.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.31.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.31.dist-info/licenses/LICENSE.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -20965,6 +20985,31 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing/tests/test_referencing_suite.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing/tests/test_retrieval.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing/typing.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex-2026.5.9.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex-2026.5.9.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex-2026.5.9.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex-2026.5.9.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex-2026.5.9.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex-2026.5.9.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex-2026.5.9.dist-info/licenses/LICENSE.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex-2026.5.9.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__init__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__pycache__/__init__%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__pycache__/_main%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__pycache__/_main%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__pycache__/_main%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__pycache__/_regex_core%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__pycache__/_regex_core%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__pycache__/_regex_core%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/_main.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/_regex%%PYTHON_TAG%%.so
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/_regex_core.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/tests/__pycache__/test_regex%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/tests/__pycache__/test_regex%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/tests/__pycache__/test_regex%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/tests/test_regex.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/requests-2.33.1.dist-info/INSTALLER
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/requests-2.33.1.dist-info/METADATA
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/requests-2.33.1.dist-info/RECORD
@@ -23723,13 +23768,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/sqlalchemy/util/tool_support.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/sqlalchemy/util/topological.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/sqlalchemy/util/typing.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.49.1.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.49.1.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.49.1.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.49.1.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.49.1.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.49.1.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.49.1.dist-info/licenses/LICENSE.md
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info/licenses/LICENSE.md
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -24729,13 +24774,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/server.pyx
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pxd
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pyx
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.6.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.6.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.6.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.6.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.6.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.6.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.6.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__main__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -30142,8 +30187,6 @@
 @owner root
 @group wazuh
 /var/ossec/packages_files/manager_installation_scripts/add_localfiles.sh
-/var/ossec/packages_files/manager_installation_scripts/databases/mysql.schema
-/var/ossec/packages_files/manager_installation_scripts/databases/postgresql.schema
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/HP-UX/localfile-commands.template
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/HP-UX/sca.files
 /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/HP-UX/wodle-syscollector.template
@@ -31069,7 +31112,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/models
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/spec
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.6.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref-3.7.2.dist-info
@@ -32005,8 +32048,8 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet/pipeline
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.4.3.dist-info/licenses
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.4.3.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.6.0.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/chardet-7.6.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/charset_normalizer/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/charset_normalizer/assets/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/charset_normalizer/assets
@@ -32898,15 +32941,15 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pycparser/ply
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pycparser
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pycparser-2.21.dist-info
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info/licenses
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.12.1.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyjwt-2.13.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pyparsing-2.4.7.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_dateutil-2.8.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_json_logger-2.0.2.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.27.dist-info/licenses
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.27.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.31.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/python_multipart-0.0.31.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pythonjsonlogger/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pythonjsonlogger
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/pytz/__pycache__
@@ -32943,6 +32986,12 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing-0.31.1.dist-info/licenses
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/referencing-0.31.1.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/tests/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex/tests
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex-2026.5.9.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/regex-2026.5.9.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/requests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/requests
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/requests-2.33.1.dist-info/licenses
@@ -33121,8 +33170,8 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette/middleware/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette/middleware
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.49.1.dist-info/licenses
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-0.49.1.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tabulate-0.8.9.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__
@@ -33206,7 +33255,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac/default
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.6.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/data
@@ -33504,7 +33553,6 @@
 @dir /var/ossec/logs/firewall
 @dir /var/ossec/logs/wazuh
 @dir /var/ossec/logs
-@dir /var/ossec/packages_files/manager_installation_scripts/databases
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/HP-UX
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/aix
 @dir /var/ossec/packages_files/manager_installation_scripts/etc/templates/config/almalinux/10

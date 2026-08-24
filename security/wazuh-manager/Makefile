@@ -1,8 +1,8 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.14.6
+DISTVERSION=	4.14.7
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/53/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/54/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
@@ -37,7 +37,7 @@ USES=		cpe dos2unix gmake perl5 python:3.11 readline shebangfix uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	alonsobsd
 GH_PROJECT=	wazuh-freebsd
-GH_TAGNAME=	b8c8db1e97f8a64a3904007640caae33a7a42085
+GH_TAGNAME=	74383ec64ee7a9cc1da4cea6e4346c33d30539ce
 
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -55,7 +55,7 @@ EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			bzip2.tar.gz:wazuh_sources \
 			cJSON.tar.gz:wazuh_sources \
 			cpp-httplib.tar.gz:wazuh_sources \
-			cpython-3.11.15.tar.gz:wazuh_cache \
+			cpython-3.11.16.tar.gz:wazuh_cache \
 			curl.tar.gz:wazuh_sources \
 			flatbuffers.tar.gz:wazuh_sources \
 			googletest.tar.gz:wazuh_sources \
@@ -80,8 +80,6 @@ EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			zlib.tar.gz:wazuh_sources
 
 OPTIONS_DEFINE=	INOTIFY ZEROMQ
-OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
-OPTIONS_GROUP=		DATABASE
 
 ZEROMQ_LIB_DEPENDS=	libczmq.so:net/czmq
 
@@ -92,10 +90,6 @@ ZEROMQ_MAKE_ENV=	USE_ZEROMQ=yes
 INOTIFY_MAKE_ENV=	USE_INOTIFY=yes \
 			INOTIFY_LIB=${INOTIFY_LIB}
 INOTIFY_USES=	pkgconfig inotify
-PGSQL_MAKE_ARGS=DATABASE=pgsql
-PGSQL_USES=	pgsql
-MYSQL_MAKE_ARGS=DATABASE=mysql
-MYSQL_USES=	mysql
 
 WAZUH_USER=	wazuh
 WAZUH_GROUP=	wazuh
@@ -107,7 +101,7 @@ CONFLICTS=	ossec-* wazuh-agent
 
 WZBIN_FILES=	agent_control wazuh-logcollector wazuh-execd  manage_agents wazuh-modulesd \
 		wazuh-agentlessd wazuh-analysisd wazuh-monitord wazuh-reportd wazuh-maild \
-		wazuh-logtest-legacy wazuh-csyslogd wazuh-dbd verify-agent-conf clear_stats \
+		wazuh-logtest-legacy wazuh-csyslogd verify-agent-conf clear_stats \
 		wazuh-regex wazuh-integratord wazuh-db wazuh-remoted wazuh-authd wazuh-keystore
 
 WZARBIN_FILES=	default-firewall-drop pf npf ipfw firewalld-drop disable-account \
@@ -152,6 +146,7 @@ WZPYTHONWHEELS=	cffi-2.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		psutil-6.1.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		pyarrow-24.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		pyyaml-6.0.3-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		regex-2026.5.9-cp311-cp311-freebsd_16_0_current_amd64.whl \
 		rpds_py-0.15.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		uvloop-0.19.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl
 
@@ -162,13 +157,13 @@ FBSD_RELEASE=	freebsd_${UNAME_r:S/./_/g:S/-/_/g}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "aarch64"
-FBSD14_PATCH_LEVEL=	_p7
-FBSD15_PATCH_LEVEL=	_p1
+FBSD14_PATCH_LEVEL=	_p8
+FBSD15_PATCH_LEVEL=	_p2
 .endif
 
 .if ${ARCH} != "aarch64"
-FBSD14_PATCH_LEVEL=	_p7
-FBSD15_PATCH_LEVEL=	_p1
+FBSD14_PATCH_LEVEL=	_p8
+FBSD15_PATCH_LEVEL=	_p2
 .endif
 
 .if ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
@@ -181,7 +176,7 @@ FBSD_VERSION_BASE=freebsd_15_1_release${FBSD15_PATCH_LEVEL}
 FBSD_MAJOR_VERSION=15
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd15-${ARCH}-${DISTVERSION}
 DISTFILES+=     ${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
-.elif ${OSVERSION} >= 1600000
+.elif ${OSVERSION} >= 1600000 && ${ARCH} != "aarch64"
 FBSD_VERSION_BASE=freebsd_16_0_current
 FBSD_MAJOR_VERSION=16
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd16-${ARCH}-${DISTVERSION}
@@ -403,7 +398,6 @@ do-install:
 		${STAGEDIR}${WAZUHPREFIX}/framework/python/bin/python3 -OO -m compileall -x 'bad_coding|badsyntax|lib2to3/tests/data' -f -p ${WAZUHPREFIX}/framework/python/lib/ "${PYTHON_VERSION}"
 
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/etc/templates
-	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/databases
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/src
 
 	cd ${WRKSRC}/etc/templates && ${COPYTREE_SHARE} config \
@@ -415,8 +409,6 @@ do-install:
 
 	${INSTALL_SCRIPT} ${WRKSRC}/gen_ossec.sh ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/
 	${INSTALL_SCRIPT} ${WRKSRC}/add_localfiles.sh ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/
-	${INSTALL_DATA} ${WRKSRC}/src/os_dbd/mysql.schema ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/databases
-	${INSTALL_DATA} ${WRKSRC}/src/os_dbd/postgresql.schema ${STAGEDIR}${WAZUHPREFIX}/packages_files/manager_installation_scripts/databases
 
 	@${FIND} ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib/${PYTHON_VERSION}/site-packages/numpy/distutils/ -type f -name "*.bak" -delete -o -name "*.orig" -delete
 	@${RM} ${STAGEDIR}${WAZUHPREFIX}/framework/python/lib/${PYTHON_VERSION}/site-packages/numpy/f2py/tests/src/temp
