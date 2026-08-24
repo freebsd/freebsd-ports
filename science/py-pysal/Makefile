@@ -1,6 +1,5 @@
 PORTNAME=	pysal
-PORTVERSION=	26.1
-PORTREVISION=	1
+PORTVERSION=	26.7
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,35 +17,35 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}access>=1.1.10:science/py-access@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.10:www/py-beautifulsoup@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}esda>=2.8.1:science/py-esda@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}esda>=2.10.0:science/py-esda@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}geopandas>=0.10.0:graphics/py-geopandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}giddy>=2.3.8:graphics/py-giddy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gwlearn>=0.1.1:science/py-gwlearn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}inequality>=1.1.2:science/py-inequality@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lazy_loader>=0.3:devel/py-lazy_loader@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}libpysal>=4.14.1:science/py-libpysal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libpysal>=4.15.0:science/py-libpysal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mapclassify>=2.10.0:graphics/py-mapclassify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mgwr>=2.2.1:graphics/py-mgwr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}momepy>=0.11.0:graphics/py-momepy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}momepy>=1.0.0:graphics/py-momepy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.22,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=22:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.4:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.0.2:devel/py-platformdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pointpats>=2.5.2:graphics/py-pointpats@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pointpats>=2.6.0:graphics/py-pointpats@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.27:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.1:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.8,1:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}segregation>=2.5.3:science/py-segregation@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}segregation>=2.5.5:science/py-segregation@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shapely>=2.0.1:devel/py-shapely@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spaghetti>=1.7.6:science/py-spaghetti@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spglm>=1.1.0:math/py-spglm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}spint>=1.0.7:math/py-spint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spint>=1.1.0:math/py-spint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}splot>=1.1.7:math/py-splot@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spml>=0.2.2:science/py-spml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spopt>=0.7.0:math/py-spopt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}spreg>=1.8.5:math/py-spreg@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tobler>=0.13.0:science/py-tobler@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}spreg>=1.9.0:math/py-spreg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tobler>=0.14.0:science/py-tobler@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.12+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
