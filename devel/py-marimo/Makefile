@@ -11,7 +11,7 @@ WWW=		https://marimo.io/
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0<9:devel/py-click \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0.16.0:textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}itsdangerous>=2.0.0:security/py-itsdangerous \
-		${PYTHON_PKGNAMEPREFIX}jedi>=0.18.0<0.20.0:devel/py-jedi \
+		${PYTHON_PKGNAMEPREFIX}jedi>=0.18.0:devel/py-jedi \
 		${PYTHON_PKGNAMEPREFIX}loro>=1.10.0:devel/py-loro \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.6<4:textproc/py-markdown \
 		${PYTHON_PKGNAMEPREFIX}msgspec>=0.20.0:devel/py-msgspec \
@@ -32,5 +32,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS} \
 
 USES=		python
 USE_PYTHON=	autoplist noflavors pep517
+
+post-patch:
+	${REINPLACE_CMD} '/jedi/s|>=.*"|"|' ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
