@@ -1,4 +1,4 @@
---- Makefile.orig	2026-06-10 21:32:39 UTC
+--- Makefile.orig	2026-08-19 01:44:01 UTC
 +++ Makefile
 @@ -145,6 +145,13 @@ $(info ARCHITECTURE: given as "$(PRAAT_ARCH)", resolve
  endif
@@ -14,3 +14,29 @@
  ifeq ($(OS_IS_FREEBSD),1)
    # by Paul Boersma, Jason Bacon, Adriaan de Groot
  
+@@ -185,7 +192,7 @@ ifeq ($(OS_IS_FREEBSD),1)
+ 
+   EXECUTABLE_FILE := praat
+ 
+-  NON_PRAAT_LIBRARIES := $(GRAPHICS_LINKER_FLAGS) -L$(LOCALBASE)/lib $(AUDIO_LINKER_FLAGS) -lm -lpthread -ltinfow
++  NON_PRAAT_LIBRARIES := $(GRAPHICS_LINKER_FLAGS) -L$(LOCALBASE)/lib $(AUDIO_LINKER_FLAGS) -lm -lpthread -ltinfow -lz
+ 
+   AR = ar
+   RANLIB = ls
+@@ -406,7 +413,6 @@ all: all-external all-self
+ 		external/opusfile/libopusfile.a \
+ 		external/whispercpp/libwhisper.a \
+ 		external/blake3/libblake3.a \
+-		external/zlib/libzlib.a \
+                $(NON_PRAAT_LIBRARIES) $(LDFLAGS)
+ 
+ all-external:
+@@ -423,7 +429,7 @@ all-external:
+ 	$(MAKE) -C external/opusfile
+ 	$(MAKE) -C external/whispercpp
+ 	$(MAKE) -C external/blake3
+-	$(MAKE) -C external/zlib
++	# $(MAKE) -C external/zlib
+ 
+ all-self:
+ 	$(MAKE) -C kar
