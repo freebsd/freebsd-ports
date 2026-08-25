@@ -11,6 +11,8 @@ WWW=		https://github.com/bibendovsky/bstone
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN=		Fails to build with CMake 4
+
 USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	bibendovsky
