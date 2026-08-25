@@ -1,1 +1,3 @@
-Filemanager with FTP capabilities. Uses Tcl/Tk.
+FileRunner is a two pane file manager for Unix and Unix like systems.
+It is simple and efficient and has a built-in FTP and SFTP client.
+New and improved from a FileRunner of long ago.
