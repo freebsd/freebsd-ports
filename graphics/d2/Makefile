@@ -1,7 +1,6 @@
 PORTNAME=	d2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
-PORTREVISION=	2
+DISTVERSION=	0.8.2
 CATEGORIES=	graphics
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -11,7 +10,9 @@ WWW=		https://www.d2lang.com
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		go:modules
+TEST_DEPENDS=	git:devel/git@tiny
+
+USES=		go:1.27+,modules
 GO_MODULE=	github.com/d2lang/d2
 
 PLIST_FILES=	bin/d2
