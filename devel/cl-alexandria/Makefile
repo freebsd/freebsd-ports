@@ -17,6 +17,8 @@ USES=		cl
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.common-lisp.net
 
+PORTSCOUT=	limit:^1\.
+
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	sbcl:lang/sbcl \
