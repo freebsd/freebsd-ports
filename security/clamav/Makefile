@@ -1,6 +1,5 @@
 PORTNAME=	clamav
-DISTVERSION=	1.5.2
-PORTREVISION=	4
+DISTVERSION=	1.5.4
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
@@ -55,7 +54,7 @@ PLIST_SUB+=	CLAMAVGROUP=${_CLAMAVGROUP} \
 		LOGDIR=${_LOGDIR} \
 		RUNDIR=${_RUNDIR}
 
-OPTIONS_DEFINE=	ARC ARJ DOCS EXPERIMENTAL MILTER STDERR TESTS UNRAR UNZOO
+OPTIONS_DEFINE=	ARC ARJ DOCS EXPERIMENTAL MILTER STDERR TEST UNRAR UNZOO
 
 OPTIONS_DEFAULT=	ARC ARJ MILTER UNRAR UNZOO
 OPTIONS_SUB=		yes
@@ -65,7 +64,6 @@ ARJ_DESC=		Enable arj archives support
 EXPERIMENTAL_DESC=	Build experimental code
 MILTER_DESC=		Compile the milter interface
 STDERR_DESC=		Print logs to stderr instead of stdout
-TESTS_DESC=		Build with test enabled (`make test` requires it)
 UNZOO_DESC=		Enable zoo archives support
 
 ARC_RUN_DEPENDS=		arc:archivers/arc
@@ -80,9 +78,10 @@ MILTER_USE+=			localbase
 .endif
 MILTER_CMAKE_BOOL=		ENABLE_MILTER
 STDERR_EXTRA_PATCHES=		${FILESDIR}/extra-patch-common_output.c
-TESTS_BUILD_DEPENDS=		${LOCALBASE}/include/check.h:devel/check
-TESTS_USES=			python:build
-TESTS_CMAKE_BOOL=		ENABLE_TESTS
+TEST_BUILD_DEPENDS=		${LOCALBASE}/include/check.h:devel/check \
+				${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+TEST_USES=			python:build
+TEST_CMAKE_BOOL=		ENABLE_TESTS
 UNRAR_CMAKE_BOOL=		ENABLE_UNRAR
 UNZOO_RUN_DEPENDS=		unzoo:archivers/unzoo
 
@@ -129,9 +128,9 @@ post-install-DOCS-on:
 post-install-DOCS-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/ClamAV
 
-pre-test-TESTS-off:
+pre-test-TEST-off:
 	@${ECHO_MSG} '******************************************************************' && \
-	${ECHO_MSG} '***** You need to enable TESTS option to execute `make test` *****' && \
+	${ECHO_MSG} '***** You need to enable TEST option to execute `make test` *****' && \
 	${ECHO_MSG} '******************************************************************' && \
 	${FALSE}
 

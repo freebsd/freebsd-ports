@@ -135,6 +135,7 @@ sbin/clamd
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Signatures/SignatureNames.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Signatures/YaraRules.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage/ClamdProtocol.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage/Configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage/ReportABug.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage/Scanning.html
@@ -142,14 +143,16 @@ sbin/clamd
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage/SignatureManagement.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/cisco-talos.gpg
 %%PORTDOCS%%%%DOCSDIR%%/html/mark-09e88c2c.min.js
+%%PORTDOCS%%%%DOCSDIR%%/html/mermaid-eefea253.min.js
+%%PORTDOCS%%%%DOCSDIR%%/html/mermaid-init-ccf746f1.js
 %%PORTDOCS%%%%DOCSDIR%%/html/mode-rust-2c9d5c9a.js
 %%PORTDOCS%%%%DOCSDIR%%/html/print.html
-%%PORTDOCS%%%%DOCSDIR%%/html/searcher-c2a407aa.js
-%%PORTDOCS%%%%DOCSDIR%%/html/searchindex-1b5ba28b.js
+%%PORTDOCS%%%%DOCSDIR%%/html/searcher-09f2665d.js
+%%PORTDOCS%%%%DOCSDIR%%/html/searchindex-f120d447.js
 %%PORTDOCS%%%%DOCSDIR%%/html/sitemap.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/theme-dawn-4493f9c8.js
 %%PORTDOCS%%%%DOCSDIR%%/html/theme-tomorrow_night-9dbe62a9.js
-%%PORTDOCS%%%%DOCSDIR%%/html/toc-cbaddea7.js
+%%PORTDOCS%%%%DOCSDIR%%/html/toc-0c194aa2.js
 %%PORTDOCS%%%%DOCSDIR%%/html/toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tomorrow-night-4c0ae647.css
 share/man/man1/clambc.1.gz
