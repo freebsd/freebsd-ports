@@ -7,4 +7,4 @@ lib/cmake/cctz/cctz-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cctz/cctz-targets.cmake
 lib/libcctz.so
 lib/libcctz.so.2
-lib/libcctz.so.2.4
+lib/libcctz.so.2.5
