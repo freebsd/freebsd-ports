@@ -1,6 +1,6 @@
 PORTNAME=	tuicr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
+DISTVERSION=	0.23.1
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libonig.so:devel/oniguruma \
 		libssh2.so:security/libssh2
+TEST_DEPENDS=	git:devel/git@tiny
 
 USES=		cargo ssl
 USE_GITHUB=	yes
