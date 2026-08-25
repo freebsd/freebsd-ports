@@ -1,5 +1,5 @@
-TIMESTAMP = 1783440690
+TIMESTAMP = 1787689564
 SHA256 (minisat2_2.2.1.orig.tar.gz) = e54afa3c192c1753bc8075c0c7e126d5c495d9066e3f90a2588091149ac9ca40
 SIZE (minisat2_2.2.1.orig.tar.gz) = 44229
-SHA256 (diffblue-cbmc-cbmc-6.10.0_GH0.tar.gz) = ecedafbe5ac25f520a065abd36f900b80d48627c30e141fa83bbdaa400e6bdf7
-SIZE (diffblue-cbmc-cbmc-6.10.0_GH0.tar.gz) = 9162298
+SHA256 (diffblue-cbmc-cbmc-6.11.0_GH0.tar.gz) = 217e5ed631bbd4b39659fde37a603482003605abd4cb2586b09c2da344d925db
+SIZE (diffblue-cbmc-cbmc-6.11.0_GH0.tar.gz) = 9183866

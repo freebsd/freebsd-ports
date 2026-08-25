@@ -1,7 +1,6 @@
 PORTNAME=	cbmc
 DISTVERSIONPREFIX=	cbmc-
-DISTVERSION=	6.10.0
-PORTREVISION=	2
+DISTVERSION=	6.11.0
 CATEGORIES=	devel
 MASTER_SITES=	DEBIAN/pool/main/m/minisat2:minisat
 DISTFILES=	minisat2_2.2.1.orig.tar.gz:minisat
@@ -28,6 +27,9 @@ GH_ACCOUNT=	diffblue
 SHEBANG_FILES=	${WRKSRC}/scripts/ls_parse.py
 
 CMAKE_OFF=	WITH_JBMC
+
+# libcprover.a carries the version in its filename
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 

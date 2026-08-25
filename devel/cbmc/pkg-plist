@@ -16,7 +16,7 @@ etc/bash_completion.d/cbmc
 include/cprover/api.h
 include/cprover/api_options.h
 include/cprover/verification_result.h
-lib/libcprover.6.10.0.a
+lib/libcprover.%%DISTVERSION%%.a
 share/man/man1/cbmc.1.gz
 share/man/man1/crangler.1.gz
 share/man/man1/goto-analyzer.1.gz
