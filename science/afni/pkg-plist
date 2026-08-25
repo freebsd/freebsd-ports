@@ -178,6 +178,7 @@ bin/3dRprogDemo.R
 bin/3dSeg
 bin/3dSetupGroupInCorr
 bin/3dSharpen
+bin/3dShuffle
 bin/3dSignatures
 bin/3dSignatures.R
 bin/3dSkullStrip
