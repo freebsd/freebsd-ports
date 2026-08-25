@@ -96,17 +96,6 @@ PLIST_SUB+=	SBT=""
 PLIST_SUB+=	SBT="@comment "
 .endif
 
-.if ${ARCH:Marmv?}
-pre-configure:
-	${REINPLACE_CMD} -e 's,@progbits,%progbits,' \
-		${WRKSRC}/boost/interprocess/interprocess_printers.hpp \
-		${WRKSRC}/boost/json/detail/gdb_printers.hpp \
-		${WRKSRC}/boost/outcome/experimental/status-code/status_code.hpp \
-		${WRKSRC}/boost/outcome/outcome_gdb.h \
-		${WRKSRC}/boost/unordered/unordered_printers.hpp \
-		${WRKSRC}/libs/json/pretty_printers/generate-gdb-header.py
-.endif
-
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_ARGS:NDESTDIR=*:S,^--prefix=,&${STAGEDIR},} ${INSTALL_TARGET}
