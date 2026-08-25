@@ -1,3 +1,54 @@
+  <vuln vid="f68670ea-a05d-11f1-8144-8447094a420f">
+    <topic>MariaDB -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mariadb106-server</name>
+	<range><lt>10.6.28</lt></range>
+      </package>
+      <package>
+	<name>mariadb1011-server</name>
+	<range><lt>10.11.19</lt></range>
+      </package>
+      <package>
+	<name>mariadb114-server</name>
+	<range><lt>11.4.13</lt></range>
+      </package>
+      <package>
+	<name>mariadb118-server</name>
+	<range><lt>11.8.9</lt></range>
+      </package>
+      <package>
+	<name>mariadb123-server</name>
+	<range><lt>12.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MariaDB project reports:</p>
+	<blockquote cite="https://mariadb.com/docs/release-notes/community-server/12.3/12.3.3">
+	  <p>Details in links</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-61081</cvename>
+      <cvename>CVE-2026-60585</cvename>
+      <cvename>CVE-2026-60331</cvename>
+      <cvename>CVE-2026-60747</cvename>
+      <cvename>CVE-2026-47023</cvename>
+      <cvename>CVE-2026-60184</cvename>
+      <url>https://mariadb.com/docs/release-notes/community-server/12.3/12.3.3</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/11.8/11.8.9</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/11.4/11.4.13</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/10.11/10.11.19</url>
+      <url>https://mariadb.com/docs/release-notes/community-server/10.6/10.6.28</url>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7b4cdfc-9f9d-11f1-a655-3497f65b111b">
     <topic>mod_gnutls -- multiple vulnerabilities</topic>
     <affects>
