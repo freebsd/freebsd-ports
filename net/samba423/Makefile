@@ -1,6 +1,6 @@
 PORTNAME=			samba423
 DISTVERSION=			4.23.11
-PORTREVISION=			1
+PORTREVISION=			2
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			samba-${DISTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
@@ -243,8 +243,8 @@ BUNDLED_CMOCKA_VARS=			_BUNDLED_LIBS+=cmocka \
 					_BUNDLED_LIB_replace=replace
 BUNDLED_CMOCKA_VARS_OFF=		_BUNDLED_LIBS+=!cmocka
 
-BUNDLED_TALLOC_BUILD_DEPENDS_OFF=	talloc243>=2.4.3:devel/talloc243
-BUNDLED_TALLOC_RUN_DEPENDS_OFF=		talloc243>=2.4.3:devel/talloc243
+BUNDLED_TALLOC_BUILD_DEPENDS_OFF=	talloc244>=2.4.4:devel/talloc244
+BUNDLED_TALLOC_RUN_DEPENDS_OFF=		talloc244>=2.4.4:devel/talloc244
 BUNDLED_TALLOC_CONFLICTS_INSTALL=	talloc-* talloc2*
 BUNDLED_TALLOC_VARS=			_BUNDLED_LIBS+=talloc \
 					_BUNDLED_LIB_replace=replace
