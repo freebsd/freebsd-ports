@@ -1,0 +1,12 @@
+--- meson.build.orig	2026-08-02 19:12:39 UTC
++++ meson.build
+@@ -14,7 +14,9 @@ wayfire = dependency('wayfire')
+ )
+ 
+ wayfire = dependency('wayfire')
++if build_machine.system() != 'freebsd'
+ pam = dependency('pam')
++endif
+ wayland_client = dependency('wayland-client')
+ wayland_protos = dependency('wayland-protocols')
+ gtkmm = dependency('gtkmm-4.0', version: '>=4.12')
