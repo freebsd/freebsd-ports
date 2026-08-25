@@ -1426,6 +1426,7 @@
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth-gitlab
     SUBDIR += rubygem-oauth-tty
+    SUBDIR += rubygem-oauth-tty-gitlab
     SUBDIR += rubygem-oauth0
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-oauth2-gitlab
