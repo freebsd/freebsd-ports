@@ -1,5 +1,6 @@
 PORTNAME=	klog
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
