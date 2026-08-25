@@ -3,6 +3,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		aho-corasick-1.1.4 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.5 \
+		anes-0.1.6 \
 		anstream-1.0.0 \
 		anstyle-1.0.14 \
 		anstyle-parse-1.0.0 \
@@ -10,35 +11,49 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.102 \
 		async-trait-0.1.89 \
+		atomic-waker-1.1.2 \
 		auditable-serde-0.8.0 \
 		autocfg-1.5.0 \
+		axum-0.8.9 \
+		axum-core-0.5.6 \
 		base64-0.22.1 \
-		bitflags-2.11.1 \
+		bitflags-2.13.1 \
 		bstr-1.12.1 \
 		bumpalo-3.20.2 \
 		bytes-1.11.1 \
+		cast-0.3.0 \
+		castaway-0.2.4 \
 		cc-1.2.62 \
 		cfg-if-1.0.4 \
 		chrono-0.4.44 \
+		ciborium-0.2.2 \
+		ciborium-io-0.2.2 \
+		ciborium-ll-0.2.2 \
 		clap-4.6.1 \
 		clap_builder-4.6.0 \
 		clap_complete-4.6.5 \
 		clap_complete_command-0.6.1 \
-		clap_complete_nushell-4.6.0 \
+		clap_complete_nushell-4.6.1 \
 		clap_derive-4.6.1 \
 		clap_lex-1.1.0 \
 		colorchoice-1.0.5 \
 		colored-2.2.0 \
+		compact_str-0.10.0 \
 		console-0.15.11 \
 		core-foundation-sys-0.8.7 \
+		cow-utils-0.1.3 \
 		crc32fast-1.5.0 \
+		criterion-0.5.1 \
+		criterion-plot-0.5.0 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
+		crunchy-0.2.4 \
 		darling-0.23.0 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
 		displaydoc-0.2.5 \
+		dragonbox_ecma-0.1.12 \
 		dyn-clone-1.0.20 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
@@ -69,12 +84,21 @@ CARGO_CRATES=	adler2-2.0.1 \
 		getrandom-0.4.2 \
 		git2-0.20.4 \
 		globset-0.4.18 \
+		half-2.7.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
 		hashlink-0.9.1 \
 		heck-0.5.0 \
+		hermit-abi-0.5.2 \
+		http-1.5.0 \
+		http-body-1.1.0 \
+		http-body-util-0.1.4 \
+		httparse-1.10.1 \
+		httpdate-1.0.3 \
+		hyper-1.11.0 \
+		hyper-util-0.1.20 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-2.2.0 \
@@ -93,7 +117,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		indicatif-0.17.11 \
 		inotify-0.11.2 \
 		inotify-sys-0.1.5 \
+		is-terminal-0.4.17 \
 		is_terminal_polyfill-1.70.2 \
+		itertools-0.10.5 \
 		itoa-1.0.18 \
 		jobserver-0.1.34 \
 		js-sys-0.3.98 \
@@ -113,28 +139,59 @@ CARGO_CRATES=	adler2-2.0.1 \
 		log-0.4.29 \
 		lru-0.16.4 \
 		matchers-0.2.0 \
-		memchr-2.8.0 \
+		matchit-0.8.4 \
+		memchr-2.8.3 \
+		memmap2-0.9.11 \
 		mimalloc-0.1.52 \
+		mime-0.3.17 \
 		miniz_oxide-0.8.9 \
 		mio-1.2.0 \
+		nonmax-0.5.5 \
 		notify-8.2.0 \
 		notify-types-2.1.0 \
 		nu-ansi-term-0.50.3 \
+		num-bigint-0.5.1 \
+		num-integer-0.1.46 \
 		num-traits-0.2.19 \
 		number_prefix-0.4.0 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
+		oorandom-11.1.5 \
 		openssl-0.10.79 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
 		openssl-src-300.6.0+3.6.2 \
 		openssl-sys-0.9.115 \
+		owo-colors-4.3.0 \
+		oxc-miette-3.0.1 \
+		oxc-miette-derive-3.0.1 \
+		oxc_allocator-0.143.0 \
+		oxc_ast-0.143.0 \
+		oxc_ast_macros-0.143.0 \
+		oxc_ast_visit-0.143.0 \
+		oxc_data_structures-0.143.0 \
+		oxc_diagnostics-0.143.0 \
+		oxc_ecmascript-0.143.0 \
+		oxc_estree-0.143.0 \
+		oxc_index-5.0.0 \
+		oxc_parser-0.143.0 \
+		oxc_regular_expression-0.143.0 \
+		oxc_span-0.143.0 \
+		oxc_str-0.143.0 \
+		oxc_syntax-0.143.0 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		pastey-0.2.2 \
 		percent-encoding-2.3.2 \
+		phf-0.14.0 \
+		phf_generator-0.14.0 \
+		phf_macros-0.14.0 \
+		phf_shared-0.14.0 \
 		pin-project-lite-0.2.17 \
 		pkg-config-0.3.33 \
+		plotters-0.3.7 \
+		plotters-backend-0.3.7 \
+		plotters-svg-0.3.7 \
 		portable-atomic-1.13.1 \
 		potential_utf-0.1.5 \
 		prettyplease-0.2.37 \
@@ -166,33 +223,44 @@ CARGO_CRATES=	adler2-2.0.1 \
 		schemars_derive-1.2.1 \
 		scopeguard-1.2.0 \
 		semver-1.0.28 \
+		seq-macro-0.3.6 \
 		serde-1.0.228 \
+		serde_bytes-0.11.19 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_derive_internals-0.29.1 \
 		serde_json-1.0.149 \
+		serde_path_to_error-0.1.20 \
 		serde_spanned-0.6.9 \
+		serde_urlencoded-0.7.1 \
 		serde_yaml-0.9.34+deprecated \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.8 \
 		simd-adler32-0.3.9 \
 		similar-2.7.0 \
+		siphasher-1.0.3 \
 		slab-0.4.12 \
 		smallvec-1.15.1 \
+		smawk-0.3.3 \
 		socket2-0.6.3 \
 		spdx-0.10.9 \
 		stable_deref_trait-1.2.1 \
+		static_assertions-1.1.0 \
 		streaming-iterator-0.1.9 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
 		syn-2.0.117 \
+		syn-3.0.3 \
+		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		tempfile-3.27.0 \
+		textwrap-0.16.2 \
 		thiserror-2.0.18 \
 		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
 		tinystr-0.8.3 \
+		tinytemplate-1.2.1 \
 		tokio-1.52.3 \
 		tokio-macros-2.7.0 \
 		tokio-util-0.7.18 \
@@ -201,6 +269,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		toml_edit-0.22.27 \
 		toml_write-0.1.2 \
 		topological-sort-0.2.2 \
+		tower-0.5.3 \
+		tower-layer-0.3.3 \
+		tower-service-0.3.3 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
@@ -222,7 +293,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tree-sitter-go-0.23.4 \
 		tree-sitter-haskell-0.23.1 \
 		tree-sitter-hcl-1.1.0 \
-		tree-sitter-htmlx-svelte-0.1.8 \
+		tree-sitter-htmlx-svelte-0.1.16 \
 		tree-sitter-java-0.23.5 \
 		tree-sitter-javascript-0.23.1 \
 		tree-sitter-kotlin-ng-1.1.0 \
@@ -241,7 +312,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tree-sitter-xml-0.7.0 \
 		tree-sitter-zig-1.1.2 \
 		ts-parser-perl-1.1.2 \
+		unicode-id-start-1.4.0 \
 		unicode-ident-1.0.24 \
+		unicode-linebreak-0.1.5 \
+		unicode-segmentation-1.13.3 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		unsafe-libyaml-0.2.11 \
@@ -267,6 +341,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.227.1 \
 		wasmparser-0.244.0 \
+		web-sys-0.3.98 \
 		web-time-1.1.0 \
 		webpki-roots-0.26.11 \
 		webpki-roots-1.0.7 \
