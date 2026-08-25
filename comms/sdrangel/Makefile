@@ -1,5 +1,6 @@
 PORTNAME=	sdrangel
 DISTVERSION=	7.27.1
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	res2500@ukr.net
