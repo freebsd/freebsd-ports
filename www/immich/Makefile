@@ -1,6 +1,7 @@
 PORTNAME=	immich
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
 DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
@@ -22,7 +23,8 @@ LIB_DEPENDS=	libheif.so:graphics/libheif \
 RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool \
 		ffmpeg:multimedia/ffmpeg
 
-USES=		gmake nodejs:22,build,run pkgconfig python:build
+USES=		gmake nodejs:22,build,run pgsql:14+ pkgconfig python:build
+WANT_PGSQL=	client
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	immich-app
@@ -48,6 +50,10 @@ GROUPS=		immich
 
 post-extract:
 	cd ${WRKSRC} && ${ECHO_CMD} "trustLockfile: true" >> pnpm-workspace.yaml
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/lib/postgresql/[^/]*/bin/|${LOCALBASE}/bin/|' \
+		${WRKSRC}/server/src/services/database-backup.service.ts
 
 pre-build:
 	cd ${WRKDIR} && ${SETENV} PATH=${PATH} \
