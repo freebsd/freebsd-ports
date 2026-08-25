@@ -11,10 +11,10 @@
 #		Default: /usr/local/etc/telemt/config.toml
 #
 # telemt_uid: The user account used to run the telemt daemon.
-#		Default:  "nobody"
+#		Default:  "telemt"
 #
 # telemt_gid: The group account used to own files created by this script.
-#		Default:  "nobody"
+#		Default:  "telemt"
 #
 # telemt_flags: Additional flags to pass to the telemt daemon.
 #		Default:  "--syslog"
@@ -28,8 +28,8 @@ load_rc_config ${name}
 
 : ${telemt_enable:="NO"}
 : ${telemt_config:="/usr/local/etc/telemt/config.toml"}
-: ${telemt_uid:="nobody"}
-: ${telemt_gid:="nobody"}
+: ${telemt_uid:="telemt"}
+: ${telemt_gid:="telemt"}
 : ${telemt_flags:="--syslog"}
 
 pidfile="/var/run/telemt/telemt.pid"
@@ -42,9 +42,7 @@ extra_commands="reload"
 
 telemt_prestart() {
 	pidfile_dir="$(dirname "${pidfile}")"
-	if ! [ -d "${pidfile_dir}" ]; then
-		install -d -m 755 -o "${telemt_uid}" -g "${telemt_gid}" "${pidfile_dir}"
-	fi
+	install -d -m 755 -o "${telemt_uid}" -g "${telemt_gid}" "${pidfile_dir}"
 }
 
 run_rc_command "$1"
