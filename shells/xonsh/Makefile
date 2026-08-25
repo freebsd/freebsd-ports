@@ -31,6 +31,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=5.3.1:devel/py-coverage@${PY_FLAV
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
+TESTING_UNSAFE=	tests fails under a race found recently: \
+		https://github.com/xonsh/xonsh/issues/6582
+
 NO_ARCH=	yes
 
 do-test:
