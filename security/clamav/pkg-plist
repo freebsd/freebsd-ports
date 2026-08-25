@@ -11,7 +11,6 @@ etc/certs/clamav.crt
 %%MILTER%%@sample etc/clamav-milter.conf.sample
 @sample etc/clamd.conf.sample
 @sample etc/freshclam.conf.sample
-%%MILTER%%etc/rc.d/clamav_milter
 include/clamav-config.h
 include/clamav-types.h
 include/clamav-version.h
