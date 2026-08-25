@@ -1,5 +1,5 @@
 PORTNAME=	picolisp
-PORTVERSION=	26.3
+PORTVERSION=	26.6
 CATEGORIES=	lang
 MASTER_SITES=	https://software-lab.de/
 DISTNAME=	picoLisp-${PORTVERSION}
