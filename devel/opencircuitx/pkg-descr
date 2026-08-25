@@ -1,0 +1,7 @@
+OpenCircuitX is a free, open-source EDA (Electronic Design Automation) platform
+for VHDL and Verilog: the hardware description languages (HDL) used to design
+digital logic. It is developed by OpenLabX and unifies an IDE-quality
+HDL editor, a visual circuit canvas, an RTL schematic viewer, a
+waveform viewer, and a full FPGA toolchain in one window, for hardware
+engineers, students, and FPGA hobbyists alike.
+
