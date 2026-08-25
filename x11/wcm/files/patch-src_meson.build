@@ -1,0 +1,19 @@
+--- src/meson.build.orig	2026-07-28 05:20:28 UTC
++++ src/meson.build
+@@ -2,10 +2,15 @@ xkbregistry = dependency('xkbregistry', required: true
+ gtkmm     = dependency('gtkmm-3.0', required: true)
+ wf_config = dependency('wf-config', version: '>=0.6.0', required: true)
+ xkbregistry = dependency('xkbregistry', required: true)
++if build_machine.system() != 'freebsd'
+ libintl = dependency('intl', required: true)
++endif
+ libfmt = dependency('fmt', required: true)
+ 
+-dep_list = [xml, gtkmm, wf_config, wf_protos, evdev, xkbregistry, libintl, libfmt]
++dep_list = [xml, gtkmm, wf_config, wf_protos, evdev, xkbregistry, libfmt]
++if build_machine.system() != 'freebsd'
++  dep_list += [libintl]
++endif
+ 
+ sources = files('main.cpp', 'metadata.cpp', 'wcm.cpp', 'utils.cpp')
+ 
