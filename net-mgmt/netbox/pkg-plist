@@ -171,6 +171,7 @@
 %%DATADIR%%/core/tests/test_changelog.py
 %%DATADIR%%/core/tests/test_data_backends.py
 %%DATADIR%%/core/tests/test_filtersets.py
+%%DATADIR%%/core/tests/test_forms.py
 %%DATADIR%%/core/tests/test_jobs.py
 %%DATADIR%%/core/tests/test_management_command_coverage.py
 %%DATADIR%%/core/tests/test_management_commands.py
@@ -810,6 +811,7 @@
 %%DATADIR%%/extras/tests/test_management_commands.py
 %%DATADIR%%/extras/tests/test_models.py
 %%DATADIR%%/extras/tests/test_scripts.py
+%%DATADIR%%/extras/tests/test_scripts_deletion.py
 %%DATADIR%%/extras/tests/test_signals.py
 %%DATADIR%%/extras/tests/test_tables.py
 %%DATADIR%%/extras/tests/test_tags.py
@@ -1055,6 +1057,7 @@
 %%DATADIR%%/netbox/tests/test_base_classes.py
 %%DATADIR%%/netbox/tests/test_cli.py
 %%DATADIR%%/netbox/tests/test_config.py
+%%DATADIR%%/netbox/tests/test_context_managers.py
 %%DATADIR%%/netbox/tests/test_forms.py
 %%DATADIR%%/netbox/tests/test_graphql.py
 %%DATADIR%%/netbox/tests/test_import.py
@@ -1971,6 +1974,7 @@
 %%DATADIR%%/utilities/tests/test_filter_modifiers.py
 %%DATADIR%%/utilities/tests/test_filters.py
 %%DATADIR%%/utilities/tests/test_forms.py
+%%DATADIR%%/utilities/tests/test_html.py
 %%DATADIR%%/utilities/tests/test_jsonschema.py
 %%DATADIR%%/utilities/tests/test_management_commands.py
 %%DATADIR%%/utilities/tests/test_managers.py
