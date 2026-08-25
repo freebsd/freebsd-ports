@@ -1,0 +1,8 @@
+xshape changes the geometry of a single table -- pivot, unpivot, transpose,
+split one column into several, merge several into one, explode a delimited
+cell into rows -- without ever changing, filtering, or aggregating a value.
+
+Every input cell reappears unchanged, and a pivot errors out rather than
+silently summing on a collision.  It shares the column-addressing dialect of
+xled (letters, bracketed names, ranges), so the tools read as one language
+with different verbs.
