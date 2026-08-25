@@ -5,7 +5,10 @@ MASTER_SITES=	SF/phpgroupware/phpgroupware/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web based GroupWare system
-WWW=		https://phpgroupware.org/
+WWW=		https://savannah.gnu.org/projects/phpgroupware/
+
+DEPRECATED=	Abandoned upstream, decommissioned by the GNU Project, last release in 2010
+EXPIRATION_DATE=	2026-11-30
 
 USES=		php:mod tar:bzip2
 
