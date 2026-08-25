@@ -5553,3 +5553,4 @@ www/pecl-solr|www/php-solr|2026-08-17|Converted to standard extension from pecl 
 biology/gperiodic|science/gperiodic|2026-08-19|Move to a more appropriate category
 devel/rubygem-grape20|devel/rubygem-grape-gitlab|2026-08-20|Make clear it is used for Gitlab only
 sysutils/filevercmp||2026-08-23|Expired: Dependent ports now use git submodules
+devel/py-ptvsd|devel/py-debugpy|2026-08-25|Has expired: No longer maintained upstream, use py-debugpy instead

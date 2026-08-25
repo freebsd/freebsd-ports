@@ -5797,7 +5797,6 @@
     SUBDIR += py-psygnal
     SUBDIR += py-ptable
     SUBDIR += py-ptpython
-    SUBDIR += py-ptvsd
     SUBDIR += py-pudb
     SUBDIR += py-pure-eval
     SUBDIR += py-pure-sasl
