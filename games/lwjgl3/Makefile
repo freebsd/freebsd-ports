@@ -1,5 +1,5 @@
 PORTNAME=	lwjgl
-DISTVERSION=	3.4.2
+DISTVERSION=	3.4.3
 CATEGORIES=	games java
 MASTER_SITES=	https://repo1.maven.org/:source1
 PKGNAMESUFFIX=	3
@@ -8,8 +8,8 @@ DISTFILES=	maven2/com/beust/jcommander/1.78/jcommander-1.78.jar:source1 \
 		maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:source1 \
 		maven2/org/joml/joml/1.10.9/joml-1.10.9-sources.jar:source1 \
 		maven2/org/joml/joml/1.10.9/joml-1.10.9.jar:source1 \
-		maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0-sources.jar:source1 \
-		maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:source1 \
+		maven2/org/jspecify/jspecify/1.0.1/jspecify-1.0.1-sources.jar:source1 \
+		maven2/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar:source1 \
 		maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37-sources.jar:source1 \
 		maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar:source1 \
 		maven2/org/openjdk/jmh/jmh-generator-annprocess/1.37/jmh-generator-annprocess-1.37.jar:source1 \
@@ -89,9 +89,9 @@ post-extract:
 		${WRKSRC}/bin/libs/java/joml-sources.jar
 	${LN} -s ${DISTDIR}/maven2/org/joml/joml/1.10.9/joml-1.10.9.jar \
 		${WRKSRC}/bin/libs/java/joml.jar
-	${LN} -s ${DISTDIR}/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0-sources.jar \
+	${LN} -s ${DISTDIR}/maven2/org/jspecify/jspecify/1.0.1/jspecify-1.0.1-sources.jar \
 		${WRKSRC}/bin/libs/java/jspecify-sources.jar
-	${CP}    ${DISTDIR}/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar \
+	${CP}    ${DISTDIR}/maven2/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar \
 		${WRKSRC}/bin/libs/java/jspecify.jar
 	${LN} -s ${DISTDIR}/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37-sources.jar \
 		${WRKSRC}/bin/libs/java/jmh-core-sources.jar
