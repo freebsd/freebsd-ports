@@ -1,5 +1,5 @@
 PORTNAME=	mariadb-connector-c
-PORTVERSION=	3.4.8
+PORTVERSION=	3.4.9
 CATEGORIES=	databases
 MASTER_SITES=	\
 		https://ftp.nluug.nl/db/${SITESDIR}/ \
