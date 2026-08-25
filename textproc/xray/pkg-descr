@@ -1,0 +1,7 @@
+xray is a read-only profiler for tabular data: a single streaming pass over a
+CSV or DSV file that reports what the file is (shape, delimiter, encoding),
+what each column holds (type, fill, cardinality), and what is likely to bite a
+later step -- ragged rows, currency text, mixed types or buried headers.
+
+Values stay stringly-typed, so leading zeros and long identifiers are still
+text.  It observes only, and never writes.

@@ -2333,6 +2333,7 @@
     SUBDIR += xom
     SUBDIR += xorg-sgml-doctools
     SUBDIR += xql
+    SUBDIR += xray
     SUBDIR += xshape
     SUBDIR += xslide.el
     SUBDIR += xstream
