@@ -1,5 +1,6 @@
 include/dvdread/attributes.h
 include/dvdread/bitreader.h
+include/dvdread/dvd_filesystem.h
 include/dvdread/dvd_reader.h
 include/dvdread/dvd_udf.h
 include/dvdread/ifo_print.h
@@ -11,5 +12,5 @@ include/dvdread/nav_types.h
 include/dvdread/version.h
 lib/libdvdread.so
 lib/libdvdread.so.8
-lib/libdvdread.so.8.1.0
+lib/libdvdread.so.8.2.0
 libdata/pkgconfig/dvdread.pc

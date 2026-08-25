@@ -1,5 +1,5 @@
 PORTNAME=	libdvdread
-DISTVERSION=	7.0.0
+DISTVERSION=	7.1.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -16,7 +16,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://code.videolan.org/
 GL_ACCOUNT=	videolan
 
-PORTDOCS=	AUTHORS COPYING NEWS README.md TODO
+PORTDOCS=	AUTHORS COPYING NEWS README.md
 
 MESON_ARGS=	-Ddefault_library=shared
 
