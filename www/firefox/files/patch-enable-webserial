@@ -1,0 +1,73 @@
+commit 98cea4a7ca336b4a509cd1e7bcfe69836a9d1f29
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    Enable WebSerial for FreeBSD
+    
+    https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=297874
+    
+    Patch by pcc <pcc@gmx.net>
+
+diff --git dom/webserial/PosixSerialPlatformService.cpp dom/webserial/PosixSerialPlatformService.cpp
+index 9389ef0d9821..0786bf5f0dd5 100644
+--- dom/webserial/PosixSerialPlatformService.cpp
++++ dom/webserial/PosixSerialPlatformService.cpp
+@@ -419,6 +419,32 @@ nsresult PosixSerialPlatformService::EnumeratePortsImpl(
+     *aLikelyAccessDenied =
+         aPorts.IsEmpty() && (errors == ErrorKind::eAccessDenied);
+   }
++#elif defined(XP_FREEBSD)
++  DIR* devDir = opendir("/dev");
++  if (devDir) {
++    auto cleanupDir = MakeScopeExit([&]() { closedir(devDir); });
++    while (struct dirent* ent = readdir(devDir)) {
++      const char* name = ent->d_name;
++      bool isTtyU = strncmp(name, "ttyU", 4) == 0;
++      bool isTtyu = strncmp(name, "ttyu", 4) == 0;
++      if ((!isTtyU && !isTtyu) || name[4] < '0' || name[4] > '9') {
++        continue;
++      }
++      nsAutoCString devpath("/dev/");
++      devpath.Append(name);
++      auto isReal = IsRealSerialPort(devpath.get());
++      if (isReal.isErr()) {
++        continue;
++      }
++      NS_ConvertUTF8toUTF16 path(devpath);
++      IPCSerialPortInfo info;
++      info.id() = path;
++      info.path() = path;
++      info.friendlyName() =
++          NS_ConvertUTF8toUTF16(nsDependentCString(name));
++      aPorts.AppendElement(info);
++    }
++  }
+ #endif
+ 
+   MOZ_LOG(gWebSerialLog, LogLevel::Debug,
+diff --git dom/webserial/SerialPlatformService.cpp dom/webserial/SerialPlatformService.cpp
+index 1da19f340514..a7ce888f6d78 100644
+--- dom/webserial/SerialPlatformService.cpp
++++ dom/webserial/SerialPlatformService.cpp
+@@ -15,7 +15,8 @@
+ namespace mozilla::dom {
+ 
+ #if !defined(XP_WIN) && !defined(XP_MACOSX) && \
+-    !(defined(XP_LINUX) && !defined(ANDROID))
++    !(defined(XP_LINUX) && !defined(ANDROID)) && \
++    !defined(XP_FREEBSD)
+ already_AddRefed<SerialPlatformService>
+ SerialPlatformService::GetInstanceImpl() {
+   return MakeAndAddRef<TestSerialPlatformService>();
+diff --git dom/webserial/moz.build dom/webserial/moz.build
+index bc17c7301d7d..77e4ed2f34ea 100644
+--- dom/webserial/moz.build
++++ dom/webserial/moz.build
+@@ -25,7 +25,7 @@ if CONFIG["OS_TARGET"] == "WINNT":
+         "cfgmgr32",
+         "setupapi",
+     ]
+-elif (CONFIG["OS_TARGET"] == "Darwin" and CONFIG["TARGET_OS"] != "iOS") or CONFIG[
++elif (CONFIG["OS_TARGET"] == "Darwin" and CONFIG["TARGET_OS"] != "iOS") or CONFIG["OS_TARGET"] == "FreeBSD" or CONFIG[
+     "OS_TARGET"
+ ] == "Linux":
+     UNIFIED_SOURCES += [
