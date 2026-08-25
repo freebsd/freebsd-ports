@@ -1,5 +1,6 @@
 PORTNAME=	scilab
 DISTVERSION=	2026.1.0
+PORTREVISION=	1
 CATEGORIES=	math cad java
 
 MAINTAINER=	thierry@FreeBSD.org
