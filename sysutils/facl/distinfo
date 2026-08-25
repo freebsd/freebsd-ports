@@ -1,5 +1,5 @@
-TIMESTAMP = 1787432059
-SHA256 (go/sysutils_facl/facl-v1.4.0/v1.4.0.mod) = 4e145e73c936f5b7bf81113cafcad18f2d5dcdcebeedbfc8efce7b4b9717a6d0
-SIZE (go/sysutils_facl/facl-v1.4.0/v1.4.0.mod) = 1593
-SHA256 (go/sysutils_facl/facl-v1.4.0/v1.4.0.zip) = c7af25845f0fb5807a4e6e561536924fb5a5b9c5e2e21227de27883589e780bc
-SIZE (go/sysutils_facl/facl-v1.4.0/v1.4.0.zip) = 605571
+TIMESTAMP = 1787619546
+SHA256 (go/sysutils_facl/facl-v1.4.1/v1.4.1.mod) = 4e145e73c936f5b7bf81113cafcad18f2d5dcdcebeedbfc8efce7b4b9717a6d0
+SIZE (go/sysutils_facl/facl-v1.4.1/v1.4.1.mod) = 1593
+SHA256 (go/sysutils_facl/facl-v1.4.1/v1.4.1.zip) = d2961e1dde5342f724c693b73d1b2c82624b76b18f1cf0151a3b9c3042c1d569
+SIZE (go/sysutils_facl/facl-v1.4.1/v1.4.1.zip) = 608135
