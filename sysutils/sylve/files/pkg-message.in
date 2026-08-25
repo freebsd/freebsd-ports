@@ -1,24 +1,44 @@
 [
 { type: install
   message: <<EOM
-Sylve was installed!
+Documentation: https://sylve.io/docs/
+Configuration: https://sylve.io/getting-started/#configuration-reference
 
-1) The default config file is located at %%ETCDIR%%/config.json. PLEASE
-   change your password in this file before starting the service for the
-   first time. The default username is "admin" and the default password is
-"admin".
+Sylve provides many configurable settings and optional services. Review the
+documentation before configuring and starting Sylve.
 
-2) By default, Sylve datadir is located at %%DATADIR%% directory, this can
-   be modified in %%ETCDIR%%/config.json. This directory can become quite
-   large, with downloaded image files.
+1) Review %%ETCDIR%%/config.json before starting Sylve. The built-in
+   administrator username is "admin", and the supplied configuration sets
+   its password to "admin". Change admin.password before starting the
+   service for the first time. If you instead change it through the web
+   interface, restrict access to trusted networks until the password has
+   been changed under Settings > Authentication > Users > Local.
 
-3) Enable Sylve by using the command `sysrc sylve_enable=YES` and start
-   the service with `service sylve start`.
+2) Sylve requires a configured system hostname.
 
-4) You should now be able to visit https://IP:8181 to access the web
-   interface!
+3) Sylve stores runtime state under /var/db/sylve by default. Change
+   dataPath in %%ETCDIR%%/config.json to use another location.
 
-5) Enjoy!
+4) Enable Sylve with `sysrc sylve_enable=YES`, then start it with
+   `service sylve start`.
+
+5) Open https://HOST:8181 in a web browser.
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.3.0"
+  message: <<EOM
+Documentation: https://sylve.io/docs/
+Configuration: https://sylve.io/getting-started/#configuration-reference
+
+Existing credentials are preserved during this upgrade. The built-in
+administrator username is "admin". If its password is still "admin",
+restrict Sylve to trusted networks until you change it through the web
+interface under Settings > Authentication > Users > Local.
+
+Alternatively, set admin.password to a strong value and
+admin.forcePasswordReset to true in %%ETCDIR%%/config.json, then restart
+Sylve.
 EOM
 }
 ]

@@ -1,17 +1,18 @@
 PORTNAME=	sylve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.3
-PORTREVISION=	6
+DISTVERSION=	0.3.0
 CATEGORIES=	sysutils
-MASTER_SITES+=	https://github.com/AlchemillaHQ/Sylve/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:web_assets
-DISTFILES+=	sylve-web-assets.tar.gz:web_assets
+MASTER_SITES=	https://github.com/AlchemillaHQ/Sylve/releases/download/${DISTVERSIONFULL}/:web_assets
+DISTFILES=	sylve-web-assets.tar.gz:web_assets
 
 MAINTAINER=	hayzam@alchemilla.io
-COMMENT=	Lightweight GUI for managing Bhyve, Jails, ZFS, networking
-WWW=		https://github.com/alchemillahq/sylve
+COMMENT=	Lightweight GUI for managing bhyve, jails, ZFS, and networking
+WWW=		https://sylve.io/
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+IGNORE_FreeBSD_14=	requires OpenZFS 2.3.0 or newer and nlsysevent(4)
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 RUN_DEPENDS=	dnsmasq>0:dns/dnsmasq \
@@ -33,10 +34,11 @@ GO_MODULE=	github.com/alchemillahq/sylve
 
 GO_TARGET=	./cmd/sylve
 
+SUB_FILES=	pkg-message
+
 post-extract:
-	@${MKDIR} ${WRKSRC}/internal/assets/web-files
-	@${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/sylve-web-assets.tar.gz \
-		-C ${WRKSRC}/internal/assets/
+	@${RM} -r ${WRKSRC}/internal/assets/web-files
+	@${MV} ${WRKDIR}/web-files ${WRKSRC}/internal/assets/
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
