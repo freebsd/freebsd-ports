@@ -1,10 +1,8 @@
 PORTNAME?=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	6
 CATEGORIES=	www
-MASTER_SITES=	https://nginx.org/download/ \
-		LOCAL/osa
+MASTER_SITES=	https://nginx.org/download/
 PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -17,7 +15,7 @@ LICENSE_FILE?=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL=	nginx
 
-PORTSCOUT=	limit:^1\.2[8-9]\.[0-9]*
+PORTSCOUT=	limit:^1\.31\.[0-9]*
 
 USES=		cpe compiler:env
 
