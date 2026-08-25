@@ -33,6 +33,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		crunchy-0.2.4 \
 		difflib-0.4.0 \
 		either-1.15.0 \
+		encoding_rs-0.8.35 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		fancy-regex-0.14.0 \
