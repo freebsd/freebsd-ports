@@ -1,7 +1,7 @@
 PORTNAME=	alexandria
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
@@ -19,19 +19,28 @@ GL_SITE=	https://gitlab.common-lisp.net
 
 PORTSCOUT=	limit:^1\.
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS PDF
 
-DOCS_BUILD_DEPENDS=	sbcl:lang/sbcl \
-			texi2pdf:print/texinfo
-DOCS_USES=		tex
-DOCS_USE=		TEX=latex:build
-DOCS_INFO=		doc/${PORTNAME}
+PDF_DESC=	Build and install PDF documentation
+
+DOCS_BUILD_DEPENDS=	sbcl:lang/sbcl
+DOCS_USES=		makeinfo
+DOCS_INFO=		${PORTNAME}
+
+PDF_IMPLIES=		DOCS
+PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
+PDF_USES=		tex
+PDF_USE=		TEX=dvipdfmx:build
+PDF_PLIST_FILES=	${DOCSDIR}/${PORTNAME}.pdf
 
 do-build:
 	@${DO_NADA}
 
 do-build-DOCS-on:
-	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} doc
+	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} html info
+
+do-build-PDF-on:
+	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} pdf
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME}/${PORTNAME}-1 \
@@ -45,8 +54,12 @@ do-install:
 	${RLN} ${STAGEDIR}${ASDF_PATHNAME}/${PORTNAME}-tests.asd ${STAGEDIR}${ASDF_REGISTRY}
 
 do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+
+do-install-PDF-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.html ${WRKSRC}/doc/${PORTNAME}.pdf \
-		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

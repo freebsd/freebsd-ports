@@ -27,4 +27,3 @@ lib/common-lisp/alexandria/alexandria.asd
 lib/common-lisp/system-registry/alexandria-tests.asd
 lib/common-lisp/system-registry/alexandria.asd
 %%PORTDOCS%%%%DOCSDIR%%/alexandria.html
-%%PORTDOCS%%%%DOCSDIR%%/alexandria.pdf
