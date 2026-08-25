@@ -1,6 +1,6 @@
---- ipaplatform/freebsd/paths.py.orig	2026-08-19 13:55:40 UTC
+--- ipaplatform/freebsd/paths.py.orig	2026-08-25 07:58:40 UTC
 +++ ipaplatform/freebsd/paths.py
-@@ -0,0 +1,221 @@
+@@ -0,0 +1,228 @@
 +#
 +# Copyright (C) 2026  FreeIPA Contributors see COPYING for license
 +#
@@ -212,6 +212,13 @@
 +    SSS_SSH_KNOWNHOSTS = "/usr/local/bin/sss_ssh_knownhosts"
 +    SSS_SSH_KNOWNHOSTSPROXY = "/usr/local/bin/sss_ssh_knownhostsproxy"
 +    TDBTOOL = "/usr/local/bin/tdbtool"
++
++    IPA_CACERT_MANAGE = "/usr/local/sbin/ipa-cacert-manage"
++    IPA_GETCERT = "/usr/local/bin/ipa-getcert"
++
++    CHRONYC = "/usr/local/bin/chronyc"
++    CHRONYD = "/usr/local/sbin/chronyd"
++    CHRONY_CONF = "/usr/local/etc/chrony.conf"
 +
 +    SYSTEMCTL = None
 +    SYSTEMD_TMPFILES = None

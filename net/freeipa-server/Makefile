@@ -1,5 +1,6 @@
 PORTNAME=	freeipa-server
 DISTVERSION=	4.13.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://codeberg.org/freeipa/freeipa/releases/download/release-${DISTVERSION:S/./-/g}/
 DISTNAME=	freeipa-${DISTVERSION}
@@ -36,7 +37,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuuid.so:misc/libuuid \
 		libxmlrpc.so:net/xmlrpc-c
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache24/mod_auth_gssapi.so:www/freeipa-auth-gssapi \
+RUN_DEPENDS=	${LOCALBASE}/bin/chronyc:net/chrony \
+		${LOCALBASE}/libexec/apache24/mod_auth_gssapi.so:www/freeipa-auth-gssapi \
 		${LOCALBASE}/libexec/apache24/mod_deflate.so:www/apache24 \
 		${LOCALBASE}/libexec/apache24/mod_expires.so:www/apache24 \
 		${LOCALBASE}/libexec/apache24/mod_lookup_identity.so:www/mod_lookup_identity \
