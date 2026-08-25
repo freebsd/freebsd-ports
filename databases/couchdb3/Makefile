@@ -44,10 +44,23 @@ SUB_LIST=	APPDIR=${_APPDIR} \
 		RELDIR=${_RELDIR} \
 		WWWDIR=${WWWDIR}
 
+_ERL_LIBDIR=	${LOCALBASE}/lib/erlang${_ERLVER}
+_OTP_APPS=	asn1 compiler crypto inets kernel os_mon public_key \
+		runtime_tools sasl ssl stdlib syntax_tools xmerl
+
 USERS=		couchdb
 GROUPS=		couchdb
 
-PLIST_SUB=	VERSION=${DISTVERSION}
+PLIST_SUB=	VERSION=${DISTVERSION} \
+		ERTS_VER=${:!cd ${_ERL_LIBDIR} 2>/dev/null && \
+			${ECHO_CMD} erts-* || ${TRUE}!:S/erts-//}
+# erts and the OTP applications below are copied into the release from
+# lang/erlang-runtime${_ERLVER}; resolve their versions at plist time so
+# an OTP update does not require touching pkg-plist.
+.for _app in ${_OTP_APPS}
+PLIST_SUB+=	${_app:tu}_VER=${:!cd ${_ERL_LIBDIR}/lib 2>/dev/null && \
+			${ECHO_CMD} ${_app}-* || ${TRUE}!:S/${_app}-//}
+.endfor
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
