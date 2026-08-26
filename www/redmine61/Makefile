@@ -1,6 +1,5 @@
 PORTNAME=	redmine
-PORTVERSION=	6.1.2
-PORTREVISION=	1
+PORTVERSION=	6.1.3
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	61
@@ -44,7 +43,7 @@ RUN_DEPENDS=	rubygem-actionpack-xml_parser-rails72>=0:textproc/rubygem-actionpac
 		rubygem-propshaft-rails72>=1.1.0:www/rubygem-propshaft-rails72 \
 		rubygem-rack>=3.1.3:www/rubygem-rack \
 		rubygem-rails-dom-testing-rails72>=2.2<3:textproc/rubygem-rails-dom-testing-rails72 \
-		rubygem-rails72>=7.2.3:www/rubygem-rails72 \
+		rubygem-rails72>=7.2.3.1:www/rubygem-rails72 \
 		rubygem-rbpdf>=1.21.4:print/rubygem-rbpdf \
 		rubygem-requestjs-rails-rails72>=0.0.13:www/rubygem-requestjs-rails-rails72 \
 		rubygem-request_store15>=1.5.1:devel/rubygem-request_store15 \
@@ -80,16 +79,14 @@ OPTIONS_SINGLE_DB=	TRILOGY MYSQL2 PGSQL SQLITE SQL
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=	yes
 MARKDOWN_DESC=	Enable Markdown support
-TRILOGY_DESC=	MySQL database support (via trilogy rubygem, preferred)
 MYSQL2_DESC=	MySQL database support (via mysql2 rubygem)
 PGSQL_DESC=	Postgres database support (via pg rubygem)
 PUMA_DESC=	Use Puma WEB server
 RMAGIC_DESC=	Enable Gantt charts support
 SQLITE_DESC=	Sqlite3 database support (Not for production!)
 SQL_DESC=	SQL Server requires manual (non-port) gem install
+TRILOGY_DESC=	MySQL database support (via trilogy rubygem, preferred)
 MARKDOWN_RUN_DEPENDS=	rubygem-redcarpet>=3.5.1:textproc/rubygem-redcarpet
-TRILOGY_RUN_DEPENDS=	rubygem-trilogy>=2.9.0:databases/rubygem-trilogy \
-			rubygem-with_advisory_lock61>0:devel/rubygem-with_advisory_lock61
 MYSQL2_RUN_DEPENDS=	rubygem-mysql2>=0.5.0:databases/rubygem-mysql2 \
 			rubygem-with_advisory_lock61>0:devel/rubygem-with_advisory_lock61
 PGSQL_RUN_DEPENDS=	rubygem-pg>=1.5.3:databases/rubygem-pg
@@ -99,6 +96,8 @@ PUMA_SUB_LIST=		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PUMA_VARS=		USE_RC_SUBR=redmine
 RMAGIC_RUN_DEPENDS=	rubygem-mini_magick>=5.0.1:graphics/rubygem-mini_magick
 SQLITE_RUN_DEPENDS=	rubygem-sqlite3>=2.5.0:databases/rubygem-sqlite3
+TRILOGY_RUN_DEPENDS=	rubygem-trilogy>=2.9.0:databases/rubygem-trilogy \
+			rubygem-with_advisory_lock61>0:devel/rubygem-with_advisory_lock61
 
 .include <bsd.port.options.mk>
 
