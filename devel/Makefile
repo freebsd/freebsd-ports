@@ -7463,6 +7463,7 @@
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-bullet
     SUBDIR += rubygem-bullet-rails72
+    SUBDIR += rubygem-bullet-rails81
     SUBDIR += rubygem-byebug
     SUBDIR += rubygem-c21e
     SUBDIR += rubygem-cabin
