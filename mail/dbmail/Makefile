@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent \
 		libgmime-3.0.so:mail/gmime30 \
 		libmhash.so:security/mhash \
-		libzdb.so:databases/libzdb
+		libzdb.so.19:databases/libzdb
 
 USES=		autoreconf gmake gnome libtool localbase pkgconfig shebangfix \
 		ssl
