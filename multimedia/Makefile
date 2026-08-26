@@ -125,7 +125,6 @@
     SUBDIR += jellyfin
     SUBDIR += jellyfin-desktop
     SUBDIR += jellyfin-ffmpeg7
-    SUBDIR += jmref
     SUBDIR += kaffeine
     SUBDIR += kamoso
     SUBDIR += kasts

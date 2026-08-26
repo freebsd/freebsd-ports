@@ -5555,3 +5555,4 @@ devel/rubygem-grape20|devel/rubygem-grape-gitlab|2026-08-20|Make clear it is use
 sysutils/filevercmp||2026-08-23|Expired: Dependent ports now use git submodules
 devel/py-ptvsd|devel/py-debugpy|2026-08-25|Has expired: No longer maintained upstream, use py-debugpy instead
 security/please||2026-08-26|Has expired: Upstream project has been archived, use doas or sudo or sudo-rs instead
+multimedia/jmref||2026-08-26|Has expired: No longer maintained upstream
