@@ -11,6 +11,8 @@ WWW=		https://projects.gw-computing.net/projects/dfc
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with CMake 4
+
 USES=		cmake
 CMAKE_ARGS+=	-DMAN_PATH=${PREFIX}/share/man -DDFC_DOC_PATH=${DOCSDIR}
 
