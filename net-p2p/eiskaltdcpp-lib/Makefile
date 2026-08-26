@@ -1,7 +1,7 @@
 PORTNAME=	eiskaltdcpp
 PORTVERSION=	2.2.10
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	37
+PORTREVISION?=	38
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX?=	-lib
 
@@ -11,6 +11,9 @@ WWW=		https://github.com/eiskaltdcpp/eiskaltdcpp
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Last release 5 years ago, uses Qt 5, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 GENTOO_PATCHES_PREFIX=	${FILESDIR}/gentoo/${PORTNAME}-${PORTVERSION}
 EXTRA_PATCHES=	${GENTOO_PATCHES_PREFIX}-ipv6_upnp.patch:-p1 \
