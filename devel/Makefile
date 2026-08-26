@@ -8598,6 +8598,7 @@
     SUBDIR += rubygem-wisper
     SUBDIR += rubygem-wisper2
     SUBDIR += rubygem-with_advisory_lock61
+    SUBDIR += rubygem-with_advisory_lock81
     SUBDIR += rubygem-with_env
     SUBDIR += rubygem-wmi-lite
     SUBDIR += rubygem-xdg
