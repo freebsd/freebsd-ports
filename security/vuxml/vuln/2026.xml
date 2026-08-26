@@ -1,3 +1,270 @@
+  <vuln vid="ef63188f-a0ff-11f1-ae1f-bc241121aa0a">
+    <topic>FreeBSD -- TOCTOU race in POSIX shared memory large page configuration</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_3</lt></range>
+	<range><ge>15.0</ge><lt>15.0_13</lt></range>
+	<range><ge>14.4</ge><lt>14.4_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The FIOSSHMLPGCNF ioctl(2) operation configures the page size
+	  for a largepage shared memory object.  This is intended to be used
+	  immediately after creating the object, before any memory is allocated
+	  for the object.  The handler checked whether a page size had already
+	  been configured without holding the rangelock.  Two concurrent
+	  callers could both observe an unconfigured object and set conflicting
+	  page sizes, leaving the object in an inconsistent state.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can exploit this race to escalate
+	  privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58094</cvename>
+      <freebsdsa>SA-26:63.posixshm</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-08-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a34b5154-a0ff-11f1-ae1f-bc241121aa0a">
+    <topic>FreeBSD -- Kernel use-after-free via tty ioctls</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_3</lt></range>
+	<range><ge>15.0</ge><lt>15.0_13</lt></range>
+	<range><ge>14.4</ge><lt>14.4_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The TIOCSCTTY ioctl handler drops the tty lock in order to
+	  acquire the process tree lock.  After reacquiring the tty lock, the
+	  handler did not revalidate the state of the terminal, and could
+	  proceed to link a terminal that was concurrently being destroyed
+	  to the calling process' session.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can exploit this race condition to
+	  escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58093</cvename>
+      <freebsdsa>SA-26:62.tty</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-08-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="204af099-a0ff-11f1-ae1f-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in ppp(8)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_3</lt></range>
+	<range><ge>15.0</ge><lt>15.0_13</lt></range>
+	<range><ge>14.4</ge><lt>14.4_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>ppp(8) contained three memory safety errors in its handling of
+	  multilink endpoint discriminator options.</p>
+	  <p>mp_Enddisc() used incorrect length calculations when formatting
+	  endpoint discriminator addresses for display, allowing a received
+	  endpoint option to overflow a global result buffer.  [CVE-2026-58095]</p>
+	  <p>LcpDecodeConfig() did not validate the length of received endpoint
+	  discriminator options against the minimum required by RFC 1717.
+	  Undersized options would trigger an out-of-bounds write.  [CVE-2026-58096]</p>
+	  <p>mp_SetEnddisc() copied a user-supplied PSN endpoint value without
+	  length validation, allowing a buffer overflow via the ppp(8) command
+	  interface.  [CVE-2026-58097]</p>
+	<h1>Impact:</h1>
+	  <p>A malicious PPP peer can exploit CVE-2026-58095 and CVE-2026-58096
+	  to crash ppp(8) or potentially execute arbitrary code as root.  A
+	  local user with access to the ppp(8) command interface can exploit
+	  CVE-2026-58097 similarly.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58095</cvename>
+      <cvename>CVE-2026-58096</cvename>
+      <cvename>CVE-2026-58097</cvename>
+      <freebsdsa>SA-26:60.ppp</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-08-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="55fbe7b1-a0fe-11f1-ae1f-bc241121aa0a">
+    <topic>FreeBSD -- Unauthorized credential switching</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_3</lt></range>
+	<range><ge>15.0</ge><lt>15.0_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>In FreeBSD 15.0, the kernel structure used to represent user
+	  credentials changed: previously the primary group ID was stored in
+	  the first element of the array containing the list of supplementary
+	  group IDs, whereas now the primary group ID is stored in a dedicated
+	  field.  This change was largely internal to the kernel and not
+	  user-visible.</p>
+	  <p>One function, group_is_primary(), was not properly updated as a
+	  part of this transition.  This function is used by mac_do to determine
+	  the primary group ID of the credential after applying a transition
+	  rule, used when the rule target does not explicitly specify a group.</p>
+	  <p>As a result, with certain mac_do rules, it is possible for a
+	  credential switch to incorrectly set the primary group ID to the
+	  ID stored in the first element of the original credential's
+	  supplementary group array.  If the list of supplementary groups is
+	  empty, this value will be 0, corresponding to the "wheel" group.
+	  For example, a rule such as "uid=1001>uid=1002" can be abused to
+	  set the primary group ID to 0 even if the process did not originally
+	  belong to group 0.</p>
+	<h1>Impact:</h1>
+	  <p>Certain mac_do rules can be abused to set a process' group ID
+	  to 0.  Note however, that the rule must apply to the caller in order
+	  for the bug to be triggered, e.g., given the ruleset "uid=1001>uid=1002",
+	  the user must have user ID 1001 in order to trigger the bug.</p>
+	  <p>Further, logged-in users will in general have a non-empty supplementary
+	  group list, in which case the bug can at worst be used to set the
+	  credential's first supplementary group ID as its primary group ID.
+	  Processes must explicitly remove themselves from all supplementary
+	  groups, using the privileged setgroups(2) system call, in order to
+	  exploit the bug to set 0 as the primary group ID.</p>
+	  <p>Since membership in group 0 is often used to enable controlled
+	  privilege escalation, the bug might be further exploitable to obtain
+	  root privileges, depending on the system configuration.  For instance,
+	  a ruleset such as the following could be exploited by a process
+	  running as user 1001 and with an empty supplementary group list:
+	  "uid=1001>uid=1002;gid=0>uid=0".</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58092</cvename>
+      <freebsdsa>SA-26:59.mac_do</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-08-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="226751fb-a0fe-11f1-ae1f-bc241121aa0a">
+    <topic>FreeBSD -- Kernel use-after-free via the SNDCTL_DSP_SYNCSTART ioctl</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_3</lt></range>
+	<range><ge>15.0</ge><lt>15.0_13</lt></range>
+	<range><ge>14.4</ge><lt>14.4_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The implementation of this ioctl attempts to acquire locks on
+	  all channels in a sync group.  If locking a channel would block,
+	  it releases the sync group list lock and sleeps.  Upon reawakening,
+	  it is possible that the sync group structure is freed, but the
+	  implementation did not handle this possibility.</p>
+	<h1>Impact:</h1>
+	  <p>On a system with a multiple audio devices, an unprivileged local
+	  user can exploit this use-after-free to escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58091</cvename>
+      <freebsdsa>SA-26:58.sound</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-08-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e99e4b19-a0fd-11f1-ae1f-bc241121aa0a">
+    <topic>FreeBSD -- Use-after-free in unix SOCK_STREAM message handling</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_3</lt></range>
+	<range><ge>15.0</ge><lt>15.0_13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The SOCK_STREAM receive path in the unix socket implementation
+	  failed to fully detach control messages from the socket buffer
+	  before processing them.  Some error paths would free those messages,
+	  leaving freed data mbufs in the receive socket buffer.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can exploit this use-after-free to
+	  escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58090</cvename>
+      <freebsdsa>SA-26:57.unix</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-08-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9c2801aa-a0fd-11f1-ae1f-bc241121aa0a">
+    <topic>FreeBSD -- hwpmc fails to detach PMCs during exec credential transitions</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_3</lt></range>
+	<range><ge>15.0</ge><lt>15.0_13</lt></range>
+	<range><ge>14.4</ge><lt>14.4_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When a process calls execve(2) to execute a setuid or setgid
+	  image, hwpmc(4) is supposed to detach PMCs owned by unprivileged
+	  processes.  An inverted check meant that this scenario was not
+	  handled properly.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user who has attached PMCs to a process
+	  can continue monitoring it after the process executes a setuid or
+	  setgid binary, contrary to the intended policy.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58089</cvename>
+      <freebsdsa>SA-26:56.hwpmc</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9008d14d-a0af-11f1-8144-8447094a420f">
     <topic>OpenSSL -- Multiple vulnerabilities</topic>
     <affects>
