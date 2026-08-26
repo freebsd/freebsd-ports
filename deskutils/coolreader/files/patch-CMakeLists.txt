@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2021-08-31 12:26:56 UTC
++++ CMakeLists.txt
+@@ -1,5 +1,5 @@ PROJECT(cr3)
+ PROJECT(cr3)
+-cmake_minimum_required(VERSION 3.0)
++cmake_minimum_required(VERSION 3.5)
+ 
+ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules/")
+ 
