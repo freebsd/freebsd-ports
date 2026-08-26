@@ -1,5 +1,5 @@
 PORTNAME=	doomlegacy
-PORTVERSION=	1.48.14
+PORTVERSION=	1.48.18
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION:S,_,%20,}/
@@ -17,7 +17,9 @@ USES=		gl gmake sdl tar:bzip2
 USE_GL=		gl glu
 USE_SDL=	mixer sdl
 MAKE_ARGS=	OS=${OPSYS:tu}
-MAKE_ENV=	CC_ENVIRONMENT=1 HAVE_ZLIB=1
+MAKE_ENV=	CC_ENVIRONMENT=1
+
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/svn1749
 
 PLIST_FILES=	bin/${PORTNAME} share/doom/dogs.wad share/doom/legacy.wad
 PORTDOCS=	*
@@ -35,6 +37,7 @@ LIBZIP_LIB_DEPENDS=	libzip.so:archivers/libzip
 LIBZIP_MAKE_ENV=	HAVE_LIBZIP=1
 
 post-patch: .SILENT
+	${REINPLACE_CMD} -e 's/^HAVE_LIBZIP/#&/' ${WRKSRC}/make_options_nix
 # Adjust default WAD search path and disable IPX
 	${REINPLACE_CMD} -e '/DEFWADS04/s|/.*|${DMDIR}"|' \
 		-e '/USE_IPX/s|define|undef|' ${WRKSRC}/src/doomdef.h
