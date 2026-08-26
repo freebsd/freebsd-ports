@@ -18,6 +18,8 @@ GH_ACCOUNT=	nzeemin
 GH_PROJECT=	ukncbtl-qt
 GH_TAGNAME=	3545c415
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 DESKTOP_ENTRIES=	"UkncBtl" \
 			"" \
 			"${PREFIX}/share/pixmaps/ukncbtl.png" \
