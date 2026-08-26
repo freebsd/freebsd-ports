@@ -1,6 +1,7 @@
 PORTNAME=	wf-shell
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,6 +17,7 @@ BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
 LIB_DEPENDS=	libdbusmenu-glib.so:devel/libdbusmenu \
 		libinotify.so:devel/libinotify \
 		libwf-config.so:devel/wf-config \
+		libgtk4-layer-shell.so:x11-toolkits/gtk4-layer-shell \
 		libwayland-client.so:graphics/wayland \
 		libepoxy.so:graphics/libepoxy \
 		libxkbregistry.so:x11/libxkbcommon \
@@ -27,15 +29,14 @@ FLAVORS=	default nopipewire nopulse lite
 FLAVOR?=	${FLAVORS:[1]}
 ${FLAVOR}_PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C|(.+)|-\1|}
 
-USES=		compiler:c++17-lang gl gnome meson pkgconfig vala:build ssl
+USES=		compiler:c++17-lang gl gnome meson pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	WayfireWM
-GH_TUPLE=	wmww:gtk4-layer-shell:v1.3.0:gtk4_layer_shell/subprojects/gtk4-layer-shell \
-		GNOME:libgnome-volume-control:5f9768a:gvc/subprojects/gvc \
+GH_TUPLE=	GNOME:libgnome-volume-control:5f9768a:gvc/subprojects/gvc \
 		WayfireWM:wf-json:70039e1:wf_json/subprojects/wf-json
 USE_GL=		gbm
 USE_GNOME=	gtkmm40
-MESON_ARGS=	-Dgvc:alsa=false -Dwayland-logout=false -Dddcutil=disabled
+MESON_ARGS=	-Dddcutil=disabled -Dgvc:alsa=false -Dwayland-logout=false
 LDFLAGS+=	-lpam -lpthread
 
 CONFLICTS_INSTALL=	${PORTNAME}*
@@ -56,7 +57,6 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MESON_ENABLED=	volume-widget
 
 post-patch:
-	${LN} -s . ${WRKSRC}/subprojects/gtk4-layer-shell/include/gtk4-layer-shell
 	${REINPLACE_CMD} 's|/etc/|${LOCALBASE}/etc/|' ${WRKSRC}/data/meson.build
 
 .include <bsd.port.mk>
