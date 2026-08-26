@@ -349,6 +349,10 @@ pre-patch:
 	# ${FIND} ${WRKSRC} -type f -name '*.orig' -print -delete
 	# ${FIND} ${WRKSRC} -type f -name '*~' -print -delete
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/dbus-daemon|${LOCALBASE}/bin/dbus-daemon|' \
+		${WRKSRC}/electron/spec/api-app-spec.ts
+
 pre-configure:
 	# We used to remove bundled libraries to be sure that chromium uses
 	# system libraries and not shipped ones.
