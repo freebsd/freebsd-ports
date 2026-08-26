@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20260826:
+  AFFECTS: users of x11/sddm
+  AUTHOR: arrowd@FreeBSD.org
+
+  The keyboard layouts used by SDDM are now derived from the sddm_lang rc
+  variable. Setting it for example to "fr_FR" will result in "fr,us" value
+  for the '-layout' argument of the setxkbmap call.
+
+  If a more complex layout configuration is required, it is possible to set
+  it directly with
+
+  sysrc sddm_xkb_layout="us,de,fr,it,ru"
+
+20260826:
   AFFECTS: users of net-mgmt/semaphore
   AUTHOR: joneum@FreeBSD.org
 
