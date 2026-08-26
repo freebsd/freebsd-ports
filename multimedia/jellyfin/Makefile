@@ -15,13 +15,13 @@ LICENSE_COMB=	multi
 FETCH_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	npm:www/npm${NODEJS_SUFFIX} \
 		dotnet:lang/dotnet
-LIB_DEPENDS=	libSkiaSharp.so:graphics/libskiasharp
+LIB_DEPENDS=	libSkiaSharp.so:graphics/libskiasharp \
+		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		dejavu>0:x11-fonts/dejavu \
 		ffmpeg>0:multimedia/ffmpeg \
 		icu>0:devel/icu \
 		krb5>0:security/krb5 \
-		libharfbuzz.so:print/harfbuzz \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind \
 		mediainfo>0:multimedia/mediainfo
