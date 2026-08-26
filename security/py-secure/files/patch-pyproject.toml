@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-08-26 02:31:51 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77", "wheel"]
++requires = ["setuptools>=63", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,8 +7,7 @@ readme = { file = "README.md", content-type = "text/ma
+ version = "2.0.1"
+ description = "A lightweight package that adds security headers for Python web frameworks."
+ readme = { file = "README.md", content-type = "text/markdown" }
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { file = "LICENSE" }
+ authors = [{ name = "Caleb Kinney", email = "caleb@typeerror.com" }]
+ requires-python = ">=3.10"
+ keywords = ["security", "headers", "web", "framework", "HTTP"]
