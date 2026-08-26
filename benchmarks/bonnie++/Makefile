@@ -1,6 +1,5 @@
 PORTNAME=	bonnie++
-PORTVERSION=	1.98
-PORTREVISION=	1
+DISTVERSION=	2.00a
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://www.coker.com.au/bonnie++/
 
