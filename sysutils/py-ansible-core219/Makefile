@@ -12,6 +12,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Radically simple IT automation
 WWW=		https://www.ansible.com/
 
+DEPRECATED=	FreeBSD will only support N and N-1
+EXPIRATION_DATE=2026-09-30
+
 WRKSRC=		${WRKDIR}/${PORTNAME:R:S/-/_/}-${DISTVERSION}
 
 LICENSE=	GPLv3+
