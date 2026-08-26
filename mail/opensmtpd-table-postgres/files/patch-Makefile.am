@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2025-08-11 12:00:26 UTC
++++ Makefile.am
+@@ -11,7 +11,7 @@ EXTRA_DIST =		README.md compat.h config.h.in dict.h lo
+ EXTRA_DIST =		README.md compat.h config.h.in dict.h log.h \
+ 			table_stdio.h util.h
+ 
+-smtpdir =		${prefix}/libexec/smtpd
++smtpdir =		${prefix}/libexec/opensmtpd
+ 
+ install-exec-local: $(noinst_PROGRAMS)
+ 	$(MKDIR_P) $(DESTDIR)$(smtpdir)

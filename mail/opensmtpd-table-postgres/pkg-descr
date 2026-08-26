@@ -1,0 +1,2 @@
+The PostgreSQL table addon for OpenSMTPD allows the storing of usernames,
+passwords, aliases, and domains in a PostgreSQL table.
