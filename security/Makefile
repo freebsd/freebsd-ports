@@ -1189,6 +1189,7 @@
     SUBDIR += rubygem-doorkeeper-device_authorization_grant
     SUBDIR += rubygem-doorkeeper-i18n
     SUBDIR += rubygem-doorkeeper-i18n-rails72
+    SUBDIR += rubygem-doorkeeper-i18n-rails81
     SUBDIR += rubygem-doorkeeper-openid_connect
     SUBDIR += rubygem-doorkeeper-rails-gitlab
     SUBDIR += rubygem-doorkeeper-rails5
