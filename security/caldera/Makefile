@@ -1,23 +1,18 @@
 PORTNAME=	caldera
 DISTVERSION=	5.3.0
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Automated Adversary Emulation Platform
 WWW=		https://github.com/mitre/caldera
 
-CONFLICTS=	caldera4
-
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expired www/npm-node20
-EXPIRATION_DATE=2026-09-30
-
 ONLY_FOR_ARCHS=	aarch64 amd64
 
-BUILD_DEPENDS=	npm-node20>0:www/npm-node20
+BUILD_DEPENDS=	npm-node24>0:www/npm-node24
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp-jinja2>0:www/py-aiohttp-jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp-session>0:www/py-aiohttp-session@${PY_FLAVOR} \
@@ -75,7 +70,7 @@ GH_TUPLE=	mitre:access:775181b:access/plugins/access \
 		mitre:stockpile:08f37d8:stockpile/plugins/stockpile \
 		mitre:training:d4d19a2:training/plugins/training
 
-USES=		dos2unix go:run nodejs:20,build python
+USES=		dos2unix go:run nodejs:24,build python
 USE_PYTHON=	cryptography
 
 NO_ARCH=	yes
