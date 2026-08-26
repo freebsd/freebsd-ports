@@ -1,9 +1,16 @@
---- pyproject.toml.orig	2026-05-05 17:23:13 UTC
+--- pyproject.toml.orig	2026-08-03 06:51:03 UTC
 +++ pyproject.toml
-@@ -11,8 +11,7 @@ requires-python = ">=3.9"
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.0", "wheel"]
++requires = ["setuptools>=63.1", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -11,8 +11,7 @@ requires-python = ">=3.10"
      {name = "Safihre", email = "safihre@sabnzbd.org"},
  ]
- requires-python = ">=3.9"
+ requires-python = ">=3.10"
 -license = "GPL-2.0-or-later"
 -license-files = ["LICENSE.md"]
 +license = {file = "LICENSE.md"}
