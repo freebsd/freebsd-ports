@@ -1,6 +1,7 @@
 PORTNAME=	astroterm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	https://web.archive.org/web/20231007085824if_/http://tdc-www.harvard.edu/catalogs/:DATA \
 		https://web.archive.org/web/20250114171002if_/http://tdc-www.harvard.edu/catalogs/:ASCIIDATA
