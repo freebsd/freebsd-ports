@@ -1,6 +1,6 @@
---- src/CTPP2Util.cpp.orig	2012-08-02 11:22:44.000000000 +0400
-+++ src/CTPP2Util.cpp	2014-05-02 18:06:25.511300597 +0400
-@@ -751,7 +751,7 @@
+--- src/CTPP2Util.cpp.orig	2012-08-02 07:22:44 UTC
++++ src/CTPP2Util.cpp
+@@ -751,7 +751,7 @@ DumpBuffer & DumpCDT2JSON(const CTPP::CDT & oCDT, Dump
  		case CDT::HASH_VAL:
  			{
  				oResult.Write("{", 1);

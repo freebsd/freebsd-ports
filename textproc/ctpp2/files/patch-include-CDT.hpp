@@ -1,6 +1,6 @@
---- include/CDT.hpp.orig	2012-11-11 01:45:43.000000000 +0400
-+++ include/CDT.hpp	2014-05-02 18:06:25.481307400 +0400
-@@ -48,13 +48,16 @@
+--- include/CDT.hpp.orig	2012-11-10 21:45:43 UTC
++++ include/CDT.hpp
+@@ -48,13 +48,16 @@ namespace CTPP // C++ Template Engine
  
  #define C_MAX_SPRINTF_LENGTH 128
  
@@ -18,7 +18,7 @@
  	/**
  	  @var typedef STLW::string<CDT> String
  	  @brief internal string definition
-@@ -72,7 +75,7 @@
+@@ -72,7 +75,7 @@ class CTPP2DECL CDT (private)
  	  @brief internal hash definition
  	*/
  	typedef STLW::map<String, CDT>  Map;
@@ -27,14 +27,14 @@
  	/**
  	  @enum eValType CDT.hpp <CDT.hpp>
  	  @brief Describes type of stored value
-@@ -1768,172 +1771,39 @@
+@@ -1768,172 +1771,39 @@ class CTPP2DECL CDT (private)
  		virtual ~SortingComparator() throw();
  	};
  
 -	// FWD
 -	class CTPP2DECL ConstIterator;
 -
--	/**
+ 	/**
 -	  @class Iterator CDT.hpp <CDT.hpp>
 -	  @brief CDT[HASH] forward iterator
 -	*/
@@ -96,7 +96,7 @@
 -		bool operator !=(const Iterator & oRhs);
 -	};
 -
- 	/**
+-	/**
  	  @brief Get iterator pointed to start of hash
  	*/
 -	Iterator Begin();
@@ -114,8 +114,9 @@
  	  @return Iterator pointed to element or to end of hash if nothing found
  	*/
 -	Iterator Find(const STLW::string & sKey);
--
--	/**
++	CDTIterator Find(const STLW::string & sKey);
+ 
+ 	/**
 -	  @class ConstIterator CDT.hpp <CDT.hpp>
 -	  @brief CDT[HASH] forward constant iterator
 -	*/
@@ -182,9 +183,8 @@
 -		*/
 -		bool operator !=(const ConstIterator & oRhs) const;
 -	};
-+	CDTIterator Find(const STLW::string & sKey);
- 
- 	/**
+-
+-	/**
  	  @brief Get constant iterator pointed to start of hash
  	*/
 -	ConstIterator Begin() const;
@@ -206,10 +206,11 @@
  
  	/**
  	  @brief Try to cast value to integer or to IEEE floating point value
-@@ -2009,6 +1879,139 @@
+@@ -2008,6 +1878,139 @@ class CTPP2DECL CDT (private)
+ 	void CheckComplexDataType() const;
  
  };
- 
++
 +
 +/**
 +  @class CDTIterator CDT.hpp <CDT.hpp>
@@ -342,7 +343,6 @@
 +	bool operator !=(const CDTConstIterator & oRhs) const;
 +};
 +
-+
+ 
  // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  //
- // Realization

@@ -1,6 +1,6 @@
---- src/CDT.cpp.orig	2012-11-10 23:38:03.000000000 +0400
-+++ src/CDT.cpp	2014-05-02 18:06:25.502508698 +0400
-@@ -108,17 +108,17 @@
+--- src/CDT.cpp.orig	2012-11-10 19:38:03 UTC
++++ src/CDT.cpp
+@@ -108,17 +108,17 @@ static const CDT oNonExistentCDT;
  //
  // Constructor
  //
@@ -21,7 +21,7 @@
  {
  	if (this != &oRhs) { itMap = oRhs.itMap; }
  
-@@ -128,7 +128,7 @@
+@@ -128,7 +128,7 @@ CDT::Iterator & CDT::Iterator::operator=(const CDT::It
  //
  // Pre-increment operator ++
  //
@@ -30,7 +30,7 @@
  {
  	++itMap;
  
-@@ -138,9 +138,9 @@
+@@ -138,9 +138,9 @@ return *this;
  //
  // Post-increment operator ++
  //
@@ -42,7 +42,7 @@
  
  	++itMap;
  
-@@ -150,46 +150,46 @@
+@@ -150,46 +150,46 @@ return oTMP;
  //
  // Access operator
  //
@@ -98,7 +98,7 @@
  }
  
  // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@@ -200,17 +200,17 @@
+@@ -200,17 +200,17 @@ return Iterator(u.p_data -> u.m_data -> find(sKey));
  //
  // Copy constructor
  //
@@ -119,7 +119,7 @@
  {
  	if (this != &oRhs) { itMap = oRhs.itMap; }
  
-@@ -220,7 +220,7 @@
+@@ -220,7 +220,7 @@ return *this;
  //
  // Operator =
  //
@@ -128,7 +128,7 @@
  {
  	itMap = oRhs.itMap;
  
-@@ -230,7 +230,7 @@
+@@ -230,7 +230,7 @@ return *this;
  //
  // Pre-increment operator ++
  //
@@ -137,7 +137,7 @@
  {
  	++itMap;
  
-@@ -240,9 +240,9 @@
+@@ -240,9 +240,9 @@ return *this;
  //
  // Post-increment operator ++
  //
@@ -149,7 +149,7 @@
  
  	++itMap;
  
-@@ -252,46 +252,46 @@
+@@ -252,46 +252,46 @@ return oTMP;
  //
  // Access operator
  //
@@ -205,7 +205,7 @@
  }
  
  // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@@ -4138,7 +4138,7 @@
+@@ -4138,7 +4138,7 @@ void CDT::DumpData(UINT_32 iLevel, UINT_32 iOffset, co
  
  		case HASH_VAL:
  			{

@@ -1,5 +1,14 @@
 --- CMakeLists.txt.orig	2012-11-10 20:45:57 UTC
 +++ CMakeLists.txt
+@@ -13,7 +13,7 @@ SET(CTPP_MASTER_SITE_URL "http://ctpp.havoc.ru/")
+ SET(CTPP_IDENT           "Dzoraget")
+ SET(CTPP_MASTER_SITE_URL "http://ctpp.havoc.ru/")
+ 
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0 FATAL_ERROR)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.5.0 FATAL_ERROR)
+ 
+ OPTION(DEBUG_MODE          "Enable debug output [default: OFF]"                 OFF)
+ OPTION(ENABLE_OPTIMIZATION "Enable optimization [default: ON]"                  ON)
 @@ -21,6 +21,7 @@ OPTION(ICONV_TRANSLITERATE "Enable transliteration in 
  
  OPTION(ICONV_DISCARD_ILSEQ "Discard illegal sequence and continue (iconv) [default: ON]"    ON)

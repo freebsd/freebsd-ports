@@ -1,6 +1,6 @@
---- src/CTPP2VM.cpp.orig	2012-08-02 11:22:44.000000000 +0400
-+++ src/CTPP2VM.cpp	2014-05-02 18:06:25.521278402 +0400
-@@ -1440,7 +1440,7 @@
+--- src/CTPP2VM.cpp.orig	2012-08-02 07:22:44 UTC
++++ src/CTPP2VM.cpp
+@@ -1440,7 +1440,7 @@ fprintf(stderr, "0x%08X MOVIREG   %cR, %cR[%cR] ", iIP
  
                                              if (oRegs[iSrcReg].GetType() == CDT::HASH_VAL)
                                              {
