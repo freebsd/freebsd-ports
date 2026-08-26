@@ -1,5 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	21.7.4
+PORTVERSION=	21.7.5
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -25,6 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.1:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-env>=0.6.2:devel/py-pytest-env@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-freezer>=0.4.9:devel/py-pytest-freezer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.8.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.10:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-randomly>=3.12:devel/py-pytest-randomly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=2.1.0:devel/py-pytest-timeout@${PY_FLAVOR} \
@@ -60,6 +61,7 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-default-group>=1.2.4:devel/py-c
 			${PYTHON_PKGNAMEPREFIX}sphinx-autodoc-typehints>=1.23.0:textproc/py-sphinx-autodoc-typehints@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>=0.5.2:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>=2025.12.21.14:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-llm>=1.0.0:textproc/py-sphinx-llm@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx>=5.3.0:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-mermaid>=2.0.0:textproc/py-sphinxcontrib-mermaid@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-towncrier>=0.3.2a0:textproc/py-sphinxcontrib-towncrier@${PY_FLAVOR} \
