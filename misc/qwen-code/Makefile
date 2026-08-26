@@ -1,5 +1,5 @@
 PORTNAME=	qwen-code
-DISTVERSION=	0.21.5
+DISTVERSION=	0.22.1
 CATEGORIES=	misc
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -41,6 +41,9 @@ do-install:
 	# cli.js falls back to system rg when the builtin path is absent
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/vendor/ripgrep
 	@${RM} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/sandbox-macos-*.sb
+	# audio-capture ships linux/darwin/win32 prebuilds only; its platform
+	# check throws on freebsd before loading one, so drop the dead binaries
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/node_modules/@qwen-code/audio-capture/prebuilds
 	${REINPLACE_CMD} -i '' \
 		-e "s|#!/usr/bin/env node|#!${PREFIX}/bin/node|" \
 		${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/cli-entry.js
