@@ -1,6 +1,6 @@
 PORTNAME=	compton-conf
 PORTVERSION=	0.16.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	LXQT/${PORTNAME}
 
@@ -9,6 +9,9 @@ COMMENT=	Controls compton settings
 WWW=		https://github.com/lxqt/compton-conf
 
 LICENSE=	LGPL21+
+
+DEPRECATED=		Project was archived and deprecated upstream
+EXPIRATION_DATE=	2026-09-30
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 RUN_DEPENDS=	compton:x11-wm/compton
