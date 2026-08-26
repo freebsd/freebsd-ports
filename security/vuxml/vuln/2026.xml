@@ -1,3 +1,151 @@
+  <vuln vid="fee67ad5-a05e-11f1-ad2b-40b034429ecf">
+    <topic>net/rsync -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>rsync</name>
+<range><lt>3.5.0</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>rsync project reports:</p>
+	<p>This release fixes 33 security issues found during a focused audit of rsync's path
+      handling and daemon protocol, a companion daemon-protocol fuzzing pass, and reports
+	  from external researchers -- plus several robustness hardenings. CVE IDs were assigned
+	  by VulnCheck (CNA); the precise "introduced in" version ranges accompany each advisory,
+	  and many are much narrower than "everything before 3.5.0". Every fix ships with a
+	  regression test in the test suite that fails on the unfixed tree.</p>
+	<blockquote cite="https://download.samba.org/pub/rsync/NEWS#3.5.0">
+    <ul>
+      <li>CVE-2026-53802 (HIGH): Arbitrary file read / transfer-shaping via symlinked operator-supplied input files.</li>
+      <li>CVE-2026-53803 (HIGH): Arbitrary file write / privilege escalation via symlinked operator-supplied output paths.</li>
+      <li>CVE-2026-53785 (HIGH): Under --relative, the receiver's implied-parent creation (make_path()) built the parent chain with a plain mkdir() on the full path.</li>
+      <li>CVE-2026-53784 (HIGH): Daemon module-root chdir escape under use chroot = no.</li>
+      <li>CVE-2026-53793 (HIGH): Chroot /./ inner-module escape a symlinked parent component.</li>
+      <li>CVE-2026-53795 (HIGH): An absolute --temp-dir or --link-dest disabled the receiver's rename/link confinement.</li>
+      <li>CVE-2026-53796 (MEDIUM): A non-daemon receiver's one-time chdir() into the operator-named destination was not fully confined.</li>
+      <li>CVE-2026-53797 (MEDIUM): A non-daemon sender opened each transferred file's content by path (leaf O_NOFOLLOW only).</li>
+      <li>CVE-2026-53799 (MEDIUM): Receiver ACL/xattr metadata application followed a symlink race.</li>
+      <li>CVE-2026-53800 (MEDIUM): Sender --remove-source-files unlink followed a parent-component symlink race.</li>
+      <li>CVE-2026-53801 (MEDIUM): Sender/daemon directory-scan enumeration escaped the transfer root / module.</li>
+    </ul>
+    <p>support/rrsync (the restricted SSH wrapper):</p>
+    <ul>
+      <li>CVE-2026-53783 (HIGH): rrsync restricted-directory escape.</li>
+    </ul>
+    <p>Daemon protocol / identity:</p>
+    <ul>
+      <li>CVE-2026-53786 (MEDIUM): A client-supplied --filter merge file bypassed the module filter list.</li>
+      <li>CVE-2026-53798 (MEDIUM): The daemon name converter mapped an unknown name to uid/gid 0.</li>
+      <li>CVE-2026-53788 (MEDIUM): A peer-controlled name containing a newline/CR was written verbatim into the name-converter line protocol.</li>
+      <li>CVE-2026-53789 (MEDIUM): A malicious daemon-sender could widen --delete scope by omitting the "no content dir" flag on an implied parent.</li>
+      <li>CVE-2026-53791 (CRITICAL): With proxy protocol = true, a client connecting directly (not via the trusted proxy) could send a PROXY header to spoof its source address.</li>
+    </ul>
+    <p>Injection and memory safety:</p>
+    <ul>
+      <li>CVE-2026-53790 (HIGH): Command / argument injection via unquoted peer- or host-controlled values      the RSYNC_CONNECT_PROG %H host substitution.</li>
+      <li>CVE-2026-53792 (MEDIUM): A malicious receiver sending a checksum header with a block count > 0 but block length == 0 drove the sender's rolling-match arithmetic negative.</li>
+      <li>CVE-2026-53794 (MEDIUM): --max-alloc=0 disabled the per-allocation size cap.</li>
+    </ul>
+    <p>Peer-triggerable memory corruption in the daemon protocol:</p>
+    <ul>
+      <li>CVE-2026-70461 (HIGH): a one-byte heap out-of-bounds write in add_implied_include().</li>
+      <li>CVE-2026-70458 (HIGH): an out-of-bounds write from a file entry marked FLAG_HLINKED that the receiver accepted even though -H was not in effect.</li>
+      <li>CVE-2026-70456 (HIGH): an out-of-bounds heap write in read_args() when the peer's argument count lands exactly on maxargs.</li>
+      <li>CVE-2026-70457 (MEDIUM): an attacker-chosen-offset write in parse_size_arg()'s error formatting.</li>
+      <li>CVE-2026-70459 (MEDIUM): a wild-pointer read crashing the per-connection daemon child.</li>
+    </ul>
+    <p>Daemon availability and access control:</p>
+    <ul>
+      <li>CVE-2026-70464 (HIGH): an unauthenticated peer could complete the @RSYNCD greeting and then stall forever.</li>
+      <li>CVE-2026-70455 (HIGH): a daemon client could request an arbitrary Zstandard worker count via --compress-threads.</li>
+      <li>CVE-2026-70453 (HIGH): quadratic CPU exhaustion in hash_search() from a crafted chain of equal weak checksums.</li>
+      <li>CVE-2026-70452 (HIGH): hosts deny failed OPEN when a configured hostname could not be resolved.</li>
+      <li>CVE-2026-70463 (HIGH): auth users ignored its documented comma-only parsing.</li>
+      <li>CVE-2026-70460 (HIGH): a peer-supplied --partial-dir or --backup-dir was resolved by pathname.</li>
+    </ul>
+    <p>Client-side:</p>
+    <ul>
+      <li>CVE-2026-70462 (MEDIUM): a peer-supplied MSG_IO_TIMEOUT defeated the client's own I/O timeout.</li>
+      <li>CVE-2026-70454 (MEDIUM): rsync-ssl established an unauthenticated TLS connection.</li>
+    </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-53802</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53802</url>
+      <cvename>CVE-2026-53803</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53803</url>
+      <cvename>CVE-2026-53785</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53785</url>
+      <cvename>CVE-2026-53784</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53784</url>
+      <cvename>CVE-2026-53793</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53793</url>
+      <cvename>CVE-2026-53795</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53795</url>
+      <cvename>CVE-2026-53796</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53796</url>
+      <cvename>CVE-2026-53797</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53797</url>
+      <cvename>CVE-2026-53799</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53799</url>
+      <cvename>CVE-2026-53800</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53800</url>
+      <cvename>CVE-2026-53801</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53801</url>
+      <cvename>CVE-2026-53783</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53783</url>
+      <cvename>CVE-2026-53786</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53786</url>
+      <cvename>CVE-2026-53798</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53798</url>
+      <cvename>CVE-2026-53788</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53788</url>
+      <cvename>CVE-2026-53789</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53789</url>
+      <cvename>CVE-2026-53791</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53791</url>
+      <cvename>CVE-2026-53790</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53790</url>
+      <cvename>CVE-2026-53792</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53792</url>
+      <cvename>CVE-2026-53794</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-53794</url>
+      <cvename>CVE-2026-70461</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70461</url>
+      <cvename>CVE-2026-70458</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70458</url>
+      <cvename>CVE-2026-70456</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70456</url>
+      <cvename>CVE-2026-70457</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70457</url>
+      <cvename>CVE-2026-70459</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70459</url>
+      <cvename>CVE-2026-70464</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70464</url>
+      <cvename>CVE-2026-70455</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70455</url>
+      <cvename>CVE-2026-70453</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70453</url>
+      <cvename>CVE-2026-70452</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70452</url>
+      <cvename>CVE-2026-70463</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70463</url>
+      <cvename>CVE-2026-70460</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70460</url>
+      <cvename>CVE-2026-70462</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70462</url>
+      <cvename>CVE-2026-70454</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-70454</url>
+    </references>
+    <dates>
+      <discovery>2026-08-13</discovery>
+      <entry>2026-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ff5a036-a13e-11f1-a129-901b0e9408dc">
     <topic>conduit -- authentication bypass vulnerability</topic>
     <affects>
