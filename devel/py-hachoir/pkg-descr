@@ -1,0 +1,9 @@
+Hachoir is a Python library to view and edit a binary stream field by field.
+It parses a file into a tree of fields, where each field carries its position,
+size and value, so a format can be explored without decoding it by hand.
+
+It ships parsers for a wide range of archive, audio, video, image, filesystem
+and executable formats, and command line tools built on them: hachoir-metadata
+extracts metadata from media files, hachoir-grep searches text in a binary,
+hachoir-strip removes unnecessary data, and hachoir-urwid explores a file
+interactively.
