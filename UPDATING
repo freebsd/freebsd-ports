@@ -5,6 +5,48 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260826:
+  AFFECTS: users of net-mgmt/semaphore
+  AUTHOR: joneum@FreeBSD.org
+
+  Semaphore has been updated to 2.19.7.  Upstream removed BoltDB support in
+  2.19; the supported dialects are now mysql, postgres and sqlite.  If your
+  configuration still contains "dialect": "bolt", semaphore will refuse to
+  start after the upgrade.
+
+  Migrate the database BEFORE upgrading the port.  The migration tool is
+  part of Semaphore 2.18 and no longer present in 2.19; see also
+  https://semaphoreui.com/docs/admin-guide/cli/migrations
+
+  1) Stop the service and back up the BoltDB file:
+
+	service semaphore stop
+	cp /var/db/semaphore/database.boltdb /var/db/semaphore/database.boltdb.bak
+
+  2) Fetch the official 2.18 binary, it is only needed for the migration:
+
+	fetch -o /tmp/sem218.tar.gz https://github.com/semaphoreui/semaphore/releases/download/v2.18.29/semaphore_community_2.18.29_freebsd_amd64.tar.gz
+	tar -xzf /tmp/sem218.tar.gz -C /tmp semaphore
+
+  3) Change "dialect" in semaphore_config.json to sqlite (or mysql/postgres)
+     and add the matching connection settings.  A minimal sqlite example is
+     installed as %%PREFIX%%/etc/semaphore/config.json.sample.
+
+  4) Import the data.  The BoltDB file is only read, not modified:
+
+	/tmp/semaphore migrate --from-boltdb /var/db/semaphore/database.boltdb --config /usr/local/etc/semaphore/semaphore_config.json
+
+  5) Upgrade the port, apply the remaining schema migrations and start the
+     service again:
+
+	semaphore migrate --config /usr/local/etc/semaphore/semaphore_config.json
+	service semaphore start
+	rm /tmp/semaphore
+
+  Note that this update also restores the bundled web interface.  Previous
+  versions of the port installed the API server only, so every UI route
+  returned 404.
+
 20260819:
   AFFECTS: users of net/freeipa-server and security/dogtag-pki
   AUTHOR: joneum@FreeBSD.org

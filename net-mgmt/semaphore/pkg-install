@@ -1,0 +1,39 @@
+#! /bin/sh
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+BOLTDB=/var/db/semaphore/database.boltdb
+CONFIG=${PKG_PREFIX}/etc/semaphore/semaphore_config.json
+
+boltwarning() {
+cat <<EOF
+
+  =========== BACKUP YOUR DATA! =============
+  This installation appears to use BoltDB.
+
+  Semaphore 2.19 dropped BoltDB support.  The
+  service will not start while the configuration
+  uses "dialect": "bolt", and simply changing the
+  dialect creates an EMPTY database: projects,
+  templates, access keys and the task history
+  would appear to be lost.
+
+  The data has to be imported with a Semaphore
+  2.18 binary; 2.19 no longer ships the import
+  tool.  This is *NOT* done by the port!
+  See the ports UPDATING entry, 20260826, and
+  https://semaphoreui.com/docs/admin-guide/cli/migrations
+  ===========================================
+EOF
+}
+
+case $2 in
+PRE-INSTALL)
+	if [ -f "${CONFIG}" ] && \
+	    grep -qE '"dialect"[[:space:]]*:[[:space:]]*"bolt"' "${CONFIG}"; then
+		boltwarning
+	elif [ -f "${BOLTDB}" ]; then
+		boltwarning
+	fi
+	;;
+esac

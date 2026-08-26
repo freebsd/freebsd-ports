@@ -1,0 +1,38 @@
+[
+{ type: upgrade
+  maximum_version: 2.19.0
+  message: <<EOM
+Semaphore 2.19 dropped BoltDB support; the supported dialects are now mysql,
+postgres and sqlite.  If your configuration still contains "dialect": "bolt",
+the service will not start.
+
+Do NOT simply change the dialect: semaphore would create an empty database
+and all projects, templates, access keys and the task history would appear to
+be gone.  The data is still in the BoltDB file and can be imported, but the
+import tool only exists up to Semaphore 2.18:
+
+  service semaphore stop
+  cp /var/db/semaphore/database.boltdb /var/db/semaphore/database.boltdb.bak
+
+  fetch -o /tmp/sem218.tar.gz https://github.com/semaphoreui/semaphore/releases/download/v2.18.29/semaphore_community_2.18.29_freebsd_amd64.tar.gz
+  tar -xzf /tmp/sem218.tar.gz -C /tmp semaphore
+
+Then set "dialect" to sqlite (or mysql/postgres) in
+%%PREFIX%%/etc/semaphore/semaphore_config.json; a minimal example is installed
+as %%PREFIX%%/etc/semaphore/config.json.sample.  The BoltDB file is only read
+by the import, not modified:
+
+  /tmp/semaphore migrate --from-boltdb /var/db/semaphore/database.boltdb --config %%PREFIX%%/etc/semaphore/semaphore_config.json
+  semaphore migrate --config %%PREFIX%%/etc/semaphore/semaphore_config.json
+  service semaphore start
+  rm /tmp/semaphore
+
+This update also restores the bundled web interface; earlier versions of the
+port installed the API server only, so every UI route returned 404.
+
+See the ports UPDATING entry of 20260826 for the same instructions, and
+https://semaphoreui.com/docs/admin-guide/cli/migrations for the upstream
+documentation of the import.
+EOM
+}
+]

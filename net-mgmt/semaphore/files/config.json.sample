@@ -1,0 +1,11 @@
+{
+    "sqlite": {
+        "host": "/var/db/semaphore/database.sqlite"
+    },
+    "dialect": "sqlite",
+    "tmp_path": "/var/db/semaphore/tmp",
+    "cookie_hash": "CHANGE_ME-base64-32-random-bytes",
+    "cookie_encryption": "CHANGE_ME-base64-32-random-bytes",
+    "access_key_encryption": "CHANGE_ME-base64-32-random-bytes",
+    "port": ":3000"
+}
