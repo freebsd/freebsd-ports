@@ -1,26 +1,34 @@
 @sample(www,www,0600) %%WWWDIR%%/.env.example %%WWWDIR%%/.env
-@comment https://lycheeorg.dev/docs/faq_installation.html#do-we-really-need-writable-app
-@dir(www,www) %%WWWDIR%%/storage
-@dir(www,www) %%WWWDIR%%/storage/framework
-@dir(www,www) %%WWWDIR%%/storage/framework/sessions
-@dir(www,www) %%WWWDIR%%/storage/framework/views
-@dir(www,www) %%WWWDIR%%/storage/framework/cache
-@dir(www,www) %%WWWDIR%%/storage/framework/cache/data
-@dir(www,www) %%WWWDIR%%/storage/logs
-@dir(www,www) %%WWWDIR%%/public/uploads
-@dir(www,www) %%WWWDIR%%/public/uploads/small
-@dir(www,www) %%WWWDIR%%/public/uploads/big
-@dir(www,www) %%WWWDIR%%/public/uploads/thumb
-@dir(www,www) %%WWWDIR%%/public/uploads/medium
-@dir(www,www) %%WWWDIR%%/public/uploads/import
-@dir(www,www) %%WWWDIR%%/public/dist
-@dir(www,www) %%WWWDIR%%/database
-@dir(www,www) %%WWWDIR%%/storage/tmp/extract
-@dir(www,www) %%WWWDIR%%/storage/tmp/jobs
-@dir(www,www) %%WWWDIR%%/storage/tmp/uploads
-@dir(www,www) %%WWWDIR%%/bootstrap/cache
-@dir(www,www) %%WWWDIR%%
-@(www,www) %%WWWDIR%%/database/database.sqlite
+@comment https://lycheeorg.dev/docs/faq/installation/#do-we-really-need-writable-app
+@owner www
+@group www
+%%WWWDIR%%/database/database.sqlite
+@dir %%WWWDIR%%
+@dir %%WWWDIR%%/database
+@dir %%WWWDIR%%/storage/debugbar
+@dir %%WWWDIR%%/storage/framework
+@dir %%WWWDIR%%/storage/framework/views
+@dir %%WWWDIR%%/storage/framework/cache
+@dir %%WWWDIR%%/storage/framework/sessions
+@dir %%WWWDIR%%/storage/logs
+@dir %%WWWDIR%%/storage/tmp/extract
+@dir %%WWWDIR%%/storage/tmp/jobs
+@dir %%WWWDIR%%/storage/tmp/uploads
+@dir %%WWWDIR%%/bootstrap/cache
+@dir %%WWWDIR%%/public/dist
+@dir %%WWWDIR%%/public/uploads
+%%WWWDIR%%/public/dist/cat.webp
+%%WWWDIR%%/public/dist/custom.js
+%%WWWDIR%%/public/dist/fonts/socials.eot
+%%WWWDIR%%/public/dist/fonts/socials.svg
+%%WWWDIR%%/public/dist/fonts/socials.ttf
+%%WWWDIR%%/public/dist/fonts/socials.woff
+%%WWWDIR%%/public/dist/user.css
+%%WWWDIR%%/public/uploads/import/index.html
+%%WWWDIR%%/storage/bootstrap/cache/packages.php
+%%WWWDIR%%/storage/bootstrap/cache/services.php
+@owner
+@group
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf
 etc/cron.d/lychee
 %%WWWDIR%%/LICENSE
@@ -1787,13 +1795,6 @@ etc/cron.d/lychee
 %%WWWDIR%%/public/build/assets/vue-collapsed-BjXSUHBS.js
 %%WWWDIR%%/public/build/assets/vue-router-CKUI0Twr.js
 %%WWWDIR%%/public/build/manifest.json
-%%WWWDIR%%/public/dist/cat.webp
-%%WWWDIR%%/public/dist/custom.js
-%%WWWDIR%%/public/dist/fonts/socials.eot
-%%WWWDIR%%/public/dist/fonts/socials.svg
-%%WWWDIR%%/public/dist/fonts/socials.ttf
-%%WWWDIR%%/public/dist/fonts/socials.woff
-%%WWWDIR%%/public/dist/user.css
 %%WWWDIR%%/public/favicon.ico
 %%WWWDIR%%/public/img/apple-touch-icon-ipad.png
 %%WWWDIR%%/public/img/apple-touch-icon-iphone-plus.png
@@ -1824,7 +1825,6 @@ etc/cron.d/lychee
 %%WWWDIR%%/public/installer/assets/img/favicon/favicon-32x32.png
 %%WWWDIR%%/public/installer/assets/img/favicon/favicon-96x96.png
 %%WWWDIR%%/public/robots.txt
-%%WWWDIR%%/public/uploads/import/index.html
 %%WWWDIR%%/public/vendor/log-viewer/app.css
 %%WWWDIR%%/public/vendor/log-viewer/app.js
 %%WWWDIR%%/public/vendor/log-viewer/app.js.LICENSE.txt
@@ -2126,8 +2126,6 @@ etc/cron.d/lychee
 %%WWWDIR%%/scripts/post-merge
 %%WWWDIR%%/scripts/pre-commit
 %%WWWDIR%%/simple_error_template.html
-%%WWWDIR%%/storage/bootstrap/cache/packages.php
-%%WWWDIR%%/storage/bootstrap/cache/services.php
 %%WWWDIR%%/vendor/amphp/amp/LICENSE
 %%WWWDIR%%/vendor/amphp/amp/composer.json
 %%WWWDIR%%/vendor/amphp/amp/psalm.xml
