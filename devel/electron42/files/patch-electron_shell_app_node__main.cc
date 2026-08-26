@@ -1,4 +1,4 @@
---- electron/shell/app/node_main.cc.orig	2026-04-15 14:10:25 UTC
+--- electron/shell/app/node_main.cc.orig	2026-08-24 01:09:19 UTC
 +++ electron/shell/app/node_main.cc
 @@ -53,7 +53,7 @@
  #include "shell/common/mac/codesign_util.h"
@@ -26,7 +26,7 @@
    electron::crash_keys::GetCrashKeys(&keys);
  #endif
    return gin::ConvertToV8(isolate, keys);
-@@ -296,7 +296,7 @@ int NodeMain() {
+@@ -326,7 +326,7 @@ int NodeMain() {
        // Setup process.crashReporter in child node processes
        auto reporter = gin_helper::Dictionary::CreateEmpty(isolate);
        reporter.SetMethod("getParameters", &GetParameters);
