@@ -1,5 +1,6 @@
 PORTNAME=	p11-kit
 DISTVERSION=	0.26.5
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/p11-glue/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -48,7 +49,7 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/pkcs11/pkcs11.conf.example ${STAGEDIR}${EXAMPLESDIR}
 	${RMDIR} ${STAGEDIR}${PREFIX}/etc/pkcs11
 	${MKDIR} ${STAGEDIR}${DATADIR}/certs
-	${LN} -s /usr/share/certs/trusted ${STAGEDIR}${DATADIR}/certs/anchors
-	${LN} -s /usr/share/certs/untrusted ${STAGEDIR}${DATADIR}/certs/blocklist
+	${LN} -s /etc/ssl/certs ${STAGEDIR}${DATADIR}/certs/anchors
+	${LN} -s /etc/ssl/untrusted ${STAGEDIR}${DATADIR}/certs/blocklist
 
 .include <bsd.port.mk>
