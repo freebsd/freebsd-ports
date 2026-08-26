@@ -9682,6 +9682,12 @@ vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
 	<name>openssl111</name>
 	<range><lt>1.1.1zh</lt></range>
       </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_10</lt></range>
+	<range><ge>14.4</ge><lt>14.4_6</lt></range>
+	<range><ge>14.3</ge><lt>14.3_15</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -9712,10 +9718,12 @@ vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
       <cvename>CVE-2026-42771</cvename>
       <cvename>CVE-2026-45446</cvename>
       <url>https://openssl-library.org/news/secadv/20260609.txt</url>
+      <freebsdsa>SA-26:35.openssl</freebsdsa>
     </references>
     <dates>
       <discovery>2026-06-09</discovery>
       <entry>2026-06-10</entry>
+      <modified>2026-08-26</modified>
     </dates>
   </vuln>
 
@@ -9927,88 +9935,6 @@ vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
     <references>
       <cvename>CVE-2026-10846</cvename>
       <freebsdsa>SA-26:36.ldns</freebsdsa>
-    </references>
-    <dates>
-      <discovery>2026-06-09</discovery>
-      <entry>2026-06-10</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="a57fe2c1-6476-11f1-958d-bc241121aa0a">
-    <topic>FreeBSD -- Multiple vulnerabilities in OpenSSL</topic>
-    <affects>
-      <package>
-	<name>FreeBSD</name>
-	<range><ge>15.0</ge><lt>15.0_10</lt></range>
-	<range><ge>14.4</ge><lt>14.4_6</lt></range>
-	<range><ge>14.3</ge><lt>14.3_15</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<h1>Problem Description:</h1>
-	  <p>Multiple issues have been reported as part of this advisory
-	  with different issues affecting different OpenSSL versions and
-	  therefore different FreeBSD versions.  Instead of exhaustively
-	  listing detailed writeups for each issue, please see the referenced
-	  advisory from OpenSSL.</p>
-	  <p>Issues affecting FreeBSD 15.x (OpenSSL 3.5):</p>
-	  <ul>
-	    <li>CVE-2026-7383: Possible heap buffer overflow in ASN.1 string conversion</li>
-	    <li>CVE-2026-9076: Out-of-bounds read in CMS password-based decryption</li>
-	    <li>CVE-2026-34180: Heap buffer over-read in ASN.1 content parsing</li>
-	    <li>CVE-2026-34181: PKCS#12 files with PBMAC1 accepted with short HMAC keys</li>
-	    <li>CVE-2026-34182: CMS AuthEnvelopedData may accept forged messages</li>
-	    <li>CVE-2026-34183: Unbounded memory growth in the QUIC PATH_CHALLENGE handler</li>
-	    <li>CVE-2026-42764: NULL dereference in QUIC server initial packet handling</li>
-	    <li>CVE-2026-42766: Possible NULL dereference in password-based CMS decryption</li>
-	    <li>CVE-2026-42767: NULL dereference in CRMF EncryptedValue decryption</li>
-	    <li>CVE-2026-42768: Bleichenbacher oracle in CMS_decrypt() and PKCS7_decrypt()</li>
-	    <li>CVE-2026-42769: Trust-anchor substitution in CMP rootCaKeyUpdate handling</li>
-	    <li>CVE-2026-42770: FFC-DH peer validation uses attacker-supplied q</li>
-	    <li>CVE-2026-45445: AES-OCB IV ignored on the EVP_Cipher() one-shot path</li>
-	    <li>CVE-2026-45446: Empty-message tag bypass in AES-GCM-SIV and AES-SIV modes</li>
-	    <li>CVE-2026-45447: Heap use-after-free in PKCS7_verify()</li>
-	  </ul>
-	  <p>Issues affecting FreeBSD 14.x (OpenSSL 3.0):</p>
-	  <ul>
-	    <li>CVE-2026-7383: Possible heap buffer overflow in ASN.1 string conversion</li>
-	    <li>CVE-2026-9076: Out-of-bounds read in CMS password-based decryption</li>
-	    <li>CVE-2026-34180: Heap buffer over-read in ASN.1 content parsing</li>
-	    <li>CVE-2026-34182: CMS AuthEnvelopedData may accept forged messages</li>
-	    <li>CVE-2026-42766: Possible NULL dereference in password-based CMS decryption</li>
-	    <li>CVE-2026-42770: FFC-DH peer validation uses attacker-supplied q</li>
-	    <li>CVE-2026-45445: AES-OCB IV ignored on the EVP_Cipher() one-shot path</li>
-	    <li>CVE-2026-45446: Empty-message tag bypass in AES-GCM-SIV and AES-SIV modes</li>
-	    <li>CVE-2026-45447: Heap use-after-free in PKCS7_verify()</li>
-	  </ul>
-	<h1>Impact:</h1>
-	  <p>The issues include heap buffer overflows and over-reads, NULL
-	  pointer dereferences, a use-after-free, unbounded memory allocation,
-	  and several cryptographic flaws permitting message forgery, integrity
-	  bypass, or recovery of a private key.</p>
-	  <p>Security impact ranges from a Denial of Service to a potential
-	  remote code execution.  See the OpenSSL advisory for specific
-	  details.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CVE-2026-7383</cvename>
-      <cvename>CVE-2026-9076</cvename>
-      <cvename>CVE-2026-34180</cvename>
-      <cvename>CVE-2026-34181</cvename>
-      <cvename>CVE-2026-34182</cvename>
-      <cvename>CVE-2026-34183</cvename>
-      <cvename>CVE-2026-42764</cvename>
-      <cvename>CVE-2026-42766</cvename>
-      <cvename>CVE-2026-42767</cvename>
-      <cvename>CVE-2026-42768</cvename>
-      <cvename>CVE-2026-42769</cvename>
-      <cvename>CVE-2026-42770</cvename>
-      <cvename>CVE-2026-45445</cvename>
-      <cvename>CVE-2026-45446</cvename>
-      <cvename>CVE-2026-45447</cvename>
-      <freebsdsa>SA-26:35.openssl</freebsdsa>
     </references>
     <dates>
       <discovery>2026-06-09</discovery>
