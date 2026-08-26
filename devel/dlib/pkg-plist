@@ -20,6 +20,7 @@ include/d/dlib/container/linkedlist.d
 include/d/dlib/container/mappedlist.d
 include/d/dlib/container/package.d
 include/d/dlib/container/queue.d
+include/d/dlib/container/sorting.d
 include/d/dlib/container/spscqueue.d
 include/d/dlib/container/stack.d
 include/d/dlib/core/bitio.d
@@ -150,4 +151,7 @@ include/d/dlib/text/str.d
 include/d/dlib/text/utf16.d
 include/d/dlib/text/utf8.d
 include/d/dlib/text/utils.d
+include/d/dlib/time/ctime.d
+include/d/dlib/time/datetime.d
+include/d/dlib/time/package.d
 lib/d/libdlib.a
