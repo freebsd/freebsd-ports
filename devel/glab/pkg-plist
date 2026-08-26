@@ -53,6 +53,7 @@
 %%MANPAGES%%share/man/man1/glab-completion.1.gz
 %%MANPAGES%%share/man/man1/glab-config-edit.1.gz
 %%MANPAGES%%share/man/man1/glab-config-get.1.gz
+%%MANPAGES%%share/man/man1/glab-config-path.1.gz
 %%MANPAGES%%share/man/man1/glab-config-set.1.gz
 %%MANPAGES%%share/man/man1/glab-config.1.gz
 %%MANPAGES%%share/man/man1/glab-container-registry-repository-delete.1.gz
@@ -152,15 +153,6 @@
 %%MANPAGES%%share/man/man1/glab-opentofu-state-unlock.1.gz
 %%MANPAGES%%share/man/man1/glab-opentofu-state.1.gz
 %%MANPAGES%%share/man/man1/glab-opentofu.1.gz
-%%MANPAGES%%share/man/man1/glab-orbit-local.1.gz
-%%MANPAGES%%share/man/man1/glab-orbit-remote-dsl.1.gz
-%%MANPAGES%%share/man/man1/glab-orbit-remote-graph-status.1.gz
-%%MANPAGES%%share/man/man1/glab-orbit-remote-query.1.gz
-%%MANPAGES%%share/man/man1/glab-orbit-remote-schema.1.gz
-%%MANPAGES%%share/man/man1/glab-orbit-remote-status.1.gz
-%%MANPAGES%%share/man/man1/glab-orbit-remote-tools.1.gz
-%%MANPAGES%%share/man/man1/glab-orbit-remote.1.gz
-%%MANPAGES%%share/man/man1/glab-orbit-setup.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit.1.gz
 %%MANPAGES%%share/man/man1/glab-packages-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-packages-download.1.gz
