@@ -2046,6 +2046,7 @@
 %%WWWDIR%%/test/unit/jobs/destroy_projects_job_test.rb
 %%WWWDIR%%/test/unit/journal_observer_test.rb
 %%WWWDIR%%/test/unit/journal_test.rb
+%%WWWDIR%%/test/unit/lib/parameter_filtering_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/access_control_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/acts/mentionable_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/acts/positioned_with_scope_test.rb
