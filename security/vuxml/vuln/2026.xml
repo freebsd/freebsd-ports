@@ -322,7 +322,7 @@
       <cvename>CVE-2026-63075</cvename>
       <cvename>CVE-2026-75803</cvename>
       <url>https://openssl-library.org/news/secadv/20260825.txt</url>
-      <freebsdsa>SA-26:62.openssl</freebsdsa>
+      <freebsdsa>SA-26:61.openssl</freebsdsa>
     </references>
     <dates>
       <discovery>2026-08-25</discovery>
