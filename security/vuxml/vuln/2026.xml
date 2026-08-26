@@ -21,6 +21,12 @@
 	<name>openssl40</name>
 	<range><lt>4.0.2</lt></range>
       </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.1</ge><lt>15.1_3</lt></range>
+	<range><ge>15.0</ge><lt>15.0_13</lt></range>
+	<range><ge>14.4</ge><lt>14.4_9</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -49,10 +55,12 @@
       <cvename>CVE-2026-63075</cvename>
       <cvename>CVE-2026-75803</cvename>
       <url>https://openssl-library.org/news/secadv/20260825.txt</url>
+      <freebsdsa>SA-26:62.openssl</freebsdsa>
     </references>
     <dates>
       <discovery>2026-08-25</discovery>
       <entry>2026-08-25</entry>
+      <modified>2026-08-26</modified>
     </dates>
   </vuln>
 
