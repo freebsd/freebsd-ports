@@ -1,5 +1,5 @@
 PORTNAME=	etlegacy
-DISTVERSION=	2.84.0
+DISTVERSION=	2.85.0
 CATEGORIES=	games
 MASTER_SITES=	https://mirror.etlegacy.com/geoip/:geoip \
 		https://mirror.etlegacy.com/wolfadmin/:wolfadmin
@@ -19,7 +19,7 @@ USES=		cmake compiler:c++11-lib desktop-file-utils localbase \
 		lua pkgconfig sqlite
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
-GH_TAGNAME=	764ffc0
+GH_TAGNAME=	489f1c4
 
 CMAKE_ARGS+=	-DCROSS_COMPILE32=OFF \
 		-DBUNDLED_LIBS=OFF \

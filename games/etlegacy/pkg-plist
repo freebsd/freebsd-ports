@@ -24,7 +24,7 @@ lib/etlegacy/legacy/GeoIP.dat
 lib/etlegacy/legacy/banners.toml
 lib/etlegacy/legacy/description.txt
 lib/etlegacy/legacy/greetings.toml
-lib/etlegacy/legacy/legacy_2.84-dirty.pk3
+lib/etlegacy/legacy/legacy_2.85-dirty.pk3
 lib/etlegacy/legacy/lualibs/legacydb.lua
 lib/etlegacy/legacy/lualibs/toml.lua
 lib/etlegacy/legacy/luascripts/wolfadmin/COPYING.txt

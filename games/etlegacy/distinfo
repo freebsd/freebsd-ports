@@ -1,7 +1,7 @@
-TIMESTAMP = 1780122417
-SHA256 (etlegacy-2.84.0/wolfadmin.tar.gz) = 31659b1d99cd5c9884a66317f803109e631a315e1102842e4e4d29b8579397d1
-SIZE (etlegacy-2.84.0/wolfadmin.tar.gz) = 1128868
-SHA256 (etlegacy-2.84.0/GeoIP.dat.tar.gz) = 1aa7023f599d01fce77861ff331d1024cd92918edf527c2f37f4a37732183a2b
-SIZE (etlegacy-2.84.0/GeoIP.dat.tar.gz) = 1120171
-SHA256 (etlegacy-2.84.0/etlegacy-etlegacy-2.84.0-764ffc0_GH0.tar.gz) = 043ff682feac14152b8cb2395c559f43781a7406fee167c4ca4f6f6c0df1e436
-SIZE (etlegacy-2.84.0/etlegacy-etlegacy-2.84.0-764ffc0_GH0.tar.gz) = 17740656
+TIMESTAMP = 1787715383
+SHA256 (etlegacy-2.85.0/wolfadmin.tar.gz) = 31659b1d99cd5c9884a66317f803109e631a315e1102842e4e4d29b8579397d1
+SIZE (etlegacy-2.85.0/wolfadmin.tar.gz) = 1128868
+SHA256 (etlegacy-2.85.0/GeoIP.dat.tar.gz) = 1aa7023f599d01fce77861ff331d1024cd92918edf527c2f37f4a37732183a2b
+SIZE (etlegacy-2.85.0/GeoIP.dat.tar.gz) = 1120171
+SHA256 (etlegacy-2.85.0/etlegacy-etlegacy-2.85.0-489f1c4_GH0.tar.gz) = f065a3032e62cc2bce7d4b118c386b6cf7cca6092685392659b34a1e23e75f7f
+SIZE (etlegacy-2.85.0/etlegacy-etlegacy-2.85.0-489f1c4_GH0.tar.gz) = 17738186
