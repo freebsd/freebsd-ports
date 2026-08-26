@@ -1,0 +1,4 @@
+Go-blueprint is a command-line tool that allows users to spin up a quick Go
+project using a popular framework. It simplifies the initial setup process,
+allowing developers to skip boilerplate and focus immediately on writing
+their application code.

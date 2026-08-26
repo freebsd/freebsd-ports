@@ -944,6 +944,7 @@
     SUBDIR += gnustep-make
     SUBDIR += go-bindata
     SUBDIR += go-bindata-assetfs
+    SUBDIR += go-blueprint
     SUBDIR += go-critic
     SUBDIR += go-git
     SUBDIR += go-mode.el
