@@ -1,7 +1,7 @@
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
 DISTVERSION=    26.3.27
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=     security
 MASTER_SITES=   https://github.com/v2fly/geoip/releases/download/202604050243/:geoip \
 		https://github.com/v2fly/domain-list-community/releases/download/20260409151144/:geosite
@@ -26,6 +26,8 @@ GO_MOD_DIST=	github
 GO_MODULE=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./main:xray
+
+CONFLICTS_INSTALL=	xray
 
 SUB_FILES=	pkg-message
 SUB_LIST=	GROUP="${GROUPS}" \
