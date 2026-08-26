@@ -1,5 +1,5 @@
 PORTNAME=	zathura-cb
-DISTVERSION=	2026.05.10
+DISTVERSION=	2026.07.18
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-cb/download/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgirara.so:x11-toolkits/girara
 RUN_DEPENDS=	zathura:graphics/zathura
 
 USES=		compiler:c17 desktop-file-utils gnome meson pkgconfig tar:xz
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	cairo gdkpixbuf glib20 gtk40
 
 PLIST_FILES=	lib/zathura/libcb.so \
 		share/applications/org.pwmt.zathura-cb.desktop \
