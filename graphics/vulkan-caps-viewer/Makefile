@@ -20,7 +20,7 @@ USE_QT=		base
 
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (GL, wayland)
 
-PORTSCOUT=	skipv:sdk_2023_1
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 PLIST_FILES=	bin/vulkanCapsViewer \
 		share/applications/vulkanCapsViewer.desktop \
