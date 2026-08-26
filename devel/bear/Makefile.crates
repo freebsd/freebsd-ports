@@ -1,8 +1,7 @@
-CARGO_CRATES=	ahash-0.8.12 \
-		aho-corasick-1.1.4 \
+CARGO_CRATES=	aho-corasick-1.1.5 \
 		annotate-snippets-0.12.16 \
 		anstyle-1.0.14 \
-		anyhow-1.0.103 \
+		anyhow-1.0.104 \
 		arraydeque-0.5.1 \
 		assert_cmd-2.2.2 \
 		assert_fs-1.1.4 \
@@ -10,52 +9,51 @@ CARGO_CRATES=	ahash-0.8.12 \
 		base64-0.22.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
-		bitflags-2.13.0 \
-		bstr-1.12.3 \
-		bumpalo-3.20.3 \
-		cc-1.2.65 \
+		bitflags-2.13.1 \
+		bstr-1.13.1 \
+		cc-1.4.3 \
 		cfg-if-1.0.4 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
-		clap_complete-4.6.7 \
-		clap_derive-4.6.1 \
+		clap-4.6.6 \
+		clap_builder-4.6.6 \
+		clap_complete-4.6.9 \
+		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		console-0.16.4 \
-		crossbeam-channel-0.5.15 \
-		crossbeam-deque-0.8.6 \
-		crossbeam-epoch-0.9.18 \
-		crossbeam-utils-0.8.21 \
-		ctor-1.0.7 \
+		crossbeam-channel-0.5.16 \
+		crossbeam-deque-0.8.7 \
+		crossbeam-epoch-0.9.20 \
+		crossbeam-utils-0.8.22 \
+		ctor-1.0.13 \
 		difflib-0.4.0 \
 		downcast-0.11.0 \
 		encode_unicode-1.0.0 \
 		encoding_rs-0.8.35 \
-		encoding_rs_io-0.1.7 \
+		encoding_rs_io-0.1.8 \
 		env_filter-2.0.0 \
 		env_logger-0.11.11 \
 		errno-0.3.14 \
-		fastrand-2.4.1 \
-		find-msvc-tools-0.1.9 \
+		fastrand-2.5.0 \
+		find-msvc-tools-0.1.11 \
 		float-cmp-0.10.0 \
 		fnv-1.0.7 \
 		fragile-2.1.0 \
-		futures-core-0.3.32 \
+		futures-core-0.3.34 \
 		getrandom-0.3.4 \
 		getrandom-0.4.3 \
-		globset-0.4.18 \
+		glob-0.3.4 \
+		globset-0.4.20 \
 		globwalk-0.9.1 \
-		granit-parser-0.0.6 \
+		granit-parser-1.1.0 \
 		heck-0.5.0 \
-		ignore-0.4.27 \
+		ignore-0.4.33 \
 		insta-1.48.0 \
 		itoa-1.0.18 \
-		js-sys-0.3.103 \
-		libc-0.2.186 \
-		link-section-0.18.3 \
-		linktime-proc-macro-0.2.0 \
+		libc-0.2.189 \
+		link-section-0.19.3 \
+		linktime-proc-macro-0.2.3 \
 		linux-raw-sys-0.12.1 \
 		log-0.4.33 \
-		memchr-2.8.2 \
+		memchr-2.8.3 \
 		mockall-0.15.0 \
 		mockall_derive-0.15.0 \
 		nohash-hasher-0.2.0 \
@@ -66,29 +64,28 @@ CARGO_CRATES=	ahash-0.8.12 \
 		predicates-3.1.4 \
 		predicates-core-1.0.10 \
 		predicates-tree-1.0.13 \
-		proc-macro2-1.0.106 \
+		proc-macro2-1.0.107 \
 		proptest-1.11.0 \
 		quick-error-1.2.3 \
-		quote-1.0.46 \
+		quote-1.0.47 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
-		rand-0.9.4 \
+		rand-0.9.5 \
 		rand_chacha-0.9.0 \
 		rand_core-0.9.5 \
 		rand_xorshift-0.4.0 \
-		regex-1.12.4 \
-		regex-automata-0.4.14 \
+		regex-1.13.1 \
+		regex-automata-0.4.18 \
 		regex-lite-0.1.9 \
 		regex-syntax-0.8.11 \
 		rustix-1.1.4 \
-		rustversion-1.0.22 \
 		rusty-fork-0.3.1 \
 		same-file-1.0.6 \
-		serde-1.0.228 \
-		serde-saphyr-0.0.28 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.150 \
+		serde-1.0.229 \
+		serde-saphyr-1.1.0 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.151 \
 		shell-words-1.1.1 \
 		shlex-2.0.1 \
 		signal-hook-0.4.4 \
@@ -96,27 +93,23 @@ CARGO_CRATES=	ahash-0.8.12 \
 		similar-2.7.0 \
 		smallvec-1.15.2 \
 		strsim-0.11.1 \
-		syn-2.0.118 \
+		syn-2.0.119 \
+		syn-3.0.3 \
 		tempfile-3.27.0 \
 		termtree-0.5.1 \
-		thiserror-2.0.18 \
-		thiserror-impl-2.0.18 \
+		thiserror-2.0.20 \
+		thiserror-impl-2.0.20 \
 		unarray-0.1.4 \
 		unicode-ident-1.0.24 \
 		unicode-width-0.2.2 \
-		version_check-0.9.5 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		wasip2-1.0.4+wasi-0.2.12 \
-		wasm-bindgen-0.2.126 \
-		wasm-bindgen-macro-0.2.126 \
-		wasm-bindgen-macro-support-0.2.126 \
-		wasm-bindgen-shared-0.2.126 \
-		which-8.0.4 \
+		which-8.0.5 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
 		windows-sys-0.61.2 \
 		wit-bindgen-0.57.1 \
-		zerocopy-0.8.52 \
-		zerocopy-derive-0.8.52 \
-		zmij-1.0.21
+		zerocopy-0.8.56 \
+		zerocopy-derive-0.8.56 \
+		zmij-1.0.23
