@@ -1466,9 +1466,9 @@ DEV_ERROR+=		"FLAVORS contains flavors that are not all [a-z0-9_]: ${_BAD_FLAVOR
 
 .    if !empty(FLAVOR)
 .      if empty(FLAVORS)
-IGNORE=	FLAVOR is defined (to ${FLAVOR}) while this port does not have FLAVORS
+IGNORE=	has an unknown flavor '${FLAVOR}', this port does not have any flavors
 .      elif ! ${FLAVORS:M${FLAVOR}}
-IGNORE=	Unknown flavor '${FLAVOR}', possible flavors: ${FLAVORS}
+IGNORE=	has an unknown flavor '${FLAVOR}', possible flavors: ${FLAVORS}
 .      endif
 .    endif
 
