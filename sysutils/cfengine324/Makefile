@@ -9,6 +9,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
 WWW=		https://cfengine.com/
 
+DEPRECATED=	FreeBSD will only support N and N-1
+EXPIRATION_DATE=2026-09-30
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 LICENSE=	GPLv3

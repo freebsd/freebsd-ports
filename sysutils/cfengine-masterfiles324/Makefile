@@ -7,6 +7,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	cfengine sample policies for installations and upgrades
 WWW=		https://cfengine.com/
 
+DEPRECATED=	FreeBSD will only support N and N-1
+EXPIRATION_DATE=2026-09-30
+
 LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
