@@ -1899,6 +1899,7 @@
     SUBDIR += rubygem-actionpack-xml_parser-rails52
     SUBDIR += rubygem-actionpack-xml_parser-rails61
     SUBDIR += rubygem-actionpack-xml_parser-rails72
+    SUBDIR += rubygem-actionpack-xml_parser-rails81
     SUBDIR += rubygem-actiontext-gitlab
     SUBDIR += rubygem-actiontext60
     SUBDIR += rubygem-actiontext61
