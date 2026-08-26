@@ -1,5 +1,5 @@
 PORTNAME=	atpublic
-PORTVERSION=	5.0
+PORTVERSION=	6.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +17,5 @@ USE_PYTHON=	autoplist pep517
 
 MAKE_ENV=	ATPUBLIC_BUILD_EXTENSION=1
 NO_ARCH=	yes
-
-post-extract:
-	${CP} ${FILESDIR}/setup* ${WRKSRC}
 
 .include <bsd.port.mk>
