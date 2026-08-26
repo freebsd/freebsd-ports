@@ -1,7 +1,7 @@
 PORTNAME=	clrng
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-beta
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://github.com/clMathLibraries/clRNG
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64 powerpc64le powerpcspe
 ONLY_FOR_ARCHS_REASON=	this code has only been tested on x86 and powerpc platforms
