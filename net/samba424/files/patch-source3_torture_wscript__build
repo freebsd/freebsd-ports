@@ -1,0 +1,11 @@
+--- source3/torture/wscript_build.orig	2026-06-23 10:45:53 UTC
++++ source3/torture/wscript_build
+@@ -132,7 +132,7 @@ bld.SAMBA3_BINARY('vfstest',
+                       smbconf
+                       SMBREADLINE
+                       ''',
+-                 for_selftest=True)
++                 install=True)
+ 
+ bld.SAMBA3_BINARY('test_rpc_samr',
+                  source='test_rpc_samr.c',

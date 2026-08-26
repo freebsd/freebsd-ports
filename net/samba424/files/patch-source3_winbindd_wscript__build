@@ -1,0 +1,11 @@
+--- source3/winbindd/wscript_build.orig	2019-01-15 10:07:00 UTC
++++ source3/winbindd/wscript_build
+@@ -2,7 +2,7 @@
+ 
+ bld.SAMBA3_LIBRARY('idmap',
+                    source='idmap.c idmap_util.c',
+-                   deps='samba-util pdb',
++                   deps='pdb samba-modules secrets3',
+                    allow_undefined_symbols=True,
+                    private_library=True)
+ 

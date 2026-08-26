@@ -1,0 +1,10 @@
+--- lib/talloc/wscript.orig	2026-01-20 15:42:54 UTC
++++ lib/talloc/wscript
+@@ -52,6 +52,7 @@ def configure(conf):
+ 
+     conf.CHECK_HEADERS('sys/auxv.h')
+     conf.CHECK_FUNCS('getauxval')
++    conf.CHECK_FUNCS('arc4random')
+ 
+     conf.SAMBA_CONFIG_H()
+ 
