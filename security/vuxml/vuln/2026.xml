@@ -1,3 +1,33 @@
+  <vuln vid="1ff5a036-a13e-11f1-a129-901b0e9408dc">
+    <topic>conduit -- authentication bypass vulnerability</topic>
+    <affects>
+<package>
+<name>matrix-conduit</name>
+<range><lt>0.10.13</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Conduit team reports:</p>
+	<blockquote cite="https://conduit.rs/changelog/#v0-10-13-2026-08-26">
+	  <p>Fixes a vulnerability where endpoints which required
+	  authentication, but functionality do not depend on the
+	  user/server calling it, could have their authentication
+	  bypassed, as well as causing crashes for all other
+	  authenticated endpoints. It is recommended you upgrade
+	  ASAP.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://conduit.rs/changelog/#v0-10-13-2026-08-26</url>
+    </references>
+    <dates>
+      <discovery>2026-08-26</discovery>
+      <entry>2026-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ef63188f-a0ff-11f1-ae1f-bc241121aa0a">
     <topic>FreeBSD -- TOCTOU race in POSIX shared memory large page configuration</topic>
     <affects>
