@@ -22,4 +22,8 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=		yes
 
+# Its only consumer, net-mgmt/netbox, isn't fully compatible with newer
+# versions until the upcoming 4.7.x release.
+PORTSCOUT=	limit:3\.17\.
+
 .include <bsd.port.mk>
