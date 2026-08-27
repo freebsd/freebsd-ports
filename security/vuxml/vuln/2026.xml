@@ -1,3 +1,34 @@
+  <vuln vid="db135cd1-a232-11f1-85ed-10ffe07f9334">
+    <topic>PHP Composer -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php82-composer</name>
+	<name>php83-composer</name>
+	<name>php84-composer</name>
+	<name>php85-composer</name>
+	<range><lt>2.10.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Composer project reports:</p>
+	<blockquote cite="https://github.com/composer/composer/releases/tag/2.10.3">
+	  <p>Validate package bin paths against path traversal using symlinks (GHSA-96h3-5x6v-m776, CVE-2026-59944)</p>
+	  <p>Fixed command injection via malicious Perforce url (GHSA-rvx4-ffvw-m9q3)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-59944</cvename>
+      <url>https://github.com/composer/composer/security/advisories/GHSA-96h3-5x6v-m776</url>
+      <url>https://github.com/composer/composer/security/advisories/GHSA-rvx4-ffvw-m9q3</url>
+    </references>
+    <dates>
+      <discovery>2026-08-27</discovery>
+      <entry>2026-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fee67ad5-a05e-11f1-ad2b-40b034429ecf">
     <topic>net/rsync -- multiple vulnerabilities</topic>
     <affects>
