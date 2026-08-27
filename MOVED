@@ -5557,3 +5557,4 @@ devel/py-ptvsd|devel/py-debugpy|2026-08-25|Has expired: No longer maintained ups
 security/please||2026-08-26|Has expired: Upstream project has been archived, use doas or sudo or sudo-rs instead
 multimedia/jmref||2026-08-26|Has expired: No longer maintained upstream
 security/py-biscuit-auth|security/py-biscuit-python|2026-08-26|Renamed to match upstream PyPI package name
+net/kmime|net/kf6-kmime|2026-08-27|KMime moved to KDE Frameworks

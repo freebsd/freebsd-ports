@@ -347,7 +347,6 @@
     SUBDIR += kldap
     SUBDIR += kmailtransport
     SUBDIR += kmbox
-    SUBDIR += kmime
     SUBDIR += knc
     SUBDIR += knxd
     SUBDIR += kontactinterface
