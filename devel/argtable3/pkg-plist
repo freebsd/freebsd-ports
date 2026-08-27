@@ -1,3 +1,4 @@
+include/argtable3.h
 lib/cmake/argtable3/Argtable3Config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/argtable3/Argtable3Config.cmake
 lib/cmake/argtable3/Argtable3ConfigVersion.cmake
