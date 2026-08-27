@@ -314,7 +314,7 @@ _USE_FRAMEWORKS6_ALL=	apidox archive attica auth baloo bookmarks \
 			frameworkintegration globalaccel guiaddons holidays \
 			i18n iconthemes idletime itemmodels itemviews \
 			jobwidgets kcmutils kdav kdeclarative kded kdesu \
-			kimageformats kio kirigami2 kquickcharts newstuff \
+			kimageformats kio kirigami2 kquickcharts mime newstuff \
 			networkmanagerqt notifications notifyconfig package parts \
 			people plotting prison pty purpose \
 			qqc2-desktop-style runner service solid sonnet \
@@ -363,7 +363,7 @@ _USE_KDEPIM_ALL=	akonadi akonadicalendar akonadiconsole \
 			kontact kontactinterface korganizer kpkpass ksmtp \
 			ldap libkdepim libkleo libksieve mailcommon \
 			mailimporter mailtransport mbox mbox-importer \
-			messagelib mime mimetreeparser pim-data-exporter \
+			messagelib mimetreeparser pim-data-exporter \
 			pimcommon pimtextedit tnef
 
 # List of frequently used KDE releated software for any KDE/Qt version.
@@ -550,6 +550,9 @@ kde-layer-shell-qt_LIB=		libLayerShellQtInterface.so
 
 kde-mediaplayer_PORT=		multimedia/kf${_KDE_VERSION}-kmediaplayer
 kde-mediaplayer_LIB=		libKF${_KDE_VERSION}MediaPlayer.so.5
+
+kde-mime_PORT=			net/kf${_KDE_VERSION}-kmime
+kde-mime_LIB=			libKF${_KDE_VERSION}Mime.so
 
 kde-networkmanagerqt_PORT=	net-mgmt/kf${_KDE_VERSION}-networkmanager-qt
 kde-networkmanagerqt_LIB=	libKF${_KDE_VERSION}NetworkManagerQt.so
@@ -918,9 +921,6 @@ kde-mbox_LIB=			libKPim${_KDE_VERSION}Mbox.so
 
 kde-messagelib_PORT=		net/messagelib
 kde-messagelib_LIB=		libKPim${_KDE_VERSION}MessageList.so
-
-kde-mime_PORT=			net/kmime
-kde-mime_LIB=			libKPim${_KDE_VERSION}Mime.so
 
 kde-pimcommon_PORT=		net/pimcommon
 kde-pimcommon_LIB=		libKPim${_KDE_VERSION}PimCommon.so
