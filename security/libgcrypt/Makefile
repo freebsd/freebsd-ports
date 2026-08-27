@@ -13,7 +13,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	libgpg-error>=1.32:security/libgpg-error
 RUN_DEPENDS=	libgpg-error>=1.32:security/libgpg-error
 
-USES=		cpe libtool pathfix tar:bzip2
+USES=		cpe libtool llvm:min=20 pathfix tar:bzip2
 
 CPE_VENDOR=	gnupg
 USE_LDCONFIG=	yes
