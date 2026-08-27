@@ -1,5 +1,5 @@
 PORTNAME=	ukncbtl
-DISTVERSION=	g20240813
+PORTVERSION=	1.0.g20260625
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
@@ -16,9 +16,7 @@ USE_QT=		core gui multimedia network script testlib widgets \
 USE_GITHUB=	yes
 GH_ACCOUNT=	nzeemin
 GH_PROJECT=	ukncbtl-qt
-GH_TAGNAME=	ae5021f8
-
-PORTSCOUT=	limit:^[0-9]
+GH_TAGNAME=	3545c415
 
 DESKTOP_ENTRIES=	"UkncBtl" \
 			"" \
