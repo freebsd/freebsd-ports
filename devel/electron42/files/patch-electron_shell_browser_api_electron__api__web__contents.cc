@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2026-08-24 01:09:19 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2026-08-25 19:06:16 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
 @@ -182,11 +182,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
@@ -23,7 +23,7 @@
  #include "chrome/browser/hang_monitor/hang_crash_dump.h"  // nogncheck
  #endif
  
-@@ -637,7 +637,7 @@ std::optional<base::TimeDelta> GetCursorBlinkInterval(
+@@ -639,7 +639,7 @@ std::optional<base::TimeDelta> GetCursorBlinkInterval(
        ui::TextInsertionCaretBlinkPeriodFromDefaults());
    if (system_value)
      return *system_value;
@@ -32,7 +32,7 @@
    if (auto* native_theme = ui::NativeTheme::GetInstanceForNativeUi())
      return native_theme->caret_blink_interval();
  #elif BUILDFLAG(IS_WIN)
-@@ -1034,7 +1034,7 @@ void WebContents::InitWithSessionAndOptions(
+@@ -1036,7 +1036,7 @@ void WebContents::InitWithSessionAndOptions(
    accept_languages.pop_back();
    prefs->accept_languages = accept_languages;
  
@@ -41,7 +41,7 @@
    // Update font settings.
    static const gfx::FontRenderParams params(
        gfx::GetFontRenderParams(gfx::FontRenderParamsQuery(), nullptr));
-@@ -3067,13 +3067,13 @@ void WebContents::ForcefullyCrashRenderer() {
+@@ -3071,13 +3071,13 @@ void WebContents::ForcefullyCrashRenderer() {
  
    content::RenderProcessHost* rph = rwh->GetProcess();
    if (rph) {
@@ -57,7 +57,7 @@
      CrashDumpHungChildProcess(rph->GetProcess().Handle());
  #endif
      rph->Shutdown(content::RESULT_CODE_HUNG);
-@@ -3706,7 +3706,7 @@ void WebContents::Focus() {
+@@ -3714,7 +3714,7 @@ void WebContents::Focus() {
  void WebContents::Focus() {
    // Focusing on WebContents does not automatically focus the window on macOS
    // and Linux, do it manually to match the behavior on Windows.
@@ -66,7 +66,7 @@
    if (owner_window())
      owner_window()->Focus(true);
  #endif
-@@ -4607,7 +4607,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
+@@ -4615,7 +4615,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
  }
  #endif
  
