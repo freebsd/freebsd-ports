@@ -1,6 +1,6 @@
---- codex-rs/Cargo.toml.orig	2026-08-20 20:09:38 UTC
+--- codex-rs/Cargo.toml.orig	2026-08-26 18:43:43 UTC
 +++ codex-rs/Cargo.toml
-@@ -363,7 +363,7 @@ multimap = "0.10.0"
+@@ -369,7 +369,7 @@ multimap = "0.10.0"
  memchr = "2.7.6"
  mime_guess = "2.0.5"
  multimap = "0.10.0"

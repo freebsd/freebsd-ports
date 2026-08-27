@@ -1,7 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.149.0
-PORTREVISION=	1
+DISTVERSION=	0.150.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -100,6 +99,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
+		${BUILD_WRKSRC}/app-server/tests/suite/v2/environment_info.rs \
 		${BUILD_WRKSRC}/cli/src/debug_sandbox/pid_tracker.rs \
 		${BUILD_WRKSRC}/core/src/command_canonicalization.rs \
 		${BUILD_WRKSRC}/core/src/command_canonicalization_tests.rs \
@@ -110,17 +110,20 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/shell_snapshot_tests.rs \
 		${BUILD_WRKSRC}/core/src/shell_tests.rs \
 		${BUILD_WRKSRC}/core/src/tasks/user_shell_tests.rs \
-		${BUILD_WRKSRC}/core/src/tools/handlers/shell_tests.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/unified_exec_tests.rs \
 		${BUILD_WRKSRC}/core/src/tools/runtimes/mod.rs \
 		${BUILD_WRKSRC}/core/src/tools/runtimes/mod_tests.rs \
 		${BUILD_WRKSRC}/core/src/tools/sandboxing_tests.rs \
+		${BUILD_WRKSRC}/core/src/unified_exec/process_manager_tests.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/guardian_review.rs \
+		${BUILD_WRKSRC}/core/tests/suite/shell_snapshot.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
 		${BUILD_WRKSRC}/exec-server/src/process_sandbox_tests.rs \
-		${BUILD_WRKSRC}/exec-server/tests/file_system_unix.rs \
+		${BUILD_WRKSRC}/exec-server/src/shell_snapshot_tests.rs \
+		${BUILD_WRKSRC}/exec-server/tests/common/fake_bwrap.rs \
+		${BUILD_WRKSRC}/exec-server/tests/exec_process.rs \
 		${BUILD_WRKSRC}/shell-command/src/parse_command.rs \
 		${BUILD_WRKSRC}/shell-command/src/shell_detect.rs \
 		${BUILD_WRKSRC}/shell-command/src/shell_snapshot_tests.rs \
@@ -152,14 +155,15 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/compact.rs \
 		${BUILD_WRKSRC}/core/tests/suite/compact_remote_parity.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
+		${BUILD_WRKSRC}/core/tests/suite/guardian_mcp_elicitation.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks_mcp.rs \
+		${BUILD_WRKSRC}/core/tests/suite/interrupt_hooks.rs \
 		${BUILD_WRKSRC}/core/tests/suite/network_approval.rs \
 		${BUILD_WRKSRC}/core/tests/suite/openai_file_mcp.rs \
 		${BUILD_WRKSRC}/core/tests/suite/subagent_notifications.rs \
 		${BUILD_WRKSRC}/core/tests/suite/token_budget.rs \
 		${BUILD_WRKSRC}/core/tests/suite/tool_lifecycle.rs \
-		${BUILD_WRKSRC}/core/tests/suite/tools.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/exec-server/tests/exec_process.rs \
 		${BUILD_WRKSRC}/exec/tests/suite/sandbox.rs \
@@ -173,6 +177,7 @@ post-patch:
 		${BUILD_WRKSRC}/hooks/src/events/post_tool_use.rs \
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/landlock.rs \
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/managed_proxy.rs \
+		${BUILD_WRKSRC}/memories/write/src/startup_tests.rs \
 		${BUILD_WRKSRC}/skills/src/invocation.rs \
 		${BUILD_WRKSRC}/skills/src/invocation_tests.rs \
 		${BUILD_WRKSRC}/tui/src/app/tests.rs \
