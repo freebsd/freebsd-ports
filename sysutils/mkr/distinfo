@@ -1,5 +1,5 @@
-TIMESTAMP = 1785464312
-SHA256 (go/sysutils_mkr/mkr-v0.65.0/v0.65.0.mod) = f30347bb9d541935e2ee8fe82b0ebddd46f26102cc21577eef840f33e8989540
-SIZE (go/sysutils_mkr/mkr-v0.65.0/v0.65.0.mod) = 2979
-SHA256 (go/sysutils_mkr/mkr-v0.65.0/v0.65.0.zip) = 8bf20e9b18c6d57db9f4502ebcd07fe5e122ab08175d11723d4b60c4e72c2f76
-SIZE (go/sysutils_mkr/mkr-v0.65.0/v0.65.0.zip) = 149462
+TIMESTAMP = 1787788558
+SHA256 (go/sysutils_mkr/mkr-v0.66.0/v0.66.0.mod) = 616cb2921cad85b47ee9c594daa763bde65db3468023ccfb7ba6c9b2a5064984
+SIZE (go/sysutils_mkr/mkr-v0.66.0/v0.66.0.mod) = 2896
+SHA256 (go/sysutils_mkr/mkr-v0.66.0/v0.66.0.zip) = 0ab66619a7e35d434005d5eca4ce01d6feca17a36abf5c4ac402ae71e35cdd08
+SIZE (go/sysutils_mkr/mkr-v0.66.0/v0.66.0.zip) = 153111
