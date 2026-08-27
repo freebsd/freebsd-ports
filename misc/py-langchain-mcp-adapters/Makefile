@@ -1,5 +1,5 @@
 PORTNAME=	langchain-mcp-adapters
-DISTVERSION=	0.3.1
+DISTVERSION=	0.3.2
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
