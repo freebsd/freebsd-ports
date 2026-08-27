@@ -1,5 +1,5 @@
-TIMESTAMP = 1785051470
-SHA256 (go/mail_protonmail-bridge/protonmail-bridge-v3.25.0/v3.25.0.mod) = 2b413c5e0f38b1322c52f74cf085c433a162de19ef7847835b3f922b550624ca
-SIZE (go/mail_protonmail-bridge/protonmail-bridge-v3.25.0/v3.25.0.mod) = 7941
-SHA256 (go/mail_protonmail-bridge/protonmail-bridge-v3.25.0/v3.25.0.zip) = 0194435fd4207a51010e2a815d33f33a579c4337ac6cb7a88be8fc8a9bf8b656
-SIZE (go/mail_protonmail-bridge/protonmail-bridge-v3.25.0/v3.25.0.zip) = 7969325
+TIMESTAMP = 1787790422
+SHA256 (go/mail_protonmail-bridge/protonmail-bridge-v3.26.0/v3.26.0.mod) = bbc504b9086f5991787f570c1d7974d1724d8f8e64726c249cbf98d616e282e1
+SIZE (go/mail_protonmail-bridge/protonmail-bridge-v3.26.0/v3.26.0.mod) = 7935
+SHA256 (go/mail_protonmail-bridge/protonmail-bridge-v3.26.0/v3.26.0.zip) = d1b3255b72bac3b30fa73961f530c8f0c8acaaf60960369eedc11f9d4c81bc45
+SIZE (go/mail_protonmail-bridge/protonmail-bridge-v3.26.0/v3.26.0.zip) = 8317818
