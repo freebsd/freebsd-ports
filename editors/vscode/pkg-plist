@@ -23977,6 +23977,17 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/agentsVoice/browser/media/pt-BR_gil_neutral.mp3
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/agentsVoice/browser/media/victoria_neutral.mp3
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/agentsVoice/browser/media/zh_wuzhi_neutral.mp3
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/artist-beret.png
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/baseball-cap.png
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/construction-hard-hat.png
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/cowboy-hat.png
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/crown.png
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/firefighter-helmet.png
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/full-size-spinner-hat.png
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/grand-top-hat-monocle.png
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/leaning-party-hat.png
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/sailor-hat.png
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/viking-helmet.png
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/buddy-clapping-insiders-tracking-96.png
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/buddy-clapping-insiders-tracking-96.spritesheet.png
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/buddy-clapping-stable-tracking-96.png
