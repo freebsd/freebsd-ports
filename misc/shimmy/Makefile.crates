@@ -1,5 +1,5 @@
 CARGO_CRATES=	aho-corasick-1.1.5 \
-		airframe-0.3.0 \
+		airframe-0.4.0 \
 		airframe-observe-0.1.2 \
 		android_system_properties-0.1.6 \
 		anes-0.1.6 \
