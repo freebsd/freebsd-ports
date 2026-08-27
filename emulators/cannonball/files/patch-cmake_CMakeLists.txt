@@ -1,0 +1,13 @@
+Add compatibility for CMake 4.
+
+--- cmake/CMakeLists.txt.orig	2026-08-25 20:05:26 UTC
++++ cmake/CMakeLists.txt
+@@ -5,7 +5,7 @@
+ # Everything should go into a win64.cmake equivalent.
+ # -----------------------------------------------------------------------------
+ 
+-cmake_minimum_required (VERSION 3.3.2) # Might compile lower, but untested
++cmake_minimum_required (VERSION 3.5.2) # Might compile lower, but untested
+ project (cannonball)
+ 
+ # -----------------------------------------------------------------------------
