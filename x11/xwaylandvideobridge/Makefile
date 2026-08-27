@@ -1,5 +1,5 @@
 PORTNAME=	xwaylandvideobridge
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/src/
 
@@ -15,8 +15,8 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 USES=		cmake compiler:c++20-lang gettext-tools gl kde:6 qt:6 \
 		tar:xz xorg
 USE_GL=		opengl
-USE_KDE=	coreaddons crash i18n kpipewire statusnotifieritem \
-		windowsystem \
+USE_KDE=	coreaddons crash dbusaddons i18n kpipewire \
+		statusnotifieritem windowsystem \
 		ecm:build
 USE_QT=		base declarative \
 		tools:build
