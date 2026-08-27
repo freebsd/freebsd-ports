@@ -1,6 +1,5 @@
 PORTNAME=	mcomix
-DISTVERSION=	3.1.1
-PORTREVISION=	1
+DISTVERSION=	3.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/MComix-${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,10 +23,11 @@ USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	RAR
+OPTIONS_DEFINE=	PDF RAR
 OPTIONS_DEFAULT=RAR
 
 RAR_DESC=	RAR (.cbr) comic book archives support
+PDF_RUN_DEPENDS=mutool:graphics/mupdf
 RAR_RUN_DEPENDS=${LOCALBASE}/lib/libunrar.so:archivers/libunrar
 
 post-install:
