@@ -1,0 +1,23 @@
+Drop this patch once devel/py-setuptools >= 77.
+
+--- pyproject.toml.orig	2026-10-23 03:09:42 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ requires = [
+     # keep in sync with [dependency-groups.build]
+     "Cython>=0.29",
+     "numpy>=2.0.0",
+-    "setuptools>=77.0.1",
++    "setuptools>=59.6",
+     "setuptools_scm[toml]>=3.4",
+ ]
+ build-backend = "backend"
+@@ -20,8 +20,7 @@ keywords = [
+     "numpy", "netcdf", "data", "science", "network", "oceanography",
+     "meteorology", "climate",
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ classifiers = [
+     "Development Status :: 3 - Alpha",
+     "Programming Language :: Python :: 3",
