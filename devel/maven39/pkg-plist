@@ -6,7 +6,7 @@
 %%DATADIR%%/bin/mvn
 %%DATADIR%%/bin/mvnDebug
 %%DATADIR%%/bin/mvnyjp
-%%DATADIR%%/boot/plexus-classworlds-2.9.0.jar
+%%DATADIR%%/boot/plexus-classworlds-2.11.0.jar
 %%DATADIR%%/boot/plexus-classworlds.license
 @sample %%DATADIR%%/conf/logging/simplelogger.properties.sample
 @sample %%DATADIR%%/conf/settings.xml.sample
@@ -28,7 +28,7 @@
 %%DATADIR%%/lib/failureaccess.license
 %%DATADIR%%/lib/gson-2.13.2.jar
 %%DATADIR%%/lib/gson.license
-%%DATADIR%%/lib/guava-33.5.0-jre.jar
+%%DATADIR%%/lib/guava-33.6.0-jre.jar
 %%DATADIR%%/lib/guava.license
 %%DATADIR%%/lib/guice-5.1.0-classes.jar
 %%DATADIR%%/lib/guice.license
