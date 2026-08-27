@@ -15,6 +15,8 @@ include/KF6/KDAV/KDAV/DavItemsListJob
 include/KF6/KDAV/KDAV/DavJobBase
 include/KF6/KDAV/KDAV/DavPrincipalHomesetsFetchJob
 include/KF6/KDAV/KDAV/DavPrincipalSearchJob
+include/KF6/KDAV/KDAV/DavPushSupport
+include/KF6/KDAV/KDAV/DavSslUiProxy
 include/KF6/KDAV/KDAV/DavUrl
 include/KF6/KDAV/KDAV/Enums
 include/KF6/KDAV/KDAV/EtagCache
@@ -36,6 +38,8 @@ include/KF6/KDAV/kdav/davitemslistjob.h
 include/KF6/KDAV/kdav/davjobbase.h
 include/KF6/KDAV/kdav/davprincipalhomesetsfetchjob.h
 include/KF6/KDAV/kdav/davprincipalsearchjob.h
+include/KF6/KDAV/kdav/davpushsupport.h
+include/KF6/KDAV/kdav/davssluiproxy.h
 include/KF6/KDAV/kdav/davurl.h
 include/KF6/KDAV/kdav/enums.h
 include/KF6/KDAV/kdav/etagcache.h

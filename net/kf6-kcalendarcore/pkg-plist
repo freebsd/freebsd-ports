@@ -22,6 +22,7 @@ include/KF6/KCalendarCore/KCalendarCore/Incidence
 include/KF6/KCalendarCore/KCalendarCore/IncidenceBase
 include/KF6/KCalendarCore/KCalendarCore/Journal
 include/KF6/KCalendarCore/KCalendarCore/MemoryCalendar
+include/KF6/KCalendarCore/KCalendarCore/MimeData
 include/KF6/KCalendarCore/KCalendarCore/OccurrenceIterator
 include/KF6/KCalendarCore/KCalendarCore/Period
 include/KF6/KCalendarCore/KCalendarCore/Person
@@ -57,6 +58,7 @@ include/KF6/KCalendarCore/kcalendarcore/incidencebase.h
 include/KF6/KCalendarCore/kcalendarcore/journal.h
 include/KF6/KCalendarCore/kcalendarcore/kcalendarcore_export.h
 include/KF6/KCalendarCore/kcalendarcore/memorycalendar.h
+include/KF6/KCalendarCore/kcalendarcore/mimedata.h
 include/KF6/KCalendarCore/kcalendarcore/occurrenceiterator.h
 include/KF6/KCalendarCore/kcalendarcore/period.h
 include/KF6/KCalendarCore/kcalendarcore/person.h
