@@ -16,7 +16,8 @@ WWW?=		https://www.denx.de/wiki/U-Boot
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS+=	gsed:textproc/gsed \
+BUILD_DEPENDS+=	bash:shells/bash \
+		gsed:textproc/gsed \
 		gdate:sysutils/coreutils \
 		swig:devel/swig \
 		dtc>=1.4.1:sysutils/dtc \
@@ -28,8 +29,9 @@ BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 BUILD_DEPENDS+=	gnutls>=0:security/gnutls
 LIB_DEPENDS+=	libuuid.so:misc/libuuid
 
-USES=		bison compiler:c11 gmake python:build pkgconfig shebangfix ssl \
+USES=		bison compiler:c11 gmake python:build perl5 pkgconfig shebangfix ssl \
 		tar:bz2
+USE_PERL5=	build
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison \
 		date=${LOCALBASE}/bin/gdate \
 		dtc=${LOCALBASE}/bin/dtc \
@@ -134,7 +136,7 @@ UBOOT_PLIST_QEMU=	u-boot.bin
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2026.01
+UBOOT_VERSION?=	2026.04
 
 # If a slave port defines a PORTREVISION use it
 .if defined(U_BOOT_SLAVE_PORTREVISION_${UBOOT_VERSION})
