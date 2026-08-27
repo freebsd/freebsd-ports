@@ -1,0 +1,19 @@
+--- /dev/null	
++++ b/security/libgcrypt/files/patch-configure	
+@@ -0,0 +1,16 @@ 
++Extend the SM4 inline-assembler probe with the EVEX-encoded (zmm) forms
++used by cipher/sm4-intel-avx512-amd64.S. The base system assembler only
++knows the VEX/ymm forms, so the probe passed but the AVX512 SM4
++implementation failed to assemble. PR 297987.
++
++--- configure.orig	2026-08-27 08:23:11 UTC
+++++ configure
++@@ -19355,6 +19355,8 @@ void a(void) {
++ void a(void) {
++               __asm__("vsm4key4 %%ymm2, %%ymm1, %%ymm3\n\t":::"cc");
++               __asm__("vsm4rnds4 %%ymm2, %%ymm1, %%ymm3\n\t":::"cc");
+++              __asm__("vsm4key4 %%zmm2, %%zmm1, %%zmm3\n\t":::"cc");
+++              __asm__("vsm4rnds4 %%zmm2, %%zmm1, %%zmm3\n\t":::"cc");
++             }
++ int
++ main (void)
