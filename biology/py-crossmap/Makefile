@@ -1,6 +1,5 @@
 PORTNAME=	crossmap
-DISTVERSION=	0.7.3
-PORTREVISION=	1
+DISTVERSION=	0.7.4
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysam>0:biology/py-pysam@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyBigWig>0:biology/py-pybigwig@${PY_FLAVOR}
 
 USES=		python
+# FIXME: Does not build with pep517 + setuptools,wheel in BUILD_DEPENDS
 USE_PYTHON=	autoplist concurrent cython distutils
 
 NO_ARCH=	yes
