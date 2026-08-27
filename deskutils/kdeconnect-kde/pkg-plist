@@ -754,6 +754,19 @@ share/locale/tr/LC_MESSAGES/kdeconnect-plugins.mo
 share/locale/tr/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/tr/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-app.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-cli.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-core.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-fileitemaction.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-indicator.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-interfaces.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-kded.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-kio.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-nautilus-extension.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-plugins.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-sms.mo
+share/locale/ug/LC_MESSAGES/kdeconnect-urlhandler.mo
+share/locale/ug/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/locale/uk/LC_MESSAGES/kdeconnect-app.mo
 share/locale/uk/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/uk/LC_MESSAGES/kdeconnect-core.mo
@@ -810,4 +823,6 @@ share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/VirtualMonitor.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.kdeconnect/metadata.json
 share/qlogging-categories6/kdeconnect-kde.categories
+share/remoteview/kdeconnect-network.desktop
+share/solid/actions/solid_kdeconnect.desktop
 share/zsh/site-functions/_kdeconnect

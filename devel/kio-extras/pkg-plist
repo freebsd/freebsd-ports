@@ -1011,11 +1011,15 @@ share/locale/tr/LC_MESSAGES/kio6_smb.mo
 share/locale/tr/LC_MESSAGES/kio6_thumbnail.mo
 share/locale/ug/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ug/LC_MESSAGES/kio6_activities.mo
+share/locale/ug/LC_MESSAGES/kio6_afc.mo
 share/locale/ug/LC_MESSAGES/kio6_archive.mo
+share/locale/ug/LC_MESSAGES/kio6_filenamesearch.mo
 share/locale/ug/LC_MESSAGES/kio6_fish.mo
 share/locale/ug/LC_MESSAGES/kio6_info.mo
 share/locale/ug/LC_MESSAGES/kio6_man.mo
+share/locale/ug/LC_MESSAGES/kio6_mtp.mo
 share/locale/ug/LC_MESSAGES/kio6_nfs.mo
+share/locale/ug/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ug/LC_MESSAGES/kio6_sftp.mo
 share/locale/ug/LC_MESSAGES/kio6_smb.mo
 share/locale/ug/LC_MESSAGES/kio6_thumbnail.mo

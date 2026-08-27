@@ -12,12 +12,6 @@ include/KPim6/EventViews/EventViews/TimeLineView
 include/KPim6/EventViews/EventViews/TodoView
 include/KPim6/EventViews/EventViews/ViewCalendar
 include/KPim6/EventViews/EventViews/WhatsNextView
-include/KPim6/EventViews/EventViews/eventview.h
-include/KPim6/EventViews/EventViews/helper.h
-include/KPim6/EventViews/EventViews/prefs.h
-include/KPim6/EventViews/eventviews/EventView
-include/KPim6/EventViews/eventviews/Helper
-include/KPim6/EventViews/eventviews/Prefs
 include/KPim6/EventViews/eventviews/agendaview.h
 include/KPim6/EventViews/eventviews/calendardecoration.h
 include/KPim6/EventViews/eventviews/configdialoginterface.h

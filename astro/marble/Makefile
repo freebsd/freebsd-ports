@@ -14,8 +14,8 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
 		kde:6 qt:6 shared-mime-info tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		crash doctools i18n jobwidgets kio kirigami-addons package \
-		parts plasma-workspace-wallpapers runner service solid \
+		crash doctools i18n jobwidgets kio kirigami-addons \
+		libplasma package parts phonon runner service solid \
 		sonnet textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_LDCONFIG=	yes

@@ -8,6 +8,7 @@ WWW=		https://www.kde.org/applications/utilities/kleopatra/
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libboost_thread.so:devel/boost-libs \
+		libkdsingleapplication-qt6.so:devel/kdsingleapplication \
 		libgpgme.so:security/gpgme \
 		libgpg-error.so:security/libgpg-error \
 		libgpgmepp.so:security/gpgmepp \

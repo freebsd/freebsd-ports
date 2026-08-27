@@ -74,6 +74,7 @@ include/kpmcore/ops/restoreoperation.h
 include/kpmcore/ops/setfilesystemlabeloperation.h
 include/kpmcore/ops/setpartflagsoperation.h
 include/kpmcore/ops/setpartlabeloperation.h
+include/kpmcore/ops/takeownershipoperation.h
 include/kpmcore/util/capacity.h
 include/kpmcore/util/externalcommand.h
 include/kpmcore/util/globallog.h
@@ -184,6 +185,7 @@ share/locale/sv/LC_MESSAGES/kpmcore.mo
 share/locale/th/LC_MESSAGES/kpmcore.mo
 share/locale/tr/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/tr/LC_MESSAGES/kpmcore.mo
+share/locale/ug/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/ug/LC_MESSAGES/kpmcore.mo
 share/locale/uk/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/uk/LC_MESSAGES/kpmcore.mo

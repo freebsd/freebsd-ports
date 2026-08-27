@@ -1,6 +1,5 @@
 PORTNAME=	kdepim-runtime
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,12 +8,8 @@ WWW=		https://www.kde.org/
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
-		libcurl.so:ftp/curl \
-		libkolabxml.so:textproc/libkolabxml \
-		libqca-qt6.so:devel/qca@qt6 \
+LIB_DEPENDS=	libqca-qt6.so:devel/qca@qt6 \
 		libsasl2.so:security/cyrus-sasl2 \
-		libxerces-c.so:textproc/xerces-c3 \
 		libqt6keychain.so:security/qtkeychain@qt6
 
 USES=		cmake:noninja compiler:c++11-lib gettext kde:6 qt:6 \

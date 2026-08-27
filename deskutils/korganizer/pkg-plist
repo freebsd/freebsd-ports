@@ -53,6 +53,12 @@ share/icons/hicolor/48x48/apps/korg-journal.png
 share/icons/hicolor/48x48/apps/korg-todo.png
 share/icons/hicolor/48x48/apps/korganizer.png
 share/icons/hicolor/48x48/apps/quickview.png
+share/icons/hicolor/48x48/apps/realmoon-full.png
+share/icons/hicolor/48x48/apps/realmoon-new.png
+share/icons/hicolor/48x48/apps/realmoon-waning-last-quarter-north.png
+share/icons/hicolor/48x48/apps/realmoon-waning-last-quarter-south.png
+share/icons/hicolor/48x48/apps/realmoon-waxing-first-quarter-north.png
+share/icons/hicolor/48x48/apps/realmoon-waxing-first-quarter-south.png
 share/icons/hicolor/64x64/apps/korg-journal.png
 share/icons/hicolor/64x64/apps/korg-todo.png
 share/icons/hicolor/64x64/apps/korganizer.png
@@ -61,10 +67,6 @@ share/icons/hicolor/scalable/apps/korg-journal.svgz
 share/icons/hicolor/scalable/apps/korg-todo.svg
 share/icons/hicolor/scalable/apps/korganizer.svg
 share/icons/hicolor/scalable/apps/quickview.svgz
-share/icons/hicolor/scalable/status/moon-phase-first-quarter.svg
-share/icons/hicolor/scalable/status/moon-phase-full.svg
-share/icons/hicolor/scalable/status/moon-phase-last-quarter.svg
-share/icons/hicolor/scalable/status/moon-phase-new.svg
 %%DATADIR%%/sounds/alert.wav
 %%DATADIR%%/sounds/icemag.wav
 %%DATADIR%%/sounds/lightmag.wav

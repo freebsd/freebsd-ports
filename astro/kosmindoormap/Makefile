@@ -7,7 +7,8 @@ COMMENT=	Library and QML component for rendering multi-level OSM indoor maps
 WWW=		https://marble.kde.org/
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
-		libKOpeningHours.so:devel/kopeninghours
+		libKOpeningHours.so:devel/kopeninghours \
+		libRecast.so:graphics/recastnavigation
 
 USES=		bison cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
 USE_KDE=	coreaddons i18n kirigami2 kpublictransport service \

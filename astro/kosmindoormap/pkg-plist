@@ -89,6 +89,8 @@ lib/libKOSMIndoorMap.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libKOSMIndoorRouting.so
 lib/libKOSMIndoorRouting.so.1
 lib/libKOSMIndoorRouting.so.%%KDE_APPLICATIONS_VERSION%%
+%%QT_LIBDIR%%/metatypes/qt6kosmindoormap_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6kosmindoorrouting_metatypes.json
 %%QT_QMLDIR%%/org/kde/kosmindoormap/AmenityListDelegate.qml
 %%QT_QMLDIR%%/org/kde/kosmindoormap/AmenitySearchDialog.qml
 %%QT_QMLDIR%%/org/kde/kosmindoormap/FloorLevelSelector.qml
@@ -152,6 +154,7 @@ share/locale/sk/LC_MESSAGES/kosmindoormap.mo
 share/locale/sl/LC_MESSAGES/kosmindoormap.mo
 share/locale/sv/LC_MESSAGES/kosmindoormap.mo
 share/locale/tr/LC_MESSAGES/kosmindoormap.mo
+share/locale/ug/LC_MESSAGES/kosmindoormap.mo
 share/locale/uk/LC_MESSAGES/kosmindoormap.mo
 share/locale/zh_CN/LC_MESSAGES/kosmindoormap.mo
 share/locale/zh_TW/LC_MESSAGES/kosmindoormap.mo

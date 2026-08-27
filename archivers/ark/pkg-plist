@@ -20,6 +20,8 @@ share/icons/hicolor/128x128/apps/ark.png
 share/icons/hicolor/48x48/apps/ark.png
 share/icons/hicolor/64x64/apps/ark.png
 share/icons/hicolor/scalable/apps/ark.svgz
+share/kconf_update/ark_move_dirhistory_to_state_config.py
+share/kconf_update/ark_move_dirhistory_to_state_config.upd
 share/locale/af/LC_MESSAGES/ark.mo
 share/locale/ar/LC_MESSAGES/ark.mo
 share/locale/ast/LC_MESSAGES/ark.mo
@@ -101,6 +103,7 @@ share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_HK/LC_MESSAGES/ark.mo
 share/locale/zh_TW/LC_MESSAGES/ark.mo
 share/man/ca/man1/ark.1.gz
+share/man/de/man1/ark.1.gz
 share/man/es/man1/ark.1.gz
 share/man/fr/man1/ark.1.gz
 share/man/gl/man1/ark.1.gz

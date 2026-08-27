@@ -37,6 +37,7 @@ lib/libkaddressbookprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/applications/kaddressbook-importer.desktop
 share/applications/kaddressbook-view.desktop
 share/applications/org.kde.kaddressbook.desktop
+share/config.kcfg/kaddressbook.kcfg
 share/icons/hicolor/128x128/apps/kaddressbook.png
 share/icons/hicolor/16x16/apps/kaddressbook.png
 share/icons/hicolor/22x22/apps/kaddressbook.png

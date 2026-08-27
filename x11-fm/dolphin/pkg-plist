@@ -39,6 +39,8 @@ share/kconf_update/dolphin_detailsmodesettings.upd
 share/kconf_update/dolphin_replace_view_mode_with_view_settings_in_toolbar.py
 share/kconf_update/dolphin_replace_view_mode_with_view_settings_in_toolbar.upd
 share/kconf_update/dolphin_statusandlocationbarssettings.upd
+share/kconf_update/dolphin_tab_key_shortcut_for_focus_other_view.py
+share/kconf_update/dolphin_tab_key_shortcut_for_focus_other_view.upd
 share/kglobalaccel/org.kde.dolphin.desktop
 share/knsrcfiles/servicemenu.knsrc
 share/locale/ar/LC_MESSAGES/dolphin.mo
@@ -175,6 +177,7 @@ share/locale/th/LC_MESSAGES/dolphin.mo
 share/locale/tr/LC_MESSAGES/dolphin.mo
 share/locale/tr/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ug/LC_MESSAGES/dolphin.mo
+share/locale/ug/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/uk/LC_MESSAGES/dolphin.mo
 share/locale/uk/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/uz/LC_MESSAGES/dolphin.mo

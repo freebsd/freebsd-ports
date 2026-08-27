@@ -432,6 +432,7 @@
     SUBDIR += kbreakout
     SUBDIR += kdegames
     SUBDIR += kdiamond
+    SUBDIR += kdominate
     SUBDIR += kevedit
     SUBDIR += kfourinline
     SUBDIR += kgoldrunner

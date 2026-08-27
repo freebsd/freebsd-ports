@@ -1,3 +1,3 @@
-TIMESTAMP = 1782826915
-SHA256 (KDE/release-service/26.04.3/kio-zeroconf-26.04.3.tar.xz) = 82c091819ac42188b7032138068759a56cf66fc06f3a9a3fe0195f9ecf943edb
-SIZE (KDE/release-service/26.04.3/kio-zeroconf-26.04.3.tar.xz) = 45560
+TIMESTAMP = 1787311999
+SHA256 (KDE/release-service/26.08.0/kio-zeroconf-26.08.0.tar.xz) = cf57e9c5cd7248fd74a59fc318e8554a6a2198756f4440fb577648a09659f38d
+SIZE (KDE/release-service/26.08.0/kio-zeroconf-26.08.0.tar.xz) = 45784

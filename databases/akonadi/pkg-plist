@@ -145,6 +145,7 @@ include/KPim6/AkonadiCore/Akonadi/TagFetchJob
 include/KPim6/AkonadiCore/Akonadi/TagFetchScope
 include/KPim6/AkonadiCore/Akonadi/TagModel
 include/KPim6/AkonadiCore/Akonadi/TagModifyJob
+include/KPim6/AkonadiCore/Akonadi/TagSync
 include/KPim6/AkonadiCore/Akonadi/TransactionJobs
 include/KPim6/AkonadiCore/Akonadi/TransactionSequence
 include/KPim6/AkonadiCore/Akonadi/TrashFilterProxyModel
@@ -251,6 +252,7 @@ include/KPim6/AkonadiCore/akonadi/tagfetchjob.h
 include/KPim6/AkonadiCore/akonadi/tagfetchscope.h
 include/KPim6/AkonadiCore/akonadi/tagmodel.h
 include/KPim6/AkonadiCore/akonadi/tagmodifyjob.h
+include/KPim6/AkonadiCore/akonadi/tagsync.h
 include/KPim6/AkonadiCore/akonadi/transactionjobs.h
 include/KPim6/AkonadiCore/akonadi/transactionsequence.h
 include/KPim6/AkonadiCore/akonadi/trashfilterproxymodel.h
@@ -260,7 +262,6 @@ include/KPim6/AkonadiCore/akonadi/trashsettings.h
 include/KPim6/AkonadiCore/akonadi/unlinkjob.h
 include/KPim6/AkonadiCore/akonadi/vectorhelper.h
 include/KPim6/AkonadiCore/akonadi_version.h
-include/KPim6/AkonadiWidgets/Akonadi/AgentActionManager
 include/KPim6/AkonadiWidgets/Akonadi/AgentConfigurationDialog
 include/KPim6/AkonadiWidgets/Akonadi/AgentConfigurationWidget
 include/KPim6/AkonadiWidgets/Akonadi/AgentInstanceWidget
@@ -288,7 +289,6 @@ include/KPim6/AkonadiWidgets/Akonadi/TagSelectWidget
 include/KPim6/AkonadiWidgets/Akonadi/TagSelectionComboBox
 include/KPim6/AkonadiWidgets/Akonadi/TagSelectionDialog
 include/KPim6/AkonadiWidgets/Akonadi/TagWidget
-include/KPim6/AkonadiWidgets/akonadi/agentactionmanager.h
 include/KPim6/AkonadiWidgets/akonadi/agentconfigurationdialog.h
 include/KPim6/AkonadiWidgets/akonadi/agentconfigurationwidget.h
 include/KPim6/AkonadiWidgets/akonadi/agentinstancewidget.h
@@ -364,6 +364,7 @@ lib/libKPim6AkonadiXml.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/systemd/user/akonadi_control.service
 %%DATADIR%%/agents/knutresource.desktop
 share/applications/org.kde.akonadi.configdialog.desktop
+share/applications/org.kde.akonadi.desktop
 share/config.kcfg/resourcebase.kcfg
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Account.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
@@ -372,8 +373,6 @@ share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.DebugInterface.xml
-share/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
-share/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationSource.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Preprocessor.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
@@ -553,6 +552,7 @@ share/locale/th/LC_MESSAGES/libakonadi6.mo
 share/locale/tr/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/tr/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/tr/LC_MESSAGES/libakonadi6.mo
+share/locale/ug/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/ug/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ug/LC_MESSAGES/libakonadi6.mo
 share/locale/uk/LC_MESSAGES/akonadi-db-migrator.mo

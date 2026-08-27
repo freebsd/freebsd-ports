@@ -4,6 +4,7 @@ include/KPim6/KPkPass/Field
 include/KPim6/KPkPass/Location
 include/KPim6/KPkPass/Pass
 include/KPim6/KPkPass/Passes
+include/KPim6/KPkPass/Seat
 include/KPim6/KPkPass/barcode.h
 include/KPim6/KPkPass/boardingpass.h
 include/KPim6/KPkPass/field.h
@@ -12,6 +13,7 @@ include/KPim6/KPkPass/kpkpass_version.h
 include/KPim6/KPkPass/location.h
 include/KPim6/KPkPass/pass.h
 include/KPim6/KPkPass/passes.h
+include/KPim6/KPkPass/seat.h
 lib/cmake/KPim6PkPass/KPim6PkPassConfig.cmake
 lib/cmake/KPim6PkPass/KPim6PkPassConfigVersion.cmake
 lib/cmake/KPim6PkPass/KPim6PkPassTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -19,6 +21,7 @@ lib/cmake/KPim6PkPass/KPim6PkPassTargets.cmake
 lib/libKPim6PkPass.so
 lib/libKPim6PkPass.so.6
 lib/libKPim6PkPass.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+%%QT_LIBDIR%%/metatypes/qt6kpim6pkpass_metatypes.json
 %%QT_QMLDIR%%/org/kde/pkpass/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/pkpass/kpkpassqmlplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/pkpass/libkpkpassqmlplugin.so
