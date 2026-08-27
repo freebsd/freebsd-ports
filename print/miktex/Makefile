@@ -15,7 +15,7 @@ DISTFILES=	miktex-zzdb1-2.9.tar.lzma:bootstrap \
 DIST_SUBDIR=	miktex
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	uzsolt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of TeX/LaTeX
 WWW=		https://miktex.org
 
