@@ -1,4 +1,4 @@
---- examples/chrony.conf.example3.orig	2020-09-16 10:09:52 UTC
+--- examples/chrony.conf.example3.orig	2026-08-27 12:38:15 UTC
 +++ examples/chrony.conf.example3
 @@ -1,7 +1,7 @@
  #######################################################################
@@ -9,9 +9,9 @@
  # want to enable.  The more obscure options are not included.  Refer
  # to the documentation for these.
  #
-@@ -31,7 +31,9 @@
- ! server bar.example.net iburst
- ! server baz.example.net iburst
+@@ -33,7 +33,9 @@
+ ! server ntp2.example.net iburst
+ ! server ntp3.example.net iburst
  
 -! pool pool.ntp.org iburst
 +# This is a reasonable default setting to have on in typical cases for
@@ -20,7 +20,7 @@
   
  #######################################################################
  ### AVOIDING POTENTIALLY BOGUS CHANGES TO YOUR CLOCK
-@@ -84,7 +86,7 @@ driftfile /var/lib/chrony/drift
+@@ -86,7 +88,7 @@ driftfile /var/lib/chrony/drift
  # If you want to enable NTP authentication with symmetric keys, you will need
  # to uncomment the following line and edit the file to set up the keys.
  
@@ -29,7 +29,7 @@
  
  # If you specify an NTP server with the nts option to enable authentication
  # with the Network Time Security (NTS) mechanism, or enable server NTS with
-@@ -164,6 +166,10 @@ ntsdumpdir /var/lib/chrony
+@@ -166,6 +168,10 @@ ntsdumpdir /var/lib/chrony
  # only need this if you really enjoy looking at the logs, you want to
  # produce some graphs of your system's timekeeping performance, or you
  # need help in debugging a problem.

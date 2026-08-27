@@ -1,6 +1,6 @@
---- util.c.orig	2017-01-31 10:22:11 UTC
+--- util.c.orig	2026-08-27 12:38:15 UTC
 +++ util.c
-@@ -738,7 +738,7 @@ UTI_TimespecToNtp64(struct timespec *src
+@@ -790,7 +790,7 @@ UTI_TimespecToNtp64(const struct timespec *src, NTP_in
      hi = lo = 0;
    } else {
      hi = htonl(sec + JAN_1970);
