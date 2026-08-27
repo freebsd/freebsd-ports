@@ -1,5 +1,6 @@
 PORTNAME=	marknote
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/marknote/
 
