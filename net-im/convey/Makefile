@@ -10,6 +10,9 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Instant Message (IM) program using the Jabber protocol
 WWW=		https://convey.sourceforge.net/
 
+DEPRECATED=	Obsolete and no longer developed since 2003
+EXPIRATION_DATE=	2026-10-27
+
 USES=		java:ant,run
 
 MAKE_ARGS=	-quiet
