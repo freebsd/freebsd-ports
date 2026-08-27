@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-08-21 20:46:49 UTC
++++ pyproject.toml
+@@ -1,7 +1,8 @@ version = "3.1.5"
+ [project]
+ name = "dna_features_viewer"
+ version = "3.1.5"
+-license = "MIT"
++# This causes a conflict, license cannot be given as both file and text
++# license = "MIT"
+ authors = [{ name = "Zulko" }]
+ description = "Plot features from DNA sequences (e.g. Genbank) with Python"
+ readme = "pypi-readme.rst"
