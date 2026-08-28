@@ -1,8 +1,7 @@
 PORTNAME=	video-trimmer
-DISTVERSION=	26.03
-PORTREVISION=	3
+DISTVERSION=	26.03.1
 CATEGORIES=	multimedia gnome
-MASTER_SITES=	https://gitlab.gnome.org/-/project/11135/uploads/6d29ff2c8ff5ba5ba676a03f2b8a0b64/
+MASTER_SITES=	https://gitlab.gnome.org/-/project/11135/uploads/57ef53cf5544c3a06562aaccc7ee19c6/
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	gnome
 
