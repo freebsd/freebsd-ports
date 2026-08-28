@@ -1,3 +1,40 @@
+  <vuln vid="a711b018-a24b-11f1-81e6-3c7c3fba4204">
+    <topic>NSD -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>nsd</name>
+	  <range><lt>4.15.1</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs reports:</p>
+	<blockquote cite="https://community.nlnetlabs.nl/t/nsd-4-15-1-security-release/3447">
+	  <ul>
+	    <li>CVE-2026-18664: IP range access control restrictions are bypassed for some unintended IP. Reported by <a href="https://qifanz.com/">Qifan Zhang from Palo Alto Networks</a>, <a href="https://claude.ai">Claude</a> and <a href="https://adalogics.com/">Ada Logics</a>.</li>
+	    <li>CVE-2026-18916: Any remote client can denial TCP service by throttling the TCP receive window (down to 1). Reported by <a href="https://github.com/akoul">akoul (Akhil Koul)</a></li>
+	    <li>CVE-2026-19401: Any remote client can denial UDP service by sending a specifically crafted query with multiple DNS Cookie options.  Reported by <a href="https://qifanz.com/">Qifan Zhang from Palo Alto Networks</a> and <a href="mailto:zhangph@yandex.com">afldl</a>.</li>
+	    <li>CVE-2026-19538: Anyone with access to the proxy protocol port over TCP or TLS can bypass BLOCKED access control items. Reported by <a href="https://qifanz.com/">Qifan Zhang from Palo Alto Networks</a>.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-18664</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-18664.txt</url>
+      <cvename>CVE-2026-18916</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-18916.txt</url>
+      <cvename>CVE-2026-19401</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-19401.txt</url>
+      <cvename>CVE-2026-19538</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-19538.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-08-26</discovery>
+      <entry>2026-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="161b1c49-a29b-11f1-a883-2cf05da270f3">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
