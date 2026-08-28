@@ -1,7 +1,7 @@
 PORTNAME=	wander
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 GO_MODULE=	github.com/robinovitch61/wander
+GO_LDFLAGS=	-X ${GO_MODULE}/cmd.Version=${DISTVERSIONFULL}
 
 PLIST_FILES=	bin/wander
 
