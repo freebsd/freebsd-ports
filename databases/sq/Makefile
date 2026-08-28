@@ -1,6 +1,7 @@
 PORTNAME=	sq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.54.1
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -18,6 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	neilotoole
 
 GO_MODULE=	github.com/neilotoole/sq
+GO_LDFLAGS=	-X ${GO_MODULE}/cli/buildinfo.Version=${DISTVERSIONFULL}
 GO_BUILDFLAGS+=	-tags duckdb_use_lib
 
 PLIST_FILES=	bin/sq
