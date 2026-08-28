@@ -55,14 +55,14 @@ CONFIGURE_ARGS+=	--disable-jent-support
 CFLAGS+=	-DWITH_DEBUG
 .endif
 
-.if ${OSREL:R} < 16 && ${PORT_OPTIONS:MAVX512}
-# The user wants AVX512 in FreeBSD-14 and FreeBSD-15
+.if (( ${OSVERSION} >= 1600000 && ${OSVERSION} < 1600017 ) || ( ${OSVERSION} >= 1500000 && ${OSVERSION} < 1501501 ) || ${OSVERSION} < 1404501 ) && ! ${PORT_OPTIONS:MAVX512}
+# FreeBSD without llvm21 in base
 USES+=		llvm:min=20
-.elif ${OSREL:R} < 16 && ! ${PORT_OPTIONS:MAVX512}
-# The default FreeBSD-14 and FreeBSD-15 is no AVX512 support
+.elif (( ${OSVERSION} >= 1600000 && ${OSVERSION} < 1600017 ) || ( ${OSVERSION} >= 1500000 && ${OSVERSION} < 1501501 ) || ${OSVERSION} < 1404501 ) && ${PORT_OPTIONS:MAVX512}
+# User wants AVX512 support anyway
 CONFIGURE_ARGS+=--disable-avx512-support
 .else
-# FreeBSD 16-CURRENT's LLVM21 in base supports AVX512
+# FreeBSD with LLVM21 in base supports AVX512
 .endif
 
 post-patch:
