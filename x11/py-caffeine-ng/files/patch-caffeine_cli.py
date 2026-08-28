@@ -1,4 +1,4 @@
---- caffeine/cli.py.orig	2023-03-09 15:23:08 UTC
+--- caffeine/cli.py.orig	2026-04-13 21:30:19 UTC
 +++ caffeine/cli.py
 @@ -1,4 +1,4 @@
 -import ctypes
@@ -6,7 +6,7 @@
  import logging
  import signal
  
-@@ -21,8 +21,8 @@ def cli(ctx, verbose):
+@@ -20,8 +20,8 @@ def cli(ctx: click.Context, verbose: bool) -> None:
      signal.signal(signal.SIGINT, signal.SIG_DFL)
  
      # register the process id as 'caffeine'

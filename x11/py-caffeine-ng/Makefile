@@ -1,10 +1,8 @@
 PORTNAME=	caffeine-ng
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.0
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-0-g5027f55
+DISTVERSION=	4.3.2
 CATEGORIES=	x11 python
-MASTER_SITES=	https://codeberg.org/WhyNotHugo/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	https://codeberg.org/WhyNotHugo/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -25,7 +23,8 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 		scdoc:textproc/scdoc
 LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
 		libnotify.so:devel/libnotify
-RUN_DEPENDS=	${PY_DEPENDS}
+RUN_DEPENDS=	${PY_DEPENDS} \
+		xdg-screensaver:devel/xdg-utils
 
 USES=		gettext-tools gnome meson pkgconfig python
 USE_GNOME=	gdkpixbuf gtk30 pygobject3
@@ -34,12 +33,14 @@ GLIB_SCHEMAS=	net.launchpad.caffeine.gschema.xml
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 NO_ARCH=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 PORTDOCS=	CHANGELOG.rst README.md
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${REINPLACE_CMD} -e "s|/etc|${LOCALBASE}/etc|g; \
+	@${REINPLACE_CMD} -e "s|/etc|${LOCALBASE}/etc|g; \
 		s|python.full_path()|'${PYTHON_CMD}'|g" ${WRKSRC}/meson.build
 
 do-install-DOCS-on:

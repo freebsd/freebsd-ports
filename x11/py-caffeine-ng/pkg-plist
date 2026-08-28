@@ -2,7 +2,6 @@ bin/caffeine
 etc/xdg/autostart/caffeine.desktop
 %%PYTHON_SITELIBDIR%%/caffeine/__init__.py
 %%PYTHON_SITELIBDIR%%/caffeine/__main__.py
-%%PYTHON_SITELIBDIR%%/caffeine/applicationinstance.py
 %%PYTHON_SITELIBDIR%%/caffeine/cli.py
 %%PYTHON_SITELIBDIR%%/caffeine/core.py
 %%PYTHON_SITELIBDIR%%/caffeine/icons.py
@@ -86,5 +85,5 @@ share/locale/uk/LC_MESSAGES/caffeine-ng.mo
 share/locale/vi/LC_MESSAGES/caffeine-ng.mo
 share/locale/xh/LC_MESSAGES/caffeine-ng.mo
 share/locale/zh_TW/LC_MESSAGES/caffeine-ng.mo
-share/man/man1/caffeine/caffeine.1.gz
+share/man/man1/caffeine.1.gz
 share/pixmaps/caffeine.png
