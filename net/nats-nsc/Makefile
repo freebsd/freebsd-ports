@@ -1,7 +1,7 @@
 PORTNAME=	nsc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.15.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 PKGNAMEPREFIX=	nats-
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 GO_MODULE=	github.com/nats-io/nsc/v2
+GO_LDFLAGS=	-X main.version=${DISTVERSION}
 
 PLIST_FILES=	bin/nsc \
 		share/doc/${PORTNAME}/README.md
