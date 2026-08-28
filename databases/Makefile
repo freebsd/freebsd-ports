@@ -582,6 +582,7 @@
     SUBDIR += pgbackrest
     SUBDIR += pgbadger
     SUBDIR += pgbarman
+    SUBDIR += pgbot
     SUBDIR += pgbouncer
     SUBDIR += pgdbf
     SUBDIR += pgjwt

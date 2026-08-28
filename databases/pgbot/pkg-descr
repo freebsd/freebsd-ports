@@ -1,0 +1,17 @@
+pgbot is a single static binary that connects to a PostgreSQL server with
+a read-only role, reads the server's own statistics views and prints a
+findings-first health report, including what changed since the previous
+run. It needs no agent, no external service and no write privilege
+anywhere in the path.
+
+Features:
+- Checks connections, cache hit ratio, locks, slow and regressed queries,
+  unused and missing indexes, table bloat, vacuum and replication lag
+- Findings are ranked by severity, with a per-database health score
+- Snapshots are stored locally so consecutive runs can be diffed
+- Versioned --json output with a published JSON Schema, plus SARIF output
+  for CI integration
+- Works as an MCP server so AI agents and applications can query it
+- Supports PostgreSQL 14 through 18
+
+pgbot is the diagnostic engine behind pgterm (databases/pgterm).
