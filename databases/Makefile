@@ -602,6 +602,7 @@
     SUBDIR += pgschema
     SUBDIR += pgsql-http
     SUBDIR += pgtcl
+    SUBDIR += pgterm
     SUBDIR += pgtop
     SUBDIR += pgtui
     SUBDIR += pguri
