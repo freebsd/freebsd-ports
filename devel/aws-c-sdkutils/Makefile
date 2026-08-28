@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-sdkutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.10
+DISTVERSION=	1.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libaws-c-common.so:devel/aws-c-common
 
-USES=		cmake:testing
+USES=		cmake:testing localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
