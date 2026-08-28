@@ -1,6 +1,6 @@
---- crates/gpui_linux/src/linux/platform.rs.orig	2026-07-29 14:43:24 UTC
+--- crates/gpui_linux/src/linux/platform.rs.orig	2026-08-26 14:24:53 UTC
 +++ crates/gpui_linux/src/linux/platform.rs
-@@ -126,7 +126,7 @@ pub(crate) struct LinuxCommon {
+@@ -128,7 +128,7 @@ pub(crate) struct LinuxCommon {
      app_name: Option<String>,
      system_notifications: crate::linux::system_notifications::SystemNotificationState,
      #[cfg_attr(
@@ -9,7 +9,7 @@
          allow(dead_code)
      )]
      wake_sender: Sender<()>,
-@@ -177,7 +177,7 @@ impl LinuxCommon {
+@@ -179,7 +179,7 @@ impl LinuxCommon {
  
      pub(crate) fn start_wake_listener(&mut self) {
          if !self.wake_listener_started {
@@ -18,7 +18,7 @@
              smol::spawn({
                  let wake_sender = self.wake_sender.clone();
                  async move {
-@@ -200,7 +200,7 @@ impl LinuxCommon {
+@@ -202,7 +202,7 @@ impl LinuxCommon {
      }
  }
  

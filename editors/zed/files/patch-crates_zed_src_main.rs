@@ -1,4 +1,4 @@
---- crates/zed/src/main.rs.orig	2026-08-12 14:40:25 UTC
+--- crates/zed/src/main.rs.orig	2026-08-26 14:24:53 UTC
 +++ crates/zed/src/main.rs
 @@ -21,6 +21,7 @@ use collections::HashMap;
  use client::{Client, ProxySettings, RefreshLlmTokenListener, UserStore, parse_zed_link};
@@ -27,7 +27,7 @@
      if let Some(socket) = &args.crash_handler {
          crashes::crash_server(socket.as_path(), paths::logs_dir().clone());
          return;
-@@ -385,6 +390,7 @@ fn main() {
+@@ -392,6 +397,7 @@ fn main() {
      let should_install_crash_handler =
          client::telemetry::should_install_crash_handler(*release_channel::RELEASE_CHANNEL);
  
@@ -35,7 +35,7 @@
      let crash_handler = if should_install_crash_handler {
          Some(
              app.background_executor().spawn(crashes::init(
-@@ -607,6 +613,7 @@ fn main() {
+@@ -614,6 +620,7 @@ fn main() {
              let telemetry = telemetry.clone();
              move |_, evt: &client::user::Event, cx| match evt {
                  client::user::Event::PrivateUserInfoUpdated => {
@@ -43,7 +43,7 @@
                      if let Some(crash_client) = cx.try_global::<CrashHandler>() {
                          crashes::set_user_info(
                              &crash_client.0,
-@@ -656,6 +663,7 @@ fn main() {
+@@ -663,6 +670,7 @@ fn main() {
          auto_update::init(client.clone(), cx);
          dap_adapters::init(cx);
          auto_update_ui::init(cx);
@@ -51,7 +51,7 @@
          reliability::init(client.clone(), app_state.workspace_store.clone(), cx);
          extension_host::init(
              extension_host_proxy.clone(),
-@@ -850,6 +858,7 @@ fn main() {
+@@ -857,6 +865,7 @@ fn main() {
          let menus = app_menus(cx);
          cx.set_menus(menus);
  

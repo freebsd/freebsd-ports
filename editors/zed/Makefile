@@ -1,6 +1,6 @@
 PORTNAME=	zed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.1
+DISTVERSION=	1.17.2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-editor
 
@@ -49,6 +49,7 @@ MAKE_ENV=	APP_CLI="zedit" \
 		ZED_UPDATE_EXPLANATION="Please use packages/ports to update zed." \
 		RELEASE_VERSION="${DISTVERSION}"
 
+PORTSCOUT=	limit:^v[0-9]\.	# prevent tags like v2024.16.0
 SUB_FILES=	pkg-message
 SUB_LIST=	DISTVERSION=${DISTVERSION}
 

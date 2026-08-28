@@ -1,20 +1,24 @@
---- crates/zed/Cargo.toml.orig	2026-08-19 14:43:57 UTC
+--- crates/zed/Cargo.toml.orig	2026-08-26 14:24:53 UTC
 +++ crates/zed/Cargo.toml
-@@ -92,7 +92,6 @@ copilot_ui.workspace = true
+@@ -96,7 +96,6 @@ copilot_ui.workspace = true
  copilot.workspace = true
  copilot_chat.workspace = true
  copilot_ui.workspace = true
 -crashes.workspace = true
- csv_preview.workspace = true
  dap_adapters.workspace = true
  db.workspace = true
-@@ -260,6 +259,9 @@ pkg-config = "0.3.22"
+ debug_adapter_extension.workspace = true
+@@ -252,10 +251,10 @@ image.workspace = true
  
- [target.'cfg(target_os = "linux")'.build-dependencies]
+ [target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.build-dependencies]
+ image.workspace = true
+-
+-
+-[target.'cfg(target_os = "linux")'.build-dependencies]
  pkg-config = "0.3.22"
 +
 +[target.'cfg(not(target_os = "freebsd"))'.dependencies]
 +crashes.workspace = true
  
  [dev-dependencies]
- call = { workspace = true, features = ["test-support"] }
+ activity_indicator = { workspace = true, features = ["test-support"] }
