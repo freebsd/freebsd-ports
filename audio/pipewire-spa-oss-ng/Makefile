@@ -1,6 +1,6 @@
 PORTNAME=	pipewire-spa-oss-ng
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.11
+DISTVERSION=	0.9.12
 CATEGORIES=	audio
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -20,22 +20,22 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kev009
 GH_PROJECT=	pw-oss
 
-CARGO_CRATES=	aho-corasick-1.1.4 \
+CARGO_CRATES=	aho-corasick-1.1.5 \
 		annotate-snippets-0.11.5 \
 		anstyle-1.0.14 \
 		bindgen-0.72.1 \
 		bitflags-2.13.1 \
-		cc-1.4.0 \
+		cc-1.4.4 \
 		cexpr-0.6.0 \
-		cfg-expr-0.20.8 \
+		cfg-expr-0.20.9 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.2 \
-		clang-sys-1.8.1 \
+		clang-sys-1.9.1 \
 		cookie-factory-0.3.3 \
-		either-1.17.0 \
+		either-1.18.0 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
-		find-msvc-tools-0.1.9 \
+		find-msvc-tools-0.1.11 \
 		glob-0.3.4 \
 		hashbrown-0.17.1 \
 		heck-0.5.0 \
@@ -43,19 +43,19 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		itertools-0.13.0 \
 		libc-0.2.189 \
 		libloading-0.8.9 \
-		libspa-0.10.0 \
-		libspa-sys-0.10.0 \
+		libspa-0.10.1 \
+		libspa-sys-0.10.1 \
 		linux-raw-sys-0.12.1 \
 		memchr-2.8.3 \
 		minimal-lexical-0.2.1 \
 		nix-0.31.3 \
 		nom-7.1.3 \
 		nom-8.0.0 \
-		pkg-config-0.3.33 \
+		pkg-config-0.3.34 \
 		proc-macro2-1.0.107 \
 		quote-1.0.47 \
 		regex-1.13.1 \
-		regex-automata-0.4.16 \
+		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
 		rustc-hash-2.1.3 \
 		rustix-1.1.4 \
@@ -66,12 +66,12 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		shlex-2.0.1 \
 		smallvec-1.15.2 \
 		syn-2.0.119 \
-		syn-3.0.3 \
+		syn-3.0.4 \
 		system-deps-7.0.8 \
 		target-lexicon-0.13.5 \
-		toml-1.1.3+spec-1.1.0 \
+		toml-1.1.4+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_parser-1.1.2+spec-1.1.0 \
+		toml_parser-1.1.3+spec-1.1.0 \
 		toml_writer-1.1.2+spec-1.1.0 \
 		uds-0.4.2 \
 		unicode-ident-1.0.24 \
