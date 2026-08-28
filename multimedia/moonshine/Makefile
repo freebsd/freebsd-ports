@@ -1,6 +1,7 @@
 PORTNAME=	moonshine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0-freebsd
+DISTVERSION=	0.15.0
+DISTVERSIONSUFFIX=	-freebsd
 CATEGORIES=	multimedia
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -20,7 +21,6 @@ RUN_DEPENDS=	Xwayland:x11-servers/xwayland
 USES=		cargo localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocochard
-GH_TAGNAME=	${DISTVERSIONPREFIX}${DISTVERSION}
 USE_RC_SUBR=	moonshine
 
 SUB_FILES=	pkg-message

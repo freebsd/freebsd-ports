@@ -40,14 +40,24 @@ load_rc_config $name
 moonshine_home=$(pw usershow -n "${moonshine_user}" 2>/dev/null | cut -d: -f9)
 : ${moonshine_home:="/root"}
 
+# daemon(8) supervises moonshine and restarts it (-R) if it exits, so a
+# transient crash no longer leaves the host unreachable until a manual
+# restart.  Under supervision rc.subr tracks daemon(8) itself: its pid goes
+# in ${pidfile} (via -P) and the moonshine child pid in ${child_pidfile}
+# (via -p).  ${procname} must name the process that ${pidfile} holds -- the
+# daemon(8) supervisor, not the child -- or "service moonshine status"
+# would never match it.  "service moonshine stop" signals the supervisor,
+# which stops respawning and shuts the child down.
 pidfile=/var/run/moonshine.pid
-procname="%%PREFIX%%/bin/moonshine"
+child_pidfile=/var/run/moonshine_child.pid
+procname="/usr/sbin/daemon"
+moonshine_bin="%%PREFIX%%/bin/moonshine"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} -o ${moonshine_log_file} \
+command_args="-f -R 5 -P ${pidfile} -p ${child_pidfile} -o ${moonshine_log_file} \
 	/usr/bin/env PATH=%%LOCALBASE%%/bin:/usr/bin:/bin \
 	HOME=${moonshine_home} XDG_RUNTIME_DIR=${moonshine_runtime} \
 	MOONSHINE_LOG=${moonshine_log_level} \
-	${procname} ${moonshine_config} ${moonshine_args}"
+	${moonshine_bin} ${moonshine_config} ${moonshine_args}"
 
 start_precmd=moonshine_startprecmd
 
@@ -55,6 +65,10 @@ moonshine_startprecmd()
 {
 	if [ ! -e ${pidfile} ]; then
 		install -o ${moonshine_user} /dev/null ${pidfile}
+	fi
+
+	if [ ! -e ${child_pidfile} ]; then
+		install -o ${moonshine_user} /dev/null ${child_pidfile}
 	fi
 
 	if [ ! -e ${moonshine_log_file} ]; then
