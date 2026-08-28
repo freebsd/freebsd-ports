@@ -1,7 +1,7 @@
 PORTNAME=	ssl-checker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.7
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	security
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -16,6 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fabio42
 
 GO_MODULE=	github.com/fabio42/ssl-checker
+GO_LDFLAGS=	-X ${GO_MODULE}/cmd.Version=${DISTVERSION}
 
 PLIST_FILES=	bin/ssl-checker
 
