@@ -1,5 +1,5 @@
 PORTNAME=	sqlmodel
-DISTVERSION=	0.0.39
+DISTVERSION=	0.0.42
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=24.1.0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruff>=0.15.6:devel/py-ruff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ty>=0.0.25:devel/py-ty@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typer>=0.24.1:devel/py-typer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typer>=0.26.1:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.15.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python shebangfix
