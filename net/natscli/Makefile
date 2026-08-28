@@ -1,7 +1,7 @@
 PORTNAME=	natscli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -15,6 +15,7 @@ USES=		go:modules
 
 GO_MODULE=	github.com/nats-io/natscli
 GO_TARGET=	./nats
+GO_LDFLAGS=	-X main.version=${DISTVERSION}
 #GO_BUILDFLAGS=	-buildvcs=false
 
 PLIST_FILES=	bin/nats \
