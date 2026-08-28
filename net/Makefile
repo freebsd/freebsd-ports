@@ -556,6 +556,7 @@
     SUBDIR += nng
     SUBDIR += norm
     SUBDIR += nqptp
+    SUBDIR += nsc-tui
     SUBDIR += nsq
     SUBDIR += nss-pam-ldapd
     SUBDIR += nss-pam-ldapd-sasl
