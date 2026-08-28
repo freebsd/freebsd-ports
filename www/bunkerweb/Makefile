@@ -1,6 +1,6 @@
 PORTNAME=	bunkerweb
-DISTVERSION=	1.6.13
-PORTREVISION=	3
+DISTVERSION=	1.6.14
+PORTREVISION=	0
 CATEGORIES=	www security
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -47,7 +47,7 @@ RUN_DEPENDS=	openresty:www/openresty \
 		${PYTHON_PKGNAMEPREFIX}slowapi>0:www/py-slowapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>0:www/py-uvicorn@${PY_FLAVOR}
 
-LIB_DEPENDS=    libmaxminddb.so:net/libmaxminddb
+LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
 USE_RC_SUBR=	bunkerweb \
 		bunkerweb_api \
@@ -63,6 +63,9 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
+
+post-patch:
+	${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
