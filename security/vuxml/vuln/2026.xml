@@ -1,3 +1,81 @@
+  <vuln vid="aac25935-f19d-4ac8-80fc-043365686a63">
+    <topic>Elixir -- Denial of service via uncontrolled recursion in charlist conversion</topic>
+    <affects>
+      <package>
+	<name>elixir</name>
+	<range><ge>1.15.0</ge><lt>1.18.5</lt></range>
+	<range><ge>1.19.0</ge><lt>1.19.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>tomciopp reports:</p>
+	<blockquote cite="https://github.com/elixir-lang/elixir/security/advisories/GHSA-jf5q-v438-665c">
+	  <p>Uncontrolled recursion in the Elixir standard library lets an
+	    attacker who controls a list passed to inspect/1,
+	    List.to_string/1, or List.to_charlist/1 exhaust a BEAM node's
+	    memory.</p>
+	  <p>Inspect.List checks only a bounded prefix (4096 elements by
+	    default) to determine whether a list is a charlist, then attempts
+	    to convert the entire list. When a list contains a long printable
+	    prefix followed by an invalid element, the classification passes
+	    but the conversion fails. The error handling path then inspects
+	    the same list again, creating unbounded recursion that grows
+	    process memory until heap limits are exceeded or the node
+	    exhausts resources.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-75758</cvename>
+      <url>https://github.com/elixir-lang/elixir/security/advisories/GHSA-jf5q-v438-665c</url>
+      <url>https://github.com/elixir-lang/elixir/releases/tag/v1.19.6</url>
+    </references>
+    <dates>
+      <discovery>2026-08-28</discovery>
+      <entry>2026-08-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2ab3c852-d10a-4d68-be6b-80619116c33a">
+    <topic>Elixir -- Denial of service via uncontrolled recursion in charlist conversion</topic>
+    <affects>
+      <package>
+	<name>elixir-devel</name>
+	<range><ge>1.19.0</ge><lt>1.19.6</lt></range>
+	<range><ge>1.20.0</ge><lt>1.20.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>tomciopp reports:</p>
+	<blockquote cite="https://github.com/elixir-lang/elixir/security/advisories/GHSA-jf5q-v438-665c">
+	  <p>Uncontrolled recursion in the Elixir standard library lets an
+	    attacker who controls a list passed to inspect/1,
+	    List.to_string/1, or List.to_charlist/1 exhaust a BEAM node's
+	    memory.</p>
+	  <p>Inspect.List checks only a bounded prefix (4096 elements by
+	    default) to determine whether a list is a charlist, then attempts
+	    to convert the entire list. When a list contains a long printable
+	    prefix followed by an invalid element, the classification passes
+	    but the conversion fails. The error handling path then inspects
+	    the same list again, creating unbounded recursion that grows
+	    process memory until heap limits are exceeded or the node
+	    exhausts resources.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-75758</cvename>
+      <url>https://github.com/elixir-lang/elixir/security/advisories/GHSA-jf5q-v438-665c</url>
+      <url>https://github.com/elixir-lang/elixir/releases/tag/v1.20.4</url>
+    </references>
+    <dates>
+      <discovery>2026-08-28</discovery>
+      <entry>2026-08-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a711b018-a24b-11f1-81e6-3c7c3fba4204">
     <topic>NSD -- multiple vulnerabilities</topic>
     <affects>
