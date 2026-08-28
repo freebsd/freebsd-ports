@@ -1,6 +1,6 @@
 PORTNAME=	libgcrypt
 DISTVERSION=	1.12.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -57,10 +57,10 @@ CFLAGS+=	-DWITH_DEBUG
 
 .if (( ${OSVERSION} >= 1600000 && ${OSVERSION} < 1600017 ) || ( ${OSVERSION} >= 1500000 && ${OSVERSION} < 1501501 ) || ${OSVERSION} < 1404501 ) && ! ${PORT_OPTIONS:MAVX512}
 # FreeBSD without llvm21 in base
-USES+=		llvm:min=20
-.elif (( ${OSVERSION} >= 1600000 && ${OSVERSION} < 1600017 ) || ( ${OSVERSION} >= 1500000 && ${OSVERSION} < 1501501 ) || ${OSVERSION} < 1404501 ) && ${PORT_OPTIONS:MAVX512}
-# User wants AVX512 support anyway
 CONFIGURE_ARGS+=--disable-avx512-support
+.elif (( ${OSVERSION} >= 1600000 && ${OSVERSION} < 1600017 ) || ( ${OSVERSION} >= 1500000 && ${OSVERSION} < 1501501 ) || ${OSVERSION} < 1404501 ) && ${PORT_OPTIONS:MAVX512}
+USES+=		llvm:min=20
+# User wants AVX512 support anyway
 .else
 # FreeBSD with LLVM21 in base supports AVX512
 .endif
