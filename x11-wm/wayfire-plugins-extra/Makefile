@@ -1,6 +1,6 @@
 PORTNAME=	wayfire-plugins-extra
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.11.2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -33,15 +33,15 @@ GL_TUPLE=	wayfireplugins:focus-request:v0.9.0:focus_request/subprojects/focus-re
 USE_GL=		glesv2
 USE_GNOME=	cairo glibmm
 
-MESON_ARGS=	-Denable_filters=true \
-		-Denable_focus_request=true \
-		-Denable_wayfire_shadows=true
+MESON_ARGS=	-Dfilters=true \
+		-Dfocus_request=true \
+		-Dwayfire_shadows=true
 
 OPTIONS_DEFINE=		PANGO
 OPTIONS_DEFAULT=	PANGO
 OPTIONS_SUB=		yes
 
 PANGO_USE=		GNOME=pango
-PANGO_MESON_TRUE=	enable_pixdecor
+PANGO_MESON_TRUE=	pixdecor
 
 .include <bsd.port.mk>
