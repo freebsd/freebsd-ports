@@ -1,6 +1,6 @@
 PORTNAME=	aws-checksums
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.11
+DISTVERSION=	1.0.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libaws-c-common.so:devel/aws-c-common
 
-USES=		cmake:testing
+USES=		cmake:testing localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
