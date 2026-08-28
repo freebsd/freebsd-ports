@@ -1,5 +1,5 @@
 PORTNAME=	instructor
-DISTVERSION=	1.15.4
+DISTVERSION=	1.16.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=2.0.0<3.0.0:misc/py-openai@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}pydantic-core>=2.18.0<3.0.0:devel/py-pydantic-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jiter>=0.6.1<1.0:textproc/py-jiter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.4<4.0.0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3<3.0.0:www/py-requests@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3<3.0.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}regex>=2023.0.0<2027.0.0:textproc/py-regex@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
