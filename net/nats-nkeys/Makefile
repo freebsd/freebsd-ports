@@ -1,7 +1,7 @@
 PORTNAME=	nkeys
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 PKGNAMEPREFIX=	nats-
 
@@ -16,6 +16,7 @@ USES=		go:modules
 
 GO_MODULE=	github.com/nats-io/nkeys
 GO_TARGET=	./nk
+GO_LDFLAGS=	-X main.Version=${DISTVERSIONFULL}
 
 PLIST_FILES=	bin/nk \
 		share/doc/${PORTNAME}/README.md
