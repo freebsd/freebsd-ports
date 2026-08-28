@@ -1,6 +1,6 @@
 PORTNAME=	emby-server
 DISTVERSION=	4.9.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -118,6 +118,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--enable-version3
 
 MAKE_ENV=	V=1
+CFLAGS+=	-Wno-incompatible-function-pointer-types
 
 NOPRECIOUSMAKEVARS=	yes
 SUB_FILES=	SQLitePCLRaw.provider.sqlite3.dll.config
