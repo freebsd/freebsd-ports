@@ -18,12 +18,6 @@ share/applications/gpxsee.desktop
 %%DATADIR%%/style/COROS/sprite@2x.png
 %%DATADIR%%/style/COROS/style.json
 %%DATADIR%%/style/Mapsforge/GPXSee.xml
-%%DATADIR%%/style/Mapsforge/patterns/cemetery.svg
-%%DATADIR%%/style/Mapsforge/patterns/military-area.svg
-%%DATADIR%%/style/Mapsforge/patterns/nature-reserve.svg
-%%DATADIR%%/style/Mapsforge/patterns/orchard.svg
-%%DATADIR%%/style/Mapsforge/patterns/vineyard.svg
-%%DATADIR%%/style/Mapsforge/patterns/wetland.svg
 %%DATADIR%%/style/OpenMapTiles/LICENCE.md
 %%DATADIR%%/style/OpenMapTiles/sprite.json
 %%DATADIR%%/style/OpenMapTiles/sprite.png
