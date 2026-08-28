@@ -1,6 +1,7 @@
 PORTNAME=	flow
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 GO_MODULE=	github.com/programmersd21/flow
 GO_TARGET=	./cmd/flow
+GO_LDFLAGS=	-X main.version=${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 
