@@ -1,6 +1,6 @@
 PORTNAME=	netpeek
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
+DISTVERSION=	0.3.3
 CATEGORIES=	net gnome python
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-nmap>=0.7.1_1:security/py-python-nmap@${PY_FLAVOR}
 
-USES=		gettext-tools gnome meson pkgconfig python:build,run
+USES=		gettext-tools gnome meson pkgconfig python
 USE_GITHUB=	yes
 GH_ACCOUNT=	ZingyTomato
 GH_PROJECT=	NetPeek

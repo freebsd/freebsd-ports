@@ -2,9 +2,17 @@ A modern libadwaita-based network scanner for GNOME
 that helps you discover devices on your local network.
 
 Features:
-o Fast Network Scanning: Discover active devices on your network
-o Port Scanning: Shows open ports on discovered devices
-o Modern UI: Built with GTK4 and Libadwaita
-o Multi-threaded: Fast concurrent scanning
-o Flexible Input: Supports CIDR notation, IP ranges, and single IPs
+o Fast Network Scanning -- Discover active devices on your network
+o Port Scanning -- Shows open ports on discovered devices
+o Service Detection -- Automatically identifies common services
+o Deep Scan Mode -- Attempts OS detection and service version identification
+o Custom Names and History -- Rename devices, browse and reload previous scans
+o Scan Info Dialog -- View detailed scan metadata for current and previous scans
+o Dark Mode -- Follow system theme, or force light/dark
+o Sortable Results -- Sort by known status, IP, hostname, custom name and more
+o Searchable Results -- Search and filter devices on scan pages
+o Modern UI -- Built with GTK4 and Libadwaita
+o Multi-threaded -- Fast concurrent scanning with a configurable thread count
+o Flexible Input -- Supports CIDR notation, IP ranges, and single IPs
 o Automatic IP Detection: Instantly finds your local IP range
+o CSV Export -- Export scan results for use elsewhere
