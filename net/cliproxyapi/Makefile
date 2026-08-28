@@ -1,6 +1,7 @@
 PORTNAME=	cliproxyapi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.2.144
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -14,6 +15,7 @@ USES=		go:modules
 
 GO_MODULE=	github.com/router-for-me/CLIProxyAPI/v7
 GO_TARGET=	./cmd/server:cliproxyapi
+GO_LDFLAGS=	-X main.Version=${DISTVERSION}
 
 PLIST_FILES=	bin/cliproxyapi
 
