@@ -1,3 +1,44 @@
+  <vuln vid="161b1c49-a29b-11f1-a883-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.3.0</ge><lt>19.3.1</lt></range>
+	<range><ge>19.2.0</ge><lt>19.2.5</lt></range>
+	<range><ge>11.3.0</ge><lt>19.1.7</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-1-released/?nav=19.3.1">
+	  <p>Inclusion of Functionality from Untrusted Control Sphere issue in Duo Claude AI agent impacts GitLab EE</p>
+	  <p>Denial of Service issue in import pipeline impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in SCIM API impacts GitLab EE</p>
+	  <p>Improper Access Control issue in protected environments impacts GitLab EE</p>
+	  <p>Authorization Bypass issue in compliance framework assignment impacts GitLab EE</p>
+	  <p>Improper Handling of Untrusted Data issue in Pipeline Execution Policies impacts GitLab EE</p>
+	  <p>Improper Authorization issue in merge request approval rules reset impacts GitLab EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-18252</cvename>
+      <cvename>CVE-2026-77801</cvename>
+      <cvename>CVE-2025-10903</cvename>
+      <cvename>CVE-2026-3035</cvename>
+      <cvename>CVE-2026-4398</cvename>
+      <cvename>CVE-2026-15387</cvename>
+      <cvename>CVE-2026-7487</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-3-1-released/?nav=19.3.1</url>
+    </references>
+    <dates>
+      <discovery>2026-08-26</discovery>
+      <entry>2026-08-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="db135cd1-a232-11f1-85ed-10ffe07f9334">
     <topic>PHP Composer -- Multiple vulnerabilities</topic>
     <affects>
