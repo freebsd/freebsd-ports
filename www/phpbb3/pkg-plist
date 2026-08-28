@@ -486,7 +486,6 @@
 %%PHPBBDIR%%/includes/ucp/ucp_auth_link.php
 %%PHPBBDIR%%/includes/ucp/ucp_confirm.php
 %%PHPBBDIR%%/includes/ucp/ucp_groups.php
-%%PHPBBDIR%%/includes/ucp/ucp_login_link.php
 %%PHPBBDIR%%/includes/ucp/ucp_main.php
 %%PHPBBDIR%%/includes/ucp/ucp_notifications.php
 %%PHPBBDIR%%/includes/ucp/ucp_pm_compose.php
@@ -749,6 +748,7 @@
 %%PHPBBDIR%%/phpbb/cron/task/core/prune_forum.php
 %%PHPBBDIR%%/phpbb/cron/task/core/prune_notifications.php
 %%PHPBBDIR%%/phpbb/cron/task/core/prune_shadow_topics.php
+%%PHPBBDIR%%/phpbb/cron/task/core/purge_oauth_states.php
 %%PHPBBDIR%%/phpbb/cron/task/core/queue.php
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_cache.php
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_database.php
@@ -1052,6 +1052,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v330/v330b2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v330/v330rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_notification_emails_table.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_oauth_state_time.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_resend_activation_expiration.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_user_last_active.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/bot_update_v2.php
@@ -1070,6 +1071,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/profilefields_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/remove_orphaned_roles.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/remove_profilefield_aol.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/topic_views_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v331.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3310.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3310rc1.php
@@ -1080,6 +1082,11 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3313rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3314.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3314rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3315.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3315rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3316.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3316rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3317.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v331rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v332.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v332rc1.php
@@ -1156,6 +1163,7 @@
 %%PHPBBDIR%%/phpbb/feed/attachments_base.php
 %%PHPBBDIR%%/phpbb/feed/base.php
 %%PHPBBDIR%%/phpbb/feed/controller/feed.php
+%%PHPBBDIR%%/phpbb/feed/event/http_auth_subscriber.php
 %%PHPBBDIR%%/phpbb/feed/exception/feed_exception.php
 %%PHPBBDIR%%/phpbb/feed/exception/feed_unavailable_exception.php
 %%PHPBBDIR%%/phpbb/feed/exception/no_feed_exception.php
@@ -1492,6 +1500,7 @@
 %%PHPBBDIR%%/phpbb/tree/nestedset.php
 %%PHPBBDIR%%/phpbb/tree/tree_interface.php
 %%PHPBBDIR%%/phpbb/ucp/controller/delete_cookies.php
+%%PHPBBDIR%%/phpbb/ucp/controller/oauth.php
 %%PHPBBDIR%%/phpbb/ucp/controller/reset_password.php
 %%PHPBBDIR%%/phpbb/user_loader.php
 %%PHPBBDIR%%/phpbb/user.php
@@ -1706,6 +1715,7 @@
 %%PHPBBDIR%%/vendor/carlos-mg89/oauth/composer.lock
 %%PHPBBDIR%%/vendor/carlos-mg89/oauth/LICENSE
 %%PHPBBDIR%%/vendor/carlos-mg89/oauth/phpunit.xml.dist
+%%PHPBBDIR%%/vendor/carlos-mg89/oauth/pull_request_template.md
 %%PHPBBDIR%%/vendor/carlos-mg89/oauth/README.md
 %%PHPBBDIR%%/vendor/carlos-mg89/oauth/src/OAuth/Common/Consumer/Credentials.php
 %%PHPBBDIR%%/vendor/carlos-mg89/oauth/src/OAuth/Common/Consumer/CredentialsInterface.php
@@ -1946,9 +1956,12 @@
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/src/UriNormalizer.php
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/src/UriResolver.php
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/src/Utils.php
+%%PHPBBDIR%%/vendor/marc1706/fast-image-size/.github/run-phpunit.sh
+%%PHPBBDIR%%/vendor/marc1706/fast-image-size/.github/workflows/ci.yml
 %%PHPBBDIR%%/vendor/marc1706/fast-image-size/composer.json
 %%PHPBBDIR%%/vendor/marc1706/fast-image-size/composer.lock
 %%PHPBBDIR%%/vendor/marc1706/fast-image-size/lib/FastImageSize.php
+%%PHPBBDIR%%/vendor/marc1706/fast-image-size/lib/ImageReader.php
 %%PHPBBDIR%%/vendor/marc1706/fast-image-size/lib/Type/TypeBase.php
 %%PHPBBDIR%%/vendor/marc1706/fast-image-size/lib/Type/TypeBmp.php
 %%PHPBBDIR%%/vendor/marc1706/fast-image-size/lib/Type/TypeGif.php
@@ -3203,11 +3216,6 @@
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
-%%PHPBBDIR%%/vendor/symfony/polyfill-php72/bootstrap.php
-%%PHPBBDIR%%/vendor/symfony/polyfill-php72/composer.json
-%%PHPBBDIR%%/vendor/symfony/polyfill-php72/LICENSE
-%%PHPBBDIR%%/vendor/symfony/polyfill-php72/Php72.php
-%%PHPBBDIR%%/vendor/symfony/polyfill-php72/README.md
 %%PHPBBDIR%%/vendor/symfony/process/.gitignore
 %%PHPBBDIR%%/vendor/symfony/process/CHANGELOG.md
 %%PHPBBDIR%%/vendor/symfony/process/composer.json
