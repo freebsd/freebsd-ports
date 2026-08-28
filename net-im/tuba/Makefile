@@ -24,6 +24,8 @@ USES=		desktop-file-utils gettext-tools gnome meson pkgconfig \
 USE_GNOME=	cairo gdkpixbuf glib20 gtk40 gtksourceview5 libadwaita libxml2
 GLIB_SCHEMAS=	dev.geopjr.Tuba.gschema.xml
 
+WRKSRC=		${WRKDIR}/tuba
+
 OPTIONS_DEFAULT=	CLAPPER GNOMEKEYRING GSTREAMER SPELLING WEBP
 OPTIONS_GROUP=		FEATURES
 OPTIONS_GROUP_FEATURES=	BROWSER CLAPPER EXIV2 GSTREAMER SPELLING WEBP
