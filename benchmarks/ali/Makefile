@@ -1,7 +1,7 @@
 PORTNAME=	ali
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	benchmarks
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 GO_MODULE=	github.com/nakabonne/ali
+GO_LDFLAGS=	-X main.version=${DISTVERSION}
 
 CONFLICTS_INSTALL=	ja-mh mmh nmh
 
