@@ -192,6 +192,7 @@ include/freerdp%%MAJORVERSION%%/freerdp/utils/string.h
 include/freerdp%%MAJORVERSION%%/freerdp/utils/warnings.h
 include/freerdp%%MAJORVERSION%%/freerdp/version.h
 include/freerdp%%MAJORVERSION%%/freerdp/window.h
+include/winpr%%MAJORVERSION%%/winpr/Pathcch.h
 include/winpr%%MAJORVERSION%%/winpr/asn1.h
 include/winpr%%MAJORVERSION%%/winpr/assert-api.h
 include/winpr%%MAJORVERSION%%/winpr/assert.h
