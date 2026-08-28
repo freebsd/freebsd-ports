@@ -13,7 +13,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	libgpg-error>=1.32:security/libgpg-error
 RUN_DEPENDS=	libgpg-error>=1.32:security/libgpg-error
 
-USES=		cpe libtool llvm:min=20 pathfix tar:bzip2
+USES=		cpe libtool pathfix tar:bzip2
 
 CPE_VENDOR=	gnupg
 USE_LDCONFIG=	yes
@@ -31,9 +31,11 @@ PORTDOCS=	*
 CONFIGURE_ARGS=	--disable-drng-support
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 
-OPTIONS_DEFINE=		DOCS INFO STATIC
+OPTIONS_DEFINE=		DOCS INFO STATIC AVX512
 OPTIONS_DEFAULT=	DOCS INFO STATIC
 OPTIONS_SUB=	yes
+
+AVX512_DESC=		Include AVX512 support for 14 and 15
 
 INFO_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-no-info
 INFO_CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
@@ -50,6 +52,16 @@ CONFIGURE_ARGS+=	--disable-jent-support
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-DWITH_DEBUG
+.endif
+
+.if ${OSREL:R} < 16 && ${PORT_OPTIONS:MAVX512}
+# The user wants AVX512 in FreeBSD-14 and FreeBSD-15
+USES+=		llvm:min=20
+.elif ${OSREL:R} < 16 && ! ${PORT_OPTIONS:MAVX512}
+# The default FreeBSD-14 and FreeBSD-15 is no AVX512 support
+CONFIGURE_ARGS+=--disable-avx512-support
+.else
+# FreeBSD 16-CURRENT's LLVM21 in base supports AVX512
 .endif
 
 post-patch:
