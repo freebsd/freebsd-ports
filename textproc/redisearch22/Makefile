@@ -14,7 +14,7 @@ LICENSE_NAME=	Redis Source Available License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-DEPRECATED=	Redisearch 2.2 is no longer maintained use textproc/redisearch22 instead.
+DEPRECATED=	Redisearch 2.2 is no longer maintained use textproc/redisearch24 instead.
 EXPIRATION_DATE=2026-09-30
 
 USES=		cmake compiler
