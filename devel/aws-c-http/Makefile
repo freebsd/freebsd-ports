@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-http
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.1
+DISTVERSION=	1.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libaws-c-cal.so:security/aws-c-cal \
 		libaws-c-io.so:devel/aws-c-io \
 		libs2n.so:security/s2n-tls
 
-USES=		cmake:testing ssl
+USES=		cmake:testing localbase ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
