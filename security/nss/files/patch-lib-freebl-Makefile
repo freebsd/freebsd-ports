@@ -1,6 +1,5 @@
-commit 70ab2cd108663a1c9c31dd17a43dd58c453fe900
+commit 1d2b8792acc9adab82f83d1d503ea535eca526b1
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
-Date:   Fri Feb 20 21:15:44 2026 +0100
 
     powerpc64le support for FreeBSD
     
@@ -9,11 +8,15 @@ Date:   Fri Feb 20 21:15:44 2026 +0100
       Author: Piotr Kubaj <pkubaj@FreeBSD.org>
       Date:   Sat May 15 02:45:46 2021 +0000
     
-        security/nss: fix build on powerpc64le
+         security/nss: fix build on powerpc64le
+    
+    upstream even got half way to what we need
 
---- lib/freebl/Makefile.orig	2026-04-23 19:28:50 UTC
+diff --git lib/freebl/Makefile lib/freebl/Makefile
+index 2b23fc438..9e53e607e 100644
+--- lib/freebl/Makefile
 +++ lib/freebl/Makefile
-@@ -263,7 +263,7 @@ endif # Darwin
+@@ -300,7 +300,7 @@ else ifeq ($(CPU_ARCH),x86)
  endif
  endif # Darwin
  
@@ -22,26 +25,12 @@ Date:   Fri Feb 20 21:15:44 2026 +0100
  ifeq ($(CPU_ARCH),x86_64)
      # Lower case s on mpi_amd64_common due to make implicit rules.
      ASFILES  = arcfour-amd64-gas.s mpi_amd64_common.s
-@@ -290,18 +290,16 @@ ifeq ($(CPU_ARCH),ppc)
-     MPI_SRCS += mpi_arm.c
- endif
- ifeq ($(CPU_ARCH),ppc)
--    DEFINES += -DHAVE_PLATFORM_GHASH
--    EXTRA_SRCS += ghash-ppc.c
- ifdef USE_64
-     DEFINES += -DNSS_NO_INIT_SUPPORT
+@@ -336,7 +336,7 @@ ifdef USE_64
      PPC_ABI := $(shell $(CC) -dM -E - < /dev/null | awk '$$2 == "_CALL_ELF" {print $$3}')
      ifeq ($(PPC_ABI),2)
          ASFILES += sha512-p8.s
 -    ifeq ($(OS_TEST),ppc64le)
--        EXTRA_SRCS += chacha20poly1305-ppc.c ppc-gcm-wrap.c
 +    ifeq (,$(filter-out powerpc64le ppc64le, $(OS_TEST)))
-+        EXTRA_SRCS += chacha20poly1305-ppc.c ghash-ppc.c ppc-gcm-wrap.c
+         EXTRA_SRCS += chacha20poly1305-ppc.c ppc-gcm-wrap.c
          ASFILES += chacha20-ppc64le.s ppc-gcm.s
--        DEFINES += -DHAVE_PLATFORM_GCM
--    endif # ppc64le
-+        DEFINES += -DHAVE_PLATFORM_GCM -DHAVE_PLATFORM_GHASH
-+    endif # powerpc64le, ppc64le
-     endif
- endif # USE_64
- endif # ppc
+         DEFINES += -DHAVE_PLATFORM_GCM
