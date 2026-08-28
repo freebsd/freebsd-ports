@@ -1,6 +1,7 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
 DISTVERSION=	0.150.0
+PORTREVISION=	1
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -57,9 +58,6 @@ CARGO_CARGOLOCK=	${BUILD_WRKSRC}/Cargo.lock
 CARGO_BUILD_ARGS=	--bin ${PORTNAME} \
 			--bin ${PORTNAME}-code-mode-host \
 			--bin ${PORTNAME}-responses-api-proxy
-CARGO_INSTALL_PATH=	codex-rs/cli \
-			codex-rs/code-mode-host \
-			codex-rs/responses-api-proxy
 CARGO_TEST_ARGS=	--all-features --no-fail-fast
 CARGO_ENV=		OPENSSL_NO_VENDOR=1 \
 			V8_FROM_SOURCE=1 \
@@ -79,8 +77,7 @@ BUILD_WRKSRC=	${WRKSRC}/codex-rs
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-code-mode-host \
-		bin/${PORTNAME}-responses-api-proxy \
-		bin/logs_client
+		bin/${PORTNAME}-responses-api-proxy
 PORTDOCS=	README.md config.md
 
 OPTIONS_DEFINE=		COMPLETIONS DOCS
@@ -196,12 +193,13 @@ post-build-COMPLETIONS-on:
 		${WRKSRC}/completions/${PORTNAME}.${sh}
 .endfor
 
-post-install:
-.for prog in ${PLIST_FILES:Mbin/*}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${prog}
+do-install:
+.for prog in ${PLIST_FILES:Mbin/*:S|bin/||}
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${prog} \
+		${STAGEDIR}${PREFIX}/bin
 .endfor
 
-post-install-COMPLETIONS-on:
+do-install-COMPLETIONS-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/completions \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
@@ -212,7 +210,7 @@ post-install-COMPLETIONS-on:
 	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
-post-install-DOCS-on:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${BUILD_WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
