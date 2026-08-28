@@ -1,6 +1,6 @@
 PORTNAME=	taskctl
 PORTVERSION=	1.4.2
-PORTREVISION=	44
+PORTREVISION=	45
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -14,6 +14,7 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GO_TARGET=	./cmd/taskctl
+GO_LDFLAGS=	-X main.version=${PORTVERSION}
 GH_TUPLE=	bmatcuk:doublestar:v1.1.5:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar \
 		briandowns:spinner:6dc224009eae:briandowns_spinner/vendor/github.com/briandowns/spinner \
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
