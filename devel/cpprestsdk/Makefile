@@ -1,6 +1,6 @@
 PORTNAME=	cpprestsdk
 PORTVERSION=	2.10.19
-PORTREVISION=	7
+PORTREVISION=	8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -10,6 +10,9 @@ WWW=		https://github.com/Microsoft/cpprestsdk
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../license.txt
+
+DEPRECATED=	Deprecated upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
