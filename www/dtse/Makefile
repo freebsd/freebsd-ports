@@ -1,6 +1,6 @@
 PORTNAME=	dtse
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://dl1.douglasthrift.net/${PORTNAME}/ \
 		http://dl2.douglasthrift.net/${PORTNAME}/
@@ -12,6 +12,9 @@ WWW=		http://computers.douglasthrift.net/searchengine/
 
 LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=2026-09-30
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_gnu_make.m4:devel/autoconf-archive
 
