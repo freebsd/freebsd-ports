@@ -13,6 +13,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	TrueType core fonts for the Web
+WWW=		https://corefonts.sourceforge.net/
 
 # Restrictive license - cannot sell for profit or distribute in modified form
 LICENSE=	EULA
@@ -21,24 +22,22 @@ LICENSE_FILE=	${WRKSRC}/licen.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		fonts
+
+NO_ARCH=	yes
 NO_BUILD=	yes
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	EXTRAFONTS CLEARTYPE NEWVERDANA DOCS COMIC
 OPTIONS_DEFAULT=	COMIC
 OPTIONS_SUB=	yes
 
-EXTRAFONTS_DESC=	Fonts licensed under MS Windows license
-EXTRAFONTS_DISTFILES=	IELPKTH.CAB:group2
-
-CLEARTYPE_DESC=	Install ClearType fonts
-CLEARTYPE_DISTFILES=	PowerPointViewer.exe:group3
-
-NEWVERDANA_DESC=	Install y2006 version of Verdana (broken bold N, W)
+CLEARTYPE_DESC=		Install ClearType fonts
 COMIC_DESC=		Install Comic Sans
+EXTRAFONTS_DESC=	Fonts licensed under MS Windows license
+NEWVERDANA_DESC=	Install y2006 version of Verdana (broken bold N, W)
 
-SUB_FILES=	pkg-message
-
-NO_ARCH=	yes
+CLEARTYPE_DISTFILES=	PowerPointViewer.exe:group3
+EXTRAFONTS_DISTFILES=	IELPKTH.CAB:group2
 
 .include <bsd.port.options.mk>
 
