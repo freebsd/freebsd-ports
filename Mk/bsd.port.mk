@@ -1897,15 +1897,12 @@ PKG_ENV+=	SHLIB_PROVIDE_PATHS_COMPAT_LINUX_32="${LINUXBASE}/usr/lib"
 .      warning "Unknown Linux distribution ${LINUX_DEFAULT}, SHLIB_PROVIDE_PATHS_COMPAT_LINUX will not be set!"
 .    endif
 
-.    if defined(USE_LDCONFIG)
+.    if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
 .      if defined(USE_LINUX_PREFIX)
 PLIST_FILES+=	"@ldconfig-linux ${LINUXBASE}"
 .      else
-PLIST_FILES+=	"@ldconfig ${USE_LDCONFIG}"
+PLIST_FILES+=	"@ldconfig"
 .      endif
-.    endif
-.    if defined(USE_LDCONFIG32)
-PLIST_FILES+=	"@ldconfig32 ${USE_LDCONFIG32}"
 .    endif
 
 .    if defined(NO_SHLIB_REQUIRES_GLOB)
