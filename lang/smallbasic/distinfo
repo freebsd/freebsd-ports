@@ -1,0 +1,11 @@
+TIMESTAMP = 1788017885
+SHA256 (smallbasic-SmallBASIC-v12_33_FreeBSD_GH0.tar.gz) = 3374a4299e40e65b2b9445a6fef8e15dafb1e9b6c71b7b9d678a32f1a5f0c845
+SIZE (smallbasic-SmallBASIC-v12_33_FreeBSD_GH0.tar.gz) = 1689583
+SHA256 (zserge-jsmn-25647e692c7906b96ffd2b05ca54c097948e879c_GH0.tar.gz) = 02ac62537ea34ee33b55efa41a832b78086548715298a454b6f304e29a7c9d43
+SIZE (zserge-jsmn-25647e692c7906b96ffd2b05ca54c097948e879c_GH0.tar.gz) = 12631
+SHA256 (dr-soft-miniaudio-0.11.22_GH0.tar.gz) = bcb07bfb27e6fa94d34da73ba2d5642d4940b208ec2a660dbf4e52e6b7cd492f
+SIZE (dr-soft-miniaudio-0.11.22_GH0.tar.gz) = 4485197
+SHA256 (nothings-stb-f58f558c120e9b32c217290b80bad1a0729fbb2c_GH0.tar.gz) = be1a5dad9ac38f42ef8abf00bd7db776101661b77603f832fcc0bae843d82846
+SIZE (nothings-stb-f58f558c120e9b32c217290b80bad1a0729fbb2c_GH0.tar.gz) = 1513418
+SHA256 (lvandeve-lodepng-17d08dd26cac4d63f43af217ebd70318bfb8189c_GH0.tar.gz) = 83d828c5478ffe7bad0e8ed80678ef826206becbd8cf70097b6cc4d29549389b
+SIZE (lvandeve-lodepng-17d08dd26cac4d63f43af217ebd70318bfb8189c_GH0.tar.gz) = 261776

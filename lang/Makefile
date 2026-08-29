@@ -365,6 +365,7 @@
     SUBDIR += slib
     SUBDIR += slib-guile
     SUBDIR += slisp
+    SUBDIR += smallbasic
     SUBDIR += smalltalk
     SUBDIR += smlnj
     SUBDIR += snobol4
