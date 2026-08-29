@@ -1,6 +1,7 @@
 PORTNAME=	dogtag-jss
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.10.1
+PORTREVISION=	1
 CATEGORIES=	security java
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -46,7 +47,7 @@ CMAKE_ARGS=	-DJAVA_HOME=${JAVA_HOME} \
 		-DTOMCAT_COYOTE_JAR=${LOCALBASE}/apache-tomcat-9.0/lib/tomcat-coyote.jar \
 		-DTOMCAT_JULI_JAR=${LOCALBASE}/apache-tomcat-9.0/bin/tomcat-juli.jar \
 		-DTOMCAT_UTIL_JAR=${LOCALBASE}/apache-tomcat-9.0/lib/tomcat-util.jar
-CMAKE_OFF=	WITH_JAVADOC WITH_MLDSA WITH_MLKEM WITH_TESTS
+CMAKE_OFF=	WITH_JAVADOC WITH_MLKEM WITH_TESTS
 
 ALL_TARGET=	java symkey_library
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--undefined-version
