@@ -1,6 +1,6 @@
---- barman/config.py.orig	2026-01-07 14:55:50 UTC
-+++ barman/config.py
-@@ -1379,15 +1379,15 @@ class Config(object):
+--- src/barman/config.py.orig	2026-08-29 10:00:11 UTC
++++ src/barman/config.py
+@@ -1464,15 +1464,15 @@ class Config(object):
  class Config(object):
      """This class represents the barman configuration.
  

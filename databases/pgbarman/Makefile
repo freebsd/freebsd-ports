@@ -1,6 +1,6 @@
 PORTNAME=		barman
 DISTVERSIONPREFIX=	release/
-DISTVERSION=		3.19.1
+DISTVERSION=		3.20.0
 CATEGORIES=		databases
 PKGNAMEPREFIX=		pg
 PKGNAMESUFFIX=		${PYTHON_PKGNAMESUFFIX}
@@ -11,13 +11,15 @@ WWW=		https://pgbarman.org/
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.11.17,<0.13:devel/py-uv-build@${PY_FLAVOR}
+
 RUN_DEPENDS=	rsync:net/rsync									\
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.4.2:databases/py-psycopg2@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}argcomplete>0:devel/py-argcomplete@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+USES=		python:3.12+
+USE_PYTHON=	pep517 autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	EnterpriseDB
@@ -30,8 +32,8 @@ GROUPS=		barman
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-.for f in barman/config.py \
+pre-build:
+.for f in src/barman/config.py \
 	  docs/barman.conf \
 	  docs/_build/man/barman-config-update.1 \
 	  docs/_build/man/barman.1 \
