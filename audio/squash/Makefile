@@ -1,6 +1,6 @@
 PORTNAME=	squash
 PORTVERSION=	1.0
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
@@ -9,6 +9,8 @@ COMMENT=	Learning console-based MP3/OGG player
 WWW=		https://savannah.nongnu.org/projects/squash/
 
 LICENSE=	GPLv2+
+
+DEPRECATED=	the upstream port has not been updated since 2004
 
 LIB_DEPENDS+=	libao.so:audio/libao \
 		libfftw.so:math/fftw \
@@ -21,6 +23,7 @@ RUN_DEPENDS=	id3v2:audio/id3v2
 USES=		compiler:c11 gmake ncurses ruby tar:bzip2
 MAKE_ARGS=	CC="${CC}"
 CFLAGS+=	-fcommon
+CFLAGS+=	-Wno-macro-redefined  # id3lib redefines C99 stdbool.h macros on non-C++ sources
 
 OPTIONS_DEFINE=	DOCS
 
