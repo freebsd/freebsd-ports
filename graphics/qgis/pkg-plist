@@ -856,6 +856,7 @@ include/qgis/qgslayermetadatavalidator.h
 include/qgis/qgslayernotesutils.h
 include/qgis/qgslayerpropertiesdialog.h
 include/qgis/qgslayerpropertieswidget.h
+include/qgis/qgslayerrenderingsettings.h
 include/qgis/qgslayerstylewatcher.h
 include/qgis/qgslayertree.h
 include/qgis/qgslayertreecustomnode.h
@@ -10161,6 +10162,8 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/data/contributors.json
 %%DATADIR%%/resources/data/contributors.qml
 %%DATADIR%%/resources/data/contributors_map.qml
+%%DATADIR%%/resources/data/coordinate_reference_system_legacy.json
+%%DATADIR%%/resources/data/google_fonts.json
 %%DATADIR%%/resources/data/qgis-hackfests.json
 %%DATADIR%%/resources/data/qgis-hackfests.qml
 %%DATADIR%%/resources/data/user_groups.qml
