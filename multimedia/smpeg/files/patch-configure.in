@@ -1,0 +1,11 @@
+--- configure.in.orig	2026-08-29 18:33:42 UTC
++++ configure.in
+@@ -59,7 +59,7 @@ dnl Work around the lack of certain typedefs.
+ AC_PROG_INSTALL
+ 
+ dnl Work around the lack of certain typedefs.
+-AC_TYPE_SOCKLEN_T
++dnl AC_TYPE_SOCKLEN_T
+ 
+ dnl The alpha architecture needs special flags for binary portability
+ case "$target" in
