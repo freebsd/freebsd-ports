@@ -2,7 +2,7 @@ PORTNAME=	mecrisp-stellaris
 DISTVERSION=	3.0.1
 CATEGORIES=	lang
 MASTER_SITES=	SF/mecrisp \
-		http://fuz.su/pub/mecrisp/
+		http://fuz.ooo/pub/mecrisp/
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Native code Forth system for ARM

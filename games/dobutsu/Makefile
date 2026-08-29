@@ -1,7 +1,7 @@
 PORTNAME=	dobutsu
 DISTVERSION=	6
 CATEGORIES=	games
-MASTER_SITES=	http://fuz.su/pub/dobutsu/
+MASTER_SITES=	http://fuz.ooo/pub/dobutsu/
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Tablebase and Engine for Dobutsu Shogi
