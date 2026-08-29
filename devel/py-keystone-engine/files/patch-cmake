@@ -1,0 +1,70 @@
+Fix build with newer versions of CMake.
+
+Obtained with some adaptions from:
+
+https://github.com/keystone-engine/keystone/pull/593
+
+--- src/CMakeLists.txt.orig	2020-06-21 14:08:17 UTC
++++ src/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ # Keystone Assembler Engine (www.keystone-engine.org)
+ # By Nguyen Anh Quynh, 2016
+ 
+-cmake_minimum_required(VERSION 2.8.7)
++cmake_minimum_required(VERSION 3.10.0)
+ project(keystone)
+ 
+ set(KEYSTONE_VERSION_MAJOR 0)
+@@ -12,23 +12,6 @@ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_T
+ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+   message(STATUS "No build type selected, default to Debug")
+   set(CMAKE_BUILD_TYPE "Debug")
+-endif()
+-
+-if (POLICY CMP0022)
+-  cmake_policy(SET CMP0022 NEW) # automatic when 2.8.12 is required
+-endif()
+-
+-if (POLICY CMP0051)
+-  # CMake 3.1 and higher include generator expressions of the form
+-  # $<TARGETLIB:obj> in the SOURCES property.  These need to be
+-  # stripped everywhere that access the SOURCES property, so we just
+-  # defer to the OLD behavior of not including generator expressions
+-  # in the output for now.
+-  cmake_policy(SET CMP0051 OLD)
+-endif()
+-
+-if (POLICY CMP0063)
+-  set(CMAKE_POLICY_DEFAULT_CMP0063 NEW) # automatic when 3.3.2 is required
+ endif()
+ 
+ if (CMAKE_VERSION VERSION_LESS 3.1.20141117)
+--- src/llvm/CMakeLists.txt.orig	2020-06-21 14:08:05 UTC
++++ src/llvm/CMakeLists.txt
+@@ -1,25 +1,12 @@
+ # See docs/CMake.html for instructions about how to build LLVM with CMake.
+ 
+-cmake_minimum_required(VERSION 2.8.7)
++cmake_minimum_required(VERSION 3.10.0)
+ 
+ set(LLVM_INSTALL_TOOLCHAIN_ONLY ON)
+ 
+ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+   message(STATUS "No build type selected, default to Debug")
+   set(CMAKE_BUILD_TYPE "Debug")
+-endif()
+-
+-if(POLICY CMP0022)
+-  cmake_policy(SET CMP0022 NEW) # automatic when 2.8.12 is required
+-endif()
+-
+-if (POLICY CMP0051)
+-  # CMake 3.1 and higher include generator expressions of the form
+-  # $<TARGETLIB:obj> in the SOURCES property.  These need to be
+-  # stripped everywhere that access the SOURCES property, so we just
+-  # defer to the OLD behavior of not including generator expressions
+-  # in the output for now.
+-  cmake_policy(SET CMP0051 OLD)
+ endif()
+ 
+ if(CMAKE_VERSION VERSION_LESS 3.1.20141117)
