@@ -1,6 +1,5 @@
 PORTNAME=	orthanc-dicomweb
-DISTVERSION=	1.23
-PORTREVISION=	1
+DISTVERSION=	1.24
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-dicomweb/:dicomweb \
 		https://orthanc.uclouvain.be/downloads/third-party-downloads/:thirdparty \
