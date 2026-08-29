@@ -1,6 +1,5 @@
 PORTNAME=	orthanc-postgresql
-DISTVERSION=	10.2
-PORTREVISION=	1
+DISTVERSION=	10.3
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-postgresql/:pgsql \
 		https://orthanc.uclouvain.be/downloads/sources/orthanc/:orthanc \
