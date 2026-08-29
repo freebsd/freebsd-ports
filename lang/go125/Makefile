@@ -1,4 +1,7 @@
 DISTVERSION=	1.25.14
 BOOTSTRAP_VER=	1.24.13
+PORTREVISION=	1
+DEPRECATED=	No longer supported
+EXPIRATION_DATE=	2026-09-30
 
 .include "${.CURDIR}/../go/bsd.go.mk"
