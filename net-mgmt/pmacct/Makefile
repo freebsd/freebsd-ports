@@ -1,6 +1,5 @@
 PORTNAME=	pmacct
-DISTVERSION=	1.7.8
-PORTREVISION=	1
+DISTVERSION=	1.7.9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/
 
@@ -26,6 +25,7 @@ AVRO_DESC=	Enable avro support
 GEOIP2_DESC=	Enable GeoIPv2 (libmaxminddb) support
 KAFKA_DESC=	Enable Kafka support
 LAYER2_DESC=	Enable Layer-2 support: MAC addresses and VLANs
+PGSQL_DESC=	PostgreSQL database support (broken)
 RABBITMQ_DESC=	Enable RabbitMQ/AMQP support
 REDIS_DESC=	Enable Redis support
 SQLITE3_DESC=	Enable SQLite3 support
