@@ -3,7 +3,7 @@ PORTNAME=	c-lightning
 PORTVERSION=	26.06.6
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
-PORTREVISION=	1
+PORTREVISION=	2
 #PKGNAMESUFFIX=	-git-f8d8348c
 CATEGORIES=	net-p2p finance
 

@@ -18,6 +18,18 @@ See "lightningd --help" for more information.
 
 Add lightningd_enable="YES" to %%LOCALBASE%%/etc/rc.conf.d/lightningd.
 See rc.conf(5) and %%LOCALBASE%%/etc/rc.d/lightningd for more information.
+
+If you run lightningd inside a jail, the jail must have allow.mlock
+enabled. lightning_hsmd locks hsm_secret into RAM to keep the private key
+out of swap; mlock(2) is denied in a jail without allow.mlock, and hsmd
+aborts with a bare "FATAL SIGNAL 6" and no diagnostic.
+
+For a jail managed by jail.conf(5), add to the jail's section:
+
+    allow.mlock = 1;
+
+Then restart the jail and confirm with "jls -nj <jailname>", which should
+list allow.mlock rather than allow.nomlock.
 EOM
 }
 ]
