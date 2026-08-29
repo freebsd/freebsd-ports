@@ -1,6 +1,6 @@
 --- myutils.cpp.orig	2022-01-13 23:29:59 UTC
 +++ myutils.cpp
-@@ -1050,7 +1050,62 @@
+@@ -1050,6 +1050,57 @@ double GetMemUseBytes()
  		g_PeakMemUseBytes = Bytes;
  	return Bytes;
  	}
@@ -10,7 +10,7 @@
 +#include <sys/sysctl.h>
 +#include <sys/user.h>
 +#include <unistd.h>
- 
++
 +double GetMemUseBytes()
 +	{
 +	static int initialized = 0;
@@ -44,11 +44,7 @@
 +
 +double GetPhysMemBytes()
 +	{
-+ 	#if BITS == 32
-+	unsigned int physmem32 = 0;
-+	#else
-+	uint64_t physmem = 0;
-+	#endif
++	unsigned long physmem = 0;
 +
 +	size_t len = sizeof(physmem);
 +
@@ -59,7 +55,6 @@
 +	return (double)physmem;
 +
 +	}
-+
+ 
  #elif defined(__MACH__)
  #include <memory.h>
- #include <stdlib.h>
