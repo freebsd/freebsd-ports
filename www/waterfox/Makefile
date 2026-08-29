@@ -1,5 +1,5 @@
 PORTNAME=	waterfox
-DISTVERSION=	6.7.0-beta.3
+DISTVERSION=	6.7.1.1
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 USE_GECKO=	gecko
 USE_GITHUB=	yes
 GH_ACCOUNT=	BrowserWorks
-GH_TUPLE=	BrowserWorks:l10n:cc8b91c:l10n/waterfox/browser/locales
+GH_TUPLE=	BrowserWorks:l10n:b70da34:l10n/waterfox/browser/locales
 USE_MOZILLA=	-sqlite
 # work around bindgen not finding ICU, e.g.
 # dist/include/mozilla/intl/ICU4CGlue.h:8:10: fatal error: 'unicode/uenum.h' file not found, err: true
