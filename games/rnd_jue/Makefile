@@ -1,6 +1,6 @@
 PORTNAME=	rnd_jue
 DISTVERSION=	3.3.0.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/:game \
 		SF/nemysisfreebsdp/${CATEGORIES}/rocksndiamonds/
