@@ -1,3 +1,46 @@
+  <vuln vid="d2e1db41-f7a7-45e9-ace3-b94038416545">
+    <topic>net-p2p/c-lightning -- unknown vulnerability</topic>
+    <affects>
+      <package>
+	<name>c-lightning</name>
+	<range><lt>26.06.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Core Lightning team reports:</p>
+	<blockquote cite="https://github.com/ElementsProject/lightning/releases/tag/v26.06.7">
+	    <p>This point release includes fixes for vulnerabilities responsibly
+	      reported by a number of sources. It also comes at a time when
+	      increasingly capable AI models are being used to identify
+	      potential vulnerabilities in open-source code, significantly
+	      increasing the volume and pace of security reports.</p>
+
+	    <p>The potential impact and associated risks are front of mind for
+	      everyone involved, not least the remediation team who have worked
+	      tirelessly to triage, resolve, and compile this release.</p>
+
+	    <p>This embargo period will last for two weeks. The source code
+	      will not be published until 14 days have passed. During this time,
+	      we strongly encourage everyone to upgrade. At the end of this
+	      two-week period, the full release details will be made
+	      available.</p>
+
+	    <p>This delay is designed to reduce the chances of prospective
+	      attackers reverse-engineering the fixes and exploiting them before
+	      the network can update.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/ElementsProject/lightning/releases/tag/v26.06.7</url>
+    </references>
+    <dates>
+      <discovery>2026-08-27</discovery>
+      <entry>2026-08-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4d06b948-a323-11f1-a655-3497f65b111b">
     <topic>phpBB -- multiple vulnerabilities</topic>
     <affects>
