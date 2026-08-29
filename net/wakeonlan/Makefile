@@ -1,5 +1,5 @@
 PORTNAME=	wakeonlan
-PORTVERSION=	0.42
+PORTVERSION=	0.50
 CATEGORIES=	net
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -8,11 +8,10 @@ WWW=		https://github.com/jpoliv/wakeonlan
 
 LICENSE=	ART20
 
+USES=		perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	jpoliv
 GH_TAGNAME=	4beb45d
-
-USES=		perl5
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	EXAMPLES
