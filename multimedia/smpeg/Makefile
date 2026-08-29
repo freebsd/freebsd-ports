@@ -1,5 +1,6 @@
 PORTNAME=	smpeg
-PORTVERSION=	0.4.5
+DISTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	acm@FreeBSD.org
@@ -13,14 +14,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	icculus
 GH_TAGNAME=	release_${PORTVERSION:S/./_/g}
 
-BUILD_DEPENDS=	gtk2>=0:x11-toolkits/gtk20
-
 USES=		autoreconf compiler gmake libtool:build pkgconfig sdl
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	GLBASE="${LOCALBASE}" \
 		CC="${CC}" CXX="${CXX} -std=gnu++98" \
 		SDL_CONFIG="${SDL_CONFIG}"
