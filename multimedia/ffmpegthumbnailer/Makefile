@@ -1,7 +1,6 @@
 PORTNAME=	ffmpegthumbnailer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
-PORTREVISION=	1
+DISTVERSION=	2.3.1
 CATEGORIES=	multimedia graphics
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -14,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libpng.so:graphics/png
 
-USES=		cmake:testing compiler:c++14-lang gnome jpeg localbase \
-		pathfix pkgconfig
+USES=		cmake:testing compiler:c++14-lang gnome jpeg localbase pathfix \
+		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dirkvdb
 USE_GNOME=	glib20
