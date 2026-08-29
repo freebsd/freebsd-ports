@@ -1,6 +1,15 @@
 [
 { type: install
   message: <<EOM
+WARNING WARNING WARNING WARNING WARNING
+W
+W The current 26.06.6 version is vulnerable but the next 26.06.7 has been
+W released in binary-only form. Shutdown your node until the source code
+W of 26.06.7 is made available.
+W https://github.com/ElementsProject/lightning/releases/tag/v26.06.7
+W
+WARNING WARNING WARNING WARNING WARNING
+
 To configure lightningd system-wide and to start it at boot time:
 
 Copy %%PREFIX%%/etc/lightningd-bitcoin.conf.sample

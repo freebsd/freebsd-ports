@@ -3,7 +3,7 @@ PORTNAME=	c-lightning
 PORTVERSION=	26.06.6
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
-#PORTVERSION=	0
+PORTREVISION=	1
 #PKGNAMESUFFIX=	-git-f8d8348c
 CATEGORIES=	net-p2p finance
 
@@ -30,6 +30,12 @@ USES=		autoreconf:build \
 		libtool \
 		python:build \
 		shebangfix
+
+WARNING=	"!!! The current 26.06.6 version is vulnerable but the next 26.06.7 has been" \
+		"!!! released in binary-only form. Shutdown your node until the source code" \
+		"!!! of 26.06.7 is made available." \
+		"!!! https://github.com/ElementsProject/lightning/releases/tag/v26.06.7"
+
 CPE_VENDOR=	elementsproject
 BINARY_ALIAS=	python3=${PYTHON_CMD} sed=${LOCALBASE}/bin/gsed
 ALL_TARGET=	default
