@@ -1,8 +1,10 @@
 PORTNAME=	sngrep
-DISTVERSION=	1.7.0
-PORTREVISION=	1
+DISTVERSION=	1.8.4
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/irontec/${PORTNAME}/releases/download/v${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/irontec/sngrep/commit/
+PATCHFILES=	3553fc8f6afed9d6e985efb34db250ec5b7fa903.patch:-p1
 
 MAINTAINER=	tad@vif.com
 COMMENT=	SIP Packet display and capture
@@ -11,36 +13,38 @@ WWW=		https://github.com/irontec/sngrep
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf localbase ncurses pkgconfig
+USES=		cmake ncurses pkgconfig
 
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS=	--with-zlib
+TEST_TARGET=	tests
 
-OPTIONS_DEFINE=		EEP IPV6 PCRE UNICODE
-OPTIONS_DEFAULT=	EEP IPV6 UNICODE OPENSSL
+CMAKE_ON=	USE_IPV6 \
+		USE_EEP \
+		WITH_UNICODE \
+		WITH_ZLIB
+
+OPTIONS_DEFINE=		PCRE UNICODE
+OPTIONS_DEFAULT=	OPENSSL
 
 OPTIONS_RADIO=		SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 
-EEP_DESC=		Enable EEP packet send/receive support
-
-EEP_CONFIGURE_ENABLE=	eep
-IPV6_CONFIGURE_ENABLE=	ipv6
-
+GNUTLS_USES=		localbase:ldflags
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
-			libgcrypt.so:security/libgcrypt \
-			libgpg-error.so:security/libgpg-error
-GNUTLS_CONFIGURE_WITH=	gnutls
+			libgcrypt.so:security/libgcrypt
+GNUTLS_CMAKE_BOOL=	WITH_GNUTLS
 
 OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_ENV+=	SSL_CFLAGS="-I${OPENSSLINC}" \
-			SSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
-OPENSSL_CONFIGURE_WITH=	openssl
+OPENSSL_CMAKE_BOOL=	WITH_OPENSSL
 
-PCRE_CONFIGURE_WITH=	pcre2
 PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+PCRE_CMAKE_BOOL=	WITH_PCRE2
 
-UNICODE_CONFIGURE_ENABLE=	unicode
+pre-test:
+	${CP} ${WRKSRC}/tests/*.pcap ${BUILD_WRKSRC}
+
+post-test:
+	@cd ${BUILD_WRKSRC} && for f in test_*; do \
+	    ./"$$f"; \
+	done
 
 .include <bsd.port.mk>
