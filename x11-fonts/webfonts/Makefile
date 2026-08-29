@@ -20,14 +20,8 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_FILE=	${WRKSRC}/licen.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-EXTRACT_DEPENDS=cabextract:archivers/cabextract
-
 USES=		fonts
 NO_BUILD=	yes
-
-EXTRACT_CMD=		${LOCALBASE}/bin/cabextract
-EXTRACT_BEFORE_ARGS=	-qLF '[a-uw-z]*.ttf' -d ${WRKSRC}
-EXTRACT_AFTER_ARGS=
 
 OPTIONS_DEFINE=	EXTRAFONTS CLEARTYPE NEWVERDANA DOCS COMIC
 OPTIONS_DEFAULT=	COMIC
@@ -48,24 +42,43 @@ NO_ARCH=	yes
 
 .include <bsd.port.options.mk>
 
-post-extract:
-	${EXTRACT_CMD} -qLF '*.txt' -d ${WRKSRC} ${_DISTDIR}/webdin32.exe
+# The distfiles are Microsoft self-extracting cabinets, which bsdtar reads
+# directly, so no external extraction tool is needed.  Note that --exclude
+# must precede the inclusion patterns: bsdtar stops parsing options at the
+# first pattern argument and would otherwise treat it as one.
+_FONT_CABS=	andale32.exe arialb32.exe comic32.exe courie32.exe \
+		georgi32.exe impact32.exe webdin32.exe EUupdate.EXE
+.if ${PORT_OPTIONS:MEXTRAFONTS}
+_FONT_CABS+=	IELPKTH.CAB
+.endif
 
-post-extract-CLEARTYPE-on:
-	${EXTRACT_CMD} -qLF '*.cab' -d ${WRKSRC} \
-		${_DISTDIR}/PowerPointViewer.exe
-	${EXTRACT_CMD} -qLF '*.txt' -d ${WRKSRC} \
-		${_DISTDIR}/PowerPointViewer.exe
-	${EXTRACT_CMD} -qLF '*.ttf' -d ${WRKSRC} ${WRKSRC}/ppviewer.cab
+_EXTRACT_CAB=	${TAR} -x --no-same-owner --no-same-permissions -C ${WRKSRC} -f
 
-post-extract-NEWVERDANA-off:
-	${EXTRACT_CMD} -qLF '*.ttf' -d ${WRKSRC} ${_DISTDIR}/verdan32.exe
-
-post-extract-NEWVERDANA-on:
-	${EXTRACT_CMD} -qLF 'v*.ttf' -d ${WRKSRC} ${_DISTDIR}/EUupdate.EXE
-
-post-extract-COMIC-off:
-	${RM} ${WRKSRC}/comic.ttf ${WRKSRC}/comicbd.ttf
+do-extract:
+	@${MKDIR} ${WRKSRC}
+# Verdana is held back here and taken from one of two sources below
+.for cab in ${_FONT_CABS}
+	@${_EXTRACT_CAB} ${_DISTDIR}/${cab} --exclude '[vV]*' '*.[tT][tT][fF]'
+.endfor
+	@${_EXTRACT_CAB} ${_DISTDIR}/webdin32.exe '*.[tT][xX][tT]'
+.if ${PORT_OPTIONS:MNEWVERDANA}
+	@${_EXTRACT_CAB} ${_DISTDIR}/EUupdate.EXE '[vV]*.[tT][tT][fF]'
+.else
+	@${_EXTRACT_CAB} ${_DISTDIR}/verdan32.exe '*.[tT][tT][fF]'
+.endif
+.if ${PORT_OPTIONS:MCLEARTYPE}
+	@${_EXTRACT_CAB} ${_DISTDIR}/PowerPointViewer.exe 'ppviewer.cab' '*.[tT][xX][tT]'
+	@${_EXTRACT_CAB} ${WRKSRC}/ppviewer.cab '*.[tT][tT][fF]'
+	@${RM} ${WRKSRC}/ppviewer.cab
+.endif
+# The cabinets store mixed case names, the package installs lowercase ones
+	@cd ${WRKSRC} && for f in *; do \
+		l=$$(${ECHO_CMD} $${f} | ${TR} '[:upper:]' '[:lower:]'); \
+		[ "$${f}" = "$${l}" ] || ${MV} -f "$${f}" "$${l}"; \
+	done
+.if ! ${PORT_OPTIONS:MCOMIC}
+	@${RM} ${WRKSRC}/comic.ttf ${WRKSRC}/comicbd.ttf
+.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
