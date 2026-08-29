@@ -1,5 +1,6 @@
 PORTNAME=	keystone-engine
 DISTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +19,6 @@ USES=		cmake:indirect pkgconfig python
 USE_PYTHON=	autoplist pep517
 
 post-install:
-	${STRIP} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/keystone/libkeystone.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/keystone/libkeystone.so
 
 .include <bsd.port.mk>
