@@ -11,6 +11,8 @@ WWW=		https://www.lokigames.com/development/smpeg.php3
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Unfetchable
+
 USES=		compiler gmake libtool:build sdl
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
