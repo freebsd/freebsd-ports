@@ -4475,7 +4475,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/python/qgis/_core.so
 %%DATADIR%%/python/qgis/_gui.pyi
 %%DATADIR%%/python/qgis/_gui.so
-%%SERVER%%%%DATADIR%%/python/qgis/_server.pyi
+%%DATADIR%%/python/qgis/_server.pyi
 %%SERVER%%%%DATADIR%%/python/qgis/_server.so
 %%DATADIR%%/python/qgis/analysis/__init__.py
 %%DATADIR%%/python/qgis/analysis/class_map.yaml
@@ -4503,7 +4503,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/python/qgis/processing/__init__.py
 %%DATADIR%%/python/qgis/processing/algfactory.py
 %%SERVER%%%%DATADIR%%/python/qgis/server/__init__.py
-%%SERVER%%%%DATADIR%%/python/qgis/server/class_map.yaml
+%%DATADIR%%/python/qgis/server/class_map.yaml
 %%DATADIR%%/python/qgis/testing/__init__.py
 %%DATADIR%%/python/qgis/testing/mocked.py
 %%DATADIR%%/python/qgis/user.py
