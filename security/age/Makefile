@@ -1,7 +1,6 @@
 PORTNAME=	age
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
-PORTREVISION=	11
+DISTVERSION=	1.3.2
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/FiloSottile/age
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.27+,modules
 
 GO_MODULE=	filippo.io/age
 GO_TARGET=	./cmd/age \
