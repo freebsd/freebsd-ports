@@ -31,6 +31,7 @@ DOS2UNIX_FILES=	modules/juce_core/juce_core.h \
 		modules/juce_core/native/juce_SystemStats_linux.cpp \
 		modules/juce_audio_processors_headless/format_types/juce_VST3Headers.h \
 		modules/juce_dsp/containers/juce_AudioBlock_test.cpp \
+		modules/juce_graphics/juce_graphics_libpng.c \
 		extras/NetworkGraphicsDemo/Source/Demos.h \
 		extras/NetworkGraphicsDemo/Source/SharedCanvas.h
 USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 pango

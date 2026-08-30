@@ -2661,6 +2661,8 @@ include/JUCE-%%VERSION%%/modules/juce_graphics/image_formats/pnglib/pngwio.c
 include/JUCE-%%VERSION%%/modules/juce_graphics/image_formats/pnglib/pngwrite.c
 include/JUCE-%%VERSION%%/modules/juce_graphics/image_formats/pnglib/pngwtran.c
 include/JUCE-%%VERSION%%/modules/juce_graphics/image_formats/pnglib/pngwutil.c
+include/JUCE-%%VERSION%%/modules/juce_graphics/image_formats/pnglib/powerpc/filter_vsx_intrinsics.c
+include/JUCE-%%VERSION%%/modules/juce_graphics/image_formats/pnglib/powerpc/powerpc_init.c
 include/JUCE-%%VERSION%%/modules/juce_graphics/images/juce_Image.cpp
 include/JUCE-%%VERSION%%/modules/juce_graphics/images/juce_Image.h
 include/JUCE-%%VERSION%%/modules/juce_graphics/images/juce_ImageCache.cpp
