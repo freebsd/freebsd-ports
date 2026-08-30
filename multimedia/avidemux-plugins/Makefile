@@ -1,6 +1,6 @@
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}
-PORTREVISION=	10
+PORTREVISION=	12
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-plugins
 
@@ -11,12 +11,13 @@ PATCHFILES+=	c16d32a67cdb012db093472ad3776713939a30d1.patch:-p1
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor (Plugins)
 
-BROKEN=		Fails to build after multimedia/vapoursynth update (R66 => R73, a5e4dc2)
-
 LIB_DEPENDS=	libADM6avutil.so.56:multimedia/avidemux
 
 MASTERDIR=	${.CURDIR}/../avidemux
 PLIST=		${.CURDIR}/pkg-plist
+
+# Fails to build after multimedia/vapoursynth update (R66 => R73, a5e4dc2)
+OPTIONS_EXCLUDE=	VAPOURSYNTH
 
 .include "${MASTERDIR}/Makefile.common"
 
