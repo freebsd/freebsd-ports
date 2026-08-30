@@ -1,6 +1,6 @@
 PORTNAME=	aquamarine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
+DISTVERSION=	0.15.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -33,7 +33,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	pixman
 
 PLIST_SUB=	SOVERSION_FULL=${DISTVERSION:C/-.*//} \
-		SOVERSION_MAJOR=13
+		SOVERSION_MAJOR=14
 
 .include <bsd.port.options.mk>
 
