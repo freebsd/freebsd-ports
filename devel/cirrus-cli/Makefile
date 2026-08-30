@@ -1,14 +1,13 @@
 PORTNAME=	cirrus-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.165.2
-PORTREVISION=	6
+DISTVERSION=	1.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Command line interface for Cirrus CI
 WWW=		https://github.com/cirruslabs/cirrus-cli
 
-LICENSE=	AGPLv3
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
