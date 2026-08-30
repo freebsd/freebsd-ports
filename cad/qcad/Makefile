@@ -1,5 +1,5 @@
 PORTNAME=	qcad
-PORTVERSION=	3.32.9.0
+PORTVERSION=	3.33.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
@@ -67,6 +67,9 @@ pre-configure:
 		${WRKSRC}/src/core/RS.cpp
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"	\
 		${WRKSRC}/src/core/RSettings.cpp
+	${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
+		${WRKSRC}/src/scripts/update_qrc.sh
+
 
 do-install:
 	${INSTALL_PROGRAM} ${RESDIR}/qcad ${STAGEDIR}${PREFIX}/bin/

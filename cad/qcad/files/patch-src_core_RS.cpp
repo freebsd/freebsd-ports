@@ -1,6 +1,6 @@
---- src/core/RS.cpp.orig	2025-02-10 09:29:49 UTC
+--- src/core/RS.cpp.orig	2026-08-26 20:00:19 UTC
 +++ src/core/RS.cpp
-@@ -174,6 +174,10 @@ QStringList RS::getDirectoryList(const QString& subDir
+@@ -176,6 +176,10 @@ QStringList RS::getDirectoryList(const QString& subDir
          appDir = fi.absolutePath();
      }
  
