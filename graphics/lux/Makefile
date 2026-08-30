@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv6=	address space exhaustion in compiler
 
 LIB_DEPENDS=	libhwy.so:devel/highway \
-		libsfml-window.so:devel/sfml \
+		libsfml-window.so:multimedia/sfml2 \
 		libexiv2.so:graphics/exiv2 \
 		libvigraimpex.so:graphics/vigra \
 		libOpenImageIO.so:graphics/openimageio
