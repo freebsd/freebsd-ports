@@ -49,6 +49,7 @@ ASMSCALERS_CMAKE_BOOL=		ENABLE_ASM_SCALERS
 DEBUGGER_CMAKE_BOOL=	ENABLE_DEBUGGER
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CMAKE_BOOL=	ENABLE_FFMPEG
+FFMPEG_BROKEN=		'av_register_all' was not declared in this scope
 GVBAM_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libgdkglext-x11-1.0.so:x11-toolkits/gtkglext \
@@ -56,9 +57,8 @@ GVBAM_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 GVBAM_USES=		desktop-file-utils
 GVBAM_USE=		GNOME=gtkmm24,pangox-compat
 GVBAM_CMAKE_BOOL=	ENABLE_GTK
-LINK_LIB_DEPENDS=	libsfml-system.so:devel/sfml
+LINK_LIB_DEPENDS=	libsfml-system.so:multimedia/sfml2
 LINK_CMAKE_BOOL=	ENABLE_LINK
-LINK_BROKEN=		Does not build
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_RUN_DEPENDS=	lircd:comms/lirc
 LIRC_CMAKE_BOOL=	ENABLE_LIRC
