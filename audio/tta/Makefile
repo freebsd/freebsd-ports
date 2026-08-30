@@ -8,10 +8,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	The True Audio Encoder, lossless (de)compressor
 WWW=		http://www.true-audio.com/
 
-LICENSE=	GPLv2
-
-DEPRECATED=	Legacy format, no active development for a decade
-EXPIRATION_DATE=2026-08-31
+LICENSE=	GPLv2+
 
 USES=		gmake tar:tgz
 ALL_TARGET=	ttaenc
