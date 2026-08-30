@@ -1,6 +1,6 @@
 PORTNAME=	great-tables
 DISTVERSION=	0.21.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.13.1:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}CommonMark>=0.9.1:textproc/py-CommonMark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}faicons>=0.2.2:devel/py-faicons@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}htmltools>=0.4.1:www/py-htmltools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-metadata8>0:devel/py-importlib-metadata8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10.0.0:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
