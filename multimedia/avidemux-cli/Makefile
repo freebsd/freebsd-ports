@@ -4,7 +4,6 @@ PORTREVISION=	4
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-cli
 
-MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor (cli)
 
 LIB_DEPENDS=	libADM6avutil.so.56:multimedia/avidemux

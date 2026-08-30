@@ -3,6 +3,8 @@ MASTER_SITES=	\
 		SF/avidemux/avidemux/${PORTVERSION}
 DISTNAME=	avidemux_${PORTVERSION}
 
+MAINTAINER?=	vvd@FreeBSD.org
+
 BUILD_DEPENDS+=	${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_amd64=	yasm:devel/yasm
 BUILD_DEPENDS_i386=	yasm:devel/yasm
@@ -11,9 +13,6 @@ LIB_DEPENDS+=	libmad.so:audio/libmad \
 		libpng.so:graphics/png
 
 LICENSE=	GPLv2
-
-DEPRECATED=	Obsolete version with various bugs and issues
-EXPIRATION_DATE=2026-08-31
 
 USE_GNOME=	libxml2
 
