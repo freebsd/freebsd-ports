@@ -3,7 +3,7 @@ DISTVERSION=	2.3.5
 CATEGORIES=	sysutils www
 MASTER_SITES=	https://files.froxlor.org/releases/
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based ISP Server Management Panel
 WWW=		https://www.froxlor.org/
 
