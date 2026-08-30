@@ -1,6 +1,6 @@
 PORTNAME=	ocl-icd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.4
+DISTVERSION=	2.3.5
 CATEGORIES=	devel
 
 MAINTAINER=	ohartmann@walstatt.org
@@ -10,7 +10,9 @@ WWW=		https://github.com/OCL-dev/ocl-icd
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	opencl>=3.0:devel/opencl
+PORT_DEPENDS=	opencl>=3.1:devel/opencl
+BUILD_DEPENDS=	${PORT_DEPENDS}
+RUN_DEPENDS=	${PORT_DEPENDS}
 
 USES=		autoreconf gmake libtool localbase:ldflags pathfix ruby:build
 
@@ -25,7 +27,7 @@ CONFIGURE_ARGS=	--disable-debug \
 
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-DCL_TARGET_OPENCL_VERSION=300
+CPPFLAGS+=	-DCL_TARGET_OPENCL_VERSION=310
 
 OPTIONS_DEFINE=		DOCS MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
