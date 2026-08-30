@@ -1,0 +1,13 @@
+Add compatibility for CMake 4
+
+--- CMakeLists.txt.orig	2026-08-27 18:55:50 UTC
++++ CMakeLists.txt
+@@ -16,7 +16,7 @@
+ #     with this program; if not, write to the Free Software Foundation, Inc.,
+ #     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ # */
+-cmake_minimum_required(VERSION 2.8.4 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5.2 FATAL_ERROR)
+ if( NOT CMAKE_VERSION VERSION_LESS 2.8.11)
+ 	cmake_policy(SET CMP0020 NEW) # qtmain.lib linkage on windows
+ endif()
