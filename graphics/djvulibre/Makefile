@@ -3,7 +3,7 @@ PORTVERSION=	3.5.29
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DjVu base libraries and utilities
 WWW=		https://djvu.sourceforge.net/
 
