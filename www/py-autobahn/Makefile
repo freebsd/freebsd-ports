@@ -1,6 +1,6 @@
 PORTNAME=	autobahn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.12.2
+DISTVERSION=	26.6.1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}cffi>=2.0.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hyperlink>=21.0.0:www/py-hyperlink@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2:devel/py-msgpack@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-ubjson>=0.16.1:devel/py-py-ubjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}txaio>=25.12.2:devel/py-txaio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}u-msgpack-python>=2.1:devel/py-u-msgpack-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ujson>=4.0.2:devel/py-ujson@${PY_FLAVOR} \
