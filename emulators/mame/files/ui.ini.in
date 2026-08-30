@@ -1,7 +1,7 @@
 ﻿#
 # UI SEARCH PATH OPTIONS
 #
-historypath               ~/.mame/histroy;~/.mame/dats;%%DATADIR%%/history/;%%DATADIR%%/dats/;.
+historypath               ~/.mame/history;~/.mame/dats;%%DATADIR%%/history/;%%DATADIR%%/dats/;.
 categorypath              ~/.mame/folders;%%DATADIR%%/folders
 cabinets_directory        ~/.mame/cabinets;~/.mame/cabdevs;%%DATADIR%%/cabinets/;%%DATADIR%%/cabdevs/
 cpanels_directory         ~/.mame/cpanel;%%DATADIR%%/cpanel
@@ -9,7 +9,7 @@ pcbs_directory            ~/.mame/pcb;%%DATADIR%%/pcb
 flyers_directory          ~/.mame/flyers;%%DATADIR%%/flyers
 titles_directory          ~/.mame/titles;%%DATADIR%%/titles
 ends_directory            ~/.mame/ends;%%DATADIR%%/ends
-marquees_directory        ~/.mame/marguees;%%DATADIR%%/marquees
+marquees_directory        ~/.mame/marquees;%%DATADIR%%/marquees
 artwork_preview_directory "~/.mame/artwork preview;~/.mame/artpreview;%%DATADIR%%/artwork preview;%%DATADIR%%/artpreview"
 bosses_directory          ~/.mame/bosses;%%DATADIR%%/bosses
 logos_directory           ~/.mame/logo;%%DATADIR%%/logo
@@ -28,6 +28,8 @@ ui_path                   ~/.mame/ui;%%DATADIR%%/ui
 system_names              
 skip_warnings             0
 unthrottle_mute           0
+menu_pause                0
+ui_follow_focus           0
 
 #
 # UI OPTIONS

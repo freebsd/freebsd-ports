@@ -915,6 +915,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/c64_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/c64_flop_misc.xml
 %%MAMEDATA%%%%DATADIR%%/hash/c64_flop_orig.xml
+%%MAMEDATA%%%%DATADIR%%/hash/c64_quik.xml
 %%MAMEDATA%%%%DATADIR%%/hash/c65_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/camplynx_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/camplynx_flop.xml
@@ -1022,6 +1023,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/gcslottv.xml
 %%MAMEDATA%%%%DATADIR%%/hash/generic_cdrom.xml
 %%MAMEDATA%%%%DATADIR%%/hash/generic_flop_525.xml
+%%MAMEDATA%%%%DATADIR%%/hash/genie3_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/ggm.xml
 %%MAMEDATA%%%%DATADIR%%/hash/gimix.xml
 %%MAMEDATA%%%%DATADIR%%/hash/gj4000.xml
@@ -1211,6 +1213,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/mtx_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mtx_hdd.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mtx_rom.xml
+%%MAMEDATA%%%%DATADIR%%/hash/mylife_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/myvision.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mz2000_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/mz2000_flop.xml
@@ -1276,6 +1279,9 @@
 %%MAMEDATA%%%%DATADIR%%/hash/pc6001_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc6001_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc6001mk2_cass.xml
+%%MAMEDATA%%%%DATADIR%%/hash/pc6001mk2_flop.xml
+%%MAMEDATA%%%%DATADIR%%/hash/pc6001mk2sr_cass.xml
+%%MAMEDATA%%%%DATADIR%%/hash/pc6001mk2sr_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc8001_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc8001mk2_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc8001mk2sr_flop.xml
@@ -1283,6 +1289,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/pc8801_cass.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc8801_cdrom.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc8801_flop.xml
+%%MAMEDATA%%%%DATADIR%%/hash/pc8801_flop_orig.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc88va.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc88va_flop_orig.xml
 %%MAMEDATA%%%%DATADIR%%/hash/pc98.xml
@@ -1384,6 +1391,7 @@
 %%MAMEDATA%%%%DATADIR%%/hash/sat_vccart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/saturn.xml
 %%MAMEDATA%%%%DATADIR%%/hash/sawatte.xml
+%%MAMEDATA%%%%DATADIR%%/hash/sb80_flop.xml
 %%MAMEDATA%%%%DATADIR%%/hash/sbrain.xml
 %%MAMEDATA%%%%DATADIR%%/hash/sc3000_cart.xml
 %%MAMEDATA%%%%DATADIR%%/hash/sc3000_cass.xml
@@ -1697,6 +1705,8 @@
 %%MAMEDATA%%%%DATADIR%%/plugins/json/README.md
 %%MAMEDATA%%%%DATADIR%%/plugins/json/init.lua
 %%MAMEDATA%%%%DATADIR%%/plugins/json/plugin.json
+%%MAMEDATA%%%%DATADIR%%/plugins/keypress/init.lua
+%%MAMEDATA%%%%DATADIR%%/plugins/keypress/plugin.json
 %%MAMEDATA%%%%DATADIR%%/plugins/layout/init.lua
 %%MAMEDATA%%%%DATADIR%%/plugins/layout/plugin.json
 %%MAMEDATA%%%%DATADIR%%/plugins/offscreenreload/init.lua
