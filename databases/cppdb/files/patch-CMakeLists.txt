@@ -1,11 +1,36 @@
---- CMakeLists.txt.orig	2012-06-23 13:36:14.000000000 +0430
-+++ CMakeLists.txt	2014-08-19 18:51:40.000000000 +0430
-@@ -196,7 +196,7 @@
+--- CMakeLists.txt.orig	2026-08-27 22:42:47 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.10...4.4)
+ project(cppdb)
+ 
+ set(CPPDB_MAJOR 0)
+@@ -47,7 +47,7 @@ if(NOT CMAKE_BUILD_TYPE)
+   set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING
+         "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
+ 	      FORCE)
+-endif(NOT CMAKE_BUILD_TYPE)
++endif()
+ 
+ 
+ include(CheckLibraryExists)
+@@ -58,7 +58,7 @@ endif()
+ 	find_library(PTHREAD_LIB pthread NAMES thr kse)
  endif()
  
- if(NOT DISABLE_MYSQL)
--	find_library(MYSQL_LIB mysqlclient)
-+	find_library(MYSQL_LIB mysqlclient PATH_SUFFIXES mysql)
- 	find_path(MYSQL_PATH mysql.h PATH_SUFFIXES mysql)
- 	if(MYSQL_LIB AND MYSQL_PATH)
- 		include_directories(${MYSQL_PATH})
+-if(CMAKE_COMPILER_IS_GNUCXX)
++if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+ 	set(CXX_FLAGS "-Wall -Wextra")
+ 	if(CMAKE_SYSTEM_NAME STREQUAL "SunOS")
+ 		set(CXX_FLAGS "${CXX_FLAGS} -pthreads")
+@@ -259,9 +259,7 @@ foreach(LIB ${BACKEND_LIBRARIES} cppdb)
+ 	endif()
+ 
+     
+-	set_target_properties(${LIB} PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+ 	set_target_properties(${LIB} PROPERTIES OUTPUT_NAME "${LIB}")
+-	set_target_properties(${LIB}-static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+ 	set_target_properties(${LIB}-static PROPERTIES OUTPUT_NAME "${LIB}")
+ 	set_target_properties(${LIB}-static PROPERTIES PREFIX "lib") # Make sure import and normal library do not collide
+ 
