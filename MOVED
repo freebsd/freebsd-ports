@@ -5591,3 +5591,4 @@ www/py-django42||2026-08-31|Has expired: Django 4.2 is now in Extended Support, 
 www/py-seafdav||2026-08-31|Removed, depended on net-mgmt/seafile-server
 mail/james||2026-08-31|Has expired: This is a version that is over 10 years old and has multiple vulnerabilities
 www/py-seafobj||2026-08-31|Removed, depended on net-mgmt/seafile-server
+devel/sfml|multimedia/sfml3|2026-09-02|SFML move to appropriate catagory and suffix name with major version number, 3
