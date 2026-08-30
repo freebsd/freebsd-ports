@@ -3,7 +3,7 @@ DISTVERSION=	7.2.0
 CATEGORIES=	x11
 PKGNAMEPREFIX=	elementary-
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal emulator designed for elementary OS
 WWW=		https://github.com/elementary/terminal
 
