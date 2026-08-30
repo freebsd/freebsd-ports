@@ -1,5 +1,5 @@
 PORTNAME=	dovecot
-DISTVERSION=	2.4.4
+DISTVERSION=	2.4.5
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.4/
 PKGNAMESUFFIX=	24${DOVE_SUFFIX}
@@ -230,6 +230,12 @@ PLIST_SUB+=	LDAP="@comment "
 PLIST_SUB+=	IMAP_HIBERNATE="@comment "
 .else
 PLIST_SUB+=	IMAP_HIBERNATE=""
+.endif
+
+.if ${PORT_OPTIONS:MLUA}
+PLIST_SUB+=	LUA=""
+.else
+PLIST_SUB+=	LUA="@comment "
 .endif
 
 post-patch:
