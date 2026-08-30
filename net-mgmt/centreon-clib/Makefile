@@ -1,5 +1,5 @@
 PORTNAME=	centreon-clib
-PORTVERSION=	21.04.4
+DISTVERSION=	21.10.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -13,6 +13,9 @@ USES=		cmake compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	centreon
+GH_PROJECT=	centreon-collect
+
+WRKSRC_SUBDIR=	${PORTNAME}
 
 CMAKE_ARGS=	-DWITH_PREFIX=${PREFIX} \
 		-DWITH_PREFIX_INC=${PREFIX}/include/centreon \

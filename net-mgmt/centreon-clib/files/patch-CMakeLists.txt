@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2026-08-30 15:23:13 UTC
++++ CMakeLists.txt
+@@ -40,7 +40,9 @@ include(CheckLibraryExists)
+ 
+ # Include module to check existing libraries.
+ include(CheckLibraryExists)
+-include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
++if(EXISTS "${CMAKE_BINARY_DIR}/conan_paths.cmake")
++  include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
++endif()
+ # Include module CTest if necessary.
+ if (WITH_TESTING)
+   include(CTest)
