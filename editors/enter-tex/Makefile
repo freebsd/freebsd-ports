@@ -1,6 +1,6 @@
 PORTNAME=	enter-tex
 DISTVERSION=	3.49.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 DIST_SUBDIR=	gnome
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 USES=		compiler:c11 desktop-file-utils gettext-tools gnome meson \
 		pkgconfig tar:bz2 tex vala:build
 USE_GNOME=	dconf glib20 gtk30 introspection:build
-USE_TEX=	formats
+USE_TEX=	dvipsk formats
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
