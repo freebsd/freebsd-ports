@@ -344,6 +344,7 @@
     SUBDIR += rubygem-gstreamer
     SUBDIR += rubygem-streamio-ffmpeg
     SUBDIR += scte35dump
+    SUBDIR += sfml2
     SUBDIR += shaka-packager
     SUBDIR += shotcut
     SUBDIR += shotcut-qt6
