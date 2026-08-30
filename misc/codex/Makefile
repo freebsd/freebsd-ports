@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.150.1
+DISTVERSION=	0.151.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -115,6 +115,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/guardian_review.rs \
 		${BUILD_WRKSRC}/core/tests/suite/shell_snapshot.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
+		${BUILD_WRKSRC}/core/tests/suite/unified_exec_stdin_review_size.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
 		${BUILD_WRKSRC}/exec-server/src/process_sandbox_tests.rs \
 		${BUILD_WRKSRC}/exec-server/src/shell_snapshot_tests.rs \
@@ -128,6 +129,7 @@ post-patch:
 		${BUILD_WRKSRC}/utils/path-uri/src/tests.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/command_exec.rs \
+		${BUILD_WRKSRC}/app-server/tests/suite/v2/guardian_v2.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/hooks_list.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/session_end.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/thread_queue.rs \
