@@ -8911,6 +8911,7 @@
     SUBDIR += wasi-compiler-rt20
     SUBDIR += wasi-compiler-rt21
     SUBDIR += wasi-compiler-rt22
+    SUBDIR += wasi-compiler-rt23
     SUBDIR += wasi-libc
     SUBDIR += wasi-libcxx
     SUBDIR += wasi-libcxx17
