@@ -76,7 +76,7 @@
      <!-- SOLARIS linker configuration -->
  
      <linker id="linker.cfg.solaris" name="${gcc.compat.compiler}">
-@@ -1873,7 +1918,28 @@
+@@ -1873,7 +1918,36 @@
        <property name="java.lib.dir.platform"         value="${java.home.dir}/lib"/> <!-- new default -->
      </target>
  
@@ -92,14 +92,22 @@
 +      <echo message="FreeBSD" />
 +      <property name="compiler.cfg.id.base"          value="compiler.cfg.freebsd" />
 +      <property name="linker.cfg.id.base"            value="linker.cfg.freebsd.ppc64" />
-+      <property name="java.lib.dir.platform"         value="${java.home.dir}/jre/lib/ppc64" />
++      <available property="java.lib.dir.platform"    value="${java.home.dir}/jre/lib/ppc64"
++                                                      file="${java.home.dir}/jre/lib/ppc64/libjava.so"/>
++      <available property="java.lib.dir.platform"    value="${java.home.dir}/lib/ppc64"
++                                                      file="${java.home.dir}/lib/ppc64/libjava.so"/>
++      <property name="java.lib.dir.platform"         value="${java.home.dir}/lib"/> <!-- new default -->
 +    </target>
 +
 +    <target name="gluegen.cpptasks.declare.compiler.freebsd.ppc64le" if="isFreeBSDPpc64le">
 +      <echo message="FreeBSD" />
 +      <property name="compiler.cfg.id.base"          value="compiler.cfg.freebsd" />
 +      <property name="linker.cfg.id.base"            value="linker.cfg.freebsd.ppc64le" />
-+      <property name="java.lib.dir.platform"         value="${java.home.dir}/jre/lib/ppc64le" />
++      <available property="java.lib.dir.platform"    value="${java.home.dir}/jre/lib/ppc64le"
++                                                      file="${java.home.dir}/jre/lib/ppc64le/libjava.so"/>
++      <available property="java.lib.dir.platform"    value="${java.home.dir}/lib/ppc64le"
++                                                      file="${java.home.dir}/lib/ppc64le/libjava.so"/>
++      <property name="java.lib.dir.platform"         value="${java.home.dir}/lib"/> <!-- new default -->
 +    </target>
 +
 +    <target name="gluegen.cpptasks.declare.compiler.freebsd" depends="gluegen.cpptasks.declare.compiler.freebsd.x86,gluegen.cpptasks.declare.compiler.freebsd.amd64,gluegen.cpptasks.declare.compiler.freebsd.arm64,gluegen.cpptasks.declare.compiler.freebsd.ppc64,gluegen.cpptasks.declare.compiler.freebsd.ppc64le" if="isFreeBSD">
