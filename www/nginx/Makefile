@@ -345,6 +345,12 @@ pre-configure-LUASTREAM-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-lua-stream ${WRKSRC_luastream}
 	@${CHMOD} -R u+w ${WRKSRC_luastream}
 
+pre-configure-NJS-on:
+	@${RM} -rf ${WRKSRC_njs}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-njs ${WRKSRC_njs}
+	@${CHMOD} -R u+w ${WRKSRC_njs}
+	@${CHMOD} u+x ${WRKSRC_njs}/configure
+
 do-configure-NJS-on:
 	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} )
 
