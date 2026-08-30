@@ -1,5 +1,6 @@
 PORTNAME=	mcp
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.0 # # keep in sync with misc/py-mcp-types
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=4.5:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx-sse>=0.4:www/py-httpx-sse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.20.0:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mcp-types=${DISTVERSION}:misc/py-mcp-types@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multipart>=0.0.9:devel/py-multipart@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.28.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>=2.6.0:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.10.6_2:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.10.1:www/py-pyjwt@${PY_FLAVOR} \
