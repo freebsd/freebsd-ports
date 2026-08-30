@@ -14,7 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
 		libftgl.so:graphics/ftgl \
-		libsfml-system.so:devel/sfml
+		libsfml-system.so:multimedia/sfml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sirjuddington
