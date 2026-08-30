@@ -440,6 +440,8 @@ FreeCAD/Mod/CAM/CAMTests/TestPathDrillGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDrillable.py
 FreeCAD/Mod/CAM/CAMTests/TestPathEngrave.py
 FreeCAD/Mod/CAM/CAMTests/TestPathFacingGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestPathFlute.py
+FreeCAD/Mod/CAM/CAMTests/TestPathFollowWireGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathGeneratorDogboneII.py
 FreeCAD/Mod/CAM/CAMTests/TestPathGeom.py
 FreeCAD/Mod/CAM/CAMTests/TestPathHelix.py
@@ -497,6 +499,7 @@ FreeCAD/Mod/CAM/CAMTests/TestPostMCodes.py
 FreeCAD/Mod/CAM/CAMTests/TestPostOutput.py
 FreeCAD/Mod/CAM/CAMTests/TestPostProcessor.py
 FreeCAD/Mod/CAM/CAMTests/TestPostToolProcessing.py
+FreeCAD/Mod/CAM/CAMTests/TestProcessorOptimizations.py
 FreeCAD/Mod/CAM/CAMTests/TestSVGPost.py
 FreeCAD/Mod/CAM/CAMTests/TestSlicer.py
 FreeCAD/Mod/CAM/CAMTests/TestSnapmakerPost.py
@@ -517,6 +520,7 @@ FreeCAD/Mod/CAM/CAMTests/Tools/Library/test-path-tool-bit-library-00.fctl
 FreeCAD/Mod/CAM/CAMTests/Tools/Shape/test-path-tool-bit-shape-00.fcstd
 FreeCAD/Mod/CAM/CAMTests/__init__.py
 FreeCAD/Mod/CAM/CAMTests/boxtest.fcstd
+FreeCAD/Mod/CAM/CAMTests/cam_test_modules.py
 FreeCAD/Mod/CAM/CAMTests/dressuptest.FCStd
 FreeCAD/Mod/CAM/CAMTests/test-path-tool-bit-bit-00.fctb
 FreeCAD/Mod/CAM/CAMTests/test-path-tool-bit-library-00.fctl
@@ -551,6 +555,7 @@ FreeCAD/Mod/CAM/Path/Base/Generator/directional_facing.py
 FreeCAD/Mod/CAM/Path/Base/Generator/dogboneII.py
 FreeCAD/Mod/CAM/Path/Base/Generator/drill.py
 FreeCAD/Mod/CAM/Path/Base/Generator/facing_common.py
+FreeCAD/Mod/CAM/Path/Base/Generator/follow_wire.py
 FreeCAD/Mod/CAM/Path/Base/Generator/helix.py
 FreeCAD/Mod/CAM/Path/Base/Generator/leadinout.py
 FreeCAD/Mod/CAM/Path/Base/Generator/linking.py
@@ -646,6 +651,7 @@ FreeCAD/Mod/CAM/Path/Op/Drilling.py
 FreeCAD/Mod/CAM/Path/Op/Engrave.py
 FreeCAD/Mod/CAM/Path/Op/EngraveBase.py
 FreeCAD/Mod/CAM/Path/Op/FeatureExtension.py
+FreeCAD/Mod/CAM/Path/Op/Flute.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Adaptive.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Array.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Base.py
@@ -657,6 +663,7 @@ FreeCAD/Mod/CAM/Path/Op/Gui/Deburr.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Drilling.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Engrave.py
 FreeCAD/Mod/CAM/Path/Op/Gui/FeatureExtension.py
+FreeCAD/Mod/CAM/Path/Op/Gui/Flute.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Helix.py
 FreeCAD/Mod/CAM/Path/Op/Gui/MillFace.py
 FreeCAD/Mod/CAM/Path/Op/Gui/MillFacing.py
@@ -701,6 +708,7 @@ FreeCAD/Mod/CAM/Path/Post/DrillCycleExpander.py
 FreeCAD/Mod/CAM/Path/Post/GcodeProcessingUtils.py
 FreeCAD/Mod/CAM/Path/Post/Gui/DlgPostProcess.py
 FreeCAD/Mod/CAM/Path/Post/Gui/__init__.py
+FreeCAD/Mod/CAM/Path/Post/PathOptimizationUtils.py
 FreeCAD/Mod/CAM/Path/Post/PostList.py
 FreeCAD/Mod/CAM/Path/Post/Processor.py
 FreeCAD/Mod/CAM/Path/Post/Utils.py
@@ -857,7 +865,6 @@ FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/editor.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/file.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/panel.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/presets_tab.py
-FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/selector.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/tablecell.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/toollist.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/ui/typefilter.py
@@ -1926,6 +1933,7 @@ FreeCAD/Mod/Part/MakeBottle.py
 FreeCAD/Mod/Part/PartEnums.py
 FreeCAD/Mod/Part/TestPartApp.py
 FreeCAD/Mod/Part/TestPartGui.py
+FreeCAD/Mod/Part/TestPartPreview.py
 FreeCAD/Mod/Part/parttests/BRep_tests.py
 FreeCAD/Mod/Part/parttests/ColorPerFaceTest.py
 FreeCAD/Mod/Part/parttests/ColorTransparencyTest.py
@@ -2048,6 +2056,7 @@ FreeCAD/Mod/Sketcher/SketcherTests/TestSketchExpression.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketchFillet.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketchInternalFaces.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketchValidateCoincidents.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestSketcherEllipse.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketcherSolver.py
 FreeCAD/Mod/Sketcher/SketcherTests/__init__.py
 FreeCAD/Mod/Sketcher/TestSketcherApp.py
@@ -3169,19 +3178,12 @@ FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Carbon Dioxide.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Nitrogen.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Fluid/None.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Fluid/Water.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/AluminumCastAlloy.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/AluminumWroughtAlloy.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/AusteniticStainlessSteel.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/BalsaWood.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/GrayCastIron.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/HardWood.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/LowAlloySteel.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/MDF.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/MalleableCastIron.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/MildSteel.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/ParticleBoard.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/SoftWood.FCMat
-FreeCAD/share/Mod/Material/Resources/Materials/Machining/ToolSteel.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/Aluminum-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/Brass-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/Copper-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/Plastic-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/Steel-Generic.FCMat
+FreeCAD/share/Mod/Material/Resources/Materials/Machining/Wood-Generic.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Diagonal4.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Diagonal5.FCMat
 FreeCAD/share/Mod/Material/Resources/Materials/Patterns/PAT/Diamond.FCMat
