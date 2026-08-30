@@ -790,6 +790,7 @@
     SUBDIR += pam_yubico
     SUBDIR += pamtester
     SUBDIR += paperkey
+    SUBDIR += pass-cli
     SUBDIR += passh
     SUBDIR += passivedns
     SUBDIR += pcsc-tools

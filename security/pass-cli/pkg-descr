@@ -1,0 +1,12 @@
+The Proton Pass CLI allows you to manage your Proton Pass vaults and
+items directly from the command line, bringing the power of secure
+secret management to your terminal workflow. With the CLI, you can
+create, list, view, and delete vaults and items seamlessly, making it
+an great tool for developers and system administrators who prefer
+working in the command line.
+
+Beyond basic vault management, the CLI allows you to inject secrets
+into your applications through environment variables or template
+files, enabling easy integration with your deployment workflows. The
+tool also provides comprehensive SSH integration, allowing you to use
+your SSH keys stored in Proton Pass with your existing SSH workflows.

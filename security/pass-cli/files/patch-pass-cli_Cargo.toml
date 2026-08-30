@@ -1,0 +1,12 @@
+--- pass-cli/Cargo.toml.orig	2026-08-25 14:16:40 UTC
++++ pass-cli/Cargo.toml
+@@ -66,6 +66,9 @@ zbus-secret-service-keyring-store = { version = "1.0.0
+ linux-keyutils-keyring-store = "1.0.0"
+ zbus-secret-service-keyring-store = { version = "1.0.0", features = ["crypto-rust"] }
+ 
++[target.'cfg(target_os = "freebsd")'.dependencies]
++zbus-secret-service-keyring-store = { version = "1.0.0", features = ["crypto-rust"] }
++
+ [target.'cfg(target_os = "windows")'.dependencies]
+ zip = "8"
+ windows-native-keyring-store = "1.0.0"
