@@ -1,5 +1,6 @@
 PORTNAME=	mlflow-skinny
 PORTVERSION=	3.14.0
+PORTREVISION=	1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=5.0.0:devel/py-cachetools@${PY_F
 		${PYTHON_PKGNAMEPREFIX}databricks-sdk>=0.20.0:devel/py-databricks-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gitpython>=3.1.9:devel/py-gitpython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.7.0:devel/py-importlib-metadata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-metadata8>=3.7.0:devel/py-importlib-metadata8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.9.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-proto>=1.9.0:devel/py-opentelemetry-proto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.9.0:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
