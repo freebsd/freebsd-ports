@@ -1,5 +1,6 @@
 PORTNAME=	litellm
 DISTVERSION=	1.98.0
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.14.0<1.0:devel/py-fastuuid@${PY_
 		${PYTHON_PKGNAMEPREFIX}openai>=2.20.0<3.0.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.0.0<2.0:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.8.0<1.0:textproc/py-tiktoken@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=8.0.0<9.0:devel/py-importlib-metadata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-metadata8>=8.0.0<9.0:devel/py-importlib-metadata8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tokenizers>=0.21.0<1.0:textproc/py-tokenizers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0.0<9.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6<4.0:devel/py-Jinja2@${PY_FLAVOR} \
