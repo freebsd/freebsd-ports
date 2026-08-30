@@ -1,14 +1,17 @@
 PORTNAME=	lnphost
 PORTVERSION=	1.0a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lego RCX iinfrared communication API
 WWW=		https://sourceforge.net/projects/lnphost/?source=directory/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Deprecated upstream: Consider porting brickOS-bibo as a replacement
+EXPIRATION_DATE=2026-09-30
 
 USES=		zip gmake
 WRKSRC=		${WRKDIR}/lnphost
