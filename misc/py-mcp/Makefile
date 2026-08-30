@@ -1,6 +1,6 @@
 PORTNAME=	mcp
-DISTVERSION=	2.0.0 # # keep in sync with misc/py-mcp-types
-PORTREVISION=	1
+DISTVERSION=	2.1.1 # # keep in sync with misc/py-mcp-types
+PORTREVISION=	0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
