@@ -1,11 +1,11 @@
---- pyproject.toml.orig	2020-02-02 00:00:00 UTC
+--- pyproject.toml.orig	2026-08-22 07:29:04 UTC
 +++ pyproject.toml
-@@ -95,7 +95,7 @@ pydantic-v2 = [
+@@ -98,7 +98,7 @@ pydantic-v2 = [
  ]
  
  [build-system]
--requires = ["hatchling==1.26.3", "hatch-fancy-pypi-readme"]
-+requires = ["hatchling>=1.26.3", "hatch-fancy-pypi-readme"]
+-requires = ["hatchling==1.26.3", "hatch-fancy-pypi-readme>=22.4, <26"]
++requires = ["hatchling>=1.26.3", "hatch-fancy-pypi-readme>=22.4, <26"]
  build-backend = "hatchling.build"
  
  [tool.hatch.build]
