@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libAntTweakBar.so:graphics/anttweakbar \
-		libsfml-system.so:devel/sfml
+		libsfml-system.so:multimedia/sfml2
 
 USES=		cmake compiler:c++17-lang eigen:3 gl localbase:ldflags
 USE_GL=		gl glew glu
