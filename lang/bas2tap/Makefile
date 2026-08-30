@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}-generic
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Convert 48k/128k ZX Spectrum BASIC text files to TAP files
-WWW=		http://www.worldofspectrum.org/utilities.html
+WWW=		https://worldofspectrum.net/utilities/
 
 LICENSE=	GPLv2
 
