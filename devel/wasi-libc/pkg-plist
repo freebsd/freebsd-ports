@@ -1,4 +1,3 @@
-share/wasi-sysroot/include/%%TRIPLE%%/__errno.h
 share/wasi-sysroot/include/%%TRIPLE%%/__errno_values.h
 share/wasi-sysroot/include/%%TRIPLE%%/__fd_set.h
 share/wasi-sysroot/include/%%TRIPLE%%/__function___isatty.h
