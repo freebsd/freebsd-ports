@@ -530,6 +530,7 @@
     SUBDIR += nginx-lite
     SUBDIR += nginx-module-lua
     SUBDIR += nginx-module-lua-stream
+    SUBDIR += nginx-module-ndk
     SUBDIR += nginx-naxsi
     SUBDIR += nginx-prometheus-exporter
     SUBDIR += nginx-ultimate-bad-bot-blocker

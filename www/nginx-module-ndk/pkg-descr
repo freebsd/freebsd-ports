@@ -1,0 +1,4 @@
+The Nginx Development Kit (NDK) is a module that adds additional
+generic tools that module developers can use in their own modules.
+
+It is required to build several third-party nginx modules.
