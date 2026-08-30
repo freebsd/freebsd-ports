@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260830:
+  AFFECTS: users of www/nginx-module-lua
+  AUTHOR: joneum@FreeBSD.org
+
+  Since 20260819 www/nginx-module-lua no longer installs a prebuilt
+  libexec/nginx/ngx_http_lua_module.so.  The port now only provides the
+  module sources used by the nginx ports, because the prebuilt module
+  conflicted with the one built by www/nginx with the LUA option.
+
+  If nginx.conf contains
+
+	load_module "/usr/local/libexec/nginx/ngx_http_lua_module.so";
+
+  nginx will fail to start after the upgrade.  A running nginx keeps
+  serving until the next restart, so this may surface later.
+
+  Rebuild www/nginx (or www/nginx-devel, www/freenginx) with the DSO and
+  LUA options enabled.  The module is installed at the same path again,
+  so the load_module line keeps working.  LUA is not a default option,
+  therefore the official binary packages do not ship the module.
+
 20260826:
   AFFECTS: users of x11/sddm
   AUTHOR: arrowd@FreeBSD.org
