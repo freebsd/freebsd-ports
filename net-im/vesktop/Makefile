@@ -1,6 +1,6 @@
 PORTNAME=	vesktop
 DISTVERSION=	1.6.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/Vencord/Vesktop/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}_${ARCH:S/aarch64/arm64/}
@@ -11,6 +11,9 @@ COMMENT=	Unofficial native 'improved' client for the discord messenger
 WWW=		https://vesktop.dev/
 
 LICENSE=	GPLv3
+
+DEPRECATED=	Depends on expired devel/electron40
+EXPIRATION_DATE=2026-09-30
 
 ONLY_FOR_ARCHS=	amd64 aarch64
 
