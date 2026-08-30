@@ -1,6 +1,5 @@
 PORTNAME=	ebsnvme-id
-DISTVERSION=	1.0.3
-PORTREVISION=	1
+DISTVERSION=	1.0.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	cperciva@FreeBSD.org
@@ -10,17 +9,21 @@ WWW=		https://github.com/cperciva/ebsnvme-id
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+USES=		uidfix
+
 USE_GITHUB=	YES
 GH_ACCOUNT=	cperciva
-
-USES=		uidfix
 
 MAKE_ARGS=	MANDIR=${PREFIX}/share/man/man
 
 PLIST_FILES=	etc/rc.d/dev_aws_disk		\
 		etc/devd/dev-aws-disk.conf	\
+		sbin/ebsnvme			\
 		sbin/ebsnvme-id			\
-		share/man/man8/ebsnvme-id.8.gz
+		sbin/ebsnvme-stats		\
+		share/man/man8/ebsnvme.8.gz	\
+		share/man/man8/ebsnvme-id.8.gz	\
+		share/man/man8/ebsnvme-stats.8.gz
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
