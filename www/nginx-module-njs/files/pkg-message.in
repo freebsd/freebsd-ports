@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the njs module only.  It does not
+install a loadable module, and installing it alongside nginx does not
+add JavaScript support to a running server.
+
+The module itself is built by the nginx ports.  To use njs, build
+www/nginx, www/nginx-devel or www/freenginx with the NJS option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-njs and produce
+ngx_http_js_module.so and ngx_stream_js_module.so.
+EOM
+}
+]

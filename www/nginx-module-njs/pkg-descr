@@ -1,0 +1,11 @@
+Njs is an nginx module that extends the server's functionality through
+JavaScript scripting, enabling the creation of custom server-side logic.
+
+Use cases:
+- Complex access control and security checks in njs before a request
+  reaches an upstream server
+- Manipulating response headers
+- Writing flexible asynchronous content handlers and filters
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their NJS option is enabled.
