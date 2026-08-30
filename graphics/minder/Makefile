@@ -5,7 +5,7 @@ CATEGORIES=	graphics
 # avoid PKGBASE collision with net-p2p/minder
 PKGNAMESUFFIX=	-app
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mind-mapping application
 WWW=		https://github.com/phase1geo/Minder
 
