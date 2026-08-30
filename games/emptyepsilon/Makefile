@@ -22,7 +22,6 @@ LICENSE_PERMS_AngryFly-Royalty-Free-License=	auto-accept dist-mirror pkg-mirror
 # u8vec4, vec3 functions/types in newer glm versions).
 #BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libsfml-system.so:devel/sfml \
 		libmeshoptimizer.so:misc/meshoptimizer \
 		libopus.so:audio/opus
 RUN_DEPENDS=	xclip:x11/xclip
