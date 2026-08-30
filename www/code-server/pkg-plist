@@ -20060,3 +20060,14 @@ bin/code-server
 %%DATADIR%%/node_modules/js-yaml/dist/js-yaml.cjs.js
 %%DATADIR%%/node_modules/js-yaml/dist/js-yaml.cjs.js.map
 %%DATADIR%%/node_modules/js-yaml/dist/js-yaml.d.ts
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/artist-beret.png
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/baseball-cap.png
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/construction-hard-hat.png
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/cowboy-hat.png
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/crown.png
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/firefighter-helmet.png
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/full-size-spinner-hat.png
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/grand-top-hat-monocle.png
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/leaning-party-hat.png
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/sailor-hat.png
+%%DATADIR%%/lib/vscode/out/vs/workbench/contrib/chat/browser/widget/media/chatPet/accessories/viking-helmet.png
