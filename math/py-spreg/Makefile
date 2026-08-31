@@ -26,4 +26,17 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	PLUS
+PLUS_DESC=	Extra features
+
+PLUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>=0:www/py-bokeh@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}folium>=0:www/py-folium@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}geojson>=0:devel/py-geojson@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}geopandas>=1.1:graphics/py-geopandas@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}matplotlib>=3.10:math/py-matplotlib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}numba>=0.60:devel/py-numba@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}numexpr>=0:math/py-numexpr@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}seaborn>=0:math/py-seaborn@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}statsmodels>=0:math/py-statsmodels@${PY_FLAVOR}
+
 .include <bsd.port.mk>
