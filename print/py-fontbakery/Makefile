@@ -1,5 +1,6 @@
 PORTNAME=	fontbakery
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	PYPI \
 		https://github.com/fonttools/fontbakery/releases/download/v${PORTVERSION}/
@@ -12,6 +13,9 @@ WWW=		https://font-bakery.readthedocs.io/en/latest/ \
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Depends on expired x11-fonts/py-cu2qu
+EXPIRATION_DATE=2026-09-30
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=6.2:devel/py-setuptools-scm@${PY_FLAVOR} \
