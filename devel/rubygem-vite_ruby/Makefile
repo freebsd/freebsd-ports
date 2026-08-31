@@ -1,5 +1,6 @@
 PORTNAME=	vite_ruby
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-dry-cli>=0.7<2:devel/rubygem-dry-cli \
-		rubygem-rack-proxy>=0.6.1<1.0:www/rubygem-rack-proxy \
+		rubygem-rack-proxy0>=0.6.1<1.0:www/rubygem-rack-proxy0 \
 		rubygem-zeitwerk>=2.2<3:devel/rubygem-zeitwerk
 
 USES=		gem
