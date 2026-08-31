@@ -1,5 +1,5 @@
 PORTNAME=	notebook
-PORTVERSION=	7.6.0
+PORTVERSION=	7.6.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter/notebook/releases/download/v${PORTVERSION}/
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-jupyter-builder>=0.5:devel/py-hatch-
 		${PYTHON_PKGNAMEPREFIX}jupyter-builder>=1.0.2<2:devel/py-jupyter-builder@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-builder>=1.0.2<2:devel/py-jupyter-builder@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.19.0<3:devel/py-jupyter-server@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.6.0<4.7:devel/py-jupyterlab@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.6.3<4.7:devel/py-jupyterlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.28.0<3:devel/py-jupyterlab-server@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}notebook-shim>=0.2<0.3:devel/py-notebook-shim@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=6.2.0:www/py-tornado@${PY_FLAVOR}
