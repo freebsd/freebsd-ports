@@ -1,5 +1,5 @@
 PORTNAME=	haml
-PORTVERSION=	7.2.0
+PORTVERSION=	7.4.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://haml.info/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-temple>=0.8.0:devel/rubygem-temple \
+RUN_DEPENDS=	rubygem-prism>=1.1.0:textproc/rubygem-prism \
+		rubygem-temple>=0.8.0:devel/rubygem-temple \
 		rubygem-thor>=0:devel/rubygem-thor \
 		rubygem-tilt>=0:devel/rubygem-tilt
 
