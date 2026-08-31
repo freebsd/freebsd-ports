@@ -1,5 +1,5 @@
 PORTNAME=	thriftpy2
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,10 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.4<4.0:devel/py-ply@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.15<2:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ijson>=3.0<4.0:devel/py-ijson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ply>=3.4<4.0:devel/py-ply@${PY_FLAVOR}
 
-USES=		dos2unix python
+USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
 
 OPTIONS_DEFINE=	AIOHTTP
