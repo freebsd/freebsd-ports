@@ -1,6 +1,6 @@
 PORTNAME=	clunk
 PORTVERSION=	1.3.261
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/clunk
 
@@ -10,6 +10,9 @@ WWW=		https://sourceforge.net/projects/clunk/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 USES=		cmake sdl tar:bzip2
 USE_CXXSTD=	c++14
