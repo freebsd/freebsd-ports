@@ -24,4 +24,9 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	FILE_CONFIGURATION
+FILE_CONFIGURATION_DESC=	JSON/YAML configuration file
+
+FILE_CONFIGURATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-configuration>=0.65b0<0.65b0_99:devel/py-opentelemetry-configuration@${PY_FLAVOR}
+
 .include <bsd.port.mk>
