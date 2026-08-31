@@ -1,6 +1,6 @@
---- calcmem.sh.orig	2024-12-10 19:13:48 UTC
+--- calcmem.sh.orig	2026-08-31 16:31:16 UTC
 +++ calcmem.sh
-@@ -78,26 +78,6 @@ function setEnvironment(){
+@@ -144,26 +144,6 @@ setEnvironment(){
  	if [[ "$SHIFTER_RUNTIME" = "1" ]]; then
  		#Ignore NERSC_HOST
  		shifter=1
@@ -20,7 +20,7 @@
 -	else
 -		PATH=/global/cfs/cdirs/bbtools/bgzip:$PATH
 -		PATH=/global/cfs/cdirs/bbtools/lbzip2/bin:$PATH
--                PATH=/global/cfs/cdirs/bbtools/samtools116/samtools-1.16.1:$PATH
+-		PATH=/global/cfs/cdirs/bbtools/samtools116/samtools-1.16.1:$PATH
 -		#PATH=/global/projectb/sandbox/gaag/bbtools/sambamba:$PATH
 -		PATH=/global/cfs/cdirs/bbtools/java/jdk-17/bin:$PATH
 -		PATH=/global/cfs/cdirs/bbtools/pigz2/pigz-2.4:$PATH
