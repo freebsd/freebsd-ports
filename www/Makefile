@@ -2568,7 +2568,6 @@
     SUBDIR += sarg
     SUBDIR += scloader
     SUBDIR += script4rss
-    SUBDIR += seahub
     SUBDIR += selenium
     SUBDIR += serendipity
     SUBDIR += serf
