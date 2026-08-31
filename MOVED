@@ -5587,3 +5587,4 @@ www/py-dj42-django-simple-captcha||2026-08-31|Has expired: Serves as a transitio
 www/py-dj42-django-picklefield||2026-08-31|Has expired: Serves as a transition only for www/seahub and requires Django 4.2, which has been end-of-life since April
 www/py-dj42-djangosaml2||2026-08-31|Has expired: Serves as a transition only for www/seahub and requires Django 4.2, which has been end-of-life since April
 www/py-dj42-django-ranged-response||2026-08-31|Has expired: Serves as a transition only for www/seahub and requires Django 4.2, which has been end-of-life since April
+www/py-django42||2026-08-31|Has expired: Django 4.2 is now in Extended Support, receives security fixes only and will reach End-Of-Life in April 2026. Upgrade to a later Django version. See https://www.djangoproject.com/download/
