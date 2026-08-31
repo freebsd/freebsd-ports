@@ -1,21 +1,21 @@
 PORTNAME=	spacetrack
-PORTVERSION=	1.4.0
+PORTVERSION=	2.0.0
 CATEGORIES=	astro python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python client for space-track.org
-WWW=		https://github.com/python-astrodynamics/spacetrack
+WWW=		https://spacetrack.readthedocs.io/en/stable/ \
+		https://github.com/python-astrodynamics/spacetrack
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=3.17.0:sysutils/py-filelock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}logbook>=1.8.0:devel/py-logbook@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx2>=2.9.1:www/py-httpx2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}logbook>=1.10.1:devel/py-logbook@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}outcome>=1.3.0:devel/py-outcome@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.3.6:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}represent>=2.1:devel/py-represent@${PY_FLAVOR} \
