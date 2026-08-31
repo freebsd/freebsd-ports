@@ -1,0 +1,23 @@
+From 71f4133a89cfc08d09d8659b66c94d3b4c7863be Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ball=C3=B3=20Gy=C3=B6rgy?= <ballogyor@gmail.com>
+Date: Fri, 17 Jul 2026 02:39:36 +0200
+Subject: [PATCH] Set application name
+
+Without this, the process name is shown as window title.
+---
+ src/Application.vala | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git src/Application.vala src/Application.vala
+index 39cde6b1..9d461cf3 100644
+--- src/Application.vala
++++ src/Application.vala
+@@ -49,6 +49,8 @@ public class Minder : Gtk.Application {
+     Intl.bind_textdomain_codeset( GETTEXT_PACKAGE, "UTF-8" );
+     Intl.textdomain( GETTEXT_PACKAGE );
+ 
++    Environment.set_application_name ( "Minder" );
++
+     startup.connect( start_application );
+     command_line.connect( handle_command_line );
+ 
