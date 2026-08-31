@@ -52,6 +52,7 @@
     SUBDIR += clipcat
     SUBDIR += cliphist
     SUBDIR += clipman
+    SUBDIR += colormeter
     SUBDIR += compton-conf
     SUBDIR += conlecterm
     SUBDIR += contour

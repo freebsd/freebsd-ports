@@ -1,0 +1,3 @@
+colormeter is an X11 color meter: it magnifies pixels under the pointer and
+shows hex and decimal RGB in a status bar. Ctrl+L (global) locks or unlocks
+the sample; Button1 drag moves the window; q quits.
