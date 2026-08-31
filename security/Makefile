@@ -440,6 +440,7 @@
     SUBDIR += olm
     SUBDIR += onionscan
     SUBDIR += op
+    SUBDIR += open-vulnerability-cli
     SUBDIR += openbao
     SUBDIR += openbsm
     SUBDIR += openca-ocspd
@@ -473,7 +474,6 @@
     SUBDIR += openvpn-auth-radius
     SUBDIR += openvpn-auth-script
     SUBDIR += openvpn-devel
-    SUBDIR += open-vulnerability-cli
     SUBDIR += ophcrack
     SUBDIR += opie
     SUBDIR += opkssh
