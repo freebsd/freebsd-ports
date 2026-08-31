@@ -1,5 +1,5 @@
 PORTNAME=	node-sqlcipher
-DISTVERSION=	3.3.9
+DISTVERSION=	4.0.3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/signalapp/node-sqlcipher/archive/refs/tags/v${DISTVERSION}/:sqlcipher \
 		LOCAL/mikael/signal-desktop/:npm
