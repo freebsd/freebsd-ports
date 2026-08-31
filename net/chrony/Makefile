@@ -13,6 +13,8 @@ WWW=		https://chrony-project.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+TEST_DEPENDS=	bash:shells/bash
+
 USES=		cpe gmake libedit pkgconfig
 
 CPE_VENDOR=	tuxfamily
