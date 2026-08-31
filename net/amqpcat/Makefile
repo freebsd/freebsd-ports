@@ -1,7 +1,7 @@
 PORTNAME=	amqpcat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
@@ -49,7 +49,7 @@ post-extract:
 		-e '/branch:/d' \
 		-e '/version: .>1/d' \
 		${WRKSRC}/shard.yml \
-		${WRKSRC}/deps/*/shard.yml
+		${WRKSRC}/deps/amqp-client.cr/shard.yml
 
 do-build:
 	(cd ${WRKSRC} && \
