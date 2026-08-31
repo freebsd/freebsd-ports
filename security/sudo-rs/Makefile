@@ -1,6 +1,6 @@
 PORTNAME=	sudo-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.14
+DISTVERSION=	0.2.15
 CATEGORIES=	security
 
 MAINTAINER=	marc@trifectatech.org
