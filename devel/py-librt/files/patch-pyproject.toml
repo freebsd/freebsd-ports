@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-07-08 11:53:57 UTC
+--- pyproject.toml.orig	2026-08-07 10:12:09 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -7,10 +7,10 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -20,7 +20,7 @@ version = "0.13.0"
+@@ -20,7 +20,7 @@ version = "0.15.0"
      {name = "Ivan Levkivskyi", email = "levkivskyi@gmail.com"},
  ]
- version = "0.13.0"
+ version = "0.15.0"
 -license = "MIT"
 +license = {text = "MIT"}
  classifiers = [
