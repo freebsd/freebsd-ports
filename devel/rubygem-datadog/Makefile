@@ -1,5 +1,5 @@
 PORTNAME=	datadog
-PORTVERSION=	2.37.0
+PORTVERSION=	2.41.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.BSD3
 
-RUN_DEPENDS=	rubygem-datadog-ruby_core_source>=3.5.2<4:devel/rubygem-datadog-ruby_core_source \
-		rubygem-libdatadog>=36.0.0.1.0<36.0.0.2:devel/rubygem-libdatadog \
+RUN_DEPENDS=	rubygem-datadog-ruby_core_source>=3.5.4<4:devel/rubygem-datadog-ruby_core_source \
+		rubygem-libdatadog>=40.0.0.1.0<40.0.0.2:devel/rubygem-libdatadog \
 		rubygem-libddwaf>=1.30.0.0.0<1.30.0.1:devel/rubygem-libddwaf \
 		rubygem-logger>=0:devel/rubygem-logger \
 		rubygem-msgpack>=0:devel/rubygem-msgpack
