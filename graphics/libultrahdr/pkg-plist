@@ -2,6 +2,6 @@ bin/ultrahdr_app
 include/ultrahdr_api.h
 lib/libuhdr.a
 lib/libuhdr.so
-lib/libuhdr.so.1
-lib/libuhdr.so.1.4.0
+lib/libuhdr.so.2
+lib/libuhdr.so.%%PORTVERSION%%
 libdata/pkgconfig/libuhdr.pc
