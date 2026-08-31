@@ -5590,3 +5590,4 @@ www/py-dj42-django-ranged-response||2026-08-31|Has expired: Serves as a transiti
 www/py-django42||2026-08-31|Has expired: Django 4.2 is now in Extended Support, receives security fixes only and will reach End-Of-Life in April 2026. Upgrade to a later Django version. See https://www.djangoproject.com/download/
 www/py-seafdav||2026-08-31|Removed, depended on net-mgmt/seafile-server
 mail/james||2026-08-31|Has expired: This is a version that is over 10 years old and has multiple vulnerabilities
+www/py-seafobj||2026-08-31|Removed, depended on net-mgmt/seafile-server
