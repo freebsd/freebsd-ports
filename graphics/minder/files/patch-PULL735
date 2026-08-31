@@ -1,0 +1,32 @@
+From 948cbc47779d2c6b08052c47a2bb8c7a24eb727e Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ball=C3=B3=20Gy=C3=B6rgy?= <ballogyor@gmail.com>
+Date: Mon, 20 Jul 2026 20:31:15 +0200
+Subject: [PATCH] Reduce height of the Shortcuts page
+
+This allows the Preferences window to fit into smaller screens. Without
+this, the bottom of the dialog is behind of the bottom panel on a 1024x768
+display.
+
+Also, expand the ScrolledWindow vertically to allow it to fill the space if
+the user resizes the dialog.
+---
+ src/Preferences.vala | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git src/Preferences.vala src/Preferences.vala
+index 6e2d7e35..9299a10f 100644
+--- src/Preferences.vala
++++ src/Preferences.vala
+@@ -327,10 +327,11 @@ public class Preferences : Granite.Dialog {
+       hscrollbar_policy = PolicyType.NEVER,
+       overlay_scrolling = false,
+       hexpand           = true,
++      vexpand           = true,
+       margin_top        = 20,
+       child             = grid
+     };
+-    sw.set_size_request( -1, 500 );
++    sw.set_size_request( -1, 400 );
+ 
+     _shortcut_inst_start_str = _( "Double-click to edit shortcut.  Select + Delete to remove shortcut." );
+     _shortcut_inst_edit_str  = _( "Escape to cancel.  Press key combination to set." );
