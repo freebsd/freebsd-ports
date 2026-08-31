@@ -1,6 +1,5 @@
 PORTNAME=	rasterio
-PORTVERSION=	1.5.0
-PORTREVISION=	5
+PORTVERSION=	1.5.1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,9 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}affine>=0:math/py-affine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=4.0:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cligj>=0.5:devel/py-cligj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=2,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.0:devel/py-pyparsing@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python:3.12+
 USE_PYTHON=	autoplist concurrent cython pep517
