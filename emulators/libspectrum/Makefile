@@ -1,5 +1,5 @@
 PORTNAME=	libspectrum
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	emulators devel
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
