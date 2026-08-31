@@ -22,6 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.21.2,1:textproc/py-docutils@${PY
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 # XXX: remove this target if the version of devel/py-setuptools is >= 77
 post-patch:
 	${REINPLACE_CMD} -E \
