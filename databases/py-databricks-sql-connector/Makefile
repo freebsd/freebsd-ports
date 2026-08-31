@@ -1,5 +1,5 @@
 PORTNAME=	databricks-sql-connector
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lz4>=4.4.5<5:archivers/py-lz4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.0<3:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.18.1<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-kerberos>=0<0.16:security/py-requests-kerberos@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}thrift>=0.22.0,1<0.23,1:devel/py-thrift@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}thrift>=0.24.0,1<0.25,1:devel/py-thrift@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26,1:net/py-urllib3@${PY_FLAVOR}
 
 USES=		python shebangfix
