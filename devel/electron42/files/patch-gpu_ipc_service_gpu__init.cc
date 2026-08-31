@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_init.cc.orig	2026-04-28 21:06:17 UTC
+--- gpu/ipc/service/gpu_init.cc.orig	2026-08-31 06:47:14 UTC
 +++ gpu/ipc/service/gpu_init.cc
 @@ -164,7 +164,7 @@ bool CanAccessDeviceFile(const GPUInfo& gpu_info) {
  
@@ -45,7 +45,7 @@
          VLOG(1) << "Quit GPU process launch to fallback to SwiftShader cleanly "
                  << "on Linux";
          return false;
-@@ -818,7 +818,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -808,7 +808,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
      }
    }
  
@@ -54,7 +54,7 @@
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -893,7 +893,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -883,7 +883,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
        }
      }
    }
@@ -63,7 +63,7 @@
      (BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_CHROMEOS_DEVICE))
    if (!gl_disabled && !gl_use_swiftshader_ && std::getenv("RUNNING_UNDER_RR")) {
      // https://rr-project.org/ is a Linux-only record-and-replay debugger that
-@@ -1089,7 +1089,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -1079,7 +1079,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
    }
    bool gl_disabled = gl::GetGLImplementation() == gl::kGLImplementationDisabled;
  
@@ -72,7 +72,7 @@
      (BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_CHROMEOS_DEVICE))
    if (!gl_disabled && !gl_use_swiftshader_ && std::getenv("RUNNING_UNDER_RR")) {
      // https://rr-project.org/ is a Linux-only record-and-replay debugger that
-@@ -1145,7 +1145,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -1135,7 +1135,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
      }
    }
  
