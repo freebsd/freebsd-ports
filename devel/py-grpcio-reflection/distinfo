@@ -1,3 +1,3 @@
-TIMESTAMP = 1784005178
-SHA256 (grpcio_reflection-1.82.0.tar.gz) = 0d26f5cf29d87cc2984c8a6f72030cba1db5c5a4f72e79f31859e0c408f1265e
-SIZE (grpcio_reflection-1.82.0.tar.gz) = 19220
+TIMESTAMP = 1784092377
+SHA256 (grpcio_reflection-1.82.1.tar.gz) = 2ec943ead3e17b43f8e0747a5cb417b3a64357fe3d9b4a7bdc39a4c33ea9800d
+SIZE (grpcio_reflection-1.82.1.tar.gz) = 19217
