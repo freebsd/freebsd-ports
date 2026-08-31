@@ -1,5 +1,5 @@
 PORTNAME=	google-resumable-media
-PORTVERSION=	2.10.0
+PORTVERSION=	2.10.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +28,7 @@ AIOHTTP_DESC=	Use aiohttp
 REQUESTS_DESC=	Use requests
 
 AIOHTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.6.2<4.0.0:www/py-aiohttp@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}google-auth>=1.22.0<3.0.0:security/py-google-auth@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}google-auth>=2.14.1<3.0.0:security/py-google-auth@${PY_FLAVOR}
 REQUESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.18.0:www/py-requests@${PY_FLAVOR}
 
 .include <bsd.port.mk>
