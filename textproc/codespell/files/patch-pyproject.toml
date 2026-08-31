@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-03-05 18:09:51 UTC
+--- pyproject.toml.orig	2026-07-15 11:51:21 UTC
 +++ pyproject.toml
 @@ -5,7 +5,7 @@ requires-python = ">=3.9"
  description = "Fix common misspellings in text files"
@@ -9,7 +9,7 @@
  authors = [
      {name = "Lucas De Marchi", email = "lucas.de.marchi@gmail.com"},
  ]
-@@ -65,7 +65,7 @@ build-backend = "setuptools.build_meta"
+@@ -67,7 +67,7 @@ build-backend = "setuptools.build_meta"
  
  [build-system]
  build-backend = "setuptools.build_meta"
@@ -18,11 +18,3 @@
  
  [tool.setuptools_scm]
  write_to = "codespell_lib/_version.py"
-@@ -74,6 +74,7 @@ exclude = [
- exclude = [
-     "dist",
-     "snap",
-+    "tools",
- ]
- 
- [tool.setuptools.package-data]
