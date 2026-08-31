@@ -5585,3 +5585,4 @@ www/py-dj42-django_statici18n||2026-08-31|Has expired: Serves as a transition on
 www/py-dj42-django-webpack-loader||2026-08-31|Has expired: Serves as a transition only for www/seahub and requires Django 4.2, which has been end-of-life since April
 www/py-dj42-django-simple-captcha||2026-08-31|Has expired: Serves as a transition only for www/seahub and requires Django 4.2, which has been end-of-life since April
 www/py-dj42-django-picklefield||2026-08-31|Has expired: Serves as a transition only for www/seahub and requires Django 4.2, which has been end-of-life since April
+www/py-dj42-djangosaml2||2026-08-31|Has expired: Serves as a transition only for www/seahub and requires Django 4.2, which has been end-of-life since April
