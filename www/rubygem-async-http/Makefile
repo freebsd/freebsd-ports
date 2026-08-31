@@ -1,5 +1,5 @@
 PORTNAME=	async-http
-PORTVERSION=	0.95.1
+PORTVERSION=	0.99.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,16 +11,14 @@ WWW=		https://socketry.github.io/async-http/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
 
-RUN_DEPENDS=	rubygem-async>=2.10.2:devel/rubygem-async \
+RUN_DEPENDS=	rubygem-async>=2.35.1:devel/rubygem-async \
 		rubygem-async-pool>=0.11<1:www/rubygem-async-pool \
 		rubygem-io-endpoint>=0.14<1:devel/rubygem-io-endpoint \
-		rubygem-io-stream>=0.6<1:devel/rubygem-io-stream \
-		rubygem-metrics>=0.12<1:devel/rubygem-metrics \
-		rubygem-protocol-http>=0.62<1:www/rubygem-protocol-http \
+		rubygem-io-stream>=0.14<1:devel/rubygem-io-stream \
+		rubygem-protocol-http>=0.66<1:www/rubygem-protocol-http \
 		rubygem-protocol-http1>=0.39<1:www/rubygem-protocol-http1 \
 		rubygem-protocol-http2>=0.26<1:www/rubygem-protocol-http2 \
-		rubygem-protocol-url>=0.2<1:www/rubygem-protocol-url \
-		rubygem-traces>=0.10<1:devel/rubygem-traces
+		rubygem-protocol-url>=0.2<1:www/rubygem-protocol-url
 
 USES=		gem
 
