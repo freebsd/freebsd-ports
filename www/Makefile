@@ -1963,7 +1963,6 @@
     SUBDIR += py-scalar-fastapi
     SUBDIR += py-scgi
     SUBDIR += py-scrapy
-    SUBDIR += py-seafdav
     SUBDIR += py-seafobj
     SUBDIR += py-searxng-devel
     SUBDIR += py-secure-cookie
