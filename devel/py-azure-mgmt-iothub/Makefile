@@ -1,9 +1,9 @@
 PORTNAME=	azure-mgmt-iothub
-PORTVERSION=	5.0.0b3
+PORTVERSION=	5.0.0b4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	azure_mgmt_iothub-${DISTVERSION}
+DISTNAME=	azure_mgmt_iothub-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure IoT Hub Management Client Library for Python
