@@ -7,7 +7,7 @@ include/radcli/version.h
 lib/libradcli.a
 lib/libradcli.so
 lib/libradcli.so.10
-lib/libradcli.so.10.0.0
+lib/libradcli.so.10.2.0
 libdata/pkgconfig/radcli.pc
 share/man/man3/radcli.h.3.gz
 share/man/man3/rc_aaa.3.gz
@@ -17,6 +17,7 @@ share/man/man3/rc_aaa_ctx_get_secret.3.gz
 share/man/man3/rc_aaa_ctx_get_vector.3.gz
 share/man/man3/rc_aaa_ctx_server.3.gz
 share/man/man3/rc_acct.3.gz
+share/man/man3/rc_acct_async.3.gz
 share/man/man3/rc_acct_proxy.3.gz
 share/man/man3/rc_add_config.3.gz
 share/man/man3/rc_apply_config.3.gz
