@@ -98,6 +98,7 @@ CONFIGURE_ARGS+=	${_BUNDLED_LIBS:D--bundled-libraries="${_BUNDLED_LIBS:Q:C|(\\\\
 CONFIGURE_ENV=	PTHREAD_LDFLAGS="-lpthread" \
 		PYTHONHASHSEED=1
 
+FORTIFY_UNSAFE=	1
 MAKE_ARGS=	${WITH_DEBUG:D --verbose}
 MAKE_ENV=	PYTHONHASHSEED=1 \
 		RPCGEN_CPP="${CPP}"
@@ -396,9 +397,9 @@ post-patch:
 		${PATCH_WRKSRC}/dynconfig/wscript
 
 post-install:
-	${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type d -name __pycache__ \
-		-exec ${RM} -r {} +
+	@[ ! -d ${STAGEDIR}${PYTHON_SITELIBDIR} ] || \
+		(${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party && \
+		${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type d -name __pycache__ -exec ${RM} -r {} +)
 	${FIND} ${STAGEDIR} -type f -empty -delete
 
 .for dir in ${_LOGDIR} ${_RUNDIR} ${_LOCKDIR} ${SAMBA_MODULESDIR}
