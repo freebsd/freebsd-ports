@@ -7443,6 +7443,7 @@
     SUBDIR += rubygem-bin_struct
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
+    SUBDIR += rubygem-bindata-gitlab
     SUBDIR += rubygem-bindata24
     SUBDIR += rubygem-bindex
     SUBDIR += rubygem-binding_of_caller
