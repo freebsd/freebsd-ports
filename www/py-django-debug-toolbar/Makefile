@@ -1,7 +1,8 @@
 PORTNAME=	django-debug-toolbar
-PORTVERSION=	7.0.0
+PORTVERSION=	7.1.1
 CATEGORIES=	www python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/django-commons/django-debug-toolbar/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	django_debug_toolbar-${PORTVERSION}
 
