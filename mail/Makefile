@@ -171,7 +171,6 @@
     SUBDIR += isbg
     SUBDIR += isoqlog
     SUBDIR += isync
-    SUBDIR += james
     SUBDIR += jamlib
     SUBDIR += jmba
     SUBDIR += junkfilter
