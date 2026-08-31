@@ -1,8 +1,12 @@
 PORTNAME=	grpc
 PORTVERSION=	1.83.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/grpc/grpc/commit/
+PATCHFILES=	aae267021b1ac256f8b9038d0ef528c3798cc137.diff:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/2-based RPC framework
