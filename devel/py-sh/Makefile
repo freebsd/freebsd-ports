@@ -1,5 +1,5 @@
 PORTNAME=	sh
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/amoffat/sh/releases/download/${PORTVERSION}/
