@@ -387,7 +387,6 @@
     SUBDIR += sdig
     SUBDIR += seafile-client
     SUBDIR += seafile-gui
-    SUBDIR += seafile-server
     SUBDIR += semaphore
     SUBDIR += sendip
     SUBDIR += simplomon
