@@ -462,7 +462,6 @@
     SUBDIR += linuxdoc-tools
     SUBDIR += livediff
     SUBDIR += localize
-    SUBDIR += logseq
     SUBDIR += lookatme
     SUBDIR += loook
     SUBDIR += lowdown
