@@ -1,6 +1,6 @@
 PORTNAME=	blinkensisters
 PORTVERSION=	0.5.3
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Blinkensisters%20-%20Lost%20Pixels/LostPixels%20${PORTVERSION}
 
@@ -10,6 +10,9 @@ WWW=		https://sourceforge.net/projects/blinkensisters/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/DOC/LICENSE
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 # actually, old gcc fails in theora.h
 USES=		cmake:insource compiler:c++11-lang localbase perl5 sdl
