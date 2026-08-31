@@ -1,5 +1,5 @@
 PORTNAME=	ucsc-userapps
-DISTVERSION=	474
+DISTVERSION=	502
 CATEGORIES=	biology perl5 python
 MASTER_SITES=	https://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
 DISTNAME=	userApps.v${DISTVERSION}.src
@@ -14,14 +14,13 @@ WWW=		https://hgdownload.cse.ucsc.edu/admin/exe/
 LICENSE=	MIT
 
 BUILD_DEPENDS=	bash:shells/bash
-# FIXME: Switch from mysql to mariadb
-LIB_DEPENDS=	libmysqlclient.so:databases/mysql80-client \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libunwind.so:devel/libunwind \
-		libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png
+		libcurl.so:ftp/curl \
+		libpng16.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake iconv localbase:ldflags shebangfix perl5 python ssl tar:tgz
+USES=		gmake iconv localbase:ldflags mysql:client shebangfix perl5 python ssl tar:tgz
 
 SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/bigHeat \
@@ -31,7 +30,9 @@ SHEBANG_FILES=	kent/src/checkUmask.sh \
 		kent/src/utils/trackDbIndexBb/trackDbIndexBb \
 		kent/src/utils/ucscApiClient \
 		kent/src/utils/webSync \
-		kent/src/utils/bigGuessDb/bigGuessDb
+		kent/src/utils/bigGuessDb/bigGuessDb \
+		kent/src/utils/expMatrixToBarchartBed \
+		kent/src/utils/hubtools
 
 WRKSRC=		${WRKDIR}/userApps
 CFLAGS+=	-fcommon
@@ -47,7 +48,7 @@ do-build:
 	@(test -f ${WRKSRC}/kent/src/inc/my_uuid.h || ${MV} ${WRKSRC}/kent/src/inc/uuid.h ${WRKSRC}/kent/src/inc/my_uuid.h)
 	@${MKDIR} ${WRKSRC}/bin
 	@(cd ${WRKSRC}/kent/src/lib && ${DO_MAKE_BUILD})
-	@(cd ${WRKSRC}/kent/src/htslib && ${DO_MAKE_BUILD})
+	@(cd ${WRKSRC}/kent/src/submodules/htslib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/jkOwnLib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/hg/lib && ${DO_MAKE_BUILD})
 	@(cd ${WRKSRC}/kent/src/utils && ${DO_MAKE_BUILD})
