@@ -5794,6 +5794,7 @@
     SUBDIR += py-protobuf
     SUBDIR += py-protobuf-compiler
     SUBDIR += py-protobuf-py
+    SUBDIR += py-protobuf-py-ext
     SUBDIR += py-protoc-gen-validate
     SUBDIR += py-protovalidate
     SUBDIR += py-proxmoxer
