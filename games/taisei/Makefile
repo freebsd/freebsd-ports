@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source Touhou clone
 WWW=		https://taisei-project.org/ \
 		https://github.com/taisei-project/taisei
