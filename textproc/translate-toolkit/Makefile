@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.19.17
+PORTVERSION=	3.19.18
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -128,7 +128,7 @@ PHP_VARS=		MANPAGES+="php2po po2php"
 RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.2.0<3.4:devel/py-pyparsing@${PY_FLAVOR}
 RC_VARS=		MANPAGES+="po2rc rc2po"
 SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.3.0:textproc/py-enchant@${PY_FLAVOR}
-SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.15<1.17:textproc/py-aeidon@${PY_FLAVOR}
+SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.15<2.1:textproc/py-aeidon@${PY_FLAVOR}
 TOML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.0<0.16.0:textproc/py-tomlkit@${PY_FLAVOR}
 TOML_VARS=		MANPAGES+="toml2po po2toml"
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.19.1<0.20.0:devel/py-ruamel.yaml@${PY_FLAVOR}
