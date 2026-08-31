@@ -1,3 +1,42 @@
+  <vuln vid="c0acdbac-a524-11f1-8039-589cfc103809">
+    <topic>security/sudo-rs -- sudoedit could circumvent /etc/sudoers restrictions</topic>
+    <affects>
+      <package>
+	<name>sudo-rs</name>
+	<name>sudo-rs-coexist</name>
+	<range><ge>0.2.8</ge><lt>0.2.15</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Trifecta Tech Foundation reports:</p>
+	<blockquote cite="https://github.com/trifectatechfoundation/sudo-rs/security/advisories/GHSA-f42v-x7gq-phc8">
+	    <p>Users that are explicitly permitted to edit only specific
+	      files using sudoedit, are still able to place files in
+	      arbitrary directories.</p>
+
+	    <p>This only affects systems where sudoedit is used to give
+	      very fine-grained edit permissions, which is not the default
+	      configuration. For users that have full sudoedit permission
+	      or no sudoedit permission at all, no escalation is enabled by
+	      this bug.</p>
+
+	    <p>A user that is allowed to place files in an arbitrary
+	      directory can (by placing a file in /etc/sudoers.d) obviously
+	      fully escalate their privileges.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/trifectatechfoundation/sudo-rs/security/advisories/GHSA-f42v-x7gq-phc8</url>
+      <url>https://github.com/trifectatechfoundation/sudo-rs/releases/tag/v0.2.15</url>
+    </references>
+    <dates>
+      <discovery>2026-08-31</discovery>
+      <entry>2026-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2e1db41-f7a7-45e9-ace3-b94038416545">
     <topic>net-p2p/c-lightning -- unknown vulnerability</topic>
     <affects>
