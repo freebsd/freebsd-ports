@@ -1,5 +1,5 @@
 PORTNAME=	pyee
-PORTVERSION=	13.0.1
+PORTVERSION=	14.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jfhbrook/pyee/releases/download/v${PORTVERSION}/
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.12+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
