@@ -1,6 +1,6 @@
 --- libs.json.orig	2025-12-16 02:55:22 UTC
 +++ libs.json
-@@ -122,6 +122,56 @@
+@@ -122,6 +122,66 @@
          "so_arch": "arm"
      },
      {
@@ -52,6 +52,16 @@
 +        "link_type": "static",
 +        "so_name": "libcurl-impersonate-chrome.so",
 +        "so_arch": "arm"
++    },
++    {
++        "system": "FreeBSD",
++        "machine": "powerpc",
++        "pointer_size": 64,
++        "libdir": "",
++        "sysname": "freebsd",
++        "link_type": "static",
++        "so_name": "libcurl-impersonate-chrome.so",
++        "so_arch": "powerpc64"
 +    },
 +    {
          "system": "Linux",
