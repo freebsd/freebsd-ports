@@ -1,5 +1,5 @@
 PORTNAME=	dbf
-PORTVERSION=	5.3.0
+PORTVERSION=	5.5.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
 
-RUN_DEPENDS=	rubygem-csv>=0:devel/rubygem-csv
+RUN_DEPENDS=	rubygem-csv>=3.3<4:devel/rubygem-csv
 
 NO_ARCH=	yes
 
