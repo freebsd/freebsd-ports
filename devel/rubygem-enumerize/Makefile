@@ -1,5 +1,5 @@
 PORTNAME=	enumerize
-PORTVERSION=	2.2.2
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +10,10 @@ WWW=		https://github.com/brainspec/enumerize
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport4>=3.2:devel/rubygem-activesupport4
+RUN_DEPENDS=	rubygem-activesupport81>=3.2:devel/rubygem-activesupport81
+
+USES=		gem
 
 NO_ARCH=	yes
-USES=		gem
 
 .include <bsd.port.mk>
