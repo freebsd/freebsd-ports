@@ -319,7 +319,6 @@
     SUBDIR += ie-hunspell
     SUBDIR += igor
     SUBDIR += iksemel
-    SUBDIR += info2html
     SUBDIR += info2man
     SUBDIR += info_to_html
     SUBDIR += intltool
