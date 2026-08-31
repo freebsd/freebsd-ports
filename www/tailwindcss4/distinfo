@@ -1,3 +1,9 @@
-TIMESTAMP = 1753116914
-SHA256 (tailwindcss4-npm-cache-4.1.11.txz) = 591863c616aafa61751b91bb6d8221a5cb227c0188731f8a714c0a6298b8af84
-SIZE (tailwindcss4-npm-cache-4.1.11.txz) = 15533636
+TIMESTAMP = 1788041047
+SHA256 (tailwindcss4/tailwindcss4-npm-cache-4.3.3-202608292202.txz) = 968c90c4edb152cd6a19ec1b624fe40a627180eee1386ab052274e3a3250b14f
+SIZE (tailwindcss4/tailwindcss4-npm-cache-4.3.3-202608292202.txz) = 14382868
+SHA256 (tailwindcss4/tailwindcss-v4.3.3.tar.gz) = e702ce2493505287e8f6cab2dd1e0c14f154e57c296854d4ded38bde5da2be6e
+SIZE (tailwindcss4/tailwindcss-v4.3.3.tar.gz) = 966832
+SHA256 (tailwindcss4/lightningcss-v1.32.0.tar.gz) = ca67b9ba532d439f5f91d23debfc2543d6decac130ee88bc4c66202fc7173ad9
+SIZE (tailwindcss4/lightningcss-v1.32.0.tar.gz) = 7564372
+SHA256 (tailwindcss4/tailwindcss4-cargo-vendor-4.3.3-202608292202.txz) = 599f0c60eb3bbac88e9f580aa765051ff731c966d5df726a96a53d66294671ad
+SIZE (tailwindcss4/tailwindcss4-cargo-vendor-4.3.3-202608292202.txz) = 25123128
