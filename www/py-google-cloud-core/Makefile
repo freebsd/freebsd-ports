@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-core
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=2.11.0<3.0.0:www/py-google-api-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=2.28.0<3.0.0:www/py-google-api-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=2.25.1<3.0.0:security/py-google-auth@${PY_FLAVOR}
 
 USES=		python
@@ -28,6 +28,6 @@ OPTIONS_DEFINE=	GRPC
 OPTIONS_DEFAULT=GRPC
 
 GRPC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio>=1.75.1<2.0.0:devel/py-grpcio@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}grpcio-status>=1.47.0<2.0.0:devel/py-grpcio-status@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}grpcio-status>=1.75.1<2.0.0:devel/py-grpcio-status@${PY_FLAVOR}
 
 .include <bsd.port.mk>
