@@ -5580,3 +5580,4 @@ science/py-mdp||2026-08-31|Has expired: No upstream activity since 2020
 devel/electron38||2026-08-31|Has expired: EOLed upstream, switch to newer version
 www/seahub||2026-08-31|Has expired: The update of net-mgmt/seafile-server to a newer version is more difficult than expected, and the current version of www/seahub only runs on Django 4.2
 net-mgmt/seafile-server||2026-08-31|Has expired: The update to a newer version is more difficult than expected, and the current version of the web backend, www/seahub, only runs on Django 4.2
+www/py-dj42-djangorestframework||2026-08-31|Has expired: Serves as a transition only for www/seahub and requires Django 4.2, which has been end-of-life since April
