@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.82.1
+PORTVERSION=	1.83.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -54,6 +54,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9]
 
 USE_GITHUB=	yes
+#		googleapis:googleapis:b2389f4:googleapis_googleapis/third_party/googleapis
 GH_TUPLE=	envoyproxy:data-plane-api:84e8436:envoyproxy_data_plane_api/third_party/envoy-api \
 		googleapis:googleapis:1134d26:googleapis_googleapis/third_party/googleapis \
 		census-instrumentation:opencensus-proto:1664cc9:census_instrumentation_opencensus_proto/third_party/opencensus-proto \
