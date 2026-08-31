@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--chronyvardir=/var/db/${PORTNAME} \
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install
+TEST_DEPENDS=	bash:shells/bash
 TEST_TARGET=	check
 
 LDFLAGS+=	-L${LOCALBASE}/lib
