@@ -1,5 +1,5 @@
 PORTNAME=	aiobotocore
-PORTVERSION=	3.7.0
+PORTVERSION=	3.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,11 @@ WWW=		https://aiobotocore.readthedocs.io/en/latest/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.12.0<4.0.0:www/py-aiohttp@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>=24.1.0:devel/py-hatch-fancy-pypi-readme@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>=1.27.0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.14.0<4.0.0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aioitertools>=0.5.1<1.0.0:devel/py-aioitertools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}botocore>=1.42.90:devel/py-botocore@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}botocore>=1.43.3:devel/py-botocore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0.7.1<2.0.0:devel/py-jmespath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multidict>=6.0.0<7.0.0:www/py-multidict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.1<3.0.0:devel/py-python-dateutil@${PY_FLAVOR} \
