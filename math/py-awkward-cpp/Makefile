@@ -1,5 +1,5 @@
 PORTNAME=	awkward-cpp
-PORTVERSION=	54
+PORTVERSION=	56
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=3:devel/py-pybind11@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0.11:devel/py-scikit-build-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=1.0:devel/py-scikit-build-core@${PY_FLAVOR} \
 		rapidjson>=0:devel/rapidjson
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.21.3,1:math/py-numpy@${PY_FLAVOR}
 
