@@ -1,11 +1,25 @@
+Obtained from:	https://github.com/pydantic/pydantic-extra-types/commit/bfb9851b41244d9656078c1ce90c0b428d46f13f
+
 --- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
-@@ -50,7 +50,7 @@ all = [
+@@ -49,9 +49,9 @@ all = [
+     'jsonschema>=4.0.0',
+     'semver>=3.0.2',
      'python-ulid>=1,<2; python_version<"3.9"',
-     'python-ulid>=1,<4; python_version>="3.9"',
+-    'python-ulid>=1,<4; python_version>="3.9"',
++    'python-ulid>=1,<5; python_version>="3.9"',
      'pendulum>=3.0.0,<4.0.0',
 -    'pymongo>=4.0.0,<5.0.0',
 +    'pymongo>=3.0.0,<5.0.0',
      'pytz>=2024.1',
      'semver~=3.0.2',
      'tzdata>=2024.1',
+@@ -64,7 +64,7 @@ python_ulid = [
+ semver = ['semver>=3.0.2']
+ python_ulid = [
+     'python-ulid>=1,<2; python_version<"3.9"',
+-    'python-ulid>=1,<4; python_version>="3.9"',
++    'python-ulid>=1,<5; python_version>="3.9"',
+ ]
+ pendulum = ['pendulum>=3.0.0,<4.0.0']
+ cron = ['cron-converter>=1.2.2']

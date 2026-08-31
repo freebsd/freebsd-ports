@@ -1,6 +1,6 @@
 PORTNAME=	pydantic-extra-types
 PORTVERSION=	2.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,7 +44,7 @@ JSONSCHEMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.0.0:devel/py-jsonsc
 PENDULUM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pendulum>=3.0.0<4.0.0:devel/py-pendulum@${PY_FLAVOR}
 PHONENUMBERS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phonenumbers>=8<10:devel/py-phonenumbers@${PY_FLAVOR}
 PYCOUNTRY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycountry>=23:textproc/py-pycountry@${PY_FLAVOR}
-PYTHON_ULID_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}python-ulid>=1<4:textproc/py-python-ulid@${PY_FLAVOR}
+PYTHON_ULID_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}python-ulid>=1<5:textproc/py-python-ulid@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
