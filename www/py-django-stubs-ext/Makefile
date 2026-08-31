@@ -1,5 +1,5 @@
 PORTNAME=	django-stubs-ext
-PORTVERSION=	6.0.6
+PORTVERSION=	6.1.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.12:devel/py-flit-core@${PY_FL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=0:www/py-django52@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.11+
 USE_PYTHON=	autoplist concurrent pep517
 
 MAKE_ENV=	SOURCE_DATE_EPOCH=315532800 # 1980-01-01 00:00:00 UTC
