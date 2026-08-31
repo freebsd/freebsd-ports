@@ -1892,7 +1892,6 @@
     SUBDIR += ruby-escape
     SUBDIR += ruby-format
     SUBDIR += ruby-htree
-    SUBDIR += ruby-rdtool
     SUBDIR += ruby-rttool
     SUBDIR += rubygem-abbrev
     SUBDIR += rubygem-action_text-trix
