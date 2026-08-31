@@ -1574,7 +1574,6 @@
     SUBDIR += py-dash-bootstrap-components
     SUBDIR += py-ddgs
     SUBDIR += py-dj-database-url
-    SUBDIR += py-dj42-django-ranged-response
     SUBDIR += py-dj60-channels
     SUBDIR += py-dj60-django-auth-ldap
     SUBDIR += py-dj60-django-choices-field
