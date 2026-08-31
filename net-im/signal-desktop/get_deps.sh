@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=8.18.0
+SIGNAL_VERS=8.24.1
 
 printf "DISTVERSION=\t${SIGNAL_VERS}\n" | portedit merge -i Makefile
 printf "DISTVERSION=\t${SIGNAL_VERS}\n" | portedit merge -i Makefile.online
