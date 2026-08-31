@@ -1,5 +1,5 @@
 PORTNAME=	omniauth-facebook
-PORTVERSION=	10.0.0
+PORTVERSION=	11.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
