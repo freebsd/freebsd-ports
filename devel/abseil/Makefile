@@ -1,6 +1,6 @@
 PORTNAME=	abseil
 PORTVERSION=	20250127.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/abseil/abseil-cpp/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-cpp-${PORTVERSION}
