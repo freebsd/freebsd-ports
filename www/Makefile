@@ -324,7 +324,6 @@
     SUBDIR += jira-cli
     SUBDIR += jitsi-meet
     SUBDIR += jmeter
-    SUBDIR += joomla4
     SUBDIR += joomla5
     SUBDIR += joomla6
     SUBDIR += jwt-cli
