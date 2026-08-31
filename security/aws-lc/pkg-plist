@@ -56,6 +56,7 @@ include/aws-lc/openssl/lhash.h
 include/aws-lc/openssl/md4.h
 include/aws-lc/openssl/md5.h
 include/aws-lc/openssl/mem.h
+include/aws-lc/openssl/modes.h
 include/aws-lc/openssl/nid.h
 include/aws-lc/openssl/obj.h
 include/aws-lc/openssl/obj_mac.h
@@ -100,11 +101,11 @@ lib/crypto/cmake/crypto-config.cmake
 lib/crypto/cmake/shared/crypto-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/crypto/cmake/shared/crypto-targets.cmake
 lib/libcrypto-awslc.so
-lib/libcrypto-awslc.so.0
+lib/libcrypto-awslc.so.1
 lib/libcrypto-awslc.so.%%PORTVERSION%%
 lib/libcrypto.so
 lib/libssl-awslc.so
-lib/libssl-awslc.so.0
+lib/libssl-awslc.so.1
 lib/libssl-awslc.so.%%PORTVERSION%%
 lib/libssl.so
 lib/ssl/cmake/shared/ssl-targets-%%CMAKE_BUILD_TYPE%%.cmake
