@@ -1,6 +1,6 @@
 --- src/webrtc/src/build/toolchain/gcc_toolchain.gni.orig	2022-02-16 12:34:12 UTC
 +++ src/webrtc/src/build/toolchain/gcc_toolchain.gni
-@@ -56,6 +56,13 @@ if (enable_resource_allowlist_generation) {
+@@ -46,6 +46,13 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
  
@@ -14,7 +14,86 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -896,22 +903,12 @@ template("gcc_toolchain") {
+@@ -409,8 +416,10 @@ template("single_gcc_toolchain") {
+         command = "cmd /s /c \"\"$python_path\" $tool_wrapper_path delete-file {{output}} && $command\""
+       } else {
+         command = "rm -f {{output}} && $command"
+-        inputs =
+-            [ get_path_info(rebase_path(ar, ".", root_out_dir), "abspath") ]
++        if (!is_bsd) {
++          inputs =
++              [ get_path_info(rebase_path(ar, ".", root_out_dir), "abspath") ]
++        }
+       }
+ 
+       # Almost all targets build with //build/config/compiler:thin_archive which
+@@ -756,7 +765,9 @@ template("single_gcc_toolchain") {
+             "$rustc_common_args {{rustdeps}} {{externs}} SOURCES {{sources}}"
+         command = "$rustc_wrapper --depfile=$depfile --emit=dep-info=$depfile,link -o $libname -- -Clinker=\"${invoker.cxx}\" {{source}} LDFLAGS RUSTENV {{rustenv}}"
+         rust_sysroot = rust_sysroot_relative
+-        inputs = rustc_wrapper_inputs
++        if (!is_bsd) {
++            inputs = rustc_wrapper_inputs
++        }
+       }
+ 
+       tool("rust_rlib") {
+@@ -789,7 +800,9 @@ template("single_gcc_toolchain") {
+             "$rustc_common_args {{rustdeps}} {{externs}} SOURCES {{sources}}"
+         command = "$rustc_wrapper --depfile=$depfile --emit=dep-info=$depfile,link,metadata=$rmetaname -o $rlibname -- -Clinker=\"${invoker.cxx}\" {{source}} LDFLAGS RUSTENV {{rustenv}}"
+         rust_sysroot = rust_sysroot_relative
+-        inputs = rustc_wrapper_inputs
++        if (!is_bsd) {
++          inputs = rustc_wrapper_inputs
++        }
+       }
+ 
+       tool("rust_bin") {
+@@ -811,7 +824,9 @@ template("single_gcc_toolchain") {
+             "$rustc_common_args {{rustdeps}} {{externs}} SOURCES {{sources}}"
+         command = "$rustc_wrapper --depfile=$depfile --emit=dep-info=$depfile,link -o $exename -- -Clinker=\"${invoker.cxx}\" {{source}} LDFLAGS {{ldflags}} ${extra_ldflags} RUSTENV {{rustenv}}"
+         rust_sysroot = rust_sysroot_relative
+-        inputs = rustc_wrapper_inputs
++        if (!is_bsd) {
++          inputs = rustc_wrapper_inputs
++        }
+       }
+ 
+       tool("rust_cdylib") {
+@@ -834,7 +849,9 @@ template("single_gcc_toolchain") {
+             "$rustc_common_args {{rustdeps}} {{externs}} SOURCES {{sources}}"
+         command = "$rustc_wrapper --depfile=$depfile --emit=dep-info=$depfile,link -o $dllname -- -Clinker=\"${invoker.cxx}\" {{source}} LDFLAGS {{ldflags}} ${extra_ldflags} RUSTENV {{rustenv}}"
+         rust_sysroot = rust_sysroot_relative
+-        inputs = rustc_wrapper_inputs
++        if (!is_bsd) {
++          inputs = rustc_wrapper_inputs
++        }
+       }
+ 
+       tool("rust_dylib") {
+@@ -859,7 +876,9 @@ template("single_gcc_toolchain") {
+             "$rustc_common_args {{rustdeps}} {{externs}} SOURCES {{sources}}"
+         command = "$rustc_wrapper --depfile=$depfile --emit=dep-info=$depfile,link,metadata=$rmetaname -o $dllname -- -Clinker=\"${invoker.cxx}\" {{source}} LDFLAGS {{ldflags}} ${extra_ldflags} RUSTENV {{rustenv}}"
+         rust_sysroot = rust_sysroot_relative
+-        inputs = rustc_wrapper_inputs
++        if (!is_bsd) {
++          inputs = rustc_wrapper_inputs
++        }
+       }
+ 
+       tool("rust_macro") {
+@@ -882,7 +901,9 @@ template("single_gcc_toolchain") {
+             "$rustc_common_args {{rustdeps}} {{externs}} SOURCES {{sources}}"
+         command = "$rustc_wrapper --depfile=$depfile --emit=dep-info=$depfile,link -o $dllname -- -Clinker=\"${invoker.cxx}\" {{source}} LDFLAGS {{ldflags}} ${extra_ldflags} RUSTENV {{rustenv}}"
+         rust_sysroot = rust_sysroot_relative
+-        inputs = rustc_wrapper_inputs
++        if (!is_bsd) {
++          inputs = rustc_wrapper_inputs
++        }
+       }
+     }
+ 
+@@ -1000,22 +1021,12 @@ template("clang_toolchain") {
  # actually just be doing a native compile.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {

@@ -1,4 +1,4 @@
---- src/webrtc/src/build/config/c++/modules.gni.orig	2025-12-05 10:12:50 UTC
+--- src/webrtc/src/build/config/c++/modules.gni.orig	2026-01-07 00:52:53 UTC
 +++ src/webrtc/src/build/config/c++/modules.gni
 @@ -16,7 +16,7 @@ declare_args() {
    # Eg. linux arm64 and windows were never supported with manual clang modules,
