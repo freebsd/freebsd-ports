@@ -5870,7 +5870,6 @@
     SUBDIR += py-pygit2
     SUBDIR += py-pygls
     SUBDIR += py-pygobject
-    SUBDIR += py-pygpx
     SUBDIR += py-pyhashxx
     SUBDIR += py-pyhcl
     SUBDIR += py-pyicu

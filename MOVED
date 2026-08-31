@@ -5562,3 +5562,4 @@ devel/RStudio||2026-08-31|Has expired: Depends on expired devel/electron37
 devel/electron37||2026-08-31|Has expired: EOLed upstream, switch to newer version
 sysutils/k4dirstat|sysutils/qdirstat|2026-08-31|Has expired: Depends on EOL Qt5 and upstream recommends migrating to sysutils/qdirstat
 devel/ammonite||2026-08-31|Has expired: Upstream ceased development
+devel/py-pygpx||2026-08-31|Has expired: Not updated for years
