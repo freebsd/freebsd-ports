@@ -17,6 +17,4 @@ USE_GL=		opengl
 USE_QT=		base declarative positioning svg translations webchannel \
 		webengine
 
-CONFLICTS_INSTALL=	dooble
-
 .include <bsd.port.mk>
