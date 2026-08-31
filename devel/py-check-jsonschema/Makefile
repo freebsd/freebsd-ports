@@ -1,5 +1,5 @@
 PORTNAME=	check-jsonschema
-PORTVERSION=	0.37.4
+PORTVERSION=	0.38.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-jsonschema/check-jsonschema/releases/download/${PORTVERSION}/
