@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-collaboration
-PORTVERSION=	4.4.1
+PORTVERSION=	5.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyterlab/jupyter-collaboration/releases/download/v${PORTVERSION}/
@@ -15,10 +15,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.4.0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-collaboration-ui>=2.4.1<3:devel/py-jupyter-collaboration-ui@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-docprovider>=2.4.1<3:devel/py-jupyter-docprovider@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-server-ydoc>=2.4.1<3:devel/py-jupyter-server-ydoc@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.4.0<5.0.0:devel/py-jupyterlab@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-collaboration-ui>=3.0.0<4:devel/py-jupyter-collaboration-ui@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-docprovider>=3.0.0<4:devel/py-jupyter-docprovider@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-server-ydoc>=3.0.0<4:devel/py-jupyter-server-ydoc@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.6.0<5.0.0:devel/py-jupyterlab@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
