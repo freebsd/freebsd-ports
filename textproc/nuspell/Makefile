@@ -1,5 +1,5 @@
 PORTNAME=	nuspell
-PORTVERSION=	5.1.7
+PORTVERSION=	5.1.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -11,7 +11,7 @@ WWW=		https://nuspell.github.io/ \
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libicuuc.so:devel/icu
+LIB_DEPENDS=	libicudata.so:devel/icu
 TEST_DEPENDS=	catch2>=3.1.1:devel/catch2
 
 USES=		cmake:testing compiler:c++17-lang
