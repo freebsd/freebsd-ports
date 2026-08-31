@@ -1,9 +1,12 @@
 PORTNAME=	cfitsio
-PORTVERSION=	4.6.4
+PORTVERSION=	4.7.0
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
-		LOCAL/sunpoet
+		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/docs/:docs
+DISTFILES=	cfitsio-${PORTVERSION}${EXTRACT_SUFX}
+DIST_SUBDIR=	cfitsio/${PORTVERSION}
+EXTRACT_ONLY=	cfitsio-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing files in FITS data format
@@ -30,8 +33,22 @@ CPE_VENDOR=	nasa
 
 OPTIONS_DEFINE=	DOCS
 
+DOCS_DISTFILES=	cfitsio.pdf:docs \
+		fitsio.pdf:docs \
+		fpackguide.pdf:docs \
+		quick.pdf:docs
+
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.pdf ${STAGEDIR}${DOCSDIR}/
+
+# maintainer section:
+
+.if defined(MAINTAINER_MODE)
+DISTFILES+=	cfitsio.pdf:docs \
+		fitsio.pdf:docs \
+		fpackguide.pdf:docs \
+		quick.pdf:docs
+.endif
 
 .include <bsd.port.mk>

@@ -1,3 +1,11 @@
-TIMESTAMP = 1777572474
-SHA256 (cfitsio-4.6.4.tar.gz) = 227b637b91c9820ea96f39a65eb087f053de567d82f4338e2884f123f8183c55
-SIZE (cfitsio-4.6.4.tar.gz) = 3774657
+TIMESTAMP = 1787587658
+SHA256 (cfitsio/4.7.0/cfitsio-4.7.0.tar.gz) = ce573bbea8e75b429f8c3d3e86498741ba3dc9628a1530d2f65268397ad059e8
+SIZE (cfitsio/4.7.0/cfitsio-4.7.0.tar.gz) = 2163220
+SHA256 (cfitsio/4.7.0/cfitsio.pdf) = c8adc3f4872a35cdc942ced3edba99d508b89dcd6e006094e4de8b46daae609d
+SIZE (cfitsio/4.7.0/cfitsio.pdf) = 1098781
+SHA256 (cfitsio/4.7.0/fitsio.pdf) = e43d6d02b168a29ab886d0cd6a09b94142ad6129349639a15995d34c23c280bb
+SIZE (cfitsio/4.7.0/fitsio.pdf) = 647124
+SHA256 (cfitsio/4.7.0/fpackguide.pdf) = 94e0063ea112d4d965b85a5cacab9e55ce9e03c0b08e00192a1064b2d91ac4d4
+SIZE (cfitsio/4.7.0/fpackguide.pdf) = 140520
+SHA256 (cfitsio/4.7.0/quick.pdf) = ae64eab60f60b66bdccbabbc6f9f233d7be873f0a3974e39989929b04f47def5
+SIZE (cfitsio/4.7.0/quick.pdf) = 218321
