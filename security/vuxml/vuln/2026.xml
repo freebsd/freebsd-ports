@@ -1,3 +1,69 @@
+  <vuln vid="2eb1927c-a57b-11f1-9b1f-3c7c3fba4204">
+    <topic>Keycloak -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>keycloak</name>
+	  <range><lt>26.7.3</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Keycloak Team reports:</p>
+	<blockquote cite="https://www.keycloak.org/2026/08/keycloak-2673-released">
+	  <ul>
+	    <li>[CVE-2026-35563]: LDAP client implementation in version 2.1.7 does not verify if the server certificate matches the intended LDAP hostname</li>
+	    <li>[CVE-2026-16093]: Required signed-JWT assertion policy can be bypassed with unsigned assertion headers</li>
+	    <li>[CVE-2026-16072]: Organization managers can create managed members through stored registration links without manage-users</li>
+	    <li>[CVE-2026-16108]: Realm default-group reads disclose hidden groups under FGAP v2</li>
+	    <li>[CVE-2026-16105]: Missing per-role authorization on RoleContainerResource composite endpoints</li>
+	    <li>[CVE-2026-16089]: Authorization codes can be retargeted to another client session</li>
+	    <li>[CVE-2026-16104]: Authenticator config surfaces expose raw reCAPTCHA secrets</li>
+	    <li>[CVE-2026-16106]: Incorrect authorization in admin role-composite deletion allows delegated admin to remove privileged child roles</li>
+	    <li>[CVE-2026-17059]: Information disclosure: GET /roles/{role}/users returns user PII without the per-user view filter</li>
+	    <li>[CVE-2026-18218]: Client not-before revocation is ignored when realm not-before is older but nonzero</li>
+	    <li>[CVE-2026-18215]: Microsoft external access-token exchange bypasses configured tenant</li>
+	    <li>[CVE-2026-18201]: Generic identity-provider creation can bind brokers to organizations without manage-organizations</li>
+	    <li>[CVE-2026-18209]: Incomplete fix for redirect_uri OIDC response-parameter injection: forbidden-parameter check (commit 18832bca) inspects only the query string, not the URL fragment</li>
+	    <li>[CVE-2026-18214]: Google external access-token exchange bypasses hosted-domain restriction</li>
+	    <li>[CVE-2026-18571]: FGAP V2: Group assignment bypass during user creation (POST /users) allows adding unpermitted groups</li>
+	    <li>[CVE-2026-18572]: UMA claim token can override the authorization time-policy clock</li>
+	    <li>[CVE-2026-18573]: Client access-type condition evaluates updates against the old client type</li>
+	    <li>[CVE-2026-18570]: Full-scope-disabled client policy validation can be bypassed by omitting fullScopeAllowed</li>
+	    <li>[CVE-2026-19729]: Incomplete fix for CVE-2026-9083 — relative path traversal still enables filesystem probing in 26.6.4</li>
+	    <li>[CVE-2026-79652]: Keycloak jwt-bearer authorization grant does not enforce consentRequired</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-35563</cvename>
+      <cvename>CVE-2026-16093</cvename>
+      <cvename>CVE-2026-16072</cvename>
+      <cvename>CVE-2026-16108</cvename>
+      <cvename>CVE-2026-16105</cvename>
+      <cvename>CVE-2026-16089</cvename>
+      <cvename>CVE-2026-16104</cvename>
+      <cvename>CVE-2026-16106</cvename>
+      <cvename>CVE-2026-17059</cvename>
+      <cvename>CVE-2026-18218</cvename>
+      <cvename>CVE-2026-18215</cvename>
+      <cvename>CVE-2026-18201</cvename>
+      <cvename>CVE-2026-18209</cvename>
+      <cvename>CVE-2026-18214</cvename>
+      <cvename>CVE-2026-18571</cvename>
+      <cvename>CVE-2026-18572</cvename>
+      <cvename>CVE-2026-18573</cvename>
+      <cvename>CVE-2026-18570</cvename>
+      <cvename>CVE-2026-19729</cvename>
+      <cvename>CVE-2026-79652</cvename>
+      <url>https://www.keycloak.org/2026/08/keycloak-2673-released</url>
+    </references>
+    <dates>
+      <discovery>2026-08-31</discovery>
+      <entry>2026-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0acdbac-a524-11f1-8039-589cfc103809">
     <topic>security/sudo-rs -- sudoedit could circumvent /etc/sudoers restrictions</topic>
     <affects>
