@@ -1,0 +1,11 @@
+--- arch/lkl/Makefile.orig	2018-06-28 05:58:16 UTC
++++ arch/lkl/Makefile
+@@ -2,7 +2,7 @@ KBUILD_CFLAGS += -fno-builtin
+ 
+ KBUILD_CFLAGS += -fno-builtin
+ 
+-ifneq (,$(filter $(OUTPUT_FORMAT),elf64-x86-64 elf64-x86-64-freebsd elf32-littlearm elf64-littleaarch64))
++ifneq (,$(filter $(OUTPUT_FORMAT),elf64-x86-64 elf64-x86-64-freebsd elf32-littlearm elf64-littleaarch64 elf64-powerpc-freebsd elf64-powerpcle-freebsd))
+ KBUILD_CFLAGS += -fPIC
+ else ifneq (,$(filter $(OUTPUT_FORMAT),pe-i386 pe-x86-64 ))
+ ifneq ($(OUTPUT_FORMAT),pe-x86-64)

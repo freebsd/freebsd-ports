@@ -1,6 +1,6 @@
 PORTNAME=	lkl
 DISTVERSION=	4.16.g20180628
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	filesystems
 PKGNAMEPREFIX=	fusefs-
 
@@ -24,10 +24,11 @@ USE_GITHUB=	yes
 GH_PROJECT=	linux
 GH_TAGNAME=	86dd3afb590eccc1903611bdaa8bac87757eb80d
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=ld formats not available for other architectures
 
 WRKSRC_SUBDIR=	tools/lkl
+PATCH_WRKSRC=	${WRKSRC:H:H}
 MAKE_JOBS_UNSAFE=yes
 MAKE_ARGS+=	V=1
 # Need ports versions of 'bc', 'ld' to build!

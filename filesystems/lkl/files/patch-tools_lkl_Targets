@@ -1,6 +1,6 @@
---- Targets.orig	2018-06-12 22:43:19 UTC
-+++ Targets
-@@ -10,15 +10,6 @@ LDLIBS_lib/hijack/liblkl-hijack-$(LKL_HOST_CONFIG_ANDR
+--- tools/lkl/Targets.orig	2018-06-28 05:58:16 UTC
++++ tools/lkl/Targets
+@@ -10,15 +10,6 @@ LDLIBS_lklfuse-y := -lfuse
  progs-$(LKL_HOST_CONFIG_FUSE) += lklfuse
  LDLIBS_lklfuse-y := -lfuse
  
