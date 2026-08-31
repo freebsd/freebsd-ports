@@ -1,5 +1,5 @@
 PORTNAME=	ipython
-PORTVERSION=	9.15.0
+PORTVERSION=	9.16.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.rst
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>=5.1.0:devel/py-decorator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipython-pygments-lexers>=1.0.0:devel/py-ipython-pygments-lexers@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython-pygments-lexers>=1.0.0:devel/py-ipython-pygments-lexers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jedi>=0.18.2:devel/py-jedi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib-inline>=0.1.6:math/py-matplotlib-inline@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>=4.6:misc/py-pexpect@${PY_FLAVOR} \
