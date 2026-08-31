@@ -69,7 +69,6 @@
     SUBDIR += apache-mode.el
     SUBDIR += apache24
     SUBDIR += aquatone
-    SUBDIR += archiva
     SUBDIR += aria2
     SUBDIR += asql
     SUBDIR += authelia
