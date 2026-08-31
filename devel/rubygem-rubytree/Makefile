@@ -1,5 +1,5 @@
 PORTNAME=	rubytree
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		http://rubytree.anupamsg.me/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-json>=2.9<3:devel/rubygem-json
+RUN_DEPENDS=	rubygem-json>=2.21.2<3:devel/rubygem-json
 
 USES=		gem
 
