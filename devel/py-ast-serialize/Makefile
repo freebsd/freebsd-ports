@@ -1,6 +1,5 @@
 PORTNAME=	ast-serialize
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +19,7 @@ USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 WRKSRC=		${WRKDIR}/ast_serialize-${PORTVERSION}
 
 .include <bsd.port.mk>
