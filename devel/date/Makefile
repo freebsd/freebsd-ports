@@ -1,8 +1,10 @@
 PORTNAME=	date
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/HowardHinnant/date/commit/
+PATCHFILES=	c05cd34119d62f96deed28c803d2fd0b59548d8f.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Date and time library based on the C++11 (and beyond) <chrono> header
