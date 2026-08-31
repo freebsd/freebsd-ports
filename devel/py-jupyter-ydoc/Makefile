@@ -1,13 +1,10 @@
 PORTNAME=	jupyter-ydoc
-PORTVERSION=	3.5.0
+PORTVERSION=	4.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter-server/jupyter_ydoc/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	jupyter_ydoc-${PORTVERSION}
-
-PATCH_SITES=	https://github.com/jupyter-server/jupyter_ydoc/commit/
-PATCHFILES=	86f5b5bb34e3607a3fd8d8502f81564ca18be190.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Document structures for collaborative editing using Ypy
