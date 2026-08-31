@@ -19,4 +19,6 @@ NO_ARCH=	yes
 
 CPE_VENDOR=	pghero_project
 
+PORTSCOUT=	limit:^2\.
+
 .include <bsd.port.mk>
