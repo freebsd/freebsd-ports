@@ -165,7 +165,6 @@
     SUBDIR += R-cran-whoami
     SUBDIR += R-cran-withr
     SUBDIR += R-cran-zeallot
-    SUBDIR += RStudio
     SUBDIR += SpecTcl
     SUBDIR += aarch64-none-elf-gcc
     SUBDIR += abi-compliance-checker
