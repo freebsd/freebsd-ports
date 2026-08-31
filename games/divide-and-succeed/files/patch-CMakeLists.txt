@@ -1,5 +1,11 @@
 --- CMakeLists.txt.orig	2013-12-11 17:36:43 UTC
 +++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.6) # Pour éviter un warning au lancement de CMake, on doit préciser la version minimale
++cmake_minimum_required(VERSION 3.31.12) # Pour éviter un warning au lancement de CMake, on doit préciser la version minimale
+ 
+ # Nom du projet
+ project(Divide_And_Succeed)
 @@ -24,15 +24,13 @@ include_directories(
  set(SRC_DIR ${PROJECT_SOURCE_DIR}/src)
  
