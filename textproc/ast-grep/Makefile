@@ -1,5 +1,5 @@
 PORTNAME=	ast-grep
-DISTVERSION=	0.45.2
+DISTVERSION=	0.45.3
 CATEGORIES=	textproc devel
 
 MAINTAINER=	tagattie@FreeBSD.org

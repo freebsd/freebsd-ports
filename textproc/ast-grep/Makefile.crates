@@ -200,7 +200,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tracing-core-0.1.36 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.23 \
-		tree-sitter-0.26.13 \
+		tree-sitter-0.27.0 \
 		tree-sitter-bash-0.25.1 \
 		tree-sitter-c-0.24.2 \
 		tree-sitter-c-sharp-0.23.5 \
@@ -216,7 +216,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tree-sitter-javascript-0.25.0 \
 		tree-sitter-json-0.24.8 \
 		tree-sitter-kotlin-sg-0.4.1 \
-		tree-sitter-language-0.1.7 \
+		tree-sitter-language-0.1.8 \
 		tree-sitter-lua-0.5.0 \
 		tree-sitter-md-0.5.3 \
 		tree-sitter-nix-0.3.0 \
