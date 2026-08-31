@@ -1,4 +1,4 @@
-TIMESTAMP = 1787018940
+TIMESTAMP = 1788156239
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -673,5 +673,5 @@ SHA256 (rust/crates/zerovec-derive-0.11.3.crate) = 625dc425cab0dca6dc3c3319506e6
 SIZE (rust/crates/zerovec-derive-0.11.3.crate) = 22115
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (RivoLink-leaf-1.28.0_GH0.tar.gz) = fefed64cdcb4c44893ba531df28471ac27eed5741e382ccfe82ab3e87729b343
-SIZE (RivoLink-leaf-1.28.0_GH0.tar.gz) = 940710
+SHA256 (RivoLink-leaf-1.28.1_GH0.tar.gz) = 594693cf012f51963f95090b7439dfd1c5194f18f12d93293dc7ad2c8909101b
+SIZE (RivoLink-leaf-1.28.1_GH0.tar.gz) = 941274
