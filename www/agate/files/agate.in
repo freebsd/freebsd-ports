@@ -22,7 +22,7 @@
 
 desc="Agate Gemini server"
 name=agate
-rcvar=$name_enable
+rcvar=agate_enable
 
 load_rc_config $name
 
