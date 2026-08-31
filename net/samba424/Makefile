@@ -1,6 +1,6 @@
 PORTNAME=	samba424
 DISTVERSION=	4.24.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	net
 MASTER_SITES=	SAMBA/samba/stable \
 		SAMBA/samba/rc
@@ -242,12 +242,12 @@ FAM_CONFIGURE_WITH=	fam
 FRUIT_PREVENTS=		ZEROCONF_NONE
 FRUIT_PREVENTS_MSG=	MacOSX support requires Zeroconf(AVAHI or \
 			MDNSRESPONDER)
-FRUIT_PLIST_FILES=	${MANPAGES}share/man/man8/vfs_fruit.8.gz
+FRUIT_PLIST_FILES=	%%MANPAGES%%share/man/man8/vfs_fruit.8.gz
 FRUIT_VARS=		_SHARED_MODULES+=vfs_fruit
 
 GLUSTERFS_LIB_DEPENDS=		libglusterfs.so:net/glusterfs
 GLUSTERFS_CONFIGURE_ENABLE=	glusterfs
-GLUSTERFS_PLIST_FILES=		${MANPAGES}share/man/man8/vfs_glusterfs.8.gz
+GLUSTERFS_PLIST_FILES=		%%MANPAGES%%share/man/man8/vfs_glusterfs.8.gz
 GLUSTERFS_VARS=			_SHARED_MODULES+=vfs_glusterfs
 
 GPGME_LIB_DEPENDS=	libgpgme.so:security/gpgme
