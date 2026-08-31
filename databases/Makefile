@@ -893,7 +893,6 @@
     SUBDIR += py-sqlalchemy-json
     SUBDIR += py-sqlalchemy-migrate
     SUBDIR += py-sqlalchemy-utils
-    SUBDIR += py-sqlalchemy10
     SUBDIR += py-sqlalchemy14
     SUBDIR += py-sqlalchemy20
     SUBDIR += py-sqlcipher3

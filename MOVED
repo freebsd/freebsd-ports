@@ -5570,3 +5570,4 @@ security/globalprotect-openconnect||2026-08-31|Has expired: This version has a v
 www/archiva||2026-08-31|Has expired: Not updated for years and moved to Apache Attic in 2024-05: https://issues.apache.org/jira/browse/ATTIC-221
 databases/py-Elixir||2026-08-31|Has expired: Depends on expired databases/py-sqlalchemy10
 science/py-obspy||2026-08-31|Has expired: Depends on expired databases/py-sqlalchemy10
+databases/py-sqlalchemy10||2026-08-31|Has expired: Upstream makred EOL in Release Status
