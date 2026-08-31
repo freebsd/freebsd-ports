@@ -7985,6 +7985,7 @@
     SUBDIR += rubygem-multi_json
     SUBDIR += rubygem-multi_json-gitlab
     SUBDIR += rubygem-multi_test
+    SUBDIR += rubygem-multi_test1
     SUBDIR += rubygem-murmurhash3
     SUBDIR += rubygem-mustache
     SUBDIR += rubygem-mustache-sinatra
