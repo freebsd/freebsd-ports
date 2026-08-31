@@ -1,5 +1,5 @@
 PORTNAME=	pycrdt
-PORTVERSION=	0.14.3
+PORTVERSION=	0.14.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,7 @@ USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 
 .include <bsd.port.pre.mk>
 

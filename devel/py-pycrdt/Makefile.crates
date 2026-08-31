@@ -51,5 +51,5 @@ CARGO_CRATES=	arc-swap-1.9.2 \
 		wasm-bindgen-macro-support-0.2.127 \
 		wasm-bindgen-shared-0.2.127 \
 		windows-link-0.2.1 \
-		yrs-0.27.3 \
+		yrs-0.27.4 \
 		zmij-1.0.23
