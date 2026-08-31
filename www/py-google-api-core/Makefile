@@ -1,5 +1,5 @@
 PORTNAME=	google-api-core
-PORTVERSION=	2.31.0
+PORTVERSION=	2.34.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +17,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.14.1<3.0.0:security/py-google-auth@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}googleapis-common-protos>=1.63.2<2.0.0:devel/py-googleapis-common-protos@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}proto-plus>=1.25.0<2.0.0:devel/py-proto-plus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=5.29.6,1<8.0.0,1:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}googleapis-common-protos>=1.69.2<2.0.0:devel/py-googleapis-common-protos@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}proto-plus>=1.26.1<2.0.0:devel/py-proto-plus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=6.33.5,1<8.0.0,1:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.33.0<3.0.0:www/py-requests@${PY_FLAVOR}
 
 USES=		python
