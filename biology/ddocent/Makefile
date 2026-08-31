@@ -1,14 +1,17 @@
 PORTNAME=		dDocent
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.7.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=		biology java perl5 python
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bash pipeline for RAD sequencing
 WWW=		http://ddocent.com
 
 LICENSE=	MIT
+
+DEPRECATED=	No apparent interest, unable to maintain
+EXPIRATION_DATE=2026-09-30
 
 RUN_DEPENDS=	mawk>=0:lang/mawk \
 		gawk>=0:lang/gawk \
