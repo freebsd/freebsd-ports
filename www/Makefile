@@ -1576,7 +1576,6 @@
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj42-django-picklefield
     SUBDIR += py-dj42-django-ranged-response
-    SUBDIR += py-dj42-django-simple-captcha
     SUBDIR += py-dj42-djangosaml2
     SUBDIR += py-dj60-channels
     SUBDIR += py-dj60-django-auth-ldap
