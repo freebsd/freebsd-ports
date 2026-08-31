@@ -16,7 +16,7 @@ LICENSE_FILE_BITWARDEN=	${WRKSRC}/LICENSE_BITWARDEN.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE_GPL.txt
 LICENSE_PERMS_BITWARDEN=none
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libzstd.so:archivers/zstd \
@@ -67,7 +67,15 @@ PKG_NODE_CONFIGURE_ARGS=--openssl-use-def-ca-store \
 			--shared-zlib \
 			--shared-zstd \
 			--with-intl=system-icu
-NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
+NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/:S/powerpc64le/ppc64/}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+# pin npm platform gate to x64 so the prefetched node-modules archive
+# matches the distinfo checksum generated on amd64
+NPM_FETCH_FLAGS+=	--cpu x64
+.endif
 
 post-patch:
 	# apply FreeBSD patches for node
