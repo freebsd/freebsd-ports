@@ -1,5 +1,5 @@
 PORTNAME=	jupyterlab
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyterlab/jupyterlab/releases/download/v${PORTVERSION}/
@@ -39,4 +39,10 @@ NO_ARCH=	yes
 
 CPE_VENDOR=	jupyter
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31200
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.4.0:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
