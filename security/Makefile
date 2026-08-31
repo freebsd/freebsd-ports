@@ -189,7 +189,6 @@
     SUBDIR += git-secret
     SUBDIR += gitjacker
     SUBDIR += gitlab-analyzers-secrets
-    SUBDIR += globalprotect-openconnect
     SUBDIR += gnome-keyring
     SUBDIR += gnupg
     SUBDIR += gnupg-pkcs11-scd
