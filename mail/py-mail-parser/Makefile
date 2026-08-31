@@ -1,5 +1,5 @@
 PORTNAME=	mail-parser
-PORTVERSION=	4.4.0
+PORTVERSION=	4.6.2
 CATEGORIES=	mail python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/SpamScope/mail-parser
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.27:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	msgconvert:mail/p5-Email-Outlook-Message
 
 USES=		python
