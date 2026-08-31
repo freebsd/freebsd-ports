@@ -1,6 +1,6 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.96.4
+DISTVERSION=	0.99.1
 CATEGORIES=	net-im java
 
 MAINTAINER=	jaap.aarts1@gmail.com
