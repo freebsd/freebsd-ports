@@ -20,4 +20,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx-markdown-builder>=0.6.8:textproc/py-s
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
