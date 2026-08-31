@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-metrics-sdk
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-opentelemetry-api>=1.1<2:devel/rubygem-opentelemetry-api \
 		rubygem-opentelemetry-metrics-api>=0.2<1:devel/rubygem-opentelemetry-metrics-api \
-		rubygem-opentelemetry-sdk>=1.2<2:devel/rubygem-opentelemetry-sdk
+		rubygem-opentelemetry-sdk>=1.13.0<1.14:devel/rubygem-opentelemetry-sdk
 
 USES=		gem
 
