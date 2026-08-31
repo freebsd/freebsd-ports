@@ -1,9 +1,9 @@
 PORTNAME=	cucumber
 PORTVERSION=	10.2.0
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	10
-PORTREVISION=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Behaviour Driven Development with elegance and joy
@@ -22,7 +22,7 @@ RUN_DEPENDS=	rubygem-base64>=0.2<1:converters/rubygem-base64 \
 		rubygem-diff-lcs>=1.5<2:textproc/rubygem-diff-lcs \
 		rubygem-logger>=1.6<2:devel/rubygem-logger \
 		rubygem-mini_mime>=1.1<2:mail/rubygem-mini_mime \
-		rubygem-multi_test>=1.1<2:devel/rubygem-multi_test \
+		rubygem-multi_test1>=1.1<2:devel/rubygem-multi_test1 \
 		rubygem-sys-uname>=1.3<2:sysutils/rubygem-sys-uname
 
 USES=		gem
