@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-07-28 20:45:45 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@
+ # https://packaging.python.org/en/latest/specifications/pyproject-toml/
+ 
+ [build-system]
+-requires = ["setuptools>=82", "wheel>=0.46.3"]
++requires = ["setuptools>=61", "wheel>=0.46.3"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -10,8 +10,7 @@ readme = { file = "README.rst", content-type = "text/x
+ description = "Pure-Python HTTP/2 protocol implementation"
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+ 
+-license = "MIT"
+-license-files = [ "LICENSE" ]
++license = { text = "MIT" }
+ 
+ authors = [
+   { name = "Cory Benfield", email = "cory@lukasa.co.uk" }
