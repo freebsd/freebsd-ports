@@ -5574,3 +5574,4 @@ databases/py-sqlalchemy10||2026-08-31|Has expired: Upstream makred EOL in Releas
 net-im/zkgroup||2026-08-31|Has expired: Merged into libsignal by upstream
 textproc/ruby-rd-mode.el||2026-08-31|Has expired: Depends on expired textproc/ruby-rdtool
 textproc/ruby-rdtool|textproc/rubygem-rdtool|2026-08-31|Has expired: Broken for more than 2 years. Use textproc/rubygem-rdtool instead
+audio/denemo||2026-08-31|Has expired: Outdated, current release is a decade old
