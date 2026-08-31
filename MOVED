@@ -5577,3 +5577,4 @@ textproc/ruby-rdtool|textproc/rubygem-rdtool|2026-08-31|Has expired: Broken for 
 audio/denemo||2026-08-31|Has expired: Outdated, current release is a decade old
 textproc/logseq||2026-08-31|Has expired: Depends on expired devel/electron38
 science/py-mdp||2026-08-31|Has expired: No upstream activity since 2020
+devel/electron38||2026-08-31|Has expired: EOLed upstream, switch to newer version
