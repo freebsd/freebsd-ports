@@ -5571,3 +5571,4 @@ www/archiva||2026-08-31|Has expired: Not updated for years and moved to Apache A
 databases/py-Elixir||2026-08-31|Has expired: Depends on expired databases/py-sqlalchemy10
 science/py-obspy||2026-08-31|Has expired: Depends on expired databases/py-sqlalchemy10
 databases/py-sqlalchemy10||2026-08-31|Has expired: Upstream makred EOL in Release Status
+net-im/zkgroup||2026-08-31|Has expired: Merged into libsignal by upstream
