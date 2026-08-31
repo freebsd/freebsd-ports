@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-logging
-PORTVERSION=	3.16.1
+PORTVERSION=	3.16.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=2.24.2<3.0.0:www/py-google-api-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=2.25.0<3.0.0:www/py-google-api-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=2.14.1<3.0.0:security/py-google-auth@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}google-cloud-appengine-logging>=0.1.3<2.0.0:www/py-google-cloud-appengine-logging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}google-cloud-appengine-logging>=1.6.1<2.0.0:www/py-google-cloud-appengine-logging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-audit-log>=0.3.2<1.0.0:www/py-google-cloud-audit-log@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-core>=2.0.0<3.0.0:www/py-google-cloud-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}grpc-google-iam-v1>=0.14.2<1.0.0:devel/py-grpc-google-iam-v1@${PY_FLAVOR} \
