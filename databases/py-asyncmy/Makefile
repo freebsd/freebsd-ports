@@ -1,11 +1,11 @@
 PORTNAME=	asyncmy
-PORTVERSION=	0.2.11
+PORTVERSION=	0.2.14
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Fast asyncio MySQL driver
+COMMENT=	Fastest asyncio MySQL/MariaDB driver for Python
 WWW=		https://github.com/long2ice/asyncmy
 
 LICENSE=	APACHE20
@@ -18,9 +18,6 @@ USES=		cpe python
 USE_PYTHON=	autoplist concurrent cython pep517
 
 CPE_VENDOR=	long2ice
-
-post-patch:
-	@${MV} ${WRKSRC}/build.py ${WRKSRC}/build_cython.py
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
