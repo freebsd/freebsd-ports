@@ -599,7 +599,6 @@
     SUBDIR += jtopen
     SUBDIR += jvmtop
     SUBDIR += k3b
-    SUBDIR += k4dirstat
     SUBDIR += k8temp
     SUBDIR += k9s
     SUBDIR += kapp

@@ -5560,3 +5560,4 @@ security/py-biscuit-auth|security/py-biscuit-python|2026-08-26|Renamed to match 
 net/kmime|net/kf6-kmime|2026-08-27|KMime moved to KDE Frameworks
 devel/RStudio||2026-08-31|Has expired: Depends on expired devel/electron37
 devel/electron37||2026-08-31|Has expired: EOLed upstream, switch to newer version
+sysutils/k4dirstat|sysutils/qdirstat|2026-08-31|Has expired: Depends on EOL Qt5 and upstream recommends migrating to sysutils/qdirstat
