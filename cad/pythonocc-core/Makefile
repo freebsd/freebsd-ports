@@ -1,5 +1,6 @@
 PORTNAME=	pythonocc-core
 DISTVERSION=	8.0.0.a
+PORTREVISION=	1
 CATEGORIES=	cad python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.17:math/py-numpy@${PY_FLAVOR} \
 LIB_DEPENDS=	libTKernel.so:cad/opencascade
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.17:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy-stl>0:math/py-numpy-stl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy_stl>0:math/py-numpy-stl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qt5-pyqt>0:devel/py-qt5-pyqt@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR} \
@@ -24,11 +25,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR} \
 
 USES=		cmake compiler:c++17-lang gl pytest python
 USE_GL=		opengl
-USE_PYTHON=	cython
+USE_PYTHON=	cython flavors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tpaviot
 GH_PROJECT=	pythonocc-core
 GH_TAGNAME=	fe54be6549db400da0d59caeed7af1d04e92a9ab
+
+PORTSCOUT=	ignore:1
 
 .include <bsd.port.mk>
