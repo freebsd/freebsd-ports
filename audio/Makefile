@@ -360,7 +360,6 @@
     SUBDIR += libinstpatch
     SUBDIR += libkcddb
     SUBDIR += libkeyfinder
-    SUBDIR += liblastfm
     SUBDIR += liblo
     SUBDIR += liblscp
     SUBDIR += libltc

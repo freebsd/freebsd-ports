@@ -5564,3 +5564,4 @@ sysutils/k4dirstat|sysutils/qdirstat|2026-08-31|Has expired: Depends on EOL Qt5 
 devel/ammonite||2026-08-31|Has expired: Upstream ceased development
 devel/py-pygpx||2026-08-31|Has expired: Not updated for years
 textproc/info2html||2026-08-31|Has expired: Not updated for years
+audio/liblastfm||2026-08-31|Has expired: Upstream repo archived on Aug 22, 2025
