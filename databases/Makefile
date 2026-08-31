@@ -767,7 +767,6 @@
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
-    SUBDIR += py-Elixir
     SUBDIR += py-PyGreSQL
     SUBDIR += py-PyHive
     SUBDIR += py-PyPika

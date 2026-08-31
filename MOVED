@@ -5568,3 +5568,4 @@ audio/liblastfm||2026-08-31|Has expired: Upstream repo archived on Aug 22, 2025
 www/joomla4||2026-08-31|Has expired: Upstream EOL
 security/globalprotect-openconnect||2026-08-31|Has expired: This version has a vulnerability (CVE-2021-45810)
 www/archiva||2026-08-31|Has expired: Not updated for years and moved to Apache Attic in 2024-05: https://issues.apache.org/jira/browse/ATTIC-221
+databases/py-Elixir||2026-08-31|Has expired: Depends on expired databases/py-sqlalchemy10
