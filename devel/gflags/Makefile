@@ -1,5 +1,5 @@
 PORTNAME=	gflags
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -30,6 +30,9 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	src/gflags_completions.sh
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${LN} -s libgflags.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libgflags.so.${PORTVERSION:R:R}
