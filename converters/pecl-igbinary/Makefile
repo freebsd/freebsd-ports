@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		php:pecl
 
-CONFLICTS=	pecl-igbinary-session
+CONFLICTS_INSTALL=	php*-pecl-igbinary-session
 
 post-patch:
 # Install the real header files
