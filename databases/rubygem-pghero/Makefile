@@ -1,5 +1,5 @@
 PORTNAME=	pghero
-PORTVERSION=	3.8.0
+PORTVERSION=	4.0.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
