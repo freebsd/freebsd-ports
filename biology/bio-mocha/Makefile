@@ -1,10 +1,9 @@
 PORTNAME=	bio-mocha
-DISTVERSION=	1.20
-PORTREVISION=	1
+DISTVERSION=	1.22
 CATEGORIES=	biology
 MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
 # Get this right, or ports will download bcftools in it's place via tuple
-DISTFILES+=	${PORTNAME}_${DISTVERSION}-20240505.tar.gz
+DISTFILES+=	${PORTNAME}_${DISTVERSION}-20250819.tar.gz
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Bcftools plugin for mosaic chromosomal alteration analysis
@@ -12,7 +11,7 @@ WWW=		https://software.broadinstitute.org/software/mocha/
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	bash:shells/bash htslib>=1.22:biology/htslib
+BUILD_DEPENDS=	bash:shells/bash htslib>=1.24:biology/htslib
 LIB_DEPENDS=	libhts.so:biology/htslib
 RUN_DEPENDS=	bcftools>=${PORTVERSION}:biology/bcftools
 
@@ -22,7 +21,7 @@ USE_PERL5=	test
 
 GH_ACCOUNT=	samtools
 GH_PROJECT=	bcftools
-GH_TAGNAME=	1.22
+GH_TAGNAME=	1.24
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	misc/* test/test.pl
 
