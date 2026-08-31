@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-dns_v1
-PORTVERSION=	0.54.0
+PORTVERSION=	0.55.0
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
