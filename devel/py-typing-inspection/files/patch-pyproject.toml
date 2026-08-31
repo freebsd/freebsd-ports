@@ -1,10 +1,10 @@
 --- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
-@@ -5,8 +5,7 @@ version = '0.4.2'
+@@ -5,8 +5,7 @@ version = '0.4.4'
  [project]
  name = 'typing-inspection'
- version = '0.4.2'
--license = "MIT"
+ version = '0.4.4'
+-license = 'MIT'
 -license-files = ['LICENSE']
 +license = { text = "MIT" }
  description = 'Runtime typing introspection tools'
