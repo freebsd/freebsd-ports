@@ -1079,6 +1079,7 @@ lib/libquassel-common.so.%%LIBVERSION%%
 %%DATADIR%%/stylesheets/mj12cyan.qss
 %%DATADIR%%/stylesheets/qwater.qss
 %%DATADIR%%/stylesheets/temerity1.0.1.qss
+%%DATADIR%%/stylesheets/tokyonight.qss
 %%NLS%%%%DATADIR%%/translations/cs.qm
 %%NLS%%%%DATADIR%%/translations/da.qm
 %%NLS%%%%DATADIR%%/translations/de.qm
@@ -1120,4 +1121,4 @@ share/icons/hicolor/22x22/apps/quassel.png
 share/icons/hicolor/32x32/apps/quassel.png
 share/icons/hicolor/48x48/apps/quassel.png
 share/icons/hicolor/64x64/apps/quassel.png
-%%KDE%%share/knotifications5/quassel.notifyrc
+%%KDE%%share/knotifications6/quassel.notifyrc

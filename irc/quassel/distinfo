@@ -1,3 +1,7 @@
-TIMESTAMP = 1641377022
-SHA256 (quassel-0.14.0.tar.xz) = 090777f37a6ae1057a046d5c2896ce5e4bef2382377e3ba52c63efe6b5fe4e10
-SIZE (quassel-0.14.0.tar.xz) = 3987144
+TIMESTAMP = 1785330027
+SHA256 (quassel/quassel-quassel-0.14.50-c63fc1e_GH0.tar.gz) = ed436383535a4e80ac754ce34c5cb78cd2cf9495d67bda18d1108da40086aa11
+SIZE (quassel/quassel-quassel-0.14.50-c63fc1e_GH0.tar.gz) = 4497437
+SHA256 (quassel/quassel-quassel-i18n-abed52e_GH0.tar.gz) = f40226d7c1215ceaa8c6d8a00a4a0b3fe95f35414b0b831f4ea0206ed8b1de84
+SIZE (quassel/quassel-quassel-i18n-abed52e_GH0.tar.gz) = 1666743
+SHA256 (quassel/631.patch) = ab3de5d578fcc9b45068b178b356f5bdcde585496446ab10d8e44ba1cbce19fb
+SIZE (quassel/631.patch) = 908100
