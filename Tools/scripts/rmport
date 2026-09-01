@@ -463,6 +463,10 @@ for catport in $* ; do
 		fi
 	fi
 
+	if [ -z "${catport##devel/electron*}" ] ; then
+		echo "You are removing an electron port, do not forget to update Mk/uses/electron.mk"
+	fi
+
 	edit_MOVED ${catport}
 
 	edit_Makefile ${cat} ${port}
