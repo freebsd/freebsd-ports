@@ -1,5 +1,5 @@
-TIMESTAMP = 1787619438
-SHA256 (go/sysutils_zpool-set/zpool-set-v1.0.1/v1.0.1.mod) = 334f6b320e6a9ac314cf023530ce5cfeff07e9b4e31dd272a8e27bb32c8bbc74
-SIZE (go/sysutils_zpool-set/zpool-set-v1.0.1/v1.0.1.mod) = 1598
-SHA256 (go/sysutils_zpool-set/zpool-set-v1.0.1/v1.0.1.zip) = 1010e1a7f123ce9d4aa8031088b5cbf6a673837476190fb0d64a16f382df4a2a
-SIZE (go/sysutils_zpool-set/zpool-set-v1.0.1/v1.0.1.zip) = 332934
+TIMESTAMP = 1788293345
+SHA256 (go/sysutils_zpool-set/zpool-set-v1.1.0/v1.1.0.mod) = 334f6b320e6a9ac314cf023530ce5cfeff07e9b4e31dd272a8e27bb32c8bbc74
+SIZE (go/sysutils_zpool-set/zpool-set-v1.1.0/v1.1.0.mod) = 1598
+SHA256 (go/sysutils_zpool-set/zpool-set-v1.1.0/v1.1.0.zip) = 63d7f008fa2d659bd3d99d197d5a09ee6cd17b084d3ed18e1bcb59d8c72aa9a7
+SIZE (go/sysutils_zpool-set/zpool-set-v1.1.0/v1.1.0.zip) = 494714
