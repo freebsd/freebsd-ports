@@ -49,6 +49,7 @@ include/botan-%%BOTANMAJOR%%/botan/dh.h
 include/botan-%%BOTANMAJOR%%/botan/dilithium.h
 include/botan-%%BOTANMAJOR%%/botan/dl_group.h
 include/botan-%%BOTANMAJOR%%/botan/dlies.h
+include/botan-%%BOTANMAJOR%%/botan/dns_name.h
 include/botan-%%BOTANMAJOR%%/botan/dsa.h
 include/botan-%%BOTANMAJOR%%/botan/ec_point.h
 include/botan-%%BOTANMAJOR%%/botan/ec_point_format.h
@@ -64,6 +65,7 @@ include/botan-%%BOTANMAJOR%%/botan/eckcdsa.h
 include/botan-%%BOTANMAJOR%%/botan/ed25519.h
 include/botan-%%BOTANMAJOR%%/botan/ed448.h
 include/botan-%%BOTANMAJOR%%/botan/elgamal.h
+include/botan-%%BOTANMAJOR%%/botan/email.h
 include/botan-%%BOTANMAJOR%%/botan/entropy_src.h
 include/botan-%%BOTANMAJOR%%/botan/exceptn.h
 include/botan-%%BOTANMAJOR%%/botan/fd_unix.h
@@ -116,6 +118,7 @@ include/botan-%%BOTANMAJOR%%/botan/pk_ops.h
 include/botan-%%BOTANMAJOR%%/botan/pk_ops_fwd.h
 include/botan-%%BOTANMAJOR%%/botan/pkcs10.h
 include/botan-%%BOTANMAJOR%%/botan/pkcs11.h
+include/botan-%%BOTANMAJOR%%/botan/pkcs12.h
 include/botan-%%BOTANMAJOR%%/botan/pkcs8.h
 include/botan-%%BOTANMAJOR%%/botan/pkix_enums.h
 include/botan-%%BOTANMAJOR%%/botan/pkix_types.h
@@ -137,6 +140,7 @@ include/botan-%%BOTANMAJOR%%/botan/slh_dsa.h
 include/botan-%%BOTANMAJOR%%/botan/sm2.h
 include/botan-%%BOTANMAJOR%%/botan/sodium.h
 include/botan-%%BOTANMAJOR%%/botan/sp_parameters.h
+include/botan-%%BOTANMAJOR%%/botan/spake2p.h
 include/botan-%%BOTANMAJOR%%/botan/sphincsplus.h
 %%SQLITE3%%include/botan-%%BOTANMAJOR%%/botan/sqlite3.h
 include/botan-%%BOTANMAJOR%%/botan/srp6.h
@@ -181,6 +185,7 @@ include/botan-%%BOTANMAJOR%%/botan/tls_signature_scheme.h
 include/botan-%%BOTANMAJOR%%/botan/tls_version.h
 include/botan-%%BOTANMAJOR%%/botan/tss.h
 include/botan-%%BOTANMAJOR%%/botan/types.h
+include/botan-%%BOTANMAJOR%%/botan/uri.h
 include/botan-%%BOTANMAJOR%%/botan/uuid.h
 include/botan-%%BOTANMAJOR%%/botan/version.h
 include/botan-%%BOTANMAJOR%%/botan/x25519.h
