@@ -6,6 +6,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Torrent library from KTorrent project
 WWW=		https://ktorrent.org/
 
+IGNORE_i386=	is not supported on 32-bit systems
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgmp.so:math/gmp \
