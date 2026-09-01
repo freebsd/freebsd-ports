@@ -1,7 +1,7 @@
 PORTNAME=	openconnect-gui
 PORTVERSION=	1.5.3
 DISTVERSIONPREFIX=v
-PORTREVISION=	8
+PORTREVISION=	9
 MASTER_SITES=	https://gitlab.com/openconnect/openconnect-gui/-/archive/v${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 CATEGORIES=	security net-vpn
@@ -12,9 +12,6 @@ WWW=		https://github.com/openconnect/openconnect-gui
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-DEPRECATED=	Outdated and depends on legacy QT5
-EXPIRATION_DATE=2026-09-30
 
 BUILD_DEPENDS=	openconnect:security/openconnect
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
