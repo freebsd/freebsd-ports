@@ -1,5 +1,5 @@
 PORTNAME=	valkey
-DISTVERSION=	9.1.1
+DISTVERSION=	9.1.2
 CATEGORIES=	databases
 
 MAINTAINER=	bofh@freebsd.org
