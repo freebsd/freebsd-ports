@@ -1,6 +1,5 @@
 PORTNAME=	libtlsrpt
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.5.1
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/sys4/${PORTNAME}/releases/download/v${DISTVERSION}/
 
