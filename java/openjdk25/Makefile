@@ -3,8 +3,8 @@ DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_FULL_VERSION:S/.0.0//}
 PORTREVISION=	1
 CATEGORIES=	java devel
-PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 MASTER_SITES=	LOCAL/openjdk:boot
+PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 DISTFILES=	${BOOTSTRAPJDKFILE}:boot
 
 MAINTAINER=	java@FreeBSD.org
@@ -20,20 +20,6 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-# This port supports the following flavors:
-#
-# - jdk (default)	Full OpenJDK including dev tools and x11 support
-# - headless		Full OpenJDK including dev tools, but without x11 support
-# - jre			Java Runtime Environment including x11 support
-# - jre_headless	Jave Runtime Environment without x11 support
-FLAVORS=	jdk jre headless jre_headless
-
-headless_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-headless
-jre_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-jre
-jre_headless_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-jre-headless
-
-FLAVOR?=	${BUILD_JRE:?jre:${FLAVORS:[1]}}
-
 BUILD_DEPENDS=	${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash \
 		gsed:textproc/gsed \
@@ -48,11 +34,22 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpng.so:graphics/png
 
 RUN_DEPENDS=	javavm:java/javavmwrapper
-.if ${FLAVOR:M*headless} == ""
-RUN_DEPENDS+=	xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
-.endif
+
+# This port supports the following flavors:
+#
+# - jdk (default)	Full OpenJDK including dev tools and x11 support
+# - headless		Full OpenJDK including dev tools, but without x11 support
+# - jre			Java Runtime Environment including x11 support
+# - jre_headless	Java Runtime Environment without x11 support
+FLAVORS=	jdk jre headless jre_headless
+FLAVOR?=	${BUILD_JRE:?jre:${FLAVORS:[1]}}
+
+headless_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-headless
+jre_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-jre
+jre_headless_PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-jre-headless
 
 .if ${FLAVOR:M*headless} == ""
+RUN_DEPENDS+=	xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 USES=		autoreconf:build compiler:features cpe gmake iconv jpeg pkgconfig xorg
 .else
 USES=		autoreconf:build compiler:features cpe gmake iconv jpeg pkgconfig
@@ -63,9 +60,7 @@ CPE_VENDOR=	oracle
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 
-.if ${FLAVOR:M*headless} == ""
-USE_XORG=       x11 xext xi xrandr xrender xt xtst
-.endif
+USE_XORG=	x11 xext xi xrandr xrender xt xtst
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-ccache \
