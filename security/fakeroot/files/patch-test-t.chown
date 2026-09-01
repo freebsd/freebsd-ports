@@ -1,0 +1,12 @@
+--- test/t.chown.orig	2026-08-31 13:54:01 UTC
++++ test/t.chown
+@@ -1,6 +1,9 @@
+ #!/bin/sh
+ . ./defs || exit 1
+ 
++# XXX 'chown --reference' unsupported on FreeBSD, skip test
++exit 77
++
+ mkdir $tmp
+ 
+ # chown and stat are immune to fakeroot on macOS
