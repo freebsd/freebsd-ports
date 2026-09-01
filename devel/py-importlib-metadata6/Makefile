@@ -1,5 +1,6 @@
 PORTNAME=	importlib-metadata
 DISTVERSION=	6.11.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +13,9 @@ WWW=		https://github.com/python/importlib_metadata
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	No consumers left use devel/py-importlib-metadata7
+EXPIRATION_DATE=	2026-10-01
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
