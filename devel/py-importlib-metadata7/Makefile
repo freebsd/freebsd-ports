@@ -1,5 +1,6 @@
 PORTNAME=	importlib-metadata
 DISTVERSION=	7.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,6 +10,9 @@ DISTNAME=	importlib_metadata-${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Read metadata from Python packages
 WWW=		https://github.com/python/importlib_metadata
+
+DEPRECATED=    No consumers left use devel/py-importlib-metadata8
+EXPIRATION_DATE=       2026-11-01
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
