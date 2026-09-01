@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/first_run_flow_controller.cc.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/ui/views/profiles/first_run_flow_controller.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/ui/views/profiles/first_run_flow_controller.cc
-@@ -87,7 +87,7 @@
+@@ -86,7 +86,7 @@
  #include "chrome/installer/util/shell_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/check_deref.h"
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/global_features.h"
-@@ -1164,7 +1164,7 @@ bool FirstRunFlowController::AreEffectsEnabled() const
+@@ -1198,7 +1198,7 @@ bool FirstRunFlowController::AreEffectsEnabled() const
  }
  
  void FirstRunFlowController::MaybeTriggerHatsSurvey() {

@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/policy/policy_ui.cc.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/ui/webui/policy/policy_ui.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/ui/webui/policy/policy_ui.cc
-@@ -149,7 +149,7 @@ void CreateAndAddPolicyUIHtmlSource(Profile* profile) 
+@@ -150,7 +150,7 @@ void CreateAndAddPolicyUIHtmlSource(Profile* profile) 
        {"statusFlexOrgNoPolicy", IDS_POLICY_STATUS_FLEX_ORG_NO_POLICY},
        {"statusDevice", IDS_POLICY_STATUS_DEVICE},
        {"statusMachine", IDS_POLICY_STATUS_MACHINE},

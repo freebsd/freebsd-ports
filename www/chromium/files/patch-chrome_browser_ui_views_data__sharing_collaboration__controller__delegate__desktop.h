@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.h.orig	2026-03-13 06:02:14 UTC
+--- chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.h.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.h
-@@ -81,7 +81,7 @@ class CollaborationControllerDelegateDesktop
+@@ -80,7 +80,7 @@ class CollaborationControllerDelegateDesktop
        std::optional<data_sharing::mojom::GroupActionProgress> progress);
  
    void ShowErrorDialog(const ErrorInfo& error);

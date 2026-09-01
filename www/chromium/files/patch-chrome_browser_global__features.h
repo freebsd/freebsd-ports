@@ -1,4 +1,4 @@
---- chrome/browser/global_features.h.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/global_features.h.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/global_features.h
 @@ -25,7 +25,7 @@ class GlobalBrowserCollection;
  namespace system_permission_settings {
@@ -9,7 +9,7 @@
  namespace whats_new {
  class WhatsNewRegistry;
  }  // namespace whats_new
-@@ -143,7 +143,7 @@ class GlobalFeatures {
+@@ -150,7 +150,7 @@ class GlobalFeatures {
    system_permissions_platform_handle() {
      return system_permissions_platform_handle_.get();
    }
@@ -18,7 +18,7 @@
    whats_new::WhatsNewRegistry* whats_new_registry() {
      return whats_new_registry_.get();
    }
-@@ -219,7 +219,7 @@ class GlobalFeatures {
+@@ -232,7 +232,7 @@ class GlobalFeatures {
  
    virtual std::unique_ptr<system_permission_settings::PlatformHandle>
    CreateSystemPermissionsPlatformHandle();
@@ -27,7 +27,7 @@
    virtual std::unique_ptr<whats_new::WhatsNewRegistry> CreateWhatsNewRegistry();
  #endif
    virtual std::unique_ptr<GlobalBrowserCollection>
-@@ -235,7 +235,7 @@ class GlobalFeatures {
+@@ -248,7 +248,7 @@ class GlobalFeatures {
  
    std::unique_ptr<system_permission_settings::PlatformHandle>
        system_permissions_platform_handle_;

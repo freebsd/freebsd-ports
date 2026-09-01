@@ -1,6 +1,6 @@
---- chrome/browser/renderer_context_menu/render_view_context_menu.cc.orig	2026-08-20 14:42:05 UTC
+--- chrome/browser/renderer_context_menu/render_view_context_menu.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/renderer_context_menu/render_view_context_menu.cc
-@@ -284,7 +284,7 @@
+@@ -283,7 +283,7 @@
  #include "url/origin.h"
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -5914,7 +5914,7 @@ void RenderViewContextMenu::AppendRevisedTextSelection
+@@ -5975,7 +5975,7 @@ void RenderViewContextMenu::AppendRevisedTextSelection
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

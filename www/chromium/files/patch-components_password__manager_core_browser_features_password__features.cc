@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/features/password_features.cc.orig	2026-08-12 09:02:10 UTC
+--- components/password_manager/core/browser/features/password_features.cc.orig	2026-08-31 10:59:09 UTC
 +++ components/password_manager/core/browser/features/password_features.cc
 @@ -80,7 +80,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
  BASE_FEATURE(kClearUndecryptablePasswordsOnSync,
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -179,7 +179,7 @@ BASE_FEATURE(kPreventAPCOnFederatedLogin, base::FEATUR
+@@ -181,7 +181,7 @@ BASE_FEATURE(kPreventAPCOnFederatedLogin, base::FEATUR
  BASE_FEATURE(kPreventPasswordManagerOnFederatedLogin,
               base::FEATURE_DISABLED_BY_DEFAULT);
  

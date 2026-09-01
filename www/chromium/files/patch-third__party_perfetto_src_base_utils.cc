@@ -1,6 +1,6 @@
---- third_party/perfetto/src/base/utils.cc.orig	2026-08-12 09:02:10 UTC
+--- third_party/perfetto/src/base/utils.cc.orig	2026-08-31 10:59:09 UTC
 +++ third_party/perfetto/src/base/utils.cc
-@@ -43,7 +43,8 @@
+@@ -47,7 +47,8 @@
  #include <sys/sysctl.h>
  #endif
  
@@ -10,7 +10,7 @@
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/prctl.h>
  
-@@ -293,14 +294,22 @@ void Daemonize(std::function<int(pid_t)> parent_cb) {
+@@ -244,14 +245,22 @@ void Daemonize(std::function<int(pid_t)> parent_cb) {
  
  std::string GetCurExecutablePath() {
    std::string self_path;
@@ -35,7 +35,7 @@
  #elif PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
    uint32_t size = 0;
    PERFETTO_CHECK(_NSGetExecutablePath(nullptr, &size));
-@@ -364,7 +373,8 @@ void AlignedFree(void* ptr) {
+@@ -315,7 +324,8 @@ void AlignedFree(void* ptr) {
  }
  
  bool IsSyncMemoryTaggingEnabled() {

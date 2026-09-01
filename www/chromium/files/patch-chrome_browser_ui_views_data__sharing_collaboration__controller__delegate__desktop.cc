@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc.orig	2026-05-07 17:02:56 UTC
+--- chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc
 @@ -96,7 +96,7 @@ DialogText GetPromptDialogTextFromStatus(
        break;
@@ -25,7 +25,7 @@
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
        signin_ui_util::GetSingleAccountForPromos(
-           IdentityManagerFactory::GetForProfile(browser_->profile()));
+           IdentityManagerFactory::GetForProfile(browser_->GetProfile()));
  #else
 @@ -553,7 +553,7 @@ void CollaborationControllerDelegateDesktop::
                .SetLabel(dialog_text.ok_button_text)

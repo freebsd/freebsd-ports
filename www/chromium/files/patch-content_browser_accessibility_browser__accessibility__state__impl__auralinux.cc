@@ -1,6 +1,6 @@
---- content/browser/accessibility/browser_accessibility_state_impl_auralinux.cc.orig	2026-05-07 17:02:56 UTC
+--- content/browser/accessibility/browser_accessibility_state_impl_auralinux.cc.orig	2026-08-31 10:59:09 UTC
 +++ content/browser/accessibility/browser_accessibility_state_impl_auralinux.cc
-@@ -12,6 +12,7 @@
+@@ -14,6 +14,7 @@
  #include <sstream>
  #include <string>
  
@@ -8,7 +8,7 @@
  #include "base/debug/crash_logging.h"
  #include "base/logging.h"
  #include "base/metrics/histogram_macros.h"
-@@ -44,6 +45,10 @@ bool CheckCmdlineForOrca(const std::string& cmdline_al
+@@ -57,6 +58,10 @@ namespace {
  
  // Returns true if Orca is active.
  bool DiscoverOrca() {
@@ -19,7 +19,7 @@
    // NOTE: this method is run from another thread to reduce jank, since
    // there's no guarantee these system calls will return quickly.
    std::unique_ptr<DIR, decltype(&CloseDir)> proc_dir(opendir("/proc"),
-@@ -81,6 +86,7 @@ bool DiscoverOrca() {
+@@ -103,6 +108,7 @@ bool DiscoverOrca() {
    }
  
    return is_orca_active;

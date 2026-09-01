@@ -1,4 +1,4 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
 @@ -84,7 +84,7 @@
  #endif
@@ -36,7 +36,7 @@
    shell_integration::DefaultWebClientState default_state =
        shell_integration::GetDefaultBrowser();
    base::UmaHistogramEnumeration("DefaultBrowser.State", default_state,
-@@ -1194,11 +1194,11 @@ void ChromeBrowserMainExtraPartsMetrics::PostBrowserSt
+@@ -1190,11 +1190,11 @@ void ChromeBrowserMainExtraPartsMetrics::PostBrowserSt
        std::make_unique<web_app::SamplingMetricsProvider>();
  #endif  // !BUILDFLAG(IS_ANDROID)
  

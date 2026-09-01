@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2026-08-12 09:02:10 UTC
+--- content/utility/utility_main.cc.orig	2026-08-31 10:59:09 UTC
 +++ content/utility/utility_main.cc
 @@ -44,22 +44,31 @@
  #include "services/tracing/public/cpp/trace_startup.h"
@@ -33,7 +33,7 @@
  #if BUILDFLAG(USE_LINUX_VIDEO_ACCELERATION)
  #include "gpu/config/gpu_info_collector.h"
  #include "media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.h"
-@@ -118,7 +127,7 @@ sandbox::TargetServices* g_utility_target_services = n
+@@ -120,7 +129,7 @@ sandbox::TargetServices* g_utility_target_services = n
  #endif  // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && \
@@ -42,7 +42,7 @@
  #include "components/on_device_translation/service/sandbox_hook.h"
  #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) &&  (BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS))
-@@ -127,7 +136,7 @@ namespace content {
+@@ -129,7 +138,7 @@ namespace content {
  
  namespace {
  
@@ -51,7 +51,7 @@
  std::vector<std::string> GetNetworkContextsParentDirectories() {
    base::MemoryMappedFile::Region region;
    base::ScopedFD read_pipe_fd = base::FileDescriptorStore::GetInstance().TakeFD(
-@@ -286,7 +295,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -293,7 +302,7 @@ int UtilityMain(MainFunctionParams parameters) {
      CHECK(on_device_model::PreSandboxInit());
    }
  
@@ -60,7 +60,7 @@
  
  #if BUILDFLAG(USE_LINUX_VIDEO_ACCELERATION) && BUILDFLAG(USE_VAAPI)
    // Regardless of the sandbox status, the VaapiWrapper needs to be initialized
-@@ -301,7 +310,10 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -308,7 +317,10 @@ int UtilityMain(MainFunctionParams parameters) {
    // thread type change in ChildProcess constructor. It also needs to be
    // registered before the process has multiple threads, which may race with
    // application of the sandbox.
@@ -71,7 +71,7 @@
  
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
-@@ -334,7 +346,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -341,7 +353,7 @@ int UtilityMain(MainFunctionParams parameters) {
            base::BindOnce(&speech::SpeechRecognitionPreSandboxHook);
        break;
  #if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && \
@@ -80,7 +80,7 @@
      case sandbox::mojom::Sandbox::kOnDeviceTranslation:
        pre_sandbox_hook = base::BindOnce(
            &on_device_translation::OnDeviceTranslationSandboxHook);
-@@ -351,7 +363,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -358,7 +370,7 @@ int UtilityMain(MainFunctionParams parameters) {
  #else
        NOTREACHED();
  #endif
@@ -89,7 +89,7 @@
      case sandbox::mojom::Sandbox::kShapeDetection:
        pre_sandbox_hook =
            base::BindOnce(&shape_detection::ShapeDetectionPreSandboxHook);
-@@ -380,6 +392,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -387,6 +399,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -97,7 +97,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox_options.use_amd_specific_policies =
-@@ -387,6 +400,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -394,6 +407,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

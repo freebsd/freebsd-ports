@@ -1,6 +1,6 @@
---- remoting/host/desktop_session_connector.h.orig	2026-06-04 10:12:25 UTC
+--- remoting/host/desktop_session_connector.h.orig	2026-08-31 10:59:09 UTC
 +++ remoting/host/desktop_session_connector.h
-@@ -57,7 +57,7 @@ class DesktopSessionConnector : public mojom::DesktopS
+@@ -59,7 +59,7 @@ class DesktopSessionConnector : public mojom::DesktopS
    // connections.
    virtual void SetRequiredUsername(std::string_view username) = 0;
  

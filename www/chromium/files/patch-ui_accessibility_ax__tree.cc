@@ -1,6 +1,6 @@
---- ui/accessibility/ax_tree.cc.orig	2026-06-04 10:12:25 UTC
+--- ui/accessibility/ax_tree.cc.orig	2026-08-31 10:59:09 UTC
 +++ ui/accessibility/ax_tree.cc
-@@ -699,7 +699,7 @@ struct AXTreeUpdateState {
+@@ -698,7 +698,7 @@ struct AXTreeUpdateState {
    // (crrev.com/c/2892259).
    const raw_ref<const AXTreeUpdate> pending_tree_update;
  
@@ -9,7 +9,7 @@
    bool should_clear_extra_announcement_nodes = false;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  
-@@ -854,7 +854,7 @@ bool AXTree::ComputeNodeIsIgnoredChanged(
+@@ -853,7 +853,7 @@ bool AXTree::ComputeNodeIsIgnoredChanged(
    return old_node_is_ignored != new_node_is_ignored;
  }
  
@@ -18,7 +18,7 @@
  ExtraAnnouncementNodes::ExtraAnnouncementNodes(AXNode* root) {
    assertive_node_ = CreateNode("assertive", root);
    polite_node_ = CreateNode("polite", root);
-@@ -947,7 +947,7 @@ AXNode* AXTree::GetFromId(AXNodeID id) const {
+@@ -930,7 +930,7 @@ AXNode* AXTree::GetFromId(AXNodeID id) const {
  
  void AXTree::Destroy() {
    base::ElapsedThreadTimer timer;
@@ -27,7 +27,7 @@
    ClearExtraAnnouncementNodes();
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  
-@@ -1602,7 +1602,7 @@ bool AXTree::Unserialize(const AXTreeUpdate& update) {
+@@ -1585,7 +1585,7 @@ bool AXTree::Unserialize(const AXTreeUpdate& update) {
    observers_.Notify(&AXTreeObserver::OnAtomicUpdateFinished, this,
                      root_->id() != old_root_id, changes);
  
@@ -36,7 +36,7 @@
    if (update_state.should_clear_extra_announcement_nodes) {
      ClearExtraAnnouncementNodes();
    }
-@@ -2205,7 +2205,7 @@ void AXTree::NotifyNodeAttributesWillChange(
+@@ -2188,7 +2188,7 @@ void AXTree::NotifyNodeAttributesWillChange(
                      new_data);
  }
  
@@ -45,7 +45,7 @@
  void AXTree::ClearExtraAnnouncementNodes() {
    if (!extra_announcement_nodes_) {
      return;
-@@ -2606,7 +2606,7 @@ bool AXTree::CreateNewChildVector(
+@@ -2589,7 +2589,7 @@ bool AXTree::CreateNewChildVector(
      AXTreeUpdateState* update_state) {
    DCHECK(GetTreeUpdateInProgressState());
    bool success = true;

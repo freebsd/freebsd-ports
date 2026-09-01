@@ -1,11 +1,19 @@
---- chrome/browser/ui/autofill/chrome_autofill_client.cc.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/ui/autofill/chrome_autofill_client.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/ui/autofill/chrome_autofill_client.cc
-@@ -327,7 +327,7 @@ ChromeAutofillClient::~ChromeAutofillClient() {
+@@ -327,14 +327,14 @@ void ChromeAutofillClient::AtMemoryCopyPasteObserver::
+                                            ->GetPrimaryMainFrame()
+                                            ->GetPageUkmSourceId())) {
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+     client_->ShowAutofillAtMemoryPromo();
+ #endif
+   }
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- ChromeAutofillClient::AtMemoryPromoObserver::AtMemoryPromoObserver(
-     ChromeAutofillClient* client)
-     : content::WebContentsObserver(client->web_contents()), client_(*client) {}
+ void ChromeAutofillClient::ShowAutofillAtMemoryPromo() {
+   // TODO(crbug.com/519061643) Double check if we also need to check a field
+   // url here.

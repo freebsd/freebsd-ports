@@ -1,4 +1,4 @@
---- remoting/host/webauthn/remote_webauthn_caller_security_utils.cc.orig	2026-07-01 06:24:19 UTC
+--- remoting/host/webauthn/remote_webauthn_caller_security_utils.cc.orig	2026-08-31 10:59:09 UTC
 +++ remoting/host/webauthn/remote_webauthn_caller_security_utils.cc
 @@ -13,11 +13,11 @@
  #include "base/process/process_handle.h"
@@ -23,7 +23,7 @@
  
  constexpr auto kAllowedCallerPrograms =
      base::MakeFixedFlatSet<base::FilePath::StringViewType>({
-@@ -105,7 +105,7 @@ bool IsLaunchedByTrustedProcess() {
+@@ -72,7 +72,7 @@ bool IsLaunchedByTrustedProcess() {
  #if !defined(NDEBUG)
    // Just return true on debug builds for the convenience of development.
    return true;

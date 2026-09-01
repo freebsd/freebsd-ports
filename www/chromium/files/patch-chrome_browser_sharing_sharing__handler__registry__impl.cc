@@ -1,6 +1,6 @@
---- chrome/browser/sharing/sharing_handler_registry_impl.cc.orig	2026-06-04 10:12:25 UTC
+--- chrome/browser/sharing/sharing_handler_registry_impl.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/sharing/sharing_handler_registry_impl.cc
-@@ -28,7 +28,7 @@
+@@ -27,7 +27,7 @@
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/sharing/shared_clipboard/remote_copy_message_handler.h"
  #endif
  
-@@ -80,7 +80,7 @@ SharingHandlerRegistryImpl::SharingHandlerRegistryImpl
+@@ -74,7 +74,7 @@ SharingHandlerRegistryImpl::SharingHandlerRegistryImpl
  #endif  // !BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

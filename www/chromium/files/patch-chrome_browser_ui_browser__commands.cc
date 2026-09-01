@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_commands.cc.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/ui/browser_commands.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/ui/browser_commands.cc
-@@ -1265,7 +1265,7 @@ void NewTabToRight(BrowserWindowInterface* browser) {
+@@ -1314,7 +1314,7 @@ void NewTabToRight(BrowserWindowInterface* browser) {
  }
  
  void NewTabFromClipboardURL(BrowserWindowInterface* browser) {
@@ -9,7 +9,7 @@
    if (ui::Clipboard::IsSupportedClipboardBuffer(
            ui::ClipboardBuffer::kSelection)) {
      ui::Clipboard* clipboard = ui::Clipboard::GetForCurrentThread();
-@@ -2583,7 +2583,7 @@ void OpenUpdateChromeDialog(BrowserWindowInterface* br
+@@ -2648,7 +2648,7 @@ void OpenUpdateChromeDialog(BrowserWindowInterface* br
      ShowOutdatedUpgradeBubble(browser, browser,
                                /*auto_update_enabled=*/false);
    } else {

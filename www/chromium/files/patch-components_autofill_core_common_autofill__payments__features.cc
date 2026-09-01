@@ -1,11 +1,11 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2026-08-12 09:02:10 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2026-08-31 10:59:09 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
 @@ -32,7 +32,7 @@ BASE_FEATURE(kAutofillDisableBnplCountryCheckForTestin
  // page using server-side AI.
  BASE_FEATURE(kAutofillEnableAiBasedAmountExtraction,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+-    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
@@ -90,16 +90,16 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -307,7 +307,7 @@ BASE_FEATURE(kAutofillIgnoreEmptyCvcsInSyncBridge,
+@@ -313,7 +313,7 @@ BASE_FEATURE(kAutofillIgnoreEmptyCvcsInSyncBridge,
  // eligibility.
  BASE_FEATURE(kAutofillPreferBuyNowPayLaterBlocklists,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+-    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -353,7 +353,7 @@ BASE_FEATURE(kAutofillUpstreamEnforceStrikeDelay,
+@@ -371,7 +371,7 @@ BASE_FEATURE(kAutofillUpstreamEnforceStrikeDelay,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
  bool ShouldShowImprovedUserConsentForCreditCardSave() {

@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.cc.orig	2026-08-12 09:02:10 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2026-08-31 10:59:09 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -247,7 +247,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -248,7 +248,7 @@ const base::Feature* const kAllFeatures[] = {
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
      &kEsbDownloadRowPromoFeature,
  #endif
-@@ -336,7 +336,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -338,7 +338,7 @@ const base::Feature* const kAllFeatures[] = {
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
      // keep-sorted start case=no
      &kIPHAutofillAccountNameEmailSuggestionFeature,
      &kIPHAutofillAiOptInFeature,
-@@ -370,7 +370,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -371,7 +371,7 @@ const base::Feature* const kAllFeatures[] = {
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,9 +27,9 @@
      // keep-sorted start case=no
      &kIPHDesktopPWAsLinkCapturingLaunch,
      &kIPHDesktopPWAsLinkCapturingLaunchAppInTab,
-@@ -378,7 +378,7 @@ const base::Feature* const kAllFeatures[] = {
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
-         // BUILDFLAG(IS_CHROMEOS)
+@@ -383,7 +383,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHExtensionsPinnedByDefaultFeature,
+ #endif  // BUILDFLAG(ENABLE_EXTENSIONS_CORE)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

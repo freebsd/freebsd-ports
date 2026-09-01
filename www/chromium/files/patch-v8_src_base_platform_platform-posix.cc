@@ -1,4 +1,4 @@
---- v8/src/base/platform/platform-posix.cc.orig	2026-07-01 06:24:19 UTC
+--- v8/src/base/platform/platform-posix.cc.orig	2026-08-31 10:59:09 UTC
 +++ v8/src/base/platform/platform-posix.cc
 @@ -78,7 +78,7 @@
  #include <sys/syscall.h>
@@ -51,3 +51,43 @@
  
  namespace {
  #if DEBUG
+@@ -1486,21 +1494,20 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackStart(
+ #endif  // V8_OS_ZOS
+ }
+ 
++#endif  // !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) &&
++        // !defined(_AIX) && !defined(V8_OS_SOLARIS)
++
+ // static
+ Stack::StackSlot Stack::ObtainCurrentThreadStackReservedLimit() {
+ #if V8_OS_ZOS
+   return nullptr;
+-#elif V8_OS_OPENBSD
+-  stack_t stack;
+-  int error = pthread_stackseg_np(pthread_self(), &stack);
+-  if (error) {
+-    DCHECK(MainThreadIsCurrentThread());
+-    return nullptr;
+-  }
+-  return stack.ss_sp;
+ #else
+   pthread_attr_t attr;
++#if V8_OS_BSD
++  int error = pthread_attr_init(&attr);
++#else
+   int error = pthread_getattr_np(pthread_self(), &attr);
++#endif
+   if (error) {
+     DCHECK(MainThreadIsCurrentThread());
+     return nullptr;
+@@ -1513,10 +1520,6 @@ Stack::StackSlot Stack::ObtainCurrentThreadStackReserv
+   return base;
+ #endif  // V8_OS_ZOS
+ }
+-
+-#endif  // !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) &&
+-        // !defined(_AIX) && !defined(V8_OS_SOLARIS)
+-
+ 
+ 
+ // static

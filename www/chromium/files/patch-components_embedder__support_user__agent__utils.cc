@@ -1,4 +1,4 @@
---- components/embedder_support/user_agent_utils.cc.orig	2026-07-01 06:24:19 UTC
+--- components/embedder_support/user_agent_utils.cc.orig	2026-08-31 10:59:09 UTC
 +++ components/embedder_support/user_agent_utils.cc
 @@ -283,7 +283,7 @@ std::string GetUserAgentPlatform() {
    return "";
@@ -18,7 +18,7 @@
    return "X11; Linux x86_64";
  #elif BUILDFLAG(IS_IOS)
    if (ui::GetDeviceFormFactor() == ui::DEVICE_FORM_FACTOR_TABLET) {
-@@ -592,7 +592,7 @@ std::string GetPlatformVersion() {
+@@ -603,7 +603,7 @@ std::string GetPlatformVersion() {
  
  #if BUILDFLAG(IS_WIN)
    return GetWindowsPlatformVersion();
@@ -27,7 +27,7 @@
    return std::string();
  #else
  
-@@ -629,6 +629,9 @@ std::string GetPlatformForUAMetadata() {
+@@ -640,6 +640,9 @@ std::string GetPlatformForUAMetadata() {
  #else
    return "Chromium OS";
  #endif
@@ -37,7 +37,7 @@
  #else
    return std::string(version_info::GetOSType());
  #endif
-@@ -811,6 +814,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -822,6 +825,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

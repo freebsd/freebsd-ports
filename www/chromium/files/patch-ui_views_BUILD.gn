@@ -1,6 +1,6 @@
---- ui/views/BUILD.gn.orig	2026-08-12 09:02:10 UTC
+--- ui/views/BUILD.gn.orig	2026-08-31 10:59:09 UTC
 +++ ui/views/BUILD.gn
-@@ -897,7 +897,6 @@ component("views") {
+@@ -903,7 +903,6 @@ component("views") {
        "windows_stationarity_monitor_aura.cc",
      ]
      deps += [

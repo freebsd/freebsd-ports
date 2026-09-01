@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/profile_picker_view.cc.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/ui/views/profiles/profile_picker_view.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/ui/views/profiles/profile_picker_view.cc
-@@ -87,7 +87,7 @@
+@@ -89,7 +89,7 @@
  #include "chrome/browser/global_keyboard_shortcuts_mac.h"
  #endif
  

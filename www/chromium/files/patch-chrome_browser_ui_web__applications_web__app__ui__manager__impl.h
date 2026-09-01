@@ -1,6 +1,6 @@
---- chrome/browser/ui/web_applications/web_app_ui_manager_impl.h.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/ui/web_applications/web_app_ui_manager_impl.h.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/ui/web_applications/web_app_ui_manager_impl.h
-@@ -264,7 +264,7 @@ class WebAppUiManagerImpl : public BrowserCollectionOb
+@@ -270,7 +270,7 @@ class WebAppUiManagerImpl : public BrowserCollectionOb
        webapps::UninstallResultCode uninstall_code);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- v8/gni/v8.gni.orig	2026-08-12 09:02:10 UTC
+--- v8/gni/v8.gni.orig	2026-08-31 10:59:09 UTC
 +++ v8/gni/v8.gni
-@@ -361,7 +361,7 @@ is_drumbrake_supported =
+@@ -357,7 +357,7 @@ is_drumbrake_supported =
      (v8_current_cpu == "x64" || v8_current_cpu == "arm64" ||
       v8_current_cpu == "riscv64") &&
      (target_os == "win" || target_os == "linux" || target_os == "mac" ||

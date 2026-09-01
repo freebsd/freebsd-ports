@@ -1,7 +1,7 @@
---- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.cc.orig	2026-02-11 09:05:39 UTC
+--- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/browser/ui/autofill/payments/desktop_payments_window_manager.cc
 @@ -31,7 +31,7 @@
- #include "ui/gfx/geometry/rect.h"
+ #include "ui/gfx/geometry/size.h"
  #include "url/gurl.h"
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/browser_window/public/browser_window_interface.h"  // nogncheck
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -62,7 +62,7 @@ gfx::Rect GetPopupSizeForBnpl() {
+@@ -62,7 +62,7 @@ gfx::Size GetPopupSizeForBnpl() {
  DesktopPaymentsWindowManager::DesktopPaymentsWindowManager(
      ContentAutofillClient* client)
      : client_(CHECK_DEREF(client)) {

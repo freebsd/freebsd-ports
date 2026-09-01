@@ -1,4 +1,4 @@
---- chrome/test/supervised_user/google_auth_state_waiter_mixin.cc.orig	2024-10-22 08:31:56 UTC
+--- chrome/test/supervised_user/google_auth_state_waiter_mixin.cc.orig	2026-08-31 10:59:09 UTC
 +++ chrome/test/supervised_user/google_auth_state_waiter_mixin.cc
 @@ -24,7 +24,7 @@ GoogleAuthStateWaiterMixin::GoogleAuthStateWaiterMixin
  GoogleAuthStateWaiterMixin::~GoogleAuthStateWaiterMixin() = default;
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    ChildAccountService* child_account_service =
        ChildAccountServiceFactory::GetForProfile(
-           test_base_->browser()->profile());
+           test_base_->browser()->GetProfile());

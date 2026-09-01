@@ -1,10 +1,10 @@
-TIMESTAMP = 1787236792
-SHA256 (chromium-151.0.7922.169-lite.tar.xz) = 6e6a725fae7143450f554db6c15a223f88b9599f9ba149bb5ceb1fb3478c34ca
-SIZE (chromium-151.0.7922.169-lite.tar.xz) = 1712206164
+TIMESTAMP = 1788172706
+SHA256 (chromium-152.0.7977.64-lite.tar.xz) = 0afede9e15101678eb11277098cc2f181a84a5f532f7f46758b981a4a7585f78
+SIZE (chromium-152.0.7977.64-lite.tar.xz) = 1774931660
 SHA256 (pulseaudio-16.1.tar.gz) = 027266c62f2a84422ac45fa721a649508f0f1628fb1fd9242315ac54ce2d7c92
 SIZE (pulseaudio-16.1.tar.gz) = 2763111
-SHA256 (chromium-151.0.7922.169-testdata.tar.xz) = f91a7c954082cb1ba3763ec0efe97dd9efa59e0e3354c8ceecf783404336a7a2
-SIZE (chromium-151.0.7922.169-testdata.tar.xz) = 1305524480
+SHA256 (chromium-152.0.7977.64-testdata.tar.xz) = 9a943651bb4cb4264e75afd366cf870e9cfe06b906077dd44555f54618ca0396
+SIZE (chromium-152.0.7977.64-testdata.tar.xz) = 1302040880
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301

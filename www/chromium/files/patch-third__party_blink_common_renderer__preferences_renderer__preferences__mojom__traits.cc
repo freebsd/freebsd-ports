@@ -1,5 +1,14 @@
---- third_party/blink/common/renderer_preferences/renderer_preferences_mojom_traits.cc.orig	2026-06-04 10:12:25 UTC
+--- third_party/blink/common/renderer_preferences/renderer_preferences_mojom_traits.cc.orig	2026-08-31 10:59:09 UTC
 +++ third_party/blink/common/renderer_preferences/renderer_preferences_mojom_traits.cc
+@@ -47,7 +47,7 @@ bool StructTraits<blink::mojom::RendererPreferencesDat
+ 
+   out->use_custom_colors = data.use_custom_colors();
+ 
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+   out->use_overlay_scrollbar = data.use_overlay_scrollbar();
+ #endif
+ 
 @@ -78,7 +78,7 @@ bool StructTraits<blink::mojom::RendererPreferencesDat
  
    out->send_subresource_notification = data.send_subresource_notification();

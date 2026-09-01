@@ -1,13 +1,13 @@
---- v8/src/base/platform/platform-openbsd.cc.orig	2024-07-30 11:12:21 UTC
+--- v8/src/base/platform/platform-openbsd.cc.orig	2026-08-31 10:59:09 UTC
 +++ v8/src/base/platform/platform-openbsd.cc
-@@ -6,6 +6,7 @@
- // POSIX-compatible parts, the implementation is in platform-posix.cc.
- 
+@@ -8,6 +8,7 @@
+ #include <errno.h>
+ #include <fcntl.h>  // open
  #include <pthread.h>
 +#include <pthread_np.h>
  #include <semaphore.h>
  #include <signal.h>
- #include <stdlib.h>
+ #include <stdarg.h>
 @@ -121,6 +122,17 @@ void OS::SignalCodeMovingGC() {
  }
  

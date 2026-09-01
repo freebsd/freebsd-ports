@@ -1,6 +1,6 @@
---- services/device/hid/hid_service.cc.orig	2026-02-11 09:05:39 UTC
+--- services/device/hid/hid_service.cc.orig	2026-08-31 10:59:09 UTC
 +++ services/device/hid/hid_service.cc
-@@ -19,6 +19,10 @@
+@@ -20,6 +20,10 @@
  
  #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(USE_UDEV)
  #include "services/device/hid/hid_service_linux.h"
@@ -11,7 +11,7 @@
  #elif BUILDFLAG(IS_MAC)
  #include "services/device/hid/hid_service_mac.h"
  #elif BUILDFLAG(IS_WIN)
-@@ -67,6 +71,10 @@ constexpr base::TaskTraits HidService::kBlockingTaskTr
+@@ -68,6 +72,10 @@ constexpr base::TaskTraits HidService::kBlockingTaskTr
  std::unique_ptr<HidService> HidService::Create() {
  #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(USE_UDEV)
    return std::make_unique<HidServiceLinux>();

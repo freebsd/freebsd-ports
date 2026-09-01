@@ -1,6 +1,6 @@
---- chromeos/ash/components/mojo_proxy/mojo_core/core/channel_posix.cc.orig	2026-08-12 09:02:10 UTC
+--- chromeos/ash/components/mojo_proxy/mojo_core/core/channel_posix.cc.orig	2026-08-31 10:59:09 UTC
 +++ chromeos/ash/components/mojo_proxy/mojo_core/core/channel_posix.cc
-@@ -30,7 +30,7 @@
+@@ -28,7 +28,7 @@
  #include "build/build_config.h"
  #include "chromeos/ash/components/mojo_proxy/mojo_core/public/cpp/platform/socket_utils_posix.h"
  
@@ -9,7 +9,7 @@
  #include "chromeos/ash/components/mojo_proxy/mojo_core/core/channel_linux.h"
  #endif
  
-@@ -600,7 +600,7 @@ scoped_refptr<Channel> Channel::Create(
+@@ -574,7 +574,7 @@ scoped_refptr<Channel> Channel::Create(
      ConnectionParams connection_params,
      HandlePolicy handle_policy,
      scoped_refptr<base::SingleThreadTaskRunner> io_task_runner) {
@@ -18,12 +18,3 @@
    return new ChannelLinux(delegate, std::move(connection_params), handle_policy,
                            io_task_runner);
  #else
-@@ -609,7 +609,7 @@ scoped_refptr<Channel> Channel::Create(
- #endif
- }
- 
--#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID))
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD))
- // static
- bool Channel::SupportsChannelUpgrade() {
-   return ChannelLinux::KernelSupportsUpgradeRequirements() &&

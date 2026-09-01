@@ -1,6 +1,6 @@
---- components/paint_preview/browser/paint_preview_client.cc.orig	2026-05-07 17:02:56 UTC
+--- components/paint_preview/browser/paint_preview_client.cc.orig	2026-08-31 10:59:09 UTC
 +++ components/paint_preview/browser/paint_preview_client.cc
-@@ -464,8 +464,8 @@ void PaintPreviewClient::CapturePaintPreview(
+@@ -465,8 +465,8 @@ void PaintPreviewClient::CapturePaintPreview(
    metadata->set_version(kPaintPreviewVersion);
    auto* chromeVersion = metadata->mutable_chrome_version();
    const auto& current_chrome_version = version_info::GetVersion();
