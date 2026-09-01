@@ -1,6 +1,5 @@
 PORTNAME=	colmap
-DISTVERSION=	4.1.1
-PORTREVISION=	1
+DISTVERSION=	4.2.0
 CATEGORIES=	graphics
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -16,6 +15,8 @@ LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/src/colmap/ui/media/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/src/thirdparty/PoissonRecon/LICENSE
 LICENSE_FILE_SIFTGPU=	${WRKSRC}/src/thirdparty/SiftGPU/LICENSE
 LICENSE_PERMS_SIFTGPU=	dist-mirror pkg-mirror auto-accept
+
+BROKEN_i386=	src/thirdparty/PoissonRecon/NestedVector.h:301:45: error: in-class initializer for static data member is not a constant expression
 
 LIB_DEPENDS=	libPoseLib.so:graphics/poselib \
 		libboost_program_options.so:devel/boost-libs \
@@ -55,6 +56,11 @@ CGAL_LIB_DEPENDS=	libgmp.so:math/gmp
 CGAL_CMAKE_BOOL=	CGAL_ENABLED
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-design>0:textproc/py-sphinx-design@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-sitemap>0:textproc/py-sphinx-sitemap@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pydata-sphinx-theme>0:textproc/py-pydata-sphinx-theme@${PY_FLAVOR} \
 			gmake:devel/gmake sphinx-build:textproc/py-sphinx
 
 ONNX_DESC=		Use Open Neural Network Exchange (ONNX)
