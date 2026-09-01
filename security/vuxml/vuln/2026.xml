@@ -229,7 +229,7 @@
 	    <li>[519369088] Medium CVE-2026-78983: Use after free in Views.</li>
 	    <li>[519984038] Medium CVE-2026-79083: Improper enforcement of behavioral workflow in Media.</li>
 	    <li>[520052954] Medium CVE-2026-78944: Use after free in DevTools.</li>
-	    <li>[520117546] Medium CVE-2026-79178: Incorrect authorization in Web Authentication (Passkeys & Security Keys).</li>
+	    <li>[520117546] Medium CVE-2026-79178: Incorrect authorization in Web Authentication (Passkeys &amp; Security Keys).</li>
 	    <li>[520121111] Medium CVE-2026-79059: Information leak in BFCache.</li>
 	    <li>[520179360] Medium CVE-2026-79245: Use after free in UI.</li>
 	    <li>[520464738] Medium CVE-2026-78978: Out of bounds read in ANGLE.</li>
@@ -313,7 +313,7 @@
 	    <li>[520016142] Low CVE-2026-78956: Type confusion in V8.</li>
 	    <li>[520781436] Low CVE-2026-79239: Out of bounds read in Tint.</li>
 	    <li>[522291712] Low CVE-2026-79015: Improper input validation in ServiceWorker.</li>
-	    <li>[522304549] Low CVE-2026-79108: UI misrepresentation in Web Authentication (Passkeys & Security Keys).</li>
+	    <li>[522304549] Low CVE-2026-79108: UI misrepresentation in Web Authentication (Passkeys &amp; Security Keys).</li>
 	    <li>[522418913] Low CVE-2026-79056: Use after free in ServiceWorker.</li>
 	    <li>[522803735] Low CVE-2026-79018: Information leak in FoldableAPIs.</li>
 	    <li>[523237735] Low CVE-2026-78980: Improper input validation in ReaderMode.</li>
