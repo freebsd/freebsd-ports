@@ -1,0 +1,8 @@
+--- libs/qhexedit/CMakeLists.txt.orig	2026-08-28 03:14:58 UTC
++++ libs/qhexedit/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12.2)
++cmake_minimum_required(VERSION 3.5)
+ 
+ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
