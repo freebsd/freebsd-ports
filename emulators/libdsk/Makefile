@@ -1,8 +1,7 @@
 PORTNAME=	libdsk
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.5.22
 CATEGORIES=	emulators devel
-MASTER_SITES=	http://www.seasip.info/Unix/LibDsk/
+MASTER_SITES=	https://www.seasip.info/Unix/LibDsk/
 
 MAINTAINER=	pixel@hugbox.org
 COMMENT=	Enables access to disks and disk images; also via serial line
