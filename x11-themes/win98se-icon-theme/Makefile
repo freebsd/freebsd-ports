@@ -1,6 +1,6 @@
 PORTNAME=	win98se-icon-theme
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.15
+DISTVERSION=	0.2.16.1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	avereeken@fastmail.de
