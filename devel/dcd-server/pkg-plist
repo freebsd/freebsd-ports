@@ -11,6 +11,11 @@ include/d/dcd/server/autocomplete/localuse.d
 include/d/dcd/server/autocomplete/package.d
 include/d/dcd/server/autocomplete/symbols.d
 include/d/dcd/server/autocomplete/util.d
+include/d/dcd/server/lsp/document.d
+include/d/dcd/server/lsp/handlers.d
+include/d/dcd/server/lsp/jsonrpc.d
+include/d/dcd/server/lsp/protocol.d
+include/d/dcd/server/lsp_server.d
 include/d/dcd/server/main.d
 include/d/dcd/server/server.d
 include/d/dsymbol/builtin/names.d
