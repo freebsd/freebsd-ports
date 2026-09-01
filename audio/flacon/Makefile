@@ -1,6 +1,5 @@
 PORTNAME=	flacon
-PORTVERSION=	11.3.0
-PORTREVISION=	1
+PORTVERSION=	12.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -22,14 +21,28 @@ TEST_DEPENDS=	alacenc:audio/alacenc \
 		opusenc:audio/opus-tools sox:audio/sox \
 		ttaenc:audio/tta wavpack:audio/wavpack
 
-USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5
+USES=		cmake compiler:c++17-lang desktop-file-utils iconv \
+		pkgconfig qt:5
 USE_GITHUB=	yes
 USE_QT=		buildtools:build concurrent:build qmake:build testlib:build \
 		linguisttools:build core gui network widgets
 CMAKE_ARGS=	-DBUILD_TESTS:BOOL=YES
 
+post-patch:
+# Catch up with newish MediaInfo(Lib) tag names so the tests can pass:
+# Part -> Part_Position in tests 18.{1,5,6}
+.for n f in 1 FLAC 5 OGG 6 OPUS
+	@${REINPLACE_CMD} -E 's,^Part {9},Part_Position,' \
+		${WRKSRC}/tests/data/testConvert/18.$n\ tags\ $f/spec.ini
+.endfor
+# Cover_Type "Cover (front)" changed to "Cover" (25.04 -> 25.05)
+	@${REINPLACE_CMD} -e '/^Cover_Type/s,Cover (front),Cover,' \
+		${WRKSRC}/tests/data/testConvert/18.1\ tags\ FLAC/spec.ini
+
 do-test:
-	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
-	@${CAT} ${TEST_WRKSRC}/Testing/Temporary/LastTest.log
+	@ctest --test-dir ${TEST_WRKSRC} -C ${CMAKE_BUILD_TYPE} \
+		${_MAKE_JOBS} || { rc=$$?; ${CAT} \
+		${TEST_WRKSRC}/Testing/Temporary/LastTest.log; \
+		return $$rc; }
 
 .include <bsd.port.mk>
