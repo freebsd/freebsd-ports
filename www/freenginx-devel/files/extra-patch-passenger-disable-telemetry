@@ -1,5 +1,5 @@
---- ../passenger-6.1.7/src/ruby_supportlib/phusion_passenger/nginx/config_options.rb.orig	2026-07-06 11:12:11.738456000 -0400
-+++ ../passenger-6.1.7/src/ruby_supportlib/phusion_passenger/nginx/config_options.rb	2026-07-06 11:12:32.462648000 -0400
+--- ../passenger-6.2.0/src/ruby_supportlib/phusion_passenger/nginx/config_options.rb.orig	2026-07-06 11:12:11.738456000 -0400
++++ ../passenger-6.2.0/src/ruby_supportlib/phusion_passenger/nginx/config_options.rb	2026-07-06 11:12:32.462648000 -0400
 @@ -212,7 +212,7 @@
      name: 'passenger_disable_anonymous_telemetry',
      scope: :global,

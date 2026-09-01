@@ -274,7 +274,7 @@ OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 			libre2.so:devel/re2
 OTEL_VARS=		DSO_EXTMODS+=otel OTEL_SUBDIR=/
 
-PASSENGER_NGINX_VER=	6.1.7
+PASSENGER_NGINX_VER=	6.2.0
 PASSENGER_MASTER_SITES=	https://s3.amazonaws.com/phusion-passenger/releases/:passenger
 PASSENGER_DISTFILES=	passenger-${PASSENGER_NGINX_VER}.tar.gz:passenger
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake

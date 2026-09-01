@@ -1,5 +1,5 @@
---- ../passenger-6.1.7/src/nginx_module/Configuration.c.orig	2013-10-26 20:00:00.000000000 -0400
-+++ ../passenger-6.1.7/src/nginx_module/Configuration.c	2025-11-02 20:09:05.6.1.72000 -0500
+--- ../passenger-6.2.0/src/nginx_module/Configuration.c.orig	2013-10-26 20:00:00.000000000 -0400
++++ ../passenger-6.2.0/src/nginx_module/Configuration.c	2025-11-02 20:09:05.6.2.02000 -0500
 @@ -224,7 +224,7 @@
  
      conf->upstream_config.send_lowat = NGX_CONF_UNSET_SIZE;
