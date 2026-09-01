@@ -1,6 +1,6 @@
 PORTNAME=	perfetto
 DISTVERSIONPREFIX=	v
-DISTVERSION=	57.2
+DISTVERSION=	58.2
 CATEGORIES=	devel
 MASTER_SITES=	https://storage.googleapis.com/perfetto/:perfetto
 DISTFILES=	sqlite-amalgamation-3500300.zip:perfetto \
@@ -28,6 +28,7 @@ GH_TUPLE=	protocolbuffers:protobuf:v31.1:buildtools_protobuf/buildtools/protobuf
 		abseil:abseil-cpp:20250512.1:buildtools_abseil_cpp/buildtools/abseil-cpp \
 		sqlite:sqlite:version-3.50.3:buildtools_sqlite_src/buildtools/sqlite_src \
 		google:re2:927f5d53caf8111721e734cf24724686bb745f55:buildtools_re2/buildtools/re2 \
+		facebook:zstd:f8745da6ff1ad1e7bab384bd1f9d742439278e99:buildtools_zstd/buildtools/zstd \
 		libexpat:libexpat:R_2_6_2:buildtools_expat/buildtools/expat/src
 
 GN_ARGS=	is_debug=false \
