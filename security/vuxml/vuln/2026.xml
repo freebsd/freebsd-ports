@@ -1,3 +1,32 @@
+  <vuln vid="f55676d9-a65f-11f1-a49c-00a0980083d7">
+    <topic>giflib -- Buffer Overflow vulnerability</topic>
+    <affects>
+    <package>
+	<name>giflib</name>
+	<range><le>6.1.3</le></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/zakkanijia/POC/blob/main/giflib/giftool/giflib_giftool_gce_len_heap_oobwrite_disclosure.md reports:</p>
+	<blockquote cite="https://github.com/zakkanijia/POC/blob/main/giflib/giftool/giflib_giftool_gce_len_heap_oobwrite_disclosure.md">
+	  <p>Buffer Overflow vulnerability in giflib allows a remote
+	attacker to cause a denial of service via the EGifGCBToExtension
+	overwriting an existing Graphic Control Extension block without
+	validating its allocated size.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-26740</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-26740</url>
+    </references>
+    <dates>
+      <discovery>2026-03-18</discovery>
+      <entry>2026-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="11ab3b16-a65d-11f1-a49c-00a0980083d7">
     <topic>expat2 -- Out-of-bounds Read</topic>
     <affects>
