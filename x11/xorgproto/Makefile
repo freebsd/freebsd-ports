@@ -1,7 +1,6 @@
 PORTNAME=	xorgproto
 DISTVERSION=	2025.1
 CATEGORIES=	x11
-MASTER_SITES=	XORG/individual/proto
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Window System unified protocol definitions
@@ -9,11 +8,8 @@ WWW=		https://gitlab.freedesktop.org/xorg/proto/xorgproto
 
 LICENSE=	MIT
 
-USES=		pkgconfig tar:xz
+USES=		xorg-cat:proto
 
-NO_ARCH=	yes
-
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-fop \
 		--without-xmlto \
 		--without-xsltproc \

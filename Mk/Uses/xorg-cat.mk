@@ -14,6 +14,7 @@
 # 		* font     don't install .pc file
 # 		* lib      various dependencies, install .pc file, needs
 # 		           pathfix
+#		* proto    install .pc file, most only needed at build time
 # 		* test     no particular notes
 # 		* util     no particular notes
 #
@@ -22,7 +23,7 @@
 #
 # 		builsystem is one of:
 # 		* autotools (default)
-# 		* meson (experimental)
+# 		* meson
 #
 #
 # By defining USE_GITLAB and GL_TAGNAME, it is possible to pull code straight
@@ -33,7 +34,7 @@
 .if !defined(_INCLUDE_USES_XORG_CAT_MK)
 _INCLUDE_USES_XORG_CAT_MK=yes
 
-_XORG_CATEGORIES=	app data doc driver font lib test util
+_XORG_CATEGORIES=	app data doc driver font lib proto test util
 _XORG_BUILDSYSTEMS=	autotools meson
 
 _XORG_CAT=		# empty
@@ -68,7 +69,7 @@ _XORG_BUILDSYS=		autotools
 
 # Default variables, common to all new modular xorg ports.
 .  if empty(USES:Mtar)
-EXTRACT_SUFX?=		.tar.bz2
+EXTRACT_SUFX?=		.tar.xz
 .  endif
 
 DIST_SUBDIR=	xorg/${_XORG_CAT}
@@ -160,6 +161,9 @@ libtool_ARGS?=	# empty
 .include "${USESDIR}/libtool.mk"
 CONFIGURE_ARGS+=--enable-malloc0returnsnull
 .    endif
+
+.  elif ${_XORG_CAT} == proto
+NO_ARCH=	yes
 
 .  endif # ${_XORG_CAT} == <category>
 
