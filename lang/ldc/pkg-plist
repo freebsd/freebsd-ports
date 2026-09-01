@@ -9,7 +9,8 @@ bin/timetrace2txt
 etc/ldc2.conf/00-docs.conf
 etc/ldc2.conf/30-compiler.conf
 etc/ldc2.conf/50-target-default.conf
-etc/ldc2.conf/55-target-wasm.conf
+etc/ldc2.conf/51-target-wasm-base.conf
+etc/ldc2.conf/55-target-wasm-naked.conf
 etc/ldc2.conf/70-compiler-rt.conf
 include/d/__importc_builtins.di
 include/d/core/atomic.d
@@ -79,7 +80,8 @@ include/d/core/internal/traits.d
 include/d/core/internal/utf.d
 include/d/core/internal/util/array.d
 include/d/core/internal/util/math.d
-include/d/core/internal/vararg/aarch64.d
+include/d/core/internal/vararg/aapcs64.d
+include/d/core/internal/vararg/gnu.d
 include/d/core/internal/vararg/sysv_x64.d
 include/d/core/interpolation.d
 include/d/core/lifetime.d
@@ -218,6 +220,7 @@ include/d/core/sys/linux/errno.d
 include/d/core/sys/linux/execinfo.d
 include/d/core/sys/linux/fcntl.d
 include/d/core/sys/linux/fs.d
+include/d/core/sys/linux/hdlc/ioctl.d
 include/d/core/sys/linux/ifaddrs.d
 include/d/core/sys/linux/input.d
 include/d/core/sys/linux/input_event_codes.d
@@ -225,6 +228,7 @@ include/d/core/sys/linux/io_uring.d
 include/d/core/sys/linux/link.d
 include/d/core/sys/linux/linux/if_arp.d
 include/d/core/sys/linux/linux/if_packet.d
+include/d/core/sys/linux/net/if_.d
 include/d/core/sys/linux/netinet/in_.d
 include/d/core/sys/linux/netinet/tcp.d
 include/d/core/sys/linux/perf_event.d
@@ -744,26 +748,26 @@ include/d/std/zip.d
 include/d/std/zlib.d
 lib/ldc_rt.dso.o
 lib/libdruntime-ldc-debug-shared.so
-lib/libdruntime-ldc-debug-shared.so.112
-lib/libdruntime-ldc-debug-shared.so.112.1
+lib/libdruntime-ldc-debug-shared.so.113
+lib/libdruntime-ldc-debug-shared.so.113.0
 lib/libdruntime-ldc-debug.a
 lib/libdruntime-ldc-lto.a
 lib/libdruntime-ldc-shared.so
-lib/libdruntime-ldc-shared.so.112
-lib/libdruntime-ldc-shared.so.112.1
+lib/libdruntime-ldc-shared.so.113
+lib/libdruntime-ldc-shared.so.113.0
 lib/libdruntime-ldc.a
 lib/libldc-jit-rt.a
 lib/libldc-jit.so
-lib/libldc-jit.so.112
-lib/libldc-jit.so.112.1
+lib/libldc-jit.so.113
+lib/libldc-jit.so.113.0
 lib/libphobos2-ldc-debug-shared.so
-lib/libphobos2-ldc-debug-shared.so.112
-lib/libphobos2-ldc-debug-shared.so.112.1
+lib/libphobos2-ldc-debug-shared.so.113
+lib/libphobos2-ldc-debug-shared.so.113.0
 lib/libphobos2-ldc-debug.a
 lib/libphobos2-ldc-lto.a
 lib/libphobos2-ldc-shared.so
-lib/libphobos2-ldc-shared.so.112
-lib/libphobos2-ldc-shared.so.112.1
+lib/libphobos2-ldc-shared.so.113
+lib/libphobos2-ldc-shared.so.113.0
 lib/libphobos2-ldc.a
 @dir include/d/etc/c/zlib/doc
 @dir include/d/etc/c/zlib/test
