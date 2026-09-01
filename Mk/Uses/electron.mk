@@ -85,7 +85,7 @@ _INCLUDE_USES_ELECTRON_MK=	yes
 # Electron depends on Node.js package manager
 .include "${USESDIR}/npm.mk"
 
-_VALID_ELECTRON_VERSIONS=	37 38 39 40 41 42 43
+_VALID_ELECTRON_VERSIONS=	40 41 42 43
 _VALID_ELECTRON_FEATURES=	appbuilder rebuild build
 _VALID_ELECTRON_FEATURES_APPBUILDER=release devel
 _VALID_ELECTRON_FEATURES_REBUILD=nodejs electron
