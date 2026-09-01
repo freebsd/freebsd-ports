@@ -1,6 +1,6 @@
 PORTNAME=	tlsrpt-reporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -46,7 +46,8 @@ SUB_LIST=	RUNDIR=/var/run/${PORTNAME} \
 PLIST_FILES=	"@sample ${CFGFILE}.sample" \
 		share/man/man1/tlsrpt-collectd.1.gz \
 		share/man/man1/tlsrpt-fetcher.1.gz \
-		share/man/man1/tlsrpt-reportd.1.gz
+		share/man/man1/tlsrpt-reportd.1.gz \
+		share/man/man1/tlsrptctl.1.gz
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
