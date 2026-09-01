@@ -254,6 +254,7 @@
     SUBDIR += py-editorconfig
     SUBDIR += py-pynvim
     SUBDIR += py-vim-bridge
+    SUBDIR += qhexedit2
     SUBDIR += rehex
     SUBDIR += remarkable
     SUBDIR += retext
