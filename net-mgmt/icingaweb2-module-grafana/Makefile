@@ -1,6 +1,6 @@
 PORTNAME=	icingaweb2-module-grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.4
+DISTVERSION=	3.1.5
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -26,7 +26,6 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
-	(cd ${WRKSRC} && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>
