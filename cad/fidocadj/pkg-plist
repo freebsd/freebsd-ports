@@ -1,3 +1,5 @@
 bin/fidocadj
-%%DATADIR%%/fidocadj-%%PORTVERSION%%.jar
+share/applications/fidocadj.desktop
 %%PORTDOCS%%%%DOCSDIR%%/manual_en.pdf
+share/icons/hicolor/512x512/apps/fidocadj.png
+%%DATADIR%%/fidocadj-%%PORTVERSION%%.jar
