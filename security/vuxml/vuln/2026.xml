@@ -1,3 +1,72 @@
+  <vuln vid="11ab3b16-a65d-11f1-a49c-00a0980083d7">
+    <topic>expat2 -- Out-of-bounds Read</topic>
+    <affects>
+    <package>
+	<name>expat2</name>
+	<range><lt>2.8.4</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/libexpat/libexpat/pull/1331 reports:</p>
+	<blockquote cite="https://github.com/libexpat/libexpat/pull/1331">
+	  <p>Expat through 2.8.3 contains an out-of-bounds read vulnerability
+	that allows attackers to trigger memory corruption by processing
+	XML with external entity parsers created via
+	XML_ExternalEntityParserCreate.  A struct size mismatch between
+	ELEMENT_TYPE members causes storeAtts to read the attIndex member
+	past allocated memory boundaries, resulting in failure to normalize
+	whitespace in non-CDATA attributes or a wild pointer dereference
+	causing a segfault.  This vulnerability was introduced by the fix
+	for CVE-2026-66046.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-76641</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-76641</url>
+    </references>
+    <dates>
+      <discovery>2026-08-20</discovery>
+      <entry>2026-09-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="88917664-a65c-11f1-a49c-00a0980083d7">
+    <topic>expat2 -- Inefficient Algorithmic Complexity</topic>
+    <affects>
+    <package>
+	<name>expat2</name>
+	<range><lt>2.8.4</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/libexpat/libexpat/pull/1321 reports:</p>
+	<blockquote cite="https://github.com/libexpat/libexpat/pull/1321">
+	  <p>Expat through 2.8.3 contains a denial of service vulnerability
+	caused by quadratic algorithmic complexity in the storeAtts()
+	function in xmlparse.c, where processing N specified attributes
+	with non-normalized values triggers an O(N^2) linear scan of
+	elementType->defaultAtts to determine CDATA status.  A remote
+	unauthenticated attacker can supply a single well-formed XML document
+	of a few megabytes to an application parsing untrusted XML to cause
+	excessive CPU consumption, resulting in denial of service without
+	requiring authentication, external entity resolution, or non-default
+	parser options.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-66046</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-66046</url>
+    </references>
+    <dates>
+      <discovery>2026-08-18</discovery>
+      <entry>2026-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e9dfc357-a63f-11f1-9195-4c526214c986">
     <topic>Erlang/OTP -- multiple vulnerabilities in inets, stdlib, snmp and eldap</topic>
     <affects>
