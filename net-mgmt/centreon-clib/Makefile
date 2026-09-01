@@ -1,5 +1,5 @@
 PORTNAME=	centreon-clib
-DISTVERSION=	21.10.0
+DISTVERSION=	21.10.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
