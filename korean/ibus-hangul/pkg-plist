@@ -2,7 +2,6 @@ bin/ibus-setup-hangul
 libexec/ibus-engine-hangul
 libexec/ibus-setup-hangul
 share/applications/ibus-setup-hangul.desktop
-share/glib-2.0/schemas/org.freedesktop.ibus.engine.hangul.gschema.xml
 %%DATADIR%%/data/symbol.txt
 %%DATADIR%%/icons/ibus-hangul.png
 %%DATADIR%%/icons/ibus-hangul.svg
