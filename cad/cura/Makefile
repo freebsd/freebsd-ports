@@ -1,6 +1,6 @@
 PORTNAME=	Cura
 DISTVERSION=	5.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	Uranium>0,1:cad/uranium
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shapely>0:devel/py-shapely@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy-stl>0:math/py-numpy-stl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy_stl>0:math/py-numpy-stl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
 		Uranium>=${DISTVERSION}:cad/uranium \
 		libCharon>=5.0.0:net/libcharon \
