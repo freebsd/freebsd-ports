@@ -1,7 +1,7 @@
 PORTNAME=	etcd
 PORTVERSION=	2.3.8
 DISTVERSIONPREFIX=	v
-PORTREVISION=	50
+PORTREVISION=	51
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
 
@@ -11,9 +11,6 @@ WWW=		https://github.com/etcd-io/etcd
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=	Obsolete and unsupported upstream, please consider moving to 3.X
-EXPIRATION_DATE=2026-09-30
 
 USES=		cpe go
 USE_GITHUB=	yes
