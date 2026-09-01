@@ -84,7 +84,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFAULT+=	CURL FPING IPMI IPV6 MYSQLDV OPENSSL SNMP SSH UNIXODBC
 OPTIONS_DEFINE=		CURL FPING IPMI IPV6 LDAP NMAP SNMP SSH UNIXODBC
 OPTIONS_SINGLE+=	DB SSL
-OPTIONS_SINGLE_DB=	MDB5 MDB6 MYSQL MYSQLDV ORACLE PGSQL
+OPTIONS_SINGLE_DB=	MDB1011 MDB114 MDB118 MDB123 MYSQL MYSQLDV PGSQL
 .if ${ZABBIX_BUILD} == "proxy"
 OPTIONS_SINGLE_DB+=	SQLITE
 .endif
@@ -115,13 +115,21 @@ MYSQL_USES+=		compiler:c11 mysql:84
 MYSQLDV_CONFIGURE_ON=	--with-mysql
 MYSQLDV_USES+=		compiler:c11 mysql
 
-MDB5_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
-MDB5_USES+=		compiler:c11 mysql:105m
-MDB5_DESC=		Mariadb 10.5 database support
+MDB1011_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
+MDB1011_USES+=		compiler:c11 mysql:1011m
+MDB1011_DESC=		Mariadb 10.11 database support
 
-MDB6_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
-MDB6_USES+=		compiler:c11 mysql:106m
-MDB6_DESC=		Mariadb 10.6 database support
+MDB114_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
+MDB114_USES+=		compiler:c11 mysql:114m
+MDB114_DESC=		Mariadb 11.4 database support
+
+MDB118_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
+MDB118_USES+=		compiler:c11 mysql:118m
+MDB118_DESC=		Mariadb 11.8 database support
+
+MDB123_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
+MDB123_USES+=		compiler:c11 mysql:123m
+MDB123_DESC=		Mariadb 12.3 database support
 
 ORACLE_CONFIGURE_WITH=	oracle
 
