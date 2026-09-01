@@ -1,0 +1,5 @@
+unhare extracts the filesystem that Bun embeds in a standalone
+executable. It finds the bundle through the ELF section holding it, or
+by scanning the whole file where there is no such section -- which is
+what the Mach-O and PE executables Bun builds on other systems need --
+and writes the bundled modules out as ordinary files.

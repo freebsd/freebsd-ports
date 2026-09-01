@@ -282,6 +282,7 @@
     SUBDIR += unarr
     SUBDIR += undms
     SUBDIR += unfoo
+    SUBDIR += unhare
     SUBDIR += unlzx
     SUBDIR += unmakeself
     SUBDIR += unmass
