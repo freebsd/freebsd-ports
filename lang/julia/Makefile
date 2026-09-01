@@ -14,6 +14,8 @@ WWW=		https://julialang.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN=		Fails to build, build crashes
+
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	Has not been ported to this platform for freebsd
 
