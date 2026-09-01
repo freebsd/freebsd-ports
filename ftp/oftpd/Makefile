@@ -1,6 +1,6 @@
 PORTNAME=	oftpd
 PORTVERSION=	0.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://atreides.freenix.no/~anders/
@@ -11,6 +11,9 @@ WWW=		https://www.time-travellers.org/oftpd/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Abandoned and has known vulnerability (CVE-2005-2239)
+EXPIRATION_DATE=2026-09-30
 
 USES=		cpe
 
