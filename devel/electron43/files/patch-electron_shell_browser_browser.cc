@@ -1,6 +1,6 @@
---- electron/shell/browser/browser.cc.orig	2026-08-18 19:28:27 UTC
+--- electron/shell/browser/browser.cc.orig	2026-08-31 00:54:38 UTC
 +++ electron/shell/browser/browser.cc
-@@ -98,7 +98,7 @@ bool Browser::IsValidProtocolScheme(const std::string&
+@@ -105,7 +105,7 @@ bool Browser::IsValidProtocolScheme(const std::string&
    return true;
  }
  

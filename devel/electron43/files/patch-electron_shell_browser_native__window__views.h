@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.h.orig	2026-06-29 20:35:15 UTC
+--- electron/shell/browser/native_window_views.h.orig	2026-08-31 00:54:38 UTC
 +++ electron/shell/browser/native_window_views.h
 @@ -30,7 +30,7 @@ class Arguments;
  class Arguments;
@@ -15,10 +15,10 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- class NativeFrameViewLinux;
  class GlobalMenuBarX11;
  #endif
-@@ -187,7 +187,7 @@ class NativeWindowViews : public NativeWindow,
+ 
+@@ -186,7 +186,7 @@ class NativeWindowViews : public NativeWindow,
                      LPARAM l_param,
                      LRESULT* result);
    void SetIcon(HICON small_icon, HICON app_icon);
@@ -27,7 +27,7 @@
    void SetIcon(const gfx::ImageSkia& icon);
  #endif
  
-@@ -209,7 +209,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -208,7 +208,7 @@ class NativeWindowViews : public NativeWindow,
      return overlay_symbol_color_;
    }
  
@@ -36,7 +36,7 @@
    views::FrameViewLinux* GetFrameViewLinux() const;
  #endif
  
-@@ -290,7 +290,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -289,7 +289,7 @@ class NativeWindowViews : public NativeWindow,
    // events from resizing the window.
    extensions::SizeConstraints old_size_constraints_;
  

@@ -1,4 +1,4 @@
---- electron/spec/api-app-spec.ts.orig	2026-08-18 19:28:27 UTC
+--- electron/spec/api-app-spec.ts.orig	2026-08-31 00:54:38 UTC
 +++ electron/spec/api-app-spec.ts
 @@ -124,7 +124,7 @@ describe('app module', () => {
      });
@@ -23,7 +23,16 @@
        const languages = app.getPreferredSystemLanguages();
        if (languages.length) {
          expect(languages).to.not.include('C');
-@@ -257,7 +257,7 @@ describe('app module', () => {
+@@ -199,7 +199,7 @@ describe('app module', () => {
+     });
+   });
+ 
+-  ifdescribe(process.platform === 'linux' && fs.existsSync('/usr/bin/dbus-daemon'))(
++  ifdescribe((process.platform === 'linux' || process.platform === 'freebsd') && fs.existsSync('/usr/bin/dbus-daemon'))(
+     'when a D-Bus bus goes away',
+     () => {
+       it('exits cleanly instead of crashing', async () => {
+@@ -290,7 +290,7 @@ describe('app module', () => {
        }
      });
  
@@ -32,7 +41,7 @@
        const electronPath = process.execPath;
        const appPath = path.join(fixturesPath, 'api', 'singleton');
        appProcess = cp.spawn(electronPath, [appPath]);
-@@ -441,7 +441,7 @@ describe('app module', () => {
+@@ -488,7 +488,7 @@ describe('app module', () => {
    });
  
    // GitHub Actions macOS-13 runners used for x64 seem to have a problem with this test.
@@ -41,7 +50,7 @@
      const tempFiles = [
        path.join(fixturesPath, 'foo.txt'),
        path.join(fixturesPath, 'bar.txt'),
-@@ -570,7 +570,7 @@ describe('app module', () => {
+@@ -617,7 +617,7 @@ describe('app module', () => {
    //   let w = null
  
    //   before(function () {
@@ -50,7 +59,7 @@
    //       this.skip()
    //     }
    //   })
-@@ -683,7 +683,7 @@ describe('app module', () => {
+@@ -730,7 +730,7 @@ describe('app module', () => {
  
    describe('app.badgeCount', () => {
      const platformIsNotSupported =
@@ -59,7 +68,7 @@
  
      const expectedBadgeCount = 42;
  
-@@ -730,7 +730,7 @@ describe('app module', () => {
+@@ -777,7 +777,7 @@ describe('app module', () => {
    });
  
    ifdescribe(
@@ -68,7 +77,7 @@
    )('app.get/setLoginItemSettings API', function () {
      const isMac = process.platform === 'darwin';
      const isWin = process.platform === 'win32';
-@@ -1157,7 +1157,7 @@ describe('app module', () => {
+@@ -1204,7 +1204,7 @@ describe('app module', () => {
      });
    });
  
@@ -77,7 +86,7 @@
      it('is mutable', () => {
        const values = [false, true, false];
        const setters: Array<(arg: boolean) => void> = [
-@@ -1427,7 +1427,7 @@ describe('app module', () => {
+@@ -1474,7 +1474,7 @@ describe('app module', () => {
      });
    });
  
@@ -86,7 +95,7 @@
      let w: BrowserWindow;
  
      before(function () {
-@@ -1570,7 +1570,7 @@ describe('app module', () => {
+@@ -1617,7 +1617,7 @@ describe('app module', () => {
  
    describe('getApplicationNameForProtocol()', () => {
      // TODO: Linux CI doesn't have registered http & https handlers
@@ -95,7 +104,7 @@
        'returns application names for common protocols',
        function () {
          // We can't expect particular app names here, but these protocols should
-@@ -1587,7 +1587,7 @@ describe('app module', () => {
+@@ -1634,7 +1634,7 @@ describe('app module', () => {
        expect(app.getApplicationNameForProtocol('bogus-protocol://')).to.equal('');
      });
  
@@ -104,7 +113,7 @@
        const desktopFileId = 'mock-browser.desktop';
        const mockDisplayName = 'Mock Browser';
        const mockScheme = 'mockproto';
-@@ -1637,7 +1637,7 @@ describe('app module', () => {
+@@ -1684,7 +1684,7 @@ describe('app module', () => {
      let xdgBinDir: string;
  
      before(() => {
@@ -113,7 +122,7 @@
          return;
        }
  
-@@ -1654,7 +1654,7 @@ describe('app module', () => {
+@@ -1701,7 +1701,7 @@ describe('app module', () => {
      });
  
      after(() => {
@@ -122,7 +131,7 @@
          fs.rmSync(xdgDir, { recursive: true, force: true });
        }
      });
-@@ -1666,7 +1666,7 @@ describe('app module', () => {
+@@ -1713,7 +1713,7 @@ describe('app module', () => {
      });
  
      it('returns resolved promise with appPath, displayName and icon', async function () {
@@ -131,7 +140,7 @@
          const appInfo = await spawnProtocolInfoWithXdgMock(`${mockScheme}://`, xdgDataHome, xdgConfigHome);
          expect(appInfo.name).to.equal(mockDisplayName);
          expect(appInfo.path).to.equal('/usr/bin/true');
-@@ -1680,7 +1680,7 @@ describe('app module', () => {
+@@ -1727,7 +1727,7 @@ describe('app module', () => {
        expect(appInfo.icon).not.to.be.undefined();
      });
  
@@ -140,7 +149,7 @@
        const pathLookupExecutable = 'mock-browser';
        const pathLookupExecutablePath = path.join(xdgBinDir, pathLookupExecutable);
        const pathLookupDisplayName = 'Mock Browser PATH';
-@@ -1714,7 +1714,7 @@ describe('app module', () => {
+@@ -1761,7 +1761,7 @@ describe('app module', () => {
      });
    });
  
@@ -149,7 +158,7 @@
      const protocol = 'electron-test-linux';
      const desktopFileId = 'electron-test.desktop';
      const protocolMimeType = `x-scheme-handler/${protocol}`;
-@@ -1831,7 +1831,7 @@ describe('app module', () => {
+@@ -1878,7 +1878,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -158,7 +167,7 @@
      const iconPath = path.join(__dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -1913,7 +1913,7 @@ describe('app module', () => {
+@@ -1960,7 +1960,7 @@ describe('app module', () => {
            expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0);
          }
  
@@ -167,7 +176,7 @@
            expect(entry.sandboxed).to.be.a('boolean');
          }
  
-@@ -1982,7 +1982,7 @@ describe('app module', () => {
+@@ -2029,7 +2029,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -176,7 +185,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -2006,7 +2006,7 @@ describe('app module', () => {
+@@ -2053,7 +2053,7 @@ describe('app module', () => {
      });
    });
  

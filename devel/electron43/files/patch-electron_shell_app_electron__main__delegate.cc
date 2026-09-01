@@ -1,4 +1,4 @@
---- electron/shell/app/electron_main_delegate.cc.orig	2026-06-29 20:35:15 UTC
+--- electron/shell/app/electron_main_delegate.cc.orig	2026-08-31 00:54:38 UTC
 +++ electron/shell/app/electron_main_delegate.cc
 @@ -67,7 +67,7 @@
  #include "chrome/child/v8_crashpad_support_win.h"
@@ -7,9 +7,9 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "base/nix/xdg_util.h"
+ #include "ui/gfx/linux/fontconfig_util.h"
  #include "ui/linux/display_server_utils.h"
- #include "v8/include/v8-wasm-trap-handler-posix.h"
-@@ -78,7 +78,7 @@
+@@ -79,7 +79,7 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif  // BUILDFLAG(IS_OZONE)
  
@@ -18,7 +18,7 @@
  #include "components/crash/core/app/crash_switches.h"  // nogncheck
  #include "components/crash/core/app/crashpad.h"        // nogncheck
  #include "components/crash/core/common/crash_key.h"
-@@ -218,7 +218,7 @@ std::optional<int> ElectronMainDelegate::BasicStartupC
+@@ -219,7 +219,7 @@ std::optional<int> ElectronMainDelegate::BasicStartupC
      base::win::PinUser32();
  #endif
  
@@ -27,7 +27,7 @@
    // Check for --no-sandbox parameter when running as root.
    if (getuid() == 0 && IsSandboxEnabled(command_line))
      LOG(FATAL) << "Running as root without --"
-@@ -268,7 +268,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
+@@ -269,7 +269,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
        /* is_preinit = */ IsBrowserProcess() || IsZygoteProcess());
  #endif
  
@@ -36,7 +36,7 @@
    crash_reporter::InitializeCrashKeys();
  #endif
  
-@@ -303,7 +303,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
+@@ -304,7 +304,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
    }
  #endif
  
@@ -45,7 +45,7 @@
    crash_keys::SetCrashKeysFromCommandLine(*command_line);
    crash_keys::SetPlatformCrashKey();
  #endif
-@@ -322,7 +322,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
+@@ -323,7 +323,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
  #if BUILDFLAG(IS_OZONE)
      // Initialize Ozone platform and add required feature flags as per
      // platform's properties.
@@ -54,7 +54,16 @@
      ui::SetOzonePlatformForLinuxIfNeeded(*command_line);
  #endif
      ui::OzonePlatform::PreSandboxStartup();
-@@ -352,7 +352,7 @@ std::optional<int> ElectronMainDelegate::PreBrowserMai
+@@ -353,7 +353,7 @@ std::optional<int> ElectronMainDelegate::PreBrowserMai
+   InitializeFeatureList();
+   // Initialize mojo core as soon as we have a valid feature list
+   content::InitializeMojoCore();
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Queued before the browser ThreadPool starts, so FontConfig loads in
+   // parallel with toolkit initialization instead of on first use.
+   gfx::InitializeGlobalFontConfigAsync();
+@@ -361,7 +361,7 @@ std::optional<int> ElectronMainDelegate::PreBrowserMai
  #if BUILDFLAG(IS_MAC)
    RegisterAtomCrApp();
  #endif

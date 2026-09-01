@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window.cc.orig	2026-08-18 19:28:27 UTC
+--- electron/shell/browser/native_window.cc.orig	2026-08-31 00:54:38 UTC
 +++ electron/shell/browser/native_window.cc
 @@ -33,7 +33,7 @@
  
@@ -9,7 +9,7 @@
  #include "shell/browser/ui/views/electron_frame_view_linux.h"
  #endif
  
-@@ -184,7 +184,7 @@ void NativeWindow::InitFromOptions(const gin_helper::D
+@@ -185,7 +185,7 @@ void NativeWindow::InitFromOptions(const gin_helper::D
    } else if (bool center; options.Get(options::kCenter, &center) && center) {
      Center();
    }
