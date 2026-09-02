@@ -19,6 +19,7 @@ libexec/appjail/ipcheck/ipcheck
 libexec/appjail/jexec/jexec
 libexec/appjail/network/network
 libexec/appjail/juexec/juexec
+libexec/appjail/mksock/mksock
 %%DATADIR%%/Isotype.png
 %%DATADIR%%/cmd/apply
 %%DATADIR%%/cmd/checkOld
