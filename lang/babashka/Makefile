@@ -1,8 +1,8 @@
 PORTNAME=	babashka
-DISTVERSION=	1.13.219
+DISTVERSION=	1.13.220
 CATEGORIES=	lang java linux
 MASTER_SITES=	https://github.com/babashka/babashka/releases/download/v${DISTVERSION}/
-DISTFILES_amd64=	babashka-${DISTVERSION}-linux-amd64-static.tar.gz
+DISTFILES_amd64=	babashka-${DISTVERSION}-linux-amd64.tar.gz
 DISTFILES_aarch64=	babashka-${DISTVERSION}-linux-aarch64-static.tar.gz
 
 MAINTAINER=	fox@FreeBSD.org
