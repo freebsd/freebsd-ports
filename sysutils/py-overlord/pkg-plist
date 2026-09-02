@@ -1,4 +1,4 @@
-@sample(root,wheel,064) etc/overlord.yml.sample
+@sample(root,wheel,0640) etc/overlord.yml.sample
 @dir /var/log/overlord
 libexec/overlord/safe-exc.sh
 libexec/overlord/vm-install-from-appjail-image.sh
