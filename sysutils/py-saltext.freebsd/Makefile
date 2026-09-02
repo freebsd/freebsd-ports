@@ -1,7 +1,8 @@
 PORTNAME=	saltext.freebsd
-DISTVERSION=	0.0.1
+DISTVERSION=	1.0.0
 DISTNAME=	saltext_freebsd-${DISTVERSION}
 CATEGORIES=	sysutils python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	asomers@FreeBSD.org
@@ -10,11 +11,6 @@ WWW=		https://pypi.org/project/saltext.freebsd/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	asomers
-GH_PROJECT=	saltext-freebsd
-GH_TAGNAME=	948b9b2959d61281515be17f151a17e294ea4dbc
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=50.3.2:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
@@ -28,7 +24,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}salt>=3008.0:sysutils/py-salt@${PY_FLAVOR}
 USES=		python:3.10+
 USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
-
-MAKE_ENV=       SETUPTOOLS_SCM_PRETEND_VERSION=${DISTVERSION}
 
 .include <bsd.port.mk>
