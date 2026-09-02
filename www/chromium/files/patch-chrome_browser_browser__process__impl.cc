@@ -1,4 +1,4 @@
---- chrome/browser/browser_process_impl.cc.orig	2026-08-31 10:59:09 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2026-09-02 06:36:52 UTC
 +++ chrome/browser/browser_process_impl.cc
 @@ -269,7 +269,7 @@ void OnLocalStatePrefsLoaded();
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
@@ -27,7 +27,7 @@
    os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
  }
-@@ -1567,7 +1567,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1571,7 +1571,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
            local_state(), /*force_protection_level=*/std::nullopt)));
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -36,7 +36,7 @@
    base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
    const auto password_store =
        cmd_line->GetSwitchValueASCII(password_manager::kPasswordStore);
-@@ -1908,7 +1908,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1912,7 +1912,7 @@ void BrowserProcessImpl::Unpin() {
  }
  
  // Mac is currently not supported.
