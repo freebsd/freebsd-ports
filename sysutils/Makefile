@@ -317,6 +317,7 @@
     SUBDIR += docker-machine
     SUBDIR += docker-registry
     SUBDIR += dockerbox
+    SUBDIR += dockerbox-broker
     SUBDIR += doctl
     SUBDIR += doinkd
     SUBDIR += downtimed
