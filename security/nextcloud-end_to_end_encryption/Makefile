@@ -1,5 +1,5 @@
 PORTNAME=	end_to_end_encryption
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
