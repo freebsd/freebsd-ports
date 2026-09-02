@@ -1,0 +1,5 @@
+TIMESTAMP = 1788274295
+SHA256 (go/sysutils_dockerbox-broker/dockerbox-broker-v0.1.0/v0.1.0.mod) = 5587f96eb67314c9bd4f5b3f775ad51a30dd2be96fcb52a836e5e7684a741507
+SIZE (go/sysutils_dockerbox-broker/dockerbox-broker-v0.1.0/v0.1.0.mod) = 96
+SHA256 (go/sysutils_dockerbox-broker/dockerbox-broker-v0.1.0/v0.1.0.zip) = 129c33b380bb1c9d4dd0e0e6eb5a119fef8f573a4a0a01277b74cd0f2fe748b7
+SIZE (go/sysutils_dockerbox-broker/dockerbox-broker-v0.1.0/v0.1.0.zip) = 19244
