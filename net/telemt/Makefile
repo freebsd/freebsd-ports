@@ -28,4 +28,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/config.toml ${STAGEDIR}${ETCDIR}/config.toml.sample
 	@${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == "i386"
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-i386-src_config_load_validate__web.rs
+.endif
+
 .include <bsd.port.mk>
