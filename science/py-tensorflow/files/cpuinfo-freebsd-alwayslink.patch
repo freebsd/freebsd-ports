@@ -1,7 +1,15 @@
 diff --git a/BUILD.bazel b/BUILD.bazel
 --- a/BUILD.bazel
 +++ b/BUILD.bazel
-@@ -182,6 +182,7 @@
+@@ -142,6 +142,7 @@
+         ":macos_x86_64_legacy": COMMON_SRCS + X86_SRCS + MACH_SRCS + MACH_X86_SRCS,
+         ":macos_arm64": COMMON_SRCS + MACH_SRCS + MACH_ARM_SRCS,
+         ":freebsd_x86_64": COMMON_SRCS + X86_SRCS + FREEBSD_SRCS + FREEBSD_X86_SRCS,
++        ":freebsd_ppc64le": COMMON_SRCS + FREEBSD_SRCS,
+         ":windows_x86_64": COMMON_SRCS + X86_SRCS + WINDOWS_X86_SRCS,
+         ":windows_arm64": COMMON_SRCS + ARM_SRCS + WINDOWS_ARM_SRCS,
+         ":android_armv7": COMMON_SRCS + ARM_SRCS + LINUX_SRCS + LINUX_ARM32_SRCS + ANDROID_ARM_SRCS,
+@@ -182,6 +183,7 @@
          ":macos_x86_64_legacy": False,
          "//conditions:default": True,
      }),
@@ -9,3 +17,20 @@ diff --git a/BUILD.bazel b/BUILD.bazel
      # Headers must be in textual_hdrs to allow us to set the standard to C99
      textual_hdrs = [
          "include/cpuinfo.h",
+@@ -482,7 +484,16 @@
+ 
+ config_setting(
+     name = "freebsd_x86_64",
++    constraint_values = ["@platforms//cpu:x86_64"],
+     values = {
+         "cpu": "freebsd",
+     },
+ )
++
++config_setting(
++    name = "freebsd_ppc64le",
++    constraint_values = ["@platforms//cpu:ppc"],
++    values = {
++        "cpu": "freebsd",
++    },
++)
