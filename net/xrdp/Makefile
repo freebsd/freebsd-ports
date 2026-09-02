@@ -1,6 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSION=	0.10.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/neutrinolabs/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -71,8 +71,8 @@ OPUS_CONFIGURE_ENABLE=		opus
 X264_LIB_DEPENDS=		libx264.so:multimedia/libx264
 X264_CONFIGURE_ENABLE=		x264
 
-GROUP=		_xrdp
-USER=		_xrdp
+GROUPS=		_xrdp
+USERS=		_xrdp
 
 .include <bsd.port.pre.mk>
 
