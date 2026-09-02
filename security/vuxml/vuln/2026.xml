@@ -1,3 +1,54 @@
+  <vuln vid="1ee62c05-a646-11f1-b187-901b0edee044">
+    <topic>py-strawberry-graphql -- Incorrect authorization</topic>
+    <affects>
+    <package>
+      <name>py310-strawberry-graphql</name>
+      <name>py311-strawberry-graphql</name>
+      <name>py312-strawberry-graphql</name>
+      <name>py313-strawberry-graphql</name>
+      <name>py313t-strawberry-graphql</name>
+      <name>py314-strawberry-graphql</name>
+      <name>py314t-strawberry-graphql</name>
+      <name>py315-strawberry-graphql</name>
+      <range><lt>0.326.1</lt></range>
+    </package>
+    <package>
+      <name>py312-dj60-strawberry-graphql</name>
+      <name>py313-dj60-strawberry-graphql</name>
+      <name>py313t-dj60-strawberry-graphql</name>
+      <name>py314-dj60-strawberry-graphql</name>
+      <name>py314t-dj60-strawberry-graphql</name>
+      <name>py315-dj60-strawberry-graphql</name>
+      <range><lt>0.326.1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Patrick Arminio reports:</p>
+	<blockquote cite="https://github.com/strawberry-graphql/strawberry/security/advisories/GHSA-pfvf-fwfp-25mp">
+	<p>"PermissionExtension.resolve()" evaluates the return value of
+	"has_permission()" for truthiness on the synchronous path. "supports_sync" only
+	classifies a permission as asynchronous when "has_permission" is declared with
+	"async def" (via "inspect.iscoroutinefunction"), so a plain "def" that returns
+	an awaitable is treated as synchronous. An awaitable is always truthy, so the
+	check passes even when it resolves to "False" and the protected resolver runs.
+
+	The resolve path is chosen by the field resolver, not by the execution method,
+	so any field with a synchronous resolver is affected under both
+	"execute_sync()" and "execute()". Permissions declared with "async def
+	has_permission()", or a plain "def" returning a boolean, are not affected.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/strawberry-graphql/strawberry/security/advisories/GHSA-pfvf-fwfp-25mp</url>
+    </references>
+    <dates>
+      <discovery>2026-09-01</discovery>
+      <entry>2026-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="19d0eaf5-a698-11f1-bf98-a8a1599412c6">
     <topic>chromium -- security fixes</topic>
     <affects>
