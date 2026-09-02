@@ -1,6 +1,5 @@
 PORTNAME=	liferea
-DISTVERSION=	2.0
-PORTREVISION=	1
+DISTVERSION=	2.0.1
 CATEGORIES=	net gnome
 MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${DISTVERSION}/
 
@@ -15,6 +14,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
+		libdbus-1.so:devel/dbus \
 		libharfbuzz.so:print/harfbuzz \
 		libsoup-3.0.so:devel/libsoup3 \
 		libwebkitgtk-6.0.so:www/webkit2-gtk@60 \

@@ -4,8 +4,6 @@ lib/liferea/plugins/README.md
 lib/liferea/plugins/add-bookmark-site.plugin
 lib/liferea/plugins/add-bookmark-site.py
 lib/liferea/plugins/add-bookmark-site.ui
-lib/liferea/plugins/bold-unread.plugin
-lib/liferea/plugins/bold-unread.py
 lib/liferea/plugins/download-manager.plugin
 lib/liferea/plugins/download-manager.py
 lib/liferea/plugins/download-manager.ui
