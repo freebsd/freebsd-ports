@@ -1,7 +1,7 @@
 PORTNAME=	unicorn
-PORTVERSION=	2.0.1p1
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	emulators python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -10,22 +10,22 @@ WWW=		https://www.unicorn-engine.org/
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libunicorn.so:emulators/unicorn
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+		${LOCALBASE}/lib/libunicorn.so:emulators/unicorn
 RUN_DEPENDS=	${LOCALBASE}/lib/libunicorn.so:emulators/unicorn
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	unicorn-engine
-GH_TAGNAME=	2.0.1.post1
-
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
-WRKSRC_SUBDIR=	bindings/python
+MAKE_ENV=	LIBUNICORN_PATH=${LOCALBASE}/lib/libunicorn.so
+TEST_WRKSRC=	${WRKSRC}/tests
 
 do-test:
-	@(cd ${WRKSRC}; for sample in sample_*.py; do \
-		${SETENV} ${TEST_ENV} ${PYTHON_CMD} $${sample}; \
+	@(cd ${TEST_WRKSRC}; for t in test_*.py; do \
+		${SETENV} ${TEST_ENV} ${PYTHON_CMD} $${t}; \
 	done)
 
 .include <bsd.port.mk>
