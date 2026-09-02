@@ -1,5 +1,8 @@
 PORTNAME=	strawberry-graphql
-DISTVERSION=	0.324.0
+# Upstream releases updates relatively frequently, so this port is usually
+# updated along with its py-strawberry-graphql counterpart whenever a new
+# version of net-mgmt/netbox is released.
+DISTVERSION=	0.327.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj60-
@@ -48,11 +51,11 @@ ASGI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}multipart>=0.0.7:devel/py-multipart@${
 CHANNELS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}asgiref>=3.2:www/py-asgiref@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}dj60-channels>=4.0.0:www/py-dj60-channels@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}django60>=5.2:www/py-django60@${PY_FLAVOR}
-CLI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>0:devel/py-libcst@${PY_FLAVOR} \
+CLI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>=1.9.0:devel/py-libcst@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pygments>=2.3:textproc/py-pygments@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}rich>=12.0.0:textproc/py-rich@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}typer>=0.12.4:devel/py-typer@${PY_FLAVOR}
-DEBUG_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>0:devel/py-libcst@${PY_FLAVOR} \
+DEBUG_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>=1.9.0:devel/py-libcst@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}rich>=12.0.0:textproc/py-rich@${PY_FLAVOR}
 # NB: www/py-channels (via CHANNELS) options depends on www/py-djangoXX, which
 # should be taken into account when creating a port for a specific Django version.
