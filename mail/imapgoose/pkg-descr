@@ -1,0 +1,17 @@
+ImapGoose is a daemon that keeps local maildir-format directories in
+sync with a mail server over IMAP. It is similar to OfflineIMAP, but
+relies on the modern IMAP extensions to efficiently keep everything
+synchronized without the need for periodic polling.
+
+It implements the same general synchronisation algorithm as OfflineIMAP [0].
+And also listens to NOTIFY events for real-time server notifications of changes.
+
+Features:
+
+- Bidirectional synchronisation using the same algorithm as offlineimap.
+- Automatic mailbox discovery: synchronises all mailboxes on the server.
+- Real-time updates using IMAP NOTIFY for instant email synchronisation.
+- Daemon mode for continuous synchronisation.
+- Concurrent syncing of multiple accounts and all mailboxes.
+
+[0] https://blog.ezyang.com/2012/08/how-offlineimap-works/

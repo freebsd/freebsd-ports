@@ -167,6 +167,7 @@
     SUBDIR += imap-tools
     SUBDIR += imapdedup
     SUBDIR += imapfilter
+    SUBDIR += imapgoose
     SUBDIR += imapsync
     SUBDIR += imaptools
     SUBDIR += imaputils

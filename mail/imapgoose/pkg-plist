@@ -1,0 +1,3 @@
+bin/imapgoose
+share/man/man1/imapgoose.1.gz
+share/man/man5/imapgoose.conf.5.gz
