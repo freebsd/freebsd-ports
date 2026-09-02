@@ -29,6 +29,11 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*django-rq
 
 NO_ARCH=	yes
 
+# The 4.2 release contains breaking changes and the only consumer,
+# net-mgmt/netbox, won't be compatible with newer versions until the
+# upcoming 4.7.x release.
+PORTSCOUT=	limit:4\.1\.
+
 # https://github.com/rq/django-rq/blob/master/Makefile
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${LOCALBASE}/bin/django-admin test django_rq --settings=django_rq.tests.settings -v2
