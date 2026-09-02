@@ -13,7 +13,7 @@
  RANLIB			= ranlib
  
  CPU_ARCH		= $(OS_TEST)
-@@ -20,7 +20,17 @@ endif
+@@ -20,7 +20,29 @@ endif
  ifeq ($(CPU_ARCH),amd64)
  CPU_ARCH		= x86_64
  endif
@@ -26,6 +26,18 @@
  
 +ifneq (,$(findstring 64,$(OS_TEST)))
 +USE_64			= 1
++endif
++
++# Test toolchain for endianness copying what coreconf/Linux.mk does to avoid
++# ld: error: duplicate symbol: platform_ghash_support
++# https://github.com/mozilla/nss/blob/NSS_3_128_RTM/coreconf/Linux.mk#L191-L197
++# https://phabricator.services.mozilla.com/D303870
++# https://github.com/mozilla/nss/commit/e57221034e01373bd1b6a5cd654796b1ec89a915
++ENDIANNESS := $(shell echo | $(CC) -dM -E - | grep __BYTE_ORDER__)
++ifeq ($(findstring __ORDER_LITTLE_ENDIAN__,$(ENDIANNESS)),__ORDER_LITTLE_ENDIAN__)
++    LITTLE_ENDIAN := 1
++else
++    LITTLE_ENDIAN := 0
 +endif
 +
  OS_CFLAGS		= $(DSO_CFLAGS) -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
