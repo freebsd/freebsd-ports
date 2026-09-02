@@ -1,7 +1,7 @@
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	0
+PKGNAMESUFFIX=	2
 
 COMMENT=	Pythonic bindings for the notmuch mail database using CFFI
 

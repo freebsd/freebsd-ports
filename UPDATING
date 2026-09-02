@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260902:
+  AFFECTS: users of mail/py-notmuch2
+  AUTHOR: jrm@FreeBSD.org
+
+  The package built from mail/py-notmuch2 has been renamed from
+  py312-notmuch0 to py312-notmuch2 to match the upstream name of the
+  CFFI-based Python bindings.  The 0 suffix was an editing error
+  introduced in 2021.  The port origin is unchanged, but installed
+  packages will not be upgraded automatically across the rename.  If
+  py312-notmuch0 is installed, run
+
+	pkg set -n py312-notmuch0:py312-notmuch2
+
+  before your next upgrade, or deinstall the old package and install
+  mail/py-notmuch2 again.  Substitute the py312 prefix if you use a
+  different Python version.
+
 20260830:
   AFFECTS: users of www/nginx-module-lua
   AUTHOR: joneum@FreeBSD.org
