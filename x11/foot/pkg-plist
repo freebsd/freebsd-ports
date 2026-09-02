@@ -18,6 +18,7 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/aeroroot
 %%DATADIR%%/themes/alacritty
 %%DATADIR%%/themes/apprentice
+%%DATADIR%%/themes/ayu-dark
 %%DATADIR%%/themes/ayu-mirage
 %%DATADIR%%/themes/catppuccin-frappe
 %%DATADIR%%/themes/catppuccin-latte
@@ -29,6 +30,7 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/dracula
 %%DATADIR%%/themes/dracula-iterm
 %%DATADIR%%/themes/electrophoretic
+%%DATADIR%%/themes/ferra
 %%DATADIR%%/themes/gruvbox
 %%DATADIR%%/themes/gruvbox-dark
 %%DATADIR%%/themes/gruvbox-light
