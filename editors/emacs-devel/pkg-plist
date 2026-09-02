@@ -2068,6 +2068,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-util.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-var.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-var.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-worker.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-worker.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/eshell.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/eshell.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/expand.el.gz
