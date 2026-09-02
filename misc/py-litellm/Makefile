@@ -1,6 +1,5 @@
 PORTNAME=	litellm
-DISTVERSION=	1.98.0
-PORTREVISION=	1
+DISTVERSION=	1.99.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -75,7 +74,7 @@ PROXY_RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}azure-identity>=1.25.2<2.0:devel/py-azure-identity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-storage-blob>=12.28.0<13.0:devel/py-azure-storage-blob@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mcp>=1.28.1<3.0:misc/py-mcp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}litellm-proxy-extras>=0.4.86:misc/py-litellm-proxy-extras@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}litellm-proxy-extras>=0.4.89:misc/py-litellm-proxy-extras@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.9.4<16.0:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}polars>=1.38.1<2.0:misc/py-polars@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}soundfile>=0.12.1<1.0:audio/py-SoundFile@${PY_FLAVOR} \

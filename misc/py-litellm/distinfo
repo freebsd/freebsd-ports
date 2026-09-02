@@ -1,6 +1,6 @@
-TIMESTAMP = 1787555130
-SHA256 (litellm-1.98.0.tar.gz) = 0e6ba5d645a73ca6d0ffb4e8ec539d94b6e8fad691f2a54c6819011e6d0de8bf
-SIZE (litellm-1.98.0.tar.gz) = 17577139
+TIMESTAMP = 1788315595
+SHA256 (litellm-1.99.0.tar.gz) = 594bf4b6ff6b79c6aa3c3b78c0e939d4afd12687e076ba3fb608d38a5aa7f9c6
+SIZE (litellm-1.99.0.tar.gz) = 16786386
 SHA256 (rust/crates/arc-swap-1.9.2.crate) = c049c0be4daef0b145cb3555416b3b8ef5b7888a38aea1a3a155801fe7b0810b
 SIZE (rust/crates/arc-swap-1.9.2.crate) = 81495
 SHA256 (rust/crates/async-trait-0.1.91.crate) = ae36dc4177970ef04fde5178d3e2429882def40e57a451f919c098f72baa6cec
