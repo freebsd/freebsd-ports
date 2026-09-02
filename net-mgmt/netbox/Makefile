@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.9
+DISTVERSION=	4.6.10
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -42,8 +42,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.8<6.1:www/py-django60@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj60-drf-spectacular-sidecar>=2026.8.1:www/py-dj60-drf-spectacular-sidecar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-social-auth-app-django>=5.9.0<6:www/py-dj60-social-auth-app-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-sorl-thumbnail>=13.1.0<14:graphics/py-dj60-sorl-thumbnail@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-strawberry-graphql>=0.324.0<1:devel/py-dj60-strawberry-graphql@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-strawberry-graphql-django>=0.87.0<1:www/py-dj60-strawberry-graphql-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-strawberry-graphql>=0.327.0<1:devel/py-dj60-strawberry-graphql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-strawberry-graphql-django>=0.88.0<1:www/py-dj60-strawberry-graphql-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6<1:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.12<7:textproc/py-feedparser@${PY_FLAVOR} \
@@ -53,7 +53,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.8<6.1:www/py-django60@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}mkdocs>=1.6.1<2:textproc/py-mkdocs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.7.7<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=1.0.6<2:textproc/py-mkdocstrings@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=2.0.7:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=2.0.8:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=1.3.0<2:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nh3>=0.3.7<1:www/py-nh3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=11.3.0:graphics/py-pillow@${PY_FLAVOR} \
@@ -62,7 +62,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.8<6.1:www/py-django60@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}psycopg-pool>=3.3.0<4:databases/py-psycopg-pool@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}redis>=7.4.0<8:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.34.2<3:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rq>=2.11<3:devel/py-rq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rq>=2.12<3:devel/py-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core4>=4.8.7<4.9.0:security/py-social-auth-core4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.10.0<4:textproc/py-tablib@${PY_FLAVOR} \
