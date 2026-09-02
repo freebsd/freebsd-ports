@@ -1,6 +1,6 @@
---- src/Build/Include/Makefile.inc	2025-06-07 16:38:57.314038000 -0700
-+++ src/Build/Include/Makefile.inc	2025-06-07 16:41:54.192457000 -0700
-@@ -26,19 +26,35 @@
+--- src/Build/Include/Makefile.inc.orig	2026-06-09 10:55:00 UTC
++++ src/Build/Include/Makefile.inc
+@@ -26,23 +26,43 @@ clean:
  	
  %.osse41: %.c
  	@echo Compiling $(<F)
@@ -32,6 +32,14 @@
 +	$(CC) $(CFLAGS) -c $< -o $@
 +else
  	$(CC) $(CFLAGS) -mssse3 -c $< -o $@
++endif
+ 
+ %.oavx2: %.c
+ 	@echo Compiling $(<F)
++ifeq "$(PLATFORM_ARCH)" "arm64"
++	$(CC) $(CFLAGS) -c $< -o $@
++else
+ 	$(CC) $(CFLAGS) -mavx2 -c $< -o $@
 +endif
  
  %.oarmv8crypto: %.c
