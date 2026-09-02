@@ -1,3 +1,72 @@
+  <vuln vid="102bc631-a6da-11f1-ba21-00e0edd85c6a">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>jenkins</name>
+	<range><lt>2.580</lt></range>
+    </package>
+    <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.568.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory 2026-09-02:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2026-09-02/">
+	  <ul>
+	    <li>(High) SECURITY-3972 / CVE-2026-84645: Deserialization
+	    vulnerability</li>
+	    <li>(Medium) SECURITY-3908 / CVE-2026-84646: Lack of type
+	    restriction in deserialization</li>
+	    <li>(High) SECURITY-3915 / CVE-2026-84647: Instantiation of any
+	    types related to configuration</li>
+	    <li>(High) SECURITY-3967 / CVE-2026-84648: Stored XSS
+	    vulnerability in system log viewer</li>
+	    <li>(High) SECURITY-3878 / CVE-2026-84649: Cross-origin exposure
+	    of CSRF token</li>
+	    <li>(High) SECURITY-4032 / CVE-2026-84650: Unsafe deserialization
+	    allows overwriting configuration</li>
+	    <li>(Medium) SECURITY-4025 / CVE-2026-84651: Unsafe
+	    deserialization allows overwriting other agents</li>
+	    <li>(High) SECURITY-4016 / CVE-2026-84652: Session fixation
+	    vulnerability</li>
+	    <li>(Medium) SECURITY-3981 / CVE-2026-84653: Incorrect permission
+	    check in Appearance configuration page</li>
+	    <li>(Medium) SECURITY-3926 / CVE-2026-84654: Form submission data
+	    binding can set static fields</li>
+	    <li>(Medium) SECURITY-3879 / CVE-2026-84655: Injection
+	    vulnerability in REST API</li>
+	    <li>(Medium) SECURITY-4006 / CVE-2026-84656: Missing permission
+	    check allows reading build parameters</li>
+	    <li>(Medium) SECURITY-4015 / CVE-2026-84657: Missing permission
+	    check allows canceling builds</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-84645</cvename>
+      <cvename>CVE-2026-84646</cvename>
+      <cvename>CVE-2026-84647</cvename>
+      <cvename>CVE-2026-84648</cvename>
+      <cvename>CVE-2026-84649</cvename>
+      <cvename>CVE-2026-84650</cvename>
+      <cvename>CVE-2026-84651</cvename>
+      <cvename>CVE-2026-84652</cvename>
+      <cvename>CVE-2026-84653</cvename>
+      <cvename>CVE-2026-84654</cvename>
+      <cvename>CVE-2026-84655</cvename>
+      <cvename>CVE-2026-84656</cvename>
+      <cvename>CVE-2026-84657</cvename>
+      <url>https://www.jenkins.io/security/advisory/2026-09-02/</url>
+    </references>
+    <dates>
+      <discovery>2026-09-02</discovery>
+      <entry>2026-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ee62c05-a646-11f1-b187-901b0edee044">
     <topic>py-strawberry-graphql -- Incorrect authorization</topic>
     <affects>
