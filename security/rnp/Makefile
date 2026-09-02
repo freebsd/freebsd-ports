@@ -1,6 +1,7 @@
 PORTNAME=	rnp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/rnpgp/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 
