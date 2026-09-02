@@ -1,6 +1,5 @@
 PORTNAME=	gumbo
-DISTVERSION=	0.13.2
-PORTREVISION=	2
+DISTVERSION=	0.14.0
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://codeberg.org/gumbo-parser/gumbo-parser/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy/
 
