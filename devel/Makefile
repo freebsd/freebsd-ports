@@ -8652,7 +8652,6 @@
     SUBDIR += serdisplib
     SUBDIR += serialize
     SUBDIR += sfl-library
-    SUBDIR += sfml
     SUBDIR += sfsexp
     SUBDIR += sgb
     SUBDIR += shadered
