@@ -1,6 +1,6 @@
 PORTNAME=	rustconn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.2
+DISTVERSION=	0.21.4
 PORTREVISION=	0
 CATEGORIES=	net
 
@@ -17,6 +17,8 @@ LICENSE_TEXT_CDLA20=	See https://cdla.dev/permissive-2-0/
 LICENSE_TEXT_UNICODE=	See https://www.unicode.org/copyright.html
 LICENSE_PERMS_CDLA20=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_UNICODE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+BROKEN_i386=	does not compile
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
