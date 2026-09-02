@@ -1,4 +1,4 @@
-TIMESTAMP = 1788047934
+TIMESTAMP = 1788339739
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/actix-codec-0.5.2.crate) = 5f7b0a21988c1bf877cf4759ef5ddaac04c1c9fe808c9142ecb78ba97d97a28a
@@ -2433,5 +2433,5 @@ SHA256 (openai-oss-forks-tokio-tungstenite-0e5b2d73aa18dd9f0a50ee9ff199d5aef7594
 SIZE (openai-oss-forks-tokio-tungstenite-0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186_GH0.tar.gz) = 33055
 SHA256 (notify-rs-notify-48415246732dc426577684bf03c558579cf0b081_GH0.tar.gz) = f18d07b616d78d563a125dc3f76326e7350f6d0853b72eb65be93782620f7904
 SIZE (notify-rs-notify-48415246732dc426577684bf03c558579cf0b081_GH0.tar.gz) = 197130
-SHA256 (openai-codex-rust-v0.151.0_GH0.tar.gz) = 17f37b9c2f98e00ce297b813355a1b41cd22882c3def89be84a250069bff0a02
-SIZE (openai-codex-rust-v0.151.0_GH0.tar.gz) = 12882074
+SHA256 (openai-codex-rust-v0.152.1_GH0.tar.gz) = 53483600ae6a954f54c8112aae7702a63078112b7fda35ff0c2685d4a39a5856
+SIZE (openai-codex-rust-v0.152.1_GH0.tar.gz) = 13063579

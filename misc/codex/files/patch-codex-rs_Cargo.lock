@@ -1,6 +1,6 @@
---- codex-rs/Cargo.lock.orig	2026-08-29 09:11:57 UTC
+--- codex-rs/Cargo.lock.orig	2026-09-01 21:48:03 UTC
 +++ codex-rs/Cargo.lock
-@@ -6632,15 +6632,6 @@ checksum = "42703706b716c37f96a77aea830392ad231f44c9e9
+@@ -6651,15 +6651,6 @@ checksum = "42703706b716c37f96a77aea830392ad231f44c9e9
  checksum = "42703706b716c37f96a77aea830392ad231f44c9e9a67872fa5548707e11b11c"
  
  [[package]]
@@ -16,7 +16,7 @@
  name = "fslock"
  version = "0.2.1"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -8646,9 +8637,9 @@ name = "inotify"
+@@ -8665,9 +8656,9 @@ name = "inotify"
  
  [[package]]
  name = "inotify"
@@ -28,7 +28,7 @@
  dependencies = [
   "bitflags 2.13.1",
   "inotify-sys",
-@@ -8657,9 +8648,9 @@ name = "inotify-sys"
+@@ -8676,9 +8667,9 @@ name = "inotify-sys"
  
  [[package]]
  name = "inotify-sys"
@@ -40,7 +40,7 @@
  dependencies = [
   "libc",
  ]
-@@ -9005,9 +8996,9 @@ name = "kqueue"
+@@ -9024,9 +9015,9 @@ name = "kqueue"
  
  [[package]]
  name = "kqueue"
@@ -52,7 +52,7 @@
  dependencies = [
   "kqueue-sys",
   "libc",
-@@ -9015,11 +9006,11 @@ name = "kqueue-sys"
+@@ -9034,11 +9025,11 @@ name = "kqueue-sys"
  
  [[package]]
  name = "kqueue-sys"
@@ -67,7 +67,7 @@
   "libc",
  ]
  
-@@ -9619,27 +9610,27 @@ name = "notify"
+@@ -9638,27 +9629,27 @@ name = "notify"
  
  [[package]]
  name = "notify"
@@ -102,7 +102,7 @@
  dependencies = [
   "bitflags 2.13.1",
  ]
-@@ -9895,6 +9886,16 @@ dependencies = [
+@@ -9914,6 +9905,16 @@ dependencies = [
  ]
  
  [[package]]
@@ -119,7 +119,7 @@
  name = "objc2-core-text"
  version = "0.3.2"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -16154,6 +16155,12 @@ checksum = "66fee0b777b0f5ac1c69bb06d361268faafa61cd46
+@@ -16173,6 +16174,12 @@ checksum = "66fee0b777b0f5ac1c69bb06d361268faafa61cd46
  version = "0.13.6"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "66fee0b777b0f5ac1c69bb06d361268faafa61cd4682ae064a171c16c433e9e4"
