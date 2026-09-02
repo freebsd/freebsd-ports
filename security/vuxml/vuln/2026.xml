@@ -1,3 +1,86 @@
+  <vuln vid="19d0eaf5-a698-11f1-bf98-a8a1599412c6">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>152.0.7977.75</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>152.0.7977.75</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop.html">
+	 <p>This update includes 26 security fixes:</p>
+	 <ul>
+	    <li>[522307103] Critical CVE-2026-84353: Use after free in Shared Tab Groups.</li>
+	    <li>[546260492] Critical CVE-2026-84352: Use after free in WebGL.</li>
+	    <li>[498839176] High CVE-2026-84354: Incorrect authorization in FileSystem.</li>
+	    <li>[514078656] High CVE-2026-84359: Information leak in Skia.</li>
+	    <li>[523208474] High CVE-2026-84357: Improper input validation in Omnibox.</li>
+	    <li>[533534913] High CVE-2026-84324: Use after free in Proxy.</li>
+	    <li>[537105664] High CVE-2026-84349: Use after free in Browser.</li>
+	    <li>[547936520] High CVE-2026-84326: Uninitialized resource in V8.</li>
+	    <li>[549311485] High CVE-2026-84333: Use after free in Dawn.</li>
+	    <li>[551593376] High CVE-2026-84351: Buffer overflow in GPU.</li>
+	    <li>[553117928] High CVE-2026-84325: Improper input validation in DataTransfer.</li>
+	    <li>[498710886] Medium CVE-2026-84328: Missing authorization in FileSystem.</li>
+	    <li>[501679156] Medium CVE-2026-84347: Use after free in WebRTC.</li>
+	    <li>[502411391] Medium CVE-2026-84323: Missing authorization in FileSystem.</li>
+	    <li>[511774376] Medium CVE-2026-84355: Incorrect authorization in Navigation.</li>
+	    <li>[514006886] Medium CVE-2026-84358: Improper privilege management in Downloads.</li>
+	    <li>[514489238] Medium CVE-2026-84332: Incorrect authorization in SiteSettings.</li>
+	    <li>[517091927] Medium CVE-2026-84330: UI misrepresentation in FullScreen.</li>
+	    <li>[517798926] Medium CVE-2026-84334: Incorrect authorization in Chromoting.</li>
+	    <li>[518100026] Medium CVE-2026-84348: Information leak in MediaCapture.</li>
+	    <li>[522302504] Medium CVE-2026-84335: Incorrect authorization in TabStrip.</li>
+	    <li>[498725213] Low CVE-2026-84327: Incorrect authorization in Autofill.</li>
+	    <li>[498850269] Low CVE-2026-84329: Confused deputy in CredentialProvider.</li>
+	    <li>[503787232] Low CVE-2026-84356: UI misrepresentation in FullScreen.</li>
+	    <li>[513713427] Low CVE-2026-84350: Use after free in TabStrip.</li>
+	    <li>[521753402] Low CVE-2026-84331: Incorrect authorization in Actor.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-84353</cvename>
+      <cvename>CVE-2026-84352</cvename>
+      <cvename>CVE-2026-84354</cvename>
+      <cvename>CVE-2026-84359</cvename>
+      <cvename>CVE-2026-84357</cvename>
+      <cvename>CVE-2026-84324</cvename>
+      <cvename>CVE-2026-84349</cvename>
+      <cvename>CVE-2026-84326</cvename>
+      <cvename>CVE-2026-84333</cvename>
+      <cvename>CVE-2026-84351</cvename>
+      <cvename>CVE-2026-84325</cvename>
+      <cvename>CVE-2026-84328</cvename>
+      <cvename>CVE-2026-84347</cvename>
+      <cvename>CVE-2026-84323</cvename>
+      <cvename>CVE-2026-84355</cvename>
+      <cvename>CVE-2026-84358</cvename>
+      <cvename>CVE-2026-84332</cvename>
+      <cvename>CVE-2026-84330</cvename>
+      <cvename>CVE-2026-84334</cvename>
+      <cvename>CVE-2026-84348</cvename>
+      <cvename>CVE-2026-84335</cvename>
+      <cvename>CVE-2026-84327</cvename>
+      <cvename>CVE-2026-84329</cvename>
+      <cvename>CVE-2026-84356</cvename>
+      <cvename>CVE-2026-84350</cvename>
+      <cvename>CVE-2026-84331</cvename>
+      <url>https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2026-09-01</discovery>
+      <entry>2026-09-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f55676d9-a65f-11f1-a49c-00a0980083d7">
     <topic>giflib -- Buffer Overflow vulnerability</topic>
     <affects>
