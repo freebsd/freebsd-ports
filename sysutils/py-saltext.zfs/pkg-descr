@@ -1,3 +1,4 @@
 saltext-zfs: Integrate Salt with ZFS
 
-Salt Extension for interacting with ZFS
+Salt Extension for interacting with ZFS.  Contains modules and states that were
+formerly part of Salt 3006 but are now distributed separately.
