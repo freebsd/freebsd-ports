@@ -1,7 +1,6 @@
 PORTNAME=	docker-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	29.4.2
-PORTREVISION=	4
+DISTVERSION=	29.7.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	leafoliage@FreeBSD.org
@@ -17,9 +16,7 @@ GH_PROJECT=	cli
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	${GO_PKGNAME}/cmd/docker
-#TAG_HASH!=	fetch -qo - https://api.github.com/repos/docker/cli/git/ref/tags/${DISTVERSIONPREFIX}${PORTVERSION} | grep -oE '"[a-f0-9]*"' | cut -c 2-41
-#COMMIT_HASH!=	fetch -qo - https://api.github.com/repos/docker/cli/git/tags/${TAG_HASH} | grep -oE '"object":\{"sha":"[a-f0-9]*"' | grep -oE '"[a-f0-9]*"' | cut -c 2-8
-COMMIT_HASH=	055a478
+COMMIT_HASH=	a7dcaa6
 GO_BUILDFLAGS=	-ldflags "\
 		-X github.com/docker/cli/cli/version.Version=${PORTVERSION} \
 		-X github.com/docker/cli/cli/version.GitCommit=${COMMIT_HASH}"
