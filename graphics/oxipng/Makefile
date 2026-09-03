@@ -1,6 +1,6 @@
 PORTNAME=	oxipng
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.2.0 # check and apply ${FILESDIR}/patch-man before generating cargo-crates list for missing mangen deps
+DISTVERSION=	10.2.1 # Merge cargo-crates list from main and xtask Cargo.lock(s) to build manpage
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
