@@ -1,6 +1,6 @@
 PORTNAME=	healthchecks
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3
+DISTVERSION=	4.4
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -47,9 +47,9 @@ HEALTHCHECKS_HOMEDIR=	/var/db/${PORTNAME}
 
 ALL_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosmtpd>=0:mail/py-aiosmtpd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cronsim>=0:devel/py-cronsim@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django60>=0:www/py-django60@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django61>=0:www/py-django61@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django_compressor>=0:www/py-django_compressor@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-django-stubs-ext>0:www/py-dj60-django-stubs-ext@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj61-django-stubs-ext>0:www/py-dj61-django-stubs-ext@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fido2>0:security/py-fido2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oncalendar>=0:devel/py-oncalendar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg>=0:databases/py-psycopg@${PY_FLAVOR} \

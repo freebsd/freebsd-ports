@@ -180,6 +180,7 @@ bin/hcks
 %%HOMEDIR%%/hc/accounts/tests/__pycache__/test_remove_project%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/accounts/tests/__pycache__/test_remove_totp%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/accounts/tests/__pycache__/test_senddeletionscheduled%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/accounts/tests/__pycache__/test_sendflappingnotices%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/accounts/tests/__pycache__/test_sendinactivitynotices%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/accounts/tests/__pycache__/test_set_password%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/accounts/tests/__pycache__/test_signup%%PYTHON_TAG%%.opt-1.pyc
@@ -211,6 +212,7 @@ bin/hcks
 %%HOMEDIR%%/hc/accounts/tests/test_remove_project.py
 %%HOMEDIR%%/hc/accounts/tests/test_remove_totp.py
 %%HOMEDIR%%/hc/accounts/tests/test_senddeletionscheduled.py
+%%HOMEDIR%%/hc/accounts/tests/test_sendflappingnotices.py
 %%HOMEDIR%%/hc/accounts/tests/test_sendinactivitynotices.py
 %%HOMEDIR%%/hc/accounts/tests/test_set_password.py
 %%HOMEDIR%%/hc/accounts/tests/test_signup.py
@@ -666,7 +668,6 @@ bin/hcks
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_update_name%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_update_timeout%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_validate_schedule%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_verify_email%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_webhook_validator%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/test_add_check.py
 %%HOMEDIR%%/hc/front/tests/test_asciitable_tag.py
@@ -708,7 +709,6 @@ bin/hcks
 %%HOMEDIR%%/hc/front/tests/test_update_name.py
 %%HOMEDIR%%/hc/front/tests/test_update_timeout.py
 %%HOMEDIR%%/hc/front/tests/test_validate_schedule.py
-%%HOMEDIR%%/hc/front/tests/test_verify_email.py
 %%HOMEDIR%%/hc/front/tests/test_webhook_validator.py
 %%HOMEDIR%%/hc/front/urls.py
 %%HOMEDIR%%/hc/front/validators.py
@@ -793,10 +793,12 @@ bin/hcks
 %%HOMEDIR%%/hc/integrations/email/tests/__pycache__/test_edit%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/integrations/email/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/integrations/email/tests/__pycache__/test_unsubscribe%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/tests/__pycache__/test_verify%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/integrations/email/tests/test_add.py
 %%HOMEDIR%%/hc/integrations/email/tests/test_edit.py
 %%HOMEDIR%%/hc/integrations/email/tests/test_notify.py
 %%HOMEDIR%%/hc/integrations/email/tests/test_unsubscribe.py
+%%HOMEDIR%%/hc/integrations/email/tests/test_verify.py
 %%HOMEDIR%%/hc/integrations/email/transport.py
 %%HOMEDIR%%/hc/integrations/email/urls.py
 %%HOMEDIR%%/hc/integrations/email/views.py
@@ -1218,7 +1220,6 @@ bin/hcks
 %%HOMEDIR%%/hc/integrations/slack/static/img/add_to_slack.png
 %%HOMEDIR%%/hc/integrations/slack/static/img/add_to_slack@2x.png
 %%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_1.png
-%%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_2.png
 %%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_btn_0.png
 %%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_btn_1.png
 %%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_btn_2.png
@@ -1557,6 +1558,8 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/css/output.27d9190db11c.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.27fed4d96071.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.27fed4d96071.css.gz
+%%HOMEDIR%%/static-collected/CACHE/css/output.30687faff3bd.css
+%%HOMEDIR%%/static-collected/CACHE/css/output.30687faff3bd.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.338a92d956e0.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.338a92d956e0.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.340120f93934.css
@@ -1607,8 +1610,6 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/css/output.ba3a60f23b9a.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.be44bcfea48a.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.be44bcfea48a.css.gz
-%%HOMEDIR%%/static-collected/CACHE/css/output.c2d1279dce0e.css
-%%HOMEDIR%%/static-collected/CACHE/css/output.c2d1279dce0e.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.c61919d3a1c1.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.c61919d3a1c1.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.cfc4fef61755.css
@@ -1701,6 +1702,8 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/js/output.dfbfa636e4f2.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.e7f3f27ae5fb.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.e7f3f27ae5fb.js.gz
+%%HOMEDIR%%/static-collected/CACHE/js/output.f4a719510fde.js
+%%HOMEDIR%%/static-collected/CACHE/js/output.f4a719510fde.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.f674d2576643.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.f674d2576643.js.gz
 %%HOMEDIR%%/static-collected/CACHE/manifest.json
@@ -1996,7 +1999,6 @@ bin/hcks
 %%HOMEDIR%%/static-collected/img/setup_rocketchat_5.png
 %%HOMEDIR%%/static-collected/img/setup_rocketchat_6.png
 %%HOMEDIR%%/static-collected/img/setup_slack_1.png
-%%HOMEDIR%%/static-collected/img/setup_slack_2.png
 %%HOMEDIR%%/static-collected/img/setup_slack_btn_0.png
 %%HOMEDIR%%/static-collected/img/setup_slack_btn_1.png
 %%HOMEDIR%%/static-collected/img/setup_slack_btn_2.png
@@ -2045,6 +2047,7 @@ bin/hcks
 %%HOMEDIR%%/static-collected/js/bootstrap.min.js
 %%HOMEDIR%%/static-collected/js/channels.js
 %%HOMEDIR%%/static-collected/js/checks.js
+%%HOMEDIR%%/static-collected/js/close_account.js
 %%HOMEDIR%%/static-collected/js/dates.js
 %%HOMEDIR%%/static-collected/js/details.js
 %%HOMEDIR%%/static-collected/js/docs_cron.js
@@ -2181,6 +2184,7 @@ bin/hcks
 %%HOMEDIR%%/static/js/bootstrap.min.js
 %%HOMEDIR%%/static/js/channels.js
 %%HOMEDIR%%/static/js/checks.js
+%%HOMEDIR%%/static/js/close_account.js
 %%HOMEDIR%%/static/js/dates.js
 %%HOMEDIR%%/static/js/details.js
 %%HOMEDIR%%/static/js/docs_cron.js
