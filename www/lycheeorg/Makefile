@@ -1,9 +1,10 @@
 PORTNAME=	lycheeorg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.7.5
+DISTVERSION=	7.8.3
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/LycheeOrg/Lychee/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	Lychee
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Great looking and easy-to-use photo-management-system
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php zip
-USE_PHP=	bcmath ctype dom exif fileinfo filter gd json mbstring mysqli \
+USE_PHP=	bcmath ctype dom exif fileinfo filter gd intl json mbstring mysqli \
 		opcache openssl pcre pdo pdo_mysql pdo_pgsql pdo_sqlite pgsql \
 		phar session simplexml sodium sqlite3 tokenizer xml xmlwriter \
 		zlib
