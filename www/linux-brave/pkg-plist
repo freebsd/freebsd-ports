@@ -22,8 +22,6 @@ share/applications/com.brave.Browser.desktop
 %%DATADIR%%/chrome_crashpad_handler
 %%DATADIR%%/default-app-block
 %%DATADIR%%/icudtl.dat
-%%DATADIR%%/libEGL.so
-%%DATADIR%%/libGLESv2.so
 %%DATADIR%%/libqt5_shim.so
 %%DATADIR%%/libqt6_shim.so
 %%DATADIR%%/libvk_swiftshader.so

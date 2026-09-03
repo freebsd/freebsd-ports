@@ -1,5 +1,5 @@
-TIMESTAMP = 1785248859
-SHA256 (brave-browser-1.92.144-1.aarch64.rpm) = 8cb84fdfd5aef6eebe711a197ad5d3a2fbe9ff2a41b02c3ab20cbab1628a5919
-SIZE (brave-browser-1.92.144-1.aarch64.rpm) = 130783297
-SHA256 (brave-browser-1.92.144-1.x86_64.rpm) = 1edd7982eee7bdadeca1bc0c99baa240d9670ea585557d17f4f5569fad7439f3
-SIZE (brave-browser-1.92.144-1.x86_64.rpm) = 139164137
+TIMESTAMP = 1788351334
+SHA256 (brave-browser-1.94.117-1.aarch64.rpm) = c33acf05cb99a67196c16fd2624de0d7091b7ccfba8d5d5e3282b9b0cd1b6e4c
+SIZE (brave-browser-1.94.117-1.aarch64.rpm) = 140674589
+SHA256 (brave-browser-1.94.117-1.x86_64.rpm) = 896e701cf47bf45be49a53c193f45c98facccf7c4c4d1e2eaf985cf560e92e99
+SIZE (brave-browser-1.94.117-1.x86_64.rpm) = 149578525
