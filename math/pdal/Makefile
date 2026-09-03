@@ -1,6 +1,6 @@
 PORTNAME=	pdal
 DISTVERSION=	2.8.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math databases graphics
 MASTER_SITES=	https://github.com/PDAL/PDAL/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -71,8 +71,6 @@ MBIO_CMAKE_BOOL=	BUILD_PLUGIN_MBIO
 
 PGPOINTCLOUD_CMAKE_BOOL=	BUILD_PLUGIN_PGPOINTCLOUD
 PGPOINTCLOUD_USES=	pgsql
-
-CXXFLAGS_powerpc64=	-mvsx
 
 pre-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
