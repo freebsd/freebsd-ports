@@ -18,11 +18,9 @@ share/applications/google-chrome.desktop
 %%DATADIR%%/chrome_200_percent.pak
 %%DATADIR%%/chrome_crashpad_handler
 %%DATADIR%%/default-app-block
-%%DATADIR%%/default_apps/external_extensions.json
 %%DATADIR%%/google-chrome
 %%DATADIR%%/icudtl.dat
-%%DATADIR%%/libEGL.so
-%%DATADIR%%/libGLESv2.so
+%%DATADIR%%/libLiteRtWebGpuAccelerator.so
 %%DATADIR%%/liboptimization_guide_internal.so
 %%DATADIR%%/libqt5_shim.so
 %%DATADIR%%/libqt6_shim.so
