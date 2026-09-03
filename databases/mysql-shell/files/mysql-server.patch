@@ -41,3 +41,23 @@
  #include <string>
  #include "resource_manager_procfs.h"
 
+--- libs/mysql/gtid/tag_plain.h.orig	2026-09-02 10:00:00.000000000 +0200
++++ libs/mysql/gtid/tag_plain.h	2026-09-02 10:00:00.000000000 +0200
+@@ -27,6 +27,7 @@
+ #include <array>
+ #include <cstring>
+ #include <memory>
+ #include <string>
++#include <type_traits>
+ 
+ #include "mysql/gtid/gtid_constants.h"  // tag_max_length
+--- router/src/harness/src/stdx/filesystem.cc.orig	2026-06-03 12:21:17 UTC
++++ router/src/harness/src/stdx/filesystem.cc
+@@ -35,6 +35,7 @@
+ 
+ #include <array>
+ #include <climits>
++#include <cstdlib>
+ #include <system_error>
+ 
+ #include "mysql/harness/stdx/expected.h"
