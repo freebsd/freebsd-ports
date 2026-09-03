@@ -8,11 +8,11 @@ CARGO_CRATES=	anstyle-1.0.13 \
 		clap_builder-4.5.53 \
 		clap_lex-0.7.6 \
 		codespan-reporting-0.13.1 \
-		cxx-1.0.191 \
-		cxx-build-1.0.191 \
-		cxxbridge-cmd-1.0.191 \
-		cxxbridge-flags-1.0.191 \
-		cxxbridge-macro-1.0.191 \
+		cxx-1.0.196 \
+		cxx-build-1.0.196 \
+		cxxbridge-cmd-1.0.196 \
+		cxxbridge-flags-1.0.196 \
+		cxxbridge-macro-1.0.196 \
 		equivalent-1.0.2 \
 		find-msvc-tools-0.1.5 \
 		foldhash-0.2.0 \
