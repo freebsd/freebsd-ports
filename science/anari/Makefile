@@ -36,6 +36,13 @@ EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386 && ${OSREL:R} == 14
+# Unknown ISA
+CMAKE_ARGS+=	-DEMBREE_ISA_AVX512:BOOL=OFF
+.endif
+
 pre-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}/deps/source
 	${MV} ${WRKDIR}/embree-${EMBREE_VER}	\
@@ -44,4 +51,4 @@ pre-configure:
 do-test:
 	cd ${TMPDIR} && ${TEST_ENV} ${TEST_WRKSRC}/anariRenderTests
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
