@@ -1,6 +1,7 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.27.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
@@ -37,7 +38,7 @@ CXXFLAGS+=	-Wno-deprecated-declarations #fixes error: 'vec_lvsl' is deprecated: 
 #CXXFLAGS+=	-Wno-deprecated-altivec-src-compat #fixes error: current handling of vector bool and vector pixel types in this context are deprecated; the default behaviour will soon change to that implied by the '-altivec-compat=xl' option
 CXXFLAGS+=	-I${WRKSRC}/include/onnxruntime/core/common/logging # otherwise logging.h isn't found
 CXXFLAGS+=	-frtti # fixes error: onnxruntime/test/contrib_ops/gather_block_quantized_op_test.cc:85:77: error: use of typeid requires -frtti
-CXXFLAGS_powerpc64=	-mvsx
+CXXFLAGS_powerpc64=	-Wno-error=deprecated-altivec-src-compat
 
 BINARY_ALIAS=	patch=gpatch
 
