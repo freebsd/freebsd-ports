@@ -1,5 +1,5 @@
 PORTNAME=	nsd
-DISTVERSION=	4.15.1
+DISTVERSION=	4.15.2
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/nsd/
 
