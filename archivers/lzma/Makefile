@@ -1,5 +1,5 @@
 PORTNAME=	lzma
-PORTVERSION=	26.02
+PORTVERSION=	26.03
 CATEGORIES=	archivers
 MASTER_SITES=	SF/sevenzip/LZMA%20SDK/ \
 		https://www.7-zip.org/a/
@@ -19,7 +19,7 @@ LICENSE_TEXT_PD=	LZMA SDK is written and placed in the public \
 BUILD_DEPENDS_amd64=	jwasm:devel/jwasm
 BUILD_DEPENDS_i386=	jwasm:devel/jwasm
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
-USES=		7z dos2unix gmake
+USES=		7z cpe dos2unix gmake
 
 CPE_VENDOR=	7-zip
 MAKEFILE=	makefile.gcc
