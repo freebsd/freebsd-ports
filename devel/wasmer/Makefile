@@ -1,6 +1,6 @@
 PORTNAME=	wasmer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.3.0
+DISTVERSION=	7.4.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/wasmerio/wasmer/releases/download/${DISTVERSIONFULL}/
 DISTFILES=	wasmer-full-source.tar.gz
