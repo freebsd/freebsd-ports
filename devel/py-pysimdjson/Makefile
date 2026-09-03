@@ -1,6 +1,6 @@
 PORTNAME=	pysimdjson
 PORTVERSION=	6.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,6 @@ LICENSE=	MIT
 
 USES=		python
 USE_PYTHON=	cython distutils
-
-CFLAGS_powerpc64=	-mpower8-vector
 
 .if ! defined(WITH_DEBUG)
 LDFLAGS+=	-s
