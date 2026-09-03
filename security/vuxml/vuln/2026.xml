@@ -1,3 +1,41 @@
+  <vuln vid="0bfb082c-a7b6-11f1-a655-3497f65b111b">
+    <topic>njs -- heap buffer overflow in XML exclusive canonicalization</topic>
+    <affects>
+      <package>
+	<name>njs</name>
+	<name>libnjs</name>
+	<name>nginx-module-njs</name>
+	<range><lt>1.0.1</lt></range>
+      </package>
+      <package>
+	<name>nginx-full</name>
+	<range><lt>1.30.4_7,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>F5 reports:</p>
+	<blockquote cite="https://my.f5.com/manage/s/article/K000162602">
+	  <p>A flaw in the NGINX JavaScript XML module allows an
+	    out-of-bounds write when xml.exclusiveC14n() processes a
+	    crafted XML namespace prefix list.  This may lead to worker
+	    process crashes, heap corruption or memory disclosure.  The
+	    NGINX SAML reference implementation is affected because it
+	    processes SAML data before signature verification.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-78689</cvename>
+      <url>https://my.f5.com/manage/s/article/K000162602</url>
+      <url>https://nginx.org/en/docs/njs/changes.html</url>
+    </references>
+    <dates>
+      <discovery>2026-09-02</discovery>
+      <entry>2026-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="271556c1-ddbf-4d44-95e6-a731841539b2">
     <topic>electron42 -- multiple vulnerabilities</topic>
     <affects>
