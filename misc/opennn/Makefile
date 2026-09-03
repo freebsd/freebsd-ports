@@ -1,6 +1,7 @@
 PORTNAME=	opennn
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.0.1
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +31,6 @@ CMAKE_TESTING_ON=	OpenNN_BUILD_TESTS # some tests fail, see https://github.com/A
 CMAKE_TESTING_TARGET=
 
 CXXFLAGS_powerpc=	-O1
-CXXFLAGS_powerpc64=	-mvsx
 LDFLAGS+=	-pthread
 LDFLAGS_powerpc=	-latomic
 
