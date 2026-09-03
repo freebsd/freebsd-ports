@@ -1,6 +1,7 @@
 PORTNAME=	SFML
 DISTVERSION=	3.0.0
 CATEGORIES=	multimedia audio devel games
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	agh@riseup.net
 COMMENT=	Simple and Fast Multimedia Library
