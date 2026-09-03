@@ -1,5 +1,5 @@
 PORTNAME=	harlequin
-DISTVERSION=	2.12.2
+DISTVERSION=	2.13.0
 PORTREVISION=	0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
@@ -15,17 +15,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN=		fails to run because requires devel/py-tree-sitter >= 0.25.2 (see PR 289772)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.28.0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.7_1:devel/py-click@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.3:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}duckdb>=1.5.5:databases/py-duckdb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgspec>=0.21.1:devel/py-msgspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=2.3.3,1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.5.1:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.11.0:devel/py-pyperclip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}questionary>=2.1.1:devel/py-questionary@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich-click>=1.8.5:devel/py-rich-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shandy-sqlfmt>=0.29.0:devel/py-shandy-sqlfmt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}textual-fastdatatable>=0.14.0:textproc/py-textual-fastdatatable@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}textual-textarea>=0.17.2:textproc/py-textual-textarea@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}textual>=6.11.0:textproc/py-textual@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}textual-fastdatatable>=0.19.1:textproc/py-textual-fastdatatable@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}textual-textarea>=0.18.2:textproc/py-textual-textarea@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}textual>=8.2.8:textproc/py-textual@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomli>=2.4.1:textproc/py-tomli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.3:textproc/py-tomlkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tree-sitter-sql>=0.3.11:devel/py-tree-sitter-sql@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tree-sitter>=0.25.2:devel/py-tree-sitter@${PY_FLAVOR} \
