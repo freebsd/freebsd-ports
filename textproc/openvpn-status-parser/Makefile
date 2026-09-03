@@ -1,7 +1,7 @@
 PORTNAME=	openvpn-status-parser
 PORTVERSION=	0.1.0
-PORTREVISION=	4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	5
 CATEGORIES=	textproc
 
 MAINTAINER=	zeus@gnu.org.ua

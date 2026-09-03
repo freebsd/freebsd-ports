@@ -1,6 +1,7 @@
 PORTNAME=	go-blueprint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.11
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	hayzam@alchemilla.io

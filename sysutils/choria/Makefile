@@ -1,7 +1,7 @@
 PORTNAME=	choria
 PORTVERSION=	0.30.2
-PORTREVISION=	3
 DISTVERSIONPREFIX=v
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
@@ -203,7 +203,6 @@ pre-build:
 #		go generate -mod=vendor -run plugin)
 	(cd ${GO_WRKSRC} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOMAXPROCS=${MAKE_JOBS_NUMBER} GOPROXY=off ${GO_CMD} generate -mod=vendor -run plugin)
-
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/choria

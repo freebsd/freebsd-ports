@@ -1,5 +1,6 @@
 PORTNAME=	hockeypuck
 DISTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	siva@FreeBSD.org

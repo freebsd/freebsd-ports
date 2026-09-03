@@ -1,7 +1,7 @@
 PORTNAME=	nextcloud-spreed-signaling
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 
 MAINTAINER=	jsm@FreeBSD.org
@@ -102,8 +102,6 @@ GH_TUPLE=	\
 		wlynxg:anet:v0.0.5:wlynxg_anet/vendor/src/github.com/wlynxg/anet \
 		xiang90:probing:43a291ad63a2:xiang90_probing/vendor/src/github.com/xiang90/probing \
 		yaml:go-yaml:v2.4.2:yaml_go_yaml/vendor/src/go.yaml.in/yaml/v2
-
-
 
 MAKE_ENV=	${GOENV}\
 		GO111MODULE=off \
