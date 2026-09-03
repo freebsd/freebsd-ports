@@ -1,6 +1,6 @@
---- usr/lib/python3/dist-packages/privleap/privleapd.py.orig	2026-07-03 19:48:15 UTC
+--- usr/lib/python3/dist-packages/privleap/privleapd.py.orig	2026-09-03 00:26:37 UTC
 +++ usr/lib/python3/dist-packages/privleap/privleapd.py
-@@ -28,8 +28,6 @@ from dataclasses import dataclass
+@@ -30,8 +30,6 @@ from dataclasses import dataclass
  from typing import cast, SupportsIndex, NoReturn, Any, IO
  from dataclasses import dataclass
  
@@ -19,7 +19,7 @@
      # Thread IPC mechanisms
      # control-to-main pipe read end, for main thread
      ctm_read_fd: int = 0
-@@ -609,7 +604,7 @@ def run_action(
+@@ -619,7 +614,7 @@ def run_action(
      if target_user is None and target_group is None:
          # Both user and group are unset, default to "root" for both.
          target_user = "root"
@@ -28,7 +28,7 @@
      elif target_group is None:
          # Target user is set but group is unset, set the group to the target
          # user's default group.
-@@ -629,14 +624,13 @@ def run_action(
+@@ -639,14 +634,13 @@ def run_action(
  
      action_process: subprocess.Popen[bytes] = subprocess.Popen(
          [
@@ -45,7 +45,7 @@
              desired_action.action_command,
          ],
          stdout=subprocess.PIPE,
-@@ -841,10 +835,10 @@ def send_action_results(
+@@ -855,10 +849,10 @@ def send_action_results(
      assert action_process.stderr is not None
      assert comm_session.backend_socket is not None
  
@@ -60,7 +60,7 @@
  
      # Comm threads that are currently streaming stdio from a process to a
      # client may be stuck waiting for the process to write something to stdout
-@@ -855,7 +849,7 @@ def send_action_results(
+@@ -869,7 +863,7 @@ def send_action_results(
      # written to this variable (it is always a single NULL byte), we just need
      # to break the epoll_obj.poll() call.
      assert listen_socket_info.term_notify_read_fd != 0
@@ -69,7 +69,7 @@
  
      try:
          stdout_done: bool = False
-@@ -899,7 +893,6 @@ def send_action_results(
+@@ -920,7 +914,6 @@ def send_action_results(
          action_process.wait()
  
      finally:
@@ -77,10 +77,10 @@
          action_process.stdout.close()
          action_process.stderr.close()
          action_process.terminate()
-@@ -1673,8 +1666,8 @@ def main_loop() -> NoReturn:
+@@ -1701,8 +1694,8 @@ def main_loop() -> NoReturn:
  
      assert PrivleapdGlobal.ctm_read_pipe is not None
-     epoll_fd_set: set[int] = set()
+     epoll_obj_list: list[PrivleapdSocketInfo] = []
 -    epoll_obj: select.epoll = select.epoll()
 -    epoll_obj.register(PrivleapdGlobal.ctm_read_fd, select.EPOLLIN)
 +    epoll_obj: select.poll = select.poll()
@@ -88,15 +88,14 @@
      socket_list_changed: bool = True
  
      while True:
-@@ -1688,14 +1681,13 @@ def main_loop() -> NoReturn:
-             ]
-             read_sock_fileno_set: set[int] = set(read_sock_fileno_list)
-             for register_fileno in read_sock_fileno_set - epoll_fd_set:
--                epoll_obj.register(register_fileno, select.EPOLLIN)
-+                epoll_obj.register(register_fileno, select.POLLIN)
-             epoll_fd_set.update(read_sock_fileno_set)
-             for remove_fileno in epoll_fd_set - read_sock_fileno_set:
-                 epoll_fd_set.remove(remove_fileno)
+@@ -1716,13 +1709,12 @@ def main_loop() -> NoReturn:
+                     )
+                     epoll_obj.register(
+                         current_socket.listen_socket.backend_socket.fileno(),
+-                        select.EPOLLIN,
++                        select.POLLIN,
+                     )
+                 epoll_obj_list = copy.copy(PrivleapdGlobal.socket_list)
              socket_list_changed = False
  
          epoll_event_fd_list: list[int] = [x[0] for x in epoll_obj.poll(5)]
@@ -104,7 +103,7 @@
  
          if PrivleapdGlobal.ctm_read_fd in epoll_event_fd_list:
              # Connection change, i.e. adding or removing a socket. The
-@@ -1723,8 +1715,7 @@ def main_loop() -> NoReturn:
+@@ -1750,8 +1742,7 @@ def main_loop() -> NoReturn:
                          ready_sock_info_obj = sock_info_obj
                          break
                  if ready_sock_info_obj is None:
@@ -114,7 +113,7 @@
                  if ready_sock_info_obj.listen_socket.socket_type == (
                      PrivleapSocketType.CONTROL
                  ):
-@@ -1804,8 +1795,6 @@ def main() -> NoReturn:
+@@ -1828,8 +1819,6 @@ def main() -> NoReturn:
          target=control_handler_loop, daemon=True
      )
      control_handler_thread.start()
