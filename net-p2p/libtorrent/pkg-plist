@@ -81,6 +81,6 @@ include/torrent/utils/string_manip.h
 include/torrent/utils/unordered_vector.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.49
-lib/libtorrent.so.49.0.0
+lib/libtorrent.so.50
+lib/libtorrent.so.50.0.0
 libdata/pkgconfig/libtorrent.pc
