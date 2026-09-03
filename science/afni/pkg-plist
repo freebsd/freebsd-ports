@@ -270,9 +270,6 @@ bin/3dtoXdataset
 bin/3dttest++
 bin/3dvolreg
 bin/4swap
-bin/adjunct_refacer_make_master_addendum2
-bin/afni_refacer2
-bin/asymm_report.csh
 bin/@1dDiffMag
 bin/@2dwarper
 bin/@2dwarper.Allin
@@ -481,6 +478,7 @@ bin/SpharmDeco
 bin/SpharmReco
 bin/Surf2VolCoord
 bin/SurfClust
+bin/SurfClustSim
 bin/SurfDist
 bin/SurfDsetInfo
 bin/SurfExtrema
@@ -512,6 +510,7 @@ bin/adjunct_deob_around_origin
 bin/adjunct_is_label.py
 bin/adjunct_make_script_and_rst.py
 bin/adjunct_middle_pair_mask
+bin/adjunct_refacer_make_master_addendum2
 bin/adjunct_select_str.py
 bin/adjunct_simplify_cost.py
 bin/adjunct_suma_fs_mask_and_qc
@@ -527,6 +526,7 @@ bin/afni_history
 bin/afni_open
 bin/afni_proc.py
 bin/afni_python_wrapper.py
+bin/afni_refacer2
 bin/afni_run_R
 bin/afni_seeds_per_space.txt
 bin/afni_skeleton.py
@@ -548,6 +548,7 @@ bin/apqc_logo_main.svg
 bin/apqc_make_html.py
 bin/apqc_make_tcsh.py
 bin/apsearch
+bin/asymm_report.csh
 bin/auto_warp.py
 bin/bayes_view
 bin/build_afni.py
@@ -2048,6 +2049,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/shiny/bayes_view/server.R
 %%DATADIR%%/shiny/bayes_view/ui.R
 %%DATADIR%%/shiny/misc/OmicCircos_pkg_install.R
+%%DATADIR%%/funstuff/face_gcotter1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/CMakeLists.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.Ifile
