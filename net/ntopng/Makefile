@@ -1,6 +1,5 @@
 PORTNAME=	ntopng
-PORTVERSION=	6.6.d20260604
-PORTREVISION=	1
+PORTVERSION=	6.6.d20260829
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -11,49 +10,47 @@ WWW=		https://www.ntop.org/products/traffic-analysis/ntop/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	librrd.so:databases/rrdtool \
-		libzmq.so:net/libzmq4 \
-		libcurl.so:ftp/curl \
-		libndpi.so:net/ndpi \
-		libjson-c.so:devel/json-c \
-		libsodium.so:security/libsodium \
-		libmaxminddb.so:net/libmaxminddb \
+BUILD_DEPENDS=	${LOCALBASE}/include/clickhouse/version.h:databases/clickhouse-cpp \
+		bash:shells/bash
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
-		libzstd.so:archivers/zstd \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
-		libhiredis.so:databases/hiredis
-BUILD_DEPENDS=	bash:shells/bash \
-		${LOCALBASE}/include/clickhouse/version.h:databases/clickhouse-cpp
+		libhiredis.so:databases/hiredis \
+		libjson-c.so:devel/json-c \
+		libmaxminddb.so:net/libmaxminddb \
+		libndpi.so:net/ndpi \
+		librrd.so:databases/rrdtool \
+		libsodium.so:security/libsodium \
+		libzmq.so:net/libzmq4 \
+		libzstd.so:archivers/zstd
 
 USES=		autoreconf compiler:c++11-lang cpe gmake libtool localbase \
 		lua:54 pathfix pkgconfig shebangfix sqlite ssl
+CPE_VENDOR=	ntop
+USE_GITHUB=	yes
+GH_ACCOUNT=	ntop
+GH_TAGNAME=	ad4d754
+GH_TUPLE=	ntop:ntopng-dist:4a1dc74:dist/httpdocs/dist
+USE_RC_SUBR=	ntopng
 
-SUB_FILES=	ntopng-geoip2update.sh pkg-deinstall pkg-message
 SHEBANG_FILES=	httpdocs/misc/ntopng-add-user.sh \
 		httpdocs/misc/ntopng-utils-manage-config.in
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dynamic-ndpi \
 		--with-ndpi-includes=${LOCALBASE}/include/ndpi
 
+SUB_FILES=	ntopng-geoip2update.sh pkg-deinstall pkg-message
+
 USERS=		ntopng
 GROUPS=		ntopng
-PLIST_SUB=	NTOPNGUSER="${USERS}" NTOPNGROUP="${GROUPS}"
-
-USE_GITHUB=	yes
-GH_TUPLE=	ntop:ntopng-dist:05ec4ad:dist/httpdocs/dist
-GH_ACCOUNT=	ntop
-GH_TAGNAME=	630101d
-
-CPE_VENDOR=	ntop
+PLIST_SUB=	NTOPNGROUP="${GROUPS}" \
+		NTOPNGUSER="${USERS}"
 
 OPTIONS_DEFINE=	NLS
-
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
-
-USE_RC_SUBR=	ntopng
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
