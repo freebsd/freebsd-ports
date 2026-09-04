@@ -77,6 +77,7 @@ libdata/pkgconfig/accounts-qt%%QT_VER%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen_blank.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen_crawl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/html/error_8cpp_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/error_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
