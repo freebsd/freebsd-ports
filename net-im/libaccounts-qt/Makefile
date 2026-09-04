@@ -1,6 +1,6 @@
 PORTNAME=	libaccounts-qt
 DISTVERSION=	1.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	6
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
@@ -33,6 +33,8 @@ DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
 DOCS_USE=		QT=tools:build
 DOCS_QMAKE_ON=		CONFIG+=docs
 DOCS_BINARY_ALIAS=	qhelpgenerator=${QHELPGENERATOR}
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/lib//}6
 
 pre-configure:
 	${REINPLACE_CMD} -e 's,$$$${INSTALL_LIBDIR},${LOCALBASE}/libdata,' \
