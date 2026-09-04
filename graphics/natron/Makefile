@@ -1,7 +1,7 @@
 PORTNAME=	natron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.1-pre2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,6 +10,9 @@ COMMENT=	Compositing software Video
 WWW=		https://natrongithub.github.io/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Depends on deprecated Qt5 WebEngine, not ported to Qt6
+EXPIRATION_DATE=	2026-09-30
 
 BUILD_DEPENDS=	bash:shells/bash \
 		gsed:textproc/gsed
