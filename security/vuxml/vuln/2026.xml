@@ -1,3 +1,35 @@
+  <vuln vid="25012057-a886-11f1-a836-b42e991fc52e">
+    <topic>OpenVPN: denial of service</topic>
+    <affects>
+    <package>
+	<name>openvsp</name>
+	<range><lt>2.7.7</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenVPN team reports:</p>
+	<blockquote cite="https://community.openvpn.net/Security%20Announcements/CVE-2026-84732/source">
+	<p>
+	  OpenVPN 2.x allows attackers to potentially cause a denial
+	  of service against the control channel reliability layer,
+	  either by driving the reliable TLS retransmission timeout
+	  to grow without bound, or by sending acknowledgements for
+	  packets that cannot be outstanding.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-84732</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-84732</url>
+    </references>
+    <dates>
+      <discovery>2026-09-04</discovery>
+      <entry>2026-09-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0bfb082c-a7b6-11f1-a655-3497f65b111b">
     <topic>njs -- heap buffer overflow in XML exclusive canonicalization</topic>
     <affects>
