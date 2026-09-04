@@ -1,0 +1,11 @@
+nats-tui is an interactive front-end to nats(1), the NATS command-line
+tool. It shows the server a nats context points at as a tree: the
+JetStream streams with their consumers, the key-value buckets, the object
+stores and the micro services answering discovery, each opening in a
+dialog editor for its configuration. Messages are published, requested
+and watched live from the same screens.
+
+Nothing is written except through nats itself. Every change is first
+diffed into a plan of the exact nats commands it needs, shown with the
+same quoting a shell would need, confirmed, and only then run, followed
+by a re-read of the server.
