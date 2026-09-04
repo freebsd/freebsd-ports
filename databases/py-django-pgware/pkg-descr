@@ -1,0 +1,6 @@
+A small, dependency-light toolkit of three independent PostgreSQL
+utilities for Django. Each is a context manager (and, where it makes
+sense, a decorator) that borrows Django's database connection, performs
+a session-scoped action, and reliably undoes it on exit: advisory locks
+(sync + async), GUC setting (pg_set/atomic_set), and logging suppression
+(hush, for keeping sensitive query parameters out of the logs).
