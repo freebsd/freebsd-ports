@@ -1,4 +1,4 @@
-TIMESTAMP = 1787689403
+TIMESTAMP = 1788498920
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/android_system_properties-0.1.5.crate) = 819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311
@@ -157,5 +157,5 @@ SHA256 (rust/crates/windows-sys-0.61.2.crate) = ae137229bcbd6cdf0f7b80a31df61766
 SIZE (rust/crates/windows-sys-0.61.2.crate) = 2517186
 SHA256 (rust/crates/xaddr-0.2.1.crate) = 4573aaeb9b492c539fbd893a11a2c2455a78f4e677e892e18f63ff563922985f
 SIZE (rust/crates/xaddr-0.2.1.crate) = 19298
-SHA256 (excelano-xled-v0.12.1_GH0.tar.gz) = 7fa56256289bb5123529e77f06befa6b92b161e44a10cb507e3b3a6da991d1f5
-SIZE (excelano-xled-v0.12.1_GH0.tar.gz) = 154223
+SHA256 (excelano-xled-v0.12.2_GH0.tar.gz) = 5ad0e96f48cc5b56afb2957698073c89af9a75438acdeac8ce6aa8e36e28779d
+SIZE (excelano-xled-v0.12.2_GH0.tar.gz) = 158850
