@@ -1,6 +1,7 @@
 PORTNAME=	rtl-sdr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	https://downloads.osmocom.org/releases/rtl-sdr/
