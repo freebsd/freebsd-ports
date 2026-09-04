@@ -1,5 +1,6 @@
 PORTNAME=	zutty
 DISTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://git.hq.sig7.se/zutty.git/snapshot/${ZUTTY_COMMIT}?dummy=/
 
@@ -11,6 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
+RUN_DEPENDS=	font-misc-misc>1.1.0:x11-fonts/font-misc-misc
 
 USES=		gl pkgconfig waf xorg
 USE_GL=		egl glesv2
