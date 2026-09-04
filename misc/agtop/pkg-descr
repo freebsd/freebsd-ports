@@ -1,0 +1,14 @@
+agtop is a process monitor for AI coding agents.
+
+It walks /proc on Linux (sysinfo on macOS, Windows, and *BSD) plus the
+on-disk session transcripts of Claude Code, OpenAI Codex, Block Goose,
+Aider, and Google Gemini, and presents per-agent CPU, RSS, status,
+current tool, in-flight subagents, token usage, estimated cost,
+context-window fill, and loaded skills in a top-style ratatui TUI.
+
+On FreeBSD, writable-FD enumeration is provided by libprocstat
+(see fstat(1)); per-process IO byte counters are not available
+through sysinfo on this platform.
+
+Distribution is also available via crates.io, npm, the AUR, and
+a Homebrew tap.
