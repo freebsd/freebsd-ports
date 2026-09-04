@@ -1,5 +1,6 @@
 PORTNAME=	eql5
 PORTVERSION=	g20220228
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,6 +9,9 @@ WWW=		https://gitlab.com/eql/EQL5
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE-1.MIT
+
+DEPRECATED=    Abandoned, depends on deprecated Qt5 WebEngine
+EXPIRATION_DATE=       2026-09-30
 
 LIB_DEPENDS=	libecl.so:lang/ecl
 
