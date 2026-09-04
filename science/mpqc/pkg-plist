@@ -2682,9 +2682,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1Pool.html
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1PoolData-members.html
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1PoolData.html
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1PoolData__coll__graph.map
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1PoolData__coll__graph.md5
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1PoolData__coll__graph.png
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1Pool__coll__graph.map
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1Pool__coll__graph.md5
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1Pool__coll__graph.png
@@ -6203,6 +6200,7 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%share/man/man3/sc_PointOutputData.3.gz
 %%DOXYGEN%%share/man/man3/sc_Pool.3.gz
 %%DOXYGEN%%share/man/man3/sc_PoolData.3.gz
+%%DOXYGEN%%share/man/man3/sc_PoolData_[union].__unnamed0__.3.gz
 %%DOXYGEN%%share/man/man3/sc_PowellUpdate.3.gz
 %%DOXYGEN%%share/man/man3/sc_PrefixKeyVal.3.gz
 %%DOXYGEN%%share/man/man3/sc_PrimPairsCints.3.gz
