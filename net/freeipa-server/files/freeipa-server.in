@@ -89,7 +89,7 @@ freeipa_server_stop()
 
 freeipa_server_restart()
 {
-	"${command}" restart
+	"${command}" restart --ignore-service-failures
 }
 
 freeipa_server_status()

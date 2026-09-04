@@ -1,6 +1,6 @@
 PORTNAME=	freeipa-server
 DISTVERSION=	4.13.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://codeberg.org/freeipa/freeipa/releases/download/release-${DISTVERSION:S/./-/g}/
 DISTNAME=	freeipa-${DISTVERSION}
@@ -107,6 +107,20 @@ GROUPS=		ipaapi kdcproxy
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/client/ipa-join.c \
+		${WRKSRC}/install/share/ipa-kdc-proxy.conf.template \
+		${WRKSRC}/install/tools/ipa-httpd-kdcproxy.in \
+		${WRKSRC}/install/updates/80-schema_compat.update \
+		${WRKSRC}/ipaplatform/base/paths.py \
+		${WRKSRC}/ipaplatform/freebsd/paths.py \
+		${WRKSRC}/ipaplatform/freebsd/services.py \
+		${WRKSRC}/ipapython/ipautil.py \
+		${WRKSRC}/ipaserver/install/cainstance.py \
+		${WRKSRC}/ipaserver/install/server/upgrade.py
 
 post-build:
 	${MAKE_CMD} -C ${WRKSRC}/client \

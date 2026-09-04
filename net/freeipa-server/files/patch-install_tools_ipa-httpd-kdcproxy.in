@@ -10,8 +10,8 @@
 -This script creates or removes the symlink from /etc/ipa/ipa-kdc-proxy.conf
 -to /etc/httpd/conf.d/. It's called from ExecStartPre hook in httpd.service.
 +This script creates or removes the symlink from
-+/usr/local/etc/ipa/kdcproxy/ipa-kdc-proxy.conf to
-+/usr/local/etc/apache24/Includes/ipa-kdc-proxy.conf. It is called from the
++%%LOCALBASE%%/etc/ipa/kdcproxy/ipa-kdc-proxy.conf to
++%%LOCALBASE%%/etc/apache24/Includes/ipa-kdc-proxy.conf. It is called from the
 +apache24 RC start and restart hooks.
  """
  import logging

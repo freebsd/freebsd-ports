@@ -1,6 +1,6 @@
 --- ipaplatform/freebsd/services.py.orig	2026-08-19 14:16:07 UTC
 +++ ipaplatform/freebsd/services.py
-@@ -0,0 +1,576 @@
+@@ -0,0 +1,584 @@
 +#
 +# Copyright (C) 2026  FreeIPA Contributors see COPYING for license
 +#
@@ -43,11 +43,11 @@
 +
 +freebsd_kerberos_rc_programs = {
 +    "kdc": {
-+        "kdc_program": "/usr/local/sbin/krb5kdc",
++        "kdc_program": "%%LOCALBASE%%/sbin/krb5kdc",
 +    },
 +    "kadmind": {
-+        "kdc_program": "/usr/local/sbin/krb5kdc",
-+        "kadmind_program": "/usr/local/sbin/kadmind",
++        "kdc_program": "%%LOCALBASE%%/sbin/krb5kdc",
++        "kadmind_program": "%%LOCALBASE%%/sbin/kadmind",
 +    },
 +}
 +
@@ -120,25 +120,33 @@
 +            skip_output=daemonizing or not capture_output
 +        )
 +
++    def _run_service_tolerant(self, action, capture_output=True):
++        try:
++            self._run_service(action, capture_output=capture_output)
++        except ipautil.CalledProcessError:
++            if self.is_running():
++                logger.warning(
++                    "'%s %s' reported a failure but the service is running, "
++                    "continuing", self.rc_name, action)
++                return
++            # FreeBSD base rc scripts for the Kerberos daemons (kdc,
++            # kadmind) can fail to (re)start while the environment is
++            # being torn down -- e.g. SimpleServiceInstance.uninstall()
++            # restores a previously-running kadmind after krb5kdc/DS
++            # were already unconfigured. Aborting the whole uninstall
++            # over a best-effort restore is worse than continuing; a
++            # genuine install-time failure still surfaces at the first
++            # real use of the service.
++            if self.rc_name not in ("kdc", "kadmind"):
++                raise
++            logger.warning(
++                "Ignoring failed '%s %s' (service could not be started; "
++                "likely mid-teardown restore)", self.rc_name, action)
++
 +    def start(self, instance_name="", capture_output=True, wait=True):
 +        os.makedirs(os.path.dirname(paths.SVC_LIST_FILE), mode=0o711, exist_ok=True)
 +        if not self.is_running(instance_name, wait=wait):
-+            try:
-+                self._run_service("onestart", capture_output=capture_output)
-+            except ipautil.CalledProcessError:
-+                # FreeBSD base rc scripts for the Kerberos daemons (kdc,
-+                # kadmind) can fail to (re)start while the environment is
-+                # being torn down -- e.g. SimpleServiceInstance.uninstall()
-+                # restores a previously-running kadmind after krb5kdc/DS
-+                # were already unconfigured. Aborting the whole uninstall
-+                # over a best-effort restore is worse than continuing; a
-+                # genuine install-time failure still surfaces at the first
-+                # real use of the service.
-+                if self.rc_name not in ("kdc", "kadmind"):
-+                    raise
-+                logger.warning(
-+                    "Ignoring failed '%s onestart' (service could not be "
-+                    "started; likely mid-teardown restore)", self.rc_name)
++            self._run_service_tolerant("onestart", capture_output=capture_output)
 +        super(FreeBSDService, self).start(
 +            instance_name, capture_output=capture_output, wait=wait
 +        )
@@ -151,7 +159,7 @@
 +        )
 +
 +    def restart(self, instance_name="", capture_output=True, wait=True):
-+        self._run_service("onerestart", capture_output=capture_output)
++        self._run_service_tolerant("onerestart", capture_output=capture_output)
 +
 +    def try_restart(self, instance_name="", capture_output=True, wait=True):
 +        if self.is_running(instance_name, wait=wait):
@@ -170,7 +178,7 @@
 +    def is_installed(self):
 +        return (
 +            os.path.exists("/etc/rc.d/%s" % self.rc_name) or
-+            os.path.exists("/usr/local/etc/rc.d/%s" % self.rc_name)
++            os.path.exists("%%LOCALBASE%%/etc/rc.d/%s" % self.rc_name)
 +        )
 +
 +    def enable(self, instance_name=""):

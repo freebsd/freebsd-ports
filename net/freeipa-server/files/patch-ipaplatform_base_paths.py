@@ -6,15 +6,15 @@
      NAMED_CUSTOM_OPTIONS_CONF = "/etc/named/ipa-options-ext.conf"
 -    NAMED_CONF_SRC = '/usr/share/ipa/bind.named.conf.template'
 -    NAMED_CUSTOM_CONF_SRC = '/usr/share/ipa/bind.ipa-ext.conf.template'
-+    NAMED_CONF_SRC = '/usr/local/share/ipa/bind.named.conf.template'
-+    NAMED_CUSTOM_CONF_SRC = '/usr/local/share/ipa/bind.ipa-ext.conf.template'
++    NAMED_CONF_SRC = '%%PREFIX%%/share/ipa/bind.named.conf.template'
++    NAMED_CUSTOM_CONF_SRC = '%%PREFIX%%/share/ipa/bind.ipa-ext.conf.template'
      NAMED_CUSTOM_OPTIONS_CONF_SRC = (
 -        '/usr/share/ipa/bind.ipa-options-ext.conf.template'
-+        '/usr/local/share/ipa/bind.ipa-options-ext.conf.template'
++        '%%PREFIX%%/share/ipa/bind.ipa-options-ext.conf.template'
      )
      NAMED_LOGGING_OPTIONS_CONF_SRC = (
 -        "/usr/share/ipa/bind.ipa-logging-ext.conf.template"
-+        "/usr/local/share/ipa/bind.ipa-logging-ext.conf.template"
++        "%%PREFIX%%/share/ipa/bind.ipa-logging-ext.conf.template"
      )
      NAMED_VAR_DIR = "/var/named"
      NAMED_KEYTAB = "/etc/named.keytab"
@@ -23,7 +23,7 @@
      NAMED_MANAGED_KEYS_DIR = "/var/named/dynamic"
      NAMED_CRYPTO_POLICY_FILE = None
 -    UNBOUND_CONF_SRC = '/usr/share/ipa/client/unbound.conf.template'
-+    UNBOUND_CONF_SRC = '/usr/local/share/ipa/client/unbound.conf.template'
++    UNBOUND_CONF_SRC = '%%LOCALBASE%%/share/ipa/client/unbound.conf.template'
      UNBOUND_CONFIG_DIR = "/etc/unbound/conf.d/"
      UNBOUND_CONF = "/etc/unbound/conf.d/zzz-ipa.conf"
      NSLCD_CONF = "/etc/nslcd.conf"
@@ -32,12 +32,12 @@
      SSH_CONFIG_DIR = "/etc/ssh"
      SSH_CONFIG = "/etc/ssh/ssh_config"
 -    SSH_IPA_CONFIG_TEMPLATE = "/usr/share/ipa/client/ssh_ipa.conf.template"
-+    SSH_IPA_CONFIG_TEMPLATE = "/usr/local/share/ipa/client/ssh_ipa.conf.template"
++    SSH_IPA_CONFIG_TEMPLATE = "%%LOCALBASE%%/share/ipa/client/ssh_ipa.conf.template"
      SSH_IPA_CONFIG = "/etc/ssh/ssh_config.d/04-ipa.conf"
      SSHD_CONFIG = "/etc/ssh/sshd_config"
      SSHD_IPA_CONFIG = "/etc/ssh/sshd_config.d/04-ipa.conf"
 -    SSHD_IPA_CONFIG_TEMPLATE = "/usr/share/ipa/client/sshd_ipa.conf.template"
-+    SSHD_IPA_CONFIG_TEMPLATE = "/usr/local/share/ipa/client/sshd_ipa.conf.template"
++    SSHD_IPA_CONFIG_TEMPLATE = "%%LOCALBASE%%/share/ipa/client/sshd_ipa.conf.template"
      SSSD_CONF = "/etc/sssd/sssd.conf"
      SSSD_CONF_BKP = "/etc/sssd/sssd.conf.bkp"
      SSSD_CONF_DELETED = "/etc/sssd/sssd.conf.deleted"
@@ -47,8 +47,8 @@
      BIN_KVNO = "/usr/bin/kvno"
 -    LDAPMODIFY = "/usr/bin/ldapmodify"
 -    LDAPPASSWD = "/usr/bin/ldappasswd"
-+    LDAPMODIFY = "/usr/local/bin/ldapmodify"
-+    LDAPPASSWD = "/usr/local/bin/ldappasswd"
++    LDAPMODIFY = "%%LOCALBASE%%/bin/ldapmodify"
++    LDAPPASSWD = "%%LOCALBASE%%/bin/ldappasswd"
      MODUTIL = "/usr/bin/modutil"
      NET = "/usr/bin/net"
      BIN_NISDOMAINNAME = "/usr/bin/nisdomainname"
@@ -74,16 +74,16 @@
 -    SUBID_GENERATORS_ULDIF = "/usr/share/ipa/subid-generators.uldif"
 -    IPA_JS_PLUGINS_DIR = "/usr/share/ipa/ui/js/plugins"
 -    UPDATES_DIR = "/usr/share/ipa/updates/"
-+    USR_SHARE_IPA_DIR = "/usr/local/share/ipa/"
-+    USR_SHARE_IPA_CLIENT_DIR = "/usr/local/share/ipa/client"
-+    CA_TOPOLOGY_ULDIF = "/usr/local/share/ipa/ca-topology.uldif"
-+    IPA_HTML_DIR = "/usr/local/share/ipa/html"
-+    CA_CRT = "/usr/local/share/ipa/html/ca.crt"
-+    SCHEMA_COMPAT_ULDIF = "/usr/local/share/ipa/updates/91-schema_compat.update"
-+    SCHEMA_COMPAT_POST_ULDIF = "/usr/local/share/ipa/schema_compat_post.uldif"
-+    SUBID_GENERATORS_ULDIF = "/usr/local/share/ipa/subid-generators.uldif"
-+    IPA_JS_PLUGINS_DIR = "/usr/local/share/ipa/ui/js/plugins"
-+    UPDATES_DIR = "/usr/local/share/ipa/updates/"
++    USR_SHARE_IPA_DIR = "%%LOCALBASE%%/share/ipa/"
++    USR_SHARE_IPA_CLIENT_DIR = "%%LOCALBASE%%/share/ipa/client"
++    CA_TOPOLOGY_ULDIF = "%%PREFIX%%/share/ipa/ca-topology.uldif"
++    IPA_HTML_DIR = "%%LOCALBASE%%/share/ipa/html"
++    CA_CRT = "%%LOCALBASE%%/share/ipa/html/ca.crt"
++    SCHEMA_COMPAT_ULDIF = "%%LOCALBASE%%/share/ipa/updates/91-schema_compat.update"
++    SCHEMA_COMPAT_POST_ULDIF = "%%LOCALBASE%%/share/ipa/schema_compat_post.uldif"
++    SUBID_GENERATORS_ULDIF = "%%PREFIX%%/share/ipa/subid-generators.uldif"
++    IPA_JS_PLUGINS_DIR = "%%LOCALBASE%%/share/ipa/ui/js/plugins"
++    UPDATES_DIR = "%%LOCALBASE%%/share/ipa/updates/"
      DICT_WORDS = "/usr/share/dict/words"
      VAR_KERBEROS_KRB5KDC_DIR = "/var/kerberos/krb5kdc/"
      VAR_KRB5KDC_K5_REALM = "/var/kerberos/krb5kdc/.k5."
@@ -101,7 +101,7 @@
      IPA_GETKEYTAB = '/usr/sbin/ipa-getkeytab'
      IPA_MIGRATE_LOG = '/var/log/ipa-migrate.log'
 -    EXTERNAL_SCHEMA_DIR = '/usr/share/ipa/schema.d'
-+    EXTERNAL_SCHEMA_DIR = '/usr/local/share/ipa/schema.d'
++    EXTERNAL_SCHEMA_DIR = '%%LOCALBASE%%/share/ipa/schema.d'
      GSSPROXY_CONF = '/etc/gssproxy/10-ipa.conf'
      KRB5CC_HTTPD = '/tmp/krb5cc-httpd'
      IF_INET6 = '/proc/net/if_inet6'
@@ -112,9 +112,9 @@
 -    ETC_DIRSRV = "/etc/dirsrv"
 -    DS_KEYTAB = "/etc/dirsrv/ds.keytab"
 -    ETC_DIRSRV_SLAPD_INSTANCE_TEMPLATE = "/etc/dirsrv/slapd-%s"
-+    ETC_DIRSRV = "/usr/local/etc/dirsrv"
-+    DS_KEYTAB = "/usr/local/etc/dirsrv/ds.keytab"
-+    ETC_DIRSRV_SLAPD_INSTANCE_TEMPLATE = "/usr/local/etc/dirsrv/slapd-%s"
++    ETC_DIRSRV = "%%LOCALBASE%%/etc/dirsrv"
++    DS_KEYTAB = "%%LOCALBASE%%/etc/dirsrv/ds.keytab"
++    ETC_DIRSRV_SLAPD_INSTANCE_TEMPLATE = "%%LOCALBASE%%/etc/dirsrv/slapd-%s"
      USR_LIB_DIRSRV = "/usr/lib/dirsrv"
      USR_LIB_DIRSRV_64 = "/usr/lib64/dirsrv"
      VAR_LIB_DIRSRV_INSTANCE_SCRIPTS_TEMPLATE = "/var/lib/dirsrv/scripts-%s"

@@ -5,7 +5,7 @@
  default:objectclass: extensibleObject
  default:cn: Schema Compatibility
 -default:nsslapd-pluginpath: /usr/lib$LIBARCH/dirsrv/plugins/schemacompat-plugin.so
-+default:nsslapd-pluginpath: /usr/local/lib/dirsrv/plugins/schemacompat-plugin.so
++default:nsslapd-pluginpath: %%LOCALBASE%%/lib/dirsrv/plugins/schemacompat-plugin.so
  default:nsslapd-plugininitfunc: schema_compat_plugin_init
  default:nsslapd-plugintype: object
  default:nsslapd-pluginenabled: on

@@ -5,7 +5,7 @@
          # copy default env
          env = copy.deepcopy(os.environ)
 -        env["PATH"] = "/bin:/sbin:/usr/kerberos/bin:/usr/kerberos/sbin:/usr/bin:/usr/sbin"
-+        env["PATH"] = "/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
++        env["PATH"] = "/sbin:/bin:/usr/sbin:/usr/bin:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin"
      if stdin:
          p_in = subprocess.PIPE
      if skip_output:

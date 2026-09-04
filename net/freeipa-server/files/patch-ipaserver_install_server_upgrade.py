@@ -5,7 +5,7 @@
              logger.error("Missing Certification Authority file.")
              logger.error("You should place a copy of the CA certificate in "
 -                         "/usr/share/ipa/html/ca.crt")
-+                         "/usr/local/share/ipa/html/ca.crt")
++                         "%%LOCALBASE%%/share/ipa/html/ca.crt")
      else:
          logger.debug('Certificate file exists')
  
@@ -16,9 +16,9 @@
 -        '/usr/share/pki/acme/conf/database/ds/schema.ldif',
 -        '/usr/share/pki/acme/conf/database/ldap/schema.ldif',
 -        '/usr/share/pki/acme/database/ldap/schema.ldif',
-+        '/usr/local/share/pki/acme/conf/database/ds/schema.ldif',
-+        '/usr/local/share/pki/acme/conf/database/ldap/schema.ldif',
-+        '/usr/local/share/pki/acme/database/ldap/schema.ldif',
++        '%%LOCALBASE%%/share/pki/acme/conf/database/ds/schema.ldif',
++        '%%LOCALBASE%%/share/pki/acme/conf/database/ldap/schema.ldif',
++        '%%LOCALBASE%%/share/pki/acme/database/ldap/schema.ldif',
      ]:
          if os.path.exists(path):
              acme_schema_ldif = path
@@ -28,8 +28,8 @@
      schema_files=[
 -        '/usr/share/pki/server/conf/schema-certProfile.ldif',
 -        '/usr/share/pki/server/conf/schema-authority.ldif',
-+        '/usr/local/share/pki/server/conf/schema-certProfile.ldif',
-+        '/usr/local/share/pki/server/conf/schema-authority.ldif',
++        '%%LOCALBASE%%/share/pki/server/conf/schema-certProfile.ldif',
++        '%%LOCALBASE%%/share/pki/server/conf/schema-authority.ldif',
          acme_schema_ldif,
      ]
      try:

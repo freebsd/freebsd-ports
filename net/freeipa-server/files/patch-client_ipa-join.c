@@ -5,7 +5,7 @@
      if (childpid == 0) {
          char *argv[12];
 -        char *path = "/usr/sbin/ipa-getkeytab";
-+        char *path = "/usr/local/sbin/ipa-getkeytab";
++        char *path = "%%PREFIX%%/sbin/ipa-getkeytab";
          int arg = 0;
          int err;
  

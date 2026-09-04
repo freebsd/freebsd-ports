@@ -15,7 +15,7 @@
  
          logger.debug('Deploying ACME')
 -        self._ldap_mod('/usr/share/pki/acme/database/ds/schema.ldif')
-+        self._ldap_mod('/usr/local/share/pki/acme/database/ds/schema.ldif')
++        self._ldap_mod('%%LOCALBASE%%/share/pki/acme/database/ds/schema.ldif')
  
          configure_acme_acls()
  
@@ -42,7 +42,7 @@
      """
      if not data:
 -        with open('/usr/share/pki/VERSION', 'r') as fd:
-+        with open('/usr/local/share/pki/VERSION', 'r') as fd:
++        with open('%%LOCALBASE%%/share/pki/VERSION', 'r') as fd:
              data = fd.read()
  
      groups = re.match(r'.*\nSpecification-Version: ([\d+\.]*)\n.*', data)
@@ -51,10 +51,10 @@
      # and an upgrade-specific version of the profile exists.
      #
 -    profile_filename = '/usr/share/ipa/profiles/{}.cfg'.format(profile_id)
-+    profile_filename = '/usr/local/share/ipa/profiles/{}.cfg'.format(profile_id)
++    profile_filename = '%%LOCALBASE%%/share/ipa/profiles/{}.cfg'.format(profile_id)
      profile_upg_filename = \
 -        '/usr/share/ipa/profiles/{}.UPGRADE.cfg'.format(profile_id)
-+        '/usr/local/share/ipa/profiles/{}.UPGRADE.cfg'.format(profile_id)
++        '%%LOCALBASE%%/share/ipa/profiles/{}.UPGRADE.cfg'.format(profile_id)
      if api.env.context == 'updates' and os.path.isfile(profile_upg_filename):
          profile_filename = profile_upg_filename
  

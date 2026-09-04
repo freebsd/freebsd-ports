@@ -10,9 +10,9 @@
 -# The symlink from /etc/ipa/kdcproxy/ to /etc/httpd/conf.d/ is maintained
 -# by the ExecStartPre script /usr/libexec/ipa/ipa-httpd-kdcproxy in
 -# httpd.service. The service also sets the environment variable
-+# The symlink from /usr/local/etc/ipa/kdcproxy/ipa-kdc-proxy.conf to
-+# /usr/local/etc/apache24/Includes/ipa-kdc-proxy.conf is maintained by
-+# /usr/local/libexec/ipa/ipa-httpd-kdcproxy in the apache24 RC start and
++# The symlink from %%LOCALBASE%%/etc/ipa/kdcproxy/ipa-kdc-proxy.conf to
++# %%LOCALBASE%%/etc/apache24/Includes/ipa-kdc-proxy.conf is maintained by
++# %%PREFIX%%/libexec/ipa/ipa-httpd-kdcproxy in the apache24 RC start and
 +# restart hooks. The service also sets the environment variable
  # KDCPROXY_CONFIG to $KDCPROXY_CONFIG.
  #
