@@ -1,5 +1,5 @@
 bin/freeDiameterd
-bin/freeDiameterd-1.5.0
+bin/freeDiameterd-1.6.0
 include/freeDiameter/extension.h
 include/freeDiameter/freeDiameter-host.h
 include/freeDiameter/libfdcore.h
@@ -32,8 +32,8 @@ lib/freeDiameter/rt_rewrite.fdx
 lib/freeDiameter/test_cc.fdx
 lib/freeDiameter/test_ccload.fdx
 lib/libfdcore.so
-lib/libfdcore.so.1.5.0
-lib/libfdcore.so.6
+lib/libfdcore.so.1.6.0
+lib/libfdcore.so.7
 lib/libfdproto.so
-lib/libfdproto.so.1.5.0
-lib/libfdproto.so.6
+lib/libfdproto.so.1.6.0
+lib/libfdproto.so.7
