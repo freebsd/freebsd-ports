@@ -1,6 +1,5 @@
 PORTNAME=	DDNet
-PORTVERSION=	19.8.3
-PORTREVISION=	2
+PORTVERSION=	20.0
 CATEGORIES=	games
 MASTER_SITES=	https://ddnet.tw/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -25,15 +24,38 @@ CARGO_INSTALL=	no
 CARGO_TEST=	no
 CARGO_TARGET_DIR=${BUILD_WRKSRC}
 CARGO_ENV+=	DDNET_TEST_NO_LINK=1
-CARGO_CRATES=	cc-1.0.73 \
-		cxx-1.0.71 \
-		cxxbridge-flags-1.0.71 \
-		cxxbridge-macro-1.0.71 \
-		link-cplusplus-1.0.6 \
-		proc-macro2-1.0.40 \
-		quote-1.0.20 \
-		syn-1.0.98 \
-		unicode-ident-1.0.1
+CARGO_CRATES=	anstyle-1.0.14 \
+		cc-1.2.29 \
+		clap-4.6.1 \
+		clap_builder-4.6.0 \
+		clap_lex-1.1.0 \
+		codespan-reporting-0.13.1 \
+		cxx-1.0.194 \
+		cxx-build-1.0.194 \
+		cxxbridge-cmd-1.0.194 \
+		cxxbridge-flags-1.0.194 \
+		cxxbridge-macro-1.0.194 \
+		equivalent-1.0.2 \
+		foldhash-0.2.0 \
+		hashbrown-0.17.1 \
+		indexmap-2.14.0 \
+		libc-0.2.183 \
+		link-cplusplus-1.0.12 \
+		proc-macro2-1.0.103 \
+		quote-1.0.41 \
+		scratch-1.0.9 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		shlex-1.3.0 \
+		strsim-0.11.1 \
+		syn-2.0.106 \
+		termcolor-1.4.1 \
+		unicode-ident-1.0.1 \
+		unicode-width-0.2.2 \
+		winapi-util-0.1.11 \
+		windows-link-0.2.1 \
+		windows-sys-0.61.2
 
 PORTDATA=	*
 DATADIR=	${PREFIX}/share/ddnet
