@@ -1,0 +1,4 @@
+bin/filedialogs
+include/filedialogs.hpp
+lib/libfiledialogs.so
+share/licenses/filedialogs-g20250611/LICENSE

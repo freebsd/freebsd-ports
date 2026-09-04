@@ -1,0 +1,4 @@
+A simple file dialog library and command line interface built on SDL3 and Dear ImGui.
+
+This library and CLI supports saving directory favorites, OS-native icon themes, image previews,
+zooming in, open file, multi-select files, save file as, select directory, multiple file filters, etc...
