@@ -1870,7 +1870,7 @@ lib/python%%XYDOT%%/ensurepip/__pycache__/__main__.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-26.2-py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-26.2.1-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
 lib/python%%XYDOT%%/filecmp.py
@@ -2353,9 +2353,6 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zoomheight.cpython-%%XY%%
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy_user.cpython-%%XY%%.opt-1.pyc
-lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy_user.cpython-%%XY%%.opt-2.pyc
-lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy_user.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-%%XY%%.pyc
@@ -2424,7 +2421,6 @@ lib/python%%XYDOT%%/idlelib/idle_test/test_warning.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_window.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_zoomheight.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_zzdummy.py
-lib/python%%XYDOT%%/idlelib/idle_test/test_zzdummy_user.py
 lib/python%%XYDOT%%/idlelib/idle_test/tkinter_testing_utils.py
 lib/python%%XYDOT%%/idlelib/iomenu.py
 lib/python%%XYDOT%%/idlelib/macosx.py
@@ -6064,6 +6060,9 @@ lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_code.cpython-%%XY%
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_collections.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_collections.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_collections.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_context.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_context.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_context.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_cprofile.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_cprofile.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_cprofile.cpython-%%XY%%.pyc
@@ -6166,6 +6165,9 @@ lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_set.cpython-%%XY%%
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_slots.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_slots.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_slots.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_sqlite3.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_sqlite3.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_sqlite3.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_str.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_str.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_free_threading/__pycache__/test_str.cpython-%%XY%%.pyc
@@ -6207,6 +6209,7 @@ lib/python%%XYDOT%%/test/test_free_threading/test_bz2.py
 lib/python%%XYDOT%%/test/test_free_threading/test_capi.py
 lib/python%%XYDOT%%/test/test_free_threading/test_code.py
 lib/python%%XYDOT%%/test/test_free_threading/test_collections.py
+lib/python%%XYDOT%%/test/test_free_threading/test_context.py
 lib/python%%XYDOT%%/test/test_free_threading/test_cprofile.py
 lib/python%%XYDOT%%/test/test_free_threading/test_csv.py
 lib/python%%XYDOT%%/test/test_free_threading/test_dbm_gnu.py
@@ -6241,6 +6244,7 @@ lib/python%%XYDOT%%/test/test_free_threading/test_resource.py
 lib/python%%XYDOT%%/test/test_free_threading/test_reversed.py
 lib/python%%XYDOT%%/test/test_free_threading/test_set.py
 lib/python%%XYDOT%%/test/test_free_threading/test_slots.py
+lib/python%%XYDOT%%/test/test_free_threading/test_sqlite3.py
 lib/python%%XYDOT%%/test/test_free_threading/test_str.py
 lib/python%%XYDOT%%/test/test_free_threading/test_string_template_race.py
 lib/python%%XYDOT%%/test/test_free_threading/test_suggestions.py
@@ -7232,6 +7236,14 @@ lib/python%%XYDOT%%/test/test_lazy_import/data/lazy_get_value.py
 lib/python%%XYDOT%%/test/test_lazy_import/data/lazy_import_pkg.py
 lib/python%%XYDOT%%/test/test_lazy_import/data/lazy_with.py
 lib/python%%XYDOT%%/test/test_lazy_import/data/lazy_with_from.py
+lib/python%%XYDOT%%/test/test_lazy_import/data/lazypkg/__init__.py
+lib/python%%XYDOT%%/test/test_lazy_import/data/lazypkg/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_lazy_import/data/lazypkg/__pycache__/__init__.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_lazy_import/data/lazypkg/__pycache__/__init__.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_lazy_import/data/lazypkg/__pycache__/bar.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_lazy_import/data/lazypkg/__pycache__/bar.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_lazy_import/data/lazypkg/__pycache__/bar.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_lazy_import/data/lazypkg/bar.py
 lib/python%%XYDOT%%/test/test_lazy_import/data/missing_dependency.py
 lib/python%%XYDOT%%/test/test_lazy_import/data/module_with_getattr.py
 lib/python%%XYDOT%%/test/test_lazy_import/data/modules_dict.py
