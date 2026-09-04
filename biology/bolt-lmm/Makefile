@@ -1,6 +1,5 @@
 PORTNAME=	bolt-lmm
-DISTVERSION=	2.3.6
-PORTREVISION=	19
+DISTVERSION=	2.5
 CATEGORIES=	biology
 MASTER_SITES=	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/
 DISTNAME=	BOLT-LMM_v${PORTVERSION}
@@ -14,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 LIB_DEPENDS=	libnlopt.so:math/nlopt \
 		libopenblas.so:math/openblas \
-		libboost_program_options.so:devel/boost-libs
+		libboost_program_options.so:devel/boost-libs \
+		libzstd.so:archivers/zstd
 
 USES=		gmake
 
