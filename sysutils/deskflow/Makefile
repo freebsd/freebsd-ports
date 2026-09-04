@@ -1,6 +1,7 @@
 PORTNAME=	deskflow
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.26.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/deskflow/deskflow/commit/
