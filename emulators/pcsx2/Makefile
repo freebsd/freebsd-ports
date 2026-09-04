@@ -1,12 +1,12 @@
 PORTNAME=	pcsx2
 PORTVERSION=	2.6.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Free and open-source PlayStation 2 emulator
-WWW=	https://pcsx2.net
+WWW=		https://pcsx2.net
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
@@ -18,31 +18,31 @@ BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 # - glad comes from 3rdparty/ (conflicts with libglvnd)
 # - fmt, rapidyaml, soundtouch, zydis, libzip
 #   are always included from 3rdparty/
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libzstd.so:archivers/zstd \
-		liblz4.so:archivers/liblz4 \
-		libwebp.so:graphics/webp \
-		libfreetype.so:print/freetype2 \
-		libplutovg.so:graphics/plutovg \
-		libplutosvg.so:graphics/plutosvg \
-		libshaderc_shared.so:graphics/shaderc \
-		libxkbcommon.so:x11/libxkbcommon \
-		libcurl.so:ftp/curl \
-		libavcodec.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libavformat.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
+		libbacktrace.so:devel/libbacktrace \
+		libcurl.so:ftp/curl \
+		libdbus-1.so:devel/dbus \
+		libfreetype.so:print/freetype2 \
+		libjack.so:audio/jack \
+		libkddockwidgets-qt6.so:x11-toolkits/kddockwidgets \
+		liblz4.so:archivers/liblz4 \
+		libplutosvg.so:graphics/plutosvg \
+		libplutovg.so:graphics/plutovg \
+		libpng.so:graphics/png \
+		libpulse.so:audio/pulseaudio \
+		libshaderc_shared.so:graphics/shaderc \
+		libsndio.so:audio/sndio \
 		libswresample.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
-		libbacktrace.so:devel/libbacktrace \
-		libdbus-1.so:devel/dbus \
-		libpulse.so:audio/pulseaudio \
-		libjack.so:audio/jack \
-		libsndio.so:audio/sndio \
-		libkddockwidgets-qt6.so:x11-toolkits/kddockwidgets \
-		libsysinfo.so:devel/libsysinfo
+		libsysinfo.so:devel/libsysinfo \
+		libwebp.so:graphics/webp \
+		libxkbcommon.so:x11/libxkbcommon \
+		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++20-lang \
-		desktop-file-utils elfctl gl jpeg pkgconfig qt:6 sdl xorg
+USES=		cmake compiler:c++20-lang desktop-file-utils elfctl gl jpeg \
+		pkgconfig qt:6 sdl xorg
 
 USE_GITHUB=	yes
 GH_PROJECT=	pcsx2
@@ -65,15 +65,18 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-no-march-minimum-req
 
 # See: cmake/BuildParameters.cmake
 # XXX Vulkan comes from 3rdparty/
-CMAKE_ARGS+=	\
+CMAKE_ARGS+=	-DCMAKE_LOCALBASE:STRING=${LOCALBASE} \
 		-DCMAKE_REQUIRED_INCLUDES:STRING=${LOCALBASE}/include/ \
-		-DCMAKE_LOCALBASE:STRING=${LOCALBASE} \
+		-DENABLE_TESTS:BOOL=OFF \
 		-DPCSX2_RESOURCES_PATH:STRING=${DATADIR}/resources \
-		-DUSE_VTUNE:BOOL=OFF \
-		-DWAYLAND_API=OFF \
-		-DENABLE_TESTS:BOOL=OFF
+		-DUSE_VTUNE:BOOL=OFF
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS WAYLAND
+
+WAYLAND_USES=		kde:6
+WAYLAND_USE=		KDE=ecm:build
+WAYLAND_CMAKE_BOOL=	WAYLAND_API
+
 PORTDOCS=	GameIndex.pdf
 
 # Stable releases use an even minor number
