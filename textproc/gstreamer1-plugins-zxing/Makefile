@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc multimedia
 
 COMMENT=	GStreamer plugin for QR recognition
