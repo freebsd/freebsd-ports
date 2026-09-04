@@ -1,5 +1,5 @@
 PORTNAME=	yarl
-PORTVERSION=	1.24.2
+PORTVERSION=	1.24.5
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pydantic>=0:devel/py-pydantic@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist cython pep517 pytest  # pydantic test fails
+USE_PYTHON=	autoplist cython pep517 pytest
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/yarl/_quoting_c*.so
