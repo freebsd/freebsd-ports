@@ -20,10 +20,10 @@ For the package to function properly please make sure you have latest ice driver
 installed. If necessary - install the updated version from net/intel-ice-kmod
 
 Usage:
-# nvmupdate-e830
+# nvmupdate-e830-e835
 
 Getting help:
-# nvmupdate-e830 -h
+# nvmupdate-e830-e835 -h
 EOM
 }
 ]

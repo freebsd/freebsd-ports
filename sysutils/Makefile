@@ -556,7 +556,7 @@
     SUBDIR += intel-nvmupdate-700series
     SUBDIR += intel-nvmupdate-e610
     SUBDIR += intel-nvmupdate-e810
-    SUBDIR += intel-nvmupdate-e830
+    SUBDIR += intel-nvmupdate-e830-e835
     SUBDIR += intel-nvmupdate-i210
     SUBDIR += intel-nvmupdate-i225-i226
     SUBDIR += intel-nvmupdate-x550
