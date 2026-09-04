@@ -1,6 +1,7 @@
 PORTNAME=	pythonqt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,6 +11,9 @@ WWW=		https://mevislab.github.io/pythonqt/ \
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on deprecated Qt5 WebEngine
+EXPIRATION_DATE=	2026-09-30
 
 USES=		gettext-runtime gl python qmake qt:5
 USE_QT=		core declarative gui location multimedia network opengl \
