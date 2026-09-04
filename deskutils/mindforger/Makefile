@@ -1,6 +1,6 @@
 PORTNAME=	mindforger
 PORTVERSION=	1.54.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	Thinking notebook and markdown editor
 WWW=		https://www.mindforger.com/
 
 LICENSE=	GPLv2+
+
+DEPRECATED=	Depends on deprecated Qt5 WebEngine
+EXPIRATION_DATE=	2026-09-30
 
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
