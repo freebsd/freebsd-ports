@@ -1,5 +1,5 @@
-TIMESTAMP = 1788159765
-SHA256 (go/net_cliproxyapi/cliproxyapi-v7.2.146/v7.2.146.mod) = 432f236e54b5672bb56113c0d774ab80037a9c7be8afe07d68764460d840f615
-SIZE (go/net_cliproxyapi/cliproxyapi-v7.2.146/v7.2.146.mod) = 5202
-SHA256 (go/net_cliproxyapi/cliproxyapi-v7.2.146/v7.2.146.zip) = 5ea440d7bd07b71b98b29d96a9a293d1ee85cb6b3a2c16dcf667eb984fcba086
-SIZE (go/net_cliproxyapi/cliproxyapi-v7.2.146/v7.2.146.zip) = 9061098
+TIMESTAMP = 1788511552
+SHA256 (go/net_cliproxyapi/cliproxyapi-v7.2.149/v7.2.149.mod) = 432f236e54b5672bb56113c0d774ab80037a9c7be8afe07d68764460d840f615
+SIZE (go/net_cliproxyapi/cliproxyapi-v7.2.149/v7.2.149.mod) = 5202
+SHA256 (go/net_cliproxyapi/cliproxyapi-v7.2.149/v7.2.149.zip) = f2bc74037101dbc9c7b59f6853205da3849d982773876c994bd4f21a6c5ced92
+SIZE (go/net_cliproxyapi/cliproxyapi-v7.2.149/v7.2.149.zip) = 9186787
