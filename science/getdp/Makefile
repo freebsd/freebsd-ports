@@ -1,19 +1,22 @@
 PORTNAME=	getdp
-PORTVERSION=	3.6.0
-PORTREVISION=	2
+DISTVERSION=	4.0.0.rc1
 CATEGORIES=	science
-MASTER_SITES=	http://www.geuz.org/getdp/src/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Rather general finite element solver using mixed finite elements
-WWW=		https://www.geuz.org/getdp/
+WWW=		https://getdp.info/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libgsl.so:math/gsl	\
 		liblapack.so:math/lapack
+
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.onelab.info
+GL_ACCOUNT=	getdp
+GL_PROJECT=	getdp
+GL_COMMIT=	ff94cb9af929d523863deafcfa33342674a9c12a
 
 USES=		fortran tar:tgz cmake
 
