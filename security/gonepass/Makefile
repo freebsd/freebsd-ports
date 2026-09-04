@@ -1,6 +1,6 @@
 PORTNAME=	gonepass
 DISTVERSION=	g20181221
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/jbreams/gonepass
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 USES=		cmake compiler:c++11-lang gnome pkgconfig ssl
 USE_GITHUB=	yes
