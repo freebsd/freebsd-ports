@@ -25,4 +25,4 @@ include/yojimbo_unreliable_unordered_channel.h
 include/yojimbo_utils.h
 lib/libyojimbo.so
 lib/libyojimbo.so.1
-lib/libyojimbo.so.1.6.3
+lib/libyojimbo.so.1.8.2
