@@ -1,0 +1,12 @@
+CrashMail II is a Fidonet tosser with JAM messagebase support.
+It can process FTN packets, maintain message areas, and handle
+message routing for Fidonet networks.
+
+Features ASO (Amiga Style Outbound) mode for compatibility with
+classic Amiga FidoNet mailers. To enable ASO mode, add "ASO" to
+the Flags section in crashmail.conf. Includes sign extension fixes
+in JAMLIB for cross-platform compatibility.
+
+Includes CrashEdit, a full-featured FTN message editor with area
+management, message reader, ANSI art viewer, and file request
+capabilities.
