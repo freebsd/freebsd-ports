@@ -1,0 +1,3 @@
+This package contains all the required files to update the NVM on Intel(R)
+Ethernet I210 adapters with PCI device ID 8086:1533. It contains the NVMUpdate
+utility, configuration file, and updated NVM binaries.

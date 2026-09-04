@@ -557,6 +557,7 @@
     SUBDIR += intel-nvmupdate-e610
     SUBDIR += intel-nvmupdate-e810
     SUBDIR += intel-nvmupdate-e830
+    SUBDIR += intel-nvmupdate-i210
     SUBDIR += intel-nvmupdate-x550
     SUBDIR += intel-pcm
     SUBDIR += intel-undervolt
