@@ -1281,8 +1281,8 @@ include/zeek/spicy/packet-analyzer.h
 include/zeek/spicy/port-range.h
 include/zeek/spicy/protocol-analyzer.h
 include/zeek/spicy/runtime-support.h
-include/zeek/spicy/spicy.bif.h
-include/zeek/spicy/spicyz/config.h
+%%SPICY%%include/zeek/spicy/spicy.bif.h
+%%SPICY%%include/zeek/spicy/spicyz/config.h
 include/zeek/spicy/spicyz/driver.h
 include/zeek/spicy/spicyz/glue-compiler.h
 include/zeek/spicy/spicyz/zeek-version.h
@@ -1626,7 +1626,7 @@ share/man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/plugins/Zeek_XMPP.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/__load__.zeek
 %%DATADIR%%/base/bif/reporter.bif.zeek
-%%DATADIR%%/base/bif/spicy.bif.zeek
+%%SPICY%%%%DATADIR%%/base/bif/spicy.bif.zeek
 %%DATADIR%%/base/bif/stats.bif.zeek
 %%DATADIR%%/base/bif/storage-async.bif.zeek
 %%DATADIR%%/base/bif/storage-events.bif.zeek

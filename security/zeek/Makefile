@@ -28,8 +28,6 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 PORTSCOUT=	limit:^[0-9]*\.0\.
 
-CXXFLAGS_powerpc64=	-mpower8-vector
-
 SHEBANG_FILES=	\
 	auxil/broker/bindings/python/3rdparty/pybind11/docs/conf.py \
 	auxil/broker/bindings/python/3rdparty/pybind11/setup.py \
@@ -108,6 +106,8 @@ OPTIONS_DEFAULT_amd64=	SPICY
 OPTIONS_DEFAULT_armv6=	SPICY
 OPTIONS_DEFAULT_armv7=	SPICY
 OPTIONS_DEFAULT_i386=	SPICY
+OPTIONS_DEFAULT_powerpc64=	SPICY
+OPTIONS_DEFAULT_powerpc64le=	SPICY
 OPTIONS_SUB=		yes
 
 DEBUG_DESC=		Optimizations off, debug symbols/flags on

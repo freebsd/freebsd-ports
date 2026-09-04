@@ -1,0 +1,14 @@
+--- src/CMakeLists.txt.orig	2026-09-03 07:08:53 UTC
++++ src/CMakeLists.txt	2026-09-03 07:08:53 UTC
+@@ -509,9 +509,11 @@
+     target_sources(zeek_hhash_obj PRIVATE ${hhash_dir}/hh_neon.cc)
+     list(APPEND hhash_sources ${hhash_dir}/hh_neon.cc)
+ elseif (${COMPILER_ARCHITECTURE} STREQUAL "power")
++    if (CMAKE_CXX_BYTE_ORDER STREQUAL "LITTLE_ENDIAN")
+     target_sources(zeek_hhash_obj PRIVATE ${hhash_dir}/hh_vsx.cc)
+     set_source_files_properties(${hhash_dir}/hh_vsx.cc PROPERTIES COMPILE_FLAGS -mvsx)
+     list(APPEND hhash_sources ${hhash_dir}/hh_vsx.cc)
++    endif ()
+ elseif (${COMPILER_ARCHITECTURE} STREQUAL "x86_64")
+     target_sources(zeek_hhash_obj PRIVATE ${hhash_dir}/hh_avx2.cc ${hhash_dir}/hh_sse41.cc)
+     if (MSVC)

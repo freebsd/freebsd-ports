@@ -1,0 +1,11 @@
+--- auxil/spicy/3rdparty/fiber/CMakeLists.txt.orig	2026-09-04 12:06:27 UTC
++++ auxil/spicy/3rdparty/fiber/CMakeLists.txt	2026-09-04 12:06:27 UTC
+@@ -82,7 +82,7 @@
+   endif()
+ elseif(CMU_OS_POSIX AND CMU_ARCH_RISCV)
+   set(asm_sources src/fiber_asm_riscv_elf.S)
+-elseif(CMU_OS_POSIX AND CMU_ARCH_PPC AND FIBER_BITS_64 AND CMU_LITTLE_ENDIAN)
++elseif(CMU_OS_POSIX AND CMU_ARCH_PPC AND FIBER_BITS_64)
+   set(asm_sources src/fiber_asm_ppc64le_elf2.S)
+ endif()
+ 
