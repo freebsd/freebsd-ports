@@ -1,6 +1,7 @@
 PORTNAME=	liblognorm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel net security
 
 MAINTAINER=	bofh@FreeBSD.org
