@@ -1,41 +1,54 @@
 PORTNAME=	doxygen
-PORTVERSION=	1.9.6
-PORTREVISION=	4
+DISTVERSIONPREFIX=	Release_
+DISTVERSION=	1.18.0
 PORTEPOCH=	2
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/rel-${PORTVERSION} \
-		http://doxygen.nl/files/
-EXTRACT_SUFX=	.src.tar.gz
-
-PATCH_SITES=	https://github.com/doxygen/doxygen/commit/
-PATCHFILES=	966d69c603b5a6ae22e3132b6ecc6a39b86e52ab.patch:-p1 \
-		7b2a6027775b0158304635a98de0f9b5672f163a.patch:-p1 \
-		f3514d578633cad3e39d6787f81085e46bafbaf4.patch:-p1 \
-		8129939c312e4b5060042fdb93bd071b7b133381.patch:-p1
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/Release_${DISTVERSION:C/\./_/g}/ \
+		https://doxygen.nl/files/
+DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Documentation system for C, C++, and other languages
-WWW=		https://www.doxygen.org/
+WWW=		https://www.doxygen.nl/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		bison cmake compiler:c++17-lang cpe dos2unix \
-		iconv python shebangfix
+LIB_DEPENDS=	libfmt.so:devel/libfmt \
+		libspdlog.so:devel/spdlog
+TEST_DEPENDS=	${LOCALBASE}/bin/xmllint:textproc/libxml2
 
-ALL_TARGET=	all
-CMAKE_ARGS+=	-DDOC_INSTALL_DIR:PATH=${DOCSDIR_REL}
-CMAKE_ARGS+=	-DCMAKE_POLICY_DEFAULT_CMP0116=OLD  # temporary workaround for old Doxygen
-CMAKE_ARGS+=	-DCMAKE_POLICY_DEFAULT_CMP0148=OLD  # temporary workaround for old Doxygen
+USES=		bison cmake compiler:c++20-lang cpe iconv \
+		localbase:ldflags python:build sqlite
 
-EXTRACT_AFTER_ARGS=	--exclude '*/libmd5'
+EXTRACT_CMD=	${SETENV} LC_ALL=C.UTF-8 ${TAR}
+EXTRACT_AFTER_ARGS=	--exclude ${PORTNAME}-${DISTVERSION}/deps/fmt \
+			--exclude ${PORTNAME}-${DISTVERSION}/deps/spdlog \
+			--exclude ${PORTNAME}-${DISTVERSION}/deps/sqlite3 \
+			--no-same-owner --no-same-permissions
 
-DOS2UNIX_FILES=	doc/translator.py
-PLIST_FILES=	bin/doxygen
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-OPTIONS_DEFINE=	DOCS GRAPHVIZ LATEX SEARCH QT5
-OPTIONS_DEFAULT=	GRAPHVIZ
-QT5_DESC=	Install Doxywizard GUI with Qt5
+LDFLAGS+=	-Wl,--as-needed
+
+PORTDOCS=	*
+PLIST_FILES=	bin/doxygen \
+		share/man/man1/doxygen.1.gz
+
+TEST_TARGET=	test
+
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_generateDS \
+		use_sys_fmt \
+		use_sys_spdlog \
+		use_sys_sqlite3
+CMAKE_ARGS=	-DDOC_INSTALL_DIR:PATH=${DOCSDIR_REL} \
+		-DGIT_EXECUTABLE:STRING=false \
+		-DCMAKE_CTEST_ARGUMENTS="-E;012_cite"
+
+OPTIONS_DEFINE=	DOCS GRAPHVIZ LATEX QT6 SEARCH
+OPTIONS_DEFAULT=GRAPHVIZ
+
+QT6_DESC=	Install Doxywizard GUI with QT6
 SEARCH_DESC=	Build external search tools (doxysearch and doxyindexer)
 
 DOCS_USES=		ghostscript:build tex
@@ -43,32 +56,30 @@ DOCS_USE=		TEX=base:build,dvipsk:build,pdftex:build
 DOCS_ALL_TARGET=	docs
 DOCS_BUILD_DEPENDS=	dot:graphics/graphviz
 DOCS_CMAKE_BOOL=	build_doc
-DOCS_PLIST_FILES=	share/man/man1/doxygen.1.gz \
-			share/man/man1/doxyindexer.1.gz \
-			share/man/man1/doxysearch.1.gz \
-			share/man/man1/doxywizard.1.gz
-
-PORTDOCS=		*
 
 GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz
 
-LATEX_USES=	tex
-LATEX_USE=	TEX=base,dvipsk,pdftex
+LATEX_USES=		tex
+LATEX_USE=		TEX=base,dvipsk,pdftex
 
-QT5_USES=	qt:5
-QT5_USE=	QT=core,widgets,gui,xml,qmake:build,buildtools:build
-QT5_CMAKE_BOOL=	build_wizard
-QT5_PLIST_FILES=	bin/doxywizard
+QT6_USES=		qt:6
+QT6_USE=		QT=base,svg
+QT6_CMAKE_BOOL=		build_wizard
+QT6_CMAKE_ON=		-Dforce_qt=Qt6
+QT6_PLIST_FILES=	bin/doxywizard \
+			share/man/man1/doxywizard.1.gz
 
-SEARCH_CMAKE_BOOL=	build_search
 SEARCH_LIB_DEPENDS=	libxapian.so:databases/xapian-core
+SEARCH_CMAKE_BOOL=	build_search
 SEARCH_PLIST_FILES=	bin/doxyindexer \
-			bin/doxysearch.cgi
+			bin/doxysearch.cgi \
+			share/man/man1/doxyindexer.1.gz \
+			share/man/man1/doxysearch.1.gz
 
-post-extract:	# clean up garbage in tarball
-		${RM} ${WRKSRC}/templates/html/._resize.js
-		${RM} ${WRKSRC}/src/._htmlgen.h
-		${RM} ${WRKSRC}/src/._formula.h
-
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION:C/\./_/g}|g' \
+	     ${PATCH_WRKSRC}/cmake/git_watcher.cmake
+	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION:C/\./_/g}|g' \
+	    ${PATCH_WRKSRC}/libversion/gitversion.cpp.in
 
 .include <bsd.port.mk>
