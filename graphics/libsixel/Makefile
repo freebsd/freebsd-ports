@@ -1,9 +1,9 @@
-PORTNAME=	libsixel
-PORTVERSION=	1.8.6
-PORTREVISION=	1
+PORTNAME=	sixel
+DISTVERSION=	1.8.7-r2
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${DISTVERSION}/
+PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Encoder/decoder library for DEC SIXEL graphics
@@ -18,8 +18,6 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
-
-WRKSRC=		${WRKDIR}/sixel-${PORTVERSION}
 
 PORTDOCS=	ChangeLog NEWS
 
@@ -47,6 +45,10 @@ PNG_CONFIGURE_WITH=	png
 PYTHON_USES=		python
 PYTHON_USE=		python=py3kplist
 PYTHON_CONFIGURE_ENABLE=	python
+
+# avoid generating "*.cpython3*.opt-2.pyc" by -OO on byte compiling
+post-patch:
+	@${REINPLACE_CMD} -e '/PYTHON/ s|-OO|-O|' ${WRKSRC}/py-compile
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
