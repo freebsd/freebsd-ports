@@ -1,7 +1,7 @@
 PORTNAME=	pcsx2
 PORTVERSION=	2.6.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -42,7 +42,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++20-lang desktop-file-utils elfctl gl jpeg \
-		pkgconfig qt:6 sdl xorg
+		kde:6 pkgconfig qt:6 sdl xorg
 
 USE_GITHUB=	yes
 GH_PROJECT=	pcsx2
@@ -51,6 +51,7 @@ USE_GL=		egl
 USE_SDL=	sdl3 ttf3
 USE_XORG=	ice x11 xcb xext xi xpm xrandr xrender
 USE_QT=		base declarative tools
+USE_KDE=	ecm:build
 ELF_FEATURES=	+wxneeded:bin/pcsx2-qt
 
 # SSE 4.1 instructions are a hard requirement, if CPUTYPE is defined
@@ -69,14 +70,10 @@ CMAKE_ARGS+=	-DCMAKE_LOCALBASE:STRING=${LOCALBASE} \
 		-DCMAKE_REQUIRED_INCLUDES:STRING=${LOCALBASE}/include/ \
 		-DENABLE_TESTS:BOOL=OFF \
 		-DPCSX2_RESOURCES_PATH:STRING=${DATADIR}/resources \
-		-DUSE_VTUNE:BOOL=OFF
+		-DUSE_VTUNE:BOOL=OFF \
+		-DWAYLAND_API=ON
 
-OPTIONS_DEFINE=	DOCS WAYLAND
-
-WAYLAND_USES=		kde:6
-WAYLAND_USE=		KDE=ecm:build
-WAYLAND_CMAKE_BOOL=	WAYLAND_API
-
+OPTIONS_DEFINE=	DOCS
 PORTDOCS=	GameIndex.pdf
 
 # Stable releases use an even minor number
