@@ -202,6 +202,7 @@
     SUBDIR += qtbitcointrader
     SUBDIR += quantlib
     SUBDIR += quickfix
+    SUBDIR += rcheckbook
     SUBDIR += rubygem-money
     SUBDIR += skrooge
     SUBDIR += sql-ledger
