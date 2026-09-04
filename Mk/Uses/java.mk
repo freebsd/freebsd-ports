@@ -30,7 +30,7 @@
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #			port. An optional "+" allows you to specify a range of
 #			versions. (allowed values: 8[+] 11[+] 17[+]
-#			21[+] 25[+] 26[+])
+#			21[+] 25[+] 26[+] 27[+])
 #			JAVA_DEFAULT (Mk/bsd.default-versions.mk) is used if this
 #			variable is omitted or if JAVA_DEFAULT is part of the range.
 #			Otherwise the latest LTS from the range is preferred over
@@ -205,7 +205,7 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .  endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	8 11 17 21 25 26
+__JAVA_VERSION_LIST=	8 11 17 21 25 26 27
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		openjdk oracle
@@ -224,6 +224,8 @@ _JAVA_PORT_NATIVE_OPENJDK_JDK_25_INFO=		PORT=java/openjdk25			HOME=${LOCALBASE}/
 											VERSION=25	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_26_INFO=		PORT=java/openjdk26			HOME=${LOCALBASE}/openjdk26 \
 											VERSION=26	OS=native	VENDOR=openjdk
+_JAVA_PORT_NATIVE_OPENJDK_JDK_27_INFO=		PORT=java/openjdk27			HOME=${LOCALBASE}/openjdk27 \
+											VERSION=27	OS=native	VENDOR=openjdk
 _JAVA_PORT_LINUX_ORACLE_JDK_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
 											VERSION=8	OS=linux	VENDOR=oracle
 
@@ -243,6 +245,7 @@ __JAVA_PORTS_NATIVE_LTS=	\
 					JAVA_PORT_NATIVE_OPENJDK_JDK_11 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_8
 __JAVA_PORTS_NATIVE_NON_LTS=	\
+					JAVA_PORT_NATIVE_OPENJDK_JDK_27 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_26
 __JAVA_PORTS_ALL=	\
 					${__JAVA_PORTS_NATIVE_LTS} \
@@ -310,7 +313,7 @@ check-makevars::
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .  if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/^8+/8 11+/:S/^11+/11 17+/:S/^17+/17 21+/:S/^21+/21 25+/:S/^25+/25 26+/:S/^26+/26/}
+_JAVA_VERSION=	${JAVA_VERSION:S/^8+/8 11+/:S/^11+/11 17+/:S/^17+/17 21+/:S/^21+/21 25+/:S/^25+/25 26+/:S/^26+/26 27+/:S/^27+/27/}
 .  else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .  endif
