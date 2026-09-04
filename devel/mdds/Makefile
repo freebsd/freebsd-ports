@@ -1,5 +1,5 @@
 PORTNAME=	mdds
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.1
 CATEGORIES=	devel
 #MASTER_SITES=	https://kohei.us/files/mdds/src/
 
@@ -10,33 +10,13 @@ WWW=		https://gitlab.com/mdds/mdds
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		tar:xz
+USES=		autoreconf gmake pkgconfig tar:xz
+GNU_CONFIGURE=	yes
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	mdds
 
-NO_ARCH=	yes
-NO_BUILD=	yes
-
-PLIST_SUB=	API_VERSION=${API_VERSION}
-
-API_VERSION=	${PORTVERSION:R}
-
-do-configure:
-	@${SED} -e 's|@API_VERSION@|${API_VERSION}|' \
-	    -e 's|@VERSION@|${PORTVERSION}|' \
-	    -e 's|@includedir@|$${prefix}/include|' \
-	    -e 's|@prefix@|${PREFIX}|' \
-	    ${WRKSRC}/misc/mdds.pc.in > \
-	    ${WRKSRC}/misc/mdds-${API_VERSION}.pc
-
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/mdds-${API_VERSION}/mdds
-	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} . \
-	    ${STAGEDIR}${PREFIX}/include/mdds-${API_VERSION})
-	${FIND} ${STAGEDIR}${PREFIX}/include/mdds-${API_VERSION} \
-	    \( -name "*.orig" -or -name "Makefile.*" \) -delete
-	${INSTALL_DATA} ${WRKSRC}/misc/mdds-${API_VERSION}.pc \
-	    ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+PLIST_SUB=	API_VERSION=${MDDS_API_VERSION}
+.include "${.CURDIR}/../../devel/mdds/Makefile.version"
 
 .include <bsd.port.mk>
