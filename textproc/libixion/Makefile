@@ -1,6 +1,6 @@
 PORTNAME=	libixion
 DISTVERSION=	0.20.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 #MASTER_SITES=	https://kohei.us/files/ixion/src/
 
@@ -15,7 +15,7 @@ WWW=		https://gitlab.com/ixion/ixion
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	mdds>=${MDDS_VERSION}:devel/mdds
+BUILD_DEPENDS=	mdds>=${MDDS_API_VERSION}:devel/mdds
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 USES=		autoreconf libtool localbase pathfix pkgconfig tar:xz
@@ -32,9 +32,9 @@ PLIST_SUB=	VERSION=${DISTVERSION:R}
 
 CONFIGURE_ARGS=	--disable-python
 
-MDDS_VERSION=	3.1
+.include "${.CURDIR}/../../devel/mdds/Makefile.version"
 
 post-patch:
-	${REINPLACE_CMD} -e 's/mdds-3.0/mdds-${MDDS_VERSION}/' ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -e 's/mdds-3.0/mdds-${MDDS_API_VERSION}/' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
