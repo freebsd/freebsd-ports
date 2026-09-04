@@ -1,6 +1,6 @@
-TIMESTAMP = 1787591016
-SHA256 (fish-4.8.1.tar.xz) = 0eb86a851e865e934a7c2091a73d7695225e78f0e00a7bb96d5f877d76c65782
-SIZE (fish-4.8.1.tar.xz) = 2619540
+TIMESTAMP = 1788541424
+SHA256 (fish-4.9.1.tar.xz) = 93400374bfdb73215cae43bdb09c724f1653f439a85dfc1fe2866639046c95f6
+SIZE (fish-4.9.1.tar.xz) = 2628532
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/allocator-api2-0.2.21.crate) = 683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923
