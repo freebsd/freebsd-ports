@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd %%PREFIX%%/%%NVMUPDATE_DIR%% || exit 1
+exec ./nvmupdate64e "$@"
