@@ -131,6 +131,7 @@
     SUBDIR += bksh
     SUBDIR += bkt
     SUBDIR += blisp
+    SUBDIR += blockio
     SUBDIR += bmd
     SUBDIR += bmd-plugin-avahi
     SUBDIR += bmd-plugin-hookcmd

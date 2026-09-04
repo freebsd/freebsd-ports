@@ -1,0 +1,13 @@
+blockio is a terminal front-end to whatever the kernel will say about block
+I/O: on FreeBSD it drives the DTrace io provider and diskinfo(8). It draws
+one pane per device and one cell per slice of the address space, green for
+reads, red for writes and amber for TRIM, so a resilver or a scrub shows up
+as a bright head marching across the map while scattered metadata writes
+speckle it.
+
+Each cell carries an activity layer that fades in milliseconds and a dimmer
+trail that fades over a minute, showing both what the disk is doing now and
+where the head has been.
+
+It needs root, and on FreeBSD it needs the DTrace modules loaded
+(kldload dtraceall). A demo mode draws synthetic devices without root.
