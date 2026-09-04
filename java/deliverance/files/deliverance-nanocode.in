@@ -1,0 +1,11 @@
+#!/bin/sh
+
+: ${DELIVERANCE_NANOCODE_CONFIG:="%%ETCDIR%%/nanocode-qwen3-0.6b-jq4.json"}
+: ${DELIVERANCE_NANOCODE_JAVA_OPTS:=""}
+
+if [ "$#" -eq 0 ]; then
+    exec "%%JAVA%%" ${DELIVERANCE_NANOCODE_JAVA_OPTS} \
+        -jar "%%NANOCODE_JAR%%" --config "${DELIVERANCE_NANOCODE_CONFIG}"
+fi
+
+exec "%%JAVA%%" ${DELIVERANCE_NANOCODE_JAVA_OPTS} -jar "%%NANOCODE_JAR%%" "$@"

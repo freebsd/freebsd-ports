@@ -1,0 +1,8 @@
+Deliverance is a Java inference engine capable of generating text,
+tokenizing input, computing embeddings, and serving model inference over
+an HTTP API.
+
+Project documentation:
+https://github.com/edwardcapriolo/deliverance#readme
+https://github.com/edwardcapriolo/deliverance/tree/main/deliverance-antares-cli#readme
+https://github.com/edwardcapriolo/deliverance/tree/main/nanocode-deliverance#readme

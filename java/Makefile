@@ -20,6 +20,7 @@
     SUBDIR += bootstrap-openjdk8
     SUBDIR += bouncycastle
     SUBDIR += dbvis
+    SUBDIR += deliverance
     SUBDIR += eclipse
     SUBDIR += eclipse-EPIC
     SUBDIR += eclipse-cdt
