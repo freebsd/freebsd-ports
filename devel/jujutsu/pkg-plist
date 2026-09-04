@@ -55,6 +55,7 @@ etc/bash_completion.d/jj
 %%PORTDOCS%%%%DOCSDIR%%/technical/architecture.md
 %%PORTDOCS%%%%DOCSDIR%%/technical/concurrency.md
 %%PORTDOCS%%%%DOCSDIR%%/technical/conflicts.md
+%%PORTDOCS%%%%DOCSDIR%%/technical/revset-evaluation.md
 %%PORTDOCS%%%%DOCSDIR%%/technical/types.svg
 %%PORTDOCS%%%%DOCSDIR%%/templates.md
 %%PORTDOCS%%%%DOCSDIR%%/testimonials.md
@@ -105,6 +106,7 @@ share/man/man1/jj-config-path.1.gz
 share/man/man1/jj-config-set.1.gz
 share/man/man1/jj-config-unset.1.gz
 share/man/man1/jj-config.1.gz
+share/man/man1/jj-converge.1.gz
 share/man/man1/jj-describe.1.gz
 share/man/man1/jj-diff.1.gz
 share/man/man1/jj-diffedit.1.gz
