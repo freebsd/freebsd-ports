@@ -94,7 +94,7 @@
          # will be an actual folder (i.e. not a link).
          self._logs_dir = None
  
-@@ -279,9 +282,100 @@ class PKIServer(object):
+@@ -279,9 +282,105 @@ class PKIServer(object):
          return '%s@%s' % (self.type, self.name)
  
      @property
@@ -120,7 +120,6 @@
 +            java_home = os.environ["JAVA_HOME"]
 +
 +            with open(self.service_conf, "w", encoding="utf-8") as f:
-+                print("%s_enable=\"YES\"" % prefix, file=f)
 +                print("%s_catalina_home=\"%s\"" % (prefix, Tomcat.SHARE_DIR), file=f)
 +                print("%s_catalina_base=\"%s\"" % (prefix, self.base_dir), file=f)
 +                print("%s_catalina_user=\"%s\"" % (prefix, self.user), file=f)
@@ -171,6 +170,12 @@
 +
 +            os.chmod(self.service_conf, 0o644)
 +
++            subprocess.run(
++                ["/usr/sbin/sysrc", "%s_enable=YES" % prefix],
++                stdout=subprocess.DEVNULL,
++                stderr=subprocess.DEVNULL,
++                check=False)
++
 +        if os.path.lexists(self.rc_script):
 +            if exist_ok:
 +                return
@@ -196,7 +201,7 @@
      @property
      def uid(self):
          return pwd.getpwnam(self.user).pw_uid
-@@ -335,7 +429,7 @@ class PKIServer(object):
+@@ -335,7 +434,7 @@ class PKIServer(object):
              raise pki.PKIException('Invalid instance: ' + self.name, None)
  
      def is_active(self):
@@ -205,7 +210,7 @@
          logger.debug('Command: %s', ' '.join(cmd))
          rc = subprocess.call(cmd)
          return rc == 0
-@@ -415,14 +509,14 @@ class PKIServer(object):
+@@ -415,14 +514,14 @@ class PKIServer(object):
          logger.info('Creating catalina.policy')
  
          # add "do not edit" warning
@@ -223,7 +228,7 @@
  
          if os.path.exists(filename):
              logger.debug('Using original filename')
-@@ -438,7 +532,7 @@ class PKIServer(object):
+@@ -438,7 +537,7 @@ class PKIServer(object):
          content += '\n\n'
  
          # add PKI's default policy
@@ -232,7 +237,7 @@
          logger.info('Appending %s', filename)
          with open(filename, 'r', encoding='utf-8') as f:
              content += f.read()
-@@ -512,7 +606,7 @@ grant codeBase "file:%s" {
+@@ -512,7 +611,7 @@ grant codeBase "file:%s" {
  
      def start(self, wait=False, max_wait=60, timeout=None):
  
@@ -241,7 +246,7 @@
          logger.debug('Command: %s', ' '.join(cmd))
          subprocess.check_call(cmd)
  
-@@ -552,9 +646,24 @@ grant codeBase "file:%s" {
+@@ -552,9 +651,24 @@ grant codeBase "file:%s" {
  
      def stop(self, wait=False, max_wait=60, timeout=None):
  
@@ -268,7 +273,7 @@
  
          if not wait:
              return
-@@ -598,12 +707,17 @@ grant codeBase "file:%s" {
+@@ -598,12 +712,17 @@ grant codeBase "file:%s" {
          self.start(wait=wait, max_wait=max_wait, timeout=timeout)
  
      def enable(self):
@@ -288,7 +293,7 @@
          logger.debug('Command: %s', ' '.join(cmd))
          subprocess.check_call(cmd)
  
-@@ -643,7 +757,7 @@ grant codeBase "file:%s" {
+@@ -643,7 +762,7 @@ grant codeBase "file:%s" {
          for name in self.config:
              logger.debug('- %s: %s', name, self.config[name])
  
@@ -297,7 +302,7 @@
  
          # by default run PKI server as systemd user
          if not as_current_user:
-@@ -652,7 +766,11 @@ grant codeBase "file:%s" {
+@@ -652,7 +771,11 @@ grant codeBase "file:%s" {
  
              # switch to systemd user if different from current user
              if current_user != self.user:
@@ -310,7 +315,7 @@
  
          java_home = self.config.get('JAVA_HOME')
          java_opts = self.config.get('JAVA_OPTS')
-@@ -661,12 +779,12 @@ grant codeBase "file:%s" {
+@@ -661,12 +784,12 @@ grant codeBase "file:%s" {
          classpath = [
              Tomcat.SHARE_DIR + '/bin/bootstrap.jar',
              Tomcat.SHARE_DIR + '/bin/tomcat-juli.jar',
@@ -326,7 +331,7 @@
  
          if with_valgrind:
              cmd.extend(['valgrind', '--trace-children=yes', '--tool=massif'])
-@@ -680,7 +798,7 @@ grant codeBase "file:%s" {
+@@ -680,7 +803,7 @@ grant codeBase "file:%s" {
          else:
              cmd.extend([java_home + '/bin/java'])
  
@@ -335,7 +340,7 @@
              cmd.extend([
                  '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
                  '--add-opens', 'java.base/java.io=ALL-UNNAMED',
-@@ -723,7 +841,7 @@ grant codeBase "file:%s" {
+@@ -723,7 +846,7 @@ grant codeBase "file:%s" {
  
          logger.debug('Command: %s', ' '.join(cmd))
  
@@ -344,7 +349,7 @@
  
      def chown(self, path):
  
-@@ -850,8 +968,8 @@ grant codeBase "file:%s" {
+@@ -850,8 +973,8 @@ grant codeBase "file:%s" {
          self.create_logging_properties(exist_ok=True)
          self.create_web_xml(exist_ok=True)
  
@@ -355,7 +360,7 @@
          self.copy(
              Tomcat.TOMCAT_CONF,
              self.tomcat_conf,
-@@ -861,7 +979,7 @@ grant codeBase "file:%s" {
+@@ -861,7 +984,7 @@ grant codeBase "file:%s" {
          tomcat_conf = pki.PropertyFile(self.tomcat_conf, quote='"')
          tomcat_conf.read()
  
@@ -364,7 +369,7 @@
          java_home = os.getenv('JAVA_HOME')
          tomcat_conf.set('JAVA_HOME', java_home)
  
-@@ -873,27 +991,21 @@ grant codeBase "file:%s" {
+@@ -873,27 +996,21 @@ grant codeBase "file:%s" {
  
          tomcat_conf.write()
  
@@ -396,7 +401,7 @@
          self.makedirs(self.conf_dir, exist_ok=exist_ok)
  
      def create_logs_dir(self, exist_ok=False):
-@@ -907,15 +1019,15 @@ grant codeBase "file:%s" {
+@@ -907,15 +1024,15 @@ grant codeBase "file:%s" {
              backup_dir = os.path.join(self._logs_dir, 'backup')
              self.makedirs(backup_dir, exist_ok=exist_ok)
  
@@ -415,7 +420,7 @@
          backup_dir = os.path.join(self.logs_dir, 'backup')
          self.makedirs(backup_dir, exist_ok=exist_ok)
  
-@@ -931,8 +1043,8 @@ grant codeBase "file:%s" {
+@@ -931,8 +1048,8 @@ grant codeBase "file:%s" {
  
      def create_catalina_properties(self, exist_ok=False):
  
@@ -426,7 +431,7 @@
  
          catalina_properties = os.path.join(
              PKIServer.SHARE_DIR, 'server', 'conf', 'catalina.properties')
-@@ -940,16 +1052,16 @@ grant codeBase "file:%s" {
+@@ -940,16 +1057,16 @@ grant codeBase "file:%s" {
  
      def create_context_xml(self, exist_ok=False):
  
@@ -447,7 +452,7 @@
  
          logging_properties = os.path.join(Tomcat.CONF_DIR, 'logging.properties')
          self.copy(
-@@ -959,7 +1071,7 @@ grant codeBase "file:%s" {
+@@ -959,7 +1076,7 @@ grant codeBase "file:%s" {
  
      def create_server_xml(self, exist_ok=False):
  
@@ -456,7 +461,7 @@
  
          self.copy(
              pki.server.Tomcat.SERVER_XML,
-@@ -1036,7 +1148,7 @@ grant codeBase "file:%s" {
+@@ -1036,7 +1153,7 @@ grant codeBase "file:%s" {
                  self.makedirs(host_dir, exist_ok=exist_ok)
  
                  # Link <instance>/conf/<engine>/<host>/rewrite.config
@@ -465,7 +470,7 @@
  
                  link = os.path.join(host_dir, 'rewrite.config')
                  self.symlink(target, link, exist_ok=exist_ok)
-@@ -1045,8 +1157,8 @@ grant codeBase "file:%s" {
+@@ -1045,8 +1162,8 @@ grant codeBase "file:%s" {
  
      def create_web_xml(self, exist_ok=False):
  
@@ -476,7 +481,7 @@
  
          self.symlink(
              os.path.join(Tomcat.CONF_DIR, 'web.xml'),
-@@ -1367,8 +1479,7 @@ grant codeBase "file:%s" {
+@@ -1367,8 +1484,7 @@ grant codeBase "file:%s" {
  
      def remove(self, remove_conf=False, remove_logs=False, force=False):
  
@@ -486,7 +491,7 @@
  
          logger.info('Removing %s', self.work_dir)
          pki.util.rmtree(self.work_dir, force=force)
-@@ -1419,7 +1530,7 @@ grant codeBase "file:%s" {
+@@ -1419,7 +1535,7 @@ grant codeBase "file:%s" {
              # Get the actual folder in case it has changed
              _logs_dir = os.readlink(self.logs_dir)
  
@@ -495,7 +500,7 @@
              logger.info('Removing %s', self.logs_dir)
              pki.util.unlink(self.logs_dir, force=force)
  
-@@ -1429,7 +1540,7 @@ grant codeBase "file:%s" {
+@@ -1429,7 +1545,7 @@ grant codeBase "file:%s" {
  
              return
  
@@ -504,7 +509,7 @@
          logger.info('Removing %s', self.logs_dir)
          pki.util.rmtree(self.logs_dir, force=force)
  
-@@ -1440,17 +1551,17 @@ grant codeBase "file:%s" {
+@@ -1440,17 +1556,17 @@ grant codeBase "file:%s" {
              # Get the actual folder in case it has changed
              _conf_dir = os.readlink(self.conf_dir)
  
@@ -525,7 +530,7 @@
          logger.info('Removing %s', self.conf_dir)
          pki.util.rmtree(self.conf_dir, force=force)
  
-@@ -1531,11 +1642,11 @@ grant codeBase "file:%s" {
+@@ -1531,11 +1647,11 @@ grant codeBase "file:%s" {
  
              subsystem_dir = os.path.join(self.base_dir, subsystem_name)
  
@@ -539,7 +544,7 @@
              # https://issues.redhat.com/browse/RHEL-21568
              if not os.listdir(subsystem_dir):
                  # Directory exists but it is empty
-@@ -1783,6 +1894,8 @@ grant codeBase "file:%s" {
+@@ -1783,6 +1899,8 @@ grant codeBase "file:%s" {
          The restocon API is not working in RHEL
          (see https://issues.redhat.com/browse/RHEL-73348).
  
@@ -548,7 +553,7 @@
          selinux.restorecon(self.base_dir, True)
          selinux.restorecon(PKIServer.LOG_DIR, True)
          selinux.restorecon(self.actual_logs_dir, True)
-@@ -2658,7 +2771,11 @@ class PKIServerFactory(object):
+@@ -2658,7 +2776,11 @@ class PKIServerFactory(object):
              instance_type = parts[0]
              instance_name = parts[1]
  
