@@ -1,6 +1,6 @@
 PORTNAME=	goldendict
 PORTVERSION=	1.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 
 PATCH_SITES=	https://github.com/goldendict/goldendict/commit/
@@ -13,6 +13,9 @@ WWW=		http://goldendict.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Depends on deprecated Qt5 WebEngine, consider to use textproc/goldendict-ng
+EXPIRATION_DATE=	2026-09-30
 
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 		liblzo2.so:archivers/lzo2 \
