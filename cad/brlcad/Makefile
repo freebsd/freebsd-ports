@@ -1,5 +1,6 @@
 PORTNAME=	brlcad
 PORTVERSION=	7.32.6
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/BRL-CAD/brlcad/releases/download/rel-${PORTVERSION:S/./-/g}/
 
@@ -27,7 +28,6 @@ USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \
 
 CMAKE_OFF=	BRLCAD_ENABLE_STRICT
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
-CXXFLAGS_powerpc64=	-mvsx
 
 TEST_TARGET=	check
 
