@@ -1,3 +1,6 @@
+This was upstreamed in https://github.com/openSUSE/osc/pull/2159,
+remove with the next update
+
 --- tests/test_git_editor.py.orig	2026-05-27 14:39:15 UTC
 +++ tests/test_git_editor.py
 @@ -6,17 +6,21 @@ from osc.gitea_api.common import get_editor_command
