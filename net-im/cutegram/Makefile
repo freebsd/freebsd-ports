@@ -2,7 +2,7 @@ PORTNAME=	cutegram
 PORTVERSION=	2.7.1
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -11,6 +11,9 @@ WWW=		https://aseman.co/en/products/cutegram/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Abandoned, depends on deprecated Qt5 WebEngine
+EXPIRATION_DATE=	2026-09-30
 
 LIB_DEPENDS=	libqtelegram-ae.so:net-im/libqtelegram-ae \
 		libtelegramqml.so:net-im/telegramqml
