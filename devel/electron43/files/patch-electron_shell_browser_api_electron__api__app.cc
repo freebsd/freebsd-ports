@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_app.cc.orig	2026-08-31 00:54:38 UTC
+--- electron/shell/browser/api/electron_api_app.cc.orig	2026-09-04 00:15:46 UTC
 +++ electron/shell/browser/api/electron_api_app.cc
 @@ -110,7 +110,7 @@
  #include "ui/base/resource/resource_bundle.h"
@@ -45,7 +45,7 @@
    // Read the xdg-activation token and set it in the command line for the
    // duration of the notification in order to ensure this is propagated to an
    // already running electron app instance if it exists.
-@@ -1469,7 +1469,7 @@ std::vector<gin_helper::Dictionary> App::GetAppMetrics
+@@ -1470,7 +1470,7 @@ std::vector<gin_helper::Dictionary> App::GetAppMetrics
        pid_dict.Set("name", process_metric.second->name);
      }
  
@@ -54,7 +54,7 @@
      auto memory_info = process_metric.second->GetMemoryInfo();
  
      auto memory_dict = gin_helper::Dictionary::CreateEmpty(isolate);
-@@ -1973,7 +1973,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
+@@ -1974,7 +1974,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
        .SetMethod("getJumpListSettings", &App::GetJumpListSettings)
        .SetMethod("setJumpList", &App::SetJumpList)
  #endif

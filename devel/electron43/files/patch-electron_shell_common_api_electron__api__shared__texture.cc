@@ -1,4 +1,4 @@
---- electron/shell/common/api/electron_api_shared_texture.cc.orig	2026-08-31 00:54:38 UTC
+--- electron/shell/common/api/electron_api_shared_texture.cc.orig	2026-09-04 00:15:46 UTC
 +++ electron/shell/common/api/electron_api_shared_texture.cc
 @@ -27,7 +27,7 @@
  #include "third_party/blink/renderer/platform/graphics/gpu/shared_gpu_context.h"  // nogncheck
@@ -27,7 +27,7 @@
      v8::Local<v8::Object> native_pixmap;
      if (shared_texture.Get("nativePixmap", &native_pixmap)) {
        gin::Dictionary v8_native_pixmap(isolate, native_pixmap);
-@@ -737,7 +737,7 @@ v8::Local<v8::Value> ImportSharedTexture(v8::Isolate* 
+@@ -741,7 +741,7 @@ v8::Local<v8::Value> ImportSharedTexture(v8::Isolate* 
    auto io_surface_scoped = base::apple::ScopedCFTypeRef<IOSurfaceRef>(
        io_surface, base::scoped_policy::RETAIN);
    gmb_handle = gfx::GpuMemoryBufferHandle(std::move(io_surface_scoped));
