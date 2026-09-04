@@ -1,0 +1,19 @@
+Ty is a general-purpose scripting language.
+
+Runtime model: Bytecode interpreter + JIT
+
+Type system:
+
+    Gradually-typed with HM-style inference. Inferred/annotated types are
+    used to guide fast-path emission in JIT functions but otherwise have
+    no impact at runtime. The language is fundamentally dynamic.
+
+Notable features/characteristics:
+
+    + Macros
+    + Pattern matching
+    + C FFI
+    + Stackful coroutines
+    + Garbage-collected
+    + Multithreading
+    + Limited guardrails (!!)
