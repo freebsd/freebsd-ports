@@ -953,6 +953,7 @@
     SUBDIR += redisbloom
     SUBDIR += redisjson
     SUBDIR += redisjson86
+    SUBDIR += redistimeseries
     SUBDIR += retcl
     SUBDIR += rocksdb
     SUBDIR += rocksdb-jni
