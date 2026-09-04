@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
 CATEGORIES=	devel
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object Oriented Input System
 WWW=		https://wgois.github.io/OIS/ \
 		https://github.com/wgois/OIS
