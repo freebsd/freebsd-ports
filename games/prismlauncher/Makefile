@@ -1,5 +1,5 @@
 PORTNAME=	prismlauncher
-DISTVERSION=	11.0.1
+DISTVERSION=	11.1.0
 CATEGORIES=	games java
 MASTER_SITES=	https://github.com/PrismLauncher/PrismLauncher/releases/download/${DISTVERSION}/
 DISTNAME=	PrismLauncher-${DISTVERSION}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		lwjgl3>0:games/lwjgl3 \
 		xrandr:x11/xrandr
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl java kde:6 \
+USES=		cmake compiler:c++20-lang desktop-file-utils gl java kde:6 \
 		pkgconfig qt:6 shared-mime-info
 USE_GITHUB=	nodefault
 USE_GL=		opengl
