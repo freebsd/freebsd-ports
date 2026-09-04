@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2025-06-04 00:50:24 UTC
++++ CMakeLists.txt
+@@ -132,6 +132,16 @@ endif()
+ 	endif()
+ endif()
+ 
++# Check if the system is UNIX-based and not Apple
++if(UNIX)
++  # Configure the pkg-config file from the template
++  configure_file("${PROJECT_SOURCE_DIR}/box2d.pc.in"
++                 "${PROJECT_BINARY_DIR}/box2d.pc" @ONLY)
++
++  # Install the generated pkg-config file to the appropriate directory
++  install(FILES "${PROJECT_BINARY_DIR}/box2d.pc" DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig")
++endif()
++
+ # # Building on clang in windows
+ # cmake -S .. -B . -G "Visual Studio 17 2022" -A x64 -T ClangCL
+ # https://clang.llvm.org/docs/UsersManual.html#clang-cl
