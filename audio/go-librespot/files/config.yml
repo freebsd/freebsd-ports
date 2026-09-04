@@ -1,1 +1,21 @@
 log_disable_timestamp: true
+
+# Crossfade duration between tracks in milliseconds (0 to disable).
+#crossfade_duration: 0
+
+# Whether to wait for a reader to connect to the FIFO before starting playback,
+# instead of failing if none is present (e.g. snapcast with dryout).
+#audio_output_pipe_wait_for_reader: false
+
+# Whether to try Spotify accesspoints on ports 443 and 80 before the default
+# 4070, for networks that only allow those outbound. Does not affect the dealer
+# or spclient, which already use 443.
+#prefer_firewall_friendly_ports: false
+
+# On-disk cache for downloaded (encrypted) audio files, to avoid re-downloading
+# them from the CDN.
+#cache:
+#  enabled: false
+#  dir: ""
+#  size_limit: "1GB"
+
