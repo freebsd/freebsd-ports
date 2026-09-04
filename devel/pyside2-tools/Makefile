@@ -1,5 +1,6 @@
 PORTNAME=	pyside2-tools
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +12,9 @@ WWW=		https://wiki.qt.io/Qt_for_Python
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
+
+DEPRECATED=	Depends on deprecated Qt5 WebEngine
+EXPIRATION_DATE=2026-09-30
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		git>0:devel/git
