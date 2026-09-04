@@ -1,26 +1,29 @@
 [
 { type: install
   message: <<EOM
-The NVM images in this package come from an unofficial, unsupported GitHub
-mirror.  Intel supplies the FreeBSD updater, but did not supply or approve the
-mirror or this port's generated configuration.
+The I225 device 15F2 images come from Intel's I225 v1.00 package.  The I225-V
+device 15F3 and I226 images come from an unofficial, unsupported GitHub mirror.
+Intel supplies the FreeBSD updater, but did not supply or approve the mirror or
+this port's combined configuration.
 
 Intel documents that secured modules within I225/I226 NVM images are signed by
 Intel and authenticated by the controller, and NVMUpdate verifies images by
 default.  These checks do not authenticate the GitHub archive or the generated
 configuration as a unit.  Never disable image verification with the -sv option.
 
-The generated entries match only these Intel reference devices:
+The entries match only these Intel reference devices:
 
+- I225-T1 device 15F2, subsystem 8086:0001
+- I225-LM device 15F2, subsystem 8086:0002
 - I225-V device 15F3, subsystem 8086:0000
 - I226-V device 125C, subsystem 8086:0000
 - I226-LM device 125B, subsystem 8086:0000
 - I226-IT device 125D, subsystem 8086:0000
 
-They do not support arbitrary OEM devices, I225 device 15F2, or I225-IT device
-0D9F.  The I226-LM/IT entries omit the optional REPLACES field and therefore
-match any NVM version with the exact four-part PCI ID.  Obtain an update package
-from the system or motherboard vendor for an OEM design.
+They do not support arbitrary OEM devices or I225-IT device 0D9F.  The
+I226-LM/IT entries omit the optional REPLACES field and therefore match any NVM
+version with the exact four-part PCI ID.  Obtain an update package from the
+system or motherboard vendor for an OEM design.
 
 Both 1MB and 2MB I226-LM/IT entries are present in nvmupdate.cfg, but their PCI
 IDs do not identify flash size.  Do not update an LM/IT device with that

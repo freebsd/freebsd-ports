@@ -1,4 +1,4 @@
-FreeBSD port data version: 20260903
+FreeBSD port data version: 20260904
 
 Intel I225/I226 secure NVM documentation
   Intel Ethernet Controller I225/I226 Datasheet, document 596659
@@ -20,6 +20,30 @@ Intel FreeBSD updater source
   SHA256: b88cbbd093611f35bbb892b3cdb8cfcdf0df92fa0783b8bdeae24f659275fd70
   nvmupdate64e SHA256: 8de98098a32798b668357bbdb9364d779bc177f624a47bd42b7544149936c179
   Version: 1.43.37.1a
+
+Intel I225 NVM package
+  Intel complete driver pack URL:
+  https://downloadmirror.intel.com/923522/Release_31.2.2.zip
+  Path in archive:
+  NVMUpdatePackage/I225/I225_NVMUpdatePackage_v1_00_Linux.tar.gz
+  FreeBSD distfile mirror URL:
+  https://people.freebsd.org/~kbowling/distfiles/I225_NVMUpdatePackage_v1_00_Linux.tar.gz
+  Archive: I225_NVMUpdatePackage_v1_00_Linux.tar.gz
+  SHA256: 5f633957e87a0b7c5c903a180a22c0585f6c9e65015f5635cedcb063cdaa099d
+  Package version: 1.00
+  Intel publishes this archive inside its complete driver pack; the FreeBSD
+  URL above is an unchanged mirror for use by the ports framework.
+
+  FoxPond1_I225_15F2_2MB_1p94_800003BB.bin
+    PCI ID: 8086:15F2, subsystem 8086:0001
+    ETrack: 800003BB
+    SHA256: 2099e6e3475ff6fe150770b69eb66ef3dc0568711339811348325644c0a0e483
+  Foxpond1_I225_15F2_LM_1MB_1p94_800003BC.bin
+    PCI ID: 8086:15F2, subsystem 8086:0002
+    ETrack: 800003BC
+    SHA256: 1170197dd1b66947f9753b1a925adc7aee793a2c2d55297c4e2182c71ed93cd0
+  Foxpond_Map_File_v01.txt
+    SHA256: bfae47c7ab7a57407bb52da52689e25d646e5a46d7f4714a464df9dbd0b2a60a
 
 Unofficial I225-V/I226 image mirror
   URL: https://github.com/BillyCurtis/Intel-I226-V-NVM-Firmware

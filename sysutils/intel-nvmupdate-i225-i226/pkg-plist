@@ -6,6 +6,9 @@ intel-nvmupdate-i225-i226/FXVL_125D_IT_1MB_2.32.bin
 intel-nvmupdate-i225-i226/FXVL_125D_IT_2MB_2.32.bin
 intel-nvmupdate-i225-i226/FXVL_15F3_V_1MB_1.89.bin
 intel-nvmupdate-i225-i226/FXVL_15F3_V_2MB_1.89.bin
+intel-nvmupdate-i225-i226/FoxPond1_I225_15F2_2MB_1p94_800003BB.bin
+intel-nvmupdate-i225-i226/Foxpond1_I225_15F2_LM_1MB_1p94_800003BC.bin
+intel-nvmupdate-i225-i226/Foxpond_Map_File_v01.txt
 intel-nvmupdate-i225-i226/Intel_Proprietary_License.pdf
 intel-nvmupdate-i225-i226/Intel_firmware_license.txt
 intel-nvmupdate-i225-i226/README.FreeBSD

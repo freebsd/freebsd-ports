@@ -1,5 +1,6 @@
-FreeBSD port data version: 20260903
+FreeBSD port data version: 20260904
 Intel NVMUpdate: 1.43.37.1a
+I225 device 15F2: NVM 1.94
 I225-V device 15F3: NVM 1.89
 I226-V device 125C: NVM 2.32
 I226-LM device 125B: NVM 2.32

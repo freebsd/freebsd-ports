@@ -1,13 +1,15 @@
 PORTNAME=	nvmupdate
-DISTVERSION=	20260903
+DISTVERSION=	20260904
 CATEGORIES=	sysutils
-MASTER_SITES=	https://downloadmirror.intel.com/923640/:intel
+MASTER_SITES=	https://downloadmirror.intel.com/923640/:intel \
+		https://people.freebsd.org/~kbowling/distfiles/:i225
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-i225-i226
-DISTFILES=	E610_NVMUpdatePackage_v1_61_FreeBSD.tar.gz:intel
+DISTFILES=	E610_NVMUpdatePackage_v1_61_FreeBSD.tar.gz:intel \
+		I225_NVMUpdatePackage_v1_00_Linux.tar.gz:i225
 
 MAINTAINER=	kbowling@FreeBSD.org
-COMMENT=	NVM update utility for Intel I225-V and I226 Ethernet controllers
+COMMENT=	NVM update utility for Intel I225 and I226 Ethernet controllers
 WWW=		https://github.com/BillyCurtis/Intel-I226-V-NVM-Firmware \
 		https://www.intel.com/content/www/us/en/download/15084/intel-ethernet-adapter-complete-driver-pack.html
 
@@ -38,6 +40,7 @@ SUB_FILES=	nvmupdate-i225-i226 pkg-message
 SUB_LIST=	NVMUPDATE_DIR=${NVMUPDATE_DIR}
 
 INTEL_WRKSRC=	${WRKDIR}/E610/FreeBSDx64
+I225_WRKSRC=	${WRKDIR}/I225/Linux_x64
 NVMUPDATE_DIR=	intel-nvmupdate-i225-i226
 
 CONFIG_FILES=	nvmupdate-i226-it-1mb.cfg nvmupdate-i226-it-2mb.cfg \
@@ -45,6 +48,9 @@ CONFIG_FILES=	nvmupdate-i226-it-1mb.cfg nvmupdate-i226-it-2mb.cfg \
 		nvmupdate.cfg
 INTEL_FILES=	Intel_Proprietary_License.pdf Intel_firmware_license.txt \
 		file_license.txt license.pdf license.txt
+I225_FILES=	FoxPond1_I225_15F2_2MB_1p94_800003BB.bin \
+		Foxpond1_I225_15F2_LM_1MB_1p94_800003BC.bin \
+		Foxpond_Map_File_v01.txt
 NVM_FILES=	I225-V/1.89/FXVL_15F3_V_1MB_1.89.bin \
 		I225-V/1.89/FXVL_15F3_V_2MB_1.89.bin \
 		I226-V/2.32/FXVL_125B_LM_1MB_2.32.bin \
@@ -62,6 +68,9 @@ do-install:
 .endfor
 .for f in ${INTEL_FILES}
 	${INSTALL_DATA} ${INTEL_WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${NVMUPDATE_DIR}/
+.endfor
+.for f in ${I225_FILES}
+	${INSTALL_DATA} ${I225_WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${NVMUPDATE_DIR}/
 .endfor
 .for f in ${NVM_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${NVMUPDATE_DIR}/
