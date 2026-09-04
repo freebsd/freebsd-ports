@@ -32,7 +32,7 @@ HELP_DESC=	Install calc help files
 .if ${FLAVOR:U} == tiny
 OPTIONS_EXCLUDE=FULL HELP
 PKGNAMESUFFIX=	-tiny
-MAKE_ENV+=	BLD_TYPE=calc-static-only
+MAKE_ARGS+=	BLD_TYPE=calc-static-only
 PLIST_FILES=	bin/calc
 PLIST=		# Use only PLIST_FILES
 CONFLICTS_INSTALL+=	calc
