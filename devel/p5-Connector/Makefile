@@ -1,5 +1,5 @@
 PORTNAME=	Connector
-DISTVERSION=	1.55
+DISTVERSION=	1.56
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
 
@@ -18,13 +18,13 @@ BR_DEPENDS=	bash:shells/bash \
 		p5-Config-Versioned>=1.01:devel/p5-Config-Versioned \
 		p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 		p5-DBI>=0:databases/p5-DBI \
+		p5-Feature-Compat-Try>=0:devel/p5-Feature-Compat-Try \
 		p5-libwww>=0:www/p5-libwww \
 		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
 		p5-Module-Install>=0:devel/p5-Module-Install \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Proc-SafeExec>=0:devel/p5-Proc-SafeExec \
-		p5-Syntax-Keyword-Try>=0:devel/p5-Syntax-Keyword-Try \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
 		p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS \
 		p5-YAML>=1.06:textproc/p5-YAML
