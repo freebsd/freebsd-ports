@@ -2,7 +2,7 @@
     <topic>OpenVPN: denial of service</topic>
     <affects>
     <package>
-	<name>openvsp</name>
+	<name>openvpn</name>
 	<range><lt>2.7.7</lt></range>
     </package>
     </affects>
