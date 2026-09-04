@@ -1,19 +1,16 @@
 PORTNAME=		Jellyfish
-DISTVERSIONPREFIX=	v
-DISTVERSION=		2.3.0
-PORTREVISION=		4
+DISTVERSION=		2.3.1
 CATEGORIES=		biology
-MASTER_SITES=		https://github.com/gmarcais/${PORTNAME}/releases/download/v2.3.0/	# Custom distfile reduces dependencies
-DISTNAME=		${PORTNAME:tl}-${DISTVERSION}
+MASTER_SITES=		https://github.com/gmarcais/${PORTNAME}/releases/download/v${DISTVERSION}/	# Custom distfile reduces dependencies
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast, memory-efficient counting of k-mers in DNA
-WWW=		http://www.genome.umd.edu/jellyfish.html
+WWW=		https://www.genome.umd.edu/jellyfish.html
 
 LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE-BSD-3-Clause
-LICENSE_FILE_GPLv3+ =		${WRKSRC}/LICENSE-GPL-3.0
+LICENSE_FILE_GPLv3=		${WRKSRC}/LICENSE-GPL-3.0
 
 LIB_DEPENDS=	libhts.so:biology/htslib
 
@@ -21,7 +18,7 @@ USES=		compiler:c++11-lib libtool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
+WRKSRC=		${WRKDIR}/${PORTNAME:tl}-${PORTVERSION}
 
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	VER=${PORTVERSION}
