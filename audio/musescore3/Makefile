@@ -1,7 +1,7 @@
 PORTNAME=	${GH_PROJECT:tl}3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://musescore.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
+
+DEPRECATED=	Depends on deprecated Qt5 WebEngine, consider to use audio/musescore
+EXPIRATION_DATE=	2026-09-30
 
 LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libsndfile.so:audio/libsndfile \
