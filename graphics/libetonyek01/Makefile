@@ -27,13 +27,14 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
-MDDS_VERSION=	3.1
-
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	LIBVERSION=1.0.${PORTVERSION:E}
 
 CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs \
 		--with-mdds=${MDDS_VERSION}
+
+MDDS_VERSION=	${MDDS_API_VERSION}
+.include "${.CURDIR}/../../devel/mdds/Makefile.version"
 
 .include <bsd.port.mk>
