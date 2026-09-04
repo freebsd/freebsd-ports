@@ -32,7 +32,7 @@ PLIST_SUB=	VERSION=${DISTVERSION:R}
 
 CONFIGURE_ARGS=	--disable-python
 
-.include "${.CURDIR}/../../devel/mdds/Makefile.version"
+.include "${.CURDIR:H:H}/devel/mdds/Makefile.version"
 
 post-patch:
 	${REINPLACE_CMD} -e 's/mdds-3.0/mdds-${MDDS_API_VERSION}/' ${WRKSRC}/configure.ac

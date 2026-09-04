@@ -41,7 +41,7 @@ STATIC_CONFIGURE_ENABLE=	static
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
-.include "${.CURDIR}/../../devel/mdds/Makefile.version"
+.include "${.CURDIR:H:H}/devel/mdds/Makefile.version"
 
 post-patch:
 	${REINPLACE_CMD} -e 's/mdds-3.0/mdds-${MDDS_API_VERSION}/' ${WRKSRC}/configure.ac

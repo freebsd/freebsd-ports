@@ -360,7 +360,7 @@ BINARY_ALIAS=	sed=gsed
 PIE_UNSAFE=	yes
 #MAKE_JOBS_UNSAFE=	yes
 
-.include "${.CURDIR}/../../devel/mdds/Makefile.version"
+.include "${.CURDIR:H:H}/devel/mdds/Makefile.version"
 
 .include <bsd.port.options.mk>
 

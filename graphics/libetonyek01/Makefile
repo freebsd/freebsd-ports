@@ -35,6 +35,6 @@ CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs \
 		--with-mdds=${MDDS_VERSION}
 
 MDDS_VERSION=	${MDDS_API_VERSION}
-.include "${.CURDIR}/../../devel/mdds/Makefile.version"
+.include "${.CURDIR:H:H}/devel/mdds/Makefile.version"
 
 .include <bsd.port.mk>
