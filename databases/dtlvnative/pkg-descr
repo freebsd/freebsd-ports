@@ -1,0 +1,2 @@
+Provides native dependencies for Datalevin database.
+Uses JavaCPP JNI.
