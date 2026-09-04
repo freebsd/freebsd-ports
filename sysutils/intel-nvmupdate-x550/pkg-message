@@ -20,10 +20,10 @@ For the package to function properly please make sure you have latest ix driver
 installed. If necessary - install the updated version from net/intel-ix-kmod
 
 Usage:
-# nvmupdate
+# nvmupdate-x550
 
 Getting help:
-# nvmupdate -h
+# nvmupdate-x550 -h
 EOM
 }
 ]
