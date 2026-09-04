@@ -1,6 +1,6 @@
 PORTNAME=	mongo-cxx-driver
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.5.1
+DISTVERSION=	4.5.2
 CATEGORIES=	devel databases
 
 MAINTAINER=	jwb@FreeBSD.org
