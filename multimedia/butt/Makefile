@@ -1,5 +1,6 @@
 PORTNAME=	butt
 PORTVERSION=	1.47.0
+PORTREVISION=	1
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	https://danielnoethen.de/butt/release/${PORTVERSION}/
 
@@ -30,6 +31,13 @@ USES=		autoreconf compiler:c++11-lang gettext \
 USE_XORG=	x11 xrender xcursor xfixes xext xft xinerama
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-webrtc
+
+OPTIONS_DEFINE=	JACK
+
+JACK_DESC=	JACK audio server support via PortAudio
+JACK_CXXFLAGS=	-DHAVE_JACK
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
+
 CFLAGS+=	-I/usr/local/include
 LDFLAGS+=	-L/usr/local/lib -lintl
 PLIST_FILES=	bin/butt \
