@@ -12,6 +12,8 @@ WWW=		https://github.com/opencv/opencv-python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		Fails to build with FFmpeg 9
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build>=0.14.0:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
