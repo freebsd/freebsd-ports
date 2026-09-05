@@ -12,6 +12,8 @@ WWW=		https://www.mltframework.org/
 LICENSE?=	GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=	multi
 
+BROKEN=		Fails to build with FFmpeg 9
+
 USES+=		cmake localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 
