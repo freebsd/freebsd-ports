@@ -1,7 +1,6 @@
 PORTNAME=	pocketbase
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.39.11
-PORTREVISION=	1
+DISTVERSION=	0.40.2
 CATEGORIES=	www
 
 MAINTAINER=	chris.longros@gmail.com
@@ -11,7 +10,7 @@ WWW=		https://pocketbase.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:modules
+USES=		go:1.27+,modules
 
 GO_MODULE=	github.com/pocketbase/pocketbase
 GO_TARGET=	./examples/base:${PORTNAME}

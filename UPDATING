@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260905:
+  AFFECTS: users of www/pocketbase
+  AUTHOR: nxjoseph@FreeBSD.org
+
+  1) Please note that Go 1.27.0, which upstream has been switched to,
+  retrofitted `encoding/json` to use the v2 package under the hood but
+  unfortunately is not fully backward compatible. I recommend to not
+  push blindly an update on production and to test your PocketBase
+  application first locally to see if everything works correctly.
+
+  2) Note that there could be a slight breaking change in case you are
+  chaining PocketBase commands and relied on the previous `0` exit status
+  for `Command.RunE` returned errors. Or in other words, if you have
+  `./pocketbase invalid && someothercommand` and previously relied that
+  `someothercommand` will be always executed then this is no longer the
+  case and you'll have to adjust it or replace `&&` with `;`.
+
 20260902:
   AFFECTS: users of mail/py-notmuch2
   AUTHOR: jrm@FreeBSD.org
