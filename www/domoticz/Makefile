@@ -10,6 +10,8 @@ WWW=		https://www.domoticz.com
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+BROKEN=		Fails to build with boost 1.91.0
+
 BUILD_DEPENDS=	${LOCALBASE}/include/jwt-cpp/jwt.h:devel/jwt-cpp
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
