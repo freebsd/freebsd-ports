@@ -1,0 +1,53 @@
+From 31658075bbc9215fb862ac777a1b2ba3bc1e2af8 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Einar=20Bjarni=20Halld=C3=B3rsson?= <einar@isnic.is>
+Date: Thu, 3 Sep 2026 11:34:01 +0000
+Subject: [PATCH 1/2] Detect all current and future versions of FreeBSD
+
+---
+ nettacker/core/app.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git nettacker/core/app.py nettacker/core/app.py
+index 236d43101..0bd6c2c1c 100644
+--- nettacker/core/app.py
++++ nettacker/core/app.py
+@@ -66,7 +66,7 @@ def print_logo():
+         log.reset_color()
+ 
+     def check_dependencies(self):
+-        if sys.platform not in {"darwin", "freebsd13", "freebsd14", "freebsd15", "linux"}:
++        if sys.platform not in {"darwin", "linux"} and not sys.platform.startswith("freebsd"):
+             die_failure(_("error_platform"))
+ 
+         try:
+
+From 97c4ca25327881b0ac73a032a0ef38392c840753 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Einar=20Bjarni=20Halld=C3=B3rsson?= <einar@isnic.is>
+Date: Thu, 3 Sep 2026 11:35:19 +0000
+Subject: [PATCH 2/2] Update error message to add FreeBSD as a supported
+ platform
+
+---
+ nettacker/locale/en.yaml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git nettacker/locale/en.yaml nettacker/locale/en.yaml
+index 511d83808..660e78802 100644
+--- nettacker/locale/en.yaml
++++ nettacker/locale/en.yaml
+@@ -52,7 +52,7 @@ graph_output: to use graph feature your output filename must end with ".html" or
+ help_menu: Show Nettacker Help Menu
+ invalid_schema: "Invalid schema: Only 'http' and 'https' are allowed"
+ done: "done!"
+-error_platform: "Unfortunately, this version of the software can run on Linux/darwin"
++error_platform: "Unfortunately, this version of the software can run on Linux/darwin/freebsd"
+ file_saved: "report saved in {0} and database"
+ inserting_report_db: inserting report to the database
+ invalid_database: Please select from mysql or sqlite in the configuration file
+@@ -150,4 +150,4 @@ upload_invalid_filename: invalid filename
+ upload_file_type_not_allowed: file type not allowed
+ upload_invalid_param: invalid or missing upload parameter
+ upload_token_invalid: invalid or expired upload token
+-upload_file_not_found: uploaded file not found or expired
+\ No newline at end of file
++upload_file_not_found: uploaded file not found or expired
