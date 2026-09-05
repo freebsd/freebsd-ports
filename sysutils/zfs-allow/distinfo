@@ -1,5 +1,5 @@
-TIMESTAMP = 1787619403
-SHA256 (go/sysutils_zfs-allow/zfs-allow-v1.0.2/v1.0.2.mod) = 84bedb21533147e5456cea8392e150670681f43557ec58cda6e64629644e7ef5
-SIZE (go/sysutils_zfs-allow/zfs-allow-v1.0.2/v1.0.2.mod) = 1586
-SHA256 (go/sysutils_zfs-allow/zfs-allow-v1.0.2/v1.0.2.zip) = 607d59371d1d87bb0be08f4b028b5a162605fd34ae6c818ec259ecc6fa3b499f
-SIZE (go/sysutils_zfs-allow/zfs-allow-v1.0.2/v1.0.2.zip) = 365129
+TIMESTAMP = 1788589584
+SHA256 (go/sysutils_zfs-allow/zfs-allow-v1.0.4/v1.0.4.mod) = 84bedb21533147e5456cea8392e150670681f43557ec58cda6e64629644e7ef5
+SIZE (go/sysutils_zfs-allow/zfs-allow-v1.0.4/v1.0.4.mod) = 1586
+SHA256 (go/sysutils_zfs-allow/zfs-allow-v1.0.4/v1.0.4.zip) = 6ed2cd3a24980a1f39037569742b002851621029617d32518b6afe5c98d1878e
+SIZE (go/sysutils_zfs-allow/zfs-allow-v1.0.4/v1.0.4.zip) = 368897
