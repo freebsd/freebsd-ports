@@ -398,6 +398,11 @@ FreeCAD/Mod/BIM/nativeifc/ifc_viewproviders.py
 FreeCAD/Mod/CAM/CAMTests/Drilling_1.FCStd
 FreeCAD/Mod/CAM/CAMTests/FilePathTestUtils.py
 FreeCAD/Mod/CAM/CAMTests/Fixtures/OpHelix_v0-21.FCStd
+FreeCAD/Mod/CAM/CAMTests/Fixtures/mtconnect/probe_foreign_vendor.xml
+FreeCAD/Mod/CAM/CAMTests/Fixtures/mtconnect/probe_multi_device.xml
+FreeCAD/Mod/CAM/CAMTests/Fixtures/mtconnect/probe_xyz_inch.xml
+FreeCAD/Mod/CAM/CAMTests/Fixtures/mtconnect/probe_xyz_mm.xml
+FreeCAD/Mod/CAM/CAMTests/Fixtures/mtconnect/probe_xyzac_trt.xml
 FreeCAD/Mod/CAM/CAMTests/Fixtures/test_17748_cam_profile.FCStd
 FreeCAD/Mod/CAM/CAMTests/Fixtures/test_28534_truncated_pocket.FCStd
 FreeCAD/Mod/CAM/CAMTests/PathTestUtils.py
@@ -425,6 +430,7 @@ FreeCAD/Mod/CAM/CAMTests/TestLinuxCNCPost.py
 FreeCAD/Mod/CAM/CAMTests/TestMach3Mach4LegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestMach3Mach4Post.py
 FreeCAD/Mod/CAM/CAMTests/TestMachine.py
+FreeCAD/Mod/CAM/CAMTests/TestMachineMTConnectImport.py
 FreeCAD/Mod/CAM/CAMTests/TestMarlinPost.py
 FreeCAD/Mod/CAM/CAMTests/TestMassoG3Post.py
 FreeCAD/Mod/CAM/CAMTests/TestOpenSBPPost.py
@@ -542,11 +548,13 @@ FreeCAD/Mod/CAM/Init.py
 FreeCAD/Mod/CAM/InitGui.py
 FreeCAD/Mod/CAM/Machine/models/__init__.py
 FreeCAD/Mod/CAM/Machine/models/machine.py
+FreeCAD/Mod/CAM/Machine/models/mtconnect_import.py
 FreeCAD/Mod/CAM/Machine/ui/__init__.py
 FreeCAD/Mod/CAM/Machine/ui/editor/__init__.py
 FreeCAD/Mod/CAM/Machine/ui/editor/machine_editor.py
 FreeCAD/Mod/CAM/Machine/ui/editor/output_options_layout.py
 FreeCAD/Mod/CAM/Machine/ui/editor/postprocessor_properties.py
+FreeCAD/Mod/CAM/Machine/ui/mtconnect_import_dialog.py
 FreeCAD/Mod/CAM/Path/Base/Drillable.py
 FreeCAD/Mod/CAM/Path/Base/FeedRate.py
 FreeCAD/Mod/CAM/Path/Base/Generator/adaptive_common.py
@@ -586,6 +594,7 @@ FreeCAD/Mod/CAM/Path/Base/Gui/PropertyBag.py
 FreeCAD/Mod/CAM/Path/Base/Gui/PropertyEditor.py
 FreeCAD/Mod/CAM/Path/Base/Gui/SetupSheet.py
 FreeCAD/Mod/CAM/Path/Base/Gui/SetupSheetOpPrototype.py
+FreeCAD/Mod/CAM/Path/Base/Gui/Theme.py
 FreeCAD/Mod/CAM/Path/Base/Gui/Util.py
 FreeCAD/Mod/CAM/Path/Base/Gui/__init__.py
 FreeCAD/Mod/CAM/Path/Base/Language.py
