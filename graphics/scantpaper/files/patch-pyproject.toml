@@ -1,0 +1,18 @@
+commit 6d94aeb32d7c65353fd58be92c147d3b3afbf266
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    do not install icons into PYTHON_SITELIBDIR
+
+diff --git pyproject.toml pyproject.toml
+index 9f9ec0b..53825d7 100644
+--- pyproject.toml
++++ pyproject.toml
+@@ -41,7 +41,7 @@ include = ["scantpaper*"]
+ exclude = ["scantpaper.tests"]
+ 
+ [tool.setuptools.package-data]
+-scantpaper = ["app.ui", "icons/**/*"]
++scantpaper = ["app.ui"]
+ 
+ [tool.pytest.ini_options]
+ addopts = "--timeout=300 --cov=scantpaper --cov-report=html --cov-fail-under=99"
