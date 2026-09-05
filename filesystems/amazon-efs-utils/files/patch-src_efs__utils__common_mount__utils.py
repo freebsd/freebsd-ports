@@ -1,6 +1,6 @@
---- src/efs_utils_common/mount_utils.py.orig	2026-04-16 15:59:37 UTC
+--- src/efs_utils_common/mount_utils.py.orig
 +++ src/efs_utils_common/mount_utils.py
-@@ -62,7 +62,15 @@ def mount_nfs(config, dns_name, path, mountpoint, opti
+@@ -65,7 +65,15 @@ def mount_nfs(config, dns_name, path, mountpoint, options, fallback_ip_address=N
  
      nfs_options = get_nfs_mount_options(options, config)
  

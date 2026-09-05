@@ -1,4 +1,4 @@
---- src/efs_utils_common/mount_options.py.orig	2026-04-08 20:20:34 UTC
+--- src/efs_utils_common/mount_options.py.orig
 +++ src/efs_utils_common/mount_options.py
 @@ -7,6 +7,8 @@
  # the License.
@@ -23,11 +23,10 @@
          else:
              options["nfsvers"] = "4.1" if not check_if_platform_is_mac() else "4.0"
  
-@@ -86,6 +95,15 @@ def get_nfs_mount_options(options, config):
-         options["retrans"] = "2"
+@@ -87,6 +96,15 @@ def get_nfs_mount_options(options, config):
      if "noresvport" not in options:
          options["noresvport"] = None
-+
+ 
 +    # FreeBSD requires oneopenown for AWS EFS compatibility.
 +    # retrycnt=1 matches the FreeBSD-recommended EFS mount options and avoids
 +    # the default infinite retry on failure.
@@ -36,6 +35,7 @@
 +            options["oneopenown"] = None
 +        if "retrycnt" not in options:
 +            options["retrycnt"] = "1"
- 
++
      # Set mountport to 2049 for MacOS
      if check_if_platform_is_mac():
+         options["mountport"] = "2049"
