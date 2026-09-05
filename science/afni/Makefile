@@ -1,6 +1,7 @@
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
 DISTVERSION=		26.2.06
+PORTREVISION=		1
 CATEGORIES=		science biology graphics perl5 python
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -42,7 +43,7 @@ USES+=		perl5 python shebangfix tar:xz xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu
 USE_GNOME=	glib20 libxml2
-USE_XORG= 	ice sm x11 xau xcb xdmcp xext xft xi xmu xrender xt
+USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xi xmu xrender xt
 
 SHEBANG_FILES=	scripts_install/* \
 		python_scripts/afnipy/*.py \
@@ -77,13 +78,12 @@ PRESTAGE=	${WRKSRC}/prestage
 .include <bsd.port.options.mk>
 
 CONFLICTS=	im \
-		nifticlib \
 		open-usp-tukubai
 
 X11R6_FILES=	coxplot/Makefile \
 		coxplot/Makefile.f2c
 
-PKG_COMPRESSION_LEVEL= 	6
+PKG_COMPRESSION_LEVEL=	6
 
 post-extract:
 .for f in ${X11R6_FILES}
