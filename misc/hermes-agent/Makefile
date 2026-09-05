@@ -1,5 +1,5 @@
 PORTNAME=	hermes-agent
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 CATEGORIES=	misc python
 MASTER_SITES+=	LOCAL/olivier:webdist
 DISTFILES+=	${PORTNAME}-web-dist-${PORTVERSION}${EXTRACT_SUFX}:webdist
@@ -11,8 +11,20 @@ WWW=		https://github.com/NousResearch/hermes-agent
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# Upstream splits deps into a small `dependencies` core plus lazy-installed
+# extras (tools/lazy_deps.py).  The port ships the provider-specific extras
+# (anthropic, edge-tts, exa-py, fal-client, firecrawl-py, parallel-web) as
+# hard RUN_DEPENDS because patch-tools_lazy__deps.py turns lazy installs off
+# on FreeBSD -- pkg owns site-packages, so there is no runtime pip fallback.
+#
+# firecrawl-anydoc (upstream core since v2026.8.31) is deliberately NOT
+# listed: no port exists, and tools/read_extract.py guards the import and
+# emits a teaching error naming the pip fallback, so the legacy-Office /
+# ODF / EPUB read_file paths degrade instead of breaking the install.
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anthropic>=0.86.0:misc/py-anthropic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>=2026.5.20:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}croniter>=6.0.0:sysutils/py-croniter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cryptography>=50.0.0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}edge-tts>=7.2.7:audio/py-edge-tts@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}exa-py>=2.10.2:www/py-exa-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fal-client>=0.13.1:misc/py-fal-client@${PY_FLAVOR} \
@@ -21,27 +33,35 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anthropic>=0.86.0:misc/py-anthropic@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}firecrawl-py>=4.17.0:www/py-firecrawl-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>=3.10.2:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=2.24.0:misc/py-openai@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=26.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parallel-web>=0.4.2:www/py-parallel-web@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pathspec>=1.1.1:devel/py-pathspec@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=11.3.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.52:devel/py-prompt-toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=7.2.2:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.12.5:devel/py-pydantic2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.12.1:www/py-pyjwt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.13.4:devel/py-pydantic2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.13.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.2.1:www/py-python-dotenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.2.2:www/py-python-dotenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.9:www/py-python-multipart@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.3:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.33.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=14.3.3:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.18.17:devel/py-ruamel.yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}snowballstemmer>=3.1.1:textproc/py-snowballstemmer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}socksio>0:net/py-socksio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=9.1.4:devel/py-tenacity@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.41.0:www/py-uvicorn@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}urllib3>=2.7.0:net/py-urllib3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.41.0:www/py-uvicorn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}websockets>=15.0.1:devel/py-websockets@${PY_FLAVOR}
 
 USES=		python:3.11+,run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	NousResearch
 GH_PROJECT=	hermes-agent
-GH_TAGNAME=	v2026.8.18
+GH_TAGNAME=	v2026.8.31
 
 USE_RC_SUBR=	hermes_dashboard hermes_gateway
 
@@ -80,9 +100,13 @@ PLIST_SUB+=	HERMES_LIBDIR=${HERMES_LIBDIR:S,^${PREFIX}/,,}
 #        tar xzf ${DISTDIR}/NousResearch-${PORTNAME}-${PORTVERSION}-${GH_TAGNAME}_GH0.tar.gz
 #        cd ${PORTNAME}-*/web
 #   2. Install deps and build the SPA:
-#        npm ci --no-audit --no-fund
+#        npm install --no-audit --no-fund
 #        npm run build
 #      This writes the bundle to ../hermes_cli/web_dist/.
+#      (v2026.8.31 dropped web/package-lock.json, so `npm install` is the
+#      only option -- `npm ci` requires a lockfile.  Earlier releases also
+#      needed --engine-strict=false for a too-narrow npm range in
+#      package.json; the engines gate is gone as of this release.)
 #   3. Repackage with a top-level dir whose name matches the distfile:
 #        cp -a ../hermes_cli/web_dist /tmp/${PORTNAME}-web-dist-${PORTVERSION}
 #        cd /tmp && tar --no-acls --no-xattrs --no-fflags --uid=0 --gid=0 \
