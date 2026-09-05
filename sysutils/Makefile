@@ -1146,6 +1146,8 @@
     SUBDIR += py-rendercv
     SUBDIR += py-resolve-march-native
     SUBDIR += py-salt
+    SUBDIR += py-saltext.freebsd
+    SUBDIR += py-saltext.zfs
     SUBDIR += py-salt-tower
     SUBDIR += py-scandir
     SUBDIR += py-scarab
