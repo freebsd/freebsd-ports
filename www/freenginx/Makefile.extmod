@@ -19,7 +19,8 @@ AJP_GH_TUPLE=		msva:nginx_ajp_module:fcbb2cc:ajp
 AJP_VARS=		DSO_EXTMODS+=ajp
 
 ARRAYVAR_IMPLIES=	DEVEL_KIT
-ARRAYVAR_GH_TUPLE=	openresty:array-var-nginx-module:v0.06:arrayvar
+ARRAYVAR_BUILD_DEPENDS=	nginx-module-array-var>0:www/nginx-module-array-var
+WRKSRC_arrayvar=	${WRKDIR}/array-var-nginx-module
 ARRAYVAR_VARS=		DSO_EXTMODS+=arrayvar
 
 AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:f3d9862:aws_auth
