@@ -1,5 +1,5 @@
 PORTNAME=	terminator
-DISTVERSION=	2.1.5
+DISTVERSION=	2.1.6
 PORTREVISION=	0
 CATEGORIES=	x11 python
 MASTER_SITES=	https://github.com/gnome-${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
