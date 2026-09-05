@@ -22,10 +22,11 @@ ARRAYVAR_GH_TUPLE=	openresty:array-var-nginx-module:v0.06:arrayvar
 ARRAYVAR_IMPLIES=	DEVEL_KIT
 ARRAYVAR_VARS=		DSO_EXTMODS+=arrayvar
 
-AUTH_JWT_VERSION=	0.14.2
+AUTH_JWT_VERSION=	0.15.0
 AUTH_JWT_GH_TUPLE=	kjdev:nginx-auth-jwt:${AUTH_JWT_VERSION}:auth_jwt \
 			kjdev:nxe-json:0.5.0:nxe_json \
-			kjdev:nxe-jwx:0.2.0:nxe_jwx
+			kjdev:nxe-jwx:0.3.0:nxe_jwx \
+			kjdev:nxe-phase:0.1.0:nxe_phase
 AUTH_JWT_LIB_DEPENDS=	libjansson.so:devel/jansson
 AUTH_JWT_PREVENTS=	HTTP_AUTH_JWT
 AUTH_JWT_PREVENTS_MSG=	choose auth_jwt or http_auth_jwt module
