@@ -1,5 +1,5 @@
 PORTNAME=	dokuwiki
-DIST_VER=	${PORTNAME}-2026-07-14a
+DIST_VER=	${PORTNAME}-2026-07-14c
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
 CATEGORIES=	www
 MASTER_SITES=	http://download.dokuwiki.org/src/dokuwiki/
@@ -34,6 +34,7 @@ OPTIONS_SUB=	yes
 
 post-patch:
 	@${RM} ${WRKSRC}/data/deleted.files
+	@${RM} -rf ${WRKSRC}/.git
 
 post-patch-TEST-off:
 	@${FIND} ${WRKSRC} -type d -name '_test' -prune -exec ${RM} -rf {} \;
