@@ -11,6 +11,8 @@ LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build, fatal error: linux/input.h: No such file or directory
+
 LIB_DEPENDS=	libao.so:audio/libao \
 		libasound.so:audio/alsa-lib \
 		libcurl.so:ftp/curl \
