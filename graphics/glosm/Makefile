@@ -1,7 +1,7 @@
 PORTNAME=	glosm
 PORTVERSION=	0.0.2
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://github.com/AMDmi3/glosm
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libexpat.so:textproc/expat2
