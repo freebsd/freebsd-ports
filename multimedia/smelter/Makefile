@@ -12,6 +12,8 @@ WWW=		https://smelter.dev \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with FFmpeg 9
+
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libopus.so:audio/opus
 
