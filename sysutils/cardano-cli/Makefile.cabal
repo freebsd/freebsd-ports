@@ -67,7 +67,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		canonical-json-0.6.0.1_1 \
 		capability-0.5.0.1_6 \
 		cardano-addresses-4.0.2:chap \
-		cardano-api-11.5.0.0:chap \
+		cardano-api-11.7.0.0:chap \
 		cardano-base-0.1.6.0:chap \
 		cardano-binary-1.9.1.0:chap \
 		cardano-crypto-1.3.0:chap \
@@ -88,7 +88,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		cardano-ledger-core-1.21.0.0:chap \
 		cardano-ledger-dijkstra-0.3.0.0:chap \
 		cardano-ledger-mary-1.11.0.0:chap \
-		cardano-ledger-shelley-1.19.0.0:chap \
+		cardano-ledger-shelley-1.19.0.1:chap \
 		cardano-ledger-shelley-test-1.9.0.0:chap \
 		cardano-prelude-0.2.2.0:chap \
 		cardano-prelude-test-0.1.0.5:chap \
@@ -247,7 +247,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		microlens-ghc-0.4.15.2 \
 		microlens-mtl-0.2.1.1 \
 		microlens-th-0.4.3.18_1 \
-		microstache-1.0.3.1 \
+		microstache-1.0.3.1_1 \
 		mime-types-0.1.2.2 \
 		mmorph-1.2.2_2 \
 		monad-control-1.0.3.1 \
@@ -277,7 +277,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		optparse-applicative-0.19.0.0:chap \
 		optparse-applicative-fork-0.19.0.0:chap \
 		ordered-containers-0.2.4_1 \
-		ouroboros-consensus-4.1.0.0:chap \
+		ouroboros-consensus-4.2.1.0:chap \
 		ouroboros-network-1.2.0.0:chap \
 		parallel-3.3.0.0_1 \
 		parser-combinators-1.3.1 \
@@ -309,7 +309,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		ral-0.2.2_3 \
 		random-1.3.1 \
 		random-shuffle-0.0.4 \
-		rawlock-0.1.2.0_2 \
+		rawlock-0.1.2.0_3 \
 		recursion-schemes-5.2.3_2 \
 		recv-0.1.1 \
 		reducers-3.12.5_1 \
@@ -337,7 +337,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		socket-0.8.3.0_2 \
 		some-1.0.6_3 \
 		sop-core-0.5.0.2_6 \
-		sop-extras-0.4.1.1:chap \
+		sop-extras-0.4.2.0:chap \
 		split-0.2.5 \
 		splitmix-0.1.3.2 \
 		statistics-0.16.5.0_1 \
@@ -417,7 +417,7 @@ USE_CABAL=	Cabal-3.16.1.0_1 \
 		vector-map-1.2.1.0:chap \
 		vector-stream-0.1.0.1_4 \
 		vector-th-unbox-0.2.2_9 \
-		void-0.7.4 \
+		void-0.7.4_1 \
 		wai-3.2.4 \
 		warp-3.4.14 \
 		wherefrom-compat-0.2.0.0_5 \
