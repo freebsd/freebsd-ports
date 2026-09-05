@@ -1,0 +1,34 @@
+--- Makefile.orig	2026-09-10 12:24:06 UTC
++++ Makefile
+@@ -5,9 +5,8 @@ MSBUILDFLAGS=/property:Configuration=Release
+ # Tools and arguments
+ MSBUILD='/mnt/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/MSBuild.exe' 
+ MSBUILDFLAGS=/property:Configuration=Release
+-CC=gcc
+-LFLAGS=-g -Wall -DUNIX
+-CFLAGS=$(LFLAGS) -c -fno-common -static -Wall -O2 -DNDEBUG -Wno-unused-result -c
++LFLAGS=-Wall -DUNIX
++CFLAGS+=$(LFLAGS) -c -fno-common -static -DNDEBUG -Wno-unused-result -c
+ OUTFLAG=-o 
+ .DEFAULT_GOAL := linux
+ 
+@@ -45,19 +44,11 @@ $(BIN):$(OBJS)
+ # Linking all compiled objects into final binary
+ $(BIN):$(OBJS)
+ 	@echo === Linking Linux target
+-ifeq ($(CC),gcc)
+ 	$(CC) $(LFLAGS) $(OBJS) $(OUTFLAG) $@
+-else
+-	$(LINKER) $(LINKERFLAGS)$@ $(OBJS)
+-endif
+ 
+ # Compile each .c file into .o file
+ $(OBJDIR)/%.o: $(SRCDIR)/%.c
+-ifeq ($(CC),gcc)
+ 	$(CC) $(CFLAGS) $< $(OUTFLAG) $@
+-else
+-	$(CC) $(CFLAGS)$@ $<
+-endif
+ 
+ $(BINDIR):
+ 	@mkdir $(BINDIR)

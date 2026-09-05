@@ -76,6 +76,7 @@
     SUBDIR += erlang-wx
     SUBDIR += execline
     SUBDIR += expect
+    SUBDIR += ez80asm
     SUBDIR += f2c
     SUBDIR += fasm
     SUBDIR += fennel
