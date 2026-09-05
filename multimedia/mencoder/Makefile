@@ -1,13 +1,11 @@
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Convenient video file and movie encoder
 WWW=		http://www.mplayerhq.hu/
-
-BROKEN=		Fail to build with FFmpeg 9
 
 .include "${.CURDIR}/../mplayer/Makefile.common"
 
