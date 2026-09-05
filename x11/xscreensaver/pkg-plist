@@ -3,6 +3,7 @@ bin/xscreensaver-command
 bin/xscreensaver-demo
 bin/xscreensaver-hacks/abstractile
 bin/xscreensaver-hacks/alienbeacon
+bin/xscreensaver-hacks/amigajuggler
 bin/xscreensaver-hacks/anemone
 bin/xscreensaver-hacks/anemotaxis
 bin/xscreensaver-hacks/antinspect
@@ -91,6 +92,7 @@ bin/xscreensaver-hacks/flame
 bin/xscreensaver-hacks/flipflop
 bin/xscreensaver-hacks/flipscreen3d
 bin/xscreensaver-hacks/fliptext
+bin/xscreensaver-hacks/floppy
 bin/xscreensaver-hacks/flow
 bin/xscreensaver-hacks/fluidballs
 bin/xscreensaver-hacks/flurry
@@ -119,6 +121,7 @@ bin/xscreensaver-hacks/glsnake
 bin/xscreensaver-hacks/gltext
 bin/xscreensaver-hacks/goldenapollian
 bin/xscreensaver-hacks/goop
+bin/xscreensaver-hacks/graphstat
 bin/xscreensaver-hacks/grav
 bin/xscreensaver-hacks/gravitywell
 bin/xscreensaver-hacks/greynetic
@@ -197,6 +200,7 @@ bin/xscreensaver-hacks/piecewise
 bin/xscreensaver-hacks/pinion
 bin/xscreensaver-hacks/pipes
 bin/xscreensaver-hacks/platonicfolding
+bin/xscreensaver-hacks/polarnight
 bin/xscreensaver-hacks/polyhedra
 bin/xscreensaver-hacks/polyominoes
 bin/xscreensaver-hacks/polytopes
@@ -341,6 +345,7 @@ share/man/man1/xscreensaver-demo.1.gz
 share/man/man1/xscreensaver-settings.1.gz
 share/man/man6/abstractile.6.gz
 share/man/man6/alienbeacon.6.gz
+share/man/man6/amigajuggler.6.gz
 share/man/man6/anemone.6.gz
 share/man/man6/anemotaxis.6.gz
 share/man/man6/antinspect.6.gz
@@ -532,6 +537,7 @@ share/man/man6/piecewise.6.gz
 share/man/man6/pinion.6.gz
 share/man/man6/pipes.6.gz
 share/man/man6/platonicfolding.6.gz
+share/man/man6/polarnight.6.gz
 share/man/man6/polyhedra.6.gz
 share/man/man6/polyominoes.6.gz
 share/man/man6/polytopes.6.gz
@@ -638,6 +644,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/README
 %%DATADIR%%/config/abstractile.xml
 %%DATADIR%%/config/alienbeacon.xml
+%%DATADIR%%/config/amigajuggler.xml
 %%DATADIR%%/config/anemone.xml
 %%DATADIR%%/config/anemotaxis.xml
 %%DATADIR%%/config/antinspect.xml
@@ -726,6 +733,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/flipflop.xml
 %%DATADIR%%/config/flipscreen3d.xml
 %%DATADIR%%/config/fliptext.xml
+%%DATADIR%%/config/floppy.xml
 %%DATADIR%%/config/flow.xml
 %%DATADIR%%/config/fluidballs.xml
 %%DATADIR%%/config/flurry.xml
@@ -754,6 +762,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/gltext.xml
 %%DATADIR%%/config/goldenapollian.xml
 %%DATADIR%%/config/goop.xml
+%%DATADIR%%/config/graphstat.xml
 %%DATADIR%%/config/grav.xml
 %%DATADIR%%/config/gravitywell.xml
 %%DATADIR%%/config/greynetic.xml
@@ -831,6 +840,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/pinion.xml
 %%DATADIR%%/config/pipes.xml
 %%DATADIR%%/config/platonicfolding.xml
+%%DATADIR%%/config/polarnight.xml
 %%DATADIR%%/config/polyhedra.xml
 %%DATADIR%%/config/polyominoes.xml
 %%DATADIR%%/config/polytopes.xml
