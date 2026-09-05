@@ -5595,3 +5595,4 @@ sysutils/intel-nvmupdate-10g|sysutils/intel-nvmupdate-x550|2026-09-03|Rename to 
 sysutils/intel-nvmupdate-100g|sysutils/intel-nvmupdate-e810|2026-09-03|Rename to match supported hardware
 sysutils/intel-nvmupdate-40g|sysutils/intel-nvmupdate-700series|2026-09-03|Rename to match supported hardware
 sysutils/intel-nvmupdate-e830|sysutils/intel-nvmupdate-e830-e835|2026-09-03|Rename to match supported hardware
+sysutils/mprocs|sysutils/dekit|2026-09-05|Upstream renamed
