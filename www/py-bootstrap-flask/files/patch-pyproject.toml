@@ -1,0 +1,15 @@
+- Use the legacy table form of the license field, since devel/py-setuptools
+  (63.1.0) predates setuptools 77.0.0 where SPDX license expressions (PEP 639)
+  were introduced.
+
+--- pyproject.toml.orig	2026-09-05 14:34:20 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ readme = "README.md"
+ version = "2.6.0"
+ description = "Bootstrap 4 & 5 helper for your Flask projects."
+ readme = "README.md"
+-license = "MIT"
++license = { text = "MIT" }
+ authors = [{ name = "Grey Li", email = "withlihui@gmail.com" }]
+ classifiers = [
+     'Development Status :: 5 - Production/Stable',
