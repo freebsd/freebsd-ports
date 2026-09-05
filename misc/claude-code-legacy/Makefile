@@ -17,6 +17,8 @@ FETCH_DEPENDS=	cargo:lang/rust \
 EXTRACT_DEPENDS=	curl:ftp/curl
 RUN_DEPENDS=	rg:textproc/ripgrep
 
+BROKEN=		Checksum error
+
 USES=		nodejs:run
 
 JS_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/:S/i386/ia32/:S/powerpc64le/ppc64le/:S/powerpc64/ppc64/:C/armv[67]/arm/} # modeled after electron.mk
