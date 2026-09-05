@@ -1,19 +1,20 @@
 PORTNAME=	freeradius-client
-PORTVERSION=	1.1.7
-PORTREVISION=	0
+PORTVERSION=	1.1.8
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/ \
-		ftp://ftp.suntel.com.tr/pub/freeradius/
 
 MAINTAINER=	netch@portaone.com
 COMMENT=	Client library and basic utilities for RADIUS AAA
-WWW=		http://wiki.freeradius.org/Radiusclient
+WWW=		https://wiki.freeradius.org/project/Radiusclient
+
+USES=		gmake libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	FreeRADIUS
+GH_TAGNAME=	release_1_1_8
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool
 USE_LDCONFIG=	yes
 
-CONFLICTS=	radiusclient-ng
+CONFLICTS_INSTALL=	radiusclient
 
 .include <bsd.port.mk>
