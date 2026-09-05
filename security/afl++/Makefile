@@ -1,6 +1,6 @@
 PORTNAME=	afl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.35c
+DISTVERSION=	4.40c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++-${FLAVOR}
 
@@ -36,14 +36,14 @@ MAKEFILE=	GNUmakefile
 MAKE_ARGS=	AFL_NO_X86=1 AFL_NO_TEST_BUILD=1 \
 		NO_FRIDA=1 NO_UNICORN=1 NO_QEMU=1 \
 		PREFIX="${PREFIX}/${PKGBASE}"
+ALL_TARGET=	distrib
+QA_ENV=		IGNORE_QA_stripped=1 # unstripped to keep it functional
 .if ${FLAVOR} == llvm
-CFLAGS_riscv64=	-mno-relax
 MAKE_ARGS+=	CC=clang${LLVM_VERSION} \
 		CXX=clang++${LLVM_VERSION} \
 		LLVM_CONFIG=llvm-config${LLVM_VERSION}
+CFLAGS_riscv64=	-mno-relax
 .endif
-ALL_TARGET=	distrib
-QA_ENV=		IGNORE_QA_stripped=1 # unstripped to keep it functional
 
 DOCSDIR=	${PREFIX}/${PKGBASE}/share/doc/afl
 MANDIRS=	${PREFIX}/${PKGBASE}/share/man/man8
