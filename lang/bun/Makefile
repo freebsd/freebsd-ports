@@ -26,6 +26,8 @@ WWW=		https://bun.com/ \
 
 LICENSE=	LGPL20
 
+BROKEN=		Checksum error
+
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	bootstrap binary is only available for amd64 for now
 
