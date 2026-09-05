@@ -7,6 +7,8 @@ MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Convenient video file and movie encoder
 WWW=		http://www.mplayerhq.hu/
 
+BROKEN=		Fail to build with FFmpeg 9
+
 .include "${.CURDIR}/../mplayer/Makefile.common"
 
 OPTIONS_DEFINE=	AMR_NB AMR_WB ASS BLURAY CDIO DV DVDNAV FAAC FONTCONFIG \
