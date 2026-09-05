@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based filesystem for iPod
 WWW=		https://fusepod.sourceforge.net/
 
+BROKEN=		Fails to build
+
 LIB_DEPENDS=	libgpod.so:audio/libgpod\
 		libtag.so:audio/taglib
 
