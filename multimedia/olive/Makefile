@@ -16,9 +16,10 @@ WWW=		https://olivevideoeditor.org/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv7=	compilation fails: error: unknown type name '__m128'
-BROKEN_i386=	compilation fails, see https://github.com/olive-editor/olive/issues/2364
-BROKEN_powerpc=	compilation fails, see https://github.com/olive-editor/olive/issues/2364
+BROKEN=		Fails to build with FFmpeg 9
+#BROKEN_armv7=	compilation fails: error: unknown type name '__m128'
+#BROKEN_i386=	compilation fails, see https://github.com/olive-editor/olive/issues/2364
+#BROKEN_powerpc=compilation fails, see https://github.com/olive-editor/olive/issues/2364
 
 BUILD_DEPENDS=	frei0r>0:graphics/frei0r
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
