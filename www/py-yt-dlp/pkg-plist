@@ -29,7 +29,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/downloader/mhtml.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/downloader/niconico.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/downloader/rtmp.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/downloader/rtsp.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/downloader/soop.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/downloader/websocket.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/downloader/youtube_live_chat.py
@@ -326,7 +325,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/go.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/godresource.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/godtube.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/gofile.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/golem.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/goodgame.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/googledrive.py
@@ -577,6 +575,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/oftv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/oktoberfesttv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/olympics.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/omnyfm.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/on24.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/ondemandkorea.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/onefootball.py
@@ -827,7 +826,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/toutiao.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/toutv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/toypics.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/trovo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/trtcocuk.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/trtworld.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/trueid.py
@@ -995,6 +993,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/pot/provider.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/pot/utils.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/zaiko.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/zan.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/zapiks.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/zattoo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/zdf.py
