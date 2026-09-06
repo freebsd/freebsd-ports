@@ -1,0 +1,16 @@
+--- build.orig	1981-01-01 00:00:00 UTC
++++ build
+@@ -11,11 +11,11 @@ GO_LDFLAGS="$GO_LDFLAGS -X $mod.DefaultLogPath=$LOGPAT
+ GO_LDFLAGS="$GO_LDFLAGS -X $mod.DefaultSendmailPath=$SENDMAIL"
+ GO_LDFLAGS="$GO_LDFLAGS -X $mod.DefaultSpoolPath=$SPOOLPATH"
+ GO_LDFLAGS="$GO_LDFLAGS -X $mod.DefaultLogPath=$LOGPATH"
+-$GO build $vendor -o ../bin/nncp $GO_CFLAGS -ldflags "$GO_LDFLAGS" ./cmd/nncp
++$GO build $vendor -o ../bin/nncp -ldflags "$GO_LDFLAGS" ./cmd/nncp
+ 
+ hjsonVersion=v$(sed -n "s/^.*hjson-go.* v\(.*\)$/\1/p" <go.mod)
+ GO_LDFLAGS="$GO_LDFLAGS -X main.Version=$hjsonVersion"
+-$GO build $vendor -o ../bin/hjson-cli $GO_CFLAGS -ldflags "$GO_LDFLAGS" \
++$GO build $vendor -o ../bin/hjson-cli -ldflags "$GO_LDFLAGS" \
+     github.com/hjson/hjson-go/v4/hjson-cli
+ 
+ cd ../bin
