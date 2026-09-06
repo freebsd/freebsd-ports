@@ -2,7 +2,7 @@ PORTNAME=	strawberry-graphql
 # Upstream releases updates relatively frequently, so this port is usually
 # updated along with its py-strawberry-graphql counterpart whenever a new
 # version of net-mgmt/netbox is released.
-DISTVERSION=	0.327.1
+DISTVERSION=	0.327.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj60-
