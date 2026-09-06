@@ -1,6 +1,6 @@
 PORTNAME=	pgbot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
+DISTVERSION=	0.8.1
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://pgbot.dev/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.27,modules
 
 GO_MODULE=	github.com/pgrundev/pgbot
 GO_TARGET=	./cmd/pgbot
