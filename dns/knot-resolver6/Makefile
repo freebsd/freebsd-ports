@@ -1,6 +1,5 @@
 PORTNAME=	knot-resolver
-DISTVERSION=	6.1.0
-PORTREVISION=	2
+DISTVERSION=	6.4.2
 CATEGORIES=	dns
 MASTER_SITES=	https://knot-resolver.nic.cz/release/ \
 		https://dns.company/downloads/knot-resolver/
@@ -22,6 +21,8 @@ LIB_DEPENDS=	libdnssec.so:dns/knot3 \
 		libknot.so:dns/knot3 \
 		liblmdb.so:databases/lmdb0 \
 		libnghttp2.so:www/libnghttp2 \
+		libngtcp2.so:net/libngtcp2 \
+		libngtcp2_crypto_gnutls.so:net/libngtcp2-gnutls \
 		libuv.so:devel/libuv \
 		libzscanner.so:dns/knot3
 RUN_DEPENDS=	${LUA_FLAVOR}-cqueues>=20200726_1:devel/lua-cqueues@${LUA_FLAVOR}
