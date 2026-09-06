@@ -1,5 +1,5 @@
 PORTNAME=	ujson
-PORTVERSION=	5.13.0
+PORTVERSION=	6.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-scm>=0:devel/py-setuptools-scm@
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		cpe python
-CPE_PRODUCT=	ultrajson
 CPE_VENDOR=	ultrajson_project
-USE_PYTHON=	pep517 autoplist
+CPE_PRODUCT=	ultrajson
+USE_PYTHON=	autoplist pep517
 
 .include <bsd.port.mk>

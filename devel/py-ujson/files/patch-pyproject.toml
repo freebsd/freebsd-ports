@@ -1,14 +1,15 @@
---- pyproject.toml.orig	2026-06-14 22:33:29 UTC
+--- pyproject.toml.orig	2026-09-06 00:55:22 UTC
 +++ pyproject.toml
-@@ -1,6 +1,6 @@ requires = [
+@@ -1,15 +1,14 @@ requires = [
  [build-system]
  requires = [
--  "setuptools>=77",
+-  "setuptools>=80",
+-  "setuptools-scm[simple]>=9.2",
 +  "setuptools>=63",
-   "setuptools-scm[toml]>=3.4",
++  "setuptools-scm[toml]>=3.4",
  ]
  
-@@ -8,8 +8,7 @@ readme = "README.md"
+ [project]
  name = "ujson"
  description = "Ultra fast JSON encoder and decoder for Python"
  readme = "README.md"
