@@ -1,6 +1,6 @@
---- cmake/posix.cmake.orig	2026-07-12 07:07:00 UTC
+--- cmake/posix.cmake.orig	2026-08-27 09:51:07 UTC
 +++ cmake/posix.cmake
-@@ -88,9 +88,6 @@ else()
+@@ -81,9 +81,6 @@ else()
  
  	if(NOT DISABLE_CURSES)
  		set(CURSES_NEED_NCURSES TRUE)

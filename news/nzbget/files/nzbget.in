@@ -13,25 +13,18 @@
 # nzbget_user:    user to run nzbget as (recommended)
 # nzbget_conf:    path to config if in a non-standard location (optional)
 
-command=%%PREFIX%%/bin/nzbget
-
 . /etc/rc.subr
-
-load_rc_config nzbget
-
-nzbget_enable=${nzbget_enable:-NO}
-nzbget_user=${nzbget_user:-root}
-nzbget_conf=${nzbget_conf:+"-c $nzbget_conf"}
 
 name=nzbget
 rcvar=nzbget_enable
 
-start_cmd="nzbget_cmd -D"
-stop_cmd="nzbget_cmd -Q"
-reload_cmd="nzbget_cmd -O"
+command=%%PREFIX%%/bin/nzbget
 
-nzbget_cmd() {
-  /usr/bin/su -l $nzbget_user -c "exec $command $nzbget_conf $1"
-}
+load_rc_config $name
+
+nzbget_enable=${nzbget_enable:-NO}
+nzbget_user=${nzbget_user:-root}
+nzbget_conf=${nzbget_conf:+"-c $nzbget_conf"}
+nzbget_flags="$nzbget_conf -D"
 
 run_rc_command "$1"
