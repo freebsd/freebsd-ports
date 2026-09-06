@@ -178,8 +178,8 @@
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-h2-plugin-%%VERSION%%/dependencies/h2-1.3.175.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-h2-plugin-%%VERSION%%/nexus-h2-plugin-%%VERSION%%.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-indexer-lucene-plugin-%%VERSION%%/META-INF/MANIFEST.MF
-%%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-indexer-lucene-plugin-%%VERSION%%/dependencies/indexer-artifact-5.1.2-bf3d48b.jar
-%%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-indexer-lucene-plugin-%%VERSION%%/dependencies/indexer-core-5.1.2-bf3d48b.jar
+%%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-indexer-lucene-plugin-%%VERSION%%/dependencies/indexer-artifact-5.1.2-202109.jar
+%%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-indexer-lucene-plugin-%%VERSION%%/dependencies/indexer-core-5.1.2-202109.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-indexer-lucene-plugin-%%VERSION%%/dependencies/jakarta-regexp-1.4.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-indexer-lucene-plugin-%%VERSION%%/dependencies/lucene-core-3.6.2.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-indexer-lucene-plugin-%%VERSION%%/dependencies/lucene-highlighter-3.6.2.jar
@@ -247,6 +247,8 @@
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-orient-plugin-%%VERSION%%/dependencies/orientdb-server-2.1.14.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-orient-plugin-%%VERSION%%/nexus-orient-plugin-%%VERSION%%.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-outreach-plugin-%%VERSION%%/META-INF/MANIFEST.MF
+%%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-outreach-plugin-%%VERSION%%/dependencies/license-bundle-1.5.0.jar
+%%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-outreach-plugin-%%VERSION%%/dependencies/xpp3_min-1.1.4c.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-outreach-plugin-%%VERSION%%/nexus-outreach-plugin-%%VERSION%%.jar
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-plugin-console-plugin-%%VERSION%%/META-INF/MANIFEST.MF
 %%DATADIR%%/nexus/WEB-INF/plugin-repository/nexus-plugin-console-plugin-%%VERSION%%/nexus-plugin-console-plugin-%%VERSION%%.jar
