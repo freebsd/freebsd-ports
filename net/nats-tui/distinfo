@@ -1,5 +1,5 @@
-TIMESTAMP = 1788589582
-SHA256 (go/net_nats-tui/nats-tui-v1.1.2/v1.1.2.mod) = 9667ba0a65b3ce24d3e3e42a008416231f22e8a526a9490fbd4f429fc910809f
-SIZE (go/net_nats-tui/nats-tui-v1.1.2/v1.1.2.mod) = 2335
-SHA256 (go/net_nats-tui/nats-tui-v1.1.2/v1.1.2.zip) = 0b5c10bdb6a91731d34e5777ddeaff23b37ab134c5435101c9c75175d8f1a285
-SIZE (go/net_nats-tui/nats-tui-v1.1.2/v1.1.2.zip) = 951238
+TIMESTAMP = 1788720531
+SHA256 (go/net_nats-tui/nats-tui-v1.2.0/v1.2.0.mod) = 869857e398cf90c8ba8f9bf23a93fd882001b9b75b4fb4af1effa81d57f103ca
+SIZE (go/net_nats-tui/nats-tui-v1.2.0/v1.2.0.mod) = 2276
+SHA256 (go/net_nats-tui/nats-tui-v1.2.0/v1.2.0.zip) = e403cd43f5b3adda91ef35ea75fa70aa55aa35b5c254f7e8ba58f93f5752721d
+SIZE (go/net_nats-tui/nats-tui-v1.2.0/v1.2.0.zip) = 960318
