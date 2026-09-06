@@ -124,6 +124,8 @@ include/freerdp%%MAJORVERSION%%/freerdp/peer.h
 include/freerdp%%MAJORVERSION%%/freerdp/pointer.h
 include/freerdp%%MAJORVERSION%%/freerdp/primary.h
 include/freerdp%%MAJORVERSION%%/freerdp/primitives.h
+include/freerdp%%MAJORVERSION%%/freerdp/private/proxy_client.h
+include/freerdp%%MAJORVERSION%%/freerdp/private/proxy_server.h
 include/freerdp%%MAJORVERSION%%/freerdp/rail.h
 include/freerdp%%MAJORVERSION%%/freerdp/redirection.h
 include/freerdp%%MAJORVERSION%%/freerdp/scancode.h
