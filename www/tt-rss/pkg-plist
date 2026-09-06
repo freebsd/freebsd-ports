@@ -2309,6 +2309,7 @@
 %%WWWDIR%%/themes/night_base.less
 %%WWWDIR%%/themes/night_blue.css
 %%WWWDIR%%/themes/night_blue.less
+%%WWWDIR%%/utils/precompress-assets.sh
 %%WWWDIR%%/utils/rebase-translations.sh
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/chillerlan/php-qrcode/LICENSE-ASL-2.0
@@ -2465,9 +2466,11 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/ProxyEnv.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/RequestFraming.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/StreamTlsSessionCache.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/Timeout.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/TlsVersion.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/TransferByteCounter.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/UriDiagnostic.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/HandlerStack.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/HostIdentity.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Idn.php
