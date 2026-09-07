@@ -1,5 +1,5 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20260721
+DISTVERSION=	g20260907
 #PORTREVISION=	0  # leave in even if 0 to avoid accidental PORTEPOCH bumps
 PORTEPOCH=	2
 CATEGORIES=	security net net-vpn
@@ -19,7 +19,7 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_TAGNAME=	4ad3c71ec4bdad706332d0281a3bb3bba0234288
+GL_TAGNAME=	22a24132da88b6be9f121e4c6e74c18a46e7741f
 USE_RC_SUBR=	openvpn
 
 SHEBANG_FILES=	sample/sample-plugins/keying-material-exporter-demo/http-client.py \
