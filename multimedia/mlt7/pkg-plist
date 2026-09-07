@@ -85,6 +85,7 @@ lib/mlt-7/libmltcore.so
 %%PLUS%%lib/mlt-7/libmltplus.so
 %%PLUSGPL%%lib/mlt-7/libmltplusgpl.so
 %%RESAMPLE%%lib/mlt-7/libmltresample.so
+%%RNNOISE%%lib/mlt-7/libmltrnnoise.so
 %%RTAUDIO%%lib/mlt-7/libmltrtaudio.so
 %%RUBBERBAND%%lib/mlt-7/libmltrubberband.so
 %%SDL2%%lib/mlt-7/libmltsdl2.so
@@ -100,6 +101,7 @@ share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/avformat/consumer_avformat.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_avcolour_space.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_avdeinterlace.yml
+%%AVFORMAT%%%%DATADIR%%/avformat/filter_info.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_swresample.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_sws_colortransform.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_swscale.yml
@@ -457,6 +459,8 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/profiles/vertical_hd_60
 %%RESAMPLE%%%%DATADIR%%/resample/filter_resample.yml
 %%RESAMPLE%%%%DATADIR%%/resample/link_resample.yml
+%%RNNOISE%%%%DATADIR%%/rnnoise/filter_rnnoise.yml
+%%RNNOISE%%%%DATADIR%%/rnnoise/link_rnnoise.yml
 %%RTAUDIO%%%%DATADIR%%/rtaudio/consumer_rtaudio.yml
 %%RUBBERBAND%%%%DATADIR%%/rubberband/filter_rbpitch.yml
 %%SDL2%%%%DATADIR%%/sdl2/consumer_sdl2.yml
