@@ -1,5 +1,5 @@
 PORTNAME=	docling-ibm-models
-DISTVERSION=	3.13.3
+DISTVERSION=	4.0.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}accelerate>=1.2.1:misc/py-accelerate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-core>=2.19.0:textproc/py-docling-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-core>=2.95.0:textproc/py-docling-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.23:misc/py-huggingface-hub@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonlines>=3.1.0:devel/py-jsonlines@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.24.4:math/py-numpy@${PY_FLAVOR} \
