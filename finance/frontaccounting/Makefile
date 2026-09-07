@@ -1,10 +1,7 @@
 PORTNAME=		frontaccounting
-PORTVERSION=		2.4.12
-PORTREVISION=		1
-DISTVERSIONSUFFIX=	${PORTVERSION}
+DISTVERSION=		2.4.20
 CATEGORIES=		finance www
-MASTER_SITES=		SF/${DIST_SUBDIR}/FrontAccounting%202.4/${PORTVERSION}
-DISTNAME=		frontaccounting-${PORTVERSION}
+MASTER_SITES=		SF/${DIST_SUBDIR}/FrontAccounting%202.4/${DISTVERSION}
 DIST_SUBDIR=		frontaccounting
 
 MAINTAINER=		james@elstone.net
@@ -15,7 +12,7 @@ LICENSE=		GPLv3+
 LICENSE_FILE=		${WRKSRC}/doc/license.txt
 
 USES=			cpe
-USE_PHP+=		mysqli session ctype zlib
+USE_PHP=		ctype iconv mysqli session zlib
 
 NO_BUILD=		yes
 SUB_FILES=		pkg-deinstall pkg-message
@@ -23,21 +20,22 @@ SUB_FILES=		pkg-deinstall pkg-message
 WRKSRC=			${WRKDIR}/${DIST_SUBDIR}
 
 OPTIONS_DEFINE=		APACHE LIGHTTPD NGINX NLS DOCS
-OPTIONS_DEFAULT=	APACHE MYSQL_SERVER
-OPTIONS_RADIO=		RG1
-OPTIONS_RADIO_RG1=	MARIADB_CLIENT MYSQL_CLIENT MYSQL_SERVER
+OPTIONS_DEFAULT=	APACHE REMOTE_DB
+OPTIONS_SINGLE=		RG1
+OPTIONS_SINGLE_RG1=	REMOTE_DB MARIADB_CLIENT MYSQL_CLIENT MYSQL_SERVER
 
-MARIADB_CLIENT_DESC=	MariaDB client connector support
-MYSQL_CLIENT_DESC=	MySQL client connector support
-MYSQL_SERVER_DESC=	MySQL server support
+MARIADB_CLIENT_DESC=	Install MariaDB 10.11 client
+MYSQL_CLIENT_DESC=	Install MySQL client
+MYSQL_SERVER_DESC=	Install MySQL server
 NGINX_DESC=		NGINX web server
-RG1_DESC=		Database Connectivity
+REMOTE_DB_DESC=		Use remote database (PHP mysqli only)
+RG1_DESC=		Database connectivity
 
 APACHE_USES=		apache:run php:web
-DOCS_VARS_OFF=	PORTDOCSARGS='-not -path "./doc*"'
+DOCS_VARS_OFF=		PORTDOCSARGS='-not -path "./doc*"'
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 LIGHTTPD_USES=		php:web
-MARIADB_CLIENT_USES=	mysql:106m
+MARIADB_CLIENT_USES=	mysql:1011m,client
 MYSQL_CLIENT_USES=	mysql:client
 MYSQL_SERVER_USES=	mysql:server
 NGINX_RUN_DEPENDS=	nginx:www/nginx
@@ -46,17 +44,15 @@ NLS_USES=		gettext
 
 .include <bsd.port.options.mk>
 
-.if !${PORT_OPTIONS:MAPACHE} && !${PORT_OPTIONS:MLIGHTTPD} && !{PORT_OPTIONS:MNGINX}
-USES+=			php:cgi php:cli
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL_SERVER} || ${PORT_OPTIONS:MMARIADB_CLIENT}
-USE_PHP+=		mysqli
+.if !${PORT_OPTIONS:MAPACHE} && !${PORT_OPTIONS:MLIGHTTPD} && !${PORT_OPTIONS:MNGINX}
+USES+=			php:cgi,cli
 .endif
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${WWWDIR} ${PORTDOCSARGS})
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/company/examples/reporting
+	${INSTALL_DATA} ${FILESDIR}/email_template.php \
+		${STAGEDIR}${WWWDIR}/company/examples/reporting/email_template.php
 
 .include <bsd.port.mk>
