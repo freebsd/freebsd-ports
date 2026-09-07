@@ -667,7 +667,8 @@ proxydeps_suggest_uses() {
 }
 
 proxydeps() {
-	local file dep_file dep_file_pkg already rc dep_lib_file dep_lib_files
+	local file dep_file dep_file_pkg already rc dep_lib_file dep_lib_files \
+		_checklib _soname
 
 	rc=0
 
@@ -734,7 +735,14 @@ proxydeps() {
 
 	# Check whether all files in LIB_DEPENDS are actually linked against
 	for _library in ${WANTED_LIBRARIES} ; do
-		if ! listcontains ${_library%%.so*}.so "${dep_lib_files}" ; then
+		# Resolve the LIB_DEPENDS library to its actual SONAME
+		_checklib=${_library}
+		if [ -f "${LOCALBASE}/lib/${_library}" ]; then
+			_soname=$(readelf -d "${LOCALBASE}/lib/${_library}" 2>/dev/null | \
+				awk '/SONAME/ {gsub(/[\[\]]/, "", $NF); print $NF}')
+			[ -n "${_soname}" ] && _checklib=${_soname}
+		fi
+		if ! listcontains ${_checklib%%.so*}.so "${dep_lib_files}" ; then
 			warn "you might not need LIB_DEPENDS on ${_library}"
 		fi
 	done
