@@ -1,0 +1,2 @@
+nokap captures screenshots and PDFs from web pages by driving headless Chrome
+through the Chrome DevTools Protocol (CDP).

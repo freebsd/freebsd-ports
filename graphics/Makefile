@@ -989,6 +989,7 @@
     SUBDIR += py-napari-console
     SUBDIR += py-napari-plugin-engine
     SUBDIR += py-neatnet
+    SUBDIR += py-nokap
     SUBDIR += py-nwdiag
     SUBDIR += py-olmocr
     SUBDIR += py-opencolorio
