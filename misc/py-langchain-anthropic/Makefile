@@ -1,5 +1,5 @@
 PORTNAME=	langchain-anthropic
-DISTVERSION=	1.5.2
+DISTVERSION=	1.7.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anthropic>=0.120.0:misc/py-anthropic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.5.1:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.2:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.7.4:devel/py-pydantic2@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blockbuster>=1.5.5:devel/py-blockbuster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7.1:devel/py-defusedxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>=1.2.2:devel/py-freezegun@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain>=1.0.0:misc/py-langchain@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain>=1.4.0:misc/py-langchain@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-tests>=1.1.9:misc/py-langchain-tests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph-prebuilt>=0.7.0:misc/py-langgraph-prebuilt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=1.3.0:devel/py-pytest-asyncio@${PY_FLAVOR} \
@@ -39,7 +39,10 @@ USE_PYTHON=	pep517 autoplist pytest
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+# Integration tests need an Anthropic API key and network access; ruff items
+# conflict with the installed ruff version in the package build environment.
+TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests
 
-# tests as of 1.5.2: 97 failed, 245 passed, 10 skipped, 9 warnings in 53.45s
+# tests as of 1.7.1: 327 passed, 29 warnings in 8.60s
 
 .include <bsd.port.mk>
