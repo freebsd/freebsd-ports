@@ -15,6 +15,8 @@ GH_ACCOUNT=	goldsborough
 GH_PROJECT=	ipc-bench
 GH_TAGNAME=	589146a
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 BINARIES=	domain fifo mmap mq shm signal tcp
 
 OPTIONS_DEFINE=	ZMQ
