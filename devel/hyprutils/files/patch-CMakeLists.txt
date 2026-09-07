@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2026-04-29 19:51:26 UTC
+--- CMakeLists.txt.orig	2026-09-05 14:51:23 UTC
 +++ CMakeLists.txt
-@@ -62,14 +62,14 @@ if(BUILD_TESTING)
+@@ -73,14 +73,14 @@ if(BUILD_TESTING)
    file(GLOB_RECURSE TESTFILES CONFIGURE_DEPENDS "tests/*.cpp")
    add_executable(hyprutils_tests ${TESTFILES})
  

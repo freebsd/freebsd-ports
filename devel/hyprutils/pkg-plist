@@ -5,7 +5,14 @@ include/hyprutils/animation/BezierCurve.hpp
 include/hyprutils/animation/Spring.hpp
 include/hyprutils/cli/ArgumentParser.hpp
 include/hyprutils/cli/Logger.hpp
+include/hyprutils/eventLoop/EventLoop.hpp
+include/hyprutils/eventLoop/EventMask.hpp
+include/hyprutils/eventLoop/Executor.hpp
+include/hyprutils/eventLoop/FDSource.hpp
+include/hyprutils/eventLoop/PostDispatchHook.hpp
+include/hyprutils/eventLoop/Timer.hpp
 include/hyprutils/i18n/I18nEngine.hpp
+include/hyprutils/macros/Enums.hpp
 include/hyprutils/math/Box.hpp
 include/hyprutils/math/Edges.hpp
 include/hyprutils/math/Mat3x3.hpp
