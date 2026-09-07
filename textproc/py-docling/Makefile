@@ -1,6 +1,5 @@
 PORTNAME=	docling
-DISTVERSION=	2.115.0
-PORTREVISION=	1
+DISTVERSION=	2.126.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +15,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}accelerate>=1.0.0:misc/py-accelerate@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.12.3:www/py-beautifulsoup4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2024.7.4:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7.1:devel/py-defusedxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-core>=2.86.0:textproc/py-docling-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-ibm-models>=3.13.0:textproc/py-docling-ibm-models@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-parse>=7.0.0:textproc/py-docling-parse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-slim>=2.115.0:textproc/py-docling-slim@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-core>=2.95.0:textproc/py-docling-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-ibm-models>=4.0.2:textproc/py-docling-ibm-models@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-parse>=7.17.0:textproc/py-docling-parse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-slim>=2.126.0:textproc/py-docling-slim@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filetype>=1.2.0:devel/py-filetype@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.23:misc/py-huggingface-hub@${PY_FLAVOR} \
