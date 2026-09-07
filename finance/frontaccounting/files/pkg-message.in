@@ -11,8 +11,8 @@
  directory (/usr/local/etc/apache24/Includes) containing the 
  following:
 
-        Alias /frontaccounting /usr/local/www/frontaccounting24/
-        <Directory /usr/local/www/frontaccounting24/>
+        Alias /frontaccounting %%WWWDIR%%/
+        <Directory %%WWWDIR%%/>
                 Require all granted
                 DirectoryIndex index.php
         </Directory>
@@ -20,12 +20,19 @@
         Adjust the "Require all granted" statement to suit your 
         security needs in your environment.
 
- Session Data will be stored by default for this port within:
-   %%WWWDIR%%/tmp
- 
- Adjust the session settings as you require beginning on line 434 
- in:
-     %%WWWDIR%%/tmp/session.inc
+ Before upgrading an existing installation, back up its database,
+ configuration, company directories, extensions and custom report files.
+ Reconcile local changes to package-owned files before reinstalling.
+
+ Session storage follows the PHP session.save_path configuration.
+ If overriding it for this application, configure it before the session
+ starts; do not enable late ini_set calls in includes/session.inc.
+
+ An example invoice email template is installed at:
+   %%WWWDIR%%/company/examples/reporting/email_template.php
+ Copy it to company/<company-id>/reporting/email_template.php and customize
+ the copy to enable it for that company. Back up any existing template first.
+ The examples directory is not a company and is not loaded automatically.
 
 EOM
 }
