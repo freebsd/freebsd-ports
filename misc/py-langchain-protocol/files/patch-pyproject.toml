@@ -1,0 +1,14 @@
+-- Remove the upper bound on hatchling.  Upstream pins hatchling<1.30, but the
+-- FreeBSD Python ports ship hatchling 1.32.0 and the pin is only a build-tool
+-- policy, not a runtime requirement.  Keeping the lower bound preserves the
+-- upstream minimum while allowing the current Ports tree version.
+
+--- pyproject.toml.orig	2026-09-06 00:00:00 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["hatchling>=1.26,<1.30"]
++requires = ["hatchling>=1.26"]
+ build-backend = "hatchling.build"
+
+ [project]
