@@ -1,25 +1,25 @@
 PORTNAME=	ont-fast5-api
 DISTVERSIONPREFIX=	release_
-DISTVERSION=	4.0.2
-PORTREVISION=	4
+DISTVERSION=	4.1.3
 CATEGORIES=	biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Interface to HDF5 files in Oxford Nanopore .fast5 format
-WWW=		https://github.com/nanoporetech/ont_fast5_api/
+WWW=		https://github.com/nanoporetech/ont_fast5_api
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libvbz_hdf_plugin.so:archivers/vbz-compression
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}h5py>=2.2.0:science/py-h5py@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}progressbar>0:misc/py-progressbar@${PY_FLAVOR}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}h5py>=3:science/py-h5py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}progressbar>=2.3.1:misc/py-progressbar@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 
 USES=		python
+# Does not yet build with pep517
 USE_PYTHON=	autoplist concurrent distutils
 USE_GITHUB=	yes
 
