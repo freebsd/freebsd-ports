@@ -1,5 +1,5 @@
 PORTNAME=	filelock
-DISTVERSION=	3.32.0
+DISTVERSION=	3.32.5
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,6 +29,9 @@ GH_PROJECT=	py-filelock
 WRKSRC=		${WRKDIR}/filelock-${DISTVERSION}
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--no-cov \
+		-W ignore::pytest_benchmark.logger.PytestBenchmarkWarning \
+		-W ignore::pytest_cov.CovDisabledWarning
 
 NO_ARCH=	yes
 
@@ -39,6 +42,6 @@ PYTEST_BROKEN_TESTS=	test_process_start_token_is_int_for_self \
 			test_owner_is_stale_live_process_mismatched_token_reclaimed \
 			test_final_symlink_backend_refuses_to_lock
 
-# tests as of 3.32.0: 1234 passed, 56 skipped, 4 deselected in 130.76s (0:02:10)
+# tests as of 3.32.5: 1370 passed, 57 skipped in 106.61s
 
 .include <bsd.port.mk>
