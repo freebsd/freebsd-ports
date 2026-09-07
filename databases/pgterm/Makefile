@@ -1,6 +1,6 @@
 PORTNAME=	pgterm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.4
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -16,6 +16,9 @@ RUN_DEPENDS=	pgbot:databases/pgbot
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgrundev
+
+# fake-pgbot is an upstream test fixture, not part of the release
+CARGO_INSTALL_ARGS=	--bin ${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		${DOCSDIR}/README.md
