@@ -1,5 +1,5 @@
 PORTNAME=	langchain-google-genai
-DISTVERSION=	4.3.2
+DISTVERSION=	4.4.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +15,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filetype>=1.2.0:devel/py-filetype@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-genai>=1.65.0:misc/py-google-genai@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.5.1:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.2:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2:devel/py-pydantic2@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=1.5.0:devel/py-freezegun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-tests>=1.1.4:misc/py-langchain-tests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.26.4:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=6.33.5:devel/py-protobuf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>=8.4.0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0.21.0:devel/py-pytest-asyncio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>0:devel/py-pytest-benchmark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.14.0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-retry>=1.7.0:devel/py-pytest-retry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-socket>=0.7.0:devel/py-pytest-socket@${PY_FLAVOR} \
@@ -37,7 +37,23 @@ USE_PYTHON=	pep517 autoplist pytest
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+# Integration tests require a GOOGLE_API_KEY and network access.
+TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests \
+		--disable-plugin-autoload \
+		-p pytest_benchmark \
+		-p pytest_benchmark.plugin \
+		-p freezegun \
+		-p langchain_tests \
+		-p pytest_asyncio \
+		-p pytest_asyncio.plugin \
+		--asyncio-mode=auto \
+		-p pytest_mock \
+		-p pytest_retry \
+		-p socket \
+		-p timeout \
+		-p xdist \
+		-p syrupy
 
-# tests as of 4.3.2: 88 failed, 381 passed, 16 skipped, 6 xfailed, 124 errors in 11.01s
+# tests as of 4.4.0: 528 passed, 3 warnings in 4.74s
 
 .include <bsd.port.mk>
