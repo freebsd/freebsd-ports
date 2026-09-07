@@ -1,7 +1,7 @@
 PORTNAME=	waves
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.46
-PORTREVISION=	4
+DISTVERSION=	0.1.47
+PORTREVISION=	0
 CATEGORIES=	audio
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -10,6 +10,8 @@ WWW=		https://github.com/llehouerou/waves
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	does not compile
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 RUN_DEPENDS=	alsa-plugins>=1.2.12:audio/alsa-plugins \
