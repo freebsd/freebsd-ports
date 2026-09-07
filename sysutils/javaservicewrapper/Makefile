@@ -1,6 +1,5 @@
 PORTNAME=	javaservicewrapper
-PORTVERSION=	3.6.3
-PORTREVISION=	2
+PORTVERSION=	3.7.3
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
@@ -14,15 +13,9 @@ LICENSE_COMB=	dual
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
-USES=		gmake iconv java:ant,run
+USES=		gmake java:ant,build
 
-USE_LDCONFIG=	${PREFIX}/lib/javaservicewrapper/lib
-
-DATADIR=	${PREFIX}/lib/${PORTNAME}
-
-OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
 MAKE_ARGS+=	-Dbits=64
@@ -30,26 +23,23 @@ MAKE_ARGS+=	-Dbits=64
 MAKE_ARGS+=	-Dbits=32
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${JAVA_PORT_VERSION} >= 15
-PLIST_SUB+=	JS_ENGINE="@comment "
+.if ${JAVA_PORT_VERSION} >= 25
+JAVA_TARGET_VERSION=	11
 .else
-PLIST_SUB+=	JS_ENGINE=""
+JAVA_TARGET_VERSION=	8
 .endif
 
+PLIST_SUB+=	JAVAJARDIR=${JAVAJARDIR}
+
+post-extract:
+	@${ECHO} "javac.target.version=${JAVA_TARGET_VERSION}" > ${WRKSRC}/ant.properties
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS}| ; \
-			s|/usr/local|${ICONV_PREFIX}|g ; \
-			s|-liconv|${ICONV_LIB}|' \
+	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS}|' \
 		${WRKSRC}/src/c/Makefile-freebsd-x86-32.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake
-	@${REINPLACE_CMD} -e 's|\(javac\.target\.version\)=.*|\1=1.8|' \
-		${WRKSRC}/default.properties
 	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-32.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-arm-32.gmake
-	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake \
-		${WRKSRC}/src/c/Makefile-freebsd-arm-64.gmake
 	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-ppcbe-64.gmake
 	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake \
@@ -58,14 +48,12 @@ post-patch:
 		${WRKSRC}/src/c/Makefile-freebsd-ppcbe-32.gmake
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${CP} -rp bin conf lib test ${STAGEDIR}${DATADIR}
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/bin/wrapper
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/lib/libwrapper.so
-	${RLN} ${STAGEDIR}${DATADIR}/bin/wrapper ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/wrapper ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/lib/libwrapper.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/wrapper.jar ${STAGEDIR}${JAVAJARDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wrapper
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libwrapper.so
+	${RLN} ${STAGEDIR}${PREFIX}/bin/wrapper ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>

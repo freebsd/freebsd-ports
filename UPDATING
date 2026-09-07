@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20260907:
+  AFFECTS: users of sysutils/javaservicewrapper
+  AUTHOR: michaelo@FreeBSD.org
+
+  With the upgrade to version 3.7.0+ the port has been drastically simplified
+  and all package files have been moved to default locations. Check your wrapper
+  script and wrapper.conf for necessary changes.
+
+20260907:
   AFFECTS: Users of x11-wm/mango
   AUTHOR: nivit@FreeBSD.org
 
