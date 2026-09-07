@@ -1,5 +1,5 @@
 PORTNAME=	llama-index-llms-openai
-PORTVERSION=	0.7.10
+PORTVERSION=	0.8.1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/llama-index-llms-openai/
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llama-index-core>=0.14.5:misc/py-llama-index-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llama-index-core>=0.14.24:misc/py-llama-index-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=1.108.1:misc/py-openai@${PY_FLAVOR}
 
 USES=		python
