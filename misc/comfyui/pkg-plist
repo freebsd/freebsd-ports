@@ -1,3 +1,4 @@
+bin/comfyui
 %%DATADIR%%/.spectral.yaml
 %%DATADIR%%/AGENTS.md
 %%DATADIR%%/CODEOWNERS
@@ -210,6 +211,9 @@
 %%DATADIR%%/comfy/image_encoders/dino2_giant.json
 %%DATADIR%%/comfy/image_encoders/dino2_large.json
 %%DATADIR%%/comfy/image_encoders/dino3.py
+%%DATADIR%%/comfy/image_encoders/dino3_large.json
+%%DATADIR%%/comfy/image_encoders/naf.py
+%%DATADIR%%/comfy/internal_logging.py
 %%DATADIR%%/comfy/k_diffusion/deis.py
 %%DATADIR%%/comfy/k_diffusion/sa_solver.py
 %%DATADIR%%/comfy/k_diffusion/sampling.py
@@ -223,6 +227,7 @@
 %%DATADIR%%/comfy/ldm/ace/vae/music_dcae_pipeline.py
 %%DATADIR%%/comfy/ldm/ace/vae/music_log_mel.py
 %%DATADIR%%/comfy/ldm/ace/vae/music_vocoder.py
+%%DATADIR%%/comfy/ldm/anima/lllite.py
 %%DATADIR%%/comfy/ldm/anima/model.py
 %%DATADIR%%/comfy/ldm/audio/autoencoder.py
 %%DATADIR%%/comfy/ldm/audio/dit.py
@@ -290,10 +295,12 @@
 %%DATADIR%%/comfy/ldm/hydit/poolers.py
 %%DATADIR%%/comfy/ldm/hydit/posemb_layers.py
 %%DATADIR%%/comfy/ldm/ideogram4/model.py
+%%DATADIR%%/comfy/ldm/joyimage/model.py
 %%DATADIR%%/comfy/ldm/kandinsky5/model.py
 %%DATADIR%%/comfy/ldm/krea2/model.py
 %%DATADIR%%/comfy/ldm/lens/model.py
 %%DATADIR%%/comfy/ldm/lightricks/av_model.py
+%%DATADIR%%/comfy/ldm/lightricks/duration_head.py
 %%DATADIR%%/comfy/ldm/lightricks/embeddings_connector.py
 %%DATADIR%%/comfy/ldm/lightricks/latent_upsampler.py
 %%DATADIR%%/comfy/ldm/lightricks/model.py
@@ -304,10 +311,21 @@
 %%DATADIR%%/comfy/ldm/lightricks/vae/causal_video_autoencoder.py
 %%DATADIR%%/comfy/ldm/lightricks/vae/conv_nd_factory.py
 %%DATADIR%%/comfy/ldm/lightricks/vae/dual_conv3d.py
+%%DATADIR%%/comfy/ldm/lightricks/vae/na_diffusion_decoder.py
 %%DATADIR%%/comfy/ldm/lightricks/vae/pixel_norm.py
 %%DATADIR%%/comfy/ldm/lightricks/vocoders/vocoder.py
 %%DATADIR%%/comfy/ldm/lumina/controlnet.py
 %%DATADIR%%/comfy/ldm/lumina/model.py
+%%DATADIR%%/comfy/ldm/mage_flow/model.py
+%%DATADIR%%/comfy/ldm/mage_flow/vae.py
+%%DATADIR%%/comfy/ldm/minimax/audio_vae.py
+%%DATADIR%%/comfy/ldm/minimax/model.py
+%%DATADIR%%/comfy/ldm/minimax/vae.py
+%%DATADIR%%/comfy/ldm/minimax_music/__init__.py
+%%DATADIR%%/comfy/ldm/minimax_music/ar.py
+%%DATADIR%%/comfy/ldm/minimax_music/dav.py
+%%DATADIR%%/comfy/ldm/minimax_music/dit.py
+%%DATADIR%%/comfy/ldm/minimax_music/prompt.py
 %%DATADIR%%/comfy/ldm/mmaudio/vae/__init__.py
 %%DATADIR%%/comfy/ldm/mmaudio/vae/activations.py
 %%DATADIR%%/comfy/ldm/mmaudio/vae/alias_free_torch.py
@@ -348,6 +366,14 @@
 %%DATADIR%%/comfy/ldm/sam3/detector.py
 %%DATADIR%%/comfy/ldm/sam3/sam.py
 %%DATADIR%%/comfy/ldm/sam3/tracker.py
+%%DATADIR%%/comfy/ldm/sam3d_body/mhr/mhr_head.py
+%%DATADIR%%/comfy/ldm/sam3d_body/mhr/mhr_rig.py
+%%DATADIR%%/comfy/ldm/sam3d_body/mhr/mhr_utils.py
+%%DATADIR%%/comfy/ldm/sam3d_body/model/camera_modules.py
+%%DATADIR%%/comfy/ldm/sam3d_body/model/model.py
+%%DATADIR%%/comfy/ldm/sam3d_body/model/prompt.py
+%%DATADIR%%/comfy/ldm/sam3d_body/model/transformer.py
+%%DATADIR%%/comfy/ldm/sam3d_body/utils.py
 %%DATADIR%%/comfy/ldm/seedvr/attention.py
 %%DATADIR%%/comfy/ldm/seedvr/color_fix.py
 %%DATADIR%%/comfy/ldm/seedvr/constants.py
@@ -356,6 +382,9 @@
 %%DATADIR%%/comfy/ldm/supir/__init__.py
 %%DATADIR%%/comfy/ldm/supir/supir_modules.py
 %%DATADIR%%/comfy/ldm/supir/supir_patch.py
+%%DATADIR%%/comfy/ldm/trellis2/flexgemm.py
+%%DATADIR%%/comfy/ldm/trellis2/model.py
+%%DATADIR%%/comfy/ldm/trellis2/vae.py
 %%DATADIR%%/comfy/ldm/triposplat/gaussian.py
 %%DATADIR%%/comfy/ldm/triposplat/model.py
 %%DATADIR%%/comfy/ldm/triposplat/preview.py
@@ -364,8 +393,10 @@
 %%DATADIR%%/comfy/ldm/wan/ar_model.py
 %%DATADIR%%/comfy/ldm/wan/model.py
 %%DATADIR%%/comfy/ldm/wan/model_animate.py
+%%DATADIR%%/comfy/ldm/wan/model_animate2.py
 %%DATADIR%%/comfy/ldm/wan/model_multitalk.py
 %%DATADIR%%/comfy/ldm/wan/model_wandancer.py
+%%DATADIR%%/comfy/ldm/wan/uni3c.py
 %%DATADIR%%/comfy/ldm/wan/vae.py
 %%DATADIR%%/comfy/ldm/wan/vae2_2.py
 %%DATADIR%%/comfy/lora.py
@@ -410,6 +441,7 @@
 %%DATADIR%%/comfy/text_encoders/aura_t5.py
 %%DATADIR%%/comfy/text_encoders/bert.py
 %%DATADIR%%/comfy/text_encoders/boogu.py
+%%DATADIR%%/comfy/text_encoders/bpe_tokenizer.py
 %%DATADIR%%/comfy/text_encoders/byt5_config_small_glyph.json
 %%DATADIR%%/comfy/text_encoders/byt5_tokenizer/added_tokens.json
 %%DATADIR%%/comfy/text_encoders/byt5_tokenizer/special_tokens_map.json
@@ -432,6 +464,7 @@
 %%DATADIR%%/comfy/text_encoders/hydit_clip_tokenizer/vocab.txt
 %%DATADIR%%/comfy/text_encoders/ideogram4.py
 %%DATADIR%%/comfy/text_encoders/jina_clip_2.py
+%%DATADIR%%/comfy/text_encoders/joyimage.py
 %%DATADIR%%/comfy/text_encoders/kandinsky5.py
 %%DATADIR%%/comfy/text_encoders/krea2.py
 %%DATADIR%%/comfy/text_encoders/llama.py
@@ -441,6 +474,9 @@
 %%DATADIR%%/comfy/text_encoders/longcat_image.py
 %%DATADIR%%/comfy/text_encoders/lt.py
 %%DATADIR%%/comfy/text_encoders/lumina2.py
+%%DATADIR%%/comfy/text_encoders/mage_flow.py
+%%DATADIR%%/comfy/text_encoders/minimax.py
+%%DATADIR%%/comfy/text_encoders/minimax_music.py
 %%DATADIR%%/comfy/text_encoders/mt5_config_xl.json
 %%DATADIR%%/comfy/text_encoders/newbie.py
 %%DATADIR%%/comfy/text_encoders/omnigen2.py
@@ -535,8 +571,10 @@
 %%DATADIR%%/comfy_api_nodes/apis/bytedance.py
 %%DATADIR%%/comfy_api_nodes/apis/bytedance_llm.py
 %%DATADIR%%/comfy_api_nodes/apis/elevenlabs.py
+%%DATADIR%%/comfy_api_nodes/apis/fishaudio.py
 %%DATADIR%%/comfy_api_nodes/apis/gemini.py
 %%DATADIR%%/comfy_api_nodes/apis/grok.py
+%%DATADIR%%/comfy_api_nodes/apis/heygen.py
 %%DATADIR%%/comfy_api_nodes/apis/hitpaw.py
 %%DATADIR%%/comfy_api_nodes/apis/hunyuan3d.py
 %%DATADIR%%/comfy_api_nodes/apis/ideogram.py
@@ -550,6 +588,7 @@
 %%DATADIR%%/comfy_api_nodes/apis/openrouter.py
 %%DATADIR%%/comfy_api_nodes/apis/pixverse.py
 %%DATADIR%%/comfy_api_nodes/apis/quiver.py
+%%DATADIR%%/comfy_api_nodes/apis/qwen.py
 %%DATADIR%%/comfy_api_nodes/apis/recraft.py
 %%DATADIR%%/comfy_api_nodes/apis/reve.py
 %%DATADIR%%/comfy_api_nodes/apis/rodin.py
@@ -568,8 +607,10 @@
 %%DATADIR%%/comfy_api_nodes/nodes_bytedance.py
 %%DATADIR%%/comfy_api_nodes/nodes_bytedance_llm.py
 %%DATADIR%%/comfy_api_nodes/nodes_elevenlabs.py
+%%DATADIR%%/comfy_api_nodes/nodes_fishaudio.py
 %%DATADIR%%/comfy_api_nodes/nodes_gemini.py
 %%DATADIR%%/comfy_api_nodes/nodes_grok.py
+%%DATADIR%%/comfy_api_nodes/nodes_heygen.py
 %%DATADIR%%/comfy_api_nodes/nodes_hitpaw.py
 %%DATADIR%%/comfy_api_nodes/nodes_hunyuan3d.py
 %%DATADIR%%/comfy_api_nodes/nodes_ideogram.py
@@ -584,6 +625,7 @@
 %%DATADIR%%/comfy_api_nodes/nodes_openrouter.py
 %%DATADIR%%/comfy_api_nodes/nodes_pixverse.py
 %%DATADIR%%/comfy_api_nodes/nodes_quiver.py
+%%DATADIR%%/comfy_api_nodes/nodes_qwen.py
 %%DATADIR%%/comfy_api_nodes/nodes_recraft.py
 %%DATADIR%%/comfy_api_nodes/nodes_reve.py
 %%DATADIR%%/comfy_api_nodes/nodes_rodin.py
@@ -619,10 +661,17 @@
 %%DATADIR%%/comfy_execution/validation.py
 %%DATADIR%%/comfy_extras/chainner_models/model_loading.py
 %%DATADIR%%/comfy_extras/color_util.py
+%%DATADIR%%/comfy_extras/compositor_blend.py
 %%DATADIR%%/comfy_extras/frame_interpolation_models/film_net.py
 %%DATADIR%%/comfy_extras/frame_interpolation_models/ifnet.py
 %%DATADIR%%/comfy_extras/mediapipe/face_geometry.py
 %%DATADIR%%/comfy_extras/mediapipe/face_landmarker.py
+%%DATADIR%%/comfy_extras/mesh3d/postprocess/qem_decimate.py
+%%DATADIR%%/comfy_extras/mesh3d/postprocess/remesh.py
+%%DATADIR%%/comfy_extras/mesh3d/uv_unwrap/mesh.py
+%%DATADIR%%/comfy_extras/mesh3d/uv_unwrap/pack.py
+%%DATADIR%%/comfy_extras/mesh3d/uv_unwrap/parameterize.py
+%%DATADIR%%/comfy_extras/mesh3d/uv_unwrap/segment.py
 %%DATADIR%%/comfy_extras/nodes_ace.py
 %%DATADIR%%/comfy_extras/nodes_advanced_samplers.py
 %%DATADIR%%/comfy_extras/nodes_align_your_steps.py
@@ -642,6 +691,7 @@
 %%DATADIR%%/comfy_extras/nodes_clip_sdxl.py
 %%DATADIR%%/comfy_extras/nodes_color.py
 %%DATADIR%%/comfy_extras/nodes_compositing.py
+%%DATADIR%%/comfy_extras/nodes_compositor.py
 %%DATADIR%%/comfy_extras/nodes_cond.py
 %%DATADIR%%/comfy_extras/nodes_context_windows.py
 %%DATADIR%%/comfy_extras/nodes_controlnet.py
@@ -672,6 +722,7 @@
 %%DATADIR%%/comfy_extras/nodes_image_compare.py
 %%DATADIR%%/comfy_extras/nodes_images.py
 %%DATADIR%%/comfy_extras/nodes_ip2p.py
+%%DATADIR%%/comfy_extras/nodes_joyimage.py
 %%DATADIR%%/comfy_extras/nodes_json_prompt.py
 %%DATADIR%%/comfy_extras/nodes_kandinsky5.py
 %%DATADIR%%/comfy_extras/nodes_latent.py
@@ -684,10 +735,14 @@
 %%DATADIR%%/comfy_extras/nodes_lt_audio.py
 %%DATADIR%%/comfy_extras/nodes_lt_upsampler.py
 %%DATADIR%%/comfy_extras/nodes_lumina2.py
+%%DATADIR%%/comfy_extras/nodes_mage.py
 %%DATADIR%%/comfy_extras/nodes_mahiro.py
 %%DATADIR%%/comfy_extras/nodes_mask.py
 %%DATADIR%%/comfy_extras/nodes_math.py
 %%DATADIR%%/comfy_extras/nodes_mediapipe.py
+%%DATADIR%%/comfy_extras/nodes_mesh_postprocess.py
+%%DATADIR%%/comfy_extras/nodes_minimax_h3.py
+%%DATADIR%%/comfy_extras/nodes_minimax_music.py
 %%DATADIR%%/comfy_extras/nodes_mochi.py
 %%DATADIR%%/comfy_extras/nodes_model_advanced.py
 %%DATADIR%%/comfy_extras/nodes_model_downscale.py
@@ -718,6 +773,7 @@
 %%DATADIR%%/comfy_extras/nodes_rtdetr.py
 %%DATADIR%%/comfy_extras/nodes_sag.py
 %%DATADIR%%/comfy_extras/nodes_sam3.py
+%%DATADIR%%/comfy_extras/nodes_sam3d_body.py
 %%DATADIR%%/comfy_extras/nodes_save_3d.py
 %%DATADIR%%/comfy_extras/nodes_scail.py
 %%DATADIR%%/comfy_extras/nodes_sd3.py
@@ -737,6 +793,7 @@
 %%DATADIR%%/comfy_extras/nodes_toolkit.py
 %%DATADIR%%/comfy_extras/nodes_torch_compile.py
 %%DATADIR%%/comfy_extras/nodes_train.py
+%%DATADIR%%/comfy_extras/nodes_trellis2.py
 %%DATADIR%%/comfy_extras/nodes_triposplat.py
 %%DATADIR%%/comfy_extras/nodes_upscale_model.py
 %%DATADIR%%/comfy_extras/nodes_video.py
@@ -747,6 +804,16 @@
 %%DATADIR%%/comfy_extras/nodes_wanmove.py
 %%DATADIR%%/comfy_extras/nodes_webcam.py
 %%DATADIR%%/comfy_extras/nodes_zimage.py
+%%DATADIR%%/comfy_extras/pose/keypoint_draw.py
+%%DATADIR%%/comfy_extras/sam3d_body/export/bvh.py
+%%DATADIR%%/comfy_extras/sam3d_body/export/capsules.py
+%%DATADIR%%/comfy_extras/sam3d_body/export/glb_openpose.py
+%%DATADIR%%/comfy_extras/sam3d_body/export/glb_shared.py
+%%DATADIR%%/comfy_extras/sam3d_body/export/glb_skeletal.py
+%%DATADIR%%/comfy_extras/sam3d_body/export/openpose_2d.py
+%%DATADIR%%/comfy_extras/sam3d_body/face_expression.py
+%%DATADIR%%/comfy_extras/sam3d_body/rasterizer.py
+%%DATADIR%%/comfy_extras/sam3d_body/utils.py
 %%DATADIR%%/comfy_extras/void_noise_warp.py
 %%DATADIR%%/comfyui_version.py
 %%DATADIR%%/cuda_malloc.py
@@ -814,6 +881,7 @@
 %%DATADIR%%/tests-unit/README.md
 %%DATADIR%%/tests-unit/app_test/__init__.py
 %%DATADIR%%/tests-unit/app_test/custom_node_manager_test.py
+%%DATADIR%%/tests-unit/app_test/database_path_test.py
 %%DATADIR%%/tests-unit/app_test/frontend_manager_test.py
 %%DATADIR%%/tests-unit/app_test/model_manager_test.py
 %%DATADIR%%/tests-unit/app_test/node_replace_manager_test.py
@@ -832,6 +900,7 @@
 %%DATADIR%%/tests-unit/assets_test/services/conftest.py
 %%DATADIR%%/tests-unit/assets_test/services/test_asset_management.py
 %%DATADIR%%/tests-unit/assets_test/services/test_asset_response_loader_path.py
+%%DATADIR%%/tests-unit/assets_test/services/test_asset_response_preview_url.py
 %%DATADIR%%/tests-unit/assets_test/services/test_bulk_ingest.py
 %%DATADIR%%/tests-unit/assets_test/services/test_cursor.py
 %%DATADIR%%/tests-unit/assets_test/services/test_enrich.py
@@ -847,25 +916,37 @@
 %%DATADIR%%/tests-unit/assets_test/test_list_cursor.py
 %%DATADIR%%/tests-unit/assets_test/test_list_filter.py
 %%DATADIR%%/tests-unit/assets_test/test_metadata_filters.py
+%%DATADIR%%/tests-unit/assets_test/test_preview_url.py
 %%DATADIR%%/tests-unit/assets_test/test_prompt_id_enforcement.py
 %%DATADIR%%/tests-unit/assets_test/test_prune_orphaned_assets.py
 %%DATADIR%%/tests-unit/assets_test/test_sync_references.py
 %%DATADIR%%/tests-unit/assets_test/test_tags_api.py
+%%DATADIR%%/tests-unit/assets_test/test_temp_assets.py
 %%DATADIR%%/tests-unit/assets_test/test_uploads.py
+%%DATADIR%%/tests-unit/comfy_api_nodes_test/audio_conversions_test.py
+%%DATADIR%%/tests-unit/comfy_api_nodes_test/gemini_response_images_test.py
+%%DATADIR%%/tests-unit/comfy_api_nodes_test/image_conversions_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/input_impl_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/multicombo_serialization_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_bit_depth_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_types_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/__init__.py
+%%DATADIR%%/tests-unit/comfy_extras_test/compositor_blend_fixture_gen.py
+%%DATADIR%%/tests-unit/comfy_extras_test/compositor_blend_golden.json
+%%DATADIR%%/tests-unit/comfy_extras_test/compositor_blend_test.py
+%%DATADIR%%/tests-unit/comfy_extras_test/compositor_node_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/image_stitch_test.py
+%%DATADIR%%/tests-unit/comfy_extras_test/nodes_dataset_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/nodes_math_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/nodes_number_convert_test.py
+%%DATADIR%%/tests-unit/comfy_extras_test/nodes_preview_any_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/test_seedvr2_conditioning.py
 %%DATADIR%%/tests-unit/comfy_extras_test/test_seedvr2_nodes.py
 %%DATADIR%%/tests-unit/comfy_extras_test/test_seedvr2_post_processing.py
 %%DATADIR%%/tests-unit/comfy_extras_test/test_seedvr2_temporal_chunk.py
 %%DATADIR%%/tests-unit/comfy_quant/test_mixed_precision.py
 %%DATADIR%%/tests-unit/comfy_test/folder_path_test.py
+%%DATADIR%%/tests-unit/comfy_test/gemma4_template_test.py
 %%DATADIR%%/tests-unit/comfy_test/model_detection_test.py
 %%DATADIR%%/tests-unit/comfy_test/seedvr_vae_forward_test.py
 %%DATADIR%%/tests-unit/comfy_test/test_seedvr2_dtype.py
@@ -873,6 +954,7 @@
 %%DATADIR%%/tests-unit/comfy_test/test_seedvr2_model.py
 %%DATADIR%%/tests-unit/comfy_test/test_seedvr2_vae_decode.py
 %%DATADIR%%/tests-unit/comfy_test/test_seedvr2_vae_tiled.py
+%%DATADIR%%/tests-unit/comfy_test/test_vae_decode_tiled_nested.py
 %%DATADIR%%/tests-unit/deploy_environment_test.py
 %%DATADIR%%/tests-unit/execution_test/preview_method_override_test.py
 %%DATADIR%%/tests-unit/execution_test/test_cache_provider.py
@@ -894,6 +976,7 @@
 %%DATADIR%%/tests-unit/security_test/test_ghsa_779p_03_annotated_traversal.py
 %%DATADIR%%/tests-unit/security_test/test_ghsa_779p_04_userdata_xss.py
 %%DATADIR%%/tests-unit/security_test/test_ghsa_779p_05_dangerous_content_types.py
+%%DATADIR%%/tests-unit/security_test/test_ghsa_779p_06_inline_svg_image_dest.py
 %%DATADIR%%/tests-unit/seeder_test/test_seeder.py
 %%DATADIR%%/tests-unit/server/utils/file_operations_test.py
 %%DATADIR%%/tests-unit/server_test/test_cache_control.py
@@ -932,9 +1015,7 @@
 %%DATADIR%%/utils/json_util.py
 %%DATADIR%%/utils/mime_types.py
 /var/db/comfyui/input/example.png
-@dir /var/db/comfyui
 @dir /var/db/comfyui/input
-@dir /var/db/comfyui/models
 @dir /var/db/comfyui/models/audio_encoders
 @dir /var/db/comfyui/models/checkpoints
 @dir /var/db/comfyui/models/clip
@@ -955,8 +1036,9 @@
 @dir /var/db/comfyui/models/upscale_models
 @dir /var/db/comfyui/models/vae
 @dir /var/db/comfyui/models/vae_approx
+@dir /var/db/comfyui/models
 @dir /var/db/comfyui/output
 @dir /var/db/comfyui/temp
-@dir /var/db/comfyui/user
 @dir /var/db/comfyui/user/default
-bin/comfyui
+@dir /var/db/comfyui/user
+@dir /var/db/comfyui
