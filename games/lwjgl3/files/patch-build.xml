@@ -1,0 +1,37 @@
+--- build.xml.orig	2026-09-07 10:44:17 UTC
++++ build.xml
+@@ -1238,6 +1238,9 @@
+                 <get-release platform="freebsd" arch="x64" file="lib@{native-library}.so" if:set="auto-natives"/>
+                 <get-release platform="freebsd" arch="x64" file="lib@{native-library}.so.git" if:set="git-revision"/>
+ 
++                <get-release platform="freebsd" arch="ppc64le" file="lib@{native-library}.so" if:set="auto-natives"/>
++                <get-release platform="freebsd" arch="ppc64le" file="lib@{native-library}.so.git" if:set="git-revision"/>
++
+                 <get-release platform="linux" arch="x64" file="lib@{native-library}.so" if:set="auto-natives"/>
+                 <get-release platform="linux" arch="x64" file="lib@{native-library}.so.git" if:set="git-revision"/>
+ 
+@@ -1311,7 +1314,7 @@
+ 
+                 <!-- Create native jar files -->
+                 <parallel threadsPerProcessor="1" failonany="true">
+-                    <natives-jar name="@{name}" title="@{title}" platform="freebsd" path="freebsd/x64" type="so">
++                    <natives-jar name="@{name}" title="@{title}" platform="freebsd" path="freebsd/${build.arch}" type="so">
+                         <freebsd-content/>
+                     </natives-jar>
+                     <natives-jar name="@{name}" title="@{title}" platform="linux" path="linux/x64" type="so">
+@@ -1897,6 +1900,7 @@
+         <release-module name="nfd" native-library="lwjgl_nfd" title="Native File Dialog" if:true="${binding.nfd}">
+             <natives>
+                 <get-release platform="freebsd" arch="x64" file="liblwjgl_nfd_portal.so"/>
++                <get-release platform="freebsd" arch="ppc64le" file="liblwjgl_nfd_portal.so"/>
+ 
+                 <get-release platform="linux" arch="x64" file="liblwjgl_nfd_portal.so"/>
+                 <get-release platform="linux" arch="arm64" file="liblwjgl_nfd_portal.so"/>
+@@ -2001,6 +2005,7 @@
+         <release-module name="remotery" title="remotery" if:true="${binding.remotery}">
+             <natives>
+                 <get-release platform="freebsd" arch="x64" file="liblwjgl_remotery.so"/>
++                <get-release platform="freebsd" arch="ppc64le" file="liblwjgl_remotery.so"/>
+ 
+                 <get-release platform="linux" arch="x64" file="liblwjgl_remotery.so"/>
+                 <get-release platform="linux" arch="arm64" file="liblwjgl_remotery.so"/>

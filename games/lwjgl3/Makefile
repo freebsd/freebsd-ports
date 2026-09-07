@@ -26,7 +26,7 @@ WWW=		https://www.lwjgl.org
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS=		amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Upstream support FreeBSD on amd64 only: https://github.com/LWJGL/lwjgl3/issues/421
 
 BUILD_DEPENDS=		${LOCALBASE}/openjdk8/bin/java:java/openjdk8 \
