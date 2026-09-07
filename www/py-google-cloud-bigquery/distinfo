@@ -1,3 +1,3 @@
-TIMESTAMP = 1783575066
-SHA256 (google_cloud_bigquery-3.42.2.tar.gz) = 08d4b264e5ee4790f719724c76b538f204b7190999328a2f1a6a95eaab74ca39
-SIZE (google_cloud_bigquery-3.42.2.tar.gz) = 517250
+TIMESTAMP = 1788793693
+SHA256 (google_cloud_bigquery-3.45.0.tar.gz) = 5a799856825f47743ce561802cbd01b4d5c70062b36a942cfef5146017ecf0a4
+SIZE (google_cloud_bigquery-3.45.0.tar.gz) = 528642
