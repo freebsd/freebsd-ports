@@ -1,5 +1,5 @@
-# github.com/at-wat/ebml-go v0.18.0
-## explicit; go 1.11
+# github.com/at-wat/ebml-go v0.19.2
+## explicit; go 1.13
 github.com/at-wat/ebml-go
 github.com/at-wat/ebml-go/mkvcore
 github.com/at-wat/ebml-go/webm
@@ -18,10 +18,10 @@ github.com/jech/cert
 # github.com/jech/samplebuilder v0.0.0-20241027120643-76c654ae55e1
 ## explicit; go 1.20
 github.com/jech/samplebuilder
-# github.com/pion/datachannel v1.6.0
-## explicit; go 1.21
+# github.com/pion/datachannel v1.6.2
+## explicit; go 1.24.0
 github.com/pion/datachannel
-# github.com/pion/dtls/v3 v3.1.4
+# github.com/pion/dtls/v3 v3.1.8
 ## explicit; go 1.24.0
 github.com/pion/dtls/v3
 github.com/pion/dtls/v3/internal/ciphersuite
@@ -45,7 +45,7 @@ github.com/pion/dtls/v3/pkg/protocol/alert
 github.com/pion/dtls/v3/pkg/protocol/extension
 github.com/pion/dtls/v3/pkg/protocol/handshake
 github.com/pion/dtls/v3/pkg/protocol/recordlayer
-# github.com/pion/ice/v4 v4.2.7
+# github.com/pion/ice/v4 v4.4.2
 ## explicit; go 1.24.0
 github.com/pion/ice/v4
 github.com/pion/ice/v4/internal/atomic
@@ -53,7 +53,7 @@ github.com/pion/ice/v4/internal/fakenet
 github.com/pion/ice/v4/internal/netutil
 github.com/pion/ice/v4/internal/stun
 github.com/pion/ice/v4/internal/taskloop
-# github.com/pion/interceptor v0.1.45
+# github.com/pion/interceptor v0.1.48
 ## explicit; go 1.24.0
 github.com/pion/interceptor
 github.com/pion/interceptor/internal/ntp
@@ -69,35 +69,35 @@ github.com/pion/interceptor/pkg/twcc
 # github.com/pion/logging v0.2.4
 ## explicit; go 1.20
 github.com/pion/logging
-# github.com/pion/mdns/v2 v2.1.0
-## explicit; go 1.21
+# github.com/pion/mdns/v2 v2.2.0
+## explicit; go 1.24.0
 github.com/pion/mdns/v2
 # github.com/pion/randutil v0.1.0
 ## explicit; go 1.14
 github.com/pion/randutil
-# github.com/pion/rtcp v1.2.16
-## explicit; go 1.21
+# github.com/pion/rtcp v1.2.17
+## explicit; go 1.24.0
 github.com/pion/rtcp
-# github.com/pion/rtp v1.10.2
+# github.com/pion/rtp v1.10.5
 ## explicit; go 1.24.0
 github.com/pion/rtp
 github.com/pion/rtp/codecs
 github.com/pion/rtp/codecs/av1/obu
 github.com/pion/rtp/codecs/vp9
-# github.com/pion/sctp v1.10.0
+# github.com/pion/sctp v1.11.1
 ## explicit; go 1.24.0
 github.com/pion/sctp
 # github.com/pion/sdp/v3 v3.0.19
 ## explicit; go 1.24.0
 github.com/pion/sdp/v3
-# github.com/pion/srtp/v3 v3.0.11
+# github.com/pion/srtp/v3 v3.0.13
 ## explicit; go 1.24.0
 github.com/pion/srtp/v3
-# github.com/pion/stun/v3 v3.1.5
+# github.com/pion/stun/v4 v4.0.0
 ## explicit; go 1.24.0
-github.com/pion/stun/v3
-github.com/pion/stun/v3/internal/hmac
-# github.com/pion/transport/v4 v4.0.2
+github.com/pion/stun/v4
+github.com/pion/stun/v4/internal/hmac
+# github.com/pion/transport/v4 v4.1.0
 ## explicit; go 1.24.0
 github.com/pion/transport/v4
 github.com/pion/transport/v4/deadline
@@ -108,7 +108,7 @@ github.com/pion/transport/v4/reuseport
 github.com/pion/transport/v4/stdnet
 github.com/pion/transport/v4/utils/xor
 github.com/pion/transport/v4/vnet
-# github.com/pion/turn/v5 v5.0.10
+# github.com/pion/turn/v5 v5.1.0
 ## explicit; go 1.24.0
 github.com/pion/turn/v5
 github.com/pion/turn/v5/internal/allocation
@@ -117,7 +117,7 @@ github.com/pion/turn/v5/internal/client
 github.com/pion/turn/v5/internal/ipnet
 github.com/pion/turn/v5/internal/proto
 github.com/pion/turn/v5/internal/server
-# github.com/pion/webrtc/v4 v4.2.15
+# github.com/pion/webrtc/v4 v4.2.20
 ## explicit; go 1.24.0
 github.com/pion/webrtc/v4
 github.com/pion/webrtc/v4/internal/fmtp
