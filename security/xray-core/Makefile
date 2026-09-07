@@ -1,6 +1,7 @@
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
 DISTVERSION=	26.7.28
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202608050239/:geoip \
 		https://github.com/v2fly/domain-list-community/releases/download/20260831141734/:geosite
@@ -15,7 +16,7 @@ WWW=		https://github.com/XTLS/Xray-core
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	XTLS
 GH_PROJECT=	Xray-core
@@ -28,12 +29,19 @@ GO_TARGET=	./main:xray
 
 CONFLICTS_INSTALL=	xray
 
-SUB_FILES=	pkg-message
-SUB_LIST=	GROUP="${GROUPS}" \
-		USER="${USERS}"
+XRAY_USER?=	v2ray
+XRAY_GROUP?=	v2ray
 
-USERS=		v2ray
-GROUPS=		v2ray
+SUB_FILES=	pkg-message
+SUB_LIST=	GROUP="${XRAY_GROUP}" \
+		USER="${XRAY_USER}"
+
+.if ${XRAY_USER} == v2ray
+USERS=		${XRAY_USER}
+.endif
+.if ${XRAY_GROUP} == v2ray
+GROUPS=		${XRAY_GROUP}
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} \
