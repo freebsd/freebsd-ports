@@ -209,6 +209,8 @@ lib/sbcl/sb-rotate-byte/x86-64-vm.lisp
 lib/sbcl/sb-rotate-byte/x86-vm.lisp
 lib/sbcl/sb-rt/rt.lisp
 lib/sbcl/sb-rt/sb-rt.asd
+%%SIMD%%lib/sbcl/sb-simd/arm64-fake-vops.lisp
+%%SIMD%%lib/sbcl/sb-simd/arm64-modify-macros.lisp
 %%SIMD%%lib/sbcl/sb-simd/constants.lisp
 %%SIMD%%lib/sbcl/sb-simd/cpu-identification.lisp
 %%SIMD%%lib/sbcl/sb-simd/define-arefs.lisp
@@ -222,7 +224,6 @@ lib/sbcl/sb-rt/sb-rt.asd
 %%SIMD%%lib/sbcl/sb-simd/define-modify-macros.lisp
 %%SIMD%%lib/sbcl/sb-simd/define-reducers.lisp
 %%SIMD%%lib/sbcl/sb-simd/define-reffers.lisp
-%%SIMD%%lib/sbcl/sb-simd/define-rounders.lisp
 %%SIMD%%lib/sbcl/sb-simd/define-scalar-casts.lisp
 %%SIMD%%lib/sbcl/sb-simd/define-simd-casts.lisp
 %%SIMD%%lib/sbcl/sb-simd/define-types.lisp
@@ -237,6 +238,9 @@ lib/sbcl/sb-rt/sb-rt.asd
 %%SIMD%%lib/sbcl/sb-simd/printable.lisp
 %%SIMD%%lib/sbcl/sb-simd/record.lisp
 %%SIMD%%lib/sbcl/sb-simd/utilities.lisp
+%%SIMD%%lib/sbcl/sb-simd/x86-64-fake-vops.lisp
+%%SIMD%%lib/sbcl/sb-simd/x86-64-modify-macros.lisp
+%%SIMD%%lib/sbcl/sb-simd/x86-64-rounders.lisp
 lib/sbcl/sb-simple-streams/classes.lisp
 lib/sbcl/sb-simple-streams/direct.lisp
 lib/sbcl/sb-simple-streams/file.lisp
