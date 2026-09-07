@@ -192,6 +192,8 @@ libdata/pkgconfig/libswscale.pc
 %%PORTDOCS%%%%DOCSDIR%%/ffmpeg-scaler.html
 %%PORTDOCS%%%%DOCSDIR%%/ffmpeg-utils.html
 %%PORTDOCS%%%%DOCSDIR%%/ffmpeg.html
+%%SDL%%%%PORTDOCS%%%%DOCSDIR%%/ffplay-all.html
+%%SDL%%%%PORTDOCS%%%%DOCSDIR%%/ffplay.html
 %%PORTDOCS%%%%DOCSDIR%%/ffprobe-all.html
 %%PORTDOCS%%%%DOCSDIR%%/ffprobe.html
 %%PORTDOCS%%%%DOCSDIR%%/general.html
