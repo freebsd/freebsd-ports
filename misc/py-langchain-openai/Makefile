@@ -1,5 +1,5 @@
 PORTNAME=	langchain-openai
-DISTVERSION=	1.4.1
+DISTVERSION=	1.6.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +15,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.5.1:misc/py-langchain-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.2:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=2.45.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=1.2.2:devel/py-freezegun@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain>=1.0.0:misc/py-langchain@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain>=1.4.0:misc/py-langchain@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-tests>=1.1.9:misc/py-langchain-tests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.26.4:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>=9.0.3:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=1.3.0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.1.0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.10.0:devel/py-pytest-mock@${PY_FLAVOR} \
@@ -38,7 +37,9 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 1.4.1: 306 failed, 628 passed, 39 skipped, 4 xfailed, 5 xpassed, 23 warnings, 173 errors in 102.76s
-# Failures and errors are integration tests that require an OPENAI_API_KEY / network access and are expected in a sandboxed environment. Unit tests pass.
+# Integration tests need an OpenAI API key and network access.
+TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests
+
+# tests as of 1.6.0: 592 passed, 1 skipped, 5 xpassed, 37 warnings in 19.88s
 
 .include <bsd.port.mk>
