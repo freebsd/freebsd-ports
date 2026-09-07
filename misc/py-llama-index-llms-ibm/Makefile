@@ -1,5 +1,5 @@
 PORTNAME=	llama-index-llms-ibm
-DISTVERSION=	0.7.0.post1
+DISTVERSION=	0.8.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ibm-watsonx-ai>=1.5.0:misc/py-ibm-watsonx-ai@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}llama-index-core>=0.13.0:misc/py-llama-index-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}llama-index-core>=0.14.24:misc/py-llama-index-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyarrow>0:databases/py-pyarrow@${PY_FLAVOR}
 
 USES=		python
