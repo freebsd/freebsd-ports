@@ -1,6 +1,6 @@
 PORTNAME=	code-server
 DISTVERSION=	4.135.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-CodeServer/releases/download/code-server-${DISTVERSION}/:code_server \
 		https://github.com/github/copilot-cli/releases/download/v${COPILOT_CLI_VERSION}/:copilot_cli
@@ -48,7 +48,7 @@ USE_RC_SUBR=	code-server
 SUB_FILES=	code-server-wrapper
 
 OPTIONS_DEFINE=	DOCS
-PORTDOCS=	README.md
+PORTDOCS=	README.md EXTENSIONS.md
 
 NO_CCACHE=	yes
 
