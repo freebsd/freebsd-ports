@@ -1,5 +1,5 @@
 PORTNAME=	docling-serve
-DISTVERSION=	1.28.0
+DISTVERSION=	1.32.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.79.0:textproc/py-docling-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-jobkit>=3.0.0:textproc/py-docling-jobkit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-mcp>=1.0.0:textproc/py-docling-mcp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-slim>=2.113.0:textproc/py-docling-slim@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.95.0:textproc/py-docling-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-jobkit>=3.5.0:textproc/py-docling-jobkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-mcp>=3.2.0:textproc/py-docling-mcp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-slim>=2.126.0:textproc/py-docling-slim@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>=0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.36.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
@@ -35,7 +35,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.79.0:textproc/py-docling-cor
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.29.0:www/py-uvicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=14.0:devel/py-websockets@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}docling-ibm-models>0:textproc/py-docling-ibm-models@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-parse>0:textproc/py-docling-parse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-parse>=7.17.0:textproc/py-docling-parse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tree-sitter>=0:devel/py-tree-sitter@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgi-lifespan>=2.0:devel/py-asgi-lifespan@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=1.2:devel/py-pytest-asyncio@${PY_FLAVOR} \
@@ -53,8 +53,31 @@ TEST_WRKDIR=	${WRKSRC}/tests
 # tests as of 1.28.0: test_ray_metrics_collector.py is ignored because the
 # devel/py-ray port only ships a cp311 manylinux wheel and is not usable with
 # the default python3.12 flavor.
-TEST_ARGS=	--ignore=${WRKSRC}/tests/test_ray_metrics_collector.py
+# Several other test files are ignored because they require network access,
+# local PDF files, machine-learning models, or a pytest-asyncio version newer
+# than the one currently available in the Ports tree.
+TEST_ARGS=	--disable-plugin-autoload \
+		-p pytest_asyncio.plugin \
+		-p pytest_check.plugin \
+		--asyncio-mode=auto \
+		--ignore=${WRKSRC}/tests/test_1-file-all-outputs.py \
+		--ignore=${WRKSRC}/tests/test_1-file-async.py \
+		--ignore=${WRKSRC}/tests/test_1-url-all-outputs.py \
+		--ignore=${WRKSRC}/tests/test_1-url-async-ws.py \
+		--ignore=${WRKSRC}/tests/test_1-url-async.py \
+		--ignore=${WRKSRC}/tests/test_2-files-all-outputs.py \
+		--ignore=${WRKSRC}/tests/test_2-urls-all-outputs.py \
+		--ignore=${WRKSRC}/tests/test_2-urls-async-all-outputs.py \
+		--ignore=${WRKSRC}/tests/test_batch_endpoint.py \
+		--ignore=${WRKSRC}/tests/test_config_file_loading.py \
+		--ignore=${WRKSRC}/tests/test_fastapi_endpoints.py \
+		--ignore=${WRKSRC}/tests/test_file_opts.py \
+		--ignore=${WRKSRC}/tests/test_health_probes.py \
+		--ignore=${WRKSRC}/tests/test_orchestrator_factory_slice_parallelism.py \
+		--ignore=${WRKSRC}/tests/test_otel_filtering.py \
+		--ignore=${WRKSRC}/tests/test_ray_metrics_collector.py \
+		--ignore=${WRKSRC}/tests/test_results_clear.py
 
-# tests as of 1.28.0: 18 failed, 130 passed, 255 warnings, 17 errors in 10.59s # failures are due to missing pdf files and failing internet connections
+# tests as of 1.32.0: 107 passed, 344 warnings in 14.84s
 
 .include <bsd.port.mk>
