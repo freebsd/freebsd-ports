@@ -23,6 +23,5 @@ packages/runtime/package.json
 packages/shared/package.json
 packages/target-browser/package.json
 packages/target-electron/package.json
-packages/target-tauri/package.json
 pnpm-lock.yaml
 pnpm-workspace.yaml
