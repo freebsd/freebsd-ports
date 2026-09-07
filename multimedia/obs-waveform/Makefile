@@ -32,4 +32,10 @@ PLIST_FILES=	lib/obs-plugins/waveform.so \
 		share/obs/obs-plugins/waveform/locale/zh-CN.ini \
 		share/obs/obs-plugins/waveform/locale/zh-TW.ini
 
+.include <bsd.port.options.mk>
+
+.if empty(ARCH:Mamd64) && empty(ARCH:Mi386)
+CMAKE_OFF+=	ENABLE_X86_SIMD
+.endif
+
 .include <bsd.port.mk>
