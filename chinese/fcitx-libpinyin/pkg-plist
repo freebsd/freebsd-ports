@@ -1,5 +1,4 @@
 lib/fcitx/fcitx-libpinyin.so
-%%QT5%%lib/fcitx/qt/libfcitx-libpinyin-dictmanager.so
 share/fcitx/addon/fcitx-libpinyin.conf
 share/fcitx/configdesc/fcitx-libpinyin.desc
 share/fcitx/imicon/bopomofo.png
