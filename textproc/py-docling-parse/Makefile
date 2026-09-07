@@ -1,5 +1,5 @@
 PORTNAME=	docling-parse
-DISTVERSION=	7.8.1
+DISTVERSION=	7.17.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ LIB_DEPENDS=	libblend2d.so:graphics/blend2d \
 		liblcms2.so:graphics/lcms2 \
 		libopenjp2.so:graphics/openjpeg \
 		libqpdf.so:print/qpdf
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.85.0:textproc/py-docling-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.95.0:textproc/py-docling-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=10.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0.0:devel/py-pydantic2@${PY_FLAVOR}
 
