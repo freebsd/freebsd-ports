@@ -1,0 +1,4 @@
+Library with a SQLite implementation of LangGraph checkpoint saver.
+
+This package provides SQLite-backed checkpoint and storage implementations
+for LangGraph, including both synchronous and asynchronous APIs.

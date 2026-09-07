@@ -561,6 +561,7 @@
     SUBDIR += py-langchain-text-splitters
     SUBDIR += py-langgraph
     SUBDIR += py-langgraph-checkpoint
+    SUBDIR += py-langgraph-checkpoint-sqlite
     SUBDIR += py-langgraph-prebuilt
     SUBDIR += py-langgraph-sdk
     SUBDIR += py-langsmith
