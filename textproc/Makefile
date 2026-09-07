@@ -1571,6 +1571,7 @@
     SUBDIR += py-mkdocstrings-python
     SUBDIR += py-mkdocstrings-python-legacy
     SUBDIR += py-morse3
+    SUBDIR += py-multimark
     SUBDIR += py-mwparserfromhell
     SUBDIR += py-myst-parser
     SUBDIR += py-nbsphinx
