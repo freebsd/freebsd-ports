@@ -1,7 +1,7 @@
 PORTNAME=	frand
 PORTVERSION=	0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	sysutils
 
 MAINTAINER=	serpent7776@gmail.com
@@ -10,6 +10,9 @@ WWW=		https://github.com/serpent7776/frand
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
