@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-sdk
-DISTVERSION=	0.4.2
+DISTVERSION=	0.4.4
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.25.2:www/py-httpx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.4.0:misc/py-langchain-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.15:misc/py-langchain-protocol@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.2:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.19:misc/py-langchain-protocol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>0:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=14:devel/py-websockets@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
@@ -27,7 +27,10 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 0.4.2: 507 passed, 53 skipped, 1 warning in 9.26s
-# (pytest-watch dep omitted because it conflicts with devel/py-pytest-watcher)
+# Integration tests require a running langgraph-api (docker); ruff items
+# conflict with the installed ruff version in the package build environment.
+TEST_ARGS=	--ignore=${WRKSRC}/tests/integration
+
+# tests as of 0.4.4: 527 passed, 2 warnings in 7.28s
 
 .include <bsd.port.mk>
