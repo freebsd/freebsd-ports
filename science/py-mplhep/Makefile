@@ -1,5 +1,5 @@
 PORTNAME=	mplhep
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.3
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.11.1:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mplhep-data>=0.0.4:science/py-mplhep-data@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.25:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uhi>=0.2.0:misc/py-uhi@${PY_FLAVOR}
@@ -35,6 +35,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as of 1.3.2: 282 passed, 73 skipped in 18.72s
+# tests as of 1.3.3: 310 passed, 69 skipped in 18.85s
 
 .include <bsd.port.mk>
