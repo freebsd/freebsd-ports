@@ -1,6 +1,6 @@
 {
   "name": "teams-for-linux",
-  "version": "2.18.1",
+  "version": "2.20.0",
   "main": "app/index.js",
   "description": "Unofficial client for Microsoft Teams for Linux",
   "homepage": "https://github.com/IsmaelMartinez/teams-for-linux",
@@ -44,6 +44,7 @@
     "dist:linux:snap": "electron-builder -l snap",
     "dist:linux:snap:armv7l": "electron-builder --armv7l -l snap",
     "dist:linux:snap:arm64": "electron-builder --arm64 -l snap",
+    "dist:mac": "electron-builder --mac --x64 --arm64 -c.mac.identity=-",
     "dist:mac:x64": "electron-builder --mac --x64",
     "dist:mac:arm64": "electron-builder --mac --arm64",
     "dist:windows": "electron-builder --windows --x64",
@@ -54,7 +55,7 @@
   },
   "dependencies": {
     "@homebridge/dbus-native": "0.7.9",
-    "cbor-x": "^1.6.5",
+    "cbor-x": "^1.6.6",
     "electron-log": "^5.4.4",
     "electron-store": "11.0.2",
     "electron-updater": "^6.8.9",
@@ -68,7 +69,7 @@
     "@playwright/test": "1.62.1",
     "electron": "42.9.3",
     "electron-builder": "26.15.7",
-    "eslint": "^10.9.0",
+    "eslint": "^10.9.1",
     "globals": "^17.11.0",
     "http-server": "^14.1.1",
     "xml2js": "^0.6.2"
@@ -171,6 +172,10 @@
     },
     "mac": {
       "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ],
       "extendInfo": {
         "NSCameraUsageDescription": "We need camera access for video calls.",
         "NSMicrophoneUsageDescription": "We need microphone access for audio."
