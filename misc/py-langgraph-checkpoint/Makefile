@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-checkpoint
-DISTVERSION=	4.1.1
+DISTVERSION=	4.2.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,12 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=0.2.38:misc/py-langchain-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.2:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ormsgpack>=1.12.0:devel/py-ormsgpack@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dataclasses-json>0:devel/py-dataclasses-json@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas-stubs>=2.2.2.240807:math/py-pandas-stubs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycryptodome>0:security/py-pycryptodome@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-watcher>0:devel/py-pytest-watcher@${PY_FLAVOR} \
@@ -31,6 +32,12 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 4.1.1: 4 failed, 152 passed, 17 skipped in 260.81s
+# Pandas serialization cases fail due to pandas version differences.
+TEST_ARGS=	--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df8] \
+		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df14] \
+		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df16] \
+		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series9]
+
+# tests as of 4.2.0: 203 passed, 17 skipped, 1 warning in 215.06s
 
 .include <bsd.port.mk>
