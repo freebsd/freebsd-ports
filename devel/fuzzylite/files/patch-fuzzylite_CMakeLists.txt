@@ -1,5 +1,11 @@
---- fuzzylite/CMakeLists.txt.orig	2017-11-18 07:28:31 UTC
+--- fuzzylite/CMakeLists.txt.orig	2017-03-26 09:40:17 UTC
 +++ fuzzylite/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.8)
++cmake_minimum_required(VERSION 3.5)
+ 
+ if (APPLE)
+     set(CMAKE_OSX_DEPLOYMENT_TARGET 10.9)
 @@ -174,7 +174,7 @@ if(FL_BUILD_SHARED)
      set_target_properties(fl-shared PROPERTIES DEBUG_POSTFIX -debug)
      target_compile_definitions(fl-shared PRIVATE FL_EXPORT_LIBRARY)
