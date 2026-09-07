@@ -1449,6 +1449,7 @@
     SUBDIR += voa
     SUBDIR += vouch-proxy
     SUBDIR += vpnc
+    SUBDIR += vulnx
     SUBDIR += vuls
     SUBDIR += vulsrepo
     SUBDIR += vuxml

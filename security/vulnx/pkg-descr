@@ -1,0 +1,5 @@
+vulnx (formerly cvemap) is a command-line interface for exploring
+vulnerability data with search, filtering, and analysis capabilities.
+It queries ProjectDiscovery's vulnerability database, letting you look up
+individual CVEs, run field-based searches across the dataset, and inspect
+exploitation status, affected products, and related references.
