@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the cache_purge module only.  It
+does not install a loadable module.
+
+The module itself is built by the nginx ports.  To use cache_purge,
+build www/nginx, www/nginx-devel or www/freenginx with the CACHE_PURGE
+option enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-cache-purge and produce
+ngx_http_cache_purge_module.so.
+EOM
+}
+]

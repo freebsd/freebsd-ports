@@ -527,6 +527,7 @@
     SUBDIR += nginx-full
     SUBDIR += nginx-lite
     SUBDIR += nginx-module-array-var
+    SUBDIR += nginx-module-cache-purge
     SUBDIR += nginx-module-lua
     SUBDIR += nginx-module-lua-stream
     SUBDIR += nginx-module-ndk
