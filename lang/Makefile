@@ -1,5 +1,6 @@
     COMMENT = Programming languages
 
+    SUBDIR += R-cran-languageserver
     SUBDIR += abcl
     SUBDIR += alchemist.el
     SUBDIR += algol68g
