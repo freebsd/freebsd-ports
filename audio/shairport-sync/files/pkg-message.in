@@ -1,11 +1,38 @@
-[   
+[
 { type: install
-  message: <<EOM
+message: <<EOM
 
-Shairport sync is using AirPlay 2. Please make sure you enable and start nqptp.
-
-    # sysrc nqptp_enable=YES
-    # service nqptp start
+%%AIRPLAY2%%Shairport Sync is using AirPlay 2. Please make sure you enable and start nqptp.
+%%AIRPLAY2%%
+%%AIRPLAY2%%# sysrc nqptp_enable=YES
+%%AIRPLAY2%%# service nqptp start
+%%AIRPLAY2%%
+%%SNDIO%%The sndio "default" device does not necessarily correspond to the
+%%SNDIO%%default FreeBSD sound device shown by /dev/sndstat. If Shairport Sync
+%%SNDIO%%is visible to AirPlay clients but exits when playback starts with an
+%%SNDIO%%error such as:
+%%SNDIO%%
+%%SNDIO%%output configuration search for request: S16/44100/2 failed
+%%SNDIO%%
+%%SNDIO%%check the available sound devices with:
+%%SNDIO%%
+%%SNDIO%%# cat /dev/sndstat
+%%SNDIO%%
+%%SNDIO%%and explicitly select the desired sndio device in:
+%%SNDIO%%
+%%SNDIO%%%%PREFIX%%/etc/shairport-sync.conf
+%%SNDIO%%
+%%SNDIO%%For example, if the desired device corresponds to rsnd/8:
+%%SNDIO%%
+%%SNDIO%%sndio =
+%%SNDIO%%{
+%%SNDIO%% device = "rsnd/8";
+%%SNDIO%% output_rate = 48000;
+%%SNDIO%% output_format = "S16_LE";
+%%SNDIO%% output_channels = 2;
+%%SNDIO%%};
+%%SNDIO%%
+%%SNDIO%%Adjust the rsnd device number as appropriate for the system.
 EOM
 }
 ]

@@ -1,5 +1,5 @@
 PORTNAME=	shairport-sync
-DISTVERSION=	5.2.3
+DISTVERSION=	5.5
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -34,12 +34,15 @@ CONFIGURE_ENV+=	SSL_CFLAGS=-I${OPENSSLINC} \
 
 LDFLAGS+=	-lcrypto
 
+SUB_FILES=	pkg-message
+
 OPTIONS_DEFINE=		AIRPLAY2 ALAC ALSA MQTT PULSEAUDIO SNDIO
-OPTIONS_DEFAULT=	AIRPLAY2
+OPTIONS_DEFAULT=	AIRPLAY2 SNDIO
+OPTIONS_SUB=		yes
 AIRPLAY2_DESC=		Build with AirPlay 2 protocol support
 ALAC_DESC=		Build with libalac support (experimental)
 MQTT_DESC=		Build with MQTT protocol support
-SNDIO_DESC=		Sndio audio support (DEPRECATED upstream)
+SNDIO_DESC=		Sndio audio support
 
 AIRPLAY2_BUILD_DEPENDS=	vim:editors/vim
 AIRPLAY2_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
@@ -49,7 +52,6 @@ AIRPLAY2_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 			libuuid.so:misc/libuuid
 AIRPLAY2_RUN_DEPENDS=	nqptp:net/nqptp
 AIRPLAY2_CONFIGURE_ON=	--with-airplay-2
-AIRPLAY2_SUB_FILES=	pkg-message
 
 ALAC_LIB_DEPENDS=	libalac.so:audio/alac
 ALAC_CONFIGURE_ON=	--with-apple-alac
