@@ -12,6 +12,9 @@ WWW=		https://github.com/nyergler/hieroglyph
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Broken with textproc/py-sphinx 7 and newer, last upstream release in 2020
+EXPIRATION_DATE=	2026-10-07
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=2.0,1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python shebangfix
