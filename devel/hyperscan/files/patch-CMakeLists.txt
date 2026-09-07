@@ -1,5 +1,11 @@
 --- CMakeLists.txt.orig	2017-01-20 03:16:41 UTC
 +++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 2.8.11)
++cmake_minimum_required (VERSION 3.5)
+ project (hyperscan C CXX)
+
+ set (HS_MAJOR_VERSION 5)
 @@ -1217,6 +1217,6 @@ install(TARGETS hs_shared
      LIBRARY DESTINATION lib)
  endif()
