@@ -1,5 +1,5 @@
 PORTNAME=	knitr
-DISTVERSION=	1.51
+DISTVERSION=	1.52
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -23,12 +23,13 @@ TEST_DEPENDS=	R-cran-bslib>0:www/R-cran-bslib \
 		R-cran-magick>0:graphics/R-cran-magick \
 		R-cran-markdown>=1.3:textproc/R-cran-markdown \
 		R-cran-png>0:graphics/R-cran-png \
-		R-cran-ragg>0:graphics/R-cran-ragg \
+		R-cran-ragg>=1.5.0:graphics/R-cran-ragg \
 		R-cran-rgl>=0.95.1201:graphics/R-cran-rgl \
 		R-cran-rlang>0:devel/R-cran-rlang \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
 		R-cran-sass>0:textproc/R-cran-sass \
+		R-cran-styler>=1.2.0:devel/R-cran-styler \
 		R-cran-testit>0:devel/R-cran-testit \
 		R-cran-tibble>0:devel/R-cran-tibble \
 		R-cran-tinytex>=0.56:print/R-cran-tinytex \
