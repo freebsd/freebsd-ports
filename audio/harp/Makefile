@@ -1,6 +1,6 @@
 PORTNAME=	harp
 PORTVERSION=	0.6.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 
 MAINTAINER=	heckendorfc@gmail.com
@@ -8,6 +8,9 @@ COMMENT=	Minimalist audio player
 WWW=		https://github.com/heckendorfc/harp
 
 LICENSE=	GPLv3
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	heckendorfc
