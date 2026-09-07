@@ -7,9 +7,9 @@ Open the "Dictionary Tool" in Mozc.
 $ mozc_tool dictionary_tool
 
 Select "Tools" > "Import as new dictionary..."
-Specify the %%DATADIR%%/mozc_unidic_merged_1.txt
-and execute the import.
-Follow the same procedure to import _2.txt through _4.txt in order.
+Specify the %%DATADIR%%/mozc_unidic_merged_1.txt and execute the import.
+If a personal name dictionary is required, follow the same procedure for
+mozc_unidic_names_1.txt.
 EOM
 }
 ]
