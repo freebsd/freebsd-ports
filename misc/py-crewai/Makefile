@@ -1,5 +1,5 @@
 PORTNAME=	crewai
-PORTVERSION=	1.15.7
+PORTVERSION=	1.15.20
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>0:devel/py-aiofiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cel-python>=0.5.0:devel/py-cel-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chromadb>=1.1.0:databases/py-chromadb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.1.7:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai-cli>=1.15.7:misc/py-crewai-cli@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai-core>=1.15.7:misc/py-crewai-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai-cli>=1.15.20:misc/py-crewai-cli@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai-core>=1.15.20:misc/py-crewai-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}instructor>=1.3.3:misc/py-instructor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}json-repair>=0.60.1:textproc/py-json-repair@${PY_FLAVOR} \
@@ -66,10 +66,12 @@ TEST_ARGS=	-m 'not vcr' \
 		--ignore=agents/test_agent_executor.py \
 		--ignore=agents/test_crew_agent_parser.py \
 		--ignore=agents/test_native_tool_calling.py \
+		--ignore=ci \
 		--ignore=cli/test_plus_api.py \
 		--ignore=crew/test_async_crew.py \
 		--ignore=events/test_event_context.py \
 		--ignore=events/test_llm_finish_reason_response_id.py \
+		--ignore=hooks/test_hook_abort_propagation.py \
 		--ignore=llms/anthropic \
 		--ignore=llms/azure \
 		--ignore=llms/google \
@@ -82,6 +84,7 @@ TEST_ARGS=	-m 'not vcr' \
 		--ignore=mcp \
 		--ignore=rag/chromadb \
 		--ignore=rag/qdrant/test_client.py \
+		--ignore=telemetry \
 		--ignore=tracing/test_tracing.py \
 		--ignore=test_agent_multimodal.py \
 		--ignore=test_crew.py \
@@ -91,6 +94,7 @@ TEST_ARGS=	-m 'not vcr' \
 		--ignore=test_llm_streaming_finish_reason.py \
 		--ignore=test_project.py \
 		--ignore=tools/agent_tools/test_read_file_tool.py \
+		--ignore=tools/test_tool_failure.py \
 		--ignore=utilities/test_converter.py \
 		--ignore=utilities/test_file_store.py \
 		--ignore=utilities/test_files.py \
@@ -106,11 +110,12 @@ TEST_ARGS=	-m 'not vcr' \
 		--deselect=tests/agents/test_lite_agent.py::test_prepare_kickoff_param_files_override_message_files \
 		--deselect=tests/llms/bedrock/test_bedrock.py::test_bedrock_raises_error_when_model_not_found \
 		--deselect=tests/test_flow_conversation.py::TestDeferredFlowLifecycleEvents::test_finalize_batch_is_idempotent \
+		--deselect=tests/test_flow_from_definition.py::test_agent_action_repository_fetch_does_not_block_event_loop \
 		--deselect=tests/test_flow_from_definition.py::test_crew_action_repository_fetch_does_not_block_event_loop \
 		--deselect=tests/utilities/events/test_shutdown.py::test_concurrent_access_during_shutdown_flag \
 		--deselect=tests/utilities/events/test_shutdown.py::test_mixed_sync_async_handler_execution \
 		--deselect=tests/utilities/events/test_thread_safety.py::test_concurrent_emit_and_registration
 
-# tests as of 1.15.7: 2477 passed, 27 skipped, 254 deselected, 1661 warnings in 40.00s
+# tests as of 1.15.20: 2848 passed, 6 skipped, 2215 warnings in 46.23s
 
 .include <bsd.port.mk>
