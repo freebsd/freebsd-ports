@@ -1,6 +1,6 @@
---- crates/gpui/src/window.rs.orig	2026-08-26 14:24:53 UTC
+--- crates/gpui/src/window.rs.orig	2026-09-04 14:25:12 UTC
 +++ crates/gpui/src/window.rs
-@@ -2129,7 +2129,7 @@ impl Window {
+@@ -2150,7 +2150,7 @@ impl Window {
      /// This is only needed to disambiguate a corner-anchored surface; otherwise the
      /// edge is deduced from the anchor. The edge must be a single edge the surface
      /// is anchored to, or it is ignored. (Wayland layer-shell windows only)

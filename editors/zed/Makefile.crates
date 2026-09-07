@@ -6,6 +6,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		accesskit_unix-0.21.0 \
 		accesskit_windows-0.33.1 \
 		addr2line-0.25.1 \
+		addr2line-0.26.1 \
 		adler2-2.0.1 \
 		aes-0.8.4 \
 		agent-client-protocol-2.0.0 \
@@ -31,8 +32,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		anstyle-query-1.1.4 \
 		anstyle-wincon-3.0.10 \
 		any_vec-0.14.0 \
-		anyhow-1.0.102 \
-		approx-0.4.0 \
+		anyhow-1.0.104 \
 		approx-0.5.1 \
 		ar_archive_writer-0.5.1 \
 		arbitrary-1.4.2 \
@@ -44,7 +44,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		as-raw-xcb-connection-1.0.1 \
 		as-slice-0.2.1 \
 		ascii-1.1.0 \
-		ascii-canvas-3.0.0 \
 		ash-0.38.0+1.3.281 \
 		ashpd-0.13.2 \
 		async-attributes-1.1.2 \
@@ -113,15 +112,12 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		base64-0.22.1 \
 		base64-simd-0.8.0 \
 		base64ct-1.8.0 \
-		beef-0.5.2 \
 		bigdecimal-0.4.8 \
 		bincode-1.3.3 \
 		bindgen-0.71.1 \
 		bindgen-0.72.1 \
-		bit-set-0.5.3 \
 		bit-set-0.8.0 \
 		bit-set-0.9.1 \
-		bit-vec-0.6.3 \
 		bit-vec-0.8.0 \
 		bit-vec-0.9.1 \
 		bit_field-0.10.3 \
@@ -145,7 +141,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		bs58-0.5.1 \
 		bstr-1.12.1 \
 		built-0.8.0 \
-		bumpalo-3.19.0 \
+		bumpalo-3.20.3 \
 		by_address-1.2.1 \
 		bytecheck-0.6.12 \
 		bytecheck_derive-0.6.12 \
@@ -165,12 +161,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		cached_proc_macro_types-0.1.1 \
 		calloop-wayland-source-0.4.1 \
 		camino-1.2.1 \
-		cap-fs-ext-3.4.6 \
-		cap-net-ext-3.4.6 \
-		cap-primitives-3.4.6 \
-		cap-rand-3.4.6 \
-		cap-std-3.4.6 \
-		cap-time-ext-3.4.6 \
+		cap-fs-ext-4.0.3 \
+		cap-primitives-4.0.3 \
+		cap-std-4.0.3 \
 		cargo-platform-0.1.9 \
 		cargo-platform-0.3.2 \
 		cargo_metadata-0.19.2 \
@@ -182,12 +175,12 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		cc-1.4.3 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
-		cfg-expr-0.20.6 \
+		cfg-expr-0.20.9 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
 		cgl-0.3.2 \
-		cgmath-0.18.0 \
+		chacha20-0.10.1 \
 		chardetng-0.1.17 \
 		chrono-0.4.42 \
 		chunked_transfer-1.5.0 \
@@ -247,21 +240,22 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		coreaudio-sys-0.2.17 \
 		cosmic-text-0.19.0 \
 		cpal-0.17.1 \
-		cpp_demangle-0.4.5 \
+		cpp_demangle-0.5.1 \
 		cpufeatures-0.2.17 \
-		cranelift-assembler-x64-0.123.14 \
-		cranelift-assembler-x64-meta-0.123.14 \
-		cranelift-bforest-0.123.14 \
-		cranelift-bitset-0.123.14 \
-		cranelift-codegen-0.123.14 \
-		cranelift-codegen-meta-0.123.14 \
-		cranelift-codegen-shared-0.123.14 \
-		cranelift-control-0.123.14 \
-		cranelift-entity-0.123.14 \
-		cranelift-frontend-0.123.14 \
-		cranelift-isle-0.123.14 \
-		cranelift-native-0.123.14 \
-		cranelift-srcgen-0.123.14 \
+		cpufeatures-0.3.0 \
+		cranelift-assembler-x64-0.135.1 \
+		cranelift-assembler-x64-meta-0.135.1 \
+		cranelift-bforest-0.135.1 \
+		cranelift-bitset-0.135.1 \
+		cranelift-codegen-0.135.1 \
+		cranelift-codegen-meta-0.135.1 \
+		cranelift-codegen-shared-0.135.1 \
+		cranelift-control-0.135.1 \
+		cranelift-entity-0.135.1 \
+		cranelift-frontend-0.135.1 \
+		cranelift-isle-0.135.1 \
+		cranelift-native-0.135.1 \
+		cranelift-srcgen-0.135.1 \
 		crash-context-0.6.3 \
 		crash-handler-0.7.0 \
 		crc-3.3.0 \
@@ -291,15 +285,12 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		cxxbridge-cmd-1.0.187 \
 		cxxbridge-flags-1.0.187 \
 		cxxbridge-macro-1.0.187 \
-		darling-0.14.4 \
 		darling-0.20.11 \
 		darling-0.21.3 \
 		darling-0.23.0 \
-		darling_core-0.14.4 \
 		darling_core-0.20.11 \
 		darling_core-0.21.3 \
 		darling_core-0.23.0 \
-		darling_macro-0.14.4 \
 		darling_macro-0.20.11 \
 		darling_macro-0.21.3 \
 		darling_macro-0.23.0 \
@@ -313,9 +304,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		der-0.6.1 \
 		der-0.7.10 \
 		deranged-0.5.4 \
-		derive_builder-0.12.0 \
-		derive_builder_core-0.12.0 \
-		derive_builder_macro-0.12.0 \
 		derive_more-2.1.1 \
 		derive_more-impl-2.1.1 \
 		derive_setters-0.1.9 \
@@ -324,9 +312,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		diffy-0.4.2 \
 		digest-0.10.7 \
 		dirs-6.0.0 \
-		dirs-next-2.0.0 \
 		dirs-sys-0.5.0 \
-		dirs-sys-next-0.1.2 \
 		dispatch-0.2.0 \
 		dispatch2-0.3.1 \
 		displaydoc-0.2.5 \
@@ -339,6 +325,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		doxygen-rs-0.4.2 \
 		dtoa-1.0.10 \
 		dtoa-short-0.3.5 \
+		dugong-0.8.0-alpha.5 \
+		dugong-graphlib-0.8.0-alpha.5 \
 		dunce-1.0.5 \
 		dwrote-0.11.5 \
 		dyn-clone-1.0.20 \
@@ -352,7 +340,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		embedded-io-0.4.0 \
 		embedded-io-0.6.1 \
 		emojis-0.6.4 \
-		ena-0.14.4 \
 		encode_unicode-1.0.0 \
 		encoding_rs-0.8.35 \
 		endi-1.1.0 \
@@ -373,7 +360,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		error-graph-0.1.1 \
 		etagere-0.2.15 \
 		etcetera-0.8.0 \
-		euclid-0.22.11 \
+		euclid-0.22.14 \
 		event-listener-2.5.3 \
 		event-listener-5.4.1 \
 		event-listener-strategy-0.5.4 \
@@ -381,7 +368,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		exr-1.74.0 \
 		extended-0.1.0 \
 		failspot-0.2.0 \
-		fallible-iterator-0.3.0 \
 		fancy-regex-0.16.2 \
 		fancy-regex-0.18.0 \
 		fast-srgb8-1.0.0 \
@@ -389,7 +375,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		fastrand-2.3.0 \
 		fax-0.2.6 \
 		fax_derive-0.2.0 \
-		fd-lock-4.0.4 \
 		fdeflate-0.3.7 \
 		ff-0.12.1 \
 		filedescriptor-0.8.3 \
@@ -445,32 +430,14 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		generator-0.8.7 \
 		generic-array-0.14.7 \
 		gethostname-1.1.0 \
-		getopts-0.2.24 \
 		getrandom-0.2.16 \
 		getrandom-0.3.4 \
 		getrandom-0.4.1 \
 		gif-0.14.2 \
 		gimli-0.32.3 \
+		gimli-0.33.0 \
 		gio-sys-0.21.5 \
 		gl_generator-0.14.0 \
-		glam-0.14.0 \
-		glam-0.15.2 \
-		glam-0.16.0 \
-		glam-0.17.3 \
-		glam-0.18.0 \
-		glam-0.19.0 \
-		glam-0.20.5 \
-		glam-0.21.3 \
-		glam-0.22.0 \
-		glam-0.23.0 \
-		glam-0.24.2 \
-		glam-0.25.0 \
-		glam-0.27.0 \
-		glam-0.28.0 \
-		glam-0.29.3 \
-		glam-0.30.10 \
-		glam-0.31.1 \
-		glam-0.32.1 \
 		glib-0.21.5 \
 		glib-macros-0.21.5 \
 		glib-sys-0.21.5 \
@@ -484,6 +451,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		gpu-allocator-0.28.0 \
 		gpu-descriptor-0.3.2 \
 		gpu-descriptor-types-0.2.0 \
+		granit-parser-1.0.0 \
 		group-0.12.1 \
 		h2-0.3.27 \
 		h2-0.4.12 \
@@ -538,14 +506,18 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		hyper-util-0.1.17 \
 		iana-time-zone-0.1.64 \
 		iana-time-zone-haiku-0.1.2 \
-		icu_collections-2.0.0 \
-		icu_locale_core-2.0.0 \
-		icu_normalizer-2.0.0 \
-		icu_normalizer_data-2.0.0 \
-		icu_properties-2.0.1 \
-		icu_properties_data-2.0.1 \
-		icu_provider-2.0.0 \
-		id-arena-2.2.1 \
+		icu_collator-2.3.0 \
+		icu_collator_data-2.3.0 \
+		icu_collections-2.3.0 \
+		icu_locale_core-2.3.0 \
+		icu_locale_fallback-2.3.0 \
+		icu_locale_fallback_data-2.3.0 \
+		icu_normalizer-2.3.0 \
+		icu_normalizer_data-2.3.0 \
+		icu_properties-2.3.0 \
+		icu_properties_data-2.3.0 \
+		icu_provider-2.3.0 \
+		id-arena-2.3.0 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
@@ -567,8 +539,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		instant-0.1.13 \
 		interpolate_name-0.2.4 \
 		inventory-0.3.21 \
-		io-extras-0.18.4 \
+		io-extras-0.19.0 \
 		io-lifetimes-2.0.4 \
+		io-lifetimes-3.0.1 \
 		io-surface-0.16.1 \
 		iovec-0.1.4 \
 		ipc-channel-0.22.0 \
@@ -589,7 +562,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.34 \
 		js-sys-0.3.97 \
-		json5-0.4.1 \
+		json5-1.3.1 \
 		json_dotpath-1.1.0 \
 		jsonschema-0.37.4 \
 		jsonwebtoken-10.3.0 \
@@ -599,11 +572,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		khronos_api-3.1.0 \
 		kqueue-1.2.0 \
 		kqueue-sys-1.1.2 \
-		kurbo-0.9.5 \
 		kurbo-0.13.1 \
 		kv-log-macro-1.0.7 \
-		lalrpop-0.20.2 \
-		lalrpop-util-0.20.2 \
+		lalrpop-util-0.23.1 \
 		lazy_static-1.5.0 \
 		leak-0.1.2 \
 		leaky-cow-0.1.1 \
@@ -615,7 +586,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		libdbus-sys-0.2.6 \
 		libfuzzer-sys-0.4.10 \
 		libloading-0.8.9 \
-		libm-0.2.15 \
+		libm-0.2.16 \
 		libmimalloc-sys-0.1.44 \
 		libredox-0.1.10 \
 		libsqlite3-sys-0.30.1 \
@@ -625,16 +596,13 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		linkify-0.10.0 \
 		linktime-proc-macro-0.2.2 \
 		linux-raw-sys-0.4.15 \
-		linux-raw-sys-0.11.0 \
+		linux-raw-sys-0.12.1 \
 		litemap-0.8.0 \
 		litrs-1.0.0 \
 		lmdb-master-sys-0.2.5 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
-		logos-0.14.4 \
-		logos-codegen-0.14.4 \
-		logos-derive-0.14.4 \
-		lol_html-2.8.1 \
+		lol_html-3.0.1 \
 		loom-0.7.2 \
 		loop9-0.1.5 \
 		lru-0.16.4 \
@@ -649,7 +617,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		mac-notification-sys-0.6.15 \
 		mach2-0.4.3 \
 		mach2-0.5.0 \
+		mach2-0.6.0 \
 		malloc_buf-0.0.6 \
+		manatee-0.8.0-alpha.5 \
 		maplit-1.0.2 \
 		markup5ever-0.12.1 \
 		markup5ever-0.35.0 \
@@ -657,17 +627,19 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		match_token-0.35.0 \
 		matchers-0.2.0 \
 		matchit-0.7.3 \
-		matrixmultiply-0.3.10 \
 		maybe-owned-0.3.4 \
 		maybe-rayon-0.1.1 \
 		md-5-0.10.6 \
 		mdbook-0.4.40 \
-		memchr-2.7.6 \
+		memchr-2.8.3 \
 		memfd-0.6.5 \
 		memmap2-0.9.8 \
 		memoffset-0.9.1 \
 		merge-0.1.0 \
 		merge_derive-0.1.0 \
+		merman-0.8.0-alpha.5 \
+		merman-core-0.8.0-alpha.5 \
+		merman-render-0.8.0-alpha.5 \
 		metal-0.33.0 \
 		mimalloc-0.1.48 \
 		mime-0.3.17 \
@@ -685,7 +657,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		msvc_spectre_libs-0.1.3 \
 		multimap-0.8.3 \
 		naga-29.0.4 \
-		nalgebra-0.34.2 \
 		nanoid-0.4.0 \
 		native-tls-0.2.18 \
 		nbformat-1.2.0 \
@@ -752,6 +723,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		objc_exception-0.1.2 \
 		objc_id-0.1.1 \
 		object-0.37.3 \
+		object-0.39.1 \
 		octocrab-0.49.7 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.1 \
@@ -836,7 +808,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		plotters-svg-0.3.7 \
 		png-0.17.16 \
 		png-0.18.0 \
-		points_on_curve-0.7.0 \
 		polling-3.11.0 \
 		pollster-0.2.5 \
 		pollster-0.4.0 \
@@ -879,12 +850,10 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
 		pulldown-cmark-0.10.3 \
-		pulldown-cmark-0.12.2 \
-		pulldown-cmark-0.13.0 \
+		pulldown-cmark-0.13.4 \
 		pulldown-cmark-escape-0.10.1 \
-		pulldown-cmark-escape-0.11.0 \
-		pulley-interpreter-36.0.14 \
-		pulley-macros-36.0.14 \
+		pulley-interpreter-48.0.1 \
+		pulley-macros-48.0.1 \
 		pxfm-0.1.25 \
 		qoi-0.4.1 \
 		quick-error-1.2.3 \
@@ -893,6 +862,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		quick-xml-0.37.5 \
 		quick-xml-0.38.3 \
 		quick-xml-0.39.3 \
+		quick-xml-0.41.0 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.14 \
 		quinn-udp-0.5.14 \
@@ -903,12 +873,14 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		rand-0.4.6 \
 		rand-0.8.6 \
 		rand-0.9.4 \
+		rand-0.10.2 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
 		rand_core-0.6.4 \
 		rand_core-0.9.3 \
+		rand_core-0.10.1 \
 		rand_distr-0.5.1 \
 		rand_pcg-0.3.1 \
 		rand_xorshift-0.4.0 \
@@ -920,7 +892,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		ravif-0.13.0 \
 		raw-window-handle-0.6.2 \
 		raw-window-metal-1.1.0 \
-		rawpointer-0.2.1 \
 		rayon-1.11.0 \
 		rayon-core-1.13.0 \
 		rdrand-0.4.0 \
@@ -928,12 +899,11 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		read-fonts-0.37.0 \
 		redox_syscall-0.5.18 \
 		redox_syscall-0.7.5 \
-		redox_users-0.4.6 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
 		referencing-0.37.4 \
-		regalloc2-0.12.2 \
+		regalloc2-0.15.2 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-lite-0.1.8 \
@@ -950,6 +920,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		rkyv_derive-0.7.45 \
 		rmp-0.8.14 \
 		rmpv-1.3.0 \
+		roughr-merman-0.12.3 \
 		roxmltree-0.20.0 \
 		roxmltree-0.21.1 \
 		rpassword-7.5.2 \
@@ -966,7 +937,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
-		rustix-1.1.2 \
+		rustix-1.1.4 \
 		rustix-linux-procfs-0.1.1 \
 		rustix-openpty-0.2.0 \
 		rustls-0.21.12 \
@@ -986,7 +957,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		ryu-1.0.23 \
 		ryu-js-1.0.2 \
 		saa-5.4.9 \
-		safe_arch-0.7.4 \
 		same-file-1.0.6 \
 		scc-3.5.6 \
 		schannel-0.1.28 \
@@ -1014,7 +984,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		security-framework-2.11.1 \
 		security-framework-3.5.1 \
 		security-framework-sys-2.15.0 \
-		selectors-0.35.0 \
+		selectors-0.37.0 \
 		self_cell-1.2.2 \
 		semver-1.0.27 \
 		serde-1.0.228 \
@@ -1051,7 +1021,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		signal-hook-registry-1.4.6 \
 		signature-1.6.4 \
 		signature-2.2.0 \
-		simba-0.9.1 \
 		simd-adler32-0.3.7 \
 		simd_helpers-0.1.0 \
 		simdutf8-0.1.5 \
@@ -1097,7 +1066,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		string_cache-0.8.9 \
 		string_cache_codegen-0.5.4 \
 		stringprep-0.1.5 \
-		strsim-0.10.0 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum-0.27.2 \
@@ -1114,8 +1082,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		sval_ref-2.15.0 \
 		sval_serde-2.15.0 \
 		svg_fmt-0.4.5 \
-		svg_path_ops-0.11.0 \
-		svgtypes-0.11.0 \
 		svgtypes-0.16.1 \
 		swash-0.2.6 \
 		symphonia-0.5.5 \
@@ -1145,17 +1111,15 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		system-configuration-sys-0.5.0 \
 		system-configuration-sys-0.6.0 \
 		system-deps-7.0.7 \
-		system-interface-0.27.3 \
 		taffy-0.13.0 \
 		tagptr-0.2.0 \
 		take-until-0.2.0 \
 		tao-core-video-sys-0.2.0 \
 		tap-1.0.1 \
-		target-lexicon-0.13.3 \
+		target-lexicon-0.13.5 \
 		tauri-winrt-notification-0.7.3 \
 		tempfile-3.23.0 \
 		tendril-0.4.3 \
-		term-0.7.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.3 \
 		thiserror-1.0.69 \
@@ -1171,7 +1135,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		tiny-skia-0.11.4 \
 		tiny-skia-path-0.11.4 \
 		tiny_http-0.12.0 \
-		tinystr-0.8.1 \
+		tinystr-0.8.4 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
@@ -1245,12 +1209,12 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		unicode-bidi-mirroring-0.4.0 \
 		unicode-ccc-0.4.0 \
 		unicode-general-category-1.1.0 \
-		unicode-ident-1.0.19 \
+		unicode-ident-1.0.24 \
 		unicode-linebreak-0.1.5 \
-		unicode-normalization-0.1.24 \
+		unicode-normalization-0.1.25 \
 		unicode-properties-0.1.3 \
 		unicode-script-0.5.8 \
-		unicode-segmentation-1.12.0 \
+		unicode-segmentation-1.13.3 \
 		unicode-vo-0.1.0 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
@@ -1263,6 +1227,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		urlencoding-2.1.3 \
 		usvg-0.46.0 \
 		utf-8-0.7.6 \
+		utf16_iter-1.0.5 \
 		utf8-chars-3.0.6 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
@@ -1297,38 +1262,36 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		wasm-bindgen-shared-0.2.120 \
 		wasm-encoder-0.201.0 \
 		wasm-encoder-0.227.1 \
-		wasm-encoder-0.236.1 \
 		wasm-encoder-0.244.0 \
 		wasm-encoder-0.252.0 \
+		wasm-encoder-0.254.0 \
 		wasm-metadata-0.201.0 \
 		wasm-metadata-0.227.1 \
 		wasm-metadata-0.244.0 \
+		wasm-metadata-0.254.0 \
 		wasm-streams-0.4.2 \
 		wasmparser-0.201.0 \
 		wasmparser-0.227.1 \
-		wasmparser-0.236.1 \
 		wasmparser-0.244.0 \
 		wasmparser-0.252.0 \
-		wasmprinter-0.236.1 \
-		wasmtime-36.0.14 \
-		wasmtime-c-api-impl-36.0.13 \
-		wasmtime-environ-36.0.14 \
-		wasmtime-internal-asm-macros-36.0.14 \
-		wasmtime-internal-c-api-macros-36.0.13 \
-		wasmtime-internal-component-macro-36.0.14 \
-		wasmtime-internal-component-util-36.0.14 \
-		wasmtime-internal-cranelift-36.0.14 \
-		wasmtime-internal-fiber-36.0.14 \
-		wasmtime-internal-jit-debug-36.0.14 \
-		wasmtime-internal-jit-icache-coherence-36.0.14 \
-		wasmtime-internal-math-36.0.14 \
-		wasmtime-internal-slab-36.0.14 \
-		wasmtime-internal-unwinder-36.0.14 \
-		wasmtime-internal-versioned-export-macros-36.0.14 \
-		wasmtime-internal-winch-36.0.14 \
-		wasmtime-internal-wit-bindgen-36.0.14 \
-		wasmtime-wasi-36.0.14 \
-		wasmtime-wasi-io-36.0.14 \
+		wasmparser-0.254.0 \
+		wasmprinter-0.254.0 \
+		wasmtime-48.0.1 \
+		wasmtime-c-api-impl-48.0.1 \
+		wasmtime-environ-48.0.1 \
+		wasmtime-internal-c-api-macros-48.0.1 \
+		wasmtime-internal-component-macro-48.0.1 \
+		wasmtime-internal-component-util-48.0.1 \
+		wasmtime-internal-core-48.0.1 \
+		wasmtime-internal-cranelift-48.0.1 \
+		wasmtime-internal-fiber-48.0.1 \
+		wasmtime-internal-jit-debug-48.0.1 \
+		wasmtime-internal-jit-icache-coherence-48.0.1 \
+		wasmtime-internal-unwinder-48.0.1 \
+		wasmtime-internal-versioned-export-macros-48.0.1 \
+		wasmtime-internal-wit-bindgen-48.0.1 \
+		wasmtime-wasi-48.0.1 \
+		wasmtime-wasi-io-48.0.1 \
 		wast-35.0.2 \
 		wax-0.7.0 \
 		wayland-backend-0.3.15 \
@@ -1358,15 +1321,13 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		which-4.4.2 \
 		which-6.0.3 \
 		whoami-1.6.1 \
-		wide-0.7.33 \
-		wiggle-36.0.14 \
-		wiggle-generate-36.0.14 \
-		wiggle-macro-36.0.14 \
+		wiggle-48.0.1 \
+		wiggle-generate-48.0.1 \
+		wiggle-macro-48.0.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winch-codegen-36.0.14 \
 		windows-0.56.0 \
 		windows-0.57.0 \
 		windows-0.61.3 \
@@ -1469,12 +1430,14 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		wit-component-0.201.0 \
 		wit-component-0.227.1 \
 		wit-component-0.244.0 \
+		wit-component-0.254.0 \
 		wit-parser-0.201.0 \
 		wit-parser-0.227.1 \
-		wit-parser-0.236.1 \
 		wit-parser-0.244.0 \
+		wit-parser-0.254.0 \
 		witx-0.9.1 \
-		writeable-0.6.1 \
+		write16-1.0.0 \
+		writeable-0.6.4 \
 		wyz-0.5.1 \
 		x11-2.21.0 \
 		x11-clipboard-0.9.3 \
@@ -1495,8 +1458,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		yansi-1.0.1 \
 		yazi-0.2.1 \
 		yeslogic-fontconfig-sys-6.0.0 \
-		yoke-0.8.0 \
-		yoke-derive-0.8.0 \
+		yoke-0.8.3 \
+		yoke-derive-0.8.2 \
 		zbus-5.13.2 \
 		zbus-lockstep-0.5.2 \
 		zbus-lockstep-macros-0.5.2 \
@@ -1513,9 +1476,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		zeroize-1.8.2 \
 		zeroize_derive-1.4.2 \
 		zeromq-0.5.0 \
-		zerotrie-0.2.2 \
-		zerovec-0.11.4 \
-		zerovec-derive-0.11.1 \
+		zerotrie-0.2.5 \
+		zerovec-0.11.8 \
+		zerovec-derive-0.11.5 \
 		zip-0.6.6 \
 		zmij-1.0.23 \
 		zstd-0.11.2+zstd.1.5.2 \
@@ -1530,8 +1493,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		notify,notify-types@git+https://github.com/zed-industries/notify?rev=0890bbb8ca40a4b5d1f67031698dd7918b37d991\#0890bbb8ca40a4b5d1f67031698dd7918b37d991 \
 		async-task@git+https://github.com/smol-rs/async-task.git?rev=b4486cd71e4e94fbda54ce6302444de14f4d190e\#b4486cd71e4e94fbda54ce6302444de14f4d190e \
 		windows-capture@git+https://github.com/zed-industries/windows-capture.git?rev=f0d6c1b6691db75461b732f6d5ff56eed002eeb9\#f0d6c1b6691db75461b732f6d5ff56eed002eeb9 \
+		tree-sitter,tree-sitter-language@git+https://github.com/tree-sitter/tree-sitter?rev=43623ec9bf0eaaf7113285c46e8a09018f181b18\#43623ec9bf0eaaf7113285c46e8a09018f181b18 \
 		lsp-types@git+https://github.com/zed-industries/lsp-types?rev=f4dfa89a21ca35cd929b70354b1583fabae325f8\#f4dfa89a21ca35cd929b70354b1583fabae325f8 \
-		dugong,dugong-graphlib,manatee,merman,merman-core,merman-render,roughr-merman@git+https://github.com/zed-industries/merman?tag=v0.7.0-with-patches\#a3ed8d9f3fd1d74c802f25ed9edd501743796504 \
 		tree-sitter-gomod@git+https://github.com/camdencheek/tree-sitter-go-mod?rev=2e886870578eeba1927a2dc4bd2e2b3f598c5f9a\#2e886870578eeba1927a2dc4bd2e2b3f598c5f9a \
 		async-tar@git+https://github.com/zed-industries/async-tar?rev=bd3ad6f89df9a9da7a8535958756d6bf465936a0\#bd3ad6f89df9a9da7a8535958756d6bf465936a0 \
 		proptest,proptest-macro@git+https://github.com/proptest-rs/proptest?rev=3dca198a8fef1b32e3a66f1e1897c955b4dc5b5b\#3dca198a8fef1b32e3a66f1e1897c955b4dc5b5b \
@@ -1559,5 +1522,4 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		async-process@git+https://github.com/zed-industries/async-process.git?rev=0b6d6713570af61806e1e5cb40e0f757cb93fd9d\#0b6d6713570af61806e1e5cb40e0f757cb93fd9d \
 		zed-font-kit@git+https://github.com/zed-industries/font-kit?rev=94b0f28166665e8fd2f53ff6d268a14955c82269\#94b0f28166665e8fd2f53ff6d268a14955c82269 \
 		tree-sitter-yaml@git+https://github.com/zed-industries/tree-sitter-yaml?rev=baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a\#baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a \
-		tree-sitter,tree-sitter-language@git+https://github.com/tree-sitter/tree-sitter?rev=dff1fd868c750dbbae179fcd5c43ce987e4e0528\#dff1fd868c750dbbae179fcd5c43ce987e4e0528 \
 		calloop@git+https://github.com/zed-industries/calloop\#eb6b4fd17b9af5ecc226546bdd04185391b3e265

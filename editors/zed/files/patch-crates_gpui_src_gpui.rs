@@ -1,4 +1,4 @@
---- crates/gpui/src/gpui.rs.orig	2026-08-26 14:24:53 UTC
+--- crates/gpui/src/gpui.rs.orig	2026-09-04 14:25:12 UTC
 +++ crates/gpui/src/gpui.rs
 @@ -42,6 +42,7 @@ pub mod profiler;
      test,
@@ -6,9 +6,9 @@
      target_os = "linux",
 +    target_os = "freebsd",
      target_family = "wasm",
-     feature = "test-support"
- ))]
-@@ -145,7 +146,7 @@ pub use profiler::*;
+     feature = "test-support",
+     feature = "bench-support"
+@@ -146,7 +147,7 @@ pub use profiler::*;
  pub use path_builder::*;
  pub use platform::*;
  pub use profiler::*;

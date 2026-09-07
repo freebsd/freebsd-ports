@@ -1,4 +1,4 @@
---- crates/zed/src/main.rs.orig	2026-08-26 14:24:53 UTC
+--- crates/zed/src/main.rs.orig	2026-09-04 14:25:12 UTC
 +++ crates/zed/src/main.rs
 @@ -21,6 +21,7 @@ use collections::HashMap;
  use client::{Client, ProxySettings, RefreshLlmTokenListener, UserStore, parse_zed_link};
@@ -51,7 +51,16 @@
          reliability::init(client.clone(), app_state.workspace_store.clone(), cx);
          extension_host::init(
              extension_host_proxy.clone(),
-@@ -857,6 +865,7 @@ fn main() {
+@@ -732,7 +740,7 @@ fn main() {
+         dev_container::init(cx);
+ 
+         load_embedded_fonts(cx);
+-        #[cfg(target_os = "linux")]
++        #[cfg(any(target_os = "linux", target_os = "freebsd"))]
+         prewarm_fonts(cx);
+ 
+         editor::init(cx);
+@@ -859,6 +867,7 @@ fn main() {
          let menus = app_menus(cx);
          cx.set_menus(menus);
  
@@ -59,3 +68,12 @@
          if let Some(mut crash_handler) = crash_handler {
              let crash_handler2 = block_on(poll_once(&mut crash_handler));
              match crash_handler2 {
+@@ -1857,7 +1866,7 @@ fn load_embedded_fonts(cx: &App) {
+         .unwrap();
+ }
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "freebsd"))]
+ fn prewarm_fonts(cx: &mut App) {
+     let theme_settings = theme::theme_settings(cx);
+     let ui_font = theme_settings.ui_font(cx).clone();
