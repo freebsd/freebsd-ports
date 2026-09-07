@@ -1,5 +1,5 @@
 PORTNAME=	croniter
-PORTVERSION=	6.2.2
+PORTVERSION=	6.2.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.29.0:devel/py-hatchling@${PY_
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-dateutil>=1.5:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2021.1:devel/py-pytz@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		python:3.9+ shebangfix
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
