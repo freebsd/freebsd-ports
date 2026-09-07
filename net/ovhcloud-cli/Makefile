@@ -1,7 +1,6 @@
 PORTNAME=		ovhcloud-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.12.0
-PORTREVISION=	4
+DISTVERSION=		0.14.0
 CATEGORIES=		net devel
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -51,12 +50,12 @@ GH_TUPLE=	\
 		go-openapi:swag:v0.25.4:go_openapi_swag_jsonname/vendor/github.com/go-openapi/swag \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:exp:3dfff04db8fa:golang_exp/vendor/golang.org/x/exp \
-		golang:net:v0.50.0:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.55.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.35.0:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:sync:v0.19.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.41.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.40.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.34.0:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.20.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.45.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.43.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.37.0:golang_text/vendor/golang.org/x/text \
 		google:uuid:v1.6.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.1:gorilla_css/vendor/github.com/gorilla/css \
 		imdario:mergo:v1.0.2:imdario_mergo/vendor/dario.cat/mergo \
