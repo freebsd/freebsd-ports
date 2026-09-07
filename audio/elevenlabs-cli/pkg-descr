@@ -1,0 +1,7 @@
+Command-line interface for the ElevenLabs platform, covering the full API
+surface: text-to-speech, speech-to-text, speech-to-speech, dubbing, sound
+effects, music generation and voice library management.
+
+It also provides agents-as-code support for Conversational AI: agent, tool
+and test definitions are kept as local configuration files and synchronized
+with the workspace using push and pull.

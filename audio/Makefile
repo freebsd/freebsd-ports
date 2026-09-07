@@ -130,6 +130,7 @@
     SUBDIR += ebumeter
     SUBDIR += ebur128
     SUBDIR += ecasound
+    SUBDIR += elevenlabs-cli
     SUBDIR += elisa
     SUBDIR += emms
     SUBDIR += enscribe
