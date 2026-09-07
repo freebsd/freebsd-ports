@@ -1,5 +1,6 @@
 PORTNAME=	nginx-module-cache-purge
 DISTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
