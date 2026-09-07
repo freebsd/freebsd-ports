@@ -1,3 +1,3 @@
-TIMESTAMP = 1781907499
-SHA256 (mypy_boto3_glue-1.43.34.tar.gz) = f0207d0ec66004cea1b7fcb396420478dd3e413de56a7fbde6f48fd290cba6ce
-SIZE (mypy_boto3_glue-1.43.34.tar.gz) = 149632
+TIMESTAMP = 1788718629
+SHA256 (mypy_boto3_glue-1.43.72.tar.gz) = 45544f30802ffb489a271a6ffd79e3f1d3edf4734820e7cf35ee324d0aaca552
+SIZE (mypy_boto3_glue-1.43.72.tar.gz) = 152657
