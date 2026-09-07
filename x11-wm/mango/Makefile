@@ -1,5 +1,5 @@
 PORTNAME=	mango
-DISTVERSION=	0.14.4
+DISTVERSION=	0.16.3
 PORTREVISION=	0
 CATEGORIES=	x11-wm
 
@@ -7,11 +7,8 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Lightweight, high-performance Wayland compositor built on dwl
 WWW=		https://mangowm.github.io/
 
-LICENSE=	CC0-1.0 GPLv3 MIT
-LICENSE_COMB=	multi
-LICENSE_FILE_CC0-1.0=	${WRKSRC}/LICENSE.tinywl
-LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE.dwl
-LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.wlroots
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	hwdata>=0.399:misc/hwdata \
 		wayland-protocols>=1.24:graphics/wayland-protocols
@@ -19,19 +16,18 @@ LIB_DEPENDS=	libcjson.so:devel/libcjson \
 		libinput.so:x11/libinput \
 		libpcre2-8.so:devel/pcre2 \
 		libpixman-1.so:x11/pixman \
-		libscenefx-0.4.so:x11-toolkits/scenefx04 \
-		libwlroots-0.19.so:x11-toolkits/wlroots019 \
+		libscenefx-0.5.so:x11-toolkits/scenefx05 \
+		libwayland-server.so:graphics/wayland \
+		libwlroots-0.20.so:x11-toolkits/wlroots020 \
 		libxcb-icccm.so:x11/xcb-util-wm \
-		libxkbcommon.so:x11/libxkbcommon \
-		libwayland-server.so:graphics/wayland
-
+		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	hwdata>=0.399:misc/hwdata \
 		Xwayland:x11-servers/xwayland
 
-USES=		meson pkgconfig
-
+USES=		gnome meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	mangowm
+USE_GNOME=	cairo glib20 pango
 
 MESON_ARGS=	-Dsysconfdir=${PREFIX}/etc
 

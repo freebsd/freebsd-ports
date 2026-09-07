@@ -18,6 +18,7 @@ bin/mmsg
 %%PORTDOCS%%%%DOCSDIR%%/ipc.md
 %%PORTDOCS%%%%DOCSDIR%%/meta.json
 %%PORTDOCS%%%%DOCSDIR%%/nix-options.md
+%%PORTDOCS%%%%DOCSDIR%%/patches/v0.15.0/configuration/monitors.md
 %%PORTDOCS%%%%DOCSDIR%%/quick-start.md
 %%PORTDOCS%%%%DOCSDIR%%/screenshot.md
 %%PORTDOCS%%%%DOCSDIR%%/visuals/animations.md

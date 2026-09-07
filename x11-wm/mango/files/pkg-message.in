@@ -15,6 +15,10 @@ and the keyboard shortcut to launch a terminal
     bind=Alt,Return,spawn,foot
 
 (replace foot with your preferred terminal emulator).
+
+N.B. If you use x11/waybar, version 0.15.0, you have to consider (temporarily)
+other alternatives like x11/sfwbar or x11/mangobar, because that version is not
+compatible with the current version of Mango.
 EOM
 }
 { type: upgrade
@@ -31,6 +35,23 @@ EOM
 
   As a result, you must adapt any script that uses the mmsg(1) command to
   the new syntax.
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.16.3"
+  message: <<EOM
+  Version 0.16.3 of Mango has some breaking changes. More details at these
+addresses:
+
+  1. https://github.com/mangowm/mango/releases/tag/0.15.0
+  2. https://github.com/mangowm/mango/releases/tag/0.15.5
+  3. https://github.com/mangowm/mango/releases/tag/0.16.0
+  4. https://github.com/mangowm/mango/releases/tag/0.16.1
+  5. https://github.com/mangowm/mango/releases/tag/0.16.3
+
+In particular, if you use x11/waybar, version 0.15.0, you have to consider
+(temporarily) other alternatives like x11/sfwbar or x11/mangobar, because
+that version is not compatible with the current version of Mango.
 EOM
 }
 ]

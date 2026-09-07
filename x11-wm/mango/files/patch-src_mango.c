@@ -1,6 +1,6 @@
---- src/mango.c.orig	2026-05-29 13:04:35 UTC
+--- src/mango.c.orig	2026-08-27 06:44:37 UTC
 +++ src/mango.c
-@@ -7,7 +7,11 @@
+@@ -9,7 +9,11 @@
  #include <getopt.h>
  #include <libinput.h>
  #include <limits.h>
@@ -9,6 +9,6 @@
 +#else
  #include <linux/input-event-codes.h>
 +#endif
+ #include <math.h>
  #include <scenefx/render/fx_renderer/fx_renderer.h>
  #include <scenefx/types/fx/blur_data.h>
- #include <scenefx/types/fx/clipped_region.h>
