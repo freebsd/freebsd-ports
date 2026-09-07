@@ -43,10 +43,10 @@ include/opentimelineio/unknownSchema.h
 include/opentimelineio/vectorIndexing.h
 include/opentimelineio/version.h
 lib/libopentime.so
-lib/libopentime.so.0.18.0
+lib/libopentime.so.0.18.1
 lib/libopentime.so.18
 lib/libopentimelineio.so
-lib/libopentimelineio.so.0.18.0
+lib/libopentimelineio.so.0.18.1
 lib/libopentimelineio.so.18
 share/opentime/OpenTimeConfig.cmake
 share/opentime/OpenTimeTargets-%%CMAKE_BUILD_TYPE%%.cmake
