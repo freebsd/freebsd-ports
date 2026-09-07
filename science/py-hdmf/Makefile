@@ -1,5 +1,5 @@
 PORTNAME=	hdmf
-DISTVERSION=	6.1.0
+DISTVERSION=	6.2.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,6 +35,6 @@ PYTEST_BROKEN_TESTS=	build_const_args \
 
 NO_ARCH=	yes
 
-# tests as of 6.1.0: 1849 passed, 96 skipped, 6 deselected, 1 xfailed in 7.44s
+# tests as of 6.2.0: 1890 passed, 95 skipped, 1 xfailed in 10.46s
 
 .include <bsd.port.mk>
