@@ -1,0 +1,5 @@
+Mangobar is a Wayland status bar for mangowm, built on wlr-layer-shell. It
+reads all of its runtime settings from JSONC and CSS; there are no hard-coded
+module defaults beyond sample files.
+The system tray (StatusNotifierItem / DBusMenu) is inspired by swaybar and
+waybar.

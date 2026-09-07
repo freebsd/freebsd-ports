@@ -1,0 +1,22 @@
+--- config.jsonc.orig	2026-09-01 09:23:05 UTC
++++ config.jsonc
+@@ -15,14 +15,14 @@
+     "modules-right": [
+         "hideclients",
+         "tray",
+-        "network",
++        // "network",
+         // "keymode",
+         // "keyboardlayout",
+-        "cpu",
+-        "memory",
++        // "cpu",
++        // "memory",
+         "pulseaudio",
+-        "backlight",
+-        "battery",
++        // "backlight",
++        // "battery",
+         "clock#date",
+         "clock#time",
+         "custom/power"

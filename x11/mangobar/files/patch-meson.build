@@ -1,0 +1,14 @@
+--- meson.build.orig	2026-09-01 09:23:05 UTC
++++ meson.build
+@@ -22,10 +22,10 @@ deps = [
+   dependency('libpulse'),
+   sdbus_dep,
+   dependency('libudev'),
++  dependency('libcjson'),
+   dependency('gdk-pixbuf-2.0'),
+   dependency('alsa'),
+   cc.find_library('rt'),
+-  cc.find_library('cjson'),
+ ]
+ 
+ scanner = find_program('wayland-scanner')

@@ -280,6 +280,7 @@
     SUBDIR += lxrandr
     SUBDIR += ly
     SUBDIR += mako
+    SUBDIR += mangobar
     SUBDIR += mate
     SUBDIR += mate-applet-appmenu
     SUBDIR += mate-applets
