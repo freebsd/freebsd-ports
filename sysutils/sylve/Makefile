@@ -1,7 +1,6 @@
 PORTNAME=	sylve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	0.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/AlchemillaHQ/Sylve/releases/download/${DISTVERSIONFULL}/:web_assets
 DISTFILES=	sylve-web-assets.tar.gz:web_assets
