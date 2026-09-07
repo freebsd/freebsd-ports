@@ -9,7 +9,8 @@ WWW=		https://fluentbit.io/
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+LIB_DEPENDS=	libyaml.so:textproc/libyaml \
+		libzstd.so:archivers/zstd
 
 USES=		bison cmake:noninja compiler:c11 gmake localbase:ldflags
 USE_GITHUB=	yes
