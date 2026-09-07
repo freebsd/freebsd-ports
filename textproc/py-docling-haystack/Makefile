@@ -1,5 +1,5 @@
 PORTNAME=	docling-haystack
-DISTVERSION=	1.3.0
+DISTVERSION=	2.0.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling>=2.32.0:textproc/py-docling@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling>=2.126.0:textproc/py-docling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}haystack_ai>=2.12.0:misc/py-haystack_ai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=6.0.2:devel/py-lxml@${PY_FLAVOR}
 
