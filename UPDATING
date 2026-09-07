@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260907:
+  AFFECTS: Users of x11-wm/mango
+  AUTHOR: nivit@FreeBSD.org
+
+  Version 16.0.3 has some breaking changes. More details at these addresses:
+
+    1. https://github.com/mangowm/mango/releases/tag/0.15.0
+    2. https://github.com/mangowm/mango/releases/tag/0.15.5
+    3. https://github.com/mangowm/mango/releases/tag/0.16.0
+    4. https://github.com/mangowm/mango/releases/tag/0.16.1
+    5. https://github.com/mangowm/mango/releases/tag/0.16.3
+
+  Besides, it is not compatible with x11/waybar v. 0.15.0, so, if you use it,
+  you have to consider (temporarily) other alternatives like x11/sfwbar or
+  x11/mangobar, while waiting for a new version of waybar to be released.
+
 20260906:
   AFFECTS: users of net/py-kombu
   AUTHOR: michaelo@FreeBSD.org
