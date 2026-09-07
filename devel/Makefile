@@ -143,6 +143,7 @@
     SUBDIR += R-cran-sfsmisc
     SUBDIR += R-cran-sourcetools
     SUBDIR += R-cran-sparsevctrs
+    SUBDIR += R-cran-styler
     SUBDIR += R-cran-sys
     SUBDIR += R-cran-systemfonts
     SUBDIR += R-cran-testit

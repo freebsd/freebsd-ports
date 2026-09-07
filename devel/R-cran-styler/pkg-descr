@@ -1,0 +1,4 @@
+Pretty-prints R code without changing the user's formatting intent.
+
+styler allows you to format .qmd, .R, .Rmd, .Rmarkdown, .Rnw, and/or .Rprofile
+files, R packages, or entire R source trees according to a style guide.
