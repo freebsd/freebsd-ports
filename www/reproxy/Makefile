@@ -1,7 +1,6 @@
 PORTNAME=	reproxy
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -14,13 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:1.26+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	umputun
+GO_LDFLAGS=	-X main.revision=v${PORTVERSION}
 
 BUILD_WRKSRC=	${WRKSRC}/app
 PLIST_FILES=	bin/reproxy
-
-post-patch:
-	@${REINPLACE_CMD} -e '/var revision/s,unknown,${PORTVERSION},' \
-		${BUILD_WRKSRC}/main.go
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} \
