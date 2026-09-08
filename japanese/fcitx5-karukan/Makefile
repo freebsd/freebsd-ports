@@ -1,5 +1,6 @@
 PORTNAME=	fcitx5-karukan
 DISTVERSION=	g20260906
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
 
 MAINTAINER=	tagattie@FreeBSD.org

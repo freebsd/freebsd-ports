@@ -1,6 +1,7 @@
 PORTNAME=	vite-plus
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	devel
 
 # rolldown is a PATH dependency (~48 `path = "./rolldown/crates/*"` entries in

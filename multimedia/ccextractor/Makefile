@@ -1,6 +1,6 @@
 PORTNAME=	ccextractor
 DISTVERSION=	0.96.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia converters
 MASTER_SITES=	https://github.com/CCExtractor/ccextractor/releases/download/v${DISTVERSION}/:master
 DISTFILES=	ccextractor.${DISTVERSION}.tar.gz:master

@@ -1,6 +1,7 @@
 PORTNAME=	magika
 DISTVERSIONPREFIX=	cli/v
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

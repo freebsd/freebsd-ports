@@ -1,6 +1,6 @@
 PORTNAME=	alacritty
 DISTVERSION=	0.17.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 wayland
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default

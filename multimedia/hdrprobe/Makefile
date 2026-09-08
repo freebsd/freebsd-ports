@@ -1,6 +1,7 @@
 PORTNAME=		hdrprobe
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0.1
+PORTREVISION=	1
 CATEGORIES=		multimedia
 
 MAINTAINER=		michiel@vanbaak.eu

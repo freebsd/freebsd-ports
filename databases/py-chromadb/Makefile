@@ -1,6 +1,6 @@
 PORTNAME=	chromadb
 DISTVERSION=	1.5.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python # machine-learning
 MASTER_SITES=	PYPI
 MASTER_SITES+=	https://github.com/swagger-api/swagger-ui/archive/refs/tags/v5.17.14/:swagger

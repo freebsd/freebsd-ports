@@ -1,7 +1,7 @@
 PORTNAME=	sabiql
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -23,7 +23,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	riii111
-
 
 CARGO_BUILD_ARGS=	--ignore-rust-version
 CARGO_INSTALL_ARGS=	--ignore-rust-version

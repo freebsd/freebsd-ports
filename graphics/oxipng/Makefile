@@ -1,6 +1,7 @@
 PORTNAME=	oxipng
 DISTVERSIONPREFIX=	v
 DISTVERSION=	10.2.1 # Merge cargo-crates list from main and xtask Cargo.lock(s) to build manpage
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org

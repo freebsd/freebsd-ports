@@ -1,6 +1,6 @@
 PORTNAME=	anki
 DISTVERSION=	26.08.1
-PORTREVISION=	1
+PORTREVISION=	2
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 

@@ -1,6 +1,7 @@
 PORTNAME=	fcitx5-afrim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	brady.fomegne@outlook.com

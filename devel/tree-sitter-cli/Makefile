@@ -1,6 +1,7 @@
 PORTNAME=	tree-sitter-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.26.13
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	amadaluzia@disroot.org
