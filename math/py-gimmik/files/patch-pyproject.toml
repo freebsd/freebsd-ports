@@ -1,0 +1,21 @@
+-- Fix build with the version of devel/py-setuptools available in the ports tree.
+-- Upstream requires setuptools>=77.0.0 and uses the PEP 621 "license" string
+-- form, both of which are not supported by the current ports setuptools.
+--- pyproject.toml.orig	2026-09-07 00:00:00 UTC
++++ pyproject.toml	2026-09-07 00:00:00 UTC
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools >= 77.0.0"]
++requires = ["setuptools >= 40.0.0"]
+ build-backend = "setuptools.build_meta"
+
+ [project]
+@@ -7,7 +7,7 @@
+ name = "gimmik"
+ dynamic = ["version"]
+ description = "Generator of Matrix Multiplication Kernels"
+ readme = "README.rst"
+-license = "BSD-3-Clause"
++license = {text = "BSD-3-Clause"}
+ requires-python = ">=3.10"
+ authors = [
