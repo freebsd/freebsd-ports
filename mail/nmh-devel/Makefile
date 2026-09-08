@@ -1,5 +1,6 @@
 PORTNAME=	nmh
 PORTVERSION=	${NMH_COMMIT_DATE}
+PORTREVISION=	1
 MASTER_SITES=	#
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
@@ -17,8 +18,18 @@ NMH_COMMIT_DATE=	2026.01.20
 
 LICENSE=	BSD3CLAUSE
 
-USES=		autoreconf:build cpe gmake iconv ncurses readline shebangfix
-SHEBANG_FILES=	docs/contrib/ml docs/contrib/replyfilter docs/contrib/vpick
+USES=		autoreconf:build cpe gmake iconv ncurses python \
+		readline shebangfix
+SHEBANG_FILES=	docs/contrib/ml docs/contrib/replyfilter docs/contrib/vpick \
+		docs/contrib/gmailapis/nmh_addr.py \
+		docs/contrib/gmailapis/nmh_addr_test.py \
+		docs/contrib/gmailapis/ginc.py \
+		docs/contrib/gmailapis/nmh_gmailapi.py \
+		docs/contrib/gmailapis/gpost_test.py \
+		docs/contrib/gmailapis/glogin.py \
+		docs/contrib/gmailapis/RFC5322addr_test.py \
+		docs/contrib/gmailapis/RFC5322addr.py \
+		docs/contrib/gmailapis/gpost.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc \
