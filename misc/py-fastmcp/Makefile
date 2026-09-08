@@ -1,5 +1,5 @@
-PORTNAME=	fastmcp
-DISTVERSION=	3.4.4
+PORTNAME=	fastmcp # should be updated together with fastmcp-slim
+DISTVERSION=	4.0.3
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,20 +19,20 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastmcp-slim>=${DISTVERSION}:misc/py-fastmcp
 		${PYTHON_PKGNAMEPREFIX}cyclopts>=4.0.0:devel/py-cyclopts@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}exceptiongroup>=1.2.2:devel/py-exceptiongroup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}griffelib>=2.0.0:textproc/py-griffelib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1<1.0:www/py-httpx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}joserfc>=1.1.0:security/py-joserfc@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx2>=2.5.0:www/py-httpx2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}joserfc>=1.5.0:security/py-joserfc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonref>=1.1.0:devel/py-jsonref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema-path>=0.3.4:devel/py-jsonschema-path@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mcp>=1.24.0<2.0:misc/py-mcp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mcp>=2.0.0:misc/py-mcp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openapi-pydantic>=0.5.1:devel/py-openapi-pydantic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.20.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.28.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=24.0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-key-value-aio>=0.4.4<0.5.0:devel/py-py-key-value-aio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py-key-value-aio>=0.4.4:devel/py-py-key-value-aio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyperclip>=1.9.0:devel/py-pyperclip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.26:www/py-python-multipart@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0<7.0:devel/py-pyyaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}starlette>=1.0.1:www/py-starlette@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}uncalled-for>=0.2.0:devel/py-uncalled-for@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}uncalled-for>=0.4.0:devel/py-uncalled-for@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.35:www/py-uvicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}watchfiles>=1.0.0:devel/py-watchfiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=15.0.1:devel/py-websockets@${PY_FLAVOR}
@@ -69,13 +69,15 @@ MAKE_ENV+=	UV_DYNAMIC_VERSIONING_BYPASS=${DISTVERSION}
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--continue-on-collection-errors
 
 NO_ARCH=	yes
 
-# tests as of 3.4.2: 137 failed, 5345 passed, 14 xfailed, 7 skipped, 9 warnings, 157 errors in 221.09s (0:03:41).
+# tests as of 4.0.3: 17 failed, 6651 passed, 22 skipped, 16 xfailed, 54 warnings, 44 errors in 156.06s (0:02:36).
 # Failures/errors are mostly from optional extras not in FreeBSD ports:
 # - prefab-ui (apps extra)
 # - pydocket (tasks extra)
 # - pydantic-monty (code-mode extra)
+# TODO extras need to be added
 
 .include <bsd.port.mk>
