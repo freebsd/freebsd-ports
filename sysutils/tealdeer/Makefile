@@ -1,10 +1,9 @@
 PORTNAME=	tealdeer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
-PORTREVISION=	6
+DISTVERSION=	1.9.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	lcook@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Fast tldr client written in Rust
 WWW=		https://github.com/tealdeer-rs/tealdeer
 
