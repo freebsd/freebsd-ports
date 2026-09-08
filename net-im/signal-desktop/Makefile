@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.24.1
-PORTREVISION=	2
+DISTVERSION=	8.26.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm
 DISTFILES=	signal-desktop-${DISTVERSION}-npm-cache.tar.gz:npm
@@ -156,8 +155,12 @@ do-install:
 			--config.electronDist=${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${BUILD_WRKSRC}/dist/${APP_OUT_DIR} && \
+	cd ${WRKSRC}/dist/${APP_OUT_DIR} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+
+	# install polkit policies so that backup works
+	cd ${WRKSRC}/build/policy-templates  && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/polkit-1/actions
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/images/signal-logo-desktop-linux.png \
@@ -165,7 +168,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 
-.for f in chromedriver mksnapshot v8_context_snapshot_generator
+.for f in chromedriver mksnapshot v8_context_snapshot_generator version resources/*.policy
 	${RM} ${STAGEDIR}${DATADIR}/${f}
 .endfor
 	${RM} -r ${STAGEDIR}${DATADIR}/gen
