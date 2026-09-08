@@ -11,7 +11,9 @@ WWW=		https://www.drumgizmo.org/
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+# Seems to build on 16 on FreshPorts.org
+BROKEN_FreeBSD_14_aarch64=        segmentation fault
+BROKEN_FreeBSD_15_aarch64=        segmentation fault
 
 BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
