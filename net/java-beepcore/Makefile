@@ -1,6 +1,6 @@
 PORTNAME=	beepcore
 PORTVERSION=	0.9.08
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net java
 MASTER_SITES=	SF/${PORTNAME}-java/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	java-
@@ -8,6 +8,9 @@ PKGNAMEPREFIX=	java-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of BEEP core and BEEP mapping for TCP in Java
 WWW=		https://sourceforge.net/projects/beepcore-java/
+
+DEPRECATED=	Unmaintained, unused, upstream is dormant for 10+ years. The repo is still in CVS format.
+EXPIRATION_DATE=	2026-10-31
 
 RUN_DEPENDS=	${JAVALIBDIR}/xercesImpl.jar:textproc/xerces-j
 
