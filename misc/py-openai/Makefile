@@ -1,5 +1,5 @@
 PORTNAME=	openai
-DISTVERSION=	2.53.0
+DISTVERSION=	3.8.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +15,14 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>=0:devel/py-hatch-fancy-pypi-readme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.5.0:devel/py-anyio@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=4.10.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=1.7.0:sysutils/py-distro@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic2>=1.9.0:devel/py-pydantic2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx>=0.27.0:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=1.10.13:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sniffio>0:devel/py-sniffio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>4:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jiter>=0.10.0:textproc/py-jiter@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}jiter>=0.16.0:textproc/py-jiter@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.2.3:math/py-pandas@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-identity>0:devel/py-azure-identity@${PY_FLAVOR} \
@@ -40,8 +40,14 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-identity>0:devel/py-azure-identity@${
 USES=		python
 USE_PYTHON=	pep517 concurrent autoplist pytest # tests fail because api_key needs to be set
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		OPENAI_API_KEY=sk-test \
+		PYTEST_ADDOPTS="-p no:benchmark --ignore=tests/api_resources --ignore=tests/test_uv_workflows.py --ignore=tests/lib/test_fine_tuning_positional_arguments.py --ignore=tests/lib/chat/test_completions_streaming.py --ignore=tests/test_tls_hostname.py"
 
 NO_ARCH=	yes
+
+# tests as of 3.8.0: 3155 passed, 8 skipped in 38.77s
+# (ignored tests require a live OpenAI API endpoint or uv-specific CI fixtures)
 
 .include <bsd.port.mk>
