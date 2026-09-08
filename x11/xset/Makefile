@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xset
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xext xmuu xorgproto
 
 CONFIGURE_ARGS=	--without-fontcache

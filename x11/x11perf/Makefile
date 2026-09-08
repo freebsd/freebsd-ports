@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		cpe tar:xz xorg xorg-cat:test
+USES=		cpe xorg xorg-cat:test
 USE_XORG=	x11 xext xft xmuu xorgproto xrender
 CPE_VENDOR=	xfree86
 

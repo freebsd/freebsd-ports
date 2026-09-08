@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libxdamage
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:lib
+USES=		xorg xorg-cat:lib
 USE_XORG=	x11 xfixes xorgproto
 
 INSTALL_TARGET=	install-strip

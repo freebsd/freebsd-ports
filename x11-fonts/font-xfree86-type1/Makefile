@@ -11,7 +11,7 @@ LICENSE_NAME=	XFree86 License 1.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		tar:xz xorg-cat:font
+USES=		xorg-cat:font
 
 PLIST_FILES=	${FONTSDIR}/cursor.pfa
 

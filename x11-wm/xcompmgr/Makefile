@@ -9,7 +9,7 @@ WWW=		https://www.freedesktop.org/Software/xapps
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xcomposite xdamage xext xfixes xorgproto xrender
 
 PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz

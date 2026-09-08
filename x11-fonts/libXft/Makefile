@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		tar:xz xorg xorg-cat:lib
+USES=		xorg xorg-cat:lib
 USE_XORG=	x11 xorgproto xrender
 
 INSTALL_TARGET=	install-strip

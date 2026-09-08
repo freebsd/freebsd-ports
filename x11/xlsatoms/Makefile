@@ -7,7 +7,7 @@ COMMENT=	List interned atoms defined on a server
 
 LICENSE=	MIT
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	xcb
 
 PLIST_FILES=	bin/xlsatoms share/man/man1/xlsatoms.1.gz

@@ -11,6 +11,6 @@ LICENSE_NAME=	Cronyx License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		tar:xz xorg-cat:font
+USES=		xorg-cat:font
 
 .include <bsd.port.mk>

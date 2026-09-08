@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		tar:xz xorg xorg-cat:lib
+USES=		xorg xorg-cat:lib
 USE_XORG=	xorgproto xtrans fontenc
 INSTALL_TARGET=	install-strip
 #USES+=	cpe

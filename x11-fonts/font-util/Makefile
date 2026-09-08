@@ -10,7 +10,7 @@ LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:font
+USES=		xorg-cat:font
 
 NOFONT=		yes
 

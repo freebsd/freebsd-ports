@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xwud
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xorgproto
 
 PLIST_FILES=	bin/xwud share/man/man1/xwud.1.gz

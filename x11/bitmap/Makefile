@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/bitmap
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xaw xbitmaps xmu xorgproto xt
 
 TEST_TARGET=	check

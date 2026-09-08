@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	hwdata>0:misc/hwdata
 
-USES=		tar:xz xorg-cat:lib,meson
+USES=		xorg-cat:lib,meson
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

@@ -11,7 +11,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libx11
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:xz xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	xcb xtrans xorgproto
 CPE_VENDOR=	x
 

@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libxtst
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:xz xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 xext xi xorgproto
 CPE_PRODUCT=	libxtst
 CPE_VENDOR=	x

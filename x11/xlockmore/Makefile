@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng16.so:graphics/png
 
-USES=		cpe tar:xz xorg
+USES=		cpe xorg
 USE_XORG=	ice sm x11 xaw xext xorgproto xpm xt
 
 CPE_VENDOR=	sillycycle

@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/rgb
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xorgproto
 
 CONFIGURE_ARGS=	--with-rgb-db-dir=${PREFIX}/lib/X11/rgb

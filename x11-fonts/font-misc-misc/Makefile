@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/font/misc-misc
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:font
+USES=		xorg xorg-cat:font
 USE_XORG=	fontutil
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xwininfo
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv tar:xz xorg xorg-cat:app
+USES=		iconv xorg xorg-cat:app
 USE_XORG=	x11 xcb xorgproto
 
 LIB_DEPENDS=	libxcb-errors.so:x11/xcb-util-errors \

@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/font/misc-ethiopic
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:font
+USES=		xorg-cat:font
 FONTNAME=	TTF
 NO_ARCH=	yes
 

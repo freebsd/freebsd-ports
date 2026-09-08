@@ -10,7 +10,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xfs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe gmake tar:xz xorg xorg-cat:app
+USES=		cpe gmake xorg xorg-cat:app
 CPE_VENDOR=	x.org
 CPE_PRODUCT=	x_font_server
 USE_XORG=	xfont2 xorgproto xtrans

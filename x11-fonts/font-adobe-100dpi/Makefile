@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/font/adobe-100dpi
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:font
+USES=		xorg xorg-cat:font
 USE_XORG=	fontutil
 
 NO_ARCH=	yes

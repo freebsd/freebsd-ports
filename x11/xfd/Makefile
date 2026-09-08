@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
-USES=		tar:xz xorg xorg-cat:app,meson
+USES=		xorg xorg-cat:app,meson
 USE_XORG=	x11 xaw xft xkbfile xmu xorgproto xrender xt
 
 .include <bsd.port.mk>

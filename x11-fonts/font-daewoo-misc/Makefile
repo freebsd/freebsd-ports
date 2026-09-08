@@ -11,7 +11,7 @@ LICENSE_NAME=	Daewoo Electronics Ltd. font license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		tar:xz xorg-cat:font
+USES=		xorg-cat:font
 
 NO_ARCH=	yes
 

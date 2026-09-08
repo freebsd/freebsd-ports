@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/showfont
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	libfs xorgproto
 
 PLIST_FILES=	bin/showfont share/man/man1/showfont.1.gz

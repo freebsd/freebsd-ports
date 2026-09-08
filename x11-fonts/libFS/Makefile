@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libfs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:xz xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	xorgproto xtrans
 CPE_VENDOR=	x
 CPE_PRODUCT=	libfs

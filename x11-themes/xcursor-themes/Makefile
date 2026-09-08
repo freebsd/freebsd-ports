@@ -11,6 +11,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xcursorgen:x11/xcursorgen
 
-USES=		tar:xz xorg-cat:data
+USES=		xorg-cat:data
 
 .include <bsd.port.mk>

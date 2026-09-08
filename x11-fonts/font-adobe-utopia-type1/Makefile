@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/font/adobe-utopia-type1
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:font
+USES=		xorg-cat:font
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

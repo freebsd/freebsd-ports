@@ -14,7 +14,7 @@ RUN_DEPENDS=	font-adobe-100dpi>=1.0.3:x11-fonts/font-adobe-100dpi \
 		font-misc-misc>=1.1.2:x11-fonts/font-misc-misc \
 		xbitmaps>=1.1.0:x11/xbitmaps
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xaw xt
 
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

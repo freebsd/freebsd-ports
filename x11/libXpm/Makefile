@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libxpm
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe localbase:ldflags tar:xz xorg xorg-cat:lib
+USES=		cpe localbase:ldflags xorg xorg-cat:lib
 USE_XORG=	xorgproto x11 xext xt
 
 CPE_VENDOR=	x.org

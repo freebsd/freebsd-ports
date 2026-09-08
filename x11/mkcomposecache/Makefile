@@ -11,7 +11,7 @@ LICENSE_NAME=	SUSE Products GmbH license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xorgproto
 
 PLIST_FILES=	sbin/mkcomposecache share/man/man8/mkcomposecache.8.gz

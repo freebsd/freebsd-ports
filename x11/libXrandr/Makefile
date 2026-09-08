@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libxrandr
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:xz xorg xorg-cat:lib
+USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 xext xrender xorgproto
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxrandr

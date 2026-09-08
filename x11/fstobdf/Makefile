@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/fstobdf
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	libfs x11 xorgproto
 
 PLIST_FILES=	bin/fstobdf share/man/man1/fstobdf.1.gz

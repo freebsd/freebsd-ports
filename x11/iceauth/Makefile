@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/iceauth
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	ice xorgproto
 
 PLIST_FILES=	bin/iceauth share/man/man1/iceauth.1.gz

@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xlogo
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	sm x11 xaw xext xft xmu xorgproto xrender xt
 
 OPTIONS_DEFINE=	XKB

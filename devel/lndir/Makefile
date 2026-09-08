@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/util/lndir/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:util
+USES=		xorg xorg-cat:util
 USE_XORG=	xorgproto
 
 PLIST_FILES=	bin/lndir \

@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/font/winitzki-cyrillic
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:font
+USES=		xorg-cat:font
 
 PLIST_FILES=	${FONTSDIR}/proof9x16.pcf.gz
 

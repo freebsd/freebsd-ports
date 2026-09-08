@@ -10,7 +10,7 @@ LICENSE=	GPLv2+ MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:test,meson
+USES=		xorg xorg-cat:test,meson
 USE_XORG=	x11 xext xorgproto xrender
 
 PLIST_FILES=	bin/rendercheck share/man/man1/rendercheck.1.gz

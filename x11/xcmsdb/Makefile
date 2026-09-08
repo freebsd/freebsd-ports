@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/xcmsdb
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	x11 xorgproto
 
 PLIST_FILES=	bin/xcmsdb share/man/man1/xcmsdb.1.gz

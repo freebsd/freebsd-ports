@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/data/bitmaps
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:data
+USES=		xorg-cat:data
 
 NO_ARCH=	yes
 

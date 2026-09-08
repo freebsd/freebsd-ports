@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS_REASON=	vmware gfx protocol is only supported on x86-compatible a
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
-USES=		tar:xz xorg-cat:driver
+USES=		xorg-cat:driver
 
 CONFIGURE_ARGS=	--without-libudev
 

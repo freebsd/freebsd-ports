@@ -9,6 +9,6 @@ WWW=		https://gitlab.freedesktop.org/xorg/driver/xf86-input-joystick
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pathfix tar:xz xorg-cat:driver
+USES=		pathfix xorg-cat:driver
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 LIB_DEPENDS=	libspice-server.so:devel/libspice-server \
 		libudev.so:devel/libudev-devd
 
-USES=		localbase:ldflags pkgconfig python shebangfix tar:xz xorg \
+USES=		localbase:ldflags pkgconfig python shebangfix xorg \
 		xorg-cat:driver
 USE_XORG=	xfont2
 

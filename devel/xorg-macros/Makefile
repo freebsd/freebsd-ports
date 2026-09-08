@@ -10,7 +10,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/util/macros/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:util
+USES=		xorg-cat:util
 
 NO_ARCH=	yes
 

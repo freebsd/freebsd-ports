@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/util/bdftopcf
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:util
+USES=		xorg xorg-cat:util
 USE_XORG=	xorgproto
 
 PLIST_FILES=	bin/bdftopcf share/man/man1/bdftopcf.1.gz

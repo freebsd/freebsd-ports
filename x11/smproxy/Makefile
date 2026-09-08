@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/app/smproxy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:app
+USES=		xorg xorg-cat:app
 USE_XORG=	ice sm x11 xmuu xorgproto xt
 
 PLIST_FILES=	bin/smproxy share/man/man1/smproxy.1.gz

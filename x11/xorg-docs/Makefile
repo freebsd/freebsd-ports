@@ -9,6 +9,6 @@ WWW=		https://gitlab.freedesktop.org/xorg/doc/xorg-docs
 
 CONFIGURE_ARGS+=	--without-xmlto --without-fop --disable-specs
 
-USES=		tar:xz xorg-cat:doc
+USES=		xorg-cat:doc
 
 .include <bsd.port.mk>

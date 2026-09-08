@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libxkbfile
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg xorg-cat:lib,meson
+USES=		xorg xorg-cat:lib,meson
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xorgproto
 

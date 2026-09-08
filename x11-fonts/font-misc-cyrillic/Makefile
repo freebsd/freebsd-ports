@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/font/misc-cyrillic
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz xorg-cat:font
+USES=		xorg-cat:font
 
 NO_ARCH=	yes
 

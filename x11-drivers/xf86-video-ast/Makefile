@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Calls into x86-specific xorg/compiler.h functions
 
-USES=		tar:xz xorg-cat:driver
+USES=		xorg-cat:driver
 
 PLIST_FILES=	lib/xorg/modules/drivers/ast_drv.so
 
