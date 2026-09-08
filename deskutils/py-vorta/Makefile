@@ -1,6 +1,6 @@
 PORTNAME=	vorta
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.5
+DISTVERSION=	0.11.6
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,6 +17,7 @@ LICENSE_FILE_OFL11=	${WRKSRC}/src/vorta/assets/icons/OFL.txt
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borgbackup>=1.2.7:archivers/py-borgbackup@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=26.3:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}peewee>=3.15.0:databases/py-peewee@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.11.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.9.8:sysutils/py-psutil@${PY_FLAVOR} \
