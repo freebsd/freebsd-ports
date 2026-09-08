@@ -4,6 +4,9 @@ DISTVERSION=	1.11
 CATEGORIES=	science # quantum-chemistry
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	1ddd0b3a85d949347bfc6fb9c40571aecffacc9e.patch:-p1 # backport fix for pybind11 incompatibility caused by latest pybind11 update
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open-source suite of ab initio quantum chemistry programs
 WWW=		https://psicode.org/ \
