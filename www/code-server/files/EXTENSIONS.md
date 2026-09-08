@@ -72,6 +72,18 @@ Copy-paste block with everything combined:
 Tip: if you install packages from your own poudriere repository, add the
 language server packages to your build list.
 
+## Display language
+
+To switch the UI language, install the language pack **through the
+Extensions view** of the running instance (for example "German Language
+Pack", `ms-ceintl.vscode-language-pack-de`), then run "Configure Display
+Language" from the command palette and pick the language. A language
+pack installed with `code-server --install-extension` on the command
+line is not registered by the running server; (re)install it from the
+Extensions view instead. The packs on Open VSX can lag behind the
+bundled VS Code version, so very recent UI strings may stay English
+until the pack catches up.
+
 ## Known limitations
 
 | Extension | Status | Alternative |
