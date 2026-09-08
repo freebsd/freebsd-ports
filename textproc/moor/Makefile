@@ -1,7 +1,6 @@
 PORTNAME=	moor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.18.0
-PORTREVISION=	1
+DISTVERSION=	2.19.0
 CATEGORIES=	textproc
 
 MAINTAINER=	nxjoseph@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/walles/moor
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.27,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/walles/${PORTNAME}/v2
 GO_TARGET=	./cmd/${PORTNAME}
