@@ -1,34 +1,34 @@
-CARGO_CRATES=	anstyle-1.0.13 \
-		cc-1.2.49 \
-		clap-4.5.53 \
-		clap_builder-4.5.53 \
-		clap_lex-0.7.6 \
+CARGO_CRATES=	anstyle-1.0.14 \
+		cc-1.2.66 \
+		clap-4.6.1 \
+		clap_builder-4.6.0 \
+		clap_lex-1.1.0 \
 		codespan-reporting-0.13.1 \
-		cxx-1.0.191 \
-		cxx-build-1.0.191 \
-		cxxbridge-cmd-1.0.191 \
-		cxxbridge-flags-1.0.191 \
-		cxxbridge-macro-1.0.191 \
+		cxx-1.0.196 \
+		cxx-build-1.0.196 \
+		cxxbridge-cmd-1.0.196 \
+		cxxbridge-flags-1.0.196 \
+		cxxbridge-macro-1.0.196 \
 		equivalent-1.0.2 \
-		find-msvc-tools-0.1.5 \
+		find-msvc-tools-0.1.9 \
 		foldhash-0.2.0 \
-		hashbrown-0.16.1 \
-		indexmap-2.12.1 \
-		itoa-1.0.15 \
+		hashbrown-0.17.1 \
+		indexmap-2.14.0 \
+		itoa-1.0.18 \
 		link-cplusplus-1.0.12 \
-		proc-macro2-1.0.103 \
-		quote-1.0.42 \
-		ryu-1.0.20 \
+		proc-macro2-1.0.106 \
+		quote-1.0.46 \
+		ryu-1.0.23 \
 		scratch-1.0.9 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_yaml-0.9.34+deprecated \
-		shlex-1.3.0 \
+		shlex-2.0.1 \
 		strsim-0.11.1 \
-		syn-2.0.111 \
+		syn-2.0.118 \
 		termcolor-1.4.1 \
-		unicode-ident-1.0.22 \
+		unicode-ident-1.0.24 \
 		unicode-width-0.2.2 \
 		unsafe-libyaml-0.2.11 \
 		winapi-util-0.1.11 \
