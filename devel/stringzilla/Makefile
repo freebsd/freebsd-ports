@@ -1,6 +1,6 @@
 PORTNAME=	stringzilla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.1
+DISTVERSION=	5.1.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,21 +20,17 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ashvardanian
 GH_PROJECT=	StringZilla
-GH_TUPLE=	ashvardanian:ForkUnion:c613f50:fork_union/fork_union
+GH_TUPLE=	ashvardanian:ForkUnion:7f52520:forkunion/forkunion
 
 CMAKE_ON=	STRINGZILLA_INSTALL
-CMAKE_OFF=	STRINGZILLA_BUILD_TEST
+CMAKE_OFF=	STRINGZILLA_BUILD_TEST \
+		STRINGZILLA_BUILD_BENCHMARK
 CMAKE_TESTING_ON=	STRINGZILLA_BUILD_TEST
 CMAKE_ARGS=	-DSTRINGZILLA_INCLUDE_INSTALL_DIR=include
 
 CXXFLAGS+=	-g
 LDFLAGS+=	-lpthread
 
-post-install:
-	# workaround for https://github.com/ashvardanian/StringZilla/issues/194
-	@${RM} -r ${STAGEDIR}/usr/src
-
-# some tests fail and hang, see https://github.com/ashvardanian/StringZilla/issues/281, https://github.com/ashvardanian/StringZilla/issues/282
-# https://github.com/ashvardanian/StringZilla/issues/315
+# tests as of 5.1.2: 100% tests passed out of 6
 
 .include <bsd.port.mk>

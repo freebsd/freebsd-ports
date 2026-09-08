@@ -1,3 +1,5 @@
-TIMESTAMP = 1778050362
-SHA256 (ashvardanian-StringZilla-v4.6.1_GH0.tar.gz) = 13d92f35e17bfca8d1a657e1f52d7da1b4c5986de023de04afb546e64e7ec307
-SIZE (ashvardanian-StringZilla-v4.6.1_GH0.tar.gz) = 786605
+TIMESTAMP = 1788883314
+SHA256 (ashvardanian-StringZilla-v5.1.2_GH0.tar.gz) = 4dfb85a63af83c46509b7cbdfa331256f7d34c3c7a199afd5871ed7df0700c8e
+SIZE (ashvardanian-StringZilla-v5.1.2_GH0.tar.gz) = 2352912
+SHA256 (ashvardanian-ForkUnion-7f52520_GH0.tar.gz) = 27a2b7ea34bb6fc9ff73d61e9685b511f1a6b0bda37304f1c56c47444deea0e3
+SIZE (ashvardanian-ForkUnion-7f52520_GH0.tar.gz) = 326742
