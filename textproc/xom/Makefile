@@ -1,6 +1,6 @@
 PORTNAME=	xom
 PORTVERSION=	1.2.11
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.cafeconleche.org/XOM/
@@ -8,6 +8,9 @@ MASTER_SITES=	http://www.cafeconleche.org/XOM/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source (LGPL), tree-based API for processing XML with Java
 WWW=		http://www.xom.nu/
+
+DEPRECATED=	Unmaintained, unused in the ports tree, only copies a jar, 8 years behind on upstream.
+EXPIRATION_DATE=	2026-10-31
 
 RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:textproc/xerces-j \
 		${JAVALIBDIR}/xalan.jar:textproc/xalan-j
