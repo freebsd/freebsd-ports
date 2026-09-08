@@ -1,5 +1,5 @@
 PORTNAME=	tomcat-native
-DISTVERSION=	2.0.15
+DISTVERSION=	2.0.16
 CATEGORIES=	www java
 MASTER_SITES=	https://archive.apache.org/dist/tomcat/tomcat-connectors/native/${PORTVERSION}/source/
 PKGNAMESUFFIX=	2
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1
 
-USES=		java libtool ssl
+USES=		java:build libtool ssl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
