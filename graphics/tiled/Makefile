@@ -3,7 +3,7 @@ PORTVERSION=	1.8.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics editors games
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose tile map editor
 WWW=		https://www.mapeditor.org/
 
