@@ -1,0 +1,5 @@
+Loadable SQLite3 extension (libnusqlite3.so) built from the nunicode
+library. Registers Unicode-aware NU1700 and NU1700_NOCASE collations and
+overrides upper(), lower(), like() and adds unaccent() with full Unicode
+17.0 support. Used by applications such as Audiobookshelf for
+locale-correct sorting and searching.
