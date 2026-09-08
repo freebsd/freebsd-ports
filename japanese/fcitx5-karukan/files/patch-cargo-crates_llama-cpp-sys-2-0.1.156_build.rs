@@ -1,5 +1,5 @@
---- cargo-crates/llama-cpp-sys-2-0.1.154/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/llama-cpp-sys-2-0.1.154/build.rs
+--- cargo-crates/llama-cpp-sys-2-0.1.156/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/llama-cpp-sys-2-0.1.156/build.rs
 @@ -24,6 +24,7 @@ enum TargetOs {
      Apple(AppleVariant),
      Linux,
