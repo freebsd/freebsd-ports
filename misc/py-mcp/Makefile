@@ -1,5 +1,5 @@
 PORTNAME=	mcp
-DISTVERSION=	2.1.1 # # keep in sync with misc/py-mcp-types
+DISTVERSION=	2.2.0 # # keep in sync with and update after misc/py-mcp-types
 PORTREVISION=	0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
