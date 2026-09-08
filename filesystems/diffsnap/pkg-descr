@@ -1,0 +1,8 @@
+diffsnap is a lightweight, on-demand snapshot scheduler for OpenZFS
+where snapshots are generated only when a configured change threshold
+is met. It supports per-dataset scheduling intervals, retention
+counts, recursive snapshots, and minimum byte thresholds.
+
+The utility is completely daemonless, uses native zfs
+commands, handles locking to prevent overlapping runs, and safely
+prunes old snapshots matching only its own prefix context.

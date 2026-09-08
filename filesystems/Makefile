@@ -17,6 +17,7 @@
     SUBDIR += curlftpfs
     SUBDIR += darling-dmg
     SUBDIR += davfs2
+    SUBDIR += diffsnap
     SUBDIR += dsbmc
     SUBDIR += dsbmc-cli
     SUBDIR += dsbmd
