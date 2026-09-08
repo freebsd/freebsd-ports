@@ -1,5 +1,5 @@
 PORTNAME=	freeglut
-PORTVERSION=	3.2.1
+PORTVERSION=	3.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -16,10 +16,8 @@ USE_XORG=	ice x11 xi xrandr xxf86vm
 USE_GL=		gl glu
 LDFLAGS+=	-lusbhid -lm
 
-DOCS=	download.html freeglut.html freeglut_logo.png		\
-	freeglut_user_interface.html index.html ogl_sm.png	\
-	progress.html structure.html
-BINS=	CallbackMaker Fractals Fractals_random Lorenz One Resizer \
+DOCS=	api.md
+BINS=	CallbackMaker Fractals Fractals_random Lorenz One \
 	multi-touch shapes smooth_opengl3 spaceball subwin timer
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
