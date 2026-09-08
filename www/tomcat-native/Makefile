@@ -1,5 +1,5 @@
 PORTNAME=	tomcat-native
-DISTVERSION=	1.3.8
+DISTVERSION=	1.3.9
 CATEGORIES=	www java
 MASTER_SITES=	https://archive.apache.org/dist/tomcat/tomcat-connectors/native/${PORTVERSION}/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -14,7 +14,7 @@ PORTSCOUT=	limit:^1\.
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1
 
-USES=		java libtool ssl
+USES=		java:build libtool ssl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
