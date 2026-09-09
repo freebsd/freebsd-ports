@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-07-24 04:58:33 UTC
+--- pyproject.toml.orig	2026-08-27 12:06:49 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -8,14 +8,14 @@
  
  [project]
  name = "types-docutils"
- version = "0.22.3.20260724"
+ version = "0.23.0.20260827"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
  description = "Typing stubs for docutils"
  readme = { text = """\
  ## Typing stubs for docutils
-@@ -46,8 +45,4 @@ dependencies = []
+@@ -50,8 +49,4 @@ dependencies = []
  "Chat" = "https://gitter.im/python/typing"
  
  [tool.setuptools]
