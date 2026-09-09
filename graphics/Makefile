@@ -1262,6 +1262,7 @@
     SUBDIR += tintfu
     SUBDIR += tinyows
     SUBDIR += tkpng
+    SUBDIR += tlottie
     SUBDIR += togl
     SUBDIR += tslib
     SUBDIR += ttygif

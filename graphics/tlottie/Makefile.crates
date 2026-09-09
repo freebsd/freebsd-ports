@@ -1,0 +1,7 @@
+CARGO_CRATES=	cfg-if-1.0.4 \
+		dlmalloc-0.2.14 \
+		foldhash-0.1.5 \
+		hashbrown-0.15.5 \
+		libc-0.2.189 \
+		windows-link-0.2.1 \
+		windows-sys-0.61.2

@@ -1,0 +1,17 @@
+TIMESTAMP = 1788937454
+SHA256 (rust/crates/cfg-if-1.0.4.crate) = 9330f8b2ff13f34540b44e946ef35111825727b38d33286ef986142615121801
+SIZE (rust/crates/cfg-if-1.0.4.crate) = 9360
+SHA256 (rust/crates/dlmalloc-0.2.14.crate) = ad5208a115eaba24916f7456929832e310a81518c641f93fee4f89aa93aa3675
+SIZE (rust/crates/dlmalloc-0.2.14.crate) = 33285
+SHA256 (rust/crates/foldhash-0.1.5.crate) = d9c4f5dac5e15c24eb999c26181a6ca40b39fe946cbe4c263c7209467bc83af2
+SIZE (rust/crates/foldhash-0.1.5.crate) = 21901
+SHA256 (rust/crates/hashbrown-0.15.5.crate) = 9229cfe53dfd69f0609a49f65461bd93001ea1ef889cd5529dd176593f5338a1
+SIZE (rust/crates/hashbrown-0.15.5.crate) = 140908
+SHA256 (rust/crates/libc-0.2.189.crate) = 3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2
+SIZE (rust/crates/libc-0.2.189.crate) = 851502
+SHA256 (rust/crates/windows-link-0.2.1.crate) = f0805222e57f7521d6a62e36fa9163bc891acd422f971defe97d64e70d0a4fe5
+SIZE (rust/crates/windows-link-0.2.1.crate) = 6133
+SHA256 (rust/crates/windows-sys-0.61.2.crate) = ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc
+SIZE (rust/crates/windows-sys-0.61.2.crate) = 2517186
+SHA256 (dkaraush-tlottie-v0.1.0-4b940c7_GH0.tar.gz) = 1853094b6b35bdeec6085fe49e47c431a300a17f8eafd7fb083586647ba43915
+SIZE (dkaraush-tlottie-v0.1.0-4b940c7_GH0.tar.gz) = 1218856

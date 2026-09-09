@@ -1,0 +1,11 @@
+--- Cargo.toml.orig	2026-09-08 16:14:24 UTC
++++ Cargo.toml
+@@ -6,7 +6,7 @@ name = "tlottie"
+ 
+ [lib]
+ name = "tlottie"
+-crate-type = ["rlib", "cdylib"]
++crate-type = ["rlib", "cdylib","staticlib"]
+ 
+ [[bin]]
+ name = "tlottie-cli"
