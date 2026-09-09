@@ -17,7 +17,6 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}attrs>=26.1.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>=5.0.0:security/py-bcrypt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=48.0.1:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hyperlink>=21.0.0:www/py-hyperlink@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=3.16:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=26.2:devel/py-packaging@${PY_FLAVOR} \
