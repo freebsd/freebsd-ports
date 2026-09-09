@@ -1,12 +1,11 @@
 PORTNAME=	pillow
-PORTVERSION=	11.3.0
-PORTREVISION=	2
+PORTVERSION=	12.3.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Fork of the Python Imaging Library (PIL)
+COMMENT=	Python Imaging Library (fork)
 WWW=		https://python-pillow.github.io/ \
 		https://pillow.readthedocs.io/en/stable/ \
 		https://github.com/python-pillow/Pillow
@@ -16,7 +15,8 @@ LICENSE_NAME=	CMU License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0,1:devel/py-pytest@${PY_FLAVOR}
 
