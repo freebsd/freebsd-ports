@@ -12,6 +12,7 @@ include/chuffed/flatzinc/ast.h
 include/chuffed/flatzinc/flatzinc.h
 include/chuffed/flatzinc/generated_parser/parser.tab.h
 include/chuffed/globals/EdExplFinder.h
+include/chuffed/globals/blackbox.h
 include/chuffed/globals/bounded_path.h
 include/chuffed/globals/dag.h
 include/chuffed/globals/dconnected.h
@@ -66,6 +67,9 @@ lib/libchuffed.so
 lib/libchuffed_fzn.so
 %%DATADIR%%/chuffed.mzn
 %%DATADIR%%/edit_distance.mzn
+%%DATADIR%%/experimental/assume/fzn_assume.mzn
+%%DATADIR%%/experimental/blackbox/fzn_blackbox.mzn
+%%DATADIR%%/experimental/blackbox/fzn_blackbox_bounds.mzn
 %%DATADIR%%/experimental/on_restart/fzn_on_restart_complete.mzn
 %%DATADIR%%/experimental/on_restart/fzn_on_restart_last_val_bool.mzn
 %%DATADIR%%/experimental/on_restart/fzn_on_restart_last_val_int.mzn
@@ -106,6 +110,7 @@ lib/libchuffed_fzn.so
 %%DATADIR%%/fzn_table_int.mzn
 %%DATADIR%%/fzn_tree_int.mzn
 %%DATADIR%%/fzn_value_precede_int.mzn
+%%DATADIR%%/redefinitions-2.0.mzn
 %%DATADIR%%/redefinitions.mzn
 %%DATADIR%%/values_interchange.mzn
 %%DATADIR%%/values_sequences.mzn
@@ -113,5 +118,7 @@ lib/libchuffed_fzn.so
 %%DATADIR%%/variables_sequences.mzn
 share/minizinc/solvers/chuffed.msc
 @dir include/chuffed/examples
+@dir include/chuffed/flatzinc/mznlib/experimental/assume
+@dir include/chuffed/flatzinc/mznlib/experimental/blackbox
 @dir include/chuffed/flatzinc/mznlib/experimental/on_restart
 @dir include/chuffed/mzn-models
