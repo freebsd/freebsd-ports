@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby client for Unleash
-WWW=		https://github.com/unleash/unleash-client-ruby
+WWW=		https://www.getunleash.io/ \
+		https://github.com/Unleash/unleash-ruby-sdk
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
