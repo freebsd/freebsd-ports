@@ -1,12 +1,12 @@
 PORTNAME=	pyrate-limiter
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyrate_limiter-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Python Rate-Limiter using Leaky-Bucket Algorithm
+COMMENT=	Python rate limiter with pluggable algorithms and backends
 WWW=		https://pyratelimiter.readthedocs.io/en/latest/ \
 		https://github.com/vutran1710/PyrateLimiter
 
