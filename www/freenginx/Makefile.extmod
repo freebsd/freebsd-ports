@@ -68,7 +68,8 @@ FIPS_CHECK_GH_TUPLE=	ogarrett:nginx-fips-check-module:6cb4270:fipscheck
 FIPS_CHECK_VARS=	DSO_EXTMODS+=fipscheck
 
 FORMINPUT_IMPLIES=	DEVEL_KIT
-FORMINPUT_GH_TUPLE=	calio:form-input-nginx-module:v0.12:forminput
+FORMINPUT_BUILD_DEPENDS=	nginx-module-form-input>0:www/nginx-module-form-input
+WRKSRC_forminput=	${WRKDIR}/form-input-nginx-module
 FORMINPUT_VARS=		DSO_EXTMODS+=forminput
 
 GRIDFS_GH_TUPLE=	nieoding:nginx-gridfs:059bdc3:gridfs

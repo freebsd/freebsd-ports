@@ -1,4 +1,4 @@
-TIMESTAMP = 1788743591
+TIMESTAMP = 1788898569
 SHA256 (nginx-1.31.5.tar.gz) = e951607d534836624bd36b6b45a71dbfb055237deae3738da6bbf3270dada279
 SIZE (nginx-1.31.5.tar.gz) = 1371858
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -21,8 +21,6 @@ SHA256 (openresty-encrypted-session-nginx-module-7ffe4ec_GH0.tar.gz) = 1848ee88b
 SIZE (openresty-encrypted-session-nginx-module-7ffe4ec_GH0.tar.gz) = 11899
 SHA256 (ogarrett-nginx-fips-check-module-6cb4270_GH0.tar.gz) = d52fbb0f2819cd91b710ad85e6c8b452fdca6a5d81b0694d6637adba3fc2382c
 SIZE (ogarrett-nginx-fips-check-module-6cb4270_GH0.tar.gz) = 6494
-SHA256 (calio-form-input-nginx-module-v0.12_GH0.tar.gz) = 5c1869d55897075adb3fdf840b21060dc54669a1f840a36d1539acc7e59dd106
-SIZE (calio-form-input-nginx-module-v0.12_GH0.tar.gz) = 11090
 SHA256 (nieoding-nginx-gridfs-059bdc3_GH0.tar.gz) = 9b059b5ae7b602d12d32d5ebe2700827ea625f22c0fb3b9956242e11de63845b
 SIZE (nieoding-nginx-gridfs-059bdc3_GH0.tar.gz) = 4674
 SHA256 (openresty-headers-more-nginx-module-v0.39_GH0.tar.gz) = dde68d3fa2a9fc7f52e436d2edc53c6d703dcd911283965d889102d3a877c778
