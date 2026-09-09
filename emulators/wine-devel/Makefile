@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 HAS_NTSYNC=	yes
 .endif
 
-.if ${HAS_NTSYNC}
+.if defined(HAS_NTSYNC)
 BUILD_DEPENDS+=	${LOCALBASE}/include/linuxapi/linux/ntsync.h:devel/linuxapi
 .endif
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2
@@ -68,7 +68,7 @@ CONFIGURE_ARGS=	--verbose \
 		--with-usb
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 
-.if ${HAS_NTSYNC}
+.if defined(HAS_NTSYNC)
 CFLAGS+=	-I${WRKDIR}/include/linuxapi
 CXXFLAGS+=	-I${WRKDIR}/include/linuxapi
 .endif
@@ -161,7 +161,7 @@ CONFIGURE_ARGS+=	--enable-win64 --libdir=${PREFIX}/lib
 PLIST_SUB+=		WINEARCH="x86_64"
 .endif
 
-.if ${HAS_NTSYNC}
+.if defined(HAS_NTSYNC)
 pre-configure:
 	@${MKDIR} ${WRKDIR}/include/linuxapi/linux
 	@${CP} ${LOCALBASE}/include/linuxapi/linux/ntsync.h ${WRKDIR}/include/linuxapi/linux/
