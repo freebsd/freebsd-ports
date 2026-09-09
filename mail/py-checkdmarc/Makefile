@@ -1,7 +1,8 @@
 PORTNAME=	checkdmarc
-PORTVERSION=	5.17.4
+PORTVERSION=	5.17.5
 CATEGORIES=	mail python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/domainaware/checkdmarc/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=2.0.0,1:dns/py-dnspython@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}pem>=23.1.0:security/py-pem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}publicsuffixlist>=0.10.0:dns/py-publicsuffixlist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyleri>=1.3.2:devel/py-pyleri@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyopenssl>=24.2.1,1:security/py-pyopenssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyopenssl>=26.4.0,1:security/py-pyopenssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.25.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0.14.2:devel/py-xmltodict@${PY_FLAVOR}
 
