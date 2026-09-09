@@ -1,5 +1,5 @@
 PORTNAME=	tinymce
-PORTVERSION=	8.8.2
+PORTVERSION=	8.9.0
 CATEGORIES=	www
 MASTER_SITES=	https://download.tiny.cloud/tinymce/community/
 DISTNAME=	tinymce_${PORTVERSION}
