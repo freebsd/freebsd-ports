@@ -5118,6 +5118,7 @@
     SUBDIR += py-flynt
     SUBDIR += py-foolscap
     SUBDIR += py-forbiddenfruit
+    SUBDIR += py-fortranformat
     SUBDIR += py-freebsd
     SUBDIR += py-freebsd-sysctl
     SUBDIR += py-freenas.utils
