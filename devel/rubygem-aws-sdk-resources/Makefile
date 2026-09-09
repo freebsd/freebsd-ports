@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.270.0
+PORTVERSION=	3.271.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -195,6 +195,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-health>=1<2:devel/rubygem-aws-sdk-health \
 		rubygem-aws-sdk-healthlake>=1<2:devel/rubygem-aws-sdk-healthlake \
 		rubygem-aws-sdk-iam>=1<2:devel/rubygem-aws-sdk-iam \
+		rubygem-aws-sdk-iamtoolbox>=1<2:devel/rubygem-aws-sdk-iamtoolbox \
 		rubygem-aws-sdk-identitystore>=1<2:devel/rubygem-aws-sdk-identitystore \
 		rubygem-aws-sdk-imagebuilder>=1<2:devel/rubygem-aws-sdk-imagebuilder \
 		rubygem-aws-sdk-importexport>=1<2:devel/rubygem-aws-sdk-importexport \
