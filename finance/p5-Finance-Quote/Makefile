@@ -1,5 +1,5 @@
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.70
+PORTVERSION=	1.71
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BPSCHUCK
@@ -38,8 +38,7 @@ RUN_DEPENDS=	p5-Date-Range>=0:devel/p5-Date-Range \
 		p5-URI>=3.31:net/p5-URI \
 		p5-Web-Scraper>=0:www/p5-Web-Scraper \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
-		p5-YAML-PP>=0:textproc/p5-YAML-PP \
-		p5-libwww>=6.48:www/p5-libwww
+		p5-YAML-PP>=0:textproc/p5-YAML-PP
 TEST_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-Date-Range>=0:devel/p5-Date-Range \
 		p5-Date-Simple>=0:devel/p5-Date-Simple \
