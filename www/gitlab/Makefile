@@ -321,7 +321,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-app_store_connect>=0:net/rubygem-app_store_connect \
 	rubygem-telesignenterprise>=2.6<3:devel/rubygem-telesignenterprise \
 	rubygem-base6402>=0.2.0<0.3:converters/rubygem-base6402 \
-	rubygem-net-protocol>=0.2.2<0.3:net/rubygem-net-protocol \
+	rubygem-net-protocol-gitlab>=0.2.2<0.3:net/rubygem-net-protocol-gitlab \
 	rubygem-nkf-gitlab>=0.2.0<0.3:net/rubygem-nkf-gitlab \
 	rubygem-resolv-replace>=0.2.0<0.3:dns/rubygem-resolv-replace \
 	rubygem-net-http-gitlab>=0.6.0<0.6.1:www/rubygem-net-http-gitlab \
