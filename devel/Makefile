@@ -5853,6 +5853,7 @@
     SUBDIR += py-pydantic-yaml
     SUBDIR += py-pydantic2
     SUBDIR += py-pydash
+    SUBDIR += py-pydata-google-auth
     SUBDIR += py-pydbus
     SUBDIR += py-pydecor
     SUBDIR += py-pydemumble
