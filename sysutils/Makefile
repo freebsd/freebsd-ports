@@ -1131,6 +1131,7 @@
     SUBDIR += py-puremagic
     SUBDIR += py-py-consul
     SUBDIR += py-py-cpuinfo
+    SUBDIR += py-py-cpuinfo2
     SUBDIR += py-pyinfra
     SUBDIR += py-python-bareos
     SUBDIR += py-python-consul
