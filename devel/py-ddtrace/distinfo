@@ -1,6 +1,6 @@
-TIMESTAMP = 1787268080
-SHA256 (ddtrace-4.13.1.tar.gz) = c0fffc9ffd1a025f938a51d39d4ae879921c3f8f277e522a443c3a4fe09ec271
-SIZE (ddtrace-4.13.1.tar.gz) = 2606506
+TIMESTAMP = 1788500068
+SHA256 (ddtrace-4.13.2.tar.gz) = b35f196250426177c933fd15ab119f8cffa984b7b14d6ff7e7b0559cb46a0316
+SIZE (ddtrace-4.13.2.tar.gz) = 2608933
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
