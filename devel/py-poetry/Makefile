@@ -1,6 +1,5 @@
 PORTNAME=	poetry
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.4.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-poetry/poetry/releases/download/${PORTVERSION}/
