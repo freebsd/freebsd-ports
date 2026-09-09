@@ -1,9 +1,9 @@
 PORTNAME=	python-slugify
-PORTVERSION=	8.0.4
-PORTREVISION=	1
+PORTVERSION=	9.0.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Slugify application that handles unicode
@@ -13,9 +13,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}text-unidecode>=1.3:converters/py-text-unidecode@${PY_FLAVOR}
 
-### Can alternatively require:
+### Can optionally require:
 ### 	${PYTHON_PKGNAMEPREFIX}unidecode>=1.1.1:converters/py-unidecode@${PY_FLAVOR}
-### but text-unidecode is preferred upstream.
+###     ${PYTHON_PKGNAMEPREFIX}anyascii>=0.3.2:textproc/py-anyascii@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
