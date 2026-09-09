@@ -1,11 +1,12 @@
---- pyproject.toml.orig	2025-01-07 02:25:37 UTC
+--- pyproject.toml.orig	2022-11-09 12:37:21 UTC
 +++ pyproject.toml
-@@ -52,7 +52,7 @@ requires = [
-     # We build against the most recent supported NumPy 2.0 release;
-     # see https://github.com/numpy/numpy/issues/27265
-     "numpy~=2.0",
--    "setuptools~=75.7.0",
-+    "setuptools",
- ]
- build-backend = "setuptools.build_meta"
- 
+@@ -4,8 +4,7 @@ requires-python = ">=3.10"
+ description = "ml_dtypes is a stand-alone implementation of several NumPy dtype extensions used in machine learning."
+ readme = "README.md"
+ requires-python = ">=3.10"
+-license = "Apache-2.0"
+-license-files = ["LICENSE", "LICENSE.eigen"]
++license = {file = "LICENSE"}
+ authors = [{name = "ml_dtypes authors", email="ml_dtypes@google.com"}]
+ classifiers = [
+     "Programming Language :: Python :: 3",
