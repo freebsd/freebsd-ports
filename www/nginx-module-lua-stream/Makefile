@@ -1,6 +1,7 @@
 PORTNAME=	nginx-module-lua-stream
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.17
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
