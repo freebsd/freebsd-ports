@@ -1,5 +1,5 @@
 PORTNAME=	gobject-introspection
-PORTVERSION=	4.3.7
+PORTVERSION=	4.3.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
