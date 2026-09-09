@@ -1,7 +1,7 @@
 PORTNAME=	hstspreload
-PORTVERSION=	2025.1.1
+PORTVERSION=	2026.9.1
 CATEGORIES=	www python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,5 +18,8 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sethmlarson
 
 .include <bsd.port.mk>
