@@ -1,5 +1,5 @@
-TIMESTAMP = 1779895682
-SHA256 (go/devel_treefmt/numtide-treefmt-v2.5.0_GH0/go.mod) = 2cc86a0c8c6638cdfe3bce43e05c9fbb4d14b634649c04b0418ab8f06ac989e2
-SIZE (go/devel_treefmt/numtide-treefmt-v2.5.0_GH0/go.mod) = 2251
-SHA256 (go/devel_treefmt/numtide-treefmt-v2.5.0_GH0/numtide-treefmt-v2.5.0_GH0.tar.gz) = 0d30d2d2a0faf642f8c13c00b7e71a58e4e72f0c403a0e478caea4ab596ad8f8
-SIZE (go/devel_treefmt/numtide-treefmt-v2.5.0_GH0/numtide-treefmt-v2.5.0_GH0.tar.gz) = 198241
+TIMESTAMP = 1788937017
+SHA256 (go/devel_treefmt/numtide-treefmt-v2.6.0_GH0/go.mod) = b3e0743b180cf3ff19a99fec474caac6a3dff2d78e905edf5e2b4292d4b9c9d1
+SIZE (go/devel_treefmt/numtide-treefmt-v2.6.0_GH0/go.mod) = 2320
+SHA256 (go/devel_treefmt/numtide-treefmt-v2.6.0_GH0/numtide-treefmt-v2.6.0_GH0.tar.gz) = 90993f858b376c0a0ca49920b9679dc774107a96fad8ffc3808809c6a82f4ece
+SIZE (go/devel_treefmt/numtide-treefmt-v2.6.0_GH0/numtide-treefmt-v2.6.0_GH0.tar.gz) = 201616
