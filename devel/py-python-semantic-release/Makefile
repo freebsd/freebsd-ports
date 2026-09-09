@@ -1,5 +1,5 @@
 PORTNAME=	python-semantic-release
-PORTVERSION=	10.6.1
+PORTVERSION=	10.6.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-semantic-release/python-semantic-release/releases/download/v${PORTVERSION}/
@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0<83.0.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.42<1:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.0<9.0.0:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}click-option-group>=0.5<1:devel/py-click-option-group@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.0<8.5.0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click-option-group>=0.5.0<0.6:devel/py-click-option-group@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}deprecated>=1.2<2:devel/py-deprecated@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dotty-dict>=1.3<2:devel/py-dotty-dict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gitpython>=3.0<4:devel/py-gitpython@${PY_FLAVOR} \
@@ -26,9 +26,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.0<9.0.0:devel/py-click@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0<3:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-gitlab>=4.0.0<9.0.0:devel/py-python-gitlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.25<3:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rich>=14.0<16:textproc/py-rich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rich>=15.0<16:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shellingham>=1.5<2:devel/py-shellingham@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.0<0.16:textproc/py-tomlkit@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.15.0<0.16:textproc/py-tomlkit@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
