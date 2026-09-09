@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-05-01 20:48:14 UTC
+--- pyproject.toml.orig	2026-08-31 19:37:08 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
@@ -7,7 +7,7 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -15,8 +15,7 @@ version = "3.3.4"
+@@ -15,8 +15,7 @@ version = "3.3.5"
  #
  # NOTE: you can use `tools/bump_version.py` to maintain versions.
  
