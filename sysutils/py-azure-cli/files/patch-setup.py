@@ -1,4 +1,4 @@
---- setup.py.orig	2026-08-10 01:12:10 UTC
+--- setup.py.orig	2026-08-26 01:18:36 UTC
 +++ setup.py
 @@ -51,117 +51,117 @@ DEPENDENCIES = [
  ]
@@ -34,13 +34,13 @@
 -    'azure-mgmt-billing==6.0.0',
 -    'azure-mgmt-botservice~=2.0.0b3',
 -    'azure-mgmt-cdn==12.0.0',
--    'azure-mgmt-cognitiveservices~=15.0.0b4',
+-    'azure-mgmt-cognitiveservices==15.0.0b4',  # 15.0.0b4 version supports compute operations which is in PrPr, pls don't remove it without consulting our team
 -    'azure-mgmt-compute~=34.1.0',
 -    'azure-mgmt-containerinstance==10.2.0b1',
 -    'azure-mgmt-containerregistry==15.1.0b2',
 -    'azure-mgmt-containerregistrytasks==1.0.0b1',
 -    'azure-mgmt-containerservice~=41.5.0',
--    'azure-mgmt-cosmosdb==9.9.0',
+-    'azure-mgmt-cosmosdb==10.0.0',
 -    'azure-mgmt-datalake-store~=1.1.0b1',
 -    'azure-mgmt-datamigration~=10.0.0',
 -    'azure-mgmt-domainregistration==1.0.0b1',
@@ -52,7 +52,7 @@
 -    'azure-mgmt-iotcentral~=10.0.0b1',
 -    'azure-mgmt-iothub==5.0.0b1',
 -    'azure-mgmt-iothubprovisioningservices==1.1.0',
--    'azure-mgmt-keyvault==13.0.0',
+-    'azure-mgmt-keyvault==14.0.1',
 -    'azure-mgmt-loganalytics==13.0.0b4',
 -    'azure-mgmt-managementgroups~=1.0.0',
 -    'azure-mgmt-maps~=2.0.0',
@@ -116,13 +116,13 @@
 +    'azure-mgmt-billing>=6.0.0',
 +    'azure-mgmt-botservice>=2.0.0b3',
 +    'azure-mgmt-cdn>=12.0.0',
-+    'azure-mgmt-cognitiveservices>=15.0.0b4',
++    'azure-mgmt-cognitiveservices>=15.0.0b4',  # 15.0.0b4 version supports compute operations which is in PrPr, pls don't remove it without consulting our team
 +    'azure-mgmt-compute>=34.1.0',
 +    'azure-mgmt-containerinstance>=10.2.0b1',
 +    'azure-mgmt-containerregistry>=15.1.0b2',
 +    'azure-mgmt-containerregistrytasks>=1.0.0b1',
 +    'azure-mgmt-containerservice>=41.5.0',
-+    'azure-mgmt-cosmosdb>=9.9.0',
++    'azure-mgmt-cosmosdb>=10.0.0',
 +    'azure-mgmt-datalake-store>=1.1.0b1',
 +    'azure-mgmt-datamigration>=10.0.0',
 +    'azure-mgmt-domainregistration>=1.0.0b1',
@@ -134,7 +134,7 @@
 +    'azure-mgmt-iotcentral>=10.0.0b1',
 +    'azure-mgmt-iothub>=5.0.0b1',
 +    'azure-mgmt-iothubprovisioningservices>=1.1.0',
-+    'azure-mgmt-keyvault>=13.0.0',
++    'azure-mgmt-keyvault>=14.0.1',
 +    'azure-mgmt-loganalytics>=13.0.0b4',
 +    'azure-mgmt-managementgroups>=1.0.0',
 +    'azure-mgmt-maps>=2.0.0',
@@ -189,7 +189,7 @@
 -    'jsondiff~=2.0.0',
 +    'jsondiff>=2.0.0',
      'packaging>=20.9',
-     'paramiko>=2.0.8,<4.0.0',
+     'paramiko>=2.0.8,<6.0.0',
      'pycomposefile>=0.0.34',
 -    'PyGithub~=1.38',
 -    'PyNaCl~=1.6.2',
