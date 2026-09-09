@@ -7,6 +7,8 @@ include/orc-0.4/orc-test/orctest.h
 include/orc-0.4/orc/orc-stdint.h
 include/orc-0.4/orc/orc.h
 include/orc-0.4/orc/orcarm.h
+include/orc-0.4/orc/orcarm64insn.h
+include/orc-0.4/orc/orcarminsn.h
 include/orc-0.4/orc/orcavx.h
 include/orc-0.4/orc/orcavxinsn.h
 include/orc-0.4/orc/orcbytecode.h
