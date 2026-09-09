@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-05-18 09:12:28 UTC
+--- pyproject.toml.orig	2026-08-24 14:04:46 UTC
 +++ pyproject.toml
 @@ -9,7 +9,7 @@ authors = [
  authors = [
@@ -6,6 +6,6 @@
  ]
 -license = "Apache-2.0"
 +license = {text = "Apache-2.0"}
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
  classifiers = [
      "Environment :: OpenStack",
