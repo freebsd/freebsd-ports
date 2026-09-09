@@ -1,5 +1,5 @@
 PORTNAME=	pipx
-PORTVERSION=	1.16.7
+PORTVERSION=	1.17.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.4:devel/py-hatch-vcs@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.27:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.9.4:devel/py-argcomplete@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.16:sysutils/py-filelock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=20:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=26:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.6:devel/py-platformdirs@${PY_FLAVOR} \
 		${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}userpath>=1.6:devel/py-userpath@${PY_FLAVOR}
