@@ -1,6 +1,6 @@
 PORTNAME=	novelWriter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.1.1
+DISTVERSION=	26.2
 CATEGORIES=	editors python
 MASTER_SITES=	PYPI
 
@@ -9,7 +9,7 @@ COMMENT=	Text editor designed for writing novels
 WWW=		https://novelwriter.io/ \
 		https://github.com/vkbo/novelwriter
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enchant>=3.0.0:textproc/py-enchant@${PY_FLAVOR}
