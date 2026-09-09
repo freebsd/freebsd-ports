@@ -796,6 +796,7 @@
     SUBDIR += py-databases
     SUBDIR += py-databricks-sql-connector
     SUBDIR += py-datafusion
+    SUBDIR += py-db-dtypes
     SUBDIR += py-dbf
     SUBDIR += py-dbt-core
     SUBDIR += py-dbt-duckdb
