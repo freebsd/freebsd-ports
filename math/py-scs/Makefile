@@ -1,5 +1,5 @@
 PORTNAME=	scs
-DISTVERSION=	3.2.11
+DISTVERSION=	3.3.1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,11 +23,12 @@ USE_PYTHON=	pep517 autoplist pytest # 2 tests fail, see https://github.com/cvxgr
 CONFIGURE_ENV=	BLAS_LAPACK_LIBS="openblas"
 MAKE_ENV=	${CONFIGURE_ENV}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
 post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_direct${PYTHON_TAG}.so  \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_indirect${PYTHON_TAG}.so 
+		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_indirect${PYTHON_TAG}.so
 
 # tests as of 3.2.11: 28 passed in 10.63s
 
