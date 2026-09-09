@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	43
 CATEGORIES=	devel
 
-MAINTAINER=	asomers@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Coverage checker for ELF, Bash, and Python programs
 WWW=		https://simonkagstrom.github.io/kcov/index.html
 
