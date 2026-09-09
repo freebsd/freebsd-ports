@@ -1,28 +1,34 @@
---- makefile.orig	2023-09-15 08:54:21 UTC
+--- makefile.orig	2026-08-10 15:56:18 UTC
 +++ makefile
-@@ -1,6 +1,6 @@
+@@ -3,7 +3,7 @@
  # Version checking
  MSBUILD := msbuild
+ NUGET := nuget
 -MIN_MONO_VERSION:= "5.18.0"
 +MIN_MONO_VERSION:= "5.10.0"
  MONO_VERSION:= $(shell mono --version | awk '/version/ { print $$5 }')
  MIN_NUGET_VERSION:= "2.16.0"
- NUGET_VERSION:= $(shell nuget help 2> /dev/null | awk '/Version:/ { print $$3; exit 0}')
-@@ -56,7 +56,7 @@ reset:=$(shell tput sgr0)
+ NUGET_VERSION:= $(shell $NUGET help 2> /dev/null | awk '/Version:/ { print $$3; exit 0}')
+@@ -61,7 +61,7 @@ reset:=$(shell tput sgr0)
  .PHONY: prequisite-check
  
  restore:
--	nuget restore OpenBVE.sln
-+	-nuget restore OpenBVE.sln
+-	$(NUGET) restore OpenBVE.sln
++	-$(NUGET) restore OpenBVE.sln
  
  debug: openbve-debug
  release: openbve-release
-@@ -105,48 +105,6 @@ endif
+@@ -114,85 +114,6 @@ endif
  
  debian: $(DEBIAN_BUILD_RESULT)
  
 -prequisite-check:
 - #Very basic prequisite check function
+- ifeq (forky/sid, $(shell cat /etc/debian_version))
+- # Forky mono seems to need this....
+- # remove if they actually fix the thing
+- $$TERM=linux
+- endif
 - $(info Checking for prequisite system libraries.)
 - $(info Checking for Mono....)
 - ifeq (, $(shell which mono))
@@ -40,27 +46,59 @@
 - endif
 - $(info Checking for MSBuild....)
 - ifeq (, $(shell which msbuild))
+- ifeq (forky/sid, $(shell cat /etc/debian_version))
+- $(info Debian Forky system- downloading msbuild if required)
+- ifneq ($(shell test -d packages/MSBuild/15.0/bin && echo 1 || echo 0), 1) 
+-		ifneq ($(shell test -f msbuild.zip && echo 1 || echo 0), 1) 
+-			$(shell wget https\://download-cdn.jetbrains.com/resharper/JetMSBuild.v15.9.20.62856.zip -O msbuild.zip)
+-			$(info MSBuild downloaded)
+-		endif
+- endif
+-  
+- # this is horrid, but makefile gets in a twist if output is enabled
+-  $(shell exec > /dev/null 2>&1 unzip -n $(CURDIR)/msbuild.zip -d $(CURDIR)/packages)
+-  $(info wft)
+-  MSBUILD = ./packages/MSBuild/15.0/bin/MSBuild.exe
+- else
 - $(info msbuild does not appear to be installed on this system.)
 - $(info Please either install the $(green)mono-xbuild$(reset) package provided by your distribution, or the latest version of Mono from $(blue)https://www.mono-project.com/$(reset))
 - $(error )
 - endif
+- endif
 - $(info Checking for nuget....)
 - ifeq (, $(shell which nuget))
+- ifeq (forky/sid, $(shell cat /etc/debian_version))
+- $(info Debian Forky system, downloading nuget if required...)
+-  ifneq ($(shell test -f packages/nuget.exe && echo 1 || echo 0), 1)
+-    $(shell wget https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -O packages/nuget.exe)
+- endif
+- NUGET = ./packages/nuget.exe
+- else
 - $(info nuget does not appear to be installed on this system.)
 - $(info Please either install the $(green)nuget$(reset) package provided by your distribution, or the latest version of Mono from $(blue)https://www.mono-project.com/$(reset))
 - $(error )
+- endif
 - endif
 - $(info nuget Version $(NUGET_VERSION) found.)
 - ifeq "$(call GreaterVersion, $(NUGET_VERSION), $(MIN_NUGET_VERSION))" "$(NUGET_VERSION)"
 - #Nothing
 - else ifeq ($(strip $(NUGET_VERSION)),)
+- ifeq (, $(shell which nuget))
+- $(bash $(NUGET) update)
+-else 
 - $(info Unable to determine the nuget version installed.)
 - $(info OpenBVE requires a minimum nuget version of 2.16- The build will fail with versions below this.)
+- endif
+- else
+- ifeq ("$(NUGET) $(nuget.exe))","")
+- $(shell $(NUGET) update)
 - else
 - $(info OpenBVE requires a minimum nuget version of 2.16)
 - $(info Please run $(red)nuget update -self$(reset) with administrative priveledges.)
 - $(error )
 - endif
+- endif
+- 
 - $(info Attempting to restore nuget packages (This may take a while)....)
 -	
  $(MAC_BUILD_RESULT): all-release
