@@ -1,5 +1,5 @@
 PORTNAME=	docutils
-PORTVERSION=	0.21.2
+PORTVERSION=	0.22.4
 PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
@@ -12,7 +12,7 @@ WWW=		https://docutils.sourceforge.io/
 LICENSE=	BSD2CLAUSE GPLv3+ PD PSFL
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.4<4:devel/py-flit-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.11<4:devel/py-flit-core@${PY_FLAVOR}
 
 USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
