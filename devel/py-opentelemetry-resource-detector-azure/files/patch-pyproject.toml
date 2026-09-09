@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -26,7 +26,7 @@ dependencies = [
+ ]
+ dependencies = [
+   "opentelemetry-sdk ~= 1.21",
+-  "opentelemetry-instrumentation ~= 0.44b0",
++  "opentelemetry-instrumentation >= 0.44b0",
+ ]
+ 
+ [project.entry-points.opentelemetry_resource_detector]
