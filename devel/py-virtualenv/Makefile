@@ -1,5 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	21.7.8
+PORTVERSION=	21.7.9
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distlib>=0.3.7:devel/py-distlib@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.12.2:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.9.1:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-discovery>=1.6.0:devel/py-python-discovery@${PY_FLAVOR}
-# tests: 308 passed, 20 skipped, 2 deselected
+# tests: disabled due to the following error:
+# pluggy._manager.PluginValidationError: Plugin 'black' for hook 'pytest_collect_file'
+# hookimpl definition: pytest_collect_file(file_path, path, parent)
+# Argument(s) {'path'} are declared in the hookimpl but can not be found in the hookspec
+# See: https://github.com/pytest-dev/pytest/issues/14651
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>=7.3.2:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=1.0:devel/py-coverage_enable_subprocess@${PY_FLAVOR} \
@@ -25,10 +29,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.1:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-env>=0.6.2:devel/py-pytest-env@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-freezer>=0.4.9:devel/py-pytest-freezer@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.8.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.10:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-randomly>=3.12:devel/py-pytest-randomly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=2.1.0:devel/py-pytest-timeout@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.8.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.0.4:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=63:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}time-machine>=2.10.0:devel/py-time-machine@${PY_FLAVOR} \
@@ -37,7 +41,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_
 USES=		cpe python
 USE_GITHUB=	yes
 GH_ACCOUNT=	pypa
-USE_PYTHON=	autoplist concurrent pep517 pytest
+USE_PYTHON=	autoplist concurrent pep517 # pytest
 PYTEST_BROKEN_TESTS=	test_build_c_ext.py #   ERROR: Could not find a version that satisfies the requirement setuptools>=40.8.0
 
 # Fix the LookupError: setuptools-scm was unable to detect version (build target)
