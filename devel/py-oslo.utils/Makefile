@@ -1,5 +1,5 @@
 PORTNAME=	oslo.utils
-PORTVERSION=	10.1.1
+PORTVERSION=	10.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=2.1.0:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.13:devel/py-pyyaml@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.11+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
