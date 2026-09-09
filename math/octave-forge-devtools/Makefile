@@ -17,6 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pr0m1th3as
 GH_PROJECT=	octave-llms
 
+BROKEN_arm64=	error: __BYTE_ORDER undefined
+
 CXXFLAGS_amd64=	-mpclmul -msse4.1
 CXXFLAGS_i386=	-mpclmul -msse4.1
 
