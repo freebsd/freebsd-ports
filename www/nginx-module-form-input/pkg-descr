@@ -1,0 +1,6 @@
+The form_input module reads HTTP POST and PUT request bodies encoded
+as application/x-www-form-urlencoded and puts the parsed values into
+nginx variables, using the ngx_devel_kit.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their FORMINPUT option is enabled.
