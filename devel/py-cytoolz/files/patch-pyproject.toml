@@ -1,0 +1,26 @@
+-- Adjust pyproject.toml to build with the setuptools version available in the
+-- FreeBSD ports tree: lower the build-system requirement and use the legacy
+-- PEP 621 license syntax supported by that version, and remove the
+-- license-files key which that version does not support.
+
+--- pyproject.toml.orig	2026-09-09 09:01:44 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ requires = [
+-  "setuptools >=77",
++  "setuptools >=63.1",
+   "cython >=0.29",
+   "setuptools-git-versioning >=2.0",
+ ]
+@@ -12,8 +12,7 @@
+ description = "Cython implementation of Toolz: High performance functional utilities"
+ readme = "README.rst"
+ requires-python = ">=3.9"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text = "BSD-3-Clause"}
+ authors = [
+   { name = "Erik Welch", email = "erik.n.welch@gmail.com" },
+   { name = "CyToolz contributors" },
