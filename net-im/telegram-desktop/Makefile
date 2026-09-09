@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	7.1.5
+DISTVERSION=	7.2.7
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -27,7 +27,8 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		vulkan-headers>0:graphics/vulkan-headers \
 		yasm:devel/yasm \
 		${LOCALBASE}/lib/libtde2e.a:net-im/tde2e \
-		${LOCALBASE}/lib/libtg_owt.a:net-im/tg_owt
+		${LOCALBASE}/lib/libtg_owt.a:net-im/tg_owt \
+		${LOCALBASE}/lib/libtlottie.a:graphics/tlottie
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libada.so:devel/libada \
 		libavformat.so:multimedia/ffmpeg \
@@ -65,7 +66,7 @@ USE_GNOME=	glib20 glibmm26 introspection
 
 CMAKE_ARGS=	-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH} \
 		-DQT_VERSION_MAJOR=6
-# The order of the variables is important here due to complex combination validation 
+# The order of the variables is important here due to complex combination validation
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED \
 		DESKTOP_APP_DISABLE_CRASH_REPORTS \
 		DESKTOP_APP_DISABLE_QT_PLUGINS
