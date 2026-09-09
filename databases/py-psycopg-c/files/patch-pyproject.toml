@@ -1,18 +1,18 @@
---- pyproject.toml.orig	2026-05-01 20:43:36 UTC
+--- pyproject.toml.orig	2026-08-31 19:43:41 UTC
 +++ pyproject.toml
 @@ -5,7 +5,7 @@ requires = [
      #   `[tool.setuptools.ext-modules]` in `pyproject.toml` is still
      #   *experimental* and likely to change in future releases
      #
--    "setuptools == 80.3.1",
+-    "setuptools == 83.0.0",
 +    "setuptools >= 61",
      "wheel >= 0.37",
      "tomli >= 2.0.1; python_version < '3.11'",
  ]
-@@ -25,8 +25,7 @@ version = "3.3.4"
+@@ -25,8 +25,7 @@ version = "3.3.5"
  name = "psycopg-c"
  description = "PostgreSQL database adapter for Python -- C optimisation distribution"
- version = "3.3.4"
+ version = "3.3.5"
 -license = "LGPL-3.0-only"
 -license-files = ["LICENSE.txt"]
 +license = {text = "LGPL-3.0-only"}
