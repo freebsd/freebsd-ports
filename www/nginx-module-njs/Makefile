@@ -1,5 +1,6 @@
 PORTNAME=	nginx-module-njs
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
