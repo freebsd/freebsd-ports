@@ -7,8 +7,10 @@ include/geos/algorithm/BoundaryNodeRule.h
 include/geos/algorithm/CGAlgorithmsDD.h
 include/geos/algorithm/CentralEndpointIntersector.h
 include/geos/algorithm/Centroid.h
+include/geos/algorithm/CircularArcIntersector.h
 include/geos/algorithm/CircularArcs.h
 include/geos/algorithm/ConvexHull.h
+include/geos/algorithm/CurveToLineParams.h
 include/geos/algorithm/Distance.h
 include/geos/algorithm/HCoordinate.h
 include/geos/algorithm/InteriorPointArea.h
@@ -18,6 +20,8 @@ include/geos/algorithm/Interpolate.h
 include/geos/algorithm/Intersection.h
 include/geos/algorithm/Length.h
 include/geos/algorithm/LineIntersector.h
+include/geos/algorithm/LineToCurveConverter.h
+include/geos/algorithm/LineToCurveParams.h
 include/geos/algorithm/MinimumAreaRectangle.h
 include/geos/algorithm/MinimumBoundingCircle.h
 include/geos/algorithm/MinimumDiameter.h
@@ -53,6 +57,7 @@ include/geos/coverage/Corner.h
 include/geos/coverage/CoverageBoundarySegmentFinder.h
 include/geos/coverage/CoverageCleaner.h
 include/geos/coverage/CoverageEdge.h
+include/geos/coverage/CoverageEdges.h
 include/geos/coverage/CoverageGapFinder.h
 include/geos/coverage/CoveragePolygon.h
 include/geos/coverage/CoveragePolygonValidator.h
@@ -131,6 +136,7 @@ include/geos/geom/prep/PreparedPolygonIntersects.h
 include/geos/geom/prep/PreparedPolygonPredicate.h
 include/geos/geom/util/ComponentCoordinateExtracter.h
 include/geos/geom/util/CoordinateOperation.h
+include/geos/geom/util/CurveBuilder.h
 include/geos/geom/util/Densifier.h
 include/geos/geom/util/GeometryCombiner.h
 include/geos/geom/util/GeometryEditor.h
@@ -140,13 +146,16 @@ include/geos/geom/util/GeometryFixer.h
 include/geos/geom/util/GeometryLister.h
 include/geos/geom/util/GeometryMapper.h
 include/geos/geom/util/GeometryTransformer.h
+include/geos/geom/util/LinealExtracter.h
 include/geos/geom/util/LinearComponentExtracter.h
 include/geos/geom/util/NoOpGeometryOperation.h
 include/geos/geom/util/PointExtracter.h
 include/geos/geom/util/PolygonExtracter.h
 include/geos/geom/util/PolygonalExtracter.h
 include/geos/geom/util/ShortCircuitedGeometryVisitor.h
+include/geos/geom/util/SimpleCurveExtracter.h
 include/geos/geom/util/SineStarFactory.h
+include/geos/geom/util/SurfaceExtracter.h
 include/geos/geomgraph/Depth.h
 include/geos/geomgraph/DirectedEdge.h
 include/geos/geomgraph/DirectedEdgeStar.h
@@ -256,8 +265,13 @@ include/geos/linearref/LocationIndexOfPoint.h
 include/geos/linearref/LocationIndexedLine.h
 include/geos/math/DD.h
 include/geos/namespaces.h
+include/geos/noding/ArcIntersectionAdder.h
+include/geos/noding/ArcIntersector.h
+include/geos/noding/ArcNoder.h
+include/geos/noding/ArcString.h
 include/geos/noding/BasicSegmentString.h
 include/geos/noding/BoundaryChainNoder.h
+include/geos/noding/DirectionIndependentArcString.h
 include/geos/noding/FastNodingValidator.h
 include/geos/noding/FastSegmentSetIntersectionFinder.h
 include/geos/noding/GeometryNoder.h
@@ -266,6 +280,8 @@ include/geos/noding/IntersectionFinderAdder.h
 include/geos/noding/IteratedNoder.h
 include/geos/noding/MCIndexNoder.h
 include/geos/noding/MCIndexSegmentSetMutualIntersector.h
+include/geos/noding/NodableArcString.h
+include/geos/noding/NodablePath.h
 include/geos/noding/NodableSegmentString.h
 include/geos/noding/NodedSegmentString.h
 include/geos/noding/Noder.h
@@ -273,6 +289,7 @@ include/geos/noding/NodingIntersectionFinder.h
 include/geos/noding/NodingValidator.h
 include/geos/noding/Octant.h
 include/geos/noding/OrientedCoordinateArray.h
+include/geos/noding/PathString.h
 include/geos/noding/ScaledNoder.h
 include/geos/noding/SegmentExtractingNoder.h
 include/geos/noding/SegmentIntersectionDetector.h
@@ -429,6 +446,9 @@ include/geos/operation/relateng/RelateSegmentString.h
 include/geos/operation/relateng/TopologyComputer.h
 include/geos/operation/relateng/TopologyPredicate.h
 include/geos/operation/sharedpaths/SharedPathsOp.h
+include/geos/operation/spanning/SpanningTree.h
+include/geos/operation/split/GeometrySplitter.h
+include/geos/operation/split/SplitLinealAtPoint.h
 include/geos/operation/union/CascadedPolygonUnion.h
 include/geos/operation/union/CoverageUnion.h
 include/geos/operation/union/DisjointSubsetUnion.h
@@ -469,9 +489,11 @@ include/geos/precision/PointwisePrecisionReducerTransformer.h
 include/geos/precision/PrecisionReducerTransformer.h
 include/geos/precision/SimpleGeometryPrecisionReducer.h
 include/geos/profiler.h
+include/geos/shape/GeometricShapeBuilder.h
 include/geos/shape/fractal/HilbertCode.h
 include/geos/shape/fractal/HilbertEncoder.h
 include/geos/shape/fractal/MortonCode.h
+include/geos/shape/random/RandomPointsBuilder.h
 include/geos/simplify/ComponentJumpChecker.h
 include/geos/simplify/DouglasPeuckerLineSimplifier.h
 include/geos/simplify/DouglasPeuckerSimplifier.h
@@ -518,6 +540,7 @@ include/geos/util/IllegalArgumentException.h
 include/geos/util/IllegalStateException.h
 include/geos/util/Interrupt.h
 include/geos/util/Machine.h
+include/geos/util/Progress.h
 include/geos/util/TopologyException.h
 include/geos/util/UniqueCoordinateArrayFilter.h
 include/geos/util/UnsupportedOperationException.h
@@ -535,5 +558,5 @@ lib/libgeos.so
 lib/libgeos.so.%%PORTVERSION%%
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.20.5
+lib/libgeos_c.so.1.21.0
 libdata/pkgconfig/geos.pc
