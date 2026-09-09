@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-sagemaker
-PORTVERSION=	1.385.0
+PORTVERSION=	1.389.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
