@@ -1,6 +1,5 @@
 PORTNAME=	authlib
-PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}joserfc>=1.6.0:security/py-joserfc@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}joserfc>=1.6.1:security/py-joserfc@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cryptography pep517
