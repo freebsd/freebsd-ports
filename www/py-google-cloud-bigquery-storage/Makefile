@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-bigquery-storage
-PORTVERSION=	2.40.0
+PORTVERSION=	2.41.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,10 +30,12 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	FASTAVRO PANDAS PYARROW
 FASTAVRO_DESC=	Avro support via fastavro
 PANDAS_DESC=	DataFrame support via pandas
+PANDAS_IMPLIES=	PYARROW
 PYARROW_DESC=	Apache Arrow support via pyarrow
 
-FASTAVRO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastavro>=1.1.0:textproc/py-fastavro@${PY_FLAVOR}
-PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.1.3,1:math/py-pandas@${PY_FLAVOR}
+FASTAVRO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastavro>=1.1.0<2.0.0:textproc/py-fastavro@${PY_FLAVOR}
+PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.1.3,1<3.0.0,1:math/py-pandas@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandas-gbq>=0.35.1<2.0.0:math/py-pandas-gbq@${PY_FLAVOR}
 PYARROW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyarrow>=3.0.0:databases/py-pyarrow@${PY_FLAVOR}
 
 .include <bsd.port.mk>
