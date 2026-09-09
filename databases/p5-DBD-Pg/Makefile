@@ -1,13 +1,9 @@
 PORTNAME=	DBD-Pg
-PORTVERSION=	3.20.2
-PORTREVISION=	1
+PORTVERSION=	3.21.2
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TURNSTEP
 PKGNAMEPREFIX=	p5-
-
-PATCH_SITES=	https://github.com/bucardo/dbdpg/commit/
-PATCHFILES=	c78eb5aabb203c7dadc838f9d60c9202527260fd.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
