@@ -1,5 +1,5 @@
 PORTNAME=	RVVM
-PORTVERSION=	0.7.g20260226
+PORTVERSION=	0.7.g20260826
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/LekKit/patches-misc/releases/download/rvvm-uboot-2024.7/:fw \
 		https://github.com/LekKit/riscv-tests/releases/download/rvvm-tests/:tests
@@ -26,7 +26,7 @@ nox11_PKGNAMESUFFIX=	-devel-nox11
 USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	LekKit
-GH_TAGNAME=	44b1f500987041d07a8f313ad524b8509868997b
+GH_TAGNAME=	a662c0edd507b4e04f20d44490c514b683007ae7
 USE_LDCONFIG=	yes
 
 BUILDDIR=	${WRKDIR}/.build
@@ -39,6 +39,8 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	FDT FPU GDBSTUB JIT JNI LOCK_DEBUG NET PCI RV64 RVV SOUND
 OPTIONS_DEFAULT=	FDT FPU JIT JNI LOCK_DEBUG NET PCI RV64
+# src/bindings/jni/rvvm_jni.c:8:10: fatal error: 'devices/riscv-aclint.h' file not found
+OPTIONS_EXCLUDE=	JNI
 FDT_DESC=	enable automatic FDT generation
 FPU_DESC=	enable floating point (F/D) CPU extension
 GDBSTUB_DESC=	enable GDB remote protocol support
@@ -77,9 +79,7 @@ MAKE_ENV+=	USE_DEBUG=1
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rvvm
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librvvm.so
-	${MV} ${STAGEDIR}${PREFIX}/lib/librvvm.so ${STAGEDIR}${PREFIX}/lib/librvvm.so.0
-	${RLN} ${STAGEDIR}${PREFIX}/lib/librvvm.so.0 ${STAGEDIR}${PREFIX}/lib/librvvm.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librvvm.so.0.0
 	${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in ${FWFILES}
 	${INSTALL_DATA} ${_DISTDIR}/$f ${STAGEDIR}${DATADIR}/
@@ -89,5 +89,8 @@ pre-test:
 	@${ECHO_MSG} "=====> Make sure the port is installed before the test suite is run!"
 	@${RM} -r ${BUILDDIR}/riscv-tests
 	@${TAR} -C ${BUILDDIR} -xf ${_DISTDIR}/riscv-tests.tar.gz
+
+post-test:
+	@tput me || true
 
 .include <bsd.port.post.mk>
