@@ -1,5 +1,5 @@
 PORTNAME=	sundials
-DISTVERSION=	7.7.0
+DISTVERSION=	7.9.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/LLNL/sundials/releases/download/v${DISTVERSION}/
 
@@ -84,7 +84,6 @@ SUPERLUMT_CMAKE_BOOL=	ENABLE_SUPERLUMT
 SUPERLUMT_CMAKE_ON=	-DSUPERLUMT_INCLUDE_DIR=${LOCALBASE}/include/superlu_mt \
 			-DSUPERLUMT_LIBRARY_DIR=${LOCALBASE}/lib
 SUPERLUMT_LIB_DEPENDS=	libsuperlu_mt_PTHREAD.so:math/superlu-mt
-
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/sundials/LICENSE
