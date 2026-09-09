@@ -1,5 +1,5 @@
 PORTNAME=	camel-converter
-DISTVERSION=	5.1.0
+DISTVERSION=	5.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,9 +21,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as of 5.1.0:
-# Results (0.15s):
-#        139 passed
-#          2 skipped
+# tests as of 5.1.1: 76 passed, 2 skipped in 0.23s
 
 .include <bsd.port.mk>
