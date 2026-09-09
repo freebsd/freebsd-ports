@@ -1,7 +1,6 @@
 PORTNAME=	corepack
-PORTVERSION=	0.35.0
+PORTVERSION=	0.36.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nodejs/corepack/releases/download/v${PORTVERSION}/
 DIST_SUBDIR=	corepack/${PORTVERSION}
