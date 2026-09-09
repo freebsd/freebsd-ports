@@ -1,5 +1,5 @@
 PORTNAME=	urllib3-future
-PORTVERSION=	2.24.903
+PORTVERSION=	2.24.906
 CATEGORIES=	net python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/urllib3.future/releases/download/${PORTVERSION}/
@@ -31,7 +31,7 @@ WS_DESC=	WebSockets support
 
 BROTLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.9:archivers/py-brotli@${PY_FLAVOR}
 SOCKS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-socks>=2.0<2.8.1_99:net/py-python-socks@${PY_FLAVOR}
-QH3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qh3>=1.5.4<2.0.0:www/py-qh3@${PY_FLAVOR}
+QH3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qh3>=1.5.4<3.0.0:www/py-qh3@${PY_FLAVOR}
 RTLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rtls>=0:security/py-rtls@${PY_FLAVOR}
 UTLS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.2.0:archivers/py-brotli@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}utls>=0:security/py-utls@${PY_FLAVOR}
