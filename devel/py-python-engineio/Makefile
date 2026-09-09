@@ -1,5 +1,5 @@
 PORTNAME=	python-engineio
-PORTVERSION=	4.13.5
+PORTVERSION=	4.14.0
 CATEGORIES=	devel net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,9 @@ DISTNAME=	python_engineio-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python implementation of the Engine.IO realtime client and server
-WWW=		https://github.com/miguelgrinberg/python-engineio
+WWW=		https://python-engineio.readthedocs.io/en/stable/ \
+		https://code.miguelgrinberg.com/miguelgrinberg/python-engineio \
+		https://github.com/miguelgrinberg/python-engineio
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
