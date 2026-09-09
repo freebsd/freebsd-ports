@@ -1,6 +1,6 @@
---- electron/lib/browser/rpc-server.ts.orig	2026-06-03 19:18:10 UTC
+--- electron/lib/browser/rpc-server.ts.orig	2026-09-08 07:41:45 UTC
 +++ electron/lib/browser/rpc-server.ts
-@@ -33,7 +33,7 @@ const allowedClipboardMethods = (() => {
+@@ -38,7 +38,7 @@ const allowedClipboardMethods = (() => {
    switch (process.platform) {
      case 'darwin':
        return new Set(['readFindText', 'writeFindText']);
