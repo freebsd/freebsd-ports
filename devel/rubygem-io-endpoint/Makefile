@@ -1,5 +1,5 @@
 PORTNAME=	io-endpoint
-PORTVERSION=	0.17.2
+PORTVERSION=	0.18.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,8 @@ WWW=		https://socketry.github.io/io-endpoint/ \
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
+
+RUN_DEPENDS=	rubygem-openssl>=3.3.0:security/rubygem-openssl
 
 USES=		gem
 
