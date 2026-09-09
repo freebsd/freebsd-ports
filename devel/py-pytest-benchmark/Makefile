@@ -1,5 +1,5 @@
 PORTNAME=	pytest-benchmark
-PORTVERSION=	5.2.3
+PORTVERSION=	5.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,14 +7,15 @@ DISTNAME=	pytest_benchmark-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	pytest fixture for benchmarking code
-WWW=		https://github.com/ionelmc/pytest-benchmark
+WWW=		https://pytest-benchmark.readthedocs.io/ \
+		https://github.com/ionelmc/pytest-benchmark
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=30.3.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-cpuinfo>=0:sysutils/py-py-cpuinfo@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-cpuinfo2>=10.1:sysutils/py-py-cpuinfo2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=8.1,1:devel/py-pytest@${PY_FLAVOR}
 TEST_DEPENDS=	git:devel/git \
 		hg:devel/mercurial \
