@@ -1,13 +1,23 @@
---- Cargo.toml.orig	1970-01-01 00:00:00 UTC
+--- Cargo.toml.orig	2006-07-24 01:21:28 UTC
 +++ Cargo.toml
-@@ -14,8 +14,8 @@ crate-type = ["cdylib"]
- crate-type = ["cdylib"]
+@@ -27,13 +27,15 @@ default = [
+   "lz4",
+   "bzip2",
+   "brotli",
+-  "xz",
++  "xz-shared",
+   "zstd",
+-  "gzip",
+-  "zlib",
+-  "deflate",
++  "gzip-shared",
++  "zlib-shared",
++  "deflate-shared",
++  "use-system-blosc2-shared",
++  "use-system-isal-shared",
+ ]
+-experimental = ["blosc2", "igzip", "ideflate", "izlib"]
++experimental = ["blosc2-shared", "use-system-blosc2-shared", "igzip-shared", "ideflate-shared", "izlib-shared", "use-system-isal-shared"]
  
- [features]
--default                  = ["extension-module", "snappy", "lz4", "bzip2", "brotli", "xz", "zstd", "gzip", "zlib", "deflate"]
--experimental             = ["blosc2", "igzip", "ideflate", "izlib"]
-+default                  = ["extension-module", "snappy", "lz4", "bzip2", "brotli", "xz-shared", "zstd", "gzip-shared", "zlib-shared", "deflate-shared", "use-system-blosc2-shared", "use-system-isal-shared"]
-+experimental             = ["blosc2-shared", "use-system-blosc2-shared", "igzip-shared", "ideflate-shared", "izlib-shared", "use-system-isal-shared"]
+ extension-module = ["pyo3/extension-module"]
  
- extension-module         = ["pyo3/extension-module"]
- generate-import-lib      = ["pyo3/generate-import-lib"]  # needed for Windows PyPy builds
