@@ -1,6 +1,6 @@
 PORTNAME=	y509
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.4
+DISTVERSION=	1.2.0
 CATEGORIES=	security
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -19,6 +19,7 @@ GO_LDFLAGS=	-X ${GO_MODULE}/internal/version.Version=${DISTVERSION}
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/bash_completion.d/${PORTNAME} \
 		share/fish/completions/${PORTNAME}.fish \
+		share/man/man1/${PORTNAME}.1.gz \
 		share/zsh/site-functions/_${PORTNAME}
 
 post-build:
@@ -31,6 +32,7 @@ post-build:
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
 		${STAGEDIR}${PREFIX}/share/fish/completions \
+		${STAGEDIR}${PREFIX}/share/man/man1 \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${GO_WRKSRC}/completions/${PORTNAME}.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
@@ -38,5 +40,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
 	${INSTALL_DATA} ${GO_WRKSRC}/completions/${PORTNAME}.zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>
