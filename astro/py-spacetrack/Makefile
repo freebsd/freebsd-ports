@@ -1,5 +1,5 @@
 PORTNAME=	spacetrack
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	astro python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,14 +13,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=3.17.0:sysutils/py-filelock@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=4.12:devel/py-anyio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}filelock>=3.17.0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx2>=2.9.1:www/py-httpx2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}logbook>=1.10.1:devel/py-logbook@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}outcome>=1.3.0:devel/py-outcome@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.3.6:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}represent>=2.1:devel/py-represent@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rush>=2021.4.0:devel/py-rush@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sniffio>=1.3.1:devel/py-sniffio@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}rush>=2021.4.0:devel/py-rush@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=7.6.12:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0.25.3:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-trio>=0.8.0:devel/py-pytest-trio@${PY_FLAVOR} \
