@@ -1094,6 +1094,7 @@
     SUBDIR += py-osqp
     SUBDIR += py-pandas
     SUBDIR += py-pandas-datareader
+    SUBDIR += py-pandas-gbq
     SUBDIR += py-pandas-stubs
     SUBDIR += py-patsy
     SUBDIR += py-pcodec
