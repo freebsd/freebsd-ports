@@ -1,5 +1,5 @@
 PORTNAME=	pgcli
-PORTVERSION=	4.5.0
+PORTVERSION=	4.6.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cli-helpers>=2.4.0:devel/py-cli-helpers@${PY
 		${PYTHON_PKGNAMEPREFIX}psycopg>=3.0.14:databases/py-psycopg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.9:devel/py-setproctitle@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.3.0<0.6:databases/py-sqlparse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.3.0<0.7:databases/py-sqlparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=5.2:devel/py-tzlocal@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect@${PY_FLAVOR} \
