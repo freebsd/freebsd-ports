@@ -1,6 +1,6 @@
-TIMESTAMP = 1787588288
-SHA256 (commonmarker-2.9.0.gem) = 9cf7848393bd56f0c34407b81c147568994048922cb05a50caca464d680607d2
-SIZE (commonmarker-2.9.0.gem) = 31744
+TIMESTAMP = 1788500600
+SHA256 (commonmarker-2.10.0.gem) = 1884529957bf59bcd4f19fcc29e931f2042760ced273353e8010a20fe4ae68cb
+SIZE (commonmarker-2.10.0.gem) = 33280
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
