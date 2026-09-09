@@ -1,6 +1,5 @@
 PORTNAME=	pyproject-fmt
-PORTVERSION=	2.28.0
-PORTREVISION=	1
+PORTVERSION=	2.29.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,13 +15,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.14.1:devel/py-maturin@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}toml-fmt-common>=0:devel/py-toml-fmt-common@${PY_FLAVOR}
 
 USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 WRKSRC=		${WRKDIR}/pyproject_fmt-${PORTVERSION}
 
 .include <bsd.port.mk>
