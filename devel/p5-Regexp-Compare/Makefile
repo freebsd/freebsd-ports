@@ -1,5 +1,5 @@
 PORTNAME=	Regexp-Compare
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VBAR
@@ -20,8 +20,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} >= 504300
-BROKEN=		requires perl 5.40 up to 5.42
+.if ${PERL_LEVEL} >= 504500
+BROKEN=		requires perl 5.40 up to 5.44
 .endif
 
 .include <bsd.port.post.mk>
