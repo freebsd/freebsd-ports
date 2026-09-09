@@ -1,5 +1,5 @@
 PORTNAME=	nvc
-DISTVERSION=	1.21.1
+DISTVERSION=	1.22.1
 CATEGORIES=	cad
 MASTER_SITES=	https://www.nickg.me.uk/files/
 
@@ -55,6 +55,6 @@ LLVM_VERSION=	${LLVM_DEFAULT}
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -name "*.so" | ${XARGS} ${STRIP_CMD}
 
-# tests as of 1.21.1: All 2 tests passed
+# tests as of 1.22.1: All 2 tests passed
 
 .include <bsd.port.mk>
