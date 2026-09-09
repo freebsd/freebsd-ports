@@ -1,6 +1,6 @@
-TIMESTAMP = 1787587996
-SHA256 (cryptography-50.0.0.tar.gz) = eeac2acb5a20ed25e0ad6d1df9891a520b78b404266b6d11778f25d5d691a6c9
-SIZE (cryptography-50.0.0.tar.gz) = 880201
+TIMESTAMP = 1788500280
+SHA256 (cryptography-50.0.1.tar.gz) = 5dd9bda1c12b4162f6ff568eeb5e0ff956c28d14406e875cfe8a63a2d414ff20
+SIZE (cryptography-50.0.1.tar.gz) = 880381
 SHA256 (rust/crates/asn1-0.24.1.crate) = c9795210620c0cb3f9a7ce4f882808c38e1ef7b347c90591dceae0886e031fb1
 SIZE (rust/crates/asn1-0.24.1.crate) = 50502
 SHA256 (rust/crates/asn1_derive-0.24.1.crate) = 909e307f1cc32bb8bccbd98f446e6d1bf03fa30f7b53a4337da7181ad30fa11a
