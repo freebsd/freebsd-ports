@@ -2,8 +2,7 @@
 # being overriden by devel/appstream-qt slave port
 
 PORTNAME?=	AppStream
-DISTVERSION=	1.1.2
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
@@ -16,6 +15,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	bash-completion>0:shells/bash-completion \
 		docbook-xsl>=0:textproc/docbook-xsl \
+		docbook-xsl-ns>=0:textproc/docbook-xsl-ns \
 		gperf>0:devel/gperf \
 		itstool:textproc/itstool \
 		lmdb0>0:databases/lmdb0
@@ -23,7 +23,8 @@ LIB_DEPENDS?=	libcurl.so:ftp/curl \
 		libstemmer.so:textproc/snowballstemmer \
 		libxmlb.so:textproc/libxmlb \
 		libfyaml.so:textproc/libfyaml \
-		libzstd.so:archivers/zstd
+		libwayland-client.so:graphics/wayland \
+		libzstd.so:archivers/zstd \
 
 USES+=		gettext gnome localbase:ldflags meson pkgconfig \
 		python:build tar:xz vala:build
