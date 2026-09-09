@@ -1,3 +1,32 @@
+  <vuln vid="6a6ddb1d-ac6b-11f1-982d-3c7c3fba4204">
+    <topic>CrowdSec -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>crowdsec</name>
+	  <range><lt>1.8.0</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The CrowdSec Team reports:</p>
+	<blockquote cite="https://github.com/crowdsecurity/crowdsec/releases/tag/v1.8.0">
+	  <ul>
+	    <li><a href="https://github.com/crowdsecurity/crowdsec/security/advisories/GHSA-g2x2-jgfg-pg7g">[GHSA-g2x2-jgfg-pg7g]</a>: HTTP acquisition datasource lacks a decompressed body cap and trusts Content-Length.</li>
+	    <li><a href="https://github.com/crowdsecurity/crowdsec/security/advisories/GHSA-rh69-4vqj-9gj8">[GHSA-rh69-4vqj-9gj8]</a>: Unbounded request-body read in kubernetes-audit acquisition webhook.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/crowdsecurity/crowdsec/security/advisories/GHSA-g2x2-jgfg-pg7g</url>
+      <url>https://github.com/crowdsecurity/crowdsec/security/advisories/GHSA-rh69-4vqj-9gj8</url>
+    </references>
+    <dates>
+      <discovery>2026-08-31</discovery>
+      <entry>2026-09-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e7726f5e-a9d0-11f1-93c7-8447094a420f">
     <topic>Roundcube -- Multiple vulnerabilities</topic>
     <affects>
