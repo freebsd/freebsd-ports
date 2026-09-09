@@ -1,9 +1,8 @@
 PORTNAME=	mediamtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.20.1
-PORTREVISION=	1
+DISTVERSION=	1.21.0
 CATEGORIES=	multimedia net
-MASTER_SITES+=	https://github.com/video-dev/hls.js/releases/download/v1.7.0/:hlsjs
+MASTER_SITES+=	https://github.com/video-dev/hls.js/releases/download/v1.7.2/:hlsjs
 DISTFILES+=	release.zip:hlsjs
 
 MAINTAINER=	diizzy@FreeBSD.org
