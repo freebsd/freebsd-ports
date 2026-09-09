@@ -113,5 +113,7 @@ lib/ssl/cmake/shared/ssl-targets.cmake
 lib/ssl/cmake/ssl-config.cmake
 libdata/pkgconfig/aws-lc.pc
 libdata/pkgconfig/libcrypto-awslc.pc
+libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl-awslc.pc
+libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/openssl.pc
