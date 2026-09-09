@@ -1,0 +1,13 @@
+--- src/libs/loguru/CMakeLists.txt.orig	2026-08-26 12:24:41 UTC
++++ src/libs/loguru/CMakeLists.txt
+@@ -9,6 +9,10 @@ endif()
+ 	target_link_options(dosbox PRIVATE "-rdynamic")
+ endif()
+ 
++if (BSD)
++	target_link_libraries(loguru PRIVATE execinfo)
++endif()
++
+ if (NOT MSVC)
+ 	set_source_files_properties(loguru.cpp
+                                     PROPERTIES COMPILE_OPTIONS
