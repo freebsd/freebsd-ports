@@ -1,6 +1,5 @@
 PORTNAME=	nginx-module-cache-purge
-DISTVERSION=	3.0.2
-PORTREVISION=	1
+DISTVERSION=	3.0.2.20260524
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -13,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	nginx-modules
 GH_PROJECT=	ngx_cache_purge
+GH_TAGNAME=	285354eddd56
 
 NO_ARCH=	yes
 NO_BUILD=	yes
