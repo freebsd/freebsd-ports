@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-07-27 19:32:18 UTC
++++ pyproject.toml
+@@ -15,8 +15,7 @@ readme = "README.rst"
+     "rasterio",
+ ]
+ readme = "README.rst"
+-license = "Apache-2.0"
+-license-files = ["LICENSE*", "AUTHORS.rst"]
++license = {text = "Apache"}
+ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Intended Audience :: Developers",
