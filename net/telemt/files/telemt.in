@@ -16,6 +16,10 @@
 # telemt_gid: The group account used to own files created by this script.
 #		Default:  "telemt"
 #
+# telemt_data_dir: Working directory for runtime data files. This value
+#		overrides general.data_path from the configuration file.
+#		Default:  "/var/db/telemt"
+#
 # telemt_flags: Additional flags to pass to the telemt daemon.
 #		Default:  "--syslog"
 #
@@ -30,12 +34,14 @@ load_rc_config ${name}
 : ${telemt_config:="/usr/local/etc/telemt/config.toml"}
 : ${telemt_uid:="telemt"}
 : ${telemt_gid:="telemt"}
+: ${telemt_data_dir:="/var/db/telemt"}
 : ${telemt_flags:="--syslog"}
 
 pidfile="/var/run/telemt/telemt.pid"
+telemt_chdir="${telemt_data_dir}"
 
 command="/usr/local/bin/telemt"
-command_args="--daemon --pid-file ${pidfile} --run-as-user ${telemt_uid} --run-as-group ${telemt_gid} ${telemt_config}"
+command_args="--daemon --working-dir ${telemt_data_dir} --pid-file ${pidfile} --run-as-user ${telemt_uid} --run-as-group ${telemt_gid} ${telemt_config}"
 
 start_precmd="${name}_prestart"
 extra_commands="reload"
