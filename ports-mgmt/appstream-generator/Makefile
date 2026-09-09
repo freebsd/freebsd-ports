@@ -1,10 +1,7 @@
 PORTNAME=	appstream-generator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.2
-PORTREVISION=	5
+DISTVERSION=	1.0.0
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	LOCAL/arrowd/:assets
-DISTFILES=	${_ASSETS_DISTNAME}${EXTRACT_SUFX}:assets
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Fast AppStream metadata generator
@@ -17,7 +14,9 @@ BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json \
 		inja>=3:devel/inja \
 		catch2>0:devel/catch2 \
 		${LOCALBASE}/include/__generator.hpp:devel/stdgenerator \
-		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+		${LOCALBASE}/lib/cmake/quill/quill-config.cmake:devel/quill \
+		docbook-xsl-ns>=0:textproc/docbook-xsl-ns
 LIB_DEPENDS=	libappstream.so:devel/appstream \
 		libappstream-compose.so:devel/appstream-compose \
 		libCatch2.so:devel/catch2 \
@@ -44,11 +43,6 @@ CFLAGS+=	-fexperimental-library
 
 DATADIR=	${PREFIX}/share/appstream
 OPTIONS_SUB=	yes
-# only needed to fool meson
-BINARY_ALIAS=	npm=true
-
-_ASSETS_DISTNAME=${PORTNAME}-js-assets-${_ASSETS_VERSION}
-_ASSETS_VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -64,14 +58,5 @@ post-install:
 	@${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/poudriere.d/hooks
 	${INSTALL_SCRIPT} ${PATCHDIR}/poudriere-hook-bulk.sh \
 		${STAGEDIR}${PREFIX}/etc/poudriere.d/hooks/appstream-post-bulk.sh.sample
-
-repackage-js:
-	pkg info npm > /dev/null
-	cd ${WRKSRC}/contrib/setup && ./build_js.sh
-	cd ${WRKDIR} && ${TAR} -czf /tmp/${_ASSETS_DISTNAME}${EXTRACT_SUFX} \
-		${WRKSRC:T}/data/templates/default/static/js
-	@cd /tmp && sha256 ${_ASSETS_DISTNAME}${EXTRACT_SUFX} \
-		&& ${ECHO_CMD} -n "SIZE (${_ASSETS_DISTNAME}${EXTRACT_SUFX}) = " \
-		&& ${STAT} -f %z ${_ASSETS_DISTNAME}${EXTRACT_SUFX} \
 
 .include <bsd.port.post.mk>
