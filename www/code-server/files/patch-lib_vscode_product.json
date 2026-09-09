@@ -1,8 +1,8 @@
 --- lib/vscode/product.json.orig
 +++ lib/vscode/product.json
-@@ -147,14 +147,7 @@
- 		"tokenEntitlementUrl": "https://api.github.com/copilot_internal/v2/token",
- 		"mcpRegistryDataUrl": "https://api.github.com/copilot/mcp_registry"
+@@ -154,17 +154,7 @@
+ 		"mcpRegistryDataUrl": "https://api.github.com/copilot/mcp_registry",
+ 		"managedSettingsUrl": "https://api.github.com/copilot_internal/managed_settings"
  	},
 -	"trustedExtensionAuthAccess": {
 -		"github": [
@@ -10,19 +10,12 @@
 -		],
 -		"github-enterprise": [
 -			"GitHub.copilot-chat"
+-		],
+-		"microsoft": [
+-			"vscode.github-authentication"
 -		]
 -	},
 +	"trustedExtensionAuthAccess": {},
  	"onboardingKeymaps": [
  		{
  			"id": "vscode",
-@@ -230,8 +223,6 @@
- 			"type": "light"
- 		}
- 	],
--	"builtInExtensionsEnabledWithAutoUpdates": [
--		"GitHub.copilot-chat"
--	],
-+	"builtInExtensionsEnabledWithAutoUpdates": [],
- 	"sessionsWindowAllowedExtensions": []
- }
