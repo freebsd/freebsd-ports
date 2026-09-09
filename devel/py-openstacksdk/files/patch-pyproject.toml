@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-05-18 09:35:04 UTC
+--- pyproject.toml.orig	2026-09-01 00:21:56 UTC
 +++ pyproject.toml
 @@ -9,7 +9,7 @@ readme = {file = "README.rst", content-type = "text/x-
      {name = "OpenStack", email = "openstack-discuss@lists.openstack.org"},
@@ -6,6 +6,6 @@
  readme = {file = "README.rst", content-type = "text/x-rst"}
 -license = "Apache-2.0"
 +license = {text = "Apache-2.0"}
- dynamic = ["version", "dependencies"]
- requires-python = ">=3.10"
- classifiers = [
+ dynamic = ["version"]
+ dependencies = [
+     "cryptography>=2.7", # BSD/Apache-2.0
