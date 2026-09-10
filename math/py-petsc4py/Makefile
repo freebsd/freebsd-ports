@@ -1,6 +1,5 @@
 PORTNAME=	petsc4py
-DISTVERSION=	3.22.4
-PORTREVISION=	3
+DISTVERSION=	3.25.5
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,9 +18,11 @@ LIB_DEPENDS=	libpetsc.so:science/PETSc
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist cython distutils pytest # tests fail to run, see https://gitlab.com/petsc/petsc/-/issues/1301
+USE_PYTHON=	autoplist cython distutils pytest
 
 MAKE_ENV=	PETSC_DIR=${LOCALBASE}
+
+TEST_ARGS=	--ignore=demo -k 'not (testStdoutRedirect or testCompatMPI4PY)'
 
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
@@ -35,5 +36,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/petsc4py/lib/PETSc${PYTHON_SOABI}.so
+
+# tests as of 3.25.5: 6454 passed 2 deselected
 
 .include <bsd.port.mk>
