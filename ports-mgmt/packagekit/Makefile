@@ -1,6 +1,5 @@
 PORTNAME=	PackageKit
-PORTVERSION=	1.3.6
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	https://www.freedesktop.org/software/PackageKit/releases/
 
@@ -11,7 +10,8 @@ WWW=		https://www.freedesktop.org/software/PackageKit/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+		docbook-xsl-ns>=0:textproc/docbook-xsl-ns \
 		vapigen:lang/vala \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpolkit-gobject-1.so:sysutils/polkit \
 		libpkg.so:${PKG_ORIGIN}
 RUN_DEPENDS=	console-kit-daemon:sysutils/consolekit2
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		cpe dbus-testing gettext gnome meson pkgconfig \
 		python shebangfix sqlite:3 tar:xz
@@ -36,17 +37,10 @@ MESON_ARGS=	-Dsysconfdir=${PREFIX}/etc \
 		-Dbash_completion=false -Dbash_command_not_found=false \
 		-Dgstreamer_plugin=false
 
-OPTIONS_DEFINE=	LOCAL_CHECKOUT
-
-LOCAL_CHECKOUT_DESC=		Support running tests (not for production use)
-LOCAL_CHECKOUT_TEST_DEPENDS=	bash:shells/bash
-LOCAL_CHECKOUT_MESON_TRUE=	local_checkout
-
 post-patch:
-	${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl-ns/current/|${LOCALBASE}/share/xsl/docbook/|g' \
-		${WRKSRC}/client/meson.build
-	${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/|${LOCALBASE}/share/xsl/docbook/|g' \
-		${WRKSRC}/client/pkcon/meson.build
+# allow tests to run
+	${REINPLACE_CMD} -e 's|/usr/share/|${LOCALBASE}/share|g' \
+		${WRKSRC}/tests/runner/run-daemon-test.py
 
 post-install:
 	${MV} ${STAGEDIR}/var/lib/PackageKit/transactions.db ${STAGEDIR}/var/lib/PackageKit/transactions.db.sample
