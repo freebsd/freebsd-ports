@@ -14,13 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+USES=		python dos2unix
+USE_PYTHON=	distutils autoplist pytest
 NO_ARCH=	yes
 
-do-test:
-	@(cd ${WRKSRC} && \
-		${PYTHON_CMD} test_pathlib2.py && \
-		${PYTHON_CMD} test_pathlib2_with_py2_unicode_literals.py)
+DOS2UNIX_FILES=	tests/test_pathlib2.py
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKDIR=	${WRKSRC}/tests
+
+# tests as of 2.3.7: 313 passed, 115 skipped in 0.65s
 
 .include <bsd.port.mk>
