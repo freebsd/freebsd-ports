@@ -14,7 +14,8 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	${JAVAJARDIR}/jackson-annotations.jar:devel/jackson-annotations \
 		${JAVAJARDIR}/jackson-core.jar:devel/jackson-core
 
-USES=		java:run
+USES=		cpe java:run
+CPE_VENDOR=	fasterxml
 JAVA_VERSION=	8+
 
 NO_ARCH=	yes
