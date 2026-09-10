@@ -11,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gmake
+CPE_VENDOR=	kadnode_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	mwarning
 GH_PROJECT=	KadNode
