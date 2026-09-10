@@ -10,6 +10,7 @@ include/KF6/KDAV/KDAV/DavItemCreateJob
 include/KF6/KDAV/KDAV/DavItemDeleteJob
 include/KF6/KDAV/KDAV/DavItemFetchJob
 include/KF6/KDAV/KDAV/DavItemModifyJob
+include/KF6/KDAV/KDAV/DavItemMoveJob
 include/KF6/KDAV/KDAV/DavItemsFetchJob
 include/KF6/KDAV/KDAV/DavItemsListJob
 include/KF6/KDAV/KDAV/DavJobBase
@@ -33,6 +34,7 @@ include/KF6/KDAV/kdav/davitemcreatejob.h
 include/KF6/KDAV/kdav/davitemdeletejob.h
 include/KF6/KDAV/kdav/davitemfetchjob.h
 include/KF6/KDAV/kdav/davitemmodifyjob.h
+include/KF6/KDAV/kdav/davitemmovejob.h
 include/KF6/KDAV/kdav/davitemsfetchjob.h
 include/KF6/KDAV/kdav/davitemslistjob.h
 include/KF6/KDAV/kdav/davjobbase.h

@@ -30,7 +30,6 @@ lib/libexec/kf6/purposeprocess
 %%QT_PLUGINDIR%%/kf6/purpose/kdeconnectplugin.so
 %%QT_PLUGINDIR%%/kf6/purpose/kdeconnectsmsplugin.so
 %%QT_PLUGINDIR%%/kf6/purpose/nextcloudplugin.so
-%%QT_PLUGINDIR%%/kf6/purpose/pastebinplugin.so
 %%QT_PLUGINDIR%%/kf6/purpose/phabricatorplugin.so
 %%QT_PLUGINDIR%%/kf6/purpose/reviewboardplugin.so
 %%QT_PLUGINDIR%%/kf6/purpose/saveasplugin.so
@@ -81,7 +80,6 @@ share/locale/ar/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ar/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ar/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ar/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ar/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ar/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ar/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ar/LC_MESSAGES/purpose6_saveas.mo
@@ -95,7 +93,6 @@ share/locale/ast/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ast/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ast/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ast/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ast/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ast/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ast/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ast/LC_MESSAGES/purpose6_saveas.mo
@@ -109,7 +106,6 @@ share/locale/az/LC_MESSAGES/purpose6_imgur.mo
 share/locale/az/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/az/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/az/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/az/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/az/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/az/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/az/LC_MESSAGES/purpose6_saveas.mo
@@ -123,7 +119,6 @@ share/locale/bg/LC_MESSAGES/purpose6_imgur.mo
 share/locale/bg/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/bg/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/bg/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/bg/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/bg/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/bg/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/bg/LC_MESSAGES/purpose6_saveas.mo
@@ -137,7 +132,6 @@ share/locale/ca/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ca/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ca/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ca/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ca/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ca/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ca/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ca/LC_MESSAGES/purpose6_saveas.mo
@@ -151,7 +145,6 @@ share/locale/ca@valencia/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ca@valencia/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ca@valencia/LC_MESSAGES/purpose6_saveas.mo
@@ -165,7 +158,6 @@ share/locale/cs/LC_MESSAGES/purpose6_imgur.mo
 share/locale/cs/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/cs/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/cs/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/cs/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/cs/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/cs/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/cs/LC_MESSAGES/purpose6_saveas.mo
@@ -178,7 +170,6 @@ share/locale/da/LC_MESSAGES/purpose6_imgur.mo
 share/locale/da/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/da/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/da/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/da/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/da/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/da/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/da/LC_MESSAGES/purpose6_saveas.mo
@@ -192,7 +183,6 @@ share/locale/de/LC_MESSAGES/purpose6_imgur.mo
 share/locale/de/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/de/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/de/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/de/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/de/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/de/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/de/LC_MESSAGES/purpose6_saveas.mo
@@ -206,7 +196,6 @@ share/locale/el/LC_MESSAGES/purpose6_imgur.mo
 share/locale/el/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/el/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/el/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/el/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/el/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/el/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/el/LC_MESSAGES/purpose6_saveas.mo
@@ -220,7 +209,6 @@ share/locale/en_GB/LC_MESSAGES/purpose6_imgur.mo
 share/locale/en_GB/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/en_GB/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/en_GB/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/en_GB/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/en_GB/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/en_GB/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/en_GB/LC_MESSAGES/purpose6_saveas.mo
@@ -234,7 +222,6 @@ share/locale/eo/LC_MESSAGES/purpose6_imgur.mo
 share/locale/eo/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/eo/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/eo/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/eo/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/eo/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/eo/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/eo/LC_MESSAGES/purpose6_saveas.mo
@@ -248,7 +235,6 @@ share/locale/es/LC_MESSAGES/purpose6_imgur.mo
 share/locale/es/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/es/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/es/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/es/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/es/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/es/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/es/LC_MESSAGES/purpose6_saveas.mo
@@ -261,7 +247,6 @@ share/locale/et/LC_MESSAGES/purpose6_imgur.mo
 share/locale/et/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/et/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/et/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/et/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/et/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/et/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/et/LC_MESSAGES/purpose6_saveas.mo
@@ -275,7 +260,6 @@ share/locale/eu/LC_MESSAGES/purpose6_imgur.mo
 share/locale/eu/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/eu/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/eu/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/eu/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/eu/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/eu/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/eu/LC_MESSAGES/purpose6_saveas.mo
@@ -289,7 +273,6 @@ share/locale/fi/LC_MESSAGES/purpose6_imgur.mo
 share/locale/fi/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/fi/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/fi/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/fi/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/fi/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/fi/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/fi/LC_MESSAGES/purpose6_saveas.mo
@@ -303,7 +286,6 @@ share/locale/fr/LC_MESSAGES/purpose6_imgur.mo
 share/locale/fr/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/fr/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/fr/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/fr/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/fr/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/fr/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/fr/LC_MESSAGES/purpose6_saveas.mo
@@ -317,7 +299,6 @@ share/locale/ga/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ga/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ga/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ga/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ga/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ga/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ga/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ga/LC_MESSAGES/purpose6_saveas.mo
@@ -331,7 +312,6 @@ share/locale/gl/LC_MESSAGES/purpose6_imgur.mo
 share/locale/gl/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/gl/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/gl/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/gl/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/gl/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/gl/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/gl/LC_MESSAGES/purpose6_saveas.mo
@@ -345,7 +325,6 @@ share/locale/he/LC_MESSAGES/purpose6_imgur.mo
 share/locale/he/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/he/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/he/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/he/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/he/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/he/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/he/LC_MESSAGES/purpose6_saveas.mo
@@ -359,7 +338,6 @@ share/locale/hi/LC_MESSAGES/purpose6_imgur.mo
 share/locale/hi/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/hi/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/hi/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/hi/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/hi/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/hi/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/hi/LC_MESSAGES/purpose6_saveas.mo
@@ -373,7 +351,6 @@ share/locale/hu/LC_MESSAGES/purpose6_imgur.mo
 share/locale/hu/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/hu/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/hu/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/hu/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/hu/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/hu/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/hu/LC_MESSAGES/purpose6_saveas.mo
@@ -387,7 +364,6 @@ share/locale/ia/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ia/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ia/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ia/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ia/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ia/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ia/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ia/LC_MESSAGES/purpose6_saveas.mo
@@ -400,7 +376,6 @@ share/locale/id/LC_MESSAGES/purpose6_imgur.mo
 share/locale/id/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/id/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/id/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/id/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/id/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/id/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/id/LC_MESSAGES/purpose6_saveas.mo
@@ -414,7 +389,6 @@ share/locale/is/LC_MESSAGES/purpose6_imgur.mo
 share/locale/is/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/is/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/is/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/is/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/is/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/is/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/is/LC_MESSAGES/purpose6_saveas.mo
@@ -428,7 +402,6 @@ share/locale/it/LC_MESSAGES/purpose6_imgur.mo
 share/locale/it/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/it/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/it/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/it/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/it/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/it/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/it/LC_MESSAGES/purpose6_saveas.mo
@@ -442,7 +415,6 @@ share/locale/ja/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ja/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ja/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ja/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ja/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ja/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ja/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ja/LC_MESSAGES/purpose6_saveas.mo
@@ -456,7 +428,6 @@ share/locale/ka/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ka/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ka/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ka/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ka/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ka/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ka/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ka/LC_MESSAGES/purpose6_saveas.mo
@@ -470,7 +441,6 @@ share/locale/ko/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ko/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ko/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ko/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ko/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ko/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ko/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ko/LC_MESSAGES/purpose6_saveas.mo
@@ -484,7 +454,6 @@ share/locale/lt/LC_MESSAGES/purpose6_imgur.mo
 share/locale/lt/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/lt/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/lt/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/lt/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/lt/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/lt/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/lt/LC_MESSAGES/purpose6_saveas.mo
@@ -498,7 +467,6 @@ share/locale/lv/LC_MESSAGES/purpose6_imgur.mo
 share/locale/lv/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/lv/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/lv/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/lv/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/lv/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/lv/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/lv/LC_MESSAGES/purpose6_saveas.mo
@@ -511,7 +479,6 @@ share/locale/ml/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ml/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ml/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ml/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ml/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ml/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ml/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ml/LC_MESSAGES/purpose6_saveas.mo
@@ -526,7 +493,6 @@ share/locale/nl/LC_MESSAGES/purpose6_imgur.mo
 share/locale/nl/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/nl/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/nl/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/nl/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/nl/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/nl/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/nl/LC_MESSAGES/purpose6_saveas.mo
@@ -540,7 +506,6 @@ share/locale/nn/LC_MESSAGES/purpose6_imgur.mo
 share/locale/nn/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/nn/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/nn/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/nn/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/nn/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/nn/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/nn/LC_MESSAGES/purpose6_saveas.mo
@@ -554,7 +519,6 @@ share/locale/pa/LC_MESSAGES/purpose6_imgur.mo
 share/locale/pa/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/pa/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/pa/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/pa/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/pa/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/pa/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/pa/LC_MESSAGES/purpose6_saveas.mo
@@ -568,7 +532,6 @@ share/locale/pl/LC_MESSAGES/purpose6_imgur.mo
 share/locale/pl/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/pl/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/pl/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/pl/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/pl/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/pl/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/pl/LC_MESSAGES/purpose6_saveas.mo
@@ -582,7 +545,6 @@ share/locale/pt/LC_MESSAGES/purpose6_imgur.mo
 share/locale/pt/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/pt/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/pt/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/pt/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/pt/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/pt/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/pt/LC_MESSAGES/purpose6_saveas.mo
@@ -596,7 +558,6 @@ share/locale/pt_BR/LC_MESSAGES/purpose6_imgur.mo
 share/locale/pt_BR/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/pt_BR/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/pt_BR/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/pt_BR/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/pt_BR/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/pt_BR/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/pt_BR/LC_MESSAGES/purpose6_saveas.mo
@@ -610,7 +571,6 @@ share/locale/ro/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ro/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ro/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ro/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ro/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ro/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ro/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ro/LC_MESSAGES/purpose6_saveas.mo
@@ -624,7 +584,6 @@ share/locale/ru/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ru/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ru/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ru/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ru/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ru/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ru/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ru/LC_MESSAGES/purpose6_saveas.mo
@@ -638,7 +597,6 @@ share/locale/sa/LC_MESSAGES/purpose6_imgur.mo
 share/locale/sa/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/sa/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/sa/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/sa/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/sa/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/sa/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/sa/LC_MESSAGES/purpose6_saveas.mo
@@ -652,7 +610,6 @@ share/locale/sk/LC_MESSAGES/purpose6_imgur.mo
 share/locale/sk/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/sk/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/sk/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/sk/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/sk/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/sk/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/sk/LC_MESSAGES/purpose6_saveas.mo
@@ -666,7 +623,6 @@ share/locale/sl/LC_MESSAGES/purpose6_imgur.mo
 share/locale/sl/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/sl/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/sl/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/sl/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/sl/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/sl/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/sl/LC_MESSAGES/purpose6_saveas.mo
@@ -681,7 +637,6 @@ share/locale/sv/LC_MESSAGES/purpose6_imgur.mo
 share/locale/sv/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/sv/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/sv/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/sv/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/sv/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/sv/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/sv/LC_MESSAGES/purpose6_saveas.mo
@@ -692,7 +647,6 @@ share/locale/ta/LC_MESSAGES/purpose6_bluetooth.mo
 share/locale/ta/LC_MESSAGES/purpose6_fileitemaction.mo
 share/locale/ta/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ta/LC_MESSAGES/purpose6_kdeconnectsms.mo
-share/locale/ta/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ta/LC_MESSAGES/purpose6_saveas.mo
 share/locale/tg/LC_MESSAGES/libpurpose6_quick.mo
 share/locale/tg/LC_MESSAGES/libpurpose6_widgets.mo
@@ -702,7 +656,6 @@ share/locale/tg/LC_MESSAGES/purpose6_imgur.mo
 share/locale/tg/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/tg/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/tg/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/tg/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/tg/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/tg/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/tg/LC_MESSAGES/purpose6_saveas.mo
@@ -716,7 +669,6 @@ share/locale/tr/LC_MESSAGES/purpose6_imgur.mo
 share/locale/tr/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/tr/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/tr/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/tr/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/tr/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/tr/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/tr/LC_MESSAGES/purpose6_saveas.mo
@@ -730,7 +682,6 @@ share/locale/ug/LC_MESSAGES/purpose6_imgur.mo
 share/locale/ug/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/ug/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/ug/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/ug/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/ug/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/ug/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/ug/LC_MESSAGES/purpose6_saveas.mo
@@ -744,7 +695,6 @@ share/locale/uk/LC_MESSAGES/purpose6_imgur.mo
 share/locale/uk/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/uk/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/uk/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/uk/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/uk/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/uk/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/uk/LC_MESSAGES/purpose6_saveas.mo
@@ -758,7 +708,6 @@ share/locale/zh_CN/LC_MESSAGES/purpose6_imgur.mo
 share/locale/zh_CN/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/zh_CN/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/zh_CN/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/zh_CN/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/zh_CN/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/zh_CN/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/zh_CN/LC_MESSAGES/purpose6_saveas.mo
@@ -772,7 +721,6 @@ share/locale/zh_TW/LC_MESSAGES/purpose6_imgur.mo
 share/locale/zh_TW/LC_MESSAGES/purpose6_kdeconnect.mo
 share/locale/zh_TW/LC_MESSAGES/purpose6_kdeconnectsms.mo
 share/locale/zh_TW/LC_MESSAGES/purpose6_nextcloud.mo
-share/locale/zh_TW/LC_MESSAGES/purpose6_pastebin.mo
 share/locale/zh_TW/LC_MESSAGES/purpose6_phabricator.mo
 share/locale/zh_TW/LC_MESSAGES/purpose6_reviewboard.mo
 share/locale/zh_TW/LC_MESSAGES/purpose6_saveas.mo
