@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}async_timeout>=3.0.1:devel/py-async_timeout@
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0.20.3:devel/py-pytest-asyncio@${PY_FLAVOR}
 
 USES=		cpe python
+CPE_PRODUCT=	python-zeroconf
 USE_PYTHON=	autoplist concurrent cython pep517 pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	python-zeroconf
