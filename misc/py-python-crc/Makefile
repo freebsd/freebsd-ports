@@ -1,5 +1,5 @@
 PORTNAME=	crc
-DISTVERSION=	7.1.0
+DISTVERSION=	8.0.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}python- # because it builds crc*.whl
@@ -12,7 +12,7 @@ WWW=		https://nicoretti.github.io/crc/ \
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 concurrent autoplist
