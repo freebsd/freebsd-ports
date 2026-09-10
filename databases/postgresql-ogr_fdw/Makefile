@@ -1,12 +1,8 @@
 PORTNAME=	ogr_fdw
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.7
-PORTREVISION=	2
+DISTVERSION=	1.1.9
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
-
-PATCH_SITES=	https://github.com/pramsey/pgsql-ogr-fdw/commit/
-PATCHFILES=	fba0f6f7c97b0c162b996e1796fffb30abe9b38d.patch:-p1
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	PostgreSQL foreign data wrapper for OGR
