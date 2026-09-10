@@ -56,7 +56,8 @@ RUN_DEPENDS=	${_JAVA_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		bash:shells/bash
 
-USES=		cmake:indirect java:build,run ldap pkgconfig python shebangfix
+USES=		cmake:indirect cpe java:build,run ldap pkgconfig python shebangfix
+CPE_PRODUCT=	dogtagpki
 USE_GITHUB=	yes
 GH_ACCOUNT=	dogtagpki
 GH_PROJECT=	pki
