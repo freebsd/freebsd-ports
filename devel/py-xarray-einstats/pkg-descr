@@ -1,1 +1,4 @@
 Stats, linear algebra and einops for xarray.
+
+Provides statistical, linear algebra, and einops operations designed
+for use with xarray datasets and arrays.
