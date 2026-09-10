@@ -1,4 +1,4 @@
-commit f9a27fc7c60fa41c228da9e5d8e3afc4166bc1a0
+commit b0f01559cae81a27001ed3eb603ef126dfc99f7e
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
     enable pipewire on bsd
@@ -43,10 +43,10 @@ index 4bb38fe31ff2..b10eb19f521a 100644
  is_nacl = current_os == "nacl"
  is_wasm = current_os == "emscripten"
 diff --git third_party/libwebrtc/BUILD.gn third_party/libwebrtc/BUILD.gn
-index a3654ad56cd8..08e4024ac41e 100644
+index 8140c795b6b1..1cb88d134b11 100644
 --- third_party/libwebrtc/BUILD.gn
 +++ third_party/libwebrtc/BUILD.gn
-@@ -126,7 +126,7 @@ if (!build_with_chromium && !build_with_mozilla) {
+@@ -124,7 +124,7 @@ if (!build_with_chromium && !build_with_mozilla) {
            "tools_webrtc/perf:webrtc_dashboard_upload",
          ]
        }
@@ -56,20 +56,38 @@ index a3654ad56cd8..08e4024ac41e 100644
        }
      }
 diff --git third_party/libwebrtc/modules/desktop_capture/BUILD.gn third_party/libwebrtc/modules/desktop_capture/BUILD.gn
-index c80af9f8b5fd..51523e4ee874 100644
+index 9708a47cbca3..9c8c93856cf3 100644
 --- third_party/libwebrtc/modules/desktop_capture/BUILD.gn
 +++ third_party/libwebrtc/modules/desktop_capture/BUILD.gn
-@@ -79,7 +79,7 @@ if (rtc_include_tests) {
-         "window_finder_unittest.cc",
-       ]
- 
--      if ((is_linux || is_chromeos) && rtc_use_pipewire) {
-+      if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
-         configs += [ "../portal:gio" ]
-       }
- 
-@@ -91,7 +91,7 @@ if (rtc_include_tests) {
+@@ -70,7 +70,7 @@ if (rtc_include_tests) {
+     if (is_win) {
+       deps += [ "../../rtc_base/win:windows_version" ]
      }
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+     public_configs = [ ":x11_config" ]
+@@ -97,7 +97,7 @@ if (rtc_include_tests) {
+     if (is_win) {
+       deps += [ "../../rtc_base/win:windows_version" ]
+     }
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+     public_configs = [ ":x11_config" ]
+@@ -124,7 +124,7 @@ if (rtc_include_tests) {
+     if (is_win) {
+       deps += [ "../../rtc_base/win:windows_version" ]
+     }
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
+     }
+     public_configs = [ ":x11_config" ]
+@@ -138,7 +138,7 @@ if (rtc_include_tests) {
+     ]
    }
  
 -  if ((is_linux || is_chromeos) && rtc_use_pipewire) {
@@ -77,7 +95,7 @@ index c80af9f8b5fd..51523e4ee874 100644
      rtc_test("shared_screencast_stream_test") {
        testonly = true
  
-@@ -195,7 +195,7 @@ if (rtc_include_tests) {
+@@ -237,7 +237,7 @@ if (rtc_include_tests) {
        "../../system_wrappers",
        "../../test:test_support",
      ]
@@ -86,7 +104,7 @@ index c80af9f8b5fd..51523e4ee874 100644
        configs += [ "../portal:gio" ]
      }
    }
-@@ -217,7 +217,7 @@ if (rtc_include_tests) {
+@@ -257,7 +257,7 @@ if (rtc_include_tests) {
        ":primitives",
        "../../test:test_support",
      ]
@@ -95,7 +113,7 @@ index c80af9f8b5fd..51523e4ee874 100644
        configs += [ "../portal:gio" ]
      }
    }
-@@ -230,7 +230,7 @@ if (rtc_include_tests) {
+@@ -269,7 +269,7 @@ if (rtc_include_tests) {
        ":primitives",
        "../../test:test_support",
      ]
@@ -104,7 +122,7 @@ index c80af9f8b5fd..51523e4ee874 100644
        configs += [ "../portal:gio" ]
      }
    }
-@@ -243,7 +243,7 @@ if (rtc_include_tests) {
+@@ -281,7 +281,7 @@ if (rtc_include_tests) {
        ":primitives",
        "../../test:test_support",
      ]
@@ -113,34 +131,34 @@ index c80af9f8b5fd..51523e4ee874 100644
        configs += [ "../portal:gio" ]
      }
    }
-@@ -368,7 +368,7 @@ if (rtc_include_tests) {
-         ":primitives",
-         "../../test:test_support",
-       ]
--      if ((is_linux || is_chromeos) && rtc_use_pipewire) {
-+      if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
-         configs += [ "../portal:gio" ]
-       }
+@@ -411,7 +411,7 @@ if (rtc_include_tests) {
+       ":primitives",
+       "../../test:test_support",
+     ]
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
      }
-@@ -382,7 +382,7 @@ if (rtc_include_tests) {
-         "../../rtc_base:logging",
-         "../../test:test_support",
-       ]
--      if ((is_linux || is_chromeos) && rtc_use_pipewire) {
-+      if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
-         configs += [ "../portal:gio" ]
-       }
+   }
+@@ -425,7 +425,7 @@ if (rtc_include_tests) {
+       "../../rtc_base:logging",
+       "../../test:test_support",
+     ]
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
      }
-@@ -395,7 +395,7 @@ if (rtc_include_tests) {
-         ":primitives",
-         "../../test:test_support",
-       ]
--      if ((is_linux || is_chromeos) && rtc_use_pipewire) {
-+      if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
-         configs += [ "../portal:gio" ]
-       }
+   }
+@@ -438,7 +438,7 @@ if (rtc_include_tests) {
+       ":primitives",
+       "../../test:test_support",
+     ]
+-    if ((is_linux || is_chromeos) && rtc_use_pipewire) {
++    if ((is_linux || is_chromeos || is_bsd) && rtc_use_pipewire) {
+       configs += [ "../portal:gio" ]
      }
-@@ -507,7 +507,7 @@ if (rtc_include_tests) {
+   }
+@@ -526,7 +526,7 @@ if (rtc_include_tests) {
        "screen_drawer.h",
      ]
  
@@ -149,7 +167,7 @@ index c80af9f8b5fd..51523e4ee874 100644
        sources += [ "screen_drawer_linux.cc" ]
        libs = [ "X11" ]
      }
-@@ -546,7 +546,7 @@ if (rtc_include_tests) {
+@@ -565,7 +565,7 @@ if (rtc_include_tests) {
        "mock_desktop_capturer_callback.h",
      ]
  
@@ -158,7 +176,7 @@ index c80af9f8b5fd..51523e4ee874 100644
        configs += [ "../portal:gio" ]
      }
  
-@@ -559,7 +559,7 @@ if (rtc_include_tests) {
+@@ -578,7 +578,7 @@ if (rtc_include_tests) {
  }
  
  # TODO(bugs.webrtc.org/14187): remove when all users are gone
@@ -181,7 +199,7 @@ index 7f91839dfdda..5c75495af570 100644
    pkg_config("gio") {
      packages = [
 diff --git third_party/libwebrtc/webrtc.gni third_party/libwebrtc/webrtc.gni
-index ddd809fb9a8c..2fe4b11f1e3e 100644
+index 82b7935174af..6c681dd64339 100644
 --- third_party/libwebrtc/webrtc.gni
 +++ third_party/libwebrtc/webrtc.gni
 @@ -134,7 +134,7 @@ declare_args() {
