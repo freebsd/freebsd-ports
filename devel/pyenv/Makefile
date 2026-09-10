@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe python shebangfix
-CPE_VENDOR=	pyenv_project
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	plugins/python-build/scripts/add_cpython.py \
