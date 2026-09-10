@@ -1,3 +1,3 @@
-TIMESTAMP = 1780118050
-SHA256 (ggml-org-ggml-v0.13.1_GH0.tar.gz) = ce4c6d51902d6379568ce4ce39700a6f948d9969ca2b0ded026adc88b10bd266
-SIZE (ggml-org-ggml-v0.13.1_GH0.tar.gz) = 3114277
+TIMESTAMP = 1789068795
+SHA256 (ggml-org-ggml-v0.23.0-38-g7840aaba_GH0.tar.gz) = fd3cd3c44b8ecf2a585f74b973e77f2da3fe7e8c95f0c82b8d3bda25a4545114
+SIZE (ggml-org-ggml-v0.23.0-38-g7840aaba_GH0.tar.gz) = 3971169
