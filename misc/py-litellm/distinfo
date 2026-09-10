@@ -1,6 +1,6 @@
-TIMESTAMP = 1788734009
-SHA256 (litellm-1.100.0.tar.gz) = ece94e817a453a5b3a9517c03547c428d501cea719edb728c1b260e53f78ea35
-SIZE (litellm-1.100.0.tar.gz) = 17287857
+TIMESTAMP = 1789021981
+SHA256 (litellm-1.100.1.tar.gz) = d24b5fbdeb1f0b5c0a6f7f0caf7b6aa79b69c704b90daca57e3ce7d50a9d6bf4
+SIZE (litellm-1.100.1.tar.gz) = 17330008
 SHA256 (rust/crates/aho-corasick-1.1.5.crate) = c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
 SIZE (rust/crates/aho-corasick-1.1.5.crate) = 184315
 SHA256 (rust/crates/alloca-0.4.0.crate) = e5a7d05ea6aea7e9e64d25b9156ba2fee3fdd659e34e41063cd2fc7cd020d7f4
