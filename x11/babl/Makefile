@@ -1,5 +1,5 @@
 PORTNAME=	babl
-PORTVERSION=	0.1.126
+PORTVERSION=	0.1.128
 CATEGORIES=	x11
 MASTER_SITES=	GIMP
 
@@ -18,10 +18,13 @@ USES=		compiler:c11 gnome meson pathfix pkgconfig tar:xz vala:build
 USE_GNOME=	introspection:build
 USE_LDCONFIG=	yes
 
-# relocatable does not mean ELF relocation
-MESON_ARGS=	-Dgi-docgen=disabled -Dwith-docs=false -Drelocatable-bundle=no
+MESON_FALSE=	gi-docgen \
+		with-docs
 
-BABL_SHLIB=	0.225.1
+# relocatable does not mean ELF relocation
+MESON_ARGS+=	-Drelocatable-bundle=no
+
+BABL_SHLIB=	0.227.1
 BABL_VER=	0.1
 PLIST_SUB+=	BABL_SHLIB=${BABL_SHLIB} BABL_VER=${BABL_VER}
 
@@ -35,27 +38,21 @@ SSE2_DESC=		Use SSE2 optimized routines
 SSE41_DESC=		Use SSE4.1 optimized routines
 
 AVX2_IMPLIES=		SSE41
-AVX2_MESON_ON=		-Denable-avx2=true
-AVX2_MESON_OFF=		-Denable-avx2=false
+AVX2_MESON_TRUE=	enable-avx2
 
 F16C_IMPLIES=		MMX
-F16C_MESON_ON=		-Denable-f16c=true
-F16C_MESON_OFF=		-Denable-f16c=false
+F16C_MESON_TRUE=	enable-f16c
 
-MMX_MESON_ON=		-Denable-mmx=true
-MMX_MESON_OFF=		-Denable-mmx=false
+MMX_MESON_TRUE=		enable-mmx
 
 SSE2_IMPLIES=		SSE
-SSE2_MESON_ON=		-Denable-sse2=true
-SSE2_MESON_OFF=		-Denable-sse2=false
+SSE2_MESON_TRUE=	enable-sse2
 
 SSE41_IMPLIES=		SSE2
-SSE41_MESON_ON=		-Denable-sse4_1=true
-SSE41_MESON_OFF=	-Denable-sse4_1=false
+SSE41_MESON_TRUE=	enable-sse4_1
 
 SSE_IMPLIES=		MMX
-SSE_MESON_ON=		-Denable-sse=true
-SSE_MESON_OFF=		-Denable-sse=false
+SSE_MESON_TRU=		enable-sse
 
 .include <bsd.port.pre.mk>
 
