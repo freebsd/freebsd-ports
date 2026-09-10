@@ -1,0 +1,27 @@
+--- cmake/mlx/CMakeLists.txt.orig	1979-11-30 08:00:00 UTC
++++ cmake/mlx/CMakeLists.txt
+@@ -63,14 +63,16 @@ set(XGRAMMAR_VERSION v0.2.5)
+ 
+ include(FetchContent)
+ set(XGRAMMAR_VERSION v0.2.5)
+-FetchContent_Declare(xgrammar
+-    GIT_REPOSITORY "https://github.com/mlc-ai/xgrammar.git"
+-    GIT_TAG ${XGRAMMAR_VERSION}
+-    GIT_SHALLOW TRUE
+-    GIT_SUBMODULES 3rdparty/dlpack
+-    # Do not add XGrammar's Python-oriented CMake project.
+-    SOURCE_SUBDIR cmake/ollama)
+-FetchContent_MakeAvailable(xgrammar)
++#FetchContent_Declare(xgrammar
++#    GIT_REPOSITORY "https://github.com/mlc-ai/xgrammar.git"
++#    GIT_TAG ${XGRAMMAR_VERSION}
++#    GIT_SHALLOW TRUE
++#    GIT_SUBMODULES 3rdparty/dlpack
++#    # Do not add XGrammar's Python-oriented CMake project.
++#    SOURCE_SUBDIR cmake/ollama)
++#FetchContent_MakeAvailable(xgrammar)
++
++set(xgrammar_SOURCE_DIR "%%WRKSRC%%/xgrammar")
+ 
+ file(GLOB_RECURSE XGRAMMAR_SOURCES CONFIGURE_DEPENDS "${xgrammar_SOURCE_DIR}/cpp/*.cc")
+ list(FILTER XGRAMMAR_SOURCES EXCLUDE REGEX "/cpp/tvm_ffi/.*\\.cc$")

@@ -1,0 +1,30 @@
+-- FreeBSD: Use pre-downloaded mlx-c source directory instead of FetchContent from Git.
+-- The port downloads mlx-c as a distfile and extracts it to WRKDIR, then passes
+-- its location via OLLAMA_MLX_C_SOURCE environment variable to the CMake build.
+--- x/mlxrunner/mlx/CMakeLists.txt.orig	1979-11-30 08:00:00 UTC
++++ x/mlxrunner/mlx/CMakeLists.txt
+@@ -23,11 +23,19 @@ string(STRIP "${MLX_C_GIT_TAG}" MLX_C_GIT_TAG)
+ file(READ "${CMAKE_CURRENT_LIST_DIR}/../../../MLX_C_VERSION" MLX_C_GIT_TAG)
+ string(STRIP "${MLX_C_GIT_TAG}" MLX_C_GIT_TAG)
+ 
+-FetchContent_Declare(
+-  mlx-c
+-  GIT_REPOSITORY "https://github.com/ml-explore/mlx-c.git"
+-  GIT_TAG ${MLX_C_GIT_TAG}
+-)
++# FreeBSD: Use pre-downloaded mlx-c source if OLLAMA_MLX_C_SOURCE is set
++if(DEFINED ENV{OLLAMA_MLX_C_SOURCE})
++  FetchContent_Declare(
++    mlx-c
++    SOURCE_DIR "$ENV{OLLAMA_MLX_C_SOURCE}"
++  )
++else()
++  FetchContent_Declare(
++    mlx-c
++    GIT_REPOSITORY "https://github.com/ml-explore/mlx-c.git"
++    GIT_TAG ${MLX_C_GIT_TAG}
++  )
++endif()
+ 
+ FetchContent_MakeAvailable(mlx-c)
+ 

@@ -1,6 +1,6 @@
---- x/mlxrunner/client.go.orig	2026-04-18 04:07:37 UTC
+--- x/mlxrunner/client.go.orig	1979-11-30 08:00:00 UTC
 +++ x/mlxrunner/client.go
-@@ -366,6 +366,8 @@ func (c *Client) Load(ctx context.Context, _ ml.System
+@@ -353,6 +353,8 @@ func (c *Client) Load(ctx context.Context, _ ml.System
  	switch runtime.GOOS {
  	case "linux":
  		libPathEnvVar = "LD_LIBRARY_PATH"

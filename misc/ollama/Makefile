@@ -1,7 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.32.5
-PORTREVISION=	3
+DISTVERSION=	0.34.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,12 +26,16 @@ USES=		cmake:indirect go:1.26+,modules localbase pkgconfig
 USE_LDCONFIG=	${PREFIX}/lib/ollama ${PREFIX}/lib/ollama/vulkan
 USE_RC_SUBR=	ollama
 
+USE_GITHUB=	nodefault
+GH_TUPLE=	mlc-ai:xgrammar:v0.2.5:xgrammar/xgrammar
+
 GO_MODULE=	github.com/yurivict/${PORTNAME} # fork with FreeBSD patches
 GO_TARGET=	.
 GO_ENV+=	CGO_CXXFLAGS="${CXXFLAGS}"
 
-LLAMA_CPP_VERSION=	b10091	# from the LLAMA_CPP_VERSION file in the llama.cpp repo
-GGML_SO_VERSION=	0.17.0	# tied to LLAMA_CPP_VERSION; update when llama.cpp changes
+LLAMA_CPP_VERSION=	b10760	# from the LLAMA_CPP_VERSION file in the llama.cpp repo
+LLAMA_CPP_SO_VERSION=	0.3.0
+GGML_SO_VERSION=	0.22.0	# tied to LLAMA_CPP_VERSION; update when llama.cpp changes
 MLX_CORE_VERSION=	0.31.2
 MLX_C_VERSION=		fba4470b89073180056c9ea46c443051375f7399
 JSON_VERSION=		3.11.3
@@ -47,7 +50,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 OPTIONS_GROUP=		BACKENDS
 OPTIONS_GROUP_BACKENDS=	CPU VULKAN MLX
-OPTIONS_DEFAULT=	CPU MLX
+OPTIONS_DEFAULT=	CPU VULKAN MLX
 
 CPU_DESC=		Build CPU backend shared libraries for various SIMD instruction sets
 CPU_PLIST_FILES=	lib/ollama/llama-server \
@@ -59,16 +62,16 @@ CPU_PLIST_FILES=	lib/ollama/llama-server \
 			lib/ollama/libggml.so.0 \
 			lib/ollama/libggml.so.${GGML_SO_VERSION} \
 			lib/ollama/libllama-common.so \
-			lib/ollama/libllama-common.so.0 \
-			lib/ollama/libllama-common.so.0.0.${LLAMA_CPP_VERSION:S/b//} \
+			lib/ollama/libllama-common.so.${LLAMA_CPP_SO_VERSION:R:R} \
+			lib/ollama/libllama-common.so.${LLAMA_CPP_SO_VERSION} \
 			lib/ollama/libllama-quantize-impl.so \
 			lib/ollama/libllama-server-impl.so \
 			lib/ollama/libllama.so \
-			lib/ollama/libllama.so.0 \
-			lib/ollama/libllama.so.0.0.${LLAMA_CPP_VERSION:S/b//} \
+			lib/ollama/libllama.so.${LLAMA_CPP_SO_VERSION:R:R} \
+			lib/ollama/libllama.so.${LLAMA_CPP_SO_VERSION} \
 			lib/ollama/libmtmd.so \
-			lib/ollama/libmtmd.so.0 \
-			lib/ollama/libmtmd.so.0.0.${LLAMA_CPP_VERSION:S/b//}
+			lib/ollama/libmtmd.so.${LLAMA_CPP_SO_VERSION:R:R} \
+			lib/ollama/libmtmd.so.${LLAMA_CPP_SO_VERSION}
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CPU_PLIST_FILES+=	lib/ollama/libggml-cpu-alderlake.so \
 			lib/ollama/libggml-cpu-cannonlake.so \
@@ -92,7 +95,6 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			${LOCALBASE}/share/cmake/SPIRV-Headers/SPIRV-HeadersConfig.cmake:graphics/spirv-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_PLIST_FILES=	lib/ollama/vulkan/libggml-vulkan.so
-VULKAN_BROKEN=		shaderc doesn't support latest features of glslc, see https://github.com/google/shaderc/issues/1590
 
 MLX_DESC=		Build MLX backend for image generation (CPU)
 MLX_BUILD_DEPENDS=	${LOCALBASE}/lib/cmake/fmt/fmt-config.cmake:devel/libfmt
@@ -146,6 +148,9 @@ post-patch:
 	# update version in version.go
 	@${REINPLACE_CMD} -e 's|var Version string = "0.0.0"|var Version string = "${PORTVERSION}"|g' \
 		${WRKSRC}/version/version.go
+	# expand WRKSRC in cmake/mlx/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|g' \
+		${WRKSRC}/cmake/mlx/CMakeLists.txt
 
 pre-build-CPU-on:
 	@${MKDIR} ${WRKSRC}/build && \
@@ -179,6 +184,12 @@ post-patch-MLX-on:
 		${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/backend/no_gpu/allocator.cpp.new && \
 		${MV} ${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/backend/no_gpu/allocator.cpp.new \
 		${WRKDIR}/mlx-${MLX_CORE_VERSION}/mlx/backend/no_gpu/allocator.cpp
+	# FreeBSD fix for mlx-c: Use pre-downloaded mlx source via environment variable
+	@${AWK} '/if\(MLX_C_USE_SYSTEM_MLX\)/{print "# FreeBSD: Use pre-downloaded mlx source if OLLAMA_MLX_SOURCE is set";print "if(DEFINED ENV{OLLAMA_MLX_SOURCE})";print "  FetchContent_Declare(";print "    mlx";print "    SOURCE_DIR \"$$ENV{OLLAMA_MLX_SOURCE}\"";print "  )";print "  FetchContent_MakeAvailable(mlx)";print "elseif(MLX_C_USE_SYSTEM_MLX)";next}1' \
+		${WRKDIR}/mlx-c-${MLX_C_VERSION}/CMakeLists.txt > \
+		${WRKDIR}/mlx-c-${MLX_C_VERSION}/CMakeLists.txt.new && \
+		${MV} ${WRKDIR}/mlx-c-${MLX_C_VERSION}/CMakeLists.txt.new \
+		${WRKDIR}/mlx-c-${MLX_C_VERSION}/CMakeLists.txt
 
 pre-build-MLX-on:
 	@${MKDIR} ${WRKSRC}/build-mlx && \
@@ -215,23 +226,23 @@ post-install-CPU-on:
 	${LN} -sf libggml.so.0 \
 		${STAGEDIR}${PREFIX}/lib/ollama/libggml.so
 	# versioned libllama-common
-	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libllama-common.so.0.0.${LLAMA_CPP_VERSION:S/b//} \
+	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libllama-common.so.${LLAMA_CPP_SO_VERSION} \
 		${STAGEDIR}${PREFIX}/lib/ollama/
-	${LN} -sf libllama-common.so.0.0.${LLAMA_CPP_VERSION:S/b//} \
-		${STAGEDIR}${PREFIX}/lib/ollama/libllama-common.so.0
-	${LN} -sf libllama-common.so.0 \
+	${LN} -sf libllama-common.so.${LLAMA_CPP_SO_VERSION} \
+		${STAGEDIR}${PREFIX}/lib/ollama/libllama-common.so.${LLAMA_CPP_SO_VERSION:R:R}
+	${LN} -sf libllama-common.so.${LLAMA_CPP_SO_VERSION:R:R} \
 		${STAGEDIR}${PREFIX}/lib/ollama/libllama-common.so
 	# versioned libllama
-	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libllama.so.0.0.${LLAMA_CPP_VERSION:S/b//} \
+	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libllama.so.${LLAMA_CPP_SO_VERSION} \
 		${STAGEDIR}${PREFIX}/lib/ollama/
-	${LN} -sf libllama.so.0.0.${LLAMA_CPP_VERSION:S/b//} \
-		${STAGEDIR}${PREFIX}/lib/ollama/libllama.so.0
-	${LN} -sf libllama.so.0 \
+	${LN} -sf libllama.so.${LLAMA_CPP_SO_VERSION} \
+		${STAGEDIR}${PREFIX}/lib/ollama/libllama.so.${LLAMA_CPP_SO_VERSION:R:R}
+	${LN} -sf libllama.so.${LLAMA_CPP_SO_VERSION:R:R} \
 		${STAGEDIR}${PREFIX}/lib/ollama/libllama.so
 	# versioned libmtmd
-	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libmtmd.so.0.0.${LLAMA_CPP_VERSION:S/b//} \
+	${INSTALL_LIB} ${WRKSRC}/build/lib/ollama/libmtmd.so.${LLAMA_CPP_SO_VERSION} \
 		${STAGEDIR}${PREFIX}/lib/ollama/
-	${LN} -sf libmtmd.so.0.0.${LLAMA_CPP_VERSION:S/b//} \
+	${LN} -sf libmtmd.so.${LLAMA_CPP_SO_VERSION} \
 		${STAGEDIR}${PREFIX}/lib/ollama/libmtmd.so.0
 	${LN} -sf libmtmd.so.0 \
 		${STAGEDIR}${PREFIX}/lib/ollama/libmtmd.so
