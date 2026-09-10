@@ -138,6 +138,7 @@
     SUBDIR += R-cran-roxygen2
     SUBDIR += R-cran-rprojroot
     SUBDIR += R-cran-rstudioapi
+    SUBDIR += R-cran-shape
     SUBDIR += R-cran-rversions
     SUBDIR += R-cran-sessioninfo
     SUBDIR += R-cran-sfsmisc
