@@ -1,5 +1,5 @@
 PORTNAME=	sqlcipher3
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.2
 CATEGORIES=	databases python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ do-test:
 		${CP} ${STAGEDIR}${PYTHON_SITELIBDIR}/sqlcipher3/_sqlite3${PYTHON_TAG}.so sqlcipher3/ && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m tests
 
-# tests as of 0.6.0:
+# tests as of 0.6.2:
 # Ran 345 tests in 0.241s
 #
 # OK (skipped=2)

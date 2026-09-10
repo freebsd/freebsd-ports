@@ -1,0 +1,12 @@
+-- Fix invalid license format in pyproject.toml: plain string "MIT" is not
+-- valid per PEP 639 / newer setuptools; must use {text = "..."} form.
+--- pyproject.toml.orig	2024-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -16,7 +16,7 @@
+ authors = [
+     { name = "Charles Leifer", email = "coleifer@gmail.com" },
+     { name = "laggykiller", email = "chaudominic2@gmail.com" }
+ ]
+-license = "MIT"
++license = {text = "MIT"}
+ classifiers = [
