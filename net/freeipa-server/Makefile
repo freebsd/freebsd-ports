@@ -71,9 +71,10 @@ RUN_DEPENDS=	${LOCALBASE}/bin/chronyc:net/chrony \
 		slapi-nis>=0.70.0:net/slapi-nis \
 		sssd2>=2.13.1_2:security/sssd2
 
-USES=		autoreconf gettext-runtime gettext-tools gmake gssapi:mit iconv \
+USES=		autoreconf cpe gettext-runtime gettext-tools gmake gssapi:mit iconv \
 		ldap libtool localbase:ldflags nodejs:build pkgconfig python \
 		samba shebangfix ssl
+CPE_PRODUCT=	freeipa
 
 USE_RC_SUBR=	ipa-custodia freeipa-server
 
