@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	xrdb:x11/xrdb \
 		xsm:x11/xsm
 
-EXTRACT_SUFX=	.tar.xz
 USES=		cpe libtool xorg xorg-cat:app
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xau xaw xdmcp xext xinerama xmu xpm xrender xt
@@ -24,7 +23,6 @@ CONFIGURE_ARGS+=	--with-xdmconfigdir=${PREFIX}/etc/X11/xdm \
 			--with-xdmscriptdir=${PREFIX}/etc/X11/xdm \
 			--with-pixmapdir=${PREFIX}/share/pixmaps \
 			--with-authdir=/var/db/xdm
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 CFFILES=	GiveConsole TakeConsole Xaccess Xreset Xresources \
 		Xservers Xsession Xsetup_0 Xstartup Xwilling xdm-config

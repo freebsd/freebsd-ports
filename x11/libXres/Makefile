@@ -9,7 +9,6 @@ WWW=		https://gitlab.freedesktop.org/xorg/lib/libxres
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_SUFX=	.tar.xz
 USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 xext xorgproto
 INSTALL_TARGET=	install-strip

@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-EXTRACT_SUFX=	.tar.xz
 USES=		xorg xorg-cat:app
 USE_XORG=	x11 xcursor xorgproto
 INSTALL_TARGET=	install-strip

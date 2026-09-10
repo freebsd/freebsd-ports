@@ -7,7 +7,6 @@ COMMENT=	X standard colormap utility
 
 LICENSE=	MIT
 
-EXTRACT_SUFX=	.tar.xz
 USES=		xorg xorg-cat:app
 USE_XORG=	x11 xmu xt
 

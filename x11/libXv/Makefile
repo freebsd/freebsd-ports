@@ -10,7 +10,6 @@ WWW=		https://www.freedesktop.org/Software/xlibs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_SUFX=	.tar.xz
 USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 xext xorgproto
 CPE_PRODUCT=	libxv
