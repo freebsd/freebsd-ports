@@ -1,17 +1,15 @@
---- setup.py.orig	2024-12-22 02:37:46 UTC
+--- setup.py.orig	2026-08-27 04:54:17 UTC
 +++ setup.py
-@@ -29,8 +29,8 @@ import os
+@@ -29,7 +29,7 @@ import subprocess
  import sys
  import fnmatch
  import subprocess
 -from setuptools import setup
--from shutil import copytree, rmtree, copy
 +from setuptools import setup, find_namespace_packages
-+from shutil import copytree, rmtree, copy, move
+ from shutil import copytree, rmtree, copy
  
  
- # Determine absolute PATH of OpenShot folder
-@@ -38,9 +38,12 @@ PATH = os.path.dirname(os.path.realpath(__file__))  # 
+@@ -38,9 +38,12 @@ if os.path.exists(os.path.join(PATH, "src")):
  
  # Make a copy of the src tree (temporary for naming reasons only)
  if os.path.exists(os.path.join(PATH, "src")):
@@ -21,13 +19,24 @@
 +#    print("Copying modules to openshot_qt directory: %s" % os.path.join(PATH, "openshot_qt"))
 +#    # Only make a copy if the SRC directory is present (otherwise ignore this)
 +#    copytree(os.path.join(PATH, "src"), os.path.join(PATH, "openshot_qt"))
-+	print("Move for switching to flat-layout: %s -> %s" %
-+		(os.path.join(PATH, "src"), os.path.join(PATH, "openshot_qt")))
-+	move(os.path.join(PATH, "src"), os.path.join(PATH, "openshot_qt"))
++    # Append path to system path
++    sys.path.append(os.path.join(PATH, "src"))
++    print("Loaded modules from src directory: %s" % os.path.join(PATH, "src"))
  
  if os.path.exists(os.path.join(PATH, "openshot_qt")):
      # Append path to system path
-@@ -68,7 +71,7 @@ os_files = [
+@@ -53,6 +56,10 @@ log.info("Execution path: %s" % os.path.abspath(__file
+ 
+ log.info("Execution path: %s" % os.path.abspath(__file__))
+ 
++# changes made to keep PORTNAME
++info.SETUP['name'] = 'openshot'
++info.SETUP['classifiers'] += ['Operating System :: POSIX :: BSD :: FreeBSD']
++
+ # Boolean: running as root?
+ ROOT = os.geteuid() == 0
+ # For Debian packaging it could be a fakeroot so reset flag to prevent execution of
+@@ -68,7 +75,7 @@ os_files = [
      # AppStream metadata
      ('share/metainfo', ['xdg/org.openshot.OpenShot.appdata.xml']),
      # Debian menu system application icon
@@ -36,7 +45,7 @@
      # XDG Freedesktop icon paths
      ('share/icons/hicolor/scalable/apps', ['xdg/openshot-qt.svg']),
      ('share/icons/hicolor/scalable/mimetypes', ['xdg/openshot-qt-doc.svg']),
-@@ -79,7 +82,7 @@ os_files = [
+@@ -79,7 +86,7 @@ os_files = [
      # XDG desktop mime types cache
      ('share/mime/packages', ['xdg/org.openshot.OpenShot.xml']),
      # launcher (mime.types)
@@ -45,7 +54,7 @@
  ]
  
  # Find files matching patterns
-@@ -97,20 +100,35 @@ def find_files(directory, patterns):
+@@ -97,20 +104,30 @@ package_data = {}
  package_data = {}
  
  # Find all project files
@@ -74,24 +83,19 @@
 -    include_package_data=True,
 -    **info.SETUP
 -)
-+	packages=find_namespace_packages(
-+		where=".",	# default
-+		exclude=[
-+			"build", "build.*",
-+			"doc", "doc.*",
-+			"images", "images.*",
-+			"installer", "installer.*",
-+			"src", "src.*",
-+			"xdg", "xdg.*",
-+			],	# for flat-layout
-+		),
-+	data_files=os_files,
-+	include_package_data=True,
-+	**info.SETUP)
++    packages = ['openshot_qt'] +
++        ['openshot_qt.' + s for s in find_namespace_packages(where = 'src')],
++    package_dir = {
++        'openshot_qt': 'src',
++        '': 'src',
++        },
++    data_files = os_files,
++    include_package_data = True,
++    **info.SETUP)
  # -------------------------------------
  
  # Remove temporary folder (if SRC folder present)
-@@ -122,22 +140,28 @@ FAILED = 'Failed to update.\n'
+@@ -122,22 +139,28 @@ if ROOT and dist != None:
  if ROOT and dist != None:
      # update the XDG Shared MIME-Info database cache
      try:
