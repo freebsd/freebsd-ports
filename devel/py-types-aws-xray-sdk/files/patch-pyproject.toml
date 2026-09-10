@@ -1,23 +1,31 @@
---- pyproject.toml.orig	2026-03-04 01:32:49 UTC
+-- Relax the setuptools version requirement to work with the version in ports.
+-- Remove PEP 639 license fields not supported by older setuptools.
+-- Replace packages list (invalid in setuptools <82) with find-based discovery and include-package-data.
+-- Remove [tool.setuptools.package-data] section (invalid in setuptools <82); MANIFEST.in is used instead.
+--- pyproject.toml.orig	2026-05-18 06:03:39 UTC
 +++ pyproject.toml
 @@ -1,12 +1,10 @@ build-backend = "setuptools.build_meta"
  [build-system]
  build-backend = "setuptools.build_meta"
--requires = ["setuptools>=77.0.3"]
+-requires = ["setuptools>=82.0.1"]
 +requires = ["setuptools"]
  
  [project]
  name = "types-aws-xray-sdk"
- version = "2.15.0.20251206"
+ version = "2.15.0.20260518"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
  description = "Typing stubs for aws-xray-sdk"
  readme = { text = """\
  ## Typing stubs for aws-xray-sdk
-@@ -45,6 +43,3 @@ dependencies = []
- "Issue tracker" = "https://github.com/python/typeshed/issues"
+@@ -46,8 +44,6 @@ dependencies = []
  "Chat" = "https://gitter.im/python/typing"
  
--[tool.setuptools]
+ [tool.setuptools]
 -packages = ['aws_xray_sdk-stubs']
 -include-package-data = false
++packages = {find = {}}
++include-package-data = true
+ 
+-[tool.setuptools.package-data]
+-'aws_xray_sdk-stubs' = ['__init__.pyi', 'core/__init__.pyi', 'core/async_context.pyi', 'core/async_recorder.pyi', 'core/context.pyi', 'core/daemon_config.pyi', 'core/emitters/__init__.pyi', 'core/emitters/udp_emitter.pyi', 'core/exceptions/__init__.pyi', 'core/exceptions/exceptions.pyi', 'core/lambda_launcher.pyi', 'core/models/__init__.pyi', 'core/models/default_dynamic_naming.pyi', 'core/models/dummy_entities.pyi', 'core/models/entity.pyi', 'core/models/facade_segment.pyi', 'core/models/http.pyi', 'core/models/noop_traceid.pyi', 'core/models/segment.pyi', 'core/models/subsegment.pyi', 'core/models/throwable.pyi', 'core/models/trace_header.pyi', 'core/models/traceid.pyi', 'core/patcher.pyi', 'core/plugins/__init__.pyi', 'core/plugins/ec2_plugin.pyi', 'core/plugins/ecs_plugin.pyi', 'core/plugins/elasticbeanstalk_plugin.pyi', 'core/plugins/utils.pyi', 'core/recorder.pyi', 'core/sampling/__init__.pyi', 'core/sampling/connector.pyi', 'core/sampling/local/__init__.pyi', 'core/sampling/local/reservoir.pyi', 'core/sampling/local/sampler.pyi', 'core/sampling/local/sampling_rule.pyi', 'core/sampling/reservoir.pyi', 'core/sampling/rule_cache.pyi', 'core/sampling/rule_poller.pyi', 'core/sampling/sampler.pyi', 'core/sampling/sampling_rule.pyi', 'core/sampling/target_poller.pyi', 'core/streaming/__init__.pyi', 'core/streaming/default_streaming.pyi', 'core/utils/__init__.pyi', 'core/utils/atomic_counter.pyi', 'core/utils/compat.pyi', 'core/utils/conversion.pyi', 'core/utils/search_pattern.pyi', 'core/utils/sqs_message_helper.pyi', 'core/utils/stacktrace.pyi', 'ext/__init__.pyi', 'ext/aiobotocore/__init__.pyi', 'ext/aiobotocore/patch.pyi', 'ext/aiohttp/__init__.pyi', 'ext/aiohttp/client.pyi', 'ext/aiohttp/middleware.pyi', 'ext/boto_utils.pyi', 'ext/botocore/__init__.pyi', 'ext/botocore/patch.pyi', 'ext/bottle/__init__.pyi', 'ext/bottle/middleware.pyi', 'ext/dbapi2.pyi', 'ext/django/__init__.pyi', 'ext/django/apps.pyi', 'ext/django/conf.pyi', 'ext/django/db.pyi', 'ext/django/middleware.pyi', 'ext/django/templates.pyi', 'ext/flask/__init__.pyi', 'ext/flask/middleware.pyi', 'ext/flask_sqlalchemy/__init__.pyi', 'ext/flask_sqlalchemy/query.pyi', 'ext/httplib/__init__.pyi', 'ext/httplib/patch.pyi', 'ext/httpx/__init__.pyi', 'ext/httpx/patch.pyi', 'ext/mysql/__init__.pyi', 'ext/mysql/patch.pyi', 'ext/pg8000/__init__.pyi', 'ext/pg8000/patch.pyi', 'ext/psycopg/__init__.pyi', 'ext/psycopg/patch.pyi', 'ext/psycopg2/__init__.pyi', 'ext/psycopg2/patch.pyi', 'ext/pymongo/__init__.pyi', 'ext/pymongo/patch.pyi', 'ext/pymysql/__init__.pyi', 'ext/pymysql/patch.pyi', 'ext/pynamodb/__init__.pyi', 'ext/pynamodb/patch.pyi', 'ext/requests/__init__.pyi', 'ext/requests/patch.pyi', 'ext/sqlalchemy/__init__.pyi', 'ext/sqlalchemy/query.pyi', 'ext/sqlalchemy/util/__init__.pyi', 'ext/sqlalchemy/util/decorators.pyi', 'ext/sqlalchemy_core/__init__.pyi', 'ext/sqlalchemy_core/patch.pyi', 'ext/sqlite3/__init__.pyi', 'ext/sqlite3/patch.pyi', 'ext/util.pyi', 'sdk_config.pyi', 'version.pyi', 'METADATA.toml', 'py.typed']
