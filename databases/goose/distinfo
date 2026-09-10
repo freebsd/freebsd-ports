@@ -1,5 +1,5 @@
-TIMESTAMP = 1784961790
-SHA256 (go/databases_goose/goose-v3.27.3/v3.27.3.mod) = f25f8a88b5d9bcd71c8b170afce0b7bde1f0423d06ceeb101ddfe90abc0fbb9f
-SIZE (go/databases_goose/goose-v3.27.3/v3.27.3.mod) = 4086
-SHA256 (go/databases_goose/goose-v3.27.3/v3.27.3.zip) = 5707e627c3c16cac20df24fd008aeea47e5d23d3befb0e024624e33691358bbf
-SIZE (go/databases_goose/goose-v3.27.3/v3.27.3.zip) = 377158
+TIMESTAMP = 1788987689
+SHA256 (go/databases_goose/goose-v3.28.0/v3.28.0.mod) = 21ed580ab4e1b5a44246d0e73a5b78d8a79e464bd3186b08af347f7cde7a2899
+SIZE (go/databases_goose/goose-v3.28.0/v3.28.0.mod) = 4405
+SHA256 (go/databases_goose/goose-v3.28.0/v3.28.0.zip) = 0a3449f50109b9b85aa4bf4e191d5fe701b6e250997213184971a35b31a204d5
+SIZE (go/databases_goose/goose-v3.28.0/v3.28.0.zip) = 386721
