@@ -11,7 +11,8 @@ WWW=		https://github.com/FasterXML/jackson-core
 
 LICENSE=	APACHE20
 
-USES=		java:run
+USES=		cpe java:run
+CPE_VENDOR=	fasterxml
 JAVA_VERSION=	8+
 
 NO_ARCH=	yes
