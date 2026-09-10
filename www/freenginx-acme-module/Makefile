@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/nginx:www/freenginx
 
 USES=		cargo cpe llvm:lib,noexport ssl
 
-CPE_VENDOR=	nginx
+CPE_VENDOR=	f5
 CPE_PRODUCT=	nginx-acme
 
 CARGO_ENV+=	NGINX_BUILD_DIR=${WRKDIR}/freenginx-${NGINX_VERSION}/objs
