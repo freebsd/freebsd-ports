@@ -1,6 +1,6 @@
---- src/FFmpegUtilities.h.orig	2026-04-02 23:34:37 UTC
+--- src/FFmpegUtilities.h.orig	2026-07-22 19:42:15 UTC
 +++ src/FFmpegUtilities.h
-@@ -411,7 +411,7 @@ inline static void* aligned_malloc(size_t size, size_t
+@@ -410,7 +410,7 @@ inline static void* aligned_malloc(size_t size, size_t
  {
  #if defined(_WIN32)
      return _aligned_malloc(size, alignment);

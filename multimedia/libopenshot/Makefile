@@ -1,7 +1,6 @@
 PORTNAME=	libopenshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	1
+DISTVERSION=	1.0.0
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,12 +22,13 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libopenshot-audio.so:audio/libopenshot-audio \
 		libzmq.so:net/libzmq4
 
-USES=		cmake compiler:c++17-lang pkgconfig python qt:5
+USES=		cmake compiler:c++17-lang pkgconfig python qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
-USE_QT=		core gui widgets buildtools:build qmake:build
+USE_QT=		base
+CMAKE_ARGS=	-DUSE_QT6:STRING=ON
 CMAKE_ON=	USE_SYSTEM_JSONCPP DISABLE_BUNDLED_JSONCPP\
 		USE_HW_ACCEL ENABLE_PYTHON\
 		CMAKE_DISABLE_FIND_PACKAGE_Catch2
@@ -39,7 +39,7 @@ DEBUG_FLAGS?=	-g
 DEBUG_FLAGS+=	-D_DEBUG -DJUCE_FORCE_DEBUG=1
 PLIST_SUB=	VERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=		DOCS DOXYGEN IMAGEMAGICK OPENCV RESVG RUBY
+OPTIONS_DEFINE=		DOCS DOXYGEN IMAGEMAGICK OPENCV RESVG RUBY WAYLAND
 OPTIONS_DEFAULT=	IMAGEMAGICK OPENCV
 OPTIONS_SUB=		yes
 RESVG_DESC?=		SVG vector graphics support via resvg
@@ -59,16 +59,26 @@ OPENCV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenCV\
 			CMAKE_DISABLE_FIND_PACKAGE_Protobuf
 OPENCV_CMAKE_ON=	-DOpenCV_DIR:STRING=${LOCALBASE:Q}/cmake/opencv4
 RESVG_LIB_DEPENDS=	libresvg.so:graphics/resvg-capi
-RESVG_USE_OFF=		QT=svg
+RESVG_USE_OFF=		qt=svg
 RESVG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Resvg
-RESVG_CMAKE_ON=		-DRESVGDIR:STRING=${LOCALBASE:Q}
-RUBY_LIB_DEPENDS=	libruby${RUBY_SUFFIX}.so:lang/ruby${RUBY_SUFFIX}
-RUBY_USES=		ruby:build
+RESVG_CMAKE_ON=		-DResvg_ROOT:STRING=${LOCALBASE:Q}
+RUBY_LIB_DEPENDS=	libruby${RUBY_SHLIBVER}.so:${RUBY_PORT}
+RUBY_USES=		ruby:none
 RUBY_CMAKE_BOOL=	ENABLE_RUBY
 RUBY_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Ruby
+WAYLAND_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
+WAYLAND_USES=		gnome
+WAYLAND_USE=		gnome=glib20
+WAYLAND_CMAKE_BOOL=	ENABLE_WAYLAND_CAPTURE
 
 .if !exists(/usr/include/omp.h)
 USE_GCC=		yes
 .endif
+
+# OpenGL that needs to be detected within
+# Qt6/FindWrapOpenGL.cmake by find_package is not used.
+# It seems that Qt was being loaded by dlopen,
+# so it needs to be resolved on the Qt side.
+LDFLAGS+=	-Wl,--as-needed
 
 .include <bsd.port.mk>

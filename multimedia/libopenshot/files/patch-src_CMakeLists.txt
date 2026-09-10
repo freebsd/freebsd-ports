@@ -1,9 +1,19 @@
---- src/CMakeLists.txt.orig	2025-12-17 05:23:44 UTC
+--- src/CMakeLists.txt.orig	2026-08-18 06:00:44 UTC
 +++ src/CMakeLists.txt
-@@ -524,6 +524,26 @@ add_feature_info("OpenCV algorithms" ENABLE_OPENCV "Us
+@@ -96,7 +96,7 @@ set(OPENSHOT_WAYLAND_CAPTURE FALSE)
+   )
+ 
+ set(OPENSHOT_WAYLAND_CAPTURE FALSE)
+-if(ENABLE_WAYLAND_CAPTURE AND CMAKE_SYSTEM_NAME STREQUAL "Linux")
++if(ENABLE_WAYLAND_CAPTURE)
+   find_package(PkgConfig)
+   if(PkgConfig_FOUND)
+     pkg_check_modules(PC_PIPEWIRE QUIET IMPORTED_TARGET libpipewire-0.3)
+@@ -621,6 +621,26 @@ add_feature_info("OpenCV algorithms" ENABLE_OPENCV "Us
+   endif()
  endif()  # ENABLE_OPENCV
  add_feature_info("OpenCV algorithms" ENABLE_OPENCV "Use OpenCV algorithms")
- 
++
 +#
 +include(CheckFunctionExists)
 +include(CheckLibraryExists)
@@ -23,7 +33,6 @@
 +if(EXECINFO_LIBRARY)
 +	target_link_libraries(openshot PRIVATE ${EXECINFO_LIBRARY})
 +endif(EXECINFO_LIBRARY)
-+
+ 
  ###############  LINK LIBRARY  #################
  # Link remaining dependency libraries
- if(DEFINED PROFILER)

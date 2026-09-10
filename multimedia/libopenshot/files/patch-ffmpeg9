@@ -1,6 +1,6 @@
---- src/FFmpegWriter.cpp	2026-04-03 01:34:37.000000000 +0200
-+++ src/FFmpegWriter.cpp	2026-08-13 19:59:55.020084338 +0200
-@@ -1042,38 +1042,60 @@
+--- src/FFmpegWriter.cpp.orig	2026-08-18 06:00:44 UTC
++++ src/FFmpegWriter.cpp
+@@ -1142,19 +1142,30 @@ AVStream *FFmpegWriter::add_audio_stream() {
  #endif
  
  	// Set valid sample rate (or throw error)
@@ -42,6 +42,9 @@
 +			c->sample_rate = info.sample_rate;
 +	}
  
+ 	c->time_base = AVRational{1, c->sample_rate};
+ 	st->time_base = c->time_base;
+@@ -1162,22 +1173,33 @@ AVStream *FFmpegWriter::add_audio_stream() {
  	uint64_t channel_layout = info.channel_layout;
  #if HAVE_CH_LAYOUT
  	// Set a valid number of channels (or throw error)
@@ -67,7 +70,7 @@
 +		if (avcodec_get_supported_config(NULL, codec, AV_CODEC_CONFIG_CHANNEL_LAYOUT, 0,
 +						 (const void **)&ch_layouts, NULL) < 0)
 +			ch_layouts = NULL;
-+#else
+ #else
 +		ch_layouts = codec->ch_layouts;
 +#endif
 +		if (ch_layouts) {
@@ -84,10 +87,11 @@
 +			// Set valid channel layout
 +			av_channel_layout_copy(&c->ch_layout, &ch_layout);
 +	}
- #else
++#else
  	// Set a valid number of channels (or throw error)
  	if (codec->channel_layouts) {
-@@ -1092,11 +1114,22 @@
+ 		int i;
+@@ -1195,11 +1217,22 @@ AVStream *FFmpegWriter::add_audio_stream() {
  #endif
  
  	// Choose a valid sample_fmt
@@ -115,7 +119,7 @@
  		}
  	}
  	if (c->sample_fmt == AV_SAMPLE_FMT_NONE) {
-@@ -1297,7 +1330,15 @@
+@@ -1401,7 +1434,15 @@ AVStream *FFmpegWriter::add_video_stream() {
  #endif
  
  	// Find all supported pixel formats for this codec
