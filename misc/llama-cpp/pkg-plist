@@ -7,7 +7,6 @@ bin/llama
 %%EXAMPLES%%bin/llama-convert-llama2c-to-ggml
 %%EXAMPLES%%bin/llama-cvector-generator
 %%EXAMPLES%%bin/llama-debug
-%%EXAMPLES%%bin/llama-debug-template-parser
 %%EXAMPLES%%bin/llama-diffusion-cli
 %%EXAMPLES%%bin/llama-embedding
 %%EXAMPLES%%bin/llama-eval-callback
@@ -37,7 +36,6 @@ bin/llama
 %%EXAMPLES%%bin/llama-simple-chat
 %%EXAMPLES%%bin/llama-speculative
 %%EXAMPLES%%bin/llama-speculative-simple
-%%EXAMPLES%%bin/llama-template-analysis
 %%EXAMPLES%%bin/llama-tokenize
 %%EXAMPLES%%bin/llama-tts
 include/llama-cpp.h
@@ -45,14 +43,14 @@ include/llama.h
 include/mtmd-debug.h
 include/mtmd-helper.h
 include/mtmd.h
+lib/cmake/llama/llama-config-version.cmake
 lib/cmake/llama/llama-config.cmake
-lib/cmake/llama/llama-version.cmake
 lib/libllama-batched-bench-impl.so
 lib/libllama-bench-impl.so
 lib/libllama-cli-impl.so
 lib/libllama-common.so
 lib/libllama-common.so.0
-lib/libllama-common.so.0.0.%%DISTVERSION%%
+lib/libllama-common.so.0.4.0
 lib/libllama-completion-impl.so
 lib/libllama-fit-params-impl.so
 lib/libllama-perplexity-impl.so
@@ -60,8 +58,8 @@ lib/libllama-quantize-impl.so
 lib/libllama-server-impl.so
 lib/libllama.so
 lib/libllama.so.0
-lib/libllama.so.0.0.%%DISTVERSION%%
+lib/libllama.so.0.4.0
 lib/libmtmd.so
 lib/libmtmd.so.0
-lib/libmtmd.so.0.0.%%DISTVERSION%%
+lib/libmtmd.so.0.4.0
 libdata/pkgconfig/llama.pc

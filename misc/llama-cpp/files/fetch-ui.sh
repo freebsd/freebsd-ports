@@ -4,8 +4,9 @@
 #
 # This script is used during the fetch phase of the llama-cpp port.
 # It downloads npm dependencies for the embedded WebUI using the port's
-# committed package-lock.json and packages node_modules into a tarball.
-# The actual build (npm run build) happens during the build phase.
+# committed package-lock.json (or regenerates it if missing) and packages
+# node_modules into a tarball. The actual build (npm run build) happens
+# during the build phase.
 #
 # Args:
 #   $1 - DISTVERSION (e.g., 9426)
@@ -41,10 +42,11 @@ if [ ! -f "${GH_TARBALL}" ]; then
 	exit 1
 fi
 
+REGENERATE_PACKAGE_LOCK=0
 if [ ! -f "${PORT_PACKAGE_LOCK}" ]; then
-	echo "ERROR: package-lock.json not found at ${PORT_PACKAGE_LOCK}"
-	echo "       please ensure the file exists in the port's files/ directory"
-	exit 1
+	echo "INFO: package-lock.json not found at ${PORT_PACKAGE_LOCK}"
+	echo "      will regenerate it from source package.json"
+	REGENERATE_PACKAGE_LOCK=1
 fi
 
 if [ ! -f "${LOCALBASE}/share/certs/ca-root-nss.crt" ]; then
@@ -68,10 +70,24 @@ if [ ! -d "${SRC_DIR}/tools/ui" ]; then
 fi
 
 # Install npm dependencies using the port's committed package-lock.json
+# or regenerate it if it's missing
 cd "${SRC_DIR}/tools/ui"
 
-echo "INFO: using package-lock.json from ${PORT_PACKAGE_LOCK}"
-cp "${PORT_PACKAGE_LOCK}" package-lock.json
+if [ ${REGENERATE_PACKAGE_LOCK} -eq 1 ]; then
+	echo "INFO: regenerating package-lock.json from source package.json"
+	
+	# Generate package-lock.json using npm install --package-lock-only
+	HOME="${TMPDIR}" \
+	NODE_EXTRA_CA_CERTS="${LOCALBASE}/share/certs/ca-root-nss.crt" \
+	npm install --package-lock-only
+	
+	echo "INFO: package-lock.json regenerated, copying to ${PORT_PACKAGE_LOCK}"
+	cp package-lock.json "${PORT_PACKAGE_LOCK}"
+	echo "INFO: ${PORT_PACKAGE_LOCK} was regenerated"
+else
+	echo "INFO: using package-lock.json from ${PORT_PACKAGE_LOCK}"
+	cp "${PORT_PACKAGE_LOCK}" package-lock.json
+fi
 
 HOME="${TMPDIR}" \
 NODE_EXTRA_CA_CERTS="${LOCALBASE}/share/certs/ca-root-nss.crt" \
