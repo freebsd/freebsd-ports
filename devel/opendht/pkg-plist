@@ -1,6 +1,4 @@
-bin/dhtchat
 bin/dhtnode
-bin/dhtscanner
 include/opendht.h
 include/opendht/callbacks.h
 include/opendht/crypto.h
@@ -38,7 +36,7 @@ lib/cmake/opendht/opendhtConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/opendht/opendhtConfig.cmake
 lib/cmake/opendht/opendhtConfigVersion.cmake
 lib/libopendht.so
-lib/libopendht.so.3
-lib/libopendht.so.3.3.0
+lib/libopendht.so.4
+lib/libopendht.so.4.4.0
 libdata/pkgconfig/opendht.pc
 share/man/man1/dhtnode.1.gz

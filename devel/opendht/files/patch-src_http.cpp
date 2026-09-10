@@ -1,6 +1,6 @@
---- src/http.cpp.orig	2024-08-11 15:44:47 UTC
+--- src/http.cpp.orig	2026-09-04 20:46:41 UTC
 +++ src/http.cpp
-@@ -707,9 +707,9 @@ Connection::set_keepalive(uint32_t seconds)
+@@ -819,9 +819,9 @@ Connection::set_keepalive(uint32_t seconds)
  #endif
  #else
      // Linux based systems
