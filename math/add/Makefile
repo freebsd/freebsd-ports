@@ -1,5 +1,5 @@
 PORTNAME=	add
-PORTVERSION=	20250914
+PORTVERSION=	20260909
 CATEGORIES=	math
 MASTER_SITES=	https://invisible-island.net/archives/add/
 
