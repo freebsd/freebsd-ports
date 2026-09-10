@@ -1,6 +1,6 @@
 PORTNAME=	sonivox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.1
+DISTVERSION=	4.0.2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,9 +21,11 @@ GH_ACCOUNT=	EmbeddedSynth
 CXXFLAGS+=	-DO_LARGEFILE=0 # workaround for linuxism in tests
 
 CMAKE_OFF=	BUILD_TESTING
+CMAKE_ON=	SOUNDFONT_TEST # option is only used for testing
 
 CONFIGURE_ENV=	${MAKE_ENV} TEMP=${BUILD_WRKSRC}
+TEST_ENV=	${MAKE_ENV} TEMP=${BUILD_WRKSRC}
 
-# tests as of 4.0.0: 75% tests passed, 3 tests failed out of 12, see https://github.com/EmbeddedSynth/sonivox/issues/5
+# tests as of 4.0.2: 100% tests passed, 0 tests failed out of 12
 
 .include <bsd.port.mk>
