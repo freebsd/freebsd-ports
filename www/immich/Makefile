@@ -23,7 +23,8 @@ LIB_DEPENDS=	libheif.so:graphics/libheif \
 RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool \
 		ffmpeg:multimedia/ffmpeg
 
-USES=		gmake nodejs:22,build,run pgsql:14+ pkgconfig python:build
+USES=		cpe gmake nodejs:22,build,run pgsql:14+ pkgconfig python:build
+CPE_VENDOR=	futo
 WANT_PGSQL=	client
 
 USE_GITHUB=	yes
