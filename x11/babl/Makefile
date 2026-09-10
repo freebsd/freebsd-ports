@@ -52,7 +52,7 @@ SSE41_IMPLIES=		SSE2
 SSE41_MESON_TRUE=	enable-sse4_1
 
 SSE_IMPLIES=		MMX
-SSE_MESON_TRU=		enable-sse
+SSE_MESON_TRUE=		enable-sse
 
 .include <bsd.port.pre.mk>
 
