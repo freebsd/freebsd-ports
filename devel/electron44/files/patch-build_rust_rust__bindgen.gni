@@ -1,0 +1,19 @@
+--- build/rust/rust_bindgen.gni.orig	2026-01-07 00:52:53 UTC
++++ build/rust/rust_bindgen.gni
+@@ -12,14 +12,14 @@ if (is_win) {
+   import("//build/toolchain/win/win_toolchain_data.gni")
+ }
+ 
+-_bindgen_path = "${rust_bindgen_root}/bin/bindgen"
++_bindgen_path = "${LOCALBASE}/bin/bindgen"
+ if (host_os == "win") {
+   _bindgen_path = "${_bindgen_path}.exe"
+ }
+ 
+ # On Windows, the libclang.dll is beside the bindgen.exe, otherwise it is in
+ # ../lib.
+-_libclang_path = rust_bindgen_root
++_libclang_path = "${LOCALBASE}/llvm${MODCLANG_VERSION}"
+ if (!use_chromium_rust_toolchain &&
+     (current_cpu == "ppc64" || current_cpu == "s390x")) {
+   _libclang_path = rust_sysroot_absolute + "/lib64"

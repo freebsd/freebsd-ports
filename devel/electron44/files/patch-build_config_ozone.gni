@@ -1,0 +1,19 @@
+--- build/config/ozone.gni.orig	2026-06-23 23:37:18 UTC
++++ build/config/ozone.gni
+@@ -78,7 +78,15 @@ declare_args() {
+       ozone_platform = "x11"
+       ozone_platform_drm = true
+       ozone_platform_x11 = true
+-    } else if (is_linux) {
++    } else if (is_linux && !is_bsd) {
++      ozone_platform = "x11"
++      ozone_platform_wayland = true
++      ozone_platform_x11 = true
++    } else if (is_openbsd) {
++      ozone_platform = "x11"
++      ozone_platform_wayland = false
++      ozone_platform_x11 = true
++    } else if (is_freebsd) {
+       ozone_platform = "x11"
+       ozone_platform_wayland = true
+       ozone_platform_x11 = true

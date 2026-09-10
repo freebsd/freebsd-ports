@@ -1,0 +1,20 @@
+--- rollup/rust/bindings_napi/Cargo.toml.orig	2026-05-14 17:17:51 UTC
++++ rollup/rust/bindings_napi/Cargo.toml
+@@ -15,7 +15,7 @@ xxhash = { path = "../xxhash" }
+ parse_ast = { path = "../parse_ast" }
+ xxhash = { path = "../xxhash" }
+ 
+-[target.'cfg(not(any(target_os = "linux", target_os = "freebsd")))'.dependencies]
++[target.'cfg(not(any(target_os = "linux", target_os = "freebsd", target_os = "openbsd")))'.dependencies]
+ mimalloc-safe = { version = "0.1.58" }
+ 
+ # Readable version of the target specifier
+@@ -33,7 +33,7 @@ mimalloc-safe = { version = "0.1.58" }
+ # 		)
+ # 	)
+ # )
+-[target.'cfg(any(all(target_os = "linux", not(target_arch = "loongarch64"), not(all(target_arch = "riscv64", target_env = "musl")), not(target_env = "ohos")), all(target_os = "freebsd", not(target_arch = "aarch64"))))'.dependencies]
++[target.'cfg(any(all(target_os = "linux", not(target_arch = "loongarch64"), not(all(target_arch = "riscv64", target_env = "musl")), not(target_env = "ohos")), all(target_os = "openbsd", not(target_arch = "aarch64")), all(target_os = "freebsd", not(target_arch = "aarch64"))))'.dependencies]
+ mimalloc-safe = { version = "0.1.58", features = ["local_dynamic_tls"] }
+ 
+ # Disable architecture specific optimizations on aarch64 platforms
