@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260910:
+  AFFECTS: users of databases/postgis36
+  AUTHOR: lbartoletti@FreeBSD.org
+
+  databases/postgis36 was missing PKGNAMESUFFIX and therefore built a
+  package named postgis rather than postgis36, unlike every other PostGIS
+  port.  Because that unsuffixed name does not match the
+  CONFLICTS_INSTALL=postgis[0-9][0-9] declared by postgis33, postgis34,
+  postgis35 and postgis37, those ports did not register a conflict with
+  it, and an incompatible pair was only caught late, as a file conflict
+  at install time.
+
+  The package is now named postgis36.  The origin is unchanged, so rename
+  the installed package before upgrading:
+
+  # pkg set -n postgis:postgis36
+  # pkg upgrade
+
+  Users of the other PostGIS ports need to do nothing.
+
 20260907:
   AFFECTS: users of sysutils/javaservicewrapper
   AUTHOR: michaelo@FreeBSD.org
