@@ -1,5 +1,6 @@
 PORTNAME=	lynx
 PORTVERSION=	2.9.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://invisible-mirror.net/archives/lynx/tarballs/ \
 		https://invisible-island.net/archives/lynx/tarballs/
@@ -27,7 +28,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--libdir="${PREFIX}/etc" \
 		--with-bzlib --with-zlib \
-		--with-mime-libdir=${PREFIX}/etc \
+		--with-mime-libdir="${PREFIX}/etc" \
 		--with-screen=${NCURSES_IMPL} \
 		--enable-default-colors \
 		--enable-gzip-help \
@@ -42,17 +43,22 @@ INSTALL_TARGET=	install-full
 
 DOCSDIR=	${PREFIX}/share/doc/lynx
 
-OPTIONS_DEFINE=	DOCS GNUTLS IDN NLS
-OPTIONS_DEFAULT=IDN
+OPTIONS_DEFINE=	DOCS IDN NLS
+OPTIONS_DEFAULT=IDN OPENSSL
 OPTIONS_SUB=	yes
 
-GNUTLS_CONFIGURE_ON=	--with-gnutls --without-ssl
-GNUTLS_CONFIGURE_OFF=	--with-ssl=${OPENSSLBASE} --without-gnutls
+OPTIONS_RADIO=		HTTPS
+OPTIONS_RADIO_HTTPS=	GNUTLS OPENSSL
+HTTPS_DESC=		HTTPS support
+
+GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_USES_OFF=	ssl
 
 IDN_CONFIGURE_ENABLE=	idna
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
+
+OPENSSL_CONFIGURE_WITH=	ssl="${OPENSSLBASE}"
+OPENSSL_USES=		ssl
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
