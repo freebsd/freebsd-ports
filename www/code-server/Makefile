@@ -34,7 +34,8 @@ RUN_DEPENDS=	node:www/node22
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	only the vscode-reh-web-linux-x64 distfile is provided
 
-USES=		nodejs:22 perl5 pkgconfig python:build ssl
+USES=		cpe nodejs:22 perl5 pkgconfig python:build ssl
+CPE_VENDOR=	coder
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coder
