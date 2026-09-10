@@ -11,6 +11,7 @@ o Scan Info Dialog -- View detailed scan metadata for current and previous scans
 o Dark Mode -- Follow system theme, or force light/dark
 o Sortable Results -- Sort by known status, IP, hostname, custom name and more
 o Searchable Results -- Search and filter devices on scan pages
+o Keyboard Shortcuts -- Full keyboard control with a built-in shortcuts window
 o Modern UI -- Built with GTK4 and Libadwaita
 o Multi-threaded -- Fast concurrent scanning with a configurable thread count
 o Flexible Input -- Supports CIDR notation, IP ranges, and single IPs

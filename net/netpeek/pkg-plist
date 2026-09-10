@@ -20,7 +20,13 @@ share/metainfo/io.github.zingytomato.netpeek.metainfo.xml
 %%DATADIR%%/models.py
 %%DATADIR%%/netinfo.py
 %%DATADIR%%/netpeek.py
-%%DATADIR%%/pages.py
+%%DATADIR%%/pages/__init__.py
+%%DATADIR%%/pages/helpers.py
+%%DATADIR%%/pages/history.py
+%%DATADIR%%/pages/home.py
+%%DATADIR%%/pages/preferences.py
+%%DATADIR%%/pages/results.py
+%%DATADIR%%/pages/scan_info.py
 %%DATADIR%%/scanner.py
 %%DATADIR%%/storage.py
 %%DATADIR%%/widgets.py

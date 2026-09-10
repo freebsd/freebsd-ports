@@ -1,6 +1,6 @@
 PORTNAME=	netpeek
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.3
+DISTVERSION=	0.3.4
 CATEGORIES=	net gnome python
 
 MAINTAINER=	nxjoseph@FreeBSD.org
