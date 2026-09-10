@@ -1,9 +1,3 @@
-Add support for preserving BSD file flags
-
-Original patch by Rolf Grossmann <grossman@progtech.net>
-Rsync 3.4.4 port by Dag-Erling Smørgrav <des@FreeBSD.org>
-Rsync 3.5.0 port by Rodrigo Osorio <rodrigo@FreeBSD.org>, reviewed by Claude Code
-
 --- backup.c.orig
 +++ backup.c
 @@ -246,7 +246,7 @@
@@ -111,7 +105,7 @@ Rsync 3.5.0 port by Rodrigo Osorio <rodrigo@FreeBSD.org>, reviewed by Claude Cod
  			what = "make_backup";
 --- testsuite/file-flags_test.py.orig
 +++ testsuite/file-flags_test.py
-@@ -0,0 +1,274 @@
+@@ -0,0 +1,302 @@
 +#!/usr/bin/env python3
 +# Test the FreeBSD "File system flags" patch: --file-flags and the
 +# --force-change / --force-uchange / --force-schange family.
@@ -176,8 +170,7 @@ Rsync 3.5.0 port by Rodrigo Osorio <rodrigo@FreeBSD.org>, reviewed by Claude Cod
 +    probe = SCRATCHDIR / '.flagprobe'
 +    probe.write_text('x\n')
 +    try:
-+        for bit, name in ((stat.UF_IMMUTABLE, 'uchg'),
-+                          (stat.SF_IMMUTABLE, 'schg')):
++        for bit, name in (stat.SF_IMMUTABLE, 'schg'),(stat.UF_IMMUTABLE, 'uchg'):
 +            try:
 +                os.chflags(probe, bit)
 +            except (OSError, AttributeError):
@@ -386,6 +379,35 @@ Rsync 3.5.0 port by Rodrigo Osorio <rodrigo@FreeBSD.org>, reviewed by Claude Cod
 +    test_fail("a second --file-flags pass was not a no-op:\n"
 +              + '\n'.join(changed))
 +print("ok: a second --file-flags pass is a no-op")
++
++
++# --- 9: --force-change can descend into an immutable directory ------------------------------
++
++reset()
++(FROMDIR / 'sub' / 'f').write_text("old\n")
++os.chflags(FROMDIR / 'sub' / 'f', IMMUTABLE)
++os.chflags(FROMDIR / 'sub', IMMUTABLE)
++run_rsync('-a', '--file-flags', '--force-schange', f'{FROMDIR}/', f'{TODIR}/')
++
++copied = (TODIR / 'sub' / 'f').exists()
++if not copied:
++    test_fail("file not copied: \n")
++
++os.chflags(FROMDIR / 'sub' / 'f', 0)
++(FROMDIR / 'sub' / 'f').write_text("new\n")
++os.chflags(FROMDIR / 'sub' / 'f', IMMUTABLE)
++
++run_rsync('-a', '-c', '--file-flags', '--force-schange', f'{FROMDIR}/', f'{TODIR}/')
++
++kept = (TODIR / 'sub' / 'f').read_text()
++if kept != "new\n":
++    test_fail("--force-change cannot descend into an immutable directory: \n" + kept)
++
++clear_flags_tree(FROMDIR)
++clear_flags_tree(TODIR)
++
++print("ok: --force-change descend into an immutable directory")
++
 --- flist.c.orig
 +++ flist.c
 @@ -57,6 +57,7 @@
@@ -586,6 +608,40 @@ Rsync 3.5.0 port by Rodrigo Osorio <rodrigo@FreeBSD.org>, reviewed by Claude Cod
  }
  
  #ifdef SUPPORT_XATTRS
+@@ -1855,6 +1890,10 @@
+ 		if (!preserve_perms) { /* See comment in non-dir code below. */
+ 			file->mode = dest_mode(file->mode, sx.st.st_mode, dflt_perms, statret == 0);
+ 		}
++#ifdef SUPPORT_FORCE_CHANGE
++		if (force_change && !preserve_file_flags && statret == 0)
++			F_FFLAGS(file) = ST_FLAGS(sx.st);
++#endif
+ 		if (statret != 0 && basis_dir[0] != NULL) {
+ 			int j = try_dests_non(file, fname, ndx, fnamecmpbuf, &sx, itemizing, code);
+ 			if (j == -2) {
+@@ -1900,6 +1939,11 @@
+ 		 * readable and writable permissions during the time we are
+ 		 * putting files within them.  This is then restored to the
+ 		 * former permissions after the transfer is done. */
++#ifdef SUPPORT_FORCE_CHANGE
++		if (force_change && F_FFLAGS(file) & force_change
++		 && make_mutable(fname, file->mode, F_FFLAGS(file), force_change) > 0)
++			need_retouch_dir_perms = 1;
++#endif
+ #ifdef HAVE_CHMOD
+ 		if (!am_root && (file->mode & S_IRWXU) != S_IRWXU && dir_tweaking) {
+ 			mode_t mode = file->mode | S_IRWXU;
+@@ -2607,6 +2651,10 @@
+ 				gen_entry_set_times(fname, file, &st);
+ 			}
+ 		}
++#ifdef SUPPORT_FORCE_CHANGE
++		if (force_change && F_FFLAGS(file) & force_change)
++			undo_make_mutable(fname, F_FFLAGS(file));
++#endif
+ 		if (counter >= loopchk_limit) {
+ 			if (allowed_lull)
+ 				maybe_send_keepalive(time(NULL), MSK_ALLOW_FLUSH);
 --- log.c.orig
 +++ log.c
 @@ -763,7 +763,8 @@

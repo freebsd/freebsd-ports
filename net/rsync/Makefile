@@ -1,5 +1,6 @@
 PORTNAME=	rsync
 DISTVERSION=	3.5.0
+PORTREVISION=	1
 
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
