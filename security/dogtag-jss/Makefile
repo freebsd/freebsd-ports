@@ -28,7 +28,9 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 		${JAVASHAREDIR}/slf4j/slf4j-jdk14.jar:devel/slf4j \
 		${LOCALBASE}/apache-tomcat-9.0/lib/catalina.jar:www/tomcat9
 
-USES=		cmake compiler:c++11-lang java:build,run pkgconfig shebangfix
+USES=		cmake compiler:c++11-lang cpe java:build,run pkgconfig shebangfix
+CPE_VENDOR=	dogtagpki
+CPE_PRODUCT=	network_security_services_for_java
 USE_GITHUB=	yes
 GH_ACCOUNT=	dogtagpki
 GH_PROJECT=	jss
