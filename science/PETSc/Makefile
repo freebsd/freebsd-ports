@@ -1,6 +1,5 @@
 PORTNAME=	PETSc
-DISTVERSION=	3.22.4
-PORTREVISION=	2
+DISTVERSION=	3.25.5
 CATEGORIES=	science devel
 MASTER_SITES=	https://web.cels.anl.gov/projects/petsc/download/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -21,7 +20,7 @@ USES=		blaslapack cmake:indirect fortran gmake python shebangfix xorg
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 
-SHEBANG_FILES=	configure lib/petsc/bin/*.py lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py	\
+SHEBANG_FILES=	configure lib/petsc/bin/*.py lib/petsc/bin/*.sh lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py	\
 		lib/petsc/bin/petscnagfor share/petsc/chkerrconvert.py
 
 XARCH!=		uname -p
