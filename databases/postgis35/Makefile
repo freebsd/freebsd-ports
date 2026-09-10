@@ -1,6 +1,5 @@
 PORTNAME=	postgis
-DISTVERSION=	3.5.6
-PORTREVISION=	3
+DISTVERSION=	3.5.7
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	35
