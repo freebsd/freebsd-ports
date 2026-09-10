@@ -1,0 +1,4 @@
+The goal of this library is to provide a frictionless experience to
+FTPing files in way similar to Amazon’s s3cmd command line tool. The
+API should be intuitive with the order of arguments reflecting the
+transfer direction of bytes.
