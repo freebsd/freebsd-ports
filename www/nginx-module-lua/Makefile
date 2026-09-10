@@ -10,6 +10,10 @@ WWW=		https://github.com/openresty/lua-nginx-module
 
 LICENSE=	BSD2CLAUSE
 
+USES=		cpe
+CPE_VENDOR=	openresty
+CPE_PRODUCT=	lua-nginx-module
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	openresty
 GH_PROJECT=	lua-nginx-module
