@@ -92,9 +92,6 @@ share/knotifications6/smb4k.notifyrc
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.smb4kqml.mo
 share/locale/ar/LC_MESSAGES/smb4k-core.mo
 share/locale/ar/LC_MESSAGES/smb4k.mo
-share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.smb4kqml.mo
-share/locale/bg/LC_MESSAGES/smb4k-core.mo
-share/locale/bg/LC_MESSAGES/smb4k.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.smb4kqml.mo
 share/locale/bs/LC_MESSAGES/smb4k-core.mo
 share/locale/bs/LC_MESSAGES/smb4k.mo
