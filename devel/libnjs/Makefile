@@ -15,6 +15,7 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 USES=		compiler:c11 cpe ssl
 
 CPE_VENDOR=	f5
+CPE_PRODUCT=	njs
 
 USE_GITHUB=	yes
 GH_TUPLE=	nginx:njs:${DISTVERSION}
