@@ -16,13 +16,16 @@ import json
 import time
 import subprocess
 import concurrent.futures
+import asyncio
 import urllib.request
 import urllib.parse
 import urllib.error
+import shutil
 import ssl
 
 # --- Dependency check ---
 
+# missing python dependencies
 missing_deps = []
 try:
     from tabulate2 import tabulate
@@ -38,6 +41,7 @@ if missing_deps:
     )
     sys.exit(1)
 
+
 # --- Configuration ---
 
 PORTSDIR = os.environ.get("PORTSDIR", "/usr/ports")
@@ -46,6 +50,34 @@ GITHUB_BASE = "https://github.com"
 GITHUB_API_BASE = "https://api.github.com"
 USER_AGENT = "report-outdated-for-maintainer/1.0 (FreeBSD ports maintainer tool)"
 GITHUB_TOKEN = None
+GIT_PARALLELISM = int(os.environ.get("GIT_PARALLELISM", 32))
+GIT_SINGLE_THRESHOLD = int(os.environ.get("GIT_SINGLE_THRESHOLD", 500))
+
+USAGE = f"""Usage: {os.path.basename(sys.argv[0])} [--disable-last-updated] <maintainer-email>
+       {os.path.basename(sys.argv[0])} --help
+
+Report outdated FreeBSD ports for a maintainer using Repology and GitHub.
+
+Options:
+  --disable-last-updated  Skip git history queries and omit the 'Last Updated' column.
+  --help, -h              Show this help message and exit.
+
+Example:
+  {os.path.basename(sys.argv[0])} yuri@FreeBSD.org
+"""
+
+STALENESS_THRESHOLDS = [
+    ("1 week", 7 * 24 * 3600),
+    ("2 weeks", 14 * 24 * 3600),
+    ("1 month", 30 * 24 * 3600),
+    ("2 months", 60 * 24 * 3600),
+    ("3 months", 90 * 24 * 3600),
+    ("4 months", 120 * 24 * 3600),
+    ("5 months", 150 * 24 * 3600),
+    ("6 months", 180 * 24 * 3600),
+    ("12 months", 365 * 24 * 3600),
+    ("24 months", 730 * 24 * 3600),
+]
 
 # USES keyword → Port Type label (in priority order)
 USES_TYPES = [
@@ -92,6 +124,49 @@ def check_portsdir():
         if not os.path.exists(path):
             print(f"Error: Required path not found: {path}", file=sys.stderr)
             sys.exit(1)
+
+
+def check_required_commands(need_git=True):
+    """Check that required external commands are available."""
+    missing = []
+    if not shutil.which("gh"):
+        missing.append("gh")
+    if need_git and not shutil.which("git"):
+        missing.append("git")
+    if missing:
+        print(
+            f"Missing required commands: {', '.join(missing)}. "
+            "Please install them and try again."
+        )
+        sys.exit(1)
+
+
+def parse_args():
+    """Parse command-line arguments and return (maintainer_email, disable_last_updated)."""
+    args = sys.argv[1:]
+    if "--help" in args or "-h" in args:
+        print(USAGE)
+        sys.exit(0)
+
+    disable_last_updated = False
+    maintainer_email = None
+    for arg in args:
+        if arg == "--disable-last-updated":
+            disable_last_updated = True
+        elif arg.startswith("-"):
+            print(f"Unknown option: {arg}\n{USAGE}", file=sys.stderr)
+            sys.exit(1)
+        elif maintainer_email is None:
+            maintainer_email = arg
+        else:
+            print(USAGE, file=sys.stderr)
+            sys.exit(1)
+
+    if not maintainer_email:
+        print(USAGE, file=sys.stderr)
+        sys.exit(1)
+
+    return maintainer_email, disable_last_updated
 
 
 def get_github_token():
@@ -409,6 +484,205 @@ def find_maintained_ports(maintainer_email):
     return versions, uses_types, github_repos, github_version_prefixes
 
 
+# --- Git last-update queries ---
+
+async def _find_last_updates_per_origin(origins):
+    """Per-origin streaming git log, killing each process once a bump is found."""
+    if not origins:
+        return {}
+
+    bump_re = re.compile(r"^(\+PORTVERSION=|\+DISTVERSION=)")
+    semaphore = asyncio.Semaphore(GIT_PARALLELISM)
+
+    async def _run_for_origin(origin):
+        async with semaphore:
+            makefile_rel = f"{origin}/Makefile"
+            args = [
+                "-C",
+                PORTSDIR,
+                "--no-optional-locks",
+                "log",
+                "-p",
+                "-m",
+                "--pretty=format:COMMIT:%H %ct",
+                "--",
+                makefile_rel,
+            ]
+            try:
+                proc = await asyncio.create_subprocess_exec(
+                    "git",
+                    *args,
+                    stdout=asyncio.subprocess.PIPE,
+                    stderr=asyncio.subprocess.PIPE,
+                )
+            except Exception:
+                return origin, None
+
+            current_time = None
+            timestamp = None
+
+            while True:
+                try:
+                    line_b = await asyncio.wait_for(proc.stdout.readline(), timeout=60)
+                except asyncio.TimeoutError:
+                    break
+                if not line_b:
+                    break
+                line = line_b.decode(errors="replace").rstrip("\n")
+
+                if line.startswith("COMMIT:"):
+                    parts = line[len("COMMIT:"):].split()
+                    current_time = parts[1] if len(parts) >= 2 else None
+                elif current_time and bump_re.match(line):
+                    try:
+                        timestamp = int(current_time)
+                    except ValueError:
+                        pass
+                    break
+
+            try:
+                if proc.returncode is None:
+                    proc.kill()
+                    await proc.wait()
+            except Exception:
+                pass
+
+            return origin, timestamp
+
+    tasks = [_run_for_origin(origin) for origin in origins]
+    results = await asyncio.gather(*tasks)
+
+    last_updates = {}
+    for origin, timestamp in results:
+        if timestamp is not None:
+            last_updates[origin] = timestamp
+    return last_updates
+
+
+async def _find_last_updates_single_log(origins):
+    """One repository-wide git log -G parse, with per-origin fallback."""
+    if not origins:
+        return {}
+
+    target_files = {f"{origin}/Makefile" for origin in origins}
+    bump_re = re.compile(r"^(\+PORTVERSION=|\+DISTVERSION=)")
+
+    args = [
+        "-C",
+        PORTSDIR,
+        "--no-optional-locks",
+        "log",
+        "-p",
+        "-m",
+        "-G",
+        "^PORTVERSION=|^DISTVERSION=",
+        "--pretty=format:COMMIT:%H %ct",
+        "--",
+        "*/Makefile",
+    ]
+
+    last_updates = {}
+    current_commit = None
+    current_time = None
+    current_file = None
+    current_has_bump = False
+
+    try:
+        proc = await asyncio.create_subprocess_exec(
+            "git",
+            *args,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+    except Exception:
+        return {}
+
+    def _flush():
+        nonlocal current_has_bump
+        if (
+            current_file
+            and current_commit
+            and current_time
+            and current_has_bump
+            and current_file in target_files
+            and current_file not in last_updates
+        ):
+            try:
+                last_updates[current_file] = int(current_time)
+            except ValueError:
+                pass
+        current_has_bump = False
+
+    while True:
+        try:
+            line_b = await asyncio.wait_for(proc.stdout.readline(), timeout=600)
+        except asyncio.TimeoutError:
+            break
+        if not line_b:
+            break
+        line = line_b.decode(errors="replace").rstrip("\n")
+
+        if line.startswith("COMMIT:"):
+            _flush()
+            current_file = None
+            parts = line[len("COMMIT:"):].split()
+            current_commit, current_time = (
+                (parts[0], parts[1]) if len(parts) >= 2 else (None, None)
+            )
+        elif line.startswith("diff --git"):
+            _flush()
+            match = re.match(r"^diff --git a/(.+) b/(.+)$", line)
+            current_file = match.group(2) if match else None
+        elif current_commit and current_file and bump_re.match(line):
+            current_has_bump = True
+
+    _flush()
+
+    try:
+        if proc.returncode is None:
+            proc.kill()
+            await proc.wait()
+    except Exception:
+        pass
+
+    # Fallback for renamed/moved Makefiles that the single -G log does not catch.
+    missing = [origin for origin in origins if f"{origin}/Makefile" not in last_updates]
+    if missing:
+        fallback = await _find_last_updates_per_origin(missing)
+        last_updates.update({f"{origin}/Makefile": ts for origin, ts in fallback.items()})
+
+    return {path[:-len("/Makefile")]: ts for path, ts in last_updates.items()}
+
+
+async def _find_last_updates(origins):
+    """Return {origin: timestamp} for the last version-bumping commit of each origin.
+
+    For large maintainer lists, use a single repository-wide ``git log -G``
+    query; for small lists, use per-port streaming git logs.  A per-origin
+    fallback handles renamed/moved Makefiles that the single log may miss.
+    """
+    if len(origins) > GIT_SINGLE_THRESHOLD:
+        return await _find_last_updates_single_log(origins)
+    return await _find_last_updates_per_origin(origins)
+
+
+def format_last_updated(timestamp):
+    """Format a Unix timestamp as minutes, hours, or days since that time."""
+    if timestamp is None:
+        return ""
+    now = time.time()
+    elapsed_seconds = now - timestamp
+    if elapsed_seconds < 3600:
+        minutes = int(elapsed_seconds / 60)
+        return f"{minutes} minute{'s' if minutes != 1 else ''}"
+    elapsed_hours = elapsed_seconds / 3600
+    if elapsed_hours < 24:
+        hours = int(elapsed_hours)
+        return f"{hours} hour{'s' if hours != 1 else ''}"
+    days = int(elapsed_hours / 24)
+    return f"{days} day{'s' if days != 1 else ''}"
+
+
 # --- Repology API ---
 
 def repology_request(url):
@@ -584,7 +858,15 @@ def choose_latest_version(repology_real, github_real):
     }
 
 
-def print_report(maintainer_email, local_versions, local_uses, outdated_repology, github_latest):
+def print_report(
+    maintainer_email,
+    local_versions,
+    local_uses,
+    outdated_repology,
+    github_latest,
+    last_updates,
+    disable_last_updated=False,
+):
     total_ports = len(local_versions)
 
     headers = [
@@ -595,10 +877,14 @@ def print_report(maintainer_email, local_versions, local_uses, outdated_repology
         "Port Type",
         "Notes",
     ]
+    if not disable_last_updated:
+        headers.insert(5, "Last Updated")
 
     major_ports = []
     minor_ports = []
     patch_ports = []
+    outdated_origins = []
+    stale_port_data = []  # (origin, outdatedness_level, last_update_timestamp)
 
     for origin, local_real in local_versions.items():
         latest = choose_latest_version(outdated_repology.get(origin), github_latest.get(origin))
@@ -615,14 +901,22 @@ def print_report(maintainer_email, local_versions, local_uses, outdated_repology
         category, level = result
 
         port_type = local_uses.get(origin, "")
-        row = (
+        row = [
             origin,
             display_version(latest["real"], latest["aux"]),
             display_version(local_real, local_aux),
             level,
             port_type,
             latest["notes"],
-        )
+        ]
+        if not disable_last_updated:
+            row.insert(5, format_last_updated(last_updates.get(origin)))
+        row = tuple(row)
+
+        if origin in last_updates:
+            stale_port_data.append((origin, level, last_updates[origin]))
+
+        outdated_origins.append(origin)
         if category == "major":
             major_ports.append(row)
         elif category == "minor":
@@ -671,15 +965,78 @@ def print_report(maintainer_email, local_versions, local_uses, outdated_repology
             print("No ports in this category")
         print()
 
+    if not disable_last_updated and outdated_origins:
+        now = time.time()
+        stale_counts = []
+        raw_counts = []
+        stale_pct = (lambda n: f"{n / total_ports * 100:.1f}%") if total_ports > 0 else (lambda n: "0.0%")
+        for label, seconds in STALENESS_THRESHOLDS:
+            count = sum(
+                1
+                for origin in outdated_origins
+                if origin in last_updates and (now - last_updates[origin]) >= seconds
+            )
+            stale_counts.append((label, f"{count} ({stale_pct(count)})"))
+            raw_counts.append(count)
+
+        print(f"{SEP}Staleness Analysis{SEP}")
+        print()
+        if any(raw_counts):
+            print(format_table_with_blank_header_line(stale_counts, ["Stale for Longer Than", "Count"]))
+        else:
+            print("No stale ports with last update information available.")
+        print()
+
+    if not disable_last_updated and stale_port_data:
+        now = time.time()
+
+        # Non-overlapping staleness buckets in chronological order.
+        bucket_intervals = [
+            (f"< {STALENESS_THRESHOLDS[0][0]}", 0, STALENESS_THRESHOLDS[0][1]),
+        ]
+        for i in range(len(STALENESS_THRESHOLDS) - 1):
+            label = f"{STALENESS_THRESHOLDS[i][0]} .. {STALENESS_THRESHOLDS[i + 1][0]}"
+            bucket_intervals.append(
+                (label, STALENESS_THRESHOLDS[i][1], STALENESS_THRESHOLDS[i + 1][1])
+            )
+        bucket_intervals.append((f"> {STALENESS_THRESHOLDS[-1][0]}", STALENESS_THRESHOLDS[-1][1], sys.maxsize))
+
+        buckets_rows = []
+        for period, lower, upper in bucket_intervals:
+            bucket_ports = [
+                (origin, level, timestamp)
+                for origin, level, timestamp in stale_port_data
+                if (age := now - timestamp) >= lower and age < upper
+            ]
+            if not bucket_ports:
+                continue
+            bucket_ports.sort(key=lambda x: (-x[2], x[0]))
+            count = len(bucket_ports)
+            for idx, (origin, level, timestamp) in enumerate(bucket_ports):
+                last_updated_str = format_last_updated(timestamp)
+                if idx == 0:
+                    buckets_rows.append([period, count, origin, last_updated_str])
+                else:
+                    buckets_rows.append(["", "", origin, last_updated_str])
+
+        print(f"{SEP}Ports by Time of Staleness{SEP}")
+        print()
+        if buckets_rows:
+            print(format_table_with_blank_header_line(
+                buckets_rows,
+                ["Time Period", "Count", "Port origin", "Last Updated"],
+            ))
+        else:
+            print("No stale ports with last update information available.")
+        print()
+
+
 
 # --- Main ---
 
 def main():
-    if len(sys.argv) != 2:
-        print(f"Usage: {sys.argv[0]} <maintainer-email>", file=sys.stderr)
-        sys.exit(1)
-
-    maintainer_email = sys.argv[1]
+    maintainer_email, disable_last_updated = parse_args()
+    check_required_commands(need_git=not disable_last_updated)
     check_portsdir()
 
     print(f"Scanning {PORTSDIR} for ports maintained by {maintainer_email}...", file=sys.stderr)
@@ -698,7 +1055,22 @@ def main():
     print(f"Repology reports {len(outdated_repology)} outdated FreeBSD ports.", file=sys.stderr)
     print(f"GitHub provides latest releases for {len(github_latest)} GitHub-based ports.", file=sys.stderr)
 
-    print_report(maintainer_email, local_versions, local_uses, outdated_repology, github_latest)
+    last_updates = {}
+    if not disable_last_updated:
+        print("Querying git history for last port updates...", file=sys.stderr)
+        if local_versions:
+            last_updates = asyncio.run(_find_last_updates(local_versions.keys()))
+        print(f"Found last update information for {len(last_updates)} ports.", file=sys.stderr)
+
+    print_report(
+        maintainer_email,
+        local_versions,
+        local_uses,
+        outdated_repology,
+        github_latest,
+        last_updates,
+        disable_last_updated=disable_last_updated,
+    )
 
 
 if __name__ == "__main__":
