@@ -1,4 +1,4 @@
---- Makefiles/INSTALL.orig	2026-02-11 18:23:15 UTC
+--- Makefiles/INSTALL.orig	2026-09-09 08:15:02 UTC
 +++ Makefiles/INSTALL
 @@ -76,7 +76,7 @@ set legalmhelp { 
  
@@ -9,7 +9,7 @@
  set root [expr { $username == {root} ? 1 : 0}]
   
  #
-@@ -638,7 +638,7 @@ if {!$test} {
+@@ -705,7 +705,7 @@ if {!$test} {
      set r [catch {exec ln -sf $target $::DESTDIR$EXEC/fr} out]
      set fl {}
    } else {
