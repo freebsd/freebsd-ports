@@ -1,0 +1,5 @@
+GtkAda an Ada graphical widget library based on the GIMP Toolkit (GTK).
+
+GtkAda are Ada bindings to the Gtk3 widgets using the object-oriented features
+of the Ada language. Gtk3 is a graphical toolkit written in C for the X-Window
+System, Wayland, and Win32 that was originally developed as the basis for GIMP.

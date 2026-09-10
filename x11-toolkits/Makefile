@@ -32,6 +32,7 @@
     SUBDIR += gtk30
     SUBDIR += gtk4-layer-shell
     SUBDIR += gtk40
+    SUBDIR += gtkada3
     SUBDIR += gtkd
     SUBDIR += gtkdatabox
     SUBDIR += gtkextra
