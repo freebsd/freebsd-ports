@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	2026-09-07 00:00:00 UTC
++++ pyproject.toml
+@@ -1,11 +1,10 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=63.1.0"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "joblib"
+ authors = [{name = "Gael Varoquaux", email = "gael.varoquaux@normalesup.org"}]
+-license = "BSD-3-Clause"
+ description = "Lightweight pipelining with Python functions"
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+@@ -80,7 +79,6 @@
+ ]
+ platforms = ["any"]
+ include-package-data = false
+-license-files = ["LICENSE.txt"]
+ 
+ [tool.setuptools.package-data]
+ "joblib.test" = [

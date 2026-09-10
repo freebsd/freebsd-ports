@@ -1,6 +1,5 @@
 PORTNAME=	joblib
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 #TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}threadpoolctl>0:devel/py-threadpoolctl@${PY_FLAVOR}
 
-USES=		cpe python
+USES=		cpe python:3.10+
 CPE_VENDOR=	joblib_project
 USE_PYTHON=	autoplist pep517 pytest
 
