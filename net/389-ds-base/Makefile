@@ -29,8 +29,10 @@ LIB_DEPENDS=	libcrack.so:security/cracklib \
 		libpkg.so:ports-mgmt/pkg \
 		libsasl2.so:security/cyrus-sasl2
 
-USES=		autoreconf gmake gssapi:mit ldap libtool localbase:ldflags \
+USES=		autoreconf cpe gmake gssapi:mit ldap libtool localbase:ldflags \
 		perl5 pkgconfig python:3.12+ shebangfix ssl tar:bzip2
+CPE_VENDOR=	fedoraproject
+CPE_PRODUCT=	389_directory_server
 
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/dirsrv
 USE_PERL5=	run
