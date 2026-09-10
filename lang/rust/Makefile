@@ -243,6 +243,9 @@ do-configure:
 .if ${PORT_OPTIONS:MPORT_LLVM}
 	@${ECHO_CMD} 'llvm-config="${LOCALBASE}/bin/${LLVM_CONFIG}"' >> ${WRKSRC}/config.toml
 .endif
+.if ${_target} == "wasm32-unknown-unknown"
+	@${ECHO_CMD} 'profiler=false' >> ${WRKSRC}/config.toml
+.endif
 .endfor
 	@${ECHO_CMD} '[dist]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'compression-formats=["xz"]' >> ${WRKSRC}/config.toml
