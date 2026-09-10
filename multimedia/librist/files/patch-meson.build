@@ -2,12 +2,12 @@
 - code uses the c11 feature stdatomic.h while it uses --std=c99
 - add FreeBSD TUN support: include src/tun_freebsd.c in the platform build
 
---- meson.build.orig	2026-05-31 14:10:56 UTC
+--- meson.build.orig	2026-07-30 03:39:06 UTC
 +++ meson.build
 @@ -5,7 +5,7 @@ project('libRIST', 'c',
  
  project('libRIST', 'c',
- 	version: '0.2.17',
+ 	version: '0.2.20',
 -	default_options: ['c_std=c99', 'warning_level=3', 'libdir=lib'],
 +	default_options: ['c_std=c11', 'warning_level=3', 'libdir=lib'],
          meson_version: '>= 0.51.0')
@@ -22,7 +22,7 @@
  	elif host_machine.system() == 'gnu'
  		test_args += '-D_GNU_SOURCE'
  		add_project_arguments('-D_GNU_SOURCE', language: 'c')
-@@ -423,7 +425,7 @@ if get_option('static_analyze')
+@@ -426,7 +428,7 @@ if get_option('static_analyze')
  if get_option('static_analyze')
  	run_target('cppcheck', command : ['cppcheck',
  									  '--quiet',
