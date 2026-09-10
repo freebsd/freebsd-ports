@@ -26,7 +26,8 @@ RUN_DEPENDS+=	${JAVAJARDIR}/jackson-core.jar:devel/jackson-core
 RUN_DEPENDS+=	${JAVAJARDIR}/jackson-databind.jar:devel/jackson-databind
 RUN_DEPENDS+=	${JAVAJARDIR}/jackson-jaxrs-json-provider.jar:devel/jackson-jaxrs-providers
 
-USES=	java:run
+USES=		cpe java:run
+CPE_VENDOR=	redhat
 JAVA_VERSION=	8+
 
 NO_ARCH=	yes
