@@ -1231,6 +1231,7 @@
     SUBDIR += skanlite
     SUBDIR += skanpage
     SUBDIR += skia
+    SUBDIR += skia124
     SUBDIR += spirv-cross
     SUBDIR += spirv-headers
     SUBDIR += spirv-tools

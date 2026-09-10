@@ -1,0 +1,3 @@
+Skia is a 2D graphic library for drawing Text, Geometries, and Images.
+This is the aseprite fork of Skia (aseprite-m124 branch) used by the
+aseprite pixel art editor and laf framework.
