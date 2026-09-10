@@ -1,6 +1,5 @@
 PORTNAME=	slepc4py
-DISTVERSION=	3.22.2
-PORTREVISION=	5
+DISTVERSION=	3.25.1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,14 +11,9 @@ WWW=		https://bitbucket.org/slepc/slepc4py
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}petsc4py>0:math/py-petsc4py@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS}
-LIB_DEPENDS=	libmpich.so:net/mpich \
-		libpetsc.so:science/PETSc \
-		libslepc.so:math/slepc
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} ${PYTHON_PKGNAMEPREFIX}petsc4py>0:math/py-petsc4py@${PY_FLAVOR}
+LIB_DEPENDS=	libmpich.so:net/mpich libpetsc.so:science/PETSc libslepc.so:math/slepc
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} ${PYTHON_PKGNAMEPREFIX}petsc4py>0:math/py-petsc4py@${PY_FLAVOR}
 
 USES=		fortran python
 USE_PYTHON=	autoplist cython distutils pytest
@@ -29,5 +23,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/slepc4py/lib/SLEPc${PYTHON_TAG}.so
+
+# tests as of 3.25.1: 112 passed in 0.86s
 
 .include <bsd.port.mk>
