@@ -1,3 +1,4 @@
+@comment bin/portal-test-qt6
 include/libportal-qt6/portal-qt6.h
 lib/libportal-qt6.so
 lib/libportal-qt6.so.1

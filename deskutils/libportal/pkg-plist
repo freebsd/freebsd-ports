@@ -1,10 +1,10 @@
 include/libportal/account.h
 include/libportal/background.h
 include/libportal/camera.h
+include/libportal/clipboard.h
 include/libportal/dynamic-launcher.h
 include/libportal/email.h
 include/libportal/filechooser.h
-include/libportal/glib-backports.h
 include/libportal/inhibit.h
 include/libportal/inputcapture-pointerbarrier.h
 include/libportal/inputcapture-zone.h
