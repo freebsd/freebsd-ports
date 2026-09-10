@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libxml2.so:textproc/libxml2
 
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf cpe gmake libtool pkgconfig
+CPE_VENDOR=	redhat
 USE_RC_SUBR=	oddjobd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
