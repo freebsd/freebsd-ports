@@ -2295,6 +2295,7 @@
     SUBDIR += vbindiff
     SUBDIR += ve-hunspell
     SUBDIR += vgrep
+    SUBDIR += vss-text
     SUBDIR += wa-aspell
     SUBDIR += wa-hunspell
     SUBDIR += wdiff

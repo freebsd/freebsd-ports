@@ -1,0 +1,12 @@
+  Address stage-qa error on missing SONAME.
+
+--- gnat/vss_gnat.gpr.orig	2026-06-27 04:26:28 UTC
++++ gnat/vss_gnat.gpr
+@@ -14,6 +14,7 @@ library project VSS_GNAT is
+ 
+    for Library_Name use "vss-gnat";
+    for Library_Kind use VSS_Common.Library_Kind;
++   for Library_Version use "lib" & Project'Library_Name & ".so." & "%%SO_VERSION%%";
+ 
+    for Object_Dir use VSS_Common.Object_Dir;
+    for Library_Dir use VSS_Common.Library_Dir;

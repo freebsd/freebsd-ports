@@ -1,0 +1,12 @@
+A high level Unicode text processing library, designed with the following
+objectives:
+ * To introduce a definite type that represents a string of Unicode characters
+   and provides a handy set of operations.
+ * The API should be encoding independent and allows efficient implementations.
+ * Besides separating string API from in-memory data representation, it should
+   separate string API from input/output stream representation.
+ * To provide a clear, well-defined semantic for iteration over string elements,
+   such as Unicode unit, grapheme cluster, etc.
+ * To avoid string element integer indexes, because this isn't necessarily
+   constant time and could mislead about indexed element kind.
+ * To prefer safe results over raising exceptions where possible.
