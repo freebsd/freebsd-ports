@@ -1,3 +1,67 @@
+  <vuln vid="fcc6917b-adbc-11f1-a655-3497f65b111b">
+    <topic>immich -- locked assets remain accessible through shared albums and links</topic>
+    <affects>
+	<package>
+	  <name>immich</name>
+	  <range><le>3.2.0</le></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2026-82272">
+	  <p>Immich through 3.1.0 fails to properly enforce locked asset
+	    visibility when assets are locked through the single-asset
+	    endpoint, allowing them to remain accessible through shared
+	    albums and links.</p>
+	</blockquote>
+	<p>The single-asset code path still lacks the album removal that the
+	  bulk path performs, so 3.2.0 is affected as well.  Upstream has not
+	  released a fix yet.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-82272</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-82272</url>
+      <url>https://github.com/immich-app/immich/issues/29526</url>
+    </references>
+    <dates>
+      <discovery>2026-08-28</discovery>
+      <entry>2026-09-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fcc6baaa-adbc-11f1-a655-3497f65b111b">
+    <topic>immich -- open redirect and reflected XSS in maintenance endpoint</topic>
+    <affects>
+	<package>
+	  <name>immich</name>
+	  <range><lt>3.2.0</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The immich project reports:</p>
+	<blockquote cite="https://github.com/immich-app/immich/security/advisories/GHSA-h5w4-vjv4-9r5q">
+	  <p>The /maintenance endpoint fails to validate the continue URL
+	    parameter.  When maintenance mode is disabled, which is the
+	    default, the application accepts unvalidated redirect targets,
+	    enabling both open redirects and reflected cross-site scripting.
+	    An unauthenticated user can craft a malicious link leading to
+	    account takeover, including administrative accounts, through
+	    same-origin API requests with credentials.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-h5w4-vjv4-9r5q</url>
+    </references>
+    <dates>
+      <discovery>2026-08-23</discovery>
+      <entry>2026-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d69ee28-adb9-11f1-9d0e-4c526214c986">
     <topic>redpanda-connect -- memory exhaustion via oversized AMQP frames</topic>
     <affects>
