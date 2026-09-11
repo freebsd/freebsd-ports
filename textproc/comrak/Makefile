@@ -1,7 +1,6 @@
 PORTNAME=	comrak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.54.0
-PORTREVISION=	2
+DISTVERSION=	0.55.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,9 +20,9 @@ GH_ACCOUNT=	kivikakk
 
 CARGO_CRATES=	adler2-2.0.1 \
 		aho-corasick-1.1.4 \
-		anstream-0.6.21 \
+		anstream-1.0.0 \
 		anstyle-1.0.13 \
-		anstyle-parse-0.2.7 \
+		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.100 \
@@ -42,9 +41,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cc-1.2.53 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.60 \
-		clap_builder-4.5.60 \
-		clap_derive-4.5.55 \
+		clap-4.6.1 \
+		clap_builder-4.6.0 \
+		clap_derive-4.6.1 \
 		clap_lex-1.0.0 \
 		codspeed-4.2.1 \
 		codspeed-divan-compat-4.2.1 \
@@ -63,7 +62,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		diff-0.1.13 \
 		divan-macros-0.1.17 \
 		either-1.15.0 \
-		emojis-0.8.0 \
+		emojis-0.8.2 \
 		entities-1.0.1 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
@@ -111,9 +110,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pretty_assertions-1.4.1 \
 		prettyplease-0.2.37 \
 		proc-macro-crate-3.4.0 \
-		proc-macro2-1.0.105 \
+		proc-macro2-1.0.107 \
 		quick-xml-0.38.4 \
-		quote-1.0.43 \
+		quote-1.0.47 \
 		regex-1.12.2 \
 		regex-automata-0.4.13 \
 		regex-lite-0.1.8 \
@@ -138,7 +137,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
-		syn-2.0.114 \
+		syn-2.0.119 \
 		syntect-5.3.0 \
 		terminal_size-0.4.3 \
 		thiserror-2.0.17 \
