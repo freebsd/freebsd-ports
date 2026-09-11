@@ -1,6 +1,6 @@
 PORTNAME=	json-repair
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.61.7
+DISTVERSION=	0.63.4
 CATEGORIES=	textproc python
 #MASTER_SITES=	PYPI # missing file for tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,6 @@ NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 0.61.7: 322 passed in 16.06s
+# tests as of 0.63.4: 341 passed
 
 .include <bsd.port.mk>
