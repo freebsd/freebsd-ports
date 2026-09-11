@@ -69,6 +69,7 @@
     SUBDIR += moosefs-metalogger
     SUBDIR += moosefs-netdump
     SUBDIR += mp3fs
+    SUBDIR += ms-sys
     SUBDIR += mtools
     SUBDIR += mtpfs
     SUBDIR += nbd-client-kmod
