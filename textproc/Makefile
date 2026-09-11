@@ -106,6 +106,7 @@
     SUBDIR += cl-ppcre-sbcl
     SUBDIR += clucene
     SUBDIR += cmark
+    SUBDIR += cmark-gfm
     SUBDIR += coccigrep
     SUBDIR += code-minimap
     SUBDIR += code2html
