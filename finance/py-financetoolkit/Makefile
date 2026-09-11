@@ -1,6 +1,6 @@
 PORTNAME=	financetoolkit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.4
+DISTVERSION=	2.2.0
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +14,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=2.2:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openpyxl>=3.1:textproc/py-openpyxl@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl>=3.1:textproc/py-openpyxl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=3.0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.6:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yfinance>0:finance/py-yfinance@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}linearmodels>=6.0:math/py-linearmodels@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.14:math/py-statsmodels@${PY_FLAVOR} # 2 optional deps required in tests
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx2>=0.28:www/py-httpx2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipykernel>=6.29:devel/py-ipykernel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=5.0.0:devel/py-pytest-cov@${PY_FLAVOR} \
@@ -42,5 +45,6 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 # tests as of 2.1.4: 612 passed, 58 skipped, 7 warnings in 31.38s
+# tests as of 2.2.0: fail because they expect misc/py-mcp to be 1.x and ports have 2.x, otherwise likely nothing is wrong
 
 .include <bsd.port.mk>
