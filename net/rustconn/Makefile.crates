@@ -43,7 +43,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		bit-vec-0.8.0 \
 		bit_field-0.10.3 \
 		bitflags-1.3.2 \
-		bitflags-2.13.1 \
+		bitflags-2.13.2 \
 		bitvec-1.1.1 \
 		blake2-0.11.0 \
 		block-0.1.6 \
@@ -366,7 +366,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		once_cell_polyfill-1.70.2 \
 		oo7-0.6.0 \
 		oorandom-11.1.5 \
-		open-5.4.3 \
+		open-5.4.4 \
 		openh264-0.9.8 \
 		openh264-sys2-0.9.8 \
 		openssl-0.10.81 \
@@ -504,7 +504,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		slab-0.4.12 \
 		slotmap-1.1.1 \
 		slug-0.1.6 \
-		smallvec-1.16.0 \
+		smallvec-1.16.1 \
 		socket2-0.6.5 \
 		soup3-0.9.0 \
 		soup3-sys-0.9.0 \
@@ -555,9 +555,9 @@ CARGO_CRATES=	addchain-0.2.1 \
 		tokio-stream-0.1.19 \
 		tokio-tungstenite-0.29.0 \
 		tokio-util-0.7.19 \
-		toml-1.1.5+spec-1.1.0 \
+		toml-1.1.6+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.13+spec-1.1.0 \
+		toml_edit-0.25.15+spec-1.1.0 \
 		toml_parser-1.1.3+spec-1.1.0 \
 		toml_writer-1.1.2+spec-1.1.0 \
 		tower-0.5.3 \
@@ -588,7 +588,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		usvg-0.48.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.26.0 \
+		uuid-1.26.1 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version-compare-0.2.1 \
