@@ -1,5 +1,5 @@
 PORTNAME=	openinference-instrumentation
-PORTVERSION=	0.1.54
+PORTVERSION=	0.1.63
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openinference-semantic-conventions>=0.1.30:misc/py-openinference-semantic-conventions@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openinference-semantic-conventions>=0.1.37:misc/py-openinference-semantic-conventions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>0:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>0:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=1.14.0:devel/py-wrapt@${PY_FLAVOR}
