@@ -1,6 +1,6 @@
 PORTNAME=	nanobind
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13.0
+DISTVERSION=	3.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -58,12 +58,12 @@ post-test:
 	@cd ${TEST_WRKSRC} && \
 		pytest .
 
-# tests as of 2.12.0:
-# Results (41.59s):
-#          2 failed
-#       1486 passed
-#         19 skipped
-#          2 warnings
+# tests as of 3.0.1:
+# Results (46.19s):
+#      610 passed
+#        1 failed
+#          - test_inter_module.py:26 test02_reload_module
+#       92 skipped
 
 # cmake installs files into non-standard locations, see https://github.com/wjakob/nanobind/issues/810
 # hostile upstream, do not create bug reports
