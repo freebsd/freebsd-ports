@@ -1,7 +1,6 @@
 PORTNAME=	hyprpolkitagent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.3
-PORTREVISION=	5
+DISTVERSION=	0.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,18 +10,22 @@ WWW=		https://github.com/hyprwm/hyprpolkitagent
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libhyprutils.so:devel/hyprutils \
-		libpolkit-agent-1.so:sysutils/polkit \
-		libpolkit-qt6-core-1.so:sysutils/polkit-qt-1@qt6
+BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
+LIB_DEPENDS=	libbasu.so:devel/basu \
+		libhyprlang.so:devel/hyprlang \
+		libhyprutils.so:devel/hyprutils \
+		libsdbus-c++.so:devel/sdbus-cpp \
+		libhyprgraphics.so:graphics/hyprgraphics \
+		libdrm.so:graphics/libdrm \
+		libaquamarine.so:x11-toolkits/aquamarine \
+		libhyprtoolkit.so:x11-toolkits/hyprtoolkit
 
-USES=		cmake gettext-runtime gl gnome pkgconfig qt:6
+USES=		cmake pkgconfig xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
 
-USE_GL=		gl opengl
-USE_GNOME=	glib20
-USE_QT=		base declarative
+USE_XORG=	pixman
 
 PLIST_FILES=	lib/systemd/user/${PORTNAME}.service \
 		libexec/${PORTNAME} \
