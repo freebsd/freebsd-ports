@@ -1,6 +1,5 @@
 PORTNAME=	gnatcoll-bindings
-DISTVERSIONPREFIX=	v
-DISTVERSION=	26.0.0
+DISTVERSION=	26.2
 CATEGORIES=	devel archivers converters lang math science
 
 MAINTAINER=	ada@FreeBSD.org
