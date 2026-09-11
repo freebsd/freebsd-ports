@@ -1,6 +1,6 @@
---- electron/shell/browser/ui/inspectable_web_contents.cc.orig	2026-08-31 00:54:38 UTC
+--- electron/shell/browser/ui/inspectable_web_contents.cc.orig	2026-09-10 01:17:27 UTC
 +++ electron/shell/browser/ui/inspectable_web_contents.cc
-@@ -597,7 +597,7 @@ void InspectableWebContents::LoadCompleted() {
+@@ -619,7 +619,7 @@ void InspectableWebContents::LoadCompleted() {
            dock_state_ = "right";
          }
        }

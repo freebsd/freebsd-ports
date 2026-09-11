@@ -1,6 +1,6 @@
---- electron/shell/common/node_bindings.cc.orig	2026-08-31 00:54:38 UTC
+--- electron/shell/common/node_bindings.cc.orig	2026-09-10 01:17:27 UTC
 +++ electron/shell/common/node_bindings.cc
-@@ -55,7 +55,7 @@
+@@ -57,7 +57,7 @@
  #include "third_party/electron_node/src/node_snapshot_builder.h"
  #include "v8/include/v8-statistics.h"
  
@@ -9,7 +9,7 @@
  #include "shell/common/crash_keys.h"
  #include "shell/common/v8_oom_diagnostics.h"
  #endif
-@@ -173,7 +173,7 @@ void V8FatalErrorCallback(const char* location, const 
+@@ -175,7 +175,7 @@ void V8FatalErrorCallback(const char* location, const 
  void V8FatalErrorCallback(const char* location, const char* message) {
    LOG(ERROR) << "Fatal error in V8: " << location << " " << message;
  
@@ -18,7 +18,7 @@
    electron::crash_keys::SetCrashKey("electron.v8-fatal.message", message);
    electron::crash_keys::SetCrashKey("electron.v8-fatal.location", location);
  #endif
-@@ -195,7 +195,7 @@ void V8OOMErrorCallback(const char* location, const v8
+@@ -197,7 +197,7 @@ void V8OOMErrorCallback(const char* location, const v8
      LOG(ERROR) << "OOM detail: " << details.detail;
    }
  
@@ -27,7 +27,7 @@
    // TryGetCurrent() instead of GetCurrent() to avoid FATAL if no isolate.
    v8::Isolate* isolate = v8::Isolate::TryGetCurrent();
    electron::v8_oom::RecordErrorDetails(isolate, location, details);
-@@ -653,7 +653,7 @@ void NodeBindings::Initialize(v8::Isolate* const isola
+@@ -655,7 +655,7 @@ void NodeBindings::Initialize(v8::Isolate* const isola
    TRACE_EVENT0("electron", "NodeBindings::Initialize");
    // Open node's error reporting system for browser process.
  
