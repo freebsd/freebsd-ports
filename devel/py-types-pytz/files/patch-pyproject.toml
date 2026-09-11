@@ -3,7 +3,7 @@
 -- [tool.setuptools.package-data], which the older setuptools in ports rejects.
 -- Lower the build-system requirement and use package-data '*' with a find
 -- include pattern so the stub files are still installed.
---- pyproject.toml.orig	2026-07-20 16:57:01 UTC
+--- pyproject.toml.orig	2026-09-11 15:59:25 UTC
 +++ pyproject.toml
 @@ -1,12 +1,10 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -13,7 +13,7 @@
  
  [project]
  name = "types-pytz"
- version = "2026.2.0.20260518"
+ version = "2026.3.1.20260727"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
  description = "Typing stubs for pytz"
