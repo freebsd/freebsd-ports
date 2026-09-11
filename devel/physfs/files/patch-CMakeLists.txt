@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-09-11 15:35:18 UTC
++++ CMakeLists.txt
+@@ -11,7 +11,7 @@ set(PHYSFS_VERSION 3.2.0)
+ 
+ set(PHYSFS_VERSION 3.2.0)
+ 
+-cmake_minimum_required(VERSION 3.0)
++cmake_minimum_required(VERSION 3.5)
+ 
+ project(PhysicsFS VERSION ${PHYSFS_VERSION} LANGUAGES C )
+ 
