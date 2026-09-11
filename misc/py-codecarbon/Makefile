@@ -1,5 +1,5 @@
 PORTNAME=	codecarbon
-DISTVERSION=	3.2.9
+DISTVERSION=	3.3.1
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>0:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}authlib>=1.2.1:security/py-authlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}joserfc>=1.0.0:security/py-joserfc@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nvidia_ml_py>0:devel/py-nvidia-ml-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prometheus-client>0:net-mgmt/py-prometheus-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=6.0.0:sysutils/py-psutil@${PY_FLAVOR} \
