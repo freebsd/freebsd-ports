@@ -106,7 +106,7 @@ MASTER_SITE_CRAN_ARCHIVE+= ${MASTER_SITE_CRAN:S,$,Archive/${PORTNAME}/,}
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CRATESIO)
-MASTER_SITE_CRATESIO+=	https://crates.io/api/v1/crates/%SUBDIR%/download?dummy=/
+MASTER_SITE_CRATESIO+=	https://static.crates.io/crates/%SUBDIR%?dummy=/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
