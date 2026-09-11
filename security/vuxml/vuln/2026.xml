@@ -1,3 +1,38 @@
+  <vuln vid="cd5bfb7d-ac34-11f1-9b94-901b0e13f1a0">
+    <topic>yt-dlp: Improper Neutralization of Special Elements</topic>
+    <affects>
+    <package>
+	<name>yt-dlp</name>
+	<range><lt>2026.07.04</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/yt-dlp/yt-dlp/security/advisories/GHSA-6v4j-43gg-vj32 reports:</p>
+	<blockquote cite="https://github.com/yt-dlp/yt-dlp/security/advisories/GHSA-6v4j-43gg-vj32">
+	<p>yt-dlp and youtube-dl are command-line audio/video downloaders.
+	Prior to 2026.7.4, the --write-link, --write-url-link, and
+	--write-desktop-link options can write .url or .desktop shortcut
+	files using attacker-controlled webpage_url or filename metadata
+	without sufficient validation or escaping, allowing malicious
+	file:// URI injection on Windows or newline-based desktop
+	entry key injection on Linux that can execute commands if
+	the generated shortcut is
+	opened. This issue is fixed in version 2026.7.4.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-55404</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-55404</url>
+    </references>
+    <dates>
+      <discovery>2026-07-08</discovery>
+      <entry>2026-09-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fcc6917b-adbc-11f1-a655-3497f65b111b">
     <topic>immich -- locked assets remain accessible through shared albums and links</topic>
     <affects>
