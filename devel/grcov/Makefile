@@ -1,7 +1,6 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.7
-PORTREVISION=	5
+DISTVERSION=	0.10.8
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +27,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		autocfg-1.5.0 \
 		bitflags-2.11.0 \
 		block-buffer-0.10.4 \
+		block-buffer-0.12.1 \
 		bstr-1.12.1 \
 		bumpalo-3.20.2 \
 		bytecount-0.6.9 \
@@ -41,8 +41,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clap_derive-4.5.55 \
 		clap_lex-1.0.0 \
 		colorchoice-1.0.4 \
+		const-oid-0.10.2 \
 		core-foundation-sys-0.8.7 \
-		cpp_demangle-0.5.1 \
+		cpp_demangle-0.4.5 \
 		cpufeatures-0.2.17 \
 		crc32fast-1.5.0 \
 		crossbeam-channel-0.5.15 \
@@ -50,11 +51,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
 		crypto-common-0.1.7 \
+		crypto-common-0.2.2 \
 		debugid-0.8.0 \
 		deranged-0.5.8 \
 		deunicode-1.6.2 \
 		diff-0.1.13 \
 		digest-0.10.7 \
+		digest-0.11.3 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
@@ -73,6 +76,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		humansize-2.1.3 \
+		hybrid-array-0.4.15 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
 		id-arena-2.3.0 \
@@ -87,19 +91,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libm-0.2.16 \
 		libz-sys-1.1.24 \
 		linux-raw-sys-0.12.1 \
-		log-0.4.29 \
-		md-5-0.10.6 \
+		log-0.4.31 \
+		md-5-0.11.0 \
 		memchr-2.8.0 \
-		memmap2-0.9.10 \
+		memmap2-0.9.11 \
 		miniz_oxide-0.8.9 \
-		msvc-demangler-0.11.0 \
 		num-conv-0.2.0 \
 		num-traits-0.2.19 \
 		num_cpus-1.17.0 \
 		num_threads-0.1.7 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
-		papergrid-0.17.0 \
+		papergrid-0.18.0 \
 		parse-zoneinfo-0.3.1 \
 		percent-encoding-2.3.2 \
 		pest-2.8.6 \
@@ -115,8 +118,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ppv-lite86-0.2.21 \
 		pretty_assertions-1.4.1 \
 		prettyplease-0.2.37 \
-		proc-macro-error-attr2-2.0.0 \
-		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.106 \
 		quick-xml-0.39.2 \
 		quote-1.0.44 \
@@ -124,22 +125,22 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rayon-1.11.0 \
+		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
 		rustc-demangle-0.1.27 \
-		rustc-hash-2.1.1 \
+		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
 		same-file-1.0.6 \
-		semver-1.0.27 \
+		semver-1.0.28 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.149 \
+		serde_json-1.0.151 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
 		simd-adler32-0.3.8 \
@@ -149,13 +150,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		smallvec-1.15.1 \
 		stable_deref_trait-1.2.1 \
 		strsim-0.11.1 \
-		symbolic-common-12.17.2 \
-		symbolic-demangle-12.17.2 \
+		symbolic-common-13.9.0 \
+		symbolic-demangle-13.9.0 \
 		syn-2.0.117 \
-		tabled-0.20.0 \
-		tabled_derive-0.11.0 \
+		tabled-0.22.0 \
+		tabled_derive-0.12.0 \
 		tcmalloc-0.3.0 \
-		tempfile-3.26.0 \
+		tempfile-3.27.0 \
 		tera-1.20.1 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.3 \
@@ -164,14 +165,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		time-core-0.1.8 \
 		time-macros-0.2.27 \
 		typed-path-0.12.3 \
-		typenum-1.19.0 \
+		typenum-1.20.1 \
 		ucd-trie-0.1.7 \
 		unicode-ident-1.0.24 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		utf8parse-0.2.2 \
-		uuid-1.21.0 \
+		uuid-1.23.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
@@ -212,7 +213,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		yansi-1.0.1 \
 		zerocopy-0.8.40 \
 		zerocopy-derive-0.8.40 \
-		zip-8.2.0 \
+		zip-8.6.0 \
 		zlib-rs-0.6.3 \
 		zmij-1.0.21 \
 		zopfli-0.8.3
