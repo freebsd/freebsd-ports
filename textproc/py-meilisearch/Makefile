@@ -1,5 +1,5 @@
 PORTNAME=	meilisearch
-DISTVERSION=	0.41.1
+DISTVERSION=	0.43.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}camel-converter>0:devel/py-camel-converter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.0.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
 
 USES=		python
@@ -22,6 +23,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 0.41.1: 9 passed in 4.82s
+# tests as of 0.43.0: 7 passed in 0.31s
 
 .include <bsd.port.mk>
