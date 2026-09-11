@@ -1,7 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.143
-PORTREVISION=	1
+DISTVERSION=	0.9.144
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,13 +27,13 @@ RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} 
 CARGO_CRATES=	addr2line-0.24.2 \
 		adler2-2.0.1 \
 		ahash-0.8.12 \
-		aho-corasick-1.1.4 \
+		aho-corasick-1.1.5 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.5 \
 		anstream-1.0.0 \
 		anstyle-1.0.14 \
 		anstyle-parse-1.0.0 \
-		anstyle-progress-0.1.3 \
+		anstyle-progress-0.1.4 \
 		anstyle-query-1.1.2 \
 		anstyle-wincon-3.0.8 \
 		anyhow-1.0.98 \
@@ -81,8 +80,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		chacha20-0.10.0 \
 		char_index-0.1.5 \
 		chrono-0.4.45 \
-		clap-4.6.4 \
-		clap_builder-4.6.2 \
+		clap-4.6.6 \
+		clap_builder-4.6.6 \
 		clap_derive-4.6.4 \
 		clap_lex-1.0.0 \
 		cmake-0.1.54 \
@@ -155,7 +154,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		eyre-0.6.12 \
 		fancy-regex-0.11.0 \
 		fancy-regex-0.14.0 \
-		fancy-regex-0.18.0 \
+		fancy-regex-0.19.0 \
 		fastrand-2.3.0 \
 		fiat-crypto-0.2.9 \
 		filedescriptor-0.8.3 \
@@ -189,7 +188,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		getrandom-0.3.4 \
 		getrandom-0.4.2 \
 		gimli-0.31.1 \
-		globset-0.4.19 \
+		globset-0.4.20 \
 		globwalk-0.9.1 \
 		goblin-0.10.3 \
 		guppy-0.17.26 \
@@ -215,7 +214,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
 		id-arena-2.3.0 \
-		iddqd-0.4.6 \
+		iddqd-0.5.0 \
 		idna-1.1.0 \
 		idna_adapter-1.0.0 \
 		if_chain-1.0.3 \
@@ -239,9 +238,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.33 \
 		js-sys-0.3.91 \
-		jsonschema-0.49.4 \
-		jsonschema-regex-0.49.4 \
-		jsonschema-value-0.49.4 \
+		jsonschema-0.49.9 \
+		jsonschema-regex-0.49.9 \
+		jsonschema-value-0.49.9 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
@@ -273,7 +272,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		mukti-metadata-0.3.0 \
 		native-tls-0.2.14 \
 		nested-0.1.1 \
-		newtype-uuid-1.3.2 \
+		newtype-uuid-1.4.0 \
 		nix-0.29.0 \
 		nix-0.31.3 \
 		nohash-hasher-0.2.0 \
@@ -338,7 +337,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		prost-types-0.14.1 \
 		pulldown-cmark-0.13.4 \
 		quick-error-1.2.3 \
-		quick-junit-0.7.0 \
+		quick-junit-0.8.0 \
 		quick-xml-0.38.4 \
 		quick-xml-0.41.0 \
 		quote-1.0.45 \
@@ -358,9 +357,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		referencing-0.49.4 \
+		referencing-0.49.9 \
 		regex-1.13.1 \
-		regex-automata-0.4.16 \
+		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
 		reqwest-0.13.3 \
 		ring-0.17.14 \
@@ -369,7 +368,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.0.7 \
-		rustls-0.23.42 \
+		rustls-0.23.43 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.12.0 \
 		rustls-platform-verifier-0.7.0 \
@@ -454,9 +453,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		test-strategy-0.4.5 \
 		textwrap-0.16.2 \
 		thiserror-1.0.69 \
-		thiserror-2.0.19 \
+		thiserror-2.0.20 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.19 \
+		thiserror-impl-2.0.20 \
 		thread-id-5.0.0 \
 		thread_local-1.1.8 \
 		time-0.3.47 \
@@ -469,10 +468,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.19 \
 		tokio-util-0.7.15 \
-		toml-1.1.3+spec-1.1.0 \
+		toml-1.1.4+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.25.13+spec-1.1.0 \
-		toml_parser-1.1.2+spec-1.1.0 \
+		toml_parser-1.1.3+spec-1.1.0 \
 		toml_writer-1.1.2+spec-1.1.0 \
 		tonic-0.14.2 \
 		tonic-prost-0.14.2 \
@@ -513,7 +512,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.18.1 \
+		uuid-1.24.0 \
 		uuid-simd-0.8.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
