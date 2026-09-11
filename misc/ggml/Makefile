@@ -2,6 +2,7 @@ PORTNAME=	ggml
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.23.0-38 # latest hash for llama-cpp
 DISTVERSIONSUFFIX=	-g7840aaba
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
