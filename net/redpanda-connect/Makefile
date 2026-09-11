@@ -18,7 +18,7 @@ LICENSE_PERMS_RCL=	dist-mirror dist-sell pkg-mirror pkg-sell \
 			no-auto-accept
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		go:modules
+USES=		go:1.26+,modules
 USE_RC_SUBR=	redpanda_connect
 
 GO_MODULE=	github.com/redpanda-data/connect/v4
