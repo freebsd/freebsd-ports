@@ -1,7 +1,6 @@
 PORTNAME=	pomerium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.1
-PORTREVISION=	1
+DISTVERSION=	0.33.3
 PORTEPOCH=	1
 CATEGORIES=	www
 # Custom distfiles for packages not on GitHub
@@ -102,7 +101,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		docker:go-connections:v0.7.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-units:v0.5.0:docker_go_units/vendor/github.com/docker/go-units \
 		dustin:go-humanize:v1.0.1:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		ebitengine:purego:v0.10.0:ebitengine_purego/vendor/github.com/ebitengine/purego \
+		ebitengine:purego:5f49e7c49322:ebitengine_purego/vendor/github.com/ebitengine/purego \
 		envoyproxy:go-control-plane:envoy/v1.37.0:envoyproxy_go_control_plane/vendor/github.com/envoyproxy/go-control-plane \
 		envoyproxy:protoc-gen-validate:v1.3.3:envoyproxy_protoc_gen_validate/vendor/github.com/envoyproxy/protoc-gen-validate \
 		etcd-io:bbolt:v1.4.3:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
@@ -188,7 +187,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		hashicorp:golang-lru:v2.0.7:hashicorp_golang_lru_v2/vendor/github.com/hashicorp/golang-lru/v2 \
 		hashicorp:raft:v1.7.3:hashicorp_raft/vendor/github.com/hashicorp/raft \
-		hegeldev:hegel-go:v0.3.3:hegeldev_hegel_go/vendor/hegel.dev/go/hegel \
+		hegeldev:hegel-go:v0.6.27:hegeldev_hegel_go/vendor/hegel.dev/go/hegel \
 		imdario:mergo:v1.0.2:imdario_mergo/vendor/dario.cat/mergo \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jackc:pgpassfile:v1.0.0:jackc_pgpassfile/vendor/github.com/jackc/pgpassfile \
@@ -290,7 +289,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		segmentio:encoding:v0.5.4:segmentio_encoding/vendor/github.com/segmentio/encoding \
 		shirou:gopsutil:v3.24.5:shirou_gopsutil_v3/vendor/github.com/shirou/gopsutil/v3 \
 		shirou:gopsutil:v4.26.3:shirou_gopsutil_v4/vendor/github.com/shirou/gopsutil/v4 \
-		shoenig:go-m1cpu:v0.1.6:shoenig_go_m1cpu/vendor/github.com/shoenig/go-m1cpu \
+		shoenig:go-m1cpu:v0.2.2:shoenig_go_m1cpu/vendor/github.com/shoenig/go-m1cpu \
 		shogo82148:go-sfv:v0.3.3:shogo82148_go_sfv/vendor/github.com/shogo82148/go-sfv \
 		sirupsen:logrus:v1.9.4:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		sourcegraph:conc:5f936abd7ae8:sourcegraph_conc/vendor/github.com/sourcegraph/conc \
