@@ -1,6 +1,5 @@
 PORTNAME=	restinio
-DISTVERSION=	0.7.9.1
-PORTREVISION=	1
+DISTVERSION=	0.7.10
 CATEGORIES=	www devel
 MASTER_SITES=	https://github.com/Stiffstream/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-full
@@ -63,6 +62,6 @@ SAMPLES_CMAKE_BOOL=	RESTINIO_SAMPLE RESTINIO_INSTALL_SAMPLES
 SAMPLES_VARS_OFF=	NO_ARCH=yes
 SAMPLES_BUILD_DEPENDS=	json-dto>0:devel/json-dto
 
-# tests as of 0.7.9.1: 100% tests passed, 0 tests failed out of 660
+# tests as of 0.7.10: 100% tests passed, 0 tests failed out of 660
 
 .include <bsd.port.mk>
