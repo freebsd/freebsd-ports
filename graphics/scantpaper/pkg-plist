@@ -4,6 +4,9 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper-%%DISTVERSION%%.dist-info/WHEEL
 %%PYTHON_SITELIBDIR%%/scantpaper-%%DISTVERSION%%.dist-info/entry_points.txt
 %%PYTHON_SITELIBDIR%%/scantpaper-%%DISTVERSION%%.dist-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/scantpaper/__init__.py
+%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/__init__%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/app%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/app%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/app_window%%PYTHON_TAG%%.opt-1.pyc
@@ -110,6 +113,9 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/edit_menu_mixins.py
 %%PYTHON_SITELIBDIR%%/scantpaper/entry_completion.py
 %%PYTHON_SITELIBDIR%%/scantpaper/file_menu_mixins.py
+%%PYTHON_SITELIBDIR%%/scantpaper/frontend/__init__.py
+%%PYTHON_SITELIBDIR%%/scantpaper/frontend/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/frontend/__pycache__/__init__%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/frontend/__pycache__/enums%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/frontend/__pycache__/enums%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/frontend/__pycache__/image_sane%%PYTHON_TAG%%.opt-1.pyc
