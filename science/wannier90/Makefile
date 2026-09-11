@@ -1,6 +1,6 @@
 PORTNAME=	wannier90
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.1
+DISTVERSION=	4.0.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,6 +50,6 @@ OPENMPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_BROKEN=		https://github.com/wannier-developers/wannier90/issues/662
 
-# tests as of 4.0.1: 100% tests passed, 0 tests failed out of 93
+# tests as of 4.0.2: 100% tests passed, 0 tests failed out of 95
 
 .include <bsd.port.mk>
