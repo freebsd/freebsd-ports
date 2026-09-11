@@ -1,7 +1,7 @@
 PORTNAME=	quill
-DISTVERSIONPREFIX=	v
 DISTVERSION=	13.0.0
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/odygrd/quill/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-logging-library
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,10 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	doctest>0:devel/doctest
 
-USES=		cmake:testing compiler:c++17-lang
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	odygrd
+USES=		cmake:testing compiler:c++17-lang zip
 
 CMAKE_TESTING_ON=	QUILL_BUILD_TESTS
 
