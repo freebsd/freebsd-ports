@@ -1,6 +1,6 @@
 PORTNAME=	arviz-base
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -33,6 +33,6 @@ TEST_ARGS=	-p no:benchmark -p no:xdist -p no:relaxed \
 		-p no:black -p no:ruff -p no:mypy -p no:flake8 -p no:cov
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 1.2.0: 241 passed in 1.97s
+# tests as of 1.3.0: 242 passed, 2 failed (netCDF4 binary incompatibility in env) in 1.33s
 
 .include <bsd.port.mk>
