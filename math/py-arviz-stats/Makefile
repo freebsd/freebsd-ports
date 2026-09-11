@@ -1,6 +1,6 @@
 PORTNAME=	arviz-stats
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.2
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>0:devel/py-flit-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arviz-base>=1.2.0:math/py-arviz-base@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arviz-base>=1.3.0:math/py-arviz-base@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=2:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.13:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xarray-einstats>=0:devel/py-xarray-einstats@${PY_FLAVOR}
@@ -32,6 +32,6 @@ TEST_ARGS=	-p no:benchmark -p no:xdist -p no:relaxed \
 		-p no:black -p no:ruff -p no:mypy -p no:flake8 -p no:cov
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 1.2.0: 2666 passed, 2 skipped in 1009.69s (0:16:49)
+# tests as of 1.3.2: 2740 passed, 5 skipped in 972.48s (0:16:12)
 
 .include <bsd.port.mk>
