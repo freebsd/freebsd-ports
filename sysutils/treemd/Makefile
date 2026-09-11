@@ -1,7 +1,5 @@
 PORTNAME=	treemd
 DISTVERSIONPREFIX=	v
-# XXX: check if you still need to override MASTER_SITE for Rust crates
-# see PR 298395
 DISTVERSION=	0.8.0
 PORTREVISION=	0
 CATEGORIES=	sysutils
@@ -24,10 +22,6 @@ PLIST_FILES=	bin/treemd
 PORTDOCS=	QUERY_LANGUAGE.md
 
 OPTIONS_DEFINE=	DOCS
-
-# XXX
-IGNORE_MASTER_SITE_CRATESIO=	yes
-MASTER_SITE_CRATESIO=		https://static.crates.io/crates/%SUBDIR%/download?dummy=/
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
