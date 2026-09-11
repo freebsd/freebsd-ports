@@ -1,5 +1,5 @@
 PORTNAME=	mnn
-DISTVERSION=	3.6.0
+DISTVERSION=	3.6.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -73,6 +73,6 @@ post-test:
 	@cd ${BUILD_WRKSRC} && \
 		cd ${BUILD_WRKSRC} && ./run_test.out
 
-# 5 tests fail, see https://github.com/alibaba/MNN/issues/2358
+# tests as of 3.6.1: all tests passed
 
 .include <bsd.port.post.mk>
