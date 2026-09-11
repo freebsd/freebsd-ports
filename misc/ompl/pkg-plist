@@ -328,7 +328,7 @@ include/ompl/vamp/VampStateSpace.h
 include/ompl/vamp/VampStateValidityChecker.h
 lib/libompl.so
 lib/libompl.so.19
-lib/libompl.so.2.0.1
+lib/libompl.so.2.0.2
 libdata/pkgconfig/ompl.pc
 share/ament_index/resource_index/packages/ompl
 share/man/man1/ompl_benchmark_statistics.1.gz
