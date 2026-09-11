@@ -1,5 +1,5 @@
 PORTNAME=	rmf
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.2
 CATEGORIES=	science graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -36,5 +36,6 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 1.7.1: all 49 tests passed
+# tests as of 1.7.2: 100% tests passed, 0 tests failed out of 49
+
 .include <bsd.port.mk>
