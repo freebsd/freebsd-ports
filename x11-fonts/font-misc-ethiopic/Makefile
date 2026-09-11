@@ -11,6 +11,5 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		xorg-cat:font
 FONTNAME=	TTF
-NO_ARCH=	yes
 
 .include <bsd.port.mk>

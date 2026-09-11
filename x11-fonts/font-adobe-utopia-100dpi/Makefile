@@ -11,6 +11,5 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		xorg xorg-cat:font
 USE_XORG=	fontutil
-NO_ARCH=	yes
 
 .include <bsd.port.mk>

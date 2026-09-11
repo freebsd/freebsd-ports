@@ -13,6 +13,4 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		xorg-cat:font
 
-NO_ARCH=	yes
-
 .include <bsd.port.mk>

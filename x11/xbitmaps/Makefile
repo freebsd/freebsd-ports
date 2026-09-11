@@ -11,6 +11,4 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		xorg-cat:data
 
-NO_ARCH=	yes
-
 .include <bsd.port.mk>
