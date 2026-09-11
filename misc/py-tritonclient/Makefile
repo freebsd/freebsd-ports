@@ -1,8 +1,8 @@
 PORTNAME=	tritonclient
-DISTVERSION=	2.70.0
+DISTVERSION=	2.72.0
 CATEGORIES=	misc python
 MASTER_SITES=	${MASTER_SITE_PYPI}
-MASTER_SITE_SUBDIR=	a2/2f/079ce9218627c66b2a704ff37c25c72504cabbd3e2dad65b2235dae636d1
+MASTER_SITE_SUBDIR=	45/4a/b8e30fe3763d8c1211f3513f0196bef8ff7413c24556be59f892c0cdfdb9
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-py3-none-any
 EXTRACT_SUFX=	.whl # this package doesn't distribute source tarballs, only wheels, and the upstream repo is not tagged with releases
@@ -14,10 +14,7 @@ WWW=		https://github.com/triton-inference-server/client
 LICENSE=	BSD3CLAUSE
 
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8.1:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}geventhttpclient>=2.3.3:devel/py-geventhttpclient@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}greenlet>0:devel/py-greenlet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ml-dtypes>0:math/py-ml-dtypes@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ml-dtypes>0:math/py-ml-dtypes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.19.1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-rapidjson>=0.9.1:devel/py-python-rapidjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=2.0.7:net/py-urllib3@${PY_FLAVOR}
