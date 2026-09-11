@@ -37,9 +37,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
 		camino-1.1.4 \
-		cap-fs-ext-4.0.2 \
-		cap-primitives-4.0.2 \
-		cap-std-4.0.2 \
+		cap-fs-ext-4.0.3 \
+		cap-primitives-4.0.3 \
+		cap-std-4.0.3 \
 		capstone-0.14.0 \
 		capstone-sys-0.18.0 \
 		cargo-platform-0.1.2 \
@@ -72,7 +72,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		criterion-0.8.2 \
 		criterion-plot-0.8.2 \
 		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.18 \
+		crossbeam-epoch-0.9.20 \
 		crossbeam-utils-0.8.20 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
@@ -184,7 +184,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ittapi-0.4.0 \
 		ittapi-sys-0.4.0 \
 		jobserver-0.1.32 \
-		json-from-wast-0.252.0 \
+		json-from-wast-0.254.0 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
 		leb128fmt-0.1.0 \
@@ -237,9 +237,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
 		openssl-sys-0.9.116 \
-		openvino-0.9.0 \
-		openvino-finder-0.9.0 \
-		openvino-sys-0.9.0 \
+		openvino-0.11.0 \
+		openvino-finder-0.11.0 \
+		openvino-sys-0.11.0 \
 		ort-2.0.0-rc.10 \
 		ort-sys-2.0.0-rc.10 \
 		page_size-0.6.0 \
@@ -282,7 +282,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rayon-core-1.12.0 \
 		redox_syscall-0.2.13 \
 		redox_users-0.4.3 \
-		regalloc2-0.15.1 \
+		regalloc2-0.15.2 \
 		regex-1.9.1 \
 		regex-automata-0.3.3 \
 		regex-automata-0.4.11 \
@@ -337,6 +337,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		syn-2.0.106 \
 		synstructure-0.13.1 \
 		tar-0.4.46 \
+		target-lexicon-0.12.16 \
 		target-lexicon-0.13.5 \
 		tch-0.17.0 \
 		tempfile-3.27.0 \
@@ -402,28 +403,25 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasip1-1.0.0 \
 		wasip2-1.0.0+wasi-0.2.4 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-compose-0.252.0 \
+		wasm-compose-0.254.0 \
 		wasm-encoder-0.244.0 \
-		wasm-encoder-0.251.0 \
-		wasm-encoder-0.252.0 \
+		wasm-encoder-0.254.0 \
 		wasm-metadata-0.244.0 \
-		wasm-metadata-0.251.0 \
-		wasm-metadata-0.252.0 \
-		wasm-mutate-0.252.0 \
-		wasm-smith-0.252.0 \
-		wasm-wave-0.252.0 \
+		wasm-metadata-0.254.0 \
+		wasm-mutate-0.254.0 \
+		wasm-smith-0.254.0 \
+		wasm-wave-0.254.0 \
 		wasmi-1.0.8 \
 		wasmi_collections-1.0.8 \
 		wasmi_core-1.0.8 \
 		wasmi_ir-1.0.8 \
 		wasmparser-0.228.0 \
 		wasmparser-0.244.0 \
-		wasmparser-0.251.0 \
-		wasmparser-0.252.0 \
-		wasmprinter-0.252.0 \
+		wasmparser-0.254.0 \
+		wasmprinter-0.254.0 \
 		wast-35.0.2 \
-		wast-252.0.0 \
-		wat-1.252.0 \
+		wast-254.0.0 \
+		wat-1.254.0 \
 		webpki-root-certs-1.0.4 \
 		webpki-roots-1.0.7 \
 		which-6.0.3 \
@@ -452,26 +450,25 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		winx-0.36.4 \
 		wit-bindgen-0.45.1 \
 		wit-bindgen-0.51.0 \
-		wit-bindgen-0.58.0 \
+		wit-bindgen-0.60.0 \
 		wit-bindgen-core-0.51.0 \
-		wit-bindgen-core-0.58.0 \
+		wit-bindgen-core-0.60.0 \
 		wit-bindgen-rt-0.33.0 \
 		wit-bindgen-rust-0.51.0 \
-		wit-bindgen-rust-0.58.0 \
+		wit-bindgen-rust-0.60.0 \
 		wit-bindgen-rust-macro-0.51.0 \
-		wit-bindgen-rust-macro-0.58.0 \
+		wit-bindgen-rust-macro-0.60.0 \
 		wit-component-0.244.0 \
-		wit-component-0.251.0 \
-		wit-component-0.252.0 \
+		wit-component-0.254.0 \
 		wit-parser-0.244.0 \
-		wit-parser-0.251.0 \
-		wit-parser-0.252.0 \
+		wit-parser-0.254.0 \
 		witx-0.9.1 \
 		write16-1.0.0 \
 		writeable-0.5.5 \
 		wstd-0.6.6 \
 		wstd-macro-0.6.6 \
 		xattr-1.6.1 \
+		xed-sys-0.6.0+xed-2024.05.20 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		zerofrom-0.1.5 \
