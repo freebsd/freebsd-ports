@@ -1,5 +1,6 @@
 PORTNAME=	junitparser
-DISTVERSION=	5.0.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	5.0.3
 CATEGORIES=	devel net
 #MASTER_SITES=	PYPI # some test files are missing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +27,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|version = _dist_version("junitparser")|version = "${DISTVERSION}"|' \
 		${WRKSRC}/src/junitparser/__init__.py
 
-# tests as of 5.0.1: 127 passed, 2 skipped in 0.51s
+# tests as of 5.0.3: 135 passed 2 skipped
 
 .include <bsd.port.mk>
