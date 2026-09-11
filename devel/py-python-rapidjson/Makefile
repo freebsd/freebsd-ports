@@ -1,5 +1,5 @@
 PORTNAME=	python-rapidjson
-DISTVERSION=	1.23
+DISTVERSION=	1.25
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,6 @@ TEST_WRKSRC=	${WRKSRC}/tests
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rapidjson${PYTHON_TAG}.so
 
-# tests as of 1.23: 929 passed, 17 skipped, 2 xfailed in 1.94s
+# tests as of 1.25: 931 passed 2 xfailed 17 skipped
 
 .include <bsd.port.mk>
