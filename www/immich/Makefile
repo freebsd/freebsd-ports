@@ -1,7 +1,6 @@
 PORTNAME=	immich
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
-PORTREVISION=	1
+DISTVERSION=	3.2.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
 DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
@@ -34,6 +33,7 @@ USE_RC_SUBR=	immich_server
 
 BUILDKIT=	${WRKDIR}/immich-freebsd-buildkit-${DISTVERSION}
 PNPM=		${WRKDIR}/pnpm-prefix/bin/pnpm
+PNPM_VERSION=	11.22.0
 
 MAKE_ENV=	CI=1 \
 		COREPACK_ENABLE_STRICT=0 \
@@ -59,12 +59,14 @@ post-patch:
 pre-build:
 	cd ${WRKDIR} && ${SETENV} PATH=${PATH} \
 		npm install -g --prefix ${WRKDIR}/pnpm-prefix \
-		${BUILDKIT}/pnpm-11.13.1.tgz
+		${BUILDKIT}/pnpm-${PNPM_VERSION}.tgz
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${PNPM} install --offline --frozen-lockfile \
 		--store-dir ${BUILDKIT}/pnpm-store
+	cd $$(${ECHO_CMD} ${WRKSRC}/node_modules/.pnpm/sharp@*/node_modules/sharp) && \
+		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node install/build.js
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${PNPM} --filter @immich/plugin-sdk --filter @immich/sdk \
 		--filter immich build
@@ -73,15 +75,8 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${PNPM} --store-dir ${BUILDKIT}/pnpm-store --filter immich \
 		--prod --no-optional deploy ${WRKDIR}/server-pruned
-	SHARP=$$(${ECHO_CMD} ${WRKDIR}/server-pruned/node_modules/.pnpm/sharp@*/node_modules/sharp); \
-	NODEGYP=$$(${ECHO_CMD} ${WRKDIR}/server-pruned/node_modules/.pnpm/node-gyp@*/node_modules/node-gyp/bin/node-gyp.js); \
-	${REINPLACE_CMD} -e "s|VIPS,|VIPS, UHDR,|" $$SHARP/src/common.h; \
-	${REINPLACE_CMD} \
-		-e 's|{ "VipsForeignLoadJpegFile"|{ "VipsForeignLoadUhdrFile", ImageType::UHDR }, &|' \
-		-e 's|{ "VipsForeignLoadJpegFile"|{ "VipsForeignLoadUhdrBuffer", ImageType::UHDR }, &|' \
-		$$SHARP/src/common.cc; \
-	cd $$SHARP/src && ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/node $$NODEGYP rebuild
+	cd $$(${ECHO_CMD} ${WRKDIR}/server-pruned/node_modules/.pnpm/sharp@*/node_modules/sharp) && \
+		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node install/build.js
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/server \
