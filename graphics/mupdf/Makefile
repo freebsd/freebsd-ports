@@ -1,5 +1,5 @@
 PORTNAME=	mupdf
-DISTVERSION=	1.28.2
+DISTVERSION=	1.28.3
 DISTVERSIONSUFFIX=	-source
 PORTREVISION=	1
 PORTEPOCH=	1
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libbrotlienc.so:archivers/brotli \
+		libcmark-gfm.so:textproc/cmark-gfm \
 		libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libgumbo.so:devel/gumbo \
@@ -33,7 +34,7 @@ _VERSION_MINOR=	${DISTVERSION:E}
 _VERSION_MAJOR=	${DISTVERSION:R:E}
 MAKE_ARGS=	AR=${LOCALBASE}/bin/ar \
 		build=release \
-		html=no \
+		html=yes \
 		mandir=${PREFIX}/share/man \
 		prefix=${PREFIX} \
 		shared=yes \
@@ -60,6 +61,9 @@ JS_LIB_DEPENDS=		libv8.so:lang/v8
 JS_MAKE_ARGS=		V8_PRESENT=1 \
 			V8LIBS=-lv8
 SCROLL_EXTRA_PATCHES=	${FILESDIR}/scroll_hack-platform__x11__pdfapp.c
+
+post-patch:
+	${CP} ${FILESDIR}/user.make ${WRKSRC}
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 \
