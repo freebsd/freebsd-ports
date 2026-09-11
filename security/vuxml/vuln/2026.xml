@@ -1,3 +1,37 @@
+  <vuln vid="5d69ee28-adb9-11f1-9d0e-4c526214c986">
+    <topic>redpanda-connect -- memory exhaustion via oversized AMQP frames</topic>
+    <affects>
+	<package>
+	  <name>redpanda-connect</name>
+	  <range><lt>4.109.0</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>amqp091-go developers report:</p>
+	<blockquote cite="https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-6c5v-hqjr-5xxp">
+	  <p>Before version 1.13.0, a compromised or malicious AMQP broker
+	    can force the client to allocate resources for and process
+	    content body frames that exceed the negotiated frame_max limit.
+	    This can lead to unexpected memory consumption or
+	    application-layer denial of service (DoS), bypassing the
+	    protocol's built-in framing constraints.</p>
+	</blockquote>
+	<p>Redpanda Connect vendored an affected amqp091-go release
+	  up to version 4.108.0; 4.109.0 bumps it to 1.14.0.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-79921</cvename>
+      <url>https://github.com/rabbitmq/amqp091-go/security/advisories/GHSA-6c5v-hqjr-5xxp</url>
+      <url>https://github.com/redpanda-data/connect/pull/4795</url>
+    </references>
+    <dates>
+      <discovery>2026-08-26</discovery>
+      <entry>2026-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9736fef3-ada6-11f1-a655-3497f65b111b">
     <topic>FreeIPA -- multiple vulnerabilities</topic>
     <affects>
