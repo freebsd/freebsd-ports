@@ -1,6 +1,6 @@
 PORTNAME=	bhyvemgr
 DISTVERSIONPREFIX=	v
-PORTVERSION=	2.0.4
+DISTVERSION=	2.1.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	tigervnc-viewer>0:net/tigervnc-viewer \
 		swtpm>0:sysutils/swtpm \
-		bhyvemgrd:sysutils/bhyvemgrd
+		bhyvemgrd>=1.2.0:sysutils/bhyvemgrd
 
 ONLY_FOR_ARCHS?=amd64
 
