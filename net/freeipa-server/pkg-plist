@@ -2045,6 +2045,8 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_ipahealthcheck%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_kerberos_flags%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_kerberos_flags%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_krbprinc_match%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_krbprinc_match%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_krbtpolicy%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_krbtpolicy%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/__pycache__/test_legacy_clients%%PYTHON_TAG%%.opt-1.pyc
@@ -2162,6 +2164,7 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_ipa_join.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_ipahealthcheck.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_kerberos_flags.py
+%%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_krbprinc_match.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_krbtpolicy.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_legacy_clients.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_integration/test_membermanager.py
@@ -2201,8 +2204,11 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaclient/__init__.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaclient/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaclient/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_ipaclient/__pycache__/test_epn%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_ipaclient/__pycache__/test_epn%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaclient/__pycache__/test_ldapconf%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaclient/__pycache__/test_ldapconf%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/ipatests/test_ipaclient/test_epn.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaclient/test_ldapconf.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipalib/__init__.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipalib/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -2364,6 +2370,7 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/__pycache__/test_version_comparison%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/__pycache__/test_version_comparison%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/data/full.xml
+%%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/data/pskc-entity.xml
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/data/pskc-figure3.xml
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/data/pskc-figure4.xml
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/data/pskc-figure5.xml
@@ -2372,6 +2379,7 @@
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/data/pskc-figure8.xml
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/data/pskc-invalid.xml
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/data/pskc-mini.xml
+%%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/data/pskc-missingmac.xml
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/httptest.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/test_adtrust_mockup.py
 %%PYTHON_SITELIBDIR%%/ipatests/test_ipaserver/test_changepw.py
@@ -2867,6 +2875,7 @@ lib/dirsrv/plugins/libipa_dns.so
 lib/dirsrv/plugins/libipa_enrollment_extop.so
 lib/dirsrv/plugins/libipa_extdom_extop.so
 lib/dirsrv/plugins/libipa_graceperiod.so
+lib/dirsrv/plugins/libipa_krbprinc_mr.so
 lib/dirsrv/plugins/libipa_lockout.so
 lib/dirsrv/plugins/libipa_modrdn.so
 lib/dirsrv/plugins/libipa_otp_counter.so
@@ -3010,6 +3019,7 @@ share/ipa/ipa-extdom-extop-conf.ldif
 share/ipa/ipa-httpd-wsgi.conf.template
 share/ipa/ipa-httpd.conf.template
 share/ipa/ipa-kdc-proxy.conf.template
+share/ipa/ipa-krbprinc-mr-conf.ldif
 share/ipa/ipa-pki-proxy.conf.template
 share/ipa/ipa-rewrite.conf.template
 share/ipa/ipa-sidgen-conf.ldif
@@ -3048,9 +3058,9 @@ share/ipa/modern-ui/assets/images/avatarImg.svg
 share/ipa/modern-ui/assets/images/header-logo.png
 share/ipa/modern-ui/assets/images/login-screen-background.jpg
 share/ipa/modern-ui/assets/images/product-name.png
-share/ipa/modern-ui/assets/index-C_cJkds7.css
-share/ipa/modern-ui/assets/index-m1nJE7k7.js
-share/ipa/modern-ui/assets/index-m1nJE7k7.js.map
+share/ipa/modern-ui/assets/index-Bz42mWg7.css
+share/ipa/modern-ui/assets/index-dTcVthEv.js
+share/ipa/modern-ui/assets/index-dTcVthEv.js.map
 share/ipa/modern-ui/assets/pf-v6-pficon-Dy6oiu9u.woff2
 share/ipa/modern-ui/favicon.ico
 share/ipa/modern-ui/index.html
@@ -3147,7 +3157,10 @@ share/ipa/updates/20-uuid.update
 share/ipa/updates/20-whoami.update
 share/ipa/updates/21-ca_renewal_container.update
 share/ipa/updates/21-certstore_container.update
+share/ipa/updates/21-deny-anonymous-modify.update
+share/ipa/updates/21-deny-anonymous-sid-read.update
 share/ipa/updates/21-replicas_container.update
+share/ipa/updates/21-selfservice-bindrule.update
 share/ipa/updates/25-referint.update
 share/ipa/updates/30-ipservices.update
 share/ipa/updates/30-provisioning.update
@@ -3190,6 +3203,7 @@ share/ipa/updates/75-user-trust-attributes.update
 share/ipa/updates/80-schema_compat.update
 share/ipa/updates/81-externalmembers.update
 share/ipa/updates/90-post_upgrade_plugins.update
+share/ipa/updates/91-admins-privileges.update
 share/ipa/user_private_groups.ldif
 share/ipa/uuid-conf.ldif
 share/ipa/uuid.ldif
