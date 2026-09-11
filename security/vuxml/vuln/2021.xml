@@ -4612,7 +4612,7 @@ The string hashing algorithm has been replaced with a better one, and now also u
     <affects>
       <package>
 	<name>ja-lynx</name>
-	<range><lt>2.8.10</lt></range>
+	<range><lt>2.8.10,1</lt></range>
       </package>
       <package>
 	<name>ja-lynx-current</name>
