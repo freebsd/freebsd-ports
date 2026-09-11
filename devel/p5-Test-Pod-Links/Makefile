@@ -1,20 +1,22 @@
 PORTNAME=	Test-Pod-Links
-DISTVERSION=	0.003
+DISTVERSION=	0.004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:SKIRMESS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Test Pod for invalid HTTP/S links
 WWW=		https://metacpan.org/release/Test-Pod-Links
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-XT-Files>=0:devel/p5-XT-Files
+BR_DEPENDS=	p5-XT-Files>=0:devel/p5-XT-Files
+BUILD_DEPENDS=	${BR_DEPENDS}
+RUN_DEPENDS=	${BR_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
-		p5-Test-MockModule>=0:devel/p5-Test-MockModule
+		p5-Test-MockModule>=0.14:devel/p5-Test-MockModule
 
 USES=		perl5
 USE_PERL5=	configure
