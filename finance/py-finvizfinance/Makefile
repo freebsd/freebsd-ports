@@ -1,6 +1,5 @@
 PORTNAME=	finvizfinance
-DISTVERSION=	1.3.0
-PORTREVISION=	1
+DISTVERSION=	1.5.0
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,21 +12,17 @@ WWW=		https://finvizfinance.readthedocs.io/en/latest/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>0:www/py-beautifulsoup4@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.9:www/py-beautifulsoup4@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=4.6:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandas>=1.5:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.32.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xlsxwriter>=3.0:textproc/py-xlsxwriter@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|packages=find_packages()|packages=find_packages(exclude=["test", "test.*"])|' ${WRKSRC}/setup.py
-
-post-extract:
-	@${TOUCH} ${WRKSRC}/README_pypi.md
 
 # tests disabled: upstream test suite relies on live finviz.com HTML which
 # has changed, causing 7 errors and 1 failure, see
