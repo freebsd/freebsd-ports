@@ -1,5 +1,5 @@
 PORTNAME=	plac
-DISTVERSION=	1.4.5
+DISTVERSION=	1.4.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,10 @@ NO_ARCH=	yes
 
 TEST_WRKSRC=	${WRKSRC}/doc
 
-# tests as of 1.4.5: 26 passed, 2 failed
+# tests as of 1.4.7:
+# Results (2.55s):
+#       27 passed
+#        1 failed
+#          - doc/test_plac.py:342 test_doctest # due to a missing file
 
 .include <bsd.port.mk>
