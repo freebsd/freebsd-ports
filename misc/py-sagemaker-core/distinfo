@@ -1,3 +1,3 @@
-TIMESTAMP = 1784962975
-SHA256 (sagemaker_core-2.17.0.tar.gz) = 84054570fbed8045691974d63d6f7e015a04715767dd9cd5fd767a2dec1850cf
-SIZE (sagemaker_core-2.17.0.tar.gz) = 1099849
+TIMESTAMP = 1789072478
+SHA256 (sagemaker_core-2.21.0.tar.gz) = 6faee1dff6d8a3a83c6ee80741a59a1d7f3d510d221e1e3140797367e0e149db
+SIZE (sagemaker_core-2.21.0.tar.gz) = 1106033
