@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-07-05 10:25:07 UTC
+--- pyproject.toml.orig
 +++ pyproject.toml
 @@ -1,12 +1,10 @@
  [build-system]
@@ -8,7 +8,7 @@
  
  [project]
  name = "caio"
- version = "0.10.2"
+ version = "0.12.4"
 -license = "Apache-2.0"
 -license-files = ["COPYING"]
  description = "Asynchronous file IO for Linux MacOS or Windows."
