@@ -1,7 +1,8 @@
 PORTNAME=		aseprite
-DISTVERSIONPREFIX=	v
-DISTVERSION=		1.3.18.3
+DISTVERSION=		1.3.18.5
 CATEGORIES=		graphics
+MASTER_SITES=		https://github.com/aseprite/aseprite/releases/download/v${DISTVERSION}/
+DISTNAME=		Aseprite-v${DISTVERSION}-Source
 
 MAINTAINER=		yuri@FreeBSD.org
 COMMENT=		Animated sprite editor and pixel art tool
@@ -30,39 +31,9 @@ LIB_DEPENDS=		libcmark.so:textproc/cmark \
 			libXrandr.so:x11/libXrandr
 
 USES=			cmake compiler:c++17-lang gnome iconv:wchar_t jpeg \
-			localbase:ldflags ninja pkgconfig ssl xorg
+			localbase:ldflags ninja pkgconfig ssl xorg zip
 USE_GL=			gl
 USE_XORG+=		xrandr
-USE_GITHUB=		yes
-GH_TUPLE=		aseprite:laf:1761fb8:laf/laf \
-			aseprite:clip:964847c:clip \
-			aseprite:googletest:155b337:googletest \
-			aseprite:flic:a37fe2d:flic/src/flic \
-			aseprite:observable:b21d07f:observable/src/observable \
-			aseprite:psd:87af728:psd/src/psd \
-			aseprite:tga:cd3420c:tga/src/tga \
-			aseprite:undo:2209ac5:undo/src/undo \
-			aseprite:IXWebSocket:89c9209:IXWebSocket/third_party/IXWebSocket \
-			aseprite:TinyEXIF:21d6cf7:TinyEXIF/third_party/TinyEXIF \
-			aseprite:benchmark:c58e6d0:benchmark/third_party/benchmark \
-			aseprite:cityhash:e2a9a15:cityhash/third_party/cityhash \
-			aseprite:cmark:9e2a654:cmark/third_party/cmark \
-			aseprite:curl:09cf6fd:curl/third_party/curl \
-			aseprite:fmt:f781d2b:fmt/third_party/fmt \
-			aseprite:freetype2:66a04dd:freetype2/third_party/freetype2 \
-			aseprite:giflib:94a7edb:giflib/third_party/giflib \
-			aseprite:harfbuzz:d14c2d1:harfbuzz/third_party/harfbuzz \
-			aseprite:json11:a4e1714:json11/third_party/json11 \
-			aseprite:libarchive:7bde8b8:libarchive/third_party/libarchive \
-			aseprite:libpng:34005e3:libpng/third_party/libpng \
-			aseprite:libwebp:9ce5843:libwebp/third_party/libwebp \
-			aseprite:lua:2a00e6b:lua/third_party/lua \
-			aseprite:pixman:285b9a9:pixman/third_party/pixman \
-			aseprite:qoi:c3dcfe7:qoi/third_party/qoi \
-			aseprite:simpleini:9fa7622:simpleini/third_party/simpleini \
-			aseprite:tinyexpr:24b9db0:tinyexpr/third_party/tinyexpr \
-			aseprite:tinyxml2:312a809:tinyxml2/third_party/tinyxml2 \
-			aseprite:zlib:51b7f2a:zlib/third_party/zlib
 USE_GNOME=		libxml2
 USE_XORG=		x11 xcb xcursor xext ice sm
 
@@ -92,11 +63,7 @@ STEAM_CMAKE_BOOL=	ENABLE_STEAM
 
 CONFLICTS_BUILD=	skia
 
-post-extract:
-	@${RM} -rf ${WRKSRC}/laf/clip
-	@${LN} -sf ${WRKDIR}/clip-964847c ${WRKSRC}/laf/clip
-	@${RM} -rf ${WRKSRC}/laf/third_party/googletest
-	@${LN} -sf ${WRKDIR}/googletest-155b337 ${WRKSRC}/laf/third_party/googletest
+NO_WRKSUBDIR=		yes
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX} && ${RM} -r bin/bsd* include lib libdata share/man # see https://github.com/aseprite/aseprite/issues/1602
