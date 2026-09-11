@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-src
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		ldc2-${PORTVERSION}-freebsd-${BOOTSTRAP_ARCH}.tar.xz:bootstrap
+		ldc2-${BOOTSTRAP_VERSION}-freebsd-${BOOTSTRAP_ARCH}.tar.xz:bootstrap
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	LLVM-based D compiler
@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC
 
 CMAKE_ARGS+=	-DLDC_INSTALL_PREFIX="${PREFIX}" \
-		-DD_COMPILER="${WRKDIR}/ldc2-${PORTVERSION}-freebsd-${BOOTSTRAP_ARCH}/bin/ldmd2" \
+		-DD_COMPILER="${WRKDIR}/ldc2-${BOOTSTRAP_VERSION}-freebsd-${BOOTSTRAP_ARCH}/bin/ldmd2" \
 		-DLLVM_CONFIG=${LOCALBASE}/bin/${LLVM_CONFIG} \
 		-DBUILD_SHARED_LIBS="BOTH" \
 		-DBUILD_LTO_LIBS=ON
@@ -34,9 +34,11 @@ CMAKE_ARGS+=	-DLDC_INSTALL_PREFIX="${PREFIX}" \
 
 .if ${ARCH} == amd64
 BOOTSTRAP_ARCH=	x86_64
+BOOTSTRAP_VERSION=	${PORTVERSION}
 MASTER_SITES+=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/:bootstrap
 .elif ${ARCH} == powerpc64
 BOOTSTRAP_ARCH=	ppc64
+BOOTSTRAP_VERSION=	1.42.0
 MASTER_SITES+=	LOCAL/pkubaj:bootstrap
 .elif ${ARCH} == powerpc64le
 .  if ${OSVERSION} >= 1600019
@@ -44,6 +46,7 @@ BOOTSTRAP_ARCH=	ppc64le-ld128
 .  else
 BOOTSTRAP_ARCH=	ppc64le
 .  endif
+BOOTSTRAP_VERSION=	1.42.0
 MASTER_SITES+=	LOCAL/pkubaj:bootstrap
 .endif
 
