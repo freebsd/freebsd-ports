@@ -1,5 +1,5 @@
 PORTNAME=	pwlf
-DISTVERSION=	2.5.2
+DISTVERSION=	2.6.0
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ TEST_WRKSRC=	${WRKSRC}/tests
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} tests.py
 
-# tests as of 2.5.2: Ran 62 tests in 7.096s
+# tests as of 2.6.0: Ran 63 tests in 7.902s
 
 .include <bsd.port.mk>
