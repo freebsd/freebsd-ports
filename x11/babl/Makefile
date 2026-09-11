@@ -18,8 +18,8 @@ USES=		compiler:c11 gnome meson pathfix pkgconfig tar:xz vala:build
 USE_GNOME=	introspection:build
 USE_LDCONFIG=	yes
 
-MESON_FALSE=	gi-docgen \
-		with-docs
+MESON_DISABLED=	gi-docgen
+MESON_FALSE=	with-docs
 
 # relocatable does not mean ELF relocation
 MESON_ARGS+=	-Drelocatable-bundle=no
