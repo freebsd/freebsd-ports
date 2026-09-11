@@ -1,3 +1,73 @@
+  <vuln vid="9736fef3-ada6-11f1-a655-3497f65b111b">
+    <topic>FreeIPA -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>freeipa-server</name>
+	  <range><lt>4.13.4</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The FreeIPA project reports:</p>
+	<blockquote cite="https://www.freeipa.org/release-notes/4-13-4.html">
+	  <ul>
+	    <li>CVE-2026-76578: the access control instruction for self-managed
+	      OTP tokens requires no authentication and does not restrict which
+	      attributes may be written alongside the token entry. An
+	      unauthenticated LDAP client can create a Kerberos principal and
+	      add it to the administrators group.</li>
+	    <li>CVE-2026-79678: insufficiently validated --organization and
+	      --base-url input to idp-add reaches a constrained eval() before
+	      the LDAP access control check is enforced, allowing any
+	      authenticated principal to enumerate server environment variables
+	      and to exhaust memory.</li>
+	    <li>CVE-2026-11861: where a cross-realm trust with Active Directory
+	      is configured, Active Directory users can bypass authentication
+	      for FreeIPA services including the Web UI, the SMB server and the
+	      LDAP directory.</li>
+	    <li>CVE-2026-13097: the uniqueness constraint on Kerberos principal
+	      name attributes does not account for equivalent representations of
+	      the same name, so a user with LDAP write privileges can create a
+	      service principal that impersonates a privileged one.</li>
+	    <li>CVE-2026-19550: trust-fetch-domains is gated by a read-only
+	      permission on the trust object rather than a trust administration
+	      permission, letting any authenticated user trigger a privileged
+	      trust refresh against an attacker-supplied server.</li>
+	    <li>CVE-2026-73196: an oversized OTP key value is decoded and
+	      re-encoded without a size limit, consuming excessive CPU and
+	      memory.</li>
+	    <li>CVE-2026-73197: the migration endpoint reads oversized POST
+	      bodies fully into memory, which an unauthenticated client can
+	      abuse for denial of service.</li>
+	    <li>CVE-2026-73198: the i18n_messages endpoint accepts arbitrarily
+	      large request bodies, which an unauthenticated client can abuse
+	      for memory exhaustion.</li>
+	    <li>CVE-2026-73199: a null pointer dereference in the ipa-enrollment
+	      SLAPI plugin crashes the directory server when a malformed LDAP
+	      extended operation omits a required request value.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-11861</cvename>
+      <cvename>CVE-2026-13097</cvename>
+      <cvename>CVE-2026-19550</cvename>
+      <cvename>CVE-2026-73196</cvename>
+      <cvename>CVE-2026-73197</cvename>
+      <cvename>CVE-2026-73198</cvename>
+      <cvename>CVE-2026-73199</cvename>
+      <cvename>CVE-2026-76578</cvename>
+      <cvename>CVE-2026-79678</cvename>
+      <url>https://www.freeipa.org/release-notes/4-13-3.html</url>
+      <url>https://www.freeipa.org/release-notes/4-13-4.html</url>
+    </references>
+    <dates>
+      <discovery>2026-08-19</discovery>
+      <entry>2026-09-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6a6ddb1d-ac6b-11f1-982d-3c7c3fba4204">
     <topic>CrowdSec -- multiple vulnerabilities</topic>
     <affects>
