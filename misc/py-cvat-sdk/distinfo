@@ -1,3 +1,3 @@
-TIMESTAMP = 1784097710
-SHA256 (cvat_sdk-2.70.0.tar.gz) = 4d9304bd8334b05b5e5504466cedf1f538a667f5274544398dec78bba4b47e83
-SIZE (cvat_sdk-2.70.0.tar.gz) = 251232
+TIMESTAMP = 1789141885
+SHA256 (cvat_sdk-2.75.0.tar.gz) = f2891f359a0c631dfdf4c4ab4cf0a6c52a4b2d7a5a1058af30e1bdd519613639
+SIZE (cvat_sdk-2.75.0.tar.gz) = 286394
