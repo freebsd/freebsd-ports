@@ -1,7 +1,6 @@
 PORTNAME=	hyprtoolkit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.4
-PORTREVISION=	5
+DISTVERSION=	0.6.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -14,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	googletest>0:devel/googletest \
 		hyprwayland-scanner>=0.4.0:devel/hyprwayland-scanner \
 		wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
+LIB_DEPENDS=	libabsl_hash.so:devel/abseil \
+		libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libiniparser.so:devel/iniparser \
 		libhyprgraphics.so:graphics/hyprgraphics \
@@ -35,7 +35,7 @@ USE_XORG=	pixman
 LDFLAGS+=	-pthread
 
 PLIST_SUB=	SOVERSION_FULL=${DISTVERSION} \
-		SOVERSION_MAJOR=5
+		SOVERSION_MAJOR=6
 
 # XXX Drop after FreeBSD 14.* EOL around 2028-11-30
 # https://cgit.freebsd.org/src/commit/?id=3965de642c29
