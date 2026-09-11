@@ -1,6 +1,5 @@
 PORTNAME=	pywikibot
-DISTVERSION=	11.4.2
-PORTREVISION=	1
+DISTVERSION=	11.7.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mwparserfromhell>=0.7.2:textproc/py-mwparserfromhell@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.21.0:www/py-requests@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}packaging>=25.0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.32.3:www/py-requests@${PY_FLAVOR}
 
 USES=		dos2unix python
 DOS2UNIX_FILES=	setup.py
@@ -32,13 +31,14 @@ PILLOW_DESC=			Support for image processing via pillow module
 MWOAUTH_DESC=			Support for MediaWiki OAuth handshake helper
 HTML_DESC=			Support for HTML/XML Parser for Python
 
-EVENTSTREAMS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sseclient>0:www/py-sseclient@${PY_FLAVOR}
-ISBN_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}stdnum>0:devel/py-stdnum@${PY_FLAVOR}
-PYDOT_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pydot>0:graphics/py-pydot@${PY_FLAVOR}
-GOOGLE_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}google>0:www/py-google@${PY_FLAVOR}
+EVENTSTREAMS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests-sse>=0.5.2:www/py-requests-sse@${PY_FLAVOR}
+ISBN_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}stdnum>=2.2:devel/py-stdnum@${PY_FLAVOR}
+PYDOT_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pydot>=4.0.1:graphics/py-pydot@${PY_FLAVOR}
+GOOGLE_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}googlesearch-python>=1.3.0:www/py-googlesearch-python@${PY_FLAVOR}
 IRC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}irc>0:irc/py-irc@${PY_FLAVOR}
 PILLOW_RUN_DEPENDS=		${PY_PILLOW}
-MWOAUTH_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}mwoauth>0:www/py-mwoauth@${PY_FLAVOR}
-HTML_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}beautifulsoup4>0:www/py-beautifulsoup4@${PY_FLAVOR}
+MWOAUTH_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}mwoauth>=0.4.0:www/py-mwoauth@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}pyjwt>0:www/py-pyjwt@${PY_FLAVOR}
+HTML_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.14.3:www/py-beautifulsoup4@${PY_FLAVOR}
 
 .include <bsd.port.mk>
