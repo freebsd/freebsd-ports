@@ -1,5 +1,5 @@
 PORTNAME=	aiomisc
-DISTVERSION=	18.0.26
+DISTVERSION=	18.0.28
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,9 +24,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiomisc-pytest>=2.0.0:devel/py-aiomisc-pyte
 		${PYTHON_PKGNAMEPREFIX}croniter>=2.0:sysutils/py-croniter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnslib>=0.9:dns/py-dnslib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>=0.110:www/py-fastapi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}grpcio>=1.64:devel/py-grpcio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}grpcio-reflection>=1.64:devel/py-grpcio-reflection@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}grpcio-tools>=1.64:devel/py-grpcio-tools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grpcio>=1.56:devel/py-grpcio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grpcio-reflection>=1.56:devel/py-grpcio-reflection@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grpcio-tools>=1.56:devel/py-grpcio-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.0.0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>=14.0:devel/py-pytest-rerunfailures@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-subtests>=0.9.0:devel/py-pytest-subtests@${PY_FLAVOR} \
@@ -45,6 +45,6 @@ TEST_WRKDIR=	${WRKSRC}/tests
 
 NO_ARCH=	yes
 
-# tests as of 18.0.26: 495 passed, 4 deselected, 31 warnings
+# tests as of 18.0.28: 496 passed 4 deselected
 
 .include <bsd.port.mk>
