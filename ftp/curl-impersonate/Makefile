@@ -1,6 +1,6 @@
 PORTNAME=	curl-impersonate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.2.2
 CATEGORIES=	ftp
 MASTER_SITES=	https://github.com/google/boringssl/archive/:boringssl \
 		https://github.com/google/brotli/archive/refs/tags/:brotli \
@@ -64,5 +64,6 @@ pre-configure:
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/CMakeFiles
+	@${RM} ${STAGEDIR}${PREFIX}/LICENSE*
 
 .include <bsd.port.mk>

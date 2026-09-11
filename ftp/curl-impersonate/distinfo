@@ -1,4 +1,4 @@
-TIMESTAMP = 1785626016
+TIMESTAMP = 1789151254
 SHA256 (curl-impersonate/156c7b75ae9b8c3b3f847acf264f17594c3859fb.zip) = 450e169b284697c6eafe523cb7679f4221fbe1a0993f773a566c33b188762844
 SIZE (curl-impersonate/156c7b75ae9b8c3b3f847acf264f17594c3859fb.zip) = 80313844
 SHA256 (curl-impersonate/curl-8_21_0.tar.gz) = ec753aa6f408a3ca9f0d6d5f7a77417aecd1544db13c03ae5d443612bf367364
@@ -15,5 +15,5 @@ SHA256 (curl-impersonate/zlib-1.3.1.tar.gz) = 9a93b2b7dfdac77ceba5a558a580e74667
 SIZE (curl-impersonate/zlib-1.3.1.tar.gz) = 1512791
 SHA256 (curl-impersonate/zstd-1.5.7.tar.gz) = eb33e51f49a15e023950cd7825ca74a4a2b43db8354825ac24fc1b7ee09e6fa3
 SIZE (curl-impersonate/zstd-1.5.7.tar.gz) = 2434947
-SHA256 (curl-impersonate/lexiforest-curl-impersonate-v2.0.0_GH0.tar.gz) = a9827cfce8246e78b86e26f012ae9fcb9bc05822009cd7ce4c9e130af6bdfb6f
-SIZE (curl-impersonate/lexiforest-curl-impersonate-v2.0.0_GH0.tar.gz) = 207780
+SHA256 (curl-impersonate/lexiforest-curl-impersonate-v2.2.2_GH0.tar.gz) = ac5dea9ac6f20f8061a26b9f5dea93a80ad9da18d04d24f9fb528ec26a0693bd
+SIZE (curl-impersonate/lexiforest-curl-impersonate-v2.2.2_GH0.tar.gz) = 216975
