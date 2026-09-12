@@ -23,10 +23,10 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang python pytest # PYTEST_ARGS is not respected by USE_PYTHON=pytest, so we set it here instead
-USE_PYTHON=	pep517 autoplist
+USES=		compiler:c++14-lang python
+USE_PYTHON=	autoplist pep517 pytest
 
-PYTEST_ARGS=	-p no:randomly -p no:ruff
+TEST_ARGS=	-p no:randomly -p no:ruff
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
