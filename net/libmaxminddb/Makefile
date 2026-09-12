@@ -1,5 +1,5 @@
 PORTNAME=	libmaxminddb
-PORTVERSION=	1.13.3
+PORTVERSION=	1.14.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/maxmind/libmaxminddb/releases/download/${PORTVERSION}/
 
@@ -10,9 +10,8 @@ WWW=		https://github.com/maxmind/libmaxminddb
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 cpe gmake libtool
+USES=		compiler:c11 cpe gmake libtool pkgconfig
 
-CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
