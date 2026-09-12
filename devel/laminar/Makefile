@@ -18,6 +18,7 @@ WWW=		https://laminar.ohwg.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Does not compile against recent Boost
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	"Requires to translate 'uname -m' to linker '-m' flag in CMakeLists.txt"
 
