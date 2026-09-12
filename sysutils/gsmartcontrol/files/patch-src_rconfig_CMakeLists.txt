@@ -1,0 +1,10 @@
+--- src/rconfig/CMakeLists.txt.orig	2026-09-12 03:14:51 UTC
++++ src/rconfig/CMakeLists.txt
+@@ -18,7 +18,6 @@ target_link_libraries(rconfig
+ target_link_libraries(rconfig
+ 	INTERFACE
+ 		hz
+-		nlohmann_json
+ 		app_gtkmm_interface
+ )
+ 
