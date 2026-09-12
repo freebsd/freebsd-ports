@@ -1,5 +1,5 @@
 PORTNAME=	asciidoctor-pdf
-PORTVERSION=	2.3.26
+PORTVERSION=	2.3.27
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
