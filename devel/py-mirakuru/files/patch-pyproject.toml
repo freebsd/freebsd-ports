@@ -1,21 +1,11 @@
---- pyproject.toml.orig	2026-02-11 19:40:54 UTC
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -4,8 +4,7 @@ keywords = ["process", "executor", "tests", "orchestra
- description = "Process executor (not only) for tests."
- readme = "README.rst"
- keywords = ["process", "executor", "tests", "orchestration"]
--license = "LGPL-3.0-or-later"
--license-files = ["LICENSE"]
-+license = {text = "LGPL-3.0-or-later"}
- authors = [
-     {name = "Grzegorz Śliwiński", email = "fizyk+pypi@fizyk.dev"}
- ]
-@@ -38,7 +37,7 @@ requires-python = ">= 3.10"
- "Changelog" = "https://github.com/dbfixtures/mirakuru/blob/v3.0.2/CHANGES.rst"
- 
+@@ -1,6 +1,6 @@
  [build-system]
--requires = ["setuptools >= 77.0.3", "wheel"]
-+requires = ["setuptools >= 61", "wheel"]
- build-backend = "setuptools.build_meta"
+-build-backend = "uv_build"
+-requires = ["uv-build>=0.11"]
++requires = ["flit-core >= 3.12"]
++build-backend = "flit_core.buildapi"
  
- [tool.setuptools]
+ [project]
+ name = "mirakuru"
