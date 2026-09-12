@@ -1,5 +1,5 @@
 PORTNAME=	pegtl
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +21,6 @@ CMAKE_TESTING_ON=	PEGTL_BUILD_TESTS
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-# tests as of 4.0.0: 100% tests passed, 0 tests failed out of 257
+# tests as of 4.0.1: 100% tests passed, 0 tests failed out of 257
 
 .include <bsd.port.mk>
