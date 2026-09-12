@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# PROVIDE: deliverance
+# REQUIRE: NETWORKING LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable Deliverance:
+# deliverance_enable="YES"
+#
+# Optional settings:
+# deliverance_config="%%ETCDIR%%/deliverance.properties"
+# deliverance_home="/var/db/deliverance"
+# deliverance_java_opts="--add-modules jdk.incubator.vector --add-opens java.base/java.nio=ALL-UNNAMED -XX:-UseCompactObjectHeaders -Xmx3G"
+# deliverance_args=""
+# deliverance_log="/var/log/deliverance/deliverance.log"
+
+. /etc/rc.subr
+
+name="deliverance"
+rcvar="deliverance_enable"
+
+load_rc_config ${name}
+
+: ${deliverance_enable:="NO"}
+: ${deliverance_config:="%%ETCDIR%%/deliverance.properties"}
+: ${deliverance_home:="/var/db/deliverance"}
+: ${deliverance_java_opts:="--add-modules jdk.incubator.vector --add-opens java.base/java.nio=ALL-UNNAMED -XX:-UseCompactObjectHeaders -Xmx3G"}
+: ${deliverance_args:=""}
+: ${deliverance_log:="/var/log/deliverance/deliverance.log"}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+procname="%%JAVA%%"
+required_files="${deliverance_config}"
+start_precmd="deliverance_precmd"
+command_args="-f -p ${pidfile} -o ${deliverance_log} %%JAVA%% ${deliverance_java_opts} -Duser.home=${deliverance_home} -Dspring.config.location=optional:file:${deliverance_config} -jar %%WEB_JAR%% ${deliverance_args}"
+
+deliverance_precmd()
+{
+	install -d -m 0755 "${deliverance_home}"
+	install -d -m 0755 "$(dirname "${deliverance_log}")"
+}
+
+run_rc_command "$1"
