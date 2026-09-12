@@ -22,9 +22,11 @@ nox11_PKGNAMESUFFIX=		-nox11
 nox11_CONFLICTS_INSTALL=	open-vm-tools
 nox11_COMMENT=			(without X11)
 
-USES=		autoreconf gettext-runtime gnome libtool localbase \
+USES=		autoreconf cpe gettext-runtime gnome libtool localbase \
 		pathfix pkgconfig
 
+CPE_VENDOR=	vmware
+CPE_PRODUCT=	tools
 USE_GITHUB=	yes
 GH_ACCOUNT=	vmware
 USE_GNOME=	glib20
