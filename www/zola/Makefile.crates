@@ -32,6 +32,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		axum-0.8.9 \
 		axum-core-0.5.6 \
 		base64-0.22.1 \
+		base64-0.23.1 \
 		base64-simd-0.7.0 \
 		base64-simd-0.8.0 \
 		bincode-1.3.3 \
@@ -57,9 +58,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
 		bytes-1.12.1 \
+		calendrical_calculations-0.2.4 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.4.3 \
+		cc-1.4.4 \
 		cedarwood-0.4.6 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.2 \
@@ -82,7 +84,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		color_quant-1.1.0 \
 		colorchoice-1.0.5 \
 		colored-3.1.1 \
-		combine-4.6.7 \
+		combine-4.6.8 \
 		compact_str-0.9.1 \
 		console-0.16.4 \
 		const-oid-0.10.2 \
@@ -91,11 +93,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		core-foundation-0.9.4 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
+		core_maths-0.1.1 \
 		cow-utils-0.1.3 \
 		cpufeatures-0.2.17 \
-		cpufeatures-0.3.0 \
+		cpufeatures-0.3.1 \
 		crc-1.8.1 \
-		crc32fast-1.5.0 \
+		crc32fast-1.5.1 \
 		criterion-0.8.2 \
 		criterion-plot-0.8.2 \
 		crossbeam-deque-0.8.7 \
@@ -123,11 +126,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		dispatch2-0.3.1 \
 		displaydoc-0.2.7 \
 		doc-comment-0.3.4 \
+		document-features-0.2.12 \
 		dragonbox_ecma-0.0.5 \
 		dtoa-1.0.11 \
 		dtoa-short-0.3.5 \
 		dunce-1.0.5 \
-		either-1.17.0 \
+		either-1.18.0 \
 		elasticlunr-rs-3.1.0 \
 		embed-resource-3.0.11 \
 		embedded-io-0.4.0 \
@@ -150,16 +154,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		errno-0.3.14 \
 		exr-1.74.2 \
 		fallible_collections-0.5.2 \
+		fast_image_resize-6.1.0 \
 		fastrand-2.5.0 \
 		fax-0.2.7 \
 		fdeflate-0.3.7 \
 		file-id-0.2.3 \
 		filetime-0.2.29 \
 		find-msvc-tools-0.1.11 \
+		fixed_decimal-0.7.2 \
 		flate2-1.1.9 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.2 \
-		formatx-0.3.0 \
+		formatx-0.4.2 \
 		fs-err-3.3.1 \
 		fs_extra-1.3.0 \
 		fsevent-sys-4.1.0 \
@@ -175,7 +181,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
 		getrandom-0.4.3 \
-		gh-emoji-1.0.8 \
+		gh-emoji-1.0.9 \
 		giallo-0.5.2 \
 		gif-0.14.2 \
 		glam-0.33.5 \
@@ -183,7 +189,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		globset-0.4.20 \
 		grass-0.13.4 \
 		grass_compiler-0.13.4 \
-		h2-0.4.17 \
+		h2-0.4.19 \
 		half-2.7.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.5 \
@@ -204,18 +210,33 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hyper-1.11.0 \
 		hyper-rustls-0.27.9 \
 		hyper-util-0.1.20 \
+		icu_calendar-2.3.0 \
+		icu_calendar_data-2.3.0 \
 		icu_collections-2.3.0 \
+		icu_datetime-2.3.0 \
+		icu_datetime_data-2.3.0 \
+		icu_decimal-2.3.0 \
+		icu_decimal_data-2.3.0 \
+		icu_locale-2.3.1 \
 		icu_locale_core-2.3.0 \
+		icu_locale_data-2.3.0 \
+		icu_locale_fallback-2.3.0 \
+		icu_locale_fallback_data-2.3.0 \
 		icu_normalizer-2.3.0 \
 		icu_normalizer_data-2.3.0 \
+		icu_pattern-0.5.0 \
+		icu_plurals-2.3.0 \
+		icu_plurals_data-2.3.0 \
 		icu_properties-2.3.0 \
 		icu_properties_data-2.3.0 \
-		icu_provider-2.3.0 \
+		icu_provider-2.3.1 \
+		icu_time-2.3.0 \
+		icu_time_data-2.3.0 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
-		imgref-1.12.2 \
+		imgref-1.12.3 \
 		indexmap-1.9.3 \
 		indexmap-2.14.0 \
 		inotify-0.11.5 \
@@ -230,9 +251,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
+		ixdtf-0.6.6 \
 		jieba-rs-0.6.8 \
 		jiff-0.2.35 \
 		jiff-core-0.1.0 \
+		jiff-icu-0.2.2 \
 		jiff-static-0.2.35 \
 		jiff-tzdb-0.1.8 \
 		jiff-tzdb-platform-0.1.3 \
@@ -268,8 +291,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lindera-unidic-builder-0.13.5 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.3 \
+		litrs-1.0.0 \
 		lock_api-0.4.14 \
-		log-0.4.33 \
+		log-0.4.34 \
 		loop9-0.1.5 \
 		lru-slab-0.1.2 \
 		lzma-rs-0.2.0 \
@@ -321,7 +345,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		onig-regset-6.7.0 \
 		onig_sys-69.9.3 \
 		oorandom-11.1.5 \
-		open-5.4.1 \
+		open-5.4.2 \
 		openssl-probe-0.2.1 \
 		os_str_bytes-6.6.1 \
 		outref-0.1.0 \
@@ -351,7 +375,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		oxc_syntax-0.95.0 \
 		oxc_traverse-0.95.0 \
 		page_size-0.6.0 \
-		papaya-0.2.4 \
+		papaya-0.2.5 \
 		parcel_selectors-0.28.3 \
 		parcel_sourcemap-2.1.1 \
 		parking_lot-0.12.5 \
@@ -363,6 +387,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		percent-encoding-2.3.2 \
 		phf-0.11.3 \
 		phf-0.13.1 \
+		phf-0.14.0 \
 		phf_codegen-0.11.3 \
 		phf_codegen-0.13.1 \
 		phf_generator-0.11.3 \
@@ -371,6 +396,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		phf_macros-0.13.1 \
 		phf_shared-0.11.3 \
 		phf_shared-0.13.1 \
+		phf_shared-0.14.0 \
 		pin-project-lite-0.2.17 \
 		pkg-config-0.3.34 \
 		plotters-0.3.7 \
@@ -405,7 +431,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		radium-0.7.0 \
-		rand-0.8.7 \
+		rand-0.8.8 \
 		rand-0.9.5 \
 		rand-0.10.2 \
 		rand_chacha-0.3.1 \
@@ -443,7 +469,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustls-pki-types-1.15.1 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.14 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.23 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
@@ -489,7 +515,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		svg_metadata-0.6.0 \
 		syn-1.0.109 \
 		syn-2.0.119 \
-		syn-3.0.3 \
+		syn-3.0.4 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		system-configuration-0.7.0 \
@@ -499,8 +525,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tauri-winres-0.3.6 \
 		tempfile-3.27.0 \
 		tendril-0.5.1 \
-		tera-2.2.0 \
-		tera-contrib-0.2.0 \
+		tera-2.3.0 \
+		tera-contrib-0.3.0 \
 		termcolor-1.4.1 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
@@ -551,7 +577,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		url-2.5.8 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.24.1 \
+		uuid-1.25.0 \
 		v_frame-0.3.9 \
 		version_check-0.9.5 \
 		vlq-0.5.1 \
@@ -621,7 +647,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zeroize-1.9.0 \
 		zerotrie-0.2.5 \
 		zerovec-0.11.8 \
-		zerovec-derive-0.11.5 \
+		zerovec-derive-0.11.6 \
 		zmij-1.0.23 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
