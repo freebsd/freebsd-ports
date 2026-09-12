@@ -1,5 +1,5 @@
-TIMESTAMP = 1778691076
-SHA256 (go/devel_git-codereview/git-codereview-v1.20.0/v1.20.0.mod) = eb00041913cb6472bb9c5022013c7fcd600287ad5dd617fed6c9e1bf392c3d8c
-SIZE (go/devel_git-codereview/git-codereview-v1.20.0/v1.20.0.mod) = 38
-SHA256 (go/devel_git-codereview/git-codereview-v1.20.0/v1.20.0.zip) = 215f7bccf9dd2ab0d829b0a95f72d70be765304ba265121c29d635bd5442ce98
-SIZE (go/devel_git-codereview/git-codereview-v1.20.0/v1.20.0.zip) = 92656
+TIMESTAMP = 1789220455
+SHA256 (go/devel_git-codereview/git-codereview-v1.21.0/v1.21.0.mod) = 310941ebc89f55e03387cff128485be2b36443ec945870aa30def6d72594aacc
+SIZE (go/devel_git-codereview/git-codereview-v1.21.0/v1.21.0.mod) = 38
+SHA256 (go/devel_git-codereview/git-codereview-v1.21.0/v1.21.0.zip) = 994eb82262e9dfb037c7f92daa8feae87059ee14ceb0959533fc1bb3dd31cb67
+SIZE (go/devel_git-codereview/git-codereview-v1.21.0/v1.21.0.zip) = 94636
