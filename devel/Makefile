@@ -4319,7 +4319,6 @@
     SUBDIR += pecl-inotify
     SUBDIR += pecl-json_post
     SUBDIR += pecl-msgpack
-    SUBDIR += pecl-mustache
     SUBDIR += pecl-opentelemetry
     SUBDIR += pecl-protobuf
     SUBDIR += pecl-psr
@@ -4350,6 +4349,7 @@
     SUBDIR += php-ice37
     SUBDIR += php-libawl
     SUBDIR += php-maxminddb
+    SUBDIR += php-mustache
     SUBDIR += php-pcov
     SUBDIR += php-pie
     SUBDIR += php-raphf
