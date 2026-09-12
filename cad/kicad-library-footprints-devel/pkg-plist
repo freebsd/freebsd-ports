@@ -8361,6 +8361,7 @@
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THL30-xxxxWI_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THL40-xxxxWI_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THN10-xxxxUIR_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THN20-xxxxUIR_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THN30-xxxx_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THR40-72xxWI_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMA-05xxD_12xxD_Dual_THT.kicad_mod
@@ -11427,6 +11428,7 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/MLPQ-16-1EP_4x4mm_P0.65mm_EP2.8x2.8mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/MPS_QFN-12_2x2mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/MPS_QFN-16_3x3mm_P0.5mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/MPS_QFN-18_2x3mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Maxim_FC2QFN-14_2.5x2.5mm_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Maxim_TDFN-10-1EP_3x3mm_P0.5mm_EP1.58x2.35mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Maxim_TDFN-12-1EP_3x3mm_P0.5mm_EP1.7x2.5mm.kicad_mod
@@ -11447,6 +11449,7 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/NXP_LQFN-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm_16xMask0.45x0.45.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/NXP_LQFN-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm_16xMask0.45x0.45_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/NXP_VQFN-16-1EP_4x4mm_P0.65mm_EP2.1x2.1mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/Nisshinbo_DFN-6_1EP_1x1mm_P0.35mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Nordic_AQFN-73-1EP_7x7mm_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Nordic_AQFN-94-1EP_7x7mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/OnSemi_DFN-14-1EP_4x4mm_P0.5mm_EP2.7x3.4mm.kicad_mod
@@ -13892,6 +13895,7 @@
 %%DATADIR%%/footprints/Relay_THT.pretty/Relay_SPST_Hongfa_HF3F-L-xx-1HL2T-R.kicad_mod
 %%DATADIR%%/footprints/Relay_THT.pretty/Relay_SPST_Hongfa_HF3F-L-xx-1HL2T.kicad_mod
 %%DATADIR%%/footprints/Relay_THT.pretty/Relay_SPST_Hongfa_JQC-3FF_0XX-1H.kicad_mod
+%%DATADIR%%/footprints/Relay_THT.pretty/Relay_SPST_MiRelay_SIP-HV1Axx.kicad_mod
 %%DATADIR%%/footprints/Relay_THT.pretty/Relay_SPST_Omron-G5Q-1A.kicad_mod
 %%DATADIR%%/footprints/Relay_THT.pretty/Relay_SPST_Omron_G2RL-1A-E.kicad_mod
 %%DATADIR%%/footprints/Relay_THT.pretty/Relay_SPST_Omron_G2RL-1A.kicad_mod
@@ -14413,7 +14417,9 @@
 %%DATADIR%%/footprints/Symbol.pretty/Symbol_HighVoltage_NoTriangle_6x15mm_Copper.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/Symbol_HighVoltage_Triangle_17x15mm_Copper.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/Symbol_HighVoltage_Triangle_6x6mm_Copper.kicad_mod
+%%DATADIR%%/footprints/Symbol.pretty/Symbol_HighVoltage_Triangle_6x6mm_SilkScreen.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/Symbol_HighVoltage_Triangle_8x7mm_Copper.kicad_mod
+%%DATADIR%%/footprints/Symbol.pretty/Symbol_HighVoltage_Triangle_8x7mm_SilkScreen.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/UKCA-Logo_12x12mm_SilkScreen.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/UKCA-Logo_20x20mm_SilkScreen.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/UKCA-Logo_30x30mm_SilkScreen.kicad_mod
