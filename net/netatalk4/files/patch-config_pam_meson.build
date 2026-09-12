@@ -1,0 +1,11 @@
+--- config/pam/meson.build.orig	2026-09-12 18:19:45 UTC
++++ config/pam/meson.build
+@@ -4,8 +4,3 @@ netatalk_pamd = configure_file(
+     configuration: cdata,
+ )
+ 
+-if (fs.exists(pam_confdir / 'netatalk') and not get_option('with-overwrite'))
+-    message('will not replace existing', pam_confdir / 'netatalk')
+-else
+-    install_data(netatalk_pamd, install_dir: pam_confdir, install_tag: 'config')
+-endif

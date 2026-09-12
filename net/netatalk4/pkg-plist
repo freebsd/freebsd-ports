@@ -64,8 +64,8 @@ include/atalk/volume.h
 include/atalk/zip.h
 lib/libatalk.a
 lib/libatalk.so
-lib/libatalk.so.20
-lib/libatalk.so.20.0.0
+lib/libatalk.so.21
+lib/libatalk.so.21.0.0
 sbin/afpd
 sbin/cnid_dbd
 sbin/cnid_metad
