@@ -5,7 +5,7 @@ CATEGORIES=	www python
 MASTER_SITES=	https://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	wiki-admin@FreeBSD.org
 COMMENT=	Easy to use, full-featured and extensible wiki software package
 WWW=		https://moinmo.in/
 
