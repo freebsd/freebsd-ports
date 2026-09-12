@@ -1,0 +1,6 @@
+This library allows tracing HTTP requests made by the httpx and httpx2
+libraries.
+
+If both libraries are installed, use HTTPXClientInstrumentor for httpx clients
+and HTTPX2ClientInstrumentor for httpx2 clients. The instrumentors can be
+enabled independently.
