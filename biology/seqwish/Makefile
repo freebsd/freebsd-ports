@@ -1,37 +1,25 @@
 PORTNAME=	seqwish
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.11
-PORTREVISION=	2
+DISTVERSION=	0.7.12
 CATEGORIES=	biology
-MASTER_SITES=	https://github.com/ekg/seqwish/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/pangenome/seqwish/releases/download/v${DISTVERSION}/
+DISTFILES=	seqwish-v0.7.12.tar.gz
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Alignment to variation graph inducer
-WWW=		https://github.com/ekg/seqwish
+WWW=		https://github.com/pangenome/seqwish
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libsdsl.so:devel/sdsl-lite
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cmake:noninja compiler:c++14-lang pkgconfig
+USES=		cargo pkgconfig
 
-CMAKE_ARGS=	-DEXTRA_FLAGS="" # disable -march=native
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS_DEFINE=		OPENMP
-.if exists(/usr/include/omp.h)
-OPTIONS_DEFAULT=	OPENMP
-.else
-OPENMP_BROKEN=	OpenMP isn't available on this architecture
-.endif
-
-OPENMP_CMAKE_BOOL=	USE_OPENMP
-OPENMP_CXXFLAGS=	-fopenmp
-OPENMP_BROKEN_OFF=	https://github.com/ekg/seqwish/issues/114
-
-post-extract:
-	@${RM} -r ${WRKSRC}/deps/sdsl-lite
+# tests as of 0.7.12: test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
 
 .include <bsd.port.mk>
