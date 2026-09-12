@@ -45,11 +45,6 @@ SSL_CMAKE_BOOL=		HTTPLIB_REQUIRE_OPENSSL HTTPLIB_USE_OPENSSL_IF_AVAILABLE
 do-test:
 	@cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/test" LDFLAGS="${LDFLAGS}"
 
-# [==========] 713 tests from 150 test suites ran. (257976 ms total)
-# [  PASSED  ] 712 tests.
-# [  FAILED  ] 1 test, listed below:
-# [  FAILED  ] YahooRedirectTest3.NewResultInterface_Online
-
 # tests as of 0.56.0: PASSED 900 tests
 
 .include <bsd.port.mk>
