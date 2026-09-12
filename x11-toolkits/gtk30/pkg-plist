@@ -833,7 +833,7 @@ share/gtk-3.0/valgrind/gtk.supp
 %%DOCS%%share/gtk-doc/html/gtk3/GtkPaned.html
 %%DOCS%%share/gtk-doc/html/gtk3/GtkPaperSize.html
 %%DOCS%%share/gtk-doc/html/gtk3/GtkPlacesSidebar.html
-%%DOCS%%share/gtk-doc/html/gtk3/GtkPlug.html
+%%DOCS%%%%X11%%share/gtk-doc/html/gtk3/GtkPlug.html
 %%DOCS%%share/gtk-doc/html/gtk3/GtkPopover.html
 %%DOCS%%share/gtk-doc/html/gtk3/GtkPopoverMenu.html
 %%DOCS%%share/gtk-doc/html/gtk3/GtkPrintContext.html
@@ -871,7 +871,7 @@ share/gtk-3.0/valgrind/gtk.supp
 %%DOCS%%share/gtk-doc/html/gtk3/GtkShortcutsShortcut.html
 %%DOCS%%share/gtk-doc/html/gtk3/GtkShortcutsWindow.html
 %%DOCS%%share/gtk-doc/html/gtk3/GtkSizeGroup.html
-%%DOCS%%share/gtk-doc/html/gtk3/GtkSocket.html
+%%DOCS%%%%X11%%share/gtk-doc/html/gtk3/GtkSocket.html
 %%DOCS%%share/gtk-doc/html/gtk3/GtkSpinButton.html
 %%DOCS%%share/gtk-doc/html/gtk3/GtkSpinner.html
 %%DOCS%%share/gtk-doc/html/gtk3/GtkStack.html
@@ -1089,6 +1089,8 @@ share/gtk-3.0/valgrind/gtk.supp
 %%DOCS%%share/gtk-doc/html/gtk3/gtk3-GtkFileChooserNative.html
 %%DOCS%%share/gtk-doc/html/gtk3/gtk3-GtkGradient.html
 %%DOCS%%share/gtk-doc/html/gtk3/gtk3-GtkNativeDialog.html
+%%DOCS%%%%NO_X11%%share/gtk-doc/html/gtk3/gtk3-GtkPlug.html
+%%DOCS%%%%NO_X11%%share/gtk-doc/html/gtk3/gtk3-GtkSocket.html
 %%DOCS%%share/gtk-doc/html/gtk3/gtk3-GtkStyleProperties.html
 %%DOCS%%share/gtk-doc/html/gtk3/gtk3-GtkSymbolicColor.html
 %%DOCS%%share/gtk-doc/html/gtk3/gtk3-GtkTreeView-drag-and-drop.html
