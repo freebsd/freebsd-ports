@@ -15,7 +15,10 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/vmmemctl/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
-USES=		kmod uidfix
+USES=		cpe kmod uidfix
+
+CPE_VENDOR=	vmware
+CPE_PRODUCT=	tools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vmware
