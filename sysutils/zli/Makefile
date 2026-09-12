@@ -10,7 +10,9 @@ WWW=		https://zotregistry.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		cpe go:1.26+,modules
+CPE_VENDOR=	zotregistry
+CPE_PRODUCT=	zot
 USE_GITHUB=	yes
 GH_ACCOUNT=	project-zot
 GH_PROJECT=	zot
