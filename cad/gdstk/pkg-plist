@@ -27,5 +27,10 @@ include/gdstk/style.hpp
 include/gdstk/tagmap.hpp
 include/gdstk/utils.hpp
 include/gdstk/vec.hpp
-lib/libclipper.so
+lib/cmake/cmake_modules/FindQhull.cmake
+lib/cmake/gdstk/gdstkConfig.cmake
+lib/cmake/gdstk/gdstkConfigVersion.cmake
+lib/cmake/gdstk/gdstkTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/gdstk/gdstkTargets.cmake
 lib/libgdstk.so
+libdata/pkgconfig/gdstk.pc
