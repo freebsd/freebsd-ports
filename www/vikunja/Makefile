@@ -12,7 +12,7 @@ WWW=		https://vikunja.io
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.27,modules
+USES=		cpe go:1.27,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	go-vikunja
 
