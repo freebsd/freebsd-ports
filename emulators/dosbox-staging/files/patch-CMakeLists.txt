@@ -9,16 +9,17 @@
    set(DOSBOX_PLATFORM_LINUX ON)
  
  else()
-@@ -280,7 +280,7 @@ option(OPT_FORCE_DYNREC "Force DYNREC dynamic recompil
+@@ -280,8 +280,7 @@ option(OPT_FORCE_DYNREC "Force DYNREC dynamic recompil
  
  option(OPT_FORCE_DYNREC "Force DYNREC dynamic recompiler (not x86-64 optimized)" OFF)
  
 -if (CMAKE_SYSTEM_PROCESSOR  STREQUAL "AMD64"  OR
-+if (CMAKE_SYSTEM_PROCESSOR  STREQUAL "amd64"  OR
-     CMAKE_SYSTEM_PROCESSOR  STREQUAL "x86_64" OR
+-    CMAKE_SYSTEM_PROCESSOR  STREQUAL "x86_64" OR
++if (CMAKE_SYSTEM_PROCESSOR  MATCHES "i386|amd64|x86_64"  OR
      CMAKE_OSX_ARCHITECTURES STREQUAL "x86_64")
  
-@@ -462,7 +462,7 @@ find_package(OpenGL REQUIRED)
+   set(C_TARGET_CPU_X86    ON)
+@@ -462,7 +461,7 @@ find_package(OpenGL REQUIRED)
  find_package(iir REQUIRED)
  find_package(PNG REQUIRED)
  find_package(OpenGL REQUIRED)
