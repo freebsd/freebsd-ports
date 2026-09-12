@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2026-05-20 10:59:57 UTC
 +++ CMakeLists.txt
-@@ -36,7 +36,9 @@ add_subdirectory(heinz)
+@@ -36,7 +36,9 @@
  include(CTest)
  
  add_subdirectory(heinz)

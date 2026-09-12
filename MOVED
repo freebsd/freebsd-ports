@@ -5597,3 +5597,4 @@ sysutils/intel-nvmupdate-40g|sysutils/intel-nvmupdate-700series|2026-09-03|Renam
 sysutils/intel-nvmupdate-e830|sysutils/intel-nvmupdate-e830-e835|2026-09-03|Rename to match supported hardware
 sysutils/mprocs|sysutils/dekit|2026-09-05|Upstream renamed
 www/py-beautifulsoup|www/py-beautifulsoup4|2026-09-06|Renamed to match upstream PyPI package name
+devel/libheinz|devel/heinz|2026-09-12|Project was renamed upstream from libheinz to heinz upstream

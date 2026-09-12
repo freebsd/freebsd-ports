@@ -11,7 +11,7 @@ WWW=		https://jugit.fz-juelich.de/mlz/lmfit
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libheinz>0:devel/libheinz
+BUILD_DEPENDS=	heinz>0:devel/heinz
 
 USES=		cmake:testing perl5
 USE_PERL5=	build # only for pod2html

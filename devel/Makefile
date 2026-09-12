@@ -1014,6 +1014,7 @@
     SUBDIR += hcs12mem
     SUBDIR += heaptrack
     SUBDIR += heimdall
+    SUBDIR += heinz
     SUBDIR += heirloom-devtools
     SUBDIR += hexcompare
     SUBDIR += hexd
@@ -1393,7 +1394,6 @@
     SUBDIR += libgudev
     SUBDIR += libgusb
     SUBDIR += libgutenfetch
-    SUBDIR += libheinz
     SUBDIR += libhoard
     SUBDIR += libhtp
     SUBDIR += libibuddy

@@ -1,12 +1,12 @@
-PORTNAME=	libheinz
-DISTVERSION=	4.0.0
+PORTNAME=	heinz
+DISTVERSION=	4.1.0
 CATEGORIES=	devel
-MASTER_SITES=	https://jugit.fz-juelich.de/mlz/${PORTNAME}/-/archive/v${DISTVERSION}/
+MASTER_SITES=	https://jugit.fz-juelich.de/mlz/lib${PORTNAME}/-/archive/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ base library of Heinz Maier-Leibnitz Zentrum
-WWW=		https://jugit.fz-juelich.de/mlz/libheinz
+WWW=		https://jugit.fz-juelich.de/mlz/lib/heinz
 
 LICENSE=	MIT
 
@@ -24,6 +24,6 @@ PLIST_FILES=	lib/cmake/LibHeinz/LibHeinzConfig.cmake \
 		include/heinz/Rotations3D.h \
 		include/heinz/Vectors3D.h
 
-# tests as of 4.0.0: 100% tests passed, 0 tests failed out of 3
+# tests as of 4.1.0: 100% tests passed, 0 tests failed out of 3
 
 .include <bsd.port.mk>
