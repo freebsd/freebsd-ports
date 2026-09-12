@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		compiler iconv meson ninja python:test
+USES=		compiler cpe iconv meson ninja python:test
+CPE_VENDOR=	libfuse_project
+CPE_PRODUCT=	libfuse
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
