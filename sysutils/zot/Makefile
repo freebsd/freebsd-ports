@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and amd64
 
-USES=		go:1.26+,modules
+USES=		cpe go:1.26+,modules
+CPE_VENDOR=	zotregistry
 USE_GITHUB=	yes
 GH_ACCOUNT=	project-zot
 
