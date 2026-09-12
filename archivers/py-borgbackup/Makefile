@@ -6,6 +6,9 @@ MASTER_SITES=	https://github.com/borgbackup/borg/releases/download/${DISTVERSION
 		PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+PATCH_SITES=	https://github.com/borgbackup/borg/commit/
+PATCHFILES=	7fd6df2514c084fdf28dea557e49018610ffb10a.patch:-p1
+
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Deduplicating backup program
 WWW=		https://pypi.org/project/borgbackup/
