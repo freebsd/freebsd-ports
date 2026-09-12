@@ -52,7 +52,7 @@ post-patch:
 
 	@${REINPLACE_CMD} -e "s|^.*bobs.*$$||" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|@echo Compiling engine/$$< ; ||" ${WRKSRC}/engine/Makefile.in
-	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-O[23]|${CFLAGS}|" ${WRKSRC}/configure
 
 post-install:
 	@for i in conf res; do \
