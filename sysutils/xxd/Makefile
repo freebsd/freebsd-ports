@@ -12,6 +12,8 @@ LICENSE_NAME=	VIM License
 LICENSE_FILE=	${WRKSRC}/../../runtime/doc/uganda.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USES=		cpe
+CPE_PRODUCT=	vim
 USE_GITHUB=	yes
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
