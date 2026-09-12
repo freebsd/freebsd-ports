@@ -1,9 +1,8 @@
-PORTNAME=	pytest-httpserver
+PORTNAME=	pytest_httpserver
 PORTVERSION=	1.1.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pytest_httpserver-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP server for pytest

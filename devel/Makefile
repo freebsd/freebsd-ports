@@ -5980,7 +5980,6 @@
     SUBDIR += py-pytest-helpers-namespace
     SUBDIR += py-pytest-html
     SUBDIR += py-pytest-httpbin
-    SUBDIR += py-pytest-httpserver
     SUBDIR += py-pytest-httpx
     SUBDIR += py-pytest-instafail
     SUBDIR += py-pytest-isort
@@ -6035,6 +6034,7 @@
     SUBDIR += py-pytest-watcher
     SUBDIR += py-pytest-xdist
     SUBDIR += py-pytest-xprocess
+    SUBDIR += py-pytest_httpserver
     SUBDIR += py-python-application
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-dateutil

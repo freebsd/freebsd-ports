@@ -5599,3 +5599,4 @@ sysutils/mprocs|sysutils/dekit|2026-09-05|Upstream renamed
 www/py-beautifulsoup|www/py-beautifulsoup4|2026-09-06|Renamed to match upstream PyPI package name
 devel/libheinz|devel/heinz|2026-09-12|Project was renamed upstream from libheinz to heinz
 devel/pecl-mustache|devel/php-mustache|2026-09-12|PECL is deprecated. Migrate devel/pecl-mustache to devel/php-mustache
+devel/py-pytest-httpserver|devel/py-pytest_httpserver|2026-09-12|Rename to match upstream naming
