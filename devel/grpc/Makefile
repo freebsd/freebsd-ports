@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.83.1
+PORTVERSION=	1.84.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -54,8 +54,9 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9]
 
 USE_GITHUB=	yes
-GH_TUPLE=	envoyproxy:data-plane-api:a5d3b1e:envoyproxy_data_plane_api/third_party/envoy-api \
-		googleapis:googleapis:17dbe87:googleapis_googleapis/third_party/googleapis
+GH_TUPLE=	envoyproxy:data-plane-api:102e9b1:envoyproxy_data_plane_api/third_party/envoy-api \
+		googleapis:googleapis:0fad501:googleapis_googleapis/third_party/googleapis \
+		grpc:grpc-proto:dd549fc:grpc_grpc_proto/third_party/grpc-proto
 
 OPTIONS_DEFINE=	OPENTELEMETRY
 OPTIONS_SUB=	yes
