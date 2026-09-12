@@ -42,9 +42,9 @@ load_rc_config "${name}"
 
 piddir="/var/run/${name}"
 pidfile="${piddir}/${name}.pid"
-procname=%%RUBY%%
+procname=/usr/sbin/daemon
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} %%PREFIX%%/bin/oxidized ${oxidized_args}"
+command_args="-f -P ${pidfile} %%PREFIX%%/bin/oxidized ${oxidized_args}"
 
 export HOME=${oxidized_home}
 

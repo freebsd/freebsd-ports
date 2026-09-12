@@ -1,5 +1,6 @@
 PORTNAME=	oxidized
 DISTVERSION=	0.37.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -29,7 +30,6 @@ USE_RC_SUBR=	oxidized
 SHEBANG_FILES=	extra/*.runit
 
 NO_ARCH=	yes
-SUB_LIST=	RUBY=${RUBY}
 
 USERS=		oxidized
 GROUPS=		oxidized
