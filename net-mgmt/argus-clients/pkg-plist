@@ -51,7 +51,6 @@ share/man/man1/rasplit.1.gz
 %%MYSQL%%share/man/man1/rasqltimeindex.1.gz
 share/man/man1/rastream.1.gz
 share/man/man1/rastrip.1.gz
-share/man/man5/racluster.5.gz
 share/man/man5/radium.conf.5.gz
 share/man/man5/ralabel.conf.5.gz
 share/man/man5/ranonymize.5.gz
