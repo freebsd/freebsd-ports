@@ -1,5 +1,3 @@
-TIMESTAMP = 1760808223
-SHA256 (avocado-framework-avocado-112.0_GH0.tar.gz) = cdae785ad8a0c2de20972a8bcfb8b73a2b558e62b06a26b36301c33ee3ae01f8
-SIZE (avocado-framework-avocado-112.0_GH0.tar.gz) = 1594377
-SHA256 (dcfd5a7.patch) = 06c4b6cc1be2218730b7ff0f36284fba549f04276a3602588d4008c563900ef5
-SIZE (dcfd5a7.patch) = 2670
+TIMESTAMP = 1789204575
+SHA256 (avocado-framework-avocado-113.0_GH0.tar.gz) = a916c90b43e67d4593feef121f820d3fd8c93c2aca2dbd2d8865f83a622d3487
+SIZE (avocado-framework-avocado-113.0_GH0.tar.gz) = 1609397
