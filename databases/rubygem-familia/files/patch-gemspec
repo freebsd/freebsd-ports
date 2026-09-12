@@ -1,0 +1,11 @@
+--- familia.gemspec.orig	2026-09-11 20:11:36 UTC
++++ familia.gemspec
+@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<json_schemer>.freeze, ["~> 2.0".freeze])
+   s.add_runtime_dependency(%q<logger>.freeze, ["~> 1.7".freeze])
+   s.add_runtime_dependency(%q<oj>.freeze, ["~> 3.16".freeze])
+-  s.add_runtime_dependency(%q<redis>.freeze, [">= 5.0".freeze, "< 6.0".freeze])
++  s.add_runtime_dependency(%q<redis>.freeze, [">= 5.0".freeze])
+   s.add_runtime_dependency(%q<uri-valkey>.freeze, ["~> 1.4".freeze])
+ end
+ 
