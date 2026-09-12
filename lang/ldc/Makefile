@@ -46,7 +46,7 @@ BOOTSTRAP_VERSION=	${PORTVERSION}
 MASTER_SITES+=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/:bootstrap
 .elif ${ARCH} == powerpc64
 BOOTSTRAP_ARCH=	ppc64
-BOOTSTRAP_VERSION=	1.42.0
+BOOTSTRAP_VERSION=	1.43.0
 MASTER_SITES+=	LOCAL/pkubaj:bootstrap
 .elif ${ARCH} == powerpc64le
 .  if ${OSVERSION} >= 1600019
@@ -54,7 +54,7 @@ BOOTSTRAP_ARCH=	ppc64le-ld128
 .  else
 BOOTSTRAP_ARCH=	ppc64le
 .  endif
-BOOTSTRAP_VERSION=	1.42.0
+BOOTSTRAP_VERSION=	1.43.0
 MASTER_SITES+=	LOCAL/pkubaj:bootstrap
 .endif
 
