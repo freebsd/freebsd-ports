@@ -1,6 +1,5 @@
 PORTNAME=	quarto # quarto also requires some Linux base to be installed, for example linux_base-rl9
-DISTVERSION=	1.10.11
-PORTREVISION=	1
+DISTVERSION=	1.10.18
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/quarto-dev/quarto-cli/releases/download/v${DISTVERSION}/
 DISTFILES=	quarto-${DISTVERSION}-linux-amd64.tar.gz # same for all architectures

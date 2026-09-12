@@ -1236,6 +1236,7 @@ bin/quarto
 %%DATADIR%%/share/filters/modules/listtable.lua
 %%DATADIR%%/share/filters/modules/mediabag.lua
 %%DATADIR%%/share/filters/modules/openxml.lua
+%%DATADIR%%/share/filters/modules/path.lua
 %%DATADIR%%/share/filters/modules/patterns.lua
 %%DATADIR%%/share/filters/modules/scope.lua
 %%DATADIR%%/share/filters/modules/string.lua
@@ -1304,7 +1305,10 @@ bin/quarto
 %%DATADIR%%/share/formats/html/_quarto-variables-copy-code.scss
 %%DATADIR%%/share/formats/html/_quarto-variables.scss
 %%DATADIR%%/share/formats/html/anchor/anchor.min.js
+%%DATADIR%%/share/formats/html/axe/LICENSE
+%%DATADIR%%/share/formats/html/axe/LICENSE-3RD-PARTY.txt
 %%DATADIR%%/share/formats/html/axe/axe-check.js
+%%DATADIR%%/share/formats/html/axe/axe.min.js
 %%DATADIR%%/share/formats/html/bootstrap/_bootstrap-customize.scss
 %%DATADIR%%/share/formats/html/bootstrap/_bootstrap-functions.scss
 %%DATADIR%%/share/formats/html/bootstrap/_bootstrap-mixins.scss
