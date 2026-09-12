@@ -24,7 +24,6 @@
 %%WWWDIR%%/javascript/blame-popup.js
 %%WWWDIR%%/javascript/collapsible.js
 %%WWWDIR%%/javascript/compare-checkboxes.js
-%%WWWDIR%%/javascript/jquery-1.12.4.min.js
 %%WWWDIR%%/languages/catalan.php
 %%WWWDIR%%/languages/chinese-simplified.php
 %%WWWDIR%%/languages/chinese-traditional.php
