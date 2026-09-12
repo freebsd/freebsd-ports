@@ -33,7 +33,7 @@ RUN_DEPENDS=	blkid:filesystems/libblkid \
 		${LOCALBASE}/libdata/pkgconfig/fwupd-efi.pc:sysutils/fwupd-efi \
 		valgrind>0:devel/valgrind
 
-USES=		cmake:indirect gettext gnome inotify libarchive meson pkgconfig python readline shebangfix sqlite vala:build
+USES=		cmake:indirect cpe gettext gnome inotify libarchive meson pkgconfig python readline shebangfix sqlite vala:build
 USE_GITHUB=	yes
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
