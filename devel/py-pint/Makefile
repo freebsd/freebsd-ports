@@ -1,5 +1,5 @@
 PORTNAME=	pint
-PORTVERSION=	0.25.3
+PORTVERSION=	0.26.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flexcache>=0.3:devel/py-flexcache@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.1.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.11+
+USES=		python:3.12+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
@@ -27,7 +27,7 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	NUMPY SCIPY UNCERTAINTIES
 UNCERTAINTIES_DESC=	Handle quantities with uncertainties
 
-NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.23,1:math/py-numpy@${PY_FLAVOR}
+NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.0.0,1:math/py-numpy@${PY_FLAVOR}
 SCIPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0,1:science/py-scipy@${PY_FLAVOR}
 UNCERTAINTIES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uncertainties>=3.1.6:math/py-uncertainties@${PY_FLAVOR}
 
