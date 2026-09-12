@@ -1,10 +1,10 @@
 CARGO_CRATES=	arc-swap-1.9.2 \
 		async-lock-3.4.2 \
 		async-trait-0.1.92 \
-		bitflags-2.13.1 \
+		bitflags-2.13.2 \
 		bumpalo-3.20.3 \
 		cfg-if-1.0.4 \
-		crossbeam-utils-0.8.22 \
+		crossbeam-utils-0.8.23 \
 		dashmap-6.2.1 \
 		event-listener-5.4.2 \
 		event-listener-strategy-0.5.4 \
@@ -14,7 +14,7 @@ CARGO_CRATES=	arc-swap-1.9.2 \
 		hashbrown-0.14.5 \
 		heck-0.5.0 \
 		itoa-1.0.18 \
-		js-sys-0.3.104 \
+		js-sys-0.3.105 \
 		libc-0.2.189 \
 		lock_api-0.4.14 \
 		memchr-2.8.3 \
@@ -39,17 +39,17 @@ CARGO_CRATES=	arc-swap-1.9.2 \
 		serde_derive-1.0.229 \
 		serde_json-1.0.151 \
 		smallstr-0.3.1 \
-		smallvec-1.15.2 \
+		smallvec-1.16.0 \
 		syn-2.0.119 \
-		syn-3.0.3 \
+		syn-3.0.5 \
 		target-lexicon-0.13.5 \
 		thiserror-2.0.20 \
 		thiserror-impl-2.0.20 \
 		unicode-ident-1.0.24 \
-		wasm-bindgen-0.2.127 \
-		wasm-bindgen-macro-0.2.127 \
-		wasm-bindgen-macro-support-0.2.127 \
-		wasm-bindgen-shared-0.2.127 \
+		wasm-bindgen-0.2.128 \
+		wasm-bindgen-macro-0.2.128 \
+		wasm-bindgen-macro-support-0.2.128 \
+		wasm-bindgen-shared-0.2.128 \
 		windows-link-0.2.1 \
 		yrs-0.27.4 \
 		zmij-1.0.23
