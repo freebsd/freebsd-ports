@@ -1,0 +1,144 @@
+.Dd June 15, 2026
+.Dt TE 1
+.Os
+.Sh NAME
+.Nm te
+.Nd lightweight text editor with charset conversion
+.Sh SYNOPSIS
+.Nm te
+.Op Ar file
+.Sh DESCRIPTION
+.Nm te
+is a lightweight text editor for Unix-like systems with full UTF-8 support,
+multiple charset conversion, configurable colors, undo/redo, search, and
+clipboard support.
+.Sh INITIAL CONFIGURATION
+On first run,
+.Nm te
+creates a configuration file at
+.Pa ~/.tinyedit.conf
+in the user's home directory. This file stores editor preferences including
+colors, charset settings, wrap mode, and line numbers display.
+.Sh SETUP
+The Setup menu (F4 or Alt+T) allows configuration of:
+.Bl -bullet -compact
+.It
+Default charset for saving files
+.It
+Color schemes
+.It
+Hard/soft wrap mode
+.It
+Line numbers display
+.It
+Other editor preferences
+.El
+.Sh WRAP MODES
+.Nm te
+supports two wrap modes:
+.Bl -enum -compact
+.It
+Soft-wrap (default): Visual wrapping only, no line breaks inserted
+.It
+Hard-wrap: Inserts carriage returns at the configured column width
+.El
+Toggle between modes with Alt+Q.
+.Sh LINE NUMBERS
+Line numbers can be enabled or disabled in Setup (Alt+D toggles).
+When enabled, line numbers are displayed in the left margin.
+.Sh CHARSET CONVERSION
+.Nm te
+always works internally with UTF-8. There are two ways to configure charsets:
+.Pp
+.Bl -enum -compact
+.It
+Default charset (Setup):
+.Bl -bullet -compact
+.It
+Press F4 or Alt+T to open Setup
+.It
+In the Editor tab, go to the "Charset" field
+.It
+Press Enter to cycle through available charsets
+.It
+This will be the charset used by default when saving files
+.El
+.It
+Temporary charset for the current file (F3):
+.Bl -bullet -compact
+.It
+Press F3 or Alt+C to change the read/write charset for the current file
+.It
+Select the read charset (View) and save charset (Save)
+.It
+If you change the read charset (View), the file is reloaded from disk with the new encoding
+.It
+If you only change the save charset (Save), the file is not reloaded
+.El
+.El
+.Pp
+Available charsets: UTF-8, LATIN-1, LATIN-2, CP437, CP850, CP865, CP866, CP1252.
+.Sh SEARCH
+.Nm te
+provides search functionality:
+.Bl -enum -compact
+.It
+Search (F5 or Alt+F):
+.Bl -bullet -compact
+.It
+Shows all matches in the document
+.It
+Navigate between matches with F3/Alt+P (previous) and F4/Alt+N (next)
+.El
+.It
+Find & replace (Ctrl+R):
+.Bl -bullet -compact
+.It
+Search and replace text with a popup dialog
+.El
+.It
+Replace all (F6 or Alt+B in search mode):
+.Bl -bullet -compact
+.It
+Replace all matches at once
+.El
+.El
+.Pp
+Press ESC to exit search mode.
+.Sh UNICODE GLYPHS
+Press F8 or Alt+U to open the Unicode glyph picker, which allows insertion
+of any Unicode character by browsing and selecting from the full Unicode
+character set.
+.Sh KEYBOARD SHORTCUTS
+Basic navigation and editing shortcuts:
+.Bl -tag -width "Ctrl+Left/Right"
+.It Sy Arrows
+Move cursor
+.It Sy Home / Ctrl+B
+Line start
+.It Sy End / Ctrl+E
+Line end
+.It Sy PgUp / Ctrl+U
+Page up
+.It Sy PgDn / Ctrl+D
+Page down
+.It Sy Ctrl+Left/Right
+Word left / right
+.It Sy Ctrl+Y
+Delete line
+.It Sy Ctrl+Z
+Undo
+.It Sy Alt+Z
+Redo
+.It Sy Ctrl+S
+Save
+.It Sy ESC / F10
+Quit
+.El
+.Sh FILES
+.Bl -tag -width "~/.tinyedit.conf"
+.It Pa ~/.tinyedit.conf
+User configuration file
+.El
+.Sh AUTHORS
+.An Tanausú M. Aq ervras@aim.com
