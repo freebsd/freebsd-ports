@@ -1,4 +1,4 @@
---- crates/gpui/src/platform.rs.orig	2026-09-04 14:25:12 UTC
+--- crates/gpui/src/platform.rs.orig	2026-09-09 15:43:20 UTC
 +++ crates/gpui/src/platform.rs
 @@ -2,7 +2,7 @@ mod keystroke;
  mod keyboard;
@@ -18,7 +18,7 @@
      feature = "screen-capture"
  ))]
  pub(crate) type PlatformScreenCaptureFrame = scap::frame::Frame;
-@@ -913,7 +913,7 @@ pub trait PlatformWindow: HasWindowHandle + HasDisplay
+@@ -918,7 +918,7 @@ pub trait PlatformWindow: HasWindowHandle + HasDisplay
      }
      fn start_window_resize(&self, _edge: ResizeEdge) {}
      fn set_exclusive_zone(&self, _zone: Pixels) {}
@@ -27,7 +27,7 @@
      fn set_exclusive_edge(&self, _edge: layer_shell::Anchor) {}
      fn set_input_region(&self, _region: Option<&[Bounds<Pixels>]>) {}
      fn window_decorations(&self) -> Decorations {
-@@ -2063,7 +2063,7 @@ pub enum WindowKind {
+@@ -2181,7 +2181,7 @@ pub enum WindowKind {
  
      /// A Wayland LayerShell window, used to draw overlays or backgrounds for applications such as
      /// docks, notifications or wallpapers.

@@ -1,4 +1,4 @@
---- crates/project/tests/integration/project_tests.rs.orig	2026-08-26 14:24:53 UTC
+--- crates/project/tests/integration/project_tests.rs.orig	2026-09-09 15:43:20 UTC
 +++ crates/project/tests/integration/project_tests.rs
 @@ -68,7 +68,7 @@ use settings::{GlobalLspSettingsContent, SettingsStore
  use rand::{Rng as _, rngs::StdRng};
@@ -9,7 +9,7 @@
  use settings::{LocalSettingsKind, LocalSettingsPath};
  #[cfg(not(windows))]
  use std::os;
-@@ -6711,7 +6711,7 @@ async fn test_rescan_and_remote_updates(cx: &mut gpui:
+@@ -7013,7 +7013,7 @@ async fn test_rescan_and_remote_updates(cx: &mut gpui:
      });
  }
  
@@ -18,7 +18,7 @@
  #[gpui::test(retries = 5)]
  async fn test_recreated_directory_receives_child_events(cx: &mut gpui::TestAppContext) {
      init_test(cx);
-@@ -13714,7 +13714,7 @@ async fn test_git_repository_status_removes_directory_
+@@ -14016,7 +14016,7 @@ async fn test_git_repository_status_removes_directory_
      });
  }
  
@@ -27,7 +27,7 @@
  #[gpui::test(retries = 5)]
  async fn test_git_events_after_project_excludes_dot_git(cx: &mut gpui::TestAppContext) {
      init_test(cx);
-@@ -16512,7 +16512,7 @@ fn git_reset(offset: usize, work_dir: &Path) {
+@@ -16814,7 +16814,7 @@ fn git_reset(offset: usize, work_dir: &Path) {
      );
  }
  
@@ -36,7 +36,7 @@
  #[allow(clippy::disallowed_methods)]
  #[track_caller]
  fn git_branch(name: &str, work_dir: &Path) {
-@@ -16527,7 +16527,7 @@ fn git_branch(name: &str, work_dir: &Path) {
+@@ -16829,7 +16829,7 @@ fn git_branch(name: &str, work_dir: &Path) {
      );
  }
  
