@@ -1,5 +1,5 @@
-TIMESTAMP = 1788096379
-SHA256 (go/devel_please/thought-machine-please-v17.32.0_GH0/go.mod) = 42843f4793199e1413ad4d6a4df1de56e519dc60f04ce09c8c533ec33cdb5301
-SIZE (go/devel_please/thought-machine-please-v17.32.0_GH0/go.mod) = 5340
-SHA256 (go/devel_please/thought-machine-please-v17.32.0_GH0/thought-machine-please-v17.32.0_GH0.tar.gz) = 2f1d1719904db602434346f2e48e9375fd8a43fdbda9d9f76ad1d24854924b30
-SIZE (go/devel_please/thought-machine-please-v17.32.0_GH0/thought-machine-please-v17.32.0_GH0.tar.gz) = 2110612
+TIMESTAMP = 1789222581
+SHA256 (go/devel_please/thought-machine-please-v17.33.0_GH0/go.mod) = 2e932f87775564ef0765f9fa298b173bec1c9fee12ed7de3d2baa45309bf4afc
+SIZE (go/devel_please/thought-machine-please-v17.33.0_GH0/go.mod) = 5340
+SHA256 (go/devel_please/thought-machine-please-v17.33.0_GH0/thought-machine-please-v17.33.0_GH0.tar.gz) = 1979bad947cbeea2d90bdc75c55368495c5b38c043b14b7f32ac6dd3d5636a96
+SIZE (go/devel_please/thought-machine-please-v17.33.0_GH0/thought-machine-please-v17.33.0_GH0.tar.gz) = 2147554
