@@ -1,5 +1,5 @@
 PORTNAME=	narwhals
-PORTVERSION=	2.25.0
+PORTVERSION=	2.26.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
 		https://github.com/narwhals-dev/narwhals/releases/download/v${PORTVERSION}/
