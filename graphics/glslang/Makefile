@@ -1,5 +1,5 @@
 PORTNAME=	glslang
-DISTVERSION=	16.5.0
+DISTVERSION=	16.6.0
 CATEGORIES=	graphics
 
 MAINTAINER=	tagattie@FreeBSD.org
