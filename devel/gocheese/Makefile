@@ -1,6 +1,6 @@
 PORTNAME=	gocheese
 DISTVERSION=	5.0.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.gocheese.stargrave.org/download/
 
@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		go tar:zst
 
-GO_PKGNAME=	go.cypherpunks.ru/gocheese/v5
-GO_TARGET=	go.cypherpunks.ru/gocheese/v5:${PORTNAME}
+GO_PKGNAME=	go.stargrave.org/gocheese/v5
+GO_TARGET=	go.stargrave.org/gocheese/v5:${PORTNAME}
 
 INFO=		${PORTNAME}
 PLIST_FILES=	${DOCSDIR}/README \
