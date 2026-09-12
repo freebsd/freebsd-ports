@@ -1,8 +1,12 @@
 PORTNAME=	scapy
 DISTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/secdev/${PORTNAME}/commit/
+PATCHFILES=	caa005dae9bddeb93b11286327149c824db7732a.patch:-p1
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Powerful interactive packet manipulation program in python
