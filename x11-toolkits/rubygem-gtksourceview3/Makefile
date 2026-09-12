@@ -1,5 +1,5 @@
 PORTNAME=	gtksourceview3
-PORTVERSION=	4.3.8
+PORTVERSION=	4.3.9
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
