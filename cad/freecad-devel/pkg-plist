@@ -255,6 +255,7 @@ FreeCAD/Mod/BIM/bimcommands/BimEmptyTrash.py
 FreeCAD/Mod/BIM/bimcommands/BimEquipment.py
 FreeCAD/Mod/BIM/bimcommands/BimExamples.py
 FreeCAD/Mod/BIM/bimcommands/BimExtrude.py
+FreeCAD/Mod/BIM/bimcommands/BimExtrudeFace.py
 FreeCAD/Mod/BIM/bimcommands/BimFence.py
 FreeCAD/Mod/BIM/bimcommands/BimFrame.py
 FreeCAD/Mod/BIM/bimcommands/BimFuse.py
@@ -301,6 +302,7 @@ FreeCAD/Mod/BIM/bimcommands/BimTDPage.py
 FreeCAD/Mod/BIM/bimcommands/BimTDView.py
 FreeCAD/Mod/BIM/bimcommands/BimText.py
 FreeCAD/Mod/BIM/bimcommands/BimTrash.py
+FreeCAD/Mod/BIM/bimcommands/BimTrimex.py
 FreeCAD/Mod/BIM/bimcommands/BimTruss.py
 FreeCAD/Mod/BIM/bimcommands/BimTutorial.py
 FreeCAD/Mod/BIM/bimcommands/BimUnclone.py
@@ -349,6 +351,7 @@ FreeCAD/Mod/BIM/bimtests/TestArchWall.py
 FreeCAD/Mod/BIM/bimtests/TestArchWallGui.py
 FreeCAD/Mod/BIM/bimtests/TestArchWindow.py
 FreeCAD/Mod/BIM/bimtests/TestArchWindowGui.py
+FreeCAD/Mod/BIM/bimtests/TestBimTrimexGui.py
 FreeCAD/Mod/BIM/bimtests/TestWebGLExport.py
 FreeCAD/Mod/BIM/bimtests/TestWebGLExportGui.py
 FreeCAD/Mod/BIM/bimtests/fixtures/BimFixtures.py
@@ -420,10 +423,11 @@ FreeCAD/Mod/CAM/CAMTests/TestFeedsSpeedsResolver.py
 FreeCAD/Mod/CAM/CAMTests/TestFeedsSpeedsToolBitPresets.py
 FreeCAD/Mod/CAM/CAMTests/TestFeedsSpeedsToolController.py
 FreeCAD/Mod/CAM/CAMTests/TestGcodeProcessingUtils.py
-FreeCAD/Mod/CAM/CAMTests/TestGenericPlasma.py
 FreeCAD/Mod/CAM/CAMTests/TestGenericPost.py
+FreeCAD/Mod/CAM/CAMTests/TestGenericSheetCutting.py
 FreeCAD/Mod/CAM/CAMTests/TestGrblLegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestGrblPost.py
+FreeCAD/Mod/CAM/CAMTests/TestKineticNCBeamicon2LegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestLinkingGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestLinuxCNCLegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestLinuxCNCPost.py
@@ -431,6 +435,7 @@ FreeCAD/Mod/CAM/CAMTests/TestMach3Mach4LegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestMach3Mach4Post.py
 FreeCAD/Mod/CAM/CAMTests/TestMachine.py
 FreeCAD/Mod/CAM/CAMTests/TestMachineMTConnectImport.py
+FreeCAD/Mod/CAM/CAMTests/TestMachineValidate.py
 FreeCAD/Mod/CAM/CAMTests/TestMarlinPost.py
 FreeCAD/Mod/CAM/CAMTests/TestMassoG3Post.py
 FreeCAD/Mod/CAM/CAMTests/TestOpenSBPPost.py
@@ -490,6 +495,7 @@ FreeCAD/Mod/CAM/CAMTests/TestPathToolBitPropertyEditorWidget.py
 FreeCAD/Mod/CAM/CAMTests/TestPathToolBitSerializer.py
 FreeCAD/Mod/CAM/CAMTests/TestPathToolChangeGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathToolController.py
+FreeCAD/Mod/CAM/CAMTests/TestPathToolDocObject.py
 FreeCAD/Mod/CAM/CAMTests/TestPathToolDocumentObjectEditorWidget.py
 FreeCAD/Mod/CAM/CAMTests/TestPathToolLibrary.py
 FreeCAD/Mod/CAM/CAMTests/TestPathToolLibrarySerializer.py
@@ -504,6 +510,7 @@ FreeCAD/Mod/CAM/CAMTests/TestPostGCodes.py
 FreeCAD/Mod/CAM/CAMTests/TestPostMCodes.py
 FreeCAD/Mod/CAM/CAMTests/TestPostOutput.py
 FreeCAD/Mod/CAM/CAMTests/TestPostProcessor.py
+FreeCAD/Mod/CAM/CAMTests/TestPostTapping.py
 FreeCAD/Mod/CAM/CAMTests/TestPostToolProcessing.py
 FreeCAD/Mod/CAM/CAMTests/TestProcessorOptimizations.py
 FreeCAD/Mod/CAM/CAMTests/TestSVGPost.py
@@ -549,6 +556,7 @@ FreeCAD/Mod/CAM/InitGui.py
 FreeCAD/Mod/CAM/Machine/models/__init__.py
 FreeCAD/Mod/CAM/Machine/models/machine.py
 FreeCAD/Mod/CAM/Machine/models/mtconnect_import.py
+FreeCAD/Mod/CAM/Machine/models/validate.py
 FreeCAD/Mod/CAM/Machine/ui/__init__.py
 FreeCAD/Mod/CAM/Machine/ui/editor/__init__.py
 FreeCAD/Mod/CAM/Machine/ui/editor/machine_editor.py
@@ -615,6 +623,7 @@ FreeCAD/Mod/CAM/Path/Dressup/Gui/DogboneII.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/Dragknife.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/LeadInOut.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/Mirror.py
+FreeCAD/Mod/CAM/Path/Dressup/Gui/PlungeMilling.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/Preferences.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/RampEntry.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/TagPreferences.py
@@ -737,8 +746,8 @@ FreeCAD/Mod/CAM/Path/Post/scripts/fablin_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/fangling_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/fanuc_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/gcode_pre.py
-FreeCAD/Mod/CAM/Path/Post/scripts/generic_plasma_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/generic_post.py
+FreeCAD/Mod/CAM/Path/Post/scripts/generic_sheet_cutting_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/grbl_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/grbl_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/heidenhain_legacy_post.py
@@ -1950,6 +1959,8 @@ FreeCAD/Mod/Part/parttests/Geom2d_tests.py
 FreeCAD/Mod/Part/parttests/TaskFaceAppearancesTest.py
 FreeCAD/Mod/Part/parttests/TestFaceMakerUnifiedNonPlanar.py
 FreeCAD/Mod/Part/parttests/TestFaceMakerUnifiedPlanar.py
+FreeCAD/Mod/Part/parttests/TestLinkArrayCircular.py
+FreeCAD/Mod/Part/parttests/TestLinkArrayLinear.py
 FreeCAD/Mod/Part/parttests/TestPartMirror.py
 FreeCAD/Mod/Part/parttests/TestTangentMode3-0.21.FCStd
 FreeCAD/Mod/Part/parttests/TopoShapeListTest.py
@@ -1967,6 +1978,7 @@ FreeCAD/Mod/PartDesign/PartDesignTests/TestActiveObject.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestBaseFeature.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestBoolean.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestChamfer.py
+FreeCAD/Mod/PartDesign/PartDesignTests/TestCircularPattern.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestDatum.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestDraft.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestFillet.py
@@ -1979,6 +1991,7 @@ FreeCAD/Mod/PartDesign/PartDesignTests/TestMaterial.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestMirrored.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestMultiTransform.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestPad.py
+FreeCAD/Mod/PartDesign/PartDesignTests/TestPathPattern.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestPipe.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestPocket.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestPolarPattern.py
@@ -2055,7 +2068,9 @@ FreeCAD/Mod/Sketcher/ProfileLib/__init__.py
 FreeCAD/Mod/Sketcher/Profiles.py
 FreeCAD/Mod/Sketcher/SketcherExample.py
 FreeCAD/Mod/Sketcher/SketcherTests/GuiTestCase.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestConstraintCommandsGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestConstraintPreselectionGui.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestDistanceLabelExtensionGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestExternalFacePreselection.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestOnViewParameterGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestPlacementUpdate.py
