@@ -11,7 +11,8 @@ WWW=		https://nghttp2.org/ \
 
 LICENSE=	MIT
 
-USES=		linux:rl9
+USES=		cpe linux:rl9
+CPE_PRODUCT=	nghttp2
 USE_LDCONFIG=	yes
 USE_LINUX=	icu
 USE_LINUX_RPM=	yes
