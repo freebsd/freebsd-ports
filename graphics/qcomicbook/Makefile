@@ -1,6 +1,6 @@
 PORTNAME=	QComicBook
 PORTVERSION=	0.9.1
-PORTREVISION=	54
+PORTREVISION=	55
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	Qt-based comic book archive viewer
 WWW=		https://github.com/stolowski/QComicBook
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
