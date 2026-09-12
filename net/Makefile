@@ -1509,6 +1509,7 @@
     SUBDIR += rubygem-uri
     SUBDIR += rubygem-uri-gitlab
     SUBDIR += rubygem-uri-redis
+    SUBDIR += rubygem-uri-valkey
     SUBDIR += rubygem-uri_template
     SUBDIR += rubygem-whois
     SUBDIR += rubygem-x
