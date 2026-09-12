@@ -898,7 +898,13 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/internat/vi/kicad.mo
 %%DATADIR%%/internat/zh_CN/kicad.mo
 %%DATADIR%%/internat/zh_TW/kicad.mo
+%%DATADIR%%/libwmf/fonts/Carlito-Bold.ttf
+%%DATADIR%%/libwmf/fonts/Carlito-Regular.ttf
+%%DATADIR%%/libwmf/fonts/KiCadOrCADElephant-Black.ttf
 %%DATADIR%%/libwmf/fonts/LICENSE
+%%DATADIR%%/libwmf/fonts/LICENSE-Carlito.txt
+%%DATADIR%%/libwmf/fonts/LICENSE-KiCadOrCADElephant.txt
+%%DATADIR%%/libwmf/fonts/LICENSE-SourceSans.txt
 %%DATADIR%%/libwmf/fonts/NimbusMonoPS-Bold.afm
 %%DATADIR%%/libwmf/fonts/NimbusMonoPS-Bold.t1
 %%DATADIR%%/libwmf/fonts/NimbusMonoPS-BoldItalic.afm
@@ -923,6 +929,10 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 %%DATADIR%%/libwmf/fonts/NimbusSans-Italic.t1
 %%DATADIR%%/libwmf/fonts/NimbusSans-Regular.afm
 %%DATADIR%%/libwmf/fonts/NimbusSans-Regular.t1
+%%DATADIR%%/libwmf/fonts/SourceSans3-Regular.otf
+%%DATADIR%%/libwmf/fonts/SourceSans3-Semibold.otf
+%%DATADIR%%/libwmf/fonts/SourceSansPro-Regular.ttf
+%%DATADIR%%/libwmf/fonts/SourceSansPro-Semibold.ttf
 %%DATADIR%%/libwmf/fonts/StandardSymbolsPS.afm
 %%DATADIR%%/libwmf/fonts/StandardSymbolsPS.t1
 %%DATADIR%%/plugins/README-bom.txt

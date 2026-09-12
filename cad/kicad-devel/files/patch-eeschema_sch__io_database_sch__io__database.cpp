@@ -1,6 +1,6 @@
---- eeschema/sch_io/database/sch_io_database.cpp.orig	2026-08-22 14:36:37 UTC
+--- eeschema/sch_io/database/sch_io_database.cpp.orig	2026-09-03 00:42:22 UTC
 +++ eeschema/sch_io/database/sch_io_database.cpp
-@@ -417,8 +417,9 @@ void SCH_IO_DATABASE::backgroundRefreshWorker()
+@@ -428,8 +428,9 @@ void SCH_IO_DATABASE::backgroundRefreshWorker()
  
  void SCH_IO_DATABASE::backgroundRefreshWorker()
  {
