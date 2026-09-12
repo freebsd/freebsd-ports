@@ -1,4 +1,4 @@
---- etc/config.template.toml.orig	2026-06-05 08:08:56 UTC
+--- etc/config.template.toml.orig	2026-09-11 14:51:05 UTC
 +++ etc/config.template.toml
 @@ -3,14 +3,14 @@
  #
@@ -17,7 +17,15 @@
  # - 'v1': This format.
  version = "v1"
  
-@@ -20,28 +20,28 @@ version = "v1"
+@@ -20,35 +20,35 @@ version = "v1"
+ # Cascade stores information like the known policies and zones here. This file
+ # should not be modified manually, but it can be backed up and restored in the
+ # event of filesystem corruption.
+-state-file = "/var/lib/cascade/state.db"
++state-file = "%%DBDIR%%/state.db"
+ 
+ # The directory storing zone policies.
+ #
  # Zone policies are user-managed files configuring groups of zones.  You can
  # modify them as you like, then ask Cascade to reload them with 'cascade policy
  # reload'.
@@ -30,7 +38,7 @@
  # files should not be modified manually, but they can be backed up and restored
  # in the event of filesystem corruption.
 -zone-state-dir = "/var/lib/cascade/zone-state"
-+zone-state-dir = "%%DBDIR%%/zone-state"
++zone-state-dir = "%%DBSIR%%/zone-state"
  
  # The file storing TSIG key secrets.
  #
@@ -45,26 +53,17 @@
  # This is an internal state file containing sensitive cryptographic material.
  # It should not be modified manually, but it can be backed up and restored in
  # the event of filesystem corruption.  Carefully consider its security.
--kmip-credentials-store-path = "/var/lib/cascade/kmip/credentials.db"
-+kmip-credentials-store-path = "%%DBDIR%%/kmip/credentials.db"
+-kmip-credentials-store-path = "/var/lib/cascade/kmip-credentials.db"
++kmip-credentials-store-path = "%%DBDIR%%/kmip-credentials.db"
  
  # The directory storing rollover states and on-disk DNSSEC keys.
  #
-@@ -55,7 +55,7 @@ kmip-credentials-store-path = "/var/lib/cascade/kmip/c
+@@ -62,14 +62,14 @@ kmip-credentials-store-path = "/var/lib/cascade/kmip-c
  # Carefully consider its security.
  #
  # TODO: Move rollover state files to a separate directory?
 -keys-dir = "/var/lib/cascade/keys"
 +keys-dir = "%%DBDIR%%/keys"
- 
- # The directory containing KMIP server state.
- #
-@@ -64,14 +64,14 @@ keys-dir = "/var/lib/cascade/keys"
- # The organization of this directory (file names and file formats) constitutes
- # internal implementation details.  It should not be modified manually, but
- # it can be backed up and restored in the event of filesystem corruption.
--kmip-server-state-dir = "/var/lib/cascade/kmip"
-+kmip-server-state-dir = "%%DBDIR%%/kmip"
  
  # The path to the dnst binary Cascade should use.
  #
@@ -76,7 +75,7 @@
  
  
  # Settings relevant to any daemon program.
-@@ -218,7 +218,7 @@ servers = ["127.0.0.1:4541", "[::1]:4541"]
+@@ -216,7 +216,7 @@ servers = ["127.0.0.1:4541", "[::1]:4541"]
  # How zones are published.
  [server]
  # Where to serve published zones.

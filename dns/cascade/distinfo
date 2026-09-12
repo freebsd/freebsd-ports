@@ -1,4 +1,4 @@
-TIMESTAMP = 1786793978
+TIMESTAMP = 1789212860
 SHA256 (rust/crates/aho-corasick-1.1.5.crate) = c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
 SIZE (rust/crates/aho-corasick-1.1.5.crate) = 184315
 SHA256 (rust/crates/android_system_properties-0.1.6.crate) = ae221649c9976a6f6c56ae1facf410f3ddb33cc661c4b7b61020a912d4237fbc
@@ -509,5 +509,5 @@ SHA256 (NLnetLabs-domain-kmip-632dfab6c191a2d191e7fc670e246d4e87da6bf7_GH0.tar.g
 SIZE (NLnetLabs-domain-kmip-632dfab6c191a2d191e7fc670e246d4e87da6bf7_GH0.tar.gz) = 31206
 SHA256 (NLnetLabs-kmip-protocol-03cc2defe51ecbfc89621d92f80f30042bdc0178_GH0.tar.gz) = 3b120ac78d82962c6da2a774f4b384e896d128a4e0ed4f716a7b0c109288a340
 SIZE (NLnetLabs-kmip-protocol-03cc2defe51ecbfc89621d92f80f30042bdc0178_GH0.tar.gz) = 98497
-SHA256 (NLnetLabs-cascade-0.1.0-RC1-9a1bdbcf4_GH0.tar.gz) = 05dc562ec818240532d6461b86d7b1956a24d01aba3cd6a0d6eef46b3b032658
-SIZE (NLnetLabs-cascade-0.1.0-RC1-9a1bdbcf4_GH0.tar.gz) = 636924
+SHA256 (NLnetLabs-cascade-0.1.0-RC1-57e2565b8_GH0.tar.gz) = f488dbbcbb29d5437405e2f99bd44642a055e69abf5c08097f214c4c35897ec8
+SIZE (NLnetLabs-cascade-0.1.0-RC1-57e2565b8_GH0.tar.gz) = 671294
