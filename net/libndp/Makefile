@@ -10,7 +10,7 @@ WWW=		https://github.com/jpirko/libndp
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool
+USES=		autoreconf cpe libtool
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
