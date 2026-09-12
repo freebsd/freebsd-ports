@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-08-27 12:06:01 UTC
+--- pyproject.toml.orig	2026-09-06 06:35:25 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -8,7 +8,7 @@
  
  [project]
  name = "types-protobuf"
- version = "7.35.1.20260827"
+ version = "7.35.1.20260906"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
