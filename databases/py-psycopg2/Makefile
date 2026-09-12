@@ -1,5 +1,5 @@
 PORTNAME=	psycopg2
-PORTVERSION=	2.9.12
+PORTVERSION=	2.9.13
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://www.psycopg.org/ \
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.LESSER
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		pgsql python
