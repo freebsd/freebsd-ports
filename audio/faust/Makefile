@@ -1,10 +1,10 @@
 PORTNAME=	faust
-DISTVERSION=	2.85.9
+DISTVERSION=	2.88.0
 CATEGORIES=	audio devel
 MASTER_SITES=	https://github.com/grame-cncm/faust/releases/download/${DISTVERSION}/
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	e4e9e51a1a12ef0806fc7c8439fa817a98ec57ce.patch:-p1 # https://github.com/grame-cncm/faust/pull/1170: Fix compilation flags for generated projects: use c++17 instead of c++14
+#PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+#PATCHFILES+=	e4e9e51a1a12ef0806fc7c8439fa817a98ec57ce.patch:-p1 # https://github.com/grame-cncm/faust/pull/1170: Fix compilation flags for generated projects: use c++17 instead of c++14
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Functional programming language for realtime audio signal processing
@@ -31,7 +31,6 @@ LLVM_VER=	19
 
 SHEBANG_FILES=	tools/faust-config \
 		tools/faust2appls/* \
-		tools/faust2clap/faust2clap.py \
 		tools/benchmark/faustbench \
 		tools/sound2faust/sound2reader
 
@@ -67,6 +66,8 @@ post-patch:
 	@cd ${WRKSRC} && \
 		${REINPLACE_CMD} -i '' -e 's|echo qmake)|echo qmake6)|; s|echo qmake-qt5)|echo qmake6)|' \
 			tools/faust2appls/faust2*
+	# apply same patch as in stale PR https://github.com/grame-cncm/faust/pull/1170
+	@${REINPLACE_CMD} -i '' -e 's|c++14|c++17|' ${WRKSRC}/tools/faust2appls/faustoptflags
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/faust
