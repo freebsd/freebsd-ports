@@ -1,3 +1,11 @@
-TIMESTAMP = 1779426448
-SHA256 (moonlight-embedded-devel-2.7.8.tar.xz) = 1e8be900f247ce827542df049566b807e39122ace1258381380cdb1c93729b80
-SIZE (moonlight-embedded-devel-2.7.8.tar.xz) = 955328
+TIMESTAMP = 1788946346
+SHA256 (armin-25689-moonlight-embedded-v2.7.9_GH0.tar.gz) = 87c4510cfdbd0fbdf151d926d13205bdf263f427d1c3dfc1681feadee2cecdac
+SIZE (armin-25689-moonlight-embedded-v2.7.9_GH0.tar.gz) = 214986
+SHA256 (moonlight-stream-moonlight-common-c-e41355e_GH0.tar.gz) = 394629a6942ec725341abcbb7f232656e07fecfb5533d9ad72e9cb273a106faa
+SIZE (moonlight-stream-moonlight-common-c-e41355e_GH0.tar.gz) = 149755
+SHA256 (cgutman-enet-aca8784_GH0.tar.gz) = 57b7955df40c1e345e2a029e964ab8efe5d317c86410cdb86ea071cb841de236
+SIZE (cgutman-enet-aca8784_GH0.tar.gz) = 87054
+SHA256 (sleepybishop-nanors-b1e3c22_GH0.tar.gz) = 0b1042a17ab4b34eea25c79b2ba1bfbeadcc94c4fac7e6e8554fac06056f2880
+SIZE (sleepybishop-nanors-b1e3c22_GH0.tar.gz) = 69366
+SHA256 (gabomdq-SDL_GameControllerDB-8d9fefd_GH0.tar.gz) = 63d64c739a7903c4c0d600c4157e65b383fbd653a7a31d4a04a863b89541fa1e
+SIZE (gabomdq-SDL_GameControllerDB-8d9fefd_GH0.tar.gz) = 68921
