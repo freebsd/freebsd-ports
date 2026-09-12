@@ -1,6 +1,5 @@
 PORTNAME=	giada
-DISTVERSION=	1.4.1
-PORTREVISION=	1
+DISTVERSION=	1.5.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,10 +37,10 @@ GH_ACCOUNT=	monocasual
 GH_TUPLE=	cameron314:concurrentqueue:6dd38b8:concurrentqueue/src/deps/concurrentqueue \
 		fltk:fltk:a9b1113:fltk/src/deps/fltk \
 		juce-framework:JUCE:29396c2:juce/src/deps/juce \
-		monocasual:geompp:b6c6740:geompp/src/deps/geompp \
+		monocasual:geompp:b7ef442:geompp/src/deps/geompp \
 		monocasual:mcl-atomic-swapper:4aa864c:mclatomicswapper/src/deps/mcl-atomic-swapper \
 		monocasual:mcl-audio-buffer:e6b00c8:mclaudiobuffer/src/deps/mcl-audio-buffer \
-		monocasual:mcl-utils:77a740e:mclutils/src/deps/mcl-utils \
+		monocasual:mcl-utils:ea5b1b5:mclutils/src/deps/mcl-utils \
 		monocasual:rtaudio:0f18dfd:rtaudio/src/deps/rtaudio
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 pango
 USE_GL=		egl
