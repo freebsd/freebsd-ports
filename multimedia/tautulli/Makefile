@@ -1,7 +1,6 @@
 PORTNAME=	tautulli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.16.0
-PORTREVISION=	2
+DISTVERSION=	2.18.1
 CATEGORIES=	multimedia python
 
 MAINTAINER=	christer.edwards@gmail.com
