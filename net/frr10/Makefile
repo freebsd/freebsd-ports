@@ -40,12 +40,14 @@ LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libprotobuf-c.so:devel/protobuf-c \
 		libyang.so.3:net/libyang3
 
-USES=		autoreconf bison compiler:c++11-lang gmake libtool makeinfo \
+USES=		autoreconf bison compiler:c++11-lang cpe gmake libtool makeinfo \
 		pkgconfig python:build readline shebangfix
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
 CONFLICTS=	frr8 frr9 openbgpd openospfd quagga zebra
+
+CPE_PRODUCT=	frrouting
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
