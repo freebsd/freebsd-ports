@@ -1,6 +1,6 @@
 --- pyproject.toml.orig	2026-06-20 14:39:51 UTC
 +++ pyproject.toml
-@@ -4,27 +4,27 @@ requires-python = ">=3.10"
+@@ -4,28 +4,28 @@ requires-python = ">=3.10"
  description = "CLI for MySQL Database. With auto-completion and syntax highlighting."
  readme = "README.md"
  requires-python = ">=3.10"
@@ -17,10 +17,11 @@
 +    "Pygments>=2.19.2",
      "prompt_toolkit>=3.0.41,<4.0.0",
 -    "PyMySQL ~= 1.1.2",
-+    "PyMySQL>=1.1.2",
-     "sqlparse>=0.3.0,<0.6.0",
+-    "sqlparse>=0.3.0,<0.6.0",
 -    "sqlglot ~= 30.8.0",
 -    "sqlglotc ~= 30.8.0",
++    "PyMySQL>=1.1.2",
++    "sqlparse>=0.3.0,<0.7.0",
 +    "sqlglot>=30.8.0",
 +    "sqlglotc>=30.8.0",
      "configobj ~= 5.0.9",
@@ -32,10 +33,12 @@
      "pyfzf ~= 0.3.1",
      "rapidfuzz ~= 3.14.3",
 -    "keyring ~= 25.7.0",
+-    "yaspin ~= 3.4.0",
 +    "keyring>=25.6.0,<25.8",
-     "yaspin ~= 3.4.0",
++    "yaspin>=3.4.0,<3.6",
  ]
  
+ [project.urls]
 @@ -36,7 +36,7 @@ Changelog = 'https://github.com/dbcli/mycli/blob/main/
  Changelog = 'https://github.com/dbcli/mycli/blob/main/changelog.md'
  
