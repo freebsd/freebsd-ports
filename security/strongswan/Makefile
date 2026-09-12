@@ -5,7 +5,7 @@ CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
 
-MAINTAINER=	strongswan@nanoteq.com
+MAINTAINER=	rcm@FreeBSD.org
 COMMENT=	Open Source IKEv2 IPsec-based VPN solution
 WWW=		https://www.strongswan.org
 
