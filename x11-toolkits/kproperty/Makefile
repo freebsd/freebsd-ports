@@ -9,6 +9,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Property editing framwork
 WWW=		https://www.kexi-project.org/
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Development discontinued, does not support Qt 6
 EXPIRATION_DATE=	2026-12-31
 
