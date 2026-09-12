@@ -27,7 +27,6 @@ include/oskar/beam_pattern/oskar_beam_pattern_create.h
 include/oskar/beam_pattern/oskar_beam_pattern_free.h
 include/oskar/beam_pattern/oskar_beam_pattern_reset_cache.h
 include/oskar/beam_pattern/oskar_beam_pattern_run.h
-include/oskar/beam_utils/oskar_beam_utils.h
 include/oskar/binary/oskar_binary.h
 include/oskar/binary/oskar_binary_create.h
 include/oskar/binary/oskar_binary_data_types.h
@@ -103,11 +102,9 @@ include/oskar/imager/oskar_imager_rotate_coords.h
 include/oskar/imager/oskar_imager_rotate_vis.h
 include/oskar/imager/oskar_imager_run.h
 include/oskar/imager/oskar_imager_update.h
-include/oskar/interferometer/oskar_WorkJonesZ.h
 include/oskar/interferometer/oskar_evaluate_jones_E.h
 include/oskar/interferometer/oskar_evaluate_jones_K.h
 include/oskar/interferometer/oskar_evaluate_jones_R.h
-include/oskar/interferometer/oskar_evaluate_jones_Z.h
 include/oskar/interferometer/oskar_interferometer.h
 include/oskar/interferometer/oskar_interferometer_accessors.h
 include/oskar/interferometer/oskar_jones.h
@@ -150,9 +147,6 @@ include/oskar/math/oskar_random_gaussian.h
 include/oskar/math/oskar_random_power_law.h
 include/oskar/math/oskar_rotate.h
 include/oskar/math/oskar_round_robin.h
-include/oskar/math/oskar_sph_rotate_to_position.h
-include/oskar/math/oskar_spherical_harmonic.h
-include/oskar/math/oskar_spherical_harmonic_sum.h
 include/oskar/mem/oskar_binary_read_mem.h
 include/oskar/mem/oskar_binary_write_mem.h
 include/oskar/mem/oskar_mem.h
@@ -223,8 +217,6 @@ include/oskar/settings/extern/ttl/meta/is_same.hpp
 include/oskar/settings/extern/ttl/meta/typelist.hpp
 include/oskar/settings/extern/ttl/selector.hpp
 include/oskar/settings/extern/ttl/var/variant.hpp
-include/oskar/settings/old/oskar_Settings_old.h
-include/oskar/settings/old/oskar_settings_load_tid_parameter_file.h
 include/oskar/settings/oskar_SettingsDeclareXml.h
 include/oskar/settings/oskar_SettingsDependency.h
 include/oskar/settings/oskar_SettingsDependencyGroup.h
@@ -263,13 +255,12 @@ include/oskar/settings/types/oskar_StringList.h
 include/oskar/settings/types/oskar_Time.h
 include/oskar/settings/types/oskar_UnsignedDouble.h
 include/oskar/settings/types/oskar_UnsignedInt.h
-include/oskar/sky/oskar_evaluate_tec_tid.h
 include/oskar/sky/oskar_generate_random_coordinate.h
-include/oskar/sky/oskar_rebin_sky_cuda.h
 include/oskar/sky/oskar_sky.h
 include/oskar/sky/oskar_sky_accessors.h
 include/oskar/sky/oskar_sky_append.h
 include/oskar/sky/oskar_sky_append_to_set.h
+include/oskar/sky/oskar_sky_check_columns.h
 include/oskar/sky/oskar_sky_clear_source_flux.h
 include/oskar/sky/oskar_sky_column.h
 include/oskar/sky/oskar_sky_column_type_from_name.h
@@ -280,6 +271,7 @@ include/oskar/sky/oskar_sky_copy_source_data.h
 include/oskar/sky/oskar_sky_create.h
 include/oskar/sky/oskar_sky_create_columns.h
 include/oskar/sky/oskar_sky_create_copy.h
+include/oskar/sky/oskar_sky_enum.h
 include/oskar/sky/oskar_sky_evaluate_gaussian_source_parameters.h
 include/oskar/sky/oskar_sky_evaluate_relative_directions.h
 include/oskar/sky/oskar_sky_filter_by_flux.h
@@ -298,6 +290,7 @@ include/oskar/sky/oskar_sky_save.h
 include/oskar/sky/oskar_sky_save_named_columns.h
 include/oskar/sky/oskar_sky_scale_flux_with_frequency.h
 include/oskar/sky/oskar_sky_set_source.h
+include/oskar/sky/oskar_sky_sort_columns.h
 include/oskar/sky/oskar_update_horizon_mask.h
 include/oskar/telescope/oskar_TelescopeLoadAbstract.h
 include/oskar/telescope/oskar_telescope.h
@@ -350,9 +343,7 @@ include/oskar/telescope/station/element/oskar_evaluate_spherical_wave_sum_galile
 include/oskar/telescope/station/oskar_blank_below_horizon.h
 include/oskar/telescope/station/oskar_evaluate_element_weights_dft.h
 include/oskar/telescope/station/oskar_evaluate_element_weights_errors.h
-include/oskar/telescope/station/oskar_evaluate_pierce_points.h
 include/oskar/telescope/station/oskar_evaluate_station_beam_aperture_array.h
-include/oskar/telescope/station/oskar_evaluate_station_from_telescope_dipole_azimuth.h
 include/oskar/telescope/station/oskar_evaluate_tec_screen.h
 include/oskar/telescope/station/oskar_evaluate_vla_beam_pbcor.h
 include/oskar/telescope/station/oskar_station.h
@@ -419,6 +410,7 @@ include/oskar/utility/oskar_getline.h
 include/oskar/utility/oskar_hdf5.h
 include/oskar/utility/oskar_kernel_macros.h
 include/oskar/utility/oskar_lock_file.h
+include/oskar/utility/oskar_string_split.h
 include/oskar/utility/oskar_string_to_angle.h
 include/oskar/utility/oskar_string_to_array.h
 include/oskar/utility/oskar_string_trim.h
