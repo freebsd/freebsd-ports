@@ -1,8 +1,8 @@
 PORTNAME=	vkquake
-DISTVERSION=	1.35.0
+DISTVERSION=	1.36.0
 CATEGORIES=	games
 
-MAINTAINER=	seafork@disroot.org
+MAINTAINER=	ziaee@FreeBSD.org
 COMMENT=	Vulkan Quake port based on QuakeSpasm
 WWW=		https://github.com/Novum/vkQuake
 
