@@ -1,5 +1,5 @@
 PORTNAME=	devise-two-factor
-PORTVERSION=	6.4.0
+PORTVERSION=	6.4.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
