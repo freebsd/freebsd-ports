@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
 
-USES=		compiler:c++17-lang gmake libtool pkgconfig
+USES=		compiler:c++17-lang cpe gmake libtool pkgconfig
+CPE_VENDOR=	protobuf-c_project
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
