@@ -1,5 +1,5 @@
 PORTNAME=	uv
-DISTVERSION=	0.12.10
+DISTVERSION=	0.12.15
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	uv:devel/uv
 
 USES=		cpe python
 CPE_VENDOR=	astral
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	autoplist pep517
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	astral-sh
