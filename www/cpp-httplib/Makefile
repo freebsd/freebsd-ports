@@ -1,6 +1,6 @@
 PORTNAME=	cpp-httplib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.52.0
+DISTVERSION=	0.56.0
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,5 +49,7 @@ do-test:
 # [  PASSED  ] 712 tests.
 # [  FAILED  ] 1 test, listed below:
 # [  FAILED  ] YahooRedirectTest3.NewResultInterface_Online
+
+# tests as of 0.56.0: PASSED 900 tests
 
 .include <bsd.port.mk>
