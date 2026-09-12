@@ -1,0 +1,2 @@
+OpenTelemetry gRPC Integration provides client and server interceptors for gRPC
+Python.
