@@ -1,6 +1,6 @@
 PORTNAME=	javaservicewrapper
 PORTVERSION=	3.7.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
@@ -38,14 +38,15 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS}|' \
 		${WRKSRC}/src/c/Makefile-freebsd-x86-32.gmake \
-		${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake
+		${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake \
+		${WRKSRC}/src/c/Makefile-freebsd-arm-64.gmake
 	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-32.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-arm-32.gmake
 	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-ppcbe-64.gmake
 	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-ppcle-64.gmake
-	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake \
+	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-32.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-ppcbe-32.gmake
 
 do-install:
