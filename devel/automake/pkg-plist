@@ -24,6 +24,7 @@ share/aclocal-%%BUILD_VERSION%%/make.m4
 share/aclocal-%%BUILD_VERSION%%/missing.m4
 share/aclocal-%%BUILD_VERSION%%/mkdirp.m4
 share/aclocal-%%BUILD_VERSION%%/obsolete.m4
+share/aclocal-%%BUILD_VERSION%%/optional.m4
 share/aclocal-%%BUILD_VERSION%%/options.m4
 share/aclocal-%%BUILD_VERSION%%/prog-cc-c-o.m4
 share/aclocal-%%BUILD_VERSION%%/python.m4
