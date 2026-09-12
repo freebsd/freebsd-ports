@@ -85,6 +85,7 @@ CLANG_COMMANDS=	\
 		clang++ \
 		clang-check \
 		clang-cpp \
+		clang-dxc \
 		clang-extdef-mapping \
 		clang-format \
 		clang-linker-wrapper \
@@ -95,6 +96,7 @@ CLANG_COMMANDS=	\
 		clang-ssaf-analyzer \
 		clang-ssaf-format \
 		clang-ssaf-linker \
+		clang-ssaf-src-edit-merge \
 		clang-tblgen \
 		diagtool \
 		hmaptool \
