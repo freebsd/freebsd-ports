@@ -1,0 +1,11 @@
+--- src/plugins/settings/Makefile.in.orig	2026-06-21 13:53:00 UTC
++++ src/plugins/settings/Makefile.in
+@@ -819,7 +819,7 @@ settings-history-pigeonhole.h: $(srcdir)/settings-hist
+ 
+ pigeonhole-settings.c: settings-history-pigeonhole.h
+ settings-history-pigeonhole.h: $(srcdir)/settings-history-pigeonhole.txt $(SETTINGS_HISTORY_PY)
+-	$(AM_V_GEN)$(PYTHON) $(SETTINGS_HISTORY_PY) --pro 1 --plugin pigeonhole $< $@
++	$(AM_V_GEN)$(PYTHON) $(SETTINGS_HISTORY_PY) --pro 1 --plugin pigeonhole $(srcdir)/settings-history-pigeonhole.txt $@
+ 
+ pigeonhole-settings-dynamic.c: $(SETTING_FILES) $(SETTING_LINKED_FILES) $(top_srcdir)/src/plugins/settings/settings-get.pl
+	$(AM_V_GEN)$(top_srcdir)/src/plugins/settings/settings-get.pl \
