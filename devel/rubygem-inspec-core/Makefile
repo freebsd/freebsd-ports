@@ -1,5 +1,6 @@
 PORTNAME=	inspec-core
 PORTVERSION=	7.0.107
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -23,7 +24,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-mixlib-log>=3.0<4:devel/rubygem-mixlib-log \
 		rubygem-multipart-post>=2.0<3:www/rubygem-multipart-post \
 		rubygem-ostruct>=0.1<0.7:devel/rubygem-ostruct \
-		rubygem-parallel>=1.9<2:sysutils/rubygem-parallel \
+		rubygem-parallel1>=1.9<2:sysutils/rubygem-parallel1 \
 		rubygem-parslet>=1.5<3.0:textproc/rubygem-parslet \
 		rubygem-pry>=0.13<1:devel/rubygem-pry \
 		rubygem-rspec>=3.9<3.14:devel/rubygem-rspec \
