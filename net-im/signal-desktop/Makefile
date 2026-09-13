@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.26.0
-PORTREVISION=	1
+DISTVERSION=	8.27.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm
 DISTFILES=	signal-desktop-${DISTVERSION}-npm-cache.tar.gz:npm
