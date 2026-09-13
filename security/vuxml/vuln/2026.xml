@@ -1,3 +1,39 @@
+  <vuln vid="b7ae786a-af80-11f1-9800-641c67a117d8">
+    <topic>znc -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>znc</name>
+	<range><lt>1.10.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ZNC reports:</p>
+	<blockquote cite="https://wiki.znc.in/ChangeLog/1.10.3">
+	  <p>CVE-2026-82373: Use-after-free when unloading modules,
+	    triggered by unprivileged users.  To mitigate, set DenyLoadMod
+	    to true.</p>
+	  <p>CVE-2026-82374: Null pointer dereference in crypt module,
+	    triggered by IRC server.</p>
+	  <p>CVE-2020-11022, CVE-2020-11023: Updated the old bundled
+	    vulnerable version of jQuery to 3.5.1.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-11022</cvename>
+      <cvename>CVE-2020-11023</cvename>
+      <cvename>CVE-2026-82373</cvename>
+      <cvename>CVE-2026-82374</cvename>
+      <url>https://wiki.znc.in/ChangeLog/1.10.3</url>
+      <url>https://github.com/znc/znc/releases/tag/znc-1.10.3</url>
+    </references>
+    <dates>
+      <discovery>2026-09-13</discovery>
+      <entry>2026-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7fd351d1-af26-11f1-a883-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
