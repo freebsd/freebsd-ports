@@ -77,16 +77,20 @@ do-build:
 	# Remove supplied addons so the normal loader uses our source builds.
 	@${FIND} ${WRKSRC}/node_modules/${PACKAGE_NAME} \
 		-type f -name "*.node" -delete
+	# Keep CMake intermediates outside the package copied to STAGEDIR.
 	@cd ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/koffi && \
 		${SETENV} HOME=${WRKDIR} CMAKE_BUILD_PARALLEL_LEVEL=${MAKE_JOBS_NUMBER} \
-			node cnoke.cjs -P . -D src/koffi --release
+			node cnoke.cjs -P . -D src/koffi -O ${WRKDIR}/koffi-build --release && \
+		${MKDIR} build/koffi/freebsd_${NODE_ARCH} && \
+		${CP} ${WRKDIR}/koffi-build/koffi.node build/koffi/freebsd_${NODE_ARCH}/koffi.node
 	@cd ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/tree-sitter-bash && \
 		${SETENV} HOME=${WRKDIR} PYTHON=${PYTHON_CMD} \
 			node ${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js \
 			configure build --nodedir=${LOCALBASE} && \
 		${MKDIR} prebuilds/freebsd-${NODE_ARCH} && \
 		${MV} build/Release/tree_sitter_bash_binding.node \
-			prebuilds/freebsd-${NODE_ARCH}/tree-sitter-bash.node
+			prebuilds/freebsd-${NODE_ARCH}/tree-sitter-bash.node && \
+		${RM} -r build
 
 do-install:
 	# install node_modules
