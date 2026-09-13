@@ -1,3 +1,59 @@
+  <vuln vid="fac18f5f-afc2-11f1-8266-3c7c3fba4204">
+    <topic>Gitea -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>gitea</name>
+	  <range><lt>1.27.3</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitea reports:</p>
+	<blockquote cite="https://blog.gitea.com/release-of-1.27.3/">
+	<p>This release contains fixes for 26 security issues,
+	hardens issue searching that an unfiltered query no longer
+	enumerates every public repository into the indexer filter
+	and removes unsafe code from the internal private endpoints.
+	Please upgrade as soon as possible.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-66877</cvename>
+      <cvename>CVE-2026-71184</cvename>
+      <cvename>CVE-2026-68957</cvename>
+      <cvename>CVE-2026-60010</cvename>
+      <cvename>CVE-2026-70406</cvename>
+      <cvename>CVE-2026-63792</cvename>
+      <cvename>CVE-2026-66874</cvename>
+      <cvename>CVE-2026-68964</cvename>
+      <cvename>CVE-2026-67577</cvename>
+      <cvename>CVE-2026-66849</cvename>
+      <cvename>CVE-2026-73135</cvename>
+      <cvename>CVE-2026-78433</cvename>
+      <cvename>CVE-2026-70407</cvename>
+      <cvename>CVE-2026-73126</cvename>
+      <cvename>CVE-2026-70400</cvename>
+      <cvename>CVE-2026-70396</cvename>
+      <cvename>CVE-2026-63021</cvename>
+      <cvename>CVE-2026-62925</cvename>
+      <cvename>CVE-2026-73273</cvename>
+      <cvename>CVE-2026-60021</cvename>
+      <cvename>CVE-2026-60018</cvename>
+      <cvename>CVE-2026-73130</cvename>
+      <cvename>CVE-2026-70402</cvename>
+      <cvename>CVE-2026-66853</cvename>
+      <cvename>CVE-2026-71301</cvename>
+      <cvename>CVE-2026-73504</cvename>
+      <url>https://blog.gitea.com/release-of-1.27.3/</url>
+    </references>
+    <dates>
+      <discovery>2026-08-29</discovery>
+      <entry>2026-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e627950e-ad4f-11f1-8656-000af7b98cf6">
     <topic>strongSwan -- multiple vulnerabilities</topic>
     <affects>
