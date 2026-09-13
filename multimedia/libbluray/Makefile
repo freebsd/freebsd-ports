@@ -1,9 +1,7 @@
 PORTNAME=	libbluray
-DISTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION}/ \
-		https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Blu-Ray discs playback library for media players
@@ -15,8 +13,11 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libudfread.so:multimedia/libudfread
 
-USES=		cpe gnome meson pkgconfig tar:xz
+USES=		cpe gnome meson pkgconfig
 CPE_VENDOR=	videolan
+USE_GITLAB=	yes
+GL_SITE=	https://code.videolan.org
+GL_ACCOUNT=	videolan
 USE_GNOME=	libxml2
 JAVA_VERSION=	11+
 USE_LDCONFIG=	yes
