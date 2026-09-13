@@ -253,10 +253,10 @@ lib/gnumeric/%%VERSION%%/plugins/oleo/oleo.so
 lib/gnumeric/%%VERSION%%/plugins/oleo/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/openoffice/openoffice.so
 lib/gnumeric/%%VERSION%%/plugins/openoffice/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/perl-func/perl_func.pl
-lib/gnumeric/%%VERSION%%/plugins/perl-func/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/perl-loader/perl_loader.so
-lib/gnumeric/%%VERSION%%/plugins/perl-loader/plugin.xml
+%%PERL%%lib/gnumeric/%%VERSION%%/plugins/perl-func/perl_func.pl
+%%PERL%%lib/gnumeric/%%VERSION%%/plugins/perl-func/plugin.xml
+%%PERL%%lib/gnumeric/%%VERSION%%/plugins/perl-loader/perl_loader.so
+%%PERL%%lib/gnumeric/%%VERSION%%/plugins/perl-loader/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plan_perfect.so
 lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/py-func/plugin.xml
