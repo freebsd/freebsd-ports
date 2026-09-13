@@ -1,5 +1,5 @@
 USE_CABAL=	Decimal-0.5.2 \
-		Diff-1.0.2 \
+		Diff-2.0.1 \
 		Glob-0.10.2_3 \
 		HUnit-1.6.2.0 \
 		OneTuple-0.4.3 \
@@ -8,9 +8,8 @@ USE_CABAL=	Decimal-0.5.2 \
 		RSA-2.4.1_2 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
-		aeson-2.2.5.0 \
+		aeson-2.2.5.1 \
 		aeson-pretty-0.8.11 \
-		alex-3.5.4.2 \
 		ansi-terminal-1.1.5 \
 		ansi-terminal-types-1.1.3 \
 		appar-0.1.8 \
@@ -59,7 +58,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		crypto-api-0.13.3_1 \
 		crypto-pubkey-types-0.4.3 \
 		cryptohash-md5-0.11.101.0_6 \
-		crypton-1.1.4 \
+		crypton-1.1.5 \
 		crypton-asn1-encoding-0.10.0 \
 		crypton-asn1-parse-0.10.0 \
 		crypton-asn1-types-0.4.1 \
@@ -70,8 +69,6 @@ USE_CABAL=	Decimal-0.5.2 \
 		crypton-x509-store-1.9.0 \
 		crypton-x509-system-1.9.0 \
 		crypton-x509-validation-1.9.1_1 \
-		cryptonite-0.30 \
-		cryptonite-conduit-0.2.2_1 \
 		css-text-0.1.3.0 \
 		csv-0.1.2 \
 		data-default-0.8.0.2 \
@@ -96,9 +93,8 @@ USE_CABAL=	Decimal-0.5.2 \
 		hashable-1.5.1.0 \
 		hashtables-1.4.2 \
 		haskell-lexer-1.2.1 \
-		hjsmin-0.2.1 \
-		hledger-1.52.3 \
-		hledger-lib-1.52.3 \
+		hledger-1.52.4 \
+		hledger-lib-1.52.4 \
 		hourglass-0.2.12_1 \
 		hpke-0.1.0 \
 		hsc2hs-0.68.10_5 \
@@ -115,20 +111,19 @@ USE_CABAL=	Decimal-0.5.2 \
 		http-date-0.0.11 \
 		http-semantics-0.4.1 \
 		http-types-0.12.6 \
-		http2-5.4.3 \
+		http2-5.4.4 \
 		indexed-traversable-0.1.5 \
 		indexed-traversable-instances-0.1.2.1 \
 		integer-conversion-0.1.1_2 \
 		integer-logarithms-1.0.5 \
 		iproute-1.7.15 \
-		language-javascript-0.7.1.0 \
 		libyaml-0.1.4 \
 		libyaml-clib-0.2.5 \
 		lift-type-0.1.2.0 \
 		lifted-base-0.2.3.12 \
 		lucid-2.11.20260427 \
 		math-functions-0.3.4.4 \
-		megaparsec-9.7.1 \
+		megaparsec-9.8.2 \
 		memory-0.18.0_1 \
 		microlens-0.5.0.0 \
 		microlens-th-0.4.3.18_1 \
@@ -162,7 +157,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		quote-quot-0.2.2.0 \
 		ram-0.22.1 \
 		random-1.3.1 \
-		recv-0.1.1 \
+		recv-0.1.2 \
 		reflection-2.1.9_1 \
 		regex-base-0.94.0.3 \
 		regex-compat-0.95.2.2 \
@@ -184,7 +179,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		silently-1.2.5.4 \
 		simple-sendfile-0.2.32 \
 		skein-1.0.9.4 \
-		split-0.2.5 \
+		split-0.2.5.1 \
 		splitmix-0.1.3.2 \
 		stm-chans-3.0.0.11 \
 		streaming-commons-0.2.3.1 \
@@ -199,7 +194,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		terminal-size-0.3.4_1 \
 		text-ansi-0.3.0.1_3 \
 		text-builder-linear-0.1.3 \
-		text-iso8601-0.1.1.1 \
+		text-iso8601-0.1.1.2 \
 		text-short-0.1.6.1 \
 		th-abstraction-0.7.2.0 \
 		th-compat-0.1.7 \
@@ -242,10 +237,9 @@ USE_CABAL=	Decimal-0.5.2 \
 		xss-sanitize-0.3.7.2_1 \
 		yaml-0.11.11.2_2 \
 		yesod-1.6.2.3 \
-		yesod-core-1.6.29.1 \
+		yesod-core-1.7.0.0 \
 		yesod-form-1.7.11 \
 		yesod-persistent-1.6.0.9 \
-		yesod-static-1.6.1.0 \
 		yesod-test-1.7.0.3 \
 		zlib-0.7.1.1
 

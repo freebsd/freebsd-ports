@@ -1,10 +1,11 @@
 PORTNAME=	hledger
-DISTVERSION=	1.52.3
+DISTVERSION=	1.52.4
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Accounting software for both power users and folks new to accounting
-WWW=		https://hledger.org/
+WWW=		https://hledger.org/ \
+		https://hackage.haskell.org/package/hledger
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
