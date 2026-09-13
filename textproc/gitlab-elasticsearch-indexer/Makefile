@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-elasticsearch-indexer
-PORTVERSION=	5.14.8
-PORTREVISION=	4
+PORTVERSION=	5.14.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -32,6 +31,18 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 MAKE_ENV+=	${GO_ENV}
 
 PLIST_FILES=	bin/${PORTNAME}
+
+# Since 5.14.13 the go/icu dependency is vendored via a local path replace
+# (third_party/icu). The framework's go-post-fetch hook runs "go mod download
+# all" from the distdir, where only the bare go.mod has been fetched, and
+# resolves that local path relative to it. Extract the subtree from the main
+# tarball first (this runs before go-post-fetch).
+post-fetch:
+	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && \
+		${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
+		--strip-components 1 --no-same-owner --no-same-permissions \
+		${DISTNAME}/third_party/icu
 
 post-patch:
 	${REINPLACE_CMD} -e '/libparser-download/d' ${WRKSRC}/Makefile

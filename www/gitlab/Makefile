@@ -30,7 +30,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # rubygem-freezolite is required by bundled gem auto_freeze
 # rubygem-erb-gitlab 6.0.4 (listed in lockfile, maybe bundled dep)
 MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
-	gitlab-elasticsearch-indexer>=5.14.7:textproc/gitlab-elasticsearch-indexer \
+	gitlab-elasticsearch-indexer>=5.14.13:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=${GITLAB_VERSION}:net/gitlab-agent \
 	gitlab-pages>=${GITLAB_VERSION}:www/gitlab-pages \
 	gitlab-shell>=14.56.1:devel/gitlab-shell \
@@ -106,7 +106,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-grape-path-helpers>=2.1.0<2.2:devel/rubygem-grape-path-helpers \
 	rubygem-gitlab-grape-openapi>=0.3.0<0.4:devel/rubygem-gitlab-grape-openapi \
 	rubygem-rack-cors>=2.0.1<2.1:www/rubygem-rack-cors \
-	rubygem-graphql>=2.6.3<2.6.4:devel/rubygem-graphql \
+	rubygem-graphql>=2.6.10<2.7:devel/rubygem-graphql \
 	rubygem-apollo_upload_server>=2.1.8<2.2:net/rubygem-apollo_upload_server \
 	rubygem-ffaker>=2.25.0<3:devel/rubygem-ffaker \
 	rubygem-hashie-gitlab>=5.0.0<5.1:devel/rubygem-hashie-gitlab \
