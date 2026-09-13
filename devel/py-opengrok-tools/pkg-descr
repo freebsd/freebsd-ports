@@ -1,0 +1,5 @@
+OpenGrok is a fast and usable source code search and cross
+reference engine, written in Java.
+
+opengrok-tools is a set of scripts to facilitate project
+synchronization and mirroring.

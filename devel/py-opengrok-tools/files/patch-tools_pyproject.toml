@@ -1,0 +1,12 @@
+--- tools/pyproject.toml.orig	2026-09-13 19:43:04 UTC
++++ tools/pyproject.toml
+@@ -8,8 +8,7 @@ requires-python = ">=3.9"
+ readme = "README.txt"
+ dynamic = ["version"]
+ requires-python = ">=3.9"
+-license = "CDDL-1.0"
+-license-files = ["LICEN[CS]E*"]
++license = {text = "CDDL-1.0"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Natural Language :: English",
