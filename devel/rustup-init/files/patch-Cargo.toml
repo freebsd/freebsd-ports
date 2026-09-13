@@ -1,0 +1,11 @@
+--- Cargo.toml.orig	2026-09-13 20:15:57 UTC
++++ Cargo.toml
+@@ -14,8 +14,6 @@ default = ["curl-backend", "reqwest-native-tls", "reqw
+ curl-backend = ["dep:curl"]
+ default = ["curl-backend", "reqwest-native-tls", "reqwest-rustls-tls"]
+ 
+-vendored-openssl = ['openssl/vendored']
+-
+ reqwest-native-tls = ["reqwest/native-tls", "dep:reqwest", "dep:env_proxy"]
+ reqwest-rustls-tls = [
+   "reqwest/rustls-no-provider",
