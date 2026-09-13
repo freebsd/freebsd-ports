@@ -1,0 +1,6 @@
+Wormhole implements Dovecot's 2.3 replication feature which has been
+removed starting Dovecot 2.4: https://codeberg.org/errror/wormhole
+
+Please read ...
+https://codeberg.org/errror/wormhole/src/branch/main/doc/upgrading.md
+... before using this port's replication plugin.
