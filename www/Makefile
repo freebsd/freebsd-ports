@@ -274,6 +274,7 @@
     SUBDIR += h2c
     SUBDIR += h2o
     SUBDIR += habari
+    SUBDIR += hedgedoc
     SUBDIR += hiawatha
     SUBDIR += hiawatha-monitor
     SUBDIR += homepage

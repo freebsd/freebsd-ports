@@ -1,0 +1,5 @@
+TIMESTAMP = 1789306932
+SHA256 (hedgedoc-1.12.0.tar.gz) = e84c4ea2e635a84f8a3d77e2a1797e01ecbe695ae1277724af2ce7e6aa40b6e5
+SIZE (hedgedoc-1.12.0.tar.gz) = 66702564
+SHA256 (hedgedoc-1.12.0-yarn-offline-cache.txz) = a5954d2066ba85fe5c1e83898999143aa268a29059f0d96830a05e12fb0df4ae
+SIZE (hedgedoc-1.12.0-yarn-offline-cache.txz) = 137871964
