@@ -336,7 +336,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-zlib>=3.2.3<3.3:devel/rubygem-zlib \
 	rubygem-license_finder-gitlab>=7.2.1<8:devel/rubygem-license_finder-gitlab \
 	rubygem-google-cloud-profiler-v2>=0.3<1:textproc/rubygem-google-cloud-profiler-v2 \
-	rubygem-parallel>=1.28.0<2:sysutils/rubygem-parallel \
+	rubygem-parallel-gitlab>=1.28.0<2:sysutils/rubygem-parallel-gitlab \
 	rubygem-google-cloud-storage_transfer-gitlab>=1.2.0<1.3:net/rubygem-google-cloud-storage_transfer-gitlab \
 	rubygem-minitest>=5.11<6:devel/rubygem-minitest \
 	rubygem-grpc-tools>=1.83.0<1.84:net/rubygem-grpc-tools \
