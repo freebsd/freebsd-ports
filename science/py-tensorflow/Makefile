@@ -239,7 +239,7 @@ do-configure:
 		TF_DOWNLOAD_CLANG=0 \
 		TF_NEED_NCCL=0 \
 		TF_IGNORE_MAX_BAZEL_VERSION=1 \
-		CC_OPT_FLAGS="${CPU_FLAG}=${CPU_TARGET} -I${LOCALBASE}/include" \
+		CC_OPT_FLAGS="${CPU_FLAG}=${CPU_TARGET} -I${LOCALBASE}/include -I${LOCALBASE}/include/jsoncpp" \
 		PREFIX="${LOCALBASE}" \
 		TF_SYSTEM_LIBS="astor_archive astunparse_archive boringssl com_github_googlecloudplatform_google_cloud_cpp \
 				com_googlesource_code_re2 curl cython dill_archive functools32_archive gast_archive \
@@ -287,8 +287,10 @@ do-build:
 			${ECHO_MSG} "WARNING: llvm config.bzl not found at $${LLVMCONF}; build may fail"; \
 		fi
 	@cd ${WRKSRC} && \
-		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} build --jobs ${TF_JOBS_NUMBER} ${BAZEL_COPT} ${BAZEL_ARCH_DEFINES} --host_copt="-I${LOCALBASE}/include" \
-		--host_linkopt="-L${LOCALBASE}/lib -lexecinfo" ${BAZEL_LINKOPT} --copt="-I${LOCALBASE}/include" \
+		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} build --jobs ${TF_JOBS_NUMBER} ${BAZEL_COPT} ${BAZEL_ARCH_DEFINES} \
+		--host_copt="-I${LOCALBASE}/include" --host_copt="-I${LOCALBASE}/include/jsoncpp" \
+		--host_linkopt="-L${LOCALBASE}/lib -lexecinfo" ${BAZEL_LINKOPT} \
+		--copt="-I${LOCALBASE}/include" --copt="-I${LOCALBASE}/include/jsoncpp" \
 		--verbose_failures -s \
 		--distdir=${WRKDIR}/bazel-dist \
 		//tensorflow/tools/pip_package:wheel
@@ -309,8 +311,10 @@ post-install: # autoplist: thousands of files, all under ${PYTHON_SITELIBDIR}
 do-test:
 	@cd ${WRKSRC} && \
 		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} test \
-		--jobs ${TF_JOBS_NUMBER} ${BAZEL_COPT} --host_copt="-I${LOCALBASE}/include" \
-		--host_linkopt="-L${LOCALBASE}/lib -lexecinfo" ${BAZEL_LINKOPT} --copt="-I${LOCALBASE}/include" \
+		--jobs ${TF_JOBS_NUMBER} ${BAZEL_COPT} \
+		--host_copt="-I${LOCALBASE}/include" --host_copt="-I${LOCALBASE}/include/jsoncpp" \
+		--host_linkopt="-L${LOCALBASE}/lib -lexecinfo" ${BAZEL_LINKOPT} \
+		--copt="-I${LOCALBASE}/include" --copt="-I${LOCALBASE}/include/jsoncpp" \
 		--verbose_failures \
 		--distdir=${WRKDIR}/bazel-dist \
 		--test_output=errors \

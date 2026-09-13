@@ -67,11 +67,13 @@ build --host_linkopt=-lhwloc
 build --host_copt=-D_XOPEN_SOURCE=700
 build --host_copt=-D__BSD_VISIBLE=1
 build --host_copt=-isystem%%LOCALBASE%%/include
+build --host_copt=-isystem%%LOCALBASE%%/include/jsoncpp
 build --host_copt=-isystem%%PYTHON_INCLUDEDIR%%
 build --host_copt=-isystem%%NUMPY_INCLUDEDIR%%
 build --copt=-D_XOPEN_SOURCE=700
 build --copt=-D__BSD_VISIBLE=1
 build --copt=-isystem%%LOCALBASE%%/include
+build --copt=-isystem%%LOCALBASE%%/include/jsoncpp
 build --copt=-isystem%%PYTHON_INCLUDEDIR%%
 build --copt=-isystem%%NUMPY_INCLUDEDIR%%
 

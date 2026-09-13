@@ -147,7 +147,6 @@ SHA256 (tensorflow/libtinfo.so.5) = 12cffc7274190ca1693a52ccd8303e719407e707c855
 SIZE (tensorflow/libtinfo.so.5) = 170784
 SHA256 (tensorflow/copyright.txt) = 5e8ee902c8906ddb7779fd36dc9979cb08b51fbebf7c0b1a9aeb78af382af590
 SIZE (tensorflow/copyright.txt) = 6366
-
 SHA256 (tensorflow/v1.74.0.tar.gz) = dd6a2fa311ba8441bbefd2764c55b99136ff10f7ea42954be96006a2723d33fc
 SIZE (tensorflow/v1.74.0.tar.gz) = 15014902
 SHA256 (tensorflow/28e9d1f26771c6517c3b4be10254887673c940189.zip) = f253ca1a07262f8efde8328e4b2c68979e40ddfcfc001f70d1d5f612c7de2974
