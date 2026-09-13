@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+To activate google-translate, you will need to add the following lines
+to your Emacs configuration:
+
+(require 'google-translate)
+(require 'google-translate-default-ui)
+(global-set-key "\C-ct" 'google-translate-at-point)
+(global-set-key "\C-cT" 'google-translate-query-translate)
+
+or
+
+(require 'google-translate)
+(require 'google-translate-smooth-ui)
+(global-set-key "\C-ct" 'google-translate-smooth-translate)
+
+Please read %%DOCSDIR%%/README.md for more details.
+EOM
+}
+]

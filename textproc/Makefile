@@ -255,6 +255,7 @@
     SUBDIR += goldendict
     SUBDIR += goldendict-ng
     SUBDIR += google-ctemplate
+    SUBDIR += google-translate
     SUBDIR += gpp
     SUBDIR += grap
     SUBDIR += grass
