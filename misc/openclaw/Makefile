@@ -1,6 +1,6 @@
 PORTNAME=	openclaw
 DISTVERSION=	2026.4.29
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc # machine-learning
 PKGNAMESUFFIX=	-ai-gateway
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
@@ -140,7 +140,7 @@ do-install:
 		-name "*.node" ! -path "*freebsd*" -delete
 	# update shebang
 	${REINPLACE_CMD} -i '' \
-		-e "s|#!/usr/bin/env node|#!${PREFIX}/bin/node|" \
+		-e "s|#!/usr/bin/env node|#!${LOCALBASE}/bin/node|" \
 		${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/openclaw.mjs
 	# set exec bit
 	@${CHMOD} +x \
