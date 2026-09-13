@@ -38,14 +38,27 @@ To get started:
 
 For more information, see https://github.com/openclaw/openclaw
 
-Port options EXTEND_AI_TIMEOUT, EXTEND_TYPING_TTL_TIMEOUT
-add patches that extend timeouts in order for openclaw to
-work with slow AI endpoints, for example CPU based
-endpoints.
+Slow model requests can use models.providers.<id>.timeoutSeconds in the
+existing provider configuration. This covers HTTP and stream timeouts;
+any shorter agent or run timeout still applies. Use explicit provider
+model entries when configuring this setting.
 
-The openclaw package was verified to work on FreeBSD 15 STABLE
-with qwen3.5:35B-a3b run in ollama on a machine with 64GB RAM.
+The optional memory-lancedb plugin requires native libraries that are not
+available on FreeBSD. This package does not bundle that external plugin.
 
+EOM
+},
+{
+  type: upgrade
+  maximum_version: "2026.9.4"
+  message: <<EOM
+The EXTEND_AI_TIMEOUT and EXTEND_TYPING_TTL_TIMEOUT port options have been
+removed. Their compiled-JavaScript replacements no longer match upstream.
+For a slow model server, configure models.providers.<id>.timeoutSeconds
+in its existing provider entry. The upstream typing keepalive now refreshes
+its safety deadline while a reply is active.
+
+Use the same account for configuration commands and the rc.d service.
 EOM
 }
 ]
