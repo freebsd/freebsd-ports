@@ -1,8 +1,8 @@
 PORTNAME=	shotwell
-PORTVERSION=	0.32.17
-PORTREVISION=	1
+DISTVERSION=	33.0
 CATEGORIES=	graphics gnome
-MASTER_SITES=	GNOME
+# having full DISTVERSION in the path does not play with MASTER_SITE_GNOME
+MASTER_SITES=	https://download.gnome.org/sources/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Open source photo manager for GNOME
@@ -13,31 +13,31 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libportal.so:deskutils/libportal \
-		libportal-gtk3.so:deskutils/libportal-gtk3 \
+		libportal-gtk4.so:deskutils/libportal-gtk4 \
 		libgio-2.0.so:devel/glib20 \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgee-0.8.so:devel/libgee \
 		libsoup-3.0.so:devel/libsoup3 \
 		libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2 \
-		libgexiv2.so:graphics/gexiv2 \
+		libgexiv2-0.16.so:graphics/gexiv2_016 \
 		libexif.so:graphics/libexif \
 		libgphoto2.so:graphics/libgphoto2 \
 		libraw.so:graphics/libraw \
 		libwebp.so:graphics/webp \
-		libgcr-ui-3.so:security/gcr3 \
+		libgcr-4.so:security/gcr \
 		libsecret-1.so:security/libsecret
 
-USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome gstreamer meson \
-		ninja pkgconfig python:build sqlite tar:xz vala:build xorg
+USES=		compiler:c++11-lib cpe desktop-file-utils gettext \
+		gnome gstreamer meson ninja pkgconfig python:build sqlite \
+		tar:xz vala:build xorg
 CPE_VENDOR=	gnome
-USE_GNOME=	cairo gtk30 libxml2
+USE_GNOME=	cairo gtk40 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 
-MESON_ARGS=	-Dudev=false \
+MESON_ARGS=	-Dudev=disabled \
+		-Dinstall_apport_hook=false \
 		-Dpublishers=flickr,gallery3,googlephotos,piwigo,tumblr,youtube
-PORTSCOUT=	limitw:1,even
-MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	FACED
 OPTIONS_SUB=	yes
