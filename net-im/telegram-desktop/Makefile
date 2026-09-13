@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	7.2.7
+DISTVERSION=	7.2.8
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -44,7 +44,6 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpipewire-0.3.so:multimedia/pipewire \
-		libprotobuf-lite.so:devel/protobuf \
 		libqrcodegencpp.so:graphics/qr-code-generator \
 		librnnoise.so:audio/rnnoise \
 		libsrtp2.so:net/libsrtp2 \
