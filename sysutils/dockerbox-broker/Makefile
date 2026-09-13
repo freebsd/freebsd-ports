@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 
-USES=		go:1.25+,modules
+USES=		go:modules
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	leafoliage
 GH_PROJECT=	dockerbox-broker

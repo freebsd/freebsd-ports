@@ -9,7 +9,7 @@ WWW=		https://pgmetrics.io/
 
 LICENSE=	APACHE20
 
-USES=		go:modules,1.25+
+USES=		go:modules
 
 GO_MODULE=	github.com/rapidloop/pgmetrics
 
