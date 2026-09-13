@@ -17,7 +17,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libgpgme.so:security/gpgme
 RUN_DEPENDS=	${LOCALBASE}/etc/containers/containers.conf.sample:sysutils/containers-common
 
-USES=		gmake go:1.24+,modules,no_targets pkgconfig
+USES=		gmake go:modules,no_targets pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	containers
 

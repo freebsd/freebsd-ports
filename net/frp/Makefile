@@ -10,7 +10,7 @@ WWW=		https://github.com/fatedier/frp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/fatedier/frp
 GO_TARGET=	./cmd/frpc ./cmd/frps

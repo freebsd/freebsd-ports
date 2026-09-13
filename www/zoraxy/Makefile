@@ -11,7 +11,7 @@ WWW=		https://github.com/tobychui/zoraxy
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC:H}/LICENSE
 
-USES=		cpe go:1.24+,modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	tobychui
 GH_PROJECT=	zoraxy

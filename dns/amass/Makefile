@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS_REASON=	module modernc.org/sqlite only supported on aarch64 and a
 
 LIB_DEPENDS=	libpostal.so:misc/libpostal
 
-USES=		go:1.24+,modules pkgconfig
+USES=		go:modules pkgconfig
 
 GO_MODULE=	github.com/owasp-amass/amass/v5
 GO_TARGET=	./cmd/${PORTNAME}

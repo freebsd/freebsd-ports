@@ -11,7 +11,7 @@ WWW=		https://github.com/steipete/sag
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24+,modules pkgconfig
+USES=		go:modules pkgconfig
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 

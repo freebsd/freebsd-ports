@@ -10,7 +10,7 @@ WWW=		https://go-critic.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24+,modules
+USES=		go:modules
 GO_MODULE=	github.com/go-critic/go-critic
 GO_TARGET=	./cmd/go-critic \
 		./cmd/go-critic-analysis

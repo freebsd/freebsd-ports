@@ -11,7 +11,7 @@ WWW=		https://github.com/golangci/golangci-lint
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:1.24+,modules
+USES=		gmake go:modules
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_COMMIT=	c0d3ddc
