@@ -1,6 +1,5 @@
 PORTNAME=	ttk
-DISTVERSION=	1.3.0
-PORTREVISION=	5
+DISTVERSION=	1.4.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +27,8 @@ LIB_DEPENDS=	libcgraph.so:graphics/graphviz \
 		libfreetype.so:print/freetype2 \
 		libjsoncpp.so:devel/jsoncpp \
 		libqhull_r.so:math/qhull \
+		libscn.so:devel/scnlib \
+		libtbb.so:devel/onetbb \
 		libvtkRenderingCore-pv${PARAVIEW_VER}.so:science/paraview \
 		libzfp.so:devel/zfp
 RUN_DEPENDS=	${PY_DEPENDS}
