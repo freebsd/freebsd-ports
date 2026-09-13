@@ -1,0 +1,11 @@
+--- cargo-crates/libdisplay-info-sys-0.3.0/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/libdisplay-info-sys-0.3.0/Cargo.toml
+@@ -42,7 +42,7 @@ name = "libdisplay-info"
+ 
+ [package.metadata.system-deps.libdisplay-info]
+ name = "libdisplay-info"
+-version = ">= 0.1.0, < 0.4.0"
++version = "0.4.0"
+ 
+ [package.metadata.system-deps.libdisplay-info.v0_2]
+ version = "0.2.0"

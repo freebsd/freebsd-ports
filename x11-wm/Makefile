@@ -45,6 +45,7 @@
     SUBDIR += fswm
     SUBDIR += fvwm2
     SUBDIR += fvwm3
+    SUBDIR += halley
     SUBDIR += gamescope
     SUBDIR += herbstluftwm
     SUBDIR += hikari
