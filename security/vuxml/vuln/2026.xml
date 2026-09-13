@@ -1,3 +1,81 @@
+  <vuln vid="e627950e-ad4f-11f1-8656-000af7b98cf6">
+    <topic>strongSwan -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>strongswan</name>
+       <range><lt>6.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The strongSwan project reports:</p>
+       <blockquote cite="https://www.strongswan.org/blog/2026/09/07/strongswan-6.1.0-released.html">
+       <p>strongSwan 6.1.0 fixes eleven vulnerabilities:</p>
+       <ul>
+       <li>CVE-2026-78123: A flaw in the openssl plugin in the
+       processing of PKCS#7 containers can result in a crash.
+       Affects 5.0.2 and newer.</li>
+       <li>CVE-2026-78124: A flaw in the openssl plugin in the
+       enumeration of certificates in PKCS#7 containers can result
+       in memory leaks.  Affects 5.0.2 and newer.</li>
+       <li>CVE-2026-78126: A flaw in the eap-aka plugin in the
+       processing of an unexpected AKA-Synchronization-Failure can
+       result in a crash.  Affects 4.1.10 and newer.</li>
+       <li>CVE-2026-78127: A flaw in libcharon in the logging of IKE
+       messages can result in a denial of service via memory
+       exhaustion.  Affects 4.1.2 and newer.</li>
+       <li>CVE-2026-78129: A flaw in libstrongswan in the processing
+       of encrypted PKCS#7 containers can result in a denial of
+       service.  Affects 4.6.2 and newer.</li>
+       <li>CVE-2026-78130: A flaw in the x509 plugin in the
+       verification of X.509 attribute certificates can lead to a
+       denial of service.  Affects 4.2.0 and newer.</li>
+       <li>CVE-2026-78131: A flaw in the x509 plugin in the parsing
+       of identities in X.509 attribute certificates can lead to a
+       denial of service via memory exhaustion.  Affects 4.2.0 and
+       newer.</li>
+       <li>CVE-2026-78132: A flaw in the x509 plugin in the parsing
+       of the ietfAttrSyntax ASN.1 type in X.509 attribute
+       certificates can lead to a denial of service.  Affects 5.1.3
+       and newer.</li>
+       <li>CVE-2026-78133: A flaw in libcharon in the handling of
+       IKEv2 rekeying collisions can result in a use-after-free and
+       potentially remote code execution.  Affects 6.0.0 and
+       newer.</li>
+       <li>CVE-2026-78134: A flaw in the eap-peap and eap-ttls
+       plugins in the propagation of authentication details from
+       inner EAP methods can result in incorrect identity binding
+       and potential authorization bypass.  Affects 4.5.0 and
+       newer.</li>
+       <li>CVE-2026-78135: A flaw in libcharon in the handling of
+       CREATE_CHILD_SA requests on unestablished IKE SAs can result
+       in the creation of a usable Child SA before authentication
+       completes.  Affects 5.9.7 and newer.</li>
+       </ul>
+       </blockquote>
+     </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-78123</cvename>
+      <cvename>CVE-2026-78124</cvename>
+      <cvename>CVE-2026-78126</cvename>
+      <cvename>CVE-2026-78127</cvename>
+      <cvename>CVE-2026-78129</cvename>
+      <cvename>CVE-2026-78130</cvename>
+      <cvename>CVE-2026-78131</cvename>
+      <cvename>CVE-2026-78132</cvename>
+      <cvename>CVE-2026-78133</cvename>
+      <cvename>CVE-2026-78134</cvename>
+      <cvename>CVE-2026-78135</cvename>
+      <url>https://www.strongswan.org/blog/2026/09/07/strongswan-6.1.0-released.html</url>
+      <url>https://github.com/strongswan/strongswan/releases/tag/6.1.0</url>
+    </references>
+    <dates>
+      <discovery>2026-09-07</discovery>
+      <entry>2026-09-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b7ae786a-af80-11f1-9800-641c67a117d8">
     <topic>znc -- multiple vulnerabilities</topic>
     <affects>
