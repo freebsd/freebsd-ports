@@ -5484,6 +5484,7 @@
     SUBDIR += py-mirakuru
     SUBDIR += py-mmh3
     SUBDIR += py-mock
+    SUBDIR += py-mockito
     SUBDIR += py-molecule
     SUBDIR += py-molecule-plugins
     SUBDIR += py-mondrian
