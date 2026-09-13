@@ -1,5 +1,6 @@
 PORTNAME=	tg_owt
 PORTVERSION=	0.0.20260803
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -18,7 +19,6 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpipewire-0.3.so:multimedia/pipewire \
-		libprotobuf.so:devel/protobuf \
 		libsrtp2.so:net/libsrtp2 \
 		libvpx.so:multimedia/libvpx
 
