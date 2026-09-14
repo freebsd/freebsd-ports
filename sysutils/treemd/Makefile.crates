@@ -240,9 +240,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.1.4 \
-		rustls-0.23.42 \
+		rustls-0.23.45 \
 		rustls-pki-types-1.15.0 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.23 \
 		ryu-1.0.23 \
 		safe_arch-0.9.3 \
@@ -307,8 +307,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tracing-subscriber-0.3.23 \
 		tree_magic_mini-3.2.2 \
 		ttf-parser-0.25.1 \
-		turbovault-core-2.0.0 \
-		turbovault-parser-2.0.0 \
+		turbovault-core-2.1.0 \
+		turbovault-parser-2.1.0 \
 		typenum-1.20.1 \
 		ucd-trie-0.1.7 \
 		unicase-2.9.0 \
@@ -351,16 +351,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.58.0 \
 		windows-core-0.58.0 \
-		windows-core-0.62.2 \
 		windows-implement-0.58.0 \
-		windows-implement-0.60.2 \
 		windows-interface-0.58.0 \
-		windows-interface-0.59.3 \
 		windows-link-0.2.1 \
 		windows-result-0.2.0 \
-		windows-result-0.4.1 \
 		windows-strings-0.1.0 \
-		windows-strings-0.5.1 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
