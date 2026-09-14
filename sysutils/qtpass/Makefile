@@ -1,6 +1,6 @@
 PORTNAME=	qtpass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.8.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	brouwer@annejan.com
@@ -12,30 +12,27 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	pass:sysutils/password-store
 
-USES=		compiler:c++11-lang cpe gl qmake:outsource qt:5 xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	IJhack
-GH_PROJECT=	QtPass
-USE_GL=		gl
-USE_QT=		core gui network testlib widgets buildtools:build linguisttools:build
+USES=		compiler:c++17-lang cpe gl qmake:outsource qt:6
 CPE_VENDOR=	ijhack
-
-# Create a desktop entry for the port.
-DESKTOP_ENTRIES=	"QtPass" "" \
-			"${PREFIX}/share/pixmaps/qtpass.png" \
-			"${PREFIX}/bin/qtpass" \
-			"Security;Utility;" true
+USE_GITHUB=	yes
+GH_ACCOUNT=	IJHack
+GH_PROJECT=	QtPass
+USE_GL=		opengl
+USE_QT=		base tools:build svg:run translations:run
 
 PLIST_FILES=	bin/qtpass \
+		share/applications/qtpass.desktop \
 		share/pixmaps/qtpass.png
 
-# Fix build with Qt 5.13
-pre-build:
-	cd ${WRKSRC}/localization && ${LRELEASE} *ts
+post-patch:
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' \
+			${WRKSRC}/qtpass.desktop
 
-# Install the icon of the port.
+# Install the icon and desktop file of the port.
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/artwork/icon.png \
 			${STAGEDIR}${PREFIX}/share/pixmaps/qtpass.png
+	${INSTALL_DATA} ${WRKSRC}/qtpass.desktop \
+			${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
