@@ -1345,6 +1345,7 @@
     SUBDIR += py-accessible-pygments
     SUBDIR += py-acora
     SUBDIR += py-aeidon
+    SUBDIR += py-affine-gaps
     SUBDIR += py-agate
     SUBDIR += py-agate-dbf
     SUBDIR += py-agate-excel

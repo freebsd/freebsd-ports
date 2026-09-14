@@ -1,0 +1,7 @@
+Affine Gaps is a single-file Numba-accelerated Python implementation of
+Gotoh affine gap penalty extensions for the Needleman-Wunsch and
+Smith-Waterman algorithms used for global and local sequence alignment
+in bioinformatics.
+
+It includes command-line and Python interfaces for computing optimal
+alignments and alignment scores.
