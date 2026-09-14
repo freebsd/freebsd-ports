@@ -1,0 +1,32 @@
+-- Fix pyproject.toml for compatibility with the setuptools version in ports.
+-- The upstream project uses PEP 621 features and a modern [tool.setuptools]
+-- "packages" list that the ports setuptools does not validate.
+
+--- pyproject.toml.orig	2026-09-07 23:36:08 UTC
++++ pyproject.toml
+@@ -4,8 +4,7 @@ authors = [{ name = "Vlad Emelianov", email = "vlad.em
+ requires-python = ">=3.9"
+ description = "Type annotations and code completion for s3transfer"
+ authors = [{ name = "Vlad Emelianov", email = "vlad.emelianov.nz@gmail.com" }]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ readme = "README.md"
+ keywords = ["s3transfer", "type-annotations", "pyright", "mypy", "boto3"]
+ classifiers = [
+@@ -47,11 +46,13 @@ Issues = "https://github.com/youtype/types-s3transfer/
+ Issues = "https://github.com/youtype/types-s3transfer/issues"
+ 
+ [build-system]
+-requires = ['setuptools>=77.0.0']
++requires = ['setuptools>=0']
+ build-backend = 'setuptools.build_meta'
+ 
+ [tool.setuptools]
+-packages = ["s3transfer-stubs"]
++[tool.setuptools.packages.find]
++where = ["."]
++include = ["s3transfer-stubs*"]
+ 
+ [tool.pyright]
+ include = ["s3transfer-stubs"]

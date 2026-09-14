@@ -6413,6 +6413,7 @@
     SUBDIR += py-types-pyyaml
     SUBDIR += py-types-requests
     SUBDIR += py-types-retry
+    SUBDIR += py-types-s3transfer
     SUBDIR += py-types-setuptools
     SUBDIR += py-types-toml
     SUBDIR += py-typeshed-client

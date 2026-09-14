@@ -1,0 +1,2 @@
+Type annotations and code completion support for the s3transfer package.
+These stubs are used by boto3-stubs and related packages.
