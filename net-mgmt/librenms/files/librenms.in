@@ -34,7 +34,7 @@ load_rc_config $name
 : ${librenms_daemonflags:="-o /var/log/$name/$name-service.log"}
 
 pidfile="$librenms_pid"
-procname="%%PYTHON%%"
+procname=/usr/sbin/daemon
 command="/usr/sbin/daemon"
 
 start_precmd=librenms_precmd
@@ -47,6 +47,6 @@ librenms_precmd()
 	cd %%WWWDIR%%
 }
 
-command_args="$librenms_daemonflags -p $pidfile $procname %%WWWDIR%%/librenms-service.py"
+command_args="$librenms_daemonflags -H -P $pidfile %%PYTHON%% %%WWWDIR%%/librenms/librenms-service.py"
 
 run_rc_command "$1"
