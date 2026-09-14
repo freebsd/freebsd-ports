@@ -1,6 +1,5 @@
 PORTNAME=	torcs
-DISTVERSION=	1.3.7
-PORTREVISION=	5
+DISTVERSION=	1.3.9
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 
@@ -9,34 +8,36 @@ COMMENT=	Free, open-source racing car simulator
 WWW=		https://torcs.sourceforge.net/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 RUN_DEPENDS=	bash:shells/bash
 
-MAKE_JOBS_UNSAFE=	yes
-
 USES=		compiler:c++11-lang cpe gl gmake openal:al,alut shebangfix \
 		tar:bzip2 xorg
 CPE_VENDOR=	bernhard_wymann
+USE_CXXSTD=	c++11
+USE_GL=		glut glu gl
+USE_LDCONFIG=	yes
+USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr xi xt sm
+
 SHEBANG_FILES=	src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in \
 		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in \
 		src/tools/trackgen/trackgen.in \
 		src/modules/telemetry/telemetry.sh robotgen
-USE_CXXSTD=	c++11
-USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr xi xt sm
-USE_GL=		glut glu gl
+
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+
+MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET=	default
+INSTALL_TARGET=	install datainstall
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-ALL_TARGET=	default
-INSTALL_TARGET=	install datainstall
 INSTDIR=	${PREFIX}/share/games/${PORTNAME}
-
-PORTDOCS=	faq.html
 
 BASH2FIX=	src/linux/torcs.in Make-default.mk
 
@@ -67,13 +68,6 @@ STRIPFILES=	drivers/berniw/berniw.so \
 		modules/telemetry/telemetry.so \
 		modules/track/track.so
 
-DESKTOP_ENTRIES=	"TORCS" \
-			"The Open Racing Car Simulator" \
-			"${INSTDIR}/Ticon.png" \
-			"torcs" \
-			"Game;Simulation;" \
-			false
-
 OPTIONS_DEFINE=	DOCS
 
 EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace
@@ -84,6 +78,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
 	    ${WRKSRC}/${FILE}
 .endfor
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/torcs.desktop
 
 post-build:
 .for FILE in ${STRIPFILES}
@@ -95,9 +91,11 @@ pre-install:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/faq/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/userman/how_to_drive.html ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/doc/userman && ${COPYTREE_SHARE} "images" ${STAGEDIR}${DOCSDIR}
 	# strip simuv2.so as reported by Q/A tests
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/torcs/modules/simu/simuv2.so
+	${INSTALL_DATA} ${WRKSRC}/torcs.desktop ${STAGEDIR}${PREFIX}/share/applications
 
 .for ed in ${EMPTYDIR}
 	${TOUCH} ${STAGEDIR}${INSTDIR}/results/${ed}/.keep_me

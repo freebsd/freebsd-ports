@@ -1,0 +1,11 @@
+--- torcs.desktop.orig	2026-04-10 09:55:28 UTC
++++ torcs.desktop
+@@ -2,7 +2,7 @@ Exec=torcs
+ Name=TORCS
+ Comment=The Open Racing Car Simulator
+ Exec=torcs
+-Icon=torcs.png
++Icon=%%PREFIX%%/share/games/torcs/Ticon.png
+ Terminal=false
+ Type=Application
+ Encoding=UTF-8

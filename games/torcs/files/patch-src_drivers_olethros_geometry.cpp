@@ -1,6 +1,6 @@
---- src/drivers/olethros/geometry.cpp.orig	2018-10-25 14:35:19 UTC
+--- src/drivers/olethros/geometry.cpp.orig	2026-04-10 09:55:27 UTC
 +++ src/drivers/olethros/geometry.cpp
-@@ -370,7 +370,7 @@ void EstimateSphere (std::vector<Vector> P, Parametric
+@@ -371,7 +371,7 @@ void EstimateSphere (std::vector<Vector> P, Parametric
  				}
  				delta_total += delta;
  			}
