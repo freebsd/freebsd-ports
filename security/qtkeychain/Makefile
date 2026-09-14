@@ -1,5 +1,5 @@
 PORTNAME=	qtkeychain
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	security
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -14,9 +14,9 @@ FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
 
 USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig qt:${FLAVOR:S/qt//}
-_WITH_QT6_qt5=	OFF
-_WITH_QT6_qt6=	ON
-CMAKE_ARGS=	-DBUILD_WITH_QT6=${_WITH_QT6_${FLAVOR}} \
+_WITH_QT5_qt5=	ON
+_WITH_QT5_qt6=	OFF
+CMAKE_ARGS=	-DBUILD_WITH_QT5=${_WITH_QT5_${FLAVOR}} \
 		-DQT_MKSPECDIR_REL=${QT_MKSPECDIR_REL}
 USE_GITHUB=	yes
 _USE_QT_qt5=	core dbus buildtools:build qmake:build testlib:build
