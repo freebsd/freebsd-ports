@@ -1,4 +1,4 @@
-TIMESTAMP = 1785573602
+TIMESTAMP = 1789279718
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -771,8 +771,8 @@ SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff89263923
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
 SHA256 (rust/crates/zopfli-0.8.3.crate) = f05cd8797d63865425ff89b5c4a48804f35ba0ce8d125800027ad6017d2b5249
 SIZE (rust/crates/zopfli-0.8.3.crate) = 51589
-SHA256 (ElementsProject-lightning-v26.06.6_GH0.tar.gz) = 8ae246852dc026530b8340abf91bdd49bf8f2b1cd98897551907e935fd6fe41a
-SIZE (ElementsProject-lightning-v26.06.6_GH0.tar.gz) = 19620414
+SHA256 (ElementsProject-lightning-v26.06.7_GH0.tar.gz) = 9b1d67b87b309ec897ad9030b4a8d36bb4555638584eeffa6a0f7995b7508e3c
+SIZE (ElementsProject-lightning-v26.06.7_GH0.tar.gz) = 19662246
 SHA256 (ElementsProject-libwally-core-12f5ac4ccf0e2_GH0.tar.gz) = aa51d1c2304b8fc0196feea15dcdad50a35e8eb06a62cc6a748ac3a94c772b88
 SIZE (ElementsProject-libwally-core-12f5ac4ccf0e2_GH0.tar.gz) = 1287461
 SHA256 (BlockstreamResearch-secp256k1-zkp-615262261_GH0.tar.gz) = 5c992dd479502e5b5ad3e92dccf2fdf6853c74b1a0c547512f97382dc8fc0fdc
