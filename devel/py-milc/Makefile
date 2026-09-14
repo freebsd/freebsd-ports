@@ -3,7 +3,7 @@ DISTVERSION=	1.8.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opinionated, batteries-included Python 3 CLI framework
 WWW=		https://milc.clueboard.co/
 
