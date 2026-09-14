@@ -38,6 +38,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		chrono-0.4.45 \
 		clap-4.6.6 \
 		clap_builder-4.6.6 \
+		clap_complete-4.6.9 \
 		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
 		clipboard-win-5.4.1 \
