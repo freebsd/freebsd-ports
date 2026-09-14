@@ -974,6 +974,7 @@
     SUBDIR += py-blis
     SUBDIR += py-bottleneck
     SUBDIR += py-brial
+    SUBDIR += py-cbcbox
     SUBDIR += py-chaospy
     SUBDIR += py-clarabel
     SUBDIR += py-claripy

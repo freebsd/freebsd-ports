@@ -1,0 +1,14 @@
+-- Remove the "cbc" console script so this port does not conflict with the
+-- bin/cbc executable already provided by math/cbc.
+
+--- pyproject.toml.orig	2026-09-08 23:28:23 UTC
++++ pyproject.toml
+@@ -35,8 +35,5 @@ Homepage = "https://github.com/h-g-s/cbcbox"
+ Homepage = "https://github.com/h-g-s/cbcbox"
+ "Bug Tracker" = "https://github.com/h-g-s/cbcbox/issues"
+ 
+-[project.scripts]
+-cbc = "cbcbox.__main__:main"
+-
+ [tool.cibuildwheel]
+ build-verbosity = 1
