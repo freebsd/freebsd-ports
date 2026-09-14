@@ -1,5 +1,6 @@
 PORTNAME=	slurm
 DISTVERSION=	26.05.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -36,9 +37,7 @@ SHEBANG_FILES=	doc/html/shtml2html.py doc/man/man2html.py
 
 GNU_CONFIGURE=	yes
 # FreeBSD Infiniband support is still experimental
-# slurmrestd does not build on FreeBSD
 CONFIGURE_ARGS=	--disable-dependency-tracking \
-		--disable-slurmrestd \
 		--docdir=${DOCSDIR} \
 		--htmldir=${DOCSDIR} \
 		--sysconfdir=${ETCDIR} \

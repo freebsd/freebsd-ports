@@ -172,6 +172,12 @@ lib/slurm/mpi_pmi2.a
 lib/slurm/mpi_pmi2.so
 lib/slurm/node_features_helpers.a
 lib/slurm/node_features_helpers.so
+lib/slurm/openapi_slurmctld.a
+lib/slurm/openapi_slurmctld.so
+lib/slurm/openapi_slurmdbd.a
+lib/slurm/openapi_slurmdbd.so
+lib/slurm/openapi_util.a
+lib/slurm/openapi_util.so
 lib/slurm/preempt_partition_prio.a
 lib/slurm/preempt_partition_prio.so
 lib/slurm/preempt_qos.a
@@ -186,6 +192,10 @@ lib/slurm/proctrack_linuxproc.a
 lib/slurm/proctrack_linuxproc.so
 lib/slurm/proctrack_pgid.a
 lib/slurm/proctrack_pgid.so
+lib/slurm/rest_auth_jwt.a
+lib/slurm/rest_auth_jwt.so
+lib/slurm/rest_auth_local.a
+lib/slurm/rest_auth_local.so
 lib/slurm/sched_backfill.a
 lib/slurm/sched_backfill.so
 lib/slurm/sched_builtin.a
@@ -224,6 +234,7 @@ lib/slurm/topology_tree.so
 %%S2N%%lib/slurm/tls_s2n.so
 lib/slurm/url_parser_internal.a
 lib/slurm/url_parser_internal.so
+sbin/slurmrestd
 sbin/sackd
 sbin/slurmctld
 sbin/slurmd
