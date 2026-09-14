@@ -7,6 +7,9 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	DOS/x86 emulator based on DOSBox
 WWW=		https://dosbox-staging.github.io/
 
+# src/libs/simde/x86/sse2.h:11214:11: error: _Float16 is not supported on this target
+IGNORE_i386=	fails to build on i386
+
 BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:net/asio
 LIB_DEPENDS=	libz-ng.so:archivers/zlib-ng \
 		libasound.so:audio/alsa-lib \
