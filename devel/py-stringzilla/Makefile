@@ -18,10 +18,10 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyarrow>0:databases/py-pyarrow@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}affine-gaps>0:textproc/py-affine-gaps@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyarrow>0:databases/py-pyarrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-repeat>0:devel/py-pytest-repeat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-run-parallel>0:devel/py-pytest-run-parallel@${PY_FLAVOR}
-#TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}affine-gaps>0:textproc/py-affine-gaps@${PY_FLAVOR} # TODO: add port for 3 tests
 
 USES=		python
 USE_PYTHON=	pep517 pytest
@@ -41,7 +41,7 @@ TEST_ARGS=	--disable-plugin-autoload \
 		-p repeat -p pytest_run_parallel \
 		--ignore=similarities.py \
 		--ignore=fingerprints.py \
-		--ignore=szs_helpers.py # these 3 tests require affine-gaps
+		--ignore=szs_helpers.py # ignored tests fail, see https://github.com/ashvardanian/StringZilla/issues/340
 TEST_ARGS+=	--ignore=stringzillas.py # fails: AttributeError: module 'stringzillas' has no attribute 'LevenshteinDistances'
 
 post-install: # build the second (stringzillas_cpus) module and install it using similar commands as in python.mk
