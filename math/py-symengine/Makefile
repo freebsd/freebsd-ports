@@ -8,7 +8,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python library providing wrappers to SymEngine
-WWW=		https://symengine.org/
+WWW=		https://symengine.org/ \
+		https://github.com/symengine/symengine.py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,7 +24,7 @@ LIB_DEPENDS=	libarb.so:math/arb \
 		libzstd.so:archivers/zstd
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} # see https://github.com/symengine/symengine.py/issues/416
 
-USES=		cmake compiler:c++11-lang llvm:15 python
+USES=		cmake compiler:c++11-lang python
 USE_PYTHON=	cython flavors pytest
 
 USE_GITHUB=	yes
