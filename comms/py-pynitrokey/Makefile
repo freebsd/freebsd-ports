@@ -1,5 +1,6 @@
 PORTNAME=	pynitrokey
 DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +23,7 @@ _BR_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tlv8>=0:converters/py-tlv8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semver>=0:devel/py-semver@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nethsm>=2.1.1,<3:security/py-nethsm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nethsm>=3,<4:security/py-nethsm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyscard>=2,<3:security/py-pyscard@${PY_FLAVOR}
 BUILD_DEPENDS=	${_BR_DEPENDS} \
