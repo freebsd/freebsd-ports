@@ -1,3 +1,40 @@
+  <vuln vid="ce54d883-b060-11f1-b187-901b0edee044">
+    <topic>anki -- multiple vulnerabilities</topic>
+    <affects>
+    <package>
+      <name>anki</name>
+      <range><lt>26.9</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Abdo Hasani reports:</p>
+	<blockquote cite="https://github.com/ankitects/anki/security/advisories/GHSA-jw6j-j4mf-8jgm">
+	  <p>Imported note HTML may execute inside an embedded image-occlusion
+	document that retains the editor profile's desktop API credentials. This could
+	cross the boundary between untrusted note content and privileged desktop
+	operations.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/ankitects/anki/security/advisories/GHSA-932p-crhj-v43p">
+	  <p>An improper path validation vulnerability allows an attacker to
+	execute arbitrary code on a victim's system when they interact with a malicious
+	flashcard deck. This vulnerability is triggered when a user right-clicks an
+	image within the editor and selects the "Open image" action; if an embedded
+	"&lt;img&gt;" tag contains a path with a dangerous extension in its src attribute,
+	the operating system may execute the file.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/ankitects/anki/security/advisories/GHSA-jw6j-j4mf-8jgm</url>
+      <url>https://github.com/ankitects/anki/security/advisories/GHSA-932p-crhj-v43p</url>
+    </references>
+    <dates>
+      <discovery>2026-09-14</discovery>
+      <entry>2026-09-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3a38fdda-b05a-11f1-9369-b42e991fc52e">
     <topic>cjose -- Use of Hard-coded Cryptographic Key</topic>
     <affects>
