@@ -1,17 +1,17 @@
 PORTNAME=	nginx-module-form-input
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12
+DISTVERSION=	0.13.0
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Sources of the form_input module for the NGINX ports
-WWW=		https://github.com/calio/form-input-nginx-module
+WWW=		https://github.com/joneum/form-input-nginx-module
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/README.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	calio
+GH_ACCOUNT=	joneum
 GH_PROJECT=	form-input-nginx-module
 
 NO_ARCH=	yes
