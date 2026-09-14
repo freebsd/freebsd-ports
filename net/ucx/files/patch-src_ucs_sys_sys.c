@@ -1,6 +1,6 @@
---- src/ucs/sys/sys.c.orig	2026-05-06 13:47:14 UTC
+--- src/ucs/sys/sys.c.orig	2026-09-12 01:59:18 UTC
 +++ src/ucs/sys/sys.c
-@@ -23,16 +23,28 @@
+@@ -23,16 +23,29 @@
  #include <ucm/util/sys.h>
  
  #include <unistd.h>
@@ -25,11 +25,12 @@
 +#include <sys/param.h>
 +#include <sys/cpuset.h>
 +#include <sys/sysctl.h>
++#include <sys/user.h>
 +#endif
  #ifdef HAVE_SYS_THR_H
  #include <sys/thr.h>
  #endif
-@@ -94,7 +106,7 @@ const char *ucs_get_host_name()
+@@ -94,7 +107,7 @@ const char *ucs_get_host_name()
  
  const char *ucs_get_host_name()
  {
@@ -38,7 +39,7 @@
  
      if (*hostname == 0) {
          gethostname(hostname, sizeof(hostname));
-@@ -181,6 +193,46 @@ static uint64_t ucs_get_mac_address()
+@@ -209,6 +222,46 @@ static uint64_t ucs_get_mac_address()
  static uint64_t ucs_get_mac_address()
  {
      static uint64_t mac_address = 0;
@@ -85,7 +86,7 @@
      struct ifreq ifr, *it, *end;
      struct ifconf ifc;
      char buf[1024];
-@@ -228,6 +280,7 @@ static uint64_t ucs_get_mac_address()
+@@ -256,6 +309,7 @@ static uint64_t ucs_get_mac_address()
      }
  
      return mac_address;
@@ -93,7 +94,7 @@
  }
  
  static uint64_t __sumup_host_name(unsigned prime_index)
-@@ -671,6 +724,21 @@ size_t ucs_get_memfree_size()
+@@ -699,6 +753,22 @@ size_t ucs_get_memfree_size()
  {
      ssize_t mem_free;
  
@@ -110,12 +111,13 @@
 +            return v_free_count * pagesize;
 +        }
 +    }
++
 +    return UCS_DEFAULT_MEM_FREE;
 +#else
-     mem_free = ucs_get_meminfo_entry("MemFree");
+     mem_free = ucs_get_meminfo_entry("MemFree", 1);
      if (mem_free == -1) {
          mem_free = UCS_DEFAULT_MEM_FREE;
-@@ -679,12 +747,16 @@ size_t ucs_get_memfree_size()
+@@ -707,12 +777,16 @@ size_t ucs_get_memfree_size()
      }
  
      return mem_free;
@@ -131,16 +133,41 @@
 +#else
      /* Cache the huge page size value */
      if (huge_page_size == 0) {
-         huge_page_size = ucs_get_meminfo_entry("Hugepagesize");
-@@ -696,6 +768,7 @@ ssize_t ucs_get_huge_page_size()
+         huge_page_size = ucs_get_meminfo_entry("Hugepagesize", 1);
+@@ -724,6 +798,7 @@ ssize_t ucs_get_huge_page_size()
      }
  
      return huge_page_size;
 +#endif
  }
  
- size_t ucs_get_phys_mem_size()
-@@ -751,6 +824,10 @@ static void ucs_sysv_shmget_error_check_ENOSPC(size_t 
+ static ssize_t ucs_get_huge_pages_count()
+@@ -777,6 +852,17 @@ size_t ucs_get_shmmax()
+ #define UCS_PROC_SYS_SHMMAX_FILE "/proc/sys/kernel/shmmax"
+ size_t ucs_get_shmmax()
+ {
++#if defined(__FreeBSD__)
++    unsigned long shmmax;
++    size_t len = sizeof(shmmax);
++
++    if (sysctlbyname("kern.ipc.shmmax", &shmmax, &len, NULL, 0) != 0) {
++        ucs_warn("failed to read kern.ipc.shmmax: %m");
++        return 0;
++    }
++
++    return (size_t)shmmax;
++#else
+     ucs_status_t status;
+     long size;
+ 
+@@ -787,12 +873,17 @@ size_t ucs_get_shmmax()
+     }
+ 
+     return size;
++#endif
+ }
+ 
+ static void ucs_sysv_shmget_error_check_ENOSPC(size_t alloc_size,
                                                 const struct shminfo *ipc_info,
                                                 char *buf, size_t max)
  {
@@ -151,7 +178,7 @@
      unsigned long new_used_ids;
      unsigned long new_shm_tot;
      struct shm_info shm_info;
-@@ -782,6 +859,7 @@ static void ucs_sysv_shmget_error_check_ENOSPC(size_t 
+@@ -824,6 +915,7 @@ static void ucs_sysv_shmget_error_check_ENOSPC(size_t 
                   " limit in /proc/sys/kernel/shmall (=%lu)",
                   new_shm_tot, ipc_info->shmall);
      }
@@ -159,7 +186,7 @@
  }
  
  ucs_status_t ucs_sys_get_proc_cap(uint32_t *effective)
-@@ -842,6 +920,14 @@ static void ucs_sysv_shmget_format_error(size_t alloc_
+@@ -884,6 +976,14 @@ static void ucs_sysv_shmget_format_error(size_t alloc_
                                           const char *alloc_name, int sys_errno,
                                           char *buf, size_t max)
  {
@@ -174,7 +201,7 @@
      struct shminfo ipc_info;
      char *p, *endp, *errp;
      int ret;
-@@ -879,6 +965,7 @@ static void ucs_sysv_shmget_format_error(size_t alloc_
+@@ -921,6 +1021,7 @@ static void ucs_sysv_shmget_format_error(size_t alloc_
      if (p == errp) {
          snprintf(p, endp - p, ", please check shared memory limits by 'ipcs -l'");
      }
@@ -182,7 +209,7 @@
  }
  
  ucs_status_t ucs_sysv_alloc(size_t *size, size_t max_size, void **address_p,
-@@ -1272,11 +1359,44 @@ void *ucs_sys_realloc(void *old_ptr, size_t old_length
+@@ -1315,11 +1416,44 @@ void *ucs_sys_realloc(void *old_ptr, size_t old_length
  {
      void *ptr;
  
@@ -228,7 +255,7 @@
                               MAP_PRIVATE|MAP_ANONYMOUS, -1, 0ul);
          if (ptr == MAP_FAILED) {
              ucs_log_fatal_error("mmap(NULL, %zu, READ|WRITE, PRIVATE|ANON) failed: %m",
-@@ -1285,7 +1405,7 @@ void *ucs_sys_realloc(void *old_ptr, size_t old_length
+@@ -1328,7 +1462,7 @@ void *ucs_sys_realloc(void *old_ptr, size_t old_length
          }
      } else {
          old_length = ucs_align_up_pow2(old_length, ucs_get_page_size());
@@ -237,7 +264,7 @@
                               MREMAP_MAYMOVE);
          if (ptr == MAP_FAILED) {
              ucs_log_fatal_error("mremap(%p, %zu, %zu, MAYMOVE) failed: %m",
-@@ -1295,6 +1415,13 @@ void *ucs_sys_realloc(void *old_ptr, size_t old_length
+@@ -1338,6 +1472,13 @@ void *ucs_sys_realloc(void *old_ptr, size_t old_length
      }
  
      return ptr;
@@ -251,7 +278,7 @@
  }
  
  void ucs_sys_free(void *ptr, size_t length)
-@@ -1302,11 +1429,19 @@ void ucs_sys_free(void *ptr, size_t length)
+@@ -1345,11 +1486,19 @@ void ucs_sys_free(void *ptr, size_t length)
      int ret;
  
      if (ptr != NULL) {
@@ -272,7 +299,7 @@
      }
  }
  
-@@ -1376,12 +1511,32 @@ ucs_status_t ucs_sys_pthread_getaffinity(ucs_sys_cpuse
+@@ -1419,12 +1568,32 @@ ucs_status_t ucs_sys_pthread_getaffinity(ucs_sys_cpuse
  
  ucs_status_t ucs_sys_pthread_getaffinity(ucs_sys_cpuset_t *cpuset)
  {
@@ -305,7 +332,7 @@
  }
  
  void ucs_sys_cpuset_copy(ucs_cpu_set_t *dst, const ucs_sys_cpuset_t *src)
-@@ -1435,6 +1590,10 @@ ucs_status_t ucs_sys_get_boot_id(uint64_t *high, uint6
+@@ -1494,6 +1663,10 @@ ucs_status_t ucs_sys_get_boot_id(uint64_t *high, uint6
  
      static ucs_init_once_t init_once = UCS_INIT_ONCE_INITIALIZER;
      static ucs_status_t status       = UCS_ERR_IO_ERROR;
@@ -316,7 +343,7 @@
      char bootid_str[256];
      ssize_t size;
      uint32_t v1;
-@@ -1444,8 +1603,17 @@ ucs_status_t ucs_sys_get_boot_id(uint64_t *high, uint6
+@@ -1503,8 +1676,17 @@ ucs_status_t ucs_sys_get_boot_id(uint64_t *high, uint6
      uint8_t v5[6];
      int res;
      int i;
@@ -334,7 +361,7 @@
          size = ucs_read_file_str(bootid_str, sizeof(bootid_str), 1,
                                   "%s", UCS_PROCESS_BOOTID_FILE);
          if (size <= 0) {
-@@ -1465,6 +1633,7 @@ ucs_status_t ucs_sys_get_boot_id(uint64_t *high, uint6
+@@ -1524,6 +1706,7 @@ ucs_status_t ucs_sys_get_boot_id(uint64_t *high, uint6
                  boot_id.high |= (uint64_t)v5[i] << (16 + (i * 8));
              }
          }
@@ -342,7 +369,7 @@
      }
  
      if (status == UCS_OK) {
-@@ -1542,7 +1711,8 @@ ucs_status_t ucs_pthread_create(pthread_t *thread_id_p
+@@ -1601,7 +1784,8 @@ ucs_status_t ucs_pthread_create(pthread_t *thread_id_p
  
      ret = pthread_create(&thread_id, NULL, start_routine, arg);
      if (ret != 0) {
@@ -352,3 +379,64 @@
          return UCS_ERR_IO_ERROR;
      }
  
+@@ -1630,6 +1814,52 @@ unsigned long ucs_sys_get_proc_create_time(pid_t pid)
+ 
+ unsigned long ucs_sys_get_proc_create_time(pid_t pid)
+ {
++#if defined(__FreeBSD__)
++    struct kinfo_proc kp;
++    struct timeval boottime;
++    uint64_t proc_usec, boot_usec, start_usec;
++    size_t len;
++    int mib[4];
++
++    /*
++     * FreeBSD exposes process creation time through struct kinfo_proc.
++     * Preserve the API semantics of returning time since system boot.
++     */
++    mib[0] = CTL_KERN;
++    mib[1] = KERN_PROC;
++    mib[2] = KERN_PROC_PID;
++    mib[3] = pid;
++
++    memset(&kp, 0, sizeof(kp));
++    len = sizeof(kp);
++
++    if (sysctl(mib, 4, &kp, &len, NULL, 0) < 0) {
++        ucs_debug("failed to get information for pid %d: %m", pid);
++        return 0ul;
++    }
++
++    if ((len == 0) || (kp.ki_pid != pid)) {
++        return 0ul;
++    }
++
++    len = sizeof(boottime);
++    if (sysctlbyname("kern.boottime", &boottime, &len, NULL, 0) < 0) {
++        ucs_debug("failed to get system boot time: %m");
++        return 0ul;
++    }
++
++    proc_usec = ((uint64_t)kp.ki_start.tv_sec * UCS_MBYTE) +
++                kp.ki_start.tv_usec;
++    boot_usec = ((uint64_t)boottime.tv_sec * UCS_MBYTE) +
++                boottime.tv_usec;
++
++    if (proc_usec <= boot_usec) {
++        return 0ul;
++    }
++
++    start_usec = proc_usec - boot_usec;
++    return (unsigned long)start_usec;
++#else
+     char stat[1024];
+     char *start_str;
+     ssize_t size;
+@@ -1658,6 +1888,7 @@ err:
+     ucs_debug("failed to scan "UCS_PROCCESS_STAT_FMT, pid);
+ err:
+     return 0ul;
++#endif
+ }
+ 
+ ucs_status_t ucs_sys_get_effective_memlock_rlimit(size_t *rlimit_value)

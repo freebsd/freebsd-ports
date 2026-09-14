@@ -1,6 +1,6 @@
---- test/gtest/ucs/test_config.cc.orig	2026-02-05 12:41:56 UTC
+--- test/gtest/ucs/test_config.cc.orig	2026-09-09 16:06:37 UTC
 +++ test/gtest/ucs/test_config.cc
-@@ -365,22 +365,18 @@ class test_config : public ucs::test { (protected)
+@@ -372,22 +372,18 @@ class test_config : public ucs::test { (protected)
          std::string
          dump(ucs_config_print_flags_t flags, const char *filter = nullptr) const
          {
@@ -27,7 +27,7 @@
              free(dump_data);
              return res;
          }
-@@ -432,12 +428,19 @@ class test_config : public ucs::test { (protected)
+@@ -439,12 +435,19 @@ class test_config : public ucs::test { (protected)
          ucs_config_parser_print_opts(file, "", *opts, car_opts_table, prefix,
                                       UCS_DEFAULT_ENV_PREFIX,
                                       (ucs_config_print_flags_t)flags, nullptr);
@@ -51,7 +51,7 @@
                  continue;
              }
  
-@@ -465,7 +468,7 @@ class test_config : public ucs::test { (protected)
+@@ -472,7 +475,7 @@ class test_config : public ucs::test { (protected)
  
                  size_t cnt = 0;
                  for (size_t i = 2 + strlen("alias of: ") + 1;

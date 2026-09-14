@@ -1,4 +1,4 @@
---- src/ucs/sys/sock.c.orig	2026-05-06 13:47:14 UTC
+--- src/ucs/sys/sock.c.orig	2026-09-09 14:48:02 UTC
 +++ src/ucs/sys/sock.c
 @@ -20,7 +20,10 @@
  
@@ -11,7 +11,7 @@
  #include <unistd.h>
  #include <errno.h>
  #include <string.h>
-@@ -517,6 +520,16 @@ int ucs_socket_max_conn()
+@@ -524,6 +527,16 @@ int ucs_socket_max_conn()
  int ucs_socket_max_conn()
  {
      static long somaxconn_val = 0;

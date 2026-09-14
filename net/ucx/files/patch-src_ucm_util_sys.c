@@ -1,4 +1,4 @@
---- src/ucm/util/sys.c.orig	2026-02-04 09:52:46 UTC
+--- src/ucm/util/sys.c.orig	2026-09-09 00:55:51 UTC
 +++ src/ucm/util/sys.c
 @@ -14,6 +14,13 @@
  #  include "config.h"
@@ -124,20 +124,8 @@
  }
  
  typedef struct {
-@@ -377,15 +454,31 @@ void *ucm_brk_syscall(void *addr)
- 
- void *ucm_brk_syscall(void *addr)
- {
-+#if defined(__linux__)
-     /* Return type is equivalent to full pointer size */
-     UCS_STATIC_ASSERT(sizeof(syscall(0)) == sizeof(void*));
--
-     return (void*)syscall(SYS_brk, addr);
-+#else
-+    (void)addr;
-+    errno = ENOSYS;
-+    return NULL;
-+#endif
+@@ -389,9 +466,21 @@ void *ucm_brk_syscall(void *addr)
+ #endif
  }
  
 -pid_t ucm_get_tid()
@@ -148,10 +136,11 @@
 +    return (pid_t)syscall(SYS_gettid);
 +#elif defined(__FreeBSD__)
 +    long tid;
++
 +    if (thr_self(&tid) == 0) {
 +        return (pid_t)tid;
 +    }
-+    /* fallback */
++
 +    return (pid_t)getpid();
 +#else
 +    return (pid_t)getpid();

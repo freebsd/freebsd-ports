@@ -1,6 +1,6 @@
---- Makefile.am.orig	2026-02-05 12:41:56 UTC
+--- Makefile.am.orig	2026-09-09 00:55:51 UTC
 +++ Makefile.am
-@@ -59,8 +59,10 @@ SUBDIRS += \
+@@ -55,8 +55,10 @@ SUBDIRS += \
  	cmake \
  	config
  

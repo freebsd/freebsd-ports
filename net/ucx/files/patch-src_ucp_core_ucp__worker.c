@@ -1,4 +1,4 @@
---- src/ucp/core/ucp_worker.c.orig	2026-02-05 12:41:56 UTC
+--- src/ucp/core/ucp_worker.c.orig	2026-09-09 02:32:02 UTC
 +++ src/ucp/core/ucp_worker.c
 @@ -9,6 +9,8 @@
  #  include "config.h"
@@ -9,7 +9,7 @@
  #include "ucp_am.h"
  #include "ucp_ep_vfs.h"
  #include "ucp_worker.h"
-@@ -35,9 +37,18 @@
+@@ -36,9 +38,18 @@
  #include <ucs/vfs/base/vfs_cb.h>
  #include <ucs/vfs/base/vfs_obj.h>
  #include <sys/poll.h>
@@ -29,7 +29,7 @@
  #include <time.h>
  
  
-@@ -290,7 +301,10 @@ static ucs_status_t ucp_worker_wakeup_init(ucp_worker_
+@@ -291,7 +302,10 @@ static ucs_status_t ucp_worker_wakeup_init(ucp_worker_
          worker->event_fd   = -1;
          worker->event_set  = NULL;
          worker->eventfd    = -1;
@@ -41,7 +41,7 @@
          status = UCS_OK;
          goto out;
      }
-@@ -320,6 +334,19 @@ static ucs_status_t ucp_worker_wakeup_init(ucp_worker_
+@@ -321,6 +335,19 @@ static ucs_status_t ucp_worker_wakeup_init(ucp_worker_
          worker->flags |= UCP_WORKER_FLAG_EDGE_TRIGGERED;
      }
  
@@ -61,7 +61,7 @@
      worker->eventfd = eventfd(0, EFD_CLOEXEC | EFD_NONBLOCK);
      if (worker->eventfd == -1) {
          ucs_error("Failed to create event fd: %m");
-@@ -328,6 +355,13 @@ static ucs_status_t ucp_worker_wakeup_init(ucp_worker_
+@@ -329,6 +356,13 @@ static ucs_status_t ucp_worker_wakeup_init(ucp_worker_
      }
  
      ucp_worker_wakeup_ctl_fd(worker, UCP_WORKER_EPFD_OP_ADD, worker->eventfd);
@@ -75,7 +75,7 @@
  
      worker->uct_events = 0;
  
-@@ -371,6 +405,12 @@ static void ucp_worker_wakeup_cleanup(ucp_worker_h wor
+@@ -372,6 +406,12 @@ static void ucp_worker_wakeup_cleanup(ucp_worker_h wor
      }
      if (worker->eventfd != -1) {
          close(worker->eventfd);
@@ -88,7 +88,7 @@
      }
  }
  
-@@ -423,12 +463,24 @@ static ucs_status_t ucp_worker_wakeup_signal_fd(ucp_wo
+@@ -424,12 +464,24 @@ static ucs_status_t ucp_worker_wakeup_signal_fd(ucp_wo
  static ucs_status_t ucp_worker_wakeup_signal_fd(ucp_worker_h worker)
  {
      uint64_t dummy = 1;
@@ -115,7 +115,7 @@
          if (ret == sizeof(dummy)) {
              return UCS_OK;
          } else if (ret == -1) {
-@@ -3375,7 +3427,7 @@ void ucp_worker_print_info(ucp_worker_h worker, FILE *
+@@ -3501,7 +3553,7 @@ void ucp_worker_print_info(ucp_worker_h worker, FILE *
      UCP_WORKER_THREAD_CS_EXIT_CONDITIONAL(worker);
  }
  
@@ -124,7 +124,7 @@
  ucp_worker_keepalive_timerfd_init(ucp_worker_h worker)
  {
      ucs_time_t ka_interval = worker->context->config.ext.keepalive_interval;
-@@ -3385,14 +3437,18 @@ ucp_worker_keepalive_timerfd_init(ucp_worker_h worker)
+@@ -3511,14 +3563,18 @@ ucp_worker_keepalive_timerfd_init(ucp_worker_h worker)
  
      if (!(worker->context->config.features & UCP_FEATURE_WAKEUP) ||
          (worker->keepalive.timerfd >= 0)) {
@@ -147,7 +147,7 @@
      }
  
      ucs_assert(ka_interval > 0);
-@@ -3412,10 +3468,11 @@ ucp_worker_keepalive_timerfd_init(ucp_worker_h worker)
+@@ -3538,10 +3594,11 @@ ucp_worker_keepalive_timerfd_init(ucp_worker_h worker)
      ucp_worker_wakeup_ctl_fd(worker, UCP_WORKER_EPFD_OP_ADD,
                               worker->keepalive.timerfd);
  
@@ -160,7 +160,7 @@
  }
  
  static UCS_F_ALWAYS_INLINE void
-@@ -3571,6 +3628,7 @@ void ucp_worker_keepalive_add_ep(ucp_ep_h ep)
+@@ -3704,6 +3761,7 @@ void ucp_worker_keepalive_add_ep(ucp_ep_h ep)
  void ucp_worker_keepalive_add_ep(ucp_ep_h ep)
  {
      ucp_worker_h worker = ep->worker;
@@ -168,7 +168,7 @@
  
      if (ucp_ep_config(ep)->key.keepalive_lane == UCP_NULL_LANE) {
          ucs_trace("ep %p flags 0x%x cfg_index %d err_mode %d: keepalive lane"
-@@ -3579,7 +3637,12 @@ void ucp_worker_keepalive_add_ep(ucp_ep_h ep)
+@@ -3712,7 +3770,12 @@ void ucp_worker_keepalive_add_ep(ucp_ep_h ep)
          return;
      }
  

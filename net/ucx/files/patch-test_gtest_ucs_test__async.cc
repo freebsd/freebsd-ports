@@ -1,6 +1,6 @@
---- test/gtest/ucs/test_async.cc.orig	2026-06-08 19:48:30 UTC
+--- test/gtest/ucs/test_async.cc.orig	2026-09-09 16:06:37 UTC
 +++ test/gtest/ucs/test_async.cc
-@@ -544,7 +544,7 @@ UCS_TEST_P(test_async, many_timers) {
+@@ -545,7 +545,7 @@ UCS_TEST_P(test_async, many_timers) {
      const int max_timers = ucs_max(10, 250 / ucs::test_time_multiplier());
  
      std::vector<int> timers;

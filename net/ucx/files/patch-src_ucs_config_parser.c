@@ -1,14 +1,14 @@
---- src/ucs/config/parser.c.orig	2026-02-05 12:41:56 UTC
+--- src/ucs/config/parser.c.orig	2026-09-09 02:32:02 UTC
 +++ src/ucs/config/parser.c
-@@ -25,6 +25,7 @@
- #include <fnmatch.h>
+@@ -27,6 +27,7 @@
  #include <ctype.h>
  #include <libgen.h>
+ #include <regex.h>
 +#include <signal.h>
  
  
  /* width of titles in docstring */
-@@ -693,6 +694,8 @@ int ucs_config_sscanf_signo(const char *buf, void *des
+@@ -697,6 +698,8 @@ int ucs_config_sscanf_signo(const char *buf, void *des
  int ucs_config_sscanf_signo(const char *buf, void *dest, const void *arg)
  {
      char *endptr;
@@ -17,7 +17,7 @@
      int signo;
  
      signo = strtol(buf, &endptr, 10);
-@@ -701,11 +704,31 @@ int ucs_config_sscanf_signo(const char *buf, void *des
+@@ -705,11 +708,31 @@ int ucs_config_sscanf_signo(const char *buf, void *des
          return 1;
      }
  

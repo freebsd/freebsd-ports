@@ -1,6 +1,6 @@
---- test/gtest/uct/test_md.cc.orig	2026-05-07 22:05:14 UTC
+--- test/gtest/uct/test_md.cc.orig	2026-09-09 16:06:37 UTC
 +++ test/gtest/uct/test_md.cc
-@@ -21,6 +21,7 @@ extern "C" {
+@@ -25,6 +25,7 @@ extern "C" {
  #include <uct/ib/base/ib_md.h>
  #endif
  }

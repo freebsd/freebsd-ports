@@ -1,6 +1,6 @@
---- src/ucs/datastruct/string_buffer.c.orig	2026-05-17 17:31:16 UTC
+--- src/ucs/datastruct/string_buffer.c.orig	2026-09-09 02:36:31 UTC
 +++ src/ucs/datastruct/string_buffer.c
-@@ -141,8 +141,13 @@ void ucs_string_buffer_append_iovec(ucs_string_buffer_
+@@ -151,8 +151,13 @@ void ucs_string_buffer_append_iovec(ucs_string_buffer_
      size_t iov_index;
  
      for (iov_index = 0; iov_index < iovcnt; ++iov_index) {

@@ -1,6 +1,6 @@
---- src/uct/ib/ud/base/ud_iface.c.orig	2026-02-05 12:41:56 UTC
+--- src/uct/ib/ud/base/ud_iface.c.orig	2026-09-09 16:00:25 UTC
 +++ src/uct/ib/ud/base/ud_iface.c
-@@ -1113,7 +1113,13 @@ union ibv_gid* uct_ud_grh_get_dgid(struct ibv_grh *grh
+@@ -1112,7 +1112,13 @@ union ibv_gid* uct_ud_grh_get_dgid(struct ibv_grh *grh
      size_t i;
  
      /* Make sure that daddr in IPv4 resides in the last 4 bytes in GRH */
