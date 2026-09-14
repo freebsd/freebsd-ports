@@ -1,5 +1,5 @@
 PORTNAME=	socketw
-DISTVERSION=	3.10.27
+DISTVERSION=	3.11.0
 CATEGORIES=	net
 
 MAINTAINER=	monwarez@mailoo.org
