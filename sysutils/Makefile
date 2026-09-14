@@ -1628,6 +1628,7 @@
     SUBDIR += vm-bhyve
     SUBDIR += vm-bhyve-devel
     SUBDIR += vm-bhyve-zcomp
+    SUBDIR += vm-tui
     SUBDIR += vmdktool
     SUBDIR += vmstated
     SUBDIR += vmtouch
