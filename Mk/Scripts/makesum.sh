@@ -7,8 +7,8 @@ set -o pipefail
 
 . "${dp_SCRIPTSDIR}/functions.sh"
 
-validate_env dp_CHECKSUM_ALGORITHMS dp_CKSUMFILES dp_DISTDIR dp_DISTINFO_FILE \
-	dp_ECHO_MSG
+validate_env dp_CHECKSUM_ALGORITHMS dp_CKSUMFILES_FILE dp_DISTDIR \
+	dp_DISTINFO_FILE dp_ECHO_MSG
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_MAKESUM}" ] && set -x
 
@@ -31,7 +31,7 @@ if [ -f "${dp_DISTINFO_FILE}" ] && grep -q "^TIMESTAMP " ${dp_DISTINFO_FILE}; th
 	grep -v "^TIMESTAMP " ${dp_DISTINFO_FILE} > ${DISTINFO_OLD} || true
 fi
 
-for file in ${dp_CKSUMFILES}; do
+while read -r file ; do
 	for alg in ${dp_CHECKSUM_ALGORITHMS}; do
 		eval "alg_executable=\$dp_$alg"
 
@@ -40,7 +40,7 @@ for file in ${dp_CKSUMFILES}; do
 		fi
 	done
 	echo "SIZE ($file) = $(stat -f %z "$file")" >> "${DISTINFO_NEW}"
-done
+done < ${dp_CKSUMFILES_FILE}
 
 # Now, we generate the distinfo file in two cases:
 # - If the saved file is empty, it means there was no TIMESTAMP in it, so we

@@ -8,16 +8,21 @@ set -o pipefail
 . "${dp_SCRIPTSDIR}/functions.sh"
 
 validate_env dp_DEVELOPER dp_DISABLE_SIZE dp_DISTDIR dp_DISTINFO_FILE \
-	dp_DIST_SUBDIR dp_ECHO_MSG dp_FETCH_AFTER_ARGS dp_FETCH_BEFORE_ARGS \
-	dp_FETCH_CMD dp_FETCH_ENV dp_FORCE_FETCH_ALL dp_FORCE_FETCH_LIST \
-	dp_MASTER_SITE_BACKUP dp_MASTER_SITE_OVERRIDE dp_MASTER_SORT_AWK \
-	dp_NO_CHECKSUM dp_RANDOMIZE_SITES dp_SITE_FLAVOR dp_TARGET
+	dp_DIST_SUBDIR dp_DISTFILES_FILE dp_ECHO_MSG dp_FETCH_AFTER_ARGS \
+	dp_FETCH_BEFORE_ARGS dp_FETCH_CMD dp_FETCH_ENV dp_FORCE_FETCH_ALL \
+	dp_FORCE_FETCH_LIST dp_MASTER_SITE_BACKUP dp_MASTER_SITES_FILE \
+	dp_MASTER_SITE_OVERRIDE dp_MASTER_SORT_AWK dp_NO_CHECKSUM \
+	dp_RANDOMIZE_SITES dp_SITE_FLAVOR dp_TARGET
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DO_FETCH}" ] && set -x
 
 set -u
 
 case ${dp_TARGET} in
+	makesum-fetch)
+		dp_NO_CHECKSUM=yes
+		dp_DISABLE_SIZE=yes
+		;&
 	do-fetch|makesum)
 		if [ ! -d "${dp_DISTDIR}" ]; then
 			mkdir -p "${dp_DISTDIR}"
@@ -26,7 +31,11 @@ case ${dp_TARGET} in
 		;;
 esac
 
-for _file in "${@}"; do
+. $dp_MASTER_SITES_FILE
+
+# Read the list of files to fetch from stdin, one per line, instead of
+# from the command line to workatound ARG_MAX limits.
+while IFS= read -r _file; do
 	file=${_file%%:*}
 
 	# If this files has groups
@@ -68,7 +77,7 @@ for _file in "${@}"; do
 		fi
 	fi
 	case ${dp_TARGET} in
-		do-fetch|makesum)
+		do-fetch|makesum|makesum-fetch)
 			${dp_ECHO_MSG} "=> $file doesn't seem to exist in ${dp_DISTDIR}."
 			if [ ! -w "${dp_DISTDIR}" ]; then
 				${dp_ECHO_MSG} "=> ${dp_DISTDIR} is not writable by you; cannot fetch."
@@ -87,7 +96,7 @@ for _file in "${@}"; do
 			__MASTER_SITES_TMP="${__MASTER_SITES_TMP} ${___MASTER_SITES_TMP}"
 		else
 			case ${dp_TARGET} in
-				do-fetch|makesum)
+				do-fetch|makesum|makesum-fetch)
 					if [ -n "${dp_DEVELOPER}" ]; then
 						${dp_ECHO_MSG} "===> /!\\ Error /!\\"
 					else
@@ -147,7 +156,7 @@ for _file in "${@}"; do
 		fi
 		_fetch_cmd="${_fetch_cmd} ${args} ${dp_FETCH_AFTER_ARGS}"
 		case ${dp_TARGET} in
-			do-fetch|makesum)
+			do-fetch|makesum|makesum-fetch)
 				${dp_ECHO_MSG} "=> Attempting to fetch ${site}${file}"
 				if env -S "${dp_FETCH_ENV}" ${_fetch_cmd}; then
 					actual_size=$(stat -f %z "${file}")
@@ -171,7 +180,7 @@ for _file in "${@}"; do
 		esac
 	done
 	case ${dp_TARGET} in
-		do-fetch|makesum)
+		do-fetch|makesum|makesum-fetch)
 			${dp_ECHO_MSG} "=> Couldn't fetch it - please try to retrieve this"
 			${dp_ECHO_MSG} "=> port manually into ${dp_DISTDIR} and try again."
 			exit 1
@@ -180,5 +189,5 @@ for _file in "${@}"; do
 			echo "echo \"${file}\" not fetched; }"
 			;;
 	esac
-done
+done < $dp_DISTFILES_FILE
 

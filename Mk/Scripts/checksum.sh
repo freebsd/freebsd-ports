@@ -7,9 +7,9 @@ set -o pipefail
 
 . "${dp_SCRIPTSDIR}/functions.sh"
 
-validate_env dp_CHECKSUM_ALGORITHMS dp_CURDIR dp_DISTDIR dp_DISTINFO_FILE \
-	dp_DIST_SUBDIR dp_ECHO_MSG dp_FETCH_REGET dp_MAKE dp_MAKEFLAGS \
-	dp_DISABLE_SIZE dp_NO_CHECKSUM
+validate_env dp_CHECKSUM_ALGORITHMS dp_CKSUMFILES_FILE dp_CURDIR dp_DISTDIR \
+	dp_DISTINFO_FILE dp_DIST_SUBDIR dp_ECHO_MSG dp_FETCH_REGET dp_MAKE \
+	dp_MAKEFLAGS dp_DISABLE_SIZE dp_NO_CHECKSUM
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_CHECKSUM}" ] && set -x
 
@@ -21,7 +21,7 @@ if [ -f "${dp_DISTINFO_FILE}" ]; then
 	cd "${dp_DISTDIR}"
 	OK=
 	refetchlist=
-	for file in "${@}"; do
+	while read -r file ; do
 		ignored="true"
 		for alg in ${dp_CHECKSUM_ALGORITHMS}; do
 			ignore="false"
@@ -69,7 +69,7 @@ if [ -f "${dp_DISTINFO_FILE}" ]; then
 			${dp_ECHO_MSG} "=> No suitable checksum found for $file."
 			OK=false
 		fi
-	done
+	done < ${dp_CKSUMFILES_FILE}
 
 	if [ "${OK:=true}" = "retry" ] && [ "${dp_FETCH_REGET}" -gt 0 ]; then
 		${dp_ECHO_MSG} "===>  Refetch for ${dp_FETCH_REGET} more times files: $refetchlist"

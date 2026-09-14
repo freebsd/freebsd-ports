@@ -3111,57 +3111,50 @@ _DO_FETCH_ENV+= dp_DEVELOPER=
 
 # Fetch
 
-.    if !target(do-fetch)
-do-fetch:
-.      if !empty(DISTFILES)
-	@${SETENV} \
-			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
-			dp_SITE_FLAVOR=MASTER \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:C/.*/'&'/}
-.      endif
-.      if defined(PATCHFILES) && !empty(PATCHFILES)
-	@${SETENV} \
-			${_DO_FETCH_ENV} ${_PATCH_SITES_ENV} \
-			dp_SITE_FLAVOR=PATCH \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${PATCHFILES:C/:-p[0-9]//:C/.*/'&'/}
-.      endif
-.    endif
-#
-# Prints out a list of files to fetch (useful to do a batch fetch)
+_MASTER_SITES_FILE=${WRKDIR}/.master_sites
+_DISTFILES_FILE=${WRKDIR}/.distfiles
+_PATCH_SITES_FILE=${WRKDIR}/.patch_sites
+_PATCHFILES_FILE=${WRKDIR}/.patchfiles
 
-.    if !target(fetch-list)
-fetch-list:
-.      if !empty(DISTFILES)
+# do-fetch does the fetching
+# fetch-list Prints out a list of files to fetch (useful to do a batch fetch)
+# fetch-url-list-int Used by fetch-urlall-list and fetch-url-list
+.    for _target in do-fetch fetch-list fetch-url-list-int makesum-fetch
+.      if !target(${_target})
+${_target}:
+	@${MKDIR} ${WRKDIR}
+.        if !empty(DISTFILES)
+	@${RM} ${_MASTER_SITES_FILE} ${_DISTFILES_FILE}
+.          for site in ${_MASTER_SITES_ENV}
+	@printf '%s\n' "${site}" >> ${_MASTER_SITES_FILE}
+.          endfor
+.          for file in ${DISTFILES}
+	@printf '%s\n' "${file}" >> ${_DISTFILES_FILE}
+.          endfor
 	@${SETENV} \
-			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
+			${_DO_FETCH_ENV} \
+			dp_MASTER_SITES_FILE=${_MASTER_SITES_FILE} \
+			dp_DISTFILES_FILE=${_DISTFILES_FILE} \
 			dp_SITE_FLAVOR=MASTER \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:C/.*/'&'/}
-.      endif
-.      if defined(PATCHFILES) && !empty(PATCHFILES)
+			${SH} ${SCRIPTSDIR}/do-fetch.sh
+.        endif
+.        if defined(PATCHFILES) && !empty(PATCHFILES)
+	@${RM} ${_PATCH_SITES_FILE} ${_PATCHFILES_FILE}
+.          for site in ${_PATCH_SITES_ENV}
+	@printf '%s\n' "${site}" >> ${_PATCH_SITES_FILE}
+.          endfor
+.          for file in ${PATCHFILES}
+	@printf '%s\n' "${file}" >> ${_PATCHFILES_FILE}
+.          endfor
 	@${SETENV} \
-			${_DO_FETCH_ENV} ${_PATCH_SITES_ENV} \
+			${_DO_FETCH_ENV} \
+			dp_PATCH_SITES_FILE=${_PATCH_SITES_FILE} \
+			dp_PATCHFILES_FILE=${_PATCHFILES_FILE} \
 			dp_SITE_FLAVOR=PATCH \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${PATCHFILES:C/:-p[0-9]//:C/.*/'&'/}
+			${SH} ${SCRIPTSDIR}/do-fetch.sh
+.        endif
 .      endif
-.    endif
-
-# Used by fetch-urlall-list and fetch-url-list
-
-.    if !target(fetch-url-list-int)
-fetch-url-list-int:
-.      if !empty(DISTFILES)
-	@${SETENV} \
-			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
-			dp_SITE_FLAVOR=MASTER \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:C/.*/'&'/}
-.      endif
-.      if defined(PATCHFILES) && !empty(PATCHFILES)
-	@${SETENV} \
-			${_DO_FETCH_ENV} ${_PATCH_SITES_ENV} \
-			dp_SITE_FLAVOR=PATCH \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${PATCHFILES:C/:-p[0-9]//:C/.*/'&'/}
-.      endif
-.    endif
+.    endfor
 
 .    if !target(fetch-url-recursive-list-int)
 fetch-url-recursive-list-int: fetch-url-list-int
@@ -3936,6 +3929,7 @@ _CHECKSUM_INIT_ENV= \
 	dp_SHA256=${SHA256}
 
 .    if !target(makesum)
+_CKSUMFILES_FILE=${WRKDIR}/.cksumfiles
 # Some port change the options with OPTIONS_*_FORCE when make(makesum) to be
 # able to add all distfiles in one go.
 # For this to work, we need to call the do-fetch script directly here so that
@@ -3943,28 +3937,35 @@ _CHECKSUM_INIT_ENV= \
 # As we're fetching new distfiles, that are not in the distinfo file, disable
 # checksum and sizes checks.
 makesum: check-sanity
-	@cd ${.CURDIR} && ${MAKE} fetch NO_CHECKSUM=yes \
-			DISABLE_SIZE=yes DISTFILES="${DISTFILES}" \
-			MASTER_SITES="${MASTER_SITES}" \
-			MASTER_SITE_SUBDIR="${MASTER_SITE_SUBDIR}" \
-			PATCH_SITES="${PATCH_SITES}"
+	@cd ${.CURDIR} && ${MAKE} makesum-fetch
+	@${MKDIR} ${WRKDIR}
+	@${RM} ${_CKSUMFILES_FILE}
+.          for file in ${_CKSUMFILES}
+	@printf '%s\n' "${file}" >> ${_CKSUMFILES_FILE}
+.          endfor
 	@${SETENV} \
 			${_CHECKSUM_INIT_ENV} \
 			dp_CHECKSUM_ALGORITHMS='${CHECKSUM_ALGORITHMS:tu}' \
-			dp_CKSUMFILES='${_CKSUMFILES}' \
+			dp_CKSUMFILES_FILE='${_CKSUMFILES_FILE}' \
 			dp_DISTDIR='${DISTDIR}' \
 			dp_DISTINFO_FILE='${DISTINFO_FILE}' \
 			dp_ECHO_MSG='${ECHO_MSG}' \
 			dp_SCRIPTSDIR='${SCRIPTSDIR}' \
-			${SH} ${SCRIPTSDIR}/makesum.sh ${DISTFILES:C/.*/'&'/}
+			${SH} ${SCRIPTSDIR}/makesum.sh
 .    endif
 
 .    if !target(checksum)
 checksum: fetch
 .      if !empty(_CKSUMFILES) && !defined(NO_CHECKSUM)
+	@${MKDIR} ${WRKDIR}
+	@${RM} ${_CKSUMFILES_FILE}
+.          for file in ${_CKSUMFILES}
+	@printf '%s\n' "${file}" >> ${_CKSUMFILES_FILE}
+.          endfor
 	@${SETENV} \
 			${_CHECKSUM_INIT_ENV} \
 			dp_CHECKSUM_ALGORITHMS='${CHECKSUM_ALGORITHMS:tu}' \
+			dp_CKSUMFILES_FILE='${_CKSUMFILES_FILE}' \
 			dp_CURDIR='${.CURDIR}' \
 			dp_DISTDIR='${DISTDIR}' \
 			dp_DISTINFO_FILE='${DISTINFO_FILE}' \
@@ -3976,7 +3977,7 @@ checksum: fetch
 			dp_SCRIPTSDIR='${SCRIPTSDIR}' \
 			dp_DISABLE_SIZE='${DISABLE_SIZE}' \
 			dp_NO_CHECKSUM='${NO_CHECKSUM}' \
-			${SH} ${SCRIPTSDIR}/checksum.sh ${_CKSUMFILES:C/.*/'&'/}
+			${SH} ${SCRIPTSDIR}/checksum.sh
 .      endif
 .    endif
 
