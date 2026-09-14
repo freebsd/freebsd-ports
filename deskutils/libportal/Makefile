@@ -1,5 +1,5 @@
 PORTNAME=	libportal
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org
