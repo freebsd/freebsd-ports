@@ -1,5 +1,4 @@
 bin/anki
-share/man/man1/anki.1.gz
 %%DATADIR%%/_aqt/colors.py
 %%DATADIR%%/_aqt/data/qt/icons.qrc
 %%DATADIR%%/_aqt/data/qt/icons/anki.png
@@ -243,7 +242,6 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/_aqt/forms/browser_qt6.py
 %%DATADIR%%/_aqt/forms/browserdisp_qt6.py
 %%DATADIR%%/_aqt/forms/browseropts_qt6.py
-%%DATADIR%%/_aqt/forms/changemap_qt6.py
 %%DATADIR%%/_aqt/forms/changemodel_qt6.py
 %%DATADIR%%/_aqt/forms/clayout_top_qt6.py
 %%DATADIR%%/_aqt/forms/customstudy_qt6.py
@@ -259,7 +257,6 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/_aqt/forms/findreplace_qt6.py
 %%DATADIR%%/_aqt/forms/forget_qt6.py
 %%DATADIR%%/_aqt/forms/getaddons_qt6.py
-%%DATADIR%%/_aqt/forms/importing_qt6.py
 %%DATADIR%%/_aqt/forms/main_qt6.py
 %%DATADIR%%/_aqt/forms/modelopts_qt6.py
 %%DATADIR%%/_aqt/forms/models_qt6.py
@@ -286,8 +283,8 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/anki/_rsbridge.pyi
 %%DATADIR%%/anki/_rsbridge.so
 %%DATADIR%%/anki/_vendor/stringcase.py
-%%DATADIR%%/anki/ankihub_pb2.py
 %%DATADIR%%/anki/ankidroid_pb2.py
+%%DATADIR%%/anki/ankihub_pb2.py
 %%DATADIR%%/anki/ankiweb_pb2.py
 %%DATADIR%%/anki/backend_pb2.py
 %%DATADIR%%/anki/browser.py
@@ -319,13 +316,7 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/anki/i18n_pb2.py
 %%DATADIR%%/anki/image_occlusion_pb2.py
 %%DATADIR%%/anki/import_export_pb2.py
-%%DATADIR%%/anki/importing/__init__.py
-%%DATADIR%%/anki/importing/anki2.py
-%%DATADIR%%/anki/importing/apkg.py
-%%DATADIR%%/anki/importing/base.py
-%%DATADIR%%/anki/importing/csvfile.py
-%%DATADIR%%/anki/importing/mnemo.py
-%%DATADIR%%/anki/importing/noteimp.py
+%%DATADIR%%/anki/importing.py
 %%DATADIR%%/anki/lang.py
 %%DATADIR%%/anki/latex.py
 %%DATADIR%%/anki/links_pb2.py
@@ -399,7 +390,6 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/editor_legacy.py
 %%DATADIR%%/aqt/emptycards.py
 %%DATADIR%%/aqt/errors.py
-%%DATADIR%%/aqt/exporting.py
 %%DATADIR%%/aqt/fields.py
 %%DATADIR%%/aqt/filtered_deck.py
 %%DATADIR%%/aqt/flags.py
@@ -413,7 +403,6 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/forms/browser.py
 %%DATADIR%%/aqt/forms/browserdisp.py
 %%DATADIR%%/aqt/forms/browseropts.py
-%%DATADIR%%/aqt/forms/changemap.py
 %%DATADIR%%/aqt/forms/changemodel.py
 %%DATADIR%%/aqt/forms/clayout_top.py
 %%DATADIR%%/aqt/forms/customstudy.py
@@ -429,7 +418,6 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/forms/findreplace.py
 %%DATADIR%%/aqt/forms/forget.py
 %%DATADIR%%/aqt/forms/getaddons.py
-%%DATADIR%%/aqt/forms/importing.py
 %%DATADIR%%/aqt/forms/main.py
 %%DATADIR%%/aqt/forms/modelopts.py
 %%DATADIR%%/aqt/forms/models.py
@@ -451,7 +439,6 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/import_export/exporting.py
 %%DATADIR%%/aqt/import_export/import_dialog.py
 %%DATADIR%%/aqt/import_export/importing.py
-%%DATADIR%%/aqt/importing.py
 %%DATADIR%%/aqt/legacy.py
 %%DATADIR%%/aqt/log.py
 %%DATADIR%%/aqt/main.py
@@ -501,5 +488,6 @@ share/man/man1/anki.1.gz
 %%DATADIR%%/aqt/widgetgallery.py
 %%DATADIR%%/aqt/winpaths.py
 share/applications/anki.desktop
+share/man/man1/anki.1.gz
 share/pixmaps/anki.png
 share/pixmaps/anki.xpm
