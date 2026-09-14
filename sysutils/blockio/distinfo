@@ -1,5 +1,5 @@
-TIMESTAMP = 1788858247
-SHA256 (go/sysutils_blockio/blockio-v1.2.0/v1.2.0.mod) = 2e0a0b3ae4bbd3ff1829a18eb6482b0458e55e696b69bc6846ad231557a9384d
-SIZE (go/sysutils_blockio/blockio-v1.2.0/v1.2.0.mod) = 1593
-SHA256 (go/sysutils_blockio/blockio-v1.2.0/v1.2.0.zip) = e12b1fb23c5d989ecc3221fbc789e12cb8f8f6f149c5ebfa0de963adfdafdfcf
-SIZE (go/sysutils_blockio/blockio-v1.2.0/v1.2.0.zip) = 146948
+TIMESTAMP = 1789366266
+SHA256 (go/sysutils_blockio/blockio-v1.3.0/v1.3.0.mod) = d57f64fa04d17555059b2326117ee948120c73a9e7118ebd7abfd204ed061d3d
+SIZE (go/sysutils_blockio/blockio-v1.3.0/v1.3.0.mod) = 1581
+SHA256 (go/sysutils_blockio/blockio-v1.3.0/v1.3.0.zip) = 34d0dc73672632e6c4084427daba7130a6168dfec7d37c6dd23e58113e3cd732
+SIZE (go/sysutils_blockio/blockio-v1.3.0/v1.3.0.zip) = 160974
