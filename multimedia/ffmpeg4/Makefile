@@ -1,6 +1,5 @@
 PORTNAME=	ffmpeg
-PORTVERSION=	4.4.7
-PORTREVISION=	1
+PORTVERSION=	4.4.8
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
 PKGNAMESUFFIX=	4
@@ -108,127 +107,127 @@ PORTSCOUT=	limit:^4\.
 PREFIX=		${LOCALBASE}/${PKGBASE} # avoid conflict with the default
 .endif
 
-OPTIONS_DEFINE= DOCS
+OPTIONS_DEFINE=	DOCS
 # aom
-LIB_DEPENDS+=           libaom.so:multimedia/aom
-CONFIGURE_ARGS+=        --enable-libaom
+LIB_DEPENDS+=		libaom.so:multimedia/aom
+CONFIGURE_ARGS+=	--enable-libaom
 
 # asm support
-CONFIGURE_ARGS+=        --enable-asm
+CONFIGURE_ARGS+=	--enable-asm
 
 # ass
-LIB_DEPENDS+=           libass.so:multimedia/libass
-CONFIGURE_ARGS+=        --enable-libass
+LIB_DEPENDS+=		libass.so:multimedia/libass
+CONFIGURE_ARGS+=	--enable-libass
 
 # dav1d
-LIB_DEPENDS+=           libdav1d.so:multimedia/dav1d
-CONFIGURE_ARGS+=        --enable-libdav1d
+LIB_DEPENDS+=		libdav1d.so:multimedia/dav1d
+CONFIGURE_ARGS+=	--enable-libdav1d
 
 # docs
-DOCS_BUILD_DEPENDS=     texi2html:textproc/texi2html
-DOCS_CONFIGURE_ENABLE=  htmlpages
-DOCS_BINARY_ALIAS=      makeinfo=${FALSE} # force texi2html
+DOCS_BUILD_DEPENDS=	texi2html:textproc/texi2html
+DOCS_CONFIGURE_ENABLE=	htmlpages
+DOCS_BINARY_ALIAS=	makeinfo=${FALSE} # force texi2html
 
 # drm
-LIB_DEPENDS+=           libdrm.so:graphics/libdrm
-CONFIGURE_ARGS+=        --enable-libdrm
+LIB_DEPENDS+=		libdrm.so:graphics/libdrm
+CONFIGURE_ARGS+=	--enable-libdrm
 
 # fontconfig
-LIB_DEPENDS+=           libfontconfig.so:x11-fonts/fontconfig
-CONFIGURE_ARGS+=        --enable-fontconfig
+LIB_DEPENDS+=		libfontconfig.so:x11-fonts/fontconfig
+CONFIGURE_ARGS+=	--enable-fontconfig
 
 # freetype
-LIB_DEPENDS+=           libfreetype.so:print/freetype2
-CONFIGURE_ARGS+=        --enable-libfreetype
+LIB_DEPENDS+=		libfreetype.so:print/freetype2
+CONFIGURE_ARGS+=	--enable-libfreetype
 
 # frei0r
-BUILD_DEPENDS+=         ${LOCALBASE}/include/frei0r.h:graphics/frei0r
-CONFIGURE_ARGS+=        --enable-frei0r
+BUILD_DEPENDS+=		${LOCALBASE}/include/frei0r.h:graphics/frei0r
+CONFIGURE_ARGS+=	--enable-frei0r
 
 # gnutls
-LIB_DEPENDS+=           libgnutls.so:security/gnutls
-CONFIGURE_ARGS+=        --enable-gnutls
+LIB_DEPENDS+=		libgnutls.so:security/gnutls
+CONFIGURE_ARGS+=	--enable-gnutls
 
 # gmp
-LIB_DEPENDS+=           libgmp.so:math/gmp
-CONFIGURE_ARGS+=        --enable-gmp
+LIB_DEPENDS+=		libgmp.so:math/gmp
+CONFIGURE_ARGS+=	--enable-gmp
 
 # iconv
-USES+=                  iconv
-CONFIGURE_ARGS+=        --enable-iconv
+USES+=			iconv
+CONFIGURE_ARGS+=	--enable-iconv
 
 # lame
-LIB_DEPENDS+=           libmp3lame.so:audio/lame
-CONFIGURE_ARGS+=        --enable-libmp3lame
+LIB_DEPENDS+=		libmp3lame.so:audio/lame
+CONFIGURE_ARGS+=	--enable-libmp3lame
 
 # libxml
-USES+=                  gnome
-USE_GNOME+=             libxml2
-CONFIGURE_ARGS+=        --enable-libxml2
+USES+=			gnome
+USE_GNOME+=		libxml2
+CONFIGURE_ARGS+=	--enable-libxml2
 
 # libv4l
-BUILD_DEPENDS+=         v4l_compat>0:multimedia/v4l_compat
-LIB_DEPENDS+=           libv4l2.so:multimedia/libv4l
-CONFIGURE_ARGS+=        --enable-libv4l2
+BUILD_DEPENDS+=		v4l_compat>0:multimedia/v4l_compat
+LIB_DEPENDS+=		libv4l2.so:multimedia/libv4l
+CONFIGURE_ARGS+=	--enable-libv4l2
 
 # network
-CONFIGURE_ARGS+=        --enable-network
+CONFIGURE_ARGS+=	--enable-network
 
 # optimizations
-CONFIGURE_ARGS+=        --enable-optimizations
+CONFIGURE_ARGS+=	--enable-optimizations
 
 # opus
-LIB_DEPENDS+=           libopus.so:audio/opus
-CONFIGURE_ARGS+=        --enable-libopus
+LIB_DEPENDS+=		libopus.so:audio/opus
+CONFIGURE_ARGS+=	--enable-libopus
 
 # rtcpu
-CONFIGURE_ARGS+=        --enable-runtime-cpudetect
+CONFIGURE_ARGS+=	--enable-runtime-cpudetect
 
 # svt-av1
-LIB_DEPENDS+=           libSvtAv1Enc.so:multimedia/svt-av1
-CONFIGURE_ARGS+=        --enable-libsvtav1
+LIB_DEPENDS+=		libSvtAv1Enc.so:multimedia/svt-av1
+CONFIGURE_ARGS+=	--enable-libsvtav1
 
 # vaapi
-LIB_DEPENDS+=           libva.so:multimedia/libva
-CONFIGURE_ARGS+=        --enable-vaapi
+LIB_DEPENDS+=		libva.so:multimedia/libva
+CONFIGURE_ARGS+=	--enable-vaapi
 
 # vdpau
-USES+=                  xorg
-USE_XORG+=              x11
-LIB_DEPENDS+=           libvdpau.so:multimedia/libvdpau
-CONFIGURE_ARGS+=        --enable-vdpau
+USES+=			xorg
+USE_XORG+=		x11
+LIB_DEPENDS+=		libvdpau.so:multimedia/libvdpau
+CONFIGURE_ARGS+=	--enable-vdpau
 
 # vmaf
-LIB_DEPENDS+=           libvmaf.so:multimedia/vmaf
-CONFIGURE_ARGS+=        --enable-libvmaf
+LIB_DEPENDS+=		libvmaf.so:multimedia/vmaf
+CONFIGURE_ARGS+=	--enable-libvmaf
 
 # vorbis
-LIB_DEPENDS+=           libvorbisenc.so:audio/libvorbis
-CONFIGURE_ARGS+=        --enable-libvorbis
+LIB_DEPENDS+=		libvorbisenc.so:audio/libvorbis
+CONFIGURE_ARGS+=	--enable-libvorbis
 
 # vp8
-LIB_DEPENDS+=           libvpx.so:multimedia/libvpx
-CONFIGURE_ARGS+=        --enable-libvpx
+LIB_DEPENDS+=		libvpx.so:multimedia/libvpx
+CONFIGURE_ARGS+=	--enable-libvpx
 
 # webp
-LIB_DEPENDS+=           libwebp.so:graphics/webp
-CONFIGURE_ARGS+=        --enable-libwebp
+LIB_DEPENDS+=		libwebp.so:graphics/webp
+CONFIGURE_ARGS+=	--enable-libwebp
 
 # x264
-LIB_DEPENDS+=           libx264.so:multimedia/libx264
-CONFIGURE_ARGS+=        --enable-libx264
+LIB_DEPENDS+=		libx264.so:multimedia/libx264
+CONFIGURE_ARGS+=	--enable-libx264
 
 # x265
-LIB_DEPENDS+=           libx265.so:multimedia/x265
-CONFIGURE_ARGS+=        --enable-libx265
+LIB_DEPENDS+=		libx265.so:multimedia/x265
+CONFIGURE_ARGS+=	--enable-libx265
 
 # xcb
-#USES+=                 xorg
-USE_XORG+=              xcb
-CONFIGURE_ARGS+=        --enable-libxcb
+#USES+=			xorg
+USE_XORG+=		xcb
+CONFIGURE_ARGS+=	--enable-libxcb
 
 # License knobs
-CONFIGURE_ARGS+=        --enable-version3
+CONFIGURE_ARGS+=	--enable-version3
 
 INSTALL_TARGET=	install-progs install-doc install-data \
 		install-libs install-headers install-examples
