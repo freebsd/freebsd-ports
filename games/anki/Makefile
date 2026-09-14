@@ -1,6 +1,5 @@
 PORTNAME=	anki
-DISTVERSION=	26.08.1
-PORTREVISION=	2
+DISTVERSION=	26.09
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 
@@ -40,13 +39,13 @@ RUN_DEPENDS=	lame:audio/lame \
 		${PYTHON_PKGNAMEPREFIX}waitress>=2.0.0:www/py-waitress@${PY_FLAVOR}
 
 # USES=ssl is required for the compilation of the Rust code
-USES=		cargo desktop-file-utils ninja nodejs:build npm:yarn1,build pyqt:6 \
+USES=		cargo desktop-file-utils ninja nodejs:build npm:yarn4 pyqt:6 \
 	        python shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ankitects
 # Translation files
-GH_TUPLE=	ankitects:anki-core-i18n:63e6bbb:ftlrslib \
-		ankitects:anki-desktop-ftl:e3200e9:ftlextra
+GH_TUPLE=	ankitects:anki-core-i18n:6fddf1a:ftlrslib \
+		ankitects:anki-desktop-ftl:3303657:ftlextra
 
 USE_PYQT=	pyqt6 sip:build webengine
 
@@ -63,13 +62,12 @@ CARGO_TARGET_DIR=	${WRKSRC}/out/rust
 MAKE_ENV+=	NODE_BINARY=${LOCALBASE}/bin/node \
 		NODE_OPTIONS=--max-old-space-size=1024 \
 		OFFLINE_BUILD=1 \
+		PREINSTALLED_YARN=1 \
 		PROTOC_BINARY=${LOCALBASE}/bin/protoc \
 		PYTHON_BINARY=${PYTHON_CMD} \
 		UV_BINARY=${LOCALBASE}/bin/uv \
 		UV_NO_BUILD_ISOLATION=1 \
 		UV_OFFLINE=1 \
-		YARN_BINARY=${LOCALBASE}/bin/yarn \
-		YARN_CACHE_FOLDER=${_MY_YARNCACHE} \
 		out=${WRKSRC}/out
 # If RELEASE is unset the "runner" build system omits the
 # "--release" flag for cargo(1).
@@ -90,7 +88,7 @@ MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH=	39e4b0b4
+_MY_BUILDHASH=	e62e7739
 # Remove ${CARGO_BUILD_TARGET} from ${CARGO_ENV} to avoid problems with
 # hardcoded paths as the "runner" build system expects its components
 # in ${WRKSRC}/out/rust/debug
@@ -112,8 +110,9 @@ post-patch:
 
 pre-configure:
 	# Create paths for the Python pseudo venv and link some binaries to it.
-	${MKDIR} ${WRKSRC}/out/pyenv/bin
+	${MKDIR} ${WRKSRC}/out/pyenv/bin ${WRKSRC}/out/extracted/node/bin
 	${LN} -s ${PYTHON_CMD} ${WRKSRC}/out/pyenv/bin/python
+	${LN} -s ${WRKDIR}/.bin/yarn ${WRKSRC}/out/extracted/node/bin/yarn
 	# Also move NodeJS modules to the pseudo venv to save some build time
 	${MV} -i ${WRKSRC}/node_modules ${WRKSRC}/out/node_modules
 
