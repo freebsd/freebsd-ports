@@ -8,8 +8,10 @@ MASTER_SITES=	SF/corefonts/the%20fonts/final:group1 \
 		SF/mscorefonts2/cabs:group3
 DISTFILES=	andale32.exe:group1 arialb32.exe:group1 comic32.exe:group1 \
 		courie32.exe:group1 georgi32.exe:group1 impact32.exe:group1 \
-		verdan32.exe:group1 webdin32.exe:group1
+		verdan32.exe:group1 webdin32.exe:group1 EUupdate.EXE:group3
 DIST_SUBDIR=	${PORTNAME}
+# Do not extract CLEARTYPE distfile
+EXTRACT_ONLY=	${_DISTFILES:M*32*} ${_DISTFILES:M*CAB*} ${_DISTFILES:M*EXE*}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	TrueType core fonts for the Web
@@ -23,8 +25,6 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		fonts
 
-# Do not extract CLEARTYPE distfile
-EXTRACT_ONLY=	${_DISTFILES:M*32*} ${_DISTFILES:M*CAB*} ${_DISTFILES:M*EXE*}
 EXTRACT_AFTER_ARGS=	--include '*.[tT][tT][fF]' \
 			--no-same-owner --no-same-permissions
 
@@ -45,7 +45,6 @@ NEWVERDANA_DESC=	Install y2006 version of Verdana (broken bold N, W)
 
 CLEARTYPE_DISTFILES=	PowerPointViewer.exe:group3
 EXTRAFONTS_DISTFILES=	IELPKTH.CAB:group2
-NEWVERDANA_DISTFILES=	EUupdate.EXE:group3
 
 .include <bsd.port.options.mk>
 
@@ -56,6 +55,11 @@ pre-extract-CLEARTYPE-on:
 
 post-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${_DISTFILES:Mwebdin32*} --include *.TXT -C ${EXTRACT_WRKDIR} --no-same-owner --no-same-permissions
+.if ${PORT_OPTIONS:MNEWVERDANA}
+	${RM} ${WRKSRC}/Verdan*.TTF
+.else
+	${RM} ${WRKSRC}/Verdan*.ttf
+.endif
 	@cd ${WRKSRC} && for f in *; do \
 	    ${MV} "$$f" `${ECHO_CMD} "$$f" | ${TR} '[:upper:]' '[:lower:]'`; \
 	done
