@@ -94,12 +94,12 @@ share/speedata-publisher/sw/lua/html/styles.lua
 share/speedata-publisher/sw/lua/html/tables.lua
 share/speedata-publisher/sw/lua/html/tree.lua
 share/speedata-publisher/sw/lua/html/units.lua
-share/speedata-publisher/sw/lua/luxor.lua
 share/speedata-publisher/sw/lua/lxpath.lua
 share/speedata-publisher/sw/lua/par.lua
 share/speedata-publisher/sw/lua/publisher.lua
 share/speedata-publisher/sw/lua/publisher/attributes.lua
 share/speedata-publisher/sw/lua/publisher/colors.lua
+share/speedata-publisher/sw/lua/publisher/commandattributes.lua
 share/speedata-publisher/sw/lua/publisher/commands.lua
 share/speedata-publisher/sw/lua/publisher/dispatch.lua
 share/speedata-publisher/sw/lua/publisher/drawing.lua
@@ -109,8 +109,8 @@ share/speedata-publisher/sw/lua/publisher/grid.lua
 share/speedata-publisher/sw/lua/publisher/images.lua
 share/speedata-publisher/sw/lua/publisher/language.lua
 share/speedata-publisher/sw/lua/publisher/layout_functions.lua
-share/speedata-publisher/sw/lua/publisher/layout_functions_lxpath.lua
 share/speedata-publisher/sw/lua/publisher/links.lua
+share/speedata-publisher/sw/lua/publisher/math.lua
 share/speedata-publisher/sw/lua/publisher/metadata.lua
 share/speedata-publisher/sw/lua/publisher/metapost.lua
 share/speedata-publisher/sw/lua/publisher/nodes.lua
@@ -119,6 +119,7 @@ share/speedata-publisher/sw/lua/publisher/pages.lua
 share/speedata-publisher/sw/lua/publisher/spinit.lua
 share/speedata-publisher/sw/lua/publisher/structure_tree.lua
 share/speedata-publisher/sw/lua/publisher/tabular.lua
+share/speedata-publisher/sw/lua/publisher/usercallbacks.lua
 share/speedata-publisher/sw/lua/publisher/utilities.lua
 share/speedata-publisher/sw/lua/publisher/xml_helpers.lua
 share/speedata-publisher/sw/lua/sampler.lua
@@ -129,7 +130,6 @@ share/speedata-publisher/sw/lua/socket_url.lua
 share/speedata-publisher/sw/lua/spotcolors.lua
 share/speedata-publisher/sw/lua/uuid.lua
 share/speedata-publisher/sw/lua/xmlbuilder.lua
-share/speedata-publisher/sw/lua/xpath.lua
 share/speedata-publisher/sw/metapost/csscolors.mp
 share/speedata-publisher/sw/metapost/plain.mp
 share/speedata-publisher/sw/metapost/sp.mp
