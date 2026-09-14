@@ -1,6 +1,6 @@
 PORTNAME=	pypa-docs-theme
 DISTVERSION=	g20180622
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,6 +10,9 @@ WWW=		https://github.com/pypa/pypa-docs-theme
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Upstream archived the repo on Mar 16, 2024
+EXPIRATION_DATE=2026-10-15
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-docs-theme>=0:textproc/py-python-docs-theme@${PY_FLAVOR}
 
