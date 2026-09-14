@@ -1,5 +1,5 @@
 PORTNAME=	kafka
-DISTVERSION=	4.3.0
+DISTVERSION=	4.3.1
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}_2.13-${DISTVERSION}
@@ -70,11 +70,11 @@ KAFKA_CONFIGS=	broker.properties controller.properties \
 		consumer.properties log4j2.yaml producer.properties \
 		server.properties tools-log4j2.yaml trogdor.conf
 
-PLIST_SUB=	KAFKA_DBDIR=${KAFKA_DBDIR} \
+PLIST_SUB=	DISTVERSION=${DISTVERSION} \
+		KAFKA_DBDIR=${KAFKA_DBDIR} \
 		KAFKA_GROUP=${KAFKA_GROUP} \
 		KAFKA_LOGDIR=${KAFKA_LOGDIR} \
-		KAFKA_USER=${KAFKA_USER} \
-		DISTVERSION=${DISTVERSION}
+		KAFKA_USER=${KAFKA_USER}
 
 OPTIONS_DEFINE=	DOCS
 
