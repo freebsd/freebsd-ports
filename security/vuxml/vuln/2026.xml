@@ -1,5 +1,5 @@
   <vuln vid="3a38fdda-b05a-11f1-9369-b42e991fc52e">
-    <topic>cjose: Use of Hard-coded Cryptographic Key</topic>
+    <topic>cjose -- Use of Hard-coded Cryptographic Key</topic>
     <affects>
     <package>
 	<name>cjose</name>
@@ -50,7 +50,7 @@
   </vuln>
 
   <vuln vid="35b3a492-b05a-11f1-9369-b42e991fc52e">
-    <topic>cjose: Heap-based Buffer Overflow</topic>
+    <topic>cjose -- Heap-based Buffer Overflow</topic>
     <affects>
     <package>
 	<name>cjose</name>
