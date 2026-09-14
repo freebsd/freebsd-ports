@@ -1,4 +1,4 @@
-commit 7503d73295e6a6fd84c35ffabce08e3d2f3b56de
+commit 1c7271a2ab154784620a34030df1fe49fd1fd917
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
     catch wasm32-wasi target naming in FreeBSD
@@ -9,18 +9,18 @@ Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
     the compiler can find it's assorted files.
 
 diff --git build/moz.configure/toolchain.configure build/moz.configure/toolchain.configure
-index 5ca00b2b62a1..0e66441d8692 100644
+index eb1251f51ff3..d327dba3760d 100644
 --- build/moz.configure/toolchain.configure
 +++ build/moz.configure/toolchain.configure
-@@ -653,6 +653,7 @@ def same_arch_different_bits():
+@@ -655,6 +655,7 @@ def same_arch_different_bits():
  
  @imports(_from="mozshellutil", _import="quote")
  @imports(_from="mozbuild.configure.constants", _import="OS_preprocessor_checks")
 +@imports(_from="sys", _import="platform")
- def check_compiler(configure_cache, compiler, language, target, android_version):
-     info = get_compiler_info(configure_cache, compiler, language)
- 
-@@ -695,8 +696,9 @@ def check_compiler(configure_cache, compiler, language, target, android_version)
+ def check_compiler(
+     configure_cache, compiler, language, target, android_version, wrapper=[]
+ ):
+@@ -699,8 +700,9 @@ def check_compiler(
          # This makes clang define __ANDROID_API__ and use versioned library
          # directories from the NDK.
          toolchain = "%s%d" % (target.toolchain, android_version)
@@ -32,14 +32,13 @@ index 5ca00b2b62a1..0e66441d8692 100644
          toolchain = "wasm32-wasip1"
      else:
          toolchain = target.toolchain
-@@ -954,8 +956,10 @@ def compiler_wrapper(wrapper, ccache):
+@@ -1034,8 +1036,9 @@ set_config("CC_KNOWN_WRAPPER_CUSTOM", cc_known_wrapper_custom)
  
  
  @dependable
 +@imports(_from="sys", _import="platform")
  def wasm():
 -    return split_triplet("wasm32-wasi", allow_wasi=True)
-+    log.warning("USING PLATFORM %s" % platform)
 +    return split_triplet("wasm32-wasip1" if platform.startswith("freebsd") else "wasm32-wasi", allow_wasi=True)
  
  
