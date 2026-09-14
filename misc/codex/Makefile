@@ -1,7 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.153.4
-PORTREVISION=	1
+DISTVERSION=	0.154.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -137,6 +136,7 @@ post-patch:
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/command_exec.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/guardian_v2.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/hooks_list.rs \
+		${BUILD_WRKSRC}/app-server/tests/suite/v2/selected_capability_stack.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/session_end.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/thread_queue.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/thread_resume.rs \
@@ -144,6 +144,7 @@ post-patch:
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/turn_interrupt.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/turn_start.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/turn_start_zsh_fork.rs \
+		${BUILD_WRKSRC}/cli/tests/sandbox_tty.rs \
 		${BUILD_WRKSRC}/config/src/config_requirements.rs \
 		${BUILD_WRKSRC}/config/src/hooks_tests.rs \
 		${BUILD_WRKSRC}/core-plugins/src/script_attribution.rs \
@@ -163,6 +164,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/hooks.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks_mcp.rs \
 		${BUILD_WRKSRC}/core/tests/suite/interrupt_hooks.rs \
+		${BUILD_WRKSRC}/core/tests/suite/mcp_user_verification.rs \
 		${BUILD_WRKSRC}/core/tests/suite/network_approval.rs \
 		${BUILD_WRKSRC}/core/tests/suite/openai_file_mcp.rs \
 		${BUILD_WRKSRC}/core/tests/suite/subagent_notifications.rs \
@@ -190,8 +192,7 @@ post-patch:
 		${BUILD_WRKSRC}/tui/src/chatwidget/tests/exec_flow.rs \
 		${BUILD_WRKSRC}/tui/src/debug_config.rs \
 		${BUILD_WRKSRC}/tui/src/exec_command.rs \
-		${BUILD_WRKSRC}/tui/src/render/highlight.rs \
-		${BUILD_WRKSRC}/utils/pty/src/tests.rs
+		${BUILD_WRKSRC}/tui/src/render/highlight.rs
 
 post-build-COMPLETIONS-on:
 	@${MKDIR} ${WRKSRC}/completions

@@ -19,6 +19,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		allocative-0.3.6 \
 		allocative_derive-0.3.6 \
 		allocator-api2-0.2.21 \
+		alsa-0.11.0 \
+		alsa-sys-0.4.0 \
 		android_system_properties-0.1.5 \
 		annotate-snippets-0.9.2 \
 		ansi-to-tui-8.0.1 \
@@ -35,7 +37,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
 		ascii-1.1.0 \
+		asn1-rs-0.6.2 \
 		asn1-rs-0.7.1 \
+		asn1-rs-derive-0.5.1 \
 		asn1-rs-derive-0.6.0 \
 		asn1-rs-impl-0.2.0 \
 		assert-json-diff-2.0.2 \
@@ -60,6 +64,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		atomic-0.6.1 \
 		atomic-polyfill-1.0.3 \
 		atomic-waker-1.1.2 \
+		atomic_refcell-0.1.14 \
+		audio-codec-algorithms-0.8.1 \
+		audioadapter-5.0.0 \
+		audioadapter-buffers-5.2.0 \
+		audioadapter-sample-5.2.0 \
 		autocfg-1.5.0 \
 		aws-config-1.8.12 \
 		aws-credential-types-1.2.11 \
@@ -101,6 +110,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bit-set-0.8.0 \
 		bit-vec-0.6.3 \
 		bit-vec-0.8.0 \
+		bit-vec-0.9.1 \
 		bitflags-1.3.2 \
 		bitflags-2.13.1 \
 		blake2-0.10.6 \
@@ -115,11 +125,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bstr-1.12.1 \
 		bumpalo-3.19.1 \
 		by_address-1.2.1 \
+		bytecheck-0.8.3 \
+		bytecheck_derive-0.8.3 \
 		bytemuck-1.25.0 \
 		bytemuck_derive-1.10.2 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
-		bytes-1.11.1 \
+		bytes-1.12.1 \
 		bytes-utils-0.1.4 \
 		bytestring-1.5.0 \
 		bzip2-0.5.2 \
@@ -131,12 +143,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		castaway-0.2.4 \
 		cbc-0.1.2 \
 		cc-1.2.55 \
+		ccm-0.5.0 \
 		cexpr-0.6.0 \
+		cfg-expr-0.20.9 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
-		chacha20-0.10.0 \
+		chacha20-0.10.2 \
 		chacha20poly1305-0.10.1 \
 		chardetng-0.1.17 \
 		chrono-0.4.43 \
@@ -179,10 +193,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		core_maths-0.1.1 \
+		coreaudio-rs-0.14.2 \
+		cpal-0.18.2 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
 		crc-3.4.0 \
 		crc-catalog-2.4.0 \
+		crc32c-0.6.8 \
 		crc32fast-1.5.0 \
 		critical-section-1.2.0 \
 		crossbeam-channel-0.5.15 \
@@ -220,6 +237,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		darling_macro-0.23.0 \
 		darling_macro-0.24.0 \
 		dashmap-6.1.0 \
+		dasp_sample-0.11.0 \
 		data-encoding-2.10.0 \
 		dbus-0.9.10 \
 		dbus-secret-service-4.1.0 \
@@ -231,6 +249,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		deltae-0.3.2 \
 		deno_core_icudata-0.77.0 \
 		der-0.7.10 \
+		der-parser-9.0.0 \
 		der-parser-10.0.0 \
 		deranged-0.5.5 \
 		derivative-2.2.0 \
@@ -334,17 +353,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		form_urlencoded-1.2.2 \
 		fs_extra-1.3.0 \
 		fslock-0.2.1 \
-		futures-0.3.31 \
-		futures-channel-0.3.32 \
-		futures-core-0.3.32 \
-		futures-executor-0.3.32 \
+		futures-0.3.34 \
+		futures-channel-0.3.34 \
+		futures-core-0.3.34 \
+		futures-executor-0.3.34 \
 		futures-intrusive-0.5.0 \
-		futures-io-0.3.32 \
+		futures-io-0.3.34 \
 		futures-lite-2.6.1 \
-		futures-macro-0.3.32 \
-		futures-sink-0.3.32 \
-		futures-task-0.3.32 \
-		futures-util-0.3.32 \
+		futures-macro-0.3.34 \
+		futures-sink-0.3.34 \
+		futures-task-0.3.34 \
+		futures-util-0.3.34 \
 		fxhash-0.2.1 \
 		generator-0.8.8 \
 		generic-array-0.14.7 \
@@ -355,6 +374,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ghash-0.5.1 \
 		gif-0.14.1 \
 		gimli-0.32.3 \
+		gio-sys-0.22.8 \
 		gix-0.81.0 \
 		gix-actor-0.40.0 \
 		gix-archive-0.30.0 \
@@ -408,9 +428,21 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		gix-worktree-0.50.0 \
 		gix-worktree-state-0.28.0 \
 		gix-worktree-stream-0.30.0 \
+		glib-0.22.8 \
+		glib-macros-0.22.6 \
+		glib-sys-0.22.8 \
 		glob-0.3.3 \
 		globset-0.4.18 \
+		gobject-sys-0.22.6 \
 		group-0.13.0 \
+		gstreamer-0.25.3 \
+		gstreamer-app-0.25.2 \
+		gstreamer-app-sys-0.25.0 \
+		gstreamer-audio-0.25.3 \
+		gstreamer-audio-sys-0.25.3 \
+		gstreamer-base-0.25.3 \
+		gstreamer-base-sys-0.25.3 \
+		gstreamer-sys-0.25.2 \
 		gzip-header-1.0.0 \
 		h2-0.4.16 \
 		half-2.7.1 \
@@ -507,6 +539,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
+		itertools-0.15.0 \
 		itoa-1.0.17 \
 		ixdtf-0.6.4 \
 		jiff-0.2.23 \
@@ -515,6 +548,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jni-0.22.4 \
 		jni-macros-0.22.4 \
+		jni-sys-0.3.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
@@ -551,7 +585,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		local-waker-0.1.4 \
 		lock_api-0.4.14 \
 		lock_free_hashtable-0.1.4 \
-		log-0.4.29 \
+		log-0.4.34 \
 		logos-0.15.1 \
 		logos-codegen-0.15.1 \
 		logos-derive-0.15.1 \
@@ -562,11 +596,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lzma-rs-0.3.0 \
 		lzma-sys-0.1.20 \
 		mac_address-1.1.8 \
+		mach2-0.6.0 \
 		maplit-1.0.2 \
 		matchers-0.2.0 \
 		matchit-0.8.4 \
 		matchit-0.9.1 \
 		maybe-async-0.2.10 \
+		md-5-0.10.6 \
 		md-5-0.11.0 \
 		md5-0.8.0 \
 		memchr-2.8.1 \
@@ -581,13 +617,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ml-kem-0.2.3 \
 		moka-0.12.13 \
 		moxcms-0.7.11 \
+		muldiv-1.0.1 \
 		multimap-0.10.1 \
+		munge-0.4.7 \
+		munge_macro-0.4.7 \
 		native-tls-0.2.14 \
+		ndk-0.9.0 \
 		ndk-context-0.1.1 \
+		ndk-sys-0.6.0+11769913 \
 		nibble_vec-0.1.0 \
 		nix-0.28.0 \
 		nix-0.29.0 \
 		nix-0.30.1 \
+		nix-0.31.3 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		nonempty-0.12.0 \
@@ -603,12 +645,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
 		num_cpus-1.17.0 \
+		num_enum-0.7.6 \
+		num_enum_derive-0.7.6 \
 		num_threads-0.1.7 \
 		numtoa-0.2.4 \
 		oauth2-5.0.0 \
 		objc2-0.6.3 \
 		objc2-app-kit-0.3.2 \
+		objc2-audio-toolbox-0.3.2 \
+		objc2-avf-audio-0.3.2 \
 		objc2-cloud-kit-0.3.2 \
+		objc2-core-audio-0.3.2 \
+		objc2-core-audio-types-0.3.2 \
 		objc2-core-data-0.3.2 \
 		objc2-core-foundation-0.3.2 \
 		objc2-core-graphics-0.3.2 \
@@ -623,6 +671,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		objc2-ui-kit-0.3.2 \
 		objc2-user-notifications-0.3.2 \
 		object-0.37.3 \
+		oid-registry-0.7.1 \
 		oid-registry-0.8.1 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
@@ -643,6 +692,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		opentelemetry-semantic-conventions-0.31.0 \
 		opentelemetry_sdk-0.31.0 \
 		option-ext-0.2.0 \
+		option-operations-0.6.1 \
+		opus-0.4.0 \
+		opusic-sys-0.7.5 \
 		ordered-float-4.6.0 \
 		ordered-stream-0.2.0 \
 		os_info-3.14.0 \
@@ -650,6 +702,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		outref-0.5.2 \
 		owo-colors-4.3.0 \
 		p256-0.13.2 \
+		p384-0.13.1 \
 		pagable-0.4.1 \
 		pagable_derive-0.4.1 \
 		palette-0.7.6 \
@@ -721,8 +774,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		protoc-bin-vendored-win32-3.2.0 \
 		psl-2.1.184 \
 		psl-types-2.0.11 \
+		ptr_meta-0.3.2 \
+		ptr_meta_derive-0.3.2 \
 		publicsuffix-2.3.0 \
 		pulldown-cmark-0.10.3 \
+		pulldown-cmark-escape-0.10.1 \
 		pxfm-0.1.27 \
 		quick-error-2.0.1 \
 		quick-xml-0.39.4 \
@@ -731,6 +787,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.14 \
 		quinn-udp-0.5.14 \
+		quinn-udp-0.6.1 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
@@ -752,6 +809,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rama-udp-0.3.0-alpha.4 \
 		rama-unix-0.3.0-alpha.4 \
 		rama-utils-0.3.0-alpha.4 \
+		rancor-0.1.3 \
 		rand-0.8.6 \
 		rand-0.9.3 \
 		rand-0.10.1 \
@@ -771,7 +829,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ratatui-widgets-0.3.2 \
 		rayon-1.11.0 \
 		rayon-core-1.13.0 \
-		rcgen-0.14.7 \
+		rcgen-0.14.9 \
 		redox_syscall-0.5.18 \
 		redox_syscall-0.7.0 \
 		redox_users-0.4.6 \
@@ -782,14 +840,34 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-automata-0.4.13 \
 		regex-lite-0.1.8 \
 		regex-syntax-0.8.8 \
+		rend-0.5.4 \
 		reqwest-0.12.28 \
 		reqwest-0.13.4 \
 		resb-0.1.2 \
 		resolv-conf-0.7.6 \
 		rfc6979-0.4.0 \
 		ring-0.17.14 \
-		rmcp-3.1.3 \
-		rmcp-macros-3.1.3 \
+		rkyv-0.8.18 \
+		rkyv_derive-0.8.18 \
+		rmcp-3.2.0 \
+		rmcp-macros-3.2.0 \
+		rtc-0.20.3 \
+		rtc-datachannel-0.20.3 \
+		rtc-dtls-0.20.3 \
+		rtc-ice-0.20.3 \
+		rtc-interceptor-0.20.3 \
+		rtc-interceptor-derive-0.20.3 \
+		rtc-mdns-0.20.3 \
+		rtc-media-0.20.3 \
+		rtc-rtcp-0.20.3 \
+		rtc-rtp-0.20.3 \
+		rtc-sctp-0.20.3 \
+		rtc-sdp-0.20.3 \
+		rtc-shared-0.20.3 \
+		rtc-srtp-0.20.3 \
+		rtc-stun-0.20.3 \
+		rtc-turn-0.20.3 \
+		rubato-5.0.0 \
 		rust-embed-8.11.0 \
 		rust-embed-impl-8.11.0 \
 		rust-embed-utils-8.11.0 \
@@ -810,6 +888,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ryu-1.0.22 \
 		salsa20-0.10.2 \
 		same-file-1.0.6 \
+		sansio-1.0.1 \
 		scc-2.4.0 \
 		schannel-0.1.28 \
 		schemafy-0.5.2 \
@@ -888,6 +967,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		smol_str-0.3.5 \
 		socket2-0.5.10 \
 		socket2-0.6.3 \
+		sonora-0.2.0 \
+		sonora-aec3-0.2.0 \
+		sonora-agc2-0.2.0 \
+		sonora-common-audio-0.2.0 \
+		sonora-fft-0.2.0 \
+		sonora-ns-0.2.0 \
+		sonora-simd-0.2.0 \
 		sorted_vector_map-0.2.1 \
 		spin-0.9.8 \
 		spki-0.7.3 \
@@ -918,6 +1004,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strum-0.28.0 \
 		strum_macros-0.27.2 \
 		strum_macros-0.28.0 \
+		substring-1.4.5 \
 		subtle-2.6.1 \
 		supports-color-2.1.0 \
 		supports-color-3.0.2 \
@@ -939,9 +1026,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		sys-locale-0.3.2 \
 		system-configuration-0.7.0 \
 		system-configuration-sys-0.6.0 \
+		system-deps-7.0.8 \
 		tagptr-0.2.0 \
 		take_mut-0.2.2 \
 		tar-0.4.45 \
+		target-lexicon-0.13.5 \
 		tempfile-3.27.0 \
 		temporal_capi-0.2.3 \
 		temporal_rs-0.2.3 \
@@ -968,6 +1057,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		thiserror-no-std-2.0.2 \
 		thread_local-1.1.9 \
 		tiff-0.10.3 \
+		tikv-jemalloc-sys-0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8 \
+		tikv-jemallocator-0.7.0 \
 		time-0.3.47 \
 		time-core-0.1.8 \
 		time-macros-0.2.27 \
@@ -986,10 +1077,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tokio-util-0.7.18 \
 		toml-0.5.11 \
 		toml-0.9.11+spec-1.1.0 \
+		toml-1.0.6+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.23.10+spec-1.0.0 \
 		toml_edit-0.24.0+spec-1.1.0 \
-		toml_parser-1.0.6+spec-1.1.0 \
+		toml_parser-1.1.3+spec-1.1.0 \
 		toml_writer-1.0.6+spec-1.1.0 \
 		tonic-0.14.3 \
 		tonic-build-0.14.3 \
@@ -1059,7 +1152,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		v8-150.4.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
+		version-compare-0.2.1 \
 		version_check-0.9.5 \
+		visibility-0.1.1 \
 		vsimd-0.8.0 \
 		vt100-0.16.2 \
 		vte-0.15.0 \
@@ -1092,6 +1187,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		webbrowser-1.2.4 \
 		webpki-root-certs-1.0.5 \
 		webpki-roots-1.0.5 \
+		webrtc-0.20.3 \
 		weezl-0.1.12 \
 		wezterm-bidi-0.2.3 \
 		wezterm-blob-leases-0.1.1 \
@@ -1110,6 +1206,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windowfunctions-0.1.1 \
 		windows-0.58.0 \
 		windows-0.62.2 \
 		windows-collections-0.3.2 \
@@ -1160,6 +1257,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.14 \
+		winnow-1.0.4 \
 		winreg-0.10.1 \
 		winreg-0.50.0 \
 		winreg-0.55.0 \
@@ -1177,6 +1275,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
 		x25519-dalek-2.0.1 \
+		x509-parser-0.16.0 \
 		x509-parser-0.18.1 \
 		xdg-home-1.3.0 \
 		xmlparser-0.13.6 \
@@ -1184,7 +1283,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		xz2-0.1.7 \
 		yaml-rust-0.4.5 \
 		yansi-1.0.1 \
-		yasna-0.5.2 \
+		yasna-0.6.0 \
 		yoke-0.8.2 \
 		yoke-derive-0.8.2 \
 		zbus-4.4.0 \
