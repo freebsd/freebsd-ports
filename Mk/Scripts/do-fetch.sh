@@ -126,26 +126,52 @@ while IFS= read -r _file; do
 		sites_remaining=$((sites_remaining + 1))
 	done
 	for site in ${sites}; do
+		# This target only echoes the full URL, handle it first to simplify the rest
+		# of the loop.
+		if [ "${dp_TARGET}" = fetch-url-list-int ]; then
+			echo "${site}${file}"
+			continue
+		fi
+
 		sites_remaining=$((sites_remaining - 1))
 		CKSIZE=$(distinfo_data SIZE "${full_file}")
-		early_args=""
 		case ${file} in
 			*/*)
 				case ${dp_TARGET} in
 					fetch-list)
 						echo "mkdir -p \"${file%/*}\" && "
-						early_args="-o ${file}"
-						;;
-					fetch-url-list-int)
 						;;
 					*)
 						mkdir -p "${file%/*}"
-						early_args="-o ${file}"
 						;;
 				esac
 			;;
 		esac
-		args="${early_args:+${early_args} }${site}${file}"
+
+		# When the distname is not the last part of the final url, we append a
+		# `?dummy=/` so that the url ends up looking something like this:
+		# http://foo.bar/baz/1.0?dummy=/baz-1.0.tar.gz
+		#
+		# This tricks fetch into save the file which path really is "baz/1.0" as
+		# "baz-1.0.tar.gz" which is what the framework wants.  This is only "used"
+		# for the fetch-url-list-int which is used by `make fetch-url-list` which
+		# generates a long list of urls.
+		#
+		# When we are actually fetching, we always set `-o $file`, so we can remove
+		# the `?dummy=/`, and we don't need to append the distname.
+		case "${site}" in
+			*\?dummy=/)
+				url="${site%?dummy=/}"
+			;;
+			*\&dummy=/)
+				url="${site%&dummy=/}"
+			;;
+			*)
+				url="${site}${file}"
+			;;
+		esac
+		args="-o ${file} $url"
+
 		_fetch_cmd="${dp_FETCH_CMD} ${dp_FETCH_BEFORE_ARGS}"
 		if [ -z "${dp_DISABLE_SIZE}" -a -n "${CKSIZE}" ]; then
 			_fetch_cmd="${_fetch_cmd} -S ${CKSIZE}"
@@ -153,7 +179,7 @@ while IFS= read -r _file; do
 		_fetch_cmd="${_fetch_cmd} ${args} ${dp_FETCH_AFTER_ARGS}"
 		case ${dp_TARGET} in
 			do-fetch|makesum)
-				${dp_ECHO_MSG} "=> Attempting to fetch ${site}${file}"
+				${dp_ECHO_MSG} "=> Attempting to fetch ${url}"
 				if env -S "${dp_FETCH_ENV}" ${_fetch_cmd}; then
 					actual_size=$(stat -f %z "${file}")
 					if [ -n "${dp_DISABLE_SIZE}" ] || [ -z "${CKSIZE}" ] || [ "${actual_size}" -eq "${CKSIZE}" ]; then
@@ -169,9 +195,6 @@ while IFS= read -r _file; do
 				;;
 			fetch-list)
 				echo -n "env $(escape "${_fetch_cmd}") || "
-				;;
-			fetch-url-list-int)
-				echo ${args}
 				;;
 		esac
 	done
