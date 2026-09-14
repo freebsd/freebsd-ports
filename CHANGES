@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20260923:
+AUTHOR: mat@FreeBSD.org
+
+  Add BUILD_RUN_DEPENDS as a syntastic sugar for adding dependencies to both
+  BUILD_DEPENDS and RUN_DEPENDS without side effects.
+
 20260914:
 AUTHOR: dteske@FreeBSD.org
 
