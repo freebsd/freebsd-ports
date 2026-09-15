@@ -402,7 +402,6 @@
     SUBDIR += py-nixio
     SUBDIR += py-obspy
     SUBDIR += py-oddt
-    SUBDIR += py-openEMS
     SUBDIR += py-openbabel
     SUBDIR += py-openpiv
     SUBDIR += py-optking
