@@ -1,25 +1,31 @@
---- pyproject.toml.orig	2026-07-29 13:23:04 UTC
+-- Correct ccxt's impossible pycparser pin (3.0 does not exist).
+-- pycparser is a transitive dependency of cffi; the latest release is 2.23.
+-- Upstream: https://github.com/ccxt/ccxt/issues/29383
+
+--- pyproject.toml.orig	2026-09-14 21:09:39 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
 -requires = ["setuptools==83.0.0"]
-+requires = ["setuptools"]
++requires = ["setuptools>=63.1.0"]
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -7,7 +7,6 @@ readme = "python/README.md"
- version = "4.5.70"
+@@ -7,7 +7,7 @@ readme = "python/README.md"
+ version = "4.5.78"
  description = "A cryptocurrency trading API with more than 100 exchanges in JavaScript / TypeScript / Python / C# / PHP / Go"
  readme = "python/README.md"
 -license = "MIT"
++license = {text = "MIT"}
  authors = [
      { name = "Igor Kroitor", email = "igor.kroitor@gmail.com" },
  ]
-@@ -43,7 +42,6 @@ dependencies = [
- # all dependencies are pinned to exact versions to protect against
- # malicious or vulnerable releases of downstream dependencies
- dependencies = [
--    "setuptools==83.0.0",
-     "certifi==2026.6.17",
-     "requests==2.34.2",
-     "cryptography==49.0.0",
+@@ -87,7 +87,7 @@ dependencies = [
+     # "pycares==5.0.1",
+     # transitive dependencies of cryptography
+     "cffi==2.0.0",
+-    "pycparser==3.0",
++    "pycparser>=2.23",
+     # transitive dependencies of requests
+     "charset_normalizer==3.4.7",
+     "idna==3.18",
