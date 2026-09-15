@@ -1,6 +1,5 @@
 PORTNAME=	pyrefly
-DISTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +26,7 @@ CARGO_CARGOLOCK=	${WRKSRC}/Cargo.lock
 CARGO_TARGET_DIR=	${WRKSRC}/target
 CARGO_CRATES=	addr2line-0.25.1 \
 		adler2-2.0.1 \
-		aho-corasick-1.1.4 \
+		aho-corasick-1.1.5 \
 		allocative-0.3.6 \
 		allocative_derive-0.3.6 \
 		allocator-api2-0.2.21 \
@@ -39,11 +38,12 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.103 \
+		anyhow-1.0.104 \
 		append-only-vec-0.1.8 \
 		approx-0.5.1 \
+		ar_archive_writer-0.5.3 \
 		arc-swap-1.9.2 \
-		argfile-0.2.1 \
+		argfile-1.0.0 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.8 \
 		atomic-0.5.3 \
@@ -54,8 +54,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.13.1 \
-		blake3-1.8.2 \
+		blake3-1.8.6 \
 		block-buffer-0.10.4 \
+		block-buffer-0.12.1 \
 		bs58-0.5.1 \
 		bstr-1.13.0 \
 		bumpalo-3.20.3 \
@@ -64,7 +65,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		capnp-0.25.6 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.2.67 \
+		cc-1.4.5 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.2 \
 		chacha20-0.10.1 \
@@ -73,23 +74,24 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.6.2 \
-		clap_builder-4.6.2 \
-		clap_derive-4.6.1 \
+		clap-4.6.6 \
+		clap_builder-4.6.6 \
+		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
+		cmov-0.5.4 \
 		codspeed-5.0.1 \
 		codspeed-criterion-compat-5.0.1 \
 		codspeed-criterion-compat-walltime-5.0.1 \
 		collection_literals-1.0.3 \
 		colorchoice-1.0.5 \
 		colored-3.1.1 \
-		compact_str-0.9.1 \
 		compact_str-0.10.0 \
 		configparser-3.2.0 \
 		console-0.16.4 \
 		console_error_panic_hook-0.1.7 \
-		constant_time_eq-0.3.1 \
-		convert_case-0.11.0 \
+		constant_time_eq-0.4.2 \
+		convert_case-0.10.0 \
+		convert_case-0.12.0 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
 		criterion-plot-0.5.0 \
@@ -99,21 +101,29 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		crossbeam-utils-0.8.22 \
 		crunchy-0.2.4 \
 		crypto-common-0.1.7 \
-		ctor-1.0.8 \
+		crypto-common-0.2.1 \
+		ctor-1.0.13 \
+		ctutils-0.4.2 \
 		darling-0.23.0 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
 		dashmap-6.2.1 \
+		defmt-1.1.1 \
+		defmt-macros-1.1.1 \
+		defmt-parser-1.0.0 \
 		deranged-0.5.8 \
 		derivative-2.2.0 \
 		derive-where-1.6.1 \
+		derive_more-2.1.1 \
+		derive_more-impl-2.1.1 \
 		diff-0.1.13 \
 		digest-0.10.7 \
-		displaydoc-0.2.6 \
+		digest-0.11.3 \
+		displaydoc-0.2.7 \
 		drop_bomb-0.1.5 \
 		dupe-0.9.1 \
 		dupe_derive-0.9.1 \
-		either-1.16.0 \
+		either-1.17.0 \
 		embedded-io-0.7.1 \
 		encode_unicode-1.0.0 \
 		enum-iterator-2.3.0 \
@@ -121,24 +131,24 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		faster-hex-0.6.1 \
-		fastrand-2.4.1 \
+		fastrand-2.5.0 \
 		filetime-0.2.29 \
-		find-msvc-tools-0.1.9 \
+		find-msvc-tools-0.1.12 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
 		form_urlencoded-1.2.2 \
-		fs-err-2.11.0 \
+		fs-err-3.3.1 \
 		fsevent-sys-4.1.0 \
 		futures-0.1.31 \
-		futures-0.3.32 \
-		futures-channel-0.3.32 \
-		futures-core-0.3.32 \
-		futures-executor-0.3.32 \
-		futures-io-0.3.32 \
-		futures-macro-0.3.32 \
-		futures-sink-0.3.32 \
-		futures-task-0.3.32 \
-		futures-util-0.3.32 \
+		futures-0.3.34 \
+		futures-channel-0.3.34 \
+		futures-core-0.3.34 \
+		futures-executor-0.3.34 \
+		futures-io-0.3.34 \
+		futures-macro-0.3.34 \
+		futures-sink-0.3.34 \
+		futures-task-0.3.34 \
+		futures-util-0.3.34 \
 		fuzzy-matcher-0.3.7 \
 		fxhash-0.2.1 \
 		generic-array-0.14.7 \
@@ -149,8 +159,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		getrandom-0.3.4 \
 		getrandom-0.4.2 \
 		gimli-0.32.3 \
-		glob-0.3.3 \
-		globset-0.4.19 \
+		glob-0.3.4 \
+		globset-0.4.20 \
 		half-2.7.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
@@ -159,50 +169,52 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
-		home-0.5.12 \
 		human_bytes-0.4.3 \
-		icu_collections-2.2.0 \
-		icu_locale_core-2.2.0 \
-		icu_normalizer-2.2.0 \
-		icu_normalizer_data-2.2.0 \
-		icu_properties-2.2.0 \
-		icu_properties_data-2.2.0 \
-		icu_provider-2.2.0 \
+		hybrid-array-0.4.14 \
+		icu_collections-2.3.0 \
+		icu_locale_core-2.3.0 \
+		icu_normalizer-2.3.0 \
+		icu_normalizer_data-2.3.0 \
+		icu_properties-2.3.0 \
+		icu_properties_data-2.3.0 \
+		icu_provider-2.3.0 \
 		id-arena-2.3.0 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
-		ignore-0.4.29 \
+		ignore-0.4.33 \
 		index_vec-0.1.4 \
 		indexmap-2.14.0 \
 		indicatif-0.18.6 \
-		inotify-0.11.4 \
+		inotify-0.11.5 \
 		inotify-sys-0.1.8 \
 		interpolator-0.5.0 \
-		is-macro-0.3.7 \
+		is-macro-0.3.8 \
 		is-terminal-0.4.17 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.10.5 \
 		itertools-0.15.0 \
 		itoa-0.4.8 \
 		itoa-1.0.18 \
+		jiff-0.2.35 \
+		jiff-core-0.1.0 \
+		jiff-static-0.2.35 \
 		jobserver-0.1.35 \
-		js-sys-0.3.103 \
-		kqueue-1.2.0 \
+		js-sys-0.3.104 \
+		kqueue-1.2.1 \
 		kqueue-sys-1.1.2 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.186 \
+		libc-0.2.189 \
 		libmimalloc-sys-0.1.49 \
-		link-section-0.19.0 \
-		linktime-proc-macro-0.2.0 \
-		linux-raw-sys-0.4.15 \
+		link-section-0.19.3 \
+		linktime-proc-macro-0.2.3 \
 		linux-raw-sys-0.12.1 \
-		litemap-0.8.2 \
+		litemap-0.8.3 \
 		lock_api-0.4.14 \
 		lock_free_hashtable-0.1.4 \
-		log-0.4.33 \
-		lsp-server-0.7.9 \
+		log-0.4.34 \
+		lsp-server-0.10.0 \
 		manyhow-0.11.4 \
 		manyhow-macros-0.11.4 \
 		maplit-1.0.2 \
@@ -218,16 +230,17 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		nix-0.31.3 \
 		notify-8.2.0 \
 		notify-types-2.1.0 \
-		num-bigint-0.4.8 \
+		num-bigint-0.5.1 \
 		num-conv-0.2.2 \
-		num-integer-0.1.46 \
+		num-integer-0.1.47 \
 		num-traits-0.2.19 \
 		object-0.37.3 \
+		object-0.39.1 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
 		ordermap-1.2.0 \
-		os_str_bytes-7.1.1 \
+		os_str_bytes-7.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		parse-display-0.8.2 \
@@ -242,26 +255,28 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		phf_generator-0.11.3 \
 		phf_shared-0.11.3 \
 		pin-project-lite-0.2.17 \
-		pkg-config-0.3.33 \
+		pkg-config-0.3.34 \
 		plotters-0.3.7 \
 		plotters-backend-0.3.7 \
 		plotters-svg-0.3.7 \
-		portable-atomic-1.13.1 \
-		potential_utf-0.1.5 \
+		portable-atomic-1.14.0 \
+		portable-atomic-util-0.2.7 \
+		potential_utf-0.1.6 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
 		pretty_assertions-1.4.1 \
 		prettyplease-0.2.37 \
 		proc-macro-utils-0.10.0 \
-		proc-macro2-1.0.106 \
+		proc-macro2-1.0.107 \
+		psm-0.1.29 \
 		pulldown-cmark-0.13.4 \
 		pulldown-cmark-escape-0.11.0 \
-		quote-1.0.46 \
+		quote-1.0.47 \
 		quote-use-0.8.4 \
 		quote-use-macros-0.8.4 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
-		rand-0.8.7 \
+		rand-0.8.8 \
 		rand-0.10.2 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -269,24 +284,24 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
-		ref-cast-1.0.25 \
-		ref-cast-impl-1.0.25 \
+		ref-cast-1.0.27 \
+		ref-cast-impl-1.0.27 \
 		regex-1.13.1 \
-		regex-automata-0.4.16 \
+		regex-automata-0.4.18 \
 		regex-syntax-0.7.5 \
 		regex-syntax-0.8.11 \
-		ruff_annotate_snippets-0.0.6 \
-		ruff_cache-0.0.6 \
-		ruff_diagnostics-0.0.6 \
-		ruff_notebook-0.0.6 \
-		ruff_python_ast-0.0.6 \
-		ruff_python_parser-0.0.6 \
-		ruff_python_trivia-0.0.6 \
-		ruff_source_file-0.0.6 \
-		ruff_text_size-0.0.6 \
+		ruff_annotate_snippets-0.0.11 \
+		ruff_cache-0.0.11 \
+		ruff_diagnostics-0.0.11 \
+		ruff_notebook-0.0.11 \
+		ruff_python_ast-0.0.11 \
+		ruff_python_parser-0.0.11 \
+		ruff_python_trivia-0.0.11 \
+		ruff_source_file-0.0.11 \
+		ruff_text_size-0.0.11 \
 		rustc-demangle-0.1.28 \
 		rustc-hash-2.1.3 \
-		rustix-0.38.44 \
+		rustc_version-0.4.1 \
 		rustix-1.1.4 \
 		rustversion-1.0.23 \
 		ryu-0.2.8 \
@@ -295,18 +310,18 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		scopeguard-1.2.0 \
 		seahash-4.1.0 \
 		semver-1.0.28 \
-		serde-1.0.228 \
+		serde-1.0.229 \
 		serde-wasm-bindgen-0.6.5 \
 		serde_bser-0.4.0 \
 		serde_bytes-0.11.19 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.150 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.151 \
 		serde_jsonrc-0.1.0 \
-		serde_repr-0.1.20 \
+		serde_repr-0.1.21 \
 		serde_spanned-1.1.1 \
-		serde_with-3.21.0 \
-		serde_with_macros-3.21.0 \
+		serde_with-3.22.0 \
+		serde_with_macros-3.22.0 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
 		shlex-2.0.1 \
@@ -316,6 +331,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		smallvec-1.15.2 \
 		socket2-0.6.5 \
 		stable_deref_trait-1.2.1 \
+		stacker-0.1.25 \
 		starlark_map-0.14.2 \
 		static_assertions-1.1.0 \
 		static_interner-0.1.3 \
@@ -325,34 +341,34 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		strsim-0.11.1 \
 		structmeta-0.2.0 \
 		structmeta-derive-0.2.0 \
-		subtle-2.6.1 \
 		syn-1.0.109 \
 		syn-2.0.119 \
+		syn-3.0.3 \
 		synstructure-0.13.2 \
 		tar-0.4.46 \
 		tempfile-3.27.0 \
 		terminal_size-0.4.4 \
-		thin-vec-0.2.18 \
+		thin-vec-0.2.19 \
 		thiserror-1.0.69 \
-		thiserror-2.0.18 \
+		thiserror-2.0.20 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.18 \
+		thiserror-impl-2.0.20 \
 		thread_local-1.1.10 \
-		tikv-jemalloc-sys-0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
-		tikv-jemallocator-0.6.1 \
-		time-0.3.53 \
+		tikv-jemalloc-sys-0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8 \
+		tikv-jemallocator-0.7.0 \
+		time-0.3.55 \
 		time-core-0.1.9 \
-		tinystr-0.8.3 \
+		tinystr-0.8.4 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.12.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.53.0 \
-		tokio-macros-2.7.0 \
+		tokio-1.53.1 \
+		tokio-macros-2.7.2 \
 		tokio-util-0.6.10 \
-		toml-1.1.3+spec-1.1.0 \
+		toml-1.1.4+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.25.13+spec-1.1.0 \
-		toml_parser-1.1.2+spec-1.1.0 \
+		toml_parser-1.1.3+spec-1.1.0 \
 		toml_writer-1.1.2+spec-1.1.0 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
@@ -368,11 +384,15 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		unicode_names2-1.3.0 \
 		unicode_names2_generator-1.3.0 \
 		unit-prefix-0.5.2 \
+		unscanny-0.1.0 \
 		url-2.5.8 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.24.0 \
-		uuid-rng-internal-1.24.0 \
+		uuid-1.24.1 \
+		uuid-rng-internal-1.24.1 \
+		uv-cache-key-0.0.76 \
+		uv-pep440-0.0.76 \
+		uv-redacted-0.0.76 \
 		valuable-0.1.1 \
 		vec1-1.12.1 \
 		version_check-0.9.5 \
@@ -380,24 +400,23 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.4+wasi-0.2.12 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.126 \
-		wasm-bindgen-macro-0.2.126 \
-		wasm-bindgen-macro-support-0.2.126 \
-		wasm-bindgen-shared-0.2.126 \
+		wasm-bindgen-0.2.127 \
+		wasm-bindgen-macro-0.2.127 \
+		wasm-bindgen-macro-support-0.2.127 \
+		wasm-bindgen-shared-0.2.127 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
 		watchman_client-0.9.0 \
-		web-sys-0.3.103 \
+		web-sys-0.3.104 \
 		web-time-1.1.0 \
-		which-4.4.2 \
+		which-8.0.5 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-link-0.2.1 \
 		windows-sys-0.52.0 \
-		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
@@ -426,19 +445,19 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wit-bindgen-rust-macro-0.51.0 \
 		wit-component-0.244.0 \
 		wit-parser-0.244.0 \
-		writeable-0.6.3 \
+		writeable-0.6.4 \
 		xattr-1.6.1 \
-		xxhash-rust-0.8.17 \
+		xxhash-rust-0.8.18 \
 		yansi-1.0.1 \
 		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
-		zerocopy-0.8.54 \
-		zerocopy-derive-0.8.54 \
+		zerocopy-0.8.56 \
+		zerocopy-derive-0.8.56 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
-		zerotrie-0.2.4 \
-		zerovec-0.11.6 \
-		zerovec-derive-0.11.3 \
+		zerotrie-0.2.5 \
+		zerovec-0.11.8 \
+		zerovec-derive-0.11.5 \
 		zmij-1.0.23 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
@@ -448,7 +467,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 
 CARGO_TEST=	no
 
-MAKE_ENV=	${CARGO_ENV}
+MAKE_ENV=	${CARGO_ENV} CARGO_PROFILE_RELEASE_LTO=false CARGO_PROFILE_RELEASE_CODEGEN_UNITS=4
 
 do-test:
 	@${WRKSRC}/target/release/pyrefly --version
