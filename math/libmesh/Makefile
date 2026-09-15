@@ -11,6 +11,8 @@ WWW=		https://libmesh.github.io \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	compilation fails: error: redefinition of 'TablePrefixSum'
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
 TEST_DEPENDS=	bash:shells/bash
