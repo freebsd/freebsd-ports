@@ -1,7 +1,7 @@
 PORTNAME=	yasm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0-90
-DISTVERSIONSUFFIX=	-ga2f8bdf0
+DISTVERSION=	1.3.0-109
+DISTVERSIONSUFFIX=	-g09d1bc90
 CATEGORIES=	devel lang
 #MASTER_SITES=	https://www.tortall.net/projects/yasm/releases/
 
