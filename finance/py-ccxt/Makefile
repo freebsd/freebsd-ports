@@ -1,5 +1,6 @@
 PORTNAME=	ccxt
 DISTVERSION=	4.5.78
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohappyeyeballs>=2.7.1:net/py-aiohappyeyeballs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiohttp-fast-zlib>=0.3.0:www/py-aiohttp-fast-zlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.14.3:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiosignal>=1.4.0:devel/py-aiosignal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=26.1.0:devel/py-attrs@${PY_FLAVOR} \
