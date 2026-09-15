@@ -386,7 +386,6 @@
     SUBDIR += py-mmcif
     SUBDIR += py-mmtf-python
     SUBDIR += py-mne
-    SUBDIR += py-molmod
     SUBDIR += py-morphio
     SUBDIR += py-mp-api
     SUBDIR += py-mpcontribs-client
