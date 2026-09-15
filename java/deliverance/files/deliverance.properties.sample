@@ -1,0 +1,24 @@
+# Deliverance FreeBSD sample configuration.
+# Models are downloaded to /var/db/deliverance/.deliverance by default.
+
+server.port=8080
+
+# Use the Java/Panama tensor path. The Maven Central jar does not ship a
+# FreeBSD native SIMD library.
+deliverance.tensor.operations.type=jvector
+
+deliverance-model.configs[0].model-owner=edwardcapriolo
+deliverance-model.configs[0].model-name=Qwen3-0.6B-JQ4
+deliverance-model.configs[0].inference-type=GENERATION
+deliverance-model.configs[0].output-head-quantization=Q4
+
+deliverance-model.configs[1].model-owner=edwardcapriolo
+deliverance-model.configs[1].model-name=antares-1b-JQ4
+deliverance-model.configs[1].inference-type=GENERATION
+deliverance-model.configs[1].output-head-quantization=Q4
+
+# Larger model example. Uncomment if the host has enough memory.
+#deliverance-model.configs[2].model-owner=edwardcapriolo
+#deliverance-model.configs[2].model-name=Qwen3-4B-JQ4
+#deliverance-model.configs[2].inference-type=GENERATION
+#deliverance-model.configs[2].output-head-quantization=Q4
