@@ -1101,7 +1101,6 @@
     SUBDIR += py-ldappool
     SUBDIR += py-lib389
     SUBDIR += py-libcloud
-    SUBDIR += py-libdnet
     SUBDIR += py-macaddress
     SUBDIR += py-magic-wormhole
     SUBDIR += py-matrix-synapse-ldap3
