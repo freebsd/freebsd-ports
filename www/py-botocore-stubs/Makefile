@@ -1,5 +1,5 @@
 PORTNAME=	botocore-stubs
-DISTVERSION=	1.43.14
+DISTVERSION=	1.43.67
 CATEGORIES=	www python devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}types-awscrt>=0:devel/py-types-awscrt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1.0:devel/py-typing-extensions@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist
