@@ -1,6 +1,6 @@
 PORTNAME=	amaranth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.9
+DISTVERSION=	0.5.10
 CATEGORIES=	cad python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -28,7 +28,7 @@ GH_ACCOUNT=	amaranth-lang
 
 MAKE_ENV=	PDM_BUILD_SCM_VERSION=${DISTVERSION} # this allows to build from a tarball (otherwise PDM wouldn't be able to determine the version)
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_ARGS=	-p no:black -p no:mypy
+TEST_ARGS=	--disable-plugin-autoload -p no:black -p no:mypy
 
 NO_ARCH=	yes
 
@@ -63,6 +63,6 @@ do-install-DOCS-on:
 do-install-EXAMPLES-on:
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-# tests as of 0.5.9: 1188 passed, 3 warnings in 27.03s
+# tests as of 0.5.10: 1188 passed, 5 warnings in 12.44s
 
 .include <bsd.port.mk>
