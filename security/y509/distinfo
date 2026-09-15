@@ -1,5 +1,5 @@
-TIMESTAMP = 1788961829
-SHA256 (go/security_y509/y509-v1.2.0/v1.2.0.mod) = dae5f39d2598b675ad17453b308522aa5088ccc3fa00e060503da18ceae25470
-SIZE (go/security_y509/y509-v1.2.0/v1.2.0.mod) = 11408
-SHA256 (go/security_y509/y509-v1.2.0/v1.2.0.zip) = 09af148f07a653c178ebcef93262be081c8d184df97a4a4f251ff6dd141f4fc6
-SIZE (go/security_y509/y509-v1.2.0/v1.2.0.zip) = 1568981
+TIMESTAMP = 1789490729
+SHA256 (go/security_y509/y509-v1.3.0/v1.3.0.mod) = 2e29d6bee7bd574aa0f719c5f599e938e799c5522e2992e51297d0a467b29f44
+SIZE (go/security_y509/y509-v1.3.0/v1.3.0.mod) = 11519
+SHA256 (go/security_y509/y509-v1.3.0/v1.3.0.zip) = eca4cdd590ff5fc42aed074bc4696029bec91041d495e3e4f54839ab0a90a3e3
+SIZE (go/security_y509/y509-v1.3.0/v1.3.0.zip) = 1652376
