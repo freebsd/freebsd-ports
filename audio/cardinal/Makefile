@@ -35,10 +35,12 @@ USES=		compiler:c++17-lang gl gmake libarchive localbase:ldflags pkgconfig pytho
 USE_XORG=	x11 xcursor xext xrandr
 USE_GL=		gl
 USE_SDL=	sdl2
+USE_CXXSTD=	c++14 # keep std::random_shuffle that was removed in c++17, see https://github.com/DISTRHO/Cardinal/issues/945
 
 SHEBANG_GLOB=	*.sh
 
 CXXFLAGS+=	-I${LOCALBASE}/include/pffft
+CXXFLAGS+=	-Wno-error=missing-template-arg-list-after-template-kw # workaround for surgext/src/VCO.cpp:1051:28: error: a template argument list is expected after a name prefixed by the template keyword [-Wmissing-template-arg-list-after-template-kw]
 CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 LDFLAGS+=	-lpffft -lexecinfo
 
@@ -62,11 +64,25 @@ LIBLO_BROKEN=		fails to build with liblo, see https://github.com/DISTRHO/Cardina
 LTO_MAKE_ARGS=		WITH_LTO=true
 LTO_BROKEN=		Fails to build with LTO because it is gcc-centered
 
-.include <bsd.port.options.mk>
+LDFLAGS+=		-Wl,--allow-multiple-definition # for roundevenf fix below: multipl binaries are built with multiple modules, so we add roundevenf and alow multiple definitions of it
 
-# workaround for ld: error: undefined symbol: roundevenf
-.if ${OPSYS} == FreeBSD
-USES+=	llvm:max=15
-.endif
+post-patch:
+	# inject definition of missing function roundevenf, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=298503
+	@cd ${WRKSRC} && \
+		for f in \
+			plugins/ZZC/src/FN.cpp \
+			plugins/Fundamental/src/LFO.cpp \
+			plugins/Biset/src/Igc/Igc.cpp \
+			plugins/ML_modules/src/Quant.cpp \
+			plugins/HetrickCV/src/Bitshift.cpp \
+			plugins/Venom/src/XM_OP.cpp \
+			plugins/Venom/src/PolyOffset.cpp \
+			plugins/MindMeldModular/src/EqMaster/EqMaster.cpp \
+			plugins/AnimatedCircuits/src/Folding/Folding.cpp \
+			plugins/AnimatedCircuits/src/LFold/LFold.cpp \
+			plugins/dBiz/src/Bench.cpp \
+		; do \
+			cat ${FILESDIR}/roundevenf-definition.c $$f > $$f.tmp && mv $$f.tmp $$f; \
+		done
 
 .include <bsd.port.mk>
