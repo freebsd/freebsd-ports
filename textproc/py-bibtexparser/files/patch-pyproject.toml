@@ -1,0 +1,25 @@
+-- Fix pyproject.toml to be compatible with the setuptools version in FreeBSD ports.
+-- The original requires setuptools>=77, but the FreeBSD port has an older version.
+-- Also fix the PEP 621 license and license-files fields to use formats supported by
+-- older setuptools.
+
+--- pyproject.toml.orig	2026-09-14 14:22:24 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=77"]
++requires = ["setuptools>=63.1.0"]
+ 
+ [project]
+ authors = [{name = "Michael Weiss and other contributors", email = "code@mweiss.ch"}]
+@@ -18,8 +18,7 @@ dynamic = ["version"]
+ dependencies = ["pylatexenc~=2.10"]
+ description = "Bibtex parser for python 3"
+ dynamic = ["version"]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ maintainers = [{name = "Michael Weiss", email = "code@mweiss.ch"}]
+ name = "bibtexparser"
+ readme = "README.md"
