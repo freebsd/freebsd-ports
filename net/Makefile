@@ -1048,7 +1048,6 @@
     SUBDIR += pwnat
     SUBDIR += pxe
     SUBDIR += pxe-pdhcp
-    SUBDIR += py-DTLSSocket
     SUBDIR += py-GeoIP2
     SUBDIR += py-aiocoap
     SUBDIR += py-aiohappyeyeballs
