@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-04-27 12:35:24 UTC
++++ CMakeLists.txt
+@@ -3,7 +3,7 @@ ENDIF()
+     SET(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_NO_WARNINGS ON)
+ ENDIF()
+ 
+-cmake_minimum_required(VERSION 3.1)
++cmake_minimum_required(VERSION 3.5)
+ IF (UNIX)
+     OPTION(ADD_ASAN "Use ASAN to show memory issues" FALSE)
+     OPTION(ADD_TSAN "Use TSAN to show thread issues" FALSE)
