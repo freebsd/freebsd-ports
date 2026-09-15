@@ -5603,3 +5603,4 @@ math/py-pygslodeiv2||2026-09-15|Has expired: Depends on expired lang/cython0
 devel/py-python-dtrace||2026-09-15|Has expired: Depends on expired lang/cython0
 graphics/py-djvulibre||2026-09-15|Has expired: Depends on expired lang/cython0
 misc/py-torch-geometric||2026-09-15|Has expired: Depends on expiring math/py-dgl
+math/py-dgl||2026-09-15|Has expired: Depends on expired lang/cython0
