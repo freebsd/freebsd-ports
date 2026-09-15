@@ -4,7 +4,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Electronic mailing list manager
-WWW=		https://www.sympa.org/
+WWW=		https://www.sympa.community
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
