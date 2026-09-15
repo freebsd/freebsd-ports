@@ -1,6 +1,6 @@
 PORTNAME=	fcl
 DISTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,9 +10,10 @@ WWW=		https://github.com/flexible-collision-library/fcl
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libccd.so:math/libccd
+LIB_DEPENDS=	libccd.so:math/libccd \
+		liboctomap.so:math/octomap
 
-USES=		cmake compiler:c++11-lang eigen:3
+USES=		cmake compiler:c++11-lang eigen:3 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	flexible-collision-library
 USE_LDCONFIG=	yes
