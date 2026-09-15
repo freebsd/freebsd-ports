@@ -4,14 +4,13 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			HsYAML-aeson-0.2.0.2 \
 			ListLike-4.7.8.4 \
 			MemoTrie-0.6.11 \
-			MonadRandom-0.6.2.1 \
 			OneTuple-0.4.3 \
 			Only-0.1_2 \
 			QuickCheck-2.18.0.0 \
 			SHA-1.6.4.4 \
 			StateVar-1.2.2 \
 			adjunctions-4.4.4 \
-			aeson-2.2.5.0 \
+			aeson-2.2.5.1 \
 			aeson-pretty-0.8.11 \
 			alex-3.5.4.2 \
 			algebraic-graphs-0.8 \
@@ -30,7 +29,7 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			base64-1.0_3 \
 			base64-bytestring-1.2.1.0_1 \
 			bifunctors-5.6.3_1 \
-			binary-instances-1.0.6_1 \
+			binary-instances-1.0.6_2 \
 			binary-orphans-1.0.6 \
 			bitvec-1.1.6.0 \
 			blaze-builder-0.4.4.1 \
@@ -38,7 +37,7 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			blaze-markup-0.8.3.0_2 \
 			blaze-textual-0.2.3.1 \
 			boring-0.2.2.1 \
-			cabal-add-0.2_1 \
+			cabal-add-0.2.0.1 \
 			cabal-install-parsers-0.6.1.1 \
 			call-stack-0.4.0 \
 			case-insensitive-1.2.1.0 \
@@ -62,11 +61,8 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			cpphs-1.20.10 \
 			cryptohash-sha1-0.11.101.0_6 \
 			cryptohash-sha256-0.11.102.1_6 \
-			data-default-0.7.1.3 \
-			data-default-class-0.1.2.2 \
-			data-default-instances-containers-0.1.0.3 \
-			data-default-instances-dlist-0.0.1.2 \
-			data-default-instances-old-locale-0.0.1.2 \
+			data-default-0.8.0.2 \
+			data-default-class-0.2.0.0 \
 			data-fix-0.3.4_2 \
 			deferred-folds-0.9.18.10 \
 			dependent-map-0.4.0.1 \
@@ -77,13 +73,16 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			directory-ospath-streaming-0.3_1 \
 			distributive-0.6.3 \
 			dlist-1.0_2 \
+			doclayout-0.5.0.3 \
 			edit-distance-0.2.2.1_1 \
+			emojis-0.1.5 \
 			entropy-0.4.1.11_1 \
 			enummapset-0.7.3.0_2 \
 			extensions-0.1.0.1_1 \
 			extra-1.8.1 \
 			file-embed-0.0.16.0 \
 			file-io-0.1.6 \
+			filelock-0.1.1.9 \
 			filemanip-0.3.6.3_1 \
 			filepattern-0.1.3 \
 			fingertree-0.1.6.3 \
@@ -98,27 +97,26 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			generic-lens-2.3.0.0 \
 			generic-lens-core-2.3.0.0 \
 			ghc-exactprint-1.8.0.0 \
+			ghc-hs-meta-0.1.5.0 \
 			ghc-lib-parser-9.8.5.20250214 \
 			ghc-lib-parser-ex-9.8.0.2 \
 			ghc-paths-0.1.0.12_8 \
 			ghc-trace-events-0.1.2.10 \
-			ghcide-2.14.0.0_1 \
+			ghcide-2.15.0.0 \
 			githash-0.1.7.0 \
 			gitrev-1.3.1 \
 			haddock-library-1.11.0_5 \
 			happy-2.1.7 \
 			happy-lib-2.1.7 \
 			hashable-1.5.1.0 \
-			haskell-src-exts-1.24.0 \
-			haskell-src-meta-0.8.16 \
 			heaps-0.4.1 \
-			hie-bios-0.19.0 \
+			hie-bios-0.21.0 \
 			hie-compat-0.3.1.2_2 \
 			hiedb-0.8.0.0 \
 			hlint-3.8 \
-			hls-graph-2.14.0.0 \
-			hls-plugin-api-2.14.0.0 \
-			hls-test-utils-2.14.0.0 \
+			hls-graph-2.15.0.0 \
+			hls-plugin-api-2.15.0.0 \
+			hls-test-utils-2.15.0.0 \
 			hsc2hs-0.68.10_5 \
 			hscolour-1.25 \
 			hw-fingertree-0.1.1.0 \
@@ -144,9 +142,9 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			lsp-test-0.18.0.0 \
 			lsp-types-2.4.0.0 \
 			lucid-2.11.20260427 \
-			lukko-0.1.2_1 \
+			lukko-0.1.2_2 \
 			markdown-unlit-0.6.0 \
-			megaparsec-9.8.1 \
+			megaparsec-9.8.2 \
 			microaeson-0.1.0.3_2 \
 			mmap-0.5.9 \
 			mmorph-1.2.2_2 \
@@ -154,7 +152,7 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			monad-control-1.0.3.1 \
 			mono-traversable-1.0.21.0 \
 			monoid-subclasses-1.2.6.1 \
-			network-3.2.8.0 \
+			network-3.2.9.0 \
 			network-uri-2.6.4.2_1 \
 			newtype-generics-0.6.3 \
 			old-locale-1.0.0.7_2 \
@@ -180,7 +178,6 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			profunctors-5.6.3 \
 			quickcheck-instances-0.4_2 \
 			random-1.3.1 \
-			random-shuffle-0.0.4 \
 			refact-0.3.0.2 \
 			reflection-2.1.9_1 \
 			regex-1.1.0.2 \
@@ -189,7 +186,6 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			regex-tdfa-1.3.2.6 \
 			relude-1.2.2.2_3 \
 			resourcet-1.3.0 \
-			retrie-1.2.3 \
 			row-types-1.0.1.2_1 \
 			safe-0.3.21_1 \
 			safe-exceptions-0.1.7.4_1 \
@@ -202,7 +198,7 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			slist-0.3.0.0 \
 			some-1.0.6_3 \
 			sorted-list-0.3.1.0 \
-			split-0.2.5 \
+			split-0.2.5.1 \
 			splitmix-0.1.3.2 \
 			sqlite-simple-0.4.19.0 \
 			stan-0.2.1.0_5 \
@@ -210,9 +206,10 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			stm-hamt-1.2.2.1 \
 			streaming-commons-0.2.3.1 \
 			strict-0.5.1_1 \
-			string-interpolate-0.3.4.0_7 \
+			string-interpolate-1.0.0.0 \
 			stylish-haskell-0.14.6.0 \
 			syb-0.7.4 \
+			table-layout-1.0.0.2 \
 			tagged-0.8.10_1 \
 			tar-0.6.4.0_4 \
 			tasty-1.5.4 \
@@ -223,16 +220,12 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			temporary-1.3 \
 			terminal-size-0.3.4_1 \
 			text-conversions-0.3.1.1 \
-			text-iso8601-0.1.1.1 \
+			text-iso8601-0.1.1.2 \
 			text-rope-0.3 \
 			text-short-0.1.6.1 \
 			th-abstraction-0.7.2.0 \
 			th-compat-0.1.7 \
 			th-env-0.1.1 \
-			th-expand-syns-0.4.12.0_1 \
-			th-lift-0.8.7 \
-			th-orphans-0.13.17 \
-			th-reify-many-0.1.10 \
 			these-1.2.1_3 \
 			time-compat-1.9.9_1 \
 			time-locale-compat-0.1.1.5 \
@@ -260,5 +253,3 @@ ghc98_USE_CABAL=	Diff-0.5_1 \
 			witherable-0.5_2 \
 			yaml-0.11.11.2_2 \
 			zlib-0.7.1.1
-
-CABAL_REVISION= 1

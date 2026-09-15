@@ -1,16 +1,14 @@
 PORTNAME=	haskell-language-server
-DISTVERSION=	2.14.0.0
-PORTREVISION=	1
+DISTVERSION=	2.15.0.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	LSP provider implementation for Haskell language
-WWW=		https://haskell-language-server.readthedocs.io/
+WWW=		https://hackage.haskell.org/package/haskell-language-server/ \
+		https://haskell-language-server.readthedocs.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-NOT_FOR_ARCHS=	i386
 
 FLAVORS=	default ghc910 ghc98
 FLAVOR?=	${FLAVORS:[1]}
@@ -36,7 +34,6 @@ USES=		cabal
 .endfor
 
 USE_CABAL=		${${FLAVOR}_USE_CABAL}
-CABAL_REVISION=		1
 CABAL_PROJECT=		append
 CABAL_FLAGS=		-dynamic
 CABAL_EXECUTABLES=	${PORTNAME} \
