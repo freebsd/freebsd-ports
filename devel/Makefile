@@ -8995,6 +8995,7 @@
     SUBDIR += zeal
     SUBDIR += zfp
     SUBDIR += zix
+    SUBDIR += zizmor
     SUBDIR += zls
     SUBDIR += zookeeper
     SUBDIR += zthread
