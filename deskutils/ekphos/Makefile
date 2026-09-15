@@ -1,12 +1,12 @@
 PORTNAME=	ekphos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.10
-PORTREVISION=	2
+DISTVERSION=	0.50.10
+PORTREVISION=	0
 CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Lightweight, fast, terminal-based markdown research tool
-WWW=		https://ekphos.netlify.app/docs
+WWW=		https://ekphos.nostacks.xyz/
 
 LICENSE=	APACHE20 BSD0CLAUSE BSD2CLAUSE BSD3CLAUSE BSL CC0-1.0 CDLA20 \
 		ISCL MIT MPL20 UNICODE UNLICENSE ZLIB
@@ -20,9 +20,9 @@ LICENSE_PERMS_UNICODE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		cargo
+USES=		cargo gmake
 USE_GITHUB=	yes
-GH_ACCOUNT=	hanebox
+GH_ACCOUNT=	nostacks
 
 PLIST_FILES=	bin/ekphos
 
