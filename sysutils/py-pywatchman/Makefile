@@ -4,7 +4,7 @@ DISTVERSION=	2026.09.14.00
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rottlogg@proton.me
 COMMENT=	Watchman client for Python
 WWW=		https://pypi.org/project/pywatchman/
 
