@@ -1,5 +1,6 @@
 PORTNAME=	httpx2
 DISTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,6 +37,14 @@ HTTP2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=3:www/py-h2@${PY_FLAVOR}
 SOCKS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}socksio>=1:net/py-socksio@${PY_FLAVOR}
 WS_DESC=		WebSocket support
 WS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wsproto>=1.2:net/py-wsproto@${PY_FLAVOR}
-ZSTD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.zstd>=1.0.0:devel/py-backports.zstd@${PY_FLAVOR}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MZSTD} # for python_version <= '3.13'
+py310_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.zstd>=1.0.0:devel/py-backports.zstd@${PY_FLAVOR}
+py311_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.zstd>=1.0.0:devel/py-backports.zstd@${PY_FLAVOR}
+py312_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.zstd>=1.0.0:devel/py-backports.zstd@${PY_FLAVOR}
+py313_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.zstd>=1.0.0:devel/py-backports.zstd@${PY_FLAVOR}
+.endif
 
 .include <bsd.port.mk>
