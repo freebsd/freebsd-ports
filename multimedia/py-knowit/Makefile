@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfish>0:devel/py-babelfish@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}pymediainfo>0:multimedia/py-pymediainfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}trakit>0:multimedia/py-trakit@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pint>=0.20.1,<0.25.0:devel/py-pint@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pint>=0.20.1:devel/py-pint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.28.1:www/py-requests@${PY_FLAVOR} \
 		mkvtoolnix>0:multimedia/mkvtoolnix
 
