@@ -1,6 +1,6 @@
 PORTNAME=	qtpass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
+DISTVERSION=	1.8.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	brouwer@annejan.com
@@ -20,19 +20,12 @@ GH_PROJECT=	QtPass
 USE_GL=		opengl
 USE_QT=		base tools:build svg:run translations:run
 
+# 1.8.1 installs the desktop file, the AppStream metainfo and the hicolor
+# icons itself (main/main.pro INSTALLS).
 PLIST_FILES=	bin/qtpass \
 		share/applications/qtpass.desktop \
-		share/pixmaps/qtpass.png
-
-post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' \
-			${WRKSRC}/qtpass.desktop
-
-# Install the icon and desktop file of the port.
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/artwork/icon.png \
-			${STAGEDIR}${PREFIX}/share/pixmaps/qtpass.png
-	${INSTALL_DATA} ${WRKSRC}/qtpass.desktop \
-			${STAGEDIR}${DESKTOPDIR}
+		share/icons/hicolor/512x512/apps/qtpass-icon.png \
+		share/icons/hicolor/scalable/apps/qtpass-icon.svg \
+		share/metainfo/qtpass.appdata.xml
 
 .include <bsd.port.mk>
