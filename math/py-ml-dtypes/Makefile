@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.0,1<3,1:math/py-numpy@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0:devel/py-scikit-build-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.3.0,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		python
+USES=		cmake:indirect python
 USE_PYTHON=	autoplist concurrent pep517
 
 post-install:
