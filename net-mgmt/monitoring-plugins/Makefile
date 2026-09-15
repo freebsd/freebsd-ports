@@ -1,9 +1,14 @@
 PORTNAME=	monitoring-plugins
 PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ \
 		LOCAL/mat/${PORTNAME}
+
+# Fix wrong swap: https://github.com/monitoring-plugins/monitoring-plugins/pull/2342
+PATCH_SITES+=	https://github.com/monitoring-plugins/monitoring-plugins/pull/
+PATCHFILES+=	2342.patch:-p1 \
+		2325.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitoring Plugins for Nagios
@@ -12,7 +17,7 @@ WWW=		https://www.monitoring-plugins.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		charsetfix gmake libtool perl5 ssl
+USES=		autoreconf charsetfix gmake libtool perl5 ssl
 USE_SUBMAKE=	yes
 
 GNU_CONFIGURE=	yes
