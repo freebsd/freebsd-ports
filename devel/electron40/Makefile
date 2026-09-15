@@ -15,6 +15,16 @@ DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.0:chromium \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:C/:[^:]+$//:C/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}\.[0-9]//}
 
+.if make(makesum)
+MASTER_SITES+=	https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-${ESBUILD_VER}.tgz?dummy=/:esbuild_arm64 \
+		https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-${ESBUILD_VER}.tgz?dummy=/:esbuild_x64
+DISTFILES+=	esbuild-freebsd-arm64-${ESBUILD_VER}.tgz:esbuild_arm64 \
+		esbuild-freebsd-x64-${ESBUILD_VER}.tgz:esbuild_x64
+.else
+MASTER_SITES+=	https://registry.npmjs.org/@esbuild/freebsd-${GO_ARCH}/-/freebsd-${GO_ARCH}-${ESBUILD_VER}.tgz?dummy=/:esbuild_${GO_ARCH}
+DISTFILES+=	esbuild-freebsd-${GO_ARCH}-${ESBUILD_VER}.tgz:esbuild_${GO_ARCH}
+.endif
+
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
 WWW=		https://electronjs.org/
@@ -33,8 +43,7 @@ FETCH_DEPENDS=	git:devel/git \
 		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 PATCH_DEPENDS=	git:devel/git \
 		jq:textproc/jq
-BUILD_DEPENDS=	esbuild:devel/esbuild \
-		gperf:devel/gperf \
+BUILD_DEPENDS=	gperf:devel/gperf \
 		bindgen:devel/rust-bindgen-cli \
 		yasm:devel/yasm \
 		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-libs \
@@ -85,8 +94,7 @@ GH_TUPLE=	nodejs:node:v${NODE_VER}:node \
 		Squirrel:Squirrel.Mac:${SQUIRREL_MAC_VER}:squirrel_mac \
 		ReactiveCocoa:ReactiveObjC:${REACTIVEOBJC_VER}:reactiveobjc \
 		Mantle:Mantle:${MANTLE_VER}:mantle \
-		EngFlow:reclient-configs:${ENGFLOW_RECLIENT_CONFIGS_VER}:reclient_configs \
-		evanw:esbuild:v${ESBUILD_VER}:esbuild
+		EngFlow:reclient-configs:${ENGFLOW_RECLIENT_CONFIGS_VER}:reclient_configs
 USE_GL=		gbm gl glesv2
 USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xrandr \
@@ -232,8 +240,8 @@ REACTIVEOBJC_VER=		74ab5baccc6f7202c8ac69a8d1e152c29dc1ea76
 MANTLE_VER=			78d3966b3c331292ea29ec38661b25df0a245948
 # See ${WRKSRC}/electron/DEPS for ENGFLOW_RECLIENT_CONFIGS_VER
 ENGFLOW_RECLIENT_CONFIGS_VER=	955335c30a752e9ef7bff375baab5e0819b6c00d
-# Keep in sync with devel/esbuild
-ESBUILD_VER=			0.28.1
+# See ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild/package.json
+ESBUILD_VER=			0.25.1
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
@@ -295,6 +303,8 @@ TEST_ENV+=	${MAKE_ENV} \
 		LOCAL_GIT_DIRECTORY=${LOCALBASE} \
 		DISABLE_CRASH_REPORTER_TESTS=1
 
+GO_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To build electron, you should have around 2GB of memory"
@@ -326,8 +336,7 @@ post-extract:
 		${WRKSRC}/third_party/squirrel.mac/vendor/Mantle
 	${MV} ${WRKSRC:H}/${GH_PROJECT_reclient_configs}-${ENGFLOW_RECLIENT_CONFIGS_VER} \
 		${WRKSRC}/third_party/engflow-reclient-configs
-	${MV} ${WRKSRC:H}/${GH_PROJECT_esbuild}-${ESBUILD_VER} \
-		${WRKSRC}/esbuild
+	${MV} ${WRKSRC:H}/package ${WRKSRC}/esbuild
 
 pre-patch:
 	${REINPLACE_CMD} -e 's|src/third_party/angle/src|src/third_party/angle|' \
@@ -362,12 +371,6 @@ pre-configure:
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni
 
 do-configure:
-	cd ${WRKSRC}/esbuild && \
-		${LOCALBASE}/bin/node scripts/esbuild.js \
-			${LOCALBASE}/bin/esbuild --neutral && \
-		${RM} -r ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild && \
-		${LN} -sf ${WRKSRC}/esbuild/npm/esbuild \
-			${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
 	# GN generator bootstrapping and generating ninja files
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
 		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
@@ -383,7 +386,7 @@ do-configure:
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin/node
 
 	# Setup esbuild dependency
-	${LN} -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
+	${LN} -sf ${WRKSRC}/esbuild/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 
 	# Setup buildtools/freebsd
 	@${MKDIR} ${WRKSRC}/buildtools/freebsd
