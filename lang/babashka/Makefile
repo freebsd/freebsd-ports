@@ -1,5 +1,5 @@
 PORTNAME=	babashka
-DISTVERSION=	1.13.220
+DISTVERSION=	1.13.222
 CATEGORIES=	lang java linux
 MASTER_SITES=	https://github.com/babashka/babashka/releases/download/v${DISTVERSION}/
 DISTFILES_amd64=	babashka-${DISTVERSION}-linux-amd64.tar.gz
