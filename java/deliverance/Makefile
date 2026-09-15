@@ -46,7 +46,7 @@ NATIVE_LIB_DIR=	${WRKDIR}/native-lib
 NATIVE_CFLAGS=	${CFLAGS} -fPIC -fno-omit-frame-pointer -Wunused-variable
 .if "${ARCH:Mamd64}" != ""
 NATIVE_CFLAGS+=	-mavx2 -mfma
-.elif "${ARCH:Maarch64}" != ""
+.elif "${ARCH:Maarch64}" != "" || "${ARCH:Marm64}" != ""
 NATIVE_CFLAGS+=	-march=armv8.2-a+dotprod -D__ARM_NEON__ -flax-vector-conversions
 .endif
 DELIVERANCE_LONGTEST?=	no
