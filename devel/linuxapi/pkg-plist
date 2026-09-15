@@ -16,6 +16,7 @@ include/linuxapi/netinet/in.h
 include/linuxapi/netinet/tcp.h
 include/linuxapi/string.h
 include/linuxapi/sys/mman.h
+include/linuxapi/sys/queue.h
 include/linuxapi/sys/sendfile.h
 include/linuxapi/sys/shm.h
 include/linuxapi/sys/socket.h
