@@ -697,7 +697,6 @@
     SUBDIR += py-timm
     SUBDIR += py-timm-vis
     SUBDIR += py-toil
-    SUBDIR += py-torch-geometric
     SUBDIR += py-torchao
     SUBDIR += py-torchdata
     SUBDIR += py-torchmetrics
