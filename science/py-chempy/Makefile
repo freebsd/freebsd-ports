@@ -1,6 +1,6 @@
 PORTNAME=	chempy
 DISTVERSION=	0.10.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science python # chemistry
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,6 @@ WWW=		https://github.com/bjodah/chempy
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=	Depends on expiring math/py-pygslodeiv2 (EXTRAS option)
-EXPIRATION_DATE=2026-09-15
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dot2tex>=2.11.3:print/dot2tex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.3:math/py-matplotlib@${PY_FLAVOR} \
@@ -40,18 +37,5 @@ USE_PYTHON=	distutils autoplist pytest # 5 tests fail, see https://github.com/bj
 NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pymol # https://github.com/schrodinger/pymol-open-source/issues/100
-
-OPTIONS_DEFINE=		EXTRAS
-OPTIONS_DEFAULT=	EXTRAS
-
-EXTRAS_DESC=		Install optional dependencies for additional functionality # this seems to be a copy of what extras pyodesys requires, see https://github.com/bjodah/chempy/issues/241
-EXTRAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}bokeh>=0.13.0:www/py-bokeh@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pycodeexport>=0.1.3:devel/py-pycodeexport@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pycompilation>=0.4.12:devel/py-pycompilation@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pygslodeiv2>=0.9.4:math/py-pygslodeiv2@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pyodeint>=0.10.4:math/py-pyodeint@${PY_FLAVOR}
-			# TODO pycvodes>=0.14.0, pykinsol>=0.1.6
 
 .include <bsd.port.mk>
