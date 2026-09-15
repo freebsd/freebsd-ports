@@ -41,9 +41,6 @@ moonshine has been installed. Notes for setting it up:
      service virtual_oss start
    The default virtual_oss configuration creates /dev/dsp.loop; point your
    playback applications at it so their audio is streamed to the client.
-
-6. To bind a dual-stack address ("::" in the config), also set:
-     sysctl net.inet6.ip6.v6only=0
 EOM
 }
 ]
