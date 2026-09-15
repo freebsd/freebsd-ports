@@ -91,7 +91,7 @@
     <affects>
     <package>
 	<name>cjose</name>
-	<range><lt>&amp;lt; 0.6.2.5</lt></range>
+	<range><lt>0.6.2.5</lt></range>
     </package>
     </affects>
     <description>
