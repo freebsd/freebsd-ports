@@ -5,7 +5,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://mandoc.bsd.lv/snapshots/ \
 		LOCAL/uqs
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ziaee@FreeBSD.org
 COMMENT=	Suite of for tools compiling mdoc and man macros
 WWW=		https://mandoc.bsd.lv/
 
