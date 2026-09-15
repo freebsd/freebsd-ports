@@ -116,7 +116,7 @@ include/sundials/sundials_stepper.hpp
 include/sundials/sundials_types.h
 include/sundials/sundials_types_deprecated.h
 include/sundials/sundials_version.h
-include/sundomeigest/sundomeigest_arnoldi.h
+%%LAPACK%%include/sundomeigest/sundomeigest_arnoldi.h
 include/sundomeigest/sundomeigest_power.h
 include/sunlinsol/sunlinsol_band.h
 include/sunlinsol/sunlinsol_dense.h
@@ -188,9 +188,9 @@ lib/libsundials_nvecpthreads.so.7.9.0
 lib/libsundials_nvecserial.so
 lib/libsundials_nvecserial.so.7
 lib/libsundials_nvecserial.so.7.9.0
-lib/libsundials_sundomeigestarnoldi.so
-lib/libsundials_sundomeigestarnoldi.so.1
-lib/libsundials_sundomeigestarnoldi.so.1.4.0
+%%LAPACK%%lib/libsundials_sundomeigestarnoldi.so
+%%LAPACK%%lib/libsundials_sundomeigestarnoldi.so.1
+%%LAPACK%%lib/libsundials_sundomeigestarnoldi.so.1.4.0
 lib/libsundials_sundomeigestpower.so
 lib/libsundials_sundomeigestpower.so.1
 lib/libsundials_sundomeigestpower.so.1.4.0
