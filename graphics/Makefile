@@ -935,7 +935,6 @@
     SUBDIR += py-diplib
     SUBDIR += py-dj60-sorl-thumbnail
     SUBDIR += py-django-easy-thumbnails
-    SUBDIR += py-djvulibre
     SUBDIR += py-easyocr
     SUBDIR += py-exifread
     SUBDIR += py-exiv2

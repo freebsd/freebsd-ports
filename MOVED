@@ -5601,3 +5601,4 @@ devel/py-pytest-httpserver|devel/py-pytest_httpserver|2026-09-12|Rename to match
 math/libformfactor|math/formfactor|2026-09-12|Project was renamed upstream from libformfactor to formfactor
 math/py-pygslodeiv2||2026-09-15|Has expired: Depends on expired lang/cython0
 devel/py-python-dtrace||2026-09-15|Has expired: Depends on expired lang/cython0
+graphics/py-djvulibre||2026-09-15|Has expired: Depends on expired lang/cython0
