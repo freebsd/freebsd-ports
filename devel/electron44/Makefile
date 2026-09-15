@@ -11,6 +11,16 @@ DISTFILES=	chromium-${CHROMIUM_VER}-lite${EXTRACT_SUFX}:chromium \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio
 DIST_SUBDIR=	${PORTNAME}
 
+.if make(makesum)
+MASTER_SITES+=	https://registry.npmjs.org/@esbuild/freebsd-arm64/-/freebsd-arm64-${ESBUILD_VER}.tgz?dummy=/:esbuild_arm64 \
+		https://registry.npmjs.org/@esbuild/freebsd-x64/-/freebsd-x64-${ESBUILD_VER}.tgz?dummy=/:esbuild_x64
+DISTFILES+=	esbuild-freebsd-arm64-${ESBUILD_VER}.tgz:esbuild_arm64 \
+		esbuild-freebsd-x64-${ESBUILD_VER}.tgz:esbuild_x64
+.else
+MASTER_SITES+=	https://registry.npmjs.org/@esbuild/freebsd-${GO_ARCH}/-/freebsd-${GO_ARCH}-${ESBUILD_VER}.tgz?dummy=/:esbuild_${GO_ARCH}
+DISTFILES+=	esbuild-freebsd-${GO_ARCH}-${ESBUILD_VER}.tgz:esbuild_${GO_ARCH}
+.endif
+
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
 WWW=		https://electronjs.org/
@@ -25,8 +35,7 @@ FETCH_DEPENDS=	git:devel/git \
 		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 PATCH_DEPENDS=	git:devel/git \
 		jq:textproc/jq
-BUILD_DEPENDS=	esbuild:devel/esbuild \
-		gperf:devel/gperf \
+BUILD_DEPENDS=	gperf:devel/gperf \
 		bindgen:devel/rust-bindgen-cli \
 		yasm:devel/yasm \
 		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-libs \
@@ -79,8 +88,7 @@ GH_TUPLE=	electron:electron:${DISTVERSIONFULL}:electron \
 		ReactiveCocoa:ReactiveObjC:${REACTIVEOBJC_VER}:reactiveobjc \
 		Mantle:Mantle:${MANTLE_VER}:mantle \
 		EngFlow:reclient-configs:${ENGFLOW_RECLIENT_CONFIGS_VER}:reclient_configs \
-		rollup:rollup:v${ROLLUP_VER}:rollup \
-		evanw:esbuild:v${ESBUILD_VER}:esbuild
+		rollup:rollup:v${ROLLUP_VER}:rollup
 USE_GL=		gbm gl glesv2
 USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xrandr \
@@ -239,8 +247,8 @@ MANTLE_VER=			2a8e2123a3931038179ee06105c9e6ec336b12ea
 ENGFLOW_RECLIENT_CONFIGS_VER=	955335c30a752e9ef7bff375baab5e0819b6c00d
 # See ${WRKSRC}/third_party/devtools-frontend/src/node_modules/rollup/package.json
 ROLLUP_VER=			4.60.4
-# Keep in sync with devel/esbuild
-ESBUILD_VER=			0.28.1
+# See ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild/package.json
+ESBUILD_VER=			0.25.1
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
@@ -291,6 +299,7 @@ TEST_ENV+=	${MAKE_ENV} \
 		SENTRYCLI_SKIP_DOWNLOAD=1
 
 ELECTRON_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
+GO_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 
 pre-everything::
 	@${ECHO_MSG}
@@ -319,8 +328,7 @@ post-extract:
 		${WRKSRC}/third_party/engflow-reclient-configs
 	${MV} ${WRKDIR}/${GH_PROJECT_rollup}-${ROLLUP_VER} \
 		${WRKSRC}/rollup
-	${MV} ${WRKDIR}/${GH_PROJECT_esbuild}-${ESBUILD_VER} \
-		${WRKSRC}/esbuild
+	${MV} ${WRKDIR}/package ${WRKSRC}/esbuild
 
 pre-patch:
 	${SH} ${FILESDIR}/apply-electron-patches.sh ${WRKSRC}
@@ -362,12 +370,6 @@ pre-configure:
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni
 
 do-configure:
-	cd ${WRKSRC}/esbuild && \
-	${LOCALBASE}/bin/node scripts/esbuild.js \
-		${LOCALBASE}/bin/esbuild --neutral && \
-	${RM} -r ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild && \
-	${LN} -sf ${WRKSRC}/esbuild/npm/esbuild \
-		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
 	# GN generator bootstrapping and generating ninja files
 	cd ${WRKSRC} && \
 	${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
@@ -391,7 +393,7 @@ do-configure:
 		${WRKSRC}/third_party/rust-toolchain/bin/rustc
 
 	# Setup esbuild dependency
-	${LN} -sf ${LOCALBASE}/bin/esbuild \
+	${LN} -sf ${WRKSRC}/esbuild/bin/esbuild \
 		${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 
 	# Setup gperf dependency
