@@ -5609,3 +5609,4 @@ net/py-libdnet||2026-09-15|Has expired: Depends on expired lang/cython0
 devel/py-trimesh||2026-09-15|Has expired: Depends on expiring math/py-python-fcl
 net/py-pytradfri||2026-09-15|Has expired: Depends on expirign net/py-DTLSSocket
 net/py-DTLSSocket||2026-09-15|Has expired: Depends on expired lang/cython0
+net/py-pyenet||2026-09-15|Has expired: Depends on expired lang/cython0
