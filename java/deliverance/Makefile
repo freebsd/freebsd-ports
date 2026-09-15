@@ -43,12 +43,10 @@ ANTARES_JAR=	deliverance-antares-cli-${DISTVERSION}-all.jar
 NANOCODE_JAR=	nanocode-deliverance-${DISTVERSION}-all.jar
 NATIVE_SRC=	${WRKSRC_source}/native/src/main/c
 NATIVE_LIB_DIR=	${WRKDIR}/native-lib
-NATIVE_CFLAGS=	${CFLAGS} -fPIC -fno-omit-frame-pointer -Wunused-variable
-.if "${ARCH:Mamd64}" != ""
-NATIVE_CFLAGS+=	-mavx2 -mfma
-.elif "${ARCH:Maarch64}" != "" || "${ARCH:Marm64}" != ""
-NATIVE_CFLAGS+=	-march=armv8.2-a+dotprod -D__ARM_NEON__ -flax-vector-conversions
-.endif
+NATIVE_CFLAGS_amd64=	-mavx2 -mfma
+NATIVE_CFLAGS_aarch64=	-march=armv8.2-a+dotprod -D__ARM_NEON__ -flax-vector-conversions
+NATIVE_CFLAGS_arm64=	${NATIVE_CFLAGS_aarch64}
+NATIVE_CFLAGS=	${CFLAGS} -fPIC -fno-omit-frame-pointer -Wunused-variable ${NATIVE_CFLAGS_${ARCH}}
 DELIVERANCE_LONGTEST?=	no
 # Long test model cache location. Default reuses the invoking user's normal
 # Deliverance cache, usually ~/.deliverance. For isolated test downloads use:
