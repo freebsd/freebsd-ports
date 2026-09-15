@@ -1,7 +1,7 @@
 PORTNAME=	vite-plus
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 # rolldown is a PATH dependency (~48 `path = "./rolldown/crates/*"` entries in
@@ -24,12 +24,9 @@ WWW=		https://github.com/voidzero-dev/vite-plus \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo ssl
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-# Single-binary port: the `vp` executable is the only file the cargo
-# framework installs (LICENSE files are auto-handled by the license machinery
-# and appear under usr/local/share/licenses/ in the stage).
-PLIST_FILES=	bin/vp
+USES=		cargo ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	voidzero-dev
@@ -51,9 +48,21 @@ CARGO_INSTALL_PATH=crates/vp_global_cli
 #     `-Z bindeps` build arg) so it also survives the framework's `cargo update`
 #     configure step, which needs the `artifact = "cdylib"` dep syntax.
 #   - WORKSPACE_DIR=rolldown is read by the rolldown_workspace crate via env!
+#   - RELEASE_BUILD=1 build binding libraries
 CARGO_ENV+=	RUSTC_BOOTSTRAP=1
 CARGO_ENV+=	CARGO_UNSTABLE_BINDEPS=true
 CARGO_ENV+=	WORKSPACE_DIR=rolldown
+CARGO_ENV+=	RELEASE_BUILD=1
+
+PLIST_FILES=	bin/vp \
+		lib/${PORTNAME}/libvite_plus_cli.so \
+		lib/${PORTNAME}/librolldown_binding.so \
+		lib/${PORTNAME}/libvp_pm_cli_macros.so
+
+VITE_RELEASE_LIBS=	libvite_plus_cli.so \
+			librolldown_binding.so \
+			libvp_pm_cli_macros.so
+
 
 # The framework auto-extracts every DISTFILE into ${WRKDIR}; move the rolldown
 # tree to ${WRKSRC}/rolldown so the ./rolldown/crates/* path deps resolve.
@@ -76,6 +85,13 @@ post-patch:
 	       (cd "$$d" && ${PATCH} -p1 < ${PATCHDIR}/fspy-freebsd.patch); \
 	     fi; \
 	   done)
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+.for f in ${VITE_RELEASE_LIBS}
+	@${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/${f} \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/
+.endfor
 
 # To update Makefile.crates execute: make cargo-crates > Makefile.crates
 
