@@ -1,0 +1,4 @@
+This is a modeless Japanese input interface for Emacs. It normally
+operates in alphanumeric input mode; only when you press `C-j` is the
+Romaji string immediately preceding the cursor passed to Mozc,
+triggering Mozc's conversion mode.

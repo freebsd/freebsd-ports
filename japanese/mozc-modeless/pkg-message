@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+To activate mozc-modeless, add the following lines to your Emacs
+configuration:
+
+(require 'mozc-modeless)
+(global-mozc-modeless-mode 1)
+EOM
+}
+]

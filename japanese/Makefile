@@ -175,6 +175,7 @@
     SUBDIR += migemo.el
     SUBDIR += mime_pls
     SUBDIR += mozc-el
+    SUBDIR += mozc-modeless
     SUBDIR += mozc-server
     SUBDIR += mozc-tool
     SUBDIR += multiskkserv
