@@ -2,12 +2,12 @@
 -- Older setuptools (like 63.1.0 in FreeBSD) do not support license-files in [project]
 -- and we don't have setuptools 77.0 yet.
 
---- pyproject.toml.orig	2026-05-25 06:16:56 UTC
+--- pyproject.toml.orig	2026-09-14 15:29:21 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
 -requires = ["setuptools>=77.0", "setuptools-scm>=8.0"]
-+requires = ["setuptools>=61.0", "setuptools-scm>=8.0"]
++requires = ["setuptools>=63.1.0", "setuptools-scm>=8.0"]
  build-backend = "setuptools.build_meta"
  
  [project.urls]
