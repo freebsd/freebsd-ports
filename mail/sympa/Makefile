@@ -1,5 +1,5 @@
 PORTNAME=	sympa
-DISTVERSION=	6.2.78
+DISTVERSION=	6.2.80
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-med.fr
@@ -9,9 +9,7 @@ WWW=		https://www.sympa.community
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		postfix:mail/postfix
-RUN_DEPENDS=	mhonarc>=0:www/mhonarc \
+BR_DEPENDS=	mhonarc>=0:www/mhonarc \
 		p5-App-cpanminus>=0:devel/p5-App-cpanminus \
 		p5-Archive-Zip>=1.05:archivers/p5-Archive-Zip \
 		p5-CGI>=3.51:www/p5-CGI \
@@ -53,6 +51,9 @@ RUN_DEPENDS=	mhonarc>=0:www/mhonarc \
 		p5-URI>=1.35:net/p5-URI \
 		p5-URI-Find>0:textproc/p5-URI-Find \
 		p5-XML-LibXML>=1.70:textproc/p5-XML-LibXML
+BUILD_DEPENDS=	${BR_DEPENDS} \
+		postfix:mail/postfix
+RUN_DEPENDS=	${BR_DEPENDS}
 
 # Shebang is corrected by configure script
 USES=		autoreconf cpe fakeroot gettext gmake perl5 shebangfix
@@ -61,8 +62,6 @@ GH_ACCOUNT=	sympa-community
 USE_RC_SUBR=	sympa
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/bin \
 			--datadir=${DATADIR} \
 			--enable-fhs \
@@ -112,15 +111,14 @@ APACHE_USES=		apache:run
 FASTCGI_RUN_DEPENDS=	p5-CGI-Fast>=1.08:www/p5-CGI-Fast \
 			p5-FCGI>=0.67:www/p5-FCGI
 MYSQL_RUN_DEPENDS=	${DBD_MYSQL}
+MYSQL_USES=		mysql
 MYSQL_SUB_LIST=		REQ_MYSQL=mysql
 MYSQL_SUB_LIST_OFF=	REQ_MYSQL=""
-MYSQL_USES=		mysql
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=2.00:databases/p5-DBD-Pg
 PGSQL_SUB_LIST=		REQ_PGSQL=postgresql
 PGSQL_SUB_LIST_OFF=	REQ_PGSQL=""
 SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=1.31:databases/p5-DBD-SQLite
 
-ICONSDIR?=	www/icons
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\( *staticdir=\).*$$|\1${DATADIR}|'	\
 	    -e 's|^\( *arcdir=\).*$$|\1${DATADIR}/arc|'			\
