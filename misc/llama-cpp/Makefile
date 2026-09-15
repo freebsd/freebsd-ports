@@ -20,6 +20,9 @@ BUILD_DEPENDS=	npm:www/npm
 FETCH_DEPENDS=	npm:www/npm \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
+ONLY_FOR_ARCHS=		amd64
+ONLY_FOR_ARCHS_REASON=	WebUI requires a lot of NodeJS binaries which aren't available on FreeBSD and is a hassle to build, see https://github.com/ggml-org/llama.cpp/issues/28928
+
 BROKEN_armv7=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278810
 BROKEN_i386=	compilation fails, see https://github.com/ggml-org/llama.cpp/issues/9545
 
