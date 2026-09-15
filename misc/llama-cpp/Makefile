@@ -1,7 +1,10 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	10900
+DISTVERSION=	10975
 CATEGORIES=	misc # machine-learning
+MASTER_SITES=	https://huggingface.co/buckets/ggml-org/llama-ui/resolve/${UI_ASSETS_TAG}/:ui_assets
+DISTFILES=	dist.tar.gz:ui_assets \
+		dist.tar.gz.sha256:ui_assets
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -12,16 +15,9 @@ WWW=		https://github.com/ggml-org/llama.cpp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lang python:run shebangfix ssl
-
 LIB_DEPENDS=	libggml-base.so:misc/ggml
 
-BUILD_DEPENDS=	npm:www/npm
-FETCH_DEPENDS=	npm:www/npm \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-
-ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	WebUI requires a lot of NodeJS binaries which aren't available on FreeBSD and is a hassle to build, see https://github.com/ggml-org/llama.cpp/issues/28928
+USES=		cmake:testing compiler:c++11-lang python:run shebangfix ssl
 
 BROKEN_armv7=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=278810
 BROKEN_i386=	compilation fails, see https://github.com/ggml-org/llama.cpp/issues/9545
@@ -32,11 +28,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ggml-org
 GH_PROJECT=	llama.cpp
 
-DISTFILES+=	llama-ui-npm-${DISTVERSION}${EXTRACT_SUFX}
-
 SHEBANG_GLOB=	*.py
 
+UI_ASSETS_TAG=	b10970
+
 CMAKE_ON=	BUILD_SHARED_LIBS \
+		BUILD_STATIC_LIBS \
 		LLAMA_USE_SYSTEM_GGML
 CMAKE_OFF=	GGML_NATIVE \
 		FREEBSD_ALLOW_ADVANCED_CPU_FEATURES \
@@ -58,35 +55,15 @@ EXAMPLES_CMAKE_BOOL=	LLAMA_BUILD_EXAMPLES
 BINARY_ALIAS=	git=false \
 		python=${PYTHON_CMD} # for tests
 
-do-fetch:
-	# Fetch the main GH source tarball
-	@if ! [ -f ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-		${MKDIR} ${DISTDIR}/${DIST_SUBDIR}; \
-		cd ${DISTDIR}/${DIST_SUBDIR} && \
-			${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} \
-				https://codeload.github.com/${GH_ACCOUNT}/${GH_PROJECT}/tar.gz/${DISTVERSIONPREFIX}${DISTVERSION}?dummy=/${DISTNAME}${EXTRACT_SUFX} \
-				${FETCH_AFTER_ARGS}; \
-	fi
-	# Download npm dependencies for the WebUI
-	@if ! [ -f ${DISTDIR}/${DIST_SUBDIR}/llama-ui-npm-${DISTVERSION}${EXTRACT_SUFX} ]; then \
-		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} \
-			${SH} ${FILESDIR}/fetch-ui.sh \
-			${DISTVERSION} \
-			${DISTDIR}/${DIST_SUBDIR} \
-			${DISTNAME}${EXTRACT_SUFX} \
-				${FILESDIR}; \
-	fi
-
-post-extract:
-	@${MKDIR} ${WRKSRC}/tools/ui/node_modules
-	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/llama-ui-npm-${DISTVERSION}${EXTRACT_SUFX} -C ${WRKSRC}/tools/ui/node_modules --strip-components 1
-	@cd ${WRKSRC}/tools/ui && \
-		${SETENV} HOME=${WRKSRC} npm run build
-
-post-patch: # set version in the code
+post-patch:
+	# set version in the code
 	@${REINPLACE_CMD} \
 		-e "s|set(BUILD_NUMBER 0)|set(BUILD_NUMBER ${DISTVERSION})|" \
 		${WRKSRC}/cmake/build-info.cmake
+	# update UI assets URL to point to fetched files
+	@${REINPLACE_CMD} \
+		-e "s|https://huggingface.co/buckets/.{HF_BUCKET}/resolve/.{resolved}|file://${DISTDIR}/${DIST_SUBDIR}|" \
+		${WRKSRC}/scripts/ui-assets.cmake
 
 do-test-ci: # build of tests fails, see https://github.com/ggml-org/llama.cpp/issues/10955
 	@cd ${WRKSRC} && \
