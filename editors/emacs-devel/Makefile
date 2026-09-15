@@ -1,5 +1,5 @@
 PORTNAME=	emacs
-DISTVERSION=	32.0.50.20260902
+DISTVERSION=	32.0.50.20260915
 PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -24,7 +24,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags makeinfo ncurses \
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	9f5285398b5e0e7109b1e3f34630fdb297d7083f
+GH_TAGNAME=	30a6d006700b0c8ba9d785a9f6aed81a86e9025f
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \

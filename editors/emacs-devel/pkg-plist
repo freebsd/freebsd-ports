@@ -3940,6 +3940,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/cygwin.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/fbterm.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/fbterm.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/ghostty.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/ghostty.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/haiku-win.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/haiku-win.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.el.gz
