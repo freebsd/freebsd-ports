@@ -60,7 +60,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.8<6.1:www/py-django60@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}psycopg>=3.2.13<4:databases/py-psycopg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg-c>=3.2.13<4:databases/py-psycopg-c@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psycopg-pool>=3.3.0<4:databases/py-psycopg-pool@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}redis>=7.4.0<8:databases/py-redis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}redis>=7.4.0<9:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.34.2<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rq>=2.12<3:devel/py-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}social-auth-core4>=4.8.7<4.9.0:security/py-social-auth-core4@${PY_FLAVOR} \
