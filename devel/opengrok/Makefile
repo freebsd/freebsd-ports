@@ -1,9 +1,8 @@
 PORTNAME=	opengrok
-DISTVERSION=	1.14.1
-PORTREVISION=	2
+DISTVERSION=	1.14.19
 CATEGORIES=	devel java
 # Doesn't currently work with portscout, but the release tarball is required.
-MASTER_SITES=	https://github.com/oracle/opengrok/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/oracle/opengrok/releases/download/${DISTVERSION}/
 
 MAINTAINER=	truckman@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference engine
@@ -27,7 +26,7 @@ RUN_DEPENDS=	uctags:devel/universal-ctags
 
 USES=		cpe java
 CPE_VENDOR=	oracle
-JAVA_VERSION=	17+
+JAVA_VERSION=	21+
 SHAREOWN=	www
 SHAREGRP=	www
 NO_BUILD=	yes
