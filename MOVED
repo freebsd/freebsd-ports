@@ -5607,3 +5607,4 @@ math/py-dgl||2026-09-15|Has expired: Depends on expired lang/cython0
 cad/cura||2026-09-15|Has expired: Depends on expiring devel/py-trimesh
 net/py-libdnet||2026-09-15|Has expired: Depends on expired lang/cython0
 devel/py-trimesh||2026-09-15|Has expired: Depends on expiring math/py-python-fcl
+net/py-pytradfri||2026-09-15|Has expired: Depends on expirign net/py-DTLSSocket

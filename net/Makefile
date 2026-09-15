@@ -1160,7 +1160,6 @@
     SUBDIR += py-python-openstackclient
     SUBDIR += py-python-socks
     SUBDIR += py-python-twitter
-    SUBDIR += py-pytradfri
     SUBDIR += py-pyu2f
     SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
