@@ -5613,3 +5613,4 @@ net/py-pyenet||2026-09-15|Has expired: Depends on expired lang/cython0
 science/py-openEMS||2026-09-15|Has expired: Depends on expired lang/cython0
 science/py-molmod||2026-09-15|Has expired: Depends on expired lang/cython0
 databases/py-pymssql||2026-09-15|Has expired: Depends on expired lang/cython0
+devel/py-game_sdl2||2026-09-15|Has expired: Depends on expired lang/cython0
