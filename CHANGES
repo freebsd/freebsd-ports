@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20260914:
+AUTHOR: dteske@FreeBSD.org
+
+  USES=cran now provides a default WWW of
+  https://cran.r-project.org/package=${PORTNAME} when the port does not
+  set WWW. This matches the existing GitHub/GitLab (bsd.sites.mk) and
+  USES=pear defaults. If the project homepage is not the CRAN package
+  page, set WWW in the Makefile as before.
+
 20251111:
 AUTHOR: kiwi@FreeBSD.org
 

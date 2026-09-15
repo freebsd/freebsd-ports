@@ -19,6 +19,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/R:math/R
 
 PKGNAMEPREFIX?=	R-cran-
 
+WWW?=		https://cran.r-project.org/package=${PORTNAME}
+
 R_LIB_DIR=	lib/R/library
 R_MOD_DIR?=	${R_LIB_DIR}/${PORTNAME}
 PLIST_SUB+=	R_MOD_DIR=${R_MOD_DIR}
