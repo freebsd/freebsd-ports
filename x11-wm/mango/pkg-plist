@@ -1,6 +1,7 @@
 bin/mango
 bin/mmsg
 %%ETCDIR%%/config.conf.sample
+lib/systemd/user/mango-session.target
 %%PORTDOCS%%%%DOCSDIR%%/bindings/index.mdx
 %%PORTDOCS%%%%DOCSDIR%%/bindings/keys.md
 %%PORTDOCS%%%%DOCSDIR%%/bindings/meta.json

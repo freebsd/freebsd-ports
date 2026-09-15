@@ -1,5 +1,5 @@
 PORTNAME=	mango
-DISTVERSION=	0.17.0
+DISTVERSION=	0.17.1
 PORTREVISION=	0
 CATEGORIES=	x11-wm
 
@@ -26,10 +26,11 @@ LIB_DEPENDS=	libcjson.so:devel/libcjson \
 RUN_DEPENDS=	hwdata>=0.399:misc/hwdata \
 		Xwayland:x11-servers/xwayland
 
-USES=		gnome meson pkgconfig
+USES=		gnome meson pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	mangowm
 USE_GNOME=	cairo glib20 pango
+USE_XORG=	xcb
 
 MESON_ARGS=	-Dsysconfdir=${PREFIX}/etc
 
