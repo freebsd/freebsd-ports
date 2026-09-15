@@ -1,7 +1,6 @@
 PORTNAME=	ezc3d
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	1.6.3
-PORTREVISION=	2
+DISTVERSION=	1.7.2
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,6 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		cmake:devel/cmake-core \
+		ninja:devel/ninja \
 		swig:devel/swig
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 
@@ -27,7 +27,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pyomeca
 GH_TUPLE=	google:googletest:3880b13:googletest/external/gtest # https://github.com/pyomeca/ezc3d/issues/256
 
-TEST_ARGS=	${WRKSRC}/test/python3
+MAKE_ENV+=	SKBUILD_CONFIGURE_OPTIONS=-DEZC3D_INSTALL_HEADERS=OFF
+
+TEST_ARGS=	--disable-plugin-autoload ${WRKSRC}/test/python3
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
@@ -49,9 +51,10 @@ pre-test: # download test c3d files
 	@cd ${WRKSRC}/test/c3dFiles && ${MKDIR} ${n} && cd ${n} && ${TAR} -xf ../${n}.zip
 .endfor
 	# move *.c3d files into a flat folder
+	@${RM} -rf ${WRKSRC}/test/c3dTestFiles
 	@${MKDIR} ${WRKSRC}/test/c3dTestFiles
-	@${CP} `${FIND} ${WRKSRC} -name "*.c3d"` ${WRKSRC}/test/c3dTestFiles
+	@${CP} `${FIND} ${WRKSRC} -name "*.c3d" -not -path "${WRKSRC}/test/c3dTestFiles/*"` ${WRKSRC}/test/c3dTestFiles
 
-# tests as of : 2 failed, 25 passed, 1 error in 4.17s, see https://github.com/pyomeca/ezc3d/issues/368
+# tests as of 1.7.2: 30 passed in 8.44s
 
 .include <bsd.port.mk>
