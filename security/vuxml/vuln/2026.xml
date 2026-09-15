@@ -407,7 +407,7 @@
     <affects>
 	<package>
 	  <name>immich</name>
-	  <range><le>3.2.0</le></range>
+	  <range><le>3.2.1</le></range>
 	</package>
     </affects>
     <description>
@@ -420,7 +420,7 @@
 	    albums and links.</p>
 	</blockquote>
 	<p>The single-asset code path still lacks the album removal that the
-	  bulk path performs, so 3.2.0 is affected as well.  Upstream has not
+	  bulk path performs, so 3.2.1 is affected as well.  Upstream has not
 	  released a fix yet.</p>
 	</body>
     </description>
@@ -432,6 +432,7 @@
     <dates>
       <discovery>2026-08-28</discovery>
       <entry>2026-09-11</entry>
+      <modified>2026-09-15</modified>
     </dates>
   </vuln>
 
