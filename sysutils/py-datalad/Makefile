@@ -1,5 +1,5 @@
 PORTNAME=	datalad
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,7 +36,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}annexremote>0:devel/py-annexremote@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}platformdirs>0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-gitlab>0:devel/py-python-gitlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=1.2:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tqdm>=4.32.0:misc/py-tqdm@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tqdm>=4.32.0:misc/py-tqdm@${PY_FLAVOR} \
+		git:devel/git@lite
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
