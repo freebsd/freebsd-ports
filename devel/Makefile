@@ -6379,7 +6379,6 @@
     SUBDIR += py-tree-sitter-yaml
     SUBDIR += py-tree-sitter023
     SUBDIR += py-treelib
-    SUBDIR += py-trimesh
     SUBDIR += py-trove-classifiers
     SUBDIR += py-ttictoc
     SUBDIR += py-ttkbootstrap
