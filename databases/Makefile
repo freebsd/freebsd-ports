@@ -869,7 +869,6 @@
     SUBDIR += py-pylibmc
     SUBDIR += py-pymemcache
     SUBDIR += py-pymongo
-    SUBDIR += py-pymssql
     SUBDIR += py-pymysql
     SUBDIR += py-pyodbc
     SUBDIR += py-pypuppetdb
