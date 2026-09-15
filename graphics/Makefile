@@ -972,6 +972,7 @@
     SUBDIR += py-img2pdf
     SUBDIR += py-imutils
     SUBDIR += py-jbpy
+    SUBDIR += py-kaleido
     SUBDIR += py-kornia
     SUBDIR += py-kornia-rs
     SUBDIR += py-leather
