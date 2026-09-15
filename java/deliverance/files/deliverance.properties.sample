@@ -3,9 +3,13 @@
 
 server.port=8080
 
-# Use the Java/Panama tensor path. The Maven Central jar does not ship a
-# FreeBSD native SIMD library.
-deliverance.tensor.operations.type=jvector
+# Use the port-built CPU native SIMD library.
+deliverance.tensor.operations.type=simd
+
+# Persist reusable KV prefix-cache blocks under the port-owned server data tree.
+deliverance.kv.prefix.mode=SHARED_BLOCKS
+deliverance.kv.shared-prefix.disk-cache.enabled=true
+deliverance.kv.shared-prefix.disk-cache.path=/var/db/deliverance/.deliverance/kv-cache
 
 deliverance-model.configs[0].model-owner=edwardcapriolo
 deliverance-model.configs[0].model-name=Qwen3-0.6B-JQ4

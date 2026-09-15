@@ -10,7 +10,7 @@
 # Optional settings:
 # deliverance_config="%%ETCDIR%%/deliverance.properties"
 # deliverance_home="/var/db/deliverance"
-# deliverance_java_opts="--add-modules jdk.incubator.vector --add-opens java.base/java.nio=ALL-UNNAMED -XX:-UseCompactObjectHeaders -Xmx3G"
+# deliverance_java_opts="--enable-native-access=ALL-UNNAMED --add-modules jdk.incubator.vector --add-opens java.base/java.nio=ALL-UNNAMED -XX:-UseCompactObjectHeaders -Xmx3G"
 # deliverance_args=""
 # deliverance_log="/var/log/deliverance/deliverance.log"
 
@@ -24,7 +24,7 @@ load_rc_config ${name}
 : ${deliverance_enable:="NO"}
 : ${deliverance_config:="%%ETCDIR%%/deliverance.properties"}
 : ${deliverance_home:="/var/db/deliverance"}
-: ${deliverance_java_opts:="--add-modules jdk.incubator.vector --add-opens java.base/java.nio=ALL-UNNAMED -XX:-UseCompactObjectHeaders -Xmx3G"}
+: ${deliverance_java_opts:="--enable-native-access=ALL-UNNAMED --add-modules jdk.incubator.vector --add-opens java.base/java.nio=ALL-UNNAMED -XX:-UseCompactObjectHeaders -Xmx3G"}
 : ${deliverance_args:=""}
 : ${deliverance_log:="/var/log/deliverance/deliverance.log"}
 
@@ -33,7 +33,7 @@ command="/usr/sbin/daemon"
 procname="%%JAVA%%"
 required_files="${deliverance_config}"
 start_precmd="deliverance_precmd"
-command_args="-f -p ${pidfile} -o ${deliverance_log} %%JAVA%% ${deliverance_java_opts} -Duser.home=${deliverance_home} -Dspring.config.location=optional:file:${deliverance_config} -jar %%WEB_JAR%% ${deliverance_args}"
+command_args="-f -p ${pidfile} -o ${deliverance_log} %%JAVA%% ${deliverance_java_opts} -Duser.home=${deliverance_home} -Djava.library.path=%%NATIVE_LIB_DIR%% -Dspring.config.location=optional:file:${deliverance_config} -jar %%WEB_JAR%% ${deliverance_args}"
 
 deliverance_precmd()
 {

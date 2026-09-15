@@ -1,5 +1,5 @@
 PORTNAME=	deliverance
-DISTVERSION=	0.0.12
+DISTVERSION=	0.0.15
 CATEGORIES=	java science
 MASTER_SITES=	https://repo1.maven.org/maven2/io/teknek/${PORTNAME}/web/${DISTVERSION}/:web \
 		https://repo1.maven.org/maven2/io/teknek/${PORTNAME}/deliverance-antares-cli/${DISTVERSION}/:antares \
@@ -7,7 +7,12 @@ MASTER_SITES=	https://repo1.maven.org/maven2/io/teknek/${PORTNAME}/web/${DISTVER
 DISTFILES=	${WEB_JAR}:web \
 		${ANTARES_JAR}:antares \
 		${NANOCODE_JAR}:nanocode
-EXTRACT_ONLY=
+EXTRACT_ONLY=	${DISTFILE_source}
+
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	edwardcapriolo:source
+GH_PROJECT=	deliverance:source
+GH_TAGNAME=	v${DISTVERSION}:source
 
 MAINTAINER=	edlinuxguru@gmail.com
 COMMENT=	Java AI inference engine
@@ -17,12 +22,10 @@ LICENSE=	APACHE20
 
 TEST_DEPENDS=	curl:ftp/curl
 
-USES=		java
+USES=		compiler:c11 java
 JAVA_VERSION=	25+
 USE_RC_SUBR=	${PORTNAME}
 
-NO_ARCH=	yes
-NO_BUILD=	yes
 SUB_FILES=	${PORTNAME}-bin \
 		${PORTNAME}-antares \
 		${PORTNAME}-dead-to-rights \
@@ -32,11 +35,20 @@ SUB_LIST=	JAVA=${JAVA} \
 		WEB_JAR=${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar \
 		ANTARES_JAR=${JAVAJARDIR}/${PORTNAME}/${ANTARES_JAR} \
 		NANOCODE_JAR=${JAVAJARDIR}/${PORTNAME}/${NANOCODE_JAR} \
+		NATIVE_LIB_DIR=${PREFIX}/lib/${PORTNAME} \
 		ETCDIR=${ETCDIR}
 
 WEB_JAR=	web-${DISTVERSION}.jar
 ANTARES_JAR=	deliverance-antares-cli-${DISTVERSION}-all.jar
 NANOCODE_JAR=	nanocode-deliverance-${DISTVERSION}-all.jar
+NATIVE_SRC=	${WRKSRC_source}/native/src/main/c
+NATIVE_LIB_DIR=	${WRKDIR}/native-lib
+NATIVE_CFLAGS=	${CFLAGS} -fPIC -fno-omit-frame-pointer -Wunused-variable
+.if "${ARCH:Mamd64}" != ""
+NATIVE_CFLAGS+=	-mavx2 -mfma
+.elif "${ARCH:Maarch64}" != ""
+NATIVE_CFLAGS+=	-march=armv8.2-a+dotprod -D__ARM_NEON__ -flax-vector-conversions
+.endif
 DELIVERANCE_LONGTEST?=	no
 # Long test model cache location. Default reuses the invoking user's normal
 # Deliverance cache, usually ~/.deliverance. For isolated test downloads use:
@@ -50,17 +62,30 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar \
 		${JAVAJARDIR}/${PORTNAME}/${ANTARES_JAR} \
 		${JAVAJARDIR}/${PORTNAME}/${NANOCODE_JAR} \
+		lib/${PORTNAME}/libdeliverance.so \
 		"@dir ${ETCDIR}" \
 		"@sample ${ETCDIR}/deliverance.properties.sample" \
 		"@sample ${ETCDIR}/nanocode-antares-1b.json.sample" \
 		"@sample ${ETCDIR}/nanocode-qwen3-0.6b-jq4.json.sample" \
 		"@dir /var/db/${PORTNAME}" \
+		"@dir /var/db/${PORTNAME}/.deliverance" \
+		"@dir /var/db/${PORTNAME}/.deliverance/kv-cache" \
 		"@dir /var/log/${PORTNAME}"
+
+do-build:
+	${MKDIR} ${NATIVE_LIB_DIR}
+	${CC} ${NATIVE_CFLAGS} -shared ${LDFLAGS} \
+		-I${NATIVE_SRC}/simd \
+		${NATIVE_SRC}/simd/vector_simd.c \
+		${NATIVE_SRC}/simd/vector_runtime.c \
+		-lm -o ${NATIVE_LIB_DIR}/libdeliverance.so
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
+	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}/.deliverance/kv-cache
 	${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
 	${INSTALL_DATA} ${DISTDIR}/${WEB_JAR} \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar
@@ -68,6 +93,8 @@ do-install:
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/${ANTARES_JAR}
 	${INSTALL_DATA} ${DISTDIR}/${NANOCODE_JAR} \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/${NANOCODE_JAR}
+	${INSTALL_LIB} ${NATIVE_LIB_DIR}/libdeliverance.so \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/libdeliverance.so
 	${INSTALL_DATA} ${FILESDIR}/deliverance.properties.sample \
 		${STAGEDIR}${ETCDIR}/deliverance.properties.sample
 	${INSTALL_DATA} ${FILESDIR}/nanocode-antares-1b.json.sample \
@@ -91,10 +118,12 @@ do-test:
 	RESPONSE=${WRKDIR}/deliverance-longtest-stream.txt; \
 	${RM} -f $${CONFIG}; \
 	printf '%s\n' "server.port=$${PORT}" \
-		"deliverance.tensor.operations.type=jvector" > $${CONFIG}; \
-	${JAVA} --add-modules jdk.incubator.vector \
+		"deliverance.tensor.operations.type=simd" > $${CONFIG}; \
+	${JAVA} --enable-native-access=ALL-UNNAMED \
+		--add-modules jdk.incubator.vector \
 		--add-opens java.base/java.nio=ALL-UNNAMED \
 		-XX:-UseCompactObjectHeaders \
+		-Djava.library.path=${NATIVE_LIB_DIR} \
 		-Duser.home=$${HOME_DIR} \
 		-Dspring.config.location=file:$${CONFIG} \
 		-jar ${DISTDIR}/${WEB_JAR} > $${LOG} 2>&1 & \
@@ -129,15 +158,17 @@ do-test:
 	printf '%s\n' "First run will fetch the Qwen3-0.6B-JQ4 model under: $${HOME_DIR}/.deliverance"; \
 	${RM} -f $${CONFIG}; \
 	printf '%s\n' "server.port=$${PORT}" \
-		"deliverance.tensor.operations.type=jvector" \
+		"deliverance.tensor.operations.type=simd" \
 		"deliverance-model.configs[0].model-owner=edwardcapriolo" \
 		"deliverance-model.configs[0].model-name=Qwen3-0.6B-JQ4" \
 		"deliverance-model.configs[0].inference-type=GENERATION" \
 		"deliverance-model.configs[0].output-head-quantization=Q4" > $${CONFIG}; \
-	${JAVA} --add-modules jdk.incubator.vector \
+	${JAVA} --enable-native-access=ALL-UNNAMED \
+		--add-modules jdk.incubator.vector \
 		--add-opens java.base/java.nio=ALL-UNNAMED \
 		-XX:-UseCompactObjectHeaders \
 		-Xmx6G \
+		-Djava.library.path=${NATIVE_LIB_DIR} \
 		-Duser.home=$${HOME_DIR} \
 		-Dspring.config.location=file:$${CONFIG} \
 		-jar ${DISTDIR}/${WEB_JAR} > $${LOG} 2>&1 & \

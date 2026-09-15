@@ -2,9 +2,10 @@
 
 : ${DELIVERANCE_CONFIG:="%%ETCDIR%%/deliverance.properties"}
 : ${DELIVERANCE_HOME:="/var/db/deliverance"}
-: ${DELIVERANCE_JAVA_OPTS:="--add-modules jdk.incubator.vector --add-opens java.base/java.nio=ALL-UNNAMED -XX:-UseCompactObjectHeaders -Xmx3G"}
+: ${DELIVERANCE_JAVA_OPTS:="--enable-native-access=ALL-UNNAMED --add-modules jdk.incubator.vector --add-opens java.base/java.nio=ALL-UNNAMED -XX:-UseCompactObjectHeaders -Xmx3G"}
 
 exec "%%JAVA%%" ${DELIVERANCE_JAVA_OPTS} \
     -Duser.home="${DELIVERANCE_HOME}" \
+    -Djava.library.path="%%NATIVE_LIB_DIR%%" \
     -Dspring.config.location="optional:file:${DELIVERANCE_CONFIG}" \
     -jar "%%WEB_JAR%%" "$@"
