@@ -1,5 +1,5 @@
 PORTNAME=	zeek
-DISTVERSION=	8.0.10
+DISTVERSION=	9.0.0
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
@@ -11,10 +11,12 @@ LICENSE=	CC-BY-4.0
 
 BUILD_DEPENDS=	bison>=3.3:devel/bison \
 		flex>=2.6:textproc/flex \
-		swig>=4.0.2:devel/swig
+		swig>=4.0.2:devel/swig \
+		${PYTHON_PKGNAMEPREFIX}websockets>=11.0.0:devel/py-websockets@${PY_FLAVOR}
 LIB_DEPENDS=	libcares.so:dns/c-ares \
 		libzmq.so:net/libzmq4
-RUN_DEPENDS=	c-ares>=1.25.0:dns/c-ares
+RUN_DEPENDS=	c-ares>=1.25.0:dns/c-ares \
+		${PYTHON_PKGNAMEPREFIX}websockets>=11.0.0:devel/py-websockets@${PY_FLAVOR}
 
 USES=		bison cmake compiler:c++20-lang cpe gettext-runtime perl5 \
 		python shebangfix ssl
@@ -29,43 +31,10 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 PORTSCOUT=	limit:^[0-9]*\.0\.
 
 SHEBANG_FILES=	\
-	auxil/broker/bindings/python/3rdparty/pybind11/docs/conf.py \
-	auxil/broker/bindings/python/3rdparty/pybind11/setup.py \
-	auxil/broker/bindings/python/3rdparty/pybind11/tools/make_changelog.py \
-	auxil/broker/bindings/python/3rdparty/pybind11/tools/setup_global.py.in \
-	auxil/broker/bindings/python/3rdparty/pybind11/tools/setup_main.py.in \
-	auxil/btest/btest \
-	auxil/btest/btest-setsid \
-	auxil/netcontrol-connectors/acld/acld.py \
-	auxil/netcontrol-connectors/command-line/command-line.py \
-	auxil/netcontrol-connectors/openflow/controller.py \
-	auxil/netcontrol-connectors/test/simple-client.py \
-	auxil/package-manager/zkg \
-	auxil/spicy/3rdparty/benchmark/tools/compare.py \
-	auxil/spicy/3rdparty/benchmark/tools/strip_asm.py \
-	auxil/spicy/3rdparty/doctest/scripts/bench/bench.py \
-	auxil/spicy/3rdparty/doctest/scripts/bench/run_all.py \
-	auxil/spicy/doc/scripts/spicy-doc-to-rst \
-	auxil/spicy/tests/Scripts/license-header.py \
-	auxil/spicy/tests/Scripts/stray_baselines.py \
-	auxil/vcpkg/ports/gobject-introspection/portfile.cmake \
-	auxil/zeek-aux/devel-tools/github-manage \
-	auxil/zeek-client/man/build.py \
 	auxil/zeek-client/zeek-client \
-	auxil/zeekctl/ZeekControl/test_cli.py \
-	auxil/zeekctl/auxil/pysubnettree/setup.py \
 	auxil/zeekctl/auxil/trace-summary/trace-summary \
 	auxil/zeekctl/bin/stats-to-csv \
-	auxil/zeekctl/bin/zeekctl.in \
-	auxil/zeekctl/bin/zeekctld.in \
-	auxil/zeekctl/testing/Cfg/bin/zeek__test \
-	auxil/zeekctl/testing/Scripts/diff-to-bytes-output \
-	auxil/zeekctl/util/extract-strictly-local-conns \
-	auxil/zeekctl/util/reformat-stats \
-	ci/collect-repo-info.py \
-	testing/coverage/coverage_cleanup.py \
-	testing/scripts/coverage-calc \
-	testing/scripts/httpd.py
+	auxil/zeekctl/bin/zeekctl.in
 
 SUB_FILES=	pkg-message
 NO_MTREE=	yes
@@ -168,6 +137,8 @@ post-patch:
 post-install:
 	${MV} ${STAGEDIR}${DATADIR}/site/local.zeek \
 	    ${STAGEDIR}${DATADIR}/site/local.zeek.sample
+	${MV} ${STAGEDIR}${PREFIX}/etc/zeek/zeek.conf \
+	    ${STAGEDIR}${PREFIX}/etc/zeek/zeek.conf.sample
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/zeek-cut
 	@${RM} ${STAGEDIR}${PREFIX}/share/zeek/tests
 	${LN} -s ../btest/data ${STAGEDIR}${PREFIX}/share/zeek/tests
