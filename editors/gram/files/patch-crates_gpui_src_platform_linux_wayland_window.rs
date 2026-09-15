@@ -1,6 +1,6 @@
---- crates/gpui/src/platform/linux/wayland/window.rs.orig	2026-03-24 22:04:08 UTC
+--- crates/gpui/src/platform/linux/wayland/window.rs.orig	2026-08-25 07:40:58 UTC
 +++ crates/gpui/src/platform/linux/wayland/window.rs
-@@ -169,7 +169,7 @@ impl WaylandSurfaceState {
+@@ -168,7 +168,7 @@ impl WaylandSurfaceState {
              }
  
              if let Some(exclusive_edge) = options.exclusive_edge {

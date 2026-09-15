@@ -1,7 +1,7 @@
---- crates/languages/src/html.rs.orig	2026-03-26 00:34:06 UTC
+--- crates/languages/src/html.rs.orig	2026-08-25 07:40:58 UTC
 +++ crates/languages/src/html.rs
-@@ -31,6 +31,12 @@ impl SuperhtmlLspAdapter {
-     const OS_NAME: &str = "linux-musl";
+@@ -33,6 +33,12 @@ impl SuperhtmlLspAdapter {
+     const OS_NAME: &str = "macos";
  }
  
 +#[cfg(target_os = "freebsd")]

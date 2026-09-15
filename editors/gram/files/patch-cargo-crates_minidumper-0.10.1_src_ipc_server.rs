@@ -1,5 +1,5 @@
---- cargo-crates/minidumper-0.8.3/src/ipc/server.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/minidumper-0.8.3/src/ipc/server.rs
+--- cargo-crates/minidumper-0.10.1/src/ipc/server.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/minidumper-0.10.1/src/ipc/server.rs
 @@ -38,7 +38,7 @@ impl ClientConn {
  
          let mut hdr_buf = [0u8; std::mem::size_of::<Header>()];
@@ -9,7 +9,7 @@
                  let len = self.socket.0.peek(&mut hdr_buf).ok()?;
              } else {
                  let len = self.socket.peek(&mut hdr_buf).ok()?;
-@@ -96,11 +96,12 @@ impl Server {
+@@ -94,11 +94,12 @@ impl Server {
          };
  
          cfg_if::cfg_if! {
@@ -23,7 +23,7 @@
                      SocketName::Abstract(name) => {
                          uds::UnixSocketAddr::from_abstract(name).map_err(|_err| Error::InvalidName)?
                      }
-@@ -312,6 +313,14 @@ impl Server {
+@@ -310,6 +311,14 @@ impl Server {
                                              if pid.get() != crash_ctx.pid as u32 {
                                                  return Err(Error::UnknownClientPid);
                                              }
@@ -38,10 +38,10 @@
                                          } else if #[cfg(target_os = "windows")] {
                                              use scroll::Pread;
                                              let dump_request: super::DumpRequest = buffer.pread(0)?;
-@@ -468,10 +477,15 @@ impl Server {
-                     minidump_writer::minidump_writer::MinidumpWriter::dump_crash_context(crash_context, None, &mut minidump_file);
+@@ -474,6 +483,11 @@ impl Server {
              } else if #[cfg(target_os = "macos")] {
                  let mut writer = minidump_writer::minidump_writer::MinidumpWriter::with_crash_context(crash_context);
+                 let result = writer.dump(&mut minidump_file);
 +            } else if #[cfg(target_os = "freebsd")] {
 +                let result: Result<Vec<u8>, std::io::Error> = Err(std::io::Error::new(
 +                    std::io::ErrorKind::Unsupported,
@@ -50,12 +50,7 @@
              }
          }
  
--        #[cfg(not(target_os = "windows"))]
-+        #[cfg(not(any(target_os = "windows", target_os = "freebsd")))]
-         let result = writer.dump(&mut minidump_file);
- 
-         // Notify the user handler about the minidump, even if we failed to write it
-@@ -482,8 +496,10 @@ impl Server {
+@@ -485,8 +499,10 @@ impl Server {
                      path: minidump_path,
                      #[cfg(target_os = "windows")]
                      contents: None,
