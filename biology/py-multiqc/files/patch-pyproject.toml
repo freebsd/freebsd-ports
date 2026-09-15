@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-06-09 13:19:58 UTC
++++ pyproject.toml
+@@ -11,7 +11,7 @@ dependencies = [
+     "humanize",
+     "importlib_metadata",
+     "jinja2>=3.0.0",
+-    "kaleido==0.2.1",     # for flat plot export
++    "kaleido>=0.2.1",     # for flat plot export
+     "markdown",
+     "numpy",
+     "packaging",
