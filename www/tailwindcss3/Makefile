@@ -39,7 +39,7 @@ do-build:
 do-install:
 	(cd ${WRKDIR} && \
 		${SETENV} HOME=${WRKDIR} npm install --global --no-audit \
-		--no-fund --no-prune --cache ${_NPM_CACHE} --prefer-offline \
+		--no-fund --cache ${_NPM_CACHE} --prefer-offline \
 		--prefix=${STAGEDIR}${PREFIX} autoprefixer@${_PREFIX_VER} \
 		tailwindcss@${_TAILWIND_VER} postcss@${_POSTCSS_VER} \
 		@tailwindcss/forms@${_FORMS_VER} daisyui@${_DAISYUI_VER})
