@@ -47,6 +47,6 @@ librenms_precmd()
 	cd %%WWWDIR%%
 }
 
-command_args="$librenms_daemonflags -H -P $pidfile %%PYTHON%% %%WWWDIR%%/librenms/librenms-service.py"
+command_args="$librenms_daemonflags -H -P $pidfile %%PYTHON%% %%WWWDIR%%/librenms-service.py"
 
 run_rc_command "$1"
