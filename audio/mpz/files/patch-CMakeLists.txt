@@ -1,0 +1,34 @@
+--- CMakeLists.txt.orig	2026-09-02 19:12:58 UTC
++++ CMakeLists.txt
+@@ -460,6 +460,7 @@ endif()
+ # ENDOF TAGLIB
+ 
+ # LIBEBUR128
++if (ENABLE_GAPLESS)
+ option(USE_SYSTEM_LIBEBUR128 "Use libebur128 provided by the OS" OFF)
+ if (USE_SYSTEM_LIBEBUR128)
+   find_library(EBUR128_LIBRARY ebur128 REQUIRED)
+@@ -501,7 +502,6 @@ endif()
+     target_include_directories(ebur128 PRIVATE ${EBUR128_SOURCE_DIR})
+   endif()
+ endif()
+-if (ENABLE_GAPLESS)
+   target_link_libraries(${MPZ_LIB} PUBLIC ebur128)
+ endif()
+ # ENDOF LIBEBUR128
+@@ -551,6 +551,7 @@ endif()
+ # ENDOF LIBMPDCLIENT
+ 
+ # SQLITE3
++if (ENABLE_GAPLESS)
+ option(USE_SYSTEM_SQLITE3 "Use sqlite3 provided by the OS" OFF)
+ if (USE_SYSTEM_SQLITE3)
+   message(STATUS "using system-wide sqlite3")
+@@ -566,7 +567,6 @@ endif()
+ else()
+   include(3rdparty/sqlite3.cmake)
+ endif()
+-if (ENABLE_GAPLESS)
+   target_link_libraries(${MPZ_LIB} PUBLIC sqlite3)
+ endif()
+ # ENDOF SQLITE3
