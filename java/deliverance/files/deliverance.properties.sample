@@ -5,6 +5,7 @@ server.port=8080
 
 # Use the port-built CPU native SIMD library.
 deliverance.tensor.operations.type=simd
+deliverance.gpu.provider=false
 
 # Persist reusable KV prefix-cache blocks under the port-owned server data tree.
 deliverance.kv.prefix.mode=SHARED_BLOCKS

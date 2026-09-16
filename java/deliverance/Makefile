@@ -1,5 +1,5 @@
 PORTNAME=	deliverance
-DISTVERSION=	0.0.15
+DISTVERSION=	0.0.16
 CATEGORIES=	java science
 MASTER_SITES=	https://repo1.maven.org/maven2/io/teknek/${PORTNAME}/web/${DISTVERSION}/:web \
 		https://repo1.maven.org/maven2/io/teknek/${PORTNAME}/deliverance-antares-cli/${DISTVERSION}/:antares \
@@ -61,6 +61,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${JAVAJARDIR}/${PORTNAME}/${ANTARES_JAR} \
 		${JAVAJARDIR}/${PORTNAME}/${NANOCODE_JAR} \
 		lib/${PORTNAME}/libdeliverance.so \
+		lib/${PORTNAME}/libdeliverance_tensor2.so \
 		"@dir ${ETCDIR}" \
 		"@sample ${ETCDIR}/deliverance.properties.sample" \
 		"@sample ${ETCDIR}/nanocode-antares-1b.json.sample" \
@@ -77,6 +78,10 @@ do-build:
 		${NATIVE_SRC}/simd/vector_simd.c \
 		${NATIVE_SRC}/simd/vector_runtime.c \
 		-lm -o ${NATIVE_LIB_DIR}/libdeliverance.so
+	${CC} ${NATIVE_CFLAGS} -shared ${LDFLAGS} \
+		-I${NATIVE_SRC}/tensor2 \
+		${NATIVE_SRC}/tensor2/tensor2_native.c \
+		-o ${NATIVE_LIB_DIR}/libdeliverance_tensor2.so
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
@@ -93,6 +98,8 @@ do-install:
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/${NANOCODE_JAR}
 	${INSTALL_LIB} ${NATIVE_LIB_DIR}/libdeliverance.so \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/libdeliverance.so
+	${INSTALL_LIB} ${NATIVE_LIB_DIR}/libdeliverance_tensor2.so \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/libdeliverance_tensor2.so
 	${INSTALL_DATA} ${FILESDIR}/deliverance.properties.sample \
 		${STAGEDIR}${ETCDIR}/deliverance.properties.sample
 	${INSTALL_DATA} ${FILESDIR}/nanocode-antares-1b.json.sample \
