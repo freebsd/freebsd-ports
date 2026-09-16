@@ -1,7 +1,6 @@
 include/kuku/common.h
 include/kuku/internal/blake2-impl.h
 include/kuku/internal/blake2.h
-include/kuku/internal/config.h
 include/kuku/internal/hash.h
 include/kuku/kuku.h
 include/kuku/locfunc.h
@@ -10,5 +9,5 @@ lib/cmake/Kuku/KukuConfigVersion.cmake
 lib/cmake/Kuku/KukuTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Kuku/KukuTargets.cmake
 lib/libkuku.so
-lib/libkuku.so.3.0
-lib/libkuku.so.3.0.0
+lib/libkuku.so.4.0
+lib/libkuku.so.4.0.0
