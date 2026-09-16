@@ -1,0 +1,12 @@
+The vod module repackages MP4 files on the fly, so that a single set of
+files on disk can be served as HLS, DASH, MSS or HDS without transcoding.
+
+Use cases:
+- Serving one MP4 source to players that expect different streaming
+  protocols
+- Clipping, rate filtering and joining of media on request
+- Encryption for AES-128, SAMPLE-AES and common DRM systems
+- Generating thumbnails and extracting subtitles from the source files
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their VOD option is enabled.

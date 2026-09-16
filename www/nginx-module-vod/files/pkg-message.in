@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the vod module only.  It does not
+install a loadable module, and installing it alongside nginx does not
+add repackaging support to a running server.
+
+The module itself is built by the nginx ports.  To use it, build
+www/nginx, www/nginx-devel or www/freenginx with the VOD option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-vod and produce
+ngx_http_vod_module.so.
+EOM
+}
+]
