@@ -1,3 +1,38 @@
+  <vuln vid="7dc8fd4b-b1a7-11f1-a655-3497f65b111b">
+    <topic>nginx -- buffer overflow when using ngx_http_v3_module</topic>
+    <affects>
+    <package>
+	<name>nginx</name>
+	<range><lt>1.30.5,3</lt></range>
+    </package>
+    <package>
+	<name>nginx-devel</name>
+	<range><lt>1.31.6</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The nginx development team reports:</p>
+	<blockquote cite="https://nginx.org/en/security_advisories.html">
+	  <p>Buffer overflow when using ngx_http_v3_module
+	    (CVE-2026-90439). Severity: medium.</p>
+	  <p>A heap memory buffer overflow might occur in a worker
+	    process under certain configurations when using HTTP/3 with
+	    OpenSSL 3.5.0 and earlier.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-90439</cvename>
+      <url>https://my.f5.com/manage/s/article/K000162604</url>
+      <url>https://nginx.org/en/security_advisories.html</url>
+    </references>
+    <dates>
+      <discovery>2026-09-15</discovery>
+      <entry>2026-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce54d883-b060-11f1-b187-901b0edee044">
     <topic>anki -- multiple vulnerabilities</topic>
     <affects>
