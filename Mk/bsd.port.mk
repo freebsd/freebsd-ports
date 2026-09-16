@@ -3928,8 +3928,9 @@ delete-distfiles-list:
 _CHECKSUM_INIT_ENV= \
 	dp_SHA256=${SHA256}
 
-.    if !target(makesum)
 _CKSUMFILES_FILE=${WRKDIR}/.cksumfiles
+
+.    if !target(makesum)
 # Some port change the options with OPTIONS_*_FORCE when make(makesum) to be
 # able to add all distfiles in one go.
 # For this to work, we need to call the do-fetch script directly here so that
