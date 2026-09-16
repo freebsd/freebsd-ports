@@ -1,3 +1,32 @@
+  <vuln vid="a738c927-b216-11f1-bc39-5404a68ad561">
+    <topic>mkvtoolnix -- Heap Buffer Overflow via avilib ODML Superindex Integer Wraparound</topic>
+    <affects>
+      <package>
+      <name>mkvtoolnix</name>
+      <range><lt>102.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>Moritz Bunkus reports:</p>
+      <blockquote cite="https://mkvtoolnix.download/doc/ChangeLog">
+       <p>potential heap overflows/invalid memory access in the ODML index handling due to
+       unsiged integer multiplication wrapping around (colloquially known as "overflowing")
+       with specifically crafted AVI files. Affects only mkvmerge as the other tools do
+       not read AVIs</p>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-90783</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2026-90783</url>
+    </references>
+    <dates>
+      <discovery>2026-08-25</discovery>
+      <entry>2026-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3f4d285d-b1f6-11f1-8f5e-3c7c3fba4204">
     <topic>Unbound -- multiple vulnerabilities</topic>
     <affects>
