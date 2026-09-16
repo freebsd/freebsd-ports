@@ -1,8 +1,12 @@
 PORTNAME=	pythran
 PORTVERSION=	0.19.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/xtensor-stack/xsimd/commit/
+PATCHFILES=	8df8da7d9ce069348994179f840e3f1680c0dbef.patch:-p2
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Ahead of Time compiler for numeric kernels
@@ -20,6 +24,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
+
+PATCH_WRKSRC=	${WRKSRC}/pythran
 
 NO_ARCH=	yes
 
