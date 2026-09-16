@@ -244,11 +244,11 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/bind/synthrecord.so
-lib/libdns-9.21.25.so
-lib/libisc-9.21.25.so
-lib/libisccc-9.21.25.so
-lib/libisccfg-9.21.25.so
-lib/libns-9.21.25.so
+lib/libdns-9.21.26.so
+lib/libisc-9.21.26.so
+lib/libisccc-9.21.26.so
+lib/libisccfg-9.21.26.so
+lib/libns-9.21.26.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
@@ -272,6 +272,7 @@ share/man/man1/named-journalprint.1.gz
 share/man/man1/named-makejournal.1.gz
 share/man/man1/named-nzd2nzf.1.gz
 @comment share/man/man1/named-rrchecker.1.gz
+share/man/man1/named-wireformat.1.gz
 @comment share/man/man1/nsec3hash.1.gz
 @comment share/man/man1/nslookup.1.gz
 @comment share/man/man1/nsupdate.1.gz
