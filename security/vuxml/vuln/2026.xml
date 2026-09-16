@@ -442,21 +442,27 @@
     <affects>
 	<package>
 	  <name>immich</name>
-	  <range><le>3.2.1</le></range>
+	  <range><le>3.2.2</le></range>
 	</package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>NVD reports:</p>
+	<p>VulnCheck reports:</p>
 	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2026-82272">
 	  <p>Immich through 3.1.0 fails to properly enforce locked asset
 	    visibility when assets are locked through the single-asset
 	    endpoint, allowing them to remain accessible through shared
 	    albums and links.</p>
 	</blockquote>
-	<p>The single-asset code path still lacks the album removal that the
-	  bulk path performs, so 3.2.1 is affected as well.  Upstream has not
-	  released a fix yet.</p>
+	<p>In 3.2.2 the single-asset endpoint still lacks the album removal
+	  that the bulk endpoint performs, and the album and shared link
+	  access checks still carry no visibility filter.  Both code paths
+	  of the web interface use the bulk endpoint, so the state can only
+	  be reached by calling the API directly, and such assets stay
+	  visible only to those the owner already shares the album or the
+	  link with.  The identifier was assigned by VulnCheck, not by the
+	  immich project, which has published no advisory and has not
+	  confirmed the report.  NVD has not analysed the entry.</p>
 	</body>
     </description>
     <references>
@@ -467,7 +473,7 @@
     <dates>
       <discovery>2026-08-28</discovery>
       <entry>2026-09-11</entry>
-      <modified>2026-09-15</modified>
+      <modified>2026-09-16</modified>
     </dates>
   </vuln>
 
