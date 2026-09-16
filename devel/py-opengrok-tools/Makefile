@@ -1,5 +1,6 @@
 PORTNAME=	opengrok-tools
-DISTVERSION=	1.14.1
+DISTVERSION=	${OPENGROK_DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -36,4 +37,5 @@ post-patch:
 	@${REINPLACE_CMD} 's/0\.0\.1/${DISTVERSION}/g' \
 		${BUILD_WRKSRC}/src/main/python/opengrok_tools/version.py
 
+.include "../opengrok/Makefile.common"
 .include <bsd.port.mk>

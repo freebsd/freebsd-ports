@@ -14,4 +14,20 @@ java version 21 or higher is required.  Example:
 	tomcat101_java_home="%%LOCALBASE%%/openjdk21" in /etc/rc.conf
 EOM
 }
+{
+  type: upgrade
+  maximum_version: "1.14.19_1"
+  message: <<EOM
+The %%LOCALBASE%%/bin/opengrok java wrapper script has been replaced
+by the upstream-supported opengrok-tools python command runner, installed
+to the same path. Refer to upstream's Setup Opengrok[0] and Repository
+Synchronization[1] wiki guides for instructions and opengrok-tools usage examples
+using the new %%LOCALBASE%%/bin/opengrok wrapper script, or try running:
+
+opengrok --help
+
+[0] https://github.com/oracle/opengrok/wiki/How-to-setup-OpenGrok#step1---install-management-tools-optional
+[1] https://github.com/oracle/opengrok/wiki/Repository-synchronization
+EOM
+}
 ]

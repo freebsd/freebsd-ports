@@ -270,6 +270,5 @@
 %%T%%/webapps/opengrok/settings.jsp
 %%T%%/webapps/opengrok/status.jsp
 %%T%%/webapps/opengrok/xref.jspf
-bin/opengrok
 %%DATADIR%%/etc/logging.properties.sample
 @dir /var/log/opengrok

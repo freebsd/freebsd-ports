@@ -1,5 +1,6 @@
 PORTNAME=	opengrok
-DISTVERSION=	1.14.19
+DISTVERSION=	${OPENGROK_DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	devel java
 # Doesn't currently work with portscout, but the release tarball is required.
 MASTER_SITES=	https://github.com/oracle/opengrok/releases/download/${DISTVERSION}/
@@ -22,9 +23,10 @@ LICENSE_FILE_RUBY=	${WRKSRC}/doc/LICENSE-ruby.txt
 LICENSE_PERMS_ADAIC=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_ECMA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-RUN_DEPENDS=	uctags:devel/universal-ctags
+RUN_DEPENDS=	uctags:devel/universal-ctags \
+		opengrok:devel/py-opengrok-tools@${PY_FLAVOR}
 
-USES=		cpe java
+USES=		cpe java python:env
 CPE_VENDOR=	oracle
 JAVA_VERSION=	21+
 SHAREOWN=	www
@@ -32,7 +34,7 @@ SHAREGRP=	www
 NO_BUILD=	yes
 NO_ARCH=	yes
 PORTDOCS=	README.md logging.properties.template
-SUB_FILES=	opengrok pkg-message
+SUB_FILES=	pkg-message
 SUB_LIST+=	JARFILE="${JARFILE}"
 PLIST_SUB=	T=${WEBAPP_HOME:S|^${LOCALBASE}/||} \
 		OWNER=${SHAREOWN} GROUP=${SHAREGRP}
@@ -53,7 +55,7 @@ TOMCAT101_BUILD_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat101
 TOMCAT101_RUN_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat101
 
 WEBAPPS_DIR=	${WEBAPP_HOME:S|^${LOCALBASE}/||}/webapps
-JARFILE=	${LOCALBASE}/${WEBAPPS_DIR}/opengrok/WEB-INF/lib/opengrok-${PORTVERSION}.jar
+JARFILE=	${LOCALBASE}/${WEBAPPS_DIR}/opengrok/WEB-INF/lib/opengrok-${DISTVERSION}.jar
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/lib/opengrok
@@ -69,10 +71,10 @@ do-install:
 	(cd ${STAGEDIR}${PREFIX}/${WEBAPPS_DIR}/${PORTNAME}/WEB-INF && \
 		${MV} web.xml web.xml.sample)
 	${INSTALL_DATA} ${WRKSRC}/doc/logging.properties ${STAGEDIR}${DATADIR}/etc/logging.properties.sample
-	${INSTALL_SCRIPT} ${WRKDIR}/opengrok ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}/
 
+.include "Makefile.common"
 .include <bsd.port.mk>
