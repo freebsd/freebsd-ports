@@ -1,5 +1,5 @@
 PORTNAME=	debian-keyring
-DISTVERSION=	2026.06.27
+DISTVERSION=	2026.08.27
 CATEGORIES=	security
 
 MAINTAINER=	jinking.this@gmail.com
