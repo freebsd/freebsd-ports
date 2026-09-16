@@ -1,6 +1,6 @@
 PORTNAME=	uhdm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.86
+DISTVERSION=	1.87
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,10 +26,12 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		UHDM_USE_HOST_CAPNP \
 		UHDM_USE_HOST_GTEST
 CMAKE_OFF=	UHDM_BUILD_TESTS
-CMAKE_TESTING_ON=	UHDM_BUILD_TESTS # tests fail to compile, see https://github.com/chipsalliance/UHDM/issues/1045
+CMAKE_TESTING_ON=	UHDM_BUILD_TESTS
 
 BINARY_ALIAS=	tclsh=${TCLSH}
 
 PLIST_SUB=	SOVERSION=${DISTVERSION}
+
+# tests as of : 100% tests passed, 0 tests failed out of 43
 
 .include <bsd.port.mk>
