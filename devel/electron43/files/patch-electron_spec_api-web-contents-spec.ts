@@ -1,4 +1,4 @@
---- electron/spec/api-web-contents-spec.ts.orig	2026-09-10 01:17:27 UTC
+--- electron/spec/api-web-contents-spec.ts.orig	2026-09-15 14:47:30 UTC
 +++ electron/spec/api-web-contents-spec.ts
 @@ -1608,7 +1608,7 @@ describe('webContents module', () => {
      // back to OpenFolder() which does a blocking DirectoryExists() on the UI
@@ -9,7 +9,7 @@
        'reveals paths under a registered workspace folder without executing them',
        async () => {
          const w = new BrowserWindow({ show: false });
-@@ -4028,7 +4028,7 @@ describe('webContents module', () => {
+@@ -4074,7 +4074,7 @@ describe('webContents module', () => {
      });
  
      // TODO(codebytere): OOPIF printing is disabled on Linux at the moment due to crashes.

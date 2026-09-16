@@ -1,6 +1,6 @@
---- electron/spec/api-web-frame-main-spec.ts.orig	2026-08-10 18:14:50 UTC
+--- electron/spec/api-web-frame-main-spec.ts.orig	2026-09-15 14:47:30 UTC
 +++ electron/spec/api-web-frame-main-spec.ts
-@@ -311,7 +311,7 @@ describe('webFrameMain module', () => {
+@@ -330,7 +330,7 @@ describe('webFrameMain module', () => {
      afterEach(closeAllWindows);
  
      // TODO(jkleinsc) fix this flaky test on linux
