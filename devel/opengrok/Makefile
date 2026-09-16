@@ -4,7 +4,7 @@ CATEGORIES=	devel java
 # Doesn't currently work with portscout, but the release tarball is required.
 MASTER_SITES=	https://github.com/oracle/opengrok/releases/download/${DISTVERSION}/
 
-MAINTAINER=	truckman@FreeBSD.org
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference engine
 WWW=		https://opengrok.github.io/OpenGrok/
 
