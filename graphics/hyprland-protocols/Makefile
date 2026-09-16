@@ -1,6 +1,6 @@
 PORTNAME=	hyprland-protocols
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	graphics
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -10,11 +10,12 @@ WWW=		https://github.com/hyprwm/hyprland-protocols
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		meson
+USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
 
+STRIP=		# empty
 NO_ARCH=	yes
 
 PORTDOCS=	README.md
