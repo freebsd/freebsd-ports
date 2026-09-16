@@ -1,5 +1,6 @@
 PORTNAME=	libibuddy
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -9,11 +10,13 @@ WWW=		https://www.osorio.me/projects/dev/libibbudy/
 LICENSE=	BSD2CLAUSE
 
 USES=		cmake
-USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rosorio
-GH_TAGNAME=	919d309
+USE_LDCONFIG=	yes
 
-PLIST_FILES=	bin/ibuddy_test bin/ibuddycmd include/ibuddy.h lib/libibuddy.so
+PLIST_FILES=	bin/ibuddy_test \
+		bin/ibuddycmd \
+		include/ibuddy.h \
+		lib/libibuddy.so
 
 .include <bsd.port.mk>
