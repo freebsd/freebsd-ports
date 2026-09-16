@@ -1,5 +1,4 @@
 PORTNAME=	nginx
-PORTREVISION=	2
 PKGNAMESUFFIX=	-full
 
 MAINTAINER=	joneum@FreeBSD.org
