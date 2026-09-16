@@ -1,0 +1,21 @@
+--- OvmfPkg/Bhyve/BhyveX64.fdf.orig	2025-08-12 17:42:44 UTC
++++ OvmfPkg/Bhyve/BhyveX64.fdf
+@@ -274,6 +274,18 @@ INF MdeModulePkg/Logo/LogoDxe.inf
+ INF MdeModulePkg/Logo/LogoDxe.inf
+ 
+ #
++# Protocol producers the NetworkPkg drivers depend on, both absent from
++# the stock Bhyve build:
++#  - RngDxe: every NetworkPkg depex requires gEfiRngProtocolGuid, and
++#    bhyve has no virtio-rng device for VirtioRngDxe to bind to.
++#  - Hash2DxeCrypto: TcpDxe requires gEfiHash2ServiceBindingProtocolGuid;
++#    without TcpDxe there is no HttpServiceBinding and HttpBootDxe never
++#    binds. OvmfPkgX64 ships both; the Bhyve platform omitted them.
++#
++INF  SecurityPkg/RandomNumberGenerator/RngDxe/RngDxe.inf
++INF  SecurityPkg/Hash2DxeCrypto/Hash2DxeCrypto.inf
++
++#
+ # Network modules
+ #
+ !if $(E1000_ENABLE)
