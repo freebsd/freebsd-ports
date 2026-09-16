@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5
 CATEGORIES=	math
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Storage expression, unit conversion & address offset CLI calculator
 WWW=		https://github.com/jarun/bcal
 
