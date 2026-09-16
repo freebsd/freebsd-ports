@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 
+PORTSCOUT=	skipv:latest
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
