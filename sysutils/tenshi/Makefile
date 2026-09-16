@@ -1,10 +1,6 @@
 PORTNAME=	tenshi
-PORTVERSION=	0.17
-PORTREVISION=	1
+DISTVERSION=	0.18
 CATEGORIES=	sysutils
-PATCH_SITES=	https://github.com/f-secure-foundry/tenshi/commit/
-PATCHFILES=	1c9c887.patch:-p1 \
-		50f7660.patch:-p1
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Log monitoring program, designed to watch multiple logs
@@ -18,7 +14,8 @@ RUN_DEPENDS=	p5-IO-BufferedSelect>=0:devel/p5-IO-BufferedSelect
 USES=		cpe perl5 shebangfix
 CPE_VENDOR=	inversepath
 USE_GITHUB=	yes
-GH_ACCOUNT=	f-secure-foundry
+GH_ACCOUNT=	inversepath
+GH_TAGNAME=	76e6f63
 USE_PERL5=	run
 USE_RC_SUBR=	tenshi
 SHEBANG_FILES=	tenshi
@@ -30,8 +27,6 @@ MAKE_ARGS=	bindir="${PREFIX}/sbin" \
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-PORTSCOUT=	skipv:2e3cacd
 
 SUB_LIST=	PERL="${PERL}"
 
