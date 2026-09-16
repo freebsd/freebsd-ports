@@ -14987,12 +14987,14 @@ This issue has been patched in version 2.25.2.</p>
 	<name>emacs-canna</name>
 	<name>emacs-nox</name>
 	<name>emacs-wayland</name>
-	<range><lt>30.1,3</lt></range>
+	<range>
+	  <lt>31.1_2,3</lt>
+	</range>
       </package>
       <package>
 	<name>emacs-devel</name>
 	<name>emacs-devel-nox</name>
-	<range><lt>31.0.50.20250101,3</lt></range>
+	<range><lt>32.0.50.20260915,3</lt></range>
       </package>
     </affects>
     <description>
@@ -15012,6 +15014,7 @@ This issue has been patched in version 2.25.2.</p>
     <dates>
       <discovery>2024-11-27</discovery>
       <entry>2025-02-24</entry>
+      <modified>2026-09-16</modified>
     </dates>
   </vuln>
 
