@@ -1,6 +1,6 @@
 PORTNAME=	koboldcpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.118.1
+DISTVERSION=	1.121
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,8 +36,7 @@ MAKE_ARGS=	PRESET_CFLAGS="${CFLAGS}" PRESET_CXXFLAGS="${CXXFLAGS}"
 .endif
 .if ${FLAVOR} == portable
 MAKE_ARGS=	LLAMA_PORTABLE=1
-LIBS=	koboldcpp_default.so koboldcpp_failsafe.so koboldcpp_noavx2.so \
-	koboldcpp_vulkan_noavx2.so
+LIBS=	koboldcpp_default.so koboldcpp_failsafe.so koboldcpp_noavx2.so
 .endif
 
 MAKE_ARGS+=	LLAMA_OPENBLAS=1 LDFLAGS="${LDFLAGS}"
