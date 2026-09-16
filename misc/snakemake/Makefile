@@ -1,5 +1,5 @@
 PORTNAME=	snakemake
-DISTVERSION=	9.20.0
+DISTVERSION=	9.27.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 
@@ -10,10 +10,13 @@ WWW=		https://github.com/snakemake/snakemake
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}conda-inject>=1.3.1:devel/py-conda-inject@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configargparse>0:devel/py-configargparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}connection_pool>=0.0.3:devel/py-connection_pool@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docutils>=0.20:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dpath>=2.1.6:devel/py-dpath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gitpython>0:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanfriendly>0:textproc/py-humanfriendly@${PY_FLAVOR} \
@@ -22,6 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}conda-inject>=1.3.1:devel/py-conda-inject@${
 		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbformat>0:devel/py-nbformat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=24.0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}platformdirs>0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PuLP>=2.3.1:math/py-PuLP@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
@@ -43,18 +47,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}conda-inject>=1.3.1:devel/py-conda-inject@${
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils noflavors autoplist
+USE_PYTHON=	autoplist noflavors pep517
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 TEST_WRKSRC=	${WRKSRC}/tests
 
 do-test:
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest \
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest ${TEST_ARGS} \
 		tests/test_args.py tests/test_internals.py tests/test_io.py \
 		tests/test_prefix_lookup.py -v
 
 NO_ARCH=	yes
 
-# tests as of 9.20.0: 20 passed in 2.94s
+# tests as of 9.27.0: 30 passed in 1.54s
 
 .include <bsd.port.mk>
