@@ -3133,8 +3133,8 @@ ${_target}:
 .          endfor
 	@${SETENV} \
 			${_DO_FETCH_ENV} \
-			dp_MASTER_SITES_FILE=${_MASTER_SITES_FILE} \
-			dp_DISTFILES_FILE=${_DISTFILES_FILE} \
+			dp_SITES_FILE=${_MASTER_SITES_FILE} \
+			dp_FILES_FILE=${_DISTFILES_FILE} \
 			dp_SITE_FLAVOR=MASTER \
 			${SH} ${SCRIPTSDIR}/do-fetch.sh
 .        endif
@@ -3148,8 +3148,8 @@ ${_target}:
 .          endfor
 	@${SETENV} \
 			${_DO_FETCH_ENV} \
-			dp_PATCH_SITES_FILE=${_PATCH_SITES_FILE} \
-			dp_PATCHFILES_FILE=${_PATCHFILES_FILE} \
+			dp_SITES_FILE=${_PATCH_SITES_FILE} \
+			dp_FILES_FILE=${_PATCHFILES_FILE} \
 			dp_SITE_FLAVOR=PATCH \
 			${SH} ${SCRIPTSDIR}/do-fetch.sh
 .        endif
