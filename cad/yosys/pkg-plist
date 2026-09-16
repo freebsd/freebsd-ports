@@ -1,8 +1,3 @@
-bin/yosys
-bin/yosys-config
-bin/yosys-filterlib
-bin/yosys-smtbmc
-bin/yosys-witness
 %%DATADIR%%/abc9_map.v
 %%DATADIR%%/abc9_model.v
 %%DATADIR%%/abc9_unmap.v
@@ -36,11 +31,6 @@ bin/yosys-witness
 %%DATADIR%%/cmp2lcu.v
 %%DATADIR%%/cmp2lut.v
 %%DATADIR%%/cmp2softlogic.v
-%%DATADIR%%/coolrunner2/cells_counter_map.v
-%%DATADIR%%/coolrunner2/cells_latch.v
-%%DATADIR%%/coolrunner2/cells_sim.v
-%%DATADIR%%/coolrunner2/tff_extract.v
-%%DATADIR%%/coolrunner2/xc2_dff.lib
 %%DATADIR%%/dff2ff.v
 %%DATADIR%%/ecp5/ccu2c_sim.vh
 %%DATADIR%%/ecp5/cells_bb.v
@@ -54,14 +44,6 @@ bin/yosys-witness
 %%DATADIR%%/efinix/cells_map.v
 %%DATADIR%%/efinix/cells_sim.v
 %%DATADIR%%/efinix/gbuf_map.v
-%%DATADIR%%/fabulous/arith_map.v
-%%DATADIR%%/fabulous/cells_map.v
-%%DATADIR%%/fabulous/ff_map.v
-%%DATADIR%%/fabulous/io_map.v
-%%DATADIR%%/fabulous/latches_map.v
-%%DATADIR%%/fabulous/prims.v
-%%DATADIR%%/fabulous/ram_regfile.txt
-%%DATADIR%%/fabulous/regfile_map.v
 %%DATADIR%%/gate2lut.v
 %%DATADIR%%/gatemate/arith_map.v
 %%DATADIR%%/gatemate/brams.txt
@@ -90,14 +72,6 @@ bin/yosys-witness
 %%DATADIR%%/gowin/dsp_map.v
 %%DATADIR%%/gowin/lutrams.txt
 %%DATADIR%%/gowin/lutrams_map.v
-%%DATADIR%%/greenpak4/cells_blackbox.v
-%%DATADIR%%/greenpak4/cells_latch.v
-%%DATADIR%%/greenpak4/cells_map.v
-%%DATADIR%%/greenpak4/cells_sim.v
-%%DATADIR%%/greenpak4/cells_sim_ams.v
-%%DATADIR%%/greenpak4/cells_sim_digital.v
-%%DATADIR%%/greenpak4/cells_sim_wip.v
-%%DATADIR%%/greenpak4/gp_dff.lib
 %%DATADIR%%/ice40/abc9_model.v
 %%DATADIR%%/ice40/arith_map.v
 %%DATADIR%%/ice40/brams.txt
@@ -109,6 +83,7 @@ bin/yosys-witness
 %%DATADIR%%/ice40/latches_map.v
 %%DATADIR%%/ice40/spram.txt
 %%DATADIR%%/ice40/spram_map.v
+%%DATADIR%%/include/backends/cxxrtl/runtime/README.txt
 %%DATADIR%%/include/backends/cxxrtl/runtime/cxxrtl/capi/cxxrtl_capi.cc
 %%DATADIR%%/include/backends/cxxrtl/runtime/cxxrtl/capi/cxxrtl_capi.h
 %%DATADIR%%/include/backends/cxxrtl/runtime/cxxrtl/capi/cxxrtl_capi_vcd.cc
@@ -151,9 +126,11 @@ bin/yosys-witness
 %%DATADIR%%/include/kernel/sigtools.h
 %%DATADIR%%/include/kernel/threading.h
 %%DATADIR%%/include/kernel/timinginfo.h
+%%DATADIR%%/include/kernel/unused_bits.h
 %%DATADIR%%/include/kernel/utils.h
 %%DATADIR%%/include/kernel/yosys.h
 %%DATADIR%%/include/kernel/yosys_common.h
+%%DATADIR%%/include/kernel/yosys_config.h
 %%DATADIR%%/include/kernel/yw.h
 %%DATADIR%%/include/libs/ezsat/ezcmdline.h
 %%DATADIR%%/include/libs/ezsat/ezminisat.h
@@ -176,6 +153,7 @@ bin/yosys-witness
 %%DATADIR%%/intel/cycloneive/cells_sim.v
 %%DATADIR%%/intel/max10/cells_map.v
 %%DATADIR%%/intel/max10/cells_sim.v
+%%DATADIR%%/intel/max10/dsp_map.v
 %%DATADIR%%/intel_alm/common/abc9_map.v
 %%DATADIR%%/intel_alm/common/abc9_model.v
 %%DATADIR%%/intel_alm/common/abc9_unmap.v
@@ -336,3 +314,8 @@ bin/yosys-witness
 %%DATADIR%%/xilinx/xc6s_dsp_map.v
 %%DATADIR%%/xilinx/xc7_dsp_map.v
 %%DATADIR%%/xilinx/xcu_dsp_map.v
+bin/yosys
+bin/yosys-config
+bin/yosys-filterlib
+bin/yosys-smtbmc
+bin/yosys-witness

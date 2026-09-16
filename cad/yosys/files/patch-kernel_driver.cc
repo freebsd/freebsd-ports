@@ -1,11 +1,11 @@
---- kernel/driver.cc.orig	2025-09-04 06:00:38 UTC
+--- kernel/driver.cc.orig	2026-09-09 05:26:44 UTC
 +++ kernel/driver.cc
-@@ -21,7 +21,7 @@
+@@ -20,7 +20,7 @@
+ #include "kernel/yosys.h"
  #include "kernel/hashlib.h"
- #include "libs/sha1/sha1.h"
  #define CXXOPTS_VECTOR_DELIMITER '\0'
 -#include "libs/cxxopts/include/cxxopts.hpp"
 +#include <cxxopts.hpp>
  #include <iostream>
+ #include <chrono>
  
- #ifdef YOSYS_ENABLE_READLINE

@@ -1,0 +1,19 @@
+-- Link the "viz" pass against readline/editline when enabled.
+-- Without this, viz.cc includes <readline/readline.h> or
+-- <editline/readline.h> (guarded by the globally-defined
+-- YOSYS_ENABLE_READLINE/YOSYS_ENABLE_EDITLINE macros) but the compiler
+-- include path for these libraries is never added, causing the build
+-- to fail with "file not found" on systems (like FreeBSD) where these
+-- headers are not in the default include path.
+--- passes/cmds/CMakeLists.txt.orig	2026-09-16 03:10:19 UTC
++++ passes/cmds/CMakeLists.txt
+@@ -36,6 +36,9 @@ yosys_pass(viz
+ )
+ yosys_pass(viz
+ 	viz.cc
++	LIBRARIES
++		$<${YOSYS_ENABLE_READLINE}:PkgConfig::readline>
++		$<${YOSYS_ENABLE_EDITLINE}:PkgConfig::editline>
+ )
+ yosys_pass(rename
+ 	rename.cc

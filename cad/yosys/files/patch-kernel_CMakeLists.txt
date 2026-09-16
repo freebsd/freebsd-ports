@@ -1,0 +1,28 @@
+-- Explicitly link the kernel component against Threads::Threads.
+-- kernel/threading.cc uses std::thread/pthread_create(), but on FreeBSD
+-- (unlike Linux glibc) pthread symbols are not folded into libc, so the
+-- final "yosys" executable fails to link with "undefined symbol:
+-- pthread_create" unless the thread library is explicitly linked.
+--
+-- Also link the driver component against the bundled cxxopts target.
+-- kernel/driver.cc includes <cxxopts.hpp> (rather than a relative path),
+-- so it needs the cxxopts include directory, which is provided by the
+-- cxxopts INTERFACE library target.
+--- kernel/CMakeLists.txt.orig	2026-09-09 05:26:44 UTC
++++ kernel/CMakeLists.txt
+@@ -93,6 +93,7 @@ yosys_core(kernel
+ 		${pybind11_INCLUDE_DIR}
+ 	LIBRARIES
+ 		cxxopts
++		$<${YOSYS_ENABLE_THREADS}:Threads::Threads>
+ 		$<${YOSYS_ENABLE_PLUGINS}:${Dlfcn_LIBRARIES}>
+ 		$<${YOSYS_ENABLE_ZLIB}:PkgConfig::zlib>
+ 		$<${YOSYS_ENABLE_READLINE}:PkgConfig::readline>
+@@ -181,6 +182,7 @@ if (NOT YOSYS_BUILD_PYTHON_ONLY)
+ 		INCLUDE_DIRS
+ 			${pybind11_INCLUDE_DIR}
+ 		LIBRARIES
++			cxxopts
+ 			$<${YOSYS_ENABLE_READLINE}:PkgConfig::readline>
+ 			$<${YOSYS_ENABLE_EDITLINE}:PkgConfig::editline>
+ 			$<${YOSYS_ENABLE_TCL}:PkgConfig::tcl>
