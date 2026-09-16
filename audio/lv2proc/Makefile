@@ -11,8 +11,6 @@ WWW=		https://sourceforge.net/projects/naspro/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with audio/lilv 0.26.4
-
 LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 		libserd-0.so:devel/serd \
 		libsndfile.so:audio/libsndfile \
