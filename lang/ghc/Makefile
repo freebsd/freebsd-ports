@@ -159,6 +159,12 @@ BOOT_GHC_VERSION=       9.6.7
 HADRIAN_BOOT_TARBALL=   hadrian-9.6.7-boot-powerpc64le.tar.gz
 .endif
 
+# 9.8.4 big-endian: the 9.8.4 hadrian boot tarball vendors os-string 2.0.2.1,
+# whose byteswap mistypes on BE; use a variant with the fixed os-string.
+.if ${ARCH} == powerpc64 && ${GHC_VERSION} == 9.8.4
+HADRIAN_BOOT_TARBALL=   hadrian-9.8.4-boot-powerpc64.tar.gz
+.endif
+
 pre-configure:
 # Call the bootstrap script
 	cd ${WRKSRC} && ./boot.source
