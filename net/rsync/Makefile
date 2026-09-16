@@ -1,6 +1,6 @@
 PORTNAME=	rsync
 DISTVERSION=	3.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
@@ -34,7 +34,12 @@ GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--disable-debug \
 		--disable-md2man \
 		--enable-ipv6 \
-		--with-rsyncd-conf=${ETCDIR}/rsyncd.conf
+		--with-rsyncd-conf=${ETCDIR}/rsyncd.conf \
+		${CONFIGURE_ARGS_${ARCH}}
+CONFIGURE_ARGS_amd64=	--enable-md5-asm \
+			--enable-roll-simd \
+			--enable-roll-asm
+CONFIGURE_TARGET=	${HOSTARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
