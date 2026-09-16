@@ -1,3 +1,2 @@
-PFX decoder for CryptoPro GOST R 34.10-2012 implementation.
-
-No support for deprecated GOST R 34.10-2001.
+The mysql-config-coder utility encrypts .mylogin.cnf files
+non-interactively and it can show passwords from such files.
