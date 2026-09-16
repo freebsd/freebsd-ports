@@ -182,10 +182,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.41 \
+		rustls-0.23.45 \
 		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.14.1 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
