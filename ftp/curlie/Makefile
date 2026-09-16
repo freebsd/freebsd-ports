@@ -1,7 +1,6 @@
 PORTNAME=	curlie
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.7
-PORTREVISION=	45
+DISTVERSION=	1.8.2
 CATEGORIES=	ftp net www
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -16,9 +15,7 @@ RUN_DEPENDS=	curl:ftp/curl
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	rs
-
-GH_TUPLE=	golang:crypto:159ae71589f3:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys
+GO_MODULE=	github.com/rs/curlie
 
 PLIST_FILES=	bin/${PORTNAME}
 
