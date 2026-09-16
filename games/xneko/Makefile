@@ -1,17 +1,19 @@
 PORTNAME=	xneko
-PORTVERSION=	1.0
-PORTREVISION=	2
+DISTVERSION=	1.0.1
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	LOCAL/dinoex
-DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The classic cat-and-mouse
+MAINTAINER=	mce@FreeBSD.org
+COMMENT=	Classic cat-and-mouse
+WWW=		https://github.com/masayuki-koba/xneko
 
-NO_WRKSUBDIR=	yes
+LICENSE=	PD
+
 USES=		imake xorg
-USE_XORG=	x11
+USE_GITHUB=	yes
+GH_ACCOUNT=	masayuki-koba
+USE_XORG=	x11 xorgproto
+
 PLIST_FILES=	bin/xneko share/man/man6/xneko.6.gz
 
 .include <bsd.port.options.mk>
