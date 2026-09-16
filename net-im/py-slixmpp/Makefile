@@ -5,7 +5,7 @@ CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Elegant Python library for XMPP (aka Jabber, Google Talk, etc.)
 WWW=		https://lab.louiz.org/poezio/slixmpp
 
