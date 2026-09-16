@@ -1,6 +1,6 @@
 PORTNAME=	siegfried
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.7
+DISTVERSION=	1.11.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/richardlehane/siegfried
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		go:modules
+USES=		go:1.27,modules
 GO_MODULE=	github.com/richardlehane/siegfried
 GO_TARGET=	./cmd/sf
 
