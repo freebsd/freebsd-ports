@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	jq>0:textproc/jq
 
-USES=		cmake compiler:c++11-lang gnome pkgconfig readline
+USES=		cmake:testing compiler:c++11-lang gnome pkgconfig readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	Dushistov
 USE_GNOME=	glib20
@@ -30,7 +30,7 @@ NLS_USES=	gettext
 NLS_CMAKE_OFF=	-DENABLE_NLS:BOOL=OFF
 
 post-patch:
-.for i in doc/sdcv.1 src/sdcv.cpp
+.for i in doc/sdcv.1 src/sdcv.cpp tests/t_list
 	@${REINPLACE_CMD} -e \
 		's|/usr/share|${PREFIX}/share|' ${WRKSRC}/${i}
 .endfor
