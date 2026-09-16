@@ -199,6 +199,7 @@
     SUBDIR += mtop
     SUBDIR += mydumper
     SUBDIR += mysql++
+    SUBDIR += mysql-config-coder
     SUBDIR += mysql-connector-c++
     SUBDIR += mysql-connector-j
     SUBDIR += mysql-connector-odbc

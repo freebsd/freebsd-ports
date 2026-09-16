@@ -1,0 +1,3 @@
+PFX decoder for CryptoPro GOST R 34.10-2012 implementation.
+
+No support for deprecated GOST R 34.10-2001.
