@@ -1,3 +1,56 @@
+  <vuln vid="3f4d285d-b1f6-11f1-8f5e-3c7c3fba4204">
+    <topic>Unbound -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>unbound</name>
+	  <range><lt>1.26.1</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs reports:</p>
+	<blockquote cite="https://community.nlnetlabs.nl/t/unbound-1-26-1-released/3463">
+	  <p>This release consolidates security fixes for issues reported over
+	  a period of time. There are fixes for:</p>
+	  <ul>
+	  <li>CVE-2026-81642: Heap buffer overflow and possible Remote Code
+	  Execution when digesting DNSKEY.</li>
+	  <li>CVE-2026-81634: Possible heap buffer overflow during DNSSEC
+	  canonicalization.</li>
+	  <li>CVE-2026-82717: CNAME synthesis could lead to heap corruption.</li>
+	  <li>CVE-2026-77955: Possible ZONEMD verification bypass window.</li>
+	  <li>CVE-2026-78227: Use-after-free in DoQ stream output buffer on
+	  reset re-transmission.</li>
+	  <li>CVE-2026-80225: Possible degradation of service from continuous
+	  queries on the same TCP/DoT connection.</li>
+	  <li>CVE-2026-82720: Use-after-free in DoH stream cleanup code path.</li>
+	  <li>CVE-2026-85501: Retrap: Novel Vulnerabilities to launch
+	  Algorithmic Complexity Attacks on DNSSEC.</li>
+	  <li>CVE-2026-77860: ‘serve-expired’ can bypass Unbound ‘wait-limit’.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-81642</cvename>
+      <cvename>CVE-2026-81634</cvename>
+      <cvename>CVE-2026-82717</cvename>
+      <cvename>CVE-2026-77955</cvename>
+      <cvename>CVE-2026-78227</cvename>
+      <cvename>CVE-2026-80225</cvename>
+      <cvename>CVE-2026-82720</cvename>
+      <cvename>CVE-2026-85501</cvename>
+      <cvename>CVE-2026-77860</cvename>
+      <url>https://community.nlnetlabs.nl/t/unbound-1-26-1-released/3463</url>
+      <url>https://github.com/NLnetLabs/unbound/releases/tag/release-1.26.1</url>
+      <url>https://www.nlnetlabs.nl/projects/unbound/security-advisories/</url>
+    </references>
+    <dates>
+      <discovery>2026-09-15</discovery>
+      <entry>2026-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7dc8fd4b-b1a7-11f1-a655-3497f65b111b">
     <topic>nginx -- buffer overflow when using ngx_http_v3_module</topic>
     <affects>
