@@ -69,6 +69,10 @@ GEOIP2_CONFIGURE_ENABLE=	geoipv2
 
 .if ${ARCH} == "i386"
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-i386
+# powerpc: force the byte-copy Assign macros; the simple ones truncate 16/32-bit
+# values into u_char packet fields (fails -Werror on BE, wrong ethertype).
+.elif ${ARCH:Mpowerpc*}
+CFLAGS+=	-DNEED_ALIGN
 .endif
 
 PLIST_SUB+=	SQLDOC=${SQLDOC}
