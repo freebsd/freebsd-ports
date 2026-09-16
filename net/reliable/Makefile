@@ -1,6 +1,6 @@
 PORTNAME=	reliable
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.4
+DISTVERSION=	1.4.0
 CATEGORIES=	net devel
 
 MAINTAINER=	glenn@mas-bandwidth.com
