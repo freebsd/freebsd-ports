@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	7.2.8
+DISTVERSION=	7.2.9
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
