@@ -1,6 +1,5 @@
 PORTNAME=	gitlab_query_language
-PORTVERSION=	0.34.0
-PORTREVISION=	1
+PORTVERSION=	0.35.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTFILES+=	${DISTNAME}.gem
@@ -32,6 +31,7 @@ CARGO_VENDOR_DIR=	${WRKSRC}/ext/gitlab_query_language/cargo-crates
 # make clean extract
 # make cargo-crates > Makefile.crates
 # # Manually fix the glql version in Makefile.crates as in ${WRKSRC}/ext/gitlab_query_language/Cargo.toml
+# # you can find the correct git sha in ${WRKSRC} directory for glql
 # make makesum
 
 post-extract:
