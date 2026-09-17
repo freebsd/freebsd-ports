@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-glaz
-PORTVERSION=	0.0.3
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 DISTFILES:=	${DISTNAME}.gem
@@ -13,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	protoc:devel/protobuf
-RUN_DEPENDS=	rubygem-google-protobuf>=4.35<5:devel/rubygem-google-protobuf \
+RUN_DEPENDS=	rubygem-google-protobuf-gitlab>=4.35<5:devel/rubygem-google-protobuf-gitlab \
 		rubygem-rb_sys>=0.9.128<0.10:lang/rubygem-rb_sys
 
 USES=		cargo gem gmake llvm:build
@@ -35,9 +34,5 @@ MAKE_ENV+=	PROTOC=${LOCALBASE}/bin/protoc
 # make clean extract
 # make cargo-crates > Makefile.crates
 # make makesum
-
-# Requested upstream: https://gitlab.com/gitlab-org/auth/glaz/-/merge_requests/39
-post-patch:
-	${CP} ${FILESDIR}/manualpatch-crates_glaz-proto_build.rs ${WRKDIR}/glaz-e1100ed8d93b3db58627229b7c4e16e29905a3d0/crates/glaz-proto/build.rs
 
 .include <bsd.port.mk>
