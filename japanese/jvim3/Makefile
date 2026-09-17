@@ -22,19 +22,10 @@ MAKE_ARGS=	FEPOPT='${FEPOPT}' \
 		FEPOBJS="${FEPOBJS}" \
 		LIBS="${LIBS}"
 
-OPTIONS_DEFINE=	X11 DOCS
+OPTIONS_DEFINE=	DIRECT_CANNA DOCS X11
 OPTIONS_DEFAULT=X11
-OPTIONS_RADIO=	FEP
-OPTIONS_RADIO_FEP=	DIRECT_CANNA WNN6 WNN7
-FEP_DESC=	Japanese FrontEnd Processor
 DIRECT_CANNA_DESC=	Canna support (direct)
 DIRECT_CANNA_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
-WNN6_DESC=	Wnn6 support
-WNN6_LIB_DEPENDS=	libjd.so:japanese/FreeWnn-lib
-WNN6_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-wnn6.a:japanese/onew
-WNN7_DESC=	Wnn7 support
-WNN7_LIB_DEPENDS=	libjd.so:japanese/FreeWnn-lib
-WNN7_BUILD_DEPENDS=	${LOCALBASE}/lib/libonew-wnn7.a:japanese/onew
 
 PORTDOCS=	cygwin.txt differen.doc fepctrl.doc readme.doc \
 		termcap.dos uganda.jp vim-jp.htm vim32.ini tutor.j
@@ -49,34 +40,11 @@ X11_LIBS=	-lX11 -L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDIRECT_CANNA} || \
-    ${PORT_OPTIONS:MWNN6} || \
-    ${PORT_OPTIONS:MWNN7}
-FEPOPT+=	-DJP_DEF=\"EEE\" -DFEPCTRL
-.endif
-
-#  Direct connection to Canna
 .if ${PORT_OPTIONS:MDIRECT_CANNA}
-FEPOPT+=	-DCANNA
+FEPOPT=		-DJP_DEF=\"EEE\" -DFEPCTRL -DCANNA
 FEPLIBS=	-lcanna -L${LOCALBASE}/lib
 FEPOBJS=	fepcanna.o
 JVIM3RC=	"set fepctrl"
-.endif
-
-.if ${PORT_OPTIONS:MWNN6} || \
-    ${PORT_OPTIONS:MWNN7} || \
-    ${PORT_OPTIONS:MDIRECT_CANNA}
-FEPOPT+=	-DONEW
-FEPOBJS=	feponew.o
-JVIM3RC=	"set fepctrl onewredraw"
-.endif
-
-.if ${PORT_OPTIONS:MWNN6}
-FEPLIBS+=	-lonew-wnn6 -ljd -lcrypt
-.endif
-
-.if ${PORT_OPTIONS:MWNN7}
-FEPLIBS+=	-lonew-wnn7 -ljd -lcrypt
 .endif
 
 post-build:
