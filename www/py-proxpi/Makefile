@@ -1,5 +1,6 @@
 PORTNAME=	proxpi
-PORTVERSION=	1.3.0
+DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +36,7 @@ PORTSCOUT=	limit:^1\.[0-3]\.
 OPTIONS_DEFINE=	FILE
 FILE_DESC=	Support file:// index/package URLs
 
-FILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests-file>=0:www/py-requests-file@${PY_FLAVOR}
+FILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests-file>=2.1.0:www/py-requests-file@${PY_FLAVOR}
 FILE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-file-option
 
 .include <bsd.port.mk>

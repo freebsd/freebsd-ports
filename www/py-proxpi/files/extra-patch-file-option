@@ -2,6 +2,11 @@ Add support for the file:// URL scheme via requests_file's FileAdapter,
 so the index/package URL can point at a local on-disk PyPI mirror
 instead of only a remote HTTP(S) index.
 
+requests_file >= 2.1.0 is required: earlier releases don't set
+Response.request in FileAdapter.send(), so _cache.py's use of
+response.request.url raises AttributeError: 'NoneType' object has
+no attribute 'url'.
+
 Obtained from: https://github.com/michael-o/proxpi/commit/14ea92360f051723f415e9c2d622d07a18946ff1
 
 --- pyproject.toml.orig
@@ -10,7 +15,7 @@ Obtained from: https://github.com/michael-o/proxpi/commit/14ea92360f051723f415e9
      "jinja2 ~= 3.0",
      "lxml >= 4.8, < 7.0",
      "requests ~= 2.27",
-+    "requests_file",
++    "requests_file >= 2.1.0",
  ]
  description = "PyPI caching mirror"
  keywords = ["pypi", "index", "mirror", "cache"]
