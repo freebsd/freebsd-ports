@@ -1,13 +1,12 @@
 PORTNAME=	couenne
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	0.5.8
-PORTREVISION=	17
+DISTVERSION=	0.5.9
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Convex Over and Under Envelopes for NonliNear Estimation
-WWW=		https://projects.coin-or.org/Couenne
+WWW=		https://github.com/coin-or/Couenne
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Couenne/LICENSE
@@ -17,6 +16,7 @@ LIB_DEPENDS=	libbonmin.so:math/bonmin \
 		libCgl.so:math/cgl \
 		libClp.so:math/clp \
 		libcoinasl.so:math/asl \
+		libcoinmumps.so:math/coin-or-mumps \
 		libCoinUtils.so:math/coinutils \
 		libipopt.so:math/ipopt \
 		libnauty.so:math/nauty \
