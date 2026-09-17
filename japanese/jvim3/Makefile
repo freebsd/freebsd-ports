@@ -1,12 +1,13 @@
 PORTNAME=	jvim
 PORTVERSION=	3.0.j2.1b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese editors
 MASTER_SITES=	https://ftp.st.ryukoku.ac.jp/pub/editor/vim/unix/:vim \
-		https://ftp.st.ryukoku.ac.jp/pub/editor/jvim/jvim3/2.1b/:jvim
+		https://ftp.st.ryukoku.ac.jp/pub/editor/jvim/jvim3/2.1b/:jvim \
+		http://ftp.fwnet.jp/:vim http://ftp.fwnet.jp/:jvim
 DISTFILES=	vim-3.0.tar.gz:vim jvim.2.1b.tar.gz:jvim
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Japanized Vim-3.0
 WWW=		https://ftp.st.ryukoku.ac.jp/pub/editor/jvim/jvim3/vim.html
 
@@ -22,25 +23,25 @@ MAKE_ARGS=	FEPOPT='${FEPOPT}' \
 		FEPOBJS="${FEPOBJS}" \
 		LIBS="${LIBS}"
 
-OPTIONS_DEFINE=	DIRECT_CANNA DOCS X11
+OPTIONS_DEFINE=	CANNA DOCS X11
 OPTIONS_DEFAULT=X11
-DIRECT_CANNA_DESC=	Canna support (direct)
-DIRECT_CANNA_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
+CANNA_DESC=		Canna support
+CANNA_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
 
-PORTDOCS=	cygwin.txt differen.doc fepctrl.doc readme.doc \
-		termcap.dos uganda.jp vim-jp.htm vim32.ini tutor.j
+PORTDOCS=	differen.doc fepctrl.doc readme.doc termcap.dos uganda.jp \
+		tutor.j
 
 CPPFLAGS+=	-DBSD_UNIX -DUSE_LOCALE
 LIBS+=		-ltermlib -L${LOCALBASE}/lib
 
 X11_USES=	xorg
-X11_USE=	XORG=x11
+X11_USE=	XORG=x11,xorgproto
 X11_CPPFLAGS=	-DUSE_X11 -I${LOCALBASE}/include
 X11_LIBS=	-lX11 -L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDIRECT_CANNA}
+.if ${PORT_OPTIONS:MCANNA}
 FEPOPT=		-DJP_DEF=\"EEE\" -DFEPCTRL -DCANNA
 FEPLIBS=	-lcanna -L${LOCALBASE}/lib
 FEPOBJS=	fepcanna.o
