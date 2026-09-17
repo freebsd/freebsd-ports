@@ -8,7 +8,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OpenMMLab: Foundational library for computer vision research
-WWW=		https://mmcv.readthedocs.io/en/latest/
+WWW=		https://mmcv.readthedocs.io/en/latest/ \
+		https://github.com/open-mmlab/mmcv
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
