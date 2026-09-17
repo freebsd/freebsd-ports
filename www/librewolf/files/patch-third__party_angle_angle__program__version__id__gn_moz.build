@@ -1,14 +1,15 @@
-commit 71e48e32362224d51aab8349c697d5d8f45d7be0
+commit def8534bc849e5ede3f8afe6871a21335075696e
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+Date:   Sat Sep 5 16:40:59 2026 +0200
 
     ANGLEShader components for FreeBSD
 
 diff --git third_party/angle/angle_program_version_id_gn/ANGLEShaderProgramVersion.h-22c710649c380411.rsp.in third_party/angle/angle_program_version_id_gn/ANGLEShaderProgramVersion.h-22c710649c380411.rsp.in
 new file mode 100644
-index 000000000000..2246ef3ddae9
+index 000000000000..65e792afa2f5
 --- /dev/null
 +++ third_party/angle/angle_program_version_id_gn/ANGLEShaderProgramVersion.h-22c710649c380411.rsp.in
-@@ -0,0 +1,866 @@
+@@ -0,0 +1,855 @@
 +/third_party/angle/src/common/BinaryStream.h
 +/third_party/angle/src/common/CircularBuffer.h
 +/third_party/angle/src/common/Color.h
@@ -139,10 +140,6 @@ index 000000000000..2246ef3ddae9
 +/third_party/angle/src/libANGLE/MemoryProgramCache.h
 +/third_party/angle/src/libANGLE/MemoryShaderCache.h
 +/third_party/angle/src/libANGLE/Observer.h
-+/third_party/angle/src/libANGLE/Overlay.h
-+/third_party/angle/src/libANGLE/OverlayWidgets.h
-+/third_party/angle/src/libANGLE/Overlay_autogen.h
-+/third_party/angle/src/libANGLE/Overlay_font_autogen.h
 +/third_party/angle/src/libANGLE/PixelLocalStorage.h
 +/third_party/angle/src/libANGLE/Program.h
 +/third_party/angle/src/libANGLE/ProgramExecutable.h
@@ -202,7 +199,6 @@ index 000000000000..2246ef3ddae9
 +/third_party/angle/src/libANGLE/renderer/gl/functionsgl_enums.h
 +/third_party/angle/src/libANGLE/renderer/ImageImpl.h
 +/third_party/angle/src/libANGLE/renderer/MemoryObjectImpl.h
-+/third_party/angle/src/libANGLE/renderer/OverlayImpl.h
 +/third_party/angle/src/libANGLE/renderer/ProgramImpl.h
 +/third_party/angle/src/libANGLE/renderer/ProgramExecutableImpl.h
 +/third_party/angle/src/libANGLE/renderer/ProgramPipelineImpl.h
@@ -282,10 +278,6 @@ index 000000000000..2246ef3ddae9
 +/third_party/angle/src/libANGLE/MemoryProgramCache.cpp
 +/third_party/angle/src/libANGLE/MemoryShaderCache.cpp
 +/third_party/angle/src/libANGLE/Observer.cpp
-+/third_party/angle/src/libANGLE/Overlay.cpp
-+/third_party/angle/src/libANGLE/OverlayWidgets.cpp
-+/third_party/angle/src/libANGLE/Overlay_autogen.cpp
-+/third_party/angle/src/libANGLE/Overlay_font_autogen.cpp
 +/third_party/angle/src/libANGLE/PixelLocalStorage.cpp
 +/third_party/angle/src/libANGLE/Platform.cpp
 +/third_party/angle/src/libANGLE/Program.cpp
@@ -576,9 +568,10 @@ index 000000000000..2246ef3ddae9
 +/third_party/angle/src/compiler/translator/tree_ops/SimplifyLoopConditions.h
 +/third_party/angle/src/compiler/translator/tree_ops/SplitSequenceOperator.cpp
 +/third_party/angle/src/compiler/translator/tree_ops/SplitSequenceOperator.h
-+/third_party/angle/src/compiler/translator/tree_ops/glsl/RegenerateStructNames.h
++/third_party/angle/src/compiler/translator/tree_ops/glsl/ExpandFragmentOutputsToVec4.h
 +/third_party/angle/src/compiler/translator/tree_ops/glsl/RewriteRepeatedAssignToSwizzled.h
 +/third_party/angle/src/compiler/translator/tree_ops/glsl/UseInterfaceBlockFields.h
++/third_party/angle/src/compiler/translator/tree_ops/glsl/WrapStructConstructors.h
 +/third_party/angle/src/compiler/translator/tree_ops/glsl/apple/AddAndTrueToLoopCondition.h
 +/third_party/angle/src/compiler/translator/tree_ops/glsl/apple/RewriteRowMajorMatrices.h
 +/third_party/angle/src/compiler/translator/tree_ops/glsl/apple/UnfoldShortCircuitAST.h
@@ -616,8 +609,6 @@ index 000000000000..2246ef3ddae9
 +/third_party/angle/src/compiler/translator/tree_util/RunAtTheBeginningOfShader.h
 +/third_party/angle/src/compiler/translator/tree_util/RunAtTheEndOfShader.cpp
 +/third_party/angle/src/compiler/translator/tree_util/RunAtTheEndOfShader.h
-+/third_party/angle/src/compiler/translator/tree_util/SpecializationConstant.cpp
-+/third_party/angle/src/compiler/translator/tree_util/SpecializationConstant.h
 +/third_party/angle/src/compiler/translator/tree_util/Visit.h
 +/third_party/angle/src/compiler/translator/util.cpp
 +/third_party/angle/src/compiler/translator/util.h
@@ -635,9 +626,10 @@ index 000000000000..2246ef3ddae9
 +/third_party/angle/src/compiler/translator/glsl/ExtensionGLSL.h
 +/third_party/angle/src/compiler/translator/glsl/TranslatorGLSL.cpp
 +/third_party/angle/src/compiler/translator/glsl/VersionGLSL.cpp
-+/third_party/angle/src/compiler/translator/tree_ops/glsl/RegenerateStructNames.cpp
++/third_party/angle/src/compiler/translator/tree_ops/glsl/ExpandFragmentOutputsToVec4.cpp
 +/third_party/angle/src/compiler/translator/tree_ops/glsl/RewriteRepeatedAssignToSwizzled.cpp
 +/third_party/angle/src/compiler/translator/tree_ops/glsl/UseInterfaceBlockFields.cpp
++/third_party/angle/src/compiler/translator/tree_ops/glsl/WrapStructConstructors.cpp
 +/third_party/angle/src/compiler/translator/tree_ops/glsl/apple/AddAndTrueToLoopCondition.cpp
 +/third_party/angle/src/compiler/translator/tree_ops/glsl/apple/RewriteRowMajorMatrices.cpp
 +/third_party/angle/src/compiler/translator/tree_ops/glsl/apple/UnfoldShortCircuitAST.cpp
@@ -695,8 +687,6 @@ index 000000000000..2246ef3ddae9
 +/third_party/angle/src/compiler/translator/tree_ops/spirv/ClampGLLayer.h
 +/third_party/angle/src/compiler/translator/tree_ops/spirv/EmulateAdvancedBlendEquations.cpp
 +/third_party/angle/src/compiler/translator/tree_ops/spirv/EmulateAdvancedBlendEquations.h
-+/third_party/angle/src/compiler/translator/tree_ops/spirv/EmulateDithering.cpp
-+/third_party/angle/src/compiler/translator/tree_ops/spirv/EmulateDithering.h
 +/third_party/angle/src/compiler/translator/tree_ops/spirv/EmulateFragColorData.cpp
 +/third_party/angle/src/compiler/translator/tree_ops/spirv/EmulateFragColorData.h
 +/third_party/angle/src/compiler/translator/tree_ops/spirv/EmulateFramebufferFetch.cpp
@@ -876,10 +866,10 @@ index 000000000000..2246ef3ddae9
 +/third_party/angle/src/libANGLE/renderer/d3d/driver_utils_d3d.h
 +/third_party/angle/src/libANGLE/renderer/d3d/formatutilsD3D.h
 diff --git third_party/angle/angle_program_version_id_gn/moz.build third_party/angle/angle_program_version_id_gn/moz.build
-index 0af4ee617af3..e3a97576a7e0 100644
+index bbd602444b05..33fd648848ec 100644
 --- third_party/angle/angle_program_version_id_gn/moz.build
 +++ third_party/angle/angle_program_version_id_gn/moz.build
-@@ -60,6 +60,15 @@ if CONFIG["OS_TARGET"] == "Linux":
+@@ -51,6 +51,15 @@ if CONFIG["OS_TARGET"] == "Linux":
          script="/python/mozbuild/mozbuild/action/write_path_list.py",
      )
  
