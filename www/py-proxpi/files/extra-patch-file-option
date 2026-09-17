@@ -1,0 +1,74 @@
+Add support for the file:// URL scheme via requests_file's FileAdapter,
+so the index/package URL can point at a local on-disk PyPI mirror
+instead of only a remote HTTP(S) index.
+
+Obtained from: https://github.com/michael-o/proxpi/commit/14ea92360f051723f415e9c2d622d07a18946ff1
+
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -25,6 +25,7 @@ dependencies = [
+     "jinja2 ~= 3.0",
+     "lxml >= 4.8, < 7.0",
+     "requests ~= 2.27",
++    "requests_file",
+ ]
+ description = "PyPI caching mirror"
+ keywords = ["pypi", "index", "mirror", "cache"]
+--- src/proxpi/_cache.py.orig
++++ src/proxpi/_cache.py
+@@ -16,6 +16,7 @@
+ import urllib.parse
+
+ import requests
++from requests_file import FileAdapter
+ import lxml.etree
+
+ INDEX_URL = os.environ.get("PROXPI_INDEX_URL", "https://pypi.org/simple/")
+@@ -484,6 +485,7 @@ def __init__(self, index_url: str, ttl: int, session: requests.Session = None):
+         self.index_url = index_url
+         self.ttl = ttl
+         self.session = session or requests.Session()
++        self.session.mount("file://", FileAdapter())
+         self._index_t = None
+         self._index_lock = threading.Lock()
+         self._package_locks = _Locks()
+@@ -503,7 +505,11 @@ def _list_packages(self):
+         self._stats.add_miss(key="<index>")
+
+         logger.info(f"Listing packages in index '{self._index_url_masked}'")
+-        response = self.session.get(self.index_url, headers=self._headers, stream=True)
++        index_url = self.index_url
++        splitted_index_url = urllib.parse.urlsplit(self.index_url)
++        if splitted_index_url.scheme == "file" and os.path.isdir(urllib.parse.unquote(splitted_index_url.path)):
++            index_url = urllib.parse.urljoin(self.index_url, "index.html")
++        response = self.session.get(index_url, headers=self._headers, stream=True)
+         response.raise_for_status()
+         self._index_t = _now()
+
+@@ -576,6 +582,9 @@ def _list_files(self, package_name: str):
+                 raise NotFound(package_name)
+             package_url = self._index[package_name]
+             url = urllib.parse.urljoin(self.index_url, package_url)
++            splitted_url = urllib.parse.urlsplit(url)
++            if splitted_url.scheme == "file" and os.path.isdir(urllib.parse.unquote(splitted_url.path)):
++                url = urllib.parse.urljoin(url, "index.html")
+             response = self.session.get(url, headers=self._headers, stream=True)
+             response.raise_for_status()
+
+@@ -757,6 +766,7 @@ def __init__(
+         self.cache_dir = os.path.abspath(cache_dir or tempfile.mkdtemp())
+         self.download_timeout = download_timeout
+         self.session = session or requests.Session()
++        self.session.mount("file://", FileAdapter())
+         self._cache_dir_provided = cache_dir
+         self._files = {}
+         self._evict_lock = threading.Lock()
+@@ -794,7 +804,7 @@ def _populate_files_from_existing_cache_dir(self):
+     def _get_key(url: str) -> str:
+         """Get file cache reference key from file URL."""
+         urlsplit = urllib.parse.urlsplit(url)
+-        parent = _hostname_normalise_pattern.sub("-", urlsplit.hostname)
++        parent = _hostname_normalise_pattern.sub("-", urlsplit.hostname) if urlsplit.hostname else "local"
+         return posixpath.join(parent, *_split_path(urlsplit.path, posixpath.split))
+
+     def _download_file(self, url: str, path: str):

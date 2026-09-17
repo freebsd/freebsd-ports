@@ -1917,6 +1917,7 @@
     SUBDIR += py-priority1
     SUBDIR += py-prometheus-fastapi-instrumentator
     SUBDIR += py-protego
+    SUBDIR += py-proxpi
     SUBDIR += py-proxy.py
     SUBDIR += py-proxy_tools
     SUBDIR += py-puppetboard

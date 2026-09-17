@@ -1,0 +1,4 @@
+proxpi is a PyPI caching mirror. It proxies and caches package indexes
+and file downloads from an upstream Python package index (PyPI or a
+private index), reducing redundant downloads and allowing installs to
+continue during upstream index outages.
