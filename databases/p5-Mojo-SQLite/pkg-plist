@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Mojo/SQLite.pm
+%%SITE_PERL%%/Mojo/SQLite/Database.pm
+%%SITE_PERL%%/Mojo/SQLite/Migrations.pm
+%%SITE_PERL%%/Mojo/SQLite/PubSub.pm
+%%SITE_PERL%%/Mojo/SQLite/Results.pm
+%%SITE_PERL%%/Mojo/SQLite/Transaction.pm
+%%PERL5_MAN3%%/Mojo::SQLite.3.gz
+%%PERL5_MAN3%%/Mojo::SQLite::Database.3.gz
+%%PERL5_MAN3%%/Mojo::SQLite::Migrations.3.gz
+%%PERL5_MAN3%%/Mojo::SQLite::PubSub.3.gz
+%%PERL5_MAN3%%/Mojo::SQLite::Results.3.gz
+%%PERL5_MAN3%%/Mojo::SQLite::Transaction.3.gz
