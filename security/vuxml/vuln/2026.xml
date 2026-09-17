@@ -1,3 +1,62 @@
+  <vuln vid="3f5c81ae-b227-11f1-a655-3497f65b111b">
+    <topic>389-ds-base -- multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>389-ds-base</name>
+	<range><lt>3.2.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The 389 Directory Server project reports:</p>
+	<blockquote cite="https://github.com/389ds/389-ds-base/releases/tag/389-ds-base-3.2.3">
+	  <p>CVE-2026-11770: the replication extended operations did not
+	    verify that the bind DN is accepted by the replica, and the
+	    CleanRUV status filters were open to LDAP injection.</p>
+	  <p>CVE-2026-18355: a missing minimum length check in
+	    sasl_io_start_packet() lets an authenticated SASL user trigger
+	    an unsigned integer underflow, causing heap corruption and a
+	    crash of the server.</p>
+	  <p>CVE-2026-18453: op_shared_search() does not check for a NULL
+	    backend pointer when reusing a paged results slot, so an
+	    unauthenticated client can crash ns-slapd with two search
+	    requests on one connection. Paged results and anonymous access
+	    are enabled by default.</p>
+	  <p>CVE-2026-18922: a failed one-shot SASL exchange leaves stale
+	    identity data in the auxprop context, so a later successful
+	    bind on the same connection can inherit it and escalate to
+	    Directory Manager.</p>
+	  <p>CVE-2026-19843: the cockpit LDAP editor passed the entry DN
+	    into a shell command line, so a user who can create or rename
+	    an entry can have the host run commands as root when an
+	    administrator opens that entry.</p>
+	  <p>CVE-2026-76560: anonymous clients could satisfy SELFDN,
+	    USERDNATTR and LDAPURL ACL bind rules, granting unauthorized
+	    access.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-11770</cvename>
+      <cvename>CVE-2026-18355</cvename>
+      <cvename>CVE-2026-18453</cvename>
+      <cvename>CVE-2026-18922</cvename>
+      <cvename>CVE-2026-19843</cvename>
+      <cvename>CVE-2026-76560</cvename>
+      <url>https://github.com/389ds/389-ds-base/releases/tag/389-ds-base-3.2.3</url>
+      <url>https://access.redhat.com/security/cve/CVE-2026-11770</url>
+      <url>https://access.redhat.com/security/cve/CVE-2026-18355</url>
+      <url>https://access.redhat.com/security/cve/CVE-2026-18453</url>
+      <url>https://access.redhat.com/security/cve/CVE-2026-18922</url>
+      <url>https://access.redhat.com/security/cve/CVE-2026-19843</url>
+      <url>https://access.redhat.com/security/cve/CVE-2026-76560</url>
+    </references>
+    <dates>
+      <discovery>2026-09-07</discovery>
+      <entry>2026-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0627020f-b21c-11f1-bc39-5404a68ad561">
     <topic>traefik -- Multiple vulnerabilities</topic>
     <affects>
