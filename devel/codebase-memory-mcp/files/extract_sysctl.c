@@ -504,8 +504,8 @@ static const char *assign_lhs_of(CBMExtractCtx *ctx, TSNode call) {
  * before the def. We therefore seed every alias first, then emit. */
 static void collect_aliases(CBMExtractCtx *ctx, sysctl_alias_table_t *aliases, TSNode root) {
     TSNodeStack stack;
-    ts_nstack_init(&stack, ctx->arena, SYSCTL_STACK_CAP);
-    ts_nstack_push(&stack, ctx->arena, root);
+    ts_nstack_init(&stack, ctx, SYSCTL_STACK_CAP);
+    ts_nstack_push(&stack, root);
     while (stack.count > 0) {
         TSNode node = ts_nstack_pop(&stack);
         if (strcmp(ts_node_type(node), "call_expression") == 0) {
@@ -528,7 +528,7 @@ static void collect_aliases(CBMExtractCtx *ctx, sysctl_alias_table_t *aliases, T
                 }
             }
         }
-        ts_nstack_push_children(&stack, ctx->arena, node);
+        ts_nstack_push_children(&stack, node);
     }
 }
 
@@ -544,8 +544,8 @@ static void extract_sysctl_c(CBMExtractCtx *ctx) {
     collect_aliases(ctx, &aliases, ctx->root);
 
     TSNodeStack stack;
-    ts_nstack_init(&stack, ctx->arena, SYSCTL_STACK_CAP);
-    ts_nstack_push(&stack, ctx->arena, ctx->root);
+    ts_nstack_init(&stack, ctx, SYSCTL_STACK_CAP);
+    ts_nstack_push(&stack, ctx->root);
 
     while (stack.count > 0) {
         TSNode node = ts_nstack_pop(&stack);
@@ -586,7 +586,7 @@ static void extract_sysctl_c(CBMExtractCtx *ctx) {
                 break; /* one macro per node */
             }
         }
-        ts_nstack_push_children(&stack, ctx->arena, node);
+        ts_nstack_push_children(&stack, node);
     }
 }
 

@@ -1,6 +1,6 @@
---- internal/cbm/cbm.h.orig	2026-08-18 20:39:59 UTC
+--- internal/cbm/cbm.h.orig	2026-09-15 17:16:24 UTC
 +++ internal/cbm/cbm.h
-@@ -355,6 +355,21 @@ typedef struct {
+@@ -380,6 +380,21 @@ typedef struct {
      CBMChannelDirection direction;
  } CBMChannel;
  
@@ -22,7 +22,7 @@
  // Rust: impl Trait for Struct
  typedef struct {
      const char *trait_name;  // trait name (raw text)
-@@ -468,6 +483,12 @@ typedef struct {
+@@ -493,6 +508,12 @@ typedef struct {
      int cap;
  } CBMChannelArray;
  
@@ -35,7 +35,7 @@
  // Full extraction result for one file.
  typedef struct CBMFileResult {
      CBMArena arena; // owns local memory; composites may also retain child arenas below
-@@ -486,6 +507,7 @@ typedef struct CBMFileResult {
+@@ -511,6 +532,7 @@ typedef struct CBMFileResult {
      CBMStringRefArray string_refs;       // URL/config string literals from AST
      CBMInfraBindingArray infra_bindings; // topic→URL pairs from IaC configs
      CBMChannelArray channels;            // Socket.IO / EventEmitter pub/sub participation
@@ -43,7 +43,7 @@
  
      const char *module_qn;      // module qualified name
      const char *namespace_name; // declared namespace/package (Java/Kotlin/C#/PHP), NULL if none
-@@ -722,6 +744,7 @@ void cbm_channels_push(CBMChannelArray *arr, CBMArena 
+@@ -824,6 +846,7 @@ void cbm_channels_push(CBMChannelArray *arr, CBMArena 
  void cbm_impltrait_push(CBMImplTraitArray *arr, CBMArena *a, CBMImplTrait it);
  void cbm_resolvedcall_push(CBMResolvedCallArray *arr, CBMArena *a, CBMResolvedCall rc);
  void cbm_channels_push(CBMChannelArray *arr, CBMArena *a, CBMChannel ch);
@@ -51,7 +51,7 @@
  
  // --- Sub-extractor entry points ---
  
-@@ -733,6 +756,7 @@ void cbm_extract_channels(CBMExtractCtx *ctx);
+@@ -842,6 +865,7 @@ void cbm_extract_channels(CBMExtractCtx *ctx);
  void cbm_extract_env_accesses(CBMExtractCtx *ctx);
  void cbm_extract_type_assigns(CBMExtractCtx *ctx);
  void cbm_extract_channels(CBMExtractCtx *ctx);

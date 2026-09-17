@@ -1,6 +1,6 @@
---- internal/cbm/cbm.c.orig	2026-08-18 20:39:59 UTC
+--- internal/cbm/cbm.c.orig	2026-09-15 17:16:24 UTC
 +++ internal/cbm/cbm.c
-@@ -188,6 +188,11 @@ void cbm_channels_push(CBMChannelArray *arr, CBMArena 
+@@ -194,6 +194,11 @@ void cbm_channels_push(CBMChannelArray *arr, CBMArena 
      arr->items[arr->count++] = ch;
  }
  
@@ -12,7 +12,7 @@
  // --- String input reader (for parse_with_options) ---
  
  typedef struct {
-@@ -1297,6 +1302,9 @@ CBMFileResult *cbm_extract_file_ex(const char *source,
+@@ -1834,6 +1839,9 @@ static CBMFileResult *extract_file_ex_body(const char 
  
      // Channel detection (Socket.IO / EventEmitter) — JS/TS only.
      cbm_extract_channels(&ctx);

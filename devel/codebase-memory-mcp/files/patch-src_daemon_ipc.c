@@ -1,6 +1,6 @@
---- src/daemon/ipc.c.orig	2026-08-18 20:39:59 UTC
+--- src/daemon/ipc.c.orig	2026-09-16 19:49:25 UTC
 +++ src/daemon/ipc.c
-@@ -313,6 +313,9 @@ int cbm_daemon_ipc_wait_pending(const cbm_ipc_pending_
+@@ -381,6 +381,9 @@ int cbm_daemon_ipc_wait_pending(const cbm_ipc_pending_
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <sys/un.h>
@@ -10,10 +10,10 @@
  #include <time.h>
  #include <unistd.h>
  
-@@ -3078,6 +3081,19 @@ uint64_t cbm_daemon_ipc_connection_peer_pid(const cbm_
+@@ -3467,6 +3470,19 @@ uint64_t cbm_daemon_ipc_connection_peer_pid(const cbm_
          return 0;
      }
-     return (uint64_t)peer_pid;
+     return (uint64_t)peer_id.unp_pid;
 +#elif defined(__FreeBSD__) && defined(LOCAL_PEERCRED)
 +    /* FreeBSD has neither SO_PEERCRED nor LOCAL_PEERPID; LOCAL_PEERCRED returns
 +     * a struct xucred whose cr_pid (FreeBSD 13+) is the connecting peer's pid.
