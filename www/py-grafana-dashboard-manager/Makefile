@@ -1,5 +1,5 @@
 PORTNAME=	grafana-dashboard-manager
-DISTVERSION=	0.1.6
+DISTVERSION=	0.2.10.92469056881
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.26.0:www/py-requests@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}typer>=0.4.0:devel/py-typer@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
