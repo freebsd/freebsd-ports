@@ -56,6 +56,7 @@
     SUBDIR += pear-PHP_Shell
     SUBDIR += powershell
     SUBDIR += psh
+    SUBDIR += py-crazy-complete
     SUBDIR += rc
     SUBDIR += rubygem-shellwords
     SUBDIR += rura
