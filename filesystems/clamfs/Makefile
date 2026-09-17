@@ -1,6 +1,5 @@
 PORTNAME=	clamfs
-DISTVERSION=	1.2.0
-PORTREVISION=	6
+DISTVERSION=	1.3.0
 CATEGORIES=	filesystems security
 MASTER_SITES=	https://github.com/burghardt/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
@@ -13,8 +12,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	boost-libs>=1.33:devel/boost-libs
 LIB_DEPENDS=	libPocoFoundation.so:devel/poco \
 		libPocoNet.so:devel/poco \
-		libPocoXML.so:devel/poco \
-		librlog.so:devel/rlog
+		libPocoXML.so:devel/poco
 RUN_DEPENDS=	clamd:security/clamav
 
 USES=		autoreconf compiler:c++11-lib fuse:3 pkgconfig
