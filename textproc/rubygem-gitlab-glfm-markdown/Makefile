@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-glfm-markdown
-PORTVERSION=	0.0.42
-PORTREVISION=	1
+PORTVERSION=	0.0.43
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -25,7 +24,11 @@ CARGO_BUILD=	no
 CARGO_INSTALL=	no
 GEM_ENV+=	MAKE=gmake
 
-# update the crates file with: make cargo-crates > Makefile.crates
+# update the crates file with:
+# make makesum
+# make clean extract
+# make cargo-crates > Makefile.crates
+# make makesum
 
 post-install:
 	@${ECHO_CMD} "${GEM_LIB_DIR}/ext/gitlab_glfm_markdown/Cargo.lock" >> ${TMPPLIST}
