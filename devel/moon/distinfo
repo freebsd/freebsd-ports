@@ -1,4 +1,4 @@
-TIMESTAMP = 1788592722
+TIMESTAMP = 1789647179
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
 SIZE (rust/crates/addr2line-0.25.1.crate) = 43134
 SHA256 (rust/crates/addr2line-0.26.1.crate) = 59317f77929f0e679d39364702289274de2f0f0b22cbf50b2b8cff2169a0b27a
@@ -1845,5 +1845,5 @@ SHA256 (rust/crates/zvariant_derive-5.14.0.crate) = d496a145685283b67e232bd9e473
 SIZE (rust/crates/zvariant_derive-5.14.0.crate) = 17829
 SHA256 (rust/crates/zvariant_utils-4.0.0.crate) = 629d80ece222cad20fe0e8741be493c4ab166acf3b85341bdc2cdbcfd8f3c2d6
 SIZE (rust/crates/zvariant_utils-4.0.0.crate) = 17056
-SHA256 (moonrepo-moon-v2.5.4_GH0.tar.gz) = b47ca060c92af747a34b57d0e87aacd1256778d3bfe3144728f6aebc56eb9ee2
-SIZE (moonrepo-moon-v2.5.4_GH0.tar.gz) = 103288347
+SHA256 (moonrepo-moon-v2.5.5_GH0.tar.gz) = 7d9fa3040bfa76a54d8d23e73427bd055cc54751a0dfb789179c1e68c0a1612b
+SIZE (moonrepo-moon-v2.5.5_GH0.tar.gz) = 104313588
