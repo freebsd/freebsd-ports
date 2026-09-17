@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-secret_detection
-PORTVERSION=	0.42.1
-PORTREVISION=	1
+PORTVERSION=	0.45.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
