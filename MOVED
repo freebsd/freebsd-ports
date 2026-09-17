@@ -5751,3 +5751,4 @@ games/wyrmgus||2026-10-19|Broken for several months in tree
 multimedia/wl-screenrec||2026-10-19|Broken for more than 5 months
 net-im/debugtox||2026-10-19|Broken for almost a year in tree
 textproc/regex2dfa||2026-10-19|Broken for 6+ months in tree
+databases/pecl-redis|databases/php-redis|2026-10-21|PECL is deprecated. Migrated to databases/php-redis

@@ -449,7 +449,7 @@ pspell_DEPENDS=	textproc/php-pspell@${PHP_FLAVOR}
 .    endif
 radius_DEPENDS=	net/pecl-radius@${PHP_FLAVOR}
 readline_DEPENDS=	devel/php${PHP_VER}-readline
-redis_DEPENDS=	databases/pecl-redis@${PHP_FLAVOR}
+redis_DEPENDS=	databases/php-redis@${PHP_FLAVOR}
 session_DEPENDS=www/php${PHP_VER}-session
 shmop_DEPENDS=	devel/php${PHP_VER}-shmop
 simplexml_DEPENDS=	textproc/php${PHP_VER}-simplexml

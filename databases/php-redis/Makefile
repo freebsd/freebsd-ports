@@ -1,15 +1,21 @@
 PORTNAME=	redis
 DISTVERSION=	6.3.0
 CATEGORIES=	databases
+PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	wiacek.m@witia.com.pl
 COMMENT=	Extension to access Redis
-WWW=		https://pecl.php.net/package/redis
+WWW=		https://github.com/phpredis/phpredis
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:build,pecl
+USES=		php:ext
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	phpredis
+GH_PROJECT=	phpredis
+
 USE_PHP=	session:build
 IGNORE_WITH_PHP=	86
 

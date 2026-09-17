@@ -559,7 +559,6 @@
     SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
     SUBDIR += pecl-mongodb
-    SUBDIR += pecl-redis
     SUBDIR += pecl-rrd
     SUBDIR += percona-orchestrator
     SUBDIR += percona-toolkit
@@ -622,6 +621,7 @@
     SUBDIR += pguri
     SUBDIR += pgvector
     SUBDIR += php-memvector
+    SUBDIR += php-redis
     SUBDIR += php-tarantool
     SUBDIR += php-xapian
     SUBDIR += php82-dba
