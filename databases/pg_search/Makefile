@@ -1,6 +1,6 @@
 PORTNAME=	pg_search
 PORTVERSION=	0.21.16
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 DISTFILES=	mecab-ipadic-2.7.0-20070801.tar.gz:lindera \
