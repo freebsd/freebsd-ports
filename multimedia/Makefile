@@ -73,6 +73,7 @@
     SUBDIR += go2tv
     SUBDIR += gpac
     SUBDIR += gpodder
+    SUBDIR += graft
     SUBDIR += gst123
     SUBDIR += gstreamer1
     SUBDIR += gstreamer1-editing-services
