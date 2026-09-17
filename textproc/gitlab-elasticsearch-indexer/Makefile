@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-elasticsearch-indexer
-PORTVERSION=	5.14.13
+PORTVERSION=	5.14.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
