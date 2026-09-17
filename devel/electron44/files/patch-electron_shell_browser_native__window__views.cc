@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.cc.orig	2026-08-31 00:54:19 UTC
+--- electron/shell/browser/native_window_views.cc.orig	2026-09-15 22:52:01 UTC
 +++ electron/shell/browser/native_window_views.cc
 @@ -57,7 +57,7 @@
  #include "ui/views/window/non_client_view.h"
@@ -160,9 +160,9 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Remove global menu bar.
+   bool try_global_menu_bar = true;
    if (global_menu_bar_ && menu_model == nullptr) {
-     global_menu_bar_.reset();
-@@ -1532,7 +1532,7 @@ void NativeWindowViews::SetParentWindow(NativeWindow* 
+@@ -1544,7 +1544,7 @@ void NativeWindowViews::SetParentWindow(NativeWindow* 
  void NativeWindowViews::SetParentWindow(NativeWindow* parent) {
    NativeWindow::SetParentWindow(parent);
  
@@ -171,7 +171,7 @@
    if (x11_util::IsX11()) {
      auto* connection = x11::Connection::Get();
      connection->SetProperty(
-@@ -1586,7 +1586,7 @@ gfx::Insets NativeWindowViews::GetRestoredFrameBorderI
+@@ -1598,7 +1598,7 @@ gfx::Insets NativeWindowViews::GetRestoredFrameBorderI
    if (auto* frameless = views::AsViewClass<FramelessView>(frame_view))
      return frameless->RestoredFrameBorderInsets();
  
@@ -180,7 +180,7 @@
    if (auto* fvl = views::AsViewClass<views::FrameViewLinux>(frame_view))
      return fvl->GetRestoredFrameBorderInsets();
  #endif
-@@ -1598,7 +1598,7 @@ void NativeWindowViews::SetProgressBar(double progress
+@@ -1610,7 +1610,7 @@ void NativeWindowViews::SetProgressBar(double progress
                                         NativeWindow::ProgressState state) {
  #if BUILDFLAG(IS_WIN)
    taskbar_host_.SetProgressBar(GetAcceleratedWidget(), progress, state);
@@ -189,7 +189,7 @@
    launcher_entry::SetProgress(progress);
  #endif
  }
-@@ -1722,7 +1722,7 @@ content::DesktopMediaID NativeWindowViews::GetDesktopM
+@@ -1734,7 +1734,7 @@ content::DesktopMediaID NativeWindowViews::GetDesktopM
  #if BUILDFLAG(IS_WIN)
    window_handle =
        reinterpret_cast<content::DesktopMediaID::Id>(accelerated_widget);
@@ -198,7 +198,7 @@
    window_handle = static_cast<uint32_t>(accelerated_widget);
  #endif
    aura::WindowTreeHost* const host =
-@@ -1852,7 +1852,7 @@ void NativeWindowViews::SetIcon(HICON window_icon, HIC
+@@ -1864,7 +1864,7 @@ void NativeWindowViews::SetIcon(HICON window_icon, HIC
    SendMessage(hwnd, WM_SETICON, ICON_BIG,
                reinterpret_cast<LPARAM>(app_icon_.get()));
  }
@@ -207,7 +207,7 @@
  void NativeWindowViews::SetIcon(const gfx::ImageSkia& icon) {
    auto* tree_host = views::DesktopWindowTreeHostLinux::GetHostForWidget(
        GetAcceleratedWidget());
-@@ -1973,7 +1973,7 @@ bool NativeWindowViews::CanMinimize() const {
+@@ -1985,7 +1985,7 @@ bool NativeWindowViews::CanMinimize() const {
  bool NativeWindowViews::CanMinimize() const {
  #if BUILDFLAG(IS_WIN)
    return minimizable_;
@@ -216,7 +216,7 @@
    return true;
  #endif
  }
-@@ -2036,7 +2036,7 @@ std::unique_ptr<views::FrameView> NativeWindowViews::C
+@@ -2048,7 +2048,7 @@ std::unique_ptr<views::FrameView> NativeWindowViews::C
  #endif
  }
  
@@ -225,7 +225,7 @@
  views::FrameViewLinux* NativeWindowViews::GetFrameViewLinux() const {
    auto* ncv = widget()->non_client_view();
    if (!ncv)
-@@ -2055,7 +2055,7 @@ void NativeWindowViews::HandleKeyboardEvent(
+@@ -2067,7 +2067,7 @@ void NativeWindowViews::HandleKeyboardEvent(
    if (widget_destroyed_)
      return;
  
@@ -234,7 +234,7 @@
    if (event.windows_key_code == ui::VKEY_BROWSER_BACK)
      NotifyWindowExecuteAppCommand(kBrowserBackward);
    else if (event.windows_key_code == ui::VKEY_BROWSER_FORWARD)
-@@ -2074,7 +2074,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
+@@ -2086,7 +2086,7 @@ void NativeWindowViews::OnMouseEvent(ui::MouseEvent* e
    // Alt+Click should not toggle menu bar.
    root_view_.ResetAltState();
  

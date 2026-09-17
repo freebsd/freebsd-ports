@@ -1,4 +1,4 @@
---- electron/shell/browser/native_window_views.h.orig	2026-08-31 00:54:38 UTC
+--- electron/shell/browser/native_window_views.h.orig	2026-09-15 22:52:01 UTC
 +++ electron/shell/browser/native_window_views.h
 @@ -30,7 +30,7 @@ class Arguments;
  class Arguments;
@@ -36,7 +36,7 @@
    views::FrameViewLinux* GetFrameViewLinux() const;
  #endif
  
-@@ -289,7 +289,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -291,7 +291,7 @@ class NativeWindowViews : public NativeWindow,
    // events from resizing the window.
    extensions::SizeConstraints old_size_constraints_;
  

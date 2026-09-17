@@ -1,6 +1,6 @@
---- electron/lib/node/init.ts.orig	2026-09-09 17:57:40 UTC
+--- electron/lib/node/init.ts.orig	2026-09-15 22:52:01 UTC
 +++ electron/lib/node/init.ts
-@@ -39,7 +39,7 @@ cp.fork = (modulePath, args?, options?: cp.ForkOptions
+@@ -46,7 +46,7 @@ cp.fork = (modulePath, args?, options?: cp.ForkOptions
  // reported too; shell/app/node_main.cc reads these back. Every async spawn goes
  // through ChildProcess.prototype.spawn and every sync one through spawnSync,
  // both with the normalized file and envPairs.
