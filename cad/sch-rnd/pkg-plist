@@ -8,6 +8,7 @@ bin/sch-rnd-fptool
 %%ETCDIR%%/funcmap.conf
 %%ETCDIR%%/io_altium.conf
 %%ETCDIR%%/io_bxl.conf
+%%ETCDIR%%/io_diptrace.conf
 %%ETCDIR%%/io_easyeda.conf
 %%ETCDIR%%/io_eeschema.conf
 %%ETCDIR%%/io_geda.conf
@@ -41,6 +42,8 @@ lib/sch-rnd/plugins/extobj_chart.pup
 lib/sch-rnd/plugins/extobj_chart.so
 lib/sch-rnd/plugins/gui.pup
 lib/sch-rnd/plugins/gui.so
+lib/sch-rnd/plugins/io_diptrace.pup
+lib/sch-rnd/plugins/io_diptrace.so
 lib/sch-rnd/plugins/io_eeschema.pup
 lib/sch-rnd/plugins/io_eeschema.so
 lib/sch-rnd/plugins/io_ngrp_fawk.pup
