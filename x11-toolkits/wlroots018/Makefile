@@ -1,8 +1,11 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.18.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	018
+
+PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	47486545b196.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/5203
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library (deprecated 0.18.* series)
