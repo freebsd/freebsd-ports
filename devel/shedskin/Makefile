@@ -1,6 +1,6 @@
 PORTNAME=	shed-skin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.12
+DISTVERSION=	0.9.13
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no test files
 DISTNAME=	${PORTNAME:S/-/_/g}-${PORTVERSION}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR
 RUN_DEPENDS=	boehm-gc>0:devel/boehm-gc \
 		pcre>0:devel/pcre
 
-USES=		python #:3.13
+USES=		python
 USE_PYTHON=	pep517 autoplist noflavors pytest
 
 USE_GITHUB=	yes
@@ -28,6 +28,15 @@ NO_ARCH=	yes
 
 TEST_WRKSRC=	${WRKSRC}/tests
 
+PLIST_FILES=	libexec/shedskin # workaround for https://github.com/shedskin/shedskin/issues/1242
+
+post-install: # create shell wrapper for bin/shedskin, see https://github.com/shedskin/shedskin/issues/1242
+	@${MV} ${STAGEDIR}${PREFIX}/bin/shedskin ${STAGEDIR}${PREFIX}/libexec/shedskin
+	@${ECHO_CMD} '#!/bin/sh' > ${STAGEDIR}${PREFIX}/bin/shedskin
+	@${ECHO_CMD} 'export LDFLAGS=-pthread' >> ${STAGEDIR}${PREFIX}/bin/shedskin
+	@${ECHO_CMD} 'exec ${PYTHON_CMD} ${PREFIX}/libexec/shedskin "$$@"' >> ${STAGEDIR}${PREFIX}/bin/shedskin
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/shedskin
+
 post-extract:
 	@${RM} ${WRKSRC}/tests/test_ops_assignment/test_ops_assignment.py.orig
 
@@ -36,7 +45,7 @@ post-patch:
 	@${REINPLACE_CMD} -e ' \
 		s|^CXX?=.*|CXX?=${CXX}|; \
 		s|^CXXFLAGS?=.*|& -I${PREFIX}/include |; \
-		s|^LFLAGS=.*|& -L${PREFIX}/lib |; \
+		s|^LDLIBS?=.*|& -pthread |; \
 		' ${WRKSRC}/shedskin/resources/flags/FLAGS
 	# adjust pyproject.toml for the difference between GH and PYPI tarballs
 	@${REINPLACE_CMD} \
