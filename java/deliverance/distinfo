@@ -1,0 +1,9 @@
+TIMESTAMP = 1789519720
+SHA256 (web-0.0.16.jar) = 662c77e1bd16d966cde57b1da39d8bd59aba5f9833b3be6a7009615801b4d852
+SIZE (web-0.0.16.jar) = 65281311
+SHA256 (deliverance-antares-cli-0.0.16-all.jar) = f052a16a62c2da4c37fb70c6cefe44256388bb7d77b6a0dfec057b73d6b13b71
+SIZE (deliverance-antares-cli-0.0.16-all.jar) = 5514013
+SHA256 (nanocode-deliverance-0.0.16-all.jar) = a410a59184c755827ef7ddff3c3f38857d54b2e05e0e995086e508fd2702d6a3
+SIZE (nanocode-deliverance-0.0.16-all.jar) = 31610905
+SHA256 (edwardcapriolo-deliverance-v0.0.16_GH0.tar.gz) = 43947eab4efff6760f0f9c048e994bd6fc3263998484c97dbb96e37fb1022ac8
+SIZE (edwardcapriolo-deliverance-v0.0.16_GH0.tar.gz) = 29581408
