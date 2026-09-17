@@ -1,5 +1,5 @@
-TIMESTAMP = 1787496495
-SHA256 (go/devel_lazyworktree/lazyworktree-v1.49.0/v1.49.0.mod) = 9c90d4bf9d5878b5a1710dd81363634f153a0af287ac18f163517cb86f140e1a
-SIZE (go/devel_lazyworktree/lazyworktree-v1.49.0/v1.49.0.mod) = 1610
-SHA256 (go/devel_lazyworktree/lazyworktree-v1.49.0/v1.49.0.zip) = 2387a08b25269fa8b194e9f7bd377f86adbb84e4c437b49000911035e4d7b0b8
-SIZE (go/devel_lazyworktree/lazyworktree-v1.49.0/v1.49.0.zip) = 3588605
+TIMESTAMP = 1789629784
+SHA256 (go/devel_lazyworktree/lazyworktree-v1.50.0/v1.50.0.mod) = 055a383227272c3792dbdd92107e1b6796a960896b7ce929d6c7b6e9b34a3549
+SIZE (go/devel_lazyworktree/lazyworktree-v1.50.0/v1.50.0.mod) = 1582
+SHA256 (go/devel_lazyworktree/lazyworktree-v1.50.0/v1.50.0.zip) = e636e1695d67f2f94769a7dfb62907915364b815ccf4accd70f68a53eb96f0df
+SIZE (go/devel_lazyworktree/lazyworktree-v1.50.0/v1.50.0.zip) = 3741907
