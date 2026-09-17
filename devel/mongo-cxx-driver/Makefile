@@ -1,5 +1,6 @@
 PORTNAME=	mongo-cxx-driver
 DISTVERSIONPREFIX=	r
+# Pinned: mongo-cxx-driver 4.6.0 requires mongo-c-driver 4.5.3
 DISTVERSION=	4.5.3
 CATEGORIES=	devel databases
 
