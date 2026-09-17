@@ -12,6 +12,9 @@ WWW=		https://moinmo.in/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/licenses/COPYING
 
+DEPRECATED=	Uses expired lang/python27
+EXPIRATION_DATE=	2026-11-01
+
 USES=		cpe python:2.7 shebangfix
 USE_PYTHON=	distutils
 

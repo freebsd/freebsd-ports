@@ -17,6 +17,9 @@ WWW=		https://www.list.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL
 
+DEPRECATED=	Uses expired lang/python27
+EXPIRATION_DATE=	2026-11-01
+
 USES=		cpe fakeroot python:2.7 shebangfix tar:tgz
 CPE_VENDOR=	gnu
 
