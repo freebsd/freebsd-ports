@@ -7800,6 +7800,7 @@
     SUBDIR += rubygem-google-iam-v1
     SUBDIR += rubygem-google-logging-utils
     SUBDIR += rubygem-google-protobuf
+    SUBDIR += rubygem-google-protobuf-gitlab
     SUBDIR += rubygem-google-protobuf3
     SUBDIR += rubygem-googleapis-common-protos
     SUBDIR += rubygem-googleapis-common-protos-gitlab
