@@ -5615,3 +5615,4 @@ science/py-molmod||2026-09-15|Has expired: Depends on expired lang/cython0
 databases/py-pymssql||2026-09-15|Has expired: Depends on expired lang/cython0
 devel/py-game_sdl2||2026-09-15|Has expired: Depends on expired lang/cython0
 databases/py-cassandra-driver||2026-09-15|Has expired: Depends on expired lang/cython0
+misc/py-python-pygtrie|misc/py-pygtrie|2026-09-16|Project was renamed on PyPI

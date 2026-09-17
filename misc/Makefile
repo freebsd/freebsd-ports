@@ -643,6 +643,7 @@
     SUBDIR += py-pyEDFlib
     SUBDIR += py-pyct
     SUBDIR += py-pyfiglet
+    SUBDIR += py-pygtrie
     SUBDIR += py-pykml
     SUBDIR += py-pymatreader
     SUBDIR += py-pyowm
@@ -651,7 +652,6 @@
     SUBDIR += py-pyqir
     SUBDIR += py-python-crc
     SUBDIR += py-python-geohash
-    SUBDIR += py-python-pygtrie
     SUBDIR += py-python-utils
     SUBDIR += py-pytorch
     SUBDIR += py-pytorch-lightning
