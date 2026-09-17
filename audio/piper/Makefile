@@ -1,28 +1,34 @@
 PORTNAME=	piper
-DISTVERSION=	2023.11.14
-DISTVERSIONSUFFIX=	-2
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.8.0
+PORTEPOCH=	1
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Fast, local text to speech system
-WWW=		https://rhasspy.github.io/piper-samples/
+WWW=		https://github.com/OHF-Voice/piper1-gpl
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libespeak-ng.so:audio/espeak-ng \
-		libfmt.so:devel/libfmt \
-		libonnxruntime.so:misc/onnxruntime \
-		libpiper_phonemize.so:audio/piper-phonemize \
-		libspdlog.so:devel/spdlog
+		libonnxruntime.so:misc/onnxruntime
 
-USES=		compiler:c++17-lang cmake localbase pkgconfig tar:xz xorg
-USE_XORG=	x11
+USES=		cmake compiler:c++17-lang pkgconfig
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	rhasspy
+GH_ACCOUNT=	OHF-Voice
+GH_PROJECT=	piper1-gpl
 
-PLIST_FILES=	bin/piper
+USE_LDCONFIG=	yes
+
+# Only the C++ library and command line interface are built.
+CMAKE_SOURCE_PATH=	${WRKSRC}/libpiper
+
+PLIST_FILES=	bin/piper \
+		include/piper.h \
+		lib/libpiper.so \
+		lib/libpiper.so.1 \
+		lib/libpiper.so.${PORTVERSION}
 
 .include <bsd.port.mk>
