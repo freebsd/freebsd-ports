@@ -38,11 +38,13 @@ PLIST_FILES=	bin/${PORTNAME}
 # resolves that local path relative to it. Extract the subtree from the main
 # tarball first (this runs before go-post-fetch).
 post-fetch:
-	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && \
-		${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
-		--strip-components 1 --no-same-owner --no-same-permissions \
-		${DISTNAME}/third_party/icu
+	if [ ! -d "${DISTDIR}/${DIST_SUBDIR}/third_party" ]; then \
+		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
+		cd "${DISTDIR}/${DIST_SUBDIR}" && \
+			${TAR} -xf "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2" \
+			--strip-components 1 --no-same-owner --no-same-permissions \
+			"${DISTNAME}/third_party/icu/go.mod"; \
+	fi
 
 post-patch:
 	${REINPLACE_CMD} -e '/libparser-download/d' ${WRKSRC}/Makefile
