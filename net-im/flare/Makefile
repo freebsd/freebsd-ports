@@ -28,6 +28,8 @@ CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
 
+PORTSCOUT=	limit:^0\.
+
 OPTIONS_DEFINE=		FEEDBACK SPELLCHECK
 FEEDBACK_DESC=		for vibrating notifications
 SPELLCHECK_DESC=	for spell-checking support
