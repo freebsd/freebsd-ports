@@ -1,5 +1,6 @@
 PORTNAME=	pg_query
 PORTVERSION=	6.2.2
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rubygem-pathname>0:devel/rubygem-pathname
-RUN_DEPENDS=	rubygem-google-protobuf>=3.25.3:devel/rubygem-google-protobuf
+RUN_DEPENDS=	rubygem-google-protobuf-gitlab>=3.25.3:devel/rubygem-google-protobuf-gitlab
 
 USES=		gem
 

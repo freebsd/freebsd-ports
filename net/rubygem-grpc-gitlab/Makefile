@@ -1,6 +1,6 @@
 PORTNAME=	grpc
 PORTVERSION=	1.81.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -13,8 +13,8 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libgrpc.so:devel/grpc
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
-		rubygem-googleapis-common-protos-types>=1.0<2:devel/rubygem-googleapis-common-protos-types \
-		rubygem-google-protobuf>=3.25<5.0:devel/rubygem-google-protobuf
+		rubygem-googleapis-common-protos-types-gitlab>=1.0<2:devel/rubygem-googleapis-common-protos-types-gitlab \
+		rubygem-google-protobuf-gitlab>=3.25<5.0:devel/rubygem-google-protobuf-gitlab
 
 USES=		cpe gem gmake pkgconfig
 
