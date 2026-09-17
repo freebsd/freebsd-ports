@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-labkit
-PORTVERSION=	4.4.1
+PORTVERSION=	5.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack-gitlab>=5<8.2:www/rubygem-actionpack-gitlab \
 		rubygem-activesupport-gitlab>=5<8.2:devel/rubygem-activesupport-gitlab \
-		rubygem-google-protobuf3>=3.25<5:devel/rubygem-google-protobuf3 \
+		rubygem-google-protobuf-gitlab>=3.25<5:devel/rubygem-google-protobuf-gitlab \
 		rubygem-grpc-gitlab>=1.75:net/rubygem-grpc-gitlab \
 		rubygem-jaeger-client>=1.1.0<1.2:devel/rubygem-jaeger-client \
 		rubygem-json_schemer>=2.3.0<3:devel/rubygem-json_schemer \
