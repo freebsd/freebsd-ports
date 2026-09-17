@@ -18,12 +18,3 @@
      sys.exit(1)
  
  if not home_dir or not os.path.exists(home_dir):
-@@ -255,7 +255,7 @@ else:
- 
-     # Create the named pipe. Make sure it exists before sending
-     # message to hppsd.
--    os.umask(0o111)
-+    os.umask(0o133)
-     try:
-         os.mkfifo(pipe_name)
-     except OSError:

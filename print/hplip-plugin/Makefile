@@ -1,7 +1,7 @@
 PORTNAME=	hplip-plugin
-PORTVERSION=	3.26.4
+PORTVERSION=	3.26.6
 CATEGORIES=	print
-MASTER_SITES=	https://developers.hp.com/sites/default/files/2026-05/ \
+MASTER_SITES=	https://developers.hp.com/sites/default/files/2026-09/ \
 		https://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/
 DISTNAME=	hplip-${DISTVERSION}-plugin
 EXTRACT_SUFX=	.run

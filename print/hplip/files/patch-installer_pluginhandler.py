@@ -45,12 +45,3 @@
              if not os.path.exists(self.__plugin_path):
                  os.makedirs(self.__plugin_path, 0o755)
              if os.path.exists(plugin_file):
-@@ -373,7 +373,7 @@ class PluginHandle(object):
-     def copyFiles(self, src_dir):
- 
-         copies = self.__getPluginFilesList(src_dir)
--        os.umask(0)
-+        os.umask(0o022)
- 
-         for src, trg, link in copies:
- 
