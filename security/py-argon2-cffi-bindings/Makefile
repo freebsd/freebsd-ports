@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build-core>=1.0:devel/py-scikit-bui
 LIB_DEPENDS=	libargon2.so:security/libargon2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=2:devel/py-cffi@${PY_FLAVOR}
 
-USES=		localbase python
+USES=		cmake:indirect localbase python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 MAKE_ENV=	ARGON2_CFFI_USE_SYSTEM=1
