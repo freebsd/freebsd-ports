@@ -1,6 +1,7 @@
 PORTNAME=	crazy-complete
 DISTVERSION=	0.3.8
-CATEGORIES=	shells sysutils
+PORTREVISION=	1
+CATEGORIES=	shells sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
