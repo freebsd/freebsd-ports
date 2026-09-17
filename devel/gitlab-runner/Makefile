@@ -66,11 +66,13 @@ PLIST_FILES=	bin/gitlab-runner
 # been fetched, and resolves that local path relative to it. Extract the
 # subtree from the main tarball first (this runs before go-post-fetch).
 post-fetch:
-	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && \
-		${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
-		--strip-components 1 --no-same-owner --no-same-permissions \
-		${DISTNAME}/helpers/runner_wrapper/api
+	if [ ! -d "${DISTDIR}/${DIST_SUBDIR}/helpers" ]; then \
+		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
+		cd ${DISTDIR}/${DIST_SUBDIR} && \
+			${TAR} -xf "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2" \
+			--strip-components 1 --no-same-owner --no-same-permissions \
+			"${DISTNAME}/helpers/runner_wrapper/api/go.mod" "${DISTNAME}/helpers/runner_wrapper/api/go.sum"; \
+	fi
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/out/docker/
