@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohappyeyeballs>=2.7.1:net/py-aiohappyeyeba
 		${PYTHON_PKGNAMEPREFIX}idna>=3.18:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multidict>=6.7.1:www/py-multidict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>=3.11.9:devel/py-orjson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}propcache>=0.5.2:devel/py-propcache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}propcache>0:devel/py-propcache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycparser>=2.23:devel/py-pycparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.16.0:devel/py-typing-extensions@${PY_FLAVOR} \
