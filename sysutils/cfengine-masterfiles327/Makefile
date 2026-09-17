@@ -20,8 +20,6 @@ CONFLICTS+=	cfengine-masterfiles-3.*
 
 RUN_DEPENDS=	cf-agent:sysutils/cfengine${PKGNAMESUFFIX}
 
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
-
 MAKE_JOBS_UNSAFE=	yes
 USES=		cpe gmake python:build
 HAS_CONFIGURE=	yes

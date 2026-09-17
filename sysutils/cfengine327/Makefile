@@ -20,8 +20,6 @@ CONFLICTS=	cfengine cfengine3[0-9] cfengine3[0-9][0-9]
 PKGNAMESUFFIX=	327
 .endif
 
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
-
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
 MAKE_JOBS_UNSAFE=	yes
