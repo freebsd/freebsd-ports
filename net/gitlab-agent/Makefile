@@ -30,7 +30,7 @@ GO_BUILDFLAGS= -tags="tracer_static,tracer_static_jaeger" \
 
 PLIST_FILES=	bin/kas
 
-# The go.mod has a local path replace (pkg/autoflow). The framework's
+# The go.mod has a local path replace (pkg/autoflow, pkg/tunnel). The framework's
 # go-post-fetch hook runs "go mod download all" from the distdir, where only
 # the bare go.mod has been fetched, and resolves that local path relative to
 # it. Extract the subtree from the main tarball first (this runs before
@@ -41,6 +41,10 @@ post-fetch:
 		${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
 		--strip-components 1 --no-same-owner --no-same-permissions \
 		${DISTNAME}/pkg/autoflow
+	cd ${DISTDIR}/${DIST_SUBDIR} && \
+		${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
+		--strip-components 1 --no-same-owner --no-same-permissions \
+		${DISTNAME}/pkg/tunnel
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/kas ${STAGEDIR}${PREFIX}/bin/kas
