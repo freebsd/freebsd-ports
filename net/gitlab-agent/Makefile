@@ -36,15 +36,17 @@ PLIST_FILES=	bin/kas
 # it. Extract the subtree from the main tarball first (this runs before
 # go-post-fetch).
 post-fetch:
-	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && \
-		${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
-		--strip-components 1 --no-same-owner --no-same-permissions \
-		${DISTNAME}/pkg/autoflow
-	cd ${DISTDIR}/${DIST_SUBDIR} && \
-		${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
-		--strip-components 1 --no-same-owner --no-same-permissions \
-		${DISTNAME}/pkg/tunnel
+	if [ ! -d "${DISTDIR}/${DIST_SUBDIR}/pkg" ]; then \
+		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
+		cd ${DISTDIR}/${DIST_SUBDIR} && \
+			${TAR} -xf "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2" \
+			--strip-components 1 --no-same-owner --no-same-permissions \
+			"${DISTNAME}/pkg/autoflow/go.mod" "${DISTNAME}/pkg/autoflow/go.sum" && \
+		cd ${DISTDIR}/${DIST_SUBDIR} && \
+			${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
+			--strip-components 1 --no-same-owner --no-same-permissions \
+			"${DISTNAME}/pkg/tunnel/go.mod" "${DISTNAME}/pkg/tunnel/go.sum"; \
+	fi
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/kas ${STAGEDIR}${PREFIX}/bin/kas
