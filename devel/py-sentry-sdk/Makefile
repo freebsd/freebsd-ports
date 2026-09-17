@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for Sentry
 WWW=		https://github.com/getsentry/sentry-python
 
