@@ -1,5 +1,5 @@
 PORTNAME=	lib389
-DISTVERSION=	3.2.2
+DISTVERSION=	3.2.3
 CATEGORIES=	net python
 MASTER_SITES=	https://github.com/389ds/389-ds-base/releases/download/389-ds-base-${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
