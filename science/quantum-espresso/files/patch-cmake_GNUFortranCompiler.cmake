@@ -1,11 +1,11 @@
---- cmake/GNUFortranCompiler.cmake.orig	2024-10-21 12:38:43 UTC
+--- cmake/GNUFortranCompiler.cmake.orig	2026-07-09 07:43:02 UTC
 +++ cmake/GNUFortranCompiler.cmake
-@@ -29,7 +29,7 @@ else()
+@@ -20,7 +20,7 @@ if(QE_ENABLE_OFFLOAD)
+   else()
+     message(FATAL_ERROR "Cannot derive OFFLOAD_TARGET from QE_GPU_ARCHS.")
+   endif()
+-  target_compile_options(qe_openmp_fortran INTERFACE "-foffload=${OFFLOAD_TARGET};-foffload-options=-lm -latomic")
++  target_compile_options(qe_openmp_fortran INTERFACE "--offload=${OFFLOAD_TARGET};--offload-options=-lm -latomic")
  
-   target_link_options(qe_openmp_fortran INTERFACE "$<$<LINK_LANGUAGE:Fortran>:${OpenMP_Fortran_FLAGS}>")
- else()
--  target_compile_options(qe_openmp_fortran INTERFACE "$<$<COMPILE_LANGUAGE:Fortran>:-foffload=disable>")
-+  target_compile_options(qe_openmp_fortran INTERFACE "$<$<COMPILE_LANGUAGE:Fortran>:--offload=disable>")
- endif()
- 
- ############################################################
+   if(OFFLOAD_TARGET STREQUAL "amdgcn-amdhsa")
+     target_compile_options(qe_openmp_fortran INTERFACE "-foffload-options=${OFFLOAD_TARGET}=-march=${QE_GPU_ARCHS}")
