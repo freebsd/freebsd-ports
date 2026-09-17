@@ -124,6 +124,7 @@
     SUBDIR += iso2mkv
     SUBDIR += jellyfin
     SUBDIR += jellyfin-desktop
+    SUBDIR += jellyfin-ffmpeg
     SUBDIR += jellyfin-ffmpeg7
     SUBDIR += kaffeine
     SUBDIR += kamoso
