@@ -1,5 +1,5 @@
 PORTNAME=	minorminer
-DISTVERSION=	0.2.19
+DISTVERSION=	0.2.22
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,6 +26,6 @@ do-install: # workaround for https://github.com/dwavesystems/minorminer/issues/2
 post-test:
 	@cd ${BUILD_WRKSRC}/tests && ./run_tests
 
-# tests as of 0.2.19: 34 tests from 4 test suites ran. (5 ms total)
+# tests as of 0.2.22: 34 tests from 4 test suites ran. (1 ms total)
 
 .include <bsd.port.mk>
