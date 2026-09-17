@@ -1,5 +1,5 @@
 PORTNAME=	ttyplot
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.6
 CATEGORIES=	graphics
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -13,9 +13,11 @@ USES=		ncurses pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	tenox7
 
-MAKE_ARGS=	CFLAGS="${CFLAGS}" MANPREFIX="${PREFIX}/share/man"
+MAKE_ARGS=	CFLAGS="${CFLAGS}" \
+		MANPREFIX="${PREFIX}/share/man"
 
-PLIST_FILES=	bin/${PORTNAME} share/man/man1/ttyplot.1.gz
+PLIST_FILES=	bin/${PORTNAME} \
+		share/man/man1/ttyplot.1.gz
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ttyplot
