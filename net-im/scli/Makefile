@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
 CATEGORIES=	net-im python
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple terminal user interface for the Signal messenger (using signal-cli)
 WWW=		https://github.com/isamert/scli
 
