@@ -1,5 +1,6 @@
 PORTNAME=	vllm
 DISTVERSION=	0.20.2
+PORTREVISION=	1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI \
 		https://github.com/uxlfoundation/oneDNN/archive/refs/tags/:onednn_src
@@ -64,7 +65,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.13.3:www/py-aiohttp@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}prometheus-fastapi-instrumentator>=7.0.0:www/py-prometheus-fastapi-instrumentator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=5.29.6:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.9.0:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-cpuinfo>0:sysutils/py-py-cpuinfo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py-cpuinfo2>0:sysutils/py-py-cpuinfo2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybase64>0:devel/py-pybase64@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.12.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-json-logger>0:devel/py-python-json-logger@${PY_FLAVOR} \
