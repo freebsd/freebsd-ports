@@ -70,7 +70,6 @@ lib/dirsrv/python/logregex.py
 lib/libsvrcore.so
 lib/libsvrcore.so.0
 lib/libsvrcore.so.0.0.0
-lib/sysctl.d/70-dirsrv.conf
 libdata/pkgconfig/dirsrv.pc
 libdata/pkgconfig/svrcore.pc
 sbin/ldap-agent
