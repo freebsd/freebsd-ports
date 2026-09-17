@@ -12,6 +12,8 @@ WWW=		https://github.com/aseprite/skia
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_14=	compilation fails: .rsp files are not supprted by ar on 14: ar there is from Elftoolchain project which was later replaced by LLVM ar, which supports .rsp files
+
 BUILD_DEPENDS=	gn:devel/gn
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
