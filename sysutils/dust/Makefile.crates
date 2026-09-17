@@ -20,7 +20,7 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		clap_complete-4.6.9 \
 		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
-		clap_mangen-0.2.33 \
+		clap_mangen-0.3.3 \
 		colorchoice-1.0.5 \
 		config-file-0.2.3 \
 		core-foundation-sys-0.8.7 \
@@ -57,7 +57,9 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		objc2-0.6.4 \
 		objc2-core-foundation-0.3.2 \
 		objc2-encode-4.1.0 \
+		objc2-foundation-0.3.2 \
 		objc2-io-kit-0.3.2 \
+		objc2-open-directory-0.3.2 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		pin-project-lite-0.2.17 \
@@ -74,6 +76,7 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
 		roff-1.1.1 \
+		rustc-hash-2.1.2 \
 		rustix-1.1.4 \
 		rustversion-1.0.23 \
 		serde-1.0.229 \
@@ -86,7 +89,7 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		strsim-0.11.1 \
 		syn-2.0.119 \
 		syn-3.0.3 \
-		sysinfo-0.37.2 \
+		sysinfo-0.39.6 \
 		tempfile-3.27.0 \
 		terminal_size-0.4.4 \
 		termtree-0.5.1 \
@@ -106,20 +109,16 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.61.3 \
-		windows-collections-0.2.0 \
-		windows-core-0.61.2 \
+		windows-0.62.2 \
+		windows-collections-0.3.2 \
 		windows-core-0.62.2 \
-		windows-future-0.2.1 \
+		windows-future-0.3.2 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
-		windows-link-0.1.3 \
 		windows-link-0.2.1 \
-		windows-numerics-0.2.0 \
-		windows-result-0.3.4 \
+		windows-numerics-0.3.1 \
 		windows-result-0.4.1 \
-		windows-strings-0.4.2 \
 		windows-strings-0.5.1 \
 		windows-sys-0.61.2 \
-		windows-threading-0.1.0 \
+		windows-threading-0.2.1 \
 		zmij-1.0.23
