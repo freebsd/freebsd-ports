@@ -1,5 +1,5 @@
---- src/mkcmdtab.c.orig	2010-05-29 01:52:51.281691000 +0900
-+++ src/mkcmdtab.c	2010-05-29 01:54:05.558527228 +0900
+--- src/mkcmdtab.c.orig	2025-12-15 09:04:17 UTC
++++ src/mkcmdtab.c
 @@ -14,11 +14,7 @@
  
  #include "vim.h"
