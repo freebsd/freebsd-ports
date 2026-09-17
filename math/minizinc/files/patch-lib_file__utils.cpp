@@ -1,6 +1,8 @@
---- lib/file_utils.cpp.orig	2020-11-09 03:26:53 UTC
+-- override lib path with FREEBSD_MZN_STDLIB_DIR
+
+--- lib/file_utils.cpp.orig	2026-08-30 23:54:04 UTC
 +++ lib/file_utils.cpp
-@@ -315,6 +315,9 @@ std::string share_directory() {
+@@ -403,6 +403,9 @@ std::string share_directory() {
    if (FileUtils::file_exists(static_stdlib_dir + "/std/stdlib.mzn")) {
      return static_stdlib_dir;
    }
@@ -10,7 +12,7 @@
    std::string mypath = FileUtils::progpath();
    int depth = 0;
    for (char i : mypath) {
-@@ -329,6 +332,7 @@ std::string share_directory() {
+@@ -417,6 +420,7 @@ std::string share_directory() {
      mypath += "/..";
    }
    return "";
