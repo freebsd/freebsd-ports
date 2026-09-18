@@ -1,0 +1,7 @@
+This FreeBSD kernel module implements a simple point-to-point IP link
+between a vnet jail and its host, or between two vnet jails - like
+if_epair(4), but without the complexity and overhead of emulating
+Ethernet.
+
+Status: Under active development. It has not yet seen wide testing.
+Try it on a test machine first.

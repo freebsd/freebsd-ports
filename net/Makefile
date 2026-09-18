@@ -270,6 +270,7 @@
     SUBDIR += icmpinfo
     SUBDIR += icpld
     SUBDIR += identme
+    SUBDIR += if_pair-kmod
     SUBDIR += ifdepd
     SUBDIR += iffinder
     SUBDIR += ifstat
