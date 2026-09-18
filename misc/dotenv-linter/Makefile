@@ -1,7 +1,7 @@
 PORTNAME=	dotenv-linter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -124,7 +124,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itertools-0.13.0 \
 		itoa-1.0.15 \
 		js-sys-0.3.78 \
-		libc-0.2.175 \
+		libc-0.2.186 \
 		linux-raw-sys-0.11.0 \
 		litemap-0.8.0 \
 		litrs-0.4.2 \

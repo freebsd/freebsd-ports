@@ -1,6 +1,6 @@
 PORTNAME=	accesskit-c
 DISTVERSION=	0.17.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	accessibility
 
 MAINTAINER=	gnome@FreeBSD.org

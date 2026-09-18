@@ -1,6 +1,6 @@
 PORTNAME=	findomain
 DISTVERSION=	9.0.4
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	net security
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -132,7 +132,7 @@ CARGO_CRATES=	addr-0.15.6 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
 		lexical-core-0.7.6 \
-		libc-0.2.150 \
+		libc-0.2.186 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.12 \
 		lock_api-0.4.11 \

@@ -1,7 +1,7 @@
 PORTNAME=	fblog
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.17.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -67,7 +67,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		itoa-1.0.15 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
-		libc-0.2.172 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.9.4 \
 		lock_api-0.4.12 \

@@ -1,6 +1,6 @@
 PORTNAME=	ssh-vault
 PORTVERSION=	1.0.10
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	security
 MASTER_SITES=	CRATESIO/${PORTNAME}/${DISTNAME}${CARGO_CRATE_EXT}
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -109,7 +109,7 @@ CARGO_CRATES=   addr2line-0.21.0 \
                 itoa-1.0.10 \
                 js-sys-0.3.66 \
                 lazy_static-1.4.0 \
-                libc-0.2.151 \
+                libc-0.2.186 \
                 libm-0.2.8 \
                 linked-hash-map-0.5.6 \
                 linux-raw-sys-0.4.12 \

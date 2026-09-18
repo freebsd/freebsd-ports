@@ -1,6 +1,6 @@
 PORTNAME=	narrowlink
 DISTVERSION=	0.2.6
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -128,7 +128,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		keccak-0.1.5 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.155 \
+		libc-0.2.186 \
 		libloading-0.8.3 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \

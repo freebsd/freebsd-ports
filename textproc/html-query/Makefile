@@ -1,7 +1,7 @@
 PORTNAME=	html-query
 DISTVERSIONPREFIX=	html-query-v
 DISTVERSION=	1.2.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -94,7 +94,7 @@ CARGO_CRATES=	ahash-0.7.7 \
 		joinery-2.1.0 \
 		js-sys-0.3.65 \
 		keyboard-types-0.6.2 \
-		libc-0.2.150 \
+		libc-0.2.186 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
 		longest-increasing-subsequence-0.1.0 \

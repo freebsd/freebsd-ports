@@ -1,6 +1,6 @@
 PORTNAME=	potnet
 DISTVERSION=	0.5.0
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -51,7 +51,7 @@ CARGO_CRATES=	android-tzdata-0.1.1 \
 		itoa-1.0.10 \
 		js-sys-0.3.66 \
 		lazy_static-1.4.0 \
-		libc-0.2.151 \
+		libc-0.2.186 \
 		libredox-0.0.1 \
 		linux-raw-sys-0.4.12 \
 		log-0.4.20 \

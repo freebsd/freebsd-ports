@@ -1,7 +1,7 @@
 PORTNAME=	wthrr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.1
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	misc
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -84,7 +84,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		itoa-1.0.11 \
 		js-sys-0.3.70 \
 		lazy_static-1.5.0 \
-		libc-0.2.159 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		log-0.4.22 \

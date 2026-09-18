@@ -1,7 +1,7 @@
 PORTNAME=	elan
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -122,7 +122,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		json-0.12.4 \
 		lazy_static-1.5.0 \
 		libbz2-rs-sys-0.2.5 \
-		libc-0.2.162 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		libz-sys-1.1.20 \
 		linux-raw-sys-0.4.14 \

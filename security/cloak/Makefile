@@ -1,7 +1,7 @@
 PORTNAME=	cloak
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	41
+PORTREVISION=	42
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -49,7 +49,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		itoa-1.0.1 \
 		js-sys-0.3.56 \
 		lazy_static-1.4.0 \
-		libc-0.2.116 \
+		libc-0.2.186 \
 		log-0.4.14 \
 		memchr-2.4.1 \
 		normalize-line-endings-0.3.0 \

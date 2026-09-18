@@ -1,7 +1,7 @@
 PORTNAME=	csview
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc
 
 MAINTAINER=	ruben@verweg.com
@@ -40,7 +40,7 @@ CARGO_CRATES=	anstream-0.6.13 \
 		heck-0.5.0 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
-		libc-0.2.153 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.13 \
 		memchr-2.7.2 \
 		pager-0.16.1 \

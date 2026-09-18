@@ -1,7 +1,7 @@
 PORTNAME=	jot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.2
-PORTREVISION=	30
+PORTREVISION=	31
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,7 @@ CARGO_CRATES=	atty-0.2.14 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		indexmap-1.9.1 \
-		libc-0.2.132 \
+		libc-0.2.186 \
 		once_cell-1.14.0 \
 		os_str_bytes-6.3.0 \
 		proc-macro-error-1.0.4 \

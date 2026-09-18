@@ -1,7 +1,7 @@
 PORTNAME=	ttynt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.1
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
 		lazy_static-1.4.0 \
-		libc-0.2.155 \
+		libc-0.2.186 \
 		memchr-2.7.3 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \

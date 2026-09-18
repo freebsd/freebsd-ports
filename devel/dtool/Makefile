@@ -1,7 +1,7 @@
 PORTNAME=	dtool
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.0
-PORTREVISION=	40
+PORTREVISION=	41
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -80,7 +80,7 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		js-sys-0.3.53 \
 		keccak-0.1.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.101 \
+		libc-0.2.186 \
 		linked-hash-map-0.5.3 \
 		log-0.4.8 \
 		madato-0.5.3 \

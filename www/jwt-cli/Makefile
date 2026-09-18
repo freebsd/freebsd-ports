@@ -1,6 +1,6 @@
 PORTNAME=	jwt-cli
 PORTVERSION=	6.2.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -61,7 +61,7 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		js-sys-0.3.60 \
 		jsonwebtoken-9.2.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.152 \
+		libc-0.2.186 \
 		link-cplusplus-1.0.7 \
 		litrs-0.2.3 \
 		log-0.4.17 \

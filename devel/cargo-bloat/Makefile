@@ -1,7 +1,7 @@
 PORTNAME=	cargo-bloat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.1
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		binfarce-0.2.1 \
 		fallible-iterator-0.2.0 \
 		json-0.12.4 \
-		libc-0.2.154 \
+		libc-0.2.186 \
 		memchr-2.7.2 \
 		memmap2-0.9.4 \
 		multimap-0.10.0 \

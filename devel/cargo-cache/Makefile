@@ -1,6 +1,6 @@
 PORTNAME=	cargo-cache
 DISTVERSION=	0.8.3
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -57,7 +57,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		instant-0.1.12 \
 		itoa-1.0.2 \
 		jobserver-0.1.24 \
-		libc-0.2.126 \
+		libc-0.2.186 \
 		libgit2-sys-0.13.2+1.4.2 \
 		libz-sys-1.1.8 \
 		log-0.4.17 \

@@ -1,6 +1,6 @@
 PORTNAME=	szyszka
 DISTVERSION=	3.0.0
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -98,7 +98,7 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		js-sys-0.3.63 \
 		jwalk-0.8.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.144 \
+		libc-0.2.186 \
 		libm-0.2.7 \
 		locale_config-0.3.0 \
 		lock_api-0.4.9 \

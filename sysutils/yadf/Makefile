@@ -1,7 +1,7 @@
 PORTNAME=	yadf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
-PORTREVISION=	39
+PORTREVISION=	40
 CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
@@ -63,7 +63,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		itoa-0.4.8 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.113 \
+		libc-0.2.186 \
 		log-0.4.14 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \

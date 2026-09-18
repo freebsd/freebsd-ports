@@ -1,6 +1,6 @@
 PORTNAME=	amber
 DISTVERSION=	0.4.0-alpha
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -64,7 +64,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		itertools-0.13.0 \
 		js-sys-0.3.69 \
 		lazy_static-1.5.0 \
-		libc-0.2.155 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.14 \
 		log-0.4.22 \
 		memchr-2.7.4 \

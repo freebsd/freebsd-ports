@@ -1,7 +1,7 @@
 PORTNAME=	bedrust
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.8
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -194,7 +194,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
 		lebe-0.5.2 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		libfuzzer-sys-0.4.9 \
 		libloading-0.8.6 \
 		libredox-0.1.3 \

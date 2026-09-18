@@ -1,7 +1,7 @@
 PORTNAME=	fnm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.39.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -132,7 +132,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		js-sys-0.3.72 \
 		junction-1.2.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.161 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		lockfree-object-pool-0.1.6 \

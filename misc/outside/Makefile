@@ -1,7 +1,7 @@
 PORTNAME=	outside
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	misc
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -116,7 +116,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itoa-1.0.15 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
-		libc-0.2.174 \
+		libc-0.2.186 \
 		libnghttp2-sys-0.1.11+1.64.0 \
 		libredox-0.1.6 \
 		libz-sys-1.1.22 \

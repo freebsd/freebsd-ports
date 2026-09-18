@@ -1,7 +1,7 @@
 PORTNAME=	twitch-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.19
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net-p2p
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -180,7 +180,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
 		lebe-0.5.2 \
-		libc-0.2.171 \
+		libc-0.2.186 \
 		libfuzzer-sys-0.4.9 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.9.3 \

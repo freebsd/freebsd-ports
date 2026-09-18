@@ -13,7 +13,7 @@ CARGO_CRATES=	anstyle-1.0.10 \
 		hashbrown-0.15.2 \
 		heck-0.5.0 \
 		indexmap-2.8.0 \
-		libc-0.2.171 \
+		libc-0.2.186 \
 		memchr-2.7.4 \
 		memmap2-0.9.5 \
 		memoffset-0.9.1 \

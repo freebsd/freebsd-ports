@@ -1,5 +1,6 @@
 PORTNAME=	cobalt
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 DISTVERSION=	0.20.4
 CATEGORIES=	www
 PKGNAMESUFFIX=	-site-generator
@@ -153,7 +154,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		kqueue-sys-1.0.4 \
 		kstring-2.0.2 \
 		lasso-0.7.3 \
-		libc-0.2.172 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.9.3 \

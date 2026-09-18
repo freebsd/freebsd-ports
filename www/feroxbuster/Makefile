@@ -1,7 +1,7 @@
 PORTNAME=	feroxbuster
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.13.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -190,7 +190,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lazy_static-1.5.0 \
 		leaky-bucket-1.1.2 \
 		levenshtein-1.0.5 \
-		libc-0.2.174 \
+		libc-0.2.186 \
 		libredox-0.1.9 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.8.0 \

@@ -1,6 +1,6 @@
 PORTNAME=	arrow-datafusion
 DISTVERSION=	45.0.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -218,7 +218,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lexical-util-1.0.6 \
 		lexical-write-float-1.0.5 \
 		lexical-write-integer-1.0.5 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		libflate-2.1.0 \
 		libflate_lz77-2.1.0 \
 		libm-0.2.11 \

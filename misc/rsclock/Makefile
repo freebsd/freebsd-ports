@@ -1,7 +1,7 @@
 PORTNAME=	rsclock
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.12
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,7 +34,7 @@ CARGO_CRATES=	android-tzdata-0.1.1 \
 		iana-time-zone-0.1.56 \
 		iana-time-zone-haiku-0.1.1 \
 		js-sys-0.3.61 \
-		libc-0.2.142 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		link-cplusplus-1.0.8 \
 		log-0.4.17 \

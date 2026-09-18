@@ -1,7 +1,7 @@
 PORTNAME=	sad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.32
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,7 +53,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		heck-0.5.0 \
 		hermit-abi-0.3.9 \
 		is_terminal_polyfill-1.70.0 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.14 \
 		memchr-2.7.4 \
 		miniz_oxide-0.7.4 \

@@ -1,6 +1,6 @@
 PORTNAME=	gdrive
 DISTVERSION=	3.9.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -85,7 +85,7 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		itertools-0.10.5 \
 		itoa-1.0.5 \
 		js-sys-0.3.60 \
-		libc-0.2.139 \
+		libc-0.2.186 \
 		link-cplusplus-1.0.8 \
 		linux-raw-sys-0.1.4 \
 		lock_api-0.4.9 \

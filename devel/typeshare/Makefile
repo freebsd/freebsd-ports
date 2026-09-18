@@ -1,7 +1,7 @@
 PORTNAME=	typeshare
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -70,7 +70,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		joinery-3.1.0 \
 		js-sys-0.3.72 \
 		lazy_format-2.0.3 \
-		libc-0.2.161 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.14 \
 		log-0.4.22 \
 		memchr-2.7.4 \

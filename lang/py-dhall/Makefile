@@ -1,6 +1,6 @@
 PORTNAME=	dhall
 DISTVERSION=	0.1.16
-PORTREVISION=	4
+PORTREVISION=	5
 MASTER_SITES=	PYPI
 CATEGORIES=	lang python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -96,7 +96,7 @@ CARGO_CRATES=	abnf-0.12.0 \
 		itoa-1.0.1 \
 		js-sys-0.3.56 \
 		lazy_static-1.4.0 \
-		libc-0.2.121 \
+		libc-0.2.186 \
 		lock_api-0.4.6 \
 		log-0.4.16 \
 		maplit-1.0.2 \

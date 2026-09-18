@@ -1,7 +1,7 @@
 PORTNAME=	mmtc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
-PORTREVISION=	31
+PORTREVISION=	32
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,7 +56,7 @@ CARGO_CRATES=	anyhow-1.0.69 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.5 \
 		is-terminal-0.4.3 \
-		libc-0.2.139 \
+		libc-0.2.186 \
 		linux-raw-sys-0.1.4 \
 		lock_api-0.4.9 \
 		log-0.4.17 \

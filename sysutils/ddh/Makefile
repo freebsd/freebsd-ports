@@ -1,6 +1,6 @@
 PORTNAME=	ddh
 DISTVERSION=	0.13.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 
@@ -32,7 +32,7 @@ CARGO_CRATES=	atty-0.2.14 \
 		hermit-abi-0.1.19 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.113 \
+		libc-0.2.186 \
 		memoffset-0.6.5 \
 		nohash-hasher-0.2.0 \
 		num_cpus-1.13.1 \

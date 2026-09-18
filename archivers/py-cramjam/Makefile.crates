@@ -39,7 +39,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		isal-sys-0.5.3+496255c \
 		itoa-1.0.14 \
 		jobserver-0.1.32 \
-		libc-0.2.170 \
+		libc-0.2.186 \
 		libcramjam-0.7.0 \
 		libcramjam-0.8.0 \
 		libdeflate-sys-1.19.3 \

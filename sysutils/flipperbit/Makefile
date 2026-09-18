@@ -1,7 +1,7 @@
 PORTNAME=	flipperbit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.3 # version only on crates.io, not on GitHub
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,7 +35,7 @@ CARGO_CRATES=	atty-0.2.14 \
 		hermit-abi-0.1.19 \
 		indexmap-1.8.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.125 \
+		libc-0.2.186 \
 		moisture-0.1.0 \
 		os_str_bytes-6.0.0 \
 		ppv-lite86-0.2.16 \

@@ -1,7 +1,7 @@
 PORTNAME=	spr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -116,7 +116,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lazy-regex-3.4.1 \
 		lazy-regex-proc_macros-3.4.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.175 \
+		libc-0.2.186 \
 		libgit2-sys-0.18.2+1.9.1 \
 		libz-sys-1.1.22 \
 		linux-raw-sys-0.9.4 \

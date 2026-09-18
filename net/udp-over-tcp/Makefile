@@ -1,7 +1,7 @@
 PORTNAME=	udp-over-tcp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,7 +56,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		humantime-2.1.0 \
 		is-terminal-0.4.9 \
 		lazy_static-1.4.0 \
-		libc-0.2.148 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.8 \
 		log-0.4.20 \
 		memchr-2.6.4 \

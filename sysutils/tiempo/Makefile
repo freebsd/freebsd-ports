@@ -1,6 +1,6 @@
 PORTNAME=	tiempo
 DISTVERSION=	1.11.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -73,7 +73,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		itoa-1.0.11 \
 		js-sys-0.3.69 \
 		lazy_static-1.5.0 \
-		libc-0.2.155 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		libsqlite3-sys-0.28.0 \
 		linux-raw-sys-0.4.14 \

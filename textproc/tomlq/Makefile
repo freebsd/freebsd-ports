@@ -1,6 +1,6 @@
 PORTNAME=	tomlq
 DISTVERSION=	0.2.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -68,7 +68,7 @@ CARGO_CRATES=	addr2line-0.24.1 \
 		is_terminal_polyfill-1.70.0 \
 		itertools-0.13.0 \
 		itoa-1.0.14 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		linked-hash-map-0.5.6 \
 		log-0.4.22 \
 		memchr-2.7.4 \

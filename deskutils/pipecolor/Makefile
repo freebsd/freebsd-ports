@@ -1,7 +1,7 @@
 PORTNAME=	pipecolor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.4
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,7 +46,7 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		io-lifetimes-1.0.10 \
 		itoa-1.0.6 \
 		lazy_static-1.4.0 \
-		libc-0.2.144 \
+		libc-0.2.186 \
 		linux-raw-sys-0.3.7 \
 		memchr-2.5.0 \
 		memoffset-0.7.1 \

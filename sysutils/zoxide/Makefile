@@ -1,7 +1,7 @@
 PORTNAME=	zoxide
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.8
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils
 
 MAINTAINER=	andoriyu@gmail.com
@@ -57,7 +57,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		heck-0.5.0 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.15 \
-		libc-0.2.172 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.9.4 \

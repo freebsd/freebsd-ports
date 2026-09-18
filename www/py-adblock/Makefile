@@ -1,6 +1,6 @@
 PORTNAME=	adblock
 DISTVERSION=	0.6.0
-PORTREVISION=	62
+PORTREVISION=	63
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -47,7 +47,7 @@ CARGO_CRATES=	adblock-0.5.6 \
 		idna-0.2.3 \
 		indoc-1.0.6 \
 		itertools-0.10.3 \
-		libc-0.2.126 \
+		libc-0.2.186 \
 		lock_api-0.4.7 \
 		matches-0.1.9 \
 		memchr-2.5.0 \

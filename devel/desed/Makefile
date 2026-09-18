@@ -1,6 +1,6 @@
 PORTNAME=	desed
 DISTVERSION=	1.2.2
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO/${PORTNAME}/${DISTNAME}${CARGO_CRATE_EXT}
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -58,7 +58,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itoa-1.0.11 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
-		libc-0.2.159 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \

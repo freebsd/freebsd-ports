@@ -1,6 +1,6 @@
 PORTNAME=	dra
 DISTVERSION=	0.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -95,7 +95,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		js-sys-0.3.83 \
 		leb128fmt-0.1.0 \
 		libbz2-rs-sys-0.2.1 \
-		libc-0.2.172 \
+		libc-0.2.186 \
 		linux-raw-sys-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		litemap-0.7.4 \

@@ -1,7 +1,7 @@
 PORTNAME=	tere
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,7 +38,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		getrandom-0.2.15 \
 		heck-0.5.0 \
 		itoa-1.0.11 \
-		libc-0.2.158 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \

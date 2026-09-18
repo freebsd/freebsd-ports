@@ -1,7 +1,7 @@
 PORTNAME=	joshuto
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.8
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -113,7 +113,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.4.0 \
 		lebe-0.5.2 \
-		libc-0.2.153 \
+		libc-0.2.186 \
 		libgit2-sys-0.16.2+1.7.2 \
 		libredox-0.0.1 \
 		libredox-0.0.2 \

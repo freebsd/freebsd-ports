@@ -1,6 +1,6 @@
 PORTNAME=	openai-harmony
 DISTVERSION=	0.0.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -143,7 +143,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		jpeg-decoder-0.3.1 \
 		js-sys-0.3.77 \
 		lebe-0.5.2 \
-		libc-0.2.171 \
+		libc-0.2.186 \
 		libfuzzer-sys-0.4.9 \
 		litemap-0.8.0 \
 		log-0.4.27 \

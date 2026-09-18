@@ -113,7 +113,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
-		libc-0.2.171 \
+		libc-0.2.186 \
 		libflate-2.1.0 \
 		libflate_lz77-2.1.0 \
 		libredox-0.1.3 \

@@ -68,7 +68,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		jobserver-0.1.32 \
 		jpeg-decoder-0.3.1 \
 		lebe-0.5.2 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		libfuzzer-sys-0.4.9 \
 		libm-0.2.11 \
 		libusb1-sys-0.7.0 \

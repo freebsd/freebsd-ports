@@ -1,7 +1,7 @@
 PORTNAME=	diskus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
-PORTREVISION=	41
+PORTREVISION=	42
 CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
@@ -32,7 +32,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		humansize-1.1.1 \
 		itoa-0.4.8 \
 		lazy_static-1.4.0 \
-		libc-0.2.107 \
+		libc-0.2.186 \
 		memoffset-0.6.4 \
 		nodrop-0.1.14 \
 		num-format-0.4.0 \

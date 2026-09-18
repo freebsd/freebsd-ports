@@ -27,7 +27,7 @@ CARGO_CRATES=	addr2line-0.22.0 \
 		indexmap-2.2.6 \
 		is_terminal_polyfill-1.70.0 \
 		itoa-1.0.11 \
-		libc-0.2.155 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.14 \
 		memchr-2.7.2 \
 		miniz_oxide-0.7.3 \

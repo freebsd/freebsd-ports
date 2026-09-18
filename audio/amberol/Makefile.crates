@@ -123,7 +123,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		lazy_static-1.5.0 \
 		libadwaita-0.8.0 \
 		libadwaita-sys-0.8.0 \
-		libc-0.2.171 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.9.3 \
 		litemap-0.7.5 \

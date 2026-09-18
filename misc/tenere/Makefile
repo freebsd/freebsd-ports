@@ -1,7 +1,7 @@
 PORTNAME=	tenere
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -153,7 +153,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itoa-1.0.15 \
 		jobserver-0.1.34 \
 		js-sys-0.3.77 \
-		libc-0.2.175 \
+		libc-0.2.186 \
 		libgit2-sys-0.17.0+1.8.1 \
 		libredox-0.1.9 \
 		libz-sys-1.1.22 \

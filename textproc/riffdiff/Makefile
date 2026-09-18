@@ -1,6 +1,6 @@
 PORTNAME=	riffdiff
 DISTVERSION=	3.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -63,7 +63,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		io-lifetimes-1.0.6 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.1 \
-		libc-0.2.140 \
+		libc-0.2.186 \
 		linux-raw-sys-0.1.4 \
 		litemap-0.8.0 \
 		log-0.4.21 \

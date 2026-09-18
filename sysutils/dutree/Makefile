@@ -1,7 +1,7 @@
 PORTNAME=	dutree
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.18
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -19,7 +19,7 @@ CARGO_CRATES=	aho-corasick-0.7.13 \
 		arc-swap-0.4.7 \
 		getopts-0.2.21 \
 		lazy_static-1.4.0 \
-		libc-0.2.145 \
+		libc-0.2.186 \
 		memchr-2.3.3 \
 		regex-1.3.9 \
 		regex-syntax-0.6.18 \

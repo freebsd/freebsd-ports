@@ -1,7 +1,7 @@
 PORTNAME=	bunyan
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.9
-PORTREVISION=	33
+PORTREVISION=	34
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,7 +54,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		itoa-1.0.4 \
 		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
-		libc-0.2.137 \
+		libc-0.2.186 \
 		link-cplusplus-1.0.7 \
 		linux-raw-sys-0.1.3 \
 		log-0.4.17 \

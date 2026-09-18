@@ -1,7 +1,7 @@
 PORTNAME=	rwpspread
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -108,7 +108,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jobserver-0.1.30 \
 		leb128fmt-0.1.0 \
 		lebe-0.5.2 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		libfuzzer-sys-0.4.7 \
 		linux-raw-sys-0.4.13 \
 		linux-raw-sys-0.9.4 \

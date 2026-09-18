@@ -112,7 +112,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lazy_static-1.5.0 \
 		libadwaita-0.8.1 \
 		libadwaita-sys-0.8.1 \
-		libc-0.2.175 \
+		libc-0.2.186 \
 		libredox-0.1.9 \
 		librsvg-2.61.3 \
 		linux-raw-sys-0.9.4 \

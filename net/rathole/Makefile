@@ -1,7 +1,7 @@
 PORTNAME=	rathole
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -118,7 +118,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		kqueue-1.0.8 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.4.0 \
-		libc-0.2.148 \
+		libc-0.2.186 \
 		libgit2-sys-0.14.2+1.5.1 \
 		libz-sys-1.1.12 \
 		linux-raw-sys-0.4.8 \

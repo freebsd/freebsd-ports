@@ -47,7 +47,7 @@ CARGO_CRATES=	accesskit-0.21.1 \
 		hermit-abi-0.4.0 \
 		hex-0.4.3 \
 		indexmap-2.6.0 \
-		libc-0.2.159 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.14 \
 		memchr-2.5.0 \
 		memoffset-0.9.1 \

@@ -1,7 +1,7 @@
 PORTNAME=	aichat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.30.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -186,7 +186,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		json-patch-4.0.0 \
 		jsonptr-0.7.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.174 \
+		libc-0.2.186 \
 		libredox-0.1.4 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.9.4 \

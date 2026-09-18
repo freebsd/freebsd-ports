@@ -1,7 +1,7 @@
 PORTNAME=	htmlq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	42
+PORTREVISION=	43
 CATEGORIES=	textproc
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -37,7 +37,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		itoa-0.4.8 \
 		kuchiki-0.8.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.101 \
+		libc-0.2.186 \
 		log-0.4.14 \
 		mac-0.1.1 \
 		markup5ever-0.10.1 \

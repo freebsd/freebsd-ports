@@ -1,7 +1,7 @@
 PORTNAME=	elfx86exts
 DISTVERSIONPREFIX=	${PORTNAME}@
 DISTVERSION=	0.6.2
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	sysutils
 
 MAINTAINER=	jamie@catflap.org
@@ -41,7 +41,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		heck-0.4.1 \
 		itertools-0.11.0 \
 		itoa-1.0.9 \
-		libc-0.2.149 \
+		libc-0.2.186 \
 		log-0.4.20 \
 		memchr-2.6.4 \
 		memmap-0.7.0 \

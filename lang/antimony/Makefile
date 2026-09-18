@@ -1,7 +1,7 @@
 PORTNAME=	antimony
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -36,7 +36,7 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		inkwell-0.5.0 \
 		inkwell_internals-0.10.0 \
 		lazy_static-1.5.0 \
-		libc-0.2.172 \
+		libc-0.2.186 \
 		llvm-sys-100.2.4 \
 		memchr-2.6.3 \
 		once_cell-1.17.0 \

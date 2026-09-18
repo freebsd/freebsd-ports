@@ -1,7 +1,7 @@
 PORTNAME=	pyperscan
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,7 +44,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		indoc-1.0.9 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.151 \
+		libc-0.2.186 \
 		libloading-0.7.4 \
 		linux-raw-sys-0.4.12 \
 		lock_api-0.4.11 \

@@ -1,7 +1,7 @@
 PORTNAME=	tabby
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.32.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel # machine-learning
 MASTER_SITES=	https://github.com/swagger-api/swagger-ui/archive/refs/tags/:swagger
 PKGNAMESUFFIX=	-ai-coding-assistant
@@ -295,7 +295,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lexical-util-0.8.5 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		libgit2-sys-0.16.2+1.7.2 \
 		libloading-0.7.4 \
 		libm-0.2.8 \

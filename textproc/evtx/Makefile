@@ -1,7 +1,7 @@
 PORTNAME=	evtx
 DISTVERSION=	0.12.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	29
+PORTREVISION=	30
 CATEGORIES=	textproc
 
 MAINTAINER=	acm@FreeBSD.org
@@ -96,7 +96,7 @@ CARGO_CRATES=	ahash-0.8.12 \
 		jiff-tzdb-0.1.5 \
 		jiff-tzdb-platform-0.1.3 \
 		js-sys-0.3.77 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
 		log-0.4.26 \

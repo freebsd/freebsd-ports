@@ -1,5 +1,6 @@
 PORTNAME=	difftastic
 DISTVERSION=	0.71.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -65,7 +66,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.10 \
 		lazy_static-1.4.0 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		libm-0.2.8 \
 		line-numbers-0.3.1 \
 		linux-raw-sys-0.4.14 \

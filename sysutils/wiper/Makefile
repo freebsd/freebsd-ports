@@ -1,7 +1,7 @@
 PORTNAME=	wiper
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-disk-cleanup-tool
 
@@ -65,7 +65,7 @@ CARGO_CRATES=	ahash-0.8.7 \
 		itoa-1.0.10 \
 		js-sys-0.3.69 \
 		jwalk-0.8.1 \
-		libc-0.2.153 \
+		libc-0.2.186 \
 		lock_api-0.4.11 \
 		log-0.4.20 \
 		lru-0.12.2 \

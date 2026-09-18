@@ -1,7 +1,7 @@
 PORTNAME=	kalc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 PKGNAMESUFFIX=	-calculator
 
@@ -49,7 +49,7 @@ CARGO_CRATES=	arrayvec-0.7.6 \
 		glam-0.30.3 \
 		gmp-mpfr-sys-1.6.5 \
 		kalc-lib-1.5.1 \
-		libc-0.2.172 \
+		libc-0.2.186 \
 		libm-0.2.15 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.9.4 \

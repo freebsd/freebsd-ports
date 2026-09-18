@@ -1,6 +1,6 @@
 PORTNAME=	ooo
 DISTVERSION=	0.1.2
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	misc # machine learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -59,7 +59,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itoa-1.0.9 \
 		js-sys-0.3.66 \
 		lazy_static-1.4.0 \
-		libc-0.2.150 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.11 \
 		lock_api-0.4.11 \
 		log-0.4.20 \

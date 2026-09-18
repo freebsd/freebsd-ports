@@ -1,7 +1,7 @@
 PORTNAME=	coloursum
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -48,7 +48,7 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		indoc-2.0.3 \
 		is-terminal-0.4.9 \
 		itertools-0.10.5 \
-		libc-0.2.147 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.5 \
 		memoffset-0.9.0 \
 		ntapi-0.3.7 \

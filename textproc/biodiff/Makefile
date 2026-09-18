@@ -1,7 +1,7 @@
 PORTNAME=	biodiff
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.1
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -94,7 +94,7 @@ CARGO_CRATES=	ahash-0.8.11 \
 		itertools-num-0.1.3 \
 		itoa-1.0.11 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
+		libc-0.2.186 \
 		libm-0.2.8 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.13 \

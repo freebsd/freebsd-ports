@@ -46,7 +46,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		is-terminal-0.4.6 \
 		js-sys-0.3.61 \
 		lazy_static-1.4.0 \
-		libc-0.2.141 \
+		libc-0.2.186 \
 		link-cplusplus-1.0.8 \
 		linux-raw-sys-0.1.4 \
 		linux-raw-sys-0.3.1 \

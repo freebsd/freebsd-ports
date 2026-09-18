@@ -1,7 +1,7 @@
 PORTNAME=	aoostar-rs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 
 MAINTAINER=	kiwi@FreeBSD.org
@@ -109,7 +109,7 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		lebe-0.5.2 \
-		libc-0.2.175 \
+		libc-0.2.186 \
 		libfuzzer-sys-0.4.10 \
 		libm-0.2.15 \
 		libudev-0.3.0 \

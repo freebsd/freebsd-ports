@@ -1,7 +1,7 @@
 PORTNAME=	trunk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.14
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -218,7 +218,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
-		libc-0.2.171 \
+		libc-0.2.186 \
 		libdeflate-sys-1.23.1 \
 		libdeflater-1.23.1 \
 		libloading-0.8.6 \

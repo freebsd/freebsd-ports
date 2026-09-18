@@ -1,7 +1,7 @@
 PORTNAME=	glitter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.6
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-git-tool
 
@@ -36,7 +36,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		home-0.5.9 \
 		itoa-1.0.11 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.13 \
 		memchr-2.7.2 \
 		ms-0.1.1 \

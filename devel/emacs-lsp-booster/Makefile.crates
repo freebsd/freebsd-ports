@@ -32,7 +32,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		is-terminal-0.4.10 \
 		itoa-1.0.10 \
 		lazy_static-1.4.0 \
-		libc-0.2.151 \
+		libc-0.2.186 \
 		linux-raw-sys-0.4.12 \
 		log-0.4.20 \
 		memchr-2.7.1 \

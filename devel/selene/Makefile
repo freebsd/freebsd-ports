@@ -1,6 +1,6 @@
 PORTNAME=	selene
 DISTVERSION=	0.31.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -78,7 +78,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		itoa-1.0.5 \
 		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
-		libc-0.2.139 \
+		libc-0.2.186 \
 		link-cplusplus-1.0.8 \
 		log-0.4.17 \
 		loom-0.5.6 \

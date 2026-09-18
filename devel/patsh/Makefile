@@ -1,7 +1,7 @@
 PORTNAME=	patsh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -48,7 +48,7 @@ CARGO_CRATES=	aho-corasick-1.0.4 \
 		is-terminal-0.4.9 \
 		is_executable-1.0.1 \
 		itertools-0.10.5 \
-		libc-0.2.147 \
+		libc-0.2.186 \
 		linux-raw-sys-0.3.8 \
 		linux-raw-sys-0.4.5 \
 		memchr-2.5.0 \

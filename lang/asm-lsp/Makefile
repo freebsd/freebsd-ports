@@ -1,7 +1,7 @@
 PORTNAME=	asm-lsp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -137,7 +137,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
 		leb128-0.2.5 \
-		libc-0.2.169 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.15 \
 		litemap-0.7.4 \

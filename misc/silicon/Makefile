@@ -1,7 +1,7 @@
 PORTNAME=	silicon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.3
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	misc
 PKGNAMESUFFIX=	-code-visualizer
 
@@ -103,7 +103,7 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.8 \
 		itoa-1.0.11 \
 		jpeg-decoder-0.3.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.159 \
+		libc-0.2.186 \
 		libloading-0.8.5 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \

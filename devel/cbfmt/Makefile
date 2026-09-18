@@ -1,7 +1,7 @@
 PORTNAME=	cbfmt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	33
+PORTREVISION=	34
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -42,7 +42,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ignore-0.4.18 \
 		indexmap-1.9.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.131 \
+		libc-0.2.186 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		num_cpus-1.13.1 \

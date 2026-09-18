@@ -1,6 +1,6 @@
 PORTNAME=	gifski
 DISTVERSION=	1.34.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,7 +53,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is_terminal_polyfill-1.70.1 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
-		libc-0.2.174 \
+		libc-0.2.186 \
 		libloading-0.8.8 \
 		libz-rs-sys-0.5.1 \
 		lodepng-3.12.1 \

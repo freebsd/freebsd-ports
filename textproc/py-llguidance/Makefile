@@ -1,6 +1,6 @@
 PORTNAME=	llguidance
 DISTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -166,7 +166,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		js-sys-0.3.77 \
 		jsonschema-0.29.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.174 \
+		libc-0.2.186 \
 		libredox-0.1.4 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.8.0 \

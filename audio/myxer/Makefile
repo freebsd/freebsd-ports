@@ -1,6 +1,6 @@
 PORTNAME=	myxer
 DISTVERSION=	1.3.0
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,7 +52,7 @@ CARGO_CRATES=	anyhow-1.0.44 \
 		gtk-sys-0.10.0 \
 		heck-0.3.3 \
 		itertools-0.9.0 \
-		libc-0.2.153 \
+		libc-0.2.186 \
 		libpulse-binding-2.25.0 \
 		libpulse-sys-1.19.2 \
 		memchr-2.4.1 \

@@ -1,6 +1,6 @@
 PORTNAME=	openapi-tui
 DISTVERSION=	0.10.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -162,7 +162,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		js-sys-0.3.77 \
 		json5-0.4.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.170 \
+		libc-0.2.186 \
 		libgit2-sys-0.18.0+1.9.0 \
 		libm-0.2.11 \
 		libredox-0.1.3 \

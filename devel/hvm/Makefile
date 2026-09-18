@@ -1,6 +1,6 @@
 PORTNAME=	hvm
 DISTVERSION=	g20240821
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,7 +39,7 @@ CARGO_CRATES=	TSPL-0.0.13 \
 		insta-1.39.0 \
 		is_terminal_polyfill-1.70.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.155 \
+		libc-0.2.186 \
 		linked-hash-map-0.5.6 \
 		log-0.4.21 \
 		memchr-2.7.2 \

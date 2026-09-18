@@ -1,7 +1,7 @@
 PORTNAME=	svls
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.14
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -71,7 +71,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		indexmap-2.11.4 \
 		io-uring-0.7.10 \
 		itoa-1.0.15 \
-		libc-0.2.175 \
+		libc-0.2.186 \
 		libloading-0.8.8 \
 		litemap-0.8.0 \
 		lock_api-0.4.13 \

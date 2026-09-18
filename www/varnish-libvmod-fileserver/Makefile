@@ -1,6 +1,6 @@
 PORTNAME=	libvmod-fileserver
 PORTVERSION=	0.0.9
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -57,7 +57,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		itertools-0.13.0 \
 		itoa-1.0.11 \
 		js-sys-0.3.72 \
-		libc-0.2.161 \
+		libc-0.2.186 \
 		libloading-0.8.5 \
 		log-0.4.22 \
 		memchr-2.7.4 \

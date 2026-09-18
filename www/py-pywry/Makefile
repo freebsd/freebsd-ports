@@ -1,6 +1,6 @@
 PORTNAME=	pywry
 DISTVERSION=	0.6.2
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -131,7 +131,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		jni-sys-0.3.0 \
 		kuchiki-0.8.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.149 \
+		libc-0.2.186 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		mac-0.1.1 \

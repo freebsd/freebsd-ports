@@ -1,7 +1,7 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
 DISTVERSION=	27.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -94,7 +94,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		js-sys-0.3.77 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.174 \
+		libc-0.2.186 \
 		libredox-0.1.3 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \

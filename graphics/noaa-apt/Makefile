@@ -1,7 +1,7 @@
 PORTNAME=	noaa-apt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -119,7 +119,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		lab-0.11.0 \
 		lazy_static-1.4.0 \
 		lebe-0.5.2 \
-		libc-0.2.150 \
+		libc-0.2.186 \
 		libredox-0.0.1 \
 		line_drawing-1.0.0 \
 		linux-raw-sys-0.4.11 \

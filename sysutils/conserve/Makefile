@@ -1,7 +1,7 @@
 PORTNAME=	conserve
 DISTVERSIONPREFIX=	v
 DISTVERSION=	24.8.0
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -157,7 +157,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itertools-0.12.1 \
 		itoa-1.0.11 \
 		lazy_static-1.4.0 \
-		libc-0.2.153 \
+		libc-0.2.186 \
 		libm-0.2.8 \
 		linux-raw-sys-0.3.8 \
 		linux-raw-sys-0.4.13 \

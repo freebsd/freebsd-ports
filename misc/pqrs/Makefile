@@ -1,7 +1,7 @@
 PORTNAME=	pqrs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -113,7 +113,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		lexical-util-0.8.5 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
-		libc-0.2.144 \
+		libc-0.2.186 \
 		libm-0.2.7 \
 		linked-hash-map-0.5.6 \
 		linked_hash_set-0.1.4 \
