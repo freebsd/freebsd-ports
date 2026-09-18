@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2022-05-06 06:57:14 UTC
+--- CMakeLists.txt.orig	2024-01-11 08:52:00 UTC
 +++ CMakeLists.txt
+@@ -1,7 +1,7 @@ else()
+ if(WIN32)
+     cmake_minimum_required(VERSION 3.22.0)
+ else()
+-    cmake_minimum_required(VERSION 2.8.12)
++    cmake_minimum_required(VERSION 2.8.12...3.28.1)
+ endif()
+ 
+ # force out-of-source build
 @@ -31,7 +31,7 @@ if ("${BUILD_TYPE_UPPER}" STREQUAL "RELEASE")
  string(TOUPPER "${CMAKE_BUILD_TYPE}" BUILD_TYPE_UPPER)
  if ("${BUILD_TYPE_UPPER}" STREQUAL "RELEASE")
