@@ -532,6 +532,9 @@ post-install-DOCS-on:
 	${RM} -r ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc/LLVM/* ${STAGEDIR}${DOCSDIR}
+.if ${PORT_OPTIONS:MFLANG}
+	${RMDIR} ${STAGEDIR}${DOCSDIR}/flang/html/_sources
+.endif
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc/LLVM
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc
 .for _man in ${MAN1SRCS}
