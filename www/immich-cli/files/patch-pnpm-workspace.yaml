@@ -1,0 +1,7 @@
+--- pnpm-workspace.yaml.orig	2026-09-18 15:34:13 UTC
++++ pnpm-workspace.yaml
+@@ -68,3 +68,4 @@ minimumReleaseAgeExclude:
+ minimumReleaseAgeExclude:
+   - '@immich/ui@0.86.0'
+   - '@immich/sql-tools@0.6.3'
++trustLockfile: true

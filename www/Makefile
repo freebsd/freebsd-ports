@@ -312,6 +312,7 @@
     SUBDIR += ilias
     SUBDIR += imaginary
     SUBDIR += immich
+    SUBDIR += immich-cli
     SUBDIR += immich-ml
     SUBDIR += iocaine
     SUBDIR += iridium

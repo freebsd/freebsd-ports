@@ -1,0 +1,4 @@
+The Immich command line interface uploads photos and videos to an Immich
+server from a shell, either in one go or by watching a directory for new
+files.  It talks to the server over its API, so it can run on a machine
+that does not host Immich itself.
