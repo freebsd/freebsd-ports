@@ -1,6 +1,6 @@
 PORTNAME=	OpenLoco
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.08
+DISTVERSION=	26.09
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -20,13 +20,13 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 
 USES=		cmake localbase:ldflags openal pkgconfig
 USE_GITHUB=	yes
-GH_TUPLE=	OpenLoco:OpenGraphics:v0.1.10:graphics
+GH_TUPLE=	OpenLoco:OpenGraphics:v0.1.12:graphics
+
+CMAKE_ARGS+=	-DPROJECT_VERSION=${DISTVERSIONFULL}
 
 # for std::execution::par
 CXXFLAGS+=	-fexperimental-library
-
-CMAKE_ARGS+=	-DPROJECT_VERSION=${DISTVERSIONFULL} \
-		-DCMAKE_INSTALL_BINDIR=${DATADIR}
+DATADIR=	${PREFIX}/share/openloco
 
 .include <bsd.port.pre.mk>
 
@@ -44,8 +44,5 @@ post-extract:
 	(cd ${WRKSRC_graphics} && ${RM} -r .github .gitignore LICENSE README.md)
 	${FIND} ${WRKSRC_graphics} -name .gitkeep -delete
 	${MV} ${WRKSRC_graphics} ${CONFIGURE_WRKSRC}/_deps/openloco_objects-src
-
-post-stage:
-	${RLN} ${STAGEDIR}${DATADIR}/OpenLoco ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
