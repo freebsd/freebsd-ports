@@ -6,14 +6,7 @@ MASTER_SITES=	https://raw.githubusercontent.com/etcd-io/${PORTNAME}/${DISTVERSIO
 PKGNAMEPREFIX=	coreos-
 PKGNAMESUFFIX=	${DISTVERSION:C/[.][0-9]+$//:S/.//}
 DISTFILES=	go.mod:gomod \
-		api/go.mod:gomod \
-		pkg/go.mod:gomod \
-		client/pkg/go.mod:gomod \
-		client/v3/go.mod:gomod \
-		etcdctl/go.mod:gomod \
-		etcdutl/go.mod:gomod \
-		server/go.mod:gomod \
-		tests/go.mod:gomod
+		${_SUBMODS:S|$|/go.mod:gomod|}
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Highly-available key value store and service discovery
@@ -25,9 +18,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	etcd-io
-GO_MODULE=	go.etcd.io/etcd/v3
 GO_MOD_DIST=	github
-GO_TARGET=	./etcdctl ./etcdutl ./server
+GO_MODULE=	go.etcd.io/etcd/v3
+GO_TARGET=	./etcdctl ./etcdutl ./server:etcd
 
 MAKE_ENV=	GOWORK=off
 
@@ -37,32 +30,25 @@ PLIST_FILES=	bin/etcd \
 		bin/etcdctl \
 		bin/etcdutl
 
+_SUBMODS=	api pkg client/pkg client/v3 etcdctl etcdutl server tests
+
 # This target is based on the post-extract target from Uses/go.mk
 post-extract:
-.for gt in ${GO_TARGET:T}
-	@${ECHO_MSG} "===> Tidying ${GO_MODNAME} dependencies";
-	@(cd ${GO_WRKSRC}/${gt}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod tidy -e)
-	@${ECHO_MSG} "===> Vendoring ${GO_MODNAME} dependencies";
-	@(cd ${GO_WRKSRC}/${gt}; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod vendor -e)
+.for t in ${GO_TARGET:C/:.*//}
+	@${ECHO_MSG} "===> Vendoring dependencies for ${t:T}"
+	@cd ${GO_WRKSRC}/${t} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} \
+		GOPROXY=${GO_MODCACHE} ${GO_CMD} mod tidy -e && \
+		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} \
+		GOPROXY=${GO_MODCACHE} ${GO_CMD} mod vendor -e
 .endfor
 
 # This target is based on the do-build target from Uses/go.mk.
 do-build:
-.for gt in ${GO_TARGET:T}
-	(cd ${GO_WRKSRC}/${gt}; \
-	for t in ${gt}; do \
-		out=$$(${BASENAME} $$(${ECHO_CMD} $${t} | \
-			${SED} -Ee 's/^[^:]*:([^:]+).*$$/\1/' -e 's/^\.$$/${PORTNAME}/')); \
-		pkg=$$(${ECHO_CMD} $${t} | \
-			${SED} -Ee 's/^([^:]*).*$$/\1/' -e 's/^${PORTNAME}$$/./'); \
-		${ECHO_MSG} "===>  Building $${out} from $${pkg}"; \
-		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} GOMAXPROCS=${MAKE_JOBS_NUMBER} GOPROXY=off ${GO_CMD} build ${GO_BUILDFLAGS} \
-			-o ${GO_WRKDIR_BIN}/$${out} \
-			.; \
-	done)
+.for t in ${GO_TARGET}
+	@${ECHO_MSG} "===>  Building ${t:C/^.*://:T} from ${t:C/:.*//}"
+	@cd ${GO_WRKSRC}/${t:C/:.*//} && ${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${GO_ENV} \
+		GOMAXPROCS=${MAKE_JOBS_NUMBER} GOPROXY=off ${GO_CMD} build \
+		${GO_BUILDFLAGS} -o ${GO_WRKDIR_BIN}/${t:C/^.*://:T} .
 .endfor
-
-post-install:
-	${MV} ${STAGEDIR}${PREFIX}/bin/server ${STAGEDIR}${PREFIX}/bin/etcd
 
 .include <bsd.port.mk>
