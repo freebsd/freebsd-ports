@@ -1,3 +1,4 @@
+IGNORE=		localized distfile not yet available upstream
 PORTEPOCH=	1
 CATEGORIES=	french
 MASTER_SITES=	https://fr.wordpress.org/
