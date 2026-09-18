@@ -704,6 +704,7 @@
     SUBDIR += etcd34
     SUBDIR += etcd35
     SUBDIR += etcd36
+    SUBDIR += etcd37
     SUBDIR += etl
     SUBDIR += evcxr-jupyter
     SUBDIR += evdev-proto

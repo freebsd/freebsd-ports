@@ -1,10 +1,10 @@
 PORTNAME=	etcd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.14
+DISTVERSION=	3.7.1
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/etcd-io/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 PKGNAMEPREFIX=	coreos-
-PKGNAMESUFFIX=	36
+PKGNAMESUFFIX=	${DISTVERSION:C/[.][0-9]+$//:S/.//}
 DISTFILES=	go.mod:gomod \
 		api/go.mod:gomod \
 		pkg/go.mod:gomod \
@@ -28,6 +28,8 @@ GH_ACCOUNT=	etcd-io
 GO_MODULE=	go.etcd.io/etcd/v3
 GO_MOD_DIST=	github
 GO_TARGET=	./etcdctl ./etcdutl ./server
+
+MAKE_ENV=	GOWORK=off
 
 CONFLICTS_INSTALL=	coreos-etcd[0-9][0-9]
 
