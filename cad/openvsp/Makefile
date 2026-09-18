@@ -1,6 +1,7 @@
 PORTNAME=	openvsp
 DISTVERSIONPREFIX=	${GH_PROJECT}_
 DISTVERSION=	3.51.3
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -15,6 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BROKEN_aarch64=		fails to compile: invokes x86 asm
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm \
+		eigen5>0:math/eigen5 \
 		pandoc:textproc/hs-pandoc
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libpng.so:graphics/png \
@@ -24,13 +26,12 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libcpptest.so:devel/cpptest \
 		libdbus-1.so:devel/dbus \
 		libClipper2.so:cad/Clipper2 \
-		libeigen_blas.so:math/eigen5 \
 		libcminpack.so:math/cminpack \
 		libharfbuzz.so:print/harfbuzz \
 		libxkbcommon.so:x11/libxkbcommon \
 		libdecor-0.so:x11-toolkits/libdecor
 
-USES=		cmake:noninja localbase gettext-runtime gl gnome \
+USES=		cmake:noninja gettext-runtime gl gnome \
 		jpeg localbase xorg
 
 .if !exists(/usr/include/omp.h)
