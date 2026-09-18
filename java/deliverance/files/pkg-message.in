@@ -27,6 +27,10 @@ The sample configuration uses the port-built CPU native SIMD provider. WebGPU is
 not enabled by this package. Models and reusable KV prefix-cache blocks are
 stored under /var/db/deliverance/.deliverance by default.
 
+The rc.d service runs as the unprivileged deliverance user by default. If you
+change deliverance_home or deliverance_log in rc.conf, make sure the configured
+paths are writable by that user.
+
 To enable the service at boot:
   sysrc deliverance_enable=YES
   service deliverance start

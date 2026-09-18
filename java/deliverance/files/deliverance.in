@@ -10,6 +10,8 @@
 # Optional settings:
 # deliverance_config="%%ETCDIR%%/deliverance.properties"
 # deliverance_home="/var/db/deliverance"
+# deliverance_user="%%DELIVERANCE_USER%%"
+# deliverance_group="%%DELIVERANCE_GROUP%%"
 # deliverance_java_opts="--enable-native-access=ALL-UNNAMED --add-modules jdk.incubator.vector --add-opens java.base/java.nio=ALL-UNNAMED -XX:-UseCompactObjectHeaders -Xmx3G"
 # deliverance_args=""
 # deliverance_log="/var/log/deliverance/deliverance.log"
@@ -24,11 +26,14 @@ load_rc_config ${name}
 : ${deliverance_enable:="NO"}
 : ${deliverance_config:="%%ETCDIR%%/deliverance.properties"}
 : ${deliverance_home:="/var/db/deliverance"}
+: ${deliverance_user:="%%DELIVERANCE_USER%%"}
+: ${deliverance_group:="%%DELIVERANCE_GROUP%%"}
 : ${deliverance_java_opts:="--enable-native-access=ALL-UNNAMED --add-modules jdk.incubator.vector --add-opens java.base/java.nio=ALL-UNNAMED -XX:-UseCompactObjectHeaders -Xmx3G"}
 : ${deliverance_args:=""}
 : ${deliverance_log:="/var/log/deliverance/deliverance.log"}
 
-pidfile="/var/run/${name}.pid"
+piddir="/var/run/${name}"
+pidfile="${piddir}/${name}.pid"
 command="/usr/sbin/daemon"
 procname="%%JAVA%%"
 required_files="${deliverance_config}"
@@ -37,8 +42,9 @@ command_args="-f -p ${pidfile} -o ${deliverance_log} %%JAVA%% ${deliverance_java
 
 deliverance_precmd()
 {
-	install -d -m 0755 "${deliverance_home}"
-	install -d -m 0755 "$(dirname "${deliverance_log}")"
+	install -d -o "${deliverance_user}" -g "${deliverance_group}" -m 0755 "${deliverance_home}"
+	install -d -o "${deliverance_user}" -g "${deliverance_group}" -m 0755 "${piddir}"
+	install -d -o "${deliverance_user}" -g "${deliverance_group}" -m 0755 "$(dirname "${deliverance_log}")"
 }
 
 run_rc_command "$1"
