@@ -1,21 +1,14 @@
 PORTNAME=	aquaria
 DISTVERSIONPREFIX=	OSE-v
-DISTVERSION=	1.002-22
-DISTVERSIONSUFFIX=	-g84366ad
-PORTREVISION=	13
+DISTVERSION=	1.002-35
+DISTVERSIONSUFFIX=	-g98c51ac
 CATEGORIES=	games
 
-PATCH_SITES=	https://github.com/AquariaOSE/Aquaria/commit/
-PATCHFILES=	021512337ea0bee698e950e44222fb391ae7cb91.patch:-p1
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Underwater 2D fantasy action-adventure (game engine)
 WWW=		https://github.com/AquariaOSE/Aquaria
 
 LICENSE=	GPLv2+
-
-DEPRECATED=	Does not build with CMake 4
-EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
