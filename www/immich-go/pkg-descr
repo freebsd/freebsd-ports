@@ -1,0 +1,7 @@
+immich-go uploads photos and videos to an Immich server from the command
+line, without needing Node.js.  Beyond plain folders it reads Google Photos
+Takeout archives, including their JSON sidecars, and can import albums,
+apply tags and filter by date or file type.
+
+It talks to Immich over its API, so it runs on any machine that can reach
+the server.
