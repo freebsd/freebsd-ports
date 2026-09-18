@@ -1,5 +1,5 @@
 PORTNAME=	grok-build
-DISTVERSION=	1.0.30
+DISTVERSION=	1.0.34
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	${GROK_URL_BASE:S|$|:amd64|} \
 		${GROK_URL_BASE:S|$|:aarch64|}
