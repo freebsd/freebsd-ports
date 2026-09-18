@@ -1,13 +1,17 @@
---- cli/args/flags.rs.orig	2026-07-01 13:28:43 UTC
+--- cli/args/flags.rs.orig	2026-09-17 12:50:50 UTC
 +++ cli/args/flags.rs
-@@ -2306,7 +2306,9 @@ Unless --reload is specified, this command will not re
-     )
- }
- 
--const SUPPORTED_OS: [&str; 5] = [
-+const SUPPORTED_OS: [&str; 7] = [
-+  "x86_64-unknown-freebsd",
-+  "aarch64-unknown-freebsd",
-   "x86_64-unknown-linux-gnu",
-   "aarch64-unknown-linux-gnu",
-   "x86_64-pc-windows-msvc",
+@@ -136,6 +136,14 @@ pub fn npm_system_info(subcommand: &DenoSubcommand) ->
+           os: "linux".into(),
+           cpu: "x64".into(),
+         },
++        "x86_64-unknown-freebsd" => NpmSystemInfo {
++          os: "freebsd".into(),
++          cpu: "x64".into(),
++        },
++        "aarch64-unknown-freebsd" => NpmSystemInfo {
++          os: "freebsd".into(),
++          cpu: "arm64".into(),
++        },
+         "x86_64-pc-windows-msvc" => NpmSystemInfo {
+           os: "win32".into(),
+           cpu: "x64".into(),

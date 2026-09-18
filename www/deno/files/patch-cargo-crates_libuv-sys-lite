@@ -1,5 +1,5 @@
---- cargo-crates/libuv-sys-lite-1.48.3/Cargo.lock.orig	1970-01-01 00:00:01 UTC
-+++ cargo-crates/libuv-sys-lite-1.48.3/Cargo.lock
+--- cargo-crates/libuv-sys-lite-1.48.4/Cargo.lock.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/libuv-sys-lite-1.48.4/Cargo.lock
 @@ -13,9 +13,9 @@ name = "bindgen"
  
  [[package]]
@@ -24,8 +24,8 @@
  
  [[package]]
  name = "shlex"
---- cargo-crates/libuv-sys-lite-1.48.3/Cargo.toml.orig	1970-01-01 00:00:01 UTC
-+++ cargo-crates/libuv-sys-lite-1.48.3/Cargo.toml
+--- cargo-crates/libuv-sys-lite-1.48.4/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/libuv-sys-lite-1.48.4/Cargo.toml
 @@ -47,4 +47,4 @@ optional = true
  optional = true
  

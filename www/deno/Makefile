@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.1
-PORTREVISION=	3
+DISTVERSION=	2.9.7
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,9 +23,9 @@ USES=		cargo cpe gmake llvm:min=21,build ninja:build pkgconfig python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 GH_TUPLE=	denoland:deno_lsp_benchdata:a787434:denolsp/tests/bench/testdata/lsp_benchdata \
-		denoland:node_test:195065d:nodetest/tests/node_compat/runner/suite \
+		denoland:node_test:f287abd:nodetest/tests/node_compat/runner/suite \
 		denoland:std:9c5b710:denostd/tests/util/std \
-		web-platform-tests:wpt:d85e753e65ee8e9654e76a2b4d62b9b5a0ac51e7:webp/tests/wpt/suite
+		web-platform-tests:wpt:c937f9d271eb35913c3b5b0635fa7fd5f8c88eec:webp/tests/wpt/suite
 USE_LDCONFIG=	yes
 
 CARGO_INSTALL=	no
@@ -37,18 +36,19 @@ CARGO_ENV+=	V8_FROM_SOURCE=1 \
 		LCMS2_INCLUDE_DIR="${LOCALBASE}/include" \
 		LCMS2_LIB_DIR="${LOCALBASE}/lib" \
 		CARGO_PROFILE_RELEASE_LTO="false" \
-		GN_ARGS="clang_use_chrome_plugins=false \
+		GN_ARGS="${V8_GN_ARGS}"
+
+V8_GN_ARGS=	clang_use_chrome_plugins=false \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include\" \
 		extra_ldflags=\"-L${LOCALBASE}/lib\" \
 		fatal_linker_warnings=false \
 		is_clang=true \
 		use_custom_libcxx=true \
 		use_custom_libunwind=true \
-		use_libcxx_modules=false \
 		use_udev=true \
 		use_sysroot=false \
 		use_glib=false \
-		v8_enable_cet_ibt=true"
+		v8_enable_cet_ibt=true
 
 WITHOUT_LTO=	yes
 
@@ -59,10 +59,19 @@ PLIST_FILES=	bin/${PORTNAME} \
 		lib/libdenort.so
 
 DENO_CORE_ICUDATA_V=	0.77.0
-V8_CARGO_V=		149.4.0
+V8_CARGO_V=		150.4.0
 
 V8_DISTDIR=	${CARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR=	${V8_DISTDIR}/v8/tools/builtins-pgo
+ICUDATA_DIR=	${CARGO_VENDOR_DIR}/deno_core_icudata-${DENO_CORE_ICUDATA_V}/src
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+PATCH_DEPENDS+=	${LOCALBASE}/sbin/icupkg:devel/icu
+V8_GN_ARGS+=	host_byteorder=\"big\"
+ICUDATA_MAJOR=	${DENO_CORE_ICUDATA_V:R:E}
+.endif
 
 post-patch:
 	${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" \
@@ -91,8 +100,15 @@ post-patch:
 		${WRKSRC}/ext/napi/generated_symbol_exports_list_freebsd.def
 
 	${MKDIR} ${V8_DISTDIR}/third_party/icu/common
-	${CP} ${CARGO_VENDOR_DIR}/deno_core_icudata-${DENO_CORE_ICUDATA_V}/src/icudtl.dat \
-		${V8_DISTDIR}/third_party/icu/common/
+.if ${ARCH} == powerpc64
+	${CP} ${ICUDATA_DIR}/icudtl.dat ${WRKDIR}/icudt${ICUDATA_MAJOR}l.dat
+	${LOCALBASE}/sbin/icupkg -tb --ignore-deps \
+		${WRKDIR}/icudt${ICUDATA_MAJOR}l.dat ${WRKDIR}/icudt${ICUDATA_MAJOR}b.dat
+	${CP} ${WRKDIR}/icudt${ICUDATA_MAJOR}b.dat \
+		${V8_DISTDIR}/third_party/icu/common/icudtb.dat
+.else
+	${CP} ${ICUDATA_DIR}/icudtl.dat ${V8_DISTDIR}/third_party/icu/common/
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} \

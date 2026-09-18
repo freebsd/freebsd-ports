@@ -1,0 +1,19 @@
+--- cargo-crates/v8-150.4.0/build/config/host_byteorder.gni.orig	2026-09-17 17:22:01 UTC
++++ cargo-crates/v8-150.4.0/build/config/host_byteorder.gni
+@@ -11,9 +11,11 @@ assert(current_cpu != "ppc" && current_cpu != "s390")
+ 
+ # Detect host byteorder
+ assert(current_cpu != "ppc" && current_cpu != "s390")
+-if ((host_cpu == "ppc64" && current_os == "aix") || host_cpu == "s390x" ||
+-    host_cpu == "mips" || host_cpu == "mips64") {
+-  host_byteorder = "big"
+-} else {
+-  host_byteorder = "little"
++if (host_byteorder == "undefined") {
++  if ((host_cpu == "ppc64" && current_os == "aix") || host_cpu == "s390x" ||
++      host_cpu == "mips" || host_cpu == "mips64") {
++    host_byteorder = "big"
++  } else {
++    host_byteorder = "little"
++  }
+ }

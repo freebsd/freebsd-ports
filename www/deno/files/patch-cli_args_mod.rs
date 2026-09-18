@@ -1,9 +1,9 @@
 Ignore unstable-tsgo flag
 
 Index: cli/args/mod.rs
---- cli/args/mod.rs.orig	2026-07-01 13:28:43 UTC
+--- cli/args/mod.rs.orig	2026-09-16 15:45:55 UTC
 +++ cli/args/mod.rs
-@@ -1415,7 +1415,7 @@ impl CliOptions {
+@@ -1439,7 +1439,7 @@ impl CliOptions {
    }
  
    pub fn unstable_tsgo(&self) -> bool {

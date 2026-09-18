@@ -6,18 +6,18 @@ The env variable DENORT_BIN can also be used to point to
 another binary
 
 Index: cli/standalone/binary.rs
---- cli/standalone/binary.rs.orig	2026-07-01 13:28:43 UTC
+--- cli/standalone/binary.rs.orig	2026-09-16 15:45:55 UTC
 +++ cli/standalone/binary.rs
-@@ -1503,7 +1503,7 @@ fn write_binary_bytes(
+@@ -1624,7 +1624,7 @@ fn write_binary_bytes(
    compile_flags: &CompileFlags,
  ) -> Result<(), AnyError> {
-   let target = compile_flags.resolve_target();
+   let target = resolve_compile_target(compile_flags);
 -  if target.contains("linux") {
 +  if target.contains("linux") || target.contains("freebsd") {
      libsui::Elf::new(&original_bin).append(
        "d3n0l4nd",
        &data_section_bytes,
-@@ -1670,7 +1670,7 @@ fn get_dev_binary_path() -> Option<OsString> {
+@@ -1799,7 +1799,7 @@ fn get_dev_binary_path() -> Option<OsString> {
      env::current_exe().ok().and_then(|exec_path| {
        if exec_path
          .components()
