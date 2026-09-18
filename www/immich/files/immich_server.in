@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: immich_server
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN postgresql valkey
 # KEYWORD: shutdown
 #
 # Add these lines to /etc/rc.conf.local or /etc/rc.conf
@@ -11,6 +11,7 @@
 #					Set it to YES to enable immich-server.
 # immich_server_media_location (str):	Upload/media location.
 #					Default: /var/db/immich
+# immich_server_host (str):		Listen address. Default: 0.0.0.0
 # immich_server_port (int):		Listen port. Default: 2283
 # immich_server_env_file (str):		Environment file with additional
 #					IMMICH_*/DB_*/REDIS_* variables.
@@ -27,6 +28,7 @@ load_rc_config $name
 : ${immich_server_user:=immich}
 : ${immich_server_group:=immich}
 : ${immich_server_media_location:=/var/db/immich}
+: ${immich_server_host:=0.0.0.0}
 : ${immich_server_port:=2283}
 : ${immich_server_env_file:=%%PREFIX%%/etc/immich.env}
 : ${immich_server_env:="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
@@ -34,16 +36,18 @@ load_rc_config $name
 	NODE_ENV=production \
 	IMMICH_BUILD_DATA=%%PREFIX%%/www/immich/build-data \
 	IMMICH_MEDIA_LOCATION=${immich_server_media_location} \
+	IMMICH_HOST=${immich_server_host} \
 	IMMICH_PORT=${immich_server_port}"}
 
 pidfile=/var/run/immich/${name}.pid
+childpidfile=/var/run/immich/${name}_child.pid
 required_dirs="%%PREFIX%%/www/immich/server"
 
 immich_server_chdir=%%PREFIX%%/www/immich/server
 start_precmd=immich_server_precmd
 stop_cmd=immich_server_stop
 command=/usr/sbin/daemon
-command_args="-f -S -P ${pidfile} \
+command_args="-f -S -H -P ${pidfile} -p ${childpidfile} \
 	-o /var/log/immich/${name}.log \
 	%%NODE%% dist/main"
 
@@ -58,12 +62,39 @@ immich_server_stop()
 	echo "Stopping ${name}."
 	kill -TERM -- -${pid} 2>/dev/null || kill -TERM ${pid}
 	wait_for_pids ${pid}
-	rm -f ${pidfile}
+	rm -f ${pidfile} ${childpidfile}
 }
 
 immich_server_precmd()
 {
-	install -d -o ${immich_server_user} -g ${immich_server_group} \
+	# Keep what the service creates itself out of other users' reach
+	umask 027
+
+	local cpid spid n
+
+	# A kill -9 on the supervisor leaves its child behind, holding the
+	# listen socket. Clean that up before starting a second one.
+	if [ -f ${childpidfile} ]; then
+		cpid=$(cat ${childpidfile} 2>/dev/null)
+		spid=$(cat ${pidfile} 2>/dev/null)
+		if [ -n "${cpid}" ] && kill -0 ${cpid} 2>/dev/null && \
+		    { [ -z "${spid}" ] || ! kill -0 ${spid} 2>/dev/null; }; then
+			echo "Removing leftover ${name} process ${cpid}."
+			kill -TERM -- -${cpid} 2>/dev/null || kill -TERM ${cpid}
+			wait_for_pids ${cpid}
+			# The child forks workers of its own, wait for the
+			# listen socket to be released before starting again.
+			n=0
+			while sockstat -4l -p ${immich_server_port} 2>/dev/null | \
+			    grep -q ${immich_server_user}; do
+				[ ${n} -ge 20 ] && break
+				sleep 1
+				n=$((n + 1))
+			done
+			rm -f ${pidfile} ${childpidfile}
+		fi
+	fi
+	install -d -m 750 -o ${immich_server_user} -g ${immich_server_group} \
 		/var/run/immich /var/log/immich ${immich_server_media_location}
 }
 
