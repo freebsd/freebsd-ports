@@ -3,7 +3,7 @@ DISTVERSION=	2.3.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Archive pages for Jekyll tags and categories
 WWW=		https://jekyll.github.io/jekyll-archives/
 
