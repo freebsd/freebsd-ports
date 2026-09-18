@@ -3941,9 +3941,9 @@ makesum: check-sanity
 	@cd ${.CURDIR} && ${MAKE} makesum-fetch
 	@${MKDIR} ${WRKDIR}
 	@${RM} ${_CKSUMFILES_FILE}
-.          for file in ${_CKSUMFILES}
+.      for file in ${_CKSUMFILES}
 	@printf '%s\n' "${file}" >> ${_CKSUMFILES_FILE}
-.          endfor
+.      endfor
 	@${SETENV} \
 			${_CHECKSUM_INIT_ENV} \
 			dp_CHECKSUM_ALGORITHMS='${CHECKSUM_ALGORITHMS:tu}' \
@@ -3960,9 +3960,9 @@ checksum: fetch
 .      if !empty(_CKSUMFILES) && !defined(NO_CHECKSUM)
 	@${MKDIR} ${WRKDIR}
 	@${RM} ${_CKSUMFILES_FILE}
-.          for file in ${_CKSUMFILES}
+.        for file in ${_CKSUMFILES}
 	@printf '%s\n' "${file}" >> ${_CKSUMFILES_FILE}
-.          endfor
+.        endfor
 	@${SETENV} \
 			${_CHECKSUM_INIT_ENV} \
 			dp_CHECKSUM_ALGORITHMS='${CHECKSUM_ALGORITHMS:tu}' \
