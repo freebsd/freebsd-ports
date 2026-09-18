@@ -1,7 +1,7 @@
 PORTNAME=	immich
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
 DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gzip:archivers/gzip \
 		exiftool:graphics/p5-Image-ExifTool \
 		ffmpeg:multimedia/ffmpeg
 
-USES=		cpe gettext-runtime gmake nodejs:22,build,run pgsql:14+ \
+USES=		cpe gettext-runtime gmake gnome nodejs:22,build,run pgsql:14+ \
 		pkgconfig python:build
 CPE_VENDOR=	futo
 WANT_PGSQL=	client
@@ -113,5 +113,11 @@ post-install:
 	@${FIND} ${STAGEDIR}${WWWDIR}/server -type d \
 		\( -name .tmp -o -name .deps -o -name nothing \) \
 		-exec ${RM} -r {} + 2>/dev/null || ${TRUE}
+	@${FIND} ${STAGEDIR}${WWWDIR}/server -type f \
+		\( -name "*.map" -o -name "*.d.ts" \) -delete
+	@${FIND} ${STAGEDIR}${WWWDIR}/server -type d \
+		\( -name test -o -name tests -o -name __tests__ \
+		-o -name coverage \) -exec ${RM} -r {} + 2>/dev/null || ${TRUE}
+	@${FIND} ${STAGEDIR}${WWWDIR}/server -type d -empty -delete
 
 .include <bsd.port.mk>
