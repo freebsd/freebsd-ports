@@ -1,5 +1,6 @@
 PORTNAME=	valentina
-DISTVERSION=	1.1.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1.1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt
 
 BROKEN_i386=	compilation fails: constructor cannot be redeclared
 
-BUILD_DEPENDS=	qbs:devel/qbs
+BUILD_DEPENDS=	qbs:devel/qbs \
+		immer>0:devel/immer
 LIB_DEPENDS=	libxerces-c-3.3.so:textproc/xerces-c3
 
 USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gmake qt:6
@@ -22,7 +24,6 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	smart-pattern
-GL_TAGNAME=	b75c9bff3be3f2f8e07d95778f953538799f4cd5
 
 DOS2UNIX_FILES=	src/libs/vgeometry/vellipticalarc.cpp
 
