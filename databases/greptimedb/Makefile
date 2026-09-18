@@ -1,6 +1,6 @@
 PORTNAME=	greptimedb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.4
+DISTVERSION=	1.2.1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,6 +45,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
 		allocator-api2-0.2.21 \
+		ambient-authority-0.0.2 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
 		ansi_term-0.12.1 \
@@ -129,6 +130,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		base64-0.13.1 \
 		base64-0.21.7 \
 		base64-0.22.1 \
+		base64-0.23.1 \
 		base64-simd-0.8.0 \
 		base64ct-1.8.0 \
 		bcder-0.7.5 \
@@ -155,6 +157,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		borsh-derive-1.5.7 \
 		brotli-8.0.1 \
 		brotli-decompressor-5.0.0 \
+		bs58-0.5.1 \
 		bstr-1.12.0 \
 		btoi-0.4.3 \
 		bufstream-0.1.4 \
@@ -167,6 +170,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bytes-1.11.1 \
 		bzip2-0.6.1 \
 		cactus-1.0.7 \
+		cap-primitives-4.0.2 \
+		cap-std-4.0.2 \
 		cargo-manifest-0.19.1 \
 		cast-0.3.0 \
 		cbc-0.1.2 \
@@ -266,12 +271,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		darling-0.14.4 \
 		darling-0.20.11 \
 		darling-0.21.1 \
+		darling-0.23.0 \
 		darling_core-0.14.4 \
 		darling_core-0.20.11 \
 		darling_core-0.21.1 \
+		darling_core-0.23.0 \
 		darling_macro-0.14.4 \
 		darling_macro-0.20.11 \
 		darling_macro-0.21.1 \
+		darling_macro-0.23.0 \
 		dary_heap-0.3.7 \
 		dashmap-6.1.0 \
 		data-encoding-2.11.0 \
@@ -284,6 +292,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		debugid-0.8.0 \
 		delta-encoding-0.4.8 \
 		der-0.7.10 \
+		der_derive-0.7.3 \
 		deranged-0.5.8 \
 		derivative-2.2.0 \
 		derive-new-0.7.0 \
@@ -343,6 +352,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		exitcode-1.1.2 \
 		fail-0.5.1 \
 		fallible-iterator-0.2.0 \
+		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.17.0 \
 		fast-float2-0.2.3 \
@@ -353,6 +363,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		findshlibs-0.10.2 \
 		fixedbitset-0.4.2 \
 		fixedbitset-0.5.7 \
+		flagset-0.4.7 \
 		flatbuffers-25.2.10 \
 		flate2-1.1.9 \
 		flexbuffers-25.2.10 \
@@ -369,11 +380,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		form_urlencoded-1.2.2 \
 		fraction-0.15.4 \
 		fragile-2.0.1 \
+		framehop-0.13.3 \
 		frunk-0.4.4 \
 		frunk_core-0.4.4 \
 		frunk_derives-0.4.4 \
 		frunk_proc_macro_helpers-0.1.4 \
 		frunk_proc_macros-0.1.4 \
+		fs-set-times-0.20.3 \
 		fs2-0.4.3 \
 		fs4-0.13.1 \
 		fs_extra-1.3.0 \
@@ -497,6 +510,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		integer-encoding-4.0.2 \
 		inventory-0.3.20 \
 		io-enum-1.2.0 \
+		io-extras-0.19.0 \
+		io-lifetimes-2.0.4 \
+		io-lifetimes-3.0.1 \
 		ipcrypt-rs-0.9.4 \
 		ipnet-2.11.0 \
 		is-terminal-0.4.16 \
@@ -562,7 +578,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		liblzma-0.4.6 \
 		liblzma-sys-0.4.4 \
 		libm-0.2.15 \
-		libredox-0.1.4 \
+		libredox-0.1.23 \
 		libsqlite3-sys-0.30.1 \
 		libz-sys-1.1.22 \
 		link-cplusplus-1.0.12 \
@@ -588,18 +604,21 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		lz4_flex-0.11.6 \
 		lz4_flex-0.13.1 \
 		lzokay-native-0.1.0 \
+		macho-unwind-info-0.5.0 \
 		mappings-0.7.1 \
 		match_cfg-0.1.0 \
 		matchers-0.2.0 \
 		matchit-0.7.3 \
 		matchit-0.8.4 \
 		matrixmultiply-0.3.10 \
+		maybe-owned-0.3.4 \
 		md-5-0.10.6 \
 		md-5-0.11.0 \
 		md5-0.8.0 \
 		mea-0.6.4 \
 		measure_time-0.9.0 \
 		memchr-2.8.0 \
+		memmap2-0.5.10 \
 		memmap2-0.9.5 \
 		memoffset-0.7.1 \
 		mime-0.3.17 \
@@ -662,8 +681,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		num_threads-0.1.7 \
 		number_prefix-0.4.0 \
 		objc2-0.6.4 \
+		objc2-core-foundation-0.3.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.3.2 \
+		objc2-system-configuration-0.3.2 \
+		object-0.29.0 \
 		object-0.36.7 \
 		object-pool-0.5.4 \
 		object_store-0.13.2 \
@@ -691,6 +713,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		opendal-service-fs-0.57.0 \
 		opendal-service-gcs-0.57.0 \
 		opendal-service-http-0.57.0 \
+		opendal-service-mysql-0.57.0 \
 		opendal-service-oss-0.57.0 \
 		opendal-service-s3-0.57.0 \
 		openmetrics-parser-0.4.4 \
@@ -722,6 +745,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		parking_lot_core-0.8.6 \
 		parking_lot_core-0.9.11 \
 		parquet-58.3.0 \
+		parquet-variant-58.3.0 \
+		parquet-variant-compute-58.3.0 \
+		parquet-variant-json-58.3.0 \
 		parse-size-1.1.0 \
 		parse-zoneinfo-0.4.1 \
 		paste-1.0.15 \
@@ -731,6 +757,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pbjson-build-0.8.0 \
 		pbjson-types-0.8.0 \
 		pbkdf2-0.12.2 \
+		pe-unwind-info-0.4.0 \
 		peeking_take_while-1.0.0 \
 		pem-3.0.5 \
 		pem-rfc7468-0.7.0 \
@@ -744,8 +771,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		petgraph-0.7.1 \
 		petgraph-0.8.3 \
 		pg_interval-0.5.0 \
-		pgwire-0.40.1 \
-		phf-0.11.3 \
+		pgwire-0.40.7 \
 		phf-0.12.1 \
 		phf-0.13.1 \
 		phf_codegen-0.12.1 \
@@ -765,6 +791,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pkcs5-0.7.1 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.32 \
+		plain-0.2.3 \
 		plist-1.7.2 \
 		plotters-0.3.7 \
 		plotters-backend-0.3.7 \
@@ -772,11 +799,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		poly1305-0.8.0 \
 		portable-atomic-1.11.1 \
 		portable-atomic-util-0.2.7 \
-		postgres-protocol-0.6.8 \
-		postgres-types-0.2.9 \
+		postgres-protocol-0.6.12 \
+		postgres-types-0.2.14 \
 		potential_utf-0.1.2 \
 		powerfmt-0.2.0 \
-		pprof-0.14.0 \
+		pprof-0.15.0 \
 		pprof_util-0.8.0 \
 		ppv-lite86-0.2.21 \
 		precomputed-hash-0.1.1 \
@@ -797,7 +824,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		prometheus-0.13.4 \
 		prometheus-0.14.0 \
 		prometheus-static-metric-0.5.1 \
-		promql-parser-0.7.3 \
+		promql-parser-0.10.0 \
 		proptest-1.9.0 \
 		prost-0.11.9 \
 		prost-0.12.6 \
@@ -834,7 +861,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		quick-xml-0.39.4 \
 		quick-xml-0.40.1 \
 		quinn-0.11.8 \
-		quinn-proto-0.11.14 \
+		quinn-proto-0.11.16 \
 		quinn-udp-0.5.13 \
 		quote-1.0.44 \
 		quoted-string-0.6.1 \
@@ -850,6 +877,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_core-0.6.4 \
 		rand_core-0.9.3 \
 		rand_core-0.10.0 \
+		rand_pcg-0.10.2 \
 		rand_xorshift-0.4.0 \
 		ratelimit-0.10.0 \
 		rawpointer-0.2.1 \
@@ -859,6 +887,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		recursive-proc-macro-impl-0.1.1 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.5.13 \
+		redox_syscall-0.9.3 \
 		redox_users-0.4.6 \
 		ref-cast-1.0.24 \
 		ref-cast-impl-1.0.24 \
@@ -912,6 +941,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.0.7 \
+		rustix-linux-procfs-0.1.1 \
 		rustls-0.23.28 \
 		rustls-native-certs-0.7.3 \
 		rustls-native-certs-0.8.1 \
@@ -919,7 +949,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustls-pki-types-1.12.0 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.10 \
+		rustls-webpki-0.103.13 \
 		rustversion-1.0.21 \
 		rustyline-17.0.2 \
 		ryu-1.0.20 \
@@ -930,6 +960,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		saturating-0.1.0 \
 		schannel-0.1.27 \
 		schemars-0.8.22 \
+		schemars-0.9.0 \
+		schemars-1.2.1 \
 		schemars_derive-0.8.22 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
@@ -956,8 +988,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde_spanned-0.6.9 \
 		serde_tokenstream-0.2.2 \
 		serde_urlencoded-0.7.1 \
-		serde_with-3.1.0 \
-		serde_with_macros-3.1.0 \
+		serde_with-3.21.0 \
+		serde_with_macros-3.21.0 \
 		serde_yaml-0.9.34+deprecated \
 		serde_yaml_ng-0.10.0 \
 		sha-1-0.10.1 \
@@ -993,6 +1025,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		spade-2.14.0 \
 		sparsevec-0.2.2 \
 		spin-0.9.8 \
+		spin-0.10.1 \
 		spki-0.7.3 \
 		sqlparser_derive-0.1.1 \
 		sqlx-0.8.6 \
@@ -1042,7 +1075,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tantivy-stacker-0.7.0 \
 		tantivy-tokenizer-api-0.7.0 \
 		tap-1.0.1 \
-		tar-0.4.45 \
+		tar-0.4.46 \
 		temp-env-0.3.6 \
 		tempfile-3.23.0 \
 		term-0.7.0 \
@@ -1056,9 +1089,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		thread-id-4.2.2 \
 		thread_local-1.1.9 \
 		thrift-0.17.0 \
-		tikv-jemalloc-ctl-0.6.0 \
-		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
-		tikv-jemallocator-0.6.0 \
+		tikv-jemalloc-ctl-0.7.0 \
+		tikv-jemallocator-0.7.0 \
 		time-0.3.47 \
 		time-core-0.1.8 \
 		time-macros-0.2.27 \
@@ -1067,13 +1099,15 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
+		tls_codec-0.4.2 \
+		tls_codec_derive-0.4.2 \
 		tokio-1.52.3 \
 		tokio-io-timeout-1.2.0 \
 		tokio-macros-2.7.0 \
 		tokio-metrics-0.3.1 \
 		tokio-metrics-collector-0.2.3 \
-		tokio-postgres-0.7.13 \
-		tokio-postgres-rustls-0.12.0 \
+		tokio-postgres-0.7.18 \
+		tokio-postgres-rustls-0.14.0 \
 		tokio-rustls-0.26.2 \
 		tokio-stream-0.1.17 \
 		tokio-test-0.4.4 \
@@ -1158,9 +1192,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasi-0.14.7+wasi-0.2.4 \
 		wasip2-1.0.2+wasi-0.2.9 \
 		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
 		wasite-0.1.0 \
+		wasite-1.0.2 \
 		wasm-bindgen-0.2.122 \
 		wasm-bindgen-futures-0.4.72 \
 		wasm-bindgen-macro-0.2.122 \
@@ -1180,6 +1216,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		webpki-roots-0.26.11 \
 		webpki-roots-1.0.1 \
 		whoami-1.6.0 \
+		whoami-2.1.3 \
 		wide-0.7.33 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -1236,6 +1273,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		winnow-0.5.40 \
 		winnow-0.6.26 \
 		winnow-0.7.11 \
+		winx-0.36.4 \
 		wit-bindgen-0.51.0 \
 		wit-bindgen-core-0.51.0 \
 		wit-bindgen-rust-0.51.0 \
@@ -1246,7 +1284,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		woothee-0.13.0 \
 		writeable-0.6.1 \
 		wyz-0.5.1 \
-		x509-certificate-0.23.1 \
+		x509-cert-0.2.5 \
 		x509-certificate-0.25.0 \
 		xattr-1.5.1 \
 		xxhash-rust-0.8.15 \
@@ -1271,13 +1309,14 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		otel-arrow-rust,otlp-derive,otlp-model@git+https://github.com/GreptimeTeam/otel-arrow?rev=5da284414e9b14f678344b51e5292229e4b5f8d2\#5da284414e9b14f678344b51e5292229e4b5f8d2 \
 		memcomparable@git+https://github.com/v0y4g3r/memcomparable.git?rev=a07122dc03556bbd88ad66234cbea7efd3b23efb\#a07122dc03556bbd88ad66234cbea7efd3b23efb \
 		uddsketch@git+https://github.com/GreptimeTeam/timescaledb-toolkit.git?rev=84828fe8fb494a6a61412a3da96517fc80f7bb20\#84828fe8fb494a6a61412a3da96517fc80f7bb20 \
+		datafusion,datafusion-catalog,datafusion-catalog-listing,datafusion-common,datafusion-common-runtime,datafusion-datasource,datafusion-datasource-arrow,datafusion-datasource-csv,datafusion-datasource-json,datafusion-datasource-parquet,datafusion-doc,datafusion-execution,datafusion-expr,datafusion-expr-common,datafusion-functions,datafusion-functions-aggregate,datafusion-functions-aggregate-common,datafusion-functions-nested,datafusion-functions-table,datafusion-functions-window,datafusion-functions-window-common,datafusion-macros,datafusion-optimizer,datafusion-physical-expr,datafusion-physical-expr-adapter,datafusion-physical-expr-common,datafusion-physical-optimizer,datafusion-physical-plan,datafusion-proto,datafusion-proto-common,datafusion-pruning,datafusion-session,datafusion-sql,datafusion-substrait@git+https://github.com/GreptimeTeam/datafusion.git?rev=bb531e754b3b36d7a4d3222f35ebc88204dafd2b\#bb531e754b3b36d7a4d3222f35ebc88204dafd2b \
 		loki-proto@git+https://github.com/GreptimeTeam/loki-proto.git?rev=f69c8924c4babe516373e26a4118be82d976629c\#f69c8924c4babe516373e26a4118be82d976629c \
-		datafusion,datafusion-catalog,datafusion-catalog-listing,datafusion-common,datafusion-common-runtime,datafusion-datasource,datafusion-datasource-arrow,datafusion-datasource-csv,datafusion-datasource-json,datafusion-datasource-parquet,datafusion-doc,datafusion-execution,datafusion-expr,datafusion-expr-common,datafusion-functions,datafusion-functions-aggregate,datafusion-functions-aggregate-common,datafusion-functions-nested,datafusion-functions-table,datafusion-functions-window,datafusion-functions-window-common,datafusion-macros,datafusion-optimizer,datafusion-physical-expr,datafusion-physical-expr-adapter,datafusion-physical-expr-common,datafusion-physical-optimizer,datafusion-physical-plan,datafusion-proto,datafusion-proto-common,datafusion-pruning,datafusion-session,datafusion-sql,datafusion-substrait@git+https://github.com/GreptimeTeam/datafusion.git?rev=7a84c45104d35408f00bbf880268c47193b73b28\#7a84c45104d35408f00bbf880268c47193b73b28 \
+		greptime-proto@git+https://github.com/GreptimeTeam/greptime-proto.git?rev=32f467fa2ba2b3588a58381a24af83de09fbb00a\#32f467fa2ba2b3588a58381a24af83de09fbb00a \
+		tikv-jemalloc-sys@git+https://github.com/GreptimeTeam/jemallocator?rev=e254a7eaf13a9ede04953ddefd173b5303018530\#e254a7eaf13a9ede04953ddefd173b5303018530 \
 		datafusion-orc@git+https://github.com/datafusion-contrib/datafusion-orc.git?rev=6c07fa282dc8d62db2aa4ded06ab55485efc811a\#6c07fa282dc8d62db2aa4ded06ab55485efc811a \
 		sqlparser,sqlparser_derive@git+https://github.com/GreptimeTeam/sqlparser-rs.git?rev=2aefa08a8d69c96eec2d6d6703598a009bba6e4c\#2aefa08a8d69c96eec2d6d6703598a009bba6e4c \
-		rskafka@git+https://github.com/GreptimeTeam/rskafka.git?rev=f5688f83e7da591cda3f2674c2408b4c0ed4ed50\#f5688f83e7da591cda3f2674c2408b4c0ed4ed50 \
 		influxdb_line_protocol@git+https://github.com/evenyag/influxdb_iox?branch=feat%2Fline-protocol\#10ef0d0b02705ac7518717390939fa3a9bcfcacc \
-		greptime-proto@git+https://github.com/GreptimeTeam/greptime-proto.git?rev=5e358318890606a2961e12dcdf9674f6763cec3a\#5e358318890606a2961e12dcdf9674f6763cec3a \
+		rskafka@git+https://github.com/GreptimeTeam/rskafka.git?rev=5f9494104f7b43a619d6c42e2a2082e39a7b72aa\#5f9494104f7b43a619d6c42e2a2082e39a7b72aa \
 		sqlness@git+https://github.com/GreptimeTeam/sqlness?rev=cf4c2ae005fb8531a023ea638124ef49f1022025\#cf4c2ae005fb8531a023ea638124ef49f1022025 \
 		opensrv-mysql@git+https://github.com/GreptimeTeam/opensrv?rev=6c5a451544194b7bb60a8318d155d4f892b49f2c\#6c5a451544194b7bb60a8318d155d4f892b49f2c \
 		meter-core,meter-macros@git+https://github.com/GreptimeTeam/greptime-meter.git?rev=5618e779cf2bb4755b499c630fba4c35e91898cb\#5618e779cf2bb4755b499c630fba4c35e91898cb
