@@ -1,6 +1,6 @@
 PORTNAME=	trealla-prolog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.9.17
+DISTVERSION=	3.10.19
 CATEGORIES=	lang
 
 MAINTAINER=	siva@FreeBSD.org
@@ -41,7 +41,10 @@ SSL_MAKE_ARGS_OFF=	NOSSL=1
 THREADS_MAKE_ARGS_OFF=	NOTHREADS=1
 
 USE_GITHUB=	yes
-GH_PROJECT=	trealla
+
+# Upstream tags commits way too often, which spams portscout.
+# Please reach out to MAINTAINER if you need a newer version.
+PORTSCOUT=	ignore:1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tpl ${STAGEDIR}${PREFIX}/bin/
