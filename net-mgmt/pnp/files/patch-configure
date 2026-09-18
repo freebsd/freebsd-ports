@@ -1,0 +1,18 @@
+--- configure.orig	2024-03-18 14:40:37 UTC
++++ configure
+@@ -7084,7 +7084,6 @@ fi
+ fi
+ 
+ 
+-INIT_OPTS="-o root -g $root_grp"
+ 
+ 
+ 
+@@ -7701,7 +7700,6 @@ fi
+ 
+ 
+ 
+-HTTP_INSTALL_OPTS="-o $HTTP_USER -g $HTTP_GROUP"
+ 
+ 
+ 

@@ -1,0 +1,11 @@
+--- sample-config/Makefile.in.orig	2026-05-13 08:05:27 UTC
++++ sample-config/Makefile.in
+@@ -87,7 +87,7 @@ install: install-contrib
+ 		$(INSTALL) -m 644  $(BACKUP) pages/background-letter.pdf $(DESTDIR)$(PKGSYSCONFDIR)/pages ; \
+ 	fi
+ 	if [ ! -e $(DESTDIR)$(PKGSYSCONFDIR)/background.pdf ] ; then \
+-		$(LN_S) $(DESTDIR)$(PKGSYSCONFDIR)/pages/background-$(PAPERSIZE).pdf $(DESTDIR)$(PKGSYSCONFDIR)/background.pdf ;\
++		$(CP) $(DESTDIR)$(PKGSYSCONFDIR)/pages/background-$(PAPERSIZE).pdf $(DESTDIR)$(PKGSYSCONFDIR)/background.pdf ;\
+ 	fi
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(PKGSYSCONFDIR)/config_samples/nagios/objects
+ 	$(INSTALL) -m 644 config_samples/pnp-sync.cfg $(DESTDIR)$(PKGSYSCONFDIR)/config_samples/nagios/objects/

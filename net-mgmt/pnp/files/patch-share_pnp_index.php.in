@@ -1,0 +1,16 @@
+--- share/pnp/index.php.in.orig	2026-09-17 07:57:12 UTC
++++ share/pnp/index.php.in
+@@ -92,7 +92,12 @@ version_compare(PHP_VERSION, '5.1', '<') and exit('Koh
+  * Set the error reporting level. Unless you have a special need, E_ALL is a
+  * good level for error reporting.
+  */
+-error_reporting(E_ALL & ~E_STRICT);
++if(PHP_VERSION_ID >= 70400) {
++	error_reporting(~E_NOTICE);
++}
++else {
++	error_reporting(~E_NOTICE & ~E_STRICT);
++}
+ 
+ /**
+  * Turning off display_errors will effectively disable Kohana error display

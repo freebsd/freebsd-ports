@@ -1,0 +1,13 @@
+Fix using /usr/local twice while installing the manual page.
+
+--- man/Makefile.in.orig	2026-11-20 20:44:33 UTC
++++ man/Makefile.in
+@@ -18,6 +18,6 @@ install: 
+ devclean: distclean
+ 
+ install: 
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(prefix)$(MANDIR)/man8
+-	$(INSTALL) -m 755 $(INSTALL_OPTS) npcd.8 $(DESTDIR)$(prefix)$(MANDIR)/man8
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(MANDIR)/man8
++	$(INSTALL) -m 755 $(INSTALL_OPTS) npcd.8 $(DESTDIR)$(MANDIR)/man8
+ 
