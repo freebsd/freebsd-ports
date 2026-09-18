@@ -11,13 +11,12 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dirsrv/slapi-plugin.h:net/389-ds-base
-LIB_DEPENDS=	libldap.so:net/openldap26-client \
-		libnspr4.so:devel/nspr \
+LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
 		libsss_nss_idmap.so:security/sssd2
 RUN_DEPENDS=	389-ds-base>=0:net/389-ds-base
 
-USES=		autoreconf cpe gmake libtool localbase:ldflags pkgconfig
+USES=		autoreconf cpe gmake ldap libtool localbase:ldflags pkgconfig
 CPE_VENDOR=	slapi-nis_project
 
 GNU_CONFIGURE=	yes
