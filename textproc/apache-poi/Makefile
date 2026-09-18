@@ -41,7 +41,6 @@ USES=		cpe java
 CPE_VENDOR=	apache
 
 NO_BUILD=	yes
-NO_EXTRACT=	yes
 NO_ARCH=	yes
 JARNAMES=	examples excelant ooxml ooxml-full ooxml-lite scratchpad
 
