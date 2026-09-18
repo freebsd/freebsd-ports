@@ -1,15 +1,17 @@
 PORTNAME=	cosmic-comp
 DISTVERSIONPREFIX=	epoch-
-DISTVERSION=	1.0.0
-PORTREVISION=	9
+DISTVERSION=	1.8.0
 CATEGORIES=	x11-wm wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jo.sh@tutanota.com
 COMMENT=	Compositor for the COSMIC desktop environment
 WWW=		https://github.com/pop-os/cosmic-comp
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	only x86-64 is directly supported upstream
 
 LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libdisplay-info.so:sysutils/libdisplay-info \
@@ -25,12 +27,12 @@ USE_GITHUB=	yes
 USE_GL=		gbm
 USE_XORG=	pixman
 GH_ACCOUNT=	pop-os
-GH_TUPLE=	pop-os:iced:0.4.2-3067-g10db38f9:iced/../${WRKSRC_crate_iced:T}/iced
+GH_TUPLE=	pop-os:iced:c781ff6199715f5650411c7ac625d4e1929bfdfb:iced/../${WRKSRC_crate_iced:T}/iced
 CARGO_FEATURES=	--no-default-features # disable systemd
 PLIST_FILES=	bin/${PORTNAME} \
 		share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/defaults/keybindings.ron \
 		share/cosmic/com.system76.CosmicSettings.WindowRules/v1/tiling_exception_defaults/tiling-exceptions.ron \
-		share/wayland-sessions/${PORTNAME:S/-comp//}.desktop \
+		share/wayland-sessions/${PORTNAME:S/-comp//}.desktop
 
 .if ${MACHINE_ARCH} == i386 || ${MACHINE_ARCH:Marmv?}
 # https://github.com/rust-lang/rust/issues/85598
