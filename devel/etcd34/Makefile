@@ -1,6 +1,7 @@
 PORTNAME=	etcd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.45
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/etcd-io/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 PKGNAMEPREFIX=	coreos-
@@ -13,6 +14,9 @@ WWW=		https://github.com/coreos/etcd
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=  EOL 2026-06-01
+EXPIRATION_DATE=     2026-12-31
 
 USES=		cpe go:modules
 USE_GITHUB=	yes
