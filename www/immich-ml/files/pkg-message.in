@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+The machine learning service listens on 127.0.0.1:3003 by default.
+Point the Immich server at it in the admin web interface under
+Administration > Settings > Machine Learning.
+
+What to expect:
+ * Models are downloaded on first use into %%CACHEDIR%%.  Plan for
+   about 1 GB with the default models for smart search, faces and OCR.
+ * Inference runs on the CPU.  There is no GPU acceleration on FreeBSD,
+   onnxruntime does not support it here.
+ * Each worker holds its models in memory, roughly 200 MB for the
+   smallest set.  Tune it in %%PREFIX%%/etc/immich-ml.env, for instance
+   MACHINE_LEARNING_WORKERS or MACHINE_LEARNING_MODEL_TTL.
+EOM
+}
+]

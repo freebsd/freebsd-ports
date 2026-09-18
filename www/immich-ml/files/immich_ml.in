@@ -13,6 +13,9 @@
 #				Default: /var/db/immich-ml
 # immich_ml_host (str):		Listen address. Default: 127.0.0.1
 # immich_ml_port (int):		Listen port. Default: 3003
+# immich_ml_env_file (str):	Environment file with additional
+#				MACHINE_LEARNING_* variables.
+#				Default: %%PREFIX%%/etc/immich-ml.env
 
 . /etc/rc.subr
 
@@ -27,6 +30,7 @@ load_rc_config $name
 : ${immich_ml_cache_folder:=/var/db/immich-ml}
 : ${immich_ml_host:=127.0.0.1}
 : ${immich_ml_port:=3003}
+: ${immich_ml_env_file:=%%PREFIX%%/etc/immich-ml.env}
 : ${immich_ml_env:="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
 	HOME=${immich_ml_cache_folder} \
 	MACHINE_LEARNING_CACHE_FOLDER=${immich_ml_cache_folder} \
@@ -34,11 +38,12 @@ load_rc_config $name
 	IMMICH_PORT=${immich_ml_port}"}
 
 pidfile=/var/run/immich/${name}.pid
+childpidfile=/var/run/immich/${name}_child.pid
 
 start_precmd=immich_ml_precmd
 stop_cmd=immich_ml_stop
 command=/usr/sbin/daemon
-command_args="-f -S -P ${pidfile} \
+command_args="-f -S -H -P ${pidfile} -p ${childpidfile} \
 	-o /var/log/immich/${name}.log \
 	%%PYTHON_CMD%% -m immich_ml"
 
@@ -53,12 +58,39 @@ immich_ml_stop()
 	echo "Stopping ${name}."
 	kill -TERM -- -${pid} 2>/dev/null || kill -TERM ${pid}
 	wait_for_pids ${pid}
-	rm -f ${pidfile}
+	rm -f ${pidfile} ${childpidfile}
 }
 
 immich_ml_precmd()
 {
-	install -d -o ${immich_ml_user} -g ${immich_ml_group} \
+	# Keep what the service creates itself out of other users' reach
+	umask 027
+
+	local cpid spid n
+
+	# A kill -9 on the supervisor leaves its child behind, holding the
+	# listen socket. Clean that up before starting a second one.
+	if [ -f ${childpidfile} ]; then
+		cpid=$(cat ${childpidfile} 2>/dev/null)
+		spid=$(cat ${pidfile} 2>/dev/null)
+		if [ -n "${cpid}" ] && kill -0 ${cpid} 2>/dev/null && \
+		    { [ -z "${spid}" ] || ! kill -0 ${spid} 2>/dev/null; }; then
+			echo "Removing leftover ${name} process ${cpid}."
+			kill -TERM -- -${cpid} 2>/dev/null || kill -TERM ${cpid}
+			wait_for_pids ${cpid}
+			# The child forks workers of its own, wait for the
+			# listen socket to be released before starting again.
+			n=0
+			while sockstat -4l -p ${immich_ml_port} 2>/dev/null | \
+			    grep -q ${immich_ml_user}; do
+				[ ${n} -ge 20 ] && break
+				sleep 1
+				n=$((n + 1))
+			done
+			rm -f ${pidfile} ${childpidfile}
+		fi
+	fi
+	install -d -m 750 -o ${immich_ml_user} -g ${immich_ml_group} \
 		/var/run/immich /var/log/immich ${immich_ml_cache_folder}
 }
 

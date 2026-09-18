@@ -1,6 +1,7 @@
 PORTNAME=	immich-ml
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	www python
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -25,10 +26,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiocache>0:devel/py-aiocache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>0:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-multipart>0:www/py-python-multipart@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rapidocr>0:graphics/py-rapidocr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>0:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tokenizers>0:textproc/py-tokenizers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>0:www/py-uvicorn@${PY_FLAVOR} \
-		opencv>0:graphics/opencv
+		${PYTHON_SITELIBDIR}/cv2/__init__.py:graphics/opencv
 
 USES=		cpe python
 CPE_VENDOR=	futo
@@ -41,18 +43,27 @@ GH_PROJECT=	immich
 USE_PYTHON=	autoplist pep517
 USE_RC_SUBR=	immich_ml
 
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+PLIST_FILES=	"@dir(immich,immich,750) /var/db/immich-ml" \
+		"@sample(root,wheel,0600) etc/immich-ml.env.sample" \
+		etc/newsyslog.conf.d/immich-ml.conf
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
+		CACHEDIR=/var/db/immich-ml
 
 WRKSRC_SUBDIR=	machine-learning
 
 USERS=		immich
 GROUPS=		immich
 
+post-install:
+	@${MKDIR} ${STAGEDIR}/var/db/immich-ml
+	${INSTALL_DATA} ${FILESDIR}/immich-ml.env.sample ${STAGEDIR}${PREFIX}/etc/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${INSTALL_DATA} ${FILESDIR}/newsyslog-immich-ml.conf \
+		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/immich-ml.conf
+
 post-patch:
-	@${REINPLACE_CMD} -e "s|uvicorn\[standard\]|uvicorn|" \
-		-e "/opencv-python-headless/d" \
-		-e "/rapidocr/d" \
-		${WRKSRC}/pyproject.toml
 	@${REINPLACE_CMD} -e 's|"python",|"${PYTHON_CMD}",|' \
 		${WRKSRC}/immich_ml/__main__.py
 
