@@ -1,6 +1,6 @@
 PORTNAME=	luabind
 PORTVERSION=	0.9.1
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -10,6 +10,9 @@ WWW=		https://www.rasterbar.com/products/luabind.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	${PY_BOOST}
 
