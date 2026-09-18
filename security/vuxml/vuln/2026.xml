@@ -1,3 +1,40 @@
+  <vuln vid="a2fda5d7-b2fb-11f1-9800-641c67a117d8">
+    <topic>Vinyl/Varnish -- VCL string methods workspace overflow</topic>
+    <affects>
+      <package>
+      <name>vinyl09</name>
+      <range><lt>9.0.2</lt></range>
+      </package>
+      <package>
+      <name>varnish7</name>
+      <range><ge>6.3.0</ge><le>8.0.2</le></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Vinyl Development Team reports:</p>
+	<blockquote cite="https://vinyl-cache.org/security/VSV00020.html">
+	  <p>A workspace buffer overflow vulnerability was found in the .upper()
+	  and .lower() string type methods of VCL.</p>
+	  <p>This can be used as a remote denial of service (DoS) vector to make
+	  the child process segfault or assert, and then restart.</p>
+	  <p>Effectively exploiting this vulnerability requires prior knowledge
+	  about the VCL in use and the ability to craft a request that contains a
+	  string that is long enough to fill the remaining workspace at the call
+	  site while staying under the different request size limits
+	  (http_req_size, http_req_hdr_len, ..etc).</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://vinyl-cache.org/security/VSV00020.html</url>
+    </references>
+    <dates>
+      <discovery>2026-09-16</discovery>
+      <entry>2026-09-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3f5c81ae-b227-11f1-a655-3497f65b111b">
     <topic>389-ds-base -- multiple vulnerabilities</topic>
     <affects>
