@@ -1,5 +1,5 @@
 PORTNAME=	nanoflann
-DISTVERSION=	1.10.1
+DISTVERSION=	1.13.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,6 +35,6 @@ benchmarks: build # benchmarks fail to run: https://github.com/jlblancoc/nanofla
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} benchmarks
 
-# tests as of 1.10.0: 100% tests passed, 0 tests failed out of 1
+# tests as of 1.13.0: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
