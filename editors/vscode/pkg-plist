@@ -21320,7 +21320,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/vscode-tas-client/out/vscode-tas-client/VSCodeFilterProvider.js
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/vscode-tas-client/out/vscode-tas-client/VSCodeTasClient.js
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/vscode-tas-client/package.json
-%%DATADIR%%/resources/app/extensions/copilot/node_modules/vscode-tas-client/publishScript.js
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/vscode-tas-client/tsconfig.json
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/vscode-tas-client/tslint.json
 %%DATADIR%%/resources/app/extensions/copilot/node_modules/vscode-tas-client/version.json
@@ -22320,8 +22319,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/markdown-language-features/package.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/package.nls.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/schemas/package.schema.json
-%%DATADIR%%/resources/app/extensions/markdown-language-features/scripts/updateMarkdownEditorPackageJson.mts
-%%DATADIR%%/resources/app/extensions/markdown-language-features/scripts/updateMarkdownEditorPackageJson.test.mts
 %%DATADIR%%/resources/app/extensions/markdown-math/README.md
 %%DATADIR%%/resources/app/extensions/markdown-math/dist/extension.js
 %%DATADIR%%/resources/app/extensions/markdown-math/dist/extension.js.map

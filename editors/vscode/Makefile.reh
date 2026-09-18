@@ -187,7 +187,7 @@ do-build:
 	while true; do \
 		${SETENV} ${MAKE_ENV} $${npm_env} \
 			npm --userconfig=${WRKSRC}/remote/.npmrc run \
-				gulp vscode-reh-linux-${NODEJS_ARCH}-min && break; \
+				gulp vscode-reh-linux-${NODEJS_ARCH} && break; \
 		count=$$((count + 1)); \
 		if [ $${count} -ge $${max_tries} ]; then \
 			${ECHO_MSG} "Failed to build after $${max_tries} attempts."; \
