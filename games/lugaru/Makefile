@@ -1,6 +1,6 @@
 PORTNAME=	lugaru
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -11,6 +11,9 @@ WWW=		https://bitbucket.org/osslugaru/lugaru/wiki/Home
 LICENSE=	GPLv2+ CC-BY-SA-3.0 CC-BY-SA-4.0
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.txt
+
+DEPRECATED=	No release in 9 years, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
