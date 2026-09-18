@@ -1,0 +1,96 @@
+#!/bin/sh
+
+# PROVIDE: immich_public_proxy
+# REQUIRE: LOGIN immich_server
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# immich_public_proxy_enable (bool):	Set to NO by default.
+#					Set it to YES to enable the proxy.
+# immich_public_proxy_host (str):	Listen address. Default: 0.0.0.0
+# immich_public_proxy_port (int):	Listen port. Default: 3000
+# immich_public_proxy_env_file (str):	Environment file with IMMICH_URL and
+#					PUBLIC_BASE_URL.
+#					Default: %%PREFIX%%/etc/immich-public-proxy.env
+
+. /etc/rc.subr
+
+name=immich_public_proxy
+rcvar=immich_public_proxy_enable
+
+load_rc_config $name
+
+: ${immich_public_proxy_enable:=NO}
+: ${immich_public_proxy_user:=immich}
+: ${immich_public_proxy_group:=immich}
+: ${immich_public_proxy_host:=0.0.0.0}
+: ${immich_public_proxy_port:=3000}
+: ${immich_public_proxy_env_file:=%%PREFIX%%/etc/immich-public-proxy.env}
+: ${immich_public_proxy_env:="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+	HOME=/var/db/immich \
+	NODE_ENV=production \
+	IPP_HOST=${immich_public_proxy_host} \
+	IPP_PORT=${immich_public_proxy_port}"}
+
+pidfile=/var/run/immich/${name}.pid
+childpidfile=/var/run/immich/${name}_child.pid
+required_dirs="%%PREFIX%%/www/immich-public-proxy"
+
+immich_public_proxy_chdir=%%PREFIX%%/www/immich-public-proxy
+start_precmd=immich_public_proxy_precmd
+stop_cmd=immich_public_proxy_stop
+command=/usr/sbin/daemon
+command_args="-f -S -H -P ${pidfile} -p ${childpidfile} \
+	-o /var/log/immich/${name}.log \
+	%%NODE%% dist/index.js"
+
+immich_public_proxy_stop()
+{
+	local pid
+	pid=$(check_pidfile ${pidfile} ${command})
+	if [ -z "$pid" ]; then
+		echo "${name} not running? (check ${pidfile})."
+		return 1
+	fi
+	echo "Stopping ${name}."
+	kill -TERM -- -${pid} 2>/dev/null || kill -TERM ${pid}
+	wait_for_pids ${pid}
+	rm -f ${pidfile} ${childpidfile}
+}
+
+immich_public_proxy_precmd()
+{
+	# Keep what the service creates itself out of other users' reach
+	umask 027
+
+	local cpid spid n
+
+	# A kill -9 on the supervisor leaves its child behind, holding the
+	# listen socket. Clean that up before starting a second one.
+	if [ -f ${childpidfile} ]; then
+		cpid=$(cat ${childpidfile} 2>/dev/null)
+		spid=$(cat ${pidfile} 2>/dev/null)
+		if [ -n "${cpid}" ] && kill -0 ${cpid} 2>/dev/null && \
+		    { [ -z "${spid}" ] || ! kill -0 ${spid} 2>/dev/null; }; then
+			echo "Removing leftover ${name} process ${cpid}."
+			kill -TERM -- -${cpid} 2>/dev/null || kill -TERM ${cpid}
+			wait_for_pids ${cpid}
+			# The child forks workers of its own, wait for the
+			# listen socket to be released before starting again.
+			n=0
+			while sockstat -4l -p ${immich_public_proxy_port} 2>/dev/null | \
+			    grep -q ${immich_public_proxy_user}; do
+				[ ${n} -ge 20 ] && break
+				sleep 1
+				n=$((n + 1))
+			done
+			rm -f ${pidfile} ${childpidfile}
+		fi
+	fi
+	install -d -m 750 -o ${immich_public_proxy_user} -g ${immich_public_proxy_group} \
+		/var/run/immich /var/log/immich
+}
+
+run_rc_command "$1"

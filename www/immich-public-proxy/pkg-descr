@@ -1,0 +1,7 @@
+Immich Public Proxy serves shared links from an Immich server without
+exposing the server itself to the internet.  Only content that has been
+shared explicitly is reachable, and the proxy speaks to Immich over its
+API on the local network.
+
+It listens on port 3000 by default and needs IMMICH_URL and
+PUBLIC_BASE_URL in its environment file.
