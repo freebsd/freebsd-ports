@@ -10,12 +10,15 @@ WWW=		https://packages.debian.org/unstable/utils/ppmd/
 
 LICENSE=	PD
 
+ONLY_FOR_ARCHS=	i386
+
 USES=		cpe
 
 CPE_VENDOR=	ppmd_project
 
+PLIST_FILES=	bin/ppmd \
+		share/man/man1/ppmd.1.gz
 PORTDOCS=	read_me.txt
-PLIST_FILES=	bin/ppmd share/man/man1/ppmd.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
