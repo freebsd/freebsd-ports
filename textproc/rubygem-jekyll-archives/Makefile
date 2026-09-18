@@ -1,5 +1,5 @@
 PORTNAME=	jekyll-archives
-PORTVERSION=	2.2.1
+DISTVERSION=	2.3.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
