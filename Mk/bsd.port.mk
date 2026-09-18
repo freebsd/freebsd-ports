@@ -3144,7 +3144,7 @@ ${_target}:
 	@printf '%s\n' "${site}" >> ${_PATCH_SITES_FILE}
 .          endfor
 .          for file in ${PATCHFILES}
-	@printf '%s\n' "${file}" >> ${_PATCHFILES_FILE}
+	@printf '%s\n' "${file:C/:p[0-9]//}" >> ${_PATCHFILES_FILE}
 .          endfor
 	@${SETENV} \
 			${_DO_FETCH_ENV} \
