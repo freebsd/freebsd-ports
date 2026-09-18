@@ -1,3 +1,5 @@
-TIMESTAMP = 1789652573
+TIMESTAMP = 1789743188
 SHA256 (ssh-tools/v1.9.tar.gz) = 0549464f557e5d0d9eac4b88c2a039d81fae0ef786a1cdfb1f08b8929b8b6199
 SIZE (ssh-tools/v1.9.tar.gz) = 812027
+SHA256 (ssh-tools/24.diff) = cf13691c8e10e23be16b66a3f12b8493095c571968f4ae85693c93f7c626159f
+SIZE (ssh-tools/24.diff) = 1604
