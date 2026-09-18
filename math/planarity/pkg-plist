@@ -17,7 +17,7 @@ include/planarity/graphLib.h
 lib/libplanarity.a
 lib/libplanarity.so
 lib/libplanarity.so.4
-lib/libplanarity.so.4.0.0
+lib/libplanarity.so.4.1.0
 libdata/pkgconfig/libplanarity.pc
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
 %%PORTDOCS%%%%DOCSDIR%%/README.md
