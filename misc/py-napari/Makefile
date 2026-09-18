@@ -1,5 +1,5 @@
 PORTNAME=	napari
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}app-model>=0.5.0:devel/py-app-model@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cachey>=0.2.1:devel/py-cachey@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2018.1.18:security/py-certifi@${PY_FLAVOR} \
@@ -26,9 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}app-model>=0.5.0:devel/py-app-model@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}napari-console>=0.1.4:graphics/py-napari-console@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}napari-plugin-engine>=0.2.1:graphics/py-napari-plugin-engine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}napari-svg>=0.1.8:misc/py-napari-svg@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}npe2>=0.8.1:misc/py-npe2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}npe2>=0.9.0:misc/py-npe2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.25:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpydoc>=1.0.0:textproc/py-numpydoc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.5.0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=10.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pint>=0.17:devel/py-pint@${PY_FLAVOR} \
@@ -51,13 +50,41 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}app-model>=0.5.0:devel/py-app-model@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.12:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vispy>=0.16.2:graphics/py-vispy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=1.14.1:devel/py-wrapt@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>0:devel/py-flaky@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-qt>0:devel/py-pytest-qt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyvirtualdisplay>0:x11/py-pyvirtualdisplay@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zarr>=3.0.8:devel/py-zarr@${PY_FLAVOR} \
+		Xvfb:x11-servers/xorg-server@xvfb
 
 USES=		python
-USE_PYTHON=	pep517 autoplist concurrent
-# pytest intentionally omitted: the napari test suite requires a Qt/GUI
-# display and a large optional dependency stack, so it cannot pass in a
-# clean non-GUI environment.
+USE_PYTHON=	pep517 autoplist concurrent pytest
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/src/napari
+TEST_ARGS=	--disable-plugin-autoload \
+		-p flaky \
+		-p pytestqt \
+		-p pytestqt.plugin \
+		-p npe2._pytest_plugin \
+		-p napari.utils._testsupport \
+		-p napari.conftest \
+		-o strict_markers=false \
+		--noconftest \
+		--ignore=napari/_tests/test_notebook_display.py
+
+do-test:
+	@cd ${STAGEDIR}${PYTHON_SITELIBDIR} && \
+		${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest ${TEST_ARGS} napari
+
+# tests as of 0.9.1: (tests are very difficult: they run for a very long time, and require a GUI environment to show many windows; no indication that anything is wrong with ths package)
+# Results (0.00s):
+#          7 failed
+#       4840 passed
+#        205 skipped
+#          2 xfailed
+#        139 warnings
+#        155 errors
 
 .include <bsd.port.mk>
