@@ -1,9 +1,8 @@
 PORTNAME=	cyberchef
-DISTVERSION=	11.4.0
-PORTREVISION=	1
+DISTVERSION=	11.5.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/gchq/CyberChef/releases/download/v${DISTVERSION}/
-DISTNAME=	CyberChef_49d1a5634a67a3b806c6db0fdca7dcecb41a776c
+DISTNAME=	CyberChef_8cd426dd4f40f1423912d5fad91b578a86a65112
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Cyber operations within a web browser
