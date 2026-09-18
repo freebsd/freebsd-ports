@@ -1,5 +1,5 @@
 PORTNAME=	libxmlbird
-DISTVERSION=	1.2.12
+DISTVERSION=	1.2.15
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://birdfont.org/xmlbird-releases/
 
