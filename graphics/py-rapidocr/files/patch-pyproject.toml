@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-09-18 15:31:10 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=77",
++    "setuptools",
+     "wheel",
+     "setuptools-scm>=8",
+ ]
+@@ -12,7 +12,7 @@ requires-python = ">=3.8,<4"
+ description = "Awesome OCR Library"
+ readme = { file = "README.md", content-type = "text/markdown" }
+ requires-python = ">=3.8,<4"
+-license = "Apache-2.0"
++license = {text = "Apache-2.0"}
+ authors = [
+     { name = "SWHL", email = "liekkaskono@163.com" },
+ ]
