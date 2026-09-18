@@ -1,3 +1,76 @@
+  <vuln vid="6cf2ff4b-b38c-11f1-a655-3497f65b111b">
+    <topic>Angie -- worker process memory corruption when using HTTP/3</topic>
+    <affects>
+      <package>
+	<name>angie</name>
+	<range><lt>1.12.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Angie Software Team reports:</p>
+	<blockquote cite="https://en.angie.software/angie/docs/oss_changes/#angie-1-12-2">
+	  <p>When using an OpenSSL version without native HTTP/3 support
+	    (3.5.0 or earlier), if the default server for the address that
+	    accepted a regular HTTPS request also used HTTP/3 (the listen
+	    directive with the quic parameter, possibly on a different port),
+	    while a server block without HTTP/3 was selected by domain name
+	    (SNI), limited worker process memory corruption or a worker
+	    process crash could occur (CVE-2026-90439); the fix was ported
+	    from nginx 1.31.6.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-90439</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-90439</url>
+      <url>https://en.angie.software/angie/docs/oss_changes/#angie-1-12-2</url>
+    </references>
+    <dates>
+      <discovery>2026-09-17</discovery>
+      <entry>2026-09-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6cf326a2-b38c-11f1-a655-3497f65b111b">
+    <topic>angie-module-njs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>angie-module-njs</name>
+	<range><lt>1.0.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The njs development team reports:</p>
+	<blockquote cite="https://nginx.org/en/docs/njs/changes.html#njs1.0.1">
+	  <p>Access control bypass in js_access when an asynchronous request
+	    body continuation threw an exception or produced an unhandled
+	    rejection (CVE-2026-18329).  Previously, nginx could continue
+	    processing the request as though the js_access check had
+	    succeeded.  Affects 0.9.9-1.0.0.</p>
+	  <p>Worker process crash when reading Response.statusText after an
+	    upstream server returned a status line with an empty reason
+	    phrase (CVE-2026-78222).  Affects 0.5.1-1.0.0.</p>
+	  <p>Heap buffer overflow while parsing namespace prefix lists
+	    passed to xml.exclusiveC14n() (CVE-2026-78689).  Affects
+	    0.7.10-1.0.0.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-18329</cvename>
+      <cvename>CVE-2026-78222</cvename>
+      <cvename>CVE-2026-78689</cvename>
+      <url>https://nginx.org/en/docs/njs/changes.html#njs1.0.1</url>
+      <url>https://nginx.org/en/docs/njs/security.html#advisories</url>
+    </references>
+    <dates>
+      <discovery>2026-09-02</discovery>
+      <entry>2026-09-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a2fda5d7-b2fb-11f1-9800-641c67a117d8">
     <topic>Vinyl/Varnish -- VCL string methods workspace overflow</topic>
     <affects>
