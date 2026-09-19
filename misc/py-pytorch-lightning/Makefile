@@ -1,13 +1,14 @@
 PORTNAME=	pytorch-lightning
-DISTVERSION=	2.6.5
+DISTVERSION=	2.6.6
 CATEGORIES=	misc python # machine-learning
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lightweight PyTorch wrapper for ML researchers
-WWW=		https://lightning.ai/
+WWW=		https://lightning.ai/ \
+		https://github.com/Lightning-AI/pytorch-lightning
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,18 +21,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=2022.5.0:filesystems/py-fsspec@${PY_
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytorch>=2.1.0:misc/py-pytorch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}torchmetrics>=0.7.0:misc/py-torchmetrics@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyyaml>5.4:devel/py-pyyaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}torchmetrics>0.7.0:misc/py-torchmetrics@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.57.0:misc/py-tqdm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.5.0:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyyaml>5.4:devel/py-pyyaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>4.5.0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
-WRKSRC=		${WRKDIR}/pytorch_lightning-${DISTVERSION}
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	Lightning-AI
 
 NO_ARCH=	yes
 
-# tests as of 2.6.5: 4 passed in 12.56s
+TEST_ARGS=	--disable-plugin-autoload
 
 .include <bsd.port.mk>
