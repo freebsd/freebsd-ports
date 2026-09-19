@@ -14,6 +14,7 @@ WWW=		https://github.com/i-rinat/libvdpau-va-gl
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Fails to build with newer cmake, superceded by VAAPI
 EXPIRATION_DATE=2026-11-30
 
