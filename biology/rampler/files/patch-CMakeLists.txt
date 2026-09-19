@@ -1,31 +1,20 @@
---- CMakeLists.txt.orig	2021-01-19 09:45:19 UTC
+--- CMakeLists.txt.orig	2026-09-19 01:26:29 UTC
 +++ CMakeLists.txt
-@@ -13,19 +13,20 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DI
- set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
- set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+@@ -16,7 +16,7 @@ include(GNUInstallDirs)
+ include(FetchContent)
+ include(GNUInstallDirs)
  
--if (NOT TARGET bioparser)
--  add_subdirectory(vendor/bioparser EXCLUDE_FROM_ALL)
--endif ()
--if (NOT TARGET biosoup)
--  add_subdirectory(vendor/bioparser/vendor/biosoup EXCLUDE_FROM_ALL)
--endif ()
-+#if (NOT TARGET bioparser)
-+#  add_subdirectory(vendor/bioparser EXCLUDE_FROM_ALL)
-+#endif ()
-+#if (NOT TARGET biosoup)
-+#  add_subdirectory(vendor/bioparser/vendor/biosoup EXCLUDE_FROM_ALL)
-+#endif ()
+-find_package(bioparser 3.0.15 QUIET)
++find_package(bioparser REQUIRED)
+ if (NOT bioparser_FOUND)
+   FetchContent_Declare(
+     bioparser
+@@ -33,7 +33,7 @@ endif ()
+   endif ()
+ endif ()
  
- add_executable(${PROJECT_NAME}
-   src/main.cpp
-   src/sampler.cpp)
- target_link_libraries(${PROJECT_NAME}
--  bioparser
--  biosoup)
-+  #bioparser
-+  #biosoup
-+)
- target_compile_definitions(${PROJECT_NAME} PRIVATE
-   RAMPLER_VERSION="v${PROJECT_VERSION}")
- 
+-find_package(biosoup 0.10.0 QUIET)
++find_package(biosoup REQUIRED)
+ if (NOT biosoup_FOUND)
+   FetchContent_Declare(
+     biosoup
