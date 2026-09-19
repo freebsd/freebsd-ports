@@ -42,6 +42,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 		gfortran${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
+BROKEN_FreeBSD_14=	install fails: "/wrkdirs/usr/ports/misc/py-paddlepaddle/work/.build/python/dist": No such file or directory.
+
 USES=		cmake llvm:21 python
 USE_PYTHON=	autoplist
 
