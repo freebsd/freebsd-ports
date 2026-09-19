@@ -1,6 +1,5 @@
 PORTNAME=	abx
-DISTVERSION=	0.1
-PORTREVISION=	2
+DISTVERSION=	0.2.1
 CATEGORIES=	audio
 MASTER_SITES=	https://phintsan.kapsi.fi/
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libsndfile.so:audio/libsndfile
 
 USES=		gettext-runtime gmake gnome pkgconfig
-USE_GNOME=	atk cairo glib20 gdkpixbuf gtk20 pango
+USE_GNOME=	atk cairo glib20 gdkpixbuf gtk30 pango
 
 GNU_CONFIGURE=	yes
 
