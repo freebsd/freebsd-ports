@@ -256,6 +256,7 @@ share/man/man5/passwd.nntp.5.gz
 share/man/man5/readers.conf.5.gz
 share/man/man5/storage.conf.5.gz
 share/man/man5/subscriptions.5.gz
+share/man/man8/actmerge.8.gz
 share/man/man8/actsync.8.gz
 share/man/man8/actsyncd.8.gz
 share/man/man8/archive.8.gz
@@ -265,6 +266,7 @@ share/man/man8/buffchan.8.gz
 share/man/man8/ckpasswd.8.gz
 share/man/man8/cnfsheadconf.8.gz
 share/man/man8/cnfsstat.8.gz
+share/man/man8/controlbatch.8.gz
 share/man/man8/controlchan.8.gz
 share/man/man8/ctlinnd.8.gz
 share/man/man8/cvtbatch.8.gz
