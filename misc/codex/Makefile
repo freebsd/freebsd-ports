@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.154.0
+DISTVERSION=	0.155.1
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -126,6 +126,7 @@ post-patch:
 		${BUILD_WRKSRC}/exec-server/src/shell_snapshot_tests.rs \
 		${BUILD_WRKSRC}/exec-server/tests/common/fake_bwrap.rs \
 		${BUILD_WRKSRC}/exec-server/tests/exec_process.rs \
+		${BUILD_WRKSRC}/hooks/src/engine/command_runner_tests.rs \
 		${BUILD_WRKSRC}/shell-command/src/parse_command.rs \
 		${BUILD_WRKSRC}/shell-command/src/shell_detect.rs \
 		${BUILD_WRKSRC}/shell-command/src/shell_snapshot_tests.rs \
@@ -134,6 +135,7 @@ post-patch:
 		${BUILD_WRKSRC}/utils/path-uri/src/tests.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/command_exec.rs \
+		${BUILD_WRKSRC}/app-server/tests/suite/v2/guardian_action_budget_tests.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/guardian_v2.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/hooks_list.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/selected_capability_stack.rs \
@@ -158,7 +160,6 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
 		${BUILD_WRKSRC}/core/tests/suite/code_mode.rs \
 		${BUILD_WRKSRC}/core/tests/suite/compact.rs \
-		${BUILD_WRKSRC}/core/tests/suite/compact_remote_parity.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/guardian_mcp_elicitation.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks.rs \
@@ -184,6 +185,7 @@ post-patch:
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/landlock.rs \
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/managed_proxy.rs \
 		${BUILD_WRKSRC}/memories/write/src/startup_tests.rs \
+		${BUILD_WRKSRC}/rmcp-client/tests/stdio_stderr_cleanup.rs \
 		${BUILD_WRKSRC}/skills/src/invocation.rs \
 		${BUILD_WRKSRC}/skills/src/invocation_tests.rs \
 		${BUILD_WRKSRC}/tui/src/app/tests.rs \
@@ -192,7 +194,8 @@ post-patch:
 		${BUILD_WRKSRC}/tui/src/chatwidget/tests/exec_flow.rs \
 		${BUILD_WRKSRC}/tui/src/debug_config.rs \
 		${BUILD_WRKSRC}/tui/src/exec_command.rs \
-		${BUILD_WRKSRC}/tui/src/render/highlight.rs
+		${BUILD_WRKSRC}/tui/src/render/highlight.rs \
+		${BUILD_WRKSRC}/utils/pty/src/tests.rs
 
 post-build-COMPLETIONS-on:
 	@${MKDIR} ${WRKSRC}/completions

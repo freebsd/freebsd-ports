@@ -1,6 +1,6 @@
---- codex-rs/core/tests/suite/hooks.rs.orig	2026-09-13 22:31:19 UTC
+--- codex-rs/core/tests/suite/hooks.rs.orig	2026-09-18 19:04:49 UTC
 +++ codex-rs/core/tests/suite/hooks.rs
-@@ -2917,7 +2917,7 @@ async fn permission_request_hook_allow_bypasses_strict
+@@ -3071,7 +3071,7 @@ async fn permission_request_hook_allow_bypasses_strict
      let command_call_id = "strict-hook-exec-command";
      let marker_name = "strict-hook-exec-command-marker";
      let command = match test_target_os() {
