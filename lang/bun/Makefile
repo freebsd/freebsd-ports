@@ -114,14 +114,26 @@ _BUN_CPU_FLAGS=	--cpu=${CPUTYPE} --baseline=false
 do-fetch:
 	@${MKDIR} ${DD}
 	# Fetch directly-downloadable distfiles (GH0 uses DEFAULT master site, no group suffix)
-	@${SETENV} ${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} dp_SITE_FLAVOR=MASTER \
-		${SH} ${SCRIPTSDIR}/do-fetch.sh \
-			${DISTNAME}${EXTRACT_SUFX} \
+	@${MKDIR} ${WRKDIR}; \
+	${RM} ${_MASTER_SITES_FILE} ${_DISTFILES_FILE}; \
+	for site in ${_MASTER_SITES_ENV}; do \
+		printf '%s\n' "$${site}" | sed -e 's/ /\\ /g' >> ${_MASTER_SITES_FILE}; \
+	done; \
+	for file in ${DISTNAME}${EXTRACT_SUFX} \
 			${DISTFILES:M*\:ovenzig} \
 			${DISTFILES:M*\:webkit} \
 			${DISTFILES:M*\:nodejshdr} \
 			${DISTFILES:M*\:simdutf_src} \
-			${DISTFILES:M*\:bootstrap:N*node-modules-*:N*dep-tarballs-*:N*cargo-vendor-*}
+			${DISTFILES:M*\:bootstrap:N*node-modules-*:N*dep-tarballs-*:N*cargo-vendor-*} \
+			; do \
+		printf '%s\n' "$${file}" >> ${_DISTFILES_FILE}; \
+	done; \
+	${SETENV} \
+			${_DO_FETCH_ENV} \
+			dp_SITES_FILE=${_MASTER_SITES_FILE} \
+			dp_FILES_FILE=${_DISTFILES_FILE} \
+			dp_SITE_FLAVOR=MASTER \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh
 	# Build bun-node-modules tarball (npm ci with vendored package-lock*.json).
 	# Uses deterministic tar so the checksum is reproducible across builds.
 	@if ! [ -f "${DD}/bun-node-modules-${DISTVERSION}.tar.gz" ]; then \
