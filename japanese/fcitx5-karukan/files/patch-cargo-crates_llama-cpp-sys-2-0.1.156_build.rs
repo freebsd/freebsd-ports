@@ -44,7 +44,17 @@
              if build_shared_libs {
                  (&["lib"], &["so"])
              } else {
-@@ -869,7 +872,7 @@ fn main() {
+@@ -714,8 +717,7 @@ fn main() {
+         }
+ 
+         // I expect this env var to always be present
+-        let features = std::env::var("CARGO_CFG_TARGET_FEATURE")
+-            .expect("Env var CARGO_CFG_TARGET_FEATURE not found.");
++        let features = std::env::var("CARGO_CFG_TARGET_FEATURE").unwrap_or_default();
+         debug_log!("Compiling with target features: {}", features);
+ 
+         // list of rust target_features here:
+@@ -869,7 +871,7 @@ fn main() {
          println!("cargo:rustc-link-lib=android");
      }
  
@@ -53,7 +63,7 @@
          && target_triple.contains("aarch64")
          && target_cpu != Some("native".into())
      {
-@@ -905,7 +908,7 @@ fn main() {
+@@ -905,7 +907,7 @@ fn main() {
                      config.cxxflag("/FS");
                  }
              }
@@ -62,7 +72,7 @@
                  // If we are not using system provided vulkan SDK, add vulkan libs for linking
                  if let Ok(vulkan_path) = env::var("VULKAN_SDK") {
                      let vulkan_lib_path = Path::new(&vulkan_path).join("lib");
-@@ -1363,6 +1366,14 @@ fn main() {
+@@ -1363,6 +1365,14 @@ fn main() {
                  println!("cargo:rustc-link-lib=static=stdc++");
              } else {
                  println!("cargo:rustc-link-lib=dylib=stdc++");
