@@ -1,0 +1,10 @@
+bin/entropypianotuner
+lib/entropypianotuner/algorithms/libentropyminimizer.so
+lib/entropypianotuner/algorithms/libpitchraise.so
+lib/entropypianotuner/algorithms/libresettorecording.so
+lib/entropypianotuner/libcore.so.1.0.0
+lib/entropypianotuner/libcore.so.1.0
+lib/entropypianotuner/libcore.so.1
+lib/entropypianotuner/libcore.so
+share/applications/entropypianotuner.desktop
+share/icons/hicolor/128x128/apps/entropypianotuner.png

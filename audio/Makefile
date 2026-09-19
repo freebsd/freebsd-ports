@@ -134,6 +134,7 @@
     SUBDIR += elisa
     SUBDIR += emms
     SUBDIR += enscribe
+    SUBDIR += entropypianotuner
     SUBDIR += eq10q-lv2
     SUBDIR += espeak-ng
     SUBDIR += espressivo-lv2
