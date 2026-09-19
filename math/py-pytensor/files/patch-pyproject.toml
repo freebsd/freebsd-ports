@@ -1,3 +1,6 @@
+-- Drop PEP 639 license metadata until the FreeBSD pyproject toolchain handles it.
+-- Remove the setuptools runtime dependency because the port only needs setuptools to build.
+
 --- pyproject.toml.orig	2025-10-07 21:08:35 UTC
 +++ pyproject.toml
 @@ -14,8 +14,6 @@ readme = "README.rst"
@@ -9,11 +12,11 @@
  classifiers = [
      "Development Status :: 6 - Mature",
      "Intended Audience :: Education",
-@@ -47,7 +45,6 @@ dependencies = [
+@@ -46,7 +44,6 @@ dependencies = [
      "differentiation",
  ]
  dependencies = [
 -    "setuptools>=59.0.0",
      "scipy>=1,<2",
-     "numpy>=1.17.0",
+     "numpy>=2.0",
      "filelock>=3.15",
