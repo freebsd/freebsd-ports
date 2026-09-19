@@ -1,5 +1,5 @@
 PORTNAME=	dwave-cloud-client
-DISTVERSION=	0.14.7
+DISTVERSION=	0.14.8
 CATEGORIES=	science python www # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -43,6 +43,13 @@ GH_ACCOUNT=	dwavesystems
 
 NO_ARCH=	yes
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} \
+		HOME=${WRKDIR} \
+		PATH=${LOCALBASE}/bin:$${PATH} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		XDG_CACHE_HOME=${WRKDIR}/.cache \
+		XDG_CONFIG_HOME=${WRKDIR}/.config
+
+# tests as of 0.14.8: 1721 tests, OK (skipped=323) in 73.041s
 
 .include <bsd.port.mk>
