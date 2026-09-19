@@ -1,8 +1,11 @@
 PORTNAME=	essentia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1_beta5-1417
-DISTVERSIONSUFFIX=	-gf0f6c358
+DISTVERSION=	2.1_beta5-1452
+DISTVERSIONSUFFIX=	-g66a890f2
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	ceff6c73e591c078d418a5663491b97a75413b99.patch:-p1 # support for ffmpeg-9.x, https://github.com/MTG/essentia/pull/1546
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for audio and music analysis
@@ -12,8 +15,6 @@ WWW=		https://essentia.upf.edu/ \
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BROKEN=		Fails to build with FFmpeg 9
-
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libchromaprint.so:audio/chromaprint \
@@ -22,16 +23,9 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libtag.so:audio/taglib \
 		libyaml.so:textproc/libyaml
 
-CFLAGS+=	-I${LOCALBASE}/ffmpeg4/include
-CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
-MAKE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
-
 USES=		compiler:c++11-lib eigen:3 pkgconfig waf
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MTG
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libessentia.so
 
 .include <bsd.port.mk>
