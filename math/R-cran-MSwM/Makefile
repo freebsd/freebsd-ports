@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Fitting Markov Switching Models
-WWW=		https://cran.r-project.org/web/packages/MSwM/
+WWW=		https://cran.r-project.org/package=MSwM
 
 LICENSE=	GPLv2+
 

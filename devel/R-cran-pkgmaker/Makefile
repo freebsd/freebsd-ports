@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Package development utilities
-WWW=		https://cran.r-project.org/web/packages/pkgmaker/
+WWW=		https://cran.r-project.org/package=pkgmaker
 
 LICENSE=	GPLv2+
 

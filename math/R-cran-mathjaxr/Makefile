@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Using 'Mathjax' in Rd Files
-WWW=		https://cran.r-project.org/web/packages/mathjaxr/
+WWW=		https://cran.r-project.org/package=mathjaxr
 
 LICENSE=	GPLv3+
 

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	General network client interface for R
-WWW=		https://cran.r-project.org/web/packages/RCurl/
+WWW=		https://cran.r-project.org/package=RCurl
 
 LICENSE=	BSD3CLAUSE
 

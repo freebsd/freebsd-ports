@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Fast Implementation of a Key-Value Store
-WWW=		https://cran.r-project.org/web/packages/fastmap/
+WWW=		https://cran.r-project.org/package=fastmap
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.note

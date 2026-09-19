@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Symbolic Differentiation
-WWW=		https://cran.r-project.org/web/packages/Deriv/
+WWW=		https://cran.r-project.org/package=Deriv
 
 LICENSE=	GPLv3
 

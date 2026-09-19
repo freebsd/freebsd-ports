@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Safely Access the RStudio API
-WWW=		https://cran.r-project.org/web/packages/rstudioapi/
+WWW=		https://cran.r-project.org/package=rstudioapi
 
 LICENSE=	MIT
 

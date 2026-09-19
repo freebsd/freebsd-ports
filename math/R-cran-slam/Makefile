@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Sparse Lightweight Arrays and Matrices
-WWW=		https://cran.r-project.org/web/packages/slam/
+WWW=		https://cran.r-project.org/package=slam
 
 LICENSE=	GPLv2+
 

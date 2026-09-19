@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Fast and versatile argument checks
-WWW=		https://cran.r-project.org/web/packages/checkmate/
+WWW=		https://cran.r-project.org/package=checkmate
 
 LICENSE=	BSD3CLAUSE
 

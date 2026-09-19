@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Arrange grobs in tables
-WWW=		https://cran.r-project.org/web/packages/gtable/
+WWW=		https://cran.r-project.org/package=gtable
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

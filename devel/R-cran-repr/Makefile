@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Serializable Representations
-WWW=		https://cran.r-project.org/web/packages/repr/
+WWW=		https://cran.r-project.org/package=repr
 
 LICENSE=	GPLv3
 

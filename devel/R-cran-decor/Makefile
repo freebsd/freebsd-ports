@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Retrieve Code Decorations
-WWW=		https://cran.r-project.org/web/packages/decor/
+WWW=		https://cran.r-project.org/package=decor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

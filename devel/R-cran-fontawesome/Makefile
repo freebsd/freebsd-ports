@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Easily Work with 'Font Awesome' Icons
-WWW=		https://cran.r-project.org/web/packages/fontawesome/
+WWW=		https://cran.r-project.org/package=fontawesome
 
 LICENSE=	MIT
 

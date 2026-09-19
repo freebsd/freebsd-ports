@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Extensions to AdaBoost algorithm
-WWW=		https://cran.r-project.org/web/packages/gbm/
+WWW=		https://cran.r-project.org/package=gbm
 
 LICENSE=	GPLv2
 

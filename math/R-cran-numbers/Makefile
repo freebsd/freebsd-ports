@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Number-Theoretic Functions
-WWW=		https://cran.r-project.org/web/packages/numbers/
+WWW=		https://cran.r-project.org/package=numbers
 
 LICENSE=	GPLv3+
 

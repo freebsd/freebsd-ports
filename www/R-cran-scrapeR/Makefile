@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Tools for Scraping Data from HTML and XML Documents
-WWW=		https://cran.r-project.org/web/packages/scrapeR/
+WWW=		https://cran.r-project.org/package=scrapeR
 
 LICENSE=	MIT
 

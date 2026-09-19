@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Memoise functions for R
-WWW=		https://cran.r-project.org/web/packages/memoise/
+WWW=		https://cran.r-project.org/package=memoise
 
 LICENSE=	MIT
 

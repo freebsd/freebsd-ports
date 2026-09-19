@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Translate CSS Selectors to XPath Expressions
-WWW=		https://cran.r-project.org/web/packages/selectr/
+WWW=		https://cran.r-project.org/package=selectr
 
 LICENSE=	BSD3CLAUSE
 

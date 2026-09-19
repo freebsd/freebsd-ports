@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	R wrappers for the tth/ttm TeX-to-HTML/MathML translators
-WWW=		https://cran.r-project.org/web/packages/tth/
+WWW=		https://cran.r-project.org/package=tth
 
 LICENSE=	GPLv2
 

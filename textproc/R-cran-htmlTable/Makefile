@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Advanced tables for Markdown/HTML
-WWW=		https://cran.r-project.org/web/packages/htmlTable/
+WWW=		https://cran.r-project.org/package=htmlTable
 
 LICENSE=	GPLv3
 

@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Registry infrastructure
-WWW=		https://cran.r-project.org/web/packages/registry/
+WWW=		https://cran.r-project.org/package=registry
 
 LICENSE=	GPLv2
 

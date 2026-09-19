@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Accept short and long flags in Rscript
-WWW=		https://cran.r-project.org/web/packages/getopt/
+WWW=		https://cran.r-project.org/package=getopt
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

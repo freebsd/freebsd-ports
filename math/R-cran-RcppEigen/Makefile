@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Rcpp integration for the Eigen templated linear algebra library
-WWW=		https://cran.r-project.org/web/packages/RcppEigen/
+WWW=		https://cran.r-project.org/package=RcppEigen
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

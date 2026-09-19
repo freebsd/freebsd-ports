@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Derivative-free optimization algorithms by quadratic approximation
-WWW=		https://cran.r-project.org/web/packages/minqa/
+WWW=		https://cran.r-project.org/package=minqa
 
 LICENSE=	GPLv2
 

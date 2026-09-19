@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Web server interface for R
-WWW=		https://cran.r-project.org/web/packages/Rook/
+WWW=		https://cran.r-project.org/package=Rook
 
 LICENSE=	GPLv2
 

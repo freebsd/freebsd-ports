@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Markdown Rendering for R
-WWW=		https://cran.r-project.org/web/packages/markdown/
+WWW=		https://cran.r-project.org/package=markdown
 
 LICENSE=	MIT
 

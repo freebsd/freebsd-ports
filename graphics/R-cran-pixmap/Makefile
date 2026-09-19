@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Bitmap Images ("Pixel Maps")
-WWW=		https://cran.r-project.org/web/packages/pixmap/
+WWW=		https://cran.r-project.org/package=pixmap
 
 LICENSE=	GPLv2
 

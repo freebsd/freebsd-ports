@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Check if a Remote Computer is Up
-WWW=		https://cran.r-project.org/web/packages/pingr/
+WWW=		https://cran.r-project.org/package=pingr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

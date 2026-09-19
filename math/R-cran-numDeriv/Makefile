@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Accurate Numerical Derivatives
-WWW=		https://cran.r-project.org/web/packages/numDeriv/
+WWW=		https://cran.r-project.org/package=numDeriv
 
 LICENSE=	GPLv2
 

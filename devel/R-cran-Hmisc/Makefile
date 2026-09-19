@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Harrell Miscellaneous functions useful for data analysis
-WWW=		https://cran.r-project.org/web/packages/Hmisc/
+WWW=		https://cran.r-project.org/package=Hmisc
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

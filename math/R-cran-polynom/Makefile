@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Functions to Implement a Class for Univariate Polynomial Manipulations
-WWW=		https://cran.r-project.org/web/packages/polynom/
+WWW=		https://cran.r-project.org/package=polynom
 
 LICENSE=	GPLv2
 

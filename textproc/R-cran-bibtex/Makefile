@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Bibtex Parser
-WWW=		https://cran.r-project.org/web/packages/bibtex/
+WWW=		https://cran.r-project.org/package=bibtex
 
 LICENSE=	GPLv2+
 

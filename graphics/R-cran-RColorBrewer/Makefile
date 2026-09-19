@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	ColorBrewer palettes
-WWW=		https://cran.r-project.org/web/packages/RColorBrewer/
+WWW=		https://cran.r-project.org/package=RColorBrewer
 
 LICENSE=	APACHE20
 

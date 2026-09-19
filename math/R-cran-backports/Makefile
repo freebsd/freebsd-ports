@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Reimplementations of Functions Introduced Since R-3.0.0
-WWW=		https://cran.r-project.org/web/packages/backports/
+WWW=		https://cran.r-project.org/package=backports
 
 LICENSE=	GPLv2+
 

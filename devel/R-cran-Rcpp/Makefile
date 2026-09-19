@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Seamless R and C++ Integration
-WWW=		https://cran.r-project.org/web/packages/Rcpp/
+WWW=		https://cran.r-project.org/package=Rcpp
 
 LICENSE=	GPLv2+
 

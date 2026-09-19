@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	S3 Class for Vectors of 64bit Integers
-WWW=		https://cran.r-project.org/web/packages/bit64/
+WWW=		https://cran.r-project.org/package=bit64
 
 LICENSE=	GPLv2+
 

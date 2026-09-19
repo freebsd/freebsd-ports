@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Methods that simplify the setup of S3 generic functions
-WWW=		https://cran.r-project.org/web/packages/R.methodsS3/
+WWW=		https://cran.r-project.org/package=R.methodsS3
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

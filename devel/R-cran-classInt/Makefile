@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Choose Univariate Class Intervals
-WWW=		https://cran.r-project.org/web/packages/classInt/
+WWW=		https://cran.r-project.org/package=classInt
 
 LICENSE=	GPLv2+
 

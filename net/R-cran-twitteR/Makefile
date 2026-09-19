@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	R based Twitter client
-WWW=		https://cran.r-project.org/web/packages/twitteR/
+WWW=		https://cran.r-project.org/package=twitteR
 
 LICENSE=	ART20
 

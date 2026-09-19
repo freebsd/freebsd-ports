@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Linear Programming / Optimization
-WWW=		https://cran.r-project.org/web/packages/linprog/
+WWW=		https://cran.r-project.org/package=linprog
 
 LICENSE=	GPLv2+
 

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Run Code 'With' Temporarily Modified Global State
-WWW=		https://cran.r-project.org/web/packages/withr/
+WWW=		https://cran.r-project.org/package=withr
 
 LICENSE=	MIT
 

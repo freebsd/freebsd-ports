@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Praise Users
-WWW=		https://cran.r-project.org/web/packages/praise/
+WWW=		https://cran.r-project.org/package=praise
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

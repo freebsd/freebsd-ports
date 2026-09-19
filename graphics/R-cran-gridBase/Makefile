@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Integration of base and grid graphics
-WWW=		https://cran.r-project.org/web/packages/gridBase/
+WWW=		https://cran.r-project.org/package=gridBase
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	General Non-Linear Optimization
-WWW=		https://cran.r-project.org/web/packages/Rsolnp/
+WWW=		https://cran.r-project.org/package=Rsolnp
 
 LICENSE=	GPLv2
 

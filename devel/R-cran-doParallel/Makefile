@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Foreach parallel adaptor for the parallel package
-WWW=		https://cran.r-project.org/web/packages/doParallel/
+WWW=		https://cran.r-project.org/package=doParallel
 
 LICENSE=	GPLv2
 

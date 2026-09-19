@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Japanese stock market from Yahoo!-finance-Japan
-WWW=		https://cran.r-project.org/web/packages/RFinanceYJ/
+WWW=		https://cran.r-project.org/package=RFinanceYJ
 
 LICENSE=	BSD3CLAUSE
 

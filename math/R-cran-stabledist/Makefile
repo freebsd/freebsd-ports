@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Stable Distribution Functions
-WWW=		https://cran.r-project.org/web/packages/stabledist/
+WWW=		https://cran.r-project.org/package=stabledist
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

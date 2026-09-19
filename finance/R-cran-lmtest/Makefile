@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Testing Linear Regression Models
-WWW=		https://cran.r-project.org/web/packages/lmtest/
+WWW=		https://cran.r-project.org/package=lmtest
 
 LICENSE=	GPLv2
 

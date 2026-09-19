@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Rapid Calculation of Model Metrics
-WWW=		https://cran.r-project.org/web/packages/ModelMetrics/
+WWW=		https://cran.r-project.org/package=ModelMetrics
 
 LICENSE=	GPLv2+
 

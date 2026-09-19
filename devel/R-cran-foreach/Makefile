@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Foreach looping construct for R
-WWW=		https://cran.r-project.org/web/packages/foreach/
+WWW=		https://cran.r-project.org/package=foreach
 
 LICENSE=	APACHE20
 

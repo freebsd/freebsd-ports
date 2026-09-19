@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Mesh Generation and Surface Tesselation
-WWW=		https://cran.r-project.org/web/packages/geometry/
+WWW=		https://cran.r-project.org/package=geometry
 
 LICENSE=	GPLv3
 

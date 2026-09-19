@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Udunits-2 Bindings for R
-WWW=		https://cran.r-project.org/web/packages/udunits2/
+WWW=		https://cran.r-project.org/package=udunits2
 
 LICENSE=	GPLv2
 

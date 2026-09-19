@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Fast partial SVD by implicitly-restarted Lanczos bidiagonalization
-WWW=		https://cran.r-project.org/web/packages/irlba/
+WWW=		https://cran.r-project.org/package=irlba
 
 LICENSE=	GPLv3
 

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Interactive visualizations for profiling R code
-WWW=		https://cran.r-project.org/web/packages/profvis/
+WWW=		https://cran.r-project.org/package=profvis
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

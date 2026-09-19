@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	R interface for OAuth
-WWW=		https://cran.r-project.org/web/packages/ROAuth/
+WWW=		https://cran.r-project.org/package=ROAuth
 
 LICENSE=	ART20
 

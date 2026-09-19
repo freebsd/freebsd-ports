@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Tools for splitting, applying, and combining data
-WWW=		https://cran.r-project.org/web/packages/plyr/
+WWW=		https://cran.r-project.org/package=plyr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

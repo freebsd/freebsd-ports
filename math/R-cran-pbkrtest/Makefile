@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Parametric bootstrap and Kenward-Roger-based methods for mixed model comparison
-WWW=		https://cran.r-project.org/web/packages/pbkrtest/
+WWW=		https://cran.r-project.org/package=pbkrtest
 
 LICENSE=	GPLv2+
 

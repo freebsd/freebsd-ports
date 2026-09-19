@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generalized Estimating Equation Package
-WWW=		https://cran.r-project.org/web/packages/geepack/
+WWW=		https://cran.r-project.org/package=geepack
 
 LICENSE=	GPLv3
 

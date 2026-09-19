@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Default Color Maps from 'matplotlib'
-WWW=		https://cran.r-project.org/web/packages/viridis/
+WWW=		https://cran.r-project.org/package=viridis
 
 LICENSE=	MIT
 

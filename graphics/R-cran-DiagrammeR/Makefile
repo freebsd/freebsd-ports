@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Create Diagrams and Flowcharts Using R
-WWW=		https://cran.r-project.org/web/packages/DiagrammeR/
+WWW=		https://cran.r-project.org/package=DiagrammeR
 
 LICENSE=	MIT
 

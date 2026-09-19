@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Syntax Highlighting for R Source Code
-WWW=		https://cran.r-project.org/web/packages/highr/
+WWW=		https://cran.r-project.org/package=highr
 
 LICENSE=	GPLv2+
 

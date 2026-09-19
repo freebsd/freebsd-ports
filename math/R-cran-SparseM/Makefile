@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Sparse Linear Algebra
-WWW=		https://cran.r-project.org/web/packages/SparseM/
+WWW=		https://cran.r-project.org/package=SparseM
 
 LICENSE=	GPLv2+
 

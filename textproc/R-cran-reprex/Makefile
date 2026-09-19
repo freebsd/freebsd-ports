@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Prepare Reproducible Example Code via the Clipboard
-WWW=		https://cran.r-project.org/web/packages/reprex/
+WWW=		https://cran.r-project.org/package=reprex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

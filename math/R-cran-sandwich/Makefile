@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Robust Covariance Matrix Estimators
-WWW=		https://cran.r-project.org/web/packages/sandwich/
+WWW=		https://cran.r-project.org/package=sandwich
 
 LICENSE=	GPLv2+
 

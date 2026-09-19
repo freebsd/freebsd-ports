@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	E-Statistics: Multivariate Inference via the Energy of Data
-WWW=		https://cran.r-project.org/web/packages/energy/
+WWW=		https://cran.r-project.org/package=energy
 
 LICENSE=	GPLv2+
 

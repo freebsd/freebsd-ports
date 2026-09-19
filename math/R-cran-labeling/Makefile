@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Provides a range of axis labeling algorithms
-WWW=		https://cran.r-project.org/web/packages/labeling/
+WWW=		https://cran.r-project.org/package=labeling
 
 LICENSE=	MIT
 

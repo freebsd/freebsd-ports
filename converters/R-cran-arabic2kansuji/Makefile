@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Convert Arabic Numerals to Kansuji
-WWW=		https://cran.r-project.org/web/packages/arabic2kansuji/
+WWW=		https://cran.r-project.org/package=arabic2kansuji
 
 LICENSE=	MIT
 

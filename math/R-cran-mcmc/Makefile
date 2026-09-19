@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Markov Chain Monte Carlo
-WWW=		https://cran.r-project.org/web/packages/mcmc/
+WWW=		https://cran.r-project.org/package=mcmc
 
 LICENSE=	MIT
 

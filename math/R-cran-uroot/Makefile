@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Unit Root Tests for Seasonal Time Series
-WWW=		https://cran.r-project.org/web/packages/uroot/
+WWW=		https://cran.r-project.org/package=uroot
 
 LICENSE=	GPLv2
 

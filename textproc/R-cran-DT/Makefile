@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Wrapper of the JavaScript Library 'DataTables'
-WWW=		https://cran.r-project.org/web/packages/DT/
+WWW=		https://cran.r-project.org/package=DT
 
 LICENSE=	MIT
 

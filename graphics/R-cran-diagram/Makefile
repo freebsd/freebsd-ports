@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Functions for visualising simple graphs, plotting flow diagrams
-WWW=		https://cran.r-project.org/web/packages/diagram/
+WWW=		https://cran.r-project.org/package=diagram
 
 LICENSE=	GPLv2+
 

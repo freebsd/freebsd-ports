@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Interpolation methods
-WWW=		https://cran.r-project.org/web/packages/interp/
+WWW=		https://cran.r-project.org/package=interp
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

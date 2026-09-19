@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Select from a Set of Strings
-WWW=		https://cran.r-project.org/web/packages/tidyselect/
+WWW=		https://cran.r-project.org/package=tidyselect
 
 LICENSE=	MIT
 

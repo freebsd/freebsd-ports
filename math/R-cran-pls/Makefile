@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Partial Least Squares and Principal Component Regression
-WWW=		https://cran.r-project.org/web/packages/pls/
+WWW=		https://cran.r-project.org/package=pls
 
 LICENSE=	GPLv2
 
