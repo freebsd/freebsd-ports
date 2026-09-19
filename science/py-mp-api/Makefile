@@ -1,5 +1,5 @@
 PORTNAME=	mp-api
-DISTVERSION=	0.46.4
+DISTVERSION=	0.46.5
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}deltalake>0:databases/py-deltalake@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}deltalake>=1.4.0:databases/py-deltalake@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}emmet-core>=0.87.1:science/py-emmet-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}monty>=2024.12.10:devel/py-monty@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>=3.10:devel/py-orjson@${PY_FLAVOR} \
@@ -33,17 +33,22 @@ USES=		python:3.11+
 USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+TEST_ARGS=	--disable-plugin-autoload -p pytest_asyncio \
+		--ignore=tests/client/materials/test_similarity.py \
+		--ignore=tests/client/test_client.py
 
 # tests as of 0.46.4: disable tests that require network access to the Materials
 # Project API or an API key (test_core_fetch_tools, test_core_search_tools,
 # test_blessed_entry, test_regression_batching) and the client-initialization
 # test (test_mix_in) that fails without an API key in the clean environment.
+# Ignore similarity/client tests until pymatgen's bibtexparser v2 incompatibility
+# in the current dependency stack is resolved.
 PYTEST_BROKEN_TESTS=	test_core_fetch_tools \
 			test_core_search_tools \
 			test_mix_in \
 			test_blessed_entry \
 			test_regression_batching
 
-# tests as of 0.46.4: 22 passed 131 skipped
+# tests as of 0.46.5: 22 passed, 107 skipped, 7 deselected, 20 warnings in 127.22s (0:02:07)
 
 .include <bsd.port.mk>
