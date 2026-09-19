@@ -17,11 +17,15 @@ lib/libxc.so.15
 lib/libxcf03.so
 lib/libxcf03.so.15
 %%PYTHON_SITELIBDIR%%/pylibxc/__init__.py
+%%PYTHON_SITELIBDIR%%/pylibxc/array_backend.py
 %%PYTHON_SITELIBDIR%%/pylibxc/core.py
+%%PYTHON_SITELIBDIR%%/pylibxc/dlpack.py
+%%PYTHON_SITELIBDIR%%/pylibxc/example_densities.py
 %%PYTHON_SITELIBDIR%%/pylibxc/flags.py
 %%PYTHON_SITELIBDIR%%/pylibxc/functional.py
 %%PYTHON_SITELIBDIR%%/pylibxc/libxc.so
 %%PYTHON_SITELIBDIR%%/pylibxc/structs.py
+%%PYTHON_SITELIBDIR%%/pylibxc/testing.py
 %%PYTHON_SITELIBDIR%%/pylibxc/util.py
 %%PYTHON_SITELIBDIR%%/pylibxc/version.py
 libdata/pkgconfig/libxc.pc
