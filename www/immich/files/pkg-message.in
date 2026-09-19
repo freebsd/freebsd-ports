@@ -62,6 +62,13 @@ Running it:
    import keeps the library readable without the database.
  * Logs are rotated by newsyslog through
    %%PREFIX%%/etc/newsyslog.conf.d/immich.conf.
+ * HDR tone mapping is off by default.  Immich builds its filter chain
+   around the tonemapx filter, which ffmpeg does not have, so an HDR
+   video would get no thumbnail at all.  The switch sits under
+   Administration > Settings > Video Transcoding.  Turning it on needs
+   an ffmpeg that provides tonemapx, and its path belongs into
+   FFMPEG_PATH and FFPROBE_PATH in immich.env.  Existing installations
+   keep whatever is stored in their database.
  * Schema migrations run automatically on start, so take a backup
    before a version upgrade; downgrades are not supported.  After a
    PostgreSQL major upgrade, rebuild pgvector and vchord.  After a
