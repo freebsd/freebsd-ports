@@ -1,7 +1,8 @@
 PORTNAME=	Archive-Libarchive
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:PLICEASE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,7 +22,7 @@ RUN_DEPENDS=	p5-FFI-C-Stat>=0:devel/p5-FFI-C-Stat \
 		p5-Ref-Util>=0:devel/p5-Ref-Util
 TEST_DEPENDS=	p5-FFI-C>=0:devel/p5-FFI-C \
 		p5-File-chdir>=0:devel/p5-File-chdir \
-		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
+		p5-Path-Tiny>=0.130:devel/p5-Path-Tiny \
 		p5-Sub-Identify>=0:devel/p5-Sub-Identify \
 		p5-Term-Table>=0:devel/p5-Term-Table \
 		p5-Test-Archive-Libarchive>=0:devel/p5-Test-Archive-Libarchive \
