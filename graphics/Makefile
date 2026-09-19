@@ -7,6 +7,7 @@
     SUBDIR += ImageMagick6
     SUBDIR += ImageMagick7
     SUBDIR += O2-tools
+    SUBDIR += R-cran-Cairo
     SUBDIR += R-cran-DiagrammeR
     SUBDIR += R-cran-GDD
     SUBDIR += R-cran-R.devices
