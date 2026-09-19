@@ -1,8 +1,7 @@
 PORTNAME=	mpsolve
-DISTVERSION=	3.2.1
-PORTREVISION=	3
+DISTVERSION=	3.2.3
 CATEGORIES=	math
-MASTER_SITES=	https://numpi.dm.unipi.it/_media/software/mpsolve/
+MASTER_SITES=	https://numpi.dm.unipi.it/wp-content/uploads/2025/08/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multiprecision rootfinder for complex roots of univariate polynomials
@@ -22,7 +21,8 @@ USE_CXXSTD=	c++14 # fix compilation failure on 14: error: ISO C++17 does not all
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--disable-static
+CONFIGURE_ARGS=	--disable-static \
+		--enable-documentation
 
 INSTALL_TARGET=	install-strip
 
