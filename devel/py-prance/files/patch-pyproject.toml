@@ -1,0 +1,27 @@
+--- pyproject.toml.orig	2026-07-19 05:27:27 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>80", "wheel", "setuptools_scm[toml]>9"]
++requires = ["setuptools>61", "wheel", "setuptools_scm[toml]>9"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -44,7 +44,7 @@ ssv = ["swagger-spec-validator~=3.0.4"]
+ [project.optional-dependencies]
+ icu = ["PyICU~=2.14"]
+ ssv = ["swagger-spec-validator~=3.0.4"]
+-osv = ["openapi-spec-validator~=0.7.1"]
++osv = ["openapi-spec-validator>=0.7.1"]
+ flex = ["flex~=6.14.1"]
+ cli = ["click>=8.3.0"]
+ fast = ["orjson>=3.9"]
+@@ -67,7 +67,7 @@ include-package-data = true
+ include-package-data = true
+ 
+ [tool.setuptools.packages.find]
+-exclude = ["ez_setup", "examples", "tests"]
++exclude = ["ez_setup", "docs*", "examples", "tests*", "scripts*"]
+ 
+ [tool.setuptools_scm]
+ write_to = "prance/_version.py"
