@@ -62,6 +62,7 @@ include/sedml/SedListOfVariables.h
 include/sedml/SedMarker.h
 include/sedml/SedModel.h
 include/sedml/SedNamespaces.h
+include/sedml/SedNonUniformTimeCourse.h
 include/sedml/SedObjective.h
 include/sedml/SedOneStep.h
 include/sedml/SedOutput.h
@@ -81,6 +82,7 @@ include/sedml/SedSetValue.h
 include/sedml/SedShadedArea.h
 include/sedml/SedSimulation.h
 include/sedml/SedSlice.h
+include/sedml/SedSpecificTimeCourse.h
 include/sedml/SedSteadyState.h
 include/sedml/SedStyle.h
 include/sedml/SedSubPlot.h
@@ -116,4 +118,4 @@ lib/cmake/sedml-targets.cmake
 lib/libsedml-static.a
 lib/libsedml.so
 lib/libsedml.so.2
-lib/libsedml.so.2.0.33
+lib/libsedml.so.2.0.34

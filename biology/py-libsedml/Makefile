@@ -1,6 +1,6 @@
 PORTNAME=	libsedml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.33
+DISTVERSION=	2.0.34
 CATEGORIES=	biology devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -31,5 +31,7 @@ WRKSRC_SUBDIR=	src/bindings/python
 
 do-test: install
 	@${PYTHON_CMD} ${FILESDIR}/quick-test.py
+
+# tests as of 2.0.34: Test passed
 
 .include <bsd.port.mk>
