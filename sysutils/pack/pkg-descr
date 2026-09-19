@@ -1,0 +1,5 @@
+pack is the official command-line interface for Cloud Native Buildpacks.
+
+It enables developers to build OCI-compatible container images from
+application source code without requiring a Dockerfile, using
+standardized buildpacks to detect, build, and package applications.
