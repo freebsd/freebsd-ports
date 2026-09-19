@@ -1,6 +1,6 @@
 PORTNAME=	pyTooling
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.16.1
+DISTVERSION=	9.0.0
 CATEGORIES=	devel
 #MASTER_SITES=	PYPI # requirements.txt is missing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,18 +15,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.40.0:devel/py-wheel@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anytree>=2.8.0:devel/py-anytree@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.12:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6:devel/py-colorama@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}igraph>0:math/py-igraph@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}itertree>0:devel/py-itertree@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mypy>=1.10:devel/py-mypy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=2.6:math/py-networkx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>=4.0.0:devel/py-pytest-benchmark@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17:devel/py-ruamel.yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}treelib>0:devel/py-treelib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest>=9.1:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.32:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.19.1:devel/py-ruamel.yaml@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist
@@ -34,11 +27,12 @@ USE_GITHUB=	yes
 
 NO_ARCH=	yes
 
+TEST_ARGS=	--disable-plugin-autoload
 TEST_WRKSRC=	${WRKSRC}
 
-# tests as of 8.14.0: 1149 passed, 19 skipped, 8 xfailed, 17 deselected
-
 do-test:
-	cd ${TEST_WRKSRC} && ${PYTHON_CMD} -m pytest tests/unit -k 'not ExplicitPathsOnWindows and not ExplicitPathsOnLinux and not ExplicitBinaryDirectoryOnWindows and not ExplicitBinaryDirectoryOnLinux and not test_TypeConvertToInt and not test_LineTerminal' -v
+	cd ${TEST_WRKSRC} && ${PYTHON_CMD} -m pytest ${TEST_ARGS} tests/unit -k 'not ExplicitPathsOnWindows and not ExplicitPathsOnLinux and not ExplicitBinaryDirectoryOnWindows and not ExplicitBinaryDirectoryOnLinux and not Packaging and not test_TypeConvertToInt and not test_LineTerminal' -v
+
+# tests as of 9.0.0: 1311 passed, 16 skipped, 29 deselected, 3 xfailed, 93 subtests passed in 35.40s
 
 .include <bsd.port.mk>
