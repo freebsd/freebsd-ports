@@ -1,9 +1,8 @@
 PORTNAME=	evcc
-DISTVERSION=	0.313.3
-PORTREVISION=	3
+DISTVERSION=	0.315.0
 CATEGORIES=	www
-MASTER_SITES=	LOCAL/mfechner/${PORTNAME}/:npmcache
-DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
+MASTER_SITES=	LOCAL/mfechner/${PORTNAME}/:vpcache
+DISTFILES=	${PORTNAME}-vp-cache-${DISTVERSION}${EXTRACT_SUFX}:vpcache
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Extensible EV Charge Controller
@@ -16,12 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	Npm cache only for amd64 generated
 
-BUILD_DEPENDS=	npm>0:www/npm
+BUILD_DEPENDS=	vite-plus>0:devel/vite-plus
 
-USES=		gmake go:1.26+,modules,no_targets nodejs:lts,build tar:zstd
+USES=		gmake go:1.27+,modules,no_targets nodejs:26,build tar:zstd
 
 # Find here: https://github.com/evcc-io/evcc/releases
-_SHA=		ec8c5ec8ea7d44d8474b570db107419dc72bd139
+_SHA=		a565f2d85048679a8222ee20b57d04f75e6fd8a5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	evcc-io
@@ -41,18 +40,23 @@ GROUPS=		evcc
 PLIST_FILES=	bin/${PORTNAME}
 
 pre-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm ci --legacy-peer-deps
-	#cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm run build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} vp env off
+	@echo '{"latest":"","checked_at":'`/bin/date +1"%s"`',"prompted_at":0}' > ${WRKDIR}/.vite-plus/.upgrade-check.json
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} vp install --offline --ignore-scripts --frozen-lockfile
+	@${CP} -f ${LOCALBASE}/lib/vite-plus/libvite_plus_cli.so ${WRKSRC}/node_modules/vite-plus/binding/vite-plus.freebsd-x64.node
+	@${CP} -f ${LOCALBASE}/lib/vite-plus/librolldown_binding.so ${WRKSRC}/node_modules/vite/dist/rolldown/shared/rolldown-binding.freebsd-x64.node
+	@${CP} -f ${LOCALBASE}/lib/vite-plus/librolldown_binding.so ${WRKSRC}/node_modules/@voidzero-dev/vite-plus-core/dist/rolldown/shared/rolldown-binding.freebsd-x64.node
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/evcc ${STAGEDIR}${PREFIX}/bin
 
 # (for maintainer) helper target to generate node_modules tarball
-make-npm-cache: patch
+make-vp-cache: patch
 	@cd ${WRKDIR} && ${RM} -r .npm
-	@cd ${WRKSRC} && ${SETENV} HOME=${WRKDIR} npm ci --legacy-peer-deps
+	@cd ${WRKSRC} && ${SETENV} HOME=${WRKDIR} vp env off
+	@cd ${WRKSRC} && ${SETENV} HOME=${WRKDIR} vp install --ignore-scripts
 	@cd ${WRKDIR} \
-		&& ${TAR} -c --zstd -f ${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} .npm \
-		&& ${ECHO} "Please upload the file: scp ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} mfechner@freefall.freebsd.org:public_distfiles/${PORTNAME}/"
+		&& ${TAR} -c --zstd -f ${PORTNAME}-vp-cache-${DISTVERSION}${EXTRACT_SUFX} .npm .vite-plus \
+		&& ${ECHO} "Please upload the file: scp ${WRKDIR}/${PORTNAME}-vp-cache-${DISTVERSION}${EXTRACT_SUFX} mfechner@freefall.freebsd.org:public_distfiles/${PORTNAME}/"
 
 .include <bsd.port.mk>

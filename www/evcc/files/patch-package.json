@@ -1,0 +1,25 @@
+--- package.json.orig	2026-08-31 16:21:16.000000000 +0200
++++ package.json	2026-09-07 23:11:26.907865000 +0200
+@@ -85,17 +85,18 @@
+     "ts-json-schema-generator": "^2.9.0",
+     "tsx": "^4.23.12",
+     "typescript": "^5.9.3",
+-    "vite": "npm:@voidzero-dev/vite-plus-core@0.2.6",
+-    "vite-plus": "0.2.6",
++    "vite": "npm:@voidzero-dev/vite-plus-core@0.2.9",
++    "vite-plus": "0.2.9",
+     "vitest": "4.1.10",
+     "vue-hot-reload-api": "^2.3.4",
+     "vue-tsc": "^3.3.11",
+     "wait-on": "^9.1.0",
+     "ws": "^8.21.3",
+-    "yaml": "^2.9.0"
++    "yaml": "^2.9.0",
++    "zrender": "^6.1.0"
+   },
+   "overrides": {
+-    "vite": "npm:@voidzero-dev/vite-plus-core@0.2.6",
++    "vite": "npm:@voidzero-dev/vite-plus-core@0.2.9",
+     "vitest": "4.1.10"
+   }
+ }
