@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	3
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -50,9 +50,6 @@ LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
-
-# When building testtools ...
-#BROKEN_i386=	"creation of executable memory area failed: Permission denied"
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
@@ -124,15 +121,16 @@ USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 
 CONFLICTS_INSTALL=	apache-openoffice-4*
 
-AOOVERSION1=	4
-AOOVERSION2=	2
+AOOVERSION1=	5
+AOOVERSION2=	1
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO420m6\(Build:9825\)
-GITREVISION=	38b1ce9df0
-TIMESTAMP=	1786138564
+AOOTAG=		AOO510m1\(Build:99000\)
+GITREVISION=	b81185736b
+TIMESTAMP=	1788900724
 #AOORC=rc3
-EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
+#EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
+EXTSRC=		ApacheOpenOffice.ext_sources.4.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
 AOOXXX=		${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
@@ -142,7 +140,7 @@ AOOSRC=		apache-openoffice-${AOOVERSION}-${GITREVISION}-src${EXTRACT_SUFX}
 AOODISTTAG=
 TARTYPE=	bzip2
 .else
-AOOSRC=		apache-openoffice-${TIMESTAMP}-${GITREVISION}-src${EXTRACT_SUFX}
+AOOSRC=		apache-openoffice-${AOOVERSION}-${TIMESTAMP}-${GITREVISION}-src${EXTRACT_SUFX}
 AOODISTTAG=	:snap
 TARTYPE=	xz
 .endif
@@ -251,7 +249,7 @@ CONFIGURE_ARGS+=	--without-commons-logging
 
 .include <${FILESDIR}/Makefile.localized>
 
-EXTRA_DISTFILES=	d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2 \
+EXTRA_DISTFILES=	9dcd632441e4da04a461082ebbafd337-boost_1_84_0.tar.bz2 \
 			e3738abd0d3ce1870dc1fd1f22bba5b1-icu4c-4_2_1-src.tgz \
 			128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz \
 			d62650a6f908e85643e557a236ea989c-vigra1.6.0.tar.gz
