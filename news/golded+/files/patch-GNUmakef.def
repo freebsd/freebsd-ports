@@ -1,24 +1,15 @@
---- GNUmakef.def.orig	2015-11-28 07:03:45 UTC
-+++ GNUmakef.def
-@@ -141,8 +141,8 @@ else                   # Linux, *BSD or
- CAT=cat
- SED=sed
- GREP=grep
--CC=gcc
--CXX=g++
-+#CC=gcc
-+#CXX=g++
- AR=ar
- RANLIB=ranlib
- PLATFORM=lnx
-@@ -162,8 +162,8 @@ endif
- endif
- endif
- endif
--CFLAGS+=-funsigned-char -g $(INCS) -Wall -Wno-long-long -Wno-sign-compare -pedantic -O2 -DPRAGMA_PACK # -fomit-frame-pointer
--LNKFLAGS+=-g
-+CFLAGS+=-funsigned-char $(INCS) -Wall -Wno-long-long -Wno-sign-compare -O2 -DPRAGMA_PACK # -g -pedantic -fomit-frame-pointer
-+LNKFLAGS+=$(LDFLAGS)
- CPPFLAGS+=$(CFLAGS)
- 
- # Run `make USE_NCURSES=0` if you dislike ncurses
+--- GNUmakef.def.orig	2026-05-26 17:11:12.339998800 +0100
++++ GNUmakef.def	2026-06-16 11:52:47.574250020 +0100
+@@ -149,10 +149,10 @@
+     SED=sed
+     GREP=grep
+     ifndef CC
+-        CC=gcc
++        CC ?= cc
+     endif
+     ifndef CXX
+-        CXX=g++
++        CXX ?= c++
+     endif
+     AR=ar
+     RANLIB=ranlib

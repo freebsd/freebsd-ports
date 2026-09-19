@@ -1,35 +1,33 @@
-PORTNAME=	golded+
-PORTVERSION=	1.1.5.a${SNAPDATE}
-PORTREVISION=	1
-CATEGORIES=	news mail
-MASTER_SITES=	SF/golded-plus/Golded%2B%201.1.5%20snapshots/${_SNAPDATE}
-DISTNAME=	gpsrc-115-${SNAPDATE}
+PORTNAME=       golded+
+PORTVERSION=    1.1.5.a${SNAPDATE}
+CATEGORIES=     news mail
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GoldEd+ (FTN message editor)
-WWW=		https://golded-plus.sourceforge.net/
+MAINTAINER=     ports@FreeBSD.org
+COMMENT=        GoldEd+ (FTN message editor)
+WWW=            https://github.com/golded-plus/golded-plus
 
-LICENSE=	GPLv2 LGPL20
-LICENSE_COMB=	multi
+LICENSE=        GPLv2 LGPL20
+LICENSE_COMB=   multi
 
-USES=		gmake ncurses tar:tgz
+USES=           gmake ncurses
+USE_GITHUB=     yes
+GH_ACCOUNT=     golded-plus
+GH_PROJECT=     golded-plus
+GH_TAGNAME=     golded-plus-1.1.5-20260425
 
-_SNAPDATE=	2017.03.03
-SNAPDATE=	${_SNAPDATE:S/.//g}
-WRKSRC=		${WRKDIR}/golded-plus/${PORTNAME}
+SNAPDATE=       20260425
 
-DOCS=		copying copying.lib license.txt notework.txt rusfaq.txt\
-		tips.txt notework.rus
-PORTDOCS=	${DOCS} gold_ref.txt gold_usr.txt
-SUB_FILES=	pkg-message
+DOCS=           copying copying.lib license.txt notework.txt rusfaq.txt\
+				tips.txt notework.rus
+PORTDOCS=       ${DOCS} gold_ref.txt gold_usr.txt
+SUB_FILES=      pkg-message
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE= DOCS EXAMPLES
 
-DOCS_SUB_LIST=	NOTEWORK="Please read the ${DOCSDIR}/notework.txt before using ${PORTNAME}"
-DOCS_SUB_LIST_OFF=	NOTEWORK=""
+DOCS_SUB_LIST=  NOTEWORK="Please read the ${DOCSDIR}/notework.txt before using ${PORTNAME}"
+DOCS_SUB_LIST_OFF=      NOTEWORK=""
 
 .include <bsd.port.options.mk>
-
 .if ${OPSYS} == FreeBSD
 CFLAGS+=  -Dregister=
 .endif
@@ -40,7 +38,7 @@ post-patch:
 		-e 's,\(#define __GVER_VENDOR_FIDO__\).*,\1 "",'\
 		-e 's,\(#define __GVER_VENDOR_EMAIL__\).*,\1 "${MAINTAINER}",'\
 		-e 's,\(#define __GVER_RELEASENAME__\).*,\1 "Golded+ FreeBSD port",'\
-		-e 's,\(#define __GVER_POSTVERSION__\).*,\1 "-b${SNAPDATE}",'\
+		-e 's,\(#define __GVER_POSTVERSION__\).*,\1 "-${SNAPDATE}",'\
 		<${WRKSRC}/golded3/mygolded.__h >${WRKSRC}/golded3/mygolded.h
 
 do-install:
@@ -50,7 +48,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in charset colorset config template
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/$i;
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/$i
 	${FIND} ${WRKSRC}/cfgs/$i -maxdepth 1 -type f |\
 		${XARGS} -n 1 -J @ ${INSTALL_DATA} @ ${STAGEDIR}${EXAMPLESDIR}/$i
 .endfor
