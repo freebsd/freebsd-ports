@@ -1,5 +1,5 @@
 PORTNAME=	segregation
-PORTVERSION=	2.5.5
+PORTVERSION=	2.6.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}geopandas>=1.1.0:graphics/py-geopandas@${PY_
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=1.5.0:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.14.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}seaborn>=0:math/py-seaborn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.14.4:math/py-statsmodels@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR}
 
 USES=		python:3.12+
