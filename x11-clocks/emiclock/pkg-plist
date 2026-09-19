@@ -7,3 +7,4 @@ lib/X11/ja_JP.UTF-8/app-defaults/EmiClock
 share/man/man1/emiclock.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.en
+%%PORTDOCS%%%%DOCSDIR%%/README.ja
