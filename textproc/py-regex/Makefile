@@ -8,7 +8,8 @@ MAINTAINER=	fax@nohik.ee
 COMMENT=	Alternative regular expression module, to replace re
 WWW=		https://github.com/mrabarnett/mrab-regex
 
-LICENSE=	PSFL
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
