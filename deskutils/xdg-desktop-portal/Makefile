@@ -42,7 +42,18 @@ MANPAGES_MESON_ENABLED=	man-pages
 
 CPE_VENDOR=	flatpak
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000 && ${OSVERSION} < 1501000
+BUILD_DEPENDS+=		${LOCALBASE}/include/linuxapi/string.h:devel/linuxapi
+CFLAGS+=		-I${WRKDIR}/linuxapi
+
+pre-build:
+	@${MKDIR} ${WRKDIR}/linuxapi
+	${CP} ${LOCALBASE}/include/linuxapi/string.h ${WRKDIR}/linuxapi
+.endif
+
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
