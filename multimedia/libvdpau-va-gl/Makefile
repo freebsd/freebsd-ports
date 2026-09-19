@@ -1,7 +1,7 @@
 PORTNAME=	libvdpau-va-gl
 PORTVERSION=	0.4.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -13,6 +13,9 @@ WWW=		https://github.com/i-rinat/libvdpau-va-gl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Fails to build with newer cmake, superceded by VAAPI
+EXPIRATION_DATE=2026-11-30
 
 BROKEN_armv6=		fails to configure: CMake Error: Check for working CXX compiler: /nxb-bin/usr/bin/c++ -- broken
 
