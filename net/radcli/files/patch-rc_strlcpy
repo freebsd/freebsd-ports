@@ -1,0 +1,25 @@
+--- lib/meson.build.orig	2026-09-13 10:03:44 UTC
++++ lib/meson.build
+@@ -27,6 +27,11 @@ map2_conf.set('LIBMAJOR2', lib2_soversion)
+ 
+ map2_conf = configuration_data()
+ map2_conf.set('LIBMAJOR2', lib2_soversion)
++if not cc.has_function('strlcpy')
++  map2_conf.set('STRLCPY_SYMBOL', 'rc_strlcpy;')
++else
++  map2_conf.set('STRLCPY_SYMBOL', '')
++endif
+ radcli2_map = configure_file(
+   input: 'radcli2.map.in', output: 'radcli2.map', configuration: map2_conf,
+ )
+--- lib/radcli2.map.in.orig	2026-09-13 10:03:44 UTC
++++ lib/radcli2.map.in
+@@ -144,7 +144,7 @@ RADCLI2_PRIVATE
+ 	rc_getmtime;
+ 	rc_conf_int_id;
+ 	rc_str2tm;
+-	rc_strlcpy;
++	@STRLCPY_SYMBOL@
+ 	rc_md5_calc;
+ 	rc_getaddrinfo;
+ 	rc_own_bind_addr;

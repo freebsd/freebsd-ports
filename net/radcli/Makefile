@@ -1,5 +1,5 @@
 PORTNAME=	radcli
-PORTVERSION=	1.5.3
+PORTVERSION=	2.0.0
 MASTER_SITES=	https://github.com/radcli/radcli/releases/download/${PORTVERSION}/
 CATEGORIES=	net
 
@@ -18,8 +18,7 @@ TEST_DEPENDS=	bash:shells/bash
 USES=		meson pkgconfig python:test shebangfix tar:xz
 
 MESON_DISABLED=	docs
-MESON_ENABLED=	nettle \
-		tls
+MESON_ENABLED=	tls
 MESON_FALSE=	legacy-compat
 MESON_TRUE=	static
 USE_LDCONFIG=	yes
