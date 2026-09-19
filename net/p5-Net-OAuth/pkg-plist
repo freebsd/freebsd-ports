@@ -10,6 +10,7 @@
 %%SITE_PERL%%/Net/OAuth/RequestTokenRequest.pm
 %%SITE_PERL%%/Net/OAuth/RequestTokenResponse.pm
 %%SITE_PERL%%/Net/OAuth/Response.pm
+%%SITE_PERL%%/Net/OAuth/SignatureMethod.pm
 %%SITE_PERL%%/Net/OAuth/SignatureMethod/HMAC_SHA1.pm
 %%SITE_PERL%%/Net/OAuth/SignatureMethod/HMAC_SHA256.pm
 %%SITE_PERL%%/Net/OAuth/SignatureMethod/PLAINTEXT.pm
@@ -34,6 +35,7 @@
 %%PERL5_MAN3%%/Net::OAuth::RequestTokenRequest.3.gz
 %%PERL5_MAN3%%/Net::OAuth::RequestTokenResponse.3.gz
 %%PERL5_MAN3%%/Net::OAuth::Response.3.gz
+%%PERL5_MAN3%%/Net::OAuth::SignatureMethod.3.gz
 %%PERL5_MAN3%%/Net::OAuth::SignatureMethod::HMAC_SHA1.3.gz
 %%PERL5_MAN3%%/Net::OAuth::SignatureMethod::HMAC_SHA256.3.gz
 %%PERL5_MAN3%%/Net::OAuth::SignatureMethod::PLAINTEXT.3.gz
