@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2026-07-20 08:36:35 UTC
+--- CMakeLists.txt.orig	2026-08-05 14:14:14 UTC
 +++ CMakeLists.txt
+@@ -130,7 +130,7 @@ find_package(glslang CONFIG REQUIRED)
+ find_package(OpenGL REQUIRED COMPONENTS ${GLES_VERSION})
+ find_package(glslang CONFIG REQUIRED)
+ 
+-find_package(glaze 7...<8 QUIET)
++find_package(glaze REQUIRED)
+ if(NOT glaze_FOUND)
+   set(GLAZE_VERSION v7.2.0)
+   message(STATUS "glaze dependency not found, retrieving ${GLAZE_VERSION} with FetchContent")
 @@ -718,12 +718,12 @@ if(BUILD_TESTING OR WITH_TESTS)
    # Enable coverage in main hyprland lib
    target_compile_options(hyprland_lib PRIVATE --coverage)
