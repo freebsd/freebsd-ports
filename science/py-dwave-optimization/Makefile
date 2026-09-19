@@ -27,6 +27,7 @@ USES=		python
 USE_PYTHON=	autoplist cython pep517 pytest
 
 PYTEST_BROKEN_TESTS=	test_simple_inputs
+TEST_ARGS=	--disable-plugin-autoload
 
 post-install:
 	# strip binaries
@@ -40,7 +41,7 @@ pre-test:
 	@cd ${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization && \
 		${FIND} . -name '*.so' -exec ${CP} {} ${WRKSRC}/dwave/optimization/{} \;
 
-# tests as of 0.7.3: 874 passed, 5 deselected, 538 subtests passed in 3.39s
+# tests as of 0.7.3: 870 passed, 4 skipped, 5 deselected, 528 subtests passed in 11.93s
 
 # all C++ patches are workaround for https://github.com/dwavesystems/dwave-optimization/issues/595
 
