@@ -1,5 +1,5 @@
 PORTNAME=	httrack
-PORTVERSION=	3.49.12
+PORTVERSION=	3.50.2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/xroche/httrack/releases/download/${PORTVERSION}/
 
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	${PREFIX}/lib/httrack
 
-SHEBANG_FILES=	src/webhttrack
+SHEBANG_FILES=	src/webhttrack.in
 
 OPTIONS_DEFINE=	DOCS ICONS
 OPTIONS_SUB=	yes
@@ -33,16 +33,10 @@ CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=no
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv=yes
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/html/server/div/WebHTTrack*
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-ldl ||' ${WRKSRC}/src/coucal/Makefile
-
-post-install:
-	${RM} ${STAGEDIR}${DATADIR}/html
-
 post-install-DOCS-off:
 # See PR/208875 for details
-	${MKDIR} ${STAGEDIR}${DATADIR}/html/
+	${RM} ${STAGEDIR}${DATADIR}/html/doc
+	${MKDIR} ${STAGEDIR}${DATADIR}/html/doc
 
 post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${STAGEDIR}${DOCSDIR}/
