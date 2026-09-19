@@ -14,7 +14,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tcb/span.hpp:devel/span \
 		frozen>=0:devel/frozen \
 		nanobind>=0:devel/nanobind \
 		nlohmann-json>=0:devel/nlohmann-json \
-		tl-expected>=0:devel/tl-expected
+		tl-expected>=0:devel/tl-expected \
+		utf8cpp>=4.2.0:devel/utf8cpp
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libmbedtls.so:security/mbedtls3 \
 		libspdlog.so:devel/spdlog
@@ -33,7 +34,6 @@ CMAKE_OFF=	LIEF_ASAN \
 		LIEF_FUZZING \
 		LIEF_LSAN \
 		LIEF_OBJC \
-		LIEF_OPT_UTFCPP_EXTERNAL \
 		LIEF_PYTHON_API \
 		LIEF_RUST_API \
 		LIEF_TESTS \
@@ -63,6 +63,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		LIEF_OPT_MBEDTLS_EXTERNAL \
 		LIEF_OPT_NANOBIND_EXTERNAL \
 		LIEF_OPT_NLOHMANN_JSON_EXTERNAL \
+		LIEF_OPT_UTFCPP_EXTERNAL \
 		LIEF_PE \
 		LIEF_PROFILING \
 		LIEF_SO_VERSION \
@@ -82,6 +83,6 @@ CPE_VENDOR=	lief-project
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
 # Clean up bundled libraries
-	@${RM} -r ${WRKSRC}/third-party/[A-t]*
+	@${RM} -r ${WRKSRC}/third-party/
 
 .include <bsd.port.mk>
