@@ -1,6 +1,6 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.1
+DISTVERSION=	0.12.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,17 +12,17 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash \
-		libfmt>0:devel/libfmt \
-		nlohmann-json>0:devel/nlohmann-json \
-		random123>0:devel/random123 \
-		${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR} \
-		tinyopt>0:devel/tinyopt
-BUILD_DEPENDS+=	${LOCALBASE}/lib/cmake/GTest/GTestConfig.cmake:devel/googletest # https://github.com/arbor-sim/arbor/issues/2205
+		${LOCALBASE}/lib/cmake/GTest/GTestConfig.cmake:devel/googletest \
+		libfmt>=12.1.0:devel/libfmt \
+		nlohmann-json>=3.12.0:devel/nlohmann-json \
+		random123>=1.14.0:devel/random123 \
+		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3:graphics/py-svgwrite@${PY_FLAVOR} \
+		tinyopt>=1.0.8:devel/tinyopt
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
 		libpugixml.so:textproc/pugixml \
 		libunits.so:misc/units
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR}
-TEST_DEPENDS=	googletest>0:devel/googletest
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4.3:graphics/py-svgwrite@${PY_FLAVOR}
+TEST_DEPENDS=	googletest>=1.16.0:devel/googletest
 
 USES=		cmake compiler:c++20-lang localbase pkgconfig python shebangfix
 
@@ -55,6 +55,6 @@ post-test: # run tests
 	@${BUILD_WRKSRC}/bin/unit-local
 	@${BUILD_WRKSRC}/bin/unit-modcc
 
-# tests fail with LIBCPP assertion for invalid array element access, see https://github.com/arbor-sim/arbor/issues/2484
+# tests as of 0.12.2: 1084 tests from 167 test suites ran and 111 tests from 19 test suites ran, all passed
 
 .include <bsd.port.mk>

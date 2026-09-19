@@ -1,0 +1,17 @@
+-- Normalize imported CXX flags before invoking CMake.
+-- Arbor exports ARB_CXX_FLAGS as a CMake list, which otherwise reaches make as
+-- semicolon-separated shell commands and breaks catalogue builds in py-arbor tests.
+-- This fixes the long-standing local test failure noted in upstream issue #2395.
+
+--- scripts/arbor-build-catalogue.orig	2026-09-15 19:19:26 UTC
++++ scripts/arbor-build-catalogue
+@@ -188,7 +188,8 @@ cmake = f"""
+ find_package(arbor REQUIRED)
+ {gpu_support}
+ set(CMAKE_BUILD_TYPE release)
+ set(CMAKE_CXX_COMPILER  {args["cxx"]})
+-set(CMAKE_CXX_FLAGS     ${{ARB_CXX_FLAGS}})
++string(REPLACE ";" " " ARB_CXX_FLAGS_STR "${{ARB_CXX_FLAGS}}")
++set(CMAKE_CXX_FLAGS     "${{ARB_CXX_FLAGS_STR}}")
+ 
+ include(BuildModules.cmake)

@@ -1,6 +1,6 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.1
+DISTVERSION=	0.12.2
 CATEGORIES=	science
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,13 +12,14 @@ WWW=		https://arbor-sim.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
-		nlohmann-json>0:devel/nlohmann-json
+BUILD_DEPENDS=	nlohmann-json>=3.12.0:devel/nlohmann-json \
+		pybind11>=3.0.0:devel/pybind11 \
+		${PYTHON_PKGNAMEPREFIX}pybind11-stubgen>0:devel/py-pybind11-stubgen@${PY_FLAVOR}
 LIB_DEPENDS=	libarbor.so:science/arbor
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python
-USE_PYTHON=	flavors unittest # tests fail to run, see https://github.com/arbor-sim/arbor/issues/2395
+USE_PYTHON=	flavors unittest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arbor-sim
@@ -26,6 +27,7 @@ GH_ACCOUNT=	arbor-sim
 WRKSRC_SUBDIR=	python
 
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD} \
+		-DARB_BUILD_PYTHON_STUBS=OFF \
 		-DARB_PYTHON_LIB_PATH=${PYTHONPREFIX_SITELIBDIR}
 
 CXXFLAGS+=	-fPIC
@@ -41,8 +43,10 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/arbor/_arbor${PYTHON_TAG}.so
 
-do-test: # tests fail to run due to a bug with nadling complex CXXFLAGS in the test runner, see https://github.com/arbor-sim/arbor/issues/2395
+do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} -munittest discover -v -s ${WRKSRC}
+
+# tests as of 0.12.2: Ran 78 tests in 11.215s, OK (skipped=3)
 
 .include <bsd.port.mk>
