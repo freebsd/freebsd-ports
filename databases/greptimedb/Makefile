@@ -11,6 +11,8 @@ WWW=		https://greptime.com/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		compilation fails: feature has been removed: box_patterns, see https://github.com/GreptimeTeam/greptimedb/issues/9251
+
 BUILD_DEPENDS=	gmake:devel/gmake \
 		protoc:devel/protobuf \
 		${LOCALBASE}/bin/rustc:lang/rust-nightly \
