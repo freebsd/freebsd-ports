@@ -1,6 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	11.17
-PORTREVISION=	1
+DISTVERSION=	11.18
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/11.x/
@@ -34,7 +33,6 @@ FLAVOR?=	default
 USES=		autoreconf bison cpe desktop-file-utils gmake llvm:min=17,build,noexport \
 		localbase pkgconfig sdl shebangfix tar:xz
 CPE_VENDOR=	winehq
-USE_GCC=	yes
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
 USE_SDL=	sdl2
 
