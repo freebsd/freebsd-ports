@@ -122,6 +122,7 @@
     SUBDIR += py-slack-sdk
     SUBDIR += py-slackeventsapi
     SUBDIR += py-slixmpp
+    SUBDIR += py-smpplib
     SUBDIR += py-toxcore-c
     SUBDIR += py-unmessage
     SUBDIR += py-zapzap

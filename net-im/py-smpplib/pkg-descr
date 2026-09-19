@@ -1,0 +1,4 @@
+SMPPLib implements the Short Message Peer-to-Peer (SMPP) protocol for
+exchanging SMS messages with SMSC gateways.  It binds as a transmitter,
+receiver or transceiver, sends and receives PDUs, and splits long or
+Unicode text into concatenated multipart messages.
