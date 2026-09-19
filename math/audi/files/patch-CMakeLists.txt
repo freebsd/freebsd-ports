@@ -1,14 +1,12 @@
--- Lower the minimum Boost version to the version available in the FreeBSD
--- ports tree (1.89.0) and disable the debug-runtime requirement so the
--- release Boost libraries installed by devel/boost-libs are accepted.
+-- Disable the debug-runtime requirement so the release Boost libraries
+-- installed by devel/boost-libs are accepted on FreeBSD.
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -185,7 +185,8 @@
-     message(STATUS "mp++ library found.")
-
-     # Boost setup.
--    set(_audi_MIN_BOOST_VERSION "1.90")
-+    set(_audi_MIN_BOOST_VERSION "1.89")
+@@ -192,6 +192,7 @@
+     # We rely on the modern BoostConfig.cmake package (CONFIG mode + imported
+     # targets). First find only the Boost headers so we can inspect the detected
+     # version before deciding which compiled components to request: newer Boost
 +    set(Boost_USE_DEBUG_RUNTIME OFF)
-     find_package(Boost ${_audi_MIN_BOOST_VERSION} CONFIG REQUIRED COMPONENTS serialization timer chrono unit_test_framework)
-     message(STATUS "Boost library found.")
+     # releases (>= 1.90) no longer ship the separately-compiled Boost.System
+     # library (it is header-only and provided by Boost::headers).
+     set(_audi_MIN_BOOST_VERSION "1.73.0")

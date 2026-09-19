@@ -1,6 +1,6 @@
 PORTNAME=	pyaudi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.1
+DISTVERSION=	1.10.2
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -47,6 +47,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 do-test:
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test.py
 
-# tests as of 1.10.1: custom upstream test script completed successfully
+# tests as of 1.10.2: custom upstream test script completed successfully
 
 .include <bsd.port.mk>
