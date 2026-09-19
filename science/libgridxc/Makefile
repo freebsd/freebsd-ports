@@ -10,9 +10,7 @@ WWW=		https://gitlab.com/siesta-project/libraries/libgridxc
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		uses -lxcf90, removed in libxc-7, upstream claims this and downstream (Siesta) are unmaintained, but this does not appear universally true
-
-USES=		cmake fortran pkgconfig
+USES=		cmake:testing fortran pkgconfig
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
@@ -24,6 +22,7 @@ OPTIONS_DEFAULT=	LIBXC MPICH
 OPTIONS_SUB=		yes
 
 NOMPI_DESC=		Build without parallel processing support
+NOMPI_CMAKE_OFF=	-DWITH_MPI=OFF
 
 MPICH_USES=		mpi:mpich
 MPICH_CMAKE_ON=		-DWITH_MPI=ON
@@ -35,7 +34,9 @@ OPENMPI_VARS=		FFLAGS+=-fallow-argument-mismatch
 
 LIBXC_DESC=		Use libxc for exchange-correlation functionals for DFT
 LIBXC_CMAKE_BOOL=	WITH_LIBXC
-LIBXC_VARS=		FCFLAGS+="-I${LOCALBASE}/include" LDFLAGS+="-L${LOCALBASE}/lib -lxcf90"
+LIBXC_VARS=		FCFLAGS+="-I${LOCALBASE}/include"
 LIBXC_LIB_DEPENDS=	libxc.so:science/libxc
+
+# tests as of 2.0.3: 100% tests passed, 0 tests failed out of 9
 
 .include <bsd.port.mk>

@@ -38,5 +38,5 @@ lib/cmake/libgridxc/libgridxc-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libgridxc/libgridxc-targets.cmake
 lib/libgridxc.so
 lib/libgridxc.so.2
-lib/libgridxc.so.2.0.2
+lib/libgridxc.so.2.0.3
 libdata/pkgconfig/libgridxc.pc
