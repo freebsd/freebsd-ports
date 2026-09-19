@@ -1,3 +1,35 @@
+  <vuln vid="c1980e14-b424-11f1-bd9f-10ffe07f9334">
+    <topic>mailpit -- Multi-frame animation bypass of thumbnail pixel budget</topic>
+    <affects>
+      <package>
+	<name>mailpit</name>
+	<range><lt>1.31.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/security/advisories/GHSA-2vgv-6hcp-mf43">
+	  <p>The fix for CVE-2026-67446 / GHSA-75mr-qw9x-3r39 ("Thumbnail
+	  generation decodes unbounded image dimensions before scaling",
+	  patched in v1.30.4) bounds only the width × height of a single frame.
+	  The decoded-size budget is still not enforced over frame count,
+	  so an animated PNG whose per-frame dimensions sit just under the
+	  limit still expands to a multiple of it. A remote, unauthenticated
+	  client can deliver such an attachment over SMTP and then request
+	  one thumbnail to force a multi-gigabyte native allocation.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-2vgv-6hcp-mf43</url>
+    </references>
+    <dates>
+      <discovery>2026-09-19</discovery>
+      <entry>2026-09-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6cf2ff4b-b38c-11f1-a655-3497f65b111b">
     <topic>Angie -- worker process memory corruption when using HTTP/3</topic>
     <affects>
