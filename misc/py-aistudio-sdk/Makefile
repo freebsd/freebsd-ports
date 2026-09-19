@@ -1,8 +1,8 @@
 PORTNAME=	aistudio-sdk # only available as a wheel, source code is in the wheel
-DISTVERSION=	0.3.8
+DISTVERSION=	0.3.9
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
-MASTER_SITE_SUBDIR=	cb/77/cd71a481bb7a76b0e9d0b6bf47711c627b1dd079001ea246893f19a9d04c/
+MASTER_SITE_SUBDIR=	c2/56/ce14f76c1892f335fbcd82568d347fd1652e1a4b0b76ac4a4cd90e1ae202
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	aistudio_sdk-${PORTVERSION}-py3-none-any
 EXTRACT_SUFX=	.whl
