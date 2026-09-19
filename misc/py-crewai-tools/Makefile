@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.13.4:www/py-beautifulsoup4
 		${PYTHON_PKGNAMEPREFIX}requests>=2.33.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.8.0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}youtube-transcript-api>=1.2.2:www/py-youtube-transcript-api@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>0:devel/py-anyio@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
@@ -31,8 +31,9 @@ NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
-# adding the args --disable-plugin-autoload -p anyio causes tests to fail, see https://github.com/crewAIInc/crewAI/issues/7305
-TEST_ARGS=	--ignore=adapters/mcp_adapter_test.py \
+TEST_ARGS=	--disable-plugin-autoload \
+		-p pytest_asyncio.plugin \
+		--ignore=adapters/mcp_adapter_test.py \
 		--ignore=base_tool_test.py \
 		--ignore=tools/brave_search_tool_test.py \
 		--ignore=tools/couchbase_tool_test.py \
