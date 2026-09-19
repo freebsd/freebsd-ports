@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create beautiful and testable command-line interfaces
-WWW=		https://github.com/python-poetry/cleo
+WWW=		https://cleo.readthedocs.io/en/latest/ \
+		https://github.com/python-poetry/cleo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
