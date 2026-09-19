@@ -1,7 +1,8 @@
 PORTNAME=	PDL-IO-HDF
-PORTVERSION=	2.003
+PORTVERSION=	2.005
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ETJ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,7 +15,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.4020:devel/p5-ExtUtils-Depends \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	libdf.so:science/hdf
-RUN_DEPENDS=	p5-PDL>=2.094:math/p5-PDL
+RUN_DEPENDS=	p5-PDL>=2.105:math/p5-PDL
 
 USES=		localbase perl5
 USE_PERL5=	configure
