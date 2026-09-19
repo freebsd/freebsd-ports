@@ -1,5 +1,5 @@
 PORTNAME=	textual-image
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,15 +10,15 @@ COMMENT=	Render images via Kitty's Terminal Graphics Protocol with Rich and Text
 WWW=		https://github.com/lnqs/textual-image
 
 LICENSE=	LGPL3
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.12:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=10.3.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.4.0:textproc/py-rich@${PY_FLAVOR}
 
 USES=		python:3.12+ shebangfix
 USE_PYTHON=	autoplist concurrent pep517
 
+MAKE_ENV=	SOURCE_DATE_EPOCH=315532800 # 1980-01-01 00:00:00 UTC
 NO_ARCH=	yes
 
 SHEBANG_FILES=	textual_image/__main__.py \
