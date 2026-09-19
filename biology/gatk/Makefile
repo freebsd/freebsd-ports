@@ -83,11 +83,21 @@ do-fetch:
 # fetch the deps distfile
 .  if (${DEV_UPDATE_MODE} == "no")
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}" ]; then \
+		${MKDIR} ${WRKDIR}; \
+		${RM} ${_MASTER_SITES_FILE} ${_DISTFILES_FILE}; \
+		for site in ${_MASTER_SITES_ENV}; do \
+			printf '%s\n' "$${site}" | sed -e 's/ /\\ /g' >> ${_MASTER_SITES_FILE}; \
+		done; \
+		for file in ${DISTFILES:M*\:deps}; do \
+			printf '%s\n' "$${file}" >> ${_DISTFILES_FILE}; \
+		done; \
 		${ECHO} "==> Fetching the deps distfile for ${PORTNAME}" && \
 		${SETENV} \
-			${_DO_FETCH_ENV} ${_MASTER_SITES_ENV} \
+			${_DO_FETCH_ENV} \
+			dp_SITES_FILE=${_MASTER_SITES_FILE} \
+			dp_FILES_FILE=${_DISTFILES_FILE} \
 			dp_SITE_FLAVOR=MASTER \
-			${SH} ${SCRIPTSDIR}/do-fetch.sh ${DISTFILES:M*\:deps}; \
+			${SH} ${SCRIPTSDIR}/do-fetch.sh; \
 	fi
 .  endif
 .endif
