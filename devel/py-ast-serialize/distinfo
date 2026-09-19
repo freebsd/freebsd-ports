@@ -1,6 +1,6 @@
-TIMESTAMP = 1789128346
-SHA256 (ast_serialize-0.11.1.tar.gz) = cc5db2983805f6be786488aac8c5998d5b71965488d1b18c44d435a2205a5cb4
-SIZE (ast_serialize-0.11.1.tar.gz) = 953785
+TIMESTAMP = 1789389350
+SHA256 (ast_serialize-0.11.2.tar.gz) = 976a5bd75845d22f4b52905ddf53ab669ef1b14dba7735f5512841a2ef2b5450
+SIZE (ast_serialize-0.11.2.tar.gz) = 954387
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/allocator-api2-0.2.21.crate) = 683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923
