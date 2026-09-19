@@ -6,7 +6,8 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Build smaller, faster, and secure desktop apps with a web frontend
-WWW=		https://tauri.app
+WWW=		https://tauri.app \
+		https://github.com/tauri-apps/tauri
 
 LICENSE=	MIT
 
