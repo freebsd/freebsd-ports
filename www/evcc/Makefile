@@ -1,5 +1,5 @@
 PORTNAME=	evcc
-DISTVERSION=	0.315.0
+DISTVERSION=	0.315.2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/mfechner/${PORTNAME}/:vpcache
 DISTFILES=	${PORTNAME}-vp-cache-${DISTVERSION}${EXTRACT_SUFX}:vpcache
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	vite-plus>0:devel/vite-plus
 USES=		gmake go:1.27+,modules,no_targets nodejs:26,build tar:zstd
 
 # Find here: https://github.com/evcc-io/evcc/releases
-_SHA=		a565f2d85048679a8222ee20b57d04f75e6fd8a5
+_SHA=		f9cf626eef7a9813040ef2a07bc84f24ace7d913
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	evcc-io
