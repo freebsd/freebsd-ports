@@ -1,6 +1,6 @@
 PORTNAME=	metis
 DISTVERSION=	5.1.0-p13
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/petsc/pkg-metis/get/
@@ -11,6 +11,9 @@ COMMENT=	Package for unstructured graph partitioning
 WWW=		https://bitbucket.org/petsc/pkg-metis
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Unmaintained, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 # Keep cmake:insource to be used by math/parmetis
 USES=		cmake:insource,noninja compiler:c11 tar:bzip2
