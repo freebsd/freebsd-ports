@@ -18,7 +18,8 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR} \
 		${RUST_DEFAULT}>=1.89:lang/${RUST_DEFAULT} \
-		bindgen:devel/rust-bindgen-cli
+		bindgen:devel/rust-bindgen-cli \
+		bash>0:shells/bash
 LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libblas.so:math/blas \
 		libcholmod.so:math/suitesparse-cholmod \
