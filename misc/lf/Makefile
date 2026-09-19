@@ -1,6 +1,7 @@
 PORTNAME=	lf
 DISTVERSIONPREFIX=	r
-DISTVERSION=	42
+DISTVERSION=	42-16
+DISTVERSIONSUFFIX=	-g9ecf9ac
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,11 +20,11 @@ GH_TUPLE=	\
 		djherbis:times:v1.6.0:djherbis_times/vendor/github.com/djherbis/times \
 		fsnotify:fsnotify:v1.10.1:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		gdamore:encoding:v1.0.1:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:v3.4.1:gdamore_tcell_v3/vendor/github.com/gdamore/tcell/v3 \
-		golang:sys:v0.47.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.45.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.40.0:golang_text/vendor/golang.org/x/text \
-		lucasb-eyer:go-colorful:v1.4.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful
+		gdamore:tcell:v3.5.0:gdamore_tcell_v3/vendor/github.com/gdamore/tcell/v3 \
+		golang:sys:v0.48.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.46.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.41.0:golang_text/vendor/golang.org/x/text \
+		lucasb-eyer:go-colorful:v1.4.1:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful
 
 PLIST_FILES=	bin/lf
 
