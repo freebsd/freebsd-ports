@@ -216,8 +216,6 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/vendor/optparse/lib/optparse/time.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/optparse/lib/optparse/uri.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/optparse/lib/optparse/version.rb
-%%RUBY_SITELIBDIR%%/rubygems/vendor/resolv/COPYING
-%%RUBY_SITELIBDIR%%/rubygems/vendor/resolv/lib/resolv.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/securerandom/COPYING
 %%RUBY_SITELIBDIR%%/rubygems/vendor/securerandom/lib/securerandom.rb
 %%RUBY_SITELIBDIR%%/rubygems/vendor/timeout/COPYING
