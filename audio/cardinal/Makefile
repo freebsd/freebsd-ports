@@ -35,7 +35,6 @@ USES=		compiler:c++17-lang gl gmake libarchive localbase:ldflags pkgconfig pytho
 USE_XORG=	x11 xcursor xext xrandr
 USE_GL=		gl
 USE_SDL=	sdl2
-USE_CXXSTD=	c++14 # keep std::random_shuffle that was removed in c++17, see https://github.com/DISTRHO/Cardinal/issues/945
 
 SHEBANG_GLOB=	*.sh
 
