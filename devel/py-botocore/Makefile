@@ -1,11 +1,11 @@
 PORTNAME=	botocore
-PORTVERSION=	1.43.93
+PORTVERSION=	1.43.98
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Low-level, core functionality of boto 3
+COMMENT=	Low-level, data-driven core of boto 3
 WWW=		https://github.com/boto/botocore
 
 LICENSE=	APACHE20
