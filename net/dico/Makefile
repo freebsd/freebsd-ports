@@ -11,6 +11,8 @@ WWW=		https://www.gnu.org/software/dico/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build, error: incompatible pointer to integer conversion
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		gmake iconv libtool localbase ncurses pkgconfig readline tar:xz
