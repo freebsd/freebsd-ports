@@ -444,7 +444,7 @@ microbin:*:499:
 qw:*:500:
 qwfwd:*:501:
 birdvty:*:502:
-# free: 503
+gerrit:*:503:
 # free: 504
 _bbstored:*:505:
 radmind:*:506:
