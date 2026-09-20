@@ -1,0 +1,6 @@
+This package combines HPE's Intel Ethernet firmware payload with Intel's
+FreeBSD NVMUpdate utility.  It retains all 18 entries in HPE's configuration,
+covering the HPE 361, 366, 369, 562, 563, and 568 adapter families based on
+Intel I350, X550, X710, and X722 controllers.
+
+Use nvmupdate-i350-x550-700series-hpe.

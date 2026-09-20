@@ -1,0 +1,3 @@
+This package combines Dell's Intel E810 and E823 firmware bundle with Intel's
+FreeBSD NVMUpdate utility.  It retains all 12 OEM device entries and their
+signed NVM images as shipped in Dell package FCG2V.

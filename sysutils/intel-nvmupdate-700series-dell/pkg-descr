@@ -1,0 +1,5 @@
+This package combines Dell's Intel Ethernet 700 Series firmware bundle
+with Intel's FreeBSD NVMUpdate utility.  It retains the OEM device entries
+and firmware configuration shipped by Dell.
+
+Use nvmupdate-700series-dell for Dell X710, XL710, XXV710, and X722 adapters.
