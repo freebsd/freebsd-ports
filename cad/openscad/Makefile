@@ -32,7 +32,7 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libtbb.so:devel/onetbb \
 		lib3mf.so:cad/lib3mf
 
-CONFLICTS=	openscad
+CONFLICTS=	openscad-devel
 
 USES=		bison cmake compiler:c++17-lang cpe desktop-file-utils eigen:3 gettext \
 		gl gnome pkgconfig python qt:6 shared-mime-info xorg
