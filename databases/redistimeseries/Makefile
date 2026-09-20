@@ -1,6 +1,6 @@
 PORTNAME=	redistimeseries
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.14
+DISTVERSION=	1.12.17
 CATEGORIES=	databases
 
 MAINTAINER=	core-platform-scrum@redis.com

@@ -1,6 +1,6 @@
-TIMESTAMP = 1785152250
-SHA256 (RedisTimeSeries-RedisTimeSeries-v1.12.14_GH0.tar.gz) = 175cae5403553354335e8724023ff33d57794811167aa96c390e03b0d1e7ea0a
-SIZE (RedisTimeSeries-RedisTimeSeries-v1.12.14_GH0.tar.gz) = 9907867
+TIMESTAMP = 1789914006
+SHA256 (RedisTimeSeries-RedisTimeSeries-v1.12.17_GH0.tar.gz) = eaab98fbdc9a8db6a875fbce79b50493dcd3198f778878029dcb263f2f934d72
+SIZE (RedisTimeSeries-RedisTimeSeries-v1.12.17_GH0.tar.gz) = 9913292
 SHA256 (RedisGears-LibMR-eda568d_GH0.tar.gz) = e02ae8e35532def35c3a9ef057345c9e4d6f8dc24aae69692d9e9a5d266f586a
 SIZE (RedisGears-LibMR-eda568d_GH0.tar.gz) = 110968
 SHA256 (RedisLabsModules-RedisModulesSDK-40d4bfa_GH0.tar.gz) = 902c85c323b88d325f7b4493bb7facabfb1219d09360ab9fdeb65cb982446157
