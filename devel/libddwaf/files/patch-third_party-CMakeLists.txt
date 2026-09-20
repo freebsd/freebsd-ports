@@ -1,43 +1,15 @@
---- third_party/CMakeLists.txt.orig	2025-05-28 14:15:10 UTC
+--- third_party/CMakeLists.txt.orig	2026-09-15 12:18:21 UTC
 +++ third_party/CMakeLists.txt
-@@ -1,5 +1,4 @@ project(third_party)
- project(third_party)
+@@ -5,40 +5,20 @@ endif()
+     return()
+ endif()
+ 
 -include(ExternalProject)
+-
+ set(INSTALL_DIR ${CMAKE_BINARY_DIR}/third_party)
  
- set(DOWNLOAD_SUBDIR downloads)
- set(INSTALL_DIR  ${CMAKE_BINARY_DIR}/third_party)
-@@ -15,27 +14,7 @@ endif()
-     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wno-unused-parameter -Wno-shadow")
- endif()
- 
--set(RAPIDJSON_COMMIT 24b5e7a8b27f42fa16b96fc70aade9106cf7102f)
--ExternalProject_Add(proj_rapidjson
--    URL               https://github.com/Tencent/rapidjson/archive/${RAPIDJSON_COMMIT}.tar.gz
--    INSTALL_DIR       ${INSTALL_DIR}
--    CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
--               -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
--               -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
--               -DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}
--               -DCMAKE_CXX_FLAGS_RELEASE=${CMAKE_CXX_FLAGS_RELEASE}
--               -DCMAKE_CXX_FLAGS_RELWITHDEBINFO=${CMAKE_CXX_FLAGS_RELWITHDEBINFO}
--               -DCMAKE_CXX_FLAGS_DEBUG=${CMAKE_CXX_FLAGS_DEBUG}
--               -DCMAKE_OSX_ARCHITECTURES=${CMAKE_OSX_ARCHITECTURES}
--               -DCMAKE_POLICY_VERSION_MINIMUM=3.5
--    BUILD_COMMAND     ""
--    INSTALL_COMMAND   ${CMAKE_COMMAND} -E copy_directory "<SOURCE_DIR>/include/" "<INSTALL_DIR>/include/"
--)
--add_library(lib_rapidjson INTERFACE IMPORTED GLOBAL)
--target_include_directories(lib_rapidjson INTERFACE ${INSTALL_DIR}/include)
--add_dependencies(lib_rapidjson proj_rapidjson)
--target_compile_definitions(lib_rapidjson INTERFACE RAPIDJSON_HAS_STDSTRING=1)
--set_target_properties(proj_rapidjson PROPERTIES EXCLUDE_FROM_ALL TRUE)
-+find_package(RapidJSON)
- 
- if(NOT MSVC)
-     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -fPIC")
-@@ -43,95 +22,20 @@ endif()
-     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fPIC")
- endif()
+ # Work around imported include directories having to exist at configure time.
+ file(MAKE_DIRECTORY ${INSTALL_DIR}/include)
  
 -if(CMAKE_BUILD_TYPE MATCHES Debug)
 -    set(LIBGTEST_FILENAME ${CMAKE_STATIC_LIBRARY_PREFIX}gtestd${CMAKE_STATIC_LIBRARY_SUFFIX})
@@ -49,7 +21,11 @@
 +if(lib_gmock)
 +    list(APPEND LIBDDWAF_INTERFACE_LIBRARIES lib_gmock)
  endif()
--
++find_library(lib_gtest gtest)
++if(lib_gtest)
++    list(APPEND LIBDDWAF_INTERFACE_LIBRARIES lib_gtest)
++endif()
+ 
 -set(GOOGLETEST_COMMIT 955c7f837efad184ec63e771c42542d37545eaef)
 -ExternalProject_Add(proj_gtest
 -    URL         https://github.com/google/googletest/archive/${GOOGLETEST_COMMIT}.tar.gz
@@ -69,18 +45,11 @@
 -                BUILD_BYPRODUCTS ${INSTALL_DIR}/lib/${LIBGTEST_FILENAME} ${INSTALL_DIR}/lib/${LIBGMOCK_FILENAME}
 -)
 -
--add_library(lib_gtest STATIC IMPORTED GLOBAL)
--add_library(lib_gmock STATIC IMPORTED GLOBAL)
--set_property(TARGET lib_gtest PROPERTY IMPORTED_LOCATION ${INSTALL_DIR}/lib/${LIBGTEST_FILENAME})
--set_property(TARGET lib_gmock PROPERTY IMPORTED_LOCATION ${INSTALL_DIR}/lib/${LIBGMOCK_FILENAME})
--target_include_directories(lib_gtest INTERFACE ${INSTALL_DIR}/include)
--target_include_directories(lib_gmock INTERFACE ${INSTALL_DIR}/include)
--if(NOT MSVC)
--    target_link_libraries(lib_gtest INTERFACE -lpthread)
--    target_link_libraries(lib_gmock INTERFACE -lpthread)
-+find_library(lib_gtest gtest)
-+if(lib_gtest)
-+    list(APPEND LIBDDWAF_INTERFACE_LIBRARIES lib_gtest)
+ add_library(lib_gtest STATIC IMPORTED GLOBAL)
+ add_library(lib_gmock STATIC IMPORTED GLOBAL)
+ set_property(TARGET lib_gtest PROPERTY IMPORTED_LOCATION ${INSTALL_DIR}/lib/${LIBGTEST_FILENAME})
+@@ -50,57 +30,11 @@ endif()
+     target_link_libraries(lib_gmock INTERFACE -lpthread)
  endif()
  
 -add_dependencies(lib_gtest proj_gtest)
@@ -124,7 +93,7 @@
 -                BUILD_BYPRODUCTS ${INSTALL_DIR}/lib/${LIBYAML_FILENAME}
 -)
 -add_library(lib_yamlcpp STATIC IMPORTED GLOBAL)
--set_target_properties(lib_yamlcpp PROPERTIES  IMPORTED_LOCATION ${INSTALL_DIR}/lib/${LIBYAML_FILENAME})
+-set_target_properties(lib_yamlcpp PROPERTIES IMPORTED_LOCATION ${INSTALL_DIR}/lib/${LIBYAML_FILENAME})
 -target_include_directories(lib_yamlcpp INTERFACE ${INSTALL_DIR}/include)
 -add_dependencies(lib_yamlcpp proj_yamlcpp)
 -set_target_properties(lib_yamlcpp proj_yamlcpp PROPERTIES EXCLUDE_FROM_ALL TRUE)
