@@ -11,6 +11,8 @@ WWW=		https://github.com/utahta/pythonbrew
 
 LICENSE=	MIT
 
+BROKEN=		Fails to build, AttributeError: module 'configparser' has no attribute 'SafeConfigParser'
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
