@@ -1,0 +1,5 @@
+Box is a Python dictionary subclass that provides dot notation access to
+its keys, while behaving like a standard dict in every other respect.
+
+It supports conversion helpers for JSON, YAML, TOML and msgpack, along
+with frozen, default and transformation box types.

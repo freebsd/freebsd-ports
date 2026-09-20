@@ -6040,6 +6040,7 @@
     SUBDIR += py-pytest-xprocess
     SUBDIR += py-pytest_httpserver
     SUBDIR += py-python-application
+    SUBDIR += py-python-box
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-dateutil
     SUBDIR += py-python-dbusmock
