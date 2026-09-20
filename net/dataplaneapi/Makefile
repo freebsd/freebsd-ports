@@ -1,7 +1,6 @@
 PORTNAME=	dataplaneapi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.2
-PORTREVISION=	1
+DISTVERSION=	3.4.3
 CATEGORIES=	net
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -35,7 +34,7 @@ OPTIONS_DEFINE=	DOCS
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse --short HEAD'
 # in the Data Plane API repository to get the value of GITID.
-GITID=		8613429f
+GITID=		f21d93ab
 
 BUILD_DATE=	$$(date -u "+%Y-%m-%dT%H:%M:%SZ")
 
