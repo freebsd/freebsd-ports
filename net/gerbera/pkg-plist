@@ -2,6 +2,7 @@ bin/gerbera
 %%DATADIR%%/config2.xsd
 %%DATADIR%%/js/audio.js
 %%DATADIR%%/js/common.js
+%%DATADIR%%/js/cuesheet.js
 %%DATADIR%%/js/image.js
 %%DATADIR%%/js/import.js
 %%DATADIR%%/js/metadata.js
