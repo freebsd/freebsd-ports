@@ -1,8 +1,10 @@
 PORTNAME=	popt
-DISTVERSION=	1.19.20260818
+PORTVERSION=	1.19
+PORTREVISION=	2
+PORTEPOCH=	1
 CATEGORIES=	devel
-#MASTER_SITES=	https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/ \
-#		http://ftp.rpm.org/popt/releases/popt-1.x/
+MASTER_SITES=	https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/ \
+		http://ftp.rpm.org/popt/releases/popt-1.x/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Getopt(3) like library with a number of enhancements, from Redhat
@@ -11,17 +13,19 @@ WWW=		https://github.com/rpm-software-management/popt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing cpe iconv pathfix
-CPE_VENDOR=	popt_project
+USES=		cpe iconv libtool
+
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	rpm-software-management
-GH_TAGNAME=	14c42b4
+CPE_VENDOR=	popt_project
 
-CMAKE_ON=	MAKE_DISABLE_FIND_PACKAGE_Doxygen
+OPTIONS_DEFINE=	NLS
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/popt.3 ${STAGEDIR}${PREFIX}/share/man/man3
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext-runtime localbase
+OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>
