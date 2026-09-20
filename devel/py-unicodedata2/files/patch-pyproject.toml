@@ -1,0 +1,33 @@
+--- pyproject.toml.orig	2026-09-18 12:23:00 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@
+ # setuptools 77.0.1 is the first release that combines declarative ``ext-modules``
+ # (added in 74.1) with PEP 639 license metadata, which is what lets this
+ # project drop setup.py entirely.
+-requires = ["setuptools>=77.0.1"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -13,8 +13,7 @@ authors = [
+ authors = [
+     { name = "Mike Kaplinskiy", email = "mike.kaplinskiy@gmail.com" },
+ ]
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = { text = "Apache-2.0" }
+ # README.md and CHANGELOG.md are concatenated so both are shown on PyPI.
+ dynamic = ["readme"]
+ 
+@@ -47,11 +46,3 @@ readme = { file = ["README.md", "CHANGELOG.md"], conte
+ 
+ [tool.setuptools.dynamic]
+ readme = { file = ["README.md", "CHANGELOG.md"], content-type = "text/markdown" }
+-
+-[[tool.setuptools.ext-modules]]
+-name = "unicodedata2"
+-sources = [
+-    "unicodedata2/unicodedata.c",
+-    "unicodedata2/unicodectype.c",
+-]
+-include-dirs = ["unicodedata2"]
