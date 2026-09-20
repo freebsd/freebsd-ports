@@ -1,0 +1,6 @@
+Tavern is a pytest plugin and command-line tool for automated testing of
+RESTful APIs.  Tests are written in YAML, describing the requests to send
+and the responses to expect, so API behaviour can be verified without
+writing Python code.
+
+It also supports MQTT, GraphQL and gRPC testing through optional extras.

@@ -6316,6 +6316,7 @@
     SUBDIR += py-tasklib
     SUBDIR += py-tatsu
     SUBDIR += py-tatsu-lts
+    SUBDIR += py-tavern
     SUBDIR += py-tblib
     SUBDIR += py-tdworkflow
     SUBDIR += py-telepath
