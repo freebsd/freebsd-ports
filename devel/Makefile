@@ -6370,6 +6370,7 @@
     SUBDIR += py-tree-format
     SUBDIR += py-tree-sitter
     SUBDIR += py-tree-sitter-bash
+    SUBDIR += py-tree-sitter-c
     SUBDIR += py-tree-sitter-css
     SUBDIR += py-tree-sitter-go
     SUBDIR += py-tree-sitter-javascript
