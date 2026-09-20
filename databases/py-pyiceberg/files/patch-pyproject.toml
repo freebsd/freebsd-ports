@@ -1,6 +1,8 @@
---- pyproject.toml.orig	2026-02-26 18:25:49 UTC
+-- Adjust pyproject metadata for the FreeBSD ports setuptools toolchain.
+
+--- pyproject.toml.orig	2026-09-20 01:25:18 UTC
 +++ pyproject.toml
-@@ -21,8 +21,6 @@ readme = "README.md"
+@@ -21,8 +21,6 @@
  authors = [{ name = "Apache Software Foundation", email = "dev@iceberg.apache.org" }]
  requires-python = ">=3.10.0,<4.0.0"
  readme = "README.md"
@@ -13,7 +15,7 @@
  ]
  
  [build-system]
--requires = ["setuptools>=80", "wheel", "Cython>=3.0.0"]
+-requires = ["setuptools>=83.0.0", "wheel", "Cython>=3.0.0"]
 +requires = ["setuptools", "wheel", "Cython>=3.0.0"]
  build-backend = "setuptools.build_meta"
  

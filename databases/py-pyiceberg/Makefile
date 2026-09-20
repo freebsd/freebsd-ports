@@ -1,5 +1,5 @@
 PORTNAME=	pyiceberg
-DISTVERSION=	0.11.1
+DISTVERSION=	0.12.0
 CATEGORIES=	databases python # dataset access library - close enough to 'databases'
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ COMMENT=	Library to access Apache Iceberg datasets
 WWW=		https://py.iceberg.apache.org/ \
 		https://github.com/apache/iceberg-python
 
-LICENSE=	MIT
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
