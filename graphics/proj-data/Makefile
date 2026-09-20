@@ -1,5 +1,5 @@
 PORTNAME=	proj-data
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/ \
 		https://github.com/OSGeo/PROJ-data/releases/download/${PORTVERSION}.0/

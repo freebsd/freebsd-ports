@@ -76,6 +76,8 @@
 %%DATADIR%%/ch_swisstopo_README.txt
 %%DATADIR%%/ch_swisstopo_chgeo2004_ETRS89_LHN95.tif
 %%DATADIR%%/ch_swisstopo_chgeo2004_ETRS89_LN02.tif
+%%DATADIR%%/co_igac_QGeoidCOL2023.tif
+%%DATADIR%%/co_igac_README.txt
 %%DATADIR%%/copyright_and_licenses.csv
 %%DATADIR%%/cz_cuzk_CR-2005.tif
 %%DATADIR%%/cz_cuzk_README.txt
@@ -97,6 +99,8 @@
 %%DATADIR%%/dk_kds_README.txt
 %%DATADIR%%/dk_kds_dvr90_evrf2019.tif
 %%DATADIR%%/dk_kds_dvr90_evrf2019_mean_tide.tif
+%%DATADIR%%/dk_kds_gllat_2025.tif
+%%DATADIR%%/dk_kds_glmsl_2025.tif
 %%DATADIR%%/dk_sdfe_DK_bornholm.pol
 %%DATADIR%%/dk_sdfe_DK_bridges.pol
 %%DATADIR%%/dk_sdfe_DK_general.pol
@@ -230,6 +234,7 @@
 %%DATADIR%%/no_kv_ETRS89NO_NGO48_TIN.json
 %%DATADIR%%/no_kv_HREF2018B_NN2000_EUREF89.tif
 %%DATADIR%%/no_kv_HREF2018B_NN54_NN2000.tif
+%%DATADIR%%/no_kv_HREF2025A_NN2000_EUREF89.tif
 %%DATADIR%%/no_kv_NKGETRF14_EPSG7922_2000.tif
 %%DATADIR%%/no_kv_README.txt
 %%DATADIR%%/no_kv_Svalbard_EUREF89_SVD2024.tif
