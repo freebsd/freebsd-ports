@@ -1,5 +1,5 @@
 PORTNAME=	datasette
-PORTVERSION=	0.65.4
+PORTVERSION=	0.65.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>=0.4:devel/py-aiofiles@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}click-default-group>=1.2.3:devel/py-click-default-group@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flexcache>=0.3:devel/py-flexcache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flexparser>=0.3:devel/py-flexparser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0.20:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx>=0.20<1.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hupper>=1.9:devel/py-hupper@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}itsdangerous>=1.1:security/py-itsdangerous@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}janus>=0.6.2:devel/py-janus@${PY_FLAVOR} \
