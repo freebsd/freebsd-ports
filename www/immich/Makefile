@@ -1,7 +1,7 @@
 PORTNAME=	immich
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
 DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libheif.so:graphics/libheif \
 		libvips.so:graphics/vips
 RUN_DEPENDS=	${LOCALBASE}/bin/gzip:archivers/gzip \
 		exiftool:graphics/p5-Image-ExifTool \
-		ffmpeg:multimedia/ffmpeg
+		${LOCALBASE}/bin/jellyfin-ffmpeg8:multimedia/jellyfin-ffmpeg
 
 USES=		cpe gettext-runtime gmake gnome nodejs:22,build,run pgsql:14+ \
 		pkgconfig python:build

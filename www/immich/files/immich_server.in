@@ -37,7 +37,9 @@ load_rc_config $name
 	IMMICH_BUILD_DATA=%%PREFIX%%/www/immich/build-data \
 	IMMICH_MEDIA_LOCATION=${immich_server_media_location} \
 	IMMICH_HOST=${immich_server_host} \
-	IMMICH_PORT=${immich_server_port}"}
+	IMMICH_PORT=${immich_server_port} \
+	FFMPEG_PATH=%%PREFIX%%/bin/jellyfin-ffmpeg8 \
+	FFPROBE_PATH=%%PREFIX%%/bin/jellyfin-ffprobe8"}
 
 pidfile=/var/run/immich/${name}.pid
 childpidfile=/var/run/immich/${name}_child.pid
