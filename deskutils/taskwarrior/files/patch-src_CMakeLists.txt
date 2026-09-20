@@ -1,0 +1,19 @@
+Do not compile the path to the rc files in the source tree into the task
+binary.  Upstream enables this whenever CMAKE_BUILD_TYPE is Debug (or unset)
+so that in-tree test runs find doc/rc/default.theme, but the resulting binary
+writes an "include <WRKSRC>/doc/rc/default.theme" line into every ~/.taskrc
+it creates, which breaks WITH_DEBUG builds of the port once the work
+directory is gone.  The port's test setup copies the rc files into the test
+sandbox instead (see files/patch-test_bash__tap__tw.sh and do-test).
+
+--- src/CMakeLists.txt.orig	2026-08-16 19:02:36 UTC
++++ src/CMakeLists.txt
+@@ -73,8 +73,3 @@
+ #SET(CMAKE_CXX_FLAGS_GCOV "--coverage")
+ #SET(CMAKE_C_FLAGS_GCOV "--coverage")
+ #SET(CMAKE_EXE_LINKER_FLAGS_GCOV "--coverage")
+-if (CMAKE_BUILD_TYPE STREQUAL "Debug" OR NOT CMAKE_BUILD_TYPE)
+-    target_compile_definitions(task PRIVATE
+-        -DTASK_TEST_RCDIR="${CMAKE_SOURCE_DIR}/doc/rc"
+-    )
+-endif ()

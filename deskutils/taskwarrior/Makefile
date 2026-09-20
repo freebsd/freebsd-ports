@@ -33,8 +33,7 @@ GH_SUBDIR=	src/libshared:libshared
 CMAKE_ON=	SYSTEM_CORROSION
 CMAKE_ARGS+=	-DTASK_DOCDIR:STRING=${DATADIR:S/${PREFIX}\///} \
 		-DTASK_MAN1DIR:STRING=share/man/man1 \
-		-DTASK_MAN5DIR:STRING=share/man/man5 \
-		-DCMAKE_BUILD_TYPE=release
+		-DTASK_MAN5DIR:STRING=share/man/man5
 
 SHEBANG_FILES=	test/*.test.py
 
@@ -60,4 +59,12 @@ do-test:
 	@${CP} ${WRKSRC}/doc/rc/* ${TEST_WRKSRC}/test/
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ctest -j${MAKE_JOBS_NUMBER} --output-on-failure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# i386 has a 32-bit time_t; the braced init in Datetime::operator+/- then
+# narrows int64_t -> time_t, which clang rejects with -Wc++11-narrowing.
+.if ${ARCH} == i386
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src_libshared_src_Datetime.cpp
+.endif
+
+.include <bsd.port.post.mk>
