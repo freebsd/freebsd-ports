@@ -1,5 +1,5 @@
 PORTNAME=	setuptools-dso
-DISTVERSION=	2.12.3
+DISTVERSION=	2.12.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,10 +19,10 @@ RUN_DEPENDS=	${PY_SETUPTOOLS}
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
-TEST_ARGS=	-p no:relaxed
+TEST_ARGS=	--disable-plugin-autoload
 
 NO_ARCH=	yes
 
-# tests as of 2.12.3: 7 passed, 1 warning in 1.11s
+# tests as of 2.12.4: 7 passed, 1 warning in 0.81s
 
 .include <bsd.port.mk>
