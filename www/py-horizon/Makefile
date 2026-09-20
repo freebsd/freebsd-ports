@@ -1,5 +1,5 @@
 PORTNAME=	horizon
-PORTVERSION=	26.0.0
+PORTVERSION=	27.0.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.6.0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=4.5.0:devel/py-oslo.concurrency@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.config>=8.8.0:devel/py-oslo.config@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=5.1.0:devel/py-oslo.i18n@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oslo.policy>=3.11.0:devel/py-oslo.policy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.policy>=4.5.1:devel/py-oslo.policy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.serialization>=4.3.0:devel/py-oslo.serialization@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.upgradecheck>=1.5.0:devel/py-oslo.upgradecheck@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=7.0.0:devel/py-oslo.utils@${PY_FLAVOR} \
@@ -44,7 +44,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.6.0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qrcode>=8.2:textproc/py-qrcode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.25.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semantic-version>=2.3.1:devel/py-semantic-version@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xstatic>=1.0.3:devel/py-xstatic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-angular>=1.8.2.2:devel/py-xstatic-angular@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-angular-bootstrap>=2.2.0.0:devel/py-xstatic-angular-bootstrap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xstatic-angular-fileupload>=12.0.4.0:devel/py-xstatic-angular-fileupload@${PY_FLAVOR} \
