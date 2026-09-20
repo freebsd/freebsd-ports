@@ -1,6 +1,6 @@
 PORTNAME=	flameshot
-PORTVERSION=	14.0.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	15.0.rc1
 CATEGORIES=	deskutils wayland
 
 MAINTAINER=	nivit@FreeBSD.org
