@@ -1,6 +1,5 @@
 PORTNAME=	suricata
-DISTVERSION=	8.0.6
-PORTREVISION=	3
+DISTVERSION=	8.0.7
 CATEGORIES=	security
 MASTER_SITES=	https://www.openinfosecfoundation.org/download/
 
@@ -110,6 +109,8 @@ post-install:
 .for f in suricata.yaml threshold.config
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 .endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/suricatactl
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/suricatasc
 
 post-install-PYTHON-on:
 	(cd ${STAGEDIR}${PREFIX} \
