@@ -1,5 +1,5 @@
 PORTNAME=	symfpu
-DISTVERSION=	g20190517
+DISTVERSION=	g20260513
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	martin-cs
-GH_TAGNAME=	c3acaf6
+GH_TAGNAME=	40bdec00e99f8ea1b96c3dac0a05eed11c541639
 
 ALL_TARGET=	subdirs symfpu.a
 MAKE_ARGS=	SUBDIRS=baseTypes
