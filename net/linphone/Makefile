@@ -1,6 +1,9 @@
 PORTNAME=	linphone
 DISTVERSION=	6.1.2
 CATEGORIES=	net
+# XXX: Linphone GitLab instance seems unstable
+#      and sometimes refuses connections.
+MASTER_SITES=	LOCAL/0mp
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
 COMMENT=	Qt 6 desktop SIP client for voice, video, and messaging
