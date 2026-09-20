@@ -1,6 +1,6 @@
 PORTNAME=	fluidsynth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.7
+DISTVERSION=	2.6.1
 CATEGORIES=	audio
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -12,13 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gcem>0:devel/gcem
 
-USES=		cmake compiler:c++17-lang cpe pathfix pkgconfig
+USES=		cmake:insource compiler:c++17-lang cpe pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FluidSynth
 
-CMAKE_OFF=	enable-libinstpatch
+TEST_TARGET=	check
+
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Doxygen \
 		CMAKE_DISABLE_FIND_PACKAGE_Git
 CMAKE_ARGS=	-Dosal=cpp11
