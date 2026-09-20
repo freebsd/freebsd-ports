@@ -1,3 +1,3 @@
-TIMESTAMP = 1788738101
-SHA256 (libpcap-1.10.7.tar.gz) = 0b394ac90dbc0a9838ff97468e05c9c9a3e873dec2514cd58db65d859d296e31
-SIZE (libpcap-1.10.7.tar.gz) = 994575
+TIMESTAMP = 1789423638
+SHA256 (libpcap-1.11.0.tar.gz) = 596389bc8560ea027dff9db8aaf6c173d992366d9aef4baf5d7c6d180b4d49ad
+SIZE (libpcap-1.11.0.tar.gz) = 1052416
