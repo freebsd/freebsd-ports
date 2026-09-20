@@ -2798,6 +2798,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/have_extensions%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/have_file%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/ignored%3f-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/lib_dirs-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/lib_dirs_glob-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/loaded_from-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/BasicSpecification/matches_for_glob-i.ri
@@ -3254,6 +3255,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/run-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/shelljoin-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/shellsplit-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/shellsplit_command-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/DylibNotFoundError/cdesc-DylibNotFoundError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/DylibNotFoundError/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/LinkFlagConverter/cdesc-LinkFlagConverter.ri
@@ -4086,6 +4088,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/DataTooShortError/cdesc-DataTooShortError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/EOFError/cdesc-EOFError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/Error/cdesc-Error.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/LengthTooLongError/cdesc-LengthTooLongError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/NegativeLengthError/cdesc-NegativeLengthError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/NotImplementedError/cdesc-NotImplementedError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/UnconsumedBytesError/cdesc-UnconsumedBytesError.ri
@@ -4099,6 +4102,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/read_bytes-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/read_class-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/read_class_or_module-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/read_count-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/read_data-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/read_element-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/SafeMarshal/Reader/read_extended_object-i.ri
