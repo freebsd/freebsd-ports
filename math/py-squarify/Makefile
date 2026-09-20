@@ -1,6 +1,5 @@
 PORTNAME=	squarify
-DISTVERSION=	0.4.4
-PORTREVISION=	2
+DISTVERSION=	0.4.5
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +16,8 @@ USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
+TEST_ARGS=	--disable-plugin-autoload
+
+# tests as of 0.4.5: 1 passed in 0.01s
 
 .include <bsd.port.mk>
