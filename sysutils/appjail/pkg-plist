@@ -184,15 +184,6 @@ libexec/appjail/mksock/mksock
 %%DATADIR%%/scripts/runas.sh
 %%DATADIR%%/scripts/super-mv.sh
 %%DATADIR%%/scripts/xresize-exec.sh
-%%EXAMPLESDIR%%/appjail.conf
-%%EXAMPLESDIR%%/templates/bridge.conf
-%%EXAMPLESDIR%%/templates/freebsd-oci.conf
-%%EXAMPLESDIR%%/templates/linux.conf
-%%EXAMPLESDIR%%/templates/vnet.conf
-%%EXAMPLESDIR%%/templates/xorg.conf
-%%EXAMPLESDIR%%/hooks/pre.d/history.sh
-%%EXAMPLESDIR%%/hooks/pre.d/security-group.sh
-%%EXAMPLESDIR%%/hooks/pre.d/security-table.sh
 share/man/man1/appjail-apply.1.gz
 share/man/man1/appjail-checkOld.1.gz
 share/man/man1/appjail-cmd.1.gz
