@@ -15,7 +15,8 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=		aarch64 amd64 armv7 i386
 ONLY_FOR_ARCHS_REASON=	requires SSE instructions, which are x86-specific
 
-BROKEN_armv7=	/usr/local/bin/ld: error: unsupported option: -z relro
+BROKEN=		Fails to install properly, install: -o: No such file or directory
+#BROKEN_armv7=	/usr/local/bin/ld: error: unsupported option: -z relro
 
 BUILD_DEPENDS_aarch64=	${LOCALBASE}/include/sse2neon.h:devel/sse2neon
 BUILD_DEPENDS_armv7=	${BUILD_DEPENDS_aarch64}
