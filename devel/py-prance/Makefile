@@ -24,11 +24,12 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	CLI ICU
+OPTIONS_DEFINE=	CLI FAST ICU
 OPTIONS_MULTI=	BACKEND
 OPTIONS_MULTI_BACKEND=	FLEX OSV SSV
 OPTIONS_DEFAULT=OSV
 CLI_DESC=	Command-line interface support
+FAST_DESC=	Fast deepcopy support
 FLEX_DESC=	Use py-flex as backend
 ICU_DESC=	Unicode support
 OSV_DESC=	Use py-openapi-spec-validator as backend
@@ -36,6 +37,7 @@ SSV_DESC=	Use py-swagger-spec-validator as backend
 
 CLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.3.0:devel/py-click@${PY_FLAVOR}
 FLEX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flex>=6.14.1<7:devel/py-flex@${PY_FLAVOR}
+FAST_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}orjson>=3.9:devel/py-orjson@${PY_FLAVOR}
 ICU_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyicu>=2.14<3:devel/py-pyicu@${PY_FLAVOR}
 OSV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openapi-spec-validator>=0.7.1:devel/py-openapi-spec-validator@${PY_FLAVOR}
 SSV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}swagger-spec-validator>=3.0.4<3.1:devel/py-swagger-spec-validator@${PY_FLAVOR}
