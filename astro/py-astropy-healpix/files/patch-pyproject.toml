@@ -1,3 +1,7 @@
+-- Relax the setuptools build requirement to match the ports tree version.
+-- Needed because FreeBSD currently ships devel/py-setuptools 63.1.0 and this port builds fine with it.
+-- This is a local compatibility patch for the FreeBSD ports framework.
+
 --- pyproject.toml.orig	2026-07-07 09:01:45 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@
