@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2026-09-15 16:20:56 UTC
++++ pyproject.toml
+@@ -4,8 +4,7 @@ readme = { file = 'README.md', content-type = 'text/ma
+ urls.Homepage = 'https://github.com/PyYoshi/cChardet'
+ description = 'cChardet is high speed universal character encoding detector.'
+ readme = { file = 'README.md', content-type = 'text/markdown' }
+-license = "MPL-1.1 OR GPL-2.0-or-later OR LGPL-2.1-or-later"
+-license-files = ["COPYING"]
++license = { text = "MPL-1.1 OR GPL-2.0-or-later OR LGPL-2.1-or-later" }
+ classifiers = [
+     'Programming Language :: Cython',
+     'Programming Language :: Python',
+@@ -20,7 +19,7 @@ dynamic = ["version"]
+ dynamic = ["version"]
+ 
+ [build-system]
+-requires = ["setuptools>=77", "Cython>=3.2.9,<3.4"]
++requires = ["setuptools>=61", "Cython>=3.2.9,<3.4"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project.scripts]
