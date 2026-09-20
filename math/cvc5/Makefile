@@ -1,7 +1,6 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.3.4
-PORTREVISION=	1
+DISTVERSION=	1.4.0
 CATEGORIES=	math java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -14,12 +13,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
-		${LOCALBASE}/lib/symfpu.a:math/symfpu \
-		${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR} \
+		${LOCALBASE}/lib/symfpu.a:math/symfpu
 LIB_DEPENDS=	libcadical.so:math/cadical
 
 TEST_ENV=	ARGS=-V
@@ -78,7 +75,7 @@ CRYPTOMINISAT_LIB_DEPENDS=	libcryptominisat5.so:math/cryptominisat
 GLPK_DESC=			Use GLPK simplex solver
 GLPK_CMAKE_BOOL=		USE_GLPK
 GLPK_LIB_DEPENDS=		libglpk.so:math/glpk
-GLPK_BROKEN=		requires GLPK-cut-log patch, see cmake/deps-utils/glpk-cut-log.patch
+GLPK_BROKEN=			requires GLPK-cut-log patch, see cmake/deps-utils/glpk-cut-log.patch
 
 KISSAT_DESC=			Use Kissat solver
 KISSAT_CMAKE_BOOL=		USE_KISSAT
@@ -103,6 +100,6 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 
 PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
 
-# tests as of 1.3.4: 99% tests passed, 6 tests failed out of 4241, see https://github.com/cvc5/cvc5/issues/12662
+# tests as of 1.4.0: 99% tests passed, 9 tests failed out of 4361, see https://github.com/cvc5/cvc5/issues/12958
 
 .include <bsd.port.mk>
