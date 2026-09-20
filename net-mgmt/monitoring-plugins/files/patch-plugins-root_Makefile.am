@@ -1,6 +1,6 @@
---- plugins-root/Makefile.in.orig	2020-12-09 21:48:11 UTC
-+++ plugins-root/Makefile.in
-@@ -1357,10 +1357,6 @@ INSTALL_SUID = \
+--- plugins-root/Makefile.am.orig	2026-09-16 09:21:09 UTC
++++ plugins-root/Makefile.am
+@@ -51,10 +51,6 @@ INSTALL_SUID = \
  	p=$$f; \
  	echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(libexecdir)/$$p"; \
  	$(INSTALL_PROGRAM) $$p $(DESTDIR)$(libexecdir)/$$p; \
@@ -10,10 +10,10 @@
 -	chmod $(setuid_root_mode) $(DESTDIR)$(libexecdir)/$$p; \
  	done
  
- 
-@@ -1795,9 +1791,7 @@ install-exec-local: $(noinst_PROGRAMS)
- 	rm -f $$TMPFILE; \
- 	echo > $$TMPFILE; \
+ install-root: $(noinst_PROGRAMS)
+@@ -67,9 +63,7 @@ install-exec-local: $(noinst_PROGRAMS)
+ 	## See if we can create a setuid root executable in $(libexecdir).
+ 	## If not, then don't even try to install setuid plugins.
  	can_create_suid_root_executable=no; \
 -	chown root $$TMPFILE > /dev/null 2>&1 \
 -	  && chmod $(setuid_root_mode) $$TMPFILE > /dev/null 2>&1 \
