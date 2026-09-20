@@ -1,5 +1,5 @@
 PORTNAME=	httrack
-PORTVERSION=	3.50.2
+PORTVERSION=	3.50.3
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/xroche/httrack/releases/download/${PORTVERSION}/
 

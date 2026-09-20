@@ -59,7 +59,7 @@ lib/httrack/libsimple.so.1.0.0
 lib/libhttrack.a
 lib/libhttrack.so
 lib/libhttrack.so.3
-lib/libhttrack.so.3.0.22
+lib/libhttrack.so.3.0.23
 libdata/pkgconfig/libhttrack.pc
 share/applications/WebHTTrack-Websites.desktop
 share/applications/WebHTTrack.desktop
