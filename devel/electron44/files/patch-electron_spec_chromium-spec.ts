@@ -1,4 +1,4 @@
---- electron/spec/chromium-spec.ts.orig	2026-09-15 22:52:01 UTC
+--- electron/spec/chromium-spec.ts.orig	2026-09-18 15:43:03 UTC
 +++ electron/spec/chromium-spec.ts
 @@ -608,15 +608,15 @@ describe('command line switches', () => {
        testLocale('asdfkl', `${currentLocale}|${currentSystemLocale}|${currentPreferredLanguages}`));
@@ -35,7 +35,7 @@
      'should fall back to Japanese font for sans-serif Japanese script',
      async function () {
        const html = `
-@@ -4946,7 +4946,7 @@ describe('paste execCommand', () => {
+@@ -4972,7 +4972,7 @@ describe('paste execCommand', () => {
    });
  });
  
