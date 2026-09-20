@@ -1,5 +1,5 @@
 PORTNAME=	faraday-http-cache
-PORTVERSION=	2.7.0
+PORTVERSION=	3.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
