@@ -1,15 +1,6 @@
---- CMakeLists.txt.orig	2025-11-22 17:07:34.556416000 -0600
-+++ CMakeLists.txt	2025-11-22 17:08:01.866346000 -0600
-@@ -38,7 +38,7 @@
- set(CMAKE_INSTALL_MESSAGE LAZY)
- 
- set(CMAKE_C_STANDARD 11)
--set(CMAKE_CXX_STANDARD 14)
-+set(CMAKE_CXX_STANDARD 17)
- set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME "netdata")
- 
- option(USE_CXX_11 "Use C++11 instead of C++14 (should only be used on legacy systems that cannot support C++14, may disable some features)" False)
-@@ -80,7 +80,7 @@
+--- CMakeLists.txt.orig	2026-09-16 20:06:49 UTC
++++ CMakeLists.txt
+@@ -86,7 +86,7 @@ endif()
          endif()
  endif()
  
@@ -18,118 +9,79 @@
  set(NETDATA_RUNTIME_PREFIX "${CMAKE_INSTALL_PREFIX}")
  # This can be changed depending on the platform with the include below
  include(NetdataPlatform)
-@@ -93,12 +93,13 @@
+@@ -175,27 +175,21 @@ endif()
    string(REGEX REPLACE "/$" "" NETDATA_RUNTIME_PREFIX "${NETDATA_RUNTIME_PREFIX}")
  endif()
  
 -set(CACHE_DIR "${NETDATA_RUNTIME_PREFIX}/var/cache/netdata")
 -set(CONFIG_DIR "${NETDATA_RUNTIME_PREFIX}/etc/netdata")
--set(LIBCONFIG_DIR "${NETDATA_RUNTIME_PREFIX}/lib/netdata/conf.d")
+-set(LIBCONFIG_DIR "${NETDATA_RUNTIME_PREFIX}/usr/lib/netdata/conf.d")
 -set(LOG_DIR "${NETDATA_RUNTIME_PREFIX}/var/log/netdata")
--set(PLUGINS_DIR "${NETDATA_RUNTIME_PREFIX}/libexec/netdata/plugins.d")
+-set(PLUGINS_DIR "${NETDATA_RUNTIME_PREFIX}/usr/libexec/netdata/plugins.d")
 +set(CACHE_DIR "%%NETDATA_CACHE%%")
 +set(CONFIG_DIR "%%ETCDIR%%")
 +set(LIBCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/lib/netdata/conf.d")
 +set(LOG_DIR "%%NETDATA_LOG%%")
 +set(PLUGINS_DIR "${CMAKE_INSTALL_PREFIX}/libexec/netdata/plugins.d")
- set(VARLIB_DIR "${NETDATA_RUNTIME_PREFIX}/var/lib/netdata")
+ set(STOCK_DATA_DEST "share/netdata")
+-set(STOCK_DATA_DIR "${NETDATA_RUNTIME_PREFIX}/${STOCK_DATA_DEST}")
+-set(VARLIB_DIR "${NETDATA_RUNTIME_PREFIX}/var/lib/netdata")
+-set(NETDATA_BIN_DIR "${NETDATA_RUNTIME_PREFIX}/${BINDIR}")
+-if(NOT DEFINED NETDATA_TOPOLOGY_IP_INTEL_STOCK_DIR)
+-  set(NETDATA_TOPOLOGY_IP_INTEL_STOCK_DIR "")
+-endif()
++set(STOCK_DATA_DIR "${CMAKE_INSTALL_PREFIX}/share/netdata")
 +set(VARLIB_DIR "%%NETDATA_PERST%%")
- set(NETDATA_BIN_DIR "${NETDATA_RUNTIME_PREFIX}/${BINDIR}")
++set(NETDATA_BIN_DIR "${CMAKE_INSTALL_PREFIX}/sbin")
  
- # A non-default value is only used when building Debian packages (/var/lib/netdata/www)
-@@ -187,6 +188,7 @@
+-# A non-default value is only used when building Debian packages (/var/lib/netdata/www)
+ if(NOT DEFINED WEB_DIR)
+   set(WEB_DIR "share/netdata/web")
+-else()
+-  string(REGEX REPLACE "^/" "" WEB_DIR "${WEB_DIR}")
+ endif()
+ set(WEB_DEST "${WEB_DIR}")
+-set(WEB_DIR "${NETDATA_RUNTIME_PREFIX}/${WEB_DEST}")
++set(WEB_DIR "${CMAKE_INSTALL_PREFIX}/${WEB_DEST}")
+ 
+ # This is intended to make life easier for developers who are working on one
+ # specific feature.
+@@ -325,14 +319,9 @@ if(ENABLE_NETDATA_JOURNAL_FILE_READER OR ENABLE_PLUGIN
  
  # Setup Rust/Corrosion for plugins that need it
- if(ENABLE_NETDATA_JOURNAL_FILE_READER OR ENABLE_PLUGIN_OTEL)
-+    #[[
-     include(FetchContent)
-     FetchContent_Declare(
-         Corrosion
-@@ -194,6 +196,8 @@
-         GIT_TAG f3b91559efca32c6b54837866ef35ba98ff5b2ca # stable/v0.5
-     )
-     FetchContent_MakeAvailable(Corrosion)
-+    ]]
+ if(ENABLE_NETDATA_JOURNAL_FILE_READER OR ENABLE_PLUGIN_OTEL OR ENABLE_PLUGIN_NETFLOW)
+-    include(FetchContent)
+-    FetchContent_Declare(
+-        Corrosion
+-        GIT_REPOSITORY https://github.com/netdata/corrosion.git
+-        GIT_TAG f3b91559efca32c6b54837866ef35ba98ff5b2ca # stable/v0.5
+-    )
+-    FetchContent_MakeAvailable(Corrosion)
+ 
 +    find_package(Corrosion REQUIRED)
-     corrosion_import_crate(MANIFEST_PATH src/crates/jf/Cargo.toml
-                            CRATES journal_reader_ffi otel-plugin)
- endif()
-@@ -370,7 +374,7 @@
- include(NetdataJSONC)
- include(NetdataYAML)
- include(NetdataBacktrace)
--include(NetdataDlib)
-+#include(NetdataDlib)
++
+     # Corrosion places cargo build artifacts under ${CMAKE_BINARY_DIR}/cargo/
+     # (see Corrosion.cmake cargo_target_dir). Register it for cleanup so that
+     # `ninja clean` removes it.  If a future Corrosion version changes this
+@@ -4060,9 +4049,9 @@ install(DIRECTORY COMPONENT netdata DESTINATION ${WEB_
+ install(DIRECTORY COMPONENT netdata DESTINATION libexec/netdata/plugins.d)
+ install(DIRECTORY COMPONENT netdata DESTINATION ${WEB_DEST})
  
- if(ENABLE_LEGACY_EBPF_PROGRAMS)
-         include(NetdataEBPFLegacy)
-@@ -395,9 +399,9 @@
-         netdata_bundle_sentry()
- endif()
- 
--if(ENABLE_ML)
--  netdata_bundle_dlib()
--endif()
-+#if(ENABLE_ML)
-+#  netdata_bundle_dlib()
-+#endif()
- 
- #
- # check include files
-@@ -3016,9 +3020,9 @@
-         "$<$<BOOL:${OS_WINDOWS}>:${NETDATA_RES_FILES}>"
- )
- 
--if(ENABLE_ML)
--  netdata_add_dlib_to_target(netdata)
--endif()
-+#if(ENABLE_ML)
-+#  netdata_add_dlib_to_target(netdata)
-+#endif()
- 
- if(OS_WINDOWS)
-         add_executable(NetdataClaim ${CLAIM_WINDOWS_FILES} ${NETDATA_CLAIM_RES_FILES})
-@@ -3177,6 +3181,7 @@
-             DESTINATION libexec/netdata/plugins.d)
- 
-     # Build and install nd-mcp (stdio-golang bridge) exactly like go.d.plugin
-+#[[
-     if (OS_WINDOWS)
-         set(ND_MCP_NAME nd-mcp.exe)
-     else()
-@@ -3188,6 +3193,7 @@
-             ${CMAKE_BINARY_DIR}/${ND_MCP_NAME}
-             COMPONENT plugin-go
-             DESTINATION "${BINDIR}")
-+]]
+-set(libsysdir_POST "${NETDATA_RUNTIME_PREFIX}/usr/lib/netdata/system")
+-set(pkglibexecdir_POST "${NETDATA_RUNTIME_PREFIX}/usr/libexec/netdata")
+-set(localstatedir_POST "${NETDATA_RUNTIME_PREFIX}/var")
++set(libsysdir_POST "${CMAKE_INSTALL_PREFIX}/lib/netdata/system")
++set(pkglibexecdir_POST "${CMAKE_INSTALL_PREFIX}/libexec/netdata")
++set(localstatedir_POST "/var")
+ set(sbindir_POST "${NETDATA_BIN_DIR}")
+ set(configdir_POST "${CONFIG_DIR}")
+ set(libconfigdir_POST "${LIBCONFIG_DIR}")
+@@ -4331,7 +4320,7 @@ else()
+ if(BUILD_FOR_PACKAGING)
+         set(NETDATA_CONF_DEST "etc/netdata")
+ else()
+-        set(NETDATA_CONF_DEST "usr/lib/netdata/conf.d")
++        set(NETDATA_CONF_DEST "lib/netdata/conf.d")
  endif()
  
  #
-@@ -3289,11 +3295,11 @@
- 
- install(TARGETS netdata COMPONENT netdata DESTINATION "${BINDIR}")
- 
--install(DIRECTORY COMPONENT netdata DESTINATION var/cache/netdata)
--install(DIRECTORY COMPONENT netdata DESTINATION var/log/netdata)
--install(DIRECTORY COMPONENT netdata DESTINATION var/lib/netdata/registry)
--install(DIRECTORY COMPONENT netdata DESTINATION var/lib/netdata/cloud.d)
--install(DIRECTORY COMPONENT netdata DESTINATION var/run/netdata)
-+install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_CACHE%%)
-+install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_LOG%%)
-+install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_PERST%%/registery)
-+install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_PERST%%/cloud.d)
-+install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_RUN%%)
- install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata)
- install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata/custom-plugins.d)
- install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata/health.d)
-@@ -3847,8 +3853,8 @@
- #
- 
- if(ENABLE_DASHBOARD)
--  include(NetdataDashboard)
--  bundle_dashboard()
-+  #include(NetdataDashboard)
-+  #bundle_dashboard()
- 
-   install(FILES
-           COMPONENT dashboard

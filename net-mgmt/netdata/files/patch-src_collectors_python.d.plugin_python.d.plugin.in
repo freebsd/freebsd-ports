@@ -1,7 +1,7 @@
---- src/collectors/python.d.plugin/python.d.plugin.in.orig	2025-01-02 17:07:23 UTC
+--- src/collectors/python.d.plugin/python.d.plugin.in.orig	2026-08-13 15:34:20 UTC
 +++ src/collectors/python.d.plugin/python.d.plugin.in
 @@ -1,6 +1,6 @@
- #!/usr/bin/env bash
+ #!/usr/local/bin/bash
  '''':;
 -pybinary=$(which python3 || which python || which python2)
 +pybinary=$(which %%PYTHON_VERSION%% || which python || which python2)
