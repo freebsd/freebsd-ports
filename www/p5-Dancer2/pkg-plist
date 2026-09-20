@@ -63,7 +63,6 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Manual/Tutorial.pod
 %%SITE_PERL%%/Dancer2/Plugin.pm
 %%SITE_PERL%%/Dancer2/Policy.pod
-%%SITE_PERL%%/Dancer2/Serializer/Dumper.pm
 %%SITE_PERL%%/Dancer2/Serializer/JSON.pm
 %%SITE_PERL%%/Dancer2/Serializer/Mutable.pm
 %%SITE_PERL%%/Dancer2/Serializer/YAML.pm
@@ -73,6 +72,7 @@ bin/dancer2
 %%SITE_PERL%%/Dancer2/Template/Tiny.pm
 %%SITE_PERL%%/Dancer2/Test.pm
 %%SITE_PERL%%/auto/share/dist/Dancer2/docker/Dockerfile
+%%SITE_PERL%%/auto/share/dist/Dancer2/gitignore
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/default/.dancer
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/default/MANIFEST.SKIP
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/default/Makefile.PL
@@ -101,9 +101,6 @@ bin/dancer2
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/tutorial/db/blog.db
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/tutorial/db/entries.sql
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/tutorial/db/users.sql
-%%SITE_PERL%%/auto/share/dist/Dancer2/skel/tutorial/environments/development.yml
-%%SITE_PERL%%/auto/share/dist/Dancer2/skel/tutorial/environments/production.yml
-%%SITE_PERL%%/auto/share/dist/Dancer2/skel/tutorial/environments/test.yml
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/tutorial/lib/AppFile.pm
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/tutorial/lib/AppFile/Schema.pm
 %%SITE_PERL%%/auto/share/dist/Dancer2/skel/tutorial/lib/AppFile/Schema/Result/Entry.pm
@@ -191,7 +188,6 @@ bin/dancer2
 %%PERL5_MAN3%%/Dancer2::Manual::Tutorial.3.gz
 %%PERL5_MAN3%%/Dancer2::Plugin.3.gz
 %%PERL5_MAN3%%/Dancer2::Policy.3.gz
-%%PERL5_MAN3%%/Dancer2::Serializer::Dumper.3.gz
 %%PERL5_MAN3%%/Dancer2::Serializer::JSON.3.gz
 %%PERL5_MAN3%%/Dancer2::Serializer::Mutable.3.gz
 %%PERL5_MAN3%%/Dancer2::Serializer::YAML.3.gz

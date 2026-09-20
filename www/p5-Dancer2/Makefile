@@ -1,5 +1,5 @@
 PORTNAME=	Dancer2
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CROMEDOME
@@ -15,10 +15,10 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	p5-CLI-Osprey>=0:devel/p5-CLI-Osprey \
+RUN_DEPENDS=	p5-CLI-Osprey>=0.09:devel/p5-CLI-Osprey \
 		p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny \
 		p5-Clone>=0:devel/p5-Clone \
-		p5-Crypt-URandom>=0:security/p5-Crypt-URandom \
+		p5-Crypt-URandom>=0.36:security/p5-Crypt-URandom \
 		p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-Data-Censor>=0:devel/p5-Data-Censor \
 		p5-File-Share>=0:devel/p5-File-Share \
@@ -47,7 +47,7 @@ RUN_DEPENDS=	p5-CLI-Osprey>=0:devel/p5-CLI-Osprey \
 		p5-Type-Tiny>=1.000006:devel/p5-Type-Tiny \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww \
-		p5-YAML>=0.86:textproc/p5-YAML
+		p5-YAML>=1.30:textproc/p5-YAML
 TEST_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Exporter-Tiny>=0:devel/p5-Exporter-Tiny \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
