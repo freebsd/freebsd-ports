@@ -1,0 +1,52 @@
+PORTNAME=	libfive
+DISTVERSION=	g20251112
+CATEGORIES=	cad
+
+MAINTAINER=	hiroo.ono+freebsd@gmail.com
+COMMENT=	Infrastructure for solid modeling
+WWW=		https://libfive.com/
+
+LICENSE=	GPLv2+ MPL20
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/README.md
+
+BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Core:math/eigen3 \
+		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
+LIB_DEPENDS=	libboost_container.so:devel/boost-libs \
+		libpng16.so:graphics/png
+
+USES=		cmake gl pkgconfig
+USE_GITHUB=	yes
+GH_TAGNAME=	c9e97343e0af998cd1696e85583eccba95532b96
+USE_GL=		opengl
+USE_QT=		3d base
+
+CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR:STRING=lib
+CMAKE_ON=	${WITH_DEBUG:DENABLE_DEBUG}
+
+OPTIONS_DEFINE=		GUILE PYTHON STUDIO
+OPTIONS_DEFAULT=	GUILE PYTHON STUDIO
+OPTIONS_SUB=
+
+STUDIO_DESC=	Build Studio Application
+
+GUILE_USES=		guile:3.0
+GUILE_CMAKE_ON=		-DBUILD_GUILE_BINDINGS:BOOL=ON
+GUILE_CMAKE_OFF=	-DBUILD_GUILE_BINDINGS:BOOL=OFF
+GUILE_BINARY_ALIAS=	guild=guild3 guile=guile3
+PYTHON_USES=		python
+PYTHON_CMAKE_ON=	-DBUILD_PYTHON_BINDINGS:BOOL=ON \
+			-DPYTHON_SITE_PACKAGES_DIR:STRING=${PYTHON_SITELIBDIR}
+PYTHON_CMAKE_OFF=	-DBUILD_PYTHON_BINDINGS:BOOL=OFF
+STUDIO_USES=		qt:6
+STUDIO_CMAKE_ON=	-DBUILD_STUDIO_APP:BOOL=ON
+STUDIO_CMAKE_OFF=	-DBUILD_STUDIO_APP:BOOL=OFF
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSTUDIO} && !(${PORT_OPTIONS:MGUILE} || \
+	${PORT_OPTIONS:MPYTHON})
+IGNORE=		STUDIO option needs either GUILE or PYTHON option
+.endif
+
+.include <bsd.port.mk>
