@@ -1,17 +1,10 @@
---- pyproject.toml.orig	2026-06-19 21:39:14 UTC
+--- pyproject.toml.orig	2026-09-20 01:25:18 UTC
 +++ pyproject.toml
-@@ -5,7 +5,6 @@ version = "1.43.0"
+@@ -5,7 +5,6 @@
  [project]
  name = "mypy-boto3-dynamodb"
- version = "1.43.0"
+ version = "1.43.64"
 -license = "MIT"
  authors = [{ name = "Vlad Emelianov", email = "vlad.emelianov.nz@gmail.com" }]
- description = "Type annotations for boto3 DynamoDB 1.43.0 service generated with mypy-boto3-builder 8.12.0"
+ description = "Type annotations for boto3 DynamoDB 1.43.64 service generated with mypy-boto3-builder 8.12.0"
  readme = "README.md"
-@@ -58,4 +57,4 @@ packages = ["mypy_boto3_dynamodb"]
- packages = ["mypy_boto3_dynamodb"]
- 
- [tool.setuptools.package-data]
--"*" = ["*.pyi", "py.typed"]
-\ No newline at end of file
-+"*" = ["*.pyi", "py.typed"]
