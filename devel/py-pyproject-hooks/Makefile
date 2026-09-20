@@ -1,5 +1,5 @@
 PORTNAME=	pyproject-hooks
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,6 @@ USE_PYTHON=	allflavors autoplist concurrent pep517
 NO_ARCH=	yes
 
 PEP517_BUILD_CMD=	${PYTHON_CMD} -m flit_core.wheel
-PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
+PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.11<5:devel/py-flit-core@${PY_FLAVOR}
 
 .include <bsd.port.mk>
