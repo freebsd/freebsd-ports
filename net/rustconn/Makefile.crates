@@ -64,7 +64,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		cast-0.3.0 \
 		cbc-0.1.2 \
 		cbc-0.2.1 \
-		cc-1.4.6 \
+		cc-1.4.7 \
 		cfg-expr-0.20.9 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
@@ -158,7 +158,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		fiat-crypto-0.3.0 \
 		field-offset-0.3.6 \
 		filetime-0.2.29 \
-		find-msvc-tools-0.1.12 \
+		find-msvc-tools-0.1.13 \
 		flagset-0.4.7 \
 		flate2-1.1.10 \
 		float-cmp-0.9.0 \
