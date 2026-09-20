@@ -84,4 +84,14 @@ post-install:
 	${MKDIR} ${STAGEDIR}/var/log/amazon/efs
 	${MKDIR} ${STAGEDIR}/var/run/efs
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# The FIPS module exceeds the 1MiB adr reach on aarch64: delocate rewrites
+# adrp into adr, and the assembler rejects the out-of-range fixups.
+# OPENSSL_SMALL drops the precomputed curve25519 and P-256 tables, which
+# brings the module back into reach at the cost of slower ECC.
+.if ${ARCH} == aarch64
+MAKE_ENV+=	AWS_LC_FIPS_SYS_SMALL=1
+.endif
+
+.include <bsd.port.post.mk>
