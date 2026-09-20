@@ -1,6 +1,6 @@
 PORTNAME=	signac
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.1
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=3.0:sysutils/py-filelock@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.46.1:misc/py-tqdm@${PY_FLAVOR}
 PY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} # optional dependency
 BUILD_DEPENDS=	${PY_DEPENDS} \
-		${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zarr>0:devel/py-zarr@${PY_FLAVOR}
@@ -31,5 +31,7 @@ GH_ACCOUNT=	glotzerlab
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 NO_ARCH=	yes
+
+# tests as of 2.4.1: 946 passed, 141 skipped, 11 subtests passed in 71.56s
 
 .include <bsd.port.mk>
