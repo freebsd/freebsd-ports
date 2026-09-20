@@ -13,16 +13,15 @@ LICENSE_COMB=	dual
 
 GNU_CONFIGURE=	yes
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome iconv \
-		libtool pkgconfig shebangfix tar:bzip2
+		libtool localbase pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-static
 CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff \
 		-I../../plugins/gme/game-music-emu-0.6pre \
-		-I./sidplay-libs/libsidplay/include/sidplay \
-		-I${LOCALBASE}/include
+		-I./sidplay-libs/libsidplay/include/sidplay
 CFLAGS+=	-Wno-narrowing
 LDFLAGS_i386=	-Wl,-z,notext
-LIBS+=		-L${LOCALBASE}/lib -lexecinfo -lintl
+LIBS+=		-lexecinfo -lintl
 USE_GNOME=	intltool
 SHEBANG_FILES=	yasmwrapper.sh
 INSTALL_TARGET=	install-strip
