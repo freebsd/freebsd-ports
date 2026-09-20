@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multibody Dynamic Simulation Library
 WWW=		https://dynamechs.sourceforge.net/
 
+BROKEN=		Fails to build, dm/svd_linpack.cpp:182:2: error: reference to 'complex' is ambiguous
+
 USES=		gl gmake perl5 shebangfix tar:bzip2
 USE_CXXSTD=	c++14
 USE_GL=		glut
