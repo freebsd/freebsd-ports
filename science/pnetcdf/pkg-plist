@@ -13,7 +13,7 @@ include/pnetcdf.mod
 lib/libpnetcdf.a
 lib/libpnetcdf.so
 lib/libpnetcdf.so.8
-lib/libpnetcdf.so.8.0.0
+lib/libpnetcdf.so.8.0.1
 libdata/pkgconfig/pnetcdf.pc
 share/man/man1/cdfdiff.1.gz
 share/man/man1/ncmpidiff.1.gz
