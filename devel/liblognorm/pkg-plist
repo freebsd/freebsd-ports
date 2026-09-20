@@ -1,8 +1,9 @@
 bin/lognormalizer
 include/liblognorm.h
 include/lognorm-features.h
+include/lognorm-turbo.h
 lib/liblognorm.a
 lib/liblognorm.so
 lib/liblognorm.so.5
-lib/liblognorm.so.5.1.0
+lib/liblognorm.so.5.2.0
 libdata/pkgconfig/lognorm.pc
