@@ -1,6 +1,5 @@
 PORTNAME=	jupyterlab-server
-PORTVERSION=	2.28.0
-PORTREVISION=	1
+PORTVERSION=	2.28.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyterlab/jupyterlab_server/releases/download/v${PORTVERSION}/
