@@ -1,10 +1,10 @@
-TIMESTAMP = 1788097642
-SHA256 (RediSearch-RediSearch-v2.8.12_GH0.tar.gz) = 3391d7f51dbcea86d47c60a13d029ae6e8410c98d0c2ebe9c37ed71581c266c7
-SIZE (RediSearch-RediSearch-v2.8.12_GH0.tar.gz) = 4562848
+TIMESTAMP = 1789914999
+SHA256 (RediSearch-RediSearch-v2.8.13_GH0.tar.gz) = 9576a404bda2205e44d4e853ba6e0f6b7c8043e33d9b0deb727f21d872b0e678
+SIZE (RediSearch-RediSearch-v2.8.13_GH0.tar.gz) = 4564070
 SHA256 (RedisAI-VectorSimilarity-94f2fcd_GH0.tar.gz) = 89e7b7cbf539e81cd93d2063a776af80417ee69f1fe5239b1acd61e7bb9a9bef
 SIZE (RedisAI-VectorSimilarity-94f2fcd_GH0.tar.gz) = 589297
-SHA256 (RedisLabsModules-readies-d389681_GH0.tar.gz) = 9c41b74b5b109416334402048731017298f80df2ef4fbfb5daed72daf32ab6db
-SIZE (RedisLabsModules-readies-d389681_GH0.tar.gz) = 94107
+SHA256 (RedisLabsModules-readies-5771466_GH0.tar.gz) = e3f34460ae842db79f822a2cdd4ed4b2b155b9867317c9f7918fe87cb468ccb2
+SIZE (RedisLabsModules-readies-5771466_GH0.tar.gz) = 94121
 SHA256 (RedisLabs-RedisModulesSDK-7ba899d_GH0.tar.gz) = dd4b7e691ce013f849317f0e472f6219e86a570d3eac50bacf060ffb2b56c4b2
 SIZE (RedisLabs-RedisModulesSDK-7ba899d_GH0.tar.gz) = 138229
 SHA256 (google-s2geometry-efb4eb8_GH0.tar.gz) = a62ef2409c9c1fd0ef573892f3857fb73cd864b2410eecbbb104ff865ea09fa8
