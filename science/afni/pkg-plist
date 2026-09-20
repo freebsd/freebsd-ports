@@ -13,6 +13,7 @@ bin/1dRplot.R
 bin/1dSEM
 bin/1dSEMr.R
 bin/1dSVAR.R
+bin/1dTrdm
 bin/1dTsort
 bin/1dUpsample
 bin/1d_tool.py
@@ -166,6 +167,7 @@ bin/3dQwarp
 bin/3dREMLfit
 bin/3dROIMaker
 bin/3dROIstats
+bin/3dRSA
 bin/3dRSFC
 bin/3dRank
 bin/3dRankizer
