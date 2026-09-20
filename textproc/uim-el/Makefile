@@ -1,6 +1,6 @@
 PORTNAME=	uim-el
 PORTVERSION=	1.9.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -41,6 +41,10 @@ DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim-el
 PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${FIND} ${BUILD_WRKSRC} -name "*.el" -or -name "*.el.in" | \
+		${XARGS} ${REINPLACE_CMD} -e "1s/^/;; -*- lexical-binding: nil; -*-\n/"
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh
