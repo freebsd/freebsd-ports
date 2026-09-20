@@ -496,6 +496,7 @@
     SUBDIR += py-csvw
     SUBDIR += py-cvat-sdk
     SUBDIR += py-datasets
+    SUBDIR += py-deepspeed
     SUBDIR += py-detecta
     SUBDIR += py-diffusers
     SUBDIR += py-eemeter
