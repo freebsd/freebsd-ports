@@ -1,5 +1,5 @@
 PORTNAME=	gettext_i18n_rails_js
-PORTVERSION=	3.1.6
+PORTVERSION=	3.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
@@ -19,9 +19,5 @@ RUN_DEPENDS=	rubygem-gettext>=3.0.2:devel/rubygem-gettext \
 USES=		gem
 
 NO_ARCH=	yes
-
-post-patch:
-# Clean up bundled libraries
-	@${RM} -r ${WRKSRC}/vendor/bundle/
 
 .include <bsd.port.mk>
