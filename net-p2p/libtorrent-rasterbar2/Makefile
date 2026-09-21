@@ -1,6 +1,7 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.1
+DISTVERSION=	2.0.13
+PORTEPOCH=	1
 CATEGORIES=	net-p2p
 #MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	2
@@ -28,11 +29,7 @@ GH_ACCOUNT=	arvidn
 GH_PROJECT=	libtorrent
 GH_TUPLE=	arvidn:try_signal:105cce5:try_signal/deps/try_signal \
 		arvidn:libsimulator:66ac6cc:libsimulator/simulation/libsimulator \
-		paullouisageneau:boost-asio-gnutls:a57d4d3:asio/deps/asio-gnutls \
-		paullouisageneau:libdatachannel:a02b751:libdatachannel/deps/libdatachannel \
-			SergiusTheBest:plog:94899e0:libdatachannel_plog/deps/libdatachannel/deps/plog \
-			paullouisageneau:usrsctp:fec583d:libdatachannel_usrsctp/deps/libdatachannel/deps/usrsctp \
-			paullouisageneau:libjuice:5948a41:libdatachannel_libjuice/deps/libdatachannel/deps/libjuice
+		paullouisageneau:boost-asio-gnutls:a57d4d3:asio/deps/asio-gnutls
 
 USE_CXXSTD=	c++17 # prevent boost-related SEGV, see bug#264278
 
@@ -46,7 +43,6 @@ CMAKE_TESTING_ON=	build_tests
 
 OPTIONS_DEFINE=		DOCS EXAMPLES LOGGING
 OPTIONS_DEFAULT=	LOGGING
-OPTIONS_EXCLUDE=	EXAMPLES # EXAMPLES are disabled due to build errors, see https://github.com/arvidn/libtorrent/issues/8887
 OPTIONS_SUB=		yes
 LOGGING_DESC=		Enable logging to disk
 
