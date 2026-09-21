@@ -1,9 +1,25 @@
 include/plasma/potdprovider/plasma_potd_export.h
 include/plasma/potdprovider/potdprovider.h
+include/plasma/weather/currentday.h
+include/plasma/weather/forecast.h
+include/plasma/weather/futuredays.h
+include/plasma/weather/ion.h
+include/plasma/weather/lastday.h
+include/plasma/weather/lastobservation.h
+include/plasma/weather/locations.h
+include/plasma/weather/metadata.h
+include/plasma/weather/plasmaweatherdata_export.h
+include/plasma/weather/plasmaweatherion_export.h
+include/plasma/weather/station.h
+include/plasma/weather/warnings.h
 lib/cmake/PlasmaPotdProvider/PlasmaPotdProviderConfig.cmake
 lib/cmake/PlasmaPotdProvider/PlasmaPotdProviderConfigVersion.cmake
 lib/cmake/PlasmaPotdProvider/PlasmaPotdProviderTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/PlasmaPotdProvider/PlasmaPotdProviderTargets.cmake
+lib/cmake/PlasmaWeather/PlasmaWeatherConfig.cmake
+lib/cmake/PlasmaWeather/PlasmaWeatherConfigVersion.cmake
+lib/cmake/PlasmaWeather/PlasmaWeatherTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/PlasmaWeather/PlasmaWeatherTargets.cmake
 lib/libexec/kf6/kauth/kameleonhelper
 lib/libplasmapotdprovidercore.so
 lib/libplasmapotdprovidercore.so.2
@@ -873,6 +889,7 @@ share/locale/hu/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/hu/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/hu/LC_MESSAGES/plasma_wallpaper_org.kde.tiled.mo
 share/locale/ia/LC_MESSAGES/kwin_effect_cube.mo
 share/locale/ia/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/ia/LC_MESSAGES/plasma_addons_profiles_utility.mo
@@ -1214,6 +1231,7 @@ share/locale/lv/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/lv/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/lv/LC_MESSAGES/plasma_wallpaper_org.kde.tiled.mo
 share/locale/ml/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.addons.katesessions.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
@@ -1359,6 +1377,7 @@ share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
 share/locale/nn/LC_MESSAGES/plasma_calendar_alternatecalendar.mo
 share/locale/nn/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_CharacterRunner.mo
+share/locale/nn/LC_MESSAGES/plasma_runner_colors.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_katesessions.mo
@@ -1366,6 +1385,7 @@ share/locale/nn/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/nn/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/nn/LC_MESSAGES/plasma_wallpaper_org.kde.tiled.mo
 share/locale/pa/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.addons.katesessions.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo

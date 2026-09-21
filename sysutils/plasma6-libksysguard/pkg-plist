@@ -1,3 +1,4 @@
+bin/ksysguard-identify
 include/ksysguard/faces/FaceLoader.h
 include/ksysguard/faces/SensorFaceController.h
 include/ksysguard/faces/SensorFace_p.h
@@ -8,6 +9,7 @@ include/ksysguard/formatter/Unit.h
 include/ksysguard/formatter/formatter_export.h
 include/ksysguard/processcore/enums.h
 include/ksysguard/processcore/formatter.h
+include/ksysguard/processcore/gpu_utils.h
 include/ksysguard/processcore/process.h
 include/ksysguard/processcore/process_attribute.h
 include/ksysguard/processcore/process_attribute_model.h
@@ -54,7 +56,7 @@ lib/libKSysGuardSystemStats.so.2
 lib/libKSysGuardSystemStats.so.%%KDE_PLASMA_VERSION%%
 lib/libexec/kf6/kauth/ksysguardprocesslist_helper
 lib/libprocesscore.so
-lib/libprocesscore.so.10
+lib/libprocesscore.so.11
 lib/libprocesscore.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kf6/packagestructure/ksysguard_sensorface.so
 %%QT_PLUGINDIR%%/ksysguard/process/ksysguard_plugin_gpu.so

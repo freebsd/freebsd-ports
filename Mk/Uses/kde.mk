@@ -101,7 +101,7 @@ KDE_PLASMA5_VERSION?=		5.27.12
 KDE_PLASMA5_BRANCH?=		stable
 
 # Current KDE Plasma desktop.
-KDE_PLASMA6_VERSION?=		6.6.6
+KDE_PLASMA6_VERSION?=		6.7.3
 KDE_PLASMA6_BRANCH?=		stable
 
 # Legacy KDE frameworks (Qt5 based).
@@ -342,7 +342,7 @@ _USE_PLASMA6_ALL=	activities activities-stats activitymanagerd \
 			plasma-workspace-wallpapers plasma5support \
 			polkit-kde-agent-1 powerdevil print-manager \
 			qqc2-breeze-style sddm-kcm spectacle systemmonitor \
-			systemsettings wayland xdg-desktop-portal-kde
+			systemsettings union wayland xdg-desktop-portal-kde
 _USE_PLASMA_ALL=	${_USE_PLASMA${_KDE_VERSION}_ALL}
 
 # List of frequently used components of the KDE Gears distribution.
@@ -797,7 +797,7 @@ kde-powerdevil_PORT=		sysutils/plasma${_KDE_VERSION}-powerdevil
 kde-powerdevil_LIB=		libpowerdevilcore.so
 
 kde-print-manager_PORT=		print/plasma${_KDE_VERSION}-print-manager
-kde-print-manager_PATH=		${KDE_PREFIX}/bin/kde-print-queue
+kde-print-manager_PATH=		${KDE_PREFIX}/bin/plasma-print-queue
 kde-print-manager_TYPE=		run
 
 kde-spectacle_PORT=		graphics/plasma${_KDE_VERSION}-spectacle
@@ -810,6 +810,9 @@ kde-systemmonitor_TYPE=		run
 
 kde-systemsettings_PORT=	sysutils/plasma${_KDE_VERSION}-systemsettings
 kde-systemsettings_PATH=	${KDE_PREFIX}/bin/systemsettings
+
+kde-union_PORT=			x11-themes/plasma${_KDE_VERSION}-union
+kde-union_LIB=			libUnion.so
 
 kde-xdg-desktop-portal-kde_PORT=	deskutils/plasma${_KDE_VERSION}-xdg-desktop-portal-kde
 kde-xdg-desktop-portal-kde_PATH=	${KDE_PREFIX}/lib/libexec/xdg-desktop-portal-kde

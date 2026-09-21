@@ -7,7 +7,6 @@ bin/plasma-emojier
 bin/solid-action-desktop-gen
 bin/tastenbrett
 etc/xdg/autostart/kaccess.desktop
-lib/libexec/kf6/kauth/kcmdatetimehelper
 %%IBUS%%lib/libexec/kimpanel-ibus-panel
 %%IBUS%%lib/libexec/kimpanel-ibus-panel-launcher
 %%SCIM%%lib/libexec/kimpanel-scim-panel
@@ -25,7 +24,6 @@ lib/libkglobalaccelmodel.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.kicker.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.kickoff.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.kimpanel.so
-%%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.marginsseparator.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.pager.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.showActivityManager.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.showdesktop.so
@@ -120,8 +118,6 @@ share/config.kcfg/workspaceoptions_kdeglobalssettings.kcfg
 share/config.kcfg/workspaceoptions_kwinsettings.kcfg
 share/config.kcfg/workspaceoptions_plasmasettings.kcfg
 share/dbus-1/interfaces/org.kde.touchpad.xml
-share/dbus-1/system-services/org.kde.kcontrol.kcmclock.service
-share/dbus-1/system.d/org.kde.kcontrol.kcmclock.conf
 share/doc/HTML/ca/kcontrol/baloo/index.cache.bz2
 share/doc/HTML/ca/kcontrol/baloo/index.docbook
 share/doc/HTML/ca/kcontrol/clock/index.cache.bz2
@@ -809,6 +805,8 @@ share/kcmmouse/cursor_small_white.pcf.gz
 share/kcmmouse/pics/mouse_lh.png
 share/kcmmouse/pics/mouse_rh.png
 share/kcmsolidactions/solid-action-template.desktop
+share/kconf_update/50-krunner-activate-typing.sh
+share/kconf_update/50-krunner-activate-typing.upd
 share/kglobalaccel/org.kde.plasma.emojier.desktop
 share/kglobalaccel/org.kde.touchpadshortcuts.desktop
 share/knotifications6/kaccess.notifyrc
@@ -2497,6 +2495,7 @@ share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/lv/LC_MESSAGES/plasma_runner_keys.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/lv/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
@@ -4070,12 +4069,12 @@ share/plasma/shells/org.kde.plasma.desktop/contents/views/DesktopEditMode.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/views/Panel.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/views/PreviewBanner.qml
 share/plasma/shells/org.kde.plasma.desktop/metadata.json
-share/polkit-1/actions/org.kde.kcontrol.kcmclock.policy
 %%SDL%%share/qlogging-categories6/kcm_gamecontroller.categories
 share/qlogging-categories6/kcm_kded.categories
 share/qlogging-categories6/kcm_keyboard.categories
 share/qlogging-categories6/kcm_mouse.categories
 share/qlogging-categories6/kcm_tablet.categories
+share/qlogging-categories6/kcm_touchpad.categories
 share/qlogging-categories6/kcm_touchscreen.categories
 share/qlogging-categories6/kcmkeys.categories
 share/sddm/themes/breeze/Background.qml

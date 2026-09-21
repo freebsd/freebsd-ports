@@ -34,10 +34,10 @@ DESCR=		${.CURDIR:H:H}/x11/plasma6-plasma/pkg-descr
 
 # Qt6 flavor
 qt6_USES=	kde:6 qt:6
-qt6_USE_KDE=	bookmarks breeze colorscheme completion config configwidgets \
+qt6_USE_KDE=	bookmarks breeze colorscheme completion config \
 		coreaddons guiaddons i18n iconthemes itemviews jobwidgets kio \
 		notifications service solid statusnotifieritem widgetsaddons \
-		windowsystem xdg-desktop-portal-kde xmlgui \
+		windowsystem xdg-desktop-portal-kde \
 		ecm:build plasma-wayland-protocols:build
 qt6_USE_QT=	base declarative wayland
 qt6_CMAKE_ON=	BUILD_QT6
@@ -45,8 +45,8 @@ qt6_CMAKE_OFF=	BUILD_QT5
 
 # Qt5 flavor
 qt5_USES=	kde:5 pkgconfig qt:5
-qt5_USE_KDE=	config configwidgets guiaddons i18n iconthemes kio \
-		notifications wayland windowsystem xmlgui \
+qt5_USE_KDE=	config guiaddons i18n iconthemes kio \
+		notifications wayland windowsystem \
 		ecm:build plasma-wayland-protocols:build
 qt5_USE_QT=	core gui quickcontrols2 wayland x11extras \
 		buildtools:build qmake:build

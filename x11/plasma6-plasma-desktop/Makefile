@@ -24,7 +24,7 @@ RUN_DEPENDS=	noto-emoji>0:x11-fonts/noto-emoji \
 USES=		cmake gettext gl gnome kde:6 pkgconfig python qt:6 tar:xz xorg
 USE_GL=		gl opengl
 USE_GNOME=	intltool
-USE_KDE=	activities activities-stats attica auth baloo bookmarks \
+USE_KDE=	activities activities-stats attica baloo bookmarks \
 		codecs colorscheme completion config configwidgets coreaddons \
 		crash dbusaddons doctools filemetadata globalaccel guiaddons \
 		i18n iconthemes itemmodels itemviews jobwidgets kcmutils kio \

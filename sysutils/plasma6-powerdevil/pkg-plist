@@ -97,6 +97,7 @@ share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
 share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.brightness.mo
 share/locale/az/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/az/LC_MESSAGES/powerdevil.mo
+share/locale/be/LC_MESSAGES/kcm_mobile_power.mo
 share/locale/be/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.brightness.mo

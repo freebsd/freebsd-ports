@@ -9,6 +9,7 @@ LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-util.so:x11/xcb-util \
 		libopencv_core.so:graphics/opencv \
+		libtesseract.so:graphics/tesseract \
 		libwayland-client.so:graphics/wayland \
 		libKQuickImageEditor.so:graphics/kquickimageeditor
 

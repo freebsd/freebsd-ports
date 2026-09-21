@@ -8,6 +8,7 @@ MAINTAINER=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		hwdata>0:misc/hwdata \
+		vulkan-headers>=0:graphics/vulkan-headers \
 		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 		libdrm.so:graphics/libdrm \
@@ -17,6 +18,7 @@ LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 		libpipewire-0.3.so:multimedia/pipewire \
 		libqaccessibilityclient-qt6.so:accessibility/libqaccessibilityclient \
 		libudev.so:devel/libudev-devd \
+		libvulkan.so:graphics/vulkan-loader \
 		libwayland-client.so:graphics/wayland \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
@@ -35,7 +37,7 @@ USE_KDE=	auth colorscheme config \
 		notifications package runner service svg wayland widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build plasma-wayland-protocols:build \
-		aurorae:run breeze:run
+		aurorae:run breeze:run milou:run
 USE_QT=		base declarative multimedia sensors tools wayland
 USE_XORG=	ice sm x11 xcb xext xi
 

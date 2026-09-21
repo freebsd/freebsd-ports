@@ -9,6 +9,8 @@ lib/libexec/plasma-apply-aurorae
 %%QT_QMLDIR%%/org/kde/kwin/decoration/Decoration.qml
 %%QT_QMLDIR%%/org/kde/kwin/decoration/DecorationButton.qml
 %%QT_QMLDIR%%/org/kde/kwin/decoration/MenuButton.qml
+%%QT_QMLDIR%%/org/kde/kwin/decoration/decorationplugin.qmltypes
+%%QT_QMLDIR%%/org/kde/kwin/decoration/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/kwin/decoration/libdecorationplugin.so
 %%QT_QMLDIR%%/org/kde/kwin/decoration/qmldir
 %%QT_QMLDIR%%/org/kde/kwin/decorations/plastik/libplastikplugin.so
@@ -43,6 +45,7 @@ share/locale/he/LC_MESSAGES/aurorae.mo
 share/locale/hu/LC_MESSAGES/aurorae.mo
 share/locale/ia/LC_MESSAGES/aurorae.mo
 share/locale/it/LC_MESSAGES/aurorae.mo
+share/locale/ja/LC_MESSAGES/aurorae.mo
 share/locale/ka/LC_MESSAGES/aurorae.mo
 share/locale/ko/LC_MESSAGES/aurorae.mo
 share/locale/lt/LC_MESSAGES/aurorae.mo

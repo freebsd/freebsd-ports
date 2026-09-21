@@ -14,8 +14,10 @@ include/kwin/core/colorpipeline.h
 include/kwin/core/colorpipelinestage.h
 include/kwin/core/colorspace.h
 include/kwin/core/colortransformation.h
+include/kwin/core/drm_formats.h
 include/kwin/core/drmdevice.h
 include/kwin/core/gbmgraphicsbufferallocator.h
+include/kwin/core/gpumanager.h
 include/kwin/core/graphicsbuffer.h
 include/kwin/core/graphicsbufferallocator.h
 include/kwin/core/graphicsbufferview.h
@@ -30,6 +32,7 @@ include/kwin/core/pixelgrid.h
 include/kwin/core/rect.h
 include/kwin/core/region.h
 include/kwin/core/renderbackend.h
+include/kwin/core/renderdevice.h
 include/kwin/core/renderjournal.h
 include/kwin/core/renderloop.h
 include/kwin/core/renderloop_p.h
@@ -81,6 +84,7 @@ include/kwin/layershellv1window.h
 include/kwin/lidswitchtracker.h
 include/kwin/main.h
 include/kwin/mousebuttons.h
+include/kwin/multigpuswapchain.h
 include/kwin/netinfo.h
 include/kwin/onscreennotification.h
 include/kwin/opengl/abstract_opengl_context_attribute_builder.h
@@ -114,6 +118,7 @@ include/kwin/pluginmanager.h
 include/kwin/pointer_input.h
 include/kwin/rulebooksettings.h
 include/kwin/rules.h
+include/kwin/scene/atlas.h
 include/kwin/scene/backgroundeffectitem.h
 include/kwin/scene/borderoutline.h
 include/kwin/scene/borderradius.h
@@ -126,6 +131,7 @@ include/kwin/scene/itemgeometry.h
 include/kwin/scene/itemrenderer.h
 include/kwin/scene/itemrenderer_opengl.h
 include/kwin/scene/itemrenderer_qpainter.h
+include/kwin/scene/ninepatch.h
 include/kwin/scene/outlinedborderitem.h
 include/kwin/scene/rootitem.h
 include/kwin/scene/scene.h
@@ -133,6 +139,7 @@ include/kwin/scene/shadowitem.h
 include/kwin/scene/surfaceitem.h
 include/kwin/scene/surfaceitem_internal.h
 include/kwin/scene/surfaceitem_wayland.h
+include/kwin/scene/texture.h
 include/kwin/scene/windowitem.h
 include/kwin/scene/workspacescene.h
 include/kwin/screenedge.h
@@ -147,7 +154,6 @@ include/kwin/utils/c_ptr.h
 include/kwin/utils/common.h
 include/kwin/utils/cursortheme.h
 include/kwin/utils/damagejournal.h
-include/kwin/utils/drm_format_helper.h
 include/kwin/utils/edid.h
 include/kwin/utils/executable_path.h
 include/kwin/utils/filedescriptor.h
@@ -169,15 +175,19 @@ include/kwin/utils/xcbutils.h
 include/kwin/virtualdesktops.h
 include/kwin/virtualdesktopsdbustypes.h
 include/kwin/virtualkeyboard_dbus.h
+include/kwin/vulkan/vulkan_device.h
+include/kwin/vulkan/vulkan_logging.h
+include/kwin/vulkan/vulkan_render_time_query.h
+include/kwin/vulkan/vulkan_swapchain.h
+include/kwin/vulkan/vulkan_texture.h
 include/kwin/wayland/alphamodifier_v1.h
 include/kwin/wayland/appmenu.h
-include/kwin/wayland/blur.h
+include/kwin/wayland/backgroundeffect_v1.h
 include/kwin/wayland/clientconnection.h
 include/kwin/wayland/colormanagement_v1.h
 include/kwin/wayland/colorrepresentation_v1.h
 include/kwin/wayland/compositor.h
 include/kwin/wayland/contenttype_v1.h
-include/kwin/wayland/contrast.h
 include/kwin/wayland/cursorshape_v1.h
 include/kwin/wayland/datacontroldevice_v1.h
 include/kwin/wayland/datacontroldevicemanager_v1.h
@@ -193,6 +203,7 @@ include/kwin/wayland/drmlease_v1.h
 include/kwin/wayland/externalbrightness_v1.h
 include/kwin/wayland/fifo_v1.h
 include/kwin/wayland/fractionalscale_v1.h
+include/kwin/wayland/fractionalscale_v2.h
 include/kwin/wayland/frog_colormanagement_v1.h
 include/kwin/wayland/idle.h
 include/kwin/wayland/idleinhibit_v1.h
@@ -225,6 +236,7 @@ include/kwin/wayland/qwayland-server-alpha-modifier-v1.h
 include/kwin/wayland/qwayland-server-color-management-v1.h
 include/kwin/wayland/qwayland-server-color-representation-v1.h
 include/kwin/wayland/qwayland-server-content-type-v1.h
+include/kwin/wayland/qwayland-server-ext-background-effect-v1.h
 include/kwin/wayland/qwayland-server-fifo-v1.h
 include/kwin/wayland/qwayland-server-frog-color-management-v1.h
 include/kwin/wayland/qwayland-server-kde-external-brightness-v1.h
@@ -248,7 +260,6 @@ include/kwin/wayland/surface.h
 include/kwin/wayland/tablet_v2.h
 include/kwin/wayland/tearingcontrol_v1.h
 include/kwin/wayland/textinput.h
-include/kwin/wayland/textinput_v1.h
 include/kwin/wayland/textinput_v2.h
 include/kwin/wayland/textinput_v3.h
 include/kwin/wayland/touch.h
@@ -257,6 +268,7 @@ include/kwin/wayland/wayland-alpha-modifier-v1-server-protocol.h
 include/kwin/wayland/wayland-color-management-v1-server-protocol.h
 include/kwin/wayland/wayland-color-representation-v1-server-protocol.h
 include/kwin/wayland/wayland-content-type-v1-server-protocol.h
+include/kwin/wayland/wayland-ext-background-effect-v1-server-protocol.h
 include/kwin/wayland/wayland-fifo-v1-server-protocol.h
 include/kwin/wayland/wayland-frog-color-management-v1-server-protocol.h
 include/kwin/wayland/wayland-kde-external-brightness-v1-server-protocol.h
@@ -302,6 +314,8 @@ lib/kconf_update_bin/kwin-6.5-showpaint-changes
 lib/kconf_update_bin/kwin5_update_default_rules
 lib/libexec/kwin-applywindowdecoration
 lib/libexec/kwin-tabbox-preview
+lib/libexec/kwin_dialog_helper
+lib/libexec/kwin_eis_prompter
 lib/libexec/kwin_killer_helper
 lib/libkcmkwincommon.so.6
 lib/libkcmkwincommon.so.%%KDE_PLASMA_VERSION%%
@@ -374,6 +388,7 @@ share/applications/kcm_kwinrules.desktop
 share/applications/kcm_kwintabbox.desktop
 share/applications/kcm_kwinxwayland.desktop
 share/applications/kcm_virtualkeyboard.desktop
+share/applications/org.kde.kwin.dialoghelper.desktop
 share/applications/org.kde.kwin.killer.desktop
 share/config.kcfg/kwin.kcfg
 share/config.kcfg/kwindecorationsettings.kcfg
@@ -770,6 +785,7 @@ share/krunner/dbusplugins/kwin-runner-windows.desktop
 %%DATADIR%%/builtin-effects/showpaint.json
 %%DATADIR%%/builtin-effects/slide.json
 %%DATADIR%%/builtin-effects/slideback.json
+%%DATADIR%%/builtin-effects/slidingnotifications.json
 %%DATADIR%%/builtin-effects/slidingpopups.json
 %%DATADIR%%/builtin-effects/startupfeedback.json
 %%DATADIR%%/builtin-effects/systembell.json

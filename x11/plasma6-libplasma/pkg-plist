@@ -137,6 +137,7 @@ lib/libPlasmaQuick.so.7
 %%QT_QMLDIR%%/org/kde/plasma/core/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/extras/ActionTextField.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/BasicPlasmoidHeading.qml
+%%QT_QMLDIR%%/org/kde/plasma/extras/ContextualHelpButton.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/DescriptiveLabel.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/ExpandableListItem.qml
 %%QT_QMLDIR%%/org/kde/plasma/extras/Heading.qml

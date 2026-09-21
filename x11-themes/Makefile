@@ -144,6 +144,7 @@
     SUBDIR += plasma6-oxygen
     SUBDIR += plasma6-plasma-workspace-wallpapers
     SUBDIR += plasma6-qqc2-breeze-style
+    SUBDIR += plasma6-union
     SUBDIR += plata-theme
     SUBDIR += pocillo-gtk-themes
     SUBDIR += pop-gtk-themes
