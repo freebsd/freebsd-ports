@@ -1,20 +1,18 @@
 PORTNAME=	qstat
-PORTVERSION=	2.17
+PORTVERSION=	2.18
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games net
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Command-line program to query game servers on the net
-WWW=		https://github.com/multiplay/qstat
+WWW=		https://github.com/rocketsciencegg/qstat
 
 LICENSE=	ART20
-
-CONFLICTS_INSTALL=	torque
 
 USES=		autoreconf gmake
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	multiplay
+GH_ACCOUNT=	${WWW:S,/, ,g:[3]}
 
 PLIST_FILES=	bin/qstat \
 		@sample\ etc/qstat.cfg.sample
