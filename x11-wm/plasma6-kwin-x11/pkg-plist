@@ -960,6 +960,7 @@ share/locale/hr/LC_MESSAGES/kcm_kwin_virtualdesktops_x11.mo
 share/locale/hr/LC_MESSAGES/kcm_kwindecoration_x11.mo
 share/locale/hr/LC_MESSAGES/kcm_kwinrules_x11.mo
 share/locale/hr/LC_MESSAGES/kcm_kwintabbox_x11.mo
+share/locale/hr/LC_MESSAGES/kcmkwincommon_x11.mo
 share/locale/hr/LC_MESSAGES/kcmkwincompositing_x11.mo
 share/locale/hr/LC_MESSAGES/kcmkwinscreenedges_x11.mo
 share/locale/hr/LC_MESSAGES/kcmkwm_x11.mo

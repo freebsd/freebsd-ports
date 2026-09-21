@@ -69,6 +69,7 @@ share/locale/eu/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/eu/LC_MESSAGES/print-manager.mo
 share/locale/fi/LC_MESSAGES/kcm_printer_manager.mo
+share/locale/fi/LC_MESSAGES/org.kde.plasma.printqueue.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/fi/LC_MESSAGES/print-manager.mo
 share/locale/fr/LC_MESSAGES/kcm_printer_manager.mo

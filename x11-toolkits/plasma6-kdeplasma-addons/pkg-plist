@@ -1053,6 +1053,7 @@ share/locale/ja/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/ja/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
+share/locale/ja/LC_MESSAGES/plasma_wallpaper_org.kde.tiled.mo
 share/locale/ka/LC_MESSAGES/kwin_effect_cube.mo
 share/locale/ka/LC_MESSAGES/plasma_addons_engine_dict.mo
 share/locale/ka/LC_MESSAGES/plasma_addons_profiles_utility.mo

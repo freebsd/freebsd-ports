@@ -11,6 +11,8 @@ include/union/Union/Style.h
 include/union/Union/StyleLoader.h
 include/union/Union/StyleRegistry.h
 include/union/Union/StyleRule.h
+include/union/Union/union_export.h
+include/union/Union/union_logging.h
 lib/cmake/Union/UnionConfig.cmake
 lib/cmake/Union/UnionConfigVersion.cmake
 lib/cmake/Union/UnionTargets-%%CMAKE_BUILD_TYPE%%.cmake
