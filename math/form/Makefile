@@ -1,5 +1,5 @@
 PORTNAME=	form
-DISTVERSION=	5.0.1
+DISTVERSION=	5.0.2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/form-dev/form/releases/download/v${DISTVERSION}/
 
