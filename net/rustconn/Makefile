@@ -1,6 +1,6 @@
 PORTNAME=	rustconn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.1
+DISTVERSION=	0.22.2
 PORTREVISION=	0
 CATEGORIES=	net
 
@@ -79,5 +79,10 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/assets/icons/hicolor/scalable/apps/io.github.totoshko88.RustConn.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
+.for mimetype in rdp vv
+	${INSTALL_DATA} ${WRKSRC}/rustconn/assets/io.github.totoshko88.RustConn-${mimetype}.xml \
+		${STAGEDIR}${PREFIX}/share/mime/packages
+.endfor
 
 .include <bsd.port.mk>

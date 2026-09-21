@@ -185,10 +185,10 @@ CARGO_CRATES=	addchain-0.2.1 \
 		futures-util-0.3.34 \
 		gdk-pixbuf-0.22.0 \
 		gdk-pixbuf-sys-0.22.9 \
-		gdk4-0.11.4 \
-		gdk4-sys-0.11.4 \
-		gdk4-wayland-0.11.4 \
-		gdk4-wayland-sys-0.11.0 \
+		gdk4-0.11.5 \
+		gdk4-sys-0.11.5 \
+		gdk4-wayland-0.11.5 \
+		gdk4-wayland-sys-0.11.5 \
 		generic-array-0.14.7 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
@@ -197,9 +197,9 @@ CARGO_CRATES=	addchain-0.2.1 \
 		gettext-sys-0.27.0 \
 		ghash-0.6.0 \
 		gif-0.14.2 \
-		gio-0.22.9 \
+		gio-0.22.10 \
 		gio-sys-0.22.9 \
-		glib-0.22.9 \
+		glib-0.22.10 \
 		glib-macros-0.22.9 \
 		glib-sys-0.22.9 \
 		glob-0.3.4 \
@@ -207,11 +207,11 @@ CARGO_CRATES=	addchain-0.2.1 \
 		graphene-rs-0.22.8 \
 		graphene-sys-0.22.9 \
 		group-0.14.0 \
-		gsk4-0.11.4 \
-		gsk4-sys-0.11.4 \
-		gtk4-0.11.4 \
-		gtk4-macros-0.11.4 \
-		gtk4-sys-0.11.4 \
+		gsk4-0.11.5 \
+		gsk4-sys-0.11.5 \
+		gtk4-0.11.5 \
+		gtk4-macros-0.11.5 \
+		gtk4-sys-0.11.5 \
 		h2-0.4.19 \
 		half-2.7.1 \
 		harfrust-0.12.0 \
@@ -427,7 +427,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		r-efi-6.0.0 \
 		radium-0.7.0 \
 		rand-0.9.5 \
-		rand-0.10.2 \
+		rand-0.10.3 \
 		rand_chacha-0.9.0 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
