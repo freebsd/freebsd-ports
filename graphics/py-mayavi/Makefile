@@ -1,6 +1,5 @@
 PORTNAME=	mayavi
-DISTVERSION=	4.8.2
-PORTREVISION=	10
+DISTVERSION=	4.9.0
 CATEGORIES=	graphics science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,24 +18,25 @@ LICENSE_FILE_LGPL3=		${WRKSRC}/image_LICENSE_OOo.txt
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE_YORICK.txt
 LICENSE_FILE_APACHE11=		${WRKSRC}/LICENSE_COLORBREWER.txt
 
-BROKEN=		compilation fails: VTK throws std::runtime_erroe, see https://gitlab.kitware.com/vtk/vtk/-/issues/19994
 BROKEN_i386=	stage fails: Building TVTK classes... Fatal Python error: Illegal instruction
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PY_SPHINX} \
-		sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}apptools>0:devel/py-apptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apptools>0:devel/py-apptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}envisage>0:devel/py-envisage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyface>=6.1.1:devel/py-pyface@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}puremagic>0:sysutils/py-puremagic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traits>=6.0.0:devel/py-traits@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}traitsui>=7.0.0:graphics/py-traitsui@${PY_FLAVOR} # list is in mayavi/__init__.py
+		${PYTHON_PKGNAMEPREFIX}traitsui>=7.0.0:graphics/py-traitsui@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest
 
 USE_WX=		3.2
 WX_COMPS=	python:run
@@ -44,17 +44,23 @@ WX_COMPS=	python:run
 SHEBANG_FILES=	mayavi/scripts/mayavi2 \
 		mayavi/tests/csv_files/csv_2_py
 
-POST_PLIST=	fix-plist
+PLIST_FILES=	${PYTHON_SITELIBDIR}/tvtk/tvtk_classes.zip
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tvtk/array_ext*.so
-
-fix-plist:
-	@${REINPLACE_CMD} -e "s|${PYTHONPREFIX_SITELIBDIR:S/${PREFIX}\///}/mayavi/preferences/__pycache__$$||" ${TMPPLIST}
-	@${REINPLACE_CMD} -e "s|${PYTHONPREFIX_SITELIBDIR:S/${PREFIX}\///}/tvtk/plugins/scene/__pycache__$$||" ${TMPPLIST}
+TEST_ENV+=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV+=	ETS_TOOLKIT=null QT_QPA_PLATFORM=offscreen # no GUI: do all rendering offscreen
 
 do-test:
-	@${SETENV} ${TEST_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} ${WRKSRC}/examples/mayavi/interactive/coil_design_application.py
+	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} \
+		-m pytest \
+		--disable-plugin-autoload -p timeout -v --timeout=60 \
+		${WRKSRC}/tvtk \
+		--ignore=${WRKSRC}/tvtk/tests/test_browser.py \
+		--ignore=${WRKSRC}/tvtk/tests/test_qt_x11.py \
+		--ignore=${WRKSRC}/tvtk/tests/test_qvtk_render_window_interactor.py \
+		--ignore=${WRKSRC}/tvtk/tests/test_tvtk_scene.py \
+		--ignore=${WRKSRC}/tvtk/tests/test_visual.py
+
+# tests as of 4.9.0: 115 passed, 8 skipped, 1 xpassed
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
