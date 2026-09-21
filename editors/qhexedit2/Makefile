@@ -1,6 +1,7 @@
 PORTNAME=	qhexedit2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	editors devel
 
 MAINTAINER=	mce@FreeBSD.org
@@ -14,9 +15,12 @@ USES=		gl qmake qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	Simsys
 USE_GL=		opengl
+USE_LDCONFIG=	${QT_LIBDIR}
 USE_QT=		base tools:build
 
 QMAKE_SOURCE_PATH=	src/qhexedit.pro
+
+PORTSCOUT=	limit:^[0-9].*$$
 
 post-build:
 	cd ${WRKSRC}/example && ${QMAKE} qhexedit.pro && ${MAKE_CMD}
