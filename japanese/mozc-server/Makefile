@@ -1,7 +1,7 @@
 PORTNAME=	mozc
 PORTVERSION=	2.23.2815.102.01
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	33
+PORTREVISION?=	34
 CATEGORIES=	japanese
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -10,7 +10,8 @@ WWW=		https://github.com/google/mozc
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gyp>=20200512:devel/py-gyp@${PY_FLAVOR}
 EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
-LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
+LIB_DEPENDS=	libabsl_spinlock_wait.so:devel/abseil \
+		libprotobuf.so:devel/protobuf \
 		libzinnia.so:japanese/zinnia
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
@@ -43,9 +44,10 @@ LICENSE_PERMS_NAISTL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE_NAISTL=	${WRKSRC}/src/data/dictionary_oss/README.txt
 LICENSE_DISTFILES_NAISTL=${DISTNAME}${EXTRACT_SUFX}
 .elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
-USES+=		qt:5 gnome
+USES+=		qt:6 gnome
 USE_GNOME=	glib20 gtk20
-USE_QT=		buildtools core gui widgets
+USE_QT=		base tools:build
+EXTRA_PATCHES=	${PATCHDIR}/qt6
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
 USES+=		gettext-runtime gnome xorg
 USE_XORG=	xcb
