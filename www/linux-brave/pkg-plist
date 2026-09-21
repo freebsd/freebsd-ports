@@ -1,6 +1,7 @@
 /%%ETCDIR%%/policies/managed/brave.json
 /%%ETCDIR%%/policies/managed/webrtc.json
 bin/brave-browser
+%%WIDEVINE%%bin/brave-widevine-seed
 share/appdata/brave-browser.appdata.xml
 share/applications/brave-browser.desktop
 share/applications/com.brave.Browser.desktop
@@ -172,6 +173,7 @@ share/applications/com.brave.Browser.desktop
 %%DATADIR%%/resources/brave_extension/_locales/zh_TW/messages.json
 %%DATADIR%%/v8_context_snapshot.bin
 %%DATADIR%%/vk_swiftshader_icd.json
+%%WIDEVINE%%%%DATADIR%%/WidevineCdm
 share/gnome-control-center/default-apps/brave-browser.xml
 share/icons/hicolor/128x128/apps/brave-browser.png
 share/icons/hicolor/16x16/apps/brave-browser.png

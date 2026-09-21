@@ -1,3 +1,4 @@
 {
-    "BraveRewardsDisabled": true
+    "BraveRewardsDisabled": true,
+    "CommandLineFlagSecurityWarningsEnabled": false
 }

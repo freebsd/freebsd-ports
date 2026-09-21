@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+www/linux-brave runs under the Linuxulator (linux_base-rl9):
+
+  sysrc linux_enable=YES
+  service linux start
+
+For DRM sites such as Netflix, install www/linux-widevine-cdm from
+the ports tree (Google's license does not permit distributing it as
+a package):
+
+  make -C /usr/ports/www/linux-widevine-cdm install clean
+
+With the default WIDEVINE option, no further setup is needed: DRM
+playback works as soon as the CDM is installed.
+
+For hardware acceleration, install the Linux Mesa DRI drivers and
+the Linux Vulkan loader:
+
+  pkg install linux-rl9-dri linux-rl9-vulkan
+
+With both present and a writable DRM render node, the wrapper
+renders via ANGLE-on-Vulkan, the preferred path; the Mesa GL path
+is prone to GPU hangs on some hardware.  Without a hardware Vulkan
+driver the wrapper falls back to GL, and without a render node or
+DRI drivers to software rendering.  BRAVE_GPU=0 forces software
+rendering; BRAVE_VULKAN=0 stays on GL.
+EOM
+}
+]
