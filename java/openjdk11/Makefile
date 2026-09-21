@@ -15,6 +15,8 @@ WWW=		https://openjdk.java.net/
 
 LICENSE=	GPLv2
 
+BROKEN_armv6=	missing bootstrap-jdk
+BROKEN_armv7=	missing bootstrap-jdk
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	zip:archivers/zip \
