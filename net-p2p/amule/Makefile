@@ -1,6 +1,5 @@
 PORTNAME=	amule
-DISTVERSION=	3.0.1
-PORTREVISION=	1
+DISTVERSION=	3.1.0
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/amule-org/amule/releases/download/${DISTVERSION}/
 DISTNAME=	aMule-${DISTVERSION}-src
@@ -15,16 +14,18 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp-modern \
 		libcurl.so:ftp/curl
 
-USES=		cmake:testing gettext-runtime gnome localbase:ldflags pkgconfig \
-		readline
+USES=		cmake:testing desktop-file-utils gettext-runtime gnome \
+		localbase:ldflags pkgconfig readline shared-mime-info
 USE_GNOME=	glib20
 USE_RC_SUBR=	amuled
 USE_WX=		3.2
 
 CMAKE_ON=	BUILD_ALC BUILD_ALCC BUILD_AMULECMD BUILD_DAEMON BUILD_ED2K \
 		BUILD_WXCAS
-CMAKE_OFF=	BUILD_TESTING DEFAULT_VERSION_CHECK ENABLE_BFD ENABLE_CCACHE \
+CMAKE_OFF=	BUILD_TESTING ENABLE_BFD ENABLE_CCACHE ENABLE_VERSION_CHECK \
 		TRANSLATED_MANPAGES
+
+LDFLAGS+=	-lexecinfo
 
 WRKSRC=		${WRKDIR}/aMule-${DISTVERSION}
 
@@ -60,7 +61,6 @@ UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 UPNP_CMAKE_BOOL=	ENABLE_UPNP
 
 WEBSERVER_LIB_DEPENDS=	libpng16.so:graphics/png
-WEBSERVER_USES=		readline
 WEBSERVER_CMAKE_BOOL=	BUILD_WEBSERVER
 
 .include <bsd.port.options.mk>

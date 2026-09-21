@@ -97,7 +97,11 @@ share/applications/wxcas.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/amulesig.md
 %%MONOLITHIC%%share/icons/hicolor/128x128/apps/org.amule.aMule.png
+share/icons/hicolor/128x128/mimetypes/application-x-emule-collection.png
 %%MONOLITHIC%%share/icons/hicolor/256x256/apps/org.amule.aMule.png
+share/icons/hicolor/256x256/mimetypes/application-x-emule-collection.png
+%%MONOLITHIC%%share/icons/hicolor/scalable/apps/org.amule.aMule.svg
+share/icons/hicolor/scalable/mimetypes/application-x-emule-collection.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/amule.mo
@@ -118,7 +122,6 @@ share/applications/wxcas.desktop
 %%NLS%%share/locale/hr/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/it/LC_MESSAGES/amule.mo
-%%NLS%%share/locale/it_CH/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/ko_KR/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/amule.mo
@@ -136,6 +139,7 @@ share/applications/wxcas.desktop
 %%NLS%%share/locale/ta/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/amule.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/amule.mo
 %%NLS%%share/man/de/man1/alc.1.gz
@@ -248,7 +252,7 @@ share/man/man1/wxcas.1.gz
 %%NLS%%%%CAS%%share/man/zh_TW/man1/cas.1.gz
 %%NLS%%share/man/zh_TW/man1/ed2k.1.gz
 %%NLS%%share/man/zh_TW/man1/wxcas.1.gz
-share/metainfo/org.amule.aMule.metainfo.xml
+share/mime/packages/org.amule.aMule.xml
 share/pixmaps/alc.xpm
 %%MONOLITHIC%%share/pixmaps/org.amule.aMule.png
 share/pixmaps/wxcas.xpm

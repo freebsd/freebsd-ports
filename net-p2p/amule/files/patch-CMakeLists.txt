@@ -1,11 +1,18 @@
---- CMakeLists.txt.orig	2026-07-31 13:00:04 UTC
+b700cbd3a83d ("net-p2p/amule: fix build on 32-bit platforms properly")
+
+The port asks for libatomic on 32 bit platforms.  That's a gcc thing.
+We don't compile with gcc, so libatomic is not needed in any case.
+Patch out the check for libatomic to fix the build on all 32-bit
+platforms.
+
+--- CMakeLists.txt.orig	2026-09-21 10:20:45 UTC
 +++ CMakeLists.txt
-@@ -296,7 +296,7 @@ set (LIBATOMIC "")
+@@ -383,7 +383,7 @@ set (LIBATOMIC "")
  # atomic references actually do need the library (see #643). Just
  # require libatomic unconditionally on 32-bit builds.
  set (LIBATOMIC "")
 -if (CMAKE_SIZEOF_VOID_P EQUAL 4)
 +if (FALSE AND CMAKE_SIZEOF_VOID_P EQUAL 4)
- 	# Accept either the unversioned `libatomic.so` (Debian / Fedora /
- 	# Arch ship it via the -dev / -devel package) or the versioned-only
- 	# `libatomic.so.1` (openSUSE ships only the latter -- there's no
+ 	# Probe with a compiler-driven LINK test, not find_library. With GCC,
+ 	# libatomic ships inside the compiler's own runtime dir (e.g.
+ 	# .../lib/gcc14/) which is not on find_library's filesystem search

@@ -1,0 +1,78 @@
+From 210caba58f0b88ac6ad892c728355095714bca28 Mon Sep 17 00:00:00 2001
+From: got3nks <got3nks@users.noreply.github.com>
+Date: Tue, 22 Sep 2026 00:08:00 +0100
+Subject: [PATCH] test(core): stop the double-free probe failing where the
+ allocator absorbs it (#1525)
+
+The abort-backtrace suite forks a child, double frees for real and requires the
+child to die. glibc and macOS libmalloc oblige. FreeBSD's jemalloc takes the
+second free into its thread cache and says nothing unless libc was built
+--enable-debug, so the child ran to its own exit and the case failed on a
+property no aMule code owns. MALLOC_CONF is read at allocator init, long before
+the fork, so the test cannot ask for detection either.
+
+Give that exit its own code and accept it: where nothing died there is no report
+to assert on, and the trap and abort cases still cover the handler.
+
+Closes #1524.
+---
+ unittests/tests/FatalAbortBacktraceTest.cpp | 22 +++++++++++++++++++--
+ 1 file changed, 20 insertions(+), 2 deletions(-)
+
+diff --git unittests/tests/FatalAbortBacktraceTest.cpp unittests/tests/FatalAbortBacktraceTest.cpp
+index 5df94a97a9..3b11d3f92c 100644
+--- unittests/tests/FatalAbortBacktraceTest.cpp
++++ unittests/tests/FatalAbortBacktraceTest.cpp
+@@ -73,9 +73,14 @@ struct ChildResult
+ 	std::string stderr_text;
+ 	bool exited_on_signal = false;
+ 	int signal_number = 0;
++	int exit_code = -1; // only meaningful when the child was not signalled
+ 	bool timed_out = false;
+ };
+ 
++// What a child exits with when its own double free went through unnoticed, so the parent can tell
++// an allocator that absorbed the corruption from any other quiet exit.
++const int kAllocatorAbsorbedIt = 70;
++
+ // Runs `body` in a forked child with its stderr on a pipe, and returns what it wrote plus how it
+ // died. The alarm is the deadlock detector: a handler that allocates can block forever inside
+ // malloc, and without a bound that would hang the whole suite instead of failing one case.
+@@ -128,6 +133,8 @@ ChildResult RunInChild(void (*body)(), unsigned timeout_seconds = 10)
+ 		result.exited_on_signal = true;
+ 		result.signal_number = WTERMSIG(status);
+ 		result.timed_out = (result.signal_number == SIGALRM);
++	} else if (WIFEXITED(status)) {
++		result.exit_code = WEXITSTATUS(status);
+ 	}
+ 	return result;
+ }
+@@ -161,7 +168,7 @@ void ChildDoubleFree()
+ #endif
+ 	free(p);
+ 	free(Launder(p));
+-	_exit(0); // not reached while the allocator detects the double free
++	_exit(kAllocatorAbsorbedIt); // reached only where the allocator lets a double free through
+ }
+ 
+ // The trap path on its own, without depending on what an allocator decides to do. __builtin_trap()
+@@ -413,7 +420,18 @@ TEST(FatalAbortBacktrace, RealHeapCorruptionStillProducesABacktrace)
+ 	const ChildResult r = RunInChild(ChildDoubleFree);
+ 
+ 	ASSERT_FALSE(r.timed_out); // a handler that allocates deadlocks here
+-	ASSERT_TRUE(r.exited_on_signal);
++
++	// Whether a double free is noticed at all is the allocator's choice, not ours. glibc and
++	// macOS libmalloc both kill the child. FreeBSD's jemalloc takes the second free into its
++	// thread cache and says nothing unless libc was built --enable-debug, and the test cannot
++	// change that from inside the process: MALLOC_CONF is read at allocator init, long before
++	// the fork. Where nothing died there is no report to assert on, and the trap and abort
++	// cases below still cover the handler. amule-org/amule#1524.
++	if (!r.exited_on_signal) {
++		ASSERT_EQUALS(kAllocatorAbsorbedIt, r.exit_code);
++		return;
++	}
++
+ 	// Which signal carries the corruption is the allocator's business: glibc abort()s, macOS
+ 	// libmalloc may trap for the very same double free. Asserting one of them is what made this
+ 	// case fail intermittently on macOS. The report is the behaviour under test.
