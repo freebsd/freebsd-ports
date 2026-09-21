@@ -1,6 +1,6 @@
 PORTNAME=	freeipa-client
 DISTVERSION=	4.13.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://releases.pagure.org/freeipa/
 DISTNAME=	freeipa-${DISTVERSION}
@@ -65,6 +65,16 @@ EXTRACT_AFTER_ARGS=	--exclude client/systemd --exclude daemons/dnssec \
 			--exclude init/tmpfilesd
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/client/ipa-join.c \
+		${WRKSRC}/ipaplatform/base/paths.py \
+		${WRKSRC}/ipaplatform/freebsd/paths.py \
+		${WRKSRC}/ipaplatform/freebsd/services.py \
+		${WRKSRC}/ipapython/ipautil.py \
+		${WRKSRC}/util/ipa_ldap.h
 
 # Make sample configuration file
 post-install:

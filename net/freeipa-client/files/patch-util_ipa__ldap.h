@@ -5,7 +5,7 @@
  #include <ldap.h>
  
 -#define DEFAULT_CA_CERT_FILE "/etc/ipa/ca.crt"
-+#define DEFAULT_CA_CERT_FILE "/usr/local/etc/ipa/ca.crt"
++#define DEFAULT_CA_CERT_FILE "%%LOCALBASE%%/etc/ipa/ca.crt"
  
  #define LDAP_SASL_EXTERNAL "EXTERNAL"
  #define LDAP_SASL_GSSAPI "GSSAPI"

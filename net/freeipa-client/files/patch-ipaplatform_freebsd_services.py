@@ -36,13 +36,13 @@
 +
 +freebsd_kerberos_rcvars = {
 +    "kdc": {
-+        "kdc_program": "/usr/local/sbin/krb5kdc",
++        "kdc_program": "%%LOCALBASE%%/sbin/krb5kdc",
 +        "kdc_enable": "YES",
 +    },
 +    "kadmind": {
-+        "kdc_program": "/usr/local/sbin/krb5kdc",
++        "kdc_program": "%%LOCALBASE%%/sbin/krb5kdc",
 +        "kdc_enable": "YES",
-+        "kadmind_program": "/usr/local/sbin/kadmind",
++        "kadmind_program": "%%LOCALBASE%%/sbin/kadmind",
 +        "kadmind_enable": "YES",
 +    },
 +}
@@ -128,7 +128,7 @@
 +    def is_installed(self):
 +        return (
 +            os.path.exists("/etc/rc.d/%s" % self.rc_name) or
-+            os.path.exists("/usr/local/etc/rc.d/%s" % self.rc_name)
++            os.path.exists("%%LOCALBASE%%/etc/rc.d/%s" % self.rc_name)
 +        )
 +
 +    def enable(self, instance_name=""):
