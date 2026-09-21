@@ -19,7 +19,7 @@ USE_PYTHON=	flavors
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	isotopp
-GH_TAGNAME=	8a0fbd3
+GH_TAGNAME=	f16fdde
 
 NO_ARCH=	yes
 NO_BUILD=	yes
