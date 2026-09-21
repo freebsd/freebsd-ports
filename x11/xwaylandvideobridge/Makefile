@@ -1,5 +1,5 @@
 PORTNAME=	xwaylandvideobridge
-DISTVERSION=	0.5.2
+DISTVERSION=	0.5.3
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/src/
 
