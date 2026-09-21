@@ -1,5 +1,6 @@
 PORTNAME=	minc-tools
 DISTVERSION=	2-3-00
+PORTREVISION=	1
 CATEGORIES=	science biology
 MASTER_SITES=	https://github.com/BIC-MNI/${PORTNAME}/archive/refs/tags/
 
@@ -9,6 +10,9 @@ WWW=		https://www.bic.mni.mcgill.ca/ServicesSoftware/MINC
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	nifticlib>0:science/nifticlib
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
