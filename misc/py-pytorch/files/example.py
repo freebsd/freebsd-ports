@@ -24,8 +24,6 @@ class DiscriminantNN(nn.Module):
             nn.GELU(),
             nn.Linear(128, 128),
             nn.GELU(),
-            nn.Linear(128, 128),
-            nn.GELU(),
             nn.Linear(128, 64),
             nn.GELU(),
             nn.Linear(64, 1)
@@ -51,7 +49,7 @@ scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0
 
 print("Training started...")
 epoch = 0
-max_epochs = 300000
+max_epochs = 10000
 
 while epoch < max_epochs:
     #print(f"Epoch {epoch:04d} | Learning Rate: {optimizer.param_groups[0]['lr']:.6f}")

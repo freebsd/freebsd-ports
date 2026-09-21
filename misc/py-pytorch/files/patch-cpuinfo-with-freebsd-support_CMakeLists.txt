@@ -1,0 +1,19 @@
+-- Build src/arm/freebsd/init.c for FreeBSD/aarch64 builds.
+-- cpuinfo has no FreeBSD backend for arm/aarch64 (only x86/freebsd exists),
+-- so cpuinfo_initialize() has no implementation to call into on aarch64 and
+-- libtorch_cpu.so fails to load with "Undefined symbol \"cpuinfo_isa\"".
+-- Paired with the new src/arm/freebsd/init.c added below.
+
+-- Upstreamed: https://github.com/pytorch/cpuinfo/pull/436
+
+--- cpuinfo-with-freebsd-support/CMakeLists.txt.orig	2026-09-21 07:02:31 UTC
++++ cpuinfo-with-freebsd-support/CMakeLists.txt
+@@ -211,6 +211,8 @@ IF(CPUINFO_SUPPORTED_PLATFORM)
+       ENDIF()
+     ELSEIF(IS_APPLE_OS AND CPUINFO_TARGET_PROCESSOR MATCHES "arm64.*")
+       LIST(APPEND CPUINFO_SRCS src/arm/mach/init.c)
++    ELSEIF(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++      LIST(APPEND CPUINFO_SRCS src/arm/freebsd/init.c)
+     ENDIF()
+     IF(CMAKE_SYSTEM_NAME STREQUAL "Android")
+       LIST(APPEND CPUINFO_SRCS

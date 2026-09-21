@@ -1,7 +1,7 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -103,6 +103,12 @@ VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 CONFLICTS_BUILD=	mpich # binaries are still linked with mpich when it is present
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64
+# torch's many dlopen'd shared libraries (OpenMP, mimalloc, cpuinfo, etc.) require
+# more initial-exec TLS than rtld's small default dlopen reserve, see rtld(1)
+TEST_ENV+=	LD_STATIC_TLS_EXTRA=4096
+.endif
 
 post-extract:
 	# upstream ships a stray *.orig file that 'make makepatch' would otherwise
