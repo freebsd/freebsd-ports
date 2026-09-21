@@ -11,7 +11,7 @@ WWW=		https://ispc.github.io/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=		aarch64 amd64 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 i386 powerpc64le
 ONLY_FOR_ARCHS_REASON=	only available for these architectures
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
@@ -63,6 +63,13 @@ XE_PLIST_FILES=		include/ispcrt/ispcrt.h \
 			lib/libispcrt.so.${PORTVERSION} \
 			lib/libispcrt_static.a
 XE_BROKEN=		Unknown architecture
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+CMAKE_ON+=	PPC64_ENABLED
+CMAKE_OFF+=	ARM_ENABLED
+.endif
 
 do-test: # all tests pass
 	@cd ${WRKSRC} && ISPC_HOME=${BUILD_WRKSRC}/bin ./scripts/run_tests.py
