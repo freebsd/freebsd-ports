@@ -1,0 +1,13 @@
+--- gtk4/immodule/Makefile.am.orig	2026-09-20 13:23:35 UTC
++++ gtk4/immodule/Makefile.am
+@@ -15,8 +15,8 @@ libim_uim_la_LDFLAGS = -module -avoid-version
+ 
+ libim_uim_la_SOURCES = $(LIBIM_UIM_SOURCES)
+ libim_uim_la_LDFLAGS = -module -avoid-version
+-libim_uim_la_LIBADD = $(top_builddir)/uim/libuim-scm.la \
+-		      $(top_builddir)/uim/libuim.la \
++libim_uim_la_LIBADD = -luim-scm \
++		      -luim \
+ 		      $(top_builddir)/uim/libuim-counted-init.la
+ libim_uim_la_LIBADD += @GTK4_LIBS@
+ libim_uim_la_LIBADD += -lm

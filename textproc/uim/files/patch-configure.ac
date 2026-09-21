@@ -1,20 +1,20 @@
---- configure.ac.orig	2025-04-13 09:17:52 UTC
+--- configure.ac.orig	2026-09-20 00:33:22 UTC
 +++ configure.ac
-@@ -124,7 +124,7 @@ if test "x$with_anthy" = xyes; then
- if test "x$with_anthy" = xyes; then
+@@ -126,7 +126,7 @@ if test "x$with_anthy" = xyes; then
    ANTHY_LIBS="-lanthy -lanthydic"
    ANTHY_CFLAGS=""
--  PKG_CHECK_EXISTS(anthy >= 8622,
-+  PKG_CHECK_EXISTS(anthy >= 0.4,
-                    [AC_DEFINE(LIBANTHY_UTF8_CAPABLE, 1,
-                     "libanthy can handle UTF-8")])
- fi
-@@ -146,7 +146,7 @@ if test "x$with_anthy_utf8" != xno; then
-                     [with_anthy_utf8=yes
-                      AC_DEFINE(LIBANTHY_UTF8_CAPABLE, 1,
-                      [libanthy-unicode can handle UTF-8])],
--                    [PKG_CHECK_MODULES(ANTHY_UTF8, anthy >= 8622,
-+                    [PKG_CHECK_MODULES(ANTHY_UTF8, anthy >= 0.4,
-                                        [with_anthy_utf8=yes
-                                         AC_DEFINE(LIBANTHY_UTF8_CAPABLE, 1,
-                                         [libanthy can handle UTF-8])],
+   PKG_CHECK_EXISTS(
+-    anthy >= 8622,
++    anthy >= 1.0,
+     [AC_DEFINE(LIBANTHY_UTF8_CAPABLE, 1, "libanthy can handle UTF-8")],
+     [PKG_CHECK_EXISTS(
+        anthy < 1000, # https://salsa.debian.org/debian/anthy supports UTF-8.
+@@ -154,7 +154,7 @@ if test "x$with_anthy_utf8" != xno; then
+      [libanthy-unicode can handle UTF-8])],
+     [PKG_CHECK_MODULES(
+        ANTHY_UTF8,
+-       anthy >= 8622,
++       anthy >= 1.0,
+        [with_anthy_utf8=yes
+         AC_DEFINE(LIBANTHY_UTF8_CAPABLE, 1, [libanthy can handle UTF-8])],
+        [PKG_CHECK_MODULES(

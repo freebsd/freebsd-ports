@@ -2267,8 +2267,8 @@
     SUBDIR += ugrep
     SUBDIR += uim
     SUBDIR += uim-el
-    SUBDIR += uim-gtk2
     SUBDIR += uim-gtk3
+    SUBDIR += uim-gtk4
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt5
     SUBDIR += uim-qt6

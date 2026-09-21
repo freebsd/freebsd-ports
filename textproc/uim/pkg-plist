@@ -58,9 +58,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%PORTDOCS%%%%DOCSDIR%%/README.key
 %%PORTDOCS%%%%DOCSDIR%%/README.xim
 %%DATADIR%%/action.scm
-%%DATADIR%%/ajax-ime-custom.scm
-%%DATADIR%%/ajax-ime-key-custom.scm
-%%DATADIR%%/ajax-ime.scm
 %%DATADIR%%/annotation-custom.scm
 %%DATADIR%%/annotation-dict.scm
 %%DATADIR%%/annotation-eb.scm
@@ -83,7 +80,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/canna-key-custom.scm
 %%DATADIR%%/canna.scm
 %%DATADIR%%/cannav3-socket.scm
-%%DATADIR%%/composer.scm
 %%DATADIR%%/ct.scm
 %%DATADIR%%/custom-rt.scm
 %%DATADIR%%/custom.scm
@@ -96,7 +92,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/elatin-custom.scm
 %%DATADIR%%/elatin-rules.scm
 %%DATADIR%%/elatin.scm
-%%DATADIR%%/event.scm
 %%DATADIR%%/fileio.scm
 %%DATADIR%%/generic-custom.scm
 %%DATADIR%%/generic-key-custom.scm
@@ -109,7 +104,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/hangul2.scm
 %%DATADIR%%/hangul3.scm
 %%DATADIR%%/http-client.scm
-%%DATADIR%%/http-server.scm
 %%DATADIR%%/i18n.scm
 %%DATADIR%%/ichar.scm
 %%DATADIR%%/im-custom.scm
@@ -121,11 +115,16 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/ipa-x-sampa.scm
 %%DATADIR%%/iso-639-1.scm
 %%DATADIR%%/japanese-act.scm
+%%DATADIR%%/japanese-act-utf8.scm
 %%DATADIR%%/japanese-azik.scm
+%%DATADIR%%/japanese-azik-utf8.scm
 %%DATADIR%%/japanese-custom.scm
 %%DATADIR%%/japanese-kana.scm
+%%DATADIR%%/japanese-kana-utf8.scm
 %%DATADIR%%/japanese-kzik.scm
+%%DATADIR%%/japanese-kzik-utf8.scm
 %%DATADIR%%/japanese.scm
+%%DATADIR%%/japanese-utf8.scm
 %%DATADIR%%/json-parser-expanded.scm
 %%DATADIR%%/json.scm
 %%DATADIR%%/key.scm
@@ -148,17 +147,9 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/look.scm
 %%DATADIR%%/m17nlib.scm
 %%DATADIR%%/m17nlib-custom.scm
-%%DATADIR%%/mana-custom.scm
-%%DATADIR%%/mana-key-custom.scm
-%%DATADIR%%/mana.scm
-%%DATADIR%%/match.scm
-%%DATADIR%%/ng-action.scm
-%%DATADIR%%/ng-key.scm
 %%DATADIR%%/openssl.scm
 %%DATADIR%%/packrat.scm
 %%DATADIR%%/pinyin-big5.scm
-%%DATADIR%%/pixmaps/ajax-ime.png
-%%DATADIR%%/pixmaps/ajax-ime.svg
 %%DATADIR%%/pixmaps/anthy.png
 %%DATADIR%%/pixmaps/baidu-olime-jp.png
 %%DATADIR%%/pixmaps/baidu-olime-jp.svg
@@ -250,8 +241,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/latin.svg
 %%DATADIR%%/pixmaps/look.png
 %%DATADIR%%/pixmaps/look.svg
-%%DATADIR%%/pixmaps/mana.png
-%%DATADIR%%/pixmaps/mana.svg
 %%DATADIR%%/pixmaps/null.png
 %%DATADIR%%/pixmaps/off.png
 %%DATADIR%%/pixmaps/off.svg
@@ -263,11 +252,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/on_dark_background.svg
 %%DATADIR%%/pixmaps/pinyin-big5.png
 %%DATADIR%%/pixmaps/pinyin-big5.svg
-%%DATADIR%%/pixmaps/prime.png
-%%DATADIR%%/pixmaps/prime_mode_application.png
-%%DATADIR%%/pixmaps/prime_mode_application.svg
-%%DATADIR%%/pixmaps/prime_mode_application_dark_background.png
-%%DATADIR%%/pixmaps/prime_mode_application_dark_background.svg
 %%DATADIR%%/pixmaps/py.png
 %%DATADIR%%/pixmaps/py.svg
 %%DATADIR%%/pixmaps/pyunihan.png
@@ -276,8 +260,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/romaja.svg
 %%DATADIR%%/pixmaps/scim.png
 %%DATADIR%%/pixmaps/scim.svg
-%%DATADIR%%/pixmaps/sj3.png
-%%DATADIR%%/pixmaps/sj3.svg
 %%DATADIR%%/pixmaps/skk.png
 %%DATADIR%%/pixmaps/skk.svg
 %%DATADIR%%/pixmaps/skk_dark_background.png
@@ -298,6 +280,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/uim-dict.svg
 %%DATADIR%%/pixmaps/uim-gray.png
 %%DATADIR%%/pixmaps/uim-icon.png
+%%DATADIR%%/pixmaps/uim-icon.svg
 %%DATADIR%%/pixmaps/uim-icon48.png
 %%DATADIR%%/pixmaps/uim-icon64.png
 %%DATADIR%%/pixmaps/unknown.png
@@ -312,8 +295,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/wb86_dark_background.svg
 %%DATADIR%%/pixmaps/wnn.png
 %%DATADIR%%/pixmaps/wnn.svg
-%%DATADIR%%/pixmaps/yahoo-jp.png
-%%DATADIR%%/pixmaps/yahoo-jp.svg
 %%DATADIR%%/pixmaps/zm.png
 %%DATADIR%%/pixmaps/zm.svg
 %%DATADIR%%/pixmaps/zm_dark_background.png
@@ -326,20 +307,12 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/predict-look-skk.scm
 %%DATADIR%%/predict-look.scm
 %%DATADIR%%/predict-sqlite3.scm
-%%DATADIR%%/pregexp.scm
-%%DATADIR%%/prime-custom.scm
-%%DATADIR%%/prime-key-custom.scm
-%%DATADIR%%/prime.scm
 %%DATADIR%%/process.scm
 %%DATADIR%%/py.scm
 %%DATADIR%%/pyload.scm
 %%DATADIR%%/pyunihan.scm
 %%DATADIR%%/rk.scm
 %%DATADIR%%/romaja.scm
-%%DATADIR%%/sj3-custom.scm
-%%DATADIR%%/sj3-key-custom.scm
-%%DATADIR%%/sj3.scm
-%%DATADIR%%/sj3v2-socket.scm
 %%DATADIR%%/skk-custom.scm
 %%DATADIR%%/skk-dialog.scm
 %%DATADIR%%/skk-editor.scm
@@ -347,10 +320,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/skk.scm
 %%DATADIR%%/socket.scm
 %%DATADIR%%/sqlite3.scm
-%%DATADIR%%/sxml-tools.scm
-%%DATADIR%%/sxpathlib.scm
 %%DATADIR%%/tcode.scm
-%%DATADIR%%/trec.scm
 %%DATADIR%%/trycode.scm
 %%DATADIR%%/tutcode-bushu.scm
 %%DATADIR%%/tutcode-bushudic.scm
@@ -375,8 +345,4 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/wnn.scm
 %%DATADIR%%/xkb.scm
 %%DATADIR%%/xmload.scm
-%%DATADIR%%/yahoo-jp-custom.scm
-%%DATADIR%%/yahoo-jp-key-custom.scm
-%%DATADIR%%/yahoo-jp.scm
-%%DATADIR%%/zaurus.scm
 @dir %%DATADIR%%/helperdata

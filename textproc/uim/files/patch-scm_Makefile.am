@@ -1,0 +1,10 @@
+--- scm/Makefile.am.orig	2026-09-20 10:05:02 UTC
++++ scm/Makefile.am
+@@ -26,7 +26,6 @@ SCM_FILES = plugin.scm im.scm im-custom.scm lazy-load.
+  japanese-act-utf8.scm japanese-kzik-utf8.scm \
+  anthy.scm anthy-custom.scm anthy-key-custom.scm \
+  anthy-utf8.scm anthy-utf8-custom.scm \
+- mozc.scm mozc-custom.scm mozc-key-custom.scm \
+  canna.scm cannav3-socket.scm canna-custom.scm canna-key-custom.scm \
+  wnn.scm wnn-custom.scm wnn-key-custom.scm \
+  skk.scm skk-editor.scm skk-custom.scm skk-key-custom.scm skk-dialog.scm \

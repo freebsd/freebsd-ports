@@ -1,5 +1,5 @@
 PORTNAME=	uim
-PORTVERSION=	1.9.6
+PORTVERSION=	1.9.7
 PORTREVISION?=	0
 CATEGORIES?=	textproc
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -27,7 +27,8 @@ GH_TUPLE=	uim:sigscheme:ccf1f92:sigscheme \
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CONFIGURE_ARGS+=	--enable-maintainer-mode
+CONFIGURE_ARGS+=	--enable-maintainer-mode \
+			--with-sqlite3 --without-mozc
 
 OPTIONS_DEFINE=	DOCS X11
 OPTIONS_DEFAULT=	X11
@@ -53,7 +54,7 @@ LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 CONFIGURE_ARGS+=	--with-gtk3 --enable-default-toolkit=gtk3
 .endif
-CONFIGURE_ARGS+=	--enable-emacs --with-sj3 --with-canna --with-prime
+CONFIGURE_ARGS+=	--enable-emacs --with-canna
 .endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -79,12 +80,12 @@ PLIST_SUB+=	X11=""
 CONFIGURE_ARGS+=	--enable-storage=fatty
 .endif
 
-.for _x in x xft gtk2 gtk3 qt5 qt6 anthy canna m17nlib prime scim dict
+.for _x in x xft gtk3 gtk4 qt5 qt6 anthy anthy-utf8 canna m17nlib scim dict
 .if ${CONFIGURE_ARGS:M--with-${_x}} == ""
 CONFIGURE_ARGS+=--without-${_x}
 .endif
 .endfor
-.for _x in gnome-applet kde-applet emacs pref
+.for _x in gnome3-applet kde5-applet emacs pref
 .if ${CONFIGURE_ARGS:M--enable-${_x}} == ""
 CONFIGURE_ARGS+=--disable-${_x}
 .endif
