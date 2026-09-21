@@ -35,9 +35,9 @@ Configuration:
       sysrc immich_server_enable=YES
       service immich_server start
  5. Optional: install www/immich-ml for smart search, duplicate
-    detection and facial recognition, then set the machine-learning
-    URL in the admin web UI (Administration > Settings >
-    Machine Learning) to http://127.0.0.1:3003
+    detection, facial recognition and text search in images.  The rc
+    script points the server at it on 127.0.0.1:3003; a service on
+    another host goes into immich_server_ml_url.
 
 Running it:
  * The server listens on all addresses, and its worker opens a second

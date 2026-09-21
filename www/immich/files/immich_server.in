@@ -30,6 +30,7 @@ load_rc_config $name
 : ${immich_server_media_location:=/var/db/immich}
 : ${immich_server_host:=0.0.0.0}
 : ${immich_server_port:=2283}
+: ${immich_server_ml_url:=http://127.0.0.1:3003}
 : ${immich_server_env_file:=%%PREFIX%%/etc/immich.env}
 : ${immich_server_env:="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
 	HOME=${immich_server_media_location} \
@@ -38,6 +39,7 @@ load_rc_config $name
 	IMMICH_MEDIA_LOCATION=${immich_server_media_location} \
 	IMMICH_HOST=${immich_server_host} \
 	IMMICH_PORT=${immich_server_port} \
+	IMMICH_MACHINE_LEARNING_URL=${immich_server_ml_url} \
 	FFMPEG_PATH=%%PREFIX%%/bin/jellyfin-ffmpeg8 \
 	FFPROBE_PATH=%%PREFIX%%/bin/jellyfin-ffprobe8"}
 
