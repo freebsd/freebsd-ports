@@ -1,5 +1,5 @@
 PORTNAME=	immanent-checker
-DISTVERSION=	0.42
+DISTVERSION=	0.50
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab.p.variablis.de/api/v4/projects/open-source%2Fimmanent-checker/packages/generic/${PORTNAME}/${DISTVERSION}/:phar \
 		https://gitlab.p.variablis.de/open-source/immanent-checker/-/raw/${DISTVERSION}/man/man1/:manpage
