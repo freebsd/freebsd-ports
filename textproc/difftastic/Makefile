@@ -1,5 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.70.0
+DISTVERSION=	0.71.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -25,7 +25,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		anstyle-wincon-3.0.4 \
 		assert_cmd-2.0.17 \
 		autocfg-1.1.0 \
-		bitflags-1.3.2 \
 		bitflags-2.5.0 \
 		bstr-1.9.1 \
 		bumpalo-3.20.3 \
@@ -38,8 +37,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		crossbeam-deque-0.8.5 \
 		crossbeam-epoch-0.9.20 \
 		crossbeam-utils-0.8.19 \
-		crossterm-0.28.1 \
-		crossterm_winapi-0.9.1 \
 		diff-0.1.13 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
@@ -53,7 +50,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		float-cmp-0.10.0 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
-		glob-0.3.1 \
+		glob-0.3.4 \
 		globset-0.4.19 \
 		hashbrown-0.15.5 \
 		hashbrown-0.17.1 \
@@ -62,6 +59,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		humansize-2.1.3 \
 		humantime-2.1.0 \
 		ignore-0.4.29 \
+		imara-diff-0.2.0 \
 		indexmap-2.14.0 \
 		is-terminal-0.4.12 \
 		is_terminal_polyfill-1.70.1 \
@@ -69,18 +67,14 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		lazy_static-1.4.0 \
 		libc-0.2.169 \
 		libm-0.2.8 \
-		line-numbers-0.3.0 \
+		line-numbers-0.3.1 \
 		linux-raw-sys-0.4.14 \
-		lock_api-0.4.11 \
 		log-0.4.21 \
 		memchr-2.8.3 \
-		mio-1.0.3 \
 		nom-8.0.0 \
 		normalize-line-endings-0.3.0 \
 		num-traits-0.2.19 \
 		owo-colors-4.2.3 \
-		parking_lot-0.12.1 \
-		parking_lot_core-0.9.9 \
 		petgraph-0.8.3 \
 		predicates-3.1.3 \
 		predicates-core-1.0.6 \
@@ -92,7 +86,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		radix-heap-0.4.2 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		redox_syscall-0.4.1 \
 		regex-1.12.2 \
 		regex-automata-0.4.13 \
 		regex-syntax-0.8.8 \
@@ -100,15 +93,11 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		rustix-0.38.34 \
 		ryu-1.0.17 \
 		same-file-1.0.6 \
-		scopeguard-1.2.0 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_json-1.0.145 \
 		shlex-1.3.0 \
-		signal-hook-0.3.17 \
-		signal-hook-mio-0.2.4 \
-		signal-hook-registry-1.4.1 \
 		smallvec-1.13.2 \
 		streaming-iterator-0.1.9 \
 		strsim-0.11.1 \
@@ -166,7 +155,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		tree-sitter-racket-0.24.7 \
 		tree-sitter-ruby-0.23.1 \
 		tree-sitter-rust-orchard-0.16.6 \
-		tree-sitter-scala-0.26.0 \
+		tree-sitter-scala-0.26.2 \
 		tree-sitter-scheme-0.24.7 \
 		tree-sitter-sequel-0.3.11 \
 		tree-sitter-sfapex-2.4.0 \
@@ -180,7 +169,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		tree-sitter-yaml-0.7.2 \
 		tree-sitter-zig-1.1.2 \
 		tree_magic_mini-3.2.2 \
-		ts-parser-perl-1.0.1 \
+		ts-parser-perl-1.2.1 \
 		typed-arena-2.0.2 \
 		unicode-ident-1.0.12 \
 		unicode-width-0.2.2 \
@@ -188,31 +177,18 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.5.0 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
-		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		wu-diff-0.1.2 \
 		yansi-1.0.1
 
 PORTSCOUT=	ignore:1
