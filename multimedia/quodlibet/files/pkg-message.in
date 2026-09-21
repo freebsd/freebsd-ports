@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+Quodlibet has been installed.
+For the plugins to work, the following ports are required.
+* notification plugin
+  A DBus notification daemon like sysutils/dunst or x11/mako
+* replaygain plugin
+  multimedia/gstreamer1-plugins-good
+* acoustid plugin
+  multimedia/gstreamer1-plugins-bad
+* "Browse Folders" and others
+  devel/py-dbus
+* MQTT plugin
+  net/py-paho-mqtt
+* Musicbrainz plugin
+  audio/py-musicbrainzngs
+* Sonos plugin
+  multimedia/py-soco
+EOM
+}
+]
