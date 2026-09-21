@@ -54,6 +54,14 @@ OPTIONS_DEFINE=	GTK
 GTK_DESC=		Global menu bar support for GTK applications
 GTK_RUN_DEPENDS=	appmenu-gtk-module>0:x11/gtk-app-menu
 
+.include <bsd.port.options.mk>
+# https://reviews.freebsd.org/D59635
+.if ${OSVERSION} < 1501503
+PLIST_SUB+=	RTLD="@comment "
+.else
+PLIST_SUB+=	RTLD=""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/startkde/startplasma.cpp \

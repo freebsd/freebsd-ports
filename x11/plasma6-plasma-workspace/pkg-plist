@@ -183,7 +183,7 @@ lib/libtaskmanager.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.analogclock.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.appmenu.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.calendar.so
-%%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.cameraindicator.so
+%%RTLD%%%%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.cameraindicator.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.clipboard.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.devicenotifier.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.digitalclock.so
