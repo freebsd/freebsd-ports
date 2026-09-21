@@ -12,6 +12,8 @@ WWW=		https://smelter.dev \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error: static assertion failed due to requirement 'sizeof(struct VkPhysicalDeviceFeatures2) == 240': VkPhysicalDeviceFeatures2 must be 240 bytes (Vulkan 1.1 frozen ABI)
+
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libopus.so:audio/opus
 
