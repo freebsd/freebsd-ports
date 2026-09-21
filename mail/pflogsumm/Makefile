@@ -1,5 +1,5 @@
 PORTNAME=	pflogsumm
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://jimsun.LinxNet.com/downloads/ \
@@ -19,7 +19,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pflogsumm share/man/man1/pflogsumm.1.gz
-PORTDOCS=	README ToDo pflogsumm-faq.txt
+PORTDOCS=	README.md TODO FAQ
 
 OPTIONS_DEFINE=	DOCS
 
