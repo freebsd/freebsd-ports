@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-06-12 09:06:01 UTC
+--- CMakeLists.txt.orig	2026-09-08 11:00:52 UTC
 +++ CMakeLists.txt
-@@ -87,12 +87,16 @@ find_package(LayerShellQt REQUIRED)
+@@ -90,13 +90,17 @@ find_package(LayerShellQt REQUIRED)
  find_package(Wayland REQUIRED COMPONENTS Client)
  find_package(PlasmaWaylandProtocols REQUIRED)
  find_package(LayerShellQt REQUIRED)
@@ -11,6 +11,7 @@
 +    set(PIPEWIRE_FOUND 1)
 +endif()
  find_package(OpenCV 4.7 REQUIRED core imgproc)
+ find_package(PkgConfig REQUIRED)
  
  set_package_properties(KPipeWire PROPERTIES DESCRIPTION
      "Used to record pipewire streams into a file"
@@ -18,8 +19,8 @@
 +    TYPE OPTIONAL
  )
  
- # optional components
---- src/CMakeLists.txt.orig	2025-06-12 09:06:01 UTC
+ ecm_find_qmlmodule(org.kde.kquickimageeditor)
+--- src/CMakeLists.txt.orig	2026-09-08 11:00:52 UTC
 +++ src/CMakeLists.txt
 @@ -19,6 +19,10 @@ qt_add_qml_module(spectacle URI ${SPECTACLE_QML_URI} D
  add_executable(spectacle)
@@ -32,7 +33,7 @@
  target_sources(spectacle PRIVATE
      ${SPECTACLE_SRCS}
      CaptureModeModel.cpp
-@@ -60,7 +64,6 @@ target_sources(spectacle PRIVATE
+@@ -55,7 +59,6 @@ target_sources(spectacle PRIVATE
      Platforms/PlatformNull.cpp
      Platforms/screencasting.cpp
      Platforms/VideoPlatform.cpp
@@ -40,7 +41,7 @@
      RecordingModeModel.cpp
      ScreenShotEffect.cpp
      ShortcutActions.cpp
-@@ -106,6 +109,10 @@ target_include_directories(spectacle PUBLIC ${OpenCV_I
+@@ -98,6 +101,10 @@ target_include_directories(spectacle PUBLIC ${OpenCV_I
  
  target_include_directories(spectacle PUBLIC ${OpenCV_INCLUDE_DIRS})
  
@@ -51,15 +52,15 @@
  target_link_libraries(spectacle PRIVATE
      Qt::Concurrent
      Qt::DBus
-@@ -131,7 +138,6 @@ target_link_libraries(spectacle PRIVATE
-     KF6::StatusNotifierItem
+@@ -124,7 +131,6 @@ target_link_libraries(spectacle PRIVATE
      KF6::PrisonScanner
      KF6::Crash
+     KF6::I18nQml
 -    K::KPipeWireRecord
      Wayland::Client
      LayerShellQt::Interface
-     ${OpenCV_LIBRARIES}
---- src/Config.h.in.orig	2025-06-12 09:06:01 UTC
+     KQuickImageEditor
+--- src/Config.h.in.orig	2026-09-08 11:00:52 UTC
 +++ src/Config.h.in
 @@ -7,6 +7,9 @@
  /* Define to 1 if we have Purpose */
@@ -71,7 +72,7 @@
  /* Set the Spectacle version from CMake */
  #cmakedefine SPECTACLE_VERSION "@SPECTACLE_VERSION@"
  
---- src/Platforms/PlatformLoader.cpp.orig	2025-06-12 09:06:01 UTC
+--- src/Platforms/PlatformLoader.cpp.orig	2026-09-08 11:00:52 UTC
 +++ src/Platforms/PlatformLoader.cpp
 @@ -11,7 +11,9 @@
  
