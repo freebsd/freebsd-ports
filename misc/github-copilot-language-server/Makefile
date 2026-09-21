@@ -1,5 +1,5 @@
 PORTNAME=	github-copilot-language-server
-DISTVERSION=	1.465.0
+DISTVERSION=	1.549.0
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${NODE_HEADERS}${EXTRACT_SUFX}
@@ -11,6 +11,9 @@ WWW=		https://github.com/github/copilot-language-server-release
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/node_modules/${PACKAGE_NAME}/LICENSE
+
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	distinfo was only generated for these architectures # feel free to add more architectures
 
 FETCH_DEPENDS=	npm:www/npm \
 		jq:textproc/jq \
@@ -28,7 +31,7 @@ WRKSRC=		${WRKDIR}/copilot-language-server-${DISTVERSION}
 
 PACKAGE_NAME=	@github/copilot-language-server
 
-NODE_HEADERS=	node-v24.11.0-headers
+NODE_HEADERS=	node-v24.21.0-headers
 
 JS_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/:S/i386/ia32/:S/powerpc64le/ppc64le/:S/powerpc64/ppc64/:C/armv[67]/arm/} # modeled after electron.mk
 PLIST_SUB=	JS_ARCH=${JS_ARCH}
@@ -37,27 +40,34 @@ DD=		${DISTDIR}/${DIST_SUBDIR}
 
 FETCH_SCRIPT=	${PORTSDIR}/Tools/scripts/npmjs-fetch-with-dependencies.sh
 
-DEP_MODULES=			policy_watcher sqlite3 kerberos
+DEP_MODULES=			policy_watcher sqlite3 kerberos watcher
 dep_policy_watcher_npm_name=	@vscode/policy-watcher
 dep_policy_watcher_version=	1.3.5
 dep_sqlite3_npm_name=		@vscode/sqlite3
 dep_sqlite3_version=		5.1.10-vscode
 dep_kerberos_npm_name=		kerberos
 dep_kerberos_version=		7.0.0
+dep_watcher_npm_name=		@parcel/watcher
+dep_watcher_version=		2.6.0
 
 .for dep in ${DEP_MODULES}
 DISTFILES+=	${dep:S/_/-/g}-${dep_${dep}_version}${EXTRACT_SUFX}
 .endfor
+
+.include <bsd.port.pre.mk>
+
+DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 
 do-fetch:
 	@if ! [ -f ${DD}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ] || \
 	    ! [ -f ${DD}/${NODE_HEADERS}${EXTRACT_SUFX} ] || \
 	    ! [ -f ${DD}/policy-watcher-${dep_policy_watcher_version}${EXTRACT_SUFX} ] || \
 	    ! [ -f ${DD}/sqlite3-${dep_sqlite3_version}${EXTRACT_SUFX} ] || \
-	    ! [ -f ${DD}/kerberos-${dep_kerberos_version}${EXTRACT_SUFX} ]; then \
+	    ! [ -f ${DD}/kerberos-${dep_kerberos_version}${EXTRACT_SUFX} ] || \
+	    ! [ -f ${DD}/watcher-${dep_watcher_version}${EXTRACT_SUFX} ]; then \
 		${MKDIR} ${DD} && \
 		${ECHO} "====> Fetching ${NODE_HEADERS}${EXTRACT_SUFX}" && \
-		${FETCH_CMD} -q https://nodejs.org/download/release/v24.11.0/${NODE_HEADERS}${EXTRACT_SUFX} -o ${DD}/${NODE_HEADERS}${EXTRACT_SUFX} && \
+		${FETCH_CMD} -q https://nodejs.org/download/release/v${NODE_HEADERS:S/node-v//:S/-headers//}/${NODE_HEADERS}${EXTRACT_SUFX} -o ${DD}/${NODE_HEADERS}${EXTRACT_SUFX} && \
 		${ECHO} "====> Fetching dependency policy-watcher" && \
 		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} ${FETCH_SCRIPT} \
 			${dep_policy_watcher_npm_name} ${dep_policy_watcher_version} \
@@ -73,6 +83,11 @@ do-fetch:
 			${dep_kerberos_npm_name} ${dep_kerberos_version} \
 			${FILESDIR}/package-lock-kerberos.json \
 			${DD}/kerberos-${dep_kerberos_version}${EXTRACT_SUFX} && \
+		${ECHO} "====> Fetching dependency watcher" && \
+		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} ${FETCH_SCRIPT} \
+			${dep_watcher_npm_name} ${dep_watcher_version} \
+			${FILESDIR}/package-lock-watcher.json \
+			${DD}/watcher-${dep_watcher_version}${EXTRACT_SUFX} && \
 		${ECHO} "====> Fetching ${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}" && \
 		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} ${FETCH_SCRIPT} \
 			${PACKAGE_NAME} ${DISTVERSION} \
@@ -86,18 +101,23 @@ do-build:
 	@${ECHO_MSG} "====> Building vscode-policy-watcher..."
 	@cd ${WRKDIR}/policy-watcher-${dep_policy_watcher_version}/node_modules/${dep_policy_watcher_npm_name} && \
 		${SETENV} HOME=${WRKDIR} PYTHON=${PYTHON_CMD} CXXFLAGS="-I${LOCALBASE}/include" \
-			npm rebuild --nodedir=${WRKDIR}/${NODE_HEADERS:S/-headers//} && \
+			npm_package_config_node_gyp_nodedir=${WRKDIR}/${NODE_HEADERS:S/-headers//} node-gyp rebuild && \
 		${CP} build/Release/vscode-policy-watcher.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/dist/compiled/freebsd/${JS_ARCH}/
 	@${ECHO_MSG} "====> Building @vscode/sqlite3..."
 	@cd ${WRKDIR}/sqlite3-${dep_sqlite3_version}/node_modules/${dep_sqlite3_npm_name} && \
 		${SETENV} HOME=${WRKDIR} PYTHON=${PYTHON_CMD} CXXFLAGS="-I${LOCALBASE}/include" \
-			npm rebuild --nodedir=${WRKDIR}/${NODE_HEADERS:S/-headers//} && \
+			npm_package_config_node_gyp_nodedir=${WRKDIR}/${NODE_HEADERS:S/-headers//} node-gyp rebuild && \
 		${CP} build/Release/vscode-sqlite3.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/dist/compiled/freebsd/${JS_ARCH}/node_sqlite3.node
 	@${ECHO_MSG} "====> Building kerberos..."
 	@cd ${WRKDIR}/kerberos-${dep_kerberos_version}/node_modules/${dep_kerberos_npm_name} && \
 		${SETENV} HOME=${WRKDIR} PYTHON=${PYTHON_CMD} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
-			npm rebuild --nodedir=${WRKDIR}/${NODE_HEADERS:S/-headers//} && \
+			npm_package_config_node_gyp_nodedir=${WRKDIR}/${NODE_HEADERS:S/-headers//} node-gyp rebuild && \
 		${CP} build/Release/kerberos.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/dist/compiled/freebsd/${JS_ARCH}/
+	@${ECHO_MSG} "====> Building @parcel/watcher..."
+	@cd ${WRKDIR}/watcher-${dep_watcher_version}/node_modules/${dep_watcher_npm_name} && \
+		${SETENV} HOME=${WRKDIR} PYTHON=${PYTHON_CMD} CXXFLAGS="-I${LOCALBASE}/include" \
+			npm_package_config_node_gyp_nodedir=${WRKDIR}/${NODE_HEADERS:S/-headers//} node-gyp rebuild && \
+		${CP} build/Release/watcher.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/dist/compiled/freebsd/${JS_ARCH}/
 
 do-install:
 	# install files
@@ -119,10 +139,13 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/dist/language-server.js
 	# set exec bit
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/dist/language-server.js
+	# remove temporary installer metadata installed at the top level
+	@${RM} ${STAGEDIR}${PREFIX}/lib/package.json
+	@${RM} ${STAGEDIR}${PREFIX}/lib/package-lock.json
 	# create symlink in bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	@${LN} -s ../lib/node_modules/${PACKAGE_NAME}/dist/language-server.js ${STAGEDIR}${PREFIX}/bin/copilot-language-server
 	# strip binaries
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/dist/compiled -name "*.node" | ${XARGS} ${STRIP_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

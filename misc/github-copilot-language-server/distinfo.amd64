@@ -1,0 +1,13 @@
+TIMESTAMP = 1790058926
+SHA256 (github-copilot-language-server/github-copilot-language-server-1.549.0.tar.gz) = 0ba81bba3e244b39442d15991f4fe2c4eb7ccfbbdfdbb0b62a247a79a3cb161d
+SIZE (github-copilot-language-server/github-copilot-language-server-1.549.0.tar.gz) = 26919835
+SHA256 (github-copilot-language-server/node-v24.21.0-headers.tar.gz) = 57c6bee2e30bbbee5bd51d6cc343eb992e174b56a2a1d0eab7a7510771c20ea2
+SIZE (github-copilot-language-server/node-v24.21.0-headers.tar.gz) = 10291794
+SHA256 (github-copilot-language-server/policy-watcher-1.3.5.tar.gz) = 432efc2fd3d142ac00398b3bf83aa1441db1f13060fc42da9d3539430adfb9f6
+SIZE (github-copilot-language-server/policy-watcher-1.3.5.tar.gz) = 78421
+SHA256 (github-copilot-language-server/sqlite3-5.1.10-vscode.tar.gz) = ee5eaefe2faf6166d9c079cdf4a3bb530d8ba9974966711ed2a71fdeebc32353
+SIZE (github-copilot-language-server/sqlite3-5.1.10-vscode.tar.gz) = 3273144
+SHA256 (github-copilot-language-server/kerberos-7.0.0.tar.gz) = bc2bbc3eccdaf0bb6a36b6aabe1ee7ce8716e577159178a629ca677833dd72ec
+SIZE (github-copilot-language-server/kerberos-7.0.0.tar.gz) = 319599
+SHA256 (github-copilot-language-server/watcher-2.6.0.tar.gz) = 00298ae2b47ca44da4f27b72e799076326d1b86e13b63bb500b3fad7af4c3185
+SIZE (github-copilot-language-server/watcher-2.6.0.tar.gz) = 308422
