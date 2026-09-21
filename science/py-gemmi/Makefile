@@ -12,6 +12,8 @@ WWW=		https://gemmi.readthedocs.io/en/latest/ \
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		not compatible with nanobind-3.x, see https://github.com/project-gemmi/gemmi/issues/442
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nanobind>0:devel/py-nanobind@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
