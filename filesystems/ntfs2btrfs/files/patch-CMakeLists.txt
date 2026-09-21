@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2026-08-10 17:55:01 UTC
++++ CMakeLists.txt
+@@ -80,10 +80,12 @@ if(WITH_ZLIB)
+ endif()
+ 
+ if(WITH_LZO)
++    target_include_directories(ntfs2btrfs PRIVATE ${LZO_INCLUDEDIR})
+     target_link_libraries(ntfs2btrfs ${LZO_LINK_LIBRARIES})
+ endif()
+ 
+ if(WITH_ZSTD)
++    target_include_directories(ntfs2btrfs PRIVATE ${ZSTD_INCLUDEDIR})
+     target_link_libraries(ntfs2btrfs ${ZSTD_LINK_LIBRARIES})
+ endif()
+ 
