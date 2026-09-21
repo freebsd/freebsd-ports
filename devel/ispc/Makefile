@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	only available for these architectures
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		m4:devel/m4
-LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_VERSION} \
+LIB_DEPENDS=	${LLVM_LIBLLVM}:devel/llvm${LLVM_VERSION} \
 		libtbb.so:devel/onetbb
 
 USES=		bison cmake compiler:c++17-lang llvm:lib,min=20,max=20 python:build,test shebangfix
