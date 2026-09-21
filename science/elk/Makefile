@@ -1,6 +1,5 @@
 PORTNAME=	elk
-DISTVERSION=	11.0.2
-PORTREVISION=	1
+DISTVERSION=	11.2.3
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}
 PKGNAMESUFFIX=	-chemistry
@@ -25,6 +24,8 @@ LIB_DEPENDS=	libblas.so:math/blas \
 USES=		fortran gmake tar:tgz
 
 BINARY_ALIAS=	make=${GMAKE}
+
+MAKE_ARGS=	FREEBSD_FILESDIR=${FILESDIR}
 
 LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
 

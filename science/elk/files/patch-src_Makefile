@@ -1,0 +1,15 @@
+-- workaround for libxc removing libxc_free function
+
+--- src/Makefile.orig	2026-08-27 20:49:45 UTC
++++ src/Makefile
+@@ -241,7 +241,9 @@ elk:	$(OBJ)
+ # Targets
+ #-------------------------------------------------------------------------------
+ elk:	$(OBJ)
+-	$(F90) $(F90_OPTS) -o $(EXE) $(OBJ) $(F90_LIB) $(LIB_LIBXC) $(LIB_W90)
++	$(CC) -c $(FREEBSD_FILESDIR)/libxc_free.c -o libxc_free.o
++	$(F90) $(F90_OPTS) -o $(EXE) $(OBJ) $(F90_LIB) $(LIB_LIBXC) $(LIB_W90) \
++		libxc_free.o
+ 
+ all:	elk
+ 
