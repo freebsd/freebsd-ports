@@ -1,6 +1,5 @@
 PORTNAME=	qownnotes
-DISTVERSION=	26.8.6
-PORTREVISION=	1
+DISTVERSION=	26.9.8
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/pbek/QOwnNotes/releases/download/v${DISTVERSION}/
 
