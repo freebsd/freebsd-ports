@@ -1,0 +1,8 @@
+--- external/boringssl/CMakeLists.txt.orig	2019-07-16 18:16:26 UTC
++++ external/boringssl/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 2.8.10)
++cmake_minimum_required (VERSION 3.5)
+ 
+ # Defer enabling C and CXX languages.
+ project (BoringSSL NONE)

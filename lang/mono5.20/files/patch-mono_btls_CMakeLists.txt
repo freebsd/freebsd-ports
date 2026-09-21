@@ -1,0 +1,8 @@
+--- mono/btls/CMakeLists.txt.orig	2019-07-16 18:16:12 UTC
++++ mono/btls/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 2.8.10)
++cmake_minimum_required (VERSION 3.5)
+ 
+ project (mono-btls)
+ 
