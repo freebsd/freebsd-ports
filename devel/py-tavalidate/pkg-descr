@@ -1,0 +1,6 @@
+Tavalidate provides helper functions for Tavern, the YAML-based API
+testing tool.  It adds assertions for XML responses, letting a test
+compare a response against an expected document using placeholders such
+as !anyint and !anystr instead of exact values.
+
+It can also save responses to disk for later inspection.
