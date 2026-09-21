@@ -48,7 +48,7 @@ USES=		cmake:indirect desktop-file-utils gettext gl gnome localbase:ldflags \
 USE_GL=		gl glu
 USE_GNOME=	intltool libxml2
 USE_LDCONFIG=	yes
-USE_SDL=	sdl2 image2
+USE_SDL=	sdl3 image3
 
 SHEBANG_GLOB=	*.py *.sh
 
