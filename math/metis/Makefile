@@ -12,9 +12,6 @@ WWW=		https://bitbucket.org/petsc/pkg-metis
 
 LICENSE=	APACHE20
 
-DEPRECATED=	Unmaintained, does not build with CMake 4
-EXPIRATION_DATE=2026-11-30
-
 # Keep cmake:insource to be used by math/parmetis
 USES=		cmake:insource,noninja compiler:c11 tar:bzip2
 
