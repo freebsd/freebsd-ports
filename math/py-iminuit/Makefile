@@ -12,6 +12,8 @@ WWW=		https://scikit-hep.org/iminuit/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error: comparison of integers of different signs: 'ssize_t' (aka 'int') and 'const unsigned int'
+
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}pathspec>0:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>=3.0:devel/py-pybind11@${PY_FLAVOR} \
