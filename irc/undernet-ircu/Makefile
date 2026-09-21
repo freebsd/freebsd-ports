@@ -13,8 +13,9 @@ WWW=		https://coder-com.undernet.org
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
-BROKEN_riscv64=		Fails to compile: undefined reference to .mcount
+BROKEN=		Fails to build, /usr/local/bin/ld: cannot find -lc_p: No such file or directory
+#BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
+#BROKEN_riscv64=		Fails to compile: undefined reference to .mcount
 
 USE_GCC=	yes
 USE_RC_SUBR=	undernet
