@@ -13,6 +13,8 @@ WWW=		https://pyrefly.org \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: rustc-LLVM ERROR: out of memory
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.10.2<2.0:devel/py-maturin@${PY_FLAVOR}
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
