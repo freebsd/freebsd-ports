@@ -1,6 +1,6 @@
 PORTNAME=	nanobind
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.1
+DISTVERSION=	3.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	robin-map>0:devel/robin-map
 RUN_DEPENDS=	robin-map>0:devel/robin-map
-TEST_DEPENDS=	eigen>0:math/eigen3 \
-		gmake:devel/gmake \
+TEST_DEPENDS=	gmake:devel/gmake \
 		pytest:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jax>0:math/py-jax@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
@@ -22,7 +21,7 @@ TEST_DEPENDS=	eigen>0:math/eigen3 \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
 #		${PYTHON_PKGNAMEPREFIX}tensorflow>0:science/py-tensorflow@${PY_FLAVORA} # tensorflow tests crash the python process
 
-USES=		cmake:testing localbase python:test
+USES=		cmake:testing eigen:3,run,test localbase python:test
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wjakob
@@ -41,6 +40,8 @@ CXXFLAGS+=	-I${WRKSRC}/include \
 INSTALL_TARGET=	install
 
 TEST_WRKSRC=	${BUILD_WRKSRC}/tests
+TEST_ARGS=	--disable-plugin-autoload \
+		--ignore test_tensorflow.py # tensorflow tests crash: Fatal Python error: Segmentation fault, need to investigate
 
 NO_ARCH=	yes
 
@@ -56,14 +57,13 @@ post-install:
 
 post-test:
 	@cd ${TEST_WRKSRC} && \
-		pytest .
+		${SETENV} ${TEST_ENV} pytest ${TEST_ARGS} .
 
-# tests as of 3.0.1:
-# Results (46.19s):
-#      610 passed
-#        1 failed
-#          - test_inter_module.py:26 test02_reload_module
-#       92 skipped
+# tests as of 3.1.0:
+# Results (39.15s):
+#      628 passed
+#       86 skipped
+#        1 warning (pynvml FutureWarning from torch, imported by tensorflow)
 
 # cmake installs files into non-standard locations, see https://github.com/wjakob/nanobind/issues/810
 # hostile upstream, do not create bug reports

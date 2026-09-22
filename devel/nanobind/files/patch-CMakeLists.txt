@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-12-05 23:06:19 UTC
+--- CMakeLists.txt.orig	2026-09-18 15:58:10 UTC
 +++ CMakeLists.txt
-@@ -73,9 +73,9 @@ if(NB_CREATE_INSTALL_RULES AND NOT CMAKE_SKIP_INSTALL_
+@@ -70,9 +70,9 @@ if(NB_CREATE_INSTALL_RULES AND NOT CMAKE_SKIP_INSTALL_
    # Normally these would be configurable by the user, but we can't allow that
    # because the lookup paths are hard-coded in 'cmake/nanobind-config.cmake'
    set(NB_INSTALL_INC_DIR "${NB_INSTALL_DATADIR}/include")
