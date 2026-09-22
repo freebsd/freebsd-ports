@@ -2,6 +2,10 @@ bin/pavucontrol
 share/applications/org.pulseaudio.pavucontrol.desktop
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/style.css
+share/icons/hicolor/scalable/apps/org.pulseaudio.pavucontrol.svg
+share/icons/hicolor/symbolic/apps/org.pulseaudio.pavucontrol-symbolic.svg
+share/locale/af/LC_MESSAGES/pavucontrol.mo
+share/locale/ar/LC_MESSAGES/pavucontrol.mo
 share/locale/as/LC_MESSAGES/pavucontrol.mo
 share/locale/ast/LC_MESSAGES/pavucontrol.mo
 share/locale/be/LC_MESSAGES/pavucontrol.mo
@@ -25,6 +29,7 @@ share/locale/hu/LC_MESSAGES/pavucontrol.mo
 share/locale/id/LC_MESSAGES/pavucontrol.mo
 share/locale/it/LC_MESSAGES/pavucontrol.mo
 share/locale/ja/LC_MESSAGES/pavucontrol.mo
+share/locale/ka/LC_MESSAGES/pavucontrol.mo
 share/locale/kk/LC_MESSAGES/pavucontrol.mo
 share/locale/kn/LC_MESSAGES/pavucontrol.mo
 share/locale/ko/LC_MESSAGES/pavucontrol.mo
