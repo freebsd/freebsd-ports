@@ -13,6 +13,9 @@ WWW=		https://www.elastic.co/products/beats/
 
 LICENSE=	APACHE20
 
+DEPRECATED=     Support for ${DISTVERSION:R}.x has ended 05 May 2026 - use ${PORTNAME}94 or ${PORTNAME}95 instead
+EXPIRATION_DATE=        2026-12-31
+
 USES=		go:modules
 USE_GITHUB=	yes
 
