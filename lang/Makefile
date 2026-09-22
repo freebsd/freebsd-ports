@@ -87,6 +87,7 @@
     SUBDIR += fpc-docs
     SUBDIR += fpc-source
     SUBDIR += fpc-wasip1-devel
+    SUBDIR += fpc-wasip1threads-devel
     SUBDIR += fsharp
     SUBDIR += fth
     SUBDIR += gambit-c
