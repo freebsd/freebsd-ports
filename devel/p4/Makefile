@@ -12,7 +12,7 @@ MAINTAINER=	antonfb@hesiod.org
 COMMENT=	Perforce command line client
 WWW=		https://www.perforce.com/products/helix-core
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${JAM}:devel/jam
