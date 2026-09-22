@@ -19,6 +19,7 @@
 %%DATADIR%%/all-in-one/supervisor.d/autoconf.ini
 %%DATADIR%%/all-in-one/supervisor.d/bunkerweb.ini
 %%DATADIR%%/all-in-one/supervisor.d/crowdsec.ini
+%%DATADIR%%/all-in-one/supervisor.d/logrotate.ini
 %%DATADIR%%/all-in-one/supervisor.d/logstream.ini
 %%DATADIR%%/all-in-one/supervisor.d/redis.ini
 %%DATADIR%%/all-in-one/supervisor.d/scheduler.ini
@@ -44,6 +45,7 @@
 %%DATADIR%%/api/app/routers/cache.py
 %%DATADIR%%/api/app/routers/configs.py
 %%DATADIR%%/api/app/routers/core.py
+%%DATADIR%%/api/app/routers/crowdsec.py
 %%DATADIR%%/api/app/routers/global_settings.py
 %%DATADIR%%/api/app/routers/instances.py
 %%DATADIR%%/api/app/routers/jobs.py
@@ -55,7 +57,6 @@
 %%DATADIR%%/api/entrypoint.sh
 %%DATADIR%%/api/requirements.in
 %%DATADIR%%/api/requirements.txt
-%%DATADIR%%/api/tests/test_biscuit_run_limit.py
 %%DATADIR%%/api/utils/__init__.py
 %%DATADIR%%/api/utils/gunicorn.conf.py
 %%DATADIR%%/api/utils/logger.py
@@ -76,6 +77,7 @@
 %%DATADIR%%/bw/Dockerfile
 %%DATADIR%%/bw/entrypoint.sh
 %%DATADIR%%/bw/loading/index.html
+%%DATADIR%%/bw/lua/bunkerweb/acme.lua
 %%DATADIR%%/bw/lua/bunkerweb/api.lua
 %%DATADIR%%/bw/lua/bunkerweb/cachestore.lua
 %%DATADIR%%/bw/lua/bunkerweb/clusterstore.lua
@@ -234,6 +236,7 @@
 %%DATADIR%%/common/core/crowdsec/README.zh.md
 %%DATADIR%%/common/core/crowdsec/cache_partition.lua
 %%DATADIR%%/common/core/crowdsec/confs/http/crowdsec.conf
+%%DATADIR%%/common/core/crowdsec/control.lua
 %%DATADIR%%/common/core/crowdsec/crowdsec.lua
 %%DATADIR%%/common/core/crowdsec/jobs/crowdsec-conf.py
 %%DATADIR%%/common/core/crowdsec/jobs/crowdsec_conf_utils.py
@@ -242,8 +245,10 @@
 %%DATADIR%%/common/core/crowdsec/lib/bouncer.lua
 %%DATADIR%%/common/core/crowdsec/lib/captcha.lua
 %%DATADIR%%/common/core/crowdsec/lib/config.lua
+%%DATADIR%%/common/core/crowdsec/lib/decision_cache.lua
 %%DATADIR%%/common/core/crowdsec/lib/flag.lua
 %%DATADIR%%/common/core/crowdsec/lib/iputils.lua
+%%DATADIR%%/common/core/crowdsec/lib/stream_lock.lua
 %%DATADIR%%/common/core/crowdsec/lib/template.lua
 %%DATADIR%%/common/core/crowdsec/lib/url.lua
 %%DATADIR%%/common/core/crowdsec/lib/utils.lua
@@ -301,6 +306,7 @@
 %%DATADIR%%/common/core/grpc/README.md
 %%DATADIR%%/common/core/grpc/README.zh.md
 %%DATADIR%%/common/core/grpc/confs/server-http/grpc.conf
+%%DATADIR%%/common/core/grpc/jobs/grpc-trusted-cert.py
 %%DATADIR%%/common/core/grpc/plugin.json
 %%DATADIR%%/common/core/gzip/README.de.md
 %%DATADIR%%/common/core/gzip/README.es.md
@@ -865,6 +871,7 @@
 %%DATADIR%%/common/core/mtls/confs/server-http/mtls.conf
 %%DATADIR%%/common/core/mtls/confs/server-stream/mtls.conf
 %%DATADIR%%/common/core/mtls/jobs/client-cert.py
+%%DATADIR%%/common/core/mtls/misc/placeholder-ca.pem
 %%DATADIR%%/common/core/mtls/mtls.lua
 %%DATADIR%%/common/core/mtls/plugin.json
 %%DATADIR%%/common/core/order.json
@@ -1003,6 +1010,7 @@
 %%DATADIR%%/common/db/alembic/mariadb_versions/002e685396c1_upgrade_to_version_1_6_8_rc2.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/0229aafe5e96_upgrade_to_version_1_5_12.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/07406d0af7c0_upgrade_to_version_1_6_11.py
+%%DATADIR%%/common/db/alembic/mariadb_versions/087f746b707b_upgrade_to_version_1_6_15.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/0949ce7a3875_upgrade_to_version_1_5_8.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/0fe0711317f9_upgrade_to_version_1_6_12.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/166ec9cfef46_upgrade_to_version_1_6_5_rc3.py
@@ -1030,6 +1038,7 @@
 %%DATADIR%%/common/db/alembic/mariadb_versions/522ba97eba84_upgrade_to_version_1_6_2_rc7.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/5412d3de3f3f_upgrade_to_version_1_6_13.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/5444767fb8e6_upgrade_to_version_1_6_11_rc1.py
+%%DATADIR%%/common/db/alembic/mariadb_versions/581b304b1118_upgrade_to_version_1_6_15_rc1.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/5ceb08f3ea45_upgrade_to_version_1_6_0.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/5db76033c2ab_upgrade_to_version_1_6_2_rc3.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/63ef1e83a086_upgrade_to_version_1_6_3_rc1.py
@@ -1065,6 +1074,8 @@
 %%DATADIR%%/common/db/alembic/mariadb_versions/cb5750a9d1f7_upgrade_to_version_1_6_0_rc2.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/cc61497f1976_upgrade_to_version_1_5_1.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/ce73d5bafffd_upgrade_to_version_1_6_2_rc5.py
+%%DATADIR%%/common/db/alembic/mariadb_versions/d10f1615a003_upgrade_to_version_1_6_15_rc2.py
+%%DATADIR%%/common/db/alembic/mariadb_versions/d44fd8ddd0c5_upgrade_to_version_1_6_15_rc3.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/d4d8df48d14d_upgrade_to_version_1_5_5.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/d68c293ef7ab_upgrade_to_version_1_6_14_rc1.py
 %%DATADIR%%/common/db/alembic/mariadb_versions/d8762250b263_upgrade_to_version_1_6_14_rc3.py
@@ -1107,8 +1118,10 @@
 %%DATADIR%%/common/db/alembic/mysql_versions/75253944b270_upgrade_to_version_1_6_10_rc6.py
 %%DATADIR%%/common/db/alembic/mysql_versions/7b000e03cdcd_upgrade_to_version_1_6_9_rc2.py
 %%DATADIR%%/common/db/alembic/mysql_versions/7ff687d13019_upgrade_to_version_1_6_9_rc1.py
+%%DATADIR%%/common/db/alembic/mysql_versions/802a9e43a5d2_upgrade_to_version_1_6_15_rc3.py
 %%DATADIR%%/common/db/alembic/mysql_versions/81a4439e7193_upgrade_to_version_1_6_10_rc4.py
 %%DATADIR%%/common/db/alembic/mysql_versions/81db6b219029_upgrade_to_version_1_6_10_rc3.py
+%%DATADIR%%/common/db/alembic/mysql_versions/82bf69b29509_upgrade_to_version_1_6_15_rc1.py
 %%DATADIR%%/common/db/alembic/mysql_versions/839424d81cf7_upgrade_to_version_1_6_0_beta.py
 %%DATADIR%%/common/db/alembic/mysql_versions/85241481d5a4_upgrade_to_version_1_6_14.py
 %%DATADIR%%/common/db/alembic/mysql_versions/88edf42fd04e_upgrade_to_version_1_6_11_rc1.py
@@ -1117,6 +1130,7 @@
 %%DATADIR%%/common/db/alembic/mysql_versions/8c6516301ef6_upgrade_to_version_1_6_12.py
 %%DATADIR%%/common/db/alembic/mysql_versions/8d546dcb3f14_upgrade_to_version_1_6_2_rc4.py
 %%DATADIR%%/common/db/alembic/mysql_versions/960458c3e944_upgrade_to_version_1_6_1_rc2.py
+%%DATADIR%%/common/db/alembic/mysql_versions/9f5c8bc80fe0_upgrade_to_version_1_6_15.py
 %%DATADIR%%/common/db/alembic/mysql_versions/9f917f5e76b3_upgrade_to_version_1_6_0.py
 %%DATADIR%%/common/db/alembic/mysql_versions/9fe40a1e8f4d_upgrade_to_version_1_6_8.py
 %%DATADIR%%/common/db/alembic/mysql_versions/a48eacc5e5b6_upgrade_to_version_1_6_11.py
@@ -1135,6 +1149,7 @@
 %%DATADIR%%/common/db/alembic/mysql_versions/c6fcd4f6971d_upgrade_to_version_1_5_9.py
 %%DATADIR%%/common/db/alembic/mysql_versions/cd5d566cc52d_upgrade_to_version_1_6_2_rc3.py
 %%DATADIR%%/common/db/alembic/mysql_versions/cd7386afa422_upgrade_to_version_1_6_2_rc5.py
+%%DATADIR%%/common/db/alembic/mysql_versions/d10f1615a002_upgrade_to_version_1_6_15_rc2.py
 %%DATADIR%%/common/db/alembic/mysql_versions/d133bc8ef96d_upgrade_to_version_1_6_8_rc2.py
 %%DATADIR%%/common/db/alembic/mysql_versions/d2bb8a70b034_upgrade_to_version_1_6_10_rc2.py
 %%DATADIR%%/common/db/alembic/mysql_versions/d7578fb6ec98_upgrade_to_version_1_6_9.py
@@ -1168,6 +1183,7 @@
 %%DATADIR%%/common/db/alembic/postgresql_versions/1df628a38b78_upgrade_to_version_1_6_13_rc1.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/1e3b377594f6_upgrade_to_version_1_6_7.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/25255ccae247_upgrade_to_version_1_6_10_rc6.py
+%%DATADIR%%/common/db/alembic/postgresql_versions/292f91a16c0d_upgrade_to_version_1_6_15_rc1.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/3133d7320b63_upgrade_to_version_1_5_1.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/32500d8cf3b0_upgrade_to_version_1_6_2_rc2.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/32d89d02c8e5_upgrade_to_version_1_6_9_rc2.py
@@ -1203,6 +1219,7 @@
 %%DATADIR%%/common/db/alembic/postgresql_versions/9cd5363ac925_upgrade_to_version_1_6_9_rc4.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/9dc610f067ed_upgrade_to_version_1_6_6_rc3.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/9f96ae876cdf_upgrade_to_version_1_6_6_rc2.py
+%%DATADIR%%/common/db/alembic/postgresql_versions/a46c619258a2_upgrade_to_version_1_6_15_rc3.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/a8efcf62aea1_upgrade_to_version_1_6_9.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/ac4c8572cc1f_upgrade_to_version_1_6_9_rc1.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/b2cc53a7208f_upgrade_to_version_1_6_12_rc2.py
@@ -1216,8 +1233,10 @@
 %%DATADIR%%/common/db/alembic/postgresql_versions/c975711f7afa_upgrade_to_version_1_6_0_rc3.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/c9c2b1bb33d6_upgrade_to_version_1_6_8_rc3.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/cf17ba9f0d5f_upgrade_to_version_1_6_4.py
+%%DATADIR%%/common/db/alembic/postgresql_versions/d10f1615a004_upgrade_to_version_1_6_15_rc2.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/d15ee0d0f93a_upgrade_to_version_1_6_2_rc4.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/d15ff778dbeb_upgrade_to_version_1_6_10_rc5.py
+%%DATADIR%%/common/db/alembic/postgresql_versions/dafb358e2ae1_upgrade_to_version_1_6_15.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/dc32f5dabb70_upgrade_to_version_1_6_10.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/e4f3ef364f5c_upgrade_to_version_1_6_10_rc3.py
 %%DATADIR%%/common/db/alembic/postgresql_versions/e9b703e3d747_upgrade_to_version_1_5_3.py
@@ -1244,6 +1263,7 @@
 %%DATADIR%%/common/db/alembic/sqlite_versions/2e3e5668c409_upgrade_to_version_1_6_7_rc1.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/30862abba879_upgrade_to_version_1_6_10_rc7.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/38ff6a439525_upgrade_to_version_1_6_12_rc3.py
+%%DATADIR%%/common/db/alembic/sqlite_versions/447a2b82a6c7_upgrade_to_version_1_6_15_rc1.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/4d48b391ee8c_upgrade_to_version_1_6_10_rc6.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/4e98a08c5902_upgrade_to_version_1_6_2_rc2.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/4f7bdc32c662_upgrade_to_version_1_5_9.py
@@ -1264,6 +1284,7 @@
 %%DATADIR%%/common/db/alembic/sqlite_versions/78db0feeb89a_upgrade_to_version_1_6_1.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/7a8df0c89512_upgrade_to_version_1_6_5_rc2.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/7ba2eb8412ef_upgrade_to_version_1_6_8_rc1.py
+%%DATADIR%%/common/db/alembic/sqlite_versions/7bdd2a9f3786_upgrade_to_version_1_6_15_rc3.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/7be1a99223e6_upgrade_to_version_1_6_4.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/81ef5f1e4bf2_upgrade_to_version_1_6_10_rc4.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/864a1dbd2430_upgrade_to_version_1_6_1_rc1.py
@@ -1274,6 +1295,7 @@
 %%DATADIR%%/common/db/alembic/sqlite_versions/91859f8f75ad_upgrade_to_version_1_5_7.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/92038d1e365e_upgrade_to_version_1_6_0_rc2.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/927114675a7d_upgrade_to_version_1_6_0_rc4.py
+%%DATADIR%%/common/db/alembic/sqlite_versions/92cc379052ad_upgrade_to_version_1_6_15.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/940d4e056335_upgrade_to_version_1_6_3_rc2.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/9bf722264d33_upgrade_to_version_1_6_2_rc6.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/9c5dcacc541a_upgrade_to_version_1_6_10_rc5.py
@@ -1294,6 +1316,7 @@
 %%DATADIR%%/common/db/alembic/sqlite_versions/c9586782cd77_upgrade_to_version_1_5_5.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/cc59051c313d_upgrade_to_version_1_6_3_rc1.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/ccba73ada551_upgrade_to_version_1_6_14_rc1.py
+%%DATADIR%%/common/db/alembic/sqlite_versions/d10f1615a001_upgrade_to_version_1_6_15_rc2.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/e2e2207cf9eb_upgrade_to_version_1_6_10_rc3.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/e677ecffa402_upgrade_to_version_1_6_13_rc1.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/eb3ca0f3f20c_upgrade_to_version_1_5_3.py
@@ -1305,6 +1328,7 @@
 %%DATADIR%%/common/db/alembic/sqlite_versions/f8c0912c8f34_upgrade_to_version_1_6_12_rc2.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/f9c3d7b2dba8_upgrade_to_version_1_6_12.py
 %%DATADIR%%/common/db/alembic/sqlite_versions/fd214d08928f_upgrade_to_version_1_6_5_rc3.py
+%%DATADIR%%/common/db/freebsd-migrate.py
 %%DATADIR%%/common/db/model.py
 %%DATADIR%%/common/db/requirements.arm.in
 %%DATADIR%%/common/db/requirements.arm.txt
@@ -1328,11 +1352,16 @@
 %%DATADIR%%/common/helpers/utils.sh
 %%DATADIR%%/common/settings.json
 %%DATADIR%%/common/utils/ApiCaller.py
+%%DATADIR%%/common/utils/CrowdSec.py
+%%DATADIR%%/common/utils/cache_restore.py
 %%DATADIR%%/common/utils/certificate_validation.py
 %%DATADIR%%/common/utils/common_utils.py
+%%DATADIR%%/common/utils/env_file.py
 %%DATADIR%%/common/utils/jobs.py
 %%DATADIR%%/common/utils/letsencrypt_consistency.py
 %%DATADIR%%/common/utils/logger.py
+%%DATADIR%%/common/utils/mmdb.py
+%%DATADIR%%/common/utils/modsecurity_audit.py
 %%DATADIR%%/common/utils/pip-hashes.sh
 %%DATADIR%%/deps/deps.json
 %%DATADIR%%/deps/init_deps.sh
@@ -1341,6 +1370,8 @@
 %%DATADIR%%/deps/misc/ipmatcher.patch
 %%DATADIR%%/deps/misc/lua-ffi-zlib.patch
 %%DATADIR%%/deps/misc/lua-pack.Makefile
+%%DATADIR%%/deps/misc/lua-resty-redis-connector.patch
+%%DATADIR%%/deps/misc/mlcache-ipc-skip-evicted.patch
 %%DATADIR%%/deps/misc/mmdb.patch
 %%DATADIR%%/deps/misc/modsecurity-nginx-common.patch
 %%DATADIR%%/deps/misc/modsecurity-nginx-config.patch
@@ -1744,9 +1775,15 @@
 %%DATADIR%%/deps/src/libmaxminddb/dev-bin/valgrind-all.pl
 %%DATADIR%%/deps/src/libmaxminddb/doc/libmaxminddb.md
 %%DATADIR%%/deps/src/libmaxminddb/doc/mmdblookup.md
+%%DATADIR%%/deps/src/libmaxminddb/docs/assets/css/main.css
+%%DATADIR%%/deps/src/libmaxminddb/docs/hugo.toml
+%%DATADIR%%/deps/src/libmaxminddb/docs/layouts/404.html
+%%DATADIR%%/deps/src/libmaxminddb/docs/layouts/_default/_markup/render-heading.html
+%%DATADIR%%/deps/src/libmaxminddb/docs/layouts/_default/default.html
 %%DATADIR%%/deps/src/libmaxminddb/include/maxminddb.h
 %%DATADIR%%/deps/src/libmaxminddb/include/maxminddb_config.h.cmake.in
 %%DATADIR%%/deps/src/libmaxminddb/include/maxminddb_config.h.in
+%%DATADIR%%/deps/src/libmaxminddb/lychee.toml
 %%DATADIR%%/deps/src/libmaxminddb/mise.lock
 %%DATADIR%%/deps/src/libmaxminddb/mise.toml
 %%DATADIR%%/deps/src/libmaxminddb/src/Makefile.am
@@ -1768,6 +1805,7 @@
 %%DATADIR%%/deps/src/libmaxminddb/t/data-pool-t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/data_entry_list_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/data_types_t.c
+%%DATADIR%%/deps/src/libmaxminddb/t/decoder_limits_t.pl
 %%DATADIR%%/deps/src/libmaxminddb/t/double_close_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/dump_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/empty_container_metadata_t.c
@@ -1776,16 +1814,19 @@
 %%DATADIR%%/deps/src/libmaxminddb/t/gai_error_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/get_value_pointer_bug_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/get_value_t.c
+%%DATADIR%%/deps/src/libmaxminddb/t/invalid_sockaddr_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/ipv4_start_cache_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/ipv6_lookup_in_ipv4_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/max_depth_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/maxminddb_test_helper.c
 %%DATADIR%%/deps/src/libmaxminddb/t/maxminddb_test_helper.h
+%%DATADIR%%/deps/src/libmaxminddb/t/metadata_marker_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/metadata_pointers_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/metadata_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/mmdblookup_t.pl
 %%DATADIR%%/deps/src/libmaxminddb/t/no_map_get_value_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/overflow_bounds_t.c
+%%DATADIR%%/deps/src/libmaxminddb/t/pointer_dos_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/read_node_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/threads_t.c
 %%DATADIR%%/deps/src/libmaxminddb/t/version_t.c
@@ -2443,12 +2484,14 @@
 %%DATADIR%%/deps/src/lua-resty-session/lib/resty/session/redis/sentinel.lua
 %%DATADIR%%/deps/src/lua-resty-session/lib/resty/session/shm.lua
 %%DATADIR%%/deps/src/lua-resty-session/lib/resty/session/utils.lua
-%%DATADIR%%/deps/src/lua-resty-session/lua-resty-session-4.1.5-1.rockspec
+%%DATADIR%%/deps/src/lua-resty-session/lua-resty-session-4.2.0-1.rockspec
 %%DATADIR%%/deps/src/lua-resty-session/spec/01-utils_spec.lua
 %%DATADIR%%/deps/src/lua-resty-session/spec/02-file-utils_spec.lua
 %%DATADIR%%/deps/src/lua-resty-session/spec/03-session_spec.lua
 %%DATADIR%%/deps/src/lua-resty-session/spec/04-storage-1_spec.lua
 %%DATADIR%%/deps/src/lua-resty-session/spec/05-storage-2_spec.lua
+%%DATADIR%%/deps/src/lua-resty-session/spec/06-revocation-1_spec.lua
+%%DATADIR%%/deps/src/lua-resty-session/spec/07-revocation-2_spec.lua
 %%DATADIR%%/deps/src/lua-resty-signal/.gitignore
 %%DATADIR%%/deps/src/lua-resty-signal/.travis.yml
 %%DATADIR%%/deps/src/lua-resty-signal/Makefile
@@ -7639,17 +7682,20 @@
 %%DATADIR%%/ui/app/models/config.py
 %%DATADIR%%/ui/app/models/instance.py
 %%DATADIR%%/ui/app/models/models.py
+%%DATADIR%%/ui/app/models/resilient_session.py
 %%DATADIR%%/ui/app/models/reverse_proxied.py
 %%DATADIR%%/ui/app/models/safe_session_cache.py
 %%DATADIR%%/ui/app/models/template.py
 %%DATADIR%%/ui/app/models/totp.py
 %%DATADIR%%/ui/app/models/ui_data.py
 %%DATADIR%%/ui/app/models/ui_database.py
+%%DATADIR%%/ui/app/raw_drafts.py
 %%DATADIR%%/ui/app/routes/__init__.py
 %%DATADIR%%/ui/app/routes/about.py
 %%DATADIR%%/ui/app/routes/bans.py
 %%DATADIR%%/ui/app/routes/cache.py
 %%DATADIR%%/ui/app/routes/configs.py
+%%DATADIR%%/ui/app/routes/crowdsec.py
 %%DATADIR%%/ui/app/routes/global_settings.py
 %%DATADIR%%/ui/app/routes/home.py
 %%DATADIR%%/ui/app/routes/instances.py
@@ -7670,6 +7716,7 @@
 %%DATADIR%%/ui/app/static/css/core.css
 %%DATADIR%%/ui/app/static/css/main.css
 %%DATADIR%%/ui/app/static/css/overrides.css
+%%DATADIR%%/ui/app/static/css/pages/crowdsec.css
 %%DATADIR%%/ui/app/static/css/pages/home.css
 %%DATADIR%%/ui/app/static/css/pages/login.css
 %%DATADIR%%/ui/app/static/css/pages/logs.css
@@ -7715,6 +7762,7 @@
 %%DATADIR%%/ui/app/static/img/brands/ace.png
 %%DATADIR%%/ui/app/static/img/brands/apexcharts.png
 %%DATADIR%%/ui/app/static/img/brands/bootstrap.png
+%%DATADIR%%/ui/app/static/img/brands/crowdsec.svg
 %%DATADIR%%/ui/app/static/img/brands/datatables.png
 %%DATADIR%%/ui/app/static/img/brands/flask.png
 %%DATADIR%%/ui/app/static/img/brands/gunicorn.svg
@@ -8336,6 +8384,7 @@
 %%DATADIR%%/ui/app/static/js/menu.js
 %%DATADIR%%/ui/app/static/js/mode-modsecurity.js
 %%DATADIR%%/ui/app/static/js/modules/certificate-validation.js
+%%DATADIR%%/ui/app/static/js/modules/raw-settings.js
 %%DATADIR%%/ui/app/static/js/modules/setting_controls.js
 %%DATADIR%%/ui/app/static/js/pages/ace-mode-bunkerweb_log.js
 %%DATADIR%%/ui/app/static/js/pages/ace-mode-bunkerweb_settings.js
@@ -8344,6 +8393,7 @@
 %%DATADIR%%/ui/app/static/js/pages/cache_view.js
 %%DATADIR%%/ui/app/static/js/pages/config_edit.js
 %%DATADIR%%/ui/app/static/js/pages/configs.js
+%%DATADIR%%/ui/app/static/js/pages/crowdsec.js
 %%DATADIR%%/ui/app/static/js/pages/home.js
 %%DATADIR%%/ui/app/static/js/pages/instances.js
 %%DATADIR%%/ui/app/static/js/pages/jobs.js
@@ -8421,6 +8471,7 @@
 %%DATADIR%%/ui/app/static/locales/es.json
 %%DATADIR%%/ui/app/static/locales/fr.json
 %%DATADIR%%/ui/app/static/locales/hi.json
+%%DATADIR%%/ui/app/static/locales/id.json
 %%DATADIR%%/ui/app/static/locales/it.json
 %%DATADIR%%/ui/app/static/locales/ko.json
 %%DATADIR%%/ui/app/static/locales/pl.json
@@ -8440,6 +8491,7 @@
 %%DATADIR%%/ui/app/templates/cache_view.html
 %%DATADIR%%/ui/app/templates/config_edit.html
 %%DATADIR%%/ui/app/templates/configs.html
+%%DATADIR%%/ui/app/templates/crowdsec.html
 %%DATADIR%%/ui/app/templates/dashboard.html
 %%DATADIR%%/ui/app/templates/flash.html
 %%DATADIR%%/ui/app/templates/footer.html
@@ -8488,6 +8540,7 @@
 %%DATADIR%%/ui/utils/gunicorn.conf.py
 %%DATADIR%%/ui/utils/logger.py
 %%DATADIR%%/ui/utils/tmp-gunicorn.conf.py
+@sample %%ETCDIR%%/api.yml.sample
 @dir %%ETCDIR%%/plugins
 @dir %%ETCDIR%%/pro/plugins
 @dir(bunkerweb,bunkerweb,) /var/cache/bunkerweb/bunkernet

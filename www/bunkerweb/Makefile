@@ -1,6 +1,6 @@
 PORTNAME=	bunkerweb
-DISTVERSION=	1.6.14
-PORTREVISION=	1
+DISTVERSION=	1.6.15
+PORTREVISION=	0
 CATEGORIES=	www security
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -21,6 +21,7 @@ RUN_DEPENDS=	openresty:www/openresty \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>0:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}schedule>0:devel/py-schedule@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}user_agents>0:devel/py-user_agents@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}alembic>0:databases/py-alembic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>0:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
@@ -84,5 +85,10 @@ post-install:
 	${FIND} ${STAGEDIR}${DATADIR} -type f -name '*.sh' -exec ${CHMOD} 0755 {} \;
 	${CHMOD} 0755 ${STAGEDIR}${DATADIR}/common/gen/main.py
 	${CHMOD} 0755 ${STAGEDIR}${DATADIR}/common/gen/save_config.py
+
+	${INSTALL_SCRIPT} ${FILESDIR}/freebsd-migrate.py \
+		${STAGEDIR}${DATADIR}/common/db/
+
+	${INSTALL_DATA} ${FILESDIR}/api.yml.sample ${STAGEDIR}${ETCDIR}/
 
 .include <bsd.port.mk>

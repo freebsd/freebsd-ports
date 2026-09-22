@@ -12,11 +12,14 @@ rcvar="bunkerweb_scheduler_enable"
 load_rc_config "$name"
 
 : ${bunkerweb_scheduler_enable:="NO"}
+: ${bunkerweb_scheduler_database_uri:="sqlite:////var/lib/bunkerweb/db.sqlite3"}
+
+_bunkerweb_pythonpath="/usr/local/share/bunkerweb/common/gen:/usr/local/share/bunkerweb/common/utils:/usr/local/share/bunkerweb/common/db:/usr/local/share/bunkerweb/common/api:/usr/local/share/bunkerweb/deps/python"
 
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/bin/%%PYTHON_VERSION%%"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} /usr/bin/env PYTHONPATH=/usr/local/share/bunkerweb/common/utils:/usr/local/share/bunkerweb/common/db:/usr/local/share/bunkerweb/common/api:/usr/local/share/bunkerweb/deps/python %%PREFIX%%/bin/%%PYTHON_VERSION%% /usr/local/share/bunkerweb/scheduler/main.py"
+command_args="-f -p ${pidfile} /usr/bin/env PYTHONPATH=${_bunkerweb_pythonpath} %%PREFIX%%/bin/%%PYTHON_VERSION%% /usr/local/share/bunkerweb/scheduler/main.py"
 
 bunkerweb_scheduler_precmd()
 {
@@ -52,6 +55,11 @@ bunkerweb_scheduler_precmd()
 
 	chown bunkerweb:bunkerweb /var/run/bunkerweb
 	chown -R bunkerweb:bunkerweb /var/log/bunkerweb
+
+	# Upstream migrates the database from its systemd wrapper, which
+	# FreeBSD does not use, so do it here before the scheduler starts.
+	env PYTHONPATH="${_bunkerweb_pythonpath}" DATABASE_URI="${bunkerweb_scheduler_database_uri}" \
+		%%PREFIX%%/bin/%%PYTHON_VERSION%% /usr/local/share/bunkerweb/common/db/freebsd-migrate.py
 }
 
 start_precmd="bunkerweb_scheduler_precmd"

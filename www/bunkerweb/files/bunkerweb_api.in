@@ -15,7 +15,7 @@ load_rc_config "$name"
 : ${bunkerweb_api_python:="%%PREFIX%%/bin/%%PYTHON_VERSION%%"}
 : ${bunkerweb_api_pidfile:="/var/run/${name}.pid"}
 : ${bunkerweb_api_logfile:="/var/log/bunkerweb/api.log"}
-: ${bunkerweb_api_env:=""}
+: ${bunkerweb_api_env:="API_LISTEN_ADDR=127.0.0.1"}
 
 pidfile="${bunkerweb_api_pidfile}"
 command="/usr/sbin/daemon"
