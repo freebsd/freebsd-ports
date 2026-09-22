@@ -52,7 +52,6 @@ share/examples/ksh%%93%%
 %%DYNAMIC%%include/ast/ast_time.h
 %%DYNAMIC%%include/ast/ast_tty.h
 %%DYNAMIC%%include/ast/ast_wchar.h
-%%DYNAMIC%%include/ast/ast_wctype.h
 %%DYNAMIC%%include/ast/ast_windows.h
 %%DYNAMIC%%include/ast/bytesex.h
 %%DYNAMIC%%include/ast/ccode.h
@@ -73,8 +72,6 @@ share/examples/ksh%%93%%
 %%DYNAMIC%%include/ast/ftw.h
 %%DYNAMIC%%include/ast/ftwalk.h
 %%DYNAMIC%%include/ast/glob.h
-%%DYNAMIC%%include/ast/hash.h
-%%DYNAMIC%%include/ast/hashkey.h
 %%DYNAMIC%%include/ast/hashpart.h
 %%DYNAMIC%%include/ast/history.h
 %%DYNAMIC%%include/ast/iconv.h
@@ -105,21 +102,17 @@ share/examples/ksh%%93%%
 %%DYNAMIC%%include/ast/stk.h
 %%DYNAMIC%%include/ast/sum.h
 %%DYNAMIC%%include/ast/swap.h
-%%DYNAMIC%%include/ast/tar.h
 %%DYNAMIC%%include/ast/times.h
 %%DYNAMIC%%include/ast/tm.h
 %%DYNAMIC%%include/ast/tmx.h
-%%DYNAMIC%%include/ast/tok.h
 %%DYNAMIC%%include/ast/tv.h
-%%DYNAMIC%%include/ast/vdb.h
 %%DYNAMIC%%include/ast/vmalloc.h
 %%DYNAMIC%%include/ast/wait.h
 %%DYNAMIC%%include/ast/wchar.h
-%%DYNAMIC%%include/ast/wctype.h
-%%DYNAMIC%%include/ast/wordexp.h
 %%DYNAMIC%%share/man/man3/LIBAST.3ast.gz
 %%DYNAMIC%%share/man/man3/aso.3ast.gz
 %%DYNAMIC%%share/man/man3/ast.3ast.gz
+%%DYNAMIC%%share/man/man3/ast_close.3ast.gz
 %%DYNAMIC%%share/man/man3/cdt.3ast.gz
 %%DYNAMIC%%share/man/man3/chr.3ast.gz
 %%DYNAMIC%%share/man/man3/compat.3ast.gz
@@ -127,9 +120,9 @@ share/examples/ksh%%93%%
 %%DYNAMIC%%share/man/man3/find.3ast.gz
 %%DYNAMIC%%share/man/man3/fmt.3ast.gz
 %%DYNAMIC%%share/man/man3/fmtls.3ast.gz
+%%DYNAMIC%%share/man/man3/fts.3ast.gz
 %%DYNAMIC%%share/man/man3/ftwalk.3ast.gz
 %%DYNAMIC%%share/man/man3/getcwd.3ast.gz
-%%DYNAMIC%%share/man/man3/hash.3ast.gz
 %%DYNAMIC%%share/man/man3/iblocks.3ast.gz
 %%DYNAMIC%%share/man/man3/ip6.3ast.gz
 %%DYNAMIC%%share/man/man3/mem.3ast.gz
@@ -146,7 +139,7 @@ share/examples/ksh%%93%%
 %%DYNAMIC%%share/man/man3/spawnveg.3ast.gz
 %%DYNAMIC%%share/man/man3/stk.3ast.gz
 %%DYNAMIC%%share/man/man3/strcopy.3ast.gz
-%%DYNAMIC%%share/man/man3/strdup.3ast.gz
+%%DYNAMIC%%share/man/man3/strdisabbrev.3ast.gz
 %%DYNAMIC%%share/man/man3/strelapsed.3ast.gz
 %%DYNAMIC%%share/man/man3/stresc.3ast.gz
 %%DYNAMIC%%share/man/man3/strexpr.3ast.gz
@@ -161,6 +154,6 @@ share/examples/ksh%%93%%
 %%DYNAMIC%%share/man/man3/swap.3ast.gz
 %%DYNAMIC%%share/man/man3/tm.3ast.gz
 %%DYNAMIC%%share/man/man3/tmx.3ast.gz
-%%DYNAMIC%%share/man/man3/tok.3ast.gz
 %%DYNAMIC%%share/man/man3/touch.3ast.gz
 %%DYNAMIC%%share/man/man3/tv.3ast.gz
+%%DYNAMIC%%share/man/man3/vmalloc.3ast.gz
