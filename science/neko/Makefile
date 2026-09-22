@@ -1,6 +1,5 @@
 PORTNAME=	neko
-DISTVERSION=	1.0.3
-PORTREVISION=	1
+DISTVERSION=	1.1.2
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/ExtremeFLOW/neko/releases/download/v${DISTVERSION}/
 
@@ -44,6 +43,6 @@ do-test:
 		--launcher-script=${WRKSRC}/tests/integration/default_cpu_launcher.sh \
 		tests
 
-# tests as of 1..3: 14 passed in 38.37s
+# tests as of 1.1.2: 14 passed in 135.32s
 
 .include <bsd.port.mk>
