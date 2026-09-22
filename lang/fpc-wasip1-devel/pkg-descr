@@ -1,0 +1,5 @@
+FPC supports three Wasm compilation targets: WASIp1 (WASI 0.1, also known as
+WASI Preview 1), WASIp1threads (WASI 0.1 with the wasi-threads proposal) and
+Embedded. FPC's Wasm support adds to FPC's already extensive list of
+compilation targets, potentially allowing Pascal programs to run in even more
+environments than they already do.
