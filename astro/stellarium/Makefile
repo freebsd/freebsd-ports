@@ -1,6 +1,6 @@
 PORTNAME=	stellarium
 PORTVERSION=	24.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION}/ \
 		https://mirrors.tuna.tsinghua.edu.cn/github-release/Stellarium/stellarium/v${PORTVERSION}/
@@ -25,15 +25,15 @@ USES=		cmake compiler:c++11-lang desktop-file-utils \
 USE_PERL5=	build
 USE_QT=		qmake:build buildtools:build \
 		charts concurrent core gui network opengl widgets
-CMAKE_OFF=	ENABLE_QT6
+CMAKE_OFF=	ENABLE_QT6 ENABLE_QTWEBENGINE
 
 PORTDOCS=	CREDITS.md ChangeLog README.md \
 		stellarium_user_guide-${PORTVERSION}-1.pdf
 
 OPTIONS_DEFINE=		DOCS GPS MORE_STARS MULTIMEDIA NLS SCRIPTS \
-			SHOWMYSKY TELESCOPE TEST TEXTURES WEBENGINE XLSX
+			SHOWMYSKY TELESCOPE TEST TEXTURES XLSX
 OPTIONS_DEFAULT=	GPS MULTIMEDIA SCRIPTS SHOWMYSKY TELESCOPE \
-			WEBENGINE XLSX
+			XLSX
 OPTIONS_SUB=		yes
 
 GPS_DESC=		GPS (NMEA handling) support
@@ -43,7 +43,6 @@ SCRIPTS_DESC=		Remote control and scripting support
 SHOWMYSKY_DESC=		Realistic atmosphere light scattering
 TELESCOPE_DESC=		Build telescope control plugin
 TEXTURES_DESC=		Install better quality textures
-WEBENGINE_DESC=		Get and show extra object information
 XLSX_DESC=		Data export to Excel files support
 
 DOCS_DISTFILES=		stellarium_user_guide-${PORTVERSION}-1.pdf
@@ -74,9 +73,6 @@ TEST_CMAKE_ON=		-DENABLE_TESTING:BOOL=ON
 
 TEXTURES_MASTER_SITES=	SF/${PORTNAME}/Extra-data-files/textures:gfx
 TEXTURES_DISTFILES=	textures-1K.zip:gfx
-
-WEBENGINE_USE=		QT=declarative,webchannel,webengine
-WEBENGINE_CMAKE_OFF=	-DENABLE_QTWEBENGINE:BOOL=OFF
 
 XLSX_LIB_DEPENDS=	libQXlsxQt5.so:devel/qxlsx@qt5
 XLSX_CMAKE_OFF=		-DENABLE_XLSX:BOOL=OFF
