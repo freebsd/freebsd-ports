@@ -1,7 +1,7 @@
 PORTNAME=	pagmo2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.19.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,10 +26,12 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	PAGMO_WITH_EIGEN3 PAGMO_WITH_NLOPT PAGMO_WITH_IPOPT PAGMO_ENABLE_IPO
 
-do-test: # many tests fail, see https://github.com/esa/pagmo2/issues/579
+do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DPAGMO_BUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 2.19.1: 100% tests passed, 0 tests failed out of 86
 
 .include <bsd.port.mk>
