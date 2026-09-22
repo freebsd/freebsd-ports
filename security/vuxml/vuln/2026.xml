@@ -1,3 +1,85 @@
+  <vuln vid="6690917c-b657-11f1-ad2b-40b034429ecf">
+    <topic>p5-Dancer2 -- Multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>p5-Dancer2</name>
+<range><lt>2.2.0</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dancer project reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2026/09/22/3">
+	  <p>Dancer2 versions before 2.2.0 for Perl do not strip CR and LF
+	  from response header names in headers_to_array. The routine removes
+	  CR and LF from each header value but not from the name. A name
+	  carrying them therefore reaches the PSGI server intact. A server
+	  that does not validate keys writes it to the wire, so the bytes
+	  after the CRLF arrive as their own header line. The application has
+	  to derive the header name from request data, not just the value. An
+	  attacker who controls that data adds their own headers and splits
+	  the response.</p>
+	</blockquote>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2026/09/22/1">
+	  <p>Dancer2 versions before 2.2.0 for Perl serve a layout as a page when an
+	  equivalent spelling of its path misses the guard in the AutoPage handler.
+	  The handler compares the request path against the layout directory name as
+	  text, while the lookup that follows canonicalises it. A doubled slash, a
+	  dot segment, a percent-encoded slash, or a different capitalisation on a
+	  case-insensitive filesystem therefore misses the guard. The handler is off
+	  by default, enabled with auto_page. The layout wrapping every page is
+	  already public, so this discloses one of the application's other layouts.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-93709</cvename>
+      <cvename>CVE-2026-93711</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-93709</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-93711</url>
+    </references>
+    <dates>
+      <discovery>2026-09-22</discovery>
+      <entry>2026-09-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5e6fe0cf-b655-11f1-ad2b-40b034429ecf">
+    <topic>p5-Dancer2 -- Multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>p5-Dancer2</name>
+<range><ge>2.0.0</ge><lt>2.2.0</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dancer project reports:</p>
+	<blockquote cite="https://www.openwall.com/lists/oss-security/2026/09/22/2">
+	  <p>Dancer2 versions from 2.0.0 before 2.2.0 for Perl dispatch a
+	  route that a dying hook refused when the exception handler halts
+	  the response in compile_hooks. A hook that dies fires core.app.
+	  hook_exception, then calls cleanup unless the failing hook is the
+	  exception handler. A handler that halts does not stop that cleanup,
+	  which discards the request, response and session the dispatcher has
+	  yet to read, so the refused route runs. The handler has to halt the
+	  response object by calling its halt method or setting is_halted:
+	  the halt keyword unwinds through with_return before cleanup runs.
+	  A check in a before hook is not enforced: the caller gets the refusal,
+	  while the route body runs and its writes land.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-93710</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-93710</url>
+    </references>
+    <dates>
+      <discovery>2026-09-22</discovery>
+      <entry>2026-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c1980e14-b424-11f1-bd9f-10ffe07f9334">
     <topic>mailpit -- Multi-frame animation bypass of thumbnail pixel budget</topic>
     <affects>
