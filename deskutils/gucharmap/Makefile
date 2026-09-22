@@ -11,7 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
-		UCD=18.0.0_1,2:textproc/UCD
+		UCD=18.0.0_2,2:textproc/UCD
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpcre2-8.so:devel/pcre2
 
