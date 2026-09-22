@@ -1,14 +1,18 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		https://nodejs.org/dist/v${_PKGFETCH_NODE_VERSION}/:source2 \
-		https://github.com/fsbruva/onlyoffice-DS-npm-cache/releases/download/${_NPM_CACHE_TAG}/:source3
+		https://github.com/fsbruva/onlyoffice-DS-npm-cache/releases/download/${_NPM_CACHE_TAG}/:source3 \
+		https://github.com/hunspell/hyphen/releases/download/v${_HYPHEN_VERSION}/:hyphen
 DISTFILES+=	v8-8.9.255.25_all.tar.gz:source1 \
 		node-v${_PKGFETCH_NODE_VERSION}.tar.gz:source2 \
-		onlyoffice-DS-npm-cache-${_NPM_CACHE_TAG}.tar.gz:source3
+		onlyoffice-DS-npm-cache-${_NPM_CACHE_TAG}.tar.gz:source3 \
+		hyphen-${_HYPHEN_VERSION}.tar.gz:hyphen
+
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${_DISTFILES:M*_GH0.tar.gz}
 
 MAINTAINER=	fsbruva@yahoo.com
 COMMENT=	Secure office and productivity apps
@@ -23,12 +27,12 @@ ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and arm64
 # node version used with "npm install" inside ${WRKSRC}/yao-pkg
 # kept in sync with patch-build__tools_scripts_build__server.py and patch-document-server-package_Makefile
 _DS_BUILD=		129
-_PKGFETCH_NODE_VERSION=	24.18.0
-_NPM_CACHE_TAG=		${_DS_TAGNAME}-202607080141
+_PKGFETCH_NODE_VERSION=	24.21.0
+_NPM_CACHE_TAG=		${_DS_TAGNAME}-202609220214
+_HYPHEN_VERSION=	2.8.9
 # end of cache build config
 
 _NODE_DISTFILE=		node-v${_PKGFETCH_NODE_VERSION}.tar.gz
-WRKSRC_npm_cache=	${WRKDIR}/onlyoffice-DS-npm-cache-${_NPM_CACHE_TAG}
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		boost-libs>0:devel/boost-libs \
@@ -87,8 +91,7 @@ GH_TUPLE=	ONLYOFFICE:build_tools:${_DS_TAGNAME}:buildtools/build_tools \
 		ONLYOFFICE:web-apps:${_DS_TAGNAME}:webapps/web-apps \
 		ONLYOFFICE:DocumentBuilder:${DISTVERSIONPREFIX}${DISTVERSION}:document_builder/DocumentBuilder \
 		ONLYOFFICE:onlyoffice.github.io:b26d001664d771df4f663d2d3ba7dd4a188b6cab:sdkjs_plugins_v1/onlyoffice.github.io \
-		jasenhuang:katana-parser:be6df45:jasenhuang_katana/core/Common/3dParty/html/katana-parser \
-		hunspell:hyphen:73dd296:hunspell_hyphen/core/Common/3dParty/hyphen/hyphen
+		jasenhuang:katana-parser:be6df45:jasenhuang_katana/core/Common/3dParty/html/katana-parser
 
 JAVA_VERSION=	11+
 
@@ -160,9 +163,23 @@ _SHARP_NODE_FILE=	sharp-freebsd-${_SHARP_NODE_ARCH}.node
 _SHARP_INSTALL_DIR=	${WWWDIR}/documentserver/server/DocService/sharp
 
 post-extract:
-	@${MV} ${WRKDIR}/v8 ${WRKSRC}/core/Common/3dParty/v8_89
+# Direct extraction for V8 (no intermediate move required)
+	@${TAR} -xf ${DISTDIR}/v8-8.9.255.25_all.tar.gz \
+		-C ${WRKSRC}/core/Common/3dParty/v8_89
 
-	@${LN} -s ${WRKSRC_npm_cache} ${WRKDIR}/.npm
+# Direct extraction for hyphen
+	@${MKDIR} ${WRKSRC}/core/Common/3dParty/hyphen/hyphen
+	@${TAR} -xf ${DISTDIR}/hyphen-2.8.9.tar.gz \
+		-C ${WRKSRC}/core/Common/3dParty/hyphen/hyphen \
+		--strip-components 1
+
+# Direct extraction for NPM Cache (no symlink required)
+	@${MKDIR} ${WRKDIR}/.npm
+	@${TAR} -xf ${DISTDIR}/onlyoffice-DS-npm-cache-${_NPM_CACHE_TAG}.tar.gz \
+		-C ${WRKDIR}/.npm \
+		--strip-components 1
+
+# Prepare pkg-fetch / Node cache (Node tarball was never uncompressed)
 	@${MKDIR} ${WRKDIR}/.pkg-build
 	@${MKDIR} ${WRKDIR}/.pkg-cache/node
 	@${CP} ${FILESDIR}/extra-patch-pkg-fetch_lib-es5_build.js ${WRKDIR}/
@@ -236,19 +253,15 @@ pre-configure:
 		${WRKSRC}/build_tools/tools/freebsd/automate.py
 	@${RM} ${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch.orig
 
-# Copy new package.json for sdkjs root
-	@${CP} ${WRKSRC_npm_cache}/sdkjs-package.json ${WRKSRC}/sdkjs/package.json
-	@${ECHO_MSG} "  Installed: sdkjs/package.json"
-
 # Copy optimized shrinkwrap files from cache repo, overwriting upstream
-	@${ECHO_MSG} "Installing optimized npm-shrinkwrap.json files..."
-	@(cd ${WRKSRC_npm_cache}/shrinkwrap && \
-		${FIND} . -name npm-shrinkwrap.json | while read shrinkwrap; do \
-			rel_path=$${shrinkwrap#./}; \
+	@${ECHO_MSG} "Installing package-lock.json / package.json files..."
+	@(cd ${WRKDIR}/.npm/package-locks && \
+		${FIND} . -type f \( -name package-lock.json -o -name package.json \) | while read f; do \
+			rel_path=$${f#./}; \
 			target="${WRKSRC}/$${rel_path}"; \
 			target_dir=$$(dirname "$$target"); \
 			${MKDIR} "$$target_dir"; \
-			${CP} "$$shrinkwrap" "$$target"; \
+			${CP} "$$f" "$$target"; \
 			${ECHO_MSG} "  Installed: $${rel_path}"; \
 		done)
 
@@ -276,12 +289,12 @@ do-build:
 	@cd ${WRKSRC}/server/Metrics ; node_modules/.bin/patch-package
 
 	@${MKDIR} ${WRKSRC}/yao-pkg
-	@${CP} ${WRKSRC_npm_cache}/yao-pkg-package.json      ${WRKSRC}/yao-pkg/package.json
-	@${CP} ${WRKSRC_npm_cache}/yao-pkg-npm-shrinkwrap-${MACHINE_ARCH}.json ${WRKSRC}/yao-pkg/npm-shrinkwrap.json
+	@${CP} ${WRKDIR}/.npm/yao-pkg-package-${MACHINE_ARCH}.json	${WRKSRC}/yao-pkg/package.json
+	@${CP} ${WRKDIR}/.npm/yao-pkg-npm-package-lock-${MACHINE_ARCH}.json ${WRKSRC}/yao-pkg/package-lock.json
 	@cd ${WRKSRC}/yao-pkg ; ${SETENV} ${MAKE_ENV} npm install
 
 	@cd ${WRKSRC} && ${PATCH} -N -s -i ${WRKDIR}/extra-patch-pkg-fetch_lib-es5_build.js
-	@cd ${WRKSRC} && ${PATCH} -N -s -i ${WRKSRC_npm_cache}/extra-patch-pkg-fetch_patches_node.v${_PKGFETCH_NODE_VERSION}.cpp.patch
+	@cd ${WRKSRC} && ${PATCH} -N -s -i ${WRKDIR}/.npm/extra-patch-pkg-fetch_patches_node.v${_PKGFETCH_NODE_VERSION}.patch
 
 	cd ${WRKSRC}/build_tools/tools/freebsd ; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} automate.py
 	cd ${WRKSRC}/document-server-package ; ${SETENV} ${MAKE_ENV} ${GMAKE} freebsd
