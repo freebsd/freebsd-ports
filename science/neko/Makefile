@@ -1,5 +1,5 @@
 PORTNAME=	neko
-DISTVERSION=	1.0.3
+DISTVERSION=	1.1.2
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/ExtremeFLOW/neko/releases/download/v${DISTVERSION}/
 
@@ -18,7 +18,7 @@ TEST_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}json5>=0:devel/py-json5@${PY_FLAVOR}
 
-USES=		fortran gmake libtool mpi:mpich pkgconfig python:test shebangfix
+USES=		fortran gmake libtool mpi:mpich pkgconfig python:build,test shebangfix
 
 SHEBANG_GLOB=	*.sh
 
@@ -43,6 +43,6 @@ do-test:
 		--launcher-script=${WRKSRC}/tests/integration/default_cpu_launcher.sh \
 		tests
 
-# tests as of 1..3: 14 passed in 38.37s
+# tests as of 1.1.2: 14 passed in 135.32s
 
 .include <bsd.port.mk>
