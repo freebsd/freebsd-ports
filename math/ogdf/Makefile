@@ -14,6 +14,7 @@ LICENSE_COMB=		dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE_GPL_v2.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE_GPL_v3.txt
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Unmaintained, does not build with CMake 4
 EXPIRATION_DATE=2026-11-30
 
