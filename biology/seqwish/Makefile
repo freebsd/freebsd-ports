@@ -12,6 +12,8 @@ WWW=		https://github.com/pangenome/seqwish
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilaiton fails: error: `target_pointer_width` must be 64
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo pkgconfig
