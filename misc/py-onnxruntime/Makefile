@@ -1,7 +1,6 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.27.0
-PORTREVISION=	3
+DISTVERSION=	1.30.0
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
@@ -51,7 +50,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 GH_TUPLE=	emscripten-core:emsdk:0742117:emsdk/cmake/external/emsdk \
 		google:libprotobuf-mutator:7a2ed51a6b682a83e345ff49fc4cfd7ca47550db:libprotobuf_mutator/cmake/external/libprotobuf-mutator \
-		onnx:onnx:b8baa8446686496da4cc8fda09f2b6fe65c2a02c:onnx/cmake/external/onnx
+		onnx:onnx:2bb50465112feca9003e1ed654d77f01ff1415ca:onnx/cmake/external/onnx
 
 CXXFLAGS+=	-Wno-array-bounds # workaround for https://github.com/microsoft/onnxruntime/issues/23410
 CXXFLAGS+=	-I${WRKSRC}/include/onnxruntime/core/common/logging # otherwise logging.h isn't found
@@ -71,6 +70,19 @@ post-patch:
 
 pre-configure:
 	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.zip);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
+	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.tar\.gz);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
+	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.tar\.xz);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
+	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.tar\.bz2);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
+	@${REINPLACE_CMD} -E 's|;https://codeload\.github\.com/([^/]+)/([^/]+)/tar\.gz/refs/tags/([^/]+);|;file://${DISTDIR}/${DIST_SUBDIR}/\3;|' ${DEPS_FILE}
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+do-test:
+	@${ECHO_MSG} "===> Running Python smoke test"
+	${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test-smoke.py ${FILESDIR}/example.onnx
+
+# tests as of 1.30.0 (make test):
+# Python smoke test passed: loads example.onnx and runs inference.
 
 .include <Makefile.MASTER_SITES>
 .include <Makefile.DISTFILES>

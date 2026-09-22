@@ -1,6 +1,6 @@
---- setup.py.orig	2026-08-15 00:00:00 UTC
+--- setup.py.orig	2026-09-10 06:09:41 UTC
 +++ setup.py
-@@ -434,6 +434,12 @@ elif platform.system() == "Darwin":
+@@ -443,6 +443,12 @@ elif platform.system() == "Darwin":
      libs.extend(["libonnxruntime_providers_vitisai.dylib"])
      if nightly_build:
          libs.extend(["libonnxruntime_pywrapper.dylib"])

@@ -5,6 +5,10 @@ include/onnxruntime/onnxruntime_c_api.h
 include/onnxruntime/onnxruntime_cxx_api.h
 include/onnxruntime/onnxruntime_cxx_inline.h
 include/onnxruntime/onnxruntime_env_config_keys.h
+include/onnxruntime/onnxruntime_error_code.h
+include/onnxruntime/onnxruntime_experimental_c_api.h
+include/onnxruntime/onnxruntime_experimental_c_api.inc
+include/onnxruntime/onnxruntime_experimental_cxx_api.h
 include/onnxruntime/onnxruntime_ep_c_api.h
 include/onnxruntime/onnxruntime_ep_device_ep_metadata_keys.h
 include/onnxruntime/onnxruntime_float16.h
@@ -18,6 +22,6 @@ lib/cmake/onnxruntime/onnxruntimeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/onnxruntime/onnxruntimeTargets.cmake
 lib/libonnxruntime.so
 lib/libonnxruntime.so.1
-lib/libonnxruntime.so.1.27.0
+lib/libonnxruntime.so.1.30.0
 lib/libonnxruntime_providers_shared.so
 libdata/pkgconfig/libonnxruntime.pc

@@ -2,9 +2,9 @@
 -- FindPython does not detect NumPy 2.x headers (e.g. in poudriere). The
 -- include directory is passed via ONNXRUNTIME_NUMPY_INCLUDE_DIR in the Makefile.
 
---- cmake/onnxruntime_python.cmake.orig	2026-08-06 23:27:52 UTC
+--- cmake/onnxruntime_python.cmake.orig	2026-09-10 06:09:41 UTC
 +++ cmake/onnxruntime_python.cmake
-@@ -213,6 +213,14 @@ endif()
+@@ -220,6 +220,14 @@ endif()
    # onnxruntime_pybind11_state is a DLL
    target_sources(onnxruntime_pybind11_state PRIVATE "${ONNXRUNTIME_ROOT}/core/dll/dllmain.cc")
  endif()

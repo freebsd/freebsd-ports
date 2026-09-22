@@ -1,7 +1,6 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.27.0
-PORTREVISION=	1
+DISTVERSION=	1.30.0
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
@@ -24,12 +23,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 GH_TUPLE=	emscripten-core:emsdk:0742117:emsdk/cmake/external/emsdk \
 		google:libprotobuf-mutator:7a2ed51a6b682a83e345ff49fc4cfd7ca47550db:libprotobuf_mutator/cmake/external/libprotobuf-mutator \
-		onnx:onnx:b8baa8446686496da4cc8fda09f2b6fe65c2a02c:onnx/cmake/external/onnx
+		onnx:onnx:2bb50465112feca9003e1ed654d77f01ff1415ca:onnx/cmake/external/onnx
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
-CMAKE_ON=	onnxruntime_BUILD_SHARED_LIB
+CMAKE_ON=	onnxruntime_BUILD_SHARED_LIB \
+		onnxruntime_USE_FULL_PROTOBUF
 CMAKE_OFF=	FETCHCONTENT_FULLY_DISCONNECTED \
-		onnxruntime_BUILD_UNIT_TESTS
+		onnxruntime_BUILD_UNIT_TESTS \
+		onnxruntime_DISABLE_RTTI
 CMAKE_ARGS=	-Donnx_SOURCE_DIR=${WRKSRC}/cmake/external/onnx
 CMAKE_TESTING_ON=	onnxruntime_BUILD_UNIT_TESTS
 
@@ -37,7 +38,6 @@ CXXFLAGS+=	-Wno-array-bounds # workaround for https://github.com/microsoft/onnxr
 CXXFLAGS+=	-Wno-deprecated-declarations #fixes error: 'vec_lvsl' is deprecated: use assignment for unaligned little endian loads/stores
 #CXXFLAGS+=	-Wno-deprecated-altivec-src-compat #fixes error: current handling of vector bool and vector pixel types in this context are deprecated; the default behaviour will soon change to that implied by the '-altivec-compat=xl' option
 CXXFLAGS+=	-I${WRKSRC}/include/onnxruntime/core/common/logging # otherwise logging.h isn't found
-CXXFLAGS+=	-frtti # fixes error: onnxruntime/test/contrib_ops/gather_block_quantized_op_test.cc:85:77: error: use of typeid requires -frtti
 CXXFLAGS_powerpc64=	-Wno-error=deprecated-altivec-src-compat
 
 BINARY_ALIAS=	patch=gpatch
@@ -52,17 +52,37 @@ dev-update-deps-in-makefiles: extract # this should be run when the port is upda
 
 pre-configure:
 	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.zip);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
+	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.tar\.gz);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
+	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.tar\.xz);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
+	@${REINPLACE_CMD} -E 's|;(https://.*)/([^/]+\.tar\.bz2);|;file://${DISTDIR}/${DIST_SUBDIR}/\2;|' ${DEPS_FILE}
+	@${REINPLACE_CMD} -E 's|;https://codeload\.github\.com/([^/]+)/([^/]+)/tar\.gz/refs/tags/([^/]+);|;file://${DISTDIR}/${DIST_SUBDIR}/\3;|' ${DEPS_FILE}
 	# correct one mismatching hash
 	#@${REINPLACE_CMD} -E 's|1094e3bb7a8af763dcb136ccd676e6e75e614eec|5d2b21b10478556c5e209dd7229e298a5c9f0b02|' ${DEPS_FILE}
 
 # NOTE there should be an EXTRACT_ONLY statement
 # NOTE shared libs can't be enabled because the build would fail, see discussion in this issue: https://github.com/microsoft/onnxruntime/issues/22331
 
-# tests as of 1.21.1 (cd work/.build && ./onnxruntime_test_all):
-# [==========] 4743 tests from 310 test suites ran. (321548 ms total)
-# [  PASSED  ] 4732 tests.
-# [  FAILED  ] 1 test, listed below:
-# [  FAILED  ] OptimizerInitializerTest.LoadExternalData
+do-test-quick:
+	@${ECHO_MSG} "===> Running quick staged-library C API test"
+	${CC} -I${STAGEDIR}${PREFIX}/include/onnxruntime \
+		-L${STAGEDIR}${PREFIX}/lib \
+		-Wl,-rpath,${STAGEDIR}${PREFIX}/lib \
+		${FILESDIR}/example.c -lonnxruntime \
+		-o ${WRKDIR}/example-onnxruntime
+	${WRKDIR}/example-onnxruntime ${FILESDIR}/example.onnx \
+		&& ${ECHO_MSG} "test-quick: succeeded" \
+		|| (${ECHO_MSG} "test-quick: failed"; exit 1)
+
+test-quick: install do-test-quick
+
+post-install: do-test-quick
+	@${DO_NADA}
+
+# tests as of 1.30.0 (make test):
+# CTest runs 10 test executables (41 sec total); all 10 passed.
+# The main executable onnxruntime_test_all internally contains thousands of
+# individual GoogleTest cases; the previous 1.21.1 note counted those directly
+# by running ./onnxruntime_test_all instead of ctest.
 # see https://github.com/microsoft/onnxruntime/issues/23816
 
 .include <Makefile.MASTER_SITES>
