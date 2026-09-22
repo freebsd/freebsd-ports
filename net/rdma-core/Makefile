@@ -1,5 +1,6 @@
 PORTNAME=	rdma-core
 PORTVERSION=	66.0
+PORTREVISION=	1
 CATEGORIES=	net sysutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libudev.so:devel/libudev-devd
 RUN_DEPENDS=	linuxapi>=g:devel/linuxapi
 
-USES=		cmake pkgconfig python:env,test shebangfix
+USES=		cmake pkgconfig python:env,test${PYVERBS_PYTHON_ARGS} shebangfix
 
 # Use GNU ld to workaround the linker script problem
 # ld: error: version script assignment of 'global' to symbol 'fcntl64' failed: symbol not defined
@@ -45,7 +46,7 @@ MANPAGES_CMAKE_BOOL_OFF=NO_MAN_PAGES
 
 PYVERBS_DESC=		Enable python bindings
 PYVERBS_LIB_DEPENDS=	libdrm.so:graphics/libdrm
-PYVERBS_USES=		python:build,run
+PYVERBS_VARS=		pyverbs_python_args=,build,run
 PYVERBS_USE=		python=cython
 PYVERBS_CMAKE_BOOL_OFF=	NO_PYVERBS
 
