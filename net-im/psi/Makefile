@@ -22,20 +22,16 @@ USE_XORG=	ice sm x11 xcb xext xscrnsaver
 
 CMAKE_ARGS=	-DIDN_LIBRARY:FILEPATH="${LOCALBASE}/lib/libidn.so" \
 		-DIDN_INCLUDE_DIR:PATH="${LOCALBASE}/include"
+CMAKE_OFF=	ENABLE_WEBKIT
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	TartanLlama:optional:v1.1.0:tlo/tlo
 
-OPTIONS_DEFINE=	WEBENGINE
 OPTIONS_RADIO=	SPELLCHECK
 OPTIONS_RADIO_SPELLCHECK=	HUNSPELL ENCHANT
 SPELLCHECK_DESC=	Spell checker backend
 OPTIONS_DEFAULT=	HUNSPELL
 OPTIONS_SUB=	yes
-
-WEBENGINE_DESC=		Use QtWebEngine for chatlogs
-WEBENGINE_USE=		QT=declarative,location,printsupport,webchannel,webengine
-WEBENGINE_CMAKE_BOOL=	ENABLE_WEBKIT
 
 HUNSPELL_LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 HUNSPELL_CMAKE_BOOL=	USE_HUNSPELL
