@@ -1,5 +1,5 @@
 PORTNAME=	kibana
-DISTVERSION=	9.4.7
+DISTVERSION=	9.5.4
 DISTVERSIONSUFFIX=	-linux-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
@@ -134,25 +134,6 @@ post-install:
 	${ECHO} "@dir(${KIBANAUSER},${KIBANAGROUP}) ${WWWDIR}/data" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/plugins" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/logs" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/analytics" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/kbn-reporting" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/content-management" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/kbn-management/settings" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/react" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/serverless" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/shared-ux/card" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/shared-ux/file" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/shared-ux/link" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/shared-ux/page" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/packages/shared/shared-ux/prompt" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/plugins/private" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/src/platform/plugins/shared" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/x-pack/platform/packages/private" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/x-pack/platform/packages/shared" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/x-pack/platform/plugins/private" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/x-pack/solutions/observability/packages" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/x-pack/solutions/search" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/x-pack/solutions/security/packages" >> ${TMPPLIST}
-	${ECHO} "@dir ${WWWDIR}/x-pack/solutions/workplaceai" >> ${TMPPLIST}
+	${ECHO} "@dir ${WWWDIR}/x-pack/platform/plugins/shared/fleet/target" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
