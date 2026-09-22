@@ -1,5 +1,5 @@
 PORTNAME=	mango
-DISTVERSION=	0.17.2
+DISTVERSION=	0.17.3
 PORTREVISION=	0
 CATEGORIES=	x11-wm
 
@@ -38,9 +38,15 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
+ICONSDIR=	share/icons/hicolor/512x512/apps
+
 post-patch:
 	@${REINPLACE_CMD} -E -e "s|(assets/(config.conf))|\1', rename : '\2.sample|1" \
 		${WRKSRC}/meson.build
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${ICONSDIR}
+	${INSTALL_DATA} ${WRKSRC}/assets/mango.png ${STAGEDIR}${PREFIX}/${ICONSDIR}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -34,6 +34,7 @@ lib/systemd/user/mango-session.target
 %%PORTDOCS%%%%DOCSDIR%%/window-management/overview.md
 %%PORTDOCS%%%%DOCSDIR%%/window-management/rules.md
 %%PORTDOCS%%%%DOCSDIR%%/window-management/scratchpad.md
+share/icons/hicolor/512x512/apps/mango.png
 share/man/man1/mmsg.1.gz
 share/wayland-sessions/mango.desktop
 share/xdg-desktop-portal/mango-portals.conf
