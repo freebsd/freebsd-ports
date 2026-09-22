@@ -6,9 +6,12 @@ bin/pv
 %%NLS%%share/locale/de/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pv.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/pv.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pv.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pv.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pv.mo
 share/man/man1/pv.1.gz
