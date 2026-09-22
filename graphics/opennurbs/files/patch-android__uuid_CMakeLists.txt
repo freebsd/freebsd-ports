@@ -1,0 +1,8 @@
+--- android_uuid/CMakeLists.txt.orig	2026-08-20 10:25:41 UTC
++++ android_uuid/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 3.4)
++cmake_minimum_required (VERSION 3.5)
+ project( android_uuid C)
+ 
+ 
