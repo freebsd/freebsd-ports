@@ -1,6 +1,4 @@
 TIMESTAMP = 1789987613
-SHA256 (rust/crates/imap-tools-1.13.0.crate) = aea12200aa9c307c66cdd596cf9f1945200145ee60b5c8733afc7c50da2b21f7
-SIZE (rust/crates/imap-tools-1.13.0.crate) = 124963
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
 SIZE (rust/crates/addr2line-0.25.1.crate) = 43134
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa

@@ -2,7 +2,6 @@ PORTNAME=	imap-tools
 DISTVERSION=	1.13.0
 CATEGORIES=	mail
 MASTER_SITES=	CRATESIO
-DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A collection of tools to manipulate IMAP mailboxes

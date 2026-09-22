@@ -1,6 +1,4 @@
 TIMESTAMP = 1776443346
-SHA256 (rust/crates/dnstracer-1.2.5.crate) = 575ca21a8601e321824759d60b9705ea39681ed393f2030bda77760b0e29f204
-SIZE (rust/crates/dnstracer-1.2.5.crate) = 44645
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/anstream-1.0.0.crate) = 824a212faf96e9acacdbd09febd34438f8f711fb84e09a8916013cd7815ca28d
