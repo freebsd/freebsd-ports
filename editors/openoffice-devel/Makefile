@@ -126,8 +126,8 @@ AOOVERSION2=	1
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO510m1\(Build:99000\)
-GITREVISION=	b81185736b
-TIMESTAMP=	1788900724
+GITREVISION=	ed9fccbc30
+TIMESTAMP=	1790282737
 #AOORC=rc3
 #EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 EXTSRC=		ApacheOpenOffice.ext_sources.4.x.x.20150707.tar.gz
@@ -365,9 +365,9 @@ post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSUBDIR}/ext_sources/${f}
 .endfor
 	${CP} ${FILESDIR}/freebsd-aoo-intro-developer.png \
-		${WRKSRC}/default_images/introabout/intro.png
+		${WRKSRC}/default_images/introabout/intro5.png
 	${CP} ${FILESDIR}/freebsd-aoo-about-developer.png \
-		${WRKSRC}/default_images/introabout/about.png
+		${WRKSRC}/default_images/introabout/about5.png
 	${RM} -r ${WRKSRC}/l10n
 	${LN} -sf ${UNZIP_CMD} ${WRKSRC}/solenv/bin/unzip
 	${SED}  -e '\|^For main/vcl/unx/generic/fontmanager/parseAFM|,/^__/p' \
