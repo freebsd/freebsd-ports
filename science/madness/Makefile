@@ -9,6 +9,8 @@ WWW=		https://github.com/m-a-d-n-e-s-s/madness
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: constexpr variable 'range_size' must be initialized by a constant expression
+
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		libsysinfo>0:devel/libsysinfo
 LIB_DEPENDS=	libblas.so:math/blas \
