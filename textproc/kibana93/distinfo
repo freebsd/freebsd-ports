@@ -1,7 +1,7 @@
-TIMESTAMP = 1779100000
-SHA256 (kibana-9.3.4-linux-x86_64.tar.gz) = 4b06ec73fb8300e0d7670a36801ed82382c2bc9fa38bfe5e8738ad41483d027d
-SIZE (kibana-9.3.4-linux-x86_64.tar.gz) = 381242046
-SHA256 (nodejs-nan-v2.27.0_GH0.tar.gz) = 9f0b993fb8a33a9e96d739e326f72f9f4a9888beceb75bab63e29ac5bf4f885d
-SIZE (nodejs-nan-v2.27.0_GH0.tar.gz) = 112523
-SHA256 (uhop-node-re2-1.24.1_GH0.tar.gz) = 6cee8c20fbc516c2fda916e3cba6a1f9283e2eea84796a4a6bcddd716fef3273
-SIZE (uhop-node-re2-1.24.1_GH0.tar.gz) = 67276
+TIMESTAMP = 1790000000
+SHA256 (kibana-9.3.8-linux-x86_64.tar.gz) = b3d9114563229e59d5467ce861e6229e0ac1095c6dbf50cf847bec82e6492ff5
+SIZE (kibana-9.3.8-linux-x86_64.tar.gz) = 385055123
+SHA256 (nodejs-nan-v2.29.0_GH0.tar.gz) = b9f0759ecb0fb440640abb01ffab6061c1bb9afa54f28584001bdbce3e19b6ae
+SIZE (nodejs-nan-v2.29.0_GH0.tar.gz) = 113744
+SHA256 (uhop-node-re2-1.26.1_GH0.tar.gz) = b9b975884fade3b042330e16e9ff5ad31a596d88d1f31a988d73fd57476e0219
+SIZE (uhop-node-re2-1.26.1_GH0.tar.gz) = 150620
