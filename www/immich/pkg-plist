@@ -1,3 +1,4 @@
+bin/immich-admin
 @sample(root,wheel,0600) etc/immich.env.sample
 etc/newsyslog.conf.d/immich.conf
 %%WWWDIR%%/build-data/geodata/admin1CodesASCII.txt

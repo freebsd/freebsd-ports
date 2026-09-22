@@ -1,7 +1,7 @@
 PORTNAME=	immich
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
 DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
@@ -58,7 +58,7 @@ MAKE_ENV=	CI=1 \
 		PYTHON=${PYTHON_CMD} \
 		SHARP_FORCE_GLOBAL_LIBVIPS=1
 
-SUB_FILES=	pkg-message
+SUB_FILES=	immich-admin pkg-message
 SUB_LIST=	NODE=${LOCALBASE}/bin/node
 
 USERS=		immich
@@ -91,6 +91,7 @@ do-build:
 		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node install/build.js
 
 do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/immich-admin ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${FILESDIR}/immich.env.sample ${STAGEDIR}${PREFIX}/etc/
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${INSTALL_DATA} ${FILESDIR}/newsyslog-immich.conf \
@@ -119,5 +120,7 @@ post-install:
 		\( -name test -o -name tests -o -name __tests__ \
 		-o -name coverage \) -exec ${RM} -r {} + 2>/dev/null || ${TRUE}
 	@${FIND} ${STAGEDIR}${WWWDIR}/server -type d -empty -delete
+	@${PRINTF} '#!/bin/sh\nexec ${PREFIX}/bin/immich-admin "$$@"\n' \
+		> ${STAGEDIR}${WWWDIR}/server/bin/immich-admin
 
 .include <bsd.port.mk>
