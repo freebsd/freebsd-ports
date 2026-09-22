@@ -5,6 +5,33 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260925:
+  AFFECTS: users of lang/erlang, lang/erlang-runtime27, lang/erlang-runtime28
+    and lang/erlang-runtime29 running an SSH daemon
+  AUTHOR: olgeni@FreeBSD.org
+
+  OTP 29.1.1, 28.5.0.7 and 27.3.4.18 fix CVE-2026-68956, where the ssh
+  application did not enforce the max_channels daemon option for session
+  channels without an active subsystem.  An authenticated client could open
+  an unbounded number of idle channels and exhaust the memory of the whole
+  Erlang VM.
+
+  As part of the fix, two ssh daemon defaults have changed:
+
+    max_channels  infinity -> 256    (per connection)
+    max_sessions  infinity -> 1024   (concurrent connections)
+
+  Deployments that legitimately need more than these limits must now set
+  them explicitly, for example:
+
+    ssh:daemon(Port, [{max_channels, infinity}, {max_sessions, infinity}])
+
+  The same releases also fix CVE-2026-89422 (TLS 1.3 client completes the
+  handshake without validating the server certificate when the ServerHello
+  carries an unsolicited pre_shared_key) and CVE-2026-65634 (superlinear
+  CPU denial-of-service in the asn1 OID decoder).  Those need no
+  configuration changes.
+
 20260910:
   AFFECTS: users of databases/postgis36
   AUTHOR: lbartoletti@FreeBSD.org
