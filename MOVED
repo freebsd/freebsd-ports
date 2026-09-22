@@ -5618,3 +5618,4 @@ databases/py-cassandra-driver||2026-09-15|Has expired: Depends on expired lang/c
 misc/py-python-pygtrie|misc/py-pygtrie|2026-09-16|Project was renamed on PyPI
 sysutils/py-py-cpuinfo|sysutils/py-py-cpuinfo2|2026-09-16|Remove obsolete sysutils/py-py-cpuinfo in favor of sysutils/py-py-cpuinfo2
 textproc/uim-gtk2||2026-09-20|Has expired: Uses deprecated gtk2 libraries
+misc/github-copilot-cli-legacy|misc/github-copilot-cli|2026-09-22|Remove in favor of misc/github-copilot-cli which is a Linux binary which works well on FreeBSD
