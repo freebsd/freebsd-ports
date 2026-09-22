@@ -1,5 +1,5 @@
 PORTNAME=	qmd
-DISTVERSION=	2.1.0
+DISTVERSION=	2.8.3
 CATEGORIES=	deskutils
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
@@ -9,6 +9,9 @@ COMMENT=	On-device hybrid search for markdown files
 WWW=		https://github.com/tobi/qmd
 
 LICENSE=	MIT
+
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	distinfo was only generated for these architectures # feel free to add more architectures
 
 FETCH_DEPENDS=	jq:textproc/jq \
 		npm:www/npm \
@@ -24,9 +27,9 @@ NODE_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/:S/i386/ia32/:S/powerpc64le/ppc64
 PLIST_SUB=	NODE_ARCH=${NODE_ARCH}
 
 # Native modules that require building
-DEP_MODULES=			better_sqlite3 node_llama_cpp sqlite_vec tree_sitter_go tree_sitter_javascript tree_sitter_python tree_sitter_rust tree_sitter_typescript web_tree_sitter
+DEP_MODULES=			better_sqlite3 node_llama_cpp sqlite_vec tree_sitter_go tree_sitter_javascript tree_sitter_python tree_sitter_rust tree_sitter_typescript
 dep_better_sqlite3_npm_name=		better-sqlite3
-dep_better_sqlite3_version=		12.8.0
+dep_better_sqlite3_version=		13.0.3
 dep_node_llama_cpp_npm_name=		node-llama-cpp
 dep_node_llama_cpp_version=		3.18.1
 dep_sqlite_vec_npm_name=		sqlite-vec
@@ -41,8 +44,6 @@ dep_tree_sitter_rust_npm_name=		tree-sitter-rust
 dep_tree_sitter_rust_version=		0.24.0
 dep_tree_sitter_typescript_npm_name=	tree-sitter-typescript
 dep_tree_sitter_typescript_version=	0.23.2
-dep_web_tree_sitter_npm_name=		web-tree-sitter
-dep_web_tree_sitter_version=		0.26.7
 
 SQLITE_VEC_VERSION=	${dep_sqlite_vec_version}
 
@@ -53,7 +54,11 @@ DISTFILES+=	sqlite-vec-src-${SQLITE_VEC_VERSION}${EXTRACT_SUFX}:sqlite_vec_src
 
 DD=	${DISTDIR}/${DIST_SUBDIR}
 
-do-fetch:
+.include <bsd.port.pre.mk>
+
+DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
+
+do-fetch makesum-fetch:
 	@${MKDIR} ${DD}
 	@if ! [ -f ${DD}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ]; then \
 		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} npm_config_force=true ${FETCH_SCRIPT} \
@@ -84,21 +89,22 @@ do-build:
 	@${ECHO_MSG} "====> Building better-sqlite3 for FreeBSD..."
 	@cd ${WRKDIR}/better-sqlite3-${dep_better_sqlite3_version}/node_modules/${dep_better_sqlite3_npm_name} && \
 		${SETENV} HOME=${WRKDIR} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" PYTHON=${PYTHON_CMD} \
-			npm rebuild --nodedir=${LOCALBASE} && \
+			node-gyp rebuild --release --nodedir=${LOCALBASE} && \
 		${MKDIR} ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/better-sqlite3/build/Release && \
 		${CP} build/Release/better_sqlite3.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/better-sqlite3/build/Release/
 	@${ECHO_MSG} "====> Building node-llama-cpp for FreeBSD..."
 	@cd ${WRKDIR}/node-llama-cpp-${dep_node_llama_cpp_version}/node_modules/${dep_node_llama_cpp_npm_name} && \
 		${SETENV} HOME=${WRKDIR} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" \
-			npm rebuild --nodedir=${LOCALBASE} 2>&1 || true
+			node ./dist/cli/cli.js postinstall 2>&1 || true
 	@${MKDIR} ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/localBuilds/freebsd-x64/Release 2>/dev/null || true
 	@${CP} ${WRKDIR}/node-llama-cpp-${dep_node_llama_cpp_version}/node_modules/${dep_node_llama_cpp_npm_name}/llama/localBuilds/freebsd-x64/Release/*.so ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/localBuilds/freebsd-x64/Release/ 2>/dev/null || true
+	@${CP} ${WRKDIR}/node-llama-cpp-${dep_node_llama_cpp_version}/node_modules/${dep_node_llama_cpp_npm_name}/llama/localBuilds/freebsd-x64/Release/*.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/localBuilds/freebsd-x64/Release/ 2>/dev/null || true
 	@${ECHO_CMD} '{"version":"3.18.1","nodeAbi":99,"platform":"freebsd","arch":"x64"}' > ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/lastBuild.json
 	@${ECHO_MSG} "====> Building tree-sitter modules for FreeBSD..."
-.for dep in tree_sitter_go tree_sitter_javascript tree_sitter_python tree_sitter_rust tree_sitter_typescript web_tree_sitter
+.for dep in tree_sitter_go tree_sitter_javascript tree_sitter_python tree_sitter_rust tree_sitter_typescript
 	@cd ${WRKDIR}/${dep:S/_/-/g}-${dep_${dep}_version}/node_modules/${dep_${dep}_npm_name} && \
 		${SETENV} HOME=${WRKDIR} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" \
-			npm rebuild --nodedir=${LOCALBASE} && \
+			node-gyp rebuild --nodedir=${LOCALBASE} && \
 		${MKDIR} ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/${dep_${dep}_npm_name}/build/Release && \
 		${CP} build/Release/*.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/${dep_${dep}_npm_name}/build/Release/ 2>/dev/null || true
 .endfor
@@ -108,7 +114,10 @@ do-install:
 	@cd ${WRKSRC}/node_modules/${PACKAGE_NAME} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/node_modules/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	@${ECHO_CMD} '#!/bin/sh' > ${STAGEDIR}${PREFIX}/bin/qmd
-	@${ECHO_CMD} 'exec ${PREFIX}/bin/node ${PREFIX}/lib/node_modules/${PORTNAME}/dist/cli/qmd.js "$$@"' \
+	@${ECHO_CMD} '# Resolve the JS entry point relative to this wrapper so staging works.' \
+		>> ${STAGEDIR}${PREFIX}/bin/qmd
+	@${ECHO_CMD} 'SCRIPT_DIR=$$(cd "$$(dirname "$$0")" && pwd)' >> ${STAGEDIR}${PREFIX}/bin/qmd
+	@${ECHO_CMD} 'exec ${PREFIX}/bin/node "$$SCRIPT_DIR/../lib/node_modules/${PORTNAME}/dist/cli/qmd.js" "$$@"' \
 		>> ${STAGEDIR}${PREFIX}/bin/qmd
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/qmd
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PORTNAME}/node_modules/node-llama-cpp/llama/localBuilds -type d -exec ${CHMOD} 777 {} \; 2>/dev/null || true
@@ -121,4 +130,7 @@ post-install:
 	@cd ${STAGEDIR}${PREFIX} && \
 		${FIND} * -type f -or -type l >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+test-quick: stage
+	${SETENV} PATH=${STAGEDIR}${PREFIX}/bin:${PATH} ${SH} ${FILESDIR}/example.sh
+
+.include <bsd.port.post.mk>
