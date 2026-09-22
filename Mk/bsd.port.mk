@@ -3937,6 +3937,11 @@ _CKSUMFILES_FILE=${WRKDIR}/.cksumfiles
 # the options consistent when fetching and when makesum'ing.
 # As we're fetching new distfiles, that are not in the distinfo file, disable
 # checksum and sizes checks.
+# NOTE: if you arrived here because your port defines a custom do-fetch target,
+# and makesum is somewhat broken, you need to define both do-fetch and
+# makesum-fetch to do the same thing, the easiest way is to do:
+# do-fetch makesum-fetch:
+#		@target content
 makesum: check-sanity
 	@cd ${.CURDIR} && ${MAKE} makesum-fetch
 	@${MKDIR} ${WRKDIR}
