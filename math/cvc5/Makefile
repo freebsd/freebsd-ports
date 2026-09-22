@@ -100,6 +100,6 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 
 PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
 
-# tests as of 1.4.0: 99% tests passed, 9 tests failed out of 4361, see https://github.com/cvc5/cvc5/issues/12958
+# tests as of 1.4.0: 100% tests passed, 0 tests failed out of 4361
 
 .include <bsd.port.mk>
