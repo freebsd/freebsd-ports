@@ -1,5 +1,6 @@
 PORTNAME=	ttk
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +15,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/functional/hash.hpp:devel/boost-libs \
+		cgal>0:math/cgal \
 		cli11>0:devel/cli11 \
 		exprtk>0:math/exprtk \
 		spectra>0:math/spectra \
@@ -24,11 +26,17 @@ BUILD_DEPENDS+=	nlohmann-json>0:devel/nlohmann-json # is required by lib/cmake/p
 BUILD_DEPENDS+=	fast_float>0:math/fast_float # attempt to fix build failures triggered by find_package(fastfloat) from paraview's vtk cmake scripts
 LIB_DEPENDS=	libcgraph.so:graphics/graphviz \
 		libembree3.so:graphics/embree3 \
+		libexpat.so:textproc/expat2 \
+		libgmp.so:math/gmp \
 		libfreetype.so:print/freetype2 \
+		libjpeg.so:graphics/jpeg-turbo \
 		libjsoncpp.so:devel/jsoncpp \
+		liblz4.so:archivers/liblz4 \
+		libmpfr.so:math/mpfr \
 		libqhull_r.so:math/qhull \
 		libscn.so:devel/scnlib \
 		libtbb.so:devel/onetbb \
+		libtiff.so:graphics/tiff \
 		libvtkRenderingCore-pv${PARAVIEW_VER}.so:science/paraview \
 		libzfp.so:devel/zfp
 RUN_DEPENDS=	${PY_DEPENDS}
