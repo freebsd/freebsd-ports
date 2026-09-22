@@ -11,6 +11,8 @@ WWW=		https://www.gnu.org/software/radius/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build, error: use of undeclared identifier 'u_char'
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		cpe gmake libtool tar:bz2
