@@ -172,7 +172,7 @@ include/gcg/struct_gcg.h
 include/gcg/struct_gcgcol.h
 include/gcg/struct_gcgpqueue.h
 include/gcg/struct_gcgvarhistory.h
-include/gcg/struct_locks.h
+%%OPENMP%%include/gcg/struct_locks.h
 include/gcg/struct_mastersepacut.h
 include/gcg/struct_pricestore_gcg.h
 include/gcg/struct_pricingcb.h

@@ -29,4 +29,10 @@ LDFLAGS+=	-lpthread # fix build after it began breaking on 2025-11-03 for unclea
 
 INSTALL_CONFLICTS=	SCIP
 
+.if exists(/usr/include/omp.h)
+PLIST_SUB+=	OPENMP=""
+.else
+PLIST_SUB+=	OPENMP="@comment "
+.endif
+
 .include <bsd.port.mk>
