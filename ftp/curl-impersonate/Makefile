@@ -29,6 +29,8 @@ WWW=		https://curl-impersonate.readthedocs.io/en/latest/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: x86 assembly requires SSE2
+
 USES=		cmake localbase:ldflags pkgconfig ssl
 
 USE_GITHUB=	yes
