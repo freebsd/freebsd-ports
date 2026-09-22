@@ -1,5 +1,5 @@
 PORTNAME=	tpm2-pkcs11
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-pkcs11/releases/download/${PORTVERSION}/
 
