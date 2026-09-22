@@ -1,5 +1,6 @@
 PORTNAME=	linphone
 DISTVERSION=	6.1.2
+PORTEPOCH=	1
 CATEGORIES=	net
 # XXX: Linphone GitLab instance seems unstable
 #      and sometimes refuses connections.
