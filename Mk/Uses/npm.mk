@@ -325,9 +325,8 @@ npm-archive-node-modules:
 		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} \
 			-C ${WRKDIR} @node-modules-cache.mtree; \
-		if [ "${TMPDIR}" != "${WRKDIR}" ]; then \
-			${RM} -r ${WRKDIR}; \
-		fi; \
+		${RM} -r ${WRKDIR}/node-modules-cache \
+			${WRKDIR}/node-modules-cache.mtree; \
 	fi
 .    elif ${_NPM_NAME:Myarn*} || ${_NPM_NAME} == pnpm
 .      if ${_NPM_NAME} == pnpm
@@ -441,9 +440,8 @@ npm-archive-node-modules:
 			node-modules-cache.mtree && \
 		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${_DISTFILE_prefetch} @node-modules-cache.mtree; \
-		if [ "${TMPDIR}" != "${WRKDIR}" ]; then \
-			${RM} -r ${WRKDIR}; \
-		fi; \
+		${RM} -r ${WRKDIR}/node-modules-cache \
+			${WRKDIR}/node-modules-cache.mtree; \
 	fi
 .    endif
 .  endif
