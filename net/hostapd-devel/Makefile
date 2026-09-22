@@ -11,8 +11,8 @@ WWW=		https://w1.fi/hostapd/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	hostap
-GH_TAGNAME=	7533e0a806
-COMMIT_DATE=	2026.08.09
+GH_TAGNAME=	24c033de8
+COMMIT_DATE=	2026.09.22
 
 LICENSE=	BSD3CLAUSE
 
@@ -21,6 +21,7 @@ CPE_VENDOR=	w1.fi
 BUILD_WRKSRC=	${WRKSRC}/hostapd
 CFLAGS+=	-Wno-incompatible-function-pointer-types
 CFLAGS+=	-Wno-int-conversion
+CFLAGS+=	-Wno-c23-extensions
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_JOBS_UNSAFE=	yes
