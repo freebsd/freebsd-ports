@@ -14,6 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE-GPL
 
 BROKEN_aarch64=	compilation fails: cannot find value `KINFO_FILE_SIZE` in crate `libc`, see https://github.com/rust-lang/libc/issues/5535
+BROKEN_i386=	compilation fails: error[E0308]: mismatched types ... expected `u32`, found `u64`
 
 BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
