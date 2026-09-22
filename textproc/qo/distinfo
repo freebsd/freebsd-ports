@@ -1,5 +1,5 @@
-TIMESTAMP = 1782594985
-SHA256 (go/textproc_qo/qo-v0.4.1/v0.4.1.mod) = db3a8c690cbb9b85cf3bb61d2e1bf15fdcff42cd16ada6b8025cf525ed931521
-SIZE (go/textproc_qo/qo-v0.4.1/v0.4.1.mod) = 28976
-SHA256 (go/textproc_qo/qo-v0.4.1/v0.4.1.zip) = 65ff26c700a0ed3dd385b5697297183a353241b998d022122b207ec9daeb46dc
-SIZE (go/textproc_qo/qo-v0.4.1/v0.4.1.zip) = 760650
+TIMESTAMP = 1790101242
+SHA256 (go/textproc_qo/qo-v0.5.0/v0.5.0.mod) = 52b72a642fde1053b64e257070cf97efdca046e40bcde64ada511a5a3a6e7c1b
+SIZE (go/textproc_qo/qo-v0.5.0/v0.5.0.mod) = 28976
+SHA256 (go/textproc_qo/qo-v0.5.0/v0.5.0.zip) = 54f02ce34dffc96e3500f228c9cde9e36d1be9c17cb8a7266414adc5792292bd
+SIZE (go/textproc_qo/qo-v0.5.0/v0.5.0.zip) = 790935
