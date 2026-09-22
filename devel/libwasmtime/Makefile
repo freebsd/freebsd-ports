@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	48.0.1
+PORTVERSION=	49.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	chris.longros@gmail.com
@@ -20,18 +19,17 @@ USES=		cargo cmake:indirect cpe
 CPE_VENDOR=	bytecodealliance
 CPE_PRODUCT=	wasmtime
 
-USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	bytecodealliance
 GH_PROJECT=	wasmtime
-
-CARGO_BUILD_ARGS=	-p wasmtime-c-api
-CMAKE_SOURCE_PATH=	${WRKSRC}/crates/c-api
-
-GH_TUPLE=	WebAssembly:component-model:e8d8005:component_model/tests/component-model \
+GH_TUPLE=	WebAssembly:component-model:7c67611:component_model/tests/component-model \
 		WebAssembly:testsuite:0dc0343:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:6345da2:wasi_testsuite/tests/wasi-testsuite
+USE_LDCONFIG=	yes
+
+CMAKE_SOURCE_PATH=	${WRKSRC}/crates/c-api
+
+CARGO_BUILD_ARGS=	-p wasmtime-c-api
 
 post-configure:
 	@cd ${CMAKE_SOURCE_PATH} && ${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS}
