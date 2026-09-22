@@ -756,10 +756,10 @@ lib/libdruntime-ldc-shared.so
 lib/libdruntime-ldc-shared.so.113
 lib/libdruntime-ldc-shared.so.113.0
 lib/libdruntime-ldc.a
-lib/libldc-jit-rt.a
-lib/libldc-jit.so
-lib/libldc-jit.so.113
-lib/libldc-jit.so.113.0
+%%LDCJIT%%lib/libldc-jit-rt.a
+%%LDCJIT%%lib/libldc-jit.so
+%%LDCJIT%%lib/libldc-jit.so.113
+%%LDCJIT%%lib/libldc-jit.so.113.0
 lib/libphobos2-ldc-debug-shared.so
 lib/libphobos2-ldc-debug-shared.so.113
 lib/libphobos2-ldc-debug-shared.so.113.0

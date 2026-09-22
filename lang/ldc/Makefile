@@ -1,5 +1,6 @@
 PORTNAME=	ldc
 PORTVERSION=	1.43.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -30,7 +31,13 @@ CMAKE_ARGS+=	-DLDC_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_SHARED_LIBS="BOTH" \
 		-DBUILD_LTO_LIBS=ON
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${LLVM_VERSION} > 19
+PLIST_SUB+=	LDCJIT="@comment "
+.else
+PLIST_SUB+=	LDCJIT=""
+.endif
 
 .if ${ARCH} == amd64
 BOOTSTRAP_ARCH=	x86_64
@@ -57,4 +64,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ldc2
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ldmd2
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
