@@ -11,6 +11,8 @@ WWW=		https://leanctx.com \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+BROKEN_i386=	compilation fails: memory allocation of 17301520 bytes failed
+
 BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 # optional dependencies for LSP / ctx_refactor are not yet in the port (see 'lean-ctx doctor'):
