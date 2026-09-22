@@ -82,6 +82,6 @@ lib/rssguard/librssguard-nextcloud.so
 lib/rssguard/librssguard-reddit.so
 lib/rssguard/librssguard-standard.so
 lib/rssguard/librssguard-ttrss.so
-share/applications/io.github.martinrotter.%%PROGNAME%%.desktop
-share/icons/hicolor/256x256/apps/io.github.martinrotter.%%PROGNAME%%.png
-share/metainfo/io.github.martinrotter.%%PROGNAME%%.metainfo.xml
+share/applications/io.github.martinrotter.rssguardlite.desktop
+share/icons/hicolor/256x256/apps/io.github.martinrotter.rssguardlite.png
+share/metainfo/io.github.martinrotter.rssguardlite.metainfo.xml
