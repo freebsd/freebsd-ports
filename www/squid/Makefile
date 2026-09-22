@@ -1,5 +1,5 @@
 PORTNAME=	squid
-DISTVERSION=	7.6
+DISTVERSION=	7.7
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}-cache/${PORTNAME}/releases/download/${PORTNAME:tu}_${DISTVERSION:S|.|_|g}/
 
