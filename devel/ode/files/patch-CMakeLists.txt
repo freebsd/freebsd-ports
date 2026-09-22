@@ -1,6 +1,12 @@
---- CMakeLists.txt.orig	2025-01-16 14:48:49.000000000 -0800
-+++ CMakeLists.txt	2025-11-22 17:13:28.892206000 -0800
-@@ -43,6 +43,7 @@
+--- CMakeLists.txt.orig	2025-01-16 22:48:49 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.5)
+ 
+ if(POLICY CMP0042)
+ 	cmake_policy(SET CMP0042 NEW)
+@@ -43,6 +43,7 @@ option(ODE_WIN32_INSTALL_STATIC_LIBS_PDB "Install the 
  option(ODE_WITH_TESTS "Builds the unit test application." ON)
  option(ODE_WIN32_LIB_OUTPUT_NAME_BASED_ON_FLOAT_SIZE "The output name of the library will be based on the size of float, on Windows." ON)
  option(ODE_WIN32_INSTALL_STATIC_LIBS_PDB "Install the PDB files for the static libraries (.lib) on Windows." OFF)
@@ -8,7 +14,7 @@
  
  cmake_dependent_option(ODE_WITH_LIBCCD_BOX_CYL "Use libccd for box-cylinder." ON "ODE_WITH_LIBCCD" OFF)
  cmake_dependent_option(ODE_WITH_LIBCCD_CAP_CYL "Use libccd for capsule-cylinder." ON "ODE_WITH_LIBCCD" OFF)
-@@ -54,12 +55,6 @@
+@@ -54,12 +55,6 @@ cmake_dependent_option(ODE_WITH_LIBCCD_SYSTEM "Use sys
  cmake_dependent_option(ODE_WITH_LIBCCD_CONVEX_SPHERE "Use libccd for convex-sphere." ON "ODE_WITH_LIBCCD" OFF)
  cmake_dependent_option(ODE_WITH_LIBCCD_SYSTEM "Use system libccd." OFF "ODE_WITH_LIBCCD" OFF)
  
@@ -21,7 +27,7 @@
  set(ODE_WIN32_STATIC_LIB_POSTFIX_DEBUG "sd" CACHE STRING "The postfix to use when building the library as a static .lib on Windows in DEBUG.")
  set(ODE_WIN32_STATIC_LIB_POSTFIX_MINSIZEREL "s" CACHE STRING "The postfix to use when building the library as a static .lib on Windows in MINSIZEREL.")
  set(ODE_WIN32_STATIC_LIB_POSTFIX_RELEASE "s" CACHE STRING "The postfix to use when building the library as a static .lib on Windows in RELEASE.")
-@@ -757,12 +752,12 @@
+@@ -757,12 +752,12 @@ string(REGEX REPLACE "/$" "" PACKAGE_RELATIVE_PATH "${
  
  file(RELATIVE_PATH PACKAGE_RELATIVE_PATH "${CMAKE_INSTALL_FULL_LIBDIR}/pkgconfig" "${CMAKE_INSTALL_PREFIX}")
  string(REGEX REPLACE "/$" "" PACKAGE_RELATIVE_PATH "${PACKAGE_RELATIVE_PATH}")
