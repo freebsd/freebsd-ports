@@ -42,6 +42,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Clipboard.pod
 %%SITE_ARCH%%/Prima/ComboBox.pm
 %%SITE_ARCH%%/Prima/Config.pm
+%%SITE_ARCH%%/Prima/Config.pm.bak
 %%SITE_ARCH%%/Prima/Const.pm
 %%SITE_ARCH%%/Prima/DetailedList.pm
 %%SITE_ARCH%%/Prima/DetailedOutline.pm
@@ -145,6 +146,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Widget/BidiInput.pm
 %%SITE_ARCH%%/Prima/Widget/Date.pm
 %%SITE_ARCH%%/Prima/Widget/EventRectangles.pm
+%%SITE_ARCH%%/Prima/Widget/Fader.pm
 %%SITE_ARCH%%/Prima/Widget/GroupScroller.pm
 %%SITE_ARCH%%/Prima/Widget/Header.pm
 %%SITE_ARCH%%/Prima/Widget/IntIndents.pm
@@ -177,6 +179,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/detailedoutline.gif
 %%SITE_ARCH%%/Prima/detailedoutline2.gif
 %%SITE_ARCH%%/Prima/edit.gif
+%%SITE_ARCH%%/Prima/examples/3d.pl
 %%SITE_ARCH%%/Prima/examples/Hand.gif
 %%SITE_ARCH%%/Prima/examples/animate.pl
 %%SITE_ARCH%%/Prima/examples/antialias.pl
@@ -242,6 +245,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/socket_anyevent2.pl
 %%SITE_ARCH%%/Prima/examples/spinner.pl
 %%SITE_ARCH%%/Prima/examples/spline.pl
+%%SITE_ARCH%%/Prima/examples/star_and_ring.pl
 %%SITE_ARCH%%/Prima/examples/theme.pl
 %%SITE_ARCH%%/Prima/examples/tiger.eps
 %%SITE_ARCH%%/Prima/examples/tiger.pl
@@ -307,6 +311,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/sysimage.gif
 %%SITE_ARCH%%/Prima/textview.gif
 %%SITE_ARCH%%/Prima/themes/color.pm
+%%SITE_ARCH%%/Prima/themes/flat.pm
 %%SITE_ARCH%%/Prima/themes/round3d.pm
 %%SITE_ARCH%%/Prima/themes/sysimage.pm
 %%SITE_ARCH%%/Prima/themes/tabset.pm
@@ -418,6 +423,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Widget::BidiInput.3.gz
 %%PERL5_MAN3%%/Prima::Widget::Date.3.gz
 %%PERL5_MAN3%%/Prima::Widget::EventRectangles.3.gz
+%%PERL5_MAN3%%/Prima::Widget::Fader.3.gz
 %%PERL5_MAN3%%/Prima::Widget::GroupScroller.3.gz
 %%PERL5_MAN3%%/Prima::Widget::Header.3.gz
 %%PERL5_MAN3%%/Prima::Widget::IntIndents.3.gz
@@ -442,6 +448,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::sys::win32.3.gz
 %%PERL5_MAN3%%/Prima::sys::win32::FileDialog.3.gz
 %%PERL5_MAN3%%/Prima::themes::color.3.gz
+%%PERL5_MAN3%%/Prima::themes::flat.3.gz
 %%PERL5_MAN3%%/Prima::themes::round3d.3.gz
 %%PERL5_MAN3%%/Prima::themes::sysimage.3.gz
 %%PERL5_MAN3%%/Prima::themes::tabset.3.gz
