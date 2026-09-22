@@ -1,6 +1,5 @@
 PORTNAME=	knot-resolver
-DISTVERSION=	5.7.6
-PORTREVISION=	4
+DISTVERSION=	5.7.8
 CATEGORIES=	dns
 MASTER_SITES=	https://knot-resolver.nic.cz/release/ \
 		https://dns.company/downloads/knot-resolver/
@@ -16,10 +15,9 @@ BUILD_DEPENDS=	bash:shells/bash \
 		flake8:devel/py-flake8@${PY_FLAVOR} \
 		lua51-cqueues>=20200726_1:devel/lua-cqueues@lua51 \
 		luacheck:devel/lua-luacheck
-LIB_DEPENDS=	libdnssec.so:dns/knot3 \
-		libgnutls.so:security/gnutls \
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libknot.so:dns/knot3 \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb.so:databases/lmdb \
 		libnghttp2.so:www/libnghttp2 \
 		libuv.so:devel/libuv \
 		libzscanner.so:dns/knot3
