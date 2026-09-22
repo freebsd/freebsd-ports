@@ -1,6 +1,7 @@
 PORTNAME=	lbann
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.104
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,6 +9,8 @@ COMMENT=	Livermore Big Artificial Neural Network toolkit
 WWW=		https://github.com/LLNL/lbann
 
 LICENSE=	APACHE20
+
+BROKEN_i386=	link fails: undefined reference: absl::lts_20250127::hash_internal::CityHash32(char const*, unsigned int)
 
 BUILD_DEPENDS=	cereal>0:devel/cereal \
 		dihydrogen>0:math/dihydrogen \
@@ -17,7 +20,6 @@ LIB_DEPENDS=	libabsl_hash.so:devel/abseil \
 		libabsl_log_internal_nullguard.so:devel/abseil \
 		libabsl_spinlock_wait.so:devel/abseil \
 		libconduit.so:science/conduit \
-		libgcc_s.so:lang/gcc14 \
 		libhdf5.so:science/hdf5 \
 		libHydrogen_CXX.so:math/hydrogen \
 		libopenblas.so:math/openblas \
