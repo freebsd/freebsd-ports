@@ -19,10 +19,6 @@ validate_env dp_DEVELOPER dp_DISABLE_SIZE dp_DISTDIR dp_DISTINFO_FILE \
 set -u
 
 case ${dp_TARGET} in
-	makesum-fetch)
-		dp_NO_CHECKSUM=yes
-		dp_DISABLE_SIZE=yes
-		;&
 	do-fetch|makesum)
 		if [ ! -d "${dp_DISTDIR}" ]; then
 			mkdir -p "${dp_DISTDIR}"
@@ -77,7 +73,7 @@ while IFS= read -r _file; do
 		fi
 	fi
 	case ${dp_TARGET} in
-		do-fetch|makesum|makesum-fetch)
+		do-fetch|makesum)
 			${dp_ECHO_MSG} "=> $file doesn't seem to exist in ${dp_DISTDIR}."
 			if [ ! -w "${dp_DISTDIR}" ]; then
 				${dp_ECHO_MSG} "=> ${dp_DISTDIR} is not writable by you; cannot fetch."
@@ -96,7 +92,7 @@ while IFS= read -r _file; do
 			__MASTER_SITES_TMP="${__MASTER_SITES_TMP} ${___MASTER_SITES_TMP}"
 		else
 			case ${dp_TARGET} in
-				do-fetch|makesum|makesum-fetch)
+				do-fetch|makesum)
 					if [ -n "${dp_DEVELOPER}" ]; then
 						${dp_ECHO_MSG} "===> /!\\ Error /!\\"
 					else
@@ -156,7 +152,7 @@ while IFS= read -r _file; do
 		fi
 		_fetch_cmd="${_fetch_cmd} ${args} ${dp_FETCH_AFTER_ARGS}"
 		case ${dp_TARGET} in
-			do-fetch|makesum|makesum-fetch)
+			do-fetch|makesum)
 				${dp_ECHO_MSG} "=> Attempting to fetch ${site}${file}"
 				if env -S "${dp_FETCH_ENV}" ${_fetch_cmd}; then
 					actual_size=$(stat -f %z "${file}")
@@ -180,7 +176,7 @@ while IFS= read -r _file; do
 		esac
 	done
 	case ${dp_TARGET} in
-		do-fetch|makesum|makesum-fetch)
+		do-fetch|makesum)
 			${dp_ECHO_MSG} "=> Couldn't fetch it - please try to retrieve this"
 			${dp_ECHO_MSG} "=> port manually into ${dp_DISTDIR} and try again."
 			exit 1
