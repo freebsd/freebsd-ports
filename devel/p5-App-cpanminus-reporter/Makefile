@@ -1,7 +1,8 @@
 PORTNAME=	App-cpanminus-reporter
-PORTVERSION=	0.17
+DISTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:GARU
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jkeenan@cpan.org
@@ -26,6 +27,7 @@ RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 
 USES=	perl5
 USE_PERL5=	configure
+
 NO_ARCH=	YES
 
 .include <bsd.port.mk>
