@@ -703,6 +703,7 @@
     SUBDIR += logstash92
     SUBDIR += logstash93
     SUBDIR += logstash94
+    SUBDIR += logstash95
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += loki
