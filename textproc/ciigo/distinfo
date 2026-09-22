@@ -1,0 +1,5 @@
+TIMESTAMP = 1790001727
+SHA256 (go/textproc_ciigo/ciigo-v0.18.1/v0.18.1.mod) = 1c8d8b3f5784cbeeff27e097def36ad9c43cc93d277503a4a17a1c493393279b
+SIZE (go/textproc_ciigo/ciigo-v0.18.1/v0.18.1.mod) = 870
+SHA256 (go/textproc_ciigo/ciigo-v0.18.1/v0.18.1.zip) = 8150cb44ee1697ccb1f124c655cc03cf4385fc73e3caa55b2b9c50ca0570373a
+SIZE (go/textproc_ciigo/ciigo-v0.18.1/v0.18.1.zip) = 91903

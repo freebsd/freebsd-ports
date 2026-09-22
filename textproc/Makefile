@@ -100,6 +100,7 @@
     SUBDIR += chkascii
     SUBDIR += choose
     SUBDIR += chpp
+    SUBDIR += ciigo
     SUBDIR += cl-ppcre
     SUBDIR += cl-ppcre-ccl
     SUBDIR += cl-ppcre-clisp
