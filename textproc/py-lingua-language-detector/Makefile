@@ -12,6 +12,8 @@ WWW=		https://github.com/pemistahl/lingua-py
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to compile: rustc-LLVM ERROR: out of memory
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.1:devel/py-maturin@${PY_FLAVOR}
 
 USES=		cargo python
