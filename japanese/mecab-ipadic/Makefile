@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--with-charset=${CSET} \
 		--with-dicdir=${PREFIX}/lib/mecab/dic/ipadic
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
-PORTSCOUT=	skipv:3.0.0-00000000 4.0.0-00000000 5.0.0-00000000
+PORTSCOUT=	skipv:3.0.0-00000000,4.0.0-00000000,5.0.0-00000000
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST=		${MASTERDIR}/pkg-plist.cset
