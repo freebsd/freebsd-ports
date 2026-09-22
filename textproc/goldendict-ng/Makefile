@@ -1,6 +1,7 @@
 PORTNAME=	goldendict-ng
 DISTVERSIONPREFIX=	v
 DISTVERSION=	26.8.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -16,8 +17,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libopencc.so:chinese/opencc \
 		libtomlplusplus.so:devel/tomlplusplus \
 		libvorbis.so:audio/libvorbis \
-		libxapian.so:databases/xapian-core14 \
-		libzim.so:devel/libzim
+		libxapian.so:databases/xapian-core
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:6 \
 		xorg
@@ -29,7 +29,7 @@ USE_QT=		5compat base declarative multimedia positioning svg webchannel \
 USE_XORG=	ice sm x11 xext xorgproto xtst
 
 CMAKE_ON=		USE_ALTERNATIVE_NAME USE_SYSTEM_FMT USE_SYSTEM_TOML
-CMAKE_OFF=		WITH_FFMPEG_PLAYER
+CMAKE_OFF=		WITH_FFMPEG_PLAYER WITH_ZIM
 CONFIGURE_WRKSRC=	${WRKSRC}/build_dir
 
 OPTIONS_DEFINE=		EPWING SPEECH
