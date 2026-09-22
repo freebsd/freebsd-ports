@@ -1,6 +1,6 @@
 PORTNAME=	Goo
-PORTVERSION=	0.09
-PORTREVISION=	3
+DISTVERSION=	0.09
+PORTREVISION=	4
 CATEGORIES=	deskutils sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,9 @@ WWW=		https://metacpan.org/release/Goo
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+
+DEPRECATED=	Upstream dists no longer available
+EXPIRATION_DATE=	2026-10-22
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Config-Auto>=0:devel/p5-Config-Auto \
@@ -26,8 +29,10 @@ RUN_DEPENDS=	p5-Config-Auto>=0:devel/p5-Config-Auto \
 		p5-Text-FormatTable>=0:textproc/p5-Text-FormatTable
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	lib/Goo/Thing/*/*.pl
 USE_PERL5=	configure
+
+SHEBANG_FILES=	lib/Goo/Thing/*/*.pl
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
