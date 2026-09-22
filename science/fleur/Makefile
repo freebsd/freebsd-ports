@@ -14,6 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	fatal error: cannot find an intrinsic module named 'ieee_arithmetic' at (1)
+BROKEN_i386=	compilation fails: Type mismatch in argument 'increment' at (1); passed INTEGER(8) to INTEGER(4)
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libhdf5.so:science/hdf5 \
