@@ -11,8 +11,8 @@ WWW=		https://w1.fi/wpa_supplicant/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	hostap
-GH_TAGNAME=	7533e0a806
-COMMIT_DATE=	2026.08.09
+GH_TAGNAME=	24c033de8
+COMMIT_DATE=	2026.09.22
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README
@@ -26,7 +26,7 @@ CPPFLAGS+=	-Wno-incompatible-function-pointer-types
 CFLAGS+=	${CPPFLAGS} # USES=readline only augments CPPFLAGS and LDFLAGS
 CFLAGS+=	-Wno-undefined-internal
 CFLAGS+=	-I${OPENSSLINC}
-CFLAGS+=	-Wno-deprecated-declarations
+CFLAGS+=	-Wno-deprecated-declarations -Wno-c23-extensions
 LDFLAGS+=	-L${OPENSSLLIB} -lutil
 MAKE_ENV=	V=1
 ALL_TARGET+=	all
