@@ -1,6 +1,6 @@
 PORTNAME=	kew
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.2
+DISTVERSION=	4.3.6
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,8 +27,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ravachol
 
 MAKE_ARGS=	CC=${CC} PREFIX=${PREFIX}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/kew
 
 .include <bsd.port.mk>
