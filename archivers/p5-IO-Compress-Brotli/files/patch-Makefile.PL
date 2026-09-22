@@ -1,13 +1,13 @@
---- Makefile.PL.orig	2023-10-31 00:35:30 UTC
+--- Makefile.PL.orig	2024-11-30 16:56:32 UTC
 +++ Makefile.PL
-@@ -1,6 +1,5 @@
- use 5.014000;
+@@ -1,6 +1,5 @@ use ExtUtils::MakeMaker;
+ use 5.008000;
  use ExtUtils::MakeMaker;
 -use Alien::cmake3;
  use File::Spec::Functions qw/catfile/;
  use Config;
  
-@@ -32,14 +31,7 @@ WriteMakefile(
+@@ -33,15 +32,8 @@ WriteMakefile(
  		'Getopt::Long'  => '0',
  		'Time::HiRes'   => '0',
  	},
@@ -19,11 +19,12 @@
 -	},
 -	INC              => '-Ibrotli/c/include',
 -	MYEXTLIB         => $myextlib,
+	EXTRALIBS        => ' brotli/libbrotlienc$(LIB_EXT) brotli/libbrotlidec$(LIB_EXT) brotli/libbrotlicommon$(LIB_EXT) ',
 +	LIBS             => ['-L%%LOCALBASE%%/lib -lbrotlienc -lbrotlidec -lbrotlicommon'],
  	clean            => { FILES => "brotli/Makefile $myextlib brotli/CMakeCache.txt brotli/CMakeFiles/* brotli/CTestTestfile.cmake brotli/DartConfiguration.tcl brotli/brotli* brotli/cmake_install.cmake brotli/libbrotlicommon.pc brotli/libbrotlidec.pc brotli/libbrotlienc.pc" },
  	META_ADD         => {
  		dynamic_config => 0,
-@@ -48,12 +40,3 @@ WriteMakefile(
+@@ -50,12 +42,3 @@ WriteMakefile(
  		},
  	}
  );
