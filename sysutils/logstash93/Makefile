@@ -12,6 +12,9 @@ WWW=		https://www.elastic.co/products/logstash
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Support for ${DISTVERSION:R}.x has ended 04 Aug 2026 - use ${PORTNAME}94 or ${PORTNAME}95 instead
+EXPIRATION_DATE=	2026-12-31
+
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 RUN_DEPENDS=	bash:shells/bash
