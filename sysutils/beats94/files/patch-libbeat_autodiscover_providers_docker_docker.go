@@ -1,4 +1,4 @@
---- libbeat/autodiscover/providers/docker/docker.go.orig	2026-02-23 21:59:26 UTC
+--- libbeat/autodiscover/providers/docker/docker.go.orig	2026-09-09 20:15:21 UTC
 +++ libbeat/autodiscover/providers/docker/docker.go
 @@ -15,7 +15,7 @@
  // specific language governing permissions and limitations
@@ -9,12 +9,12 @@
  
  package docker
  
-@@ -32,7 +32,7 @@ import (
+@@ -33,7 +33,7 @@ import (
  	"github.com/elastic/beats/v7/libbeat/common"
  
- 	"github.com/elastic/elastic-agent-autodiscover/bus"
--	"github.com/elastic/elastic-agent-autodiscover/docker"
-+	docker "github.com/elastic/elastic-agent-autodiscover/docker"
- 	"github.com/elastic/elastic-agent-autodiscover/utils"
+ 	"github.com/elastic/beats/v7/pkg/autodiscover/bus"
+-	"github.com/elastic/beats/v7/pkg/autodiscover/docker"
++	docker "github.com/elastic/beats/v7/pkg/autodiscover/docker"
+ 	"github.com/elastic/beats/v7/pkg/autodiscover/utils"
  	"github.com/elastic/elastic-agent-libs/config"
  	"github.com/elastic/elastic-agent-libs/keystore"
