@@ -231,7 +231,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		httparse-1.10.1 \
 		hybrid-array-0.4.15 \
 		hyper-1.11.1 \
-		hyper-rustls-0.27.9 \
+		hyper-rustls-0.27.10 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.20 \
 		iana-time-zone-0.1.65 \
@@ -304,7 +304,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		libc-0.2.189 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
-		libredox-0.1.24 \
+		libredox-0.1.25 \
 		libz-sys-1.1.29 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.3 \
