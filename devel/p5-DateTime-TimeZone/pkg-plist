@@ -240,7 +240,9 @@
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Melbourne.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Perth.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Sydney.pm
+%%SITE_PERL%%/DateTime/TimeZone/CST6CDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Catalog.pm
+%%SITE_PERL%%/DateTime/TimeZone/EST5EDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Andorra.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Astrakhan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Europe/Athens.pm
@@ -287,12 +289,14 @@
 %%SITE_PERL%%/DateTime/TimeZone/Local/Android.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local/Unix.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local/VMS.pm
+%%SITE_PERL%%/DateTime/TimeZone/MST7MDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/OffsetOnly.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Change.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Observance.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Rule.pm
 %%SITE_PERL%%/DateTime/TimeZone/OlsonDB/Zone.pm
+%%SITE_PERL%%/DateTime/TimeZone/PST8PDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Apia.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Auckland.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Bougainville.pm
