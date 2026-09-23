@@ -1,6 +1,5 @@
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.18.0
-PORTREVISION=	1
+DISTVERSION=	100.19.0
 CATEGORIES=	databases
 
 MAINTAINER=	ronald@FreeBSD.org
@@ -53,6 +52,9 @@ MONGOTOP_VARS=		go_target+=./mongotop/main:mongotop
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_USE=		my_tags=sasl
 SSL_USE=		my_tags=ssl
+
+pre-test:
+	${MV} ${WRKSRC}/release/version/version_test.go ${WRKSRC}/release/version/version_test.go.orig
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
