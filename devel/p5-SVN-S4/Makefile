@@ -1,8 +1,9 @@
 PORTNAME=	SVN-S4
-PORTVERSION=	1.062
+DISTVERSION=	1.062
 PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:WSNYDER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gary@hayers.org
@@ -22,9 +23,11 @@ RUN_DEPENDS+=	p5-subversion-lts>=0:devel/p5-subversion
 RUN_DEPENDS+=	p5-subversion>=0:devel/p5-subversion
 .endif
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
 INSTALL_TARGET=	pure_install
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
