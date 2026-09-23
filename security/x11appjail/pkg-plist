@@ -1,6 +1,7 @@
 bin/x11appjail
 lib/x11appjail/common
 libexec/x11appjail/appsiz
+libexec/x11appjail/attr
 libexec/x11appjail/destroy-jail
 libexec/x11appjail/exec
 libexec/x11appjail/login
@@ -9,6 +10,7 @@ libexec/x11appjail/misc/simple-desktop-file-utils.sh
 libexec/x11appjail/print-display
 libexec/x11appjail/remove
 libexec/x11appjail/run-cmd
+libexec/x11appjail/sys-attr
 libexec/x11appjail/service.d/Notification/agent
 libexec/x11appjail/service.d/Notification/exec
 libexec/x11appjail/service.d/Notification/setup
