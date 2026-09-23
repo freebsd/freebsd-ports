@@ -1,6 +1,19 @@
---- cmake/spheral_cxx-config.cmake.in.orig	2026-04-01 08:49:15 UTC
+-- Match the Boost variant flags in the installed config file so downstream
+-- find_package(spheral_cxx) also locates the shared FreeBSD Boost build.
+
+--- cmake/spheral_cxx-config.cmake.in.orig	2026-06-23 16:46:22 UTC
 +++ cmake/spheral_cxx-config.cmake.in
-@@ -45,8 +45,8 @@ if(NOT SPHERAL_FOUND)
+@@ -31,6 +31,9 @@ if(NOT SPHERAL_FOUND)
+     set(PYTHON_EXE ${Python3_EXECUTABLE})
+   endif()
+   if(NOT SPHERAL_EXTERNAL_INSTALL)
++    set(Boost_USE_DEBUG_RUNTIME OFF)
++    set(Boost_USE_STATIC_LIBS OFF)
++    set(Boost_USE_MULTITHREADED ON)
+     find_package(Boost REQUIRED QUIET NO_DEFAULT_PATH COMPONENTS filesystem PATHS ${Boost_DIR})
+   endif()
+   # Loop over TPLs that use find_package
+@@ -52,8 +55,8 @@ if(NOT SPHERAL_FOUND)
        set(MPI_Fortran_COMPILER "@MPI_Fortran_COMPILER@" CACHE PATH "")
      endif()
    endif()

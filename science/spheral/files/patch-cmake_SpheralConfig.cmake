@@ -1,3 +1,6 @@
+-- Keep the spheral_cxx CMake module directory under a package-specific path
+-- consistent with the SpheralAddLibs change.
+
 --- cmake/SpheralConfig.cmake.orig	2026-04-01 08:49:15 UTC
 +++ cmake/SpheralConfig.cmake
 @@ -5,7 +5,7 @@ set(SPHERAL_INSTALL_BIN_DIR "bin" CACHE STRING "")
