@@ -71,7 +71,7 @@ LOCAL_MASTER_SITES=		LOCAL/vvd/elastic
 
 .include <bsd.port.options.mk>
 
-.ifmake makesum || makesum-fetch || makeplist || distclean
+.ifmake makesum || makeplist || distclean
 .  for O in ${OPTIONS_MULTI_BEATS}
 .    if !${PORT_OPTIONS:M${O}}
 MASTER_SITES+=	${${O}_MASTER_SITES}

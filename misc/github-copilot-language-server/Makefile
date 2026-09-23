@@ -58,7 +58,7 @@ DISTFILES+=	${dep:S/_/-/g}-${dep_${dep}_version}${EXTRACT_SUFX}
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 
-do-fetch makesum-fetch:
+do-fetch:
 	@if ! [ -f ${DD}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ] || \
 	    ! [ -f ${DD}/${NODE_HEADERS}${EXTRACT_SUFX} ] || \
 	    ! [ -f ${DD}/policy-watcher-${dep_policy_watcher_version}${EXTRACT_SUFX} ] || \

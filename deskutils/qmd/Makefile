@@ -58,7 +58,7 @@ DD=	${DISTDIR}/${DIST_SUBDIR}
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 
-do-fetch makesum-fetch:
+do-fetch:
 	@${MKDIR} ${DD}
 	@if ! [ -f ${DD}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ]; then \
 		${SETENV} TMPDIR=${WRKDIR} LOCALBASE=${LOCALBASE} npm_config_force=true ${FETCH_SCRIPT} \

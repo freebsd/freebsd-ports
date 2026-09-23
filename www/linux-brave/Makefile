@@ -6,7 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-browser/releases/downlo
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-browser-${BRAVE_VER}-${BRAVE_BUILD}
 DISTFILES=	${DISTNAME}.${ARCH:S,amd64,x86_64,}.rpm
-.if make(makesum) || make(makesum-fetch) || make(checksum)
+.if make(makesum) || make(checksum)
 DISTFILES=	${DISTNAME}.aarch64.rpm \
 		${DISTNAME}.x86_64.rpm
 .endif
