@@ -1,13 +1,13 @@
 [
 { type: install
   message: <<EOM
-This OpenSSL version is in an ALPHA stage
+This OpenSSL version is in an BETA stage
 Do NOT use for production!
 EOM
 }
 { type: upgrade
   message: <<EOM
-This OpenSSL version is in an ALPHA stage
+This OpenSSL version is in an BETA stage
 Do NOT use for production!
 EOM
 }

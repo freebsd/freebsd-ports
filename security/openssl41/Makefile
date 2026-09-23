@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	4.1.0-alpha1
+DISTVERSION=	4.1.0-beta1
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	41
 MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
@@ -196,6 +196,6 @@ post-install:
 
 post-install-MAN3-on:
 	( cd ${STAGEDIR}/${PREFIX} ; find share/man/man3 -not -type d ; \
-		find share/man/man7 -not -type d ) | sed 's/$$/.gz/' >> ${TMPPLIST}
+		find share/man/man7 -not -type d ) | ${SED} 's/$$/.gz/' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
