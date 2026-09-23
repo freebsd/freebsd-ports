@@ -1,7 +1,8 @@
 PORTNAME=	Perl-PrereqScanner
-PORTVERSION=	1.023
+DISTVERSION=	1.023
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
@@ -12,8 +13,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Getopt-Long-Descriptive>=0:devel/p5-Getopt-Long-Descriptive \
+BUILD_RUN_DEPENDS=	p5-Getopt-Long-Descriptive>=0:devel/p5-Getopt-Long-Descriptive \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Module-Path>=0:devel/p5-Module-Path \
 		p5-Moose>=0:devel/p5-Moose \
@@ -23,8 +23,9 @@ RUN_DEPENDS=	p5-Getopt-Long-Descriptive>=0:devel/p5-Getopt-Long-Descriptive \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 TEST_DEPENDS=	p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
