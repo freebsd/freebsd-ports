@@ -1,12 +1,14 @@
 PORTNAME=	MouseX-App-Cmd
-PORTVERSION=	0.30
+DISTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ETHER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mashes up MouseX::Getopt and App::Cmd
-WWW=		https://metacpan.org/release/MouseX-App-Cmd
+WWW=		https://metacpan.org/dist/MooseX-App-Cmd
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
