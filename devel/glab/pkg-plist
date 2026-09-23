@@ -77,6 +77,7 @@
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-poetry.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-twine.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-uv.1.gz
+%%MANPAGES%%share/man/man1/glab-dependency-firewall-yarn.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key-add.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key-delete.1.gz
@@ -90,6 +91,11 @@
 %%MANPAGES%%share/man/man1/glab-gpg-key-get.1.gz
 %%MANPAGES%%share/man/man1/glab-gpg-key-list.1.gz
 %%MANPAGES%%share/man/man1/glab-gpg-key.1.gz
+%%MANPAGES%%share/man/man1/glab-govern-audit-sync.1.gz
+%%MANPAGES%%share/man/man1/glab-govern-audit.1.gz
+%%MANPAGES%%share/man/man1/glab-govern-doctor.1.gz
+%%MANPAGES%%share/man/man1/glab-govern-setup.1.gz
+%%MANPAGES%%share/man/man1/glab-govern.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-close.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-list.1.gz
 %%MANPAGES%%share/man/man1/glab-incident-note.1.gz
@@ -143,6 +149,7 @@
 %%MANPAGES%%share/man/man1/glab-mr-note-create.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-list.1.gz
+%%MANPAGES%%share/man/man1/glab-mr-note-publish.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-reopen.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-resolve.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-update.1.gz
@@ -241,6 +248,7 @@
 %%MANPAGES%%share/man/man1/glab-security-config-status.1.gz
 %%MANPAGES%%share/man/man1/glab-security-config.1.gz
 %%MANPAGES%%share/man/man1/glab-security.1.gz
+%%MANPAGES%%share/man/man1/glab-skills-get.1.gz
 %%MANPAGES%%share/man/man1/glab-skills-install.1.gz
 %%MANPAGES%%share/man/man1/glab-skills-list.1.gz
 %%MANPAGES%%share/man/man1/glab-skills-update.1.gz
