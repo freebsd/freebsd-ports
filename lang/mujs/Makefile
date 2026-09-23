@@ -1,5 +1,5 @@
 PORTNAME=	mujs
-DISTVERSION=	1.3.9
+DISTVERSION=	1.3.10
 CATEGORIES=	lang devel
 MASTER_SITES=	https://mujs.com/downloads/ \
 		https://www.unicode.org/Public/16.0.0/ucd/:unicode
@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	artifex
 
-LDFLAGS=	-Wl,-soname=libmujs.so
+LDFLAGS+=	-Wl,-soname=libmujs.so
 
 ALL_TARGET=	build/release/mujs \
 		build/release/libmujs.so \
