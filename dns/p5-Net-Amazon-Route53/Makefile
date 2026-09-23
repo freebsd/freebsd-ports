@@ -1,8 +1,9 @@
 PORTNAME=	Net-Amazon-Route53
-PORTVERSION=	0.122310
+DISTVERSION=	0.122310
 PORTREVISION=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:MFONTANI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jnlin@freebsd.cs.nctu.edu.tw
@@ -12,8 +13,7 @@ WWW=		https://metacpan.org/release/Net-Amazon-Route53
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
+BUILD_RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 		p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-Mouse>=0:devel/p5-Mouse \
