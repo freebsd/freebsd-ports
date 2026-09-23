@@ -19,6 +19,7 @@ include/RAJA/pattern/WorkGroup/WorkRunner.hpp
 include/RAJA/pattern/WorkGroup/WorkStorage.hpp
 include/RAJA/pattern/WorkGroup/WorkStruct.hpp
 include/RAJA/pattern/atomic.hpp
+include/RAJA/pattern/concepts.hpp
 include/RAJA/pattern/detail/TypeTraits.hpp
 include/RAJA/pattern/detail/algorithm.hpp
 include/RAJA/pattern/detail/forall.hpp
@@ -49,6 +50,10 @@ include/RAJA/pattern/kernel/internal/Template.hpp
 include/RAJA/pattern/launch.hpp
 include/RAJA/pattern/launch/launch_context_policy.hpp
 include/RAJA/pattern/launch/launch_core.hpp
+include/RAJA/pattern/messages.hpp
+include/RAJA/pattern/messages/msg_callback.hpp
+include/RAJA/pattern/messages/msg_header.hpp
+include/RAJA/pattern/messages/msg_manager.hpp
 include/RAJA/pattern/multi_reduce.hpp
 include/RAJA/pattern/params/forall.hpp
 include/RAJA/pattern/params/kernel_name.hpp
@@ -130,6 +135,7 @@ include/RAJA/policy/cuda/sort.hpp
 include/RAJA/policy/cuda/synchronize.hpp
 include/RAJA/policy/desul.hpp
 include/RAJA/policy/desul/atomic.hpp
+include/RAJA/policy/device.hpp
 include/RAJA/policy/hip.hpp
 include/RAJA/policy/hip/MemUtils_HIP.hpp
 include/RAJA/policy/hip/WorkGroup.hpp
@@ -161,6 +167,10 @@ include/RAJA/policy/hip/reduce.hpp
 include/RAJA/policy/hip/scan.hpp
 include/RAJA/policy/hip/sort.hpp
 include/RAJA/policy/hip/synchronize.hpp
+include/RAJA/policy/msg_queue.hpp
+include/RAJA/policy/msg_queue/mpsc_queue.hpp
+include/RAJA/policy/msg_queue/policy.hpp
+include/RAJA/policy/msg_queue/spsc_queue.hpp
 include/RAJA/policy/openmp.hpp
 include/RAJA/policy/openmp/WorkGroup.hpp
 include/RAJA/policy/openmp/WorkGroup/Dispatcher.hpp
@@ -274,7 +284,10 @@ include/RAJA/util/BitMask.hpp
 include/RAJA/util/CaliperPlugin.hpp
 include/RAJA/util/CombiningAdapter.hpp
 include/RAJA/util/EnableIf.hpp
+include/RAJA/util/FunctionTypeTraits.hpp
+include/RAJA/util/HashCombiner.hpp
 include/RAJA/util/IndexLayout.hpp
+include/RAJA/util/Jit.hpp
 include/RAJA/util/KokkosPluginLoader.hpp
 include/RAJA/util/Layout.hpp
 include/RAJA/util/LocalArray.hpp
@@ -289,6 +302,7 @@ include/RAJA/util/PluginOptions.hpp
 include/RAJA/util/PluginStrategy.hpp
 include/RAJA/util/Registry.hpp
 include/RAJA/util/RepeatView.hpp
+include/RAJA/util/ResourceAllocator.hpp
 include/RAJA/util/RuntimePluginLoader.hpp
 include/RAJA/util/SoAArray.hpp
 include/RAJA/util/SoAPtr.hpp
@@ -300,6 +314,7 @@ include/RAJA/util/TypedViewBase.hpp
 include/RAJA/util/View.hpp
 include/RAJA/util/align.hpp
 include/RAJA/util/basic_mempool.hpp
+include/RAJA/util/builtin_compat.hpp
 include/RAJA/util/camp_aliases.hpp
 include/RAJA/util/concepts.hpp
 include/RAJA/util/for_each.hpp
@@ -320,5 +335,6 @@ lib/cmake/raja/RAJATargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/raja/RAJATargets.cmake
 lib/cmake/raja/raja-config-version.cmake
 lib/cmake/raja/raja-config.cmake
+lib/cmake/raja/thirdparty/BLTSetupOpenMP.cmake
 lib/libRAJA.so
 libdata/pkgconfig/RAJA.pc

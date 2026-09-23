@@ -1,6 +1,9 @@
---- CMakeLists.txt.orig	2025-10-30 14:43:13 UTC
+-- Find the externally installed camp package before RAJA's fallback logic
+-- and install BLT's OpenMP setup file so the exported 'openmp' target is
+-- available to downstream ports on FreeBSD.
+--- CMakeLists.txt.orig	2026-08-04 17:05:15 UTC
 +++ CMakeLists.txt
-@@ -227,6 +227,7 @@ endif ()
+@@ -235,6 +235,7 @@ endif ()
      sycl)
  endif ()
  
@@ -8,3 +11,15 @@
  
  message(STATUS "Desul Atomics support is ${RAJA_ENABLE_DESUL_ATOMICS}")
  if (RAJA_ENABLE_DESUL_ATOMICS)
+@@ -303,6 +304,11 @@ install(EXPORT RAJATargets DESTINATION lib/cmake/raja)
+   )
+ 
+ install(EXPORT RAJATargets DESTINATION lib/cmake/raja)
++
++if(RAJA_ENABLE_OPENMP)
++  install(FILES ${BLT_SOURCE_DIR}/cmake/thirdparty/BLTSetupOpenMP.cmake
++          DESTINATION lib/cmake/raja/thirdparty)
++endif()
+ 
+ target_include_directories(RAJA
+   PUBLIC
