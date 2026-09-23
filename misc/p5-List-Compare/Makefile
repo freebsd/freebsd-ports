@@ -1,7 +1,8 @@
 PORTNAME=	List-Compare
-PORTVERSION=	0.53
+DISTVERSION=	0.53
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:JKEENAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	marck@FreeBSD.org
@@ -14,13 +15,12 @@ TEST_DEPENDS=	p5-IO-CaptureOutput>=0:devel/p5-IO-CaptureOutput
 
 USES=		perl5
 USE_PERL5=	configure
-NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS
+NO_ARCH=	yes
 
 PORTDOCS=	Changes README
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
