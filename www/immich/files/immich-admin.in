@@ -27,8 +27,11 @@ export IMMICH_BUILD_DATA=%%WWWDIR%%/build-data
 export NODE_ENV=production
 
 if [ "$(id -u)" = "0" ]; then
-	exec su -m immich -c 'exec %%LOCALBASE%%/bin/node --no-warnings "$0" immich-admin "$@"' \
-		"${MAIN}" "$@"
+	# chroot(8) drops privileges without a shell in between, so the
+	# arguments reach execve(2) untouched no matter what the caller's
+	# login shell is.
+	exec chroot -u immich -g immich / %%LOCALBASE%%/bin/node --no-warnings \
+		"${MAIN}" immich-admin "$@"
 fi
 
 exec %%LOCALBASE%%/bin/node --no-warnings "${MAIN}" immich-admin "$@"
