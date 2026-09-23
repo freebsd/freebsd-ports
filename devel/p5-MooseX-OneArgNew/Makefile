@@ -1,7 +1,8 @@
 PORTNAME=	MooseX-OneArgNew
-PORTVERSION=	0.005
+DISTVERSION=	0.005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
@@ -17,8 +18,9 @@ RUN_DEPENDS=	p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-Role-Parameterized>=1.01:devel/p5-MooseX-Role-Parameterized \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
