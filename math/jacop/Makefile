@@ -1,7 +1,6 @@
 PORTNAME=	jacop
-DISTVERSIONPREFIX=	v
-DISTVERSION=	4.8.0
-PORTREVISION=	4
+#DISTVERSIONPREFIX=	v
+DISTVERSION=	4.10.0
 CATEGORIES=	math java
 MASTER_SITES=	LOCAL/yuri/:maven \
 		http://people.freebsd.org/~yuri/:maven
@@ -47,6 +46,12 @@ MASTER_SITES+=	LOCAL/yuri/:maven
 DISTFILES+=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:maven
 MVN_ARGS=	--offline
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e ' \
+		s|"mznlib": "/Users/kris/jacop-mzn/jacop"|"mznlib": "${PREFIX}/share/minizinc/jacop"|; \
+		s|"executable": "/Users/kris/jacop-mzn/fzn-jacop"|"executable": "${PREFIX}/bin/fzn-jacop"|; \
+		' ${WRKSRC}/src/main/minizinc/org.jacop.msc
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
