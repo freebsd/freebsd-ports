@@ -1,5 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	21.9.0
+PORTVERSION=	21.11.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,15 +17,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distlib>=0.3.7:devel/py-distlib@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.12.2:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.9.1:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-discovery>=1.6.0:devel/py-python-discovery@${PY_FLAVOR}
-# tests: disabled due to the following error:
-# pluggy._manager.PluginValidationError: Plugin 'black' for hook 'pytest_collect_file'
-# hookimpl definition: pytest_collect_file(file_path, path, parent)
-# Argument(s) {'path'} are declared in the hookimpl but can not be found in the hookspec
-# See: https://github.com/pytest-dev/pytest/issues/14651
+# tests: 557 passed, 54 skipped, 5 deselected
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>=7.3.2:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=1.0:devel/py-coverage_enable_subprocess@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cyclonedx-python-lib>=11.12.0:textproc/py-cyclonedx-python-lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flaky>=3.7.0:devel/py-flaky@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hypothesis>=6.168.0:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.1:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-env>=0.6.2:devel/py-pytest-env@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-freezer>=0.4.9:devel/py-pytest-freezer@${PY_FLAVOR} \
@@ -35,14 +33,34 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.8.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.0.4:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=63:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spdx-tools>=0.8.5_1:misc/py-spdx-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}time-machine>=2.10.0:devel/py-time-machine@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ty>=0.0.82:devel/py-ty@${PY_FLAVOR} \
 		nu:shells/nushell
 
-USES=		cpe python
+USES=		cpe pytest python
 USE_GITHUB=	yes
 GH_ACCOUNT=	pypa
-USE_PYTHON=	autoplist concurrent pep517 # pytest
-PYTEST_BROKEN_TESTS=	test_build_c_ext.py #   ERROR: Could not find a version that satisfies the requirement setuptools>=40.8.0
+USE_PYTHON=	autoplist concurrent pep517 pytest
+
+# Disable pytest plugins black and markdown because they are not compatible
+# with pytest > 7.0. If they are installed on the system, test-target fails
+# with the following error:
+#
+# pluggy._manager.PluginValidationError: Plugin 'black' for hook 'pytest_collect_file'
+# hookimpl definition: pytest_collect_file(file_path, path, parent)
+# Argument(s) {'path'} are declared in the hookimpl but can not be found in the hookspec
+#
+# See:
+#
+# https://github.com/pytest-dev/pytest/issues/14651
+# https://github.com/coherent-oss/pytest-black/pull/3
+# https://github.com/Jc2k/pytest-markdown/issues/10
+#
+PYTEST_ARGS=	-p no:black -p no:markdown
+PYTEST_BROKEN_TESTS=	test_sbom_spdx_declared_license \
+			test_safe_delete_keeps_the_other_mode_bits_when_clearing_read_only \
+			test_safe_delete_raises_the_original_error_not_a_retry_failure
 
 # Fix the LookupError: setuptools-scm was unable to detect version (build target)
 MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION="${PORTVERSION}"
