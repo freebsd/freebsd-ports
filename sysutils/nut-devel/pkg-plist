@@ -195,6 +195,10 @@ lib/libnutscan.so.4.2.0
 %%MANPAGES%%%%DEV%%share/man/man3/upscli_free_authconf_list.3.gz
 %%MANPAGES%%%%DEV%%share/man/man3/upscli_get_authconf_item.3.gz
 %%MANPAGES%%%%DEV%%share/man/man3/upscli_get_authconf_list.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_get_or_create_ssl_context.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_get_or_create_ssl_context_authconf.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_get_ssl_context.3.gz
+%%MANPAGES%%%%DEV%%share/man/man3/upscli_set_ssl_context.3.gz
 %%MANPAGES%%%%DEV%%share/man/man3/upscli_init_authconf.3.gz
 %%MANPAGES%%%%DEV%%share/man/man3/upscli_merge_authconf_item.3.gz
 %%MANPAGES%%%%DEV%%share/man/man3/upscli_normalize_authconf_section_parts.3.gz
