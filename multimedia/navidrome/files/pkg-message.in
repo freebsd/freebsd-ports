@@ -26,5 +26,13 @@ multimedia/ffmpeg@nox11.
 
 EOM
 }
-]
+{ type: upgrade
+  maximum_version: "0.64.0"
+  message: <<EOM
+This release introduces some breaking-changes, please refer to the documentation
+for migration instructions:
 
+  https://github.com/navidrome/navidrome/releases/tag/v0.64.0
+EOM
+}
+]
