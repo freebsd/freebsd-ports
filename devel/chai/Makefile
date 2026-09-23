@@ -1,6 +1,6 @@
 PORTNAME=	chai
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.12.0
+DISTVERSION=	2026.07.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-library
 
@@ -32,6 +32,6 @@ CMAKE_TESTING_ON=	ENABLE_TESTS
 
 LDFLAGS+=	-lexecinfo
 
-# tests as of 2025.09.1: 100% tests passed, 0 tests failed out of 10
+# tests as of 2026.07.0: 100% tests passed, 0 tests failed out of 10
 
 .include <bsd.port.mk>
