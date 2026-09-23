@@ -1,8 +1,9 @@
 PORTNAME=	Schedule-Load
-PORTVERSION=	3.064
+DISTVERSION=	3.064
 PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:WSNYDER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -13,15 +14,14 @@ LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE_ART20=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Proc-ProcessTable>=0.40:devel/p5-Proc-ProcessTable \
+BUILD_RUN_DEPENDS=	p5-Proc-ProcessTable>=0.40:devel/p5-Proc-ProcessTable \
 		p5-Unix-Processors>=2.02:sysutils/p5-Unix-Processors \
 		p5-IPC-Locker>=1.41:devel/p5-IPC-Locker
 
-MAKE_JOBS_UNSAFE=	yes
-
 USES=		perl5
 USE_PERL5=	configure
+
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
