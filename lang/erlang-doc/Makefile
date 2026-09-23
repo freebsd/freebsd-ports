@@ -1,5 +1,5 @@
 PORTNAME=	erlang
-DISTVERSION=	28.5.0.6
+DISTVERSION=	28.5.0.7
 CATEGORIES=	lang parallel
 MASTER_SITES=	https://github.com/erlang/otp/releases/download/OTP-${PORTVERSION}/:erlangorg \
 		LOCAL/olgeni:local
