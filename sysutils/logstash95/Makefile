@@ -1,6 +1,7 @@
 PORTNAME=	logstash
 DISTVERSION=	9.5.4
 DISTVERSIONSUFFIX=	-darwin-x86_64
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/ \
 		LOCAL/vvd/elastic
@@ -35,7 +36,8 @@ SUB_FILES=	pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME} \
 		LOGUSER=${LOGUSER} \
-		LOGGROUP=${LOGGROUP}
+		LOGGROUP=${LOGGROUP} \
+		VERSION=${DISTVERSION:R}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
