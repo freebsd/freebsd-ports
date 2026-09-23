@@ -533,6 +533,9 @@ post-install-DOCS-on:
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc/LLVM/* ${STAGEDIR}${DOCSDIR}
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc/LLVM
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc
+.if ${PORT_OPTIONS:MFLANG}
+	${RMDIR} ${STAGEDIR}${DOCSDIR}/flang/html/_sources
+.endif
 .for _man in ${MAN1SRCS}
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
 	    ${STAGEDIR}${PREFIX}/share/man/man1/${_man:R}${LLVM_SUFFIX}.1
