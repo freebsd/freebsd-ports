@@ -32,6 +32,10 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes # no arch w/out CUDA
 
+.include <bsd.port.pre.mk>
+
+MAKE_ENV=	LD_STATIC_TLS_EXTRA=4096 # see pkg-message in misc/py-pytorch
+
 post-install:
 	# delete stray files, see https://github.com/SHI-Labs/NATTEN/issues/152
 	@${RM} -r \
@@ -42,4 +46,4 @@ post-install:
 
 # tests as of 0.21.7: 20 passed, 97 skipped, 1 warning in 1.68s
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
