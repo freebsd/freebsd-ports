@@ -1,8 +1,7 @@
 PORTNAME=	ossim
-DISTVERSION=	2.12.0
-PORTREVISION=	4
+DISTVERSIONPREFIX=v
+DISTVERSION=	2.12.1
 CATEGORIES=	graphics geography
-MASTER_SITES=	https://github.com/ossimlabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Powerful suite of geospatial libraries and applications
@@ -22,6 +21,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		cmake compiler:c++17-lang jpeg sqlite
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	ossimlabs
+
 CMAKE_OFF=	BUILD_OSSIM_APPS \
 		BUILD_OSSIM_ID_SUPPORT
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git
@@ -29,7 +31,9 @@ CMAKE_ARGS=	-DBUILD_LIBRARY_DIR:STRING=lib \
 		-DLIBSUFFIX:STRING="" \
 		-DINSTALL_ARCHIVE_DIR:STRING=lib \
 		-DINSTALL_LIBRARY_DIR:STRING=lib \
-		-DOSSIM_INCLUDE_DIR:STRING=${WRKSRC}/include
+		-DOSSIM_INCLUDE_DIR:STRING=${WRKSRC}/include \
+		-DJSONCPP_INCLUDE_DIR:STRING=${LOCALBASE}/include/jsoncpp \
+		-DJSONCPP_LIBRARY:STRING=${LOCALBASE}/lib/libjsoncpp.so
 
 OPTIONS_DEFINE=	TEST
 OPTIONS_SUB=	yes
