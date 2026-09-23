@@ -12,8 +12,8 @@ WWW=		https://sourceforge.net/p/cdesktopenv/wiki/Home/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	cdesktopenv-code
-GH_TAGNAME=	d8cd65f3a
-COMMIT_DATE=	2026.07.06
+GH_TAGNAME=	dd23595b0
+COMMIT_DATE=	2026.09.18
 
 LICENSE=	LGPL21
 
@@ -60,10 +60,14 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.6 MAKE="gmake" \
 		--enable-japanese
 MAKE_ARGS+=	PERL=${PERL} "LOCAL_LDFLAGS=${LDFLAGS}"
 MAKE_JOBS_UNSAFE=yes
-MAKE_ENV=	MALLOC_CONF=junk:false
+MAKE_ENV=	MALLOC_CONF=junk:false \
+		IFFEFLAGS=-d1
+#	IFFEFLAGS=-d1 is default for Linux builds. We do it here too.
 SUB_FILES=	pkg-message
 CFLAGS+=	-O -Wno-register -Wno-incompatible-function-pointer-types \
-		-Wno-implicit-function-declaration
+		-Wno-implicit-function-declaration \
+		-DSHOPT_DYNAMIC=1
+#		SHOPT_DYNAMIC=1 fixes a symbol not found problem.
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
 
 CFFILES=	Xaccess Xconfig Xfailsafe Xreset Xservers Xsetup Xstartup \
@@ -78,6 +82,10 @@ post-patch:
 	    ${WRKSRC}/programs/dtmail/libDtMail/Common/Session.C \
 	    ${WRKSRC}/programs/dtmail/libDtMail/RFC/RFCBodyPart.C; \
 	fi
+#	The below is to resolve an issue introduced by upstream that
+#	causes it to search ${LOCALBASE}/include for headers in
+#	precidence over those provided by the tarball.
+	@${FIND} ${WRKSRC}/programs/dtksh/ksh93/src -type f -name Mamfile | ${XARGS} ${REINPLACE_CMD} -E 's/(exec - \$$\{CC\}) \$$\{mam_cc_FLAGS\} \$$\{CCFLAGS\}(.*) -c (.+)$$/\1\2 \$${mam_cc_FLAGS} \$${CCFLAGS} -c \3/'
 
 # From shells/ksh93
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \

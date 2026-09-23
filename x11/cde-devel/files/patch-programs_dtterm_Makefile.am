@@ -1,7 +1,0 @@
---- programs/dtterm/Makefile.am.orig	2026-02-21 17:31:48.000000000 -0800
-+++ programs/dtterm/Makefile.am	2026-02-27 10:32:53.843208000 -0800
-@@ -52,4 +52,3 @@
- 	-chown root $(DESTDIR)$(bindir)/dtterm
- 	-chmod 4755 $(DESTDIR)$(bindir)/dtterm
- endif
--	@TIC@ dtterm.ti
