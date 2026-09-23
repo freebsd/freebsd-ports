@@ -1,3 +1,4 @@
+%%SITE_PERL%%/XML/Compile/SOAP/AnyEvent.pm
 %%SITE_PERL%%/XML/Compile/Transport/SOAPHTTP_AnyEvent.pm
 %%SITE_PERL%%/XML/Compile/Transport/SOAPHTTP_AnyEvent.pod
 %%PERL5_MAN3%%/XML::Compile::Transport::SOAPHTTP_AnyEvent.3.gz
