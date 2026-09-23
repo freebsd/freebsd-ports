@@ -524,6 +524,7 @@ cbsd/misc/sqlcli
 cbsd/misc/swtpm
 cbsd/misc/symlink_changer
 cbsd/misc/tmpfsdir
+cbsd/misc/updateconf
 cbsd/misc/updatesql
 cbsd/modules/.gitignore
 cbsd/modules/.placeholder
