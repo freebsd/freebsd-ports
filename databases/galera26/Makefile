@@ -4,7 +4,7 @@ DISTVERSION=	26.4.27
 CATEGORIES=	databases
 PKGNAMESUFFIX=	26
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Synchronous multi-master replication engine
 WWW=		https://galeracluster.com/
 
