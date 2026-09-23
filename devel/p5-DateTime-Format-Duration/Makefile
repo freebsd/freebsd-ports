@@ -1,7 +1,8 @@
 PORTNAME=	DateTime-Format-Duration
-PORTVERSION=	1.04
+DISTVERSION=	1.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ETHER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -18,6 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
 
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
