@@ -1,8 +1,9 @@
 PORTNAME=	Device-USB
-PORTVERSION=	0.35
+DISTVERSION=	0.35
 PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:GWADEJ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	josh.carroll@gmail.com
@@ -16,9 +17,10 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Inline>=0:devel/p5-Inline \
 		p5-Inline-C>=0:devel/p5-Inline-C
 
-MAKE_JOBS_UNSAFE=yes
 USES=		perl5
 USE_PERL5=	configure
+
+MAKE_JOBS_UNSAFE=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|dump_usb.pl|lib/Device/&|' ${WRKSRC}/MANIFEST
