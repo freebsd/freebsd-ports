@@ -6,7 +6,7 @@ MAINTAINER=	dsl@FreeBSD.org
 COMMENT=	Classic Lode Runner game remake
 WWW=		https://github.com/vchimishuk/loderunner-ng
 
-LICENSE=	GPLv3+
+LICENSE=	GPL-3.0-or-later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake sdl
