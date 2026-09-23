@@ -1,7 +1,9 @@
 PORTNAME=	Net-DNS-ZoneFile-Fast
-PORTVERSION=	1.27
+DISTVERSION=	1.27
+PORTREVISION=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:HARDAKER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -10,12 +12,15 @@ WWW=		https://metacpan.org/release/Net-DNS-ZoneFile-Fast
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Net-DNS>=0.65:dns/p5-Net-DNS \
+DEPRECATED=	Upstream module marked obsolete by its author
+EXPIRATION_DATE=	2026-10-23
+
+BUILD_RUN_DEPENDS=	p5-Net-DNS>=0.65:dns/p5-Net-DNS \
 		p5-Net-DNS-SEC>=0.15:dns/p5-Net-DNS-SEC
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
