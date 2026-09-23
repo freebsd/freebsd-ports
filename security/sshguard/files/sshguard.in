@@ -59,6 +59,7 @@
 
 name=sshguard
 rcvar=sshguard_enable
+: ${sshguard_enable:="NO"}
 
 set_rcvar sshguard_blacklist "" "Blacklisting threshold and path to blacklist file (colon-separated)"
 set_rcvar sshguard_danger_thresh "" "Attack threshold"
