@@ -1,5 +1,5 @@
 PORTNAME=	fastapi-sso
-DISTVERSION=	0.22.0
+DISTVERSION=	0.23.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>=0.80:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.10.1<3:www/py-pyjwt@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist cryptography pep517
 
 NO_ARCH=	yes
 
