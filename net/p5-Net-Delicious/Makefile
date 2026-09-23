@@ -1,8 +1,9 @@
 PORTNAME=	Net-Delicious
-PORTVERSION=	1.14
-PORTREVISION=	1
+DISTVERSION=	1.14
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -12,8 +13,10 @@ WWW=		https://metacpan.org/release/Net-Delicious
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Config-Simple>=2:devel/p5-Config-Simple \
+DEPRECATED=	Defunct service
+EXPIRATION_DATE=	2026-10-23
+
+BUILD_RUN_DEPENDS=	p5-Config-Simple>=2:devel/p5-Config-Simple \
 		p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 		p5-IO-Stringy>=2.1:devel/p5-IO-Stringy \
 		p5-Log-Dispatch>=2:devel/p5-Log-Dispatch \
@@ -23,8 +26,9 @@ RUN_DEPENDS=	p5-Config-Simple>=2:devel/p5-Config-Simple \
 		p5-YAML>=0.35:textproc/p5-YAML \
 		p5-libwww>=0:www/p5-libwww
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
