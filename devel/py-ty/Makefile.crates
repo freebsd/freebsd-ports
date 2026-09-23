@@ -197,8 +197,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.189 \
-		libcst-1.8.6 \
-		libcst_derive-1.8.6 \
+		libcst-1.9.0 \
+		libcst_derive-1.9.0 \
 		libm-0.2.16 \
 		libmimalloc-sys-0.1.49 \
 		libredox-0.1.10 \
