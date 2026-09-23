@@ -70,6 +70,7 @@ include/umpire/util/MemoryMap.inl
 include/umpire/util/MemoryResourceTraits.hpp
 include/umpire/util/OutputBuffer.hpp
 include/umpire/util/Platform.hpp
+include/umpire/util/affinity.hpp
 include/umpire/util/allocation_statistics.hpp
 include/umpire/util/backtrace.hpp
 include/umpire/util/backtrace.inl
@@ -79,6 +80,7 @@ include/umpire/util/find_first_set.hpp
 include/umpire/util/io.hpp
 include/umpire/util/make_unique.hpp
 include/umpire/util/memory_sanitizers.hpp
+include/umpire/util/node_memory.hpp
 include/umpire/util/shared_memory_helper.hpp
 include/umpire/util/wrap_allocator.hpp
 lib/cmake/umpire/BLTInstallableMacros.cmake
