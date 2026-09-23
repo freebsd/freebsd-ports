@@ -4,8 +4,8 @@
  	}
  
  	allTools := []fantasy.AgentTool{
--		tools.NewBashTool(env.permissions, env.workingDir, cfg.Config().Options.Attribution, modelName),
-+		tools.NewBashTool(env.permissions, env.workingDir, cfg.Config().Options.Attribution, modelName, cfg.Config().Options.DisableCommandBlocking),
+-		tools.NewBashTool(env.permissions, env.workingDir, cfg.Config().Options.DataDirectory, cfg.Config().Options.Attribution, modelName),
++		tools.NewBashTool(env.permissions, env.workingDir, cfg.Config().Options.DataDirectory, cfg.Config().Options.Attribution, modelName, cfg.Config().Options.DisableCommandBlocking),
  		tools.NewDownloadTool(env.permissions, env.workingDir, r.GetDefaultClient()),
  		tools.NewEditTool(nil, env.permissions, env.history, *env.filetracker, env.workingDir),
  		tools.NewMultiEditTool(nil, env.permissions, env.history, *env.filetracker, env.workingDir),
@@ -15,14 +15,14 @@
  
  	allTools = append(
  		allTools,
--		tools.NewBashTool(c.permissions, c.cfg.WorkingDir(), c.cfg.Config().Options.Attribution, modelID),
-+		tools.NewBashTool(c.permissions, c.cfg.WorkingDir(), c.cfg.Config().Options.Attribution, modelID, c.cfg.Config().Options.DisableCommandBlocking),
+-		tools.NewBashTool(c.permissions, c.cfg.WorkingDir(), c.cfg.Config().Options.DataDirectory, c.cfg.Config().Options.Attribution, modelID),
++		tools.NewBashTool(c.permissions, c.cfg.WorkingDir(), c.cfg.Config().Options.DataDirectory, c.cfg.Config().Options.Attribution, modelID, c.cfg.Config().Options.DisableCommandBlocking),
  		tools.NewCrushInfoTool(c.cfg, c.lspManager, c.allSkills, c.activeSkills, c.skillTracker),
  		tools.NewCrushLogsTool(logFile),
- 		tools.NewJobOutputTool(),
+ 		tools.NewJobOutputTool(c.cfg.Config().Options.DataDirectory),
 --- internal/agent/tools/bash.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/agent/tools/bash.go
-@@ -145,8 +145,11 @@ var bannedCommands = []string{
+@@ -146,8 +146,11 @@ var bannedCommands = []string{
  	"ufw",
  }
  
@@ -35,7 +35,7 @@
  	var out bytes.Buffer
  	if err := bashDescriptionTpl.Execute(&out, bashDescriptionData{
  		BannedCommands:  bannedCommandsStr,
-@@ -162,7 +165,10 @@ func bashDescription(attribution *config.Attribution, 
+@@ -163,7 +166,10 @@ func bashDescription(attribution *config.Attribution, 
  	return out.String()
  }
  
@@ -47,12 +47,12 @@
  	return []shell.BlockFunc{
  		shell.CommandsBlocker(bannedCommands),
  
-@@ -194,10 +200,10 @@ func blockFuncs() []shell.BlockFunc {
+@@ -195,10 +201,10 @@ func blockFuncs() []shell.BlockFunc {
  	}
  }
  
--func NewBashTool(permissions permission.Service, workingDir string, attribution *config.Attribution, modelID string) fantasy.AgentTool {
-+func NewBashTool(permissions permission.Service, workingDir string, attribution *config.Attribution, modelID string, disableBlocking bool) fantasy.AgentTool {
+-func NewBashTool(permissions permission.Service, workingDir, spillDir string, attribution *config.Attribution, modelID string) fantasy.AgentTool {
++func NewBashTool(permissions permission.Service, workingDir, spillDir string, attribution *config.Attribution, modelID string, disableBlocking bool) fantasy.AgentTool {
  	return fantasy.NewAgentTool(
  		BashToolName,
 -		string(bashDescription(attribution, modelID)),
@@ -60,7 +60,7 @@
  		func(ctx context.Context, params BashParams, call fantasy.ToolCall) (fantasy.ToolResponse, error) {
  			if params.Command == "" {
  				return fantasy.NewTextErrorResponse("missing command"), nil
-@@ -251,7 +257,7 @@ func NewBashTool(permissions permission.Service, worki
+@@ -252,7 +258,7 @@ func NewBashTool(permissions permission.Service, worki
  				bgManager := shell.GetBackgroundShellManager()
  				bgManager.Cleanup()
  				// Use background context so it continues after tool returns
@@ -69,7 +69,7 @@
  				if err != nil {
  					return fantasy.ToolResponse{}, fmt.Errorf("error starting background shell: %w", err)
  				}
-@@ -306,7 +312,7 @@ func NewBashTool(permissions permission.Service, worki
+@@ -307,7 +313,7 @@ func NewBashTool(permissions permission.Service, worki
  			// Start with detached context so it can survive if moved to background
  			bgManager := shell.GetBackgroundShellManager()
  			bgManager.Cleanup()
@@ -84,8 +84,8 @@
  func newBashToolForTest(workingDir string) fantasy.AgentTool {
  	permissions := &mockBashPermissionService{Broker: pubsub.NewBroker[permission.PermissionRequest]()}
  	attribution := &config.Attribution{TrailerStyle: config.TrailerStyleNone}
--	return NewBashTool(permissions, workingDir, attribution, "test-model")
-+	return NewBashTool(permissions, workingDir, attribution, "test-model", false)
+-	return NewBashTool(permissions, workingDir, workingDir, attribution, "test-model")
++	return NewBashTool(permissions, workingDir, workingDir, attribution, "test-model", false)
  }
  
  func newBashToolWithRecordingPerms(workingDir string, allow bool) (fantasy.AgentTool, *recordingPermissionService) {
@@ -93,14 +93,14 @@
  		allow:  allow,
  	}
  	attribution := &config.Attribution{TrailerStyle: config.TrailerStyleNone}
--	return NewBashTool(perms, workingDir, attribution, "test-model"), perms
-+	return NewBashTool(perms, workingDir, attribution, "test-model", false), perms
+-	return NewBashTool(perms, workingDir, workingDir, attribution, "test-model"), perms
++	return NewBashTool(perms, workingDir, workingDir, attribution, "test-model", false), perms
  }
  
  func TestBashTool_ChainedCommandsRequirePermission(t *testing.T) {
 --- internal/config/config.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/config/config.go
-@@ -382,6 +382,7 @@ type Options struct {
+@@ -412,6 +412,7 @@ type Options struct {
  	Debug                bool        `json:"debug,omitempty" jsonschema:"description=Enable debug logging,default=false"`
  	DebugLSP             bool        `json:"debug_lsp,omitempty" jsonschema:"description=Enable debug logging for LSP servers,default=false"`
  	DisableAutoSummarize bool        `json:"disable_auto_summarize,omitempty" jsonschema:"description=Disable automatic conversation summarization,default=false"`
