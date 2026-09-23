@@ -19,11 +19,14 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/protoc:devel/protobuf \
 		${PYTHON_PKGNAMEPREFIX}maturin>=1.4:devel/py-maturin@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lance-namespace>=0.8.5:databases/py-lance-namespace@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.22:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyarrow>=14:databases/py-pyarrow@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyarrow>=14:databases/py-pyarrow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}duckdb>=1.5.0:databases/py-duckdb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0:math/py-ml-dtypes@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}polars>=0:misc/py-polars@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0:devel/py-pytest-xdist@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0:devel/py-pytest-xdist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR}
 
 USES=		cargo python
 USE_PYTHON=	pep517 concurrent autoplist pytest
