@@ -1,9 +1,13 @@
 PORTNAME=	kwin-x11
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 COMMENT=	Easy to use, but flexible, X Window Manager
 MAINTAINER=	kde@FreeBSD.org
+
+DEPRECATED=	Future KDE Plasma 6.8 release will be Wayland-exclusive: https://blogs.kde.org/2025/11/26/going-all-in-on-a-wayland-future/
+EXPIRATION_DATE=	2026-12-31
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		hwdata>0:misc/hwdata \
