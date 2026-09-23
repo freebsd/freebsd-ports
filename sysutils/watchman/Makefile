@@ -1,5 +1,7 @@
 PORTNAME=	watchman
-PORTVERSION=	4.5.0 # frozen at 4.5.0: the current version 2020.08.10.00 is broken because F_GETPATH isn't currently available on FreeBSD
+# frozen at 4.7.0, it is the last version not to use F_GETPATH which isn't
+# available on FreeBSD, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198570
+PORTVERSION=	4.7.0
 PORTEPOCH=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
@@ -36,7 +38,7 @@ PCRE_CONFIGURE_WITH=	pcre
 
 CPPFLAGS+=	-Wno-error
 
-PORTSCOUT=	ignore:1 # newer versions (YYYY.MM.DD.dd) use F_GETPATH that isn't currently available on FreeBSD
+PORTSCOUT=	ignore:1 # see PORTVERSION comment
 
 post-patch:
 # https://www.gnu.org/prep/standards/html_node/Directory-Variables.html
