@@ -1,3 +1,3 @@
-TIMESTAMP = 1773311625
-SHA256 (latchset-pkcs11-provider-v1.2.0_GH0.tar.gz) = e244556f0e54b57513937451b244d1b59a3094dd5e23b718b655e06fbb1f89a3
-SIZE (latchset-pkcs11-provider-v1.2.0_GH0.tar.gz) = 274729
+TIMESTAMP = 1790185547
+SHA256 (openssl-projects-pkcs11-provider-v1.3.0_GH0.tar.gz) = 0d1b21059cd21d159b1cad2082481ba6799fad42aa2465a5e80568448e651d71
+SIZE (openssl-projects-pkcs11-provider-v1.3.0_GH0.tar.gz) = 321717
