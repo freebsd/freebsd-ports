@@ -1,7 +1,6 @@
 PORTNAME=	mapnik
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.2
-PORTREVISION=	2
+DISTVERSION=	4.3.2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	hummeltech@sherpaguru.com
@@ -23,12 +22,12 @@ RUN_DEPENDS=	dejavu>0:x11-fonts/dejavu
 USE_GITHUB=	yes
 GH_TUPLE=	catchorg:Catch2:v2.13.10:catch2/test/catch2 \
 		mapbox:geometry.hpp:c83a2ab:geometry_hpp/deps/mapbox/geometry \
-		mapbox:polylabel:0121820:polylabel/deps/mapbox/polylabel \
 		mapbox:variant:a2a4858:variant/deps/mapbox/variant \
 		mapnik:mapnik-vector-tile:5a0cfbb:mapnik_vector_tile/deps/mapbox/mapnik-vector-tile \
+		mapnik:polylabel:1edc167:polylabel/deps/mapbox/polylabel \
 		mapnik:test-data:5716a27:test_data/test/data
 
-USES=		compiler:c++20-lang cmake:testing gnome pkgconfig
+USES=		compiler:c++20-lang cmake:testing gnome pkgconfig ssl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
