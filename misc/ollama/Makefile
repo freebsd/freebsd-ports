@@ -1,6 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.34.0
+DISTVERSION=	0.34.3
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -72,22 +72,6 @@ CPU_PLIST_FILES=	lib/ollama/llama-server \
 			lib/ollama/libmtmd.so \
 			lib/ollama/libmtmd.so.${LLAMA_CPP_SO_VERSION:R:R} \
 			lib/ollama/libmtmd.so.${LLAMA_CPP_SO_VERSION}
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-CPU_PLIST_FILES+=	lib/ollama/libggml-cpu-alderlake.so \
-			lib/ollama/libggml-cpu-cannonlake.so \
-			lib/ollama/libggml-cpu-cascadelake.so \
-			lib/ollama/libggml-cpu-cooperlake.so \
-			lib/ollama/libggml-cpu-haswell.so \
-			lib/ollama/libggml-cpu-icelake.so \
-			lib/ollama/libggml-cpu-ivybridge.so \
-			lib/ollama/libggml-cpu-piledriver.so \
-			lib/ollama/libggml-cpu-sandybridge.so \
-			lib/ollama/libggml-cpu-sapphirerapids.so \
-			lib/ollama/libggml-cpu-skylakex.so \
-			lib/ollama/libggml-cpu-sse42.so \
-			lib/ollama/libggml-cpu-x64.so \
-			lib/ollama/libggml-cpu-zen4.so
-.endif
 
 VULKAN_DESC=		Build Vulkan GPU backend shared library
 VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
@@ -111,6 +95,23 @@ _CMAKE_FLAGS=	-DCMAKE_BUILD_TYPE=Release \
 		-DLLAMA_BUILD_NUMBER=${LLAMA_CPP_VERSION:S/b//}
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+CPU_PLIST_FILES+=	lib/ollama/libggml-cpu-alderlake.so \
+			lib/ollama/libggml-cpu-cannonlake.so \
+			lib/ollama/libggml-cpu-cascadelake.so \
+			lib/ollama/libggml-cpu-cooperlake.so \
+			lib/ollama/libggml-cpu-haswell.so \
+			lib/ollama/libggml-cpu-icelake.so \
+			lib/ollama/libggml-cpu-ivybridge.so \
+			lib/ollama/libggml-cpu-piledriver.so \
+			lib/ollama/libggml-cpu-sandybridge.so \
+			lib/ollama/libggml-cpu-sapphirerapids.so \
+			lib/ollama/libggml-cpu-skylakex.so \
+			lib/ollama/libggml-cpu-sse42.so \
+			lib/ollama/libggml-cpu-x64.so \
+			lib/ollama/libggml-cpu-zen4.so
+.endif
 
 .if ${PORT_OPTIONS:MVULKAN}
 _CMAKE_FLAGS+=	-DOLLAMA_LLAMA_BACKENDS=vulkan
@@ -140,9 +141,6 @@ post-patch:
 	# Apply Ollama llama.cpp compat hooks patch (vision model support)
 	#@${PATCH} -d ${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION} -p1 \
 	#	< ${WRKSRC}/llama/compat/001-llama-cpp-hooks.patch
-	# Fix llama-ui-embed crash when called without asset_dir argument
-	@${REINPLACE_CMD} -e 's|const std::string asset_dir = argv\[3\];|const std::string asset_dir = (argc > 3) ? argv[3] : "";|g' \
-		${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION}/tools/ui/embed.cpp
 	# FreeBSD: copy llm/llm_freebsd.go for LlamaServerSysProcAttr
 	@${CP} ${FILESDIR}/llm_freebsd.go ${WRKSRC}/llm/
 	# update version in version.go

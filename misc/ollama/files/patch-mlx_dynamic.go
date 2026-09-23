@@ -1,5 +1,5 @@
---- x/mlxrunner/mlx/dynamic.go.orig	1979-11-30 08:00:00 UTC
-+++ x/mlxrunner/mlx/dynamic.go
+--- mlx/dynamic.go.orig	1979-11-30 08:00:00 UTC
++++ mlx/dynamic.go
 @@ -98,7 +98,7 @@ func libOllamaRoots() []string {
  			roots = append(roots, filepath.Join(exeDir, "lib", "ollama"))
  			roots = append(roots, filepath.Join(exeDir, "..", "lib", "ollama"))
@@ -19,7 +19,7 @@
  	default:
  		return
 @@ -189,7 +189,7 @@ func init() {
- 
+
  func init() {
  	switch runtime.GOOS {
 -	case "darwin", "linux", "windows":
