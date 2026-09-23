@@ -1,8 +1,9 @@
 PORTNAME=	Pod-HtmlEasy
-PORTVERSION=	1.0108
+DISTVERSION=	1.0108
 PORTREVISION=	2
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:GLEACH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
@@ -12,8 +13,7 @@ WWW=		https://metacpan.org/release/Pod-HtmlEasy
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-File-Slurp>=9999.13:devel/p5-File-Slurp \
+BUILD_RUN_DEPENDS=	p5-File-Slurp>=9999.13:devel/p5-File-Slurp \
 		p5-IPC-Run>=0.8:devel/p5-IPC-Run \
 		p5-Exporter-Easy>=0:devel/p5-Exporter-Easy \
 		p5-Readonly>=1.03:devel/p5-Readonly \
