@@ -173,6 +173,7 @@
 %%DATADIR%%/crt/CRT-beam.glslp
 %%DATADIR%%/crt/GritsScanlines.glslp
 %%DATADIR%%/crt/crt-1tap.glslp
+%%DATADIR%%/crt/crt-2tap.glslp
 %%DATADIR%%/crt/crt-Cyclon.glslp
 %%DATADIR%%/crt/crt-aperture.glslp
 %%DATADIR%%/crt/crt-blurPi-soft.glslp
@@ -241,8 +242,9 @@
 %%DATADIR%%/crt/shaders/GritsScanlines/Fake-Self-Illumination.png
 %%DATADIR%%/crt/shaders/GritsScanlines/GritsScanlines.glsl
 %%DATADIR%%/crt/shaders/GritsScanlines/Scanline-LUT-4px.png
-%%DATADIR%%/crt/shaders/crt-1tap.glsl
 %%DATADIR%%/crt/shaders/crt-Cyclon.glsl
+%%DATADIR%%/crt/shaders/crt-Ntap/crt-1tap.glsl
+%%DATADIR%%/crt/shaders/crt-Ntap/crt-2tap.glsl
 %%DATADIR%%/crt/shaders/crt-aperture.glsl
 %%DATADIR%%/crt/shaders/crt-blurPi.glsl
 %%DATADIR%%/crt/shaders/crt-blurPiScanlines.glsl
@@ -619,6 +621,7 @@
 %%DATADIR%%/handheld/console-border/resources/pocket-palette.png
 %%DATADIR%%/handheld/console-border/resources/psp border.png
 %%DATADIR%%/handheld/console-border/shader-files/border.glsl
+%%DATADIR%%/handheld/console-border/shader-files/gb-pass-5-original-size.glsl
 %%DATADIR%%/handheld/console-border/shader-files/gb-pass-5.glsl
 %%DATADIR%%/handheld/console-border/shader-files/gb-pass0.glsl
 %%DATADIR%%/handheld/console-border/shader-files/gb-pass1.glsl
