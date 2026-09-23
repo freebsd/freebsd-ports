@@ -1,5 +1,6 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	Various components for Plasma-based environment
@@ -41,8 +42,7 @@ USE_KDE=	activities activities-stats archive attica auth baloo \
 		statusnotifieritem svg syntaxhighlighting texteditor \
 		textwidgets userfeedback wallet wayland \
 		widgetsaddons windowsystem xmlgui \
-		ecm:build plasma-wayland-protocols:build \
-		kwin-x11:run
+		ecm:build plasma-wayland-protocols:build
 USE_QT=		5compat base declarative location svg wayland
 USE_XORG=	ice sm x11 xau xcb xcursor xext xfixes xft xi xrender xtst
 SHEBANG_FILES=	components/calendar/kconf_update/migrate-calendar-to-plugin-id.py.in
