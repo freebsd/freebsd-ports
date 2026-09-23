@@ -1,8 +1,9 @@
 PORTNAME=	Net-Mosso-CloudFiles
-PORTVERSION=	0.44
-PORTREVISION=	1
+DISTVERSION=	0.44
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:CKRAS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,8 +13,10 @@ WWW=		https://metacpan.org/release/CKRAS/Net-Mosso-CloudFiles-0.44
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
+DEPRECATED=	Defunct service
+EXPIRATION_DATE=	2026-10-23
+
+BUILD_RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 		p5-Data-Stream-Bulk>=0:devel/p5-Data-Stream-Bulk \
 		p5-DateTime-Format-HTTP>=0:devel/p5-DateTime-Format-HTTP \
 		p5-Digest-MD5-File>=0:security/p5-Digest-MD5-File \
