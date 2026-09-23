@@ -1,8 +1,9 @@
 PORTNAME=	HTML-SBC
-PORTVERSION=	0.15
+DISTVERSION=	0.15
 PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:MEMOWE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -12,8 +13,7 @@ WWW=		https://metacpan.org/release/MEMOWE/HTML-SBC-0.15
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
+BUILD_RUN_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5
 USE_PERL5=	configure
