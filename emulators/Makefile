@@ -12,6 +12,7 @@
     SUBDIR += atari800
     SUBDIR += azahar
     SUBDIR += bfe
+    SUBDIR += bobbin
     SUBDIR += bochs
     SUBDIR += bsvc
     SUBDIR += cannonball

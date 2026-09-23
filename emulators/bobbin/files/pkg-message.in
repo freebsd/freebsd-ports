@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+bobbin needs Apple II ROM images to run; they are not included in this
+package, because they are not redistributable. You must supply them
+yourself and place them at these paths:
+
+  %%DATADIR%%/roms/apple2.rom         (Apple ][, 12k)
+  %%DATADIR%%/roms/apple2plus.rom     (Apple ][+, 12k)
+  %%DATADIR%%/roms/apple2e.rom        (unenhanced Apple //e, 16k)
+  %%DATADIR%%/roms/apple2e_enh.rom    (enhanced Apple //e, 16k)
+  %%DATADIR%%/roms/cards/disk2.rom    (Disk II controller card, 256 bytes)
+
+You only need the ROM for the machine you intend to emulate; the
+enhanced Apple //e ROM is used by default. bobbin also searches the
+directory named by the BOBBIN_ROMDIR environment variable, and a "roms"
+directory inside the directory holding the bobbin binary.
+
+If you do not have these files, see the bobbin repository page:
+
+  https://github.com/micahcowan/bobbin
+
+EOM
+}
+]

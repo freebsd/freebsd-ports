@@ -1,0 +1,6 @@
+Bobbin is a terminal-driven Apple II-series emulator aimed at efficient
+development for 8-bit Apple computers.
+
+It features full Apple ][, ][+, and //e emulation, a curses-based
+terminal interface, and a line-oriented simple interface suitable for
+scripting and pipes.
