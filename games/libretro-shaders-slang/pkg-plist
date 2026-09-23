@@ -1089,6 +1089,7 @@
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-FXAA_sharp-Core_SlotMask.slangp
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-FXAA_sharp-Screen_SlotMask.slangp
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-FXAA_sharp-aperturegrille.slangp
+%%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-Lottes-ShadowMask.slangp
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-New_slotmask_gm.slangp
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-New_slotmask_rgb.slangp
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-Screen_Hmask-Aperturegrille-Overmask-IntegerScaling.slangp
@@ -1102,6 +1103,7 @@
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-Screen_Hmask-Screen_SlotMask_Taller_Brightest.slangp
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-Screen_Hmask-ShadowMask.slangp
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-Screen_Hmask_Overlapped-oldpainless.slangp
+%%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-ShadowMask.slangp
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-crt-regale.slangp
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-for_1440pMin_HiNits.slangp
 %%DATADIR%%/bezel/koko-aio/Presets-ng/Monitor-for_HigherNits.slangp
@@ -1187,6 +1189,7 @@
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-FXAA_sharp-Core_SlotMask.slangp
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-FXAA_sharp-Screen_SlotMask.slangp
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-FXAA_sharp-aperturegrille.slangp
+%%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-Lottes-ShadowMask.slangp
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-New_slotmask_gm.slangp
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-New_slotmask_rgb.slangp
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-Screen_Hmask-Aperturegrille-Overmask-IntegerScaling.slangp
@@ -1200,6 +1203,7 @@
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-Screen_Hmask-Screen_SlotMask_Taller_Brightest.slangp
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-Screen_Hmask-ShadowMask.slangp
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-Screen_Hmask_Overlapped-oldpainless.slangp
+%%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-ShadowMask.slangp
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-crt-regale.slangp
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-for_1440pMin_HiNits.slangp
 %%DATADIR%%/bezel/koko-aio/Presets_HiresGames_Fast/Presets-ng/Monitor-for_HigherNits.slangp
@@ -1234,6 +1238,7 @@
 %%DATADIR%%/bezel/koko-aio/config/plugins/disabled/led1.txt
 %%DATADIR%%/bezel/koko-aio/config/plugins/disabled/led2.txt
 %%DATADIR%%/bezel/koko-aio/config/plugins/disabled/led3.txt
+%%DATADIR%%/bezel/koko-aio/config/plugins/enabled/.keep
 %%DATADIR%%/bezel/koko-aio/docs-ng.md
 %%DATADIR%%/bezel/koko-aio/koko-aio-ng-DMG.slangp
 %%DATADIR%%/bezel/koko-aio/koko-aio-ng.slangp
@@ -2501,6 +2506,7 @@
 %%DATADIR%%/crt/crt-1tap-bloom.slangp
 %%DATADIR%%/crt/crt-1tap-bloom_fast.slangp
 %%DATADIR%%/crt/crt-1tap.slangp
+%%DATADIR%%/crt/crt-2tap.slangp
 %%DATADIR%%/crt/crt-CreativeForce-Arcade.slangp
 %%DATADIR%%/crt/crt-CreativeForce-SharpSmooth.slangp
 %%DATADIR%%/crt/crt-Cyclon.slangp
@@ -2655,8 +2661,10 @@
 %%DATADIR%%/crt/shaders/cathode-retro/cathode-retro-util-tracking-instability.inc
 %%DATADIR%%/crt/shaders/cathode-retro/signal_test.slangp
 %%DATADIR%%/crt/shaders/cathode-retro/slang_params.inc
-%%DATADIR%%/crt/shaders/crt-1tap.slang
 %%DATADIR%%/crt/shaders/crt-Cyclon.slang
+%%DATADIR%%/crt/shaders/crt-Ntap/crt-1tap.slang
+%%DATADIR%%/crt/shaders/crt-Ntap/crt-2tap.slang
+%%DATADIR%%/crt/shaders/crt-Ntap/shared.inc
 %%DATADIR%%/crt/shaders/crt-aperture.slang
 %%DATADIR%%/crt/shaders/crt-beans/LICENSE
 %%DATADIR%%/crt/shaders/crt-beans/bilinear_upsample.slang
@@ -3569,15 +3577,23 @@
 %%DATADIR%%/edge-smoothing/scalenx/shaders/scale2xplus.slang
 %%DATADIR%%/edge-smoothing/scalenx/shaders/scale3x.slang
 %%DATADIR%%/edge-smoothing/scalenx/shaders/scale3xSFX.slang
+%%DATADIR%%/edge-smoothing/vectorscale/LICENSE
+%%DATADIR%%/edge-smoothing/vectorscale/README.md
+%%DATADIR%%/edge-smoothing/vectorscale/shaders/active-cell-mask.slang
+%%DATADIR%%/edge-smoothing/vectorscale/shaders/bake-neighbor-endpoints.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/cell-graph.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/cell-rasterizer-multi-aa.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/cell-rasterizer-single-aa.slang
+%%DATADIR%%/edge-smoothing/vectorscale/shaders/gradient-correction.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/init-positions.slang
+%%DATADIR%%/edge-smoothing/vectorscale/shaders/optimize-energy-simple.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/optimize-energy.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/pack-positions.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/resolve-crossings.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/similarity-graph.slang
 %%DATADIR%%/edge-smoothing/vectorscale/shaders/update-tjunction.slang
+%%DATADIR%%/edge-smoothing/vectorscale/vectorscale-exact-energy-single-aa.slangp
+%%DATADIR%%/edge-smoothing/vectorscale/vectorscale-exact-energy.slangp
 %%DATADIR%%/edge-smoothing/vectorscale/vectorscale-single-aa.slangp
 %%DATADIR%%/edge-smoothing/vectorscale/vectorscale.slangp
 %%DATADIR%%/edge-smoothing/xbr/README.md
@@ -3909,16 +3925,127 @@
 %%DATADIR%%/handheld/simpletex_lcd_720p.slangp
 %%DATADIR%%/handheld/sunlight_shimmer.slangp
 %%DATADIR%%/handheld/zfast-lcd.slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/3DS Adamant DSLite (3x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant NTSC 601 0 IRE (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant NTSC 601 0 IRE (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant NTSC 601 7.5 IRE (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant NTSC 601 7.5 IRE (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant NTSC 709 (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant NTSC 709 (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant NTSC EBU (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant NTSC EBU (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant NTSC NTSC-J (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant NTSC NTSC-J (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant PAL EBU Composite (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant PAL EBU Composite (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant PAL EBU RF (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant PAL EBU RF (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant PAL EBU SCART (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant PAL EBU SCART (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant RGB 709 (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/CRT Adamant RGB 709 (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/GB Adamant (9x scale Wikipedia Palette) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/GBA Adamant 601 3.8 Gamma (9x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/GBA Adamant VBA Gameboy Colors Lut (9x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/GBA Adamant VBA Gameboy Colors Lut, Boosted White (9x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/GBA Adamant VBA Gameboy Colors Lut, True Black (9x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/GBA Adamant VBA Gameboy Colors Lut, True Black, Boosted White (9x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/NDS Adamant GBA (3x scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/NDSL Adamant DSLite (3x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/PSP Adamant PSP (6x Scale RGB Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/SGG Adamant (3066x2160 scaling Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/~CRT Adamant Raw 709 (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/~CRT Adamant Raw 709 (Dot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/LCD_SAFE/~CRT Adamant Raw 709 (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/3DS Adamant DSLite (3x Scale BGR Grid) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/3DS Adamant DSLite (3x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 601 0 IRE (Aperture grille) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 601 0 IRE (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 601 0 IRE (Slot Mask) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 601 0 IRE (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 601 7.5 IRE (Aperture grille) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 601 7.5 IRE (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 601 7.5 IRE (Slot Mask) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 601 7.5 IRE (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 709 (Aperture grille) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 709 (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 709 (Slot Mask) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC 709 (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC EBU (Aperture grille) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC EBU (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC EBU (Slot Mask) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC EBU (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC NTSC-J (Aperture grille) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC NTSC-J (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC NTSC-J (Slot Mask) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant NTSC NTSC-J (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU Composite (Aperture grille) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU Composite (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU Composite (Slot Mask) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU Composite (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU RF (Aperture grille) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU RF (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU RF (Slot Mask) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU RF (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU SCART (Aperture grille) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU SCART (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU SCART (Slot Mask) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant PAL EBU SCART (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant RGB 709 (Aperture grille) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant RGB 709 (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant RGB 709 (Slot Mask) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/CRT Adamant RGB 709 (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GB Adamant (9x scale Wikipedia Palette) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GB Adamant (9x scale Wikipedia Palette) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GBA Adamant 601 3.8 Gamma (9x Scale BGR Grid) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GBA Adamant 601 3.8 Gamma (9x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GBA Adamant VBA Gameboy Colors Lut (9x Scale BGR Grid) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GBA Adamant VBA Gameboy Colors Lut (9x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GBA Adamant VBA Gameboy Colors Lut, Boosted White (9x Scale BGR Grid) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GBA Adamant VBA Gameboy Colors Lut, Boosted White (9x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GBA Adamant VBA Gameboy Colors Lut, True Black (9x Scale BGR Grid) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GBA Adamant VBA Gameboy Colors Lut, True Black (9x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GBA Adamant VBA Gameboy Colors Lut, True Black, Boosted White (9x Scale BGR Grid) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/GBA Adamant VBA Gameboy Colors Lut, True Black, Boosted White (9x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/NDS Adamant GBA (3x scale BGR Grid) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/NDS Adamant GBA (3x scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/NDSL Adamant DSLite (3x Scale BGR Grid) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/NDSL Adamant DSLite (3x Scale BGR Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/PSP Adamant PSP (6x Scale RGB Grid) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/PSP Adamant PSP (6x Scale RGB Grid) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/SGG Adamant (3066x2160 scaling Aperture grille) [2160p Subframe BFI].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/SGG Adamant (3066x2160 scaling Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/~CRT Adamant Raw 709 (Aperture grille) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/~CRT Adamant Raw 709 (Dot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/WOLED/~CRT Adamant Raw 709 (Slot Mask) [2160p].slangp
+%%DATADIR%%/hdr/adamant_presets/readme-adamant.md
+%%DATADIR%%/hdr/crt-adamant-default-ntsc.slangp
+%%DATADIR%%/hdr/crt-adamant-default-pal.slangp
+%%DATADIR%%/hdr/crt-adamant-default.slangp
 %%DATADIR%%/hdr/crt-sony-megatron-default-hdr-NTSC.slangp
 %%DATADIR%%/hdr/crt-sony-megatron-default-hdr.slangp
 %%DATADIR%%/hdr/crt-sony-megatron-v2-default-NTSC.slangp
 %%DATADIR%%/hdr/crt-sony-megatron-v2-default-config.slangp
 %%DATADIR%%/hdr/crt-sony-megatron-v2-default-sdr.slangp
 %%DATADIR%%/hdr/crt-sony-megatron-v2-default.slangp
+%%DATADIR%%/hdr/hdr-config-adamant.slangp
 %%DATADIR%%/hdr/hdr-config.slangp
 %%DATADIR%%/hdr/hdr.slangp
 %%DATADIR%%/hdr/hdr_inverse_tonemap.slangp
 %%DATADIR%%/hdr/hdr_inverse_tonemap_config.slangp
+%%DATADIR%%/hdr/shaders/adamant/LUT/vbamlcdfilter-64-100i.png
+%%DATADIR%%/hdr/shaders/adamant/crt-adamant-hdr-pass.slang
+%%DATADIR%%/hdr/shaders/adamant/crt-adamant-source-pass.slang
+%%DATADIR%%/hdr/shaders/adamant/crt-adamant.slang
+%%DATADIR%%/hdr/shaders/adamant/hdr-config-adamant.slang
+%%DATADIR%%/hdr/shaders/adamant/include/colour_grade.h
+%%DATADIR%%/hdr/shaders/adamant/include/gamma_correct.h
+%%DATADIR%%/hdr/shaders/adamant/include/hdr10.h
+%%DATADIR%%/hdr/shaders/adamant/include/inverse_tonemap.h
+%%DATADIR%%/hdr/shaders/adamant/include/parameters.h
+%%DATADIR%%/hdr/shaders/adamant/include/scanline_generation.h
+%%DATADIR%%/hdr/shaders/adamant/resources/grey-bg.png
+%%DATADIR%%/hdr/shaders/adamant/resources/wikilovgcp-palette.png
 %%DATADIR%%/hdr/shaders/crt-guest-advanced-ntsc-pass1a.slang
 %%DATADIR%%/hdr/shaders/crt-sony-megatron-hdr-pass-v2-config.slang
 %%DATADIR%%/hdr/shaders/crt-sony-megatron-hdr-pass-v2.slang
