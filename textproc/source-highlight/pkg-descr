@@ -1,3 +1,8 @@
-Source-highlight is a simple program that, given a source C/C++,
-Prolog, Perl, PHP3, Python or Java file, produces an html source
-with syntax highlighting.
+This program, given a source file, produces a document with syntax
+highlighting. It also provides a C++ highlight library.
+
+Source-highlight reads source language specifications dynamically, thus
+it can be easily extended (without recompiling the sources) for handling
+new languages. It also reads output format specifications dynamically,
+and thus it can be easily extended (without recompiling the sources) for
+handling new output formats.
