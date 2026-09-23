@@ -1,4 +1,4 @@
-%%STUDIO%%bin/ONStudio
+%%STUDIO%%bin/Studio
 include/libfive.h
 include/libfive/eval/base.hpp
 include/libfive/eval/clause.hpp
