@@ -1,5 +1,5 @@
 PORTNAME=	jellyfin-ffmpeg
-PORTVERSION=	8.1.2.4
+PORTVERSION=	8.1.2.5
 CATEGORIES=	multimedia
 
 MAINTAINER=	michaeljohnson@ahze.net
@@ -13,11 +13,12 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	upstream jellyfin-ffmpeg targets 64-bit; 32-bit builds non-PIC asm that lld rejects
 
 BUILD_DEPENDS=	nasm:devel/nasm \
+		${LOCALBASE}/include/fftw3.h:math/fftw3 \
+		${LOCALBASE}/lib/libfftw3f.a:math/fftw3-float \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 PATCH_DEPENDS=	quilt:devel/quilt
 LIB_DEPENDS=	libass.so:multimedia/libass \
 		libbluray.so:multimedia/libbluray \
-		libchromaprint.so:audio/chromaprint \
 		libdav1d.so:multimedia/dav1d \
 		libfdk-aac.so:audio/fdk-aac \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -51,11 +52,12 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libasound.so:audio/alsa-lib \
 		libsndio.so:audio/sndio
 
-USES=		compiler:c17 gmake localbase:ldflags pkgconfig tar:xz
+USES=		cmake:indirect compiler:c17 gmake localbase:ldflags pkgconfig tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	jellyfin
 GH_PROJECT=	jellyfin-ffmpeg
 GH_TAGNAME=	v${PORTVERSION:C/\.([0-9]+)$/-\1/}
+GH_TUPLE=	acoustid:chromaprint:v1.6.0:chromaprint
 
 # Everything installs into a private subdir so nothing collides with
 # multimedia/ffmpeg or jellyfin-ffmpeg7; only the suffixed bin/ symlinks land
@@ -67,8 +69,29 @@ post-patch:
 	cd ${WRKSRC} && QUILT_PATCHES=debian/patches quilt push -a || \
 	    QUILT_PATCHES=debian/patches quilt applied | ${GREP} -q 0098
 
+# Static chromaprint on fftw3f, as upstream's builder does: audio/chromaprint
+# links multimedia/ffmpeg for its FFT, dragging a second FFmpeg and ~30 other
+# ports (gcc, boost, numpy, ...) into this port's runtime.
+CHROMAPRINT_PREFIX=	${WRKDIR}/chromaprint-static
+CMAKE_INSTALL_PREFIX=	${CHROMAPRINT_PREFIX}
+CMAKE_ARGS+=	-DCMAKE_INSTALL_LIBDIR:STRING=lib -DFFT_LIB:STRING=fftw3f
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_FFmpeg CMAKE_POSITION_INDEPENDENT_CODE
+CMAKE_OFF=	BUILD_SHARED_LIBS BUILD_TESTS BUILD_TOOLS
+
+pre-configure:
+	${SETENVI} ${WRK_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} \
+	    -S ${WRKSRC_chromaprint} -B ${WRKDIR}/chromaprint-build
+	${SETENVI} ${WRK_ENV} ${CMAKE_BIN} --build ${WRKDIR}/chromaprint-build \
+	    -j ${MAKE_JOBS_NUMBER}
+	${SETENVI} ${WRK_ENV} ${CMAKE_BIN} --install ${WRKDIR}/chromaprint-build
+	# configure links with plain `pkg-config --libs` (shared build), so the
+	# static deps go in Libs:, not Libs.private: as upstream's builder does
+	${REINPLACE_CMD} -e 's|^Libs:.*|Libs: -L$${libdir} -lchromaprint ${LOCALBASE}/lib/libfftw3f.a -lc++ -lm|' \
+	    ${CHROMAPRINT_PREFIX}/lib/pkgconfig/libchromaprint.pc
+
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	ffbuild/config.log
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${CHROMAPRINT_PREFIX}/lib/pkgconfig
 NOPRECIOUSMAKEVARS=	yes
 
 MAKE_ENV+=	V=1

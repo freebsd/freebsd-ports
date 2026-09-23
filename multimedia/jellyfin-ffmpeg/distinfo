@@ -1,3 +1,5 @@
-TIMESTAMP = 1788678647
-SHA256 (jellyfin-jellyfin-ffmpeg-8.1.2.4-v8.1.2-4_GH0.tar.gz) = eeb6b4a095193520293e59e2f9a17e7126ba697cc7e194377f7f63919988e6e0
-SIZE (jellyfin-jellyfin-ffmpeg-8.1.2.4-v8.1.2-4_GH0.tar.gz) = 17717861
+TIMESTAMP = 1790153155
+SHA256 (jellyfin-jellyfin-ffmpeg-8.1.2.5-v8.1.2-5_GH0.tar.gz) = 2d871248eb86f15ce54dad8d57787cf2c098b5c675b556d1f40025b1ae53acd0
+SIZE (jellyfin-jellyfin-ffmpeg-8.1.2.5-v8.1.2-5_GH0.tar.gz) = 17733403
+SHA256 (acoustid-chromaprint-v1.6.0_GH0.tar.gz) = 65bfce4a35b2e673dbcda917b6aa577e2f145cf805243d19e6a50fea2a520c2a
+SIZE (acoustid-chromaprint-v1.6.0_GH0.tar.gz) = 1580199
