@@ -1,8 +1,8 @@
 PORTNAME=	Net-Packet-Target
-PORTVERSION=	1.01
-PORTREVISION=	1
+DISTVERSION=	1.01
 CATEGORIES=	net perl5 devel
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:GOMOR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,8 +12,7 @@ WWW=		https://metacpan.org/release/GOMOR/Net-Packet-Target-1.01
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE.Artistic
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Class-Gomor>=1.00:devel/p5-Class-Gomor \
+BUILD_RUN_DEPENDS=	p5-Class-Gomor>=1.00:devel/p5-Class-Gomor \
 		p5-Net-Packet>=3.00:net/p5-Net-Packet
 
 USES=		perl5
