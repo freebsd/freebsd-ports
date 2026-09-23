@@ -12,11 +12,10 @@ WWW=		https://harlequin.sh/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to run because requires devel/py-tree-sitter >= 0.25.2 (see PR 289772)
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.28.0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.3:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}duckdb>=1.5.5:databases/py-duckdb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}linkify-it-py>=2.2.0:textproc/py-linkify-it-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgspec>=0.21.1:devel/py-msgspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=2.3.3,1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.5.1:devel/py-platformdirs@${PY_FLAVOR} \
