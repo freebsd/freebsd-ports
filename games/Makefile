@@ -26,6 +26,7 @@
     SUBDIR += SRB2
     SUBDIR += SpaceCadetPinball
     SUBDIR += SpaceCadetPinball-devel
+    SUBDIR += UZDoom
     SUBDIR += abbayedesmorts
     SUBDIR += abe
     SUBDIR += abuse_sdl
