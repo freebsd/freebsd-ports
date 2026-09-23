@@ -1,3 +1,66 @@
+  <vuln vid="0142953c-b716-11f1-a70f-00a0980083d7">
+    <topic>popt -- Out-of-bounds Write</topic>
+    <affects>
+    <package>
+	<name>popt</name>
+	<range><le>1.19_2,1</le></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://access.redhat.com/errata/RHSA-2026:56984 reports:</p>
+	<blockquote cite="https://access.redhat.com/errata/RHSA-2026:56984">
+	  <p>A flaw was found in popt, a command-line option parsing library.
+	  An off-by-one error in the poptStuffArgs function, when repeatedly
+	  called by a host application or through deep alias nesting, can
+	  lead to corruption of internal program data.  This corruption could
+	  potentially enable a local attacker to execute arbitrary code if
+	  the host application then unsafely processes the altered data.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-18739</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-18739</url>
+    </references>
+    <dates>
+      <discovery>2026-08-04</discovery>
+      <entry>2026-09-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e86be66a-b715-11f1-a70f-00a0980083d7">
+    <topic>popt -- Incorrect Calculation of Buffer Size</topic>
+    <affects>
+    <package>
+	<name>popt</name>
+	<range><le>1.19_2,1</le></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://access.redhat.com/errata/RHSA-2026:56984 reports:</p>
+	<blockquote cite="https://access.redhat.com/errata/RHSA-2026:56984">
+	  <p>A flaw was found in popt.  This vulnerability allows an attacker
+	  to provide specially crafted configuration content to a host, which,
+	  when loaded, can lead to a small memory corruption issue.  This
+	  occurs because of an error in how the `poptConfigFileToString`
+	  function reallocates memory for buffers.  Successful exploitation
+	  could result in heap metadata corruption, potentially causing the
+	  affected process to become unavailable (denial of service).</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-18743</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-18743</url>
+    </references>
+    <dates>
+      <discovery>2026-09-01</discovery>
+      <entry>2026-09-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6690917c-b657-11f1-ad2b-40b034429ecf">
     <topic>p5-Dancer2 -- Multiple vulnerabilities</topic>
     <affects>
