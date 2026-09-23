@@ -1,7 +1,8 @@
 PORTNAME=	Chemistry-OpenSMILES
-PORTVERSION=	0.12.0
+DISTVERSION=	0.12.0
 CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:MERKYS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
@@ -17,7 +18,6 @@ RUN_DEPENDS=	p5-Graph>=0:math/p5-Graph \
 TEST_DEPENDS=	p5-Algorithm-Combinatorics>=0:math/p5-Algorithm-Combinatorics
 
 USES=		perl5
-
 USE_PERL5=	modbuild
 
 NO_ARCH=	yes
