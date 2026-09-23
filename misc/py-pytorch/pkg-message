@@ -17,9 +17,13 @@ The same problem exists in all software that uses OpenBLAS, not just PyTorch.
 
 ## Need env var on aarch64 due to high TLS requirements
 
-When running PyTorch on aarch64 you likely need to have this environment
+When running PyTorch on aarch64 you will need to have this environment
 variable set:
 LD_STATIC_TLS_EXTRA=4096
+
+It pre-allocates more TLS space when the Python process starts so that
+the PyTorch shared libraries will have sufficient TLS space when they are
+loaded dynamically.
 
 EOM
 }
