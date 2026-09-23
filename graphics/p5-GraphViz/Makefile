@@ -1,7 +1,8 @@
 PORTNAME=	GraphViz
-PORTVERSION=	2.25
+DISTVERSION=	2.26
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ETJ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -19,7 +20,7 @@ RUN_DEPENDS=	dot:graphics/graphviz \
 		p5-XML-Twig>=3.52:textproc/p5-XML-Twig
 TEST_DEPENDS=	p5-Test-Simple>=1.302200:devel/p5-Test-Simple
 
-USES=		cpe perl5 tar:tgz
+USES=		cpe perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
