@@ -47,7 +47,7 @@ if [ ! -f ${subr} ]; then
 fi
 
 . ${globalconf}
-. ${subrdir}/nc.subr
+. ${subrdir}/nc-lite.subr
 
 cbsd_statsd_bhyve_stop()
 {
@@ -79,7 +79,7 @@ cbsd_statsd_bhyve_stop()
 
 cbsd_statsd_bhyve_start()
 {
-	local args= racct_enabled=
+	local args= racct_enabled= prometheus_listen4= prometheus_port=
 
 	# RACCT enabled?
 	racct_enabled=$( sysctl -qn kern.racct.enable )
@@ -91,6 +91,8 @@ cbsd_statsd_bhyve_start()
 	[ -n "${log_level}" ] && args="${args} --log_level=${log_level}"
 	[ -n "${loop_interval}" ] && args="${args} --loop_interval=${loop_interval}"
 	[ -n "${save_loop_count}" ] && args="${args} --save_loop_count=${save_loop_count}"
+	[ -n "${prometheus_listen4}" ] && args="${args} --prometheus_listen4=${prometheus_listen4}"
+	[ -n "${prometheus_port}" ] && args="${args} --prometheus_port=${prometheus_port}"
 
 	case "${prometheus_exporter_enable}" in
 		[Yy][Ee][Ss])
