@@ -3,8 +3,8 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Plasma5 application to show KDE application documentation
-WWW=		https://projects.kde.org/projects/kde/workspace/khelpcenter
+COMMENT=	Software documentation viewer
+WWW=		https://apps.kde.org/khelpcenter
 
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
