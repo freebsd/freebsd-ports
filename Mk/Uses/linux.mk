@@ -94,6 +94,7 @@ _linux_rl9_gstreamer1-libav=		linux-rl9-gstreamer1-plugin-libav>0:multimedia/lin
 _linux_${linux_ARGS}_gtk2=		linux-${linux_ARGS}-gtk2>0:x11-toolkits/linux-${linux_ARGS}-gtk2
 _linux_${linux_ARGS}_gtk3=		linux-${linux_ARGS}-gtk3>0:x11-toolkits/linux-${linux_ARGS}-gtk3
 _linux_${linux_ARGS}_harfbuzz=		linux-${linux_ARGS}-harfbuzz>0:print/linux-${linux_ARGS}-harfbuzz
+_linux_rl9_harfbuzz-icu=		linux-rl9-harfbuzz-icu>0:print/linux-rl9-harfbuzz-icu
 _linux_rl9_highway=			linux-rl9-highway>0:devel/linux-rl9-highway
 _linux_rl9_hyphen=			linux-rl9-hyphen>0:textproc/linux-rl9-hyphen
 _linux_${linux_ARGS}_icu=		linux-${linux_ARGS}-icu>0:devel/linux-${linux_ARGS}-icu

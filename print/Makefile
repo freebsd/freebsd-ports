@@ -103,6 +103,7 @@
     SUBDIR += linux-rl9-cups-libs
     SUBDIR += linux-rl9-freetype
     SUBDIR += linux-rl9-harfbuzz
+    SUBDIR += linux-rl9-harfbuzz-icu
     SUBDIR += lout
     SUBDIR += lprps
     SUBDIR += lyx
