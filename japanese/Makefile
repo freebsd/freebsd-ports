@@ -271,6 +271,7 @@
     SUBDIR += srd-fpw-package
     SUBDIR += sudachi
     SUBDIR += suicavalue
+    SUBDIR += tc
     SUBDIR += tdiary
     SUBDIR += tegaki-zinnia-japanese
     SUBDIR += tex-ptex

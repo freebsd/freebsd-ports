@@ -1,0 +1,7 @@
+TIMESTAMP = 1790207833
+SHA256 (tc/manual.pdf) = aa906e5fb536c9cd291cee80f503eefe1175531873b4ad2a1131eac56bc43f25
+SIZE (tc/manual.pdf) = 220072
+SHA256 (tc/tc.info) = 1f73b0aa7a996f0ac04b76ee99ba4a7a40cf9901a6aad4a5465fabcc5aabc419
+SIZE (tc/tc.info) = 109743
+SHA256 (tc/kanchoku-tc-release-2.3.1-148-g5d84e84_GH0.tar.gz) = 4aecfa05f23f50f216ddaf279396cf4ead825eaed1e0fa10a3ce6d3d0624ee55
+SIZE (tc/kanchoku-tc-release-2.3.1-148-g5d84e84_GH0.tar.gz) = 1260120

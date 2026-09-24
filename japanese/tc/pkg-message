@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+To activate tc, add the following lines to your Emacs configuration:
+
+(require 'tc-setup)
+
+After that, launch Emacs, run `M-x tcode-install` and then restart
+Emacs.
+
+The practice program EELLL can be run with 'M-x eelll'.
+EOM
+}
+]
