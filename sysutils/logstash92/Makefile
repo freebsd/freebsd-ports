@@ -1,7 +1,7 @@
 PORTNAME=	logstash
 DISTVERSION=	9.2.8
 DISTVERSIONSUFFIX=	-darwin-x86_64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/ \
 		LOCAL/vvd/elastic
@@ -31,6 +31,10 @@ CONFLICTS=	${PORTNAME}*
 
 EXTRACT_AFTER_ARGS=	--exclude jdk.app \
 			--exclude *.bat \
+			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/*-darwin \
+			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/*-linux \
+			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/x86-freebsd \
+			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/${ARCH:S|aarch64|x86_64|}-freebsd \
 			--no-same-owner --no-same-permissions
 
 NO_BUILD=	yes
