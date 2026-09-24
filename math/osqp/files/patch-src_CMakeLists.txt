@@ -1,0 +1,16 @@
+-- Build the Unix interrupt handler on FreeBSD as well, so that the solver
+-- does not end up with unresolved references to osqp_start_interrupt_listener,
+-- osqp_is_interrupted and osqp_end_interrupt_listener.
+
+--- src/CMakeLists.txt.orig	2025-03-21 15:13:09 UTC
++++ src/CMakeLists.txt
+@@ -60,7 +60,7 @@ endif()
+ # Add the ctrl-c handler if enabled and not overriden
+ if(OSQP_ENABLE_INTERRUPT AND NOT OSQP_CUSTOM_INTERRUPT)
+   if(IS_WINDOWS)
+     target_sources(OSQPLIB PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/interrupt_windows.c")
+-  elseif(IS_MAC OR IS_LINUX)
++  elseif(IS_MAC OR IS_LINUX OR ${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+     target_sources(OSQPLIB PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/interrupt_unix.c")
+   endif()
+ endif()
