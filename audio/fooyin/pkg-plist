@@ -5,7 +5,7 @@ lib/fooyin/libfooyin_utils.so.0.0.0
 lib/fooyin/plugins/fyplugin_discord.so
 lib/fooyin/plugins/fyplugin_equaliser.so
 lib/fooyin/plugins/fyplugin_fileops.so
-lib/fooyin/plugins/fyplugin_filters.so
+lib/fooyin/plugins/fyplugin_globalhotkeys.so
 lib/fooyin/plugins/fyplugin_gmeinput.so
 lib/fooyin/plugins/fyplugin_libarchive.so
 lib/fooyin/plugins/fyplugin_lyrics.so
@@ -16,6 +16,7 @@ lib/fooyin/plugins/fyplugin_quicktagger.so
 lib/fooyin/plugins/fyplugin_radiobrowser.so
 lib/fooyin/plugins/fyplugin_rawaudio.so
 lib/fooyin/plugins/fyplugin_rgscanner.so
+lib/fooyin/plugins/fyplugin_runservices.so
 lib/fooyin/plugins/fyplugin_scrobbler.so
 lib/fooyin/plugins/fyplugin_sdl.so
 lib/fooyin/plugins/fyplugin_sleepinhibitor.so

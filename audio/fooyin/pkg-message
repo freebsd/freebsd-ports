@@ -1,0 +1,5 @@
+[
+{ type: install
+  message: "CD ripping-plugin is disabled, please use audio/cyanrip instead."
+}
+]

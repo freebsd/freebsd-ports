@@ -1,6 +1,6 @@
 PORTNAME=	fooyin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.6
+DISTVERSION=	0.13.0
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -21,10 +21,11 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libtag.so:audio/taglib
 
 USES=		cmake compiler:c++23-lang desktop-file-utils gl libarchive \
-		pkgconfig qt:6 sdl
+		pkgconfig qt:6 sdl xorg
 USE_GL=		opengl
 USE_QT=		base sqldriver-sqlite svg tools:build
 USE_SDL=	sdl2
+USE_XORG=	x11
 
 USE_GITHUB=	yes
 
@@ -34,6 +35,7 @@ CMAKE_OFF=	BUILD_ALSA \
 		BUILD_CCACHE \
 		CMAKE_CXX_EXTENSIONS
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_ALSA \
+		CMAKE_DISABLE_FIND_PACKAGE_Cdio \
 		CMAKE_DISABLE_FIND_PACKAGE_Ebur128 \
 		CMAKE_DISABLE_FIND_PACKAGE_OpenMpt \
 		CMAKE_DISABLE_FIND_PACKAGE_PipeWire \
