@@ -480,6 +480,8 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_tabs_list/readme/readme.txt
 %%DATADIR%%/py/cuda_testing_canvas_proc/__init__.py
 %%DATADIR%%/py/cuda_testing_canvas_proc/install.inf
+%%DATADIR%%/py/cuda_testing_complexity_plot/__init__.py
+%%DATADIR%%/py/cuda_testing_complexity_plot/install.inf
 %%DATADIR%%/py/cuda_testing_dlg_proc/__init__.py
 %%DATADIR%%/py/cuda_testing_dlg_proc/install.inf
 %%DATADIR%%/py/cuda_testing_dlg_proc/repro_labels.py
@@ -488,10 +490,17 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_testing_finder_proc/install.inf
 %%DATADIR%%/py/cuda_testing_gaps/__init__.py
 %%DATADIR%%/py/cuda_testing_gaps/install.inf
+%%DATADIR%%/py/cuda_testing_perf/__init__.py
+%%DATADIR%%/py/cuda_testing_perf/base_threshold__generic.txt
+%%DATADIR%%/py/cuda_testing_perf/base_threshold__personal.txt
+%%DATADIR%%/py/cuda_testing_perf/install.inf
+%%DATADIR%%/py/cuda_testing_perf/manual_base_tests.md
 %%DATADIR%%/py/cuda_testing_replace_lines/__init__.py
 %%DATADIR%%/py/cuda_testing_replace_lines/install.inf
 %%DATADIR%%/py/cuda_testing_replace_lines/readme/history.txt
 %%DATADIR%%/py/cuda_testing_replace_lines/readme/readme.txt
+%%DATADIR%%/py/cuda_testing_undo_redo/__init__.py
+%%DATADIR%%/py/cuda_testing_undo_redo/install.inf
 %%DATADIR%%/py/cudatext.py
 %%DATADIR%%/py/cudatext_cmd.py
 %%DATADIR%%/py/cudatext_keys.py
