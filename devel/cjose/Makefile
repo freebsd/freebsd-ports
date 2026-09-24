@@ -1,6 +1,5 @@
 PORTNAME=	cjose
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+DISTVERSION=	0.8.0.20260912
 CATEGORIES=	devel
 
 MAINTAINER=	jamie@chair6.net
@@ -11,26 +10,19 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjansson.so:devel/jansson
+TEST_DEPENDS=	checkmk:devel/check
 
-USES=		compiler:c++11-lang libtool pathfix pkgconfig ssl
+USES=		cmake:testing compiler:c17 pathfix ssl
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
+GH_TAGNAME=	a12e7c5
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-jansson=${PREFIX} --with-openssl=${OPENSSLBASE}
+CMAKE_TESTING_ON=	CJOSE_BUILD_TESTS
 
-.include <bsd.port.pre.mk>
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Doxygen
+CMAKE_OFF=	CJOSE_BUILD_STATIC \
+		CJOSE_BUILD_TESTS
 
-.if ${COMPILER_TYPE} == clang
-CFLAGS+=	-Wno-error=strict-prototypes
-.endif
-
-.if ( ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-CFLAGS+=	-Wno-error=deprecated-declarations
-.endif
-
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
