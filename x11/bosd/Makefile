@@ -1,5 +1,5 @@
 PORTNAME=	bosd
-DISTVERSION=	10.3
+DISTVERSION=	10.4
 CATEGORIES=	x11
 
 MAINTAINER=	dteske@FreeBSD.org
@@ -17,7 +17,7 @@ GH_ACCOUNT=	FrauBSD
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext xft xrandr xrender
 
-SHEBANG_FILES=	examples/bsd.py tools/glyph.py
+SHEBANG_FILES=	examples/*.py tools/glyph.py
 
 # FreeBSD keeps .pc files under libdata/pkgconfig.
 # PYTHON= drives the example glyph build (no bare python3 on PATH).
@@ -35,5 +35,7 @@ TESTS_MAKE_ARGS_OFF=	INSTALL_TESTS=no
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bosd \
 		${STAGEDIR}${PREFIX}/lib/libbosd.so.4
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.png ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
