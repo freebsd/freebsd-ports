@@ -24,6 +24,8 @@ WWW=		https://github.com/voidzero-dev/vite-plus \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo ssl
