@@ -1,8 +1,9 @@
 PORTNAME=	WWW-Pastebin-PastebinCom-Create
-PORTVERSION=	1.003
+DISTVERSION=	1.003
 PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ZOFFIX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -11,8 +12,7 @@ WWW=		https://metacpan.org/release/WWW-Pastebin-PastebinCom-Create
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Moo>=1.004001:devel/p5-Moo \
+BUILD_RUN_DEPENDS=	p5-Moo>=1.004001:devel/p5-Moo \
 		p5-WWW-Mechanize>=1.73:www/p5-WWW-Mechanize
 
 USES=		perl5
