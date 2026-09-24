@@ -2,6 +2,7 @@ PORTNAME=	MojoX-Log-Dispatch-Simple
 DISTVERSION=	1.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:GRYPHON
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bokutin@bokut.in
@@ -12,10 +13,8 @@ LICENSE=	ARTPERL10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-_BR_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \
+BUILD_RUN_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch \
 		p5-Mojolicious>=0:www/p5-Mojolicious
-BUILD_DEPENDS=	${_BR_DEPENDS}
-RUN_DEPENDS=	${_BR_DEPENDS}
 TEST_DEPENDS=	p5-Test-Most>=0:devel/p5-Test-Most
 
 USES=		perl5
