@@ -1,6 +1,5 @@
 PORTNAME=	rsync
-DISTVERSION=	3.5.0
-PORTREVISION=	2
+DISTVERSION=	3.5.1
 
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
@@ -29,17 +28,16 @@ USE_RC_SUBR=	rsyncd
 
 SHEBANG_FILES=	runtests.py support/rrsync
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS=	--disable-debug \
-		--disable-md2man \
-		--enable-ipv6 \
-		--with-rsyncd-conf=${ETCDIR}/rsyncd.conf \
-		${CONFIGURE_ARGS_${ARCH}}
+CONFIGURE_ARGS=		${CONFIGURE_ARGS_${ARCH}} \
+			--disable-debug \
+			--disable-md2man \
+			--enable-ipv6 \
+			--with-rsyncd-conf=${ETCDIR}/rsyncd.conf
 CONFIGURE_ARGS_amd64=	--enable-md5-asm \
-			--enable-roll-simd \
-			--enable-roll-asm
-CONFIGURE_TARGET=	${HOSTARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
+			--enable-roll-asm \
+			--enable-roll-simd
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
@@ -52,19 +50,21 @@ SUB_LIST=	NAME=rsyncd
 PORTDOCS=	NEWS.md README.md csprotocol.txt tech_report.tex
 
 # define options
-OPTIONS_DEFINE=		DOCS FLAGS ICONV POPT_PORT SSH ZLIB_BASE
+OPTIONS_DEFINE=		DOCS FLAGS ICONV IDN POPT_PORT SSH ZLIB_BASE
 OPTIONS_DEFAULT=	FLAGS ICONV SSH ZLIB_BASE
 
 # options provided upstream
+FLAGS_DESC=	File system flags support patch, adds --file-flags
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
 SSH_DESC=	Use SSH instead of RSH
+ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
 
-FLAGS_DESC=		File system flags support patch, adds --file-flags
 FLAGS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-file-flags.diff
-ZLIB_BASE_DESC=		Use zlib from base instead of bundled one
-
 ICONV_USES=		iconv:translit
 ICONV_CONFIGURE_ENABLE=	iconv iconv-open
+
+IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
+IDN_CONFIGURE_ENABLE=	idn
 
 POPT_PORT_LIB_DEPENDS=		libpopt.so:devel/popt
 POPT_PORT_CONFIGURE_OFF=	--with-included-popt
