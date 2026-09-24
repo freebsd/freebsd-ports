@@ -564,6 +564,7 @@
     SUBDIR += linux-rl9-graphene
     SUBDIR += linux-rl9-graphite2
     SUBDIR += linux-rl9-imageformats-libs
+    SUBDIR += linux-rl9-lcms2
     SUBDIR += linux-rl9-libdrm
     SUBDIR += linux-rl9-libepoxy
     SUBDIR += linux-rl9-libglvnd
