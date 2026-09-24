@@ -1,6 +1,5 @@
 commit def8534bc849e5ede3f8afe6871a21335075696e
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
-Date:   Sat Sep 5 16:40:59 2026 +0200
 
     ANGLEShader components for FreeBSD
 
