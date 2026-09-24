@@ -28,7 +28,9 @@ BUILD_DEPENDS=	ksh93:shells/ksh			\
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
 		onsgmls:textproc/opensp \
 		xrdb:x11/xrdb \
-		sessreg:x11/sessreg
+		sessreg:x11/sessreg \
+		autoconf>=2.71:devel/autoconf \
+		autoconf-archive>=0:devel/autoconf-archive
 RUN_DEPENDS=	ksh93:shells/ksh			\
 		${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig \
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
@@ -38,7 +40,7 @@ RUN_DEPENDS=	ksh93:shells/ksh			\
 LIB_DEPENDS=	liblmdb.so:databases/lmdb0
 
 USES=		autoreconf:build iconv gmake jpeg libtool motif perl5 \
-		shebangfix tcl:86 xorg
+		pkgconfig shebangfix tcl:86 xorg
 SHEBANG_LANG=	pl
 SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
 		programs/dtdocbook/tcl/docbook.tcl
