@@ -206,6 +206,7 @@ _linux_rl9_vmaf=			linux-rl9-vmaf>0:multimedia/linux-rl9-vmaf
 _linux_rl9_vte291=			linux-rl9-vte291>0:x11-toolkits/linux-rl9-vte291
 _linux_rl9_vulkan=			linux-rl9-vulkan>0:graphics/linux-rl9-vulkan
 _linux_${linux_ARGS}_wayland=		linux-${linux_ARGS}-wayland>0:graphics/linux-${linux_ARGS}-wayland
+_linux_rl9_webkit2gtk3-jsc=		linux-rl9-webkit2gtk3-jsc>0:www/linux-rl9-webkit2gtk3-jsc
 _linux_rl9_wget=			linux-rl9-wget>0:ftp/linux-rl9-wget
 _linux_${linux_ARGS}_xcb-util=		linux-${linux_ARGS}-xcb-util>0:x11/linux-${linux_ARGS}-xcb-util
 _linux_${linux_ARGS}_xorglibs=		linux-${linux_ARGS}-xorg-libs>=7.7:x11/linux-${linux_ARGS}-xorg-libs
