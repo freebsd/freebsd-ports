@@ -115,7 +115,7 @@ lib/cmake/openbabel3/OpenBabel3_EXPORTS-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/openbabel3/OpenBabel3_EXPORTS.cmake
 lib/libinchi.so
 lib/libinchi.so.1
-lib/libinchi.so.1.07.4
+lib/libinchi.so.1.07.5
 lib/libopenbabel.so
 lib/libopenbabel.so.8
 lib/libopenbabel.so.8.0.0

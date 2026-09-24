@@ -1,6 +1,6 @@
 PORTNAME=	openbabel
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	3-2-0
+DISTVERSION=	3-2-1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -62,6 +62,6 @@ post-install-PYTHON-on:
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
 
-# tests as of 3.2.0: 100% tests passed, 0 tests failed out of 337
+# tests as of 3.2.1: 100% tests passed, 0 tests failed out of 350
 
 .include <bsd.port.post.mk>
