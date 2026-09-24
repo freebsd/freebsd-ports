@@ -1,5 +1,5 @@
-TIMESTAMP = 1789416292
-SHA256 (go/net-p2p_go-ethereum/go-ethereum-v1.17.5/v1.17.5.mod) = 0ff667ac1ca62c925d99b81f5198198805c4cbf26741c4825897cc318ae29aff
-SIZE (go/net-p2p_go-ethereum/go-ethereum-v1.17.5/v1.17.5.mod) = 8430
-SHA256 (go/net-p2p_go-ethereum/go-ethereum-v1.17.5/v1.17.5.zip) = 79c3193e151ed261293f32b6910ed2e3869beb328ab98cefd4c559550be617a1
-SIZE (go/net-p2p_go-ethereum/go-ethereum-v1.17.5/v1.17.5.zip) = 23460456
+TIMESTAMP = 1790175980
+SHA256 (go/net-p2p_go-ethereum/go-ethereum-v1.17.6/v1.17.6.mod) = df118216aaddb19dc1c98c0c2df5e4673b290a8a4d034df5cf67d6a3b2ed5c7e
+SIZE (go/net-p2p_go-ethereum/go-ethereum-v1.17.6/v1.17.6.mod) = 8420
+SHA256 (go/net-p2p_go-ethereum/go-ethereum-v1.17.6/v1.17.6.zip) = 65f1a05f2bd2a8d423332947c72abb11ef80003142ad3c3fbde1591e68b8843d
+SIZE (go/net-p2p_go-ethereum/go-ethereum-v1.17.6/v1.17.6.zip) = 24229850
