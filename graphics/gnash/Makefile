@@ -42,6 +42,7 @@ GH_PROJECT=	gnash
 GH_TAGNAME=	583ccbc1
 GNU_CONFIGURE=	yes
 PORTSCOUT=	limit:^0\.
+BROKEN=		regression with boost-1.91
 
 SYSCONFIGDIR=	${PREFIX}/etc
 
