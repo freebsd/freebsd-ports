@@ -1,11 +1,15 @@
 PORTNAME=	crowdsec-firewall-bouncer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.36
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	manuel@crowdsec.net
 COMMENT=	CrowdSec bouncer written in golang for firewalls
 WWW=		https://github.com/crowdsecurity/cs-firewall-bouncer
+
+PATCH_SITES=	https://github.com/crowdsecurity/cs-firewall-bouncer/commit/
+PATCHFILES=	20bd97a219259190229261b601e9f722178ac40d.patch:-p1
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
