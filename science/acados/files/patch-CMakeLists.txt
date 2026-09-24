@@ -1,4 +1,8 @@
---- CMakeLists.txt.orig	2025-01-12 20:38:45 UTC
+-- Do not build bundled external libraries (blasfeo, hpipm, etc.).
+-- FreeBSD uses the system packages from math/blasfeo and math/hpipm.
+-- See also: https://github.com/acados/acados/issues/1413
+
+--- CMakeLists.txt.orig	2024-12-02 12:07:03 UTC
 +++ CMakeLists.txt
 @@ -267,7 +267,7 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/interfaces/acad
  add_subdirectory(${PROJECT_SOURCE_DIR}/interfaces/acados_c)
