@@ -1,5 +1,5 @@
 PORTNAME=	homepage
-DISTVERSION=	2.1.2
+DISTVERSION=	2.4.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
