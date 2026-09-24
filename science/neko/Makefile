@@ -11,6 +11,8 @@ WWW=		https://neko.cfd/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	fails to compile: Type mismatch in argument 's' at (1); passed INTEGER(8) to INTEGER(4)
+
 LIB_DEPENDS=	libjsonfortran.so:devel/json-fortran \
 		libopenblas.so:math/openblas
 TEST_DEPENDS=	bash:shells/bash \
