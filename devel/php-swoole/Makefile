@@ -1,6 +1,6 @@
 PORTNAME=	swoole
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2.2
+DISTVERSION=	6.2.3
 PORTREVISION=	0
 CATEGORIES=	devel net
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -47,7 +47,8 @@ SOCKETS_DESC=		Use native php sockets extension
 SOCKETS_USE=		PHP=sockets:build
 SQLITE_CONFIGURE_OFF=	--disable-swoole-sqlite
 SQLITE_CONFIGURE_ON=	--enable-swoole-sqlite
-SQLITE_USE=		PHP=sqlite3
+SQLITE_USE=		PHP=pdo:build
+SQLITE_USES=		sqlite
 SSH2_CONFIGURE_ON=	--with-swoole-ssh2
 SSH2_DESC=		Enable SSH2 support
 SSH2_LIB_DEPENDS=	libssh2.so:security/libssh2
