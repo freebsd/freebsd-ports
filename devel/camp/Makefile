@@ -1,6 +1,6 @@
 PORTNAME=	camp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.07.0
+DISTVERSION=	2026.07.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/LLNL/camp
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++17-lang
+USES=		cmake:testing compiler:c++20-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
@@ -20,6 +20,6 @@ CMAKE_OFF=	CAMP_ENABLE_TESTS
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	CAMP_ENABLE_TESTS
 
-# tests as of 2026.07.0: 100% tests passed, 0 tests failed out of 109
+# tests as of 2026.07.1: 100% tests passed, 0 tests failed out of 109
 
 .include <bsd.port.mk>
