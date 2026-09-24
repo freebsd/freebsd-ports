@@ -1,3 +1,36 @@
+  <vuln vid="bba381b5-b842-11f1-8205-107c614c014e">
+    <topic>p5-Image-ExifTool -- code injection via crafted media</topic>
+    <affects>
+	<package>
+	  <name>p5-Image-ExifTool</name>
+	  <name>p5-Image-ExifTool-devel</name>
+	  <range><lt>13.54</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://github.com/advisories/GHSA-qjrf-c4wp-pgxx">
+	  <p>ExifTool versions up to 13.53 contain a code injection flaw in
+	  the Process_mrld function of lib/Image/ExifTool/GM.pm, reached
+	  while parsing JPEG, QuickTime, MOV and MP4 files.  When exiftool
+	  is invoked with the -ee (extract embedded) option on a crafted
+	  file, a local attacker with low privileges can inject code that
+	  runs in the Perl runtime context of the exiftool process.</p>
+	  <p>The issue is fixed in ExifTool 13.54.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-7580</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-7580</url>
+      <url>https://github.com/advisories/GHSA-qjrf-c4wp-pgxx</url>
+    </references>
+    <dates>
+      <discovery>2026-05-01</discovery>
+      <entry>2026-09-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="050e54b4-b81e-11f1-b540-589cfc10a551">
     <topic>podman -- vulnerabilities</topic>
     <affects>
