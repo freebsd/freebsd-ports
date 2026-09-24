@@ -1,6 +1,6 @@
 PORTNAME=	qtpass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	brouwer@annejan.com
@@ -26,6 +26,6 @@ PLIST_FILES=	bin/qtpass \
 		share/applications/qtpass.desktop \
 		share/icons/hicolor/512x512/apps/qtpass-icon.png \
 		share/icons/hicolor/scalable/apps/qtpass-icon.svg \
-		share/metainfo/qtpass.appdata.xml
+		share/metainfo/org.qtpass.QtPass.metainfo.xml
 
 .include <bsd.port.mk>
