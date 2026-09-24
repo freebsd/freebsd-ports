@@ -230,16 +230,6 @@ include/postgresql/server/catalog/pg_policy.h
 include/postgresql/server/catalog/pg_policy_d.h
 include/postgresql/server/catalog/pg_proc.h
 include/postgresql/server/catalog/pg_proc_d.h
-include/postgresql/server/catalog/pg_propgraph_element.h
-include/postgresql/server/catalog/pg_propgraph_element_d.h
-include/postgresql/server/catalog/pg_propgraph_element_label.h
-include/postgresql/server/catalog/pg_propgraph_element_label_d.h
-include/postgresql/server/catalog/pg_propgraph_label.h
-include/postgresql/server/catalog/pg_propgraph_label_d.h
-include/postgresql/server/catalog/pg_propgraph_label_property.h
-include/postgresql/server/catalog/pg_propgraph_label_property_d.h
-include/postgresql/server/catalog/pg_propgraph_property.h
-include/postgresql/server/catalog/pg_propgraph_property_d.h
 include/postgresql/server/catalog/pg_publication.h
 include/postgresql/server/catalog/pg_publication_d.h
 include/postgresql/server/catalog/pg_publication_namespace.h
@@ -325,7 +315,6 @@ include/postgresql/server/commands/portalcmds.h
 include/postgresql/server/commands/prepare.h
 include/postgresql/server/commands/proclang.h
 include/postgresql/server/commands/progress.h
-include/postgresql/server/commands/propgraphcmds.h
 include/postgresql/server/commands/publicationcmds.h
 include/postgresql/server/commands/repack.h
 include/postgresql/server/commands/repack_internal.h
@@ -581,7 +570,6 @@ include/postgresql/server/parser/parse_cte.h
 include/postgresql/server/parser/parse_enr.h
 include/postgresql/server/parser/parse_expr.h
 include/postgresql/server/parser/parse_func.h
-include/postgresql/server/parser/parse_graphtable.h
 include/postgresql/server/parser/parse_merge.h
 include/postgresql/server/parser/parse_node.h
 include/postgresql/server/parser/parse_oper.h
@@ -664,7 +652,6 @@ include/postgresql/server/postmaster/auxprocess.h
 include/postgresql/server/postmaster/bgworker.h
 include/postgresql/server/postmaster/bgworker_internals.h
 include/postgresql/server/postmaster/bgwriter.h
-include/postgresql/server/postmaster/datachecksum_state.h
 include/postgresql/server/postmaster/fork_process.h
 include/postgresql/server/postmaster/interrupt.h
 include/postgresql/server/postmaster/pgarch.h
@@ -703,7 +690,6 @@ include/postgresql/server/replication/walsender_private.h
 include/postgresql/server/replication/worker_internal.h
 include/postgresql/server/rewrite/prs2lock.h
 include/postgresql/server/rewrite/rewriteDefine.h
-include/postgresql/server/rewrite/rewriteGraphTable.h
 include/postgresql/server/rewrite/rewriteHandler.h
 include/postgresql/server/rewrite/rewriteManip.h
 include/postgresql/server/rewrite/rewriteRemove.h
@@ -1127,7 +1113,6 @@ share/man/man7/ALTER_OPERATOR_CLASS.7.gz
 share/man/man7/ALTER_OPERATOR_FAMILY.7.gz
 share/man/man7/ALTER_POLICY.7.gz
 share/man/man7/ALTER_PROCEDURE.7.gz
-share/man/man7/ALTER_PROPERTY_GRAPH.7.gz
 share/man/man7/ALTER_PUBLICATION.7.gz
 share/man/man7/ALTER_ROLE.7.gz
 share/man/man7/ALTER_ROUTINE.7.gz
@@ -1180,7 +1165,6 @@ share/man/man7/CREATE_OPERATOR_CLASS.7.gz
 share/man/man7/CREATE_OPERATOR_FAMILY.7.gz
 share/man/man7/CREATE_POLICY.7.gz
 share/man/man7/CREATE_PROCEDURE.7.gz
-share/man/man7/CREATE_PROPERTY_GRAPH.7.gz
 share/man/man7/CREATE_PUBLICATION.7.gz
 share/man/man7/CREATE_ROLE.7.gz
 share/man/man7/CREATE_RULE.7.gz
@@ -1229,7 +1213,6 @@ share/man/man7/DROP_OPERATOR_FAMILY.7.gz
 share/man/man7/DROP_OWNED.7.gz
 share/man/man7/DROP_POLICY.7.gz
 share/man/man7/DROP_PROCEDURE.7.gz
-share/man/man7/DROP_PROPERTY_GRAPH.7.gz
 share/man/man7/DROP_PUBLICATION.7.gz
 share/man/man7/DROP_ROLE.7.gz
 share/man/man7/DROP_ROUTINE.7.gz
@@ -1293,7 +1276,7 @@ share/man/man7/UNLISTEN.7.gz
 share/man/man7/UPDATE.7.gz
 share/man/man7/VACUUM.7.gz
 share/man/man7/VALUES.7.gz
-share/man/man7/WAIT_FOR.7.gz
+share/man/man7/WAIT.7.gz
 share/man/man7/WITH.7.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
@@ -1383,6 +1366,7 @@ share/man/man7/WITH.7.gz
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_amcheck-19.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
