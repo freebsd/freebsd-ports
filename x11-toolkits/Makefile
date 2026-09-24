@@ -112,6 +112,7 @@
     SUBDIR += linux-rl9-qt5-qtdeclarative
     SUBDIR += linux-rl9-qt5-qtquickcontrols
     SUBDIR += linux-rl9-tk86
+    SUBDIR += linux-rl9-vte291
     SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += mygui

@@ -203,6 +203,7 @@ _linux_rl9_tk86=			linux-rl9-tk86>0:x11-toolkits/linux-rl9-tk86
 _linux_${linux_ARGS}_trousers=		linux-${linux_ARGS}-trousers>0:security/linux-${linux_ARGS}-trousers
 _linux_c7_userspace-rcu=		linux-c7-userspace-rcu>0:sysutils/linux-c7-userspace-rcu
 _linux_rl9_vmaf=			linux-rl9-vmaf>0:multimedia/linux-rl9-vmaf
+_linux_rl9_vte291=			linux-rl9-vte291>0:x11-toolkits/linux-rl9-vte291
 _linux_rl9_vulkan=			linux-rl9-vulkan>0:graphics/linux-rl9-vulkan
 _linux_${linux_ARGS}_wayland=		linux-${linux_ARGS}-wayland>0:graphics/linux-${linux_ARGS}-wayland
 _linux_rl9_wget=			linux-rl9-wget>0:ftp/linux-rl9-wget
