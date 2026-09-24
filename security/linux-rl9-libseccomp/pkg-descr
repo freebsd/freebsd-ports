@@ -1,0 +1,2 @@
+The libseccomp library provides an easy to use, platform independent
+interface to the Linux kernel's syscall filtering mechanism.

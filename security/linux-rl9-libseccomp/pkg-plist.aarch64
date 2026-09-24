@@ -1,0 +1,7 @@
+usr/lib64/libseccomp.so.2
+usr/lib64/libseccomp.so.2.5.2
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+usr/share/licenses/libseccomp/LICENSE

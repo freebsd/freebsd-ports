@@ -1,0 +1,9 @@
+TIMESTAMP = 1790178232
+SHA256 (rocky/l/libseccomp-2.5.2-2.el9.aarch64.rpm) = d3f91fdbe169fe544c24564452f63fe1c6c5fb67bb686146345850223ea1f7ec
+SIZE (rocky/l/libseccomp-2.5.2-2.el9.aarch64.rpm) = 72346
+SHA256 (rocky/l/libseccomp-2.5.2-2.el9.i686.rpm) = 87c816de51e555987a92e8209c81517b9959953ef2f84eb7e612bee10e537dae
+SIZE (rocky/l/libseccomp-2.5.2-2.el9.i686.rpm) = 73927
+SHA256 (rocky/l/libseccomp-2.5.2-2.el9.x86_64.rpm) = c5043228059ffb4e2ef855671909b22bd42784907979a27d25ca9f5163408ad1
+SIZE (rocky/l/libseccomp-2.5.2-2.el9.x86_64.rpm) = 72270
+SHA256 (rocky/l/libseccomp-2.5.2-2.el9.src.rpm) = 85dc7792f53db372bb11c9f179f9fcc752d65050d9d21e3477b3eb86ecff6ed5
+SIZE (rocky/l/libseccomp-2.5.2-2.el9.src.rpm) = 651467
