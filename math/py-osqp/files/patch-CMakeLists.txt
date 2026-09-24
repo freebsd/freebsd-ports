@@ -1,11 +1,9 @@
 -- Use locally provided OSQP/QDLDL source trees in ports/poudriere builds.
 -- Upstream fetches these from GitHub at build time, but network access is
 -- unavailable in poudriere. Keep GitHub fetch as fallback for non-ports use.
---- CMakeLists.txt.orig	2026-04-30 20:53:13 UTC
+--- CMakeLists.txt.orig	2022-11-09 12:37:21 UTC
 +++ CMakeLists.txt
-@@ -26,10 +26,17 @@ set(PYTHON_INCLUDE_DIRS ${Python_INCLUDE
- 
- message(STATUS "Fetching/configuring OSQP")
+@@ -58,10 +58,17 @@ message(STATUS "Fetching/configuring OSQP")
  list(APPEND CMAKE_MESSAGE_INDENT "  ")
 -FetchContent_Declare(
 -  osqp
@@ -26,3 +24,4 @@
 +endif()
  list(POP_BACK CMAKE_MESSAGE_INDENT)
  FetchContent_MakeAvailable(osqp)
+ 
