@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: rauthy
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# rauthy_enable (bool):         Enable rauthy. (default=NO)
+# rauthy_config (str):          Configuration file.
+#                               (default=%%ETCDIR%%/rauthy.toml)
+
+. /etc/rc.subr
+
+name=rauthy
+rcvar=rauthy_enable
+
+load_rc_config $name
+
+: ${rauthy_enable:="NO"}
+: ${rauthy_config:="%%ETCDIR%%/rauthy.toml"}
+
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+logfile="/var/log/${name}/${name}.log"
+command_args="-u %%USER%% -o ${logfile} -p ${pidfile} -T ${name} %%PREFIX%%/bin/${name} serve -c ${rauthy_config}"
+rauthy_chdir="/var/db/${name}"
+procname=%%PREFIX%%/bin/${name}
+
+start_precmd="rauthy_precmd"
+
+rauthy_precmd()
+{
+	install -d -o %%USER%% -g %%GROUP%% /var/db/${name}
+	install -d -o %%USER%% -g %%GROUP%% /var/log/${name}
+}
+
+run_rc_command "$1"

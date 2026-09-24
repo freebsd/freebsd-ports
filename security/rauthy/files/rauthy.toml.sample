@@ -1,0 +1,75 @@
+# Rauthy - OpenID Connect Identity & Access Management
+# Minimal production configuration
+# Full reference: https://sebadob.github.io/rauthy/config/config.html
+
+[bootstrap]
+# The email of the default admin account.
+# default: 'admin@localhost'
+admin_email = "admin@localhost"
+
+[cluster]
+# The node id must exist in the nodes and there must always be
+# at least a node with ID 1.
+# default: 0 (invalid)
+node_id = 1
+
+# All cluster member nodes. For a single instance deployment,
+# "1 localhost:8100 localhost:8200" will work just fine.
+# Format: "id addr_raft addr_api"
+nodes = [
+    "1 localhost:8100 localhost:8200",
+]
+
+# Secrets for Raft internal authentication as well as for the API.
+# These must be at least 16 characters long. Generate unique values!
+# CHANGE THESE BEFORE FIRST START!
+secret_raft = "CHANGE_ME_RAFT_SECRET_16_CHARS"
+secret_api = "CHANGE_ME_API_SECRET_16_CHARS"
+
+[email]
+# SMTP configuration for sending emails (password reset, etc.)
+smtp_url = "localhost"
+#smtp_port = 587
+smtp_username = ""
+smtp_password = ""
+smtp_from = "Rauthy <rauthy@localhost>"
+
+[encryption]
+# Encryption keys for database secrets, cookies, etc.
+# Format: "key_id/base64_encoded_32_byte_key"
+# Generate with: openssl rand -base64 32
+# CHANGE THIS BEFORE FIRST START!
+keys = ["bsd01/Q0hBTkdFX01FX0JFRk9SRV9GSVJTVF9TVEFSVDE="]
+
+# Which key ID from the keys list to use for new encryptions.
+key_active = "bsd01"
+
+[events]
+# Email address for event notifications.
+email = "admin@localhost"
+
+[server]
+# Listen scheme: http | https | http_https | unix_http | unix_https
+scheme = "http"
+
+# The public URL of the deployment.
+# Must match HTTP Origin header. Include non-standard port if used.
+pub_url = "localhost:8080"
+
+# Set to true when running behind a reverse proxy.
+proxy_mode = false
+
+# Trusted proxy CIDRs (required if proxy_mode = true)
+#trusted_proxies = ["192.168.1.0/24"]
+
+# Data directory for Hiqlite database
+# default: "data/"
+data_dir = "/var/db/rauthy"
+
+[webauthn]
+# Relaying Party ID - effective domain name.
+# CAUTION: Changing this breaks registered passkeys!
+rp_id = "localhost"
+
+# Must ALWAYS include the port number.
+rp_origin = "http://localhost:8080"
