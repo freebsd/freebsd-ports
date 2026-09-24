@@ -1,5 +1,14 @@
 --- lib/functions.php.orig	2024-01-10 22:23:54 UTC
 +++ lib/functions.php
+@@ -145,7 +145,7 @@ function app_error_handler($errno,$errstr,$file,$linen
+ 	$errtype = '';
+ 
+ 	switch ($errno) {
+-		case E_STRICT: $errtype = 'E_STRICT'; break;
++		case E_DEPRECATED: $errtype = 'E_DEPRECATED'; break;
+ 		case E_ERROR: $errtype = 'E_ERROR'; break;
+ 		case E_WARNING: $errtype = 'E_WARNING'; break;
+ 		case E_PARSE: $errtype = 'E_PARSE'; break;
 @@ -359,7 +359,7 @@ function memory_str_to_int($value) {
  	$value = trim(strtolower($value));
  	if (intval($value) > 0 && preg_match('/^(\d+)([kmg])?$/', $value, $match, PREG_UNMATCHED_AS_NULL)) {
