@@ -457,6 +457,7 @@
     SUBDIR += linux-c7-libcroco
     SUBDIR += linux-c7-libxml2
     SUBDIR += linux-c7-libxslt
+    SUBDIR += linux-rl9-enchant2
     SUBDIR += linux-rl9-expat
     SUBDIR += linux-rl9-hyphen
     SUBDIR += linux-rl9-libstemmer

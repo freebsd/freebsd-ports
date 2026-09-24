@@ -75,6 +75,7 @@ _linux_c7_dosfstools=			linux-c7-dosfstools>0:filesystems/linux-c7-dosfstools
 _linux_${linux_ARGS}_dri=		linux-${linux_ARGS}-dri>0:graphics/linux-${linux_ARGS}-dri
 _linux_${linux_ARGS}_elfutils-libelf=	linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-elfutils-libelf
 _linux_${linux_ARGS}_elfutils-libs=	linux-${linux_ARGS}-elfutils-libs>0:devel/linux-${linux_ARGS}-elfutils-libs
+_linux_rl9_enchant2=			linux-rl9-enchant2>0:textproc/linux-rl9-enchant2
 _linux_c7_expat-devel=			linux-c7-expat-devel>0:textproc/linux-c7-expat-devel
 _linux_${linux_ARGS}_expat=		linux-${linux_ARGS}-expat>0:textproc/linux-${linux_ARGS}-expat
 _linux_rl9_ffmpeg-libs=			linux-rl9-ffmpeg-libs>0:multimedia/linux-rl9-ffmpeg
