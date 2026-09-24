@@ -1,11 +1,17 @@
---- NeuralRack/makefile.orig	2025-05-28 06:33:50 UTC
+-- FreeBSD port patch for NeuralRack/makefile:
+-- 1. Translate amd64 to x86_64 for UNAME_M (FreeBSD uses amd64, the build system expects x86_64)
+-- 2. Use DESTDIR check instead of root user check for install directory selection
+-- 3. Use PREFIX for install directories instead of hardcoded /usr paths
+-- 4. Comment out root-only install guard for standalone binary
+
+--- NeuralRack/makefile.orig	2026-09-23 18:39:31 UTC
 +++ NeuralRack/makefile
-@@ -2,16 +2,16 @@
+@@ -2,17 +2,17 @@
  	# check on which OS we build
  	UNAME_S := $(shell uname -s)
  	# check which architecture we build on
 -	UNAME_M := $(shell uname -m)
-+	UNAME_M := $(shell uname -m | sed 's/amd64/x86_64/)
++	UNAME_M := $(shell uname -m | sed 's/amd64/x86_64/')
  	# check which architecture we build for
  	TARGET_ARCH = UNKNOWN
  	# check if user is root
@@ -15,27 +21,33 @@
 -	EXE_INSTALL_DIR = /usr/bin
 -	CLAP_INSTAL_DIR = /usr/lib/clap
 -	VST2_INSTAL_DIR = /usr/lib/vst
+-	VST3_INSTALL_DIR = /usr/lib/vst3
 +	ifneq ($(DESTDIR),)
 +	INSTALL_DIR = $(PREFIX)/lib/lv2
 +	EXE_INSTALL_DIR = $(PREFIX)/bin
 +	CLAP_INSTAL_DIR = $(PREFIX)/lib/clap
 +	VST2_INSTAL_DIR = $(PREFIX)/lib/vst
++	VST3_INSTALL_DIR = $(PREFIX)/lib/vst3
  	else 
  	INSTALL_DIR = ~/.lv2
- 	EXE_INSTALL_DIR = ~/bin
-@@ -484,13 +484,12 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
- 	$(QUIET)mkdir -p $(DESTDIR)$(EXE_INSTALL_DIR)/
- 	$(QUIET)cp -r ../bin/$(EXEC_NAME)$(EXE_EXT) $(DESTDIR)$(EXE_INSTALL_DIR)/$(EXEC_NAME)$(EXE_EXT)
- 
+ 	#EXE_INSTALL_DIR = ~/bin
+@@ -528,7 +528,7 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
+ 	@$(B_ECHO) "$(BUNDLE) skipped$(reset)"
+ endif
+ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
 -  ifeq ($(user),root)
 +  #ifeq ($(user),root)
- 	$(QUIET)mkdir -p $(DESTDIR)$(DESKAPPS_DIR)
+ 	@$(B_ECHO) "Install  $(EXEC_NAME)$(EXE_EXT) to $(DESTDIR)$(EXE_INSTALL_DIR)/$(reset)"
+ 	$(QUIET)mkdir -p $(DESTDIR)$(EXE_INSTALL_DIR)/
+ 	$(QUIET)cp -r ../bin/$(EXEC_NAME)$(EXE_EXT) $(DESTDIR)$(EXE_INSTALL_DIR)/$(EXEC_NAME)$(EXE_EXT)
+@@ -536,9 +536,8 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
  	$(QUIET)cp $(STANDALONE_DIR)$(NAME).desktop $(DESTDIR)$(DESKAPPS_DIR)$(NAME).desktop
  	$(QUIET)mkdir -p $(DESTDIR)$(PIXMAPS_DIR)
  	$(QUIET)cp $(STANDALONE_DIR)$(NAME).svg $(DESTDIR)$(PIXMAPS_DIR)$(NAME).svg 
 -	$(QUIET)update-desktop-database || true
+ 	@$(B_ECHO) ". ., done$(reset)"
 -  endif
 +  #endif
- 	@$(B_ECHO) ". ., done$(reset)"
  else
  	@$(B_ECHO) "$(EXEC_NAME)$(EXE_EXT) standalone skipped$(reset)"
+ endif

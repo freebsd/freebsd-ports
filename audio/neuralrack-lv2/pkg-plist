@@ -5,5 +5,6 @@ lib/lv2/Neuralrack.lv2/Neuralrack.so
 lib/lv2/Neuralrack.lv2/Neuralrack_ui.so
 lib/lv2/Neuralrack.lv2/manifest.ttl
 lib/vst/NeuralRackvst.so
+lib/vst3/NeuralRackVST3.vst3/Contents/x86_64-freebsd/NeuralRackVST3.so
 share/applications/NeuralRack.desktop
 share/pixmaps/NeuralRack.svg
