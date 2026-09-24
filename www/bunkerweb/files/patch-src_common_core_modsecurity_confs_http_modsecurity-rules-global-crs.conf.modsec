@@ -1,0 +1,53 @@
+--- src/common/core/modsecurity/confs/http/modsecurity-rules-global-crs.conf.modsec.orig	2026-09-21 08:05:39 UTC
++++ src/common/core/modsecurity/confs/http/modsecurity-rules-global-crs.conf.modsec
+@@ -102,15 +102,15 @@
+   {% if USE_MODSECURITY_CRS == "yes" -%}
+ # include OWASP CRS configurations
+     {% if effective_crs_version == "3" %}
+-include /usr/share/bunkerweb/core/modsecurity/files/crs-setup-v3.conf
++include /usr/local/share/bunkerweb/common/core/modsecurity/files/crs-setup-v3.conf
+     {% else %}
+-include /usr/share/bunkerweb/core/modsecurity/files/crs-setup-v4.conf
++include /usr/local/share/bunkerweb/common/core/modsecurity/files/crs-setup-v4.conf
+     {% endif %}
+ 
+     {% if USE_MODSECURITY_CRS_PLUGINS == "yes" and effective_crs_version != "3" -%}
+ # custom CRS plugins configurations before loading plugins
+-      {% if is_custom_conf("/etc/bunkerweb/configs/crs-plugins-before") %}
+-include /etc/bunkerweb/configs/crs-plugins-before/*.conf
++      {% if is_custom_conf("/usr/local/etc/bunkerweb/configs/crs-plugins-before") %}
++include /usr/local/etc/bunkerweb/configs/crs-plugins-before/*.conf
+       {% endif %}
+       {% if is_custom_conf("/etc/nginx/crs-plugins-before") %}
+ include /etc/nginx/crs-plugins-before/*.conf
+@@ -118,8 +118,8 @@
+     {% endif %}
+ 
+ # custom CRS configurations before loading rules (e.g. exclusions)
+-    {% if is_custom_conf("/etc/bunkerweb/configs/modsec-crs") %}
+-include /etc/bunkerweb/configs/modsec-crs/*.conf
++    {% if is_custom_conf("/usr/local/etc/bunkerweb/configs/modsec-crs") %}
++include /usr/local/etc/bunkerweb/configs/modsec-crs/*.conf
+     {% endif %}
+     {% if is_custom_conf("/etc/nginx/modsec-crs") %}
+ include /etc/nginx/modsec-crs/*.conf
+@@ -131,15 +131,15 @@
+ 
+ # include OWASP CRS rules
+     {% if effective_crs_version == "3" %}
+-include /usr/share/bunkerweb/core/modsecurity/files/coreruleset-v3/rules/*.conf
++include /usr/local/share/bunkerweb/common/core/modsecurity/files/coreruleset-v3/rules/*.conf
+     {% else %}
+-include /usr/share/bunkerweb/core/modsecurity/files/coreruleset-v4/rules/*.conf
++include /usr/local/share/bunkerweb/common/core/modsecurity/files/coreruleset-v4/rules/*.conf
+     {% endif %}
+ 
+     {% if USE_MODSECURITY_CRS_PLUGINS == "yes" and effective_crs_version != "3" %}
+ # custom CRS plugins configurations after loading plugins
+-      {%- if is_custom_conf("/etc/bunkerweb/configs/crs-plugins-after") %}
+-include /etc/bunkerweb/configs/crs-plugins-after/*.conf
++      {%- if is_custom_conf("/usr/local/etc/bunkerweb/configs/crs-plugins-after") %}
++include /usr/local/etc/bunkerweb/configs/crs-plugins-after/*.conf
+       {%- endif %}
+       {% if is_custom_conf("/etc/nginx/crs-plugins-after") %}
+ include /etc/nginx/crs-plugins-after/*.conf
