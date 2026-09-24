@@ -18,6 +18,7 @@ include/hpipm_d_dense_qp_dim.h
 include/hpipm_d_dense_qp_ipm.h
 include/hpipm_d_dense_qp_kkt.h
 include/hpipm_d_dense_qp_res.h
+include/hpipm_d_dense_qp_seed.h
 include/hpipm_d_dense_qp_sol.h
 include/hpipm_d_dense_qp_utils.h
 include/hpipm_d_ocp_qcqp.h
@@ -33,6 +34,7 @@ include/hpipm_d_ocp_qp_ipm.h
 include/hpipm_d_ocp_qp_kkt.h
 include/hpipm_d_ocp_qp_red.h
 include/hpipm_d_ocp_qp_res.h
+include/hpipm_d_ocp_qp_seed.h
 include/hpipm_d_ocp_qp_sol.h
 include/hpipm_d_ocp_qp_solver.h
 include/hpipm_d_ocp_qp_utils.h
@@ -75,6 +77,7 @@ include/hpipm_s_dense_qp_dim.h
 include/hpipm_s_dense_qp_ipm.h
 include/hpipm_s_dense_qp_kkt.h
 include/hpipm_s_dense_qp_res.h
+include/hpipm_s_dense_qp_seed.h
 include/hpipm_s_dense_qp_sol.h
 include/hpipm_s_dense_qp_utils.h
 include/hpipm_s_ocp_qcqp.h
@@ -90,6 +93,7 @@ include/hpipm_s_ocp_qp_ipm.h
 include/hpipm_s_ocp_qp_kkt.h
 include/hpipm_s_ocp_qp_red.h
 include/hpipm_s_ocp_qp_res.h
+include/hpipm_s_ocp_qp_seed.h
 include/hpipm_s_ocp_qp_sol.h
 include/hpipm_s_ocp_qp_utils.h
 include/hpipm_s_part_cond.h

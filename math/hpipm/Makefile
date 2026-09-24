@@ -1,7 +1,5 @@
 PORTNAME=	hpipm
-DISTVERSION=	0.1.3-225 # new release is promised here: https://github.com/giaf/hpipm/issues/170
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g79008aa
+DISTVERSION=	0.1.4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,6 +34,6 @@ post-test: # run tests
 	@cd ${TEST_WRKSRC} && test_problems/${t}
 .endfor
 
-# testcase test_problems/d_dense_qp crashes, see https://github.com/giaf/hpipm/issues/175
+# tests as of 0.1.4: all 5 test_problems passed
 
 .include <bsd.port.post.mk>
