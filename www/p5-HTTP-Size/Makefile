@@ -1,7 +1,8 @@
 PORTNAME=	HTTP-Size
-PORTVERSION=	1.153
+DISTVERSION=	1.153
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:BDFOY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -11,8 +12,7 @@ WWW=		https://metacpan.org/release/HTTP-Size
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-HTML-SimpleLinkExtor>=0:www/p5-HTML-SimpleLinkExtor \
+BUILD_RUN_DEPENDS=	p5-HTML-SimpleLinkExtor>=0:www/p5-HTML-SimpleLinkExtor \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
