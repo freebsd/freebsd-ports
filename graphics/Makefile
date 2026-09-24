@@ -275,7 +275,6 @@
     SUBDIR += gimp-resynthesizer
     SUBDIR += gimp3-app
     SUBDIR += gkrellkam2
-    SUBDIR += glad
     SUBDIR += glaxnimate
     SUBDIR += glbinding
     SUBDIR += gle
@@ -953,6 +952,7 @@
     SUBDIR += py-geosnap
     SUBDIR += py-giddy
     SUBDIR += py-gizeh
+    SUBDIR += py-glad2
     SUBDIR += py-glcontext
     SUBDIR += py-glfw
     SUBDIR += py-glooey
