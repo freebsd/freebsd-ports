@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2026-08-26 08:36:23 UTC
++++ Makefile.in
+@@ -391,7 +391,7 @@ ACLOCAL_AMFLAGS = -I m4
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = 1.10 foreign subdir-objects
+ ACLOCAL_AMFLAGS = -I m4
+-SUBDIRS = build-aux compat doc examples m4 src tests
++SUBDIRS = build-aux compat doc m4 src tests
+ dist_doc_DATA = COPYING NEWS README.md
+ EXTRA_DIST = \
+	autogen.sh \
+@@ -824,7 +824,7 @@ info-am:
+
+ info-am:
+
+-install-data-am: install-dist_docDATA
++install-data-am:
+
+ install-dvi: install-dvi-recursive
+
