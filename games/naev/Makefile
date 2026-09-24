@@ -26,11 +26,13 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libcmark.so:textproc/cmark \
 		libcolamd.so:math/suitesparse-colamd \
 		libcxsparse.so:math/suitesparse-cxsparse \
+		libdav1d.so:multimedia/dav1d \
 		libenet.so:net/enet \
 		libfreetype.so:print/freetype2 \
 		libglpk.so:math/glpk \
 		libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
+		libopus.so:audio/opus \
 		libpcre2-8.so:devel/pcre2 \
 		libphysfs.so:devel/physfs \
 		libpng.so:graphics/png \
