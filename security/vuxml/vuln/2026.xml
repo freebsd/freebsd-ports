@@ -1,3 +1,52 @@
+  <vuln vid="3f11e437-b7cd-11f1-a883-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.4.0</ge><lt>19.4.1</lt></range>
+	<range><ge>19.3.0</ge><lt>19.3.3</lt></range>
+	<range><ge>13.11.0</ge><lt>19.2.7</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/?nav=19.4.1">
+	  <p>Double Free issue in Regular Expression Parser impacts GitLab CE/EE</p>
+	  <p>Integer Overflow issue in Regular Expression Compiler impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in merge request diff viewer impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in Duo AI job troubleshooting feature impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in MCP API scope enforcement impacts GitLab CE/EE</p>
+	  <p>Use of Less Trusted Source issue in Direct Transfer import user mapping impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in Epic Issues REST API impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in Duo Workflow Service token governance enforcement impacts GitLab EE</p>
+	  <p>Improper Access Control issue in GraphQL memberRoles dependentSecurityPolicies resolver impacts GitLab EE</p>
+	  <p>Missing Authorization issue in GraphQL CI job trace API impacts GitLab CE/EE</p>
+	  <p>Race Condition issue in MCP gitlab_search tool impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-89078</cvename>
+      <cvename>CVE-2026-93577</cvename>
+      <cvename>CVE-2026-84739</cvename>
+      <cvename>CVE-2026-92470</cvename>
+      <cvename>CVE-2026-92874</cvename>
+      <cvename>CVE-2026-92530</cvename>
+      <cvename>CVE-2026-8937</cvename>
+      <cvename>CVE-2026-92529</cvename>
+      <cvename>CVE-2026-10518</cvename>
+      <cvename>CVE-2026-4523</cvename>
+      <cvename>CVE-2026-92628</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/?nav=19.4.1</url>
+    </references>
+    <dates>
+      <discovery>2026-09-23</discovery>
+      <entry>2026-09-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0142953c-b716-11f1-a70f-00a0980083d7">
     <topic>popt -- Out-of-bounds Write</topic>
     <affects>
