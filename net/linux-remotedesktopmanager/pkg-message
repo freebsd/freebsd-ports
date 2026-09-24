@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOT
+The Linuxulator has to be enabled before this application can run:
+
+  sysrc linux_enable=YES
+  service linux start
+EOT
+}
+]

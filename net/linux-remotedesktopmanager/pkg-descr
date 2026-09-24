@@ -1,0 +1,4 @@
+Remote Desktop Manager centralizes remote connections and credentials in
+a single application.  It supports RDP, VNC, SSH and web-based sessions,
+keeps them in a local or shared data source, and embeds the sessions as
+tabs in its own window.
