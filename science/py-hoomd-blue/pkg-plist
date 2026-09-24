@@ -907,3 +907,10 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/write/gsd_burst.py
 %%PYTHON_SITELIBDIR%%/hoomd/write/hdf5.py
 %%PYTHON_SITELIBDIR%%/hoomd/write/table.py
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/BoxDeformer.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/BoxDeformerGPU.cuh
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/LeesEdwardsBoxDeformer.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/LeesEdwardsBoxDeformerGPU.cuh
+%%PYTHON_SITELIBDIR%%/hoomd/md/deform.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_2d_rigid.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_deform.py

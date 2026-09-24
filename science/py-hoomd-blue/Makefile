@@ -1,6 +1,6 @@
 PORTNAME=	hoomd-blue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.1
+DISTVERSION=	7.2.0
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,8 +13,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	pybind11>0:devel/pybind11
+LIB_DEPENDS=	libgcc_s.so.1:lang/gcc14
 
 USES=		cmake:testing compiler:c++17-lang eigen:3 localbase:ldflags python shebangfix # see https://github.com/glotzerlab/hoomd-blue/issues/1204
+USE_PYTHON=	flavors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glotzerlab

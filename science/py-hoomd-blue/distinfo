@@ -1,6 +1,6 @@
-TIMESTAMP = 1777475252
-SHA256 (glotzerlab-hoomd-blue-v7.0.1_GH0.tar.gz) = ecc6dea16826ecd415be1fd159014cbda28ddd1ab7f0d23dc6332ccfe6c76ea8
-SIZE (glotzerlab-hoomd-blue-v7.0.1_GH0.tar.gz) = 2811712
+TIMESTAMP = 1790136111
+SHA256 (glotzerlab-hoomd-blue-v7.2.0_GH0.tar.gz) = 87cc463b57667caed1740ec817e81df56e99db50d4a823b79f65fc73b43f8b85
+SIZE (glotzerlab-hoomd-blue-v7.2.0_GH0.tar.gz) = 2832927
 SHA256 (glotzerlab-upp11-0c1fb8dfb4bcdc1c5c4eff9165539b15e70c4360_GH0.tar.gz) = 759695139bddae1d8a7cd52c967b856d6debf28fb37ea177f78c4434e2b210a8
 SIZE (glotzerlab-upp11-0c1fb8dfb4bcdc1c5c4eff9165539b15e70c4360_GH0.tar.gz) = 21058
 SHA256 (glotzerlab-nano-signal-slot-8d136893dc78b11c689bc9f48afab49e5de8ab19_GH0.tar.gz) = ffaebda900a1a3b47e23898bcd7745cccb15e72dcd04f4e594c0693ba744c2ed
