@@ -1,6 +1,6 @@
 PORTNAME=	TRX
 DISTVERSIONPREFIX=	trx-
-DISTVERSION=	1.10.2
+DISTVERSION=	1.11.1
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -32,9 +32,13 @@ WRKSRC_SUBDIR=	src
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}.bin
+PORTDATA=	cfg games modules scripts
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/_build/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}.bin
 	${INSTALL_SCRIPT} ${WRKDIR}/trx.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC}/../data/trx/ship && \
+		${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
