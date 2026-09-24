@@ -1,8 +1,8 @@
 PORTNAME=	LaTeX-Driver
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:EHUELS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -12,8 +12,7 @@ WWW=		https://metacpan.org/release/LaTeX-Driver
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
+BUILD_RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Exception-Class>=0:devel/p5-Exception-Class \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
@@ -25,9 +24,10 @@ RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 
 PORTSCOUT=	skipv:0.2002
 
-NO_ARCH=	yes
 USES=		perl5 tex
 USE_PERL5=	configure
 USE_TEX=	latex
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
