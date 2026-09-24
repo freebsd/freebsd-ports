@@ -1,9 +1,8 @@
 PORTNAME=	lft
-PORTVERSION=	3.91
-PORTREVISION=	1
+PORTVERSION=	4.01
 PORTEPOCH=	2
 CATEGORIES=	net
-MASTER_SITES=	http://pwhois.org/get/
+MASTER_SITES=	https://pwhois.org/get/
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Layer 4 Traceroute program
@@ -14,12 +13,20 @@ LICENSE_NAME=	VOSTROM
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror auto-accept
 
+USES=		pkgconfig
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/lft bin/whob share/man/man8/lft.8.gz share/man/man8/whob.8.gz
 PORTDOCS=	CHANGELOG README TODO
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	CARES DOCS NCURSES
+CARS_DESC=	Asynchronous DNS resolution via c-ares
+NCURSES_DESC=	Interactive display (ncurses)
+
+CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
+CARES_CONFIGURE_OFF=	--disable-async-dns
+NCURSES_USES=		ncurses
+NCURSES_CONFIGURE_OFF=	--disable-ncurses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lft ${STAGEDIR}${PREFIX}/sbin
