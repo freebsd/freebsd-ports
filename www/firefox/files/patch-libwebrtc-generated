@@ -1,7 +1,7 @@
-commit cdee6fc0b3135cc245b6d8c05c6f2dd255f3ada1
+commit a104382524fcd2d357b6c2f7d6df3a91f55ccbdf
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
-    regenerate FreeBSD libwebrtc patch for gecko 155
+    regenerate FreeBSD libwebrtc patch for gecko 157
 
 diff --git third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build
 index 2060d5597a7c..643ec6ab666e 100644
@@ -33764,14 +33764,10 @@ index 06b4e9233fb4..462a19eca697 100644
      UNIFIED_SOURCES += [
          "/third_party/libwebrtc/common_audio/third_party/spl_sqrt_floor/spl_sqrt_floor.c"
 diff --git third_party/libwebrtc/common_video/common_video_gn/moz.build third_party/libwebrtc/common_video/common_video_gn/moz.build
-index 16645ce2d192..f514de4d05c9 100644
+index f31ccd363aa1..f514de4d05c9 100644
 --- third_party/libwebrtc/common_video/common_video_gn/moz.build
 +++ third_party/libwebrtc/common_video/common_video_gn/moz.build
-@@ -10,17 +10,26 @@ COMPILE_FLAGS["OS_INCLUDES"] = []
- AllowCompilerWarnings()
- 
- DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
-+DEFINES["HAVE_LIBYUV_JPEG"] = True
+@@ -14,13 +14,22 @@ DEFINES["HAVE_LIBYUV_JPEG"] = True
  DEFINES["PROTOBUF_ENABLE_DEBUG_LOGGING_MAY_LEAK_PII"] = "0"
  DEFINES["RTC_DAV1D_IN_INTERNAL_DECODER_FACTORY"] = True
  DEFINES["RTC_ENABLE_VP9"] = True
@@ -33786,7 +33782,6 @@ index 16645ce2d192..f514de4d05c9 100644
  DEFINES["WEBRTC_NON_STATIC_TRACE_EVENT_HANDLERS"] = "0"
 +DEFINES["WEBRTC_POSIX"] = True
  DEFINES["WEBRTC_STRICT_FIELD_TRIALS"] = "0"
--DEFINES["HAVE_LIBYUV_JPEG"] = True
 +DEFINES["_FILE_OFFSET_BITS"] = "64"
 +DEFINES["_LARGEFILE64_SOURCE"] = True
 +DEFINES["_LARGEFILE_SOURCE"] = True
@@ -39955,218 +39950,6 @@ index 3a23e086ef18..8b7b0aefbf7f 100644
 -    DEFINES["_GNU_SOURCE"] = True
 -
  Library("stream_params_gn")
-diff --git third_party/libwebrtc/media/video_source_base_gn/moz.build third_party/libwebrtc/media/video_source_base_gn/moz.build
-index a0e88633c873..02f91f7eb002 100644
---- third_party/libwebrtc/media/video_source_base_gn/moz.build
-+++ third_party/libwebrtc/media/video_source_base_gn/moz.build
-@@ -13,13 +13,22 @@ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
- DEFINES["PROTOBUF_ENABLE_DEBUG_LOGGING_MAY_LEAK_PII"] = "0"
- DEFINES["RTC_DAV1D_IN_INTERNAL_DECODER_FACTORY"] = True
- DEFINES["RTC_ENABLE_VP9"] = True
-+DEFINES["USE_GLIB"] = "1"
-+DEFINES["USE_OZONE"] = "1"
-+DEFINES["WEBRTC_BSD"] = True
- DEFINES["WEBRTC_DEPRECATE_PLAN_B"] = True
- DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
- DEFINES["WEBRTC_ENCODER_PSNR_STATS"] = True
- DEFINES["WEBRTC_LIBRARY_IMPL"] = True
- DEFINES["WEBRTC_MOZILLA_BUILD"] = True
- DEFINES["WEBRTC_NON_STATIC_TRACE_EVENT_HANDLERS"] = "0"
-+DEFINES["WEBRTC_POSIX"] = True
- DEFINES["WEBRTC_STRICT_FIELD_TRIALS"] = "0"
-+DEFINES["_FILE_OFFSET_BITS"] = "64"
-+DEFINES["_LARGEFILE64_SOURCE"] = True
-+DEFINES["_LARGEFILE_SOURCE"] = True
-+DEFINES["__STDC_CONSTANT_MACROS"] = True
-+DEFINES["__STDC_FORMAT_MACROS"] = True
- 
- FINAL_LIBRARY = "xul"
- 
-@@ -47,97 +56,7 @@ if not CONFIG["MOZ_DEBUG"]:
- if CONFIG["MOZ_DEBUG"] == "1":
- 
-     DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
--
--if CONFIG["OS_TARGET"] == "Android":
--
--    DEFINES["ANDROID"] = True
--    DEFINES["ANDROID_NDK_VERSION_ROLL"] = "r27_1"
--    DEFINES["HAVE_SYS_UIO_H"] = True
--    DEFINES["WEBRTC_ANDROID"] = True
--    DEFINES["WEBRTC_ANDROID_OPENSLES"] = True
--    DEFINES["WEBRTC_LINUX"] = True
--    DEFINES["WEBRTC_POSIX"] = True
--    DEFINES["_GNU_SOURCE"] = True
--    DEFINES["__ANDROID_UNAVAILABLE_SYMBOLS_ARE_WEAK__"] = True
--    DEFINES["__STDC_CONSTANT_MACROS"] = True
--    DEFINES["__STDC_FORMAT_MACROS"] = True
--
--    OS_LIBS += [
--        "log"
--    ]
--
--if CONFIG["OS_TARGET"] == "Darwin":
--
--    DEFINES["WEBRTC_MAC"] = True
--    DEFINES["WEBRTC_POSIX"] = True
--    DEFINES["__STDC_CONSTANT_MACROS"] = True
--    DEFINES["__STDC_FORMAT_MACROS"] = True
--
--    OS_LIBS += [
--        "-framework Foundation"
--    ]
--
--if CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["USE_AURA"] = "1"
--    DEFINES["USE_GLIB"] = "1"
--    DEFINES["USE_OZONE"] = "1"
--    DEFINES["USE_UDEV"] = True
--    DEFINES["WEBRTC_LINUX"] = True
--    DEFINES["WEBRTC_POSIX"] = True
--    DEFINES["_FILE_OFFSET_BITS"] = "64"
--    DEFINES["_LARGEFILE64_SOURCE"] = True
--    DEFINES["_LARGEFILE_SOURCE"] = True
--    DEFINES["__STDC_CONSTANT_MACROS"] = True
--    DEFINES["__STDC_FORMAT_MACROS"] = True
--
--if CONFIG["OS_TARGET"] == "OpenBSD":
--
--    DEFINES["USE_GLIB"] = "1"
--    DEFINES["USE_OZONE"] = "1"
--    DEFINES["WEBRTC_BSD"] = True
--    DEFINES["WEBRTC_POSIX"] = True
--    DEFINES["_FILE_OFFSET_BITS"] = "64"
--    DEFINES["_LARGEFILE64_SOURCE"] = True
--    DEFINES["_LARGEFILE_SOURCE"] = True
--    DEFINES["__STDC_CONSTANT_MACROS"] = True
--    DEFINES["__STDC_FORMAT_MACROS"] = True
--
--if CONFIG["OS_TARGET"] == "WINNT":
--
--    DEFINES["CERT_CHAIN_PARA_HAS_EXTRA_FIELDS"] = True
--    DEFINES["NOMINMAX"] = True
--    DEFINES["NTDDI_VERSION"] = "0x0A000000"
--    DEFINES["PSAPI_VERSION"] = "2"
--    DEFINES["RTC_ENABLE_WIN_WGC"] = True
--    DEFINES["UNICODE"] = True
--    DEFINES["USE_AURA"] = "1"
--    DEFINES["WEBRTC_WIN"] = True
--    DEFINES["WIN32"] = True
--    DEFINES["WIN32_LEAN_AND_MEAN"] = True
--    DEFINES["WINAPI_FAMILY"] = "WINAPI_FAMILY_DESKTOP_APP"
--    DEFINES["WINVER"] = "0x0A00"
--    DEFINES["_ATL_NO_OPENGL"] = True
--    DEFINES["_CRT_NONSTDC_NO_WARNINGS"] = True
--    DEFINES["_CRT_RAND_S"] = True
--    DEFINES["_CRT_SECURE_NO_DEPRECATE"] = True
--    DEFINES["_ENABLE_EXTENDED_ALIGNED_STORAGE"] = True
--    DEFINES["_HAS_EXCEPTIONS"] = "0"
--    DEFINES["_HAS_NODISCARD"] = True
--    DEFINES["_SCL_SECURE_NO_DEPRECATE"] = True
--    DEFINES["_SECURE_ATL"] = True
--    DEFINES["_UNICODE"] = True
--    DEFINES["_WIN32_WINNT"] = "0x0A00"
--    DEFINES["_WINDOWS"] = True
--    DEFINES["_WINSOCK_DEPRECATED_NO_WARNINGS"] = True
--    DEFINES["__STD_C"] = True
--
--    OS_LIBS += [
--        "crypt32",
--        "iphlpapi",
--        "secur32",
--        "winmm"
--    ]
-+    DEFINES["_DEBUG"] = True
- 
- if CONFIG["TARGET_CPU"] == "aarch64":
- 
-@@ -145,82 +64,21 @@ if CONFIG["TARGET_CPU"] == "aarch64":
-     DEFINES["WEBRTC_HAS_NEON"] = True
-     DEFINES["__ARM_NEON__"] = "1"
- 
--if CONFIG["TARGET_CPU"] == "arm":
--
--    CXXFLAGS += [
--        "-mfpu=neon"
--    ]
--
--    DEFINES["WEBRTC_ARCH_ARM"] = True
--    DEFINES["WEBRTC_ARCH_ARM_V7"] = True
--    DEFINES["WEBRTC_HAS_NEON"] = True
--
--if CONFIG["TARGET_CPU"] == "loongarch64":
--
--    DEFINES["_GNU_SOURCE"] = True
--
- if CONFIG["TARGET_CPU"] == "mips32":
- 
-     DEFINES["MIPS32_LE"] = True
-     DEFINES["MIPS_FPU_LE"] = True
--    DEFINES["_GNU_SOURCE"] = True
--
--if CONFIG["TARGET_CPU"] == "mips64":
--
--    DEFINES["_GNU_SOURCE"] = True
- 
- if CONFIG["TARGET_CPU"] == "x86":
- 
--    DEFINES["WEBRTC_ENABLE_AVX2"] = True
--
--if CONFIG["TARGET_CPU"] == "x86_64":
--
--    DEFINES["WEBRTC_ENABLE_AVX2"] = True
--
--if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Android":
--
--    DEFINES["_DEBUG"] = True
--
--if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Darwin":
--
--    DEFINES["_DEBUG"] = True
--
--if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["_DEBUG"] = True
--
--if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "OpenBSD":
--
--    DEFINES["_DEBUG"] = True
--
--if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "WINNT":
--
--    DEFINES["_HAS_ITERATOR_DEBUGGING"] = "0"
--
--if CONFIG["OS_TARGET"] == "Android" and CONFIG["TARGET_CPU"] == "x86":
--
-     CXXFLAGS += [
-         "-msse2"
-     ]
- 
--if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "aarch64":
--
--    DEFINES["_GNU_SOURCE"] = True
--
--if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "arm":
--
--    DEFINES["_GNU_SOURCE"] = True
--
--if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86":
--
--    CXXFLAGS += [
--        "-msse2"
--    ]
--
--    DEFINES["_GNU_SOURCE"] = True
-+    DEFINES["WEBRTC_ENABLE_AVX2"] = True
- 
--if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86_64":
-+if CONFIG["TARGET_CPU"] == "x86_64":
- 
--    DEFINES["_GNU_SOURCE"] = True
-+    DEFINES["WEBRTC_ENABLE_AVX2"] = True
- 
- Library("video_source_base_gn")
 diff --git third_party/libwebrtc/modules/async_audio_processing/async_audio_processing_gn/moz.build third_party/libwebrtc/modules/async_audio_processing/async_audio_processing_gn/moz.build
 index 7b67078e3ad6..e5a19b5feb8a 100644
 --- third_party/libwebrtc/modules/async_audio_processing/async_audio_processing_gn/moz.build
@@ -73581,10 +73364,10 @@ index eaa549f616ff..de7abe9355ce 100644
  
  Library("webrtc_vp9_helpers_gn")
 diff --git third_party/libwebrtc/moz.build third_party/libwebrtc/moz.build
-index 1ee4e85707c0..41d74968fb9d 100644
+index ccba3ea3d575..ae8d467930ef 100644
 --- third_party/libwebrtc/moz.build
 +++ third_party/libwebrtc/moz.build
-@@ -306,6 +306,8 @@ DIRS += [
+@@ -305,6 +305,8 @@ DIRS += [
      "/third_party/libwebrtc/modules/congestion_controller/scream/scream_network_controller_gn",
      "/third_party/libwebrtc/modules/congestion_controller/scream/scream_v2_gn",
      "/third_party/libwebrtc/modules/congestion_controller/scream/scream_v2_parameters_gn",
@@ -73593,7 +73376,7 @@ index 1ee4e85707c0..41d74968fb9d 100644
      "/third_party/libwebrtc/modules/module_api_gn",
      "/third_party/libwebrtc/modules/module_api_public_gn",
      "/third_party/libwebrtc/modules/module_fec_api_gn",
-@@ -541,143 +543,31 @@ DIRS += [
+@@ -540,143 +542,31 @@ DIRS += [
      "/third_party/libwebrtc/webrtc_gn"
  ]
  
@@ -73741,7 +73524,7 @@ index 1ee4e85707c0..41d74968fb9d 100644
  
      DIRS += [
          "/third_party/libwebrtc/common_audio/common_audio_avx2_gn",
-@@ -686,13 +576,11 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86":
+@@ -685,13 +575,11 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86":
          "/third_party/libwebrtc/modules/audio_processing/aec3/aec3_avx2_gn",
          "/third_party/libwebrtc/modules/audio_processing/agc2/rnn_vad/vector_math_avx2_gn",
          "/third_party/libwebrtc/modules/desktop_capture/desktop_capture_differ_sse2_gn",
@@ -73756,7 +73539,7 @@ index 1ee4e85707c0..41d74968fb9d 100644
  
      DIRS += [
          "/third_party/libwebrtc/common_audio/common_audio_avx2_gn",
-@@ -701,75 +589,6 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86_64":
+@@ -700,75 +588,6 @@ if CONFIG["OS_TARGET"] == "Linux" and CONFIG["TARGET_CPU"] == "x86_64":
          "/third_party/libwebrtc/modules/audio_processing/aec3/aec3_avx2_gn",
          "/third_party/libwebrtc/modules/audio_processing/agc2/rnn_vad/vector_math_avx2_gn",
          "/third_party/libwebrtc/modules/desktop_capture/desktop_capture_differ_sse2_gn",
