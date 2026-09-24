@@ -3,6 +3,7 @@ PORTVERSION=	1.31.1.1
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://openresty.org/download/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Powerful web application server extending nginx
@@ -32,8 +33,8 @@ OPTIONS_DEFINE=		ARRAYVAR AUTHREQ COOLKIT DRIZZLE ECHO ENCSESSION \
 			HEADERSMORE HTTPV2 HTTPV3 ICONV LUACJSON LUARDS \
 			LUAREDISPARS LUARESTYDNS LUARESTYMEM LUARESTYMYSQL \
 			LUARESTYREDIS LUARESTYSTRING LUARESTYUPLOAD MEMC \
-			MISC NDK POSTGRES RDSCSV RDSJSON REDIS REDIS2 \
-			SRCACHE XSS
+			MISC MODSECURITY NDK POSTGRES RDSCSV RDSJSON REDIS \
+			REDIS2 SRCACHE XSS
 
 OPTIONS_DEFAULT=	ARRAYVAR AUTHREQ COOLKIT ECHO ENCSESSION HEADERSMORE \
 			HTTPV2 HTTPV3 ICONV MEMC MISC NDK RDSCSV RDSJSON \
@@ -62,6 +63,7 @@ LUARESTYSTRING_DESC=	Lua resty string library
 LUARESTYUPLOAD_DESC=	Lua resty upload library
 MEMC_DESC=		An extended memcached module
 MISC_DESC=		Various set_xxx directives added
+MODSECURITY_DESC=	ModSecurity v3 web application firewall
 NDK_DESC=		Nginx Development Kit
 POSTGRES_DESC=		Module for talking to PostgreSQL
 RDSCSV_DESC=		Output filter module to convert CSV
@@ -81,6 +83,11 @@ ENCSESSION_CONFIGURE_OFF=	--without-http_encrypted_session_module
 HEADERSMORE_CONFIGURE_OFF=	--without-http_headers_more_module
 HTTPV2_CONFIGURE_ON=		--with-http_v2_module
 HTTPV3_CONFIGURE_ON=		--with-http_v3_module
+MODSECURITY_USE=		GITHUB=nodefault
+MODSECURITY_GH_TUPLE=	owasp-modsecurity:ModSecurity-nginx:9eb44fd:modsecurity3
+MODSECURITY_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
+MODSECURITY_CONFIGURE_ON=	--add-dynamic-module=${WRKSRC_modsecurity3}
+MODSECURITY_PLIST_FILES=	nginx/modules/ngx_http_modsecurity_module.so
 ICONV_USES=			iconv
 ICONV_CONFIGURE_ON=		--with-http_iconv_module
 LUACJSON_CONFIGURE_OFF=		--without-lua_cjson
