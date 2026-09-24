@@ -29,7 +29,7 @@ GROUPS=		dnetc
 SUB_FILES=	pkg-message
 SUB_LIST=	BINDIR="${BINDIR}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == i386
 VERSION=	2.9112.521
@@ -60,4 +60,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/dnetc.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${FILESDIR}/dnetc.ini ${STAGEDIR}${BINDIR}/dnetc.ini.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
