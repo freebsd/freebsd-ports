@@ -1,5 +1,5 @@
 PORTNAME=	prosody
-DISTVERSION=	13.0.6
+DISTVERSION=	13.0.7
 CATEGORIES=	net-im
 MASTER_SITES=	https://prosody.im/downloads/source/
 
