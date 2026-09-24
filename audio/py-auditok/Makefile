@@ -1,6 +1,6 @@
 PORTNAME=	auditok
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.2
+DISTVERSION=	0.5.2
 CATEGORIES=	audio python
 #MASTER_SITES=	PYPI # no testdata
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +28,8 @@ GH_ACCOUNT=	amsehili
 
 NO_ARCH=	yes
 
-# tests as of 0.4.1: 768 passed, 1 failed (FFmpeg FLAC codec not available in test environment)
-# tests as of 0.4.2: 8 failed, 768 passed, 6 warnings in 10.88s, see https://github.com/amsehili/auditok/issues/51
+TEST_ARGS=	--disable-plugin-autoload
+
+# tests as of 0.5.2: 817 passed, 1 skipped, 15 warnings in 18.77s
 
 .include <bsd.port.mk>
