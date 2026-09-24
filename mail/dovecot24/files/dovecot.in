@@ -18,6 +18,7 @@
 . %%RC_SUBR%%
 
 name=dovecot
+extra_commands="reload"
 rcvar=dovecot_enable
 
 # Read configuration and set defaults
@@ -62,6 +63,13 @@ dovecot_stop()
 	fi
 }
 
+# Custom reload function using dovecot's native reload command
+dovecot_reload()
+{
+	echo "Reloading dovecot."
+	${command} ${command_args} reload 2>/dev/null
+}
+
 # Main loop over all defined configurations
 for config in ${dovecot_config}; do
 	required_files="${config}"
@@ -86,9 +94,10 @@ for config in ${dovecot_config}; do
 		pidfile=""
 	fi
 
-	# Dynamically define stop_cmd inside the loop context.
-	# This ensures rc.subr executes dovecot_stop with the correct $command_args.
+	# Dynamically define stop_cmd and reload_cmd inside the loop context.
+	# This ensures rc.subr executes dovecot_stop/dovecot_reload with the correct $command_args.
 	stop_cmd="dovecot_stop"
+	reload_cmd="dovecot_reload"
 
 	run_rc_command "$1"
 done

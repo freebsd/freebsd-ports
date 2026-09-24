@@ -1,9 +1,12 @@
 PORTNAME=	dovecot
 DISTVERSION=	2.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.4/
 PKGNAMESUFFIX=	24${DOVE_SUFFIX}
+
+PATCH_SITES=	https://github.com/${PORTNAME}/core/commit/
+PATCHFILES=	5100f0fd576d0600c3f8ad7bb056ae08235cab11.patch:-p1
 
 MAINTAINER=	jordan@ostreff.info
 COMMENT=	Secure, fast and powerful IMAP and POP3 server
