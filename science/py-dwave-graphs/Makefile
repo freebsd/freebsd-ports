@@ -1,5 +1,5 @@
 PORTNAME=	dwave-graphs
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,6 +29,6 @@ TEST_WRKSRC=	${WRKSRC}/tests
 
 NO_ARCH=	yes
 
-# tests as of 1.1.0: Ran 267 tests in 27.674s (OK, skipped=14)
+# tests as of 1.2.0: Ran 984 tests in 7.360s
 
 .include <bsd.port.mk>
