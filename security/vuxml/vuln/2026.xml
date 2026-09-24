@@ -1,3 +1,37 @@
+  <vuln vid="050e54b4-b81e-11f1-b540-589cfc10a551">
+    <topic>podman -- vulnerabilities</topic>
+    <affects>
+	<package>
+	<name>podman</name>
+	<range><lt>5.8.7</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Podman developers report:</p>
+	<blockquote cite="https://github.com/podman-container-tools/podman/releases/tag/v5.8.7">
+	  <p>This release addresses (CVE-2025-11395), where importing images
+	  containing crafted layer tarballs with the podman load command, or
+	  importing volumes containing crafted symlinks with podman volume
+	  import, allows overwriting files on the host.</p>
+	  <p>This release also addresses CVE-2026-79699 and CVE-2026-79705,
+	  though we do not believe these CVEs are exploitable through the
+	  Podman command line.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11395</cvename>
+      <cvename>CVE-2026-79699</cvename>
+      <cvename>CVE-2026-79705</cvename>
+      <url>https://github.com/podman-container-tools/podman/releases/tag/v5.8.7</url>
+    </references>
+    <dates>
+      <discovery>2026-09-16</discovery>
+      <entry>2026-09-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3f11e437-b7cd-11f1-a883-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
