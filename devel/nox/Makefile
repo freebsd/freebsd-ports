@@ -26,11 +26,12 @@ USE_PYTHON=	pep517 autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wntrblm
-GH_TAGNAME=	2026.04.10
+GH_TAGNAME=	2026.08.17
 
 TEST_ENV=	${MAKE_ENV} \
 		PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
 PYTEST_IGNORED_TESTS=	test_noxfile_script_mode_url_req \
 			test_uv_install
@@ -40,5 +41,6 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} # for tests
 NO_ARCH=	yes
 
 # tests as of 2026.04.10: 681 passed, 36 skipped, 7 deselected, 1 xpassed in 23.08s
+# tests as of 2026.08.17: 1 failed, 895 passed, 44 skipped, 8 deselected, 1 xpassed in 25.71s, see https://github.com/wntrblm/nox/issues/1189
 
 .include <bsd.port.mk>
