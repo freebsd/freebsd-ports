@@ -1,5 +1,5 @@
 PORTNAME=	zsh-you-should-use
-DISTVERSION=	1.10.0
+DISTVERSION=	1.11.1
 CATEGORIES=	shells
 
 MAINTAINER=	phantrungson17@gmail.com
