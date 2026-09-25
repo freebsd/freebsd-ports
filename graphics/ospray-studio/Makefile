@@ -1,7 +1,6 @@
 PORTNAME=	ospray-studio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.1
-PORTREVISION=	8
+DISTVERSION=	1.1.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,8 +21,7 @@ USE_GL=		gl glu
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ospray
-GH_PROJECT=	${PORTNAME:S/-/_/}
+GH_ACCOUNT=	RenderKit
 
 CMAKE_OFF=	USE_PYSG
 CMAKE_OFF+=	OSPRAY_INSTALL # otherwise it installs all dependencies, see https://github.com/ospray/ospray_studio/issues/8
