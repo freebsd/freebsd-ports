@@ -1,0 +1,23 @@
+{
+  "name": "lightningcss-freebsd-@JSARCH@",
+  "version": "@LIGHTNINGCSS_VERSION@",
+  "license": "MPL-2.0",
+  "description": "A CSS parser, transformer, and minifier written in Rust",
+  "main": "lightningcss.freebsd-@JSARCH@.node",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "files": [
+    "lightningcss.freebsd-@JSARCH@.node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parcel-bundler/lightningcss.git"
+  },
+  "os": [
+    "freebsd"
+  ],
+  "cpu": [
+    "@JSARCH@"
+  ]
+}
