@@ -34,7 +34,9 @@ NO_ARCH=	yes # no arch w/out CUDA
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "aarch64"
 MAKE_ENV=	LD_STATIC_TLS_EXTRA=4096 # see pkg-message in misc/py-pytorch
+.endif
 
 post-install:
 	# delete stray files, see https://github.com/SHI-Labs/NATTEN/issues/152
