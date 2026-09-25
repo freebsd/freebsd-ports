@@ -5624,3 +5624,4 @@ net/openldap25-client|databases/openldap25-client|2026-09-24|Move all OpenLDAP p
 net/openldap25-server|databases/openldap25-server|2026-09-24|Move all OpenLDAP ports to databases/
 net/openldap26-client|databases/openldap26-client|2026-09-24|Move all OpenLDAP ports to databases/
 net/openldap26-server|databases/openldap26-server|2026-09-24|Move all OpenLDAP ports to databases/
+graphics/hiptext||2026-09-25|Remove abandonware

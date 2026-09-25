@@ -354,7 +354,6 @@
     SUBDIR += hdr_histogram
     SUBDIR += hdr_tools
     SUBDIR += heimer
-    SUBDIR += hiptext
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
     SUBDIR += hs-tart
