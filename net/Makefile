@@ -590,10 +590,6 @@
     SUBDIR += openbgpd7
     SUBDIR += openbgpd8
     SUBDIR += openbgpd9
-    SUBDIR += openldap25-client
-    SUBDIR += openldap25-server
-    SUBDIR += openldap26-client
-    SUBDIR += openldap26-server
     SUBDIR += openmdns
     SUBDIR += openmpi
     SUBDIR += openmpi4

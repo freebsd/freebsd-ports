@@ -233,6 +233,10 @@
     SUBDIR += ods2sql
     SUBDIR += opendbviewer
     SUBDIR += opendbx
+    SUBDIR += openldap25-client
+    SUBDIR += openldap25-server
+    SUBDIR += openldap26-client
+    SUBDIR += openldap26-server
     SUBDIR += openldap27-client
     SUBDIR += openldap27-server
     SUBDIR += openvoxdb-terminus8

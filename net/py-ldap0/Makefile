@@ -13,7 +13,7 @@ LICENSE=	PSFL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.4.5:devel/py-pyasn1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0.2.5:devel/py-pyasn1-modules@${PY_FLAVOR}
 # Cyrus needs PLAIN / CRAM-MD5 / DIGEST-MD5 enabled
-TEST_DEPENDS=	${LOCALBASE}/libexec/slapd:net/openldap${OPENLDAP_VER}-server
+TEST_DEPENDS=	${LOCALBASE}/libexec/slapd:databases/openldap${OPENLDAP_VER}-server
 
 USES=		ldap:24 localbase python
 USE_PYTHON=	autoplist distutils

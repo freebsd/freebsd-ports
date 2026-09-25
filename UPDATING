@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260924:
+  AFFECTS: users of net/openldap25-client, net/openldap25-server,
+    net/openldap26-client, net/openldap26-server
+  AUTHOR: delphij@FreeBSD.org
+
+  All OpenLDAP ports have been moved from net/ to databases/ to be
+  consistent with OpenLDAP 2.7 which was already in databases/.
+
+  pkg users should be able to upgrade directly with:
+    # pkg upgrade
+
+  Portmaster users:
+    # portmaster -o databases/openldap2X-client net/openldap2X-client
+    # portmaster -o databases/openldap2X-server net/openldap2X-server
+
+  Portupgrade users:
+    # portinstall databases/openldap2X-client databases/openldap2X-server
+    # portupgrade -a
+
+  Replace 2X with the actual version (25 or 26) you have installed.
+
 20260925:
   AFFECTS: users of lang/erlang, lang/erlang-runtime27, lang/erlang-runtime28
     and lang/erlang-runtime29 running an SSH daemon

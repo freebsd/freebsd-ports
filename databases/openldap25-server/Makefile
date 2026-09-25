@@ -1,7 +1,7 @@
 PORTNAME=		openldap
 DISTVERSION=		2.5.20
-PORTREVISION=	2
-CATEGORIES=		net databases
+PORTREVISION=	${OPENLDAP_PORTREVISION}
+CATEGORIES=		databases net
 MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
 			http://gpl.savoirfairelinux.net/pub/mirrors/openldap/%SUBDIR%/ \
 			http://repository.linagora.org/OpenLDAP/%SUBDIR%/ \
@@ -46,8 +46,8 @@ CONFLICTS_INSTALL=	${PORTNAME}2[0-46-9]-server ${PORTNAME}-server
 GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_CLIENT=	3
+PORTREVISION_SERVER=	3
 OPENLDAP_SHLIB_MAJOR=	0
 OPENLDAP_SHLIB_MINOR=	1.15
 OPENLDAP_MAJOR=		${DISTVERSION:R}
@@ -257,7 +257,7 @@ OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
 OPENLDAP_PKGFILESUFX=
 
 LIB_DEPENDS+=		libicudata.so:devel/icu \
-			libldap.so:net/openldap25-client \
+			libldap.so:databases/openldap25-client \
 			libltdl.so:devel/libltdl
 
 SUB_LIST+=		RC_DIR=${PREFIX} \

@@ -5620,3 +5620,7 @@ sysutils/py-py-cpuinfo|sysutils/py-py-cpuinfo2|2026-09-16|Remove obsolete sysuti
 textproc/uim-gtk2||2026-09-20|Has expired: Uses deprecated gtk2 libraries
 misc/github-copilot-cli-legacy|misc/github-copilot-cli|2026-09-22|Remove in favor of misc/github-copilot-cli which is a Linux binary which works well on FreeBSD
 graphics/glad|graphics/py-glad2|2026-09-22|glad is now a Python package, use graphics/py-glad2 instead
+net/openldap25-client|databases/openldap25-client|2026-09-24|Move all OpenLDAP ports to databases/
+net/openldap25-server|databases/openldap25-server|2026-09-24|Move all OpenLDAP ports to databases/
+net/openldap26-client|databases/openldap26-client|2026-09-24|Move all OpenLDAP ports to databases/
+net/openldap26-server|databases/openldap26-server|2026-09-24|Move all OpenLDAP ports to databases/

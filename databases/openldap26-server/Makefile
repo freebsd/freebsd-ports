@@ -1,7 +1,7 @@
 PORTNAME=	openldap
 DISTVERSION=	2.6.15
 PORTREVISION=	${OPENLDAP_PORTREVISION}
-CATEGORIES=	net databases
+CATEGORIES=	databases net
 MASTER_SITES=	https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
 		http://gpl.savoirfairelinux.net/pub/mirrors/openldap/%SUBDIR%/ \
 		http://repository.linagora.org/OpenLDAP/%SUBDIR%/ \
@@ -46,8 +46,8 @@ CONFLICTS_INSTALL=	${PORTNAME}-server ${PORTNAME}2[0-57-9]-server
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_CLIENT=	1
+PORTREVISION_SERVER=	1
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	0.200
 
@@ -219,7 +219,7 @@ OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
 OPENLDAP_PKGFILESUFX=
 
 LIB_DEPENDS+=	libicudata.so:devel/icu \
-		libldap.so:net/openldap26-client \
+		libldap.so:databases/openldap26-client \
 		libltdl.so:devel/libltdl
 
 SUB_LIST+=	DATABASEDIR=${DATABASEDIR} \
@@ -331,8 +331,8 @@ CONTRIB_CLEANFILES+=	nops.a
 .if ${PORT_OPTIONS:MNSSOV}
 CONTRIB_MODULES+=	slapd-modules/nssov
 CONTRIB_CLEANFILES+=	nssov.a
-NSLCD_VARDIR!=		${MAKE} -C ../nss-pam-ldapd -V NSLCD_VARDIR
-NSLCD_SOCKET!=		${MAKE} -C ../nss-pam-ldapd -V NSLCD_SOCKET
+NSLCD_VARDIR!=		${MAKE} -C ${PORTSDIR}/net/nss-pam-ldapd -V NSLCD_VARDIR
+NSLCD_SOCKET!=		${MAKE} -C ${PORTSDIR}/net/nss-pam-ldapd -V NSLCD_SOCKET
 .endif
 .if ${PORT_OPTIONS:MTRACE}
 CONTRIB_MODULES+=	slapd-modules/trace

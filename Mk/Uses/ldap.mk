@@ -84,14 +84,8 @@ IGNORE=	cannot install: OpenLDAP versions mismatch: openldap${_OPENLDAP_VER}-cli
 
 CFLAGS+=	-DLDAP_DEPRECATED
 
-# OpenLDAP 27+ lives in databases/, older versions in net/
-.  if ${OPENLDAP_VER} >= 27
-_OPENLDAP_CATEGORY=	databases
-.  else
-_OPENLDAP_CATEGORY=	net
-.  endif
-_OPENLDAP_CLIENT=	${_OPENLDAP_CATEGORY}/openldap${OPENLDAP_VER}-client
-_OPENLDAP_SERVER=	${_OPENLDAP_CATEGORY}/openldap${OPENLDAP_VER}-server
+_OPENLDAP_CLIENT=	databases/openldap${OPENLDAP_VER}-client
+_OPENLDAP_SERVER=	databases/openldap${OPENLDAP_VER}-server
 
 # And now we are checking if we can use it
 .  if defined(OPENLDAP${OPENLDAP_VER}_LIB)
