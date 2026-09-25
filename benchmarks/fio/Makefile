@@ -1,5 +1,5 @@
 PORTNAME=	fio
-DISTVERSION=	3.42
+DISTVERSION=	3.43
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://brick.kernel.dk/snaps/
 

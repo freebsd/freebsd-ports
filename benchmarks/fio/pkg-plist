@@ -156,6 +156,7 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e4defrag2.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/enospc-pressure.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/enospc-pressure.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example_latency_steadystate.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exec.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exec.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exitwhat.fio
@@ -222,6 +223,8 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libcufile-posix.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libhdfs.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libhdfs.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libhipfile-hipfile.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libhipfile-posix.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libiscsi.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libiscsi.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libpmem.fio
@@ -250,6 +253,7 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/null.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/numa.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/numa.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/page_fault.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poisson-rate-submission.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poisson-rate-submission.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rados.fio
@@ -262,6 +266,7 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-client.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-server.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rdmaio-server.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sequence-distribution.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sg_verify-fail.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sg_verify-fail.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sg_verify.fio
@@ -279,6 +284,8 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/surface-scan.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tiobench-example.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tiobench-example.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-bsg.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-bsg.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-fdp.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-fdp.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-ng.fio
@@ -289,6 +296,10 @@ share/man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-pi-sb.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-trim-multi-range.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-trim-multi-range.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-write-mode.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-write-mode.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-zoned-append.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-zoned-append.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-zoned.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-zoned.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/waitfor.fio
