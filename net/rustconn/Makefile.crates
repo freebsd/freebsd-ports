@@ -535,9 +535,9 @@ CARGO_CRATES=	addchain-0.2.1 \
 		temp-dir-0.1.16 \
 		tempfile-3.27.0 \
 		thiserror-1.0.69 \
-		thiserror-2.0.20 \
+		thiserror-2.0.21 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.20 \
+		thiserror-impl-2.0.21 \
 		thread_local-1.1.10 \
 		time-0.3.55 \
 		time-core-0.1.9 \
@@ -667,8 +667,8 @@ CARGO_CRATES=	addchain-0.2.1 \
 		zbus_macros-5.19.0 \
 		zbus_names-4.3.4 \
 		zcheapstr-1.1.0 \
-		zerocopy-0.8.57 \
-		zerocopy-derive-0.8.57 \
+		zerocopy-0.8.58 \
+		zerocopy-derive-0.8.58 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.8 \
 		zeroize-1.9.0 \
