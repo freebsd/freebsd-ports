@@ -1,5 +1,5 @@
 PORTNAME=	lowdown
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://kristaps.bsd.lv/lowdown/snapshots/
 
@@ -19,6 +19,6 @@ INSTALL_TARGET=	install install_libs
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-diff
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblowdown.so.4
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblowdown.so.5
 
 .include <bsd.port.mk>
