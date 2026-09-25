@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-03-26 15:19:22 UTC
+--- CMakeLists.txt.orig	2026-09-18 10:47:46 UTC
 +++ CMakeLists.txt
-@@ -32,7 +32,7 @@ if(NOT CMAKE_CXX_STANDARD)
+@@ -37,7 +37,7 @@ if(NOT CMAKE_CXX_STANDARD)
  # C++ standard can be overridden when this is used as a sub-project.
  if(NOT CMAKE_CXX_STANDARD)
    # This project requires C++11.
@@ -9,18 +9,18 @@
    set(CMAKE_CXX_STANDARD_REQUIRED ON)
    set(CMAKE_CXX_EXTENSIONS OFF)
  endif(NOT CMAKE_CXX_STANDARD)
-@@ -51,10 +51,6 @@ if(MSVC)
-   string(REGEX REPLACE "/EH[a-z]+" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+@@ -57,10 +57,6 @@ if(MSVC)
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHs-c-")
    add_definitions(-D_HAS_EXCEPTIONS=0)
--
+ 
 -  # Disable RTTI.
 -  string(REGEX REPLACE "/GR" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 -  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
- else(MSVC)
-   # Use -Wall for clang and gcc.
-   if(NOT CMAKE_CXX_FLAGS MATCHES "-Wall")
-@@ -81,10 +77,6 @@ else(MSVC)
+-
+   # Support static MSVC runtime when building static library.
+   option(SNAPPY_MSVC_STATIC_RUNTIME "Link to static MSVC runtime (/MT or /MTd)" OFF)
+   if(SNAPPY_MSVC_STATIC_RUNTIME)
+@@ -101,10 +97,6 @@ else(MSVC)
    # Disable C++ exceptions.
    string(REGEX REPLACE "-fexceptions" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
@@ -31,7 +31,7 @@
  endif(MSVC)
  
  # BUILD_SHARED_LIBS is a standard CMake variable, but we declare it here to make
-@@ -329,19 +321,18 @@ if(SNAPPY_BUILD_TESTS)
+@@ -387,19 +379,18 @@ if(SNAPPY_BUILD_TESTS)
    set(install_gmock OFF)
    set(build_gmock ON)
  
