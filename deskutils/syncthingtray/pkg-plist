@@ -2,7 +2,7 @@ bin/syncthingctl
 bin/syncthingtray
 %%PLASMA%%lib/libc++utilities.so
 %%PLASMA%%lib/libc++utilities.so.5
-%%PLASMA%%lib/libc++utilities.so.5.35.0
+%%PLASMA%%lib/libc++utilities.so.5.36.0
 %%PLASMA%%lib/libqtforkawesome.so
 %%PLASMA%%lib/libqtforkawesome.so.0.3.4
 %%PLASMA%%lib/libqtforkawesome.so.1
