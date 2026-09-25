@@ -1,5 +1,5 @@
 PORTNAME=	bash-completion-freebsd
-DISTVERSION=	1.5.1
+DISTVERSION=	1.6.1
 CATEGORIES=	shells
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -17,6 +17,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	etc/bash_completion.d/make \
 		etc/bash_completion.d/mandoc \
+		etc/bash_completion.d/mdo \
 		etc/bash_completion.d/pkg \
 		etc/bash_completion.d/service
 
