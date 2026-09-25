@@ -128,7 +128,6 @@ lib/webmin/acl/lang/sk.auto
 lib/webmin/acl/lang/sv
 lib/webmin/acl/lang/sv.auto
 lib/webmin/acl/lang/tr
-lib/webmin/acl/lang/tr.auto
 lib/webmin/acl/lang/uk
 lib/webmin/acl/lang/uk.auto
 lib/webmin/acl/lang/zh
@@ -286,7 +285,6 @@ lib/webmin/adsl-client/lang/ru.auto
 lib/webmin/adsl-client/lang/sk.auto
 lib/webmin/adsl-client/lang/sv
 lib/webmin/adsl-client/lang/tr
-lib/webmin/adsl-client/lang/tr.auto
 lib/webmin/adsl-client/lang/uk.auto
 lib/webmin/adsl-client/lang/zh
 lib/webmin/adsl-client/lang/zh_TW
@@ -577,7 +575,6 @@ lib/webmin/apache/lang/sk.auto
 lib/webmin/apache/lang/sv
 lib/webmin/apache/lang/sv.auto
 lib/webmin/apache/lang/tr
-lib/webmin/apache/lang/tr.auto
 lib/webmin/apache/lang/uk
 lib/webmin/apache/lang/uk.auto
 lib/webmin/apache/lang/zh
@@ -853,7 +850,6 @@ lib/webmin/at/lang/sk.auto
 lib/webmin/at/lang/sv
 lib/webmin/at/lang/sv.auto
 lib/webmin/at/lang/tr
-lib/webmin/at/lang/tr.auto
 lib/webmin/at/lang/uk
 lib/webmin/at/lang/uk.auto
 lib/webmin/at/lang/zh
@@ -1960,7 +1956,6 @@ lib/webmin/authentic-theme/stats.pl
 lib/webmin/authentic-theme/sysinfo.cgi
 lib/webmin/authentic-theme/tconfig-lib.pl
 lib/webmin/authentic-theme/tconfig.cgi
-lib/webmin/authentic-theme/theme-update.sh
 lib/webmin/authentic-theme/theme.info
 lib/webmin/authentic-theme/theme.info.no
 lib/webmin/authentic-theme/THEME.pgp
@@ -2454,7 +2449,6 @@ lib/webmin/backup-config/lang/sk.auto
 lib/webmin/backup-config/lang/sv
 lib/webmin/backup-config/lang/sv.auto
 lib/webmin/backup-config/lang/tr
-lib/webmin/backup-config/lang/tr.auto
 lib/webmin/backup-config/lang/uk.auto
 lib/webmin/backup-config/lang/zh
 lib/webmin/backup-config/lang/zh_TW.auto
@@ -2508,7 +2502,6 @@ lib/webmin/backup-config/module.info.sk.auto
 lib/webmin/backup-config/module.info.sv
 lib/webmin/backup-config/module.info.sv.auto
 lib/webmin/backup-config/module.info.tr
-lib/webmin/backup-config/module.info.tr.auto
 lib/webmin/backup-config/module.info.uk
 lib/webmin/backup-config/module.info.uk.auto
 lib/webmin/backup-config/module.info.zh
@@ -2649,7 +2642,7 @@ lib/webmin/bacula-backup/lang/pt.auto
 lib/webmin/bacula-backup/lang/ru.auto
 lib/webmin/bacula-backup/lang/sk.auto
 lib/webmin/bacula-backup/lang/sv.auto
-lib/webmin/bacula-backup/lang/tr.auto
+lib/webmin/bacula-backup/lang/tr
 lib/webmin/bacula-backup/lang/uk.auto
 lib/webmin/bacula-backup/lang/zh_TW.auto
 lib/webmin/bacula-backup/lang/zh.auto
@@ -2721,7 +2714,6 @@ lib/webmin/bacula-backup/module.info.sk.auto
 lib/webmin/bacula-backup/module.info.sv
 lib/webmin/bacula-backup/module.info.sv.auto
 lib/webmin/bacula-backup/module.info.tr
-lib/webmin/bacula-backup/module.info.tr.auto
 lib/webmin/bacula-backup/module.info.uk
 lib/webmin/bacula-backup/module.info.uk.auto
 lib/webmin/bacula-backup/module.info.zh
@@ -2817,7 +2809,7 @@ lib/webmin/bandwidth/lang/ru.auto
 lib/webmin/bandwidth/lang/sk.auto
 lib/webmin/bandwidth/lang/sv
 lib/webmin/bandwidth/lang/sv.auto
-lib/webmin/bandwidth/lang/tr.auto
+lib/webmin/bandwidth/lang/tr
 lib/webmin/bandwidth/lang/uk.auto
 lib/webmin/bandwidth/lang/zh_TW.auto
 lib/webmin/bandwidth/lang/zh.auto
@@ -2872,7 +2864,6 @@ lib/webmin/bandwidth/module.info.sk.auto
 lib/webmin/bandwidth/module.info.sv
 lib/webmin/bandwidth/module.info.sv.auto
 lib/webmin/bandwidth/module.info.tr
-lib/webmin/bandwidth/module.info.tr.auto
 lib/webmin/bandwidth/module.info.uk
 lib/webmin/bandwidth/module.info.uk.auto
 lib/webmin/bandwidth/module.info.zh
@@ -3157,7 +3148,6 @@ lib/webmin/bind8/lang/sk.auto
 lib/webmin/bind8/lang/sv
 lib/webmin/bind8/lang/sv.auto
 lib/webmin/bind8/lang/tr
-lib/webmin/bind8/lang/tr.auto
 lib/webmin/bind8/lang/uk
 lib/webmin/bind8/lang/uk.auto
 lib/webmin/bind8/lang/zh
@@ -3348,7 +3338,7 @@ lib/webmin/bsdexports/lang/pt.auto
 lib/webmin/bsdexports/lang/ru.auto
 lib/webmin/bsdexports/lang/sk.auto
 lib/webmin/bsdexports/lang/sv.auto
-lib/webmin/bsdexports/lang/tr.auto
+lib/webmin/bsdexports/lang/tr
 lib/webmin/bsdexports/lang/uk.auto
 lib/webmin/bsdexports/lang/zh_TW.auto
 lib/webmin/bsdexports/lang/zh.auto
@@ -3461,7 +3451,7 @@ lib/webmin/bsdfdisk/lang/pt.auto
 lib/webmin/bsdfdisk/lang/ru.auto
 lib/webmin/bsdfdisk/lang/sk.auto
 lib/webmin/bsdfdisk/lang/sv.auto
-lib/webmin/bsdfdisk/lang/tr.auto
+lib/webmin/bsdfdisk/lang/tr
 lib/webmin/bsdfdisk/lang/uk.auto
 lib/webmin/bsdfdisk/lang/zh_TW.auto
 lib/webmin/bsdfdisk/lang/zh.auto
@@ -3518,7 +3508,6 @@ lib/webmin/bsdfdisk/module.info.sk.auto
 lib/webmin/bsdfdisk/module.info.sv
 lib/webmin/bsdfdisk/module.info.sv.auto
 lib/webmin/bsdfdisk/module.info.tr
-lib/webmin/bsdfdisk/module.info.tr.auto
 lib/webmin/bsdfdisk/module.info.uk
 lib/webmin/bsdfdisk/module.info.uk.auto
 lib/webmin/bsdfdisk/module.info.zh
@@ -3589,7 +3578,6 @@ lib/webmin/change-user/lang/sk
 lib/webmin/change-user/lang/sk.auto
 lib/webmin/change-user/lang/sv.auto
 lib/webmin/change-user/lang/tr
-lib/webmin/change-user/lang/tr.auto
 lib/webmin/change-user/lang/uk
 lib/webmin/change-user/lang/uk.auto
 lib/webmin/change-user/lang/zh
@@ -3705,7 +3693,7 @@ lib/webmin/cluster-copy/lang/pt.auto
 lib/webmin/cluster-copy/lang/ru.auto
 lib/webmin/cluster-copy/lang/sk.auto
 lib/webmin/cluster-copy/lang/sv.auto
-lib/webmin/cluster-copy/lang/tr.auto
+lib/webmin/cluster-copy/lang/tr
 lib/webmin/cluster-copy/lang/uk.auto
 lib/webmin/cluster-copy/lang/zh_TW.auto
 lib/webmin/cluster-copy/lang/zh.auto
@@ -3760,7 +3748,6 @@ lib/webmin/cluster-copy/module.info.sk.auto
 lib/webmin/cluster-copy/module.info.sv
 lib/webmin/cluster-copy/module.info.sv.auto
 lib/webmin/cluster-copy/module.info.tr
-lib/webmin/cluster-copy/module.info.tr.auto
 lib/webmin/cluster-copy/module.info.uk
 lib/webmin/cluster-copy/module.info.uk.auto
 lib/webmin/cluster-copy/module.info.zh
@@ -3812,7 +3799,7 @@ lib/webmin/cluster-cron/lang/pt.auto
 lib/webmin/cluster-cron/lang/ru.auto
 lib/webmin/cluster-cron/lang/sk.auto
 lib/webmin/cluster-cron/lang/sv.auto
-lib/webmin/cluster-cron/lang/tr.auto
+lib/webmin/cluster-cron/lang/tr
 lib/webmin/cluster-cron/lang/uk.auto
 lib/webmin/cluster-cron/lang/zh_TW.auto
 lib/webmin/cluster-cron/lang/zh.auto
@@ -3871,7 +3858,6 @@ lib/webmin/cluster-cron/module.info.sk.auto
 lib/webmin/cluster-cron/module.info.sv
 lib/webmin/cluster-cron/module.info.sv.auto
 lib/webmin/cluster-cron/module.info.tr
-lib/webmin/cluster-cron/module.info.tr.auto
 lib/webmin/cluster-cron/module.info.uk
 lib/webmin/cluster-cron/module.info.uk.auto
 lib/webmin/cluster-cron/module.info.zh
@@ -3933,7 +3919,7 @@ lib/webmin/cluster-passwd/lang/pt.auto
 lib/webmin/cluster-passwd/lang/ru.auto
 lib/webmin/cluster-passwd/lang/sk.auto
 lib/webmin/cluster-passwd/lang/sv.auto
-lib/webmin/cluster-passwd/lang/tr.auto
+lib/webmin/cluster-passwd/lang/tr
 lib/webmin/cluster-passwd/lang/uk.auto
 lib/webmin/cluster-passwd/lang/zh_TW.auto
 lib/webmin/cluster-passwd/lang/zh.auto
@@ -3988,7 +3974,6 @@ lib/webmin/cluster-passwd/module.info.sk.auto
 lib/webmin/cluster-passwd/module.info.sv
 lib/webmin/cluster-passwd/module.info.sv.auto
 lib/webmin/cluster-passwd/module.info.tr
-lib/webmin/cluster-passwd/module.info.tr.auto
 lib/webmin/cluster-passwd/module.info.uk
 lib/webmin/cluster-passwd/module.info.uk.auto
 lib/webmin/cluster-passwd/module.info.zh
@@ -4033,7 +4018,7 @@ lib/webmin/cluster-shell/lang/pt.auto
 lib/webmin/cluster-shell/lang/ru.auto
 lib/webmin/cluster-shell/lang/sk.auto
 lib/webmin/cluster-shell/lang/sv.auto
-lib/webmin/cluster-shell/lang/tr.auto
+lib/webmin/cluster-shell/lang/tr
 lib/webmin/cluster-shell/lang/uk.auto
 lib/webmin/cluster-shell/lang/zh_TW.auto
 lib/webmin/cluster-shell/lang/zh.auto
@@ -4088,7 +4073,6 @@ lib/webmin/cluster-shell/module.info.sk.auto
 lib/webmin/cluster-shell/module.info.sv
 lib/webmin/cluster-shell/module.info.sv.auto
 lib/webmin/cluster-shell/module.info.tr
-lib/webmin/cluster-shell/module.info.tr.auto
 lib/webmin/cluster-shell/module.info.uk
 lib/webmin/cluster-shell/module.info.uk.auto
 lib/webmin/cluster-shell/module.info.zh
@@ -4164,7 +4148,7 @@ lib/webmin/cluster-software/lang/pt.auto
 lib/webmin/cluster-software/lang/ru.auto
 lib/webmin/cluster-software/lang/sk.auto
 lib/webmin/cluster-software/lang/sv.auto
-lib/webmin/cluster-software/lang/tr.auto
+lib/webmin/cluster-software/lang/tr
 lib/webmin/cluster-software/lang/uk.auto
 lib/webmin/cluster-software/lang/zh_TW.auto
 lib/webmin/cluster-software/lang/zh.auto
@@ -4299,7 +4283,7 @@ lib/webmin/cluster-useradmin/lang/pt.auto
 lib/webmin/cluster-useradmin/lang/ru.auto
 lib/webmin/cluster-useradmin/lang/sk.auto
 lib/webmin/cluster-useradmin/lang/sv.auto
-lib/webmin/cluster-useradmin/lang/tr.auto
+lib/webmin/cluster-useradmin/lang/tr
 lib/webmin/cluster-useradmin/lang/uk.auto
 lib/webmin/cluster-useradmin/lang/zh_TW.auto
 lib/webmin/cluster-useradmin/lang/zh.auto
@@ -4427,7 +4411,7 @@ lib/webmin/cluster-usermin/lang/pt.auto
 lib/webmin/cluster-usermin/lang/ru.auto
 lib/webmin/cluster-usermin/lang/sk.auto
 lib/webmin/cluster-usermin/lang/sv.auto
-lib/webmin/cluster-usermin/lang/tr.auto
+lib/webmin/cluster-usermin/lang/tr
 lib/webmin/cluster-usermin/lang/uk.auto
 lib/webmin/cluster-usermin/lang/zh_TW.auto
 lib/webmin/cluster-usermin/lang/zh.auto
@@ -4562,7 +4546,7 @@ lib/webmin/cluster-webmin/lang/pt.auto
 lib/webmin/cluster-webmin/lang/ru.auto
 lib/webmin/cluster-webmin/lang/sk.auto
 lib/webmin/cluster-webmin/lang/sv.auto
-lib/webmin/cluster-webmin/lang/tr.auto
+lib/webmin/cluster-webmin/lang/tr
 lib/webmin/cluster-webmin/lang/uk.auto
 lib/webmin/cluster-webmin/lang/zh_TW.auto
 lib/webmin/cluster-webmin/lang/zh.auto
@@ -4747,7 +4731,7 @@ lib/webmin/cpan/lang/ru.auto
 lib/webmin/cpan/lang/sk.auto
 lib/webmin/cpan/lang/sv
 lib/webmin/cpan/lang/sv.auto
-lib/webmin/cpan/lang/tr.auto
+lib/webmin/cpan/lang/tr
 lib/webmin/cpan/lang/uk
 lib/webmin/cpan/lang/uk.auto
 lib/webmin/cpan/lang/zh
@@ -4957,7 +4941,6 @@ lib/webmin/cron/lang/sk.auto
 lib/webmin/cron/lang/sv
 lib/webmin/cron/lang/sv.auto
 lib/webmin/cron/lang/tr
-lib/webmin/cron/lang/tr.auto
 lib/webmin/cron/lang/uk
 lib/webmin/cron/lang/uk.auto
 lib/webmin/cron/lang/zh
@@ -5118,7 +5101,6 @@ lib/webmin/custom/lang/sk.auto
 lib/webmin/custom/lang/sv
 lib/webmin/custom/lang/sv.auto
 lib/webmin/custom/lang/tr
-lib/webmin/custom/lang/tr.auto
 lib/webmin/custom/lang/uk
 lib/webmin/custom/lang/uk.auto
 lib/webmin/custom/lang/zh
@@ -5262,7 +5244,6 @@ lib/webmin/dfsadmin/lang/sk.auto
 lib/webmin/dfsadmin/lang/sv
 lib/webmin/dfsadmin/lang/sv.auto
 lib/webmin/dfsadmin/lang/tr
-lib/webmin/dfsadmin/lang/tr.auto
 lib/webmin/dfsadmin/lang/uk.auto
 lib/webmin/dfsadmin/lang/zh
 lib/webmin/dfsadmin/lang/zh_TW
@@ -5493,7 +5474,6 @@ lib/webmin/dhcpd/lang/sk.auto
 lib/webmin/dhcpd/lang/sv
 lib/webmin/dhcpd/lang/sv.auto
 lib/webmin/dhcpd/lang/tr
-lib/webmin/dhcpd/lang/tr.auto
 lib/webmin/dhcpd/lang/uk
 lib/webmin/dhcpd/lang/uk.auto
 lib/webmin/dhcpd/lang/zh
@@ -5679,7 +5659,7 @@ lib/webmin/dovecot/lang/pt.auto
 lib/webmin/dovecot/lang/ru.auto
 lib/webmin/dovecot/lang/sk.auto
 lib/webmin/dovecot/lang/sv.auto
-lib/webmin/dovecot/lang/tr.auto
+lib/webmin/dovecot/lang/tr
 lib/webmin/dovecot/lang/uk.auto
 lib/webmin/dovecot/lang/zh_TW
 lib/webmin/dovecot/lang/zh_TW.auto
@@ -5735,7 +5715,6 @@ lib/webmin/dovecot/module.info.sk.auto
 lib/webmin/dovecot/module.info.sv
 lib/webmin/dovecot/module.info.sv.auto
 lib/webmin/dovecot/module.info.tr
-lib/webmin/dovecot/module.info.tr.auto
 lib/webmin/dovecot/module.info.uk
 lib/webmin/dovecot/module.info.uk.auto
 lib/webmin/dovecot/module.info.zh
@@ -5946,7 +5925,6 @@ lib/webmin/exports/lang/sk.auto
 lib/webmin/exports/lang/sv
 lib/webmin/exports/lang/sv.auto
 lib/webmin/exports/lang/tr
-lib/webmin/exports/lang/tr.auto
 lib/webmin/exports/lang/uk
 lib/webmin/exports/lang/uk.auto
 lib/webmin/exports/lang/zh
@@ -6084,7 +6062,7 @@ lib/webmin/fail2ban/lang/ru
 lib/webmin/fail2ban/lang/ru.auto
 lib/webmin/fail2ban/lang/sk.auto
 lib/webmin/fail2ban/lang/sv.auto
-lib/webmin/fail2ban/lang/tr.auto
+lib/webmin/fail2ban/lang/tr
 lib/webmin/fail2ban/lang/uk.auto
 lib/webmin/fail2ban/lang/zh
 lib/webmin/fail2ban/lang/zh_TW.auto
@@ -6143,7 +6121,6 @@ lib/webmin/fail2ban/module.info.sk.auto
 lib/webmin/fail2ban/module.info.sv
 lib/webmin/fail2ban/module.info.sv.auto
 lib/webmin/fail2ban/module.info.tr
-lib/webmin/fail2ban/module.info.tr.auto
 lib/webmin/fail2ban/module.info.uk
 lib/webmin/fail2ban/module.info.uk.auto
 lib/webmin/fail2ban/module.info.zh
@@ -6234,7 +6211,6 @@ lib/webmin/fdisk/lang/sk.auto
 lib/webmin/fdisk/lang/sv
 lib/webmin/fdisk/lang/sv.auto
 lib/webmin/fdisk/lang/tr
-lib/webmin/fdisk/lang/tr.auto
 lib/webmin/fdisk/lang/uk
 lib/webmin/fdisk/lang/uk.auto
 lib/webmin/fdisk/lang/zh
@@ -6405,7 +6381,7 @@ lib/webmin/fetchmail/lang/ru
 lib/webmin/fetchmail/lang/ru.auto
 lib/webmin/fetchmail/lang/sk.auto
 lib/webmin/fetchmail/lang/sv.auto
-lib/webmin/fetchmail/lang/tr.auto
+lib/webmin/fetchmail/lang/tr
 lib/webmin/fetchmail/lang/uk
 lib/webmin/fetchmail/lang/uk.auto
 lib/webmin/fetchmail/lang/zh
@@ -6821,7 +6797,7 @@ lib/webmin/filemin/lang/pt.auto
 lib/webmin/filemin/lang/ru.auto
 lib/webmin/filemin/lang/sk.auto
 lib/webmin/filemin/lang/sv.auto
-lib/webmin/filemin/lang/tr.auto
+lib/webmin/filemin/lang/tr
 lib/webmin/filemin/lang/uk
 lib/webmin/filemin/lang/uk.auto
 lib/webmin/filemin/lang/zh
@@ -6975,7 +6951,7 @@ lib/webmin/filter/lang/pt.auto
 lib/webmin/filter/lang/ru.auto
 lib/webmin/filter/lang/sk.auto
 lib/webmin/filter/lang/sv.auto
-lib/webmin/filter/lang/tr.auto
+lib/webmin/filter/lang/tr
 lib/webmin/filter/lang/uk.auto
 lib/webmin/filter/lang/zh_TW.auto
 lib/webmin/filter/lang/zh.auto
@@ -7028,7 +7004,6 @@ lib/webmin/filter/module.info.sk.auto
 lib/webmin/filter/module.info.sv
 lib/webmin/filter/module.info.sv.auto
 lib/webmin/filter/module.info.tr
-lib/webmin/filter/module.info.tr.auto
 lib/webmin/filter/module.info.uk
 lib/webmin/filter/module.info.uk.auto
 lib/webmin/filter/module.info.zh
@@ -7125,7 +7100,6 @@ lib/webmin/firewall/lang/sk
 lib/webmin/firewall/lang/sk.auto
 lib/webmin/firewall/lang/sv.auto
 lib/webmin/firewall/lang/tr
-lib/webmin/firewall/lang/tr.auto
 lib/webmin/firewall/lang/uk
 lib/webmin/firewall/lang/uk.auto
 lib/webmin/firewall/lang/zh_TW.auto
@@ -7288,7 +7262,6 @@ lib/webmin/firewall6/lang/sk
 lib/webmin/firewall6/lang/sk.auto
 lib/webmin/firewall6/lang/sv.auto
 lib/webmin/firewall6/lang/tr
-lib/webmin/firewall6/lang/tr.auto
 lib/webmin/firewall6/lang/uk
 lib/webmin/firewall6/lang/uk.auto
 lib/webmin/firewall6/lang/zh_TW.auto
@@ -7442,7 +7415,7 @@ lib/webmin/firewalld/lang/pt.auto
 lib/webmin/firewalld/lang/ru.auto
 lib/webmin/firewalld/lang/sk.auto
 lib/webmin/firewalld/lang/sv.auto
-lib/webmin/firewalld/lang/tr.auto
+lib/webmin/firewalld/lang/tr
 lib/webmin/firewalld/lang/uk.auto
 lib/webmin/firewalld/lang/zh_TW.auto
 lib/webmin/firewalld/lang/zh.auto
@@ -7500,7 +7473,6 @@ lib/webmin/firewalld/module.info.sk.auto
 lib/webmin/firewalld/module.info.sv
 lib/webmin/firewalld/module.info.sv.auto
 lib/webmin/firewalld/module.info.tr
-lib/webmin/firewalld/module.info.tr.auto
 lib/webmin/firewalld/module.info.uk
 lib/webmin/firewalld/module.info.uk.auto
 lib/webmin/firewalld/module.info.zh
@@ -7582,7 +7554,6 @@ lib/webmin/format/lang/sk.auto
 lib/webmin/format/lang/sv
 lib/webmin/format/lang/sv.auto
 lib/webmin/format/lang/tr
-lib/webmin/format/lang/tr.auto
 lib/webmin/format/lang/uk.auto
 lib/webmin/format/lang/zh
 lib/webmin/format/lang/zh_TW
@@ -7727,7 +7698,7 @@ lib/webmin/fsdump/lang/ru
 lib/webmin/fsdump/lang/ru.auto
 lib/webmin/fsdump/lang/sk.auto
 lib/webmin/fsdump/lang/sv.auto
-lib/webmin/fsdump/lang/tr.auto
+lib/webmin/fsdump/lang/tr
 lib/webmin/fsdump/lang/uk
 lib/webmin/fsdump/lang/uk.auto
 lib/webmin/fsdump/lang/zh
@@ -8197,7 +8168,7 @@ lib/webmin/gray-theme/lang/pt.auto
 lib/webmin/gray-theme/lang/ru.auto
 lib/webmin/gray-theme/lang/sk.auto
 lib/webmin/gray-theme/lang/sv.auto
-lib/webmin/gray-theme/lang/tr.auto
+lib/webmin/gray-theme/lang/tr
 lib/webmin/gray-theme/lang/uk.auto
 lib/webmin/gray-theme/lang/zh
 lib/webmin/gray-theme/lang/zh_TW
@@ -8722,8 +8693,10 @@ lib/webmin/grub2/index.cgi
 lib/webmin/grub2/install_check.pl
 lib/webmin/grub2/install.cgi
 lib/webmin/grub2/lang/en
+lib/webmin/grub2/lang/tr
 lib/webmin/grub2/log_parser.pl
 lib/webmin/grub2/module.info
+lib/webmin/grub2/module.info.tr
 lib/webmin/grub2/reboot_once.cgi
 lib/webmin/grub2/save_custom.cgi
 lib/webmin/grub2/save_defaults.cgi
@@ -8732,6 +8705,18 @@ lib/webmin/grub2/save_security.cgi
 lib/webmin/grub2/save_theme.cgi
 lib/webmin/grub2/set_default.cgi
 lib/webmin/grub2/status.cgi
+lib/webmin/hardware-info/hardware-info-lib.pl
+lib/webmin/hardware-info/help/help.zip
+lib/webmin/hardware-info/images/icon.gif
+lib/webmin/hardware-info/images/icon.svg
+lib/webmin/hardware-info/index.cgi
+lib/webmin/hardware-info/install_check.pl
+lib/webmin/hardware-info/lang/en
+lib/webmin/hardware-info/lang/tr
+lib/webmin/hardware-info/module.cgi
+lib/webmin/hardware-info/module.info
+lib/webmin/hardware-info/module.info.tr
+lib/webmin/hardware-info/view.cgi
 lib/webmin/heartbeat/apply.cgi
 lib/webmin/heartbeat/backup_config.pl
 lib/webmin/heartbeat/config
@@ -8792,7 +8777,7 @@ lib/webmin/heartbeat/lang/pt.auto
 lib/webmin/heartbeat/lang/ru.auto
 lib/webmin/heartbeat/lang/sk.auto
 lib/webmin/heartbeat/lang/sv.auto
-lib/webmin/heartbeat/lang/tr.auto
+lib/webmin/heartbeat/lang/tr
 lib/webmin/heartbeat/lang/uk.auto
 lib/webmin/heartbeat/lang/zh_TW.auto
 lib/webmin/heartbeat/lang/zh.auto
@@ -8917,7 +8902,6 @@ lib/webmin/hpuxexports/lang/sk.auto
 lib/webmin/hpuxexports/lang/sv
 lib/webmin/hpuxexports/lang/sv.auto
 lib/webmin/hpuxexports/lang/tr
-lib/webmin/hpuxexports/lang/tr.auto
 lib/webmin/hpuxexports/lang/uk
 lib/webmin/hpuxexports/lang/uk.auto
 lib/webmin/hpuxexports/lang/zh
@@ -9053,7 +9037,6 @@ lib/webmin/htaccess-htpasswd/lang/ru.auto
 lib/webmin/htaccess-htpasswd/lang/sk.auto
 lib/webmin/htaccess-htpasswd/lang/sv.auto
 lib/webmin/htaccess-htpasswd/lang/tr
-lib/webmin/htaccess-htpasswd/lang/tr.auto
 lib/webmin/htaccess-htpasswd/lang/uk.auto
 lib/webmin/htaccess-htpasswd/lang/zh_TW
 lib/webmin/htaccess-htpasswd/lang/zh_TW.auto
@@ -9169,7 +9152,7 @@ lib/webmin/idmapd/lang/pt.auto
 lib/webmin/idmapd/lang/ru.auto
 lib/webmin/idmapd/lang/sk.auto
 lib/webmin/idmapd/lang/sv.auto
-lib/webmin/idmapd/lang/tr.auto
+lib/webmin/idmapd/lang/tr
 lib/webmin/idmapd/lang/uk.auto
 lib/webmin/idmapd/lang/zh_TW.auto
 lib/webmin/idmapd/lang/zh.auto
@@ -9395,7 +9378,6 @@ lib/webmin/inetd/lang/sk.auto
 lib/webmin/inetd/lang/sv
 lib/webmin/inetd/lang/sv.auto
 lib/webmin/inetd/lang/tr
-lib/webmin/inetd/lang/tr.auto
 lib/webmin/inetd/lang/uk.auto
 lib/webmin/inetd/lang/zh
 lib/webmin/inetd/lang/zh_TW
@@ -9456,7 +9438,6 @@ lib/webmin/inetd/module.info.sk.auto
 lib/webmin/inetd/module.info.sv
 lib/webmin/inetd/module.info.sv.auto
 lib/webmin/inetd/module.info.tr
-lib/webmin/inetd/module.info.tr.auto
 lib/webmin/inetd/module.info.uk
 lib/webmin/inetd/module.info.uk.auto
 lib/webmin/inetd/module.info.zh
@@ -9592,7 +9573,6 @@ lib/webmin/init/lang/sk.auto
 lib/webmin/init/lang/sv
 lib/webmin/init/lang/sv.auto
 lib/webmin/init/lang/tr
-lib/webmin/init/lang/tr.auto
 lib/webmin/init/lang/uk
 lib/webmin/init/lang/uk.auto
 lib/webmin/init/lang/zh
@@ -9754,7 +9734,6 @@ lib/webmin/inittab/lang/sk.auto
 lib/webmin/inittab/lang/sv
 lib/webmin/inittab/lang/sv.auto
 lib/webmin/inittab/lang/tr
-lib/webmin/inittab/lang/tr.auto
 lib/webmin/inittab/lang/uk
 lib/webmin/inittab/lang/uk.auto
 lib/webmin/inittab/lang/zh
@@ -9879,7 +9858,7 @@ lib/webmin/ipfilter/lang/pt.auto
 lib/webmin/ipfilter/lang/ru.auto
 lib/webmin/ipfilter/lang/sk.auto
 lib/webmin/ipfilter/lang/sv.auto
-lib/webmin/ipfilter/lang/tr.auto
+lib/webmin/ipfilter/lang/tr
 lib/webmin/ipfilter/lang/uk.auto
 lib/webmin/ipfilter/lang/zh_TW.auto
 lib/webmin/ipfilter/lang/zh.auto
@@ -9936,7 +9915,6 @@ lib/webmin/ipfilter/module.info.sk.auto
 lib/webmin/ipfilter/module.info.sv
 lib/webmin/ipfilter/module.info.sv.auto
 lib/webmin/ipfilter/module.info.tr
-lib/webmin/ipfilter/module.info.tr.auto
 lib/webmin/ipfilter/module.info.uk
 lib/webmin/ipfilter/module.info.uk.auto
 lib/webmin/ipfilter/module.info.zh
@@ -9998,7 +9976,7 @@ lib/webmin/ipfw/lang/pt.auto
 lib/webmin/ipfw/lang/ru.auto
 lib/webmin/ipfw/lang/sk.auto
 lib/webmin/ipfw/lang/sv.auto
-lib/webmin/ipfw/lang/tr.auto
+lib/webmin/ipfw/lang/tr
 lib/webmin/ipfw/lang/uk.auto
 lib/webmin/ipfw/lang/zh_TW.auto
 lib/webmin/ipfw/lang/zh.auto
@@ -10055,7 +10033,6 @@ lib/webmin/ipfw/module.info.sk.auto
 lib/webmin/ipfw/module.info.sv
 lib/webmin/ipfw/module.info.sv.auto
 lib/webmin/ipfw/module.info.tr
-lib/webmin/ipfw/module.info.tr.auto
 lib/webmin/ipfw/module.info.uk
 lib/webmin/ipfw/module.info.uk.auto
 lib/webmin/ipfw/module.info.zh
@@ -10145,7 +10122,7 @@ lib/webmin/ipsec/lang/pt.auto
 lib/webmin/ipsec/lang/ru.auto
 lib/webmin/ipsec/lang/sk.auto
 lib/webmin/ipsec/lang/sv.auto
-lib/webmin/ipsec/lang/tr.auto
+lib/webmin/ipsec/lang/tr
 lib/webmin/ipsec/lang/uk.auto
 lib/webmin/ipsec/lang/zh
 lib/webmin/ipsec/lang/zh_TW.auto
@@ -10280,7 +10257,7 @@ lib/webmin/iscsi-client/lang/pt.auto
 lib/webmin/iscsi-client/lang/ru.auto
 lib/webmin/iscsi-client/lang/sk.auto
 lib/webmin/iscsi-client/lang/sv.auto
-lib/webmin/iscsi-client/lang/tr.auto
+lib/webmin/iscsi-client/lang/tr
 lib/webmin/iscsi-client/lang/uk.auto
 lib/webmin/iscsi-client/lang/zh_TW.auto
 lib/webmin/iscsi-client/lang/zh.auto
@@ -10337,7 +10314,6 @@ lib/webmin/iscsi-client/module.info.sk.auto
 lib/webmin/iscsi-client/module.info.sv
 lib/webmin/iscsi-client/module.info.sv.auto
 lib/webmin/iscsi-client/module.info.tr
-lib/webmin/iscsi-client/module.info.tr.auto
 lib/webmin/iscsi-client/module.info.uk
 lib/webmin/iscsi-client/module.info.uk.auto
 lib/webmin/iscsi-client/module.info.zh
@@ -10405,7 +10381,7 @@ lib/webmin/iscsi-server/lang/pt.auto
 lib/webmin/iscsi-server/lang/ru.auto
 lib/webmin/iscsi-server/lang/sk.auto
 lib/webmin/iscsi-server/lang/sv.auto
-lib/webmin/iscsi-server/lang/tr.auto
+lib/webmin/iscsi-server/lang/tr
 lib/webmin/iscsi-server/lang/uk.auto
 lib/webmin/iscsi-server/lang/zh_TW.auto
 lib/webmin/iscsi-server/lang/zh.auto
@@ -10464,7 +10440,6 @@ lib/webmin/iscsi-server/module.info.sk.auto
 lib/webmin/iscsi-server/module.info.sv
 lib/webmin/iscsi-server/module.info.sv.auto
 lib/webmin/iscsi-server/module.info.tr
-lib/webmin/iscsi-server/module.info.tr.auto
 lib/webmin/iscsi-server/module.info.uk
 lib/webmin/iscsi-server/module.info.uk.auto
 lib/webmin/iscsi-server/module.info.zh
@@ -10539,7 +10514,7 @@ lib/webmin/iscsi-target/lang/pt.auto
 lib/webmin/iscsi-target/lang/ru.auto
 lib/webmin/iscsi-target/lang/sk.auto
 lib/webmin/iscsi-target/lang/sv.auto
-lib/webmin/iscsi-target/lang/tr.auto
+lib/webmin/iscsi-target/lang/tr
 lib/webmin/iscsi-target/lang/uk.auto
 lib/webmin/iscsi-target/lang/zh_TW.auto
 lib/webmin/iscsi-target/lang/zh.auto
@@ -10596,7 +10571,6 @@ lib/webmin/iscsi-target/module.info.sk.auto
 lib/webmin/iscsi-target/module.info.sv
 lib/webmin/iscsi-target/module.info.sv.auto
 lib/webmin/iscsi-target/module.info.tr
-lib/webmin/iscsi-target/module.info.tr.auto
 lib/webmin/iscsi-target/module.info.uk
 lib/webmin/iscsi-target/module.info.uk.auto
 lib/webmin/iscsi-target/module.info.zh
@@ -10667,7 +10641,7 @@ lib/webmin/iscsi-tgtd/lang/pt.auto
 lib/webmin/iscsi-tgtd/lang/ru.auto
 lib/webmin/iscsi-tgtd/lang/sk.auto
 lib/webmin/iscsi-tgtd/lang/sv.auto
-lib/webmin/iscsi-tgtd/lang/tr.auto
+lib/webmin/iscsi-tgtd/lang/tr
 lib/webmin/iscsi-tgtd/lang/uk.auto
 lib/webmin/iscsi-tgtd/lang/zh_TW.auto
 lib/webmin/iscsi-tgtd/lang/zh.auto
@@ -10724,7 +10698,6 @@ lib/webmin/iscsi-tgtd/module.info.sk.auto
 lib/webmin/iscsi-tgtd/module.info.sv
 lib/webmin/iscsi-tgtd/module.info.sv.auto
 lib/webmin/iscsi-tgtd/module.info.tr
-lib/webmin/iscsi-tgtd/module.info.tr.auto
 lib/webmin/iscsi-tgtd/module.info.uk
 lib/webmin/iscsi-tgtd/module.info.uk.auto
 lib/webmin/iscsi-tgtd/module.info.zh
@@ -10756,8 +10729,10 @@ lib/webmin/kea-dhcp/index.cgi
 lib/webmin/kea-dhcp/install_check.pl
 lib/webmin/kea-dhcp/kea-dhcp-lib.pl
 lib/webmin/kea-dhcp/lang/en
+lib/webmin/kea-dhcp/lang/tr
 lib/webmin/kea-dhcp/log_parser.pl
 lib/webmin/kea-dhcp/module.info
+lib/webmin/kea-dhcp/module.info.tr
 lib/webmin/kea-dhcp/restart.cgi
 lib/webmin/kea-dhcp/runtime.cgi
 lib/webmin/kea-dhcp/save_ddns.cgi
@@ -10808,7 +10783,7 @@ lib/webmin/krb5/lang/pt.auto
 lib/webmin/krb5/lang/ru.auto
 lib/webmin/krb5/lang/sk.auto
 lib/webmin/krb5/lang/sv.auto
-lib/webmin/krb5/lang/tr.auto
+lib/webmin/krb5/lang/tr
 lib/webmin/krb5/lang/uk.auto
 lib/webmin/krb5/lang/zh_TW.auto
 lib/webmin/krb5/lang/zh.auto
@@ -11006,7 +10981,7 @@ lib/webmin/ldap-client/lang/pt.auto
 lib/webmin/ldap-client/lang/ru.auto
 lib/webmin/ldap-client/lang/sk.auto
 lib/webmin/ldap-client/lang/sv.auto
-lib/webmin/ldap-client/lang/tr.auto
+lib/webmin/ldap-client/lang/tr
 lib/webmin/ldap-client/lang/uk.auto
 lib/webmin/ldap-client/lang/zh_TW.auto
 lib/webmin/ldap-client/lang/zh.auto
@@ -11064,7 +11039,6 @@ lib/webmin/ldap-client/module.info.sk.auto
 lib/webmin/ldap-client/module.info.sv
 lib/webmin/ldap-client/module.info.sv.auto
 lib/webmin/ldap-client/module.info.tr
-lib/webmin/ldap-client/module.info.tr.auto
 lib/webmin/ldap-client/module.info.uk
 lib/webmin/ldap-client/module.info.uk.auto
 lib/webmin/ldap-client/module.info.zh
@@ -11183,7 +11157,7 @@ lib/webmin/ldap-server/lang/pt.auto
 lib/webmin/ldap-server/lang/ru.auto
 lib/webmin/ldap-server/lang/sk.auto
 lib/webmin/ldap-server/lang/sv.auto
-lib/webmin/ldap-server/lang/tr.auto
+lib/webmin/ldap-server/lang/tr
 lib/webmin/ldap-server/lang/uk.auto
 lib/webmin/ldap-server/lang/zh_TW.auto
 lib/webmin/ldap-server/lang/zh.auto
@@ -11243,7 +11217,6 @@ lib/webmin/ldap-server/module.info.sk.auto
 lib/webmin/ldap-server/module.info.sv
 lib/webmin/ldap-server/module.info.sv.auto
 lib/webmin/ldap-server/module.info.tr
-lib/webmin/ldap-server/module.info.tr.auto
 lib/webmin/ldap-server/module.info.uk
 lib/webmin/ldap-server/module.info.uk.auto
 lib/webmin/ldap-server/module.info.zh
@@ -11333,7 +11306,7 @@ lib/webmin/ldap-useradmin/lang/pt.auto
 lib/webmin/ldap-useradmin/lang/ru.auto
 lib/webmin/ldap-useradmin/lang/sk.auto
 lib/webmin/ldap-useradmin/lang/sv.auto
-lib/webmin/ldap-useradmin/lang/tr.auto
+lib/webmin/ldap-useradmin/lang/tr
 lib/webmin/ldap-useradmin/lang/uk.auto
 lib/webmin/ldap-useradmin/lang/zh_TW.auto
 lib/webmin/ldap-useradmin/lang/zh.auto
@@ -11392,7 +11365,6 @@ lib/webmin/ldap-useradmin/module.info.sk.auto
 lib/webmin/ldap-useradmin/module.info.sv
 lib/webmin/ldap-useradmin/module.info.sv.auto
 lib/webmin/ldap-useradmin/module.info.tr
-lib/webmin/ldap-useradmin/module.info.tr.auto
 lib/webmin/ldap-useradmin/module.info.uk
 lib/webmin/ldap-useradmin/module.info.uk.auto
 lib/webmin/ldap-useradmin/module.info.zh
@@ -11482,7 +11454,7 @@ lib/webmin/logrotate/lang/ru
 lib/webmin/logrotate/lang/sk
 lib/webmin/logrotate/lang/sk.auto
 lib/webmin/logrotate/lang/sv.auto
-lib/webmin/logrotate/lang/tr.auto
+lib/webmin/logrotate/lang/tr
 lib/webmin/logrotate/lang/uk.auto
 lib/webmin/logrotate/lang/zh_TW.auto
 lib/webmin/logrotate/lang/zh.auto
@@ -11590,7 +11562,7 @@ lib/webmin/logviewer/lang/ru
 lib/webmin/logviewer/lang/ru.auto
 lib/webmin/logviewer/lang/sk.auto
 lib/webmin/logviewer/lang/sv.auto
-lib/webmin/logviewer/lang/tr.auto
+lib/webmin/logviewer/lang/tr
 lib/webmin/logviewer/lang/uk.auto
 lib/webmin/logviewer/lang/zh
 lib/webmin/logviewer/lang/zh_TW.auto
@@ -11599,6 +11571,7 @@ lib/webmin/logviewer/logviewer-lib.pl
 lib/webmin/logviewer/module.info
 lib/webmin/logviewer/module.info.pl
 lib/webmin/logviewer/module.info.ru
+lib/webmin/logviewer/module.info.tr
 lib/webmin/logviewer/postinstall.pl
 lib/webmin/logviewer/prefs.info
 lib/webmin/logviewer/safeacl
@@ -11737,7 +11710,6 @@ lib/webmin/lpadmin/lang/sk.auto
 lib/webmin/lpadmin/lang/sv
 lib/webmin/lpadmin/lang/sv.auto
 lib/webmin/lpadmin/lang/tr
-lib/webmin/lpadmin/lang/tr.auto
 lib/webmin/lpadmin/lang/uk
 lib/webmin/lpadmin/lang/uk.auto
 lib/webmin/lpadmin/lang/zh
@@ -11889,7 +11861,7 @@ lib/webmin/lvm/lang/ru
 lib/webmin/lvm/lang/ru.auto
 lib/webmin/lvm/lang/sk.auto
 lib/webmin/lvm/lang/sv.auto
-lib/webmin/lvm/lang/tr.auto
+lib/webmin/lvm/lang/tr
 lib/webmin/lvm/lang/uk
 lib/webmin/lvm/lang/uk.auto
 lib/webmin/lvm/lang/zh
@@ -12050,7 +12022,6 @@ lib/webmin/mailboxes/lang/sk.auto
 lib/webmin/mailboxes/lang/sv
 lib/webmin/mailboxes/lang/sv.auto
 lib/webmin/mailboxes/lang/tr
-lib/webmin/mailboxes/lang/tr.auto
 lib/webmin/mailboxes/lang/uk.auto
 lib/webmin/mailboxes/lang/zh
 lib/webmin/mailboxes/lang/zh_TW
@@ -12176,7 +12147,7 @@ lib/webmin/mailcap/lang/pt.auto
 lib/webmin/mailcap/lang/ru.auto
 lib/webmin/mailcap/lang/sk.auto
 lib/webmin/mailcap/lang/sv.auto
-lib/webmin/mailcap/lang/tr.auto
+lib/webmin/mailcap/lang/tr
 lib/webmin/mailcap/lang/uk.auto
 lib/webmin/mailcap/lang/zh_TW.auto
 lib/webmin/mailcap/lang/zh.auto
@@ -12232,7 +12203,6 @@ lib/webmin/mailcap/module.info.sk.auto
 lib/webmin/mailcap/module.info.sv
 lib/webmin/mailcap/module.info.sv.auto
 lib/webmin/mailcap/module.info.tr
-lib/webmin/mailcap/module.info.tr.auto
 lib/webmin/mailcap/module.info.uk
 lib/webmin/mailcap/module.info.uk.auto
 lib/webmin/mailcap/module.info.zh
@@ -12348,7 +12318,6 @@ lib/webmin/man/lang/sk.auto
 lib/webmin/man/lang/sv
 lib/webmin/man/lang/sv.auto
 lib/webmin/man/lang/tr
-lib/webmin/man/lang/tr.auto
 lib/webmin/man/lang/uk
 lib/webmin/man/lang/uk.auto
 lib/webmin/man/lang/zh
@@ -12568,7 +12537,6 @@ lib/webmin/mount/lang/sk.auto
 lib/webmin/mount/lang/sv
 lib/webmin/mount/lang/sv.auto
 lib/webmin/mount/lang/tr
-lib/webmin/mount/lang/tr.auto
 lib/webmin/mount/lang/uk.auto
 lib/webmin/mount/lang/zh
 lib/webmin/mount/lang/zh_TW
@@ -12760,6 +12728,7 @@ lib/webmin/mysql/drop_dbase.cgi
 lib/webmin/mysql/drop_dbases.cgi
 lib/webmin/mysql/drop_table.cgi
 lib/webmin/mysql/drop_tables.cgi
+lib/webmin/mysql/edit_binlogs.cgi
 lib/webmin/mysql/edit_cnf.cgi
 lib/webmin/mysql/edit_cpriv.cgi
 lib/webmin/mysql/edit_db.cgi
@@ -12776,7 +12745,9 @@ lib/webmin/mysql/edit_view.cgi
 lib/webmin/mysql/exec_file.cgi
 lib/webmin/mysql/exec_form.cgi
 lib/webmin/mysql/exec.cgi
+lib/webmin/mysql/flush_binlogs.cgi
 lib/webmin/mysql/help/help.zip
+lib/webmin/mysql/images/binlogs.svg
 lib/webmin/mysql/images/cnf.gif
 lib/webmin/mysql/images/cprivs.gif
 lib/webmin/mysql/images/db.gif
@@ -12845,7 +12816,6 @@ lib/webmin/mysql/lang/sk.auto
 lib/webmin/mysql/lang/sv
 lib/webmin/mysql/lang/sv.auto
 lib/webmin/mysql/lang/tr
-lib/webmin/mysql/lang/tr.auto
 lib/webmin/mysql/lang/uk
 lib/webmin/mysql/lang/uk.auto
 lib/webmin/mysql/lang/zh
@@ -12927,8 +12897,10 @@ lib/webmin/mysql/newdb_form.cgi
 lib/webmin/mysql/newdb.cgi
 lib/webmin/mysql/postinstall.pl
 lib/webmin/mysql/prefs.info
+lib/webmin/mysql/purge_binlogs.cgi
 lib/webmin/mysql/restart.cgi
 lib/webmin/mysql/root_form.cgi
+lib/webmin/mysql/save_binlogs.cgi
 lib/webmin/mysql/save_cnf.cgi
 lib/webmin/mysql/save_cpriv.cgi
 lib/webmin/mysql/save_db.cgi
@@ -13063,7 +13035,6 @@ lib/webmin/net/lang/sk.auto
 lib/webmin/net/lang/sv
 lib/webmin/net/lang/sv.auto
 lib/webmin/net/lang/tr
-lib/webmin/net/lang/tr.auto
 lib/webmin/net/lang/uk
 lib/webmin/net/lang/uk.auto
 lib/webmin/net/lang/zh
@@ -13180,7 +13151,6 @@ lib/webmin/newmods.pl
 lib/webmin/nftables/acl_security.pl
 lib/webmin/nftables/active_table.cgi
 lib/webmin/nftables/active.cgi
-lib/webmin/nftables/apply-boot.pl
 lib/webmin/nftables/bootup.cgi
 lib/webmin/nftables/clear_table.cgi
 lib/webmin/nftables/clear_tables.cgi
@@ -13203,12 +13173,16 @@ lib/webmin/nftables/import_table.cgi
 lib/webmin/nftables/index.cgi
 lib/webmin/nftables/install_check.pl
 lib/webmin/nftables/lang/en
+lib/webmin/nftables/lang/tr
 lib/webmin/nftables/manage_forward.cgi
 lib/webmin/nftables/manage_ip.cgi
 lib/webmin/nftables/manage_port.cgi
 lib/webmin/nftables/module.info
+lib/webmin/nftables/module.info.tr
 lib/webmin/nftables/move_rule.cgi
+lib/webmin/nftables/negativeacl
 lib/webmin/nftables/nftables-lib.pl
+lib/webmin/nftables/postinstall.pl
 lib/webmin/nftables/rename_chain.cgi
 lib/webmin/nftables/restart.cgi
 lib/webmin/nftables/save_chain.cgi
@@ -13217,6 +13191,8 @@ lib/webmin/nftables/save_rule.cgi
 lib/webmin/nftables/save_set.cgi
 lib/webmin/nftables/search_services.cgi
 lib/webmin/nftables/setup.cgi
+lib/webmin/nftables/start.cgi
+lib/webmin/nftables/stop.cgi
 lib/webmin/nginx/acl_security.pl
 lib/webmin/nginx/backup_config.pl
 lib/webmin/nginx/config
@@ -13317,7 +13293,7 @@ lib/webmin/nginx/lang/pt.auto
 lib/webmin/nginx/lang/ru.auto
 lib/webmin/nginx/lang/sk.auto
 lib/webmin/nginx/lang/sv.auto
-lib/webmin/nginx/lang/tr.auto
+lib/webmin/nginx/lang/tr
 lib/webmin/nginx/lang/uk.auto
 lib/webmin/nginx/lang/zh_TW.auto
 lib/webmin/nginx/lang/zh.auto
@@ -13350,7 +13326,7 @@ lib/webmin/nginx/module.info.pt.auto
 lib/webmin/nginx/module.info.ru.auto
 lib/webmin/nginx/module.info.sk.auto
 lib/webmin/nginx/module.info.sv.auto
-lib/webmin/nginx/module.info.tr.auto
+lib/webmin/nginx/module.info.tr
 lib/webmin/nginx/module.info.uk.auto
 lib/webmin/nginx/module.info.zh_TW.auto
 lib/webmin/nginx/module.info.zh.auto
@@ -13487,7 +13463,7 @@ lib/webmin/nis/lang/ru.auto
 lib/webmin/nis/lang/sk.auto
 lib/webmin/nis/lang/sv
 lib/webmin/nis/lang/sv.auto
-lib/webmin/nis/lang/tr.auto
+lib/webmin/nis/lang/tr
 lib/webmin/nis/lang/uk
 lib/webmin/nis/lang/uk.auto
 lib/webmin/nis/lang/zh
@@ -13659,7 +13635,7 @@ lib/webmin/openslp/lang/pt.auto
 lib/webmin/openslp/lang/ru
 lib/webmin/openslp/lang/sk.auto
 lib/webmin/openslp/lang/sv.auto
-lib/webmin/openslp/lang/tr.auto
+lib/webmin/openslp/lang/tr
 lib/webmin/openslp/lang/uk
 lib/webmin/openslp/lang/zh_TW.auto
 lib/webmin/openslp/lang/zh.auto
@@ -13786,7 +13762,7 @@ lib/webmin/package-updates/lang/ru
 lib/webmin/package-updates/lang/ru.auto
 lib/webmin/package-updates/lang/sk.auto
 lib/webmin/package-updates/lang/sv.auto
-lib/webmin/package-updates/lang/tr.auto
+lib/webmin/package-updates/lang/tr
 lib/webmin/package-updates/lang/uk.auto
 lib/webmin/package-updates/lang/zh_TW.auto
 lib/webmin/package-updates/lang/zh.auto
@@ -13839,7 +13815,6 @@ lib/webmin/package-updates/module.info.sk.auto
 lib/webmin/package-updates/module.info.sv
 lib/webmin/package-updates/module.info.sv.auto
 lib/webmin/package-updates/module.info.tr
-lib/webmin/package-updates/module.info.tr.auto
 lib/webmin/package-updates/module.info.uk
 lib/webmin/package-updates/module.info.uk.auto
 lib/webmin/package-updates/module.info.zh
@@ -13941,7 +13916,7 @@ lib/webmin/pam/lang/ru.auto
 lib/webmin/pam/lang/sk.auto
 lib/webmin/pam/lang/sv
 lib/webmin/pam/lang/sv.auto
-lib/webmin/pam/lang/tr.auto
+lib/webmin/pam/lang/tr
 lib/webmin/pam/lang/uk
 lib/webmin/pam/lang/uk.auto
 lib/webmin/pam/lang/zh
@@ -14126,7 +14101,7 @@ lib/webmin/pap/lang/ru.auto
 lib/webmin/pap/lang/sk.auto
 lib/webmin/pap/lang/sv
 lib/webmin/pap/lang/sv.auto
-lib/webmin/pap/lang/tr.auto
+lib/webmin/pap/lang/tr
 lib/webmin/pap/lang/uk
 lib/webmin/pap/lang/uk.auto
 lib/webmin/pap/lang/zh
@@ -14289,7 +14264,6 @@ lib/webmin/passwd/lang/sk
 lib/webmin/passwd/lang/sk.auto
 lib/webmin/passwd/lang/sv.auto
 lib/webmin/passwd/lang/tr
-lib/webmin/passwd/lang/tr.auto
 lib/webmin/passwd/lang/uk
 lib/webmin/passwd/lang/uk.auto
 lib/webmin/passwd/lang/zh
@@ -14460,7 +14434,7 @@ lib/webmin/phpini/lang/ru
 lib/webmin/phpini/lang/ru.auto
 lib/webmin/phpini/lang/sk.auto
 lib/webmin/phpini/lang/sv.auto
-lib/webmin/phpini/lang/tr.auto
+lib/webmin/phpini/lang/tr
 lib/webmin/phpini/lang/uk.auto
 lib/webmin/phpini/lang/zh_TW.auto
 lib/webmin/phpini/lang/zh.auto
@@ -14517,7 +14491,6 @@ lib/webmin/phpini/module.info.sk.auto
 lib/webmin/phpini/module.info.sv
 lib/webmin/phpini/module.info.sv.auto
 lib/webmin/phpini/module.info.tr
-lib/webmin/phpini/module.info.tr.auto
 lib/webmin/phpini/module.info.uk
 lib/webmin/phpini/module.info.uk.auto
 lib/webmin/phpini/module.info.zh
@@ -14679,7 +14652,7 @@ lib/webmin/postfix/lang/ru.auto
 lib/webmin/postfix/lang/sk.auto
 lib/webmin/postfix/lang/sv
 lib/webmin/postfix/lang/sv.auto
-lib/webmin/postfix/lang/tr.auto
+lib/webmin/postfix/lang/tr
 lib/webmin/postfix/lang/uk
 lib/webmin/postfix/lang/uk.auto
 lib/webmin/postfix/lang/zh
@@ -14948,7 +14921,7 @@ lib/webmin/postgresql/lang/ru.auto
 lib/webmin/postgresql/lang/sk.auto
 lib/webmin/postgresql/lang/sv
 lib/webmin/postgresql/lang/sv.auto
-lib/webmin/postgresql/lang/tr.auto
+lib/webmin/postgresql/lang/tr
 lib/webmin/postgresql/lang/uk
 lib/webmin/postgresql/lang/uk.auto
 lib/webmin/postgresql/lang/zh
@@ -15097,7 +15070,7 @@ lib/webmin/ppp-client/lang/pt.auto
 lib/webmin/ppp-client/lang/ru.auto
 lib/webmin/ppp-client/lang/sk.auto
 lib/webmin/ppp-client/lang/sv.auto
-lib/webmin/ppp-client/lang/tr.auto
+lib/webmin/ppp-client/lang/tr
 lib/webmin/ppp-client/lang/uk.auto
 lib/webmin/ppp-client/lang/zh_TW.auto
 lib/webmin/ppp-client/lang/zh.auto
@@ -15219,7 +15192,7 @@ lib/webmin/pptp-client/lang/pt.auto
 lib/webmin/pptp-client/lang/ru.auto
 lib/webmin/pptp-client/lang/sk.auto
 lib/webmin/pptp-client/lang/sv.auto
-lib/webmin/pptp-client/lang/tr.auto
+lib/webmin/pptp-client/lang/tr
 lib/webmin/pptp-client/lang/uk.auto
 lib/webmin/pptp-client/lang/zh_TW.auto
 lib/webmin/pptp-client/lang/zh.auto
@@ -15357,7 +15330,7 @@ lib/webmin/pptp-server/lang/pt.auto
 lib/webmin/pptp-server/lang/ru.auto
 lib/webmin/pptp-server/lang/sk.auto
 lib/webmin/pptp-server/lang/sv.auto
-lib/webmin/pptp-server/lang/tr.auto
+lib/webmin/pptp-server/lang/tr
 lib/webmin/pptp-server/lang/uk.auto
 lib/webmin/pptp-server/lang/zh_TW.auto
 lib/webmin/pptp-server/lang/zh.auto
@@ -15532,7 +15505,6 @@ lib/webmin/proc/lang/sk.auto
 lib/webmin/proc/lang/sv
 lib/webmin/proc/lang/sv.auto
 lib/webmin/proc/lang/tr
-lib/webmin/proc/lang/tr.auto
 lib/webmin/proc/lang/uk
 lib/webmin/proc/lang/uk.auto
 lib/webmin/proc/lang/zh
@@ -15684,7 +15656,7 @@ lib/webmin/procmail/lang/ru
 lib/webmin/procmail/lang/ru.auto
 lib/webmin/procmail/lang/sk.auto
 lib/webmin/procmail/lang/sv.auto
-lib/webmin/procmail/lang/tr.auto
+lib/webmin/procmail/lang/tr
 lib/webmin/procmail/lang/uk
 lib/webmin/procmail/lang/uk.auto
 lib/webmin/procmail/lang/zh_TW.auto
@@ -15899,7 +15871,7 @@ lib/webmin/proftpd/lang/ru
 lib/webmin/proftpd/lang/ru.auto
 lib/webmin/proftpd/lang/sk.auto
 lib/webmin/proftpd/lang/sv.auto
-lib/webmin/proftpd/lang/tr.auto
+lib/webmin/proftpd/lang/tr
 lib/webmin/proftpd/lang/uk
 lib/webmin/proftpd/lang/uk.auto
 lib/webmin/proftpd/lang/zh
@@ -16076,7 +16048,7 @@ lib/webmin/qmailadmin/lang/ru
 lib/webmin/qmailadmin/lang/ru.auto
 lib/webmin/qmailadmin/lang/sk.auto
 lib/webmin/qmailadmin/lang/sv.auto
-lib/webmin/qmailadmin/lang/tr.auto
+lib/webmin/qmailadmin/lang/tr
 lib/webmin/qmailadmin/lang/uk
 lib/webmin/qmailadmin/lang/uk.auto
 lib/webmin/qmailadmin/lang/zh
@@ -16273,7 +16245,6 @@ lib/webmin/quota/lang/sk.auto
 lib/webmin/quota/lang/sv
 lib/webmin/quota/lang/sv.auto
 lib/webmin/quota/lang/tr
-lib/webmin/quota/lang/tr.auto
 lib/webmin/quota/lang/uk
 lib/webmin/quota/lang/uk.auto
 lib/webmin/quota/lang/zh
@@ -16446,7 +16417,7 @@ lib/webmin/raid/lang/ru.auto
 lib/webmin/raid/lang/sk.auto
 lib/webmin/raid/lang/sv
 lib/webmin/raid/lang/sv.auto
-lib/webmin/raid/lang/tr.auto
+lib/webmin/raid/lang/tr
 lib/webmin/raid/lang/uk
 lib/webmin/raid/lang/uk.auto
 lib/webmin/raid/lang/zh
@@ -16576,7 +16547,7 @@ lib/webmin/rbac/lang/pt.auto
 lib/webmin/rbac/lang/ru.auto
 lib/webmin/rbac/lang/sk.auto
 lib/webmin/rbac/lang/sv.auto
-lib/webmin/rbac/lang/tr.auto
+lib/webmin/rbac/lang/tr
 lib/webmin/rbac/lang/uk.auto
 lib/webmin/rbac/lang/zh_TW.auto
 lib/webmin/rbac/lang/zh.auto
@@ -16641,7 +16612,6 @@ lib/webmin/rbac/module.info.sk.auto
 lib/webmin/rbac/module.info.sv
 lib/webmin/rbac/module.info.sv.auto
 lib/webmin/rbac/module.info.tr
-lib/webmin/rbac/module.info.tr.auto
 lib/webmin/rbac/module.info.uk
 lib/webmin/rbac/module.info.uk.auto
 lib/webmin/rbac/module.info.zh
@@ -16845,7 +16815,6 @@ lib/webmin/samba/lang/sk.auto
 lib/webmin/samba/lang/sv
 lib/webmin/samba/lang/sv.auto
 lib/webmin/samba/lang/tr
-lib/webmin/samba/lang/tr.auto
 lib/webmin/samba/lang/uk
 lib/webmin/samba/lang/uk.auto
 lib/webmin/samba/lang/zh
@@ -17018,7 +16987,7 @@ lib/webmin/sarg/lang/pt.auto
 lib/webmin/sarg/lang/ru.auto
 lib/webmin/sarg/lang/sk.auto
 lib/webmin/sarg/lang/sv.auto
-lib/webmin/sarg/lang/tr.auto
+lib/webmin/sarg/lang/tr
 lib/webmin/sarg/lang/uk.auto
 lib/webmin/sarg/lang/zh_TW.auto
 lib/webmin/sarg/lang/zh.auto
@@ -17075,7 +17044,6 @@ lib/webmin/sarg/module.info.sk.auto
 lib/webmin/sarg/module.info.sv
 lib/webmin/sarg/module.info.sv.auto
 lib/webmin/sarg/module.info.tr
-lib/webmin/sarg/module.info.tr.auto
 lib/webmin/sarg/module.info.uk
 lib/webmin/sarg/module.info.uk.auto
 lib/webmin/sarg/module.info.zh
@@ -17267,7 +17235,6 @@ lib/webmin/sendmail/lang/sk.auto
 lib/webmin/sendmail/lang/sv
 lib/webmin/sendmail/lang/sv.auto
 lib/webmin/sendmail/lang/tr
-lib/webmin/sendmail/lang/tr.auto
 lib/webmin/sendmail/lang/uk
 lib/webmin/sendmail/lang/uk.auto
 lib/webmin/sendmail/lang/zh
@@ -17504,7 +17471,6 @@ lib/webmin/servers/lang/sk.auto
 lib/webmin/servers/lang/sv
 lib/webmin/servers/lang/sv.auto
 lib/webmin/servers/lang/tr
-lib/webmin/servers/lang/tr.auto
 lib/webmin/servers/lang/uk
 lib/webmin/servers/lang/uk.auto
 lib/webmin/servers/lang/zh
@@ -17620,7 +17586,7 @@ lib/webmin/sgiexports/lang/pt.auto
 lib/webmin/sgiexports/lang/ru.auto
 lib/webmin/sgiexports/lang/sk.auto
 lib/webmin/sgiexports/lang/sv.auto
-lib/webmin/sgiexports/lang/tr.auto
+lib/webmin/sgiexports/lang/tr
 lib/webmin/sgiexports/lang/uk.auto
 lib/webmin/sgiexports/lang/zh_TW.auto
 lib/webmin/sgiexports/lang/zh.auto
@@ -17751,7 +17717,7 @@ lib/webmin/shell/lang/ru.auto
 lib/webmin/shell/lang/sk
 lib/webmin/shell/lang/sk.auto
 lib/webmin/shell/lang/sv.auto
-lib/webmin/shell/lang/tr.auto
+lib/webmin/shell/lang/tr
 lib/webmin/shell/lang/uk
 lib/webmin/shell/lang/uk.auto
 lib/webmin/shell/lang/zh_TW
@@ -17898,7 +17864,6 @@ lib/webmin/shorewall/lang/ru.auto
 lib/webmin/shorewall/lang/sk.auto
 lib/webmin/shorewall/lang/sv.auto
 lib/webmin/shorewall/lang/tr
-lib/webmin/shorewall/lang/tr.auto
 lib/webmin/shorewall/lang/uk.auto
 lib/webmin/shorewall/lang/zh
 lib/webmin/shorewall/lang/zh_TW.auto
@@ -17958,7 +17923,6 @@ lib/webmin/shorewall/module.info.sk.auto
 lib/webmin/shorewall/module.info.sv
 lib/webmin/shorewall/module.info.sv.auto
 lib/webmin/shorewall/module.info.tr
-lib/webmin/shorewall/module.info.tr.auto
 lib/webmin/shorewall/module.info.uk
 lib/webmin/shorewall/module.info.uk.auto
 lib/webmin/shorewall/module.info.zh
@@ -18045,7 +18009,7 @@ lib/webmin/shorewall6/lang/pt.auto
 lib/webmin/shorewall6/lang/ru.auto
 lib/webmin/shorewall6/lang/sk.auto
 lib/webmin/shorewall6/lang/sv.auto
-lib/webmin/shorewall6/lang/tr.auto
+lib/webmin/shorewall6/lang/tr
 lib/webmin/shorewall6/lang/uk.auto
 lib/webmin/shorewall6/lang/zh_TW.auto
 lib/webmin/shorewall6/lang/zh.auto
@@ -18104,7 +18068,6 @@ lib/webmin/shorewall6/module.info.sk.auto
 lib/webmin/shorewall6/module.info.sv
 lib/webmin/shorewall6/module.info.sv.auto
 lib/webmin/shorewall6/module.info.tr
-lib/webmin/shorewall6/module.info.tr.auto
 lib/webmin/shorewall6/module.info.uk
 lib/webmin/shorewall6/module.info.uk.auto
 lib/webmin/shorewall6/module.info.zh
@@ -18172,7 +18135,7 @@ lib/webmin/smart-status/lang/ru.auto
 lib/webmin/smart-status/lang/sk
 lib/webmin/smart-status/lang/sk.auto
 lib/webmin/smart-status/lang/sv.auto
-lib/webmin/smart-status/lang/tr.auto
+lib/webmin/smart-status/lang/tr
 lib/webmin/smart-status/lang/uk.auto
 lib/webmin/smart-status/lang/zh_TW.auto
 lib/webmin/smart-status/lang/zh.auto
@@ -18227,7 +18190,6 @@ lib/webmin/smart-status/module.info.sk.auto
 lib/webmin/smart-status/module.info.sv
 lib/webmin/smart-status/module.info.sv.auto
 lib/webmin/smart-status/module.info.tr
-lib/webmin/smart-status/module.info.tr.auto
 lib/webmin/smart-status/module.info.uk
 lib/webmin/smart-status/module.info.uk.auto
 lib/webmin/smart-status/module.info.zh
@@ -18292,7 +18254,7 @@ lib/webmin/smf/lang/pt.auto
 lib/webmin/smf/lang/ru.auto
 lib/webmin/smf/lang/sk.auto
 lib/webmin/smf/lang/sv.auto
-lib/webmin/smf/lang/tr.auto
+lib/webmin/smf/lang/tr
 lib/webmin/smf/lang/uk.auto
 lib/webmin/smf/lang/zh_TW.auto
 lib/webmin/smf/lang/zh.auto
@@ -18509,7 +18471,6 @@ lib/webmin/software/lang/sk.auto
 lib/webmin/software/lang/sv
 lib/webmin/software/lang/sv.auto
 lib/webmin/software/lang/tr
-lib/webmin/software/lang/tr.auto
 lib/webmin/software/lang/uk.auto
 lib/webmin/software/lang/zh
 lib/webmin/software/lang/zh_TW
@@ -18700,7 +18661,7 @@ lib/webmin/spam/lang/ru
 lib/webmin/spam/lang/ru.auto
 lib/webmin/spam/lang/sk.auto
 lib/webmin/spam/lang/sv.auto
-lib/webmin/spam/lang/tr.auto
+lib/webmin/spam/lang/tr
 lib/webmin/spam/lang/uk.auto
 lib/webmin/spam/lang/zh_TW.auto
 lib/webmin/spam/lang/zh.auto
@@ -18976,7 +18937,6 @@ lib/webmin/squid/lang/sk.auto
 lib/webmin/squid/lang/sv
 lib/webmin/squid/lang/sv.auto
 lib/webmin/squid/lang/tr
-lib/webmin/squid/lang/tr.auto
 lib/webmin/squid/lang/uk
 lib/webmin/squid/lang/uk.auto
 lib/webmin/squid/lang/zh
@@ -19209,7 +19169,7 @@ lib/webmin/sshd/lang/ru.auto
 lib/webmin/sshd/lang/sk
 lib/webmin/sshd/lang/sk.auto
 lib/webmin/sshd/lang/sv.auto
-lib/webmin/sshd/lang/tr.auto
+lib/webmin/sshd/lang/tr
 lib/webmin/sshd/lang/uk
 lib/webmin/sshd/lang/uk.auto
 lib/webmin/sshd/lang/zh
@@ -19404,7 +19364,6 @@ lib/webmin/status/lang/sk.auto
 lib/webmin/status/lang/sv
 lib/webmin/status/lang/sv.auto
 lib/webmin/status/lang/tr
-lib/webmin/status/lang/tr.auto
 lib/webmin/status/lang/uk
 lib/webmin/status/lang/uk.auto
 lib/webmin/status/lang/zh
@@ -19601,7 +19560,7 @@ lib/webmin/stunnel/lang/ru
 lib/webmin/stunnel/lang/ru.auto
 lib/webmin/stunnel/lang/sk.auto
 lib/webmin/stunnel/lang/sv.auto
-lib/webmin/stunnel/lang/tr.auto
+lib/webmin/stunnel/lang/tr
 lib/webmin/stunnel/lang/uk
 lib/webmin/stunnel/lang/uk.auto
 lib/webmin/stunnel/lang/zh
@@ -19751,7 +19710,7 @@ lib/webmin/syslog-ng/lang/pt.auto
 lib/webmin/syslog-ng/lang/ru.auto
 lib/webmin/syslog-ng/lang/sk.auto
 lib/webmin/syslog-ng/lang/sv.auto
-lib/webmin/syslog-ng/lang/tr.auto
+lib/webmin/syslog-ng/lang/tr
 lib/webmin/syslog-ng/lang/uk.auto
 lib/webmin/syslog-ng/lang/zh_TW.auto
 lib/webmin/syslog-ng/lang/zh.auto
@@ -19812,7 +19771,6 @@ lib/webmin/syslog-ng/module.info.sk.auto
 lib/webmin/syslog-ng/module.info.sv
 lib/webmin/syslog-ng/module.info.sv.auto
 lib/webmin/syslog-ng/module.info.tr
-lib/webmin/syslog-ng/module.info.tr.auto
 lib/webmin/syslog-ng/module.info.uk
 lib/webmin/syslog-ng/module.info.uk.auto
 lib/webmin/syslog-ng/module.info.zh
@@ -19948,7 +19906,6 @@ lib/webmin/syslog/lang/sk.auto
 lib/webmin/syslog/lang/sv
 lib/webmin/syslog/lang/sv.auto
 lib/webmin/syslog/lang/tr
-lib/webmin/syslog/lang/tr.auto
 lib/webmin/syslog/lang/uk
 lib/webmin/syslog/lang/uk.auto
 lib/webmin/syslog/lang/zh
@@ -20063,7 +20020,7 @@ lib/webmin/system-status/lang/pt.auto
 lib/webmin/system-status/lang/ru.auto
 lib/webmin/system-status/lang/sk.auto
 lib/webmin/system-status/lang/sv.auto
-lib/webmin/system-status/lang/tr.auto
+lib/webmin/system-status/lang/tr
 lib/webmin/system-status/lang/uk.auto
 lib/webmin/system-status/lang/zh
 lib/webmin/system-status/lang/zh_TW.auto
@@ -20117,7 +20074,6 @@ lib/webmin/system-status/module.info.sk.auto
 lib/webmin/system-status/module.info.sv
 lib/webmin/system-status/module.info.sv.auto
 lib/webmin/system-status/module.info.tr
-lib/webmin/system-status/module.info.tr.auto
 lib/webmin/system-status/module.info.uk
 lib/webmin/system-status/module.info.uk.auto
 lib/webmin/system-status/module.info.zh
@@ -20143,9 +20099,11 @@ lib/webmin/systemd/images/icon.gif
 lib/webmin/systemd/index.cgi
 lib/webmin/systemd/install_check.pl
 lib/webmin/systemd/lang/en
+lib/webmin/systemd/lang/tr
 lib/webmin/systemd/log_parser.pl
 lib/webmin/systemd/mass_units.cgi
 lib/webmin/systemd/module.info
+lib/webmin/systemd/module.info.tr
 lib/webmin/systemd/restart_user.cgi
 lib/webmin/systemd/restart.cgi
 lib/webmin/systemd/safeacl
@@ -20200,7 +20158,7 @@ lib/webmin/tcpwrappers/lang/pt.auto
 lib/webmin/tcpwrappers/lang/ru.auto
 lib/webmin/tcpwrappers/lang/sk.auto
 lib/webmin/tcpwrappers/lang/sv.auto
-lib/webmin/tcpwrappers/lang/tr.auto
+lib/webmin/tcpwrappers/lang/tr
 lib/webmin/tcpwrappers/lang/uk.auto
 lib/webmin/tcpwrappers/lang/zh_TW.auto
 lib/webmin/tcpwrappers/lang/zh.auto
@@ -20355,7 +20313,6 @@ lib/webmin/time/lang/sk.auto
 lib/webmin/time/lang/sv
 lib/webmin/time/lang/sv.auto
 lib/webmin/time/lang/tr
-lib/webmin/time/lang/tr.auto
 lib/webmin/time/lang/uk
 lib/webmin/time/lang/uk.auto
 lib/webmin/time/lang/zh
@@ -20480,7 +20437,6 @@ lib/webmin/tunnel/lang/ru.auto
 lib/webmin/tunnel/lang/sk.auto
 lib/webmin/tunnel/lang/sv.auto
 lib/webmin/tunnel/lang/tr
-lib/webmin/tunnel/lang/tr.auto
 lib/webmin/tunnel/lang/uk.auto
 lib/webmin/tunnel/lang/zh
 lib/webmin/tunnel/lang/zh_TW.auto
@@ -20557,6 +20513,7 @@ lib/webmin/unauthenticated/css/highlight/highlight-dark.min.css
 lib/webmin/unauthenticated/css/highlight/highlight.min.css
 lib/webmin/unauthenticated/css/quill.min.css
 lib/webmin/unauthenticated/css/quill.min.css.gz
+lib/webmin/unauthenticated/css/ui-lib.css
 lib/webmin/unauthenticated/errors.css
 lib/webmin/unauthenticated/filter_match.js
 lib/webmin/unauthenticated/js/highlight/highlight.min.js
@@ -20754,6 +20711,7 @@ lib/webmin/unauthenticated/js/highlight/languages/yaml.min.js
 lib/webmin/unauthenticated/js/highlight/languages/zephir.min.js
 lib/webmin/unauthenticated/js/quill.min.js
 lib/webmin/unauthenticated/js/quill.min.js.gz
+lib/webmin/unauthenticated/js/ui-lib.js
 lib/webmin/update-from-repo.sh
 lib/webmin/updown/acl_security.pl
 lib/webmin/updown/cancel.cgi
@@ -20811,7 +20769,6 @@ lib/webmin/updown/lang/sk
 lib/webmin/updown/lang/sk.auto
 lib/webmin/updown/lang/sv.auto
 lib/webmin/updown/lang/tr
-lib/webmin/updown/lang/tr.auto
 lib/webmin/updown/lang/uk
 lib/webmin/updown/lang/uk.auto
 lib/webmin/updown/lang/zh
@@ -21014,7 +20971,6 @@ lib/webmin/useradmin/lang/sk.auto
 lib/webmin/useradmin/lang/sv
 lib/webmin/useradmin/lang/sv.auto
 lib/webmin/useradmin/lang/tr
-lib/webmin/useradmin/lang/tr.auto
 lib/webmin/useradmin/lang/uk
 lib/webmin/useradmin/lang/uk.auto
 lib/webmin/useradmin/lang/zh
@@ -21114,6 +21070,7 @@ lib/webmin/usermin/change_advanced.cgi
 lib/webmin/usermin/change_anon.cgi
 lib/webmin/usermin/change_bind.cgi
 lib/webmin/usermin/change_lang.cgi
+lib/webmin/usermin/change_log.cgi
 lib/webmin/usermin/change_mobile.cgi
 lib/webmin/usermin/change_os.cgi
 lib/webmin/usermin/change_referers.cgi
@@ -21167,6 +21124,7 @@ lib/webmin/usermin/edit_defacl.cgi
 lib/webmin/usermin/edit_descs.cgi
 lib/webmin/usermin/edit_ipkey.cgi
 lib/webmin/usermin/edit_lang.cgi
+lib/webmin/usermin/edit_log.cgi
 lib/webmin/usermin/edit_logout.cgi
 lib/webmin/usermin/edit_mobile.cgi
 lib/webmin/usermin/edit_mods.cgi
@@ -21199,6 +21157,7 @@ lib/webmin/usermin/images/down.gif
 lib/webmin/usermin/images/gap.gif
 lib/webmin/usermin/images/icon.gif
 lib/webmin/usermin/images/lang.gif
+lib/webmin/usermin/images/log.gif
 lib/webmin/usermin/images/logout.gif
 lib/webmin/usermin/images/mobile.gif
 lib/webmin/usermin/images/mods.gif
@@ -21263,7 +21222,7 @@ lib/webmin/usermin/lang/ru
 lib/webmin/usermin/lang/ru.auto
 lib/webmin/usermin/lang/sk.auto
 lib/webmin/usermin/lang/sv.auto
-lib/webmin/usermin/lang/tr.auto
+lib/webmin/usermin/lang/tr
 lib/webmin/usermin/lang/uk
 lib/webmin/usermin/lang/uk.auto
 lib/webmin/usermin/lang/zh_TW
@@ -21484,7 +21443,6 @@ lib/webmin/webalizer/lang/ru.auto
 lib/webmin/webalizer/lang/sk.auto
 lib/webmin/webalizer/lang/sv.auto
 lib/webmin/webalizer/lang/tr
-lib/webmin/webalizer/lang/tr.auto
 lib/webmin/webalizer/lang/uk
 lib/webmin/webalizer/lang/uk.auto
 lib/webmin/webalizer/lang/zh_TW.auto
@@ -21750,7 +21708,6 @@ lib/webmin/webmin/lang/sk.auto
 lib/webmin/webmin/lang/sv
 lib/webmin/webmin/lang/sv.auto
 lib/webmin/webmin/lang/tr
-lib/webmin/webmin/lang/tr.auto
 lib/webmin/webmin/lang/uk
 lib/webmin/webmin/lang/uk.auto
 lib/webmin/webmin/lang/zh
@@ -21883,7 +21840,7 @@ lib/webmin/webmincron/lang/ru
 lib/webmin/webmincron/lang/ru.auto
 lib/webmin/webmincron/lang/sk.auto
 lib/webmin/webmincron/lang/sv.auto
-lib/webmin/webmincron/lang/tr.auto
+lib/webmin/webmincron/lang/tr
 lib/webmin/webmincron/lang/uk.auto
 lib/webmin/webmincron/lang/zh_TW.auto
 lib/webmin/webmincron/lang/zh.auto
@@ -21938,7 +21895,6 @@ lib/webmin/webmincron/module.info.sk.auto
 lib/webmin/webmincron/module.info.sv
 lib/webmin/webmincron/module.info.sv.auto
 lib/webmin/webmincron/module.info.tr
-lib/webmin/webmincron/module.info.tr.auto
 lib/webmin/webmincron/module.info.uk
 lib/webmin/webmincron/module.info.uk.auto
 lib/webmin/webmincron/module.info.zh
@@ -22017,7 +21973,6 @@ lib/webmin/webminlog/lang/sk.auto
 lib/webmin/webminlog/lang/sv
 lib/webmin/webminlog/lang/sv.auto
 lib/webmin/webminlog/lang/tr
-lib/webmin/webminlog/lang/tr.auto
 lib/webmin/webminlog/lang/uk
 lib/webmin/webminlog/lang/uk.auto
 lib/webmin/webminlog/lang/zh
@@ -22192,7 +22147,6 @@ lib/webmin/xinetd/lang/sk.auto
 lib/webmin/xinetd/lang/sv
 lib/webmin/xinetd/lang/sv.auto
 lib/webmin/xinetd/lang/tr
-lib/webmin/xinetd/lang/tr.auto
 lib/webmin/xinetd/lang/uk
 lib/webmin/xinetd/lang/uk.auto
 lib/webmin/xinetd/lang/zh
@@ -22302,11 +22256,12 @@ lib/webmin/xterm/lang/pt.auto
 lib/webmin/xterm/lang/ru.auto
 lib/webmin/xterm/lang/sk.auto
 lib/webmin/xterm/lang/sv.auto
-lib/webmin/xterm/lang/tr.auto
+lib/webmin/xterm/lang/tr
 lib/webmin/xterm/lang/uk.auto
 lib/webmin/xterm/lang/zh_TW.auto
 lib/webmin/xterm/lang/zh.auto
 lib/webmin/xterm/module.info
+lib/webmin/xterm/module.info.tr
 lib/webmin/xterm/rc/.bashrc
 lib/webmin/xterm/rc/.zshrc
 lib/webmin/xterm/safeacl
@@ -22365,7 +22320,7 @@ lib/webmin/zones/lang/pt.auto
 lib/webmin/zones/lang/ru.auto
 lib/webmin/zones/lang/sk.auto
 lib/webmin/zones/lang/sv.auto
-lib/webmin/zones/lang/tr.auto
+lib/webmin/zones/lang/tr
 lib/webmin/zones/lang/uk.auto
 lib/webmin/zones/lang/zh_TW.auto
 lib/webmin/zones/lang/zh.auto
@@ -22465,7 +22420,6 @@ lib/webmin/zones/module.info.sk.auto
 lib/webmin/zones/module.info.sv
 lib/webmin/zones/module.info.sv.auto
 lib/webmin/zones/module.info.tr
-lib/webmin/zones/module.info.tr.auto
 lib/webmin/zones/module.info.uk
 lib/webmin/zones/module.info.uk.auto
 lib/webmin/zones/module.info.zh
