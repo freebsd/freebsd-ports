@@ -210,6 +210,12 @@ for _line in ${dp_RAWDEPENDS} ; do
 		continue
 	fi
 
+	if [ -n "${dp_STRICT_DEPENDS}" ]; then
+		# Only verify the dependency, do not install it.
+		# The final check reports any missing dependency as a fatal error.
+		continue
+	fi
+
 	# Now actually install the dependencies
 	install_depends "${origin}" "${target}" "${subpkg}" "${depends_args}"
 	# Recheck if the installed dependency validates the pattern except for /nonexistent
