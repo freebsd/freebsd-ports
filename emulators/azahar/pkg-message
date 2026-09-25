@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Known issues:
+- The video dumper doesn't work on Linux or FreeBSD.
+  See https://github.com/azahar-emu/azahar/issues/2404
+EOM
+}
+]

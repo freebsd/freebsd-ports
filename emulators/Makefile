@@ -10,6 +10,7 @@
     SUBDIR += aranym
     SUBDIR += ares
     SUBDIR += atari800
+    SUBDIR += azahar
     SUBDIR += bfe
     SUBDIR += bochs
     SUBDIR += bsvc
@@ -64,6 +65,7 @@
     SUBDIR += libc6-shim
     SUBDIR += libdsk
     SUBDIR += libmt32emu
+    SUBDIR += libretro-azahar
     SUBDIR += libretro-bsnes
     SUBDIR += libretro-flycast
     SUBDIR += libretro-kronos

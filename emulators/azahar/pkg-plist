@@ -1,0 +1,6 @@
+bin/azahar
+bin/azahar-room
+share/applications/org.azahar_emu.Azahar.desktop
+share/icons/hicolor/512x512/apps/org.azahar_emu.Azahar.png
+share/icons/hicolor/scalable/apps/org.azahar_emu.Azahar.svg
+share/mime/packages/org.azahar_emu.Azahar.xml
