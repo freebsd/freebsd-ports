@@ -12,6 +12,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	78b7c4e8822e444f39ef73eea8e21ccc6293ae5d.patch:-p1
+
 MAINTAINER=	o.kryvulia@flex-it.com.ua
 COMMENT=	Open Source PBX and telephony toolkit
 WWW=		https://www.asterisk.org
