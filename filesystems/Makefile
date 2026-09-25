@@ -28,6 +28,7 @@
     SUBDIR += exfat
     SUBDIR += exfat-utils
     SUBDIR += ext2
+    SUBDIR += fatsort
     SUBDIR += fstyp
     SUBDIR += fswatch-mon
     SUBDIR += fusefs-libs

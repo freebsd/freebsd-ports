@@ -1,0 +1,7 @@
+FATSort is a C-based utility that sorts FAT12, FAT16, FAT32, and exFAT
+partitions. It fully supports long file name entries and recursively sorts
+directory structures by reading the file system’s boot sector.
+
+The tool was originally developed to organize MP3 files on a hardware MP3
+player that did not support automatic file sorting. Since no suitable utility
+existed at the time, FATSort was written to fill that gap.

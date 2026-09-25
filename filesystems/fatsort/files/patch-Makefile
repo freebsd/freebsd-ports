@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-08-08 10:38:31 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+-MANDIR=/usr/local/share/man/man1
++MANDIR?=/usr/local/share/man/man1
+ 
+-INSTALL_FLAGS=-m 0755 -p -D
++INSTALL_FLAGS?=-m 0755 -p -D
+ 
+ #detect Mac OS X
+ UNAME=$(shell uname -s)
