@@ -1,7 +1,7 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.48.2
-PORTREVISION=	3
+DISTVERSION=	0.49.1
+PORTREVISION=	0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -15,34 +15,42 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-autobuild>=2025.8.25:textproc/py-sphinx-autobuild@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx-design>=0.7.0_1:textproc/py-sphinx-design@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
+		evdev-proto>=5.8:devel/evdev-proto \
 		nerd-fonts-symbols>=3.1.1:x11-fonts/nerd-fonts-symbols \
 		roboto-fonts-ttf>=2.134:x11-fonts/roboto-fonts-ttf \
 		simde>=0.7.6:devel/simde \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
 		urw-base35-fonts>=20200910:x11-fonts/urw-base35-fonts \
+		slangc:graphics/linux-slang \
 		wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
+		libcanberra.so:audio/libcanberra \
 		libdbus-1.so:devel/dbus \
 		libepoll-shim-interpose.so:devel/libepoll-shim \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		liblcms2.so:graphics/lcms2 \
+		libpixman-1.so:x11/pixman \
 		libpng16.so:graphics/png \
+		libudev.so:devel/libudev-devd \
 		libwayland-client.so:graphics/wayland \
 		libwayland-cursor.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxxhash.so:devel/xxhash
+RUN_DEPENDS=	slangc:graphics/linux-slang
 
 # ncursesw and tinfo >= 6.1 seem to be needed
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		go:modules,1.26 ncurses pkgconfig python shebangfix ssl tar:xz \
+		go:modules,1.26 linux:rl9 ncurses pkgconfig python shebangfix ssl tar:xz \
 		terminfo xorg
 CPE_VENDOR=	kovidgoyal
 
 USE_GL=		gl
-USE_XORG=	x11 xcb xcursor xi xinerama xrandr
+USE_LINUX=	base
+USE_XORG=	pixman x11 xcb xcursor xi xinerama xrandr
 
 SHEBANG_FILES=	build-terminfo count-lines-of-code update-on-ox
 SHEBANG_GLOB=	*.py
@@ -95,7 +103,8 @@ post-patch:
 		-e "s:(dirs_exist_ok=True):\1, ignore=shutil.ignore_patterns('*.orig', '*.bak'):1" \
 		${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:1" \
-		${WRKSRC}/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish
+		${WRKSRC}/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish \
+		${WRKSRC}/kitty/shaders/custom/demo.py
 
 # For librsync, we need to set header and library path
 do-build:
