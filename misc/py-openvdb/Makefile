@@ -1,7 +1,6 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	13.0.0
-PORTREVISION=	2
+DISTVERSION=	13.1.0
 CATEGORIES=	misc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -35,13 +34,22 @@ CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD} \
 WRKSRC_SUBDIR=	openvdb/openvdb/python
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/test
 
 PLIST_FILES=	${PYTHON_SITELIBDIR}/openvdb${PYTHON_TAG}.so
 
-do-test: # run an example, since the supplied test appears to be only for Windows
+do-test:
+	@cd ${TEST_WRKSRC} && \
+		${SETENV} ${TEST_ENV} ${PYTHON_CMD} TestOpenVDB.py -v
+
+test-quick:
 	@cd ${WRKSRC} && \
 		${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/example.py && \
 		[ -f ${WRKSRC}/mygrids.vdb ] && \
 		${ECHO} "Test has succeeded."
+
+# tests as of 13.1.0:
+# Ran 17 tests in 4.564s
+# OK
 
 .include <bsd.port.mk>

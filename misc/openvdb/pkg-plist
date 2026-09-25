@@ -62,10 +62,12 @@ include/openvdb/points/PointMove.h
 include/openvdb/points/PointRasterizeFrustum.h
 include/openvdb/points/PointRasterizeSDF.h
 include/openvdb/points/PointRasterizeTrilinear.h
+include/openvdb/points/PointReplicate.h
 include/openvdb/points/PointSample.h
 include/openvdb/points/PointScatter.h
 include/openvdb/points/PointStatistics.h
 include/openvdb/points/PointTransfer.h
+include/openvdb/points/PrincipalComponentAnalysis.h
 include/openvdb/points/StreamCompression.h
 include/openvdb/points/impl/PointAttributeImpl.h
 include/openvdb/points/impl/PointConversionImpl.h
@@ -74,6 +76,7 @@ include/openvdb/points/impl/PointDeleteImpl.h
 include/openvdb/points/impl/PointGroupImpl.h
 include/openvdb/points/impl/PointMaskImpl.h
 include/openvdb/points/impl/PointMoveImpl.h
+include/openvdb/points/impl/PointRasterizeEllipsoidsSDFImpl.h
 include/openvdb/points/impl/PointRasterizeFrustumImpl.h
 include/openvdb/points/impl/PointRasterizeSDFImpl.h
 include/openvdb/points/impl/PointRasterizeTrilinearImpl.h
@@ -81,7 +84,9 @@ include/openvdb/points/impl/PointReplicateImpl.h
 include/openvdb/points/impl/PointSampleImpl.h
 include/openvdb/points/impl/PointScatterImpl.h
 include/openvdb/points/impl/PointStatisticsImpl.h
+include/openvdb/points/impl/PrincipalComponentAnalysisImpl.h
 include/openvdb/thread/Threading.h
+include/openvdb/simd/Simd.h
 include/openvdb/tools/Activate.h
 include/openvdb/tools/ChangeBackground.h
 include/openvdb/tools/Clip.h
@@ -174,5 +179,5 @@ lib/cmake/OpenVDB/OpenVDBHoudiniSetup.cmake
 lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
-lib/libopenvdb.so.13.0
-lib/libopenvdb.so.13.0.0
+lib/libopenvdb.so.13.1
+lib/libopenvdb.so.13.1.0
