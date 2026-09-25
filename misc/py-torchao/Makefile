@@ -78,7 +78,9 @@ _TEST_SKIP_EXPR+=	and not test_dynamic_quant_gpu_unified_api_eager_mode_impl \
 
 TEST_ARGS+=	-k "${_TEST_SKIP_EXPR}"
 
+.if ${ARCH} == "aarch64"
 MAKE_ENV=	LD_STATIC_TLS_EXTRA=4096 # see pkg-message in misc/py-pytorch
+.endif
 
 # tests as of 0.18.0: 959 passed, 6709 skipped, 46 deselected in 644.97s (on amd64)
 # tests as of 0.18.0: 1034 passed, 6718 skipped, 38 deselected in 647.35s (on aarch64)
