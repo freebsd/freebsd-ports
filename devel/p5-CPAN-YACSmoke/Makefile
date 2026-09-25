@@ -1,6 +1,7 @@
 PORTNAME=	CPAN-YACSmoke
 DISTVERSION=	0.03
-PORTREVISION=	2
+DISTVERSIONSUFFIX=	_07
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RRWO
@@ -16,11 +17,17 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Config-IniFiles>=0:devel/p5-Config-IniFiles \
 		p5-File-HomeDir>=0.06:devel/p5-File-HomeDir \
+		p5-libwww>=0:www/p5-libwww \
 		p5-Regexp-Assemble>=0.06:devel/p5-Regexp-Assemble \
 		p5-Sort-Versions>=1.5:devel/p5-Sort-Versions \
 		p5-Test-Reporter>=1.25:devel/p5-Test-Reporter \
-		p5-URI>=0:net/p5-URI \
-		p5-libwww>=0:www/p5-libwww
+		p5-URI>=0:net/p5-URI
+TEST_DEPENDS=	p5-CPANPLUS>=0:devel/p5-CPANPLUS \
+		p5-Path-Class>=0:devel/p5-Path-Class \
+		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage \
+		p5-Test-Pod>=0:devel/p5-Test-Pod \
+		p5-Test-Portability-Files>=0:devel/p5-Test-Portability-Files \
+		p5-YAML>=0:textproc/p5-YAML
 
 USES=		perl5
 USE_PERL5=	configure
