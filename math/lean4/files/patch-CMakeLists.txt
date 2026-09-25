@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2026-09-24 17:27:27 UTC
++++ CMakeLists.txt
+@@ -129,14 +129,8 @@ if(USE_MIMALLOC)
+ if(USE_MIMALLOC)
+   FetchContent_Declare(
+     mimalloc
+-    GIT_REPOSITORY https://github.com/microsoft/mimalloc
+-    GIT_BRANCH dev3
+-    GIT_TAG v3.4.4
+-    # Unnecessarily deep directory structure, but it saves us from a complicated
+-    # stage0 update for now. If we ever update the other dependencies like
+-    # cadical, it might be worth reorganizing the directory structure.
+-    SOURCE_DIR
+-    "${CMAKE_BINARY_DIR}/mimalloc/src/mimalloc"
++    # Point directly to the directory where the FreeBSD port extracted the files
++    SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/cmake/mimalloc/src/mimalloc"
+     EXCLUDE_FROM_ALL
+   )
+   FetchContent_MakeAvailable(mimalloc)

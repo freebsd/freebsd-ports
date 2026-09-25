@@ -1,3 +1,5 @@
-TIMESTAMP = 1789399297
-SHA256 (leanprover-lean4-v4.34.0_GH0.tar.gz) = c6a2f9c57cebbe390beef82fafcb3a66274301cb9f9a70ceba0b125661533981
-SIZE (leanprover-lean4-v4.34.0_GH0.tar.gz) = 87761947
+TIMESTAMP = 1790373274
+SHA256 (leanprover-lean4-v4.34.1_GH0.tar.gz) = 9bb0bed7bae752a281e9923163d50da4193e36480cf5f639658e2e1502294056
+SIZE (leanprover-lean4-v4.34.1_GH0.tar.gz) = 87768894
+SHA256 (microsoft-mimalloc-v3.4.4_GH0.tar.gz) = 8ba991a7266983bd5eefc36e140c24734f720fd9b1fd79ddaeff44ea85d16760
+SIZE (microsoft-mimalloc-v3.4.4_GH0.tar.gz) = 1422232

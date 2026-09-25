@@ -8,6 +8,7 @@ include/lean/config.h
 include/lean/lean.h
 include/lean/lean_gmp.h
 include/lean/lean_libuv.h
+%%MIMALLOC%%include/lean/mimalloc.h
 include/lean/version.h
 lib/lean/Init.ilean
 lib/lean/Init.ir

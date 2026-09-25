@@ -1,6 +1,6 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.34.0
+DISTVERSION=	4.34.1
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,18 +22,20 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libuv.so:devel/libuv
 RUN_DEPENDS=	cadical:math/cadical \
 		leantar:math/leangz
-TEST_DEPENDS=	gtail:sysutils/coreutils
+TEST_DEPENDS=	bash:shells/bash \
+		git:devel/git \
+		gtail:sysutils/coreutils
 
 USES=		cmake:noninja,testing compiler:c++14-lang gmake pkgconfig python:build # ninja fails + gmake scripts are included in the project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	leanprover
+GH_TUPLE=	microsoft:mimalloc:v3.4.4:mimalloc/cmake/mimalloc/src/mimalloc
 
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
 
-CMAKE_OFF=	USE_MIMALLOC \
-		INSTALL_LEANTAR
+CMAKE_OFF=	INSTALL_LEANTAR
 
 #MAKE_ARGS+=	V=1 VERBOSE=1
 MAKE_ENV=	LD_LIBRARY_PATH=${BUILD_WRKSRC}/stage0/lib/lean
@@ -44,7 +46,22 @@ BINARY_ALIAS=	make=${GMAKE} \
 
 CMAKE_ARGS+=	-DLEANTAR=${LOCALBASE}/bin/leantar
 
+# tests run in a very high memory on a 32-core system: 55GB
+CMAKE_TESTING_JOBS=	8 # not respected, see https://github.com/leanprover/lean4/issues/15334 (workaround: run tests with 'cpuset -l 0-7' to limit parallelism)
+
 CONFLICTS_BUILD=	gsed # this should be CONFLICTS_TEST but it isn't defined; pesence of gsed for some reason makes several tests fail
+
+OPTIONS_DEFINE=		MIMALLOC
+OPTIONS_DEFAULT=	#MIMALLOC
+OPTIONS_SUB=		yes
+
+MIMALLOC_DESC=		Use mimalloc memory allocator (enables some optimizations in the code)
+MIMALLOC_CMAKE_BOOL=	USE_MIMALLOC
+MIMALLOC_BROKEN=	many tests print messages like: pid 34707 comm StackOverflow.lean. tid 1036070 stack overflow
+
+pre-configure:
+	@${MKDIR} ${BUILD_WRKSRC}/mimalloc/src
+	@${LN} -sf ${WRKSRC}/cmake/mimalloc/src/mimalloc ${BUILD_WRKSRC}/mimalloc/src/mimalloc
 
 post-configure:
 	# Copy leantar to build bin directories for tests (INSTALL_LEANTAR=OFF disables the built-in copy)
@@ -103,5 +120,6 @@ post-install:
 
 # tests as of 4.33.1: 100% tests passed, 0 tests failed out of 3988
 # tests as of 4.34.0: 100% tests pass (individual testsuite runs have intermittent failures with different tests, but all individual tests pass when run separately)
+# tests as of 4.34.1: 99% tests passed, 1 tests failed out of 4068: the 2 months old test cacheTransfer/test.sh fails, see https://github.com/leanprover/lean4/issues/15335
 
 .include <bsd.port.mk>
