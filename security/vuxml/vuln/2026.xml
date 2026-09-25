@@ -1,3 +1,62 @@
+  <vuln vid="675bc714-b8cd-11f1-ad2b-40b034429ecf">
+    <topic>databases/p5-DBI -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>p5-DBI</name>
+<range><lt>1.654</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>DBI project reports:</p>
+	<blockquote cite="https://metacpan.org/dist/DBI/changes">
+	  <p>DBI 1.650, 1.651, 1.652, 1.653 and 1.654 fix the following issues:</p>
+	  <ul>
+	    <li>CVE-2026-88815: Fix DBI::sql_type_cast on IV/NV</li>
+	    <li>CVE-2026-88816: Fix FetchHashKeyName   on IV/NV</li>
+	    <li>CVE-2026-78030: Fix arbitrary module and file loading via dbm_type/dbm_mldbm</li>
+	    <li>CVE-2026-15392: Tighten symlink outside of f_dir</li>
+	    <li>CVE-2026-73194: Force placeholder limit on :# and :p# too</li>
+	    <li>CVE-2026-73193: Limit statements to 292 Mb in preparse</li>
+	    <li>CVE-2026-15043: Fix inverted comparisons for strings in DBI::SQL::Nano</li>
+	    <li>CVE-2026-15392: Fix DBD::File to ensure that the table is not a symlink outside of f_dir</li>
+	    <li>CVE-2026-60082: Fix an out-of-bounds error when a statement handle has no fields but the source row is not empty</li>
+	    <li>CVE-2026-60081: Add an overridable upper bound $MAX_PATH_DEPTH for DBI::ProfileData</li>
+	    <li>CVE-2026-14739: Set a hard limit of 99999 on '?' placeholders</li>
+	    <li>CVE-2026-14740: Fix out-of-bounds read in preparse of SQL that starts with a comment</li>
+	    <li>CVE-2026-14380: Fix code injection via Profile DSN attribute or DBI_PROFILE variable</li>
+      </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-15392</cvename>
+      <cvename>CVE-2026-78030</cvename>
+      <cvename>CVE-2026-73193</cvename>
+      <cvename>CVE-2026-73194</cvename>
+      <cvename>CVE-2026-60081</cvename>
+      <cvename>CVE-2026-60082</cvename>
+      <cvename>CVE-2026-15043</cvename>
+      <cvename>CVE-2026-14380</cvename>
+      <cvename>CVE-2026-14740</cvename>
+      <cvename>CVE-2026-14739</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-15392</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-78030</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-73193</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-73194</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-60081</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-60082</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-15043</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-14380</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-14740</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-14739</url>
+    </references>
+    <dates>
+      <discovery>2026-09-19</discovery>
+      <entry>2026-09-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="60eb0bba-b668-11f1-9d0e-4c526214c986">
     <topic>Erlang/OTP -- multiple vulnerabilities in ssl, ssh and asn1</topic>
     <affects>
