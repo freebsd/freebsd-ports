@@ -1,5 +1,5 @@
 PORTNAME=	ntopng
-PORTVERSION=	6.6.d20260829
+PORTVERSION=	7.0.d20260922
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -30,8 +30,8 @@ USES=		autoreconf compiler:c++11-lang cpe gmake libtool localbase \
 CPE_VENDOR=	ntop
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
-GH_TAGNAME=	ad4d754
-GH_TUPLE=	ntop:ntopng-dist:4a1dc74:dist/httpdocs/dist
+GH_TAGNAME=	b4f7acd
+GH_TUPLE=	ntop:ntopng-dist:73db7d7:dist/httpdocs/dist
 USE_RC_SUBR=	ntopng
 
 SHEBANG_FILES=	httpdocs/misc/ntopng-add-user.sh \

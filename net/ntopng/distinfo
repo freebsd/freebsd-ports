@@ -1,5 +1,5 @@
-TIMESTAMP = 1788263383
-SHA256 (ntop-ntopng-6.6.d20260829-ad4d754_GH0.tar.gz) = 55a47936a2d454fe3d6a5a709795364feb2a87d6e733f608aaadd8a1d439dcd3
-SIZE (ntop-ntopng-6.6.d20260829-ad4d754_GH0.tar.gz) = 82439699
-SHA256 (ntop-ntopng-dist-4a1dc74_GH0.tar.gz) = c204b28114da4473ae0a623cfb798f90962f6fe548f339cf5cbf8d8085b4f6e0
-SIZE (ntop-ntopng-dist-4a1dc74_GH0.tar.gz) = 7117860
+TIMESTAMP = 1790146424
+SHA256 (ntop-ntopng-7.0.d20260922-b4f7acd_GH0.tar.gz) = 518b1368b90ccf3df7a178a0f44f93d38ddba5893710a53208f3059ed1b831f8
+SIZE (ntop-ntopng-7.0.d20260922-b4f7acd_GH0.tar.gz) = 84603845
+SHA256 (ntop-ntopng-dist-73db7d7_GH0.tar.gz) = 339a2f8c746973ef6285a4a1282ddf34d8e16b86e45cd92040a91fc8b45d049f
+SIZE (ntop-ntopng-dist-73db7d7_GH0.tar.gz) = 4943160
