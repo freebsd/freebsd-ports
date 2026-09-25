@@ -6,6 +6,10 @@
 export DISABLE_AUTOUPDATER=1
 export DISABLE_UPDATES=1
 
+# Anthropic's FreeBSD guidance requires this Bun workaround under Linuxulator.
+# https://github.com/anthropics/claude-code/issues/30640#issuecomment-4227236808
+export BUN_JSC_useBBQJIT=0
+
 #
 # Required Linuxulator mounts. Without linrdlnk on fdescfs, Bun resolves cwd
 # via open(path, O_PATH) + readlink("/dev/fd/N"), gets EINVAL, and hangs.
