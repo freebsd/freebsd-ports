@@ -22,7 +22,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytorch>=2.10:misc/py-pytorch@${PY_FLAVOR} \
 USES=		compiler:c++17-lang localbase python
 USE_PYTHON=	pep517 autoplist pytest # tests fail, see https://github.com/facebookresearch/xformers/issues/1003
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+MAKE_ENV=	LD_STATIC_TLS_EXTRA=4096 # see pkg-message in misc/py-pytorch
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/xformers/_C.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
