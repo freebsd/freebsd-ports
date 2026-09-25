@@ -82,7 +82,6 @@ lib/usermin/at/lang/sk.auto
 lib/usermin/at/lang/sv
 lib/usermin/at/lang/sv.auto
 lib/usermin/at/lang/tr
-lib/usermin/at/lang/tr.auto
 lib/usermin/at/lang/uk
 lib/usermin/at/lang/uk.auto
 lib/usermin/at/lang/zh
@@ -1259,7 +1258,6 @@ lib/usermin/authentic-theme/stats.pl
 lib/usermin/authentic-theme/sysinfo.cgi
 lib/usermin/authentic-theme/tconfig-lib.pl
 lib/usermin/authentic-theme/tconfig.cgi
-lib/usermin/authentic-theme/theme-update.sh
 lib/usermin/authentic-theme/theme.info
 lib/usermin/authentic-theme/theme.info.no
 lib/usermin/authentic-theme/THEME.pgp
@@ -1981,7 +1979,6 @@ lib/usermin/commands/lang/sk.auto
 lib/usermin/commands/lang/sv
 lib/usermin/commands/lang/sv.auto
 lib/usermin/commands/lang/tr
-lib/usermin/commands/lang/tr.auto
 lib/usermin/commands/lang/uk
 lib/usermin/commands/lang/uk.auto
 lib/usermin/commands/lang/zh
@@ -2296,7 +2293,6 @@ lib/usermin/cron/lang/sk.auto
 lib/usermin/cron/lang/sv
 lib/usermin/cron/lang/sv.auto
 lib/usermin/cron/lang/tr
-lib/usermin/cron/lang/tr.auto
 lib/usermin/cron/lang/uk
 lib/usermin/cron/lang/uk.auto
 lib/usermin/cron/lang/zh
@@ -2554,7 +2550,7 @@ lib/usermin/fetchmail/lang/ru
 lib/usermin/fetchmail/lang/ru.auto
 lib/usermin/fetchmail/lang/sk.auto
 lib/usermin/fetchmail/lang/sv.auto
-lib/usermin/fetchmail/lang/tr.auto
+lib/usermin/fetchmail/lang/tr
 lib/usermin/fetchmail/lang/uk
 lib/usermin/fetchmail/lang/uk.auto
 lib/usermin/fetchmail/lang/zh
@@ -3000,7 +2996,7 @@ lib/usermin/filemin/lang/pt.auto
 lib/usermin/filemin/lang/ru.auto
 lib/usermin/filemin/lang/sk.auto
 lib/usermin/filemin/lang/sv.auto
-lib/usermin/filemin/lang/tr.auto
+lib/usermin/filemin/lang/tr
 lib/usermin/filemin/lang/uk
 lib/usermin/filemin/lang/uk.auto
 lib/usermin/filemin/lang/zh
@@ -3154,7 +3150,7 @@ lib/usermin/filter/lang/pt.auto
 lib/usermin/filter/lang/ru.auto
 lib/usermin/filter/lang/sk.auto
 lib/usermin/filter/lang/sv.auto
-lib/usermin/filter/lang/tr.auto
+lib/usermin/filter/lang/tr
 lib/usermin/filter/lang/uk.auto
 lib/usermin/filter/lang/zh_TW.auto
 lib/usermin/filter/lang/zh.auto
@@ -3207,7 +3203,6 @@ lib/usermin/filter/module.info.sk.auto
 lib/usermin/filter/module.info.sv
 lib/usermin/filter/module.info.sv.auto
 lib/usermin/filter/module.info.tr
-lib/usermin/filter/module.info.tr.auto
 lib/usermin/filter/module.info.uk
 lib/usermin/filter/module.info.uk.auto
 lib/usermin/filter/module.info.zh
@@ -3874,7 +3869,7 @@ lib/usermin/gray-theme/lang/pt.auto
 lib/usermin/gray-theme/lang/ru.auto
 lib/usermin/gray-theme/lang/sk.auto
 lib/usermin/gray-theme/lang/sv.auto
-lib/usermin/gray-theme/lang/tr.auto
+lib/usermin/gray-theme/lang/tr
 lib/usermin/gray-theme/lang/uk.auto
 lib/usermin/gray-theme/lang/zh
 lib/usermin/gray-theme/lang/zh_TW
@@ -4421,7 +4416,6 @@ lib/usermin/htaccess-htpasswd/lang/ru.auto
 lib/usermin/htaccess-htpasswd/lang/sk.auto
 lib/usermin/htaccess-htpasswd/lang/sv.auto
 lib/usermin/htaccess-htpasswd/lang/tr
-lib/usermin/htaccess-htpasswd/lang/tr.auto
 lib/usermin/htaccess-htpasswd/lang/uk.auto
 lib/usermin/htaccess-htpasswd/lang/zh_TW
 lib/usermin/htaccess-htpasswd/lang/zh_TW.auto
@@ -4626,7 +4620,6 @@ lib/usermin/htaccess/lang/sk.auto
 lib/usermin/htaccess/lang/sv
 lib/usermin/htaccess/lang/sv.auto
 lib/usermin/htaccess/lang/tr
-lib/usermin/htaccess/lang/tr.auto
 lib/usermin/htaccess/lang/uk
 lib/usermin/htaccess/lang/uk.auto
 lib/usermin/htaccess/lang/zh
@@ -5139,7 +5132,6 @@ lib/usermin/mailbox/lang/sk.auto
 lib/usermin/mailbox/lang/sv
 lib/usermin/mailbox/lang/sv.auto
 lib/usermin/mailbox/lang/tr
-lib/usermin/mailbox/lang/tr.auto
 lib/usermin/mailbox/lang/uk.auto
 lib/usermin/mailbox/lang/zh
 lib/usermin/mailbox/lang/zh_TW
@@ -5327,7 +5319,7 @@ lib/usermin/mailcap/lang/pt.auto
 lib/usermin/mailcap/lang/ru.auto
 lib/usermin/mailcap/lang/sk.auto
 lib/usermin/mailcap/lang/sv.auto
-lib/usermin/mailcap/lang/tr.auto
+lib/usermin/mailcap/lang/tr
 lib/usermin/mailcap/lang/uk.auto
 lib/usermin/mailcap/lang/zh_TW.auto
 lib/usermin/mailcap/lang/zh.auto
@@ -5548,7 +5540,6 @@ lib/usermin/man/lang/sk.auto
 lib/usermin/man/lang/sv
 lib/usermin/man/lang/sv.auto
 lib/usermin/man/lang/tr
-lib/usermin/man/lang/tr.auto
 lib/usermin/man/lang/uk
 lib/usermin/man/lang/uk.auto
 lib/usermin/man/lang/zh
@@ -5752,6 +5743,14 @@ lib/usermin/mysql/help/backup_form.tr.auto.html
 lib/usermin/mysql/help/backup_form.uk.auto.html
 lib/usermin/mysql/help/backup_form.zh_TW.auto.html
 lib/usermin/mysql/help/backup_form.zh.auto.html
+lib/usermin/mysql/help/binlogs_base.html
+lib/usermin/mysql/help/binlogs_enabled.html
+lib/usermin/mysql/help/binlogs_expire.html
+lib/usermin/mysql/help/binlogs_format.html
+lib/usermin/mysql/help/binlogs_maxsize.html
+lib/usermin/mysql/help/binlogs_purge.html
+lib/usermin/mysql/help/binlogs_serverid.html
+lib/usermin/mysql/help/binlogs.html
 lib/usermin/mysql/help/cnf.ar.auto.html
 lib/usermin/mysql/help/cnf.bg.auto.html
 lib/usermin/mysql/help/cnf.ca.html
@@ -6667,6 +6666,7 @@ lib/usermin/mysql/help/vars.tr.auto.html
 lib/usermin/mysql/help/vars.uk.auto.html
 lib/usermin/mysql/help/vars.zh_TW.auto.html
 lib/usermin/mysql/help/vars.zh.auto.html
+lib/usermin/mysql/images/binlogs.svg
 lib/usermin/mysql/images/cnf.gif
 lib/usermin/mysql/images/cprivs.gif
 lib/usermin/mysql/images/db.gif
@@ -6733,7 +6733,6 @@ lib/usermin/mysql/lang/sk.auto
 lib/usermin/mysql/lang/sv
 lib/usermin/mysql/lang/sv.auto
 lib/usermin/mysql/lang/tr
-lib/usermin/mysql/lang/tr.auto
 lib/usermin/mysql/lang/uk
 lib/usermin/mysql/lang/uk.auto
 lib/usermin/mysql/lang/zh
@@ -7567,7 +7566,7 @@ lib/usermin/postgresql/lang/ru.auto
 lib/usermin/postgresql/lang/sk.auto
 lib/usermin/postgresql/lang/sv
 lib/usermin/postgresql/lang/sv.auto
-lib/usermin/postgresql/lang/tr.auto
+lib/usermin/postgresql/lang/tr
 lib/usermin/postgresql/lang/uk
 lib/usermin/postgresql/lang/uk.auto
 lib/usermin/postgresql/lang/zh
@@ -8609,7 +8608,6 @@ lib/usermin/proc/lang/sk.auto
 lib/usermin/proc/lang/sv
 lib/usermin/proc/lang/sv.auto
 lib/usermin/proc/lang/tr
-lib/usermin/proc/lang/tr.auto
 lib/usermin/proc/lang/uk
 lib/usermin/proc/lang/uk.auto
 lib/usermin/proc/lang/zh
@@ -8758,7 +8756,7 @@ lib/usermin/procmail/lang/ru
 lib/usermin/procmail/lang/ru.auto
 lib/usermin/procmail/lang/sk.auto
 lib/usermin/procmail/lang/sv.auto
-lib/usermin/procmail/lang/tr.auto
+lib/usermin/procmail/lang/tr
 lib/usermin/procmail/lang/uk
 lib/usermin/procmail/lang/uk.auto
 lib/usermin/procmail/lang/zh_TW.auto
@@ -8925,7 +8923,6 @@ lib/usermin/quota/lang/sk.auto
 lib/usermin/quota/lang/sv
 lib/usermin/quota/lang/sv.auto
 lib/usermin/quota/lang/tr
-lib/usermin/quota/lang/tr.auto
 lib/usermin/quota/lang/uk
 lib/usermin/quota/lang/uk.auto
 lib/usermin/quota/lang/zh
@@ -9214,7 +9211,7 @@ lib/usermin/shell/lang/ru.auto
 lib/usermin/shell/lang/sk
 lib/usermin/shell/lang/sk.auto
 lib/usermin/shell/lang/sv.auto
-lib/usermin/shell/lang/tr.auto
+lib/usermin/shell/lang/tr
 lib/usermin/shell/lang/uk
 lib/usermin/shell/lang/uk.auto
 lib/usermin/shell/lang/zh_TW
@@ -9378,7 +9375,7 @@ lib/usermin/spam/lang/ru
 lib/usermin/spam/lang/ru.auto
 lib/usermin/spam/lang/sk.auto
 lib/usermin/spam/lang/sv.auto
-lib/usermin/spam/lang/tr.auto
+lib/usermin/spam/lang/tr
 lib/usermin/spam/lang/uk.auto
 lib/usermin/spam/lang/zh_TW.auto
 lib/usermin/spam/lang/zh.auto
@@ -9840,7 +9837,7 @@ lib/usermin/ssh/lang/ru.auto
 lib/usermin/ssh/lang/sk
 lib/usermin/ssh/lang/sk.auto
 lib/usermin/ssh/lang/sv.auto
-lib/usermin/ssh/lang/tr.auto
+lib/usermin/ssh/lang/tr
 lib/usermin/ssh/lang/uk
 lib/usermin/ssh/lang/uk.auto
 lib/usermin/ssh/lang/zh
@@ -10248,6 +10245,7 @@ lib/usermin/unauthenticated/css/highlight/highlight-dark.min.css
 lib/usermin/unauthenticated/css/highlight/highlight.min.css
 lib/usermin/unauthenticated/css/quill.min.css
 lib/usermin/unauthenticated/css/quill.min.css.gz
+lib/usermin/unauthenticated/css/ui-lib.css
 lib/usermin/unauthenticated/errors.css
 lib/usermin/unauthenticated/filter_match.js
 lib/usermin/unauthenticated/js/highlight/highlight.min.js
@@ -10445,6 +10443,7 @@ lib/usermin/unauthenticated/js/highlight/languages/yaml.min.js
 lib/usermin/unauthenticated/js/highlight/languages/zephir.min.js
 lib/usermin/unauthenticated/js/quill.min.js
 lib/usermin/unauthenticated/js/quill.min.js.gz
+lib/usermin/unauthenticated/js/ui-lib.js
 lib/usermin/update-from-repo.sh
 lib/usermin/updateboot.pl
 lib/usermin/updown/cancel.cgi
@@ -10505,7 +10504,6 @@ lib/usermin/updown/lang/sk
 lib/usermin/updown/lang/sk.auto
 lib/usermin/updown/lang/sv.auto
 lib/usermin/updown/lang/tr
-lib/usermin/updown/lang/tr.auto
 lib/usermin/updown/lang/uk
 lib/usermin/updown/lang/uk.auto
 lib/usermin/updown/lang/zh
@@ -10653,7 +10651,6 @@ lib/usermin/usermount/lang/sk.auto
 lib/usermin/usermount/lang/sv
 lib/usermin/usermount/lang/sv.auto
 lib/usermin/usermount/lang/tr
-lib/usermin/usermount/lang/tr.auto
 lib/usermin/usermount/lang/uk.auto
 lib/usermin/usermount/lang/zh
 lib/usermin/usermount/lang/zh_TW
@@ -10838,7 +10835,7 @@ lib/usermin/xterm/lang/pt.auto
 lib/usermin/xterm/lang/ru.auto
 lib/usermin/xterm/lang/sk.auto
 lib/usermin/xterm/lang/sv.auto
-lib/usermin/xterm/lang/tr.auto
+lib/usermin/xterm/lang/tr
 lib/usermin/xterm/lang/uk.auto
 lib/usermin/xterm/lang/zh_TW.auto
 lib/usermin/xterm/lang/zh.auto
