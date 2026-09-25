@@ -1,6 +1,6 @@
 PORTNAME=	Graphics-ColorNames
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
+DISTVERSION=	3.5.0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RRWO
@@ -13,7 +13,10 @@ WWW=		https://metacpan.org/release/Graphics-ColorNames
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Color-Library>=0:graphics/p5-Color-Library \
+		p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test-Most>=0:devel/p5-Test-Most \
+		p5-Tie-Sub>=0/:devel/p5-Tie-Sub
 
 USES=		perl5
 USE_PERL5=	configure
