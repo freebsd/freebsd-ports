@@ -578,6 +578,7 @@
     SUBDIR += linux-rl9-spirv-tools
     SUBDIR += linux-rl9-vulkan
     SUBDIR += linux-rl9-wayland
+    SUBDIR += linux-slang
     SUBDIR += lua-gd
     SUBDIR += lua-qrencode
     SUBDIR += lunasvg
