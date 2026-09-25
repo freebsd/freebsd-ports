@@ -1,14 +1,13 @@
 PORTNAME=	ngrep
-DISTVERSION=	1.48.3
+DISTVERSION=	1.49.0
 CATEGORIES=	net security
-MASTER_SITES=	SF/${PORTNAME}/v${DISTVERSION}/
-DISTNAME=	v${DISTVERSION}%20source%20code
+MASTER_SITES=	https://github.com/jpr5/${PORTNAME}/archive/refs/tags/
+DISTNAME=	v${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fabio.tleitao@gmail.com
 COMMENT=	Network grep
-WWW=		https://ngrep.sourceforge.net/ \
-		https://github.com/jpr5/ngrep/
+WWW=		https://github.com/jpr5/ngrep/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,7 +19,7 @@ CONFIGURE_ARGS=	--disable-pcap-restart
 
 MAKE_JOBS_UNSAFE=	yes
 
-WRKSRC=		${WRKDIR}/jpr5-${PORTNAME}-c3d586c
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/ngrep share/man/man8/ngrep.8.gz
 PORTDOCS=	CREDITS EXAMPLES.md INSTALL README.md
@@ -50,3 +49,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
+
