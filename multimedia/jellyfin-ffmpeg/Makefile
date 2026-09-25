@@ -1,5 +1,6 @@
 PORTNAME=	jellyfin-ffmpeg
 PORTVERSION=	8.1.2.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	michaeljohnson@ahze.net
@@ -15,9 +16,11 @@ ONLY_FOR_ARCHS_REASON=	upstream jellyfin-ffmpeg targets 64-bit; 32-bit builds no
 BUILD_DEPENDS=	nasm:devel/nasm \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
 		${LOCALBASE}/lib/libfftw3f.a:math/fftw3-float \
-		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
+		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
+		${LOCALBASE}/include/CL/cl.h:devel/opencl
 PATCH_DEPENDS=	quilt:devel/quilt
-LIB_DEPENDS=	libass.so:multimedia/libass \
+LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
+		libass.so:multimedia/libass \
 		libbluray.so:multimedia/libbluray \
 		libdav1d.so:multimedia/dav1d \
 		libfdk-aac.so:audio/fdk-aac \
@@ -68,6 +71,8 @@ JFFMPEG_DIR=	${PREFIX}/lib/jellyfin-ffmpeg8
 post-patch:
 	cd ${WRKSRC} && QUILT_PATCHES=debian/patches quilt push -a || \
 	    QUILT_PATCHES=debian/patches quilt applied | ${GREP} -q 0098
+	cd ${WRKSRC} && ${PATCH} -p0 --forward --quiet \
+	    < ${FILESDIR}/extra-patch-overlay_vulkan-framesync
 
 # Static chromaprint on fftw3f, as upstream's builder does: audio/chromaprint
 # links multimedia/ffmpeg for its FFT, dragging a second FFmpeg and ~30 other
@@ -138,6 +143,7 @@ CONFIGURE_ARGS=	--prefix="${JFFMPEG_DIR}" \
 		--enable-libx265 \
 		--enable-libzimg \
 		--enable-libzvbi \
+		--enable-opencl \
 		--enable-libplacebo \
 		--enable-libshaderc \
 		--enable-vulkan \

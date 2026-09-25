@@ -1,0 +1,34 @@
+Expose the framesync options on overlay_vulkan.
+
+The filter already drives framesync internally (ff_framesync_init_dualinput,
+ff_framesync_configure, ff_framesync_activate) but declares its AVClass with
+AVFILTER_DEFINE_CLASS, so eof_action/shortest/repeatlast are never advertised
+and framesync's option defaults are never initialised. Every other overlay_*
+filter (overlay, overlay_vaapi, overlay_opencl, overlay_cuda) uses
+FRAMESYNC_DEFINE_CLASS together with a .preinit callback.
+
+Beyond the missing functionality, Jellyfin probes overlay_vulkan for the
+"Action to take when encountering EOF from secondary input" option to decide
+whether the Vulkan filter chain is usable. Without it IsVulkanFullSupported()
+returns false, Jellyfin falls back to a VAAPI pipeline with no HDR tone
+mapping, and HDR content is transcoded to SDR untonemapped (washed out).
+
+--- libavfilter/vf_overlay_vulkan.c.orig
++++ libavfilter/vf_overlay_vulkan.c
+@@ -231,7 +231,7 @@
+     { NULL },
+ };
+ 
+-AVFILTER_DEFINE_CLASS(overlay_vulkan);
++FRAMESYNC_DEFINE_CLASS(overlay_vulkan, OverlayVulkanContext, fs);
+ 
+ static const AVFilterPad overlay_vulkan_inputs[] = {
+     {
+@@ -265,6 +265,7 @@
+     .init           = &overlay_vulkan_init,
+     .uninit         = &overlay_vulkan_uninit,
+     .activate       = &overlay_vulkan_activate,
++    .preinit        = overlay_vulkan_framesync_preinit,
+     FILTER_INPUTS(overlay_vulkan_inputs),
+     FILTER_OUTPUTS(overlay_vulkan_outputs),
+     FILTER_SINGLE_PIXFMT(AV_PIX_FMT_VULKAN),
