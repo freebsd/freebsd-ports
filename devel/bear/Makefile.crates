@@ -6,12 +6,12 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		assert_cmd-2.2.2 \
 		assert_fs-1.1.4 \
 		autocfg-1.5.1 \
-		base64-0.22.1 \
+		base64-0.23.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
 		bitflags-2.13.1 \
 		bstr-1.13.1 \
-		cc-1.4.3 \
+		cc-1.4.5 \
 		cfg-if-1.0.4 \
 		clap-4.6.6 \
 		clap_builder-4.6.6 \
@@ -33,7 +33,7 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		env_logger-0.11.11 \
 		errno-0.3.14 \
 		fastrand-2.5.0 \
-		find-msvc-tools-0.1.11 \
+		find-msvc-tools-0.1.12 \
 		float-cmp-0.10.0 \
 		fnv-1.0.7 \
 		fragile-2.1.0 \
@@ -43,7 +43,7 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		glob-0.3.4 \
 		globset-0.4.20 \
 		globwalk-0.9.1 \
-		granit-parser-1.1.0 \
+		granit-parser-1.2.0 \
 		heck-0.5.0 \
 		ignore-0.4.33 \
 		insta-1.48.0 \
@@ -52,7 +52,7 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		link-section-0.19.3 \
 		linktime-proc-macro-0.2.3 \
 		linux-raw-sys-0.12.1 \
-		log-0.4.33 \
+		log-0.4.34 \
 		memchr-2.8.3 \
 		mockall-0.15.0 \
 		mockall_derive-0.15.0 \
@@ -82,7 +82,7 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		rusty-fork-0.3.1 \
 		same-file-1.0.6 \
 		serde-1.0.229 \
-		serde-saphyr-1.1.0 \
+		serde-saphyr-1.2.0 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_json-1.0.151 \
@@ -91,10 +91,10 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		signal-hook-0.4.4 \
 		signal-hook-registry-1.4.8 \
 		similar-2.7.0 \
-		smallvec-1.15.2 \
+		smallvec-1.16.0 \
 		strsim-0.11.1 \
 		syn-2.0.119 \
-		syn-3.0.3 \
+		syn-3.0.5 \
 		tempfile-3.27.0 \
 		termtree-0.5.1 \
 		thiserror-2.0.20 \
@@ -105,7 +105,7 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		wasip2-1.0.4+wasi-0.2.12 \
-		which-8.0.5 \
+		which-8.0.6 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
 		windows-sys-0.61.2 \
