@@ -27,12 +27,13 @@ def check_dependencies() -> None:
         if importlib.util.find_spec(module) is None:
             missing.append(package)
     if missing:
+        pkg_prefix = f" py{sys.version_info.major}{sys.version_info.minor}-"
         print(
             "Error: missing required package(s): " + ", ".join(missing),
             file=sys.stderr,
         )
         print(
-            "Install with: sudo pkg install " + " ".join(missing),
+            f"Install with: sudo pkg install{pkg_prefix}" + pkg_prefix.join(missing),
             file=sys.stderr,
         )
         sys.exit(1)
