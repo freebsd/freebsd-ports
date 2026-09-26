@@ -1,5 +1,5 @@
 PORTNAME=	mlflow-skinny
-PORTVERSION=	3.16.0
+PORTVERSION=	3.16.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,8 +43,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.6.2:devel/py-anyio@${PY_FLAVOR} \
 USES=		python shebangfix
 USE_PYTHON=	pep517 autoplist concurrent
 
-SHEBANG_FILES=	mlflow/assistant/skills/agent-evaluation/scripts/validate_agent_tracing.py \
-		mlflow/assistant/skills/querying-mlflow-metrics/scripts/fetch_metrics.py
+SHEBANG_FILES=	mlflow/assistant/skills/agent-evaluation/scripts/validate_tracing_runtime.py \
+		mlflow/assistant/skills/hooks/mlflow-suggest-hook.py \
+		mlflow/assistant/skills/querying-mlflow-metrics/scripts/fetch_metrics.py \
+		mlflow/assistant/skills/sagemaker-mlflow/scripts/discover_arns.py \
+		mlflow/assistant/skills/sagemaker-mlflow/scripts/verify_connection.py \
+		mlflow/assistant/skills/tests/run_judges.py \
+		mlflow/assistant/skills/tests/scripts/setup_agent_debug_trace_first.py \
+		mlflow/assistant/skills/tests/scripts/setup_agent_eval.py \
+		mlflow/assistant/skills/tests/scripts/setup_langgraph_autolog_guidance.py \
+		mlflow/assistant/skills/tests/scripts/setup_tracing_test.py \
+		mlflow/assistant/skills/tests/test_skill.py
 
 NO_ARCH=	yes
 
