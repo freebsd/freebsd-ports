@@ -17,6 +17,7 @@ bin/comfyui
 %%DATADIR%%/alembic_db/versions/0004_drop_tag_type.py
 %%DATADIR%%/alembic_db/versions/0005_allow_case_sensitive_tags.py
 %%DATADIR%%/alembic_db/versions/0006_add_loader_path.py
+%%DATADIR%%/alembic_db/versions/0007_record_content_split.py
 %%DATADIR%%/api_server/__init__.py
 %%DATADIR%%/api_server/routes/__init__.py
 %%DATADIR%%/api_server/routes/internal/README.md
@@ -33,24 +34,31 @@ bin/comfyui
 %%DATADIR%%/app/assets/api/upload.py
 %%DATADIR%%/app/assets/database/models.py
 %%DATADIR%%/app/assets/database/queries/__init__.py
-%%DATADIR%%/app/assets/database/queries/asset.py
-%%DATADIR%%/app/assets/database/queries/asset_reference.py
-%%DATADIR%%/app/assets/database/queries/common.py
+%%DATADIR%%/app/assets/database/queries/records.py
 %%DATADIR%%/app/assets/database/queries/tags.py
+%%DATADIR%%/app/assets/docs/README.md
+%%DATADIR%%/app/assets/event_log.py
 %%DATADIR%%/app/assets/helpers.py
+%%DATADIR%%/app/assets/lifecycle.py
+%%DATADIR%%/app/assets/manager.py
+%%DATADIR%%/app/assets/mode.py
 %%DATADIR%%/app/assets/scanner.py
+%%DATADIR%%/app/assets/scanner_admission.py
+%%DATADIR%%/app/assets/scanner_changes.py
 %%DATADIR%%/app/assets/seeder.py
 %%DATADIR%%/app/assets/services/__init__.py
 %%DATADIR%%/app/assets/services/asset_management.py
-%%DATADIR%%/app/assets/services/bulk_ingest.py
 %%DATADIR%%/app/assets/services/cursor.py
 %%DATADIR%%/app/assets/services/file_utils.py
+%%DATADIR%%/app/assets/services/hash_mode_state.py
 %%DATADIR%%/app/assets/services/hashing.py
 %%DATADIR%%/app/assets/services/image_dimensions.py
 %%DATADIR%%/app/assets/services/ingest.py
+%%DATADIR%%/app/assets/services/lookup.py
 %%DATADIR%%/app/assets/services/metadata_extract.py
 %%DATADIR%%/app/assets/services/path_utils.py
 %%DATADIR%%/app/assets/services/schemas.py
+%%DATADIR%%/app/assets/services/snapshot_hash.py
 %%DATADIR%%/app/assets/services/tagging.py
 %%DATADIR%%/app/custom_node_manager.py
 %%DATADIR%%/app/database/db.py
@@ -84,17 +92,22 @@ bin/comfyui
 %%DATADIR%%/blueprints/Canny to Video (LTX 2.0).json
 %%DATADIR%%/blueprints/Character Replacement (SCAIL-2 Base).json
 %%DATADIR%%/blueprints/Character Replacement (SCAIL-2 Extend).json
+%%DATADIR%%/blueprints/Character Replacement (SCAIL-2 Int8 Base).json
 %%DATADIR%%/blueprints/Chromatic Aberration.json
 %%DATADIR%%/blueprints/Color Adjustment.json
 %%DATADIR%%/blueprints/Color Balance.json
 %%DATADIR%%/blueprints/Color Curves.json
+%%DATADIR%%/blueprints/Control to Image (Anima LLLite).json
 %%DATADIR%%/blueprints/ControlNet (Z-Image-Turbo).json
 %%DATADIR%%/blueprints/Crop Images 2x2.json
 %%DATADIR%%/blueprints/Crop Images 3x3.json
 %%DATADIR%%/blueprints/Depth to Image (Z-Image-Turbo).json
 %%DATADIR%%/blueprints/Depth to Video (ltx 2.0).json
 %%DATADIR%%/blueprints/Edge-Preserving Blur.json
+%%DATADIR%%/blueprints/Edit Image (Boogu Image Edit).json
+%%DATADIR%%/blueprints/FLF2V (Wan2.1 VACE).json
 %%DATADIR%%/blueprints/Film Grain.json
+%%DATADIR%%/blueprints/First & Last Frame to Video (LTX-2.5).json
 %%DATADIR%%/blueprints/First-Last-Frame to Video (LTX-2.3).json
 %%DATADIR%%/blueprints/First-Last-Frame to Video.json
 %%DATADIR%%/blueprints/Frame Interpolation.json
@@ -102,25 +115,32 @@ bin/comfyui
 %%DATADIR%%/blueprints/Get Any Video Frame.json
 %%DATADIR%%/blueprints/Glow.json
 %%DATADIR%%/blueprints/Hue and Saturation.json
+%%DATADIR%%/blueprints/Image Albedo Estimation (Marigold V2).json
 %%DATADIR%%/blueprints/Image Blur.json
 %%DATADIR%%/blueprints/Image Captioning (gemini).json
 %%DATADIR%%/blueprints/Image Channels.json
 %%DATADIR%%/blueprints/Image Depth Estimation (Depth Anything 3).json
 %%DATADIR%%/blueprints/Image Depth Estimation (Lotus Depth).json
+%%DATADIR%%/blueprints/Image Depth Estimation (Marigold V2).json
 %%DATADIR%%/blueprints/Image Depth Estimation (MoGe).json
 %%DATADIR%%/blueprints/Image Edit (Bernini-R).json
 %%DATADIR%%/blueprints/Image Edit (FireRed Image Edit 1.1).json
 %%DATADIR%%/blueprints/Image Edit (Flux.2 Dev).json
 %%DATADIR%%/blueprints/Image Edit (Flux.2 Klein 4B).json
+%%DATADIR%%/blueprints/Image Edit (Joy Image Edit).json
 %%DATADIR%%/blueprints/Image Edit (LongCat Image Edit).json
+%%DATADIR%%/blueprints/Image Edit (Mage-Flow-Edit Turbo).json
+%%DATADIR%%/blueprints/Image Edit (Mage-Flow-Edit).json
 %%DATADIR%%/blueprints/Image Edit (Qwen 2509).json
 %%DATADIR%%/blueprints/Image Edit (Qwen 2511).json
 %%DATADIR%%/blueprints/Image Face Detection (Mediapipe).json
 %%DATADIR%%/blueprints/Image Inpainting (Flux.1 Fill Dev).json
 %%DATADIR%%/blueprints/Image Inpainting (Qwen-image).json
 %%DATADIR%%/blueprints/Image Levels.json
+%%DATADIR%%/blueprints/Image Normal Estimation (Marigold V2).json
 %%DATADIR%%/blueprints/Image Outpainting (Qwen-Image).json
 %%DATADIR%%/blueprints/Image Segmentation (SAM3).json
+%%DATADIR%%/blueprints/Image Style Reference (Krea-2 Turbo).json
 %%DATADIR%%/blueprints/Image Upscale(Z-image-Turbo).json
 %%DATADIR%%/blueprints/Image to Gaussian Splat (TripoSplat).json
 %%DATADIR%%/blueprints/Image to Layers(Qwen-Image-Layered).json
@@ -128,8 +148,14 @@ bin/comfyui
 %%DATADIR%%/blueprints/Image to Pose Map (SDPose Multi-Person).json
 %%DATADIR%%/blueprints/Image to Pose Map (SDPose-OOD).json
 %%DATADIR%%/blueprints/Image to Video (LTX-2.3).json
+%%DATADIR%%/blueprints/Image to Video (LTX-2.5).json
+%%DATADIR%%/blueprints/Image to Video (MiniMax H3).json
 %%DATADIR%%/blueprints/Image to Video (Wan 2.2).json
+%%DATADIR%%/blueprints/Image to Video (Wan Dancer).json
 %%DATADIR%%/blueprints/Merge Videos.json
+%%DATADIR%%/blueprints/Motion Transfer (Wan Animate 2 Distilled).json
+%%DATADIR%%/blueprints/Motion Transfer (Wan Animate 2).json
+%%DATADIR%%/blueprints/Music Cover (YuE2).json
 %%DATADIR%%/blueprints/Pose to Image (Z-Image-Turbo).json
 %%DATADIR%%/blueprints/Pose to Video (LTX 2.0).json
 %%DATADIR%%/blueprints/Prompt Enhance.json
@@ -140,26 +166,35 @@ bin/comfyui
 %%DATADIR%%/blueprints/Text to Audio (ACE-Step 1.5).json
 %%DATADIR%%/blueprints/Text to Image (Anima Base 1.0).json
 %%DATADIR%%/blueprints/Text to Image (Anima).json
+%%DATADIR%%/blueprints/Text to Image (Boogu Turbo).json
 %%DATADIR%%/blueprints/Text to Image (Ernie Image Turbo).json
 %%DATADIR%%/blueprints/Text to Image (Ernie Image).json
 %%DATADIR%%/blueprints/Text to Image (Flux.1 Dev).json
 %%DATADIR%%/blueprints/Text to Image (Flux.1 Krea Dev).json
 %%DATADIR%%/blueprints/Text to Image (Flux.2 Dev).json
 %%DATADIR%%/blueprints/Text to Image (Ideogram v4).json
+%%DATADIR%%/blueprints/Text to Image (Krea-2 Turbo).json
+%%DATADIR%%/blueprints/Text to Image (Mage-Flow Turbo).json
+%%DATADIR%%/blueprints/Text to Image (Mage-Flow).json
 %%DATADIR%%/blueprints/Text to Image (NetaYume Lumina).json
 %%DATADIR%%/blueprints/Text to Image (Qwen-Image 2512).json
 %%DATADIR%%/blueprints/Text to Image (Qwen-Image).json
 %%DATADIR%%/blueprints/Text to Image (Z-Image-Base).json
 %%DATADIR%%/blueprints/Text to Image (Z-Image-Turbo).json
 %%DATADIR%%/blueprints/Text to Image.json
+%%DATADIR%%/blueprints/Text to Music (MiniMax Music 3).json
+%%DATADIR%%/blueprints/Text to Music (YuE2).json
 %%DATADIR%%/blueprints/Text to Video (LTX-2.3).json
+%%DATADIR%%/blueprints/Text to Video (LTX-2.5).json
 %%DATADIR%%/blueprints/Text to Video (Wan 2.2).json
 %%DATADIR%%/blueprints/Unsharp Mask.json
+%%DATADIR%%/blueprints/Upscale Video (SeedVR2 3B Int8).json
 %%DATADIR%%/blueprints/Video Captioning (Gemini).json
 %%DATADIR%%/blueprints/Video Depth Estimation (Depth Anything 3).json
 %%DATADIR%%/blueprints/Video Depth Estimation (MoGe).json
 %%DATADIR%%/blueprints/Video Edit (Bernini-R).json
 %%DATADIR%%/blueprints/Video Face Detection (Mediapipe).json
+%%DATADIR%%/blueprints/Video Generation (LTX-2.3 IC-LoRA).json
 %%DATADIR%%/blueprints/Video Inpaint (VOID).json
 %%DATADIR%%/blueprints/Video Inpainting (Wan2.1 VACE).json
 %%DATADIR%%/blueprints/Video Segmentation (SAM3).json
@@ -168,6 +203,9 @@ bin/comfyui
 %%DATADIR%%/blueprints/Video to Pose Map (SDPose Multi-Person).json
 %%DATADIR%%/blueprints/put_blueprints_here
 %%DATADIR%%/comfy/audio_encoders/audio_encoders.py
+%%DATADIR%%/comfy/audio_encoders/mert2.py
+%%DATADIR%%/comfy/audio_encoders/sheetsage2.py
+%%DATADIR%%/comfy/audio_encoders/sheetsage2_abc.py
 %%DATADIR%%/comfy/audio_encoders/wav2vec2.py
 %%DATADIR%%/comfy/audio_encoders/whisper.py
 %%DATADIR%%/comfy/background_removal/birefnet.json
@@ -363,6 +401,7 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/pixeldit/pid.py
 %%DATADIR%%/comfy/ldm/qwen_image/controlnet.py
 %%DATADIR%%/comfy/ldm/qwen_image/model.py
+%%DATADIR%%/comfy/ldm/qwen_image21/model.py
 %%DATADIR%%/comfy/ldm/rt_detr/rtdetr_v4.py
 %%DATADIR%%/comfy/ldm/sam3/detector.py
 %%DATADIR%%/comfy/ldm/sam3/sam.py
@@ -404,6 +443,7 @@ bin/comfyui
 %%DATADIR%%/comfy/ldm/wan/uni3c.py
 %%DATADIR%%/comfy/ldm/wan/vae.py
 %%DATADIR%%/comfy/ldm/wan/vae2_2.py
+%%DATADIR%%/comfy/ldm/yue2/model.py
 %%DATADIR%%/comfy/lora.py
 %%DATADIR%%/comfy/lora_convert.py
 %%DATADIR%%/comfy/memory_management.py
@@ -433,6 +473,7 @@ bin/comfyui
 %%DATADIR%%/comfy/sd1_tokenizer/tokenizer_config.json
 %%DATADIR%%/comfy/sd1_tokenizer/vocab.json
 %%DATADIR%%/comfy/sdxl_clip.py
+%%DATADIR%%/comfy/storage.py
 %%DATADIR%%/comfy/supported_models.py
 %%DATADIR%%/comfy/supported_models_base.py
 %%DATADIR%%/comfy/system_memory.py
@@ -498,6 +539,7 @@ bin/comfyui
 %%DATADIR%%/comfy/text_encoders/qwen35_tokenizer/vocab.json
 %%DATADIR%%/comfy/text_encoders/qwen3vl.py
 %%DATADIR%%/comfy/text_encoders/qwen_image.py
+%%DATADIR%%/comfy/text_encoders/qwen_image21.py
 %%DATADIR%%/comfy/text_encoders/qwen_vl.py
 %%DATADIR%%/comfy/text_encoders/sa3.py
 %%DATADIR%%/comfy/text_encoders/sa_t5.py
@@ -519,6 +561,7 @@ bin/comfyui
 %%DATADIR%%/comfy/text_encoders/umt5_config_base.json
 %%DATADIR%%/comfy/text_encoders/umt5_config_xxl.json
 %%DATADIR%%/comfy/text_encoders/wan.py
+%%DATADIR%%/comfy/text_encoders/yue2.py
 %%DATADIR%%/comfy/text_encoders/z_image.py
 %%DATADIR%%/comfy/utils.py
 %%DATADIR%%/comfy/weight_adapter/__init__.py
@@ -596,6 +639,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/apis/openai.py
 %%DATADIR%%/comfy_api_nodes/apis/openrouter.py
 %%DATADIR%%/comfy_api_nodes/apis/pixverse.py
+%%DATADIR%%/comfy_api_nodes/apis/pruna.py
 %%DATADIR%%/comfy_api_nodes/apis/quiver.py
 %%DATADIR%%/comfy_api_nodes/apis/qwen.py
 %%DATADIR%%/comfy_api_nodes/apis/recraft.py
@@ -635,6 +679,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/nodes_openai.py
 %%DATADIR%%/comfy_api_nodes/nodes_openrouter.py
 %%DATADIR%%/comfy_api_nodes/nodes_pixverse.py
+%%DATADIR%%/comfy_api_nodes/nodes_pruna.py
 %%DATADIR%%/comfy_api_nodes/nodes_quiver.py
 %%DATADIR%%/comfy_api_nodes/nodes_qwen.py
 %%DATADIR%%/comfy_api_nodes/nodes_recraft.py
@@ -668,6 +713,7 @@ bin/comfyui
 %%DATADIR%%/comfy_execution/graph_utils.py
 %%DATADIR%%/comfy_execution/jobs.py
 %%DATADIR%%/comfy_execution/progress.py
+%%DATADIR%%/comfy_execution/server_protocol.py
 %%DATADIR%%/comfy_execution/utils.py
 %%DATADIR%%/comfy_execution/validation.py
 %%DATADIR%%/comfy_extras/chainner_models/model_loading.py
@@ -741,6 +787,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_latent.py
 %%DATADIR%%/comfy_extras/nodes_load_3d.py
 %%DATADIR%%/comfy_extras/nodes_logic.py
+%%DATADIR%%/comfy_extras/nodes_loop.py
 %%DATADIR%%/comfy_extras/nodes_lora_debug.py
 %%DATADIR%%/comfy_extras/nodes_lora_extract.py
 %%DATADIR%%/comfy_extras/nodes_lotus.py
@@ -751,6 +798,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_lumina2.py
 %%DATADIR%%/comfy_extras/nodes_mage.py
 %%DATADIR%%/comfy_extras/nodes_mahiro.py
+%%DATADIR%%/comfy_extras/nodes_marigold.py
 %%DATADIR%%/comfy_extras/nodes_mask.py
 %%DATADIR%%/comfy_extras/nodes_math.py
 %%DATADIR%%/comfy_extras/nodes_mediapipe.py
@@ -820,6 +868,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/nodes_wandancer.py
 %%DATADIR%%/comfy_extras/nodes_wanmove.py
 %%DATADIR%%/comfy_extras/nodes_webcam.py
+%%DATADIR%%/comfy_extras/nodes_yue2.py
 %%DATADIR%%/comfy_extras/nodes_zimage.py
 %%DATADIR%%/comfy_extras/pose/keypoint_draw.py
 %%DATADIR%%/comfy_extras/sam3d_body/export/bvh.py
@@ -902,43 +951,97 @@ bin/comfyui
 %%DATADIR%%/tests-unit/app_test/frontend_manager_test.py
 %%DATADIR%%/tests-unit/app_test/model_manager_test.py
 %%DATADIR%%/tests-unit/app_test/node_replace_manager_test.py
+%%DATADIR%%/tests-unit/app_test/test_db_init_locking.py
+%%DATADIR%%/tests-unit/app_test/test_migration_0007.py
+%%DATADIR%%/tests-unit/app_test/test_migration_roundtrip.py
+%%DATADIR%%/tests-unit/app_test/test_migration_warning.py
 %%DATADIR%%/tests-unit/app_test/test_migrations.py
 %%DATADIR%%/tests-unit/app_test/user_manager_system_user_test.py
+%%DATADIR%%/tests-unit/assets_test/__init__.py
 %%DATADIR%%/tests-unit/assets_test/conftest.py
+%%DATADIR%%/tests-unit/assets_test/fixtures/assets_event_lines.txt
 %%DATADIR%%/tests-unit/assets_test/helpers.py
 %%DATADIR%%/tests-unit/assets_test/queries/conftest.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_asset.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_asset_info.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_asset_reference_keyset.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_cache_state.py
+%%DATADIR%%/tests-unit/assets_test/queries/test_lookup.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_metadata.py
+%%DATADIR%%/tests-unit/assets_test/queries/test_records.py
 %%DATADIR%%/tests-unit/assets_test/queries/test_tags.py
+%%DATADIR%%/tests-unit/assets_test/queries/test_tags_query.py
 %%DATADIR%%/tests-unit/assets_test/services/__init__.py
 %%DATADIR%%/tests-unit/assets_test/services/conftest.py
+%%DATADIR%%/tests-unit/assets_test/services/path_prefix_cases.py
+%%DATADIR%%/tests-unit/assets_test/services/test_admission_gate.py
+%%DATADIR%%/tests-unit/assets_test/services/test_admission_integration.py
+%%DATADIR%%/tests-unit/assets_test/services/test_api_routes_b.py
 %%DATADIR%%/tests-unit/assets_test/services/test_asset_management.py
 %%DATADIR%%/tests-unit/assets_test/services/test_asset_response_loader_path.py
 %%DATADIR%%/tests-unit/assets_test/services/test_asset_response_preview_url.py
 %%DATADIR%%/tests-unit/assets_test/services/test_bulk_ingest.py
+%%DATADIR%%/tests-unit/assets_test/services/test_cached_execution_path.py
+%%DATADIR%%/tests-unit/assets_test/services/test_cached_save.py
 %%DATADIR%%/tests-unit/assets_test/services/test_cursor.py
+%%DATADIR%%/tests-unit/assets_test/services/test_delete_b.py
+%%DATADIR%%/tests-unit/assets_test/services/test_detection_gate.py
 %%DATADIR%%/tests-unit/assets_test/services/test_enrich.py
+%%DATADIR%%/tests-unit/assets_test/services/test_enrichment_predicate.py
+%%DATADIR%%/tests-unit/assets_test/services/test_enrichment_snapshot.py
+%%DATADIR%%/tests-unit/assets_test/services/test_from_hash.py
+%%DATADIR%%/tests-unit/assets_test/services/test_hash_mode_state.py
 %%DATADIR%%/tests-unit/assets_test/services/test_image_dimensions.py
 %%DATADIR%%/tests-unit/assets_test/services/test_ingest.py
+%%DATADIR%%/tests-unit/assets_test/services/test_ingest_b.py
+%%DATADIR%%/tests-unit/assets_test/services/test_ingest_orphan_content.py
+%%DATADIR%%/tests-unit/assets_test/services/test_lifecycle.py
+%%DATADIR%%/tests-unit/assets_test/services/test_manager_isolated.py
+%%DATADIR%%/tests-unit/assets_test/services/test_metadata_update_b.py
+%%DATADIR%%/tests-unit/assets_test/services/test_noassets_parity.py
+%%DATADIR%%/tests-unit/assets_test/services/test_null_hash_recovery.py
+%%DATADIR%%/tests-unit/assets_test/services/test_output_registration.py
+%%DATADIR%%/tests-unit/assets_test/services/test_owner_purge.py
 %%DATADIR%%/tests-unit/assets_test/services/test_path_utils.py
+%%DATADIR%%/tests-unit/assets_test/services/test_preview_path_resolution.py
+%%DATADIR%%/tests-unit/assets_test/services/test_recovery_gate.py
+%%DATADIR%%/tests-unit/assets_test/services/test_registration_primitives.py
+%%DATADIR%%/tests-unit/assets_test/services/test_scan_lifecycle.py
+%%DATADIR%%/tests-unit/assets_test/services/test_scanner_b.py
+%%DATADIR%%/tests-unit/assets_test/services/test_scanner_seed_resilience.py
+%%DATADIR%%/tests-unit/assets_test/services/test_serving_b.py
+%%DATADIR%%/tests-unit/assets_test/services/test_snapshot_hash.py
+%%DATADIR%%/tests-unit/assets_test/services/test_split_policy.py
+%%DATADIR%%/tests-unit/assets_test/services/test_stored_hash_prefix.py
 %%DATADIR%%/tests-unit/assets_test/services/test_tag_histogram.py
+%%DATADIR%%/tests-unit/assets_test/services/test_tag_protection.py
+%%DATADIR%%/tests-unit/assets_test/services/test_tag_write_conflicts.py
 %%DATADIR%%/tests-unit/assets_test/services/test_tagging.py
+%%DATADIR%%/tests-unit/assets_test/services/test_transition_drain.py
+%%DATADIR%%/tests-unit/assets_test/services/test_transition_settle.py
+%%DATADIR%%/tests-unit/assets_test/services/test_updated_at_semantics.py
+%%DATADIR%%/tests-unit/assets_test/services/test_upload_b.py
+%%DATADIR%%/tests-unit/assets_test/test_api_surface.py
 %%DATADIR%%/tests-unit/assets_test/test_assets_missing_sync.py
 %%DATADIR%%/tests-unit/assets_test/test_crud.py
 %%DATADIR%%/tests-unit/assets_test/test_downloads.py
+%%DATADIR%%/tests-unit/assets_test/test_event_log.py
+%%DATADIR%%/tests-unit/assets_test/test_event_log_sites.py
 %%DATADIR%%/tests-unit/assets_test/test_file_utils.py
+%%DATADIR%%/tests-unit/assets_test/test_intended_behaviour.py
 %%DATADIR%%/tests-unit/assets_test/test_list_cursor.py
 %%DATADIR%%/tests-unit/assets_test/test_list_filter.py
 %%DATADIR%%/tests-unit/assets_test/test_metadata_filters.py
+%%DATADIR%%/tests-unit/assets_test/test_no_assets_regression.py
 %%DATADIR%%/tests-unit/assets_test/test_preview_url.py
 %%DATADIR%%/tests-unit/assets_test/test_prompt_id_enforcement.py
 %%DATADIR%%/tests-unit/assets_test/test_prune_orphaned_assets.py
+%%DATADIR%%/tests-unit/assets_test/test_recovery_same_path.py
+%%DATADIR%%/tests-unit/assets_test/test_scanner_ingest_event_log.py
 %%DATADIR%%/tests-unit/assets_test/test_sync_references.py
 %%DATADIR%%/tests-unit/assets_test/test_tags_api.py
 %%DATADIR%%/tests-unit/assets_test/test_temp_assets.py
+%%DATADIR%%/tests-unit/assets_test/test_upload_hashing_modes.py
 %%DATADIR%%/tests-unit/assets_test/test_uploads.py
 %%DATADIR%%/tests-unit/comfy_api_nodes_test/audio_conversions_test.py
 %%DATADIR%%/tests-unit/comfy_api_nodes_test/comfy_cloud_test.py
@@ -948,6 +1051,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/comfy_api_test/multicombo_serialization_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/preview_ui_3d_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/resolution_preview_serialization_test.py
+%%DATADIR%%/tests-unit/comfy_api_test/video_accumulation_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_bit_depth_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_types_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/__init__.py
@@ -957,16 +1061,19 @@ bin/comfyui
 %%DATADIR%%/tests-unit/comfy_extras_test/compositor_blend_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/compositor_node_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/dataset_color_nodes_alpha_test.py
+%%DATADIR%%/tests-unit/comfy_extras_test/image_add_noise_alpha_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/image_blend_alpha_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/image_quantize_alpha_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/image_stitch_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/nodes_compositing_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/nodes_dataset_test.py
+%%DATADIR%%/tests-unit/comfy_extras_test/nodes_loop_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/nodes_lt_keyframes_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/nodes_lt_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/nodes_math_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/nodes_number_convert_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/nodes_preview_any_test.py
+%%DATADIR%%/tests-unit/comfy_extras_test/nodes_toolkit_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/rgb_yuv_alpha_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/test_seedvr2_conditioning.py
 %%DATADIR%%/tests-unit/comfy_extras_test/test_seedvr2_nodes.py
@@ -980,6 +1087,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/comfy_test/image_invert_test.py
 %%DATADIR%%/tests-unit/comfy_test/model_detection_test.py
 %%DATADIR%%/tests-unit/comfy_test/seedvr_vae_forward_test.py
+%%DATADIR%%/tests-unit/comfy_test/storage_test.py
 %%DATADIR%%/tests-unit/comfy_test/system_memory_test.py
 %%DATADIR%%/tests-unit/comfy_test/test_minimax_h3_model.py
 %%DATADIR%%/tests-unit/comfy_test/test_seedvr2_dtype.py
@@ -990,10 +1098,15 @@ bin/comfyui
 %%DATADIR%%/tests-unit/comfy_test/test_sensenova.py
 %%DATADIR%%/tests-unit/comfy_test/test_vae_decode_tiled_nested.py
 %%DATADIR%%/tests-unit/deploy_environment_test.py
+%%DATADIR%%/tests-unit/execution_test/loop_validation_test.py
 %%DATADIR%%/tests-unit/execution_test/preview_compiler_test.py
 %%DATADIR%%/tests-unit/execution_test/preview_method_override_test.py
 %%DATADIR%%/tests-unit/execution_test/test_cache_provider.py
 %%DATADIR%%/tests-unit/execution_test/test_enrich_output.py
+%%DATADIR%%/tests-unit/execution_test/test_execute_reentry.py
+%%DATADIR%%/tests-unit/execution_test/test_execution_list.py
+%%DATADIR%%/tests-unit/execution_test/test_inmemory_assets.py
+%%DATADIR%%/tests-unit/execution_test/test_nested_loop_execution.py
 %%DATADIR%%/tests-unit/execution_test/validate_node_input_test.py
 %%DATADIR%%/tests-unit/feature_flags_test.py
 %%DATADIR%%/tests-unit/folder_paths_test/__init__.py
@@ -1017,6 +1130,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/seeder_test/test_seeder.py
 %%DATADIR%%/tests-unit/server/utils/file_operations_test.py
 %%DATADIR%%/tests-unit/server_test/test_cache_control.py
+%%DATADIR%%/tests-unit/test_assets_event_log_static.py
 %%DATADIR%%/tests-unit/utils/extra_config_test.py
 %%DATADIR%%/tests-unit/utils/json_util_test.py
 %%DATADIR%%/tests-unit/websocket_feature_flags_test.py
