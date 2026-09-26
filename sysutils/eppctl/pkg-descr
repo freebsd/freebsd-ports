@@ -1,0 +1,2 @@
+utility that reads and sets the Intel HWP Energy/Performance
+Preference through dev.hwpstate_intel.N.epp.

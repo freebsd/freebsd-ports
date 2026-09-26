@@ -375,6 +375,7 @@
     SUBDIR += env4801
     SUBDIR += envconsul
     SUBDIR += epazote
+    SUBDIR += eppctl
     SUBDIR += erdtree
     SUBDIR += erldash
     SUBDIR += etcmerge
