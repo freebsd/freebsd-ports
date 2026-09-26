@@ -21,6 +21,7 @@ include/heyoka/detail/elp2000/elp2000_22_36.hpp
 include/heyoka/detail/elp2000/elp2000_4_9.hpp
 include/heyoka/detail/eop_data/builtin_eop_data.hpp
 include/heyoka/detail/eop_sw_helpers.hpp
+include/heyoka/detail/eop_sw_impl.hpp
 include/heyoka/detail/erfa_decls.hpp
 include/heyoka/detail/event_detection.hpp
 include/heyoka/detail/ex_traversal.hpp
@@ -157,6 +158,7 @@ include/heyoka/model/nrlmsise00_tn.hpp
 include/heyoka/model/pendulum.hpp
 include/heyoka/model/rotating.hpp
 include/heyoka/model/sgp4.hpp
+include/heyoka/model/sh_gravity.hpp
 include/heyoka/model/sw.hpp
 include/heyoka/model/time_conversions.hpp
 include/heyoka/model/vsop2013.hpp
@@ -175,5 +177,5 @@ lib/cmake/heyoka/heyoka-config.cmake
 lib/cmake/heyoka/heyoka_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/heyoka/heyoka_export.cmake
 lib/libheyoka.so
-lib/libheyoka.so.43
-lib/libheyoka.so.43.0
+lib/libheyoka.so.45
+lib/libheyoka.so.45.0

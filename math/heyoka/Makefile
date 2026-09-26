@@ -1,7 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.11.0
-PORTREVISION=	1
+DISTVERSION=	7.13.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +31,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bluescarni
 
 CMAKE_ON=		HEYOKA_WITH_MPPP HEYOKA_WITH_SLEEF
-CMAKE_TESTING_ON=	HEYOKA_BUILD_TESTS
+CMAKE_OFF=		BUILD_TESTING
 
 .include <bsd.port.pre.mk>
 
@@ -47,6 +46,6 @@ LLVM_VERSION_MINOR=	0
 
 CMAKE_ARGS+=		-DFREEBSD_LLVM_VERSION=${LLVM_VERSION}.${LLVM_VERSION_MINOR}
 
-# tests as of 7.11.0: 100% tests passed, 0 tests failed out of 162
+# tests disabled: upstream C++ test suite takes excessive time and CPU, see https://github.com/bluescarni/heyoka/issues/554
 
 .include <bsd.port.post.mk>
