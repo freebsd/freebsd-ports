@@ -227,6 +227,7 @@
     SUBDIR += cni-dnsname
     SUBDIR += colorize
     SUBDIR += conan
+    SUBDIR += condy
     SUBDIR += confctl
     SUBDIR += conky
     SUBDIR += conky-awesome
