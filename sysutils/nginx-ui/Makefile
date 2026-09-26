@@ -1,7 +1,6 @@
 PORTNAME=	nginx-ui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.10
-PORTREVISION=	1
+DISTVERSION=	2.6.3
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
 # For instructions on how to create assets:
@@ -18,7 +17,7 @@ BROKEN_i386=	mapping output file failed: cannot allocate memory
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:1.27+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	0xJacky
 
@@ -41,7 +40,7 @@ BUILD_DATE=	$$(date -u +%s)
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
 # in the NGINX UI repository to get the value of GITID.
-GITID=		ff2253c59cdbfc0741866cd66a1f147ad8292791
+GITID=		826c6fae830168ccb8015f6d6c01fbf476b05ea9
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/vendor
