@@ -1,5 +1,5 @@
 PORTNAME=	previewgenerator
-PORTVERSION=	5.14.0
+PORTVERSION=	5.15.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www security
 
@@ -9,7 +9,7 @@ WWW=		https://apps.nextcloud.com/apps/${PORTNAME}
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NEXTCLOUD_RUN_DEPENDS=	34
+NEXTCLOUD_RUN_DEPENDS=	33
 
 USES=		nextcloud php:flavors
 
