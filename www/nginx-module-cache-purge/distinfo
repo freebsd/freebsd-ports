@@ -1,3 +1,3 @@
-TIMESTAMP = 1788963821
-SHA256 (nginx-modules-ngx_cache_purge-3.0.2.20260524-285354eddd56_GH0.tar.gz) = af5a28c86240e138860eb8db85869a925ed67a4c1e6188b94e03a6acd3dded84
-SIZE (nginx-modules-ngx_cache_purge-3.0.2.20260524-285354eddd56_GH0.tar.gz) = 43719
+TIMESTAMP = 1790355431
+SHA256 (nginx-modules-ngx_cache_purge-3.0.3_GH0.tar.gz) = c8271f3b7d82a22b1c2e5f68810be49cdded450f9a661b39af9938b9170a37ab
+SIZE (nginx-modules-ngx_cache_purge-3.0.3_GH0.tar.gz) = 44443
