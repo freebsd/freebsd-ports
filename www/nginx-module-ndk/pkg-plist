@@ -11,6 +11,8 @@ share/nginx/modules/nginx-module-ndk/objs/ndk_palloc.h
 share/nginx/modules/nginx-module-ndk/src/hash/md5.h
 share/nginx/modules/nginx-module-ndk/src/hash/murmurhash2.c
 share/nginx/modules/nginx-module-ndk/src/hash/sha.h
+share/nginx/modules/nginx-module-ndk/src/ndk.c
+share/nginx/modules/nginx-module-ndk/src/ndk.h
 share/nginx/modules/nginx-module-ndk/src/ndk_buf.c
 share/nginx/modules/nginx-module-ndk/src/ndk_buf.h
 share/nginx/modules/nginx-module-ndk/src/ndk_complex_path.c
@@ -25,9 +27,9 @@ share/nginx/modules/nginx-module-ndk/src/ndk_encoding.c
 share/nginx/modules/nginx-module-ndk/src/ndk_encoding.h
 share/nginx/modules/nginx-module-ndk/src/ndk_hash.c
 share/nginx/modules/nginx-module-ndk/src/ndk_hash.h
-share/nginx/modules/nginx-module-ndk/src/ndk_http_headers.h
 share/nginx/modules/nginx-module-ndk/src/ndk_http.c
 share/nginx/modules/nginx-module-ndk/src/ndk_http.h
+share/nginx/modules/nginx-module-ndk/src/ndk_http_headers.h
 share/nginx/modules/nginx-module-ndk/src/ndk_log.c
 share/nginx/modules/nginx-module-ndk/src/ndk_log.h
 share/nginx/modules/nginx-module-ndk/src/ndk_parse.h
@@ -41,12 +43,10 @@ share/nginx/modules/nginx-module-ndk/src/ndk_rewrite.c
 share/nginx/modules/nginx-module-ndk/src/ndk_rewrite.h
 share/nginx/modules/nginx-module-ndk/src/ndk_set_var.c
 share/nginx/modules/nginx-module-ndk/src/ndk_set_var.h
-share/nginx/modules/nginx-module-ndk/src/ndk_string_util.h
 share/nginx/modules/nginx-module-ndk/src/ndk_string.c
 share/nginx/modules/nginx-module-ndk/src/ndk_string.h
+share/nginx/modules/nginx-module-ndk/src/ndk_string_util.h
 share/nginx/modules/nginx-module-ndk/src/ndk_upstream_list.c
 share/nginx/modules/nginx-module-ndk/src/ndk_upstream_list.h
 share/nginx/modules/nginx-module-ndk/src/ndk_uri.c
 share/nginx/modules/nginx-module-ndk/src/ndk_uri.h
-share/nginx/modules/nginx-module-ndk/src/ndk.c
-share/nginx/modules/nginx-module-ndk/src/ndk.h

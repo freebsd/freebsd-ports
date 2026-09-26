@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the NDK module only.  It does not
+install a loadable module, and installing it alongside nginx does not
+add anything to a running server.
+
+The module itself is built by the nginx ports.  To use it, build
+www/nginx, www/nginx-devel or www/freenginx with the DEVEL_KIT option
+enabled, or with any option that depends on it.  Those ports pick the
+sources up from %%PREFIX%%/share/nginx/modules/nginx-module-ndk and
+produce ndk_http_module.so.
+EOM
+}
+]
