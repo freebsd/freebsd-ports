@@ -1,6 +1,6 @@
 PORTNAME=	arviz-stats
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.3
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -32,6 +32,6 @@ TEST_ARGS=	-p no:benchmark -p no:xdist -p no:relaxed \
 		-p no:black -p no:ruff -p no:mypy -p no:flake8 -p no:cov
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 1.3.2: 2740 passed, 5 skipped in 972.48s (0:16:12)
+# tests as of 1.3.3: 2831 passed, 5 skipped in 990.98s
 
 .include <bsd.port.mk>
