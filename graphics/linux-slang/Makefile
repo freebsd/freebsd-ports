@@ -29,6 +29,8 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
+
+PLIST_SUB=	ONLY_AMD64=${"${ARCH:Mamd64}" != "":?"":"@comment "}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS

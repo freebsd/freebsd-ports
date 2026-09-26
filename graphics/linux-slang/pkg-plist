@@ -30,7 +30,7 @@ lib/libslang-compiler.so
 lib/libslang-compiler.so.0.2026.18.2
 lib/libslang-glsl-module-2026.18.2.so
 lib/libslang-glslang-2026.18.2.so
-lib/libslang-llvm.so
+%%ONLY_AMD64%%lib/libslang-llvm.so
 lib/libslang-rt.so
 lib/libslang-rt.so.0.2026.18.2
 lib/libslang.so
