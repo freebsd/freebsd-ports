@@ -1,6 +1,6 @@
 PORTNAME=	tlottie
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
+DISTVERSION=	1.0.6
 CATEGORIES=	graphics
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -15,7 +15,6 @@ CARGO_FEATURES=	c-api
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dkaraush
-GH_TAGNAME=	4b940c7
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/tlottie.h ${STAGEDIR}${PREFIX}/include
