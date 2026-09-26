@@ -192,6 +192,7 @@
     SUBDIR += py-psautohint
     SUBDIR += py-pycups
     SUBDIR += py-pydyf
+    SUBDIR += py-pyipp
     SUBDIR += py-pypdf
     SUBDIR += py-python-ly
     SUBDIR += py-relatorio
