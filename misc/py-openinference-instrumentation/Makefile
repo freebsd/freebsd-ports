@@ -1,5 +1,5 @@
 PORTNAME=	openinference-instrumentation
-PORTVERSION=	0.1.63
+PORTVERSION=	0.1.66
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
