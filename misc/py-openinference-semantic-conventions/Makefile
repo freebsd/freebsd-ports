@@ -1,5 +1,5 @@
 PORTNAME=	openinference-semantic-conventions
-PORTVERSION=	0.1.37
+PORTVERSION=	0.1.39
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
