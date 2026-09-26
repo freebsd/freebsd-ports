@@ -1,7 +1,8 @@
 PORTNAME=	perl
 DISTVERSION=	${PERL_VERSION}
 CATEGORIES=	lang devel perl5
-MASTER_SITES=	CPAN/../../src/5.0 CPAN/../by-authors/id/P/PE/PEVANS
+MASTER_SITES=	CPAN/../../src/5.0 \
+		CPAN/../by-authors/id/B/BO/BOOK
 DIST_SUBDIR=	perl
 
 MAINTAINER=	mat@FreeBSD.org
@@ -142,8 +143,7 @@ OPTIONS_DEFAULT=	DTRACE MULTIPLICITY PERL_64BITINT
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE=	DTRACE
 .endif
-.for a in aarch64 armv6 armv7 \
-	riscv64
+.for a in aarch64 armv6 armv7 riscv64
 OPTIONS_EXCLUDE_${a}=	DTRACE
 .endfor
 OPTIONS_SUB=		yes

@@ -1141,6 +1141,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5440delta.1.gz
 %%MAN1%%/perl5451delta.1.gz
 %%MAN1%%/perl5452delta.1.gz
+%%MAN1%%/perl5453delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -2103,6 +2104,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5440delta.pod
 %%PRIV_LIB%%/pod/perl5451delta.pod
 %%PRIV_LIB%%/pod/perl5452delta.pod
+%%PRIV_LIB%%/pod/perl5453delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -2322,7 +2324,22 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/To/kEHIFAO.pl
 %%PRIV_LIB%%/unicore/To/kEHJSesh.pl
 %%PRIV_LIB%%/unicore/To/kEHUniK.pl
+%%PRIV_LIB%%/unicore/To/kJURCNCR.pl
+%%PRIV_LIB%%/unicore/To/kJURCNum.pl
+%%PRIV_LIB%%/unicore/To/kJURCRSU.pl
+%%PRIV_LIB%%/unicore/To/kJURCSrc.pl
 %%PRIV_LIB%%/unicore/To/kMandari.pl
+%%PRIV_LIB%%/unicore/To/kNSHUDub.pl
+%%PRIV_LIB%%/unicore/To/kNSHURea.pl
+%%PRIV_LIB%%/unicore/To/kSEALCCZ.pl
+%%PRIV_LIB%%/unicore/To/kSEALDYC.pl
+%%PRIV_LIB%%/unicore/To/kSEALMCJ.pl
+%%PRIV_LIB%%/unicore/To/kSEALQJZ.pl
+%%PRIV_LIB%%/unicore/To/kSEALRad.pl
+%%PRIV_LIB%%/unicore/To/kSEALTHX.pl
+%%PRIV_LIB%%/unicore/To/kTGTMerg.pl
+%%PRIV_LIB%%/unicore/To/kTGTNume.pl
+%%PRIV_LIB%%/unicore/To/kTGTRSUn.pl
 %%PRIV_LIB%%/unicore/To/kTotalSt.pl
 %%PRIV_LIB%%/unicore/To/kUnihanC.pl
 %%PRIV_LIB%%/unicore/UCD.pl
@@ -2336,6 +2353,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Age/V150.pl
 %%PRIV_LIB%%/unicore/lib/Age/V160.pl
 %%PRIV_LIB%%/unicore/lib/Age/V170.pl
+%%PRIV_LIB%%/unicore/lib/Age/V180.pl
 %%PRIV_LIB%%/unicore/lib/Age/V20.pl
 %%PRIV_LIB%%/unicore/lib/Age/V30.pl
 %%PRIV_LIB%%/unicore/lib/Age/V31.pl
@@ -2494,6 +2512,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/In/15_1.pl
 %%PRIV_LIB%%/unicore/lib/In/16_0.pl
 %%PRIV_LIB%%/unicore/lib/In/17_0.pl
+%%PRIV_LIB%%/unicore/lib/In/18_0.pl
 %%PRIV_LIB%%/unicore/lib/In/2_0.pl
 %%PRIV_LIB%%/unicore/lib/In/2_1.pl
 %%PRIV_LIB%%/unicore/lib/In/3_0.pl
@@ -2726,7 +2745,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/SD/Y.pl
 %%PRIV_LIB%%/unicore/lib/STerm/Y.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Arab.pl
-%%PRIV_LIB%%/unicore/lib/Sc/Armn.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Beng.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Cprt.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Cyrl.pl
