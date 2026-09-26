@@ -1,6 +1,6 @@
 PORTNAME=	arviz-plots
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,16 +29,17 @@ GH_ACCOUNT=	arviz-devs
 
 NO_ARCH=	yes
 
-TEST_ARGS=	-p no:benchmark -p no:xdist -p no:relaxed \
-		-p no:black -p no:ruff -p no:mypy -p no:flake8 -p no:cov \
+TEST_ARGS=	--disable-plugin-autoload \
 		-W ignore::RuntimeWarning \
 		-W ignore::DeprecationWarning \
 		--ignore=tests/test_backend.py \
 		--ignore=tests/test_plotly.py \
-		--ignore=tests/test_styles.py
+		--ignore=tests/test_styles.py \
+		--deselect=tests/test_hypothesis_plots.py::test_plot_pair \
+		-k 'not bokeh'
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		MPLBACKEND=Agg
 
-# tests as of 1.3.1: 601 passed 163 failed, all failures are due to broken old version of www/py-bokeh which is still for numpy-1.x, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=295711
+# tests as of 1.3.2: 596 passed, 3 skipped, 169 deselected (bokeh unavailable; hypothesis test_plot_pair slow)
 
 .include <bsd.port.mk>
