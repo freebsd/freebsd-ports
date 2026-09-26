@@ -1,7 +1,6 @@
 PORTNAME=	pymatgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.5.4
-PORTREVISION=	2
+DISTVERSION=	2026.9.24
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymatgen-core>=2026.3.9:science/py-pymatgen-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2024.8.30:security/py-certifi@${PY_FLAVOR} \
@@ -39,9 +39,14 @@ USE_PYTHON=	pep517 cython concurrent autoplist pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	materialsproject
 
+MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${DISTVERSION}
+
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		ETS_TOOLKIT=null \
+		QT_QPA_PLATFORM=offscreen \
 		PMG_TEST_FILES_DIR=${WRKSRC}/test-files \
 		MPLBACKEND=Agg
+TEST_ARGS=	--disable-plugin-autoload
 TEST_WRKSRC=	${WRKSRC}/tests
 
 post-patch:

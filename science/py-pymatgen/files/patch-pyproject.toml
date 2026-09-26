@@ -1,13 +1,36 @@
---- pyproject.toml.orig	2024-11-14 18:47:14 UTC
+-- Remove strict build-system version pins and convert PEP 639 license to the
+-- legacy format so the port builds with the FreeBSD-packaged setuptools.
+
+--- pyproject.toml.orig	2026-09-23 01:52:02 UTC
 +++ pyproject.toml
-@@ -3,8 +3,8 @@ requires = [
+@@ -3,9 +3,9 @@ requires = [
      "Cython>=0.29.23",
      # Building against NPY2 will support both NPY1 and NPY2
      # https://numpy.org/devdocs/dev/depending_on_numpy.html#build-time-dependency
 -    "numpy>=2.1.0",
--    "setuptools>=65.0.0",
+-    "setuptools>=77.0.0",
+-    "setuptools-scm>=8",
 +    "numpy",
 +    "setuptools",
++    "setuptools-scm",
  ]
  build-backend = "setuptools.build_meta"
  
+@@ -35,8 +35,7 @@ keywords = [
+     "structure",
+     "vasp",
+ ]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ classifiers = [
+     "Development Status :: 4 - Beta",
+     "Intended Audience :: Science/Research",
+@@ -103,7 +102,6 @@ zeopp = ["pyzeo; platform_system != 'Windows'"]  # Not
+ zeopp = ["pyzeo; platform_system != 'Windows'"]  # Note: requires Voro++ and Zeo++ to be installed
+ 
+ [project.scripts]
+-pmg = "pymatgen.cli.pmg:main"
+ feff_plot_cross_section = "pymatgen.cli.feff_plot_cross_section:main"
+ feff_plot_dos = "pymatgen.cli.feff_plot_dos:main"
+ get_environment = "pymatgen.cli.get_environment:main"
