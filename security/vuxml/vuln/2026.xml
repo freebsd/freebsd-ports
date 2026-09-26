@@ -1,3 +1,49 @@
+  <vuln vid="501ff33c-b996-11f1-ad2b-40b034429ecf">
+    <topic>p5-YAML-Syck -- Multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>p5-YAML-Syck</name>
+<range><lt>1.47</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>YAML-Syck project reports:</p>
+	<blockquote cite="https://metacpan.org/dist/YAML-Syck/changes">
+	  <p>YAML-Syck 1.47 fix the following issues:</p>
+      <ul>
+       <li>CVE-2026-57075 (CWE-125): out-of-bounds read in the base64 decoder
+       caused by signed-char indexing of the decode table on !!binary input</li>
+       <li>CVE-2026-57076 (CWE-416): use-after-free of an anchor key string
+       shared between the node and the anchors table</li>
+       <li>CVE-2026-57077 (CWE-125): one-byte out-of-bounds read in the lexer
+       newline scan during block-scalar parsing (incomplete-fix follow-on
+       to CVE-2025-11683)</li>
+       <li>CVE-2026-13713 (CWE-416/CWE-415): use-after-free / double-free of an
+       anchor node on anchor redefinition, a remote-crash DoS from a
+       7-byte input</li>
+      </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-57075</cvename>
+      <cvename>CVE-2026-57076</cvename>
+      <cvename>CVE-2026-57077</cvename>
+      <cvename>CVE-2025-11683</cvename>
+      <cvename>CVE-2026-13713</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-57075</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-57076</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-57077</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2025-11683</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-13713</url>
+    </references>
+    <dates>
+      <discovery>2026-07-16</discovery>
+      <entry>2026-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="023a3d0c-b987-11f1-ad2b-40b034429ecf">
     <topic>p5-Authen-SASL -- Replay attack in Authen::SASL::Perl::DIGEST_MD5</topic>
     <affects>
