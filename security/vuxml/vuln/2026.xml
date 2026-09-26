@@ -1,3 +1,29 @@
+  <vuln vid="ff969b25-b97b-11f1-b09d-8447094a420f">
+    <topic>RusTLS FFI -- plaintext TLS handshake vulnerability</topic>
+    <affects>
+      <package>
+	<name>rustls-ffi</name>
+	<range><lt>0.15.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The RusTLS project reports:</p>
+	<blockquote cite="https://github.com/rustls/rustls-ffi/releases/tag/v0.15.4">
+	  <p>TLS 1.3 handshake message processing could allow a broken peer to send plaintext handshake messages where an encrypted one is expected without rustls rejecting the connection</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/rustls/rustls-ffi/releases/tag/v0.15.4</url>
+      <url>https://github.com/rustls/rustls/security/advisories/GHSA-2mjx-qc3c-rqvc</url>
+    </references>
+    <dates>
+      <discovery>2026-09-26</discovery>
+      <entry>2026-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="675bc714-b8cd-11f1-ad2b-40b034429ecf">
     <topic>databases/p5-DBI -- multiple vulnerabilities</topic>
     <affects>
