@@ -13,6 +13,8 @@ WWW=		https://ashvardanian.com/posts/stringzilla/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to stage: non-constant-expression cannot be narrowed from type 'sz_u64_t', see https://github.com/ashvardanian/StringZilla/issues/341
+
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
