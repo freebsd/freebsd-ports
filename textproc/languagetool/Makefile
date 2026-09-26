@@ -1,9 +1,10 @@
 PORTNAME=	languagetool
-DISTVERSION=	6.6
-PORTREVISION=	1
+DISTVERSION=	20260925
+DISTVERSIONSUFFIX=	-snapshot
+PORTEPOCH=	1
 CATEGORIES=	textproc java
-MASTER_SITES=	https://languagetool.org/download/
-DISTNAME=	LanguageTool-${DISTVERSION}
+MASTER_SITES=	https://languagetool.org/download/snapshots/
+DISTNAME=	LanguageTool-${DISTVERSIONFULL}
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Style and grammar checker for more than 25 languages
@@ -32,6 +33,8 @@ GROUPS=		languagetool
 PORTDOCS=	CHANGES.md CHANGES.txt README.md
 
 OPTIONS_DEFINE=	DOCS
+
+WRKSRC=		${WRKDIR}/LanguageTool-6.9-SNAPSHOT
 
 post-extract:
 	@${RM} ${WRKSRC}/testrules.bat ${WRKSRC}/testrules.sh
