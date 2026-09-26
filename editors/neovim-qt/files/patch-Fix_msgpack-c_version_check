@@ -1,0 +1,20 @@
+https://github.com/equalsraf/neovim-qt/commit/80971ef7142ca09e9d42e9bd11bf61401e4921d6
+
+Fix msgpack-c version check
+We cannot use ranges in msgpack-c version check, check version 6 first
+and then version 7.
+
+--- CMakeLists.txt.orig	2026-09-26 18:21:12 UTC
++++ CMakeLists.txt
+@@ -151,7 +151,10 @@ if(USE_SYSTEM_MSGPACK)
+ # msgpack
+ option(USE_SYSTEM_MSGPACK "Use system msgpack libraries " OFF)
+ if(USE_SYSTEM_MSGPACK)
+-	find_package(msgpack-c 6.0.0 REQUIRED)
++	find_package(msgpack-c 7)
++	if(NOT msgpack-c_FOUND)
++		find_package(msgpack-c 6 REQUIRED)
++	endif()
+ else()
+ 	add_subdirectory(third-party)
+ endif()
