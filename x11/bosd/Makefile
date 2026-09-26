@@ -1,5 +1,6 @@
 PORTNAME=	bosd
 DISTVERSION=	10.4
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	dteske@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng16.so:graphics/png
 
-USES=		localbase:ldflags pkgconfig python:build,run shebangfix xorg
+USES=		localbase:ldflags pkgconfig shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	FrauBSD
 USE_LDCONFIG=	yes
@@ -25,10 +26,13 @@ MAKE_ARGS=	PKGCONFIGDIR="${PREFIX}/libdata/pkgconfig" \
 		PYTHON="${PYTHON_CMD}"
 ALL_TARGET=	all example
 
-OPTIONS_DEFINE=		TESTS
+OPTIONS_DEFINE=		EXAMPLES TESTS
 OPTIONS_DEFAULT=	TESTS
 OPTIONS_SUB=		yes
 
+TESTS_DESC=		Install the test suite
+EXAMPLES_USES=		python:build,run
+EXAMPLES_USES_OFF=	python:build
 TESTS_MAKE_ARGS=	INSTALL_TESTS=yes
 TESTS_MAKE_ARGS_OFF=	INSTALL_TESTS=no
 
@@ -37,5 +41,9 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libbosd.so.4
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.png ${STAGEDIR}${DATADIR}
+
+# Upstream install always copies the example scripts.
+post-install-EXAMPLES-off:
+	${RM} -r ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
