@@ -1,5 +1,5 @@
 PORTNAME=	fwupd
-DISTVERSION=	2.1.7
+DISTVERSION=	2.1.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -32,6 +32,9 @@ RUN_DEPENDS=	blkid:filesystems/libblkid \
 		dbus-daemon:devel/dbus \
 		${LOCALBASE}/libdata/pkgconfig/fwupd-efi.pc:sysutils/fwupd-efi \
 		valgrind>0:devel/valgrind
+
+NOT_FOR_ARCHS=	i386 powerpc powerpc64 powerpc64le
+NOT_FOR_ARCHS_REASON=	requires libefivar from base, which is not built on this architecture
 
 USES=		cmake:indirect cpe gettext gnome inotify libarchive meson pkgconfig python readline shebangfix sqlite vala:build
 USE_GITHUB=	yes

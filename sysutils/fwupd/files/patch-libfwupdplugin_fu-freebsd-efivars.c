@@ -1,4 +1,4 @@
---- libfwupdplugin/fu-freebsd-efivars.c.orig	2026-03-12 10:08:33 UTC
+--- libfwupdplugin/fu-freebsd-efivars.c.orig	2026-07-27 15:39:53 UTC
 +++ libfwupdplugin/fu-freebsd-efivars.c
 @@ -17,6 +17,7 @@
  
@@ -8,7 +8,42 @@
  
  struct _FuFreebsdEfivars {
  	FuEfivars parent_instance;
-@@ -104,8 +105,45 @@ fu_freebsd_efivars_get_data(FuEfivars *efivars,
+@@ -62,21 +63,27 @@ fu_freebsd_efivars_delete_with_glob(FuEfivars *efivars
+ {
+ 	efi_guid_t *guidt = NULL;
+ 	gchar *name = NULL;
+-	gboolean rv = FALSE;
+ 	efi_guid_t guid_to_delete;
+ 
+-	efi_str_to_guid(guid, &guid_to_delete);
++	if (efi_str_to_guid(guid, &guid_to_delete) < 0) {
++		g_set_error(error,
++			    FWUPD_ERROR,
++			    FWUPD_ERROR_INVALID_DATA,
++			    "failed to parse GUID %s",
++			    guid);
++		return FALSE;
++	}
+ 
+ 	while (efi_get_next_variable_name(&guidt, &name) == 1) {
+ 		if (memcmp(&guid_to_delete, guidt, sizeof(guid_to_delete)) != 0)
+ 			continue;
+-		if (!g_pattern_match_simple(name, name_glob))
++		if (!g_pattern_match_simple(name_glob, name))
+ 			continue;
+-		rv = fu_freebsd_efivars_delete(efivars, guid, name, error);
+-		if (!rv)
+-			break;
++		if (!fu_freebsd_efivars_delete(efivars, guid, name, error))
++			return FALSE;
+ 	}
+-	return rv;
++
++	return TRUE;
+ }
+ 
+ static gboolean
+@@ -104,8 +111,45 @@ fu_freebsd_efivars_get_data(FuEfivars *efivars,
  			    GError **error)
  {
  	efi_guid_t guidt;
@@ -55,7 +90,7 @@
  }
  
  static gboolean
-@@ -182,7 +220,7 @@ fu_freebsd_efivars_set_data(FuEfivars *efivars,
+@@ -182,7 +226,7 @@ fu_freebsd_efivars_set_data(FuEfivars *efivars,
  	efi_guid_t guidt;
  	efi_str_to_guid(guid, &guidt);
  
