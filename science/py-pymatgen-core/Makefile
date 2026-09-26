@@ -66,6 +66,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|np.linalg.det(scale_matrix)|round(float(np.linalg.det(scale_matrix)))|' \
 		${WRKSRC}/src/pymatgen/core/structure.py
 
-# tests as of 2026.9.23: 2882 passed, 353 skipped, 10 deselected, 4 xfailed, 4411 warnings in 478.58s (0:07:58)
+# tests as of 2026.9.23: 2899 passed, 334 skipped, 10 deselected, 4 xfailed, 63 warnings in 581.35s (0:09:41)
 
 .include <bsd.port.mk>
