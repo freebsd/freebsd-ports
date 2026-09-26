@@ -1,4 +1,4 @@
---- cmake/Modules/InstallConfig.cmake.orig	2019-04-07 09:22:21 UTC
+--- cmake/Modules/InstallConfig.cmake.orig	2026-07-11 05:28:28 UTC
 +++ cmake/Modules/InstallConfig.cmake
 @@ -17,8 +17,8 @@
  #============================================================================
