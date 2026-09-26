@@ -1,6 +1,6 @@
 PORTNAME=	arviz-base
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,10 +29,10 @@ GH_ACCOUNT=	arviz-devs
 
 NO_ARCH=	yes
 
-TEST_ARGS=	-p no:benchmark -p no:xdist -p no:relaxed \
-		-p no:black -p no:ruff -p no:mypy -p no:flake8 -p no:cov
+TEST_ARGS=	--disable-plugin-autoload \
+		-k 'not test_convert_to_dataset and not test_convert_to_datatree and not test_clear_data_home and not test_warning_rc_file and not pynvml'
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 1.3.0: 242 passed, 2 failed (netCDF4 binary incompatibility in env) in 1.33s
+# tests as of 1.3.1: 239 passed, 9 deselected (xarray backend plugin / pynvml deprecation / rcparam warning)
 
 .include <bsd.port.mk>
