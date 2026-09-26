@@ -1,3 +1,48 @@
+  <vuln vid="023a3d0c-b987-11f1-ad2b-40b034429ecf">
+    <topic>p5-Authen-SASL -- Replay attack in Authen::SASL::Perl::DIGEST_MD5</topic>
+    <affects>
+<package>
+<name>p5-Authen-SASL</name>
+<range><lt>2.2100</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Authen-SASL project reports:</p>
+	<blockquote cite="https://metacpan.org/dist/Authen-SASL/changes">
+	   <p>Authen::SASL::Perl::DIGEST_MD5 versions before
+	   2.2100 for Perl accept replayed authentication
+	   responses via unverified nonce in server_step.
+	   server_start generates a fresh nonce and sends it
+	   in the challenge, and nothing later compares that
+	   value against the nonce the client returns.
+	   server_step derives the expected digest from the
+	   client's own parameters, so a response verifies
+	   whenever its digest matches the nonce it carries.
+	   The count table it also checks is keyed on the
+	   client-supplied nonce and starts empty in each new
+	   server object, so a captured first response,
+	   carrying `nc=00000001`, passes that too. RFC 2831
+	   defines the nonce in the response as the value the
+	   server sent in the preceding challenge. An
+	   attacker who observes one successful `qop=auth`
+	   exchange can replay the captured response against
+	   a later session for the same service, host, realm
+	   and user, and authenticate as that user without
+	   knowing the password.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-86219</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-86219</url>
+    </references>
+    <dates>
+      <discovery>2026-09-06</discovery>
+      <entry>2026-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2ec747aa-b97e-11f1-b09d-8447094a420f">
     <topic>Rauthy -- Multiple security vulnerabilities</topic>
     <affects>
