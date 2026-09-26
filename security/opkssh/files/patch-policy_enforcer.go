@@ -1,11 +1,11 @@
---- policy/enforcer.go.orig	2025-11-15 20:20:44 UTC
+--- policy/enforcer.go.orig	2026-09-25 23:41:01 UTC
 +++ policy/enforcer.go
-@@ -54,7 +54,7 @@ type checkedClaims struct {
+@@ -106,7 +106,7 @@ func (s *checkedClaims) UnmarshalJSON(data []byte) err
  }
  
- // The default location for policy plugins
--const pluginPolicyDir = "/etc/opk/policy.d"
-+const pluginPolicyDir = "%%PREFIX%%/etc/opk/policy.d"
- 
- // Validates that the server defined identity attribute matches the
- // respective claim from the identity token
+ // GetPluginPolicyDir returns the default location for policy plugins.
+-// On Unix: /etc/opk/policy.d, On Windows: %ProgramData%\opk\policy.d
++// On Unix: %%PREFIX%%/etc/opk/policy.d, On Windows: %ProgramData%\opk\policy.d
+ func GetPluginPolicyDir() string {
+ 	return filepath.Join(GetSystemConfigBasePath(), "policy.d")
+ }
