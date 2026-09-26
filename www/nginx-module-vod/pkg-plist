@@ -49,9 +49,6 @@ share/nginx/modules/nginx-module-vod/vod/avc_parser.h
 share/nginx/modules/nginx-module-vod/vod/bit_read_stream.h
 share/nginx/modules/nginx-module-vod/vod/buffer_pool.c
 share/nginx/modules/nginx-module-vod/vod/buffer_pool.h
-share/nginx/modules/nginx-module-vod/vod/cli/vod_array.c
-share/nginx/modules/nginx-module-vod/vod/cli/vod_array.h
-share/nginx/modules/nginx-module-vod/vod/cli/vod_cli_main.c
 share/nginx/modules/nginx-module-vod/vod/codec_config.c
 share/nginx/modules/nginx-module-vod/vod/codec_config.h
 share/nginx/modules/nginx-module-vod/vod/common.c
