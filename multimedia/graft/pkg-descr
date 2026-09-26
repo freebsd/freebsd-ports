@@ -1,0 +1,5 @@
+Local-first composition workspace. Incremental compiler for video.
+Git owns recipe history; graft owns scions, layers, and compile.
+Runtime ffmpeg is not linked; graft shells out.
+
+WWW: https://github.com/eonik-ai/graft
