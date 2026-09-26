@@ -1,6 +1,6 @@
 PORTNAME=	netron
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.2.9
+DISTVERSION=	9.3.0
 CATEGORIES=	misc python # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
