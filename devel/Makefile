@@ -497,6 +497,7 @@
     SUBDIR += compdbgen
     SUBDIR += compiler-rt
     SUBDIR += compiz-bcop
+    SUBDIR += computelibrary
     SUBDIR += concurrencpp
     SUBDIR += concurrencykit
     SUBDIR += concurrentqueue
