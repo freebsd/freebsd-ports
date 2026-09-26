@@ -1,6 +1,6 @@
---- content/browser/service_host/utility_process_host.cc.orig	2026-08-31 10:59:09 UTC
+--- content/browser/service_host/utility_process_host.cc.orig	2026-09-25 15:26:43 UTC
 +++ content/browser/service_host/utility_process_host.cc
-@@ -65,7 +65,7 @@
+@@ -66,7 +66,7 @@
  #include "content/browser/v8_snapshot_files.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/files/file_util.h"
  #include "base/files/scoped_file.h"
  #include "base/pickle.h"
-@@ -100,7 +100,7 @@ namespace content {
+@@ -99,7 +99,7 @@ namespace content {
  
  namespace {
  

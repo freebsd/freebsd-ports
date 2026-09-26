@@ -1,4 +1,4 @@
---- components/startup_metric_utils/browser/startup_metric_utils.cc.orig	2026-08-31 10:59:09 UTC
+--- components/startup_metric_utils/browser/startup_metric_utils.cc.orig	2026-09-25 15:26:43 UTC
 +++ components/startup_metric_utils/browser/startup_metric_utils.cc
 @@ -36,11 +36,11 @@
  #elif BUILDFLAG(IS_MAC)
@@ -14,7 +14,7 @@
  namespace {
  
  // These values are taken from the
-@@ -296,7 +296,7 @@ BrowserStartupMetricRecorder::GetHardFaultCountForCurr
+@@ -302,7 +302,7 @@ BrowserStartupMetricRecorder::GetHardFaultCountForCurr
    }
    return base::saturated_cast<uint32_t>(events_info.pageins);
  }
@@ -23,7 +23,16 @@
  std::optional<uint32_t>
  BrowserStartupMetricRecorder::GetHardFaultCountForCurrentProcess() {
    struct rusage usage;
-@@ -594,7 +594,7 @@ void BrowserStartupMetricRecorder::RecordFirstRunSenti
+@@ -579,7 +579,7 @@ void BrowserStartupMetricRecorder::RecordBrowserWindow
+   }
+   is_first_call = false;
+   RecordBrowserWindowFirstPaintTicks(ticks);
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Mirror Startup.BrowserMessageLoopStartHardFault{Count,Bytes} at the first
+   // paint checkpoint (using a higher 1M cap for Count to avoid saturation).
+   // We record this unconditionally (even if ShouldLogStartupHistogram() is
+@@ -617,7 +617,7 @@ void BrowserStartupMetricRecorder::RecordFirstRunSenti
  }
  
  void BrowserStartupMetricRecorder::RecordHardFaultHistogram() {

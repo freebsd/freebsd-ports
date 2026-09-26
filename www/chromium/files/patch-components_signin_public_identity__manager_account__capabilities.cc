@@ -1,6 +1,6 @@
---- components/signin/public/identity_manager/account_capabilities.cc.orig	2026-08-12 09:02:10 UTC
+--- components/signin/public/identity_manager/account_capabilities.cc.orig	2026-09-25 15:26:43 UTC
 +++ components/signin/public/identity_manager/account_capabilities.cc
-@@ -192,7 +192,7 @@ signin::Tribool AccountCapabilities::can_sign_in_to_ch
+@@ -197,7 +197,7 @@ signin::Tribool AccountCapabilities::can_sign_in_to_ch
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

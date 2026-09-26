@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/toolbar/webui_avatar_toolbar_button.h.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/ui/views/toolbar/webui_avatar_toolbar_button.h.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/ui/views/toolbar/webui_avatar_toolbar_button.h
-@@ -57,7 +57,7 @@ class WebUIAvatarToolbarButton : public AvatarToolbarB
+@@ -55,7 +55,7 @@ class WebUIAvatarToolbarButton : public AvatarToolbarB
        bool should_announce) override;
    bool HasExplicitButtonState() const override;
    void MaybeShowProfileSwitchIPH() override;

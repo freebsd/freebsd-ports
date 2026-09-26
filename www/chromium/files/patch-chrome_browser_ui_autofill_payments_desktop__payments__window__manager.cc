@@ -1,15 +1,6 @@
---- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.cc.orig	2026-08-31 10:59:09 UTC
+--- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/ui/autofill/payments/desktop_payments_window_manager.cc
-@@ -31,7 +31,7 @@
- #include "ui/gfx/geometry/size.h"
- #include "url/gurl.h"
- 
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/ui/browser_window/public/browser_window_interface.h"  // nogncheck
- #endif  // BUILDFLAG(IS_LINUX)
- 
-@@ -62,7 +62,7 @@ gfx::Size GetPopupSizeForBnpl() {
+@@ -59,7 +59,7 @@ gfx::Size GetPopupSizeForBnpl() {
  DesktopPaymentsWindowManager::DesktopPaymentsWindowManager(
      ContentAutofillClient* client)
      : client_(CHECK_DEREF(client)) {
@@ -18,7 +9,7 @@
    scoped_observation_.Observe(
        ProfileBrowserCollection::GetForProfile(Profile::FromBrowserContext(
            client_->GetWebContents().GetBrowserContext())));
-@@ -157,7 +157,7 @@ void DesktopPaymentsWindowManager::WebContentsDestroye
+@@ -155,7 +155,7 @@ void DesktopPaymentsWindowManager::WebContentsDestroye
    }
  }
  

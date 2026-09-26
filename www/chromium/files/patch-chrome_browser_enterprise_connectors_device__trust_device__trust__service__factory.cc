@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2026-03-13 06:02:14 UTC
+--- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
 @@ -22,7 +22,7 @@
  #include "components/policy/core/common/management/management_service.h"
@@ -7,8 +7,8 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/browser_process.h"
- #include "chrome/browser/enterprise/connectors/device_trust/attestation/browser/browser_attestation_service.h"
- #include "chrome/browser/enterprise/connectors/device_trust/attestation/browser/device_attester.h"
+ #include "chrome/browser/enterprise/identifiers/profile_id_service_factory.h"
+ #include "chrome/browser/enterprise/signals/signals_aggregator_factory.h"
 @@ -57,7 +57,7 @@ bool IsProfileManaged(Profile* profile) {
    return management_service && management_service->IsManaged();
  }

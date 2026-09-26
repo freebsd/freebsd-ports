@@ -1,0 +1,11 @@
+--- third_party/typescript/tsgo.gni.orig	2026-09-25 15:26:43 UTC
++++ third_party/typescript/tsgo.gni
+@@ -4,7 +4,7 @@
+ 
+ import("//build/toolchain/rbe.gni")
+ 
+-if (host_os == "linux" || use_remoteexec) {
++if (host_os == "linux" || use_remoteexec || host_os == "openbsd" || host_os == "freebsd") {
+   _platform_dir = "linux-amd64"
+   _binary_name = "tsc"
+ } else if (host_os == "mac") {

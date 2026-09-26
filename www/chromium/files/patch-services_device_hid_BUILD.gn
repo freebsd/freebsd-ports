@@ -1,6 +1,6 @@
---- services/device/hid/BUILD.gn.orig	2026-08-31 10:59:09 UTC
+--- services/device/hid/BUILD.gn.orig	2026-09-25 15:26:43 UTC
 +++ services/device/hid/BUILD.gn
-@@ -32,7 +32,26 @@ source_set("hid") {
+@@ -47,7 +47,26 @@ source_set("hid") {
      "//third_party/protobuf:protobuf_lite",
    ]
  

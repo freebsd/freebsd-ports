@@ -1,4 +1,4 @@
---- sandbox/policy/BUILD.gn.orig	2025-12-05 10:12:50 UTC
+--- sandbox/policy/BUILD.gn.orig	2026-09-25 15:26:43 UTC
 +++ sandbox/policy/BUILD.gn
 @@ -46,7 +46,7 @@ component("policy") {
        "//third_party/jni_zero",
@@ -9,7 +9,7 @@
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -116,6 +116,26 @@ component("policy") {
+@@ -114,6 +114,26 @@ component("policy") {
        "//sandbox/linux:sandbox_services",
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",

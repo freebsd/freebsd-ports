@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/chrome_web_ui_configs.cc.orig	2026-08-31 10:59:09 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_configs.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_configs.cc
-@@ -174,7 +174,7 @@
+@@ -173,7 +173,7 @@
  #include "chrome/browser/ui/webui/default_browser/visual_guided_setter_ui.h"
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
  #include "chrome/browser/ui/webui/browser_switch/browser_switch_ui.h"
  #include "chrome/browser/ui/webui/signin/history_sync_optin/history_sync_optin_ui.h"
-@@ -183,13 +183,13 @@
+@@ -182,13 +182,13 @@
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -25,7 +25,7 @@
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #endif
  
-@@ -221,7 +221,7 @@
+@@ -220,7 +220,7 @@
  #include "chrome/browser/ui/webui/signin/signin_error_ui.h"
  #endif  //  !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_ANDROID)
  
@@ -34,7 +34,7 @@
  #include "chrome/browser/ui/webui/on_device_translation_internals/on_device_translation_internals_ui.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -238,7 +238,7 @@
+@@ -237,7 +237,7 @@
  #endif  // BUILDFLAG(IS_MAC)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -43,7 +43,7 @@
  #include "chrome/browser/ui/webui/skills/skills_ui.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
          // BUILDFLAG(IS_CHROMEOS)
-@@ -404,10 +404,10 @@ void RegisterChromeWebUIConfigs() {
+@@ -399,10 +399,10 @@ void RegisterChromeWebUIConfigs() {
    map.AddWebUIConfig(std::make_unique<WebUIToolbarConfig>());
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -56,7 +56,7 @@
  
  #if BUILDFLAG(ENABLE_EXTENSIONS_CORE)
    map.AddWebUIConfig(std::make_unique<extensions::ExtensionsUIConfig>());
-@@ -435,7 +435,7 @@ void RegisterChromeWebUIConfigs() {
+@@ -430,7 +430,7 @@ void RegisterChromeWebUIConfigs() {
    map.AddWebUIConfig(std::make_unique<VisualGuidedSetterUIConfig>());
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -65,7 +65,7 @@
    map.AddWebUIConfig(std::make_unique<BrowserSwitchUIConfig>());
    map.AddWebUIConfig(std::make_unique<HistorySyncOptinUIConfig>());
    map.AddWebUIConfig(std::make_unique<OnDeviceTranslationInternalsUIConfig>());
-@@ -444,17 +444,17 @@ void RegisterChromeWebUIConfigs() {
+@@ -439,17 +439,17 @@ void RegisterChromeWebUIConfigs() {
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -86,7 +86,7 @@
    map.AddWebUIConfig(std::make_unique<UpdaterUIConfig>());
  #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
  
-@@ -501,7 +501,7 @@ void RegisterChromeWebUIConfigs() {
+@@ -496,7 +496,7 @@ void RegisterChromeWebUIConfigs() {
  #endif  // BUILDFLAG(IS_MAC)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

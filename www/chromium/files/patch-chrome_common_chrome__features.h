@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.h.orig	2026-08-31 10:59:09 UTC
+--- chrome/common/chrome_features.h.orig	2026-09-25 15:26:43 UTC
 +++ chrome/common/chrome_features.h
 @@ -64,7 +64,7 @@ BASE_DECLARE_FEATURE(kUseKeychainKeyProvider);
  #endif  // BUILDFLAG(IS_MAC)
@@ -9,7 +9,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kAutofillAddressSurvey);
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kAutofillCardSurvey);
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kAutofillPasswordSurvey);
-@@ -156,7 +156,7 @@ extern const base::FeatureParam<std::string>
+@@ -164,7 +164,7 @@ extern const base::FeatureParam<std::string> kRemoteAc
  COMPONENT_EXPORT(CHROME_FEATURES)
  bool RemoteActorCredentialSharingEnabled();
  
@@ -18,7 +18,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kChromeAppsDeprecation);
  #endif
  
-@@ -973,7 +973,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -1001,7 +1001,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kIsolatedWebAppBundleCache);
  #endif
  
@@ -27,7 +27,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kLinuxLowMemoryMonitor);
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorModerateLevel;
-@@ -981,7 +981,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -1009,7 +1009,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

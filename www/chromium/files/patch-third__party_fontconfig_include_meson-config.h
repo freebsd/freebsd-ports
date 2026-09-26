@@ -1,4 +1,4 @@
---- third_party/fontconfig/include/meson-config.h.orig	2026-02-11 09:05:39 UTC
+--- third_party/fontconfig/include/meson-config.h.orig	2026-09-25 15:26:43 UTC
 +++ third_party/fontconfig/include/meson-config.h
 @@ -17,7 +17,7 @@
  
@@ -9,7 +9,7 @@
  
  #define FC_FONTPATH ""
  
-@@ -96,10 +96,13 @@
+@@ -98,10 +98,13 @@
  
  #define HAVE_RANDOM 1
  
@@ -24,7 +24,7 @@
  #define HAVE_READLINK 1
  
  #define HAVE_STDATOMIC_PRIMITIVES 1
-@@ -128,7 +131,7 @@
+@@ -132,7 +135,7 @@
  
  #define HAVE_SYS_PARAM_H 1
  
@@ -33,7 +33,7 @@
  
  #define HAVE_SYS_STATVFS_H 1
  
-@@ -136,7 +139,7 @@
+@@ -140,7 +143,7 @@
  
  #define HAVE_SYS_TYPES_H 1
  

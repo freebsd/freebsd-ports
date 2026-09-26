@@ -1,6 +1,6 @@
---- components/supervised_user/core/browser/child_account_service.cc.orig	2026-08-31 10:59:09 UTC
+--- components/supervised_user/core/browser/child_account_service.cc.orig	2026-09-25 15:26:43 UTC
 +++ components/supervised_user/core/browser/child_account_service.cc
-@@ -163,7 +163,7 @@ void ChildAccountService::OnPrimaryAccountChanged(
+@@ -179,7 +179,7 @@ void ChildAccountService::OnPrimaryAccountChanged(
  void ChildAccountService::UpdateForceGoogleSafeSearch() {
  // On platforms without web sign-out (where the primary account is always
  // authenticated), there's no need to force SafeSearch.

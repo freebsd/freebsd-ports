@@ -1,6 +1,6 @@
---- media/audio/sndio/sndio_input.cc.orig	2026-01-14 08:33:23 UTC
+--- media/audio/sndio/sndio_input.cc.orig	2026-09-25 15:26:43 UTC
 +++ media/audio/sndio/sndio_input.cc
-@@ -0,0 +1,202 @@
+@@ -0,0 +1,203 @@
 +// Copyright 2013 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -194,8 +194,9 @@
 +      params.sample_rate());
 +
 +    // push into bus
-+    audio_bus->FromInterleaved<SignedInt16SampleTypeTraits>(reinterpret_cast<int16_t*>(buffer), nframes);
-+
++    audio_bus->FromInterleaved<SignedInt16SampleTypeTraits>(
++        base::span<const int16_t>(reinterpret_cast<int16_t*>(buffer),
++                                   static_cast<size_t>(nframes * params.channels())));
 +
 +    // invoke callback
 +    callback->OnData(audio_bus.get(), base::TimeTicks::Now() - delay, 1., {});

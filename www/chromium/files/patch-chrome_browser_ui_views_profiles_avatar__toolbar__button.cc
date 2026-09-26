@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/avatar_toolbar_button.cc.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/ui/views/profiles/avatar_toolbar_button.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/ui/views/profiles/avatar_toolbar_button.cc
-@@ -460,7 +460,7 @@ void AvatarToolbarButton::MaybeShowProfileSwitchIPH() 
+@@ -414,7 +414,7 @@ void AvatarToolbarButton::MaybeShowProfileSwitchIPH() 
    state_manager_.MaybeShowProfileSwitchIPH();
  }
  

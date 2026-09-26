@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_widget.cc.orig	2026-08-31 10:59:09 UTC
+--- chrome/browser/ui/views/frame/browser_widget.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/ui/views/frame/browser_widget.cc
-@@ -47,7 +47,7 @@
+@@ -50,7 +50,7 @@
  #include "ui/aura/window.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -86,7 +86,7 @@ class ThemeChangedObserver : public views::WidgetObser
+@@ -87,7 +87,7 @@ class ThemeChangedObserver : public views::WidgetObser
  };
  
  bool IsUsingLinuxSystemTheme(Profile* profile) {
@@ -18,7 +18,7 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -163,7 +163,7 @@ void BrowserWidget::InitBrowserWidget() {
+@@ -165,7 +165,7 @@ void BrowserWidget::InitBrowserWidget() {
  #endif
    }
  
@@ -27,25 +27,25 @@
    params.startup_id =
        BrowserInitState::From(browser)->create_params().startup_id;
  #endif
-@@ -209,7 +209,7 @@ void BrowserWidget::InitBrowserWidget() {
- 
-   Init(std::move(params));
+@@ -225,7 +225,7 @@ void BrowserWidget::InitBrowserWidget() {
+                                 base::Unretained(this)));
+   }
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    SelectNativeTheme();
  #else
    SetNativeTheme(ui::NativeTheme::GetInstanceForNativeUi());
-@@ -493,7 +493,7 @@ void BrowserWidget::OnMenuClosed() {
+@@ -539,7 +539,7 @@ void BrowserWidget::OnMenuClosed() {
  }
  
  void BrowserWidget::SelectNativeTheme() {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // Use the regular NativeTheme instance if running incognito mode, regardless
-   // of system theme (gtk, qt etc).
+   // Use the regular NativeTheme instance if running incognito mode or
+   // enterprise isolated mode, regardless of system theme (gtk, qt etc).
    ui::NativeTheme* native_theme = ui::NativeTheme::GetInstanceForNativeUi();
-@@ -534,7 +534,7 @@ void BrowserWidget::OnTouchUiChanged() {
+@@ -586,7 +586,7 @@ void BrowserWidget::OnGlassFrameEligibilityChanged(boo
  bool BrowserWidget::RegenerateFrameOnThemeChange(
      BrowserThemeChangeType theme_change_type) {
    bool need_regenerate = false;

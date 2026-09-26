@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2026-08-31 10:59:09 UTC
+--- chrome/common/chrome_features.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/common/chrome_features.cc
 @@ -72,7 +72,7 @@ BASE_FEATURE(kUseKeychainKeyProvider, base::FEATURE_EN
  #endif  // BUILDFLAG(IS_MAC)
@@ -9,7 +9,7 @@
  // Enables or disables the Autofill survey triggered by opening a prompt to
  // save address info.
  BASE_FEATURE(kAutofillAddressSurvey, base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -240,7 +240,7 @@ BASE_FEATURE(kEnableFullscreenToAnyScreenAndroid,
+@@ -250,7 +250,7 @@ BASE_FEATURE(kEnableFullscreenToAnyScreenAndroid,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  
@@ -18,7 +18,7 @@
  // Controls whether Chrome Apps are supported. See https://crbug.com/40186761.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -1403,7 +1403,7 @@ BASE_FEATURE(kIsolatedWebAppManagedGuestSessionInstall
+@@ -1434,7 +1434,7 @@ BASE_FEATURE(kIsolatedWebAppManagedGuestSessionInstall
  BASE_FEATURE(kIsolatedWebAppBundleCache, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -27,7 +27,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor, base::FEATURE_DISABLED_BY_DEFAULT);
  // Values taken from the low-memory-monitor documentation and also apply to the
  // portal API:
-@@ -1414,7 +1414,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -1445,7 +1445,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

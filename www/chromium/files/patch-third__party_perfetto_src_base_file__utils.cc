@@ -1,6 +1,6 @@
---- third_party/perfetto/src/base/file_utils.cc.orig	2026-08-12 09:02:10 UTC
+--- third_party/perfetto/src/base/file_utils.cc.orig	2026-09-25 15:26:43 UTC
 +++ third_party/perfetto/src/base/file_utils.cc
-@@ -60,8 +60,10 @@
+@@ -61,8 +61,10 @@
  #include <unistd.h>
  #endif
  
@@ -13,7 +13,7 @@
  // For inotify. QNX doesn't have full support for inotify_init1().
  #include <sys/inotify.h>
  #endif
-@@ -649,8 +651,10 @@ std::optional<uint64_t> GetFileSize(PlatformHandle fd)
+@@ -739,8 +741,10 @@ std::optional<uint64_t> GetFileSize(int fd) {
  
  // LinuxFileWatch
  

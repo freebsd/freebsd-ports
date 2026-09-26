@@ -1,8 +1,8 @@
---- buildtools/third_party/libc++abi/BUILD.gn.orig	2026-08-12 15:23:09 UTC
+--- buildtools/third_party/libc++abi/BUILD.gn.orig	2026-09-25 15:26:43 UTC
 +++ buildtools/third_party/libc++abi/BUILD.gn
-@@ -62,7 +62,7 @@ target(libcxxabi_target_type, "libc++abi") {
-   # TODO(crbug.com/469458284): Remove this once libc++abi is rolled again.
-   defines += [ "_LIBCPP_CONSTINIT=constinit" ]
+@@ -59,7 +59,7 @@ target(libcxxabi_target_type, "libc++abi") {
+ 
+   defines = [ "LIBCXXABI_SILENT_TERMINATE" ]
  
 -  if (is_linux || is_android) {
 +  if ((is_linux || is_android) && !is_freebsd) {

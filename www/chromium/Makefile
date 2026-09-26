@@ -1,18 +1,22 @@
 PORTNAME=	chromium
-PORTVERSION=	152.0.7977.75
-PORTREVISION=	2
+PORTVERSION=	154.0.8037.57
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
+TSV=		7.0.2
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external \
-		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
-DISTFILES=	${DISTNAME}-lite${EXTRACT_SUFX} \
-		pulseaudio-${PULSEV}.tar.gz:pulseaudio
+		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio \
+		https://github.com/chromium-linux-tarballs/chromium-tarballs/releases/download/${PORTVERSION}/:unofficial
+DISTFILES=	${DISTNAME}-linux${EXTRACT_SUFX}:unofficial \
+		${DISTNAME}-profdata${EXTRACT_SUFX}:external \
+		pulseaudio-${PULSEV}.tar.gz:pulseaudio \
+		TypeScript-${TSV}-vendor.tar.gz:external
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	rollup:rollup:v4.60.4:rollup/rollup \
-		evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/esbuild
+		evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/esbuild \
+		microsoft:TypeScript:v${TSV}:typescript/typescript
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -32,6 +36,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		flock:sysutils/flock \
 		node:www/node \
 		rustc:lang/rust \
+		tsc:lang/typescript-go \
 		xcb-proto>0:x11/xcb-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
@@ -145,7 +150,8 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_udev=false \
 		extra_cxxflags="${CXXFLAGS} -I${LOCALBASE}/include/libepoll-shim ${PINCLUDES}" \
 		extra_ldflags="${LDFLAGS}" \
-		ffmpeg_branding="${FFMPEG_BRAND}"
+		ffmpeg_branding="${FFMPEG_BRAND}" \
+		use_typescript_go=false
 
 # TODO: investigate building with these options:
 # use_system_minigbm
@@ -237,7 +243,7 @@ WIDEVINE_DESC=		Depend on foreign-cdm to enable playback of DRM content
 WIDEVINE_RUN_DEPENDS=	foreign-cdm>0:www/foreign-cdm
 
 .include "Makefile.tests"
-TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
+#TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
 TEST_ALL_TARGET=	${TEST_TARGETS}
 
 .include <bsd.port.options.mk>
@@ -307,6 +313,8 @@ pre-configure:
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
 		dav1d flac fontconfig harfbuzz libdrm libpng \
 		libusb libwebp libxml libxslt openh264 opus || ${FALSE}
+	@cd ${WRKSRC}/chrome/build/pgo_profiles && _p=$$(echo *.profdata) && \
+		${LOCALBASE}/bin/llvm-profdata${LLVM_DEFAULT} merge $${_p}.txt --output=$${_p}
 	# Chromium uses an unreleased version of FFmpeg, so configure it
 	cd ${WRKSRC}/media/ffmpeg && \
 		${PYTHON_CMD} scripts/build_ffmpeg.py freebsd ${FFMPEG_TARGET} \
@@ -321,8 +329,14 @@ pre-configure:
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni
+	patch -d ${WRKSRC}/typescript/tsc/internal/bundled/libs -Ep2 < \
+		${WRKSRC}/third_party/typescript/linux-amd64/3pp/patches/typescript_native_preview.patch
 
 pre-build:
+	cd ${WRKSRC}/typescript/tsc && \
+		${SETENV} ${MAKE_ENV} go build -v -p ${MAKE_JOBS_NUMBER} -mod=vendor ./cmd/tsgo && \
+		ln -sf ${WRKSRC}/typescript/tsc/tsgo \
+		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc
 	@${CARGO_CARGO_RUN} build \
 		--manifest-path ${CARGO_CARGOTOML} \
 		--verbose \

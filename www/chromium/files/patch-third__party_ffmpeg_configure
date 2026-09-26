@@ -1,6 +1,6 @@
---- third_party/ffmpeg/configure.orig	2026-08-31 10:59:09 UTC
+--- third_party/ffmpeg/configure.orig	2026-09-25 15:26:43 UTC
 +++ third_party/ffmpeg/configure
-@@ -7290,8 +7290,8 @@ if ! disabled pthreads && ! enabled w32threads && ! en
+@@ -7267,8 +7267,8 @@ if ! disabled pthreads && ! enabled w32threads && ! en
          if enabled pthread_np_h; then
              hdrs="$hdrs pthread_np.h"
          fi

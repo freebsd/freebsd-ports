@@ -1,11 +1,39 @@
---- third_party/blink/renderer/platform/BUILD.gn.orig	2026-08-31 10:59:09 UTC
+--- third_party/blink/renderer/platform/BUILD.gn.orig	2026-09-25 15:26:43 UTC
 +++ third_party/blink/renderer/platform/BUILD.gn
-@@ -2118,7 +2118,7 @@ static_library("test_support") {
+@@ -186,6 +186,18 @@ group("make_platform_generated") {
    ]
+ }
  
-   # fuzzed_data_provider may not work with a custom toolchain.
--  if (custom_toolchain == "" && is_clang) {
-+  if ((custom_toolchain == "" && is_clang) && !is_bsd) {
-     sources += [
-       "testing/fuzzed_data_provider.cc",
-       "testing/fuzzed_data_provider.h",
++rust_static_library("font_format_check") {
++  allow_unsafe = true  # Needed for FFI that underpins the `cxx` crate.
++  crate_root = "fonts/opentype/format_check.rs"
++  sources = [ crate_root ]
++  cxx_bindings = [ crate_root ]
++  deps = [
++    "//third_party/rust/font_types/v0_12:lib",
++    "//third_party/rust/read_fonts/v0_43:lib",
++    "//third_party/rust/skrifa/v0_46:lib",
++  ]
++}
++
+ rust_static_library("rustfft_ffi") {
+   allow_unsafe = true  # Needed for FFI that underpins the `cxx` crate.
+   crate_root = "audio/rustfft_ffi.rs"
+@@ -1792,7 +1804,6 @@ component("platform") {
+     ":allow_discouraged_type",
+     ":blink_platform_public_deps",
+     ":platform_export",
+-    "//build/rust/crubit",
+     "//gpu/command_buffer/client:raster_interface",
+     "//media/capture:capture_lib",
+     "//mojo/public/cpp/base",
+@@ -1819,8 +1830,8 @@ component("platform") {
+     "//ui/native_theme/features",
+   ]
+   deps = [
++    ":font_format_check",
+     ":rustfft_ffi",
+-    "fonts:font_format_bindings",
+     "//base:base_static",
+     "//base/allocator:buildflags",
+     "//build:chromecast_buildflags",

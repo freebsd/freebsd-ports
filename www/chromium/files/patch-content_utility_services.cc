@@ -1,6 +1,6 @@
---- content/utility/services.cc.orig	2026-08-12 09:02:10 UTC
+--- content/utility/services.cc.orig	2026-09-25 15:26:43 UTC
 +++ content/utility/services.cc
-@@ -72,14 +72,14 @@
+@@ -71,14 +71,14 @@
  extern sandbox::TargetServices* g_utility_target_services;
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -17,7 +17,7 @@
  #include "services/shape_detection/public/mojom/shape_detection_service.mojom.h"  // nogncheck
  #include "services/shape_detection/shape_detection_service.h"  // nogncheck
  #endif  // BUILDFLAG(IS_WIN) || (BUILDFLAG(GOOGLE_CHROME_BRANDING) &&
-@@ -233,7 +233,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
+@@ -232,7 +232,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
        << "task_policy_set TASK_QOS_POLICY";
  #endif
  
@@ -26,7 +26,7 @@
    auto* command_line = base::CommandLine::ForCurrentProcess();
    if (sandbox::policy::SandboxTypeFromCommandLine(*command_line) ==
        sandbox::mojom::Sandbox::kNoSandbox) {
-@@ -256,7 +256,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
+@@ -255,7 +255,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
  }
  
  #if BUILDFLAG(IS_WIN) || (BUILDFLAG(GOOGLE_CHROME_BRANDING) && \
@@ -35,8 +35,8 @@
  auto RunShapeDetectionService(
      mojo::PendingReceiver<shape_detection::mojom::ShapeDetectionService>
          receiver) {
-@@ -417,7 +417,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
-   }
+@@ -414,7 +414,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+   services.Add(RunOnDeviceModel);
  
  #if BUILDFLAG(IS_WIN) || (BUILDFLAG(GOOGLE_CHROME_BRANDING) && \
 -                          (BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)))

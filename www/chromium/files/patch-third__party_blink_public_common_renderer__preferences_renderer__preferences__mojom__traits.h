@@ -1,15 +1,15 @@
---- third_party/blink/public/common/renderer_preferences/renderer_preferences_mojom_traits.h.orig	2026-08-31 10:59:09 UTC
+--- third_party/blink/public/common/renderer_preferences/renderer_preferences_mojom_traits.h.orig	2026-09-25 15:26:43 UTC
 +++ third_party/blink/public/common/renderer_preferences/renderer_preferences_mojom_traits.h
-@@ -133,7 +133,7 @@ struct BLINK_COMMON_EXPORT
-     return data.enable_encrypted_media;
+@@ -131,7 +131,7 @@ struct BLINK_COMMON_EXPORT
    }
  
--#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    static const bool& use_overlay_scrollbar(
        const ::blink::RendererPreferences& data) {
      return data.use_overlay_scrollbar;
-@@ -185,7 +185,7 @@ struct BLINK_COMMON_EXPORT
+@@ -183,7 +183,7 @@ struct BLINK_COMMON_EXPORT
      return data.send_subresource_notification;
    }
  
@@ -18,7 +18,7 @@
    static const std::string& system_font_family_name(
        const ::blink::RendererPreferences& data) {
      return data.system_font_family_name;
-@@ -199,7 +199,7 @@ struct BLINK_COMMON_EXPORT
+@@ -197,7 +197,7 @@ struct BLINK_COMMON_EXPORT
    }
  #endif
  

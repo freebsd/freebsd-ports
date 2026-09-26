@@ -1,4 +1,4 @@
---- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2026-08-12 09:02:10 UTC
+--- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2026-09-25 15:26:43 UTC
 +++ media/mojo/mojom/video_frame_mojom_traits.cc
 @@ -24,7 +24,7 @@
  #include "ui/gfx/mojom/color_space_mojom_traits.h"
@@ -36,7 +36,7 @@
        // TODO(crbug.com/513289253): Avoid CloneGpuMemoryBufferHandle() only for
        // validation.
        const auto video_pixel_format =
-@@ -477,7 +477,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+@@ -482,7 +482,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
      frame = media::VideoFrame::WrapTrackingToken(
          format, *metadata.tracking_token, coded_size, visible_rect,
          natural_size, timestamp);

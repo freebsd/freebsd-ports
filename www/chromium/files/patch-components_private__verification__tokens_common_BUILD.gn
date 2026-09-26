@@ -1,0 +1,12 @@
+--- components/private_verification_tokens/common/BUILD.gn.orig	2026-09-25 15:26:43 UTC
++++ components/private_verification_tokens/common/BUILD.gn
+@@ -190,7 +190,8 @@ source_set("test_support") {
+ 
+ # ATHM (Anonymous Tokens with Hidden Metadata): Crubit bindings over
+ # //third_party/anonymous_tokens:athm and the C++ that calls it.
+-if (enable_rust) {
++# XXX crubit
++if (enable_rust && !is_bsd) {
+   # Test issuer modeled on network::TestTrustTokenIssuer: holds the secret ATHM
+   # key material and exposes issuer-side (Issue/Verify) and client-side
+   # (request/finalize) operations over Crubit bindings.

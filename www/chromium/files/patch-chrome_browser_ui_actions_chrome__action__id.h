@@ -1,6 +1,6 @@
---- chrome/browser/ui/actions/chrome_action_id.h.orig	2026-08-31 10:59:09 UTC
+--- chrome/browser/ui/actions/chrome_action_id.h.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/ui/actions/chrome_action_id.h
-@@ -440,7 +440,7 @@
+@@ -457,7 +457,7 @@
    E(kActionVisitDesktopOfLruUser3, IDC_VISIT_DESKTOP_OF_LRU_USER_3) \
    E(kActionVisitDesktopOfLruUser4, IDC_VISIT_DESKTOP_OF_LRU_USER_4) \
    E(kActionVisitDesktopOfLruUser5, IDC_VISIT_DESKTOP_OF_LRU_USER_5)

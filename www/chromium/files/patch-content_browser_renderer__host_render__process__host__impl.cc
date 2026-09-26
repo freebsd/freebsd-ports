@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2026-08-31 10:59:09 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2026-09-25 15:26:43 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -230,7 +230,7 @@
+@@ -229,7 +229,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include <sys/resource.h>
  
  #include "components/services/font/public/mojom/font_service.mojom.h"  // nogncheck
-@@ -1196,7 +1196,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
+@@ -1198,7 +1198,7 @@ static constexpr size_t kUnknownPlatformProcessLimit =
  // to indicate failure and std::numeric_limits<size_t>::max() to indicate
  // unlimited.
  size_t GetPlatformProcessLimit() {
@@ -18,7 +18,7 @@
    struct rlimit limit;
    if (getrlimit(RLIMIT_NPROC, &limit) != 0)
      return kUnknownPlatformProcessLimit;
-@@ -1456,7 +1456,7 @@ RenderProcessHostImpl::IOThreadHostImpl::~IOThreadHost
+@@ -1458,7 +1458,7 @@ RenderProcessHostImpl::IOThreadHostImpl::~IOThreadHost
  
  void RenderProcessHostImpl::IOThreadHostImpl::SetPid(
      base::ProcessId child_pid) {
@@ -27,7 +27,7 @@
    child_thread_type_switcher_.SetPid(child_pid);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  }
-@@ -3811,7 +3811,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -3834,7 +3834,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
    command_line->AppendSwitchASCII(switches::kRendererClientId,
                                    base::NumberToString(GetID().value()));
  
@@ -36,7 +36,7 @@
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3869,6 +3869,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3892,6 +3892,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
        switches::kDisableSkiaRuntimeOpts,
        switches::kDisableSpeechAPI,
        switches::kDisableThreadedCompositing,
@@ -44,7 +44,7 @@
        switches::kDisableV8IdleTasks,
        switches::kDisableVideoCaptureUseGpuMemoryBuffer,
        switches::kDomAutomationController,
-@@ -5863,7 +5864,7 @@ uint64_t RenderProcessHostImpl::GetPrivateMemoryFootpr
+@@ -5889,7 +5890,7 @@ uint64_t RenderProcessHostImpl::GetPrivateMemoryFootpr
    // - Win: https://crbug.com/707022 .
    uint64_t total_size = 0;
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

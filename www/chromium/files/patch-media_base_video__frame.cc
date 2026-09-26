@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2026-08-31 10:59:09 UTC
+--- media/base/video_frame.cc.orig	2026-09-25 15:26:43 UTC
 +++ media/base/video_frame.cc
 @@ -86,7 +86,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -9,16 +9,16 @@
      case VideoFrame::STORAGE_DMABUFS:
        return "DMABUFS";
  #endif
-@@ -496,7 +496,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapMappableShar
+@@ -507,7 +507,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapMappableShar
          plane_size.width() * VideoFrame::BytesPerElement(*format, plane);
    }
    uint64_t modifier = gfx::NativePixmapHandle::kNoModifier;
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   bool is_native_buffer = !shared_image->IsSharedMemoryForVideoFrame();
-   if (is_native_buffer) {
+   if (shared_image->GetGpuMemoryBufferType() ==
+       gfx::GpuMemoryBufferType::NATIVE_PIXMAP) {
      const auto gmb_handle = shared_image->CloneGpuMemoryBufferHandle();
-@@ -760,7 +760,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuva
+@@ -772,7 +772,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuva
    return frame;
  }
  
@@ -27,7 +27,7 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -1492,7 +1492,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
+@@ -1504,7 +1504,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
    return wrapped_frame_ ? wrapped_frame_->shared_image() : shared_image_;
  }
  

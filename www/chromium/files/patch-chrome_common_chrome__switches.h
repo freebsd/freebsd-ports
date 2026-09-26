@@ -1,20 +1,20 @@
---- chrome/common/chrome_switches.h.orig	2026-08-31 10:59:09 UTC
+--- chrome/common/chrome_switches.h.orig	2026-09-25 15:26:43 UTC
 +++ chrome/common/chrome_switches.h
-@@ -288,7 +288,7 @@ extern const char kDebugPrint[];
+@@ -976,7 +976,7 @@ inline constexpr char kDebugPrint[] = "debug-print";
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
 +    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- extern const char kGuest[];
- #endif
+ // Causes the browser to launch directly in guest mode.
+ inline constexpr char kGuest[] = "guest";
  
-@@ -311,7 +311,7 @@ extern const char kGlicGuestUrlPresetStaging[];
- extern const char kGlicGuestUrlPresetPreprod[];
- extern const char kGlicGuestUrlPresetProd[];
+@@ -1044,7 +1044,7 @@ inline constexpr char kGlicGuestUrlPresetPreprod[] =
+ 
+ inline constexpr char kGlicGuestUrlPresetProd[] = "glic-guest-url-preset-prod";
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- extern const char kListApps[];
- extern const char kProfileBaseName[];
- extern const char kProfileManagementAttributes[];
+ // Writes open and installed web apps for each profile to the specified file
+ // without launching a new browser window or tab. Pass a absolute file path
+ // to specify where to output the information. Can be used together with

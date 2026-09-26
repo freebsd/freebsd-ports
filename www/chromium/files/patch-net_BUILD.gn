@@ -1,6 +1,6 @@
---- net/BUILD.gn.orig	2026-08-31 10:59:09 UTC
+--- net/BUILD.gn.orig	2026-09-25 15:26:43 UTC
 +++ net/BUILD.gn
-@@ -115,7 +115,7 @@ net_configs = [
+@@ -104,7 +104,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -38,7 +38,7 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2382,7 +2395,7 @@ static_library("test_support") {
+@@ -2385,7 +2398,7 @@ static_library("test_support") {
      ]
    }
  
@@ -47,7 +47,7 @@
      sources += [
        "base/address_tracker_linux_test_util.cc",
        "base/address_tracker_linux_test_util.h",
-@@ -3233,14 +3246,14 @@ target(_test_target_type, "net_unittests") {
+@@ -3239,14 +3252,14 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -64,7 +64,7 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3368,6 +3381,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3377,6 +3390,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -75,7 +75,7 @@
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3426,7 +3443,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3435,7 +3452,7 @@ target(_test_target_type, "net_unittests") {
    ]
    data_deps = [ "//testing/buildbot/filters:net_unittests_filters" ]
  
@@ -84,7 +84,7 @@
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3559,7 +3576,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3568,7 +3585,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

@@ -1,6 +1,6 @@
---- extensions/common/features/feature.cc.orig	2025-09-06 10:01:20 UTC
+--- extensions/common/features/feature.cc.orig	2026-09-25 15:26:43 UTC
 +++ extensions/common/features/feature.cc
-@@ -30,6 +30,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
+@@ -32,6 +32,8 @@ Feature::Platform Feature::GetCurrentPlatform() {
    return WIN_PLATFORM;
  #elif BUILDFLAG(ENABLE_DESKTOP_ANDROID_EXTENSIONS)
    return DESKTOP_ANDROID_PLATFORM;

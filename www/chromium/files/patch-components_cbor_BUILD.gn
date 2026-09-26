@@ -1,4 +1,4 @@
---- components/cbor/BUILD.gn.orig	2026-08-31 10:59:09 UTC
+--- components/cbor/BUILD.gn.orig	2026-09-25 15:26:43 UTC
 +++ components/cbor/BUILD.gn
 @@ -12,7 +12,7 @@ buildflag_header("buildflags") {
    # TODO(crbug.com/535682335): Remove `USE_CBOR_RUST` buildflag entirely,
@@ -9,7 +9,7 @@
  }
  
  component("cbor") {
-@@ -37,12 +37,12 @@ component("cbor") {
+@@ -35,12 +35,12 @@ component("cbor") {
      "//base",
    ]
  

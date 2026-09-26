@@ -1,6 +1,6 @@
---- content/common/features.h.orig	2026-08-31 10:59:09 UTC
+--- content/common/features.h.orig	2026-09-25 15:26:43 UTC
 +++ content/common/features.h
-@@ -86,7 +86,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kEarlyTopAppForSan
+@@ -87,7 +87,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kEarlyTopAppForSan
  #endif
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEditContextSelectionSync);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kKillOnUnexpectedOriginHeader);
@@ -9,10 +9,10 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnforceGamepadPermissionsPolicy);
-@@ -116,8 +116,8 @@ enum class FontDataServiceTypefaceType {
- CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServiceTypefaceType,
-                                           kFontDataServiceTypefaceType);
- #endif  // BUILDFLAG(IS_WIN)
+@@ -105,8 +105,8 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(
+     kFocusRenderWidgetHostViewAndroidOnMouseDown);
+ #endif
+ 
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
@@ -20,8 +20,8 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceLinux);
  #else
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceChromeOS);
-@@ -132,7 +132,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
- 
+@@ -122,7 +122,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataManagerPrewarming);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceForCSSLocalFonts);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

@@ -1,20 +1,20 @@
---- chrome/browser/chrome_browser_field_trials.cc.orig	2026-08-31 10:59:09 UTC
+--- chrome/browser/chrome_browser_field_trials.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/chrome_browser_field_trials.cc
 @@ -60,7 +60,7 @@
  #include "chromeos/ash/services/multidevice_setup/public/cpp/first_run_field_trial.h"
  #endif
  
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "base/nix/xdg_util.h"
- #include "ui/base/ui_base_features.h"
- #endif  // BUILDFLAG(IS_LINUX)
-@@ -116,7 +116,7 @@ void ChromeBrowserFieldTrials::RegisterFeatureOverride
-     base::FeatureList* feature_list) {
-   variations::FeatureOverrides feature_overrides(*feature_list);
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "base/check_deref.h"
+ #include "chrome/browser/first_run/first_run.h"
+ #include "chrome/browser/signin/first_run_desktop_refresh_field_trial.h"
+@@ -96,7 +96,7 @@ void ChromeBrowserFieldTrials::SetUpClientSideFieldTri
+   }
+ #endif
  
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // On Linux/Desktop platform variants, such as ozone/wayland, some features
-   // might need to be disabled as per OzonePlatform's runtime properties.
-   // OzonePlatform selection and initialization, in turn, depend on Chrome flags
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // This trial is client controlled on Mac and Linux because the first run
+   // experience is shown on the very first run of Chrome. These platforms do not
+   // support variations seed on the first run.

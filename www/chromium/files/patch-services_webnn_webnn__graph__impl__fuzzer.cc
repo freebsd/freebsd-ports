@@ -1,6 +1,6 @@
---- services/webnn/webnn_graph_impl_fuzzer.cc.orig	2026-08-31 10:59:09 UTC
+--- services/webnn/webnn_graph_impl_fuzzer.cc.orig	2026-09-25 15:26:43 UTC
 +++ services/webnn/webnn_graph_impl_fuzzer.cc
-@@ -2045,7 +2045,7 @@ std::optional<Conv2dDescriptors> SetUpConv2dDescriptor
+@@ -2126,7 +2126,7 @@ std::optional<Conv2dDescriptors> SetUpConv2dDescriptor
      params.groups = params.input_channels;
    }
  
@@ -9,7 +9,7 @@
    if (params.conv2d_kind == mojom::Conv2d::Kind::kTransposed) {
      // ConvTranspose2d does not support dilation and groups for TFLite backend:
      // https://source.chromium.org/chromium/chromium/src/+/db6bda50f023057ffa82845f232852dea0f271e1:services/webnn/tflite/graph_builder_tflite.cc;l=4125
-@@ -2461,7 +2461,7 @@ std::optional<Pool2dDescriptors> SetUpPool2dDescriptor
+@@ -2542,7 +2542,7 @@ std::optional<Pool2dDescriptors> SetUpPool2dDescriptor
      Pool2dParams& params) {
    InputOperandLayout input_layout = context_properties.input_operand_layout;
  

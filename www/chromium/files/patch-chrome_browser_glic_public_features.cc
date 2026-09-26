@@ -1,6 +1,6 @@
---- chrome/browser/glic/public/features.cc.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/glic/public/features.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/glic/public/features.cc
-@@ -65,7 +65,7 @@ BASE_FEATURE(kGlicCreateTabAdjacent, base::FEATURE_ENA
+@@ -86,7 +86,7 @@ BASE_FEATURE(kGlicCreateTabAdjacent, base::FEATURE_ENA
  
  // When off, disables both live mode and the glic floating panel.
  BASE_FEATURE(kGlicLiveMode,

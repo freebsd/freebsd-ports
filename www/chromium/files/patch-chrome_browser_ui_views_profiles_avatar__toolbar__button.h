@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/avatar_toolbar_button.h.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/ui/views/profiles/avatar_toolbar_button.h.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/ui/views/profiles/avatar_toolbar_button.h
-@@ -71,7 +71,7 @@ class AvatarToolbarButton : public ToolbarButton,
+@@ -66,7 +66,7 @@ class AvatarToolbarButton : public ToolbarButton,
    void SetAnnounceCallbackForTesting(
        base::OnceCallback<void(std::u16string)> callback) override;
    void MaybeShowProfileSwitchIPH() override;

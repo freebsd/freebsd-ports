@@ -1,8 +1,8 @@
---- services/device/public/cpp/device_features.h.orig	2026-08-31 10:59:09 UTC
+--- services/device/public/cpp/device_features.h.orig	2026-09-25 15:26:43 UTC
 +++ services/device/public/cpp/device_features.h
-@@ -65,11 +65,11 @@ extern const DEVICE_FEATURES_EXPORT
- 
- DEVICE_FEATURES_EXPORT bool IsOsLevelGeolocationPermissionSupportEnabled();
+@@ -68,11 +68,11 @@ DEVICE_FEATURES_EXPORT bool IsOsLevelGeolocationPermis
+ DEVICE_FEATURES_EXPORT device::mojom::LocationProviderManagerMode
+ GetLocationProviderManagerMode();
  
 -#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

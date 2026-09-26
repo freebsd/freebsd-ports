@@ -1,6 +1,6 @@
---- headless/BUILD.gn.orig	2026-08-12 09:02:10 UTC
+--- headless/BUILD.gn.orig	2026-09-25 15:26:43 UTC
 +++ headless/BUILD.gn
-@@ -812,7 +812,7 @@ component("headless_shell_lib") {
+@@ -809,7 +809,7 @@ component("headless_shell_lib") {
      "//v8",
    ]
  

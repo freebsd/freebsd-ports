@@ -1,4 +1,4 @@
---- chrome/renderer/chrome_content_renderer_client.cc.orig	2026-08-31 10:59:09 UTC
+--- chrome/renderer/chrome_content_renderer_client.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/renderer/chrome_content_renderer_client.cc
 @@ -188,7 +188,7 @@
  #include "v8/include/v8-isolate.h"
@@ -9,7 +9,7 @@
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -438,7 +438,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
+@@ -456,7 +456,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
    WebSecurityPolicy::RegisterURLSchemeAsExtension(
        WebString::FromAscii(extensions::kExtensionScheme));
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
    WebSecurityPolicy::RegisterURLSchemeAsIsolatedApp(
        WebString::FromAscii(webapps::kIsolatedAppScheme));
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
-@@ -503,7 +503,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
+@@ -521,7 +521,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
        WebString::FromAscii(chrome::kChromeSearchScheme));
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
    // IWAs can be enabled by either the feature flag or by enterprise
    // policy. In either case the kEnableIsolatedWebAppsInRenderer flag is passed
    // to the renderer process.
-@@ -558,7 +558,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
+@@ -576,7 +576,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
    WebSecurityPolicy::RegisterURLSchemeAsDisplayIsolated(dom_distiller_scheme);
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

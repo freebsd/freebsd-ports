@@ -1,7 +1,7 @@
---- chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc.orig	2024-08-26 12:06:38 UTC
+--- chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc
 @@ -10,7 +10,7 @@
- #include "chrome/browser/profiles/profile.h"
+ #include "components/enterprise/device_trust/core/device_trust_connector_service.h"
  #include "components/keyed_service/core/keyed_service.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)

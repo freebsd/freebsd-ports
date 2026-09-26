@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_manager_client.h.orig	2026-08-31 10:59:09 UTC
+--- components/password_manager/core/browser/password_manager_client.h.orig	2026-09-25 15:26:43 UTC
 +++ components/password_manager/core/browser/password_manager_client.h
-@@ -31,7 +31,7 @@
+@@ -32,7 +32,7 @@
  #include "net/cert/cert_status_flags.h"
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

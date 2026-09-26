@@ -1,4 +1,4 @@
---- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/safe_browsing/safe_browsing_pref_change_handler.cc
 @@ -19,7 +19,7 @@
  #include "content/public/browser/web_contents.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/browser_window/public/browser_window_features.h"
  #include "chrome/browser/ui/browser_window/public/browser_window_interface.h"
  #include "chrome/browser/ui/browser_window/public/profile_browser_collection.h"
-@@ -74,7 +74,7 @@ void SafeBrowsingPrefChangeHandler::
+@@ -75,7 +75,7 @@ void SafeBrowsingPrefChangeHandler::
      MaybeShowEnhancedProtectionSettingChangeNotification(
          content::WebContents* web_contents) {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

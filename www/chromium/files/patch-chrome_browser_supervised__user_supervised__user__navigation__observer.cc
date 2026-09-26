@@ -1,6 +1,6 @@
---- chrome/browser/supervised_user/supervised_user_navigation_observer.cc.orig	2026-06-04 10:12:25 UTC
+--- chrome/browser/supervised_user/supervised_user_navigation_observer.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/supervised_user/supervised_user_navigation_observer.cc
-@@ -54,7 +54,7 @@
+@@ -57,7 +57,7 @@
  #include "components/supervised_user/core/browser/android/android_parental_controls.h"
  #elif BUILDFLAG(IS_CHROMEOS)
  #include "chrome/browser/supervised_user/chromeos/supervised_user_web_content_handler_impl.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/supervised_user/linux_mac_windows/supervised_user_web_content_handler_impl.h"
  #endif
  
-@@ -74,7 +74,7 @@ std::unique_ptr<supervised_user::WebContentHandler> Cr
+@@ -77,7 +77,7 @@ std::unique_ptr<supervised_user::WebContentHandler> Cr
  #elif BUILDFLAG(IS_ANDROID)
    return std::make_unique<SupervisedUserWebContentHandlerImpl>(
        web_contents, frame_id, navigation_id);

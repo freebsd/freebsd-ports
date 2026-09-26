@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2026-07-01 06:24:19 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 @@ -117,17 +117,17 @@
  #endif
@@ -30,7 +30,7 @@
    if (page_url.SchemeIs(webapps::kIsolatedAppScheme)) {
      ReadIsolatedWebAppFaviconsFromDisk(profile, page_url, std::move(callback));
      return;
-@@ -427,7 +427,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+@@ -444,7 +444,7 @@ ChromeWebUIControllerFactory::GetFaviconResourceBytes(
      return NewTabPageUI::GetFaviconResourceBytes(scale_factor);
    }
  
@@ -39,7 +39,7 @@
    if (page_url.host() == chrome::kChromeUIWhatsNewHost) {
      return WhatsNewUI::GetFaviconResourceBytes(scale_factor);
    }
-@@ -457,7 +457,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+@@ -464,7 +464,7 @@ ChromeWebUIControllerFactory::GetFaviconResourceBytes(
    }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

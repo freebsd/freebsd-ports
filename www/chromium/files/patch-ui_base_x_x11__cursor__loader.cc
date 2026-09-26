@@ -1,4 +1,4 @@
---- ui/base/x/x11_cursor_loader.cc.orig	2026-08-12 09:02:10 UTC
+--- ui/base/x/x11_cursor_loader.cc.orig	2026-09-25 15:26:43 UTC
 +++ ui/base/x/x11_cursor_loader.cc
 @@ -39,7 +39,7 @@
  #include "ui/gfx/x/connection.h"
@@ -30,7 +30,7 @@
      // The toolkit theme has the highest priority.
      LinuxUi::instance() ? LinuxUi::instance()->GetCursorThemeName()
                          : std::string(),
-@@ -428,7 +432,7 @@ uint32_t XCursorLoader::GetPreferredCursorSize() const
+@@ -430,7 +434,7 @@ uint32_t XCursorLoader::GetPreferredCursorSize() const
      return size;
    }
  

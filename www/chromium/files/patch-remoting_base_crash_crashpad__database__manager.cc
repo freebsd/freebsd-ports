@@ -1,4 +1,4 @@
---- remoting/base/crash/crashpad_database_manager.cc.orig	2026-08-12 09:02:10 UTC
+--- remoting/base/crash/crashpad_database_manager.cc.orig	2026-09-25 15:26:43 UTC
 +++ remoting/base/crash/crashpad_database_manager.cc
 @@ -24,7 +24,7 @@
  #if BUILDFLAG(IS_WIN)
@@ -6,42 +6,33 @@
  #include "base/strings/utf_string_conversions.h"
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include <sys/stat.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -39,7 +39,7 @@
+ 
+@@ -35,7 +35,7 @@
  namespace remoting {
  namespace {
  
 -#if !BUILDFLAG(IS_LINUX)
-+#if !BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
  const base::FilePath::CharType kChromotingCrashpadDatabasePath[] =
      FILE_PATH_LITERAL("crashpad");
  #endif
-@@ -56,7 +56,7 @@ const size_t kMaxReportsToRetain = 20;
+@@ -52,7 +52,7 @@ const size_t kMaxReportsToRetain = 20;
  // Maximum number of days to keep reports around in the local database.
  const size_t kMaxReportAgeDays = 7;
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- 
- inline base::FilePath GetDaemonProcessCrashpadDatabasePath() {
-   return GetVarLibDir().Append("crashpad.daemon");
-@@ -138,7 +138,7 @@ base::FilePath GetCrashpadDatabasePath() {
+ inline base::FilePath GetUnifiedCrashpadDatabasePath() {
+   return GetVarLibDir().Append("crashpad");
+ }
+@@ -79,7 +79,7 @@ base::FilePath GetCrashpadDatabasePath() {
      base::FilePath path;
      base::PathService::Get(base::BasePathKey::DIR_ASSETS, &path);
      return path.Append(kChromotingCrashpadDatabasePath);
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      if (getuid() == 0) {
-       return GetDaemonProcessCrashpadDatabasePath();
-     }
-@@ -196,7 +196,7 @@ CrashpadDatabaseManager::CrashpadDatabaseManager(Logge
- CrashpadDatabaseManager::~CrashpadDatabaseManager() = default;
- 
- bool CrashpadDatabaseManager::InitializeCrashpadDatabase() {
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   SetupCrashpadDirectories();
- #endif
- 
+       // Used by the daemon process or the elevated start-host process.
+       return GetUnifiedCrashpadDatabasePath();

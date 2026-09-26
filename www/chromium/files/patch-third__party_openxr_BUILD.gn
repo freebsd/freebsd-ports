@@ -1,0 +1,11 @@
+--- third_party/openxr/BUILD.gn.orig	2026-09-25 15:26:43 UTC
++++ third_party/openxr/BUILD.gn
+@@ -164,7 +164,7 @@ if (enable_openxr) {
+       "DISABLE_STD_FILESYSTEM",
+     ]
+ 
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       # glibc's secure_getenv() is available; without this the loader falls
+       # back to plain getenv() and emits a #pragma message that
+       # -Werror=#pragma-messages rejects.

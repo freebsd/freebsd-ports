@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2026-08-31 10:59:09 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
-@@ -62,14 +62,14 @@
+@@ -60,14 +60,14 @@
  #include "chrome/browser/ui/webui/signin/signout_confirmation/signout_confirmation_ui.h"
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
@@ -17,7 +17,7 @@
  const int kManagedUserNoticeConfirmationDialogWidth = 780;
  const int kManagedUserNoticeConfirmationDialogHeight = 560;
  #endif
-@@ -137,7 +137,7 @@ SigninViewControllerDelegateViews::CreateSyncConfirmat
+@@ -138,7 +138,7 @@ SigninViewControllerDelegateViews::CreateSyncConfirmat
        kSyncConfirmationDialogWidth, InitializeSigninWebDialogUI(true));
  }
  
@@ -25,8 +25,8 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  std::unique_ptr<views::WebView>
  SigninViewControllerDelegateViews::CreateHistorySyncOptInWebView(
-     Browser* browser,
-@@ -245,7 +245,7 @@ SigninViewControllerDelegateViews::CreateSignoutConfir
+     BrowserWindowInterface* browser,
+@@ -247,7 +247,7 @@ SigninViewControllerDelegateViews::CreateSignoutConfir
  }
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
@@ -62,7 +62,7 @@
  // static
  SigninViewControllerDelegate*
  SigninViewControllerDelegate::CreateSyncHistoryOptInDelegate(
-@@ -655,7 +655,7 @@ SigninViewControllerDelegate::CreateSignoutConfirmatio
+@@ -656,7 +656,7 @@ SigninViewControllerDelegate::CreateSignoutConfirmatio
  }
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  

@@ -1,6 +1,6 @@
---- components/proxy_config/pref_proxy_config_tracker_impl.cc.orig	2026-08-31 10:59:09 UTC
+--- components/proxy_config/pref_proxy_config_tracker_impl.cc.orig	2026-09-25 15:26:43 UTC
 +++ components/proxy_config/pref_proxy_config_tracker_impl.cc
-@@ -531,7 +531,7 @@ void PrefProxyConfigTrackerImpl::RegisterPrefs(PrefReg
+@@ -587,7 +587,7 @@ void PrefProxyConfigTrackerImpl::RegisterPrefs(PrefReg
    registry->RegisterDictionaryPref(proxy_config::prefs::kProxy,
                                     ProxyConfigDictionary::CreateSystem());
    registry->RegisterListPref(proxy_config::prefs::kProxyOverrideRules);
@@ -9,7 +9,7 @@
    registry->RegisterIntegerPref(
        proxy_config::prefs::kEnableProxyOverrideRulesForAllUsers, 0);
    registry->RegisterIntegerPref(proxy_config::prefs::kProxyOverrideRulesScope,
-@@ -546,7 +546,7 @@ void PrefProxyConfigTrackerImpl::RegisterProfilePrefs(
+@@ -602,7 +602,7 @@ void PrefProxyConfigTrackerImpl::RegisterProfilePrefs(
                                     ProxyConfigDictionary::CreateSystem());
    registry->RegisterBooleanPref(proxy_config::prefs::kUseSharedProxies, false);
    registry->RegisterListPref(proxy_config::prefs::kProxyOverrideRules);

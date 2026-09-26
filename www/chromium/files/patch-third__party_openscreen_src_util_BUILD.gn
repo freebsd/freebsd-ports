@@ -1,0 +1,11 @@
+--- third_party/openscreen/src/util/BUILD.gn.orig	2026-09-25 15:26:43 UTC
++++ third_party/openscreen/src/util/BUILD.gn
+@@ -152,7 +152,7 @@ openscreen_source_set("util") {
+     sources += [ "scoped_wake_lock_mac.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [ "scoped_wake_lock_linux.cc" ]
+   }
+ 

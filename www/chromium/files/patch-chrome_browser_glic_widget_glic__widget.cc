@@ -1,4 +1,4 @@
---- chrome/browser/glic/widget/glic_widget.cc.orig	2026-08-12 09:02:10 UTC
+--- chrome/browser/glic/widget/glic_widget.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/glic/widget/glic_widget.cc
 @@ -53,7 +53,7 @@
  #include "ui/views/win/hwnd_util.h"
@@ -26,8 +26,8 @@
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      int resize_border = OpaqueBrowserFrameViewLayout::kFrameBorderThickness;
  #endif
-     const bool can_resize = GetWidget()->widget_delegate()->CanResize();
-@@ -358,7 +358,7 @@ std::unique_ptr<views::WidgetDelegate> GlicWidget::Cre
+     const bool can_resize = GetWidget()->widget_delegate() &&
+@@ -359,7 +359,7 @@ std::unique_ptr<views::WidgetDelegate> GlicWidget::Cre
          return std::make_unique<GlicClientView>(widget, contents_view);
        }));
  
@@ -36,7 +36,7 @@
    delegate->SetFrameViewFactory(base::BindRepeating(
        [](views::Widget* widget) -> std::unique_ptr<views::FrameView> {
          return std::make_unique<GlicFrameView>(widget);
-@@ -438,7 +438,7 @@ std::unique_ptr<GlicWidget> GlicWidget::Create(views::
+@@ -439,7 +439,7 @@ std::unique_ptr<GlicWidget> GlicWidget::Create(views::
  #if BUILDFLAG(IS_MAC)
    params.animation_enabled = true;
  #endif  // BUILDFLAG(IS_MAC)

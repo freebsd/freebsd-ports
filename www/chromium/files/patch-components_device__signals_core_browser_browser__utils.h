@@ -1,7 +1,7 @@
---- components/device_signals/core/browser/browser_utils.h.orig	2026-08-31 10:59:09 UTC
+--- components/device_signals/core/browser/browser_utils.h.orig	2026-09-25 15:26:43 UTC
 +++ components/device_signals/core/browser/browser_utils.h
 @@ -39,7 +39,7 @@ std::string GetHostName();
- #endif  // !BUILDFLAG(IS_ANDROID)
+ #endif  // !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)

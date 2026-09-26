@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc.orig	2026-08-31 10:59:09 UTC
+--- chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc.orig	2026-09-25 15:26:43 UTC
 +++ chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
-@@ -143,7 +143,7 @@
+@@ -140,7 +140,7 @@
  #include "ui/webui/resources/cr_components/theme_color_picker/theme_color_picker.mojom.h"
  #include "ui/webui/resources/js/browser_command/browser_command.mojom.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/app_home/app_home.mojom.h"
  #include "chrome/browser/ui/webui/app_home/app_home_ui.h"
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
-@@ -358,7 +358,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -359,7 +359,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          HistoryClustersSidePanelUI, NewTabPageUI, BookmarksSidePanelUI>(map);
    }
  
@@ -18,7 +18,7 @@
    RegisterWebUIControllerInterfaceBinder<whats_new::mojom::PageHandlerFactory,
                                           WhatsNewUI>(map);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -388,7 +388,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -389,7 +389,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
  
    RegisterWebUIControllerInterfaceBinder<
        browser_command::mojom::CommandHandlerFactory,
@@ -27,7 +27,7 @@
        WhatsNewUI,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
        NewTabPageUI>(map);
-@@ -582,7 +582,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -579,7 +579,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          DrivePickerUntrustedHostUI>(map);
    }
  
@@ -36,7 +36,7 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  
-@@ -606,7 +606,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -605,7 +605,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
                                           webapps::AppHomeUI>(map);
  #endif
  

@@ -1,4 +1,4 @@
---- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2026-05-07 17:02:56 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2026-09-25 15:26:43 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
 @@ -5,8 +5,10 @@
  #include "media/capture/video/linux/v4l2_capture_delegate.h"
@@ -47,7 +47,7 @@
  namespace media {
  
  namespace {
-@@ -271,7 +283,7 @@ bool V4L2CaptureDelegate::IsBlockedControl(int control
+@@ -275,7 +287,7 @@ bool V4L2CaptureDelegate::IsBlockedControl(int control
  // static
  bool V4L2CaptureDelegate::IsControllableControl(
      int control_id,
@@ -56,7 +56,7 @@
    const int special_control_id = GetControllingSpecialControl(control_id);
    if (!special_control_id) {
      // The control is not controlled by a special control thus the control is
-@@ -327,7 +339,7 @@ V4L2CaptureDelegate::V4L2CaptureDelegate(
+@@ -331,7 +343,7 @@ V4L2CaptureDelegate::V4L2CaptureDelegate(
        is_capturing_(false),
        timeout_count_(0),
        rotation_(rotation) {
@@ -65,7 +65,7 @@
    use_gpu_buffer_ = switches::IsVideoCaptureUseGpuMemoryBufferEnabled();
  #endif  // BUILDFLAG(IS_LINUX)
  }
-@@ -454,7 +466,7 @@ void V4L2CaptureDelegate::AllocateAndStart(
+@@ -458,7 +470,7 @@ void V4L2CaptureDelegate::AllocateAndStart(
  
    client_->OnStarted();
  
@@ -74,7 +74,7 @@
    if (use_gpu_buffer_) {
      v4l2_gpu_helper_ = std::make_unique<V4L2CaptureDelegateGpuHelper>();
    }
-@@ -798,7 +810,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
+@@ -802,7 +814,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
  
  V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
  
@@ -83,7 +83,7 @@
    int num_retries = 0;
    for (; DoIoctl(request, argp) < 0 && num_retries < kMaxIOCtrlRetries;
         ++num_retries) {
-@@ -808,7 +820,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
+@@ -812,7 +824,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
    return num_retries != kMaxIOCtrlRetries;
  }
  
@@ -92,7 +92,7 @@
    return HANDLE_EINTR(v4l2_->ioctl(device_fd_.get(), request, argp));
  }
  
-@@ -819,6 +831,7 @@ bool V4L2CaptureDelegate::IsControllableControl(int co
+@@ -823,6 +835,7 @@ bool V4L2CaptureDelegate::IsControllableControl(int co
  }
  
  void V4L2CaptureDelegate::ReplaceControlEventSubscriptions() {
@@ -100,7 +100,7 @@
    constexpr uint32_t kControlIds[] = {V4L2_CID_AUTO_EXPOSURE_BIAS,
                                        V4L2_CID_AUTO_WHITE_BALANCE,
                                        V4L2_CID_BRIGHTNESS,
-@@ -846,6 +859,7 @@ void V4L2CaptureDelegate::ReplaceControlEventSubscript
+@@ -850,6 +863,7 @@ void V4L2CaptureDelegate::ReplaceControlEventSubscript
                    << ", {type = V4L2_EVENT_CTRL, id = " << control_id << "}";
      }
    }
@@ -108,7 +108,7 @@
  }
  
  mojom::RangePtr V4L2CaptureDelegate::RetrieveUserControlRange(int control_id) {
-@@ -1026,7 +1040,11 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1030,7 +1044,11 @@ void V4L2CaptureDelegate::DoCapture() {
  
    pollfd device_pfd = {};
    device_pfd.fd = device_fd_.get();
@@ -120,7 +120,7 @@
  
    const int result =
        HANDLE_EINTR(v4l2_->poll(&device_pfd, 1, kCaptureTimeoutMs));
-@@ -1064,6 +1082,7 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1068,6 +1086,7 @@ void V4L2CaptureDelegate::DoCapture() {
      timeout_count_ = 0;
    }
  
@@ -128,7 +128,7 @@
    // Dequeue events if the driver has filled in some.
    if (device_pfd.revents & POLLPRI) {
      bool controls_changed = false;
-@@ -1097,6 +1116,7 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1101,6 +1120,7 @@ void V4L2CaptureDelegate::DoCapture() {
        client_->OnCaptureConfigurationChanged();
      }
    }
@@ -136,7 +136,7 @@
  
    // Deenqueue, send and reenqueue a buffer if the driver has filled one in.
    if (device_pfd.revents & POLLIN) {
-@@ -1150,7 +1170,7 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1154,7 +1174,7 @@ void V4L2CaptureDelegate::DoCapture() {
        // workable on Linux.
  
        // See http://crbug.com/959919.
@@ -144,8 +144,8 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
        if (use_gpu_buffer_) {
          v4l2_gpu_helper_->OnIncomingCapturedData(
-             client_.get(), buffer_tracker->start(),
-@@ -1224,7 +1244,7 @@ void V4L2CaptureDelegate::SetErrorState(VideoCaptureEr
+             client_.get(), buffer_tracker->as_span(), capture_format_,
+@@ -1229,7 +1249,7 @@ void V4L2CaptureDelegate::SetErrorState(VideoCaptureEr
    client_->OnError(error, from_here, reason);
  }
  

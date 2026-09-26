@@ -1,4 +1,4 @@
---- third_party/blink/renderer/modules/webgpu/gpu_canvas_context.cc.orig	2026-08-12 09:02:10 UTC
+--- third_party/blink/renderer/modules/webgpu/gpu_canvas_context.cc.orig	2026-09-25 15:26:43 UTC
 +++ third_party/blink/renderer/modules/webgpu/gpu_canvas_context.cc
 @@ -274,7 +274,7 @@ GPUCanvasContext::PaintRenderingResultsToSnapshot(
  
@@ -9,7 +9,7 @@
      // By returning false here the canvas will show up as black in the scenarios
      // that copy the front buffer, such as printing.
      // TODO(crbug.com/40902474): Support concurrent SharedImage reads via Dawn
-@@ -494,7 +494,7 @@ void GPUCanvasContext::configure(const GPUCanvasConfig
+@@ -493,7 +493,7 @@ void GPUCanvasContext::configure(const GPUCanvasConfig
    }
  #endif
  

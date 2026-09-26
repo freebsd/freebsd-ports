@@ -1,4 +1,4 @@
---- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2026-08-12 09:02:10 UTC
+--- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig	2026-09-25 15:26:43 UTC
 +++ remoting/host/it2me/it2me_native_messaging_host_main.cc
 @@ -30,7 +30,7 @@
  #include "remoting/host/resources.h"
@@ -19,7 +19,7 @@
  #endif  // BUILDFLAG(IS_LINUX)
  
 @@ -83,7 +83,7 @@ int It2MeNativeMessagingHostMain(int argc, char** argv
-   base::ScopedMemoryConsumerRegistry<remoting::MemoryConsumerRegistry>
+   base::ScopedMemoryConsumerRegistry<base::DummyMemoryConsumerRegistry>
        memory_consumer_registry;
  
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(REMOTING_USE_X11)

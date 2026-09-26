@@ -1,6 +1,6 @@
---- third_party/abseil-cpp/absl/debugging/internal/elf_mem_image.h.orig	2025-10-30 15:44:36 UTC
+--- third_party/abseil-cpp/absl/debugging/internal/elf_mem_image.h.orig	2026-09-25 15:26:43 UTC
 +++ third_party/abseil-cpp/absl/debugging/internal/elf_mem_image.h
-@@ -35,7 +35,7 @@
+@@ -36,7 +36,7 @@
  #if defined(__ELF__) && !defined(__OpenBSD__) && !defined(__QNX__) &&    \
      !defined(__asmjs__) && !defined(__wasm__) && !defined(__HAIKU__) &&  \
      !defined(__sun) && !defined(__VXWORKS__) && !defined(__hexagon__) && \
