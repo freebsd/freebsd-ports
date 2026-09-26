@@ -1,5 +1,5 @@
 PORTNAME=	comfyui-workflow-templates
-DISTVERSION=	0.11.59
+DISTVERSION=	0.11.70
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-core=0.3.339:misc/py-comfyui-workflow-templates-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-json=0.1.74:misc/py-comfyui-workflow-templates-json@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-media-api=0.3.84:misc/py-comfyui-workflow-templates-media-api@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-media-assets-01=0.1.44:misc/py-comfyui-workflow-templates-media-assets-01@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-media-image=0.3.160:misc/py-comfyui-workflow-templates-media-image@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-media-other=0.3.229:misc/py-comfyui-workflow-templates-media-other@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-media-video=0.3.101:misc/py-comfyui-workflow-templates-media-video@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-core>=0.3.361:misc/py-comfyui-workflow-templates-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-json>=0.1.96:misc/py-comfyui-workflow-templates-json@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-media-api>=0.3.84:misc/py-comfyui-workflow-templates-media-api@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-media-assets-01>=0.1.48:misc/py-comfyui-workflow-templates-media-assets-01@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-media-image>=0.3.160:misc/py-comfyui-workflow-templates-media-image@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-media-other>=0.3.229:misc/py-comfyui-workflow-templates-media-other@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates-media-video>=0.3.101:misc/py-comfyui-workflow-templates-media-video@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist
