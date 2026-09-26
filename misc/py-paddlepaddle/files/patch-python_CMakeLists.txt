@@ -6,12 +6,25 @@
 -- runs as a separate cmake -E command: if bdist_wheel exits non-zero from a
 -- signal but the wheel file exists the build continues; if no wheel was
 -- produced the subsequent cmake steps will detect the missing .whl.
---- python/CMakeLists.txt.orig	2026-06-20 03:24:50 UTC
+--
+-- Also add op_map_codegen as a DEPENDS of the .timestamp custom command that
+-- copies python/paddle into the build dir. Upstream is missing this
+-- dependency, so with a strictly ordered (-j1 / MAKE_JOBS_UNSAFE) build the
+-- copy can run before generate_op_map.py writes phi_ops_map.py, leaving a
+-- stale copy that then fails "import paddle" with
+-- ModuleNotFoundError: No module named 'paddle.incubate.autograd.phi_ops_map'
+-- when setup.py generates the paddle.Tensor stub file, aborting bdist_wheel
+-- with no wheel produced.
+--- python/CMakeLists.txt.orig	2026-09-09 02:40:49 UTC
 +++ python/CMakeLists.txt
-@@ -160,6 +160,10 @@ else()
+@@ -161,8 +161,12 @@ else()
+       COMMAND cp -r ${PADDLE_SOURCE_DIR}/python/paddle
+               ${PADDLE_BINARY_DIR}/python
        COMMAND cp -r ${PADDLE_SOURCE_DIR}/test ${PADDLE_BINARY_DIR}/
-       DEPENDS copy_libpaddle ${FLUID_CORE} framework_py_proto profiler_py_proto
-               pass_desc_py_proto ${PY_FILES})
+-      DEPENDS copy_libpaddle ${FLUID_CORE} framework_py_proto profiler_py_proto
+-              pass_desc_py_proto ${PY_FILES})
++      DEPENDS copy_libpaddle op_map_codegen ${FLUID_CORE} framework_py_proto
++              profiler_py_proto pass_desc_py_proto ${PY_FILES})
 +    # Write a shell wrapper so bdist_wheel SIGABRT at exit (FreeBSD glog) does
 +    # not fail the build — the wheel is produced before Python exits.
 +    file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/run_bdist_wheel.sh
@@ -19,7 +32,7 @@
      if(APPLE AND WITH_ARM)
        add_custom_command(
          OUTPUT ${PADDLE_PYTHON_BUILD_DIR}/.timestamp_wheel
-@@ -169,7 +173,9 @@ else()
+@@ -172,7 +176,9 @@ else()
      else()
        add_custom_command(
          OUTPUT ${PADDLE_PYTHON_BUILD_DIR}/.timestamp_wheel

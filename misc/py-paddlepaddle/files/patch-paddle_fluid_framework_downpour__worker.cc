@@ -2,9 +2,9 @@
 -- platform that is not Windows or macOS (using '#if defined _WIN32 || defined
 -- __APPLE__'). This causes Linux-only code (stdio_ext.h includes, glibc-specific
 -- syscalls) to be compiled on FreeBSD. Add __FreeBSD__ to the exclusion list.
---- paddle/fluid/framework/downpour_worker.cc.orig	2026-06-19 18:10:22 UTC
+--- paddle/fluid/framework/downpour_worker.cc.orig	2026-09-09 02:40:49 UTC
 +++ paddle/fluid/framework/downpour_worker.cc
-@@ -25,7 +25,7 @@ class Variable;
+@@ -24,7 +24,7 @@ class Variable;
  class Variable;
  }  // namespace paddle::framework
  

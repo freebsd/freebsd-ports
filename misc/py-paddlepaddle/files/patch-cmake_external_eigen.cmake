@@ -2,15 +2,17 @@
 -- files are already patched by the FreeBSD port patch mechanism. Using git or
 -- patch commands in ExternalProject would double-apply patches, causing the
 -- build to hang (FreeBSD patch prompts interactively on hunk failure) or fail.
---- cmake/external/eigen.cmake.orig	2026-06-19 17:23:24 UTC
+--- cmake/external/eigen.cmake.orig	2026-09-25 23:34:43 UTC
 +++ cmake/external/eigen.cmake
-@@ -41,13 +41,12 @@ file(TO_NATIVE_PATH "${PADDLE_SOURCE_DIR}/patches/eige
+@@ -41,15 +41,12 @@ file(TO_NATIVE_PATH "${PADDLE_SOURCE_DIR}/patches/eige
  
  file(TO_NATIVE_PATH "${PADDLE_SOURCE_DIR}/patches/eigen/TensorRandom.h.patch"
       tensor_random_header)
 -# See: [Why calling some `git` commands before `patch`?]
--set(EIGEN_PATCH_COMMAND git checkout -- . && git checkout ${EIGEN_TAG} && git
--                        apply ${tensor_random_header})
+-set(EIGEN_PATCH_COMMAND
+-    git checkout -- Eigen/src/Core/arch/SSE/Complex.h
+-    unsupported/Eigen/CXX11/src/Tensor/TensorRandom.h && git checkout
+-    ${EIGEN_TAG} && git apply ${tensor_random_header})
 +# NOTE: Eigen source files are patched by FreeBSD port patch mechanism.
 +set(EIGEN_PATCH_COMMAND ${CMAKE_COMMAND} -E true)
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")

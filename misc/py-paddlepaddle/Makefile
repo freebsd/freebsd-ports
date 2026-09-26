@@ -2,7 +2,7 @@
 
 PORTNAME=	paddlepaddle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.1
+DISTVERSION=	3.4.0
 CATEGORIES=	misc python # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,6 +13,8 @@ WWW=		https://www.paddlepaddle.org.cn/ \
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_FreeBSD_14=	install fails: "/wrkdirs/usr/ports/misc/py-paddlepaddle/work/.build/python/dist": No such file or directory.
 
 BUILD_DEPENDS=	git:devel/git \
 		gmake:devel/gmake \
@@ -30,8 +32,7 @@ BUILD_DEPENDS=	git:devel/git \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-LIB_DEPENDS=	libopenblas.so:math/openblas \
-		libsleef.so:math/sleef
+LIB_DEPENDS=	libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=0:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.21:math/py-numpy@${PY_FLAVOR} \
@@ -41,8 +42,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}safetensors>=0.6.0:misc/py-safetensors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 		gfortran${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
-
-BROKEN_FreeBSD_14=	install fails: "/wrkdirs/usr/ports/misc/py-paddlepaddle/work/.build/python/dist": No such file or directory.
 
 USES=		cmake llvm:21 python
 USE_PYTHON=	autoplist
@@ -58,7 +57,7 @@ GH_TUPLE=	\
 		NVIDIA:cutlass:eefa171318b79cbe2e78514d4cce5cd0fe919d0c:NVIDIA_cutlass/third_party/cutlass \
 		dmlc:dlpack:84d107bf416c6bab9ae68ad285876600d230490d:dmlc_dlpack/third_party/dlpack \
 		FlagOpen:FlagCX:7c469f4af991bf0f64b8f76d66f8e307a5eaea3f:FlagOpen_FlagCX/third_party/flagcx \
-		PaddlePaddle:flash-attention:196115f865fc7f18a7ab55f32510415a788cb85d:PaddlePaddle_flash_attention/third_party/flashattn \
+		PaddlePaddle:flash-attention:1f3e4bb9aaa0dbefa96181bf6026e810f3ebecc1:PaddlePaddle_flash_attention/third_party/flashattn \
 		gflags:gflags:e171aa2d15ed9eb17054558e0b3a6a413bb01067:gflags_gflags/third_party/gflags \
 		google:glog:96a2f23dca4cc7180821ca5f32e526314395d26a:google_glog/third_party/glog \
 		ziyoujiyi:gloo:8b6b61dfa0dca02b226a01262bfcf0484382048f:ziyoujiyi_gloo/third_party/gloo \
@@ -79,11 +78,12 @@ GH_TUPLE=	\
 		herumi:xbyak:4ca0434b4e78c05e3f3e68bda70e8713668e87d3:herumi_xbyak/third_party/xbyak \
 		Cyan4973:xxHash:7cc9639699f64b750c0b82333dced9ea77e8436e:Cyan4973_xxHash/third_party/xxhash \
 		jbeder:yaml-cpp:1d8ca1f35eb3a9c9142462b28282a848e5d29a91:jbeder_yaml_cpp/third_party/yaml-cpp \
-		madler:zlib:51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf:madler_zlib/third_party/zlib
+		madler:zlib:51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf:madler_zlib/third_party/zlib \
+		mreineck:pocketfft:ea778e37710c07723435b1be58235996d1d43a5a:mreineck_pocketfft/third_party/pocketfft \
+		shibatch:sleef:6ee14bcae5fe92c2ff8b000d5a01102dab08d774:shibatch_sleef/third_party/sleef
 USE_GITLAB=	nodefault
 GL_TUPLE=	\
-		libeigen:eigen:f612df273689a19d25b45ca4f8269463207c4fee:libeigen_eigen/third_party/eigen3 \
-		https://gitlab.mpcdf.mpg.de:mtr:pocketfft:ea778e37710c07723435b1be58235996d1d43a5a:mtr_pocketfft/third_party/pocketfft
+		libeigen:eigen:f612df273689a19d25b45ca4f8269463207c4fee:libeigen_eigen/third_party/eigen3
 
 CMAKE_ON=	WITH_PYTHON
 # WITH_MKL includes MKLML (precompiled Linux binaries: libiomp5.so, libmklml_intel.so)
@@ -118,7 +118,7 @@ CXXFLAGS+=	-Wno-invalid-specialization
 CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 
-WHEEL_TAG=	${:!uname -rm | sed -e 's/[.-]/_/g' -e 's/ /_/g' -e 's/^/freebsd_/' | tr '[:upper:]' '[:lower:]'!}
+WHEEL_TAG=	${:!uname -rm | ${SED} -e 's/[.-]/_/g' -e 's/ /_/g' -e 's/^/freebsd_/' | tr '[:upper:]' '[:lower:]'!}
 PLIST_SUB+=	WHEEL_TAG=${WHEEL_TAG}
 
 # The cmake build generates CMakeLists.txt files in the source tree (at configure
@@ -145,4 +145,26 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/paddle
 	@${RM} ${STAGEDIR}${PREFIX}/bin/paddle.bak
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# On aarch64, WITH_ARM must be enabled so paddle's cmake/CMakeLists.txt
+# defines PADDLE_WITH_ARM. Without it, code guarded by
+# "!defined(PADDLE_WITH_ARM)" (e.g. paddle/phi/core/platform/denormal.cc)
+# wrongly includes x86-only intrinics headers (pmmintrin.h/mmintrin.h),
+# which fail to compile on arm64/aarch64.
+.if ${ARCH} == aarch64
+CMAKE_ON+=	WITH_ARM
+# Paddle's top-level CMakeLists.txt runs include(third_party) (which
+# conditionally includes cmake/external/xbyak.cmake, defining the
+# PADDLE_WITH_XBYAK macro) *before* its own "if(WITH_ARM) ... set(WITH_XBYAK
+# OFF ...)" block. On aarch64 that ordering bug means PADDLE_WITH_XBYAK still
+# ends up defined even though the xbyak (x86 JIT assembler) sources are never
+# fetched/built, so any source that does "#ifdef PADDLE_WITH_XBYAK / #include
+# xbyak/xbyak_util.h" (e.g. paddle/phi/backends/cpu/cpu_info.cc) fails with
+# "file not found". Disable WITH_XBYAK from the initial cmake cache (i.e.
+# before any of Paddle's own CMakeLists.txt logic runs) so xbyak.cmake is
+# never included in the first place.
+CMAKE_OFF+=	WITH_XBYAK
+.endif
+
+.include <bsd.port.post.mk>

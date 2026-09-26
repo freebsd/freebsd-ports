@@ -4,27 +4,24 @@
 -- with FileNotFoundError when these cmake variables are empty.
 -- Also skip patchelf calls on FreeBSD: patchelf is a Linux-only ELF patching tool;
 -- on FreeBSD the RPATH is set correctly at link time by cmake.
---- python/setup.py.in.orig	2026-06-20 05:26:08 UTC
+--- python/setup.py.in.orig	2026-09-09 02:40:49 UTC
 +++ python/setup.py.in
-@@ -1198,21 +1198,22 @@ package_data['paddle.libs']+=[
+@@ -1231,11 +1231,11 @@ package_data['paddle.libs']+=[
  
  package_data['paddle.libs']+=[
      os.path.basename('${LAPACK_LIB}'),
 -    os.path.basename('${BLAS_LIB}'),
--    os.path.basename('${GFORTRAN_LIB}'),
--    os.path.basename('${GNU_RT_LIB_1}')]
+-    os.path.basename('${GFORTRAN_LIB}')]
 +    os.path.basename('${BLAS_LIB}')] + \
-+    ([os.path.basename('${GFORTRAN_LIB}')] if '${GFORTRAN_LIB}' else []) + \
-+    ([os.path.basename('${GNU_RT_LIB_1}')] if '${GNU_RT_LIB_1}' else [])
++    ([os.path.basename('${GFORTRAN_LIB}')] if '${GFORTRAN_LIB}' else [])
  shutil.copy('${BLAS_LIB}', libs_path)
  shutil.copy('${LAPACK_LIB}', libs_path)
 -shutil.copy('${GFORTRAN_LIB}', libs_path)
--shutil.copy('${GNU_RT_LIB_1}', libs_path)
 +if '${GFORTRAN_LIB}': shutil.copy('${GFORTRAN_LIB}', libs_path)
-+if '${GNU_RT_LIB_1}': shutil.copy('${GNU_RT_LIB_1}', libs_path)
- if('${WITH_MAGMA}' == 'ON'):
-     package_data['paddle.libs']+=[
-         os.path.basename('${MAGMA_LIB}')]
+ if len('${GNU_RT_LIB_1}') > 1:
+     package_data['paddle.libs'] += [
+         os.path.basename('${GNU_RT_LIB_1}')]
+@@ -1246,8 +1246,9 @@ if not sys.platform.startswith("linux"):
      shutil.copy('${MAGMA_LIB}', libs_path)
  
  if not sys.platform.startswith("linux"):
@@ -36,9 +33,9 @@
  
  if '${WITH_GPU}' == 'ON' or '${WITH_ROCM}' == 'ON':
      if len('${FLASHATTN_LIBRARIES}') > 1:
-@@ -1436,7 +1437,8 @@ if '${CMAKE_BUILD_TYPE}' == 'Release':
+@@ -1471,7 +1472,8 @@ if '${CMAKE_BUILD_TYPE}' == 'Release':
                  # change rpath of pir.ext for loading 3rd party lib
-                 commands.append("patchelf --set-rpath '$ORIGIN:$ORIGIN/../libs' ${PADDLE_BINARY_DIR}/python/paddle/libs/${IR_NAME}")
+                 commands.append("patchelf --force-rpath --set-rpath '$ORIGIN:$ORIGIN/../libs' ${PADDLE_BINARY_DIR}/python/paddle/libs/${IR_NAME}")
          # The sw_64 not support patchelf, so we just disable that.
 -        if platform.machine() != 'sw_64' and platform.machine() != 'mips64':
 +        # FreeBSD does not have patchelf (Linux-only); RPATH is set by cmake at link time.
