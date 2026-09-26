@@ -24,7 +24,7 @@
  }
  
 -CONFIG_SEARCH_PATHS=( /etc/amnezia/amneziawg /usr/local/etc/amnezia/amneziawg )
-+CONFIG_SEARCH_PATHS=( ${AWG_QUICK_CONFIG_SEARCH_PATHS:-%%ETCDIR%%} )
++CONFIG_SEARCH_PATHS=( ${AWG_QUICK_CONFIG_SEARCH_PATHS:-%%ETCDIR%% /etc/amnezia/amneziawg /usr/local/etc/amnezia/amneziawg} )
  
  unset ORIGINAL_TMPDIR
  make_temp() {
