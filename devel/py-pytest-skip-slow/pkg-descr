@@ -1,0 +1,3 @@
+pytest plugin to skip tests marked with @pytest.mark.slow or
+@pytest.mark.hugemem by default. Include the slow tests with --slow/--run-slow,
+or memory-intensive tests with --hugemem/--run-hugemem.
