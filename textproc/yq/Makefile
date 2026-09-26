@@ -1,5 +1,5 @@
 PORTNAME=	yq
-DISTVERSION=	4.1.2
+DISTVERSION=	4.2.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 
@@ -38,6 +38,6 @@ NO_ARCH=	yes
 do-test:
 	@cd ${WRKSRC}/test && ${SETENV} ${TEST_ENV} ./test.py
 
-# tests as of 4.1.2: Ran 28 tests in 0.400s
+# tests as of 4.2.0: Ran 40 tests in 0.874s OK
 
 .include <bsd.port.mk>

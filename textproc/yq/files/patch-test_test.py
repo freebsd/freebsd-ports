@@ -1,12 +1,13 @@
 -- Add builtins.open wrapper to support /dev/fd/N paths on FreeBSD when fdescfs is not mounted.
 -- This ensures that unit tests can run successfully in environments where /dev/fd is unavailable.
 
---- test/test.py.orig	2026-07-07 08:53:12 UTC
+--- test/test.py.orig	2026-09-25 00:00:00 UTC
 +++ test/test.py
-@@ -11,6 +11,21 @@ from yq import cli, yq  # noqa
+@@ -11,6 +11,21 @@ import sys
+
  sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
  from yq import cli, yq  # noqa
- 
+
 +import builtins
 +original_open = builtins.open
 +def patched_open(file, *args, **kwargs):
@@ -23,5 +24,3 @@
 +
 +
  USING_PYPY = True if platform.python_implementation() == "PyPy" else False
- 
- yaml_with_tags = """
