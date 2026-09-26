@@ -258,7 +258,6 @@ include/libindi/fitsidi.h
 include/libindi/fitskeyword.h
 include/libindi/hotplugcapabledevice.h
 include/libindi/hotplugmanager.h
-include/libindi/httplib.h
 include/libindi/imusensorfusion.h
 include/libindi/indi_hidapi.h
 include/libindi/indiapi.h
@@ -285,7 +284,6 @@ include/libindi/indiguiderinterface.h
 include/libindi/indiimu.h
 include/libindi/indiimuinterface.h
 include/libindi/indiinputinterface.h
-include/libindi/indijson.hpp
 include/libindi/indilightboxinterface.h
 include/libindi/indilogger.h
 include/libindi/indimacros.h
@@ -344,6 +342,7 @@ include/libindi/v4l2_builtin_decoder.h
 include/libindi/v4l2_colorspace.h
 include/libindi/v4l2_decode.h
 lib/indi/MathPlugins/libindi_Nearest_MathPlugin.so
+lib/indi/MathPlugins/libindi_SPK_MathPlugin.so
 lib/indi/MathPlugins/libindi_SVD_MathPlugin.so
 lib/libindiAlignmentClient.a
 lib/libindiAlignmentDriver.so
