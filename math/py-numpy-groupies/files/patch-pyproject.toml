@@ -1,0 +1,22 @@
+-- Work around FreeBSD's older setuptools not yet supporting PEP 639 `license-files` / SPDX license expression.
+-- This patch lowers the setuptools requirement and rewrites the license field to the older free-text form.
+
+--- pyproject.toml.orig	2026-09-25 19:12:40.245216000 -0700
++++ pyproject.toml	2026-09-25 19:12:40.294624000 -0700
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77", "setuptools-scm>=8"]
++requires = ["setuptools>=61", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+
+ [project]
+@@ -7,8 +7,7 @@
+ description = "Optimised tools for group-indexing operations: aggregated sum and more."
+ dynamic = ["version"]
+ readme = "README.md"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text = "BSD-3-Clause"}
+ authors = [
+     {name = "Michael Löffler", email = "ml@occam.com.ua"},
+     {name = "Daniel Manson", email = "danielmanson.uk@gmail.com"}

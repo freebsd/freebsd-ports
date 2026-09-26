@@ -1,5 +1,5 @@
 PORTNAME=	numpy-groupies
-DISTVERSION=	0.11.3
+DISTVERSION=	0.12.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ NO_ARCH=	yes
 do-test:
 	@cd ${WRKSRC} && pytest
 
-# tests as of 0.11.3: 815 passed, 83 skipped in 43.69s
+# tests as of 0.12.2: 1179 passed, 103 skipped, 595 deselected in 22.37s
 
 .include <bsd.port.mk>
