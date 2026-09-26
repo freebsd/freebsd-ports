@@ -1,6 +1,6 @@
---- CMakeLists.txt	2025-05-18
-+++ CMakeLists.txt	2025-05-31 19:57:35.887384000 -0400
-@@ -26,7 +26,4 @@
+--- CMakeLists.txt	2026-09-26
++++ CMakeLists.txt	2026-09-26 15:06:30 -0400
+@@ -34,7 +34,4 @@
  endif()
  
 -set(Purple_DIR "scripts/purple-cmake" CACHE PATH "Where to find purple-config.cmake")
@@ -8,16 +8,16 @@
 -
  message(STATUS "PURPLE_INCLUDE_DIRS: ${PURPLE_INCLUDE_DIRS}")
  message(STATUS "PURPLE_LIBRARY_DIRS: ${PURPLE_LIBRARY_DIRS}")
-@@ -45,4 +42,2 @@
+@@ -53,4 +50,2 @@
  
  install(DIRECTORY "assets/pixmaps" DESTINATION "${PURPLE_DATA_DIR}" FILES_MATCHING PATTERN "*.png")
 -
 -include(scripts/cpack.cmake)
---- go.mod.in	2025-05-18 14:53:10.000000000 -0400
-+++ go.mod.in	2025-05-31 19:51:01.296020000 -0400
+--- go.mod.in	2026-09-26
++++ go.mod.in	2026-09-26 15:06:30 -0400
 @@ -2,11 +2,2 @@
  
- go 1.24.0
+ go 1.27.0
 -
 -require (
 -	github.com/alfg/mp4 v0.0.0-20210728035756-55ea58c08aeb
@@ -27,20 +27,11 @@
 -	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
 -	go.mau.fi/whatsmeow latest
 -)
---- scripts/go.cmake	2025-05-18 14:53:10.000000000 -0400
-+++ scripts/go.cmake	2025-05-31 19:49:01.261810000 -0400
-@@ -15,5 +15,4 @@
+--- scripts/go.cmake	2026-09-26
++++ scripts/go.cmake	2026-09-26 15:06:30 -0400
+@@ -17,5 +17,4 @@
    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_SOURCE_DIR}/go.mod.in" "${CMAKE_SOURCE_DIR}/go.mod"
 -  COMMAND ${CMAKE_COMMAND} -E env GOPATH=${GOPATH} ${CMAKE_Go_COMPILER} mod tidy
  )
  
---- login.go	2023-09-01 16:15:26.000000000 -0400
-+++ login.go	2024-01-21 12:25:26.684274000 -0500
-@@ -12,5 +12,5 @@
- 	_ "github.com/lib/pq"
- 	_ "github.com/mattn/go-sqlite3"
--	"github.com/mdp/qrterminal/v3"
-+	"github.com/mdp/qrterminal"
- 	"github.com/skip2/go-qrcode"
- 	"go.mau.fi/whatsmeow"
