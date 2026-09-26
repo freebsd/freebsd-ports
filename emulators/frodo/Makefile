@@ -9,7 +9,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulates a Commodore 64
 WWW=		https://frodo.cebix.net/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake xorg pkgconfig sdl gnome \

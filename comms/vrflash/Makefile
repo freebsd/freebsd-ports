@@ -7,7 +7,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Flash kernels and romdisks to the Agenda VR3
 WWW=		https://sourceforge.net/projects/agos/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 DOCS=		agenda-flashing-overview.txt troubleshooting.txt \

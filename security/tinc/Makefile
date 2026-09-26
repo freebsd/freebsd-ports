@@ -9,7 +9,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Virtual Private Network (VPN) daemon
 WWW=		https://www.tinc-vpn.org/
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 

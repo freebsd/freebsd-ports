@@ -8,7 +8,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receive/Send files via X/Y/ZMODEM protocol (unrestrictive)
 WWW=		https://ohse.de/uwe/software/lrzsz.html
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 USES=		cpe
 

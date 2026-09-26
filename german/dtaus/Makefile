@@ -8,7 +8,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Belegloser DatenTraegerAUStausch
 WWW=		https://www.infodrom.org/projects/dtaus/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 ALL_TARGET=	dtaus
 PLIST_FILES=	bin/dtaus share/man/man1/dtaus.1.gz share/man/man5/dtaus.5.gz

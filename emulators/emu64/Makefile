@@ -7,7 +7,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Commodore 64 emulator
 WWW=		https://github.com/ThKattanek/emu64
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png \

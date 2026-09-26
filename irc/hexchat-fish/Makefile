@@ -9,7 +9,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Encryption plugin for Hexchat
 WWW=		https://fishlim.kodafritt.se/
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	hexchat:irc/hexchat
