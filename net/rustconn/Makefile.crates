@@ -64,7 +64,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		cast-0.3.0 \
 		cbc-0.1.2 \
 		cbc-0.2.1 \
-		cc-1.4.7 \
+		cc-1.5.1 \
 		cfg-expr-0.20.9 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
@@ -158,7 +158,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		fiat-crypto-0.3.0 \
 		field-offset-0.3.6 \
 		filetime-0.2.29 \
-		find-msvc-tools-0.1.13 \
+		find-msvc-tools-0.1.14 \
 		flagset-0.4.7 \
 		flate2-1.1.10 \
 		float-cmp-0.9.0 \
@@ -233,7 +233,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		hyper-1.11.1 \
 		hyper-rustls-0.27.10 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.20 \
+		hyper-util-0.1.21 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-2.3.0 \
@@ -290,7 +290,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.35 \
-		js-sys-0.3.105 \
+		js-sys-0.3.106 \
 		keccak-0.2.2 \
 		keyboard-types-0.8.3 \
 		kqueue-1.2.1 \
@@ -500,12 +500,12 @@ CARGO_CRATES=	addchain-0.2.1 \
 		simd_cesu8-1.2.0 \
 		simdutf8-0.1.5 \
 		simplecss-0.2.2 \
-		siphasher-1.0.3 \
+		siphasher-1.0.4 \
 		skrifa-0.44.0 \
 		slab-0.4.12 \
 		slotmap-1.1.1 \
 		slug-0.1.6 \
-		smallvec-1.16.1 \
+		smallvec-1.16.2 \
 		socket2-0.6.5 \
 		soup3-0.9.0 \
 		soup3-sys-0.9.0 \
@@ -602,13 +602,13 @@ CARGO_CRATES=	addchain-0.2.1 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.4+wasi-0.2.12 \
-		wasm-bindgen-0.2.128 \
-		wasm-bindgen-futures-0.4.78 \
-		wasm-bindgen-macro-0.2.128 \
-		wasm-bindgen-macro-support-0.2.128 \
-		wasm-bindgen-shared-0.2.128 \
+		wasm-bindgen-0.2.129 \
+		wasm-bindgen-futures-0.4.79 \
+		wasm-bindgen-macro-0.2.129 \
+		wasm-bindgen-macro-support-0.2.129 \
+		wasm-bindgen-shared-0.2.129 \
 		wasm-streams-0.5.0 \
-		web-sys-0.3.105 \
+		web-sys-0.3.106 \
 		webkit6-0.6.1 \
 		webkit6-sys-0.6.0 \
 		weezl-0.1.12 \
@@ -667,8 +667,8 @@ CARGO_CRATES=	addchain-0.2.1 \
 		zbus_macros-5.19.0 \
 		zbus_names-4.3.4 \
 		zcheapstr-1.1.0 \
-		zerocopy-0.8.58 \
-		zerocopy-derive-0.8.58 \
+		zerocopy-0.8.59 \
+		zerocopy-derive-0.8.59 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.8 \
 		zeroize-1.9.0 \
