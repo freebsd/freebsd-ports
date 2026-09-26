@@ -15,6 +15,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	osokin
 GH_TAGNAME=	7d074df
 
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	does not support
+
 PLIST=		bin/eppctl
 MANS=		eppctl.8
 
