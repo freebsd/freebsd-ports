@@ -1,3 +1,33 @@
+  <vuln vid="2ec747aa-b97e-11f1-b09d-8447094a420f">
+    <topic>Rauthy -- Multiple security vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rauthy</name>
+	<range><lt>0.36.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Rauthy project reports:</p>
+	<blockquote cite="https://github.com/sebadob/rauthy/security">
+	  <p>WebAuthn authentication code is not bound to the user. (GHSA-x8jp-v2j6-6vjf)</p>
+	  <p>Refresh-token grant accepts a caller-supplied client without verifyinG it matches the token's `azp`, allowing cross-client token minting and identity/scope confusion. (https://github.com/sebadob/rauthy/security/advisories/GHSA-7qh2-3hc5-2vqp)</p>
+	  <p>Unauthenticated remote panic aborts the whole process on two token endpoints (short refresh_token / device_code). (GHSA-wx92-7mmw-5x82)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/sebadob/rauthy/security</url>
+      <url>https://github.com/sebadob/rauthy/security/advisories/GHSA-x8jp-v2j6-6vjf</url>
+      <url>https://github.com/sebadob/rauthy/security/advisories/GHSA-7qh2-3hc5-2vqp</url>
+      <url>https://github.com/sebadob/rauthy/security/advisories/GHSA-wx92-7mmw-5x82</url>
+    </references>
+    <dates>
+      <discovery>2026-09-16</discovery>
+      <entry>2026-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff969b25-b97b-11f1-b09d-8447094a420f">
     <topic>RusTLS FFI -- plaintext TLS handshake vulnerability</topic>
     <affects>
