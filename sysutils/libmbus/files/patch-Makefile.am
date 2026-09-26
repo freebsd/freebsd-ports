@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2026-10-20 11:39:54 UTC
++++ Makefile.am
+@@ -8,7 +8,7 @@ pkgconfig_DATA = libmbus.pc
+ pkgconfig_DATA = libmbus.pc
+ 
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ dist_docdir = $(DESTDIR)$(docdir)
+ doc_DATA = README.md \
+            COPYING \
