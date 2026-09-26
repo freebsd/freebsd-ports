@@ -1,6 +1,14 @@
 --- CMakeLists.txt.orig	2013-05-02 04:53:08 UTC
 +++ CMakeLists.txt
-@@ -119,9 +119,9 @@ IF( SDL_LIB STREQUAL "SDL2" )
+@@ -1,6 +1,6 @@ PROJECT(Joytran)
+ ## -*- coding: utf-8 -*-
+ PROJECT(Joytran)
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+ 
+ OPTION(INSTALL_DOCUMENTATION "install documentation" ON) # On is the default
+ OPTION(WITH_SDL_20 "Use SDL 2.0" ON)
+@@ -119,9 +119,9 @@ ENDIF()
    SET(CMAKE_CPP_FLAGS "${CMAKE_CPP_FLAGS} -DWITH_SDL2")
  ENDIF()
  ## These work in both clang and gcc
