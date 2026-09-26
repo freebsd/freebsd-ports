@@ -1,3 +1,30 @@
+  <vuln vid="15e880b4-b9ed-11f1-b17e-3c7c3fba4204">
+    <topic>Fetchmail -- NTLM potential remote code execution</topic>
+    <affects>
+	<package>
+	    <name>fetchmail</name>
+	    <range><ge>5.0.8</ge><lt>6.6.7</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fetchmail reports:</p>
+	<blockquote cite="https://www.fetchmail.info/fetchmail-SA-2026-01.txt">
+	  <p>[CVE-2026-94184]: Fetchmail's NTLM authentication client can in some cases be susceptible to a remote code execution from a malicious server when fetchmail is configured with the NTLM feature enabled, depending on build details. fetchmail 6.6.7 release candidates, 6.6.7 and subsequent releases are unaffected.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-94184</cvename>
+      <url>https://www.fetchmail.info/fetchmail-SA-2026-01.txt</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-94184</url>
+    </references>
+    <dates>
+      <discovery>2026-06-27</discovery>
+      <entry>2026-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bd24bc14-b9a9-11f1-bf98-a8a1599412c6">
     <topic>chromium -- security fixes</topic>
     <affects>
