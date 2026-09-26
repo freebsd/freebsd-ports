@@ -8,6 +8,11 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter module for sid and spf
 WWW=		https://sourceforge.net/projects/sid-milter/
 
+LICENSE=	Sendmail
+LICENSE_NAME=	Sendmail License
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		groff
 WCONF=		${WRKSRC}/devtools/Site
 DOCSFILES=	FEATURES INSTALL KNOWNBUGS LICENSE README README-SenderID \

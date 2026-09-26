@@ -8,6 +8,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Attachment filter for Sendmail Milter
 WWW=		http://freecode.com/projects/noattach/
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	noattach
 DOCSFILES=	AUTHORS THANKS INSTALL NEWS README TODO ChangeLog

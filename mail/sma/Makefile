@@ -7,6 +7,10 @@ MASTER_SITES=	LOCAL/dinoex \
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Program that analyses Sendmail log entries
+WWW=		https://www.klake.org/sma/
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 ALL_TARGET=	sma
 SAMPLEFILES=	sma.conf
