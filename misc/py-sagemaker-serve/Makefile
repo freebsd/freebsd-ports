@@ -1,5 +1,5 @@
 PORTNAME=	sagemaker-serve
-DISTVERSION=	1.21.0
+DISTVERSION=	1.23.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +23,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.42.2:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytorch>=2.0.0:misc/py-pytorch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sagemaker-core>=2.21.0:misc/py-sagemaker-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sagemaker-core>=2.23.0:misc/py-sagemaker-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sagemaker-schema-inference-artifacts>=0:misc/py-sagemaker-schema-inference-artifacts@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sagemaker-train>=1.21.0:misc/py-sagemaker-train@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sagemaker-train>=1.23.0:misc/py-sagemaker-train@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tritonclient>0:misc/py-tritonclient@${PY_FLAVOR}
 
