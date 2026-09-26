@@ -1527,6 +1527,7 @@
     SUBDIR += py-aiohttp
     SUBDIR += py-aiohttp-client-cache
     SUBDIR += py-aiohttp-cors
+    SUBDIR += py-aiohttp-fast-zlib
     SUBDIR += py-aiohttp-jinja2
     SUBDIR += py-aiohttp-middlewares
     SUBDIR += py-aiohttp-oauthlib

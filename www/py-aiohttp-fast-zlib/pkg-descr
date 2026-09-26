@@ -1,0 +1,2 @@
+aiohttp-fast-zlib selects the fastest installed zlib-compatible library
+(isal or zlib-ng) and makes aiohttp use it transparently.
