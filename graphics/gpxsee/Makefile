@@ -1,5 +1,5 @@
 PORTNAME=	gpxsee
-DISTVERSION=	16.15
+DISTVERSION=	16.16
 CATEGORIES=	graphics geography
 
 MAINTAINER=	mce@FreeBSD.org
