@@ -1,0 +1,12 @@
+[
+{ type: [install, upgrade]
+  maximum_version: "0.8.0"
+  message: <<EOM
+Upstream moved to GitHub and rewrote zsync in Go.
+It's recommended to check the details from changelog.
+
+Changelog:
+https://github.com/cph6/zsync/blob/v0.8.0/NEWS
+EOM
+}
+]

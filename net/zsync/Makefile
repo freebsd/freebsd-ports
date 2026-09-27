@@ -1,35 +1,35 @@
 PORTNAME=	zsync
-DISTVERSION=	0.6.6
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.0
 CATEGORIES=	net
-MASTER_SITES=	https://zsync.moria.org.uk/download/
 
 MAINTAINER=	chris.longros@gmail.com
 COMMENT=	File transfer program
-WWW=		https://zsync.moria.org.uk/
+WWW=		https://github.com/cph6/zsync
 
 LICENSE=	ART20
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf ssl tar:bzip2
-GNU_CONFIGURE=	yes
+USES=		go:modules
+GO_MODULE=	github.com/cph6/zsync
+GO_TARGET=	./cmd/zsync \
+		./cmd/zsyncmake
+
+TESTING_UNSAFE=	Requires Apache webserver running, recursive directory problems
 
 PLIST_FILES=	bin/zsync \
 		bin/zsyncmake \
 		share/man/man1/zsync.1.gz \
 		share/man/man1/zsyncmake.1.gz
-PORTDOCS=	INSTALL NEWS README
-
-_MANPAGE=	zsync.1 zsyncmake.1
-_BINS=		zsync zsyncmake
+PORTDOCS=	NEWS README.md
 
 OPTIONS_DEFINE=	DOCS
 
-do-install:
-	${INSTALL_PROGRAM} ${_BINS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${_MANPAGE:S,^,${WRKSRC}/doc/,} \
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/man/zsync.1 ${WRKSRC}/man/zsyncmake.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 
-do-install-DOCS-on:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

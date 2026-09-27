@@ -1,3 +1,5 @@
-TIMESTAMP = 1787081011
-SHA256 (zsync-0.6.6.tar.bz2) = 876df4826fd128e72a38a81a6b13f919b76d0c40ad0b67993c526f0e26d904c8
-SIZE (zsync-0.6.6.tar.bz2) = 273097
+TIMESTAMP = 1790507744
+SHA256 (go/net_zsync/zsync-v0.8.0/v0.8.0.mod) = 152e53760abc2014c78348a19d602349a227891dbfaee70a1268fc279fa8524e
+SIZE (go/net_zsync/zsync-v0.8.0/v0.8.0.mod) = 112
+SHA256 (go/net_zsync/zsync-v0.8.0/v0.8.0.zip) = 9ec70adc0ed8821534a054b291b51a2c2f3bf45166e804114663b53f45cec5e1
+SIZE (go/net_zsync/zsync-v0.8.0/v0.8.0.zip) = 104335
