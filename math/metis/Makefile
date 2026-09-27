@@ -1,6 +1,6 @@
 PORTNAME=	metis
 DISTVERSION=	5.1.0-p13
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/petsc/pkg-metis/get/
@@ -23,6 +23,11 @@ BINS=		cmpfillin gpmetis graphchk m2gmetis mpmetis ndmetis
 SHLIB_MAJOR?=	2
 
 OPTIONS_DEFINE=		OPENMP SHARED STATIC
+OPTIONS_DEFINE_amd64=	LONGINDEX
+OPTIONS_DEFINE_aarch64=	LONGINDEX
+OPTIONS_DEFINE_powerpc64=LONGINDEX
+OPTIONS_DEFINE_powerpc64le=LONGINDEX
+OPTIONS_DEFINE_riscv64=	LONGINDEX
 OPTIONS_DEFAULT=	SHARED STATIC
 OPTIONS_DEFAULT_amd64=	OPENMP
 OPTIONS_DEFAULT_i386=	OPENMP
@@ -30,10 +35,12 @@ OPTIONS_DEFAULT_powerpc64=	OPENMP
 OPTIONS_DEFAULT_powerpc64le=	OPENMP
 OPTIONS_SUB=		yes
 
+LONGINDEX_DESC=	set indexes to 64 bits
 OPENMP_DESC=	multithreading via OpenMP
 SHARED_DESC=	shared library and dynamically-linked executables
 STATIC_DESC=	libmetis archive
 
+LONGINDEX_CMAKE_BOOL=	METIS_USE_LONGINDEX
 OPENMP_CMAKE_BOOL=	OPENMP
 
 SHARED_USE=	LDCONFIG=yes
@@ -53,10 +60,6 @@ CMAKE_SOURCE_PATH_STATIC=${WRKSRC_STATIC}
 CFLAGS+=	-fpic
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH:M*64*}
-CMAKE_ARGS+=	-DMETIS_USE_LONGINDEX:BOOL="On"
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e "/^# Add compiler flags/,/^$$/d" \
