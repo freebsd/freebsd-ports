@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260927:
+  AFFECTS: audio/deadbeef
+  AUTHOR: danfe@FreeBSD.org
+
+  GTK-based GUI plugins had been split from the main port into its own,
+  `audio/deadbeef-gui-plugins', flavorized by the GTK version.  Please
+  install the preferred one together with the main program.
+
 20260924:
   AFFECTS: users of net/openldap25-client, net/openldap25-server,
     net/openldap26-client, net/openldap26-server

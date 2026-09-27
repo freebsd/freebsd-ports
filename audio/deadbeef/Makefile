@@ -1,6 +1,6 @@
 PORTNAME=	deadbeef
 PORTVERSION=	0.7.2
-PORTREVISION=	33
+PORTREVISION=	34
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Archive
 
@@ -15,7 +15,9 @@ GNU_CONFIGURE=	yes
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome iconv \
 		libtool localbase pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-static
+CONFIGURE_ARGS=	--disable-alsa --disable-nullout --disable-static \
+		--disable-gtk2 --disable-gtk3 --disable-converter \
+		--disable-pltbrowser --disable-shellexecui
 CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff \
 		-I../../plugins/gme/game-music-emu-0.6pre \
 		-I./sidplay-libs/libsidplay/include/sidplay
@@ -26,20 +28,19 @@ USE_GNOME=	intltool
 SHEBANG_FILES=	yasmwrapper.sh
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	AAC ADPLUG ALAC ART CDDA CONVERTER DCA DSP DUMB FFAP \
-		FFMPEG FLAC GME GUI HOTKEYS LASTFM M3U MMS MONO2STEREO \
-		MUSEPACK NLS NOTIFY OGG PLTBROWSER PSF PULSEAUDIO SC68 \
+OPTIONS_DEFINE=	AAC ADPLUG ALAC ART CDDA DCA DSP DUMB FFAP \
+		FFMPEG FLAC GME HOTKEYS LASTFM M3U MMS MONO2STEREO \
+		MUSEPACK NLS NOTIFY OGG PSF PULSEAUDIO SC68 \
 		SHELLEXEC SHN SID SNDFILE SUPEREQ TTA VFS VFS_ZIP VTX \
 		WAVPACK WILDMIDI WMA
 
-OPTIONS_DEFAULT=AAC ADPLUG ALAC ART CONVERTER DCA DSP DUMB FFAP FLAC GME \
-		GTK2 HOSTKEYS HOTKEYS LASTFM M3U MAD MMS MONO2STEREO \
-		MPG123 MUSEPACK NOTIFY OGG PLTBROWSER PSF SC68 SHELLEXEC \
+OPTIONS_DEFAULT=AAC ADPLUG ALAC ART DCA DSP DUMB FFAP FLAC GME \
+		HOTKEYS LASTFM M3U MAD MMS MONO2STEREO \
+		MPG123 MUSEPACK NOTIFY OGG PSF SC68 SHELLEXEC \
 		SHN SID SNDFILE SUPEREQ TTA VFS VFS_ZIP VTX WAVPACK \
 		WILDMIDI WMA
 
 PULSEAUDIO_DESC=	PulseAudio output plugin (unsupported)
-GUI_DESC=		Standard GUI plugin
 VFS_DESC=		HTTP streaming VFS plugin
 LASTFM_DESC=		Last.fm/Libre.fm scrobbler plugin
 ART_DESC=		Cover artwork loader plugin
@@ -51,7 +52,6 @@ ADPLUG_DESC=		AdPlug audio format (OPL2/OPL3) support
 HOTKEYS_DESC=		Local and global hotkeys support
 GME_DESC=		Chiptune music support (based on GME)
 DUMB_DESC=		D.U.M.B. plugin for MOD, S3M, etc.
-NOTIFY_DESC=		OSD notification support in GTKUI plugin
 WILDMIDI_DESC=		WildMIDI synthesizer plugin
 SC68_DESC=		sc68 Atari ST and Amiga player
 SHN_DESC=		Shorten waveform encoder support
@@ -60,14 +60,9 @@ M3U_DESC=		M3U and PLS playlist format support
 PSF_DESC=		AOSDK-based PSF(,QSF,SSF,DSF) plugin
 DSP_DESC=		High-quality sample rate conversion support
 MONO2STEREO_DESC=	Mono to stereo converter DSP plugin
-CONVERTER_DESC=		Plugin for converting files from/to any formats
 VFS_ZIP_DESC=		Play files directly from ZIP archives
-PLTBROWSER_DESC=	Playlist browser GUI plugin
 
 OPTIONS_SUB=		yes
-OPTIONS_RADIO+=		GUI
-OPTIONS_RADIO_GUI=	GTK2 GTK3
-GUI_IMPLIES=		CONVERTER
 
 OPTIONS_GROUP+=		MP3
 OPTIONS_GROUP_MP3=	MAD MPG123
@@ -80,23 +75,6 @@ MPG123_CONFIGURE_OFF=	--disable-libmpg123
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
-
-GTK2_USE=		gnome=gtk20,glib20
-GTK2_CONFIGURE_OFF=	--disable-gtk2
-GTK2_CONFIGURE_ON=	--enable-gtk2
-GTK2_VARS=		GTK_VER=2
-GTK2_IMPLIES=		GUI
-
-GTK3_USE=		gnome=gtk30
-GTK3_CONFIGURE_OFF=	--disable-gtk3
-GTK3_CONFIGURE_ON=	--enable-gtk3
-GTK3_VARS=		GTK_VER=3
-GTK3_IMPLIES=		GUI
-
-PLIST_SUB+=		GTK_VER=${GTK_VER}
-
-GUI_CONFIGURE_OFF=	--disable-gtk2 --disable-gtk3
-GUI_LIB_DEPENDS=	libjansson.so:devel/jansson
 
 VFS_LIB_DEPENDS=	libcurl.so:ftp/curl
 VFS_CONFIGURE_OFF=	--disable-vfs-curl
@@ -184,22 +162,14 @@ DSP_CONFIGURE_OFF=	--disable-src
 
 MONO2STEREO_CONFIGURE_OFF=	--disable-mono2stereo
 
-CONVERTER_CONFIGURE_OFF=	--disable-converter
-
 VFS_ZIP_LIB_DEPENDS=	libzip.so:archivers/libzip
 VFS_ZIP_CONFIGURE_OFF=	--disable-vfs-zip
 
 ALAC_CONFIGURE_OFF=		--disable-alac
 
-PLTBROWSER_CONFIGURE_OFF=	--disable-pltbrowser
-
 WMA_CONFIGURE_OFF=		--disable-wma
 
 .include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3}
-PORT_OPTIONS:=		${PORT_OPTIONS:NGUI}
-.endif
 
 .if !${PORT_OPTIONS:MMAD} && !${PORT_OPTIONS:MMPG123}
 CONFIGURE_ARGS+=	--disable-mp3

@@ -1,6 +1,6 @@
 --- plugins/gtkui/ddbcellrenderertextmultiline.c.orig	2016-06-19 11:26:18 UTC
 +++ plugins/gtkui/ddbcellrenderertextmultiline.c
-@@ -30,7 +30,13 @@
+@@ -30,6 +30,11 @@
  #include "support.h"
  #include "ddbcellrenderertextmultiline.h"
  
@@ -10,11 +10,9 @@
 +#define GTK3_CONST
 +#endif
  
-+
  #define _g_free0(var) (var = (g_free (var), NULL))
  
- #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
-@@ -70,7 +76,7 @@ static gboolean ddb_cell_renderer_text_multiline_gtk_c
+@@ -70,7 +75,7 @@ enum  {
  };
  static void ddb_cell_renderer_text_multiline_gtk_cell_renderer_text_editing_done (DdbCellEditableTextView* entry, DdbCellRendererTextMultiline* _self_);
  static gboolean ddb_cell_renderer_text_multiline_gtk_cell_renderer_focus_out_event (DdbCellEditableTextView* entry, GdkEvent* event, DdbCellRendererTextMultiline* _self_);
@@ -23,7 +21,7 @@
  DdbCellRendererTextMultiline* ddb_cell_renderer_text_multiline_new (void);
  DdbCellRendererTextMultiline* ddb_cell_renderer_text_multiline_construct (GType object_type);
  static void ddb_cell_renderer_text_multiline_finalize (GObject* obj);
-@@ -409,7 +415,7 @@ ddb_cell_renderer_text_multiline_populate_popup (GtkEn
+@@ -409,7 +414,7 @@ ddb_cell_renderer_text_multiline_populate_popup (GtkEn
              G_CALLBACK (ddb_cell_renderer_text_multiline_popup_unmap), data);
  }
  
