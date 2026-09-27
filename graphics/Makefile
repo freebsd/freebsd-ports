@@ -12,6 +12,7 @@
     SUBDIR += R-cran-GDD
     SUBDIR += R-cran-R.devices
     SUBDIR += R-cran-RColorBrewer
+    SUBDIR += R-cran-bmp
     SUBDIR += R-cran-colorspace
     SUBDIR += R-cran-cowplot
     SUBDIR += R-cran-diagram
