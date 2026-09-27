@@ -1,6 +1,6 @@
 PORTNAME=	xNetHack
 DISTVERSIONPREFIX=	xnh
-DISTVERSION=	9.1
+DISTVERSION=	10.0
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -25,6 +25,10 @@ GH_ACCOUNT=	copperwater
 
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}"
+
+HAS_CONFIGURE=	yes
+CONFIGURE_WRKSRC=	${WRKSRC}/sys/unix
+CONFIGURE_SCRIPT=	setup.sh
 
 # Configure these variables as you want them to be.
 HACKNAME?=	${PORTNAME:tl}
@@ -73,15 +77,12 @@ pre-configure:
 .if defined(WITH_MAIL)
 	@${REINPLACE_CMD} -e 's|/\* #define MAIL \*/|#define MAIL|' ${WRKSRC}/include/unixconf.h
 .endif
-
-do-configure:
 	${TOUCH} ${WRKSRC}/dat/gitinfo.txt
-	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/recover
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/${HACKNAME}
-	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} manpages
+	@cd ${WRKSRC}/doc; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} manpages
 	${MKDIR} ${STAGEDIR}${DATADIR}/save
 	${CP} ${WRKSRC}/sys/unix/sysconf ${STAGEDIR}/${DATADIR}/sysconf
 .for f in livelog logfile record sysconf xlogfile

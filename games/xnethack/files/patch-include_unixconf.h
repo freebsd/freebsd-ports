@@ -1,4 +1,4 @@
---- include/unixconf.h.orig	2025-03-15 15:02:36 UTC
+--- include/unixconf.h.orig	2026-09-27 12:20:05 UTC
 +++ include/unixconf.h
 @@ -20,13 +20,13 @@
   */
@@ -16,12 +16,3 @@
                       /* of Linux */
  /* #define HPUX */   /* Hewlett-Packard's Unix, version 6.5 or higher */
                       /* use SYSV for < v6.5 */
-@@ -332,7 +332,7 @@
- #endif
- 
- #if defined(BSD) || defined(ULTRIX)
--#if !defined(DGUX) && !defined(SUNOS4)
-+#if !defined(DGUX) && !defined(SUNOS4) && !defined(__FreeBSD__)
- #define memcpy(d, s, n) bcopy(s, d, n)
- #define memcmp(s1, s2, n) bcmp(s2, s1, n)
- #endif

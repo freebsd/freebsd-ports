@@ -1,4 +1,4 @@
---- include/config.h.orig	2026-02-28 22:45:03 UTC
+--- include/config.h.orig	2026-05-27 00:15:32 UTC
 +++ include/config.h
 @@ -387,11 +387,11 @@
  
@@ -34,7 +34,7 @@
  
  #ifdef NHL_SANDBOX
  #ifdef CHRONICLE
-@@ -733,7 +733,7 @@ typedef unsigned char uchar;
+@@ -747,7 +747,7 @@ typedef unsigned char uchar;
  #ifdef DUMPLOG
  #define DUMPLOG_CORE
  #ifndef DUMPLOG_FILE
@@ -43,7 +43,7 @@
  /* DUMPLOG_FILE allows following placeholders:
     %% literal '%'
     %v version (eg. "3.6.3-0")
-@@ -769,7 +769,7 @@ typedef unsigned char uchar;
+@@ -783,7 +783,7 @@ typedef unsigned char uchar;
  
  /* TEMPORARY - MAKE UNCONDITIONAL BEFORE RELEASE */
  /* undef this to check if sandbox breaks something */

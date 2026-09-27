@@ -1,6 +1,6 @@
---- sys/unix/Makefile.utl.orig	2026-02-28 22:45:03 UTC
+--- sys/unix/Makefile.utl.orig	2026-05-27 00:15:32 UTC
 +++ sys/unix/Makefile.utl
-@@ -106,18 +106,29 @@ NHSROOT=..
+@@ -107,18 +107,29 @@ SRCDIR = $(NHSROOT)/src
  #CFLAGS = -O -I../include
  #LFLAGS =
  
