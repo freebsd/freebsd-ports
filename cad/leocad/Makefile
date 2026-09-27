@@ -1,6 +1,6 @@
 PORTNAME=	leocad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.09
+DISTVERSION=	26.09
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,15 +11,15 @@ WWW=		https://www.leocad.org/ \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
+LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor
 RUN_DEPENDS=	ldraw>0:cad/ldraw
 
-USES=		compiler:c++11-lang cpe desktop-file-utils gl qmake qt:5 \
+USES=		compiler:c++11-lang cpe desktop-file-utils gl qmake qt:6 \
 		shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	leozide
 USE_GL=		gl
-USE_QT=		concurrent core gui network opengl printsupport widgets xml \
-		buildtools:build linguisttools:build
+USE_QT=		base tools:build translations:build
 
 QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} \
 		LDRAW_LIBRARY_PATH=${PREFIX}/share/ldraw \
