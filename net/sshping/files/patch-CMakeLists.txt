@@ -1,5 +1,13 @@
 --- CMakeLists.txt.orig	2018-03-19 21:48:55 UTC
 +++ CMakeLists.txt
+@@ -1,6 +1,6 @@ project(sshping)
+ # See https://github.com/spook/sshping
+ project(sshping)
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 3.5)
+ 
+ #find_package(libssh)
+ 
 @@ -27,7 +27,7 @@ add_custom_target(man ALL DEPENDS ${MAN_TGT})
      COMMENT "Building manpage ${MAN_TGT}"
      VERBATIM)
