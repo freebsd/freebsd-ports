@@ -42,6 +42,8 @@ CFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
 CXXFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
 LDFLAGS+=	-lexecinfo
 
+CONFLICTS_INSTALL=	netgen-lvs # bin/netgen
+
 OPTIONS_DEFINE=	CGNS JPEG MPEG
 
 CGNS_DESC=	Enable CGNS file read/write support
