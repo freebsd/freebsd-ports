@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20260927:
-  AFFECTS: audio/deadbeef
+  AFFECTS: users of audio/deadbeef
   AUTHOR: danfe@FreeBSD.org
 
   GTK-based GUI plugins had been split from the main port into its own,
@@ -90,7 +90,7 @@ you update your ports collection, before attempting any port upgrades.
   script and wrapper.conf for necessary changes.
 
 20260907:
-  AFFECTS: Users of x11-wm/mango
+  AFFECTS: users of x11-wm/mango
   AUTHOR: nivit@FreeBSD.org
 
   Version 16.0.3 has some breaking changes. More details at these addresses:
@@ -450,7 +450,7 @@ you update your ports collection, before attempting any port upgrades.
   https://github.com/go-gitea/gitea/pull/38041
 
 20260626:
-  AFFECTS: net-mgmt/netbox
+  AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
 
   1. With Release Netbox 4.6, Python 3.12 or newer is now required.
@@ -479,7 +479,7 @@ you update your ports collection, before attempting any port upgrades.
   then be deleted afterwards, if not empty.
 
 20260616:
-  AFFECTS: Users of security/gnupg, security/gnupg25, security/gnupg1
+  AFFECTS: users of security/gnupg, security/gnupg25, security/gnupg1
   AUTHOR: adridg@FreeBSD.org
 
   GnuPG 2.4 reaches end-of-life in July 2026.  The 2.5 series is declared
@@ -491,7 +491,7 @@ you update your ports collection, before attempting any port upgrades.
   both security/gnupg and legacy security/gnupg1 will have to uninstall one.
 
 20260616:
-  AFFECTS: Users of net-mgmt/librenms
+  AFFECTS: users of net-mgmt/librenms
   AUTHOR: dvl@FreeBSD.org
 
   LibreNMS 26.6.0 bring in a sizeable refactor to the rrd processes.
@@ -503,7 +503,7 @@ you update your ports collection, before attempting any port upgrades.
   XDG_CACHE_HOME=/var/db/librenms/font-cache
 
 20260614:
-  AFFECTS: Users of www/mattermost-server
+  AFFECTS: users of www/mattermost-server
   AUTHOR: decke@FreeBSD.org
 
   Mattermost 11.x dropped support for MySQL / MariaDB database.
@@ -512,7 +512,7 @@ you update your ports collection, before attempting any port upgrades.
   https://docs.mattermost.com/deployment-guide/postgres-migration.html
 
 20260609:
-  AFFECTS: Users of x11-wm/mango
+  AFFECTS: users of x11-wm/mango
   AUTHOR: nivit@FreeBSD.org
 
   Version 0.14.0 of Mango has some breaking changes:
@@ -528,7 +528,7 @@ you update your ports collection, before attempting any port upgrades.
   the new syntax.
 
 20260605:
-  AFFECTS: Users of dns/dnsmasq-devel
+  AFFECTS: users of dns/dnsmasq-devel
   AUTHOR: mandree@FreeBSD.org
 
   The dns/dnsmasq-devel port has been unable to keep the pace of the upstream
@@ -542,7 +542,7 @@ you update your ports collection, before attempting any port upgrades.
   "portmaster -o dns/dnsmasq dns/dnsmasq-devel" should achieve that.
 
 20260601:
-  AFFECTS: Users of security/lego
+  AFFECTS: users of security/lego
   AUTHOR: matt@matthoran.com
 
   To migrate from lego v4 to v5 run
@@ -559,7 +559,7 @@ you update your ports collection, before attempting any port upgrades.
   See ETCDIR/lego.sh.sample for an example.
 
 20260531:
-  AFFECTS: Users of x11-wm/hyprland
+  AFFECTS: users of x11-wm/hyprland
   AUTHOR: tagattie@FreeBSD.org
 
   Starting from version 0.55.0, Hyprland supports Lua-based
@@ -573,7 +573,7 @@ you update your ports collection, before attempting any port upgrades.
   https://wiki.hypr.land/Configuring/
 
 20260515:
-  AFFECTS: Users of net/rsync
+  AFFECTS: users of net/rsync
   AUTHOR: rodrigo@FreeBSD.org
 
   Since rsync 3.4.2, the rsync project removed support for the unmaintained
@@ -581,7 +581,7 @@ you update your ports collection, before attempting any port upgrades.
   (--fileflags) are not available anymore in default build.
 
 20260510:
-  AFFECTS: Users of games/minecraft-server
+  AFFECTS: users of games/minecraft-server
   AUTHOR: freebsd.tug890@passmail.net
 
   The file structure of how worlds and their data are stored have been
@@ -619,7 +619,7 @@ you update your ports collection, before attempting any port upgrades.
   directly. See PR 292138 and 292501 for details.
 
 20260425:
-  AFFECTS: Users of security/openssh-portable
+  AFFECTS: users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
 
   Some defaults have changed to match src.
@@ -628,7 +628,7 @@ you update your ports collection, before attempting any port upgrades.
   - PermitRootLogin default has changed from "prohibit-password" to "no".
 
 20260418:
-  AFFECTS: Users of net/rsync and net/rsync@python
+  AFFECTS: users of net/rsync and net/rsync@python
   AUTHOR: rodrigo@FreeBSD.org
 
   Revert the introduction of two net/rsync flavours, the default  without
@@ -639,7 +639,7 @@ you update your ports collection, before attempting any port upgrades.
   as indicated in the install message.
 
 20260412:
-  AFFECTS: Users of sysutils/ansible
+  AFFECTS: users of sysutils/ansible
   AUTHOR: cy@FreeBSD.org
 
   An overhaul of the templating system and a new feature called Data Tagging
@@ -648,7 +648,7 @@ you update your ports collection, before attempting any port upgrades.
   https://docs.ansible.com/projects/ansible/devel/porting_guides/porting_guide_12.html
 
 20260412:
-  AFFECTS: Users of sysutils/py-ansible-core
+  AFFECTS: users of sysutils/py-ansible-core
   AUTHOR: cy@FreeBSD.org
 
   A number of behavioural changes may affect existing playbooks and roles.
@@ -813,7 +813,7 @@ you update your ports collection, before attempting any port upgrades.
   2. Please also check the pkg-message and the changelogs for further info.
 
 20260325:
-  AFFECTS: Users of net-mgmt/ping_exporter
+  AFFECTS: users of net-mgmt/ping_exporter
   AUTHOR: ivy@FreeBSD.org
 
   The format of ping_exporter's configuration file has changed.
@@ -2051,7 +2051,7 @@ you update your ports collection, before attempting any port upgrades.
   > exit
 
 20240912:
-  AFFECTS: security/clamav, security/clamav-lts
+  AFFECTS: users of security/clamav, security/clamav-lts
   AUTHOR: netchildFreeBSD.org
 
   The start scripts of clamav have been renamed to clamav_clamd,
@@ -2068,7 +2068,7 @@ you update your ports collection, before attempting any port upgrades.
     "service clamav-milter ..." to "service clamav_milter ..."
 
 20240907:
-  AFFECTS: www/tt-rss
+  AFFECTS: users of www/tt-rss
   AUTHOR: dereks@lifeofadishwasher.com
 
   The ttrssd_local_db rc var has been removed in favor of using daemon's
@@ -2076,7 +2076,7 @@ you update your ports collection, before attempting any port upgrades.
   before ttrssd starts.
 
 20240829:
-  AFFECTS: devel/binutils
+  AFFECTS: users of devel/binutils
   AUTHOR: cy@FreeBSD.org
 
   Historically devel/binutils would implicitly use devel/elfutils when
@@ -2090,7 +2090,7 @@ you update your ports collection, before attempting any port upgrades.
   There is no change to packages built by poudriere.
 
 20240824:
-  AFFECTS: dns/acme-dns
+  AFFECTS: users of dns/acme-dns
   AUTHOR: netchild@FreeBSD.org
 
   The start script of acme-dns has been renamed to acme_dns for improved
@@ -2130,7 +2130,7 @@ you update your ports collection, before attempting any port upgrades.
   does not provide an archive with CMake. Therefore, it has been removed.
 
 20240809:
-  AFFECTS: sysutils/amavisd-new
+  AFFECTS: users of sysutils/amavisd-new
   AUTHOR: netchildFreeBSD.org
 
   The start scripts of amavisd have been renamed to amavisd_snmp and
@@ -2145,7 +2145,7 @@ you update your ports collection, before attempting any port upgrades.
     "service amavis-p0fanalyzer ..." to "service amavis_p0fanalyzer ..."
 
 20240727:
-  AFFECTS: lang/php8[123]
+  AFFECTS: users of lang/php8[123]
   AUTHOR: netchildFreeBSD.org
 
   The start scripts of php-fpm have been renamed to php_fpm for improved
@@ -2230,7 +2230,7 @@ you update your ports collection, before attempting any port upgrades.
   1) If you use non-default initdb options, you have to adjust the initdb-command accordingly
 
 20240715:
-  AFFECTS: net-mgmt/netbox
+  AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
 
   The NetBox 4.0 release contains major changes, so at least the following
@@ -2241,7 +2241,7 @@ you update your ports collection, before attempting any port upgrades.
   2. Please also check the pkg-message and the changelogs for further info.
 
 20240705:
-  AFFECTS: sysutils/bacula*-{client,server}
+  AFFECTS: users of sysutils/bacula*-{client,server}
   AUTHOR: netchildFreeBSD.org
 
   The start scripts of bacula have been renamed to bacula_fd, bacula_dir and
@@ -2258,7 +2258,7 @@ you update your ports collection, before attempting any port upgrades.
     "service bacula-sd ..."  to "service bacula_sd ..."
 
 20240704:
-  AFFECTS: net/xrdp and x11-drivers/xorgxrdp
+  AFFECTS: users of net/xrdp and x11-drivers/xorgxrdp
   AUTHOR: meta@FreeBSD.org
 
   xrdp has been updated to the releases of the latest stable branch v0.10.
@@ -2286,7 +2286,7 @@ you update your ports collection, before attempting any port upgrades.
   # vi xrdp.ini
 
 20240620:
-  AFFECTS: net-mgmt/net-snmp
+  AFFECTS: users of net-mgmt/net-snmp
   AUTHOR: markj@FreeBSD.org
 
   The snmpd and snmptrapd daemons now drop privileges by default when started
@@ -2300,7 +2300,7 @@ you update your ports collection, before attempting any port upgrades.
   that might arise as a result of this change.
 
 20240615:
-  AFFECTS: mail/cyrus-imapd25
+  AFFECTS: users of mail/cyrus-imapd25
   AUTHOR: ume@FreeBSD.org
 
   The BDB option is disabled by default.
@@ -2312,7 +2312,7 @@ you update your ports collection, before attempting any port upgrades.
   enabled.
 
 20240613:
-  AFFECTS: multimedia/audacious and multimedia/audacious-plugins
+  AFFECTS: users of multimedia/audacious and multimedia/audacious-plugins
   AUTHOR: madpilot@FreeBSD.org
 
   Upstream project made qt6 the new default, so the port flavors have
@@ -2343,7 +2343,7 @@ you update your ports collection, before attempting any port upgrades.
   See updating entry 20230310 for a backup/restore upgrade.
 
 20240604:
-  AFFECTS: net-mgmt/net-snmp
+  AFFECTS: users of net-mgmt/net-snmp
   AUTHOR: markj@FreeBSD.org
 
   The net-snmp port's newsyslog(8) configuration has been updated such
@@ -2401,14 +2401,14 @@ you update your ports collection, before attempting any port upgrades.
   then be deleted afterwards, if not empty.
 
 20240522:
-  AFFECTS: net-p2p/transmission-daemon
+  AFFECTS: users of net-p2p/transmission-daemon
 
   The web interface has been separated from the daemon port into its own port.
   This allows users of transmission-gtk and transmission-qt to install the web
   interface.
 
 20240521:
-  AFFECTS: www/gitlab
+  AFFECTS: users of www/gitlab
   AUTHOR: mfechner@FreeBSD.org
 
   Make sure you upgrade first to 16.11.x before you upgrade to the today
@@ -2418,7 +2418,7 @@ you update your ports collection, before attempting any port upgrades.
   https://gitlab.fechner.net/mfechner/Gitlab-docu/-/blob/master/update/16.11-17.0-freebsd.md
 
 20240517:
-  AFFECTS: comms/tio
+  AFFECTS: users of comms/tio
   AUTHOR: diizzy@FreeBSD.org
 
   As of 3.1 upstream have reworked configuration file layout and syntax
@@ -2446,7 +2446,7 @@ you update your ports collection, before attempting any port upgrades.
   shared library dependencies.
 
 20240509:
-  AFFECTS: databases/timescaledb
+  AFFECTS: users of databases/timescaledb
   AUTHOR: kbowling@FreeBSD.org
 
   The Foreign Key storage in hypertables has changed in an incompatible way,
@@ -2458,7 +2458,7 @@ you update your ports collection, before attempting any port upgrades.
   https://github.com/timescale/timescaledb/pull/6797
 
 20240508:
-  AFFECTS: www/oauth2-proxy
+  AFFECTS: users of www/oauth2-proxy
   AUTHOR: netchild@FreeBSD.org
 
   The start script is converted to be instance aware.  To use it:
@@ -2473,7 +2473,7 @@ you update your ports collection, before attempting any port upgrades.
   affects manual restarts, no change in rc.conf is needed.
 
 20240430:
-  AFFECTS: audio/py-pyradio
+  AFFECTS: users of audio/py-pyradio
   AUTHOR: nivit@FreeBSD.org
 
   The new version of Pyradio moves some data files to new locations.
@@ -2486,14 +2486,14 @@ you update your ports collection, before attempting any port upgrades.
   https://github.com/coderholic/pyradio/releases/tag/0.9.3
 
 20240423:
-  AFFECTS: textproc/vale
+  AFFECTS: users of textproc/vale
   AUTHOR: bofh@FreeBSD.org
 
   When upgrading to v3.0.0, the vocabularies need to be moved from
   $StylesPath/Vocab to $StylesPath/config/vocabularies.
 
 20240421:
-  AFFECTS: www/gitlab-ce
+  AFFECTS: users of www/gitlab-ce
   AUTHOR: mfechner@FreeBSD.org
 
   With the upgrade to version 16.11 the default path for gitlab-ce changed:
@@ -2769,7 +2769,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20231011:
   AFFECTS: users of www/caddy
-  AUTHOR:  adamw@FreeBSD.org
+  AUTHOR: adamw@FreeBSD.org
 
   The default admin endpoint has changed from localhost:2019 to
   /var/run/caddy/caddy.sock. Using a Unix socket is more secure,
@@ -2792,8 +2792,8 @@ you update your ports collection, before attempting any port upgrades.
   documentation for details. Configuration will not automatically migrate.
 
 20231004:
-  AFFECTS: www/gitlab-ce
-  AUTHOR:  mfechner@FreeBSD.org
+  AFFECTS: users of www/gitlab-ce
+  AUTHOR: mfechner@FreeBSD.org
 
   Before you upgrade to version 16.4.x or higher, make sure you did the
   upgrade to 16.3.x!
@@ -2808,7 +2808,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20230930:
   AFFECTS: users of Transmission (net-p2p/transmission@*)
-  AUTHOR:  mondo.debater_0q@icloud.com
+  AUTHOR: mondo.debater_0q@icloud.com
 
   Fixes Bug 274065 by reorganizing the port as a metaport
   (net-p2p/transmission) and components port (net-p2p/transmission-components).
@@ -2844,7 +2844,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20230919:
   AFFECTS: users of net-p2p/transmission
-  AUTHOR:  mondo.debater_0q@icloud.com
+  AUTHOR: mondo.debater_0q@icloud.com
 
   The 4.0 port haphazardly consolidated prior slave ports into flavors of a single port.
   The flavors have now been revised to better match releases prior to 4.0.
@@ -3025,7 +3025,7 @@ you update your ports collection, before attempting any port upgrades.
     # portupgrade -o databases/redis70 databases/redis
 
 20230814:
-  AFFECTS: usrs of www/kdsoap
+  AFFECTS: users of www/kdsoap
   AUTHOR: kde@FreeBSD.org
 
   The port www/kdsoap has been flavorized to support both Qt5 and Qt6.
@@ -3121,7 +3121,7 @@ you update your ports collection, before attempting any port upgrades.
   indicating the path to data directory used by soft-serve.
 
 20230618:
-  AFFECTS: textproc/apache-solr*
+  AFFECTS: users of textproc/apache-solr*
   AUTHOR: mfechner@FreeBSD.org
 
   Apache solr is upgraded to version 9.
@@ -3401,7 +3401,7 @@ you update your ports collection, before attempting any port upgrades.
   stopped)
 
 20230310:
-  AFFECTS: user of benchmarks/ddosify
+  AFFECTS: users of benchmarks/ddosify
   AUTHOR: fernape@FreeBSD.org
 
   keep-alive is removed from config file. In default mode, the engine will use
@@ -3632,7 +3632,7 @@ you update your ports collection, before attempting any port upgrades.
   and then rebuild and reinstall ClamAV. The problem should disappear.
 
 20221128:
-  AFFECTS: devel/py-proxmoxer
+  AFFECTS: users of devel/py-proxmoxer
   AUTHOR: einar@isnic.is
 
   AuthenticationError Moved
@@ -3655,7 +3655,7 @@ you update your ports collection, before attempting any port upgrades.
   a new token and CSRF token.
 
 20221126:
-  AFFECTS: textproc/kibana8
+  AFFECTS: users of textproc/kibana8
   AUTHOR: otis@FreeBSD.org
 
   kibana8 now installs kibana-specific utilities into LOCALBASE/bin as symbolic
@@ -3666,7 +3666,7 @@ you update your ports collection, before attempting any port upgrades.
   different manner.
 
 20221126:
-  AFFECTS: textproc/elasticsearch8
+  AFFECTS: users of textproc/elasticsearch8
   AUTHOR: otis@FreeBSD.org
 
   elasticsearch8 now installs elasticsearch-specific utilities into
@@ -3693,7 +3693,7 @@ you update your ports collection, before attempting any port upgrades.
   If you use mod_php80 you need to deinstall it and install mod_php81.
 
 20221123:
-  AFFECTS: x11-wm/jwm
+  AFFECTS: users of x11-wm/jwm
   AUTHOR: fernape@FreeBSD.org
 
   jwm 2.4 introduces changes in the configuration.  To convert an existing v2.3
@@ -3707,14 +3707,14 @@ you update your ports collection, before attempting any port upgrades.
   in the file.
 
 20221017:
-  AFFECTS: archivers/star
+  AFFECTS: users of archivers/star
   AUTHOR: fernape@FreeBSD.org
 
   With the update of devel/schilybase to 2022-10-16 a new port archivers/tartest
   has been splitted off from archivers/star.
 
 20221016:
-  AFFECTS: textproc/apache-solr
+  AFFECTS: users of textproc/apache-solr
   AUTHOR: mfechner@FreeBSD.org
 
   Apache solr version 9 is released and made available as extra port
@@ -3743,7 +3743,7 @@ you update your ports collection, before attempting any port upgrades.
   is needed.
 
 20221012:
-  AFFECTS: devel/websvn
+  AFFECTS: users of devel/websvn
   AUTHOR: michael.osipov@siemens.com
 
   WebSVN 2.8.0 includes full PHP 8.x support which requires a change from PEAR
@@ -4125,7 +4125,7 @@ you update your ports collection, before attempting any port upgrades.
   4. Please also check the pkg-message and the changelogs for further info.
 
 20220608:
-  AFFECTS: devel/autoconf-wrapper, devel/autoconf213
+  AFFECTS: users of devel/autoconf-wrapper, devel/autoconf213
   AUTHOR: tijl@FreeBSD.org
 
   These ports have been renamed to devel/autoconf-switch and devel/autoconf2.13
@@ -4133,14 +4133,14 @@ you update your ports collection, before attempting any port upgrades.
   just remove the packages with "pkg delete" and then install the new port.
 
 20220607:
-  AFFECTS: security/openssh-portable
+  AFFECTS: users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
 
   OpenSSH has been updated to 9.0p1 with incompatible changes.
   See https://www.openssh.com/txt/release-9.0 for details.
 
 20220602:
-  AFFECTS: sysutils/graylog
+  AFFECTS: users of sysutils/graylog
   AUTHOR: dch@FreeBSD.org
 
   Graylog 4.3.0+ fails to start if graylog's internal collector for
@@ -4150,7 +4150,7 @@ you update your ports collection, before attempting any port upgrades.
   Add disable_native_system_stats_collector=true to your graylog.conf.
 
 20220513:
-  AFFECTS: devel/nexus2-oss
+  AFFECTS: users of devel/nexus2-oss
   AUTHOR: michael.osipov@siemens.com
 
   Nexus 2.15.x introduces incompatible configuration changes. You
@@ -4163,7 +4163,7 @@ you update your ports collection, before attempting any port upgrades.
   work after the update.
 
 20220510
-  AFFECTS: sysutils/zrepl
+  AFFECTS: users of sysutils/zrepl
   AUTHOR: monwarez@gmail.com
 
   The zrepl update to 0.5.0.8 includes the following breaking changes:
@@ -4173,7 +4173,7 @@ you update your ports collection, before attempting any port upgrades.
   The Grafana dashboard in zrepl examples directory has been updated.
 
 20220502:
-  AFFECTS: mail/mutt
+  AFFECTS: users of mail/mutt
   AUTHOR: dereks@lifeofadishwasher.com
 
   Default header cache option has been changed to the new option LMDB using
@@ -4317,7 +4317,7 @@ you update your ports collection, before attempting any port upgrades.
   too much astonishment among users of screen.
 
 20220401:
-  AFFECTS: security/sshguard
+  AFFECTS: users of security/sshguard
   AUTHOR: kevinz5000@gmail.com
 
   Blacklisting is now disabled by default to avoid overriding the setting in
@@ -4679,7 +4679,7 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster emulators/qemu5@nox11
 
 20211115:
-  AFFECTS: AFFECTS: users of *-emacs2x-* packages
+  AFFECTS: users of *-emacs2x-* packages
   AUTHOR: jrm@FreeBSD.org
 
   To avoid problems when editors/emacs or editors/emacs-devel are
@@ -4801,7 +4801,7 @@ you update your ports collection, before attempting any port upgrades.
   i.e. redisearch20.so, so be careful.
 
 20211024:
-  AFFECTS: sysutils/beats7
+  AFFECTS: users of sysutils/beats7
   AUTHOR: otis@FreeBSD.org
 
   The following breaking changes apply to beats 7.15.0 and newer:
@@ -4938,7 +4938,7 @@ you update your ports collection, before attempting any port upgrades.
   geany-plugin-multiterm-gtk2 package should be removed from the system.
 
 20211007:
-  AFFECTS: user of security/clamav
+  AFFECTS: users of security/clamav
   AUTHOR: yasu@FreeBSD.org
 
   Upstream changed end-of-life policy and introduced long time support
@@ -5028,7 +5028,7 @@ reinstall the new ones without using the pkg upgrade facility.
         pkg set -o www/py-pyjwt:www/py-pyjwt1
 
 20210912:
-  AFFECTS: x11-wm/cage, x11-wm/hikari, x11-wm/labwc, x11-wm/sway, x11-wm/wayfire
+  AFFECTS: users of x11-wm/cage, x11-wm/hikari, x11-wm/labwc, x11-wm/sway, x11-wm/wayfire
   AUTHOR: jbeich@FreeBSD.org
 
   SUID option has been removed in favor of seatd-launch(1) which doesn't
@@ -5181,7 +5181,7 @@ reinstall the new ones without using the pkg upgrade facility.
 
 20210730:
   AFFECTS: users of multimedia/mlt, multimedia/mlt-qt and multimedia/py-mlt
-  AUTHOR:  kde@FreeBSD.org
+  AUTHOR: kde@FreeBSD.org
 
   multimedia/{py-,}mlt{-qt5,} has been moved to multimedia/{py-,}mlt6{-qt5,}
   to make room for importin the next major version of the mlt framework.
@@ -5375,7 +5375,7 @@ reinstall the new ones without using the pkg upgrade facility.
   https://nodejs.org/en/blog/release/v16.0.0/
 
 20210416:
-  AFFECTS: Users of shells/bash, shells/bash-static with PORTS_READLINE=off
+  AFFECTS: users of shells/bash, shells/bash-static with PORTS_READLINE=off
   AUTHOR: olce.freebsd@certner.fr
 
   Bundled readline now will use LOCALBASE/etc/inputrc as its ultimate default
@@ -5407,7 +5407,7 @@ reinstall the new ones without using the pkg upgrade facility.
   https://github.com/AcademySoftwareFoundation/Imath/blob/v3.0.1/docs/PortingGuide2-3.md
 
 20210411:
-  AFFECTS: users or devel/py-RPyC
+  AFFECTS: users of devel/py-RPyC
   AUTHOR: skozlov@FreeBSD.org
 
   devel/py-RPyC has been updated to version 5.0.1, which have some
