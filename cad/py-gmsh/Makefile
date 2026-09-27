@@ -9,10 +9,13 @@ DIST_SUBDIR=	gmsh
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Automatic 3D finite element mesh generator (gmsh's own binding)
-WWW=		https://gmsh.info/
+WWW=		https://gmsh.info/ \
+		https://github.com/sasobadovinac/gmsh
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
+
+BROKEN_i386=	fails to compile: error: no matching constructor for initialization of 'Mesquite2::ArrayMesh'
 
 BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libmmg.so:science/mmg \
