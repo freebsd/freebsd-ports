@@ -1,0 +1,2 @@
+bigmemory.sri provides a shared resource interface for the bigmemory
+and synchronicity packages in R.
