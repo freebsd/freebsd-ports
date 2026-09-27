@@ -24,11 +24,19 @@ CONFIGURE_ENV=	MPI_HOME="${MPI_HOME}"
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	OPENMPI STATIC
+OPTIONS_DEFINE_amd64=	LONGINDEX
+OPTIONS_DEFINE_aarch64=	LONGINDEX
+OPTIONS_DEFINE_powerpc64=LONGINDEX
+OPTIONS_DEFINE_powerpc64le=LONGINDEX
+OPTIONS_DEFINE_riscv64=	LONGINDEX
+
+LONGINDEX_DESC=	set indexes to 64 bits
 OPENMPI_DESC=	Use OpenMPI instead of MPICH
 OPTIONS_SUB=	yes
 
-OPENMPI_USES=			mpi:openmpi
-OPENMPI_USES_OFF=		mpi
+LONGINDEX_CMAKE_BOOL=	METIS_USE_LONGINDEX
+OPENMPI_USES=		mpi:openmpi
+OPENMPI_USES_OFF=	mpi
 
 STATIC_DESC=			Do not build and install shared library
 STATIC_VARS_OFF=		SH_FLAG="shared=1"
@@ -42,10 +50,6 @@ METIS_WRKSRC=	${MAKE} -C ${PORTSDIR}/math/metis -VWRKSRC
 CFLAGS+=	-fPIC
 
 .include <bsd.port.options.mk>
-
-.if ((${ARCH}=="amd64") || (${ARCH}=="aarch64") || (${ARCH}=="ppc64"))
-CFLAGS+=	-DMETIS_USE_LONGINDEX
-.endif
 
 pre-configure:
 	@${MKDIR} ${WRKSRC}/metis
