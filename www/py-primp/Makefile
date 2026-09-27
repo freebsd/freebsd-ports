@@ -1,7 +1,6 @@
 PORTNAME=	primp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
-PORTREVISION=	1
+DISTVERSION=	2.0.1
 CATEGORIES=	www
 #MASTER_SITES=	PYPI # conflicts with USES=cargo
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,6 +38,6 @@ TEST_ENV=	${MAKE_ENV} \
 TEST_ARGS=	--disable-plugin-autoload -p asyncio
 TEST_WRKSRC=	${WRKSRC}/tests
 
-# tests as of 2.0.0: 483 passed in 21.04s
+# tests as of 2.0.1: 493 passed in 18.00s
 
 .include <bsd.port.mk>
