@@ -142,7 +142,6 @@ include/Magnum/MeshTools/Filter.h
 include/Magnum/MeshTools/FilterAttributes.h
 include/Magnum/MeshTools/FlipNormals.h
 include/Magnum/MeshTools/FullScreenTriangle.h
-include/Magnum/MeshTools/GenerateFlatNormals.h
 include/Magnum/MeshTools/GenerateIndices.h
 include/Magnum/MeshTools/GenerateLines.h
 include/Magnum/MeshTools/GenerateNormals.h
@@ -166,6 +165,7 @@ include/Magnum/Platform/ScreenedApplication.h
 include/Magnum/Platform/ScreenedApplication.hpp
 %%SDL2%%include/Magnum/Platform/Sdl2Application.h
 %%XEGL%%include/Magnum/Platform/XEglApplication.h
+include/Magnum/Primitives/Arrow.h
 include/Magnum/Primitives/Axis.h
 include/Magnum/Primitives/Capsule.h
 include/Magnum/Primitives/Circle.h
@@ -265,12 +265,14 @@ include/Magnum/Text/Feature.h
 include/Magnum/Text/GlyphCache.h
 include/Magnum/Text/GlyphCacheGL.h
 include/Magnum/Text/Renderer.h
+include/Magnum/Text/RendererGL.h
 include/Magnum/Text/Script.h
 include/Magnum/Text/Text.h
 include/Magnum/Text/visibility.h
 include/Magnum/TextureTools/Atlas.h
 include/Magnum/TextureTools/DistanceField.h
 include/Magnum/TextureTools/DistanceFieldGL.h
+include/Magnum/TextureTools/Sample.h
 include/Magnum/TextureTools/TextureTools.h
 include/Magnum/TextureTools/visibility.h
 include/Magnum/Timeline.h
