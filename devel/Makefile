@@ -18,6 +18,7 @@
     SUBDIR += R-cran-S7
     SUBDIR += R-cran-TH.data
     SUBDIR += R-cran-abind
+    SUBDIR += R-cran-bigmemory
     SUBDIR += R-cran-bigmemory.sri
     SUBDIR += R-cran-bindr
     SUBDIR += R-cran-bindrcpp
