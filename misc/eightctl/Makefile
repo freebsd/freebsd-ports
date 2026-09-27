@@ -1,6 +1,6 @@
 PORTNAME=	eightctl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.5
+DISTVERSION=	0.2.8
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,11 +21,5 @@ GO_MODULE=	github.com/steipete/eightctl
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
-
-xpost-extract:
-	@${RM} -r ${WRKSRC}/vendor/github.com/charmbracelet/x/ansi
-	@${RLN} ${WRKSRC_charmbracelet_x_ansi}/ansi ${WRKSRC}/vendor/github.com/charmbracelet/x/ansi
-	@${RM} -r ${WRKSRC}/vendor/github.com/charmbracelet/x/cellbuf
-	@${RLN} ${WRKSRC_charmbracelet_x_cellbuf}/cellbuf ${WRKSRC}/vendor/github.com/charmbracelet/x/cellbuf
 
 .include <bsd.port.mk>
