@@ -1,5 +1,7 @@
-TIMESTAMP = 1620961880
-SHA256 (libstudxml-e729667.tar.gz) = 323ea20c8d2005026e7ebe679252b7f3e37216958e716cad05a7feb54865ae64
-SIZE (libstudxml-e729667.tar.gz) = 145586
-SHA256 (tfussell-xlnt-v1.5.0-92-g20f3dac2_GH0.tar.gz) = 6105f00200e45ab35f526e8a4f991192c6f5a21570b631da7a60ac4eea659215
-SIZE (tfussell-xlnt-v1.5.0-92-g20f3dac2_GH0.tar.gz) = 3736093
+TIMESTAMP = 1790474362
+SHA256 (libstudxml-4b801ce48b65cc12972b3a817024541614b03395.tar.gz) = 026dbc153ec98ac7176e69a09cfddd436fbb9013c52f9fcc50bc54946303386d
+SIZE (libstudxml-4b801ce48b65cc12972b3a817024541614b03395.tar.gz) = 150309
+SHA256 (xlnt-community-xlnt-v1.6.1_GH0.tar.gz) = ec1802f1eb8216294599764b91df25c093733520f1028721a6b17eab1364026e
+SIZE (xlnt-community-xlnt-v1.6.1_GH0.tar.gz) = 3699727
+SHA256 (nemtrif-utfcpp-6be08bb_GH0.tar.gz) = c04f72d1580efab4156faed36fa2037435937d53d4f556ffc6784ef5ea21044f
+SIZE (nemtrif-utfcpp-6be08bb_GH0.tar.gz) = 34136

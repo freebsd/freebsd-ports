@@ -1,34 +1,37 @@
 PORTNAME=	xlnt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0-92
-DISTVERSIONSUFFIX=	-g20f3dac2
-PORTREVISION=	1
+DISTVERSION=	1.6.1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ xlsx library for reading/writing/manipulating spreadsheets
-WWW=		https://github.com/tfussell/xlnt
+WWW=		https://xlnt-community.gitbook.io/xlnt \
+		https://github.com/xlnt-community/xlnt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 FETCH_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		git:devel/git
+BUILD_DEPENDS=	fast_float>0:math/fast_float
+LIB_DEPENDS=	libfmt.so:devel/libfmt
 
-USES=		cmake compiler:c++14-lang
+USES=		cmake:testing compiler:c++14-lang localbase
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	tfussell
+GH_ACCOUNT=	xlnt-community
+GH_TUPLE=	nemtrif:utfcpp:6be08bb:utfcpp/third-party/utfcpp
 
 CMAKE_OFF=	TESTS
+CMAKE_TESTING_ON=	TESTS
 
 LIBSTUDXML_NAME=	libstudxml
 LIBSTUDXML_GIT_URL=	https://git.codesynthesis.com/libstudxml/libstudxml.git
-LIBSTUDXML_REV=		e729667
+LIBSTUDXML_REV=		4b801ce48b65cc12972b3a817024541614b03395
 
 DISTFILES=	${LIBSTUDXML_NAME}-${LIBSTUDXML_REV}${EXTRACT_SUFX}
 
-pre-fetch:
+pre-fetch: # fetch from the git repository
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${LIBSTUDXML_NAME}-${LIBSTUDXML_REV}${EXTRACT_SUFX}" ]; then \
 	  ${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
 	  cd ${DISTDIR}/${DIST_SUBDIR} && \
@@ -43,10 +46,6 @@ pre-fetch:
 post-extract:
 	@${RLN} ${WRKDIR}/${LIBSTUDXML_NAME}-${LIBSTUDXML_REV}/libstudxml ${WRKSRC}/third-party/libstudxml/libstudxml
 
-do-test:
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DTESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+# tests as of 1.6.1: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
