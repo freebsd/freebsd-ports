@@ -1,11 +1,11 @@
 PORTNAME=	magic
-DISTVERSION=	8.3.680
+DISTVERSION=	8.3.684
 CATEGORIES=	cad
-MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
+MASTER_SITES=	https://opencircuitdesign.com/magic/archive/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Interactive editor for VLSI layouts
-WWW=		http://opencircuitdesign.com/magic/
+WWW=		https://opencircuitdesign.com/magic/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
