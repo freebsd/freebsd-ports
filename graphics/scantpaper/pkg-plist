@@ -37,6 +37,8 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/entry_completion%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/file_menu_mixins%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/file_menu_mixins%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/gobject%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/gobject%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/helpers%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/helpers%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/i18n%%PYTHON_TAG%%.opt-1.pyc
@@ -122,6 +124,7 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/frontend/__pycache__/image_sane%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/frontend/enums.py
 %%PYTHON_SITELIBDIR%%/scantpaper/frontend/image_sane.py
+%%PYTHON_SITELIBDIR%%/scantpaper/gobject.py
 %%PYTHON_SITELIBDIR%%/scantpaper/helpers.py
 %%PYTHON_SITELIBDIR%%/scantpaper/i18n.py
 %%PYTHON_SITELIBDIR%%/scantpaper/imageview.py
@@ -162,6 +165,8 @@ share/icons/hicolor/scalable/apps/stock-rotate-180.svg
 share/icons/hicolor/scalable/apps/stock-rotate-270.svg
 share/icons/hicolor/scalable/apps/stock-rotate-90.svg
 share/locale/ab/LC_MESSAGES/scantpaper.mo
+share/locale/af/LC_MESSAGES/scantpaper.mo
+share/locale/ar/LC_MESSAGES/scantpaper.mo
 share/locale/be/LC_MESSAGES/scantpaper.mo
 share/locale/bg/LC_MESSAGES/scantpaper.mo
 share/locale/ca/LC_MESSAGES/scantpaper.mo
@@ -179,8 +184,10 @@ share/locale/fr/LC_MESSAGES/scantpaper.mo
 share/locale/gl/LC_MESSAGES/scantpaper.mo
 share/locale/gu/LC_MESSAGES/scantpaper.mo
 share/locale/he/LC_MESSAGES/scantpaper.mo
+share/locale/hi/LC_MESSAGES/scantpaper.mo
 share/locale/hr/LC_MESSAGES/scantpaper.mo
 share/locale/hu/LC_MESSAGES/scantpaper.mo
+share/locale/id/LC_MESSAGES/scantpaper.mo
 share/locale/it/LC_MESSAGES/scantpaper.mo
 share/locale/ja/LC_MESSAGES/scantpaper.mo
 share/locale/ko/LC_MESSAGES/scantpaper.mo
@@ -190,11 +197,14 @@ share/locale/oc/LC_MESSAGES/scantpaper.mo
 share/locale/pl/LC_MESSAGES/scantpaper.mo
 share/locale/pt/LC_MESSAGES/scantpaper.mo
 share/locale/pt_BR/LC_MESSAGES/scantpaper.mo
+share/locale/ro/LC_MESSAGES/scantpaper.mo
 share/locale/ru/LC_MESSAGES/scantpaper.mo
 share/locale/sk/LC_MESSAGES/scantpaper.mo
 share/locale/sl/LC_MESSAGES/scantpaper.mo
+share/locale/sr/LC_MESSAGES/scantpaper.mo
 share/locale/sv/LC_MESSAGES/scantpaper.mo
 share/locale/tr/LC_MESSAGES/scantpaper.mo
 share/locale/uk/LC_MESSAGES/scantpaper.mo
+share/locale/vi/LC_MESSAGES/scantpaper.mo
 share/locale/zh_CN/LC_MESSAGES/scantpaper.mo
 share/locale/zh_TW/LC_MESSAGES/scantpaper.mo
