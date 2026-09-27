@@ -9,6 +9,7 @@ include/redkite/RkContainerItem.h
 include/redkite/RkContainerWidgetItem.h
 include/redkite/RkEvent.h
 include/redkite/RkEventQueue.h
+include/redkite/RkFlowContainer.h
 include/redkite/RkFont.h
 include/redkite/RkImage.h
 include/redkite/RkLabel.h
@@ -26,10 +27,11 @@ include/redkite/RkPoint.h
 include/redkite/RkProgressBar.h
 include/redkite/RkRealPoint.h
 include/redkite/RkRect.h
+include/redkite/RkScroolbar.h
 include/redkite/RkSize.h
+include/redkite/RkSpinBox.h
 include/redkite/RkTimer.h
 include/redkite/RkTransition.h
 include/redkite/RkVariant.h
 include/redkite/RkWidget.h
-lib/libredkite.a
-share/man/man1/rkpng2c.1.gz
+lib/libredkite.so
