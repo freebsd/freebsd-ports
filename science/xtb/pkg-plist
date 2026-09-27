@@ -1,6 +1,8 @@
 bin/xtb
 include/xtb.h
+lib/cmake/xtb/Findcpcmx.cmake
 lib/cmake/xtb/Findmctc-lib.cmake
+lib/cmake/xtb/Findtblite.cmake
 lib/cmake/xtb/Findtest-drive.cmake
 lib/cmake/xtb/xtb-config-version.cmake
 lib/cmake/xtb/xtb-config.cmake
@@ -10,7 +12,7 @@ lib/cmake/xtb/xtb-utils.cmake
 lib/libxtb.a
 lib/libxtb.so
 lib/libxtb.so.6
-lib/libxtb.so.6.5.1
+lib/libxtb.so.6.7.1
 %%DATADIR%%/.param_gfnff.xtb
 %%DATADIR%%/param_gfn0-xtb.txt
 %%DATADIR%%/param_gfn1-si-xtb.txt
