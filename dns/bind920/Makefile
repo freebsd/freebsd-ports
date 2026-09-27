@@ -189,7 +189,7 @@ CONFIGURE_ENV+=	ac_cv_path_SPHINX_BUILD=
 .endif
 
 .if ${OSREL:R} >= 15 && ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
-BROKEN=	Does not build
+BROKEN=		Does not build
 .endif
 
 .include <bsd.port.pre.mk>

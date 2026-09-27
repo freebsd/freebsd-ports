@@ -241,7 +241,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "########################################"
 # No need to make me, or the package builders, wait
-.if !(defined(PACKAGE_BUILDING) || defined(PERL_DEV_SHUT_UP) || defined(BATCH))
+.if !(defined(PACKAGE_BUILDING) || defined(PERL_DEV_SHUT_UP) || \
+	defined(BATCH))
 	@sleep 30
 .endif
 
