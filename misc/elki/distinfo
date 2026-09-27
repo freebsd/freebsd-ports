@@ -1,5 +1,5 @@
-TIMESTAMP = 1548234819
-SHA256 (elki-0.7.1-1166-deps.tar.gz) = 67eb3b3d3c1b53b20f3bd47f45ea4fe523e6498f8d428f251105008a7bfb98c9
-SIZE (elki-0.7.1-1166-deps.tar.gz) = 40980776
-SHA256 (elki-project-elki-release0.7.1-1166-gfb1fffdf3_GH0.tar.gz) = 50e27a993c6a82b45fd6b179c77115fc6d233990826abdcc982a338b50ae4911
-SIZE (elki-project-elki-release0.7.1-1166-gfb1fffdf3_GH0.tar.gz) = 4909717
+TIMESTAMP = 1790483428
+SHA256 (elki-0.8.0-deps.tar.gz) = 1b6ec21a49d1576d9c44c77f7dbc6917503c6be391db84e821709e26c67674b9
+SIZE (elki-0.8.0-deps.tar.gz) = 64072451
+SHA256 (elki-project-elki-release0.8.0_GH0.tar.gz) = 32e139171c9f53317b716d5e6c214ca9b50725b638eeeec1a334ff3127f875ee
+SIZE (elki-project-elki-release0.8.0_GH0.tar.gz) = 5680292
