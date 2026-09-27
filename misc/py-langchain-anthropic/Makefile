@@ -1,5 +1,5 @@
 PORTNAME=	langchain-anthropic
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.4
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,6 +43,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 # conflict with the installed ruff version in the package build environment.
 TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests
 
-# tests as of 1.7.1: 327 passed, 29 warnings in 8.60s
+# tests as of 1.7.4: 406 passed, 7 warnings in 4.48s
 
 .include <bsd.port.mk>
