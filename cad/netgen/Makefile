@@ -24,7 +24,6 @@ NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON_i386=	unsupported CPU architecture
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pybind11-stubgen>0:devel/py-pybind11-stubgen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		git:devel/git
 
