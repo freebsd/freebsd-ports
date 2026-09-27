@@ -1,5 +1,5 @@
 PORTNAME=	langchain-openai
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.6
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -41,6 +41,6 @@ NO_ARCH=	yes
 # Integration tests need an OpenAI API key and network access.
 TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests
 
-# tests as of 1.6.0: 592 passed, 1 skipped, 5 xpassed, 37 warnings in 19.88s
+# tests as of 1.6.6: 664 passed, 1 skipped, 5 xpassed, 9 warnings in 7.08s
 
 .include <bsd.port.mk>
