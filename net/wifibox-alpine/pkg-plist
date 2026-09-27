@@ -14,9 +14,8 @@
 %%XX_FORWARDING%%@sample(,,640) etc/wifibox/appliance/forwarding.conf.sample
 etc/wifibox/app_config
 share/man/man5/wifibox-alpine.5.gz
-share/wifibox/disk.img
-share/wifibox/grub.cfg
-share/wifibox/vmlinuz
+share/wifibox/esp.img
+share/wifibox/root.img
 /var/run/wifibox/appliance/lock
 /var/run/wifibox/appliance/run
 /var/run/wifibox/appliance/spool/cron/crontabs

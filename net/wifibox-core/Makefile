@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-core
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 
-RUN_DEPENDS=	grub2-bhyve>0:sysutils/grub2-bhyve
+RUN_DEPENDS=	bhyve-firmware>0:sysutils/bhyve-firmware
 
 OPTIONS_SINGLE=			RECOVERY
 OPTIONS_SINGLE_RECOVERY=	RECOVER_RESTART_VMM \
@@ -36,7 +36,6 @@ NO_BUILD=	yes
 MAKE_ARGS+=	GUEST_ROOT=${LOCALBASE}/share/wifibox \
 		GUEST_MAN=${LOCALBASE}/share/man/man5/wifibox-alpine.5.gz \
 		VERSION=${PORTVERSION} \
-		RECOVERY_METHOD=${PORT_OPTIONS:MRECOVER_*:S/RECOVER_//:tl} \
-		DEVD_FIX=
+		RECOVERY_METHOD=${PORT_OPTIONS:MRECOVER_*:S/RECOVER_//:tl}
 
 .include <bsd.port.mk>
