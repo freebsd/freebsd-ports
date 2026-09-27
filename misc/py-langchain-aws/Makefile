@@ -1,5 +1,5 @@
 PORTNAME=	langchain-aws
-DISTVERSION=	1.7.5
+DISTVERSION=	1.7.9
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -47,6 +47,6 @@ TEST_ARGS=	--deselect=tests/unit_tests/chat_models/test_bedrock_converse.py::tes
 		--deselect=tests/unit_tests/test_utils.py::test_bedrock_api_key_provider_profile_resolution \
 		--deselect=tests/unit_tests/test_utils.py::test_bedrock_api_key_provider_generates_and_caches
 
-# tests as of 1.7.5: 1157 passed, 5 skipped, 1 xpassed, 30 warnings in 17.55s
+# tests as of 1.7.9: 1260 passed, 6 skipped, 10 deselected, 1 xpassed, 5 warnings in 16.32s
 
 .include <bsd.port.mk>
