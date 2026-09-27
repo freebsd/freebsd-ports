@@ -1,8 +1,7 @@
 PORTNAME=	magnum-plugins
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.06-1526
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-gffc92bcd
+DISTVERSION=	2020.06-1800
+DISTVERSIONSUFFIX=	-g2cabc97e
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +25,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
-GH_TUPLE=	mosra:toolchains:fc22ff5:t/toolchains
+GH_TUPLE=	mosra:toolchains:fa282e8:t/toolchains
 
 CMAKE_ARGS=	-DLIB_SUFFIX:STRING=""
 
