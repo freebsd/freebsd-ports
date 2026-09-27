@@ -1,5 +1,6 @@
 PORTNAME=	PETSc
 DISTVERSION=	3.25.5
+PORTREVISION=	1
 CATEGORIES=	science devel
 MASTER_SITES=	https://web.cels.anl.gov/projects/petsc/download/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -36,9 +37,6 @@ CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		MAKEFLAGS="${MAKEFLAGS}" LDFLAGS="${LDFLAGS}" LIBS=""
 CONFIGURE_ARGS_amd64=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
 CONFIGURE_ARGS_i386=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
-.if ${XARCH:M*64*} # match IDXTYPEWIDTH being set to 64 in math/metis
-CONFIGURE_ARGS+=	--with-64-bit-indices # as opposed to 32-bit indices that are default
-.endif
 
 MAKEFILE=	makefile
 TEST_TARGET=	test # 152 of 11396 tests (1.3%) fail due to missing files like /usr/local/share/petsc/datafiles/meshes/square_periodic.msh (tests expect the packe to be installed)
@@ -51,10 +49,18 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 PLIST_SUB=	SHLIB=${DISTVERSION} SHL=${DISTVERSION:C/\.[0-9]$//}
 
 OPTIONS_DEFINE=		METIS
+# LONGINDEX match IDXTYPEWIDTH being set to 64 in math/metis
+OPTIONS_DEFINE_amd64=	LONGINDEX
+OPTIONS_DEFINE_aarch64=	LONGINDEX
+OPTIONS_DEFINE_powerpc64=LONGINDEX
+OPTIONS_DEFINE_powerpc64le=LONGINDEX
+OPTIONS_DEFINE_riscv64=	LONGINDEX
 OPTIONS_DEFAULT=	METIS
 
-METIS_DESC=		Enable metis support for graph partitioning algorithms
+LONGINDEX_DESC=	Set indexes to 64 bits
+METIS_DESC=	Enable metis support for graph partitioning algorithms
 
+LONGINDEX_CONFIGURE_ON=	--with-64-bit-indices # as opposed to 32-bit indices that are default
 METIS_LIB_DEPENDS=	libmetis.so:math/metis
 METIS_CONFIGURE_ON=	--with-metis=1 # --with-parmetis=1 to use include/parmetis.h
 
