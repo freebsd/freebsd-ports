@@ -2,7 +2,7 @@ PORTNAME=	spass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2-5
 DISTVERSIONSUFFIX=	-gd38d173
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,6 +11,9 @@ WWW=		https://www.guyrutenberg.com/2010/08/13/statistical-tests-for-my-audio-bas
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
