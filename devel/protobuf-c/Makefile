@@ -1,6 +1,5 @@
 PORTNAME=	protobuf-c
-DISTVERSION=	1.5.1
-PORTREVISION=	4
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/protobuf-c/protobuf-c/releases/download/v${DISTVERSION}/
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
 
-USES=		compiler:c++17-lang cpe gmake libtool pkgconfig
+USES=		autoreconf compiler:c++17-lang cpe gmake libtool pkgconfig
 CPE_VENDOR=	protobuf-c_project
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
