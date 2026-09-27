@@ -1,9 +1,10 @@
 PORTNAME=	linux_libusb
 PORTVERSION=	13.1.0
+PORTREVISION=	1
 CATEGORIES=	devel linux
 PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux-compatibility LibUSB
 WWW=		https://github.com/hselasky/linux_libusb
 
@@ -32,7 +33,7 @@ PLIST_FILES=	usr/${LIBDIR_${ARCH}}/libusb.so.3 \
 		usr/${LIBDIR_${ARCH}}/libusb-0.1.so.4 \
 		usr/${LIBDIR_${ARCH}}/libusb-1.0.so.0
 
-CC=		${LINUXBASE}/usr/bin/gcc --sysroot=${LINUXBASE}
+CC=		${LINUXBASE}/usr/bin/gcc --sysroot=${LINUXBASE} -B${LINUXBASE}/usr/bin/
 CFLAGS:=	${CFLAGS:N-march=*}
 CFLAGS+=	-I${WRKDIR}/${DISTNAME}/include
 SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
