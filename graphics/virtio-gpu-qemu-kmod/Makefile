@@ -1,6 +1,7 @@
 PORTNAME=	virtio-gpu-qemu-kmod
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	tiga@FreeBSD.org
@@ -27,5 +28,10 @@ PLIST_FILES=	${KMODDIR}/virtio_gpu_qemu.ko \
 		share/examples/virtio_gpu_qemu/loader.conf.sample \
 		share/man/man4/virtio_gpu_qemu.4.gz \
 		share/X11/xorg.conf.d/20-virtio-gpu-qemu.conf
+
+.include <bsd.port.options.mk>
+.if (${OSVERSION} < 1500000)
+IGNORE=		is for FreeBSD 15.x and newer
+.endif
 
 .include <bsd.port.mk>
