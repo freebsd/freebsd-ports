@@ -1,5 +1,5 @@
 PORTNAME=	scikit-bio
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
 CATEGORIES=	biology education python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,6 +38,8 @@ USES=		python
 USE_PYTHON=	pep517 cython autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		MPLBACKEND=Agg \
+		QT_QPA_PLATFORM=offscreen \
 		PYTEST_ADDOPTS="-p no:black -p no:ruff -p no:mypy -p no:mypy-plugins -p no:flake8 -p no:cov -p no:benchmark -p no:inline-snapshot -p no:xdist -p no:randomly"
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}ddtrace # lib/python3.8/site-packages/benchmarks/__init__.py
@@ -58,6 +60,6 @@ do-test: # tests fail to run in a regular way, see https://github.com/biocore/sc
 	@cd ${STAGEDIR}${PYTHON_SITELIBDIR} && \
 		${SETENV} ${TEST_ENV} pytest .
 
-# tests as of 0.7.3: 3463 passed, 15 skipped in 70.28s (0:01:10)
+# tests as of 0.7.4: 3740 passed, 22 skipped
 
 .include <bsd.port.mk>
