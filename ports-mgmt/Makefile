@@ -25,6 +25,7 @@
     SUBDIR += pchecker
     SUBDIR += pkg
     SUBDIR += pkg-appstream
+    SUBDIR += pkg-be-plugin
     SUBDIR += pkg-devel
     SUBDIR += pkg-graph
     SUBDIR += pkg-provides

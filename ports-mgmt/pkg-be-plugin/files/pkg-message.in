@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+pkg(8) loads only plugins that are explicitly enabled.  To activate
+pkg-be-plugin, add the following line to %%PREFIX%%/etc/pkg.conf:
+
+	PLUGINS [ "be" ];
+
+The plugin works without a configuration file; all keys have built-in
+defaults.  To customize, edit %%PREFIX%%/etc/pkg/be.conf.
+
+See pkg-be-plugin(8) for details.
+EOM
+}
+]
