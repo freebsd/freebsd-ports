@@ -16,7 +16,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
 # Uncomment when the default Perl is switched to 5.46+
 #DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
-#EXPIRATION_DATE=<Release date of .0 + 3 years>
+#EXPIRATION_DATE=	2029-07-15
 
 USES=		cpe tar:xz
 
