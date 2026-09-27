@@ -1,6 +1,6 @@
---- cmake/custom/core.cmake.orig	2022-08-10 16:56:44 UTC
+--- cmake/custom/core.cmake.orig	2026-04-10 17:09:54 UTC
 +++ cmake/custom/core.cmake
-@@ -101,7 +101,7 @@ foreach(
+@@ -88,7 +88,7 @@ foreach(
      if(${CMAKE_SYSTEM_NAME} STREQUAL "AIX")
          SET_TARGET_PROPERTIES(${_executable} PROPERTIES LINK_FLAGS "-Wl,-bbigtoc")
      endif()
