@@ -1,5 +1,5 @@
 PORTNAME=	langchain
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.2
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	MIT
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.2:misc/py-langchain-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langgraph>=1.2.11:misc/py-langgraph@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langgraph>=1.2.12:misc/py-langgraph@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.7.4:devel/py-pydantic2@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blockbuster>=1.5.26:devel/py-blockbuster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-openai>=1.6.0:misc/py-langchain-openai@${PY_FLAVOR} \
@@ -42,8 +42,9 @@ TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests \
 		--ignore=${WRKSRC}/tests/unit_tests/mcp \
 		--ignore=${WRKSRC}/tests/unit_tests/test_imports.py \
 		--ignore=${WRKSRC}/tests/unit_tests/test_pytest_config.py \
-		--deselect=tests/unit_tests/agents/middleware/implementations/test_tool_emulator.py::TestLLMToolEmulatorModelConfiguration::test_default_model_deprecated_and_missing_langchain_anthropic_raises_clear_error
+		--deselect=tests/unit_tests/agents/middleware/implementations/test_tool_emulator.py::TestLLMToolEmulatorModelConfiguration::test_default_model_deprecated_and_missing_langchain_anthropic_raises_clear_error \
+		--snapshot-warn-unused
 
-# tests as of 1.4.0: 1067 passed, 12 skipped, 28 warnings in 12.81s
+# tests as of 1.4.2: 1089 passed, 12 skipped, 7 warnings in 13.86s
 
 .include <bsd.port.mk>
