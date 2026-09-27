@@ -6194,7 +6194,6 @@
     SUBDIR += py-scheduler
     SUBDIR += py-schema
     SUBDIR += py-schema-salad
-    SUBDIR += py-schematics-patched
     SUBDIR += py-scholarly
     SUBDIR += py-scikit-base
     SUBDIR += py-scikit-build
