@@ -1,6 +1,6 @@
 PORTNAME=	opensearch
 DISTVERSION?=	2.16.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
@@ -11,6 +11,9 @@ COMMENT?=	Full-text search engine for Java
 WWW=		https://opensearch.org
 
 LICENSE=	APACHE20
+
+DEPRECATED=	Not consumers exists for this port. Wazuh uses textproc/opensearch219
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	bash>0:shells/bash \
