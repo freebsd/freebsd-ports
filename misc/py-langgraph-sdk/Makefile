@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-sdk
-DISTVERSION=	0.4.4
+DISTVERSION=	0.4.5
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,6 +31,6 @@ NO_ARCH=	yes
 # conflict with the installed ruff version in the package build environment.
 TEST_ARGS=	--ignore=${WRKSRC}/tests/integration
 
-# tests as of 0.4.4: 527 passed, 2 warnings in 7.28s
+# tests as of 0.4.5: 526 passed, 1 warning in 5.20s
 
 .include <bsd.port.mk>
