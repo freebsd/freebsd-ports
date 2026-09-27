@@ -1,6 +1,6 @@
 PORTNAME=	simple-fb2-reader
 PORTVERSION=	1.1.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	Simple FB2 format book reader
 WWW=		https://github.com/Cactus64k/simple-fb2-reader
 
 LICENSE=	GPLv3+
+
+DEPRECATED=	Last release 7 years ago, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libzip.so:archivers/libzip
 
