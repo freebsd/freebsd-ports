@@ -83,6 +83,15 @@
  )
  # Tell cmake that the external project generated a library so we can
  # add dependencies here instead of later
+@@ -430,7 +442,7 @@ if (NOT BOOST_RECONFIGURE)
+ ##
+ set(Boost_ADDITIONAL_VERSIONS "1.59.0" "1.60.0" "1.61.0" "1.62.0" "1.63.0" "1.64.0" "1.65.0" "1.66.0" "1.67.0" "1.68.0" "1.69.0" "1.70.0" "1.71.0" "1.72.0" "1.73.0" "1.74.0"  "1.75.0" "1.76.0" "1.77.0" "1.78.0" "1.79.0" "1.80.0" "1.81.0" "1.82.0" "1.83.0" "1.84.0")
+ if (NOT BOOST_RECONFIGURE)
+-find_package(Boost 1.59.0 COMPONENTS iostreams system filesystem timer chrono program_options)
++find_package(Boost 1.59.0 COMPONENTS iostreams filesystem timer chrono program_options OPTIONAL_COMPONENTS system)
+ message("BOOST_INCLUDEDIR = ${BOOST_INCLUDEDIR}")
+ message("BOOST_LIBRARYDIR = ${BOOST_LIBRARYDIR}")
+ message("Boost_FOUND = ${Boost_FOUND}")
 @@ -577,9 +589,11 @@ endif()
  endif()
  
