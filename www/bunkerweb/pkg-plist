@@ -8540,11 +8540,12 @@
 %%DATADIR%%/ui/utils/gunicorn.conf.py
 %%DATADIR%%/ui/utils/logger.py
 %%DATADIR%%/ui/utils/tmp-gunicorn.conf.py
+@(root,wheel,0440) etc/sudoers.d/bunkerweb
 @sample %%ETCDIR%%/api.yml.sample
 @dir %%ETCDIR%%/plugins
 @dir %%ETCDIR%%/pro/plugins
-@dir(bunkerweb,bunkerweb,) /var/cache/bunkerweb/bunkernet
-@dir(bunkerweb,bunkerweb,) /var/cache/bunkerweb
-@dir(bunkerweb,bunkerweb,) /var/lib/bunkerweb
+@dir(www,www,) /var/cache/bunkerweb/bunkernet
+@dir(www,www,) /var/cache/bunkerweb
+@dir(www,www,) /var/lib/bunkerweb
 @dir /var/lib
-@dir(bunkerweb,bunkerweb,) /var/log/bunkerweb
+@dir(www,www,) /var/log/bunkerweb

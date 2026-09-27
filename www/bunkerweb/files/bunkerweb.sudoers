@@ -1,0 +1,4 @@
+# The API reloads the instance from an nginx worker, which runs as www,
+# while the master runs as root. Upstream falls back to the rc script
+# through sudo for exactly this case.
+www ALL=(root) NOPASSWD: /usr/sbin/service bunkerweb reload

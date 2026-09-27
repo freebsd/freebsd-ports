@@ -1,6 +1,6 @@
 PORTNAME=	bunkerweb
 DISTVERSION=	1.6.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -17,6 +17,7 @@ GH_PROJECT=	bunkerweb
 GH_TAGNAME=	v${DISTVERSION}
 
 RUN_DEPENDS=	openresty:www/openresty \
+		sudo:security/sudo \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>0:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}schedule>0:devel/py-schedule@${PY_FLAVOR} \
@@ -67,6 +68,8 @@ DATADIR=	${PREFIX}/share/${PORTNAME}
 
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
+	${REINPLACE_CMD} -e 's|python3 ${DATADIR}/common/utils/|${PYTHON_CMD} ${DATADIR}/common/utils/|' \
+		${WRKSRC}/src/bw/lua/bunkerweb/api.lua
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -90,5 +93,8 @@ post-install:
 		${STAGEDIR}${DATADIR}/common/db/
 
 	${INSTALL_DATA} ${FILESDIR}/api.yml.sample ${STAGEDIR}${ETCDIR}/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/sudoers.d
+	${INSTALL_DATA} -m 0440 ${FILESDIR}/bunkerweb.sudoers \
+		${STAGEDIR}${PREFIX}/etc/sudoers.d/bunkerweb
 
 .include <bsd.port.mk>

@@ -23,12 +23,15 @@ command_args="-e ${bunkerweb_logdir}/error.log -p ${bunkerweb_prefix} -c ${bunke
 start_precmd="${name}_prestart"
 stop_cmd="${name}_stop"
 reload_cmd="${name}_reload"
+extra_commands="reload"
 
 bunkerweb_prestart()
 {
 	install -d -m 0755 "${bunkerweb_prefix}"
 	install -d -m 0755 "${bunkerweb_logdir}"
 	install -d -m 0755 /var/run/bunkerweb
+	install -d -m 0750 -o www -g www /var/tmp/bunkerweb
+
 	if [ ! -f "${bunkerweb_conf}" ]; then
 		warn "${bunkerweb_conf} does not exist yet. Start bunkerweb_scheduler and wait for it to generate the configuration."
 		return 1
