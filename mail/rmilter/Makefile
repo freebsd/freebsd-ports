@@ -1,6 +1,6 @@
 PORTNAME=	rmilter
 PORTVERSION=	1.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	Milter that performs rspamd, clamav, and other checks
 WWW=		https://github.com/vstakhov/rmilter
 
 LICENSE=	BSD2CLAUSE
+
+DEPRECATED=	Deprecated upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
