@@ -12,6 +12,7 @@ COMMENT=	Hash Algorithm Benchmarking
 
 LICENSE=	MIT
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Upstream is gone, does not build with CMake 4
 EXPIRATION_DATE=2026-11-30
 
