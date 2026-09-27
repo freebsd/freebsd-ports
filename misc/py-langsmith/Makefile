@@ -1,5 +1,5 @@
 PORTNAME=	langsmith
-DISTVERSION=	0.10.14
+DISTVERSION=	0.14.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.5.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xxhash>=3.0.0:devel/py-xxhash@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zstandard>=0.23.0:archivers/py-zstandard@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dataclasses-json>=0.6.4:devel/py-dataclasses-json@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}multipart>=1.0.0:devel/py-multipart@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.30.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-proto-http>=1.30.0:devel/py-opentelemetry-exporter-otlp-proto-http@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.30.0:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
@@ -66,11 +67,18 @@ TEST_ARGS=	-p no:flaky \
 		--ignore=tests/unit_tests/test_run_trees.py \
 		--ignore=tests/unit_tests/wrappers/test_google_adk.py \
 		--ignore=tests/unit_tests/wrappers/test_strands_agents.py \
-		--ignore=tests/unit_tests/wrappers/test_voice_helpers.py
+		--ignore=tests/unit_tests/wrappers/test_voice_helpers.py \
+		--ignore=bench
 
 # Skip flaky performance test that depends on timing/background thread throughput
-PYTEST_IGNORED_TESTS=	test_client_gc_after_autoscale
+# and tests that use @pytest.mark.flaky kwargs incompatible with pytest-rerunfailures.
+PYTEST_IGNORED_TESTS=	test_client_gc_after_autoscale \
+			test_traceable_input_attachments \
+			test_async_create_feedback_retries_on_not_found \
+			test_create_feedback_retries_on_not_found \
+			test_arequest_with_retries_retries_on_502 \
+			test_langchain_tool_attributes_reach_otel_spans
 
-# tests as of 0.10.14: 748 passed, 3 skipped, 97 warnings in 30.41s
+# tests as of 0.14.1: 1168 passed, 4 skipped, 3 deselected, 1 xfailed, 103 warnings
 
 .include <bsd.port.mk>
