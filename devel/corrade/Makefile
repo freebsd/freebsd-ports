@@ -1,11 +1,8 @@
 PORTNAME=	corrade
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.06-1783
-DISTVERSIONSUFFIX=	-gd83e30e5
+DISTVERSION=	2020.06-2125
+DISTVERSIONSUFFIX=	-gc028fd6e
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	249ee71c78774f42301469d4f2f0a269d009cf66.patch:-p1 # https://github.com/mosra/corrade/pull/190
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++11/C++14 multiplatform utility library
@@ -20,7 +17,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mosra
-GH_TUPLE=	mosra:toolchains:2243706:toolchains/toolchains
+GH_TUPLE=	mosra:toolchains:fa282e8:toolchains/toolchains
 
 CMAKE_ARGS_armv7=	-DCORRADE_CPU_USE_IFUNC:BOOL=OFF
 CMAKE_ARGS=	-DLIB_SUFFIX:STRING="" \
