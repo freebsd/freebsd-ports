@@ -1,9 +1,9 @@
---- Makefile.orig	2025-07-22 17:42:41 UTC
+--- Makefile.orig	2026-09-19 23:25:43 UTC
 +++ Makefile
 @@ -1,5 +1,5 @@
  
 -KMOD= if_wg
 +KMOD= if_amn
  
- SRCS= if_wg.c wg_cookie.c wg_crypto.c wg_noise.c
+ SRCS= if_wg.c wg_cookie.c wg_crypto.c wg_noise.c awg_crypto.c
  SRCS+= opt_inet.h opt_inet6.h device_if.h bus_if.h
