@@ -33,6 +33,7 @@
     SUBDIR += fcitx-ui-light
     SUBDIR += fcitx5-chewing
     SUBDIR += fcitx5-chinese-addons
+    SUBDIR += fcitx5-keykey
     SUBDIR += fcitx5-mcbopomofo
     SUBDIR += fcitx5-rime
     SUBDIR += fcitx5-table-extra
