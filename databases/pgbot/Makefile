@@ -11,7 +11,7 @@ WWW=		https://pgbot.dev/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.27,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/pgrundev/pgbot
 GO_TARGET=	./cmd/pgbot
