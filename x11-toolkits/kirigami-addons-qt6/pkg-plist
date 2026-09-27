@@ -119,6 +119,7 @@ lib/libKirigamiApp.so.6
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/formcardplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/libformcardplugin.so
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/private/ContentItemLoader.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/private/FormCardBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/private/FormCardUnits.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/formcard/private/FormChoiceDelegateLayout.qml
