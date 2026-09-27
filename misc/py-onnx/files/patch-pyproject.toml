@@ -1,11 +1,13 @@
+-- Allow building with the protobuf version available in the FreeBSD ports tree
+-- instead of the exact pinned version.
 --- pyproject.toml.orig	2026-07-20 00:01:42 UTC
 +++ pyproject.toml
 @@ -3,7 +3,7 @@
  # SPDX-License-Identifier: Apache-2.0
- 
+
  [build-system]
--requires = ["scikit-build-core>=0.11", "protobuf==4.25.1"]
-+requires = ["scikit-build-core>=0.11", "protobuf>=4.25.1"]
+-requires = ["scikit-build-core>=0.11", "protobuf==6.31.1"]
++requires = ["scikit-build-core>=0.11", "protobuf>=6.31.1"]
  build-backend = "scikit_build_core.build"
- 
+
  [project]
