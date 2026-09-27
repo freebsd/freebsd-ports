@@ -1,6 +1,6 @@
 PORTNAME=	netgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2.2606
+DISTVERSION=	6.2.2607
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/alexxy/netgen/commit/
@@ -23,24 +23,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON_i386=	unsupported CPU architecture
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pybind11-stubgen>0:devel/py-pybind11-stubgen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		git:devel/git
 
-USES=		cmake gl localbase:ldflags python tcl tk xorg
+USES=		cmake gl localbase:ldflags pkgconfig python tcl tk xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	NGSolve
-GH_TUPLE=	NGSolve:pybind11:v3.0.3:pybind11/external_dependencies/pybind11
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xi xmu
 
-CMAKE_OFF=	USE_NATIVE_ARCH USE_OCC
+CMAKE_ARGS=	-Dpybind11_DIR=${PYTHON_SITELIBDIR}/pybind11/share/cmake/pybind11
+CMAKE_ON=	PREFER_SYSTEM_PYBIND11 USE_PYTHON
+CMAKE_OFF=	BUILD_STUB_FILES USE_NATIVE_ARCH USE_OCC USE_SUPERBUILD
 
 CFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
 CXXFLAGS+=	-I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/unix
 LDFLAGS+=	-lexecinfo
-
-CONFLICTS_INSTALL=	libvisual pybind11 # bin/netgen include/pybind11/attr.h lib/libvisual.so
 
 OPTIONS_DEFINE=	CGNS JPEG MPEG
 
@@ -55,10 +56,5 @@ JPEG_USES=		jpeg
 JPEG_CMAKE_BOOL=	USE_JPEG
 MPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 MPEG_CMAKE_BOOL=	USE_MPEG
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/netgen
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/*.so
 
 .include <bsd.port.mk>
