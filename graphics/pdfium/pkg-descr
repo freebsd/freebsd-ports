@@ -1,0 +1,4 @@
+PDFium is a PDF rendering and manipulation library used by Chromium.
+
+This port builds a complete static libpdfium.a with V8 and XFA disabled and
+installs the public headers for embedding.

@@ -1,0 +1,23 @@
+-- Add system include directories for the bundled test code.
+-- On FreeBSD the system library headers live under /usr/local/include,
+-- but the upstream GN system_library configs only add the library link
+-- flags. Without this the test-only image_diff target cannot find png.h
+-- and similar headers.
+--- third_party/BUILD.gn.orig	2026-09-24 10:33:33 UTC
++++ third_party/BUILD.gn
+@@ -328,6 +328,7 @@ if (!build_with_chromium) {
+   config("system_libjpeg_config") {
+     libs = [ "jpeg" ]
+     defines = [ "USE_SYSTEM_LIBJPEG" ]
++    include_dirs = [ "/usr/local/include" ]
+   }
+ 
+   config("libjpeg_turbo_config") {
+@@ -451,6 +452,7 @@ if (!pdf_enable_rust_png) {
+   config("system_libpng_config") {
+     libs = [ "png" ]
+     defines = [ "USE_SYSTEM_LIBPNG" ]
++    include_dirs = [ "/usr/local/include" ]
+   }
+ 
+   group("png") {

@@ -1,0 +1,20 @@
+-- Use an x86_64-unknown-freebsd Clang target triple on FreeBSD so the compiler
+-- finds the correct C++ standard library headers.
+--- build/config/compiler_cpu_abi.gn.orig	2026-09-24 10:57:02 UTC
++++ build/config/compiler_cpu_abi.gn
+@@ -49,8 +49,13 @@ if ((is_posix && !is_apple) || is_fuchsia) {
+   # simplicity we always explicitly set the architecture.
+   if (current_cpu == "x64") {
+     if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
+-      cpu_abi_cflags += [ "--target=x86_64-unknown-linux-gnu" ]
+-      cpu_abi_ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
++      if (current_os == "freebsd") {
++        cpu_abi_cflags += [ "--target=x86_64-unknown-freebsd" ]
++        cpu_abi_ldflags += [ "--target=x86_64-unknown-freebsd" ]
++      } else {
++        cpu_abi_cflags += [ "--target=x86_64-unknown-linux-gnu" ]
++        cpu_abi_ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
++      }
+     } else {
+       cpu_abi_cflags += [ "-m64" ]
+       cpu_abi_ldflags += [ "-m64" ]

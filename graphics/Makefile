@@ -817,6 +817,7 @@
     SUBDIR += pcdtojpeg
     SUBDIR += pcl-pointclouds
     SUBDIR += pdf2svg
+    SUBDIR += pdfium
     SUBDIR += pdfpc
     SUBDIR += pear-Horde_Image
     SUBDIR += pear-Image_3D
