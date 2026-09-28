@@ -6,7 +6,8 @@ CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Embedded scripting language designed for C++
-WWW=		https://chaiscript.com/
+WWW=		https://chaiscript.com/ \
+		https://github.com/ChaiScript/ChaiScript
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake localbase:ldflags readline
 USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/lib/chaiscript
+
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility, see https://github.com/ChaiScript/ChaiScript/issues/709
 
 OPTIONS_DEFINE=		DYNLOAD MULTITHREAD STD_MAKE_SHARED CPP17
 OPTIONS_DEFAULT=	DYNLOAD MULTITHREAD
