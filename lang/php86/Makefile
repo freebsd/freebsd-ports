@@ -1,5 +1,5 @@
 PORTNAME=	php86
-DISTVERSION=	8.6.0beta2
+DISTVERSION=	8.6.0beta3
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 #MASTER_SITES=	PHP/distributions
@@ -11,7 +11,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PHP Scripting Language (8.6.X branch)
 WWW=		https://www.php.net/
 
-LICENSE=	PHP301
+LICENSE=	BSD3CLAUSE
 
 USES+=		compiler:c11 cpe gnome localbase pkgconfig tar:xz
 CPE_PRODUCT=	php
