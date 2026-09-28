@@ -1,5 +1,6 @@
---- cargo-crates/device_query-1.1.2/build.rs.orig	2024-01-10 23:04:50 UTC
-+++ cargo-crates/device_query-1.1.2/build.rs
+-- Add FreeBSD support to device_query crate (x11 input, build config, module selection).
+--- cargo-crates/device_query-1.1.3/build.rs.orig	2026-09-27 23:28:22 UTC
++++ cargo-crates/device_query-1.1.3/build.rs
 @@ -6,16 +6,16 @@ fn main() {}
  #[cfg(target_os = "macos")]
  fn main() {}
