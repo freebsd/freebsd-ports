@@ -1,9 +1,9 @@
 PORTNAME=	eppctl
-DISTVERSION=	0.0.20260926
+DISTVERSION=	0.0.20260928
 CATEGORIES=	sysutils
 
 MAINTAINER=	osa@FreeBSD.org
-COMMENT=	Intel HWP Energy/Performance utility
+COMMENT=	HWP Energy/Performance utility
 WWW=		https://github.com/osokin/eppctl/
 
 LICENSE=	BSD2CLAUSE
@@ -13,7 +13,7 @@ CPE_VENDOR=	google
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	osokin
-GH_TAGNAME=	7d074df
+GH_TAGNAME=	1250458
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	does not support
