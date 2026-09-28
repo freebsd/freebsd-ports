@@ -1,5 +1,4 @@
 bin/fribidi
-bin/fribidi-config
 include/fribidi/fribidi-arabic.h
 include/fribidi/fribidi-begindecls.h
 include/fribidi/fribidi-bidi-types-list.h
@@ -26,6 +25,7 @@ lib/libfribidi.so
 lib/libfribidi.so.0
 lib/libfribidi.so.0.4.0
 libdata/pkgconfig/fribidi.pc
+share/man/man1/fribidi.1.gz
 share/man/man3/fribidi_charset_to_unicode.3.gz
 share/man/man3/fribidi_debug_status.3.gz
 share/man/man3/fribidi_get_bidi_type.3.gz
