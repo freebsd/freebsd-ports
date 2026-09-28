@@ -22,6 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yse
 GH_PROJECT=	easy_profiler
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility, see https://github.com/yse/easy_profiler/issues/231
+
 CXXFLAGS+=	-Dint64=int64_t
 
 post-install:
