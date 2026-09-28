@@ -1,6 +1,6 @@
 PORTNAME=	quassel
 DISTVERSION=	0.14.50
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	irc
 #MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
@@ -45,8 +45,7 @@ OPTIONS_SUB=		yes
 CLIENT_DESC=		Quassel client (for use with core)
 CLIENT_CMAKE_BOOL=	WANT_QTCLIENT
 CLIENT_USES=		desktop-file-utils kde:6
-CLIENT_USE=		qt=declarative,multimedia,webengine kde=phonon
-CLIENT_LIB_DEPENDS=	libdbusmenu-qt6.so:devel/libdbusmenu-qt@qt6
+CLIENT_USE=		qt=multimedia,webengine
 CLIENT_PREVENTS=	CORE
 CLIENT_PREVENTS_MSG=	Quassel core server should be installed via irc/quassel-core port
 
@@ -64,8 +63,7 @@ CORE_PREVENTS=		CLIENT MONO KDE SPELL NLS
 MONO_DESC=		Quassel standalone (monolithic binary: core+client combined)
 MONO_CMAKE_BOOL=	WANT_MONO
 MONO_USES=		desktop-file-utils kde:6
-MONO_USE=		qt=declarative,multimedia,webengine kde=phonon
-MONO_LIB_DEPENDS=	libdbusmenu-qt6.so:devel/libdbusmenu-qt@qt6
+MONO_USE=		qt=multimedia,webengine
 MONO_PREVENTS=		CORE
 MONO_PREVENTS_MSG=	Quassel core server should be installed via irc/quassel-core port
 
