@@ -1,3 +1,3 @@
-TIMESTAMP = 1789488554
-SHA256 (uv_build-0.12.15.tar.gz) = afd586089d301df068204cd4111817bd9d475eebdeab7ea329c3fb1a48b4fb7a
-SIZE (uv_build-0.12.15.tar.gz) = 427499
+TIMESTAMP = 1790561823
+SHA256 (uv_build-0.12.19.tar.gz) = 6b605574da32cefd4264727f7e391e77fe289686192a7eb772e69b3e705da577
+SIZE (uv_build-0.12.19.tar.gz) = 435379
