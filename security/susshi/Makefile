@@ -1,7 +1,6 @@
 PORTNAME=	susshi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.1
-PORTREVISION=	1
+DISTVERSION=	0.23.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -76,7 +75,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fastrand-2.3.0 \
 		find-crate-0.6.3 \
 		find-msvc-tools-0.1.9 \
-		flate2-1.1.9 \
+		flate2-1.1.10 \
 		fluent-0.17.0 \
 		fluent-bundle-0.16.0 \
 		fluent-langneg-0.13.1 \
@@ -113,7 +112,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libc-0.2.189 \
 		libm-0.2.16 \
 		libredox-0.1.12 \
-		libssh2-sys-0.3.2 \
+		libssh2-sys-0.3.3 \
 		libz-sys-1.1.24 \
 		line-clipping-0.3.5 \
 		linux-raw-sys-0.12.1 \
@@ -124,7 +123,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		memchr-2.8.0 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
-		miniz_oxide-0.8.9 \
+		miniz_oxide-0.9.1 \
 		mio-1.1.1 \
 		nix-0.31.3 \
 		num-conv-0.2.0 \
@@ -171,9 +170,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.40 \
+		rustls-0.23.45 \
 		rustls-pki-types-1.14.1 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
@@ -226,8 +225,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-xid-0.2.6 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.9.0 \
-		ureq-3.4.0 \
-		ureq-proto-0.6.1 \
+		ureq-3.4.2 \
+		ureq-proto-0.6.4 \
 		utf8-zero-0.8.1 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
@@ -276,6 +275,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerofrom-0.1.8 \
 		zeroize-1.8.2 \
 		zerovec-0.11.6 \
+		zlib-rs-0.6.7 \
 		zmij-1.0.21
 
 OPENSSLINC=	${DESTDIR}/usr/include
