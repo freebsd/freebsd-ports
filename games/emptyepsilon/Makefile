@@ -39,6 +39,8 @@ GH_TUPLE=	daid:SeriousProton:${DISTVERSIONFULL}:sproton/sproton \
 CMAKE_ARGS=	-DSERIOUS_PROTON_DIR="${WRKSRC}/sproton" \
 		-DWITH_OPUS=system \
 		-DWITH_GLM=bundled
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility
+
 CXXFLAGS+=	-DGLM_ENABLE_EXPERIMENTAL
 
 post-patch:
