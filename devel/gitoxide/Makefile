@@ -1,7 +1,6 @@
 PORTNAME=	gitoxide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.58.0
-PORTREVISION=	1
+DISTVERSION=	0.59.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,12 +49,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		async-trait-0.1.89 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.1 \
-		aws-lc-rs-1.17.1 \
-		aws-lc-sys-0.42.0 \
+		aws-lc-rs-1.18.1 \
+		aws-lc-sys-0.45.0 \
 		base64-0.22.1 \
 		bitflags-1.3.2 \
 		bitflags-2.13.0 \
-		block-buffer-0.10.4 \
 		block-buffer-0.12.1 \
 		blocking-1.6.2 \
 		bstr-1.12.3 \
@@ -71,7 +69,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cesu8-1.1.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		chacha20-0.10.1 \
+		chacha20-0.10.2 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -93,7 +91,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		cov-mark-2.2.0 \
-		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
 		crc-3.4.0 \
 		crc-catalog-2.5.0 \
@@ -111,7 +108,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crossterm_winapi-0.9.1 \
 		crosstermion-0.16.0 \
 		crunchy-0.2.4 \
-		crypto-common-0.1.7 \
 		crypto-common-0.2.2 \
 		curl-0.4.50 \
 		curl-sys-0.4.90+curl-8.21.0 \
@@ -121,6 +117,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		dashmap-6.2.1 \
 		data-encoding-2.11.0 \
 		defer-0.2.1 \
+		defmt-0.3.100 \
 		defmt-1.1.0 \
 		defmt-macros-1.1.0 \
 		defmt-parser-1.0.0 \
@@ -129,7 +126,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		derive_more-2.1.1 \
 		derive_more-impl-2.1.1 \
 		diff-0.1.13 \
-		digest-0.10.7 \
 		digest-0.11.3 \
 		directories-6.0.0 \
 		dirs-sys-0.5.0 \
@@ -153,7 +149,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fast-srgb8-1.0.0 \
-		faster-hex-0.10.0 \
+		faster-hex-0.10.1 \
 		fastrand-2.4.1 \
 		filetime-0.2.29 \
 		find-msvc-tools-0.1.9 \
@@ -176,7 +172,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		futures-task-0.3.32 \
 		futures-timer-3.0.4 \
 		futures-util-0.3.32 \
-		generic-array-0.14.7 \
 		getopts-0.2.24 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
@@ -189,7 +184,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
-		hashlink-0.12.0 \
+		hashlink-0.11.1 \
 		heapless-0.8.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
@@ -255,7 +250,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libc-0.2.186 \
 		libm-0.2.16 \
 		libredox-0.1.19 \
-		libsqlite3-sys-0.38.1 \
+		libsqlite3-sys-0.37.0 \
 		libz-sys-1.1.29 \
 		line-clipping-0.3.7 \
 		linux-raw-sys-0.12.1 \
@@ -358,18 +353,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rsqlite-vfs-0.1.1 \
 		rstest-0.26.1 \
 		rstest_macros-0.26.1 \
-		rusqlite-0.40.1 \
+		rusqlite-0.39.0 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.41 \
+		rustls-0.23.45 \
 		rustls-ffi-0.15.0 \
 		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.15.0 \
 		rustls-platform-verifier-0.5.3 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
@@ -385,11 +380,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_spanned-1.1.1 \
 		serial_test-3.5.0 \
 		serial_test_derive-3.5.0 \
-		sha1-0.10.6 \
-		sha1-checked-0.10.0 \
+		sha1dc-0.1.2 \
 		sha2-0.11.0 \
 		sharded-slab-0.1.7 \
-		shell-words-1.1.1 \
 		shlex-2.0.1 \
 		signal-hook-0.3.18 \
 		signal-hook-0.4.4 \
@@ -415,7 +408,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		syn-2.0.118 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
-		sysinfo-0.39.5 \
+		sysinfo-0.38.4 \
 		system-configuration-0.7.0 \
 		system-configuration-sys-0.6.0 \
 		tagptr-0.2.0 \
@@ -482,7 +475,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		valuable-0.1.1 \
 		value-bag-1.12.0 \
 		vcpkg-0.2.15 \
-		version_check-0.9.5 \
 		vte-0.14.1 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
