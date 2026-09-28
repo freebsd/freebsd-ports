@@ -22,6 +22,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	wbhart
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility
+
 PLIST_FILES=	include/antic/nf.h \
 		include/antic/nf_elem.h \
 		include/antic/qfb.h \
