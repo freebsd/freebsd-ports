@@ -22,6 +22,7 @@ GH_ACCOUNT=	coin-or
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	QPOASES_BUILD_EXAMPLES
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility, see https://github.com/coin-or/qpOASES/issues/157
 
 LDFLAGS+=	${LOCALBASE}/lib/libopenblas.so
 
