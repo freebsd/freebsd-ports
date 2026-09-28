@@ -1,4 +1,4 @@
---- sendmail/srvrsmtp.c.orig	2026-04-20 17:18:50 UTC
+--- sendmail/srvrsmtp.c.orig	2026-06-19 08:47:02 UTC
 +++ sendmail/srvrsmtp.c
 @@ -930,6 +930,9 @@ do								\
  # define SHOWCMDINREPLY(inp) inp
@@ -87,7 +87,7 @@
  				message("503 5.3.3 AUTH not available");
  				break;
  			}
-@@ -3904,10 +3933,17 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -3905,10 +3934,17 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  				**  timeouts for the same connection.
  				*/
  
@@ -105,7 +105,7 @@
  			if (tTd(93, 100))
  			{
  				/* return to handle next connection */
-@@ -3989,7 +4025,10 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -3990,7 +4026,10 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  #if MAXBADCOMMANDS > 0
  			if (++n_badcmds > MAXBADCOMMANDS)
  			{
@@ -116,7 +116,7 @@
  				message("421 4.7.0 %s Too many bad commands; closing connection",
  					MyHostName);
  
-@@ -4043,6 +4082,9 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
+@@ -4044,6 +4083,9 @@ smtp(char *volatile nullserver, BITMAP256 d_flags,
  		}
  #if SASL
  		}
