@@ -1,0 +1,15 @@
+-- Fix configure with CMake 4 by raising the minimum required CMake version
+-- from 2.8 to 3.5 and removing the obsolete CMP0048 policy override.
+-- CMake 4 no longer supports compatibility with CMake versions below 3.5
+-- and removed the OLD behavior of CMP0048.
+
+--- CMakeLists.txt.orig	2014-07-07 14:40:24 UTC
++++ CMakeLists.txt
+@@ -1,6 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+-
+-CMAKE_POLICY(SET CMP0048 OLD)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+
+ SET(PROJECT_NAME "LEMON")
+ PROJECT(${PROJECT_NAME})

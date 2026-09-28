@@ -2,9 +2,9 @@
 -- placement new and explicit destructor calls. These are compatible with C++11
 -- through C++26 and fix compilation of C++20 consumers of LEMON (e.g. OpenROAD).
 
---- lemon/bits/array_map.h.orig
+--- lemon/bits/array_map.h.orig	2014-07-07 14:40:24 UTC
 +++ lemon/bits/array_map.h
-@@ -88,7 +88,7 @@
+@@ -88,7 +88,7 @@ namespace lemon {
        Item it;
        for (nf->first(it); it != INVALID; nf->next(it)) {
          int id = nf->id(it);;
@@ -13,7 +13,7 @@
        }
      }
  
-@@ -102,7 +102,7 @@
+@@ -102,7 +102,7 @@ namespace lemon {
        Item it;
        for (nf->first(it); it != INVALID; nf->next(it)) {
          int id = nf->id(it);;
@@ -22,7 +22,7 @@
        }
      }
  
-@@ -121,7 +121,7 @@
+@@ -121,7 +121,7 @@ namespace lemon {
        Item it;
        for (nf->first(it); it != INVALID; nf->next(it)) {
          int id = nf->id(it);;
@@ -31,7 +31,7 @@
        }
      }
  
-@@ -218,15 +218,15 @@
+@@ -218,15 +218,15 @@ namespace lemon {
          for (nf->first(it); it != INVALID; nf->next(it)) {
            int jd = nf->id(it);;
            if (id != jd) {
@@ -50,7 +50,7 @@
      }
  
      // \brief Adds more new keys to the map.
-@@ -260,8 +260,8 @@
+@@ -260,8 +260,8 @@ namespace lemon {
              }
            }
            if (found) continue;
@@ -61,7 +61,7 @@
          }
          if (capacity != 0) allocator.deallocate(values, capacity);
          values = new_values;
-@@ -269,7 +269,7 @@
+@@ -269,7 +269,7 @@ namespace lemon {
        }
        for (int i = 0; i < int(keys.size()); ++i) {
          int id = nf->id(keys[i]);
@@ -70,7 +70,7 @@
        }
      }
  
-@@ -279,7 +279,7 @@
+@@ -279,7 +279,7 @@ namespace lemon {
      // and it overrides the erase() member function of the observer base.
      virtual void erase(const Key& key) {
        int id = Parent::notifier()->id(key);
@@ -79,7 +79,7 @@
      }
  
      // \brief Erase more keys from the map.
-@@ -289,7 +289,7 @@
+@@ -289,7 +289,7 @@ namespace lemon {
      virtual void erase(const std::vector<Key>& keys) {
        for (int i = 0; i < int(keys.size()); ++i) {
          int id = Parent::notifier()->id(keys[i]);
@@ -88,7 +88,7 @@
        }
      }
  
-@@ -303,7 +303,7 @@
+@@ -303,7 +303,7 @@ namespace lemon {
        Item it;
        for (nf->first(it); it != INVALID; nf->next(it)) {
          int id = nf->id(it);;
@@ -97,7 +97,7 @@
        }
      }
  
-@@ -317,7 +317,7 @@
+@@ -317,7 +317,7 @@ namespace lemon {
          Item it;
          for (nf->first(it); it != INVALID; nf->next(it)) {
            int id = nf->id(it);

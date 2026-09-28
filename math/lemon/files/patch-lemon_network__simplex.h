@@ -3,9 +3,9 @@
 -- expansion corrupts the constructor initializer list in C++20 code.
 -- Uses #pragma push_macro/pop_macro, supported by GCC, Clang and MSVC.
 
---- lemon/network_simplex.h.orig
+--- lemon/network_simplex.h.orig	2014-07-07 14:40:24 UTC
 +++ lemon/network_simplex.h
-@@ -71,6 +71,8 @@
+@@ -71,6 +71,8 @@ namespace lemon {
    /// \note %NetworkSimplex provides five different pivot rule
    /// implementations, from which the most efficient one is used
    /// by default. For more information, see \ref PivotRule.
@@ -14,7 +14,7 @@
    template <typename GR, typename V = int, typename C = V>
    class NetworkSimplex
    {
-@@ -1651,6 +1653,7 @@
+@@ -1651,6 +1653,7 @@ namespace lemon {
      }
  
    }; //class NetworkSimplex
