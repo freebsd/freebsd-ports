@@ -11,7 +11,8 @@ WWW=		https://metacpan.org/release/Crypt-PasswdMD5
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE-GPL-3
+LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Crypt-URandom>=0:security/p5-Crypt-URandom
 
