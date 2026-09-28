@@ -16,6 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	badaix
 
 CMAKE_OFF=	BUILD_EXAMPLE
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility, see https://github.com/badaix/aixlog/issues/25
 
 NO_BUILD=	yes
 NO_ARCH=	yes
