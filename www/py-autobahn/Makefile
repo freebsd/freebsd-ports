@@ -1,7 +1,7 @@
 PORTNAME=	autobahn
-DISTVERSIONPREFIX=	v
-DISTVERSION=	26.6.2
+DISTVERSION=	26.7.1
 CATEGORIES=	www python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -26,10 +26,9 @@ RUN_DEPENDS=	\
 
 USES=		cpe python
 CPE_VENDOR=	crossbar
-USE_GITHUB=	yes
-GH_ACCOUNT=	crossbario
-GH_PROJECT=	autobahn-python
 USE_PYTHON=	autoplist cryptography pep517 pytest
+
+PORTSCOUT=	limit:^[0-9\.]*$
 
 MAKE_ENV=	AUTOBAHN_ARCH_TARGET=safe
 
