@@ -10,7 +10,8 @@ WWW=		https://github.com/osokin/eppctl/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CPE_VENDOR=	google
+CPE_VENDOR=	osokin
+CPE_PRODUCT=	${PORTNAME}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	osokin
