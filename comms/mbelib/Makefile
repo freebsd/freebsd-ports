@@ -26,7 +26,4 @@ CMAKE_ON=	DISABLE_TEST
 PLIST_FILES=	include/mbelib.h lib/libmbe.a lib/libmbe.so.1.0 \
 		lib/libmbe.so.1 lib/libmbe.so
 
-do-patch:
-	${REINPLACE_CMD} 's|VERSION 2.6|VERSION 3.10|' ${WRKSRC}/CMakeLists.txt
-
 .include <bsd.port.mk>
