@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260929:
+  AFFECTS: users of www/mod_wsgi
+  AUTHOR: michaelo@FreeBSD.org
+
+  mod_wsgi has been upgraded to major version 6 with several potentially
+  breaking changes. Read the release notes very carefully:
+  https://modwsgi.readthedocs.io/en/latest/release-notes.html
+
 20260928:
   AFFECTS: users of lang/php84
   AUTHOR: bofh@FreeBSD.org
