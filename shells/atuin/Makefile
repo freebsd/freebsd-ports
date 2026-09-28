@@ -1,6 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.22.0
+DISTVERSION=	18.23.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,7 +47,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		atoi-2.0.0 \
 		atomic-0.6.1 \
 		atomic-waker-1.1.2 \
-		atuin-vt100-0.19.0 \
+		atuin-vt100-0.19.1 \
 		autocfg-1.5.1 \
 		axoprocess-0.2.1 \
 		axotag-0.3.0 \
@@ -94,13 +94,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clap_lex-1.1.0 \
 		clipboard-win-5.4.1 \
 		cmov-0.5.4 \
-		codspeed-5.0.1 \
-		codspeed-divan-compat-5.0.1 \
-		codspeed-divan-compat-macros-5.0.1 \
-		codspeed-divan-compat-walltime-5.0.1 \
 		colorchoice-1.0.5 \
 		colored-2.2.0 \
-		colored-3.1.1 \
 		compact_str-0.9.0 \
 		compare-0.0.6 \
 		compression-codecs-0.4.38 \
@@ -119,7 +114,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crc32fast-1.5.0 \
 		critical-section-1.2.0 \
 		crossbeam-channel-0.5.15 \
-		crossbeam-deque-0.8.7 \
 		crossbeam-epoch-0.9.20 \
 		crossbeam-queue-0.3.12 \
 		crossbeam-skiplist-0.1.3 \
@@ -133,7 +127,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ctutils-0.4.2 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
-		daemonize-0.5.0 \
+		daemonix-0.1.0 \
 		darling-0.23.0 \
 		darling_core-0.23.0 \
 		darling_macro-0.23.0 \
@@ -153,12 +147,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.1 \
 		displaydoc-0.2.6 \
-		divan-macros-0.1.17 \
+		divan-0.1.21 \
+		divan-macros-0.1.21 \
 		document-features-0.2.12 \
 		dotenvy-0.15.7 \
 		downcast-rs-1.2.1 \
 		dyn-clone-1.0.20 \
-		easy-cast-0.7.1 \
+		easy-cast-0.5.4 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.2.0 \
 		either-1.16.0 \
@@ -172,9 +167,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		euclid-0.22.13 \
 		event-listener-5.4.2 \
 		eventsource-stream-0.2.3 \
-		eye_declare-0.6.4 \
-		eye_declare_engine-0.6.4 \
-		eyre-0.6.12 \
+		eye_declare-0.7.1 \
+		eye_declare_engine-0.7.1 \
+		eyre-0.6.14 \
 		fancy-regex-0.11.0 \
 		fast-srgb8-1.0.0 \
 		fastrand-2.4.1 \
@@ -193,7 +188,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.2 \
-		frizbee-0.12.0 \
+		frizbee-0.13.0 \
 		fs-err-3.3.1 \
 		fsevent-sys-4.1.0 \
 		futures-0.3.32 \
@@ -289,6 +284,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		litemap-0.8.2 \
 		litrs-1.0.0 \
 		lock_api-0.4.14 \
+		locked-tripwire-0.1.1 \
 		log-0.4.32 \
 		logos-0.15.1 \
 		logos-codegen-0.15.1 \
@@ -321,7 +317,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		nix-0.28.0 \
 		nix-0.29.0 \
 		nix-0.30.1 \
-		nix-0.31.3 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		norm-0.1.1 \
@@ -340,7 +335,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-core-graphics-0.3.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.3.2 \
+		objc2-io-kit-0.3.2 \
 		objc2-io-surface-0.3.2 \
+		objc2-open-directory-0.3.2 \
 		objc2-system-configuration-0.3.2 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
@@ -429,8 +426,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ratatui-termwiz-0.1.0 \
 		ratatui-widgets-0.3.0 \
 		raw-cpuid-11.6.0 \
-		rayon-1.12.0 \
-		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
@@ -443,11 +438,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		reqwest-0.13.4 \
 		reqwest-middleware-0.5.2 \
 		ring-0.17.14 \
-		rmcp-2.1.0 \
+		rmcp-3.3.0 \
 		rmp-0.8.15 \
 		rpassword-7.5.4 \
-		rstest-0.26.1 \
-		rstest_macros-0.26.1 \
+		rstest-0.27.0 \
+		rstest_macros-0.27.0 \
 		rtoolbox-0.0.3 \
 		runtime-format-0.1.3 \
 		rustc-hash-1.1.0 \
@@ -473,13 +468,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		self_cell-1.3.0 \
 		semver-1.0.28 \
 		serde-1.0.229 \
-		serde_bytes-0.11.19 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_derive_internals-0.29.1 \
 		serde_json-1.0.151 \
 		serde_path_to_error-0.1.20 \
-		serde_regex-1.1.0 \
+		serde_regex-1.2.0 \
 		serde_spanned-1.1.1 \
 		serde_urlencoded-0.7.1 \
 		serde_with-3.21.0 \
@@ -516,7 +510,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		sqlx-sqlite-0.9.0 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
-		statrs-0.18.0 \
 		streaming-iterator-0.1.9 \
 		stringprep-0.1.5 \
 		strsim-0.11.1 \
@@ -531,7 +524,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		syn-3.0.0 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
-		sysinfo-0.30.13 \
+		sysinfo-0.39.6 \
 		tempfile-3.27.0 \
 		terminal_size-0.4.4 \
 		terminfo-0.9.0 \
@@ -542,9 +535,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.19 \
 		thread_local-1.1.9 \
-		time-0.3.49 \
+		time-0.3.55 \
 		time-core-0.1.9 \
-		time-macros-0.2.29 \
+		time-macros-0.2.32 \
 		tiny-bip39-2.0.0 \
 		tinystr-0.8.3 \
 		tinyvec-1.11.0 \
@@ -563,7 +556,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tonic-build-0.14.6 \
 		tonic-prost-0.14.6 \
 		tonic-prost-build-0.14.6 \
-		tonic-types-0.14.6 \
 		tower-0.5.3 \
 		tower-http-0.6.11 \
 		tower-layer-0.3.3 \
@@ -578,14 +570,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tracing-serde-0.2.0 \
 		tracing-subscriber-0.3.23 \
 		tracing-tree-0.4.1 \
-		tree-sitter-0.26.8 \
+		tree-sitter-0.27.0 \
 		tree-sitter-bash-0.25.1 \
 		tree-sitter-fish-3.6.0 \
-		tree-sitter-language-0.1.7 \
+		tree-sitter-language-0.1.8 \
 		tree-sitter-powershell-0.26.4 \
 		tree_magic_mini-3.2.2 \
 		try-lock-0.2.5 \
-		tui-textarea-2-0.10.2 \
+		tui-textarea-2-0.13.2 \
 		twox-hash-2.1.4 \
 		typed-builder-0.23.2 \
 		typed-builder-macro-0.23.2 \
@@ -608,7 +600,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		url-2.5.8 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.25.0 \
+		uuid-1.26.1 \
 		valuable-0.1.1 \
 		varint-rs-2.2.1 \
 		vcpkg-0.2.15 \
@@ -648,18 +640,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.52.0 \
 		windows-0.61.3 \
+		windows-0.62.2 \
 		windows-collections-0.2.0 \
-		windows-core-0.52.0 \
+		windows-collections-0.3.2 \
 		windows-core-0.61.2 \
 		windows-core-0.62.2 \
 		windows-future-0.2.1 \
+		windows-future-0.3.2 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
 		windows-link-0.1.3 \
 		windows-link-0.2.1 \
 		windows-numerics-0.2.0 \
+		windows-numerics-0.3.1 \
 		windows-result-0.3.4 \
 		windows-result-0.4.1 \
 		windows-strings-0.4.2 \
@@ -671,6 +665,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.5 \
 		windows-threading-0.1.0 \
+		windows-threading-0.2.1 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
@@ -696,7 +691,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
 		xxhash-rust-0.8.15 \
-		yaml-rust2-0.11.0 \
+		yaml-rust2-0.11.1 \
 		yansi-1.0.1 \
 		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
@@ -712,7 +707,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zmij-1.0.23 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
-		zstd-sys-2.0.16+zstd.1.5.7
+		zstd-sys-2.1.0+zstd.1.5.7
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
