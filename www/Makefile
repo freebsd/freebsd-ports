@@ -1608,6 +1608,7 @@
     SUBDIR += py-dj60-drf-spectacular-sidecar
     SUBDIR += py-dj60-social-auth-app-django
     SUBDIR += py-dj60-strawberry-graphql-django
+    SUBDIR += py-dj61-django-debug-toolbar
     SUBDIR += py-dj61-django-stubs-ext
     SUBDIR += py-dj61-djangorestframework
     SUBDIR += py-django-admin-rangefilter
