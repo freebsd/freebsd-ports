@@ -1,5 +1,6 @@
 PORTNAME=	uv
 DISTVERSION=	0.12.19
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,9 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-LIB_DEPENDS=	libgit2.so:devel/libgit2 \
-		libssh2.so:security/libssh2 \
-		libzstd.so:archivers/zstd
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo gmake localbase perl5 pkgconfig
 USE_PERL5=	build
