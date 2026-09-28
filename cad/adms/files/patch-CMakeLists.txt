@@ -1,0 +1,24 @@
+-- Fix configure with CMake 4 by raising the minimum required CMake version
+-- from 2.8 to 3.5 and removing the obsolete CMP0048 policy override.
+-- CMake 4 no longer supports compatibility with CMake versions below 3.5.
+-- PR: 297903
+
+--- CMakeLists.txt.orig	2026-09-28 07:26:46 UTC
++++ CMakeLists.txt
+@@ -18,14 +18,11 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-# skip CMake 3.0 project version management for the moment
+-if(POLICY CMP0048)
+-  cmake_policy(SET CMP0048 OLD)
+-endif()
++#==================================
++cmake_minimum_required(VERSION 3.5)
+ 
+ #==================================
+ PROJECT(ADMS C)
+-cmake_minimum_required(VERSION 2.8)
+ 
+ # TODO: store version in a sensible place
+ # e.g. qucs: file(STRINGS "${qucs-project_SOURCE_DIR}/VERSION" QUCS_VERSION)
