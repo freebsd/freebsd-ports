@@ -5,7 +5,7 @@
  )
  set(POSTSRSD_DATADIR
 -    "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/lib/${PROJECT_NAME}"
-+    "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/db/${PROJECT_NAME}"
++    "/var/db/${PROJECT_NAME}"
      CACHE PATH "The default directory where PostSRSd should put runtime data"
  )
  set(POSTSRSD_CHROOTDIR
