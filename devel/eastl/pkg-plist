@@ -1,7 +1,6 @@
 include/EABase/config/eacompiler.h
 include/EABase/config/eacompilertraits.h
 include/EABase/config/eaplatform.h
-include/EABase/config/eaplatform.h.orig
 include/EABase/eabase.h
 include/EABase/eadeprecated.h
 include/EABase/eahave.h
@@ -17,6 +16,7 @@ include/EASTL/allocator_malloc.h
 include/EASTL/any.h
 include/EASTL/array.h
 include/EASTL/atomic.h
+include/EASTL/atomic_raw.h
 include/EASTL/bit.h
 include/EASTL/bitset.h
 include/EASTL/bitvector.h
@@ -25,6 +25,7 @@ include/EASTL/bonus/call_traits.h
 include/EASTL/bonus/compressed_pair.h
 include/EASTL/bonus/fixed_ring_buffer.h
 include/EASTL/bonus/fixed_tuple_vector.h
+include/EASTL/bonus/flags.h
 include/EASTL/bonus/intrusive_sdlist.h
 include/EASTL/bonus/intrusive_slist.h
 include/EASTL/bonus/list_map.h
@@ -38,6 +39,7 @@ include/EASTL/compare.h
 include/EASTL/core_allocator.h
 include/EASTL/core_allocator_adapter.h
 include/EASTL/deque.h
+include/EASTL/expected.h
 include/EASTL/finally.h
 include/EASTL/fixed_allocator.h
 include/EASTL/fixed_function.h
@@ -56,6 +58,7 @@ include/EASTL/hash_set.h
 include/EASTL/heap.h
 include/EASTL/initializer_list.h
 include/EASTL/internal/atomic/arch/arch.h
+include/EASTL/internal/atomic/arch/arch_acquire_fence.h
 include/EASTL/internal/atomic/arch/arch_add_fetch.h
 include/EASTL/internal/atomic/arch/arch_and_fetch.h
 include/EASTL/internal/atomic/arch/arch_cmpxchg_strong.h
@@ -77,11 +80,13 @@ include/EASTL/internal/atomic/arch/arch_sub_fetch.h
 include/EASTL/internal/atomic/arch/arch_thread_fence.h
 include/EASTL/internal/atomic/arch/arch_xor_fetch.h
 include/EASTL/internal/atomic/arch/arm/arch_arm.h
+include/EASTL/internal/atomic/arch/arm/arch_arm_acquire_fence.h
 include/EASTL/internal/atomic/arch/arm/arch_arm_load.h
 include/EASTL/internal/atomic/arch/arm/arch_arm_memory_barrier.h
 include/EASTL/internal/atomic/arch/arm/arch_arm_store.h
 include/EASTL/internal/atomic/arch/arm/arch_arm_thread_fence.h
 include/EASTL/internal/atomic/arch/x86/arch_x86.h
+include/EASTL/internal/atomic/arch/x86/arch_x86_acquire_fence.h
 include/EASTL/internal/atomic/arch/x86/arch_x86_add_fetch.h
 include/EASTL/internal/atomic/arch/x86/arch_x86_and_fetch.h
 include/EASTL/internal/atomic/arch/x86/arch_x86_cmpxchg_strong.h
@@ -108,6 +113,7 @@ include/EASTL/internal/atomic/atomic_flag_standalone.h
 include/EASTL/internal/atomic/atomic_integral.h
 include/EASTL/internal/atomic/atomic_macros.h
 include/EASTL/internal/atomic/atomic_macros/atomic_macros.h
+include/EASTL/internal/atomic/atomic_macros/atomic_macros_acquire_fence.h
 include/EASTL/internal/atomic/atomic_macros/atomic_macros_add_fetch.h
 include/EASTL/internal/atomic/atomic_macros/atomic_macros_and_fetch.h
 include/EASTL/internal/atomic/atomic_macros/atomic_macros_base.h
@@ -134,6 +140,7 @@ include/EASTL/internal/atomic/atomic_pointer.h
 include/EASTL/internal/atomic/atomic_size_aligned.h
 include/EASTL/internal/atomic/atomic_standalone.h
 include/EASTL/internal/atomic/compiler/compiler.h
+include/EASTL/internal/atomic/compiler/compiler_acquire_fence.h
 include/EASTL/internal/atomic/compiler/compiler_add_fetch.h
 include/EASTL/internal/atomic/compiler/compiler_and_fetch.h
 include/EASTL/internal/atomic/compiler/compiler_barrier.h
@@ -209,11 +216,15 @@ include/EASTL/internal/integer_sequence.h
 include/EASTL/internal/intrusive_hashtable.h
 include/EASTL/internal/mem_fn.h
 include/EASTL/internal/memory_base.h
+include/EASTL/internal/memory_uses_allocator.h
 include/EASTL/internal/move_help.h
 include/EASTL/internal/pair_fwd_decls.h
 include/EASTL/internal/piecewise_construct_t.h
 include/EASTL/internal/red_black_tree.h
 include/EASTL/internal/smart_ptr.h
+include/EASTL/internal/special_member_functions.h
+include/EASTL/internal/special_member_functions_expected.h
+include/EASTL/internal/special_member_functions_variant_optional.h
 include/EASTL/internal/thread_support.h
 include/EASTL/internal/tuple_fwd_decls.h
 include/EASTL/internal/type_compound.h
