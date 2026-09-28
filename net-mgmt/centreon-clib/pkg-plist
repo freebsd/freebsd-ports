@@ -3,6 +3,7 @@ include/centreon-clib/com/centreon/clib/version.hh
 include/centreon-clib/com/centreon/delayed_delete.hh
 include/centreon-clib/com/centreon/exceptions/basic.hh
 include/centreon-clib/com/centreon/exceptions/interruption.hh
+include/centreon-clib/com/centreon/exceptions/msg_fmt.hh
 include/centreon-clib/com/centreon/handle.hh
 include/centreon-clib/com/centreon/handle_action.hh
 include/centreon-clib/com/centreon/handle_listener.hh
