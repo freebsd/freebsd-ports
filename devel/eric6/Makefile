@@ -1,6 +1,6 @@
 .include "${.CURDIR}/../../devel/eric6/bsd.eric6.mk"
 
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel python
 PKGNAMESUFFIX=	-qt5-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}

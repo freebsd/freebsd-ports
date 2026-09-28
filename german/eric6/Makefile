@@ -1,3 +1,4 @@
+PORTREVISION=	1
 CATEGORIES=	german devel python
 I18N_LANG=	de
 

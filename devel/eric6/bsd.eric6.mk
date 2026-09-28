@@ -13,6 +13,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Full featured Python and Ruby editor and IDE based on Qt
 
+DEPRECATED=	Depends on deprecated Qt5 WebEngine
+EXPIRATION_DATE=	2026-09-30
+
 LICENSE=	GPLv3
 
 DESCR=		${.CURDIR}/../../devel/eric6/pkg-descr
