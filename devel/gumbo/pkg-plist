@@ -3,5 +3,5 @@ include/tag_enum.h
 lib/libgumbo.a
 lib/libgumbo.so
 lib/libgumbo.so.4
-lib/libgumbo.so.4.0.0
+lib/libgumbo.so.4.0.1
 libdata/pkgconfig/gumbo.pc
