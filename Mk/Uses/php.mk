@@ -199,8 +199,8 @@ PHP_EXT_DIR=   20220829
 PHP_EXT_INC=    hash json openssl pcre random spl
 .    else
 # (rene) default to DEFAULT_VERSIONS
-PHP_EXT_DIR=   20240924
-PHP_EXT_INC=    hash json openssl pcre random spl
+PHP_EXT_DIR=   20250925
+PHP_EXT_INC=    hash json opcache openssl pcre random spl
 .    endif
 
 # Try to figure out what the PHP_EXT_DIR should be WRT the
