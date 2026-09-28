@@ -56,6 +56,6 @@
      };
 -    #[cfg(not(any(target_os = "linux", target_os = "macos")))]
 +    #[cfg(not(any(target_os = "linux", target_os = "freebsd", target_os = "macos")))]
-     return Err(ARTIFACT_PUBLISH_UNSUPPORTED.to_owned());
- 
-     let supported = result == 0 || errno() == libc::EEXIST;
+     // SAFETY: directory_fd is held and both probe names are NUL-terminated.
+     // Linking a name onto itself must fail with EEXIST; a file system
+     // without hard links fails differently and is reported unsupported.
