@@ -24,6 +24,7 @@ DATADIR=	${LOCALBASE}/share/coordgen
 CMAKE_ON=		COORDGEN_USE_MAEPARSER
 CMAKE_OFF=		COORDGEN_BUILD_TESTS COORDGEN_BUILD_EXAMPLE
 CMAKE_TESTING_ON=	COORDGEN_BUILD_TESTS COORDGEN_BUILD_EXAMPLE
+CMAKE_ARGS=		-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility, see https://github.com/schrodinger/coordgenlibs/issues/140
 
 post-patch: # see https://github.com/schrodinger/coordgenlibs/issues/64
 	@${REINPLACE_CMD} 's|return getTempFileProjDir() + suffix;|return "${DATADIR}/templates.mae";|' ${WRKSRC}/sketcherMinimizer.cpp
