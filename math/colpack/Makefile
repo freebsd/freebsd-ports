@@ -20,6 +20,7 @@ GH_ACCOUNT=	CSCsw
 GH_PROJECT=	ColPack
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build/cmake
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility
 
 .if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib
