@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.16.8
+DISTVERSION=	0.16.9
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -202,7 +202,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		interpolator-0.5.0 \
 		intrusive-collections-0.10.1 \
 		inventory-0.3.24 \
-		is-macro-0.3.7 \
+		is-macro-0.3.8 \
 		is-terminal-0.4.16 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
@@ -223,8 +223,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.189 \
-		libcst-1.8.6 \
-		libcst_derive-1.8.6 \
+		libcst-1.9.0 \
+		libcst_derive-1.9.0 \
 		libm-0.2.16 \
 		libmimalloc-sys-0.1.49 \
 		libredox-0.1.10 \
@@ -233,7 +233,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.0 \
 		lock_api-0.4.14 \
-		log-0.4.33 \
+		log-0.4.34 \
 		lsp-server-0.10.0 \
 		manyhow-0.11.4 \
 		manyhow-macros-0.11.4 \
@@ -348,9 +348,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
-		salsa-0.28.2 \
-		salsa-macro-rules-0.28.2 \
-		salsa-macros-0.28.2 \
+		salsa-0.28.5 \
+		salsa-macro-rules-0.28.5 \
+		salsa-macros-0.28.5 \
 		same-file-1.0.6 \
 		schemars-1.2.2 \
 		schemars_derive-1.2.2 \
@@ -371,7 +371,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		shlex-2.0.1 \
 		simdutf8-0.1.5 \
 		similar-2.7.0 \
-		similar-3.1.2 \
+		similar-3.2.0 \
 		siphasher-1.0.1 \
 		slab-0.4.12 \
 		smallvec-1.15.2 \
@@ -442,7 +442,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		utf8-width-0.1.7 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.24.1 \
+		uuid-1.25.0 \
 		valuable-0.1.1 \
 		version-ranges-0.1.1 \
 		version_check-0.9.5 \
