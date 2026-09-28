@@ -1,6 +1,6 @@
 PORTNAME=	libdbusmenu-qt
 PORTVERSION=	${MAJOR_VER}.${SNAPSHOT_VER:S/.//g}
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	devel
 MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/main/libd/${PORTNAME}/ \
 		LOCAL/tcberner/${PORTNAME}/${PORTVERSION}
@@ -11,6 +11,9 @@ COMMENT=	Qt${PKGNAMESUFFIX} implementation of the DBusMenu protocol
 WWW=		https://launchpad.net/libdbusmenu-qt
 
 LICENSE=	LGPL20
+
+DEPRECATED=	Not needed for Qt6 apps, does not build with CMake 4
+EXPIRATION_DATE=	2026-11-30
 
 FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
