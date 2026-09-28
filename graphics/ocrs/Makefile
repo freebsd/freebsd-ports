@@ -1,7 +1,6 @@
 PORTNAME=	ocrs
 DISTVERSIONPREFIX=	ocrs-cli-v
-DISTVERSION=	0.13.0
-PORTREVISION=	1
+DISTVERSION=	0.13.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		anyhow-1.0.104 \
 		arboard-3.6.1 \
 		autocfg-1.1.0 \
-		base64-0.22.1 \
+		base64-0.23.1 \
 		bitflags-1.3.2 \
 		bitflags-2.9.4 \
 		bumpalo-3.14.0 \
@@ -139,8 +138,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		syn-2.0.87 \
 		syn-3.0.3 \
 		tempfile-3.25.0 \
-		thiserror-2.0.19 \
-		thiserror-impl-2.0.19 \
+		thiserror-2.0.20 \
+		thiserror-impl-2.0.20 \
 		tiff-0.11.3 \
 		toml-0.9.12+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
@@ -150,8 +149,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		typeid-1.0.3 \
 		unicode-ident-1.0.12 \
 		untrusted-0.9.0 \
-		ureq-3.3.0 \
-		ureq-proto-0.6.0 \
+		ureq-3.4.0 \
+		ureq-proto-0.6.1 \
 		url-2.5.4 \
 		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
