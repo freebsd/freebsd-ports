@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-09-28 16:13:05 UTC
++++ pyproject.toml
+@@ -12,9 +12,6 @@ keywords = ["web", "application", "server", "wsgi", "z
+ readme = {file = "README.rst", content-type = "text/x-rst"}
+ requires-python = ">=3.10"
+ keywords = ["web", "application", "server", "wsgi", "zope"]
+-license-files = [
+-    "LICENSE.txt",
+-]
+ authors = [
+   { name = "Tres Seaver, Agendaless Consulting", email = "tseaver@agendaless.com" },
+ ]
