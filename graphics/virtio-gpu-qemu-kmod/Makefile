@@ -11,8 +11,8 @@ WWW=		https://gitlab.com/tgasiba/virtio_gpu_qemu
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	only tested on aarch64 and amd64 guests
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	only tested on aarch64, amd64 and powerpc64(le) guests
 
 USES=		kmod uidfix
 
