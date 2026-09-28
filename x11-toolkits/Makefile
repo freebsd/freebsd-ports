@@ -5,7 +5,6 @@
     SUBDIR += aquamarine
     SUBDIR += blt
     SUBDIR += bwidget
-    SUBDIR += color-widgets-qt5
     SUBDIR += como
     SUBDIR += copperspice
     SUBDIR += ctk
@@ -202,6 +201,7 @@
     SUBDIR += pythonqt
     SUBDIR += qhotkey
     SUBDIR += qml-box2d
+    SUBDIR += qt-color-widgets
     SUBDIR += qt5-charts
     SUBDIR += qt5-datavis3d
     SUBDIR += qt5-declarative

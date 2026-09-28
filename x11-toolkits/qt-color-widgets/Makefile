@@ -1,5 +1,5 @@
-PORTNAME=	color-widgets
-DISTVERSION=	2.2.0
+PORTNAME=	qt-color-widgets
+DISTVERSION=	3.0.0
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	${SUFFIX}
 
@@ -10,15 +10,17 @@ WWW=		https://gitlab.com/mattia.basaglia/Qt-Color-Widgets
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang pkgconfig qt:5
-USE_QT=		core gui widgets buildtools:build qmake:build
+USES=		cmake compiler:c++17-lang gl pkgconfig qt:6
+USE_QT=		base tools:build
+USE_GL=		opengl
+LIB_DEPENDS+=	libGLX.so:graphics/libglvnd
 USE_LDCONFIG=	yes
-
-SUFFIX=		-qt5
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	mattia.basaglia
 GL_PROJECT=	Qt-Color-Widgets
-GL_TAGNAME=	f2eca13bbc836cec09daae02579f10d5e85e71e8
+
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DQT_VERSION_MAJOR=6
 
 .include <bsd.port.mk>
