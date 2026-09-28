@@ -4,7 +4,7 @@ CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Minimalistic text-based status bar
-WWW=		https://xmobar.org/
+WWW=		https://codeberg.org/xmobar/xmobar
 
 LICENSE=	BSD3CLAUSE
 
