@@ -1,5 +1,5 @@
 PORTNAME=	check_ssl_cert
-DISTVERSION=	2.103.1
+DISTVERSION=	2.103.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/matteocorti/${PORTNAME}/releases/download/v${DISTVERSION}/
 
