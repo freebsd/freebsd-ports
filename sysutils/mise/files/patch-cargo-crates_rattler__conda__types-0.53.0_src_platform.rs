@@ -1,6 +1,9 @@
---- cargo-crates/rattler_conda_types-0.51.0/src/platform.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/rattler_conda_types-0.51.0/src/platform.rs
-@@ -35,6 +35,8 @@ pub enum Platform {
+-- Add FreeBSD powerpc64 and powerpc64le platform support to rattler_conda_types.
+-- This is needed to build mise on FreeBSD ppc64/ppc64le architectures.
+
+--- cargo-crates/rattler_conda_types-0.53.0/src/platform.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/rattler_conda_types-0.53.0/src/platform.rs
+@@ -34,6 +34,8 @@ pub enum Platform {
      FreeBsd32,
      FreeBsd64,
      FreeBsdArm64,
@@ -9,16 +12,16 @@
  
      Osx64,
      OsxArm64,
-@@ -154,7 +156,18 @@ impl Platform {
+@@ -190,7 +192,18 @@ impl Platform {
              #[cfg(target_arch = "aarch64")]
-             return Platform::FreeBsdArm64;
+             return Some(Platform::FreeBsdArm64);
  
 -            #[cfg(not(any(target_arch = "x86", target_arch = "x86_64", target_arch = "aarch64")))]
 +            #[cfg(all(target_arch = "powerpc64", target_endian = "little"))]
-+            return Platform::FreeBsdPpc64le;
++            return Some(Platform::FreeBsdPpc64le);
 +
 +            #[cfg(all(target_arch = "powerpc64", target_endian = "big"))]
-+            return Platform::FreeBsdPpc64;
++            return Some(Platform::FreeBsdPpc64);
 +
 +            #[cfg(not(any(
 +                target_arch = "x86",
@@ -29,7 +32,7 @@
              compile_error!("unsupported freebsd architecture");
          }
          #[cfg(windows)]
-@@ -230,6 +243,8 @@ impl Platform {
+@@ -324,6 +337,8 @@ impl Platform {
                      | Platform::FreeBsd32
                      | Platform::FreeBsd64
                      | Platform::FreeBsdArm64
@@ -38,7 +41,7 @@
              )
      }
  
-@@ -273,7 +288,11 @@ impl Platform {
+@@ -389,7 +404,11 @@ impl Platform {
              | Platform::LinuxS390X
              | Platform::LinuxRiscv32
              | Platform::LinuxRiscv64 => Some("linux"),
@@ -49,9 +52,9 @@
 +            | Platform::FreeBsdPpc64le
 +            | Platform::FreeBsdPpc64 => Some("freebsd"),
              Platform::Osx64 | Platform::OsxArm64 => Some("osx"),
-             Platform::Win32 | Platform::Win64 | Platform::WinArm64 => Some("win"),
-             Platform::EmscriptenWasm32 => Some("emscripten"),
-@@ -322,6 +341,8 @@ impl FromStr for Platform {
+             Platform::IosArm64 => Some("ios"),
+             Platform::IosSimulatorArm64 | Platform::IosSimulator64 => Some("iossimulator"),
+@@ -444,6 +463,8 @@ impl FromStr for Platform {
              "freebsd-32" => Platform::FreeBsd32,
              "freebsd-64" => Platform::FreeBsd64,
              "freebsd-arm64" => Platform::FreeBsdArm64,
@@ -59,8 +62,8 @@
 +            "freebsd-ppc64" => Platform::FreeBsdPpc64,
              "osx-64" => Platform::Osx64,
              "osx-arm64" => Platform::OsxArm64,
-             "win-32" => Platform::Win32,
-@@ -358,6 +379,8 @@ impl From<Platform> for &'static str {
+             "ios-arm64" => Platform::IosArm64,
+@@ -488,6 +509,8 @@ impl From<Platform> for &'static str {
              Platform::FreeBsd32 => "freebsd-32",
              Platform::FreeBsd64 => "freebsd-64",
              Platform::FreeBsdArm64 => "freebsd-arm64",
@@ -68,8 +71,8 @@
 +            Platform::FreeBsdPpc64 => "freebsd-ppc64",
              Platform::Osx64 => "osx-64",
              Platform::OsxArm64 => "osx-arm64",
-             Platform::Win32 => "win-32",
-@@ -382,8 +405,8 @@ impl Platform {
+             Platform::IosArm64 => "ios-arm64",
+@@ -519,8 +542,8 @@ impl Platform {
              Platform::LinuxArmV6l => Some(Arch::ArmV6l),
              Platform::LinuxArmV7l => Some(Arch::ArmV7l),
              Platform::LinuxLoongArch64 => Some(Arch::LoongArch64),
@@ -80,7 +83,7 @@
              Platform::LinuxPpc => Some(Arch::Ppc),
              Platform::LinuxS390X => Some(Arch::S390X),
              Platform::LinuxRiscv32 => Some(Arch::Riscv32),
-@@ -552,6 +575,14 @@ mod tests {
+@@ -704,6 +727,14 @@ mod tests {
              "freebsd-arm64".parse::<Platform>().unwrap(),
              Platform::FreeBsdArm64
          );
@@ -95,7 +98,7 @@
          assert_eq!("win-arm64".parse::<Platform>().unwrap(), Platform::WinArm64);
          assert_eq!(
              "emscripten-wasm32".parse::<Platform>().unwrap(),
-@@ -596,6 +627,8 @@ mod tests {
+@@ -824,6 +855,8 @@ mod tests {
          assert_eq!(Platform::FreeBsd32.arch(), Some(Arch::X86));
          assert_eq!(Platform::FreeBsd64.arch(), Some(Arch::X86_64));
          assert_eq!(Platform::FreeBsdArm64.arch(), Some(Arch::Arm64));
