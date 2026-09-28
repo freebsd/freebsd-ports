@@ -1,7 +1,6 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.1
-PORTREVISION=	1
+DISTVERSION=	2.14.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -289,7 +288,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.12.0 \
-		rustls-webpki-0.103.5 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
