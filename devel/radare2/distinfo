@@ -1,7 +1,9 @@
-TIMESTAMP = 1783204617
-SHA256 (radareorg-radare2-6.1.4_GH0.tar.gz) = e025d623aa253e20b050164e65f140e437c110812a7b4c8b1b1342f692dfb452
-SIZE (radareorg-radare2-6.1.4_GH0.tar.gz) = 11251413
-SHA256 (radareorg-sdb-2.4.2_GH0.tar.gz) = 4b5c1c387307759aeeb76704d130a9bbe98bf68ae7bbab796efeb052e5e25e47
-SIZE (radareorg-sdb-2.4.2_GH0.tar.gz) = 312529
-SHA256 (quickjs-ng-quickjs-e2b100e8c5fa7131e9fb22b8a0e9ca0f16eb9892_GH0.tar.gz) = 597f34d36640219315b47b7d1623dd3f827d0a62072f92cbea6a55c73d739dd6
-SIZE (quickjs-ng-quickjs-e2b100e8c5fa7131e9fb22b8a0e9ca0f16eb9892_GH0.tar.gz) = 820888
+TIMESTAMP = 1790615547
+SHA256 (radareorg-radare2-6.1.8_GH0.tar.gz) = 84d0e32af697f720c9f480f6b3e56b08f64251d90cfe2d8f163431c006c0053e
+SIZE (radareorg-radare2-6.1.8_GH0.tar.gz) = 12021317
+SHA256 (radareorg-sdb-2.4.6_GH0.tar.gz) = ccf83cbf6659a117de6d1d340a1849700b076f6f2ef64e9e2a70de5ef2ebcf0a
+SIZE (radareorg-sdb-2.4.6_GH0.tar.gz) = 313235
+SHA256 (quickjs-ng-quickjs-3087a2ce5bcb66cc1fcd9f34d3e5ce3bd43a67d9_GH0.tar.gz) = 875ade015fdc7660bec9547f973efc04b6a6dbfa8d7c72a9c1af6798319dfabb
+SIZE (quickjs-ng-quickjs-3087a2ce5bcb66cc1fcd9f34d3e5ce3bd43a67d9_GH0.tar.gz) = 819750
+SHA256 (zyantific-zydis-v4.1.0_GH0.tar.gz) = 31f23de8abb4cc2efa0fd0e827bbabcaa0f3d00fcaed8598e05295ba7b3806ad
+SIZE (zyantific-zydis-v4.1.0_GH0.tar.gz) = 806648

@@ -1,5 +1,5 @@
 PORTNAME=	radare2
-DISTVERSION=	6.1.4
+DISTVERSION=	6.1.8
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -13,16 +13,18 @@ NOT_FOR_ARCHS=	armv6 armv7 powerpcspe
 NOT_FOR_ARCHS_REASON=	does not build: Unsupported BSD architecture
 
 LIB_DEPENDS=	libcapstone.so:devel/capstone \
+		libxxhash.so:devel/xxhash \
 		libzip.so:archivers/libzip
 
-USES=		cpe localbase meson pathfix pkgconfig python shebangfix tar:xz
+USES=		cpe compiler:c++23-lang localbase meson pathfix pkgconfig python shebangfix tar:xz
 CPE_VENDOR=	radare
 PATHFIX_MAKEFILEIN=	Makefile
 USE_GITHUB=	yes
 GH_ACCOUNT=	radareorg
 GH_TUPLE=	\
-		radareorg:sdb:2.4.2:sdb/subprojects/sdb \
-		quickjs-ng:quickjs:e2b100e8c5fa7131e9fb22b8a0e9ca0f16eb9892:qjs/subprojects/qjs
+		radareorg:sdb:2.4.6:sdb/subprojects/sdb \
+		quickjs-ng:quickjs:3087a2ce5bcb66cc1fcd9f34d3e5ce3bd43a67d9:qjs/subprojects/qjs \
+		zyantific:zydis:v4.1.0:zydis/subprojects/zydis
 
 SHEBANG_FILES=	sys/clang-format-radare2
 
@@ -52,6 +54,10 @@ post-patch:
 		${WRKSRC}/libr/debug/p/native/reg/kfbsd-riscv64.h
 	${CP} ${WRKSRC}/subprojects/packagefiles/qjs/meson.build \
 		${WRKSRC}/subprojects/qjs/meson.build
+	${CP} ${WRKSRC}/subprojects/packagefiles/zydis/meson.build \
+		${WRKSRC}/subprojects/zydis/meson.build
+	${CP} -R ${WRKSRC}/subprojects/packagefiles/zydis/amalgamated-dist \
+		${WRKSRC}/subprojects/zydis/
 	${RM} ${WRKSRC}/libr/flag/d/Makefile.bak
 
 post-install-DOCS-on:

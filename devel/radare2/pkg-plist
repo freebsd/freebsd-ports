@@ -89,6 +89,8 @@ include/libr/r_util/r_base64.h
 include/libr/r_util/r_base91.h
 include/libr/r_util/r_big.h
 include/libr/r_util/r_bitmap.h
+include/libr/r_util/r_bits.h
+include/libr/r_util/r_bitset.h
 include/libr/r_util/r_bloom.h
 include/libr/r_util/r_buf.h
 include/libr/r_util/r_cfloat.h
@@ -126,6 +128,8 @@ include/libr/r_util/r_str_constpool.h
 include/libr/r_util/r_str_util.h
 include/libr/r_util/r_strbuf.h
 include/libr/r_util/r_strpool.h
+include/libr/r_util/r_strs.h
+include/libr/r_util/r_strs_store.h
 include/libr/r_util/r_sys.h
 include/libr/r_util/r_table.h
 include/libr/r_util/r_time.h
@@ -238,7 +242,7 @@ lib/libr_syscall.so
 lib/libr_syscall.so.%%PORTVERSION%%
 lib/libr_util.so
 lib/libr_util.so.%%PORTVERSION%%
-lib/libsdb.so.2.4.2
+lib/libsdb.so.2.4.6
 libdata/pkgconfig/libr.pc
 libdata/pkgconfig/r_anal.pc
 libdata/pkgconfig/r_arch.pc
@@ -267,6 +271,7 @@ libdata/pkgconfig/sdb.pc
 %%PORTDOCS%%%%DOCSDIR%%/abi.md
 %%PORTDOCS%%%%DOCSDIR%%/all68k.r2
 %%PORTDOCS%%%%DOCSDIR%%/android.md
+%%PORTDOCS%%%%DOCSDIR%%/arm-endian.md
 %%PORTDOCS%%%%DOCSDIR%%/avr.md
 %%PORTDOCS%%%%DOCSDIR%%/bash_autocompletion.sh
 %%PORTDOCS%%%%DOCSDIR%%/brainfuck.md
@@ -279,6 +284,7 @@ libdata/pkgconfig/sdb.pc
 %%PORTDOCS%%%%DOCSDIR%%/dexdump.sh
 %%PORTDOCS%%%%DOCSDIR%%/dospart
 %%PORTDOCS%%%%DOCSDIR%%/dwarf-line.rsc
+%%PORTDOCS%%%%DOCSDIR%%/dyncc.md
 %%PORTDOCS%%%%DOCSDIR%%/emscripten.md
 %%PORTDOCS%%%%DOCSDIR%%/esil.md
 %%PORTDOCS%%%%DOCSDIR%%/flirt.md
@@ -695,6 +701,7 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/platform/nes-init.r2
 %%DATADIR%%/%%PORTVERSION%%/scripts/il2cpp.r2.js
 %%DATADIR%%/%%PORTVERSION%%/scripts/ipsw-kernel-symbolicate.r2.js
+%%DATADIR%%/%%PORTVERSION%%/scripts/ldmap.r2.js
 %%DATADIR%%/%%PORTVERSION%%/scripts/licenses.r2.js
 %%DATADIR%%/%%PORTVERSION%%/scripts/parseplug.r2.js
 %%DATADIR%%/%%PORTVERSION%%/scripts/r2sptrace.py
@@ -714,12 +721,15 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/syscall/linux-arm-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/linux-arm-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/linux-mips-32.sdb
+%%DATADIR%%/%%PORTVERSION%%/syscall/linux-ppc-32.sdb
+%%DATADIR%%/%%PORTVERSION%%/syscall/linux-ppc-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/linux-sparc-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/linux-x86-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/linux-x86-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/netbsd-x86-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/openbsd-x86-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/openbsd-x86-64.sdb
+%%DATADIR%%/%%PORTVERSION%%/syscall/pebble-arm-16.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/s110-arm-16.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/windows-x86-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/windows-x86-64.sdb
