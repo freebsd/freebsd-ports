@@ -1,12 +1,13 @@
 PORTNAME=	mercury
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-rpc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for implementing RPC, optimized for HPC
-WWW=		https://mercury-hpc.github.io/
+WWW=		https://mercury-hpc.github.io/ \
+		https://github.com/mercury-hpc/mercury
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -27,5 +28,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 .if !exists(/usr/include/byteswap.h)
 BROKEN=		needs /usr/include/byteswap.h
 .endif
+
+# tests as of 2.4.1: 100% tests passed, 0 tests failed out of 16
 
 .include <bsd.port.mk>

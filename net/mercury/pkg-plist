@@ -16,7 +16,6 @@ include/mercury_hash_string.h
 include/mercury_hash_table.h
 include/mercury_header.h
 include/mercury_inet.h
-include/mercury_list.h
 include/mercury_log.h
 include/mercury_macros.h
 include/mercury_mem.h
@@ -45,13 +44,13 @@ include/na_config.h
 include/na_types.h
 lib/libmercury.so
 lib/libmercury.so.2
-lib/libmercury.so.2.3.1
+lib/libmercury.so.2.4.1
 lib/libmercury_util.so
 lib/libmercury_util.so.4
 lib/libmercury_util.so.4.0.0
 lib/libna.so
-lib/libna.so.4
-lib/libna.so.4.0.0
+lib/libna.so.6
+lib/libna.so.6.0.0
 libdata/pkgconfig/mercury.pc
 libdata/pkgconfig/mercury_util.pc
 libdata/pkgconfig/na.pc
