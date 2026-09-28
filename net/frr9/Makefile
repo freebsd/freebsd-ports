@@ -1,7 +1,7 @@
 PORTNAME=	frr
 PORTVERSION=	9.1.3
 DISTVERSIONPREFIX=	frr-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 .if defined(PYTHONTOOLS)
 PKGNAMESUFFIX=	9-pythontools
@@ -48,7 +48,7 @@ CPE_PRODUCT=	frrouting
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
-CONFLICTS=	frr8 frr10 openbgpd openospfd quagga zebra
+CONFLICTS=	frr10
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
@@ -101,6 +101,7 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--enable-vtysh \
 		--disable-doc-html \
 		--sysconfdir=${ETCDIR} \
+		--sbindir=${PREFIX}/lib/frr \
 		--localstatedir=/var/run/frr \
 		--disable-nhrpd \
 		--disable-pathd \
@@ -137,7 +138,7 @@ SHEBANG_FILES=	yang/embedmodel.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/frr|${ETCDIR}|g' \
-		-e 's|/usr/lib/frr|${PREFIX}/sbin|g' \
+		-e 's|/usr/lib/frr|${PREFIX}/lib/frr|g' \
 		-e 's|frr-pythontools|frr9-pythontools|g' \
 		${WRKSRC}/tools/frr-reload
 
