@@ -1,5 +1,5 @@
 PORTNAME=	slib
-DISTVERSION=	3c2 # Keep this in sync with lang/slib
+DISTVERSION=	3c3 # Keep this in sync with lang/slib
 CATEGORIES=	lang scheme
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-${FLAVOR}
