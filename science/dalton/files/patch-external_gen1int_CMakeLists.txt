@@ -1,0 +1,12 @@
+-- Fix configure with CMake 4 by raising the minimum required CMake version
+-- from 2.6 to 3.5. CMake 4 no longer supports compatibility with CMake versions below 3.5.
+
+--- external/gen1int/CMakeLists.txt.orig	2026-09-28 07:53:33 UTC
++++ external/gen1int/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ # Required version of CMake
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+ 
+ # Project name
+ PROJECT(Gen1Int C Fortran)
