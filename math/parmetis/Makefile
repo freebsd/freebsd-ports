@@ -1,6 +1,6 @@
 PORTNAME=	ParMetis
 DISTVERSION=	4.0.3-p10
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	https://bitbucket.org/petsc/pkg-parmetis/get/
