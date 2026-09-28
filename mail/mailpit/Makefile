@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.31.2
+DISTVERSION=	1.31.3
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -28,13 +28,13 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME}
 
 pre-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm ci --legacy-peer-deps
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm ci
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm run build
 
 # (for maintainer) helper target to generate node_modules tarball
 make-npm-cache: patch
 	@cd ${WRKDIR} && ${RM} -r .npm
-	@cd ${WRKSRC} && ${SETENV} HOME=${WRKDIR} npm ci --legacy-peer-deps
+	@cd ${WRKSRC} && ${SETENV} HOME=${WRKDIR} npm ci
 	@cd ${WRKDIR} \
 		&& ${TAR} -c --zstd -f ${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} .npm \
 		&& ${ECHO} "Please upload the file ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}"
