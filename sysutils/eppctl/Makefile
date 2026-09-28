@@ -1,5 +1,6 @@
 PORTNAME=	eppctl
 DISTVERSION=	0.0.20260928
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	osa@FreeBSD.org
@@ -18,8 +19,8 @@ GH_TAGNAME=	1250458
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	does not support
 
-PLIST=		bin/eppctl
-MANS=		eppctl.8
+PLIST_FILES=	sbin/eppctl \
+		share/man/man8/eppctl.8.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eppctl ${STAGEDIR}${PREFIX}/sbin/
