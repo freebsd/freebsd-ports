@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.25.0
-PORTREVISION=	1
+DISTVERSION=	3.26.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -101,6 +100,7 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		error-code-3.4.0 \
+		extended-0.1.0 \
 		faster-hex-0.10.0 \
 		fastrand-2.5.0 \
 		file-size-1.0.3 \
@@ -281,13 +281,19 @@ CARGO_CRATES=	aho-corasick-1.1.5 \
 		strict-0.2.0 \
 		strsim-0.11.1 \
 		symphonia-0.5.5 \
+		symphonia-bundle-flac-0.5.5 \
 		symphonia-bundle-mp3-0.5.5 \
+		symphonia-codec-pcm-0.5.5 \
+		symphonia-codec-vorbis-0.5.5 \
 		symphonia-core-0.5.5 \
+		symphonia-format-ogg-0.5.5 \
+		symphonia-format-riff-0.5.5 \
 		symphonia-metadata-0.5.5 \
+		symphonia-utils-xiph-0.5.5 \
 		syn-2.0.119 \
 		syn-3.0.3 \
 		tempfile-3.27.0 \
-		termimad-0.35.2 \
+		termimad-0.35.5 \
 		terminal-light-1.9.1 \
 		thiserror-1.0.69 \
 		thiserror-2.0.20 \
