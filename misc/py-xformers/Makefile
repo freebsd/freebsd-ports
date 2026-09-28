@@ -24,7 +24,7 @@ USE_PYTHON=	pep517 autoplist pytest # tests fail, see https://github.com/faceboo
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "aarch64"
 MAKE_ENV=	LD_STATIC_TLS_EXTRA=4096 # see pkg-message in misc/py-pytorch
 .endif
 
