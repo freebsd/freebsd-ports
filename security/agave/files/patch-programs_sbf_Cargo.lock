@@ -1,9 +1,11 @@
---- programs/sbf/Cargo.lock.orig	2026-07-21 04:26:20 UTC
+-- Remove protobuf-src dependency so the port builds without bundled C++ protobuf.
+--- programs/sbf/Cargo.lock.orig	2026-09-27 23:42:25 UTC
 +++ programs/sbf/Cargo.lock
-@@ -4705,15 +4705,6 @@ dependencies = [
+@@ -4676,14 +4676,6 @@ dependencies = [
+  "thiserror 1.0.69",
  ]
  
- [[package]]
+-[[package]]
 -name = "protobuf-src"
 -version = "1.1.0+21.5"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -11,16 +13,14 @@
 -dependencies = [
 - "autotools",
 -]
--
--[[package]]
+ 
+ [[package]]
  name = "protobuf-support"
- version = "3.7.2"
- source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -9373,7 +9364,6 @@ dependencies = [
-  "bincode",
+@@ -9467,7 +9459,6 @@ dependencies = [
+ dependencies = [
   "bs58",
   "prost",
 - "protobuf-src",
   "serde",
   "solana-account-decoder",
-  "solana-hash 4.3.0",
+  "solana-hash 4.6.0",

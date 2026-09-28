@@ -1,17 +1,19 @@
---- Cargo.lock.orig	2026-07-21 04:26:20 UTC
+-- Remove protobuf-src dependency so the port builds without bundled C++ protobuf.
+--- Cargo.lock.orig	2026-09-27 23:42:19 UTC
 +++ Cargo.lock
-@@ -5498,7 +5498,6 @@ dependencies = [
+@@ -5683,7 +5683,6 @@ dependencies = [
  name = "proto"
- version = "4.1.2"
+ version = "4.3.0"
  dependencies = [
 - "protobuf-src",
   "tonic-prost-build",
  ]
  
-@@ -5514,15 +5513,6 @@ dependencies = [
+@@ -5698,14 +5697,6 @@ dependencies = [
+  "thiserror 1.0.69",
  ]
  
- [[package]]
+-[[package]]
 -name = "protobuf-src"
 -version = "1.1.0+21.5"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -19,16 +21,14 @@
 -dependencies = [
 - "autotools",
 -]
--
--[[package]]
+ 
+ [[package]]
  name = "protobuf-support"
- version = "3.7.2"
- source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -10529,7 +10519,6 @@ dependencies = [
+@@ -10852,7 +10843,6 @@ dependencies = [
   "bs58",
   "enum-iterator",
-  "prost 0.14.3",
+  "prost 0.14.4",
 - "protobuf-src",
   "serde",
   "solana-account-decoder",
-  "solana-hash 4.3.0",
+  "solana-hash 4.6.0",
