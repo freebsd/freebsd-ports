@@ -18,6 +18,7 @@ GH_ACCOUNT=	Amanieu
 GH_TAGNAME=	627e0520d1b22c075f65fb7abc6269377e3a4c40 # include the PR https://github.com/Amanieu/asyncplusplus/pull/57 to build the shared library
 
 CMAKE_ON=	ASYNCXX_BUILD_SHARED
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility, see https://github.com/Amanieu/asyncplusplus/issues/68
 
 OPTIONS_DEFINE=		STATIC
 OPTIONS_DEFAULT=	STATIC
