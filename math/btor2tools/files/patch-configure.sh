@@ -1,8 +1,8 @@
---- configure.sh.orig	2019-06-14 05:32:21 UTC
+--- configure.sh.orig	2023-08-16 17:12:53 UTC
 +++ configure.sh
-@@ -61,7 +61,7 @@ do
-     -gprof) gprof=yes;;
-     -f*|-m*) if [ $flags = none ]; then flags=$1; else flags="$flags $1"; fi;;
+@@ -52,7 +52,7 @@ do
+     --asan) asan=yes;;
+     --btor2aiger) btor2aiger=yes;;
      -h|-help|--help) usage;;
 -    -*) die "invalid option '$1' (try '-h')";;
 +    -*) ;;
