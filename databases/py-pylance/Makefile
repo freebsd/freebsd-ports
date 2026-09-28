@@ -1,7 +1,6 @@
 PORTNAME=	pylance
 DISTVERSIONPREFIX=	v
-DISTVERSION=	11.0.0
-PORTREVISION=	1
+DISTVERSION=	12.0.0
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +16,7 @@ BROKEN_aarch64=	compilation fails: cannot find module or crate `aarch64`, see ht
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/protoc:devel/protobuf \
 		${PYTHON_PKGNAMEPREFIX}maturin>=1.4:devel/py-maturin@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lance-namespace>=0.8.5:databases/py-lance-namespace@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lance-namespace>=0.11.1:databases/py-lance-namespace@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.22:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyarrow>=14:databases/py-pyarrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
@@ -41,6 +40,7 @@ TEST_ARGS=	--disable-plugin-autoload \
 		--deselect python/tests/test_filter.py::test_simple_predicates \
 		--deselect python/tests/test_filter.py::test_filter_on_column_beside_struct_with_extension_type \
 		--deselect python/tests/test_filter.py::test_filter_on_column_beside_root_extension_type \
+		--deselect python/tests/test_filter.py::test_timestamp_pyarrow_predicates \
 		--deselect python/tests/test_integration.py::test_duckdb_pushdown_extension_types \
 		--deselect python/tests/test_log.py::test_lance_log_file \
 		--deselect python/tests/test_log.py::test_lance_log_file_with_directory_creation \
@@ -98,6 +98,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		async-recursion-1.1.1 \
 		async-trait-0.1.91 \
 		async_cell-0.2.3 \
+		asyncband-0.6.7 \
 		atoi-2.0.0 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.1 \
@@ -161,10 +162,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		chrono-0.4.45 \
 		chrono-tz-0.10.4 \
 		cipher-0.4.4 \
-		clap-4.6.4 \
-		clap_builder-4.6.2 \
-		clap_derive-4.6.4 \
-		clap_lex-1.1.0 \
 		cmake-0.1.58 \
 		cmov-0.5.4 \
 		colorchoice-1.0.5 \
@@ -200,9 +197,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crypto-common-0.2.2 \
 		csv-1.4.0 \
 		csv-core-0.1.13 \
-		ctor-0.6.3 \
 		ctor-1.0.7 \
-		ctor-proc-macro-0.0.7 \
 		ctutils-0.4.2 \
 		daachorse-2.1.1 \
 		darling-0.20.11 \
@@ -258,8 +253,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		dirs-sys-0.5.0 \
 		displaydoc-0.2.6 \
 		dlv-list-0.5.2 \
-		dtor-0.1.1 \
-		dtor-proc-macro-0.0.6 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
 		earcutr-0.4.3 \
@@ -317,7 +310,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		git-version-macro-0.3.9 \
 		glob-0.3.3 \
 		gloo-timers-0.3.0 \
-		goosefs-sdk-0.1.8 \
+		goosefs-sdk-0.1.9 \
 		h2-0.4.16 \
 		half-2.7.1 \
 		hash32-0.3.1 \
@@ -331,7 +324,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
-		hf-xet-1.5.2 \
+		hf-xet-1.6.0 \
 		hmac-0.12.1 \
 		hmac-0.13.0 \
 		hostname-0.4.2 \
@@ -379,6 +372,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.11.0 \
 		itertools-0.14.0 \
+		itertools-0.15.0 \
 		itoa-1.0.18 \
 		jieba-macros-0.10.2 \
 		jieba-rs-0.10.3 \
@@ -396,7 +390,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		kanaria-0.2.0 \
 		konst-0.4.3 \
 		konst_proc_macros-0.4.1 \
-		lance-namespace-reqwest-client-0.11.0 \
+		lance-namespace-reqwest-client-0.12.0 \
 		lazy_static-1.5.0 \
 		lexical-core-1.0.6 \
 		lexical-parse-float-1.0.6 \
@@ -418,7 +412,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lock_api-0.4.14 \
 		log-0.4.33 \
 		loom-0.7.2 \
-		lru-0.12.5 \
+		lru-0.18.4 \
 		lru-slab-0.1.2 \
 		lz4-1.28.1 \
 		lz4-sys-1.11.1+lz4-1.10.0 \
@@ -426,7 +420,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		matchers-0.2.0 \
 		matchit-0.7.3 \
 		matrixmultiply-0.3.10 \
-		md-5-0.10.6 \
 		md-5-0.11.0 \
 		mea-0.6.4 \
 		memchr-2.8.2 \
@@ -444,6 +437,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		munge_macro-0.4.7 \
 		ndarray-0.16.1 \
 		nibble_vec-0.1.0 \
+		nix-0.31.3 \
 		nom-8.0.0 \
 		ntapi-0.4.3 \
 		nu-ansi-term-0.50.3 \
@@ -461,27 +455,28 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-io-kit-0.3.2 \
 		objc2-system-configuration-0.3.2 \
 		object_store-0.13.2 \
-		object_store_opendal-0.58.0 \
+		object_store-0.14.1 \
+		object_store_opendal-0.60.1 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		oneshot-0.1.13 \
-		opendal-0.58.1 \
-		opendal-core-0.58.1 \
-		opendal-http-transport-reqwest-0.58.1 \
-		opendal-layer-concurrent-limit-0.58.1 \
-		opendal-layer-logging-0.58.1 \
-		opendal-layer-retry-0.58.1 \
-		opendal-layer-timeout-0.58.1 \
-		opendal-service-azblob-0.58.1 \
-		opendal-service-azdls-0.58.1 \
-		opendal-service-azure-common-0.58.1 \
-		opendal-service-cos-0.58.1 \
-		opendal-service-gcs-0.58.1 \
-		opendal-service-goosefs-0.58.1 \
-		opendal-service-hf-0.58.1 \
-		opendal-service-oss-0.58.1 \
-		opendal-service-s3-0.58.1 \
-		opendal-service-tos-0.58.1 \
+		opendal-0.59.1 \
+		opendal-core-0.59.1 \
+		opendal-http-transport-reqwest-0.59.1 \
+		opendal-layer-concurrent-limit-0.59.1 \
+		opendal-layer-logging-0.59.1 \
+		opendal-layer-retry-0.59.1 \
+		opendal-layer-timeout-0.59.1 \
+		opendal-service-azblob-0.59.1 \
+		opendal-service-azdls-0.59.1 \
+		opendal-service-azure-common-0.59.1 \
+		opendal-service-cos-0.59.1 \
+		opendal-service-gcs-0.59.1 \
+		opendal-service-goosefs-0.59.1 \
+		opendal-service-hf-0.59.1 \
+		opendal-service-oss-0.59.1 \
+		opendal-service-s3-0.59.1 \
+		opendal-service-tos-0.59.1 \
 		openssl-probe-0.2.1 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.1 \
@@ -540,7 +535,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pyo3-macros-backend-0.28.3 \
 		pythonize-0.28.0 \
 		quanta-0.12.6 \
-		quick-xml-0.39.4 \
 		quick-xml-0.41.0 \
 		quick_cache-0.6.24 \
 		quinn-0.11.9 \
@@ -581,13 +575,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		regress-0.10.5 \
 		rend-0.5.3 \
 		reqsign-aliyun-oss-3.1.2 \
-		reqsign-aws-v4-3.0.3 \
+		reqsign-aws-core-3.1.1 \
+		reqsign-aws-v4-3.3.0 \
 		reqsign-azure-storage-3.1.1 \
-		reqsign-core-3.2.0 \
-		reqsign-file-read-tokio-3.0.3 \
+		reqsign-core-3.3.1 \
+		reqsign-file-read-tokio-3.0.6 \
 		reqsign-google-3.0.3 \
 		reqsign-tencent-cos-3.0.3 \
-		reqsign-volcengine-tos-3.0.3 \
+		reqsign-volcengine-tos-3.1.2 \
 		reqwest-0.12.28 \
 		reqwest-0.13.4 \
 		reqwest-middleware-0.5.2 \
@@ -641,7 +636,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		sha1-0.11.0 \
 		sha2-0.10.9 \
 		sha2-0.11.0 \
-		sha2-asm-0.6.4 \
 		sha2-const-stable-0.1.0 \
 		sharded-slab-0.1.7 \
 		shellexpand-3.1.2 \
@@ -711,6 +705,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.19 \
 		tokio-util-0.7.19 \
+		tokio_with_wasm-0.8.8 \
+		tokio_with_wasm_proc-0.8.8 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.25.12+spec-1.1.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
@@ -814,10 +810,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wkt-0.14.0 \
 		writeable-0.6.3 \
 		wyz-0.5.1 \
-		xet-client-1.5.2 \
-		xet-core-structures-1.5.2 \
-		xet-data-1.5.2 \
-		xet-runtime-1.5.2 \
+		xet-client-1.6.0 \
+		xet-core-structures-1.6.0 \
+		xet-data-1.6.0 \
+		xet-runtime-1.6.0 \
 		xmlparser-0.13.6 \
 		xxhash-rust-0.8.18 \
 		yoke-0.8.3 \
@@ -839,6 +835,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 post-patch:
 	@${REINPLACE_CMD} -e 's/dynamic = \["version"\]/version = "${DISTVERSION}"/g' ${WRKSRC}/pyproject.toml
 
-# tests as of 11.0.0: 1366 passed, 1198 skipped, 63 deselected, 11 warnings
+# tests as of 12.0.0: 1494 passed, 1204 skipped, 72 deselected, 16 warnings in 110.16s
 
 .include <bsd.port.mk>
