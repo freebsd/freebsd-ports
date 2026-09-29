@@ -5310,6 +5310,7 @@
     SUBDIR += py-jaraco.mongodb
     SUBDIR += py-jaraco.packaging
     SUBDIR += py-jaraco.path
+    SUBDIR += py-jaraco.services
     SUBDIR += py-jaraco.stream
     SUBDIR += py-jaraco.text
     SUBDIR += py-jaraco.util
