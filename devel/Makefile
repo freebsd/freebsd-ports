@@ -8639,6 +8639,7 @@
     SUBDIR += rubygem-yard-sorbet
     SUBDIR += rubygem-yui-compressor
     SUBDIR += rubygem-zeitwerk
+    SUBDIR += rubygem-zeitwerk-gitlab
     SUBDIR += rubygem-zentest
     SUBDIR += rubygem-zhexdump
     SUBDIR += rubygem-zlib
