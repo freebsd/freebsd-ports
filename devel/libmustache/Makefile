@@ -20,6 +20,8 @@ CONFIGURE_ARGS=	--enable-thread-sanitizer \
 		--without-mustache-spec
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check-am
+TEST_WRKSRC=	${WRKSRC}/tests
 USE_CXXSTD=	c++17
 
 GH_ACCOUNT=	jbboehr
