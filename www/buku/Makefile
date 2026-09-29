@@ -1,8 +1,8 @@
 PORTNAME=	buku
-PORTVERSION=	5.1
-PORTREVISION=	1
-MASTER_SITES=	PYPI
+PORTVERSION=	5.1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
+#MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Powerful command-line bookmark manager
@@ -11,7 +11,7 @@ WWW=		https://github.com/jarun/buku
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.4.1:www/py-beautifulsoup4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
@@ -23,6 +23,9 @@ USES=		python
 USE_PYTHON=	autoplist cryptography noflavors pep517
 
 NO_ARCH=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jarun
 
 OPTIONS_MULTI=	COMPLETION
 OPTIONS_MULTI_COMPLETION=	BASH FISH ZSH
