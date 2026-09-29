@@ -1,5 +1,5 @@
 PORTNAME=	imagecodecs
-PORTVERSION=	2026.6.26
+PORTVERSION=	2026.8.16
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libaec.so:science/libaec \
 		libblosc2.so:archivers/c-blosc2 \
 		libbrotlicommon.so:archivers/brotli \
 		libbrunslidec-c.so:graphics/brunsli \
+		libcfitsio.so:astro/cfitsio \
 		libcharls.so:graphics/charls \
 		libdeflate.so:archivers/libdeflate \
 		libgif.so:graphics/giflib \
@@ -49,7 +50,7 @@ LIB_DEPENDS=	libaec.so:science/libaec \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.1,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		jpeg localbase python:3.12+
+USES=		dos2unix jpeg localbase python:3.12+
 USE_PYTHON=	autoplist concurrent cython pep517
 
 CPPFLAGS+=	-I${LOCALBASE}/include/jxrlib \
