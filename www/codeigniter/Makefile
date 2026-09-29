@@ -2,7 +2,7 @@ PORTNAME=	codeigniter
 PORTVERSION=	3.1.13
 CATEGORIES=	www
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
 WWW=		https://codeigniter.com/
 
