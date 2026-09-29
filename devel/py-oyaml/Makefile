@@ -1,8 +1,8 @@
 PORTNAME=	oyaml
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,5 +20,8 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	wimglenn
 
 .include <bsd.port.mk>
