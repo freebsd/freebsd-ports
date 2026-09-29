@@ -1,6 +1,5 @@
 PORTNAME=	google-apis-core
-PORTVERSION=	0.18.0
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,13 +11,14 @@ WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/google-apis
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-addressable>=2.5.1<3:www/rubygem-addressable \
-		rubygem-googleauth>=1.9<2:security/rubygem-googleauth \
-		rubygem-httpclient>=2.8.3<3.0:www/rubygem-httpclient \
-		rubygem-mini_mime>=1.0<2:mail/rubygem-mini_mime \
-		rubygem-mutex_m>=0:devel/rubygem-mutex_m \
+RUN_DEPENDS=	rubygem-addressable>=2.9<3:www/rubygem-addressable \
+		rubygem-faraday>=2.13<3:www/rubygem-faraday \
+		rubygem-faraday-follow_redirects>=0.3<1:www/rubygem-faraday-follow_redirects \
+		rubygem-googleauth>=1.14<2:security/rubygem-googleauth \
+		rubygem-mini_mime>=1.1<2:mail/rubygem-mini_mime \
+		rubygem-multi_json>=1.11<2:devel/rubygem-multi_json \
 		rubygem-representable>=3.0<4:textproc/rubygem-representable \
-		rubygem-retriable3>=2.0<4.0:devel/rubygem-retriable3
+		rubygem-retriable4>=3.1<5.0:devel/rubygem-retriable4
 
 USES=		gem
 
