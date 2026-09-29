@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Define error classes for google-cloud-ruby
-WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-errors/latest/ \
+WWW=		https://docs.cloud.google.com/ruby/docs/reference/google-cloud-errors/latest \
 		https://googleapis.github.io/google-cloud-ruby/docs/ \
 		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-errors \
 		https://github.com/googleapis/google-cloud-ruby
