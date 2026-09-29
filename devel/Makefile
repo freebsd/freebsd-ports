@@ -5307,6 +5307,7 @@
     SUBDIR += py-jaraco.functools
     SUBDIR += py-jaraco.itertools
     SUBDIR += py-jaraco.logging
+    SUBDIR += py-jaraco.mongodb
     SUBDIR += py-jaraco.packaging
     SUBDIR += py-jaraco.path
     SUBDIR += py-jaraco.stream
