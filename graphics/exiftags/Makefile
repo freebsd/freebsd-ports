@@ -1,6 +1,6 @@
 PORTNAME=	exiftags
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://johnst.org/sw/exiftags/
 
@@ -9,6 +9,8 @@ COMMENT=	Parses a specified JPEG file for a JPEG APP1 section containing Exif da
 WWW=		https://johnst.org/sw/exiftags/
 
 LICENSE=	BSD4CLAUSE
+
+DEPRECATED=	Obsolete exif utility, consider migrating to graphics/exiv2 or graphics/exif
 
 USES=		cpe
 CPE_VENDOR=	aertherwide
