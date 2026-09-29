@@ -1,0 +1,5 @@
+The mailcap module from the Python standard library, redistributed as a
+standalone package.
+
+It provides support for reading mailcap files and determining how to handle
+files based on their MIME types.

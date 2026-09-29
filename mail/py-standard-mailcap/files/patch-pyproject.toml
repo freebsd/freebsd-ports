@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2024-10-30 15:59:22 UTC
++++ pyproject.toml
+@@ -21,5 +21,5 @@ find = {include = ["mailcap*"]}
+ "Homepage" = "https://github.com/youknowone/python-deadlib"
+ 
+ [build-system]
+-requires = ["setuptools>=75.0"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
