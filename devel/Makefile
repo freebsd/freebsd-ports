@@ -5300,6 +5300,7 @@
     SUBDIR += py-janus
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.collections
+    SUBDIR += py-jaraco.compat
     SUBDIR += py-jaraco.context
     SUBDIR += py-jaraco.env
     SUBDIR += py-jaraco.envs
