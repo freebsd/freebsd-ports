@@ -1,3 +1,3 @@
-TIMESTAMP = 1764603707
-SHA256 (azure-mgmt-consumption-10.0.0.zip) = 06a086436c1737f77ab86894d51f5973b6e0fa5edf56558e4c296589ebab9130
-SIZE (azure-mgmt-consumption-10.0.0.zip) = 157978
+TIMESTAMP = 1790435716
+SHA256 (azure_mgmt_consumption-11.0.0.tar.gz) = ca65d782f1be03a5760fceb6f4577b7c7065ecde1dac6aed79df7f1ebe1b4b8a
+SIZE (azure_mgmt_consumption-11.0.0.tar.gz) = 138785
