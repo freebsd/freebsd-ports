@@ -1,0 +1,3 @@
+Retry-requests configures the passed-in requests' Session to retry on failed
+requests due to connection errors, timeouts, specific HTTP response codes (5XX
+by default) and 30X redirections -- anything that could fail.
