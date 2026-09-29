@@ -1,7 +1,13 @@
+Reference:	https://github.com/rocky/python-xasm/commit/a6c9247571e21683181e76bcd191f1dfb14ddf16
+
 --- pyproject.toml.orig	2025-10-17 17:52:00 UTC
 +++ pyproject.toml
-@@ -17,7 +17,7 @@ readme = "README.rst"
-     "xdis >= 6.1.8, < 6.3.0",
+@@ -14,10 +14,10 @@ dependencies = [
+ description = "Cross-version Python bytecode assembler"
+ dependencies = [
+     "click",
+-    "xdis >= 6.1.8, < 6.3.0",
++    "xdis >= 6.3.0",
  ]
  readme = "README.rst"
 -license = "GPL-2.0"
