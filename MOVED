@@ -5629,3 +5629,4 @@ devel/py-schematics-patched|devel/py-cattrs|2026-09-27|Has expired: Upstream ina
 x11-toolkits/color-widgets-qt5|x11-toolkits/qt-color-widgets|2026-09-27|move to qt-color-widgets to match upstream naming
 security/cvechecker||2026-09-29|Has expired: The project has been declared EOL by its author
 net/py-pyroute2.minimal|net/py-pyroute2-minimal|2026-09-29|Rename to match upstream naming
+devel/py-cattrs23|devel/py-cattrs|2026-09-29|Remove obsoleted port. Use devel/py-cattrs instead
