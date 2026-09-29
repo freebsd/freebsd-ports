@@ -1,0 +1,33 @@
+--- pyproject.toml.orig	2026-06-25 13:47:18 UTC
++++ pyproject.toml
+@@ -1,11 +1,11 @@ requires = [
+ [build-system]
+ requires = [
+-  "setuptools>=77.0"
++  "setuptools>=61"
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "Wand"
++name = "wand"
+ authors = [
+     {name = "Hong Minhee", email = "hongminhee@member.fsf.org"},
+     {name = "E. McConville", email = "emcconville@emcconville.com"},
+@@ -17,8 +17,7 @@ keywords = ["ImageMagick", "ctypes"]
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+ requires-python = ">=3.8"
+ keywords = ["ImageMagick", "ctypes"]
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",
+@@ -61,4 +60,4 @@ testpaths = ["tests"]
+ [tool.pytest.ini_options]
+ minversion = "7.2.0"
+ testpaths = ["tests"]
+-addopts = "--skip-pdf --skip-fft"
+\ No newline at end of file
++addopts = "--skip-pdf --skip-fft"

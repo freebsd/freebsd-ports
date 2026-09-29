@@ -46,7 +46,7 @@ GRAPHICSMAGICK_RUN_DEPENDS=	${LOCALBASE}/bin/gm:graphics/GraphicsMagick
 IMAGEMAGICK_USES=		magick:6,run
 PILLOW_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 REDIS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR}
-WAND_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}Wand>0:graphics/py-wand@${PY_FLAVOR}
+WAND_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wand>0:graphics/py-wand@${PY_FLAVOR}
 
 post-build-DOCS-on:
 	${SETENV} PYTHONPATH=${WRKSRC} ${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} \

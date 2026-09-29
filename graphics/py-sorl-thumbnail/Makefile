@@ -41,7 +41,7 @@ GRAPHICSMAGICK_RUN_DEPENDS=	${LOCALBASE}/bin/gm:graphics/GraphicsMagick
 IMAGEMAGICK_USES=		magick:6,run
 PILLOW_RUN_DEPENDS=		${PY_PILLOW}
 REDIS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR}
-WAND_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}Wand>0:graphics/py-wand@${PY_FLAVOR}
+WAND_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wand>0:graphics/py-wand@${PY_FLAVOR}
 
 GRAPHICSMAGICK_DESC=	Use GraphicsMagick for image processing (faster)
 IMAGEMAGICK_DESC=	Use ImageMagick for image processing

@@ -35,7 +35,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}APScheduler>=0:devel/py-apscheduler@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}tornado>=0:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0:converters/py-unidecode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Wand>=0:graphics/py-wand@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wand>=0:graphics/py-wand@${PY_FLAVOR}
 
 USES=		python ssl
 USE_PYTHON=	autoplist cryptography pep517
