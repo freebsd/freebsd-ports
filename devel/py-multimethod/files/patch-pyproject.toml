@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-11-18 01:16:07 UTC
+--- pyproject.toml.orig	2026-07-29 00:31:19 UTC
 +++ pyproject.toml
 @@ -1,10 +1,14 @@
 +[build-system]
@@ -7,12 +7,12 @@
 +
  [project]
  name = "multimethod"
- version = "2.0.2"
+ version = "2.1"
  description = "Multiple argument dispatching."
  readme = "README.md"
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
 -license = "Apache-2.0"
 +license = {text = "Apache-2.0"}
- authors = [{name = "Aric Coady", email = "aric.coady@gmail.com"}]
+ authors = [{name = "A. Coady"}]
  keywords = ["multiple", "dispatch", "multidispatch", "generic", "functions", "methods", "overload"]
  classifiers = [
