@@ -1,3 +1,3 @@
-TIMESTAMP = 1783784376
-SHA256 (azure_mgmt_eventhub-12.0.0b2.tar.gz) = a67039d4e302ed5938f6b789885e8952f1f7fd6123a4380f7db88cb07ac27600
-SIZE (azure_mgmt_eventhub-12.0.0b2.tar.gz) = 143983
+TIMESTAMP = 1790435718
+SHA256 (azure_mgmt_eventhub-12.0.0.tar.gz) = 86b1e5aa64eabaa6b78a679c7911f162d5dc1633f369c71e0f642ffb889ba19f
+SIZE (azure_mgmt_eventhub-12.0.0.tar.gz) = 144656
