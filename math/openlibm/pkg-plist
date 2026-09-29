@@ -35,5 +35,5 @@ include/openlibm/s390_fpmath.h
 include/openlibm/types-compat.h
 lib/libopenlibm.so
 lib/libopenlibm.so.0
-lib/libopenlibm.so.0.8.6
+lib/libopenlibm.so.%%DISTVERSION%%
 libdata/pkgconfig/openlibm.pc

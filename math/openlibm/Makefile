@@ -1,6 +1,6 @@
 PORTNAME=	openlibm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.7
+DISTVERSION=	0.8.8
 CATEGORIES=	math
 
 MAINTAINER=	laurent@FreeBSD.org
@@ -23,6 +23,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	JuliaMath
 
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DOPENLIBM_VERSION:STRING=${DISTVERSION}
 
 do-test:
 	(cd ${WRKSRC}/test && ${SETENVI} ${CC} test-double.c -o test-double \
@@ -55,5 +57,6 @@ PLIST_SUB+=	I386=""
 .else
 PLIST_SUB+=	I386="@comment "
 .endif
+PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
 .include <bsd.port.mk>
