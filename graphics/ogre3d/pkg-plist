@@ -10,6 +10,7 @@ include/OGRE/Bites/OgreBites.i
 include/OGRE/Bites/OgreBitesConfigDialog.h
 include/OGRE/Bites/OgreBitesPrerequisites.h
 include/OGRE/Bites/OgreCameraMan.h
+include/OGRE/Bites/OgreGizmos.h
 include/OGRE/Bites/OgreImGuiInputListener.h
 include/OGRE/Bites/OgreInput.h
 include/OGRE/Bites/OgreSGTechniqueResolverListener.h
@@ -679,6 +680,7 @@ share/OGRE-%%LIBVERSION%%/Media/DeferredShadingMedia/ssao_vs.glsl
 share/OGRE-%%LIBVERSION%%/Media/Main/DefaultShaders.metal
 share/OGRE-%%LIBVERSION%%/Media/Main/GLSL_GL3Support.glsl
 share/OGRE-%%LIBVERSION%%/Media/Main/HLSL_SM4Support.hlsl
+share/OGRE-%%LIBVERSION%%/Media/Main/OgreGizmos.material
 share/OGRE-%%LIBVERSION%%/Media/Main/OgreUnifiedShader.h
 share/OGRE-%%LIBVERSION%%/Media/Main/Shadow.material
 share/OGRE-%%LIBVERSION%%/Media/Main/ShadowBlend.frag
@@ -750,6 +752,7 @@ share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/FFPLib_Fog.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/FFPLib_Texturing.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/FFPLib_Transform.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/RTSLib_Colour.glsl
+share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/RTSLib_Froxels.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/RTSLib_IBL.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/RTSLib_LTC.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/RTSLib_Lighting.glsl
@@ -821,7 +824,6 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/PosterizeFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Radial_Blur_FP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/SGXLib_TextureAtlas.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/SampleLib_InstancedViewports.glsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/SegmentedPerPixelLighting.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/SharpenEdgesFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/ShowTangents.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/ShowUV.glsl
@@ -940,7 +942,6 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/OldTV.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/PosterizeFP.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/Radial_Blur_FP.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/SGXLib_TextureAtlas.cg
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/SegmentedPerPixelLighting.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/SharpenEdgesFP.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/StdQuad_vp.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/TilingFP.cg
@@ -1276,6 +1277,7 @@ share/OGRE-%%LIBVERSION%%/Media/thumbnails/thumb_dyntex.png
 share/OGRE-%%LIBVERSION%%/Media/thumbnails/thumb_error.png
 share/OGRE-%%LIBVERSION%%/Media/thumbnails/thumb_facial.png
 share/OGRE-%%LIBVERSION%%/Media/thumbnails/thumb_fresnel.png
+share/OGRE-%%LIBVERSION%%/Media/thumbnails/thumb_gizmos.png
 share/OGRE-%%LIBVERSION%%/Media/thumbnails/thumb_grass.png
 share/OGRE-%%LIBVERSION%%/Media/thumbnails/thumb_gsplatting.png
 share/OGRE-%%LIBVERSION%%/Media/thumbnails/thumb_hlms.png
