@@ -1,7 +1,8 @@
 PORTNAME=	poetry-plugin-shell
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/python-poetry/poetry-plugin-shell/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	poetry_plugin_shell-${PORTVERSION}
 
