@@ -4,7 +4,7 @@ CATEGORIES=	news python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python yEnc package optimized for use within SABnzbd
 WWW=		https://github.com/sabnzbd/sabctools
 
