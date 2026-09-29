@@ -1,5 +1,6 @@
 PORTNAME=	xlibre-server
 PORTVERSION=	${XLIBRE_VER}
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 
 MAINTAINER=	xlibre@FreeBSD.org
