@@ -631,6 +631,7 @@
     SUBDIR += py-al
     SUBDIR += py-apetag
     SUBDIR += py-aubio
+    SUBDIR += py-audioop-lts
     SUBDIR += py-audioread
     SUBDIR += py-auditok
     SUBDIR += py-discid
