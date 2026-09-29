@@ -20,5 +20,6 @@ GH_ACCOUNT=	zeromq
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	ZYRE_BUILD_STATIC
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility, see https://github.com/zeromq/zyre/issues/760
 
 .include <bsd.port.mk>

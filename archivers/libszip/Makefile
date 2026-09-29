@@ -17,4 +17,6 @@ USES=		cmake:testing
 
 CONFLICTS_INSTALL=	libaec
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility
+
 .include <bsd.port.mk>

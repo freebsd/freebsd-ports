@@ -22,5 +22,6 @@ WRKSRC_SUBDIR=	${PORTNAME}
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	WITH_TESTS # tests fail to find TBB, see https://github.com/quarkslab/arybo/issues/29
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility, see https://github.com/quarkslab/arybo/issues/35
 
 .include <bsd.port.mk>

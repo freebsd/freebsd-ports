@@ -19,6 +19,7 @@ GH_ACCOUNT=	sci-visus
 GH_PROJECT=	BabelFlow
 
 CMAKE_ARGS=	-DRUNTIME_TYPE:STRING="MPI"
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility, see https://github.com/sci-visus/BabelFlow/issues/7
 
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI

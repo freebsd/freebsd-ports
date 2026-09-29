@@ -20,6 +20,7 @@ GH_ACCOUNT=	seleznevae
 CMAKE_ON=		BUILD_SHARED_LIBS
 CMAKE_OFF=		FORT_ENABLE_TESTING
 CMAKE_TESTING_ON=	FORT_ENABLE_TESTING # 2 tests are known to fail: https://github.com/seleznevae/libfort/issues/65
+CMAKE_ARGS=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility, see https://github.com/seleznevae/libfort/issues/74
 
 # project also optionally bundles devel/astyle
 

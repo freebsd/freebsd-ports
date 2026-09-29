@@ -35,6 +35,8 @@ SSE_CMAKE_ON=	-DPORT_SIMD_FLAGS:STRING="-msse -msse2 -mfpmath=sse"
 
 CXXFLAGS_powerpc=	-maltivec
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility
+
 post-patch:
 	@${REINPLACE_CMD} -e 's| -g | |; s| -O1 | |; s/-msse2 -mfpmath=sse/$${PORT_SIMD_FLAGS}/g' \
 		${WRKSRC}/CMakeLists.txt
