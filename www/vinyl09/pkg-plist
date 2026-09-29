@@ -11,7 +11,7 @@ include/vinyl-cache/cache/cache.h
 include/vinyl-cache/cache/cache_backend.h
 include/vinyl-cache/cache/cache_director.h
 include/vinyl-cache/cache/cache_filter.h
-include/vinyl-cache/cache/cache_vinyld.h
+include/vinyl-cache/cache/cache_int.h
 include/vinyl-cache/common/common_param.h
 include/vinyl-cache/miniobj.h
 include/vinyl-cache/tbl/acct_fields_bereq.h
@@ -21,6 +21,7 @@ include/vinyl-cache/tbl/ban_arg_oper.h
 include/vinyl-cache/tbl/ban_oper.h
 include/vinyl-cache/tbl/ban_vars.h
 include/vinyl-cache/tbl/bereq_flags.h
+include/vinyl-cache/tbl/beresp_esi_flags.h
 include/vinyl-cache/tbl/beresp_flags.h
 include/vinyl-cache/tbl/boc_state.h
 include/vinyl-cache/tbl/body_status.h
@@ -97,6 +98,9 @@ include/vinyl-cache/waiter/waiter.h
 lib/libvinylapi.so
 lib/libvinylapi.so.3
 lib/libvinylapi.so.3.1.0
+lib/libvtest_ext_vinyl.so
+lib/libvtest_ext_vinyl.so.0
+lib/libvtest_ext_vinyl.so.0.0.0
 lib/vinyl-cache/vmods/libvmod_blob.so
 lib/vinyl-cache/vmods/libvmod_cookie.so
 lib/vinyl-cache/vmods/libvmod_directors.so
@@ -109,7 +113,6 @@ lib/vinyl-cache/vmods/libvmod_unix.so
 lib/vinyl-cache/vmods/libvmod_vtc.so
 libdata/pkgconfig/vinylapi.pc
 sbin/vinyld
-share/aclocal/vinyl-legacy.m4
 share/aclocal/vinyl.m4
 %%PORTDOCS%%%%DOCSDIR%%-cache/builtin.vcl
 %%PORTDOCS%%%%DOCSDIR%%-cache/example.vcl

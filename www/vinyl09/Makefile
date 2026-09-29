@@ -1,5 +1,5 @@
 PORTNAME=	vinyl
-DISTVERSION=	9.0.2
+DISTVERSION=	9.1.0
 CATEGORIES=	www
 MASTER_SITES=	https://vinyl-cache.org/downloads/
 PKGNAMESUFFIX=	09
