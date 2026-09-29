@@ -1,5 +1,5 @@
 PORTNAME=	typeprof
-PORTVERSION=	0.21.11
+PORTVERSION=	0.33.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/ruby/typeprof
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rbs>=1.8.1:devel/rubygem-rbs
+RUN_DEPENDS=	rubygem-prism>=1.4.0:textproc/rubygem-prism \
+		rubygem-rbs>=3.6.0:devel/rubygem-rbs
 
 USES=		gem
 
