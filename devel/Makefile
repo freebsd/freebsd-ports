@@ -193,6 +193,7 @@
     SUBDIR += antlr
     SUBDIR += antlr3
     SUBDIR += antlr4
+    SUBDIR += antlr4-cpp-runtime
     SUBDIR += apache-ant
     SUBDIR += apache-commons-daemon
     SUBDIR += apache-commons-io
