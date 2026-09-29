@@ -7,7 +7,7 @@ DISTNAME=	google_cloud_compute-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Compute API client library
-WWW=		https://cloud.google.com/python/docs/reference/compute/latest \
+WWW=		https://docs.cloud.google.com/python/docs/reference/compute/latest \
 		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-compute \
 		https://github.com/googleapis/google-cloud-python
 
