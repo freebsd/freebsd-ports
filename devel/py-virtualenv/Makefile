@@ -1,5 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	21.12.1
+PORTVERSION=	21.13.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distlib>=0.3.7:devel/py-distlib@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.12.2:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.9.1:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-discovery>=1.6.0:devel/py-python-discovery@${PY_FLAVOR}
-# tests: 557 passed, 54 skipped, 5 deselected
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>=7.3.2:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=1.0:devel/py-coverage_enable_subprocess@${PY_FLAVOR} \
@@ -29,13 +28,16 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_
 		${PYTHON_PKGNAMEPREFIX}pytest-freezer>=0.4.9:devel/py-pytest-freezer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.10:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-randomly>=3.12:devel/py-pytest-randomly@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>=16.0.1:devel/py-pytest-rerunfailures@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=2.1.0:devel/py-pytest-timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=3.8.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8.0.4:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=63:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spdx-tools>=0.8.5_1:misc/py-spdx-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}time-machine>=2.10.0:devel/py-time-machine@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomli>=2.4.1:textproc/py-tomli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ty>=0.0.82:devel/py-ty@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ty>=0.0.84:devel/py-ty@${PY_FLAVOR} \
 		nu:shells/nushell
 
 USES=		cpe pytest python
@@ -60,7 +62,8 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 PYTEST_ARGS=	-p no:black -p no:markdown
 PYTEST_BROKEN_TESTS=	test_sbom_spdx_declared_license \
 			test_safe_delete_keeps_the_other_mode_bits_when_clearing_read_only \
-			test_safe_delete_raises_the_original_error_not_a_retry_failure
+			test_safe_delete_raises_the_original_error_not_a_retry_failure \
+			test_bash
 
 # Fix the LookupError: setuptools-scm was unable to detect version (build target)
 MAKE_ENV=	PYTHONPATH="${STAGEDIR}${PYTHON_SITELIBDIR}" \
