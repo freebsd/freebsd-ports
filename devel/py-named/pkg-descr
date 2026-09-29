@@ -1,0 +1,2 @@
+named is a Python library for working with named types. It provides utilities
+for inspecting and retrieving names from Python types and objects.
