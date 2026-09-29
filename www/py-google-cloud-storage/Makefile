@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-storage
-PORTVERSION=	3.13.1
+PORTVERSION=	3.14.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	google_cloud_storage-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Client for Google Cloud Storage
-WWW=		https://cloud.google.com/python/docs/reference/storage/latest \
+WWW=		https://docs.cloud.google.com/python/docs/reference/storage/latest \
 		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-storage \
 		https://github.com/googleapis/google-cloud-python
 
