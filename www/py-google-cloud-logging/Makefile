@@ -7,7 +7,7 @@ DISTNAME=	google_cloud_logging-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Stackdriver Logging API client library
-WWW=		https://cloud.google.com/python/docs/reference/logging/latest \
+WWW=		https://docs.cloud.google.com/python/docs/reference/logging/latest \
 		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-logging \
 		https://github.com/googleapis/google-cloud-python
 
