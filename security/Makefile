@@ -124,7 +124,6 @@
     SUBDIR += cryptopp
     SUBDIR += cryptopp-modern
     SUBDIR += ct-submit
-    SUBDIR += cvechecker
     SUBDIR += cvm
     SUBDIR += cyberchef
     SUBDIR += cyrus-sasl2
