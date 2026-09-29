@@ -1,3 +1,3 @@
-TIMESTAMP = 1725559863
-SHA256 (python-cinderclient-9.6.0.tar.gz) = 3fefde268252e52e30fe2773f658227a78c6dee378fcb132d31c86e6ec9ba238
-SIZE (python-cinderclient-9.6.0.tar.gz) = 237239
+TIMESTAMP = 1790435906
+SHA256 (python_cinderclient-9.10.0.tar.gz) = fb856e6f4382a4c84d82f00415e3c66514b73e12d94679935182ba4f86510916
+SIZE (python_cinderclient-9.10.0.tar.gz) = 236997
