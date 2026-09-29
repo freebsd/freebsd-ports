@@ -7,7 +7,7 @@ DISTNAME=	google_cloud_core-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	API Client library for Google Cloud: Core Helpers
-WWW=		https://cloud.google.com/python/docs/reference/google-cloud-core/latest \
+WWW=		https://docs.cloud.google.com/python/docs/reference/google-cloud-core/latest \
 		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-core \
 		https://github.com/googleapis/google-cloud-python
 
