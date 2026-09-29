@@ -1,6 +1,5 @@
 PORTNAME=	redshift-connector
-PORTVERSION=	2.1.16
-PORTREVISION=	1
+PORTVERSION=	2.1.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.13.4<5.0.0:www/py-beautifulsoup4@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.13.5<5.0.0:www/py-beautifulsoup4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>=1.42.22<2.0.0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}botocore>=1.12.201<2.0.0:devel/py-botocore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=6.1.0<7.0.0:devel/py-lxml@${PY_FLAVOR} \
