@@ -1,13 +1,16 @@
 PORTNAME=	owncloudclient
 DISTVERSION=	2.8.2
 DISTVERSIONSUFFIX=	.4246
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	https://download.owncloud.com/desktop/ownCloud/stable/${DISTVERSION}${DISTVERSIONSUFFIX}/source/
 DISTNAME=	ownCloud-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 PATCH_SITES=	https://github.com/owncloud/client/commit/
 PATCHFILES=	ff43c9394b45dd78106069ba89ae92f25abba158.patch:-p1
+
+DEPRECATED=	Outdated, depends on deprecated Qt5 qtkeychain
+EXPIRATION_DATE=	2026-10-31
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	OwnCloud Desktop Syncing Client
