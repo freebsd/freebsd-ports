@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://archive.hadrons.org/software/xfstt/
 
-MAINTAINER=	gspurki@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType font server for X11
 WWW=		https://www.hadrons.org/software/xfstt/
 
