@@ -1,6 +1,6 @@
 PORTNAME=	bricoler
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
+DISTVERSION=	0.2.1
 CATEGORIES=	sysutils devel python
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -21,5 +21,9 @@ GH_ACCOUNT=	markjdb
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
+post-patch:
+	${REINPLACE_CMD} 's/^version = .*/version = "${DISTVERSION}"/g' \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
