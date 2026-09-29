@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-08-20 11:02:02 UTC
++++ pyproject.toml
+@@ -14,7 +14,7 @@ requires-python = ">=3.10"
+ keywords = ["zodb", "pickle"]
+ dynamic = ["readme"]
+ requires-python = ">=3.10"
+-license = "ZPL-2.1"
++license = { text = "ZPL-2.1" }
+ authors = [
+   { name = "Python and Zope Foundation and contributors", email = "zope-dev@zope.dev" },
+ ]

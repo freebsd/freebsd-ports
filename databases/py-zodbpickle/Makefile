@@ -1,12 +1,11 @@
 PORTNAME=	zodbpickle
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	4.5
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Python pickling interface for ZODB
+COMMENT=	Fork of Python 3 pickle module
 WWW=		https://github.com/zopefoundation/zodbpickle
 
 LICENSE=	PSFL ZPL21
