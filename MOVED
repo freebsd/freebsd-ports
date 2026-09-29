@@ -5634,3 +5634,4 @@ devel/py-cel-python02|devel/py-cel-python|2026-09-29|Remove obsoleted port. Use 
 devel/py-pep621|devel/py-pyproject-metadata|2026-09-29|Remove obsoleted port. Use devel/py-pyproject-metadata instead
 devel/py-rx|devel/py-reactivex|2026-09-29|Remove obsoleted port. Use devel/py-reactivex instead
 graphics/py-lerc|graphics/py-pylerc|2026-09-29|Remove obsoleted port. Use graphics/py-pylerc instead
+sysutils/py-azure-cli-acr|sysutils/py-azure-cli|2026-09-29|Remove obsoleted port. Use sysutils/py-azure-cli instead
