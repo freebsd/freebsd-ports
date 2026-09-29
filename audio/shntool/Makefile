@@ -11,7 +11,7 @@ WWW=		http://www.etree.org/shnutils/shntool/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Obsolete and abandonware, please use ffmpeg, sox for audio format's native application suite
+DEPRECATED=	Obsolete and abandonware, please use ffmpeg, sox or audio format's native application suite
 
 EXTRA_PATCHES=	${FILESDIR}/cfd06e4ed.patch:-p1
 
