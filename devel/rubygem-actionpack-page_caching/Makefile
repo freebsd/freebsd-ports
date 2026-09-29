@@ -1,5 +1,5 @@
 PORTNAME=	actionpack-page_caching
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
