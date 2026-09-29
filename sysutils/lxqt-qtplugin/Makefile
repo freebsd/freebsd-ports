@@ -1,5 +1,6 @@
 PORTNAME=	lxqt-qtplugin
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LXQT
 
@@ -8,6 +9,9 @@ COMMENT=	LXQt system integration plugin for Qt
 WWW=		https://lxqt-project.org
 
 LICENSE=	LGPL21+
+
+DEPRECATED=	Depends on deprecated libdbusmenu-qt
+EXPIRATION_DATE=	2026-11-30
 
 LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 		libexif.so:graphics/libexif
