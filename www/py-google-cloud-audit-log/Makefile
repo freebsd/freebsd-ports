@@ -7,7 +7,7 @@ DISTNAME=	google_cloud_audit_log-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Audit Protos
-WWW=		https://cloud.google.com/python/docs/reference/auditlog/latest \
+WWW=		https://docs.cloud.google.com/python/docs/reference/auditlog/latest \
 		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-audit-log \
 		https://github.com/googleapis/google-cloud-python
 
