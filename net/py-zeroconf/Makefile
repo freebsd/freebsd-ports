@@ -27,6 +27,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	python-zeroconf
 GH_PROJECT=	python-zeroconf
 
+NO_ARCH=	yes
 TEST_TARGET=	test
 
 .include <bsd.port.mk>
