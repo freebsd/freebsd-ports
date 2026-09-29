@@ -7,7 +7,7 @@ DISTNAME=	google_cloud_bigquery_storage-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Bigquery Storage API client library
-WWW=		https://cloud.google.com/python/docs/reference/bigquerystorage/latest \
+WWW=		https://docs.cloud.google.com/python/docs/reference/bigquerystorage/latest \
 		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-bigquery-storage \
 		https://github.com/googleapis/google-cloud-python
 
