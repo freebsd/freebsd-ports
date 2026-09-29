@@ -7,7 +7,7 @@ DISTNAME=	google_cloud_bigtable-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Bigtable API client library
-WWW=		https://cloud.google.com/python/docs/reference/bigtable/latest \
+WWW=		https://docs.cloud.google.com/python/docs/reference/bigtable/latest \
 		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-bigtable \
 		https://github.com/googleapis/google-cloud-python
 
