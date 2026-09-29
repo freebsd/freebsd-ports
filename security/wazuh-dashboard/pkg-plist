@@ -1289,10 +1289,13 @@ www/opensearch-dashboards/plugins/wazuh/node_modules/domexception/node_modules/w
 www/opensearch-dashboards/plugins/wazuh/node_modules/domexception/package.json
 www/opensearch-dashboards/plugins/wazuh/node_modules/domexception/webidl2js-wrapper.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/LICENSE
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/LICENSE-MPL
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/README.md
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.cjs.d.ts
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.cjs.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.cjs.js.map
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.cov.cjs.js
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.cov.cjs.js.map
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.es.d.mts
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.es.mjs
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.es.mjs.map
@@ -1301,6 +1304,14 @@ www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.js.ma
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.min.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/dist/purify.min.js.map
 www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/package.json
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/src/attrs.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/src/config.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/src/license_header
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/src/purify.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/src/regexp.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/src/tags.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/src/types.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/dompurify/src/utils.ts
 www/opensearch-dashboards/plugins/wazuh/node_modules/dunder-proto/.eslintrc
 www/opensearch-dashboards/plugins/wazuh/node_modules/dunder-proto/.github/FUNDING.yml
 www/opensearch-dashboards/plugins/wazuh/node_modules/dunder-proto/.nycrc
@@ -3205,8 +3216,6 @@ www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/findLast.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/findLastIndex.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/findLastKey.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/first.js
-www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/flake.lock
-www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/flake.nix
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/flatMap.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/flatMapDeep.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/flatMapDepth.js
@@ -3775,7 +3784,6 @@ www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/rearg.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/reduce.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/reduceRight.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/reject.js
-www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/release.md
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/remove.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/repeat.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/lodash/replace.js

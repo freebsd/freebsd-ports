@@ -3692,8 +3692,6 @@
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/shlex.py
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/shutil.py
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/signal.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/CHANGELOG.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/CONTRIBUTING.rst
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/Cython-0.29.36.dist-info/COPYING.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/Cython-0.29.36.dist-info/INSTALLER
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/Cython-0.29.36.dist-info/LICENSE.txt
@@ -4544,13 +4542,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/streams/tls.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_process.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/anyio/to_thread.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.8.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.8.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.8.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.8.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.8.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.8.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.8.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -8375,15 +8373,15 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/content_size_limit_asgi/errors.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/content_size_limit_asgi/logger.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/content_size_limit_asgi/middleware.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info/licenses/LICENSE
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info/licenses/LICENSE.APACHE
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info/licenses/LICENSE.BSD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info/licenses/LICENSE
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info/licenses/LICENSE.APACHE
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info/licenses/LICENSE.BSD
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/__about__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/__pycache__/__about__%%PYTHON_TAG%%.opt-1.pyc
@@ -8453,8 +8451,11 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/ed448.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/hashes.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/hmac.pyi
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/hpke.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/kdf.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/keys.pyi
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/mldsa.pyi
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/mlkem.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/poly1305.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/rsa.pyi
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/bindings/_rust/openssl/x25519.pyi
@@ -8486,7 +8487,11 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/decrepit/ciphers/__pycache__/algorithms%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/decrepit/ciphers/__pycache__/algorithms%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/decrepit/ciphers/__pycache__/algorithms%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/decrepit/ciphers/__pycache__/modes%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/decrepit/ciphers/__pycache__/modes%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/decrepit/ciphers/__pycache__/modes%%PYTHON_TAG%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/decrepit/ciphers/algorithms.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/decrepit/ciphers/modes.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -8497,6 +8502,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/_cipheralgorithm%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/_cipheralgorithm%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/_cipheralgorithm%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/_modes%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/_modes%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/_modes%%PYTHON_TAG%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/_serialization%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/_serialization%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/_serialization%%PYTHON_TAG%%.pyc
@@ -8512,6 +8520,9 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/hmac%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/hmac%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/hmac%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/hpke%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/hpke%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/hpke%%PYTHON_TAG%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/keywrap%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/keywrap%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/keywrap%%PYTHON_TAG%%.pyc
@@ -8523,6 +8534,7 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/__pycache__/poly1305%%PYTHON_TAG%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/_asymmetric.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/_cipheralgorithm.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/_modes.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/_serialization.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -8543,6 +8555,12 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/ed448%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/ed448%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/ed448%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/mldsa%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/mldsa%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/mldsa%%PYTHON_TAG%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/mlkem%%PYTHON_TAG%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/mlkem%%PYTHON_TAG%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/mlkem%%PYTHON_TAG%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/padding%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/padding%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/__pycache__/padding%%PYTHON_TAG%%.pyc
@@ -8566,6 +8584,8 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/ec.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/ed25519.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/ed448.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/mldsa.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/mlkem.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/padding.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/rsa.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/asymmetric/types.py
@@ -8596,6 +8616,7 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/constant_time.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/hashes.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/hmac.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/hpke.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/hazmat/primitives/kdf/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -9134,146 +9155,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dockerpycreds/store.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dockerpycreds/utils.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dockerpycreds/version.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/Makefile
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/__pycache__/conf%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/__pycache__/conf%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/__pycache__/conf%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_ext/__pycache__/cryptography-docs%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_ext/__pycache__/cryptography-docs%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_ext/__pycache__/cryptography-docs%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_ext/__pycache__/linkcode_res%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_ext/__pycache__/linkcode_res%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_ext/__pycache__/linkcode_res%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_ext/cryptography-docs.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_ext/linkcode_res.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_static/.keep
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/api-stability.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/changelog.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/community.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/conf.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/c-bindings.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv/__pycache__/generate_aes192gcmsiv%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv/__pycache__/generate_aes192gcmsiv%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv/__pycache__/generate_aes192gcmsiv%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv/generate_aes192gcmsiv.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv/verify-aes192gcmsiv/Cargo.toml
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv/verify-aes192gcmsiv/src/main.rs
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/arc4.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/arc4/__pycache__/generate_arc4%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/arc4/__pycache__/generate_arc4%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/arc4/__pycache__/generate_arc4%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/arc4/generate_arc4.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/arc4/verify_arc4.go
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/cast5.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/cast5/__pycache__/generate_cast5%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/cast5/__pycache__/generate_cast5%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/cast5/__pycache__/generate_cast5%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/cast5/generate_cast5.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/cast5/verify_cast5.go
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20/__pycache__/generate_chacha20_overflow%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20/__pycache__/generate_chacha20_overflow%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20/__pycache__/generate_chacha20_overflow%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20/__pycache__/verify_chacha20_overflow%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20/__pycache__/verify_chacha20_overflow%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20/__pycache__/verify_chacha20_overflow%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20/generate_chacha20_overflow.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20/verify_chacha20_overflow.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/hkdf.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/hkdf/__pycache__/generate_hkdf%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/hkdf/__pycache__/generate_hkdf%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/hkdf/__pycache__/generate_hkdf%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/hkdf/generate_hkdf.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/hkdf/verify_hkdf.go
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea/__pycache__/generate_idea%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea/__pycache__/generate_idea%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea/__pycache__/generate_idea%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea/__pycache__/verify_idea%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea/__pycache__/verify_idea%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea/__pycache__/verify_idea%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea/generate_idea.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea/verify_idea.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rc2.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rc2/genrc2.go
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rc2/go.mod
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rc2/rc2/rc2.go
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rsa-oaep-sha2.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rsa-oaep-sha2/VerifyRSAOAEPSHA2.java
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rsa-oaep-sha2/__pycache__/generate_rsa_oaep_sha2%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rsa-oaep-sha2/__pycache__/generate_rsa_oaep_sha2%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rsa-oaep-sha2/__pycache__/generate_rsa_oaep_sha2%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rsa-oaep-sha2/generate_rsa_oaep_sha2.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1/__pycache__/generate_secp256k1%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1/__pycache__/generate_secp256k1%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1/__pycache__/generate_secp256k1%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1/__pycache__/verify_secp256k1%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1/__pycache__/verify_secp256k1%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1/__pycache__/verify_secp256k1%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1/generate_secp256k1.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1/verify_secp256k1.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed/__pycache__/generate_seed%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed/__pycache__/generate_seed%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed/__pycache__/generate_seed%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed/__pycache__/verify_seed%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed/__pycache__/verify_seed%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed/__pycache__/verify_seed%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed/generate_seed.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed/verify_seed.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/getting-started.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/index.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/reviewing-patches.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/submitting-patches.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/test-vectors.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/doing-a-release.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/exceptions.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/faq.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/fernet.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/glossary.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/decrepit/ciphers.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/decrepit/index.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/aead.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/cloudhsm.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/dh.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/dsa.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/ec.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/ed25519.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/ed448.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/index.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/rsa.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/serialization.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/utils.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/x25519.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric/x448.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/constant-time.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/cryptographic-hashes.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/index.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/key-derivation-functions.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/keywrap.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/mac/cmac.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/mac/hmac.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/mac/index.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/mac/poly1305.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/padding.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/symmetric-encryption.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/twofactor.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/index.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/installation.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/limitations.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/make.bat
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/openssl.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/random-numbers.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/security.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/spelling_wordlist.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/x509/certificate-transparency.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/x509/index.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/x509/ocsp.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/x509/reference.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/x509/tutorial.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/x509/verification.rst
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docutils-0.15.2.dist-info/COPYING.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docutils-0.15.2.dist-info/INSTALLER
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docutils-0.15.2.dist-info/METADATA
@@ -12159,13 +12040,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/httpx/_urls.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/httpx/_utils.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/httpx/py.typed
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.7.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.7.dist-info/LICENSE.md
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.7.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.7.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.7.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.7.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.7.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.15.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.15.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.15.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.15.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.15.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.15.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.15.dist-info/licenses/LICENSE.md
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
@@ -23922,438 +23803,6 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tabulate-0.8.9.dist-info/entry_points.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tabulate-0.8.9.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tabulate.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/conftest%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/conftest%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/conftest%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/deprecated_module%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/deprecated_module%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/deprecated_module%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/doubles%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/doubles%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/doubles%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_cryptography_utils%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_cryptography_utils%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_cryptography_utils%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_fernet%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_fernet%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_fernet%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_meta%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_meta%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_meta%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_utils%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_utils%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_utils%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_warnings%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_warnings%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/test_warnings%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/utils%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/utils%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__/utils%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_aead%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_aead%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_aead%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_ec_load%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_ec_load%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_ec_load%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_fernet%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_fernet%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_fernet%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_hashes%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_hashes%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_hashes%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_hkdf%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_hkdf%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_hkdf%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_hmac%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_hmac%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_hmac%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_x509%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_x509%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__/test_x509%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/test_aead.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/test_ec_load.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/test_fernet.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/test_hashes.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/test_hkdf.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/test_hmac.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/test_x509.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/conftest.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/deprecated_module.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/doubles.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/__pycache__/test_oid%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/__pycache__/test_oid%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/__pycache__/test_oid%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/asn1/__pycache__/test_api%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/asn1/__pycache__/test_api%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/asn1/__pycache__/test_api%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/asn1/__pycache__/test_encoding%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/asn1/__pycache__/test_encoding%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/asn1/__pycache__/test_encoding%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/asn1/test_api.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/asn1/test_encoding.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/backends/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/backends/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/backends/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/backends/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/backends/__pycache__/test_openssl%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/backends/__pycache__/test_openssl%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/backends/__pycache__/test_openssl%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/backends/test_openssl.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/bindings/__pycache__/test_openssl%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/bindings/__pycache__/test_openssl%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/bindings/__pycache__/test_openssl%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/bindings/test_openssl.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_dh%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_dh%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_dh%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_dsa%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_dsa%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_dsa%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_ec%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_ec%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_ec%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_rsa%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_rsa%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/fixtures_rsa%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_aead%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_aead%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_aead%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_aes%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_aes%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_aes%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_aes_gcm%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_aes_gcm%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_aes_gcm%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_argon2%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_argon2%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_argon2%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_asym_utils%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_asym_utils%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_asym_utils%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_block%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_block%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_block%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_camellia%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_camellia%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_camellia%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_chacha20%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_chacha20%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_chacha20%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ciphers%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ciphers%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ciphers%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_cmac%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_cmac%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_cmac%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_concatkdf%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_concatkdf%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_concatkdf%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_constant_time%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_constant_time%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_constant_time%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_dh%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_dh%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_dh%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_dsa%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_dsa%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_dsa%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ec%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ec%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ec%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ed25519%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ed25519%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ed25519%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ed448%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ed448%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ed448%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hash_vectors%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hash_vectors%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hash_vectors%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hashes%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hashes%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hashes%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hkdf%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hkdf%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hkdf%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hkdf_vectors%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hkdf_vectors%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hkdf_vectors%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hmac%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hmac%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hmac%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hmac_vectors%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hmac_vectors%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_hmac_vectors%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_kbkdf%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_kbkdf%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_kbkdf%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_kbkdf_vectors%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_kbkdf_vectors%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_kbkdf_vectors%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_keywrap%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_keywrap%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_keywrap%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_padding%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_padding%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_padding%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pbkdf2hmac%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pbkdf2hmac%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pbkdf2hmac%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pbkdf2hmac_vectors%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pbkdf2hmac_vectors%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pbkdf2hmac_vectors%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pkcs12%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pkcs12%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pkcs12%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pkcs7%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pkcs7%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_pkcs7%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_poly1305%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_poly1305%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_poly1305%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_rsa%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_rsa%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_rsa%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_scrypt%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_scrypt%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_scrypt%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_serialization%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_serialization%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_serialization%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_sm4%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_sm4%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_sm4%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ssh%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ssh%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_ssh%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x25519%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x25519%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x25519%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x448%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x448%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x448%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x963_vectors%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x963_vectors%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x963_vectors%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x963kdf%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x963kdf%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_x963kdf%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_xofhash%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_xofhash%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/test_xofhash%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/utils%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/utils%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__/utils%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_3des%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_3des%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_3des%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_algorithms%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_algorithms%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_algorithms%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_arc4%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_arc4%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_arc4%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_rc2%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_rc2%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__/test_rc2%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/test_3des.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/test_algorithms.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/test_arc4.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/test_rc2.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/fixtures_dh.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/fixtures_dsa.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/fixtures_ec.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/fixtures_rsa.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_aead.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_aes.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_aes_gcm.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_argon2.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_asym_utils.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_block.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_camellia.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_chacha20.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_ciphers.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_cmac.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_concatkdf.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_constant_time.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_dh.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_dsa.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_ec.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_ed25519.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_ed448.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_hash_vectors.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_hashes.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_hkdf.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_hkdf_vectors.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_hmac.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_hmac_vectors.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_kbkdf.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_kbkdf_vectors.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_keywrap.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_padding.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_pbkdf2hmac.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_pbkdf2hmac_vectors.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_pkcs12.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_pkcs7.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_poly1305.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_rsa.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_scrypt.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_serialization.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_sm4.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_ssh.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_x25519.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_x448.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_x963_vectors.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_x963kdf.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/test_xofhash.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__pycache__/test_hotp%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__pycache__/test_hotp%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__pycache__/test_hotp%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__pycache__/test_totp%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__pycache__/test_totp%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__pycache__/test_totp%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/test_hotp.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/test_totp.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/utils.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/test_oid.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/test_cryptography_utils.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/test_fernet.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/test_meta.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/test_utils.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/test_warnings.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/utils.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_aes%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_aes%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_aes%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_chacha20poly1305%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_chacha20poly1305%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_chacha20poly1305%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_cmac%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_cmac%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_cmac%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_dsa%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_dsa%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_dsa%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_ecdh%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_ecdh%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_ecdh%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_ecdsa%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_ecdsa%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_ecdsa%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_eddsa%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_eddsa%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_eddsa%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_hkdf%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_hkdf%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_hkdf%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_hmac%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_hmac%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_hmac%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_keywrap%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_keywrap%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_keywrap%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_pbkdf2%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_pbkdf2%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_pbkdf2%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_rsa%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_rsa%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_rsa%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_utils%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_utils%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_utils%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_x25519%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_x25519%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_x25519%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_x448%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_x448%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/test_x448%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/utils%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/utils%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__/utils%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_aes.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_chacha20poly1305.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_cmac.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_dsa.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_ecdh.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_ecdsa.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_eddsa.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_hkdf.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_hmac.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_keywrap.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_pbkdf2.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_rsa.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_utils.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_x25519.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/test_x448.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/utils.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_name%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_name%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_name%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_ocsp%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_ocsp%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_ocsp%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509_crlbuilder%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509_crlbuilder%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509_crlbuilder%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509_ext%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509_ext%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509_ext%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509_revokedcertbuilder%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509_revokedcertbuilder%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__/test_x509_revokedcertbuilder%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/test_name.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/test_ocsp.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/test_x509.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/test_x509_crlbuilder.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/test_x509_ext.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/test_x509_revokedcertbuilder.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__pycache__/test_limbo%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__pycache__/test_limbo%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__pycache__/test_limbo%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__pycache__/test_verification%%PYTHON_TAG%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__pycache__/test_verification%%PYTHON_TAG%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__pycache__/test_verification%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/test_limbo.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/test_verification.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml/__pycache__/xml_parser%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml/__pycache__/xml_parser%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml/__pycache__/xml_parser%%PYTHON_TAG%%.pyc
@@ -24774,13 +24223,13 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/server.pyx
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pxd
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pyx
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.8.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.8.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.8.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.8.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.8.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.8.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.8.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__main__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -31112,7 +30561,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/models
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/spec
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.7.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.14.8.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asgiref-3.7.2.dist-info
@@ -32119,8 +31568,8 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/x509/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography/x509
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info/licenses
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-46.0.7.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/cryptography-48.0.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dateutil/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dateutil/parser/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dateutil/parser
@@ -32153,41 +31602,6 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docker_pycreds-0.4.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dockerpycreds/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/dockerpycreds
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_ext/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_ext
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/_static
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv/verify-aes192gcmsiv/src
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv/verify-aes192gcmsiv
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/aes-192-gcm-siv
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/arc4/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/arc4
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/cast5/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/cast5
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/chacha20
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/hkdf/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/hkdf
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/idea
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rc2/rc2
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rc2
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rsa-oaep-sha2/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/rsa-oaep-sha2
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/secp256k1
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors/seed
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development/custom-vectors
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/development
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/decrepit
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/asymmetric
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives/mac
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat/primitives
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/hazmat
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs/x509
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docs
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docutils/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docutils/languages/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/docutils/languages
@@ -32422,7 +31836,8 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/httpx-0.26.0.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.7.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.15.dist-info/licenses
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/idna-3.15.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/inflection/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/inflection
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/inflection-0.5.1.dist-info
@@ -33173,30 +32588,6 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info/licenses
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/starlette-1.3.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tabulate-0.8.9.dist-info
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/bench
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/asn1/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/asn1
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/backends/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/backends
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/bindings/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/bindings
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/decrepit
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives/twofactor
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat/primitives
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/hazmat
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/wycheproof
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509/verification
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests/x509
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tests
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager/xml
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/tools/env/wazuh-manager
@@ -33255,7 +32646,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac/default
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh/rbac
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.7.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.14.8.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/data

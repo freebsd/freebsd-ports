@@ -1,6 +1,6 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.14.7
+DISTVERSION=	4.14.8
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/54/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -37,7 +37,7 @@ USES=		cpe dos2unix gmake perl5 python:3.11 readline shebangfix uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	alonsobsd
 GH_PROJECT=	wazuh-freebsd
-GH_TAGNAME=	74383ec64ee7a9cc1da4cea6e4346c33d30539ce
+GH_TAGNAME=	d7a31169cf0afd646db38408dd56d5148090aba0
 
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -137,7 +137,7 @@ WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/lists/malicious-ioc
 WAZUHPREFIX=	/var/ossec
 
 WZPYTHONWHEELS=	cffi-2.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		cryptography-46.0.7-cp311-abi3-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		cryptography-48.0.1-cp311-abi3-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		greenlet-3.0.3-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		grpcio-1.76.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		lazy_object_proxy-1.10.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
@@ -157,17 +157,15 @@ FBSD_RELEASE=	freebsd_${UNAME_r:S/./_/g:S/-/_/g}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "aarch64"
-FBSD14_PATCH_LEVEL=	_p8
-FBSD15_PATCH_LEVEL=	_p2
+FBSD15_PATCH_LEVEL=	_p3
 .endif
 
 .if ${ARCH} != "aarch64"
-FBSD14_PATCH_LEVEL=	_p8
-FBSD15_PATCH_LEVEL=	_p2
+FBSD15_PATCH_LEVEL=	_p3
 .endif
 
 .if ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
-FBSD_VERSION_BASE=freebsd_14_4_release${FBSD14_PATCH_LEVEL}
+FBSD_VERSION_BASE=freebsd_14_5_release${FBSD14_PATCH_LEVEL}
 FBSD_MAJOR_VERSION=14
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
@@ -176,7 +174,7 @@ FBSD_VERSION_BASE=freebsd_15_1_release${FBSD15_PATCH_LEVEL}
 FBSD_MAJOR_VERSION=15
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd15-${ARCH}-${DISTVERSION}
 DISTFILES+=     ${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
-.elif ${OSVERSION} >= 1600000 && ${ARCH} != "aarch64"
+.elif ${OSVERSION} >= 1600000
 FBSD_VERSION_BASE=freebsd_16_0_current
 FBSD_MAJOR_VERSION=16
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd16-${ARCH}-${DISTVERSION}
@@ -208,7 +206,8 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|CC=|CC?=|g' -e 's|AR=|AR?=|g' ${WRKSRC}/src/external/bzip2/Makefile
 	${REINPLACE_CMD} -e 's|^\( *MULTIARCH=\).*--print-multiarch.*|\1|' ${WRKSRC}/src/external/cpython/configure
-	${REINPLACE_CMD} -e 's|coroutine|coroutines|g' ${WRKSRC}/framework/wazuh/core/cluster/client.py
+	${REINPLACE_CMD} -e 's|coroutine|coroutines|g' ${WRKSRC}/framework/wazuh/core/cluster/client.py \
+		${WRKSRC}/framework/wazuh/core/cluster/worker.py
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o check_pid ${WRKSRC}/libexec/check_pid.c
