@@ -50,9 +50,6 @@ LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Depends on expired textproc/libtextcat
-EXPIRATION_DATE=2026-10-31
-
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 
 BUILD_DEPENDS=								\
