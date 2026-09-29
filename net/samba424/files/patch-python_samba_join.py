@@ -5,7 +5,7 @@
  
          provision_fill(ctx.local_samdb, secrets_ldb,
 -                       ctx.logger, ctx.names, ctx.paths,
-+                       ctx.logger, ctx.names, ctx.targetdir, ctx.paths,
++                       ctx.logger, ctx.names, ctx.paths, ctx.targetdir,
                         dom_for_fun_level=ctx.behavior_version,
                         samdb_fill=FILL_SUBDOMAIN,
                         machinepass=ctx.acct_pass, serverrole="active directory domain controller",
