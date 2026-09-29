@@ -8323,6 +8323,7 @@
     SUBDIR += rubygem-retriable
     SUBDIR += rubygem-retriable-gitlab
     SUBDIR += rubygem-retriable3
+    SUBDIR += rubygem-retriable4
     SUBDIR += rubygem-retryable
     SUBDIR += rubygem-rgen
     SUBDIR += rubygem-rgl
