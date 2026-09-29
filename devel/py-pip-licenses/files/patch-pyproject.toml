@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-03-28 22:12:31 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=82.0.0", "setuptools_scm"]
++requires = ["setuptools>=61", "setuptools_scm"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,8 +7,7 @@ requires-python = ">=3.9"
+ description = "Dump the software license list of Python packages installed with pip."
+ dynamic = ["version", "readme"]
+ requires-python = ">=3.9"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text = "MIT"}
+ authors = [
+     {name = "raimon", email = "raimon49@hotmail.com"}, # 2018-2025 (retired)
+     {name = "Mr. Walls"},                              # as of 2025
