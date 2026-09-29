@@ -1,5 +1,5 @@
 PORTNAME=	chef-vault
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.12
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
