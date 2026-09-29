@@ -15,8 +15,8 @@
      'CONFIGFILE' : {
 -         'STD-PATH':  '${CONFIGDIR}/smb.conf',
 -         'FHS-PATH':  '${CONFIGDIR}/smb.conf',
-+         'STD-PATH':  '${CONFIGDIR}/smb4.conf',
-+         'FHS-PATH':  '${CONFIGDIR}/smb4.conf',
++         'STD-PATH':  '${CONFIGDIR}/%%SAMBA4_CONFIG%%',
++         'FHS-PATH':  '${CONFIGDIR}/%%SAMBA4_CONFIG%%',
           'DELAY':     True,
      },
      'LMHOSTSFILE' : {
