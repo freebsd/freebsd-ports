@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-05-16 16:57:11 UTC
++++ pyproject.toml
+@@ -16,8 +16,7 @@ authors = [
+ authors = [
+   {name = "Tres Seaver, Agendaless Consulting", email = "tseaver@agendaless.com"},
+ ]
+-license = "LicenseRef-Repoze-BSD-derived"
+-license-files = ["LICENSE.txt"]
++license = {text = "LicenseRef-Repoze-BSD-derived"}
+ 
+ keywords = ["repoze", "lru", "cache"]
+ classifiers = [
