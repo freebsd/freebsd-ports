@@ -1,5 +1,5 @@
 PORTNAME=	pandoc
-DISTVERSION=	3.11
+DISTVERSION=	3.12
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -32,11 +32,9 @@ HACKAGE_DISTNAME=	pandoc-cli-${DISTVERSION}
 .include <bsd.port.pre.mk>
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/pandoc.1 ${STAGEDIR}${MANDIRS}/man1
-	${INSTALL_MAN} ${WRKSRC}/man/pandoc-lua.1 ${STAGEDIR}${MANDIRS}/man1
-	${INSTALL_MAN} ${WRKSRC}/man/pandoc-server.1 ${STAGEDIR}${MANDIRS}/man1
+	${INSTALL_MAN} ${WRKSRC}/man/* ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-EMBED_DATA-off:
-	cd ${CABAL_DEPSDIR}/${PORTNAME}-${PORTVERSION} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}
+	cd ${CABAL_DEPSDIR}/${PORTNAME}-${DISTVERSION} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>
