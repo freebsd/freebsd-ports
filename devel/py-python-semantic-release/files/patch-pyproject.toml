@@ -1,20 +1,11 @@
---- pyproject.toml.orig	2026-08-28 20:06:17 UTC
+--- pyproject.toml.orig	2026-09-22 07:30:41 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@
  # Ref: https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
  # and https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
  [build-system]
--requires = ["setuptools >= 75.3.0, < 84.0.0", "wheel ~= 0.42"]
-+requires = ["setuptools >= 61.0.0, < 84.0.0", "wheel ~= 0.42"]
+-requires = ["setuptools >= 75.3.0, < 85.0.0", "wheel ~= 0.42"]
++requires = ["setuptools >= 61.0.0", "wheel ~= 0.42"]
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -29,7 +29,7 @@ dependencies = [
- dependencies = [
-   "click ~= 8.1.0; python_version == '3.8'",
-   "click ~= 8.1.0; python_version == '3.9'",
--  "click ~= 8.1.0, < 8.5.0; python_version >= '3.10'",
-+  "click >= 8.1.0, < 8.5.0; python_version >= '3.10'",
-   "click-option-group ~= 0.5.0",
-   "gitpython ~= 3.0",
-   "requests ~= 2.25",
