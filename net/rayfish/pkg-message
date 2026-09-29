@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+Rayfish network members use a private TLD of ".ray".
+
+The easiest way to make these DNS lookups work is to activate the
+local_unbound service and add a custom forwarder configuration with
+DNSSEC validation disabled for these domains:
+
+# /var/unbound/conf.d/rayfish.conf
+server:
+    domain-insecure: "ray."
+
+forward-zone:
+    name: "ray."
+    forward-addr: 200::53
+
+
+This IPv6 address will be respond to DNS requests when Rayfish is running.
+
+The "ray dns on" command will automate this for you.
+
+EOM
+}
+]

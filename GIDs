@@ -259,7 +259,7 @@ promscale:*:314:
 lavinmq:*:315:
 nut:*:316:
 hedgedoc:*:317:
-# free: 318, UID used by icingadirector
+rayfish:*:318:
 rustdesk:*:319:
 teleirc:*:320:
 caldera:*:321:

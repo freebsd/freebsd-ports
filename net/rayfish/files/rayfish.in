@@ -1,0 +1,33 @@
+#! /bin/sh
+
+# PROVIDE: rayfish
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable rayfish:
+#
+# rayfish_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="rayfish"
+rcvar="rayfish_enable"
+
+load_rc_config $name
+
+: ${rayfish_enable:=NO}
+: ${rayfish_config_dir:=%%ETCDIR%%}
+
+pidfile=/var/run/ray.pid
+command=/usr/sbin/daemon
+command_args="-T rayfish -P ${pidfile} %%PREFIX%%/bin/ray daemon ${rayfish_flags}"
+start_precmd=ray_precmd
+
+ray_precmd() {
+	mkdir -p "${rayfish_config_dir}"
+	export RAYFISH_CONFIG_DIR="${rayfish_config_dir}"
+}
+
+run_rc_command "$1"
