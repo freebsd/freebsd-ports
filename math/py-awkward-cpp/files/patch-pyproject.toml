@@ -1,12 +1,11 @@
---- pyproject.toml.orig	2026-02-08 18:23:02 UTC
+--- pyproject.toml.orig	2026-09-17 19:00:59 UTC
 +++ pyproject.toml
-@@ -43,8 +43,7 @@ classifiers = [
-     "Topic :: Software Development",
+@@ -44,7 +44,7 @@ license = "BSD-3-Clause AND MIT"
      "Topic :: Utilities",
  ]
--license = "BSD-3-Clause AND MIT"
+ license = "BSD-3-Clause AND MIT"
 -license-files = ["LICENSE", "rapidjson/license.txt"]
-+license = {text = "BSD-3-Clause AND MIT"}
++license-files = ["LICENSE"]
  requires-python = ">=3.10"
  
  [project.urls]
