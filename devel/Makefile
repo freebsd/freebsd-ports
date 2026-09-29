@@ -4987,6 +4987,7 @@
     SUBDIR += py-diagnostic
     SUBDIR += py-diff-cover
     SUBDIR += py-dill
+    SUBDIR += py-directsearch
     SUBDIR += py-dirspec
     SUBDIR += py-dirty-equals
     SUBDIR += py-diskcache
