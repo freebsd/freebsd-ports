@@ -1,5 +1,6 @@
 PORTNAME=	qtkeychain
 DISTVERSION=	0.17.0
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -10,8 +11,13 @@ WWW=		https://github.com/frankosterfeld/qtkeychain
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
+FLAVORS=	qt6 qt5
+FLAVOR?=	qt6
+
+.if ${FLAVOR:Mqt5}
+DEPRECATED=	Depends on deprecated Qt 5
+EXPIRATION_DATE=	2026-10-31
+.endif
 
 USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig qt:${FLAVOR:S/qt//}
 _WITH_QT5_qt5=	ON
