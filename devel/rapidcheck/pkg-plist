@@ -122,5 +122,6 @@ include/rapidcheck/state/gen/Commands.hpp
 include/rapidcheck/state/gen/ExecCommands.h
 include/rapidcheck/state/gen/ExecCommands.hpp
 lib/librapidcheck.so
+libdata/pkgconfig/rapidcheck.pc
 %%DATADIR%%/cmake/rapidcheckConfig-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/cmake/rapidcheckConfig.cmake
