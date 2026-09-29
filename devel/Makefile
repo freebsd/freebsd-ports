@@ -7926,6 +7926,7 @@
     SUBDIR += rubygem-json-schema
     SUBDIR += rubygem-json-schema-gitlab
     SUBDIR += rubygem-json1
+    SUBDIR += rubygem-json2
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-json_pure1
     SUBDIR += rubygem-json_schema
