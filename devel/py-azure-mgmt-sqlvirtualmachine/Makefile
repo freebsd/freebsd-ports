@@ -1,9 +1,9 @@
 PORTNAME=	azure-mgmt-sqlvirtualmachine
-DISTVERSION=	1.0.0b7
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	azure_mgmt_sqlvirtualmachine-${DISTVERSION}
+DISTNAME=	azure_mgmt_sqlvirtualmachine-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure SQL Virtual Machine Management Client Library for Python
@@ -14,7 +14,7 @@ WWW=		https://azure.github.io/azure-sdk-for-python/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-core>=1.6.0:devel/py-azure-mgmt-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0.6.1:devel/py-isodate@${PY_FLAVOR} \
