@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-05-10 20:07:52 UTC
++++ pyproject.toml
+@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
+ 
+ 
+ [project]
+-name = "PyX"
++name = "pyx"
+ description = "Python package for the generation of PostScript, PDF, and SVG files"
+ readme = "README.md"
+ license = { file = "LICENSE" }
