@@ -6133,6 +6133,7 @@
     SUBDIR += py-rchitect
     SUBDIR += py-rdata
     SUBDIR += py-re-assert
+    SUBDIR += py-reactivex
     SUBDIR += py-readerwriterlock
     SUBDIR += py-readme-renderer
     SUBDIR += py-rebulk
