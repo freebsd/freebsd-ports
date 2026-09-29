@@ -83,7 +83,8 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
 				PYTHON3="${PYTHON_CMD}" \
-				RUSTFLAGS="${RUSTFLAGS}"
+				RUSTFLAGS="${RUSTFLAGS}" \
+				BINDGEN_CFLAGS="-I${LOCALBASE}/include"
 MOZ_OPTIONS+=	--prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${BUILD_WRKSRC}"
 
