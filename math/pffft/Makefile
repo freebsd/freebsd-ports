@@ -1,5 +1,7 @@
 PORTNAME=	pffft
-PORTVERSION=	2022.12.19 # use date because this library is unlikely to ever have releases
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1.0
+PORTEPOCH=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,31 +11,27 @@ WWW=		https://github.com/marton78/pffft
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake
+USES=		cmake:testing
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	marton78
-GH_TAGNAME=	e0bf595
 
 CMAKE_ON=	BUILD_SHARED_LIBS INSTALL_PFDSP INSTALL_PFFASTCONV
+CMAKE_OFF=	PFFFT_BUILD_TESTS
+CMAKE_TESTING_ON=	PFFFT_BUILD_TESTS
 
-.include <bsd.port.options.mk>
+.include <bsd.port.options.mk> # for ARCH
 
 .if ${ARCH:Mpowerpc*}
 CMAKE_ARGS+=	-DPFFFT_USE_SIMD:BOOL=OFF #https://github.com/marton78/pffft/issues/55
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
 CFLAGS+=	-msse2
 CXXFLAGS+=	-msse2 # fixes error: always_inline function '_mm_unpacklo_ps' requires target feature 'sse', but would be inlined into function 'pffft_zreorder' that is compiled without support for 'sse'
 .endif
 
-post-install: # move headers into a dedicated directory
-	cd ${STAGEDIR}${PREFIX} && \
-		${MKDIR} include/${PORTNAME} && \
-		${MV} include/*.h include/*.hpp include/${PORTNAME}
+# tests as of 1.1.0: 100% tests passed, 0 tests failed out of 9
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
