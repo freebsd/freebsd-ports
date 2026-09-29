@@ -1,5 +1,5 @@
 PORTNAME=	duckdb
-DISTVERSION=	1.5.5
+DISTVERSION=	1.5.6
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,6 @@ MAKE_ENV=	OVERRIDE_GIT_DESCRIBE=v${DISTVERSION}-g00000000 \
 		CMAKE_EXECUTABLE=${LOCALBASE}/bin/cmake \
 		NINJA_EXECUTABLE=${LOCALBASE}/bin/ninja
 
-# tests as of 1.5.5: not shipped in the PyPI source tarball
+# tests as of 1.5.6: not shipped in the PyPI source tarball
 
 .include <bsd.port.mk>

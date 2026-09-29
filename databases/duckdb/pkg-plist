@@ -1,6 +1,9 @@
 bin/duckdb
 include/duckdb.h
 include/duckdb.hpp
+include/duckdb/common/identifier.hpp
+include/duckdb/common/sql_identifier.hpp
+include/duckdb/planner/expression_nullability.hpp
 include/duckdb_extension.h
 include/duckdb/catalog/catalog.hpp
 include/duckdb/catalog/catalog_entry.hpp
@@ -1356,8 +1359,4 @@ lib/libduckdb_utf8proc.a
 lib/libduckdb_yyjson.a
 lib/libduckdb_zstd.a
 lib/libdummy_static_extension_loader.a
-@dir include/duckdb/main/capi/header_generation/apis/v1/unstable
-@dir include/duckdb/main/capi/header_generation/apis/v1/v1.2
-@dir include/duckdb/main/capi/header_generation/functions
-@dir include/duckdb/main/capi/header_generation/schemata
 @dir include/duckdb/storage/serialization
