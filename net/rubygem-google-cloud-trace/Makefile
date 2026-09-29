@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official library for Stackdriver Trace
-WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-trace/latest/ \
+WWW=		https://docs.cloud.google.com/ruby/docs/reference/google-cloud-trace/latest \
 		https://googleapis.github.io/google-cloud-ruby/docs/ \
 		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-trace \
 		https://github.com/googleapis/google-cloud-ruby
