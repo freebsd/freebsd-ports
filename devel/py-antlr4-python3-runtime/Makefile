@@ -7,8 +7,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	antlr4_python3_runtime-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	ANother Tool for Language Recognition (python3 runtime)
+COMMENT=	ANother Tool for Language Recognition (ANTLR) runtime for Python 3
 WWW=		https://www.antlr.org/ \
+		https://github.com/antlr/antlr4/tree/dev/runtime/Python3 \
 		https://github.com/antlr/antlr4
 
 LICENSE=	BSD3CLAUSE
