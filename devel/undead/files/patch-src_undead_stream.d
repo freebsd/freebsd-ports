@@ -1,4 +1,4 @@
---- src/undead/stream.d.orig	2026-09-19 09:27:35 UTC
+--- src/undead/stream.d.orig	2026-09-29 12:09:09 UTC
 +++ src/undead/stream.d
 @@ -230,7 +230,9 @@ interface InputStream {
     * --------------------------
@@ -11,7 +11,7 @@
  
    /// Retrieve the number of bytes available for immediate reading.
    @property size_t available();
-@@ -333,15 +335,25 @@ interface OutputStream {
+@@ -333,7 +335,13 @@ interface OutputStream {
     * returning the number of bytes written.
     */
    size_t vprintf(const(char)[] format, va_list args);
@@ -26,8 +26,9 @@
  
    /***
     * Print a formatted string into the stream using writef-style syntax.
-    * References: <a href="std_format.html">std.format</a>.
-    * Returns: self to chain with other stream commands like flush.
+@@ -343,8 +351,12 @@ interface OutputStream {
+    * NOTE: not supported in GDC, since it uses features unimplemented in that
+    * compiler.
     */
 -  OutputStream writef(...);
 -  OutputStream writefln(...); /// ditto
@@ -40,7 +41,7 @@
    OutputStream writefx(TypeInfo[] arguments, va_list argptr, int newline = false);  /// ditto
  
    void flush(); /// Flush pending output if appropriate.
-@@ -1048,10 +1060,6 @@ class Stream : InputStream, OutputStream {
+@@ -1051,10 +1063,6 @@ class Stream : InputStream, OutputStream {
      return count;
    }
  
@@ -51,7 +52,7 @@
    // returns estimated number of bytes available for immediate reading
    @property size_t available() { return 0; }
  
-@@ -1178,30 +1186,10 @@ class Stream : InputStream, OutputStream {
+@@ -1181,30 +1189,10 @@ class Stream : InputStream, OutputStream {
      return count;
    }
  
