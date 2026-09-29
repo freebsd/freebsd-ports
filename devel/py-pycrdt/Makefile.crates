@@ -3,7 +3,7 @@ CARGO_CRATES=	arc-swap-1.9.2 \
 		async-trait-0.1.92 \
 		bitflags-2.13.2 \
 		bumpalo-3.20.3 \
-		cfg-if-1.0.4 \
+		cfg-if-1.0.5 \
 		crossbeam-utils-0.8.23 \
 		dashmap-6.2.1 \
 		event-listener-5.4.2 \
@@ -39,13 +39,13 @@ CARGO_CRATES=	arc-swap-1.9.2 \
 		serde_derive-1.0.229 \
 		serde_json-1.0.151 \
 		smallstr-0.3.1 \
-		smallvec-1.16.0 \
+		smallvec-1.16.1 \
 		syn-2.0.119 \
-		syn-3.0.5 \
+		syn-3.0.6 \
 		target-lexicon-0.13.5 \
 		thiserror-2.0.20 \
 		thiserror-impl-2.0.20 \
-		unicode-ident-1.0.24 \
+		unicode-ident-1.0.26 \
 		wasm-bindgen-0.2.128 \
 		wasm-bindgen-macro-0.2.128 \
 		wasm-bindgen-macro-support-0.2.128 \
