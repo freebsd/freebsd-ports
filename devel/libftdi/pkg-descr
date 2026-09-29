@@ -1,0 +1,5 @@
+libftdi - A library (using libusb) to talk to FTDI's FT2232C,
+FT232BM and FT245BM type chips including the popular bitbang mode.
+
+Note: When you get a -5 error "can't claim usb device" during
+ftdi_usb_open(), make sure the kernel ftdi_sio driver is unloaded.

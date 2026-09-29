@@ -1372,6 +1372,7 @@
     SUBDIR += libfmt
     SUBDIR += libfort
     SUBDIR += libfreefare
+    SUBDIR += libftdi
     SUBDIR += libftdi1
     SUBDIR += libfwnt
     SUBDIR += libfwsi
