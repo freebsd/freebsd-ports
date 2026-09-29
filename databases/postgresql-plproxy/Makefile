@@ -1,7 +1,8 @@
 PORTNAME=	plproxy
-PORTVERSION=	2.11.0
+PORTVERSION=	2.12.0
 CATEGORIES=	databases
-MASTER_SITES=	https://plproxy.github.io/downloads/files/${PORTVERSION}/
+MASTER_SITES=	https://plproxy.github.io/downloads/files/${PORTVERSION}/ \
+		https://github.com/plproxy/plproxy/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	postgresql-
 
 MAINTAINER=	sunpoet@FreeBSD.org
