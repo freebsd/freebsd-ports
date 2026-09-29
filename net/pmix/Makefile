@@ -1,5 +1,5 @@
 PORTNAME=	pmix
-DISTVERSION=	5.0.10
+DISTVERSION=	5.0.11
 CATEGORIES=	net parallel devel
 MASTER_SITES=	https://github.com/openpmix/openpmix/releases/download/v${DISTVERSION}/
 
@@ -13,16 +13,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	Not supported on 32-bits
 
-LIB_DEPENDS=	libevent.so:devel/libevent \
+LIB_DEPENDS=	libevent_core.so:devel/libevent \
 		libhwloc.so:devel/hwloc2
 
-USES=		gmake libtool localbase:ldflags pathfix pkgconfig tar:bz2
+USES=		gmake libtool pathfix pkgconfig tar:bz2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--enable-shared \
-		--with-hwloc=${LOCALBASE}
+		--with-hwloc=${LOCALBASE} \
+		--with-libevent=${LOCALBASE} \
+		--without-libltdl
 
 TEST_TARGET=	check
 INSTALL_TARGET=	install-strip

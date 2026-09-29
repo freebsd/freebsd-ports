@@ -1,6 +1,5 @@
 PORTNAME=	openmpi
-DISTVERSION=	5.0.10
-PORTREVISION=	2
+DISTVERSION=	5.0.11
 CATEGORIES=	net parallel
 MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${DISTVERSION:R}/
 
@@ -17,11 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
 NOT_FOR_ARCHS_REASON=	Not supported on 32-bits
 
-LIB_DEPENDS=	libevent.so:devel/libevent \
+BUILD_DEPENDS=	prterun:net/prrte
+LIB_DEPENDS=	libevent_core.so:devel/libevent \
 		libhwloc.so:devel/hwloc2 \
-		libmunge.so:security/munge \
-		libpmix.so:net/pmix \
-		libprrte.so:net/prrte
+		libpmix.so:net/pmix
+RUN_DEPENDS=	prterun:net/prrte
 
 # :keepla because port uses lt_dlopen
 USES=		compiler:c11 fortran gmake libtool:keepla localbase perl5 \
@@ -92,8 +91,6 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 ROMIO_CONFIGURE_OFF=	--disable-io-romio
 
 SLURM_CONFIGURE_WITH=	slurm
-# Slurm integration in OpenMPI is handled through the PMIx interface
-#SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
 
 UCX_LIB_DEPENDS=	libucp.so:net/ucx
 UCX_CONFIGURE_ON=	--with-ucx
