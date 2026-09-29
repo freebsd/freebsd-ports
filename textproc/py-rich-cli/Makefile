@@ -1,5 +1,6 @@
 PORTNAME=	rich-cli
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=2.0.0<3.0.0:devel/py-poetry-c
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0.0<9.0.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0<3.0.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=12.4.0:textproc/py-rich@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rich-rst>=1.1.7<2.0.0:textproc/py-rich-rst@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rich-rst>=1.1.7:textproc/py-rich-rst@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textual>=0.1.18:textproc/py-textual@${PY_FLAVOR}
 
 USES=		python

@@ -10,7 +10,7 @@
  authors = [{ name = "Will McGugan", email = "willmcgugan@gmail.com" }]
  classifiers = [
      "Development Status :: 5 - Production/Stable",
-@@ -22,10 +21,10 @@ dependencies = [
+@@ -22,11 +21,11 @@ dependencies = [
  ]
  requires-python = ">=3.9"
  dependencies = [
@@ -19,7 +19,9 @@
      "click (>=8.0.0,<9.0.0)",
      "requests (>=2.0.0,<3.0.0)",
 -    "textual (>=0.1.18,<0.2.0)",
+-    "rich-rst (>=1.1.7,<2.0.0)",
 +    "textual (>=0.1.18)",
-     "rich-rst (>=1.1.7,<2.0.0)",
++    "rich-rst (>=1.1.7)",
  ]
  
+ [tool.poetry.dependencies]
