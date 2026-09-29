@@ -1,11 +1,11 @@
---- tidy/lib.py.orig	2021-05-02 11:39:44 UTC
+--- tidy/lib.py.orig	2026-01-07 12:22:38 UTC
 +++ tidy/lib.py
-@@ -7,6 +7,8 @@ import weakref
- from tidy.error import InvalidOptionError, OptionArgError
- 
- LIBNAMES = (
+@@ -61,6 +61,8 @@ LIBNAMES = (
+     # Windows?
+     "tidylib.dll",
+     "tidylib",
 +    # FreeBSD
 +    "libtidy5.so",
-     # Linux
-     "libtidy.so",
-     # MacOS
+ )
+ 
+ 
