@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2026-04-12 13:38:32 UTC
++++ pyproject.toml
+@@ -1,13 +1,12 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "pyfakefs"
+ description = "Implements a fake file system that mocks the Python file system modules."
+ readme = "README.md"
+-license = "Apache-2.0"
+-license-files = ["COPYING"]
++license = { text = "Apache-2.0" }
+ authors = [
+     { name = "Google", email = "google-pyfakefs@google.com" },
+     { name = "John McGehee", email = "pyfakefs@johnnado.com" }
