@@ -1,9 +1,9 @@
 PORTNAME=	azure-mgmt-resource-subscriptions
-DISTVERSION=	1.0.0b2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	azure_mgmt_resource_subscriptions-${DISTVERSION}
+DISTNAME=	azure_mgmt_resource_subscriptions-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Azure Subscriptions Management Client Library for Python
