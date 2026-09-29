@@ -1,11 +1,11 @@
 PORTNAME=	relatorio
-PORTVERSION=	0.12.1
+PORTVERSION=	1.0.0
 CATEGORIES=	print python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Templating library able to output odt and pdf files
+COMMENT=	Templating library able to output odt files
 WWW=		https://docs.tryton.org/relatorio/latest/ \
 		https://github.com/tryton/relatorio
 
@@ -24,14 +24,10 @@ NO_ARCH=	yes
 
 SHEBANG_FILES=	relatorio/render.py
 
-OPTIONS_DEFINE=	CHART FODT
-OPTIONS_DEFAULT=CHART FODT
-CHART_DESC=	Chart support
+OPTIONS_DEFINE=	FODT
+OPTIONS_DEFAULT=FODT
 FODT_DESC=	OpenDocument support
 
-CHART_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycairo>=0:graphics/py-pycairo@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pycha>=0.4.0:graphics/py-pycha@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3:devel/py-pyyaml@${PY_FLAVOR}
-FODT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-magic>=0:devel/py-python-magic@${PY_FLAVOR}
+FODT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}puremagic>=0:sysutils/py-puremagic@${PY_FLAVOR}
 
 .include <bsd.port.mk>
