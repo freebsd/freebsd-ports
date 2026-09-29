@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2026-09-24 04:37:07 UTC
++++ pyproject.toml
+@@ -1,14 +1,13 @@
+ [build-system]
+-requires = ["setuptools >= 75.3.1"]
++requires = ["setuptools >= 61"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "Send2Trash"
++name = "send2trash"
+ version = "2.1.0"
+ description = "Send file to trash natively under Mac OS X, Windows and Linux"
+ readme = "README.rst"
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
++license = {text = "BSD-3-Clause"}
+ authors = [
+     {name = "Andrew Senetar", email = "arsenetar@voltaicideas.net"},
+ ]
