@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-09-19 15:14:03 UTC
++++ pyproject.toml
+@@ -1,7 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools >= 75;python_version=='3.8'",
+-    "setuptools >= 77;python_version>'3.8'",
++    "setuptools >= 61",
+     "wheel",
+     "cffi>=1.15.0",
+     "packaging;platform_system=='Windows'",
