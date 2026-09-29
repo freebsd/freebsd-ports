@@ -199,7 +199,7 @@
 +	if (fsp->fsp_flags.is_pathref) {
 +		const char *path = fsp->fsp_name->base_name;
 +		if (fsp->fsp_flags.have_proc_fds) {
-+			char buf[PATH_MAX];
++			struct sys_proc_fd_path_buf buf;
 +			path = sys_proc_fd_path(fd, &buf);
 +			if (path == NULL) {
 +				return -1;
@@ -253,7 +253,7 @@
 +		if (fsp->fsp_flags.is_pathref) {
 +			const char *path = fsp->fsp_name->base_name;
 +			if (fsp->fsp_flags.have_proc_fds) {
-+				char buf[PATH_MAX];
++				struct sys_proc_fd_path_buf buf;
 +				path = sys_proc_fd_path(fd, &buf);
 +				if (path == NULL) {
 +					return -1;
@@ -433,7 +433,7 @@
 +	if (fsp->fsp_flags.is_pathref) {
 +		const char *path = fsp->fsp_name->base_name;
 +		if (fsp->fsp_flags.have_proc_fds) {
-+			char buf[PATH_MAX];
++			struct sys_proc_fd_path_buf buf;
 +			path = sys_proc_fd_path(fd, &buf);
 +			if (path == NULL) {
 +				return -1;
@@ -508,7 +508,7 @@
 +	if (fsp->fsp_flags.is_pathref) {
 +		const char *path = fsp->fsp_name->base_name;
 +		if (fsp->fsp_flags.have_proc_fds) {
-+			char buf[PATH_MAX];
++			struct sys_proc_fd_path_buf buf;
 +			path = sys_proc_fd_path(fd, &buf);
 +			if (path == NULL) {
 +				return -1;
@@ -585,7 +585,7 @@
 +	if (fsp->fsp_flags.is_pathref) {
 +		const char *path = fsp->fsp_name->base_name;
 +		if (fsp->fsp_flags.have_proc_fds) {
-+			char buf[PATH_MAX];
++			struct sys_proc_fd_path_buf buf;
 +			path = sys_proc_fd_path(fd, &buf);
 +			if (path == NULL) {
 +				return -1;
