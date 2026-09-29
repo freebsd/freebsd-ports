@@ -227,6 +227,8 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/schema/PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/schema/changes/MySQL.sql
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/schema/changes/PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/schema/changes/analytics_indexes/MySQL.sql
+%%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/schema/changes/analytics_indexes/PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/interactions.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/login.tx
 %%SITE_PERL%%/auto/share/dist/Test2-Harness-UI/templates/lookup.tx
