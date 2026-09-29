@@ -7,7 +7,7 @@ DISTNAME=	google_cloud_datastore-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Datastore API client library
-WWW=		https://cloud.google.com/python/docs/reference/datastore/latest \
+WWW=		https://docs.cloud.google.com/python/docs/reference/datastore/latest \
 		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-datastore \
 		https://github.com/googleapis/google-cloud-python
 
