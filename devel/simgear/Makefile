@@ -1,5 +1,6 @@
 PORTNAME=	simgear
 PORTVERSION=	2024.1.7
+PORTREVISION=	1
 CATEGORIES=	devel games
 
 MAINTAINER=	martymac@FreeBSD.org

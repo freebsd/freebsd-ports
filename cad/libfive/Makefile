@@ -1,5 +1,6 @@
 PORTNAME=	libfive
 DISTVERSION=	g20251112
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
