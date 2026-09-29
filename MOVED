@@ -5627,3 +5627,4 @@ net/openldap26-server|databases/openldap26-server|2026-09-24|Move all OpenLDAP p
 graphics/hiptext||2026-09-25|Remove abandonware
 devel/py-schematics-patched|devel/py-cattrs|2026-09-27|Has expired: Upstream inactive since +8 years.  Please use devel/py-cattrs instead
 x11-toolkits/color-widgets-qt5|x11-toolkits/qt-color-widgets|2026-09-27|move to qt-color-widgets to match upstream naming
+devel/libftdi|devel/libftdi1|2026-09-29|Remove old version, use devel/libftdi1 instead
