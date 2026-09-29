@@ -1,12 +1,13 @@
 PORTNAME=	thrift
 PORTVERSION=	0.24.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 DIST_SUBDIR=	python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python bindings for the Apache Thrift RPC system
 WWW=		https://thrift.apache.org/ \
 		https://thrift.apache.org/docs/ \
@@ -22,5 +23,8 @@ USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
 
 CPE_VENDOR=	apache
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
