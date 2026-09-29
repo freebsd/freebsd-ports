@@ -17124,6 +17124,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/localConcepts/destine/paramId.lte33.def
 %%DATADIR%%/definitions/grib2/localConcepts/destine/shortName.def
 %%DATADIR%%/definitions/grib2/localConcepts/destine/shortName.lte33.def
+%%DATADIR%%/definitions/grib2/localConcepts/destine/timespanConcept.def
 %%DATADIR%%/definitions/grib2/localConcepts/destine/units.def
 %%DATADIR%%/definitions/grib2/localConcepts/destine/units.lte33.def
 %%DATADIR%%/definitions/grib2/localConcepts/destinegen1/MTG2SwitchConcept.def
@@ -17158,6 +17159,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.aifs-single.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.aifs-subs-crps.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.aifs-subs.def
+%%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.gfas.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/modelVersionConcept.ldas.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/name.chemsplit.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/name.def
@@ -17267,6 +17269,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/localConcepts/kwbc/units.def
 %%DATADIR%%/definitions/grib2/localConcepts/kwbc/units.lte33.def
 %%DATADIR%%/definitions/grib2/localConcepts/lcgcr/modelNameConcept.def
+%%DATADIR%%/definitions/grib2/localConcepts/lcgcr/modelVersionConcept.CORe.def
 %%DATADIR%%/definitions/grib2/localConcepts/lcgcr/modelVersionConcept.CRA-40.def
 %%DATADIR%%/definitions/grib2/localConcepts/lcgcr/modelVersionConcept.ERA5.def
 %%DATADIR%%/definitions/grib2/localConcepts/lcgcr/modelVersionConcept.JRA-3Q.def
@@ -22683,6 +22686,11 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/templates/template.4.205.def
 %%DATADIR%%/definitions/grib2/templates/template.4.206.def
 %%DATADIR%%/definitions/grib2/templates/template.4.207.def
+%%DATADIR%%/definitions/grib2/templates/template.4.224.def
+%%DATADIR%%/definitions/grib2/templates/template.4.225.def
+%%DATADIR%%/definitions/grib2/templates/template.4.226.def
+%%DATADIR%%/definitions/grib2/templates/template.4.227.def
+%%DATADIR%%/definitions/grib2/templates/template.4.228.def
 %%DATADIR%%/definitions/grib2/templates/template.4.254.def
 %%DATADIR%%/definitions/grib2/templates/template.4.3.def
 %%DATADIR%%/definitions/grib2/templates/template.4.30.def
@@ -23244,6 +23252,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.amap.an.def
 %%DATADIR%%/definitions/mars/grib.clmn.fc.def
 %%DATADIR%%/definitions/mars/grib.clte.fc.def
+%%DATADIR%%/definitions/mars/grib.dacl.em.def
 %%DATADIR%%/definitions/mars/grib.dacl.pb.def
 %%DATADIR%%/definitions/mars/grib.dacw.pb.def
 %%DATADIR%%/definitions/mars/grib.dcda.4i.def
@@ -23403,6 +23412,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.enfo.pf.def
 %%DATADIR%%/definitions/mars/grib.enfo.pfc.def
 %%DATADIR%%/definitions/mars/grib.enfo.ppm.def
+%%DATADIR%%/definitions/mars/grib.enfo.sfo.def
 %%DATADIR%%/definitions/mars/grib.enfo.sot.def
 %%DATADIR%%/definitions/mars/grib.enfo.sv.def
 %%DATADIR%%/definitions/mars/grib.enfo.svar.def
@@ -23435,8 +23445,11 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.ewmo.cl.def
 %%DATADIR%%/definitions/mars/grib.ewmo.def
 %%DATADIR%%/definitions/mars/grib.ewmo.fc.def
+%%DATADIR%%/definitions/mars/grib.frcd.bf.def
 %%DATADIR%%/definitions/mars/grib.gfas.ga.def
 %%DATADIR%%/definitions/mars/grib.gfas.gsd.def
+%%DATADIR%%/definitions/mars/grib.gfra.ga.def
+%%DATADIR%%/definitions/mars/grib.gfra.gsd.def
 %%DATADIR%%/definitions/mars/grib.kwbc.pf.def
 %%DATADIR%%/definitions/mars/grib.ldas.an.def
 %%DATADIR%%/definitions/mars/grib.ldas.fc.def
@@ -23605,6 +23618,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.sens.sf.def
 %%DATADIR%%/definitions/mars/grib.sens.sg.def
 %%DATADIR%%/definitions/mars/grib.sfdd.fc.def
+%%DATADIR%%/definitions/mars/grib.sfdd.icp.def
 %%DATADIR%%/definitions/mars/grib.sfmd.fc.def
 %%DATADIR%%/definitions/mars/grib.sfmm.em.def
 %%DATADIR%%/definitions/mars/grib.sfmm.fcmax.def
@@ -23612,6 +23626,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.sfmm.fcmin.def
 %%DATADIR%%/definitions/mars/grib.sfmm.fcstdev.def
 %%DATADIR%%/definitions/mars/grib.shdd.fc.def
+%%DATADIR%%/definitions/mars/grib.shdd.icp.def
 %%DATADIR%%/definitions/mars/grib.shmd.fc.def
 %%DATADIR%%/definitions/mars/grib.smma.em.def
 %%DATADIR%%/definitions/mars/grib.smma.fcmean.def
