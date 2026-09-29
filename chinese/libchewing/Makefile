@@ -1,6 +1,5 @@
 PORTNAME=	libchewing
-PORTVERSION=	0.13.0
-PORTREVISION=	1
+PORTVERSION=	0.13.1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://codeberg.org/chewing/libchewing/releases/download/v${PORTVERSION}/
 DISTFILES=	libchewing-${PORTVERSION}${EXTRACT_SUFX}
@@ -19,6 +18,7 @@ USES=		cargo cmake:testing localbase:ldflags pkgconfig sqlite tar:zst
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 CMAKE_OFF=	BUILD_INFO \
 		BUILD_TESTING \
 		ENABLE_GCOV \

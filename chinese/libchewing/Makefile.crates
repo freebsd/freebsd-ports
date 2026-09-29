@@ -1,12 +1,13 @@
-CARGO_CRATES=	anstream-1.0.0 \
+CARGO_CRATES=	aho-corasick-1.1.4 \
+		anstream-1.0.0 \
 		anstyle-1.0.14 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.102 \
-		bitflags-2.11.1 \
-		bumpalo-3.20.2 \
-		cc-1.2.61 \
+		anyhow-1.0.103 \
+		bitflags-2.13.0 \
+		bumpalo-3.20.3 \
+		cc-1.2.67 \
 		cfg-if-1.0.4 \
 		clap-4.6.1 \
 		clap_builder-4.6.0 \
@@ -15,79 +16,54 @@ CARGO_CRATES=	anstream-1.0.0 \
 		clap_mangen-0.2.33 \
 		colorchoice-1.0.5 \
 		der-0.7.10 \
-		env_filter-1.0.1 \
-		env_logger-0.11.10 \
-		equivalent-1.0.2 \
+		env_filter-2.0.0 \
+		env_logger-0.11.11 \
 		errno-0.3.14 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fastrand-2.4.1 \
 		find-msvc-tools-0.1.9 \
-		foldhash-0.1.5 \
 		foldhash-0.2.0 \
-		getrandom-0.4.2 \
-		hashbrown-0.15.5 \
+		getrandom-0.4.3 \
 		hashbrown-0.16.1 \
-		hashbrown-0.17.0 \
-		hashlink-0.11.0 \
+		hashlink-0.11.1 \
 		heck-0.5.0 \
-		id-arena-2.3.0 \
-		indexmap-2.14.0 \
 		is_terminal_polyfill-1.70.2 \
-		itoa-1.0.18 \
-		js-sys-0.3.97 \
-		leb128fmt-0.1.0 \
+		js-sys-0.3.103 \
 		libc-0.2.186 \
 		libsqlite3-sys-0.37.0 \
 		linux-raw-sys-0.12.1 \
-		log-0.4.29 \
-		memchr-2.8.0 \
+		log-0.4.33 \
+		memchr-2.8.3 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		pkg-config-0.3.33 \
-		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
-		quote-1.0.45 \
+		quote-1.0.46 \
 		r-efi-6.0.0 \
+		regex-1.13.0 \
+		regex-automata-0.4.15 \
+		regex-syntax-0.8.11 \
 		roff-1.1.1 \
-		rsqlite-vfs-0.1.0 \
+		rsqlite-vfs-0.1.1 \
 		rusqlite-0.39.0 \
 		rustix-1.1.4 \
-		rustversion-1.0.22 \
-		semver-1.0.28 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.149 \
-		shlex-1.3.0 \
-		smallvec-1.15.1 \
-		sqlite-wasm-rs-0.5.3 \
+		rustversion-1.0.23 \
+		shlex-2.0.1 \
+		smallvec-1.15.2 \
+		sqlite-wasm-rs-0.5.5 \
 		strsim-0.11.1 \
-		syn-2.0.117 \
+		syn-2.0.118 \
 		tempfile-3.27.0 \
 		thiserror-2.0.18 \
 		thiserror-impl-2.0.18 \
 		unicode-ident-1.0.24 \
-		unicode-xid-0.2.6 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
-		wasip2-1.0.3+wasi-0.2.9 \
-		wasip3-0.4.0+wasi-0.3.0-rc-2026-01-06 \
-		wasm-bindgen-0.2.120 \
-		wasm-bindgen-macro-0.2.120 \
-		wasm-bindgen-macro-support-0.2.120 \
-		wasm-bindgen-shared-0.2.120 \
-		wasm-encoder-0.244.0 \
-		wasm-metadata-0.244.0 \
-		wasmparser-0.244.0 \
+		wasm-bindgen-0.2.126 \
+		wasm-bindgen-macro-0.2.126 \
+		wasm-bindgen-macro-support-0.2.126 \
+		wasm-bindgen-shared-0.2.126 \
 		windows-link-0.2.1 \
 		windows-sys-0.61.2 \
-		wit-bindgen-0.51.0 \
-		wit-bindgen-0.57.1 \
-		wit-bindgen-core-0.51.0 \
-		wit-bindgen-rust-0.51.0 \
-		wit-bindgen-rust-macro-0.51.0 \
-		wit-component-0.244.0 \
-		wit-parser-0.244.0 \
-		zeroize-1.8.2 \
-		zmij-1.0.21
+		zeroize-1.9.0
