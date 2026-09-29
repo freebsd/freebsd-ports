@@ -1,5 +1,5 @@
 PORTNAME=	poetry
-PORTVERSION=	2.4.3
+PORTVERSION=	2.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-poetry/poetry/releases/download/${PORTVERSION}/
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=1.2.1<2.0.0:devel/py-build@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pbs-installer>=2025.6.10:devel/py-pbs-installer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkginfo>=1.12<2.0:sysutils/py-pkginfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.0.0<5:devel/py-platformdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}poetry-core>=${PORTVERSION:R}.0:devel/py-poetry-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}poetry-core>=${PORTVERSION:R}.0<${PORTVERSION:R}.0_99:devel/py-poetry-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproject-hooks>=1.0.0<2.0.0:devel/py-pyproject-hooks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.26<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>=1.0.0<2.0.0:www/py-requests-toolbelt@${PY_FLAVOR} \
@@ -36,7 +36,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=1.2.1<2.0.0:devel/py-build@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}trove-classifiers>=2022.5.19:devel/py-trove-classifiers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20.26.6:devel/py-virtualenv@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=7.2.0:devel/py-coverage@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}deepdiff>=6.3:devel/py-deepdiff@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dulwich>=1.2.1:devel/py-dulwich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jaraco.classes>=3.3.1:devel/py-jaraco.classes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=4.0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.9:devel/py-pytest-mock@${PY_FLAVOR} \
