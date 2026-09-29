@@ -1,6 +1,5 @@
 PORTNAME=	groff
-DISTVERSION=	1.24.1
-PORTREVISION=	1
+DISTVERSION=	1.24.2
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -53,7 +52,7 @@ UCHARDET_USES=		pkgconfig
 UCHARDET_CONFIGURE_OFF=	--with-uchardet=no
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/mdoc.local ${STAGEDIR}${PREFIX}/share/groff/site-tmac
+	${INSTALL_DATA} ${FILESDIR}/mdoc.local ${STAGEDIR}${DATADIR}/site-tmac
 	${REINPLACE_CMD} -i "" -e "s/missing/gs/" ${STAGEDIR}${DATADIR}/font/devhtml/DESC
 	${RLN} . ${STAGEDIR}${DATADIR}/current
 
