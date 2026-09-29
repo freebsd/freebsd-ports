@@ -1,7 +1,8 @@
 PORTNAME=	pyroute2
-PORTVERSION=	0.7.12
+PORTVERSION=	0.9.6
 CATEGORIES=	net python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/svinota/pyroute2/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -23,8 +24,8 @@ USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	SS2
-SS2_DESC=	Socket statistics
+SS2_DESC=	Socket statistics # pyroute2/netlink/diag/ss2.py
 
-SS2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.0<6:sysutils/py-psutil@${PY_FLAVOR}
+SS2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.0:sysutils/py-psutil@${PY_FLAVOR}
 
 .include <bsd.port.mk>

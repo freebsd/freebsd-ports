@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-12-16 09:56:26 UTC
++++ pyproject.toml
+@@ -7,8 +7,7 @@ readme = "README.rst"
+ dynamic = ["version"]
+ description = "Python Netlink library"
+ readme = "README.rst"
+-license = "GPL-2.0-or-later OR Apache-2.0"
+-license-files = ["LICENSE*"]
++license = {text = "GPL-2.0-or-later OR Apache-2.0"}
+ authors = [
+     {name = "Peter Saveliev", email = "peter@svinota.eu"}
+ ]
