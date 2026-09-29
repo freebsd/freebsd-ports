@@ -1,7 +1,8 @@
 PORTNAME=	ini2toml
-PORTVERSION=	0.15
+PORTVERSION=	0.16
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,19 +13,25 @@ WWW=		https://ini2toml.readthedocs.io/en/latest/ \
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=46.1.0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.2:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=5:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=20.7:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=59.6:devel/py-setuptools@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}setuptools>=60:devel/py-setuptools@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
+MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${PORTVERSION}
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	FULL LITE
+USE_GITHUB=	yes
+GH_ACCOUNT=	abravalheri
+
+OPTIONS_DEFINE=	ALL FULL LITE
 OPTIONS_DEFAULT=FULL
+ALL_DESC=	All optional dependencies
+ALL_IMPLIES=	FULL LITE
 FULL_DESC=	Create TOML document with TOML-equivalent comment
 LITE_DESC=	Create TOML document without comment
 
