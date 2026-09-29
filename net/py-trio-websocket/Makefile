@@ -1,9 +1,9 @@
 PORTNAME=	trio-websocket
-PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTVERSION=	0.12.2
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	trio_websocket-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WebSocket library for Trio
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_EXCEPTIONGROUP} \
+		${PYTHON_PKGNAMEPREFIX}outcome>=1.2.0:devel/py-outcome@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}trio>=0.11:net/py-trio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wsproto>=0.14:net/py-wsproto@${PY_FLAVOR}
 
