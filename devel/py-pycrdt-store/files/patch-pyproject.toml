@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -29,7 +29,7 @@ dependencies = [
+ ]
+ dependencies = [
+     "anyio >=3.6.2,<5",
+-    "sqlite-anyio >=0.2.3,<0.3.0",
++    "sqlite-anyio >=0.2.3,<0.4.0",
+     "pycrdt >=0.14.0,<0.15.0",
+ ]
+ 
