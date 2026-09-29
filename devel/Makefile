@@ -8304,7 +8304,6 @@
     SUBDIR += rubygem-redis-store
     SUBDIR += rubygem-redis-store-gitlab
     SUBDIR += rubygem-redlock
-    SUBDIR += rubygem-redlock1
     SUBDIR += rubygem-redmine_plugin_support
     SUBDIR += rubygem-reentrant_flock
     SUBDIR += rubygem-ref
