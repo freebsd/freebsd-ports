@@ -414,6 +414,7 @@
     SUBDIR += py-plumed
     SUBDIR += py-pnetcdf
     SUBDIR += py-probeinterface
+    SUBDIR += py-psims
     SUBDIR += py-pupynere
     SUBDIR += py-py3Dmol
     SUBDIR += py-pyaixi
