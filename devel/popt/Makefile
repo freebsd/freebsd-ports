@@ -1,31 +1,35 @@
 PORTNAME=	popt
 PORTVERSION=	1.19
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/ \
-		http://ftp.rpm.org/popt/releases/popt-1.x/
+#MASTER_SITES=	https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/ \
+#		http://ftp.rpm.org/popt/releases/popt-1.x/
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Getopt(3) like library with a number of enhancements, from Redhat
+COMMENT=	C library for parsing command line parameters
 WWW=		https://github.com/rpm-software-management/popt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe iconv libtool
+USES=		cmake:testing cpe iconv
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+CMAKE_OFF=	BUILD_DOCUMENTATION \
+		ENABLE_ASAN \
+		ENABLE_UBSAN \
+		ENABLE_WERROR
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 CPE_VENDOR=	popt_project
 
-OPTIONS_DEFINE=	NLS
+USE_GITHUB=	yes
+GH_ACCOUNT=	rpm-software-management
+GH_TAGNAME=	14c42b4
 
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext-runtime localbase
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>
