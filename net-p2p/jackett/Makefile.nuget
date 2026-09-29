@@ -1,30 +1,28 @@
 NUGET_GROUPS=	NUGET
-NUGET_NUPKGS=	AngleSharp.Xml:1.2.0 \
-		AngleSharp:1.8.1 \
+NUGET_NUPKGS=	AngleSharp.Xml:1.3.0 \
+		AngleSharp:1.10.2 \
 		Autofac.Extensions.DependencyInjection:9.0.0 \
 		Autofac:8.0.0 \
 		BencodeNET:4.0.0 \
 		CommandLineParser:2.9.1 \
 		DotNet4.SocksProxy:1.4.0.1 \
 		FlareSolverrSharp:4.0.0 \
-		Microsoft.AspNetCore.Http.Abstractions:2.3.12 \
-		Microsoft.AspNetCore.Http.Features:2.3.11 \
-		Microsoft.AspNetCore.Http:2.3.13 \
-		Microsoft.AspNetCore.JsonPatch:9.0.20 \
-		Microsoft.AspNetCore.Mvc.NewtonsoftJson:9.0.20 \
-		Microsoft.AspNetCore.WebUtilities:2.3.13 \
-		Microsoft.CSharp:4.7.0 \
-		Microsoft.Extensions.Configuration.Abstractions:9.0.20 \
-		Microsoft.Extensions.Configuration:9.0.20 \
+		Microsoft.AspNetCore.Http.Abstractions:2.3.13 \
+		Microsoft.AspNetCore.Http.Features:2.3.12 \
+		Microsoft.AspNetCore.Http:2.3.14 \
+		Microsoft.AspNetCore.JsonPatch:9.0.23 \
+		Microsoft.AspNetCore.Mvc.NewtonsoftJson:9.0.23 \
+		Microsoft.AspNetCore.WebUtilities:2.3.14 \
+		Microsoft.Extensions.Configuration.Abstractions:9.0.23 \
 		Microsoft.Extensions.DependencyInjection.Abstractions:8.0.0 \
 		Microsoft.Extensions.DependencyInjection:8.0.0 \
 		Microsoft.Extensions.Logging.Abstractions:8.0.0 \
 		Microsoft.Extensions.Logging:8.0.0 \
 		Microsoft.Extensions.ObjectPool:8.0.11 \
 		Microsoft.Extensions.Options:8.0.2 \
-		Microsoft.Extensions.Primitives:9.0.20 \
+		Microsoft.Extensions.Primitives:9.0.23 \
 		Microsoft.NETCore.Platforms:5.0.0 \
-		Microsoft.Net.Http.Headers:2.3.12 \
+		Microsoft.Net.Http.Headers:2.3.13 \
 		MimeMapping:1.0.1.50 \
 		Mono.Posix:7.1.0-final.1.21458.1 \
 		Mono.Unix:7.1.0-final.1.21458.1 \
@@ -33,20 +31,18 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.2.0 \
 		NLog:5.5.1 \
 		Newtonsoft.Json.Bson:1.0.2 \
 		Newtonsoft.Json:13.0.4 \
-		Polly.Core:8.8.0 \
-		Polly:8.8.0 \
+		Polly.Core:8.9.1 \
+		Polly:8.9.1 \
 		SharpZipLib:1.4.2 \
 		System.Buffers:4.6.0 \
 		System.Diagnostics.DiagnosticSource:7.0.2 \
-		System.Diagnostics.EventLog:9.0.20 \
+		System.Diagnostics.EventLog:9.0.23 \
 		System.IO.FileSystem.AccessControl:5.0.0 \
 		System.IO.Pipelines:5.0.1 \
 		System.Security.AccessControl:5.0.0 \
 		Microsoft.Extensions.Primitives:8.0.0 \
-		System.Security.Cryptography.ProtectedData:9.0.20 \
+		System.Security.Cryptography.ProtectedData:9.0.23 \
 		System.Security.Principal.Windows:5.0.0 \
-		System.ServiceProcess.ServiceController:9.0.20 \
-		System.Text.Encoding.CodePages:9.0.20 \
+		System.ServiceProcess.ServiceController:9.0.23 \
 		System.Text.Encodings.Web:8.0.0 \
-		System.Text.Json:9.0.20 \
 		YamlDotNet:18.1.0

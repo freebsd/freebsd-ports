@@ -1,6 +1,6 @@
 PORTNAME=	jackett
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.2685
+DISTVERSION=	0.24.3067
 CATEGORIES=	net-p2p
 
 MAINTAINER=	tremere@cainites.net
@@ -27,7 +27,8 @@ USERS=		jackett
 GROUPS=		jackett
 
 DOTNET_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/}
-DOTNET_TFM=	net9.0
+DOTNET_NOWARN=	-p:NoWarn=1701%3B1702%3BASPDEPR005%3BASPDEPR008
+DOTNET_TFM=	net10.0
 
 DOTNET_CMD=	${SETENV} HOME=${WRKDIR} ${LOCALBASE}/bin/dotnet
 
@@ -41,13 +42,18 @@ post-patch:
 		${WRKSRC}/src/Jackett.Server/Jackett.Server.csproj \
 		${WRKSRC}/src/Jackett.Common/Jackett.Common.csproj \
 		${WRKSRC}/src/DateTimeRoutines/DateTimeRoutines.csproj
+	${REINPLACE_CMD} "s|net9\.0|${DOTNET_TFM}|g" \
+		${WRKSRC}/src/Jackett.Server/Jackett.Server.csproj
+	${REINPLACE_CMD} -E '/PackageReference Include="(Microsoft\.CSharp|Microsoft\.Extensions\.Configuration|System\.Text\.Encoding\.CodePages|System\.Text\.Json)"/d' \
+		${WRKSRC}/src/Jackett.Common/Jackett.Common.csproj \
+		${WRKSRC}/src/Jackett.Server/Jackett.Server.csproj
 
 do-build:
 	cd ${WRKSRC}/src && \
 	${DOTNET_CMD} nuget add source ${DISTDIR}/nuget && \
 	${DOTNET_CMD} nuget disable source nuget.org && \
 	${DOTNET_CMD} restore Jackett.Server -s ${DISTDIR}/nuget --packages ${WRKDIR}/packages && \
-	${DOTNET_CMD} publish Jackett.Server -f ${DOTNET_TFM} -c Release \
+	${DOTNET_CMD} publish Jackett.Server ${DOTNET_NOWARN} -f ${DOTNET_TFM} -c Release \
 		-r freebsd.${_OSVERSION_MAJOR}-${DOTNET_ARCH} --sc -p:PublishReadyToRun=false -o bin/publish
 
 do-install:
