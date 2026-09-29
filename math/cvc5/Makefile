@@ -1,9 +1,11 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSION=	1.4.1
 CATEGORIES=	math java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	e748b1feabfbc70da71df4ec114e440c1df3a33e.patch:-p1 # https://github.com/cvc5/cvc5/pull/13015 (Fix configuration with CMake 4.5)
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Automatic theorem prover for SMT (Satisfiability Modulo Theories)
@@ -16,18 +18,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR} \
 		${LOCALBASE}/lib/symfpu.a:math/symfpu
 LIB_DEPENDS=	libcadical.so:math/cadical
-
-TEST_ENV=	ARGS=-V
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}
 
 USES=		cmake:testing ncurses compiler:c++17-lang \
 		localbase:ldflags pkgconfig python:build
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
+TEST_ENV=	ARGS=-V
+
+py310_BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR} # tomli is a fallback for tomllib which is only available in Python 3.11+
+
+.if !defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=	Production
+.else
+CMAKE_BUILD_TYPE=	Debug
+.endif
 CMAKE_ARGS+=		-DFREEBSD_DISTDIR=${DISTDIR} \
 			-DPython_EXECUTABLE:STRING=${PYTHON_CMD}
 CMAKE_ON=		BUILD_SHARED_LIBS
@@ -48,7 +56,7 @@ OPTIONS_SUB=			yes
 
 COCOALIB_DESC=			Use CoCoALib for further polynomial operations
 COCOALIB_CMAKE_BOOL=		USE_COCOA
-#COCOALIB_BROKEN=		fails to compile with cocoalib, see https://github.com/cvc5/cvc5/issues/9484
+COCOALIB_BROKEN=		fails to compile with cocoalib, see https://github.com/cvc5/cvc5/issues/9484
 
 JAVA_USES=			java
 JAVA_CMAKE_BOOL=		BUILD_BINDINGS_JAVA
@@ -101,6 +109,6 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 
 PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
 
-# tests as of 1.4.0: 100% tests passed, 0 tests failed out of 4361
+# tests as of 1.4.1: 100% tests passed, 0 tests failed out of 4397
 
 .include <bsd.port.mk>
