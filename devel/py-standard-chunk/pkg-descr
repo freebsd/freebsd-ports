@@ -1,0 +1,5 @@
+The chunk module from the Python standard library, redistributed as a standalone
+package.
+
+It provides support for reading and writing IFF-style chunked data and was
+removed from the Python standard library as part of PEP 594.
