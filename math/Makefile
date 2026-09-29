@@ -1150,6 +1150,7 @@
     SUBDIR += py-roman
     SUBDIR += py-rpy2
     SUBDIR += py-rpy2-rinterface
+    SUBDIR += py-rpy2-robjects
     SUBDIR += py-rustworkx
     SUBDIR += py-rvlib
     SUBDIR += py-scikit-datasets
