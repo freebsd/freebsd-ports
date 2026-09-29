@@ -1,8 +1,10 @@
-PORTNAME=	pyroute2.minimal
-PORTVERSION=	0.7.12
+PORTNAME=	pyroute2-minimal
+PORTVERSION=	0.9.6
 CATEGORIES=	net python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/svinota/pyroute2/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pyroute2_minimal-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Netlink library: minimal installation

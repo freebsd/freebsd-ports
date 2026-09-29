@@ -5628,3 +5628,4 @@ graphics/hiptext||2026-09-25|Remove abandonware
 devel/py-schematics-patched|devel/py-cattrs|2026-09-27|Has expired: Upstream inactive since +8 years.  Please use devel/py-cattrs instead
 x11-toolkits/color-widgets-qt5|x11-toolkits/qt-color-widgets|2026-09-27|move to qt-color-widgets to match upstream naming
 security/cvechecker||2026-09-29|Has expired: The project has been declared EOL by its author
+net/py-pyroute2.minimal|net/py-pyroute2-minimal|2026-09-29|Rename to match upstream naming
