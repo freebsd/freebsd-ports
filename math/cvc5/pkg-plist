@@ -10,7 +10,7 @@ include/cvc5/cvc5_skolem_id.h
 include/cvc5/cvc5_types.h
 lib/cmake/cvc5/cvc5Config.cmake
 lib/cmake/cvc5/cvc5ConfigVersion.cmake
-lib/cmake/cvc5/cvc5JavaTargets.cmake
+%%JAVA%%lib/cmake/cvc5/cvc5JavaTargets.cmake
 lib/cmake/cvc5/cvc5Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cvc5/cvc5Targets.cmake
 lib/libcvc5.so
