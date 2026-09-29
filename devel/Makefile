@@ -5313,6 +5313,7 @@
     SUBDIR += py-jaraco.services
     SUBDIR += py-jaraco.stream
     SUBDIR += py-jaraco.text
+    SUBDIR += py-jaraco.ui
     SUBDIR += py-jaraco.util
     SUBDIR += py-javaproperties
     SUBDIR += py-jaxtyping

@@ -1,0 +1,3 @@
+jaraco.ui provides user-interface utilities, primarily for command-line
+applications. It includes modules for command-line interaction, editors, input,
+menus, progress display and a main CLI entry point.
