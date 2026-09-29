@@ -1,12 +1,13 @@
 PORTNAME=	parver
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1.post0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parse and manipulate version numbers
-WWW=		https://github.com/RazerM/parver
+WWW=		https://parver.readthedocs.io/en/stable/ \
+		https://github.com/RazerM/parver
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
