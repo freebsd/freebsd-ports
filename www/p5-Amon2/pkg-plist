@@ -10,14 +10,7 @@ bin/amon2-setup.pl
 %%SITE_PERL%%/Amon2/Plugin/Web/Streaming.pm
 %%SITE_PERL%%/Amon2/Plugin/Web/WebSocket.pm
 %%SITE_PERL%%/Amon2/Setup/Asset/Blueprint.pm
-%%SITE_PERL%%/Amon2/Setup/Asset/Bootstrap.pm
-%%SITE_PERL%%/Amon2/Setup/Asset/MicroDispatcherJS.pm
-%%SITE_PERL%%/Amon2/Setup/Asset/MicroLocationJS.pm
-%%SITE_PERL%%/Amon2/Setup/Asset/MicroTemplateJS.pm
-%%SITE_PERL%%/Amon2/Setup/Asset/SprintfJS.pm
-%%SITE_PERL%%/Amon2/Setup/Asset/StrftimeJS.pm
 %%SITE_PERL%%/Amon2/Setup/Asset/XSRFTokenJS.pm
-%%SITE_PERL%%/Amon2/Setup/Asset/jQuery.pm
 %%SITE_PERL%%/Amon2/Setup/Flavor.pm
 %%SITE_PERL%%/Amon2/Setup/Flavor/Basic.pm
 %%SITE_PERL%%/Amon2/Setup/Flavor/Large.pm
@@ -52,7 +45,7 @@ bin/amon2-setup.pl
 %%SITE_PERL%%/auto/share/dist/Amon2/flavor/Basic/static/js/main.js
 %%SITE_PERL%%/auto/share/dist/Amon2/flavor/Basic/t/00_compile.t
 %%SITE_PERL%%/auto/share/dist/Amon2/flavor/Basic/t/03_assets.t
-%%SITE_PERL%%/auto/share/dist/Amon2/flavor/Basic/t/06_jshint.t
+%%SITE_PERL%%/auto/share/dist/Amon2/flavor/Basic/t/04_csrf.t
 %%SITE_PERL%%/auto/share/dist/Amon2/flavor/Basic/t/Util.pm
 %%SITE_PERL%%/auto/share/dist/Amon2/flavor/Basic/tmpl/include/layout.tx
 %%SITE_PERL%%/auto/share/dist/Amon2/flavor/Basic/tmpl/include/pager.tx
