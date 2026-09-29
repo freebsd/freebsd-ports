@@ -1,16 +1,16 @@
---- tools/boost_install/boost-install.jam.orig	2024-11-15 19:37:23 UTC
+--- tools/boost_install/boost-install.jam.orig	2026-08-05 17:09:16 UTC
 +++ tools/boost_install/boost-install.jam
-@@ -1264,16 +1264,16 @@ rule boost-install ( libraries * )
-         alias install-libraries-shared : install-libraries-shared-cygwin : <target-os>cygwin ;
+@@ -1273,16 +1273,16 @@ rule boost-install ( libraries * )
+         alias install-libraries-shared : install-libraries-shared-windows : <target-os>cygwin ;
          $(p).mark-target-as-explicit install-libraries-shared ;
  
 -        install install-libraries-shared- : $(libraries) : <location>(libdir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on <install-no-version-symlinks>on : <install-package>Boost ;
 +        install install-libraries-shared- : $(libraries) : <location>(libdir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on : <install-package>Boost ;
          $(p).mark-target-as-explicit install-libraries-shared- ;
  
--        install install-libraries-shared-cygwin : $(libraries) : <location>(bindir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on <install-no-version-symlinks>on : <install-package>Boost ;
-+        install install-libraries-shared-cygwin : $(libraries) : <location>(bindir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on : <install-package>Boost ;
-         $(p).mark-target-as-explicit install-libraries-shared-cygwin ;
+-        install install-libraries-shared-windows : $(libraries) : <location>(dlldir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on <install-no-version-symlinks>on : <install-package>Boost ;
++        install install-libraries-shared-windows : $(libraries) : <location>(dlldir) <install-type>SHARED_LIB <install-type>PDB <install-dependencies>on : <install-package>Boost ;
+         $(p).mark-target-as-explicit install-libraries-shared-windows ;
  
          install install-unprefixed-static : $(unprefixed) : <install-type>STATIC_LIB <conditional>@boost-install%install-subdir : <install-package>Boost ;
          $(p).mark-target-as-explicit install-unprefixed-static ;
@@ -20,7 +20,7 @@
          $(p).mark-target-as-explicit install-unprefixed-shared ;
  
          install-cmake-config $(libraries) ;
-@@ -1297,13 +1297,13 @@ rule boost-install ( libraries * )
+@@ -1306,13 +1306,13 @@ rule boost-install ( libraries * )
          install stage-libraries-static : $(libraries) : <location>(libdir) $(reqs) <install-dependencies>on <install-type>STATIC_LIB : <install-package>Boost ;
          $(p).mark-target-as-explicit stage-libraries-static ;
  

@@ -1,0 +1,14 @@
+- Replace the dependency on asio with asio_core.
+  e4d0d405a12f13ebe7d894382d3a98830ae1c7bd
+
+--- libs/process/CMakeLists.txt.orig	2026-08-05 17:09:13 UTC
++++ libs/process/CMakeLists.txt
+@@ -34,7 +34,7 @@ target_link_libraries(boost_process
+ target_link_libraries(boost_process
+     PUBLIC
+     Boost::algorithm
+-    Boost::asio
++    Boost::asio_core
+     Boost::config
+     Boost::core
+     Boost::fusion

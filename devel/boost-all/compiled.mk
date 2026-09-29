@@ -4,8 +4,8 @@ MAKE_CMD?=	bjam
 MAKEFILE=	#
 MAKE_FLAGS=	#
 ALL_TARGET=	stage
-USES+=		compiler:c++17-lang
-USE_CXXSTD=	gnu++17
+#USES+=		compiler:c++17-lang
+#USE_CXXSTD=	gnu++17
 
 LDFLAGS+=	-Wl,--as-needed
 

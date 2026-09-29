@@ -1,0 +1,14 @@
+- Replace the dependency on asio with asio_core.
+  e4d0d405a12f13ebe7d894382d3a98830ae1c7bd
+
+--- libs/process/build.jam.orig	2026-08-05 17:09:13 UTC
++++ libs/process/build.jam
+@@ -12,7 +12,7 @@ constant boost_dependencies :
+ 
+ constant boost_dependencies :
+     /boost/algorithm//boost_algorithm
+-    /boost/asio//boost_asio
++    /boost/asio//boost_asio_core
+     /boost/assert//boost_assert
+     /boost/config//boost_config
+     /boost/core//boost_core
