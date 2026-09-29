@@ -2,6 +2,7 @@ bin/audio2tape
 bin/createhdf
 bin/fmfconv
 bin/listbasic
+bin/mdrlist
 bin/profile2map
 bin/raw2hdf
 bin/rzxcheck
@@ -23,6 +24,7 @@ share/man/man1/createhdf.1.gz
 share/man/man1/fmfconv.1.gz
 share/man/man1/fuse-utils.1.gz
 share/man/man1/listbasic.1.gz
+share/man/man1/mdrlist.1.gz
 share/man/man1/profile2map.1.gz
 share/man/man1/raw2hdf.1.gz
 share/man/man1/rzxcheck.1.gz
