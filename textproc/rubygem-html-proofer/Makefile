@@ -1,5 +1,5 @@
 PORTNAME=	html-proofer
-PORTVERSION=	5.0.10
+PORTVERSION=	5.2.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-addressable>=2.3<3:www/rubygem-addressable \
 		rubygem-async>=2.1<3:devel/rubygem-async \
+		rubygem-benchmark>=0.5<1:benchmarks/rubygem-benchmark \
 		rubygem-nokogiri>=1.13<2:textproc/rubygem-nokogiri \
 		rubygem-pdf-reader>=2.11<3:print/rubygem-pdf-reader \
 		rubygem-rainbow>=3.0<4:devel/rubygem-rainbow \
