@@ -47,7 +47,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bitflags-2.11.0 \
 		bitvec-1.0.1 \
 		blake2-0.10.6 \
-		blake3-1.8.5 \
+		blake3-1.8.7 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
 		blowfish-0.9.1 \
@@ -80,7 +80,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		cfg-if-1.0.0 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
-		chacha20-0.10.1 \
+		chacha20-0.10.2 \
 		chacha20poly1305-0.10.1 \
 		charset-0.1.5 \
 		chrono-0.4.45 \
@@ -131,7 +131,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
 		darling_macro-0.20.10 \
-		data-encoding-2.11.0 \
+		data-encoding-2.11.1 \
 		dbl-0.3.2 \
 		der-0.7.9 \
 		der-parser-9.0.0 \
@@ -196,18 +196,18 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.1 \
 		funty-2.0.0 \
-		futures-0.3.33 \
+		futures-0.3.34 \
 		futures-buffered-0.2.11 \
-		futures-channel-0.3.33 \
+		futures-channel-0.3.34 \
 		futures-concurrency-7.6.3 \
-		futures-core-0.3.33 \
-		futures-executor-0.3.33 \
-		futures-io-0.3.33 \
+		futures-core-0.3.34 \
+		futures-executor-0.3.34 \
+		futures-io-0.3.34 \
 		futures-lite-2.6.1 \
-		futures-macro-0.3.33 \
-		futures-sink-0.3.33 \
-		futures-task-0.3.33 \
-		futures-util-0.3.33 \
+		futures-macro-0.3.34 \
+		futures-sink-0.3.34 \
+		futures-task-0.3.34 \
+		futures-util-0.3.34 \
 		generator-0.8.4 \
 		generic-array-0.14.7 \
 		getrandom-0.2.16 \
@@ -219,7 +219,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		glob-0.3.2 \
 		gloo-timers-0.3.0 \
 		group-0.13.0 \
-		h2-0.4.15 \
+		h2-0.4.16 \
 		half-2.6.0 \
 		hashbrown-0.15.4 \
 		hashlink-0.10.0 \
@@ -239,7 +239,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		http-0.2.12 \
 		http-1.1.0 \
 		http-body-1.0.1 \
-		http-body-util-0.1.3 \
+		http-body-util-0.1.5 \
 		httparse-1.10.0 \
 		httpdate-1.0.3 \
 		human-panic-2.0.6 \
@@ -302,13 +302,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		litemap-0.7.4 \
 		litrs-0.4.1 \
 		lock_api-0.4.14 \
-		log-0.4.33 \
+		log-0.4.34 \
 		loom-0.7.2 \
 		lru-0.12.5 \
 		lru-0.13.0 \
 		lru-slab-0.1.2 \
 		lru_time_cache-0.11.11 \
-		mail-builder-0.4.4 \
+		mail-builder-0.5.0 \
 		mailparse-0.16.1 \
 		matchers-0.2.0 \
 		md-5-0.10.6 \
@@ -363,6 +363,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
+		openssl-src-300.4.2+3.4.1 \
 		openssl-sys-0.9.116 \
 		option-ext-0.2.0 \
 		p256-0.13.2 \
@@ -471,11 +472,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rusticata-macros-4.1.0 \
 		rustix-0.38.44 \
 		rustix-1.1.4 \
-		rustls-0.23.37 \
+		rustls-0.23.45 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.14.0 \
 		rustls-webpki-0.102.8 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.14 \
 		rustyline-16.0.0 \
 		ryu-1.0.19 \
@@ -546,7 +547,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		surge-ping-0.8.1 \
 		syn-1.0.109 \
 		syn-2.0.118 \
-		syn-3.0.3 \
+		syn-3.0.4 \
 		sync_wrapper-1.0.0 \
 		synstructure-0.13.1 \
 		sysinfo-0.26.9 \
@@ -560,9 +561,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		testdir-0.9.3 \
 		textwrap-0.16.2 \
 		thiserror-1.0.69 \
-		thiserror-2.0.19 \
+		thiserror-2.0.20 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.19 \
+		thiserror-impl-2.0.20 \
 		thread_local-1.1.8 \
 		time-0.3.47 \
 		time-core-0.1.8 \
@@ -616,7 +617,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.20.0 \
+		uuid-1.25.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
@@ -703,8 +704,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		xmltree-0.10.3 \
 		yansi-1.0.1 \
 		yasna-0.5.2 \
-		yerpc-0.6.4 \
-		yerpc_derive-0.6.3 \
+		yerpc-0.7.0 \
+		yerpc_derive-0.7.0 \
 		yoke-0.7.5 \
 		yoke-derive-0.7.5 \
 		z32-1.3.0 \
