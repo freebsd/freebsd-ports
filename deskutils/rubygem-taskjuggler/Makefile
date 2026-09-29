@@ -1,5 +1,5 @@
 PORTNAME=	taskjuggler
-PORTVERSION=	3.7.2
+PORTVERSION=	3.8.4
 CATEGORIES=	deskutils rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-mail>=2.7.1,2<3,2:mail/rubygem-mail \
-		rubygem-term-ansicolor>=1.7.1<2:devel/rubygem-term-ansicolor
+		rubygem-term-ansicolor>=1.7.1<2:devel/rubygem-term-ansicolor \
+		rubygem-webrick>=1.9.1<2:www/rubygem-webrick
 
 USES=		gem
 
