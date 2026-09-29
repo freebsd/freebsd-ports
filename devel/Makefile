@@ -5706,7 +5706,6 @@
     SUBDIR += py-pep440
     SUBDIR += py-pep517
     SUBDIR += py-pep562
-    SUBDIR += py-pep621
     SUBDIR += py-pep8-naming
     SUBDIR += py-perceval
     SUBDIR += py-perceval-mozilla
