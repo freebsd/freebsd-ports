@@ -26,4 +26,12 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	RECOMMENDED
+RECOMMENDED_DESC=	Recommended dependencies by upstream
+
+RECOMMENDED_BUILD_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0.38:security/p5-Crypt-OpenSSL-RSA \
+			p5-Crypt-SysRandom-XS>=0.010:security/p5-Crypt-SysRandom-XS
+RECOMMENDED_RUN_DEPENDS=p5-Crypt-OpenSSL-RSA>=0.38:security/p5-Crypt-OpenSSL-RSA \
+			p5-Crypt-SysRandom-XS>=0.010:security/p5-Crypt-SysRandom-XS
+
 .include <bsd.port.mk>
