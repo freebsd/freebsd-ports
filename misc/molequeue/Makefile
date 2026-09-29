@@ -1,12 +1,13 @@
 PORTNAME=	molequeue
-DISTVERSION=	0.9.0-17
-DISTVERSIONSUFFIX=	-g0a35627
+DISTVERSION=	0.9.0-24
+DISTVERSIONSUFFIX=	-g5be1a18
 CATEGORIES=	misc
 #MASTER_SITES=	https://github.com/OpenChemistry/molequeue/releases/download/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Desktop integration of high performance computing resources
-WWW=		https://www.openchemistry.org/projects/molequeue
+WWW=		https://www.openchemistry.org/projects/molequeue \
+		https://github.com/OpenChemistry/molequeue
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
