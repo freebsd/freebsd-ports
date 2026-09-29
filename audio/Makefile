@@ -673,6 +673,7 @@
     SUBDIR += py-soxr
     SUBDIR += py-speechrecognition
     SUBDIR += py-spotipy
+    SUBDIR += py-standard-aifc
     SUBDIR += py-supysonic
     SUBDIR += py-tinytag
     SUBDIR += py-torchaudio
