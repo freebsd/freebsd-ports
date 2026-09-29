@@ -1,7 +1,7 @@
 PORTNAME=	ruqola
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 DISTVERSION=	2.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,16 +13,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
 
-USES=		cmake compiler:c++11-lang kde:6 gettext localbase:ldflags qt:6 tar:xz xorg
-USE_KDE=	archive auth bookmarks codecs colorscheme completion config configwidgets \
-		coreaddons crash dbusaddons guiaddons i18n iconthemes idletime itemviews \
-		jobwidgets kio ktextaddons notifications notifyconfig \
-		prison purpose service solid sonnet statusnotifieritem syntaxhighlighting \
-		textwidgets widgetsaddons windowsystem xmlgui \
+USES=		cmake kde:6 gettext qt:6 tar:xz
+USE_KDE=	archive codecs colorscheme config coreaddons crash \
+		dbusaddons i18n iconthemes idletime itemviews kio \
+		ktextaddons notifications notifyconfig prison purpose \
+		sonnet statusnotifieritem syntaxhighlighting \
+		textwidgets userfeedback xmlgui \
 		doctools:build ecm:build
 USE_QT=		base multimedia networkauth \
 		websockets
-USE_XORG=	x11
+# KDE Plasma
+USE_KDE+=	activities
+
+CMAKE_OFF=	OPTION_DISABLE_NETWORKMANAGER
 
 PLIST_SUB=	SO_VER=${DISTVERSION}
 
