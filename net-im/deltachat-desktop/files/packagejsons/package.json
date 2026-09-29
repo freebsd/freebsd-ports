@@ -2,7 +2,7 @@
   "private": "true",
   "name": "deltachat-desktop",
   "type": "module",
-  "version": "2.59.1",
+  "version": "2.62.0",
   "scripts": {
     "check": "pnpm check:types && pnpm check:lint && pnpm check:format && pnpm check:target-versions",
     "check:types": "pnpm -r --no-bail check:types",
@@ -14,6 +14,7 @@
     "dev": "pnpm dev:electron",
     "start:electron": "pnpm --filter=@deltachat-desktop/target-electron start",
     "build:electron": "pnpm --filter=@deltachat-desktop/target-electron build",
+    "pack:asar": "pnpm --filter=@deltachat-desktop/target-electron pack:asar",
     "dev:electron": "pnpm --filter=@deltachat-desktop/target-electron dev",
     "debug:electron": "pnpm --filter=@deltachat-desktop/target-electron dev-inspect",
     "watch:electron": "pnpm --filter=@deltachat-desktop/target-electron watch",
