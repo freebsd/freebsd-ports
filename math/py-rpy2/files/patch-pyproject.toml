@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-09-19 15:14:03 UTC
++++ pyproject.toml
+@@ -13,8 +13,7 @@ requires-python = ">=3.9"
+ description = "Python interface to the R language (embedded R)"
+ readme = "README.md"
+ requires-python = ">=3.9"
+-license = "GPL-2.0-or-later"
+-license-files = ["LICENSE"]
++license = { text = "GPL-2.0-or-later" }
+ authors = [{ name = "Laurent Gautier", email = "lgautier@gmail.com" }]
+ classifiers = [
+     "Programming Language :: Python",
