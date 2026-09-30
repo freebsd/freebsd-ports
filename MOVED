@@ -5649,3 +5649,5 @@ devel/sope2|devel/sope|2026-09-30|Has expired: No longer actively developed sinc
 x11/compton-conf||2026-09-30|Has expired: Project was archived and deprecated upstream
 sysutils/cfengine-masterfiles325||2026-09-30|Has expired: FreeBSD will only support N and N-1
 sysutils/cfengine325||2026-09-30|Has expired: FreeBSD will only support N and N-1
+sysutils/cfengine-masterfiles324||2026-09-30|Has expired: FreeBSD will only support N and N-1
+sysutils/cfengine324||2026-09-30|Has expired: FreeBSD will only support N and N-1
