@@ -5665,3 +5665,4 @@ multimedia/py-periscope||2026-09-30|Has expired: Unmaintained upstream, last rel
 devel/pyside2-tools||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 russian/eric6||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 devel/rubygem-pdk||2026-09-30|Has expired: Depends on expired sysutils/rubygem-facter
+audio/py-pocketsphinx||2026-09-30|Has expired: Depends on expired devel/swig40

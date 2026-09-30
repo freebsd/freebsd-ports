@@ -649,7 +649,6 @@
     SUBDIR += py-mutagen
     SUBDIR += py-opuslib
     SUBDIR += py-playsound
-    SUBDIR += py-pocketsphinx
     SUBDIR += py-pulsectl
     SUBDIR += py-pyacoustid
     SUBDIR += py-pyaudio
