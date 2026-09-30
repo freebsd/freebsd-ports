@@ -444,7 +444,6 @@
     SUBDIR += kktdirect
     SUBDIR += kmplot
     SUBDIR += labplot
-    SUBDIR += lambda
     SUBDIR += lapack
     SUBDIR += lapack++
     SUBDIR += lapack95
