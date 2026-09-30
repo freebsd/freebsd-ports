@@ -455,7 +455,6 @@
     SUBDIR += fx
     SUBDIR += g15daemon
     SUBDIR += gaffitter
-    SUBDIR += ganglia-monitor-core
     SUBDIR += gapcmon
     SUBDIR += garcon
     SUBDIR += gather
