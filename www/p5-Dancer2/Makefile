@@ -1,5 +1,5 @@
 PORTNAME=	Dancer2
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CROMEDOME
@@ -13,13 +13,13 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
-		${RUN_DEPENDS}
-RUN_DEPENDS=	p5-CLI-Osprey>=0.09:devel/p5-CLI-Osprey \
-		p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny \
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install
+RUN_DEPENDS=	p5-Capture-Tiny>=0.12:devel/p5-Capture-Tiny \
+		p5-CLI-Osprey>=0.09:devel/p5-CLI-Osprey \
 		p5-Clone>=0:devel/p5-Clone \
-		p5-Crypt-URandom>=0.36:security/p5-Crypt-URandom \
 		p5-Config-Any>=0:devel/p5-Config-Any \
+		p5-Crypt-URandom>=0.36:security/p5-Crypt-URandom \
 		p5-Data-Censor>=0:devel/p5-Data-Censor \
 		p5-File-Share>=0:devel/p5-File-Share \
 		p5-File-Which>=0:sysutils/p5-File-Which \
@@ -28,15 +28,16 @@ RUN_DEPENDS=	p5-CLI-Osprey>=0.09:devel/p5-CLI-Osprey \
 		p5-HTTP-Headers-Fast>=0.21:www/p5-HTTP-Headers-Fast \
 		p5-HTTP-XSCookies>=0.000015:www/p5-HTTP-XSCookies \
 		p5-Import-Into>=0:devel/p5-Import-Into \
-		p5-JSON>=0:converters/p5-JSON \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
+		p5-JSON>=0:converters/p5-JSON \
+		p5-libwww>=0:www/p5-libwww \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
 		p5-Moo>=2.000000:devel/p5-Moo \
 		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
-		p5-Plack>=1.0040:www/p5-Plack \
 		p5-Plack-Middleware-FixMissingBodyInRedirect>=0:www/p5-Plack-Middleware-FixMissingBodyInRedirect \
 		p5-Plack-Middleware-RemoveRedundantBody>=0:www/p5-Plack-Middleware-RemoveRedundantBody \
+		p5-Plack>=1.0040:www/p5-Plack \
 		p5-Ref-Util>=0:devel/p5-Ref-Util \
 		p5-Return-MultiLevel>=0:devel/p5-Return-MultiLevel \
 		p5-Role-Tiny>=2.000000:devel/p5-Role-Tiny \
@@ -46,13 +47,12 @@ RUN_DEPENDS=	p5-CLI-Osprey>=0.09:devel/p5-CLI-Osprey \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
 		p5-Type-Tiny>=1.000006:devel/p5-Type-Tiny \
 		p5-URI>=0:net/p5-URI \
-		p5-libwww>=0:www/p5-libwww \
 		p5-YAML>=1.30:textproc/p5-YAML
 TEST_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Exporter-Tiny>=0:devel/p5-Exporter-Tiny \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
-		p5-LWP-Protocol-PSGI>=0.06:www/p5-LWP-Protocol-PSGI \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
+		p5-LWP-Protocol-PSGI>=0.06:www/p5-LWP-Protocol-PSGI \
 		p5-Test-CPAN-Meta>=0:devel/p5-Test-CPAN-Meta \
 		p5-Test-EOL>=0:devel/p5-Test-EOL \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
@@ -66,8 +66,8 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	XS
-OPTIONS_DEFAULT=XS
+OPTIONS_DEFINE=		XS
+OPTIONS_DEFAULT=	XS
 
 XS_RUN_DEPENDS=	p5-CGI-Deurl-XS>=0:www/p5-CGI-Deurl-XS \
 		p5-Class-Load-XS>=0:devel/p5-Class-Load-XS \
