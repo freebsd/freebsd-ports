@@ -126,7 +126,6 @@
     SUBDIR += qemu-powernv
     SUBDIR += qemu-user-static
     SUBDIR += qemu-user-static-devel
-    SUBDIR += qmc2
     SUBDIR += quasi88
     SUBDIR += reicast
     SUBDIR += ripes

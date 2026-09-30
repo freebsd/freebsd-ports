@@ -5642,3 +5642,4 @@ sysutils/ganglia-monitor-core||2026-09-30|Has expired: No upstream development s
 devel/es-eric6||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 net/qoauth-qt5||2026-09-30|Has expired: Discontinued, not needed for modern Qt based projects
 audio/musescore3|audio/musescore|2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine, consider to use audio/musescore
+emulators/qmc2||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
