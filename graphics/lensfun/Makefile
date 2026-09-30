@@ -19,7 +19,7 @@ LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/docs/cc-by-sa-3.0.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake compiler:c++11-lang gettext-runtime gnome pathfix \
+USES=		cmake compiler:c++11-lang gettext-runtime gnome \
 		pkgconfig shebangfix
 SHEBANG_FILES=	apps/lensfun-add-adapter apps/lensfun-convert-lcp \
 		apps/lensfun-update-data

@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2018-06-29 10:29:17 UTC
++++ CMakeLists.txt
+@@ -1,5 +1,5 @@
+ # require at least cmake 2.8
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.8 FATAL_ERROR )
++CMAKE_MINIMUM_REQUIRED(VERSION 2.8...9.9)
+ 
+ # path for helper modules
+ set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${CMAKE_SOURCE_DIR}/cmake/modules")
