@@ -5676,3 +5676,4 @@ print/py-fontbakery||2026-09-30|Has expired: Depends on expired x11-fonts/py-cu2
 x11-fonts/py-ufo2ft||2026-09-30|Has expired: Depends on expired x11-font/py-cu2qu
 x11-fonts/py-cu2qu|print/py-fonttools|2026-09-30|Has expired: This library is now maintained as part of fonttools. Use print/py-fonttools instead
 sysutils/py-ansible-core219||2026-09-30|Has expired: FreeBSD will only support N and N-1
+net-im/vesktop||2026-09-30|Has expired: Depends on expired devel/electron40
