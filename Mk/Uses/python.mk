@@ -20,7 +20,7 @@
 #			USES=python:3.11+	# Supports Python 3.11 or later
 #			USES=python:3.11-3.12	# Supports Python 3.11 to 3.12
 #			USES=python:-3.11	# Supports Python up to 3.11
-#			USES=python		# Supports 3.10+
+#			USES=python		# Supports 3.11+
 #
 # NOTE:	<version-spec> should be as specific as possible, matching the versions
 #	upstream declares support for, without being incorrect. In particular,
@@ -231,7 +231,7 @@
 #			  without dots, e.g. 20706, 31114, ...
 #
 # PYTHON_SUFFIX		- The major-minor release number of the chosen Python
-#			  interpreter without dots, e.g. 27, 310, ...
+#			  interpreter without dots, e.g. 27, 311, ...
 #			  Used for prefixes and suffixes.
 #
 # PYTHON_BASESUFFIX	- PYTHON_SUFFIX without the threaded ABI flag.
@@ -341,7 +341,7 @@ ZEROREGS_UNSAFE=	yes
 # What Python version and what Python interpreters are currently supported?
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_PYTHON_VERSIONS=		3.12 3.13 3.13t 3.14 3.14t 3.11 3.10 3.15 2.7 # preferred first
+_PYTHON_VERSIONS=		3.12 3.13 3.13t 3.14 3.14t 3.11 3.15 2.7 # preferred first
 _PYTHON_PORTBRANCH=		3.12		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
@@ -449,7 +449,7 @@ DEV_ERROR+=		"USES=python:3 is no longer supported, use USES=python:3.11+ or an 
 _PYTHON_VERSION:=	${PYTHON_DEFAULT}
 
 .  if empty(_PYTHON_ARGS)
-_PYTHON_ARGS=	3.10+
+_PYTHON_ARGS=	3.11+
 .  endif
 
 # Validate Python version whether it meets the version restriction.
