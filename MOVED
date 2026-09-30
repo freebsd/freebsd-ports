@@ -5668,3 +5668,4 @@ devel/rubygem-pdk||2026-09-30|Has expired: Depends on expired sysutils/rubygem-f
 audio/py-pocketsphinx||2026-09-30|Has expired: Depends on expired devel/swig40
 dns/denominator|dns/py-dns-lexicon|2026-09-30|Has expired: Project has been archived use dns/py-dns-lexicon
 security/wpa_supplicant29||2026-09-30|Has expired: Unsupported by upstream
+security/py-pyaff4||2026-09-30|Has expired: No longer depended upon

@@ -1044,7 +1044,6 @@
     SUBDIR += py-privleap
     SUBDIR += py-pwntools
     SUBDIR += py-pyaes
-    SUBDIR += py-pyaff4
     SUBDIR += py-pyaxo
     SUBDIR += py-pyclamd
     SUBDIR += py-pycryptodome
