@@ -1,37 +1,11 @@
---- CMakeLists.txt.orig	2022-01-04 20:31:13 UTC
-+++ CMakeLists.txt
-@@ -104,7 +104,7 @@ endif()
- 	add_definitions("-DMPI_ENABLED")
- endif()
+-- Fix CMake 4.x compatibility by raising the minimum required CMake version.
+-- CMake 4.0 dropped support for cmake_minimum_required(VERSION < 3.5).
+
+--- CMakeLists.txt.orig	2022-01-04 12:31:13.000000000 -0800
++++ CMakeLists.txt	2026-08-27 15:49:29.325624000 -0700
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.5)
  
--option(EnableLibXC "Use LibXC to provide additional exchange-correlation functionals")
-+option(EnableLibXC "Use LibXC to provide additional exchange-correlation functionals" OFF)
- if(EnableLibXC)
- 	find_package(LIBXC REQUIRED)
- 	include_directories(${LIBXC_INCLUDE_DIR})
-@@ -232,7 +232,7 @@ add_library(jdftxlib ${LINK_TYPE} ${jdftxlibSources})
- #Library with all the functionality:
- FILE(GLOB jdftxlibSources core/*.cpp fluid/*.cpp electronic/*.cpp commands/*.cpp)
- add_library(jdftxlib ${LINK_TYPE} ${jdftxlibSources})
--target_link_libraries(jdftxlib ${EXTERNAL_LIBS})
-+target_link_libraries(jdftxlib ${EXTERNAL_LIBS} -lexecinfo) # execinfo only for libxc?
- set_target_properties(jdftxlib PROPERTIES OUTPUT_NAME "jdftx")
- install(TARGETS jdftxlib LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
- set_JDFTx_flags(jdftxlib OFF)
-@@ -241,6 +241,16 @@ option(EnableCuSolver "Whether to use cuSolver GPU LAP
- #----- Add another set of libraries and executables with a _gpu suffix
- option(EnableCUDA "Enable NVIDIA GPU support using CUDA" OFF)
- option(EnableCuSolver "Whether to use cuSolver GPU LAPACK (Requires CUDA >= 9)" OFF)
-+
-+include(CheckFunctionExists)
-+CHECK_FUNCTION_EXISTS(sincos HAVE_SINCOS_FUNCTION)
-+
-+if(NOT HAVE_SINCOS_FUNCTION)
-+  MESSAGE("Do not have function sincos")
-+  add_definitions("-DMISSING_SINCOS_FUNCTION")
-+else()
-+  MESSAGE("Found function sincos")
-+endif()
+ project(JDFTx)
  
- if(EnableCUDA)
- 	find_package(CUDA REQUIRED)

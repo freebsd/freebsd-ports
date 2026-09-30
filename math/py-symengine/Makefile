@@ -30,6 +30,8 @@ USE_PYTHON=	cython flavors pytest
 USE_GITHUB=	yes
 GH_PROJECT=	symengine.py
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/symengine/symengine.py/issues/533
+
 BINARY_ALIAS=	python=${PYTHON_CMD} # cmake scripts expect python executable
 
 # cmake scripts copy build type and flags from math/symengine, and ignore all local variables of that kind

@@ -1,0 +1,11 @@
+-- Fix CMake 4.x compatibility by raising the minimum required CMake version.
+-- CMake 4.0 dropped support for cmake_minimum_required(VERSION < 3.5).
+
+--- CMakeLists.txt.orig	2025-04-08 02:38:51.000000000 -0700
++++ CMakeLists.txt	2026-08-27 16:42:33.112832000 -0700
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12...4.0.0)
++cmake_minimum_required(VERSION 3.5...4.0)
+ 
+ if (POLICY CMP0057)
+   cmake_policy(SET CMP0057 NEW) # needed for llvm >= 16

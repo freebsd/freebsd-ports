@@ -33,5 +33,6 @@ PLIST_FILES=	bin/nn-insight \
 PORTSCOUT=	limit:^.*[1-9]\. # prevent hashes
 
 CMAKE_ARGS+=	-DENABLE_NATIVE_OPTIMIZATIONS:BOOL=OFF
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

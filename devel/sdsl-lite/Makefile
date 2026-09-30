@@ -23,6 +23,7 @@ GH_TUPLE=	simongog:libdivsufsort:0f24acd:libdivsufsort/external/libdivsufsort \
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	WITH_GOOGLETEST
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/simongog/sdsl-lite/issues/467
 
 CONFLICTS_INSTALL=	libdivsufsort
 

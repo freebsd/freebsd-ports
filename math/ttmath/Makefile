@@ -20,6 +20,8 @@ NO_ARCH=	yes
 GIT_URL=	https://gitea.ttmath.org/tomasz.sowa/ttmath.git
 GIT_TAG=	aad580f51e7ffc32966507a9897ec575c389e3e6
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 do-fetch:
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}" ]; then \
 	  ${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \

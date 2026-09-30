@@ -24,6 +24,7 @@ GH_TUPLE=	mercury-hpc:kwsys:ee35b49:kwsys/Testing/driver/kwsys \
 		mercury-hpc:preprocessor:749783c:preprocessor/src/boost
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/mercury-hpc/mercury/issues/869
 
 .if !exists(/usr/include/byteswap.h)
 BROKEN=		needs /usr/include/byteswap.h

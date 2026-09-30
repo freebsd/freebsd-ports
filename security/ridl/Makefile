@@ -22,6 +22,8 @@ GH_TAGNAME=	11b3240
 GH_TUPLE=	nothings:stb:1034f5e:stb/stb \
 		vurtun:nuklear:509c75b:nuklear/nuklear
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/vusec/ridl/issues/33
+
 LDFLAGS+=	${LOCALBASE}/lib/libsysinfo.so
 
 PLIST_FILES=	bin/mdstool-cli

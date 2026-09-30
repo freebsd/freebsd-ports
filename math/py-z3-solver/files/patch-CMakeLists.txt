@@ -1,6 +1,10 @@
+-- Add a minimum CMake version declaration required by CMake 4.0.
+
 --- CMakeLists.txt.orig	2026-02-18 22:57:51 UTC
 +++ CMakeLists.txt
-@@ -1,4 +1,38 @@ message(STATUS "Emitting rules to build Z3 python bind
+@@ -1,4 +1,40 @@ message(STATUS "Emitting rules to build Z3 python bind
++cmake_minimum_required(VERSION 3.5)
++
  message(STATUS "Emitting rules to build Z3 python bindings")
 +
 +## portion of src/CMakeLists.txt

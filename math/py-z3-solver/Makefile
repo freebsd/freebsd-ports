@@ -23,6 +23,8 @@ GH_TAGNAME=	z3-5.1.0
 WRKSRC_SUBDIR=	src/api/python
 WRKSRC_top=	${WRKSRC}/../../..
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/Z3Prover/z3/issues/10984
+
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
