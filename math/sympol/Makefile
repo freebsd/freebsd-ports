@@ -30,6 +30,7 @@ SHEBANG_GLOB=	*.pl
 
 CMAKE_ARGS=		-DBLISS_INCLUDE_DIR=${LOCALBASE}/include/bliss
 CMAKE_TESTING_ON=	BUILD_TESTS # test 'perltest' fails with 'output format mismatch', see https://github.com/tremlin/SymPol/issues/1
+CMAKE_ARGS+=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/libcddgmp.so

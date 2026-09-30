@@ -26,6 +26,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	quarkslab
 GH_PROJECT=	NFLlib
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/quarkslab/NFLlib/issues/59
+
 .if !defined(WITH_DEBUG)
 CMAKE_ON=	NFL_OPTIMIZED
 .endif

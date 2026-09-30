@@ -21,6 +21,7 @@ CMAKE_OFF=	TWEEDLEDUM_PYBINDS # doesn't affect the build result, see https://git
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	TWEEDLEDUM_TESTS
 CMAKE_TESTING_TARGET=	${ALL_TARGET} # hack to disable the target
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/boschmitt/tweedledum/issues/191
 
 TEST_WRKSRC=	${BUILD_WRKSRC}/tests
 

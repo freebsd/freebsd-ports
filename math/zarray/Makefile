@@ -23,6 +23,8 @@ GH_ACCOUNT=	xtensor-stack
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/xtensor-stack/zarray/issues/70
+
 do-test: install
 	@cd ${WRKSRC}/test && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} . && \

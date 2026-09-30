@@ -16,6 +16,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pothosware
 USE_LDCONFIG=	yes
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/pothosware/SoapySDR/issues/479
+
 LDFLAGS+=	-pthread
 
 .include <bsd.port.mk>

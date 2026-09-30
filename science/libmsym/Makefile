@@ -17,5 +17,6 @@ GH_ACCOUNT=	mcodev31
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4 compatibility, see https://github.com/mcodev31/libmsym/issues/39
 
 .include <bsd.port.mk>

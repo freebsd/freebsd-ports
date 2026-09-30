@@ -16,4 +16,6 @@ LIB_DEPENDS=	libkim-api.so:science/kim-api
 
 USES=		cmake:noninja compiler:c++11-lang fortran tar:txz
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 .include <bsd.port.mk>

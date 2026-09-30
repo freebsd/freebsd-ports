@@ -30,7 +30,6 @@ include/teem/seek.h
 include/teem/ten.h
 include/teem/tenMacros.h
 include/teem/unrrdu.h
-lib/cmake/Teem/TeemBuildSettings.cmake
 lib/cmake/Teem/TeemConfig.cmake
 lib/cmake/Teem/TeemLibraryDepends.cmake
 lib/cmake/Teem/TeemUse.cmake

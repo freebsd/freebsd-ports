@@ -29,6 +29,8 @@ GH_TUPLE=	alex-spataru:QSimpleUpdater:3cc832c:alex_spataru_QSimpleUpdater/src/QS
 		githubuser0xFFFF:Qt-Advanced-Docking-System:df1fa27:githubuser0xFFFF_Qt_Advanced_Docking_System/src/ads \
 		itay-grudev:SingleApplication:8c48163:itay_grudev_SingleApplication/src/singleapplication
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/dail8859/NotepadNext/issues/1158
+
 CXXFLAGS+=	-I${LOCALBASE}/include/uchardet \
 		-I${WRKSRC}/src/ads/src \
 		-I${WRKSRC}/src/editorconfig-core-qt
@@ -43,6 +45,5 @@ post-extract: # fix wrong handling of IPC keys in singleapplication.cpp
 	@${REINPLACE_CMD} \
 		-e "s/QSharedMemory( QNativeIpcKey( d->blockServerName ) );/QSharedMemory( QNativeIpcKey( d->blockServerName, QNativeIpcKey::legacyDefaultTypeForOs() ) );/" \
 		${WRKSRC}/src/singleapplication/singleapplication.cpp
-
 
 .include <bsd.port.mk>

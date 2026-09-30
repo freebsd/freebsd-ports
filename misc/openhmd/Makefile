@@ -19,6 +19,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/OpenHMD/OpenHMD/issues/369
+
 PLIST_FILES=	include/openhmd.h \
 		lib/libopenhmd.so \
 		lib/libopenhmd.so.0 \

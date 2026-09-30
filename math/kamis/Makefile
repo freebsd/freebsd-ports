@@ -29,4 +29,6 @@ PLIST_FILES=	bin/graphchecker \
 		bin/redumis \
 		bin/sort_adjacencies
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/KarlsruheMIS/KaMIS/issues/58
+
 .include <bsd.port.mk>

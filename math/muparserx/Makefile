@@ -5,7 +5,8 @@ CATEGORIES=	math devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ math parser library with array and string support
-WWW=		https://beltoforion.de/en/muparserx/
+WWW=		https://beltoforion.de/en/muparserx/ \
+		https://github.com/beltoforion/muparserx
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,5 +19,6 @@ GH_ACCOUNT=	beltoforion
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_EXAMPLES
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/beltoforion/muparserx/issues/139
 
 .include <bsd.port.mk>
