@@ -19,10 +19,9 @@ BUILD_DEPENDS=	autoconf-archive>0:devel/autoconf-archive \
 
 USES=		autoreconf:build bison compiler:c11 gmake libtool:build pkgconfig ssl
 
-IGNORE_SSL=	libressl openssl111 openssl34
+IGNORE_SSL=	libressl openssl111
 IGNORE_SSL_REASON_openssl111=	No support for OpenSSL 3.X providers
 IGNORE_SSL_REASON_libressl=	No support for OpenSSL 3.X providers
-IGNORE_SSL_REASON_openssl34=	No support for PQC algotithms
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	Mastercard

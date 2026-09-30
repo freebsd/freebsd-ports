@@ -18,10 +18,9 @@ GH_PROJECT=	engine
 
 openssl30_PKGNAMESUFFIX=	-${FLAVOR}
 
-BROKEN_SSL=				libressl libressl-devel openssl34 openssl35 openssl36
+BROKEN_SSL=				libressl libressl-devel openssl35 openssl36
 BROKEN_SSL_REASON_libressl=		needs features only available in OpenSSL 1.1.1+
 BROKEN_SSL_REASON_libressl-devel=	needs features only available in OpenSSL 1.1.1+
-BROKEN_SSL_REASON_openssl34=		not ready for openssl34
 BROKEN_SSL_REASON_openssl35=		not ready for openssl35
 BROKEN_SSL_REASON_openssl36=		not ready for openssl36
 
