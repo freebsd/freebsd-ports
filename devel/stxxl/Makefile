@@ -1,5 +1,6 @@
 PORTNAME=	stxxl
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -10,6 +11,9 @@ WWW=		https://stxxl.org/ \
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 USES=		cmake
 CMAKE_OFF=	USE_GNU_PARALLEL  # may be enabled for future versions of clang with openmp support
