@@ -1458,7 +1458,6 @@
     SUBDIR += vulsrepo
     SUBDIR += vuxml
     SUBDIR += vxquery
-    SUBDIR += wapiti
     SUBDIR += wazuh-agent
     SUBDIR += wazuh-dashboard
     SUBDIR += wazuh-indexer
