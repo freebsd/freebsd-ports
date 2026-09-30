@@ -1,6 +1,12 @@
 --- libs/baseconfig/CMakeLists.txt.orig	2020-01-23 13:00:42 UTC
 +++ libs/baseconfig/CMakeLists.txt
-@@ -18,7 +18,7 @@ find_package(Git)
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.1.0)
++cmake_minimum_required(VERSION 3.1.0...9.9.9)
+ 
+ if(POLICY CMP0074)
+   cmake_policy(SET CMP0074 NEW)
+@@ -18,7 +18,7 @@ include(CheckIncludeFile)
  # Locate git binary to provide information to the build environment
  find_package(Git)
  
@@ -9,7 +15,7 @@
      # Define current git branch.
      if(NOT GITINFO_BRANCH)
          execute_process(
-@@ -90,15 +90,15 @@ else()
+@@ -90,15 +90,15 @@ if(GIT_FOUND)
      list(GET GITINFO_DATE_AND_TIME 2 GITINFO_COMMIT_TZONE)
  else()
      # Fallback information if git isn't found. This should never be present in official builds.
