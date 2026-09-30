@@ -1,5 +1,5 @@
 PORTNAME=	fal-client
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.3
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=7:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>=23.2.1:devel/py-aiofiles@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>=24.1.0<26:devel/py-aiofiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asyncstdlib>=3.12.5<4:devel/py-asyncstdlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.21.0<1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx-sse>=0.4.0<0.5:www/py-httpx-sse@${PY_FLAVOR} \
