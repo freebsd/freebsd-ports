@@ -1,6 +1,6 @@
 PORTNAME=	snort2pfcd
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.tworoutes.com/oss/
 
