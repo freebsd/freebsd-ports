@@ -5695,3 +5695,4 @@ deskutils/semantik||2026-09-30|Has expired: Not ported to Qt6, depends on deprec
 devel/py-mime||2026-09-30|Has expired: Upstream last activity was in 2016
 security/barnyard2||2026-09-30|Has expired: Upstream has been abandoned, and the project is no longer maintained
 security/barnyard2-sguil||2026-09-30|Has expired: Upstream has been abandoned, and the project is no longer maintained
+lang/kotlin22|lang/kotlin|2026-09-30|Has expired: The only port that needed Kotlin 2.2 now requires 2.4, use lang/kotlin instead

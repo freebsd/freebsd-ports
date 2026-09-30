@@ -169,7 +169,6 @@
     SUBDIR += kefir
     SUBDIR += kf5-kross
     SUBDIR += kotlin
-    SUBDIR += kotlin22
     SUBDIR += kturtle
     SUBDIR += lafontaine
     SUBDIR += lci
