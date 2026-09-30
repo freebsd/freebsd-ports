@@ -8776,7 +8776,6 @@
     SUBDIR += svntrac
     SUBDIR += swank-clojure
     SUBDIR += swig
-    SUBDIR += swig40
     SUBDIR += sysconftool
     SUBDIR += sysfsutils
     SUBDIR += systemc

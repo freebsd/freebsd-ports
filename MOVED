@@ -5709,3 +5709,4 @@ databases/xtrabackup80|databases/xtrabackup84|2026-09-30|Has expired: Upstream h
 graphics/natron||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine, not ported to Qt6
 deskutils/kchmviewer|deskutils/uchmviewer|2026-09-30|Has expired: Development stalled; use deskutils/uchmviewer
 devel/pyside2||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
+devel/swig40|devel/swig|2026-09-30|Has expired: Outdated. Use devel/swig instead
