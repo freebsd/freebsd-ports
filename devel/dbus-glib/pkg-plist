@@ -1,5 +1,4 @@
 bin/dbus-binding-tool
-etc/bash_completion.d/dbus-bash-completion.sh
 include/dbus-%%VERSION%%/dbus/dbus-glib-bindings.h
 include/dbus-%%VERSION%%/dbus/dbus-glib-lowlevel.h
 include/dbus-%%VERSION%%/dbus/dbus-glib.h
@@ -8,9 +7,8 @@ include/dbus-%%VERSION%%/dbus/dbus-gvalue-parse-variant.h
 lib/libdbus-glib-1.a
 lib/libdbus-glib-1.so
 lib/libdbus-glib-1.so.2
-lib/libdbus-glib-1.so.2.3.6
+lib/libdbus-glib-1.so.2.3.7
 libdata/pkgconfig/dbus-glib-1.pc
-libexec/dbus-bash-completion-helper
 share/man/man1/dbus-binding-tool.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/api-index-full.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html

@@ -1,5 +1,5 @@
 PORTNAME=	dbus-glib
-PORTVERSION=	0.114
+PORTVERSION=	0.116
 CATEGORIES=	devel gnome
 MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus-glib/
 
@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 PLIST_SUB=	VERSION="1.0"
 
