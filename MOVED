@@ -5684,3 +5684,4 @@ biology/ddocent||2026-09-30|Has expired: No apparent interest, unable to maintai
 multimedia/onevpl||2026-09-30|Has expired: Upstream has been renamed to libvpl and libvpl-tools. Use multimedia/libvpl and multimedia/libvpl-tools instead
 math/lambda||2026-09-30|Has expired: Upstream unmaintained since 2004
 devel/py-hgtools||2026-09-30|Has expired: Deprecated by upstream
+lang/go125||2026-09-30|Has expired: No longer supported
