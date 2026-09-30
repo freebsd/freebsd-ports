@@ -1,6 +1,5 @@
 PORTNAME=	cardano-node
-PORTVERSION=	11.0.1
-PORTREVISION=	3
+PORTVERSION=	11.1.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -28,8 +27,8 @@ GH_ACCOUNT=	IntersectMBO
 
 GH_TUPLE=	IntersectMBO:libsodium:${LIBSODIUM_HASH}:sodium
 
-CARDANO_NODE_HASH=	97036a66bcf8c89f687ae57a048eecc0389977ef
-# taken from https://github.com/IntersectMBO/cardano-node/blob/420c94fbb075146c6ec7fba78c5b0482fafe72dd/flake.lock#L887
+CARDANO_NODE_HASH=	938cba990357ae7c4b7f95c8f75dd9d31174bbeb
+# taken from https://github.com/IntersectMBO/cardano-node/blob/938cba990357ae7c4b7f95c8f75dd9d31174bbeb/flake.lock#L1617
 LIBSODIUM_HASH=		dbb48cce5429cb6585c9034f002568964f1ce567
 
 USE_RC_SUBR=		cardano_node
