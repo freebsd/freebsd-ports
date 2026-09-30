@@ -5688,3 +5688,4 @@ lang/go125||2026-09-30|Has expired: No longer supported
 textproc/goldendict|textproc/goldendict-ng|2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine, consider to use textproc/goldendict-ng
 devel/eric6||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 www/otter-browser||2026-09-30|Has expired: Not ported to Qt6, depends on deprecated Qt5 WebEngine
+deskutils/latte-dock||2026-09-30|Has expired: Abandoned, not ported to Qt6

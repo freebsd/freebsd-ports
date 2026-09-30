@@ -155,7 +155,6 @@
     SUBDIR += ktimetracker
     SUBDIR += kweather
     SUBDIR += kweathercore
-    SUBDIR += latte-dock
     SUBDIR += lazycli
     SUBDIR += libcprime
     SUBDIR += libkdepim
