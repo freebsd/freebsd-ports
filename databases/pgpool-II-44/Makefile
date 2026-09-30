@@ -1,5 +1,5 @@
 PORTNAME=	pgpool-II
-DISTVERSION=	4.4.17
+DISTVERSION=	4.4.18
 CATEGORIES=	databases
 MASTER_SITES=	https://www.pgpool.net/source/
 PKGNAMESUFFIX=	-44
