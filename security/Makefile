@@ -1467,7 +1467,6 @@
     SUBDIR += wolfssl
     SUBDIR += wpa_supplicant
     SUBDIR += wpa_supplicant-devel
-    SUBDIR += wpa_supplicant210
     SUBDIR += x11appjail
     SUBDIR += xca
     SUBDIR += xhash
