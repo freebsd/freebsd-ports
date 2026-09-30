@@ -11,7 +11,10 @@ WWW=		https://www.openssl.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3[1234] openssl*-quictls
+# DEPRECATED=		Please use security/openssl42 (LTS)
+# EXPIRATION_DATE=	
+
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl3? openssl40
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
@@ -139,7 +142,7 @@ SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_PLIST_SUB=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_USE=		ldconfig=yes
 SHARED_VARS=		shlibs+="lib/libcrypto.so.${OPENSSL_SHLIBVER} \
-				lib/libssl.so.${OPENSSL_SHLIBVER}
+				lib/libssl.so.${OPENSSL_SHLIBVER}"
 THREADPOOL_CONFIGURE_OFF=	no-thread-pool
 ZLIB_CONFIGURE_ON=	zlib-dynamic
 ZSTD_CFLAGS=		-I${PREFIX}/include

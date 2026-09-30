@@ -11,9 +11,10 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # Expire together with FreeBSD 14
+DEPRECATED=		Please use security/openssl (LTS)
 EXPIRATION_DATE=	2028-11-30
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl[134]*
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl3[46] openssl4?
 
 USES=		cpe perl5
 USE_PERL5=	build
