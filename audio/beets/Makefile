@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}confuse>=2.2.0:devel/py-confuse@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=1.3.6:converters/py-unidecode@${PY_FLAVOR}
 
-USES=		python:3.10-3.14
+USES=		python:3.11-3.14
 USE_PYTHON=	autoplist optsuffix pep517
 
 NO_ARCH=	yes

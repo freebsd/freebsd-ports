@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 #TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}threadpoolctl>0:devel/py-threadpoolctl@${PY_FLAVOR}
 
-USES=		cpe python:3.10+
+USES=		cpe python:3.11+
 CPE_VENDOR=	joblib_project
 USE_PYTHON=	autoplist pep517 pytest
 

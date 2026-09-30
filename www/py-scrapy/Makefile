@@ -31,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=21.7.0:devel/py-twisted@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}backports.zstd>=1.3.0:devel/py-backports.zstd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tldextract>0:dns/py-tldextract@${PY_FLAVOR}
 
-USES=		cpe python:3.10+
+USES=		cpe python:3.11+
 USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes

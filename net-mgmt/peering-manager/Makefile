@@ -39,7 +39,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=23.0.0:www/py-gunicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2026:devel/py-pytz@${PY_FLAVOR}
 
-USES=		cpe pgsql:14+ python:3.10-3.14
+USES=		cpe pgsql:14+ python:3.11-3.14
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	${PORTNAME:S/-/_/}
 USE_GITHUB=	yes
