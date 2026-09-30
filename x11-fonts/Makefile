@@ -377,7 +377,6 @@
     SUBDIR += py-booleanOperations
     SUBDIR += py-cffsubr
     SUBDIR += py-compreffor
-    SUBDIR += py-cu2qu
     SUBDIR += py-defcon
     SUBDIR += py-fclist-cffi
     SUBDIR += py-fontMath

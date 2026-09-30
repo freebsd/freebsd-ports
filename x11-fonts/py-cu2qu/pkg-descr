@@ -1,2 +1,0 @@
-cu2qu provides functions which take in UFO objects (Defcon Fonts or Robofab
-RFonts) and converts any cubic curves to quadratic.
