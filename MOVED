@@ -5706,3 +5706,4 @@ devel/p5-PkgConfig-LibPkgConf||2026-09-30|Has expired: Upstream is inactive for 
 devel/php-geshi||2026-09-30|Has expired: Unmaintained upstream
 finance/pear_Payment_DTA||2026-09-30|Has expired: Abandoned upstream (last release 2012), DTAUS superseded by SEPA
 databases/xtrabackup80|databases/xtrabackup84|2026-09-30|Has expired: Upstream has reached EOL favor of databases/xtrabackup84
+graphics/natron||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine, not ported to Qt6
