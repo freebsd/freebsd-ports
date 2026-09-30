@@ -1222,7 +1222,6 @@
     SUBDIR += xapian-core14
     SUBDIR += xls2txt
     SUBDIR += xrootd
-    SUBDIR += xtrabackup80
     SUBDIR += xtrabackup84
     SUBDIR += zodb
 
