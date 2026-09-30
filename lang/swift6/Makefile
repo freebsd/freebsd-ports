@@ -1,19 +1,24 @@
 PORTNAME=	swift
 DISTVERSIONPREFIX=	swift-
-DISTVERSION=	6.3.3
+DISTVERSION=	6.4.0
 DISTVERSIONSUFFIX=	-RELEASE
 CATEGORIES=	lang
 PKGNAMESUFFIX=	6
 DIST_SUBDIR=	${PORTNAME}
 
-BOOTSTRAP_SWIFT_VERSION=	6.3.2
+OLD_SWIFT_VERSION=		6.3.3
 .if !defined(BOOTSTRAP_MODE)
-MASTER_SITES=	LOCAL/tagattie/${PORTNAME}:bootstrap
-DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${BOOTSTRAP_SWIFT_VERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX}:bootstrap
+BOOTSTRAP_SWIFT_VERSION=	${DISTVERSION}
 .else
-.   if make(makesum)
-DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${DISTVERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX}:bootstrap
-.   endif
+BOOTSTRAP_SWIFT_VERSION=	${OLD_SWIFT_VERSION}
+.endif
+MASTER_SITES=	LOCAL/tagattie/${PORTNAME}:bootstrap
+.if make(makesum) && defined(MAKESUM_MODE)
+.   for version in ${OLD_SWIFT_VERSION} ${DISTVERSION}
+DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${version}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX}:bootstrap
+.   endfor
+.else
+DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${BOOTSTRAP_SWIFT_VERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX}:bootstrap
 .endif
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -44,7 +49,7 @@ GH_TUPLE=	\
 		swiftlang:llvm-project:${DISTVERSIONFULL}:llvm_project/llvm-project \
 		swiftlang:sourcekit-lsp:${DISTVERSIONFULL}:sourcekit_lsp/sourcekit-lsp \
 		swiftlang:swift:${DISTVERSIONFULL}:swift/swift \
-		apple:swift-argument-parser:1.6.1:swift_argument_parser/swift-argument-parser \
+		apple:swift-argument-parser:1.8.2:swift_argument_parser/swift-argument-parser \
 		apple:swift-asn1:1.3.2:swift_asn1/swift-asn1 \
 		apple:swift-async-algorithms:1.0.1:swift_async_algorithms/swift-async-algorithms \
 		apple:swift-atomics:1.3.1:swift_atomics/swift-atomics \
@@ -78,12 +83,13 @@ GH_TUPLE=	\
 		swiftlang:swift-syntax:${DISTVERSIONFULL}:swift_syntax/swift-syntax \
 		apple:swift-system:1.5.0:swift_system/swift-system \
 		swiftlang:swift-testing:${DISTVERSIONFULL}:swift_testing/swift-testing \
+		swiftlang:swift-toolchain-sarif:519c296:swift_toolchain_sarif/swift-toolchain-sarif \
 		swiftlang:swift-toolchain-sqlite:1.0.9:swift_toolchain_sqlite/swift-toolchain-sqlite \
-		swiftlang:swift-tools-protocols:0.0.9:swift_tools_protocols/swift-tools-protocols \
+		swiftlang:swift-tools-protocols:${DISTVERSIONFULL}:swift_tools_protocols/swift-tools-protocols \
 		swiftlang:swift-tools-support-core:${DISTVERSIONFULL}:swift_tools_support_core/swift-tools-support-core \
 		swiftlang:swift-package-manager:${DISTVERSIONFULL}:swift_package_manager/swiftpm \
 		WebAssembly:wasi-libc:wasi-sdk-32:wasi_libc/wasi-libc \
-		swiftwasm:WasmKit:0.2.1:WasmKit/wasmkit
+		swiftwasm:WasmKit:0.3.1:WasmKit/wasmkit
 
 USE_PERL5=	build
 USE_GNOME=	libxml2
@@ -96,8 +102,6 @@ SHEBANG_FILES=	swift/utils/api_checker/sdk-module-lists/infer-imports.py \
 		swift/utils/swift-api-dump.py \
 		swiftpm/Utilities/bootstrap
 
-MAKE_ENV+=	SKIP_BUILD_SWIFTPM_INTERNALTESTSUPPORT=1
-
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 WRKSRC=		${WRKDIR}/swift-${DISTVERSION}
@@ -108,21 +112,26 @@ PORTDOCS=	CHANGELOG.md CONTRIBUTING.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
-SWIFT_PREFIX=	${PREFIX}/${PORTNAME}${PKGNAMESUFFIX}
 SWIFT_ARCH=	${ARCH:S/amd64/x86_64/}
+# SwiftPM expects swift toolchain executables are located in
+# <sdk root>/usr/local/bin.
+# See ${WRKSRC}/swiftpm/Sources/PackageModel/Toolchain.swift.
+SWIFT_SDK_PREFIX=	${PREFIX}/${PORTNAME}${PKGNAMESUFFIX}
+SWIFT_TOOLCHAIN_PREFIX=	/usr/local
+BOOTSTRAP_DIR=	${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-bootstrap${SWIFT_TOOLCHAIN_PREFIX}
 .for n in 0 1 2 3 4 5
 OUT${n}_DIR=	${WRKDIR}/out${n}
 .endfor
-STAGE0_MODULES=	libdispatch
-STAGE1_MODULES=	${STAGE0_MODULES} \
-		swiftsyntax
-STAGE2_MODULES=	${STAGE1_MODULES} \
-		foundation \
-		llbuild
-STAGE3_MODULES=	${STAGE2_MODULES} \
+# STAGE0_MODULES=	libdispatch
+# STAGE1_MODULES=	${STAGE0_MODULES}
+STAGE2_MODULES=	foundation
+STAGE3_MODULES=${STAGE2_MODULES} \
 		xctest \
 		swift-testing
 STAGE4_MODULES=	${STAGE3_MODULES} \
+		swiftsyntax \
+		llbuild \
+		swift-testing-macros \
 		swiftpm
 STAGE5_MODULES=	${STAGE4_MODULES} \
 		indexstore-db \
@@ -131,51 +140,82 @@ STAGE5_MODULES=	${STAGE4_MODULES} \
 		swiftformat \
 		swiftdocc \
 		sourcekit-lsp
+# FIXME: Exclude wasmkit from build for now because it doesn't build
+# with a lot of errors from swift-nio
+#		wasmkit
+SWIFT_MODULES=	${STAGE5_MODULES}
 COMMON_BUILDFLAGS=	\
-		--install-prefix ${SWIFT_PREFIX} \
+		--build-subdir Ninja-Build \
+		--install-prefix ${SWIFT_TOOLCHAIN_PREFIX} \
 		--install-all true \
 		--jobs ${MAKE_JOBS_NUMBER} \
+		--host-cc /usr/bin/clang \
+		--host-cxx /usr/bin/clang++ \
 		--extra-cmake-options="-DCMAKE_C_FLAGS='${CFLAGS}'" \
 		--extra-cmake-options="-DCMAKE_CXX_FLAGS='${CXXFLAGS}'" \
-		--extra-cmake-options="-DCMAKE_C_FLAGS_RELEASE=-DNDEBUG" \
-		--extra-cmake-options="-DCMAKE_CXX_FLAGS_RELEASE=-DNDEBUG" \
 		--extra-cmake-options="-DCLANG_DEFAULT_LINKER=lld" \
 		--extra-cmake-options="-DLLVM_ENABLE_LLD=ON" \
 		--extra-cmake-options="-DSWIFT_USE_LINKER=lld" \
 		--verbose-build true \
+		--skip-clean-libdispatch true \
 		--llvm-targets-to-build "AArch64;X86" \
+		--llvm-install-components "llvm-ar;llvm-nm;llvm-ranlib;llvm-cov;llvm-profdata;llvm-objdump;llvm-objcopy;llvm-symbolizer;IndexStore;clang;clang-resource-headers;builtins;runtimes;clangd;libclang;lld;LTO;clang-features-file" \
+		--bootstrapping hosttools \
+		${CCACHE_BUILDFLAGS} \
+		${RELEASE_BUILDFLAGS}
+STAGE0_BUILDFLAGS=	\
+		${COMMON_BUILDFLAGS} \
+		--install-destdir ${OUT0_DIR} \
+		--native-clang-tools-path ${BOOTSTRAP_DIR}/bin \
+		--native-llvm-tools-path ${BOOTSTRAP_DIR}/bin \
+		--native-swift-tools-path ${BOOTSTRAP_DIR}/bin \
+		--extra-cmake-options="-DCMAKE_Swift_COMPILER=${BOOTSTRAP_DIR}/bin/swiftc" \
+		--extra-cmake-options="-DSWIFT_BUILD_STDLIB_CXX_MODULE:BOOL=OFF" \
+		--extra-cmake-options="-DSWIFT_BUILD_STDLIB_EXTRA_TOOLCHAIN_CONTENT:BOOL=OFF" \
+		--build-swift-dynamic-stdlib false \
+		--build-swift-static-stdlib false \
+		--build-swift-dynamic-sdk-overlay false \
+		--build-swift-static-sdk-overlay false \
+		--skip-build-freebsd true \
+		--skip-test-freebsd true \
+		--swift-install-components "autolink-driver;compiler;clang-resource-dir-symlink;tools;toolchain-tools"
+STAGE1_BUILDFLAGS=	\
+		${COMMON_BUILDFLAGS} \
+		--install-destdir ${OUT1_DIR} \
+		--native-clang-tools-path ${OUT0_DIR}${SWIFT_TOOLCHAIN_PREFIX}/bin \
+		--native-llvm-tools-path ${OUT0_DIR}${SWIFT_TOOLCHAIN_PREFIX}/bin \
+		--native-swift-tools-path ${OUT0_DIR}${SWIFT_TOOLCHAIN_PREFIX}/bin \
+		--extra-cmake-options="-DCMAKE_Swift_COMPILER=${BOOTSTRAP_DIR}/bin/swiftc" \
 		--build-swift-dynamic-stdlib true \
 		--build-swift-static-stdlib true \
 		--build-swift-dynamic-sdk-overlay true \
-		--build-swift-static-sdk-overlay true \
-		${CCACHE_BUILDFLAGS} \
-		${RELEASE_BUILDFLAGS}
-STAGE0_BUILDFLAGS=	${COMMON_BUILDFLAGS} \
-		--install-destdir ${OUT0_DIR} \
-		--extra-cmake-options="-DSWIFT_ENABLE_SWIFT_IN_SWIFT=OFF" \
-		--bootstrapping bootstrapping \
-		--skip-early-swiftsyntax \
-		--skip-early-swift-driver \
-		${STAGE0_MODULES:C/^/--/:C/$/ true/}
-.for n p in 1 0	 2 1  3 2  4 3	5 4
-STAGE${n}_BUILDFLAGS=	${COMMON_BUILDFLAGS} \
+		--build-swift-static-sdk-overlay true
+.for n p in 2 1 3 2 4 3 5 4
+STAGE${n}_BUILDFLAGS=	\
+		${COMMON_BUILDFLAGS} \
 		--install-destdir ${OUT${n}_DIR} \
-		--native-swift-tools-path ${OUT${p}_DIR}${SWIFT_PREFIX}/bin \
-		--native-clang-tools-path ${OUT${p}_DIR}${SWIFT_PREFIX}/bin \
-		--native-llvm-tools-path ${OUT${p}_DIR}${SWIFT_PREFIX}/bin \
-		--extra-cmake-options="-DCMAKE_Swift_COMPILER=${OUT${p}_DIR}${SWIFT_PREFIX}/bin/swiftc" \
-		--bootstrapping hosttools \
-		${STAGE${n}_MODULES:C/^/--/:C/$/ true/}
+		--native-clang-tools-path ${OUT${p}_DIR}${SWIFT_TOOLCHAIN_PREFIX}/bin \
+		--native-llvm-tools-path ${OUT${p}_DIR}${SWIFT_TOOLCHAIN_PREFIX}/bin \
+		--native-swift-tools-path ${OUT${p}_DIR}${SWIFT_TOOLCHAIN_PREFIX}/bin \
+		--extra-cmake-options="-DCMAKE_Swift_COMPILER=${OUT${p}_DIR}${SWIFT_TOOLCHAIN_PREFIX}/bin/swiftc" \
+		--build-swift-dynamic-stdlib true \
+		--build-swift-static-stdlib true \
+		--build-swift-dynamic-sdk-overlay true \
+		--build-swift-static-sdk-overlay true
 .endfor
-BOOTSTRAP_DIR=	${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-bootstrap${SWIFT_PREFIX}
-SWIFT_BUILDFLAGS=	${COMMON_BUILDFLAGS} \
+SWIFT_BUILDFLAGS=	\
+		${COMMON_BUILDFLAGS} \
 		--install-destdir ${OUT5_DIR} \
-		--native-swift-tools-path ${BOOTSTRAP_DIR}/bin \
 		--native-clang-tools-path ${BOOTSTRAP_DIR}/bin \
 		--native-llvm-tools-path ${BOOTSTRAP_DIR}/bin \
+		--native-swift-tools-path ${BOOTSTRAP_DIR}/bin \
 		--extra-cmake-options="-DCMAKE_Swift_COMPILER=${BOOTSTRAP_DIR}/bin/swiftc" \
-		--bootstrapping hosttools \
-		${STAGE5_MODULES:C/^/--/:C/$/ true/}
+		--build-swift-dynamic-stdlib true \
+		--build-swift-static-stdlib true \
+		--build-swift-dynamic-sdk-overlay true \
+		--build-swift-static-sdk-overlay true
+STAGE1_ENV=	LD_LIBRARY_PATH=${BOOTSTRAP_DIR}/lib/swift/freebsd
+STAGE4_ENV=	SKIP_BUILD_SWIFTPM_INTERNALTESTSUPPORT=1
 
 .if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
 CCACHE_BUILDFLAGS=	--cmake-c-launcher ${CCACHE_BIN} \
@@ -183,32 +223,48 @@ CCACHE_BUILDFLAGS=	--cmake-c-launcher ${CCACHE_BIN} \
 .endif
 
 .if !defined(WITH_DEBUG)
+.   if !defined(BOOTSTRAP_MODE)
 RELEASE_BUILDFLAGS=	--release \
 			--no-assertions
+.   else
+RELEASE_BUILDFLAGS=	--release-debuginfo \
+			--assertions
+.   endif
 .else
 RELEASE_BUILDFLAGS=	--debug \
 			--assertions
 .endif
 
+DEVEL_BUILDFLAGS=	--skip-clean-libdispatch true \
+			--skip-clean-foundation true \
+			--skip-clean-xctest true \
+			--skip-clean-llbuild true \
+			--skip-clean-swiftpm true \
+			--skip-clean-swift-driver true
+
 .if defined(BOOTSTRAP_MODE)
-PLIST_SUB+=	BOOTSTRAP="@comment "
+PLIST_SUB+=	NON_BOOTSTRAP="@comment "
 .else
-PLIST_SUB+=	BOOTSTRAP=""
+PLIST_SUB+=	NON_BOOTSTRAP=""
 .endif
 
 .include <bsd.port.pre.mk>
 
 # Bootstrap swift toolchain has been built on FreeBSD 14 jail.
 # So we need compat14x on FreeBSD 15 or later.
-.if !defined(BOOTSTRAP_MODE)
-.   if ${OSVERSION} >= 1500000
+.if ${OSVERSION} >= 1500000
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libutil.so.9:misc/compat14x
-.   endif
 .endif
 
 post-extract:
-	@${CP} ${WRKSRC}/swift-corelibs-libdispatch/dispatch/generic/module.modulemap \
-		${WRKSRC}/swift-corelibs-libdispatch/dispatch
+# FIXME: Bootstrap toolchain (6.3.3) has been prepared to use wrong paths.
+# So adjust the toolchain paths to meet Swift's expectation.
+# Remove this after bootstrap toolchain is updated to 6.4.0.
+	@if [ -f ${BOOTSTRAP_DIR}/swift6/bin/swift ]; then \
+		${CP} -R ${BOOTSTRAP_DIR}/swift6/* \
+			${BOOTSTRAP_DIR}; \
+		${RM} -r ${BOOTSTRAP_DIR}/swift6; \
+	fi
 # Work around a clang 21 header modules/libc++ wchar.h regression on FreeBSD
 .if (${OSVERSION} >= 1404501 && ${OSVERSION} < 1500000) || \
     (${OSVERSION} >= 1501501 && ${OSVERSION} < 1600000) || \
@@ -220,71 +276,103 @@ post-extract:
 .endif
 
 do-build:
-.if defined(BOOTSTRAP_MODE)
-# Stage 0: Minimum compiler without macros
-# Stage 1: Macro-aware compiler
-# Stage 2: Stage 1 + foundation and build tools
+# Stage 0: Bare minimum compiler without macros and stdlib
+# Stage 1: Minimum compiler with stdlib, without macros
+# Stage 2: Macro-aware compiler + foundation libs
 # Stage 3: Stage 2 + testing modules
-# Stage 4: Stage 3 + SwiftPM
+# Stage 4: Stage 3 + build tools and SwiftPM
 # Stage 5: Full toolchain
-.   for n in 0 1 2 3 4 5
+.if defined(BOOTSTRAP_MODE)
+.   for n p in 0 0 1 0 2 1 3 2 4 3 5 4
 	@${ECHO_MSG} "======================"
 	@${ECHO_MSG} "===>  Building stage ${n}"
 	@${ECHO_MSG} "======================"
-	@${RM} -r ${WRKSRC}/build
+	@${RM} -r ${WRKSRC}/build ${OUT${n}_DIR}
+	# Work around a clang 21 header modules/libc++ wchar.h regression on FreeBSD
 .	if (${OSVERSION} >= 1404501 && ${OSVERSION} < 1500000) || \
 	   (${OSVERSION} >= 1501501 && ${OSVERSION} < 1600000) || \
 	    ${OSVERSION} >= 1600017
-	# Work around a clang 21 header modules/libc++ wchar.h regression on FreeBSD
-	@${MKDIR} ${WRKSRC}/build/Ninja-Release/swift-${OPSYS:tl}-${SWIFT_ARCH}/lib/swift
+	@${MKDIR} ${WRKSRC}/build/Ninja-Build/swift-${OPSYS:tl}-${SWIFT_ARCH}/lib/swift
 	@${CP} ${FILESDIR}/extra-swift-wchar.h \
-		${WRKSRC}/build/Ninja-Release/swift-${OPSYS:tl}-${SWIFT_ARCH}/lib/swift/wchar.h
+		${WRKSRC}/build/Ninja-Build/swift-${OPSYS:tl}-${SWIFT_ARCH}/lib/swift/wchar.h
 .	endif
-.	if ${n} == 1
-	# Rename module.modulemap to avoid the error:
-	# error: redefinition of module 'Dispatch'
-	@${MV} ${WRKSRC}/swift-corelibs-libdispatch/dispatch/module.modulemap \
-		${WRKSRC}/swift-corelibs-libdispatch/dispatch/module.modulemap.bak
-	@${TOUCH} ${WRKSRC}/swift-corelibs-libdispatch/dispatch/module.modulemap
-.	endif
-.	if ${n} >= 1 && ${n} <= 4
-	@${MKDIR} ${OUT${n}_DIR}${SWIFT_PREFIX}/bin
+	# Build process expects swift-build and swift-run to be executable,
+	# which are not yet available in these stages. So make symbolic links
+	# to those in bootstrap swift toolchain as a workaround.
+.	if ${n} >= 2 && ${n} <= 4
+	@${MKDIR} ${OUT${n}_DIR}${SWIFT_TOOLCHAIN_PREFIX}/bin
 .	    for f in swift-build swift-run
-	@${INSTALL_SCRIPT} ${FILESDIR}/swift-dummy \
-		${OUT${n}_DIR}${SWIFT_PREFIX}/bin/${f}
+	@${RLN} ${BOOTSTRAP_DIR}/bin/${f} \
+		${OUT${n}_DIR}${SWIFT_TOOLCHAIN_PREFIX}/bin/${f}
 .	    endfor
 .	endif
+	# Build libdispatch module first
 	cd ${WRKSRC}/swift && \
-	${SETENV} ${MAKE_ENV} ./utils/build-script ${STAGE${n}_BUILDFLAGS}
+	${SETENV} ${MAKE_ENV} ${STAGE${n}_ENV} \
+		./utils/build-script ${STAGE${n}_BUILDFLAGS} \
+		--libdispatch true
+	# Tweak libdispatch's VFS overlay file to avoid the error during
+	# build of the rest of the modules:
+	# error: redefinition of module 'Dispatch'
+.	if ${n} >= 2
+.	    for lib in libdispatch libdispatch_static
+	@${CP} ${WRKSRC}/build/Ninja-Build/${lib}-${OPSYS:tl}-${SWIFT_ARCH}/dispatch-vfs-overlay.yaml \
+		${WRKSRC}/build/Ninja-Build/${lib}-${OPSYS:tl}-${SWIFT_ARCH}/dispatch-vfs-overlay.yaml.bak
+	@${AWK} '/^    contents:/{print "    contents: []"; exit} {print}' \
+		${WRKSRC}/build/Ninja-Build/${lib}-${OPSYS:tl}-${SWIFT_ARCH}/dispatch-vfs-overlay.yaml.bak > \
+		${WRKSRC}/build/Ninja-Build/${lib}-${OPSYS:tl}-${SWIFT_ARCH}/dispatch-vfs-overlay.yaml
+.	    endfor
+	# Build the rest of the modules
+	cd ${WRKSRC}/swift && \
+	${SETENV} ${MAKE_ENV} ${STAGE${n}_ENV} \
+		./utils/build-script ${STAGE${n}_BUILDFLAGS} \
+		${DEVEL_BUILDFLAGS} \
+		${STAGE${n}_MODULES:C/^/--/:C/$/ true/}
+.	endif
 .   endfor
 .else
 .   if (${OSVERSION} >= 1404501 && ${OSVERSION} < 1500000) || \
        (${OSVERSION} >= 1501501 && ${OSVERSION} < 1600000) || \
-        ${OSVERSION} >= 1600017
+	${OSVERSION} >= 1600017
 	# Work around a clang 21 header modules/libc++ wchar.h regression on FreeBSD
-	@${MKDIR} ${WRKSRC}/build/Ninja-Release/swift-${OPSYS:tl}-${SWIFT_ARCH}/lib/swift
+	@${MKDIR} ${WRKSRC}/build/Ninja-Build/swift-${OPSYS:tl}-${SWIFT_ARCH}/lib/swift
 	@${CP} ${FILESDIR}/extra-swift-wchar.h \
-		${WRKSRC}/build/Ninja-Release/swift-${OPSYS:tl}-${SWIFT_ARCH}/lib/swift/wchar.h
+		${WRKSRC}/build/Ninja-Build/swift-${OPSYS:tl}-${SWIFT_ARCH}/lib/swift/wchar.h
 .   endif
-	@${MV} ${WRKSRC}/swift-corelibs-libdispatch/dispatch/module.modulemap \
-		${WRKSRC}/swift-corelibs-libdispatch/dispatch/module.modulemap.bak
-	@${TOUCH} ${WRKSRC}/swift-corelibs-libdispatch/dispatch/module.modulemap
+	# Build libdispatch module first
 	cd ${WRKSRC}/swift && \
-	${SETENV} ${MAKE_ENV} ./utils/build-script ${SWIFT_BUILDFLAGS}
+	${SETENV} ${MAKE_ENV} \
+		./utils/build-script ${SWIFT_BUILDFLAGS} \
+		--libdispatch true
+	# Tweak libdispatch's VFS overlay file to avoid the error during
+	# build of the rest of the modules:
+	# error: redefinition of module 'Dispatch'
+.   for lib in libdispatch libdispatch_static
+	@${CP} ${WRKSRC}/build/Ninja-Build/${lib}-${OPSYS:tl}-${SWIFT_ARCH}/dispatch-vfs-overlay.yaml \
+		${WRKSRC}/build/Ninja-Build/${lib}-${OPSYS:tl}-${SWIFT_ARCH}/dispatch-vfs-overlay.yaml.bak
+	@${AWK} '/^    contents:/{print "    contents: []"; exit} {print}' \
+		${WRKSRC}/build/Ninja-Build/${lib}-${OPSYS:tl}-${SWIFT_ARCH}/dispatch-vfs-overlay.yaml.bak > \
+		${WRKSRC}/build/Ninja-Build/${lib}-${OPSYS:tl}-${SWIFT_ARCH}/dispatch-vfs-overlay.yaml
+.   endfor
+	# Build the rest of the modules
+	cd ${WRKSRC}/swift && \
+	${SETENV} ${MAKE_ENV} \
+		./utils/build-script ${SWIFT_BUILDFLAGS} \
+		${SWIFT_MODULES:C/^/--/:C/$/ true/}
 .endif
 
 do-install:
 .for dir in bin lib
-	@${FIND} ${OUT5_DIR}${SWIFT_PREFIX}/${dir} -type f -exec ${FILE} {} ';' | \
+	@${FIND} ${OUT5_DIR}${SWIFT_TOOLCHAIN_PREFIX}/${dir} -type f -exec ${FILE} {} ';' | \
 		${GREP} 'ELF.*FreeBSD' | ${CUT} -d ':' -f 1 | \
 		${XARGS} ${STRIP_CMD} --strip-debug
 .endfor
-	cd ${OUT5_DIR} && ${COPYTREE_BIN} .${SWIFT_PREFIX}/bin ${STAGEDIR}
+	cd ${OUT5_DIR} && ${COPYTREE_BIN} .${SWIFT_TOOLCHAIN_PREFIX}/bin ${STAGEDIR}${SWIFT_SDK_PREFIX}
 	cd ${OUT5_DIR} && \
 	for dir in include lib local share; do \
-		${COPYTREE_SHARE} .${SWIFT_PREFIX}/$${dir} ${STAGEDIR}; \
+		${COPYTREE_SHARE} .${SWIFT_TOOLCHAIN_PREFIX}/$${dir} ${STAGEDIR}${SWIFT_SDK_PREFIX}; \
 	done
-	@${GZIP_CMD} ${STAGEDIR}${SWIFT_PREFIX}/share/man/man1/swift.1
+	@${GZIP_CMD} ${STAGEDIR}${SWIFT_SDK_PREFIX}${SWIFT_TOOLCHAIN_PREFIX}/share/man/man1/swift.1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -293,22 +381,23 @@ do-install-DOCS-on:
 do-test:
 	cd ${WRKSRC}/swift && \
 	${SETENV} ${TEST_ENV} ./utils/run-test \
-		--build-dir ${WRKSRC}/build/Ninja-Release \
+		--build-dir ${WRKSRC}/build/Ninja-Build \
 		--build skip \
 		--build-jobs ${MAKE_JOBS_NUMBER}
 
 .if defined(BOOTSTRAP_MODE)
 # Prepare pre-generated full swift toolchain for non-bootstrap builds by
-# general users. The packages used here were produced locally using poudriere
+# general users. The package used here was produced locally using poudriere
 # with bootstrap mode.
 make-bootstrap-archive:
 	@${RM} -r ${STAGEDIR}
 	@${MKDIR} ${STAGEDIR}
-	${TAR} -xz --strip-components 1 \
+	${TAR} -xz --strip-components 4 \
 		-f ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}.pkg \
-		-C ${STAGEDIR}
+		-C ${STAGEDIR} \
+		--include '/usr/local/swift6/*'
 	${TAR} -cJf ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${DISTVERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX} \
-		--options 'xz:threads=0' \
+		--options 'xz:threads=${MAKE_JOBS_NUMBER}' \
 		-s '|^\./|${PORTNAME}${PKGNAMESUFFIX}-bootstrap/|' \
 		-C ${STAGEDIR} .
 .endif

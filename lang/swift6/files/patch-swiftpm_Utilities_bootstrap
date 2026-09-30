@@ -1,6 +1,6 @@
---- swiftpm/Utilities/bootstrap.orig	2026-05-19 11:23:40 UTC
+--- swiftpm/Utilities/bootstrap.orig	2026-09-28 14:47:57 UTC
 +++ swiftpm/Utilities/bootstrap
-@@ -638,7 +638,7 @@ def build_with_cmake(args, cmake_args, ninja_args, sou
+@@ -574,7 +574,7 @@ def build_with_cmake(args, cmake_args, ninja_args, sou
              "env"] + cmake_env + ["MACOSX_DEPLOYMENT_TARGET=%s" % (g_macos_deployment_target),
              args.cmake_path, "-G", "Ninja",
              "-DCMAKE_MAKE_PROGRAM=%s" % args.ninja_path,
