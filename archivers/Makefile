@@ -220,7 +220,6 @@
     SUBDIR += py-python-lhafile
     SUBDIR += py-python-lzo
     SUBDIR += py-python-rpm-packaging
-    SUBDIR += py-python-snappy
     SUBDIR += py-pyunpack
     SUBDIR += py-pyzstd
     SUBDIR += py-rarfile
