@@ -5710,3 +5710,4 @@ graphics/natron||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine, no
 deskutils/kchmviewer|deskutils/uchmviewer|2026-09-30|Has expired: Development stalled; use deskutils/uchmviewer
 devel/pyside2||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 devel/swig40|devel/swig|2026-09-30|Has expired: Outdated. Use devel/swig instead
+sysutils/rubygem-facter|sysutils/rubygem-openfact|2026-09-30|Has expired: Discontinued, use sysutils/rubygem-openfact
