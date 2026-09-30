@@ -5647,3 +5647,5 @@ www/sogo2|www/sogo|2026-09-30|Has expired: No longer actively developed since 20
 www/sogo2-activesync||2026-09-30|Has expired: No longer actively developed since 2022
 devel/sope2|devel/sope|2026-09-30|Has expired: No longer actively developed since 2022
 x11/compton-conf||2026-09-30|Has expired: Project was archived and deprecated upstream
+sysutils/cfengine-masterfiles325||2026-09-30|Has expired: FreeBSD will only support N and N-1
+sysutils/cfengine325||2026-09-30|Has expired: FreeBSD will only support N and N-1
