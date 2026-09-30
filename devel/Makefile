@@ -5219,7 +5219,6 @@
     SUBDIR += py-helpdev
     SUBDIR += py-hg-evolve
     SUBDIR += py-hglib
-    SUBDIR += py-hgtools
     SUBDIR += py-hidraw
     SUBDIR += py-hishel
     SUBDIR += py-holidays
