@@ -5691,3 +5691,4 @@ www/otter-browser||2026-09-30|Has expired: Not ported to Qt6, depends on depreca
 deskutils/latte-dock||2026-09-30|Has expired: Abandoned, not ported to Qt6
 sysutils/plasma5-libksysguard||2026-09-30|Has expired: The only consumer deskutils/latte-dock is abandoned
 graphics/peruse||2026-09-30|Has expired: Abandoned, does not work with Qt6
+deskutils/semantik||2026-09-30|Has expired: Not ported to Qt6, depends on deprecated Qt5 WebEngine

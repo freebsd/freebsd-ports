@@ -256,7 +256,6 @@
     SUBDIR += rubygem-shellplay
     SUBDIR += rubygem-taskjuggler
     SUBDIR += rwpspread
-    SUBDIR += semantik
     SUBDIR += sigi
     SUBDIR += sigye
     SUBDIR += simpleagenda
