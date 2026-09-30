@@ -1,0 +1,57 @@
+-- Qt6 made QCborArray and QCborMap iterator-based methods return the
+-- container's iterator type.  The PythonQt generator maps the rejected
+-- Iterator/ConstIterator types to QChar* and produces bogus wrappers for
+-- begin/end/erase/extract/find/insert.  Reject those methods and re-add the
+-- non-iterator insert overloads via inject-code so the generated code compiles.
+
+--- generator/typesystem_core.xml.orig	2026-09-15 09:14:25 UTC
++++ generator/typesystem_core.xml
+@@ -2065,10 +2065,37 @@
+   <enum-type name="QCborValue::DiagnosticNotationOption" flags="QCborValue::DiagnosticNotationOptions" since-version="5.12"/>
+   <enum-type name="QCborValue::EncodingOption" flags="QCborValue::EncodingOptions" since-version="5.12"/>
+   <enum-type name="QCborValue::Type" since-version="5.12"/>
+-  <object-type name="QCborArray" since-version="5.12">
+-  </object-type>
++  <rejection class="QCborArray" function-name="begin"/>
++  <rejection class="QCborArray" function-name="cbegin"/>
++  <rejection class="QCborArray" function-name="constBegin"/>
++  <rejection class="QCborArray" function-name="end"/>
++  <rejection class="QCborArray" function-name="cend"/>
++  <rejection class="QCborArray" function-name="constEnd"/>
++  <rejection class="QCborArray" function-name="erase"/>
++  <rejection class="QCborArray" function-name="extract"/>
++  <rejection class="QCborArray" function-name="insert"/>
+   <rejection class="QCborArray::Iterator"/>
+   <rejection class="QCborArray::ConstIterator"/>
++  <object-type name="QCborArray" since-version="5.12">
++    <inject-code class="pywrap-h">
++  void insert(QCborArray* theWrappedObject, qsizetype i, const QCborValue&amp; value_)
++  {
++    theWrappedObject->insert(i, value_);
++  }
++    </inject-code>
++  </object-type>
++  <rejection class="QCborMap" function-name="begin"/>
++  <rejection class="QCborMap" function-name="cbegin"/>
++  <rejection class="QCborMap" function-name="constBegin"/>
++  <rejection class="QCborMap" function-name="end"/>
++  <rejection class="QCborMap" function-name="cend"/>
++  <rejection class="QCborMap" function-name="constEnd"/>
++  <rejection class="QCborMap" function-name="erase"/>
++  <rejection class="QCborMap" function-name="extract"/>
++  <rejection class="QCborMap" function-name="find"/>
++  <rejection class="QCborMap" function-name="insert"/>
++  <rejection class="QCborMap::Iterator"/>
++  <rejection class="QCborMap::ConstIterator"/>
+   <object-type name="QCborMap" since-version="5.12">
+     <inject-code class="pywrap-h">
+   void insert(QCborMap* theWrappedObject, qint64 key, const QCborValue&amp; value_)
+@@ -2085,8 +2112,6 @@
+   <rejection class="QCborMap" function-name="asKeyValueRange" since-version="6.10"/>
+   <rejection class="QCborMap" function-name="constKeyValueBegin" since-version="6.10"/>
+   <rejection class="QCborMap" function-name="constKeyValueEnd" since-version="6.10"/>
+-  <rejection class="QCborMap::Iterator"/>
+-  <rejection class="QCborMap::ConstIterator"/>
+   <object-type name="QCborError" since-version="5.12">
+     <modify-function signature="operator Code()const" remove="all"/>
+   </object-type>
