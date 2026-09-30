@@ -237,6 +237,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/resources/locale/ar_SA/LC_MESSAGES/ar_SA.mo
 %%DATADIR%%/resources/locale/bs_BA/LC_MESSAGES/bs_BA.mo
 %%DATADIR%%/resources/locale/ca_ES/LC_MESSAGES/ca_ES.mo
+%%DATADIR%%/resources/locale/cs_CZ/LC_MESSAGES/cs_CZ.mo
 %%DATADIR%%/resources/locale/de_DE/LC_MESSAGES/de_DE.mo
 %%DATADIR%%/resources/locale/en_GB/LC_MESSAGES/en_GB.mo
 %%DATADIR%%/resources/locale/en_US/LC_MESSAGES/en_US.mo
@@ -275,6 +276,7 @@ share/applications/org.es_de.frontend.desktop
 %%DATADIR%%/resources/systems/android/es_find_rules.xml
 %%DATADIR%%/resources/systems/android/es_import_rules.xml
 %%DATADIR%%/resources/systems/android/es_systems.xml
+%%DATADIR%%/resources/systems/android/es_systems_saf.xml
 %%DATADIR%%/resources/systems/haiku/es_find_rules.xml
 %%DATADIR%%/resources/systems/haiku/es_import_rules.xml
 %%DATADIR%%/resources/systems/haiku/es_systems.xml

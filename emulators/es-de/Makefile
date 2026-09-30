@@ -1,7 +1,6 @@
 PORTNAME=	es-de
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.1
-PORTREVISION=	2
+DISTVERSION=	3.5.0
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
@@ -19,8 +18,7 @@ BUILD_RUN_DEPENDS=	dejavu>0:x11-fonts/dejavu \
 
 BUILD_DEPENDS=	cimg>0:graphics/cimg \
 		glm>0:math/glm \
-		rapidjson>0:devel/rapidjson \
-		utf8cpp>0:devel/utf8cpp
+		rapidjson>0:devel/rapidjson
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
@@ -43,8 +41,6 @@ USE_GL=		opengl
 USE_SDL=	sdl2
 
 CMAKE_ON=	VIDEO_HW_DECODING
-
-CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 
 EXTRACT_AFTER_ARGS=	--exclude ${GL_PROJECT}-${GL_TAGNAME}/external \
 			--no-same-owner --no-same-permissions
