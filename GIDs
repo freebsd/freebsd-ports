@@ -337,7 +337,7 @@ _turnserver:*:392:
 immich:*:393:
 mysqlrouter:*:394:
 comentario:*:395:
-# free: 396
+littlefedi:*:396:
 rtorrent:*:397:
 tiarra:*:398:
 linkwarden:*:399:

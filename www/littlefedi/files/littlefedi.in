@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# PROVIDE: littlefedi
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable littlefedi:
+#
+# littlefedi_enable (bool):   Set to YES to enable. Default: NO
+# littlefedi_run_user (str):  Default: littlefedi
+# littlefedi_config (str):    Default: %%PREFIX%%/etc/littlefedi/littlefedi.toml
+# littlefedi_envfile (str):   Default: %%PREFIX%%/etc/littlefedi/littlefedi.env
+# littlefedi_chdir (str):     Default: /var/db/littlefedi
+#
+# Not littlefedi_user: rc.subr would wrap daemon(8) in su(1).
+
+. /etc/rc.subr
+
+name="littlefedi"
+rcvar="littlefedi_enable"
+desc="littleFedi ActivityPub server"
+
+load_rc_config $name
+
+: ${littlefedi_enable:="NO"}
+: ${littlefedi_run_user:="littlefedi"}
+: ${littlefedi_config:="%%PREFIX%%/etc/littlefedi/littlefedi.toml"}
+: ${littlefedi_envfile:="%%PREFIX%%/etc/littlefedi/littlefedi.env"}
+: ${littlefedi_chdir:="/var/db/littlefedi"}
+
+littlefedi_bin="%%PREFIX%%/bin/littlefedi"
+
+# -u also applies the login class, which sets the descriptor limit.
+pidfile="/var/run/littlefedi.supervisor.pid"
+child_pidfile="/var/run/littlefedi.pid"
+procname="/usr/sbin/daemon"
+command="/usr/sbin/daemon"
+command_args="-f -T ${name} -R 5 -P ${pidfile} -p ${child_pidfile} \
+	-u ${littlefedi_run_user} \
+	${littlefedi_bin} --config ${littlefedi_config}"
+
+start_precmd="littlefedi_precmd"
+
+littlefedi_precmd()
+{
+	if [ -r "${littlefedi_envfile}" ]; then
+		set -a
+		. "${littlefedi_envfile}"
+		set +a
+	fi
+	umask 0077
+}
+
+run_rc_command "$1"

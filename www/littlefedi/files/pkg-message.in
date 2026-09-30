@@ -1,0 +1,43 @@
+[
+{ type: install
+  message: <<EOM
+The setup wizard creates the database beside the configuration it writes, so
+it must be run as the littlefedi user with /var/db/littlefedi as the current
+directory. The generated configuration is then moved to
+%%ETCDIR%%/littlefedi.toml, where the service reads it.
+
+Choose the setup matching the installed package.
+
+SQLite (the default package):
+
+  cd /var/db/littlefedi
+  su -m littlefedi -c '%%PREFIX%%/bin/littlefedi init --config ./littlefedi.toml'
+
+PostgreSQL (the -pgsql package): create the PostgreSQL role and database, then
+put the connection URL in %%ETCDIR%%/littlefedi.env using shell-compatible
+syntax. The file must be owned by root:littlefedi, mode 0640:
+
+  LITTLEFEDI_DB_DSN='postgresql://littlefedi:password@127.0.0.1/littlefedi?sslmode=disable'
+
+Run the wizard with that environment:
+
+  cd /var/db/littlefedi
+  su -m littlefedi -c 'set -a && . %%ETCDIR%%/littlefedi.env && set +a && %%PREFIX%%/bin/littlefedi init --config ./littlefedi.toml'
+
+For either backend, move the generated configuration into place:
+
+  install -o root -g littlefedi -m 0640 /var/db/littlefedi/littlefedi.toml %%ETCDIR%%/littlefedi.toml
+  rm /var/db/littlefedi/littlefedi.toml
+
+PostgreSQL backup and restore invoke pg_dump and psql. Install a client version
+compatible with the server before using those commands or enabling backups.
+
+Enable and start the service:
+
+  service littlefedi enable
+  service littlefedi start
+
+%%DOCSDIR%%/install.md covers secrets, TLS and reverse proxy setup.
+EOM
+}
+]

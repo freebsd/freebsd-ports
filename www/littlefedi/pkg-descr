@@ -1,0 +1,8 @@
+littleFedi is a small ActivityPub server written in Go. It runs as a
+single binary with SQLite, local media storage and a web interface that
+works without JavaScript. Mastodon-compatible applications can connect
+through its API.
+
+Optional features include a PostgreSQL backend, S3 media storage and
+static blogs. littleMesh lets hosts without a public domain or inbound
+ports federate through self-hosted lighthouses and HTTPS gateways.

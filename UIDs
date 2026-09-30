@@ -342,7 +342,7 @@ _turnserver:*:392:392::0:0:Coturn Turnserver Daemon:/nonexistent:/usr/sbin/nolog
 immich:*:393:393::0:0:Immich Daemon:/nonexistent:/usr/sbin/nologin
 mysqlrouter:*:394:394::0:0:MySQL Router Daemon:/nonexistent:/usr/sbin/nologin
 comentario:*:395:395::0:0:Comentario Daemon:/var/db/comentario:/usr/sbin/nologin
-# free: 396
+littlefedi:*:396:396::0:0:littleFedi Daemon:/var/db/littlefedi:/usr/sbin/nologin
 rtorrent:*:397:397::0:0:rtorrent Daemon User:/nonexistent:/usr/sbin/nologin
 tiarra:*:398:398::0:0:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
 linkwarden:*:399:399::0:0:Linkwarden Daemon:/var/db/linkwarden:/usr/sbin/nologin

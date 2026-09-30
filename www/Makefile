@@ -382,6 +382,7 @@
     SUBDIR += linux-vieb
     SUBDIR += linux-widevine-cdm
     SUBDIR += litmus
+    SUBDIR += littlefedi
     SUBDIR += ljdeps
     SUBDIR += llhttp
     SUBDIR += loco
