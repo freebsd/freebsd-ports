@@ -1,8 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.42 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-19675-gcd814f8c92
-PORTREVISION=	1
+DISTVERSION=	0.0.43 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-20133-g53d44aa4a1
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -37,8 +36,8 @@ GH_TUPLE=	RPCS3:soundtouch:2.3.1-87-ga0fba77:soundtouch/3rdparty/SoundTouch/soun
 		Megamouse:VulkanMemoryAllocator:1d8f600:vkalloc/3rdparty/GPUOpen/VulkanMemoryAllocator \
 		nothings:stb:013ac3b:stb/3rdparty/stblib/stb \
 		protocolbuffers:protobuf:edaa823d8b36:protobuf/3rdparty/protobuf/protobuf \
-		wolfSSL:wolfssl:v5.9.2-stable:wolfssl/3rdparty/wolfssl/wolfssl \
-		xioTechnologies:Fusion:v1.3.2:fusion/3rdparty/fusion/fusion
+		wolfSSL:wolfssl:v5.9.4-stable:wolfssl/3rdparty/wolfssl/wolfssl \
+		xioTechnologies:Fusion:v1.3.3:fusion/3rdparty/fusion/fusion
 
 USES=		cmake gl iconv:wchar_t llvm:min=20,${LLVM_DEP} localbase:ldflags \
 		openal:soft pkgconfig python:build qt:6 xorg
