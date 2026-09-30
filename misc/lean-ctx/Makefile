@@ -1,6 +1,7 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.10.5
+DISTVERSION=	3.10.5-146
+DISTVERSIONSUFFIX=	-g802f9731c
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -107,6 +108,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		constant_time_eq-0.4.2 \
 		cookie-0.18.2 \
 		cookie_store-0.22.0 \
+		core-foundation-0.9.4 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		cpubits-0.1.1 \
@@ -238,6 +240,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		js-sys-0.3.104 \
 		jsonschema-0.46.10 \
 		jsonschema-regex-0.46.10 \
+		keyring-3.6.3 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libbz2-rs-sys-0.2.5 \
@@ -282,6 +285,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		num-iter-0.1.46 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
+		oauth2-5.0.0 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
@@ -328,8 +332,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		quote-1.0.47 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
+		rand-0.8.8 \
 		rand-0.9.5 \
 		rand-0.10.2 \
+		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
@@ -371,6 +377,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		schemars-1.2.2 \
 		schemars_derive-1.2.2 \
 		scopeguard-1.2.0 \
+		security-framework-2.11.1 \
 		security-framework-3.7.0 \
 		security-framework-sys-2.17.0 \
 		semver-1.0.28 \
@@ -419,7 +426,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tagptr-0.2.0 \
 		tar-0.4.46 \
 		tempfile-3.27.0 \
+		thiserror-1.0.69 \
 		thiserror-2.0.20 \
+		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.20 \
 		thread_local-1.1.10 \
 		tiktoken-rs-0.12.0 \
@@ -553,17 +562,27 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-strings-0.5.1 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
+		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
+		windows-targets-0.53.5 \
 		windows-threading-0.2.1 \
 		windows_aarch64_gnullvm-0.52.6 \
+		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
+		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.52.6 \
+		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
+		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.52.6 \
+		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.52.6 \
+		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.52.6 \
+		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
+		windows_x86_64_msvc-0.53.1 \
 		winnow-1.0.4 \
 		wit-bindgen-0.46.0 \
 		writeable-0.6.3 \
