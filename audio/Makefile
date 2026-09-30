@@ -504,7 +504,6 @@
     SUBDIR += muse-sequencer
     SUBDIR += musepack
     SUBDIR += musescore
-    SUBDIR += musescore3
     SUBDIR += musiccontrol
     SUBDIR += musicpc
     SUBDIR += musicpd
