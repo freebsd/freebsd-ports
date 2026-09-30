@@ -134,7 +134,6 @@
     SUBDIR += kalarm
     SUBDIR += kanbanapp
     SUBDIR += kcharselect
-    SUBDIR += kchmviewer
     SUBDIR += kdeconnect-kde
     SUBDIR += kdepim
     SUBDIR += kdepim-addons
