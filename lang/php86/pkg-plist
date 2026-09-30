@@ -447,6 +447,7 @@ include/php/ext/standard/head.h
 include/php/ext/standard/html.h
 include/php/ext/standard/html_tables.h
 include/php/ext/standard/info.h
+include/php/ext/standard/io_poll.h
 include/php/ext/standard/io_poll_arginfo.h
 include/php/ext/standard/io_poll_decl.h
 include/php/ext/standard/md5.h
