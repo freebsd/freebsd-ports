@@ -8,6 +8,7 @@ Modules/%%MODULES_VERSION%%/init/bash
 Modules/%%MODULES_VERSION%%/init/bash_completion
 Modules/%%MODULES_VERSION%%/init/cmake
 Modules/%%MODULES_VERSION%%/init/csh
+Modules/%%MODULES_VERSION%%/init/env_modules.py
 Modules/%%MODULES_VERSION%%/init/fish
 Modules/%%MODULES_VERSION%%/init/fish_completion
 Modules/%%MODULES_VERSION%%/init/ksh
@@ -36,7 +37,7 @@ Modules/%%MODULES_VERSION%%/modulefiles/modules
 Modules/%%MODULES_VERSION%%/modulefiles/null
 Modules/%%MODULES_VERSION%%/modulefiles/use.own
 Modules/%%MODULES_VERSION%%/share/doc/CONTRIBUTING.txt
-Modules/%%MODULES_VERSION%%/share/doc/COPYING.GPLv2
+Modules/%%MODULES_VERSION%%/share/doc/COPYING
 Modules/%%MODULES_VERSION%%/share/doc/ChangeLog.gz
 Modules/%%MODULES_VERSION%%/share/doc/INSTALL-win.txt
 Modules/%%MODULES_VERSION%%/share/doc/INSTALL.txt
@@ -62,4 +63,5 @@ etc/profile.d/module.sh
 share/man/man1/envml.1.gz
 share/man/man1/ml.1.gz
 share/man/man1/module.1.gz
+share/man/man1/modulecmd.1.gz
 share/man/man5/modulefile.5.gz
