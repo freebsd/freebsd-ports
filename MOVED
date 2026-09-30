@@ -5699,3 +5699,4 @@ lang/kotlin22|lang/kotlin|2026-09-30|Has expired: The only port that needed Kotl
 comms/zigbee2mqtt||2026-09-30|Has expired: Depends on expired www/node20
 net/hostapd210||2026-09-30|Has expired: Unsupported by upstream
 net/hostapd29||2026-09-30|Has expired: Unsupported by upstream
+devel/kassert||2026-09-30|Has expired: no longer required
