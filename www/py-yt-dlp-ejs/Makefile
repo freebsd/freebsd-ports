@@ -15,6 +15,9 @@ WWW=		https://github.com/yt-dlp/yt-dlp-ejs
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	distinfo was only generated for these architectures # feel free to add more architectures
+
 FETCH_DEPENDS=	npm:www/npm \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 BUILD_DEPENDS=	deno:www/deno \
@@ -26,11 +29,17 @@ RUN_DEPENDS=	deno:www/deno
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
+TEST_ARGS=	--disable-plugin-autoload
+
 SHEBANG_GLOB=	*.py
 
 NO_ARCH=	yes
 
 DD=		${DISTDIR}/${DIST_SUBDIR}
+
+.include <bsd.port.pre.mk>
+
+DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 
 do-fetch: # this target (1) downloads the source tarball, (2) extracts it to a temporary location, (3) runs npm ci to fetch and install node_modules, and (4) packages the node_modules directory into a separate tarball for later extraction during the build phase. This allows us to avoid running npm ci during the build phase which will require network access
 	@if ! [ -f ${DD}/${DISTNAME}${EXTRACT_SUFX} ] || \
@@ -90,8 +99,6 @@ pre-test:
 	@${CP} ${WRKSRC}/dist/yt.solver.lib.min.js ${WRKSRC}/yt_dlp_ejs/yt/solver/lib.min.js
 
 # tests as of 0.8.0:
-# Results (0.15s):
-#          3 passed
-#          1 warning
+# 1 passed in 0.01s
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
