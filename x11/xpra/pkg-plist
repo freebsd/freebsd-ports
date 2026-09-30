@@ -1035,6 +1035,8 @@ etc/dbus-1/system.d/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/__pycache__/common%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/__pycache__/ibus%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/__pycache__/ibus%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/xpra/keyboard/__pycache__/keysyms%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xpra/keyboard/__pycache__/keysyms%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/__pycache__/layouts%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/__pycache__/layouts%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/__pycache__/mask%%PYTHON_TAG%%.opt-1.pyc
@@ -1043,6 +1045,7 @@ etc/dbus-1/system.d/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/__pycache__/nokeyboard%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/common.py
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/ibus.py
+%%PYTHON_SITELIBDIR%%/xpra/keyboard/keysyms.py
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/layouts.py
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/mask.py
 %%PYTHON_SITELIBDIR%%/xpra/keyboard/nokeyboard.py
@@ -1944,6 +1947,8 @@ etc/dbus-1/system.d/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/util/__pycache__/env%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/util/__pycache__/glib%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/util/__pycache__/glib%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/xpra/util/__pycache__/glib_idle%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xpra/util/__pycache__/glib_idle%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/util/__pycache__/glib_scheduler%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/util/__pycache__/glib_scheduler%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/util/__pycache__/gobject%%PYTHON_TAG%%.opt-1.pyc
@@ -1986,6 +1991,7 @@ etc/dbus-1/system.d/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/util/debug.py
 %%PYTHON_SITELIBDIR%%/xpra/util/env.py
 %%PYTHON_SITELIBDIR%%/xpra/util/glib.py
+%%PYTHON_SITELIBDIR%%/xpra/util/glib_idle.py
 %%PYTHON_SITELIBDIR%%/xpra/util/glib_scheduler.py
 %%PYTHON_SITELIBDIR%%/xpra/util/gobject.py
 %%PYTHON_SITELIBDIR%%/xpra/util/io.py
@@ -2007,17 +2013,8 @@ etc/dbus-1/system.d/xpra.conf
 %%PYTHON_SITELIBDIR%%/xpra/wayland/__init__.py
 %%PYTHON_SITELIBDIR%%/xpra/wayland/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/wayland/__pycache__/__init__%%PYTHON_TAG%%.pyc
-%%PYTHON_SITELIBDIR%%/xpra/wayland/__pycache__/example%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/xpra/wayland/__pycache__/example%%PYTHON_TAG%%.pyc
-%%PYTHON_SITELIBDIR%%/xpra/wayland/__pycache__/keyboard_config%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/xpra/wayland/__pycache__/keyboard_config%%PYTHON_TAG%%.pyc
-%%PYTHON_SITELIBDIR%%/xpra/wayland/__pycache__/server%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/xpra/wayland/__pycache__/server%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/wayland/__pycache__/wait%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/wayland/__pycache__/wait%%PYTHON_TAG%%.pyc
-%%PYTHON_SITELIBDIR%%/xpra/wayland/example.py
-%%PYTHON_SITELIBDIR%%/xpra/wayland/keyboard_config.py
-%%PYTHON_SITELIBDIR%%/xpra/wayland/server.py
 %%PYTHON_SITELIBDIR%%/xpra/wayland/wait.py
 %%PYTHON_SITELIBDIR%%/xpra/wayland/wait_for_display%%PYTHON_TAG%%.so
 %%WEBCAM%%%%PYTHON_SITELIBDIR%%/xpra/webcam/__init__.py

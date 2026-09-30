@@ -1,6 +1,5 @@
 PORTNAME=	xpra
-PORTVERSION=	6.5.1
-PORTREVISION=	1
+PORTVERSION=	6.5.4
 CATEGORIES=	x11
 MASTER_SITES=	https://xpra.org/src/
 
@@ -136,7 +135,9 @@ post-install:
 	${CP} -r ${STAGEDIR}${PREFIX}/etc/dbus-1 ${STAGEDIR}${PREFIX}/share && ${RM} -r ${STAGEDIR}${PREFIX}/dbus-1
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} -name '*.so' \
 	    -exec ${STRIP_CMD} {} +
-	${RM} ${STAGEDIR}${PREFIX}/xpra_dissector.lua
+	${RM} -r ${STAGEDIR}${PREFIX}/usr/lib/wireshark
+	${RMDIR} ${STAGEDIR}${PREFIX}/usr/lib
+	${RMDIR} ${STAGEDIR}${PREFIX}/usr
 
 do-test:
 	@${MKDIR} ${BINARY_LINKDIR}
