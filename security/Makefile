@@ -44,8 +44,6 @@
     SUBDIR += aws-lc
     SUBDIR += aws-vault
     SUBDIR += axc
-    SUBDIR += barnyard2
-    SUBDIR += barnyard2-sguil
     SUBDIR += bastillion
     SUBDIR += bcwipe
     SUBDIR += bdes
