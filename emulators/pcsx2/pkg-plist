@@ -3,11 +3,11 @@ share/applications/PCSX2.desktop
 %%DATADIR%%/resources/GameIndex.yaml
 %%DATADIR%%/resources/RedumpDatabase.yaml
 %%DATADIR%%/resources/cover-placeholder.png
-%%DATADIR%%/resources/fonts/NotoColorEmoji-Regular-license
-%%DATADIR%%/resources/fonts/NotoColorEmoji-Regular.ttf
 %%DATADIR%%/resources/fonts/Roboto-Regular-copyright
 %%DATADIR%%/resources/fonts/Roboto-Regular.ttf
 %%DATADIR%%/resources/fonts/RobotoMono-Medium.ttf
+%%DATADIR%%/resources/fonts/Twemoji.Mozilla-license
+%%DATADIR%%/resources/fonts/Twemoji.Mozilla.ttf
 %%DATADIR%%/resources/fonts/fa-solid-900.ttf
 %%DATADIR%%/resources/fonts/promptfont-license
 %%DATADIR%%/resources/fonts/promptfont.otf
@@ -31,6 +31,7 @@ share/applications/PCSX2.desktop
 %%DATADIR%%/resources/icons/flags/Other.svg
 %%DATADIR%%/resources/icons/flags/at.svg
 %%DATADIR%%/resources/icons/flags/au.svg
+%%DATADIR%%/resources/icons/flags/az.svg
 %%DATADIR%%/resources/icons/flags/be.svg
 %%DATADIR%%/resources/icons/flags/br.svg
 %%DATADIR%%/resources/icons/flags/ch.svg

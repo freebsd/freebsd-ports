@@ -1,7 +1,6 @@
 PORTNAME=	pcsx2
-PORTVERSION=	2.6.3
+PORTVERSION=	2.8.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -16,14 +15,16 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 # Notes on dependencies (see cmake/SearchForStuff.cmake):
 # - glad comes from 3rdparty/ (conflicts with libglvnd)
-# - fmt, rapidyaml, soundtouch, zydis, libzip
+# - fmt, soundtouch, zydis, libzip
 #   are always included from 3rdparty/
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libavformat.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libbacktrace.so:devel/libbacktrace \
+		libc4core.so:devel/c4core \
 		libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libjack.so:audio/jack \
 		libkddockwidgets-qt6.so:x11-toolkits/kddockwidgets \
@@ -32,6 +33,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libplutovg.so:graphics/plutovg \
 		libpng.so:graphics/png \
 		libpulse.so:audio/pulseaudio \
+		libryml.so:devel/rapidyaml \
 		libshaderc_shared.so:graphics/shaderc \
 		libsndio.so:audio/sndio \
 		libswresample.so:multimedia/ffmpeg \

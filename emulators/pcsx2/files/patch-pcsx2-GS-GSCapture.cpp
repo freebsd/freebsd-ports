@@ -6,7 +6,7 @@ Date: Sat, 8 Aug 2026 18:52:32 +0700
 Subject: [PATCH] GSCapture: Switch the use of `pix_fmts` with
  `avcodec_get_supported_config()`
 
---- pcsx2/GS/GSCapture.cpp.orig	2026-01-28 16:36:27 UTC
+--- pcsx2/GS/GSCapture.cpp.orig	2026-09-25 08:15:35 UTC
 +++ pcsx2/GS/GSCapture.cpp
 @@ -67,6 +67,7 @@ extern "C" {
  	X(avcodec_receive_packet) \
@@ -66,7 +66,7 @@ Subject: [PATCH] GSCapture: Switch the use of `pix_fmts` with
 +
  		if (!supports_format)
  		{
- 			Console.WriteLn(fmt::format("Audio codec '{}' does not support S16 samples, using default.", acodec->name));
+ 			Console.WriteLn(fmt::format("Audio codec '{}' does not support float samples, using default.", acodec->name));
 -			s_audio_codec_context->sample_fmt = acodec->sample_fmts[0];
 +			s_audio_codec_context->sample_fmt = supported_sample_fmts[0];
  			s_swr_context = wrap_swr_alloc();
