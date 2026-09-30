@@ -382,7 +382,6 @@
     SUBDIR += py-fclist-cffi
     SUBDIR += py-fontMath
     SUBDIR += py-fontfeatures
-    SUBDIR += py-fontmake
     SUBDIR += py-gflanguages
     SUBDIR += py-gfmetadata
     SUBDIR += py-gfsubsets

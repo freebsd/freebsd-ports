@@ -5656,3 +5656,4 @@ sysutils/cfengine-masterfiles326||2026-09-30|Has expired: FreeBSD will only supp
 sysutils/cfengine326||2026-09-30|Has expired: FreeBSD will only support N and N-1
 security/wapiti||2026-09-30|Has expired: Outdated, pip install wapiti3 in a venv if needed
 sysutils/py-ansible-core218||2026-09-30|Has expired: FreeBSD will only support N and N-1
+x11-fonts/py-fontmake||2026-09-30|Has expired: Depends on expired x11-fonts/py-cu2qu
