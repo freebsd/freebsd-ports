@@ -6,7 +6,6 @@
     SUBDIR += dict
     SUBDIR += ding
     SUBDIR += dtaus
-    SUBDIR += eric6
     SUBDIR += hunspell
     SUBDIR += hyphen
     SUBDIR += jdictionary-eng-ger
