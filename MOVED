@@ -5640,3 +5640,4 @@ security/openssl35|security/openssl|2026-09-30|Upgrade security/openssl to 3.5
 lang/python310||2026-09-30|Python 3.10 is an old version in the last year of security support, see to it that your favorite ports get updated for newer Python releases in due time
 sysutils/ganglia-monitor-core||2026-09-30|Has expired: No upstream development since 2016
 devel/es-eric6||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
+net/qoauth-qt5||2026-09-30|Has expired: Discontinued, not needed for modern Qt based projects
