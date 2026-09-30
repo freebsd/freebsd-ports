@@ -1,13 +1,14 @@
-- workaround for https://github.com/Boolector/boolector/issues/226
+-- Fix CMake 4.x compatibility by raising the minimum required CMake version.
+-- CMake 4.0 dropped support for cmake_minimum_required(VERSION < 3.5).
 
---- CMakeLists.txt.orig	2024-06-06 01:55:51 UTC
-+++ CMakeLists.txt
-@@ -196,7 +196,7 @@ add_required_c_flag("-std=gnu99")
- #       btorconfig.h and they are else not yet added to CMAKE_C(XX)_FLAGS at
- #       file generation time (configure_file).
- add_required_c_flag("-std=gnu99")
--add_required_cxx_flag("-std=gnu++11")
-+add_required_cxx_flag("-std=gnu++14")
+--- CMakeLists.txt.orig	2024-08-23 14:28:52.000000000 -0700
++++ CMakeLists.txt	2026-08-27 15:49:03.057152000 -0700
+@@ -5,7 +5,7 @@
+ # This file is part of Boolector.
+ # See COPYING for more information on using this software.
+ #
+-cmake_minimum_required(VERSION 3.3)
++cmake_minimum_required(VERSION 3.5)
  
- add_check_c_cxx_flag("-W")
- add_check_c_cxx_flag("-Wall")
+ #-----------------------------------------------------------------------------#
+ 

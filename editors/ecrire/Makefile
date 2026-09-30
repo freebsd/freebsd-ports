@@ -18,6 +18,8 @@ USES=		cmake desktop-file-utils pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	Obsidian-StudiosInc
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 

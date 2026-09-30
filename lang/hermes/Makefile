@@ -24,6 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 
 CMAKE_OFF=	HERMES_ENABLE_TEST_SUITE
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/facebook/hermes/issues/2216
 
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 
