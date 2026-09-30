@@ -1,0 +1,14 @@
+-- Use old-style license field format compatible with setuptools < 77.0.3.
+-- PEP 639 license = 'SPDX-expr' syntax requires newer setuptools.
+--- pyproject.toml.orig	2026-09-30 21:16:49 UTC
++++ pyproject.toml
+@@ -7,8 +7,7 @@ readme = 'README.rst'
+ description = 'GPAW: DFT and beyond within the projector-augmented wave method'
+ dynamic = ['version']
+ readme = 'README.rst'
+-license = 'GPL-3.0-or-later'
+-license-files = ['LICENSE']
++license = {text = "GPL-3.0-or-later"}
+ maintainers = [{ name = 'GPAW Community', email = 'gpaw-users@listserv.fysik.dtu.dk' }]
+ 
+ classifiers = [
