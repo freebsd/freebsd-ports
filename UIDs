@@ -345,7 +345,7 @@ comentario:*:395:395::0:0:Comentario Daemon:/var/db/comentario:/usr/sbin/nologin
 # free: 396
 rtorrent:*:397:397::0:0:rtorrent Daemon User:/nonexistent:/usr/sbin/nologin
 tiarra:*:398:398::0:0:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
-# free: 399
+linkwarden:*:399:399::0:0:Linkwarden Daemon:/var/db/linkwarden:/usr/sbin/nologin
 evcc:*:400:400::0:0:evcc Daemon:/nonexistent:/usr/sbin/nologin
 spectrumknx:*:401:401::0:0:SpectrumKNX Daemon:/var/db/spectrumknx:/usr/sbin/nologin
 # free: 402

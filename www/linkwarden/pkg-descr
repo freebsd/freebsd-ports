@@ -1,0 +1,10 @@
+Linkwarden is a self-hosted, collaborative bookmark manager that collects,
+organizes and preserves webpages.  Every saved link is archived as a
+screenshot, a PDF, a single file HTML copy and a readable article, so the
+content stays available even when the original page is gone.
+
+Links live in collections, can be tagged, shared with other users or made
+public, and are searchable including the text of the archived pages.
+
+The port runs the web frontend and the background worker as two separate
+services and keeps its data in PostgreSQL.

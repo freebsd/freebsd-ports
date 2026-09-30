@@ -1,0 +1,33 @@
+[
+{ type: install
+  message: <<EOM
+Linkwarden needs a PostgreSQL database and a few settings before it starts.
+
+1. Create the database, for example on the same host:
+
+	su -l postgres -c "psql -c \"CREATE ROLE linkwarden LOGIN PASSWORD 'secret'\""
+	su -l postgres -c "createdb -O linkwarden linkwarden"
+
+2. Set DATABASE_URL, NEXTAUTH_URL and a NEXTAUTH_SECRET
+   (openssl rand -base64 32) in %%PREFIX%%/etc/linkwarden.env.  That file
+   holds credentials, so keep it to the linkwarden user:
+
+	chown root:linkwarden %%PREFIX%%/etc/linkwarden.env
+	chmod 640 %%PREFIX%%/etc/linkwarden.env
+
+3. Enable and start both services.  The frontend brings the database schema
+   up to date whenever it starts:
+
+	sysrc linkwarden_web_enable=YES linkwarden_worker_enable=YES
+	service linkwarden_web start
+	service linkwarden_worker start
+
+The frontend then listens on port 3000 and the first account is created by
+registering in the web interface.
+
+Saved pages are preserved by the worker with www/chromium and www/monolith,
+the archives end up in /var/db/linkwarden/data.  Full text search over the
+archived pages needs textproc/meilisearch, see MEILI_HOST in linkwarden.env.
+EOM
+}
+]
