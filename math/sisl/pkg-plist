@@ -1,0 +1,8 @@
+include/sisl-copyright.h
+include/sisl.h
+include/sislP.h
+lib/cmake/sisl/sislConfig.cmake
+lib/cmake/sisl/sislConfigVersion.cmake
+lib/cmake/sisl/sislTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/sisl/sislTargets.cmake
+lib/libsisl.so

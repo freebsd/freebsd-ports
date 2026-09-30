@@ -1,7 +1,7 @@
 PORTNAME=	sisl
 DISTVERSIONPREFIX=	SISL-
-DISTVERSION=	4.6.0-44
-DISTVERSIONSUFFIX=	-g9114631
+DISTVERSION=	4.6.0-100
+DISTVERSIONSUFFIX=	-ge0a82b1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,9 +17,6 @@ GH_ACCOUNT=	SINTEF-Geometry
 GH_PROJECT=	SISL
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	include/sisl-copyright.h \
-		include/sisl.h \
-		include/sislP.h \
-		lib/libsisl.so
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/SINTEF-Geometry/SISL/issues/66
 
 .include <bsd.port.mk>
