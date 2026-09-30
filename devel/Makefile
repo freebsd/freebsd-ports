@@ -4342,7 +4342,6 @@
     SUBDIR += phorgeit-phorge
     SUBDIR += php-Psr_Log
     SUBDIR += php-composer
-    SUBDIR += php-geshi
     SUBDIR += php-grpc
     SUBDIR += php-ice37
     SUBDIR += php-libawl
