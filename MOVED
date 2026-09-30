@@ -5704,3 +5704,4 @@ net-im/cutegram||2026-09-30|Has expired: Abandoned, depends on deprecated Qt5 We
 security/wpa_supplicant210||2026-09-30|Has expired: Unsupported by upstream
 devel/p5-PkgConfig-LibPkgConf||2026-09-30|Has expired: Upstream is inactive for 5 years
 devel/php-geshi||2026-09-30|Has expired: Unmaintained upstream
+finance/pear_Payment_DTA||2026-09-30|Has expired: Abandoned upstream (last release 2012), DTAUS superseded by SEPA

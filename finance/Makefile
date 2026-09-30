@@ -102,7 +102,6 @@
     SUBDIR += p5-Locale-Currency-Format
     SUBDIR += p5-Math-Financial
     SUBDIR += p5-PayflowPro
-    SUBDIR += pear_Payment_DTA
     SUBDIR += prestashop
     SUBDIR += py-Nasdaq-Data-Link
     SUBDIR += py-alpha-vantage
