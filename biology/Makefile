@@ -44,7 +44,6 @@
     SUBDIR += coverm
     SUBDIR += cufflinks
     SUBDIR += cytoscape
-    SUBDIR += ddocent
     SUBDIR += diamond
     SUBDIR += dsr-pdb
     SUBDIR += edlib

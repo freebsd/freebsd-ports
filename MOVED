@@ -5680,3 +5680,4 @@ net-im/vesktop||2026-09-30|Has expired: Depends on expired devel/electron40
 devel/electron40||2026-09-30|Has expired: EOLed upstream, switch to newer version
 devel/lnphost||2026-09-30|Has expired: Deprecated upstream: Consider porting brickOS-bibo as a replacement
 german/eric6||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
+biology/ddocent||2026-09-30|Has expired: No apparent interest, unable to maintain
