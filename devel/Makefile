@@ -5478,7 +5478,6 @@
     SUBDIR += py-microsoft-security-utilities-secret-masker
     SUBDIR += py-microversion-parse
     SUBDIR += py-milc
-    SUBDIR += py-mime
     SUBDIR += py-miniKanren
     SUBDIR += py-minidump
     SUBDIR += py-minimal-snowplow-tracker
