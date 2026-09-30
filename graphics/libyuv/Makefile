@@ -9,12 +9,13 @@
 #  -> #define LIBYUV_VERSION 1741
 
 PORTNAME=	libyuv
-DISTVERSION=	0.0.1903
+DISTVERSION=	0.0.1973
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/rene/libyuv/:libyuv \
 		LOCAL/mikael/libyuv/:libyuv \
-		LOCAL/tcberner/libyuv/:libyuv
-DISTFILES=	libyuv-${LIBYUV_HASH}.tar.gz:libyuv
+		LOCAL/tcberner/libyuv/:libyuv \
+		LOCAL/arrowd/libyuv/:libyuv
+DISTFILES=	libyuv-${LIBYUV_HASH}${EXTRACT_SUFX}:libyuv
 
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	Library for freeswitch yuv graphics manipulation
@@ -27,7 +28,7 @@ USE_LDCONFIG=	yes
 SUB_FILES=	libyuv.pc
 SUB_LIST=	DISTVERSION=${DISTVERSION}
 
-LIBYUV_HASH=	5a9a6ea936085310f3b9fbd4a774868e6a984ec4
+LIBYUV_HASH=	39445fa162afd60f7266f70ff6a0fba564c3acae
 
 OPTIONS_DEFINE=	JPEG
 OPTIONS_DEFAULT=JPEG
@@ -43,7 +44,7 @@ do-fetch:
 		https://chromium.googlesource.com/libyuv/libyuv.git/+archive/${LIBYUV_HASH}.tar.gz
 
 . if ${USER} == ${MAINTAINER:C/@.*//}
-	scp ${DISTDIR}/libyuv-${LIBYUV_HASH} freefall.freebsd.org:public_distfiles/libyuv
+	scp ${DISTDIR}/libyuv-${LIBYUV_HASH}${EXTRACT_SUFX} freefall.freebsd.org:public_distfiles/libyuv
 . endif
 .endif # defined(MAINTAINER_MODE)
 
