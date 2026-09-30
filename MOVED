@@ -5697,3 +5697,4 @@ security/barnyard2||2026-09-30|Has expired: Upstream has been abandoned, and the
 security/barnyard2-sguil||2026-09-30|Has expired: Upstream has been abandoned, and the project is no longer maintained
 lang/kotlin22|lang/kotlin|2026-09-30|Has expired: The only port that needed Kotlin 2.2 now requires 2.4, use lang/kotlin instead
 comms/zigbee2mqtt||2026-09-30|Has expired: Depends on expired www/node20
+net/hostapd210||2026-09-30|Has expired: Unsupported by upstream
