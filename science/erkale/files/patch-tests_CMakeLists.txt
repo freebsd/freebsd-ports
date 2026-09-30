@@ -1,0 +1,24 @@
+-- Guard the NEO / complex-orbital tests with if(TARGET erkale_neo) so
+-- they are skipped when ERKALE_BUILD_NEO is disabled.  This avoids test
+-- failures caused by experimental targets that fetch dependencies from the
+-- network.
+
+--- tests/CMakeLists.txt.orig	2026-09-30 18:59:18 UTC
++++ tests/CMakeLists.txt
+@@ -63,6 +63,8 @@ add_test(build_chkcompare "${CMAKE_COMMAND}" --build $
+ # To run any tests we need to check that ERKALE and the test comparison binary have been built
+ add_test(build_erkale     "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target erkale)
+ add_test(build_chkcompare "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target chkcompare)
++
++if(TARGET erkale_neo)
+ add_test(build_erkale_neo "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target erkale_neo)
+ 
+ # Multicomponent tests: a proton, a particle of negative charge (which fixes
+@@ -107,6 +109,7 @@ if(ERKALE_TRUST_REGION)
+   if(ERKALE_LIBXC_HAS_EPC)
+     run_neo(neo_dft_epc_tr "-75.84436")
+   endif()
++endif()
+ endif()
+ 
+ # Generate list with genlist.sh

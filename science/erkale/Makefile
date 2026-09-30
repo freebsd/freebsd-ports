@@ -1,6 +1,5 @@
 PORTNAME=	erkale
-DISTVERSION=	g20260415
-PORTREVISION=	1
+DISTVERSION=	g20260930
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,12 +11,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	liberkale_omp.so.0.1.0: undefined reference to `__atomic_compare_exchange'
 
-BUILD_DEPENDS=	armadillo>0:math/armadillo
-LIB_DEPENDS=	libderiv.so:science/libint \
+BUILD_DEPENDS=	armadillo>0:math/armadillo \
+		nlohmann-json>0:devel/nlohmann-json
+LIB_DEPENDS=	libcint.so:science/libcint \
+		libgmp.so:math/gmp \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
-		libint.so:science/libint \
-		libsz.so:science/libaec \
+		libmpfr.so:math/mpfr \
+		libwignernj.so:science/libwignernj \
 		libxc.so:science/libxc
 RUN_DEPENDS=	${LOCALBASE}/share/erkale/basis/6-21G.gbs:science/erkale-pseudopotentials
 
@@ -25,23 +26,26 @@ FLAVORS=	parallel serial
 FLAVOR?=	${FLAVORS:[1]}
 serial_PKGNAMESUFFIX=	-serial
 
-USES=		cmake:noninja compiler:c11 fortran pkgconfig
+USES=		cmake:noninja compiler:c++17-lang fortran pkgconfig
 USE_LDCONFIG=	yes
-USE_CXXSTD=	c++14 # fix build with clang16 due to use of deprecated feature std::random_shuffle
+USE_CXXSTD=	c++17 # upstream requires C++17 (std::sph_bessel, etc.)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	susilehtola
-GH_TAGNAME=	71a378a85ecb14e5a7615e5ccd18eb3fb9335736
+GH_TAGNAME=	62c0f53
 
 TEST_TARGET=	test
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_ARGS=	-DERKALE_SYSTEM_LIBRARY=${DATADIR}/basis
 
+CMAKE_OFF=	ERKALE_BUILD_NEO \
+		ERKALE_FETCH_TREXIO
+
 PLIST_SUB=	SUFFIX="${SUFFIX}"
 
 .if ${FLAVOR} == serial
-CMAKE_OFF=	USE_OPENMP
+CMAKE_OFF+=	USE_OPENMP
 .else # parallel
 CMAKE_ON+=	USE_OPENMP
 SUFFIX=		_omp
@@ -73,5 +77,7 @@ post-install:
 		${MV} ${STAGEDIR}${PREFIX}/bin/erkale_bastool ${STAGEDIR}${PREFIX}/bin/erkale_bastool${SUFFIX}; \
 	fi
 .endif
+
+# tests as of g20260930: 100% tests passed, 0 tests failed out of 184
 
 .include <bsd.port.mk>
