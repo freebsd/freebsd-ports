@@ -1,52 +1,6 @@
---- hermes_cli/gateway.py.orig	2026-08-31 19:29:27 UTC
+--- hermes_cli/gateway.py.orig	2026-09-24 10:08:47 UTC
 +++ hermes_cli/gateway.py
-@@ -2608,6 +2608,45 @@ def supports_systemd_services() -> bool:
-     return True
- 
- 
-+FREEBSD_RC_SCRIPT_NAME = "hermes_gateway"
-+FREEBSD_RC_SCRIPT_PATH = Path("/usr/local/etc/rc.d") / FREEBSD_RC_SCRIPT_NAME
-+FREEBSD_RC_VAR = "hermes_gateway_enable"
-+
-+
-+def is_freebsd() -> bool:
-+    return sys.platform.startswith("freebsd")
-+
-+
-+# Privilege escalators, in preference order.  sudo(8) is preferred so behavior
-+# matches the Linux path used elsewhere in the codebase; doas(1) is the
-+# common lightweight alternative on FreeBSD.
-+_FREEBSD_PRIV_ESCALATORS = ("sudo", "doas")
-+
-+
-+def _freebsd_privilege_escalator() -> str | None:
-+    """Return the first available escalator command name, or None."""
-+    for name in _FREEBSD_PRIV_ESCALATORS:
-+        if shutil.which(name) is not None:
-+            return name
-+    return None
-+
-+
-+def supports_freebsd_rc() -> bool:
-+    """Return True only when running on FreeBSD, the port-installed rc.d
-+    script exists, AND the caller has a viable path to root (already root, or
-+    a privilege escalator like sudo/doas is on PATH).  Without one, callers
-+    cannot drive service(8) or sysrc(8), so the dispatcher falls through to
-+    the generic "not supported" branch and the user can still run
-+    `hermes gateway run` in the foreground."""
-+    if not is_freebsd():
-+        return False
-+    if shutil.which("service") is None:
-+        return False
-+    if not FREEBSD_RC_SCRIPT_PATH.exists():
-+        return False
-+    return _freebsd_is_root() or _freebsd_privilege_escalator() is not None
-+
-+
- def is_macos() -> bool:
-     return sys.platform == "darwin"
- 
-@@ -3492,7 +3531,8 @@ def ensure_gateway_service(context: str = "setup") -> 
+@@ -2710,7 +2710,8 @@ def ensure_gateway_service(context: str = "setup") -> 
          return False
  
      supports_systemd = supports_systemd_services()
@@ -56,7 +10,7 @@
          print_info("  No supported service manager found on this host.")
          print_info("  Run the gateway in the foreground with: hermes gateway")
          return False
-@@ -3510,6 +3550,8 @@ def ensure_gateway_service(context: str = "setup") -> 
+@@ -2728,6 +2729,8 @@ def ensure_gateway_service(context: str = "setup") -> 
              print_info("  Installing the gateway background service ...")
              if supports_systemd:
                  systemd_install(force=False, non_interactive=True)
@@ -65,8 +19,8 @@
              elif is_macos():
                  launchd_install(force=False)
              else:
-@@ -3522,6 +3564,8 @@ def ensure_gateway_service(context: str = "setup") -> 
- 
+@@ -2736,6 +2739,8 @@ def ensure_gateway_service(context: str = "setup") -> 
+                 return True
          if supports_systemd:
              systemd_start()
 +        elif supports_rc:
@@ -74,235 +28,60 @@
          elif is_macos():
              launchd_start()
          else:
-@@ -6145,6 +6189,129 @@ def launchd_status(deep: bool = False):
+@@ -3459,6 +3464,29 @@ def systemd_status(deep: bool = False, system: bool = 
  
  
  # =============================================================================
 +# FreeBSD rc.d service (port-installed hermes_gateway script)
 +# =============================================================================
-+#
-+# The rc.d script itself is shipped by misc/hermes-agent; the CLI only flips
-+# rcvar via sysrc(8) and drives lifecycle via service(8).  ``system=`` is
-+# accepted for API parity with systemd_* helpers but is a no-op — rc.d is
-+# inherently system-scoped.
 +
 +
-+def _freebsd_is_root() -> bool:
-+    try:
-+        return os.geteuid() == 0
-+    except AttributeError:
-+        return False
-+
-+
-+def _freebsd_run_or_print(cmd: list[str], *, action: str) -> bool:
-+    """Run *cmd* directly when root; otherwise prepend the first available
-+    privilege escalator (sudo, then doas).  When none is available, print the
-+    command for the user to run manually and return False.  Returns True on
-+    success."""
-+    if _freebsd_is_root():
-+        try:
-+            subprocess.run(cmd, check=True)
-+            return True
-+        except subprocess.CalledProcessError as e:
-+            print(f"✗ Failed to {action} {FREEBSD_RC_SCRIPT_NAME}: exit {e.returncode}")
-+            return False
-+
-+    escalator = _freebsd_privilege_escalator()
-+    if escalator is None:
-+        print(f"  Run as root: {' '.join(cmd)}")
-+        return False
-+
-+    try:
-+        subprocess.run([escalator] + cmd, check=True)
-+        return True
-+    except subprocess.CalledProcessError as e:
-+        print(f"✗ Failed to {action} {FREEBSD_RC_SCRIPT_NAME}: exit {e.returncode}")
-+        return False
-+
-+
-+def freebsd_rc_install(
-+    force: bool = False,
-+    system: bool = False,
-+    run_as_user: str | None = None,
-+    enable_on_startup: bool = True,
-+    non_interactive: bool = False,
-+):
-+    """Enable hermes_gateway in /etc/rc.conf.  Does NOT start — dispatcher
-+    starts via freebsd_rc_start when the user opts in."""
-+    del force, system, enable_on_startup, non_interactive  # dispatcher parity
-+
-+    import getpass
-+    target_user = run_as_user or getpass.getuser()
-+
-+    print(f"Enabling {FREEBSD_RC_VAR}=YES in /etc/rc.conf...")
-+    _freebsd_run_or_print(
-+        ["sysrc", f"{FREEBSD_RC_VAR}=YES", f"hermes_gateway_user={target_user}"],
-+        action="enable",
-+    )
-+
-+
-+def freebsd_rc_uninstall(system: bool = False):
-+    """Stop the gateway and remove its rcvar.  Leaves the rc.d script in place
-+    (owned by pkg)."""
-+    del system
-+    print(f"Stopping {FREEBSD_RC_SCRIPT_NAME}...")
-+    _freebsd_run_or_print(
-+        ["service", FREEBSD_RC_SCRIPT_NAME, "stop"],
-+        action="stop",
-+    )
-+    print(f"Removing {FREEBSD_RC_VAR} from /etc/rc.conf...")
-+    _freebsd_run_or_print(
-+        ["sysrc", "-x", FREEBSD_RC_VAR],
-+        action="disable",
-+    )
-+    print(f"  (The rc.d script {FREEBSD_RC_SCRIPT_PATH} is owned by the package")
-+    print("   manager — use 'pkg delete hermes-agent' to remove it.)")
-+
-+
-+def freebsd_rc_start(system: bool = False):
-+    del system
-+    _freebsd_run_or_print(
-+        ["service", FREEBSD_RC_SCRIPT_NAME, "start"],
-+        action="start",
-+    )
-+
-+
-+def freebsd_rc_stop(system: bool = False):
-+    del system
-+    _freebsd_run_or_print(
-+        ["service", FREEBSD_RC_SCRIPT_NAME, "stop"],
-+        action="stop",
-+    )
-+
-+
-+def freebsd_rc_restart(system: bool = False):
-+    del system
-+    _freebsd_run_or_print(
-+        ["service", FREEBSD_RC_SCRIPT_NAME, "restart"],
-+        action="restart",
-+    )
-+
-+
-+def freebsd_rc_status(deep: bool = False, system: bool = False, full: bool = False):
-+    del deep, system, full
-+    result = subprocess.run(
-+        ["service", FREEBSD_RC_SCRIPT_NAME, "status"],
-+        check=False,
-+    )
-+    if result.returncode != 0:
-+        print()
-+        print("To start the gateway:")
-+        if _freebsd_is_root():
-+            print("  hermes gateway start")
-+        else:
-+            escalator = _freebsd_privilege_escalator() or "sudo"
-+            print(f"  {escalator} service {FREEBSD_RC_SCRIPT_NAME} start")
-+            print(f"  {escalator} sysrc {FREEBSD_RC_VAR}=YES   # start at boot")
++from hermes_cli.gateway_freebsd import (  # noqa: E402,F401 — facade re-exports; tests patch here
++    FREEBSD_RC_SCRIPT_NAME,
++    FREEBSD_RC_SCRIPT_PATH,
++    FREEBSD_RC_VAR,
++    is_freebsd,
++    _freebsd_is_root,
++    _freebsd_privilege_escalator,
++    supports_freebsd_rc,
++    _freebsd_run_or_print,
++    freebsd_rc_install,
++    freebsd_rc_uninstall,
++    freebsd_rc_start,
++    freebsd_rc_stop,
++    freebsd_rc_restart,
++    freebsd_rc_status,
++)
 +
 +
 +# =============================================================================
- # Gateway Runner
+ # Launchd (macOS)
  # =============================================================================
  
-@@ -8449,6 +8616,18 @@ def _gateway_command_inner(args):
-             )
-             if start_now:
-                 systemd_start(system=system)
-+        elif supports_freebsd_rc():
-+            non_interactive = not (hasattr(sys.stdin, "isatty") and sys.stdin.isatty())
-+            _sn = getattr(args, "start_now", None)
-+            if _sn is not None:
-+                start_now = _sn
-+            elif not non_interactive:
-+                start_now = prompt_yes_no("Start the gateway now after installing the service?", True)
-+            else:
-+                start_now = True
-+            freebsd_rc_install(force=force, run_as_user=run_as_user)
-+            if start_now:
-+                freebsd_rc_start()
-         elif is_macos():
-             launchd_install(force)
-         elif is_windows():
-@@ -8537,6 +8716,8 @@ def _gateway_command_inner(args):
-             sys.exit(1)
-         if supports_systemd_services():
-             systemd_uninstall(system=system)
-+        elif supports_freebsd_rc():
-+            freebsd_rc_uninstall()
-         elif is_macos():
-             launchd_uninstall()
-         elif is_windows():
-@@ -8590,6 +8771,8 @@ def _gateway_command_inner(args):
-             sys.exit(1)
-         if supports_systemd_services():
-             systemd_start(system=system)
-+        elif supports_freebsd_rc():
-+            freebsd_rc_start()
-         elif is_macos():
-             launchd_start()
-         elif is_windows():
-@@ -8673,6 +8856,18 @@ def _gateway_command_inner(args):
-                     service_available = True
-                 except subprocess.CalledProcessError:
-                     pass
-+            elif supports_freebsd_rc():
-+                try:
-+                    freebsd_rc_stop()
-+                    service_available = True
-+                except subprocess.CalledProcessError:
-+                    pass
-+            elif supports_freebsd_rc():
-+                try:
-+                    freebsd_rc_stop()
-+                    service_available = True
-+                except subprocess.CalledProcessError:
-+                    pass
-             elif is_macos() and get_launchd_plist_path().exists():
-                 try:
-                     launchd_stop()
-@@ -8776,6 +8971,12 @@ def _gateway_command_inner(args):
-                     service_stopped = True
-                 except subprocess.CalledProcessError:
-                     pass
-+            elif supports_freebsd_rc():
-+                try:
-+                    freebsd_rc_stop()
-+                    service_stopped = True
-+                except subprocess.CalledProcessError:
-+                    pass
-             elif is_macos() and get_launchd_plist_path().exists():
-                 try:
-                     launchd_stop()
-@@ -8804,6 +9005,8 @@ def _gateway_command_inner(args):
-                 or get_systemd_unit_path(system=True).exists()
-             ):
-                 systemd_start(system=system)
-+            elif supports_freebsd_rc():
-+                freebsd_rc_start()
-             elif is_macos() and get_launchd_plist_path().exists():
-                 launchd_start()
-             elif is_windows():
-@@ -8830,6 +9033,13 @@ def _gateway_command_inner(args):
-                 service_available = True
-             except subprocess.CalledProcessError:
-                 pass
-+        elif supports_freebsd_rc():
-+            service_configured = True
-+            try:
-+                freebsd_rc_restart()
-+                service_available = True
-+            except subprocess.CalledProcessError:
-+                pass
-         elif is_macos() and get_launchd_plist_path().exists():
-             service_configured = True
-             try:
-@@ -8912,6 +9122,9 @@ def _gateway_command_inner(args):
-             or get_systemd_unit_path(system=True).exists()
-         ):
-             systemd_status(deep, system=system, full=full)
-+            _print_gateway_process_mismatch(snapshot)
-+        elif supports_freebsd_rc():
-+            freebsd_rc_status(deep, system=system, full=full)
-             _print_gateway_process_mismatch(snapshot)
-         elif is_macos() and get_launchd_plist_path().exists():
-             launchd_status(deep)
+@@ -4317,6 +4345,8 @@ def _service_backend(*, windows: bool = True) -> str |
+     predicate order every subcommand routes on. ``windows=False`` never probes ``is_windows()``."""
+     if supports_systemd_services():
+         return "systemd"
++    if supports_freebsd_rc():
++        return "freebsd_rc"
+     if is_macos():
+         return "launchd"
+     if windows and is_windows():
+@@ -4329,6 +4359,8 @@ def _service_call(backend: str, verb: str, system: boo
+     can monkeypatch them; only systemd takes a scope, and ``system=None`` omits it (wizard restart)."""
+     if backend == "windows":
+         return getattr(_gw_windows(), verb)()
++    if backend == "freebsd_rc":
++        return globals()[f"freebsd_rc_{verb}"]()
+     if backend == "launchd":
+         return globals()[f"launchd_{verb}"]()
+     fn = globals()[f"systemd_{verb}"]
+@@ -4506,6 +4538,8 @@ def _installed_service_kind_for(windows) -> str | None
+     (a thunk so it runs last, like every caller's original ladder), else None."""
+     if _systemd_unit_installed():
+         return "systemd"
++    if supports_freebsd_rc():
++        return "freebsd_rc"
+     if is_macos() and get_launchd_plist_path().exists():
+         return "launchd"
+     return "windows" if windows() else None

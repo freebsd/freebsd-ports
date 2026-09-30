@@ -1,26 +1,27 @@
---- hermes_cli/uninstall.py.orig	2026-08-31 19:29:27 UTC
+--- hermes_cli/uninstall.py.orig	2026-09-24 10:08:47 UTC
 +++ hermes_cli/uninstall.py
-@@ -278,7 +278,22 @@ def uninstall_gateway_service():
-         except Exception as e:
-             log_warn(f"Could not remove launchd gateway service: {e}")
+@@ -229,6 +229,16 @@ def _remove_launchd_gateway() -> bool:
+     return True
  
--    # 4. Windows: uninstall Scheduled Task + Startup-folder entry.  The
-+    # 4. FreeBSD: rcvar disable via freebsd_rc_uninstall (delegates to
-+    #    sysrc/service).  The rc.d script itself is pkg-owned and is removed
-+    #    by `pkg delete hermes-agent`, not here.
-+    elif system == "FreeBSD":
-+        try:
-+            from hermes_cli.gateway import (
-+                supports_freebsd_rc,
-+                freebsd_rc_uninstall,
-+            )
-+            if supports_freebsd_rc():
-+                freebsd_rc_uninstall()
-+                stopped_something = True
-+        except Exception as e:
-+            log_warn(f"Could not remove FreeBSD gateway service: {e}")
+ 
++def _remove_freebsd_gateway() -> bool:
++    """FreeBSD: disable the rcvar via freebsd_rc_uninstall (delegates to sysrc/service).
++    The rc.d script itself is pkg-owned and is removed by `pkg delete hermes-agent`."""
++    from hermes_cli.gateway import supports_freebsd_rc, freebsd_rc_uninstall
++    if not supports_freebsd_rc():
++        return False
++    freebsd_rc_uninstall()
++    return True
 +
-+    # 5. Windows: uninstall Scheduled Task + Startup-folder entry.  The
-     #    gateway_windows module already knows how to locate and remove both
-     #    code paths (schtasks /Delete + .cmd unlink) and how to stop any
-     #    running detached pythonw gateway process.  We call into it so the
++
+ def _remove_windows_gateway() -> bool:
+     """Windows: uninstall Scheduled Task + Startup-folder entry via ``gateway_windows`` (it owns
+     schtasks /Delete, the .cmd unlink and stopping the detached pythonw gateway)."""
+@@ -252,6 +262,7 @@ _GATEWAY_SERVICE_REMOVERS = {
+ _GATEWAY_SERVICE_REMOVERS = {
+     "Linux": (_remove_systemd_gateway, "Could not check systemd gateway services"),
+     "Darwin": (_remove_launchd_gateway, "Could not remove launchd gateway service"),
++    "FreeBSD": (_remove_freebsd_gateway, "Could not remove FreeBSD gateway service"),
+     "Windows": (_remove_windows_gateway, "Could not check Windows gateway service")}
+ 
+ # Windows helpers. install.ps1 leaves four things no rc file covers: User-scope env vars
