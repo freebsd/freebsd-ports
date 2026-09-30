@@ -6635,7 +6635,6 @@
     SUBDIR += pyobfuscate
     SUBDIR += pyotherside-qt5
     SUBDIR += pyside2
-    SUBDIR += pyside2-tools
     SUBDIR += pyside6
     SUBDIR += pyside6-tools
     SUBDIR += pystring
