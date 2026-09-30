@@ -5651,3 +5651,4 @@ sysutils/cfengine-masterfiles325||2026-09-30|Has expired: FreeBSD will only supp
 sysutils/cfengine325||2026-09-30|Has expired: FreeBSD will only support N and N-1
 sysutils/cfengine-masterfiles324||2026-09-30|Has expired: FreeBSD will only support N and N-1
 sysutils/cfengine324||2026-09-30|Has expired: FreeBSD will only support N and N-1
+textproc/redisearch22|textproc/redisearch24|2026-09-30|Has expired: Redisearch 2.2 is no longer maintained use textproc/redisearch24 instead
