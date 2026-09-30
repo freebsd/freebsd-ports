@@ -4,7 +4,7 @@ DISTVERSION=	26.05
 PORTREVISION=	3
 CATEGORIES=	graphics
 
-MAINTAINER=	yuri@FreeBSD.org
+MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Universal Scene Description is a scene description management system
 WWW=		http://www.openusd.org/
 
