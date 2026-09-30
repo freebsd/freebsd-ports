@@ -425,7 +425,6 @@
     SUBDIR += libsphinxclient
     SUBDIR += libstaroffice
     SUBDIR += libstree
-    SUBDIR += libtextcat
     SUBDIR += libtranslate
     SUBDIR += libtre
     SUBDIR += libucl
