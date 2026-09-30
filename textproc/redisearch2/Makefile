@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.14
+DISTVERSION=	2.10.15
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:R}
 
@@ -29,10 +29,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
 GH_TUPLE=	RedisAI:VectorSimilarity:f45dd53:vectorsimilarity/deps/VectorSimilarity \
+		redis:hiredis:052f99a:hiredis/deps/hiredis \
 		RedisLabsModules:readies:c609278:readies/deps/readies \
 		RedisLabs:RedisModulesSDK:6a62be4:redismodulesdk/deps/RedisModulesSDK \
 
-CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
+CMAKE_ARGS=	-DBOOST_DIR=${LOCALBASE} \
+		-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION} \
 		-DOS=freebsd -Wno-dev
 
 PLIST_FILES=	lib/${PORTNAME}${PKGNAMESUFFIX}.so
