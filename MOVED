@@ -5658,3 +5658,4 @@ security/wapiti||2026-09-30|Has expired: Outdated, pip install wapiti3 in a venv
 sysutils/py-ansible-core218||2026-09-30|Has expired: FreeBSD will only support N and N-1
 x11-fonts/py-fontmake||2026-09-30|Has expired: Depends on expired x11-fonts/py-cu2qu
 security/openssl34||2026-09-30|Has expired: Please use security/openssl (LTS)
+textproc/apache-commons-digester||2026-09-30|Has expired: Port only copies a jar. Version 3 was released in 2011. Not used in the ports tree. No maintainer. If you use this, please tell me

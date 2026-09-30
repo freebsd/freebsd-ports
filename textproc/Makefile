@@ -54,7 +54,6 @@
     SUBDIR += ansifilter
     SUBDIR += antiword
     SUBDIR += apache-commons-csv
-    SUBDIR += apache-commons-digester
     SUBDIR += apache-poi
     SUBDIR += apache-solr
     SUBDIR += apache-xmlbeans
