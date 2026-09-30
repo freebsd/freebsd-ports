@@ -1,3 +1,196 @@
+  <vuln vid="6d92b2a3-bcce-11f1-906f-bc241121aa0a">
+    <topic>FreeBSD -- IPv6 UDP sendto(2) bypasses jail loopback restriction</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_4</lt></range>
+	<range><ge>15.0</ge><lt>15.0_14</lt></range>
+	<range><ge>14.5</ge><lt>14.5_1</lt></range>
+	<range><ge>14.4</ge><lt>14.4_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The IPv6 UDP send path for unconnected sockets did not apply
+	  the jail policy of rewriting a loopback destination address to the
+	  jail's primary IPv6 address.</p>
+	<h1>Impact:</h1>
+	  <p>A process in a classic (non-VNET) jail can send UDP datagrams
+	  to services listening on the host's IPv6 loopback address, bypassing
+	  jail network isolation.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101303</cvename>
+      <freebsdsa>SA-26:69.udp</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-09-29</discovery>
+      <entry>2026-09-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="36c2abd8-bcce-11f1-906f-bc241121aa0a">
+    <topic>FreeBSD -- Remote DoS via receive-side kernel TLS</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_4</lt></range>
+	<range><ge>15.0</ge><lt>15.0_14</lt></range>
+	<range><ge>14.5</ge><lt>14.5_1</lt></range>
+	<range><ge>14.4</ge><lt>14.4_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>TLS 1.3 embeds the actual record type as the last non-zero byte
+	  of the decrypted payload, optionally followed by zero padding.  The
+	  code which searches for the inner record type had an off-by-one bug
+	  which could be triggered by an invalid frame, leading to an underflow
+	  followed by an unconditional NULL pointer dereference, causing a
+	  kernel panic.</p>
+	<h1>Impact:</h1>
+	  <p>A remote TLS 1.3 peer can send a specially crafted record to
+	  trigger a kernel panic, resulting in a Denial of Service (DoS).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101302</cvename>
+      <freebsdsa>SA-26:67.ktls</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-09-29</discovery>
+      <entry>2026-09-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1fe3495b-bccd-11f1-906f-bc241121aa0a">
+    <topic>FreeBSD -- Multiple jail filesystem root escapes</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_4</lt></range>
+	<range><ge>15.0</ge><lt>15.0_14</lt></range>
+	<range><ge>14.5</ge><lt>14.5_1</lt></range>
+	<range><ge>14.4</ge><lt>14.4_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>Three flaws allow a jailed process to bypass FD_RESOLVE_BENEATH:</p>
+	  <ol>
+	  <li>When fdescfs(4) was mounted in a jail with the "nodup" option,
+	  opening /dev/fd/N returned a descriptor that did not inherit
+	  FD_RESOLVE_BENEATH or the Capsicum capability rights of descriptor
+	  N.  (CVE-2026-101304)</li>
+	  <li>renameat(2) did not enforce FD_RESOLVE_BENEATH on its directory
+	  arguments.  A jailed process could rename a directory relative to
+	  a restricted descriptor, then escape the jail root via fchdir(2).
+	  This requires the directory to reside on a filesystem that is also
+	  reachable from the jail's root.  (CVE-2026-101305)</li>
+	  <li>SCM_RIGHTS file descriptor passing did not preserve FD_RESOLVE_BENEATH
+	  when a descriptor was transferred.  A process could clear the
+	  restriction by sending the descriptor to itself over a Unix domain
+	  socket.  (CVE-2026-101306)</li>
+	  </ol>
+	<h1>Impact:</h1>
+	  <p>A process in a jail that has received a directory file descriptor
+	  from another jail can use these techniques to escape the jail's
+	  filesystem root restriction.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101304</cvename>
+      <cvename>CVE-2026-101305</cvename>
+      <cvename>CVE-2026-101306</cvename>
+      <freebsdsa>SA-26:66.jail</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-09-29</discovery>
+      <entry>2026-09-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d725b228-bccc-11f1-906f-bc241121aa0a">
+    <topic>FreeBSD -- Memory safety bugs in kqueue copy-on-fork implementation</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When copying knotes from a parent kqueue to a child, the copy
+	  code did not correctly exclude marker knotes (used internally to
+	  track list traversal position) before marking them as in-flux and
+	  releasing the kqueue lock.  If another thread freed a marker while
+	  the lock was dropped, the subsequent in-flux decrement operated on
+	  freed memory.  (CVE-2026-58099)</p>
+	  <p>kqueue_fork_copy_knote() indexed into the child's file descriptor
+	  table using a knote's file descriptor number without a bounds check.
+	  Because the child's table is copied before knotes are transferred,
+	  a concurrent thread in the parent could grow the parent's table and
+	  register knotes with file descriptor numbers beyond the end of the
+	  child's table, causing an out-of-bounds read.  (CVE-2026-58100)</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user may be able to exploit these races
+	  to escalate privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58099</cvename>
+      <cvename>CVE-2026-58100</cvename>
+      <freebsdsa>SA-26:65.kqueue</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-09-29</discovery>
+      <entry>2026-09-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6ef25129-bccc-11f1-906f-bc241121aa0a">
+    <topic>FreeBSD -- Heap out-of-bounds access in semop(2)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_4</lt></range>
+	<range><ge>15.0</ge><lt>15.0_14</lt></range>
+	<range><ge>14.5</ge><lt>14.5_1</lt></range>
+	<range><ge>14.4</ge><lt>14.4_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When semop(2) blocks waiting for a semaphore condition, it
+	  releases the per-set lock and sleeps.  Upon waking, it checks the
+	  sequence number embedded in the semaphore set's IPC identifier to
+	  detect whether the set was removed while the caller was asleep.
+	  This sequence number is only 15 bits wide.  If enough semaphore
+	  sets are created and destroyed in the same table slot while a caller
+	  is blocked, the counter wraps around, and semop(2) may falsely
+	  conclude that the original set still exists.  The subsequent access
+	  to a semaphore within the set may then be out of bounds.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user can trigger an out-of-bounds access
+	  on kernel heap memory, potentially leading to privilege escalation.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-58098</cvename>
+      <freebsdsa>SA-26:64.sysvsem</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-09-29</discovery>
+      <entry>2026-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0d183075-bcb5-11f1-b09d-8447094a420f">
     <topic>OpenSSL -- Multiple vulnerabilities</topic>
     <affects>
