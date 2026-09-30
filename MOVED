@@ -5655,3 +5655,4 @@ textproc/redisearch22|textproc/redisearch24|2026-09-30|Has expired: Redisearch 2
 sysutils/cfengine-masterfiles326||2026-09-30|Has expired: FreeBSD will only support N and N-1
 sysutils/cfengine326||2026-09-30|Has expired: FreeBSD will only support N and N-1
 security/wapiti||2026-09-30|Has expired: Outdated, pip install wapiti3 in a venv if needed
+sysutils/py-ansible-core218||2026-09-30|Has expired: FreeBSD will only support N and N-1
