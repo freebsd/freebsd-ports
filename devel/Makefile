@@ -701,7 +701,6 @@
     SUBDIR += erlang-native-compiler
     SUBDIR += erlang-rebar3_hex
     SUBDIR += erlang-recon
-    SUBDIR += es-eric6
     SUBDIR += esbuild
     SUBDIR += estd
     SUBDIR += etcd
