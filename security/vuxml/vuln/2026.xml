@@ -3,15 +3,15 @@
     <affects>
       <package>
 	<name>openssl</name>
-	<range><lt>3.0.23,1</lt></range>
+	<range><lt>3.5.9,1</lt></range>
+      </package>
+      <package>
+	<name>openssl30</name>
+	<range><lt>3.0.23</lt></range>
       </package>
       <package>
 	<name>openssl34</name>
 	<range><lt>3.4.8</lt></range>
-      </package>
-      <package>
-	<name>openssl35</name>
-	<range><lt>3.5.9</lt></range>
       </package>
       <package>
 	<name>openssl36</name>
@@ -65,6 +65,7 @@
     <dates>
       <discovery>2026-09-29</discovery>
       <entry>2026-09-30</entry>
+      <modified>2026-09-30</modified>
     </dates>
   </vuln>
 
