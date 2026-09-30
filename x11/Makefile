@@ -54,7 +54,6 @@
     SUBDIR += cliphist
     SUBDIR += clipman
     SUBDIR += colormeter
-    SUBDIR += compton-conf
     SUBDIR += conlecterm
     SUBDIR += contour
     SUBDIR += controllermap
