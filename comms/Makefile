@@ -240,6 +240,5 @@
     SUBDIR += xnecview
     SUBDIR += yagiuda
     SUBDIR += yfklog
-    SUBDIR += zigbee2mqtt
 
 .include <bsd.port.subdir.mk>
