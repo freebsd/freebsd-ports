@@ -5712,3 +5712,4 @@ devel/pyside2||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 devel/swig40|devel/swig|2026-09-30|Has expired: Outdated. Use devel/swig instead
 sysutils/rubygem-facter|sysutils/rubygem-openfact|2026-09-30|Has expired: Discontinued, use sysutils/rubygem-openfact
 textproc/libtextcat|textproc/libexttextcat|2026-09-30|Has expired: It has been superseded by textproc/libexttextcat
+science/py-obspy||2026-09-30|Has expired: Depends on expired databases/py-sqlalchemy10

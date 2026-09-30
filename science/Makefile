@@ -399,7 +399,6 @@
     SUBDIR += py-nglview
     SUBDIR += py-nibabel
     SUBDIR += py-nixio
-    SUBDIR += py-obspy
     SUBDIR += py-oddt
     SUBDIR += py-openbabel
     SUBDIR += py-openpiv
