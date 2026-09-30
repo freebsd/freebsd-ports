@@ -695,7 +695,6 @@
     SUBDIR += envsubst
     SUBDIR += epl.el
     SUBDIR += epm
-    SUBDIR += eql5
     SUBDIR += eric6
     SUBDIR += erlang-cl
     SUBDIR += erlang-native-compiler

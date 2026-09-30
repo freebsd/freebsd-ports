@@ -5671,3 +5671,4 @@ security/wpa_supplicant29||2026-09-30|Has expired: Unsupported by upstream
 security/py-pyaff4||2026-09-30|Has expired: No longer depended upon
 archivers/py-python-snappy||2026-09-30|Has expired: No longer depended upon
 deskutils/mindforger||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
+devel/eql5||2026-09-30|Has expired: Abandoned, depends on deprecated Qt5 WebEngine
