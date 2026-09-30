@@ -1,6 +1,6 @@
 PORTNAME=	nanodbc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.1
+DISTVERSION=	3.0.2
 CATEGORIES=	databases devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,6 +43,6 @@ pre-test:
 	@${ECHO_CMD} 'Driver=${LOCALBASE}/lib/libsqlite3odbc.so' >> ${WRKDIR}/.odbc/odbcinst.ini
 	@${ECHO_CMD} 'Setup=${LOCALBASE}/lib/libsqlite3odbc.so' >> ${WRKDIR}/.odbc/odbcinst.ini
 
-# tests as of 3.0.1: 100% tests passed, 0 tests failed out of 2
+# tests as of 3.0.2: 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>
