@@ -637,7 +637,7 @@ proxydeps_suggest_uses() {
 	# When updating this, please also update the versions list in
 	# bsd.default-versions.mk and ssl.mk!
 	elif [ ${pkg} = "security/openssl" \
-	  -o ${pkg} = "security/openssl34" -o ${pkg} = "security/openssl35" \
+	  -o ${pkg} = "security/openssl35" \
 	  -o ${pkg} = "security/openssl36" \
 	  -o ${pkg} = "security/libressl" -o ${pkg} = "security/libressl-devel" \
 	  ]; then

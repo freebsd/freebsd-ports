@@ -10,7 +10,7 @@
 #
 # When updating this, please also update the same list in bsd.default-versions.mk
 # and the checks for USES=ssl in qa.sh!
-# Variants being base, openssl, openssl34, openssl35,
+# Variants being base, openssl, openssl35,
 # openssl36, libressl, and libressl-devel.
 #
 # The Makefile sets these variables:

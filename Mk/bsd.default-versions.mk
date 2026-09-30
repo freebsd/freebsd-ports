@@ -166,7 +166,7 @@ RUST_DEFAULT?=		rust
 SAMBA_DEFAULT?=		4.16
 # When updating this, please also update the same list in ssl.mk and the checks
 # for USES=ssl in qa.sh!
-# Possible values: base, openssl, openssl34, openssl35,
+# Possible values: base, openssl, openssl35,
 # openssl36, libressl, libressl-devel
 .  if !defined(SSL_DEFAULT)
 #	If no preference was set, check for an installed base version
