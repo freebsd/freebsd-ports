@@ -2598,7 +2598,6 @@
     SUBDIR += snarf
     SUBDIR += so
     SUBDIR += sogo
-    SUBDIR += sogo2
     SUBDIR += sogo2-activesync
     SUBDIR += spawn-fcgi
     SUBDIR += spreadlogd
