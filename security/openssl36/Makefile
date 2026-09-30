@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	3.6.4
+DISTVERSION=	3.6.5
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	36
 MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
@@ -11,7 +11,10 @@ WWW=		https://www.openssl.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl[14]* openssl3[1234] openssl*-quictls
+DEPRECATED=	Please use security/openssl (LTS)
+EXPIRES=	2026-11-01
+
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl3[04] openssl4?
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
