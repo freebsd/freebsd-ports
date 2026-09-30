@@ -5700,3 +5700,4 @@ comms/zigbee2mqtt||2026-09-30|Has expired: Depends on expired www/node20
 net/hostapd210||2026-09-30|Has expired: Unsupported by upstream
 net/hostapd29||2026-09-30|Has expired: Unsupported by upstream
 devel/kassert||2026-09-30|Has expired: no longer required
+net-im/cutegram||2026-09-30|Has expired: Abandoned, depends on deprecated Qt5 WebEngine
