@@ -269,7 +269,6 @@
     SUBDIR += oggvideotools
     SUBDIR += ogmtools
     SUBDIR += olive
-    SUBDIR += onevpl
     SUBDIR += openh264
     SUBDIR += openshot
     SUBDIR += opentimelineio

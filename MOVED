@@ -5681,3 +5681,4 @@ devel/electron40||2026-09-30|Has expired: EOLed upstream, switch to newer versio
 devel/lnphost||2026-09-30|Has expired: Deprecated upstream: Consider porting brickOS-bibo as a replacement
 german/eric6||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 biology/ddocent||2026-09-30|Has expired: No apparent interest, unable to maintain
+multimedia/onevpl||2026-09-30|Has expired: Upstream has been renamed to libvpl and libvpl-tools. Use multimedia/libvpl and multimedia/libvpl-tools instead
