@@ -5644,3 +5644,4 @@ net/qoauth-qt5||2026-09-30|Has expired: Discontinued, not needed for modern Qt b
 audio/musescore3|audio/musescore|2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine, consider to use audio/musescore
 emulators/qmc2||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 www/sogo2|www/sogo|2026-09-30|Has expired: No longer actively developed since 2022
+www/sogo2-activesync||2026-09-30|Has expired: No longer actively developed since 2022
