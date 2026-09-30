@@ -5708,3 +5708,4 @@ finance/pear_Payment_DTA||2026-09-30|Has expired: Abandoned upstream (last relea
 databases/xtrabackup80|databases/xtrabackup84|2026-09-30|Has expired: Upstream has reached EOL favor of databases/xtrabackup84
 graphics/natron||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine, not ported to Qt6
 deskutils/kchmviewer|deskutils/uchmviewer|2026-09-30|Has expired: Development stalled; use deskutils/uchmviewer
+devel/pyside2||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
