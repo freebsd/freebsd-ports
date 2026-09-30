@@ -1,5 +1,5 @@
 PORTNAME=	dionysus
-PORTVERSION=	2.1.8
+PORTVERSION=	2.2.3
 CATEGORIES=	math
 PKGNAMESUFFIX=	-topology-library
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/adaptors.hpp:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/include/boost/range/adaptors.hpp:devel/boost-libs
 
-USES=		cmake
+USES=		cmake:testing
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrzv
@@ -26,5 +26,7 @@ NO_ARCH=	yes
 
 do-install:
 	cd ${WRKSRC}/include && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${PREFIX}/include
+
+# tests as of 2.2.3: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
