@@ -1,3 +1,73 @@
+  <vuln vid="0d183075-bcb5-11f1-b09d-8447094a420f">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.23,1</lt></range>
+      </package>
+      <package>
+	<name>openssl34</name>
+	<range><lt>3.4.8</lt></range>
+      </package>
+      <package>
+	<name>openssl35</name>
+	<range><lt>3.5.9</lt></range>
+      </package>
+      <package>
+	<name>openssl36</name>
+	<range><lt>3.6.5</lt></range>
+      </package>
+      <package>
+	<name>openssl40</name>
+	<range><lt>4.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20260929.txt">
+	  <ul>
+	    <li>DTLS Retransmits Handshake Messages From a Stale Buffer Offset (CVE-2026-84782) [High]</li>
+	    <li>Use-After-Free in X.509 Extension Cache Under Concurrent Use (CVE-2026-84783) [Moderate]</li>
+	    <li>Excessive Memory Allocation in Relative CRLDP Processing (CVE-2026-35189) [Low]</li>
+	    <li>QUIC Unvalidated Amplification Credit may be Over Accounted (CVE-2026-35191) [Low]</li>
+	    <li>Potential CPU DoS via O(n^2) Fragment Reassembly in QUIC (CVE-2026-42772) [Low]</li>
+	    <li>Timing Side-Channel in Scalar Multiplication for Non-NIST EC Curves (CVE-2026-54872) [Low]</li>
+	    <li>QUIC STREAM Fragment Metadata DoS (CVE-2026-54873) [Low]</li>
+	    <li>Non-Constant-Time SM2 Scalar Multiplication on ARM64 and RISC-V (CVE-2026-54875) [Low]</li>
+	    <li>Out-of-Bounds Access After SSL_set_SSL_CTX() During a Handshake (CVE-2026-72897) [Low]</li>
+	    <li>QUIC Connection-Level Flow Control is Not Enforced for Streams (CVE-2026-75804) [Low]</li>
+	    <li>NULL Pointer Dereference in CMP Client Revocation Response Handling (CVE-2026-75805) [Low]</li>
+	    <li>Unauthenticated and Undersized DTLS 1.2 AEAD Record Causes DoS (CVE-2026-75806) [Low]</li>
+	    <li>Timing Side-Channel in SM2 Signature Generation (CVE-2026-77696) [Low]</li>
+	    <li>QUIC: Unbounded RETIRE_CONNECTION_ID Backlog (CVE-2026-84784) [Low]</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-84782</cvename>
+      <cvename>CVE-2026-84783</cvename>
+      <cvename>CVE-2026-35189</cvename>
+      <cvename>CVE-2026-35191</cvename>
+      <cvename>CVE-2026-42772</cvename>
+      <cvename>CVE-2026-54872</cvename>
+      <cvename>CVE-2026-54873</cvename>
+      <cvename>CVE-2026-54875</cvename>
+      <cvename>CVE-2026-72897</cvename>
+      <cvename>CVE-2026-75804</cvename>
+      <cvename>CVE-2026-75805</cvename>
+      <cvename>CVE-2026-75806</cvename>
+      <cvename>CVE-2026-77696</cvename>
+      <cvename>CVE-2026-84784</cvename>
+      <url>https://openssl-library.org/news/secadv/20260929.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-09-29</discovery>
+      <entry>2026-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="15e880b4-b9ed-11f1-b17e-3c7c3fba4204">
     <topic>Fetchmail -- NTLM potential remote code execution</topic>
     <affects>
