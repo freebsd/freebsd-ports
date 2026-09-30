@@ -1,6 +1,6 @@
 PORTNAME=	postfix
 DISTVERSION=	3.11.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -78,7 +78,7 @@ COMMENT_pgsql=	(with PostgreSQL support)
 COMMENT_sasl=	(with Cyrus SASL support)
 COMMENT_sqlite=	(with SQLite support)
 
-USES=		cpe shebangfix ssl
+USES=		cpe pkgconfig shebangfix ssl
 USE_RC_SUBR=	postfix
 USE_SUBMAKE=	yes
 
@@ -136,7 +136,7 @@ BDB_USES=			bdb
 CDB_LIB_DEPENDS=		libcdb.so:databases/tinycdb
 EAI_LIB_DEPENDS=		libicuuc.so:devel/icu
 LDAP_USES=			ldap
-LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb0
+LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb
 MONGO_LIB_DEPENDS=		libbson2.so:devel/libbson \
 				libmongoc2.so:devel/mongo-c-driver
 MYSQL_USES?=			mysql
@@ -293,8 +293,8 @@ POSTFIX_CCARGS+=	-DNO_TLS
 .endif
 
 .if ${PORT_OPTIONS:MTLSRPT}
-POSTFIX_CCARGS+=	-DUSE_TLSRPT -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib -ltlsrpt
+POSTFIX_CCARGS+=	-DUSE_TLSRPT `pkg-config --cflags libtlsrpt`
+POSTFIX_AUXLIBS+=	`pkg-config --libs libtlsrpt`
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
@@ -315,7 +315,6 @@ IGNORE=		blocklistd is only supported on FreeBSD
 .endif
 
 .if ${PORT_OPTIONS:MMONGO}
-USES+=			pkgconfig
 DYN_EXT+=		mongodb
 POSTFIX_CCARGS+=	-DHAS_MONGODB `pkg-config --cflags mongoc2`
 POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_MONGODB=`pkg-config --libs mongoc2`"
@@ -330,29 +329,29 @@ _REQUIRE+=		mysql
 
 .if ${PORT_OPTIONS:MPGSQL}
 DYN_EXT+=		pgsql
-POSTFIX_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_PGSQL=-L${LOCALBASE}/lib -lpq"
+POSTFIX_CCARGS+=	-DHAS_PGSQL `pkg-config --cflags libpq`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_PGSQL=`pkg-config --libs libpq`"
 _REQUIRE+=		postgresql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
 DYN_EXT+=		sqlite
-POSTFIX_CCARGS+=	-DHAS_SQLITE -I${LOCALBASE}/include
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_SQLITE=-L${LOCALBASE}/lib -lsqlite3 -lpthread"
+POSTFIX_CCARGS+=	-DHAS_SQLITE `pkg-config --cflags sqlite3`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_SQLITE=`pkg-config --libs sqlite3`"
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
 DYN_EXT+=		ldap
-POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include \
+POSTFIX_CCARGS+=	-DHAS_LDAP `pkg-config --cflags ldap` \
 			-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LDAP=-L${LOCALBASE}/lib -lldap -llber"
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LDAP=`pkg-config --libs ldap`"
 _REQUIRE+=		slapd
 .endif
 
 .if ${PORT_OPTIONS:MCDB}
 DYN_EXT+=		cdb
-POSTFIX_CCARGS+=	-DHAS_CDB -I${LOCALBASE}/include
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_CDB=-L${LOCALBASE}/lib -lcdb"
+POSTFIX_CCARGS+=	-DHAS_CDB `pkg-config --cflags libcdb`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_CDB=`pkg-config --libs libcdb`"
 .endif
 
 .if ${PORT_OPTIONS:MNIS}
@@ -367,8 +366,8 @@ MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
 
 .if ${PORT_OPTIONS:MLMDB}
 DYN_EXT+=		lmdb
-POSTFIX_CCARGS+=	-DHAS_LMDB -I${LOCALBASE}/include
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LMDB=-L${LOCALBASE}/lib -llmdb"
+POSTFIX_CCARGS+=	-DHAS_LMDB `pkg-config --cflags lmdb`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LMDB=`pkg-config --libs lmdb`"
 .endif
 
 # sed script for files in ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man
