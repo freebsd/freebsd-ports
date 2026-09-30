@@ -1,5 +1,6 @@
 PORTNAME=	gnome-user-share
 PORTVERSION=	47.2
+PORTREVISION=	1
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -8,6 +9,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Personal file-sharing service for the GNOME Desktop
 
 LICENSE=	GPLv2+
+
+DEPRECATED=	Depends on expired www/mod_dnssd
+EXPIRATION_DATE=2026-10-31
 
 RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_dnssd>=0:www/mod_dnssd \
 		console-kit-daemon:sysutils/consolekit2
