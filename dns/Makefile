@@ -16,7 +16,6 @@
     SUBDIR += coredns
     SUBDIR += ddclient
     SUBDIR += ddns
-    SUBDIR += denominator
     SUBDIR += dhisd
     SUBDIR += dlint
     SUBDIR += dns-blackhole

@@ -5666,3 +5666,4 @@ devel/pyside2-tools||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 russian/eric6||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 devel/rubygem-pdk||2026-09-30|Has expired: Depends on expired sysutils/rubygem-facter
 audio/py-pocketsphinx||2026-09-30|Has expired: Depends on expired devel/swig40
+dns/denominator|dns/py-dns-lexicon|2026-09-30|Has expired: Project has been archived use dns/py-dns-lexicon
