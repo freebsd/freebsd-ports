@@ -1,6 +1,6 @@
 PORTNAME=	fcitx5-hazkey
 DISTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	LOCAL/tagattie/${PORTNAME}:swiftpackages
 DISTFILES=	${PORTNAME}-${DISTVERSION}-swift-packages${EXTRACT_SUFX}:swiftpackages
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	git:devel/git \
 		glslc:graphics/shaderc \
 		vulkan-headers>0:graphics/vulkan-headers \
-		${LOCALBASE}/swift6/bin/swift:lang/swift6
+		${LOCALBASE}/swift6/usr/local/bin/swift:lang/swift6
 LIB_DEPENDS=	libprotobuf-lite.so:devel/protobuf \
 		libvulkan.so:graphics/vulkan-loader \
 		libFcitx5Core.so:textproc/fcitx5
@@ -32,7 +32,7 @@ GH_TUPLE=	azooKey:azooKey_dictionary_storage:e9796e052793c0d4ac304a27f9db4b7beb7
 USE_GL=		gl opengl
 USE_QT=		base tools:build
 
-BINARY_ALIAS=	swift=${LOCALBASE}/swift6/bin/swift
+BINARY_ALIAS=	swift=${LOCALBASE}/swift6/usr/local/bin/swift
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/.build/hazkey-server/swift-build
@@ -57,7 +57,7 @@ post-install:
 make-swift-packages-cache: extract
 	@${MKDIR} ${WRKDIR}/swift-packages-cache
 	@cd ${WRKSRC}/hazkey-server && \
-	${SETENV} ${MAKE_ENV} ${LOCALBASE}/swift6/bin/swift package \
+	${SETENV} ${MAKE_ENV} ${LOCALBASE}/swift6/usr/local/bin/swift package \
 		--scratch-path=${WRKDIR}/swift-packages-cache \
 		resolve
 	@${TAR} -czf ${WRKDIR}/${PORTNAME}-${DISTVERSION}-swift-packages${EXTRACT_SUFX} \
