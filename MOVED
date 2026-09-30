@@ -5663,3 +5663,4 @@ x11-toolkits/py-guietta||2026-09-30|Has expired: Abandoned, depends on deprecate
 ftp/oftpd||2026-09-30|Has expired: Abandoned and has known vulnerability (CVE-2005-2239)
 multimedia/py-periscope||2026-09-30|Has expired: Unmaintained upstream, last release 2011
 devel/pyside2-tools||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
+russian/eric6||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
