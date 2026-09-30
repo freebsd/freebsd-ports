@@ -249,6 +249,10 @@ _USES_fetch+=	490:npm-fetch-node-package-manager
 DISTFILES+=	${NPM_CMDNAME}-${NPM_VER}.tgz:prefetch
 FETCH_DEPENDS+=	${_NODEJS_PKGNAME}>0:${_NODEJS_PORT}
 
+.    if ${_NPM_NAME} == pnpm && ${NPM_VER_MAJOR} >= 12
+DISTFILES+=	${NPM_CMDNAME}-exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz:prefetch
+.    endif
+
 npm-fetch-node-package-manager:
 	@${ECHO_MSG} "===>  Fetching and setting up ${NPM_CMDNAME} version ${NPM_VER}"
 	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR} ${WRKDIR}/.bin
@@ -263,7 +267,21 @@ npm-fetch-node-package-manager:
 		${TAR} -cz --options 'gzip:!timestamp' \
 			-f ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-${NPM_VER}.tgz @${NPM_CMDNAME}.mtree; \
 	fi
+.    if ${_NPM_NAME} == pnpm && ${NPM_VER_MAJOR} >= 12
+	@if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz ]; then \
+		${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} \
+			https://registry.npmjs.org/@pnpm/exe.freebsd-${NPM_NODEJS_ARCH}/-/exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz \
+			-o ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz; \
+	fi
+.    endif
 	@${SETENV} ${MAKE_ENV} corepack install -g ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-${NPM_VER}.tgz
+.    if ${_NPM_NAME} == pnpm && ${NPM_VER_MAJOR} >= 12
+	@${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz \
+		-C ${WRKDIR}/.cache/node/corepack/v1/${_NPM_NAME}/${NPM_VER} \
+		--strip-components 1 \
+		--include package/pnpm \
+		-s /pnpm$$/pnpm-native/
+.    endif
 .  endif
 
 .  if ${NPM_PREFETCH:tl} == yes
@@ -470,6 +488,13 @@ npm-extract-node-package-manager:
 	@${MKDIR}  ${WRKDIR}/.bin
 	@${SETENV} ${MAKE_ENV} corepack enable --install-directory ${WRKDIR}/.bin
 	@${SETENV} ${MAKE_ENV} corepack install -g ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-${NPM_VER}.tgz
+.      if ${_NPM_NAME} == pnpm && ${NPM_VER_MAJOR} >= 12
+	@${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${NPM_CMDNAME}-exe.freebsd-${NPM_NODEJS_ARCH}-${NPM_VER}.tgz \
+		-C ${WRKDIR}/.cache/node/corepack/v1/${_NPM_NAME}/${NPM_VER} \
+		--strip-components 1 \
+		--include package/pnpm \
+		-s /pnpm$$/pnpm-native/
+.      endif
 .    else
 	@${DO_NADA}
 .    endif
