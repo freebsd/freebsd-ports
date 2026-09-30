@@ -1,0 +1,21 @@
+This port of the Omada Software Controller uses a modified omada-common
+jar file to alter an OS check to accept "FreeBSD" as a Linux system.
+This requires decompiling the jar file with a tool such as Recaf to change
+the string matched for the os.name check. The path to the class as
+decompiled in Recaf was com/tplink/smb/omada/common/util/S
+
+The function you want to modify looked like this:
+
+    public static boolean c() {
+        boolean isLinuxOS = false;
+        String osName = System.getProperty("os.name");
+        if (osName.toLowerCase(Locale.ROOT).indexOf("linux") > -1) {
+            isLinuxOS = true;
+        }
+        return isLinuxOS;
+    }
+
+The specific class that needs to be patched has changed a few times, so
+searching for this check may be a requirement to update the port again
+or it will not successfully start. The sed/xxd trick used in the
+post-patch is hex that changes "linux" to "freebsd".
