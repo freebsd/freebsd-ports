@@ -185,7 +185,6 @@
     SUBDIR += menumaker
     SUBDIR += merkuro
     SUBDIR += meteo
-    SUBDIR += mindforger
     SUBDIR += moregroupware
     SUBDIR += mozo
     SUBDIR += mybee-qt
