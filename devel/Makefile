@@ -8733,7 +8733,6 @@
     SUBDIR += sonarqube-ant-task
     SUBDIR += sonarqube-community
     SUBDIR += sope
-    SUBDIR += sope2
     SUBDIR += sord
     SUBDIR += spago
     SUBDIR += span
