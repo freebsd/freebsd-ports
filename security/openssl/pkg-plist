@@ -2,7 +2,6 @@ bin/c_rehash
 bin/openssl
 include/openssl/aes.h
 include/openssl/asn1.h
-include/openssl/asn1_mac.h
 include/openssl/asn1err.h
 include/openssl/asn1t.h
 include/openssl/async.h
@@ -14,6 +13,7 @@ include/openssl/bn.h
 include/openssl/bnerr.h
 include/openssl/buffer.h
 include/openssl/buffererr.h
+include/openssl/byteorder.h
 include/openssl/camellia.h
 include/openssl/cast.h
 include/openssl/cmac.h
@@ -49,6 +49,7 @@ include/openssl/dsa.h
 include/openssl/dsaerr.h
 include/openssl/dtls1.h
 include/openssl/e_os2.h
+include/openssl/e_ostime.h
 include/openssl/ebcdic.h
 include/openssl/ec.h
 include/openssl/ecdh.h
@@ -66,9 +67,11 @@ include/openssl/evperr.h
 include/openssl/fips_names.h
 include/openssl/fipskey.h
 include/openssl/hmac.h
+include/openssl/hpke.h
 include/openssl/http.h
 include/openssl/httperr.h
 include/openssl/idea.h
+include/openssl/indicator.h
 include/openssl/kdf.h
 include/openssl/kdferr.h
 include/openssl/lhash.h
@@ -77,6 +80,7 @@ include/openssl/md2.h
 include/openssl/md4.h
 include/openssl/md5.h
 include/openssl/mdc2.h
+include/openssl/ml_kem.h
 include/openssl/modes.h
 include/openssl/obj_mac.h
 include/openssl/objects.h
@@ -98,6 +102,7 @@ include/openssl/pkcs7err.h
 include/openssl/prov_ssl.h
 include/openssl/proverr.h
 include/openssl/provider.h
+include/openssl/quic.h
 include/openssl/rand.h
 include/openssl/randerr.h
 include/openssl/rc2.h
@@ -121,6 +126,7 @@ include/openssl/stack.h
 include/openssl/store.h
 include/openssl/storeerr.h
 include/openssl/symhacks.h
+include/openssl/thread.h
 include/openssl/tls1.h
 include/openssl/trace.h
 include/openssl/ts.h
@@ -131,10 +137,13 @@ include/openssl/ui.h
 include/openssl/uierr.h
 include/openssl/whrlpool.h
 include/openssl/x509.h
+include/openssl/x509_acert.h
 include/openssl/x509_vfy.h
 include/openssl/x509err.h
 include/openssl/x509v3.h
 include/openssl/x509v3err.h
+lib/cmake/OpenSSL/OpenSSLConfig.cmake
+lib/cmake/OpenSSL/OpenSSLConfigVersion.cmake
 %%SHARED%%lib/engines-%%SHLIBVER%%/capi.so
 %%SHARED%%lib/engines-%%SHLIBVER%%/devcrypto.so
 %%SHARED%%lib/engines-%%SHLIBVER%%/loader_attic.so
@@ -223,6 +232,7 @@ share/man/man1/openssl-s_client.1ossl.gz
 share/man/man1/openssl-s_server.1ossl.gz
 share/man/man1/openssl-s_time.1ossl.gz
 share/man/man1/openssl-sess_id.1ossl.gz
+share/man/man1/openssl-skeyutl.1ossl.gz
 share/man/man1/openssl-smime.1ossl.gz
 share/man/man1/openssl-speed.1ossl.gz
 share/man/man1/openssl-spkac.1ossl.gz

@@ -1,4 +1,4 @@
---- util/find-doc-nits.orig	2023-08-01 13:47:24 UTC
+--- util/find-doc-nits.orig	2023-09-07 09:00:22 UTC
 +++ util/find-doc-nits
 @@ -80,7 +80,7 @@ my $temp = '/tmp/docnits.txt';
  my $OUT;

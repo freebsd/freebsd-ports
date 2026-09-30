@@ -2473,7 +2473,6 @@ devel/rubygem-google-protobuf323|devel/rubygem-google-protobuf|2023-10-11|Remove
 audio/rem||2023-10-12|Has expired: Deprecated, replaced by libre
 net/openmpi3|net/openmpi|2023-10-12|Has expired: OpenMPI 3 is not maintained by the upstream project anymore and will be removed
 graphics/tiffgt||2023-10-14|Has expired: Upstream support stopped
-security/openssl30|security/openssl|2023-10-14|Upgrade security/openssl to 3.0
 x11-fonts/gnu-unifont-ttf|x11-fonts/gnu-unifont-otf|2023-10-16|Remove obsoleted port. Use x11-fonts/gnu-unifont-otf instead
 mail/slapd-cyrus||2023-10-20|Has expired: Last upstream release was in 2013
 net/pacemaker1|net/pacemaker2|2023-10-22|Hasn't built in a long time, last upstream release was a while ago, use pacemaker2
@@ -5637,3 +5636,4 @@ graphics/py-lerc|graphics/py-pylerc|2026-09-29|Remove obsoleted port. Use graphi
 sysutils/py-azure-cli-acr|sysutils/py-azure-cli|2026-09-29|Remove obsoleted port. Use sysutils/py-azure-cli instead
 devel/rubygem-google-api-client|devel/rubygem-google-api-core|2026-09-29|Remove obsoleted port. Use devel/rubygem-google-api-core instead
 devel/rubygem-redlock1|devel/rubygem-redlock|2026-09-29|Remove obsoleted port. Use devel/rubygem-redlock instead
+security/openssl35|security/openssl|2026-09-30|Upgrade security/openssl to 3.5

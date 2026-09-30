@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260930:
+  AFFECTS: users of security/openssl and security/openssl35
+  AUTHOR: brnrd@FreeBSD.org
+
+  The openssl port was renamed to openssl30 and subsequently the
+  openssl35 port was renamed to openssl.
+
+  The shared library version of OpenSSL has been bumped.
+
+  Users of DEFAULT_VERSIONS= ssl=openssl35 must update this to
+  ssl=openssl.
+  Users of DEFAULT_VERSIONS= ssl=openssl30 should not change this unless
+  they use ports that require the deprecated  OpenSSL 3.0 version with
+  its documented vulnerabilities.
+
+  You must rebuild all ports that depend on OpenSSL if you use OpenSSL
+  from ports.
+
 20260929:
   AFFECTS: users of www/mod_wsgi
   AUTHOR: michaelo@FreeBSD.org
