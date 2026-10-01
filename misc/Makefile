@@ -825,6 +825,7 @@
     SUBDIR += toilet
     SUBDIR += translate
     SUBDIR += trurl
+    SUBDIR += ttfx
     SUBDIR += ttyrec
     SUBDIR += tudu
     SUBDIR += tvbrowser
