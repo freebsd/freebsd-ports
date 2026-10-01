@@ -1,9 +1,9 @@
 -- Fix license declaration format for PEP 621 compatibility and remove license-files path not present in distfile.
---- pyproject.toml.orig	2026-07-09 20:28:22 UTC
+--- pyproject.toml.orig	2026-09-04 15:16:51 UTC
 +++ pyproject.toml
 @@ -2,8 +2,7 @@ description = "A python library to define and validate
  name = "docling-core"
- version = "2.85.0"  # DO NOT EDIT, updated automatically
+ version = "2.95.0"  # DO NOT EDIT, updated automatically
  description = "A python library to define and validate data types in Docling."
 -license = "MIT"
 -license-files = ["LICENSE"]
