@@ -1,7 +1,6 @@
 PORTNAME=	gau2grid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.7
-PORTREVISION=	2
+DISTVERSION=	2.0.9
 CATEGORIES=	math python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,9 +17,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PY_SETUPTOOLS}
 
 USES=		cmake compiler:c11 python:build # C code build depends on python to generate some headers
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	dgasmith
-USE_LDCONFIG=	yes
 
 CMAKE_OFF=	ENABLE_XHOST
 
