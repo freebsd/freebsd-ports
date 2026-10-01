@@ -229,6 +229,7 @@
     SUBDIR += novelwriter
     SUBDIR += nvi-m17n
     SUBDIR += nvi2
+    SUBDIR += omawrite
     SUBDIR += omegaT
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
