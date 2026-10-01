@@ -710,6 +710,7 @@
     SUBDIR += ogdf
     SUBDIR += oink
     SUBDIR += oleo
+    SUBDIR += omacalc
     SUBDIR += onednn
     SUBDIR += onednn252
     SUBDIR += openblas
