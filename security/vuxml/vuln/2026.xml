@@ -1,3 +1,33 @@
+  <vuln vid="a7738854-bc00-11f1-a829-dca632daf43b">
+    <topic>apache-commons-lang -- Uncontrolled Recursion vulnerability</topic>
+    <affects>
+    <package>
+      <name>apache-commons-lang</name>
+      <range><ge>2.0</ge><lt>2.7</lt></range>
+    </package>
+    <package>
+      <name>apache-commons-lang3</name>
+      <range><ge>3.0</ge><lt>3.18.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OSS-Fuzz, Gary Gregory reports:</p>
+	<blockquote cite="https://www.openwall.com/lists/oss-security/2025/07/11/1">
+	  <p>Uncontrolled Recursion vulnerability in Apache Commons Lang. This issue affects Apache Commons Lang: Starting with commons-lang:commons-lang 2.0 to 2.6, and, from org.apache.commons:commons-lang3 3.0 before 3.18.0. The methods ClassUtils.getClass(...) can throw StackOverflowError on very long inputs. Because an Error is usually not handled by applications and libraries, a StackOverflowError could cause an application to stop. Users are recommended to upgrade to version 3.18.0, which fixes the issue.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-48924</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2025-48924</url>
+    </references>
+    <dates>
+      <discovery>2025-07-11</discovery>
+      <entry>2026-09-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0ef2a442-bd49-11f1-bbb3-901b0e9408dc">
     <topic>conduit -- account takeover vulnerability</topic>
     <affects>
