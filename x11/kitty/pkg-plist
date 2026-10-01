@@ -1040,6 +1040,8 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/shaders/custom/cursor-trail-default.slang
 %%DATADIR%%/kitty/shaders/custom/cursor-trail-lightning.pipeline
 %%DATADIR%%/kitty/shaders/custom/cursor-trail-lightning.slang
+%%DATADIR%%/kitty/shaders/custom/cursor-trail-motion-blur.pipeline
+%%DATADIR%%/kitty/shaders/custom/cursor-trail-motion-blur.slang
 %%DATADIR%%/kitty/shaders/custom/demo.py
 %%DATADIR%%/kitty/shaders/custom/dim-inactive-windows.pipeline
 %%DATADIR%%/kitty/shaders/custom/fireworks-rockets.pipeline
