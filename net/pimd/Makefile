@@ -1,5 +1,5 @@
 PORTNAME=	pimd
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.0
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -19,6 +19,12 @@ USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--localstatedir=/var
+
+OPTIONS_DEFINE=	NETLINK
+OPTIONS_DEFAULT=NETLINK
+
+NETLINK_DESC=	Use netlink(4) for RPF lookups instead of the routing socket
+NETLINK_CONFIGURE_ENABLE=	netlink
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
