@@ -1,3 +1,69 @@
+  <vuln vid="ed670f20-bdc3-11f1-a6ea-8447094a420f">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.6.69</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://downloads.apache.org/httpd/CHANGES_2.4.69">
+	  <ul>
+	    <li>limited RCE for some internal redirects to non-CGI files in CGI directories (CVE-2026-42356) [low]</li>
+	    <li>mod_dav shared lock overflow (CVE-2026-42528) [moderate]</li>
+	    <li>mod_heartmonitor denial of service (CVE-2026-46729) [low]</li>
+	    <li>mod_session: Session cookie not removed during internal redirect (CVE-2026-47360) [low]</li>
+	    <li>mod_auth_digest reauthentication attack (CVE-2026-48005) [low]</li>
+	    <li>mod_charset_lite: Heap overflow in finish_partial_char (CVE-2026-56153) [low]</li>
+	    <li>mod_rewrite use-after-free via %{LA-U:HTTP:...} (CVE-2026-56154) [low]</li>
+	    <li>mod_proxy_html: crash in dump_content (CVE-2026-56449) [low]</li>
+	    <li>mod_http2 use-after-free / wild write via shared session->bbtmp re-entrancy (CVE-2026-57941) [moderate]</li>
+	    <li>mod_dav_fs property database read access (CVE-2026-58415) [low]</li>
+	    <li>Out-of-Bounds Write in ap_directory_walk() Canonical-Name Rewrite on CASE_BLIND_FILESYSTEM (CVE-2026-59685) [moderate]</li>
+	    <li>mod_ssl SSLRequire allows .htaccess ap_expr file-function (CVE-2026-59797) [low]</li>
+	    <li>mod_proxy_ftp PASV address handling (CVE-2026-63045) [low]</li>
+	    <li>mod_vhost_alias stack overflow (CVE-2026-63292) [moderate]</li>
+	    <li>mod_xml2enc crash on charset conversion failure (CVE-2026-63686) [low]</li>
+	    <li>mod_proxy_uwsgi Transfer-Encoding response smuggling (CVE-2026-63718) [low]</li>
+	    <li>mod_auth_digest one-time-nonce replay attack (CVE-2026-73636) [low]</li>
+	    <li>mod_auth_digest DoS attack (CVE-2026-73637) [low]</li>
+	    <li>mod_userdir information disclosure (CVE-2026-79768) [low]</li>
+	    <li>mod_dav_fs namespace overflow (CVE-2026-93546) [moderate]</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42356</cvename>
+      <cvename>CVE-2026-42528</cvename>
+      <cvename>CVE-2026-46729</cvename>
+      <cvename>CVE-2026-47360</cvename>
+      <cvename>CVE-2026-48005</cvename>
+      <cvename>CVE-2026-56153</cvename>
+      <cvename>CVE-2026-56154</cvename>
+      <cvename>CVE-2026-56449</cvename>
+      <cvename>CVE-2026-57941</cvename>
+      <cvename>CVE-2026-58415</cvename>
+      <cvename>CVE-2026-59685</cvename>
+      <cvename>CVE-2026-59797</cvename>
+      <cvename>CVE-2026-63045</cvename>
+      <cvename>CVE-2026-63292</cvename>
+      <cvename>CVE-2026-63686</cvename>
+      <cvename>CVE-2026-63718</cvename>
+      <cvename>CVE-2026-73636</cvename>
+      <cvename>CVE-2026-73637</cvename>
+      <cvename>CVE-2026-79768</cvename>
+      <cvename>CVE-2026-93546</cvename>
+      <url>https://downloads.apache.org/httpd/CHANGES_2.4.69</url>
+    </references>
+    <dates>
+      <discovery>2026-10-01</discovery>
+      <entry>2026-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7738854-bc00-11f1-a829-dca632daf43b">
     <topic>apache-commons-lang -- Uncontrolled Recursion vulnerability</topic>
     <affects>
