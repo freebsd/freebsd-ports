@@ -14,14 +14,15 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libidn.so:dns/libidn \
 		libqca-qt5.so:devel/qca@qt5
 
-USES=		cmake compiler:c++11-lang desktop-file-utils minizip pkgconfig \
-		qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils minizip \
+		pkgconfig qt:5 tar:xz xorg
 USE_QT=		concurrent core dbus gui multimedia network svg widgets \
 		x11extras xml buildtools:build qmake:build imageformats:run
 USE_XORG=	ice sm x11 xcb xext xscrnsaver
 
 CMAKE_ARGS=	-DIDN_LIBRARY:FILEPATH="${LOCALBASE}/lib/libidn.so" \
-		-DIDN_INCLUDE_DIR:PATH="${LOCALBASE}/include"
+		-DIDN_INCLUDE_DIR:PATH="${LOCALBASE}/include" \
+		-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5
 CMAKE_OFF=	ENABLE_WEBKIT
 
 USE_GITHUB=	nodefault
