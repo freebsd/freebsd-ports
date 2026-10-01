@@ -1,6 +1,6 @@
 PORTNAME=	rspamd
 PORTVERSION=	3.11.a1.20241020
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -10,6 +10,9 @@ WWW=		https://rspamd.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+DEPRECATED=	Behind the main port, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	ragel:devel/ragel
 LIB_DEPENDS=	libicui18n.so:devel/icu \
