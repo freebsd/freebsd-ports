@@ -11,7 +11,7 @@ WWW=		https://github.com/MetaCubeX/mihomo/tree/Alpha
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26,modules cpe
+USES=		go:modules cpe
 
 CPE_VENDOR=	metacubex
 

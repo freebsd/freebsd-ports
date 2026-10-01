@@ -11,7 +11,7 @@ WWW=		https://www.chezmoi.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26,modules python
+USES=		go:modules python
 USE_GITHUB=	yes
 GH_ACCOUNT=	twpayne
 

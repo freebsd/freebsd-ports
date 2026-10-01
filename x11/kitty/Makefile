@@ -44,7 +44,7 @@ RUN_DEPENDS=	slangc:graphics/linux-slang
 
 # ncursesw and tinfo >= 6.1 seem to be needed
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		go:modules,1.26 linux:rl9 ncurses pkgconfig python shebangfix ssl tar:xz \
+		go:modules linux:rl9 ncurses pkgconfig python shebangfix ssl tar:xz \
 		terminfo xorg
 CPE_VENDOR=	kovidgoyal
 

@@ -14,7 +14,7 @@ WWW=		https://github.com/grafana/tempo
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	grafana
 GH_PROJECT=	tempo

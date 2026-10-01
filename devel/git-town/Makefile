@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:1.26,modules
+USES=		go:modules
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:sys:v0.6.0:sys
 MAKE_ENV=	GOWORK=off
