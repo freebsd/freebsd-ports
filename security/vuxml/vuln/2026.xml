@@ -1,3 +1,30 @@
+  <vuln vid="0ef2a442-bd49-11f1-bbb3-901b0e9408dc">
+    <topic>conduit -- account takeover vulnerability</topic>
+    <affects>
+      <package>
+	<name>matrix-conduit</name>
+	<range><lt>0.10.14</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Conduit team reports:</p>
+	<blockquote cite="https://gitlab.com/famedly/conduit/-/releases/v0.10.14">
+	  <p>Fixes a vulnerability allowing an attacker with an account
+	  on the server to gain access to any other account. It is
+	  recommended you upgrade ASAP.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://gitlab.com/famedly/conduit/-/releases/v0.10.14</url>
+    </references>
+    <dates>
+      <discovery>2026-09-26</discovery>
+      <entry>2026-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6d92b2a3-bcce-11f1-906f-bc241121aa0a">
     <topic>FreeBSD -- IPv6 UDP sendto(2) bypasses jail loopback restriction</topic>
     <affects>
