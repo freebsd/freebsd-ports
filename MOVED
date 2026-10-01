@@ -5714,3 +5714,4 @@ sysutils/rubygem-facter|sysutils/rubygem-openfact|2026-09-30|Has expired: Discon
 textproc/libtextcat|textproc/libexttextcat|2026-09-30|Has expired: It has been superseded by textproc/libexttextcat
 www/py-qt5-webengine||2026-10-01|Has expired: Depends on deprecated Qt5 WebEngine
 www/qt5-webengine||2026-10-01|Has expired: Based on outdated Chromium
+devel/py-importlib-metadata6|devel/py-importlib-metadata7|2026-10-01|Has expired: No consumers left use devel/py-importlib-metadata7
