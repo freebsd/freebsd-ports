@@ -1,0 +1,5 @@
+hyprland-preview-share-picker is an alternative screen share picker for
+xdg-desktop-portal-hyprland. It shows live previews of windows and
+monitors in a GTK4 layer-shell dialog, supports region selection through
+an external tool such as slurp, and is styled with SCSS and configured
+through a YAML file described by an installed JSON schema.
