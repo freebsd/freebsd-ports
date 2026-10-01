@@ -1,0 +1,5 @@
+Owe.LockFeed is a QML module that shows the live video frame of the owe
+wallpaper engine on a Qt Quick lock screen. It connects to the owe-render
+feed socket and maps the shared-memory frames it receives into a scene
+graph texture, so the lock screen shows the same moving wallpaper as the
+desktop without decoding the video a second time.
