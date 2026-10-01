@@ -1,5 +1,6 @@
 PORTNAME=	webview
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -13,13 +14,4 @@ USE_QT=		core declarative gui location network webchannel \
 		buildtools:build
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-PLIST_SUB+=	WEBENGINE=""
-USE_QT+=	webengine
-.else
-PLIST_SUB+=	WEBENGINE="@comment "
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
