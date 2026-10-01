@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2026-09-29 14:54:07 UTC
++++ pyproject.toml
+@@ -7,8 +7,7 @@ requires-python = ">=3.5"
+ description = "Removable disk automounter based on udisks"
+ dynamic = ["version", "readme"]
+ requires-python = ">=3.5"
+-license = "MIT"
+-license-files = ["COPYING"]
++license = {text = "MIT"}
+ authors = [
+     {name = "Byron Clark", email = "byron@theclarkfamily.name"},
+     {name = "Thomas Gläßle", email = "t_glaessle@gmx.de"},
