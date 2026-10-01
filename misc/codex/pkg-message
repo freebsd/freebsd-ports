@@ -1,0 +1,21 @@
+[
+{ message: <<EOM
+Since 0.159, codex starts a shared background app server (daemon) by
+default.  The daemon installs itself from a packaged Codex layout
+(codex-package.json), which this port does not provide, so codex fails
+at startup with:
+
+  Error: this CLI has no complete local package; install a packaged
+  Codex CLI or use the standalone installer
+
+To work without the background server, add the following to
+~/.codex/config.toml:
+
+  [features]
+  daemon_auto_start = false
+
+Alternatively, pass --no-daemon on each invocation.  Features that
+require the shared server, such as "codex agents", are unavailable.
+EOM
+}
+]

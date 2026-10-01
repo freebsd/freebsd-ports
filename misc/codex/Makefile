@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.155.1
+DISTVERSION=	0.159.3
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -37,18 +37,12 @@ USE_GNOME=	glib20
 SHEBANG_FILES=	codex-rs/app-server-protocol/scripts/write_schema_fixtures.py \
 		codex-rs/skills/src/assets/samples/imagegen/scripts/image_gen.py \
 		codex-rs/skills/src/assets/samples/imagegen/scripts/remove_chroma_key.py \
-		codex-rs/skills/src/assets/samples/plugin-creator/scripts/create_basic_plugin.py \
-		codex-rs/skills/src/assets/samples/plugin-creator/scripts/identifier_validation.py \
-		codex-rs/skills/src/assets/samples/plugin-creator/scripts/read_marketplace_name.py \
-		codex-rs/skills/src/assets/samples/plugin-creator/scripts/update_plugin_cachebuster.py \
-		codex-rs/skills/src/assets/samples/plugin-creator/scripts/validate_plugin.py \
 		codex-rs/skills/src/assets/samples/skill-creator/scripts/generate_openai_yaml.py \
 		codex-rs/skills/src/assets/samples/skill-creator/scripts/init_skill.py \
 		codex-rs/skills/src/assets/samples/skill-creator/scripts/quick_validate.py \
 		codex-rs/skills/src/assets/samples/skill-installer/scripts/github_utils.py \
 		codex-rs/skills/src/assets/samples/skill-installer/scripts/install-skill-from-github.py \
 		codex-rs/skills/src/assets/samples/skill-installer/scripts/list-skills.py \
-		codex-rs/skills/tests/test_plugin_creator.py \
 		codex-rs/skills/tests/test_skill_installer.py \
 		codex-rs/vendor/bubblewrap/demos/userns-block-fd.py \
 		codex-rs/vendor/bubblewrap/tests/test-seccomp.py \
