@@ -1,0 +1,7 @@
+Aether is a visual theming application for the Omarchy desktop, usable
+standalone on other desktops as well.  It extracts a 16-color palette from
+a wallpaper using a median-cut algorithm, offers several extraction modes
+and fine-tuning sliders, includes a wallpaper browser and editor, and
+applies cohesive themes to Hyprland, Waybar, terminals, editors and other
+applications through a template system.  It also offers a command line
+interface and IPC commands for scripting.
