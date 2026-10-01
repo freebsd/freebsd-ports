@@ -1,0 +1,36 @@
+--- CMakeLists.txt.orig	2026-09-29 13:36:55 UTC
++++ CMakeLists.txt
+@@ -9,12 +9,16 @@ find_program(WAYLAND_SCANNER wayland-scanner REQUIRED)
+ find_package(LayerShellQt REQUIRED)
+ pkg_check_modules(WaylandClient REQUIRED IMPORTED_TARGET wayland-client)
+ find_program(WAYLAND_SCANNER wayland-scanner REQUIRED)
++pkg_get_variable(WAYLAND_PROTOCOLS_DIR wayland-protocols pkgdatadir)
++if(NOT WAYLAND_PROTOCOLS_DIR)
++  message(FATAL_ERROR "wayland-protocols pkgdatadir not found")
++endif()
+ 
+ set(PROTOCOL_XMLS
+   # ext-image-capture-source references this interface even for output-only use.
+-  /usr/share/wayland-protocols/staging/ext-foreign-toplevel-list/ext-foreign-toplevel-list-v1.xml
+-  /usr/share/wayland-protocols/staging/ext-image-capture-source/ext-image-capture-source-v1.xml
+-  /usr/share/wayland-protocols/staging/ext-image-copy-capture/ext-image-copy-capture-v1.xml
++  ${WAYLAND_PROTOCOLS_DIR}/staging/ext-foreign-toplevel-list/ext-foreign-toplevel-list-v1.xml
++  ${WAYLAND_PROTOCOLS_DIR}/staging/ext-image-capture-source/ext-image-capture-source-v1.xml
++  ${WAYLAND_PROTOCOLS_DIR}/staging/ext-image-copy-capture/ext-image-copy-capture-v1.xml
+   ${CMAKE_CURRENT_SOURCE_DIR}/protocols/wlr-virtual-pointer-unstable-v1.xml
+ )
+ set(PROTOCOL_SOURCES)
+@@ -207,11 +211,11 @@ install(FILES assets/OFL.txt
+   RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+ )
+ install(FILES assets/OFL.txt
+-  DESTINATION "${CMAKE_INSTALL_DATADIR}/licenses/omasnap"
++  DESTINATION "${CMAKE_INSTALL_DOCDIR}"
+   RENAME Neucha-OFL.txt
+ )
+ install(FILES assets/JetBrainsMono-OFL.txt assets/Inter-OFL.txt assets/Lucide-ISC.txt
+-  DESTINATION "${CMAKE_INSTALL_DATADIR}/licenses/omasnap"
++  DESTINATION "${CMAKE_INSTALL_DOCDIR}"
+ )
+ install(FILES omasnap.desktop
+   DESTINATION "${CMAKE_INSTALL_DATADIR}/applications"
