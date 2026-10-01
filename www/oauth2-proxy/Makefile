@@ -11,7 +11,7 @@ WWW=		https://github.com/oauth2-proxy/oauth2-proxy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_GITHUB=	yes
 USE_RC_SUBR=	oauth2_proxy
 

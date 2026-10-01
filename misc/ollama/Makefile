@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/include/stb/stb_image.h:devel/stb \
 		patchelf:sysutils/patchelf
 
-USES=		cmake:indirect go:1.26+,modules localbase pkgconfig
+USES=		cmake:indirect go:modules localbase pkgconfig
 USE_LDCONFIG=	${PREFIX}/lib/ollama ${PREFIX}/lib/ollama/vulkan
 USE_RC_SUBR=	ollama
 

@@ -11,7 +11,7 @@ WWW=		https://evilmartians.github.io/lefthook/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/evilmartians/lefthook/v2
 

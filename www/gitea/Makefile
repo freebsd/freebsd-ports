@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		cpe gmake go:1.26+,no_targets
+USES=		cpe gmake go:no_targets
 USE_RC_SUBR=	gitea
 
 EXTRACT_AFTER_ARGS=	--strip-components 1 # since 1.17.0, archive includes gitea-src-VERSION directory

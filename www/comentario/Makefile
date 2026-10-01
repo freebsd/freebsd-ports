@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS_REASON=	Frontend build dependencies include amd64-only native mod
 BUILD_DEPENDS=	openapi-generator:devel/openapi-generator \
 		swagger:devel/goswagger
 
-USES=		go:1.26+,modules nodejs:24,build npm:yarn4
+USES=		go:modules nodejs:24,build npm:yarn4
 USE_GITLAB=	yes
 
 USE_RC_SUBR=	comentario

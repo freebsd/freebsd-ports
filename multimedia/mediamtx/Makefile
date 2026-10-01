@@ -12,7 +12,7 @@ WWW=		https://github.com/bluenviron/mediamtx
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 GO_MODULE=	github.com/bluenviron/mediamtx
 
 USE_RC_SUBR=	mediamtx

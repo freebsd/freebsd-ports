@@ -12,7 +12,7 @@ WWW=		https://concourse-ci.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cpe go:1.26+,modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 
 CONFLICTS_INSTALL=	concourse-fly fly # bin/fly

@@ -11,7 +11,7 @@ WWW=		https://carapace.sh/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/carapace-sh/carapace-bin
 GO_TARGET=	./cmd/carapace

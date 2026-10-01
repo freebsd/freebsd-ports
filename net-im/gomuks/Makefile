@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	amd64
 LIB_DEPENDS=	libolm.so:security/olm
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		go:1.26+,modules nodejs:build npm:npm
+USES=		go:modules nodejs:build npm:npm
 
 GO_MODULE_VER=	0.${DISTVERSION:C/\.//}.0
 GO_MODULE=	go.mau.fi/gomuks@v${GO_MODULE_VER}

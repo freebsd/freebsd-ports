@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libresvg.so:graphics/resvg-capi
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/xo/usql
 

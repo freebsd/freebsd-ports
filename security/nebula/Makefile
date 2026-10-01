@@ -10,7 +10,7 @@ WWW=		https://github.com/slackhq/nebula
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.26+,modules
+USES=		cpe go:modules
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:net:v0.57.0:net \
 		golang:term:v0.45.0:term \

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		cpe go:1.26+,modules
+USES=		cpe go:modules
 
 GH_ACCOUNT=	AdguardTeam
 GH_PROJECT=	AdGuardHome

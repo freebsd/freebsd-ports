@@ -11,7 +11,7 @@ WWW=		https://github.com/danielmiessler/fabric
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/danielmiessler/fabric
 GO_TARGET=	./cmd/fabric

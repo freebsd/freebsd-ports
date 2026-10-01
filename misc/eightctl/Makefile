@@ -10,7 +10,7 @@ WWW=		https://github.com/steipete/eightctl
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_PKGNAME=	github.com/steipete/eightctl
 

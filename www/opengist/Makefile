@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/thomiceli/opengist
 GO_ENV+=	GOTOOLCHAIN=local+path

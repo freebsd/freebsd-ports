@@ -22,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
-USES=		cpe go:1.26+,modules tar:xz
+USES=		cpe go:modules tar:xz
 
 BASE_SRC=	3.7.1
 WRKSRC=		${WRKDIR}/traefik-${BASE_SRC}

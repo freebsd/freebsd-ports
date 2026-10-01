@@ -11,7 +11,7 @@ WWW=		https://github.com/gomods/athens
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_RC_SUBR=	${PORTNAME}
 
 GO_MODULE=	github.com/gomods/${PORTNAME}

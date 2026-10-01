@@ -12,7 +12,7 @@ WWW=		https://www.v2fly.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.26+,modules
+USES=		cpe go:modules
 CPE_VENDOR=	v2fly
 CPE_PRODUCT=	v2ray-core
 USE_GITHUB=	yes

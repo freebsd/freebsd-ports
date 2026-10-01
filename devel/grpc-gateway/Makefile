@@ -10,7 +10,7 @@ WWW=		https://github.com/grpc-ecosystem/grpc-gateway/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/grpc-ecosystem/grpc-gateway/v2
 GO_TARGET=	./protoc-gen-grpc-gateway \

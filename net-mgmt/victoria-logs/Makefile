@@ -11,7 +11,7 @@ WWW=		https://victoriametrics.com/products/victorialogs/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:1.26+,modules,no_targets
+USES=		gmake go:modules,no_targets
 
 # we have to use github, as goproxy tags are wrong
 # see https://github.com/VictoriaMetrics/VictoriaLogs/issues/1071

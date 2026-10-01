@@ -15,7 +15,7 @@ BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libfido2.so:security/libfido2 \
 		libsecret-1.so:security/libsecret
 
-USES=		gettext-runtime gnome go:1.26+,modules pkgconfig ssl
+USES=		gettext-runtime gnome go:modules pkgconfig ssl
 
 GO_MODULE=	github.com/ProtonMail/proton-bridge/v3
 GO_TARGET=	./cmd/Desktop-Bridge

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 LIB_DEPENDS=	libolm.so:security/olm
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_RC_SUBR=	mautrix_whatsapp
 
 GO_MODULE=	go.mau.fi/mautrix-whatsapp

@@ -11,7 +11,7 @@ WWW=		https://github.com/nextdns/nextdns
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 GO_TARGET=	.:${PREFIX}/sbin/${PORTNAME}
 

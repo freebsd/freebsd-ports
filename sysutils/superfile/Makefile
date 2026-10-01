@@ -13,7 +13,7 @@ WWW=		https://github.com/yorukot/superfile
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/yorukot/superfile
 

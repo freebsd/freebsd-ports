@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 EXTRACT_DEPENDS=	${BUILD_DEPENDS}
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_RC_SUBR=	access_log_exporter
 
 GO_MODULE=	github.com/jkroepke/access-log-exporter

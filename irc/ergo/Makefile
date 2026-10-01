@@ -12,7 +12,7 @@ WWW=		https://ergo.chat \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ergochat

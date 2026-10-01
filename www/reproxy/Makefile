@@ -10,7 +10,7 @@ WWW=		https://reproxy.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	umputun
 GO_LDFLAGS=	-X main.revision=v${PORTVERSION}

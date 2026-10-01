@@ -11,7 +11,7 @@ WWW=		https://terragrunt.gruntwork.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/gruntwork-io/terragrunt
 
