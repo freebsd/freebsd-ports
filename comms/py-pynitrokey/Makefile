@@ -1,6 +1,5 @@
 PORTNAME=	pynitrokey
-DISTVERSION=	0.13.0
-PORTREVISION=	1
+DISTVERSION=	0.14.0
 CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +16,7 @@ _BR_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hidapi>=0.14,<0.16:comms/py-hidapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}intelhex>=0:devel/py-intelhex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nkdfu>=0:comms/py-nkdfu@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nitrokey>=0.4<0.5:security/py-nitrokey@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nitrokey>=0.5<0.6:security/py-nitrokey@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyusb>=0:devel/py-pyusb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR} \
