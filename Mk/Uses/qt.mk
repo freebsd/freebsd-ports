@@ -151,7 +151,7 @@ _USE_QT_COMMON=		3d charts connectivity datavis3d declarative doc \
 			examples imageformats location multimedia networkauth \
 			quick3d quicktimeline remoteobjects scxml sensors \
 			serialbus serialport speech svg virtualkeyboard wayland \
-			webchannel webengine websockets webview
+			webchannel websockets webview
 
 _USE_QT5_ONLY=		assistant buildtools concurrent core dbus \
 			declarative-test designer diag gamepad \
@@ -166,8 +166,8 @@ _USE_QT5_ONLY=		assistant buildtools concurrent core dbus \
 _USE_QT6_ONLY=		5compat base canvaspainter coap graphs grpc httpserver \
 			languageserver lottie mqtt openapi pdf positioning \
 			quick3dphysics quickeffectmaker shadertools tasktree \
-			tools translations sqldriver-sqlite sqldriver-mysql \
-			sqldriver-psql sqldriver-odbc
+			tools translations webengine sqldriver-sqlite \
+			sqldriver-mysql sqldriver-psql sqldriver-odbc
 
 # Dependency tuples: _LIB should be preferred if possible.
 qt-3d_PORT=		graphics/${_QT_RELNAME}-3d

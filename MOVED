@@ -5713,3 +5713,4 @@ devel/swig40|devel/swig|2026-09-30|Has expired: Outdated. Use devel/swig instead
 sysutils/rubygem-facter|sysutils/rubygem-openfact|2026-09-30|Has expired: Discontinued, use sysutils/rubygem-openfact
 textproc/libtextcat|textproc/libexttextcat|2026-09-30|Has expired: It has been superseded by textproc/libexttextcat
 www/py-qt5-webengine||2026-10-01|Has expired: Depends on deprecated Qt5 WebEngine
+www/qt5-webengine||2026-10-01|Has expired: Based on outdated Chromium
