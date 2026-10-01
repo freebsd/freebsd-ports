@@ -38,6 +38,7 @@ include/fluent-bit/flb_downstream.h
 include/fluent-bit/flb_downstream_conn.h
 include/fluent-bit/flb_downstream_worker.h
 include/fluent-bit/flb_dump.h
+include/fluent-bit/flb_emitter.h
 include/fluent-bit/flb_endian.h
 include/fluent-bit/flb_engine.h
 include/fluent-bit/flb_engine_dispatch.h
