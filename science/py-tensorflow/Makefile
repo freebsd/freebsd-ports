@@ -1,7 +1,7 @@
 PORTNAME=	tensorflow
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.21.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science python # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
@@ -140,6 +140,8 @@ post-patch:
 		${WRKSRC}/third_party/xla/third_party/py/
 	@${CP} ${PATCHDIR}/bazel/fix-environ.patch \
 		${WRKSRC}/third_party/xla/third_party/
+	@${CP} ${PATCHDIR}/bazel/riegeli-xopen-source.patch \
+		${WRKSRC}/third_party/
 	@${CP} ${PATCHDIR}/llvm_freebsd.patch \
 		${WRKSRC}/third_party/xla/third_party/llvm/freebsd.patch
 	@${CP} ${PATCHDIR}/grpc.bazel.BUILD \
@@ -285,6 +287,16 @@ do-build:
 			${PYTHON_CMD} ${PATCHDIR}/fix-llvm-config.py "$${LLVMCONF}"; \
 		else \
 			${ECHO_MSG} "WARNING: llvm config.bzl not found at $${LLVMCONF}; build may fail"; \
+		fi
+	# Fetch riegeli so we can patch snappy_writer.cc before the build.
+	@cd ${WRKSRC} && \
+		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} fetch @@riegeli//riegeli/snappy:snappy_writer
+	@RIEGELI_OB=$$(cd ${WRKSRC} && bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} info output_base 2>/dev/null); \
+		RIEGELI_SW="$${RIEGELI_OB}/external/riegeli/riegeli/snappy/snappy_writer.cc"; \
+		if [ -f "$${RIEGELI_SW}" ]; then \
+			${REINPLACE_CMD} -e 's|snappy::Compress(\&source, \&sink, {/\*level=\*/options.compression_level()});|snappy::Compress(\&source, \&sink, snappy::CompressionOptions{options.compression_level()});|' "$${RIEGELI_SW}"; \
+		else \
+			${ECHO_MSG} "WARNING: riegeli snappy_writer.cc not found at $${RIEGELI_SW}; build may fail"; \
 		fi
 	@cd ${WRKSRC} && \
 		bazel --bazelrc="${WRKDIR}/bazelrc" ${BAZEL_BOOT} build --jobs ${TF_JOBS_NUMBER} ${BAZEL_COPT} ${BAZEL_ARCH_DEFINES} \
