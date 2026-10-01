@@ -1,6 +1,5 @@
 PORTNAME=	libvirt
-DISTVERSION=	12.7.0
-PORTREVISION=	1
+DISTVERSION=	12.8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -144,7 +143,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.12007.0
+SHLIB_VER=	0.12008.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 BINARY_ALIAS=	python3=${PYTHON_CMD}
