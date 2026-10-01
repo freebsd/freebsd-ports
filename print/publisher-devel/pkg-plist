@@ -119,6 +119,7 @@ share/speedata-publisher/sw/lua/publisher/page.lua
 share/speedata-publisher/sw/lua/publisher/pages.lua
 share/speedata-publisher/sw/lua/publisher/spinit.lua
 share/speedata-publisher/sw/lua/publisher/structure_tree.lua
+share/speedata-publisher/sw/lua/publisher/tabstops.lua
 share/speedata-publisher/sw/lua/publisher/tabular.lua
 share/speedata-publisher/sw/lua/publisher/usercallbacks.lua
 share/speedata-publisher/sw/lua/publisher/utilities.lua
