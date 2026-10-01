@@ -1,0 +1,21 @@
+# github.com/rivo/uniseg v0.4.7
+## explicit; go 1.18
+github.com/rivo/uniseg
+# zgo.at/runewidth v0.1.0
+## explicit; go 1.16
+zgo.at/runewidth
+# zgo.at/termtext v1.5.0
+## explicit; go 1.16
+zgo.at/termtext
+# zgo.at/zli v0.0.0-20251226224229-7bb9a5cf3265
+## explicit; go 1.18
+zgo.at/zli
+zgo.at/zli/internal/term
+# zgo.at/zstd v0.0.0-20260819203842-7567984d0ee9
+## explicit; go 1.23
+zgo.at/zstd/zcrypto
+zgo.at/zstd/zmap
+zgo.at/zstd/zslice
+zgo.at/zstd/zstring
+zgo.at/zstd/ztest
+zgo.at/zstd/zxml
