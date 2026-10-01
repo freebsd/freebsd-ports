@@ -1,0 +1,18 @@
+--- src/third_party/wiredtiger/BUILD.bazel.orig
++++ src/third_party/wiredtiger/BUILD.bazel
+@@ -54,6 +54,7 @@ WT_CCFLAGS = [
+     "//conditions:default": ["-Wno-implicit-fallthrough"],
+ }) + select({
+     "@platforms//os:linux": ["-Isrc/third_party/wiredtiger/build_linux"],
++    "@platforms//os:freebsd": ["-Isrc/third_party/wiredtiger/build_freebsd"],
+     "@platforms//os:windows": ["-Isrc/third_party/wiredtiger/build_win"],
+     "@platforms//os:macos": ["-Isrc/third_party/wiredtiger/build_darwin"],
+ }) + select({
+@@ -80,6 +81,7 @@ generate_config_header(
+     output = "wiredtiger_config.h",
+     template = select({
+         "@platforms//os:linux": "build_linux/wiredtiger_config.h.in",
++        "@platforms//os:freebsd": "build_freebsd/wiredtiger_config.h",
+         "@platforms//os:windows": "build_win/wiredtiger_config.h.in",
+         "@platforms//os:macos": "build_darwin/wiredtiger_config.h.in",
+     }),

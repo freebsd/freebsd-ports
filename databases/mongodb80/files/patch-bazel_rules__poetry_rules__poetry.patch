@@ -1,0 +1,170 @@
+--- bazel/rules_poetry/rules_poetry.patch.orig
++++ bazel/rules_poetry/rules_poetry.patch
+@@ -10,3 +10,167 @@ index 0000000..c09945f
+ +
+ +bazel_dep(name = "bazel_skylib", version = "1.5.0")
+ +bazel_dep(name = "platforms", version = "0.0.8")
++diff --git rules_poetry/defs.bzl rules_poetry/defs.bzl
++index b3c070b..564e159 100644
++--- rules_poetry/defs.bzl
+++++ rules_poetry/defs.bzl
++@@ -88,43 +88,18 @@ COMMON_ARGS = [
++     "--isolated",
++ ]
++ 
++-def _download(ctx, requirements):
++-
++-    toolchain = ctx.toolchains["@bazel_tools//tools/python:toolchain_type"]
++-    runtime = toolchain.py3_runtime
++-    inputs = depset([requirements], transitive = [runtime.files])
++-    tools = depset(direct = [runtime.interpreter], transitive = [runtime.files])
++-
++-    python = ctx.toolchains["@bazel_tools//tools/python:toolchain_type"].py3_runtime
++-    destination = ctx.actions.declare_directory("wheels/%s" % ctx.attr.name)
++-    args = ctx.actions.args()
++-    args.add("-m")
++-    args.add("pip")
++-    args.add("wheel")
++-    args.add_all(COMMON_ARGS)
++-    args.add("--require-hashes")
++-    args.add("--wheel-dir")
++-    args.add(destination.path)
++-    args.add("-r")
++-    args.add(requirements)
++-    if ctx.attr.source_url != "":
++-        args.add("-i")
++-        args.add(ctx.attr.source_url)
++-
++-    ctx.actions.run(
++-        executable = python.interpreter.path,
++-        inputs = inputs,
++-        outputs = [destination],
++-        arguments = [args],
++-        env = deterministic_env(),
++-        mnemonic = "DownloadWheel",
++-        progress_message = "Collecting %s wheel from pypi" % ctx.attr.pkg,
++-        execution_requirements = {
++-            "requires-network": "",
++-        },
++-        tools = tools,
+++def _empty_directory(ctx, output, mnemonic, progress_message):
+++    ctx.actions.run_shell(
+++        outputs = [output],
+++        command = "mkdir -p \"$1\"",
+++        arguments = [output.path],
+++        mnemonic = mnemonic,
+++        progress_message = progress_message,
++     )
++ 
+++def _download(ctx, requirements):
+++    destination = ctx.actions.declare_directory("wheels/%s" % ctx.attr.name)
+++    _empty_directory(ctx, destination, "DownloadWheel", "Using system Python package for %s" % ctx.attr.pkg)
++     return destination
++ 
++ def _download_wheel_impl(ctx):
++@@ -161,33 +136,7 @@ download_wheel = rule(
++ def _install(ctx, wheel_info):
++     
++     installed_wheel = ctx.actions.declare_directory(wheel_info.pkg)
++-    python = ctx.toolchains["@bazel_tools//tools/python:toolchain_type"].py3_runtime
++-    
++-    args = [
++-        "-m",
++-        "pip",
++-        'install', 
++-        '--force-reinstall',
++-        '--upgrade',
++-    ] + COMMON_ARGS + [
++-        "--no-compile",
++-        "--no-index",
++-        "--find-links",
++-        ctx.files.wheel[0].path,
++-        "--target="+installed_wheel.path,
++-        wheel_info.pkg + " ; " + str(wheel_info.marker)
++-    ]
++-
++-    ctx.actions.run(
++-        executable = python.interpreter.path,
++-        outputs = [installed_wheel],
++-        inputs = depset(ctx.files.wheel, transitive = [python.files]),
++-        arguments = args,
++-        env = deterministic_env(),
++-        progress_message = "Installing %s wheel" % wheel_info.pkg,
++-        mnemonic = "CopyWheel",
++-    )
++-    
+++    _empty_directory(ctx, installed_wheel, "CopyWheel", "Using system Python package for %s" % wheel_info.pkg)
++     return installed_wheel
++ 
++ def _pip_install_impl(ctx):
++diff --git rules_poetry/poetry.bzl rules_poetry/poetry.bzl
++index 32991e2..3e27600 100644
++--- rules_poetry/poetry.bzl
+++++ rules_poetry/poetry.bzl
++@@ -20,6 +20,26 @@ SUPPORTED_PLATFORMS = [
++     "win32!x86_64",
++ ]
++ 
+++def _toml_to_json_args(path):
+++    return [
+++        "-c",
+++        """
+++import json
+++import sys
+++
+++try:
+++    import tomllib
+++except ModuleNotFoundError:
+++    import tomli as tomllib
+++
+++with open(sys.argv[1], "rb") as handle:
+++    data = tomllib.load(handle)
+++
+++json.dump(data, sys.stdout, default=str)
+++""",
+++        path,
+++    ]
+++
++ def _clean_name(name):
++     return name.lower().replace("-", "_").replace(".", "_")
++ 
++@@ -68,18 +88,7 @@ def _resolve_python_interpreter(rctx):
++ def _mapping(repository_ctx):
++     python_interpreter = _resolve_python_interpreter(repository_ctx)
++     result = repository_ctx.execute(
++-        [
++-            python_interpreter,
++-            repository_ctx.path(repository_ctx.attr._script),
++-            "-i",
++-            repository_ctx.path(repository_ctx.attr.pyproject),
++-            "-o",
++-            "-",
++-            "--if",
++-            "toml",
++-            "--of",
++-            "json",
++-        ],
+++        [python_interpreter] + _toml_to_json_args(repository_ctx.path(repository_ctx.attr.pyproject)),
++     )
++ 
++     if result.return_code:
++@@ -159,18 +168,7 @@ def _impl(repository_ctx):
++     mapping = _mapping(repository_ctx)
++ 
++     result = repository_ctx.execute(
++-        [
++-            python_interpreter,
++-            repository_ctx.path(repository_ctx.attr._script),
++-            "-i",
++-            repository_ctx.path(repository_ctx.attr.lockfile),
++-            "-o",
++-            "-",
++-            "--if",
++-            "toml",
++-            "--of",
++-            "json",
++-        ],
+++        [python_interpreter] + _toml_to_json_args(repository_ctx.path(repository_ctx.attr.lockfile)),
++     )
++ 
++     if result.return_code:

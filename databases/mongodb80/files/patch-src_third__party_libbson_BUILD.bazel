@@ -1,0 +1,32 @@
+--- src/third_party/libbson/BUILD.bazel.orig
++++ src/third_party/libbson/BUILD.bazel
+@@ -37,6 +37,7 @@ mongo_cc_library(
+         "@platforms//os:windows": glob(["build_windows/**/*.h"]),
+         "@platforms//os:macos": glob(["build_osx/**/*.h"]),
+         "@platforms//os:linux": glob(["build_linux/**/*.h"]),
++        "@platforms//os:freebsd": glob(["build_osx/**/*.h"]),
+         "//bazel/config:linux_s390x": glob(["build_linux_s390x/**/*.h"]),
+         "//conditions:default": [],
+     }),
+@@ -54,6 +55,10 @@ mongo_cc_library(
+             "-Wno-unguarded-availability-new",
+             "-Wno-implicit-fallthrough",
+         ],
++        "@platforms//os:freebsd": [
++            "-Wno-sign-compare",
++            "-Wno-implicit-fallthrough",
++        ],
+         "@platforms//os:linux": [
+             "-Wno-sign-compare",
+             "-Wno-implicit-fallthrough",
+@@ -76,6 +81,10 @@ mongo_cc_library(
+             "build_osx",
+             "build_osx/bson",
+         ],
++        "@platforms//os:freebsd": [
++            "build_osx",
++            "build_osx/bson",
++        ],
+         "@platforms//os:linux": [
+             "build_linux",
+             "build_linux/bson",

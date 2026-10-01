@@ -1,0 +1,35 @@
+--- MODULE.bazel.orig
++++ MODULE.bazel
+@@ -78,11 +78,9 @@ single_version_override(
+ )
+ 
+ bazel_dep(name = "rules_poetry", version = "")
+-git_override(
++local_path_override(
+     module_name = "rules_poetry",
+-    commit = "917630033c736c188605cf0f558c34afc1eca540",
+-    patches = ["//bazel/rules_poetry:rules_poetry.patch"],
+-    remote = "https://github.com/mongodb-forks/rules_poetry",
++    path = "../rules_poetry-917630033c736c188605cf0f558c34afc1eca540",
+ )
+ 
+ #
+@@ -164,5 +164,8 @@ use_repo(
+     setup_mongo_python_toolchains,
+     "py_host",
++    "py_freebsd_arm64",
++    "py_freebsd_ppc64le",
++    "py_freebsd_x86_64",
+     "py_linux_arm64",
+     "py_linux_ppc64le",
+     "py_linux_s390x",
+@@ -176,6 +179,9 @@ use_repo(
+ )
+ 
+ register_toolchains(
++    "@py_freebsd_arm64//:python_toolchain",
++    "@py_freebsd_ppc64le//:python_toolchain",
++    "@py_freebsd_x86_64//:python_toolchain",
+     "@py_linux_arm64//:python_toolchain",
+     "@py_linux_ppc64le//:python_toolchain",
+     "@py_linux_s390x//:python_toolchain",

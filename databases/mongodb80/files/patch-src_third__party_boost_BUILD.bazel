@@ -1,0 +1,33 @@
+--- src/third_party/boost/BUILD.bazel.orig
++++ src/third_party/boost/BUILD.bazel
+@@ -126,6 +126,10 @@ mongo_cc_library(
+             "libs/thread/src/pthread/once.cpp",
+             "libs/thread/src/pthread/thread.cpp",
+         ],
++        "@platforms//os:freebsd": [
++            "libs/thread/src/pthread/once.cpp",
++            "libs/thread/src/pthread/thread.cpp",
++        ],
+         "@platforms//os:windows": [
+             "libs/thread/src/win32/thread.cpp",
+             "libs/thread/src/win32/thread_primitives.cpp",
+@@ -140,6 +144,9 @@ mongo_cc_library(
+         "@platforms//os:macos": [
+             "libs/thread/src/pthread/once_atomic.cpp",
+         ],
++        "@platforms//os:freebsd": [
++            "libs/thread/src/pthread/once_atomic.cpp",
++        ],
+         "//conditions:default": [],
+     }),
+     copts = BOOST_COPTS,
+@@ -151,6 +158,9 @@ mongo_cc_library(
+         "@platforms//os:macos": [
+             "BOOST_THREAD_PTHREAD",
+         ],
++        "@platforms//os:freebsd": [
++            "BOOST_THREAD_PTHREAD",
++        ],
+         "@platforms//os:windows": [
+             "BOOST_THREAD_WIN32",
+         ],

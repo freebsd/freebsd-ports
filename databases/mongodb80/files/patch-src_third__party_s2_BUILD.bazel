@@ -1,0 +1,13 @@
+--- src/third_party/s2/BUILD.bazel.orig
++++ src/third_party/s2/BUILD.bazel
+@@ -41,6 +41,10 @@ mongo_cc_library(
+         ],
+         "//conditions:default": [],
+     }),
++    cxxopts = select({
++        "@platforms//os:freebsd": ["-std=c++20"],
++        "//conditions:default": [],
++    }),
+     includes = ["."],
+     local_defines = [
+         "DEBUG_MODE=false",

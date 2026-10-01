@@ -1,0 +1,33 @@
+--- src/third_party/libmongocrypt/BUILD.bazel.orig
++++ src/third_party/libmongocrypt/BUILD.bazel
+@@ -35,6 +35,14 @@ CRYPTO_CONFIGS = {
+             "dist/src/crypto/libcrypto.c",
+         ],
+     },
++    "//bazel/config:ssl_enabled_freebsd": {
++        "local_defines": ["KMS_MESSAGE_ENABLE_CRYPTO_LIBCRYPTO"],
++        "includes": ["build_libcrypto"],
++        "srcs": [
++            "dist/kms-message/src/kms_crypto_libcrypto.c",
++            "dist/src/crypto/libcrypto.c",
++        ],
++    },
+ }
+ 
+ CRYPTO_SRCS = select({
+@@ -142,6 +150,7 @@ mongo_cc_library(
+             "linux",
+         ]
+     } | {
++        "@platforms//os:freebsd": ["build_linux/mongocrypt-export.h"],
+         "//conditions:default": ["//conditions:incompatible"],
+     }),
+     copts = [
+@@ -174,6 +183,7 @@ mongo_cc_library(
+             "linux",
+         ]
+     } | {
++        "@platforms//os:freebsd": ["build_linux"],
+         "//conditions:default": ["//conditions:incompatible"],
+     }) + CRYPTO_INCLUDES,
+     linkopts = select({

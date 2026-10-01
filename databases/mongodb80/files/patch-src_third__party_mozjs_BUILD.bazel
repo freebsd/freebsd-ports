@@ -1,0 +1,23 @@
+--- src/third_party/mozjs/BUILD.bazel.orig
++++ src/third_party/mozjs/BUILD.bazel
+@@ -7,6 +7,9 @@ PLATFORMS = {
+     "//bazel/config:linux_ppc64le": ("ppc64le", "linux"),
+     "//bazel/config:linux_s390x": ("s390x", "linux"),
+     "//bazel/config:windows_x86_64": ("x86_64", "windows"),
++    "//bazel/config:freebsd_aarch64": ("aarch64", "freebsd"),
++    "//bazel/config:freebsd_ppc64le": ("ppc64le", "freebsd"),
++    "//bazel/config:freebsd_x86_64": ("x86_64", "freebsd"),
+     "//bazel/config:macos_x86_64": ("x86_64", "macOS"),
+     "//bazel/config:macos_aarch64": ("aarch64", "macOS"),
+ }
+@@ -281,6 +284,10 @@ mongo_cc_library(
+         ],
+         "//conditions:default": [],
+     }),
++    cxxopts = select({
++        "@platforms//os:freebsd": ["-std=c++20"],
++        "//conditions:default": [],
++    }),
+     defines = [
+         "JS_USE_CUSTOM_ALLOCATOR=1",
+         "STATIC_JS_API=1",

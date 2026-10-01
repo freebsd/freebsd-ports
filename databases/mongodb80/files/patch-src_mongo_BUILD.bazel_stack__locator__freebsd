@@ -1,0 +1,10 @@
+--- src/mongo/BUILD.bazel.orig	2026-09-29 00:00:00 UTC
++++ src/mongo/BUILD.bazel
+@@ -233,6 +233,7 @@ mongo_cc_library(
+         "//conditions:default": [],
+     }) + select({
+         "@platforms//os:linux": ["//src/mongo/platform:stack_locator_linux.cpp"],
++        "@platforms//os:freebsd": ["//src/mongo/platform:stack_locator_freebsd.cpp"],
+         "@platforms//os:macos": ["//src/mongo/platform:stack_locator_osx.cpp"],
+         "@platforms//os:windows": ["//src/mongo/platform:stack_locator_windows.cpp"],
+         "//conditions:default": [],
