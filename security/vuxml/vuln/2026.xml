@@ -64,6 +64,31 @@
     </dates>
   </vuln>
 
+  <vuln vid="a93ff4d6-bdcd-11f1-af91-9cbf0d00daec">
+    <topic>arti -- Various security issues</topic>
+    <affects>
+<package>
+<name>arti</name>
+<range><lt>2.7.0</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Torproject reports:</p>
+	<blockquote cite="https://gitlab.torproject.org/tpo/core/arti/-/blob/arti-v2.7.0/CHANGELOG.md">
+	  <p>Various security issues discovered in versions below 2.7.0.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://gitlab.torproject.org/tpo/core/arti/-/blob/arti-v2.7.0/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2026-10-01</discovery>
+      <entry>2026-10-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7738854-bc00-11f1-a829-dca632daf43b">
     <topic>apache-commons-lang -- Uncontrolled Recursion vulnerability</topic>
     <affects>
