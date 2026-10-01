@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2019-05-21 18:52:20 UTC
++++ CMakeLists.txt
+@@ -1,5 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.11 FATAL_ERROR)
+-cmake_policy(VERSION 2.8.11)
++cmake_minimum_required(VERSION 2.8.11...9.9.99)
+ 
+ project(glcapsviewer)
+ set(NAME glcapsviewer)
+@@ -79,5 +78,5 @@ target_link_libraries(${NAME} Qt5::Network)	
+ target_link_libraries(${NAME} Qt5::Widgets)
+ target_link_libraries(${NAME} ${GLEW_LIBRARIES})
+ target_link_libraries(${NAME} ${OPENGL_LIBRARIES})
+-target_link_libraries(${NAME} glfw ${GLFW_LIBRARY})
++target_link_libraries(${NAME} ${GLFW_LIBRARY})
+ 

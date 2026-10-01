@@ -25,8 +25,6 @@ PLIST_FILES=	bin/glcapsviewer ${DATADIR_REL}/capslist.xml \
 		${DATADIR_REL}/enumList.xml
 
 post-patch:
-	@${REINPLACE_CMD} -e '/target_link_libraries/s,glfw ,,' \
-		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's,__linux__,__${OPSYS}__, ; /ifstream\
 		enumListxml/s,[^"]*ist\.xml",${DATADIR}/&,' \
 		${WRKSRC}/glCapsViewer.cpp ${WRKSRC}/glCapsViewerCore.cpp
