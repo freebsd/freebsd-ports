@@ -127,6 +127,7 @@
     SUBDIR += helfem
     SUBDIR += hepmc3
     SUBDIR += highfive
+    SUBDIR += hpddm
     SUBDIR += hypre
     SUBDIR += iboview
     SUBDIR += isaac-cfd

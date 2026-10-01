@@ -1,0 +1,49 @@
+--- Makefile.orig	2026-03-23 19:41:10 UTC
++++ Makefile
+@@ -141,6 +141,11 @@ else
+         EXTENSION_LIB = so
+         override LDFLAGS += -Wl,-rpath,${TOP_DIR}/${LIB_DIR}
+     endif
++    ifeq (${UNAME_S}, FreeBSD)
++        MAKE_OS = FreeBSD
++        EXTENSION_LIB = so
++        override LDFLAGS += -Wl,-rpath,${TOP_DIR}/${LIB_DIR}
++    endif
+     ifeq (${UNAME_S}, Darwin)
+         MAKE_OS = macOS
+         EXTENSION_LIB = dylib
+@@ -238,15 +243,15 @@ ${TOP_DIR}/${BIN_DIR}/custom_operator_fortran.o: examp
+ 	${MPICXX} $^ -o $@ ${LIBS}
+ 
+ ${TOP_DIR}/${BIN_DIR}/custom_operator_fortran.o: examples/custom_operator.f90
+-	${MPIF90} -c interface/HPDDM.f90 -o ${TOP_DIR}/${BIN_DIR}/HPDDM.o ${F90MOD} ${TOP_DIR}/${BIN_DIR}
+-	${MPIF90} -I${TOP_DIR}/${BIN_DIR} -c $< -o $@ ${F90MOD} ${TOP_DIR}/${BIN_DIR}
++	${MPIF90} ${FFLAGS} -c interface/HPDDM.f90 -o ${TOP_DIR}/${BIN_DIR}/HPDDM.o ${F90MOD} ${TOP_DIR}/${BIN_DIR}
++	${MPIF90} ${FFLAGS} -I${TOP_DIR}/${BIN_DIR} -c $< -o $@ ${F90MOD} ${TOP_DIR}/${BIN_DIR}
+ 
+ ${TOP_DIR}/${BIN_DIR}/custom_operator_c.o: examples/custom_operator.c
+ 	${MPICC} ${INCS} -c $< -o $@
+ 
+ ${TOP_DIR}/${BIN_DIR}/custom_operator_%: ${TOP_DIR}/${BIN_DIR}/custom_operator_%.o ${TOP_DIR}/${LIB_DIR}/libhpddm_%.${EXTENSION_LIB}
+ 	@if test $(findstring fortran,$@); then \
+-		CMD="${MPIF90} -I${TOP_DIR}/${BIN_DIR} -o $@ ${F90MOD} ${TOP_DIR}/${BIN_DIR} $@.o ${TOP_DIR}/${BIN_DIR}/HPDDM.o ${LDFLAGS} -L${TOP_DIR}/${LIB_DIR} -lhpddm_fortran ${LIBS}"; \
++		CMD="${MPIF90} ${FFLAGS} -I${TOP_DIR}/${BIN_DIR} -o $@ ${F90MOD} ${TOP_DIR}/${BIN_DIR} $@.o ${TOP_DIR}/${BIN_DIR}/HPDDM.o ${LDFLAGS} -L${TOP_DIR}/${LIB_DIR} -lhpddm_fortran ${LIBS}"; \
+ 	else \
+ 		CMD="${MPICC} -o $@ $@.o ${LDFLAGS} -L${TOP_DIR}/${LIB_DIR} -lhpddm_c ${LIBS}"; \
+ 	fi; \
+@@ -266,11 +271,11 @@ ${TOP_DIR}/${LIB_DIR}/lib%.${EXTENSION_LIB}: interface
+ 
+ ${TOP_DIR}/${LIB_DIR}/lib%.${EXTENSION_LIB}: interface/%.cpp ${TOP_DIR}/${TRASH_DIR}/lib%.d ${TOP_DIR}/${TRASH_DIR}/compiler_flags_cpp
+ 	@if [ "$<" = "interface/hpddm_python.cpp" ]; then \
+-		echo ${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} ${PYTHON_INCS} -shared $< -o $@ ${LIBS} ${PYTHON_LIBS}; \
+-		${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} ${PYTHON_INCS} -shared $< -o $@ ${LIBS} ${PYTHON_LIBS}; \
++		echo ${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} ${PYTHON_INCS} -shared $< -o $@ -Wl,-soname,$@ ${LIBS} ${PYTHON_LIBS}; \
++		${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} ${PYTHON_INCS} -shared $< -o $@ -Wl,-soname,$@ ${LIBS} ${PYTHON_LIBS}; \
+ 	else \
+-		echo ${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} -shared $< -o $@ ${LIBS}; \
+-		${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} -shared $< -o $@ ${LIBS}; \
++		echo ${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} -shared $< -o $@  -Wl,-soname,$@ ${LIBS}; \
++		${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} -shared $< -o $@  -Wl,-soname,$@ ${LIBS}; \
+ 	fi
+ 	${POSTCOMPILE}
+ 
