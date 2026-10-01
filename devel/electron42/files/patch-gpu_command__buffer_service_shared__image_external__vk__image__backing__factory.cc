@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2026-04-28 21:06:17 UTC
+--- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2026-09-30 12:59:54 UTC
 +++ gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc
-@@ -148,7 +148,7 @@ SharedImageUsageSet SupportedUsage() {
+@@ -154,7 +154,7 @@ SharedImageUsageSet SupportedUsage() {
  
  SharedImageUsageSet SupportedUsage() {
    SharedImageUsageSet supported_usage =

@@ -1,6 +1,15 @@
---- electron/shell/browser/osr/osr_video_consumer.cc.orig	2026-04-15 14:10:25 UTC
+--- electron/shell/browser/osr/osr_video_consumer.cc.orig	2026-09-30 08:48:04 UTC
 +++ electron/shell/browser/osr/osr_video_consumer.cc
-@@ -130,7 +130,7 @@ void OffScreenVideoConsumer::OnFrameCaptured(
+@@ -47,7 +47,7 @@ bool IsPlatformSharedTextureHandle(const gfx::GpuMemor
+   return handle.type == gfx::DXGI_SHARED_HANDLE;
+ #elif BUILDFLAG(IS_APPLE)
+   return handle.type == gfx::IO_SURFACE_BUFFER;
+-#elif BUILDFLAG(IS_LINUX)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   return handle.type == gfx::NATIVE_PIXMAP;
+ #else
+   return false;
+@@ -158,7 +158,7 @@ void OffScreenVideoConsumer::OnFrameCaptured(
  #elif BUILDFLAG(IS_APPLE)
      texture.shared_texture_handle =
          reinterpret_cast<uintptr_t>(gmb_handle.io_surface().get());

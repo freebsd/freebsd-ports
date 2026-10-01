@@ -1,6 +1,6 @@
---- electron/spec/lib/spec-helpers.ts.orig	2026-05-08 13:54:01 UTC
+--- electron/spec/lib/spec-helpers.ts.orig	2026-09-30 08:48:04 UTC
 +++ electron/spec/lib/spec-helpers.ts
-@@ -27,7 +27,7 @@ export const isWayland =
+@@ -28,7 +28,7 @@ export const isWayland =
  export const ifdescribe = (condition: boolean) => (condition ? describe : addOnly<SuiteFunction>(describe.skip));
  
  export const isWayland =
