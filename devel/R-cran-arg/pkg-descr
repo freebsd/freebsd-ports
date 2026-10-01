@@ -1,0 +1,2 @@
+Checks function arguments, ideally for use in R packages. Uses a simple
+interface and produces clean, informative error messages using 'cli'.
