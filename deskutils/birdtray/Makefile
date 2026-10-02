@@ -1,5 +1,6 @@
 PORTNAME=	birdtray
 PORTVERSION=	1.11.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils mail
 
@@ -10,10 +11,9 @@ WWW=		https://github.com/gyunaev/birdtray
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake compiler:c++11-lib gettext kde:5 localbase qt:5 tar:xz \
+USES=		cmake compiler:c++11-lib gettext localbase qt:5 tar:xz \
 		xorg
 USE_XORG=	x11
-USE_KDE=	i18n
 USE_QT=		core gui network svg widgets x11extras buildtools:build \
 		linguisttools:build qmake:build
 USE_GITHUB=	yes
