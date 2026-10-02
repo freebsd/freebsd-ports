@@ -2,7 +2,6 @@ PORTNAME=	qmd
 DISTVERSION=	2.8.3
 CATEGORIES=	deskutils
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	On-device hybrid search for markdown files
@@ -56,6 +55,7 @@ DD=	${DISTDIR}/${DIST_SUBDIR}
 
 .include <bsd.port.pre.mk>
 
+DIST_SUBDIR=	${PORTNAME}/${ARCH}
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 
 do-fetch:
