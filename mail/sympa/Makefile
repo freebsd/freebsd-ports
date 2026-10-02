@@ -1,5 +1,6 @@
 PORTNAME=	sympa
 DISTVERSION=	6.2.80
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-med.fr
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BR_DEPENDS=	mhonarc>=0:www/mhonarc \
 		p5-App-cpanminus>=0:devel/p5-App-cpanminus \
-		p5-Archive-Zip>=1.05:archivers/p5-Archive-Zip \
+		p5-Archive-Zip-SimpleZip>=1.002:archivers/p5-Archive-Zip-SimpleZip \
 		p5-CGI>=3.51:www/p5-CGI \
 		p5-Class-Singleton>=1.03:devel/p5-Class-Singleton \
 		p5-Crypt-CipherSaber>=0.50:security/p5-Crypt-CipherSaber \
