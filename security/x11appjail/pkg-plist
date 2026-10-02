@@ -17,6 +17,7 @@ libexec/x11appjail/service.d/Notification/setup
 libexec/x11appjail/service.d/OpenURL/agent
 libexec/x11appjail/service.d/OpenURL/exec
 libexec/x11appjail/service.d/OpenURL/setup
+libexec/x11appjail/transfer
 libexec/x11appjail/veriexec
 share/man/man1/x11appjail.1.gz
 share/man/man5/x11appjail-spec.5.gz
