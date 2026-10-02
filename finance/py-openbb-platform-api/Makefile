@@ -1,5 +1,6 @@
 PORTNAME=	openbb-platform-api
-DISTVERSION=	2.0.1
+DISTVERSION=	1.3.6
+PORTEPOCH=	1
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +12,9 @@ WWW=		https://github.com/OpenBB-finance/OpenBB
 
 LICENSE=	AGPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deepdiff>=8.6.2:devel/py-deepdiff@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openbb-core>=2.0.1:finance/py-openbb-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>=2.0.0:textproc/py-tomli@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}openbb-core>=1.6.10:finance/py-openbb-core@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
