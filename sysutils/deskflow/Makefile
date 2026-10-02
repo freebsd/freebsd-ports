@@ -1,7 +1,6 @@
 PORTNAME=	deskflow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.26.0
-PORTREVISION=	1
+DISTVERSION=	1.27.0
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/deskflow/deskflow/commit/
@@ -13,8 +12,7 @@ WWW=		https://deskflow.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	googletest>0:devel/googletest \
-		help2man:misc/help2man
+BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libei.so:x11/libei \
 		libportal.so:deskutils/libportal \
 		libxkbcommon.so:x11/libxkbcommon
@@ -28,18 +26,11 @@ USE_XORG=	ice sm x11 xext xi xinerama xkbfile xrandr xtst
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOCS_CMAKE_BOOL=	BUILD_DOCS
-
 post-patch:
 # Hardcoded paths need to be replaced
 	@${REINPLACE_CMD} -e 's|/usr/local/share/X11/xkb|${PREFIX}/share/X11/xkb|' \
 		${WRKSRC}/src/lib/deskflow/unix/AppUtilUnix.cpp
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|' \
 		${WRKSRC}/src/lib/common/Settings.h
-
-do-test:
-	@(cd ${BUILD_WRKSRC} && \
-	${SETENVI} ${WRK_ENV} ${TEST_ENV} ${BUILD_WRKSRC}/bin/legacytests)
 
 .include <bsd.port.mk>
