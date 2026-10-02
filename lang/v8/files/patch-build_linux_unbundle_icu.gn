@@ -1,0 +1,10 @@
+--- build/linux/unbundle/icu.gn.orig	2026-05-27 03:10:23 UTC
++++ build/linux/unbundle/icu.gn
+@@ -260,3 +260,7 @@ shim_headers("icuuc_shim") {
+     "unicode/uversion.h",
+   ]
+ }
++
++# System ICU has data statically linked; nothing to copy to the output dir.
++group("copy_icudata") {
++}

@@ -1,0 +1,12 @@
+--- third_party/partition_alloc/partition_alloc.gni.orig	2026-09-13 16:45:48 UTC
++++ third_party/partition_alloc/partition_alloc.gni
+@@ -540,7 +540,8 @@ is_pkeys_available =
+ # dependencies that use partition_allocator are compiled in AOSP against a
+ # version of glibc that does not include pkeys syscall numbers.
+ is_pkeys_available =
+-    (is_linux || is_chromeos) && current_cpu == "x64" && !is_cronet_build
++    (is_linux || is_chromeos) && !is_bsd && current_cpu == "x64" &&
++    !is_cronet_build
+ declare_args() {
+   enable_pkeys = is_pkeys_available
+ }

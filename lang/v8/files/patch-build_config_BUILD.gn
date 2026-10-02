@@ -1,6 +1,6 @@
---- build/config/BUILD.gn.orig	2022-04-04 20:12:26 UTC
+--- build/config/BUILD.gn.orig	2026-09-13 16:45:17 UTC
 +++ build/config/BUILD.gn
-@@ -121,7 +121,7 @@ config("debug") {
+@@ -117,7 +117,7 @@ config("debug") {
        # builds, and we have to tell it to turn it off.
        defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]
      }
@@ -9,8 +9,8 @@
               enable_iterator_debugging) {
      # Enable libstdc++ debugging facilities to help catch problems early, see
      # http://crbug.com/65151 .
-@@ -220,9 +220,7 @@ config("default_libs") {
-     ]
+@@ -209,9 +209,7 @@ config("default_libs") {
+     libs = []
    } else if (is_linux || is_chromeos) {
      libs = [
 -      "dl",
@@ -19,12 +19,12 @@
      ]
    }
  }
-@@ -304,7 +302,7 @@ config("executable_config") {
+@@ -341,7 +339,7 @@ config("executable_config") {
        "//build/config/ios:ios_dynamic_flags",
        "//build/config/ios:ios_executable_flags",
      ]
 -  } else if (is_linux || is_chromeos || is_android || current_os == "aix") {
 +  } else if (is_linux || is_bsd || is_chromeos || is_android || current_os == "aix") {
      configs += [ "//build/config/gcc:executable_config" ]
-     if (is_chromecast) {
+     if (is_castos || is_cast_android) {
        configs += [ "//build/config/chromecast:executable_config" ]

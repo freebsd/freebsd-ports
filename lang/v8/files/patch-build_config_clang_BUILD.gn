@@ -1,0 +1,13 @@
+--- build/config/clang/BUILD.gn.orig	2026-09-30 02:11:56 UTC
++++ build/config/clang/BUILD.gn
+@@ -281,6 +281,10 @@ clang_lib("compiler_builtins") {
+     } else {
+       assert(false, "unsupported target_platform=$target_platform")
+     }
++  } else if (is_bsd) {
++    # FreeBSD provides compiler builtins via the base system (libcompiler_rt
++    # or equivalent). The system clang and ports clang both handle this
++    # automatically; no explicit library path is needed here.
+   } else if (current_cpu != "ppc64" && current_cpu != "s390x") {
+     libname = "builtins"
+   }

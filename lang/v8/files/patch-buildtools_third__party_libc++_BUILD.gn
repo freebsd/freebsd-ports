@@ -1,11 +1,22 @@
---- buildtools/third_party/libc++/BUILD.gn.orig	2022-04-04 20:12:27 UTC
+--- buildtools/third_party/libc++/BUILD.gn.orig	2026-09-13 16:45:18 UTC
 +++ buildtools/third_party/libc++/BUILD.gn
-@@ -23,7 +23,7 @@ config("config") {
-       "-std:c++20",
-     ]
-   } else {
--    cflags += [ "-fPIC" ]
-+    cflags += [ "-fPIC", "-I%%LOCALBASE%%/include" ]
-     cflags_cc = [ "-std=c++20" ]
+@@ -595,6 +595,19 @@ target(libcxx_target_type, "libc++") {
+     }
    }
  
++  if (!use_custom_libcxx) {
++    # When use_custom_libcxx=false the runtime_library config does not add
++    # -nostdinc++ or the bundled include paths.  The libc++ sources still need
++    # their own headers (e.g. __config with _LIBCPP_BEGIN_NAMESPACE_LFTS),
++    # so add them explicitly here to avoid picking up mismatched system headers.
++    cflags_cc = [
++      "-nostdinc++",
++      "-isystem" + rebase_path("//buildtools/third_party/libc++", root_build_dir),
++      "-isystem" + rebase_path("//third_party/libc++/src/include", root_build_dir),
++      "-isystem" + rebase_path("//third_party/libc++abi/src/include", root_build_dir),
++    ]
++  }
++
+   # Disabling -Wexit-time-destructors, as libc++ uses `static string` objects
+   # for locale code.
+   configs += [ "//build/config/compiler:no_exit_time_destructors" ]

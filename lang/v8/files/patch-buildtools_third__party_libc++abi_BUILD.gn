@@ -1,0 +1,14 @@
+--- buildtools/third_party/libc++abi/BUILD.gn.orig	2026-05-28 05:05:59 UTC
++++ buildtools/third_party/libc++abi/BUILD.gn
+@@ -100,7 +100,10 @@ target(libcxxabi_target_type, "libc++abi") {
+   }
+ 
+   # libc++abi depends on libc++ internals.
+-  include_dirs = [ "//third_party/libc++/src/src" ]
++  include_dirs = [
++    "//third_party/libc++/src/src",
++    "//third_party/libc++abi/src/include",
++  ]
+ 
+   # Disabling -Wexit-time-destructors, as libc++abi uses a static object for
+   # at exit management (see `static DtorsManager manager`).
