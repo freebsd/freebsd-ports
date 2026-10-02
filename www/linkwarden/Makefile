@@ -71,6 +71,12 @@ SUB_FILES=	pkg-message
 SUB_LIST=	NODE=${LOCALBASE}/bin/node \
 		WWWDIR=${WWWDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1600000
+IGNORE=	fails to build on FreeBSD 16-CURRENT due to prisma
+.endif
+
 pre-build:
 	${CP} ${BUILDKIT}/yarn.lock ${WRKSRC}/yarn.lock
 	${LN} -sf ${PRISMA_ENGINES}/libquery_engine.so ${WRKDIR}/libquery_engine.node
@@ -139,4 +145,4 @@ post-install:
 	@echo "@dir(linkwarden,linkwarden,750) /var/db/linkwarden" >> ${TMPPLIST}
 	@echo "@dir(linkwarden,linkwarden,750) /var/log/linkwarden" >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
