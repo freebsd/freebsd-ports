@@ -1,6 +1,6 @@
 PORTNAME=	appscript
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
+DISTVERSION=	1.4.0
 CATEGORIES=	archivers
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -22,5 +22,11 @@ PLIST_FILES=	bin/appscript \
 		share/appscript/stub.c \
 		share/man/man1/appscript-verify.1.gz \
 		share/man/man1/appscript.1.gz
+
+OPTIONS_DEFINE=		BLAKE3
+OPTIONS_DEFAULT=	BLAKE3
+
+BLAKE3_DESC=		Enable support for Blake3
+BLAKE3_RUN_DEPENDS=	b3sum:sysutils/b3sum
 
 .include <bsd.port.mk>
