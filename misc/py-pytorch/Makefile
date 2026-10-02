@@ -1,7 +1,6 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.14.0
-PORTREVISION=	2
+DISTVERSION=	2.14.1
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -147,7 +146,7 @@ do-install: # port should be moved to 'torch', but keep this for now with the ha
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} run_test.py
 
-test-quick:
+test-quick: # tests basic training+inference functionality
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/example.py
 
 # tests as of 2.14.0: 231 passed 6 skipped
