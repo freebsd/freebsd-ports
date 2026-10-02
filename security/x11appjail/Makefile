@@ -1,6 +1,6 @@
 PORTNAME=	x11appjail
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	security
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -13,8 +13,8 @@ RUN_DEPENDS=	appjail:sysutils/appjail \
 		appscript:archivers/appscript \
 		doas:security/doas \
 		git:devel/git@lite \
+		jtransfer:sysutils/jtransfer \
 		notify-send:devel/libnotify \
-		su-exec:security/su-exec \
 		unixexec:sysutils/unixexec \
 		update-desktop-database:devel/desktop-file-utils \
 		xauth:x11/xauth \
@@ -33,9 +33,13 @@ GH_PROJECT=	x11appjail
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	EXAMPLES
-
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=		BLAKE3 EXAMPLES
+OPTIONS_DEFAULT=	BLAKE3
+
+BLAKE3_DESC=		Enable support for Blake3
+BLAKE3_RUN_DEPENDS=	b3sum:sysutils/b3sum
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
@@ -48,6 +52,7 @@ post-install-EXAMPLES-on:
 		${CHMOD} +x $${app}/uninstall; \
 		if [ -f "$${app}/X" ]; then ${CHMOD} +x $${app}/X; fi; \
 		${CHMOD} +x $${app}/.reproduce/build.sh; \
+		if [ -f "$${app}/perms.sh" ]; then ${CHMOD} +x $${app}/perms.sh; fi; \
 	done
 
 .include <bsd.port.mk>
