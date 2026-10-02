@@ -557,6 +557,7 @@
 %%WWWDIR%%/app/views/admin/info.html.erb
 %%WWWDIR%%/app/views/admin/plugins.html.erb
 %%WWWDIR%%/app/views/admin/projects.html.erb
+%%WWWDIR%%/app/views/admin/webhooks.html.erb
 %%WWWDIR%%/app/views/attachments/_form.html.erb
 %%WWWDIR%%/app/views/attachments/_links.html.erb
 %%WWWDIR%%/app/views/attachments/destroy.js.erb
@@ -1054,6 +1055,7 @@
 %%WWWDIR%%/app/views/watchers/destroy.js.erb
 %%WWWDIR%%/app/views/watchers/new.js.erb
 %%WWWDIR%%/app/views/webhooks/_form.html.erb
+%%WWWDIR%%/app/views/webhooks/_list.html.erb
 %%WWWDIR%%/app/views/webhooks/edit.html.erb
 %%WWWDIR%%/app/views/webhooks/index.html.erb
 %%WWWDIR%%/app/views/webhooks/new.html.erb
@@ -2220,7 +2222,7 @@
 %%WWWDIR%%/test/unit/lib/redmine/thumbnail_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/twofa_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/unified_diff_test.rb
-%%WWWDIR%%/test/unit/lib/redmine/utils/date_calculation.rb
+%%WWWDIR%%/test/unit/lib/redmine/utils/date_calculation_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/builders/json_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/builders/xml_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/labelled_form_builder_test.rb
