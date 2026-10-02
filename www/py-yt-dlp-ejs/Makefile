@@ -6,7 +6,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-node-modules-${DISTVERSION}${EXTRACT_SUFX}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	JavaScript challenge solver for yt-dlp
@@ -39,6 +38,7 @@ DD=		${DISTDIR}/${DIST_SUBDIR}
 
 .include <bsd.port.pre.mk>
 
+DIST_SUBDIR=	${PORTNAME}/${ARCH}
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 
 do-fetch: # this target (1) downloads the source tarball, (2) extracts it to a temporary location, (3) runs npm ci to fetch and install node_modules, and (4) packages the node_modules directory into a separate tarball for later extraction during the build phase. This allows us to avoid running npm ci during the build phase which will require network access
