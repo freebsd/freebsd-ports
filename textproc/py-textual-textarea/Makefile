@@ -1,5 +1,5 @@
 PORTNAME=	textual-textarea
-DISTVERSION=	0.18.4
+DISTVERSION=	0.18.5
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.28.0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyperclip>=1.7.0_1:devel/py-pyperclip@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}textual>=0.89.1:textproc/py-textual@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}textual>=0.89.1:textproc/py-textual@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tree-sitter-languages>=1.10.2<1.10.2_99:devel/py-tree-sitter-languages@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tree-sitter>=0.20.1<0.21:devel/py-tree-sitter@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
