@@ -1,5 +1,6 @@
 PORTNAME=	openbb-mcp-server
-DISTVERSION=	2.0.1
+DISTVERSION=	1.4.1
+PORTEPOCH=	1
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,12 +12,9 @@ WWW=		https://github.com/OpenBB-finance/OpenBB
 
 LICENSE=	AGPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>=0.138.2:www/py-fastapi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fastmcp>=4.0.9:misc/py-fastmcp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openbb-core>=2.0.1:finance/py-openbb-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomli>=2.0.0:textproc/py-tomli@${PY_FLAVOR}
-#RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}openbb-cli>=2.0.1:finance/py-openbb-cli@${PY_FLAVOR} # missing
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastmcp>=3.2.0:misc/py-fastmcp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openbb-core>=1.6.10:finance/py-openbb-core@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
