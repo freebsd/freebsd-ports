@@ -1,7 +1,7 @@
 PORTNAME=	qgnomeplatform
 DISTVERSION=	0.6.1-8
 DISTVERSIONSUFFIX=	-g53d7924
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,9 @@ COMMENT=	Qt 5 Platform Theme designed to fit into GNOME
 WWW=		https://github.com/FedoraQt/QGnomePlatform
 
 LICENSE=	LGPL21
+
+DEPRECATED=	Depends on deprecated Qt5, abandoned upstream
+EXPIRATION_DATE=	2026-10-31
 
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon \
