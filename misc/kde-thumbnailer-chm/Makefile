@@ -1,7 +1,7 @@
 PORTNAME=	kde-thumbnailer-chm
 PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc kde
 
 MAINTAINER=	makc@FreeBSD.org
@@ -10,6 +10,9 @@ WWW=		https://store.kde.org/p/1080871/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Depends on deprecated Qt5, superseded by KDE Frameworks 6
+EXPIRATION_DATE=	2026-10-31
 
 LIB_DEPENDS=	libchm.so:misc/chmlib
 
