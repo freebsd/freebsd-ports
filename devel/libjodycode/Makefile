@@ -1,12 +1,12 @@
 PORTNAME=	libjodycode
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1
-PORTREVISION=	1
+DISTVERSION=	4.1.2
 CATEGORIES=	devel
+MASTER_SITES=	https://codeberg.org/jbruchon/libjodycode/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Shared code used by several utilities written by Jody Bruchon
-WWW=		https://github.com/jbruchon/libjodycode
+WWW=		https://codeberg.org/jbruchon/libjodycode
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -14,25 +14,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		gmake
 
 USE_LDCONFIG=	yes
-USE_GITHUB=	yes
-GH_ACCOUNT=	jbruchon
 
-MAJOR_VERSION=	${DISTVERSION:C/([0-9]).*/\1/1}
+_MAJOR_VERSION=	${DISTVERSION:C/([0-9]).*/\1/1}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	include/libjodycode.h \
 		lib/libjodycode.a \
 		lib/libjodycode.so \
+		lib/libjodycode.so.${_MAJOR_VERSION} \
 		lib/libjodycode.so.${DISTVERSION} \
-		lib/libjodycode.so.${MAJOR_VERSION} \
-		share/man/man7/libjodycode.7.gz
+		share/man/man3/libjodycode.3.gz
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.7 ${STAGEDIR}${PREFIX}/share/man/man7
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.3 ${STAGEDIR}${PREFIX}/share/man/man3
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}.h
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.a ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.a
 	${INSTALL_LIB} ${WRKSRC}/${PORTNAME}.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf ${PORTNAME}.so.${DISTVERSION} \
-		${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.${MAJOR_VERSION}
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.${_MAJOR_VERSION}
 	${LN} -sf ${PORTNAME}.so.${DISTVERSION} \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so
 
