@@ -1,6 +1,6 @@
 PORTNAME=	luv
 #DISTVERSIONPREFIX=	v
-DISTVERSION=	1.52.1-0
+DISTVERSION=	1.53.0-0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/luvit/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -16,17 +16,15 @@ LIB_DEPENDS=	libuv.so:devel/libuv
 USES=		cmake localbase luajit
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
-
-CMAKE_ON=	BUILD_SHARED_LIBS WITH_SHARED_LIBUV
-CMAKE_OFF=	BUILD_MODULE
 CMAKE_ARGS=	-DLUA_BUILD_TYPE=System \
 		-DLUA_COMPAT53_DIR=deps/lua-compat-5.3 \
 		-DWITH_LUA_ENGINE=LuaJIT
+CMAKE_ON=	BUILD_SHARED_LIBS WITH_SHARED_LIBUV
+CMAKE_OFF=	BUILD_MODULE
 
 PLIST_FILES=	lib/libluv.so \
 		lib/libluv.so.1 \
-		lib/libluv.so.1.52.1 \
+		lib/libluv.so.1.53.0 \
 		libdata/pkgconfig/libluv.pc \
 		include/luv/util.h \
 		include/luv/luv.h \
@@ -34,6 +32,8 @@ PLIST_FILES=	lib/libluv.so \
 		include/luv/lhandle.h
 
 PORTDOCS=	docs.md
+
+OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

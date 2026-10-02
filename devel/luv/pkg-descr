@@ -1,1 +1,9 @@
-libuv bindings for Lua.
+This library makes libuv available to lua scripts. It was made for the luvit
+project but should usable from nearly any lua project.
+
+The library can be used by multiple threads at once. Each thread is assumed to
+load the library from a different `lua_State`. Luv will create a unique
+`uv_loop_t` for each state.
+
+API docs (installed at $DOCSDIR/docs.md):
+   https://github.com/luvit/luv/blob/master/docs/docs.md
