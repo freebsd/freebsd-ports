@@ -1,7 +1,7 @@
 PORTNAME=	tabby
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.32.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel # machine-learning
 MASTER_SITES=	https://github.com/swagger-api/swagger-ui/archive/refs/tags/:swagger
 PKGNAMESUFFIX=	-ai-coding-assistant
@@ -15,6 +15,9 @@ WWW=		https://www.tabbyml.com/ \
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Depends on expiring lang/rust188
+EXPIRATION_DATE=2026-11-01
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		rust188>0:lang/rust188
