@@ -1,6 +1,6 @@
 PORTNAME=	mistral-common
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.7
+DISTVERSION=	1.12.0
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # tests are broken in PYPI tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.21.1:devel/py-jsonschema@${PY_
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}click>=8.1.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>=0.118.3:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>=1.0:misc/py-huggingface-hub@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}llguidance>=1.3.0:textproc/py-llguidance@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opencv-python-headless>=4.0.0:graphics/py-opencv-python-headless@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>=2.9.1:devel/py-pydantic-settings@${PY_FLAVOR} \
@@ -55,6 +56,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
 TEST_ARGS=	--import-mode=importlib
 
-# tests as of 1.11.7: 1420 passed, 17 skipped, 17 warnings in 101.43s (0:01:41)
+# tests as of 1.12.0: 1763 passed, 16 skipped, 27 warnings in 196.86s
 
 .include <bsd.port.mk>
