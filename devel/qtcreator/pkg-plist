@@ -229,6 +229,7 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/changelog/changes-2.8.1
 %%DATADIR%%/changelog/changes-20.0.0.md
 %%DATADIR%%/changelog/changes-20.0.1.md
+%%DATADIR%%/changelog/changes-20.0.2.md
 %%DATADIR%%/changelog/changes-3.0.0
 %%DATADIR%%/changelog/changes-3.0.1
 %%DATADIR%%/changelog/changes-3.1.0
