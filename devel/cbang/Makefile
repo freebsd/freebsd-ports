@@ -1,6 +1,6 @@
 PORTNAME=	cbang
 PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -23,10 +23,10 @@ LIB_DEPENDS=	libv8.so:lang/v8		\
 USE_GITHUB=	yes
 GH_ACCOUNT=	CauldronDevelopmentLLC
 
-USES=		compiler:c++17-lang cpe localbase mysql:client python:test scons	\
+USES=		compiler:c++20-lang cpe localbase mysql:client python:test scons	\
 		sqlite ssl
 CPE_VENDOR=	cauldrondevelopment
-USE_CXXSTD=	gnu++17
+USE_CXXSTD=	gnu++20
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DEBUG DOCS
@@ -37,7 +37,7 @@ MAKE_ARGS+=	cc="${CC}"	\
 		cxx="${CXX}"	\
 		ccflags="${CCFLAGS}"	\
 		cxxflags="${CXXFLAGS}"	\
-		cxxstd="c++17"	\
+		cxxstd="c++20"	\
 		libpath="/lib"	\
 		sharedlib=1	\
 		prefix="${STAGEDIR}${PREFIX}"	\
