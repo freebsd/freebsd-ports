@@ -1,5 +1,5 @@
 PORTNAME=	appjail
-DISTVERSION=	5.7.0.20260922
+DISTVERSION=	5.8.0.20261002
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	DtxdF
 GH_PROJECT=	AppJail
-GH_TAGNAME=	e1ac743749e7cba9582c1829a4f2047b50e22fa8
+GH_TAGNAME=	4964fc275785583d4fef79ef3036e44a36411c94
 
 MAKE_ARGS=	APPJAIL_VERSION=${DISTVERSION}+${GH_TAGNAME}
 ALL_TARGET=	utils-strip
@@ -47,8 +47,7 @@ OCI_RUN_DEPENDS=		buildah>0:sysutils/buildah \
 				jq>0:textproc/jq
 PKGBASE_RUN_DEPENDS=		${LOCALBASE}/sbin/pkg:${PKG_ORIGIN}
 RAGE_RUN_DEPENDS=		rage:security/rage-encryption
-X11_RUN_DEPENDS=		su-exec:security/su-exec \
-				xauth:x11/xauth \
+X11_RUN_DEPENDS=		xauth:x11/xauth \
 				xdotool:x11/xdotool \
 				Xephyr:x11-servers/xorg-server@xephyr \
 				xev:x11/xev \
