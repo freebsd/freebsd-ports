@@ -1,0 +1,49 @@
+--- examples/CMakeLists.txt.orig	2026-08-13 11:44:36 UTC
++++ examples/CMakeLists.txt
+@@ -36,8 +36,8 @@ set(EXAMPLE_overload   overload       cpp)
+ set(EXAMPLE_author     author         cpp)
+ set(EXAMPLE_par        par            cpp)
+ set(EXAMPLE_overload   overload       cpp)
+-set(EXAMPLE_example    example        cpp)
+-set(EXAMPLE_include    include        cpp)
++set(EXAMPLE_example    example        cpp        example_test)
++set(EXAMPLE_include    include        cpp        include_test)
+ set(EXAMPLE_qtstyle    qtstyle        cpp)
+ set(EXAMPLE_jdstyle    jdstyle        cpp)
+ set(EXAMPLE_autolink   autolink       cpp)
+@@ -74,7 +74,11 @@ foreach (f_inp  ${BASIC_EXAMPLES})
+         if (${f_len} GREATER 2)
+           list(GET  ${f_inp} 2 f_dep)
+           list(GET  ${f_inp} 2 f_dep_chm)
+-          set(f_dep "${PROJECT_BINARY_DIR}/html/examples/${f_dep}/html/index.html")
++          if (${f_dep} MATCHES _test$)
++            set(f_dep "${CMAKE_CURRENT_BINARY_DIR}/${f_dep}.${f_ext}")
++          else()
++            set(f_dep "${PROJECT_BINARY_DIR}/html/examples/${f_dep}/html/index.html")
++          endif()
+           if (build_doc_chm)
+             set(f_dep_chm "${PROJECT_BINARY_DIR}/chm/html/examples/${f_dep_chm}/html/index.html")
+           endif()
+@@ -82,9 +86,9 @@ foreach (f_inp  ${BASIC_EXAMPLES})
+     add_custom_command(
+         COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/html/examples/${f}
+         COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/latex/examples/${f}
+-        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} EXTRA_SETTINGS=docuexample.cfg ${EXECUTABLE_OUTPUT_PATH}/doxygen ${f}.cfg
++        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} EXTRA_SETTINGS=docuexample.cfg ${EXECUTABLE_OUTPUT_PATH}/doxygen ${CMAKE_CURRENT_BINARY_DIR}/${f}.cfg
+         COMMAND ${Python_EXECUTABLE}  ${PROJECT_SOURCE_DIR}/examples/strip_example.py  < ${PROJECT_BINARY_DIR}/latex/examples/${f}/latex/refman.tex > ${PROJECT_BINARY_DIR}/latex/examples/${f}/latex/refman_doc.tex
+-        DEPENDS doxygen ${f}.${f_ext} ${f}.cfg ${PROJECT_SOURCE_DIR}/examples/strip_example.py ${f_dep} baseexample.cfg docuexample.cfg
++        DEPENDS doxygen ${CMAKE_CURRENT_BINARY_DIR}/${f}.${f_ext} ${CMAKE_CURRENT_BINARY_DIR}/${f}.cfg ${PROJECT_SOURCE_DIR}/examples/strip_example.py ${f_dep} ${CMAKE_CURRENT_BINARY_DIR}/baseexample.cfg ${CMAKE_CURRENT_BINARY_DIR}/docuexample.cfg
+         OUTPUT ${PROJECT_BINARY_DIR}/html/examples/${f}/html/index.html ${PROJECT_BINARY_DIR}/latex/examples/${f}/latex/refman_doc.tex
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/examples
+     )
+@@ -93,8 +97,8 @@ foreach (f_inp  ${BASIC_EXAMPLES})
+     if (build_doc_chm)
+       add_custom_command(
+         COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/chm/html/examples/${f}
+-        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} EXTRA_SETTINGS=chmexample.cfg ${EXECUTABLE_OUTPUT_PATH}/doxygen ${f}.cfg
+-        DEPENDS doxygen ${f}.${f_ext} ${f}.cfg ${f_dep_chm} baseexample.cfg chmexample.cfg
++        COMMAND ${CMAKE_COMMAND} -E env PROJECT_BINARY_DIR=${PROJECT_BINARY_DIR} EXTRA_SETTINGS=chmexample.cfg ${EXECUTABLE_OUTPUT_PATH}/doxygen ${CMAKE_CURRENT_BINARY_DIR}/${f}.cfg
++        DEPENDS doxygen ${CMAKE_CURRENT_BINARY_DIR}/${f}.${f_ext} ${CMAKE_CURRENT_BINARY_DIR}/${f}.cfg ${f_dep_chm} ${CMAKE_CURRENT_BINARY_DIR}/baseexample.cfg ${CMAKE_CURRENT_BINARY_DIR}/chmexample.cfg
+         OUTPUT ${PROJECT_BINARY_DIR}/chm/html/examples/${f}/html/index.html
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/examples
+       )
