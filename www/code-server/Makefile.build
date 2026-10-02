@@ -16,12 +16,13 @@ post-extract:
 	${TAR} -xzf ${WRKDIR}/vscode-${dir:S|/|_|g}-node-modules${EXTRACT_SUFX} \
 		-C ${WRKSRC}/lib/vscode/${dir}
 .endfor
-# Provide @github/copilot-linux-x64 in remote/node_modules so the reh-web build's
-# ensureCopilotPlatformPackage() finds it locally instead of running "npm pack"
-# (which needs network and fails in poudriere). GitHub Copilot is closed-source
-# and not usable on FreeBSD; this only lets the build pass.
 	${MKDIR} ${WRKSRC}/lib/vscode/remote/node_modules/@github/copilot-linux-x64
 	${CP} -R ${WRKDIR}/package/ ${WRKSRC}/lib/vscode/remote/node_modules/@github/copilot-linux-x64
+	${MKDIR} ${WRKDIR}/copilot-sdk
+	${TAR} -xzf ${DISTDIR}/copilot-sdk-linux-x64-${COPILOT_SDK_VERSION}.tgz \
+		-C ${WRKDIR}/copilot-sdk
+	${MKDIR} ${WRKSRC}/lib/vscode/remote/node_modules/@github/copilot-sdk-linux-x64
+	${CP} -R ${WRKDIR}/copilot-sdk/package/ ${WRKSRC}/lib/vscode/remote/node_modules/@github/copilot-sdk-linux-x64
 
 post-patch:
 	cd ${WRKSRC} && while read patchfile; do \
@@ -77,14 +78,14 @@ do-build:
 # names are kept as-is (Copilot resolves them by that label); only the
 # binary contents are swapped so no Linux ELF binaries ship in the package.
 .for _rg in extensions/copilot/node_modules/@github/copilot/sdk/ripgrep/bin/linux-x64/rg \
-		node_modules/@github/copilot-linux-x64/ripgrep/bin/linux-x64/rg \
+		node_modules/@github/copilot-sdk-linux-x64/ripgrep/bin/linux-x64/rg \
 		node_modules/@vscode/ripgrep-universal/bin/linux-x64/rg
 	${CP} ${LOCALBASE}/bin/rg \
 		${WRKSRC}/lib/vscode-reh-web-linux-x64/${_rg}
 .endfor
 .for _tgrep in extensions/copilot/node_modules/@github/copilot/tgrep/bin/linux-x64/tgrep \
 		extensions/copilot/node_modules/@github/copilot/sdk/tgrep/bin/linux-x64/tgrep \
-		node_modules/@github/copilot-linux-x64/tgrep/bin/linux-x64/tgrep
+		node_modules/@github/copilot-sdk-linux-x64/tgrep/bin/linux-x64/tgrep
 	${CP} ${LOCALBASE}/bin/tgrep \
 		${WRKSRC}/lib/vscode-reh-web-linux-x64/${_tgrep}
 .endfor
