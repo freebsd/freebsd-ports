@@ -2148,7 +2148,7 @@
 %%WWWDIR%%/test/unit/lib/redmine/themes_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/thumbnail_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/unified_diff_test.rb
-%%WWWDIR%%/test/unit/lib/redmine/utils/date_calculation.rb
+%%WWWDIR%%/test/unit/lib/redmine/utils/date_calculation_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/builders/json_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/builders/xml_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/labelled_form_builder_test.rb
