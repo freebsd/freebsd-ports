@@ -1,4 +1,4 @@
---- codex-rs/core/src/tools/handlers/apply_patch.rs.orig	2026-09-09 21:43:48 UTC
+--- codex-rs/core/src/tools/handlers/apply_patch.rs.orig	2026-10-02 02:01:57 UTC
 +++ codex-rs/core/src/tools/handlers/apply_patch.rs
 @@ -43,6 +43,7 @@ use codex_exec_server::ExecutorFileSystem;
  use codex_apply_patch::Hunk;
@@ -12,9 +12,9 @@
      }
  }
  
-+fn apply_patch_verification_sandbox<'a>(
++pub(crate) fn apply_patch_file_system_sandbox<'a>(
 +    environment: &TurnEnvironment,
-+    sandbox: &'a FileSystemSandboxContext,
++    sandbox: Option<&'a FileSystemSandboxContext>,
 +) -> Option<&'a FileSystemSandboxContext> {
 +    if cfg!(any(target_os = "openbsd", target_os = "freebsd"))
 +        && !environment.environment.is_remote()
@@ -25,7 +25,7 @@
 +    {
 +        None
 +    } else {
-+        Some(sandbox)
++        sandbox
 +    }
 +}
 +
@@ -37,7 +37,7 @@
          let fs = turn_environment.environment.get_filesystem();
          let sandbox = turn_environment.sandbox_context(/*additional_permissions*/ None);
 +        let verification_sandbox =
-+            apply_patch_verification_sandbox(turn_environment, &sandbox);
++            apply_patch_file_system_sandbox(turn_environment, Some(&sandbox));
          match codex_apply_patch::verify_apply_patch_args_with_mode(
              args,
              turn_environment.cwd(),
@@ -52,7 +52,7 @@
  ) -> Result<Option<FunctionToolOutput>, FunctionCallError> {
      let turn = &step_context.turn;
      let sandbox = turn_environment.sandbox_context(/*additional_permissions*/ None);
-+    let verification_sandbox = apply_patch_verification_sandbox(&turn_environment, &sandbox);
++    let verification_sandbox = apply_patch_file_system_sandbox(&turn_environment, Some(&sandbox));
      match codex_apply_patch::maybe_parse_apply_patch_verified_with_mode(
          command,
          cwd,
