@@ -1,0 +1,48 @@
+--- node_modules/cpu-features/deps/cpu_features/src/impl_aarch64_linux_or_android.c.orig
++++ node_modules/cpu-features/deps/cpu_features/src/impl_aarch64_linux_or_android.c
+@@ -15,7 +15,7 @@
+ #include "cpu_features_macros.h"
+ 
+ #ifdef CPU_FEATURES_ARCH_AARCH64
+-#if defined(CPU_FEATURES_OS_LINUX) || defined(CPU_FEATURES_OS_ANDROID)
++#if defined(CPU_FEATURES_OS_LINUX) || defined(CPU_FEATURES_OS_ANDROID) || defined(CPU_FEATURES_OS_FREEBSD)
+ 
+ #include "impl_aarch64__base_implementation.inl"
+ 
+--- node_modules/cpu-features/deps/cpu_features/src/hwcaps.c.orig
++++ node_modules/cpu-features/deps/cpu_features/src/hwcaps.c
+@@ -51,6 +51,28 @@
+   } while (0)
+ #endif
+ 
++#if defined(CPU_FEATURES_OS_FREEBSD)
++#include <sys/auxv.h>
++
++static unsigned long GetHardwareCapabilitiesFor(int type) {
++  unsigned long hwcaps = 0;
++  if (elf_aux_info(type, &hwcaps, sizeof(hwcaps)) != 0) return 0;
++  return hwcaps;
++}
++
++HardwareCapabilities CpuFeatures_GetHardwareCapabilities(void) {
++  HardwareCapabilities capabilities;
++  capabilities.hwcaps = GetHardwareCapabilitiesFor(AT_HWCAP);
++  capabilities.hwcaps2 = GetHardwareCapabilitiesFor(AT_HWCAP2);
++  return capabilities;
++}
++
++const char *CpuFeatures_GetPlatformPointer(void) { return NULL; }
++
++const char *CpuFeatures_GetBasePlatformPointer(void) { return NULL; }
++
++#else
++
+ ////////////////////////////////////////////////////////////////////////////////
+ // Implementation of GetElfHwcapFromGetauxval
+ ////////////////////////////////////////////////////////////////////////////////
+@@ -166,4 +188,5 @@
+   return (const char *)GetHardwareCapabilitiesFor(AT_BASE_PLATFORM);
+ }
+ 
++#endif
+ #endif  // CPU_FEATURES_TEST

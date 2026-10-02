@@ -1,6 +1,6 @@
 PORTNAME=	uptime-kuma
+DISTVERSION=	2.5.5
 PORTREVISION=	1
-DISTVERSION=	2.4.0
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	LOCAL/dch/${PORTNAME}/:npmcache \
 		https://github.com/louislam/${PORTNAME}/releases/download/${DISTVERSION}/:dist
@@ -84,6 +84,8 @@ do-build:
 		'/checkAndPreparePackage()\.then/,$$d' \
 		${WRKSRC}/node_modules/esbuild/install.js
 	${ECHO_CMD} 'checkAndPreparePackage();' >> ${WRKSRC}/node_modules/esbuild/install.js
+	${PATCH} -d ${WRKSRC} ${PATCH_ARGS} \
+		< ${FILESDIR}/extra-patch-node__modules_cpu-features
 # clang 16+ rejects static_cast<napi_typedarray_type>(-1) as a non-constant
 # expression because -1 is outside the valid enum range [0,15].  Adding
 # 'inline' makes it a C++17 inline static data member whose initialiser is
