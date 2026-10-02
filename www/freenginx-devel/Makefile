@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/osa
@@ -182,8 +182,8 @@ HTTPV3_LSSL_BUILD_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
 HTTPV3_LSSL_RUN_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
 HTTPV3_LSSL_IMPLIES=		HTTPV3
 HTTPV3_LSSL_PREVENTS=		HTTPV3_BORING HTTPV3_OSSL35
-HTTPV3_OSSL35_BUILD_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl35
-HTTPV3_OSSL35_RUN_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl35
+HTTPV3_OSSL35_BUILD_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl
+HTTPV3_OSSL35_RUN_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl
 HTTPV3_OSSL35_IMPLIES=		HTTPV3
 HTTPV3_OSSL35_PREVENTS=		HTTPV3_BORING HTTPV3_LSSL
 MAIL_VARS=			DSO_BASEMODS+=mail
