@@ -1,6 +1,6 @@
 PORTNAME=	fracplanet
 PORTVERSION=	0.5.1
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/:icons
@@ -9,7 +9,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for creating random fractal planets and terrain
-WWW=		http://www.bottlenose.demon.co.uk/share/fracplanet/
+WWW=		https://sourceforge.net/projects/fracplanet/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -33,8 +33,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OPTIONS_DEFINE=		DOXYGEN DOCS
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_IMPLIES=	DOCS
-
-CONFLICTS_INSTALL=	fracplanet-qt5
 
 DOCFILES=	BUGS NEWS README THANKS fracplanet.css fracplanet.htm
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
