@@ -1,4 +1,5 @@
 bin/bosd
+bin/bosd-start
 include/bosd.h
 lib/libbosd.so
 lib/libbosd.so.4
@@ -30,6 +31,7 @@ share/doc/bosd/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mirror.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tile.py
 share/man/man1/bosd.1.gz
+share/man/man1/bosd-start.1.gz
 share/man/man3/bosd.3.gz
 %%TESTS%%share/bosd/tests/run
 %%TESTS%%share/bosd/tests/bar_01.sh
