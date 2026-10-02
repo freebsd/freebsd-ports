@@ -3,7 +3,6 @@ DISTVERSION=	1.549.0
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${NODE_HEADERS}${EXTRACT_SUFX}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GitHub Copilot Language Server
@@ -56,6 +55,7 @@ DISTFILES+=	${dep:S/_/-/g}-${dep_${dep}_version}${EXTRACT_SUFX}
 
 .include <bsd.port.pre.mk>
 
+DIST_SUBDIR=	${PORTNAME}/${ARCH}
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 
 do-fetch:
