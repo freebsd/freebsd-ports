@@ -1,6 +1,6 @@
 PORTNAME=	appjail
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.7.0
+DISTVERSION=	5.8.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -42,8 +42,7 @@ OCI_RUN_DEPENDS=		buildah>0:sysutils/buildah \
 				jq>0:textproc/jq
 PKGBASE_RUN_DEPENDS=		${LOCALBASE}/sbin/pkg:${PKG_ORIGIN}
 RAGE_RUN_DEPENDS=		rage:security/rage-encryption
-X11_RUN_DEPENDS=		su-exec:security/su-exec \
-				xauth:x11/xauth \
+X11_RUN_DEPENDS=		xauth:x11/xauth \
 				xdotool:x11/xdotool \
 				Xephyr:x11-servers/xorg-server@xephyr \
 				xev:x11/xev \
