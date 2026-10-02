@@ -1,7 +1,7 @@
 PORTNAME=	immich
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
 DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
@@ -122,5 +122,7 @@ post-install:
 	@${FIND} ${STAGEDIR}${WWWDIR}/server -type d -empty -delete
 	@${PRINTF} '#!/bin/sh\nexec ${PREFIX}/bin/immich-admin "$$@"\n' \
 		> ${STAGEDIR}${WWWDIR}/server/bin/immich-admin
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${WWWDIR_REL}/build-data/www/_app/immutable \
+		-type f | ${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.mk>
