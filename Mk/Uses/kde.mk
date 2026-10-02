@@ -361,7 +361,7 @@ _USE_KDEPIM_ALL=	akonadi akonadicalendar akonadiconsole \
 			pimcommon pimtextedit tnef
 
 # List of frequently used KDE releated software for any KDE/Qt version.
-_USE_KDE_EXTRA5_ALL=	kirigami-addons phonon phonon-vlc \
+_USE_KDE_EXTRA5_ALL=	phonon phonon-vlc \
 			oxygen-sounds plasma-wayland-protocols
 _USE_KDE_EXTRA6_ALL=	kirigami-addons phonon phonon-mpv phonon-vlc \
 			plasma-wayland-protocols ktextaddons
