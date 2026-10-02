@@ -1,6 +1,6 @@
---- gretl/cmake/GretlConfigHeader.cmake.orig	2026-03-31 22:10:13.885368000 -0700
-+++ gretl/cmake/GretlConfigHeader.cmake	2026-03-31 22:11:01.296363000 -0700
-@@ -106,5 +106,5 @@
+--- gretl/cmake/GretlConfigHeader.cmake.orig	2026-08-13 02:48:06 UTC
++++ gretl/cmake/GretlConfigHeader.cmake
+@@ -106,5 +106,5 @@ install(
      ${GRETL_INSTALL_CMAKE_MODULE_DIR}
  )
  

@@ -46,6 +46,7 @@ include/smith/infrastructure/accelerator.hpp
 include/smith/infrastructure/application_manager.hpp
 include/smith/infrastructure/cli.hpp
 include/smith/infrastructure/debug_print.hpp
+include/smith/infrastructure/format.hpp
 include/smith/infrastructure/git_sha.hpp
 include/smith/infrastructure/input.hpp
 include/smith/infrastructure/logger.hpp

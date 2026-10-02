@@ -1,6 +1,6 @@
---- cmake/thirdparty/SetupSmithThirdParty.cmake.orig	2026-03-30 15:30:35.531584000 -0700
-+++ cmake/thirdparty/SetupSmithThirdParty.cmake	2026-03-30 15:32:30.484066000 -0700
-@@ -54,14 +54,8 @@
+--- cmake/thirdparty/SetupSmithThirdParty.cmake.orig	2026-09-30 18:18:35 UTC
++++ cmake/thirdparty/SetupSmithThirdParty.cmake
+@@ -77,13 +77,7 @@ if (NOT SMITH_THIRD_PARTY_LIBRARIES_FOUND)
      #------------------------------------------------------------------------------
      # Camp
      #------------------------------------------------------------------------------
@@ -9,10 +9,9 @@
 -    endif()
 -
 -    smith_assert_is_directory(DIR_VARIABLE CAMP_DIR)
+-
+-    find_dependency(camp REQUIRED PATHS "${CAMP_DIR}")
 +    find_dependency(camp REQUIRED)
  
--    find_dependency(camp REQUIRED PATHS "${CAMP_DIR}")
--
      smith_assert_find_succeeded(PROJECT_NAME Camp
                                  TARGET       camp
-                                 DIR_VARIABLE CAMP_DIR)

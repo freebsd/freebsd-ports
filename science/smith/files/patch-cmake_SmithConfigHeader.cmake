@@ -1,6 +1,6 @@
---- cmake/SmithConfigHeader.cmake.orig	2026-03-31 21:26:15.628537000 -0700
-+++ cmake/SmithConfigHeader.cmake	2026-03-31 21:26:45.170889000 -0700
-@@ -117,5 +117,5 @@
+--- cmake/SmithConfigHeader.cmake.orig	2026-09-30 18:18:35 UTC
++++ cmake/SmithConfigHeader.cmake
+@@ -87,5 +87,5 @@ install(
      ${SMITH_INSTALL_CMAKE_MODULE_DIR}
  )
  

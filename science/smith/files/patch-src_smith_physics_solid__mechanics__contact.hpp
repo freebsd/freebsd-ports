@@ -1,6 +1,6 @@
---- src/smith/physics/solid_mechanics_contact.hpp.orig	2026-03-31 21:05:46.118045000 -0700
-+++ src/smith/physics/solid_mechanics_contact.hpp	2026-03-31 21:06:54.640503000 -0700
-@@ -331,10 +331,14 @@
+--- src/smith/physics/solid_mechanics_contact.hpp.orig	2026-09-30 18:18:35 UTC
++++ src/smith/physics/solid_mechanics_contact.hpp
+@@ -493,10 +493,14 @@ class SolidMechanicsContact<order, dim, Parameters<par
        amgf_prec->SetFilteredSubspaceTransferOperator(*(contact_dof_prolongation_.get()));
        // set the filteredsubspace solver component of AMGF
        // better solution: retrieve print level from .preconditioner_print_level from linear_solver_options

@@ -509,7 +509,6 @@
     SUBDIR += sciplot
     SUBDIR += seacas
     SUBDIR += segyio
-    SUBDIR += serac
     SUBDIR += shelxle
     SUBDIR += siconos
     SUBDIR += siesta
@@ -525,6 +524,7 @@
     SUBDIR += simple-dftd3
     SUBDIR += simsmith
     SUBDIR += sirius
+    SUBDIR += smith
     SUBDIR += smoldyn
     SUBDIR += sparta
     SUBDIR += spglib
