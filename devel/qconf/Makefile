@@ -1,6 +1,7 @@
 PORTNAME=	qconf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +10,9 @@ WWW=		https://github.com/psi-im/qconf
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Not ported to Qt6, has no consumers
+EXPIRATION_DATE=	2026-10-31
 
 USES=		qmake:no_env qt:5 tar:bzip2
 USE_QT=		core gui xml \
