@@ -1,5 +1,5 @@
 PORTNAME=	xray-16
-DISTVERSION=	2921-january-2025-rc1.20260601
+DISTVERSION=	2921-january-2025-rc1.20261001
 CATEGORIES=	games
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -25,9 +25,9 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 USES=		cmake jpeg localbase:ldflags openal sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenXRay
-GH_TAGNAME=	11b8c4e
+GH_TAGNAME=	d4979c2
 GH_TUPLE=	GPUOpen-LibrariesAndSDKs:AGS_SDK:5d8812d:AGSSDK/Externals/AGS_SDK \
-		OpenXRay:GameSpy:3e43480:GameSpy/Externals/GameSpy \
+		OpenXRay:GameSpy:eb1e41c:GameSpy/Externals/GameSpy \
 		OpenXRay:LuaJIT:5a5cd82:LuaJIT/Externals/LuaJIT \
 		g-truc:gli:3542f88:gli/Externals/gli \
 		OpenXRay:luabind-deboostified:8da131b:luabind/Externals/luabind \
