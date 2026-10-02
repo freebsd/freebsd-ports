@@ -1,3 +1,3 @@
-TIMESTAMP = 1789651180
-SHA256 (mimalloc-v3.5.3-source.tar.gz) = 43857a9e4f26412e970cbe49635d0465c2de6e77a697ce3d4b926a473d1045ca
-SIZE (mimalloc-v3.5.3-source.tar.gz) = 1458292
+TIMESTAMP = 1790924157
+SHA256 (microsoft-mimalloc-v3.5.4_GH0.tar.gz) = 36e9b5bf1bb703567a0347491721ce2098000db8284dc55cd53d211452723cdb
+SIZE (microsoft-mimalloc-v3.5.4_GH0.tar.gz) = 1484245
