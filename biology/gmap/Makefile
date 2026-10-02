@@ -15,9 +15,6 @@ LICENSE_NAME=	GMAP License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-ONLY_FOR_ARCHS=		aarch64 amd64 i386 powerpc64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	untested on other architectures
-
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_have_decl___builtin_popcount=yes \
@@ -25,6 +22,7 @@ CONFIGURE_ENV=	ac_cv_have_decl___builtin_popcount=yes \
 		ac_cv_have_decl___builtin_ctz=yes \
 		ac_cv_have_decl___builtin_clzll=yes \
 		ac_cv_have_decl___builtin_ctzll=yes
+TEST_TARGET=	check
 
 CONFLICTS_INSTALL=	cpuid scotch # bin/cpuid bin/gmap
 
