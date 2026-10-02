@@ -61,6 +61,7 @@ include/rdkit/ForceField/UFF/PositionConstraint.h
 include/rdkit/ForceField/UFF/TorsionAngle.h
 include/rdkit/ForceField/UFF/TorsionConstraint.h
 include/rdkit/ForceField/UFF/Utils.h
+include/rdkit/GaussianShape.h
 include/rdkit/Geometry/Grid3D.h
 include/rdkit/Geometry/GridUtils.h
 include/rdkit/Geometry/Transform.h
@@ -168,6 +169,7 @@ include/rdkit/GraphMol/Fingerprints/MorganFingerprints.h
 include/rdkit/GraphMol/Fingerprints/MorganGenerator.h
 include/rdkit/GraphMol/Fingerprints/RDKitFPGenerator.h
 include/rdkit/GraphMol/Fingerprints/TopologicalTorsionGenerator.h
+include/rdkit/GraphMol/ForceFieldHelpers/CrystalFF/PlanarityContribs.h
 include/rdkit/GraphMol/ForceFieldHelpers/CrystalFF/TorsionAngleContribs.h
 include/rdkit/GraphMol/ForceFieldHelpers/CrystalFF/TorsionAngleM6.h
 include/rdkit/GraphMol/ForceFieldHelpers/CrystalFF/TorsionPreferences.h
@@ -202,6 +204,7 @@ include/rdkit/GraphMol/MolDraw2D/MolDraw2D.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DCairo.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DHelpers.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DJS.h
+include/rdkit/GraphMol/MolDraw2D/MolDraw2DSGroupData.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DSVG.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DUtils.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2Dwx.h
@@ -275,19 +278,23 @@ include/rdkit/GraphMol/SmilesParse/SmilesWrite.h
 include/rdkit/GraphMol/StereoGroup.h
 include/rdkit/GraphMol/Subgraphs/SubgraphUtils.h
 include/rdkit/GraphMol/Subgraphs/Subgraphs.h
+include/rdkit/GraphMol/Subset.h
 include/rdkit/GraphMol/SubstanceGroup.h
 include/rdkit/GraphMol/Substruct/SubstructMatch.h
 include/rdkit/GraphMol/Substruct/SubstructUtils.h
 include/rdkit/GraphMol/SubstructLibrary/PatternFactory.h
 include/rdkit/GraphMol/SubstructLibrary/SubstructLibrary.h
 include/rdkit/GraphMol/SubstructLibrary/SubstructLibrarySerialization.h
+include/rdkit/GraphMol/SynthonSpaceSearch/ProgressBar.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SearchResults.h
 include/rdkit/GraphMol/SynthonSpaceSearch/Synthon.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSet.h
+include/rdkit/GraphMol/SynthonSpaceSearch/SynthonShapeInput.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpace.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpaceFingerprintSearcher.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpaceRascalSearcher.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpaceSearcher.h
+include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpaceShapeSearcher.h
 include/rdkit/GraphMol/SynthonSpaceSearch/SynthonSpaceSubstructureSearcher.h
 include/rdkit/GraphMol/TautomerQuery/TautomerQuery.h
 include/rdkit/GraphMol/Trajectory/Snapshot.h
@@ -302,6 +309,7 @@ include/rdkit/Numerics/Conrec.h
 include/rdkit/Numerics/EigenSolvers/PowerEigenSolver.h
 include/rdkit/Numerics/Matrix.h
 include/rdkit/Numerics/Optimizer/BFGSOpt.h
+include/rdkit/Numerics/Optimizer/BFGSOpt_SVE.h
 include/rdkit/Numerics/SquareMatrix.h
 include/rdkit/Numerics/SymmMatrix.h
 include/rdkit/Numerics/Vector.h
@@ -361,6 +369,8 @@ include/rdkit/RDGeneral/utils.h
 include/rdkit/RDGeneral/versions.h
 include/rdkit/RDStreams/streams.h
 include/rdkit/RingDecomposerLib.h
+include/rdkit/ShapeInput.h
+include/rdkit/ShapeOverlayOptions.h
 %%LITTLE_ENDIAN%%include/rdkit/SimDivPickers/DistPicker.h
 %%LITTLE_ENDIAN%%include/rdkit/SimDivPickers/HierarchicalClusterPicker.h
 %%LITTLE_ENDIAN%%include/rdkit/SimDivPickers/LeaderPicker.h
@@ -442,6 +452,9 @@ lib/libRDKitForceFieldHelpers.so.1.%%SHLIB_VER%%
 lib/libRDKitFragCatalog.so
 lib/libRDKitFragCatalog.so.1
 lib/libRDKitFragCatalog.so.1.%%SHLIB_VER%%
+lib/libRDKitGaussianShape.so
+lib/libRDKitGaussianShape.so.1
+lib/libRDKitGaussianShape.so.1.%%SHLIB_VER%%
 lib/libRDKitGeneralizedSubstruct.so
 lib/libRDKitGeneralizedSubstruct.so.1
 lib/libRDKitGeneralizedSubstruct.so.1.%%SHLIB_VER%%
@@ -739,6 +752,7 @@ lib/libRDKitmaeparser.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdRascalMCES.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdReducedGraphs.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdSLNParse.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdGaussianShape.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdShapeAlign.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdShapeHelpers.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdSubstructLibrary.so
@@ -1050,6 +1064,7 @@ lib/libRDKitmaeparser.so.1.%%SHLIB_VER%%
 %%DATADIR%%/Contrib/FreeWilson/data/CHEMBL2321810.smi
 %%DATADIR%%/Contrib/FreeWilson/data/CHEMBL2321810_act.csv
 %%DATADIR%%/Contrib/FreeWilson/data/CHEMBL2321810_scaffold.mol
+%%DATADIR%%/Contrib/FreeWilson/data/cmet_ligands.sdf
 %%DATADIR%%/Contrib/FreeWilson/freewilson.py
 %%DATADIR%%/Contrib/FreeWilson/pytest.ini
 %%DATADIR%%/Contrib/FreeWilson/requirements.txt
@@ -1200,7 +1215,9 @@ lib/libRDKitmaeparser.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%DATADIR%%/Scripts/create_deb_packages.sh
 %%PYTHON%%%%DATADIR%%/Scripts/gen_rdkit_stubs/__init__.py
 %%PYTHON%%%%DATADIR%%/Scripts/gen_rdkit_stubs/__main__.py
+%%PYTHON%%%%DATADIR%%/Scripts/gen_rdkit_stubs/patch/rdkit/Chem/__init__.pyi.diff
 %%PYTHON%%%%DATADIR%%/Scripts/gen_rdkit_stubs/patch/rdkit/Chem/inchi.pyi.diff
+%%PYTHON%%%%DATADIR%%/Scripts/gen_rdkit_stubs/patch/rdkit/Chem/rdchem.pyi.diff
 %%PYTHON%%%%DATADIR%%/Scripts/gen_rdkit_stubs/worker.py
 %%PYTHON%%%%DATADIR%%/Scripts/patch_rdkit_docstrings/__init__.py
 %%PYTHON%%%%DATADIR%%/Scripts/patch_rdkit_docstrings/__main__.py
