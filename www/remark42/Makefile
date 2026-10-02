@@ -1,6 +1,7 @@
 PORTNAME=	remark42
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/delphij:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -94,8 +95,6 @@ REMARK_PIDDIR=	/var/run/${PORTNAME}/
 REMARK_USER?=	www
 REMARK_DATADIR?=/var/db/${PORTNAME}
 
-REMARK_URL?=	http://127.0.0.1:8080
-
 USE_RC_SUBR=	remark
 
 SUB_LIST+=	REMARK_PIDDIR=${REMARK_PIDDIR} \
@@ -118,8 +117,6 @@ pre-build:
 	cd ${WRKSRC}/frontend/apps/${PORTNAME} && ${SETENV} HOME=${WRKDIR} npm run build
 	${RM} -r ${WRKSRC}/backend/app/cmd/web/
 	${MV} ${WRKSRC}/frontend/apps/remark42/public ${WRKSRC}/backend/app/cmd/web
-	${FIND} ${WRKSRC}/backend/app/cmd/web -type f \( -name '*.html' -or -name '*.js' -or -name '*.mjs' \) \
-		-print -exec ${REINPLACE_CMD} -e "s|{% REMARK_URL %}|${REMARK_URL}|g" {} +
 
 do-build:
 	cd ${WRKSRC}/backend && ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} build ${GO_BUILDFLAGS} \

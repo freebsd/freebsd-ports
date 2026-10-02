@@ -37,6 +37,9 @@
 #				Default: %%REMARK_DATADIR%%/pictures.staging
 # remark_image_bolt_file (str):	images bolt file location
 #				Default: %%REMARK_DATADIR%%/pictures.db
+# remark_remark_web_root (str):	directory overriding the embedded frontend,
+#				e.g. %%WWWDIR%% (not created by the package)
+#				Default: unset (use the embedded frontend)
 #
 # Additional configuration variables available at https://remark42.com/docs/configuration/parameters/
 # are exposed with similar naming convention.
