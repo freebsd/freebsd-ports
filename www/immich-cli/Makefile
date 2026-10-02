@@ -1,6 +1,6 @@
 PORTNAME=	immich-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.2
+DISTVERSION=	3.2.4
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
 DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
