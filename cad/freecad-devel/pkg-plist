@@ -61,32 +61,15 @@ FreeCAD/Mod/AddonManager/Resources/licenses/MIT.txt
 FreeCAD/Mod/AddonManager/Resources/licenses/MPL-2.0.txt
 FreeCAD/Mod/AddonManager/Resources/licenses/spdx.json
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_be.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_ca.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_cs.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_da.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_de.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_el.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_es-AR.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_es-CO.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_es-ES.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_es-VE.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_eu.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_fr.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_hr.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_hu.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_it.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_ja.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_ka.qm
+FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_ko.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_pl.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_pt-BR.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_pt-PT.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_ru.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_sr-CS.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_sr-SP.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_sv.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_uk.qm
 FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_zh-CN.qm
-FreeCAD/Mod/AddonManager/Resources/translations/AddonManager_zh-TW.qm
 FreeCAD/Mod/AddonManager/TestAddonManagerApp.py
 FreeCAD/Mod/AddonManager/TestAddonManagerGui.py
 FreeCAD/Mod/AddonManager/Widgets/__init__.py
@@ -358,6 +341,7 @@ FreeCAD/Mod/BIM/bimtests/fixtures/BimFixtures.py
 FreeCAD/Mod/BIM/bimtests/fixtures/FC_site_simple-102.FCStd
 FreeCAD/Mod/BIM/bimtests/fixtures/__init__.py
 FreeCAD/Mod/BIM/bimtests/test_roof_subtraction.brep
+FreeCAD/Mod/BIM/bimtests/test_structure_column_flip_v1_0_v1_1.FCStd
 FreeCAD/Mod/BIM/generated_sql_parser.py
 FreeCAD/Mod/BIM/importers/Sample.sh3d
 FreeCAD/Mod/BIM/importers/__init__.py
@@ -411,13 +395,16 @@ FreeCAD/Mod/CAM/CAMTests/Fixtures/test_28534_truncated_pocket.FCStd
 FreeCAD/Mod/CAM/CAMTests/PathTestUtils.py
 FreeCAD/Mod/CAM/CAMTests/PostTestMocks.py
 FreeCAD/Mod/CAM/CAMTests/TestAdaptiveCommonGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestArcFitting.py
 FreeCAD/Mod/CAM/CAMTests/TestAreaOperations.py
 FreeCAD/Mod/CAM/CAMTests/TestCAMSanity.py
 FreeCAD/Mod/CAM/CAMTests/TestCentroidLegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestCentroidPost.py
 FreeCAD/Mod/CAM/CAMTests/TestDressupPost.py
 FreeCAD/Mod/CAM/CAMTests/TestDrillCycleExpander.py
+FreeCAD/Mod/CAM/CAMTests/TestDrillingPostIntegration.py
 FreeCAD/Mod/CAM/CAMTests/TestDxfPost.py
+FreeCAD/Mod/CAM/CAMTests/TestFanucLegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestFanucPost.py
 FreeCAD/Mod/CAM/CAMTests/TestFeedsSpeedsResolver.py
 FreeCAD/Mod/CAM/CAMTests/TestFeedsSpeedsToolBitPresets.py
@@ -427,7 +414,9 @@ FreeCAD/Mod/CAM/CAMTests/TestGenericPost.py
 FreeCAD/Mod/CAM/CAMTests/TestGenericSheetCutting.py
 FreeCAD/Mod/CAM/CAMTests/TestGrblLegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestGrblPost.py
+FreeCAD/Mod/CAM/CAMTests/TestHeidenhainPost.py
 FreeCAD/Mod/CAM/CAMTests/TestKineticNCBeamicon2LegacyPost.py
+FreeCAD/Mod/CAM/CAMTests/TestLegacyPostRetractMode.py
 FreeCAD/Mod/CAM/CAMTests/TestLinkingGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestLinuxCNCLegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestLinuxCNCPost.py
@@ -449,6 +438,7 @@ FreeCAD/Mod/CAM/CAMTests/TestPathDressupDogboneII.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDressupHoldingTags.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDrillGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDrillable.py
+FreeCAD/Mod/CAM/CAMTests/TestPathDrilling.py
 FreeCAD/Mod/CAM/CAMTests/TestPathEngrave.py
 FreeCAD/Mod/CAM/CAMTests/TestPathFacingGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathFlute.py
@@ -462,6 +452,7 @@ FreeCAD/Mod/CAM/CAMTests/TestPathLanguage.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLeadInOutGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLog.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLogNew.py
+FreeCAD/Mod/CAM/CAMTests/TestPathMillFacing.py
 FreeCAD/Mod/CAM/CAMTests/TestPathOpDeburr.py
 FreeCAD/Mod/CAM/CAMTests/TestPathOpUtil.py
 FreeCAD/Mod/CAM/CAMTests/TestPathPocket.py
@@ -477,11 +468,13 @@ FreeCAD/Mod/CAM/CAMTests/TestPathRotarySurface.py
 FreeCAD/Mod/CAM/CAMTests/TestPathRotaryWrap.py
 FreeCAD/Mod/CAM/CAMTests/TestPathRotationGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathSetupSheet.py
+FreeCAD/Mod/CAM/CAMTests/TestPathSharedWorkplane.py
 FreeCAD/Mod/CAM/CAMTests/TestPathSpiralGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathStock.py
 FreeCAD/Mod/CAM/CAMTests/TestPathTapGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathThreadMilling.py
 FreeCAD/Mod/CAM/CAMTests/TestPathThreadMillingGenerator.py
+FreeCAD/Mod/CAM/CAMTests/TestPathTiltedWorkPlane.py
 FreeCAD/Mod/CAM/CAMTests/TestPathToolAsset.py
 FreeCAD/Mod/CAM/CAMTests/TestPathToolAssetCache.py
 FreeCAD/Mod/CAM/CAMTests/TestPathToolAssetManager.py
@@ -505,6 +498,9 @@ FreeCAD/Mod/CAM/CAMTests/TestPathToolShapeIcon.py
 FreeCAD/Mod/CAM/CAMTests/TestPathUtil.py
 FreeCAD/Mod/CAM/CAMTests/TestPathVcarve.py
 FreeCAD/Mod/CAM/CAMTests/TestPathVoronoi.py
+FreeCAD/Mod/CAM/CAMTests/TestPathWorkplane.py
+FreeCAD/Mod/CAM/CAMTests/TestPathWorkplaneFrame.py
+FreeCAD/Mod/CAM/CAMTests/TestPlanarSurfaceOp.py
 FreeCAD/Mod/CAM/CAMTests/TestPostCore.py
 FreeCAD/Mod/CAM/CAMTests/TestPostGCodes.py
 FreeCAD/Mod/CAM/CAMTests/TestPostMCodes.py
@@ -619,6 +615,7 @@ FreeCAD/Mod/CAM/Path/Dressup/DogboneII.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/Array.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/AxisMap.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/Boundary.py
+FreeCAD/Mod/CAM/Path/Dressup/Gui/Boundary2.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/DogboneII.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/Dragknife.py
 FreeCAD/Mod/CAM/Path/Dressup/Gui/LeadInOut.py
@@ -647,6 +644,7 @@ FreeCAD/Mod/CAM/Path/Main/Gui/PreferencesJob.py
 FreeCAD/Mod/CAM/Path/Main/Gui/SanityCmd.py
 FreeCAD/Mod/CAM/Path/Main/Gui/Simulator.py
 FreeCAD/Mod/CAM/Path/Main/Gui/SimulatorGL.py
+FreeCAD/Mod/CAM/Path/Main/Gui/WorkplaneCmd.py
 FreeCAD/Mod/CAM/Path/Main/Gui/__init__.py
 FreeCAD/Mod/CAM/Path/Main/Job.py
 FreeCAD/Mod/CAM/Path/Main/Sanity/HTMLTemplate.py
@@ -658,6 +656,7 @@ FreeCAD/Mod/CAM/Path/Main/Sanity/Sanity_Caution.svg
 FreeCAD/Mod/CAM/Path/Main/Sanity/Sanity_Note.svg
 FreeCAD/Mod/CAM/Path/Main/Sanity/Sanity_Warning.svg
 FreeCAD/Mod/CAM/Path/Main/Stock.py
+FreeCAD/Mod/CAM/Path/Main/Workplane.py
 FreeCAD/Mod/CAM/Path/Main/__init__.py
 FreeCAD/Mod/CAM/Path/Op/Adaptive.py
 FreeCAD/Mod/CAM/Path/Op/Area.py
@@ -686,6 +685,7 @@ FreeCAD/Mod/CAM/Path/Op/Gui/Helix.py
 FreeCAD/Mod/CAM/Path/Op/Gui/MillFace.py
 FreeCAD/Mod/CAM/Path/Op/Gui/MillFacing.py
 FreeCAD/Mod/CAM/Path/Op/Gui/PathShape.py
+FreeCAD/Mod/CAM/Path/Op/Gui/PlanarSurface.py
 FreeCAD/Mod/CAM/Path/Op/Gui/Pocket.py
 FreeCAD/Mod/CAM/Path/Op/Gui/PocketBase.py
 FreeCAD/Mod/CAM/Path/Op/Gui/PocketShape.py
@@ -705,6 +705,7 @@ FreeCAD/Mod/CAM/Path/Op/Gui/__init__.py
 FreeCAD/Mod/CAM/Path/Op/Helix.py
 FreeCAD/Mod/CAM/Path/Op/MillFace.py
 FreeCAD/Mod/CAM/Path/Op/MillFacing.py
+FreeCAD/Mod/CAM/Path/Op/PlanarSurface.py
 FreeCAD/Mod/CAM/Path/Op/Pocket.py
 FreeCAD/Mod/CAM/Path/Op/PocketBase.py
 FreeCAD/Mod/CAM/Path/Op/PocketShape.py
@@ -729,6 +730,7 @@ FreeCAD/Mod/CAM/Path/Post/Gui/__init__.py
 FreeCAD/Mod/CAM/Path/Post/PathOptimizationUtils.py
 FreeCAD/Mod/CAM/Path/Post/PostList.py
 FreeCAD/Mod/CAM/Path/Post/Processor.py
+FreeCAD/Mod/CAM/Path/Post/TiltedWorkPlane.py
 FreeCAD/Mod/CAM/Path/Post/Utils.py
 FreeCAD/Mod/CAM/Path/Post/UtilsArguments.py
 FreeCAD/Mod/CAM/Path/Post/UtilsExport.py
@@ -745,12 +747,14 @@ FreeCAD/Mod/CAM/Path/Post/scripts/estlcam_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/fablin_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/fangling_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/fanuc_legacy_post.py
+FreeCAD/Mod/CAM/Path/Post/scripts/fanuc_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/gcode_pre.py
 FreeCAD/Mod/CAM/Path/Post/scripts/generic_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/generic_sheet_cutting_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/grbl_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/grbl_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/heidenhain_legacy_post.py
+FreeCAD/Mod/CAM/Path/Post/scripts/heidenhain_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/jtech_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/linuxcnc_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/linuxcnc_post.py
@@ -1158,6 +1162,7 @@ FreeCAD/Mod/Draft/drafttests/test_modification.py
 FreeCAD/Mod/Draft/drafttests/test_oca.py
 FreeCAD/Mod/Draft/drafttests/test_pivy.py
 FreeCAD/Mod/Draft/drafttests/test_svg.py
+FreeCAD/Mod/Draft/drafttests/test_trimex_gui.py
 FreeCAD/Mod/Draft/draftutils/README.md
 FreeCAD/Mod/Draft/draftutils/__init__.py
 FreeCAD/Mod/Draft/draftutils/grid_observer.py
@@ -1379,6 +1384,7 @@ FreeCAD/Mod/Fem/femguiutils/extract_link_view.py
 FreeCAD/Mod/Fem/femguiutils/migrate_gui.py
 FreeCAD/Mod/Fem/femguiutils/post_visualization.py
 FreeCAD/Mod/Fem/femguiutils/selection_widgets.py
+FreeCAD/Mod/Fem/femguiutils/vtk_module_compatibility_check.py
 FreeCAD/Mod/Fem/femguiutils/vtk_module_handling.py
 FreeCAD/Mod/Fem/femguiutils/vtk_table_view.py
 FreeCAD/Mod/Fem/feminout/__init__.py
@@ -1613,6 +1619,7 @@ FreeCAD/Mod/Fem/femtest/app/test_mesh.py
 FreeCAD/Mod/Fem/femtest/app/test_object.py
 FreeCAD/Mod/Fem/femtest/app/test_open.py
 FreeCAD/Mod/Fem/femtest/app/test_result.py
+FreeCAD/Mod/Fem/femtest/app/test_security.py
 FreeCAD/Mod/Fem/femtest/app/test_solver_elmer.py
 FreeCAD/Mod/Fem/femtest/app/test_solver_mystran.py
 FreeCAD/Mod/Fem/femtest/app/test_solver_z88.py
@@ -1872,7 +1879,6 @@ FreeCAD/Mod/Measure/Init.py
 FreeCAD/Mod/Measure/InitGui.py
 FreeCAD/Mod/Measure/MassProperties.py
 FreeCAD/Mod/Measure/MassPropertiesGui.py
-FreeCAD/Mod/Measure/MeasureCOM.py
 FreeCAD/Mod/Measure/UtilsMeasure.py
 FreeCAD/Mod/Mesh/App/TestData/NASTRAN_Test_Delimited_GRID_CQUAD4.bdf
 FreeCAD/Mod/Mesh/App/TestData/NASTRAN_Test_GRIDSTAR_CQUAD4.bdf
@@ -1961,6 +1967,8 @@ FreeCAD/Mod/Part/parttests/TestFaceMakerUnifiedNonPlanar.py
 FreeCAD/Mod/Part/parttests/TestFaceMakerUnifiedPlanar.py
 FreeCAD/Mod/Part/parttests/TestLinkArrayCircular.py
 FreeCAD/Mod/Part/parttests/TestLinkArrayLinear.py
+FreeCAD/Mod/Part/parttests/TestLinkArrayPath.py
+FreeCAD/Mod/Part/parttests/TestLinkArrayPoint.py
 FreeCAD/Mod/Part/parttests/TestPartMirror.py
 FreeCAD/Mod/Part/parttests/TestTangentMode3-0.21.FCStd
 FreeCAD/Mod/Part/parttests/TopoShapeListTest.py
@@ -1994,6 +2002,7 @@ FreeCAD/Mod/PartDesign/PartDesignTests/TestPad.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestPathPattern.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestPipe.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestPocket.py
+FreeCAD/Mod/PartDesign/PartDesignTests/TestPointPattern.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestPolarPattern.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestPrimitive.py
 FreeCAD/Mod/PartDesign/PartDesignTests/TestRevolve.py
@@ -2068,6 +2077,7 @@ FreeCAD/Mod/Sketcher/ProfileLib/__init__.py
 FreeCAD/Mod/Sketcher/Profiles.py
 FreeCAD/Mod/Sketcher/SketcherExample.py
 FreeCAD/Mod/Sketcher/SketcherTests/GuiTestCase.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestCoincidentCommandGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestConstraintCommandsGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestConstraintPreselectionGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestDistanceLabelExtensionGui.py
@@ -2111,6 +2121,7 @@ FreeCAD/Mod/TechDraw/TDTest/DrawViewPartTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewScaleTypeTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewSectionTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewSymbolTest.py
+FreeCAD/Mod/TechDraw/TDTest/TechDrawTaskTest.py
 FreeCAD/Mod/TechDraw/TDTest/TechDrawTestUtilities.py
 FreeCAD/Mod/TechDraw/TDTest/TestHatch.svg
 FreeCAD/Mod/TechDraw/TDTest/TestImage.png
@@ -3719,6 +3730,9 @@ FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/es-AR/A1.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/es-AR/A2.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/es-AR/A3.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/es-AR/A4.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/fi/A3_Landscape_SFS_ISO.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/fi/A4_Landscape_SFS_ISO.svg
+FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/fi/A4_Portrait_SFS_ISO.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/fr/A3_Landscape_FR_m52.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/it/A3_Landscape_IT_m52.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/ru/Leading/Landscape_A0.svg
