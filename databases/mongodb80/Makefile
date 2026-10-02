@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	8.0.29
+DISTVERSION=	8.0.32
 CATEGORIES=	databases net
 MASTER_SITES+=	LOCAL/ronald:mongodb_bazel \
 		https://codeload.github.com/bazelbuild/bazel-central-registry/tar.gz/${BAZEL_REGISTRY_COMMIT}?dummy=/:bazel_registry \
@@ -40,7 +40,6 @@ BUILD_DEPENDS=	bazel:devel/bazel7 \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=3.11:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}retry2>0:devel/py-retry2@${PY_FLAVOR} \
-		git:devel/git@tiny \
 		rust-cbindgen>0:devel/rust-cbindgen \
 		yq:textproc/go-yq
 # build depends used while running ${WRKSRC}/src/third_party/mozjs/scripts/gen-config.sh
@@ -99,12 +98,10 @@ BAZEL_ARGS=		--repository_cache=${BAZEL_REPOSITORY_CACHE} \
 			--action_env=AR=llvm-ar \
 			--action_env=CC=${CC} \
 			--action_env=CXX=${CXX} \
-			--action_env=PATH=${LOCALBASE}/bin:/bin:/usr/bin \
 			--repo_env=CC=${CC} \
 			--repo_env=CXX=${CXX} \
 			--repo_env=LOCALBASE=${LOCALBASE} \
 			--repo_env=MONGO_USE_SYSTEM_PYTHON=1 \
-			--repo_env=PATH=${LOCALBASE}/bin:/bin:/usr/bin \
 			--repo_env=PYTHON_CMD=${PYTHON_CMD} \
 			--build_enterprise=False \
 			--enterprise_feature_all=False \
@@ -119,6 +116,11 @@ BAZEL_ARGS=		--repository_cache=${BAZEL_REPOSITORY_CACHE} \
 			--define=MONGO_VERSION=${DISTVERSION} \
 			--cxxopt=-isystem${LOCALBASE}/include \
 			--cxxopt=-DBOOST_NO_CXX98_FUNCTION_BASE \
+			--cxxopt=-Wno-unused-function \
+			--cxxopt=-Wno-invalid-offsetof \
+			--cxxopt=-Wno-defaulted-function-deleted \
+			--cxxopt=-Wno-unknown-warning-option \
+			--cxxopt=-Wno-macro-redefined \
 			--linkopt=-L${LOCALBASE}/lib \
 			--linkopt=-lm \
 			--linkopt=-pthread \

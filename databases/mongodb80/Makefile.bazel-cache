@@ -1,0 +1,113 @@
+# Helper for generating the offline Bazel repository cache distfile.
+#
+# Usage:
+#   make -f Makefile.bazel-cache
+#
+# WRKDIRPREFIX and DISTDIR are intentionally not set here.  The sub-make that
+# reads the real port Makefile will pick them up from /etc/make.conf or from the
+# command line, the same as any other port build.
+#
+# This intentionally excludes ${BAZEL_CACHE_DISTFILE} while preparing the source
+# tree, otherwise generating a new cache would require the cache to already
+# exist.
+
+PORTDIR?=	${.CURDIR}
+BATCH?=		yes
+
+PORT_MAKE=	${MAKE} -C ${PORTDIR} \
+		BATCH=${BATCH}
+
+BAZEL!=			${PORT_MAKE} -V BAZEL
+BAZEL_ARGS!=		${PORT_MAKE} -V BAZEL_ARGS
+BAZEL_CACHE_DISTFILE!=	${PORT_MAKE} -V BAZEL_CACHE_DISTFILE
+BAZEL_ENV!=		${PORT_MAKE} -V BAZEL_ENV
+BAZEL_REPOSITORY_CACHE!=	${PORT_MAKE} -V BAZEL_REPOSITORY_CACHE
+BAZEL_STARTUP_ARGS!=	${PORT_MAKE} -V BAZEL_STARTUP_ARGS
+ALL_TARGET!=		${PORT_MAKE} -V ALL_TARGET
+DISTFILES!=		${PORT_MAKE} -V DISTFILES
+CACHE_DISTDIR!=		${PORT_MAKE} -V DISTDIR
+ECHO_MSG!=		${PORT_MAKE} -V ECHO_MSG
+FIND!=			${PORT_MAKE} -V FIND
+GZIP_CMD!=		${PORT_MAKE} -V GZIP_CMD
+LOCALBASE!=		${PORT_MAKE} -V LOCALBASE
+LS!=			${PORT_MAKE} -V LS
+MKDIR!=			${PORT_MAKE} -V MKDIR
+RM!=			${PORT_MAKE} -V RM
+SETENV!=		${PORT_MAKE} -V SETENV
+SHA256!=		${PORT_MAKE} -V SHA256
+SORT!=			${PORT_MAKE} -V SORT
+TAR!=			${PORT_MAKE} -V TAR
+WRKDIR!=		${PORT_MAKE} -V WRKDIR
+WRKSRC!=		${PORT_MAKE} -V WRKSRC
+
+.if !defined(BAZEL_CACHE_EPOCH)
+BAZEL_CACHE_EPOCH!=	if [ -n "$${SOURCE_DATE_EPOCH}" ]; then \
+				echo "$${SOURCE_DATE_EPOCH}"; \
+			elif command -v git >/dev/null 2>&1 && git -C ${PORTDIR} rev-parse --show-toplevel >/dev/null 2>&1; then \
+				git -C ${PORTDIR} log -1 --format=%ct -- .; \
+			else \
+				date -u +%s; \
+			fi
+.endif
+
+JAVA_HOME?=		${LOCALBASE}/openjdk21
+BAZEL_CACHE_ENV=	JAVA_HOME=${JAVA_HOME} ${BAZEL_ENV}
+BAZEL_CACHE_ARGS=	${BAZEL_ARGS:N--repository_disable_download}
+BAZEL_CACHE_ARGS+=	--repo_env=JAVA_HOME=${JAVA_HOME}
+BAZEL_CACHE_DISTFILE_PATH=	${CACHE_DISTDIR}/${BAZEL_CACHE_DISTFILE}
+BAZEL_CACHE_MANIFEST=	${WRKDIR}/bazel-cache-manifest
+BAZEL_CACHE_OUTPUT_USER_ROOT=	${WRKDIR}/bazel-cache-output
+BAZEL_CACHE_STARTUP_ARGS=	--output_user_root=${BAZEL_CACHE_OUTPUT_USER_ROOT}
+BAZEL_CACHE_CHECK_ROOT=	${WRKDIR}/bazel-cache-check
+BAZEL_CACHE_CHECK_REPOSITORY_CACHE=	${BAZEL_CACHE_CHECK_ROOT}/bazel-repository-cache
+BAZEL_CACHE_CHECK_OUTPUT_USER_ROOT=	${BAZEL_CACHE_CHECK_ROOT}/bazel-output
+BAZEL_CACHE_CHECK_STARTUP_ARGS=	--output_user_root=${BAZEL_CACHE_CHECK_OUTPUT_USER_ROOT}
+BAZEL_CACHE_CHECK_ARGS=	${BAZEL_ARGS:N--repository_cache=*}
+BAZEL_CACHE_CHECK_ARGS+=	--repository_cache=${BAZEL_CACHE_CHECK_REPOSITORY_CACHE}
+BAZEL_CACHE_CHECK_ARGS+=	--repo_env=JAVA_HOME=${JAVA_HOME}
+SOURCE_DISTFILES=	${DISTFILES:N*${BAZEL_CACHE_DISTFILE}*}
+
+.PHONY: all bazel-cache-distfile package-bazel-cache-distfile check-bazel-cache-distfile clean-bazel-cache print-bazel-cache-vars
+
+all: bazel-cache-distfile
+
+bazel-cache-distfile:
+	${PORT_MAKE} DISTFILES="${SOURCE_DISTFILES}" configure
+	${RM} -r ${BAZEL_REPOSITORY_CACHE}
+	${RM} -r ${BAZEL_CACHE_OUTPUT_USER_ROOT}
+	${MKDIR} ${BAZEL_REPOSITORY_CACHE}
+	cd ${WRKSRC} && ${SETENV} ${BAZEL_CACHE_ENV} ${BAZEL} ${BAZEL_CACHE_STARTUP_ARGS} build --nobuild ${BAZEL_CACHE_ARGS} ${ALL_TARGET}
+	${MAKE} -f ${.CURDIR}/Makefile.bazel-cache package-bazel-cache-distfile
+
+package-bazel-cache-distfile:
+	${MKDIR} ${CACHE_DISTDIR}
+	${RM} ${BAZEL_CACHE_DISTFILE_PATH}
+	cd ${WRKDIR} && ${FIND} ${BAZEL_REPOSITORY_CACHE:T} -print | LC_ALL=C ${SORT} > ${BAZEL_CACHE_MANIFEST}
+	cd ${WRKDIR} && ${TAR} --no-recursion --format=pax --uid 0 --gid 0 --uname root --gname wheel --mtime @${BAZEL_CACHE_EPOCH} -cf - -T ${BAZEL_CACHE_MANIFEST} | ${GZIP_CMD} -c > ${BAZEL_CACHE_DISTFILE_PATH}
+	${SHA256} ${BAZEL_CACHE_DISTFILE_PATH}
+	${LS} -lh ${BAZEL_CACHE_DISTFILE_PATH}
+
+check-bazel-cache-distfile:
+	${RM} -r ${BAZEL_CACHE_CHECK_ROOT}
+	${MKDIR} ${BAZEL_CACHE_CHECK_ROOT}
+	cd ${BAZEL_CACHE_CHECK_ROOT} && ${TAR} -xzf ${BAZEL_CACHE_DISTFILE_PATH}
+	cd ${WRKSRC} && ${SETENV} ${BAZEL_CACHE_ENV} ${BAZEL} ${BAZEL_CACHE_CHECK_STARTUP_ARGS} build --nobuild ${BAZEL_CACHE_CHECK_ARGS} ${ALL_TARGET}
+
+clean-bazel-cache:
+	${RM} -r ${BAZEL_REPOSITORY_CACHE}
+	${RM} ${BAZEL_CACHE_DISTFILE_PATH}
+	${RM} ${BAZEL_CACHE_MANIFEST}
+	${RM} -r ${BAZEL_CACHE_OUTPUT_USER_ROOT}
+	${RM} -r ${BAZEL_CACHE_CHECK_ROOT}
+
+print-bazel-cache-vars:
+	@${ECHO_MSG} "DISTDIR=${CACHE_DISTDIR}"
+	@${ECHO_MSG} "WRKDIR=${WRKDIR}"
+	@${ECHO_MSG} "WRKSRC=${WRKSRC}"
+	@${ECHO_MSG} "BAZEL_CACHE_EPOCH=${BAZEL_CACHE_EPOCH}"
+	@${ECHO_MSG} "JAVA_HOME=${JAVA_HOME}"
+	@${ECHO_MSG} "BAZEL_REPOSITORY_CACHE=${BAZEL_REPOSITORY_CACHE}"
+	@${ECHO_MSG} "BAZEL_CACHE_OUTPUT_USER_ROOT=${BAZEL_CACHE_OUTPUT_USER_ROOT}"
+	@${ECHO_MSG} "BAZEL_CACHE_CHECK_REPOSITORY_CACHE=${BAZEL_CACHE_CHECK_REPOSITORY_CACHE}"
+	@${ECHO_MSG} "BAZEL_CACHE_DISTFILE=${BAZEL_CACHE_DISTFILE}"
+	@${ECHO_MSG} "SOURCE_DISTFILES=${SOURCE_DISTFILES}"
