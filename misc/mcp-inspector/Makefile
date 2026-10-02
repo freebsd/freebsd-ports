@@ -2,7 +2,6 @@ PORTNAME=	mcp-inspector
 DISTVERSION=	2.8.0
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Model Context Protocol inspector
@@ -63,6 +62,7 @@ CARGO_VENDOR_DIR=	${WRKDIR}/cargo-vendor
 
 .include <bsd.port.pre.mk>
 
+DIST_SUBDIR=	${PORTNAME}/${ARCH}
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 
 .include "Makefile.crates"
