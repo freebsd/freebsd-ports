@@ -1,0 +1,3 @@
+Archive::Zip::SimpleZip is a module that allows the creation of Zip archives.
+For reading Zip archives, there is a companion module,
+called Archive::Zip::SimpleUnzip, that can read Zip archives.
