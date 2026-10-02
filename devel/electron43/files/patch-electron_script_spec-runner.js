@@ -1,15 +1,15 @@
---- electron/script/spec-runner.js.orig	2026-09-04 00:15:46 UTC
+--- electron/script/spec-runner.js.orig	2026-09-30 08:47:42 UTC
 +++ electron/script/spec-runner.js
-@@ -554,7 +554,7 @@ async function runTestUsingElectron(specDir, testName,
-     );
-   }
-   const runnerArgs = [`electron/${specDir}`, ...argsToPass, ...additionalArgs];
+@@ -586,7 +586,7 @@ function toVitestInvocation(exe, specDir, runnerArgs) 
+   };
+   let command = process.execPath;
+   let commandArgs = vitestArgs;
 -  if (process.platform === 'linux') {
 +  if (process.platform === 'linux' || process.platform === 'freebsd') {
-     runnerArgs.unshift(path.resolve(__dirname, 'dbus_mock.py'), exe);
-     exe = 'python3';
-   }
-@@ -625,7 +625,7 @@ async function installSpecModules(dir) {
+     // The mock D-Bus services are started once around the whole run; every
+     // Electron worker inherits the bus addresses from the CLI's environment.
+     commandArgs = [path.resolve(__dirname, 'dbus_mock.py'), command, ...commandArgs];
+@@ -689,7 +689,7 @@ async function installSpecModules(dir) {
      process.exit(1);
    }
  
@@ -18,7 +18,7 @@
      const { status: rebuildStatus } = childProcess.spawnSync('npm', ['rebuild', 'abstract-socket'], {
        env,
        cwd: dir,
-@@ -703,7 +703,7 @@ function getNativeAddonToolchainEnv() {
+@@ -767,7 +767,7 @@ function getNativeAddonToolchainEnv() {
  // the same GCC that rejects the headers, so nothing on that host can build
  // the fixtures.
  function getNativeAddonToolchainEnv() {

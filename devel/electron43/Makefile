@@ -363,7 +363,7 @@ pre-patch:
 .ifndef MAINTAINER_MODE
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/dbus-daemon|${LOCALBASE}/bin/dbus-daemon|' \
-		${WRKSRC}/electron/spec/api-app-spec.ts
+		${WRKSRC}/electron/spec/api-app.spec.ts
 .endif
 
 pre-configure:
