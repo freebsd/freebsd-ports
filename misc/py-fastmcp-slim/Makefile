@@ -1,5 +1,5 @@
 PORTNAME=	fastmcp-slim # should be updated together with fastmcp
-DISTVERSION=	4.0.3
+DISTVERSION=	4.0.10
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

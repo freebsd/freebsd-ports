@@ -1,5 +1,5 @@
 PORTNAME=	fastmcp # should be updated together with fastmcp-slim
-DISTVERSION=	4.0.3
+DISTVERSION=	4.0.10
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -73,11 +73,8 @@ TEST_ARGS=	--continue-on-collection-errors
 
 NO_ARCH=	yes
 
-# tests as of 4.0.3: 17 failed, 6651 passed, 22 skipped, 16 xfailed, 54 warnings, 44 errors in 156.06s (0:02:36).
-# Failures/errors are mostly from optional extras not in FreeBSD ports:
-# - prefab-ui (apps extra)
-# - pydocket (tasks extra)
-# - pydantic-monty (code-mode extra)
-# TODO extras need to be added
+# tests as of 4.0.10: not completed; the test suite requires many optional
+# test dependencies (google-genai, twine, etc.) that are missing or outdated
+# in FreeBSD ports.
 
 .include <bsd.port.mk>
