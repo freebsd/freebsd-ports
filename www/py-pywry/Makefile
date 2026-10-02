@@ -1,6 +1,6 @@
 PORTNAME=	pywry
 DISTVERSION=	0.6.2
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,9 @@ WWW=		https://github.com/tauri-apps/wry
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Depends on expiring lang/rust188, dozens of vesions behind upstream
+EXPIRATION_DATE=2026-11-01
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}maturin>0:devel/py-maturin@${PY_FLAVOR} \
