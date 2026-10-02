@@ -1,0 +1,14 @@
+-- remove restriction on clang compiler for SLN build, see https://github.com/rdkit/rdkit/issues/9664
+-- the code was just skipped for clang for no obvious reason
+
+--- Code/GraphMol/CMakeLists.txt.orig	2026-08-28 02:56:41 UTC
++++ Code/GraphMol/CMakeLists.txt
+@@ -110,7 +110,7 @@ endif (RDK_BUILD_MOLINTERCHANGE_SUPPORT)
+     add_subdirectory(MolInterchange)
+ endif (RDK_BUILD_MOLINTERCHANGE_SUPPORT)
+ 
+-if (RDK_BUILD_SLN_SUPPORT AND NOT CMAKE_COMPILER_IS_CLANG)
++if (RDK_BUILD_SLN_SUPPORT)
+     if (CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS_EQUAL 4.8)
+         message("Skipping SLN build with gcc version <= 4.8")
+     else ()

@@ -1,17 +1,14 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2025_09_2
-PORTREVISION=	4
+DISTVERSION=	2026_03_6
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/schrodinger/maeparser/archive/:maeparser \
 		https://github.com/schrodinger/coordgenlibs/archive/:coordgen \
 		https://codeload.github.com/Glysade/chemdraw/tar.gz/refs/tags/:chemdraw \
-		https://github.com/Tencent/rapidjson/archive/:rapidjson \
 		LOCAL/yuri/:font # unstable, changing font file: https://fonts.google.com/download?family=Comic%20Neue&dummy=/:font
 DISTFILES=	v${MAEPARSER_VERSION}.tar.gz:maeparser \
 		v${COORDGEN_VERSION}.tar.gz:coordgen \
 		v${CHEMDRAW_VERSION}:chemdraw \
-		v${RAPIDJSON_VERSION}.tar.gz:rapidjson \
 		ComicNeue-Regular.ttf:font
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${DISTFILES:C/:.*//:Nv*:N*.ttf}
@@ -24,15 +21,13 @@ WWW=		https://www.rdkit.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN_FreeBSD_16_amd64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272652
-BROKEN_FreeBSD_16_aarch64=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=272652
-
 BUILD_DEPENDS=	catch>0:devel/catch \
 		flex:textproc/flex
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2
 
-USES=		bison:build cmake:testing compiler:c++11-lang eigen:3 gnome pkgconfig python
+USES=		bison:build cmake:testing compiler:c++11-lang eigen:3 gnome llvm:23 pkgconfig python # llvm:23 is needed to avoid compiler crash on 16 with the base compiler, just use it for rdkit for now
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
 
@@ -43,8 +38,7 @@ GH_TUPLE+=	ncbi:pubchem-align3d:daefab3:align3d/External/pubchem_shape/pubchem-a
 
 MAEPARSER_VERSION=	1.3.3
 COORDGEN_VERSION=	3.0.2
-CHEMDRAW_VERSION=	1.0.11
-RAPIDJSON_VERSION=	1.1.0
+CHEMDRAW_VERSION=	1.0.14
 
 CMAKE_ON=	RDK_BUILD_CAIRO_SUPPORT
 CMAKE_OFF=	RDK_INSTALL_INTREE RDK_USE_FLEXBISON \
@@ -98,8 +92,6 @@ PLIST_SUB+=	LITTLE_ENDIAN=""
 .endif
 
 post-extract:
-	#@${MKDIR} ${WRKSRC}/External/rapidjson-1.1.0
-	#@cd ${WRKSRC}/External/rapidjson-1.1.0 && ${LN} -s ${LOCALBASE}/include/rapidjson include
 	@cd ${WRKSRC}/Data/Fonts && ${CP} ${DISTDIR}/${DIST_SUBDIR}/ComicNeue-Regular.ttf .
 	@${CP} ${WRKSRC}/better_enums/enum.h ${WRKSRC}/Code/RDGeneral
 
@@ -114,17 +106,10 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|https://codeload.github.com/Glysade/chemdraw/tar.gz/refs/tags/|file://${DISTDIR}/${DIST_SUBDIR}/|g' \
 		${WRKSRC}/External/ChemDraw/CMakeLists.txt
-	@${REINPLACE_CMD} \
-		-e 's|https://github.com/Tencent/rapidjson/archive/|file://${DISTDIR}/${DIST_SUBDIR}/|g' \
-		${WRKSRC}/Code/GraphMol/MolInterchange/CMakeLists.txt
-
-pre-build:
-	@${REINPLACE_CMD} \
-		-e 's|const SizeType length;|SizeType length;|g' \
-		${WRKSRC}/External/rapidjson/rapidjson-1.1.0/include/rapidjson/document.h
 
 post-install:
-	@${RM} -f ${STAGEDIR}${PREFIX}/lib/libexpat.a
+	@${RM} -f ${STAGEDIR}${PREFIX}/lib/libexpat.a \
+		${STAGEDIR}${PREFIX}/lib/libexpatpp.a
 
 post-install-PGSQL-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/rdkit.so
@@ -132,5 +117,15 @@ post-install-PGSQL-on:
 # many tests fail, see https://github.com/rdkit/rdkit/issues/7779
 # tests as of 2025_09_1: 65% tests passed, 24 tests failed out of 68
 # tests as of 2025_09_2: 63% tests passed, 26 tests failed out of 70
+# tests as of 2026_03_6: 89% tests passed, 8 tests failed out of 73
+
+# RDKit has a lot of issues with tests - many typeinfo objects are
+# duplicated in different shared libraries which causes mis-matches
+# in exception propagation.
+# We fixed a lot of tests, still 8 tests are failing, but they are not critical and can be ignored for now.
+# All patches related to tests are upstreamed: https://github.com/rdkit/rdkit/pull/9665
+# These fixes increase tests pass rate from 65% to 89%.
+
+# remaining test failures reported here: https://github.com/rdkit/rdkit/issues/9666
 
 .include <bsd.port.mk>
