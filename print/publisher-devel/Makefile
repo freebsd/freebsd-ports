@@ -24,7 +24,7 @@ RUN_DEPENDS=	luahbtex:print/tex-luatex
 FLAVORS=	default pro
 FLAVOR?=	${FLAVORS:[1]}
 
-pro_PKGNAMESUFFIX=	-pro
+pro_PKGNAMESUFFIX=	-devel-pro
 default_COMMENT=	(community)
 pro_COMMENT=		(pro)
 
