@@ -65,6 +65,8 @@ bin/vlogscli
 %%PORTDOCS%%%%DOCSDIR%%/integrations/bindplane.md
 %%PORTDOCS%%%%DOCSDIR%%/data-ingestion/Splunk.md
 %%PORTDOCS%%%%DOCSDIR%%/quick-start-vmui.webp
+%%PORTDOCS%%%%DOCSDIR%%/integrations/logchef-dashboard.webp
+%%PORTDOCS%%%%DOCSDIR%%/integrations/logchef.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_LOGS%%
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_RUN%%
