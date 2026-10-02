@@ -17,7 +17,6 @@
     SUBDIR += bluez-firmware
     SUBDIR += bpl+
     SUBDIR += chirp
-    SUBDIR += chu
     SUBDIR += conserver-com
     SUBDIR += cqrlog
     SUBDIR += cubicsdr
