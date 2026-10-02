@@ -1,3 +1,40 @@
+  <vuln vid="a28dd61b-be3e-11f1-bd34-3c7c3fba4204">
+    <topic>Keycloak -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>keycloak</name>
+	  <range><lt>26.8.0</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Keycloak Team reports:</p>
+	<blockquote cite="https://www.keycloak.org/2026/10/keycloak-2680-released">
+	  <ul>
+	    <li>[CVE-2026-12388]: IdP mapper admin role escalation.</li>
+	    <li>[CVE-2026-14781]: OIDC broker applies id_token email_verified to userinfo email, marking unverified addresses as verified.</li>
+	    <li>[CVE-2026-19608]: Name-only group claims let same-name groups satisfy path-specific group policies.</li>
+	    <li>[CVE-2026-54515], [CVE-2026-59889]: Third-party dependency fix, com.fasterxml.jackson.core:jackson-databind 2.22.0.</li>
+	    <li>[CVE-2026-59903]: Third-party dependency fix, io.netty:netty-codec-http:4.1.136.Final.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-12388</cvename>
+      <cvename>CVE-2026-14781</cvename>
+      <cvename>CVE-2026-19608</cvename>
+      <cvename>CVE-2026-54515</cvename>
+      <cvename>CVE-2026-59889</cvename>
+      <cvename>CVE-2026-59903</cvename>
+      <url>https://www.keycloak.org/2026/10/keycloak-2680-released</url>
+    </references>
+    <dates>
+      <discovery>2026-10-01</discovery>
+      <entry>2026-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ed670f20-bdc3-11f1-a6ea-8447094a420f">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
