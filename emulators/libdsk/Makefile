@@ -3,7 +3,7 @@ PORTVERSION=	1.5.22
 CATEGORIES=	emulators devel
 MASTER_SITES=	https://www.seasip.info/Unix/LibDsk/
 
-MAINTAINER=	pixel@hugbox.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enables access to disks and disk images; also via serial line
 WWW=		https://www.seasip.info/Unix/LibDsk/index.html
 
