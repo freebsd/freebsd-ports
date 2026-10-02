@@ -608,6 +608,7 @@
     SUBDIR += jstest-gtk
     SUBDIR += jtop
     SUBDIR += jtopen
+    SUBDIR += jtransfer
     SUBDIR += jvmtop
     SUBDIR += k3b
     SUBDIR += k8temp
