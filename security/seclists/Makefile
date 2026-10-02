@@ -1,5 +1,5 @@
 PORTNAME=	seclists
-DISTVERSION=	2024.1
+DISTVERSION=	2026.1
 CATEGORIES=	security www
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -18,6 +18,8 @@ GH_PROJECT=	SecLists
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+PORTDATA=	*
 
 FILES_TO_BE_REMOVED=	.gitattributes \
 			.gitignore \
