@@ -1073,7 +1073,6 @@
     SUBDIR += py-ansible-core221
     SUBDIR += py-ansible-lint
     SUBDIR += py-ansible-runner
-    SUBDIR += py-appjail-gui
     SUBDIR += py-azure-cli
     SUBDIR += py-azure-cli-core
     SUBDIR += py-azure-cli-telemetry
