@@ -1,6 +1,6 @@
---- common/import_gfx/dxf_import_plugin.cpp.orig	2026-06-23 12:40:47 UTC
+--- common/import_gfx/dxf_import_plugin.cpp.orig	2026-10-01 19:47:08 UTC
 +++ common/import_gfx/dxf_import_plugin.cpp
-@@ -37,6 +37,9 @@
+@@ -38,6 +38,9 @@
  #include <board.h>
  #include "common.h"
  

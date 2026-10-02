@@ -5,12 +5,8 @@ bin/_pcb_calculator.kiface
 bin/_pcbnew.kiface
 bin/_pl_editor.kiface
 bin/bitmap2component
-bin/dxf2idf
 bin/eeschema
 bin/gerbview
-bin/idf2vrml
-bin/idfcyl
-bin/idfrect
 bin/kicad
 bin/kicad-cli
 bin/pcb_calculator
@@ -21,6 +17,7 @@ lib/kicad/plugins/3d/libs3d_plugin_oce.so
 lib/kicad/plugins/3d/libs3d_plugin_vrml.so
 lib/libkiapi.so
 lib/libkiapi.so.10.99.0
+lib/libkicad_3d_import.so
 lib/libkicad_3dsg.so
 lib/libkicad_3dsg.so.2.0.0
 lib/libkicommon.so
