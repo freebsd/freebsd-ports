@@ -1,20 +1,19 @@
 PORTNAME=	fdasrsf
-DISTVERSION=	2.6.10
+DISTVERSION=	2.7.2
 CATEGORIES=	math python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Functional data analysis using the square root slope framework
-WWW=		https://fdasrsf-python.readthedocs.io/en/latest/
+WWW=		https://fdasrsf-python.readthedocs.io/en/latest/ \
+		https://github.com/jdtuck/fdasrsf_python
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}findblas>0:devel/py-findblas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR} \
@@ -29,6 +28,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist cython
+USE_PYTHON=	pep517 autoplist cython pytest
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jdtuck
+GH_PROJECT=	fdasrsf_python
+
+MAKE_ENV+=	FDASRSF_BLAS_LIB=openblas \
+		FDASRSF_BLAS_DIR=${LOCALBASE}/lib
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}
+TEST_ARGS=	--disable-plugin-autoload test/
+
+# tests as of 2.7.2: 24 passed, 22 subtests passed in 45.72s
 
 .include <bsd.port.mk>

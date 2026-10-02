@@ -1,0 +1,14 @@
+-- Lower the setuptools lower bound to match the version provided by devel/py-setuptools.
+-- Do not update devel/py-setuptools; instead patch this port to use its declared version.
+
+--- pyproject.toml.orig	2026-09-29 15:16:00 UTC
++++ pyproject.toml
+@@ -97,7 +97,7 @@ select = "*-win_amd64"
+ #environment = { PKG_CONFIG_PATH = "/opt/64/lib/pkgconfig" }
+
+ [build-system]
+-requires = ["setuptools>=83.0.0", "wheel", "cffi>=1.0.0", "Cython", "numpy"]  # PEP 518 - what is required to build
++requires = ["setuptools>=63.1.0", "wheel", "cffi>=1.0.0", "Cython", "numpy"]  # PEP 518 - what is required to build
+ build-backend = "setuptools.build_meta"
+
+ [tool.pytest.ini_options]
