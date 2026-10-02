@@ -1121,11 +1121,6 @@ etc/newsyslog.conf.d/immich.conf
 %%WWWDIR%%/server/node_modules/.pnpm/@img+colour@1.1.0/node_modules/@img/colour/LICENSE.md
 %%WWWDIR%%/server/node_modules/.pnpm/@img+colour@1.1.0/node_modules/@img/colour/package.json
 %%WWWDIR%%/server/node_modules/.pnpm/@img+colour@1.1.0/node_modules/@img/colour/README.md
-%%WWWDIR%%/server/node_modules/.pnpm/@immich+plugin-sdk@file++++wrkdirs+usr+ports+www+immich+work+immich-3.2.2+packages+plugin-sdk/node_modules/@immich/plugin-sdk/dist/cli.js
-%%WWWDIR%%/server/node_modules/.pnpm/@immich+plugin-sdk@file++++wrkdirs+usr+ports+www+immich+work+immich-3.2.2+packages+plugin-sdk/node_modules/@immich/plugin-sdk/dist/index.js
-%%WWWDIR%%/server/node_modules/.pnpm/@immich+plugin-sdk@file++++wrkdirs+usr+ports+www+immich+work+immich-3.2.2+packages+plugin-sdk/node_modules/@immich/plugin-sdk/package.json
-%%WWWDIR%%/server/node_modules/.pnpm/@immich+plugin-sdk@file++++wrkdirs+usr+ports+www+immich+work+immich-3.2.2+packages+plugin-sdk/node_modules/@immich/plugin-sdk/plugin-sdk.mjs
-%%WWWDIR%%/server/node_modules/.pnpm/@immich+plugin-sdk@file++++wrkdirs+usr+ports+www+immich+work+immich-3.2.2+packages+plugin-sdk/node_modules/commander
 %%WWWDIR%%/server/node_modules/.pnpm/@immich+sql-tools@0.6.3/node_modules/@immich/sql-tools/dist/cli.js
 %%WWWDIR%%/server/node_modules/.pnpm/@immich+sql-tools@0.6.3/node_modules/@immich/sql-tools/dist/index.js
 %%WWWDIR%%/server/node_modules/.pnpm/@immich+sql-tools@0.6.3/node_modules/@immich/sql-tools/LICENSE
