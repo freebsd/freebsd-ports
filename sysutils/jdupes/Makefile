@@ -1,12 +1,12 @@
 PORTNAME=	jdupes
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.27.3
-PORTREVISION=	2
+DISTVERSION=	1.31.2
 CATEGORIES=	sysutils
+MASTER_SITES=	https://codeberg.org/jbruchon/jdupes/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Powerful duplicate file finder and an enhanced fork of 'fdupes'
-WWW=		https://github.com/jbruchon/jdupes
+WWW=		https://codeberg.org/jbruchon/jdupes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -16,11 +16,10 @@ LIB_DEPENDS=	libjodycode.so:devel/libjodycode \
 
 USES=		gmake localbase:ldflags
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	jbruchon
-
 MAKE_FLAGS=	EXTERNAL_HASH_LIB=1
 LDFLAGS+=	-ljodycode -lxxhash
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/jdupes \
 		share/man/man1/jdupes.1.gz
