@@ -1,6 +1,6 @@
---- tac_plus.h.orig	2012-04-10 19:38:45 UTC
+--- tac_plus.h.orig	2026-02-10 21:45:32 UTC
 +++ tac_plus.h
-@@ -452,6 +452,7 @@ int enable_fn(struct authen_data *data);
+@@ -450,6 +450,7 @@ int skey_fn(struct authen_data *data);
  int sendauth_fn(struct authen_data *data);
  int sendpass_fn(struct authen_data *data);
  int skey_fn(struct authen_data *data);

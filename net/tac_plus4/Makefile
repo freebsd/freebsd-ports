@@ -1,8 +1,7 @@
 PORTNAME=	tac_plus
-PORTVERSION=	F4.0.4.28
-PORTREVISION=	2
+PORTVERSION=	F4.0.4.32
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.shrubbery.net/pub/${PORTNAME}/
+MASTER_SITES=	https://shrubbery.net/pub/${PORTNAME}/
 DISTNAME=	tacacs-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
