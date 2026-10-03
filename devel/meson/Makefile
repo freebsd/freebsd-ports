@@ -1,6 +1,5 @@
 PORTNAME=	meson
-DISTVERSION=	1.12.0
-PORTEPOCH=	1
+DISTVERSION=	1.12.1
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${DISTVERSION}/
 
