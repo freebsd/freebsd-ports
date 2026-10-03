@@ -219,6 +219,7 @@
     SUBDIR += cmogstored
     SUBDIR += cmospwd
     SUBDIR += cni-dnsname
+    SUBDIR += cni-epair
     SUBDIR += colorize
     SUBDIR += conan
     SUBDIR += condy

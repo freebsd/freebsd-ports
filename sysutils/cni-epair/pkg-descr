@@ -1,0 +1,12 @@
+A CNI plugin that gives FreeBSD containers an address on a real LAN segment.
+
+FreeBSD has no macvlan. This plugin does the native equivalent: it creates an
+epair per container, attaches one end to a host bridge, moves the other into
+the container's jail, and applies the address supplied by IPAM.
+
+IPv4 and IPv6 are both supported, together or alone: a network configuration
+carrying a range for each gives the container an address and a default route
+in both families.
+
+It implements the ADD, DEL, CHECK and VERSION commands, and delegates address
+allocation to the IPAM plugin named in the network configuration.
