@@ -1,5 +1,5 @@
 PORTNAME=	slepc
-DISTVERSION=	3.25.1
+DISTVERSION=	3.26.0
 CATEGORIES=	math devel
 MASTER_SITES=	http://slepc.upv.es/download/distrib/
 
@@ -39,5 +39,11 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libslepc.so.${PORTVERSION}
 
 # tests as of 3.25.1: 2480 passed, 6 skipped, 0 failed in 702s
+
+# tests as of 3.26.0: (need to investigate 2 failures)
+# success 2661/2677 tests (99.4%)
+# failed 2/2677 tests (0.1%)
+# todo 0/2677 tests (0.0%)
+# skip 14/2677 tests (0.5%)
 
 .include <bsd.port.mk>
