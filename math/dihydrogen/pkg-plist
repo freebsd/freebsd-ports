@@ -1,8 +1,14 @@
 include/h2/Version.hpp
 include/h2/gpu/error.hpp
+include/h2/gpu/fixed_size_tuple.hpp
 include/h2/gpu/logger.hpp
 include/h2/gpu/memory_utils.hpp
+include/h2/gpu/raw_buffer.hpp
 include/h2/gpu/runtime.hpp
+include/h2/gpu/strided_memory.hpp
+include/h2/gpu/tensor.hpp
+include/h2/gpu/tensor_base.hpp
+include/h2/gpu/tensor_types.hpp
 include/h2/meta/Core.hpp
 include/h2/meta/PartialFunctions.hpp
 include/h2/meta/TypeList.hpp
