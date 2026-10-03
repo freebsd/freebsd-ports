@@ -1,0 +1,11 @@
+--- linux/CMakeLists.txt.orig	2020-04-08 15:27:57 UTC
++++ linux/CMakeLists.txt
+@@ -18,7 +18,7 @@
+ # ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ # OTHER DEALINGS IN THE SOFTWARE.
+ 
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 3.5)
+ include (${CMAKE_CURRENT_LIST_DIR}/cmrt_utils.cmake)
+ 
+ 
