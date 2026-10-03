@@ -1,0 +1,24 @@
+Use the system libdeflate, libffi and liblzma instead of bundled copies.
+
+--- Cargo.toml.orig	2026-10-03 04:06:42 UTC
++++ Cargo.toml
+@@ -255,8 +255,8 @@ libc = "0.2.168"
+ jsonc-parser = { version = "0.32.1", features = ["serde"] }
+ lazy-regex = "3"
+ libc = "0.2.168"
+-libdeflater = "1.25.2"
+-liblzma = { version = "0.4.6", features = ["static"] }
++libdeflater = { version = "1.25.2", features = ["dynamic"] }
++liblzma = "0.4.6"
+ libz-sys = { version = "1.1.20", default-features = false }
+ log = { version = "0.4.28", features = ["kv"] }
+ lsp-types = { package = "ls-types", version = "=0.0.3" }
+@@ -444,7 +444,7 @@ dlopen2 = "0.6.1"
+ cranelift = "0.117"
+ cranelift-native = "0.117"
+ dlopen2 = "0.6.1"
+-libffi = "=5.1.0"
++libffi = { version = "=5.1.0", features = ["system"] }
+ memmap2 = "0.9"
+ 
+ # napi

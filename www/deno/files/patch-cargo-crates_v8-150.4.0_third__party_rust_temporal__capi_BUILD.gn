@@ -1,0 +1,26 @@
+Do not build temporal_capi with GN (which needs the Chromium Rust
+toolchain).  Use the headers of the cargo-vendored crate, and link the
+static library built from it in pre-build into executables that GN links
+itself, such as mksnapshot.  The final deno binary gets the same code
+through the v8 crate's cargo dependency on temporal_capi.
+
+--- cargo-crates/v8-150.4.0/third_party/rust/temporal_capi/BUILD.gn.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/v8-150.4.0/third_party/rust/temporal_capi/BUILD.gn
+@@ -29,10 +29,15 @@ group("temporal_capi") {
+ group("temporal_capi") {
+   public_configs = [
+     ":temporal_capi_include_dirs",
++    ":temporal_capi_lib",
+     ":temporal_capi_versioning_defines",
+   ]
+-  public_deps = [ "//third_party/rust/temporal_capi/v0_2:lib" ]
+ }
+ config("temporal_capi_include_dirs") {
+-  include_dirs = [ "//third_party/rust/chromium_crates_io/vendor/temporal_capi-v0_2/bindings/cpp" ]
++  include_dirs = [ "%%TEMPORAL_CAPI_DIR%%/bindings/cpp" ]
++}
++
++# Prebuilt by cargo; needed by executables GN links itself, such as mksnapshot.
++config("temporal_capi_lib") {
++  libs = [ "%%TEMPORAL_CAPI_LIB%%" ]
+ }
