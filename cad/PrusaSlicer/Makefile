@@ -1,7 +1,7 @@
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_
 DISTVERSION=	2.9.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad
 DIST_SUBDIR=	PrusaSlicer
 
@@ -39,7 +39,6 @@ LIB_DEPENDS+=	libbgcode_convert.so:cad/libbgcode \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
-		libavcodec.so:multimedia/ffmpeg4 \
 		libharfbuzz.so:print/harfbuzz \
 		libwayland-egl.so:graphics/wayland \
 		libwebkit2gtk-4.1.so:www/webkit2-gtk@41 \
