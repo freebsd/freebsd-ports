@@ -1,6 +1,6 @@
 PORTNAME=	fcitx5-keykey
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	vanilla@FreeBSD.org
