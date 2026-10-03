@@ -29,7 +29,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}addict>0:devel/py-addict@${PY_FLAVOR} \
 USES=		compiler:c++17-lang localbase python
 USE_PYTHON=	distutils cython autoplist # pytest: many test dependencies are missing
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "aarch64"
+MAKE_ENV=	LD_STATIC_TLS_EXTRA=4096 # see pkg-message in misc/py-pytorch
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/mmcv/_ext${PYTHON_TAG}.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
