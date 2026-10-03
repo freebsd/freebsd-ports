@@ -34,6 +34,7 @@ USE_QT=		concurrent core dbus gui network svg widgets buildtools:build \
 USE_XORG=	x11
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 # CMake 4 compatibility
 CMAKE_OFF=	WITH_XC_UPDATECHECK
 
 CONFLICTS_INSTALL=	keepassx-0.* keepassx2 keepassx
