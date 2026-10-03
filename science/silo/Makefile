@@ -1,5 +1,5 @@
 PORTNAME=	silo
-DISTVERSION=	4.12.0
+DISTVERSION=	4.12.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,10 +18,15 @@ GH_ACCOUNT=	LLNL
 GH_PROJECT=	Silo
 
 CMAKE_ON=			SILO_ENABLE_INSTALL_LITE_HEADERS
-CMAKE_TESTING_ON=		SILO_ENABLE_TESTS # 3 tests fail, see https://github.com/LLNL/Silo/issues/289
-CMAKE_TESTING_TARGET=		check
+CMAKE_TESTING_ON=		BUILD_TESTING
+# upstream tests share filenames in a common test directory, so they are
+# not safe to run with ctest's default parallelism
+CMAKE_TESTING_JOBS=		1
 
 FFLAGS+=			-fallow-argument-mismatch # needed only for tests
+
+# tests invoke "python3" via $PATH; provide it since only python3.12 is installed
+TEST_ENV=		${MAKE_ENV} PATH=${WRKDIR}/bin:${PATH}
 
 CONFLICTS_INSTALL=		deforaos-browser # bin/browser
 
@@ -46,5 +51,11 @@ PYTHON_USES=			python
 
 SILOCK_DESC=			Enable building of silock
 SILOCK_CMAKE_BOOL=		SILO_ENABLE_SILOCK
+
+pre-test-PYTHON-on: # tests don't work w/out the PYTHON option; BINARY_ALIAS can't be easily used because this is option-conditional
+	@${MKDIR} ${WRKDIR}/bin
+	@${LN} -sf ${PYTHON_CMD} ${WRKDIR}/bin/python3
+
+# tests as of 4.12.1: 100% tests passed, 0 tests failed out of 180
 
 .include <bsd.port.mk>
