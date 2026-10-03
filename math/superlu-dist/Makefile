@@ -1,6 +1,6 @@
 PORTNAME=	superlu-dist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.2.1
+DISTVERSION=	9.3.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,8 +18,9 @@ GH_ACCOUNT=	xiaoyeli
 GH_PROJECT=	superlu_dist
 
 CMAKE_ON=	USE_XSDK_DEFAULTS BUILD_SHARED_LIBS
+CFLAGS+=	-I${WRKSRC}/SRC/include
 CMAKE_OFF=	enable_tests enable_examples TPL_ENABLE_PARMETISLIB
-CMAKE_TESTING_ON=	enable_tests # many tests fail, see https://github.com/xiaoyeli/superlu_dist/issues/113
+CMAKE_TESTING_ON=	enable_tests
 
 OPTIONS_DEFINE=		DOCS FORTRAN
 OPTIONS_SINGLE=		BLAS MPI

@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2026-09-29 17:26:02 UTC
++++ CMakeLists.txt
+@@ -625,8 +625,8 @@ endif()
+ #
+ ######################################################################
+ 
+-include_directories(${CMAKE_BINARY_DIR}/SRC) # For superlu_dist_config.h
+-include_directories(${CMAKE_SOURCE_DIR}/SRC/include)
++include_directories(BEFORE ${CMAKE_BINARY_DIR}/SRC) # For superlu_dist_config.h
++include_directories(BEFORE ${CMAKE_SOURCE_DIR}/SRC/include)
+ include_directories(${CMAKE_SOURCE_DIR}/SRC/cuda)
+ include_directories(${CMAKE_SOURCE_DIR}/SRC/hip)
+ include_directories(${CMAKE_SOURCE_DIR}/SRC/CplusplusFactor)
