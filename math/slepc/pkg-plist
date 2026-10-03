@@ -22,6 +22,7 @@ include/slepc/finclude/slepcsvd.h
 include/slepc/finclude/slepcsys.h
 include/slepc/finclude/slepcvec.h
 include/slepc/private/bvimpl.h
+include/slepc/private/cupmblas.h
 include/slepc/private/dsimpl.h
 include/slepc/private/epsimpl.h
 include/slepc/private/fnimpl.h
@@ -42,6 +43,7 @@ include/slepcbv.h
 include/slepcbv.mod
 include/slepcbvdef.mod
 include/slepcconf.h
+include/slepcconfiginfo.h
 include/slepccupmblas.h
 include/slepcds.h
 include/slepcds.mod
@@ -84,9 +86,9 @@ include/slepcsysdef.mod
 include/slepcvec.h
 include/slepcversion.h
 lib/libslepc.so
-lib/libslepc.so.3.25
-lib/libslepc.so.3.25.1
-lib/slepc/conf/modules/slepc/3.25.1
+lib/libslepc.so.3.26
+lib/libslepc.so.3.26.0
+lib/slepc/conf/modules/slepc/3.26.0
 lib/slepc/conf/slepc_common
 lib/slepc/conf/slepc_rules
 lib/slepc/conf/slepc_rules_util.mk
