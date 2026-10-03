@@ -43,5 +43,5 @@ lib/cmake/HYPRE/HYPREConfigVersion.cmake
 lib/cmake/HYPRE/HYPRETargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/HYPRE/HYPRETargets.cmake
 lib/libHYPRE.so
-lib/libHYPRE.so.3.1.0
-lib/libHYPRE.so.301
+lib/libHYPRE.so.3.2.0
+lib/libHYPRE.so.302
