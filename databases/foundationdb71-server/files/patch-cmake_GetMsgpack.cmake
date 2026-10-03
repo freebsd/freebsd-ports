@@ -3,7 +3,7 @@
 @@ -1,9 +1,13 @@
  find_package(msgpack 3.3.0 EXACT QUIET CONFIG)
 +find_package(msgpackc-cxx 4.0.0...<6 QUIET CONFIG)
-+find_package(msgpack-cxx 6 QUIET CONFIG)
++find_package(msgpack-cxx QUIET CONFIG)
  
  add_library(msgpack INTERFACE)
  
