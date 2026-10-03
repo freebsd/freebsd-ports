@@ -1,6 +1,6 @@
 PORTNAME=	camp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.07.1
+DISTVERSION=	2026.07.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,6 @@ CMAKE_OFF=	CAMP_ENABLE_TESTS
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	CAMP_ENABLE_TESTS
 
-# tests as of 2026.07.1: 100% tests passed, 0 tests failed out of 109
+# tests as of 2026.07.2: 100% tests passed, 0 tests failed out of 129
 
 .include <bsd.port.mk>
