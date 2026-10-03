@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_system_preferences.h.orig	2025-10-27 17:58:27 UTC
+--- electron/shell/browser/api/electron_api_system_preferences.h.orig	2026-09-29 23:27:57 UTC
 +++ electron/shell/browser/api/electron_api_system_preferences.h
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  #include "shell/browser/browser.h"
  #include "shell/browser/browser_observer.h"
  #endif
@@ -9,7 +9,7 @@
  #include "base/memory/raw_ptr.h"
  #include "ui/native_theme/native_theme.h"
  #include "ui/native_theme/native_theme_observer.h"
-@@ -49,7 +49,7 @@ class SystemPreferences final
+@@ -50,7 +50,7 @@ class SystemPreferences final
  #if BUILDFLAG(IS_WIN)
      ,
        public BrowserObserver
@@ -18,7 +18,7 @@
      ,
        public ui::NativeThemeObserver
  #endif
-@@ -126,7 +126,7 @@ class SystemPreferences final
+@@ -127,7 +127,7 @@ class SystemPreferences final
    // are running tests on a Mojave machine
    v8::Local<v8::Value> GetEffectiveAppearance(v8::Isolate* isolate);
  
@@ -27,9 +27,9 @@
    // ui::NativeThemeObserver:
    void OnNativeThemeUpdated(ui::NativeTheme* theme) override;
  #endif
-@@ -174,7 +174,7 @@ class SystemPreferences final
-   // Color/high contrast mode change observer.
+@@ -159,7 +159,7 @@ class SystemPreferences final
    base::CallbackListSubscription hwnd_subscription_;
+   base::CallbackListSubscription accent_color_subscription_;
  #endif
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

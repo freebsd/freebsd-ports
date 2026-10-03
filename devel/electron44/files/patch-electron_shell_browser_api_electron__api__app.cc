@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_app.cc.orig	2026-09-03 23:27:50 UTC
+--- electron/shell/browser/api/electron_api_app.cc.orig	2026-09-29 23:27:57 UTC
 +++ electron/shell/browser/api/electron_api_app.cc
 @@ -110,7 +110,7 @@
  #include "ui/base/resource/resource_bundle.h"
@@ -27,7 +27,7 @@
    // Set the application name for audio streams shown in external
    // applications. Only affects pulseaudio currently.
    media::AudioManager::SetGlobalAppName(Browser::Get()->GetName());
-@@ -972,7 +972,7 @@ void App::SetDesktopName(const std::string& desktop_na
+@@ -983,7 +983,7 @@ void App::SetDesktopName(const std::string& desktop_na
  }
  
  void App::SetDesktopName(const std::string& desktop_name) {
@@ -35,8 +35,8 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    auto env = base::Environment::Create();
    env->SetVar("CHROME_DESKTOP", desktop_name);
- #endif
-@@ -1080,7 +1080,7 @@ bool App::RequestSingleInstanceLock(gin::Arguments* ar
+   // The Linux application name, and so the user agent, comes from this file.
+@@ -1093,7 +1093,7 @@ bool App::RequestSingleInstanceLock(gin::Arguments* ar
        base::BindRepeating(NotificationCallbackWrapper, cb));
  #endif
  
@@ -45,7 +45,7 @@
    // Read the xdg-activation token and set it in the command line for the
    // duration of the notification in order to ensure this is propagated to an
    // already running electron app instance if it exists.
-@@ -1478,7 +1478,7 @@ std::vector<gin_helper::Dictionary> App::GetAppMetrics
+@@ -1491,7 +1491,7 @@ std::vector<gin_helper::Dictionary> App::GetAppMetrics
        pid_dict.Set("name", process_metric.second->name);
      }
  

@@ -1,4 +1,4 @@
---- content/browser/web_contents/web_contents_impl.cc.orig	2026-09-19 11:36:54 UTC
+--- content/browser/web_contents/web_contents_impl.cc.orig	2026-10-02 07:36:38 UTC
 +++ content/browser/web_contents/web_contents_impl.cc
 @@ -1379,7 +1379,7 @@ WebContentsImpl::WebContentsImpl(BrowserContext* brows
        SlowWebPreferenceCache::GetInstance());
@@ -9,7 +9,7 @@
    renderer_preferences_.use_overlay_scrollbar =
        native_theme->use_overlay_scrollbar();
  #endif
-@@ -12486,7 +12486,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
+@@ -12530,7 +12530,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
    HandleColorRelatedStateChanges();
  
    const auto caret_blink_interval = observed_theme->caret_blink_interval();
@@ -18,7 +18,7 @@
    const auto use_overlay_scrollbar = observed_theme->use_overlay_scrollbar();
  #endif
    bool renderer_preference_changed = false;
-@@ -12494,7 +12494,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
+@@ -12538,7 +12538,7 @@ void WebContentsImpl::OnNativeThemeUpdated(ui::NativeT
      renderer_preferences_.caret_blink_interval = caret_blink_interval;
      renderer_preference_changed = true;
    }

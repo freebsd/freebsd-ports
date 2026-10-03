@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_crash_reporter.cc.orig	2025-09-02 20:56:04 UTC
+--- electron/shell/browser/api/electron_api_crash_reporter.cc.orig	2026-09-29 23:27:57 UTC
 +++ electron/shell/browser/api/electron_api_crash_reporter.cc
 @@ -31,7 +31,7 @@
  #include "shell/common/process_util.h"
@@ -36,14 +36,16 @@
  void GetUploadedReports(
      v8::Isolate* isolate,
      base::OnceCallback<void(v8::Local<v8::Value>)> callback) {
-@@ -237,13 +237,13 @@ void SetUploadToServer(bool upload) {
+@@ -237,7 +237,7 @@ void SetUploadToServer(bool upload) {
  #endif
  
  void SetUploadToServer(bool upload) {
 -#if !IS_MAS_BUILD()
 +#if !IS_MAS_BUILD() && !BUILDFLAG(IS_BSD)
    ElectronCrashReporterClient::Get()->SetCollectStatsConsent(upload);
- #endif
+   // Reads the consent set above back through IsRunningUnattended().
+   crash_reporter::SetUploadConsent(upload);
+@@ -245,7 +245,7 @@ bool GetUploadToServer() {
  }
  
  bool GetUploadToServer() {
@@ -52,7 +54,7 @@
    return false;
  #else
    return ElectronCrashReporterClient::Get()->GetCollectStatsConsent();
-@@ -252,7 +252,7 @@ v8::Local<v8::Value> GetParameters(v8::Isolate* isolat
+@@ -254,7 +254,7 @@ v8::Local<v8::Value> GetParameters(v8::Isolate* isolat
  
  v8::Local<v8::Value> GetParameters(v8::Isolate* isolate) {
    std::map<std::string, std::string> keys;
@@ -61,7 +63,7 @@
    electron::crash_keys::GetCrashKeys(&keys);
  #endif
    return gin::ConvertToV8(isolate, keys);
-@@ -265,7 +265,7 @@ void Initialize(v8::Local<v8::Object> exports,
+@@ -267,7 +267,7 @@ void Initialize(v8::Local<v8::Object> exports,
    v8::Isolate* const isolate = electron::JavascriptEnvironment::GetIsolate();
    gin_helper::Dictionary dict(isolate, exports);
    dict.SetMethod("start", &electron::api::crash_reporter::Start);
