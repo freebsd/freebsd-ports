@@ -1,5 +1,5 @@
 PORTNAME=	amrex
-DISTVERSION=	26.07
+DISTVERSION=	26.09
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,6 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 CMAKE_OFF=	AMReX_ENABLE_TESTS
 
 CMAKE_TESTING_ON=	AMReX_ENABLE_TESTS
-
 
 OPTIONS_GROUP=			PARALLEL PACKAGES
 OPTIONS_GROUP_PARALLEL=		MPI OPENMP
@@ -81,6 +80,6 @@ PLIST_FILES+=	include/AMReX_MLEBABecLap.H \
 		include/AMReX_MLEBTensor_K.H
 .endif
 
-# tests as of 26.07: 100% tests passed, 0 tests failed out of 71
+# tests as of 26.09: 100% tests passed, 0 tests failed out of 78
 
 .include <bsd.port.mk>
