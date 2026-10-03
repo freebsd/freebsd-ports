@@ -320,6 +320,7 @@ include/RAJA/util/concepts.hpp
 include/RAJA/util/for_each.hpp
 include/RAJA/util/macros.hpp
 include/RAJA/util/math.hpp
+include/RAJA/util/memory.hpp
 include/RAJA/util/plugins.hpp
 include/RAJA/util/reduce.hpp
 include/RAJA/util/resource.hpp

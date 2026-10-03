@@ -1,6 +1,6 @@
 PORTNAME=	raja
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.07.0
+DISTVERSION=	2026.07.1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,13 +21,13 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
 GH_PROJECT=	RAJA
-GH_TUPLE=	LLNL:blt:e783e30:blt/blt
+GH_TUPLE=	LLNL:blt:f08f95e0f49b1d53db8be2dd577d1cdbfd9e9f90:blt/blt
 
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		ENABLE_OPENMP
 CMAKE_OFF=	ENABLE_TESTS
 CMAKE_TESTING_ON=	ENABLE_TESTS
 
-# tests as of 2026.07.0: 100% tests passed, 0 tests failed out of 480
+# tests as of 2026.07.1: 100% tests passed, 0 tests failed out of 484
 
 .include <bsd.port.mk>
