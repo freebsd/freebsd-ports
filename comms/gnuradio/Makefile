@@ -1,7 +1,7 @@
 PORTNAME=	gnuradio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.10.12.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -71,7 +71,10 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_RPATH:STRING="${LOCALBASE}/lib/gcc${_GCC_VER}" \
 		-DICONV_PREFIX:STRING="${ICONV_PREFIX}" \
 		-DLOCALBASE:STRING="${LOCALBASE}" \
 		-DPYTHON_EXECUTABLE:STRING="${PYTHON_CMD}" \
-		-DXMLTO_EXECUTABLE:STRING=minixmlto
+		-DXMLTO_EXECUTABLE:STRING=minixmlto \
+		-DQWT_LIBRARIES=${LOCALBASE}/lib/qt5/libqwt.so \
+		-DQWT_INCLUDE_DIRS=${LOCALBASE}/include/qt5/qwt6 \
+		-DENABLE_GR_QTGUI=ON
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=	--debug-output --trace
 CFLAGS+=	-Wno-deprecated
@@ -81,6 +84,7 @@ USE_GNOME=	gtk30
 USE_GITHUB=	yes
 USE_PYQT=	pyqt5
 USE_QT=		buildtools core gui qmake widgets
+#USE_QT=		base svg tools
 USE_LDCONFIG=	yes
 LIBSTRIP_FILES=	analog audio blocks channels digital dtv fec fft filter pmt \
 		qtgui runtime trellis video-sdl vocoder wavelet
