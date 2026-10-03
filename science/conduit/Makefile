@@ -1,6 +1,6 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.6
+DISTVERSION=	0.9.9
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,9 +18,9 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
-GH_TUPLE=	LLNL:blt:058b312:blt/blt \
-		Alpine-DAV:spack_configs:26a5d10:spack_configs/../scripts/uberenv_configs/spack_configs \
-		LLNL:uberenv:5430066:LLNL_uberenv/../scripts/uberenv
+GH_TUPLE=	LLNL:blt:e783e30:blt/blt \
+		Alpine-DAV:spack_configs:144b3d6:spack_configs/../scripts/uberenv_configs/spack_configs \
+		LLNL:uberenv:c83bf9b:LLNL_uberenv/../scripts/uberenv
 
 WRKSRC_SUBDIR=	src
 
@@ -49,6 +49,6 @@ OPENMPI_CMAKE_ON+=	-DMPI_C_COMPILER:PATH=${MPICC} \
 			-DMPI_CXX_COMPILER:PATH=${MPICXX} \
 			-DMPI_CXX_HEADER_DIR:PATH=${MPI_HOME}/include
 
-# tests as of 0.9.5: 100% tests passed, 0 tests failed out of 3
+# tests as of 0.9.9: 100% tests passed, 0 tests failed out of 3
 
 .include <bsd.port.mk>
