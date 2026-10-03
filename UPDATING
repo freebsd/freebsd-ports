@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20261003:
+  AFFECTS: users of mail/postfix-current
+  AUTHOR: otis@FreeBSD.org
+
+  mail/postfix-current now can depend on either databases/lmdb0 or
+  databases/lmdb. The default is lmdb0 for now.
+
+  If you want/need to use lmdb1, you will need to build the package
+  with apropriate lmdb version selected.
+
+20261003:
   AFFECTS: users of mail/postfix
   AUTHOR: otis@FreeBSD.org
 
