@@ -1,6 +1,6 @@
 PORTNAME=	caliper
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.0
+DISTVERSION=	2.15.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
 GH_PROJECT=	Caliper
 
-# 2 tests fail, see https://github.com/LLNL/Caliper/issues/611
+# tests as of 2.15.0: 100% tests passed, 0 tests failed out of 4
 
 .include <bsd.port.mk>
