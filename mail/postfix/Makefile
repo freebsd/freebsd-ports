@@ -1,6 +1,6 @@
 PORTNAME=	postfix
 DISTVERSION=	3.11.7
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -85,20 +85,22 @@ USE_SUBMAKE=	yes
 SHEBANG_FILES=	auxiliary/qshape/qshape.pl
 
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
-
-PORTSCOUT=	limit:^3\.9\.
+ALL_TARGET=		default
 
 CONFLICTS_INSTALL=	courier-0.* opensmtpd opensmtpd-devel \
 			postfix postfix-base postfix-ldap-sasl \
 			postfix-sasl sendmail sendmail-devel
+
+PORTSCOUT=	limit:^3\.11\.
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
 
 OPTIONS_DEFINE=		BDB BLOCKLISTD CDB DOCS EAI INST_BASE LDAP LMDB MONGO \
 			MYSQL NIS PCRE2 PGSQL SASL SQLITE TEST TLS TLSRPT
-OPTIONS_DEFAULT?=	BLOCKLISTD CDB EAI LMDB PCRE2 TLS TLSRPT
-OPTIONS_RADIO=		RG1
+OPTIONS_DEFAULT?=	BLOCKLISTD CDB EAI LMDB LMDB0 PCRE2 TLS TLSRPT
+OPTIONS_RADIO=		LMDBG1 RG1
+OPTIONS_RADIO_LMDBG1=	LMDB0 LMDB1
 OPTIONS_RADIO_RG1=	SASLKMIT SASLKRB5
 .if ${FLAVOR:U} == ldap
 OPTIONS_SLAVE=		LDAP
@@ -123,6 +125,9 @@ CDB_DESC=		CDB maps lookups
 EAI_DESC=		Email Address Internationalization (SMTPUTF8) support
 INST_BASE_DESC=		Install into /usr and /etc/postfix
 LDAP_DESC=		LDAP maps (uses WITH_OPENLDAP_VER)
+LMDB0_DESC=		Use LMDB 0.9 library
+LMDB1_DESC=		Use LMDB 1.0 library
+LMDBG1_DESC=		LMDB version to use
 LMDB_DESC=		LMDB maps
 PCRE2_DESC=		Use Perl Compatible Regular Expressions, version 2
 RG1_DESC=		Kerberos network authentication protocol type
@@ -136,7 +141,8 @@ BDB_USES=			bdb
 CDB_LIB_DEPENDS=		libcdb.so:databases/tinycdb
 EAI_LIB_DEPENDS=		libicuuc.so:devel/icu
 LDAP_USES=			ldap
-LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb
+LMDB0_LIB_DEPENDS=		liblmdb.so:databases/lmdb0
+LMDB1_LIB_DEPENDS=		liblmdb.so:databases/lmdb
 MONGO_LIB_DEPENDS=		libbson2.so:devel/libbson \
 				libmongoc2.so:devel/mongo-c-driver
 MYSQL_USES?=			mysql
@@ -146,8 +152,6 @@ SASLKMIT_LIB_DEPENDS=		libkrb5.so:security/krb5
 SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 SQLITE_USES=			sqlite
 TLSRPT_LIB_DEPENDS=		libtlsrpt.so:mail/libtlsrpt
-
-ALL_TARGET=		default
 
 .include <bsd.port.options.mk>
 
