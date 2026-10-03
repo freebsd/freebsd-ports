@@ -1,5 +1,5 @@
 PORTNAME=	uim
-PORTVERSION=	1.9.7
+PORTVERSION=	1.9.8
 PORTREVISION?=	0
 CATEGORIES?=	textproc
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -63,9 +63,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 .if !defined(UIM_SLAVE)
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/uim
-DOCSDIR_SIGSCHEME=	${PREFIX}/share/doc/uim/sigscheme
-PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}" \
-		DOCSDIR_SIGSCHEME="${DOCSDIR_SIGSCHEME:S,^${PREFIX}/,,}"
+PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 .endif
 
 .if empty(PORT_OPTIONS:MX11)
@@ -120,22 +118,22 @@ do-install:
 .for d in sigscheme uim scm xim fep emacs pixmaps tables
 	cd ${WRKSRC}/${d} && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip
 .endfor
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DATADIR}/helperdata
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && for f in `${MAKE} -V EXTRA_DIST` ; do \
+		${INSTALL_DATA} $${f} ${STAGEDIR}${DOCSDIR}/$${f} ; \
+	done
+	${INSTALL_DATA} ${WRKSRC}/fep/README ${STAGEDIR}${DOCSDIR}/README.fep
+	${INSTALL_DATA} ${WRKSRC}/fep/README.key ${STAGEDIR}${DOCSDIR}/README.key
+	${INSTALL_DATA} ${WRKSRC}/xim/README ${STAGEDIR}${DOCSDIR}/README.xim
+	${MKDIR} ${STAGEDIR}${DOCSDIR_JA}
+	${INSTALL_DATA} ${WRKSRC}/fep/README.ja ${STAGEDIR}${DOCSDIR_JA}/README.fep
+.endif
 	cd ${WRKSRC}/po && ${MAKE_CMD} DESTDIR=${STAGEDIR} install
 .if ${PORT_OPTIONS:MX11}
 	cd ${WRKSRC}/gtk3/candwin && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip
 .endif
-.endif
-
-.if !defined(UIM_SLAVE)
-post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/helperdata
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR_JA}
-	${INSTALL_DATA} ${WRKSRC}/doc/KEY ${STAGEDIR}${DOCSDIR}/KEY
-	${INSTALL_DATA} ${WRKSRC}/fep/README ${STAGEDIR}${DOCSDIR}/README.fep
-	${INSTALL_DATA} ${WRKSRC}/fep/README ${STAGEDIR}${DOCSDIR}/README.key
-	${INSTALL_DATA} ${WRKSRC}/fep/README.ja ${STAGEDIR}${DOCSDIR_JA}/README.fep
-	${INSTALL_DATA} ${WRKSRC}/xim/README ${STAGEDIR}${DOCSDIR}/README.xim
 .endif
 
 .include <bsd.port.post.mk>

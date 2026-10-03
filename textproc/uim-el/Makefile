@@ -1,5 +1,5 @@
 PORTNAME=	uim-el
-PORTVERSION=	1.9.7
+PORTVERSION=	1.9.8
 CATEGORIES=	textproc
 
 MAINTAINER=	nobutaka@FreeBSD.org
