@@ -1,6 +1,7 @@
 PORTNAME=	immich
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
 DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
@@ -47,6 +48,7 @@ USE_RC_SUBR=	immich_server
 BUILDKIT=	${WRKDIR}/immich-freebsd-buildkit-${DISTVERSION}
 PNPM=		${WRKDIR}/pnpm-prefix/bin/pnpm
 PNPM_VERSION=	11.22.0
+PLUGIN_SDK=	@immich+plugin-sdk@file+packages+plugin-sdk
 
 MAKE_ENV=	CI=1 \
 		COREPACK_ENABLE_STRICT=0 \
@@ -111,7 +113,8 @@ post-install:
 		\( -name "*.sh" -o -name "*.py" -o -name build_tag_lookup \
 		-o -name validate \) -exec ${CHMOD} a-x {} +
 	@${FIND} ${STAGEDIR}${WWWDIR}/server -type d \
-		\( -name .tmp -o -name .deps -o -name nothing \) \
+		\( -name .tmp -o -name .deps -o -name nothing \
+		-o -name __pycache__ \) \
 		-exec ${RM} -r {} + 2>/dev/null || ${TRUE}
 	@${FIND} ${STAGEDIR}${WWWDIR}/server -type f \
 		\( -name "*.map" -o -name "*.d.ts" \) -delete
@@ -121,8 +124,15 @@ post-install:
 	@${FIND} ${STAGEDIR}${WWWDIR}/server -type d -empty -delete
 	@${PRINTF} '#!/bin/sh\nexec ${PREFIX}/bin/immich-admin "$$@"\n' \
 		> ${STAGEDIR}${WWWDIR}/server/bin/immich-admin
+	@cd ${STAGEDIR}${WWWDIR}/server/node_modules && \
+		old=$$(cd .pnpm && ${ECHO_CMD} @immich+plugin-sdk@file++++*) && \
+		${MV} .pnpm/$${old} .pnpm/${PLUGIN_SDK} && \
+		${LN} -shf ../.pnpm/${PLUGIN_SDK}/node_modules/@immich/plugin-sdk \
+			@immich/plugin-sdk && \
+		${SED} -i "" -e "s,$${old},${PLUGIN_SDK},g" \
+			-e "s,${WRKDIR}/server-pruned,${WWWDIR}/server,g" \
+			.bin/plugin-sdk .package-map.json
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${WWWDIR_REL}/build-data/www/_app/immutable \
-		${WWWDIR_REL}/server/node_modules/.pnpm/*@file+* \
-		\( -type f -o -type l \) | ${SORT} >> ${TMPPLIST}
+		-type f | ${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.mk>
