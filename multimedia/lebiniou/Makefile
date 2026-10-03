@@ -1,7 +1,7 @@
 PORTNAME=	lebiniou
 DISTVERSIONPREFIX=	version-
 DISTVERSION=	3.67.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia graphics
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://biniou.lenain.info/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libavutil.so.58:multimedia/ffmpeg6 \
+LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libcaca.so:graphics/libcaca \
 		libfftw3.so:math/fftw3 \
 		libjack.so:audio/jack \
@@ -46,6 +46,10 @@ BROKEN=	missing structs in V4L2, see D59203
 .elif ${OPSYS} == FreeBSD && ${OSVERSION} < 1600021
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 RUN_DEPENDS+=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+.elif ${OPSYS} == FreeBSD
+# sys/videoio.h provides the needed structs, so do not pick up a possibly
+# installed multimedia/v4l_compat header which conflicts with it
+CONFIGURE_ENV+=	ac_cv_header_linux_videodev2_h=no
 .endif
 
 .include <bsd.port.post.mk>
