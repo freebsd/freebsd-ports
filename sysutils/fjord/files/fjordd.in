@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# FJORD Daemon
+
+# PROVIDE: fjordd
+# REQUIRE: LOGIN podman_service
+# KEYWORD: shutdown
+
+# Enable in /etc/rc.conf:
+#   fjordd_enable="YES"
+#
+# Configuration is via FJORD_* environment variables, passed with fjordd_env:
+#   fjordd_env="FJORD_CATALOG_URL=https://... FJORD_LISTEN=:3567"
+# (FJORD_STACKS_DIR, FJORD_ENGINE, FJORD_PODMAN_SOCKET, FJORD_HOST_ADDR also
+# available; defaults suit a host install.)
+
+. /etc/rc.subr
+
+name=fjordd
+rcvar=${name}_enable
+
+: ${fjordd_enable:="NO"}
+: ${fjordd_log:="/var/log/fjordd.log"}
+
+command="%%PREFIX%%/sbin/fjordd"
+pidfile="/var/run/${name}.pid"
+start_cmd="fjordd_start"
+
+fjordd_start()
+{
+    startmsg "Starting ${name}."
+    # env(1) carries fjordd_env (custom start_cmd bypasses rc.subr's automatic
+    # ${name}_env) and extends rc(8)'s boot PATH, which omits /usr/local --
+    # where podman/podman-compose live; without it every engine exec fails
+    # after a reboot.
+    /usr/sbin/daemon -o ${fjordd_log} -f -p ${pidfile} \
+        /usr/bin/env PATH="${PATH}:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin" ${fjordd_env} \
+        ${command} ${fjordd_flags}
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+Quick Start:
+  sysrc fjordd_enable=YES
+  service fjordd start
+
+  Open http://<host-ip>:3567 in your browser to launch the setup wizard.
+  The wizard and System dashboard automatically check host readiness and
+  provide copyable shell fixes for any missing engine prerequisites.
+
+Host Prerequisites:
+  Fjord requires at least one container engine (Podman and/or AppJail).
+  See the host prerequisite guide for kernel, package, and PF setup:
+    https://fjord.daemonless.io/install/
+
+  - Podman: fjord requires the API socket service running:
+      sysrc podman_service_enable=YES
+      service podman_service start
+
+  - AppJail: fjord drives appjail-director (sysutils/py-director).
+    Requires AppJail 5.5.0 or newer.
+
+  - Firewall (PF): Port publishing on bridge/virtual networks requires
+    PF NAT and redirection anchors. If published ports hang or fail,
+    check the System dashboard in the web UI.
+
+Stacks are stored in /var/db/fjord/stacks. Additional daemon variables
+are documented in %%PREFIX%%/etc/rc.d/fjordd.
+EOM
+}
+]

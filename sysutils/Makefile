@@ -413,6 +413,7 @@
     SUBDIR += firstboot-freebsd-update
     SUBDIR += firstboot-pkg-upgrade
     SUBDIR += firstboot-pkgs
+    SUBDIR += fjord
     SUBDIR += flasher
     SUBDIR += flashrom
     SUBDIR += flexbackup

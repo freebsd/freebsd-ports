@@ -1,0 +1,16 @@
+fjord is a web management interface and daemon for running OCI container
+applications natively on FreeBSD, as Compose stacks. Delivered as a single
+self-contained binary with an embedded web UI, it manages stack lifecycles,
+storage, networks and application catalogs using standard compose.yaml and
+.env files directly on the filesystem with zero database lock-in.
+
+Features:
+- Dual-engine runtime: orchestrate stacks via Podman (with ocijail) or
+  native FreeBSD jails via AppJail (appjail-director).
+- Filesystem source of truth: stacks are plain directories containing
+  standard compose.yaml and .env files.
+- Workload adoption: convert existing standalone containers or jails into
+  managed Compose stacks in place.
+- Automated host diagnostics: pre-flight checks verify engine binaries,
+  API sockets, and PF firewall anchors with copyable fixes.
+- Integrated application catalog for one-click stack deployments.
