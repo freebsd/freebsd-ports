@@ -1,5 +1,5 @@
 PORTNAME=	ccache
-DISTVERSION=	4.14
+DISTVERSION=	4.14.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ccache/ccache/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	4
