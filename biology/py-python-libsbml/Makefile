@@ -1,5 +1,5 @@
 PORTNAME=	python-libsbml
-DISTVERSION=	5.21.1
+DISTVERSION=	5.21.2
 CATEGORIES=	biology python
 #MASTER_SITES=	PYPI # no tarballs on PYPI
 MASTER_SITES=	https://github.com/sbmlteam/python-libsbml/releases/download/v${DISTVERSION}/
@@ -29,6 +29,6 @@ do-test:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/libsbml/_libsbml*.so
 
-# tests as of 5.21.1: Ran 1819 tests in 0.078s
+# tests as of 5.21.2: Ran 1819 tests in 0.078s
 
 .include <bsd.port.mk>
