@@ -1,0 +1,34 @@
+#! /bin/sh
+
+if [ "$1" = "pack" ]; then
+    spec="$2"
+    shift 2
+    dest=.
+    while [ $# -gt 0 ]; do
+        case "$1" in
+        --pack-destination)
+            dest="$2"
+            shift 2
+            ;;
+        *)
+            shift
+            ;;
+        esac
+    done
+
+    case "${spec}" in
+    @github/copilot-linux-%%ELECTRON_ARCH%%@%%COPILOT_CLI_VERSION%%)
+        tgz="%%COPILOT_CLI_TGZ%%"
+        ;;
+    *)
+        echo "npm-wrapper: Error: no local tarball found for ${spec}." >&2
+        exit 1
+        ;;
+    esac
+
+    cp "${tgz}" "${dest}/" || exit 1
+
+    exit 0
+fi
+
+exec %%NPM_REAL%% "$@"

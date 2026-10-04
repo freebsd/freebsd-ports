@@ -1,6 +1,6 @@
---- build/gulpfile.vscode.ts.orig	2026-08-11 22:14:08 UTC
+--- build/gulpfile.vscode.ts.orig	2026-09-30 08:38:38 UTC
 +++ build/gulpfile.vscode.ts
-@@ -357,6 +357,7 @@ function packageTask(platform: string, arch: string, s
+@@ -222,6 +222,7 @@ function packageTask(platform: string, arch: string, s
  				if (dictationRuntime) {
  					json.dictationRuntime = dictationRuntime;
  				}

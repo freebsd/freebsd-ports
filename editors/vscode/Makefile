@@ -1,13 +1,14 @@
 PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules \
 		https://registry.npmjs.org/@github/copilot-linux-${ELECTRON_ARCH}/-/:copilot_cli \
+		https://registry.npmjs.org/@github/copilot-sdk-linux-${ELECTRON_ARCH}/-/:copilot_sdk \
 		https://registry.npmjs.org/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu/-/:os_proxy_resolver
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
 		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
 		copilot-linux-${ELECTRON_ARCH}-${COPILOT_CLI_VERSION}.tgz:copilot_cli \
+		copilot-sdk-linux-${ELECTRON_ARCH}-${COPILOT_SDK_VERSION}.tgz:copilot_sdk \
 		os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu-${OS_PROXY_RESOLVER_VERSION}.tgz:os_proxy_resolver
 DIST_SUBDIR=	${PORTNAME}
 
@@ -139,21 +140,21 @@ post-extract:
 			${TAR} -xzf ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} -C ${WRKSRC}/$${dir}; \
 		fi; \
 	done
-	# copy contents of @github/copilot-linux-x64 to @github/copilot-freebsd-x64
+	# extract contents of @github/copilot-linux-x64
 	# note: this is just for the build process to pass. GitHub Copilot CLI
-	# is a closed-source product and not usable on FreeBSD
-	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot-linux-${ELECTRON_ARCH} \
-		${WRKSRC}/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH} \
-		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}
+	# is a closed-source product and not usable on FreeBSD without Linuxulator
+	@${MKDIR} ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}
 	@(DISTFILE_copilot=${DISTDIR}/${DIST_SUBDIR}/copilot-linux-${ELECTRON_ARCH}-${COPILOT_CLI_VERSION}.tgz; \
 	${TAR} -xzf $${DISTFILE_copilot} \
-		--strip-components 1 -C ${WRKSRC}/node_modules/@github/copilot-linux-${ELECTRON_ARCH}; \
-	${TAR} -xzf $${DISTFILE_copilot} \
-		--strip-components 1 -C ${WRKSRC}/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}; \
-	${TAR} -xzf $${DISTFILE_copilot} \
 		--strip-components 1 -C ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH})
-	# copy contents of @vscode/os-proxy-resolver-linux-x64-gnu
-	# note: again, this is just for the build process to pass.
+	# extract contents of @github/copilot-sdk-linux-x64
+	# note: again, this is just for the build process to pass
+	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot-sdk-linux-${ELECTRON_ARCH}
+	@(DISTFILE_copilot_sdk=${DISTDIR}/${DIST_SUBDIR}/copilot-sdk-linux-${ELECTRON_ARCH}-${COPILOT_SDK_VERSION}.tgz; \
+	${TAR} -xzf $${DISTFILE_copilot_sdk} \
+		--strip-components 1 -C ${WRKSRC}/node_modules/@github/copilot-sdk-linux-${ELECTRON_ARCH})
+	# extract contents of @vscode/os-proxy-resolver-linux-x64-gnu into
+	# linux and freebsd directories
 	@${MKDIR} ${WRKSRC}/node_modules/@vscode/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu \
 		${WRKSRC}/node_modules/@vscode/os-proxy-resolver-freebsd-${ELECTRON_ARCH}
 	@(DISTFILE_os_proxy_resolver=${DISTDIR}/${DIST_SUBDIR}/os-proxy-resolver-linux-${ELECTRON_ARCH}-gnu-${OS_PROXY_RESOLVER_VERSION}.tgz; \
@@ -276,23 +277,26 @@ pre-build:
 		${WRKSRC}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
 		${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
 		${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH} \
-		${WRKSRC}/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH} \
 		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep/bin
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/build/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep-universal/bin/freebsd-${ELECTRON_ARCH}
-	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/ripgrep/bin/freebsd-${ELECTRON_ARCH}
 # copy tgrep binary file
-	@${MKDIR} ${WRKSRC}/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH} \
-		${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
-	${CP} ${LOCALBASE}/bin/tgrep ${WRKSRC}/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
+	@${MKDIR} ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
 	${CP} ${LOCALBASE}/bin/tgrep ${WRKSRC}/extensions/copilot/node_modules/@github/copilot-freebsd-${ELECTRON_ARCH}/tgrep/bin/freebsd-${ELECTRON_ARCH}
 
 do-build:
 # remove backup files so that they are not included in the package
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -o -name '*.orig' -o -name '*~' \) -delete
+# place npm wrapper script for preventing `npm pack` from accessing network
+	@${SED} -e 's/%%COPILOT_CLI_VERSION%%/${COPILOT_CLI_VERSION}/' \
+		-e 's|%%COPILOT_CLI_TGZ%%|${DISTDIR}/${DIST_SUBDIR}/copilot-linux-${ELECTRON_ARCH}-${COPILOT_CLI_VERSION}.tgz|' \
+		-e 's|%%ELECTRON_ARCH%%|${ELECTRON_ARCH}|' \
+		-e 's|%%NPM_REAL%%|${LOCALBASE}/bin/npm|' \
+		${FILESDIR}/npm-wrapper.sh.in > ${WRKDIR}/.bin/npm
+	@${CHMOD} +x ${WRKDIR}/.bin/npm
 # build and package vscode
 	cd ${WRKSRC} && \
 	npm_env="npm_config_runtime=electron \
@@ -326,7 +330,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${TAR} -cf - -C ${WRKDIR}/VSCode-linux-${ELECTRON_ARCH} . | \
 		${TAR} -xf - -C ${STAGEDIR}${DATADIR}
-	@${FIND} ${STAGEDIR}${DATADIR}/resources/app -type f -exec ${FILE} {} ';' | \
+	@${FIND} ${STAGEDIR}${DATADIR}/resources/app -type f -exec ${FILE} {} + | \
 		${GREP} 'ELF.*FreeBSD' | ${AWK} -F ': ' '{print $$1}' | ${XARGS} ${STRIP_CMD}
 .for f in chromedriver mksnapshot v8_context_snapshot_generator
 	@${RM} ${STAGEDIR}${DATADIR}/${f}
@@ -335,7 +339,7 @@ do-install:
 	@${RM} -r ${STAGEDIR}${DATADIR}/node_headers
 	@${RM} -r ${STAGEDIR}${DATADIR}/resources/completions
 	${RLN} ${STAGEDIR}${DATADIR}/bin/code-oss ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/wrapper.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${FILESDIR}/vscode-wrapper.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 pre-test:
 # setup electron dependency for unit tests
