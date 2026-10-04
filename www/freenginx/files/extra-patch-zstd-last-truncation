@@ -1,0 +1,60 @@
+--- ../zstd-nginx-module-f4ba115/filter/ngx_http_zstd_filter_module.c.orig
++++ ../zstd-nginx-module-f4ba115/filter/ngx_http_zstd_filter_module.c
+@@ -390,6 +390,7 @@
+ {
+     size_t        rc, pos_in, pos_out;
+     char         *hint;
++    ngx_uint_t    end;
+     ngx_chain_t  *cl;
+     ngx_buf_t    *b;
+ 
+@@ -440,6 +441,10 @@
+     ctx->out_buf->last += ctx->buffer_out.pos - pos_out;
+     ctx->redo = 0;
+ 
++    /* the frame is complete only when ZSTD_endStream() has flushed it all */
++
++    end = (rc == 0 && ctx->action == NGX_HTTP_ZSTD_FILTER_END);
++
+     if (rc > 0) {
+         if (ctx->action == NGX_HTTP_ZSTD_FILTER_COMPRESS) {
+             ctx->action = NGX_HTTP_ZSTD_FILTER_FLUSH;
+@@ -447,7 +452,11 @@
+ 
+         ctx->redo = 1;
+ 
+-    } else if (ctx->last && ctx->action != NGX_HTTP_ZSTD_FILTER_END) {
++    } else if (ctx->last && ctx->action != NGX_HTTP_ZSTD_FILTER_END
++               && ctx->buffer_in.pos == ctx->buffer_in.size)
++    {
++        /* end the frame only after the whole input has been consumed */
++
+         ctx->redo = 1;
+         ctx->action = NGX_HTTP_ZSTD_FILTER_END;
+ 
+@@ -502,13 +511,13 @@
+ 
+     b = ctx->out_buf;
+ 
+-    if (rc == 0 && (ctx->flush || ctx->last)) {
++    if (rc == 0 && (ctx->flush || end)) {
+         r->connection->buffered &= ~NGX_HTTP_GZIP_BUFFERED;
+ 
+         b->flush = ctx->flush;
+-        b->last_buf = ctx->last;
++        b->last_buf = end;
+ 
+-        ctx->done = ctx->last;
++        ctx->done = end;
+         ctx->flush = 0;
+     }
+ 
+@@ -522,7 +531,7 @@
+ 
+     ngx_memzero(&ctx->buffer_out, sizeof(ZSTD_outBuffer));
+ 
+-    return ctx->last && rc == 0 ? NGX_OK : NGX_AGAIN;
++    return end ? NGX_OK : NGX_AGAIN;
+ }
+ 
+ 

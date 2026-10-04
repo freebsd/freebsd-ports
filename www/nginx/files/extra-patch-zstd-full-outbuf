@@ -1,0 +1,18 @@
+--- ../zstd-nginx-module-f4ba115/filter/ngx_http_zstd_filter_module.c.orig
++++ ../zstd-nginx-module-f4ba115/filter/ngx_http_zstd_filter_module.c
+@@ -462,7 +462,14 @@
+ 
+         /* pending to call the ZSTD_endStream() */
+ 
+-        return NGX_AGAIN;
++        if (ctx->buffer_out.pos < ctx->buffer_out.size) {
++            return NGX_AGAIN;
++        }
++
++        /*
++         * the output buffer is full: pass it downstream now, otherwise
++         * ngx_http_zstd_filter_get_buf() replaces it and the data is lost
++         */
+ 
+     } else {
+         ctx->action = NGX_HTTP_ZSTD_FILTER_COMPRESS; /* restore */

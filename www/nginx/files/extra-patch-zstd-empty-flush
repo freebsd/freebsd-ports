@@ -1,0 +1,41 @@
+--- ../zstd-nginx-module-f4ba115/filter/ngx_http_zstd_filter_module.c.orig
++++ ../zstd-nginx-module-f4ba115/filter/ngx_http_zstd_filter_module.c
+@@ -460,6 +460,38 @@
+     }
+ 
+     if (ngx_buf_size(ctx->out_buf) == 0) {
++
++        if (rc == 0 && ctx->flush) {
++
++            /*
++             * nothing to flush: pass an empty flush buf downstream,
++             * as the gzip filter does; otherwise ctx->flush is never
++             * reset and the body filter loops forever
++             */
++
++            b = ngx_calloc_buf(r->pool);
++            if (b == NULL) {
++                return NGX_ERROR;
++            }
++
++            b->flush = 1;
++
++            cl = ngx_alloc_chain_link(r->pool);
++            if (cl == NULL) {
++                return NGX_ERROR;
++            }
++
++            cl->buf = b;
++            cl->next = NULL;
++
++            *ctx->last_out = cl;
++            ctx->last_out = &cl->next;
++
++            ctx->flush = 0;
++
++            r->connection->buffered &= ~NGX_HTTP_GZIP_BUFFERED;
++        }
++
+         return NGX_AGAIN;
+     }
+ 
