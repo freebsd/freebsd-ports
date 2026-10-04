@@ -1,19 +1,20 @@
---- PORD/lib/Makefile.orig	2011-05-10 12:56:32 UTC
+--- PORD/lib/Makefile.orig	2026-07-20 09:00:43 UTC
 +++ PORD/lib/Makefile
-@@ -21,9 +21,14 @@ OBJS = graph.o gbipart.o gbisect.o ddcreate.o ddbisect
+@@ -26,12 +26,14 @@ OBJS = graph.o gbipart.o gbisect.o ddcreate.o ddbisect
  .c.o:
  	$(CC) $(COPTIONS) -c $*.c $(OUTC)$*.o
  
--libpord$(LIBEXT):$(OBJS)
--	$(AR)$@ $(OBJS)
-+all: libpord$(LIBEXT) libpord.so.@SOVER@
++all: libpord$(LIBEXT) libpord$(PLAT)$(LIBEXT_SHARED)
 +
-+libpord$(LIBEXT): $(OBJS)
+ libpord$(PLAT)$(LIBEXT):$(OBJS)
+-	$(AR)$@ $(OBJS)
 +	$(AR) $@ $(OBJS)
  	$(RANLIB) $@
-+
-+libpord.so.@SOVER@: $(OBJS)
-+	$(CC) -shared $(OBJS) -Wl,-soname,libpord$(PLAT).so.@SOVER@ -o libpord$(PLAT).so.@SOVER@ -Wl,-z,defs
+ 
+-libpord$(PLAT)$(LIBEXT_SHARED):$(OBJS)
+-	$(CC) -shared $(OBJS) -o libpord$(PLAT)$(LIBEXT_SHARED)
++libpord$(PLAT)$(LIBEXT_SHARED): $(OBJS)
++	$(CC) -shared $(OBJS) -Wl,-soname,libpord$(PLAT)$(LIBEXT_SHARED) -o libpord$(PLAT)$(LIBEXT_SHARED)
  
  clean:
  	rm -f *.o

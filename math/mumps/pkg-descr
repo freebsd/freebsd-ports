@@ -13,4 +13,4 @@ format; elemental format.
 - Partial factorization and Schur complement matrix.
 - Several orderings interfaced : AMD, AMF, PORD
 
-Note: This is the last version released under Public Domain.
+Note: math/mumps is a pre-requisite for Code_Aster.

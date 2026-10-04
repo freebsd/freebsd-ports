@@ -1,23 +1,28 @@
---- libseq/Makefile.orig	2011-05-10 12:56:39 UTC
+--- libseq/Makefile.orig	2026-07-20 09:00:46 UTC
 +++ libseq/Makefile
-@@ -7,13 +7,18 @@ all: libmpiseq
+@@ -2,7 +2,7 @@
+ #  This file is part of MUMPS 5.9.1, released
+ #  on Mon Jul 20 09:00:43 UTC 2026
+ #
+-all: staticlibmpiseq
++all: staticlibmpiseq sharedlibmpiseq
  
- include ../Makefile.inc
+ .PHONY: all staticlibmpiseq sharedlibmpiseq clean
  
--libmpiseq: libmpiseq$(PLAT)$(LIBEXT)
-+libmpiseq: libmpiseq$(PLAT)$(LIBEXT) libmpiseq$(PLAT).so.@SOVER@
+@@ -12,14 +12,14 @@ libmpiseq$(PLAT)$(LIBEXT): mpi.o mpic.o elapse.o
+ staticlibmpiseq: libmpiseq$(PLAT)$(LIBEXT)
  
  libmpiseq$(PLAT)$(LIBEXT): mpi.o mpic.o elapse.o
 -	$(AR)$@ mpi.o mpic.o elapse.o
 +	$(AR) $@ mpi.o mpic.o elapse.o
  	$(RANLIB) $@
-+
-+libmpiseq$(PLAT).so.@SOVER@: mpi.o mpic.o elapse.o
-+	$(FC) -shared ${.ALLSRC} -Wl,-soname,libmpiseq$(PLAT).so.@SOVER@ -o libmpiseq$(PLAT).so.@SOVER@ -Wl,-z,defs
-+
- .f.o:
- 	$(FC) $(OPTF)              -c $*.f $(OUTF)$*.o
-+
- .c.o:
- 	$(CC) $(OPTC) $(CDEFS) -I. -c $*.c $(OUTC)$*.o
  
+ sharedlibmpiseq:
+ 	$(MAKE) FPIC="$(FPIC_OPT)" libmpiseq$(PLAT)$(LIBEXT_SHARED)
+ 
+ libmpiseq$(PLAT)$(LIBEXT_SHARED): mpi.o mpic.o elapse.o
+-	$(FC) $(SHARED_OPT) mpi.o mpic.o elapse.o -o libmpiseq$(PLAT)$(LIBEXT_SHARED)
++	$(FC) -shared mpi.o mpic.o elapse.o -Wl,-soname,libmpiseq$(PLAT).so.@SOVER@ -o libmpiseq$(PLAT)$(LIBEXT_SHARED)
+ 
+ .f.o:
+ 	$(FC) $(OPTF) $(FPIC)              -c $*.f $(OUTF)$*.o
