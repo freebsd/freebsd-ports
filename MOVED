@@ -5720,3 +5720,4 @@ multimedia/ffmpeg6||2026-10-04|Removed: no consumers left
 science/serac|science/smith|2026-10-04|Project renamed upstream
 www/py-dj60-django-stubs-ext|www/py-dj61-django-stubs-ext|2026-10-04|Has expired: 6.0.9 is supposed to be the last 6.0.x release, migrate to www/py-dj61-django-stubs-ext
 devel/cpp-netlib||2026-10-04|Broken for more than a year and upstream is inactive
+devel/eclipse-titan||2026-10-04|Broken for more than a year in tree
