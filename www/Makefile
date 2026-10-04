@@ -1600,7 +1600,6 @@
     SUBDIR += py-dj60-django-redis
     SUBDIR += py-dj60-django-rich
     SUBDIR += py-dj60-django-storages
-    SUBDIR += py-dj60-django-stubs-ext
     SUBDIR += py-dj60-django-tables2
     SUBDIR += py-dj60-django-taggit
     SUBDIR += py-dj60-django-timezone-field

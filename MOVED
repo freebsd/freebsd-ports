@@ -5718,3 +5718,4 @@ devel/py-importlib-metadata6|devel/py-importlib-metadata7|2026-10-01|Has expired
 sysutils/py-appjail-gui||2026-10-02|Has expired: Upstream repo archived on Sep 02, 2026
 multimedia/ffmpeg6||2026-10-04|Removed: no consumers left
 science/serac|science/smith|2026-10-04|Project renamed upstream
+www/py-dj60-django-stubs-ext|www/py-dj61-django-stubs-ext|2026-10-04|Has expired: 6.0.9 is supposed to be the last 6.0.x release, migrate to www/py-dj61-django-stubs-ext
