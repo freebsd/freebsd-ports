@@ -1,6 +1,6 @@
 PORTNAME=	seer-gdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4
+DISTVERSION=	2.7-20260913 # 2.7 is broken, see https://github.com/epasveer/seer/issues/550
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +19,7 @@ USE_GL=		gl opengl
 USE_GITHUB=	yes
 GH_ACCOUNT=	epasveer
 GH_PROJECT=	seer
+GH_TAGNAME=	78282be
 
 WRKSRC_SUBDIR=	src
 
