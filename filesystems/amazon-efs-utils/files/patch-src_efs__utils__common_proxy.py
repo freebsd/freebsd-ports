@@ -1,6 +1,6 @@
 --- src/efs_utils_common/proxy.py.orig
 +++ src/efs_utils_common/proxy.py
-@@ -291,7 +291,7 @@ def write_stunnel_config_file(
+@@ -297,7 +297,7 @@ def write_stunnel_config_file(
          # Only support in stunnel version 5.25+.
          global_config["foreground"] = "quiet"
  
@@ -9,7 +9,7 @@
          release in system_release_version
          for release in SKIP_NO_SO_BINDTODEVICE_RELEASES
      ):
-@@ -596,7 +596,9 @@ def poll_tunnel_process(tunnel_proc, fs_id, mount_completed):
+@@ -602,7 +602,9 @@ def poll_tunnel_process(tunnel_proc, fs_id, mount_completed):
  
  def get_init_system(comm_file="/proc/1/comm"):
      init_system = DEFAULT_UNKNOWN_VALUE
@@ -20,7 +20,7 @@
          try:
              with open(comm_file) as f:
                  init_system = f.read().strip()
-@@ -642,6 +644,25 @@ def start_watchdog(init_system):
+@@ -648,6 +650,25 @@ def start_watchdog(init_system):
          else:
              logging.debug("%s is already running", WATCHDOG_SERVICE)
  

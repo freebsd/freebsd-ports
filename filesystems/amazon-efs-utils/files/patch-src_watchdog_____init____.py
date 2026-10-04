@@ -1,6 +1,15 @@
 --- src/watchdog/__init__.py.orig
 +++ src/watchdog/__init__.py
-@@ -808,6 +808,58 @@ def get_file_safe_mountpoint(mount):
+@@ -178,7 +178,7 @@ Mount = namedtuple(
+ 
+ NFSSTAT_TIMEOUT = 5
+ 
+-# Bounds the `ps` call used to look up a process name on macOS, which has no procfs.
++# Bounds the `ps` call used to look up a process name on macOS and FreeBSD.
+ PROCESS_NAME_TIMEOUT_SEC = 5
+ 
+ PROC_STAT_PATH_FORMAT = "/proc/%s/stat"
+@@ -814,6 +814,58 @@ def get_file_safe_mountpoint(mount):
      return mountpoint + "." + opts["port"]
  
  
@@ -59,7 +68,7 @@
  def get_current_local_nfs_mounts(mount_file="/proc/mounts"):
      """
      Return a dict of the current NFS mounts for servers running on localhost, keyed by the mountpoint and port as it
-@@ -815,7 +867,92 @@ def get_current_local_nfs_mounts(mount_file="/proc/mounts"):
+@@ -821,7 +873,92 @@ def get_current_local_nfs_mounts(mount_file="/proc/mounts"):
      """
      mounts = []
  
@@ -153,7 +162,7 @@
          with open(mount_file) as f:
              for mount in f:
                  try:
-@@ -1548,6 +1685,65 @@ def check_stunnel_health(
+@@ -1585,6 +1722,65 @@ def check_stunnel_health(
          rewrite_state_file(state, state_file_dir, state_file)
  
      stunnel_pid = state["pid"]
@@ -219,3 +228,52 @@
      process = subprocess.Popen(
          ["df", mountpoint],
          stdout=subprocess.DEVNULL,
+@@ -2499,10 +2695,12 @@ def check_process_name_and_state(pid):
+ 
+     Reads /proc/<pid>/stat, never /proc/<pid>/cmdline: a cmdline read enters the
+     target's address space and can block forever on a wedged process. `state` is
+-    the run state, and is None on macOS, which has no procfs.
++    the run state, and is None on macOS, which has no procfs. FreeBSD uses ps(1).
+     """
+     if check_if_running_on_macos():
+         return _check_process_name_and_state_macos(pid)
++    if sys.platform.startswith("freebsd"):
++        return _check_process_name_and_state_freebsd(pid)
+ 
+     try:
+         with open(PROC_STAT_PATH_FORMAT % pid, "rb") as f:
+@@ -2550,6 +2748,34 @@ def _check_process_name_and_state_macos(pid):
+         return None, None
+ 
+ 
++# FreeBSD procfs has no stat file and is often not mounted. ps(1) reads
++# comm and state from kinfo_proc, without entering the target's address space.
++def _check_process_name_and_state_freebsd(pid):
++    p = subprocess.Popen(
++        ["ps", "-p", str(pid), "-o", "comm=", "-o", "state="],
++        stdout=subprocess.PIPE,
++        stderr=subprocess.PIPE,
++        close_fds=True,
++    )
++    try:
++        out = p.communicate(timeout=PROCESS_NAME_TIMEOUT_SEC)[0]
++    except subprocess.TimeoutExpired:
++        p.kill()
++        p.communicate()
++        logging.warning(
++            "Timed out after %ss looking up the name of process %s",
++            PROCESS_NAME_TIMEOUT_SEC,
++            pid,
++        )
++        return None, None
++
++    fields = out.strip().rsplit(None, 1)
++    if len(fields) != 2:
++        return None, None
++    # The state's first letter is the run state, e.g. Z in "Z+".
++    return fields[0], fields[1][:1]
++
++
+ def check_if_running_on_macos():
+     return sys.platform == "darwin"
+ 

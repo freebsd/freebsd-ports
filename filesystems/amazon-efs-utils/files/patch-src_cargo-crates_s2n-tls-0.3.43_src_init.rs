@@ -1,5 +1,5 @@
---- src/cargo-crates/s2n-tls-0.3.42/src/init.rs.orig	2026-08-16 16:47:45 UTC
-+++ src/cargo-crates/s2n-tls-0.3.42/src/init.rs
+--- src/cargo-crates/s2n-tls-0.3.43/src/init.rs.orig	2026-08-16 16:47:45 UTC
++++ src/cargo-crates/s2n-tls-0.3.43/src/init.rs
 @@ -145,6 +145,13 @@ mod mem {
          // `max_align_t` is a type with the largest alignment of any scalar
          // type, so aligning to its requirement will produce an alignment
