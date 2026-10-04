@@ -5725,3 +5725,4 @@ devel/xeus-cling||2026-10-04|Broken for years in tree
 dns/dog||2026-10-04|Broken for years in tree and upstream is inactive
 games/frogatto||2026-10-04|Broken for than a year in tree
 lang/intel-compute-runtime||2026-10-04|Broken for than a year in tree
+math/xlapack||2026-10-04|Broken for than a year in tree

@@ -1341,7 +1341,6 @@
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin
     SUBDIR += xgap
-    SUBDIR += xlapack
     SUBDIR += xldlas
     SUBDIR += xlife++
     SUBDIR += xplot
