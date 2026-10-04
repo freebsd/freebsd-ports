@@ -1,6 +1,6 @@
 PORTNAME=	pyenv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.6
+DISTVERSION=	2.8.8
 CATEGORIES=	devel python
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -17,7 +17,8 @@ USE_GITHUB=	yes
 
 SHEBANG_FILES=	plugins/python-build/scripts/add_cpython.py \
 		plugins/python-build/scripts/add_miniconda.py \
-		plugins/python-build/scripts/add_miniforge.py
+		plugins/python-build/scripts/add_miniforge.py \
+		plugins/python-build/scripts/add_pypy.py
 
 REINPLACE_ARGS=	-i ''
 NO_BUILD=	yes
