@@ -1,7 +1,6 @@
 PORTNAME=	protonmail-bridge
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.26.0
-PORTREVISION=	1
+DISTVERSION=	3.27.1
 CATEGORIES=	mail
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -32,7 +31,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 CONSTANTS_PREFIX=	github.com/ProtonMail/proton-bridge/v3/internal/constants
 # git ls-remote --tags https://github.com/ProtonMail/proton-bridge 'refs/tags/${DISTVERSIONFULL}'
-COMMIT_HASH=		726f7aa62ac993afc67ec566b36243d1c2bafa3d
+COMMIT_HASH=		43b9237786204a0215abfd4dcc51ee7bb92f52d4
 BUILD_TIME_CMD=		/bin/date -r $$(${AWK} '/TIMESTAMP/ { print $$NF }' ${DISTINFO_FILE}) '+%FT%T%z'
 
 pre-build:
