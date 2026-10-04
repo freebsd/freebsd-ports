@@ -1,0 +1,12 @@
+-- Fix CMake 4.x compatibility by raising the minimum required CMake version.
+-- CMake 4.0 dropped support for cmake_minimum_required(VERSION < 3.5).
+--- cargo-crates/resvg-0.32.0/tools/kde-dolphin-thumbnailer/CMakeLists.txt.orig	2006-07-23 18:21:28.000000000 -0700
++++ cargo-crates/resvg-0.32.0/tools/kde-dolphin-thumbnailer/CMakeLists.txt	2026-08-27 15:50:07.409457000 -0700
+@@ -1,6 +1,6 @@
+ project(resvgthumbnailer)
+ 
+-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+ 
+ find_package(ECM 1.0.0 REQUIRED NO_MODULE)
+ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})

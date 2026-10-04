@@ -1,0 +1,11 @@
+--- build/CMakeLists.txt.orig	2026-10-04 23:34:51 UTC
++++ build/CMakeLists.txt
+@@ -2,7 +2,7 @@ project(guidoar)
+ # CMAKE guidoar
+ #######################################
+ project(guidoar)
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.5)
+ 
+ set(target guidoar)
+ 

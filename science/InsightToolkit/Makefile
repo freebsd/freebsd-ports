@@ -59,6 +59,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 CMAKE_OFF=	ITK_USE_KWSTYLE BUILD_TESTING
 CMAKE_TESTING_ON=	BUILD_TESTING # 4 tests are known to fail, see https://github.com/InsightSoftwareConsortium/ITK/issues/3739
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 #LDFLAGS+=	-lcompat # workaround for: ld: error: lib/liblpsolve55.so.5.5.2: undefined reference to ftime
 LDFLAGS+=	-L${WRKSRC} -lftime # workaround for: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=257789, otherwise the above line should suffice

@@ -37,6 +37,7 @@ CMAKE_OFF=	OpenMVS_BUILD_TOOLS # tools can't be built because of https://github.
 CMAKE_OFF+=	OpenMVS_ENABLE_TESTS
 CMAKE_ARGS=	-DVCG_ROOT=${LOCALBASE}/include/vcglib
 CMAKE_TESTING_ON=	OpenMVS_ENABLE_TESTS # tests fail to configure, see https://github.com/cdcseacave/openMVS/issues/911
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/cdcseacave/openMVS/issues/1312
 
 .include <bsd.port.options.mk>
 

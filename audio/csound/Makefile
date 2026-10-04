@@ -5,7 +5,8 @@ CATEGORIES=	audio lang
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sound synthesizer
-WWW=		https://csound.com/
+WWW=		https://csound.com/ \
+		https://github.com/csound/csound
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -22,7 +23,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	csounds
 
-CONFLICTS_INSTALL= clearsilver go-cs libextractor outguess
+CONFLICTS_INSTALL=	clearsilver go-cs libextractor outguess
 
 CFLAGS_powerpc=	-maltivec
 CFLAGS_powerpcspe=	-DPFFFT_SIMD_DISABLE
@@ -31,6 +32,8 @@ CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
 		-DPYTHON_MODULE_INSTALL_DIR:PATH="${PYTHONPREFIX_SITELIBDIR}" \
 		-DOPSYS:STRING="${OPSYS}"
 CMAKE_OFF=	USE_ALSA BUILD_JAVA_INTERFACE BUILD_TESTS
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 SSP_UNSAFE=	yes
 LDFLAGS+=	-lexecinfo
 

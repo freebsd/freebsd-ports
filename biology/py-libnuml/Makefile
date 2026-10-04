@@ -23,6 +23,7 @@ GH_PROJECT=	NuML
 WRKSRC_SUBDIR=	${PORTNAME}/src/bindings/python
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR=lib
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # Cmake 4.5 compatibility
 
 LDFLAGS+=	-lnuml # otherwise it builds a broken shared object, see https://github.com/NuML/NuML/issues/21
 

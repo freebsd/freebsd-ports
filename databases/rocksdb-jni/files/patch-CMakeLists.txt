@@ -1,10 +1,19 @@
-- this patch performs 2 functions:
+- this patch performs 3 functions:
 - 1. remove java/ from the PROJECT_SOURCE_DIR path
 - 2. add librocksdbjni-freebsd64.so symlink needed to run some dependencies
+- 3. add a project() command so that CMAKE_PROJECT_VERSION is set (needed for CMake 4.5)
 
---- CMakeLists.txt.orig	2024-08-27 20:39:35 UTC
+--- CMakeLists.txt.orig	2025-03-06 06:15:17 UTC
 +++ CMakeLists.txt
-@@ -542,9 +542,9 @@ include_directories(${JNI_INCLUDE_DIRS})
+@@ -1,5 +1,7 @@ cmake_minimum_required(VERSION 3.4)
+ cmake_minimum_required(VERSION 3.4)
+ 
++project(rocksdb VERSION ${CMAKE_PROJECT_VERSION})
++
+ set(JAVA_JUNIT_VERSION "4.13.1")
+ set(JAVA_HAMCR_VERSION "2.2")
+ set(JAVA_MOCKITO_VERSION "1.10.19")
+@@ -542,9 +544,9 @@ include_directories(${JNI_INCLUDE_DIRS})
  find_package(JNI)
  
  include_directories(${JNI_INCLUDE_DIRS})
@@ -16,7 +25,7 @@
  set(JAVA_TMP_JAR ${JAVA_TEST_LIBDIR}/tmp.jar)
  set(JAVA_JUNIT_JAR ${JAVA_TEST_LIBDIR}/junit-${JAVA_JUNIT_VERSION}.jar)
  set(JAVA_HAMCR_JAR ${JAVA_TEST_LIBDIR}/hamcrest-${JAVA_HAMCR_VERSION}.jar)
-@@ -561,7 +561,7 @@ endif()
+@@ -561,7 +563,7 @@ endif()
    set(JAVA_RUN_TESTCLASSPATH ${JAVA_JUNIT_JAR}:${JAVA_HAMCR_JAR}:${JAVA_MOCKITO_JAR}:${JAVA_CGLIB_JAR}:${JAVA_ASSERTJ_JAR})
  endif()
  
@@ -25,7 +34,7 @@
  file(MAKE_DIRECTORY ${JNI_OUTPUT_DIR})
  
  if(${Java_VERSION_MINOR} VERSION_LESS_EQUAL "7" AND ${Java_VERSION_MAJOR} STREQUAL "1")
-@@ -602,8 +602,8 @@ add_jar(
+@@ -602,8 +604,8 @@ add_jar(
      GENERATE_NATIVE_HEADERS rocksdbjni_test_headers DESTINATION ${JNI_OUTPUT_DIR}
  )
  
@@ -36,7 +45,7 @@
  endif()
  
  if(NOT EXISTS ${JAVA_TEST_LIBDIR})
-@@ -817,7 +817,7 @@ create_javadoc(rocksdb
+@@ -817,7 +819,7 @@ create_javadoc(rocksdb
  set(ROCKSDB_JAVADOC_JAR rocksdbjni-${CMAKE_PROJECT_VERSION}-javadoc.jar)
  create_javadoc(rocksdb
          PACKAGES org.rocksdb org.rocksdb.util
@@ -45,7 +54,7 @@
          WINDOWTITLE "RocksDB Java API JavaDoc"
          AUTHOR FALSE
          USE FALSE
-@@ -833,7 +833,7 @@ add_custom_target(rocksdb_sources_jar ALL
+@@ -833,7 +835,7 @@ add_custom_target(rocksdb_sources_jar ALL
  # Sources Jar
  set(ROCKSDB_SOURCES_JAR rocksdbjni-${CMAKE_PROJECT_VERSION}-sources.jar)
  add_custom_target(rocksdb_sources_jar ALL
@@ -54,7 +63,7 @@
          BYPRODUCTS ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_SOURCES_JAR}
          WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
  )
-@@ -877,8 +877,10 @@ add_custom_target(rocksdbjava ALL
+@@ -877,8 +879,10 @@ add_custom_target(rocksdbjava ALL
  
  add_custom_target(rocksdbjava ALL
          COMMAND ${CMAKE_COMMAND} -E copy ${ROCKS_JAR_FILE} ${CMAKE_CURRENT_BINARY_DIR}/${ROCKSDB_JAR}

@@ -1,0 +1,13 @@
+-- Fix CMake 4.x compatibility by raising the minimum required CMake version.
+-- CMake 4.0 dropped support for cmake_minimum_required(VERSION < 3.5).
+--- cargo-crates/shaderc-sys-0.8.3/build/spirv-headers/CMakeLists.txt.orig	2006-07-23 18:21:28.000000000 -0700
++++ cargo-crates/shaderc-sys-0.8.3/build/spirv-headers/CMakeLists.txt	2026-08-27 15:50:07.390226000 -0700
+@@ -28,7 +28,7 @@
+ # The SPIR-V headers from the SPIR-V Registry
+ # https://www.khronos.org/registry/spir-v/
+ #
+-cmake_minimum_required(VERSION 3.0)
++cmake_minimum_required(VERSION 3.5)
+ project(SPIRV-Headers VERSION 1.5.5)
+ 
+ # There are two ways to use this project.

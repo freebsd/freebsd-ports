@@ -29,6 +29,7 @@ GH_PROJECT=	${PORTNAME:tu}
 
 CMAKE_ARGS=	-DFPARSER_ROOT_DIR=${LOCALBASE} \
 		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.6 compatibility
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

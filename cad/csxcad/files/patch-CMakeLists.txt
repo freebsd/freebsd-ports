@@ -1,13 +1,43 @@
-- workaround for https://gitlab.kitware.com/cmake/cmake/-/issues/25358
-
---- CMakeLists.txt.orig	2023-10-24 00:58:47 UTC
+-- Fix CMake 4.x compatibility and FreeBSD build issues.
+-- Move cmake_minimum_required() before project() and raise it to 3.5.
+-- Replace FindHDF5 with explicit find_path/find_library because CMake's
+-- FindHDF5 fails to determine HDF5 C flags and misses the HL library.
+-- Remove the obsolete boost_system component (header-only since Boost 1.70).
+--- CMakeLists.txt.orig	2023-10-22 14:26:48 UTC
 +++ CMakeLists.txt
-@@ -100,7 +100,7 @@ message(STATUS "TinyXML_LIBRARY: ${TinyXML_LIBRARY}")
+@@ -6,10 +6,10 @@ ENDIF()
+   SET( CMAKE_BUILD_TYPE Release CACHE STRING "Set to either \"Release\" or \"Debug\"" )
+ ENDIF()
+ 
++cmake_minimum_required(VERSION 3.5)
++
+ PROJECT(CSXCAD CXX C)
+ 
+-cmake_minimum_required(VERSION 3.0)
+-
+ if (NOT WIN32)
+  set (CMAKE_CXX_FLAGS -fPIC )
+ endif()
+@@ -100,9 +100,12 @@ INCLUDE_DIRECTORIES( ${TinyXML_INCLUDE_DIR} )
  
  INCLUDE_DIRECTORIES( ${TinyXML_INCLUDE_DIR} )
  
 -find_package(HDF5 1.8 COMPONENTS C HL REQUIRED)
-+find_package(HDF5 COMPONENTS C HL REQUIRED)
++find_path(HDF5_INCLUDE_DIRS hdf5.h HINTS ${LOCALBASE}/include REQUIRED)
++find_library(HDF5_C_LIBRARY hdf5 HINTS ${LOCALBASE}/lib REQUIRED)
++find_library(HDF5_HL_LIBRARY hdf5_hl HINTS ${LOCALBASE}/lib REQUIRED)
++set(HDF5_LIBRARIES ${HDF5_C_LIBRARY} ${HDF5_HL_LIBRARY})
++set(HDF5_HL_LIBRARIES ${HDF5_HL_LIBRARY})
  INCLUDE_DIRECTORIES (${HDF5_INCLUDE_DIRS})
- link_directories(${HDF5_LIBRARY_DIRS})
+-link_directories(${HDF5_LIBRARY_DIRS})
  # hdf5 compat
+ ADD_DEFINITIONS( -DH5_USE_16_API )
+ #ADD_DEFINITIONS( -DH5_BUILT_AS_DYNAMIC_LIB )
+@@ -120,7 +123,6 @@ find_package(Boost 1.46 COMPONENTS
+ # TODO what are the needed libs?
+ find_package(Boost 1.46 COMPONENTS
+   thread
+-  system
+   date_time
+   serialization
+   chrono
