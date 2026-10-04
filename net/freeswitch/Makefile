@@ -1,6 +1,6 @@
 PORTNAME=	freeswitch
 DISTVERSION=	1.11.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	https://files.freeswitch.org/releases/freeswitch/ \
 		https://files.freeswitch.org/releases/sounds/:sounds
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	gdiff:textproc/diffutils \
 		erlang>=21.3:lang/erlang
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libcurl.so:ftp/curl \
-		libavformat.so:multimedia/ffmpeg6 \
+		libavformat.so:multimedia/ffmpeg \
 		libpcre2-8.so:devel/pcre2 \
 		libspeexdsp.so:audio/speexdsp \
 		libspeex.so:audio/speex \
@@ -53,7 +53,8 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 
 MAKE_JOBS_UNSAFE=	yes
 
-CFLAGS+=	-Wno-error -I${LUA_INCDIR}
+# ldns >= 1.9.0 redefines _Bool; that breaks assert() with clang >= 20 in mod_enum.
+CFLAGS+=	-DHAVE_STDBOOL_H -Wno-error -I${LUA_INCDIR}
 
 CONFLICTS_BUILD=	xmlrpc-c
 
@@ -104,7 +105,7 @@ ALL_MODULES_CFLAGS=		-I${LOCALBASE}/include/openh323/ \
 				-I${JAVA_HOME}/include/freebsd
 ALL_MODULES_CONFLICTS_BUILD=	apr
 ALL_MODULES_EXTRA_PATCHES=	${FILESDIR}/extrapatch-modules.conf
-ALL_MODULES_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg6 \
+ALL_MODULES_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 				libbrotlidec.so:archivers/brotli \
 				libbrotlienc.so:archivers/brotli \
 				libhiredis.so:databases/hiredis \
@@ -204,5 +205,4 @@ post-install:
 		(cd ${WRKSRC}/conf && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
-.include "${.CURDIR:H:H}/multimedia/ffmpeg6/override.mk"
 .include <bsd.port.mk>
