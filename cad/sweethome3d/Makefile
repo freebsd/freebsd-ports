@@ -1,6 +1,5 @@
 PORTNAME=	sweethome3d
-PORTVERSION=	7.1
-PORTREVISION=	3
+PORTVERSION=	7.5
 CATEGORIES=	cad java
 MASTER_SITES=	SF/${PORTNAME}/SweetHome3D-source/${DISTNAME}/
 DISTNAME=	SweetHome3D-${PORTVERSION}-src
@@ -41,6 +40,7 @@ build-yafaray:
 		${WRKSRC_yr}/CMakeConfig/UserConfig.template \
 		> ${WRKSRC_yr}/CMakeConfig/UserConfig.txt
 	cd ${WRKSRC_yr} && cmake \
+		-DCMAKE_POLICY_VERSION_MINIMUM:STRING=3.5 \
 		-DUSER_INSTALL_PREFIX:PATH=${BUILD_WRKSRC}/build/yafaray \
 		. && ${MAKE_CMD} VERBOSE=1 install
 	${MV} ${BUILD_WRKSRC}/build/yafaray/lib/* ${BUILD_WRKSRC}/lib/yafaray
