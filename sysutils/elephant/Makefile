@@ -1,7 +1,6 @@
 PORTNAME=	elephant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.22.0
-PORTREVISION=	3
+DISTVERSION=	2.22.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=		aarch64 armv7 i386
 NOT_FOR_ARCHS_REASON=	-buildmode=plugin is not supported on these architectures
 
-USES=		go:modules
+USES=		go:1.27+,modules
 
 GO_MODULE=	github.com/abenz1267/elephant/v2
 GO_TARGET=	./cmd/elephant
@@ -27,8 +26,9 @@ OPTIONS_DEFAULT=	${OPTIONS_GROUP_PROVIDERS:NNIRIACTIONS:NNIRISESSIONS}
 OPTIONS_GROUP=		PROVIDERS
 OPTIONS_GROUP_PROVIDERS=1PASSWORD BITWARDEN BOOKMARKS CALC CLIPBOARD \
 			DESKTOPAPPLICATIONS FILES MENUS NIRIACTIONS \
-			NIRISESSIONS PLAYERCTL PROVIDERLIST RUNNER SNIPPETS \
-			SYMBOLS TODO UNICODE WEBSEARCH WINDOWS WIREPLUMBER
+			NIRISESSIONS PLAYERCTL PROTONPASS PROVIDERLIST RUNNER \
+			SNIPPETS SYMBOLS TODO UNICODE WEBSEARCH WINDOWS \
+			WIREPLUMBER
 
 PROVIDERS_DESC=		Enabled providers
 1PASSWORD_DESC=		Access your 1Password vaults
@@ -41,6 +41,7 @@ FILES_DESC=		Find files/folders
 MENUS_DESC=		Create custom menus
 NIRIACTIONS_DESC=	Search and execute Niri actions
 NIRISESSIONS_DESC=	Create predefined session layouts and open them
+PROTONPASS_DESC=	Access your Proton Pass vaults
 PROVIDERLIST_DESC=	Lists all providers and configured menus
 PLAYERCTL_DESC=		Control media/audio players with playerctl
 RUNNER_DESC=		Execute everything installed in your PATH
@@ -77,6 +78,9 @@ NIRISESSIONS_RUN_DEPENDS=niri:x11-wm/niri
 NIRISESSIONS_PLIST_FILES=etc/xdg/elephant/providers/nirisessions.so
 PLAYERCTL_RUN_DEPENDS=	playerctl:multimedia/playerctl
 PLAYERCTL_PLIST_FILES=	etc/xdg/elephant/providers/playerctl.so
+PROTONPASS_RUN_DEPENDS=	pass-cli:security/pass-cli \
+			wl-copy:x11/wl-clipboard
+PROTONPASS_PLIST_FILES=	etc/xdg/elephant/providers/protonpass.so
 PROVIDERLIST_PLIST_FILES=etc/xdg/elephant/providers/providerlist.so
 RUNNER_PLIST_FILES=	etc/xdg/elephant/providers/runner.so
 SNIPPETS_RUN_DEPENDS=	wtype:x11/wtype
