@@ -6,64 +6,7 @@
 PORTNAME=	v8
 PORTVERSION=	15.4.80.20
 CATEGORIES=	lang
-# Sub-dependencies are fetched from chromium.googlesource.com +archive endpoint
-# (archives extract flat with no top-level wrapper directory)
-MASTER_SITES+=	https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp/+archive/:absl \
-		https://chromium.googlesource.com/chromium/src/build/+archive/:build \
-		https://chromium.googlesource.com/chromium/src/buildtools/+archive/:buildtools \
-		https://chromium.googlesource.com/chromium/src/tools/clang/+archive/:clang \
-		https://chromium.googlesource.com/chromium/src/third_party/cpu_features/+archive/:cpu_features_chromium \
-		https://chromium.googlesource.com/external/github.com/google/cpu_features/+archive/:cpu_features \
-		https://chromium.googlesource.com/external/github.com/aengelke/disarm/+archive/:disarm \
-		https://chromium.googlesource.com/external/github.com/jk-jeon/dragonbox/+archive/:dragonbox \
-		https://chromium.googlesource.com/external/github.com/aengelke/fadec/+archive/:fadec \
-		https://chromium.googlesource.com/external/github.com/fastfloat/fast_float/+archive/:fast_float \
-		https://chromium.googlesource.com/external/github.com/Maratyszcza/FP16/+archive/:fp16 \
-		https://chromium.googlesource.com/chromium/src/third_party/fuzztest/+archive/:fuzztest \
-		https://chromium.googlesource.com/external/github.com/google/fuzztest/+archive/:fuzztest_src \
-		https://chromium.googlesource.com/external/github.com/google/googletest/+archive/:googletest \
-		https://chromium.googlesource.com/external/github.com/google/highway/+archive/:highway \
-		https://chromium.googlesource.com/chromium/deps/icu/+archive/:icu \
-		https://chromium.googlesource.com/external/github.com/open-source-parsers/jsoncpp/+archive/:jsoncpp \
-		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxx/+archive/:libcxx \
-		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxxabi/+archive/:libcxxabi \
-		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libunwind/+archive/:libunwind \
-		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libc/+archive/:llvm_libc \
-		https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator/+archive/:partition_alloc \
-		https://chromium.googlesource.com/chromium/src/third_party/protobuf/+archive/:protobuf \
-		https://chromium.googlesource.com/chromium/src/tools/protoc_wrapper/+archive/:protoc_wrapper \
-		https://chromium.googlesource.com/external/github.com/google/re2/+archive/:re2 \
-		https://chromium.googlesource.com/chromium/src/third_party/simdutf/+archive/:simdutf \
-		https://chromium.googlesource.com/chromium/src/third_party/zlib/+archive/:zlib
-DISTFILES=	${ABSL_REV}.tar.gz:absl \
-		${BUILD_REV}.tar.gz:build \
-		${BUILDTOOLS_REV}.tar.gz:buildtools \
-		${CLANG_REV}.tar.gz:clang \
-		${CPU_FEATURES_CHROMIUM_REV}.tar.gz:cpu_features_chromium \
-		${CPU_FEATURES_REV}.tar.gz:cpu_features \
-		${DISARM_REV}.tar.gz:disarm \
-		${DRAGONBOX_REV}.tar.gz:dragonbox \
-		${FADEC_REV}.tar.gz:fadec \
-		${FAST_FLOAT_REV}.tar.gz:fast_float \
-		${FP16_REV}.tar.gz:fp16 \
-		${FUZZTEST_REV}.tar.gz:fuzztest \
-		${FUZZTEST_SRC_REV}.tar.gz:fuzztest_src \
-		${GOOGLETEST_REV}.tar.gz:googletest \
-		${HIGHWAY_REV}.tar.gz:highway \
-		${ICU_REV}.tar.gz:icu \
-		${JSONCPP_REV}.tar.gz:jsoncpp \
-		${LIBCXX_REV}.tar.gz:libcxx \
-		${LIBCXXABI_REV}.tar.gz:libcxxabi \
-		${LIBUNWIND_REV}.tar.gz:libunwind \
-		${LLVM_LIBC_REV}.tar.gz:llvm_libc \
-		${PARTITION_ALLOC_REV}.tar.gz:partition_alloc \
-		${PROTOBUF_REV}.tar.gz:protobuf \
-		${PROTOC_WRAPPER_REV}.tar.gz:protoc_wrapper \
-		${RE2_REV}.tar.gz:re2 \
-		${SIMDUTF_REV}.tar.gz:simdutf \
-		${ZLIB_REV}.tar.gz:zlib
 DIST_SUBDIR=	v8/${PORTVERSION:R}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Open source JavaScript engine by Google
@@ -85,6 +28,33 @@ CPE_VENDOR=	google
 USE_GITHUB=	yes
 GH_ACCOUNT=	v8
 GH_PROJECT=	v8
+GH_TUPLE=	chromium-full-mirror:external_github.com_google_cpu_features:${CPU_FEATURES_REV}:cpu_features/third_party/cpu_features/src \
+		chromium-full-mirror:external_github.com_aengelke_disarm:${DISARM_REV}:disarm/third_party/disarm/src \
+		chromium-full-mirror:external_github.com_jk-jeon_dragonbox:${DRAGONBOX_REV}:dragonbox/third_party/dragonbox/src \
+		chromium-full-mirror:external_github.com_aengelke_fadec:${FADEC_REV}:fadec/third_party/fadec/src \
+		chromium-full-mirror:external_github.com_fastfloat_fast_float:${FAST_FLOAT_REV}:fast_float/third_party/fast_float/src \
+		chromium-full-mirror:external_github.com_Maratyszcza_FP16:${FP16_REV}:fp16/third_party/fp16/src \
+		chromium-full-mirror:external_github.com_google_fuzztest:${FUZZTEST_SRC_REV}:fuzztest_src/third_party/fuzztest/src \
+		chromium-full-mirror:external_github.com_google_googletest:${GOOGLETEST_REV}:googletest/third_party/googletest/src \
+		chromium-full-mirror:external_github.com_google_highway:${HIGHWAY_REV}:highway/third_party/highway/src \
+		chromium-full-mirror:external_github.com_open-source-parsers_jsoncpp:${JSONCPP_REV}:jsoncpp/third_party/jsoncpp/source \
+		chromium-full-mirror:external_github.com_google_re2:${RE2_REV}:re2/third_party/re2/src \
+		chromium-full-mirror:chromium_src_third_party_abseil-cpp:${ABSL_REV}:absl/third_party/abseil-cpp \
+		chromium-full-mirror:chromium_src_build:${BUILD_REV}:build/build \
+		chromium-full-mirror:chromium_src_buildtools:${BUILDTOOLS_REV}:buildtools/buildtools \
+		chromium-full-mirror:chromium_src_tools_clang:${CLANG_REV}:clang/tools/clang \
+		chromium-full-mirror:chromium_src_third_party_cpu_features:${CPU_FEATURES_CHROMIUM_REV}:cpu_features_chromium/third_party/cpu_features \
+		chromium-full-mirror:chromium_src_third_party_fuzztest:${FUZZTEST_REV}:fuzztest/third_party/fuzztest \
+		chromium-full-mirror:chromium_deps_icu:${ICU_REV}:icu/third_party/icu \
+		chromium-full-mirror:external_github.com_llvm_llvm-project_libcxx:${LIBCXX_REV}:libcxx/third_party/libc++/src \
+		chromium-full-mirror:external_github.com_llvm_llvm-project_libcxxabi:${LIBCXXABI_REV}:libcxxabi/third_party/libc++abi/src \
+		chromium-full-mirror:external_github.com_llvm_llvm-project_libunwind:${LIBUNWIND_REV}:libunwind/third_party/libunwind/src \
+		chromium-full-mirror:external_github.com_llvm_llvm-project_libc:${LLVM_LIBC_REV}:llvm_libc/third_party/llvm-libc/src \
+		chromium-full-mirror:chromium_src_base_allocator_partition_allocator:${PARTITION_ALLOC_REV}:partition_alloc/third_party/partition_alloc \
+		chromium-full-mirror:chromium_src_third_party_protobuf:${PROTOBUF_REV}:protobuf/third_party/protobuf \
+		chromium-full-mirror:chromium_src_tools_protoc_wrapper:${PROTOC_WRAPPER_REV}:protoc_wrapper/tools/protoc_wrapper \
+		chromium-full-mirror:chromium_src_third_party_simdutf:${SIMDUTF_REV}:simdutf/third_party/simdutf \
+		chromium-full-mirror:chromium_src_third_party_zlib:${ZLIB_REV}:zlib/third_party/zlib
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
@@ -156,35 +126,83 @@ GN_ARGS+=	clang_base_path="${LLVM_PREFIX}" \
 
 #OPTIONS_DEFINE=	EXAMPLES
 
-# rev:dest-subdir-under-WRKSRC pairs for sub-dependency extraction
-_V8_OUTDIR=	${WRKSRC}/out/Release
+# GH_TUPLE group:path-on-chromium.googlesource.com pairs.  The distfiles come
+# from the unofficial chromium-full-mirror on GitHub and are compared against
+# chromium.googlesource.com by verify-mirror.  FETCH_ENV is deliberately not
+# used there, as it disables TLS certificate verification.
+_GS_DEPS=		absl:chromium/src/third_party/abseil-cpp \
+			build:chromium/src/build \
+			buildtools:chromium/src/buildtools \
+			clang:chromium/src/tools/clang \
+			cpu_features_chromium:chromium/src/third_party/cpu_features \
+			fuzztest:chromium/src/third_party/fuzztest \
+			icu:chromium/deps/icu \
+			libcxx:external/github.com/llvm/llvm-project/libcxx \
+			libcxxabi:external/github.com/llvm/llvm-project/libcxxabi \
+			libunwind:external/github.com/llvm/llvm-project/libunwind \
+			llvm_libc:external/github.com/llvm/llvm-project/libc \
+			partition_alloc:chromium/src/base/allocator/partition_allocator \
+			protobuf:chromium/src/third_party/protobuf \
+			protoc_wrapper:chromium/src/tools/protoc_wrapper \
+			simdutf:chromium/src/third_party/simdutf \
+			zlib:chromium/src/third_party/zlib \
+			cpu_features:external/github.com/google/cpu_features \
+			disarm:external/github.com/aengelke/disarm \
+			dragonbox:external/github.com/jk-jeon/dragonbox \
+			fadec:external/github.com/aengelke/fadec \
+			fast_float:external/github.com/fastfloat/fast_float \
+			fp16:external/github.com/Maratyszcza/FP16 \
+			fuzztest_src:external/github.com/google/fuzztest \
+			googletest:external/github.com/google/googletest \
+			highway:external/github.com/google/highway \
+			jsoncpp:external/github.com/open-source-parsers/jsoncpp \
+			re2:external/github.com/google/re2
+# jsoncpp marks devtools/agent_vm* as eol=crlf in .gitattributes, which GitHub
+# applies when generating the tarball and gitiles does not.
+_GS_DIFF_ARGS_jsoncpp=	--strip-trailing-cr
+_GS_SITE=		https://chromium.googlesource.com
+_GS_VERIFY=		${WRKDIR}/.verify-mirror
+_V8_OUTDIR=		${WRKSRC}/out/Release
 
-post-extract:
-.for dep in ${ABSL_REV}:third_party/abseil-cpp ${BUILD_REV}:build \
-	${BUILDTOOLS_REV}:buildtools ${CLANG_REV}:tools/clang \
-	${CPU_FEATURES_CHROMIUM_REV}:third_party/cpu_features \
-	${CPU_FEATURES_REV}:third_party/cpu_features/src \
-	${DISARM_REV}:third_party/disarm/src \
-	${DRAGONBOX_REV}:third_party/dragonbox/src \
-	${FADEC_REV}:third_party/fadec/src \
-	${FAST_FLOAT_REV}:third_party/fast_float/src \
-	${FP16_REV}:third_party/fp16/src ${FUZZTEST_REV}:third_party/fuzztest \
-	${FUZZTEST_SRC_REV}:third_party/fuzztest/src \
-	${GOOGLETEST_REV}:third_party/googletest/src \
-	${HIGHWAY_REV}:third_party/highway/src ${ICU_REV}:third_party/icu \
-	${JSONCPP_REV}:third_party/jsoncpp/source \
-	${LIBCXX_REV}:third_party/libc++/src \
-	${LIBCXXABI_REV}:third_party/libc++abi/src \
-	${LIBUNWIND_REV}:third_party/libunwind/src \
-	${LLVM_LIBC_REV}:third_party/llvm-libc/src \
-	${PARTITION_ALLOC_REV}:third_party/partition_alloc \
-	${PROTOBUF_REV}:third_party/protobuf \
-	${PROTOC_WRAPPER_REV}:tools/protoc_wrapper \
-	${RE2_REV}:third_party/re2/src ${SIMDUTF_REV}:third_party/simdutf \
-	${ZLIB_REV}:third_party/zlib
-	@${MKDIR} ${WRKSRC}/${dep:C/.*://}
-	@${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${dep:C/:.*//}.tar.gz -C ${WRKSRC}/${dep:C/.*://}
+# "make makesum" fetches with these two set; hook the verification in there so
+# that distinfo can not be regenerated without it.
+.if defined(NO_CHECKSUM) && defined(DISABLE_SIZE)
+post-fetch: verify-mirror
+.endif
+
+verify-mirror:
+	@${ECHO_MSG} "===>  Verifying chromium-full-mirror distfiles against ${_GS_SITE}"
+.for group in \
+	${GH_TUPLE:Mchromium-full-mirror\:*:C/^[^:]*:[^:]*:[^:]*:([^\/]*)\/.*/\1/}
+.  if empty(_GS_DEPS:M${group}\:*)
+	@${ECHO_MSG} "===>  ${group} is fetched from chromium-full-mirror but missing from _GS_DEPS"
+	@${FALSE}
+.  endif
 .endfor
+.for dep in ${_GS_DEPS}
+	@${RM} -r ${_GS_VERIFY}
+	@${MKDIR} ${_GS_VERIFY}/googlesource ${_GS_VERIFY}/mirror
+	@${FETCH_CMD} -q \
+		-o ${_GS_VERIFY}/googlesource.tar.gz \
+		${_GS_SITE}/${dep:C/^[^:]*://}/+archive/${GH_TAGNAME_${dep:C/:.*//}}.tar.gz
+	@${TAR} -xf ${_GS_VERIFY}/googlesource.tar.gz \
+		-C ${_GS_VERIFY}/googlesource
+	@${TAR} -xf ${_DISTDIR}/${DISTFILE_${dep:C/:.*//}} --strip-components 1 \
+		-C ${_GS_VERIFY}/mirror
+	@cd ${_GS_VERIFY}/googlesource && ${FIND} . ! -type l -exec ${STAT} -f '%HT %Lp %N' {} + | \
+		LC_ALL=C ${SORT} > ${_GS_VERIFY}/googlesource.list
+	@cd ${_GS_VERIFY}/mirror && ${FIND} . ! -type l -exec ${STAT} -f '%HT %Lp %N' {} + | \
+		LC_ALL=C ${SORT} > ${_GS_VERIFY}/mirror.list
+	@if ! ${DIFF} -u ${_GS_VERIFY}/googlesource.list ${_GS_VERIFY}/mirror.list || \
+		! ${DIFF} -r --no-dereference ${_GS_DIFF_ARGS_${dep:C/:.*//}} ${_GS_VERIFY}/googlesource ${_GS_VERIFY}/mirror; then \
+		${ECHO_MSG} "===>  MISMATCH: ${DISTFILE_${dep:C/:.*//}} differs from ${_GS_SITE}/${dep:C/^[^:]*://}"; \
+		${ECHO_MSG} "===>  Do NOT update distinfo or commit."; \
+		${FALSE}; \
+	fi
+	@${ECHO_MSG} "=> ${dep:C/:.*//} ${GH_TAGNAME_${dep:C/:.*//}} identical"
+.endfor
+	@${RM} -r ${_GS_VERIFY}
+	@${ECHO_MSG} "===>  verify-mirror: all ${_GS_DEPS:[#]} mirrored distfiles match ${_GS_SITE}"
 
 post-patch:
 	@${REINPLACE_CMD} -i '' 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/build/toolchain/gcc_toolchain.gni
