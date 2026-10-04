@@ -58,6 +58,9 @@ GTK_RUN_DEPENDS=	appmenu-gtk-module>0:x11/gtk-app-menu
 # https://reviews.freebsd.org/D59635
 .if ${OSVERSION} < 1501503
 PLIST_SUB+=	RTLD="@comment "
+
+post-install:
+	${RM} ${STAGEDIR}${QT_PLUGINDIR}/plasma/applets/org.kde.plasma.cameraindicator.so
 .else
 PLIST_SUB+=	RTLD=""
 .endif
