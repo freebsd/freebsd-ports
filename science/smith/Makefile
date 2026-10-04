@@ -1,6 +1,7 @@
 PORTNAME=	smith
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libaxom_core.so:science/axom \
 		libcamp.so:devel/camp \
 		libconduit.so:science/conduit \
+		libfmt.so:devel/libfmt \
 		libhdf5.so:science/hdf5 \
 		libHYPRE.so:science/hypre \
 		libmetis.so:math/metis \
@@ -20,7 +22,7 @@ LIB_DEPENDS=	libaxom_core.so:science/axom \
 		libopenblas.so:math/openblas \
 		libsiloh5.so:science/silo
 
-USES=		cmake:testing compiler:c++17-lang lua
+USES=		cmake:testing compiler:c++17-lang localbase:ldflags lua
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
