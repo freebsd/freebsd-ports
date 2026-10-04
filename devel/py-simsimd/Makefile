@@ -13,6 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
+BROKEN_i386=	fails to compile: error: _Float16 is not supported on this target
 
 USES=		python
 USE_PYTHON=	distutils autoplist
