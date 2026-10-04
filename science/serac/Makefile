@@ -9,6 +9,8 @@ WWW=		https://github.com/LLNL/smith
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		updated in the latest ports branch by moving it to science/smith, can't be fixed in the quarterly branch due to many dependencies
+
 LIB_DEPENDS=	libaxom_core.so:science/axom \
 		libcamp.so:devel/camp \
 		libconduit.so:science/conduit \
