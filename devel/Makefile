@@ -2804,6 +2804,7 @@
     SUBDIR += p5-Future
     SUBDIR += p5-Future-AsyncAwait
     SUBDIR += p5-Future-IO
+    SUBDIR += p5-Future-XS
     SUBDIR += p5-Gearman
     SUBDIR += p5-Gearman-Client-Async
     SUBDIR += p5-Gearman-Server

@@ -1,0 +1,5 @@
+This module provides an XS-based implementation of the Future class.
+It is currently experimental and shipped in its own distribution for
+testing purposes, though once it seems stable the plan is to move it
+into the main Future distribution and load it automatically in favour
+of the pureperl implementation on supported systems.
