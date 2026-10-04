@@ -1,6 +1,7 @@
 PORTNAME=	openssl
 PORTVERSION=	3.0.22
 CATEGORIES=	security devel
+PKGNAMESUFFIX=	30
 MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
 
 MAINTAINER=	brnrd@FreeBSD.org
