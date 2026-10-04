@@ -51,7 +51,7 @@ immich_server_chdir=%%PREFIX%%/www/immich/server
 start_precmd=immich_server_precmd
 stop_cmd=immich_server_stop
 command=/usr/sbin/daemon
-command_args="-f -S -H -P ${pidfile} -p ${childpidfile} \
+command_args="-f -H -t ${name} -P ${pidfile} -p ${childpidfile} \
 	-o /var/log/immich/${name}.log \
 	%%NODE%% dist/main"
 
