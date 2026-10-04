@@ -24,7 +24,7 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_ARGS=	--disable-plugin-autoload
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cchardet/_cchardet${PYTHON_TAG}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cchardet/_cchardet${PYTHON_SOABI}.so
 
 # tests as of 3.2.0: 148 passed, 5 skipped in 1.08s
 
