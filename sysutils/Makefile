@@ -859,6 +859,7 @@
     SUBDIR += opentofu
     SUBDIR += openupsd
     SUBDIR += openvox-agent8
+    SUBDIR += openvox-agent9
     SUBDIR += openvox-server8
     SUBDIR += osinfo-db-tools
     SUBDIR += osquery
