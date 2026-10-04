@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+Remember to run:
+
+sysrc puppetserver_enable=yes
+
+OpenVox Server ships with a version of JRuby that bundle an older version of
+the json gem than the one provided by the ports pollection.  If
+devel/rubygem-json is installed, OpenVox Server may fail to start because it
+loads the newer gem version, which lacks Java support.
+
+This can be fixed by running:
+
+puppetserver gem install json
+EOM
+}
+]
