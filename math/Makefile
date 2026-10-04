@@ -536,7 +536,7 @@
     SUBDIR += mpsolve
     SUBDIR += mtrxmath
     SUBDIR += multichoose
-    SUBDIR += mumps
+    SUBDIR += mumps-edf
     SUBDIR += mumps4
     SUBDIR += munkres-cpp
     SUBDIR += muparser
