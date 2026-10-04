@@ -57,7 +57,6 @@
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg3
     SUBDIR += ffmpeg4
-    SUBDIR += ffmpeg6
     SUBDIR += ffmpegthumbnailer
     SUBDIR += ffms2
     SUBDIR += ffnvcodec-headers
