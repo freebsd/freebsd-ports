@@ -10,6 +10,8 @@ WWW=		https://box2d.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to compile: error: always_inline function '_mm_setr_ps' requires target feature 'sse', but would be inlined into function 'b2SetW' that is compiled without support for 'sse'
+
 USES=		cmake compiler:c++11-lang pkgconfig
 USE_LDCONFIG=	yes
 
