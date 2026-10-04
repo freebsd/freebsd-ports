@@ -1,7 +1,6 @@
 PORTNAME=	teams
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20.1
-PORTREVISION=	3
+DISTVERSION=	2.23.0
 CATEGORIES=	net-im
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://ismaelmartinez.github.io/teams-for-linux/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		desktop-file-utils electron:42 localbase:ldflags \
+USES=		desktop-file-utils electron:43 localbase:ldflags \
 		nodejs:24,build npm:npm python:build
 
 USE_GITHUB=	yes
@@ -38,7 +37,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/dist/${ELECTRON_BUILDER_APP_OUT_DIR} && \
 	${COPYTREE_SHARE} resources ${STAGEDIR}${DATADIR}
-	${FIND} ${STAGEDIR}${DATADIR}/resources -type f -exec ${FILE} {} ';' | \
+	${FIND} ${STAGEDIR}${DATADIR}/resources -type f -exec ${FILE} {} + | \
 		${GREP} 'ELF.*FreeBSD' | ${AWK} -F ': ' '{print $$1}' | ${XARGS} ${STRIP_CMD}
 
 do-install-DOCS-on:
