@@ -1,5 +1,5 @@
 PORTNAME=	qwen-code
-DISTVERSION=	0.23.0
+DISTVERSION=	0.24.7
 CATEGORIES=	misc
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -41,15 +41,18 @@ do-install:
 	# cli.js falls back to system rg when the builtin path is absent
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/vendor/ripgrep
 	@${RM} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/sandbox-macos-*.sb
+	# Linux-only Landlock sandbox runner; landlockRunnerPath() throws off linux
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/vendor/landlock-run
 	# audio-capture ships linux/darwin/win32 prebuilds only; its platform
-	# check throws on freebsd before loading one, so drop the dead binaries
-	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/node_modules/@qwen-code/audio-capture/prebuilds
+	# check throws on freebsd before loading one, so drop the dead binaries.
+	# It is an optional dep that npm may skip entirely, hence -f
+	@${RM} -rf ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/node_modules/@qwen-code/audio-capture/prebuilds
 	${REINPLACE_CMD} -i '' \
 		-e "s|#!/usr/bin/env node|#!${PREFIX}/bin/node|" \
 		${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/cli-entry.js
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/chunks \
 		-name '*.js' -exec ${REINPLACE_CMD} -i '' \
-		-e 's|settings.merged.general?.enableAutoUpdate !== false|false|g' \
+		-e 's|enableAutoUpdate!==false|&\&\&false|g' \
 		{} +
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/cli-entry.js
 	# create wrapper script
