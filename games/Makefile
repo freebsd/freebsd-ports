@@ -302,7 +302,6 @@
     SUBDIR += fretsonfire-data
     SUBDIR += frikqcc
     SUBDIR += frobtads
-    SUBDIR += frogatto
     SUBDIR += frotz
     SUBDIR += frozen-bubble
     SUBDIR += fs2open
