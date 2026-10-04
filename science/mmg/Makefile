@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libElas.so:science/linearelasticity \
-		libscotch.so:cad/scotch \
+		libscotch.so:cad/scotch-edf \
 		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
 USES=		cmake perl5 shebangfix

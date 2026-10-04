@@ -14,7 +14,7 @@ USES=		octave autoreconf
 
 LIB_DEPENDS+=	libgtest.so:devel/googletest \
 		libmetis.so:math/metis \
-		libmumps_common_seq.so:math/mumps
+		libmumps_common_seq.so:math/mumps-edf
 
 RUN_DEPENDS+=	${OCTAVE_TARBALLS_DIR}/mboct-octave-pkg.tar.gz:math/octave-forge-mboct-octave-pkg \
 		${OCTAVE_TARBALLS_DIR}/mboct-numerical-pkg.tar.gz:math/octave-forge-mboct-numerical-pkg \

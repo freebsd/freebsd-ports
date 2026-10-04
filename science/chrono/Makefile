@@ -24,7 +24,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libmetis.so:math/metis \
 		libpciaccess.so:devel/libpciaccess \
 		libpng16.so:graphics/png \
-		libscotch.so:cad/scotch \
+		libscotch.so:cad/scotch-edf \
 		libze_loader.so:devel/level-zero
 
 USES=		cmake compiler:c++14-lang eigen:3 fortran gnome jpeg xorg
@@ -66,7 +66,7 @@ MULTICORE_BUILD_DEPENDS=	blaze>0:math/blaze \
 				thrust>0:devel/thrust
 
 MUMPS_CMAKE_ON=			-DMUMPS_ROOT:STRING=${LOCALBASE}
-MUMPS_LIB_DEPENDS=		libdmumps.so:math/mumps \
+MUMPS_LIB_DEPENDS=		libdmumps.so:math/mumps-edf \
 				libopenblas.so:math/openblas
 
 PARDISO_PROJECT_BROKEN=		Not available for FreeBSD; License is restrictive

@@ -29,9 +29,9 @@ PLIST_SUB=	VE=${VEM} MUMPSVERSION=${MUMPSVERSION}
 OPTIONS_DEFINE=	DOCS EXAMPLES MPICH
 
 MPICH_USES=		mpi:mpich
-MPICH_LIB_DEPENDS_OFF=	libscotch.so:cad/scotch
+MPICH_LIB_DEPENDS_OFF=	libscotch.so:cad/scotch-edf
 MPICH_LIB_DEPENDS=	libparmetis.so:math/parmetis	\
-			libptscotch.so:cad/scotch	\
+			libptscotch.so:cad/scotch-edf	\
 			libscalapack.so:math/scalapack
 MPICH_PLIST_SUB=	WITH_LIBSEQ="@comment "
 MPICH_PLIST_SUB_OFF=	WITH_LIBSEQ=""

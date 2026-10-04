@@ -24,8 +24,8 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libfftw3.so:math/fftw3 \
 		libgsl.so:math/gsl \
 		libmetis.so:math/metis \
-		libmumps_common.so:math/mumps \
-		libscotch.so:cad/scotch \
+		libmumps_common.so:math/mumps-edf \
+		libscotch.so:cad/scotch-edf \
 		libnlopt.so:math/nlopt \
 		libsuperlu.so:math/superlu
 RUN_DEPENDS=	bash:shells/bash \
