@@ -39,7 +39,7 @@ OPTIONS_SUB=	yes
 _YARN_VERSION=	4.13.0
 _YARN=		${WRKSRC}/.yarn/releases/yarn-${_YARN_VERSION}.cjs
 _YARN_CACHE=	${WRKDIR}/yarn-cache
-_YARN_TARBALL=	${DISTNAME}-yarn-offline-cache.txz
+_YARN_TARBALL=	${DISTNAME}-yarn-offline-cache-r1.txz
 _YARN_ENV=	HOME=${WRKDIR} PATH=${PATH} YARN_CACHE_FOLDER=${_YARN_CACHE} \
 		YARN_ENABLE_GLOBAL_CACHE=false YARN_ENABLE_TELEMETRY=0 \
 		YARN_ENABLE_COLORS=false npm_config_nodedir=${LOCALBASE} \
@@ -50,9 +50,12 @@ _YARN_CMD=	${SETENV} ${_YARN_ENV} YARN_ENABLE_NETWORK=false \
 
 yarn-cache: patch
 	@${RM} -r ${_YARN_CACHE}
+	@${PRINTF} 'supportedArchitectures:\n  os:\n    - freebsd\n  cpu:\n    - arm64\n    - x64\n' \
+		> ${WRKDIR}/.yarnrc.yml
 	(cd ${WRKSRC} && \
 		${SETENV} ${_YARN_ENV} YARN_ENABLE_NETWORK=true \
 		${LOCALBASE}/bin/node ${_YARN} install --mode=skip-build)
+	@${RM} ${WRKDIR}/.yarnrc.yml
 	(cd ${WRKDIR} && \
 		${TAR} cvaf ${_YARN_TARBALL} yarn-cache)
 
