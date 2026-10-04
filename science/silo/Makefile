@@ -1,10 +1,12 @@
 PORTNAME=	silo
 DISTVERSION=	4.12.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Mesh and field I/O library and scientific database
-WWW=		https://wci.llnl.gov/simulation/computer-codes/silo
+WWW=		https://software.llnl.gov/Silo/ \
+		https://github.com/LLNL/Silo
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

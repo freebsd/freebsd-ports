@@ -10,6 +10,7 @@ include/silo.h
 %%FORTRAN%%include/silo.inc
 %%FORTRAN%%include/silo_FC.h
 include/silo_exports.h
+%%FORTRAN%%include/silo_f77.inc
 %%FORTRAN%%include/silo_f9x.inc
 %%PYTHON%%lib/Silo.so
 lib/cmake/Silo/SiloConfig.cmake
