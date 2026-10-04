@@ -12,6 +12,9 @@ WWW=		https://immich.app/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	the TypeScript compiler ships no FreeBSD/i386 binary
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/npm:www/npm-node22
 
 USES=		cpe nodejs:22,build,run
@@ -29,7 +32,8 @@ PNPM=		${WRKDIR}/pnpm-prefix/bin/pnpm
 PNPM_VERSION=	11.22.0
 
 MAKE_ENV=	CI=1 \
-		COREPACK_ENABLE_STRICT=0
+		COREPACK_ENABLE_STRICT=0 \
+		HOME=${WRKDIR}
 
 SUB_FILES=	immich
 SUB_LIST=	NODE=${LOCALBASE}/bin/node
@@ -37,7 +41,7 @@ SUB_LIST=	NODE=${LOCALBASE}/bin/node
 NO_ARCH=	yes
 
 pre-build:
-	cd ${WRKDIR} && ${SETENV} PATH=${PATH} \
+	cd ${WRKDIR} && ${SETENV} ${MAKE_ENV} PATH=${PATH} \
 		${LOCALBASE}/bin/npm install -g --prefix ${WRKDIR}/pnpm-prefix \
 		${BUILDKIT}/pnpm-${PNPM_VERSION}.tgz
 
