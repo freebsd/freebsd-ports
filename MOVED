@@ -5731,3 +5731,5 @@ devel/cppurses|devel/termox|2026-10-04|Project renamed upstream
 devel/fatal||2026-10-05|Project archived on GitHub, no users
 sysutils/lava||2026-10-06|Removed, only applies to unsupported CouchDB 1.x versions
 audio/stegosaurus-lv2||2026-10-06|Removed, no longer maintained upstream
+math/mumps|math/mumps-edf|2026-10-07|Repomove to math/mumps-edf
+math/mumps4|math/mumps|2026-10-07|Repomove to math/mumps
