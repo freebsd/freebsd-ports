@@ -11,6 +11,8 @@ WWW=		https://github.com/a-n-t-h-o-n-y/CPPurses
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		Fails to build with CMake 4
+
 USES=		cmake compiler:c++14-lang ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	a-n-t-h-o-n-y
