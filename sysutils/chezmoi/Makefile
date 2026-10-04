@@ -1,7 +1,6 @@
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.70.5
-PORTREVISION=	4
+DISTVERSION=	2.73.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	samir@noir.im
@@ -11,7 +10,7 @@ WWW=		https://www.chezmoi.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules python
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	twpayne
 
