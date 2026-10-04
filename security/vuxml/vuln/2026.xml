@@ -1,3 +1,35 @@
+  <vuln vid="7fed71c4-be3a-11f1-ab8d-00a0980083d7">
+    <topic>libexpat -- Improper Handling of Unicode Encoding</topic>
+    <affects>
+    <package>
+	<name>expat2</name>
+	<range><lt>2.8.5</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/libexpat/libexpat/pull/1282 reports:</p>
+	<blockquote cite="https://github.com/libexpat/libexpat/pull/1282">
+	  <p>Expat before 2.8.5 fails to validate that a high surrogate in
+	  UTF-16 input is followed by a low surrogate, allowing malformed
+	  UTF-16 sequences to be accepted. Attackers can supply UTF-16 encoded
+	  XML containing lone high surrogates that consume the following code
+	  unit, causing Expat to pass unpaired surrogates to applications
+	  built with XML_UNICODE and to silently replace input characters in
+	  other builds.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-93990</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-93990</url>
+    </references>
+    <dates>
+      <discovery>2026-09-19</discovery>
+      <entry>2026-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a28dd61b-be3e-11f1-bd34-3c7c3fba4204">
     <topic>Keycloak -- multiple vulnerabilities</topic>
     <affects>
