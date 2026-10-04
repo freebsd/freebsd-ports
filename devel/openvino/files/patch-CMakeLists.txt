@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-04-10 17:52:46 UTC
++++ CMakeLists.txt
+@@ -202,7 +202,7 @@ add_subdirectory(scripts)
+ add_subdirectory(docs)
+ add_subdirectory(tools)
+ add_subdirectory(scripts)
+-add_subdirectory(licensing)
++#add_subdirectory(licensing)
+ 
+ if(ENABLE_TESTS)
+     # layers and other more high-level / e2e tests

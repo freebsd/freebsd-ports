@@ -1,0 +1,4 @@
+OpenVINO is an open-source toolkit developed by Intel designed to optimize
+and accelerate AI inference. It allows developers to deploy deep learning
+models efficiently across various hardware platforms for computer vision
+and general AI applications.

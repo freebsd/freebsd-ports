@@ -1929,6 +1929,7 @@
     SUBDIR += openocd-devel
     SUBDIR += opentelemetry-cpp
     SUBDIR += opentelemetry-proto
+    SUBDIR += openvino
     SUBDIR += oq
     SUBDIR += orc
     SUBDIR += orcania
