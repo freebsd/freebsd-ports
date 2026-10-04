@@ -5722,3 +5722,4 @@ www/py-dj60-django-stubs-ext|www/py-dj61-django-stubs-ext|2026-10-04|Has expired
 devel/cpp-netlib||2026-10-04|Broken for more than a year and upstream is inactive
 devel/eclipse-titan||2026-10-04|Broken for more than a year in tree
 devel/xeus-cling||2026-10-04|Broken for years in tree
+dns/dog||2026-10-04|Broken for years in tree and upstream is inactive
