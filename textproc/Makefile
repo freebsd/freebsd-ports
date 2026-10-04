@@ -481,6 +481,7 @@
     SUBDIR += lucene9
     SUBDIR += luceneplusplus
     SUBDIR += lv-aspell
+    SUBDIR += lv-hunspell
     SUBDIR += makefaq
     SUBDIR += makepatch
     SUBDIR += man2html
