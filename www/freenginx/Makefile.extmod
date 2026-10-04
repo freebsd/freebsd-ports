@@ -356,3 +356,6 @@ ZSTD_CONFIGURE_ENV=	ZSTD_INC=${LOCALBASE}/include \
 			ZSTD_LIB=${LOCALBASE}/lib
 ZSTD_GH_TUPLE=		tokers:zstd-nginx-module:f4ba115:zstd
 ZSTD_VARS=		DSO_EXTMODS+=zstd
+ZSTD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-zstd-empty-flush \
+			${PATCHDIR}/extra-patch-zstd-last-truncation \
+			${PATCHDIR}/extra-patch-zstd-full-outbuf
