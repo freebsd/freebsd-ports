@@ -77,6 +77,7 @@
     SUBDIR += bwi-firmware-kmod
     SUBDIR += bwn-firmware-kmod
     SUBDIR += bwping
+    SUBDIR += byedpi
     SUBDIR += c3270
     SUBDIR += calendarsupport
     SUBDIR += ccxstream
