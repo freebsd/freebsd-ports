@@ -42,7 +42,7 @@ immich_public_proxy_chdir=%%PREFIX%%/www/immich-public-proxy
 start_precmd=immich_public_proxy_precmd
 stop_cmd=immich_public_proxy_stop
 command=/usr/sbin/daemon
-command_args="-f -S -H -P ${pidfile} -p ${childpidfile} \
+command_args="-f -H -t ${name} -P ${pidfile} -p ${childpidfile} \
 	-o /var/log/immich/${name}.log \
 	%%NODE%% dist/index.js"
 

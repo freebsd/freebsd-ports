@@ -1,6 +1,7 @@
 PORTNAME=	immich-public-proxy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/ipp-v${DISTVERSION}/:buildkit
 DISTFILES=	${PORTNAME}-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
