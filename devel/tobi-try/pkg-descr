@@ -1,0 +1,5 @@
+try is a small Ruby tool for managing throwaway experiment directories.
+It creates date-prefixed directories under a single root (~/src/tries by
+default), and offers an interactive fuzzy finder, ranked by name and
+recency, to jump back into them. A shell function installed with
+"try init" lets the selector change the current directory of the shell.

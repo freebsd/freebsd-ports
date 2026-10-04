@@ -1,0 +1,8 @@
+cliamp is a retro terminal music player inspired by Winamp 2.x. It plays
+local files, internet radio streams, podcasts and online services
+(YouTube, SoundCloud, Spotify, Navidrome, Jellyfin, Plex and more), and
+offers a spectrum visualizer, a parametric equalizer and a playlist
+manager. It exposes an MPRIS D-Bus interface for desktop media keys.
+
+Audio is played through ALSA, which on FreeBSD is routed to OSS by
+audio/alsa-plugins.

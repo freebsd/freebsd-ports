@@ -8854,6 +8854,7 @@
     SUBDIR += tlsh
     SUBDIR += tlx
     SUBDIR += tnt
+    SUBDIR += tobi-try
     SUBDIR += tokei
     SUBDIR += tokio-console
     SUBDIR += toml11
@@ -8894,6 +8895,7 @@
     SUBDIR += unordered-dense
     SUBDIR += upnp
     SUBDIR += urjtag
+    SUBDIR += usage
     SUBDIR += ut
     SUBDIR += utf8cpp
     SUBDIR += uthash

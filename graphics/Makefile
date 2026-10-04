@@ -661,6 +661,7 @@
     SUBDIR += ogre3d19
     SUBDIR += oidn
     SUBDIR += okular
+    SUBDIR += omasnap
     SUBDIR += open3d
     SUBDIR += openboard
     SUBDIR += opencollada
@@ -1253,6 +1254,7 @@
     SUBDIR += synfigstudio
     SUBDIR += tachyon
     SUBDIR += telak
+    SUBDIR += tensaku
     SUBDIR += tesseract
     SUBDIR += tesseract-data
     SUBDIR += tgif

@@ -523,6 +523,7 @@
     SUBDIR += helm-docs
     SUBDIR += helmfile
     SUBDIR += herbe
+    SUBDIR += herdr
     SUBDIR += hexpeek
     SUBDIR += hextools
     SUBDIR += hexyl
@@ -649,6 +650,7 @@
     SUBDIR += kustomize
     SUBDIR += kvmclock-kmod
     SUBDIR += lava
+    SUBDIR += lazydocker
     SUBDIR += lazyssh
     SUBDIR += lbl-cf
     SUBDIR += lbl-hf
@@ -1511,6 +1513,7 @@
     SUBDIR += twa-kmod
     SUBDIR += twmn
     SUBDIR += tzdialog
+    SUBDIR += tzupdate
     SUBDIR += u-boot-a13-olinuxino
     SUBDIR += u-boot-a64-olinuxino
     SUBDIR += u-boot-bananapi
@@ -1587,6 +1590,7 @@
     SUBDIR += ucspi-tcp
     SUBDIR += ucspi-unix
     SUBDIR += udfclient
+    SUBDIR += udiskie
     SUBDIR += ufetch
     SUBDIR += uhidd
     SUBDIR += uhubctl
