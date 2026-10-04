@@ -141,6 +141,7 @@
     SUBDIR += rubygem-gdsii
     SUBDIR += sch-rnd
     SUBDIR += scotch
+    SUBDIR += scotch-edf
     SUBDIR += silice
     SUBDIR += solvespace
     SUBDIR += sp2sp

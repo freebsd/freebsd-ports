@@ -1,0 +1,32 @@
+--- src/Make.inc/Makefile.inc.x86-64_pc_freebsd.orig	2017-02-22 07:20:57 UTC
++++ src/Make.inc/Makefile.inc.x86-64_pc_freebsd
+@@ -1,21 +1,21 @@
+ EXE		=
+-LIB		= .a
++LIB		= .so
+ OBJ		= .o
+ 
+ MAKE		= gmake
+-AR		= ar
+-ARFLAGS		= -ruv
++AR		= $(CC)
++ARFLAGS		= -shared -Wl,-soname,$@ -o
+ CAT		= cat
+-CCS		= cc
++CCS		= $(CC)
+ CCP		= mpicc
+-CCD		= cc
+-CFLAGS		+= -std -fPIC -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict -DIDXSIZE64
+-CLIBFLAGS	=
++CCD		= $(CC)
++CFLAGS		+= -std=c99 -fPIC -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict -DIDXSIZE64 -DINTSIZE64
++CLIBFLAGS	= -fPIC
+ LDFLAGS		+= -lz -lm -lthread
+ CP		= cp
+ LEX		= flex -Pscotchyy -olex.yy.c
+ LN		= ln
+ MKDIR		= mkdir
+ MV		= mv
+-RANLIB		= ranlib
++RANLIB		= echo
+ YACC		= bison -pscotchyy -y -b y
