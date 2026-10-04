@@ -153,7 +153,6 @@
     SUBDIR += hs-unlambda
     SUBDIR += huc
     SUBDIR += inko
-    SUBDIR += intel-compute-runtime
     SUBDIR += intercal
     SUBDIR += io
     SUBDIR += io-devel
