@@ -10,6 +10,9 @@ WWW=		https://immich.app/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC:H}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	the ONNX runtime does not build on 32-bit platforms
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiocache>0:devel/py-aiocache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>0:www/py-fastapi@${PY_FLAVOR} \
