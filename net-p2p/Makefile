@@ -44,7 +44,6 @@
     SUBDIR += ktorrent
     SUBDIR += libktorrent
     SUBDIR += libtorrent
-    SUBDIR += libtorrent-rasterbar
     SUBDIR += libtorrent-rasterbar2
     SUBDIR += libutp
     SUBDIR += lidarr
