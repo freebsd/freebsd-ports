@@ -30,6 +30,9 @@ include/umpire/resource/DefaultMemoryResource.inl
 include/umpire/resource/FileMemoryResource.hpp
 include/umpire/resource/FileMemoryResourceFactory.hpp
 include/umpire/resource/HostResourceFactory.hpp
+include/umpire/resource/HostSharedMemoryResource.hpp
+include/umpire/resource/HostSharedMemoryResourceFactory.hpp
+include/umpire/resource/HostSharedMemoryResourceImpl.hpp
 include/umpire/resource/MemoryResource.hpp
 include/umpire/resource/MemoryResourceFactory.hpp
 include/umpire/resource/MemoryResourceRegistry.hpp
