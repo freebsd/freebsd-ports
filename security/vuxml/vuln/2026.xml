@@ -1,3 +1,68 @@
+  <vuln vid="45921d77-b346-11f1-952f-589cfc023192">
+    <topic>bind920 -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>bind920</name>
+	  <range><lt>9.20.29</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC team reports:</p>
+	<blockquote cite="https://downloads.isc.org/isc/bind9/9.20.29/doc/arm/html/notes.html#security-fixes">
+	  <p>CVE-2026-19668: Resource Exhaustion via Excessive DNSSEC Cryptographic Material Matching</p>
+	  <p>CVE-2026-19033: Unauthenticated IXFR deltas are applied to the live zone before TSIG verification</p>
+	  <p>CVE-2026-77119: NSEC3 insecure-referral proof can use unrelated cached NSEC3 RRsets</p>
+	  <p>CVE-2026-19941: checkwildcard() accepts an out-of-zone NSEC as a wildcard-nonexistence proof</p>
+	  <p>CVE-2026-19666: Use-after-free in query_addnoqnameproof() via the DNS64 filter64 path</p>
+	  <p>CVE-2026-19667: Remote assertion failure via 16-bit length truncation in dns_ncache_add()</p>
+	  <p>CVE-2026-19662: qpcache NOQNAME proof use-after-free crashes recursive resolver</p>
+	  <p>CVE-2026-75029: Message parser retains every identical singleton RDATA, enabling wire-to-work amplification</p>
+	  <p>CVE-2026-77692: Unauthenticated remote crash of named via a single DoH SIG(0) request</p>
+	  <p>CVE-2026-81736: Remote CPU denial of service through cached SVCB/HTTPS AliasMode trees</p>
+	  <p>CVE-2026-76163: named aborts on a TKEY query when the user configuration has no global options statement</p>
+	  <p>CVE-2026-78301: Out-of-zone database nodes can become authoritative zone cuts</p>
+	  <p>CVE-2026-80274: Validating resolver can abort while caching a mismatched NOQNAME proof</p>
+	  <p>CVE-2026-81563: SVCB AliasMode additional-data error leaks qpcache references</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-19668</cvename>
+      <cvename>CVE-2026-19033</cvename>
+      <cvename>CVE-2026-77119</cvename>
+      <cvename>CVE-2026-19941</cvename>
+      <cvename>CVE-2026-19666</cvename>
+      <cvename>CVE-2026-19667</cvename>
+      <cvename>CVE-2026-19662</cvename>
+      <cvename>CVE-2026-75029</cvename>
+      <cvename>CVE-2026-77692</cvename>
+      <cvename>CVE-2026-81736</cvename>
+      <cvename>CVE-2026-76163</cvename>
+      <cvename>CVE-2026-78301</cvename>
+      <cvename>CVE-2026-80274</cvename>
+      <cvename>CVE-2026-81563</cvename>
+      <url>https://kb.isc.org/docs/cve-2026-19668</url>
+      <url>https://kb.isc.org/docs/cve-2026-19033</url>
+      <url>https://kb.isc.org/docs/cve-2026-77119</url>
+      <url>https://kb.isc.org/docs/cve-2026-19941</url>
+      <url>https://kb.isc.org/docs/cve-2026-19666</url>
+      <url>https://kb.isc.org/docs/cve-2026-19667</url>
+      <url>https://kb.isc.org/docs/cve-2026-19662</url>
+      <url>https://kb.isc.org/docs/cve-2026-75029</url>
+      <url>https://kb.isc.org/docs/cve-2026-77692</url>
+      <url>https://kb.isc.org/docs/cve-2026-81736</url>
+      <url>https://kb.isc.org/docs/cve-2026-76163</url>
+      <url>https://kb.isc.org/docs/cve-2026-78301</url>
+      <url>https://kb.isc.org/docs/cve-2026-80274</url>
+      <url>https://kb.isc.org/docs/cve-2026-81563</url>
+    </references>
+    <dates>
+      <discovery>2026-09-16</discovery>
+      <entry>2026-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7fed71c4-be3a-11f1-ab8d-00a0980083d7">
     <topic>libexpat -- Improper Handling of Unicode Encoding</topic>
     <affects>
