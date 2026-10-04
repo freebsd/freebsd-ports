@@ -29,7 +29,6 @@ USE_GNOME=	cairo gdkpixbuf glib20 intlhack \
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--disable-fts --disable-telepathy \
 		--disable-downloads-monitor
 
