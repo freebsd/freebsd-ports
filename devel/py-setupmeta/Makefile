@@ -1,5 +1,5 @@
 PORTNAME=	setupmeta
-PORTVERSION=	3.8.0
+PORTVERSION=	3.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +17,10 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+# setuptools>=67 floor is metadata only; code works with 63.1.0
+post-patch:
+	@${REINPLACE_CMD} '/setuptools>=67/d' ${WRKSRC}/setup.py \
+		${WRKSRC}/PKG-INFO ${WRKSRC}/setupmeta.egg-info/requires.txt
 
 .include <bsd.port.mk>
