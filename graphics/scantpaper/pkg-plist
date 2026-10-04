@@ -19,6 +19,8 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/bboxtree%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/canvas%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/canvas%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/clipboard%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/clipboard%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/comboboxtext%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/comboboxtext%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/config%%PYTHON_TAG%%.opt-1.pyc
@@ -47,6 +49,8 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/imageview%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/importthread%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/importthread%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/layer%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/layer%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/loop_helpers%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/loop_helpers%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/page%%PYTHON_TAG%%.opt-1.pyc
@@ -69,8 +73,6 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/simplelist%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/tesseract%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/tesseract%%PYTHON_TAG%%.pyc
-%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/text_layer_control%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/text_layer_control%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/tools_menu_mixins%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/tools_menu_mixins%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/unpaper%%PYTHON_TAG%%.opt-1.pyc
@@ -82,6 +84,7 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/basethread.py
 %%PYTHON_SITELIBDIR%%/scantpaper/bboxtree.py
 %%PYTHON_SITELIBDIR%%/scantpaper/canvas.py
+%%PYTHON_SITELIBDIR%%/scantpaper/clipboard.py
 %%PYTHON_SITELIBDIR%%/scantpaper/comboboxtext.py
 %%PYTHON_SITELIBDIR%%/scantpaper/config.py
 %%PYTHON_SITELIBDIR%%/scantpaper/conftest.py
@@ -129,6 +132,7 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/i18n.py
 %%PYTHON_SITELIBDIR%%/scantpaper/imageview.py
 %%PYTHON_SITELIBDIR%%/scantpaper/importthread.py
+%%PYTHON_SITELIBDIR%%/scantpaper/layer.py
 %%PYTHON_SITELIBDIR%%/scantpaper/loop_helpers.py
 %%PYTHON_SITELIBDIR%%/scantpaper/page.py
 %%PYTHON_SITELIBDIR%%/scantpaper/pagerange.py
@@ -149,7 +153,6 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/session_mixins.py
 %%PYTHON_SITELIBDIR%%/scantpaper/simplelist.py
 %%PYTHON_SITELIBDIR%%/scantpaper/tesseract.py
-%%PYTHON_SITELIBDIR%%/scantpaper/text_layer_control.py
 %%PYTHON_SITELIBDIR%%/scantpaper/tools_menu_mixins.py
 %%PYTHON_SITELIBDIR%%/scantpaper/unpaper.py
 share/icons/hicolor/16x16/apps/stock-selection-all-16.png
