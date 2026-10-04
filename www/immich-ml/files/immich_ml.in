@@ -43,7 +43,7 @@ childpidfile=/var/run/immich/${name}_child.pid
 start_precmd=immich_ml_precmd
 stop_cmd=immich_ml_stop
 command=/usr/sbin/daemon
-command_args="-f -S -H -P ${pidfile} -p ${childpidfile} \
+command_args="-f -H -t ${name} -P ${pidfile} -p ${childpidfile} \
 	-o /var/log/immich/${name}.log \
 	%%PYTHON_CMD%% -m immich_ml"
 
