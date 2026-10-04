@@ -85,32 +85,10 @@ PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${CHOSEN_COMPILER_TYPE}	\
 		VE=${PORTVERSION:R} VER=${PORTVERSION}
 
 FFMPEG_CMAKE_ON=	-DCAN_USE_FFMPEG:BOOL=ON -DUSE_FFMPEG:BOOL=ON \
-			-D3RDPARTY_FFMPEG_INCLUDE_DIR=${LOCALBASE}/ffmpeg6/include \
-			-D3RDPARTY_FFMPEG_DIR=${LOCALBASE}/ffmpeg6
+			-D3RDPARTY_FFMPEG_INCLUDE_DIR=${LOCALBASE}/include \
+			-D3RDPARTY_FFMPEG_DIR=${LOCALBASE}
 FFMPEG_CMAKE_OFF=	-DUSE_FFMPEG:BOOL=OFF
-FFMPEG_LIB_DEPENDS=	libavcodec.so.60:multimedia/ffmpeg6	\
-			libtheoraenc.so:multimedia/libtheora	\
-			libunistring.so:devel/libunistring	\
-			libvdpau.so:multimedia/libvdpau		\
-			libxvidcore.so:multimedia/xvid		\
-			libp11-kit.so:security/p11-kit		\
-			libx264.so:multimedia/libx264		\
-			libtasn1.so:security/libtasn1		\
-			libvorbis.so:audio/libvorbis		\
-			libdav1d.so:multimedia/dav1d		\
-			libnettle.so:security/nettle		\
-			libgnutls.so:security/gnutls		\
-			libvpx.so:multimedia/libvpx		\
-			libx265.so:multimedia/x265		\
-			libdrm.so:graphics/libdrm		\
-			libva.so:multimedia/libva		\
-			libaom.so:multimedia/aom		\
-			libmp3lame.so:audio/lame		\
-			libffi.so:devel/libffi			\
-			libidn2.so:dns/libidn2			\
-			libogg.so:audio/libogg			\
-			libopus.so:audio/opus			\
-			libgmp.so:math/gmp
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 VIS_CMAKE_ON=		-DCAN_USE_FREEIMAGE:BOOL=ON -DUSE_FREEIMAGE:BOOL=ON	\
 			-DCAN_USE_OPENGL:BOOL=ON -DUSE_OPENGL:BOOL=ON	\
