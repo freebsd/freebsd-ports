@@ -1,5 +1,5 @@
 PORTNAME=	openvoxserver-ca
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
