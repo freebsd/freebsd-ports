@@ -1,4 +1,4 @@
-TIMESTAMP = 1787413513
+TIMESTAMP = 1791118133
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aes-0.8.4.crate) = b169f7a6d4742236a0a00c541b845991d0ac43e546831af1249753ab4c3aa3a0
@@ -1185,5 +1185,5 @@ SHA256 (rust/crates/zvariant_derive-5.15.0.crate) = 864155e69b4352db0c7f374917bf
 SIZE (rust/crates/zvariant_derive-5.15.0.crate) = 10697
 SHA256 (rust/crates/zvariant_utils-4.2.0.crate) = bad0294361a320b694a328460dc73add56c306150f5cb6bfafc44446120008a3
 SIZE (rust/crates/zvariant_utils-4.2.0.crate) = 25869
-SHA256 (hrkfdn-ncspot-v1.4.0_GH0.tar.gz) = fef88f9d9062102ab2d234c8402bfab52181b4c4d892c149f1ae5eefa6182345
-SIZE (hrkfdn-ncspot-v1.4.0_GH0.tar.gz) = 258703
+SHA256 (hrkfdn-ncspot-v1.5.0_GH0.tar.gz) = 08a0be7e099bc40cf087a4ed8665a425c345a0e83019257d7c4affb7a1bbb881
+SIZE (hrkfdn-ncspot-v1.5.0_GH0.tar.gz) = 265922
