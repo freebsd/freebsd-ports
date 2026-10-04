@@ -52,6 +52,7 @@ PLUGIN_SDK=	@immich+plugin-sdk@file+packages+plugin-sdk
 
 MAKE_ENV=	CI=1 \
 		COREPACK_ENABLE_STRICT=0 \
+		HOME=${WRKDIR} \
 		NODE_OPTIONS=--max-old-space-size=4096 \
 		npm_config_build_from_source=true \
 		npm_config_nodedir=${LOCALBASE} \
@@ -70,7 +71,7 @@ post-patch:
 		${WRKSRC}/server/src/services/database-backup.service.ts
 
 pre-build:
-	cd ${WRKDIR} && ${SETENV} PATH=${PATH} \
+	cd ${WRKDIR} && ${SETENV} ${MAKE_ENV} PATH=${PATH} \
 		npm install -g --prefix ${WRKDIR}/pnpm-prefix \
 		${BUILDKIT}/pnpm-${PNPM_VERSION}.tgz
 
