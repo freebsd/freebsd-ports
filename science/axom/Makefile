@@ -1,6 +1,7 @@
 PORTNAME=	axom
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,12 +16,15 @@ BROKEN_armv7=	use of overloaded operator '[]' is ambiguous, see https://github.c
 BROKEN_i386=	use of overloaded operator '[]' is ambiguous, see https://github.com/LLNL/axom/issues/743
 BROKEN_powerpc=	use of overloaded operator '[]' is ambiguous, see https://github.com/LLNL/axom/issues/743
 
-LIB_DEPENDS=	libconduit.so:science/conduit \
+LIB_DEPENDS=	libcamp.so:devel/camp \
+		libconduit.so:science/conduit \
 		libhdf5.so:science/hdf5 \
 		libHYPRE.so:science/hypre \
 		libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
-		libsiloh5.so:science/silo
+		libRAJA.so:misc/raja \
+		libsiloh5.so:science/silo \
+		libumpire.so:devel/umpire
 RUN_DEPENDS=	sparsehash>0:devel/sparsehash
 
 USES=		cmake:testing,noninja compiler:c++20-lang

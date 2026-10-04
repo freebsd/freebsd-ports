@@ -447,11 +447,14 @@ include/axom/quest/InOutOctree.hpp
 include/axom/quest/IntersectionShaper.hpp
 include/axom/quest/LinearizeCurves.hpp
 include/axom/quest/MarchingCubes.hpp
+include/axom/quest/MeshClipper.hpp
+include/axom/quest/MeshClipperStrategy.hpp
 include/axom/quest/MeshTester.hpp
 include/axom/quest/MeshViewUtil.hpp
 include/axom/quest/PointInCell.hpp
 include/axom/quest/SamplingShaper.hpp
 include/axom/quest/ScatteredInterpolation.hpp
+include/axom/quest/ShapeMesh.hpp
 include/axom/quest/Shaper.hpp
 include/axom/quest/SignedDistance.hpp
 include/axom/quest/detail/AllNearestNeighbors_detail.hpp
@@ -467,6 +470,14 @@ include/axom/quest/detail/MarchingCubesSingleDomain.hpp
 include/axom/quest/detail/MeshTester_detail.hpp
 include/axom/quest/detail/PointFinder.hpp
 include/axom/quest/detail/PointInCellMeshWrapper_mfem.hpp
+include/axom/quest/detail/clipping/HexClipper.hpp
+include/axom/quest/detail/clipping/MeshClipperImpl.hpp
+include/axom/quest/detail/clipping/MonotonicZSORClipper.hpp
+include/axom/quest/detail/clipping/Plane3DClipper.hpp
+include/axom/quest/detail/clipping/SORClipper.hpp
+include/axom/quest/detail/clipping/SphereClipper.hpp
+include/axom/quest/detail/clipping/TetClipper.hpp
+include/axom/quest/detail/clipping/TetMeshClipper.hpp
 include/axom/quest/detail/inout/BlockData.hpp
 include/axom/quest/detail/inout/InOutOctreeMeshDumper.hpp
 include/axom/quest/detail/inout/InOutOctreeStats.hpp
@@ -487,6 +498,7 @@ include/axom/quest/io/PSTLReader.hpp
 include/axom/quest/io/ProEReader.hpp
 include/axom/quest/io/STLReader.hpp
 include/axom/quest/io/STLWriter.hpp
+include/axom/quest/util/make_clipper_strategy.hpp
 include/axom/quest/util/mesh_helpers.hpp
 include/axom/sidre.hpp
 include/axom/sidre/core/Array.hpp
