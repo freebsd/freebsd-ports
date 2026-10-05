@@ -5729,3 +5729,4 @@ math/xlapack||2026-10-04|Broken for than a year in tree
 net-p2p/libtorrent-rasterbar||2026-10-04|Broken for than a year in tree and no consumers left
 sysutils/twmn||2026-10-04|Broken for more than a year in tree
 devel/cppurses|devel/termox|2026-10-04|Project renamed upstream
+devel/fatal||2026-10-05|Project archived on GitHub, no users
