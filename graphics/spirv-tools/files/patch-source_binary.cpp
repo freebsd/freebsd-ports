@@ -1,4 +1,4 @@
---- source/binary.cpp.orig	2026-07-08 19:46:47 UTC
+--- source/binary.cpp.orig	2026-09-10 13:28:18 UTC
 +++ source/binary.cpp
 @@ -181,7 +181,7 @@ class Parser {
    // Returns the endian-corrected word at the given position.
@@ -27,7 +27,7 @@
  
    // Process the header.
    spv_header_t header;
-@@ -495,10 +499,6 @@ spv_result_t Parser::parseOperand(size_t inst_offset,
+@@ -496,10 +500,6 @@ spv_result_t Parser::parseOperand(size_t inst_offset,
  
    const uint32_t word = peek();
  
@@ -38,7 +38,7 @@
    switch (type) {
      case SPV_OPERAND_TYPE_TYPE_ID:
        if (!word)
-@@ -664,7 +664,7 @@ spv_result_t Parser::parseOperand(size_t inst_offset,
+@@ -665,7 +665,7 @@ spv_result_t Parser::parseOperand(size_t inst_offset,
      case SPV_OPERAND_TYPE_OPTIONAL_LITERAL_STRING: {
        const size_t max_words = _.num_words - _.word_index;
        std::string string =
@@ -47,7 +47,7 @@
  
        if (string.length() == max_words * 4)
          return exhaustedInputDiagnostic(inst_offset, opcode, type);
-@@ -870,17 +870,8 @@ spv_result_t Parser::parseOperand(size_t inst_offset,
+@@ -871,17 +871,8 @@ spv_result_t Parser::parseOperand(size_t inst_offset,
  
    if (_.requires_endian_conversion) {
      // Copy instruction words.  Translate to native endianness as needed.
