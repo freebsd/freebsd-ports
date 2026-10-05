@@ -222,6 +222,7 @@ include/quic/state/stream/StreamSendHandlers.h
 include/quic/state/stream/StreamStateFunctions.h
 include/quic/tools/tperf/PacingObserver.h
 include/quic/tools/tperf/TperfClient.h
+include/quic/tools/tperf/TperfKnobsPatcher.h
 include/quic/tools/tperf/TperfServer.h
 include/quic/tools/tperf/TperfTcp.h
 include/quic/xsk/BaseXskContainer.h
