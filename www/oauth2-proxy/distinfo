@@ -1,5 +1,5 @@
-TIMESTAMP = 1787724493
-SHA256 (go/www_oauth2-proxy/oauth2-proxy-oauth2-proxy-v7.15.4_GH0/go.mod) = a20e9317204378379da72e2eb9e66ae81883ce39e290af0a295699fc5487e84f
-SIZE (go/www_oauth2-proxy/oauth2-proxy-oauth2-proxy-v7.15.4_GH0/go.mod) = 3398
-SHA256 (go/www_oauth2-proxy/oauth2-proxy-oauth2-proxy-v7.15.4_GH0/oauth2-proxy-oauth2-proxy-v7.15.4_GH0.tar.gz) = 52e46276359e8e06cc53e9636f605784b9d6f21819c2592d07f9cf5c1eb78779
-SIZE (go/www_oauth2-proxy/oauth2-proxy-oauth2-proxy-v7.15.4_GH0/oauth2-proxy-oauth2-proxy-v7.15.4_GH0.tar.gz) = 1836246
+TIMESTAMP = 1791141117
+SHA256 (go/www_oauth2-proxy/oauth2-proxy-oauth2-proxy-v7.15.5_GH0/go.mod) = 858d50b13c17fbbef51eca9faeceeba8bf2e998ccfbc23ea197d67790026c7db
+SIZE (go/www_oauth2-proxy/oauth2-proxy-oauth2-proxy-v7.15.5_GH0/go.mod) = 3334
+SHA256 (go/www_oauth2-proxy/oauth2-proxy-oauth2-proxy-v7.15.5_GH0/oauth2-proxy-oauth2-proxy-v7.15.5_GH0.tar.gz) = cf8055fecef1f89bcc89834d3342009b4067e80b1994e6bb5c2456d8ff68995b
+SIZE (go/www_oauth2-proxy/oauth2-proxy-oauth2-proxy-v7.15.5_GH0/oauth2-proxy-oauth2-proxy-v7.15.5_GH0.tar.gz) = 1857179
