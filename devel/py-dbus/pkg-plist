@@ -1,6 +1,6 @@
 include/dbus-1.0/dbus/dbus-python.h
-%%PYTHON_SITELIBDIR%%/_dbus_bindings%%PYTHON_TAG%%.so
-%%PYTHON_SITELIBDIR%%/_dbus_glib_bindings%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/_dbus_bindings%%PYTHON_SOABI%%.so
+%%PYTHON_SITELIBDIR%%/_dbus_glib_bindings%%PYTHON_SOABI%%.so
 %%PYTHON_SITELIBDIR%%/dbus/__init__.py
 %%PYTHON_SITELIBDIR%%/dbus/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/dbus/__pycache__/__init__%%PYTHON_TAG%%.pyc
