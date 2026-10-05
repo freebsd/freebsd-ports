@@ -102,7 +102,7 @@
     <topic>libexpat -- Improper Handling of Unicode Encoding</topic>
     <affects>
     <package>
-	<name>expat2</name>
+	<name>expat</name>
 	<range><lt>2.8.5</lt></range>
     </package>
     </affects>
