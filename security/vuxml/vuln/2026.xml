@@ -1,3 +1,38 @@
+  <vuln vid="85bcb950-c0b4-11f1-a6ea-8447094a420f">
+    <topic>LibreSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<range><lt>4.3.3</lt></range>
+      </package>
+      <package>
+	<name>libressl-devel</name>
+	<range><lt>4.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The LibreSSL project reports:</p>
+	<blockquote cite="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.3.3-relnotes.txt">
+	  <ul>
+	    <li>Ensure verify callbacks always returning 1 can see a hostname mismatch</li>
+	    <li>Correct botched size check in dtls1_preprocess_fragment()</li>
+	    <li>Limit size of buffered DTLS handshake messages</li>
+	    <li>Avoid potential overread on interrupted retransmission in DTLS</li>
+	    <li>Fix OCSP responder authorization bypass in libtls and ocspcheck(8)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.3.3-relnotes.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-10-04</discovery>
+      <entry>2026-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="45921d77-b346-11f1-952f-589cfc023192">
     <topic>bind920 -- multiple vulnerabilities</topic>
     <affects>
