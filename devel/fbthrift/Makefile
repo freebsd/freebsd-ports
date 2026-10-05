@@ -1,7 +1,6 @@
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.08.31.00
-PORTREVISION=	1
+DISTVERSION=	2026.10.05.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,7 +39,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_TESTING_ON=	enable_tests
+CMAKE_TESTING_ON=	THRIFT_TESTS
 
 CXXFLAGS+=	-fPIC # https://github.com/facebook/fbthrift/issues/399
 CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
@@ -49,5 +48,6 @@ post-install: # https://github.com/facebook/fbthrift/issues/393
 	@${FIND} ${STAGEDIR}${PREFIX}/include -type d -empty -delete
 
 # tests as of 2026.08.31.00: 100% tests passed out of 315
+# tests as of 2026.10.05.00: fail to compile, see https://github.com/facebook/fbthrift/issues/716
 
 .include <bsd.port.mk>
