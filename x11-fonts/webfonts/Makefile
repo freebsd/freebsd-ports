@@ -1,6 +1,6 @@
 PORTNAME=	webfonts
 PORTVERSION=	0.30
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/corefonts/the%20fonts/final:group1 \
 		ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
@@ -28,11 +28,12 @@ USES=		fonts
 EXTRACT_AFTER_ARGS=	--include '*.[tT][tT][fF]' \
 			--no-same-owner --no-same-permissions
 
-NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
+
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	EXTRAFONTS CLEARTYPE NEWVERDANA DOCS COMIC
 OPTIONS_DEFAULT=COMIC
@@ -48,10 +49,15 @@ EXTRAFONTS_DISTFILES=	IELPKTH.CAB:group2
 
 .include <bsd.port.options.mk>
 
+# ppviewer.cab is unpacked to a file rather than piped into a second bsdtar:
+# libarchive 3.8.9 cannot skip entries of an LZX cabinet read from a stream
+# (https://github.com/libarchive/libarchive/issues/3542), while the seekable
+# path works on every version.
 pre-extract-CLEARTYPE-on:
 	${MKDIR} ${EXTRACT_WRKDIR}
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${_DISTFILES:MPowerPointViewer*} --include eula.txt -C ${EXTRACT_WRKDIR} --no-same-owner --no-same-permissions
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${_DISTFILES:MPowerPointViewer*} -O --include ppviewer.cab | ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} - -C ${EXTRACT_WRKDIR} ${EXTRACT_AFTER_ARGS}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${_DISTFILES:MPowerPointViewer*} -C ${EXTRACT_WRKDIR} --no-same-owner --no-same-permissions --include eula.txt --include ppviewer.cab
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKDIR}/ppviewer.cab -C ${EXTRACT_WRKDIR} ${EXTRACT_AFTER_ARGS}
+	${RM} ${EXTRACT_WRKDIR}/ppviewer.cab
 
 post-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${_DISTFILES:Mwebdin32*} --include *.TXT -C ${EXTRACT_WRKDIR} --no-same-owner --no-same-permissions
