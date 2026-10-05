@@ -528,7 +528,6 @@
     SUBDIR += cpprestsdk
     SUBDIR += cpptest
     SUBDIR += cppunit
-    SUBDIR += cppurses
     SUBDIR += cpputest
     SUBDIR += cproto
     SUBDIR += cpu_features
@@ -8818,6 +8817,7 @@
     SUBDIR += termbox2
     SUBDIR += termcolor
     SUBDIR += terminality
+    SUBDIR += termox
     SUBDIR += terraform-ls
     SUBDIR += test-drive
     SUBDIR += testsweeper
