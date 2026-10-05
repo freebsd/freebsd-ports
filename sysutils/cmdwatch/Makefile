@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.chruetertee.ch/files/download/
 
-MAINTAINER=	beat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Watches the output from a command at specified intervals
 
 LICENSE=	GPLv2+

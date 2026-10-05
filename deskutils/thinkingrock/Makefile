@@ -5,7 +5,7 @@ CATEGORIES=	deskutils java
 MASTER_SITES=	SF/${PORTNAME}/ThinkingRock/TR%20${PORTVERSION}
 DISTNAME=	tr-${PORTVERSION}
 
-MAINTAINER=	beat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for collecting and processing your thoughts
 WWW=		http://www.thinkingrock.com.au/
 
