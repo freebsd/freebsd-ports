@@ -34,4 +34,6 @@ CMAKE_ARGS=	-DMYGUI_RENDERSYSTEM=${MYGUI_RENDERSYSTEM}
 
 PLIST=		${.CURDIR}/pkg-plist
 
+PORTSCOUT=	limit:^${PORTVERSION:R}
+
 .include <bsd.port.mk>
