@@ -32,10 +32,10 @@ TEST_ARGS=	--disable-plugin-autoload
 post-install:
 	# strip binaries
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/_model${PYTHON_TAG}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/_utilities${PYTHON_TAG}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/_model${PYTHON_SOABI}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/_utilities${PYTHON_SOABI}.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/libdwave-optimization.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/states${PYTHON_TAG}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization/states${PYTHON_SOABI}.so
 
 pre-test:
 	@cd ${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization && \
