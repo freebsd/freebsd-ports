@@ -237,7 +237,6 @@ include/folly/container/SparseByteSet.h
 include/folly/container/StdBitset.h
 include/folly/container/View.h
 include/folly/container/WeightedEvictingCacheMap.h
-include/folly/debugging/symbolizer/SymbolCache.h
 include/folly/container/detail/BitIteratorDetail.h
 include/folly/container/detail/BoolWrapper.h
 include/folly/container/detail/F14Defaults.h
@@ -254,7 +253,6 @@ include/folly/container/irange.h
 include/folly/container/range_traits.h
 include/folly/container/small_vector.h
 include/folly/container/sorted_vector_types.h
-include/folly/container/span.h
 include/folly/container/tape.h
 include/folly/container/test/F14TestUtil.h
 include/folly/container/test/TrackingTypes.h
@@ -318,6 +316,7 @@ include/folly/coro/ValueOrFatal.h
 include/folly/coro/ViaIfAsync.h
 include/folly/coro/WithAsyncStack.h
 include/folly/coro/WithCancellation.h
+include/folly/coro/WithMetadata.h
 include/folly/coro/detail/Barrier.h
 include/folly/coro/detail/BarrierTask.h
 include/folly/coro/detail/CurrentAsyncFrame.h
@@ -359,6 +358,7 @@ include/folly/debugging/symbolizer/ElfCache.h
 include/folly/debugging/symbolizer/LineReader.h
 include/folly/debugging/symbolizer/SignalHandler.h
 include/folly/debugging/symbolizer/StackTrace.h
+include/folly/debugging/symbolizer/SymbolCache.h
 include/folly/debugging/symbolizer/SymbolizePrinter.h
 include/folly/debugging/symbolizer/SymbolizedFrame.h
 include/folly/debugging/symbolizer/Symbolizer.h
@@ -956,6 +956,7 @@ include/folly/synchronization/AtomicNotification-inl.h
 include/folly/synchronization/AtomicNotification.h
 include/folly/synchronization/AtomicRef.h
 include/folly/synchronization/AtomicStruct.h
+include/folly/synchronization/AtomicTraits.h
 include/folly/synchronization/AtomicUtil-inl.h
 include/folly/synchronization/AtomicUtil.h
 include/folly/synchronization/Baton.h

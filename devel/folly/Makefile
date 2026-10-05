@@ -1,7 +1,6 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.08.31.00
-PORTREVISION=	1
+DISTVERSION=	2026.10.05.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,7 +42,7 @@ GH_ACCOUNT=	facebook
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	FREEBSD_BUILD_EXAMPLES FREEBSD_FOLLY_USE_SYMBOLIZER # enabling symbolizer causes undefined symbol _r_debug, see https://github.com/facebook/folly/issues/1373
-#CMAKE_OFF+=	FOLLY_USE_JEMALLOC # Build fails with FOLLY_USE_JEMALLOC=OFF, see https://github.com/facebook/folly/issues/1893
+#CMAKE_OFF+=	FOLLY_USE_JEMALLOC # Build fails with FOLLY_USE_JEMALLOC=OFF, see https://github.com/facebook/folly/issues/2721, https://github.com/facebook/folly/issues/1893
 
 CXXFLAGS+=	-fPIC
 CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
