@@ -1,4 +1,4 @@
-commit 1c7271a2ab154784620a34030df1fe49fd1fd917
+commit 299e8559702986212ae84c43b4be596e1431db68
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
     catch wasm32-wasi target naming in FreeBSD
@@ -9,10 +9,10 @@ Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
     the compiler can find it's assorted files.
 
 diff --git build/moz.configure/toolchain.configure build/moz.configure/toolchain.configure
-index eb1251f51ff3..d327dba3760d 100644
+index d58f3eb65ce0..5795049ce073 100644
 --- build/moz.configure/toolchain.configure
 +++ build/moz.configure/toolchain.configure
-@@ -655,6 +655,7 @@ def same_arch_different_bits():
+@@ -653,6 +653,7 @@ def same_arch_different_bits():
  
  @imports(_from="mozshellutil", _import="quote")
  @imports(_from="mozbuild.configure.constants", _import="OS_preprocessor_checks")
@@ -20,14 +20,14 @@ index eb1251f51ff3..d327dba3760d 100644
  def check_compiler(
      configure_cache, compiler, language, target, android_version, wrapper=[]
  ):
-@@ -699,8 +700,9 @@ def check_compiler(
-         # This makes clang define __ANDROID_API__ and use versioned library
-         # directories from the NDK.
-         toolchain = "%s%d" % (target.toolchain, android_version)
--    elif target.kernel == "WASI" and info.type == "clang" and info.version >= Version("22.1"):
--        # The wasm32-wasi target was renamed to wasm32-wasip1 in LLVM 22.1.
-+    elif (target.kernel == "WASI" and info.type == "clang") and (info.version >= Version("22.1") or platform.startswith("freebsd")):
-+        # The wasm32-wasi target was renamed to wasm32-wasip1 in LLVM 22.1
+@@ -700,9 +701,10 @@ def check_compiler(
+     elif (
+         target.kernel == "WASI"
+         and info.type == "clang"
+-        and info.version >= Version("22.1")
++        and (info.version >= Version("22.1") or platform.startswith("freebsd"))
+     ):
+         # The wasm32-wasi target was renamed to wasm32-wasip1 in LLVM 22.1.
 +        # and FreeBSD uses it since ports 7c5b2039a45ad for all LLVM ports
          toolchain = "wasm32-wasip1"
      else:
