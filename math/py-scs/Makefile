@@ -27,8 +27,8 @@ TEST_ARGS=	--disable-plugin-autoload
 
 post-install:
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_direct${PYTHON_TAG}.so  \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_indirect${PYTHON_TAG}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_direct${PYTHON_SOABI}.so  \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/scs/_scs_indirect${PYTHON_SOABI}.so
 
 # tests as of 3.2.11: 28 passed in 10.63s
 
