@@ -1,5 +1,5 @@
 PORTNAME=	pass-cli
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITES_PROTON_ME}
 PKGNAMEPREFIX=	proton-
@@ -37,15 +37,15 @@ DISTFILES_PROTON_ME_TEMPLATE=	\
 # tomlq -r '.package[] | select(.source == "sparse+https://rust-registry.proton.me/index/") | "\(.name):\(.version)"' ${WRKSRC}/Cargo.lock
 CRATES_PROTON_ME_TUPLE=	\
 		gopenpgp-sys:0.3.8 \
-		muon:3.0.0 \
+		muon:4.1.0 \
 		muon-proc:0.6.0 \
 		muon-proc:0.7.0 \
 		muon-rest:0.1.0 \
-		muon-test:3.0.0 \
+		muon-test:4.0.0 \
 		muon-test-server:0.1.3 \
 		proton-crypto:0.14.0 \
 		proton-crypto-account:0.20.0 \
-		proton-os-interface:0.3.2 \
+		proton-os-interface:0.3.3 \
 		proton-rpgp:0.6.0 \
 		proton-srp:0.8.3
 CRATES_PROTON_ME=	${CRATES_PROTON_ME_TUPLE:S/:/-/}
@@ -58,7 +58,7 @@ DISTFILES_PROTON_ME:=	\
 		${DISTFILES_PROTON_ME_TEMPLATE:S/%%NAME%%/${name}/:S/%%VERSION%%/${version}/:S/%%INDEX%%/${name:S/-/_/g}_${version:S/./_/g}/}
 .endfor
 
-GIT_HASH_SHORT=	578532c
+GIT_HASH_SHORT=	7ae51e5
 
 post-extract:
 .for crate in ${CRATES_PROTON_ME}
@@ -71,6 +71,11 @@ post-extract:
 			${CARGO_VENDOR_DIR}/${crate}/Cargo.toml.orig-cargo; \
 	fi
 .endfor
+
+post-patch:
+	@${REINPLACE_CMD} -e '/\.protoc_path(/d' \
+		${WRKSRC_crate_proton-pass-common}/proton-pass-types/build.rs \
+		${WRKSRC}/pass/build.rs
 
 post-configure:
 	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \

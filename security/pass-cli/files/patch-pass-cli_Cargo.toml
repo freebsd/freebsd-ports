@@ -1,6 +1,6 @@
---- pass-cli/Cargo.toml.orig	2026-09-21 08:08:52 UTC
+--- pass-cli/Cargo.toml.orig	2026-10-01 07:11:52 UTC
 +++ pass-cli/Cargo.toml
-@@ -67,6 +67,9 @@ zbus-secret-service-keyring-store = { version = "1.0.0
+@@ -64,6 +64,9 @@ zbus-secret-service-keyring-store = { version = "1.0.0
  linux-keyutils-keyring-store = "1.0.0"
  zbus-secret-service-keyring-store = { version = "1.0.0", features = ["crypto-rust"] }
  
