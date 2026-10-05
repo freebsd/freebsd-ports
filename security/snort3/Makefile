@@ -1,5 +1,6 @@
 PORTNAME=	snort
 DISTVERSION=	3.12.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	3
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libdaq.so:net/libdaq \
 		libdnet.so:net/libdnet \
 		libhwloc.so:devel/hwloc2 \
-		libpcap.so:net/libpcap \
+		libpcap.so.1:net/libpcap \
 		libpcre2-8.so:devel/pcre2 \
 		libuuid.so:misc/libuuid
 
