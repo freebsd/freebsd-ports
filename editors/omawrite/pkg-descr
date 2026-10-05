@@ -1,0 +1,4 @@
+Omawrite is a dead-simple, distraction-free Markdown writing app built
+with Qt Quick. It offers live Markdown syntax highlighting, follows the
+system light/dark theme via the XDG desktop portal, and ships its own
+embedded iA Writer Mono font. It is part of the Omarchy desktop.

@@ -1,0 +1,7 @@
+TIMESTAMP = 1790689187
+SHA256 (go/x11-themes_aether/omacom-aether-v4.30.0_GH0/aether-4.30.0-npm-cache.tar.gz) = 1ea2dc52902aaa095d3df9d4d553890a1b5a7ee455aa80b8e6f8fe099b719d44
+SIZE (go/x11-themes_aether/omacom-aether-v4.30.0_GH0/aether-4.30.0-npm-cache.tar.gz) = 30450025
+SHA256 (go/x11-themes_aether/omacom-aether-v4.30.0_GH0/go.mod) = 7f9ec554912719cb66a6d38289c4dbe3863be1b124871c1bb70e489022f64ebf
+SIZE (go/x11-themes_aether/omacom-aether-v4.30.0_GH0/go.mod) = 1485
+SHA256 (go/x11-themes_aether/omacom-aether-v4.30.0_GH0/omacom-aether-v4.30.0_GH0.tar.gz) = f67c8d2c6f27f67a755bc279ece5ddb194f1bb165648280b9a7be86904d36ff5
+SIZE (go/x11-themes_aether/omacom-aether-v4.30.0_GH0/omacom-aether-v4.30.0_GH0.tar.gz) = 9011931

@@ -1,0 +1,3 @@
+Omacalc is a dead-simple desktop calculator built with Qt Quick. It is
+part of the Omarchy desktop and follows the system light/dark theme via
+the XDG desktop portal. It ships its own embedded iA Writer Mono font.

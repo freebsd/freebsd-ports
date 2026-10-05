@@ -1,0 +1,5 @@
+Omasnap is a native Wayland screenshot and annotation overlay built for
+Hyprland and the Omarchy desktop. It captures the screen through the
+ext-image-copy-capture protocol, then lets you crop, draw, highlight,
+blur, add text, OCR a region with Tesseract, pin snapshots on screen and
+copy or save the result.

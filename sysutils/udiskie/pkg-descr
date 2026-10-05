@@ -1,0 +1,6 @@
+udiskie is a UDisks2 front-end that automatically mounts removable media
+when it is inserted. It provides a tray icon, desktop notifications,
+password prompts for encrypted devices, and the udiskie-mount,
+udiskie-umount and udiskie-info command line tools.
+
+On FreeBSD the UDisks2 D-Bus service is provided by sysutils/bsdisks.
