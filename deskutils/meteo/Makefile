@@ -1,6 +1,5 @@
 PORTNAME=	meteo
-PORTVERSION=	0.9.9.3
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -10,21 +9,18 @@ WWW=		https://gitlab.com/bitseater/meteo
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib
-LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
-		libjson-glib-1.0.so:devel/json-glib \
-		libsoup-2.4.so:devel/libsoup \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk@40
+BUILD_DEPENDS=	appstreamcli:devel/appstream
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libgee-0.8.so:devel/libgee \
+		libsoup-3.0.so:devel/libsoup3 \
+		libwebkitgtk-6.0.so:www/webkit2-gtk@60
 
-USES=		compiler:c11 gettext gnome meson pkgconfig python:build \
-		shebangfix vala:build
+USES=		compiler:c11 gettext-tools gnome meson pkgconfig vala:build
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	bitseater
 
-USE_GNOME=	gtk30
-
-SHEBANG_FILES=	meson/post_install.py
+USE_GNOME=	gtk40 libadwaita
 
 GLIB_SCHEMAS=	com.gitlab.bitseater.meteo.gschema.xml
 
