@@ -5628,6 +5628,7 @@
     SUBDIR += py-orderedmultidict
     SUBDIR += py-orderly-set
     SUBDIR += py-orjson
+    SUBDIR += py-orloge
     SUBDIR += py-ormsgpack
     SUBDIR += py-os-brick
     SUBDIR += py-os-client-config
