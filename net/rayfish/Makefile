@@ -7,10 +7,10 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	P2P mesh VPN powered by Iroh
 WWW=		https://rayfish.xyz
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	route_manager crate only supports target x86_64-unknown-freebsd
-
 LICENSE=	MPL20
+
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	route_manager crate ships bindings pregenerated for LP64 targets
 
 USES=		cargo
 
