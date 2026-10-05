@@ -1,0 +1,2 @@
+Parse CP-SAT (OR-Tools) solver logs into line-anchored, JSON-serializable
+pydantic models.

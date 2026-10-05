@@ -4890,6 +4890,7 @@
     SUBDIR += py-coveralls
     SUBDIR += py-cppheaderparser
     SUBDIR += py-cppy
+    SUBDIR += py-cpsat-logutils
     SUBDIR += py-crank
     SUBDIR += py-crashtest
     SUBDIR += py-crc32c
