@@ -23,6 +23,6 @@ USES=		pkgconfig python
 USE_PYTHON=	pep517 autoplist
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/dftd4/_libdftd4${PYTHON_TAG}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/dftd4/_libdftd4${PYTHON_SOABI}.so
 
 .include <bsd.port.mk>
