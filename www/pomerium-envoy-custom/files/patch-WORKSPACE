@@ -1,4 +1,4 @@
---- WORKSPACE.orig	2026-06-18 18:08:19 UTC
+--- WORKSPACE.orig	2026-10-01 21:17:51 UTC
 +++ WORKSPACE
 @@ -2,31 +2,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "
  
@@ -29,7 +29,7 @@
 -
 -hedron_compile_commands_setup_transitive_transitive_transitive()
 -
- envoy_version = "f387231af8dd7274e37c5ae2cc797cb09a948818"
+ envoy_version = "4be7862a2a6d9a7867f576385d545bb0b47b9181"  # v1.38.5
  
  openssh_version = "V_10_3_P1"
 @@ -35,8 +11,6 @@ readerwriterqueue_version = "1.0.7"
@@ -42,7 +42,7 @@
      name = "envoy_build_config",
      path = "bazel/envoy_build_config",
 @@ -106,6 +80,8 @@ external_http_archive(
-         "@envoy_toolshed//:patches/toolchains_llvm.patch",
+         "@envoy//bazel/foreign_cc:toolchains_llvm_stdc++.patch",
          # linux->darwin cross-compile support
          "//patches/toolchains_llvm:0002-darwin.patch",
 +        # FreeBSD OS support in toolchains_llvm

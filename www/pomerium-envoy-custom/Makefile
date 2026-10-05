@@ -1,7 +1,6 @@
 PORTNAME=	pomerium-envoy-custom
 DISTVERSIONPREFIX=
-DISTVERSION=	1.37.0.20260618
-PORTREVISION=	4
+DISTVERSION=	1.37.0.20261001
 CATEGORIES=	www
 MASTER_SITES+=	https://github.com/envoyproxy/envoy/archive/:envoy_src \
 		https://github.com/openssh/openssh-portable/archive/:openssh_portable \
@@ -15,7 +14,7 @@ MASTER_SITES+=	https://github.com/envoyproxy/envoy/archive/:envoy_src \
 		https://github.com/bazelbuild/rules_proto/archive/refs/tags/:envoy_api_rules_proto \
 		https://github.com/bufbuild/buf/releases/download/v1.61.0/:envoy_api_buf \
 		https://github.com/google/cel-spec/archive/:envoy_api_dev_cel \
-		https://github.com/envoyproxy/toolshed/releases/download/bazel-v0.3.35/:envoy_api_toolshed
+		https://github.com/envoyproxy/toolshed/releases/download/bazel-v0.4.13.post0/:envoy_api_toolshed
 DISTFILES+=	${ENVOY_SRC_COMMIT}.zip:envoy_src \
 		V_10_3_P1.tar.gz:openssh_portable \
 		v0.9.8.tar.gz:magic_enum \
@@ -28,7 +27,7 @@ DISTFILES+=	${ENVOY_SRC_COMMIT}.zip:envoy_src \
 		7.1.0.tar.gz:envoy_api_rules_proto \
 		buf-Linux-x86_64.tar.gz:envoy_api_buf \
 		v0.25.1.tar.gz:envoy_api_dev_cel \
-		toolshed-bazel-v0.3.35.tar.gz:envoy_api_toolshed
+		toolshed-bazel-v0.4.13.post0.tar.gz:envoy_api_toolshed
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -67,12 +66,12 @@ USES=		cmake:indirect compiler:c++20-lang gmake go:no_targets \
 		java:build ninja:build python:build
 USE_GITHUB=	yes
 
-ENVOY_SRC_COMMIT=	f387231af8dd7274e37c5ae2cc797cb09a948818
+ENVOY_SRC_COMMIT=	4be7862a2a6d9a7867f576385d545bb0b47b9181
 ZLIBBASE=		${LOCALBASE:H}
 
 GH_ACCOUNT=	pomerium
 GH_PROJECT=	envoy-custom
-GH_TAGNAME=	16ede7a56f2f2c4de7011337193495e32d57ce3b
+GH_TAGNAME=	8b998d0f6ff30a8243296168125a783c35772141
 
 # Bazel-managed dependencies (GitHub archive format).
 # These are fetched by Bazel as http_archive during the build, sourced from
@@ -112,7 +111,7 @@ GH_TUPLE+=	grailbio:bazel-compilation-database:40864791135333e1446a04553b63cbe74
 		confluentinc:librdkafka:v2.6.0:confluentinc_librdkafka \
 		cython:cython:0.29.35:cython \
 		envoyproxy:examples:v0.2.3:envoy_examples \
-		envoyproxy:toolshed:bazel-v0.3.35:envoy_toolshed \
+		envoyproxy:toolshed:bazel-v0.4.13.post0:envoy_toolshed \
 		fastfloat:fast_float:v7.0.0:fast_float \
 		ninja-build:ninja:v1.13.1:fips_ninja \
 		google:gurl:dd4080fec0b443296c0ed0036e1e776df8813aa7:googleurl \
@@ -138,7 +137,7 @@ GH_TUPLE+=	grailbio:bazel-compilation-database:40864791135333e1446a04553b63cbe74
 		protocolbuffers:utf8_range:de0b4a8ff9b5d4c98108bdfe723291a33c52c54f:utf8_range \
 		v8:v8:14.6.202.10:v8 \
 		bytecodealliance:wasm-micro-runtime:WAMR-2.4.4:com_github_wamr \
-		bytecodealliance:wasmtime:v24.0.7:com_github_wasmtime \
+		bytecodealliance:wasmtime:v24.0.9:com_github_wasmtime \
 		intel:ittapi:a3911fff01a775023a06af8754f9ec1e5977dd97:intel_ittapi
 
 JAVA_VERSION=	21+
@@ -974,11 +973,11 @@ pre-build:
 	${CP} ${FILESDIR}/sys_repos_prometheus_metrics_model.BUILD.bazel \
 		${WRKDIR}/sys_repos/prometheus_metrics_model/BUILD.bazel
 # envoy_toolshed: extract the real toolshed from the GH_TUPLE archive.
-# The archive has toolshed-bazel-v0.3.35/{bazel/,...}; the Bazel repo root
+# The archive has toolshed-bazel-v0.4.13.post0/{bazel/,...}; the Bazel repo root
 # is the bazel/ subdirectory (contains WORKSPACE, BUILD, versions.bzl, etc.).
 # --override_repository points to ${WRKDIR}/sys_repos/envoy_toolshed/bazel.
 	@${MKDIR} ${WRKDIR}/sys_repos/envoy_toolshed
-	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/envoyproxy-toolshed-bazel-v0.3.35_GH0.tar.gz \
+	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/envoyproxy-toolshed-bazel-v0.4.13.post0_GH0.tar.gz \
 		--strip-components=1 \
 		-C ${WRKDIR}/sys_repos/envoy_toolshed
 # yq: envoy_repo uses @yq to parse CI config YAML.  aspect_bazel_lib's

@@ -1,4 +1,4 @@
---- BUILD.orig	2026-06-18 18:08:19 UTC
+--- BUILD.orig	2026-10-01 21:17:51 UTC
 +++ BUILD
 @@ -2,9 +2,7 @@ load(
      "@envoy//bazel:envoy_build_system.bzl",
@@ -10,17 +10,18 @@
  
  package(default_visibility = ["//visibility:public"])
  
-@@ -25,6 +23,9 @@ envoy_cc_binary(
+@@ -25,6 +23,10 @@ envoy_cc_binary(
              # https://github.com/bazelbuild/bazel/pull/16414
              "-Wl,-undefined,error",
          ],
 +        "@platforms//os:freebsd": [
 +            "-fPIE",
++            "-pie",
 +        ],
          "//conditions:default": [
              "-fPIE",
              "-Wl,-E",
-@@ -48,6 +49,7 @@ envoy_cc_binary(
+@@ -48,6 +50,7 @@ envoy_cc_binary(
      name = "envoy.static",
      features = select({
          "@platforms//os:macos": [],
@@ -28,7 +29,7 @@
          "@envoy//bazel:asan_build": [],
          "@envoy//bazel:tsan_build": [],
          "//conditions:default": ["fully_static_link"],
-@@ -59,30 +61,6 @@ envoy_cc_binary(
+@@ -59,30 +62,6 @@ envoy_cc_binary(
      ],
  )
  
@@ -59,7 +60,7 @@
  configure_make(
      name = "openssh_config_h",
      autoreconf = True,
-@@ -109,14 +87,4 @@ configure_make(
+@@ -109,14 +88,4 @@ configure_make(
          "@envoy//bazel:crypto",
          "@envoy//bazel:ssl",
      ],
