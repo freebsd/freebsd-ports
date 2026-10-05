@@ -39,7 +39,7 @@ USE_PYTHON=	pep517 autoplist cython pytest # 14 tests fail, see https://github.c
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/linearmodels/panel/_utility${PYTHON_TAG}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/linearmodels/panel/_utility${PYTHON_SOABI}.so
 
 # tests as of 7.0: 12503 passed, 2461 skipped, 47 xfailed, 6 warnings in 6274.70s (1:44:34)
 
