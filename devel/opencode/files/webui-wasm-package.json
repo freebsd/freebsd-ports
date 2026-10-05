@@ -1,0 +1,10 @@
+{
+  "name": "opencode-webui-wasm",
+  "private": true,
+  "comment": "WASM fallbacks for the web UI's native Rust bindings, which have no FreeBSD/arm64 builds. Versions must match rolldown / lightningcss / @tailwindcss-oxide in the OpenCode tree.",
+  "dependencies": {
+    "@rolldown/binding-wasm32-wasi": "1.2.5",
+    "lightningcss-wasm": "1.32.0",
+    "@tailwindcss/oxide-wasm32-wasi": "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.3.3.tgz"
+  }
+}

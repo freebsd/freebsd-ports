@@ -1,0 +1,11 @@
+OpenCode is an open-source, model-agnostic AI coding agent that runs in
+the terminal.  It combines a full-screen TUI and a scriptable CLI with a
+client/server architecture, LSP awareness, and multi-session support, and
+can talk to dozens of model providers (or local models).
+
+This port builds OpenCode and its OpenTUI terminal engine from source
+using Bun, and ships the result as a single self-contained executable
+with the Bun runtime and the web UI assets embedded.
+
+The interactive TUI requires OpenTUI's native Zig core, which upstream
+does not ship for FreeBSD, so the port builds it from source as well.
