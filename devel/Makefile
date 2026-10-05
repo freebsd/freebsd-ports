@@ -5435,6 +5435,7 @@
     SUBDIR += py-loguru
     SUBDIR += py-logutils
     SUBDIR += py-logzero
+    SUBDIR += py-loky
     SUBDIR += py-looseversion
     SUBDIR += py-loro
     SUBDIR += py-louie
