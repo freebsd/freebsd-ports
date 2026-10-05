@@ -1,7 +1,6 @@
 PORTNAME=	proxygen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.08.31.00
-PORTREVISION=	1
+DISTVERSION=	2026.10.05.00
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +10,7 @@ WWW=		https://github.com/facebook/proxygen
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		compilation fails due to a C++ error (2026.10.05.00), see https://github.com/facebook/proxygen/issues/649
 BROKEN_armv7=	compilation fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283484
 
 BUILD_DEPENDS=	bash:shells/bash \
