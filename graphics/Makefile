@@ -1051,6 +1051,7 @@
     SUBDIR += py-python-poppler-qt5
     SUBDIR += py-pyvips
     SUBDIR += py-pyvista
+    SUBDIR += py-pyvista-validation
     SUBDIR += py-pyx
     SUBDIR += py-pyzbar
     SUBDIR += py-qpageview

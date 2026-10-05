@@ -1,0 +1,22 @@
+-- Make the package buildable with the setuptools version in the FreeBSD
+-- ports tree and fix the ambiguous PEP 621 license value that setuptools
+-- rejects when [tool.setuptools] is present.
+--- pyproject.toml.orig	2024-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+ build-backend = 'setuptools.build_meta'
+-requires = ['numpy>=2.0', 'setuptools>=64', 'setuptools_scm>=8']
++requires = ['numpy>=2.0', 'setuptools>0', 'setuptools_scm>=8']
+
+ [dependency-groups]
+ dev = [
+@@ -46,7 +46,7 @@
+ description = 'Validate and standardize array-like input.'
+ dynamic = ['version']
+ keywords = ['array', 'numpy', 'validation']
+-license = 'MIT'
++license = {text = 'MIT'}
+ name = 'pyvista-validation'
+ readme = 'README.md'
+ requires-python = '>=3.10'
