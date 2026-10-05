@@ -26,9 +26,9 @@ TEST_WRKSRC=	${WRKSRC}/tests
 
 post-install:
 	@${STRIP_CMD} \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/ewah_bool_utils/_testing${PYTHON_TAG}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/ewah_bool_utils/ewah_bool_wrap${PYTHON_TAG}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/ewah_bool_utils/morton_utils${PYTHON_TAG}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/ewah_bool_utils/_testing${PYTHON_SOABI}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/ewah_bool_utils/ewah_bool_wrap${PYTHON_SOABI}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/ewah_bool_utils/morton_utils${PYTHON_SOABI}.so
 
 # tests as of 1.3.2: 3 passed
 
