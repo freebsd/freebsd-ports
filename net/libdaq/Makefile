@@ -1,6 +1,7 @@
 PORTNAME=	libdaq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.27
+PORTREVISION=	1
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/glebius/${PORTNAME}/commit/
@@ -13,7 +14,7 @@ WWW=		https://www.snort.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcap.so:net/libpcap	# avoid base libpcap
+LIB_DEPENDS=	libpcap.so.1:net/libpcap	# avoid base libpcap
 
 USES=		autoreconf compiler:c++11-lang libtool localbase pkgconfig
 USE_GITHUB=	yes
