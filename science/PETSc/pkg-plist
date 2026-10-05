@@ -3988,7 +3988,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/ex31.c
 %%DATADIR%%/examples/src/mat/tests/ex310.c
 %%DATADIR%%/examples/src/mat/tests/ex311.c
-%%DATADIR%%/examples/src/mat/tests/ex%%PYTHON_SUFFIX%%.c
+%%DATADIR%%/examples/src/mat/tests/ex312.c
 %%DATADIR%%/examples/src/mat/tests/ex313.c
 %%DATADIR%%/examples/src/mat/tests/ex314.c
 %%DATADIR%%/examples/src/mat/tests/ex315.c
