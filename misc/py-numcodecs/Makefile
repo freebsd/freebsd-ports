@@ -47,7 +47,7 @@ PEP517_BUILD_CONFIG_SETTING+=	"-Csetup-args=-Dsse2=disabled" \
 .endif
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/numcodecs/*${PYTHON_TAG}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/numcodecs/*${PYTHON_SOABI}.so
 
 # tests as of 0.17.0: 862 passed, 22 skipped in 5.15s
 
