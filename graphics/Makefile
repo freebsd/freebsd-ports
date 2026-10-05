@@ -1014,6 +1014,7 @@
     SUBDIR += py-plotly
     SUBDIR += py-png
     SUBDIR += py-pointpats
+    SUBDIR += py-polyxios
     SUBDIR += py-projpicker
     SUBDIR += py-proplot
     SUBDIR += py-py_svg_hush

@@ -1,0 +1,3 @@
+Polyxios is a fast 3D file format I/O and processing library. It provides
+Python bindings for reading, writing, and manipulating 3D mesh and
+geometry data, and is used by the FURY scientific visualization toolkit.
