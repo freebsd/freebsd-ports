@@ -1,7 +1,7 @@
 PORTNAME=	qhttpengine
 DISTVERSION=	1.0.1-5
-PORTREVISION=	3
 DISTVERSIONSUFFIX=	-g43f55df
+PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,5 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nitroshare
 USE_QT=		core network buildtools:build qmake:build
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 .include <bsd.port.mk>

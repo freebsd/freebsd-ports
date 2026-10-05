@@ -24,6 +24,8 @@ GH_PROJECT=	openAV-Luppp
 USE_GNOME=	cairo
 USE_XORG=	x11
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 PLIST_FILES=	bin/luppp
 
 post-patch:

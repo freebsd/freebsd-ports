@@ -27,6 +27,8 @@ USE_GNOME=	atk cairo gdkpixbuf glib20 gtk20 pango pangox-compat
 USE_GL=		gl glu
 USE_XORG=	x11
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 CFLAGS+=	-fcommon # variables n_geometries/move_molecule/window/pix/etc are defined in the header
 
 post-patch:

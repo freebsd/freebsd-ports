@@ -27,6 +27,8 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \
 USE_GNOME=	glib20
 USE_XORG=	x11
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/ktechlab/ktechlab/issues/82
+
 CXXFLAGS+=	-I${LOCALBASE}/lib/glib-2.0/include
 
 OPTIONS_DEFINE=	DOCS

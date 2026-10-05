@@ -17,5 +17,6 @@ GH_TAGNAME=	f104d084be91cc7e59dc3253bedceb11ece77136
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_UT
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/rafat/wavelib/issues/41
 
 .include <bsd.port.mk>

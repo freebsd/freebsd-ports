@@ -21,6 +21,7 @@ GH_ACCOUNT=	Samsung
 
 CMAKE_ARGS=	-DLIB_INSTALL_DIR=${PREFIX}/lib
 CMAKE_TESTING_ON=	LOTTIE_TEST
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/Samsung/rlottie/issues/611
 
 post-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/example/lottie2gif ${STAGEDIR}${PREFIX}/bin

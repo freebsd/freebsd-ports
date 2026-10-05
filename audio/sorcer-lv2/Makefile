@@ -25,6 +25,8 @@ GH_ACCOUNT=	openAVproductions
 GH_PROJECT=	openAV-${PORTNAME}
 USE_GNOME=	cairo
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, https://github.com/openAVproductions/openAV-Sorcer/issues/37
+
 PLIST_FILES=	lib/lv2/sorcer.lv2/manifest.ttl \
 		lib/lv2/sorcer.lv2/sorcer.so \
 		lib/lv2/sorcer.lv2/sorcer.ttl

@@ -34,6 +34,8 @@ SHEBANG_GLOB=	*.sh
 
 USE_GCC=	yes # lots of obviously incorrect C where clang fails, which gcc nevertheless magically finds a way to compile
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/rubund/graywolf/issues/56
+
 CFLAGS+=	-fcommon \
 		-fpermissive
 

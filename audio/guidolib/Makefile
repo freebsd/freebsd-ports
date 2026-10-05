@@ -19,6 +19,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/grame-cncm/guidolib/issues/204
+
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 
 LDFLAGS+=	-lmidisharelight

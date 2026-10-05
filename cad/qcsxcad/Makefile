@@ -27,6 +27,8 @@ GH_ACCOUNT=	thliebig
 GH_PROJECT=	${PORTNAME:tu}
 
 CMAKE_ARGS=	-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/thliebig/QCSXCAD/issues/23
 
 .include <../../math/vtk9/Makefile.version>
+
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
 PORTNAME=	leela-zero
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17-31
-PORTREVISION=	4
 DISTVERSIONSUFFIX=	-g3ee6d20
+PORTREVISION=	4
 CATEGORIES=	games
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +24,7 @@ USE_QT=		core widgets buildtools:build qmake:build
 
 CMAKE_ON=	USE_BLAS BUILD_TESTING
 CMAKE_ARGS=	-DBLAS_INCLUDE_DIRS:STRING=${LOCALBASE}/include
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/leela-zero/leela-zero/issues/2673
 
 PLIST_FILES=	bin/autogtp \
 		bin/leelaz \

@@ -22,6 +22,8 @@ USES=		cmake compiler:c++11-lang dos2unix gnome localbase:ldflags \
 USE_GNOME=	glib20 gtk20 gtkmm24 gdkpixbuf atkmm cairo cairomm pangomm
 DOS2UNIX_FILES=	dsp/vu.h
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 OPTIONS_DEFINE_amd64=	SSE
 OPTIONS_DEFINE_i386=	SSE
 OPTIONS_DEFAULT_amd64=	SSE

@@ -5,7 +5,8 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of methods for solving geometric vision problems
-WWW=		https://laurentkneip.github.io/opengv/
+WWW=		https://laurentkneip.github.io/opengv/ \
+		https://github.com/laurentkneip/opengv
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
@@ -19,6 +20,7 @@ GH_TAGNAME=	91f4b19
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/laurentkneip/opengv/issues/128
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \

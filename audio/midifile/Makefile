@@ -18,6 +18,7 @@ GH_ACCOUNT=	craigsapp
 GH_TAGNAME=	988d55b
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 EXECUTABLES=	80off asciimidi binasc createmidifile createmidifile2 drumtab durations mid2mat mid2mtb mid2svg \
 		midi2binasc midi2melody midi2notes midi2skini midi2text midicat midimixup miditime perfid retick \

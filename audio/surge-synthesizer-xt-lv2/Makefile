@@ -92,6 +92,7 @@ CMAKE_ON+=	SURGE_SKIP_LUA # LuaJIT has no ppc64 backend
 CFLAGS+=	-Wno-deprecated-altivec-src-compat # simde vector-bool warning is fatal under -Werror
 CXXFLAGS+=	-Wno-deprecated-altivec-src-compat
 .endif
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/surge-synthesizer/surge/issues/8605
 
 .include <bsd.port.pre.mk>
 

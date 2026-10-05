@@ -19,4 +19,6 @@ USE_KDE=	ecm
 USE_QT=		concurrent core dbus gui widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 .include <bsd.port.mk>

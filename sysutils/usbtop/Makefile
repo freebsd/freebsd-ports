@@ -17,6 +17,7 @@ USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	aguinet
 CMAKE_ON=	Boost_USE_STATIC_LIBS
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 PLIST_FILES=	sbin/usbtop
 

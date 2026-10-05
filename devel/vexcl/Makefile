@@ -21,6 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ddemidov
 
 CMAKE_TESTING_ON=	VEXCL_BUILD_TESTS # tests pass when the OpenCL provider pocl is installed
+CMAKE_ARGS=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/ddemidov/vexcl/issues/301
 
 NO_BUILD=	yes
 NO_ARCH=	yes

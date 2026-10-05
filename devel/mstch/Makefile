@@ -19,5 +19,6 @@ GH_ACCOUNT=	no1msd
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/no1msd/mstch/issues/38
 
 .include <bsd.port.mk>

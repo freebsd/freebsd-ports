@@ -29,6 +29,7 @@ SHEBANG_GLOB=	*.sh
 PLIST_FILES=	bin/metaeuk
 
 CMAKE_OFF=	NATIVE_ARCH
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/soedinglab/metaeuk/issues/99
 
 .include <bsd.port.options.mk>
 

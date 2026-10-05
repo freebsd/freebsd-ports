@@ -24,6 +24,7 @@ GH_TUPLE=	mfem:mfem:v4.4:mfem
 SHEBANG_FILES=	elec/compileReaction.template
 
 CMAKE_TESTING_ON=	ENABLE_TESTS
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 PLIST_FILES=	bin/cardioid \
 		bin/compileReaction \

@@ -22,6 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ssj71
 GH_PROJECT=	${PORTNAME}lv2
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/ssj71/rkrlv2/issues/48
+
 DATADIR=	${PREFIX}/share/${PORTNAME}.lv2
 
 OPTIONS_DEFINE_amd64=	SIMD

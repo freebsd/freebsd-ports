@@ -1,5 +1,9 @@
 --- subprojects/cpptoml/CMakeLists.txt.orig	2023-05-06 14:38:35 UTC
 +++ subprojects/cpptoml/CMakeLists.txt
+@@ -1,2 +1,2 @@
+-cmake_minimum_required(VERSION 3.1.0)
++cmake_minimum_required(VERSION 3.5)
+ project(cpptoml)
 @@ -11,8 +11,8 @@ include(CMakePushCheckState)
  
  cmake_push_check_state()

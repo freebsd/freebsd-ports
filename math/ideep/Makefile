@@ -18,6 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 USE_LDCONFIG=	yes
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/intel/ideep/issues/364
+
 do-test: # tests broken: https://github.com/intel/ideep/issues/34 and assume bundled mkl-dnn
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \

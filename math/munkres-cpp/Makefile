@@ -19,6 +19,7 @@ GH_ACCOUNT=	saebyn
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	MUNKRESCPP_DEVEL_MODE
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/saebyn/munkres-cpp/issues/34
 
 CMAKE_TESTING_TARGET=	tests # tests are broken, see https://github.com/saebyn/munkres-cpp/issues/31
 

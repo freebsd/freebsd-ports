@@ -5,7 +5,8 @@ CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Take photos using your webcam and shiny animated QML interface
-WWW=		https://dos1.github.io/kamerka/
+WWW=		https://dos1.github.io/kamerka/ \
+		https://github.com/dos1/kamerka
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -25,6 +26,8 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash 
 		unitconversion xmlgui widgetsaddons windowsystem \
 		doctools:build ecm:build
 USE_XORG=	x11
+
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, https://github.com/dos1/kamerka/issues/34
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

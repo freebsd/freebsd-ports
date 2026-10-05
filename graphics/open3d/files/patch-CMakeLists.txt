@@ -1,0 +1,15 @@
+-- Remove the CMP0054 OLD policy that CMake 4.5 no longer supports.
+
+--- CMakeLists.txt.orig	2026-10-05 16:15:17 UTC
++++ CMakeLists.txt
+@@ -4,10 +4,6 @@ cmake_minimum_required(VERSION 3.0.0)
+ 
+ cmake_minimum_required(VERSION 3.0.0)
+ 
+-if (NOT CMAKE_VERSION VERSION_LESS "3.0")
+-    cmake_policy(SET CMP0054 OLD)
+-endif ()
+-
+ # central location for specifying the Open3D version
+ project(Open3D VERSION 0.1.5.5)
+ 

@@ -17,6 +17,7 @@ GH_ACCOUNT=	sctplab
 GH_PROJECT=	usrsctp
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/sctplab/usrsctp/issues/752
 
 PLIST_FILES=	include/usrsctp.h \
 		lib/libusrsctp.so \

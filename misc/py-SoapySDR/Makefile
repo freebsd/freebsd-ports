@@ -21,6 +21,7 @@ GH_ACCOUNT=	pothosware
 USE_PYTHON=	flavors
 
 CMAKE_ARGS=	-DPYTHON_EXECUTABLE:STRING=${PYTHON_CMD}
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/pothosware/SoapySDR/issues/480
 
 WRKSRC_SUBDIR=	python
 

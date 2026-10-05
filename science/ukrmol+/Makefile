@@ -19,7 +19,7 @@ BROKEN_aarch64=	fails to build: Cannot open module file 'ieee_arithmetic.mod' fo
 LIB_DEPENDS=	libGBTO.so:science/gbtolib \
 		libopenblas.so:math/openblas
 
-USES=		cmake:testing fortran python:test
+USES=		cmake:testing fortran localbase:ldflags python:test
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	WITH_MPI BUILD_DOC WITH_GIT BUILD_TESTING
@@ -27,6 +27,7 @@ CMAKE_TESTING_ON=	BUILD_TESTING
 CMAKE_ARGS=	-DFREEBSD_DOCSDIR=${DOCSDIR} \
 		-DFREEBSD_PYTHON_VER=${PYTHON_VER}
 CMAKE_ARGS+=	-DUKRMOL_OUT_DIR=${WRKSRC_OUT} # the "out" project is built and installed from the "in" project
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 FFLAGS+=	-I${LOCALBASE}/include/gbtolib \
 		-fdefault-integer-8
@@ -50,4 +51,5 @@ post-install:
 	# remove an empty directory
 	@${RMDIR} ${STAGEDIR}${PREFIX}/include/den
 
+MAKE_JOBS_UNSAFE=	yes # Fortran module files race with parallel builds
 .include <bsd.port.mk>

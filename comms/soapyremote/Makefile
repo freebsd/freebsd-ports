@@ -18,6 +18,8 @@ USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	pothosware
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/pothosware/SoapyRemote/issues/110
+
 PLIST_FILES=	bin/SoapySDRServer \
 		lib/SoapySDR/modules0.8/libremoteSupport.so \
 		share/man/man1/SoapySDRServer.1.gz
