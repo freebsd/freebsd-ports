@@ -5679,6 +5679,7 @@
     SUBDIR += py-path
     SUBDIR += py-path.py
     SUBDIR += py-pathable
+    SUBDIR += py-pathlib-abc
     SUBDIR += py-pathlib2
     SUBDIR += py-pathos
     SUBDIR += py-pathspec
