@@ -1,6 +1,6 @@
 PORTNAME=	glab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.119.0
+DISTVERSION=	1.120.0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -19,7 +19,7 @@ _BUILD_VERSION=		${DISTVERSION}
 _BUILD_PLATFORM=	${OPSYS:tl}
 _BUILD_DATE=		$$(date +%Y-%m-%d)
 # Find here: https://gitlab.com/gitlab-org/cli/-/tags
-_TAG=			f5016eda261bb7142627d05d1d85a20d6dd56ddc
+_TAG=			78790114c4d7196c97b2b1a1263a0d725835640d
 
 GO_MODULE=	gitlab.com/gitlab-org/cli
 GO_TARGET=	./cmd/${PORTNAME}
