@@ -18,7 +18,7 @@
  DEFINES += DOOBLE_PEEKABOO
  LIBS += -lgpgme
  message("Discovered gpgme.h. Peekaboo activated!")
-@@ -281,7 +281,7 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
+@@ -281,11 +281,13 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
                            -Werror \
                            -Wextra \
                            -Wformat=2 \
@@ -27,3 +27,43 @@
                            -Woverloaded-virtual \
                            -Wpointer-arith \
                            -Wstack-protector \
+                           -Wstrict-overflow=5 \
++                          -Wno-c++20-attribute-extensions \
++                          -Wno-c++26-extensions \
+                           -Wundef \
+                           -Wzero-as-null-pointer-constant \
+                           -fPIE \
+@@ -306,12 +308,13 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
+                           -Wcast-qual \
+                           -Wextra \
+                           -Wformat=2 \
+-                          -Wno-c++20-attribute-extensions \
+-                          -Wold-style-cast \
++                          -Wno-old-style-cast \
+                           -Woverloaded-virtual \
+                           -Wpointer-arith \
+                           -Wstack-protector \
+                           -Wstrict-overflow=5 \
++                          -Wno-c++20-attribute-extensions \
++                          -Wno-c++26-extensions \
+                           -fPIE \
+                           -fstack-protector-all \
+                           -funroll-loops \
+@@ -361,7 +364,7 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
+                           -Wformat=2 \
+                           -Wlogical-op \
+                           -Wno-deprecated-copy \
+-                          -Wold-style-cast \
++                          -Wno-old-style-cast \
+                           -Woverloaded-virtual \
+                           -Wpointer-arith \
+                           -Wstack-protector \
+@@ -370,6 +373,8 @@ QMAKE_CXXFLAGS_RELEASE += -O3 \
+                           -Wtrampolines \
+                           -Wundef \
+                           -Wzero-as-null-pointer-constant \
++                          -Wno-c++20-attribute-extensions \
++                          -Wno-c++26-extensions \
+                           -fstack-clash-protection \
+                           -fstack-protector-all \
+                           -funroll-loops \
