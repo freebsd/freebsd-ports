@@ -1,5 +1,5 @@
-TIMESTAMP = 1787935784
-SHA256 (go/filesystems_versitygw/versitygw-v1.7.0/v1.7.0.mod) = 1cd5af883a988449aa5940cecaef9ed7cd03a33809c99a015ac301693be627da
-SIZE (go/filesystems_versitygw/versitygw-v1.7.0/v1.7.0.mod) = 4119
-SHA256 (go/filesystems_versitygw/versitygw-v1.7.0/v1.7.0.zip) = c4cfa13627233fcccc0927cee60bf041e4dde3e5bb0476a7a90590609349226b
-SIZE (go/filesystems_versitygw/versitygw-v1.7.0/v1.7.0.zip) = 1784755
+TIMESTAMP = 1791271640
+SHA256 (go/filesystems_versitygw/versitygw-v1.8.0/v1.8.0.mod) = fcfadbf4aa2a1a3022e74b2c6a153ea883a3b218a918714d909f1492d47ff269
+SIZE (go/filesystems_versitygw/versitygw-v1.8.0/v1.8.0.mod) = 4102
+SHA256 (go/filesystems_versitygw/versitygw-v1.8.0/v1.8.0.zip) = 84bf3989293cfa26852e684992b62a9ff05cda8d93b9290ccdec30ca8ce96250
+SIZE (go/filesystems_versitygw/versitygw-v1.8.0/v1.8.0.zip) = 2687325
