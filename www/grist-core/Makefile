@@ -1,5 +1,5 @@
 PORTNAME=	grist-core
-PORTVERSION=	1.7.19
+PORTVERSION=	1.7.20
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/mfechner/${PORTNAME}/:yarncache
@@ -51,7 +51,7 @@ post-patch:
 	@${ECHO_CMD} 'yarn-offline-mirror "${WRKDIR}/yarn-offline-cache"' >> ${WRKSRC}/.yarnrc
 
 pre-build:
-	#(cd ${WORKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} && yarn config set python /usr/local/bin/python3.11)
+	#(cd ${WORKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} && yarn config set python /usr/local/bin/python3.12)
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} echo community > grist-edition
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} PUPPETEER_SKIP_DOWNLOAD=true npm_config_build_from_source=true yarn install --offline
 
@@ -80,7 +80,7 @@ do-install:
 	# Skip files having executable bit
 	${CHMOD} +x ${WRKSRC}/sandbox/run.sh
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} sandbox ${STAGEDIR}${WWWDIR} "-not ( -type f -perm -a=x )")
-	# now copy all files having an execution bit and preserve to x bit
+	# now copy all files having an execution bit and preserve the x bit
 	(cd ${WRKSRC} && ${COPYTREE_BIN} sandbox ${STAGEDIR}${WWWDIR} "-type f -perm -a=x")
 
 	#${MKDIR} ${STAGEDIR}/var/db/grist
@@ -108,6 +108,7 @@ make-yarn-cache: patch
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn --frozen-lockfile
 	cd ${WRKDIR} && ${TAR} -c --zstd -f ${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} yarn-offline-cache
 	@${ECHO_CMD} upload ${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}
+	@${ECHO_CMD} "Copy to generate distinfo: cp ${WRKDIR}/${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} ../../distfiles/"
 	@${ECHO_CMD} "Please upload the file: scp ${WRKDIR}/${PORTNAME}-yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} mfechner@freefall.freebsd.org:public_distfiles/${PORTNAME}/"
 
 .include <bsd.port.mk>
