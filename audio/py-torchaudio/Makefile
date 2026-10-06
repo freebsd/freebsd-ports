@@ -39,6 +39,12 @@ GH_PROJECT=	audio
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "aarch64"
+MAKE_ENV=	LD_STATIC_TLS_EXTRA=4096 # see pkg-message in misc/py-pytorch
+.endif
+
 # tests as of 2.11.0: 592 passed, 4 failed, 473 skipped (segfault in rnnt_pipeline_test upstream issue)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
