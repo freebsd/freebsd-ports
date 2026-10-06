@@ -5,9 +5,9 @@
  
  ### next line potentially updated in package install steps
 -SYS_PREFIX=${RABBITMQ_HOME}
-+SYS_PREFIX=LOCALBASE
++SYS_PREFIX=%%LOCALBASE%%
 +# https://www.rabbitmq.com/relocate.html#unix
-+export PATH=LOCALBASE/lib/_ERLANG_LIB/bin:$PATH
++export PATH=%%LOCALBASE%%/lib/%%_ERLANG_LIB%%/bin:$PATH
 +export RABBITMQ_MNESIA_BASE=/var/db/rabbitmq/mnesia
 +export RABBITMQ_LOG_BASE=/var/log/rabbitmq
 +# ensure VM and Elixir scripts are running under the same locale
