@@ -1,5 +1,5 @@
-TIMESTAMP = 1766111626
-SHA256 (ndisc6-1.0.8.tar.bz2) = 1f2fb2dc1172770aa5a09d39738a44d8b753cc5e2e25e306ca78682f9fea0b4f
-SIZE (ndisc6-1.0.8.tar.bz2) = 262355
-SHA256 (ndisc6-1.0.8_ja.tar.xz) = f86f18d1bb1ff8970205d4a12851a7dd41a0a16314331361b9be2f1e6378a930
-SIZE (ndisc6-1.0.8_ja.tar.xz) = 8684
+TIMESTAMP = 1791218153
+SHA256 (ndisc6-1.0.9.tar.bz2) = 1fdcd2f2abc8a69f182631a53902d0720fc8b00703e2d9131dadab7e327f478b
+SIZE (ndisc6-1.0.9.tar.bz2) = 240419
+SHA256 (ndisc6-1.0.9_ja.tar.xz) = 994774a31ede3dc28f55910c97a7c92642a8934675bff5d2d4d10a4735c59ade
+SIZE (ndisc6-1.0.9_ja.tar.xz) = 8672

@@ -1,6 +1,5 @@
 PORTNAME=	ndisc6
-DISTVERSION=	1.0.8
-PORTREVISION=	1
+DISTVERSION=	1.0.9
 CATEGORIES=	net
 MASTER_SITES=	https://www.remlab.net/files/ndisc6/ \
 		LOCAL/je3kmz:gmo
