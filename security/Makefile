@@ -1061,6 +1061,7 @@
     SUBDIR += py-pyotp2289
     SUBDIR += py-pysaml2
     SUBDIR += py-pyscard
+    SUBDIR += py-pysequoia
     SUBDIR += py-pysodium
     SUBDIR += py-pyspnego
     SUBDIR += py-pysrp
