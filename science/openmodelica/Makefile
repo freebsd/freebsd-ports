@@ -72,6 +72,7 @@ CMAKE_ARGS+=	-DOM_USE_CCACHE:BOOL=${CCACHE_ENABLED:S/yes/ON/:S/no/OFF/} # if ref
 #CMAKE_ARGS+=	-DOM_QT_MAJOR_VERSION=6 # broken, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=287596
 CMAKE_ON=	OM_OMEDIT_ENABLE_QTWEBENGINE
 CMAKE_OFF=	OM_OMC_ENABLE_IPOPT # broken: omc::3rd::ipopt isn't found, see https://github.com/OpenModelica/OpenModelica/issues/14702
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/OpenModelica/OpenModelica/issues/17154
 
 LDFLAGS+=	-lexecinfo -lintl -pthread
 

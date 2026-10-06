@@ -26,6 +26,7 @@ GH_TUPLE=	timblechmann:nova-simd:3140689:n/external_libraries/nova-simd
 CMAKE_ARGS+=	-DSYSTEM_STK:BOOL=ON
 CMAKE_ARGS+=	-DSC_PATH:STRING=${LOCALBASE}/include/SuperCollider/ # see https://github.com/supercollider/sc3-plugins/issues/170
 CMAKE_OFF=	CPP11 # change to C++14 to fix build, because C++14 features are used
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
 
 OPTIONS_DEFINE=		SUPERNOVA
 OPTIONS_DEFAULT=	SUPERNOVA

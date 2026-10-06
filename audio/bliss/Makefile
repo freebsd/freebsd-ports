@@ -20,6 +20,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Polochon-street
 USE_LDCONFIG=	yes
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 PLIST_FILES=	include/bliss.h \
 		lib/libbliss.so
 
