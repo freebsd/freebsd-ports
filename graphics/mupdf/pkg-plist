@@ -42,6 +42,7 @@ include/mupdf/fitz/output.h
 include/mupdf/fitz/path.h
 include/mupdf/fitz/pixmap.h
 include/mupdf/fitz/pool.h
+include/mupdf/fitz/regexp.h
 include/mupdf/fitz/separation.h
 include/mupdf/fitz/shade.h
 include/mupdf/fitz/store.h

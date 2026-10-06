@@ -1,7 +1,6 @@
 PORTNAME=	mupdf
-DISTVERSION=	1.28.3
+DISTVERSION=	1.28.5
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mupdf.com/downloads/archive/
