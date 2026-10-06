@@ -1,3 +1,110 @@
+  <vuln vid="03302734-c15d-11f1-8561-107c611e671e">
+    <topic>rabbitmq-c -- remote client-side memory exhaustion</topic>
+    <affects>
+      <package>
+	<name>rabbitmq-c</name>
+	<range><lt>0.18.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The rabbitmq-c project reports:</p>
+	<blockquote cite="https://github.com/alanxz/rabbitmq-c/security/advisories/GHSA-5fp7-wg2f-hhgp">
+	  <p>A malicious AMQP peer can trigger memory exhaustion in
+	  rabbitmq-c clients by sending frames with unrecognised types
+	  or invalid channel numbers. The client allocates per-channel
+	  memory pools and stores complete frames before validating the
+	  channel against the negotiated limits or the frame type, and
+	  discards unknown frames without releasing that memory,
+	  allowing a sustained stream of small frames to exhaust client
+	  resources.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/alanxz/rabbitmq-c/security/advisories/GHSA-5fp7-wg2f-hhgp</url>
+    </references>
+    <dates>
+      <discovery>2026-09-15</discovery>
+      <entry>2026-10-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="03306014-c15d-11f1-acb8-107c611e671e">
+    <topic>rabbitmq-c -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rabbitmq-c</name>
+	<range><lt>0.17.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The rabbitmq-c project reports:</p>
+	<blockquote cite="https://github.com/alanxz/rabbitmq-c/security/advisories/GHSA-hfjv-vcp3-39wh">
+	  <p>CVE-2026-61547: A heap buffer overflow exists when the
+	  amqp_send_frame() API is used to serialise an oversized
+	  AMQP_FRAME_BODY frame, as memcpy() writes past the end of the
+	  heap allocation without validating that the body fragment
+	  fits within the allocated frame buffer.</p>
+	  <p>CVE-2026-59986: An integer overflow in the amqp_decode_bytes
+	  bounds check on 32-bit systems allows a malicious AMQP broker
+	  to craft frames with oversized BYTES fields, resulting in an
+	  out-of-bounds read that may expose process memory or crash the
+	  application.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-61547</cvename>
+      <cvename>CVE-2026-59986</cvename>
+      <url>https://github.com/alanxz/rabbitmq-c/security/advisories/GHSA-hfjv-vcp3-39wh</url>
+      <url>https://github.com/alanxz/rabbitmq-c/security/advisories/GHSA-jgjf-7fwf-f3c7</url>
+    </references>
+    <dates>
+      <discovery>2026-07-02</discovery>
+      <entry>2026-10-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="03308f12-c15d-11f1-ab87-107c611e671e">
+    <topic>rabbitmq-c -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rabbitmq-c</name>
+	<range><lt>0.16.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The rabbitmq-c project reports:</p>
+	<blockquote cite="https://github.com/alanxz/rabbitmq-c/security/advisories/GHSA-jh48-qjf5-fx5v">
+	  <p>CVE-2026-44236: A malicious AMQP server can send an
+	  undersized connection.tune.frame_max value during the login
+	  handshake. The library does not enforce the protocol minimum
+	  frame size, reallocates its outbound buffer to an invalid size
+	  and then writes frame data beyond it, causing a heap buffer
+	  overflow before authentication completes.</p>
+	  <p>CVE-2026-44235: An unsigned integer underflow in the frame
+	  length computation when parsing undersized AMQP frames
+	  bypasses bounds checks in the property and table decoders,
+	  leading to an out-of-bounds read and client-side denial of
+	  service.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-44236</cvename>
+      <cvename>CVE-2026-44235</cvename>
+      <url>https://github.com/alanxz/rabbitmq-c/security/advisories/GHSA-jh48-qjf5-fx5v</url>
+      <url>https://github.com/alanxz/rabbitmq-c/security/advisories/GHSA-9mmv-r8g3-qp46</url>
+    </references>
+    <dates>
+      <discovery>2026-06-09</discovery>
+      <entry>2026-10-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3a72cd47-c157-11f1-a6ea-8447094a420f">
     <topic>Vaultwarden -- Multiple vulnerabilities</topic>
     <affects>
