@@ -1,5 +1,5 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	4.3.5
+DISTVERSION=	4.3.6
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-server/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-server-generic-unix-${DISTVERSION}
@@ -14,9 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ
 
 RUN_DEPENDS=	erlang-runtime${_ERLANG_VER}>=${_ERLANG_VER}:lang/erlang-runtime${_ERLANG_VER}
 
+FLAVORS=	er27 er28
+FLAVOR?=	${FLAVORS:[1]}
+${FLAVOR}_PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C|(.+)|-\1|}
+
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	pivotal_software
 USE_RC_SUBR=	${PORTNAME}
+
+CONFLICTS_INSTALL=	${PORTNAME}*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -30,15 +36,15 @@ GROUPS=		${PORTNAME}
 
 PLIST_SUB=	VERSION=${DISTVERSION}
 
-_ERLANG_VER=	27
+_ERLANG_VER=	${FLAVOR:S|er||}
 _ERLANG_LIB=	erlang${_ERLANG_VER}
 
 post-patch:
 	# ensure our OTP is always preferred over other installed versions
 	@${REINPLACE_CMD} -i '' -e 's|/usr/bin/env escript|${LOCALBASE}/lib/${_ERLANG_LIB}/bin/escript|' \
 		${WRKSRC}/escript/*
-	@${REINPLACE_CMD} -i '' -e 's|LOCALBASE|${LOCALBASE}|' \
-		-e 's|_ERLANG_LIB|${_ERLANG_LIB}|' \
+	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		-e 's|%%_ERLANG_LIB%%|${_ERLANG_LIB}|' \
 		${WRKSRC}/sbin/rabbitmq-defaults
 	# # ensure docs match heir(7) paths
 	# @${REINPLACE_CMD} -i '' \
