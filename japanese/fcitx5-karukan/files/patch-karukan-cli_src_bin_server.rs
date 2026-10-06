@@ -1,14 +1,14 @@
---- karukan-cli/src/bin/server.rs.orig	2026-08-09 15:30:55 UTC
+--- karukan-cli/src/bin/server.rs.orig	2026-10-06 11:54:06 UTC
 +++ karukan-cli/src/bin/server.rs
-@@ -15,6 +15,7 @@ use std::sync::{Arc, RwLock};
+@@ -13,6 +13,7 @@ use std::sync::{Arc, RwLock};
  use serde::{Deserialize, Serialize};
- use std::collections::HashMap;
+ use std::collections::BTreeMap;
  use std::sync::{Arc, RwLock};
 +use std::{env, path::Path};
  use tower_http::{
      cors::{Any, CorsLayer},
      services::ServeDir,
-@@ -283,8 +284,23 @@ async fn main() {
+@@ -220,8 +221,23 @@ async fn main() {
          app = app.route("/api/tokenize", post(tokenize_handler));
      }
  
