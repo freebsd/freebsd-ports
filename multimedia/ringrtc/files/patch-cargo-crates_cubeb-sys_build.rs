@@ -1,6 +1,6 @@
---- cargo-crates/cubeb-sys-0.37.0/build.rs.orig	2025-02-01 09:46:43 UTC
-+++ cargo-crates/cubeb-sys-0.37.0/build.rs
-@@ -203,19 +203,6 @@ fn main() {
+--- cargo-crates/cubeb-sys-0.38.0/build.rs.orig	2025-02-01 09:46:43 UTC
++++ cargo-crates/cubeb-sys-0.38.0/build.rs
+@@ -203,21 +203,6 @@ fn main() {
          // Ignore the result of find_library. We don't care if the
          // libraries are missing.
          let _ = pkg_config::find_library("alsa");
@@ -16,6 +16,8 @@
 -                    println!("cargo:rustc-link-search=native={rust_target_dir}/{target}/{profile}");
 -                }
 -            }
+-        } else if env::var("LIBCUBEB_SYS_REQUIRE_PULSE").is_ok() {
+-            println!("cargo::error=Build is configured to require libpulse but it was not found");
 -        }
          let _ = pkg_config::find_library("jack");
          let _ = pkg_config::find_library("speexdsp");
