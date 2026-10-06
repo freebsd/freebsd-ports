@@ -71,6 +71,7 @@
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-gradle.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-maven.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-npm.1.gz
+%%MANPAGES%%share/man/man1/glab-dependency-firewall-package.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-pip.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-pipenv.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-pnpm.1.gz
@@ -262,6 +263,7 @@
 %%MANPAGES%%share/man/man1/glab-ssh-key.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-amend.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-create.1.gz
+%%MANPAGES%%share/man/man1/glab-stack-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-first.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-infer.1.gz
 %%MANPAGES%%share/man/man1/glab-stack-last.1.gz
