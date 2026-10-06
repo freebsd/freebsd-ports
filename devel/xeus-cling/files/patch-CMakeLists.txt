@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2019-04-02 06:01:37 UTC
++++ CMakeLists.txt
+@@ -108,7 +108,7 @@ find_package(xeus ${xeus_REQUIRED_VERSIO
+ find_package(cppzmq ${cppzmq_REQUIRED_VERSION} REQUIRED)
+ find_package(pugixml REQUIRED)
+ 
+-find_package(Clang REQUIRED)
++#find_package(Clang REQUIRED)
+ find_package(Cling REQUIRED)
+ find_package(cxxopts REQUIRED)
+ 
