@@ -1,6 +1,6 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.100.0
+DISTVERSION=	0.101.2
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm
 PKGNAMESUFFIX=	-node
@@ -29,11 +29,11 @@ GH_ACCOUNT=	signalapp
 # git checkout correct_tag (grep boring Makefile.crates)
 # git submodule update --init --recursive
 # the hash for boringssl and fips should be printed on screen
-# or browse https://github.com/signalapp/boring/tree/signal-v5.0.2/boring-sys/deps (with the correct tag)
+# or browse https://github.com/signalapp/boring/tree/signal-v5.2.0/boring-sys/deps (with the correct tag: grep boring Makefile.crates)
 GH_TUPLE=	google:boringssl:${BORING_REV}:boringssl
 
-BORING_REV=	91a66a59b6c1435120ff83e245d7719411294386
-BORING_VER=	v5.0.2
+BORING_REV=	e2a57cfb4d915b4ba820585aef9fdee7bca13fe5
+BORING_VER=	v5.2.0
 
 # RUSTFLAGS=-Clink-dead-code is required to have a functional libsignal-node binary:
 # linkme is broken with https://github.com/dtolnay/linkme/commit/64e7c63c106848481bea8f66c4885b52c26ca9ec
@@ -51,9 +51,6 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libsignal_node.so
 
-NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
-RUST_ARCH=	${ARCH:S/amd64/x86_64/}
-
 .include <bsd.port.options.mk>
 
 post-extract:
@@ -62,9 +59,9 @@ post-extract:
 do-build:
 	${ECHO_CMD} offline=true >> ${WRKSRC}/.npmrc
 	cd ${WRKSRC}/node && \
-		${SETENV} ${MAKE_ENV} npm install --ignore-optional --nodedir=${LOCALBASE}
+		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE} npm install
 	cd ${WRKSRC}/node && \
-		${SETENV} ${MAKE_ENV} npm run build --nodedir=${LOCALBASE}
+		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE} npm run build
 	cd ${WRKSRC}/node && \
 		${SETENV} ${MAKE_ENV} npm run tsc
 
