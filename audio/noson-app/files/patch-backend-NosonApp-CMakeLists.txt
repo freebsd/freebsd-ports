@@ -1,0 +1,11 @@
+--- backend/NosonApp/CMakeLists.txt.orig	2026-10-06 22:24:43.976964000 +0200
++++ backend/NosonApp/CMakeLists.txt	2026-10-06 22:25:06.234352000 +0200
+@@ -19,6 +19,8 @@
+     endif()
+ endif()
+ 
++find_package(noson CONFIG REQUIRED)
++
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_STANDARD 11)
+ 

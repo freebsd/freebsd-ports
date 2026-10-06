@@ -1,0 +1,11 @@
+--- backend/cli/CMakeLists.txt.orig	2026-10-06 20:34:55.000000000 +0200
++++ backend/cli/CMakeLists.txt	2026-10-06 22:33:32.356641000 +0200
+@@ -3,6 +3,8 @@
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_STANDARD 11)
+ 
++find_package(noson CONFIG REQUIRED)
++
+ ###############################################################################
+ # configure
+ include_directories(${noson_INCLUDE_DIRS} ${CMAKE_CURRENT_BINARY_DIR}

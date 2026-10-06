@@ -1,0 +1,46 @@
+--- backend/lib/CMakeLists.txt.orig	2026-10-06 20:34:55.000000000 +0200
++++ backend/lib/CMakeLists.txt	2026-10-06 22:10:30.555081000 +0200
+@@ -110,41 +110,5 @@
+ 
+ set(BUILD_SHARED_LIBS OFF)
+ 
+-# Provides dependency noson
+-if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/noson/CMakeLists.txt)
+-    message(STATUS "Using libnoson submodule")
+-    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/noson/noson)
+-else()
+-    if(NOT LIBNOSON_GIT_MASTER)
+-        download_project(PROJ noson
+-          URL "${CMAKE_CURRENT_SOURCE_DIR}/noson-2.14.2.tar.gz"
+-          URL_HASH MD5=52f5ff07a7516c7ccc167040972e29d0
+-          PREFIX ${CMAKE_CURRENT_BINARY_DIR}
+-          UPDATE_DISCONNECTED ON)
+-    else()
+-        message(STATUS "Downloading git master libnoson")
+-        download_project(PROJ noson
+-            GIT_REPOSITORY https://github.com/janbar/noson.git
+-            GIT_TAG master
+-            GIT_SHALLOW 1
+-            PREFIX ${CMAKE_CURRENT_BINARY_DIR}
+-            UPDATE_DISCONNECTED OFF)
+-    endif()
+-    add_subdirectory(
+-        ${CMAKE_CURRENT_BINARY_DIR}/noson-src/noson
+-        ${CMAKE_CURRENT_BINARY_DIR}/noson-build
+-        EXCLUDE_FROM_ALL
+-    )
+-endif()
+-
+-set(noson_LIBRARIES noson
+-    ${ZLIB_LIBRARIES}
+-    ${OPENSSL_CRYPTO_LIBRARY} ${OPENSSL_SSL_LIBRARY}
+-    ${FLAC_LIBRARIES} ${FLACXX_LIBRARIES}               PARENT_SCOPE)
+-set(noson_INCLUDE_DIRS "${noson_BINARY_DIR}/public"     PARENT_SCOPE)
+-set(noson_FOUND ON                                      PARENT_SCOPE)
+-message(STATUS "Build noson: ${noson_BINARY_DIR}")
+-
+-if(noson_DEPENDENCIES)
+-    add_dependencies(noson ${noson_DEPENDENCIES})
+-endif()
++find_package(noson CONFIG REQUIRED)
++ 
