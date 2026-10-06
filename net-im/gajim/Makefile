@@ -1,5 +1,6 @@
 PORTNAME=	gajim
 DISTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -35,7 +36,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}css-parser>0:www/py-css-parser@${PY_FLAVOR} 
 		pango>0:x11-toolkits/pango
 
 USES=		cpe gettext gnome python:3.12+ xorg gstreamer
-USE=		GSTREAMER=core good bad libav rust
+USE_GSTREAMER=	core good bad libav rust
 USE_GNOME=	gtksourceview5 libadwaita pygobject3
 USE_PYTHON=	autoplist cryptography noflavors pep517 pytest
 USE_XORG=	x11 xext xscrnsaver
