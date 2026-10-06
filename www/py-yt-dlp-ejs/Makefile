@@ -14,7 +14,7 @@ WWW=		https://github.com/yt-dlp/yt-dlp-ejs
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	distinfo was only generated for these architectures # feel free to add more architectures
 
 FETCH_DEPENDS=	npm:www/npm-node${NPM_VER} \
@@ -43,6 +43,15 @@ DD=		${DISTDIR}/${DIST_SUBDIR}
 DIST_SUBDIR=	${PORTNAME}/${ARCH}
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 
+# rollup has no native binding for FreeBSD/powerpc64le (https://github.com/rollup/rollup/pull/6398),
+# fetch its WASM build (a drop-in replacement) there instead via the npm alias rollup -> @rollup/wasm-node
+# (powerpc64 would also need rollup/rollup#5354 fixed: the WASM build misreads its AST buffer on big-endian hosts)
+.if ${ARCH} == powerpc64le
+NPM_INSTALL_CMD=	npm install --save-exact --save-dev rollup@npm:@rollup/wasm-node@$$(npm pkg get devDependencies.rollup | ${TR} -d '"')
+.else
+NPM_INSTALL_CMD=	npm ci
+.endif
+
 do-fetch: # this target (1) downloads the source tarball, (2) extracts it to a temporary location, (3) runs npm ci to fetch and install node_modules, and (4) packages the node_modules directory into a separate tarball for later extraction during the build phase. This allows us to avoid running npm ci during the build phase which will require network access
 	@if ! [ -f ${DD}/${DISTNAME}${EXTRACT_SUFX} ] || \
 	    ! [ -f ${DD}/${PORTNAME}-node-modules-${DISTVERSION}${EXTRACT_SUFX} ]; then \
@@ -59,7 +68,7 @@ do-fetch: # this target (1) downloads the source tarball, (2) extracts it to a t
 			${ECHO_MSG} "====> Generating package-lock.json (it will be saved to ${FILESDIR})"; \
 		fi && \
 		cd ${WRKDIR}/${DISTNAME} && \
-			${SETENV} NODE_EXTRA_CA_CERTS=${LOCALBASE}/share/certs/ca-root-nss.crt HOME=${WRKDIR} npm ci && \
+			${SETENV} NODE_EXTRA_CA_CERTS=${LOCALBASE}/share/certs/ca-root-nss.crt HOME=${WRKDIR} ${NPM_INSTALL_CMD} && \
 		if ! [ -f ${FILESDIR}/package-lock.json ]; then \
 			${ECHO_MSG} "====> Saving generated package-lock.json to ${FILESDIR}"; \
 			${CP} ${WRKDIR}/${DISTNAME}/package-lock.json ${FILESDIR}/; \
