@@ -78,9 +78,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ctr-0.9.2 \
 		ctr-0.10.1 \
 		ctutils-0.4.2 \
-		cubeb-0.37.0 \
-		cubeb-core-0.37.0 \
-		cubeb-sys-0.37.0 \
+		cubeb-0.38.0 \
+		cubeb-core-0.38.0 \
+		cubeb-sys-0.38.0 \
 		curve25519-dalek-5.0.0 \
 		curve25519-dalek-derive-0.1.1 \
 		darling-0.23.0 \

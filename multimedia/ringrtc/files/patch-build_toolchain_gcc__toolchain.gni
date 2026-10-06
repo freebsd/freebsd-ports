@@ -109,15 +109,15 @@
 -
 -    cc = "${prefix}/clang"
 -    cxx = "${prefix}/clang++"
-+    cc = "cc"
-+    cxx = "c++"
++    cc = "%%LLVM_PREFIX%%/bin/clang"
++    cxx = "%%LLVM_PREFIX%%/bin/clang++"
      ld = cxx
 -    readelf = "${prefix}/llvm-readelf"
 -    ar = "${prefix}/llvm-ar"
 -    nm = "${prefix}/llvm-nm"
-+    readelf = "readelf"
-+    ar = "llvm-ar"
-+    nm = "llvm-nm"
++    readelf = "%%LLVM_PREFIX%%/bin/llvm-readelf"
++    ar = "%%LLVM_PREFIX%%/bin/llvm-ar"
++    nm = "%%LLVM_PREFIX%%/bin/llvm-nm"
  
      forward_variables_from(invoker, "*", [ "toolchain_args" ])
  

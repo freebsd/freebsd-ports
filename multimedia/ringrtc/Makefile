@@ -1,6 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.71.0
+DISTVERSION=	2.72.0
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:boringssl \
 		LOCAL/mikael/ringrtc/:build \
@@ -53,7 +53,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libharfbuzz.so:print/harfbuzz \
 		libpulse.so:audio/pulseaudio
 
-USES=		cargo gnome jpeg localbase:ldflags ninja pkgconfig python:build \
+USES=		cargo gnome jpeg llvm:min=21,build localbase:ldflags ninja pkgconfig python:build \
 		tar:xz
 USE_GNOME=	glib20
 USE_GITHUB=	yes
@@ -62,7 +62,7 @@ GH_TUPLE=	signalapp:ringrtc:${DISTVERSIONPREFIX}${DISTVERSION} \
 		signalapp:webrtc:${WEBRTC_REV}:webrtc
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	7871f
+WEBRTC_REV=	7871k
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
 BORINGSSL_REV=		f91f1447397c6719f9774dfb8e67329378e1f3d3
@@ -70,7 +70,7 @@ BUILD_REV=		d296a9fec6186f2c109758c7d3f93cbef936dfc3
 BUILDTOOLS_REV=		17495e454aae81b581e8b3caccbb53054509b280
 CATAPULT_REV=		2852bb7e91e4995502ffb72b7ed21412ee157914
 ICU_REV=		3859e64eed5d34544b27fbcab0ac1685ce83df3c
-LIBCUBEB_VER=		0.37.0
+LIBCUBEB_VER=		0.38.0
 LIBJPEG_TURBO_REV=	640f254ad0fa03f6b1f29f89b7dd9366f2f6e533
 LIBSRTP_REV=		cd5d177bf1fde755ddb4c7f0d9ff7693f8b49e5e
 LIBVPX_REV=		31af37b1bd2774d11a932c1cd9a3849328375f64
@@ -85,7 +85,10 @@ THIRD_PARTY_REV=	7c92732938de0ef7e28f5da231994723f938f407
 TOOLS_REV=		8e4d26ef387bfa4c07e66dd1c7399c3d53ef1451
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} \
-		vpython3=${PYTHON_CMD}
+		vpython3=${PYTHON_CMD} \
+		c++=${CXX} \
+		cxx=${CXX} \
+		cc=${CC}
 
 # Keep in sync with https://github.com/signalapp/ringrtc/blob/v2.53.0/bin/build-desktop#L130
 # Run "gn args out/release --list" for all variables.
@@ -114,6 +117,7 @@ GN_ARGS+=	rtc_build_examples=false \
 		use_system_harfbuzz=true \
 		use_system_libjpeg=true \
 		use_udev=false \
+		extra_cflags="${CFLAGS}" \
 		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS}" \
 		use_thin_lto=true \
@@ -162,9 +166,8 @@ post-extract:
 	${MV} ${WRKDIR}/tools ${WEBRTCDIR}
 
 post-patch:
-	${REINPLACE_CMD} "s|LOCALBASE|${LOCALBASE}|" \
-		${WEBRTCDIR}/build/toolchain/gcc_toolchain.gni \
-		${WEBRTCDIR}/buildtools/third_party/libc++/BUILD.gn
+	${REINPLACE_CMD} "s|%%LLVM_PREFIX%%|${LLVM_PREFIX}|g" \
+		${WEBRTCDIR}/build/toolchain/gcc_toolchain.gni
 	${RM} -r ${CARGO_VENDOR_DIR}/cubeb-sys-${LIBCUBEB_VER}/libcubeb/src/cubeb-pulse-rs
 
 	${ECHO_CMD} "# Generated from 'DEPS'" > ${WEBRTCDIR}/build/config/gclient_args.gni
