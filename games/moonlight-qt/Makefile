@@ -1,19 +1,9 @@
 PORTNAME=	moonlight
-DISTVERSION=	6.1.0
-PORTREVISION=	5
+DISTVERSION=	6.2.0
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/moonlight-stream/moonlight-qt/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-qt
 DISTNAME=	MoonlightSrc-${DISTVERSIONFULL}
-
-PATCH_SITES=	https://github.com/moonlight-stream/moonlight-qt/commit/
-# fix no <linux/dma-buf.h> for BSDs
-PATCHFILES+=	1fd545ae1fea80179d8ac7addfd4cae48554bc63.patch:-p1
-# Add fast AES detection for FreeBSD/OpenBSD
-PATCHFILES+=	4ec549650dc3f976847e1592f970f36448a3b36f.patch:-p1
-# fix compilation with ffmpeg 9
-PATCHFILES+=	13880353d8741ae331bf13433c5ad80071d5f44f.patch:-p1 \
-		6ce02616f04fb83cd7c5d1492b03367f2220ac46.patch:-p1
 
 MAINTAINER=	lisp_25689@163.com
 COMMENT=	Gamestream client
@@ -49,9 +39,6 @@ OPTIONS_SINGLE=		QT
 OPTIONS_SINGLE_QT=	QT5 QT6
 QT5_USES=		qt:5
 QT5_USE=		QT=core,declarative,gui,network,quickcontrols2,svg,widgets,buildtools:build
-# fix errors for qt6.9
-QT6_PATCHFILES+=	75359bb1c483ba9e52bba8c34a662d807e0cc3c4.patch:-p1 \
-			7a769172a1f62e5198584dff9fd924e8a9e431a0.patch:-p1
 QT6_USES=		qt:6
 QT6_USE=		QT=base,declarative,svg
 
