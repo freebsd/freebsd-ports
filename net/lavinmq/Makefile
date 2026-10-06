@@ -1,6 +1,6 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.2
+DISTVERSION=	2.10.1
 CATEGORIES=	net
 
 # JavaScripts
@@ -27,13 +27,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 _AMQP_CLIENT=	1.3.3
 _AMQP_PROTO=	1.3.1
 _LZ4=		0015e74e0ed0f6bb15de9c25c25034ad4bc7f636
-_MQTT=		0.3.0
+_MQTT=		0.3.1
 _SYSTEMD=	3.0.1
 
 # JavaScript library versions
-_CHARTJS=		4.0.1
-_ELEMENTS=		8.2.0
-_LUXON_JS=		1.3.1
+_CHARTJS=	4.0.1
+_ELEMENTS=	8.2.0
+_LUXON_JS=	1.3.1
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Next-generation AMQP 0.9.1 based message broker
@@ -66,7 +66,7 @@ PORTDOCS=	CHANGELOG.md NOTICE README.md SECURITY.md
 OPTIONS_DEFINE=	DOCS
 
 SHARDS_ENV=	--time --verbose --production --release --no-color --stats \
-		-Dgc_none -Dpreview_mt -Dexecution_context
+		-Dgc_none
 
 .include <bsd.port.options.mk>
 
@@ -93,14 +93,11 @@ post-extract:
 	@${ECHO} "control_unix_path = /var/run/lavinmq/lavinmqctl.sock" \
 		>> ${WRKSRC}/extras/lavinmq.ini
 # fix compiled-in defaults for FreeBSD hier(7) paths
-	@${REINPLACE_CMD} \
-		-e 's,/var/lib/lavinmq,/var/db/lavinmq,' \
+	@${REINPLACE_CMD} -e 's,/var/lib/lavinmq,/var/db/lavinmq,' \
 		${WRKSRC}/src/lavinmq/config/options.cr
-	@${REINPLACE_CMD} \
-		-e 's,/tmp/lavinmqctl.sock,/var/run/lavinmq/lavinmqctl.sock,' \
+	@${REINPLACE_CMD} -e 's,/tmp/lavinmqctl.sock,/var/run/lavinmq/lavinmqctl.sock,' \
 		${WRKSRC}/src/lavinmq/http/constants.cr
-	@${REINPLACE_CMD} \
-		-e 's,/etc/lavinmq,${PREFIX}/etc/lavinmq,' \
+	@${REINPLACE_CMD} -e 's,/etc/lavinmq,${PREFIX}/etc/lavinmq,' \
 		${WRKSRC}/src/lavinmq/config.cr
 # setup javaScript directories
 	${MKDIR} ${WRKSRC}/static/js/lib \
@@ -122,12 +119,10 @@ post-extract:
 
 pre-build:
 # render .shtml views into static .html (baked into binary at compile time)
-.for v in 401 404 channel channels connection connections consumers \
-	exchange exchanges federation login logs nodes operator-policies \
-	overview policies queue queues shovels stream unacked user users \
-	vhost vhosts
-	${WRKSRC}/views/render.sh ${WRKSRC}/views/${v}.shtml \
-		"${DISTVERSION}" > ${WRKSRC}/static/${v}.html
+.for v in 401 404 channel channels connection connections consumers exchange \
+	exchanges federation login logs nodes operator-policies overview \
+	policies queue queues shovels stream unacked user users vhost vhosts
+	${WRKSRC}/views/render.sh ${WRKSRC}/views/${v}.shtml > ${WRKSRC}/static/${v}.html
 .endfor
 
 do-build:
