@@ -1,7 +1,7 @@
 PORTNAME?=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/
 PKGNAMESUFFIX?=	-devel
@@ -336,6 +336,11 @@ post-patch-SFLOW-on:
 
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
+
+pre-configure-AJP-on:
+	@${RM} -rf ${WRKSRC_ajp}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-ajp ${WRKSRC_ajp}
+	@${CHMOD} -R u+w ${WRKSRC_ajp}
 
 pre-configure-ARRAYVAR-on:
 	@${RM} -rf ${WRKSRC_arrayvar}
