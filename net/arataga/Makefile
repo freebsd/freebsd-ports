@@ -33,8 +33,6 @@ GH_ACCOUNT=	Stiffstream
 GH_PROJECT=	noexcept-ctcheck:nectc restinio:rinio so5extra:so5e
 GH_TAGNAME=	v.1.0.0:nectc v.0.6.16:rinio v.1.6.2:so5e
 
-_SO5_LIBVER=	5.8.5
-
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*.md
 
@@ -58,3 +56,6 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/../,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
+
+_SO5_LIBVER!=	${SED} -n s/^PORTVERSION=\\t//p \
+		${PORTSDIR}/devel/sobjectizer/Makefile
