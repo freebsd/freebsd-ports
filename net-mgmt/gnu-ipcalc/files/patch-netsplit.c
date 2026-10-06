@@ -1,12 +1,11 @@
---- netsplit.c.orig	2021-06-06 18:56:02 UTC
+--- netsplit.c.orig	2026-10-04 09:20:17 UTC
 +++ netsplit.c
-@@ -32,9 +32,19 @@
- #include <netinet/in.h>
+@@ -33,8 +33,18 @@
  #include <arpa/inet.h>
  #include <stdint.h>
+ #include <inttypes.h>
 +#include <sys/socket.h>
  
- #include "ipv6.h"
  #include "ipcalc.h"
 +
 +#if defined(__FreeBSD__) || defined(__darwin__) || defined(__APPLE__)
@@ -18,5 +17,5 @@
 +#endif
 +#endif
  
- static const char *numtoquad(uint32_t num)
- {
+ /* Splitting of a network into subnets.
+  *
