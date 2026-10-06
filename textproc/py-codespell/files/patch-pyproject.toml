@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-07-15 11:51:21 UTC
++++ pyproject.toml
+@@ -5,7 +5,6 @@ requires-python = ">=3.9"
+ description = "Fix common misspellings in text files"
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+ requires-python = ">=3.9"
+-license = "GPL-2.0-only"
+ authors = [
+     {name = "Lucas De Marchi", email = "lucas.de.marchi@gmail.com"},
+ ]
+@@ -67,7 +66,7 @@ build-backend = "setuptools.build_meta"
+ 
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=77", "setuptools_scm[toml]>=6.2, != 8.0.0"]
++requires = ["setuptools", "setuptools_scm[toml]"]
+ 
+ [tool.setuptools_scm]
+ write_to = "codespell_lib/_version.py"

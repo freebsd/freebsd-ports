@@ -1,0 +1,3 @@
+Codespell fixes common misspellings in text files. It's designed
+primarily for checking fragmented code and documentation, but can also
+be used for other types of text.

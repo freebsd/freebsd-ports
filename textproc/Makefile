@@ -1376,6 +1376,7 @@
     SUBDIR += py-cjkwrap
     SUBDIR += py-cloud_sptheme
     SUBDIR += py-cmarkgfm
+    SUBDIR += py-codespell
     SUBDIR += py-collective.checkdocs
     SUBDIR += py-comrak
     SUBDIR += py-conllu
