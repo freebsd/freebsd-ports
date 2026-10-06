@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=8.27.0
+SIGNAL_VERS=8.29.0
 
 printf "DISTVERSION=\t${SIGNAL_VERS}\n" | portedit merge -i Makefile
 printf "DISTVERSION=\t${SIGNAL_VERS}\n" | portedit merge -i Makefile.online
@@ -68,7 +68,7 @@ echo "version installed: ${signal_sqlcipher_installed_version}"
 echo
 
 ############ PNPM ############
-pnpm_version=$(grep '"packageManager":' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g' | sed 's#pnpm@##')
+pnpm_version=$(grep -A 2 '"packageManager":' /tmp/package.json | awk "/version/"'{print $2}' | sed 's#"##g')
 echo "requires: PNPM_VERS ${pnpm_version}"
 
 ############ WEBRTC ############
