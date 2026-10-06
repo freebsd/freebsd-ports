@@ -326,6 +326,9 @@
 #
 # The following variables may be set by the user:
 #
+# PYTHON_DISABLE_BYTECODE	- Disable compiling and including bytecode in the
+#				  resulting package. To take effect with existing
+#				  packages, rebuilds are required.
 # PYTEST_ENABLE_ALL_TESTS	- Enable tests skipped by PYTEST_BROKEN_TESTS
 #				  and PYTEST_IGNORED_TESTS.
 # PYTEST_ENABLE_BROKEN_TESTS	- Enable tests skipped by PYTEST_BROKEN_TESTS.
@@ -743,7 +746,11 @@ PYDISTUTILS_SETUP?=	-c \
 	exec(compile(open(__file__, 'rb').read().replace(b'\\r\\n', b'\\n'), __file__, 'exec'))"
 PYDISTUTILS_CONFIGUREARGS?=	# empty
 PYDISTUTILS_BUILDARGS?=		# empty
+.  if defined(PYTHON_DISABLE_BYTECODE)
+PYDISTUTILS_INSTALLARGS?=	--no-compile -O1 --prefix=${PREFIX}
+.  else
 PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
+.  endif
 .  if defined(_PYTHON_FEATURE_DISTUTILS)
 .    if !defined(PYDISTUTILS_INSTALLNOSINGLE)
 PYDISTUTILS_INSTALLARGS+=	--single-version-externally-managed
@@ -761,7 +768,11 @@ PYDISTUTILS_EGGINFODIR?=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 # PEP-517 support
 PEP517_BUILD_CMD?=	${PYTHON_CMD} -m build --no-isolation --wheel ${PEP517_BUILD_CONFIG_SETTING}
 PEP517_BUILD_DEPEND?=	${PYTHON_PKGNAMEPREFIX}build>=0:devel/py-build@${PY_FLAVOR}
+.  if defined(PYTHON_DISABLE_BYTECODE)
+PEP517_INSTALL_CMD?=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --no-compile-bytecode --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PORTNAME:tl:C|[-_]+|_|g}-${DISTVERSION}*.whl
+.  else
 PEP517_INSTALL_CMD?=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PORTNAME:C|[-_]+|_|g}-${DISTVERSION}*.whl
+.  endif
 PEP517_INSTALL_DEPEND?=	${PYTHON_PKGNAMEPREFIX}installer>=0:devel/py-installer@${PY_FLAVOR}
 
 # nose support
@@ -953,7 +964,12 @@ PYDISTUTILS_INSTALL_TARGET?=	install
 
 .  if defined(_PYTHON_FEATURE_DISTUTILS)
 LDSHARED?=	${CC} -shared
-MAKE_ENV+=	LDSHARED="${LDSHARED}" PYTHONDONTWRITEBYTECODE= PYTHONOPTIMIZE=
+MAKE_ENV+=	LDSHARED="${LDSHARED}"
+.    if defined(PYTHON_DISABLE_BYTECODE)
+MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=y
+.    else
+MAKE_ENV+=	PYTHONDONTWRITEBYTECODE= PYTHONOPTIMIZE=
+.    endif
 
 .    if !target(do-configure) && !defined(HAS_CONFIGURE) && !defined(GNU_CONFIGURE)
 do-configure:

@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20261006:
+AUTHOR: python@FreeBSD.org
+
+  A new user setting PYTHON_DISABLE_BYTECODE has been added to allow
+  Python ports to not compile and include bytecode. For this setting
+  to take effect on existing packages, rebuilds are required. Ports
+  themselves must not set this variable.
+
 20260923:
 AUTHOR: mat@FreeBSD.org
 
