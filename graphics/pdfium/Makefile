@@ -74,6 +74,8 @@ DISTFILES+=	${PDFIUM_COMMIT}.tar.gz:pdfium_src \
 		0732f7097d066a81e673f90862994f76886fc638.tar.gz:tools_mem \
 		df65d5c8f2932045c5af72cd7ecd0c8002fa631e.tar.gz:v8
 DIST_SUBDIR=	${PORTNAME}
+# Googlesource archives are not reproducible; normalize them right after fetching
+FETCH_CMD=	${SH} ${PORTSDIR}/Tools/scripts/fetch-normalize.sh
 EXTRACT_ONLY=	${PDFIUM_COMMIT}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}
 
@@ -158,14 +160,6 @@ _DEPS_DIRS=	base/allocator/partition_allocator:89615a645f0220fb03875111c2d9ae4de
 		v8:df65d5c8f2932045c5af72cd7ecd0c8002fa631e
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
-
-pre-checksum:
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/${PDFIUM_COMMIT}.tar.gz | ${GZIP_CMD} -n > ${DISTDIR}/${DIST_SUBDIR}/${PDFIUM_COMMIT}.tar.gz.tmp
-	@${MV} ${DISTDIR}/${DIST_SUBDIR}/${PDFIUM_COMMIT}.tar.gz.tmp ${DISTDIR}/${DIST_SUBDIR}/${PDFIUM_COMMIT}.tar.gz
-.for dep in ${_DEPS_DIRS}
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/${dep:C/^.*://}.tar.gz | ${GZIP_CMD} -n > ${DISTDIR}/${DIST_SUBDIR}/${dep:C/^.*://}.tar.gz.tmp
-	@${MV} ${DISTDIR}/${DIST_SUBDIR}/${dep:C/^.*://}.tar.gz.tmp ${DISTDIR}/${DIST_SUBDIR}/${dep:C/^.*://}.tar.gz
-.endfor
 
 post-extract:
 .for dep in ${_DEPS_DIRS}

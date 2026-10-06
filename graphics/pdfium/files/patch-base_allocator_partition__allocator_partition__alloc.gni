@@ -1,0 +1,16 @@
+-- Disable ARM memory tagging in PartitionAlloc on FreeBSD.
+-- The build treats FreeBSD as Linux (is_linux), but the MTE code needs Linux-only
+-- headers (asm/hwcap.h, sys/prctl.h) that do not exist on FreeBSD.
+
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2026-09-24 10:00:00 UTC
++++ base/allocator/partition_allocator/partition_alloc.gni
+@@ -111,7 +111,8 @@
+ use_large_empty_slot_span_ring = true
+ 
+ has_memory_tagging = current_cpu == "arm64" && is_clang && !is_asan &&
+-                     !is_hwasan && (is_linux || is_android)
++                     !is_hwasan && (is_linux || is_android) &&
++                     current_os != "freebsd"
+ 
+ declare_args() {
+   # Whether PartitionAlloc is built in official mode.
