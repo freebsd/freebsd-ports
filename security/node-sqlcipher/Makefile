@@ -32,7 +32,7 @@ post-patch:
 do-build:
 	${ECHO_CMD} offline=true > ${WRKSRC}/.npmrc
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} npm install --nodedir=${PREFIX}
+		${SETENV} ${MAKE_ENV} npm_config_nodedir=${LOCALBASE} npm install
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/build/Release/obj.target/node_sqlcipher.node ${STAGEDIR}${PREFIX}/lib/
