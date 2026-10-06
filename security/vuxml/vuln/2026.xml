@@ -1,3 +1,36 @@
+  <vuln vid="3a72cd47-c157-11f1-a6ea-8447094a420f">
+    <topic>Vaultwarden -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>vaultwarden</name>
+	<range><lt>1.37.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Vaultwarden project reports:</p>
+	<blockquote cite="https://github.com/dani-garcia/vaultwarden/releases/tag/1.37.4">
+	  <ul>
+	    <li>Organization member revocation [GHSA-69q9-v8p6-xvx3] (High, 8.1)</li>
+	    <li>Two-factor authentication [GHSA-7jg8-8m5x-6j9r] (Medium, 6.8)</li>
+	    <li>Organization invitations [GHSA-v576-3wvq-xh3c] (Medium, 6.8)</li>
+	    <li>Attachments [GHSA-q5x6-grh5-fqgc] (Medium, 6.5)</li>
+	    <li>Organization event logs [GHSA-64mc-4p6f-r7x9] (Medium, 4.3)</li>
+	    <li>Cipher sharing [GHSA-7ccc-c43j-4p36] (Medium, 4.3)</li>
+	    <li>Organization API key [GHSA-qwx4-wcv4-mpcv] (Low, 3.8)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/dani-garcia/vaultwarden/releases/tag/1.37.4</url>
+    </references>
+    <dates>
+      <discovery>2026-10-06</discovery>
+      <entry>2026-10-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="85bcb950-c0b4-11f1-a6ea-8447094a420f">
     <topic>LibreSSL -- Multiple vulnerabilities</topic>
     <affects>
