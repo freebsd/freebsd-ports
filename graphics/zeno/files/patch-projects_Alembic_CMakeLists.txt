@@ -1,0 +1,12 @@
+--- projects/Alembic/CMakeLists.txt.orig	2024-09-30 13:46:54 UTC
++++ projects/Alembic/CMakeLists.txt
+@@ -9,6 +9,9 @@
+ if (ZENO_SYSTEM_ALEMBIC)
+     find_package(Alembic REQUIRED)
+     target_link_libraries(zeno PRIVATE Alembic::Alembic)
++    # png16.cpp uses OpenEXR, otherwise provided by the Alembic submodule
++    find_package(OpenEXR REQUIRED)
++    target_link_libraries(zeno PRIVATE OpenEXR::OpenEXR)
+ else()
+     if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/Alembic/CMakeLists.txt)
+         message(FATAL_ERROR "Alembic submodule not found! Please run: git submodule update --init --recursive")

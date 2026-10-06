@@ -1,0 +1,18 @@
+--- projects/FBX/CMakeLists.txt.orig	2024-09-30 13:46:54 UTC
++++ projects/FBX/CMakeLists.txt
+@@ -40,12 +40,7 @@
+ endif()
+ endif()
+ 
+-set(DEM_DIR ${CMAKE_CURRENT_SOURCE_DIR}/dem-bones-bin/bin/${CMAKE_SYSTEM_NAME})
+-if (NOT EXISTS ${DEM_DIR})
+-    message(FATAL_ERROR "Please run: git submodule update --init --recursive")
+-endif()
+-zeno_add_asset_dir(${DEM_DIR})
++# DemBones binary is not available on FreeBSD, ExportFBX looks for it in PREFIX/bin
++set(DEM_DIR ${CMAKE_INSTALL_PREFIX}/bin)
+ configure_file(zeno_FBX_config.h.in ${CMAKE_CURRENT_BINARY_DIR}/confinc/zeno_FBX_config.h @ONLY)
+ target_include_directories(zeno PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/confinc)
+-
+-execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/dem-bones-bin/models ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/models)
+\ No newline at end of file

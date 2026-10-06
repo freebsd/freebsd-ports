@@ -1,0 +1,55 @@
+--- projects/Rigid/CMakeLists.txt.orig	2024-09-30 13:46:54 UTC
++++ projects/Rigid/CMakeLists.txt
+@@ -1,11 +1,20 @@
+ add_definitions(-DBT_THREAD_SAFE)
+ add_compile_options(-w)
+ 
+-if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/bullet3/CMakeLists.txt)
++# FreeBSD: use system bullet (devel/bullet) instead of the bundled copy
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(BULLET REQUIRED bullet)
++
++# Parts of zenustech/bullet3 fork which are not provided by devel/bullet
++if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/bullet3/src/URDFImporter/CMakeLists.txt)
+     message(FATAL_ERROR "bullet3 submodule not found! Please run: git submodule update --init --recursive")
+ endif()
+-add_subdirectory(bullet3)
+-add_subdirectory(bullet3/HACD)
++file (GLOB ZEN_BULLET_EXTRAS_SOURCE
++    bullet3/src/BulletInverseDynamics/*.cpp
++    bullet3/src/BulletInverseDynamics/details/*.cpp
++    bullet3/src/BussIK/*.cpp
++    bullet3/src/VHACD/src/*.cpp
++    bullet3/src/URDFImporter/*.cpp)
+ 
+ file (GLOB ZEN_RIGID_SOURCE *.cpp *.h)
+ 
+@@ -14,18 +23,15 @@
+     list (APPEND ZEN_RIGID_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/RigidFracture.cpp)
+ endif(ZENO_WITH_CUDA)
+ 
+-target_sources(zeno PRIVATE ${ZEN_RIGID_SOURCE})
+-zeno_disable_warning(${ZEN_RIGID_SOURCE})
++target_sources(zeno PRIVATE ${ZEN_RIGID_SOURCE} ${ZEN_BULLET_EXTRAS_SOURCE})
++zeno_disable_warning(${ZEN_RIGID_SOURCE} ${ZEN_BULLET_EXTRAS_SOURCE})
+ target_include_directories(zeno PRIVATE .)
+-target_include_directories(zeno PRIVATE bullet3/src)
++target_include_directories(zeno PRIVATE bullet3/src bullet3/src/VHACD)
++target_include_directories(zeno PRIVATE ${BULLET_INCLUDE_DIRS} ${BULLET_INCLUDEDIR}/HACD)
++target_compile_options(zeno PRIVATE ${BULLET_CFLAGS_OTHER})
+ 
+-target_link_libraries(zeno PRIVATE LinearMath)
+-target_link_libraries(zeno PRIVATE Bullet3Common)
+-target_link_libraries(zeno PRIVATE BulletInverseDynamics)
+-target_link_libraries(zeno PRIVATE BulletCollision)
+-target_link_libraries(zeno PRIVATE BulletDynamics)
+-target_link_libraries(zeno PRIVATE BulletSoftBody)
+-target_link_libraries(zeno PRIVATE HACD)
+-target_link_libraries(zeno PRIVATE VHACD)
+-target_link_libraries(zeno PRIVATE BussIK)
+-target_link_libraries(zeno PRIVATE URDFImporter)
++foreach (lib IN ITEMS BulletSoftBody BulletDynamics BulletCollision
++        Bullet3Common LinearMath HACD)
++    find_library(BULLET_${lib}_LIBRARY NAMES ${lib} HINTS ${BULLET_LIBRARY_DIRS} REQUIRED)
++    target_link_libraries(zeno PRIVATE ${BULLET_${lib}_LIBRARY})
++endforeach()
