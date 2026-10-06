@@ -718,7 +718,15 @@ CARGO_BUILDDEP=	no
 CARGO_TARGET_DIR=	${WRKSRC}/target
 
 MAKE_ENV=	${CARGO_ENV}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} # add PYPI-related file to DISTFILES
+
+do-test:
+	# run example-tauri-webiew-1.py
+	@${RM} -r ${WRKDIR}/mock_tauri
+	@${CP} -r ${FILESDIR}/mock_tauri ${WRKDIR}
+	@cd ${WRKDIR} && \
+		${SETENV} ${TEST_ENV} MOCK_TAURI_DIR=${WRKDIR}/mock_tauri ${PYTHON_CMD} ${FILESDIR}/example-tauri-webiew-1.py
 
 .include <bsd.port.mk>
