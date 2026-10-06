@@ -5,14 +5,14 @@ CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Sources of the form_input module for the NGINX ports
-WWW=		https://github.com/joneum/form-input-nginx-module
+WWW=		https://github.com/joneum/nginx-form-input-module
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	joneum
-GH_PROJECT=	form-input-nginx-module
+GH_PROJECT=	nginx-form-input-module
 
 NO_ARCH=	yes
 NO_BUILD=	yes
