@@ -21,8 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	epasveer
 GH_PROJECT=	seer
 
-CMAKE_ARGS=	QTVERSION=QT6
-
 WRKSRC_SUBDIR=	src
 
 PLIST_FILES=	bin/seergdb
