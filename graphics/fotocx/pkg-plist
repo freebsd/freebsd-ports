@@ -36,7 +36,6 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/custom_scripts/sharpen-tiles2-emboss
 %%DATADIR%%/data/custom_scripts/voodoo
 %%DATADIR%%/data/grid_picklist
-%%DATADIR%%/data/map_regions
 %%DATADIR%%/data/markup/raised text effect
 %%DATADIR%%/data/meta_picklist
 %%DATADIR%%/data/meta_report_tags
@@ -124,11 +123,9 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/patterns/wood.jpg
 %%DATADIR%%/data/plugins
 %%DATADIR%%/data/raw_commands
-%%DATADIR%%/data/slideshow-tone.oga
 %%DATADIR%%/data/translations/$ AI prompts
 %%DATADIR%%/data/translations/$ language codes
 %%DATADIR%%/data/translations/$ translation procedures
-%%DATADIR%%/data/translations/$ undo-redo translations
 %%DATADIR%%/data/translations/gui_de
 %%DATADIR%%/data/translations/gui_el
 %%DATADIR%%/data/translations/gui_en
@@ -138,9 +135,9 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/translations/gui_hu
 %%DATADIR%%/data/translations/gui_it
 %%DATADIR%%/data/translations/gui_ja
+%%DATADIR%%/data/translations/gui_ko
 %%DATADIR%%/data/translations/gui_pl
 %%DATADIR%%/data/translations/gui_pt
-%%DATADIR%%/data/translations/gui_ro
 %%DATADIR%%/data/translations/gui_ru
 %%DATADIR%%/data/translations/gui_tr
 %%DATADIR%%/data/translations/gui_zh
@@ -153,9 +150,9 @@ share/applications/fotocx.desktop
 %%DATADIR%%/data/translations/ug_hu
 %%DATADIR%%/data/translations/ug_it
 %%DATADIR%%/data/translations/ug_ja
+%%DATADIR%%/data/translations/ug_ko
 %%DATADIR%%/data/translations/ug_pl
 %%DATADIR%%/data/translations/ug_pt
-%%DATADIR%%/data/translations/ug_ro
 %%DATADIR%%/data/translations/ug_ru
 %%DATADIR%%/data/translations/ug_tr
 %%DATADIR%%/data/translations/ug_zh
@@ -334,6 +331,7 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/search-images.jpg
 %%DATADIR%%/images/select-area-finish.png
 %%DATADIR%%/images/select-area.jpg
+%%DATADIR%%/images/select-hairy.jpg
 %%DATADIR%%/images/select-image-files.jpg
 %%DATADIR%%/images/select.png
 %%DATADIR%%/images/set-colors1.jpg
@@ -384,6 +382,8 @@ share/applications/fotocx.desktop
 %%DATADIR%%/images/vignette2.jpg
 %%DATADIR%%/images/vignette3.png
 %%DATADIR%%/images/warning.png
+%%DATADIR%%/images/warp-linear1.jpg
+%%DATADIR%%/images/warp-linear2.jpg
 %%DATADIR%%/images/warp.png
 %%DATADIR%%/images/warp_radial.png
 %%DATADIR%%/images/warps4.jpg
