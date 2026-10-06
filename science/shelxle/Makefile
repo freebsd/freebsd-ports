@@ -1,16 +1,17 @@
 PORTNAME=	shelxle
-DISTVERSION=	1.0.1818
+DISTVERSION=	1.0.1861
 CATEGORIES=	science # chemistry
 MASTER_SITES=	SF/${PORTNAME}/code/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical user interface for small-molecule structure refinement
-WWW=		https://www.shelxle.org/shelx/eingabe.php
+WWW=		https://www.shelxle.org/shelx/eingabe.php \
+		https://sourceforge.net/projects/shelxle/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang dos2unix gl qmake qt:6 tar:bz2
+USES=		compiler:c++11-lang desktop-file-utils dos2unix gl qmake qt:6 tar:bz2
 DOS2UNIX_FILES=	shelXle.pro
 USE_QT=		base tools:build
 USE_GL=		gl
