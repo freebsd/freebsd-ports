@@ -1,0 +1,4 @@
+bin/openrgb
+share/applications/org.openrgb.OpenRGB.desktop
+share/icons/hicolor/128x128/apps/org.openrgb.OpenRGB.png
+share/metainfo/org.openrgb.OpenRGB.metainfo.xml
