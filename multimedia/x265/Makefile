@@ -1,9 +1,25 @@
 PORTNAME=	x265
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 CATEGORIES=	multimedia
-MASTER_SITES=	https://bitbucket.org/multicoreware/x265_git/downloads/ \
+MASTER_SITES=	https://github.com/Multicorewareinc/x265/releases/download/${PORTVERSION}/ \
 		http://ftp.videolan.org/pub/videolan/x265/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+
+PATCH_SITES=	https://github.com/Multicorewareinc/x265/commit/
+PATCHFILES=	fbd43389ed39b8623bdf081fae3020d96052d962.patch:-p1 \
+		9ddc216defd1fa85535cb91456a9f6c09a2c3abc.patch:-p1 \
+		ff33e3e2ce1af2ceee94958c7273e3b1d083d5e5.patch:-p1 \
+		62728cd0c696655f34972b47cff1e1e77d84e426.patch:-p1 \
+		d0418793c134fe943098f5f0700ae87fcd4c8557.patch:-p1 \
+		98eec4057fc20850b59ed292b3f13ddeefc2f93f.patch:-p1 \
+		f0179ac2ea69d349de0b20848d0431971d8db3b9.patch:-p1 \
+		ae31887b575154ca64164153b9802a92cacd9387.patch:-p1 \
+		93b4b94f8d4ac1808e715766b180932948e671a6.patch:-p1 \
+		e761edf5ecd1260237766bb7b7b2583e933d5ffb.patch:-p1 \
+		a0468d239fbfa659641ce6085aa9b63977a5785d.patch:-p1 \
+		ea8b761899ecf91cbd4f8b83e85d8444b1b94c80.patch:-p1 \
+		688efad6e96d755188cb08fbe9e16822e1cfa3f1.patch:-p1 \
+		d978725394991e13a07a8002e0ff8b7d01eea08a.patch:-p1
 
 MAINTAINER=	ports@virtual-estates.net
 COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
@@ -74,7 +90,10 @@ CMAKE_ARGS+=	-DHIGH_BIT_DEPTH:BOOL=true
 CMAKE_ARGS+=	-DENABLE_ASSEMBLY:BOOL=false
 .endif
 
-CMAKE_OTHER_ARGS=	${CMAKE_ARGS:C/.*-D_END_CUSTOM_OPTIONS=1 +//W}
+# ENABLE_LIBVMAF changes the layout of x265_api, so the libraries for
+# the other depths must agree with the main one about it.
+CMAKE_OTHER_ARGS=	${CMAKE_ARGS:M*VMAF*} \
+			${CMAKE_ARGS:C/.*-D_END_CUSTOM_OPTIONS=1 +//W}
 
 .if ${PORT_OPTIONS:MDEBUG}
 CFLAGS:=	${CFLAGS:N-O*} -O0 -g
@@ -126,6 +145,16 @@ CMAKE_ARGS+=	${OTHER_DEPTHS:C/HI([0-9]+)P/-DLINKED_\1BIT:BOOL=true/}
 .endif
 
 CMAKE_ARGS+=	-DENABLE_SHARED:BOOL=true
+
+.if !empty(PATCHFILES)
+# Make the version string count the upstream commits applied on top of
+# the release, and name the most recent of them.
+post-patch:
+	${REINPLACE_CMD} -E \
+	    -e 's/^(releasetagdistance: ).*/\1${PATCHFILES:[#]}/' \
+	    -e 's/^(repositorychangeset: ).*/\1${PATCHFILES:[-1]:C/^(.......).*/\1/}/' \
+	    ${WRKSRC:H}/x265Version.txt
+.endif
 
 do-test:
 .if ${PORT_OPTIONS:MHI8P} || ${ARCH} != i386
