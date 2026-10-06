@@ -6,16 +6,12 @@
 
 --- build/config/clang/BUILD.gn.orig	2026-09-24 10:29:01 UTC
 +++ build/config/clang/BUILD.gn
-@@ -198,6 +198,12 @@ template("clang_lib") {
+@@ -198,6 +198,8 @@ template("clang_lib") {
          }
        } else if (is_apple) {
          _dir = "darwin"
 +      } else if (current_os == "freebsd") {
-+        if (current_cpu == "x64") {
-+          _dir = read_file("//.freebsd_clang_rt_dir", "trim string")
-+        } else {
-+          assert(false)  # Unhandled FreeBSD cpu type
-+        }
++        _dir = read_file("//.freebsd_clang_rt_dir", "trim string")
        } else if (is_linux || is_chromeos) {
          if (current_cpu == "x64") {
            _dir = "x86_64-unknown-linux-gnu"
