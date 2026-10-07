@@ -1,0 +1,10 @@
+--- python/pyproject.toml.in.orig	2026-10-07 16:01:35 UTC
++++ python/pyproject.toml.in
+@@ -17,7 +17,6 @@ description = "C++ and Python API for Chemical Formula
+   {name = "G.D. Miron", email = "dan.miron@psi.ch"}
+ ]
+ description = "C++ and Python API for Chemical Formula Parser and Reactions Generator."
+-license = "GPL-3.0-or-later"
+ keywords = ["element", "valence", "entropy", "atomic mass", "heat capacity", "reactions"]
+ 
+ [project.urls]
