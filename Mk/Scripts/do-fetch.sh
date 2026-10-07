@@ -139,7 +139,7 @@ while IFS= read -r _file; do
 			*/*)
 				case ${dp_TARGET} in
 					fetch-list)
-						echo "mkdir -p \"${file%/*}\" && "
+						echo -n "mkdir -p \"${file%/*}\" && "
 						;;
 					*)
 						mkdir -p "${file%/*}"
