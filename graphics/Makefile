@@ -32,6 +32,7 @@
     SUBDIR += R-cran-pROC
     SUBDIR += R-cran-pdftools
     SUBDIR += R-cran-pixmap
+    SUBDIR += R-cran-plotrix
     SUBDIR += R-cran-png
     SUBDIR += R-cran-qcc
     SUBDIR += R-cran-qpdf
