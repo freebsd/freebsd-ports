@@ -1,6 +1,6 @@
 PORTNAME=	pomerium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.3
+DISTVERSION=	0.33.4
 PORTEPOCH=	1
 CATEGORIES=	www
 # Custom distfiles for packages not on GitHub
@@ -33,7 +33,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		FiloSottile:csrf:v0.2.1:filosottile_csrf/vendor/filippo.io/csrf \
 		FiloSottile:keygen:790df0a991a0:filosottile_keygen/vendor/filippo.io/keygen \
 		GoogleCloudPlatform:opentelemetry-operations-go:v0.55.0:googlecloudplatform_opentelemetry_operations_go/vendor/github.com/GoogleCloudPlatform/opentelemetry-operations-go \
-		GoogleCloudPlatform:opentelemetry-operations-go:detectors/gcp/v1.32.0:googlecloudplatform_opentelemetry_operations_go_gcp \
+		GoogleCloudPlatform:opentelemetry-operations-go:detectors/gcp/v1.33.0:googlecloudplatform_opentelemetry_operations_go_gcp \
 		Masterminds:semver:v3.5.0:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Microsoft:go-winio:v0.6.2:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		RaduBerinde:axisds:v0.1.0:raduberinde_axisds/vendor/github.com/RaduBerinde/axisds \
@@ -119,7 +119,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		go-jose:go-jose:v4.1.4:go_jose_go_jose_v4/vendor/github.com/go-jose/go-jose/v4 \
 		go-kit:log:v0.2.1:go_kit_log/vendor/github.com/go-kit/log \
 		go-logfmt:logfmt:v0.6.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
-		go-logr:logr:v1.4.3:go_logr_logr/vendor/github.com/go-logr/logr \
+		go-logr:logr:v1.4.4:go_logr_logr/vendor/github.com/go-logr/logr \
 		go-logr:stdr:v1.2.2:go_logr_stdr/vendor/github.com/go-logr/stdr \
 		go-ole:go-ole:v1.3.0:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-viper:mapstructure:v2.5.0:go_viper_mapstructure_v2/vendor/github.com/go-viper/mapstructure/v2 \
@@ -129,28 +129,28 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		goccy:go-json:v0.10.5:goccy_go_json/vendor/github.com/goccy/go-json \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-jwt:jwt:v5.3.1:golang_jwt_jwt_v5/vendor/github.com/golang-jwt/jwt/v5 \
-		golang:crypto:v0.54.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.57.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:74f9aab9d74a:golang_exp/vendor/golang.org/x/exp \
 		golang:freetype:e2365dfdc4a0:golang_freetype/vendor/github.com/golang/freetype \
 		golang:groupcache:2c02b8208cf8:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:v0.42.0:golang_image/vendor/golang.org/x/image \
-		golang:mod:v0.37.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.57.0:golang_net/vendor/golang.org/x/net \
+		golang:mod:v0.41.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.58.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.36.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:snappy:v1.0.0:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:v0.22.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.47.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.45.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.40.0:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.23.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.48.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.46.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.42.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.15.0:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.47.0:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.49.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:7835f813f4da:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:btree:v1.1.3:google_btree/vendor/github.com/google/btree \
 		google:cel-go:v0.28.1:google_cel_go/vendor/github.com/google/cel-go \
 		google:cel-spec:v0.25.2:google_cel_spec/vendor/cel.dev/expr \
 		google:go-cmp:v0.7.0:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:d00831a3d3e7:google_go_genproto/vendor/google.golang.org/genproto \
-		google:go-genproto:0afa2a65878a:google_go_genproto_apirpc \
+		google:go-genproto:6ac0973c030d:google_go_genproto_apirpc \
 		google:go-jsonnet:v0.22.0:google_go_jsonnet/vendor/github.com/google/go-jsonnet \
 		google:go-tpm:v0.9.8:google_go_tpm/vendor/github.com/google/go-tpm \
 		google:gnostic:e0e09f706281:google_gnostic/vendor/github.com/google/gnostic \
@@ -176,7 +176,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		gregjones:httpcache:901d90724c79:gregjones_httpcache/vendor/github.com/gregjones/httpcache \
 		grpc-ecosystem:go-grpc-middleware:v2.3.3:grpc_ecosystem_go_grpc_middleware_v2/vendor/github.com/grpc-ecosystem/go-grpc-middleware/v2 \
 		grpc-ecosystem:grpc-gateway:v2.29.0:grpc_ecosystem_grpc_gateway_v2/vendor/github.com/grpc-ecosystem/grpc-gateway/v2 \
-		grpc:grpc-go:v1.82.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.83.2:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-hclog:v1.6.2:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
 		hashicorp:go-immutable-radix:v1.0.0:hashicorp_go_immutable_radix/vendor/github.com/hashicorp/go-immutable-radix \
@@ -196,7 +196,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		jackc:puddle:v2.2.2:jackc_puddle_v2/vendor/github.com/jackc/puddle/v2 \
 		johannesboyne:gofakes3:ebf3e50324d3:johannesboyne_gofakes3/vendor/github.com/johannesboyne/gofakes3 \
 		jxskiss:base62:v1.1.0:jxskiss_base62/vendor/github.com/jxskiss/base62 \
-		klauspost:compress:v1.18.6:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.18.7:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v2.3.0:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
 		klauspost:crc32:v1.3.0:klauspost_crc32/vendor/github.com/klauspost/crc32 \
 		kr:pretty:v0.3.1:kr_pretty/vendor/github.com/kr/pretty \
@@ -228,11 +228,11 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		minio:minlz:87eb42fe8882:minio_minlz/vendor/github.com/minio/minlz \
 		mitchellh:hashstructure:v2.0.2:mitchellh_hashstructure_v2/vendor/github.com/mitchellh/hashstructure/v2 \
 		moby:docker-image-spec:v1.3.1:moby_docker_image_spec/vendor/github.com/moby/docker-image-spec \
-		moby:go-archive:v0.2.0:moby_go_archive/vendor/github.com/moby/go-archive \
+		moby:go-archive:v0.3.3:moby_go_archive/vendor/github.com/moby/go-archive \
 		moby:moby:6cbde19f7b9f:moby_moby \
 		moby:patternmatcher:v0.6.1:moby_patternmatcher/vendor/github.com/moby/patternmatcher \
-		moby:sys:user/v0.4.0:moby_sys_user/vendor/github.com/moby/sys \
-		moby:sys:sequential/v0.6.0:moby_sys_sequential \
+		moby:sys:user/v0.4.1:moby_sys_user/vendor/github.com/moby/sys \
+		moby:sys:sequential/v0.7.0:moby_sys_sequential \
 		moby:sys:userns/v0.1.0:moby_sys_userns \
 		moby:term:v0.5.2:moby_term/vendor/github.com/moby/term \
 		modelcontextprotocol:go-sdk:v1.5.0:modelcontextprotocol_go_sdk/vendor/github.com/modelcontextprotocol/go-sdk \
@@ -243,12 +243,12 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		oapi-codegen:runtime:v1.3.1:oapi_codegen_runtime/vendor/github.com/oapi-codegen/runtime \
 		onsi:ginkgo:v1.16.5:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		open-policy-agent:opa:v1.15.1:open_policy_agent_opa/vendor/github.com/open-policy-agent/opa \
-		open-telemetry:opentelemetry-go-contrib:detectors/gcp/v1.43.0:open_telemetry_opentelemetry_go_contrib/vendor/go.opentelemetry.io/contrib \
+		open-telemetry:opentelemetry-go-contrib:detectors/gcp/v1.44.0:open_telemetry_opentelemetry_go_contrib/vendor/go.opentelemetry.io/contrib \
 		open-telemetry:opentelemetry-go-contrib:instrumentation/google.golang.org/grpc/otelgrpc/v0.69.0:open_telemetry_opentelemetry_go_contrib_1 \
 		open-telemetry:opentelemetry-go-contrib:instrumentation/net/http/otelhttp/v0.69.0:open_telemetry_opentelemetry_go_contrib_2 \
 		open-telemetry:opentelemetry-go-contrib:propagators/autoprop/v0.69.0:open_telemetry_opentelemetry_go_contrib_3 \
 		open-telemetry:opentelemetry-go-instrumentation:sdk/v1.2.1:open_telemetry_opentelemetry_go_instrumentation \
-		open-telemetry:opentelemetry-go:v1.44.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
+		open-telemetry:opentelemetry-go:v1.45.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
 		open-telemetry:opentelemetry-proto-go:v1.11.0:open_telemetry_opentelemetry_proto_go \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.1.1:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
@@ -263,7 +263,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		planetscale:vtprotobuf:0393e58bdf10:planetscale_vtprotobuf/vendor/github.com/planetscale/vtprotobuf \
 		pmezard:go-difflib:5d4384ee4fb2:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pomerium:datasource:aec349b682d9:pomerium_datasource/vendor/github.com/pomerium/datasource \
-		pomerium:envoy-custom:16ede7a56f2f:pomerium_envoy_custom/vendor/github.com/pomerium/envoy-custom \
+		pomerium:envoy-custom:8b998d0f6ff3:pomerium_envoy_custom/vendor/github.com/pomerium/envoy-custom \
 		pomerium:protoutil:a733aa3acfed:pomerium_protoutil/vendor/github.com/pomerium/protoutil \
 		pomerium:webauthn:07401bebfe9c:pomerium_webauthn/vendor/github.com/pomerium/webauthn \
 		power-devops:perfstat:82ca36839d55:power_devops_perfstat/vendor/github.com/power-devops/perfstat \
@@ -298,7 +298,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		spf13:cobra:v1.10.2:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.10:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.21.0:spf13_viper/vendor/github.com/spf13/viper \
-		spiffe:go-spiffe:v2.6.0:spiffe_go_spiffe_v2/vendor/github.com/spiffe/go-spiffe/v2 \
+		spiffe:go-spiffe:v2.7.0:spiffe_go_spiffe_v2/vendor/github.com/spiffe/go-spiffe/v2 \
 		sryoya:protorand:e7440656b2a4:sryoya_protorand/vendor/github.com/sryoya/protorand \
 		stretchr:objx:v0.5.3:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.11.1:stretchr_testify/vendor/github.com/stretchr/testify \

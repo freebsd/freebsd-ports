@@ -10,7 +10,8 @@ import (
 )
 
 var sysProcAttr = &syscall.SysProcAttr{
-	Setpgid: true,
+	Setpgid:   true,
+	Pdeathsig: syscall.SIGTERM,
 }
 
 func (srv *Server) runProcessCollector(_ context.Context) {}
