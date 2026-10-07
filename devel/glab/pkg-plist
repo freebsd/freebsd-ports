@@ -86,6 +86,7 @@
 %%MANPAGES%%share/man/man1/glab-deploy-key-list.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key.1.gz
 %%MANPAGES%%share/man/man1/glab-duo-cli.1.gz
+%%MANPAGES%%share/man/man1/glab-duo-cli-update.1.gz
 %%MANPAGES%%share/man/man1/glab-duo.1.gz
 %%MANPAGES%%share/man/man1/glab-gpg-key-add.1.gz
 %%MANPAGES%%share/man/man1/glab-gpg-key-delete.1.gz
@@ -173,6 +174,7 @@
 %%MANPAGES%%share/man/man1/glab-opentofu-state.1.gz
 %%MANPAGES%%share/man/man1/glab-opentofu.1.gz
 %%MANPAGES%%share/man/man1/glab-orbit.1.gz
+%%MANPAGES%%share/man/man1/glab-orbit-update.1.gz
 %%MANPAGES%%share/man/man1/glab-packages-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-packages-download.1.gz
 %%MANPAGES%%share/man/man1/glab-packages-list.1.gz
