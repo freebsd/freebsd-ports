@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+
+Don't forget to uncomment the LoadModule line in your httpd.conf:
+LoadModule evasive_module     libexec/apache24/mod_evasive.so
+
+If you had the old ap24-mod_evasive installed and are installing this one,
+note that in this version to get mod_evasive enabled, you must include
+the directive below in your mod_evasive.conf:
+
+DOSEnabled	true
+
+EOM
+}
+]
