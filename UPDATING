@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261011:
+  AFFECTS: users of devel/maven
+  AUTHOR: michaelo@FreeBSD.org
+
+  The default version of Apache Maven has been bumped to 3.9 which means that
+  the slave port devel/maven39 will be used.
+
 20261003:
   AFFECTS: users of mail/postfix-current
   AUTHOR: otis@FreeBSD.org
