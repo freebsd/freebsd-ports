@@ -1591,7 +1591,6 @@ PKG_NOTE_flavor=	${FLAVOR}
 # using git from finding the ports tree's git repository.
 WRK_ENV+=		HOME=${WRKDIR} \
 				LANG=C.UTF-8 \
-				MACHINE=${MACHINE} \
 				MACHINE_ARCH=${MACHINE_ARCH} \
 				PWD="$${PWD}" \
 				GIT_CEILING_DIRECTORIES=${WRKDIR} \
