@@ -21,6 +21,7 @@ USE_CXXSTD=	c++17 # workaround for https://github.com/hyperdeal/hyperdeal/issues
 
 CXXFLAGS+=	-fPIC
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 USE_GITHUB=	yes
 GH_TAGNAME=	b73a216

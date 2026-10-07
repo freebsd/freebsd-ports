@@ -1,15 +1,25 @@
---- CMakeLists.txt.orig	2022-06-07 08:43:34 UTC
+-- CMaake 4.5 compatibility, see https://gitlab.com/Molcas/OpenMolcas/-/work_items/555
+
+--- CMakeLists.txt.orig	2026-06-14 18:08:35 UTC
 +++ CMakeLists.txt
-@@ -48,7 +48,7 @@ find_program (GIT "git")
- find_program (PERL "perl")
- mark_as_advanced (FORCE GIT PERL)
+@@ -47,7 +47,7 @@ mark_as_advanced (FORCE GIT)
+ find_program (GIT "git")
+ mark_as_advanced (FORCE GIT)
  
 -FIND_PACKAGE (Python COMPONENTS Interpreter)
 +FIND_PACKAGE (Python ${FREEBSD_PYTHON_VER} EXACT COMPONENTS Interpreter)
  
  ################################################################################
  #                                                                              #
-@@ -2375,6 +2375,10 @@ message ("Configuring runtime environment settings:")
+@@ -1886,6 +1886,7 @@ if (EFPLIB)
+                                     -DFRAGLIB_UNDERSCORE_L=ON
+                                     -DFRAGLIB_DEEP=ON
+                                     -DLAPACK_LIBRARIES=${LINALG_LIBRARIES}
++				    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+                          CMAKE_CACHE_ARGS -DCMAKE_C_FLAGS:STRING=${CMAKE_C_FLAGS}
+                                           -DLIBEFP_FORTRAN_INT64:BOOL=${LIBEFP_FORTRAN_INT64}
+                          INSTALL_COMMAND ""
+@@ -2074,6 +2075,10 @@ cmake_host_system_information (RESULT host_system QUER
  cmake_host_system_information (RESULT host_mem QUERY TOTAL_PHYSICAL_MEMORY)
  cmake_host_system_information (RESULT host_name QUERY HOSTNAME)
  cmake_host_system_information (RESULT host_system QUERY OS_NAME)
