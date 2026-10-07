@@ -10,6 +10,31 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20261104:
+AUTHOR: mat@FreeBSD.org
+
+  The ports framework now generates an SBOM file for each package and
+  subpackage.  The file uses the pkg-config format, see pc(5).  It is
+  installed as ${PREFIX}/share/sbom/pc/<package>.pc.  It is added to
+  the plist automatically.
+
+  The file records the name, description, version, license,
+  maintainer, homepage, source URL, CPE and run-time dependencies.
+  The values come from the existing port variables.  A port can
+  override them with these variables:
+
+    PORT_SBOM_VERSION    default: PORTVERSION
+    PORT_SBOM_DESC[.sp]  default: COMMENT[.sp]
+    PORT_SBOM_URL        default: first entry of WWW
+    PORT_SBOM_LICENSE    default: LICENSE
+    PORT_SBOM_CPE        default: the CPE string from USES=cpe
+    PORT_SBOM_SOURCE     default: first master site + main distfile,
+                         only when the main distfile is unambiguous
+    PORT_SBOM_COPYRIGHT  default: empty
+    PORT_SBOM_PROVIDES   default: empty
+
+  Define DISABLE_SBOM in your make.conf to turn off SBOM generation.
+
 20261006:
 AUTHOR: python@FreeBSD.org
 
