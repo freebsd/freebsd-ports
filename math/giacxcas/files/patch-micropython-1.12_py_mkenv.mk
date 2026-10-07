@@ -1,8 +1,8 @@
---- micropython-1.12/py/mkenv.mk.orig	2020-04-13 05:21:17 UTC
+--- micropython-1.12/py/mkenv.mk.orig	2026-10-04 08:37:56 UTC
 +++ micropython-1.12/py/mkenv.mk
-@@ -46,15 +46,15 @@ PYTHON = python3
+@@ -46,15 +46,15 @@ PYTHON = /usr/local/bin/python3.12
  TOUCH = touch
- PYTHON = python3
+ PYTHON = /usr/local/bin/python3.12
  
 -AS = $(CROSS_COMPILE)as
 -CC = $(CROSS_COMPILE)gcc

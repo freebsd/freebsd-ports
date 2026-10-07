@@ -1,6 +1,5 @@
 PORTNAME=	giacxcas
-DISTVERSION=	1.9.0-85
-PORTREVISION=	9
+DISTVERSION=	2.0.0-21
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.univ-grenoble-alpes.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://cocoa.dima.unige.it/cocoa/cocoalib/tgz/:cocoa \
@@ -49,7 +48,7 @@ USES=		autoreconf blaslapack compiler:c++14-lang desktop-file-utils fortran \
 		gettext gl gmake gnome jpeg libtool localbase ncurses perl5 \
 		python readline shebangfix tex xorg
 GNU_CONFIGURE=	yes
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++14
 USE_GL=		gl
 USE_XORG=	x11 xcursor xext xfixes xft xi xinerama xrender
 USE_TEX=	latex:build dvipsk:build
@@ -143,7 +142,8 @@ pre-configure:
 		--with-cxx="${CXX}")
 	@(cd ${FLTKDEV-GIAC} && ${SETENV} ${CONFIGURE_ENV} ./configure \
 		--prefix=${FLTKDEV-GIAC} \
-		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}")
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC" \
+		CC="${CC}" CFLAGS="${CFLAGS} -fPIC")
 
 post-configure:	# malloc.h on 13-CURRENT is missing mallinfo and compilation fails after it is discovered
 	@${FIND} ${WRKSRC} -name config.h | ${XARGS} ${REINPLACE_CMD} -e 's|#define HAVE_MALLOC_H 1|/* #undef HAVE_MALLOC_H */|'

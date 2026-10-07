@@ -1,8 +1,8 @@
 - workaroud of the removal of the ANYARG macro in pari-2.15.0
 
---- src/pari.cc.orig	2022-03-16 11:38:05 UTC
+--- src/pari.cc.orig	2024-05-22 16:04:06 UTC
 +++ src/pari.cc
-@@ -44,6 +44,9 @@ using namespace std;
+@@ -55,6 +55,9 @@ using namespace std;
  #include <pthread.h>
  #endif
  
