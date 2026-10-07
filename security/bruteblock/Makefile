@@ -1,11 +1,11 @@
 PORTNAME=	bruteblock
-PORTVERSION=	0.1.1
+PORTVERSION=	0.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Software for blocking bruteforce attacks with ipfw
-WWW=		https://samm.kiev.ua/bruteblock/
+WWW=		https://github.com/samm-git/bruteblock/edit/master/doc/README
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
