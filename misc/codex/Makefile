@@ -1,7 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.155.1
-PORTREVISION=	1
+DISTVERSION=	0.160.1
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -38,18 +37,12 @@ USE_GNOME=	glib20
 SHEBANG_FILES=	codex-rs/app-server-protocol/scripts/write_schema_fixtures.py \
 		codex-rs/skills/src/assets/samples/imagegen/scripts/image_gen.py \
 		codex-rs/skills/src/assets/samples/imagegen/scripts/remove_chroma_key.py \
-		codex-rs/skills/src/assets/samples/plugin-creator/scripts/create_basic_plugin.py \
-		codex-rs/skills/src/assets/samples/plugin-creator/scripts/identifier_validation.py \
-		codex-rs/skills/src/assets/samples/plugin-creator/scripts/read_marketplace_name.py \
-		codex-rs/skills/src/assets/samples/plugin-creator/scripts/update_plugin_cachebuster.py \
-		codex-rs/skills/src/assets/samples/plugin-creator/scripts/validate_plugin.py \
 		codex-rs/skills/src/assets/samples/skill-creator/scripts/generate_openai_yaml.py \
 		codex-rs/skills/src/assets/samples/skill-creator/scripts/init_skill.py \
 		codex-rs/skills/src/assets/samples/skill-creator/scripts/quick_validate.py \
 		codex-rs/skills/src/assets/samples/skill-installer/scripts/github_utils.py \
 		codex-rs/skills/src/assets/samples/skill-installer/scripts/install-skill-from-github.py \
 		codex-rs/skills/src/assets/samples/skill-installer/scripts/list-skills.py \
-		codex-rs/skills/tests/test_plugin_creator.py \
 		codex-rs/skills/tests/test_skill_installer.py \
 		codex-rs/vendor/bubblewrap/demos/userns-block-fd.py \
 		codex-rs/vendor/bubblewrap/tests/test-seccomp.py \
@@ -102,6 +95,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/environment_info.rs \
 		${BUILD_WRKSRC}/cli/src/debug_sandbox/pid_tracker.rs \
+		${BUILD_WRKSRC}/cli/tests/exec_server/pid_namespace_tests.rs \
 		${BUILD_WRKSRC}/core/src/command_canonicalization.rs \
 		${BUILD_WRKSRC}/core/src/command_canonicalization_tests.rs \
 		${BUILD_WRKSRC}/core/src/context/world_state/environment_render_tests.rs \
@@ -124,6 +118,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec_stdin_review_size.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
 		${BUILD_WRKSRC}/exec-server/src/process_sandbox_tests.rs \
+		${BUILD_WRKSRC}/exec-server/src/shell_snapshot_file_tests.rs \
 		${BUILD_WRKSRC}/exec-server/src/shell_snapshot_tests.rs \
 		${BUILD_WRKSRC}/exec-server/tests/common/fake_bwrap.rs \
 		${BUILD_WRKSRC}/exec-server/tests/exec_process.rs \
@@ -166,6 +161,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/hooks.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks_mcp.rs \
 		${BUILD_WRKSRC}/core/tests/suite/interrupt_hooks.rs \
+		${BUILD_WRKSRC}/core/tests/suite/mcp_subagent_elicitation.rs \
 		${BUILD_WRKSRC}/core/tests/suite/mcp_user_verification.rs \
 		${BUILD_WRKSRC}/core/tests/suite/network_approval.rs \
 		${BUILD_WRKSRC}/core/tests/suite/openai_file_mcp.rs \
@@ -183,10 +179,14 @@ post-patch:
 		${BUILD_WRKSRC}/hooks/src/engine/mod_tests.rs \
 		${BUILD_WRKSRC}/hooks/src/events/compact.rs \
 		${BUILD_WRKSRC}/hooks/src/events/post_tool_use.rs \
+		${BUILD_WRKSRC}/linux-sandbox/tests/suite/daemon_sockets_tests.rs \
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/landlock.rs \
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/managed_proxy.rs \
+		${BUILD_WRKSRC}/linux-sandbox/tests/suite/managed_proxy_unix_sockets_tests.rs \
 		${BUILD_WRKSRC}/memories/write/src/startup_tests.rs \
+		${BUILD_WRKSRC}/rmcp-client/tests/stdio_descriptor_boundary.rs \
 		${BUILD_WRKSRC}/rmcp-client/tests/stdio_stderr_cleanup.rs \
+		${BUILD_WRKSRC}/sandboxing/src/seatbelt_daemon_socket_tests.rs \
 		${BUILD_WRKSRC}/skills/src/invocation.rs \
 		${BUILD_WRKSRC}/skills/src/invocation_tests.rs \
 		${BUILD_WRKSRC}/tui/src/app/tests.rs \
@@ -206,7 +206,7 @@ post-build-COMPLETIONS-on:
 .endfor
 
 do-install:
-.for prog in ${PLIST_FILES:Mbin/*:S|bin/||}
+.for prog in ${PLIST_FILES:Mbin/*:T}
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${prog} \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
@@ -225,5 +225,16 @@ do-install-COMPLETIONS-on:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${BUILD_WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+# Use ThinLTO for test binaries while retaining the normal dependency cache.
+# Disabling LTO for the whole Cargo profile would rebuild every dependency.
+fast-build: configure
+.for crate bin in ${PORTNAME}-cli ${PORTNAME} \
+	${PORTNAME}-code-mode-host ${PORTNAME}-code-mode-host \
+	${PORTNAME}-responses-api-proxy ${PORTNAME}-responses-api-proxy
+	@${CARGO_CARGO_RUN} ${RUSTC} --manifest-path ${CARGO_CARGOTOML} \
+		--offline --release -p ${crate} --bin ${bin} -- \
+		-C lto=thin -C codegen-units=16
+.endfor
 
 .include <bsd.port.mk>

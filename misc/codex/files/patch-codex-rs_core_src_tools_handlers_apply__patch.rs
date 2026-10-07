@@ -1,6 +1,6 @@
---- codex-rs/core/src/tools/handlers/apply_patch.rs.orig	2026-10-02 02:01:57 UTC
+--- codex-rs/core/src/tools/handlers/apply_patch.rs.orig	2026-10-05 17:16:58 UTC
 +++ codex-rs/core/src/tools/handlers/apply_patch.rs
-@@ -43,6 +43,7 @@ use codex_exec_server::ExecutorFileSystem;
+@@ -46,6 +46,7 @@ use codex_exec_server::ExecutorFileSystem;
  use codex_apply_patch::Hunk;
  use codex_apply_patch::StreamingPatchParser;
  use codex_exec_server::ExecutorFileSystem;
@@ -8,7 +8,7 @@
  use codex_features::Feature;
  use codex_protocol::models::AdditionalPermissionProfile;
  use codex_protocol::models::FileSystemPermissions;
-@@ -72,6 +73,23 @@ fn apply_patch_file_update_mode(turn: &TurnContext) ->
+@@ -74,6 +75,23 @@ fn apply_patch_file_update_mode(turn: &TurnContext) ->
      }
  }
  
@@ -32,7 +32,7 @@
  /// Handles freeform `apply_patch` requests and routes verified patches to the
  /// selected environment filesystem.
  #[derive(Default)]
-@@ -400,12 +418,14 @@ impl ApplyPatchHandler {
+@@ -357,12 +375,14 @@ impl ApplyPatchHandler {
          };
          let fs = turn_environment.environment.get_filesystem();
          let sandbox = turn_environment.sandbox_context(/*additional_permissions*/ None);
@@ -48,7 +48,7 @@
          )
          .await
          {
-@@ -510,12 +530,13 @@ pub(crate) async fn intercept_apply_patch(
+@@ -467,12 +487,13 @@ pub(crate) async fn intercept_apply_patch(
  ) -> Result<Option<FunctionToolOutput>, FunctionCallError> {
      let turn = &step_context.turn;
      let sandbox = turn_environment.sandbox_context(/*additional_permissions*/ None);

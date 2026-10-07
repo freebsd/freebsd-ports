@@ -1,12 +1,4 @@
 CARGO_CRATES=	Inflector-0.11.4 \
-		actix-codec-0.5.2 \
-		actix-http-3.11.2 \
-		actix-router-0.5.3 \
-		actix-rt-2.11.0 \
-		actix-server-2.6.0 \
-		actix-service-2.0.3 \
-		actix-utils-3.0.1 \
-		actix-web-4.12.1 \
 		addr2line-0.25.1 \
 		adler2-2.0.1 \
 		aead-0.5.2 \
@@ -72,8 +64,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		autocfg-1.5.0 \
 		aws-config-1.8.12 \
 		aws-credential-types-1.2.11 \
-		aws-lc-rs-1.16.2 \
-		aws-lc-sys-0.39.0 \
+		aws-lc-rs-1.18.1 \
+		aws-lc-sys-0.45.0 \
 		aws-runtime-1.5.17 \
 		aws-sdk-signin-1.2.0 \
 		aws-sdk-sso-1.91.0 \
@@ -133,13 +125,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		byteorder-lite-0.1.0 \
 		bytes-1.12.1 \
 		bytes-utils-0.1.4 \
-		bytestring-1.5.0 \
 		bzip2-0.5.2 \
 		bzip2-sys-0.1.13+1.0.8 \
 		cached-0.56.0 \
 		cached_proc_macro-0.25.0 \
 		cached_proc_macro_types-0.1.1 \
 		calendrical_calculations-0.2.4 \
+		caseless-0.2.2 \
 		castaway-0.2.4 \
 		cbc-0.1.2 \
 		cc-1.2.55 \
@@ -331,7 +323,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		filetime-0.2.27 \
 		find-crate-0.6.3 \
 		find-msvc-tools-0.1.9 \
-		findshlibs-0.10.2 \
 		finl_unicode-1.4.0 \
 		fixed_decimal-0.7.2 \
 		fixedbitset-0.4.2 \
@@ -444,7 +435,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		gstreamer-base-sys-0.25.3 \
 		gstreamer-sys-0.25.2 \
 		gzip-header-1.0.0 \
-		h2-0.4.16 \
+		h2-0.4.19 \
 		half-2.7.1 \
 		hash32-0.2.1 \
 		hash32-0.3.1 \
@@ -468,7 +459,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hmac-0.12.1 \
 		hmac-0.13.0 \
 		home-0.5.12 \
-		hostname-0.4.2 \
 		http-0.2.12 \
 		http-1.4.0 \
 		http-body-0.4.6 \
@@ -514,7 +504,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		image-webp-0.2.4 \
 		imara-diff-0.1.8 \
 		imara-diff-0.2.0 \
-		impl-more-0.1.9 \
 		include_dir-0.7.4 \
 		include_dir_macros-0.7.4 \
 		indenter-0.3.4 \
@@ -564,7 +553,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		kstring-2.0.2 \
 		lab-0.11.0 \
 		landlock-0.4.4 \
-		language-tags-0.3.2 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.186 \
@@ -575,14 +563,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libsqlite3-sys-0.37.0 \
 		line-clipping-0.3.7 \
 		link-section-0.17.2 \
-		linked-hash-map-0.5.6 \
 		linktime-proc-macro-0.1.0 \
 		linux-keyutils-0.2.4 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.1 \
 		litrs-1.0.0 \
-		local-waker-0.1.4 \
 		lock_api-0.4.14 \
 		lock_free_hashtable-0.1.4 \
 		log-0.4.34 \
@@ -786,7 +772,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		quick-xml-0.41.0 \
 		quickcheck-1.1.0 \
 		quinn-0.11.9 \
-		quinn-proto-0.11.14 \
+		quinn-proto-0.11.15 \
 		quinn-udp-0.5.14 \
 		quinn-udp-0.6.1 \
 		quote-1.0.45 \
@@ -881,10 +867,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rusticata-macros-4.1.0 \
 		rustix-0.38.44 \
 		rustix-1.1.4 \
-		rustls-0.23.36 \
+		rustls-0.23.45 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.14.0 \
-		rustls-webpki-0.103.13 \
+		rustls-platform-verifier-0.7.0 \
+		rustls-platform-verifier-android-0.1.1 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
 		rustyline-14.0.0 \
 		ryu-1.0.22 \
@@ -916,13 +904,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		self_cell-1.2.2 \
 		semver-1.0.27 \
 		sentry-0.46.1 \
-		sentry-actix-0.46.1 \
-		sentry-backtrace-0.46.1 \
-		sentry-contexts-0.46.1 \
 		sentry-core-0.46.1 \
-		sentry-debug-images-0.46.1 \
-		sentry-panic-0.46.1 \
-		sentry-tracing-0.46.1 \
 		sentry-types-0.46.1 \
 		sequence_trie-0.3.6 \
 		serde-1.0.228 \
@@ -1122,7 +1104,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		typenum-1.20.0 \
 		ucd-trie-0.1.7 \
 		uds_windows-1.1.0 \
-		uname-0.1.1 \
 		unarray-0.1.4 \
 		unic-langid-0.9.6 \
 		unic-langid-impl-0.9.6 \
@@ -1143,8 +1124,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.7.1 \
 		untrusted-0.9.0 \
-		ureq-3.1.4 \
-		ureq-proto-0.5.3 \
 		url-2.5.8 \
 		urlencoding-2.1.3 \
 		utf-8-0.7.6 \
@@ -1283,7 +1262,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		xmlparser-0.13.6 \
 		xxhash-rust-0.8.18 \
 		xz2-0.1.7 \
-		yaml-rust-0.4.5 \
 		yansi-1.0.1 \
 		yasna-0.6.0 \
 		yoke-0.8.2 \
@@ -1319,7 +1297,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		runfiles@git+https://github.com/dzbarsky/rules_rust?rev=b56cbaa8465e74127f1ea216f813cd377295ad81\#b56cbaa8465e74127f1ea216f813cd377295ad81 \
 		nucleo,nucleo-matcher@git+https://github.com/helix-editor/nucleo.git?rev=4253de9faabb4e5c6d81d946a5e35a90f87347ee\#4253de9faabb4e5c6d81d946a5e35a90f87347ee \
 		appcontainer_common,learning_mode_core,learning_mode_windows,mxc_config_contract,mxc_telemetry,process_security_environment_spec,sandbox_spec,wxc_common@git+https://github.com/microsoft/mxc?rev=6cd3d58f05d3447e67109cfb75e042803b843ca4\#6cd3d58f05d3447e67109cfb75e042803b843ca4 \
-		crossterm@git+https://github.com/openai-oss-forks/crossterm?rev=45fecb9508105988f42fe6ff0441783ed3717f92\#45fecb9508105988f42fe6ff0441783ed3717f92 \
 		tungstenite@git+https://github.com/openai-oss-forks/tungstenite-rs?rev=4fffad30fe373adbdcffab9545e9e9bf4f2fc19f\#4fffad30fe373adbdcffab9545e9e9bf4f2fc19f \
+		crossterm@git+https://github.com/openai-oss-forks/crossterm?rev=efa177859fd9623d57b9fe7ae9bf491ae1ac6ec4\#efa177859fd9623d57b9fe7ae9bf491ae1ac6ec4 \
 		tokio-tungstenite@git+https://github.com/openai-oss-forks/tokio-tungstenite?rev=0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186\#0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186 \
-		notify,notify-types@git+https://github.com/notify-rs/notify.git?rev=48415246732dc426577684bf03c558579cf0b081\#48415246732dc426577684bf03c558579cf0b081
+		notify,notify-types@git+https://github.com/notify-rs/notify.git?rev=48415246732dc426577684bf03c558579cf0b081\#48415246732dc426577684bf03c558579cf0b081 \
+		h3,h3-quinn@git+https://github.com/hyperium/h3?rev=e07e69412876f7e26f026bd75a48b2704d8c8283\#e07e69412876f7e26f026bd75a48b2704d8c8283
