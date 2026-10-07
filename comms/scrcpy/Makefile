@@ -1,6 +1,6 @@
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1
+DISTVERSION=	5.0
 CATEGORIES=	comms net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/:server
 DISTFILES=	${SERVER_FILE}:server
@@ -13,6 +13,8 @@ WWW=		https://github.com/Genymobile/scrcpy
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${LOCALBASE}/include/va/va.h:multimedia/libva \
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 RUN_DEPENDS=	adb:devel/android-tools
 

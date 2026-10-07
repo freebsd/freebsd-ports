@@ -1,6 +1,6 @@
---- app/meson.build.orig	2026-05-12 19:35:47 UTC
+--- app/meson.build.orig	2026-10-05 10:26:14 UTC
 +++ app/meson.build
-@@ -70,8 +70,8 @@ feature_test_macros = [
+@@ -74,8 +74,8 @@ feature_test_macros = [
  
  feature_test_macros = [
      '-D_GNU_SOURCE',
@@ -11,7 +11,22 @@
  ]
  
  conf = configuration_data()
-@@ -207,10 +207,10 @@ install_data('data/bash-completion/scrcpy',
+@@ -105,12 +105,12 @@ add_project_arguments(feature_test_macros, language: '
+ 
+ add_project_arguments(feature_test_macros, language: 'c')
+ 
+-v4l2_support = get_option('v4l2') and host_machine.system() == 'linux'
++v4l2_support = get_option('v4l2') and (host_machine.system() == 'linux' or host_machine.system() == 'freebsd')
+ if v4l2_support
+     src += [ 'src/v4l2_sink.c' ]
+ endif
+ 
+-vaapi_support = get_option('vaapi') and host_machine.system() == 'linux'
++vaapi_support = get_option('vaapi') and (host_machine.system() == 'linux' or host_machine.system() == 'freebsd')
+ if vaapi_support
+     src += [ 'src/interop/interop_vaapi.c' ]
+ endif
+@@ -252,10 +252,10 @@ install_data('data/bash-completion/scrcpy',
  install_data('data/zsh-completion/_scrcpy',
               install_dir: datadir / 'zsh/site-functions')
  install_data('data/bash-completion/scrcpy',
