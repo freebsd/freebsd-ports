@@ -4,7 +4,7 @@ DISTVERSION=	0.40.0
 CATEGORIES=	misc # machine-learning
 
 ## Q: Why does misc/ollama use the fork yurivict/ollama ?
-## A: Because Ollama's upstream refused to accapt FreeBSD patches because Ollama doesn't have CI for FreeBSD and they believe that such patches would
+## A: Because Ollama's upstream refused to accept FreeBSD patches because Ollama doesn't have CI for FreeBSD and they believe that such patches would
 ##    be deteriorating if not tested all the time.
 ##    They refused to accept patches in their Discord channel.
 ##    It is possible to patch exising Go sources using patches under files/ but not when whole Go modules with their own dependencies are added.
