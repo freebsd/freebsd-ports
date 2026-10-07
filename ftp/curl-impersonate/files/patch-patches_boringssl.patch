@@ -1,6 +1,6 @@
---- patches/boringssl.patch.orig	2026-08-08 19:58:38 UTC
+--- patches/boringssl.patch.orig	2026-09-16 15:58:32 UTC
 +++ patches/boringssl.patch
-@@ -316,13 +316,15 @@ +++ b/include/openssl/target.h
+@@ -317,13 +317,15 @@ +++ b/include/openssl/target.h
  index 2372a055d..f8790c3b2 100644
  --- a/include/openssl/target.h
  +++ b/include/openssl/target.h
