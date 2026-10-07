@@ -1,7 +1,6 @@
 PORTNAME=	blackbox_exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.0
-PORTREVISION=	11
+DISTVERSION=	0.29.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -15,6 +14,7 @@ USES=		cpe go:modules
 CPE_VENDOR=	prometheus
 USE_RC_SUBR=	blackbox_exporter
 GO_MODULE=	github.com/prometheus/blackbox_exporter
+GO_LDFLAGS=	-X github.com/prometheus/common/version.Version=${DISTVERSION}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	DISTVERSIONFULL=${DISTVERSIONFULL}
