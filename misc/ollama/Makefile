@@ -1,6 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.34.3
+DISTVERSION=	0.40.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,15 +27,15 @@ USE_LDCONFIG=	${PREFIX}/lib/ollama ${PREFIX}/lib/ollama/vulkan
 USE_RC_SUBR=	ollama
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	mlc-ai:xgrammar:v0.2.5:xgrammar/xgrammar
+GH_TUPLE=	mlc-ai:xgrammar:v0.2.7:xgrammar/xgrammar
 
 GO_MODULE=	github.com/yurivict/${PORTNAME} # fork with FreeBSD patches
 GO_TARGET=	.
 GO_ENV+=	CGO_CXXFLAGS="${CXXFLAGS}"
 
-LLAMA_CPP_VERSION=	b10760	# from the LLAMA_CPP_VERSION file in the llama.cpp repo
-LLAMA_CPP_SO_VERSION=	0.3.0
-GGML_SO_VERSION=	0.22.0	# tied to LLAMA_CPP_VERSION; update when llama.cpp changes
+LLAMA_CPP_VERSION=	b11351	# from the LLAMA_CPP_VERSION file in the llama.cpp repo
+LLAMA_CPP_SO_VERSION=	0.5.0
+GGML_SO_VERSION=	0.25.3
 MLX_CORE_VERSION=	0.31.2
 MLX_C_VERSION=		fba4470b89073180056c9ea46c443051375f7399
 JSON_VERSION=		3.11.3
