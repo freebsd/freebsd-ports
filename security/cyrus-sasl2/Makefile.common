@@ -83,6 +83,14 @@ CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 CPPFLAGS+=	-fPIC
 .endif
 
+.if ${PORT_OPTIONS:MLMDB}
+.if ${PORT_OPTIONS:MLMDB0}
+LIB_DEPENDS+=	liblmdb.so.0:databases/lmdb0
+.else
+LIB_DEPENDS+=	liblmdb.so.1:databases/lmdb
+.endif
+.endif
+
 .if ${PORT_OPTIONS:MSASLDB_IN_VAR}
 SASLDB_DIR=	/var/db/sasl2
 .else
