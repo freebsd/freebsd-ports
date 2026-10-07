@@ -1,6 +1,6 @@
 PORTNAME=	x11appjail
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	security
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -33,26 +33,10 @@ GH_PROJECT=	x11appjail
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-PORTEXAMPLES=	*
-
-OPTIONS_DEFINE=		BLAKE3 EXAMPLES
+OPTIONS_DEFINE=		BLAKE3
 OPTIONS_DEFAULT=	BLAKE3
 
 BLAKE3_DESC=		Enable support for Blake3
 BLAKE3_RUN_DEPENDS=	b3sum:sysutils/b3sum
-
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
-	@cd ${WRKSRC}/share/examples/x11appjail && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-	@for app in ${STAGEDIR}${EXAMPLESDIR}/Apps/*; do \
-		${CHMOD} +x $${app}/build.sh; \
-		${CHMOD} +x $${app}/create; \
-		${CHMOD} +x $${app}/install; \
-		${CHMOD} +x $${app}/run; \
-		${CHMOD} +x $${app}/uninstall; \
-		if [ -f "$${app}/X" ]; then ${CHMOD} +x $${app}/X; fi; \
-		${CHMOD} +x $${app}/.reproduce/build.sh; \
-		if [ -f "$${app}/perms.sh" ]; then ${CHMOD} +x $${app}/perms.sh; fi; \
-	done
 
 .include <bsd.port.mk>
