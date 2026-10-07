@@ -1,6 +1,7 @@
 PORTNAME=	curl-impersonate
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	https://github.com/google/boringssl/archive/:boringssl \
 		https://github.com/c-ares/c-ares/releases/download/v1.34.8/:cares \
@@ -42,8 +43,6 @@ BORING_SSL_COMMIT=	156c7b75ae9b8c3b3f847acf264f17594c3859fb
 
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_UNSAFE=	yes
-
 post-patch:
 	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/${BORING_SSL_COMMIT}.zip ${WRKSRC}/${BORING_SSL_COMMIT}.zip
 	@${RLN} ${DISTDIR}/${DIST_SUBDIR}/c-ares-1.34.8.tar.gz ${WRKSRC}/c-ares-1.34.8.tar.gz
@@ -71,5 +70,7 @@ pre-configure:
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/CMakeFiles
 	@${RM} ${STAGEDIR}${PREFIX}/LICENSE*
+	# move curl headers to include/curl-impersonate, before https://github.com/lexiforest/curl-impersonate/pull/300 lands
+	@${MV} ${STAGEDIR}${PREFIX}/include/curl ${STAGEDIR}${PREFIX}/include/curl-impersonate
 
 .include <bsd.port.mk>
