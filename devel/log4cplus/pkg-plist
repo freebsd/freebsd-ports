@@ -1,4 +1,5 @@
 bin/loggingserver
+include/log4cplus/androidappender.h
 include/log4cplus/appender.h
 include/log4cplus/asyncappender.h
 include/log4cplus/boost/deviceappender.hxx
@@ -76,7 +77,7 @@ lib/cmake/log4cplus/log4cplusConfigVersion.cmake
 lib/cmake/log4cplus/log4cplusTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/log4cplus/log4cplusTargets.cmake
 lib/liblog4cplus.so
-lib/liblog4cplus.so.9
+lib/liblog4cplus.so.11
 libdata/pkgconfig/log4cplus.pc
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/LICENSE
