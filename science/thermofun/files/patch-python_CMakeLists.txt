@@ -1,0 +1,60 @@
+--- python/CMakeLists.txt.orig	2026-10-05 10:38:56 UTC
++++ python/CMakeLists.txt
+@@ -7,47 +7,16 @@ if(NOT DEFINED THERMOFUN_PYTHON_INSTALL_PREFIX)
+ 
+ # Install where the python package is installed to CMAKE_INSTALL_PREFIX if not given
+ if(NOT DEFINED THERMOFUN_PYTHON_INSTALL_PREFIX)
++    set(THERMOFUN_PYTHON_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
++endif()
+ 
+-# Install the ThermoFun python package using setuptools
+-install(CODE
+-"
+-   if(${CMAKE_CXX_COMPILER_ID} STREQUAL MSVC)
+-      execute_process(
+-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:PyThermoFun>
+-                ${CMAKE_CURRENT_BINARY_DIR}/src/thermofun/$<TARGET_FILE_NAME:PyThermoFun>
+-      )
+-   endif()
+-
+-   execute_process(
+-        COMMAND ${Python3_EXECUTABLE} -m pip install ${CMAKE_CURRENT_BINARY_DIR} -vv
+-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+-"
++# Just install the shared object library built by pybind11 natively
++install(TARGETS PyThermoFun
++    DESTINATION "${THERMOFUN_PYTHON_INSTALL_PREFIX}/lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages/thermofun"
+ )
+-
+-else()
+-
+-# If the path is already in Windows format (with backslashes), it can't be added directly
+-# to the string below, otherwise CMake will later complain about "Invalid escape sequence".
+-file(TO_CMAKE_PATH "${THERMOFUN_PYTHON_INSTALL_PREFIX}" THERMOFUN_PYTHON_INSTALL_PREFIX)
+-message(STATUS "THERMOFUN_PYTHON_INSTALL_PREFIX: ${THERMOFUN_PYTHON_INSTALL_PREFIX}")
+-
+-# Install the ThermoFun python package using setuptools
+-install(CODE
+-"
+-   file(TO_NATIVE_PATH \"${THERMOFUN_PYTHON_INSTALL_PREFIX}\" THERMOFUN_PYTHON_INSTALL_PREFIX_NATIVE)
+-
+-   if(${CMAKE_CXX_COMPILER_ID} STREQUAL MSVC)
+-      execute_process(
+-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:PyThermoFun>
+-                ${CMAKE_CURRENT_BINARY_DIR}/src/thermofun/$<TARGET_FILE_NAME:PyThermoFun>
+-        )
+-    endif()
+-
+-    execute_process(
+-        COMMAND ${Python3_EXECUTABLE} -m pip install --prefix \${THERMOFUN_PYTHON_INSTALL_PREFIX_NATIVE} ${CMAKE_CURRENT_BINARY_DIR} -vv
+-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+-"
++ 
++# Install the Python source wrapper files natively 
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/thermofun/
++        DESTINATION "${THERMOFUN_PYTHON_INSTALL_PREFIX}/lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages/thermofun"
++        FILES_MATCHING PATTERN "*.py"
+ )
+-
+-endif()
+-

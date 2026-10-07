@@ -4,8 +4,11 @@ include/ThermoFun/Common/Exception.h
 include/ThermoFun/Common/OutputToCSV.h
 include/ThermoFun/Common/OutputWaterSteamConventionProp.h
 include/ThermoFun/Common/ParseJsonToData.h
+include/ThermoFun/Common/Real.hpp
+include/ThermoFun/Common/Rounding.hpp
 include/ThermoFun/Common/ScalarTypes.hpp
 include/ThermoFun/Common/ThermoOmp.h
+include/ThermoFun/Common/ThermoProperty.hpp
 include/ThermoFun/Common/ThermoScalar.hpp
 include/ThermoFun/Common/Units.hpp
 include/ThermoFun/Database.h
@@ -21,6 +24,8 @@ include/ThermoFun/Reactions/RyzhenkoBryzgalyn.h
 include/ThermoFun/Reactions/Volume_function_of_T.h
 include/ThermoFun/Substance.h
 include/ThermoFun/Substances/EmpiricalCpIntegration.h
+include/ThermoFun/Substances/Gases/CGFanalytic.hpp
+include/ThermoFun/Substances/Gases/CGFpure.hpp
 include/ThermoFun/Substances/Gases/GasCGF.h
 include/ThermoFun/Substances/Gases/GasCORK.h
 include/ThermoFun/Substances/Gases/GasPR78.h
@@ -47,6 +52,7 @@ include/ThermoFun/Substances/Solvent/Reaktoro/WaterHelmholtzStateWagnerPruss.hpp
 include/ThermoFun/Substances/Solvent/Reaktoro/WaterThermoState.hpp
 include/ThermoFun/Substances/Solvent/Reaktoro/WaterThermoStateUtils.hpp
 include/ThermoFun/Substances/Solvent/Reaktoro/WaterUtils.hpp
+include/ThermoFun/Substances/Solvent/SolventDensityDerivatives.hpp
 include/ThermoFun/Substances/Solvent/WaterElectroFernandez1997.h
 include/ThermoFun/Substances/Solvent/WaterElectroSverjensky2014.h
 include/ThermoFun/Substances/Solvent/WaterHGK-JNgems.h
@@ -68,12 +74,8 @@ lib/cmake/ThermoFun/ThermoFunConfigVersion.cmake
 lib/cmake/ThermoFun/ThermoFunTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ThermoFun/ThermoFunTargets.cmake
 lib/libThermoFun.so
-%%PYTHON_SITELIBDIR%%/thermofun-0.5.0.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/thermofun-0.5.0.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/thermofun-0.5.0.dist-info/RECORD
-%%PYTHON_SITELIBDIR%%/thermofun-0.5.0.dist-info/REQUESTED
-%%PYTHON_SITELIBDIR%%/thermofun-0.5.0.dist-info/WHEEL
-%%PYTHON_SITELIBDIR%%/thermofun-0.5.0.dist-info/direct_url.json
-%%PYTHON_SITELIBDIR%%/thermofun-0.5.0.dist-info/top_level.txt
-%%PYTHON_SITELIBDIR%%/thermofun/PyThermoFun%%PYTHON_TAG%%.so
-%%PYTHON_SITELIBDIR%%/thermofun/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/thermofun/PyThermoFun%%PYTHON_TAG%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/thermofun/__init__.py
+@dir include/ThermoFun/Substances/Gases/tools
+%%PYTHON%%@dir %%PYTHON_SITELIBDIR%%/thermofun/Batch
+%%PYTHON%%@dir %%PYTHON_SITELIBDIR%%/thermofun/Common
