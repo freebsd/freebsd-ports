@@ -1,6 +1,6 @@
 PORTNAME=	pprof
 DISTVERSION=	2024.12.09 # the upstream has no plans to make releases: https://github.com/google/pprof/issues/714#issuecomment-1192930097
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

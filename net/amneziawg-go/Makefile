@@ -1,5 +1,6 @@
 PORTNAME=	amneziawg-go
 DISTVERSION=	3.1.20260828
+PORTREVISION=	1
 CATEGORIES=	net net-vpn
 
 MAINTAINER=	vova@zote.me

@@ -1,6 +1,7 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.11.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/:netdata \
 		https://dl.nkeor.me/freebsd/netdata/:dashboard \

@@ -1,6 +1,7 @@
 PORTNAME=	harica
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl

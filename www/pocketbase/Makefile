@@ -1,6 +1,7 @@
 PORTNAME=	pocketbase
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.40.4
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	chris.longros@gmail.com
