@@ -28,6 +28,14 @@ GNU_CONFIGURE=	yes
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
+post-extract:
+	@${MV} ${WRKSRC}/src/math/math.f90 ${WRKSRC}/src/math/math.F90
+	@${MV} ${WRKSRC}/src/math/fdm.f90 ${WRKSRC}/src/math/fdm.F90
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|math/math\.f90|math/math.F90|' \
+		-e 's|math/fdm\.f90|math/fdm.F90|' ${WRKSRC}/src/Makefile.in
+
 do-test:
 	@${MKDIR} ${WRKSRC}/contrib/neko_log_parser
 	@${CP} ${FILESDIR}/neko_log_parser.py ${WRKSRC}/contrib/neko_log_parser/
