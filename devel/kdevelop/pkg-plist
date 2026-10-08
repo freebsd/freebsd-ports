@@ -1812,6 +1812,7 @@ share/locale/he/LC_MESSAGES/kdevclang.mo
 share/locale/he/LC_MESSAGES/kdevclangtidy.mo
 share/locale/he/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/he/LC_MESSAGES/kdevclazy.mo
+share/locale/he/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/he/LC_MESSAGES/kdevcodeutils.mo
 share/locale/he/LC_MESSAGES/kdevcompileanalyzercommon.mo
 share/locale/he/LC_MESSAGES/kdevcontextbrowser.mo
@@ -1826,6 +1827,7 @@ share/locale/he/LC_MESSAGES/kdevexecuteplasmoid.mo
 share/locale/he/LC_MESSAGES/kdevexecutescript.mo
 share/locale/he/LC_MESSAGES/kdevfilemanager.mo
 share/locale/he/LC_MESSAGES/kdevflatpak.mo
+share/locale/he/LC_MESSAGES/kdevgdb.mo
 share/locale/he/LC_MESSAGES/kdevghprovider.mo
 share/locale/he/LC_MESSAGES/kdevgit.mo
 share/locale/he/LC_MESSAGES/kdevgrepview.mo
@@ -1833,6 +1835,7 @@ share/locale/he/LC_MESSAGES/kdevheaptrack.mo
 share/locale/he/LC_MESSAGES/kdevkonsole.mo
 share/locale/he/LC_MESSAGES/kdevlldb.mo
 share/locale/he/LC_MESSAGES/kdevmanpage.mo
+share/locale/he/LC_MESSAGES/kdevmesonmanager.mo
 share/locale/he/LC_MESSAGES/kdevninja.mo
 share/locale/he/LC_MESSAGES/kdevokteta.mo
 share/locale/he/LC_MESSAGES/kdevopenwith.mo

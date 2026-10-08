@@ -1109,6 +1109,7 @@ share/locale/ko/LC_MESSAGES/konqueror.mo
 share/locale/ko/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ko/LC_MESSAGES/libkonq.mo
 share/locale/ko/LC_MESSAGES/searchbarplugin.mo
+share/locale/ko/LC_MESSAGES/speeddial.mo
 share/locale/ko/LC_MESSAGES/temporarysavedir.mo
 share/locale/ko/LC_MESSAGES/uachangerplugin.mo
 share/locale/ko/LC_MESSAGES/webarchiver.mo

@@ -76,6 +76,10 @@ share/locale/si/LC_MESSAGES/kontact.mo
 share/locale/sk/LC_MESSAGES/kontact.mo
 share/locale/sl/LC_MESSAGES/kontact.mo
 share/locale/sq/LC_MESSAGES/kontact.mo
+share/locale/sr/LC_MESSAGES/kontact.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kontact.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kontact.mo
+share/locale/sr@latin/LC_MESSAGES/kontact.mo
 share/locale/sv/LC_MESSAGES/kontact.mo
 share/locale/ta/LC_MESSAGES/kontact.mo
 share/locale/tg/LC_MESSAGES/kontact.mo
