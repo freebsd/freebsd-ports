@@ -11,6 +11,8 @@ WWW=		http://www.catb.org/esr/loccount/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	compilation fails: ./loccount.go:2656:3: cannot use yaml (untyped int constant 8796093022208) as uint value in struct literal (overflows)
+
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR}
 
