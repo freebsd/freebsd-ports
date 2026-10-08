@@ -1,3 +1,65 @@
+  <vuln vid="06bf834f-c31f-11f1-9b94-901b0e13f1a0">
+    <topic>xorg -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>xorg-server</name>
+	<name>xephyr</name>
+	<name>xorg-vfbserver</name>
+	<range><lt>21.1.25,1</lt></range>
+    </package>
+    <package>
+	<name>xorg-nestserver</name>
+	<range><lt>21.1.25,2</lt></range>
+    </package>
+    <package>
+	<name>xwayland</name>
+	<range><lt>24.1.14,1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>X.Org reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-October/003747.html">
+	  <p>Multiple issues have been found in the X server and Xwayland implementations
+	    published by X.Org for which we are releasing security fixes for in
+	    xorg-server-21.1.25 and xwayland-24.1.14.
+	    CVE-2026-88812: XKB SetGeometry TextDoodad Double Free
+	    CVE-2026-93515: Present Extension Cross-Window Notify Use-After-Free
+	    CVE-2026-93516: XInput Passive Grab modifierDevice Use-After-Free
+	    CVE-2026-93517: GLX RenderLarge Heap Buffer Overflow
+	    CVE-2026-93518: XKB ResizeKeyType Numeric Truncation
+	    CVE-2026-93519: XFixes Pointer Barrier Event List Buffer Overflow
+	    CVE-2026-93520: XKB ChangeKeycodeRange Heap Out-of-Bounds Write
+	    CVE-2026-93521: RandR ChangeProviderProperty Heap Buffer Overflow
+	    CVE-2026-93522: Glamor CopyArea CPU-FBO Heap Buffer Overflow
+	    CVE-2026-93523: XInput2 PassiveUngrabDevice Modifier Out-of-Bounds Write
+	    CVE-2026-93524: XKB SetMap Key Width/Action Count Desync Out-Of-Bounds Read
+	    CVE-2026-93536: GestureBuildSprite Use-After-Free
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-88812</cvename>
+      <cvename>CVE-2026-93515</cvename>
+      <cvename>CVE-2026-93516</cvename>
+      <cvename>CVE-2026-93517</cvename>
+      <cvename>CVE-2026-93518</cvename>
+      <cvename>CVE-2026-93519</cvename>
+      <cvename>CVE-2026-93520</cvename>
+      <cvename>CVE-2026-93521</cvename>
+      <cvename>CVE-2026-93522</cvename>
+      <cvename>CVE-2026-93523</cvename>
+      <cvename>CVE-2026-93524</cvename>
+      <cvename>CVE-2026-93536</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2026-October/003747.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-07</discovery>
+      <entry>2026-10-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="03302734-c15d-11f1-8561-107c611e671e">
     <topic>rabbitmq-c -- remote client-side memory exhaustion</topic>
     <affects>
