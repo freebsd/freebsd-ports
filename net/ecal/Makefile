@@ -1,7 +1,7 @@
 PORTNAME=	ecal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,8 +32,9 @@ LIB_DEPENDS=	libabsl_hash.so:devel/abseil \
 		libyaml-cpp.so:devel/yaml-cpp
 		# binaries aren't linked with libfineftp-server.so, see https://github.com/continental/ecal/issues/381; same with libcurl.so
 
-USES=		cmake compiler:c++17-lang desktop-file-utils localbase:ldflags pkgconfig qt:5 shared-mime-info
-USE_QT=		concurrent core gui widgets buildtools:build qmake:build
+USES=		cmake compiler:c++17-lang desktop-file-utils gl localbase:ldflags pkgconfig qt:6 shared-mime-info
+USE_QT=		base tools:build
+USE_GL=		gl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

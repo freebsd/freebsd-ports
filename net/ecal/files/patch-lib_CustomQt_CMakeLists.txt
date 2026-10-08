@@ -1,0 +1,13 @@
+-- only allow Qt6
+
+--- lib/CustomQt/CMakeLists.txt.orig	2026-10-08 06:26:04 UTC
++++ lib/CustomQt/CMakeLists.txt
+@@ -22,7 +22,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ 
+ # Legacy Qt5 (pre 5.15) support as suggested by teh Qt Documentation:
+ # https://doc.qt.io/qt-6/cmake-qt5-and-qt6-compatibility.html#supporting-older-qt-5-versions
+-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Widgets)
++find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core Widgets)
+ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Widgets)
+ 
+ set(CMAKE_AUTOMOC ON)
