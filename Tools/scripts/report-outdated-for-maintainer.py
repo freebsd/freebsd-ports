@@ -69,6 +69,7 @@ Example:
 STALENESS_THRESHOLDS = [
     ("1 week", 7 * 24 * 3600),
     ("2 weeks", 14 * 24 * 3600),
+    ("3 weeks", 21 * 24 * 3600),
     ("1 month", 30 * 24 * 3600),
     ("2 months", 60 * 24 * 3600),
     ("3 months", 90 * 24 * 3600),
