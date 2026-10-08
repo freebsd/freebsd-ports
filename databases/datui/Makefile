@@ -10,7 +10,8 @@ WWW=		https://derekwisong.github.io/datui
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
+		libzstd.so:archivers/zstd
 
 USES=		cargo pkgconfig
 

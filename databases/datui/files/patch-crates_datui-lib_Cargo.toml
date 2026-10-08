@@ -1,0 +1,20 @@
+--- crates/datui-lib/Cargo.toml.orig	2026-10-08 03:40:31 UTC
++++ crates/datui-lib/Cargo.toml
+@@ -47,7 +47,7 @@
+ bzip2 = "0.6"
+ # static: liblzma compiled in, so a release binary needs no liblzma.so.5 on the
+ # host; bzip2, flate2 and zstd already build their C code in.
+-xz2 = { version = "0.1", features = ["static"] }
++xz2 = "0.1"
+ flate2 = "1.0"
+ zstd = "0.14"
+ # Chart export: the chart is drawn once as SVG and read with the bundled font
+@@ -97,7 +97,7 @@
+ # SQLite databases, read only. `bundled` compiles SQLite into the binary, so no
+ # platform needs a system library; `hooks` lets a stopped open interrupt a statement.
+ # Default features off, which leaves extension loading out.
+-rusqlite = { version = "0.40", optional = true, default-features = false, features = ["bundled", "hooks"] }
++rusqlite = { version = "0.40", optional = true, default-features = false, features = ["hooks"] }
+ # NumPy archives (.npz) are zip files. Already in the tree through calamine, with
+ # the same features.
+ zip = { version = "8.6", default-features = false, features = ["deflate"] }
