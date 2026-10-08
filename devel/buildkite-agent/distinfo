@@ -1,5 +1,5 @@
-TIMESTAMP = 1777879886
-SHA256 (go/devel_buildkite-agent/buildkite-agent-v3.124.0/v3.124.0.mod) = 8d273152e292b7275e2ab645a349f0eb13f7d9a51303a8b9d9abf2e0443ea969
-SIZE (go/devel_buildkite-agent/buildkite-agent-v3.124.0/v3.124.0.mod) = 11737
-SHA256 (go/devel_buildkite-agent/buildkite-agent-v3.124.0/v3.124.0.zip) = eb6ace53d845eb69ca88c67200c233f5a320dc831b34b23de75bbf6ec37fade6
-SIZE (go/devel_buildkite-agent/buildkite-agent-v3.124.0/v3.124.0.zip) = 3944446
+TIMESTAMP = 1791272382
+SHA256 (go/devel_buildkite-agent/buildkite-agent-v3.138.0/v3.138.0.mod) = 4efa7babab459d337b8290052221c81fa576d56edb25e936cdafa79b5e1da6c9
+SIZE (go/devel_buildkite-agent/buildkite-agent-v3.138.0/v3.138.0.mod) = 12005
+SHA256 (go/devel_buildkite-agent/buildkite-agent-v3.138.0/v3.138.0.zip) = b421d6d99700997ad779e0b02602aa9b950c49ea0737edf7acf546a1c050ec4e
+SIZE (go/devel_buildkite-agent/buildkite-agent-v3.138.0/v3.138.0.zip) = 4245557

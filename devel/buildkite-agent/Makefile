@@ -1,7 +1,6 @@
 PORTNAME=	buildkite-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.124.0
-PORTREVISION=	6
+DISTVERSION=	3.138.0
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -15,11 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		go:modules
+USE_RC_SUBR=	buildkite
 
 GO_MODULE=	github.com/buildkite/agent/v3
 GO_ENV+=	GOTOOLCHAIN=local+path
-
-USE_RC_SUBR=	buildkite
 
 ETCDIR=		${PREFIX}/etc/buildkite
 
