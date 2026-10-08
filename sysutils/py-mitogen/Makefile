@@ -1,5 +1,5 @@
 PORTNAME=	mitogen
-DISTVERSION=	0.3.47
+DISTVERSION=	0.3.53
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe python
 CPE_VENDOR=	networkgenomics
-USE_PYTHON=	distutils autoplist concurrent
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
