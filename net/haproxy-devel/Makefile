@@ -1,7 +1,7 @@
 PORTNAME=	haproxy
-DISTVERSION=	3.3-dev10
+DISTVERSION=	3.5-dev8
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/3.3/src/devel/
+MASTER_SITES=	http://www.haproxy.org/download/3.5/src/devel/
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -20,9 +20,9 @@ USE_RC_SUBR=	haproxy
 
 default_CONFLICTS_INSTALL=	haproxy-devel-lua
 lua_CONFLICTS_INSTALL=		haproxy-devel
-lua_PKGNAMESUFFIX=		devel-lua
+lua_PKGNAMESUFFIX=		-devel-lua
 
-CONFLICTS_INSTALL=	haproxy haproxy17 haproxy18 haproxy20 haproxy22 haproxy23 haproxy24 haproxy25 haproxy26
+CONFLICTS_INSTALL=	haproxy*
 
 ALL_TARGET=	all admin/halog/halog
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \
@@ -67,7 +67,7 @@ OPTIONS_DEFAULT+=	LUA
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT:Mlibressl*} || ${SSL_DEFAULT:M*quictls}
+.if ${SSL_DEFAULT:Mlibressl*} || ${SSL_DEFAULT:M*quictls} || (${SSL_DEFAULT:Mbase} && ${OSVERSION} >= 1500000)
 OPENSSL_MAKE_ARGS+=	USE_QUIC=1
 .else
 OPENSSL_MAKE_ARGS+=	USE_QUIC=1 USE_QUIC_OPENSSL_COMPAT=1
