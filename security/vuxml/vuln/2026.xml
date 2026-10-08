@@ -1,3 +1,75 @@
+  <vuln vid="26fd839c-c338-11f1-a6ea-8447094a420f">
+    <topic>OpenSSH -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<range><lt>10.6.p1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSH project reports:</p>
+	<blockquote cite="https://www.openssh.org/txt/release-10.6">
+	  <ul>
+	    <li>sftp(1): more strictly validate paths returned from the server to
+	      avoid some cases where a server could return paths that could
+	      manipulate a recursive copy operation into writing outside its
+	      target directory.</li>
+	    <li>sshd(8): when GSSAPIAuthentication is in use, only store GSSAPI
+	      credentials when authentication has succeeded. Avoids a situation
+	      where credentials from a failed GSSAPIAuthentication attempt may
+	      persist and be made inappropriately available if another
+	      authentication subsequently succeeds.</li>
+	    <li>sshd(8): reset GSSAPIAuthentication before authentication, avoiding
+	      state from one authentication attempt being confused with that of
+	      a later attempt.</li>
+	    <li>sshd(8), ssh(1): disable LZ77 dictionary coder to mitigate the
+	      side-channel leaks described in "Crossing the Streams: SSH
+	      Plaintext Recovery via a Common Compression Context in
+	      Multiplexed Channels"</li>
+	    <li>ssh(1): disallow '$' and '\' characters in usernames entered on
+	      the command-line to avoid usernames from untrusted sources
+	      yielding injection in shell context via ProxyCommand, Match exec,
+	      etc. Usernames specified via the configuration files are not
+	      subject this this control.</li>
+	    <li>ssh-keygen(1): correct handling of Daylight Saving Time when
+	      converting dates. Previous handling could cause errors of
+	      up to +/- 1 hour (unless you are in the Antarctica/Troll
+	      timezone, where the error could be +/- 2 hours). These errors
+	      could result in creation of certificates with incorrect expiry
+	      times.</li>
+	    <li>sshd(8), ssh(1): ensure that compressed payloads don't inflate
+	      past the maximum supported packet length.</li>
+	    <li>sshd(8): fully honor the authorized_keys "restrict" keyword,
+	      which was not being properly applied to tunnel forwarding
+	      (PermitTunnel, disabled by default).</li>
+	    <li>sshd(8): correctly handle some options that accept "none". Some
+	      options, including AuthorizedPrincipalsFile, were documented as
+	      accepting "none" as a way to disable them; however, when
+	      overridden by an sshd_config(5) Match keyword, this argument was
+	      being incorrectly interpreted as a literal file.</li>
+	    <li>sshd(8): on platforms that do not support file descriptor passing
+	      and that require root for PTY allocation, the post-authentication
+	      sshd-session process retains root privilege, whereas on other
+	      platforms this process runs with the privilege of the logged-in
+	      user. When sshd-session was run with elevated privilege, it could
+	      perform certain actions as root and circumvent controls that
+	      would normally have applied to the user, such as making unix
+	      domain socket connections or binding (via -R forwarding) to low-
+	      numbered TCP ports.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://www.openssh.org/txt/release-10.6</url>
+    </references>
+    <dates>
+      <discovery>2026-10-06</discovery>
+      <entry>2026-10-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06bf834f-c31f-11f1-9b94-901b0e13f1a0">
     <topic>xorg -- Multiple vulnerabilities</topic>
     <affects>
