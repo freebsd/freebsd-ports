@@ -1,0 +1,13 @@
+-- ftxui-7.x compatibility
+
+--- CMakeLists.txt.orig	2026-10-08 03:41:02 UTC
++++ CMakeLists.txt
+@@ -29,7 +29,7 @@ set(FETCHCONTENT_UPDATES_DISCONNECTED TRUE)
+ 
+ # -------------------------- Fetech ftxui ------------------------------- #
+ 
+-find_package(ftxui 6)
++find_package(ftxui 7)
+ if(NOT ftxui_FOUND)
+   message(STATUS "ftxui Not found... fetching")
+   FetchContent_Declare(

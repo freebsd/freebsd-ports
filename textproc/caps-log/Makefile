@@ -1,6 +1,6 @@
 PORTNAME=	caps-log
-DISTVERSION=	1.2.1.a.20251107
-PORTREVISION=	1
+DISTVERSION=	1.2.1-22
+DISTVERSIONSUFFIX=	-gd8580a2
 CATEGORIES=	textproc
 
 MAINTAINER=	varinka@FreeBSD.am
@@ -15,10 +15,12 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgit2.so:devel/libgit2
 
 USES=		cmake
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	NikolaDucak
 GH_PROJECT=	caps-log
-GH_TAGNAME=	9b3c51ca2015c879c28dfeb8e5981b826988ff2c
+
+LDFLAGS+=	-lpthread
 
 PLIST_FILES=	bin/caps-log
 
