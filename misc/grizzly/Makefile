@@ -8,7 +8,7 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CLI for interacting with Bear notes
 WWW=		https://github.com/tylerwince/grizzly
 
-USES=		go:1.21+,modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tylerwince
