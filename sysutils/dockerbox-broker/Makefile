@@ -1,6 +1,7 @@
 PORTNAME=	dockerbox-broker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	leafoliage@FreeBSD.org
