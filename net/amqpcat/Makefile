@@ -1,11 +1,10 @@
 PORTNAME=	amqpcat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	3
+DISTVERSION=	1.1.1
 CATEGORIES=	net
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		cloudamqp-amq-protocol.cr-v1.1.15_GH0.tar.gz \
+		cloudamqp-amq-protocol.cr-v1.3.1_GH0.tar.gz \
 		cloudamqp-amqp-client.cr-v1.3.1_GH0.tar.gz
 
 MAINTAINER=	dch@FreeBSD.org
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
 USES=		pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudamqp
-GH_TUPLE=	cloudamqp:amq-protocol.cr:v1.1.15:proto/deps/amq-protocol.cr \
+GH_TUPLE=	cloudamqp:amq-protocol.cr:v1.3.1:proto/deps/amq-protocol.cr \
 		cloudamqp:amqp-client.cr:v1.3.1:client/deps/amqp-client.cr
 
 PLIST_FILES=	bin/amqpcat \
