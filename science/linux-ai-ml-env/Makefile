@@ -1,5 +1,6 @@
 PORTNAME=	ai-ml-env
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	science linux
 MASTER_SITES=	https://arrowd.name/
 PKGNAMEPREFIX=	linux-
@@ -18,8 +19,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	gmd5sum:sysutils/coreutils \
 		linux-rl9-devtools>=0:devel/linux-rl9-devtools
-RUN_DEPENDS=	linux-rl9-python${PYTHON_SUFFIX}>=0:lang/linux-rl9-python3 \
-		${NVIDIA_DEPS}
+RUN_DEPENDS=	linux-rl9-python${PYTHON_SUFFIX}>=0:lang/linux-rl9-python3
 
 USES=		linux:rl9
 USE_LINUX_PREFIX=	yes
@@ -36,30 +36,17 @@ BINARY_ALIAS=	md5sum=gmd5sum
 SUB_FILES=	ai-ml-env-bash \
 		ai-ml-env-python
 SUB_LIST=	LOCALBASE=${LOCALBASE} \
-		LINUXBASE=${LINUXBASE}
+		LINUXBASE=${LINUXBASE} \
+		PYTHON_VER=${PYTHON_VER}
 
 PLIST_SUB=	PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER}
 
 CONDA_VERSION=	py${PYTHON_SUFFIX}_25.9.1-1
 CONDA_SCRIPT=	Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh
-PYTHON_SUFFIX=	39
+PYTHON_SUFFIX=	${PYTHON_VER:S/.//}
 PYTHON_VER=	3.9
 DATA_DIR=	${LOCALBASE}/share/${PORTNAME}
-
-OPTIONS_DEFINE=	NVIDIA_DEVEL
-
-NVIDIA_DEVEL_DESC=	Depend on x11/nvidia-driver-devel instead of the stable version
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNVIDIA_DEVEL}
-NVIDIA_DEPS=	linux-nvidia-libs-devel>=0:x11/linux-nvidia-libs-devel \
-		nvidia-driver-devel>=0:x11/nvidia-driver-devel
-.else
-NVIDIA_DEPS=	linux-nvidia-libs>=0:x11/linux-nvidia-libs \
-		nvidia-driver>=0:x11/nvidia-driver
-.endif
 
 makedist: create-binary-alias
 	@${MKDIR} ${MAKEDIST_WRKSRC}
