@@ -1,6 +1,6 @@
---- Cargo.lock.orig	2026-06-02 12:52:59 UTC
+--- Cargo.lock.orig	2026-10-05 09:39:38 UTC
 +++ Cargo.lock
-@@ -3284,12 +3284,6 @@ dependencies = [
+@@ -3926,12 +3926,6 @@ dependencies = [
  ]
  
  [[package]]

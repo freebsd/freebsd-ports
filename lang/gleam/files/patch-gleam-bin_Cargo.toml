@@ -1,6 +1,6 @@
---- gleam-bin/Cargo.toml.orig	2026-05-04 05:47:18 UTC
+--- gleam-bin/Cargo.toml.orig	2026-10-05 09:39:38 UTC
 +++ gleam-bin/Cargo.toml
-@@ -8,7 +8,3 @@ gleam-cli = { path = "../compiler-cli" }
+@@ -11,7 +11,3 @@ gleam-cli = { path = "../compiler-cli" }
  [dependencies]
  gleam-cli = { path = "../compiler-cli" }
  
