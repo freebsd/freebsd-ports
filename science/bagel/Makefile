@@ -1,8 +1,7 @@
 PORTNAME=	bagel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2-132
-DISTVERSIONSUFFIX=	-g2955e4d1a
-PORTREVISION=	21
+DISTVERSION=	1.2.2-147
+DISTVERSIONSUFFIX=	-gad8c7c89e
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +27,9 @@ GH_ACCOUNT=	qsimulate-open
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir=${DATADIR}
+
+CXXFLAGS+=	-Wno-invalid-specialization # fix build on 16
+LDFLAGS+=	-Wl,--allow-shlib-undefined # fix build on 16
 
 INSTALL_TARGET=	install-strip
 
@@ -56,7 +58,16 @@ SMITH_IMPLIES=			MPI
 TEST_TARGET=			check
 TEST_ARGS=			LDFLAGS+="-lcblas -lblas" ${TEST_TARGET}
 
+test-quick: stage # smoke test
+	@${ECHO_CMD} "==> Running BAGEL smoke test..."
+	@cd ${TEST_WRKSRC} && \
+		${SETENV} LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib BAGEL_BASIS_DIR=${STAGEDIR}${DATADIR} \
+			${STAGEDIR}${PREFIX}/bin/BAGEL ${FILESDIR}/menthol.json > menthol.out
+	@${ECHO_CMD} "==> BAGEL smoke test succeeded"
+
 post-test: # tests fail, see https://github.com/qsimulate-open/bagel/issues/248
-	@cd ${WRKSRC}/src && ./TestSuite --log_level=all
+	@cd ${WRKSRC}/src && \
+		${SETENV} LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib BAGEL_BASIS_DIR=${STAGEDIR}${DATADIR} \
+			./TestSuite --log_level=all
 
 .include <bsd.port.mk>
