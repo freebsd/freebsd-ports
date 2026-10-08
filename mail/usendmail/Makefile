@@ -19,12 +19,6 @@ SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} != amd64 && ${ARCH} != i386
-USES+=		compiler:gcc-c++11-lib
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/var/qmail,${QMAIL_PREFIX},' \
 		${WRKSRC}/src/usendmail.c
