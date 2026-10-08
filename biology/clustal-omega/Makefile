@@ -3,7 +3,7 @@ DISTVERSION=	1.2.4
 CATEGORIES=	biology
 MASTER_SITES=	http://www.clustal.org/omega/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Multiple alignment of nucleic acid and protein, replaces clustalw
 WWW=		http://www.clustal.org/omega/
 
