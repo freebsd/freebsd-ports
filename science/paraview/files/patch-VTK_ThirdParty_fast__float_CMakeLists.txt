@@ -1,6 +1,6 @@
---- VTK/ThirdParty/fast_float/CMakeLists.txt.orig	2026-05-22 16:18:17 UTC
+--- VTK/ThirdParty/fast_float/CMakeLists.txt.orig	2026-09-29 17:25:09 UTC
 +++ VTK/ThirdParty/fast_float/CMakeLists.txt
-@@ -13,7 +13,6 @@ vtk_module_third_party(
+@@ -21,7 +21,6 @@ vtk_module_third_party(
      STANDARD_INCLUDE_DIRS
      HEADER_ONLY
    EXTERNAL
