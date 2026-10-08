@@ -26,7 +26,24 @@
              if shared {
                  ".so"
              } else {
-@@ -850,7 +853,7 @@ fn main() {
+@@ -687,11 +690,12 @@ fn main() {
+         // rust code isn't using `target-cpu=native`, so llama.cpp shouldn't use GGML_NATIVE either
+         config.define("GGML_NATIVE", "OFF");
+ 
+-        // if `target-cpu` is set set, also set -march for llama.cpp to the same value
++        // if `target-cpu` is set, also set -march/-mcpu for llama.cpp to the same value
+         if let Some(ref cpu) = target_cpu {
+-            debug_log!("Setting baseline architecture: -march={}", cpu);
+-            config.cflag(format!("-march={}", cpu));
+-            config.cxxflag(format!("-march={}", cpu));
++            let flag = if target_triple.starts_with("powerpc") { "-mcpu" } else { "-march" };
++            debug_log!("Setting baseline architecture: {}={}", flag, cpu);
++            config.cflag(format!("{}={}", flag, cpu));
++            config.cxxflag(format!("{}={}", flag, cpu));
+         }
+ 
+         // cargo only sets this when at least one target feature is enabled, which
+@@ -850,7 +854,7 @@ fn main() {
          println!("cargo:rustc-link-lib=android");
      }
  
@@ -35,7 +52,7 @@
          && target_triple.contains("aarch64")
          && target_cpu != Some("native".into())
      {
-@@ -901,7 +904,7 @@ fn main() {
+@@ -901,7 +905,7 @@ fn main() {
                      config.cxxflag("/FS");
                  }
              }
@@ -44,7 +61,7 @@
                  // If we are not using system provided vulkan SDK, add vulkan libs for linking
                  if let Ok(vulkan_path) = env::var("VULKAN_SDK") {
                      let vulkan_lib_path = Path::new(&vulkan_path).join("lib");
-@@ -1346,6 +1349,14 @@ fn main() {
+@@ -1346,6 +1350,14 @@ fn main() {
                  println!("cargo:rustc-link-lib=static=stdc++");
              } else {
                  println!("cargo:rustc-link-lib=dylib=stdc++");
