@@ -4,7 +4,7 @@ CATEGORIES=	biology
 MASTER_SITES=	SF/bio-rainbow
 DISTNAME=	rainbow_${PORTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient clustering and assembling of short reads, especially for RAD
 WWW=		https://sourceforge.net/projects/bio-rainbow/
 

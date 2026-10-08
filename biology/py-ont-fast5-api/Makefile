@@ -4,7 +4,7 @@ DISTVERSION=	4.1.3
 CATEGORIES=	biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface to HDF5 files in Oxford Nanopore .fast5 format
 WWW=		https://github.com/nanoporetech/ont_fast5_api
 

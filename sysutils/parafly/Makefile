@@ -5,7 +5,7 @@ PORTREVISION=	9
 PORTEPOCH=	1	# SourceForge version was 2013.01.21
 CATEGORIES=	sysutils
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Process multiple commands in parallel on a single server
 WWW=		https://github.com/ParaFly/ParaFly/releases
 

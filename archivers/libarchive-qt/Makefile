@@ -2,7 +2,7 @@ PORTNAME=	libarchive-qt
 DISTVERSION=	2.0.8
 CATEGORIES=	archivers
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt based archiving solution with libarchive backend
 WWW=		https://gitlab.com/marcusbritanicus/libarchive-qt
 

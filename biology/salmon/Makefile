@@ -4,7 +4,7 @@ DISTVERSION=		1.10.3
 PORTREVISION=		2
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transcript-level quantification of RNA-seq from lightweight alignments
 WWW=		https://github.com/COMBINE-lab/salmon
 

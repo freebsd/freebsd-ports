@@ -7,7 +7,7 @@ CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aggregate bioinformatics analysis reports across samples and tools
 WWW=		https://github.com/MultiQC/MultiQC
 

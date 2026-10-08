@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	dna_features_viewer-${PORTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python library to visualize DNA features, e.g. GenBank or Gff files
 WWW=		https://github.com/Edinburgh-Genome-Foundry/DnaFeaturesViewer
 

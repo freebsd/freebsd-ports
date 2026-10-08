@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		2.32.0
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile open-source tool for metagenomics
 WWW=		https://github.com/torognes/vsearch
 

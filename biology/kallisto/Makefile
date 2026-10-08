@@ -4,7 +4,7 @@ DISTVERSION=		0.52.0
 PORTEPOCH=		1
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quantify abundances of transcripts from RNA-Seq data
 WWW=		https://pachterlab.github.io/kallisto/about.html
 

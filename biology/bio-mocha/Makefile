@@ -5,7 +5,7 @@ MASTER_SITES=	https://software.broadinstitute.org/software/mocha/
 # Get this right, or ports will download bcftools in it's place via tuple
 DISTFILES+=	${PORTNAME}_${DISTVERSION}-20250819.tar.gz
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bcftools plugin for mosaic chromosomal alteration analysis
 WWW=		https://software.broadinstitute.org/software/mocha/
 

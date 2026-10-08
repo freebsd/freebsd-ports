@@ -3,7 +3,7 @@ PORTVERSION=	0.1.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for working with VCF genomics files
 WWW=		https://github.com/vcftools/vcftools
 

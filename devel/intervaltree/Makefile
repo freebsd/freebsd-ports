@@ -3,7 +3,7 @@ DISTVERSION=	0.1-2
 DISTVERSIONSUFFIX=	-gaa59377
 CATEGORIES=	devel
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimal C++ interval tree implementation
 WWW=		https://github.com/ekg/intervaltree
 

@@ -6,7 +6,7 @@ MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
 DISTNAME=	ncbi-blast-${PORTVERSION}+-src
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NCBI implementation of Basic Local Alignment Search Tool
 WWW=		https://blast.ncbi.nlm.nih.gov/
 

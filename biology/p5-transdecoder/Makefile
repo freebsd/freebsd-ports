@@ -4,7 +4,7 @@ DISTVERSION=	6.0.0
 CATEGORIES=	biology perl5
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Identify candidate coding regions within transcript sequences
 WWW=		https://github.com/TransDecoder/TransDecoder
 

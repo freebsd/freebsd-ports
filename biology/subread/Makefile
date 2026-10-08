@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-source
 CATEGORIES=		biology
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance read alignment, quantification and mutation discovery
 WWW=		https://subread.sourceforge.net/
 

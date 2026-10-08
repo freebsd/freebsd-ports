@@ -3,7 +3,7 @@ DISTVERSION=	1.8.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line flag parser inspired by Python\'s optparse
 WWW=		https://cran.r-project.org/package=optparse
 

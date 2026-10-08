@@ -3,7 +3,7 @@ DISTVERSION=		0.60.0
 DISTVERSIONSUFFIX=	-RC1
 CATEGORIES=		comms
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical serial terminal for embedded programming
 WWW=		https://gitlab.com/cutecom/cutecom
 

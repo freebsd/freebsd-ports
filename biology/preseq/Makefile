@@ -4,7 +4,7 @@ CATEGORIES=		biology
 # Github-generated distfiles are incomplete
 MASTER_SITES=		https://github.com/smithlabcode/preseq/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Predict yield of distinct reads from a genomic library
 WWW=		https://github.com/smithlabcode/preseq
 

@@ -3,7 +3,7 @@ DISTVERSION=	0.1.0
 CATEGORIES=	biology
 MASTER_SITES=	# empty
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Core tools for Mosaic Chromosomal Alteration event calling
 WWW=		https://github.com/auerlab/
 

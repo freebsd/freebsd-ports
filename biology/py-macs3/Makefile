@@ -4,7 +4,7 @@ DISTVERSION=		3.0.5
 CATEGORIES=		biology python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Peak caller aimed at transcription factor binding sites
 WWW=		https://github.com/taoliu/MACS
 

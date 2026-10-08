@@ -3,7 +3,7 @@ DISTVERSION=	0.1-4
 DISTVERSIONSUFFIX=	-gec5a764
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trim adapter sequences from Illumina data using heuristic rules
 WWW=		https://github.com/lh3/trimadap
 

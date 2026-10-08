@@ -4,7 +4,7 @@ DISTVERSION=		1.2.9-22
 DISTVERSIONSUFFIX=	-gc77d45c
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultra-fast single-node large and complex metagenomics assembly
 WWW=		https://github.com/voutcn/megahit
 

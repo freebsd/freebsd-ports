@@ -6,7 +6,7 @@ MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERS
 DISTFILES=	edirect.tar.gz
 DIST_SUBDIR=	edirect-${PORTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access to the NCBI's suite of interconnected databases
 WWW=		https://www.ncbi.nlm.nih.gov/books/NBK179288/
 

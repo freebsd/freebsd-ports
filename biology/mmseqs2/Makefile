@@ -2,7 +2,7 @@ PORTNAME=	MMseqs2
 DISTVERSION=	17-b804f
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultra fast and sensitive sequence search and clustering suite
 WWW=		https://github.com/soedinglab/MMseqs2/
 

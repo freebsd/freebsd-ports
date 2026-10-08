@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	40.02
 CATEGORIES=	biology java
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BBMap short read aligner, and other bioinformatic tools
 WWW=		https://jgi.doe.gov/data-and-tools/bbtools/ \
 		https://sourceforge.net/projects/bbmap/ \

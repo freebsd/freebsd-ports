@@ -2,7 +2,7 @@ PORTNAME=	vbz-compression
 DISTVERSION=	1.0.13
 CATEGORIES=	archivers
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Variable byte integer encoding to compress Oxford Nanopore signal data
 WWW=		https://github.com/nanoporetech/vbz_compression
 

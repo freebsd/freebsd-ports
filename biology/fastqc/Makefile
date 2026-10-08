@@ -5,7 +5,7 @@ CATEGORIES=	biology java perl5
 MASTER_SITES=	https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 DISTNAME=	${PORTNAME}_v${DISTVERSIONPREFIX}${DISTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quality control tool for high throughput sequence data
 WWW=		https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 

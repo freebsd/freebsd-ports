@@ -2,7 +2,7 @@ PORTNAME=	bcftools
 PORTVERSION=	1.24
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for manipulating next-generation sequencing data
 WWW=		https://www.htslib.org/
 

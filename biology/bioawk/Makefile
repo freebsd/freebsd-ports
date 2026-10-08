@@ -4,7 +4,7 @@ DISTVERSION=		1.0-7
 DISTVERSIONSUFFIX=	-gfd40150
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BWK awk modified for biological data
 WWW=		https://github.com/lh3/bioawk
 

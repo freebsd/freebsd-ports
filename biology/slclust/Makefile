@@ -4,7 +4,7 @@ CATEGORIES=	biology
 MASTER_SITES=	SF/slclust/slclust
 DISTNAME=	${PORTNAME}_02022010
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Single-linkage clustering with Jaccard similarity
 WWW=		https://sourceforge.net/projects/slclust/
 

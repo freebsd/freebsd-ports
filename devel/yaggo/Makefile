@@ -4,7 +4,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate command line parser using getopt_long
 WWW=		https://github.com/gmarcais/yaggo
 

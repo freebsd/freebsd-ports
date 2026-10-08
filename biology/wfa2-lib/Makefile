@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		2.3.6
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Exact gap-affine algorithm using homology to accelerate alignment
 WWW=		https://github.com/smarco/WFA2-lib
 

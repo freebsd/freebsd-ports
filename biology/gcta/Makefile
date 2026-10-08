@@ -4,7 +4,7 @@ DISTVERSION=	1.94.1
 PORTREVISION=	6
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Genome-wide Complex Trait Analysis
 WWW=		https://cnsgenomics.com/software/gcta/index.html
 

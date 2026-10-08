@@ -3,7 +3,7 @@ DISTVERSION=		2.3.1
 CATEGORIES=		biology
 MASTER_SITES=		https://github.com/gmarcais/${PORTNAME}/releases/download/v${DISTVERSION}/	# Custom distfile reduces dependencies
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, memory-efficient counting of k-mers in DNA
 WWW=		https://www.genome.umd.edu/jellyfish.html
 

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		1.5
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for processing sequences in FASTA/FASTQ format
 WWW=		https://github.com/lh3/seqtk
 

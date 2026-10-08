@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0.0
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for indexing and sequence extraction from FASTA files
 WWW=		https://github.com/ekg/fastahack
 

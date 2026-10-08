@@ -3,7 +3,7 @@ DISTVERSION=	0.0.14
 PORTREVISION=	1
 CATEGORIES=	biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI tools for Short-Reads FASTA/FASTQ files preprocessing
 WWW=		http://hannonlab.cshl.edu/fastx_toolkit/
 

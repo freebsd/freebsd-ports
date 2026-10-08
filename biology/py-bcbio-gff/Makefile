@@ -5,7 +5,7 @@ CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write Generic Feature Format (GFF) with Biopython integration
 WWW=		https://github.com/chapmanb/bcbb/tree/master/gff/
 

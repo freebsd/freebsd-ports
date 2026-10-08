@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0.13
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library and CLI tools for parsing and manipulating VCF files
 WWW=		https://github.com/vcflib/vcflib
 

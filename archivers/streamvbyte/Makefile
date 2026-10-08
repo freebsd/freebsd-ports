@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.0
 CATEGORIES=	archivers
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integer compression with SIMD based on Google\'s varint
 WWW=		https://github.com/lemire/streamvbyte/
 

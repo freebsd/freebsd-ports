@@ -4,7 +4,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://research-pub.gene.com/gmap/src/
 DISTNAME=	${PORTNAME}-gsnap-${PORTVERSION:C|\.|-|g}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Genomic Mapping and Alignment Program for mRNA and EST Sequences
 WWW=		https://github.com/genentech/gmap-gsnap \
 		http://research-pub.gene.com/gmap/

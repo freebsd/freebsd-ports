@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		2.31.1
 CATEGORIES=		biology
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolset for genome set arithmetic such as intersect, union
 WWW=		https://bedtools.readthedocs.org/
 

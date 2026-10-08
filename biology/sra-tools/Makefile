@@ -3,7 +3,7 @@ DISTVERSION=	3.4.1
 PORTREVISION=	3
 CATEGORIES=	biology java
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NCBI's toolkit for handling data in INSDC Sequence Read Archives
 WWW=		https://github.com/ncbi/sra-tools
 

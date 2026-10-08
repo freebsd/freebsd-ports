@@ -5,7 +5,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ebi.ac.uk/pub/software/clustalw2/${PORTVERSION}/ \
 		http://www.clustal.org/download/${PORTVERSION}/
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple alignment program for DNA or proteins
 WWW=		http://www.clustal.org/
 

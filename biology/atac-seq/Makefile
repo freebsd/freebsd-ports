@@ -6,7 +6,7 @@ DISTVERSION=	0.3.1
 CATEGORIES=	biology python
 MASTER_SITES=	# empty
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metaport for ATAC-Seq analysis
 WWW=		https://github.com/auerlab/
 

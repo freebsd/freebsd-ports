@@ -6,7 +6,7 @@ DISTVERSION=	0.2.0
 CATEGORIES=	biology python
 MASTER_SITES=	# empty
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metaport for RNA-Seq analysis
 WWW=		https://github.com/auerlab/
 

@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	biology
 PKGNAMEPREFIX=	rna-
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spliced Transcripts Alignment to a Reference
 WWW=		https://github.com/alexdobin/STAR
 

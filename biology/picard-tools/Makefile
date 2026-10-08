@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-tools
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLI tools for manipulating high-throughput sequencing (HTS) data
 WWW=		https://github.com/broadinstitute/picard
 

@@ -3,7 +3,7 @@ DISTVERSION=	g20151117
 PORTREVISION=	2
 CATEGORIES=	science
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny C library for managing SOM (Self-Organizing Maps) neural networks
 WWW=		https://github.com/ekg/fsom
 

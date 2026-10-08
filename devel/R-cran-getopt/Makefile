@@ -3,7 +3,7 @@ DISTVERSION=	1.21.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Accept short and long flags in Rscript
 WWW=		https://cran.r-project.org/package=getopt
 

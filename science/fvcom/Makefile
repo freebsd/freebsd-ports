@@ -6,7 +6,7 @@ MASTER_SITES=	http://fvcom.smast.umassd.edu/FVCOM/index.html/
 DISTNAME=	sourcecode1
 DIST_SUBDIR=	fvcom
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unstructured Grid Finite Volume Coastal Ocean Model
 WWW=		http://fvcom.smast.umassd.edu/FVCOM/index.html
 

@@ -4,7 +4,7 @@ DISTVERSION=	0.2-11
 DISTVERSIONSUFFIX=	-g8019b8b
 CATEGORIES=	devel
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to encode/decode base64, base64url, base32, base32hex and hex
 WWW=		https://github.com/tplgy/cppcodec
 

@@ -5,7 +5,7 @@ CATEGORIES=	biology
 MASTER_SITES=	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/
 DISTNAME=	BOLT-LMM_v${PORTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixed model association testing and variance component analysis
 WWW=		https://data.broadinstitute.org/alkesgroup/BOLT-LMM/
 

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		2.2.3
 CATEGORIES=		biology perl5 python
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alignment program for mapping next-generation sequencing reads
 WWW=		https://ccb.jhu.edu/software/hisat2/index.shtml
 

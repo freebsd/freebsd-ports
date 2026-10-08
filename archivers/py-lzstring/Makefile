@@ -5,7 +5,7 @@ CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LZ-based in-memory string compression
 WWW=		https://pypi.python.org/pypi/lzstring
 

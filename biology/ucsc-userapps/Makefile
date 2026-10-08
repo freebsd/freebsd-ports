@@ -4,7 +4,7 @@ CATEGORIES=	biology perl5 python
 MASTER_SITES=	https://hgdownload.cse.ucsc.edu/admin/exe/userApps.archive/
 DISTNAME=	userApps.v${DISTVERSION}.src
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tools from the UCSC Genome Browser project
 WWW=		https://hgdownload.cse.ucsc.edu/admin/exe/
 

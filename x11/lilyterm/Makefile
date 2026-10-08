@@ -4,7 +4,7 @@ DISTVERSION=	0.9.9.4
 PORTREVISION=	3
 CATEGORIES=	x11
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, but functional terminal emulator
 WWW=		https://github.com/Tetralet/LilyTerm
 
