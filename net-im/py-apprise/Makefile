@@ -29,10 +29,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gntp>0:net/py-gntp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}smpplib>=0:net-im/py-smpplib@${PY_FLAVOR}
 
 USES=		pytest python
-USE_PYTHON=	autoplist concurrent pep517
-.ifmake test
-USE_PYTHON+=	cryptography
-.endif
+USE_PYTHON=	autoplist concurrent cryptography_test pep517
 
 NO_ARCH=	yes
 
