@@ -1,4 +1,4 @@
---- ui/gfx/font_util.cc.orig	2026-03-13 16:54:03 UTC
+--- ui/gfx/font_util.cc.orig	2026-10-08 04:29:46 UTC
 +++ ui/gfx/font_util.cc
 @@ -7,7 +7,7 @@
  #include "build/build_config.h"
@@ -15,6 +15,6 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // Early initialize FontConfig.
-   InitializeGlobalFontConfigAsync();
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+   // Ensures the config is created on this thread. It's generally safe to send
+   // concurrent match requests to fontconfig, but it's unsafe to send match
+   // requests concurrently to fontconfig initialization.
