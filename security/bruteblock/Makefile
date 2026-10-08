@@ -5,7 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Software for blocking bruteforce attacks with ipfw
-WWW=		https://github.com/samm-git/bruteblock/edit/master/doc/README
+WWW=		https://github.com/samm-git/bruteblock/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
