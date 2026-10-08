@@ -1,6 +1,6 @@
 PORTNAME=	moon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.6
+DISTVERSION=	2.6.1
 CATEGORIES=	devel
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -20,7 +20,9 @@ GH_ACCOUNT=	moonrepo
 
 CARGO_INSTALL_PATH=	crates/cli
 
-MAKE_ENV+=	LIBCLANG_PATH=${LLVM_PREFIX}/lib \
+# cc>=1.6 defeats aws-lc-sys -O0 jitter guard: aws/aws-lc-rs#1252
+MAKE_ENV+=	AWS_LC_SYS_NO_JITTER_ENTROPY=1 \
+		LIBCLANG_PATH=${LLVM_PREFIX}/lib \
 		OPENSSL_NO_VENDOR=1
 
 PLIST_FILES=	bin/moon \
