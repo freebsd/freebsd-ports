@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2026-07-20 09:00:43 UTC
++++ src/Makefile
+@@ -250,7 +250,7 @@ $(libdir)/lib$(ARITH)mumps$(PLAT)$(LIBEXT_SHARED):    
+ 	$(RANLIB) $@
+ 
+ $(libdir)/lib$(ARITH)mumps$(PLAT)$(LIBEXT_SHARED):    $(OBJS_MOD_ARITHDEP) $(OBJS_OTHER) $(libdir)/libmumps_common$(PLAT)$(LIBEXT_SHARED)
+-	$(FC) $(OPTL) $(SHARED_OPT) $(OBJS_MOD_ARITHDEP) $(OBJS_OTHER) -L$(libdir) $(LORDERINGS) $(LIBS) $(LIBOTHERS) -lmumps_common$(PLAT) -o $@ $(RPATH_OPT)
++	$(FC) $(OPTL) $(SHARED_OPT) $(OBJS_MOD_ARITHDEP) $(OBJS_OTHER) -Wl,$(SONAME),lib$(ARITH)mumps$(PLAT)$(LIBEXT_SHARED) -L$(libdir) $(LORDERINGS) $(LIBS) $(LIBOTHERS) -lmumps_common$(PLAT) -o $@ $(RPATH_OPT)
+ 
+ 
+ # Dependencies between modules:
