@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-05-18 06:06:41 UTC
+--- pyproject.toml.orig	2026-10-06 08:16:05 UTC
 +++ pyproject.toml
 @@ -1,12 +1,11 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -8,14 +8,14 @@
  
  [project]
  name = "types-jsonschema"
- version = "4.26.0.20260518"
+ version = "4.26.0.20261006"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
 +license = { text = "Apache-2.0" }
  description = "Typing stubs for jsonschema"
  readme = { text = """\
  ## Typing stubs for jsonschema
-@@ -46,8 +45,10 @@ dependencies = ['referencing']
+@@ -50,8 +49,10 @@ dependencies = ['referencing']
  "Chat" = "https://gitter.im/python/typing"
  
  [tool.setuptools]
