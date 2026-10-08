@@ -12,6 +12,9 @@ LICENSE=	BSD2CLAUSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
+BROKEN_FreeBSD_15=	Fails to build
+BROKEN_FreeBSD_16=	Fails to build
+
 USES=		kmod tar:bzip2 uidfix
 
 PLIST_FILES=	${KMODDIR}/if_pvmnet.ko
