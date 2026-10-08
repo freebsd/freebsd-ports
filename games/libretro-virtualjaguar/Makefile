@@ -1,11 +1,12 @@
 PORTNAME=	libretro-virtualjaguar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.0
+DISTVERSION=	3.7.1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of Virtual Jaguar to Libretro
-WWW=		https://github.com/libretro/virtualjaguar-libretro
+WWW=		https://jaguar.provenance-emu.com \
+		https://github.com/libretro/virtualjaguar-libretro
 
 LICENSE=	GPLv3
 
