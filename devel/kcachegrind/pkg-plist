@@ -114,6 +114,10 @@ share/locale/sk/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/sl/LC_MESSAGES/kcachegrind.mo
 share/locale/sl/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/sq/LC_MESSAGES/kcachegrind.mo
+share/locale/sr/LC_MESSAGES/kcachegrind.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kcachegrind.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kcachegrind.mo
+share/locale/sr@latin/LC_MESSAGES/kcachegrind.mo
 share/locale/sv/LC_MESSAGES/kcachegrind.mo
 share/locale/sv/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/ta/LC_MESSAGES/kcachegrind.mo

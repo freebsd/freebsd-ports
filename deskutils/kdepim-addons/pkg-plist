@@ -1264,6 +1264,8 @@ share/locale/ta/LC_MESSAGES/customtoolsplugin.mo
 share/locale/ta/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ta/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/ta/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/ta/LC_MESSAGES/kaichat_addressbook.mo
+share/locale/ta/LC_MESSAGES/kaichat_calendar.mo
 share/locale/ta/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/ta/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/ta/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
