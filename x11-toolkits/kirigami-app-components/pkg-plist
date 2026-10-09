@@ -5,6 +5,7 @@ include/KF6/Kirigami/ActionCollection/actioncollections.h
 include/KF6/Kirigami/ActionCollection/kirigamiactioncollection_export.h
 include/KF6/Kirigami/ActionCollection/kirigamiactioncollection_version.h
 lib/cmake/KF6KirigamiAppComponents/KF6KirigamiAppComponentsConfig.cmake
+lib/cmake/KF6KirigamiAppComponents/KF6KirigamiAppComponentsConfigVersion.cmake
 lib/cmake/KF6KirigamiAppComponents/KirigamiAppComponentsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6KirigamiAppComponents/KirigamiAppComponentsTargets.cmake
 lib/libKirigamiActionCollection.so
@@ -30,11 +31,13 @@ share/locale/he/LC_MESSAGES/kirigami-app-components.mo
 share/locale/it/LC_MESSAGES/kirigami-app-components.mo
 share/locale/ka/LC_MESSAGES/kirigami-app-components.mo
 share/locale/ko/LC_MESSAGES/kirigami-app-components.mo
+share/locale/lt/LC_MESSAGES/kirigami-app-components.mo
 share/locale/nl/LC_MESSAGES/kirigami-app-components.mo
 share/locale/nn/LC_MESSAGES/kirigami-app-components.mo
 share/locale/pt_BR/LC_MESSAGES/kirigami-app-components.mo
 share/locale/sk/LC_MESSAGES/kirigami-app-components.mo
 share/locale/sl/LC_MESSAGES/kirigami-app-components.mo
+share/locale/ta/LC_MESSAGES/kirigami-app-components.mo
 share/locale/tr/LC_MESSAGES/kirigami-app-components.mo
 share/locale/uk/LC_MESSAGES/kirigami-app-components.mo
 share/locale/zh_CN/LC_MESSAGES/kirigami-app-components.mo

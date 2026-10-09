@@ -1,5 +1,5 @@
 PORTNAME=	kirigami-app-components
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	x11-toolkits kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 
