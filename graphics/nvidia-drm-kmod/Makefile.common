@@ -39,10 +39,6 @@ WRKSRC_SUBDIR=	src/nvidia-drm/
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-freebsd-lkpi.c-20250918-01
 .endif
 
-.if ${NVVERSION} < 565.00000
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-conftest.h
-.endif #565.00
-
 .if ${NVVERSION} < 555.04202
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-freebsd-lkpi.c
 .endif
