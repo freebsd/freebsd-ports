@@ -1002,7 +1002,6 @@ share/mime/packages/com.devolutions.remotedesktopmanager-rdp.xml
 %%DATADIR%%/libDevolutionsRdp.so
 %%DATADIR%%/libDevolutionsSspi.so
 %%DATADIR%%/libDevolutionsVnc.so
-%%DATADIR%%/libEmbeddedTerminal.so
 %%DATADIR%%/libHarfBuzzSharp.so
 %%DATADIR%%/libMono.Unix.so
 %%DATADIR%%/libSkiaSharp.so
