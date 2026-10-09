@@ -243,7 +243,7 @@ lib/libr_syscall.so
 lib/libr_syscall.so.%%PORTVERSION%%
 lib/libr_util.so
 lib/libr_util.so.%%PORTVERSION%%
-lib/libsdb.so.2.5.0
+lib/libsdb.so.2.5.2
 libdata/pkgconfig/libr.pc
 libdata/pkgconfig/r_anal.pc
 libdata/pkgconfig/r_arch.pc
