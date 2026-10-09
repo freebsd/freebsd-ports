@@ -1,7 +1,5 @@
-TIMESTAMP = 1662622009
-SHA256 (src-norm-1.5r6.tgz) = 20ea2e8dd5d5e1ff1ff91dc7dab6db53a77d7b7183d8cf2425c215fd294f22a7
-SIZE (src-norm-1.5r6.tgz) = 2297898
-SHA256 (waf-2.0.19) = ba63c90a865a9bcf46926c4e6776f9a3f73d29f33d49b7f61f96bc37b7397cef
-SIZE (waf-2.0.19) = 104832
-SHA256 (ba9ca1ca7d73592268ebfd5a43271303e76f461e.patch) = 20caaebb6455004de46935d79372c13d10bf2df699ebb996e5e390b6a23b666e
-SIZE (ba9ca1ca7d73592268ebfd5a43271303e76f461e.patch) = 1857
+TIMESTAMP = 1791586625
+SHA256 (USNavalResearchLaboratory-norm-v1.5.9_GH0.tar.gz) = 9f1fece22d861aebd79b89ff8b45f623471c40177a24cc0d5f81cb719c8c6ffe
+SIZE (USNavalResearchLaboratory-norm-v1.5.9_GH0.tar.gz) = 1658306
+SHA256 (USNavalResearchLaboratory-protolib-702e909_GH0.tar.gz) = 9dd572238c231edbab2b2ab78d6938396ddcf3354655ae0a81e51fef662947eb
+SIZE (USNavalResearchLaboratory-protolib-702e909_GH0.tar.gz) = 1284131
