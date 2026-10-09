@@ -10,6 +10,14 @@ lib/cmake/KF6KirigamiAppComponents/KirigamiAppComponentsTargets.cmake
 lib/libKirigamiActionCollection.so
 lib/libKirigamiActionCollection.so.%%SHLIB_VER%%
 lib/libKirigamiActionCollection.so.6
+%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/ActionCollectionManager.qml
+%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/ActionsExplorer.qml
+%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/KeySequenceItem.qml
+%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/KirigamiActionCollection.qmltypes
+%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/ShortcutsEditor.qml
+%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/kde-qmlmodule.version
+%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/libKirigamiActionCollectionplugin.so
+%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/qmldir
 share/locale/ar/LC_MESSAGES/kirigami-app-components.mo
 share/locale/ca/LC_MESSAGES/kirigami-app-components.mo
 share/locale/ca@valencia/LC_MESSAGES/kirigami-app-components.mo
@@ -31,11 +39,3 @@ share/locale/tr/LC_MESSAGES/kirigami-app-components.mo
 share/locale/uk/LC_MESSAGES/kirigami-app-components.mo
 share/locale/zh_CN/LC_MESSAGES/kirigami-app-components.mo
 share/locale/zh_TW/LC_MESSAGES/kirigami-app-components.mo
-%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/ActionCollectionManager.qml
-%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/ActionsExplorer.qml
-%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/KeySequenceItem.qml
-%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/KirigamiActionCollection.qmltypes
-%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/ShortcutsEditor.qml
-%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/kde-qmlmodule.version
-%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/libKirigamiActionCollectionplugin.so
-%%QT_QMLDIR%%/org/kde/kirigami/actioncollection/qmldir
