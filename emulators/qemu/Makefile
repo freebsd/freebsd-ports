@@ -1,5 +1,6 @@
 PORTNAME=	qemu
 DISTVERSION=	11.1.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -105,6 +106,7 @@ CONFIGURE_ARGS+=	--disable-attr \
 			--disable-netmap \
 			--disable-nettle \
 			--disable-numa \
+			--disable-plugins \
 			--disable-rbd \
 			--disable-rdma \
 			--disable-seccomp \
