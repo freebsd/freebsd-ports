@@ -369,7 +369,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		spdx-0.13.5 \
 		stable_deref_trait-1.2.1 \
 		stacker-0.1.25 \
-		static_vcruntime-3.0.0 \
 		strsim-0.11.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
