@@ -1,4 +1,4 @@
---- electron/spec/api-app.spec.ts.orig	2026-09-29 23:27:57 UTC
+--- electron/spec/api-app.spec.ts.orig	2026-10-07 16:24:25 UTC
 +++ electron/spec/api-app.spec.ts
 @@ -126,7 +126,7 @@ describe('app module', () => {
      });
@@ -41,7 +41,7 @@
        const electronPath = process.execPath;
        const appPath = path.join(fixturesPath, 'api', 'singleton');
        appProcess = cp.spawn(electronPath, [appPath]);
-@@ -490,7 +490,7 @@ describe('app module', () => {
+@@ -512,7 +512,7 @@ describe('app module', () => {
    });
  
    // GitHub Actions macOS-13 runners used for x64 seem to have a problem with this test.
@@ -50,7 +50,7 @@
      const tempFiles = [
        path.join(fixturesPath, 'foo.txt'),
        path.join(fixturesPath, 'bar.txt'),
-@@ -626,7 +626,7 @@ describe('app module', () => {
+@@ -648,7 +648,7 @@ describe('app module', () => {
    //   let w = null
  
    //   before(function () {
@@ -59,7 +59,7 @@
    //       this.skip()
    //     }
    //   })
-@@ -738,7 +738,7 @@ describe('app module', () => {
+@@ -760,7 +760,7 @@ describe('app module', () => {
    });
  
    describe('app.badgeCount', () => {
@@ -68,7 +68,7 @@
  
      const expectedBadgeCount = 42;
  
-@@ -771,7 +771,7 @@ describe('app module', () => {
+@@ -793,7 +793,7 @@ describe('app module', () => {
    });
  
    ifdescribe(
@@ -77,7 +77,7 @@
    )('app.get/setLoginItemSettings API', function () {
      const isMac = process.platform === 'darwin';
      const isWin = process.platform === 'win32';
-@@ -1115,7 +1115,7 @@ describe('app module', () => {
+@@ -1137,7 +1137,7 @@ describe('app module', () => {
      });
    });
  
@@ -86,7 +86,7 @@
      // These tests toggle a process-wide AXMode. Turn it back off so the rest of
      // the suite doesn't run with renderer accessibility enabled.
      afterEach(() => {
-@@ -1391,7 +1391,7 @@ describe('app module', () => {
+@@ -1413,7 +1413,7 @@ describe('app module', () => {
      });
    });
  
@@ -95,7 +95,7 @@
      let w: BrowserWindow;
  
      before(function () {
-@@ -1534,7 +1534,7 @@ describe('app module', () => {
+@@ -1556,7 +1556,7 @@ describe('app module', () => {
  
    describe('getApplicationNameForProtocol()', () => {
      // TODO: Linux CI doesn't have registered http & https handlers
@@ -104,7 +104,7 @@
        'returns application names for common protocols',
        function () {
          // We can't expect particular app names here, but these protocols should
-@@ -1551,7 +1551,7 @@ describe('app module', () => {
+@@ -1573,7 +1573,7 @@ describe('app module', () => {
        expect(app.getApplicationNameForProtocol('bogus-protocol://')).to.equal('');
      });
  
@@ -113,7 +113,7 @@
        const desktopFileId = 'mock-browser.desktop';
        const mockDisplayName = 'Mock Browser';
        const mockScheme = 'mockproto';
-@@ -1601,7 +1601,7 @@ describe('app module', () => {
+@@ -1623,7 +1623,7 @@ describe('app module', () => {
      let xdgBinDir: string;
  
      before(() => {
@@ -122,7 +122,7 @@
          return;
        }
  
-@@ -1618,7 +1618,7 @@ describe('app module', () => {
+@@ -1640,7 +1640,7 @@ describe('app module', () => {
      });
  
      after(() => {
@@ -131,7 +131,7 @@
          fs.rmSync(xdgDir, { recursive: true, force: true });
        }
      });
-@@ -1630,7 +1630,7 @@ describe('app module', () => {
+@@ -1652,7 +1652,7 @@ describe('app module', () => {
      });
  
      it('returns resolved promise with appPath, displayName and icon', async function () {
@@ -140,7 +140,7 @@
          const appInfo = await spawnProtocolInfoWithXdgMock(`${mockScheme}://`, xdgDataHome, xdgConfigHome);
          expect(appInfo.name).to.equal(mockDisplayName);
          expect(appInfo.path).to.equal('/usr/bin/true');
-@@ -1644,7 +1644,7 @@ describe('app module', () => {
+@@ -1666,7 +1666,7 @@ describe('app module', () => {
        expect(appInfo.icon).not.to.be.undefined();
      });
  
@@ -149,7 +149,7 @@
        const pathLookupExecutable = 'mock-browser';
        const pathLookupExecutablePath = path.join(xdgBinDir, pathLookupExecutable);
        const pathLookupDisplayName = 'Mock Browser PATH';
-@@ -1678,7 +1678,7 @@ describe('app module', () => {
+@@ -1700,7 +1700,7 @@ describe('app module', () => {
      });
    });
  
@@ -158,7 +158,7 @@
      const protocol = 'electron-test-linux';
      const desktopFileId = 'electron-test.desktop';
      const protocolMimeType = `x-scheme-handler/${protocol}`;
-@@ -1795,7 +1795,7 @@ describe('app module', () => {
+@@ -1817,7 +1817,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -167,7 +167,7 @@
      const iconPath = path.join(import.meta.dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -1877,7 +1877,7 @@ describe('app module', () => {
+@@ -1899,7 +1899,7 @@ describe('app module', () => {
            expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0);
          }
  
@@ -176,7 +176,7 @@
            expect(entry.sandboxed).to.be.a('boolean');
          }
  
-@@ -1894,7 +1894,7 @@ describe('app module', () => {
+@@ -1916,7 +1916,7 @@ describe('app module', () => {
      });
    });
  
@@ -185,7 +185,7 @@
      const fixture = path.join(fixturesPath, 'apps', 'gdk-backend');
      const run = async (env: NodeJS.ProcessEnv) => {
        const child = cp.spawn(process.execPath, [fixture], { env, stdio: ['ignore', 'pipe', 'ignore'] });
-@@ -1991,7 +1991,7 @@ describe('app module', () => {
+@@ -2013,7 +2013,7 @@ describe('app module', () => {
          if (isGpuUnavailable(error as Error)) return this.skip();
          throw error;
        }
@@ -194,7 +194,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -2015,7 +2015,7 @@ describe('app module', () => {
+@@ -2037,7 +2037,7 @@ describe('app module', () => {
      });
    });
  
