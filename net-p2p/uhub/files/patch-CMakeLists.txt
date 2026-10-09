@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2026-10-09 19:16:22 UTC
++++ CMakeLists.txt
+@@ -3,7 +3,7 @@
+ ## Copyright (C) 2007-2013, Jan Vidar Krey <janvidar@extatic.org>
+  #
+ 
+-cmake_minimum_required (VERSION 2.8.2)
++cmake_minimum_required (VERSION 3.5)
+ 
+ project (uhub NONE)
+ enable_language(C)
