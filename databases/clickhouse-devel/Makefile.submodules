@@ -1,4 +1,4 @@
-GH_TUPLE+=	ClickHouse:AMQP-CPP:99b52d1a:ClickHouse_AMQP_CPP/contrib/AMQP-CPP
+GH_TUPLE+=	ClickHouse:AMQP-CPP:4fccd7f8:ClickHouse_AMQP_CPP/contrib/AMQP-CPP
 GH_TUPLE+=	Maratyszcza:FP16:0a92994d:Maratyszcza_FP16/contrib/FP16
 GH_TUPLE+=	ClickHouse:NuRaft:fff08cca:ClickHouse_NuRaft/contrib/NuRaft
 GH_TUPLE+=	brainhub:SHA3IUF:fc850475:brainhub_SHA3IUF/contrib/SHA3IUF
