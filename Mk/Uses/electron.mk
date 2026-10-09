@@ -228,10 +228,13 @@ BUILD_DEPENDS+=	jq:textproc/jq
 BUILD_DEPENDS+=	yq:textproc/yq
 .  endif
 
+JQ_CMD?=	${LOCALBASE}/bin/jq
+YQ_CMD?=	${LOCALBASE}/bin/yq
+
 .  if !defined(UPSTREAM_ELECTRON_VER)
 .    if ${_NPM_EXISTS_PKGFILE} == yes
-.      if ${NPM_NAME} == npm && exists(${LOCALBASE}/bin/jq)
-UPSTREAM_ELECTRON_VER!=	jq -r \
+.      if ${NPM_NAME} == npm && exists(${JQ_CMD})
+UPSTREAM_ELECTRON_VER!=	${JQ_CMD} -r \
 				'.packages | \
 				to_entries | \
 				map(if(.key | test("electron$$")) then .value.version else empty end) | \
@@ -244,16 +247,16 @@ UPSTREAM_ELECTRON_VER!=	${GREP} -e 'resolved.*/electron/' ${PKGJSONSDIR}/${NPM_L
 			${SED} -E 's/\.[a-z]+.*$$//' | \
 			${SORT} -n | \
 			${TAIL} -n 1
-.      elif (${NPM_NAME} == yarn2 || ${NPM_NAME} == yarn4) && exists(${LOCALBASE}/bin/yq)
-UPSTREAM_ELECTRON_VER!=	yq -r \
+.      elif (${NPM_NAME} == yarn2 || ${NPM_NAME} == yarn4) && exists(${YQ_CMD})
+UPSTREAM_ELECTRON_VER!=	${YQ_CMD} -r \
 				'. | \
 				to_entries | \
 				map(if(.key | test("^electron@")) then .value.version else empty end) | \
 				.[]' ${PKGJSONSDIR}/${NPM_LOCKFILE} | \
 			${SORT} -n | \
 			${TAIL} -n 1
-.      elif ${NPM_NAME} == pnpm && exists(${LOCALBASE}/bin/yq)
-UPSTREAM_ELECTRON_VER!=	yq -r \
+.      elif ${NPM_NAME} == pnpm && exists(${YQ_CMD})
+UPSTREAM_ELECTRON_VER!=	${YQ_CMD} -r \
 				'.packages | \
 				to_entries | \
 				map(if(.key | test("^electron@")) then .key else empty end) | \
@@ -366,7 +369,7 @@ electron-rebuild-native-node-modules-for-electron:
 .    if defined(_ELECTRON_FEATURE_REBUILD_ELECTRON) && \
        ${_ELECTRON_FEATURE_REBUILD_ELECTRON} == yes
 .      if ${NPM_NAME} == pnpm
-	@for dir in `app-builder node-dep-tree --dir ${ELECTRON_REBUILD_WRKSRC_ELECTRON} | jq -r '.[] | { dir: .dir, name: .deps[].name } | .dir + "/" + .name'`; do \
+	@for dir in `app-builder node-dep-tree --dir ${ELECTRON_REBUILD_WRKSRC_ELECTRON} | ${JQ_CMD} -r '.[] | { dir: .dir, name: .deps[].name } | .dir + "/" + .name'`; do \
 		for subdir in `${FIND} $${dir} -type f -name binding.gyp -exec ${DIRNAME} {} ';' 2> /dev/null`; do \
 			cd $${subdir} && \
 			${ECHO_MSG} "===>  Rebuilding native node modules for electron in $${subdir}" && \
@@ -374,7 +377,7 @@ electron-rebuild-native-node-modules-for-electron:
 		done \
 	done
 .      else
-	@for dir in `app-builder node-dep-tree --dir ${ELECTRON_REBUILD_WRKSRC_ELECTRON} | jq -r '.[] | { dir: .dir, name: .deps[].name } | .dir + "/" + .name'`; do \
+	@for dir in `app-builder node-dep-tree --dir ${ELECTRON_REBUILD_WRKSRC_ELECTRON} | ${JQ_CMD} -r '.[] | { dir: .dir, name: .deps[].name } | .dir + "/" + .name'`; do \
 		for subdir in `${FIND} $${dir} -type f -name binding.gyp -exec ${DIRNAME} {} ';' 2> /dev/null`; do \
 			cd $${subdir} && \
 			${ECHO_MSG} "===>  Rebuilding native node modules for electron in $${subdir}" && \
