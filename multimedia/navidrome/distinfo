@@ -1,7 +1,7 @@
-TIMESTAMP = 1790139365
-SHA256 (navidrome-v0.64.1.frontend.tar.gz) = 765c98834753fa74a3c5a769307db2c5e3c7d0c632b9b5ea460b2d242ae61a1b
-SIZE (navidrome-v0.64.1.frontend.tar.gz) = 8927749
-SHA256 (navidrome-v0.64.1.vendor.tar.gz) = 9c6172d39767575b73de65553f50605a11c71e67aea7c8e7ad768c12f3964f3f
-SIZE (navidrome-v0.64.1.vendor.tar.gz) = 11079529
-SHA256 (navidrome-navidrome-v0.64.1_GH0.tar.gz) = aeea3e4570a29105bc09957da47f3d969700352bb846ba9ff8f1ddff69d31afe
-SIZE (navidrome-navidrome-v0.64.1_GH0.tar.gz) = 9304194
+TIMESTAMP = 1791506085
+SHA256 (navidrome-v0.64.2.frontend.tar.gz) = 5088c0055d7c6404aa1fee43ff5702733b21f43cb946e0993af5770ff3f57ed2
+SIZE (navidrome-v0.64.2.frontend.tar.gz) = 8924651
+SHA256 (navidrome-v0.64.2.vendor.tar.gz) = 8110d43f76b6117ebb8307b4047dddf868b2ba01b46ac5afa19bd385c84f89c8
+SIZE (navidrome-v0.64.2.vendor.tar.gz) = 11088118
+SHA256 (navidrome-navidrome-v0.64.2_GH0.tar.gz) = 6d6de86c7509620dd445be9c22f2441225c9d86f009317c9b92923ad3a83ddb5
+SIZE (navidrome-navidrome-v0.64.2_GH0.tar.gz) = 9313533
