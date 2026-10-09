@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2025-04-03 13:33:36 UTC
++++ CMakeLists.txt
+@@ -1,5 +1,5 @@
+ # VDT Math Library
+-cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+ project (Vdt)
+ 
+ #-------------------------------------------------------------------------------
