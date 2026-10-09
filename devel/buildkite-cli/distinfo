@@ -1,7 +1,7 @@
-TIMESTAMP = 1791272402
-SHA256 (go/devel_buildkite-cli/buildkite-cli-v3.59.1_GH0/v3.59.1.mod) = e0a2ab3bf5fdde85c778544713069a92a1d9905274ac4840b7cdc955744eb7a0
-SIZE (go/devel_buildkite-cli/buildkite-cli-v3.59.1_GH0/v3.59.1.mod) = 4617
-SHA256 (go/devel_buildkite-cli/buildkite-cli-v3.59.1_GH0/v3.59.1.zip) = 2bc4d14c04416499d46727f4ca3ada364756c30a3d7d58922eabb394faee8062
-SIZE (go/devel_buildkite-cli/buildkite-cli-v3.59.1_GH0/v3.59.1.zip) = 1451092
-SHA256 (go/devel_buildkite-cli/buildkite-cli-v3.59.1_GH0/buildkite-cli-v3.59.1_GH0.tar.gz) = 10696f6d99b319ec85a181485297f7de59b975190e8a2298ed5b8056d06d4120
-SIZE (go/devel_buildkite-cli/buildkite-cli-v3.59.1_GH0/buildkite-cli-v3.59.1_GH0.tar.gz) = 1262877
+TIMESTAMP = 1791535249
+SHA256 (go/devel_buildkite-cli/buildkite-cli-v3.60.0_GH0/v3.60.0.mod) = db86d8765412ca23b1f3aa8d8426d876f110606a9ca9e3f44e235a8c54182939
+SIZE (go/devel_buildkite-cli/buildkite-cli-v3.60.0_GH0/v3.60.0.mod) = 4617
+SHA256 (go/devel_buildkite-cli/buildkite-cli-v3.60.0_GH0/v3.60.0.zip) = 79956d6f039560eca5af3990cc3b5505985cb63130d55a2b0e478ef8e9ca08c1
+SIZE (go/devel_buildkite-cli/buildkite-cli-v3.60.0_GH0/v3.60.0.zip) = 1458509
+SHA256 (go/devel_buildkite-cli/buildkite-cli-v3.60.0_GH0/buildkite-cli-v3.60.0_GH0.tar.gz) = e0aca43d0141e4a807c9714a8a91802da77de50a9d0c5d8ef764617ee8451c62
+SIZE (go/devel_buildkite-cli/buildkite-cli-v3.60.0_GH0/buildkite-cli-v3.60.0_GH0.tar.gz) = 1267923
