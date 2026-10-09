@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2016-01-14 02:00:17 UTC
+--- CMakeLists.txt.orig	2026-10-09 19:03:03 UTC
 +++ CMakeLists.txt
-@@ -101,7 +101,11 @@ if(CRYPTO_OPENSSL AND NOT OPENSSL_FOUND)
+@@ -17,7 +17,7 @@
+ # meant for generating project files for those working with IDE's to do
+ # otherwise generic builds of the library and supporting applications.
+ 
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.5)
+ PROJECT(ucommon)
+ set (VERSION 7.0.0)
+ 
+@@ -101,7 +101,11 @@ if(OPENSSL_FOUND)
  endif()
  if(OPENSSL_FOUND)
      set(HAVE_OPENSSL TRUE)

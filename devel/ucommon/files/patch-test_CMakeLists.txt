@@ -1,0 +1,11 @@
+--- test/CMakeLists.txt.orig	2026-10-09 19:03:03 UTC
++++ test/CMakeLists.txt
+@@ -11,7 +11,7 @@ project(test)
+ #
+ 
+ project(test)
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.5)
+ 
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}
+                     ${CMAKE_CURRENT_SOURCE_DIR}/../inc)
