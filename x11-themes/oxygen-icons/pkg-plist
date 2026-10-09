@@ -316,6 +316,7 @@ share/icons/oxygen/applets/22x22/weather-storm-symbolic.svg
 share/icons/oxygen/applets/22x22/window-pin-symbolic.svg
 share/icons/oxygen/applets/22x22/window-unpin-symbolic.svg
 share/icons/oxygen/applets/22x22/yakuake-symbolic.svg
+share/icons/oxygen/applets/22x22/zeal-tray.svg
 share/icons/oxygen/applets/24x24/actor-symbolic.svg
 share/icons/oxygen/applets/24x24/akregator-symbolic.svg
 share/icons/oxygen/applets/24x24/amarok-symbolic.svg
@@ -618,6 +619,7 @@ share/icons/oxygen/applets/24x24/weather-storm-symbolic.svg
 share/icons/oxygen/applets/24x24/window-pin-symbolic.svg
 share/icons/oxygen/applets/24x24/window-unpin-symbolic.svg
 share/icons/oxygen/applets/24x24/yakuake-symbolic.svg
+share/icons/oxygen/applets/24x24/zeal-tray.svg
 share/icons/oxygen/applets/32x32/akregator-symbolic.svg
 share/icons/oxygen/applets/32x32/audio-off-symbolic.svg
 share/icons/oxygen/applets/32x32/audio-on-symbolic.svg
@@ -716,6 +718,7 @@ share/icons/oxygen/applets/32x32/user-trash-symbolic.svg
 share/icons/oxygen/applets/32x32/window-pin-symbolic.svg
 share/icons/oxygen/applets/32x32/window-unpin-symbolic.svg
 share/icons/oxygen/applets/32x32/yakuake-symbolic.svg
+share/icons/oxygen/applets/32x32/zeal-tray.svg
 share/icons/oxygen/applets/64x64/monitor-symbolic.svg
 share/icons/oxygen/applets/64x64/osd-duplicate-symbolic.svg
 share/icons/oxygen/applets/64x64/osd-rotate-ccw.-symbolic.svg
@@ -5700,6 +5703,7 @@ share/icons/oxygen/base/256x256/apps/lokalize.png
 share/icons/oxygen/base/256x256/apps/mameexecutor.png
 share/icons/oxygen/base/256x256/apps/multimedia-volume-control.png
 share/icons/oxygen/base/256x256/apps/org.kde.dolphin.png
+share/icons/oxygen/base/256x256/apps/org.kde.koko.png
 share/icons/oxygen/base/256x256/apps/org.kde.krecorder.png
 share/icons/oxygen/base/256x256/apps/org.kde.neochat.png
 share/icons/oxygen/base/256x256/apps/org.kde.tokodon.png
@@ -5707,6 +5711,7 @@ share/icons/oxygen/base/256x256/apps/oxygen.png
 share/icons/oxygen/base/256x256/apps/partitionmanager.png
 share/icons/oxygen/base/256x256/apps/picmi.png
 share/icons/oxygen/base/256x256/apps/planner.png
+share/icons/oxygen/base/256x256/apps/plasma-studio.png
 share/icons/oxygen/base/256x256/apps/plasmadiscover.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-display-color.png
 share/icons/oxygen/base/256x256/apps/preferences-desktop-display.png
@@ -8742,6 +8747,7 @@ share/icons/oxygen/base/48x48/apps/office-calendar.png
 share/icons/oxygen/base/48x48/apps/okteta.png
 share/icons/oxygen/base/48x48/apps/okular.png
 share/icons/oxygen/base/48x48/apps/org.kde.dolphin.png
+share/icons/oxygen/base/48x48/apps/org.kde.koko.png
 share/icons/oxygen/base/48x48/apps/org.kde.krecorder.png
 share/icons/oxygen/base/48x48/apps/org.kde.neochat.png
 share/icons/oxygen/base/48x48/apps/org.kde.tokodon.png
@@ -9781,6 +9787,7 @@ share/icons/oxygen/base/64x64/apps/office-calendar.png
 share/icons/oxygen/base/64x64/apps/okteta.png
 share/icons/oxygen/base/64x64/apps/okular.png
 share/icons/oxygen/base/64x64/apps/org.kde.dolphin.png
+share/icons/oxygen/base/64x64/apps/org.kde.koko.png
 share/icons/oxygen/base/64x64/apps/org.kde.krecorder.png
 share/icons/oxygen/base/64x64/apps/org.kde.neochat.png
 share/icons/oxygen/base/64x64/apps/org.kde.tokodon.png

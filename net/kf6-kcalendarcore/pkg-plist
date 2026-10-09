@@ -94,12 +94,16 @@ share/locale/fr/LC_MESSAGES/kcalendarcore6_qt.qm
 share/locale/he/LC_MESSAGES/kcalendarcore6_qt.qm
 share/locale/it/LC_MESSAGES/kcalendarcore6_qt.qm
 share/locale/ka/LC_MESSAGES/kcalendarcore6_qt.qm
+share/locale/ko/LC_MESSAGES/kcalendarcore6_qt.qm
 share/locale/nl/LC_MESSAGES/kcalendarcore6_qt.qm
+share/locale/pl/LC_MESSAGES/kcalendarcore6_qt.qm
 share/locale/pt_BR/LC_MESSAGES/kcalendarcore6_qt.qm
 share/locale/sk/LC_MESSAGES/kcalendarcore6_qt.qm
 share/locale/sl/LC_MESSAGES/kcalendarcore6_qt.qm
 share/locale/tr/LC_MESSAGES/kcalendarcore6_qt.qm
+share/locale/ug/LC_MESSAGES/kcalendarcore6_qt.qm
 share/locale/uk/LC_MESSAGES/kcalendarcore6_qt.qm
 share/locale/zh_CN/LC_MESSAGES/kcalendarcore6_qt.qm
+share/locale/zh_TW/LC_MESSAGES/kcalendarcore6_qt.qm
 share/qlogging-categories6/kcalendarcore.categories
 share/qlogging-categories6/kcalendarcore.renamecategories

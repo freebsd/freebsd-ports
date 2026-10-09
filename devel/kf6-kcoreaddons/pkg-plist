@@ -27,6 +27,7 @@ include/KF6/KCoreAddons/KProcess
 include/KF6/KCoreAddons/KProcessList
 include/KF6/KCoreAddons/KRandom
 include/KF6/KCoreAddons/KRuntimePlatform
+include/KF6/KCoreAddons/KSafeStringError
 include/KF6/KCoreAddons/KSandbox
 include/KF6/KCoreAddons/KSharedDataCache
 include/KF6/KCoreAddons/KShell
@@ -64,6 +65,7 @@ include/KF6/KCoreAddons/kprocess.h
 include/KF6/KCoreAddons/kprocesslist.h
 include/KF6/KCoreAddons/krandom.h
 include/KF6/KCoreAddons/kruntimeplatform.h
+include/KF6/KCoreAddons/ksafestringerror.h
 include/KF6/KCoreAddons/ksandbox.h
 include/KF6/KCoreAddons/kshareddatacache.h
 include/KF6/KCoreAddons/kshell.h
