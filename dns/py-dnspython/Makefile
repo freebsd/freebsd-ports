@@ -1,6 +1,5 @@
 PORTNAME=	dnspython
-DISTVERSION=	2.8.0
-PORTREVISION=	1
+DISTVERSION=	2.9.0
 PORTEPOCH=	1
 CATEGORIES=	dns python
 MASTER_SITES=	PYPI
@@ -11,9 +10,8 @@ COMMENT=	DNS toolkit for Python
 WWW=		https://www.dnspython.org/
 
 LICENSE=	ISCL
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.9.21:devel/py-uv-build@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
@@ -21,8 +19,12 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 BINARY_ALIAS=	git=false
 NO_ARCH=	yes
 
-PORTEXAMPLES=	ddns.py e164.py mx.py name.py reverse.py reverse_name.py xfr.py \
-		zonediff.py
+PORTEXAMPLES=	async_dns.py ddns_client.py* ddns_server.py ddr.py \
+		doh-json.py* doh.py* doq.py dot.py e164.py* ecs.py* \
+		edns_resolver.py edns.py* mx-typed.py* mx.py* \
+		name.py* query_specific.py receive_notify.py  \
+		reverse_name.py* reverse.py* send_notify.py* \
+		server.py tsig.py wire_read_tcp.py* xfr.py* zonediff.py*
 
 OPTIONS_DEFINE=		DNSSEC DOH DOQ EXAMPLES IDNA TRIO
 OPTIONS_DEFAULT=	DNSSEC DOH DOQ IDNA TRIO
