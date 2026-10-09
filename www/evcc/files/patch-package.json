@@ -1,8 +1,8 @@
---- package.json.orig	1970-01-01 00:00:00 UTC
+--- package.json.orig	2026-10-09 10:12:20 UTC
 +++ package.json
 @@ -13,7 +13,8 @@
      "playwright:ci": "cross-env CI=true playwright test",
-     "simulator": "vp dev tests/simulator",
+     "simulator": "vp build tests/simulator && vp preview tests/simulator",
      "storybook": "storybook dev -p 6006",
 -    "license": "license-compliance --production --report detailed --allow \"MIT;Apache-2.0;ISC;BSD-2-Clause;BSD-3-Clause;0BSD\""
 +    "license": "license-compliance --production --report detailed --allow \"MIT;Apache-2.0;ISC;BSD-2-Clause;BSD-3-Clause;0BSD\"",
@@ -25,20 +25,20 @@
      "ts-json-schema-generator": "^2.9.0",
      "tsx": "^4.23.13",
      "typescript": "^5.9.3",
--    "vite": "npm:@voidzero-dev/vite-plus-core@0.2.6",
--    "vite-plus": "0.2.6",
+-    "vite": "npm:@voidzero-dev/vite-plus-core@1.0.0",
+-    "vite-plus": "1.0.0",
 +    "vite": "8.3.2",
-     "vitest": "4.1.11",
      "vue-hot-reload-api": "^2.3.4",
      "vue-tsc": "^3.3.11",
-@@ -95,8 +95,8 @@
+     "wait-on": "^9.1.0",
+@@ -94,9 +94,6 @@
      "yaml": "^2.9.1"
    },
    "overrides": {
--    "vite": "npm:@voidzero-dev/vite-plus-core@0.2.6",
-+    "vite": "8.3.2",
-     "@vitest/mocker": "4.1.11",
-     "vitest": "4.1.11"
+-    "vite": "npm:@voidzero-dev/vite-plus-core@1.0.0",
+-    "storybook": {
+-      "vite-plus": "$vite-plus"
+-    }
++    "vite": "8.3.2"
    }
--}
-+}
+ }

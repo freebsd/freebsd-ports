@@ -1,6 +1,6 @@
---- vite.config.ts.orig	1970-01-01 00:00:00 UTC
+--- vite.config.ts.orig	2026-10-09 10:12:20 UTC
 +++ vite.config.ts
-@@ -1,85 +1,17 @@
+@@ -1,90 +1,17 @@
 -import { defineConfig, lazyPlugins } from "vite-plus";
 +import { defineConfig } from "vite";
  import vuePlugin from "@vitejs/plugin-vue";
@@ -23,19 +23,24 @@
 -    tasks: {
 -      build: {
 -        command: "vp build",
--        // node_modules layout differs between jobs that ran vitest and those that did not
--        input: [{ auto: true }, "!**/node_modules/**"],
+-        cache: {
+-          // node_modules layout differs between jobs that ran vitest and those that did not
+-          input: [{ auto: true }, "!**/node_modules/**"],
+-        },
 -      },
 -      openapi: {
 -        command: "tsx scripts/state-schema/index.ts",
--        // generated schema is an output, not an input
--        input: [{ auto: true }, "!server/openapi.state.yaml"],
+-        cache: {
+-          // generated schema is an output, not an input
+-          input: [{ auto: true }, "!server/openapi.state.yaml"],
+-        },
 -      },
 -      test: {
--        command:
--          "cross-env TZ=Europe/Berlin NODE_OPTIONS=--no-experimental-webstorage vp test",
--        // vitest keeps its own result cache below node_modules
--        input: [{ auto: true }, "!**/node_modules/.vite/vitest/**"],
+-        command: "cross-env TZ=Europe/Berlin NODE_OPTIONS=--no-experimental-webstorage vp test",
+-        cache: {
+-          // vitest keeps its own result cache below node_modules
+-          input: [{ auto: true }, "!**/node_modules/.vite/vitest/**"],
+-        },
 -      },
 -    },
 -  },
@@ -89,7 +94,7 @@
    root: "./assets",
    publicDir: "public",
    base: "./",
-@@ -114,7 +46,7 @@
+@@ -121,7 +48,7 @@ export default defineConfig({
        "/ws": { target: backendUrl.replace("http", "ws"), ws: true },
      },
    },
@@ -98,7 +103,7 @@
      legacy({
        modernPolyfills: ["es.promise.all-settled"],
      }),
-@@ -126,5 +58,5 @@
+@@ -133,5 +60,5 @@ export default defineConfig({
        },
      }),
      visualizer({ filename: "asset-stats.html" }),
