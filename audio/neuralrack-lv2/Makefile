@@ -42,6 +42,8 @@ MAKEFILE=	makefile
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3 \
 		-I${WRKSRC}/NeuralAudio/deps/RTNeural/modules/Eigen
 
+PLIST_SUB=	VST3_ARCH=${ARCH:S/amd64/x86_64/}
+
 BUILD_CONFLICTS=	portaudio # because portaudio is built with the JACK option off, but neuralrack finds it and assumes that JACK is enabled there
 
 .include <bsd.port.mk>

@@ -3,8 +3,9 @@
 -- 2. Use DESTDIR check instead of root user check for install directory selection
 -- 3. Use PREFIX for install directories instead of hardcoded /usr paths
 -- 4. Comment out root-only install guard for standalone binary
+-- 5. Name the VST3 bundle directory after the compiler target (uname -m is the platform on FreeBSD)
 
---- NeuralRack/makefile.orig	2026-09-23 18:39:31 UTC
+--- NeuralRack/makefile.orig	2026-08-03 07:28:19 UTC
 +++ NeuralRack/makefile
 @@ -2,17 +2,17 @@
  	# check on which OS we build
@@ -31,7 +32,19 @@
  	else 
  	INSTALL_DIR = ~/.lv2
  	#EXE_INSTALL_DIR = ~/bin
-@@ -528,7 +528,7 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
+@@ -216,7 +216,11 @@ endif
+ 	VST3_INCLUDE := -I./engine/ -I./vst3/ -I./wrapper/vst3/travesty/ -I./wrapper/ -I./wrapper/vst3/ -I./plugdef/
+ 	VST3_SOURCES := $(VST3_DIR)NeuralRackVST3.cpp
+ 	ARCH = `echo $(UNAME_S) | tr A-Z a-z`
++ifeq ($(UNAME_S), FreeBSD)
++	VST3_BUNDLE := $(VST3_NAME).vst3/Contents/$(TARGET_ARCH)-$(ARCH)/
++else
+ 	VST3_BUNDLE := $(VST3_NAME).vst3/Contents/$(UNAME_M)-$(ARCH)/
++endif
+ 
+ 	LV2_PLUGIN := $(LV2_DIR)$(NAME)
+ 	LV2_GUI := $(GUI_DIR)$(NAME)
+@@ -528,7 +532,7 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
  	@$(B_ECHO) "$(BUNDLE) skipped$(reset)"
  endif
  ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
@@ -40,7 +53,7 @@
  	@$(B_ECHO) "Install  $(EXEC_NAME)$(EXE_EXT) to $(DESTDIR)$(EXE_INSTALL_DIR)/$(reset)"
  	$(QUIET)mkdir -p $(DESTDIR)$(EXE_INSTALL_DIR)/
  	$(QUIET)cp -r ../bin/$(EXEC_NAME)$(EXE_EXT) $(DESTDIR)$(EXE_INSTALL_DIR)/$(EXEC_NAME)$(EXE_EXT)
-@@ -536,9 +536,8 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
+@@ -536,9 +540,8 @@ ifneq ("$(wildcard ../bin/$(EXEC_NAME)$(EXE_EXT))","")
  	$(QUIET)cp $(STANDALONE_DIR)$(NAME).desktop $(DESTDIR)$(DESKAPPS_DIR)$(NAME).desktop
  	$(QUIET)mkdir -p $(DESTDIR)$(PIXMAPS_DIR)
  	$(QUIET)cp $(STANDALONE_DIR)$(NAME).svg $(DESTDIR)$(PIXMAPS_DIR)$(NAME).svg 
