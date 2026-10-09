@@ -1,5 +1,5 @@
 PORTNAME=	yacreader
-DISTVERSION=	10.3.2
+DISTVERSION=	10.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/YACReader/${PORTNAME}/releases/download/${DISTVERSION}/
 EXTRACT_SUFX=	-src.tar.xz
@@ -31,6 +31,7 @@ ARCHIVE_CMAKE_ON=	-DDECOMPRESSION_BACKEND=libarchive
 ARCHIVE_CMAKE_OFF=	-DDECOMPRESSION_BACKEND=unarr
 
 POPPLER_LIB_DEPENDS=	libpoppler-qt6.so:graphics/poppler-qt6
+POPPLER_CMAKE_ON=	-DPDF_BACKEND=poppler
 POPPLER_CMAKE_OFF=	-DPDF_BACKEND=no_pdf
 
 .include <bsd.port.mk>
