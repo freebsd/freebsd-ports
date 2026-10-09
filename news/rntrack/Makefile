@@ -1,7 +1,6 @@
 PORTNAME=	rntrack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
-PORTREVISION=	1
+DISTVERSION=	2.3.1
 CATEGORIES=	news mail
 
 MAINTAINER=	admin@5034.ru
@@ -16,8 +15,9 @@ USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	vasilyevmax
 
-CXXFLAGS+=	-D__REGISTER_PREFIX__=
 MAKE_ENV=	CONFIG=${ETCDIR}/${PORTNAME}.cfg
+
+CXXFLAGS+=	-D__REGISTER_PREFIX__=
 
 ETCDIR=		${PREFIX}/etc/fido/${PORTNAME}
 
@@ -35,9 +35,9 @@ SCRIPTS_MAKE_ARGS=		ENABLE_SCRIPTS=1
 SYSLOG_FORMAT_MAKE_ARGS=	ENABLE_SYSLOG_LOG_FORMAT=1
 
 _DOCS=		FAQ_en FAQ_ru report.err report.err.ru
-_EXAMPLES=	bignode.zip bignode2.zip node1042.zip node1157.zip \
-		node.cfg node2.cfg node3.cfg perl-test.cfg \
-		point.cfg point2.cfg traflog.tpl
+_EXAMPLES=	bignode.zip bignode2.zip node1042.zip node1157.zip node.cfg \
+		node2.cfg node3.cfg perl-test.cfg point.cfg point2.cfg \
+		traflog.tpl
 _TBL=		alt2koi.tbl koi2alt.tbl
 
 do-install:
