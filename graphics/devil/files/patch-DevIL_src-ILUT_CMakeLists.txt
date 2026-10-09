@@ -1,6 +1,12 @@
 --- DevIL/src-ILUT/CMakeLists.txt.orig	2017-01-01 23:37:37 UTC
 +++ DevIL/src-ILUT/CMakeLists.txt
-@@ -44,6 +44,8 @@ source_group("Resource Files" FILES ${ILUT_RSRC} )
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.31.12)
+ 
+ project(ILUT)
+ 
+@@ -44,6 +44,8 @@ add_library(ILUT SHARED ${ILUT_SRCS} ${ILUT_INC} ${ILU
  
  # Remove SHARED to create a static library
  add_library(ILUT SHARED ${ILUT_SRCS} ${ILUT_INC} ${ILUT_RSRC})
