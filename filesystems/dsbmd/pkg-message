@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+dsbmd will not mount removable media automatically until its rc.d
+service is enabled. To enable it, add the following to /etc/rc.conf:
+
+  dsbmd_enable="YES"
+
+Then start it with:
+
+  service dsbmd start
+
+Until this is done, dsbmc/dsbmc-cli will fail with an error such as:
+
+  uconnect(/var/run/dsbmd.socket): No such file or directory
+EOM
+}
+]
