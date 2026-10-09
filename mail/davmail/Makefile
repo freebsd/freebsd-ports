@@ -1,11 +1,10 @@
 PORTNAME=	davmail
-DISTVERSION=	6.5.1
-PORTREVISION=	1
+DISTVERSION=	7.0.0
 CATEGORIES=	mail java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}-${REVISION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway
 WWW=		https://davmail.sourceforge.net/
 
@@ -15,8 +14,8 @@ USES=		dos2unix java:ant,run tar:tgz
 
 DOS2UNIX_FILES=	build.xml
 USE_RC_SUBR=	${PORTNAME}
-# 6.5.1
-REVISION=	3873
+# 7.0.0
+REVISION=	4403
 # port build number, same as on DISTNAME
 MAKE_ARGS=	-Drevision=${REVISION}
 MAKE_ENV+=	"ANT_OPTS=-Dfile.encoding=UTF-8"
