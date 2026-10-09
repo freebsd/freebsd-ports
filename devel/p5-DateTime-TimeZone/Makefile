@@ -1,5 +1,5 @@
 PORTNAME=	DateTime-TimeZone
-DISTVERSION=	2.70
+DISTVERSION=	2.71
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Time zone object base class and factory
-WWW=		https://metacpan.org/pod/DateTime::TimeZone
+WWW=		https://metacpan.org/dist/DateTime-TimeZone
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
