@@ -1,4 +1,3 @@
-IGNORE=		localized distfile not yet available upstream
 CATEGORIES=	russian
 MASTER_SITES=	https://ru.wordpress.org/
 
