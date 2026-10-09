@@ -1,0 +1,77 @@
+PORTNAME=	autobahn
+DISTVERSION=	25.12.2
+CATEGORIES=	www python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	25
+
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	WebSocket client & server library, WAMP real-time framework
+WWW=		https://github.com/crossbario/autobahn-python
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}cffi>=1.14.5:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	\
+		${PYTHON_PKGNAMEPREFIX}cbor2>=5.2.0:devel/py-cbor2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cffi>=2.0.0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hyperlink>=21.0.0:www/py-hyperlink@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2:devel/py-msgpack@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py-ubjson>=0.16.1:devel/py-py-ubjson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}txaio>=25.12.2:devel/py-txaio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}u-msgpack-python>=2.1:devel/py-u-msgpack-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ujson>=4.0.2:devel/py-ujson@${PY_FLAVOR} \
+
+USES=		cpe python
+CPE_VENDOR=	crossbar
+USE_PYTHON=	autoplist cryptography pep517 pytest
+
+PORTSCOUT=	limit:^[0-9\.]*$
+
+MAKE_ENV=	AUTOBAHN_ARCH_TARGET=safe
+
+OPTIONS_DEFINE=		COMPRESS ENCRYPTION SCRAM
+OPTIONS_DEFAULT=	ENCRYPTION SCRAM TWISTED
+OPTIONS_MULTI=		BACKENDS
+OPTIONS_MULTI_BACKENDS=	TWISTED
+OPTIONS_FILE=		${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
+
+BACKENDS_DESC=		Network Backends
+COMPRESS_DESC=		Compression support
+ENCRYPTION_DESC=	TLS Transport / Cryptosign Encryption & Authentication
+SCRAM_DESC=		WAMP-SCRAM Authentication support
+TWISTED_DESC=		Twisted network backend support
+
+COMPRESS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}brotli>=1.0.0:archivers/py-brotli@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}brotlicffi>=0:archivers/py-brotlicffi@${PY_FLAVOR}
+ENCRYPTION_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyopenssl>=20.0.1:security/py-pyopenssl@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}service-identity>=18.1.0:security/py-service-identity@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}PyNaCl>=1.4.0:security/py-pynacl@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}pytrie>=0.4.0:devel/py-pytrie@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}qrcode>=7.3.1:textproc/py-qrcode@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}base58>=2.1.1:security/py-base58@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}ecdsa>=0.19.1:security/py-ecdsa@${PY_FLAVOR}
+SCRAM_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}argon2-cffi>=20.1.0:security/py-argon2-cffi@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}passlib>=1.7.4:security/py-passlib@${PY_FLAVOR}
+TWISTED_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}attrs>=20.3.0:devel/py-attrs@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}twisted>=22.10.0:devel/py-twisted@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}zope.interface>=5.2.0:devel/py-zope.interface@${PY_FLAVOR}
+
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} '/license-files/d; s|^license = "MIT"|license = { text = "MIT" }|; s|70|63|g' \
+		${WRKSRC}/pyproject.toml
+
+post-stage:
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name '_nvx_*.abi3.so' \
+		-exec ${STRIP_CMD} {} +
+
+do-test-TWISTED-on:
+	@cd ${WRKSRC} && USE_TWISTED=1 ${PYTHON_CMD} -m twisted.trial ${WRKSRC}/autobahn
+
+.include <bsd.port.mk>

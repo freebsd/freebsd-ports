@@ -1543,6 +1543,7 @@
     SUBDIR += py-asgi-csrf
     SUBDIR += py-asgiref
     SUBDIR += py-autobahn
+    SUBDIR += py-autobahn25
     SUBDIR += py-azure-common
     SUBDIR += py-baize
     SUBDIR += py-beaker
