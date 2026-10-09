@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake ncurses
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 # We download the prebuilt binary tarball for Linux in order to avoid
 # having to generate the pdf and html docs from the LyX sourcecode.
 WRKSRC_DOCS=	${WRKDIR}/${DISTNAME:C/^./T/}-Linux/share/doc/${PORTNAME}
