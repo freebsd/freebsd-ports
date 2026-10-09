@@ -1,17 +1,15 @@
---- meson.build.orig	2025-10-30 12:13:51 UTC
+--- meson.build.orig	2026-10-09 20:40:12 UTC
 +++ meson.build
-@@ -1,8 +1,6 @@ project('burrtools', 'cpp', 'c',
+@@ -1,7 +1,5 @@ project('burrtools', 'cpp', 'c',
  project('burrtools', 'cpp', 'c',
 -	version: run_command('sh', '-c', 
--	                     'git describe --tags --always --dirty 2>/dev/null || echo 0.7.0-unknown',
+-	                     'git describe --tags --always --dirty 2>/dev/null || echo 0.8.0-unknown',
 -	                     check: false).stdout().strip(),
--	
 +	version: '%%PKGVERSION%%',
-+
+ 	
  	default_options : [
  	  'c_std=c11',
- 	  'build.c_std=c11',
-@@ -27,26 +25,6 @@ lua_src = [
+@@ -44,26 +42,6 @@ lua_src = [
  endif
  
  lua_src = [
@@ -38,7 +36,7 @@
    'src/lua/luaclass.cpp',
  ]
  
-@@ -205,6 +183,7 @@ gdiplus_dep = dependency('', required: false)
+@@ -265,11 +243,13 @@ gdiplus_dep = dependency('', required: false)
  
  gdiplus_dep = dependency('', required: false)
  
@@ -46,13 +44,60 @@
  fltk_dep = cxx.find_library('fltk', required: false)
  fltkgl_dep = cxx.find_library('fltk_gl', required: false)
  fltkimages_dep = cxx.find_library('fltk_images', required: false)
-@@ -277,7 +256,7 @@ executable('burrTxt2',  tools_src + halfedge_src + lib
-  	   dependencies: [thread_dep, zlib_dep],
+ fltkpng_dep = dependency('', required: false)
+ fltkz_dep = dependency('', required: false)
++manifold_dep = dependency('manifold')
+ 
+ if not fltk_dep.found()
+   # fetch and build fltk from source
+@@ -342,26 +322,6 @@ add_project_link_arguments(link_args,
+ add_project_link_arguments(link_args,
+ 			   language: ['c', 'cpp', 'objc'])
+ 
+-# Manifold (https://github.com/elalish/manifold): the boolean / Minkowski
+-# engine behind the chamfered STL export of the non-cube grids. Built from
+-# the wrap as a static library, without its 2D cross-section part (which
+-# would pull in Clipper2), its tests or its parallel backend.
+-cmake_mf = import('cmake')
+-manifold_opts = cmake_mf.subproject_options()
+-manifold_opts.add_cmake_defines({
+-  'MANIFOLD_CROSS_SECTION': 'OFF',
+-  'MANIFOLD_TEST': 'OFF',
+-  'MANIFOLD_PAR': 'OFF',
+-  'MANIFOLD_PYBIND': 'OFF',
+-  'MANIFOLD_DEBUG': 'OFF',
+-  'BUILD_SHARED_LIBS': 'OFF',
+-  'CMAKE_BUILD_TYPE': 'Release',
+-})
+-manifold_opts.set_override_option('warning_level', '0')
+-manifold_opts.set_override_option('werror', 'false')
+-manifold_proj = cmake_mf.subproject('manifold', options: manifold_opts)
+-manifold_dep = manifold_proj.dependency('manifold')
+-
+ inc = include_directories('src')
+ 
+ # The version git describe produced at configure time, for the About box and
+@@ -404,12 +364,13 @@ vendored_lua_lib = static_library('vendored_lua', lua_
+ 
+ vendored_lua_lib = static_library('vendored_lua', lua_src,
+           override_options: ['werror=false'],
++          dependencies: [lua_dep],
  	  )
  
--executable('burrtools', lua_src + tools_src + gui_src + halfedge_src + libburr_src,
--          dependencies: [thread_dep, zlib_dep, gl_dep, glu_dep, gdiplus_dep, fltk_dep, fltkgl_dep, fltkimages_dep, fltkpng_dep, fltkz_dep, libpng_dep, cocoa_dep],
-+executable('burrtools',  lua_src + tools_src + gui_src + halfedge_src + libburr_src,
-+          dependencies: [lua_dep, thread_dep, zlib_dep, gl_dep, glu_dep, gdiplus_dep, fltk_dep, fltkgl_dep, fltkimages_dep, fltkpng_dep, fltkz_dep, libpng_dep, cocoa_dep],
+ executable('burrtools', gui_src + httpget_src + ['src/tools/updatecheck.cpp', 'src/gui/updatechecker.cpp', 'src/gui/updatewindow.cpp', version_h],
+           include_directories: inc,
+           link_with: [libburr_core, vendored_gui_lib, vendored_lua_lib],
+-          dependencies: [manifold_dep, thread_dep, zlib_dep, gl_dep, glu_dep, gdiplus_dep, fltk_dep, fltkgl_dep, fltkimages_dep, fltkpng_dep, fltkz_dep, libpng_dep, cocoa_dep, json_dep, httpget_dep],
++          dependencies: [manifold_dep, thread_dep, zlib_dep, gl_dep, glu_dep, gdiplus_dep, fltk_dep, fltkgl_dep, fltkimages_dep, fltkpng_dep, fltkz_dep, libpng_dep, cocoa_dep, json_dep, httpget_dep, lua_dep],
            win_subsystem: 'windows',
  	  )
+ 
+@@ -465,7 +426,7 @@ if not python_opt.disabled()
+   if meson.is_cross_build() and python_opt.auto()
+     message('Skipping Python wrapper during cross-compilation with python=auto')
+   else
+-    py = import('python').find_installation('python3', required: python_opt)
++    py = import('python').find_installation('%%PYTHON_VERSION%%', required: python_opt)
+     if py.found()
+     pybind11_dep = dependency('pybind11', fallback: ['pybind11', 'pybind11_dep'], required: python_opt)
+     if pybind11_dep.found()

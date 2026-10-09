@@ -1,16 +1,16 @@
---- src/lib/stl.cpp.orig	2013-05-08 19:02:06 UTC
+--- src/lib/stl.cpp.orig	2026-10-09 20:40:12 UTC
 +++ src/lib/stl.cpp
-@@ -54,6 +54,8 @@ const char * basename(const char * name)
+@@ -69,6 +69,8 @@ const char * basename(const char * name) {
  
-   return res;
+   return res ? res + 1 : name;
  }
 +#else
 +#include <libgen.h>
  #endif
  
  
-@@ -62,7 +64,7 @@ void stlExporter_c::write(const char * f
-   FILE * f;
+@@ -77,7 +79,7 @@ void stlExporter_c::write(const char * fname, const vo
+   std::unique_ptr<FILE, int(*)(FILE*)> f(nullptr, &fclose);
    unsigned long triangleCount = 0;
  
 -  const char * title = basename(fname);
