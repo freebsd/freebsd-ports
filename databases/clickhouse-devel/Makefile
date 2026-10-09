@@ -1,6 +1,6 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	26.7.5.10
+DISTVERSION=	26.7.6.57
 DISTVERSIONSUFFIX=-stable
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
@@ -131,7 +131,7 @@ do-test-TEST-on:
 	cd ${WRKSRC} && ctest -j4 -V
 
 .if defined(MAINTAINER_MODE)
-_make-touples: extract
+_make-touples:
 	@set -eu; \
 	_REPO=${GH_ACCOUNT}/${GH_PROJECT}; \
 	_API="https://api.github.com/repos/$${_REPO}"; \
@@ -139,17 +139,17 @@ _make-touples: extract
 	_TMPDIR=$$(mktemp -d -t clickhouse-submods); \
 	trap 'rm -rf "$${_TMPDIR}"' EXIT INT TERM; \
 	_OUTFILE="$$(pwd)/Makefile.submodules"; \
-	_CURL_OPTS="-s"; \
+	set -- -sS; \
 	if [ -n "$${GH_TOKEN}" ]; then \
-		_CURL_OPTS="$${_CURL_OPTS} -H Authorization:\ Bearer\ $${GH_TOKEN}"; \
+		set -- "$$@" -H "Authorization: Bearer $${GH_TOKEN}"; \
 	fi; \
 	${ECHO_CMD} "===> Resolving tag $${_TAG}"; \
-	_COMMIT=$$(curl $${_CURL_OPTS} "$${_API}/git/refs/tags/$${_TAG}" \
+	_COMMIT=$$(curl "$$@" "$${_API}/git/refs/tags/$${_TAG}" \
 	  | jq -r 'if type=="array" then .[0].object.sha else .object.sha end'); \
 	${ECHO_CMD} "===> Commit: $${_COMMIT}"; \
 	${ECHO_CMD} "===> Fetching contrib tree"; \
-	curl $${_CURL_OPTS} "$${_API}/git/trees/$${_COMMIT}?recursive=1" \
-	 | jq -r '.tree[] | select(.path|startswith("contrib/")) | select(.type=="commit") | "\(.path) \(.sha)"' \
+	curl "$$@" "$${_API}/git/trees/$${_COMMIT}?recursive=1" \
+	 | jq -er '.tree[] | select(.path|startswith("contrib/")) | select(.type=="commit") | "\(.path) \(.sha)"' \
 	 > "$${_TMPDIR}/tree.txt"; \
 	${ECHO_CMD} "===> Fetching .gitmodules"; \
 	curl -so "$${_TMPDIR}/.gitmodules" \
@@ -172,8 +172,6 @@ _make-touples: extract
 		        org, repo, substr(sha,1,8), org_repl, repo_repl, path); }' \
 		"$${_TMPDIR}/modules.txt" "$${_TMPDIR}/tree.txt" > "$${_OUTFILE}"; \
 	${ECHO_CMD} "===> Writing $${_OUTFILE} completed"
-	${REINPLACE_CMD} -e 's|unum-cloud:usearch|unum-cloud:USearch|' \
-		${.CURDIR}/Makefile.submodules
 	if [ -f ${.CURDIR}/Makefile.submodules.bak ]; then ${RM} ${.CURDIR}/Makefile.submodules.bak; fi
 .endif
 
