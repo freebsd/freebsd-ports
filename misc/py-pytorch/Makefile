@@ -83,6 +83,7 @@ MAKE_ENV+=	USE_DISTRIBUTED=1
 MAKE_ENV+=	CMAKE_ARGS="-DMPI_C_COMPILER=${MPI_HOME}/bin/mpicc -DMPI_CXX_COMPILER=${MPI_HOME}/bin/mpicxx" \
 		MAX_JOBS=${MAKE_JOBS_NUMBER}
 LDFLAGS+=	-lexecinfo
+LDFLAGS_powerpc64=	-pthread
 LDFLAGS_powerpc64le=	-pthread
 
 BINARY_ALIAS=	make=${GMAKE}
