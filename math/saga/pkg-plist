@@ -24,15 +24,16 @@ include/saga/saga_api/tool.h
 include/saga/saga_api/tool_library.h
 include/saga/saga_gdi/3d_view.h
 include/saga/saga_gdi/3d_view_tools.h
-include/saga/saga_gdi/map_dc.h
+include/saga/saga_gdi/dialogs.h
+include/saga/saga_gdi/parameters_control.h
 include/saga/saga_gdi/saga_gdi.h
-include/saga/saga_gdi/sgdi_classify.h
 include/saga/saga_gdi/sgdi_controls.h
 include/saga/saga_gdi/sgdi_core.h
 include/saga/saga_gdi/sgdi_diagram.h
 include/saga/saga_gdi/sgdi_dialog.h
 include/saga/saga_gdi/sgdi_helper.h
 include/saga/saga_gdi/sgdi_layout_items.h
+include/saga/saga_gdi/sgdi_table.h
 lib/libsaga_api.so
 lib/libsaga_api.so.9
 lib/libsaga_api.so.%%PORTVERSION%%
@@ -42,7 +43,6 @@ lib/libsaga_gdi.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySAGA/__init__.py
 %%PYTHON_SITELIBDIR%%/PySAGA/_saga_api.so
 %%PYTHON_SITELIBDIR%%/PySAGA/convert.py
-%%PYTHON_SITELIBDIR%%/PySAGA/data/helper.py
 %%PYTHON_SITELIBDIR%%/PySAGA/data/srtm.py
 %%PYTHON_SITELIBDIR%%/PySAGA/helper.py
 %%PYTHON_SITELIBDIR%%/PySAGA/plot.py
@@ -55,6 +55,7 @@ lib/libsaga_gdi.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/db_odbc.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/db_pgsql.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/docs_html.py
+%%PYTHON_SITELIBDIR%%/PySAGA/tools/docs_map.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/docs_pdf.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/grid_analysis.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/grid_calculus.py
@@ -82,6 +83,7 @@ lib/libsaga_gdi.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/io_pdal.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/io_riegl_rdb.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/io_shapes.py
+%%PYTHON_SITELIBDIR%%/PySAGA/tools/io_stac.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/io_table.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/io_virtual.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/io_webservices.py
@@ -123,6 +125,7 @@ lib/libsaga_gdi.so.%%PORTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/table_tools.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/tin_tools.py
 %%PYTHON_SITELIBDIR%%/PySAGA/tools/tta_tools.py
+%%PYTHON_SITELIBDIR%%/PySAGA/tools/vis_3d_viewer.py
 lib/saga/libclimate_tools.so
 lib/saga/libcontrib_perego.so
 lib/saga/libdb_odbc.so
@@ -130,6 +133,7 @@ lib/saga/libdb_odbc.so
 lib/saga/libdev_exercises.so
 lib/saga/libdev_tools.so
 lib/saga/libdocs_html.so
+lib/saga/libdocs_map.so
 lib/saga/libdocs_pdf.so
 lib/saga/libgarden_fractals.so
 lib/saga/libgarden_games.so
@@ -160,6 +164,7 @@ lib/saga/libio_grid.so
 lib/saga/libio_grid_image.so
 lib/saga/libio_pdal.so
 lib/saga/libio_shapes.so
+lib/saga/libio_stac.so
 lib/saga/libio_table.so
 lib/saga/libio_virtual.so
 lib/saga/libio_webservices.so
@@ -951,6 +956,8 @@ share/pixmaps/saga.png
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_shapes.8.txt
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_shapes.9.html
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_shapes.9.txt
+%%DATADIR%%/resources/saga4qgis/saga_provider/description/io_stac.2.html
+%%DATADIR%%/resources/saga4qgis/saga_provider/description/io_stac.2.txt
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_table.0.html
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_table.0.txt
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_table.1.html
@@ -985,8 +992,6 @@ share/pixmaps/saga.png
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_webservices.15.txt
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_webservices.16.html
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_webservices.16.txt
-%%DATADIR%%/resources/saga4qgis/saga_provider/description/io_webservices.19.html
-%%DATADIR%%/resources/saga4qgis/saga_provider/description/io_webservices.19.txt
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_webservices.2.html
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_webservices.2.txt
 %%DATADIR%%/resources/saga4qgis/saga_provider/description/io_webservices.4.html
@@ -1597,6 +1602,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/resources/saga4qgis/saga_provider/saga_provider.py
 %%DATADIR%%/resources/saga4qgis/saga_provider/saga_utils.py
 %%DATADIR%%/resources/saga4qgis/saga_provider/saga_version.py
+%%DATADIR%%/resources/symbology_settings_compatibility.txt
 %%DATADIR%%/saga.bra.txt
 %%DATADIR%%/saga.ger.txt
 %%DATADIR%%/saga.lng.txt
@@ -1606,6 +1612,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga_preferences.srs
 %%DATADIR%%/saga_srs_preferences.txt
 %%DATADIR%%/saga_tip.txt
+%%DATADIR%%/symbology_settings_compatibility.txt
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/CMakeLists.txt
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/TLB_Interface.cpp
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool.cpp

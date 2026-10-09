@@ -1,5 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	9.13.1
+PORTVERSION=	9.14.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/([0-9]).*/\1/1}/SAGA%20-%20${PORTVERSION}
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -35,7 +35,7 @@ DOS2UNIX_GLOB=	*.cpp *.h *.txt
 USE_LDCONFIG=	yes
 USE_WX=		3.2+
 
-GIT_TAGNAME=	78fc4f757
+GIT_TAGNAME=	965280110
 
 # We do not follow the SAGA developers approach of installing
 # the 'SAGA Processing Provider' Plugin as a QGIS kernel plugin
