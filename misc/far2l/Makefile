@@ -1,5 +1,5 @@
 PORTNAME=	far2l
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.1
 DISTVERSIONPREFIX=	v_
 CATEGORIES=	misc shells
 
@@ -34,6 +34,9 @@ NEON_LIB_DEPENDS=	libneon.so:www/neon
 NFS_LIB_DEPENDS=	libnfs.so:net/libnfs
 
 SDL_DESC=	SDL GUI backend (experimental)
+SDL_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 SDL_CMAKE_ON=	-DUSESDL:BOOL=ON
 SDL_USES=	sdl
 SDL_USE=	SDL=sdl2

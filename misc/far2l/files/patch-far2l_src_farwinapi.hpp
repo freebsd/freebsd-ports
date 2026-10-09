@@ -5,9 +5,9 @@
  
  BOOL apiGetVolumeInformation(const wchar_t *lpwszRootPathName, FARString *pVolumeName,
 -		DWORD64 *lpVolumeSerialNumber, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags,
--		FARString *pFileSystemName, FARString *pFileSystemMountPoint = nullptr);
+-		LPDWORD pClusterSize, FARString *pFileSystemName, FARString *pFileSystemMountPoint);
 +		FARString *pDiskIdent, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags,
-+		FARString *pFileSystemName, FARString *pDeviceName, FARString *pFileSystemMountPoint);
++		LPDWORD pClusterSize, FARString *pFileSystemName, FARString *pDeviceName, FARString *pFileSystemMountPoint);
  
  void apiFindDataToDataEx(const FAR_FIND_DATA *pSrc, FAR_FIND_DATA_EX *pDest);
  
