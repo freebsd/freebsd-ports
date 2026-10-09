@@ -1,3 +1,79 @@
+  <vuln vid="2719a8da-c3f8-11f1-8da1-3497f65b111b">
+    <topic>clamav -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>1.5.4,1</lt></range>
+      </package>
+      <package>
+	<name>clamav-lts</name>
+	<range><lt>1.4.6,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ClamAV project reports:</p>
+	<blockquote cite="https://github.com/Cisco-Talos/clamav/releases/tag/clamav-1.4.6">
+	  <ul>
+	    <li>CVE-2026-20345: indexing error while converting GPT partition
+	      names could read or write beyond a stack-allocated partition
+	      entry.</li>
+	    <li>CVE-2026-20339: integer overflow in the PESpin unpacker could
+	      allocate an undersized buffer and write beyond it.</li>
+	    <li>CVE-2026-20346: integer underflow in the PDF parser could
+	      cause a crash while reading a malformed hex string.</li>
+	    <li>CVE-2026-20347: undefined behavior and integer overflow in
+	      the Mach-O parser could cause a crash on a malformed
+	      file.</li>
+	    <li>CVE-2026-20348: XAR parser size handling could request an
+	      excessive allocation or exceed scan limits.</li>
+	    <li>CVE-2025-8088: path separators in NTFS alternate data stream
+	      names in the bundled UnRAR library could lead to extraction
+	      outside the temporary scan directory.</li>
+	    <li>CVE-2026-20217: PESpin unpacker cleanup path could free
+	      pointers into the scanned file buffer and crash the
+	      scanner.</li>
+	    <li>CVE-2026-20213: integer overflow in PE rebuild size
+	      calculations could lead to a heap buffer overflow write.</li>
+	    <li>CVE-2026-20216: InstallShield archive extraction limit bypass
+	      could exhaust temporary storage.</li>
+	    <li>CVE-2026-20214: FSG unpacker loop underflow could write past
+	      the section array.</li>
+	    <li>CVE-2026-20243: ALZ parser size handling bugs could abort the
+	      scanner.</li>
+	    <li>CVE-2026-20215: 7z parser substream count overflow could
+	      write past under-allocated metadata arrays.</li>
+	    <li>CVE-2026-20244: 32-bit DMG parser size checks could crash
+	      32-bit scanner builds.</li>
+	    <li>Thread-safety issues in the clamd STATS command could
+	      disclose process memory or crash the daemon.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-20345</cvename>
+      <cvename>CVE-2026-20339</cvename>
+      <cvename>CVE-2026-20346</cvename>
+      <cvename>CVE-2026-20347</cvename>
+      <cvename>CVE-2026-20348</cvename>
+      <cvename>CVE-2025-8088</cvename>
+      <cvename>CVE-2026-20217</cvename>
+      <cvename>CVE-2026-20213</cvename>
+      <cvename>CVE-2026-20216</cvename>
+      <cvename>CVE-2026-20214</cvename>
+      <cvename>CVE-2026-20243</cvename>
+      <cvename>CVE-2026-20215</cvename>
+      <cvename>CVE-2026-20244</cvename>
+      <url>https://github.com/Cisco-Talos/clamav/releases/tag/clamav-1.4.5</url>
+      <url>https://github.com/Cisco-Talos/clamav/releases/tag/clamav-1.4.6</url>
+    </references>
+    <dates>
+      <discovery>2026-08-07</discovery>
+      <entry>2026-10-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="26fd839c-c338-11f1-a6ea-8447094a420f">
     <topic>OpenSSH -- Multiple vulnerabilities</topic>
     <affects>
