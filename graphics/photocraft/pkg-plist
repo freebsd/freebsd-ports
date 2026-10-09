@@ -1,0 +1,17 @@
+bin/photocraft
+bin/photocraft-cli
+share/applications/ai.storyteller.photocraft.desktop
+%%DOCSDIR%%/ATTRIBUTION.md
+%%DOCSDIR%%/NOTICE
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+share/icons/hicolor/128x128/apps/ai.storyteller.photocraft.png
+share/icons/hicolor/16x16/apps/ai.storyteller.photocraft.png
+share/icons/hicolor/24x24/apps/ai.storyteller.photocraft.png
+share/icons/hicolor/256x256/apps/ai.storyteller.photocraft.png
+share/icons/hicolor/32x32/apps/ai.storyteller.photocraft.png
+share/icons/hicolor/48x48/apps/ai.storyteller.photocraft.png
+share/icons/hicolor/512x512/apps/ai.storyteller.photocraft.png
+share/icons/hicolor/64x64/apps/ai.storyteller.photocraft.png
+share/icons/hicolor/scalable/apps/ai.storyteller.photocraft.svg
+share/metainfo/ai.storyteller.photocraft.metainfo.xml
+share/mime/packages/ai.storyteller.photocraft.xml

@@ -838,6 +838,7 @@
     SUBDIR += pgplot
     SUBDIR += pho
     SUBDIR += photivo
+    SUBDIR += photocraft
     SUBDIR += photoflare
     SUBDIR += photopc
     SUBDIR += photoqt
