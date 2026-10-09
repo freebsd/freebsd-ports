@@ -12609,8 +12609,7 @@
     <affects>
       <package>
 	<name>postgresql-jdbc</name>
-	<range><lt>47.7.12</lt></range>
-	<range><ge>47.7.4</ge></range>
+	<range><ge>47.7.4</ge><lt>47.7.12</lt></range>
       </package>
     </affects>
     <description>
