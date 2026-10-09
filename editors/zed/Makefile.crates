@@ -18,6 +18,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		aliasable-0.1.3 \
 		aligned-0.4.3 \
 		aligned-vec-0.6.4 \
+		alloca-0.4.0 \
 		allocator-api2-0.2.21 \
 		alsa-0.10.0 \
 		alsa-sys-0.3.1 \
@@ -157,6 +158,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		bzip2-0.4.4 \
 		bzip2-0.6.1 \
 		bzip2-sys-0.1.13+1.0.8 \
+		c-enum-0.2.3 \
 		cached-0.56.0 \
 		cached_proc_macro-0.25.0 \
 		cached_proc_macro_types-0.1.1 \
@@ -178,7 +180,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		cexpr-0.6.0 \
 		cfg-expr-0.20.9 \
 		cfg-if-1.0.4 \
-		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
 		cgl-0.3.2 \
 		chacha20-0.10.1 \
@@ -262,9 +263,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		crc-catalog-2.4.0 \
 		crc-fast-1.9.0 \
 		crc32fast-1.5.0 \
-		criterion-0.5.1 \
-		criterion-plot-0.5.0 \
-		crossbeam-0.8.4 \
+		criterion-0.8.2 \
+		criterion-plot-0.8.2 \
 		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
@@ -456,7 +456,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		guppy-0.18.0 \
 		guppy-workspace-hack-0.1.0 \
 		h2-0.3.27 \
-		h2-0.4.12 \
+		h2-0.4.19 \
 		half-2.7.1 \
 		handlebars-4.5.0 \
 		handlebars-5.1.2 \
@@ -498,7 +498,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		human_bytes-0.4.3 \
 		humantime-2.3.0 \
 		hyper-0.14.32 \
-		hyper-1.7.0 \
+		hyper-1.11.1 \
 		hyper-rustls-0.27.9 \
 		hyper-timeout-0.5.2 \
 		hyper-tls-0.5.0 \
@@ -554,7 +554,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		is_executable-1.0.5 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.5 \
-		itertools-0.11.0 \
+		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itertools-0.15.0 \
 		itoa-1.0.18 \
@@ -571,7 +571,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		jobserver-0.1.34 \
 		js-sys-0.3.97 \
 		json5-1.3.1 \
-		json_dotpath-1.1.0 \
 		jsonschema-0.51.0 \
 		jsonschema-regex-0.51.0 \
 		jsonschema-value-0.51.0 \
@@ -681,7 +680,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		ndk-sys-0.6.0+11769913 \
 		nested-0.1.1 \
 		new_debug_unreachable-1.0.6 \
-		nix-0.28.0 \
 		nix-0.30.1 \
 		no_std_io2-0.9.4 \
 		nom-7.1.3 \
@@ -793,6 +791,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		pem-3.0.6 \
 		pem-rfc7468-0.7.0 \
 		percent-encoding-2.3.2 \
+		perf-event-data-0.1.8 \
+		perf-event-open-sys2-5.0.6 \
+		perf-event2-0.7.4 \
 		pest-2.8.3 \
 		pest_derive-2.8.3 \
 		pest_generator-2.8.3 \
@@ -832,7 +833,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		pori-0.0.0 \
 		portable-atomic-1.11.1 \
 		portable-atomic-util-0.2.4 \
-		portable-pty-0.9.0 \
 		postage-0.5.0 \
 		postcard-1.1.3 \
 		potential_utf-0.1.3 \
@@ -1001,6 +1001,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		selectors-0.37.0 \
 		self_cell-1.2.2 \
 		semver-1.0.28 \
+		send_wrapper-0.6.0 \
 		serde-1.0.229 \
 		serde_bytes-0.11.19 \
 		serde_core-1.0.229 \
@@ -1018,14 +1019,12 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		serde_with_macros-3.22.0 \
 		serde_yaml-0.9.34+deprecated \
 		serde_yaml_ng-0.10.0 \
-		serial2-0.2.33 \
 		servo_arc-0.4.3 \
 		sha-1-0.10.1 \
 		sha1-0.10.6 \
 		sha1_smol-1.0.1 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
-		shared_library-0.1.9 \
 		shell-words-1.1.0 \
 		shellexpand-3.1.1 \
 		shingles-0.1.1 \
@@ -1120,7 +1119,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		system-deps-7.0.7 \
 		taffy-0.13.0 \
 		tagptr-0.2.0 \
-		take-until-0.2.0 \
 		tao-core-video-sys-0.2.0 \
 		tap-1.0.1 \
 		target-lexicon-0.13.5 \
@@ -1297,7 +1295,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		wasmtime-internal-wit-bindgen-48.0.1 \
 		wasmtime-wasi-48.0.1 \
 		wasmtime-wasi-io-48.0.1 \
-		wast-35.0.2 \
 		wax-0.7.0 \
 		wayland-backend-0.3.15 \
 		wayland-client-0.31.11 \
@@ -1325,9 +1322,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		wgpu-types-29.0.4 \
 		which-8.0.5 \
 		whoami-1.6.1 \
-		wiggle-48.0.1 \
-		wiggle-generate-48.0.1 \
-		wiggle-macro-48.0.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
@@ -1408,7 +1402,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.13 \
 		winnow-1.0.2 \
-		winreg-0.10.1 \
 		winreg-0.50.0 \
 		winreg-0.55.0 \
 		winresource-0.1.23 \
@@ -1437,12 +1430,10 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		wit-parser-0.227.1 \
 		wit-parser-0.244.0 \
 		wit-parser-0.254.0 \
-		witx-0.9.1 \
 		write16-1.0.0 \
 		writeable-0.6.4 \
 		wyz-0.5.1 \
 		x11-2.21.0 \
-		x11-clipboard-0.9.3 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
 		xattr-1.6.1 \
@@ -1458,6 +1449,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		y4m-0.8.0 \
 		yaml-rust2-0.8.1 \
 		yansi-1.0.1 \
+		yawc-0.4.2 \
 		yazi-0.2.1 \
 		yeslogic-fontconfig-sys-6.0.0 \
 		yoke-0.8.3 \
@@ -1504,7 +1496,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		proptest,proptest-macro@git+https://github.com/proptest-rs/proptest?rev=3dca198a8fef1b32e3a66f1e1897c955b4dc5b5b\#3dca198a8fef1b32e3a66f1e1897c955b4dc5b5b \
 		zed-scap@git+https://github.com/zed-industries/scap?rev=4afea48c3b002197176fb19cd0f9b180dd36eaac\#4afea48c3b002197176fb19cd0f9b180dd36eaac \
 		lsp-types@git+https://github.com/zed-industries/lsp-types?rev=f1783e63a7f4eb4397bf51d4148b4895a1f7ab16\#f1783e63a7f4eb4397bf51d4148b4895a1f7ab16 \
-		yawc@git+https://github.com/zed-industries/yawc?rev=71a452f551cac178367eaac5d7418a09afa1f3a2\#71a452f551cac178367eaac5d7418a09afa1f3a2 \
 		zed-reqwest@git+https://github.com/zed-industries/reqwest.git?rev=33bc764aa15ff7b200bf7c93bd96e24878d53e14\#33bc764aa15ff7b200bf7c93bd96e24878d53e14 \
 		tree-sitter-gitcommit@git+https://github.com/zed-industries/tree-sitter-git-commit?rev=88309716a69dd13ab83443721ba6e0b491d37ee9\#88309716a69dd13ab83443721ba6e0b491d37ee9 \
 		trash@git+https://github.com/zed-industries/trash-rs?rev=41c6c800d884a89351f3b8856d12894cccee261d\#41c6c800d884a89351f3b8856d12894cccee261d \
