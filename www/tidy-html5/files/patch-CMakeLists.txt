@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2017-11-25 13:54:41 UTC
+--- CMakeLists.txt.orig	2021-07-16 23:45:24 UTC
 +++ CMakeLists.txt
-@@ -102,7 +102,7 @@ option( TIDY_COMPAT_HEADERS "Set ON to include compati
+@@ -17,7 +17,7 @@
+ # @date    Consult git log.
+ ##############################################################################
+ 
+-cmake_minimum_required (VERSION 2.8.12)
++cmake_minimum_required (VERSION 3.5)
+ 
+ set(LIB_NAME tidy)
+ set(LIBTIDY_DESCRIPTION "${LIB_NAME} - HTML syntax checker")
+@@ -118,7 +118,7 @@ if (NOT MAN_INSTALL_DIR)
  #   Allow building with non-default man page directory.
  #------------------------------------------------------------------------
  if (NOT MAN_INSTALL_DIR)
