@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2023-10-21 06:29:02 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.25...4.2 FATAL_ERROR)
+ 
+ project(
+   unarr
