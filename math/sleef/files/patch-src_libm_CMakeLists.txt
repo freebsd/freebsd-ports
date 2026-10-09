@@ -1,0 +1,26 @@
+Backport of upstream commit 1c246c2e91fa (part of "Code cleanup (#692)"): only
+build the VSX dispatcher when the compiler supports VSX. On big-endian
+powerpc64 the VSX helper is unavailable, so the dispatcher referenced
+Sleef_*vsx functions that were never built and libsleef.so could not be
+loaded (undefined symbol Sleef_sind2_u35vsx).
+
+--- src/libm/CMakeLists.txt.orig	2026-10-09 21:23:09 UTC
++++ src/libm/CMakeLists.txt
+@@ -790,7 +790,7 @@ endif(SLEEF_ARCH_X86)
+   endif()
+ endif(SLEEF_ARCH_X86)
+ 
+-if (SLEEF_ARCH_PPC64)
++if (SLEEF_ARCH_PPC64 AND COMPILER_SUPPORTS_VSX)
+   # Target disppower_128.c
+   sleef_generate_disp_simd(power_128 2 4 SLEEF_VECTOR_DOUBLE SLEEF_VECTOR_FLOAT SLEEF_VECTOR_INT vsx vsx3 x)
+ 
+@@ -815,7 +815,7 @@ if (SLEEF_ARCH_PPC64)
+     set_target_properties(tryvsx3_obj PROPERTIES ${COMMON_TARGET_PROPERTIES})
+     target_sources(${TARGET_LIBSLEEF} PRIVATE $<TARGET_OBJECTS:tryvsx3_obj>)
+   endif()
+-endif(SLEEF_ARCH_PPC64)
++endif(SLEEF_ARCH_PPC64 AND COMPILER_SUPPORTS_VSX)
+ 
+ if (SLEEF_ARCH_S390X)
+   # Target disps390x_128.c
