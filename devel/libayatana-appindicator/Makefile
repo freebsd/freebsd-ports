@@ -1,5 +1,5 @@
 PORTNAME=	libayatana-appindicator
-PORTVERSION=	0.5.94
+PORTVERSION=	0.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	jgh@FreeBSD.org
