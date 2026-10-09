@@ -5,9 +5,9 @@ CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Comprehensive password hashing framework supporting over 30 schemes
-WWW=		https://bitbucket.org/ecollins/passlib
+WWW=		https://passlib.readthedocs.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
