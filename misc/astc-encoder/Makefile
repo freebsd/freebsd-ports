@@ -18,7 +18,7 @@ GH_ACCOUNT=	ARM-software
 GH_TUPLE=	google:googletest:e2239ee:googletest/Source/GoogleTest
 
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD} # only for tests
-CMAKE_ON=	ASTCENC_ISA_SSE2
+CMAKE_ON=	ASTCENC_ISA_${ASTCENC_ISA:tu}
 CMAKE_OFF=	ASTCENC_UNITTEST \
 		ASTCENC_ISA_SSE41 \
 		ASTCENC_ISA_SVE_256 \
@@ -29,8 +29,16 @@ CMAKE_TESTING_ON=	ASTCENC_UNITTEST
 
 LDFLAGS+=	-pthread
 
-PLIST_FILES=	bin/astcenc-sse2
+PLIST_FILES=	bin/astcenc-${ASTCENC_ISA}
 
 # tests as of 5.7.0: 100% tests passed, 0 tests failed out of 1
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+ASTCENC_ISA=	sse2
+.else
+ASTCENC_ISA=	none
+.endif
 
 .include <bsd.port.mk>
