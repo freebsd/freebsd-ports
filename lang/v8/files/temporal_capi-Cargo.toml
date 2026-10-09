@@ -1,0 +1,16 @@
+[package]
+name = "v8_temporal"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+temporal_capi = { version = "=0.2.6", features = ["zoneinfo64"] }
+
+[profile.release]
+opt-level = 2
+debug = false
+panic = "abort"

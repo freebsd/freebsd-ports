@@ -1,6 +1,6 @@
---- BUILD.gn.orig	2026-09-28 16:35:08 UTC
+--- BUILD.gn.orig	2026-10-05 07:40:58 UTC
 +++ BUILD.gn
-@@ -7398,7 +7398,7 @@ v8_component("v8_libbase") {
+@@ -7615,7 +7615,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -9,7 +9,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -7416,6 +7416,12 @@ v8_component("v8_libbase") {
+@@ -7633,6 +7633,12 @@ v8_component("v8_libbase") {
      ]
  
      libs = [ "dl" ]
@@ -22,7 +22,7 @@
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {
        libs = [
-@@ -7987,6 +7993,9 @@ if (v8_monolithic) {
+@@ -8206,6 +8212,9 @@ if (v8_monolithic) {
        ":v8_libplatform",
        "//build/win:default_exe_manifest",
      ]
