@@ -23,6 +23,7 @@
     SUBDIR += cosmic-comp
     SUBDIR += ctwm
     SUBDIR += cwm
+    SUBDIR += daemonarchy
     SUBDIR += deforaos-panel
     SUBDIR += devilspie
     SUBDIR += devilspie2
