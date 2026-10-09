@@ -1486,7 +1486,6 @@
     SUBDIR += py-guess-language
     SUBDIR += py-hashids
     SUBDIR += py-hexdump
-    SUBDIR += py-hieroglyph
     SUBDIR += py-hjson
     SUBDIR += py-hotdoc
     SUBDIR += py-html-text
