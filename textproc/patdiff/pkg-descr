@@ -1,0 +1,14 @@
+Patdiff is an OCaml implementation of Bram Cohen's patience diff
+algorithm, with a few extra conveniences for comparing code and
+configuration files:
+
+- outputs plain ASCII, ANSI color codes, or HTML
+- optional semantic diffing of numbers (float tolerance)
+- good word-level diffing out of the box
+- recursive diffing of directories
+- extensively configurable output (markers, colors, location format,
+  context)
+- whitespace-aware diffing
+
+A wrapper script, patdiff-git-wrapper, lets git use patdiff as its
+external diff tool.
