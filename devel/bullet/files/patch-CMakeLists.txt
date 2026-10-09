@@ -1,6 +1,12 @@
---- CMakeLists.txt.orig	2021-05-07 18:04:02 UTC
+--- CMakeLists.txt.orig	2022-09-25 03:00:36 UTC
 +++ CMakeLists.txt
-@@ -429,9 +429,9 @@ ENDIF(BUILD_OPENGL3_DEMOS)
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.4.3)
++cmake_minimum_required(VERSION 3.5)
+ set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS true)
+ cmake_policy(SET CMP0017 NEW)
+ #this line has to appear before 'PROJECT' in order to be able to disable incremental linking
+@@ -429,9 +429,9 @@ IF(BUILD_BULLET2_DEMOS)
  OPTION(BUILD_BULLET2_DEMOS "Set when you want to build the Bullet 2 demos" ON)
  IF(BUILD_BULLET2_DEMOS)
  
