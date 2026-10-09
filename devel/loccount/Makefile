@@ -1,17 +1,17 @@
 PORTNAME=	loccount
-DISTVERSION=	2.22
-PORTREVISION=	6
+DISTVERSION=	2.25
 CATEGORIES=	devel
 MASTER_SITES=	http://www.catb.org/~esr/loccount/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Count source lines of code in a project
-WWW=		http://www.catb.org/esr/loccount/
+WWW=		http://www.catb.org/esr/loccount/ \
+		https://gitlab.com/esr/loccount
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_i386=	compilation fails: ./loccount.go:2656:3: cannot use yaml (untyped int constant 8796093022208) as uint value in struct literal (overflows)
+BROKEN_i386=	compilation fails: ./loccount.go:2656:3: cannot use yaml (untyped int constant 8796093022208) as uint value in struct literal (overflows), see https://gitlab.com/esr/loccount/-/work_items/30
 
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR}

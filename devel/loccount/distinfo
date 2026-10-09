@@ -1,6 +1,6 @@
-TIMESTAMP = 1780415291
-SHA256 (loccount-2.22.tar.gz) = f59a53c1861208e1d99471ee770fa824b5369f840d6fb67f7f5bdd63f7811187
-SIZE (loccount-2.22.tar.gz) = 451106
+TIMESTAMP = 1791531918
+SHA256 (loccount-2.25.tar.gz) = c47737d063fcba80e08137806b39c3b56c226d2952e6c2bd8b20e78ed7c13d33
+SIZE (loccount-2.25.tar.gz) = 483304
 SHA256 (boyter-gocodewalker-v1.5.1_GH0.tar.gz) = f1c41d4e400e4ca3b87bc5135ab8798f152e60a152aede97c6cdcad19bb3ddc9
 SIZE (boyter-gocodewalker-v1.5.1_GH0.tar.gz) = 53658
 SHA256 (danwakefield-fnmatch-cbb64ac3d964_GH0.tar.gz) = 7ebff38d382142f9220d2cfcb4731d0ae90cdef71238c94a15c35f8aa746007f
