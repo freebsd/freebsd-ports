@@ -4,6 +4,9 @@ PORTREVISION=		4
 CATEGORIES=		net
 MASTER_SITES=		https://github.com/openucx/ucx/releases/download/v${DISTVERSION}/
 
+PATCH_SITES=		https://github.com/openucx/ucx/commit/
+PATCHFILES=		f49b2479db46.patch:-p1
+
 MAINTAINER=		rikka.goering@outlook.de
 COMMENT=		Unified Communication X framework (UCX)
 WWW=			https://openucx.org/
