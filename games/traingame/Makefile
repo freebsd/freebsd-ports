@@ -1,6 +1,6 @@
 PORTNAME=	traingame
 PORTVERSION=	0.3
-PORTREVISION=	37
+PORTREVISION=	38
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://www.doof.me.uk/train-game/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
+DEPRECATED=	Abandoned upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libxerces-c.so:textproc/xerces-c3 \
