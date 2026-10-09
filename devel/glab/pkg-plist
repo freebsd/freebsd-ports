@@ -150,8 +150,13 @@
 %%MANPAGES%%share/man/man1/glab-mr-merge.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-create.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-mr-note-draft-create.1.gz
+%%MANPAGES%%share/man/man1/glab-mr-note-draft-delete.1.gz
+%%MANPAGES%%share/man/man1/glab-mr-note-draft-list.1.gz
+%%MANPAGES%%share/man/man1/glab-mr-note-draft-publish.1.gz
+%%MANPAGES%%share/man/man1/glab-mr-note-draft-update.1.gz
+%%MANPAGES%%share/man/man1/glab-mr-note-draft.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-list.1.gz
-%%MANPAGES%%share/man/man1/glab-mr-note-publish.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-reopen.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-resolve.1.gz
 %%MANPAGES%%share/man/man1/glab-mr-note-update.1.gz
