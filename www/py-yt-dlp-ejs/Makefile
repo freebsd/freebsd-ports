@@ -17,16 +17,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	distinfo was only generated for these architectures # feel free to add more architectures
 
-FETCH_DEPENDS=	npm:www/npm \
+FETCH_DEPENDS=	npm:www/npm-node${NPM_VER} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 BUILD_DEPENDS=	deno:www/deno \
-		npm:www/npm \
+		npm:www/npm-node${NPM_VER} \
 		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	deno:www/deno
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
+
+NPM_VER=	24 # 26 crashes with *** Signal 10
 
 TEST_ARGS=	--disable-plugin-autoload
 
