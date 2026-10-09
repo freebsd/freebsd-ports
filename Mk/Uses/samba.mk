@@ -18,7 +18,7 @@ samba_ARGS=	build run
 IGNORE=		USES=samba has invalid arguments: ${samba_ARGS:Nbuild:Nenv:Nlib:Nself:Nrun}
 .  endif
 
-_SAMBA_VALID_VERSIONS=	4.16 4.19 4.20 4.22 4.23 4.24
+_SAMBA_VALID_VERSIONS=	4.16 4.19 4.20 4.22 4.23 4.24 4.25
 
 .  if ${_SAMBA_VALID_VERSIONS:M${SAMBA_DEFAULT}} == ""
 IGNORE=		Invalid version of samba: ${SAMBA_DEFAULT}
@@ -68,6 +68,10 @@ SAMBA_PORT_424=		net/samba424
 SAMBA_TALLOC_PORT_424=	devel/talloc244
 SAMBA_TDB_PORT_424=	databases/tdb1415
 SAMBA_TEVENT_PORT_424=	devel/tevent017
+SAMBA_PORT_425=		net/samba425
+SAMBA_TALLOC_PORT_425=	devel/talloc250
+SAMBA_TDB_PORT_425=	databases/tdb1415
+SAMBA_TEVENT_PORT_425=	devel/tevent0172
 
 SAMBA_PORT=		${SAMBA_PORT_${SAMBA_SUFFIX}}
 # Only define SAMBA_LDB_PORT if SAMBA_LDB_PORT_${SAMBA_SUFFIX} is set. Samba
