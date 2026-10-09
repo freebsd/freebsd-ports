@@ -8,6 +8,7 @@ share/man/man1/include-what-you-use.1.gz
 %%DATADIR%%/boost-1.75-all.imp
 %%DATADIR%%/boost-all-private.imp
 %%DATADIR%%/boost-all.imp
+%%DATADIR%%/clang-22.intrinsics.imp
 %%DATADIR%%/clang-6.intrinsics.imp
 %%DATADIR%%/gcc-8.intrinsics.imp
 %%DATADIR%%/python2.7.imp
