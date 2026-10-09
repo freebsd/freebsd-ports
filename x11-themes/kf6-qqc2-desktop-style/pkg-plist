@@ -12,6 +12,7 @@ lib/cmake/KF6QQC2DesktopStyle/KF6QQC2DesktopStyleConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/desktop/Dial.qml
 %%QT_QMLDIR%%/org/kde/desktop/Dialog.qml
 %%QT_QMLDIR%%/org/kde/desktop/DialogButtonBox.qml
+%%QT_QMLDIR%%/org/kde/desktop/DoubleSpinBox.qml
 %%QT_QMLDIR%%/org/kde/desktop/Drawer.qml
 %%QT_QMLDIR%%/org/kde/desktop/Frame.qml
 %%QT_QMLDIR%%/org/kde/desktop/GroupBox.qml

@@ -19,6 +19,10 @@ lib/cmake/KF6Prison/KF6PrisonConfig.cmake
 lib/cmake/KF6Prison/KF6PrisonConfigVersion.cmake
 lib/cmake/KF6Prison/KF6PrisonTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF6Prison/KF6PrisonTargets.cmake
+lib/cmake/KF6PrisonScanner/KF6PrisonScannerConfig.cmake
+lib/cmake/KF6PrisonScanner/KF6PrisonScannerConfigVersion.cmake
+lib/cmake/KF6PrisonScanner/KF6PrisonScannerTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF6PrisonScanner/KF6PrisonScannerTargets.cmake
 lib/libKF6Prison.so
 lib/libKF6Prison.so.6
 lib/libKF6Prison.so.%%KDE_FRAMEWORKS_VERSION%%
