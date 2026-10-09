@@ -1,7 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40.0
-PORTREVISION=	1
+DISTVERSION=	0.40.2
 CATEGORIES=	misc # machine-learning
 
 ## Q: Why does misc/ollama use the fork yurivict/ollama ?
