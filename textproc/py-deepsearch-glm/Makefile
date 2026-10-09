@@ -1,4 +1,4 @@
-PORTNAME=	deepsearch-glm
+PORTNAME=	deepsearch-glm # this project is being renamed info docling-project/docling-nlp
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
@@ -25,7 +25,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graph Language Models
-WWW=		https://pypi.org/project/deepsearch-glm/
+WWW=		https://github.com/docling-project/docling-nlp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -35,6 +35,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} 
 
 USES=		cmake:indirect python
 USE_PYTHON=	pep517 concurrent autoplist
+
+MAKE_ENV=	CMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/docling-project/docling-nlp/issues/108
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/ resolv//g' ${WRKSRC}/cmake/os_opts.cmake

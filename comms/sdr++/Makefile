@@ -24,6 +24,8 @@ GH_ACCOUNT=	AlexandreRouma
 GH_PROJECT=	SDRPlusPlus
 GH_TAGNAME=	ea3675d
 
+CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+
 PORTSCOUT=	ignore:1 # rolling release
 
 OPTIONS_GROUP=			MODULES AUDIO_SOURCE AUDIO_SINK AUDIO_DECODER # the list is defined in CMakeLists.txt, also see https://github.com/AlexandreRouma/SDRPlusPlus?tab=readme-ov-file#module-list
