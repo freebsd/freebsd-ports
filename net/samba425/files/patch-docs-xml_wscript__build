@@ -1,0 +1,10 @@
+--- docs-xml/wscript_build.orig	2026-01-20 15:42:54 UTC
++++ docs-xml/wscript_build
+@@ -91,6 +91,7 @@ vfs_module_manpages = ['vfs_acl_tdb',
+                        'vfs_extd_audit',
+                        'vfs_fake_perms',
+                        'vfs_fileid',
++                       'vfs_freebsd',
+                        'vfs_fruit',
+                        'vfs_full_audit',
+                        'vfs_glusterfs',

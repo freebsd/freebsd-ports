@@ -1,0 +1,11 @@
+--- python/samba/provision/sambadns.py.orig
++++ python/samba/provision/sambadns.py
+@@ -1009,7 +1009,7 @@ def create_named_conf(paths, realm, dnsdomain, dns_bac
+                                      stderr=subprocess.STDOUT,
+                                      cwd='.').communicate()[0]
+         bind_info = get_string(bind_info)
+-        bind9_release = re.search('BIND (9)\.(\d+)\.', bind_info, re.I)
++        bind9_release = re.search(r'BIND (9)\.(\d+)\.', bind_info, re.I)
+         if bind9_release:
+             bind9_disabled = ''
+             bind9_version = bind9_release.group(0) + "x"

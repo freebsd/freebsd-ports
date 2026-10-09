@@ -1,0 +1,79 @@
+--- source4/dns_server/wscript_build.orig	2026-01-20 15:42:54 UTC
++++ source4/dns_server/wscript_build
+@@ -20,69 +20,21 @@ bld.SAMBA_MODULE('service_dns',
+         )
+ 
+ # a bind9 dlz module giving access to the Samba DNS SAM
+-bld.SAMBA_LIBRARY('dlz_bind9_10',
++for bind_version in (910, 911, 912, 914, 916, 918, 920):
++    string_version='%d_%d' % (bind_version // 100, bind_version % 100)
++    bld.SAMBA_LIBRARY('dlz_bind%s' % (string_version),
+                   source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_10',
++                  cflags='-DBIND_VERSION=%d' % bind_version,
+                   private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_10.so',
+-                  realname='dlz_bind9_10.so',
++                  link_name='modules/bind9/dlz_bind%s.so' % (string_version),
++                  realname='dlz_bind%s.so' % (string_version),
+                   install_path='${MODULESDIR}/bind9',
+                   deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+                   enabled=bld.AD_DC_BUILD_IS_ENABLED())
+ 
+-bld.SAMBA_LIBRARY('dlz_bind9_11',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_11',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_11.so',
+-                  realname='dlz_bind9_11.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_12',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_12',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_12.so',
+-                  realname='dlz_bind9_12.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_14',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_14',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_14.so',
+-                  realname='dlz_bind9_14.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_16',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_16',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_16.so',
+-                  realname='dlz_bind9_16.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_18',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_18',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_18.so',
+-                  realname='dlz_bind9_18.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+ bld.SAMBA_LIBRARY('dlz_bind9_for_torture',
+                   source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_16',
++                  cflags='-DBIND_VERSION=920',
+                   private_library=True,
+                   deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+                   enabled=bld.AD_DC_BUILD_IS_ENABLED())

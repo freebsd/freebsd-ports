@@ -1525,6 +1525,7 @@
     SUBDIR += samba422
     SUBDIR += samba423
     SUBDIR += samba424
+    SUBDIR += samba425
     SUBDIR += samplicator
     SUBDIR += savvycan
     SUBDIR += sbm

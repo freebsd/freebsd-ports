@@ -1,0 +1,32 @@
+--- source4/setup/named.conf.dlz.orig	2026-01-20 15:42:56 UTC
++++ source4/setup/named.conf.dlz
+@@ -10,28 +10,5 @@ dlz "AD DNS Zone" {
+ # Uncomment only single database line, depending on your BIND version
+ #
+ dlz "AD DNS Zone" {
+-    # For BIND 9.8.x
+-    ${BIND9_8} database "dlopen ${MODULESDIR}/bind9/dlz_bind9.so";
+-
+-    # For BIND 9.9.x
+-    ${BIND9_9} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_9.so";
+-
+-    # For BIND 9.10.x
+-    ${BIND9_10} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_10.so";
+-
+-    # For BIND 9.11.x
+-    ${BIND9_11} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_11.so";
+-
+-    # For BIND 9.12.x
+-    ${BIND9_12} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_12.so";
+-
+-    # For BIND 9.14.x
+-    ${BIND9_14} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_14.so";
+-
+-    # For BIND 9.16.x
+-    ${BIND9_16} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_16.so";
+-
+-    # For BIND 9.18.x and 9.20.x
+-    ${BIND9_18} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_18.so";
++${BIND9_DLZ}
+ };
+-
