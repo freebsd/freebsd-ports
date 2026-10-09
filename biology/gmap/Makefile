@@ -1,5 +1,6 @@
 PORTNAME=	gmap
 PORTVERSION=	2025.07.31
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://research-pub.gene.com/gmap/src/
 DISTNAME=	${PORTNAME}-gsnap-${PORTVERSION:C|\.|-|g}
@@ -21,6 +22,11 @@ ONLY_FOR_ARCHS_REASON=	Upstream supports only x86 and possibly POWER8
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_have_decl___builtin_popcount=yes \
+		ac_cv_have_decl___builtin_clz=yes \
+		ac_cv_have_decl___builtin_ctz=yes \
+		ac_cv_have_decl___builtin_clzll=yes \
+		ac_cv_have_decl___builtin_ctzll=yes
 
 CONFLICTS_INSTALL=	cpuid scotch # bin/cpuid bin/gmap
 
