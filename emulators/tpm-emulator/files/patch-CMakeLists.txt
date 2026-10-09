@@ -1,6 +1,15 @@
 --- CMakeLists.txt.orig	2011-12-20 18:30:06 UTC
 +++ CMakeLists.txt
-@@ -36,19 +36,20 @@ set(TPM_DEVICE_NAME "/dev/tpm")
+@@ -5,7 +5,7 @@ project(TPM_Emulator C)
+ 
+ project(TPM_Emulator C)
+ 
+-cmake_minimum_required(VERSION 2.4)
++cmake_minimum_required(VERSION 3.5)
+ set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS true)
+ if(COMMAND cmake_policy)
+ cmake_policy(SET CMP0003 NEW)
+@@ -36,19 +36,20 @@ set(TPM_SOCKET_NAME "/var/run/tpm/tpmd_socket:0")
  else()
  set(TPM_LOG_FILE "/var/log/tpmd.log")
  set(TPM_SOCKET_NAME "/var/run/tpm/tpmd_socket:0")
