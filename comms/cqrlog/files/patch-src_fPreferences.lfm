@@ -1,6 +1,6 @@
---- src/fPreferences.lfm.orig	2021-01-16 14:03:35 UTC
-+++ src/fPreferences.lfm
-@@ -6128,7 +6128,7 @@ object frmPreferences: TfrmPreferences
+--- src/fPreferences.lfm.orig	2026-09-25 09:42:16.000000000 -0700
++++ src/fPreferences.lfm	2026-09-29 09:00:02.810988000 -0700
+@@ -6612,7 +6612,7 @@
            Top = 15
            Width = 432
            TabOrder = 0

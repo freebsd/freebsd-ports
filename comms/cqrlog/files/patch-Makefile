@@ -1,20 +1,29 @@
---- Makefile.orig	2021-02-12 16:24:42 UTC
-+++ Makefile
-@@ -1,12 +1,12 @@
--CC=lazbuild
-+LAZBUILD_CMD?=lazbuild -d
- ST=strip
--datadir  = $(DESTDIR)/usr/share/cqrlog
--bindir   = $(DESTDIR)/usr/bin
--sharedir = $(DESTDIR)/usr/share
+--- Makefile.orig	2026-09-25 09:42:16.000000000 -0700
++++ Makefile	2026-09-29 09:16:43.237664000 -0700
+@@ -7,13 +7,12 @@
+   DESTDIR  = $(HOME)/cqrlog
+   WS      ?= cocoa
+ else
+-  DESTDIR  = /usr
+   WS      ?= qt6
+ endif
+-#
+-datadir  = $(DESTDIR)/share/cqrlog
+-bindir   = $(DESTDIR)/bin
+-sharedir = $(DESTDIR)/share
++
 +datadir  = $(DESTDIR)${PREFIX}/share/cqrlog
 +bindir   = $(DESTDIR)${PREFIX}/bin
 +sharedir = $(DESTDIR)${PREFIX}/share
  tmpdir   = /tmp
+ PWD = $(shell pwd)
+ 
+@@ -36,7 +35,7 @@
+          lint-lfm
  
  cqrlog: src/cqrlog.lpi
--	$(CC) --ws=gtk2 --pcp=$(tmpdir)/.lazarus src/cqrlog.lpi
-+	$(LAZBUILD_CMD) $(LAZBUILD_ARGS) --ws=$(LCL_PLATFORM) --lazarusdir=$(LAZARUS_DIR) src/cqrlog.lpi
+-	$(LAZBUILD) --ws=$(WS) src/cqrlog.lpi
++	$(LAZBUILD) $(LAZBUILD_ARGS) --ws=$(WS) --lazarusdir=$(LAZARUS_DIR) src/cqrlog.lpi
  	$(ST) src/cqrlog
  	gzip tools/cqrlog.1 -c > tools/cqrlog.1.gz
  

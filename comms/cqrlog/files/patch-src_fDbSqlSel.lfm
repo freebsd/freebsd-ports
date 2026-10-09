@@ -1,0 +1,11 @@
+--- src/fDbSqlSel.lfm.orig	2026-09-29 13:58:15.474560000 -0700
++++ src/fDbSqlSel.lfm	2026-09-29 13:58:31.317536000 -0700
+@@ -168,7 +168,7 @@
+     Width = 251
+     BorderSpacing.Left = 24
+     BorderSpacing.Top = 12
+-    Caption = 'your linux user folder (CQRLOG default)'
++    Caption = 'your freebsd/linux user folder (CQRLOG default)'
+     Checked = True
+     ParentShowHint = False
+     ShowHint = True
