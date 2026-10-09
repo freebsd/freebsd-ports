@@ -1,0 +1,15 @@
+MARKTerm renders Markdown for three different outputs, each with
+its own command:
+
+- markterm: styled terminal output with syntax-highlighted code
+  blocks, automatic light/dark theme detection, base16 themes,
+  clickable links and inline images where the terminal supports
+  them.
+- markmark: Markdown back to Markdown, to reformat or normalise
+  documents.
+- markpdf: Markdown or HTML to PDF, laid out with litehtml and
+  written with libharu, including embedded CID fonts and remote
+  images.
+
+The TEXMATH option (on by default) renders LaTeX math blocks as
+Unicode text art through libtexprintf, which is GPLv3.

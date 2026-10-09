@@ -489,6 +489,7 @@
     SUBDIR += markdownfmt
     SUBDIR += markdownpart
     SUBDIR += markless
+    SUBDIR += markterm
     SUBDIR += mathml-xsd
     SUBDIR += md2roff
     SUBDIR += md4c
