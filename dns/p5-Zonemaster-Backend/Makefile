@@ -1,5 +1,5 @@
 PORTNAME=	Zonemaster-Backend
-DISTVERSION=	12.0.0
+DISTVERSION=	12.1.1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ZNMSTR
@@ -37,8 +37,7 @@ RUN_DEPENDS=	jq>0:textproc/jq \
 		p5-Router-Simple>=0:www/p5-Router-Simple \
 		p5-Starman>=0:www/p5-Starman \
 		p5-YAML-LibYAML>=0:textproc/p5-YAML-LibYAML \
-		p5-Zonemaster-Engine>0:dns/p5-Zonemaster-Engine
-
+		p5-Zonemaster-Engine>=9.0.0:dns/p5-Zonemaster-Engine
 
 USES=		gmake localbase perl5
 USE_PERL5=	configure
