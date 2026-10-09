@@ -1,6 +1,6 @@
 PORTNAME=	vapoursynth-waifu2x-ncnn-vulkan
 DISTVERSION=	r5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/Nlzy/vapoursynth-waifu2x-ncnn-vulkan
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Archived upstream, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		vulkan-headers>0:graphics/vulkan-headers \
