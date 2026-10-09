@@ -70,7 +70,7 @@ NODEJS_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
 NODEJS_DIR=	${PORTSDIR}/www/node${NODEJS_VERSION}
 .include "${NODEJS_DIR}/Makefile.version"
 
-ELECTRON_VER_MAJOR=	42
+ELECTRON_VER_MAJOR=	43
 ELECTRON_DIR=		${PORTSDIR}/devel/electron${ELECTRON_VER_MAJOR}
 .include "${ELECTRON_DIR}/Makefile.version"
 
