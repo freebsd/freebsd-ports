@@ -1,7 +1,6 @@
 PORTNAME=	publisher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.9.9
-PORTREVISION=	1
+DISTVERSION=	5.9.12
 CATEGORIES=	print
 PKGNAMESUFFIX=	-devel
 
@@ -33,24 +32,25 @@ USES=		go:modules,no_targets lua:53,build,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	speedata
 GH_TUPLE=	\
+		HugoSmits86:nativewebp:v1.3.0:hugosmits86_nativewebp/src/go/vendor/github.com/HugoSmits86/nativewebp \
 		Masterminds:semver:v1.5.0:masterminds_semver/src/go/vendor/github.com/Masterminds/semver \
 		PuerkitoBio:goquery:v1.9.1:puerkitobio_goquery/src/go/vendor/github.com/PuerkitoBio/goquery \
 		alecthomas:chroma:v2.13.0:alecthomas_chroma_v2/src/go/vendor/github.com/alecthomas/chroma/v2 \
 		andybalholm:cascadia:v1.3.2:andybalholm_cascadia/src/go/vendor/github.com/andybalholm/cascadia \
+		anthonynsimon:bild:v0.17.1:anthonynsimon_bild/src/go/vendor/github.com/anthonynsimon/bild \
 		dlclark:regexp2:v1.11.0:dlclark_regexp2/src/go/vendor/github.com/dlclark/regexp2 \
 		fsnotify:fsnotify:v1.7.0:fsnotify_fsnotify/src/go/vendor/github.com/fsnotify/fsnotify \
 		gammazero:deque:v0.2.1:gammazero_deque/src/go/vendor/github.com/gammazero/deque \
 		gammazero:workerpool:v1.1.3:gammazero_workerpool/src/go/vendor/github.com/gammazero/workerpool \
-		golang:image:v0.39.0:golang_image/src/go/vendor/golang.org/x/image \
+		golang:image:v0.45.0:golang_image/src/go/vendor/golang.org/x/image \
 		golang:net:v0.53.0:golang_net/src/go/vendor/golang.org/x/net \
-		golang:sys:v0.43.0:golang_sys/src/go/vendor/golang.org/x/sys \
-		golang:text:v0.36.0:golang_text/src/go/vendor/golang.org/x/text \
+		golang:sys:v0.47.0:golang_sys/src/go/vendor/golang.org/x/sys \
+		golang:text:v0.41.0:golang_text/src/go/vendor/golang.org/x/text \
 		google:btree:v1.1.2:google_btree/src/go/vendor/github.com/google/btree \
 		gorilla:mux:v1.8.1:gorilla_mux/src/go/vendor/github.com/gorilla/mux \
 		gregjones:httpcache:901d90724c79:gregjones_httpcache/src/go/vendor/github.com/gregjones/httpcache \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/src/go/vendor/github.com/inconshreveable/mousetrap \
 		peterbourgon:diskv:v2.0.1:peterbourgon_diskv/src/go/vendor/github.com/peterbourgon/diskv \
-		speedata:bild:dd063a632b14:speedata_bild/src/go/vendor/github.com/speedata/bild \
 		speedata:config:3a3f44982ec4:speedata_config/src/go/vendor/github.com/speedata/config \
 		speedata:css:68d469dc62c4:speedata_css_scanner/src/go/vendor/github.com/speedata/css \
 		speedata:go-lua:v0.1.8:speedata_go_lua/src/go/vendor/github.com/speedata/go-lua \
