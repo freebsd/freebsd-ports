@@ -1,21 +1,31 @@
---- CMakeLists.txt.orig	2025-03-07 00:50:44 UTC
+--- CMakeLists.txt.orig	2026-05-01 02:25:26 UTC
 +++ CMakeLists.txt
-@@ -132,6 +132,7 @@ include(SwiftSupport)
+@@ -121,7 +121,7 @@ include(DTrace)
+ include(DispatchSanitization)
  include(DispatchCompilerWarnings)
  include(DTrace)
- include(SwiftSupport)
+-
 +include(PkgConfigGeneration)
+ include(EnableFramePointers)
  
  # NOTE(abdulras) this is the CMake supported way to control whether we generate
- # shared or static libraries.  This impacts the behaviour of `add_library` in
-@@ -191,6 +192,10 @@ if(NOT CMAKE_SYSTEM_NAME STREQUAL Android)
- 
- if(NOT CMAKE_SYSTEM_NAME STREQUAL Android)
+@@ -184,6 +184,10 @@ endif()
    find_package(LibRT)
-+endif()
-+
-+if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-+  find_package(BlocksRuntime)
  endif()
  
++if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
++  find_package(BlocksRuntime)
++endif()
++
  check_function_exists(_pthread_workqueue_init HAVE__PTHREAD_WORKQUEUE_INIT)
+ check_function_exists(getprogname HAVE_GETPROGNAME)
+ check_function_exists(mach_absolute_time HAVE_MACH_ABSOLUTE_TIME)
+@@ -339,7 +343,7 @@ add_subdirectory(private)
+ add_subdirectory(man)
+ add_subdirectory(os)
+ add_subdirectory(private)
+-if(NOT APPLE)
++if(NOT BlocksRuntime_FOUND)
+   add_subdirectory(src/BlocksRuntime)
+ endif()
+ add_subdirectory(src)

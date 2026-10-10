@@ -1,20 +1,11 @@
---- src/io.c.orig	2021-09-17 04:54:52 UTC
+--- src/io.c.orig	2026-05-01 02:25:26 UTC
 +++ src/io.c
-@@ -22,7 +22,7 @@
- 
- #if defined(__FreeBSD__)
- #include <fcntl.h>
--#define F_RDADVISE F_RDAHEAD
-+//#define F_RDADVISE F_RDAHEAD
- #endif
- 
- #ifndef DISPATCH_IO_DEBUG
-@@ -2308,7 +2308,7 @@ _dispatch_operation_advise(dispatch_operation_t op, si
+@@ -2357,7 +2357,7 @@ _dispatch_operation_advise(dispatch_operation_t op, si
+ 		case ESPIPE: break; // fd refers to a pipe or FIFO
  		default: (void)dispatch_assume_zero(err); break;
  	}
+-#elif defined(__OpenBSD__)
++#elif defined(__OpenBSD__) || defined(__FreeBSD__)
+ 	(void)err;
  #else
--#error "_dispatch_operation_advise not implemented on this platform"
-+	(void)err;
- #endif // defined(F_RDADVISE)
- #endif // defined(_WIN32)
- }
+ #error "_dispatch_operation_advise not implemented on this platform"
