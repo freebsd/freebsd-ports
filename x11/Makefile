@@ -33,6 +33,7 @@
     SUBDIR += bhotkeys-albert
     SUBDIR += bhotkeys-audio
     SUBDIR += bhotkeys-brightness
+    SUBDIR += bhotkeys-display-common
     SUBDIR += bhotkeys-gnome
     SUBDIR += bhotkeys-i3
     SUBDIR += bhotkeys-kde
