@@ -194,6 +194,7 @@
     SUBDIR += mongodb-tools
     SUBDIR += mongodb70
     SUBDIR += mongodb80
+    SUBDIR += mongodb90
     SUBDIR += mongosh
     SUBDIR += mroonga
     SUBDIR += mtop

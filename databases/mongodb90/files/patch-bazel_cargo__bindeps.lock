@@ -1,0 +1,65 @@
+--- bazel/cargo_bindeps.lock.orig
++++ bazel/cargo_bindeps.lock
+@@ -1,5 +1,5 @@
+ {
+-  "checksum": "14e3d78cf8dddc34151b0ee8e41886f553b1fbf6cff1a6b50e87b8845b22adb1",
++  "checksum": "7b1e6817cb7616cb3447c2f3e413a1a5c475debf2bfc1f9059d5089cd4d86f23",
+   "crates": {
+     "aho-corasick 1.1.4": {
+       "name": "aho-corasick",
+@@ -519,6 +519,9 @@
+             "x86_64-apple-darwin": [
+               "std"
+             ],
++            "x86_64-unknown-freebsd": [
++              "std"
++            ],
+             "x86_64-unknown-linux-gnu": [
+               "std"
+             ]
+@@ -3691,6 +3694,17 @@
+                 "id": "libc 0.2.184",
+                 "target": "libc"
+               }
++            ],
++            "x86_64-unknown-freebsd": [
++              {
++                "id": "errno 0.3.14",
++                "target": "errno",
++                "alias": "libc_errno"
++              },
++              {
++                "id": "libc 0.2.184",
++                "target": "libc"
++              }
+             ]
+           }
+         },
+@@ -7714,7 +7728,8 @@
+       "aarch64-apple-darwin",
+       "powerpc64le-unknown-linux-gnu",
+       "s390x-unknown-linux-gnu",
+-      "x86_64-apple-darwin"
++      "x86_64-apple-darwin",
++      "x86_64-unknown-freebsd"
+     ],
+     "cfg(any())": [],
+     "cfg(not(target_has_atomic = \"ptr\"))": [],
+@@ -7726,6 +7741,7 @@
+       "powerpc64le-unknown-linux-gnu",
+       "s390x-unknown-linux-gnu",
+       "x86_64-apple-darwin",
++      "x86_64-unknown-freebsd",
+       "x86_64-unknown-linux-gnu"
+     ],
+     "cfg(windows)": [
+@@ -7742,6 +7758,9 @@
+     ],
+     "x86_64-pc-windows-msvc": [
+       "x86_64-pc-windows-msvc"
++    ],
++    "x86_64-unknown-freebsd": [
++      "x86_64-unknown-freebsd"
+     ],
+     "x86_64-unknown-linux-gnu": [
+       "x86_64-unknown-linux-gnu"

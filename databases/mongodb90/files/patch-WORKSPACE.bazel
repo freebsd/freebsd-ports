@@ -1,0 +1,23 @@
+--- WORKSPACE.bazel.orig
++++ WORKSPACE.bazel
+@@ -127,6 +127,20 @@ load("@aspect_rules_js//js:toolchains.bzl", "DEFAULT_N
+ 
+ rules_js_register_toolchains(node_version = DEFAULT_NODE_VERSION)
+ 
++load("//bazel:freebsd_repositories.bzl", "freebsd_system_yq_repo")
++
++freebsd_system_yq_repo(
++    name = "yq_freebsd_amd64",
++)
++
++freebsd_system_yq_repo(
++    name = "yq_freebsd_arm64",
++)
++
++freebsd_system_yq_repo(
++    name = "yq_freebsd_ppc64le",
++)
++
+ load("@aspect_rules_js//npm:repositories.bzl", "npm_translate_lock")
+ 
+ npm_translate_lock(

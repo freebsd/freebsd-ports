@@ -1,0 +1,14 @@
+--- src/third_party/zstandard/BUILD.bazel.orig	2026-09-29 00:00:00 UTC
++++ src/third_party/zstandard/BUILD.bazel
+@@ -54,7 +54,10 @@ mongo_cc_library(
+     copts = select({
+         "//bazel/config:compiler_type_gcc": [
+             "-Wno-stringop-overflow",
+         ],
+         "//conditions:default": [],
+-    }),
++    }) + select({
++        "@platforms//os:freebsd": ["-fPIC"],
++        "//conditions:default": [],
++    }),
+     includes = [

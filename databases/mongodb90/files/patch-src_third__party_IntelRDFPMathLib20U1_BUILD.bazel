@@ -1,0 +1,13 @@
+--- src/third_party/IntelRDFPMathLib20U1/BUILD.bazel.orig
++++ src/third_party/IntelRDFPMathLib20U1/BUILD.bazel
+@@ -31,6 +31,10 @@ INTEL_RDFP_MATHLIB_DEFINES = [
+         "LINUX=1",
+         "linux=1",
+     ],
++    "@platforms//os:freebsd": [
++        "LINUX=1",
++        "linux=1",
++    ],
+     "@platforms//os:macos": [
+         "LINUX=1",
+         "mach=1",
