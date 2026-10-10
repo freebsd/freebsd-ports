@@ -1,6 +1,6 @@
 PORTNAME=	cardano-cli
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	11.2.3.1
+DISTVERSION=	11.3.0.0
 CATEGORIES=	sysutils net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
