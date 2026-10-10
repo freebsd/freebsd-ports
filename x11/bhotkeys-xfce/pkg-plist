@@ -1,0 +1,16 @@
+share/bhotkeys/plugins.d/xfce-apps
+share/bhotkeys/plugins.d/xfce-display
+share/bhotkeys/plugins.d/xfce-files
+share/bhotkeys/plugins.d/xfce-files-alt
+share/bhotkeys/plugins.d/xfce-finder
+share/bhotkeys/plugins.d/xfce-finder-full
+share/bhotkeys/plugins.d/xfce-lock
+share/bhotkeys/plugins.d/xfce-logout
+share/bhotkeys/plugins.d/xfce-menu
+share/bhotkeys/plugins.d/xfce-run
+share/bhotkeys/plugins.d/xfce-shot
+share/bhotkeys/plugins.d/xfce-shot-region
+share/bhotkeys/plugins.d/xfce-shot-window
+share/bhotkeys/plugins.d/xfce-taskmgr
+share/bhotkeys/plugins.d/xfce-terminal
+share/bhotkeys/plugins.d/xfce-xkill
