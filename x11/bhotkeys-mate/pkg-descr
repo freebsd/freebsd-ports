@@ -1,0 +1,2 @@
+MATE chords for bhotkeys.  The plugins call gsettings and need a
+MATE session at run time.
