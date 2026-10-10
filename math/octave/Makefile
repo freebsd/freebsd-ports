@@ -1,6 +1,6 @@
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math java
 MASTER_SITES=	GNU
 
@@ -58,8 +58,7 @@ USE_QT=		base 5compat tools sqldriver-sqlite
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 USE_GL=		gl glu
 
-GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
-PLIST_SUB=	GNU_HOST=${GNU_HOST} \
+PLIST_SUB=	GNU_HOST=${CONFIGURE_TARGET} \
 		OCTAVE_VERSION=${OCTAVE_VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib/qt6
 CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed \
@@ -79,7 +78,6 @@ CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed \
 CONFIGURE_ARGS=	--disable-jit \
 		--disable-openmp \
 		--enable-shared \
-		--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
 		--with-lapack="${LAPACKLIB}"
 

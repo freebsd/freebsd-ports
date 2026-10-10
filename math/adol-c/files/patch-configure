@@ -9,12 +9,3 @@
  else
     _lib=lib
  fi
-@@ -17513,7 +17513,7 @@ $as_echo_n "checking for boostlib >= $bo
-                         libsubdirs="lib"
-     ax_arch=`uname -m`
-     case $ax_arch in
--      x86_64)
-+      amd64)
-         libsubdirs="lib64 libx32 lib lib64"
-         ;;
-       ppc64|s390x|sparc64|aarch64|ppc64le)

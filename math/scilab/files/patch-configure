@@ -14,7 +14,7 @@
  IS_64_BITS_CPU=false
  case "$host" in
 -         x86_64-*-linux-gnu | x86_64-linux-gnu | ia64-*-linux-gnu | alpha-*-linux-gnu | alpha-*-netbsd* | x86_64-*-netbsd* | sparc64-*-netbsd*)
-+         x86_64-*-linux-gnu | x86_64-linux-gnu | ia64-*-linux-gnu | alpha-*-linux-gnu | alpha-*-netbsd* | x86_64-*-netbsd* | sparc64-*-netbsd* | amd64-*-freebsd* | powerpc64*-*-freebsd*)
++         x86_64-* | ia64-* | alpha-* | sparc64-* | powerpc64*-*)
                  IS_64_BITS_CPU=true
      ;;
  esac

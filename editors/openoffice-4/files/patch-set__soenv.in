@@ -1,0 +1,11 @@
+--- set_soenv.in.orig	2025-03-11 11:14:04 UTC
++++ set_soenv.in
+@@ -387,7 +387,7 @@ elsif ( $platform =~ m/freebsd/ )
+          $JRETHREADDIR   = '$JAVA_HOME'.$ds."jre".$ds."lib".$ds."amd64".$ds."native_threads";
+       }
+    }
+-   elsif ($platform =~ m/^i386/)
++   elsif ($platform =~ m/^i[3456]86/)
+    {  print "Setting FreeBSD x86 specific values... ";
+       $outfile        = "FreeBSDX86Env.Set";
+       $CPU            = "I";

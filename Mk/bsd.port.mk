@@ -729,7 +729,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # CONFIGURE_TARGET
 #				- The name of target to call when GNU_CONFIGURE is
 #				  defined.
-#				  Default: ${ARCH}-portbld-${OPSYS:tl}${OSREL}
+#				  Default: ${HOSTARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 # GNU_CONFIGURE_PREFIX
 #				- The directory passed as prefix to the configure script if
 #				  GNU_CONFIGURE is set.
@@ -2679,8 +2679,7 @@ WRKDIR_PKGFILE${_SP.${sp}}=	${WRKDIR}/pkg/${PKGNAME${_SP.${sp}}}${PKG_SUFX}
 
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_CMD?=		./${CONFIGURE_SCRIPT}
-CONFIGURE_TARGET?=	${HOSTARCH}-portbld-${OPSYS:tl}${OSREL}
-CONFIGURE_TARGET:=	${CONFIGURE_TARGET:S/--build=//}
+CONFIGURE_TARGET?=	${HOSTARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_LOG?=		config.log
 
 # A default message to print if do-configure fails.

@@ -1,6 +1,6 @@
 PORTNAME=	festalon
 PORTVERSION=	0.5.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/festalon/ \
 		LOCAL/ehaupt
@@ -12,7 +12,7 @@ WWW=		http://projects.raphnet.net/\#festalon
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 

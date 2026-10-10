@@ -1,5 +1,6 @@
 PORTNAME=	pjsip
 DISTVERSION=	2.14.1
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	oliver.epper@gmail.com
@@ -162,14 +163,14 @@ post-install-SHARED-on:
 
 post-install-APPS-on:
 	${INSTALL_PROGRAM} \
-		${WRKSRC}/pjsip-apps/bin/pjsua-${ARCH}-portbld-${OPSYS:tl}${OSREL} \
+		${WRKSRC}/pjsip-apps/bin/pjsua-${CONFIGURE_TARGET} \
 		${STAGEDIR}${PREFIX}/bin/pjsua
 	${INSTALL_PROGRAM} \
-		${WRKSRC}/pjsip-apps/bin/pjsystest-${ARCH}-portbld-${OPSYS:tl}${OSREL} \
+		${WRKSRC}/pjsip-apps/bin/pjsystest-${CONFIGURE_TARGET} \
 		${STAGEDIR}${PREFIX}/bin/pjsystest
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/pjsip-apps/samples
 	${INSTALL_PROGRAM} \
-		${WRKSRC}/pjsip-apps/bin/samples/${ARCH}-portbld-${OPSYS:tl}${OSREL}/* \
+		${WRKSRC}/pjsip-apps/bin/samples/${CONFIGURE_TARGET}/* \
 		${STAGEDIR}${PREFIX}/libexec/pjsip-apps/samples/
 
 .include <bsd.port.pre.mk>

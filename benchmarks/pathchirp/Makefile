@@ -32,7 +32,9 @@ post-patch:
 
 do-install:
 .for f in rcv snd run
-	${INSTALL_PROGRAM} ${WRKSRC}/Bin/${ARCH}/${PORTNAME}_${f} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/Bin/${ARCH:S/amd64/x86_64/}/${PORTNAME}_${f} \
+		${STAGEDIR}${PREFIX}/bin
 .endfor
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}

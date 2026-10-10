@@ -16,7 +16,6 @@ GH_ACCOUNT=	glasslike
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-config=${CONFDIR}/qico.conf \
 			--with-default-speed=115200
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFLICTS_INSTALL=	qcc # bin/qcc
 

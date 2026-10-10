@@ -1,6 +1,6 @@
 PORTNAME=	gap
 DISTVERSION=	4.16.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION}/
 

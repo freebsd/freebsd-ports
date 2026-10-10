@@ -22,7 +22,6 @@ CONFIGURE_ARGS=		${ICONV_CONFIGURE_BASE} \
 			--with-logdir=${LOGDIR} \
 			--with-spooldir=${SPOOLDIR} \
 			--with-vardir=${VARDIR}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=		install-strip
 
 CONFLICTS=	fidogate-4* fidogate4-4*

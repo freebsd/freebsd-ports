@@ -1,6 +1,14 @@
 --- src/cputest.c.orig	2005-02-28 00:26:01 UTC
 +++ src/cputest.c
-@@ -31,18 +31,33 @@ static int mm_support(void)
+@@ -1,6 +1,7 @@
+ /* Cpu detection code, extracted from mmx.h ((c)1997-99 by H. Dietz
+    and R. Fisher). Converted to C and improved by Fabrice Bellard */
+ 
++#include <stdint.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -31,18 +32,33 @@ static int mm_support(void)
  {
  #ifdef ARCH_X86
      int rval;
@@ -17,7 +25,7 @@
 -                          "pushf\n\t"
  #ifdef __x86_64__
 +                          "pushf\n\t"
-+                          "pop %0\n\t"
+                           "pop %0\n\t"
 +                          "mov %0, %1\n\t"
 +                          
 +                          /* ... Toggle the ID bit in one copy and store */
@@ -28,7 +36,7 @@
 +                          
 +                          /* ... Get the (hopefully modified) EFLAGS */
 +                          "pushf\n\t"
-                           "pop %0\n\t"
++                          "pop %0\n\t"
  #else
 +                          "pushf\n\t"
                            "popl %0\n\t"
@@ -36,7 +44,7 @@
                            "movl %0, %1\n\t"
                            
                            /* ... Toggle the ID bit in one copy and store */
-@@ -53,9 +68,6 @@ static int mm_support(void)
+@@ -53,9 +69,6 @@ static int mm_support(void)
                            
                            /* ... Get the (hopefully modified) EFLAGS */
                            "pushf\n\t"
