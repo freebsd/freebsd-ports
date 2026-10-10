@@ -29,6 +29,7 @@
     SUBDIR += bgrot
     SUBDIR += bgs
     SUBDIR += bhotkeys
+    SUBDIR += bhotkeys-gnome
     SUBDIR += bhotkeys-i3
     SUBDIR += bhotkeys-kde
     SUBDIR += bhotkeys-lid-state
