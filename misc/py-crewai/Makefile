@@ -1,5 +1,5 @@
 PORTNAME=	crewai
-PORTVERSION=	1.15.20
+PORTVERSION=	1.15.27
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,21 +13,22 @@ WWW=		https://crewai.com \
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>0:devel/py-aiofiles@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiosqlite>0:databases/py-aiosqlite@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>=24.1.0:devel/py-aiofiles@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}aiosqlite>=0.21.0:databases/py-aiosqlite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.4:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cel-python>=0.5.0:devel/py-cel-python@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}chromadb>=1.1.0:databases/py-chromadb@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}chromadb>=1.5.9:databases/py-chromadb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.1.7:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai-cli>=1.15.20:misc/py-crewai-cli@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai-core>=1.15.20:misc/py-crewai-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai-cli==1.15.27:misc/py-crewai-cli@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai-core==1.15.27:misc/py-crewai-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}instructor>=1.3.3:misc/py-instructor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}json-repair>=0.60.1:textproc/py-json-repair@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}json5>=0.10.0:devel/py-json5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonref>=1.1.0:devel/py-jsonref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lancedb>=0.29.2:databases/py-lancedb@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mcp>0:misc/py-mcp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mcp>=1.28.1:misc/py-mcp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oauthlib>0:security/py-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=2.30.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=3.1.5:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.42.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
@@ -37,7 +38,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>0:devel/py-aiofiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}portalocker>=2.7.0:devel/py-portalocker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>=2.14.2:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.11.9:devel/py-pydantic2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.13.0:www/py-pyjwt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjwt>0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.2.2:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}regex>=2026.1.15:textproc/py-regex@${PY_FLAVOR} \
@@ -116,6 +117,6 @@ TEST_ARGS=	-m 'not vcr' \
 		--deselect=tests/utilities/events/test_shutdown.py::test_mixed_sync_async_handler_execution \
 		--deselect=tests/utilities/events/test_thread_safety.py::test_concurrent_emit_and_registration
 
-# tests as of 1.15.20: 2848 passed, 6 skipped, 2215 warnings in 46.23s
+# tests as of 1.15.27: 666 failed, 2472 passed, 11 skipped, 244 deselected, 2338 warnings (local make test hit pyarrow ImportError: /usr/local/lib/libaws-c-s3.so.1.3: Undefined symbol "aws_file_close_fd")
 
 .include <bsd.port.mk>

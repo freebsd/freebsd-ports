@@ -1,3 +1,6 @@
+-- Loosen dependency bounds to match the FreeBSD ports tree and remove the
+-- upstream script entry because the CLI is packaged separately as py-crewai-cli.
+
 --- pyproject.toml.orig	2026-07-17 21:30:24 UTC
 +++ pyproject.toml
 @@ -44,7 +44,7 @@
