@@ -1,34 +1,24 @@
 PORTNAME=	vit
-PORTVERSION=	1.2
-PORTREVISION=	2
-CATEGORIES=	deskutils
-MASTER_SITES=	http://taskwarrior.org/download/
+DISTVERSION=	2.3.4
+CATEGORIES=	deskutils python
+MASTER_SITES=	PYPI
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Curses-based interface to taskwarrior
-WWW=		https://tasktools.org/projects/vit.html
+MAINTAINER=	joneum@FreeBSD.org
+COMMENT=	Visual Interactive Taskwarrior full-screen terminal interface
+WWW=		https://github.com/vit-project/vit
 
-LICENSE=	GPLv3+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Curses>=0:devel/p5-Curses \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tasklib>=2.4.3:devel/py-tasklib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urwid>=2.1.2:devel/py-urwid@${PY_FLAVOR} \
 		task:deskutils/taskwarrior
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USES=		python
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
-USES=		perl5 shebangfix
-SHEBANG_FILES=	vit.pl
-GNU_CONFIGURE=	yes
-ALL_TARGET=	build
-
-PLIST_FILES=	bin/vit \
-		etc/vit-commands \
-		share/man/man1/vit.1.gz \
-		share/man/man5/vitrc.5.gz
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/vit ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/commands ${STAGEDIR}${PREFIX}/etc/vit-commands
-	${INSTALL_MAN} ${WRKSRC}/vit.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/vitrc.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
 .include <bsd.port.mk>
