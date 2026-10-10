@@ -1,5 +1,5 @@
 PORTNAME=	conan
-DISTVERSION=	2.32.0
+DISTVERSION=	2.33.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 
@@ -27,6 +27,7 @@ PY_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}requests>=2.25:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}truststore>=0.8:security/py-truststore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.6,1:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.28.1:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0:devel/py-pyyaml@${PY_FLAVOR}
