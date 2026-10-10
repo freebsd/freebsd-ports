@@ -1,6 +1,6 @@
 PORTNAME=	cachebox
-DISTVERSION=	6.2.7
-PORTREVISION=	1
+DISTVERSION=	6.2.8
+PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,22 +24,22 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 CARGO_CRATES=	allocator-api2-0.4.0 \
 		android_system_properties-0.1.6 \
 		autocfg-1.5.1 \
-		bitflags-2.13.1 \
+		bitflags-2.13.2 \
 		bumpalo-3.20.3 \
-		cc-1.4.4 \
-		cfg-if-1.0.4 \
+		cc-1.6.0 \
+		cfg-if-1.0.5 \
 		chrono-0.4.45 \
 		core-foundation-sys-0.8.7 \
 		fastrand-2.5.0 \
-		find-msvc-tools-0.1.11 \
+		find-msvc-tools-0.1.14 \
 		futures-core-0.3.34 \
 		futures-task-0.3.34 \
 		futures-util-0.3.34 \
 		heck-0.5.0 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
-		js-sys-0.3.104 \
-		libc-0.2.189 \
+		js-sys-0.3.106 \
+		libc-0.2.190 \
 		lock_api-0.4.14 \
 		log-0.4.34 \
 		num-traits-0.2.19 \
@@ -49,25 +49,26 @@ CARGO_CRATES=	allocator-api2-0.4.0 \
 		pin-project-lite-0.2.17 \
 		portable-atomic-1.15.0 \
 		proc-macro2-1.0.107 \
-		pyo3-0.29.2 \
-		pyo3-build-config-0.29.2 \
-		pyo3-ffi-0.29.2 \
-		pyo3-macros-0.29.2 \
-		pyo3-macros-backend-0.29.2 \
+		pyo3-0.29.3 \
+		pyo3-build-config-0.29.3 \
+		pyo3-ffi-0.29.3 \
+		pyo3-macros-0.29.3 \
+		pyo3-macros-backend-0.29.3 \
 		quote-1.0.47 \
 		redox_syscall-0.5.18 \
 		rustversion-1.0.23 \
 		scopeguard-1.2.0 \
 		shlex-2.0.1 \
 		slab-0.4.12 \
-		smallvec-1.15.2 \
+		smallvec-1.16.2 \
 		syn-2.0.119 \
+		syn-3.0.6 \
 		target-lexicon-0.13.5 \
-		unicode-ident-1.0.24 \
-		wasm-bindgen-0.2.127 \
-		wasm-bindgen-macro-0.2.127 \
-		wasm-bindgen-macro-support-0.2.127 \
-		wasm-bindgen-shared-0.2.127 \
+		unicode-ident-1.0.26 \
+		wasm-bindgen-0.2.129 \
+		wasm-bindgen-macro-0.2.129 \
+		wasm-bindgen-macro-support-0.2.129 \
+		wasm-bindgen-shared-0.2.129 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
