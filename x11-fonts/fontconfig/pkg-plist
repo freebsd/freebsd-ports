@@ -1,6 +1,7 @@
 bin/fc-cache
 bin/fc-cat
 bin/fc-conflist
+bin/fc-genconf
 bin/fc-list
 bin/fc-match
 bin/fc-pattern
@@ -61,6 +62,7 @@ etc/fonts/conf.d/30-metric-aliases.conf
 etc/fonts/conf.d/40-nonlatin.conf
 etc/fonts/conf.d/45-generic.conf
 etc/fonts/conf.d/45-latin.conf
+etc/fonts/conf.d/48-guessfamily.conf
 etc/fonts/conf.d/48-spacing.conf
 etc/fonts/conf.d/49-sansserif.conf
 etc/fonts/conf.d/50-user.conf
@@ -83,11 +85,12 @@ include/fontconfig/fontconfig.h
 lib/libfontconfig.a
 lib/libfontconfig.so
 lib/libfontconfig.so.1
-lib/libfontconfig.so.1.16.0
+lib/libfontconfig.so.1.17.0
 libdata/pkgconfig/fontconfig.pc
 share/man/man1/fc-cache.1.gz
 share/man/man1/fc-cat.1.gz
 share/man/man1/fc-conflist.1.gz
+share/man/man1/fc-genconf.1.gz
 share/man/man1/fc-list.1.gz
 share/man/man1/fc-match.1.gz
 share/man/man1/fc-pattern.1.gz
@@ -131,6 +134,7 @@ share/man/man3/FcCharSetNextPage.3.gz
 share/man/man3/FcCharSetSubtract.3.gz
 share/man/man3/FcCharSetSubtractCount.3.gz
 share/man/man3/FcCharSetUnion.3.gz
+share/man/man3/FcConfigAcceptFilename.3.gz
 share/man/man3/FcConfigAcceptFilter.3.gz
 share/man/man3/FcConfigAcceptFont.3.gz
 share/man/man3/FcConfigAppFontAddDir.3.gz
@@ -140,6 +144,7 @@ share/man/man3/FcConfigBuildFonts.3.gz
 share/man/man3/FcConfigCreate.3.gz
 share/man/man3/FcConfigDestroy.3.gz
 share/man/man3/FcConfigEnableHome.3.gz
+share/man/man3/FcConfigFileGenerate.3.gz
 share/man/man3/FcConfigFileInfoIterGet.3.gz
 share/man/man3/FcConfigFileInfoIterInit.3.gz
 share/man/man3/FcConfigFileInfoIterNext.3.gz
@@ -156,6 +161,7 @@ share/man/man3/FcConfigGetFontDirs.3.gz
 share/man/man3/FcConfigGetFonts.3.gz
 share/man/man3/FcConfigGetRescanInterval.3.gz
 share/man/man3/FcConfigGetSysRoot.3.gz
+share/man/man3/FcConfigGetWarningFlags.3.gz
 share/man/man3/FcConfigHome.3.gz
 share/man/man3/FcConfigParseAndLoad.3.gz
 share/man/man3/FcConfigParseAndLoadFromMemory.3.gz
@@ -166,6 +172,7 @@ share/man/man3/FcConfigSetDefaultSubstitute.3.gz
 share/man/man3/FcConfigSetFontSetFilter.3.gz
 share/man/man3/FcConfigSetRescanInterval.3.gz
 share/man/man3/FcConfigSetSysRoot.3.gz
+share/man/man3/FcConfigSetWarningFlags.3.gz
 share/man/man3/FcConfigSubstitute.3.gz
 share/man/man3/FcConfigSubstituteWithPat.3.gz
 share/man/man3/FcConfigUptoDate.3.gz
@@ -239,6 +246,7 @@ share/man/man3/FcMatrixShear.3.gz
 share/man/man3/FcNameConstant.3.gz
 share/man/man3/FcNameGetConstant.3.gz
 share/man/man3/FcNameGetConstantFor.3.gz
+share/man/man3/FcNameGetConstantNameFrom.3.gz
 share/man/man3/FcNameGetObjectType.3.gz
 share/man/man3/FcNameParse.3.gz
 share/man/man3/FcNameRegisterConstants.3.gz
