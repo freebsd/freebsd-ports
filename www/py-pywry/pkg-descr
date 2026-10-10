@@ -1,5 +1,4 @@
-pywry allows to easily create HTML webviewers in python utilizing the wry
-library.
-
-Unlike many HTML viewers that exist for Python - Pywry allows you to run
-JavaScript.
+PyWry is a lightweight and blazingly fast, cross-platform, WebView rendering
+engine and desktop UI toolkit for Python, built on top of Tauri/PyTauri.
+It supports Plotly.js, AG Grid, TradingView Lightweight Charts, and custom
+event handling.
