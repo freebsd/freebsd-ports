@@ -10,7 +10,7 @@ WWW=		https://orhun.dev/linuxwave/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		zig
+USES=		zig:016
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	orhun
