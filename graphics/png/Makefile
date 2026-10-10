@@ -1,8 +1,9 @@
 PORTNAME=	png
-DISTVERSION=	1.6.58
+DISTVERSION=	1.6.59
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}16/${DISTVERSION}/
-PATCH_SITES=	SF/lib${PORTNAME}-apng/lib${PORTNAME}16/${DISTVERSION}/
+#PATCH_SITES=	SF/lib${PORTNAME}-apng/lib${PORTNAME}16/${DISTVERSION}/
+PATCH_SITES=	SF/lib${PORTNAME}-apng/lib${PORTNAME}16/1.6.58/
 # Keep this because you normally need to keep patch version in sync with release 
 DISTNAME=	lib${PORTNAME}-${DISTVERSION}
 
@@ -49,7 +50,8 @@ CFLAGS+=	-maltivec -mvsx
 
 .if ${PORT_OPTIONS:MAPNG} || make(makesum)
 # Keep this because you normally need to keep patch version in sync with release
-PATCHFILES=	lib${PORTNAME}-${DISTVERSION}-apng.patch.gz:-p1
+#PATCHFILES=	lib${PORTNAME}-${DISTVERSION}-apng.patch.gz:-p1
+PATCHFILES=	lib${PORTNAME}-1.6.58-apng.patch.gz:-p1
 .endif
 
 .include <bsd.port.mk>
