@@ -1,10 +1,9 @@
 PORTNAME=	framework-autorotate
-DISTVERSION=	1.0
+DISTVERSION=	1.1
 CATEGORIES=	x11
 
 MAINTAINER=	dteske@FreeBSD.org
 COMMENT=	Framework Laptop 12 X11 display autorotate
-WWW=		https://github.com/FrauBSD/framework-autorotate
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -27,9 +26,8 @@ CFLAGS+=	-Wall -Wextra
 
 EXAMPLESDIR=	${PREFIX}/share/examples/framework_autorotate
 
-OPTIONS_DEFINE=		EXAMPLES
-OPTIONS_DEFAULT=	EXAMPLES
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_SUB=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/framework_autorotate \
@@ -39,7 +37,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/libexec/framework_autorotate
 	${INSTALL_SCRIPT} ${WRKSRC}/libexec/map-touchscreen \
 		${STAGEDIR}${PREFIX}/libexec/framework_autorotate
-	${INSTALL_MAN} ${WRKSRC}/framework_autorotate.8 \
+	${INSTALL_MAN} ${WRKSRC}/man/framework_autorotate.8 \
 		${STAGEDIR}${PREFIX}/share/man/man8
 
 post-install-EXAMPLES-on:
