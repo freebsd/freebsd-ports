@@ -1,3 +1,37 @@
+  <vuln vid="049d88bb-c4a2-11f1-9d0b-5404a68ad561">
+    <topic>traefik -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+      <name>traefik</name>
+      <range><lt>3.7.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>The traefik project releases a new version addressing multiple vulnerabilities:</p>
+      <blockquote cite="https://github.com/traefik/traefik/releases/tag/v3.7.14">
+      <ul>
+      <li>GHSA-53qr-784g-cj35 (FastProxy backend connection pool leaks identity)</li>
+      <li>GHSA-cw35-4q88-3rmp (NTLM/Kerberos sticky round tripper is not keyed by service)</li>
+      <li>GHSA-fh26-gfpp-7xxx (snicheck skips the check when `req.TLS` is nil)</li>
+      <li>GHSA-mwrr-6hp4-pxr6 (Ingress-NGINX provider forwards forged Ssl-Client-* identity headers</li>
+      <li>GHSA-qm9f-w54v-q2qh (Preauthenticated Negotiate contaminates Traefik's backend connection pool</li>
+      <li>GHSA-qvj7-gq9c-hp7q (ssl-passthrough sibling HTTP router serves the auth-protected backend without auth)</li>
+      <li>GHSA-rv2h-qh7j-xrjw (colliding auth-tls-secret names merge two client CAs into one TLS option)</li>
+      <li>GHSA-mhjw-hmjv-p99x (Unsynchroinized write to sticky round tripper shared by concurrent HTTP/2 streams)</li>
+      </ul>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/traefik/traefik/releases/tag/v3.7.14</url>
+    </references>
+    <dates>
+      <discovery>2026-10-06</discovery>
+      <entry>2026-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2719a8da-c3f8-11f1-8da1-3497f65b111b">
     <topic>clamav -- Multiple vulnerabilities</topic>
     <affects>
