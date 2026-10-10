@@ -1,0 +1,12 @@
+OpenBB: JODI (Joint Organisations Data Initiative) data extension.
+
+The openbb-jodi package is a data provider extension for the OpenBB
+Platform. It implements data pipelines and normalized data models that
+connect directly to the Joint Organisations Data Initiative (JODI) Oil
+and Gas World Databases.
+
+Features include:
+- Normalized access to JODI monthly petroleum and natural gas data.
+- Structured retrieval of country-level production, trade, and stocks.
+- Integration with the obb.jodi namespace inside the OpenBB framework.
+- Zero-configuration data fetching requiring no external API keys.

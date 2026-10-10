@@ -158,6 +158,7 @@
     SUBDIR += py-openbb-imf
     SUBDIR += py-openbb-index
     SUBDIR += py-openbb-intrinio
+    SUBDIR += py-openbb-jodi
     SUBDIR += py-openbb-mcp-server
     SUBDIR += py-openbb-multpl
     SUBDIR += py-openbb-nasdaq
