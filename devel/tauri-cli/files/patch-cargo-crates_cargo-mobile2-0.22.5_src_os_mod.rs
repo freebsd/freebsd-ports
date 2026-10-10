@@ -1,7 +1,7 @@
 -- Reuse the Linux OS module on FreeBSD because cargo-mobile2 does not yet
 -- provide a native FreeBSD implementation.
---- cargo-crates/cargo-mobile2-0.22.4/src/os/mod.rs.orig	2026-07-30 17:20:27 UTC
-+++ cargo-crates/cargo-mobile2-0.22.4/src/os/mod.rs
+--- cargo-crates/cargo-mobile2-0.22.5/src/os/mod.rs.orig	2026-07-30 17:20:27 UTC
++++ cargo-crates/cargo-mobile2-0.22.5/src/os/mod.rs
 @@ -9,9 +9,15 @@ mod linux;
  #[cfg(target_os = "linux")]
  mod linux;

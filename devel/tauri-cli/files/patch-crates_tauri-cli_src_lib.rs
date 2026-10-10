@@ -1,4 +1,7 @@
 -- Enable the tauri-cli library crate on FreeBSD.
+
+-- All tauri-cli patches are upstreamed: https://github.com/tauri-apps/tauri/pull/16245
+
 --- crates/tauri-cli/src/lib.rs.orig	2026-07-01 13:31:26 UTC
 +++ crates/tauri-cli/src/lib.rs
 @@ -8,7 +8,7 @@

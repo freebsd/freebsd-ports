@@ -1,7 +1,7 @@
 -- Disable upstream bench, example and integration-test workspace members.
 -- They are not needed to build the Tauri CLI and can cause build failures
 -- on platforms those crates do not support.
---- Cargo.toml.orig	2026-07-01 13:31:26 UTC
+--- Cargo.toml.orig	2026-10-09 01:47:29 UTC
 +++ Cargo.toml
 @@ -19,20 +19,20 @@ members = [
    "packages/cli",
@@ -32,5 +32,5 @@
 +  #"examples/api/src-tauri",
 +  #"examples/api/src-tauri/tauri-plugin-sample",
  ]
- resolver = "2"
+ resolver = "3"
  
