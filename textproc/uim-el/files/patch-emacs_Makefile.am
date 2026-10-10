@@ -1,13 +1,14 @@
---- emacs/Makefile.am.orig	2025-05-18 07:48:51 UTC
+--- emacs/Makefile.am.orig	2026-10-10 14:06:13 UTC
 +++ emacs/Makefile.am
-@@ -1,6 +1,5 @@ EXTRA_DIST = README.ja uim-version.el.in
- EXTRA_DIST = README.ja uim-version.el.in
+@@ -6,7 +6,6 @@ EXTRA_DIST =			\
+ 	test/test-uim.el	\
+ 	uim-version.el.in
  
 -if UIM_EL
  AM_CPPFLAGS =					\
  	-I$(top_builddir)/uim			\
  	-I$(top_srcdir)/replace			\
-@@ -11,8 +10,6 @@ dist_uimel_lisp_DATA = uim.el uim-var.el uim-version.e
+@@ -17,8 +16,6 @@ dist_uimel_lisp_DATA = uim.el uim-var.el uim-version.e
   uim-key.el uim-util.el \
   uim-candidate.el uim-preedit.el uim-debug.el uim-leim.el uim-helper.el
  
@@ -16,8 +17,19 @@
  uim_el_agent_SOURCES = uim-el-agent.c debug.c output.c context.c preedit.c \
   key.c candidate.c encoding.c im.c callback.c commit.c \
   helper.c prop.c helper-message.c callback.h candidate.h commit.h context.h \
-@@ -31,4 +28,3 @@ uim_el_helper_agent_LDADD = $(top_builddir)/uim/libuim
+@@ -37,7 +34,6 @@ uim_el_helper_agent_LDADD = $(top_builddir)/uim/libuim
  uim_el_helper_agent_LDADD = $(top_builddir)/uim/libuim-scm.la \
  			    $(top_builddir)/uim/libuim.la
  
+-# ERT tests that drive uim.el in a batch Emacs with the agents in the
+ # build tree.
+ if UIM_EL_TEST
+ 
+@@ -52,7 +48,5 @@ TESTS = test/run.el
+ # uim-version.el is made in the build tree.
+ AM_EL_LOG_FLAGS = -Q --batch -L $(abs_srcdir) -L $(abs_builddir) -l
+ TESTS = test/run.el
+-
 -endif
+ 
+ endif

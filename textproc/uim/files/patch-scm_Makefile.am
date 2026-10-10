@@ -1,6 +1,6 @@
---- scm/Makefile.am.orig	2026-09-20 10:05:02 UTC
+--- scm/Makefile.am.orig	2026-10-10 10:29:44 UTC
 +++ scm/Makefile.am
-@@ -26,7 +26,6 @@ SCM_FILES = plugin.scm im.scm im-custom.scm lazy-load.
+@@ -25,7 +25,6 @@ SCM_FILES = plugin.scm im.scm im-custom.scm lazy-load.
   japanese-act-utf8.scm japanese-kzik-utf8.scm \
   anthy.scm anthy-custom.scm anthy-key-custom.scm \
   anthy-utf8.scm anthy-utf8-custom.scm \

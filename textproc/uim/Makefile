@@ -1,5 +1,5 @@
 PORTNAME=	uim
-PORTVERSION=	1.9.8
+PORTVERSION=	1.9.9
 PORTREVISION?=	0
 CATEGORIES?=	textproc
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -78,7 +78,7 @@ PLIST_SUB+=	X11=""
 CONFIGURE_ARGS+=	--enable-storage=fatty
 .endif
 
-.for _x in x xft gtk3 gtk4 qt5 qt6 anthy anthy-utf8 canna m17nlib scim dict
+.for _x in x xft gtk3 gtk4 qt5 qt6 anthy anthy-utf8 canna m17nlib scim dict ibus wayland
 .if ${CONFIGURE_ARGS:M--with-${_x}} == ""
 CONFIGURE_ARGS+=--without-${_x}
 .endif
@@ -104,7 +104,7 @@ pre-configure:
 
 do-build:
 .if !defined(UIM_SLAVE)
-.for d in replace sigscheme uim scm xim po fep emacs pixmaps tables
+.for d in replace sigscheme uim scm xim po fep emacs pixmaps byeoru-data data
 	cd ${WRKSRC}/${d} && ${MAKE_CMD}
 .endfor
 .if ${PORT_OPTIONS:MX11}
@@ -115,7 +115,7 @@ do-build:
 do-install:
 .if !defined(UIM_SLAVE)
 	cd ${WRKSRC} && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-data-am
-.for d in sigscheme uim scm xim fep emacs pixmaps tables
+.for d in sigscheme uim scm xim fep emacs pixmaps byeoru-data data
 	cd ${WRKSRC}/${d} && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
@@ -128,6 +128,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/fep/README.key ${STAGEDIR}${DOCSDIR}/README.key
 	${INSTALL_DATA} ${WRKSRC}/xim/README ${STAGEDIR}${DOCSDIR}/README.xim
 	${MKDIR} ${STAGEDIR}${DOCSDIR_JA}
+	cd ${WRKSRC}/doc && for f in `${MAKE} -V EXTRA_DIST_JA` ; do \
+		${INSTALL_DATA} $${f} ${STAGEDIR}${DOCSDIR_JA}/$${f} ; \
+	done
 	${INSTALL_DATA} ${WRKSRC}/fep/README.ja ${STAGEDIR}${DOCSDIR_JA}/README.fep
 .endif
 	cd ${WRKSRC}/po && ${MAKE_CMD} DESTDIR=${STAGEDIR} install

@@ -42,6 +42,7 @@ lib/uim/plugin/libuim-process.so
 lib/uim/plugin/libuim-skk.so
 lib/uim/plugin/libuim-socket.so
 lib/uim/plugin/libuim-sqlite3.so
+lib/uim/plugin/libuim-tutcode.so
 lib/uim/plugin/libuim-xkb.so
 libdata/pkgconfig/gcroots.pc
 libdata/pkgconfig/uim.pc
@@ -53,6 +54,7 @@ libexec/uim-helper-server
 share/applications/uim.desktop
 share/locale/fr/LC_MESSAGES/uim.mo
 share/locale/ja/LC_MESSAGES/uim.mo
+share/locale/ka/LC_MESSAGES/uim.mo
 share/locale/ko/LC_MESSAGES/uim.mo
 %%PORTDOCS%%%%DOCSDIR%%/00INDEX
 %%PORTDOCS%%%%DOCSDIR%%/COMPATIBILITY
@@ -71,12 +73,14 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%PORTDOCS%%%%DOCSDIR%%/UIM-SCM
 %%PORTDOCS%%%%DOCSDIR%%/UIM-SH
 %%PORTDOCS%%%%DOCSDIR%%/UNIT-TEST
-%%PORTDOCS%%%%DOCSDIR%%/skk-utf8-migration-guide-ja.md
 %%PORTDOCS%%%%DOCSDIR%%/skk-utf8-migration-guide.md
+%%PORTDOCS%%%%DOCSDIR%%/tutcode-utf8-migration-guide.md
 %%PORTDOCS%%%%DOCSDIR%%/uim-custom-cli.md
 %%PORTDOCS%%%%DOCSDIR%%/uim-im-switcher-cli.md
 %%PORTDOCS%%%%DOCSDIR%%/uim-wayland.md
 %%PORTDOCS%%%%DOCSDIR_JA%%/README.fep
+%%PORTDOCS%%%%DOCSDIR_JA%%/skk-utf8-migration-guide-ja.md
+%%PORTDOCS%%%%DOCSDIR_JA%%/tutcode-utf8-migration-guide-ja.md
 %%DATADIR%%/action.scm
 %%DATADIR%%/annotation-custom.scm
 %%DATADIR%%/annotation-dict.scm
@@ -93,6 +97,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/baidu-olime-jp-key-custom.scm
 %%DATADIR%%/baidu-olime-jp.scm
 %%DATADIR%%/byeoru-custom.scm
+%%DATADIR%%/byeoru-data/byeoru-dict
 %%DATADIR%%/byeoru-key-custom.scm
 %%DATADIR%%/byeoru-symbols.scm
 %%DATADIR%%/byeoru.scm
@@ -309,18 +314,8 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/unknown_dark_background.svg
 %%DATADIR%%/pixmaps/viqr.png
 %%DATADIR%%/pixmaps/viqr.svg
-%%DATADIR%%/pixmaps/wb86.png
-%%DATADIR%%/pixmaps/wb86.svg
-%%DATADIR%%/pixmaps/wb86_dark_background.png
-%%DATADIR%%/pixmaps/wb86_dark_background.svg
 %%DATADIR%%/pixmaps/wnn.png
 %%DATADIR%%/pixmaps/wnn.svg
-%%DATADIR%%/pixmaps/zm.png
-%%DATADIR%%/pixmaps/zm.svg
-%%DATADIR%%/pixmaps/zm_dark_background.png
-%%DATADIR%%/pixmaps/zm_dark_background.svg
-%%DATADIR%%/tables/wb86.table
-%%DATADIR%%/tables/zm.table
 %%DATADIR%%/plugin.scm
 %%DATADIR%%/predict-custom.scm
 %%DATADIR%%/predict-google-suggest.scm
@@ -364,5 +359,4 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/wnn-key-custom.scm
 %%DATADIR%%/wnn.scm
 %%DATADIR%%/xkb.scm
-%%DATADIR%%/xmload.scm
 @dir %%DATADIR%%/helperdata
