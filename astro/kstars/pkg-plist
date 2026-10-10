@@ -2,6 +2,7 @@ bin/kstars
 lib/libhtmesh.a
 share/applications/org.kde.kstars.desktop
 share/config.kcfg/kstars.kcfg
+share/dbus-1/services/org.kde.kstars.service
 share/icons/hicolor/128x128/apps/kstars.png
 share/icons/hicolor/16x16/apps/kstars.png
 share/icons/hicolor/32x32/apps/kstars.png
