@@ -1,0 +1,15 @@
+Russian manual pages are installed under %%MANPREFIX%%
+
+English pages will still take priority because of how man(1) works.
+
+To make Russian pages take priority, add MANPATH="%%MANPREFIX%%:" to your
+env. You will also need LANG=ru_RU.UTF-8 obviously.
+
+Cтраницы Справочника на русском языке установлены в %%MANPREFIX%%
+
+Из-за особенностей алгоритма поиска в man(1), страницы на английском языке будут
+предпочитаться страницам на русском.
+
+Чтобы русские страницы находились первыми, добавьте MANPATH="%%MANPREFIX%%:"
+в переменные среды. Разумеется, переменная LANG=ru_RU.UTF-8 также должна быть
+установлена.
