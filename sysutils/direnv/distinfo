@@ -1,5 +1,5 @@
-TIMESTAMP = 1787261056
-SHA256 (go/sysutils_direnv/direnv-v2.37.1/v2.37.1.mod) = 870c632fbf871b2404199ce14fdc73842443060945b8c806e57ea096b18d0360
-SIZE (go/sysutils_direnv/direnv-v2.37.1/v2.37.1.mod) = 200
-SHA256 (go/sysutils_direnv/direnv-v2.37.1/v2.37.1.zip) = cc454236c48bb0c02472a92f0f3c24d4f3bd886ec9effbf489ec4f09e8f61849
-SIZE (go/sysutils_direnv/direnv-v2.37.1/v2.37.1.zip) = 164556
+TIMESTAMP = 1791649612
+SHA256 (go/sysutils_direnv/direnv-v2.38.2/v2.38.2.mod) = fc4298626d96df67803d698fe3be441435908f3752eff3340980461d5988a4bd
+SIZE (go/sysutils_direnv/direnv-v2.38.2/v2.38.2.mod) = 202
+SHA256 (go/sysutils_direnv/direnv-v2.38.2/v2.38.2.zip) = aa5e18ab45c1f2298a56fbf1840d3d6443390b6f2f422cbf394490ca9378f31c
+SIZE (go/sysutils_direnv/direnv-v2.38.2/v2.38.2.zip) = 190473
