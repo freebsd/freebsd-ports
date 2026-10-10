@@ -1,3 +1,45 @@
+  <vuln vid="ec9017a0-c4fe-11f1-bbb3-901b0e9408dc">
+    <topic>ejabberd -- Multiple security vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ejabberd</name>
+	<range><lt>26.09</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ejabberd team reports:</p>
+	<blockquote cite="https://www.process-one.net/blog/ejabberd-26-09/#security">
+	  <ul>
+	    <li>Unauthenticated Remote Code Execution on ejabberd (reported by Gia Bui) when:
+	    <ul>
+	      <li>ejabberd versions is at least 25.10</li>
+	      <li>BOSH is enabled on any port</li>
+	      <li>S2S is enabled</li>
+	      <li>mod_adhoc_api is loaded</li>
+	      <li>outbound connectivity from ejabberd on ports epmd
+	      (default 4369), s2s (default 5269) and Erlang
+	      distribution port (dynamically assigned, typically in
+	      the range 49152-65535 unless FIREWALL_WINDOW is set in
+	      ejabberdctl.cfg).</li>
+	    </ul>
+	    </li>
+	    <li>DoS attack on 16.12+ versions if BOSH is enabled on any port.</li>
+	    <li>Cross-Tenant MUC, Roster and Shared-Roster
+	    unauthorized access (reported by Hoang Gia).</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://www.process-one.net/blog/ejabberd-26-09/#security</url>
+    </references>
+    <dates>
+      <discovery>2026-09-30</discovery>
+      <entry>2026-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="28c48cd9-e79a-4ad6-8e62-1317c2ec19a1">
     <topic>mutt -- Heap out-of-bounds write via crafted Content-Header line</topic>
     <affects>
