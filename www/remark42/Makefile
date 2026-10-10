@@ -1,10 +1,9 @@
 PORTNAME=	remark42
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	LOCAL/delphij:npmcache
-DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
+MASTER_SITES=	LOCAL/delphij:prefetch
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Privacy-focused lightweight commenting engine
@@ -13,27 +12,10 @@ WWW=		https://remark42.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS+=	npm-node24>0:www/npm-node24
-
-USES=		cpe go:1.27,modules tar:xz
-
-GO_BUILDFLAGS=	-ldflags "-s -w -X main.revision=${DISTVERSION}"
-GO_TARGET=	app:${PREFIX}/libexec/${PORTNAME}
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}/backend
-LD_FLAG_X_PREFIX=	-X ${GO_PKGNAME}/version
-
-MAKE_ENV+=	npm_config_offline=true \
-		COREPACK_ENABLE_STRICT=0
-
-USE_RC_SUBR=	${PORTNAME}
-
+USES=		cpe go:1.27+,modules nodejs:env npm:pnpm,build tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	umputun
-
-PLIST_FILES=	libexec/${PORTNAME}
-
-GH_TUPLE=	\
-		Depado:bfchroma:v2.0.0:depado_bfchroma_v2/vendor/github.com/Depado/bfchroma/v2 \
+GH_TUPLE=	Depado:bfchroma:v2.0.0:depado_bfchroma_v2/vendor/github.com/Depado/bfchroma/v2 \
 		PuerkitoBio:goquery:v1.13.0:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
 		alecthomas:chroma:v2.27.0:alecthomas_chroma_v2/vendor/github.com/alecthomas/chroma/v2 \
 		andybalholm:cascadia:v1.3.4:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
@@ -90,33 +72,43 @@ GH_TUPLE=	\
 		xdg-go:stringprep:v1.0.4:xdg_go_stringprep/vendor/github.com/xdg-go/stringprep \
 		yaml:go-yaml:v3.0.5:yaml_go_yaml/vendor/go.yaml.in/yaml/v3 \
 		youmark:pkcs8:a2c0da244d78:youmark_pkcs8/vendor/github.com/youmark/pkcs8
-
-REMARK_PIDDIR=	/var/run/${PORTNAME}/
-REMARK_USER?=	www
-REMARK_DATADIR?=/var/db/${PORTNAME}
-
 USE_RC_SUBR=	remark
 
-SUB_LIST+=	REMARK_PIDDIR=${REMARK_PIDDIR} \
-		REMARK_USER=${REMARK_USER} \
-		REMARK_DATADIR=${REMARK_DATADIR}
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}/backend
+GO_TARGET=	app:${PREFIX}/libexec/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags "-s -w -X main.revision=${DISTVERSION}"
 
-# (for maintainer) helper target to generate node_modules tarball
-make-npm-cache: extract
-	@cd ${WRKDIR} && ${RM} -r .npm
-	@cd ${WRKSRC}/frontend/apps/${PORTNAME} \
-		&& ${SETENV} HOME=${WRKDIR} COREPACK_ENABLE_STRICT=0 npm install --force
-	@cd ${WRKDIR} \
-		&& ${TAR} -cf - --mtime='1970-01-01 00:00Z' --owner=0 --group=0 --numeric-owner ${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} .npm \
-			${PORTNAME}-${DISTVERSION}/frontend/apps/remark42/package-lock.json | \
-			${XZ_CMD} -v9e > ${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} \
-		&& ${ECHO} "Please upload the file ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}"
+NPM_EXTRACT_WRKSRC=	${WRKSRC}/frontend/apps/${PORTNAME}
+
+SUB_LIST+=	REMARK_DATADIR=${REMARK_DATADIR} \
+		REMARK_PIDDIR=${REMARK_PIDDIR} \
+		REMARK_USER=${REMARK_USER}
+
+PLIST_FILES=	libexec/${PORTNAME}
+
+REMARK_DATADIR?=	/var/db/${PORTNAME}
+REMARK_PIDDIR=		/var/run/${PORTNAME}/
+REMARK_USER?=		www
+
+# USES=npm regenerates missing prefetch distfiles from the npm registry before
+# do-fetch runs.  Try MASTER_SITES first, so only the maintainer generates them.
+pre-fetch:
+	@cd ${.CURDIR} && ${MAKE} do-fetch DISTFILES="${DISTFILES:M*\:prefetch}" || ${TRUE}
+
+# USES=npm always archives the node modules with gzip; recompress with xz.
+# Multi-threaded xz output does not depend on the number of threads.
+post-fetch:
+	@f=${DISTDIR}/${DIST_SUBDIR}/${DISTFILES:M*-node-modules*:S/:prefetch//}; \
+	if ! ${XZ_CMD} -l $${f} >/dev/null 2>&1 && ${GZCAT} $${f} >/dev/null 2>&1; then \
+		${ECHO_MSG} "===>  Recompressing $${f##*/} with xz"; \
+		${GZCAT} $${f} | ${XZ_CMD} -9e -T0 --block-size=64MiB > $${f}.tmp && \
+			${MV} $${f}.tmp $${f}; \
+	fi
 
 pre-build:
-	cd ${WRKSRC}/frontend/apps/${PORTNAME} && ${SETENV} HOME=${WRKDIR} npm install --force --legacy-peer-deps
-	cd ${WRKSRC}/frontend/apps/${PORTNAME} && ${SETENV} HOME=${WRKDIR} npm run build
+	cd ${NPM_EXTRACT_WRKSRC} && ${SETENV} ${MAKE_ENV} ${NPM_CMDNAME} build
 	${RM} -r ${WRKSRC}/backend/app/cmd/web/
-	${MV} ${WRKSRC}/frontend/apps/remark42/public ${WRKSRC}/backend/app/cmd/web
+	${MV} ${NPM_EXTRACT_WRKSRC}/public ${WRKSRC}/backend/app/cmd/web
 
 do-build:
 	cd ${WRKSRC}/backend && ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} build ${GO_BUILDFLAGS} \

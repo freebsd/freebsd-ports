@@ -1,6 +1,8 @@
-TIMESTAMP = 1789358601
-SHA256 (remark42-npm-cache-1.17.1.tar.xz) = c6520b2c03e64649da7944d20d4404edeea154b4dd7316e311817c9b58df7af8
-SIZE (remark42-npm-cache-1.17.1.tar.xz) = 111925868
+TIMESTAMP = 1791620554
+SHA256 (pnpm-10.10.0.tgz) = afdcd2b842b079e39b01f96df337817f032e517eaec78bc7b07b35aa98e4df39
+SIZE (pnpm-10.10.0.tgz) = 4741761
+SHA256 (remark42-1.17.1-node-modules.tar.xz) = cd65ba136c7d8f1dd8f310074429edcfd15231030c98ccd90bd60f8442de12ee
+SIZE (remark42-1.17.1-node-modules.tar.xz) = 34935272
 SHA256 (umputun-remark42-v1.17.1_GH0.tar.gz) = 9f7d418166a3bbf167364d5004b470c34308f37f1a99a0964eb4748b1e7ad6f2
 SIZE (umputun-remark42-v1.17.1_GH0.tar.gz) = 6631413
 SHA256 (Depado-bfchroma-v2.0.0_GH0.tar.gz) = d999d4cf56554c15fe8d1651e4b5e87dbd5b399a0d4c7af7bc7b682e93da4f18
