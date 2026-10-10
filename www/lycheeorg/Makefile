@@ -1,6 +1,7 @@
 PORTNAME=	lycheeorg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.11.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/LycheeOrg/Lychee/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	Lychee
@@ -39,7 +40,7 @@ IMAGEMAGICK_RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}pecl-imagick>=0:graphics/pecl-imagi
 IMAGEMAGICK_VARS=		IGNORE_WITH_PHP=86
 LDAP_USE=			PHP=ldap
 MEMCACHED_RUN_DEPENDS=		${PHP_PKGNAMEPREFIX}pecl-memcached>=0:databases/pecl-memcached@${PHP_FLAVOR}
-REDIS_RUN_DEPENDS=		${PHP_PKGNAMEPREFIX}pecl-redis>=0:databases/pecl-redis@${PHP_FLAVOR}
+REDIS_RUN_DEPENDS=		${PHP_PKGNAMEPREFIX}redis>=0:databases/php-redis@${PHP_FLAVOR}
 
 LYCHEEORG_WRITABLE_DIRS=	database storage/framework \
 				storage/framework/views storage/framework/cache \
