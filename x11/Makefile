@@ -29,6 +29,7 @@
     SUBDIR += bgrot
     SUBDIR += bgs
     SUBDIR += bhotkeys
+    SUBDIR += bhotkeys-media
     SUBDIR += bhotkeys-xfce
     SUBDIR += bitmap
     SUBDIR += bmpanel2
