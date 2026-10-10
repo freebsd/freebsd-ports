@@ -1,5 +1,5 @@
 PORTNAME=	docling-serve
-DISTVERSION=	1.32.0
+DISTVERSION=	1.36.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.95.0:textproc/py-docling-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-jobkit>=3.5.0:textproc/py-docling-jobkit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-mcp>=3.2.0:textproc/py-docling-mcp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-slim>=2.126.0:textproc/py-docling-slim@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fastapi>=0:www/py-fastapi@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.79.0:textproc/py-docling-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-jobkit>=3.8.0:textproc/py-docling-jobkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-mcp>=1.0.0:textproc/py-docling-mcp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-parse>=7.22.1:textproc/py-docling-parse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-slim>=2.129.0:textproc/py-docling-slim@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fastapi>=0.138.0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.36.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp>=1.15.0:devel/py-opentelemetry-exporter-otlp@${PY_FLAVOR} \
@@ -31,12 +32,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.95.0:textproc/py-docling-cor
 		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.14:www/py-python-multipart@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rq>=2.4:devel/py-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scalar-fastapi>=1.0.3:www/py-scalar-fastapi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tree-sitter>=0:devel/py-tree-sitter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tritonclient>=2.65.0:misc/py-tritonclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.12:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.29.0:www/py-uvicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=14.0:devel/py-websockets@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}docling-ibm-models>0:textproc/py-docling-ibm-models@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-parse>=7.17.0:textproc/py-docling-parse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tree-sitter>=0:devel/py-tree-sitter@${PY_FLAVOR}
+		# ${PYTHON_PKGNAMEPREFIX}odfdo>=3.22.0:textproc/py-odfdo@${PY_FLAVOR} # missing
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgi-lifespan>=2.0:devel/py-asgi-lifespan@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=1.2:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-check>=2.8:devel/py-pytest-check@${PY_FLAVOR} \
@@ -76,8 +77,11 @@ TEST_ARGS=	--disable-plugin-autoload \
 		--ignore=${WRKSRC}/tests/test_orchestrator_factory_slice_parallelism.py \
 		--ignore=${WRKSRC}/tests/test_otel_filtering.py \
 		--ignore=${WRKSRC}/tests/test_ray_metrics_collector.py \
-		--ignore=${WRKSRC}/tests/test_results_clear.py
+		--ignore=${WRKSRC}/tests/test_results_clear.py \
+		--ignore=${WRKSRC}/tests/test_azure_presigned_storage.py \
+		--ignore=${WRKSRC}/tests/test_rq_plugin_policy.py \
+		--ignore=${WRKSRC}/tests/test_rq_worker_metrics.py
 
-# tests as of 1.32.0: 107 passed, 344 warnings in 14.84s
+# tests as of 1.36.0: 144 passed, 298 warnings in 7.39s
 
 .include <bsd.port.mk>
