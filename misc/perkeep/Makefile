@@ -14,7 +14,7 @@ WWW=		https://perkeep.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		go:modules
+USES=		go:1.26,modules
 USE_GITHUB=	yes
 GO_MODULE=	perkeep.org
 
