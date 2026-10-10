@@ -1,4 +1,4 @@
---- codex-rs/core/src/tools/runtimes/apply_patch.rs.orig	2026-09-18 19:04:49 UTC
+--- codex-rs/core/src/tools/runtimes/apply_patch.rs.orig	2026-10-08 16:56:07 UTC
 +++ codex-rs/core/src/tools/runtimes/apply_patch.rs
 @@ -5,6 +5,7 @@ use crate::session::turn_context::TurnEnvironment;
  //! sandboxing enforced by the explicit filesystem sandbox context.
@@ -16,7 +16,7 @@
          let mut stdout = Vec::new();
          let mut stderr = Vec::new();
          let result = codex_apply_patch::apply_patch_with_options(
-@@ -193,7 +195,7 @@ impl ToolRuntime<ApplyPatchRequest, ApplyPatchRuntimeO
+@@ -192,7 +194,7 @@ impl ToolRuntime<ApplyPatchRequest, ApplyPatchRuntimeO
              &mut stdout,
              &mut stderr,
              fs.as_ref(),

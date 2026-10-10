@@ -1,6 +1,6 @@
---- codex-rs/features/src/lib.rs.orig	2026-10-07 05:07:20 UTC
+--- codex-rs/features/src/lib.rs.orig	2026-10-08 16:56:07 UTC
 +++ codex-rs/features/src/lib.rs
-@@ -948,7 +948,8 @@ pub const FEATURES: &[FeatureSpec] = &[
+@@ -992,7 +992,8 @@ pub const FEATURES: &[FeatureSpec] = &[
          id: Feature::DaemonAutoStart,
          key: "daemon_auto_start",
          stage: Stage::Stable,

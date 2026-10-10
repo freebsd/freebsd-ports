@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.160.1
+DISTVERSION=	0.162.1
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -34,7 +34,8 @@ GH_ACCOUNT=	openai
 
 USE_GNOME=	glib20
 
-SHEBANG_FILES=	codex-rs/app-server-protocol/scripts/write_schema_fixtures.py \
+SHEBANG_FILES=	\
+		codex-rs/app-server-protocol/scripts/write_schema_fixtures.py \
 		codex-rs/skills/src/assets/samples/imagegen/scripts/image_gen.py \
 		codex-rs/skills/src/assets/samples/imagegen/scripts/remove_chroma_key.py \
 		codex-rs/skills/src/assets/samples/skill-creator/scripts/generate_openai_yaml.py \
@@ -134,7 +135,6 @@ post-patch:
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/guardian_action_budget_tests.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/guardian_v2.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/hooks_list.rs \
-		${BUILD_WRKSRC}/app-server/tests/suite/v2/selected_capability_stack.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/session_end.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/thread_queue.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/thread_resume.rs \
@@ -165,6 +165,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/mcp_user_verification.rs \
 		${BUILD_WRKSRC}/core/tests/suite/network_approval.rs \
 		${BUILD_WRKSRC}/core/tests/suite/openai_file_mcp.rs \
+		${BUILD_WRKSRC}/core/tests/suite/remote_env.rs \
 		${BUILD_WRKSRC}/core/tests/suite/subagent_notifications.rs \
 		${BUILD_WRKSRC}/core/tests/suite/token_budget.rs \
 		${BUILD_WRKSRC}/core/tests/suite/tool_lifecycle.rs \
@@ -192,7 +193,6 @@ post-patch:
 		${BUILD_WRKSRC}/tui/src/app/tests.rs \
 		${BUILD_WRKSRC}/tui/src/chatwidget/tests/app_server.rs \
 		${BUILD_WRKSRC}/tui/src/chatwidget/tests/approval_requests.rs \
-		${BUILD_WRKSRC}/tui/src/chatwidget/tests/exec_flow.rs \
 		${BUILD_WRKSRC}/tui/src/debug_config.rs \
 		${BUILD_WRKSRC}/tui/src/exec_command.rs \
 		${BUILD_WRKSRC}/tui/src/render/highlight.rs \
@@ -212,15 +212,11 @@ do-install:
 .endfor
 
 do-install-COMPLETIONS-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/fish/completions \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.fish \
-		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+	@${MKDIR} ${COMPLETIONS_PLIST_FILES:H:S|^|${STAGEDIR}${PREFIX}/|}
+.for sh in bash fish zsh
+	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.${sh} \
+		${COMPLETIONS_PLIST_FILES:M*${sh}*:S|^|${STAGEDIR}${PREFIX}/|}
+.endfor
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
