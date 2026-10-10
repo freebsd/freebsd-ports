@@ -1,6 +1,6 @@
 PORTNAME=	libbpg
 PORTVERSION=	0.9.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://bellard.org/bpg/
 

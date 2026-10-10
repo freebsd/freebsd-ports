@@ -1,6 +1,6 @@
 PORTNAME=	jellyfin-ffmpeg7
 PORTVERSION=	7.1.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	michaeljohnson@ahze.net
