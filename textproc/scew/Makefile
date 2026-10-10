@@ -10,6 +10,8 @@ WWW=		https://savannah.nongnu.org/projects/scew
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build with expat2 2.9.0, error.c:91:10: error: 'XML_GetCurrentLineNumber' is deprecated
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake libtool localbase pkgconfig
