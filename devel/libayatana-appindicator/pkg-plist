@@ -1,4 +1,5 @@
 include/libayatana-appindicator3-0.1/libayatana-appindicator/app-indicator-enum-types.h
+include/libayatana-appindicator3-0.1/libayatana-appindicator/app-indicator-version.h
 include/libayatana-appindicator3-0.1/libayatana-appindicator/app-indicator.h
 lib/girepository-1.0/AyatanaAppIndicator3-0.1.typelib
 lib/libayatana-appindicator3.so
