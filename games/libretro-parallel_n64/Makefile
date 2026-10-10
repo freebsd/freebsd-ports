@@ -10,7 +10,6 @@ WWW=		https://github.com/libretro/parallel-n64
 LICENSE=	CC0-1.0 GFDL GPLv2 GPLv3 LGPL3 MIT ZLIB
 LICENSE_COMB=	multi
 
-BROKEN_aarch64=	fails to build: mupen64plus-core/src/r4300/new_dynarec/arm64/assem_arm64.h:141:8: error: unknown type name 'u_int'
 BROKEN_i386=	Doesn't build.
 
 USES=		compiler:c++11-lang gmake gl localbase
