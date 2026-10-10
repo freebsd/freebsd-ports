@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the websockify module only.  It does
+not install a loadable module.
+
+The module itself is built by the nginx ports.  To use websockify, build
+www/nginx, www/nginx-devel or www/freenginx with the WEBSOCKIFY option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-websockify and produce
+ngx_http_websockify_module.so.
+EOM
+}
+]

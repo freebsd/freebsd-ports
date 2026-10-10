@@ -545,6 +545,7 @@
     SUBDIR += nginx-module-njs
     SUBDIR += nginx-module-slowfs-cache
     SUBDIR += nginx-module-vod
+    SUBDIR += nginx-module-websockify
     SUBDIR += nginx-naxsi
     SUBDIR += nginx-prometheus-exporter
     SUBDIR += nginx-ultimate-bad-bot-blocker

@@ -1,0 +1,7 @@
+The websockify module translates between a WebSocket connection and a
+plain TCP connection, so a browser can reach a service that speaks no
+WebSocket of its own.  The payload travels base64 encoded or in binary
+frames, which is what noVNC expects of a VNC server behind it.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their WEBSOCKIFY option is enabled.
