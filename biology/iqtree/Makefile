@@ -1,6 +1,6 @@
 PORTNAME=	iqtree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.3
+DISTVERSION=	3.1.4
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -22,7 +22,7 @@ GH_TUPLE=	tothuhien:lsd2:c61110f3a4fa05325b45c97b2134792ff9d55d4c:tothuhien/lsd2
 		iqtree:cmaple:3d45b1ab68e2d68a2825bf17a531e22200578cd6:iqtree/cmaple
 
 PLIST_FILES=	bin/iqtree
-PORTEXAMPLES=	custom_distributions.txt example.cf example.nex example.phy \
+PORTEXAMPLES=	aa_example.phy custom_distributions.txt example.cf example.nex example.phy \
 		models.nex tree.nwk
 
 OPTIONS_DEFINE=	EXAMPLES
