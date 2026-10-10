@@ -1,5 +1,5 @@
 PORTNAME=	zig
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
@@ -30,6 +30,8 @@ CONFLICTS_INSTALL=	zig0*
 OPTIONS_DEFINE=		DOCS STATIC
 OPTIONS_DEFAULT=	DOCS
 
+DOCS_CMAKE_OFF=	-DZIG_EXTRA_BUILD_ARGS=-Dno-langref
+
 STATIC_DESC=	sets ZIG_STATIC to avoid 800MiB LLVM runtime dependency
 
 STATIC_RUN_DEPENDS_OFF=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
@@ -37,7 +39,7 @@ STATIC_CMAKE_BOOL=	ZIG_STATIC
 STATIC_LDFLAGS=		-licudata -licuuc -llzma -lm -lmd -lxml2 -lz -lzstd
 STATIC_LIB_DEPENDS+=	libxml2.so:textproc/libxml2
 
-_LLVM_VER=	21
+_LLVM_VER=	22
 _ZIG_BIN=	${STAGEDIR}${PREFIX}/bin/zig
 
 post-configure-STATIC-on:
@@ -62,6 +64,8 @@ post-install-DOCS-on:
 	${INSTALL_MAN} ${WRKSRC}/lib/docs/${f} \
 		${STAGEDIR}${DOCSDIR}/${f}
 .endfor
+	${MV} ${STAGEDIR}${PREFIX}/doc/langref.html ${STAGEDIR}${DOCSDIR}/langref.html
+	${RMDIR} ${STAGEDIR}${PREFIX}/doc
 	@cd ${STAGEDIR}; ${FIND} ${DOCSDIR:C@^/@@} -type f | ${SED} -e 's@^@/@' | ${SORT} | \
 		${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir share/doc/zig/std" >> ${TMPPLIST}
