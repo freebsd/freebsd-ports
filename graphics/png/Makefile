@@ -1,5 +1,6 @@
 PORTNAME=	png
 DISTVERSION=	1.6.59
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}16/${DISTVERSION}/
 #PATCH_SITES=	SF/lib${PORTNAME}-apng/lib${PORTNAME}16/${DISTVERSION}/
@@ -20,6 +21,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		cmake:testing cpe pathfix tar:xz
 CPE_PRODUCT=	libpng
 USE_LDCONFIG=	yes
+HAS_SYMBOL_VERSION=	${PREFIX}/lib/libpng16.so
 
 CMAKE_TESTING_ON=	 PNG_TESTS
 
