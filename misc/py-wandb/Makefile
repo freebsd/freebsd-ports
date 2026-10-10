@@ -1,7 +1,6 @@
 PORTNAME=	wandb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.0
-PORTREVISION=	2
+DISTVERSION=	0.30.0
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,15 +19,17 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.2.0:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gitpython>=1.0.0:devel/py-gitpython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.43.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp-proto-http>=1.43.0:devel/py-opentelemetry-exporter-otlp-proto-http@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.43.0:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>0:devel/py-platformdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>4.21.0:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=5:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.6:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>0:devel/py-pyyaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0,<3:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sentry-sdk>=1.0.0:devel/py-sentry-sdk@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.8:devel/py-typing-extensions@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.8:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xxhash>=3.0.0:devel/py-xxhash@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>0:www/py-bokeh@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>0:www/py-httpx@${PY_FLAVOR} \
@@ -72,15 +73,25 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 # test_azure.py, test_acr.py: require azure SDK
 # test_gcp.py, test_gcp_artifact_registry.py: require google.api_core
 # test_launch/test_runner: requires kubernetes_asyncio
+# test_saved_model.py, test_torch.py: require torch
 # test_sentry.py: requires sentry-sdk>=2.0 (installed version lacks get_current_scope)
+# test_sweep_scheduler.py: requires the optional sweeps package, which is not a FreeBSD port
 # test_references_s3.py: requires moto
 # test_ratelimit.py, test_run_messages.py: require looptime
 # test_sandbox: requires cwsandbox
 # test_util.py: requires plotly
-TEST_ARGS=	-n0 \
+TEST_ARGS=	--disable-plugin-autoload \
+		-p pyfakefs.pytest_plugin \
+		-p pytest_asyncio.plugin \
+		-p pytest_cov \
+		-p pytest_mock \
+		-p pytest_timeout \
+		-p xdist.plugin \
+		-n0 \
 		--ignore=tests/system_tests \
 		--ignore=tests/unit_tests/test_analytics/test_sentry.py \
 		--ignore=tests/unit_tests/test_artifacts/test_references_s3.py \
+		--ignore=tests/unit_tests/test_artifacts/test_saved_model.py \
 		--ignore=tests/unit_tests/test_data_types.py \
 		--ignore=tests/unit_tests/test_kfp.py \
 		--ignore=tests/unit_tests/test_launch/test_builder/test_kaniko.py \
@@ -92,6 +103,8 @@ TEST_ARGS=	-n0 \
 		--ignore=tests/unit_tests/test_lib/test_ratelimit.py \
 		--ignore=tests/unit_tests/test_lib/test_run_messages.py \
 		--ignore=tests/unit_tests/test_media/test_media_logging.py \
+		--ignore=tests/unit_tests/test_sweep_scheduler.py \
+		--ignore=tests/unit_tests/test_torch.py \
 		--ignore=tests/unit_tests/test_sandbox \
 		--ignore=tests/unit_tests/test_util.py \
 		--deselect=tests/unit_tests/test_data_types_box3d.py::test_box3d_always_box \
@@ -135,6 +148,6 @@ post-install:
 		${MV} ${STAGEDIR}${PREFIX}/bin/wb-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/wb; \
 	fi
 
-# tests as of 0.29.0: 3395 passed, 186 skipped, 4 xfailed, 2 xpassed, 4 warnings
+# tests as of 0.30.0: 3170 passed, 240 skipped, 7 deselected, 4 xfailed, 2 xpassed in 76.60s
 
 .include <bsd.port.mk>
