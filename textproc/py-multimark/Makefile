@@ -1,5 +1,5 @@
 PORTNAME=	multimark
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,6 @@ TEST_ARGS=	--disable-plugin-autoload
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-# tests as of 0.3.2: 6643 passed, 43 xfailed in 2.24s
+# tests as of 0.4.0: 6649 passed, 43 xfailed in 2.09s
 
 .include <bsd.port.mk>
