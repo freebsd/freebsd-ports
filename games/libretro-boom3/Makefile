@@ -2,6 +2,9 @@ PORTNAME=	libretro-boom3
 DISTVERSION=	0.20220810
 CATEGORIES=	games
 
+PATCH_SITES=	https://github.com/dhewm/dhewm3/commit/
+PATCHFILES=	12fa28b260c89d39fc4fe83ed02d92da172257a3.patch:-p2
+
 MAINTAINER=	sdalu@sdalu.com
 COMMENT=	dhewm3 (Doom 3) core for libretro API
 WWW=		https://github.com/libretro/boom3
