@@ -1,0 +1,8 @@
+The let module adds a let directive to nginx that computes an expression
+and assigns the result to a variable.  It understands arithmetic, string
+concatenation and a set of functions, among them length, substr, hash and
+the md5 and sha1 digests, so a value can be derived inside the
+configuration instead of in an upstream.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their LET option is enabled.
