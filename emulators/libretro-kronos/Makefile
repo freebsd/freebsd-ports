@@ -3,6 +3,9 @@ PORTVERSION=	2.1.5.20210601
 PORTREVISION=	1
 CATEGORIES=	emulators games
 
+PATCH_SITES=	https://github.com/FCare/Kronos/commit/
+PATCHFILES=	6bae2843e083d1fcea82287741bbe9b3badec466.patch:-p1
+
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Sega Saturn and ST-V emulator forked from uoYabause for libretro
 WWW=		https://fcare.github.io
