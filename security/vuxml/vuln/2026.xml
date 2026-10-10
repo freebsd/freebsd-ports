@@ -1,3 +1,36 @@
+  <vuln vid="28c48cd9-e79a-4ad6-8e62-1317c2ec19a1">
+    <topic>mutt -- Heap out-of-bounds write via crafted Content-Header line</topic>
+    <affects>
+	<package>
+	  <name>mutt</name>
+	  <range><lt>2.4.3</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kevin J. McCarthy reports:</p>
+	<blockquote cite="https://gitlab.com/muttmua/mutt/-/work_items/533">
+	 <p>
+	  Fixing an OOB heap write. This is triggered by a specially
+	  crafted Content-Header line in an email that is used as a
+	  template for a new email, via &lt;resend-message &gt;.
+	  Thanks to Calif.io, in collaboration with
+	  Anthropic for sending me a detailed write up and
+	  suggested patch.
+	 </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-107570</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2026-107570</url>
+    </references>
+    <dates>
+      <discovery>2026-10-08</discovery>
+      <entry>2026-10-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="049d88bb-c4a2-11f1-9d0b-5404a68ad561">
     <topic>traefik -- Multiple vulnerabilities</topic>
     <affects>
