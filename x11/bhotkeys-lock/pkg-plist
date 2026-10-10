@@ -1,0 +1,9 @@
+bin/xlock-desktop
+bin/xlock-invoke
+bin/xlock-run
+bin/xlock-screen
+share/bhotkeys/plugins.d/lock
+share/man/man1/xlock-desktop.1.gz
+share/man/man1/xlock-invoke.1.gz
+share/man/man1/xlock-run.1.gz
+share/man/man1/xlock-screen.1.gz

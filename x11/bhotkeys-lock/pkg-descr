@@ -1,0 +1,3 @@
+Super+L lock-screen hotkey for bhotkeys.  xlock-invoke locks the
+screen through xlock.  xlock-screen and xlock-desktop are links
+to that command.
