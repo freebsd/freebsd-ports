@@ -1,7 +1,7 @@
 PORTNAME=	qh3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.3
-PORTREVISION=	1
+DISTVERSION=	2.0.4
+PORTREVISION=	0
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,18 +38,18 @@ CARGO_CRATES=	aes-0.8.4 \
 		asn1-rs-impl-0.2.0 \
 		autocfg-1.5.1 \
 		aws-lc-fips-sys-0.14.2 \
-		aws-lc-rs-1.18.0 \
-		aws-lc-sys-0.44.0 \
+		aws-lc-rs-1.18.1 \
+		aws-lc-sys-0.45.0 \
 		base64ct-1.8.3 \
 		bincode-1.3.3 \
 		bindgen-0.72.1 \
-		bitflags-2.13.1 \
+		bitflags-2.13.2 \
 		block-buffer-0.10.4 \
 		block-padding-0.3.3 \
 		cbc-0.1.2 \
-		cc-1.4.4 \
+		cc-1.5.1 \
 		cexpr-0.6.0 \
-		cfg-if-1.0.4 \
+		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
 		cipher-0.4.4 \
 		clang-sys-1.9.1 \
@@ -72,7 +72,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		ed25519-dalek-2.2.0 \
 		either-1.18.0 \
 		fiat-crypto-0.2.9 \
-		find-msvc-tools-0.1.11 \
+		find-msvc-tools-0.1.14 \
 		flagset-0.4.7 \
 		fs_extra-1.3.0 \
 		generic-array-0.14.7 \
@@ -131,7 +131,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		pyo3-macros-0.28.3 \
 		pyo3-macros-backend-0.28.3 \
 		python3-dll-a-0.2.15 \
-		quinn-udp-0.6.1 \
+		quinn-udp-0.6.3 \
 		quote-1.0.47 \
 		r-efi-6.0.0 \
 		rand-0.8.5 \
@@ -146,7 +146,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
 		rusticata-macros-4.1.0 \
-		rustls-0.23.43 \
+		rustls-0.23.45 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.15.1 \
 		rustls-webpki-0.103.15 \
@@ -161,18 +161,19 @@ CARGO_CRATES=	aes-0.8.4 \
 		shlex-1.3.0 \
 		shlex-2.0.1 \
 		signature-2.2.0 \
-		smallvec-1.16.0 \
+		smallvec-1.16.2 \
 		socket2-0.6.5 \
 		spin-0.9.9 \
 		spki-0.7.3 \
 		stable_deref_trait-1.2.1 \
 		subtle-2.6.1 \
 		syn-2.0.119 \
-		syn-3.0.4 \
+		syn-3.0.6 \
 		synstructure-0.13.2 \
+		synstructure-0.14.0 \
 		target-lexicon-0.13.5 \
-		thiserror-2.0.20 \
-		thiserror-impl-2.0.20 \
+		thiserror-2.0.21 \
+		thiserror-impl-2.0.21 \
 		time-0.3.55 \
 		time-core-0.1.9 \
 		time-macros-0.2.32 \
@@ -182,7 +183,7 @@ CARGO_CRATES=	aes-0.8.4 \
 		tracing-0.1.44 \
 		tracing-core-0.1.36 \
 		typenum-1.20.1 \
-		unicode-ident-1.0.24 \
+		unicode-ident-1.0.26 \
 		untrusted-0.9.0 \
 		utf8_iter-1.0.4 \
 		version_check-0.9.5 \
@@ -204,11 +205,11 @@ CARGO_CRATES=	aes-0.8.4 \
 		x509-ocsp-0.2.1 \
 		x509-parser-0.18.1 \
 		yoke-0.8.3 \
-		yoke-derive-0.8.2 \
-		zerocopy-0.8.56 \
-		zerocopy-derive-0.8.56 \
+		yoke-derive-0.8.4 \
+		zerocopy-0.8.59 \
+		zerocopy-derive-0.8.59 \
 		zerofrom-0.1.8 \
-		zerofrom-derive-0.1.7 \
+		zerofrom-derive-0.1.8 \
 		zeroize-1.9.0 \
 		zeroize_derive-1.5.0 \
 		zerotrie-0.2.5 \
