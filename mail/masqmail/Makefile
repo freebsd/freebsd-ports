@@ -1,6 +1,6 @@
 PORTNAME=	masqmail
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+DISTVERSION=	0.3.5
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://marmaro.de/prog/masqmail/files/
 
@@ -10,20 +10,25 @@ WWW=		http://marmaro.de/prog/masqmail/
 
 LICENSE=	GPLv2
 
-USE_GNOME=	glib20
+DEPRECATED=	Unmaintained with known parser and memory-safety issues use dma from base or mail/msmtp
+EXPIRATION_DATE=	2026-11-10
+
 USES=		cpe gnome pkgconfig
+CPE_VENDOR=	marmaro
+USE_GNOME=	glib20
 USE_RC_SUBR=	masqmail
+
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-CFLAGS+=	-Wno-trigraphs
 CONFIGURE_ARGS=	--with-user=mailnull --with-group=mail \
 		--with-confdir=${ETCDIR} --with-logdir=/var/log/masqmail
-CPE_VENDOR=	marmaro
+
+CFLAGS+=	-Wno-trigraphs
 
 OPTIONS_DEFINE=	RESOLVER AUTH DEBUG DOCS
 OPTIONS_DEFAULT=	RESOLVER AUTH
-RESOLVER_DESC=	Resolver
+
 AUTH_DESC=	SMTP AUTH (RFC2554) support
+RESOLVER_DESC=	Resolver
 
 AUTH_CONFIGURE_ENABLE=	auth
 DEBUG_CONFIGURE_ENABLE=	debug
