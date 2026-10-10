@@ -1,5 +1,5 @@
-TIMESTAMP = 1790093821
-SHA256 (go/www_pocketbase/pocketbase-v0.40.4/v0.40.4.mod) = 356315685de01bd47b03ab3fe7dd2940cb7089ef7cdfc30fb402d72202dfa877
-SIZE (go/www_pocketbase/pocketbase-v0.40.4/v0.40.4.mod) = 1916
-SHA256 (go/www_pocketbase/pocketbase-v0.40.4/v0.40.4.zip) = b332d97581e0a3017bdb6591b7093b42f2b7647e80976227e7bb558a07dc0188
-SIZE (go/www_pocketbase/pocketbase-v0.40.4/v0.40.4.zip) = 5321192
+TIMESTAMP = 1791656555
+SHA256 (go/www_pocketbase/pocketbase-v0.40.5/v0.40.5.mod) = cd1e7a78e97f6a8b44e7afa60826a6cfcf7f64dc17fd9d6f6ed08bd1231529e6
+SIZE (go/www_pocketbase/pocketbase-v0.40.5/v0.40.5.mod) = 1916
+SHA256 (go/www_pocketbase/pocketbase-v0.40.5/v0.40.5.zip) = b5a607d84e972d17c42699c7a85c817df5a356ed1fcf37ad85b0e0b0b47d2e77
+SIZE (go/www_pocketbase/pocketbase-v0.40.5/v0.40.5.zip) = 5322559
