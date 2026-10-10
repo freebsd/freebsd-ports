@@ -1,0 +1,3 @@
+Super+R autorotate hotkey for a Framework Laptop 12.  The plugin
+calls framework_autorotate -hold or -release, then auto-rotate-osd
+shows the glyph with bosd.

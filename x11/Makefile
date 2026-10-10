@@ -94,6 +94,7 @@
     SUBDIR += fnott
     SUBDIR += foot
     SUBDIR += framework-autorotate
+    SUBDIR += framework-autorotate-hotkey
     SUBDIR += fstobdf
     SUBDIR += fuzzel
     SUBDIR += gbsddialog
