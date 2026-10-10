@@ -1,5 +1,6 @@
 PORTNAME=	virtualbox-ose
 DISTVERSION=	7.2.20
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
 		LOCAL/vvd:docs
@@ -35,7 +36,7 @@ FLAVOR?=	${FLAVORS:[1]}
 _VER=		-${DISTVERSION:R:S|.||}
 ${FLAVOR}_PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C|(.+)|-\1|}${_VER}
 
-USES=		compiler:c++17-lang cpe gnome iconv pkgconfig ssl tar:bzip2
+USES=		compiler:c++17-lang cpe gnome iconv jpeg pkgconfig ssl tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_BINUTILS=	yes
