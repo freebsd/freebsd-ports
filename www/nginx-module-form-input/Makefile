@@ -1,17 +1,17 @@
 PORTNAME=	nginx-module-form-input
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
+DISTVERSION=	0.13.1
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Sources of the form_input module for the NGINX ports
-WWW=		https://github.com/joneum/nginx-form-input-module
+WWW=		https://github.com/sysadmin-labs/nginx-form-input-module
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	joneum
+GH_ACCOUNT=	sysadmin-labs
 GH_PROJECT=	nginx-form-input-module
 
 NO_ARCH=	yes
