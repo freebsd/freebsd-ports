@@ -5,7 +5,7 @@
  //don't worry about setting it incorrectly
  //you'll get a compile error if you do, not a run-time error
 -#if defined(__alpha__) || defined(__ia64__) || defined(__x86_64__)
-+#if defined(__alpha__) || defined(__ia64__) || defined(__x86_64__) || defined(__powerpc64__)
++#if defined(__alpha__) || defined(__ia64__) || defined(__x86_64__) || defined(__powerpc64__) || defined(__aarch64__)
  #define MASK_WORD_BITBITS 6
  #else
  #define MASK_WORD_BITBITS 5
