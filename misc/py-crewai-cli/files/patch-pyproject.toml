@@ -1,6 +1,4 @@
--- Loosen strict / pinned dependency constraints so the port can use the
--- current versions of its dependencies in the FreeBSD Ports tree.  Upper
--- bounds and exact pins are build/runtime policy, not API requirements.
+-- Loosen strict dependency constraints so the port can use current
 
 --- pyproject.toml.orig	2020-02-02 00:00:00 UTC
 +++ pyproject.toml
@@ -8,8 +6,8 @@
  ]
  requires-python = ">=3.10, <3.14"
  dependencies = [
--    "crewai-core==1.15.20",
-+    "crewai-core>=1.15.20",
+-    "crewai-core==1.15.27",
++    "crewai-core>=1.15.27",
      "click>=8.1.7,<9",
 -    "pydantic>=2.11.9,<2.13",
 -    "pydantic-settings>=2.14.2,<3",
@@ -20,7 +18,8 @@
      "cryptography>=42.0",
 -    "httpx~=0.28.1",
 +    "httpx>=0.28.1",
-     "pyjwt>=2.13.0,<3",
+-    "pyjwt>=2.15.0,<3",
++    "pyjwt>=2.15.0",
      "rich>=13.7.1",
 -    "tomli~=2.0.2",
 -    "tomli-w~=1.1.0",

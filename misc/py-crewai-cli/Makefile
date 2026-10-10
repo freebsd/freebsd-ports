@@ -1,5 +1,5 @@
 PORTNAME=	crewai-cli
-PORTVERSION=	1.15.20
+PORTVERSION=	1.15.27
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,13 +17,13 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVO
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.4:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.1.7:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai-core>=1.15.20:misc/py-crewai-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai-core==1.15.27:misc/py-crewai-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=42.0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>=2.14.2:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.11.9:devel/py-pydantic2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.13.0:www/py-pyjwt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjwt>0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.2.2:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.7.1:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textual>=7.5.0:textproc/py-textual@${PY_FLAVOR} \
@@ -31,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.4:devel/py-appdirs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}tomli>=2.0.2:textproc/py-tomli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uv>=0.11.6:devel/py-uv@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>0:devel/py-anyio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai>=1.15.20:misc/py-crewai@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai>=1.15.27:misc/py-crewai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-subprocess>=0:devel/py-pytest-subprocess@${PY_FLAVOR}
 
 USES=		python
@@ -59,6 +59,6 @@ TEST_ARGS=	--ignore=test_click_compatibility.py \
 		--ignore=tools/test_main.py \
 		--deselect=tests/test_crew_run_tui.py::test_crew_done_keeps_memory_save_subscription_until_completion
 
-# tests as of 1.15.20: 504 passed, 4 warnings in 18.61s
+# tests as of 1.15.27: not run (PyPI distfile does not ship ${TEST_WRKSRC}, so make test fails before collection)
 
 .include <bsd.port.mk>
