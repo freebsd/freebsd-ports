@@ -1,5 +1,5 @@
 PORTNAME=	crewai-tools
-DISTVERSION=	1.15.20
+DISTVERSION=	1.15.27
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +15,15 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.13.4:www/py-beautifulsoup4@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}crewai>=1.15.20:misc/py-crewai@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}crewai==1.15.27:misc/py-crewai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymupdf>=1.26.6:print/py-PyMuPDF@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-docx>=1.2.0:textproc/py-python-docx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytube>=15.0.0:multimedia/py-pytube@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.33.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.8.0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}youtube-transcript-api>=1.2.2:www/py-youtube-transcript-api@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}PyGithub>0:devel/py-PyGithub@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
@@ -55,6 +56,6 @@ TEST_ARGS=	--disable-plugin-autoload \
 		--ignore=tools/test_search_tools.py \
 		--ignore=utilities/test_safe_path.py
 
-# tests as of 1.15.20: 622 passed, 1 skipped, 11 warnings in 104.49s (0:01:44)
+# tests as of 1.15.27: 57 failed, 757 passed, 6 skipped, 15 warnings, 1 error
 
 .include <bsd.port.mk>
