@@ -37,8 +37,13 @@ PLIST_FILES=	bin/astcenc-${ASTCENC_ISA}
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
 ASTCENC_ISA=	sse2
+.elif ${ARCH} == aarch64
+ASTCENC_ISA=	neon
 .else
 ASTCENC_ISA=	none
+.endif
+.if ${ARCH} == powerpc64
+CMAKE_ON+=	ASTCENC_BIG_ENDIAN
 .endif
 
 .include <bsd.port.mk>
