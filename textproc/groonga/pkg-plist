@@ -97,7 +97,9 @@ lib/groonga/plugins/functions/time.so
 lib/groonga/plugins/functions/vector.so
 lib/groonga/plugins/query_expanders/tsv.so
 %%RUBY%%lib/groonga/plugins/ruby/eval.rb
+%%RUBY%%lib/groonga/plugins/sharding/drilldown_executor.rb
 %%RUBY%%lib/groonga/plugins/sharding/dynamic_columns.rb
+%%RUBY%%lib/groonga/plugins/sharding/expression_builder.rb
 %%RUBY%%lib/groonga/plugins/sharding/stream_execute_context.rb
 %%RUBY%%lib/groonga/plugins/sharding/stream_executor.rb
 %%RUBY%%lib/groonga/plugins/sharding/stream_shard_executor.rb
@@ -110,8 +112,11 @@ lib/groonga/plugins/query_expanders/tsv.so
 %%RUBY%%lib/groonga/plugins/sharding/logical_select.rb
 %%RUBY%%lib/groonga/plugins/sharding/logical_shard_list.rb
 %%RUBY%%lib/groonga/plugins/sharding/logical_table_remove.rb
+%%RUBY%%lib/groonga/plugins/sharding/multi_table_sorter.rb
 %%RUBY%%lib/groonga/plugins/sharding/parameters.rb
 %%RUBY%%lib/groonga/plugins/sharding/range_expression_builder.rb
+%%RUBY%%lib/groonga/plugins/sharding/shard_selector.rb
+%%RUBY%%lib/groonga/plugins/sharding/specified_shard.rb
 %%RUBY%%lib/groonga/plugins/sharding/window.rb
 %%RUBY%%lib/groonga/scripts/ruby/accessor.rb
 %%RUBY%%lib/groonga/scripts/ruby/backtrace_entry.rb
