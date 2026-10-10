@@ -1,7 +1,6 @@
 PORTNAME=	trufflehog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.97.9
-PORTREVISION=	1
+DISTVERSION=	3.99.2
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,6 @@ BROKEN_i386=	compilation fails see details here: https://github.com/trufflesecur
 USES=		go:modules
 
 GO_MODULE=	github.com/trufflesecurity/trufflehog/v3
-#GO_TARGET=	./${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
