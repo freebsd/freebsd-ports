@@ -7,6 +7,9 @@ OpenClaw is a multi-channel AI gateway.
 To get started:
 
 1. Onboarding:
+   Log in as the account that will run the OpenClaw service. Use this same
+   account for every command marked with "$" below so configuration and
+   pairing data are stored in the service account's home directory.
    Run the interactive onboarding wizard to set up your workspace:
    $ openclaw onboard
 
@@ -16,7 +19,10 @@ To get started:
      $ openclaw config set channels.telegram.botToken "YOUR_TOKEN"
 
 3. FreeBSD Service:
-   Enable and start the OpenClaw service:
+   As root, set the service account before enabling and starting the service.
+   Replace USERNAME with the account used for onboarding above. The service
+   defaults to root if openclaw_user is not configured.
+   # sysrc openclaw_user="USERNAME"
    # sysrc openclaw_enable="YES"
    # service openclaw start
 
