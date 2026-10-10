@@ -1,0 +1,3 @@
+Volume and output-switch hotkeys for bhotkeys.  PulseAudio drives
+the combined output.  A single sink uses the mixer.  bosd draws
+the gauge.

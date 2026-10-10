@@ -29,6 +29,7 @@
     SUBDIR += bgrot
     SUBDIR += bgs
     SUBDIR += bhotkeys
+    SUBDIR += bhotkeys-audio
     SUBDIR += bhotkeys-brightness
     SUBDIR += bhotkeys-gnome
     SUBDIR += bhotkeys-i3
