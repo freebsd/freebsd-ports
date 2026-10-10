@@ -1,0 +1,7 @@
+include/wallet_engine/wallet_engine_scaffolding.hpp
+include/wallet_engine/wallet_engine.cpp
+include/wallet_engine/wallet_engine.hpp
+lib/libwallet_engine.a
+@comment lib/libwallet_engine.so
+@comment lib/libwallet_engine.so.0
+@comment lib/libwallet_engine.so.0.1
