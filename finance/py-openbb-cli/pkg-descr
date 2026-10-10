@@ -1,0 +1,12 @@
+OpenBB: Command Line Interface for the OpenBB Platform.
+
+The openbb-cli package provides the interactive command-line interface
+(CLI) client for the OpenBB Platform. It serves as an open-source data
+router and investment research terminal, offering structured access to
+multiple financial data providers under a single interface.
+
+Features include:
+- Standard single command mode for automation, scripts, and CI jobs.
+- Batch processing mode reading NDJSON requests from standard input.
+- Interactive REPL environment with tab-completion and custom menus.
+- Support for local environments as well as remote OpenAPI servers.

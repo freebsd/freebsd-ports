@@ -132,6 +132,7 @@
     SUBDIR += py-openbb-cboe
     SUBDIR += py-openbb-cftc
     SUBDIR += py-openbb-charting
+    SUBDIR += py-openbb-cli
     SUBDIR += py-openbb-commodity
     SUBDIR += py-openbb-congress-gov
     SUBDIR += py-openbb-core
