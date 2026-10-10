@@ -1,6 +1,39 @@
 --- CMakeLists.txt.orig	2019-08-31 15:49:01 UTC
 +++ CMakeLists.txt
-@@ -356,9 +356,7 @@ endif ()
+@@ -32,22 +32,10 @@
+ # CMake configuration.
+ #--------------------------------------------------------------------------------------------------
+ 
+-cmake_minimum_required (VERSION 3.9 FATAL_ERROR)
++cmake_minimum_required (VERSION 3.10)
+ 
+ cmake_policy (SET CMP0008 NEW)      # libraries linked by full-path must have a valid library file name
+ 
+-if (POLICY CMP0026)
+-    cmake_policy (SET CMP0026 OLD)  # disallow use of the LOCATION target property (CMake 3.0)
+-endif ()
+-
+-if (POLICY CMP0042)
+-    cmake_policy (SET CMP0042 OLD)  # MACOSX_RPATH is enabled by default (CMake 3.0)
+-endif ()
+-
+-if (POLICY CMP0043)
+-    cmake_policy (SET CMP0043 OLD)  # consume the content of the suffixed COMPILE_DEFINITIONS_<CONFIG>
+-endif ()
+-
+ set_property (GLOBAL PROPERTY USE_FOLDERS ON)
+ 
+ include (cmake/utilities.txt)
+@@ -239,7 +227,7 @@ endif ()
+     set (Boost_USE_STATIC_LIBS TRUE)
+ endif ()
+ 
+-find_package (Boost 1.61 REQUIRED COMPONENTS atomic chrono date_time filesystem regex system thread wave)
++find_package (Boost 1.61 REQUIRED COMPONENTS atomic chrono date_time filesystem regex thread wave)
+ 
+ add_definitions (-DBOOST_FILESYSTEM_VERSION=3 -DBOOST_FILESYSTEM_NO_DEPRECATED)
+ 
+@@ -356,9 +344,7 @@ if (USE_FIND_PACKAGE_FOR_EXR)
  if (USE_FIND_PACKAGE_FOR_EXR)
      include_directories (
          ${IMATH_INCLUDE_DIRS}
@@ -10,7 +43,48 @@
      )
  else ()
      include_directories (
-@@ -681,8 +679,8 @@ if (WITH_PYTHON2_BINDINGS OR WITH_PYTHON3_BINDINGS)
+@@ -521,35 +507,20 @@ macro (apply_preprocessor_definitions target)
+ 
+ # A convenience macro to apply the preprocessor definitions to all configurations of a given target.
+ macro (apply_preprocessor_definitions target)
++    string (TOLOWER ${CMAKE_BUILD_TYPE} build_type)
+     set_property (TARGET ${target} APPEND PROPERTY
+-        COMPILE_DEFINITIONS_DEBUG ${preprocessor_definitions_debug}
++        COMPILE_DEFINITIONS
++        $<$<CONFIG:${CMAKE_BUILD_TYPE}>:${preprocessor_definitions_${build_type}}>
+     )
+-    set_property (TARGET ${target} APPEND PROPERTY
+-        COMPILE_DEFINITIONS_RELEASE ${preprocessor_definitions_release}
+-    )
+-    set_property (TARGET ${target} APPEND PROPERTY
+-        COMPILE_DEFINITIONS_SHIP ${preprocessor_definitions_ship}
+-    )
+-    set_property (TARGET ${target} APPEND PROPERTY
+-        COMPILE_DEFINITIONS_PROFILE ${preprocessor_definitions_profile}
+-    )
+ endmacro ()
+ 
+ # A convenience macro to append custom preprocessor definitions to all configurations of a given target.
+ macro (append_custom_preprocessor_definitions target first_definition)
+     set (definitions ${first_definition} ${ARGN})
+     set_property (TARGET ${target} APPEND PROPERTY
+-        COMPILE_DEFINITIONS_DEBUG ${definitions}
++        COMPILE_DEFINITIONS
++        $<$<CONFIG:${CMAKE_BUILD_TYPE}>:${definitions}>
+     )
+-    set_property (TARGET ${target} APPEND PROPERTY
+-        COMPILE_DEFINITIONS_RELEASE ${definitions}
+-    )
+-    set_property (TARGET ${target} APPEND PROPERTY
+-        COMPILE_DEFINITIONS_SHIP ${definitions}
+-    )
+-    set_property (TARGET ${target} APPEND PROPERTY
+-        COMPILE_DEFINITIONS_PROFILE ${definitions}
+-    )
+ endmacro ()
+ 
+ 
+@@ -681,8 +652,8 @@ if (WITH_STUDIO)
  endif ()
  
  if (WITH_STUDIO)
@@ -21,7 +95,7 @@
      endif ()
      add_subdirectory (src/appleseed.studio)
  endif ()
-@@ -732,15 +730,27 @@ install (
+@@ -732,15 +703,27 @@ install (
          sandbox/share
          sandbox/stylesheets
      DESTINATION .
@@ -50,7 +124,7 @@
          ${OSL_COMPILER}
          ${OSL_QUERY_INFO}
          ${OSL_MAKETX}
-@@ -754,11 +764,6 @@ install (
+@@ -754,11 +737,6 @@ install (
          sandbox/schemas/settings.xsd
          sandbox/schemas/project.xsd
      DESTINATION schemas
