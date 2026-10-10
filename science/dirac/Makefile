@@ -1,6 +1,7 @@
 PORTNAME=	dirac
 DISTVERSIONPREFIX=	v
 DISTVERSION=	26.1
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 PKGNAMESUFFIX=	-quantum-chemistry-software
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}-Source
