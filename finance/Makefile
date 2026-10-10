@@ -139,6 +139,7 @@
     SUBDIR += py-openbb-currency
     SUBDIR += py-openbb-deribit
     SUBDIR += py-openbb-derivatives
+    SUBDIR += py-openbb-devtools
     SUBDIR += py-openbb-ecb
     SUBDIR += py-openbb-econdb
     SUBDIR += py-openbb-econometrics
