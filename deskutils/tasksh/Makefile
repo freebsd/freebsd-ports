@@ -8,7 +8,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Shell command that wraps Taskwarrior commands
 WWW=		https://github.com/GothenburgBitFactory/taskshell
 
-#BROKEN=	Does not work with CMake 4.X
+BROKEN=		Does not work with CMake 4.X
 DEPRECATED=	No upstream activity over the last 4 years
 EXPIRATION_DATE=	2026-11-10
 
