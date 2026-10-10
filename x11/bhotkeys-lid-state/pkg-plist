@@ -1,0 +1,8 @@
+bin/lid-policy
+bin/lid-wake-toggle
+etc/rc.d/lid-switchd
+sbin/lid-switchd
+share/bhotkeys/plugins.d/lid
+share/man/man1/lid-policy.1.gz
+share/man/man1/lid-wake-toggle.1.gz
+share/man/man8/lid-switchd.8.gz

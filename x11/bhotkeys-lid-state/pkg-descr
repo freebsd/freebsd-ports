@@ -1,0 +1,3 @@
+Super+Z lid stay-awake hotkey for bhotkeys.  lid-switchd holds
+hw.acpi.lid_switch_state so the session can change it without
+running as root.  bosd draws the lid glyph.
