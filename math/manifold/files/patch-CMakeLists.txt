@@ -1,5 +1,14 @@
 --- CMakeLists.txt.orig	2025-11-15 08:41:27 UTC
 +++ CMakeLists.txt
+@@ -17,7 +17,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
+ 
+ # Use C++17
+ set(CMAKE_CXX_EXTENSIONS OFF)
+-set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ set(CMAKE_VERBOSE_MAKEFILE ON)
 @@ -171,13 +171,13 @@ else()
      endif()
    endif()

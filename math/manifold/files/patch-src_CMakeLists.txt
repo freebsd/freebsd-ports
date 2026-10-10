@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2026-10-10 13:45:45 UTC
++++ src/CMakeLists.txt
+@@ -87,7 +87,7 @@ target_compile_options(manifold PRIVATE ${MANIFOLD_FLA
+ 
+ target_compile_options(manifold PRIVATE ${MANIFOLD_FLAGS})
+ # make sure users use appropriate c++ standard when including our headers
+-target_compile_features(manifold PUBLIC cxx_std_17)
++target_compile_features(manifold PUBLIC cxx_std_20)
+ set(
+   OPTIONS
+   MANIFOLD_DEBUG
