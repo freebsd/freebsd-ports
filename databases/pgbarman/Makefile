@@ -11,7 +11,7 @@ WWW=		https://pgbarman.org/
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.11.17,<0.13:devel/py-uv-build@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.11.17:devel/py-uv-build@${PY_FLAVOR}
 
 RUN_DEPENDS=	rsync:net/rsync									\
 		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.4.2:databases/py-psycopg2@${PY_FLAVOR}	\

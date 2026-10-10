@@ -21,6 +21,6 @@ USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|0.12.22|0.12.19|g' ${WRKSRC}/pyproject.toml
+	@${REINPLACE_CMD} -e 's|0.12.22|0.12.19|g; s|, < 0.13.0||' ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

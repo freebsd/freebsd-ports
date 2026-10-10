@@ -21,7 +21,7 @@ USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} '/license-files/d; s|^license = "MIT"|license = { text = "MIT" }|' \
+	@${REINPLACE_CMD} '/license-files/d; s|^license = "MIT"|license = { text = "MIT" }|; s|,<0.13||' \
 		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
