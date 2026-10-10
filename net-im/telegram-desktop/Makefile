@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	7.2.9
-PORTREVISION=	1
+DISTVERSION=	7.3.1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -29,7 +28,8 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		yasm:devel/yasm \
 		${LOCALBASE}/lib/libtde2e.a:net-im/tde2e \
 		${LOCALBASE}/lib/libtg_owt.a:net-im/tg_owt \
-		${LOCALBASE}/lib/libtlottie.a:graphics/tlottie
+		${LOCALBASE}/lib/libtlottie.a:graphics/tlottie \
+		${LOCALBASE}/lib/libwallet_engine.a:net-p2p/wallet-engine
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libada.so:devel/libada \
 		libavformat.so:multimedia/ffmpeg \
