@@ -34,6 +34,9 @@ USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	${PREFIX}/lib
 USE_PERL5=	build run
 
+# configure.pl auto-selects gold when it links; gold produces crashing binaries on powerpc64
+LDFLAGS_powerpc64=	-fuse-ld=lld
+
 SHEBANG_FILES=	resources/host-agent/bin/env resources/host-agent/bin/polymake
 SHEBANG_GLOB=	*.pl *.sh
 
