@@ -1,0 +1,7 @@
+The slowfs_cache module caches files from a slow filesystem the way
+nginx caches upstream responses.  A location serves its files through
+the cache, so a request that finds a cached copy no longer touches the
+slow device, and the usual proxy cache controls apply to it.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their SLOWFS_CACHE option is enabled.
