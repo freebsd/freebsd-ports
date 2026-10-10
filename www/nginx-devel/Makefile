@@ -269,6 +269,10 @@ NJS_CONFIGURE_ARGS+=	--cc-opt="${CFLAGS} -I${LOCALBASE}/include/quickjs" \
 pre-everything::
 	@${ECHO_MSG}
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_FAIR}
+	@${ECHO_MSG} "${PORTNAME} can balance by least connections itself.  HTTP_UPSTREAM_FAIR"
+	@${ECHO_MSG} "will be removed after 2026-12-31: replace fair; with least_conn;, and"
+	@${ECHO_MSG} "fair weight_mode=peak; with least_conn; plus a max_conns= parameter on"
+	@${ECHO_MSG} "each server."
 	@${ECHO_MSG} "Enable http_ssl module to build upstream_fair with SSL support"
 .endif
 .if ${PORT_OPTIONS:MNJS}
