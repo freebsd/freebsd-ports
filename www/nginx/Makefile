@@ -1,7 +1,7 @@
 PORTNAME=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -355,6 +355,11 @@ pre-configure-FORMINPUT-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-form-input ${WRKSRC_forminput}
 	@${CHMOD} -R u+w ${WRKSRC_forminput}
 
+pre-configure-LET-on:
+	@${RM} -rf ${WRKSRC_let}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-let ${WRKSRC_let}
+	@${CHMOD} -R u+w ${WRKSRC_let}
+
 pre-configure-LUA-on:
 	@${RM} -rf ${WRKSRC_lua}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-lua ${WRKSRC_lua}
@@ -371,10 +376,25 @@ pre-configure-NJS-on:
 	@${CHMOD} -R u+w ${WRKSRC_njs}
 	@${CHMOD} u+x ${WRKSRC_njs}/configure
 
+pre-configure-SLOWFS_CACHE-on:
+	@${RM} -rf ${WRKSRC_slowfs_cache}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-slowfs-cache ${WRKSRC_slowfs_cache}
+	@${CHMOD} -R u+w ${WRKSRC_slowfs_cache}
+
 pre-configure-VOD-on:
 	@${RM} -rf ${WRKSRC_vod}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-vod ${WRKSRC_vod}
 	@${CHMOD} -R u+w ${WRKSRC_vod}
+
+pre-configure-WEBSOCKIFY-on:
+	@${RM} -rf ${WRKSRC_websockify}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-websockify ${WRKSRC_websockify}
+	@${CHMOD} -R u+w ${WRKSRC_websockify}
+
+pre-configure-ZSTD-on:
+	@${RM} -rf ${WRKSRC_zstd}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-zstd ${WRKSRC_zstd}
+	@${CHMOD} -R u+w ${WRKSRC_zstd}
 
 do-configure-NJS-on:
 	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} )

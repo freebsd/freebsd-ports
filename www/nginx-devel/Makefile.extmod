@@ -206,7 +206,8 @@ ICONV_GH_TUPLE=		calio:iconv-nginx-module:v0.14:iconv
 ICONV_VARS=		DSO_EXTMODS+=iconv
 ICONV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 
-LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
+LET_BUILD_DEPENDS=	nginx-module-let>0:www/nginx-module-let
+WRKSRC_let=		${WRKDIR}/nginx-let-module
 LET_VARS=		DSO_EXTMODS+=let
 
 LUA_IMPLIES=		DEVEL_KIT
@@ -322,7 +323,8 @@ SFLOW_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:629ae1f:shibboleth
 SHIBBOLETH_VARS=	DSO_EXTMODS+=shibboleth
 
-SLOWFS_CACHE_GH_TUPLE=	baysao:ngx_slowfs_cache:d011a18:slowfs_cache
+SLOWFS_CACHE_BUILD_DEPENDS=	nginx-module-slowfs-cache>0:www/nginx-module-slowfs-cache
+WRKSRC_slowfs_cache=	${WRKDIR}/nginx-slowfs-cache-module
 SLOWFS_CACHE_VARS=	DSO_EXTMODS+=slowfs_cache
 
 SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:bcdcfdc:srcache
@@ -346,14 +348,13 @@ XSS_GH_TUPLE=		openresty:xss-nginx-module:de2d87a:xss
 XSS_VARS=		DSO_EXTMODS+=xss
 XSS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-xss-nginx-module-config
 
-WEBSOCKIFY_GH_TUPLE=	tg123:websockify-nginx-module:c11bc9a:websockify
+WEBSOCKIFY_BUILD_DEPENDS=	nginx-module-websockify>0:www/nginx-module-websockify
+WRKSRC_websockify=	${WRKDIR}/nginx-websockify-module
 WEBSOCKIFY_VARS=	DSO_EXTMODS+=websockify
 
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_CONFIGURE_ENV=	ZSTD_INC=${LOCALBASE}/include \
 			ZSTD_LIB=${LOCALBASE}/lib
-ZSTD_GH_TUPLE=		tokers:zstd-nginx-module:f4ba115:zstd
+ZSTD_BUILD_DEPENDS=	nginx-module-zstd>0:www/nginx-module-zstd
+WRKSRC_zstd=		${WRKDIR}/nginx-zstd-module
 ZSTD_VARS=		DSO_EXTMODS+=zstd
-ZSTD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-zstd-empty-flush \
-			${PATCHDIR}/extra-patch-zstd-last-truncation \
-			${PATCHDIR}/extra-patch-zstd-full-outbuf
