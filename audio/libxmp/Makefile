@@ -1,5 +1,5 @@
 PORTNAME=	libxmp
-DISTVERSION=	4.7.3
+DISTVERSION=	4.7.4
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
