@@ -1,8 +1,8 @@
 -- Switch from extlib_qpdf_v12.cmake to extlib_qpdf_v11.cmake because
 -- FreeBSD's print/qpdf port is still at the v11.x API/ABI.
---- CMakeLists.txt.orig	2026-07-01 07:01:36 UTC
+--- CMakeLists.txt.orig	2026-10-05 07:00:27 UTC
 +++ CMakeLists.txt
-@@ -110,8 +110,8 @@ include(cmake/extlib_lcms2.cmake)
+@@ -136,8 +136,8 @@ include(cmake/extlib_lcms2.cmake)
  include(cmake/extlib_jpeg.cmake)
  include(cmake/extlib_openjpeg.cmake)
  include(cmake/extlib_lcms2.cmake)
@@ -11,5 +11,5 @@
 +include(cmake/extlib_qpdf_v11.cmake)
 +# # include(cmake/extlib_qpdf_v12.cmake)
  include(cmake/extlib_blend2d.cmake)
+ include(cmake/extlib_freetype.cmake)
  include(cmake/extlib_pdfium_jbig2.cmake)
- 

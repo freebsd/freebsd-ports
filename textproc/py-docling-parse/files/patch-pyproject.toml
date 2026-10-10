@@ -1,16 +1,7 @@
--- Fix license declaration format and remove build-system dependencies (cmake, cibuildwheel, delocate) that are provided by the ports framework.
---- pyproject.toml.orig	2026-07-09 20:28:30 UTC
+-- Remove build-system dependencies (cmake, cibuildwheel, delocate) that are provided by the ports framework.
+--- pyproject.toml.orig	2026-10-10 11:20:08 UTC
 +++ pyproject.toml
-@@ -2,7 +2,7 @@ description = "Simple package to extract text with coo
- name = "docling-parse"
- version = "7.4.0"
- description = "Simple package to extract text with coordinates from programmatic PDFs"
--license = "MIT"
-+license = {text = "MIT"}
- keywords = ["docling", "pdf", "parser"]
- classifiers = [
-     "Operating System :: MacOS :: MacOS X",
-@@ -40,25 +40,17 @@ requires = [
+@@ -40,27 +40,17 @@ requires = [
  
  [build-system]
  requires = [
@@ -22,7 +13,8 @@
 +    "pybind11>=0",
      "wheel>=0.43.0,<1.0.0",
 -    "delocate>=0.11.0,<1.0.0",
--    "cmake>=3.27.0,<4.0.0"
+-    "cmake>=3.27.0,<5.0.0; sys_platform != 'win32'",
+-    "cmake>=4.2.0,<5.0.0; sys_platform == 'win32'"
  ]
  build-backend = "setuptools.build_meta"
  
@@ -36,7 +28,8 @@
 +    "pybind11>=0",
      "wheel>=0.43.0,<1.0.0",
 -    "delocate>=0.11.0,<1.0.0",
--    "cmake>=3.27.0,<4.0.0"
+-    "cmake>=3.27.0,<5.0.0; sys_platform != 'win32'",
+-    "cmake>=4.2.0,<5.0.0; sys_platform == 'win32'"
  ]
  dev = [
      "pytest>=9.0.3,<10.0.0",
