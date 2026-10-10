@@ -33,8 +33,8 @@ share/man/man1/atf-test-program.1.gz
 share/man/man3/atf-c++.3.gz
 share/man/man3/atf-c.3.gz
 share/man/man3/atf-sh.3.gz
-share/man/man4/atf-test-case.4.gz
 share/man/man7/atf.7.gz
+share/man/man7/atf-test-case.7.gz
 share/aclocal/atf-c++.m4
 share/aclocal/atf-c.m4
 share/aclocal/atf-common.m4

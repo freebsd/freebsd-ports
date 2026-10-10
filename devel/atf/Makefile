@@ -1,5 +1,5 @@
 PORTNAME=	atf
-DISTVERSION=	0.23
+DISTVERSION=	0.24
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/freebsd/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
@@ -9,8 +9,7 @@ WWW=		https://github.com/freebsd/atf
 
 LICENSE=	BSD3CLAUSE
 
-USES=		autoreconf libtool pathfix
-USE_CXXSTD=	gnu++14
+USES=		autoreconf compiler:c++20-lang libtool llvm pathfix
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
