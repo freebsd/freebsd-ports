@@ -12,7 +12,18 @@ https://github.com/aardappel/treesheets/issues/1083
      DESCRIPTION "A free-form hierarchical data organizer"
      HOMEPAGE_URL "https://github.com/aardappel/treesheets"
      VERSION "${TREESHEETS_VERSION}")
-@@ -41,15 +41,6 @@ include(FetchContent)
+@@ -21,6 +21,10 @@ OPTION(ENABLE_LOBSTER "Enable Lobster scripting" ON)
+ set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+ OPTION(ENABLE_LOBSTER "Enable Lobster scripting" ON)
++# Lobster can only run scripts through its libtcc JIT, which has no PowerPC backend
++if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(powerpc|ppc)")
++    set(ENABLE_LOBSTER OFF)
++endif()
+ 
+ ## Compiler-specific
+ 
+@@ -41,15 +45,6 @@ include(FetchContent)
  
  include(FetchContent)
  
@@ -28,13 +39,13 @@ https://github.com/aardappel/treesheets/issues/1083
  if(ENABLE_LOBSTER)
      FetchContent_Declare(
          lobster
-@@ -137,7 +128,12 @@ endif(ENABLE_LOBSTER)
+@@ -137,7 +132,12 @@ endif(ENABLE_LOBSTER)
  if(ENABLE_LOBSTER)
      target_link_libraries(TreeSheets PRIVATE lobster-impl)
  endif(ENABLE_LOBSTER)
 -target_link_libraries(TreeSheets PRIVATE wx::aui wx::adv wx::core wx::xml wx::net)
 +find_package(wxWidgets REQUIRED COMPONENTS aui adv core xml net)
-+set(TREESHEETS_LIBS ${wxWidgets_LIBRARIES} lobster-impl)
++set(TREESHEETS_LIBS ${wxWidgets_LIBRARIES})
 +target_link_libraries(TreeSheets PRIVATE ${TREESHEETS_LIBS})
 +target_include_directories(TreeSheets PRIVATE ${wxWidgets_INCLUDE_DIRS})
 +target_compile_definitions(TreeSheets PRIVATE ${wxWidgets_DEFINITIONS})
@@ -42,7 +53,7 @@ https://github.com/aardappel/treesheets/issues/1083
  
  ### Installation
  
-@@ -192,7 +188,7 @@ install(FILES ${treesheets_readme_files} DESTINATION $
+@@ -192,7 +192,7 @@ install(FILES ${treesheets_readme_files} DESTINATION $
  install(DIRECTORY TS/docs DESTINATION ${TREESHEETS_DOCDIR})
  file(GLOB treesheets_readme_files "TS/readme*.html")
  install(FILES ${treesheets_readme_files} DESTINATION ${TREESHEETS_DOCDIR})
