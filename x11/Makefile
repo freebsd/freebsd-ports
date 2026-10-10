@@ -28,6 +28,7 @@
     SUBDIR += bemenu
     SUBDIR += bgrot
     SUBDIR += bgs
+    SUBDIR += bhotkeys
     SUBDIR += bitmap
     SUBDIR += bmpanel2
     SUBDIR += boomer

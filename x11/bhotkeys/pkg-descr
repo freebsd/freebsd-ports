@@ -1,0 +1,5 @@
+bhotkeys is an X11 hotkey listener that uses the Record extension
+instead of grabbing the keyboard.  Plugins under
+share/bhotkeys/plugins.d supply the chords.  This package ships the
+listener, the editor panel, session start, and the greeter helper.
+None of the hotkey plugins are included.
