@@ -29,6 +29,7 @@
     SUBDIR += bgrot
     SUBDIR += bgs
     SUBDIR += bhotkeys
+    SUBDIR += bhotkeys-airplane
     SUBDIR += bhotkeys-albert
     SUBDIR += bhotkeys-audio
     SUBDIR += bhotkeys-brightness

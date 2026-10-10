@@ -344,7 +344,7 @@ linkwarden:*:399:
 evcc:*:400:
 spectrumknx:*:401:
 lid_switchd:*:402:
-# free: 403
+airplane_radiosd:*:403:
 # free: 404
 # free: 405
 # free: 406

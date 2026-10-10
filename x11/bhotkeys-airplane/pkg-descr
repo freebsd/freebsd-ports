@@ -1,0 +1,4 @@
+Fn and rfkill hotkeys for bhotkeys.  airplane-mode asks
+airplane-radiosd to turn the radios off or on.  The daemon owns
+the radios so the session does not need to run as root.  bosd
+draws the glyph.
