@@ -410,5 +410,6 @@
     SUBDIR += zig
     SUBDIR += zig014
     SUBDIR += zig015
+    SUBDIR += zig016
 
 .include <bsd.port.subdir.mk>
