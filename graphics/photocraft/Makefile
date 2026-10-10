@@ -1,6 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -36,12 +36,15 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		aho-corasick-1.1.5 \
 		aligned-0.4.3 \
 		aligned-vec-0.6.4 \
+		alloc-no-stdlib-2.0.4 \
+		alloc-stdlib-0.2.4 \
 		allocator-api2-0.2.21 \
 		ambient-authority-0.0.2 \
 		android-activity-0.6.1 \
 		android-properties-0.2.2 \
 		android_system_properties-0.1.6 \
 		anes-0.1.6 \
+		annotate-snippets-0.11.5 \
 		anstyle-1.0.14 \
 		anyhow-1.0.104 \
 		arbitrary-1.4.2 \
@@ -71,6 +74,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		av1-grain-0.2.5 \
 		avif-serialize-0.8.9 \
 		base64-0.22.1 \
+		bindgen-0.72.1 \
 		bit-set-0.8.0 \
 		bit-set-0.10.0 \
 		bit-vec-0.8.0 \
@@ -80,9 +84,11 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		bitflags-2.13.2 \
 		bitstream-io-4.10.0 \
 		blake3-1.8.7 \
+		block-0.1.6 \
 		block2-0.5.1 \
 		block2-0.6.2 \
 		blocking-1.7.0 \
+		brotli-decompressor-5.0.3 \
 		built-0.8.1 \
 		bumpalo-3.20.3 \
 		bytemuck-1.25.2 \
@@ -97,13 +103,17 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		cap-std-4.0.3 \
 		cast-0.3.0 \
 		cc-1.5.1 \
+		cexpr-0.6.0 \
+		cfg-expr-0.20.10 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
 		cgl-0.3.2 \
+		chacha20-0.10.2 \
 		chrono-0.4.45 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
+		clang-sys-1.9.1 \
 		clap-4.6.7 \
 		clap_builder-4.6.7 \
 		clap_lex-1.1.1 \
@@ -115,10 +125,14 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		combine-4.6.8 \
 		concurrent-queue-2.5.0 \
 		constant_time_eq-0.4.2 \
+		cookie-factory-0.3.3 \
 		core-foundation-0.9.4 \
+		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		core-graphics-0.23.2 \
 		core-graphics-types-0.1.3 \
+		core-graphics2-0.6.1 \
+		core_maths-0.1.1 \
 		cpufeatures-0.3.1 \
 		crc32fast-1.5.2 \
 		criterion-0.5.1 \
@@ -141,6 +155,11 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		document-features-0.2.12 \
 		downcast-rs-1.2.1 \
 		dpi-0.1.2 \
+		drm-0.14.1 \
+		drm-0.15.0 \
+		drm-ffi-0.9.1 \
+		drm-fourcc-2.2.0 \
+		drm-sys-0.8.1 \
 		dyn-clone-1.0.20 \
 		ecolor-0.36.2 \
 		eframe-0.36.2 \
@@ -183,10 +202,13 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
 		font-types-0.12.5 \
+		fontconfig-parser-0.5.8 \
+		fontdb-0.23.0 \
 		fontique-0.11.1 \
 		foreign-types-0.5.0 \
 		foreign-types-macros-0.2.4 \
 		foreign-types-shared-0.3.1 \
+		form_urlencoded-1.2.2 \
 		fs-set-times-0.20.3 \
 		futures-0.3.34 \
 		futures-channel-0.3.34 \
@@ -198,13 +220,18 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		futures-sink-0.3.34 \
 		futures-task-0.3.34 \
 		futures-util-0.3.34 \
+		gbm-0.18.0 \
+		gbm-sys-0.4.0 \
 		gethostname-1.1.0 \
 		getopts-0.2.24 \
 		getrandom-0.3.4 \
 		getrandom-0.4.3 \
+		gif-0.13.3 \
 		gif-0.14.2 \
+		gl-0.14.0 \
 		gl_generator-0.14.0 \
 		glifo-0.2.0 \
+		glob-0.3.4 \
 		glow-0.17.0 \
 		glutin-0.32.3 \
 		glutin-winit-0.5.0 \
@@ -218,6 +245,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
+		heck-0.5.0 \
 		heic-rs-0.1.1 \
 		hermit-abi-0.5.3 \
 		hex-0.4.3 \
@@ -235,6 +263,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		icu_segmenter-2.3.0 \
 		icu_segmenter_data-2.3.0 \
 		ident_case-1.0.1 \
+		idna-1.1.0 \
+		idna_adapter-1.2.2 \
 		image-0.25.10 \
 		image-webp-0.2.4 \
 		imagesize-0.13.0 \
@@ -260,6 +290,19 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		jobserver-0.1.35 \
 		jpeg-encoder-0.6.1 \
 		js-sys-0.3.106 \
+		jxl-bitstream-1.1.0 \
+		jxl-coding-1.0.1 \
+		jxl-color-0.11.0 \
+		jxl-frame-0.13.3 \
+		jxl-grid-0.6.2 \
+		jxl-image-0.13.0 \
+		jxl-jbr-0.2.1 \
+		jxl-modular-0.11.3 \
+		jxl-oxide-0.12.6 \
+		jxl-oxide-common-1.0.0 \
+		jxl-render-0.12.4 \
+		jxl-threadpool-1.0.0 \
+		jxl-vardct-0.11.1 \
 		keyboard-types-0.8.3 \
 		khronos-egl-6.0.0 \
 		khronos_api-3.1.0 \
@@ -274,8 +317,12 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		libredox-0.1.25 \
+		libspa-0.10.1 \
+		libspa-sys-0.10.1 \
+		libwayshot-xcap-0.3.3 \
 		linebender_resource_handle-0.1.1 \
 		linux-raw-sys-0.4.15 \
+		linux-raw-sys-0.9.4 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.3 \
 		litrs-1.0.0 \
@@ -288,6 +335,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		memmap2-0.9.11 \
 		memoffset-0.9.1 \
 		memory-stats-1.2.0 \
+		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		miniz_oxide-0.9.1 \
 		mio-1.2.3 \
@@ -301,6 +349,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		new_debug_unreachable-1.0.6 \
 		no_std_io2-0.9.4 \
 		nohash-hasher-0.2.0 \
+		nom-7.1.3 \
 		nom-8.0.0 \
 		noop_proc_macro-0.3.0 \
 		num-bigint-0.4.8 \
@@ -316,18 +365,30 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		objc2-0.6.4 \
 		objc2-app-kit-0.2.2 \
 		objc2-app-kit-0.3.2 \
+		objc2-av-foundation-0.3.2 \
+		objc2-avf-audio-0.3.2 \
 		objc2-cloud-kit-0.2.2 \
+		objc2-cloud-kit-0.3.2 \
 		objc2-contacts-0.2.2 \
+		objc2-core-audio-0.3.2 \
+		objc2-core-audio-types-0.3.2 \
 		objc2-core-data-0.2.2 \
+		objc2-core-data-0.3.2 \
 		objc2-core-foundation-0.3.2 \
 		objc2-core-graphics-0.3.2 \
 		objc2-core-image-0.2.2 \
+		objc2-core-image-0.3.2 \
 		objc2-core-location-0.2.2 \
+		objc2-core-media-0.3.2 \
+		objc2-core-text-0.3.2 \
+		objc2-core-video-0.3.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.2.2 \
 		objc2-foundation-0.3.2 \
+		objc2-image-io-0.3.2 \
 		objc2-io-surface-0.3.2 \
 		objc2-link-presentation-0.2.2 \
+		objc2-media-toolbox-0.3.2 \
 		objc2-metal-0.2.2 \
 		objc2-metal-0.3.2 \
 		objc2-quartz-core-0.2.2 \
@@ -365,6 +426,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		pin-project-internal-1.1.13 \
 		pin-project-lite-0.2.17 \
 		piper-0.2.5 \
+		pipewire-0.10.1 \
+		pipewire-sys-0.10.1 \
 		pkg-config-0.3.34 \
 		plain-0.2.3 \
 		png-0.17.16 \
@@ -378,6 +441,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		potential_utf-0.1.6 \
 		ppv-lite86-0.2.21 \
 		presser-0.3.1 \
+		primal-check-0.3.4 \
 		proc-macro-crate-3.5.0 \
 		proc-macro2-1.0.107 \
 		profiling-1.0.18 \
@@ -394,8 +458,10 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		rand-0.9.5 \
+		rand-0.10.3 \
 		rand_chacha-0.9.0 \
 		rand_core-0.9.5 \
+		rand_core-0.10.1 \
 		rand_xorshift-0.4.0 \
 		range-alloc-0.1.5 \
 		rav1e-0.8.1 \
@@ -426,11 +492,13 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
+		rustfft-6.4.1 \
 		rustix-0.38.44 \
 		rustix-1.1.5 \
 		rustix-linux-procfs-0.1.1 \
 		rustversion-1.0.23 \
 		rusty-fork-0.3.1 \
+		rustybuzz-0.20.1 \
 		ruzstd-0.9.0 \
 		same-file-1.0.6 \
 		schemars-1.2.2 \
@@ -446,6 +514,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		serde_json-1.0.151 \
 		serde_repr-0.1.21 \
 		serde_spanned-1.1.1 \
+		shlex-1.3.0 \
 		shlex-2.0.1 \
 		signal-hook-registry-1.4.8 \
 		simd-adler32-0.3.10 \
@@ -467,6 +536,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		spirv-0.4.0+sdk-1.4.341.0 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
+		strength_reduce-0.2.4 \
 		strict-num-0.1.1 \
 		string-interner-0.19.0 \
 		strsim-0.11.1 \
@@ -475,6 +545,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		syn-3.0.6 \
 		synstructure-0.14.0 \
 		sys-locale-0.3.2 \
+		system-deps-7.0.8 \
+		target-lexicon-0.13.5 \
 		tempfile-3.27.0 \
 		termcolor-1.4.1 \
 		thiserror-1.0.69 \
@@ -486,6 +558,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		tiny-skia-path-0.11.4 \
 		tinystr-0.8.4 \
 		tinytemplate-1.2.1 \
+		tinyvec-1.13.3 \
 		tokio-1.53.1 \
 		tokio-macros-2.7.2 \
 		tokio-stream-0.1.19 \
@@ -498,22 +571,32 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
+		transpose-0.2.3 \
 		tree_magic_mini-3.2.2 \
+		ttf-parser-0.25.1 \
 		twox-hash-2.1.4 \
 		type-map-0.5.1 \
 		typeid-1.0.3 \
 		uds_windows-1.2.1 \
 		unarray-0.1.4 \
+		unicode-bidi-0.3.18 \
+		unicode-bidi-mirroring-0.4.0 \
+		unicode-ccc-0.4.0 \
 		unicode-general-category-1.1.0 \
 		unicode-ident-1.0.26 \
+		unicode-properties-0.1.4 \
+		unicode-script-0.5.8 \
 		unicode-segmentation-1.13.3 \
+		unicode-vo-0.1.0 \
 		unicode-width-0.2.2 \
+		url-2.5.8 \
 		usvg-0.45.1 \
 		utf8_iter-1.0.4 \
 		uuid-1.26.1 \
 		v_frame-0.3.9 \
 		vello_common-0.1.0 \
 		vello_cpu-0.1.0 \
+		version-compare-0.2.1 \
 		version_check-0.9.5 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
@@ -543,6 +626,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		wayland-protocols-plasma-0.3.12 \
 		wayland-protocols-wlr-0.3.12 \
 		wayland-scanner-0.31.11 \
+		wayland-server-0.31.14 \
 		wayland-sys-0.31.11 \
 		web-sys-0.3.106 \
 		web-time-1.1.0 \
@@ -556,6 +640,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		wgpu-hal-30.0.1 \
 		wgpu-naga-bridge-30.0.1 \
 		wgpu-types-30.0.1 \
+		widestring-1.2.1 \
 		winapi-util-0.1.11 \
 		windows-0.62.2 \
 		windows-collections-0.3.2 \
@@ -601,6 +686,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		x11-dl-2.21.0 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
+		xcap-0.9.8 \
+		xcb-1.7.1 \
 		xcursor-0.3.11 \
 		xkbcommon-dl-0.4.2 \
 		xkeysym-0.2.1 \
@@ -625,9 +712,12 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		zerovec-derive-0.11.6 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
+		zune-core-0.4.12 \
 		zune-core-0.5.3 \
 		zune-inflate-0.2.54 \
+		zune-jpeg-0.4.21 \
 		zune-jpeg-0.5.15 \
+		zune-jpegxl-0.5.2 \
 		zvariant-5.15.0 \
 		zvariant_derive-5.15.0 \
 		zvariant_utils-4.2.0
@@ -642,7 +732,7 @@ CARGO_INSTALL=	no
 OPTIONS_DEFINE=	DOCS
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-10-08
+RELEASE_DATE=	2026-10-10
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
