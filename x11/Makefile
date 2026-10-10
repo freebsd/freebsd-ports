@@ -41,6 +41,7 @@
     SUBDIR += bhotkeys-lock
     SUBDIR += bhotkeys-mate
     SUBDIR += bhotkeys-media
+    SUBDIR += bhotkeys-mirror
     SUBDIR += bhotkeys-xfce
     SUBDIR += bitmap
     SUBDIR += bmpanel2

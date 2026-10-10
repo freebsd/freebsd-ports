@@ -1,0 +1,8 @@
+bin/display-mirror-off
+bin/display-mirror-on
+bin/display-mirror-toggle
+libexec/bhotkeys-mirror/display-mirror.subr
+share/bhotkeys/plugins.d/fn-mirror
+share/man/man1/display-mirror-off.1.gz
+share/man/man1/display-mirror-on.1.gz
+share/man/man1/display-mirror-toggle.1.gz
