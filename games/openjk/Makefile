@@ -19,7 +19,7 @@ GH_TAGNAME=	1a6a643
 USE_SDL=	sdl2
 USE_XORG=	x11
 
-OPENJK_ARCH=	${ARCH:S/powerpc64$/ppc64/:S/powerpc$/ppc/:C/armv.*/arm/}
+OPENJK_ARCH=	${ARCH:S/powerpc64$/ppc64/:S/powerpc$/ppc/:C/armv.*/arm/:S/aarch64/arm64/}
 PLIST_SUB=	ARCH="${OPENJK_ARCH}"
 SUB_FILES=	jamp \
 		jasp
