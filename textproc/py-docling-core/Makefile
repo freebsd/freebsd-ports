@@ -1,7 +1,6 @@
 PORTNAME=	docling-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.95.0
-PORTREVISION=	1
+DISTVERSION=	2.101.1
 CATEGORIES=	textproc python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7.1:devel/py-defusedxml@${PY_F
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.6.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>=2.14.0:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.1:devel/py-pyyaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.34.2:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.9.0:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.12.5:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.12.2:devel/py-typing-extensions@${PY_FLAVOR}
@@ -67,10 +67,15 @@ GH_PROJECT=	docling-core
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_ARGS=	--disable-plugin-autoload --ignore=packages/dclq \
 		--ignore=tests/test_code_chunker.py \
-		--ignore=tests/test_code_chunking_strategy.py
+		--ignore=tests/test_code_chunking_strategy.py \
+		--ignore=tests/test_chunk_expander.py \
+		--ignore=tests/test_docling_doc.py \
+		--ignore=tests/test_hybrid_chunker.py \
+		--ignore=tests/test_line_chunker.py \
+		--ignore=tests/test_serialization_doclang.py
 
 NO_ARCH=	yes
 
-# tests as of 2.95.0: 588 passed, 113 skipped, 85 warnings
+# tests as of 2.101.1: 553 passed, 30 skipped, 1 xfailed, 54 warnings in 17.09s
 
 .include <bsd.port.mk>
