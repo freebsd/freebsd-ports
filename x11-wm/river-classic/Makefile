@@ -19,7 +19,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		pkgconfig xorg zig
+USES=		pkgconfig xorg zig:016
 USE_XORG=	pixman
 
 OPTIONS_DEFINE=	MANPAGES X11
