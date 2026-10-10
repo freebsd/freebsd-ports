@@ -1,5 +1,5 @@
 PORTNAME=	iaito
-DISTVERSION=	6.1.8
+DISTVERSION=	6.2.4
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -13,27 +13,14 @@ BROKEN_i386=	error: non-constant-expression cannot be narrowed from type 'const 
 LIB_DEPENDS=	libcapstone.so:devel/capstone \
 		libr_core.so:devel/radare2
 
-FLAVORS=		qt6 qt5
-FLAVOR?=		qt6
-${FLAVOR}_PKGNAMESUFFIX=	-${FLAVOR}
-
 USES=		compiler:c++17-lang desktop-file-utils gl gmake pkgconfig \
-		qmake:no_configure
+		qmake:no_configure qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	radareorg
-GNU_CONFIGURE=	yes
-
-.if ${FLAVOR} == qt5
-USES+=		qt:5
-USE_GL=		gl
-USE_QT=		core gui network svg widgets \
-		buildtools:build linguisttools:build qmake:build
-.else
-USES+=		qt:6
 USE_GL=		opengl
 USE_QT=		base svg
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qmake6
-.endif
 
 MAKE_ENV=	DESTDIR=${STAGEDIR}${PREFIX} \
 		QMAKE_FLAGS="PREFIX=${STAGEDIR}${PREFIX}"
