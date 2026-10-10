@@ -1,6 +1,6 @@
---- tdnet/CMakeLists.txt.orig	2025-05-09 16:51:47 UTC
+--- tdnet/CMakeLists.txt.orig	2026-07-14 11:54:57 UTC
 +++ tdnet/CMakeLists.txt
-@@ -60,7 +60,7 @@ endif()
+@@ -61,7 +61,7 @@ endif()
    set_source_files_properties(td/net/DarwinHttp.mm PROPERTIES COMPILE_FLAGS -fobjc-arc)
  endif()
  
