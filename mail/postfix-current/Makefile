@@ -1,6 +1,6 @@
 PORTNAME=	postfix
 DISTVERSION=	3.12-20260925
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -142,8 +142,6 @@ BDB_USES=			bdb
 CDB_LIB_DEPENDS=		libcdb.so:databases/tinycdb
 EAI_LIB_DEPENDS=		libicuuc.so:devel/icu
 LDAP_USES=			ldap
-LMDB0_LIB_DEPENDS=		liblmdb.so:databases/lmdb0
-LMDB1_LIB_DEPENDS=		liblmdb.so:databases/lmdb
 MONGO_LIB_DEPENDS=		libbson2.so:devel/libbson \
 				libmongoc2.so:devel/mongo-c-driver
 MYSQL_USES?=			mysql
@@ -370,6 +368,11 @@ MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
 .endif
 
 .if ${PORT_OPTIONS:MLMDB}
+.  if ${PORT_OPTIONS:MLMDB1}
+LIB_DEPENDS+=	liblmdb.so:databases/lmdb
+.  else
+LIB_DEPENDS+=	liblmdb.so:databases/lmdb0
+.  endif
 DYN_EXT+=		lmdb
 POSTFIX_CCARGS+=	-DHAS_LMDB `pkg-config --cflags lmdb`
 POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LMDB=`pkg-config --libs lmdb`"
