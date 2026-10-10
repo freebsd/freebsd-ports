@@ -15,10 +15,8 @@ LICENSE_NAME=	GMAP License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-# FIXME: Source shows support for other platforms, but build fails on
-# aarch64 trying to use asm(bsr)
-ONLY_FOR_ARCHS=		amd64 i386 powerpc64le
-ONLY_FOR_ARCHS_REASON=	Upstream supports only x86 and possibly POWER8
+ONLY_FOR_ARCHS=		aarch64 amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	untested on other architectures
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
