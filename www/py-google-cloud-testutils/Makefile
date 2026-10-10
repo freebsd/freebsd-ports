@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-testutils
-DISTVERSION=	1.9.3
+DISTVERSION=	1.10.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,8 @@ USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes
 
-# tests as of 1.9.3: 26 passed, 10 skipped
+TEST_ARGS=	--disable-plugin-autoload
+
+# tests as of 1.10.1: 26 passed, 10 skipped in 0.12s
 
 .include <bsd.port.mk>
