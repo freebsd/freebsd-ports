@@ -1,3 +1,6 @@
+-- Loosen strict dependency constraints so the port can use current
+-- FreeBSD Ports dependencies without upstream upper bounds blocking builds.
+
 --- pyproject.toml.orig	2026-07-17 21:05:19 UTC
 +++ pyproject.toml
 @@ -8,18 +8,18 @@ dependencies = [
@@ -12,13 +15,14 @@
      "packaging>=23.0",
 -    "portalocker~=2.7.0",
 +    "portalocker>=2.7.0",
-     "pyjwt>=2.13.0,<3",
+-    "pyjwt>=2.15.0,<3",
++    "pyjwt>=2.15.0",
 -    "pydantic>=2.11.9,<2.13",
 +    "pydantic>=2.11.9",
      "rich>=13.7.1",
--    "opentelemetry-api~=1.42.0",
--    "opentelemetry-sdk~=1.42.0",
--    "opentelemetry-exporter-otlp-proto-http~=1.42.0",
+-    "opentelemetry-api>=1.42,<2",
+-    "opentelemetry-sdk>=1.42,<2",
+-    "opentelemetry-exporter-otlp-proto-http>=1.42,<2",
 -    "tomli~=2.0.2",
 +    "opentelemetry-api>=1.42.0",
 +    "opentelemetry-sdk>=1.42.0",
