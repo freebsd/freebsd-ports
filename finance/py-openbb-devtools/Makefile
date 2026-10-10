@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OpenBB: Development tools for OpenBB packages
-WWW=		https://github.com/OpenBB-finance/OpenBB
+WWW=		https://github.com/openbq-org/OpenBB
 
 LICENSE=	AGPLv3
 

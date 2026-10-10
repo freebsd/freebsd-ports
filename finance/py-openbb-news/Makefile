@@ -1,5 +1,5 @@
 PORTNAME=	openbb-news
-DISTVERSION=	1.6.2
+DISTVERSION=	2.0.0
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,13 +7,14 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OpenBB: News extension for OpenBB
-WWW=		https://github.com/OpenBB-finance/OpenBB
+WWW=		https://github.com/openbq-org/OpenBB
 
 LICENSE=	AGPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openbb-core>=1.6.10:finance/py-openbb-core@${PY_FLAVOR}
-
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=5.0:devel/py-lxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openbb-core>=2.0.0:finance/py-openbb-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0:textproc/py-feedparser@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 

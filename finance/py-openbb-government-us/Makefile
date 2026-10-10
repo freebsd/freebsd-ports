@@ -1,5 +1,5 @@
 PORTNAME=	openbb-government-us
-DISTVERSION=	1.6.1
+DISTVERSION=	2.0.0
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,14 +7,19 @@ DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	OpenBB: US Government Data Extension for OpenBB
-WWW=		https://github.com/OpenBB-finance/OpenBB
+WWW=		https://github.com/openbq-org/OpenBB
 
 LICENSE=	AGPLv3
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openbb-core>=1.6.10:finance/py-openbb-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}random-user-agent>=1.0.1:www/py-random-user-agent@${PY_FLAVOR}
-
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7:devel/py-defusedxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}diskcache>=5:devel/py-diskcache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openbb-core>=2.0.0:finance/py-openbb-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openpyxl>=3.1.5:textproc/py-openpyxl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xlrd>=2.0.2:textproc/py-xlrd@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}curl-cffi>=0.7:ftp/py-curl-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx>=0.27:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}random-user-agent>=1.0:www/py-random-user-agent@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
