@@ -6,15 +6,17 @@ MAINTAINER=	mce@FreeBSD.org
 COMMENT=	GPS log file viewer and analyzer
 WWW=		https://www.gpxsee.org/
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/licence.txt
+LICENSE=	GPLv3 PD
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv3=	${WRKSRC}/licence.txt
+LICENSE_FILE_PD=	${WRKSRC}/GPXSee-maps/LICENSE
 
 USES=		compiler:c++11-lang desktop-file-utils gl qmake:outsource qt:6 \
 		shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	tumic0
 GH_PROJECT=	GPXSee
-GH_TUPLE=	tumic0:GPXSee-maps:8ddbf3d:GPXSee
+GH_TUPLE=	tumic0:GPXSee-maps:8ddbf3d:GPXSee/GPXSee-maps
 USE_GL=		opengl
 USE_QT=		base multimedia positioning serialport svg tools:build
 
@@ -35,7 +37,7 @@ do-install-NLS-on:
 
 do-install-MAPS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/maps
-	( cd ${WRKDIR}/GPXSee-maps-* && ${COPYTREE_SHARE} World \
+	( cd ${WRKSRC}/GPXSee-maps && ${COPYTREE_SHARE} World \
 		${STAGEDIR}${DATADIR}/maps "-name *.xml" )
 
 .include <bsd.port.mk>
