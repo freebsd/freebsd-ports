@@ -1,6 +1,5 @@
 PORTNAME=	jacal
-PORTVERSION=	1c8
-PORTREVISION=	2
+DISTVERSION=	2a1
 CATEGORIES=	math
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
 
@@ -19,9 +18,10 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--mandir=${PREFIX}/share/man
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
+NO_ARCH=	yes
 NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	INFO
 OPTIONS_DEFAULT=	INFO
