@@ -1,7 +1,7 @@
 PORTNAME=	moodle
 PORTVERSION=	5.2.3
 CATEGORIES=	www education
-MASTER_SITES=	https://packaging.moodle.org/stable501/ \
+MASTER_SITES=	https://packaging.moodle.org/stable502/ \
 		LOCAL/wen
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
 
@@ -11,7 +11,7 @@ WWW=		https://www.moodle.org/
 
 LICENSE=	GPLv3
 
-CONFLICTS=	moodle45-4.5.[0-9]* moodle50-5.0.[0-9]* moodle51-5.1.[0-9]*
+CONFLICTS=	moodle45-4.5.[0-9]* moodle50-5.0.[0-9]* moodle51-5.1.[0-9]* moodle53-5.3
 
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom exif fileinfo filter gd \
