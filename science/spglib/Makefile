@@ -1,6 +1,6 @@
 PORTNAME=	spglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
+DISTVERSION=	2.8.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,11 +10,11 @@ WWW=		https://spglib.github.io/spglib/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+TEST_DEPENDS=	googletest>0:devel/googletest
+
 USES=		cmake:testing
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-
-TEST_DEPENDS=	googletest>0:devel/googletest
 
 CMAKE_OFF=	SPGLIB_WITH_TESTS
 CMAKE_TESTING_ON=	SPGLIB_WITH_TESTS
@@ -32,6 +32,6 @@ OPTIONS_SUB=		yes
 FORTRAN_USES=		fortran
 FORTRAN_CMAKE_BOOL=	SPGLIB_WITH_Fortran
 
-# tests as of 2.7.0: 100% tests passed, 0 tests failed out of 61
+# tests as of 2.8.0: 100% tests passed out of 61
 
 .include <bsd.port.mk>
