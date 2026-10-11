@@ -1,5 +1,5 @@
 PORTNAME=	mutt
-DISTVERSION=	2.4.2
+DISTVERSION=	2.4.3
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.mutt.org/pub/mutt/
@@ -170,7 +170,7 @@ pre-configure:
 	@${REINPLACE_CMD} \
 		-e '/if test.*mutt_dotlock.*DOTLOCK_GROUP/s/if/if ${FALSE} \&\&/' \
 		${WRKSRC}/Makefile.in
-# Base FreeBSD krb5-config --version returns "FreeBSD heimdal"
+# <15 Base FreeBSD krb5-config --version returns "FreeBSD heimdal"
 	@${REINPLACE_CMD} -e 's,?eimdal\*),?eimdal*|\"FreeBSD heimdal\"*),' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # Install contrib samples to ${EXAMPLESDIR}
