@@ -1,9 +1,12 @@
 -- Fix build with the setuptools version available in FreeBSD ports.
--- Upstream requires setuptools>=82.0.1 and uses a hyphenated package name in
--- [tool.setuptools.package-data], which the older setuptools in ports rejects.
--- Lower the build-system requirement and use package-data '*' with a find
--- include pattern so the stub files are still installed.
---- pyproject.toml.orig	2026-09-11 15:59:25 UTC
+-- Upstream requires setuptools>=82.0.1; lower the requirement to >=61
+-- which is what the port provides.
+-- Also remove the SPDX 'license' and 'license-files' fields that the older
+-- setuptools rejects, replace the packages list with a packages.find include,
+-- and use a wildcard package-data key to avoid the hyphenated package name
+-- that older setuptools rejects in [tool.setuptools.package-data].
+
+--- pyproject.toml.orig	2026-10-10 20:44:59 UTC
 +++ pyproject.toml
 @@ -1,12 +1,10 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -13,13 +16,13 @@
  
  [project]
  name = "types-pytz"
- version = "2026.3.1.20260727"
+ version = "2026.5.0.20261006"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
  description = "Typing stubs for pytz"
  readme = { text = """\
  ## Typing stubs for pytz
-@@ -46,8 +44,10 @@ dependencies = []
+@@ -50,8 +48,10 @@ dependencies = []
  "Chat" = "https://gitter.im/python/typing"
  
  [tool.setuptools]
@@ -27,8 +30,8 @@
  include-package-data = false
  
 +[tool.setuptools.packages.find]
-+include = ['pytz-stubs']
++include = ["pytz-stubs"]
 +
  [tool.setuptools.package-data]
 -'pytz-stubs' = ['__init__.pyi', 'exceptions.pyi', 'lazy.pyi', 'reference.pyi', 'tzfile.pyi', 'tzinfo.pyi', 'METADATA.toml', 'py.typed']
-+'*' = ['*.pyi', '*.toml', 'py.typed']
++'*' = ['__init__.pyi', 'exceptions.pyi', 'lazy.pyi', 'reference.pyi', 'tzfile.pyi', 'tzinfo.pyi', 'METADATA.toml', 'py.typed']
