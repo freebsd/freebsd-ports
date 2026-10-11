@@ -1,6 +1,6 @@
 PORTNAME=	closql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	databases elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/magit/closql
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	compat.el>=31.0:misc/compat.el \
+RUN_DEPENDS=	compat.el>=31.1:misc/compat.el \
 		cond-let>=1.1:devel/cond-let \
 		emacsql>=4.4:databases/emacsql \
 		llama.el>=1.0:devel/llama.el
