@@ -1,6 +1,6 @@
 PORTNAME=	zbackup
 PORTVERSION=	1.4.4
-PORTREVISION=	31
+PORTREVISION=	32
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	Versatile deduplicating backup tool
 WWW=		http://zbackup.org/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Last release 11 years ago, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		liblzo2.so:archivers/lzo2
