@@ -1,5 +1,5 @@
 PORTNAME=	SCIP
-DISTVERSION=	10.0.3
+DISTVERSION=	10.1.0
 CATEGORIES=	math science
 MASTER_SITES=	https://www.scipopt.org/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -38,5 +38,7 @@ ZIMPL_CMAKE_BOOL=	ZIMPL
 ZIMPL_LIB_DEPENDS=	libzimpl.so:math/zimpl
 
 INSTALL_CONFLICTS=	scipoptsuite
+
+# tests as of 10.1.0: 99% tests passed, 1 tests failed out of 1294 (1232 - examples-tsp-att48 (SEGFAULT))
 
 .include <bsd.port.mk>
