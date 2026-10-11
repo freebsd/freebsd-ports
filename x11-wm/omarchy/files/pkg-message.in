@@ -1,0 +1,43 @@
+[
+{ type: install
+  message: <<EOM
+Omarchy needs a few system services and permissions on FreeBSD:
+
+1. Enable D-Bus and seatd, and let your user use the seat, graphics, and
+   sound (FreeBSD 16 restricts the sound devices to the audio group):
+
+     sysrc dbus_enable=YES seatd_enable=YES
+     service dbus start; service seatd start
+     pw groupmod video -m <user>
+     pw groupmod audio -m <user>
+
+2. Load the DRM driver for your GPU (see graphics/drm-kmod), e.g.:
+
+     sysrc kld_list+=i915kms    # or amdgpu
+
+3. Power menu actions run shutdown(8) and acpiconf(8), which are
+   restricted to the operator group:
+
+     pw groupmod operator -m <user>
+
+4. Mount fdescfs and Linux-compatible /proc for scripts that inspect
+   processes, by adding to /etc/fstab:
+
+     fdesc   /dev/fd   fdescfs     rw   0 0
+     proc    /proc     linprocfs   rw   0 0
+
+5. Start Omarchy from the console with:
+
+     %%PREFIX%%/libexec/omarchy/compat/uwsm start -D Hyprland hyprland.desktop
+
+   or pick "Omarchy" in SDDM (x11/sddm, enabled with sysrc sddm_enable=YES).
+   Configuration for new users is copied into your home directory the
+   first time the session starts; existing files are left alone.
+
+Wi-Fi and Bluetooth controls in the Omarchy panels need NetworkManager and
+BlueZ, which are not available on FreeBSD; use wpa_supplicant(8) and
+bluetooth(4) instead. Package installs and updates from the Omarchy menu use
+pkg(8), and system snapshots use ZFS boot environments (bectl(8)).
+EOM
+}
+]
