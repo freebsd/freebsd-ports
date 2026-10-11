@@ -1,6 +1,6 @@
 PORTNAME=	comfyui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37.0
+DISTVERSION=	0.39.0
 CATEGORIES=	misc python # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.11.8:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}alembic>0:databases/py-alembic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}av>=16.0.0:multimedia/py-av@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}av>=17.0.0:multimedia/py-av@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blake3>0:security/py-blake3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfy-aimdo>=0.4.10:misc/py-comfy-aimdo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfy-kitchen>=0.2.20:misc/py-comfy-kitchen@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-embedded-docs>=0.5.11:misc/py-comfyui-embedded-docs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-frontend-package>=1.52.7:misc/py-comfyui-frontend-package@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates>=0.11.55:misc/py-comfyui-workflow-templates@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfy-aimdo>=0.5.5:misc/py-comfy-aimdo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfy-kitchen>=0.2.37:misc/py-comfy-kitchen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-embedded-docs>=0.5.13:misc/py-comfyui-embedded-docs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-frontend-package>=1.53.10:misc/py-comfyui-frontend-package@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}comfyui-workflow-templates>=0.11.76:misc/py-comfyui-workflow-templates@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}einops>0:misc/py-einops@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.32.5:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}glfw>0:graphics/py-glfw@${PY_FLAVOR} \

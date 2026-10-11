@@ -18,6 +18,7 @@ bin/comfyui
 %%DATADIR%%/alembic_db/versions/0005_allow_case_sensitive_tags.py
 %%DATADIR%%/alembic_db/versions/0006_add_loader_path.py
 %%DATADIR%%/alembic_db/versions/0007_record_content_split.py
+%%DATADIR%%/alembic_db/versions/0008_drop_asset_meta.py
 %%DATADIR%%/api_server/__init__.py
 %%DATADIR%%/api_server/routes/__init__.py
 %%DATADIR%%/api_server/routes/internal/README.md
@@ -60,6 +61,7 @@ bin/comfyui
 %%DATADIR%%/app/assets/services/schemas.py
 %%DATADIR%%/app/assets/services/snapshot_hash.py
 %%DATADIR%%/app/assets/services/tagging.py
+%%DATADIR%%/app/assets/services/gil.py
 %%DATADIR%%/app/custom_node_manager.py
 %%DATADIR%%/app/database/db.py
 %%DATADIR%%/app/database/models.py
@@ -563,6 +565,7 @@ bin/comfyui
 %%DATADIR%%/comfy/text_encoders/wan.py
 %%DATADIR%%/comfy/text_encoders/yue2.py
 %%DATADIR%%/comfy/text_encoders/z_image.py
+%%DATADIR%%/comfy/text_encoders/ming_image.py
 %%DATADIR%%/comfy/utils.py
 %%DATADIR%%/comfy/weight_adapter/__init__.py
 %%DATADIR%%/comfy/weight_adapter/base.py
@@ -573,6 +576,7 @@ bin/comfyui
 %%DATADIR%%/comfy/weight_adapter/lokr.py
 %%DATADIR%%/comfy/weight_adapter/lora.py
 %%DATADIR%%/comfy/weight_adapter/oft.py
+%%DATADIR%%/comfy/audio.py
 %%DATADIR%%/comfy_api/feature_flags.py
 %%DATADIR%%/comfy_api/generate_api_stubs.py
 %%DATADIR%%/comfy_api/input/__init__.py
@@ -653,6 +657,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/apis/vidu.py
 %%DATADIR%%/comfy_api_nodes/apis/wan.py
 %%DATADIR%%/comfy_api_nodes/apis/wavespeed.py
+%%DATADIR%%/comfy_api_nodes/apis/hunyuan_image.py
 %%DATADIR%%/comfy_api_nodes/nodes_anthropic.py
 %%DATADIR%%/comfy_api_nodes/nodes_beeble.py
 %%DATADIR%%/comfy_api_nodes/nodes_bfl.py
@@ -687,7 +692,6 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/nodes_rodin.py
 %%DATADIR%%/comfy_api_nodes/nodes_runway.py
 %%DATADIR%%/comfy_api_nodes/nodes_sonilo.py
-%%DATADIR%%/comfy_api_nodes/nodes_sora.py
 %%DATADIR%%/comfy_api_nodes/nodes_sync_so.py
 %%DATADIR%%/comfy_api_nodes/nodes_topaz.py
 %%DATADIR%%/comfy_api_nodes/nodes_tripo.py
@@ -704,6 +708,7 @@ bin/comfyui
 %%DATADIR%%/comfy_api_nodes/util/request_logger.py
 %%DATADIR%%/comfy_api_nodes/util/upload_helpers.py
 %%DATADIR%%/comfy_api_nodes/util/validation_utils.py
+%%DATADIR%%/comfy_api_nodes/nodes_hunyuan_image.py
 %%DATADIR%%/comfy_config/config_parser.py
 %%DATADIR%%/comfy_config/types.py
 %%DATADIR%%/comfy_execution/asset_enrichment.py
@@ -881,6 +886,7 @@ bin/comfyui
 %%DATADIR%%/comfy_extras/sam3d_body/rasterizer.py
 %%DATADIR%%/comfy_extras/sam3d_body/utils.py
 %%DATADIR%%/comfy_extras/void_noise_warp.py
+%%DATADIR%%/comfy_extras/nodes_ming.py
 %%DATADIR%%/comfyui_version.py
 %%DATADIR%%/cuda_malloc.py
 %%DATADIR%%/custom_nodes/example_node.py.example
@@ -957,6 +963,12 @@ bin/comfyui
 %%DATADIR%%/tests-unit/app_test/test_migration_warning.py
 %%DATADIR%%/tests-unit/app_test/test_migrations.py
 %%DATADIR%%/tests-unit/app_test/user_manager_system_user_test.py
+%%DATADIR%%/tests-unit/app_test/test_db_assets_off.py
+%%DATADIR%%/tests-unit/app_test/test_db_lock_processes.py
+%%DATADIR%%/tests-unit/app_test/test_db_lock_wait.py
+%%DATADIR%%/tests-unit/app_test/test_db_write_txn.py
+%%DATADIR%%/tests-unit/app_test/test_migration_0008.py
+%%DATADIR%%/tests-unit/app_test/test_prompt_worker.py
 %%DATADIR%%/tests-unit/assets_test/__init__.py
 %%DATADIR%%/tests-unit/assets_test/conftest.py
 %%DATADIR%%/tests-unit/assets_test/fixtures/assets_event_lines.txt
@@ -1021,6 +1033,18 @@ bin/comfyui
 %%DATADIR%%/tests-unit/assets_test/services/test_transition_settle.py
 %%DATADIR%%/tests-unit/assets_test/services/test_updated_at_semantics.py
 %%DATADIR%%/tests-unit/assets_test/services/test_upload_b.py
+%%DATADIR%%/tests-unit/assets_test/services/test_batched_marking.py
+%%DATADIR%%/tests-unit/assets_test/services/test_gil.py
+%%DATADIR%%/tests-unit/assets_test/services/test_live_path_index.py
+%%DATADIR%%/tests-unit/assets_test/services/test_many_scan_prefixes.py
+%%DATADIR%%/tests-unit/assets_test/services/test_model_listing_error.py
+%%DATADIR%%/tests-unit/assets_test/services/test_offline_drive_recovery.py
+%%DATADIR%%/tests-unit/assets_test/services/test_output_rescan.py
+%%DATADIR%%/tests-unit/assets_test/services/test_path_prefix_matcher.py
+%%DATADIR%%/tests-unit/assets_test/services/test_scan_walk_pause.py
+%%DATADIR%%/tests-unit/assets_test/services/test_snapshot_hash_import.py
+%%DATADIR%%/tests-unit/assets_test/services/test_upload_cross_device.py
+%%DATADIR%%/tests-unit/assets_test/services/test_upload_temp_cleanup.py
 %%DATADIR%%/tests-unit/assets_test/test_api_surface.py
 %%DATADIR%%/tests-unit/assets_test/test_assets_missing_sync.py
 %%DATADIR%%/tests-unit/assets_test/test_crud.py
@@ -1043,6 +1067,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/assets_test/test_temp_assets.py
 %%DATADIR%%/tests-unit/assets_test/test_upload_hashing_modes.py
 %%DATADIR%%/tests-unit/assets_test/test_uploads.py
+%%DATADIR%%/tests-unit/assets_test/test_startup_without_asset_dependencies.py
 %%DATADIR%%/tests-unit/comfy_api_nodes_test/audio_conversions_test.py
 %%DATADIR%%/tests-unit/comfy_api_nodes_test/comfy_cloud_test.py
 %%DATADIR%%/tests-unit/comfy_api_nodes_test/gemini_response_images_test.py
@@ -1054,6 +1079,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/comfy_api_test/video_accumulation_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_bit_depth_test.py
 %%DATADIR%%/tests-unit/comfy_api_test/video_types_test.py
+%%DATADIR%%/tests-unit/comfy_api_test/io_dynamic_group_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/__init__.py
 %%DATADIR%%/tests-unit/comfy_extras_test/canny_alpha_test.py
 %%DATADIR%%/tests-unit/comfy_extras_test/compositor_blend_fixture_gen.py
@@ -1081,12 +1107,13 @@ bin/comfyui
 %%DATADIR%%/tests-unit/comfy_extras_test/test_seedvr2_temporal_chunk.py
 %%DATADIR%%/tests-unit/comfy_extras_test/test_video_preview_nodes.py
 %%DATADIR%%/tests-unit/comfy_extras_test/text_overlay_alpha_test.py
+%%DATADIR%%/tests-unit/comfy_extras_test/nodes_bounding_boxes_test.py
+%%DATADIR%%/tests-unit/comfy_extras_test/upscale_model_alpha_test.py
 %%DATADIR%%/tests-unit/comfy_quant/test_mixed_precision.py
 %%DATADIR%%/tests-unit/comfy_test/folder_path_test.py
 %%DATADIR%%/tests-unit/comfy_test/gemma4_template_test.py
 %%DATADIR%%/tests-unit/comfy_test/image_invert_test.py
 %%DATADIR%%/tests-unit/comfy_test/model_detection_test.py
-%%DATADIR%%/tests-unit/comfy_test/seedvr_vae_forward_test.py
 %%DATADIR%%/tests-unit/comfy_test/storage_test.py
 %%DATADIR%%/tests-unit/comfy_test/system_memory_test.py
 %%DATADIR%%/tests-unit/comfy_test/test_minimax_h3_model.py
@@ -1097,6 +1124,9 @@ bin/comfyui
 %%DATADIR%%/tests-unit/comfy_test/test_seedvr2_vae_tiled.py
 %%DATADIR%%/tests-unit/comfy_test/test_sensenova.py
 %%DATADIR%%/tests-unit/comfy_test/test_vae_decode_tiled_nested.py
+%%DATADIR%%/tests-unit/comfy_test/model_management_test.py
+%%DATADIR%%/tests-unit/comfy_test/qwen_vl_image_channels_test.py
+%%DATADIR%%/tests-unit/comfy_test/test_minimax_h3_vae.py
 %%DATADIR%%/tests-unit/deploy_environment_test.py
 %%DATADIR%%/tests-unit/execution_test/loop_validation_test.py
 %%DATADIR%%/tests-unit/execution_test/preview_compiler_test.py
@@ -1108,6 +1138,7 @@ bin/comfyui
 %%DATADIR%%/tests-unit/execution_test/test_inmemory_assets.py
 %%DATADIR%%/tests-unit/execution_test/test_nested_loop_execution.py
 %%DATADIR%%/tests-unit/execution_test/validate_node_input_test.py
+%%DATADIR%%/tests-unit/execution_test/dynamic_group_test.py
 %%DATADIR%%/tests-unit/feature_flags_test.py
 %%DATADIR%%/tests-unit/folder_paths_test/__init__.py
 %%DATADIR%%/tests-unit/folder_paths_test/filter_by_content_types_test.py
@@ -1128,12 +1159,15 @@ bin/comfyui
 %%DATADIR%%/tests-unit/security_test/test_ghsa_779p_05_dangerous_content_types.py
 %%DATADIR%%/tests-unit/security_test/test_ghsa_779p_06_inline_svg_image_dest.py
 %%DATADIR%%/tests-unit/seeder_test/test_seeder.py
+%%DATADIR%%/tests-unit/seeder_test/test_insert_batches.py
 %%DATADIR%%/tests-unit/server/utils/file_operations_test.py
 %%DATADIR%%/tests-unit/server_test/test_cache_control.py
+%%DATADIR%%/tests-unit/server_test/test_offline_flag.py
 %%DATADIR%%/tests-unit/test_assets_event_log_static.py
 %%DATADIR%%/tests-unit/utils/extra_config_test.py
 %%DATADIR%%/tests-unit/utils/json_util_test.py
 %%DATADIR%%/tests-unit/websocket_feature_flags_test.py
+%%DATADIR%%/tests-unit/conftest.py
 %%DATADIR%%/tests/README.md
 %%DATADIR%%/tests/__init__.py
 %%DATADIR%%/tests/compare/conftest.py
