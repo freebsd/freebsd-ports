@@ -2,22 +2,23 @@
 -- Tests require aiomisc-pytest which is not available as a FreeBSD port
 -- This patch removes the aiomisc dependency and uses pytest.mark.timeout instead
 
---- tests/test_asyncio_adapter.py.orig
+--- tests/test_asyncio_adapter.py.orig	2026-10-11 17:34:52 UTC
 +++ tests/test_asyncio_adapter.py
-@@ -3,11 +3,10 @@
+@@ -3,12 +3,11 @@ from unittest.mock import Mock
  import os
  from unittest.mock import Mock
  
 -import aiomisc
  import pytest
+ from conftest import import_backend_or_skip
  
  
 -@aiomisc.timeout(5)
 +@pytest.mark.timeout(5)
  async def test_linux_uring_asyncio_forwards_context_kwargs():
-     uring_asyncio = pytest.importorskip("caio.linux_uring_asyncio")
+     uring_asyncio = import_backend_or_skip("caio.linux_uring_asyncio")
  
-@@ -24,7 +23,7 @@
+@@ -25,7 +24,7 @@ async def test_linux_uring_asyncio_forwards_context_kw
          assert context.deferred is True
  
  
@@ -26,7 +27,7 @@
  async def test_adapter(tmp_path, async_context):
      context = async_context
      with open(str(tmp_path / "temp.bin"), "wb+") as fp:  # noqa: ASYNC230 (brief sync setup, not the operation under test)
-@@ -55,7 +54,7 @@
+@@ -56,7 +55,7 @@ async def test_adapter(tmp_path, async_context):
          assert hashlib.md5(bytes(data)).hexdigest() == expected_hash
  
  
@@ -35,7 +36,7 @@
  async def test_bad_file_descritor(tmp_path, async_context):
      context = async_context
      with open(str(tmp_path / "temp.bin"), "wb+") as fp:  # noqa: ASYNC230 (brief sync setup, not the operation under test)
-@@ -80,7 +79,7 @@
+@@ -81,7 +80,7 @@ async def asyncio_exception_handler():
      event_loop.set_exception_handler(current_handler)
  
  
@@ -44,7 +45,7 @@
  async def test_operations_cancel_cleanly(
      tmp_path, async_context, asyncio_exception_handler
  ):
-@@ -106,7 +105,7 @@
+@@ -107,7 +106,7 @@ async def test_operations_cancel_cleanly(
              asyncio_exception_handler.assert_not_called()
  
  
@@ -53,7 +54,7 @@
  async def test_write_operations_cancel_cleanly(
      tmp_path, async_context, asyncio_exception_handler
  ):
-@@ -133,7 +132,7 @@
+@@ -134,7 +133,7 @@ async def test_write_operations_cancel_cleanly(
              asyncio_exception_handler.assert_not_called()
  
  
@@ -62,7 +63,7 @@
  async def test_cancel_before_first_step_runs(tmp_path, async_context, asyncio_exception_handler):
      """Cancelling right after the op's own first step (submit queued, still
      suspended at `await future`) - covers context.cancel() raising ValueError
-@@ -149,7 +148,7 @@
+@@ -161,7 +160,7 @@ async def test_cancel_before_first_step_runs(tmp_path,
          asyncio_exception_handler.assert_not_called()
  
  
@@ -71,7 +72,7 @@
  async def test_zero_byte_read_and_write(tmp_path, async_context):
      context = async_context
      with open(str(tmp_path / "temp.bin"), "wb+") as fp:  # noqa: ASYNC230 (brief sync setup, not the operation under test)
-@@ -159,7 +158,7 @@
+@@ -171,7 +170,7 @@ async def test_zero_byte_read_and_write(tmp_path, asyn
          assert await context.read(0, fd, 0) == b""
  
  
@@ -80,7 +81,7 @@
  async def test_partial_read_at_eof(tmp_path, async_context):
      """Requesting more bytes than the file actually has must return exactly
      what's there, not garbage/padding out to the requested size - this
-@@ -178,7 +177,7 @@
+@@ -190,7 +189,7 @@ async def test_partial_read_at_eof(tmp_path, async_con
          assert len(data) == len(payload)
  
  
@@ -89,7 +90,7 @@
  async def test_fsync_and_fdsync(tmp_path, async_context):
      context = async_context
      with open(str(tmp_path / "temp.bin"), "wb+") as fp:  # noqa: ASYNC230 (brief sync setup, not the operation under test)
-@@ -191,7 +190,7 @@
+@@ -203,7 +202,7 @@ async def test_fsync_and_fdsync(tmp_path, async_contex
          await context.fdsync(fd)
  
  
@@ -98,7 +99,7 @@
  async def test_large_transfer(tmp_path, async_context):
      context = async_context
      with open(str(tmp_path / "temp.bin"), "wb+") as fp:  # noqa: ASYNC230 (brief sync setup, not the operation under test)
-@@ -208,7 +207,7 @@
+@@ -220,7 +219,7 @@ async def test_large_transfer(tmp_path, async_context)
          assert hashlib.sha256(bytes(data)).hexdigest() == expected_hash
  
  
@@ -107,7 +108,7 @@
  async def test_write_extends_file_sparsely(tmp_path, async_context):
      context = async_context
      with open(str(tmp_path / "temp.bin"), "wb+") as fp:  # noqa: ASYNC230 (brief sync setup, not the operation under test)
-@@ -222,7 +221,7 @@
+@@ -234,7 +233,7 @@ async def test_write_extends_file_sparsely(tmp_path, a
          assert hole == b"\x00" * hole_size
  
  
@@ -116,7 +117,7 @@
  async def test_max_requests_backpressure(tmp_path, async_context_maker):
      """A tiny max_requests must still let far more concurrent operations
      complete correctly - the asyncio-level semaphore is responsible for
-@@ -250,7 +249,7 @@
+@@ -262,7 +261,7 @@ async def test_max_requests_backpressure(tmp_path, asy
              assert results == expected
  
  
