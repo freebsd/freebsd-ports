@@ -1,4 +1,4 @@
-TIMESTAMP = 1791630015
+TIMESTAMP = 1791710776
 SHA256 (rust/crates/accesskit-0.24.1.crate) = d3b7f7f85a7e5f68090000ed7622545829afd484d210358702ae4cb97dd0c320
 SIZE (rust/crates/accesskit-0.24.1.crate) = 36947
 SHA256 (rust/crates/accesskit_atspi_common-0.18.1.crate) = 1e8c61bee90b42a772d39d06a740207dc71a4e780004ace1db8d99fb1baaa954
@@ -1397,5 +1397,5 @@ SHA256 (rust/crates/zvariant_derive-5.15.0.crate) = 864155e69b4352db0c7f374917bf
 SIZE (rust/crates/zvariant_derive-5.15.0.crate) = 10697
 SHA256 (rust/crates/zvariant_utils-4.2.0.crate) = bad0294361a320b694a328460dc73add56c306150f5cb6bfafc44446120008a3
 SIZE (rust/crates/zvariant_utils-4.2.0.crate) = 25869
-SHA256 (storytold-photocraft-v0.6.0_GH0.tar.gz) = e78bd4bf02b632c4b2bf94f403cbd634e433bbd06124ee4f8af75c2286be700d
-SIZE (storytold-photocraft-v0.6.0_GH0.tar.gz) = 15845067
+SHA256 (storytold-photocraft-v0.7.0_GH0.tar.gz) = 420bc64e3548579b1b255aed33be055be1688c3427f429dc5f1c28daf8639a2c
+SIZE (storytold-photocraft-v0.7.0_GH0.tar.gz) = 16390935
