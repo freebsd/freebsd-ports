@@ -1,5 +1,6 @@
 PORTNAME=	ucl
 DISTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,8 +11,7 @@ WWW=		https://github.com/vstakhov/libucl/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/libucl-${PORTVERSION}/COPYING
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-	libucl.so:textproc/libucl
+LIB_DEPENDS=	libucl.so:textproc/libucl
 
 USES=		localbase python
 USE_GITHUB=	yes
