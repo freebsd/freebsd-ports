@@ -2,26 +2,38 @@ PORTNAME=	opencode
 DISTVERSION=	2.0.23
 CATEGORIES=	devel
 
-# Upstream ships no FreeBSD builds of OpenTUI's Zig core, fff's Rust cdylib or
-# the web UI's native Vite 8 bindings, so the port builds them from source (two
-# extra source trees plus a WASM fallback) and embeds everything into a single
-# `bun --compile` executable.  See files/setup-*-freebsd.py, files/*.patch and
-# files/webui-wasm-package.json.
+# Upstream ships no FreeBSD builds of OpenTUI's Zig core, fff's Rust cdylib, the
+# opencode-pty terminal daemon or the web UI's native Vite 8 bindings, so the
+# port builds them from source (extra source trees plus a WASM fallback) and
+# embeds everything into a single `bun --compile` executable.  See
+# files/setup-*-freebsd.py, files/*.patch and files/webui-wasm-package.json.
 #
 # OPENTUI_VERSION and FFF_VERSION must match the pinned @opentui/core and
 # @ff-labs/fff-bun releases (packages/cli/package.json, packages/core/package.json)
 # or the native FFI ABI breaks.
 OPENTUI_VERSION=	0.5.14
 FFF_VERSION=	0.10.5
+#
+# opencode-pty is the persistent terminal daemon the client spawns.  Its version
+# must match the pinned @opencode-ai/pty release and speak the same wire protocol
+# as the bundled client (packages/cli/package.json, packages/core/package.json),
+# and GHOSTTY_REVISION must match its ghostty-revision file, or the client
+# rejects the daemon as a protocol mismatch.
+OPENCODE_PTY_VERSION=	0.2.0
+GHOSTTY_REVISION=	ab0b9da9e88fcb4b0533a1854e84628f663930af
 
 MASTER_SITES=	https://github.com/anomalyco/opencode/archive/refs/tags/:opencode \
 		https://github.com/anomalyco/opentui/archive/refs/tags/:opentui \
 		https://github.com/dmtrKovalenko/fff/archive/refs/tags/:fff \
-		https://registry.npmjs.org/@ff-labs/fff-bun/-/:fffbun
+		https://registry.npmjs.org/@ff-labs/fff-bun/-/:fffbun \
+		https://github.com/anomalyco/opencode-pty/archive/refs/tags/:opencodepty \
+		https://github.com/ghostty-org/ghostty/archive/:ghostty
 DISTFILES=	v${DISTVERSION}${EXTRACT_SUFX}:opencode \
 		v${OPENTUI_VERSION}${EXTRACT_SUFX}:opentui \
 		v${FFF_VERSION}${EXTRACT_SUFX}:fff \
-		fff-bun-${FFF_VERSION}.tgz:fffbun
+		fff-bun-${FFF_VERSION}.tgz:fffbun \
+		v${OPENCODE_PTY_VERSION}${EXTRACT_SUFX}:opencodepty \
+		${GHOSTTY_REVISION}${EXTRACT_SUFX}:ghostty
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	samm@FreeBSD.org
@@ -58,6 +70,8 @@ RUN_DEPENDS=	rg:textproc/ripgrep
 WRKSRC=		${WRKDIR}/opencode-${DISTVERSION}
 OPENTUI_WRKSRC=	${WRKDIR}/opentui-${OPENTUI_VERSION}
 FFF_WRKSRC=	${WRKDIR}/fff-${FFF_VERSION}
+OPENCODE_PTY_WRKSRC=	${WRKDIR}/opencode-pty-${OPENCODE_PTY_VERSION}
+GHOSTTY_WRKSRC=		${WRKDIR}/ghostty-${GHOSTTY_REVISION}
 
 # Build only the fff C-ABI cdylib (not the nvim/python/mcp crates).
 CARGO_BUILD_ARGS=	--package fff-c
@@ -69,6 +83,8 @@ BUN_INSTALL_CACHE_DIR=	${WRKDIR}/bun-cache
 WEBUI_WASM_DIR=	${WRKDIR}/gen-webui
 WEBUI_WASM_CACHE=	${DISTDIR}/${DIST_SUBDIR}/opencode-webui-wasm-${DISTVERSION}.tar.gz
 BUN_CACHE_TARBALL=	${DISTDIR}/${DIST_SUBDIR}/opencode-bun-cache-${DISTVERSION}.tar.gz
+ZIG_PTY_CACHE_DIR=	${WRKDIR}/zig-pty-cache
+ZIG_PTY_CACHE=		${DISTDIR}/${DIST_SUBDIR}/opencode-pty-zig-cache-${DISTVERSION}.tar.gz
 
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -89,10 +105,12 @@ OPENTUI_ZIGDIR=	aarch64-freebsd
 
 OPENTUI_SO=		${OPENTUI_WRKSRC}/packages/native/lib/${OPENTUI_ZIGDIR}/libopentui.so
 OPENCODE_BIN=		${WRKSRC}/packages/cli/dist/cli-freebsd-${OPENTUI_ARCH}/bin/opencode
+# Built from source by this port and embedded into the executable (see do-build).
+OPENCODE_PTY_BIN=	${CARGO_TARGET_DIR}/release/opencode-pty
 
-# Build the offline caches at fetch time.  Both archives live in DISTDIR but
-# are deliberately not listed in DISTFILES, so `make checksum` does not try
-# to verify the generated files.
+# Build the offline caches at fetch time.  The generated archives live in
+# DISTDIR but are deliberately not listed in DISTFILES, so `make checksum` does
+# not try to verify the generated files.
 post-fetch:
 	@${ECHO_MSG} "===> Warming bun install cache"
 	@${RM} -rf ${WRKDIR}/gen && ${MKDIR} ${WRKDIR}/gen
@@ -111,14 +129,30 @@ post-fetch:
 		${SETENV} BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR} ${BUN} install && \
 		${TAR} czf ${WEBUI_WASM_CACHE} -C ${WEBUI_WASM_DIR} node_modules ; \
 	fi
+	@if [ ! -f ${ZIG_PTY_CACHE} ]; then \
+		${ECHO_MSG} "===> Warming the Ghostty Zig dependency cache"; \
+		${RM} -rf ${WRKDIR}/gen-ghostty && ${MKDIR} ${WRKDIR}/gen-ghostty && \
+		${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${GHOSTTY_REVISION}${EXTRACT_SUFX} \
+			-C ${WRKDIR}/gen-ghostty && \
+		cd ${WRKDIR}/gen-ghostty/ghostty-${GHOSTTY_REVISION} && \
+		${SETENV} ZIG_GLOBAL_CACHE_DIR=${ZIG_PTY_CACHE_DIR} \
+			${ZIG} build --fetch=all && \
+		${TAR} czf ${ZIG_PTY_CACHE} -C ${ZIG_PTY_CACHE_DIR} . ; \
+	fi
 
 post-extract:
 	@${MKDIR} ${BUN_INSTALL_CACHE_DIR}
 	@${TAR} xf ${BUN_CACHE_TARBALL} -C ${BUN_INSTALL_CACHE_DIR}
+	@${MKDIR} ${ZIG_PTY_CACHE_DIR}
+	@${TAR} xf ${ZIG_PTY_CACHE} -C ${ZIG_PTY_CACHE_DIR}
 
-# OpenTUI is an extra source tree, so its patch is applied by hand.
+# OpenTUI, opencode-pty and Ghostty are extra source trees, so their patches are
+# applied by hand.
 post-patch:
 	@${PATCH} -d ${OPENTUI_WRKSRC} -p0 --batch < ${FILESDIR}/opentui-build.zig.patch
+	@${PATCH} -d ${OPENTUI_WRKSRC} -p0 --batch < ${FILESDIR}/opentui-ghostty-vt-freebsd.patch
+	@${PATCH} -d ${OPENCODE_PTY_WRKSRC} -p1 --batch < ${FILESDIR}/opencode-pty-build.rs.patch
+	@${PATCH} -d ${GHOSTTY_WRKSRC} -p1 --batch < ${FILESDIR}/ghostty-zig-0.16-std.patch
 
 do-build:
 	@${ECHO_MSG} "===> Installing OpenCode dependencies (offline)"
@@ -155,11 +189,20 @@ do-build:
 	@${ECHO_MSG} "===> Wiring fff for FreeBSD"
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${FILESDIR}/setup-fff-freebsd.py \
 		"${WRKSRC}" "${FFF_SO}" "${FFF_VERSION}" "${OPENTUI_ARCH}"
+	@${ECHO_MSG} "===> Building the opencode-pty terminal daemon"
+	@cd ${OPENCODE_PTY_WRKSRC} && ${SETENV} ${CARGO_ENV} \
+		HOME=${WRKDIR} \
+		ZIG_GLOBAL_CACHE_DIR=${ZIG_PTY_CACHE_DIR} \
+		GHOSTTY_SOURCE_DIR=${GHOSTTY_WRKSRC} \
+		OPENCODE_ZIG_CPU=baseline \
+		${CARGO} build --release --locked
+	@test -x ${OPENCODE_PTY_BIN} || (${ECHO_MSG} "Missing ${OPENCODE_PTY_BIN}"; ${FALSE})
 	@${ECHO_MSG} "===> Building the web UI and compiling the OpenCode binary"
 	@cd ${WRKSRC}/packages/cli && ${SETENV} \
 		HOME=${WRKDIR} \
 		OPENCODE_VERSION=${DISTVERSION} \
 		BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR} \
+		OPENCODE_PTY_BIN=${OPENCODE_PTY_BIN} \
 		${BUN} run script/build.ts \
 			--target=opencode-freebsd-${OPENTUI_ARCH} \
 			--skip-install \
@@ -178,6 +221,11 @@ do-test:
 	@${ECHO_MSG} "==> Checking the fff native library is embedded..."
 	@if ! ${GREP} -aq "crates/fff-c/src" ${STAGEDIR}${PREFIX}/bin/opencode; then \
 		${ECHO_MSG} "ERROR: the fff native library is not embedded in the binary"; \
+		${FALSE}; \
+	fi
+	@${ECHO_MSG} "==> Checking the opencode-pty terminal daemon is embedded..."
+	@if ! ${GREP} -aq "libghostty" ${STAGEDIR}${PREFIX}/bin/opencode; then \
+		${ECHO_MSG} "ERROR: the opencode-pty terminal daemon is not embedded in the binary"; \
 		${FALSE}; \
 	fi
 

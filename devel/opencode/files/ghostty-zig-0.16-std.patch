@@ -1,0 +1,28 @@
+Adapt the pinned Ghostty source to the FreeBSD Zig 0.16 release.
+
+std.mem.trimRight()/trimLeft() were renamed to trimEnd()/trimStart() before the
+Zig 0.16.0 release, but this Ghostty revision still uses the old names, so the
+Ghostty VT build fails on FreeBSD without this fix.
+
+--- a/src/build/GhosttyI18n.zig
++++ b/src/build/GhosttyI18n.zig
+@@ -26,7 +26,7 @@
+         // so we need to remove it from `locale` to have a correct destination string.
+         // (/usr/local/share/locale/en_AU/LC_MESSAGES)
+         const target_locale = comptime if (builtin.target.os.tag == .freebsd)
+-            std.mem.trimRight(u8, locale, ".UTF-8")
++            std.mem.trimEnd(u8, locale, ".UTF-8")
+         else
+             locale;
+ 
+--- a/src/os/systemd.zig
++++ b/src/os/systemd.zig
+@@ -55,7 +55,7 @@
+ 
+             break :linux std.mem.eql(
+                 u8,
+-                std.mem.trimRight(u8, comm_data, "\n"),
++                std.mem.trimEnd(u8, comm_data, "\n"),
+                 "systemd",
+             );
+         },
