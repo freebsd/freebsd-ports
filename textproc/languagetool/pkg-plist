@@ -1006,6 +1006,7 @@ bin/languagetool-gui
 %%DATADIR%%/org/languagetool/rules/ca/CatalanNumberInWordFilter.class
 %%DATADIR%%/org/languagetool/rules/ca/CatalanNumberSpellerFilter.class
 %%DATADIR%%/org/languagetool/rules/ca/CatalanPhraseRepeatRule.class
+%%DATADIR%%/org/languagetool/rules/ca/CatalanPunctuationMarkAtParagraphEnd.class
 %%DATADIR%%/org/languagetool/rules/ca/CatalanRemoteRewriteFilter.class
 %%DATADIR%%/org/languagetool/rules/ca/CatalanRemoteRewriteHelper.class
 %%DATADIR%%/org/languagetool/rules/ca/CatalanRemoteRule.class
