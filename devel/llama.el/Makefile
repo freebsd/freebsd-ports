@@ -1,6 +1,6 @@
 PORTNAME=	llama.el
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.5
+DISTVERSION=	1.0.6
 CATEGORIES=	devel elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/tarsius/llama
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	compat.el>=31.0:misc/compat.el
+RUN_DEPENDS=	compat.el>=31.1:misc/compat.el
 
 USES=		emacs:build gmake
 USE_GITHUB=	yes
