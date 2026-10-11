@@ -13,6 +13,9 @@ LICENSE=	GPLv3
 
 CONFLICTS=	moodle45-4.5.[0-9]* moodle51-5.1.[0-9]* moodle52-5.2.[0-9]* moodle53-5.3
 
+DEPRECATED=	Upstream EOL
+EXPIRATION_DATE=2026-10-31
+
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom exif fileinfo filter gd \
 		iconv intl mbstring opcache \
