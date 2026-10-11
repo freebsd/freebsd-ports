@@ -1,5 +1,5 @@
 PORTNAME=	yoda
-DISTVERSION=	2.1.3
+DISTVERSION=	2.1.4
 CATEGORIES=	science
 MASTER_SITES=	https://yoda.hepforge.org/downloads/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -9,7 +9,6 @@ COMMENT=	Particle physics package with classes for data analysis, histogramming
 WWW=		https://yoda.hepforge.org/
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 TEST_DEPENDS=	bash:shells/bash \
@@ -54,5 +53,16 @@ post-install-PYTHON-on:
 
 post-install-PYTHON-off:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/${PORTNAME:tu}
+
+# ============================================================================
+# Testsuite summary for YODA 2.1.4
+# ============================================================================
+# TOTAL: 77
+# PASS:  77
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
 
 .include <bsd.port.mk>
