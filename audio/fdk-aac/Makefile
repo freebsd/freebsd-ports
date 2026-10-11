@@ -1,5 +1,5 @@
 PORTNAME=	fdk-aac
-DISTVERSION=	2.0.3
+DISTVERSION=	3.0.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 
@@ -15,6 +15,6 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 USES=		cmake
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	VER=${PORTVERSION}
+PLIST_SUB=	VER=2.0.4
 
 .include <bsd.port.mk>
