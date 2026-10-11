@@ -1,6 +1,6 @@
 PORTNAME=	polars-runtime
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	1.44.2
+DISTVERSION=	2.0.0
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -117,7 +117,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cc-1.4.3 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.2 \
-		chacha20-0.10.1 \
+		chacha20-0.10.2 \
 		chrono-0.4.45 \
 		chrono-tz-0.10.4 \
 		clipboard-win-5.4.1 \
@@ -210,7 +210,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		halfbrown-0.4.0 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
-		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		hmac-0.12.1 \
@@ -302,6 +301,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-io-kit-0.3.2 \
 		objc2-io-surface-0.3.2 \
 		object-0.39.1 \
+		object_store-0.14.2 \
 		once_cell-1.21.4 \
 		openssl-probe-0.2.1 \
 		outref-0.5.2 \
@@ -377,7 +377,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc_version-0.4.1 \
 		rustflags-0.1.7 \
 		rustix-1.1.4 \
-		rustls-0.23.43 \
+		rustls-0.23.45 \
 		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.15.1 \
 		rustls-platform-verifier-0.7.0 \
@@ -575,7 +575,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
-		object_store@git+https://github.com/apache/arrow-rs-object-store?rev=b07471e2bc341278f86e30cf80a850d56cbe2c67\#b07471e2bc341278f86e30cf80a850d56cbe2c67 \
+		hashbrown@git+https://github.com/pola-rs/hashbrown?rev=d76a6f81abd8f388676aff15068236a8d21c7e1a\#d76a6f81abd8f388676aff15068236a8d21c7e1a \
 		tikv-jemalloc-sys@git+https://github.com/pola-rs/jemallocator?rev=0d683dfb157097e2075d5e0eaf25f71f514a7552\#0d683dfb157097e2075d5e0eaf25f71f514a7552 \
 		color-backtrace@git+https://github.com/orlp/color-backtrace?rev=20f5eea183563bb4cfac9a4d65901d4a1002cde2\#20f5eea183563bb4cfac9a4d65901d4a1002cde2
 CARGO_TARGET_DIR=	${WRKSRC}/target
