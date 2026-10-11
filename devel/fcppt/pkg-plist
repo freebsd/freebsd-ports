@@ -375,6 +375,7 @@ include/fcppt/container/tree/to_root.hpp
 include/fcppt/container/uncons.hpp
 include/fcppt/container/uncons_result.hpp
 include/fcppt/container/uncons_result_fwd.hpp
+include/fcppt/container/uncons_string_view.hpp
 include/fcppt/copy.hpp
 include/fcppt/cyclic_iterator.hpp
 include/fcppt/cyclic_iterator_decl.hpp
@@ -430,6 +431,7 @@ include/fcppt/either/failure_opt.hpp
 include/fcppt/either/failure_reference_type.hpp
 include/fcppt/either/failure_type.hpp
 include/fcppt/either/first_success.hpp
+include/fcppt/either/from.hpp
 include/fcppt/either/from_optional.hpp
 include/fcppt/either/is_object.hpp
 include/fcppt/either/is_object_v.hpp
@@ -1080,6 +1082,7 @@ include/fcppt/mpl/set/union.hpp
 include/fcppt/mpl/set/unique.hpp
 include/fcppt/mpl/size_type.hpp
 include/fcppt/mpl/size_type_concept.hpp
+include/fcppt/mpl/type.hpp
 include/fcppt/narrow.hpp
 include/fcppt/narrow_locale.hpp
 include/fcppt/no_init.hpp
@@ -1127,6 +1130,7 @@ include/fcppt/optional/output.hpp
 include/fcppt/optional/reference.hpp
 include/fcppt/optional/reference_fwd.hpp
 include/fcppt/optional/reference_type.hpp
+include/fcppt/optional/return_if.hpp
 include/fcppt/optional/sequence.hpp
 include/fcppt/optional/std_hash.hpp
 include/fcppt/optional/to_container.hpp
@@ -1177,10 +1181,11 @@ include/fcppt/options/detail/combine_errors_sum.hpp
 include/fcppt/options/detail/concrete_decl.hpp
 include/fcppt/options/detail/concrete_fwd.hpp
 include/fcppt/options/detail/concrete_impl.hpp
-include/fcppt/options/detail/flag_is_short.hpp
 include/fcppt/options/detail/help_label.hpp
 include/fcppt/options/detail/left_tag.hpp
 include/fcppt/options/detail/missing_error_to_error.hpp
+include/fcppt/options/detail/option_name_equal.hpp
+include/fcppt/options/detail/option_name_hash.hpp
 include/fcppt/options/detail/parse_to_empty.hpp
 include/fcppt/options/detail/pop_arg.hpp
 include/fcppt/options/detail/right_tag.hpp
@@ -1231,6 +1236,8 @@ include/fcppt/options/invalid_command_error.hpp
 include/fcppt/options/invalid_command_error_fwd.hpp
 include/fcppt/options/invalid_name.hpp
 include/fcppt/options/invalid_name_fwd.hpp
+include/fcppt/options/is_short.hpp
+include/fcppt/options/is_short_fwd.hpp
 include/fcppt/options/left.hpp
 include/fcppt/options/left_fwd.hpp
 include/fcppt/options/leftover_error.hpp
@@ -1282,7 +1289,6 @@ include/fcppt/options/option_decl.hpp
 include/fcppt/options/option_fwd.hpp
 include/fcppt/options/option_impl.hpp
 include/fcppt/options/option_name.hpp
-include/fcppt/options/option_name_comparison.hpp
 include/fcppt/options/option_name_fwd.hpp
 include/fcppt/options/option_name_set.hpp
 include/fcppt/options/option_usage.hpp
@@ -1706,7 +1712,6 @@ include/fcppt/parse/string_decl.hpp
 include/fcppt/parse/string_fwd.hpp
 include/fcppt/parse/string_impl.hpp
 include/fcppt/parse/tag.hpp
-include/fcppt/parse/type_name_tag_fwd.hpp
 include/fcppt/parse/typed_error_decl.hpp
 include/fcppt/parse/typed_error_fwd.hpp
 include/fcppt/parse/typed_error_impl.hpp
@@ -1950,6 +1955,7 @@ include/fcppt/static_pointer_cast.hpp
 include/fcppt/string.hpp
 include/fcppt/string_conv_locale.hpp
 include/fcppt/string_literal.hpp
+include/fcppt/string_to_wstring_conversion_failed.hpp
 include/fcppt/string_view.hpp
 include/fcppt/strong_typedef.hpp
 include/fcppt/strong_typedef_apply.hpp
@@ -1979,14 +1985,11 @@ include/fcppt/symbol/export_function_instantiation.hpp
 include/fcppt/symbol/import.h
 include/fcppt/symbol/import.hpp
 include/fcppt/system.hpp
+include/fcppt/system_conversion_failed.hpp
 include/fcppt/tag.hpp
 include/fcppt/tag_fwd.hpp
 include/fcppt/tag_type.hpp
 include/fcppt/text.hpp
-include/fcppt/time/gmtime.hpp
-include/fcppt/time/localtime.hpp
-include/fcppt/time/output_tm.hpp
-include/fcppt/time/std_time.hpp
 include/fcppt/to_std_string.hpp
 include/fcppt/to_std_string_locale.hpp
 include/fcppt/to_std_wstring.hpp
@@ -2120,13 +2123,13 @@ lib/cmake/fcppt/fcppt-config.cmake
 lib/cmake/fcppt/fcpptTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fcppt/fcpptTargets.cmake
 lib/libfcppt_core.so
-lib/libfcppt_core.so.5.1
+lib/libfcppt_core.so.5.2
 lib/libfcppt_filesystem.so
-lib/libfcppt_filesystem.so.5.1
+lib/libfcppt_filesystem.so.5.2
 lib/libfcppt_log.so
-lib/libfcppt_log.so.5.1
+lib/libfcppt_log.so.5.2
 lib/libfcppt_options.so
-lib/libfcppt_options.so.5.1
+lib/libfcppt_options.so.5.2
 %%DATADIR%%/cmake/FcpptCMakeUtils.cmake
 %%DATADIR%%/cmake/FcpptCMakeUtilsClangTidy.cmake
 %%DATADIR%%/cmake/FcpptCMakeUtilsFunctions.cmake
