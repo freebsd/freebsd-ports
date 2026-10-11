@@ -1,6 +1,6 @@
 PORTNAME=	ag2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.4
+DISTVERSION=	1.1.2
 CATEGORIES=	misc python # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,12 +17,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>0:devel/py-uv-build@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=4.0.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fast-depends>=3.0.8:devel/py-fast-depends@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.6.1:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0.2:devel/py-pyyaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anthropic>0:misc/py-anthropic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dirty-equals>=0.11:devel/py-dirty-equals@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}freezegun>=1.5.5:devel/py-freezegun@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx2>=2.9.1:www/py-httpx2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=1.4.0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>0:www/py-python-dotenv@${PY_FLAVOR} \
@@ -56,10 +55,11 @@ pre-test:
 	@${MKDIR} ${WRKDIR}/.bin
 	@${LN} -sf ${PYTHON_CMD} ${WRKDIR}/.bin/python
 
-# tests as of 1.0.4:
-# Results (96.95s (0:01:36)):
-#     3336 passed
-#        2 xfailed
-#      359 skipped
+# tests as of 1.1.2:
+# Results (62.67s):
+#      11915 passed
+#        440 skipped
+#          2 xfailed
+#         23 warnings
 
 .include <bsd.port.mk>
