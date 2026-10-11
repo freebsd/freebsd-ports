@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.7.2
+DISTVERSION=	5.7.4
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -56,7 +56,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytes-1.12.1 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.5.1 \
+		cc-1.6.0 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.2 \
@@ -161,7 +161,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		indenter-0.3.4 \
 		indexmap-2.14.2 \
 		indoc-2.0.7 \
-		insta-1.48.0 \
+		insta-1.49.0 \
 		instability-0.3.14 \
 		interprocess-2.4.4 \
 		is_terminal_polyfill-1.70.2 \
@@ -175,8 +175,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		kanal-0.1.1 \
 		kasuari-0.4.12 \
 		lab-0.11.0 \
-		lazy_static-1.5.0 \
-		libc-0.2.189 \
+		lazy_static-1.5.1 \
+		libc-0.2.190 \
 		libm-0.2.16 \
 		libmimalloc-sys-0.1.44 \
 		line-clipping-0.3.8 \
@@ -186,7 +186,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lock_api-0.4.14 \
 		log-0.4.34 \
 		lru-0.18.5 \
-		mac_address-1.1.8 \
+		mac_address-1.2.0 \
 		memchr-2.8.3 \
 		memmem-0.1.1 \
 		memoffset-0.9.1 \
@@ -194,10 +194,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		miniz_oxide-0.9.1 \
-		mio-1.2.3 \
+		mio-1.2.4 \
 		moxcms-0.8.1 \
 		nix-0.28.0 \
 		nix-0.29.0 \
+		nix-0.30.1 \
 		nix-0.31.3 \
 		nom-7.1.3 \
 		nom-8.0.0 \
@@ -328,7 +329,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		time-core-0.1.9 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.13.3 \
-		tokio-1.53.1 \
+		tokio-1.53.2 \
 		tokio-macros-2.7.2 \
 		tokio-util-0.7.19 \
 		tui-term-0.3.4 \
@@ -345,7 +346,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-xid-0.2.6 \
 		unty-next-0.1.2 \
 		utf8parse-0.2.2 \
-		uuid-1.26.1 \
+		uuid-1.27.0 \
 		version_check-0.9.5 \
 		vsimd-0.8.0 \
 		vt100-0.16.2 \
