@@ -1,3 +1,71 @@
+  <vuln vid="0f5aaca7-c4d5-11f1-96b4-74563cf85f9d">
+    <topic>py-WsgiDAV -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py311-WsgiDAV</name>
+	<name>py312-WsgiDAV</name>
+	<name>py313-WsgiDAV</name>
+	<name>py313t-WsgiDAV</name>
+	<name>py314-WsgiDAV</name>
+	<name>py314t-WsgiDAV</name>
+	<name>py315-WsgiDAV</name>
+	<range><lt>4.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://www.cve.org/CVERecord?id=CVE-2026-48099">
+	  <p>WsgiDAV is a generic and extendable WebDAV server based on
+	    WSGI. WsgiDAV 4.3.3 and prior can allow a WebDAV request path
+	    containing an encoded parent-directory segment to escape the
+	    configured filesystem share root in a specific path layout. The
+	    issue is fixed with version 4.3.4.</p>
+	</blockquote>
+	<blockquote cite="https://www.cve.org/CVERecord?id=CVE-2026-55509">
+	  <p>WsgiDAV is a generic and extendable WebDAV server based on
+	    WSGI. Prior to 4.3.5, the sample MySQLBrowserProvider in
+	    wsgidav/samples/mysql_dav_provider.py concatenates the record key
+	    parsed from a request URL directly into SQL WHERE clauses. The
+	    affected _exists_record_by_primary_key, _get_field_by_primary_key,
+	    and _get_record_by_primary_key methods are part of a shipped
+	    example provider that is not enabled by default. An attacker who
+	    can access a share explicitly configured with this non-default
+	    provider can inject SQL through a normal GET request; anonymously
+	    exposed read shares permit a status-code oracle and extraction of
+	    arbitrary data reachable by the configured MySQL account. This
+	    issue is fixed in version 4.3.5.</p>
+	</blockquote>
+	<p>The WsgiDAV project reports:</p>
+	<blockquote cite="https://github.com/mar10/wsgidav/security/advisories/GHSA-wm65-64rq-rh8r">
+	  <p>When follow_symlinks is false (the default), WsgiDAV is expected
+	    to prevent serving content through symbolic links - a request for
+	    a symlink returns 403 Forbidden: Symlink support is disabled.
+	    However, that guard inspects only the leaf component of the
+	    resolved path, and the root-containment check is purely lexical
+	    (os.path.abspath, which does not resolve symlinks).</p>
+	  <p>As a result, a symlink used as an intermediate directory in the
+	    request path is neither blocked by the guard nor caught by the
+	    containment check, and the request escapes the configured share
+	    root. This allows reading, writing, and deleting files outside the
+	    root.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-48099</cvename>
+      <cvename>CVE-2026-55509</cvename>
+      <cvename>CVE-2026-55560</cvename>
+      <url>https://github.com/mar10/wsgidav/security/advisories/GHSA-wxq4-cc2q-338q</url>
+      <url>https://github.com/mar10/wsgidav/security/advisories/GHSA-p6gw-4frg-j7jw</url>
+      <url>https://github.com/mar10/wsgidav/security/advisories/GHSA-wm65-64rq-rh8r</url>
+    </references>
+    <dates>
+      <discovery>2026-05-27</discovery>
+      <entry>2026-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec9017a0-c4fe-11f1-bbb3-901b0e9408dc">
     <topic>ejabberd -- Multiple security vulnerabilities</topic>
     <affects>
