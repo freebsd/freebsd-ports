@@ -1,6 +1,6 @@
 PORTNAME=	torchvision
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.0
+DISTVERSION=	0.29.1
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -71,6 +71,6 @@ post-install: # strip binaries
 		${STAGEDIR}${PYTHON_SITELIBDIR}/torchvision/_C_stable.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/torchvision/image_stable.so
 
-# tests as of 0.29.0: 522 passed, 501 skipped, 14 deselected, 255 warnings in 275.53s
+# tests as of 0.29.1: 522 passed, 501 skipped, 14 deselected, 255 warnings in 272.47s (0:04:32)
 
 .include <bsd.port.post.mk>
