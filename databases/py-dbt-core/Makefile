@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agate>=1.7<2:textproc/py-agate@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9<0.5:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathspec>=0.9:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0.6:devel/py-isodate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.3<0.6:databases/py-sqlparse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.3:databases/py-sqlparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbt-extractor>=0.5:devel/py-dbt-extractor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}minimal-snowplow-tracker>=0.0.2<0.1:devel/py-minimal-snowplow-tracker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbt-semantic-interfaces>=0.4.2:databases/py-dbt-semantic-interfaces@${PY_FLAVOR} \
