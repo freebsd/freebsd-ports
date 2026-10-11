@@ -1,0 +1,15 @@
+Build FreeBSD as a Linux variant in GN (series 0003): ship
+dart2bytecode in the SDK as on Linux and macOS.
+FreeBSD-specific, not submitted upstream yet.
+--- sdk/BUILD.gn.orig	2026-09-29 08:00:52 UTC
++++ sdk/BUILD.gn
+@@ -177,7 +177,8 @@ if ((dart_target_arch == "x64" || dart_target_arch == 
+ # dart2bytecode is an AOT snapshot, which is not supported on the ia32
+ # architecture. It is only included as needed on a subset of OS targets.
+ if ((dart_target_arch == "x64" || dart_target_arch == "arm64") &&
+-    (dart_dynamic_modules || target_os == "linux" || target_os == "mac")) {
++    (dart_dynamic_modules || target_os == "linux" || target_os == "freebsd" ||
++     target_os == "mac")) {
+   _sdk_snapshots += [ [
+         "dart2bytecode",
+         "../utils/dart2bytecode:dart2bytecode",

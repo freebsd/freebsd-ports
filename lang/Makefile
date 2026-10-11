@@ -50,6 +50,7 @@
     SUBDIR += crystal
     SUBDIR += cython
     SUBDIR += cython0
+    SUBDIR += dart
     SUBDIR += dhall
     SUBDIR += dlang-tools
     SUBDIR += dotnet

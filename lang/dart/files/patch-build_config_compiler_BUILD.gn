@@ -1,0 +1,33 @@
+Build FreeBSD as a Linux variant in GN (series 0003): pass a FreeBSD
+--target triple, and don't depend on the CIPD clang's toolchain stamp,
+since FreeBSD uses the base system clang.
+FreeBSD-specific, not submitted upstream yet.
+--- build/config/compiler/BUILD.gn.orig	2026-09-29 08:00:52 UTC
++++ build/config/compiler/BUILD.gn
+@@ -315,7 +315,15 @@ config("compiler") {
+   # ------------------------------------
+   if (is_linux) {
+     if (is_clang) {
+-      if (dart_sysroot == "alpine") {
++      if (current_os == "freebsd") {
++        if (current_cpu == "arm64") {
++          cflags += [ "--target=aarch64-unknown-freebsd" ]
++          ldflags += [ "--target=aarch64-unknown-freebsd" ]
++        } else if (current_cpu == "x64") {
++          cflags += [ "--target=x86_64-unknown-freebsd" ]
++          ldflags += [ "--target=x86_64-unknown-freebsd" ]
++        }
++      } else if (dart_sysroot == "alpine") {
+         # alpine linux target names can be found at:
+         # https://pkgs.alpinelinux.org/contents?file=stdc%2B%2B.h&name=libstdc%2B%2B-dev
+         if (current_cpu == "arm") {
+@@ -430,7 +438,8 @@ config("compiler") {
+   # changes since artifacts from an older version of the toolchain may or may
+   # not be compatible with newer ones. To achieve this, we insert a synthetic
+   # define into the compile line.
+-  if (is_clang && (is_linux || is_mac || is_ios) && dart_sysroot != "alpine") {
++  if (is_clang && (is_linux || is_mac || is_ios) && dart_sysroot != "alpine" &&
++      current_os != "freebsd") {
+     if (is_linux && host_cpu == "arm64") {
+       toolchain_stamp_file =
+           "//buildtools/linux-arm64/clang/.versions/clang.cipd_version"

@@ -1,0 +1,15 @@
+Build FreeBSD as a Linux variant in GN (series 0003): use the
+shared-library config for current_os "freebsd" too.
+FreeBSD-specific, not submitted upstream yet.
+--- build/config/BUILD.gn.orig	2026-09-29 08:00:52 UTC
++++ build/config/BUILD.gn
+@@ -21,7 +21,8 @@ config("shared_library_config") {
+ 
+ config("shared_library_config") {
+   if (current_os == "android" || current_os == "fuchsia" ||
+-      current_os == "linux" || current_os == "mac") {
++      current_os == "linux" || current_os == "freebsd" ||
++      current_os == "mac") {
+     cflags = [ "-fPIC" ]
+   }
+ }
