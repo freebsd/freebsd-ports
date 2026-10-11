@@ -1,5 +1,5 @@
 PORTNAME=	openroad
-DISTVERSION=	26Q3
+DISTVERSION=	26Q4
 PORTEPOCH=	1
 CATEGORIES=	cad
 
@@ -44,7 +44,6 @@ LIB_DEPENDS=	libabsl_flags_parse.so:devel/abseil \
 		libzstd.so:archivers/zstd
 LIB_DEPENDS+=	libgtest.so:devel/googletest # because third-party/abc looks for it
 LIB_DEPENDS+=	libicudata.so:devel/icu
-
 TEST_DEPENDS=	${LOCALBASE}/lib/tcllib/json/json.tcl:devel/tcllib
 
 USES=		bison cmake compiler:c++20-lang eigen:3 gl localbase:ldflags \
@@ -54,7 +53,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	The-OpenROAD-Project
 GH_PROJECT=	OpenROAD
-GH_TUPLE=	The-OpenROAD-Project:OpenSTA:8572175ac4:opensta/src/sta \
+GH_TUPLE=	The-OpenROAD-Project:OpenSTA:e983e15b2c:opensta/src/sta \
 		The-OpenROAD-Project:abc:d527cfab4a:abc/third-party/abc \
 		povik:sv-elab:82effc8d95:svelab/third-party/slang-elab \
 		fmtlib:fmt:553ec11:fmt/third-party/slang-elab/third_party/fmt \
