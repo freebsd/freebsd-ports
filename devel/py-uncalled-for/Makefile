@@ -1,5 +1,5 @@
 PORTNAME=	uncalled-for
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +23,11 @@ USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload -p asyncio -p pytest_cov -p randomly -p timeout \
+		-W default::pytest.PytestConfigWarning
 
 NO_ARCH=	yes
 
-# tests as of 0.4.0: 121 passed in 0.81s
+# tests as of 0.4.1: 121 passed in 0.19s
 
 .include <bsd.port.mk>
