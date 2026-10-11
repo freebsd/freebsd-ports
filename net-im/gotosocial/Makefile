@@ -21,7 +21,7 @@ LICENSE_FILE_OFL11=		${WRKSRC}/OFL11
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
 ONLY_FOR_ARCHS_REASON=	https://gitlab.com/cznic/libc/-/issues/15
 
-USES=		go:modules
+USES=		go:1.26,modules
 USE_RC_SUBR=	${PORTNAME}
 
 GO_TARGET=	./cmd/gotosocial
