@@ -1,5 +1,5 @@
 PORTNAME=	langchain-openai
-DISTVERSION=	1.6.6
+DISTVERSION=	1.7.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2024.6.2:security/py-certifi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.2:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.8:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=2.45.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>=0.7.0:textproc/py-tiktoken@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=1.2.2:devel/py-freezegun@${PY_FLAVOR} \
@@ -41,6 +41,6 @@ NO_ARCH=	yes
 # Integration tests need an OpenAI API key and network access.
 TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests
 
-# tests as of 1.6.6: 664 passed, 1 skipped, 5 xpassed, 9 warnings in 7.08s
+# tests as of 1.7.0: 776 passed, 1 skipped, 5 xpassed, 10 warnings
 
 .include <bsd.port.mk>
