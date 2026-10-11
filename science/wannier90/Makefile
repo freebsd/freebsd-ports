@@ -1,6 +1,6 @@
 PORTNAME=	wannier90
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.2
+DISTVERSION=	4.0.3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,11 +19,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	wannier-developers
 
-SHEBANG_FILES=	test-suite/run_tests test-suite/clean_tests
 SHEBANG_GLOB=	*.py
 
 CMAKE_OFF=		WANNIER90_TEST
 CMAKE_TESTING_ON=	WANNIER90_TEST
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=		WITH_C
 OPTIONS_DEFAULT=	WITH_C
@@ -50,6 +51,6 @@ OPENMPI_BUILD_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_RUN_DEPENDS=	openmpi>0:net/openmpi
 OPENMPI_BROKEN=		https://github.com/wannier-developers/wannier90/issues/662
 
-# tests as of 4.0.2: 100% tests passed, 0 tests failed out of 95
+# tests as of 4.0.3: 100% tests passed out of 102
 
 .include <bsd.port.mk>
