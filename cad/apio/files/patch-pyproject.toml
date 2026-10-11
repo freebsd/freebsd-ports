@@ -2,7 +2,7 @@
 -- The removed dependencies (blackiceprog, tinyprog, etc.) are not yet in the FreeBSD ports tree.
 -- apio will still work for other boards.
 
---- pyproject.toml.orig	2026-05-27 05:22:31 UTC
+--- pyproject.toml.orig	2026-09-17 03:09:48 UTC
 +++ pyproject.toml
 @@ -2,7 +2,7 @@
  # Package version is set in apio/__init.py
@@ -13,7 +13,7 @@
  build-backend = "flit_core.buildapi"
  
  [tool.flit.metadata.urls]
-@@ -34,25 +34,19 @@
+@@ -37,26 +37,26 @@ requires = [
  ]
  requires-python = ">=3.11"
  requires = [
@@ -35,20 +35,28 @@
 -    'protobuf==6.33.0',
 -    'rich==14.0.0',
 -    'vcdvcd==2.6.0',
--    'invoke==2.2.1'
-+    'click>=0',
-+    'colorama>=0',
-+    'configobj>=0',
-+    'debugpy>=0',
-+    'packaging>=0',
-+    'pyserial>=0',
-+    'requests>=0',
-+    'scons>=0',
-+    'semantic_version>=0',
-+    'wheel>=0',
-+    'protobuf>=0',
-+    'rich>=0',
-+    'invoke>=0'
+-    'invoke==2.2.1',
+-    'json5==0.15.0',
++    'click>=8.2.1',
++    'colorama>=0.4.6',
++    'configobj>=5.0.9',
++    'debugpy>=1.8.19',
++    'packaging>=25.0',
++    'pyserial>=3.5',
++    'requests>=2.33.1',
++    'scons>=4.8.1',
++    'semantic_version>=2.10.0',
++    'wheel>=0.45.1',
++    'blackiceprog>=2.0.0',
++    'tinyfpgab>=1.1.0',
++    'tinyprog>=1.0.21',
++    'icefunprog>=2.0.3',
++    'apollo_fpga>=1.1.1',
++    'protobuf>=6.33.0',
++    'rich>=14.0.0',
++    'vcdvcd>=2.6.0',
++    'invoke>=2.2.1',
++    'json5>=0.15.0',
  ]
  
- [tool.flit.sdist]
+ [tool.flit.metadata.requires-extra]
