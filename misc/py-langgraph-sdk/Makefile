@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-sdk
-DISTVERSION=	0.4.5
+DISTVERSION=	0.4.6
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.25.2:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.2:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.19:misc/py-langchain-protocol@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}orjson>0:devel/py-orjson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}orjson>=3.11.5:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=14:devel/py-websockets@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
@@ -31,6 +31,6 @@ NO_ARCH=	yes
 # conflict with the installed ruff version in the package build environment.
 TEST_ARGS=	--ignore=${WRKSRC}/tests/integration
 
-# tests as of 0.4.5: 526 passed, 1 warning in 5.20s
+# tests as of 0.4.6: 530 passed, 1 warning
 
 .include <bsd.port.mk>
