@@ -1,0 +1,69 @@
+Allow opencode-pty to build against a vendored Ghostty source tree.
+
+Upstream's build script requires GHOSTTY_SOURCE_DIR to be a Git checkout whose
+HEAD matches ghostty-revision.  The port vendors Ghostty as a checksum-pinned
+tarball, so skip the Git revision assertions when there is no repository to
+compare against.
+
+--- a/build.rs
++++ b/build.rs
+@@ -53,32 +53,33 @@
+ 
+     // The checked-in declarations must match the native headers exactly.
+     // Local overrides are useful for builds, but not for silently changing ABI.
+-    let head = Command::new("git")
+-        .arg("-C")
+-        .arg(&source)
+-        .args(["rev-parse", "HEAD"])
+-        .output()
+-        .expect("read Ghostty revision");
+-    assert!(
+-        head.status.success(),
+-        "GHOSTTY_SOURCE_DIR must be a Git checkout"
+-    );
+-    assert_eq!(
+-        String::from_utf8(head.stdout)
+-            .expect("Ghostty revision UTF-8")
+-            .trim(),
+-        revision,
+-        "Ghostty headers and bindings are pinned together; regenerate before changing the revision"
+-    );
+-    run(Command::new("git").arg("-C").arg(&source).args([
+-        "-c",
+-        "core.longpaths=true",
+-        "diff",
+-        "--quiet",
+-        "HEAD",
+-        "--",
+-        "include/ghostty",
+-    ]));
++    // A vendored source tree (e.g. a checksum-pinned tarball, as used by the
++    // FreeBSD port) is not a Git checkout, so the revision assertions are
++    // skipped when there is no repository to compare against.
++    if source.join(".git").exists() {
++        let head = Command::new("git")
++            .arg("-C")
++            .arg(&source)
++            .args(["rev-parse", "HEAD"])
++            .output()
++            .expect("read Ghostty revision");
++        assert_eq!(
++            String::from_utf8(head.stdout)
++                .expect("Ghostty revision UTF-8")
++                .trim(),
++            revision,
++            "Ghostty headers and bindings are pinned together; regenerate before changing the revision"
++        );
++        run(Command::new("git").arg("-C").arg(&source).args([
++            "-c",
++            "core.longpaths=true",
++            "diff",
++            "--quiet",
++            "HEAD",
++            "--",
++            "include/ghostty",
++        ]));
++    }
+ 
+     let target = env::var("TARGET").expect("TARGET");
+     let install = out.join("ghostty-install");

@@ -1,0 +1,18 @@
+Enable OpenTUI's Ghostty VT backed embedded terminal on FreeBSD.
+
+OpenTUI only builds its Ghostty VT terminal core for linux/macos/windows and
+otherwise falls back to a stub whose createEmbeddedTerminal() reports
+"embedded terminal support is unavailable".  That stub makes the OpenCode TUI
+crash as soon as it opens a terminal pane, so opt FreeBSD into the real
+implementation (the vendored Ghostty already supports FreeBSD).
+
+--- packages/native/build.zig.orig
++++ packages/native/build.zig
+@@ -395,6 +395,7 @@
+         .linux => target.result.abi.isMusl() or target.result.abi == .gnu,
+         .macos => true,
+         .windows => target.result.abi == .gnu,
++        .freebsd => true,
+         else => false,
+     };
+ }
