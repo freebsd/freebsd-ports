@@ -1,5 +1,5 @@
 PORTNAME=	langchain-google-community
-DISTVERSION=	5.0.0
+DISTVERSION=	5.1.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8.3:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-core>=2.4.3:www/py-google-cloud-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-modelarmor>=0.2.8:www/py-google-cloud-modelarmor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}grpcio>=1.74.0:devel/py-grpcio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain>=1.2.15:misc/py-langchain@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.4.7:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain>=1.4.3:misc/py-langchain@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.6:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langgraph>=1.2.5:misc/py-langgraph@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.26.4:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.5:www/py-requests@${PY_FLAVOR}
@@ -45,6 +45,6 @@ NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 5.0.0: 226 passed, 79 skipped, 29 warnings in 46.28s
+# tests as of 5.1.1: 248 passed, 79 skipped, 9 warnings
 
 .include <bsd.port.mk>
