@@ -1,6 +1,5 @@
 PORTNAME=	arro3-io
-DISTVERSION=	0.8.2
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -172,6 +171,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pyo3-0.29.0 \
 		pyo3-async-runtimes-0.29.0 \
 		pyo3-build-config-0.29.0 \
+		pyo3-bytes-0.7.1 \
 		pyo3-ffi-0.29.0 \
 		pyo3-macros-0.29.0 \
 		pyo3-macros-backend-0.29.0 \
