@@ -1,5 +1,5 @@
 PORTNAME=	minisatip
-PORTVERSION=	2.0.130
+PORTVERSION=	2.0.139
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	multimedia
@@ -11,7 +11,8 @@ WWW=		https://github.com/catalinii/minisatip
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-LIB_DEPENDS=	libdvbcsa.so:multimedia/libdvbcsa
+LIB_DEPENDS=	libdvbcsa.so:multimedia/libdvbcsa \
+		libsrt.so:www/srt
 
 USES=		cmake ssl
 USE_GITHUB=	yes
