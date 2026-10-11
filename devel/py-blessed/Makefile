@@ -1,5 +1,5 @@
 PORTNAME=	blessed
-DISTVERSION=	1.49.0
+DISTVERSION=	1.50.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,8 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENVI} ${WRK_ENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest \
-		-p no:checkdocs -p no:xdist -v -rs -o addopts=
+		-p no:checkdocs -p no:xdist -v -rs -o addopts= -o filterwarnings=
 
-# tests as of 1.49.0: 1757 passed 168 skipped
+# tests as of 1.50.0: 1806 passed 169 skipped
 
 .include <bsd.port.mk>
