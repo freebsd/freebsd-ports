@@ -77,6 +77,8 @@ post-extract:
 	@${REINPLACE_CMD} -E \
 		-e 's,github: .*/,path: deps/,' \
 		-e '/^[[:space:]]*(branch|commit|tag):/d' \
+		-e '/^scripts:[[:space:]]*$$/d' \
+		-e '/^[[:space:]]+postinstall:/d' \
 		${WRKSRC}/shard.yml \
 		${WRKSRC}/deps/*/shard.yml
 
