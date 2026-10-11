@@ -237,13 +237,13 @@ lib/libforkunion_shared.so.3.0.2
 lib/libforkunion_static.a
 lib/libstringzilla_bare.so
 lib/libstringzilla_bare.so.5
-lib/libstringzilla_bare.so.5.1.2
+lib/libstringzilla_bare.so.%%PORTVERSION%%
 lib/libstringzilla_shared.so
 lib/libstringzilla_shared.so.5
-lib/libstringzilla_shared.so.5.1.2
+lib/libstringzilla_shared.so.%%PORTVERSION%%
 lib/libstringzillas_cpus_shared.so
 lib/libstringzillas_cpus_shared.so.5
-lib/libstringzillas_cpus_shared.so.5.1.2
+lib/libstringzillas_cpus_shared.so.%%PORTVERSION%%
 libdata/pkgconfig/forkunion.pc
 libdata/pkgconfig/stringzilla.pc
 %%DATADIR%%/src/README.md

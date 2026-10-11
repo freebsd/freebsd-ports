@@ -1,6 +1,6 @@
 PORTNAME=	stringzilla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.2
+DISTVERSION=	5.3.0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -60,6 +60,6 @@ post-install: # build the second (stringzillas_cpus) module and install it using
 	# remove test files from strngzillas_cpu module install
 	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/test
 
-# tests as of 5.1.2: 10595 passed, 73 skipped in 34.70s
+# tests as of 5.3.0: 10595 passed, 73 skipped in 38.16s
 
 .include <bsd.port.mk>
