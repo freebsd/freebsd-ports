@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Project was archived upstream on 2023-01-25
 EXPIRATION_DATE=2026-12-10
+BROKEN=		Fails to build with CMake 4
 BROKEN_aarch64=	fails to build: fatal error: 'LibCpuId/libcpuid.h' file not found
 BROKEN_i386=	fails to build: error: typedef redefinition with different types
 BROKEN_riscv64=	fails to build: invokes x86 assembler
