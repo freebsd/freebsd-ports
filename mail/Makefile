@@ -756,6 +756,7 @@
     SUBDIR += sylpheed
     SUBDIR += sympa
     SUBDIR += t-prot
+    SUBDIR += tarpitd
     SUBDIR += textmail
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries

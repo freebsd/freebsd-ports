@@ -1,0 +1,22 @@
+tarpitd answers SMTP connections and holds them open for as long as the peer
+can be persuaded to wait.  It is meant to sit behind a packet filter rule that
+redirects known spam sources to it, in the manner of spamd(8) on OpenBSD, and
+it never accepts or delivers anything.
+
+Every reply is a syntactically valid SMTP response, so the sender has no reason
+to give up, but it is written out one byte at a time and commands are read back
+at the same rate.  Every terminal answer is a temporary failure, so the message
+stays in the sender's queue and it comes back later to be tarpitted again.  The
+intent is to occupy a slot in the sending botnet's delivery queue for hours
+rather than to reject mail quickly.
+
+Among its tactics are a delayed and optionally endless multiline greeting,
+detection of clients that transmit before the greeting has finished, padding of
+the EHLO response, a STARTTLS handshake that never completes, an AUTH honeypot
+that decodes and logs the credentials bots offer, and clamped socket buffers so
+the peer's window stays tiny.
+
+tarpitd carries no blocklist and applies no heuristics of its own.  The
+addresses come from an external source, such as fail2ban or blacklistd(8), and
+the only thing that decides whose traffic arrives here is the firewall rule
+that redirects it.
