@@ -1,6 +1,6 @@
 PORTNAME=	torchcodec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	multimedia python
 #MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -49,6 +49,6 @@ post-patch:
 	@${CP} ${FILESDIR}/FindWebP.cmake ${WRKSRC}/cmake
 	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|' ${WRKSRC}/src/torchcodec/_core/CMakeLists.txt
 
-# tests as of 0.16.0: 4 failed, 1864 passed, 815 skipped, 4 warnings in 321.82s (0:05:21) # all failures are related to missing frames, see https://github.com/meta-pytorch/torchcodec/issues/1709
+# tests as of 0.17.0: 5 failed, 2198 passed, 1080 skipped, 4 warnings in 315.28s (0:05:15) # all failures are related to missing frames, see https://github.com/meta-pytorch/torchcodec/issues/1709
 
 .include <bsd.port.mk>
