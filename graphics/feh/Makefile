@@ -1,5 +1,5 @@
 PORTNAME=	feh
-PORTVERSION=	3.12.2
+PORTVERSION=	3.13.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://feh.finalrewind.org/
 
@@ -7,8 +7,10 @@ MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Image viewer that utilizes Imlib2
 WWW=		https://feh.finalrewind.org/
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	MIT OFL11
+LICENSE_COMB=	multi
+LICENSE_FILE_MIT=	${WRKSRC}/COPYING
+LICENSE_FILE_OFL11=	${WRKSRC}/share/fonts/OFL.txt
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libpng16.so:graphics/png

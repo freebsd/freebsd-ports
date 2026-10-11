@@ -9,8 +9,7 @@ share/applications/feh.desktop
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/find-lowres
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keys
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/themes
-%%DATADIR%%/fonts/black.style
-%%DATADIR%%/fonts/menu.style
+%%DATADIR%%/fonts/NotoSans-Medium.ttf
 %%DATADIR%%/fonts/yudit.ttf
 %%DATADIR%%/images/feh.png
 %%DATADIR%%/images/feh.svg

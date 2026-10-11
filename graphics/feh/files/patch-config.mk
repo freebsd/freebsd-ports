@@ -1,9 +1,9 @@
---- config.mk.orig	2022-06-16 06:01:30 UTC
+--- config.mk.orig	2026-09-16 18:34:14 UTC
 +++ config.mk
-@@ -29,7 +29,7 @@ bin_dir = ${main_dir}/bin
+@@ -30,7 +30,7 @@ font_dir ?= ${main_dir}/share/feh/fonts
  doc_dir = ${main_dir}/share/doc/feh
  image_dir = ${main_dir}/share/feh/images
- font_dir = ${main_dir}/share/feh/fonts
+ font_dir ?= ${main_dir}/share/feh/fonts
 -example_dir = ${main_dir}/share/doc/feh/examples
 +example_dir = ${main_dir}/share/examples/feh
  desktop_dir = ${main_dir}/share/applications
