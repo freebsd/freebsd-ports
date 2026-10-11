@@ -1,5 +1,5 @@
 PORTNAME=	mroonga
-DISTVERSION=	16.07
+DISTVERSION=	16.11
 CATEGORIES=	databases textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
