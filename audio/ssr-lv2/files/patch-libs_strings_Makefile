@@ -1,0 +1,29 @@
+--- libs/strings/Makefile.orig	2021-09-22 23:35:29 UTC
++++ libs/strings/Makefile
+@@ -12,6 +12,11 @@ STRINGS_OBJS = $(patsubst %.cpp,../../build/strings/%.
+ 
+ STRINGS_OBJS = $(patsubst %.cpp,../../build/strings/%.o,$(STRINGS_SOURCES))
+ 
++ifeq ($(CPU_I386_OR_X86_64),true)
++AVX_FLAGS = -mavx
++SSE_FLAGS = -msse
++endif
++
+ all: $(STRINGS_LIB)
+ 
+ clean:
+@@ -25,12 +30,12 @@ $(STRINGS_LIB): $(STRINGS_OBJS)
+ ../../build/strings/%AVX.o: %AVX.cpp
+ 	@mkdir -p $(dir $@)
+ 	@echo "Compiling $<"
+-	$(SILENT)$(CXX) $< $(BUILD_CXX_FLAGS) -mavx -c -o $@
++	$(SILENT)$(CXX) $< $(BUILD_CXX_FLAGS) $(AVX_FLAGS) -c -o $@
+ 
+ ../../build/strings/%SSE.o: %SSE.cpp
+ 	@mkdir -p $(dir $@)
+ 	@echo "Compiling $<"
+-	$(SILENT)$(CXX) $< $(BUILD_CXX_FLAGS) -msse -c -o $@
++	$(SILENT)$(CXX) $< $(BUILD_CXX_FLAGS) $(SSE_FLAGS) -c -o $@
+ 
+ ../../build/strings/%.o: %.cpp
+ 	@mkdir -p $(dir $@)
