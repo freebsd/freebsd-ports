@@ -48,7 +48,6 @@ etc/bash_completion.d/jj
 %%PORTDOCS%%%%DOCSDIR%%/related-work.md
 %%PORTDOCS%%%%DOCSDIR%%/releasing.md
 %%PORTDOCS%%%%DOCSDIR%%/revsets.md
-%%PORTDOCS%%%%DOCSDIR%%/revsets.toml
 %%PORTDOCS%%%%DOCSDIR%%/roadmap.md
 %%PORTDOCS%%%%DOCSDIR%%/sapling-comparison.md
 %%PORTDOCS%%%%DOCSDIR%%/style_guide.md
@@ -115,6 +114,8 @@ share/man/man1/jj-edit.1.gz
 share/man/man1/jj-evolog.1.gz
 share/man/man1/jj-file-annotate.1.gz
 share/man/man1/jj-file-chmod.1.gz
+share/man/man1/jj-file-delete.1.gz
+share/man/man1/jj-file-edit.1.gz
 share/man/man1/jj-file-list.1.gz
 share/man/man1/jj-file-search.1.gz
 share/man/man1/jj-file-show.1.gz
@@ -188,6 +189,7 @@ share/man/man1/jj-util-backend-name.1.gz
 share/man/man1/jj-util-backend.1.gz
 share/man/man1/jj-util-completion.1.gz
 share/man/man1/jj-util-config-schema.1.gz
+share/man/man1/jj-util-diff.1.gz
 share/man/man1/jj-util-exec.1.gz
 share/man/man1/jj-util-gc.1.gz
 share/man/man1/jj-util-install-man-pages.1.gz
@@ -198,6 +200,7 @@ share/man/man1/jj-version.1.gz
 share/man/man1/jj-workspace-add.1.gz
 share/man/man1/jj-workspace-forget.1.gz
 share/man/man1/jj-workspace-list.1.gz
+share/man/man1/jj-workspace-remove.1.gz
 share/man/man1/jj-workspace-rename.1.gz
 share/man/man1/jj-workspace-root.1.gz
 share/man/man1/jj-workspace-update-stale.1.gz
