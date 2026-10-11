@@ -1,6 +1,6 @@
 PORTNAME=	emacsql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.1
+DISTVERSION=	4.4.2
 CATEGORIES=	databases elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -24,7 +24,7 @@ CONFLICTS_INSTALL=	emacsql-emacs_*
 
 NO_ARCH=	yes
 
-PORTDOCS=	README.md
+PORTDOCS=	README.org
 
 OPTIONS_DEFINE=	DOCS
 
@@ -35,6 +35,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.org ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
