@@ -11,7 +11,7 @@ WWW=		https://github.com/czerwonk/junos_exporter/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.26,modules
 USE_RC_SUBR=	junos_exporter
 GO_MODULE=	github.com/czerwonk/junos_exporter
 
