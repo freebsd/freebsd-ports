@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	tor:security/tor \
-		${PYTHON_PKGNAMEPREFIX}opuslib>=1.1.0:audio/py-opuslib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opuslib-next>=1.1.6:audio/py-opuslib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyaudio>=0.2.10:audio/py-pyaudio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyaxo>=0.7.3:security/py-pyaxo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyNaCl>=1.0.1:security/py-pynacl@${PY_FLAVOR} \
