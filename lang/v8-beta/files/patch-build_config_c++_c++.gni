@@ -1,0 +1,11 @@
+--- build/config/c++/c++.gni.orig	2026-09-13 16:45:17 UTC
++++ build/config/c++/c++.gni
+@@ -113,7 +113,7 @@ assert(
+ # The saigo libc++ is distinct from the custom hermetic libc++. However, since
+ # the Chrome team controls the saigo toolchain, it is safe to unconditionally
+ # enable libc++ hardening there as well.
+-use_safe_libcxx = use_custom_libcxx && enable_safe_libcxx
++use_safe_libcxx = (use_custom_libcxx || is_bsd) && enable_safe_libcxx
+ 
+ # libc++abi needs to be exported from executables to be picked up by shared
+ # libraries on certain instrumented builds.
