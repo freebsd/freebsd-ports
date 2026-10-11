@@ -5,6 +5,7 @@
 
 PORTNAME=	v8
 PORTVERSION=	15.5.35.20
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -127,8 +128,8 @@ GN_ARGS+=	clang_base_path="${LLVM_PREFIX}" \
 		enable_rust=false \
 		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS} -Wl,--icf=none" \
-		is_clang=true \
 		icu_use_data_file=false \
+		is_clang=true \
 		is_component_build=true \
 		is_debug=false \
 		treat_warnings_as_errors=false \
@@ -140,8 +141,6 @@ GN_ARGS+=	clang_base_path="${LLVM_PREFIX}" \
 		v8_metagen_libclang_bindings_dir="${LLVM_PREFIX}/lib/${PYTHON_VERSION}/site-packages" \
 		v8_metagen_libclang_so="${LLVM_PREFIX}/lib/libclang.so" \
 		v8_use_external_startup_data=false
-
-#OPTIONS_DEFINE=	EXAMPLES
 
 # GH_TUPLE group:path-on-chromium.googlesource.com pairs.  The distfiles come
 # from the unofficial chromium-full-mirror on GitHub and are compared against
@@ -179,7 +178,22 @@ _GS_DEPS=		absl:chromium/src/third_party/abseil-cpp \
 _GS_DIFF_ARGS_jsoncpp=	--strip-trailing-cr
 _GS_SITE=		https://chromium.googlesource.com
 _GS_VERIFY=		${WRKDIR}/.verify-mirror
+_V8_LIBS=		libchrome_zlib.so libthird_party_abseil-cpp_absl.so \
+			libv8.so libv8_libbase.so libv8_libplatform.so
 _V8_OUTDIR=		${WRKSRC}/out/Release
+
+.include <bsd.port.options.mk>
+
+# V8 only uses PartitionAlloc together with pointer compression, which needs
+# 64-bit pointers.
+.if ${ARCH} == i386
+PLIST_SUB+=	PARTITION_ALLOC="@comment "
+.else
+PLIST_SUB+=	PARTITION_ALLOC=""
+_V8_LIBS+=	libthird_party_partition_alloc_src_partition_alloc_allocator_base.so \
+		libthird_party_partition_alloc_src_partition_alloc_allocator_core.so \
+		libthird_party_partition_alloc_src_partition_alloc_allocator_shim.so
+.endif
 
 # "make makesum" fetches with these two set; hook the verification in there so
 # that distinfo can not be regenerated without it.
@@ -228,7 +242,6 @@ post-extract:
 	@${CP} ${FILESDIR}/temporal_capi-lib.rs ${CARGO_WRKSRC}/src/lib.rs
 
 post-patch:
-	@${REINPLACE_CMD} -i '' 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/build/toolchain/gcc_toolchain.gni
 # https://github.com/klzgrad/naiveproxy/blob/master/src/build/config/gclient_args.gni
 	@${ECHO_CMD} 'checkout_google_benchmark = false' > ${WRKSRC}/build/config/gclient_args.gni
 	@${SED} -e 's|%%TEMPORAL_CAPI_DIR%%|${TEMPORAL_CAPI_DIR}|' \
@@ -237,7 +250,7 @@ post-patch:
 
 # Use ICU from ports and create needed directory
 pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} ./build/linux/unbundle/replace_gn_files.py --system-libraries icu # || ${FALSE}
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} ./build/linux/unbundle/replace_gn_files.py --system-libraries icu
 	@${MKDIR} ${_V8_OUTDIR}/gen/shim_headers/icui18n_shim/third_party/icu/source/i18n/unicode \
 		${_V8_OUTDIR}/gen/shim_headers/icuuc_shim/third_party/icu/source/common/unicode \
 		${_V8_OUTDIR}/gen/include
@@ -259,20 +272,12 @@ do-install:
 .for prog in d8 mkgrokdump mksnapshot v8_shell
 	${INSTALL_PROGRAM} ${_V8_OUTDIR}/${prog} ${STAGEDIR}${PREFIX}/bin/${prog}
 .endfor
-.for lib in libchrome_zlib.so libv8.so libv8_libbase.so libv8_libplatform.so \
-	libthird_party_abseil-cpp_absl.so \
-	libthird_party_partition_alloc_src_partition_alloc_allocator_base.so \
-	libthird_party_partition_alloc_src_partition_alloc_allocator_core.so \
-	libthird_party_partition_alloc_src_partition_alloc_allocator_shim.so
+.for lib in ${_V8_LIBS}
 	${INSTALL_LIB} ${_V8_OUTDIR}/${lib} ${STAGEDIR}${PREFIX}/lib/${lib}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include/
 	cd ${WRKSRC}/include/cppgc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/cppgc '-name *\.h'
 	${INSTALL_DATA} ${WRKSRC}/include/libplatform/*.h ${STAGEDIR}${PREFIX}/include/libplatform/
 	${INSTALL_DATA} ${WRKDIR}/v8*.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
-
-do-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${_V8_OUTDIR}/v8_simple_* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

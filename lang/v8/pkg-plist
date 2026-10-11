@@ -116,9 +116,9 @@ include/v8.h
 include/v8config.h
 lib/libchrome_zlib.so
 lib/libthird_party_abseil-cpp_absl.so
-lib/libthird_party_partition_alloc_src_partition_alloc_allocator_base.so
-lib/libthird_party_partition_alloc_src_partition_alloc_allocator_core.so
-lib/libthird_party_partition_alloc_src_partition_alloc_allocator_shim.so
+%%PARTITION_ALLOC%%lib/libthird_party_partition_alloc_src_partition_alloc_allocator_base.so
+%%PARTITION_ALLOC%%lib/libthird_party_partition_alloc_src_partition_alloc_allocator_core.so
+%%PARTITION_ALLOC%%lib/libthird_party_partition_alloc_src_partition_alloc_allocator_shim.so
 lib/libv8.so
 lib/libv8_libbase.so
 lib/libv8_libplatform.so
