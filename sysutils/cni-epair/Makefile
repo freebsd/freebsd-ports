@@ -1,9 +1,9 @@
 PORTNAME=	cni-epair
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.3
 CATEGORIES=	sysutils
 
-MAINTAINER=	michaeljohnson@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	CNI plugin giving containers a LAN address via epair and bridge
 WWW=		https://github.com/daemonless/cni-epair
 
