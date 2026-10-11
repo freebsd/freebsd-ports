@@ -34,3 +34,6 @@ share/icons/hicolor/512x512/apps/kew.png
 share/locale/ja/LC_MESSAGES/kew.mo
 share/locale/zh_CN/LC_MESSAGES/kew.mo
 share/man/man1/kew.1.gz
+share/man/man5/kew.5.gz
+share/man/man5/kewrc.5.gz
+share/man/man5/kewstaterc.5.gz
