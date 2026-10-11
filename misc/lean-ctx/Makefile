@@ -1,7 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.10.5-146
-DISTVERSIONSUFFIX=	-g802f9731c
+DISTVERSION=	3.11.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -133,6 +132,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		darling_macro-0.23.0 \
 		dashmap-6.2.1 \
 		data-encoding-2.11.1 \
+		dbus-0.9.12 \
+		dbus-secret-service-4.1.0 \
 		deflate64-0.1.12 \
 		der-0.7.10 \
 		deranged-0.5.8 \
@@ -170,6 +171,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.2 \
 		fraction-0.15.4 \
 		fs2-0.4.3 \
@@ -245,6 +248,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		leb128fmt-0.1.0 \
 		libbz2-rs-sys-0.2.5 \
 		libc-0.2.189 \
+		libdbus-sys-0.2.7 \
 		libloading-0.8.9 \
 		libloading-0.9.0 \
 		libm-0.2.16 \
@@ -290,7 +294,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
 		opaque-debug-0.3.1 \
+		openssl-0.10.81 \
+		openssl-macros-0.1.1 \
 		openssl-probe-0.2.1 \
+		openssl-src-300.6.1+3.6.3 \
+		openssl-sys-0.9.117 \
 		option-ext-0.2.0 \
 		ort-2.0.0-rc.12 \
 		ort-sys-2.0.0-rc.12 \
@@ -595,6 +603,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.7 \
 		zeroize-1.9.0 \
+		zeroize_derive-1.5.0 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
