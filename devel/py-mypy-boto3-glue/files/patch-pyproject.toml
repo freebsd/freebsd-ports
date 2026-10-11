@@ -1,10 +1,13 @@
---- pyproject.toml.orig	2026-09-06 18:20:47 UTC
+-- Remove the SPDX 'license' field that setuptools 63.1.0 in FreeBSD ports
+-- does not support.
+
+--- pyproject.toml.orig
 +++ pyproject.toml
-@@ -5,7 +5,6 @@ version = "1.43.72"
+@@ -5,7 +5,6 @@ version = "1.43.110"
  [project]
  name = "mypy-boto3-glue"
- version = "1.43.72"
+ version = "1.43.110"
 -license = "MIT"
  authors = [{ name = "Vlad Emelianov", email = "vlad.emelianov.nz@gmail.com" }]
- description = "Type annotations for boto3 Glue 1.43.72 service generated with mypy-boto3-builder 8.12.0"
+ description = "Type annotations for boto3 Glue 1.43.110 service generated with mypy-boto3-builder 8.12.0"
  readme = "README.md"
