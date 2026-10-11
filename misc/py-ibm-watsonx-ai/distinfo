@@ -1,3 +1,3 @@
-TIMESTAMP = 1789239011
-SHA256 (ibm_watsonx_ai-1.7.2.tar.gz) = 0297ee89f8482be529bcf4440d1e87114fa1c3be0e056ca999551fc142631c10
-SIZE (ibm_watsonx_ai-1.7.2.tar.gz) = 752924
+TIMESTAMP = 1791664403
+SHA256 (ibm_watsonx_ai-1.8.0.tar.gz) = e2a11b4146b5942a58ccbdb63bc64c18889969e73f80a31216bf683fa42419e3
+SIZE (ibm_watsonx_ai-1.8.0.tar.gz) = 742250
