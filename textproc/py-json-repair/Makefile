@@ -1,6 +1,6 @@
 PORTNAME=	json-repair
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.63.4
+DISTVERSION=	0.64.0
 CATEGORIES=	textproc python
 #MASTER_SITES=	PYPI # missing file for tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +27,9 @@ GH_PROJECT=	${PORTNAME:S/-/_/}
 
 NO_ARCH=	yes
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} CI=1
+TEST_ARGS=	--disable-plugin-autoload -p benchmark
 
-# tests as of 0.63.4: 341 passed
+# tests as of 0.64.0: 398 passed, 16 skipped (performance/timing tests skipped in CI mode)
 
 .include <bsd.port.mk>
