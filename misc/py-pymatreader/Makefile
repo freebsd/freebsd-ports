@@ -1,5 +1,5 @@
 PORTNAME=	pymatreader
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	misc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,6 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
 TEST_ARGS=	--disable-plugin-autoload
 
-# tests as of 1.3.1: 39 passed, 632 warnings in 10.92s
+# tests as of 1.3.2: 39 passed, 630 warnings in 11.10s
 
 .include <bsd.port.mk>
