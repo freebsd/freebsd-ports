@@ -1,6 +1,6 @@
 PORTNAME=	code_saturne
 PORTVERSION=	8.1.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	science parallel
 MASTER_SITES=	https://www.code-saturne.org/releases/
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 		xterm:x11/xterm
 
 USES=		autoreconf bison blaslapack compiler:c11 fortran gettext gnome gmake \
-		iconv localbase libtool mpi pyqt:5 python shebangfix xorg
+		iconv localbase libtool mpi:openmpi pyqt:5 python shebangfix xorg
 USE_GNOME=	libxml2
 USE_PYQT=	pyqt5
 USE_XORG=	x11
@@ -48,6 +48,7 @@ CONFIGURE_ARGS=	--without-salome --without-salome-yacs --without-salome-kernel	\
 CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed ldflags_rpath="-R"	\
 		MUMPS_LIBS="-lmpiseq -llapack"
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 BINARY_ALIAS=	python=${PYTHON_CMD} \
