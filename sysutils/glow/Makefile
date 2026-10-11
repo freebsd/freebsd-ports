@@ -1,7 +1,6 @@
 PORTNAME=	glow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.2
-PORTREVISION=	5
+DISTVERSION=	3.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -14,9 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_SHA=	d37e988
+_BUILD_SHA=	add5e7a
 
-GO_MODULE=	github.com/charmbracelet/${PORTNAME}/v2
+GO_MODULE=	github.com/charmbracelet/${PORTNAME}/v3
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
 		-X main.Version=${_BUILD_VERSION} \
