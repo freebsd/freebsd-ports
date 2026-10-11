@@ -1,10 +1,18 @@
 -- Remove version constraint on setuptools to be compatible with the port.
---- pyproject.toml.orig	2026-05-01 13:31:12 UTC
+--- pyproject.toml.orig	2026-10-11 23:42:19 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools>=64"]
+-requires = ["setuptools>=77"]
 +requires = ["setuptools"]
  build-backend = "setuptools.build_meta"
  
  [project]
+@@ -8,7 +8,6 @@ requires-python = ">=3.10"
+ description = "Python supercharged for fastai development"
+ readme = "README.md"
+ requires-python = ">=3.10"
+-license = "Apache-2.0"
+ authors = [{name = "Jeremy Howard and Sylvain Gugger", email = "infos@fast.ai"}]
+ keywords = ['python']
+ classifiers = ["Natural Language :: English", "Intended Audience :: Developers", "Development Status :: 5 - Production/Stable", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3 :: Only"]
