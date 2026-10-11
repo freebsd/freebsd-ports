@@ -1,5 +1,5 @@
 PORTNAME=	cytoolz
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ USE_PYTHON=	pep517 cython autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/cytoolz/tests
+TEST_ARGS=	--disable-plugin-autoload --import-mode=importlib
 
 pre-test:
 	@${CP} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cytoolz/*.so ${WRKSRC}/cytoolz/
@@ -28,6 +29,6 @@ pre-test:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/*.so
 
-# tests as of 1.1.0: 194 passed in 1.37s
+# tests as of 1.2.0: 195 passed, 1 skipped in 0.48s
 
 .include <bsd.port.mk>
