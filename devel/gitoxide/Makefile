@@ -1,6 +1,6 @@
 PORTNAME=	gitoxide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.59.0
+DISTVERSION=	0.60.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.103 \
+		anyhow-1.0.104 \
 		approx-0.5.1 \
 		arbitrary-1.4.2 \
 		arc-swap-1.9.2 \
@@ -132,7 +132,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		displaydoc-0.2.6 \
 		dissimilar-1.0.11 \
 		document-features-0.2.12 \
-		dua-core-2.41.1 \
+		dua-core-4.1.0 \
 		dunce-1.0.5 \
 		either-1.16.0 \
 		encode_unicode-1.0.0 \
@@ -221,7 +221,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ipconfig-0.3.4 \
 		ipnet-2.12.0 \
 		is-docker-0.2.0 \
-		is-terminal-0.4.17 \
 		is-wsl-0.4.0 \
 		is_ci-1.2.0 \
 		is_terminal_polyfill-1.70.2 \
@@ -262,6 +261,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lru-slab-0.1.2 \
 		lzma-sys-0.1.20 \
 		maplit-1.0.2 \
+		matchers-0.2.0 \
 		memchr-2.8.2 \
 		memmap2-0.9.11 \
 		memoffset-0.7.1 \
@@ -319,7 +319,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
 		proc-macro2-1.0.106 \
-		prodash-31.0.0 \
+		prodash-31.0.1 \
 		ptyprocess-0.4.1 \
 		pulldown-cmark-0.13.4 \
 		pulldown-cmark-escape-0.11.0 \
@@ -380,7 +380,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_spanned-1.1.1 \
 		serial_test-3.5.0 \
 		serial_test_derive-3.5.0 \
-		sha1dc-0.1.2 \
+		sha1dc-0.1.3 \
 		sha2-0.11.0 \
 		sharded-slab-0.1.7 \
 		shlex-2.0.1 \
@@ -450,14 +450,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tracing-appender-0.2.5 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
-		tracing-forest-0.1.6 \
-		tracing-forest-0.2.0 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.23 \
 		try-lock-0.2.5 \
 		trybuild-1.0.117 \
 		tui-markdown-0.3.9 \
-		tui-react-0.24.0 \
 		typenum-1.20.1 \
 		uluru-3.1.0 \
 		unicase-2.9.0 \
