@@ -128,6 +128,7 @@ include/libr/r_util/r_str_constpool.h
 include/libr/r_util/r_str_util.h
 include/libr/r_util/r_strbuf.h
 include/libr/r_util/r_strpool.h
+include/libr/r_util/r_str_any.h
 include/libr/r_util/r_strs.h
 include/libr/r_util/r_strs_store.h
 include/libr/r_util/r_sys.h
@@ -243,7 +244,7 @@ lib/libr_syscall.so
 lib/libr_syscall.so.%%PORTVERSION%%
 lib/libr_util.so
 lib/libr_util.so.%%PORTVERSION%%
-lib/libsdb.so.2.5.2
+lib/libsdb.so.2.5.8
 libdata/pkgconfig/libr.pc
 libdata/pkgconfig/r_anal.pc
 libdata/pkgconfig/r_arch.pc
@@ -686,6 +687,7 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/opcodes/ppc.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/propeller.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/riscv.sdb
+%%DATADIR%%/%%PORTVERSION%%/opcodes/s1c88.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/s390.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/sbpf.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/sh.sdb
