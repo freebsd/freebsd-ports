@@ -1,5 +1,5 @@
 PORTNAME=	langchain-core
-DISTVERSION=	1.6.5
+DISTVERSION=	1.6.9
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ WWW=		https://python.langchain.com/docs/introduction/ \
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpatch>=1.33.0:devel/py-jsonpatch@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonpatch>=1.33.0:devel/py-jsonpatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.19:misc/py-langchain-protocol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langsmith>=0.3.45:misc/py-langsmith@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.2.0:devel/py-packaging@${PY_FLAVOR} \
@@ -104,6 +105,6 @@ TEST_ARGS=	--ignore=${WRKSRC}/tests/unit_tests/test_ssrf_policy_transport.py \
 		--snapshot-warn-unused
 # failures in deselected tets reported upstream: https://github.com/langchain-ai/langchain/issues/40852
 
-# tests as of 1.6.5: 2253 passed, 1 skipped, 35 deselected, 9 xfailed, 4 warnings in 56.13s
+# tests as of 1.6.9: 2257 passed, 12 skipped, 36 deselected, 9 xfailed, 5 warnings
 
 .include <bsd.port.mk>
