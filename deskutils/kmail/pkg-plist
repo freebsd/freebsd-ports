@@ -8,9 +8,9 @@ bin/kmail
 bin/kmail-refresh-settings
 bin/ktnef
 lib/libkmailprivate.so.6
-lib/libkmailprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkmailprivate.so.%%KDE_PIM_SHLIB_VER%%
 lib/libmailfilteragentprivate.so.6
-lib/libmailfilteragentprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libmailfilteragentprivate.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kmailpart.so
 %%QT_PLUGINDIR%%/pim6/akonadi/config/archivemailagentconfig.so
 %%QT_PLUGINDIR%%/pim6/akonadi/config/followupreminderagentconfig.so

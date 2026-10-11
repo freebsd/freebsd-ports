@@ -20,7 +20,7 @@ lib/cmake/KPim6PkPass/KPim6PkPassTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPim6PkPass/KPim6PkPassTargets.cmake
 lib/libKPim6PkPass.so
 lib/libKPim6PkPass.so.6
-lib/libKPim6PkPass.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6PkPass.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_LIBDIR%%/metatypes/qt6kpim6pkpass_metatypes.json
 %%QT_QMLDIR%%/org/kde/pkpass/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/pkpass/kpkpassqmlplugin.qmltypes

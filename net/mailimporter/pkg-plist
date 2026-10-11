@@ -70,10 +70,10 @@ lib/cmake/KPim6MailImporterAkonadi/KPim6MailImporterAkonadiTargets-%%CMAKE_BUILD
 lib/cmake/KPim6MailImporterAkonadi/KPim6MailImporterAkonadiTargets.cmake
 lib/libKPim6MailImporter.so
 lib/libKPim6MailImporter.so.6
-lib/libKPim6MailImporter.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6MailImporter.so.%%KDE_PIM_SHLIB_VER%%
 lib/libKPim6MailImporterAkonadi.so
 lib/libKPim6MailImporterAkonadi.so.6
-lib/libKPim6MailImporterAkonadi.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6MailImporterAkonadi.so.%%KDE_PIM_SHLIB_VER%%
 share/locale/af/LC_MESSAGES/libmailimporter6.mo
 share/locale/ar/LC_MESSAGES/libmailimporter6.mo
 share/locale/ast/LC_MESSAGES/libmailimporter6.mo

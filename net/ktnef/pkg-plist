@@ -22,7 +22,7 @@ lib/cmake/KPim6Tnef/KPim6TnefTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPim6Tnef/KPim6TnefTargets.cmake
 lib/libKPim6Tnef.so
 lib/libKPim6Tnef.so.6
-lib/libKPim6Tnef.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6Tnef.so.%%KDE_PIM_SHLIB_VER%%
 share/locale/ar/LC_MESSAGES/libktnef6.mo
 share/locale/ast/LC_MESSAGES/libktnef6.mo
 share/locale/be/LC_MESSAGES/libktnef6.mo

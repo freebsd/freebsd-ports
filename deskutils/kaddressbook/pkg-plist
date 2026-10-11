@@ -25,9 +25,9 @@ lib/cmake/KPim6AddressbookImportExport/KPim6AddressbookImportExportTargets-%%CMA
 lib/cmake/KPim6AddressbookImportExport/KPim6AddressbookImportExportTargets.cmake
 lib/libKPim6AddressbookImportExport.so
 lib/libKPim6AddressbookImportExport.so.6
-lib/libKPim6AddressbookImportExport.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6AddressbookImportExport.so.%%KDE_PIM_SHLIB_VER%%
 lib/libkaddressbookprivate.so.6
-lib/libkaddressbookprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkaddressbookprivate.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kaddressbookpart.so
 %%QT_PLUGINDIR%%/pim6/kcms/kaddressbook/kaddressbook_config_activities.so
 %%QT_PLUGINDIR%%/pim6/kcms/kaddressbook/kaddressbook_config_ldap.so

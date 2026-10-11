@@ -18,7 +18,7 @@ lib/cmake/KPim6CalendarUtils/KPim6CalendarUtilsTargets-%%CMAKE_BUILD_TYPE%%.cmak
 lib/cmake/KPim6CalendarUtils/KPim6CalendarUtilsTargets.cmake
 lib/libKPim6CalendarUtils.so
 lib/libKPim6CalendarUtils.so.6
-lib/libKPim6CalendarUtils.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6CalendarUtils.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kf6/ktexttemplate/kcalendar_grantlee_plugin.so
 share/locale/ar/LC_MESSAGES/libkcalutils6.mo
 share/locale/ast/LC_MESSAGES/libkcalutils6.mo

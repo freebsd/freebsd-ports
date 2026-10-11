@@ -151,7 +151,7 @@ lib/cmake/KPim6Itinerary/KPim6ItineraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPim6Itinerary/KPim6ItineraryTargets.cmake
 lib/libKPim6Itinerary.so
 lib/libKPim6Itinerary.so.6
-lib/libKPim6Itinerary.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6Itinerary.so.%%KDE_PIM_SHLIB_VER%%
 lib/libexec/kf6/kitinerary-extractor
 share/locale/ar/LC_MESSAGES/kitinerary6.mo
 share/locale/ast/LC_MESSAGES/kitinerary6.mo

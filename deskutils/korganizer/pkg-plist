@@ -1,10 +1,10 @@
 bin/korganizer
 lib/libkorganizer_core.so.6
-lib/libkorganizer_core.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkorganizer_core.so.%%KDE_PIM_SHLIB_VER%%
 lib/libkorganizer_interfaces.so.6
-lib/libkorganizer_interfaces.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkorganizer_interfaces.so.%%KDE_PIM_SHLIB_VER%%
 lib/libkorganizerprivate.so.6
-lib/libkorganizerprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkorganizerprivate.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/korganizerpart.so
 %%QT_PLUGINDIR%%/pim6/kcms/korganizer/korganizer_configcolorsandfonts.so
 %%QT_PLUGINDIR%%/pim6/kcms/korganizer/korganizer_configfreebusy.so

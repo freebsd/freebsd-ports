@@ -16,7 +16,7 @@ lib/cmake/KPim6SMTP/KPim6SMTPTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPim6SMTP/KPim6SMTPTargets.cmake
 lib/libKPim6SMTP.so
 lib/libKPim6SMTP.so.6
-lib/libKPim6SMTP.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6SMTP.so.%%KDE_PIM_SHLIB_VER%%
 share/locale/ar/LC_MESSAGES/libksmtp6.mo
 share/locale/ast/LC_MESSAGES/libksmtp6.mo
 share/locale/bg/LC_MESSAGES/libksmtp6.mo

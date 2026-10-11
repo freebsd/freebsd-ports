@@ -17,7 +17,7 @@ lib/cmake/KPim6Gravatar/KPim6GravatarTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPim6Gravatar/KPim6GravatarTargets.cmake
 lib/libKPim6Gravatar.so
 lib/libKPim6Gravatar.so.6
-lib/libKPim6Gravatar.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6Gravatar.so.%%KDE_PIM_SHLIB_VER%%
 share/locale/ar/LC_MESSAGES/libgravatar6.mo
 share/locale/ast/LC_MESSAGES/libgravatar6.mo
 share/locale/bg/LC_MESSAGES/libgravatar6.mo
