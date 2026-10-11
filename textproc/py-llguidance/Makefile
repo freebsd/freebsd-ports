@@ -1,6 +1,5 @@
 PORTNAME=	llguidance
-DISTVERSION=	1.8.0
-PORTREVISION=	2
+DISTVERSION=	1.9.1
 CATEGORIES=	textproc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,13 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.0:devel/py-maturin@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytorch>0:misc/py-pytorch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}transformers>0:misc/py-transformers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tiktoken>0:textproc/py-tiktoken@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}llama-cpp-python>0:misc/py-llama-cpp-python@${PY_FLAVOR}
 
 USES=		cargo python shebangfix ssl
 USE_PYTHON=	autoplist pep517 pytest
+
+TEST_ARGS=	--disable-plugin-autoload
 
 SHEBANG_FILES=	python/llguidance/gbnf_to_lark.py
 
@@ -93,7 +93,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
-		derivre-0.3.12 \
+		derivre-0.3.13 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
@@ -166,7 +166,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		js-sys-0.3.77 \
 		jsonschema-0.29.1 \
 		lazy_static-1.5.0 \
-		libc-0.2.186 \
+		libc-0.2.174 \
 		libredox-0.1.4 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.8.0 \
@@ -384,15 +384,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zerovec-0.11.2 \
 		zerovec-derive-0.11.1
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${WRKSRC}/python/torch_tests
-
 pre-test:
 	@${MV} ${WRKSRC}/python/llguidance ${WRKSRC}/python/llguidance.hidden
 
 post-test:
 	@${MV} ${WRKSRC}/python/llguidance.hidden ${WRKSRC}/python/llguidance
 
-# tests as of 1.7.6: 25 passed, 2 skipped, 128286 warnings, 1 error in 24.99s
+# tests as of 1.9.1: 33 passed, 2 skipped, 128258 warnings, 1 error in 32.33s, see https://github.com/guidance-ai/llguidance/issues/395
 
 .include <bsd.port.mk>
