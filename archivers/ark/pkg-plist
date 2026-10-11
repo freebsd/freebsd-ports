@@ -1,7 +1,7 @@
 bin/ark
 etc/xdg/arkrc
 lib/libkerfuffle.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
-lib/libkerfuffle.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkerfuffle.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_cli7z.so
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_cliarj.so
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_clirar.so

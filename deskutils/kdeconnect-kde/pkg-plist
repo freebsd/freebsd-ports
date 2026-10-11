@@ -7,7 +7,7 @@ bin/kdeconnectd
 etc/ufw/applications.d/kdeconnect
 etc/xdg/autostart/org.kde.kdeconnect.daemon.desktop
 lib/libkdeconnectcore.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
-lib/libkdeconnectcore.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkdeconnectcore.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_battery.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_clipboard.so
 %%QT_PLUGINDIR%%/kdeconnect/kdeconnect_connectivity_report.so
