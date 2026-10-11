@@ -1,5 +1,5 @@
 PORTNAME=	srell
-DISTVERSION=	2026.05
+DISTVERSION=	2026.07
 CATEGORIES=	devel
 MASTER_SITES=	https://www.akenotsuki.com/misc/${PORTNAME}/releases/
 DISTNAME=	${PORTNAME}${DISTVERSION:S/./_/}
@@ -15,6 +15,8 @@ USES=		compiler:c++11-lang zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+PORTSCOUT=	limit:^202[0-9]\.(0[1-9]\|1[0-2])$$ \
+		site:https://www.akenotsuki.com/misc/srell/releases/?C=M;O=D
 
 NO_WRKSUBDIR=	yes
 
