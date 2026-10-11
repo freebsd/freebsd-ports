@@ -1,5 +1,5 @@
 PORTNAME=	albucore
-DISTVERSION=	0.2.18
+DISTVERSION=	0.2.21
 CATEGORIES=	graphics python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,8 @@ GH_ACCOUNT=	albumentations-team
 
 NO_ARCH=	yes
 
-# tests as of 0.2.18: 2440 passed
+TEST_ARGS=	--disable-plugin-autoload -m 'not slow'
+
+# tests as of 0.2.21: 2910 passed (slow matmul tests skipped due to segfault with 512x512x512 float32 OpenCV call)
 
 .include <bsd.port.mk>
