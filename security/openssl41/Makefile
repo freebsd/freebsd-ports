@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	4.1.0-beta1
+DISTVERSION=	4.1.0-beta2
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	41
 MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
@@ -136,6 +136,7 @@ FIPS-JITTER_LDFLAGS=	-L${PREFIX}/lib
 FIPS-JITTER_BUILD_DEPENDS=	${LOCALBASE}/lib/libjitterentropy.a:devel/libjitterentropy
 I386_CONFIGURE_ON=	386
 KTLS_BROKEN=		KTLS patch update for 4.0 pending
+MAN3_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-MAN3_OFF
 LEGACY_VARS=		shlibs+=lib/ossl-modules/legacy.so
 MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-util_find-doc-nits
 SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}
@@ -179,12 +180,6 @@ post-patch:
 
 post-configure:
 	( cd ${WRKSRC} ; ${PERL} configdata.pm --dump )
-
-post-configure-MAN3-off:
-	${REINPLACE_CMD} \
-		-e 's|^build_man_docs:.*|build_man_docs: $$(MANDOCS1) $$(MANDOCS5)|' \
-		-e 's|dummy $$(MANDOCS[37]); do |dummy; do |' \
-		${WRKSRC}/Makefile
 
 post-install-SHARED-on:
 .for i in ${SHLIBS}
