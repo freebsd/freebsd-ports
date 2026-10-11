@@ -1,6 +1,6 @@
---- src/wayland/hyprland/ipc/connection.cpp.orig	2026-08-21 02:28:55 UTC
+--- src/wayland/hyprland/ipc/connection.cpp.orig	2026-10-08 08:42:54 UTC
 +++ src/wayland/hyprland/ipc/connection.cpp
-@@ -177,8 +177,12 @@ void HyprlandIpc::makeRequest(
+@@ -189,8 +189,12 @@ void HyprlandIpc::makeRequest(
  	auto connectedCallback = [this, request, requestSocket, callback]() {
  		auto responseCallback = [requestSocket, callback]() {
  			auto response = requestSocket->readAll();
