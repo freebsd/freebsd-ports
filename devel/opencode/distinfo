@@ -1,8 +1,8 @@
-TIMESTAMP = 1791707365
-SHA256 (opencode/v2.0.23.tar.gz) = 879a9da151965396024a463bc1110579dffbfbe8b7f241c78d0bb9647378ca67
-SIZE (opencode/v2.0.23.tar.gz) = 86366324
-SHA256 (opencode/v0.5.14.tar.gz) = 0e092b7405934c3a30f6eca2cb6e35eb00d9d8948d15daa69af2371e1e641a6e
-SIZE (opencode/v0.5.14.tar.gz) = 29995837
+TIMESTAMP = 1791718697
+SHA256 (opencode/v2.0.26.tar.gz) = c07ac7ad58378535bebd6afc30de77d0a4b701aa8f5838a43387e7068df92813
+SIZE (opencode/v2.0.26.tar.gz) = 79551660
+SHA256 (opencode/v0.5.17.tar.gz) = f272f54f96ff230a188c9cf9f593105c6e784f0a14fdbcb7169e523d9c9b7a96
+SIZE (opencode/v0.5.17.tar.gz) = 30017526
 SHA256 (opencode/v0.10.5.tar.gz) = db50fa8aaabb77211f8dbeb4d77dc8852e0ee52070e40bfd9ef5af44ac50accc
 SIZE (opencode/v0.10.5.tar.gz) = 2798793
 SHA256 (opencode/fff-bun-0.10.5.tgz) = 16afa70bcb078c9b28378545396298f73a67fc10e7ff7bba4f9ff1d0462c27f0

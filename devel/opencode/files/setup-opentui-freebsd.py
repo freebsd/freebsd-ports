@@ -44,8 +44,6 @@ BRANCH = """  if (process.platform === "freebsd") {
   }
 """
 
-BUNDLE_FILES = ["chunk-bun-sjw2d9bq.js", "node-assets.js"]
-
 # Upstream disables the native renderer thread on Linux because it is
 # unreliable; on FreeBSD it deadlocks (the TUI freezes after the first render),
 # so force it off there too.  The bundle keeps the guard and the assignment on
@@ -86,22 +84,25 @@ PKG_JSON = """{
 """
 
 
-def find_core(root: str) -> str:
+def find_core(root: str, version: str) -> str:
     base = os.path.join(root, "node_modules", ".bun")
+    prefix = f"@opentui+core@{version}"
     for name in sorted(os.listdir(base)):
-        if name.startswith("@opentui+core@0.5.14"):
+        if name.startswith(prefix):
             core = os.path.join(base, name, "node_modules", "@opentui", "core")
             if os.path.isdir(core):
                 return core
-    raise SystemExit(f"@opentui/core not found under {base}")
+    raise SystemExit(f"@opentui/core {version} not found under {base}")
 
 
 def patch_bundles(core: str) -> None:
-    for name in BUNDLE_FILES:
-        path = os.path.join(core, name)
-        if not os.path.exists(path):
-            print(f"  - skip missing {name}")
+    # The native-asset loader, the platform resolver and the renderer-thread
+    # guard all live in content-hashed chunks whose names change between
+    # releases, so patch every top-level JS file instead of a fixed list.
+    for name in sorted(os.listdir(core)):
+        if not name.endswith(".js"):
             continue
+        path = os.path.join(core, name)
         src = open(path, encoding="utf-8").read()
         changed = False
         if 'freebsd: "libopentui.so"' not in src and NATIVE_OLD in src:
@@ -110,20 +111,14 @@ def patch_bundles(core: str) -> None:
         if 'process.platform === "freebsd"' not in src and THROW in src:
             src = src.replace(THROW, BRANCH + THROW, 1)
             changed = True
+        # Disable the native renderer thread on FreeBSD (see RENDERER_THREAD_RE).
+        out, n = RENDERER_THREAD_RE.subn(RENDERER_THREAD_NEW, src)
+        if n:
+            src = out
+            changed = True
         if changed:
             open(path, "w", encoding="utf-8").write(src)
             print(f"  - patched {name}")
-
-    # Disable the native renderer thread on FreeBSD (see RENDERER_THREAD_RE).
-    for name in sorted(os.listdir(core)):
-        if not name.endswith(".js"):
-            continue
-        path = os.path.join(core, name)
-        src = open(path, encoding="utf-8").read()
-        out, n = RENDERER_THREAD_RE.subn(RENDERER_THREAD_NEW, src)
-        if n:
-            open(path, "w", encoding="utf-8").write(out)
-            print(f"  - disabled renderer thread in {name} ({n})")
 
 
 def create_platform_package(root: str, lib: str, version: str, arch: str) -> str:
@@ -142,11 +137,11 @@ def create_platform_package(root: str, lib: str, version: str, arch: str) -> str
 def main() -> int:
     root = sys.argv[1]
     lib = sys.argv[2]
-    version = sys.argv[3] if len(sys.argv) > 3 else "0.5.14"
+    version = sys.argv[3] if len(sys.argv) > 3 else "0.5.17"
     arch = sys.argv[4] if len(sys.argv) > 4 else "x64"
     if arch not in ("x64", "arm64"):
         raise SystemExit(f"unsupported arch tag: {arch}")
-    core = find_core(root)
+    core = find_core(root, version)
     print(f"core: {core}")
     patch_bundles(core)
     dest = create_platform_package(root, lib, version, arch)

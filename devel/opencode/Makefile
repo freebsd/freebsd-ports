@@ -1,5 +1,5 @@
 PORTNAME=	opencode
-DISTVERSION=	2.0.23
+DISTVERSION=	2.0.26
 CATEGORIES=	devel
 
 # Upstream ships no FreeBSD builds of OpenTUI's Zig core, fff's Rust cdylib, the
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 # OPENTUI_VERSION and FFF_VERSION must match the pinned @opentui/core and
 # @ff-labs/fff-bun releases (packages/cli/package.json, packages/core/package.json)
 # or the native FFI ABI breaks.
-OPENTUI_VERSION=	0.5.14
+OPENTUI_VERSION=	0.5.17
 FFF_VERSION=	0.10.5
 #
 # opencode-pty is the persistent terminal daemon the client spawns.  Its version
