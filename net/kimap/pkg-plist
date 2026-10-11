@@ -129,7 +129,7 @@ lib/cmake/KPim6IMAP/KPim6IMAPTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPim6IMAP/KPim6IMAPTargets.cmake
 lib/libKPim6IMAP.so
 lib/libKPim6IMAP.so.6
-lib/libKPim6IMAP.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6IMAP.so.%%KDE_PIM_SHLIB_VER%%
 share/locale/ar/LC_MESSAGES/libkimap6.mo
 share/locale/ast/LC_MESSAGES/libkimap6.mo
 share/locale/bs/LC_MESSAGES/libkimap6.mo

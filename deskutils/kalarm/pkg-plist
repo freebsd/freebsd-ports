@@ -4,9 +4,9 @@ etc/xdg/autostart/kalarm.autostart.desktop
 lib/kconf_update_bin/kalarm-3.10.0-run_mode
 lib/libexec/kf6/kauth/kalarm_helper
 lib/libkalarmcalendar.so.6
-lib/libkalarmcalendar.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkalarmcalendar.so.%%KDE_PIM_SHLIB_VER%%
 lib/libkalarmplugin.so.6
-lib/libkalarmplugin.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkalarmplugin.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/pim6/kalarm/akonadiplugin.so
 %%MPV%%%%QT_PLUGINDIR%%/pim6/kalarm/audioplugin_mpv.so
 %%VLC%%%%QT_PLUGINDIR%%/pim6/kalarm/audioplugin_vlc.so

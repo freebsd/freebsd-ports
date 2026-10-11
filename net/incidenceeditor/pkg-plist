@@ -23,7 +23,7 @@ lib/cmake/KPim6IncidenceEditor/KPim6IncidenceEditorTargets-%%CMAKE_BUILD_TYPE%%.
 lib/cmake/KPim6IncidenceEditor/KPim6IncidenceEditorTargets.cmake
 lib/libKPim6IncidenceEditor.so
 lib/libKPim6IncidenceEditor.so.6
-lib/libKPim6IncidenceEditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6IncidenceEditor.so.%%KDE_PIM_SHLIB_VER%%
 share/locale/ar/LC_MESSAGES/libincidenceeditors6.mo
 share/locale/ast/LC_MESSAGES/libincidenceeditors6.mo
 share/locale/bg/LC_MESSAGES/libincidenceeditors6.mo

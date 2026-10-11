@@ -18,7 +18,7 @@ lib/cmake/KPim6KontactInterface/KPim6KontactInterfaceTargets-%%CMAKE_BUILD_TYPE%
 lib/cmake/KPim6KontactInterface/KPim6KontactInterfaceTargets.cmake
 lib/libKPim6KontactInterface.so
 lib/libKPim6KontactInterface.so.6
-lib/libKPim6KontactInterface.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6KontactInterface.so.%%KDE_PIM_SHLIB_VER%%
 share/locale/ar/LC_MESSAGES/kontactinterfaces6.mo
 share/locale/ast/LC_MESSAGES/kontactinterfaces6.mo
 share/locale/az/LC_MESSAGES/kontactinterfaces6.mo

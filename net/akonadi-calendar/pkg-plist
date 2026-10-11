@@ -59,10 +59,10 @@ lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreTargets-%%CMAKE_BUILD
 lib/cmake/KPim6AkonadiCalendarCore/KPim6AkonadiCalendarCoreTargets.cmake
 lib/libKPim6AkonadiCalendar.so
 lib/libKPim6AkonadiCalendar.so.6
-lib/libKPim6AkonadiCalendar.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6AkonadiCalendar.so.%%KDE_PIM_SHLIB_VER%%
 lib/libKPim6AkonadiCalendarCore.so
 lib/libKPim6AkonadiCalendarCore.so.6
-lib/libKPim6AkonadiCalendarCore.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPim6AkonadiCalendarCore.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akonadi_serializer_kcalcore.so
 %%QT_PLUGINDIR%%/kf6/org.kde.kcalendarcore.calendars/libakonadicalendarplugin.so
 share/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop

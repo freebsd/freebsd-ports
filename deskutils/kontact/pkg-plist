@@ -1,6 +1,6 @@
 bin/kontact
 lib/libkontactprivate.so.6
-lib/libkontactprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libkontactprivate.so.%%KDE_PIM_SHLIB_VER%%
 %%QT_PLUGINDIR%%/pim6/kcms/kontact/kcm_kontact.so
 share/applications/org.kde.kontact.desktop
 share/config.kcfg/kontact.kcfg

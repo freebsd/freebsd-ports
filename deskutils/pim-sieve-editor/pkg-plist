@@ -1,6 +1,6 @@
 bin/sieveeditor
 lib/libsieveeditor.so.6
-lib/libsieveeditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libsieveeditor.so.%%KDE_PIM_SHLIB_VER%%
 share/applications/org.kde.sieveeditor.desktop
 share/config.kcfg/sieveeditorglobalconfig.kcfg
 share/icons/hicolor/16x16/apps/sieveeditor.png
