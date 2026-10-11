@@ -1,7 +1,7 @@
-TIMESTAMP = 1791600960
-SHA256 (go/misc_eightctl/steipete-eightctl-v0.2.9_GH0/v0.2.9.mod) = 6090f7d4c06acbe0162ffc0e0ba02862d07a6c6dd8da467c568ae8ccf1796f18
-SIZE (go/misc_eightctl/steipete-eightctl-v0.2.9_GH0/v0.2.9.mod) = 2339
-SHA256 (go/misc_eightctl/steipete-eightctl-v0.2.9_GH0/v0.2.9.zip) = 0376829570c1de1971473246b89113aa685ef35177057d5316a98ed57bd16527
-SIZE (go/misc_eightctl/steipete-eightctl-v0.2.9_GH0/v0.2.9.zip) = 136598
-SHA256 (go/misc_eightctl/steipete-eightctl-v0.2.9_GH0/steipete-eightctl-v0.2.9_GH0.tar.gz) = 36270d26992092272a86add5a821e8a85b500841f13cd7d4effecbd827c065ee
-SIZE (go/misc_eightctl/steipete-eightctl-v0.2.9_GH0/steipete-eightctl-v0.2.9_GH0.tar.gz) = 84209
+TIMESTAMP = 1791753043
+SHA256 (go/misc_eightctl/steipete-eightctl-v0.2.10_GH0/v0.2.10.mod) = 31745dad45eb652f1e5eb85a85fa0a4f34d02cd7c8e4fc093f85f509028035fb
+SIZE (go/misc_eightctl/steipete-eightctl-v0.2.10_GH0/v0.2.10.mod) = 2339
+SHA256 (go/misc_eightctl/steipete-eightctl-v0.2.10_GH0/v0.2.10.zip) = 4a327579e7d975e7f51f09a53ba3564aa8a0aaa16f90b6aa6a9932c8a3e72128
+SIZE (go/misc_eightctl/steipete-eightctl-v0.2.10_GH0/v0.2.10.zip) = 139067
+SHA256 (go/misc_eightctl/steipete-eightctl-v0.2.10_GH0/steipete-eightctl-v0.2.10_GH0.tar.gz) = d7edb9b1f9ae2fac864a635c1a3c1d378e7e03a1446af273790652571a29f6f7
+SIZE (go/misc_eightctl/steipete-eightctl-v0.2.10_GH0/steipete-eightctl-v0.2.10_GH0.tar.gz) = 85704
