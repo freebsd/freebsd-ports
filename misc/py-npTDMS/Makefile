@@ -1,5 +1,5 @@
 PORTNAME=	npTDMS
-DISTVERSION=	1.11.0
+DISTVERSION=	1.12.1
 CATEGORIES=	misc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,16 +19,19 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}h5py>=2.10.0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyarrow>0:databases/py-pyarrow@${PY_FLAVOR} # optional
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>=3.1.0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>0:devel/py-pytest-benchmark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}thermocouples_reference>0:misc/py-thermocouples_reference@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 4 tests fail, see https://github.com/adamreeve/npTDMS/issues/329
+USE_PYTHON=	pep517 autoplist pytest
+
+TEST_ARGS=	--disable-plugin-autoload \
+		-p hypothesis \
+		-p pytest_benchmark.plugin
 
 NO_ARCH=	yes
 
-# tests as of 1.11.0: 536 passed
+# tests as of 1.12.1: 541 passed, 8 warnings in 18.93s
 
 .include <bsd.port.mk>
