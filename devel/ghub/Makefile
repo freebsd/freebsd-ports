@@ -1,6 +1,6 @@
 PORTNAME=	ghub
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.3.0
+DISTVERSION=	5.3.3
 CATEGORIES=	devel elisp
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/magit/ghub
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	compat.el>=31.0:misc/compat.el \
+RUN_DEPENDS=	compat.el>=31.1:misc/compat.el \
 		cond-let>=1.1:devel/cond-let \
 		llama.el>=1.0:devel/llama.el \
 		treepy.el>=0.1.3:devel/treepy.el
