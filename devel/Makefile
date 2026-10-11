@@ -164,6 +164,7 @@
     SUBDIR += R-cran-uuid
     SUBDIR += R-cran-vcd
     SUBDIR += R-cran-vctrs
+    SUBDIR += R-cran-vdiffr
     SUBDIR += R-cran-waldo
     SUBDIR += R-cran-webfakes
     SUBDIR += R-cran-whisker
