@@ -1,6 +1,6 @@
-TIMESTAMP = 1776867859
-SHA256 (forgejo-cli-v0.5.0.tar.gz) = 028ebcbd744301fbfd144cd9bc5ff0a27e02d99b02c8abafb20742299715c556
-SIZE (forgejo-cli-v0.5.0.tar.gz) = 105814
+TIMESTAMP = 1791703277
+SHA256 (forgejo-cli-v0.5.0.tar.gz) = ec24a63964b01dadf8a29de4656110a976344aa44b0e9b5fee135b9115da2c89
+SIZE (forgejo-cli-v0.5.0.tar.gz) = 105573
 SHA256 (fj-comp-v0.5.0.tar.gz) = de7de065dbba5531702df2b5bff19ce9df7cccc2e4d0ff6683a9554007431850
 SIZE (fj-comp-v0.5.0.tar.gz) = 873472
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
