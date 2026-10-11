@@ -1,6 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.146
+DISTVERSION=	0.9.148
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,8 +43,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		atomic-waker-1.1.2 \
 		atomicwrites-0.4.4 \
 		autocfg-1.5.0 \
-		aws-lc-rs-1.16.2 \
-		aws-lc-sys-0.39.0 \
+		aws-lc-rs-1.18.1 \
+		aws-lc-sys-0.45.0 \
 		axum-0.8.6 \
 		axum-core-0.5.5 \
 		backtrace-0.3.75 \
@@ -75,22 +75,22 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cargo-platform-0.3.0 \
 		cargo_metadata-0.23.1 \
 		cc-1.2.30 \
-		cfg-expr-0.20.6 \
-		cfg-if-1.0.4 \
+		cfg-expr-0.20.9 \
+		cfg-if-1.0.5 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.2 \
 		char_index-0.1.5 \
 		chrono-0.4.45 \
-		clap-4.6.6 \
-		clap_builder-4.6.6 \
-		clap_derive-4.6.4 \
+		clap-4.6.7 \
+		clap_builder-4.6.7 \
+		clap_derive-4.6.7 \
 		clap_lex-1.0.0 \
 		cmake-0.1.54 \
 		color-eyre-0.6.5 \
 		color-spantrace-0.3.0 \
 		colorchoice-1.0.3 \
 		combine-4.6.7 \
-		config-0.15.25 \
+		config-0.15.27 \
 		console-0.16.6 \
 		console-api-0.9.0 \
 		console-subscriber-0.5.0 \
@@ -192,7 +192,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		globset-0.4.20 \
 		globwalk-0.9.1 \
 		goblin-0.10.3 \
-		guppy-0.17.26 \
+		guppy-0.19.1 \
 		guppy-workspace-hack-0.1.0 \
 		h2-0.4.10 \
 		hashbrown-0.15.5 \
@@ -292,7 +292,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		objc2-core-foundation-0.3.2 \
 		objc2-system-configuration-0.3.2 \
 		object-0.36.7 \
-		once_cell-1.21.3 \
+		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.1 \
 		openssl-0.10.80 \
 		openssl-macros-0.1.1 \
@@ -369,12 +369,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.0.7 \
-		rustls-0.23.43 \
+		rustls-0.23.45 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.12.0 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
 		rusty-fork-0.3.0 \
 		same-file-1.0.6 \
@@ -416,7 +416,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		similar-2.7.0 \
 		siphasher-1.0.1 \
 		slab-0.4.11 \
-		smallvec-1.15.2 \
+		smallvec-1.16.2 \
 		smol_str-0.3.2 \
 		socket2-0.5.10 \
 		socket2-0.6.3 \
@@ -440,8 +440,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		sync_wrapper-1.0.2 \
 		synoptic-2.2.9 \
 		tar-0.4.46 \
-		target-lexicon-0.13.3 \
-		target-spec-3.6.0 \
+		target-lexicon-0.13.5 \
+		target-spec-3.7.0 \
 		target-spec-miette-0.4.8 \
 		tempfile-3.20.0 \
 		terminal_size-0.4.4 \
@@ -471,7 +471,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-util-0.7.15 \
 		toml-1.1.6+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.13+spec-1.1.0 \
+		toml_edit-0.25.15+spec-1.1.0 \
 		toml_parser-1.1.3+spec-1.1.0 \
 		toml_writer-1.1.2+spec-1.1.0 \
 		tonic-0.14.2 \
@@ -604,9 +604,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zeroize-1.8.1 \
 		zipsign-api-0.1.5 \
 		zmij-1.0.18 \
-		zstd-0.13.3 \
 		zstd-0.14.0 \
-		zstd-safe-7.2.4 \
 		zstd-safe-8.0.0 \
 		zstd-sys-2.1.0+zstd.1.5.7
 
