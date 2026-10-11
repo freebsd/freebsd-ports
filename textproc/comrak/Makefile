@@ -1,6 +1,6 @@
 PORTNAME=	comrak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.55.0
+DISTVERSION=	0.56.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,8 +34,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
 		bitflags-2.10.0 \
-		bon-3.9.0 \
-		bon-macros-3.9.0 \
+		bon-3.9.3 \
+		bon-macros-3.9.3 \
 		bumpalo-3.19.1 \
 		caseless-0.2.2 \
 		cc-1.2.53 \
@@ -62,12 +62,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		diff-0.1.13 \
 		divan-macros-0.1.17 \
 		either-1.15.0 \
-		emojis-0.8.2 \
+		emojis-0.9.0 \
 		entities-1.0.1 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		fancy-regex-0.16.2 \
 		fastrand-2.3.0 \
+		fearless_simd-1.0.0 \
+		fearless_simd_macros-0.1.0 \
 		find-msvc-tools-0.1.8 \
 		finl_unicode-1.4.0 \
 		flate2-1.1.8 \
@@ -82,12 +84,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.14.0 \
 		itoa-1.0.17 \
-		jetscii-0.5.3 \
 		lazy_static-1.5.0 \
 		libc-0.2.180 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.11.0 \
 		memchr-2.7.6 \
+		memchr-n-0.1.7 \
 		miniz_oxide-0.8.9 \
 		nix-0.30.1 \
 		ntest-0.9.5 \
@@ -101,9 +103,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		onig_sys-69.9.1 \
 		percent-encoding-rfc3986-0.1.3 \
 		phf-0.13.1 \
-		phf_codegen-0.13.1 \
-		phf_generator-0.13.1 \
+		phf-0.14.0 \
+		phf_codegen-0.14.0 \
+		phf_generator-0.14.0 \
 		phf_shared-0.13.1 \
+		phf_shared-0.14.0 \
 		pkg-config-0.3.32 \
 		plist-1.8.0 \
 		powerfmt-0.2.0 \
@@ -117,7 +121,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		regex-automata-0.4.13 \
 		regex-lite-0.1.8 \
 		regex-syntax-0.8.8 \
-		rustc-hash-2.1.2 \
+		rustc-hash-2.1.3 \
 		rustix-1.1.3 \
 		rustversion-1.0.22 \
 		same-file-1.0.6 \
@@ -131,13 +135,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		simd-adler32-0.3.8 \
 		siphasher-1.0.1 \
 		slug-0.1.6 \
-		smallvec-1.15.1 \
+		smallvec-1.15.2 \
 		statrs-0.18.0 \
 		strsim-0.11.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
 		syn-2.0.119 \
+		syn-3.0.6 \
 		syntect-5.3.0 \
 		terminal_size-0.4.3 \
 		thiserror-2.0.17 \
