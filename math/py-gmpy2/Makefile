@@ -1,5 +1,5 @@
 PORTNAME=	gmpy2
-DISTVERSION=	2.3.1
+DISTVERSION=	2.3.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,13 +25,14 @@ USE_PYTHON=	pep517 autoplist pytest
 MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${DISTVERSION}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/test
+TEST_ARGS=	--disable-plugin-autoload
 PYTEST_IGNORED_TESTS=	test_mpz_arithmetics test_mpz_to_bytes test_mpq_float_bulk \
 			test_mpz_conversion_bulk test_mpz_float_bulk
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gmpy2/gmpy2*.so
 
-# tests as of 2.3.1: 361 passed, 7 skipped in 267.19s (0:04:27)
+# tests as of 2.3.2: 361 passed, 7 skipped, 6 deselected in 4.14s
 # Hypothesis bulk tests are ignored because they generate random edge-case
 # failures on FreeBSD that are not indicative of packaging problems.
 
