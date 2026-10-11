@@ -1,5 +1,5 @@
 PORTNAME=	claude-code
-DISTVERSION=	2.1.283
+DISTVERSION=	2.1.296
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://downloads.claude.ai/claude-code-releases/${DISTVERSION}/:amd64 \
 		https://downloads.claude.ai/claude-code-releases/${DISTVERSION}/:aarch64
