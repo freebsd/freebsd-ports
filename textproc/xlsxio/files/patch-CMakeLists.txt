@@ -1,5 +1,11 @@
---- CMakeLists.txt.orig	2023-08-03 09:33:03 UTC
+--- CMakeLists.txt.orig	2024-05-25 15:24:48 UTC
 +++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
+ 
+ PROJECT(xlsxio DESCRIPTION "C libraries for reading and writing .xlsx files")
+ 
 @@ -275,7 +275,7 @@ MACRO(generate_and_install_config_files _NAME _DESC _L
    STRING(REGEX REPLACE "\([^ ]*\)[/\\]lib([^ /\\.]*).[^ ]*" "-L\\1 -l\\2" XLSXIO_LDFLAGS "${XLSXIO_LDFLAGS}")
    CONFIGURE_FILE(templateConfig.cmake.in "${CMAKE_CURRENT_BINARY_DIR}/${XLSXIO_NAME}Config.cmake" @ONLY)
