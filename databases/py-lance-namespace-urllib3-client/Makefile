@@ -1,5 +1,5 @@
 PORTNAME=	lance-namespace-urllib3-client
-DISTVERSION=	0.12.0
+DISTVERSION=	0.13.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/test
 TEST_ARGS=	--disable-plugin-autoload
 
-# tests as of 0.12.0: 268 passed in 0.76s
+# tests as of 0.13.0: 268 passed in 1.14s
 
 .include <bsd.port.mk>
