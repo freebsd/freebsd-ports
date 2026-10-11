@@ -1,5 +1,5 @@
 PORTNAME=	grist-core
-PORTVERSION=	1.7.20
+PORTVERSION=	1.7.21
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/mfechner/${PORTNAME}/:yarncache
@@ -102,6 +102,7 @@ post-install:
 # 4. Upload yarn cache
 # 5. Uncomment DITSFILES
 # 6. Run 'make makesum'
+# 7. Run 'make clean'
 make-yarn-cache: patch
 	${RM} -r ${WRKDIR}/yarn-offline-cache
 	#cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn --frozen-lockfile --ignore-scripts
