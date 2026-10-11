@@ -1,18 +1,19 @@
 PORTNAME=	susshi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.0
+DISTVERSION=	0.23.1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal-based SSH connection manager
-WWW=		https://github.com/yatoub/susshi
+WWW=		https://yatoub.github.io/susshi/ \
+		https://github.com/yatoub/susshi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 LIB_DEPENDS=	libssh2.so:security/libssh2
 
-USES=		cargo
+USES=		cargo ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yatoub
@@ -203,9 +204,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		sys-locale-0.3.2 \
 		tempfile-3.27.0 \
 		thiserror-1.0.69 \
-		thiserror-2.0.20 \
+		thiserror-2.0.21 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.20 \
+		thiserror-impl-2.0.21 \
 		thread_local-1.1.9 \
 		time-0.3.47 \
 		time-core-0.1.8 \
