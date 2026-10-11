@@ -1,5 +1,5 @@
 PORTNAME=	great-tables
-DISTVERSION=	0.24.0
+DISTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,15 +30,13 @@ USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload -v -p no:checkdocs -m 'no_pandas' \
+		--ignore=${TEST_WRKDIR}/test_shiny.py \
+		--ignore=${TEST_WRKDIR}/test__utils_selenium.py
 TEST_WRKDIR=	${WRKSRC}/tests
 
 NO_ARCH=	yes
 
-do-test:
-	@cd ${TEST_WRKDIR} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -p no:xdist -p no:checkdocs -m 'no_pandas' \
-		--ignore=${TEST_WRKDIR}/test_shiny.py \
-		--ignore=${TEST_WRKDIR}/test__utils_selenium.py
-
-# tests as of 0.24.0: 2 passed, 2 failed (no_pandas tests fail when pandas is installed locally)
+# tests as of 1.0.0: 2 failed, 2 passed, 2729 deselected, 1 warning in 0.51s (no_pandas tests fail when pandas is installed locally)
 
 .include <bsd.port.mk>
