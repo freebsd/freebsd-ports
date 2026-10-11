@@ -1,5 +1,5 @@
 PORTNAME=	camel-converter
-DISTVERSION=	5.1.1
+DISTVERSION=	6.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,9 +18,10 @@ USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
 NO_ARCH=	yes
 
-# tests as of 5.1.1: 76 passed, 2 skipped in 0.23s
+# tests as of 6.0.0: 76 passed, 2 skipped in 0.10s
 
 .include <bsd.port.mk>
