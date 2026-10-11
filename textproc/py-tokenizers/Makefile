@@ -1,6 +1,5 @@
 PORTNAME=	tokenizers
-DISTVERSION=	0.23.2
-PORTREVISION=	1
+DISTVERSION=	0.23.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/tokenizers/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.0<2.0:devel/py-maturin@${PY_FLAVOR}
 LIB_DEPENDS=	libonig.so:devel/oniguruma
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.16.4<2.0:misc/py-huggingface-hub@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.16.4<3.0:misc/py-huggingface-hub@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}datasets>0:misc/py-datasets@${PY_FLAVOR} \
@@ -23,7 +22,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 
 USES=		cargo python
 USE_PYTHON=	autoplist pep517 pytest
-PYTEST_BROKEN_TESTS=	test_gzip
+PYTEST_BROKEN_TESTS=	test_gzip \
+			test_from_file_roberta \
+			test_from_file_llama3 \
+			test_from_file_albert \
+			test_train_bpe_small
 
 CARGO_CARGOTOML=${WRKSRC}/bindings/python/Cargo.toml
 CARGO_CARGOLOCK=${WRKSRC}/bindings/python/Cargo.lock

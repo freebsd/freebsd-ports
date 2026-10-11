@@ -1,6 +1,6 @@
-TIMESTAMP = 1788469406
-SHA256 (tokenizers-0.23.2.tar.gz) = 7f0f085686b9de0d0079e6f874ae053600db64c5d13049e0bbc0119926d25aac
-SIZE (tokenizers-0.23.2.tar.gz) = 385745
+TIMESTAMP = 1791703576
+SHA256 (tokenizers-0.23.3.tar.gz) = cded33237c77caeef62944d32aa9a7ef42bdce2b3497e18d137e072a8c4be438
+SIZE (tokenizers-0.23.3.tar.gz) = 385286
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/aho-corasick-1.1.5.crate) = c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
