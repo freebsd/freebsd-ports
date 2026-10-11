@@ -1,0 +1,10 @@
+--- udf/worker/proto/pom.xml.orig	2026-10-11 06:30:01 UTC
++++ udf/worker/proto/pom.xml
+@@ -70,6 +70,7 @@
+             <configuration>
+               <protocArtifact>com.google.protobuf:protoc:${protobuf.version}</protocArtifact>
+               <protocVersion>${protobuf.version}</protocVersion>
++              <protocCommand>${env.SPARK_PROTOC_EXEC_PATH}</protocCommand>
+               <inputDirectories>
+                 <include>src/main/protobuf</include>
+               </inputDirectories>
