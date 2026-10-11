@@ -1,7 +1,6 @@
 PORTNAME=	iris
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
-PORTREVISION=	1
+DISTVERSION=	0.7.3
 CATEGORIES=	shells
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -37,15 +36,11 @@ post-build-COMPLETIONS-on:
 .endfor
 
 post-install-COMPLETIONS-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/fish/completions \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${GO_WRKSRC}/completions/${PORTNAME}.bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
-	${INSTALL_DATA} ${GO_WRKSRC}/completions/${PORTNAME}.fish \
-		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
-	${INSTALL_DATA} ${GO_WRKSRC}/completions/${PORTNAME}.zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+	@${MKDIR} ${COMPLETIONS_PLIST_FILES:H:S|^|${STAGEDIR}${PREFIX}/|}
+.for sh in bash fish zsh
+	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.${sh} \
+		${COMPLETIONS_PLIST_FILES:M*${sh}*:S|^|${STAGEDIR}${PREFIX}/|}
+.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
