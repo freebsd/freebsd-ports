@@ -1,3 +1,55 @@
+  <vuln vid="371fc9b2-c543-11f1-b115-74563cf85f9d">
+    <topic>libwasmtime -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libwasmtime</name>
+	<name>wasmtime</name>
+	<range><lt>36.0.17</lt></range>
+	<range><ge>37.0.0</ge><lt>48.0.4</lt></range>
+	<range><ge>49.0.0</ge><lt>49.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wasmtime development team reports:</p>
+	<blockquote cite="https://github.com/bytecodealliance/wasmtime/releases/tag/v49.0.2">
+	  <ul>
+	    <li>Wasmtime component async-lifted callback result count is
+	    unvalidated, causing a native stack buffer overflow.</li>
+	    <li>Mis-typed WebAssembly tag imports can lead to GC heap
+	    corruption.</li>
+	    <li>Rooting for GC values live across try_call may be missing,
+	    causing GC heap corruption.</li>
+	    <li>Excessive allocated memory on the host when guests don't
+	    have stdio.</li>
+	    <li>Guest can panic host through filesystem timestamp before the
+	    epoch on wasip3.</li>
+	    <li>Wasmtime wasi:http implementation panics with a zero timeout
+	    supplied.</li>
+	    <li>WASI preview 0 implementation of poll_oneoff circumvents fuel
+	    consumption.</li>
+	    <li>fd_readdir copies uninitialized struct padding into guest
+	    memory.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-32h6-97mm-8q3c</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-cfhf-m2cr-62wj</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-hw8m-q44c-ggrf</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-gqmc-89g8-p25r</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-mr2v-56j5-cmfc</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-w4qr-p94g-mjhv</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-j366-h8gg-77pm</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-96f6-r43r-8c24</url>
+    </references>
+    <dates>
+      <discovery>2026-10-02</discovery>
+      <entry>2026-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07e99f22-c176-4c8f-9678-a57ba8114959">
     <topic>Timing leaks of the nonce in ECDSA, EdDSA and DSA signatures</topic>
     <affects>
