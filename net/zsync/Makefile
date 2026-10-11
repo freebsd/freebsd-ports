@@ -4,7 +4,7 @@ DISTVERSION=	0.8.0
 PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	File transfer program
 WWW=		https://github.com/cph6/zsync
 

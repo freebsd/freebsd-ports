@@ -3,7 +3,7 @@ DISTVERSION=	6.2.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Parallel programming tools for Rcpp
 WWW=		https://rcppcore.github.io/RcppParallel/
 

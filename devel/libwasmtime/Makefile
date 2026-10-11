@@ -3,7 +3,7 @@ PORTVERSION=	49.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Library for fast and secure runtime for WebAssembly
 WWW=		https://wasmtime.dev/
 

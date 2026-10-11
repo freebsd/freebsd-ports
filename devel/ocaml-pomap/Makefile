@@ -3,7 +3,7 @@ PORTVERSION=	4.1.2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	OCaml library to maintain a list of partially ordered elements
 WWW=		https://mmottl.github.io/pomap/
 

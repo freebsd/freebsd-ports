@@ -3,7 +3,7 @@ DISTVERSION=	0.5.2
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Read and write Parquet files without external dependencies
 WWW=		https://cran.r-project.org/package=nanoparquet
 

@@ -3,7 +3,7 @@ DISTVERSION=	3.8-14
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Various plotting functions
 WWW=		https://cran.r-project.org/package=plotrix
 

@@ -3,7 +3,7 @@ DISTVERSION=	1.3.5
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	DBI interface to MariaDB and MySQL using cpp11
 WWW=		https://cran.r-project.org/package=RMariaDB
 

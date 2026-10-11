@@ -3,7 +3,7 @@ DISTVERSION=	1.0.5
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Object pooling for DBI database connections
 WWW=		https://cran.r-project.org/package=pool
 

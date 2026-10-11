@@ -6,4 +6,4 @@ forgetting curve fitting, and review patterns. Supports FSRS (Free
 Spaced Repetition Scheduler) analysis with stability, difficulty,
 retrievability metrics, parameter comparison, and workload predictions.
 
--- Christos Longros <chris.longros@gmail.com>
+-- Christos Longros <longros@FreeBSD.org>

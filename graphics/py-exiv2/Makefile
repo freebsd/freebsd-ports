@@ -4,7 +4,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Low-level Python binding to the exiv2 C++ library
 WWW=		https://github.com/jim-easterbrook/python-exiv2
 

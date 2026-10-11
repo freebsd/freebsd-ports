@@ -4,7 +4,7 @@ DISTVERSION=	4.2.2
 CATEGORIES=	textproc devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Python library to read characters and key strokes
 WWW=		https://github.com/magmax/python-readchar
 

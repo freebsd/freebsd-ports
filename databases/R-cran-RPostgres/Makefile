@@ -3,7 +3,7 @@ DISTVERSION=	1.4.10
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	C++ interface to PostgreSQL using cpp11
 WWW=		https://cran.r-project.org/package=RPostgres
 

@@ -3,7 +3,7 @@ DISTVERSION=	0.6.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Read and Analyze Anki Flashcard Databases
 WWW=		https://github.com/chrislongros/ankiR
 

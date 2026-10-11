@@ -3,7 +3,7 @@ DISTVERSION=	1.6-0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	chris.longros@gmail.com
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Meta-analysis datasets
 WWW=		https://cran.r-project.org/package=metadat
 
