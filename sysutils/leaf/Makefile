@@ -1,5 +1,5 @@
 PORTNAME=	leaf
-DISTVERSION=	1.28.3
+DISTVERSION=	1.29.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -27,15 +27,11 @@ COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/zsh/site-functions/_${PORTNAME}
 
 post-install-COMPLETIONS-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/fish/completions \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.fish \
-		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
-	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+	@${MKDIR} ${COMPLETIONS_PLIST_FILES:H:S|^|${STAGEDIR}${PREFIX}/|}
+.for sh in bash fish zsh
+	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.${sh} \
+		${COMPLETIONS_PLIST_FILES:M*${sh}*:S|^|${STAGEDIR}${PREFIX}/|}
+.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
