@@ -1,15 +1,15 @@
---- Libraries/MiKTeX/Core/Utils/unx/unxUtils.cpp.orig	2021-08-06 15:45:04 UTC
+--- Libraries/MiKTeX/Core/Utils/unx/unxUtils.cpp.orig	2026-05-13 12:29:06 UTC
 +++ Libraries/MiKTeX/Core/Utils/unx/unxUtils.cpp
-@@ -26,6 +26,8 @@
- #if defined(__APPLE__)
- #  include <mach-o/dyld.h>
+@@ -22,6 +22,8 @@
+ #if defined(HAVE_SYS_UTSNAME_H)
+ #include <sys/utsname.h>
  #endif
 +#include <sys/types.h>
 +#include <sys/sysctl.h>
  
- #if defined(HAVE_SYS_UTSNAME_H)
- #  include <sys/utsname.h>
-@@ -179,6 +181,16 @@ PathName Utils::GetExe()
+ #include <fmt/format.h>
+ #include <fmt/ostream.h>
+@@ -171,6 +173,16 @@ PathName Utils::GetExe()
          }
      }
      return PathName(buf.GetData());
@@ -26,7 +26,7 @@
  #else
      return File::ReadSymbolicLink(PathName("/proc/self/exe"));
  #endif
-@@ -186,7 +198,7 @@ PathName Utils::GetExe()
+@@ -178,7 +190,7 @@ string Utils::GetExeName()
  
  string Utils::GetExeName()
  {

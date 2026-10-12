@@ -1,6 +1,5 @@
 PORTNAME=	miktex
-DISTVERSION=	25.4
-PORTREVISION=	4
+DISTVERSION=	26.5
 CATEGORIES=	print
 MASTER_SITES=	https://miktex.org/download/ctan/systems/win32/miktex/source/ \
 		https://ctan.org/tex-archive/systems/win32/miktex/tm/packages/:bootstrap
@@ -23,11 +22,6 @@ LICENSE=	MULTIPLE
 LICENSE_NAME=	Multiple
 LICENSE_TEXT=	This is a collection of many independent packages and does not have a single license
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
-
-NOT_FOR_ARCHS=	aarch64 armv7
-NOT_FOR_ARCHS_REASON=	Programs/TeXAndFriends/Knuth/web/tangle.p:1: parse error before `û'
-
-WRKSRC=	${WRKDIR}/${PORTNAME}.${DISTVERSION}
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_locale.so:devel/boost-libs \
@@ -87,16 +81,6 @@ post-extract:
 .for f in ${DISTFILES:M*bootstrap}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f:S/:bootstrap//} ${BUILD_WRKSRC}
 .endfor
-
-post-patch:
-	${REINPLACE_CMD} 's|log4cxx/rollingfileappender.h|log4cxx/rolling/rollingfileappender.h|g' \
-		${WRKSRC}/Libraries/MiKTeX/App/app.cpp \
-		${WRKSRC}/Programs/Editors/TeXworks/miktex/miktex-texworks.cpp \
-		${WRKSRC}/Programs/MiKTeX/Console/Qt/main.cpp \
-		${WRKSRC}/Programs/MiKTeX/PackageManager/mpm/mpm.cpp \
-		${WRKSRC}/Programs/MiKTeX/Yap/MFC/StdAfx.h \
-		${WRKSRC}/Programs/MiKTeX/initexmf/initexmf.cpp \
-		${WRKSRC}/Programs/MiKTeX/miktex/miktex.cpp
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/share/miktex-texmf/miktex/config/*.log

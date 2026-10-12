@@ -1,0 +1,34 @@
+--- CMakeLists.txt.orig	2026-05-13 12:29:06 UTC
++++ CMakeLists.txt
+@@ -87,6 +87,11 @@ endif()
+     endforeach()
+ endif()
+ 
++if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
++    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsigned-char")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsigned-char")
++endif()
++
+ ###############################################################################
+ ## system type
+ 
+@@ -1206,6 +1211,7 @@ if(USE_SYSTEM_HARFBUZZ)
+ 
+ if(USE_SYSTEM_HARFBUZZ)
+     find_package(HARFBUZZ REQUIRED)
++    find_library(HARFBUZZ_SUBSET_LIBRARY NAMES harfbuzz-subset REQUIRED)
+ endif()
+ 
+ if(USE_SYSTEM_HARFBUZZ_ICU)
+@@ -1890,6 +1896,11 @@ if(USE_SYSTEM_HARFBUZZ)
+         PROPERTIES
+         IMPORTED_LOCATION "${HARFBUZZ_LIBRARY}"
+         INTERFACE_INCLUDE_DIRECTORIES "${HARFBUZZ_INCLUDE_DIRS}"
++    )
++    add_library(MiKTeX::Imported::HARFBUZZ_SUBSET UNKNOWN IMPORTED)
++    set_target_properties(MiKTeX::Imported::HARFBUZZ_SUBSET
++        PROPERTIES
++        IMPORTED_LOCATION "${HARFBUZZ_SUBSET_LIBRARY}"
+     )
+ else()
+     add_subdirectory(${MIKTEX_REL_HARFBUZZ_DIR})
