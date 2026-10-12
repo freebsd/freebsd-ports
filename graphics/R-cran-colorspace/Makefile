@@ -1,5 +1,5 @@
 PORTNAME=	colorspace
-DISTVERSION=	2.1-3
+DISTVERSION=	2.1-4
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,6 +16,7 @@ TEST_DEPENDS=	R-cran-dplyr>0:math/R-cran-dplyr \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-mvtnorm>0:math/R-cran-mvtnorm \
 		R-cran-png>0:graphics/R-cran-png \
+		R-cran-qpdf>0:graphics/R-cran-qpdf \
 		R-cran-RColorBrewer>0:graphics/R-cran-RColorBrewer \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-scales>0:graphics/R-cran-scales \
