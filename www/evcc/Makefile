@@ -1,5 +1,5 @@
 PORTNAME=	evcc
-DISTVERSION=	0.317.0
+DISTVERSION=	0.317.1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/mfechner/${PORTNAME}/:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	Npm cache only for amd64 generated (rolldown freebsd-x64 binding)
 
-# evcc 0.317.0 ships a vite-plus based build, but plain vite 8 is used instead
+# evcc 0.317.1 ships a vite-plus based build, but plain vite 8 is used instead
 # (see patch-package.json / patch-vite.config.ts).  vite 8 publishes official
 # FreeBSD x64 native bindings (rolldown/lightningcss) as npm optional
 # packages, so they are pulled in by the npm cache and no devel/vite-plus
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	npm-node24>0:www/npm-node24
 USES=		gmake go:1.27+,modules,no_targets nodejs:24,build tar:zstd
 
 # Find here: https://github.com/evcc-io/evcc/releases
-_SHA=		e76574aea6a7a0d114bd940e0b099a695199f781
+_SHA=		259d5fd99774ccb3690eb0de8ebbf873089bd13d
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	evcc-io
@@ -54,7 +54,7 @@ pre-build:
 	# make-npm-cache) so a plain "npm ci" resolves without peer warnings.
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm ci
 	# build the UI (dist/) with plain vite; "npm run build" -> "vite build"
-	# (vite 8 ships official FreeBSD x64 native bindings via npm)
+	# (vite 8 ships official FreeBSD x64 native bindings via npm).
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm run build
 
 do-install:
