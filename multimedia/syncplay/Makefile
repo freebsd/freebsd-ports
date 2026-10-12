@@ -1,6 +1,7 @@
 PORTNAME=	syncplay
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	mce@FreeBSD.org
@@ -24,6 +25,7 @@ SHEBANG_FILES=	syncplayClient.py \
 		syncplayServer.py
 MAKEFILE=	GNUmakefile
 NO_ARCH=	yes
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 OPTIONS_DEFINE=	GUI VLC
 OPTIONS_DEFAULT=	GUI VLC CLIENT SERVER
@@ -41,6 +43,7 @@ VLC_MAKE_ARGS_OFF=	VLC_SUPPORT=false
 CLIENT_INSTALL_TARGET=	install-client
 CLIENT_USES=		desktop-file-utils
 SERVER_INSTALL_TARGET=	install-server
+SERVER_USE=		RC_SUBR=syncplay
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|path = os.path.dirname(__file__)|path = "'${DATADIR}'"|g' ${WRKSRC}/syncplay/utils.py
