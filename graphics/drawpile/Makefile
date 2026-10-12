@@ -1,23 +1,24 @@
 PORTNAME=	Drawpile
 DISTVERSION=	2.3.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collaborative drawing program
-WWW=		https://drawpile.net
+WWW=		https://drawpile.net \
+		https://github.com/drawpile/Drawpile
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libsodium.so:security/libsodium \
-		libwebpmux.so:graphics/webp
+		libwebpmux.so:graphics/webp \
+		libzip.so:archivers/libzip
 
-USES=		cargo cmake compiler:c++17-lang desktop-file-utils kde:5 pkgconfig qt:5 shared-mime-info
-USE_QT=		core gui multimedia network opengl sql svg widgets xml websockets \
-		buildtools:build linguisttools:build qmake:build
-USE_KDE=	archive dnssd ecm:build
+USES=		cargo cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:6 shared-mime-info
+USE_QT=		base svg websockets tools:build
+USE_GL=		gl opengl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl}
