@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5-table-other
-DISTVERSION=	5.1.7
-PORTREVISION=	1
+DISTVERSION=	5.1.8
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
@@ -10,8 +9,9 @@ WWW=		https://github.com/fcitx/fcitx5-table-other
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
-		libIMETable.so:chinese/libime
+BUILD_DEPENDS=	${LOCALBASE}/lib/libFcitx5Core.so:textproc/fcitx5 \
+		${LOCALBASE}/lib/libIMETable.so:chinese/libime
+RUN_DEPENDS=	fcitx5>0:textproc/fcitx5
 
 USES=		cmake gettext-tools kde tar:zst
 
