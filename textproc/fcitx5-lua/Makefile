@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5-lua
-DISTVERSION=	5.0.17
-PORTREVISION=	1
+DISTVERSION=	5.0.18
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
