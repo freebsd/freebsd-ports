@@ -1,11 +1,8 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	math java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	e748b1feabfbc70da71df4ec114e440c1df3a33e.patch:-p1 # https://github.com/cvc5/cvc5/pull/13015 (Fix configuration with CMake 4.5)
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Automatic theorem prover for SMT (Satisfiability Modulo Theories)
@@ -109,6 +106,6 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 
 PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
 
-# tests as of 1.4.1: 100% tests passed, 0 tests failed out of 4397
+# tests as of 1.4.2: 100% tests passed out of 4523
 
 .include <bsd.port.mk>
