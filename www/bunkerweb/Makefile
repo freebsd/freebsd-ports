@@ -1,6 +1,6 @@
 PORTNAME=	bunkerweb
 DISTVERSION=	1.6.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www security
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -26,6 +26,7 @@ RUN_DEPENDS=	openresty:www/openresty \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>0:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}maxminddb>0:net/py-maxminddb@${PY_FLAVOR} \
 		${LUA_MODLIBDIR}/cjson.so:devel/lua-cjson@${LUA_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certbot>0:security/py-certbot@${PY_FLAVOR} \
