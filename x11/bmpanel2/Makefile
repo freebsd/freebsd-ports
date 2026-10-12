@@ -12,9 +12,12 @@ WWW=		https://code.google.com/archive/p/bmpanel2/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	a2x:textproc/asciidoc
+
 USES=		cmake gnome pkgconfig xorg
-USE_GNOME=	pango
+USE_GNOME=	cairo pango
 USE_XORG=	x11 xext
+CMAKE_OFF=	BMPANEL2_FEATURE_CONFIG
 
 OPTIONS_DEFINE=	OPACITY TEMPERATURE
 OPACITY_DESC=		Opacity setting with compositing window managers
@@ -28,11 +31,5 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^#include/s,alloca,stdlib,' \
 		${WRKSRC}/widget-utils.c
 	@${REINPLACE_CMD} -e 's,uint,unsigned,' ${WRKSRC}/args.c
-# Disable unused optional features (and thus unbreak "make clean")
-	@${REINPLACE_CMD} -e '/^OPTION/s, ON, OFF,' ${WRKSRC}/CMakeLists.txt
-	@${RM} ${WRKSRC}/themes/striped/theme.orig
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bmpanel2
 
 .include <bsd.port.mk>

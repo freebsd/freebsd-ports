@@ -325,3 +325,4 @@ bin/bmpanel2
 %%DATADIR%%/themes/xsocam/tb_tile_pressed_img.png
 %%DATADIR%%/themes/xsocam/theme
 %%DATADIR%%/themes/xsocam/tile_img.png
+share/man/man1/bmpanel2.1.gz
