@@ -1,6 +1,6 @@
---- src/template.zig.orig	2026-06-09 15:40:29 UTC
+--- src/template.zig.orig	2026-10-11 12:17:37 UTC
 +++ src/template.zig
-@@ -1233,12 +1233,12 @@ pub fn SuperTemplate(comptime ScriptyVM: type) type {
+@@ -1242,12 +1242,12 @@ pub fn SuperTemplate(comptime ScriptyVM: type) type {
          }
  
          pub fn setContext(tpl: Template, script_ctx: RootRef) void {

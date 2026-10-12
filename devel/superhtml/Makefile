@@ -1,6 +1,5 @@
 PORTNAME=	superhtml
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+PORTVERSION=	0.7.0.g20261012
 CATEGORIES=	devel
 
 MAINTAINER=	dave@freedave.net
@@ -14,9 +13,13 @@ USES=		zig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kristoff-it
-GH_PROJECT=	${PORTNAME}
+# This is a little past 0.7.0 but its what zine uses, keep full hash for distcache
+GH_TAGNAME=	abd86c4ba995a37b0f0559801b32b35cde8bcef9
 
 PLIST_FILES=	bin/superhtml
+
+post-patch:
+	${REINPLACE_CMD} -e 's:%%DISTVERSION%%:${DISTVERSION}:' ${WRKSRC}/build.zig
 
 # `make WITH_DEBUG=yes test` to test against debug build
 do-test:
