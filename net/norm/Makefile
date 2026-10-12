@@ -1,6 +1,7 @@
 PORTNAME=	norm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -19,6 +20,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	USNavalResearchLaboratory
 GH_PROJECT=	norm
 GH_TUPLE=	USNavalResearchLaboratory:protolib:702e909:protolib/protolib
+PATCH_SITES=	https://github.com/USNavalResearchLaboratory/protolib/commit/
+PATCHFILES=	ba9ca1ca7d73592268ebfd5a43271303e76f461e.patch:-p1
+PATCH_DIST_ARGS=	-d ../protolib-702e909
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	SOVERSION=${DISTVERSION}
