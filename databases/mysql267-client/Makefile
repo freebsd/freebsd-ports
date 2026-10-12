@@ -1,0 +1,49 @@
+PORTNAME=	mysql
+PKGNAMESUFFIX=	267-client
+
+COMMENT=	Multithreaded SQL database (client)
+
+LICENSE+=	LGPL21
+
+# Slave port of databases/mysql267-server; see the note there on repology
+# reporting this series as outdated.
+
+# MySQL8.2+ supports only 64-bit platforms
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
+
+MASTERDIR=	${.CURDIR}/../mysql267-server
+
+PKGMESSAGE=	${.CURDIR}/pkg-message
+PATCHDIR=	${MASTERDIR}/files
+PLIST=		${.CURDIR}/pkg-plist
+
+CONFLICTS_INSTALL=	mysql*-client \
+			mariadb*-client \
+			percona*-client
+
+CMAKE_ARGS+=	-DWITHOUT_SERVER=1 -DINSTALL_SUPPORTFILESDIR=0
+
+CPE_PRODUCT=	mysql
+
+USE_LDCONFIG+=	${PREFIX}/lib/mysql
+
+CLIENT_ONLY=	yes
+
+OPTIONS_GROUP+=	PLUGINS
+PLUGINS_DESC=	Default Client Plugins
+OPTIONS_GROUP_PLUGINS=	SASLCLIENT
+SASLCLIENT_DESC=	SASL client plugin module
+SASLCLIENT_CMAKE_BOOL=	WITH_AUTHENTICATION_LDAP
+SASLCLIENT_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+SASLCLIENT_USES=		ldap
+
+OPTIONS_DEFAULT+=	SASLCLIENT
+OPTIONS_SUB=	yes
+
+post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/mysql/private
+	@${LN} -s libmysqlclient.a ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.a
+	@${LN} -s libmysqlclient.so ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so
+	@${LN} -s libmysqlclient.so.24 ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so.24
+
+.include "${MASTERDIR}/Makefile"

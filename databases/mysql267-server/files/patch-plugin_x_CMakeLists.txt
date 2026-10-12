@@ -1,0 +1,11 @@
+--- plugin/x/CMakeLists.txt.orig	2026-07-10 11:18:36 UTC
++++ plugin/x/CMakeLists.txt
+@@ -75,6 +75,8 @@ INCLUDE_DIRECTORIES(
+   ${MYSQLX_GENERATE_DIR}
+   ${MYSQLX_PROTOCOL_INCLUDE_DIR}
+   ${MYSQLX_CLIENT_INCLUDE_DIR}
++  ${OPENSSL_INCLUDE_DIR}
++  ${BOOST_INCLUDE_DIR}
+ )
+ 
+ # MYSQL_ADD_PLUGIN may have disabled the plugin.

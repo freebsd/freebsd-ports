@@ -1,0 +1,93 @@
+#!/bin/sh
+
+# PROVIDE: mysqlrouter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable mysqlrouter:
+#
+# mysqlrouter_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable mysqlrouter.
+# mysqlrouter_config (str):	Configuration file.
+#				Default "%%PREFIX%%/etc/mysqlrouter/mysqlrouter.conf".
+# mysqlrouter_user (str):	User to run mysqlrouter as, handled by rc.subr.
+#				Default "mysqlrouter".
+# mysqlrouter_group (str):	Group of the runtime, log and data directory.
+#				Default "mysqlrouter".
+# mysqlrouter_login_class (str):	Login class, see rc.subr(8) and
+#				login.conf(5).  Raise openfiles there when the
+#				router has to serve many connections, upstream
+#				uses 10000.  Default "daemon".
+# mysqlrouter_rundir (str):	Runtime directory. Must match "runtime_folder"
+#				in the configuration file and the path used by
+#				%%PREFIX%%/etc/logrotate.d/mysqlrouter.
+#				Default "/var/run/mysqlrouter".
+# mysqlrouter_logdir (str):	Log directory. Must match "logging_folder".
+#				Default "/var/log/mysqlrouter".
+# mysqlrouter_datadir (str):	Data directory, holds the keyring and the
+#				dynamic state. Must match "data_folder".
+#				Default "/var/db/mysqlrouter".
+# mysqlrouter_args (str):	Custom additional arguments (default empty).
+#
+# mysqlrouter does not detach itself, so it is run under daemon(8).  The PID
+# file is written by daemon(8), not by mysqlrouter.  Do not add a "pid_file"
+# entry to the configuration file, mysqlrouter would then refuse to start
+# with "PID file ... found. Already running?".
+#
+
+. /etc/rc.subr
+
+name="mysqlrouter"
+rcvar=mysqlrouter_enable
+
+load_rc_config $name
+
+: ${mysqlrouter_enable:="NO"}
+: ${mysqlrouter_config:="%%PREFIX%%/etc/mysqlrouter/mysqlrouter.conf"}
+: ${mysqlrouter_user:="mysqlrouter"}
+: ${mysqlrouter_group:="mysqlrouter"}
+: ${mysqlrouter_rundir:="/var/run/mysqlrouter"}
+: ${mysqlrouter_logdir:="/var/log/mysqlrouter"}
+: ${mysqlrouter_datadir:="/var/db/mysqlrouter"}
+: ${mysqlrouter_args:=""}
+
+pidfile="${mysqlrouter_rundir}/${name}.pid"
+procname="%%PREFIX%%/bin/mysqlrouter"
+required_files="${mysqlrouter_config}"
+
+command="/usr/sbin/daemon"
+command_args="-c -f -S -T ${name} -p ${pidfile} \
+	${procname} --config ${mysqlrouter_config} ${mysqlrouter_args}"
+
+extra_commands="reload"
+sig_reload="HUP"
+
+start_precmd="${name}_precmd"
+
+mysqlrouter_precmd()
+{
+	# /var/run is cleared on boot and mysqlrouter cannot create the
+	# directory itself: it drops privileges before the runtime directory
+	# is used.  daemon(8) needs it to exist before it opens the PID file,
+	# and rc.subr runs the whole command as ${mysqlrouter_user}, so the
+	# directory has to belong to that account.  A unix socket configured
+	# in a [routing] section is created here as well.
+	install -d -o "${mysqlrouter_user}" -g "${mysqlrouter_group}" -m 0750 \
+	    "${mysqlrouter_rundir}" || return 1
+
+	# Only create these, never touch an existing directory: an
+	# administrator may already run mysqlrouter under a different account.
+	if [ ! -d "${mysqlrouter_logdir}" ]; then
+		install -d -o "${mysqlrouter_user}" -g "${mysqlrouter_group}" \
+		    -m 0750 "${mysqlrouter_logdir}" || return 1
+	fi
+	if [ ! -d "${mysqlrouter_datadir}" ]; then
+		install -d -o "${mysqlrouter_user}" -g "${mysqlrouter_group}" \
+		    -m 0750 "${mysqlrouter_datadir}" || return 1
+	fi
+
+	return 0
+}
+
+run_rc_command "$1"
