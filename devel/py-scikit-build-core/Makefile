@@ -1,5 +1,5 @@
 PORTNAME=	scikit-build-core
-DISTVERSION=	1.0.3
+DISTVERSION=	1.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,9 +42,11 @@ USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
 NO_ARCH=	yes
 
-# tests as of 1.0.3: 7 failed, 1015 passed, 14 skipped, 1 warning in 228.87s (0:03:48)
+# tests as of 1.0.3: 43 failed, 1114 passed, 13 skipped, 79 errors in 201.68s (0:03:21) # all failures are about updating setuptools to the latest release
+# all 53 dependencies build successfully
 
 .include <bsd.port.mk>
