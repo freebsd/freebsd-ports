@@ -40,6 +40,8 @@ include/Fcitx5/Core/fcitx/instance.h
 include/Fcitx5/Core/fcitx/menu.h
 include/Fcitx5/Core/fcitx/statusarea.h
 include/Fcitx5/Core/fcitx/surroundingtext.h
+include/Fcitx5/Core/fcitx/tempmode.h
+include/Fcitx5/Core/fcitx/tempmodemanager.h
 include/Fcitx5/Core/fcitx/text.h
 include/Fcitx5/Core/fcitx/userinterface.h
 include/Fcitx5/Core/fcitx/userinterfacemanager.h
@@ -61,6 +63,7 @@ include/Fcitx5/Utils/fcitx-utils/color.h
 include/Fcitx5/Utils/fcitx-utils/connectableobject.h
 include/Fcitx5/Utils/fcitx-utils/cutf8.h
 include/Fcitx5/Utils/fcitx-utils/dbus/bus.h
+include/Fcitx5/Utils/fcitx-utils/dbus/coroutine.h
 include/Fcitx5/Utils/fcitx-utils/dbus/matchrule.h
 include/Fcitx5/Utils/fcitx-utils/dbus/message.h
 include/Fcitx5/Utils/fcitx-utils/dbus/message_details.h
@@ -140,6 +143,7 @@ lib/cmake/Fcitx5ModuleXCB/Fcitx5ModuleXCBConfig.cmake
 lib/cmake/Fcitx5ModuleXCB/Fcitx5ModuleXCBConfigVersion.cmake
 lib/cmake/Fcitx5Utils/Fcitx5CompilerSettings.cmake
 lib/cmake/Fcitx5Utils/Fcitx5Download.cmake.in
+lib/cmake/Fcitx5Utils/Fcitx5ImportAddon.cpp.in
 lib/cmake/Fcitx5Utils/Fcitx5Macros.cmake
 lib/cmake/Fcitx5Utils/Fcitx5ModuleTemplate.cmake.in
 lib/cmake/Fcitx5Utils/Fcitx5UtilsConfig.cmake
@@ -399,15 +403,15 @@ share/dbus-1/services/org.fcitx.Fcitx5.service
 %%DATADIR%%/testing/addon/testfrontend.conf
 %%DATADIR%%/testing/addon/testim.conf
 %%DATADIR%%/testing/addon/testui.conf
-%%DATADIR%%/themes/default/arrow.png
-%%DATADIR%%/themes/default/next.png
-%%DATADIR%%/themes/default/prev.png
-%%DATADIR%%/themes/default/radio.png
+%%DATADIR%%/themes/default/arrow.svg
+%%DATADIR%%/themes/default/next.svg
+%%DATADIR%%/themes/default/prev.svg
+%%DATADIR%%/themes/default/radio.svg
 %%DATADIR%%/themes/default/theme.conf
-%%DATADIR%%/themes/default-dark/arrow.png
-%%DATADIR%%/themes/default-dark/next.png
-%%DATADIR%%/themes/default-dark/prev.png
-%%DATADIR%%/themes/default-dark/radio.png
+%%DATADIR%%/themes/default-dark/arrow.svg
+%%DATADIR%%/themes/default-dark/next.svg
+%%DATADIR%%/themes/default-dark/prev.svg
+%%DATADIR%%/themes/default-dark/radio.svg
 %%DATADIR%%/themes/default-dark/theme.conf
 %%DATADIR%%/unicode/charselectdata
 share/icons/hicolor/128x128/apps/fcitx.png
@@ -434,6 +438,7 @@ share/locale/ja/LC_MESSAGES/fcitx5.mo
 share/locale/ka/LC_MESSAGES/fcitx5.mo
 share/locale/ko/LC_MESSAGES/fcitx5.mo
 share/locale/ru/LC_MESSAGES/fcitx5.mo
+share/locale/sv/LC_MESSAGES/fcitx5.mo
 share/locale/vi/LC_MESSAGES/fcitx5.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx5.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx5.mo

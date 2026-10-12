@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5
-DISTVERSION=	5.1.21
-PORTREVISION=	1
+DISTVERSION=	5.1.23
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict
@@ -67,7 +66,7 @@ CMAKE_ON=	FCITX5_DOWNLOAD_DISALLOWED SYSTEM_USE_UTHASH
 CMAKE_OFF=	ENABLE_TEST
 MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 
-USE_GNOME=	cairo gdkpixbuf glib20 pango
+USE_GNOME=	cairo gdkpixbuf glib20 librsvg2 pango
 USE_KDE=	ecm:build
 
 USE_LDCONFIG=	yes
