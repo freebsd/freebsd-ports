@@ -5734,3 +5734,4 @@ audio/stegosaurus-lv2||2026-10-06|Removed, no longer maintained upstream
 math/mumps|math/mumps-edf|2026-10-07|Repomove to math/mumps-edf
 math/mumps4|math/mumps|2026-10-07|Repomove to math/mumps
 textproc/py-hieroglyph||2026-10-09|Has expired: Broken with textproc/py-sphinx 7 and newer, last upstream release in 2020
+graphics/kamerka||2026-10-11|Remove abandonware

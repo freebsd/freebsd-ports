@@ -407,7 +407,6 @@
     SUBDIR += jpegoptim
     SUBDIR += jslice
     SUBDIR += kamera
-    SUBDIR += kamerka
     SUBDIR += katarakt
     SUBDIR += kcolorchooser
     SUBDIR += kcolorpicker
