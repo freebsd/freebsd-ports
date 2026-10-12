@@ -1,0 +1,31 @@
+error: invalid definition of the runtime `close` symbol used by the standard library
+  --> /wrkdirs/usr/ports/x11/squeekboard/work/squeekboard-v1.43.1/src/vkeyboard.rs:49:9
+   |
+49 |         fn close(fd: u32);
+   |         ^^^^^^^^^^^^^^^^^^
+   |
+   = note: expected `unsafe extern "C" fn(i32) -> i32` (for the current target)
+           found    `unsafe extern "C" fn(u32)`
+   = help: either fix the signature or remove any attributes like `#[unsafe(no_mangle)]`, `#[unsafe(export_name = "close")]`, or `#[link_name = "close"]`
+   = note: `#[deny(invalid_runtime_symbol_definitions)]` on by default
+
+
+--- src/vkeyboard.rs.orig	2026-10-12 16:25:55 UTC
++++ src/vkeyboard.rs
+@@ -39,14 +39,13 @@ pub mod c {
+     impl Drop for KeyMap {
+         fn drop(&mut self) {
+             unsafe {
+-                close(self.fd as u32);
++                close(self.fd as i32);
+             }
+         }
+     }
+ 
+     extern "C" {
+-        // From libc, to let KeyMap get deallocated.
+-        fn close(fd: u32);
++        fn close(fd: i32) -> i32;
+ 
+         pub fn eek_virtual_keyboard_v1_key(
+             virtual_keyboard: ZwpVirtualKeyboardV1,
