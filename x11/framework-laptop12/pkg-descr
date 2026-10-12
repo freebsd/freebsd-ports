@@ -1,0 +1,13 @@
+Meta-port for the Framework Laptop 12 on FreeBSD X11.
+
+It installs framework-keyboard(7) (x11/framework-keyboard) which
+depends on bhotkeys, bosd, and the six packages those keys run:
+bhotkeys-airplane, bhotkeys-audio, bhotkeys-brightness,
+bhotkeys-media, bhotkeys-mirror, and bhotkeys-screenshot.
+
+It also installs framework_autorotate(8) (x11/framework-autorotate),
+a service that uses the embedded controller accelerometer to
+automate rotation of the built-in laptop panel. To toggle the
+rotation lock, auto-rotate-toggle(1) (x11/framework-autorotate-hotkey)
+is installed to allow Super+R (Super+O on KDE or Xfce) to lock screen
+orientation.
