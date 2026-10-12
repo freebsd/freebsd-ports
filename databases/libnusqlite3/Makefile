@@ -4,7 +4,7 @@ CATEGORIES=	databases
 MASTER_SITES=	https://bitbucket.org/alekseyt/nunicode/get/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 DISTNAME=	nunicode-${DISTVERSION}
 
-MAINTAINER=	michaeljohnson@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	SQLite3 extension with Unicode collation, case mapping, and unaccent
 WWW=		https://bitbucket.org/alekseyt/nunicode
 

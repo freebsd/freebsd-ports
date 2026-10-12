@@ -3,7 +3,7 @@ PORTVERSION=	8.1.3.1
 PORTREVISION=	2
 CATEGORIES=	multimedia
 
-MAINTAINER=	michaeljohnson@ahze.net
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	FFmpeg with patches for HDR tone mapping (tonemapx/libplacebo)
 WWW=		https://github.com/jellyfin/jellyfin-ffmpeg
 
