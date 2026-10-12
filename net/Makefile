@@ -404,6 +404,7 @@
     SUBDIR += libmateweather
     SUBDIR += libmaxminddb
     SUBDIR += libmdf
+    SUBDIR += libmodbus
     SUBDIR += libnatpmp
     SUBDIR += libndp
     SUBDIR += libnet

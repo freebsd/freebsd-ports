@@ -1,0 +1,8 @@
+include/modbus/modbus-rtu.h
+include/modbus/modbus-tcp.h
+include/modbus/modbus-version.h
+include/modbus/modbus.h
+lib/libmodbus.so
+lib/libmodbus.so.5
+lib/libmodbus.so.5.1.0
+libdata/pkgconfig/libmodbus.pc
