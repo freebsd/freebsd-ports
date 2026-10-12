@@ -1,5 +1,6 @@
 PORTNAME=	obs-studio
 DISTVERSION=	32.2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/obsproject/obs-studio/releases/download/${DISTVERSION}/
 DISTFILES=	OBS-Studio-${DISTVERSION}-Sources${EXTRACT_SUFX}
@@ -52,7 +53,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libuuid.so:misc/libuuid \
 		libva.so:multimedia/libva
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl gnome kde:6 lua luajit \
+USES=		cmake compiler:c++17-lang desktop-file-utils localbase gl gnome kde:6 lua luajit \
 		pkgconfig python qt:6 xorg
 USE_QT=		base svg tools:build
 USE_KDE=	ecm:build
@@ -77,16 +78,24 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-sources
 
 OPTIONS_DEFINE=		BROWSER NVENC PIPEWIRE VLC VST WAYLAND
 OPTIONS_DEFAULT=	PIPEWIRE VLC VST WAYLAND
-OPTIONS_DEFAULT_amd64=	NVENC
+OPTIONS_DEFAULT_amd64=	BROWSER NVENC
+# www/cef (Chromium) is only available on amd64 and aarch64
+.for _arch in armv7 i386 powerpc powerpc64 powerpc64le riscv64
+OPTIONS_EXCLUDE_${_arch}=	BROWSER
+.endfor
 OPTIONS_MULTI=		AUDIO
 OPTIONS_MULTI_AUDIO=	JACK PULSEAUDIO SNDIO
 OPTIONS_DEFAULT+=	${OPTIONS_MULTI_AUDIO}
 OPTIONS_SUB=		yes
 AUDIO_DESC=		Audio backends
 
-BROWSER_DESC=		Build OSB browser
-BROWSER_CMAKE_BOOL=	BUILD_BROWSER # this also requires an additional git submodule
-BROWSER_BROKEN=		Needs CEF (Chromium Embedded Framework) which isn't yet ported
+BROWSER_DESC=		Browser source and docks (Chromium Embedded Framework)
+BROWSER_LIB_DEPENDS=	libcef.so:www/cef
+BROWSER_CMAKE_BOOL=	ENABLE_BROWSER
+# The What's New dialog has no FreeBSD code path (see
+# frontend/cmake/feature-whatsnew.cmake).
+BROWSER_CMAKE_ON=	-DCEF_ROOT_DIR:PATH=${LOCALBASE}/lib/cef \
+			-DENABLE_WHATSNEW:BOOL=OFF
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_ON=		-DENABLE_JACK=TRUE

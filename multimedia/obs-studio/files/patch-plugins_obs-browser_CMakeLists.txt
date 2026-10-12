@@ -1,0 +1,19 @@
+--- plugins/obs-browser/CMakeLists.txt.orig	2026-08-14 22:07:07 UTC
++++ plugins/obs-browser/CMakeLists.txt
+@@ -42,14 +42,14 @@ target_sources(
+ 
+ target_include_directories(obs-browser PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/deps")
+ 
+-target_compile_features(obs-browser PRIVATE cxx_std_17)
++target_compile_features(obs-browser PRIVATE cxx_std_20)
+ target_link_libraries(obs-browser PRIVATE OBS::libobs OBS::frontend-api OBS::websocket-api nlohmann_json::nlohmann_json)
+ 
+ if(OS_WINDOWS)
+   include(cmake/os-windows.cmake)
+ elseif(OS_MACOS)
+   include(cmake/os-macos.cmake)
+-elseif(OS_LINUX)
++elseif(OS_LINUX OR OS_FREEBSD)
+   include(cmake/os-linux.cmake)
+ endif()
+ 

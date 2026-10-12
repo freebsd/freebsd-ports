@@ -1,6 +1,15 @@
---- plugins/CMakeLists.txt.orig	2025-09-26 21:04:14 UTC
+--- plugins/CMakeLists.txt.orig	2026-08-14 22:07:04 UTC
 +++ plugins/CMakeLists.txt
-@@ -61,7 +61,7 @@ add_obs_plugin(obs-libfdk)
+@@ -10,7 +10,7 @@ endif()
+ set_property(GLOBAL APPEND PROPERTY OBS_FEATURES_ENABLED "Plugin Support")
+ 
+ macro(check_obs_browser)
+-  if((OS_WINDOWS AND CMAKE_VS_PLATFORM_NAME MATCHES "(ARM64|x64)") OR OS_MACOS OR OS_LINUX)
++  if((OS_WINDOWS AND CMAKE_VS_PLATFORM_NAME MATCHES "(ARM64|x64)") OR OS_MACOS OR OS_LINUX OR OS_FREEBSD)
+     if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/obs-browser/CMakeLists.txt")
+       message(FATAL_ERROR "Required submodule 'obs-browser' not available.")
+     else()
+@@ -77,7 +77,7 @@ check_obs_browser()
  add_obs_plugin(obs-ffmpeg)
  add_obs_plugin(obs-filters)
  add_obs_plugin(obs-libfdk)
@@ -9,7 +18,7 @@
  add_obs_plugin(obs-outputs)
  add_obs_plugin(
      obs-qsv11
-@@ -72,7 +72,7 @@ add_obs_plugin(
+@@ -88,7 +88,7 @@ add_obs_plugin(obs-text PLATFORMS WINDOW
  add_obs_plugin(obs-transitions)
  add_obs_plugin(
      obs-vst
