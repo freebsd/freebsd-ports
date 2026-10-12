@@ -6,10 +6,10 @@ MAINTAINER=	mce@FreeBSD.org
 COMMENT=	GPS log file viewer and analyzer
 WWW=		https://www.gpxsee.org/
 
-LICENSE=	GPLv3 PD
+LICENSE=	GPLv3 UNLICENSE
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/licence.txt
-LICENSE_FILE_PD=	${WRKSRC}/GPXSee-maps/LICENSE
+LICENSE_FILE_UNLICENSE=	${WRKSRC}/GPXSee-maps/LICENSE
 
 USES=		compiler:c++11-lang desktop-file-utils gl qmake:outsource qt:6 \
 		shared-mime-info
