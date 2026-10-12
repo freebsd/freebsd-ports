@@ -37,6 +37,9 @@
 #				Default: %%REMARK_DATADIR%%/pictures.staging
 # remark_image_bolt_file (str):	images bolt file location
 #				Default: %%REMARK_DATADIR%%/pictures.db
+# remark_ssl_acme_location (str):
+#				certificate cache for remark_ssl_type="auto"
+#				Default: %%REMARK_DATADIR%%/acme
 # remark_remark_web_root (str):	directory overriding the embedded frontend,
 #				e.g. %%WWWDIR%% (not created by the package)
 #				Default: unset (use the embedded frontend)
@@ -79,7 +82,7 @@ load_rc_config ${name}
 : ${remark_avatar_type:="fs"}
 : ${remark_avatar_fs_path:="%%REMARK_DATADIR%%/avatars"}
 : ${remark_avatar_bolt_file:="%%REMARK_DATADIR%%/avatars.db"}
-: ${remark_avatar_uri:=""}
+: ${remark_avatar_uri:="%%REMARK_DATADIR%%/avatars"}
 : ${remark_avatar_resize_limit:="0"}
 : ${remark_image_type:="fs"}
 : ${remark_image_fs_path:="%%REMARK_DATADIR%%/pictures"}
@@ -94,6 +97,9 @@ load_rc_config ${name}
 : ${remark_image_resize_width:="2400"}
 : ${remark_image_resize_height:="900"}
 : ${remark_auth_same_site:="default"}
+: ${remark_auth_ttl_jwt:=""}
+: ${remark_auth_ttl_cookie:=""}
+: ${remark_auth_send_jwt_header:=""}
 : ${remark_auth_apple_cid:=""}
 : ${remark_auth_apple_tid:=""}
 : ${remark_auth_apple_kid:=""}
@@ -104,6 +110,7 @@ load_rc_config ${name}
 : ${remark_auth_facebook_csec:=""}
 : ${remark_auth_microsoft_cid:=""}
 : ${remark_auth_microsoft_csec:=""}
+: ${remark_auth_microsoft_tenant:=""}
 : ${remark_auth_github_cid:=""}
 : ${remark_auth_github_csec:=""}
 : ${remark_auth_twitter_cid:=""}
@@ -114,12 +121,23 @@ load_rc_config ${name}
 : ${remark_auth_discord_csec:=""}
 : ${remark_auth_yandex_cid:=""}
 : ${remark_auth_yandex_csec:=""}
+: ${remark_auth_custom_name:=""}
+: ${remark_auth_custom_cid:=""}
+: ${remark_auth_custom_csec:=""}
+: ${remark_auth_custom_auth_url:=""}
+: ${remark_auth_custom_token_url:=""}
+: ${remark_auth_custom_info_url:=""}
+: ${remark_auth_custom_scopes:=""}
+: ${remark_auth_custom_id_field:=""}
+: ${remark_auth_custom_name_field:=""}
+: ${remark_auth_custom_picture_field:=""}
+: ${remark_auth_custom_email_field:=""}
 : ${remark_auth_telegram:=""}
 : ${remark_user:="%%REMARK_USER%%"}
 : ${remark_auth_anon:="false"}
-: ${remark_auth_enable:="false"}
+: ${remark_auth_email_enable:="false"}
 : ${remark_auth_email_from:=""}
-: ${remark_auth_email_subject:="remark42 confirmation"}
+: ${remark_auth_email_subj:="remark42 confirmation"}
 : ${remark_auth_email_content_type:="text/html"}
 : ${remark_notify_users:=""}
 : ${remark_notify_admins:=""}
@@ -135,9 +153,11 @@ load_rc_config ${name}
 : ${remark_notify_email_verification_subj:=""}
 : ${remark_telegram_token:=""}
 : ${remark_telegram_timeout:=""}
+: ${remark_telegram_api_url:=""}
 : ${remark_smtp_host:=""}
 : ${remark_smtp_insecure_skip_verify:=""}
 : ${remark_smtp_port:=""}
+: ${remark_smtp_helo_host:=""}
 : ${remark_smtp_username:=""}
 : ${remark_smtp_password:=""}
 : ${remark_smtp_login_auth:=""}
@@ -148,7 +168,7 @@ load_rc_config ${name}
 : ${remark_ssl_port:=""}
 : ${remark_ssl_cert:=""}
 : ${remark_ssl_key:=""}
-: ${remark_ssl_acme_location:=""}
+: ${remark_ssl_acme_location:="%%REMARK_DATADIR%%/acme"}
 : ${remark_ssl_acme_email:=""}
 : ${remark_max_comment_size:=""}
 : ${remark_min_comment_size:=""}
@@ -174,8 +194,9 @@ load_rc_config ${name}
 : ${remark_remark_port:=""}
 : ${remark_remark_web_root:=""}
 : ${remark_update_limit:=""}
+: ${remark_trusted_proxy:=""}
 : ${remark_subscribers_only:=""}
-: ${remark_disable_fancy_html_formatting:=""}
+: ${remark_disable_fancy_text_formatting:=""}
 : ${remark_disable_signature:=""}
 : ${remark_admin_passwd:=""}
 : ${remark_debug:=""}
@@ -241,7 +262,7 @@ remark_precmd()
 		export_variable AVATAR_URI
 		;;
 	*)
-                err 1 "remark_avatar_path has to be 'fs', 'bolt' or 'uri'"
+                err 1 "remark_avatar_type has to be 'fs', 'bolt' or 'uri'"
                 ;;
         esac
 	export AVATAR_RESIZE="${remark_avatar_resize_limit}"
@@ -261,23 +282,27 @@ remark_precmd()
 		;;
 	esac
 	export_variables IMAGE_MAX_SIZE IMAGE_RESIZE_WIDTH IMAGE_RESIZE_HEIGHT AUTH_SAME_SITE AUTH_TELEGRAM
+	export_variables AUTH_TTL_JWT AUTH_TTL_COOKIE AUTH_SEND_JWT_HEADER
 	# Export Apple auth separately due to different parameters
 	export_variables AUTH_APPLE_CID AUTH_APPLE_TID AUTH_APPLE_KID AUTH_APPLE_PRIVATE_KEY_FILEPATH
 	for _provider in google facebook microsoft github twitter patreon discord yandex; do
 		_provider_upper="$(echo ${_provider} | tr a-z A-Z)"
 		export_variables "AUTH_${_provider_upper}_CID" "AUTH_${_provider_upper}_CSEC"
 	done
+	export_variables AUTH_MICROSOFT_TENANT AUTH_CUSTOM_NAME AUTH_CUSTOM_CID AUTH_CUSTOM_CSEC AUTH_CUSTOM_AUTH_URL
+	export_variables AUTH_CUSTOM_TOKEN_URL AUTH_CUSTOM_INFO_URL AUTH_CUSTOM_SCOPES AUTH_CUSTOM_ID_FIELD
+	export_variables AUTH_CUSTOM_NAME_FIELD AUTH_CUSTOM_PICTURE_FIELD AUTH_CUSTOM_EMAIL_FIELD
 	export_variables AUTH_ANON AUTH_EMAIL_ENABLE AUTH_EMAIL_FROM AUTH_EMAIL_SUBJ AUTH_EMAIL_CONTENT_TYPE
 	export_variables NOTIFY_USERS NOTIFY_ADMINS NOTIFY_QUEUE NOTIFY_TELEGRAM_CHAN NOTIFY_SLACK_TOKEN NOTIFY_SLACK_CHAN
 	export_variables NOTIFY_WEBHOOK_URL NOTIFY_WEBHOOK_TEMPLATE NOTIFY_WEBHOOK_HEADERS NOTIFY_WEBHOOK_TIMEOUT
-	export_variables NOTIFY_EMAIL_FROM NOTIFY_EMAIL_VERIFICATION_SUBJ TELEGRAM_TOKEN TELEGRAM_TIMEOUT
-	export_variables SMTP_HOST SMTP_INSECURE_SKIP_VERIFY SMTP_PORT SMTP_USERNAME SMTP_PASSWORD SMTP_LOGIN_AUTH SMTP_TLS
+	export_variables NOTIFY_EMAIL_FROM NOTIFY_EMAIL_VERIFICATION_SUBJ TELEGRAM_TOKEN TELEGRAM_TIMEOUT TELEGRAM_API_URL
+	export_variables SMTP_HOST SMTP_HELO_HOST SMTP_INSECURE_SKIP_VERIFY SMTP_PORT SMTP_USERNAME SMTP_PASSWORD SMTP_LOGIN_AUTH SMTP_TLS
 	export_variables SMTP_STARTTLS SMTP_TIMEOUT SSL_TYPE SSL_PORT SSL_CERT SSL_KEY SSL_ACME_LOCATION
 	export_variables SSL_ACME_EMAIL MAX_COMMENT_SIZE MIN_COMMENT_SIZE MAX_VOTES VOTES_IP ANON_VOTE VOTES_IP_TIME
 	export_variables LOW_SCORE CRITICAL_SCORE POSITIVE_SCORE RESTRICTED_WORDS RESTRICTED_NAMES
 	export_variables EDIT_TIME ADMIN_EDIT READONLY_AGE IMAGE_PROXY_HTTP2HTTPS IMAGE_PROXY_CACHE_EXTERNAL
 	export_variables EMOJI SIMPLE_VIEW PROXY_CORS ALLOWED_HOSTS REMARK_ADDRESS REMARK_PORT REMARK_WEB_ROOT
-	export_variables UPDATE_LIMIT SUBSCRIBERS_ONLY DISABLE_FANCY_HTML_FORMATTING DISABLE_SIGNATURE ADMIN_PASSWD DEBUG
+	export_variables UPDATE_LIMIT TRUSTED_PROXY SUBSCRIBERS_ONLY DISABLE_FANCY_TEXT_FORMATTING DISABLE_SIGNATURE ADMIN_PASSWD DEBUG
 }
 
 pidfile="%%REMARK_PIDDIR%%${name}.pid"

@@ -1,7 +1,6 @@
 PORTNAME=	remark42
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.1
-PORTREVISION=	3
+DISTVERSION=	1.18.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/delphij:prefetch
 
@@ -26,7 +25,7 @@ GH_TUPLE=	Depado:bfchroma:v2.0.0:depado_bfchroma_v2/vendor/github.com/Depado/bfc
 		dlclark:regexp2:v2.7.1:dlclark_regexp2_v2/vendor/github.com/dlclark/regexp2/v2 \
 		etcd-io:bbolt:v1.5.0:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		go-oauth2:oauth2:v4.5.4:go_oauth2_oauth2_v4/vendor/github.com/go-oauth2/oauth2/v4 \
-		go-pkgz:auth:v2.3.0:go_pkgz_auth_v2/vendor/github.com/go-pkgz/auth \
+		go-pkgz:auth:v2.3.1:go_pkgz_auth_v2/vendor/github.com/go-pkgz/auth \
 		go-pkgz:email:v0.8.0:go_pkgz_email/vendor/github.com/go-pkgz/email \
 		go-pkgz:expirable-cache:v3.1.1:go_pkgz_expirable_cache_v3/vendor/github.com/go-pkgz/expirable-cache \
 		go-pkgz:jrpc:v0.4.2:go_pkgz_jrpc/vendor/github.com/go-pkgz/jrpc \
