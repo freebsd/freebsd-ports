@@ -1,3 +1,78 @@
+  <vuln vid="5518664d-c652-11f1-b273-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.4.0</ge><lt>19.4.2</lt></range>
+	<range><ge>19.3.0</ge><lt>19.3.4</lt></range>
+	<range><ge>10.3.0</ge><lt>19.2.8</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/?nav=19.4.2">
+	  <p>Integer Overflow issue in CI/CD Regular Expression Compiler impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in syntax highlighting impacts GitLab CE/EE</p>
+	  <p>Improper Authorization issue in downstream pipeline creation service impacts GitLab CE/EE</p>
+	  <p>Permissive Regular Expression issue in repository file access impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in scheduled pipeline execution policy impacts GitLab EE</p>
+	  <p>Improper Neutralization of Input Used for LLM Prompting issue in GitLab Duo Agent Platform impacts GitLab EE</p>
+	  <p>Sensitive Information Exposure issue in GitLab Pages impacts GitLab CE/EE</p>
+	  <p>Open Redirect issue in Kubernetes proxy impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in GraphQL notes widget impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in GraphQL work item hierarchy impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in GraphQL scope impacts GitLab CE/EE</p>
+	  <p>Page cache poisoning via improper cache key construction in merge requests impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in work items GraphQL API impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in merge request accessibility report comparison endpoint impacts GitLab CE/EE</p>
+	  <p>Incorrect Privilege Assignment issue in custom roles impacts GitLab EE</p>
+	  <p>Insufficient Granularity of Access Control issue in project label management impacts GitLab CE/EE</p>
+	  <p>Governance Control Bypass issue in Duo Agent Platform impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in package registry impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in merge request approval eligibility check impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in fine-grained personal access tokens impacts GitLab CE/EE</p>
+	  <p>Server Side Request Forgery (SSRF) issue in repository import impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in project import impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in Package Registry impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in project CI/CD settings impacts GitLab EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-97229</cvename>
+      <cvename>CVE-2026-92883</cvename>
+      <cvename>CVE-2026-16301</cvename>
+      <cvename>CVE-2026-14814</cvename>
+      <cvename>CVE-2026-81839</cvename>
+      <cvename>CVE-2026-96893</cvename>
+      <cvename>CVE-2026-101168</cvename>
+      <cvename>CVE-2026-7767</cvename>
+      <cvename>CVE-2026-16275</cvename>
+      <cvename>CVE-2026-84284</cvename>
+      <cvename>CVE-2026-85529</cvename>
+      <cvename>CVE-2026-100755</cvename>
+      <cvename>CVE-2026-14552</cvename>
+      <cvename>CVE-2026-6567</cvename>
+      <cvename>CVE-2026-104661</cvename>
+      <cvename>CVE-2026-14210</cvename>
+      <cvename>CVE-2026-105458</cvename>
+      <cvename>CVE-2026-5954</cvename>
+      <cvename>CVE-2026-92528</cvename>
+      <cvename>CVE-2026-78335</cvename>
+      <cvename>CVE-2026-100104</cvename>
+      <cvename>CVE-2026-82632</cvename>
+      <cvename>CVE-2026-103549</cvename>
+      <cvename>CVE-2026-9268</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-2-released/?nav=19.4.2</url>
+    </references>
+    <dates>
+      <discovery>2026-10-12</discovery>
+      <entry>2026-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bfa621d9-e508-4e3e-9a15-c2b54929ea77">
     <topic>gstreamer1 -- multiple vulnerabilities</topic>
     <affects>
