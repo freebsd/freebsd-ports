@@ -6,7 +6,7 @@ high-order bits that don't map to POSIX chmod(2) bit positions.
 
 https://github.com/podman-container-tools/container-libs/pull/935
 
---- vendor/go.podman.io/storage/pkg/archive/archive_bsd.go.orig	2025-06-28 00:00:00 UTC
+--- vendor/go.podman.io/storage/pkg/archive/archive_bsd.go.orig	2026-09-29 13:04:58 UTC
 +++ vendor/go.podman.io/storage/pkg/archive/archive_bsd.go
 @@ -9,10 +9,26 @@ import (
  	"golang.org/x/sys/unix"
@@ -28,7 +28,7 @@ https://github.com/podman-container-tools/container-libs/pull/935
 +	return o
 +}
 +
- func handleLChmod(hdr *tar.Header, path string, hdrInfo os.FileInfo, forceMask *os.FileMode) error {
+ func handleLChmod(_ *tar.Header, path, _ string, hdrInfo os.FileInfo, forceMask *os.FileMode) error {
  	permissionsMask := hdrInfo.Mode()
  	if forceMask != nil {
  		permissionsMask = *forceMask
