@@ -1,6 +1,5 @@
 PORTNAME=	fcitx5-chinese-addons
-DISTVERSION=	5.1.13
-PORTREVISION=	2
+DISTVERSION=	5.1.15
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:py_stroke,py_table
@@ -16,16 +15,16 @@ WWW=		https://github.com/fcitx/fcitx5-chinese-addons
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 
-BUILD_DEPENDS=	fcitx5-lua>0:textproc/fcitx5-lua
-LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
-		libcurl.so:ftp/curl \
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		fcitx5-lua>0:textproc/fcitx5-lua \
+		nlohmann-json>=3.2:devel/nlohmann-json
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libFcitx5Core.so:textproc/fcitx5 \
-		libfmt.so:devel/libfmt \
 		libIMEPinyin.so:chinese/libime \
 		libopencc.so:chinese/opencc
 RUN_DEPENDS=	fcitx5-lua>0:textproc/fcitx5-lua
 
-USES=		cmake compiler:c++17-lang gettext kde localbase pkgconfig \
+USES=		cmake compiler:c++17-lang gettext-tools kde localbase pkgconfig \
 		tar:zst
 
 OPTIONS_DEFINE=		GUI
@@ -36,7 +35,7 @@ USE_LDCONFIG=	yes
 GUI_DESC=	Configuration GUI
 GUI_USES=	qt:6
 GUI_USE=	qt=base,webengine
-GUI_LIB_DEPENDS=	libFcitx5Qt6DBusAddons.so:textproc/fcitx5-qt@qt6
+GUI_LIB_DEPENDS=	libFcitx5Qt6WidgetsAddons.so:textproc/fcitx5-qt@qt6
 GUI_CMAKE_ON=	-DUSE_WEBKIT:BOOL=false
 
 USE_KDE=	ecm:build
