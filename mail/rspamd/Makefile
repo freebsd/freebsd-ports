@@ -1,5 +1,6 @@
 PORTNAME=	rspamd
 PORTVERSION=	4.2.2
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -15,7 +16,8 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libsodium.so:security/libsodium
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
-USES=		cmake compiler:c++20-lang cpe gnome perl5 pkgconfig sqlite ssl
+USES=		cmake compiler:c++20-lang cpe gnome libarchive perl5 pkgconfig \
+		sqlite ssl
 CPE_VENDOR=	rspamd_project
 USE_GITHUB=	yes
 USE_GNOME=	glib20
@@ -42,13 +44,16 @@ PLIST_SUB+=	ETCDIR=etc/rspamd \
 		RSPAMDVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	BLAS CGP GPERF LUAJIT
-OPTIONS_DEFINE_amd64=	HYPERSCAN
-OPTIONS_DEFAULT_amd64=	LUAJIT
+OPTIONS_DEFINE_aarch64=	VECTORSCAN
+OPTIONS_DEFINE_amd64=	HYPERSCAN VECTORSCAN
+OPTIONS_DEFINE_powerpc64le=	VECTORSCAN
+OPTIONS_DEFAULT_aarch64=	VECTORSCAN
+OPTIONS_DEFAULT_amd64=	LUAJIT VECTORSCAN
 OPTIONS_DEFAULT_armv7=	LUAJIT
 OPTIONS_DEFAULT_i386=	LUAJIT
 OPTIONS_DEFAULT_powerpc=	LUAJIT
 OPTIONS_DEFAULT_powerpc64=	LUAJIT
-OPTIONS_DEFAULT_powerpc64le=	LUAJIT
+OPTIONS_DEFAULT_powerpc64le=	LUAJIT VECTORSCAN
 OPTIONS_SUB=	yes
 
 BLAS_DESC=	Use OpenBLAS to accelerate KANN
@@ -56,6 +61,7 @@ CGP_DESC=	Install Communigate Pro(tm) helper
 GPERF_DESC=	Google perf-tools profiling
 HYPERSCAN_DESC=	Use hyperscan optimizations (amd64 only)
 LUAJIT_DESC=	Use LuaJIT instead of standard Lua
+VECTORSCAN_DESC=	Use vectorscan (portable hyperscan fork) optimizations
 
 BLAS_LIB_DEPENDS=	libblis.so:math/blis \
 			liblapack.so:math/lapack
@@ -72,16 +78,15 @@ GPERF_CMAKE_ON=		-DENABLE_GPERF_TOOLS=ON
 
 HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
 HYPERSCAN_CMAKE_ON=	-DENABLE_HYPERSCAN=ON
+HYPERSCAN_PREVENTS=	VECTORSCAN
+HYPERSCAN_PREVENTS_MSG=	hyperscan and vectorscan both provide libhs
 
 LUAJIT_USES=		luajit
 LUAJIT_USES_OFF=	lua:51+
 LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 
-.include <bsd.port.options.mk>
-
-.if ${OPTIONS_DEFINE:NHYPERSCAN}
-PLIST_SUB+=	HYPERSCAN="@comment "
-.endif
+VECTORSCAN_LIB_DEPENDS=	libhs.so:devel/vectorscan
+VECTORSCAN_CMAKE_ON=	-DENABLE_HYPERSCAN=ON
 
 post-install:
 	@${MKDIR} \
@@ -96,7 +101,8 @@ post-install:
 	${RM} ${STAGEDIR}/${ETCDIR}/rspamd.sysvinit.conf
 	${INSTALL_DATA} ${WRKDIR}/rspamd.newsyslog.conf.sample ${STAGEDIR}${ETCDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
-	${LN} -s ${ETCDIR}/rspamd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	${LN} -s ../rspamd/rspamd.newsyslog.conf \
+		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/rspamd.newsyslog.conf
 post-install-CGP-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/cgp_rspamd.pl ${STAGEDIR}${PREFIX}/bin/rspamd-cgp-helper
 
