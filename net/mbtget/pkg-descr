@@ -1,0 +1,7 @@
+mbtget is a simple Modbus/TCP client for the command line, written in
+pure Perl with no external dependencies. It supports Modbus function
+codes for reading and writing coils, discrete inputs, holding registers,
+and input registers (class 0 and class 1 functions).
+
+Useful for testing, diagnostics, and scripting in industrial automation
+and OT/ICS environments.
