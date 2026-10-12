@@ -29,7 +29,9 @@ share/locale/ko/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/ko/LC_MESSAGES/kcm_fcitx5.mo
 share/locale/ru/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/ru/LC_MESSAGES/kcm_fcitx5.mo
+share/locale/sv/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/tr/LC_MESSAGES/fcitx5-configtool.mo
+share/locale/sv/LC_MESSAGES/kcm_fcitx5.mo
 share/locale/tr/LC_MESSAGES/kcm_fcitx5.mo
 share/locale/vi/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/vi/LC_MESSAGES/kcm_fcitx5.mo
