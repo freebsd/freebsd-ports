@@ -1,6 +1,6 @@
 PORTNAME=	rspamd
 PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -87,6 +87,16 @@ LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 
 VECTORSCAN_LIB_DEPENDS=	libhs.so:devel/vectorscan
 VECTORSCAN_CMAKE_ON=	-DENABLE_HYPERSCAN=ON
+
+.include <bsd.port.options.mk>
+
+# worker-hs_helper.* are installed when either scanner backend is enabled
+# (both HYPERSCAN and VECTORSCAN set ENABLE_HYPERSCAN=ON in CMake).
+.if ${PORT_OPTIONS:MHYPERSCAN} || ${PORT_OPTIONS:MVECTORSCAN}
+PLIST_SUB+=	HS_HELPER=""
+.else
+PLIST_SUB+=	HS_HELPER="@comment "
+.endif
 
 post-install:
 	@${MKDIR} \

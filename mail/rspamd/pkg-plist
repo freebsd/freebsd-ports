@@ -110,8 +110,8 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/statistic.conf
 %%ETCDIR%%/worker-controller.inc
 %%ETCDIR%%/worker-fuzzy.inc
-%%HYPERSCAN%%%%ETCDIR%%/worker-hs_helper.conf
-%%HYPERSCAN%%%%ETCDIR%%/worker-hs_helper.inc
+%%HS_HELPER%%%%ETCDIR%%/worker-hs_helper.conf
+%%HS_HELPER%%%%ETCDIR%%/worker-hs_helper.inc
 %%ETCDIR%%/worker-normal.inc
 %%ETCDIR%%/worker-proxy.inc
 lib/rspamd/librspamd-actrie.so
