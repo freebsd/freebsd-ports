@@ -1,3 +1,38 @@
+  <vuln vid="bb4528f4-c5d4-11f1-8c8c-ac5afc632ba3">
+    <topic>podman -- vulnerabilities</topic>
+    <affects>
+	<package>
+	<name>podman</name>
+	<range><lt>5.8.8</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Podman developers report:</p>
+	<blockquote cite="https://github.com/podman-container-tools/podman/releases/tag/v5.8.8">
+	  <p>This release addresses (CVE-2026-94603), where a
+	  "podman run" on a checkpoint image (any image with the
+	  io.podman.annotations.checkpoint.runtime.name annotation) could
+	  disable all sandboxing, including sandboxing specified by the
+	  user, when the container was created.</p>
+	  <p>Removed support for checkpoint images in podman run due to
+	  serious security concerns with the different security models of
+	  running images and running checkpoints. Checkpoints ignore
+	  user-specified security configuration and are very difficult to
+	  run safely.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-94603</cvename>
+      <url>https://github.com/podman-container-tools/podman/releases/tag/v5.8.8</url>
+    </references>
+    <dates>
+      <discovery>2026-10-11</discovery>
+      <entry>2026-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0f5aaca7-c4d5-11f1-96b4-74563cf85f9d">
     <topic>py-WsgiDAV -- Multiple vulnerabilities</topic>
     <affects>
