@@ -1,6 +1,6 @@
 PORTNAME=	bunkerweb
 DISTVERSION=	1.6.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www security
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -28,6 +28,7 @@ RUN_DEPENDS=	openresty:www/openresty \
 		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
 		${LUA_MODLIBDIR}/cjson.so:devel/lua-cjson@${LUA_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>0:security/py-bcrypt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certbot>0:security/py-certbot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}biscuit-python>0:security/py-biscuit-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docker>0:sysutils/py-docker@${PY_FLAVOR} \
@@ -70,6 +71,12 @@ post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 	${REINPLACE_CMD} -e 's|python3 ${DATADIR}/common/utils/|${PYTHON_CMD} ${DATADIR}/common/utils/|' \
 		${WRKSRC}/src/bw/lua/bunkerweb/api.lua
+	${REINPLACE_CMD} \
+		-e 's|join(sep, "usr", "share", "bunkerweb", "deps", "python", "bin", "certbot")|"${LOCALBASE}/bin/certbot"|' \
+		-e 's|join(sep, "usr", "share", "bunkerweb", "deps", "python")|"${DATADIR}/deps/python"|' \
+		-e 's|Path(sep, "usr", "share", "bunkerweb", "core", "letsencrypt")|Path("${DATADIR}/common/core/letsencrypt")|' \
+		${WRKSRC}/src/common/core/letsencrypt/jobs/letsencrypt_utils.py \
+		${WRKSRC}/src/common/core/letsencrypt/ui/blueprints/letsencrypt.py
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
@@ -88,6 +95,9 @@ post-install:
 	${FIND} ${STAGEDIR}${DATADIR} -type f -name '*.sh' -exec ${CHMOD} 0755 {} \;
 	${CHMOD} 0755 ${STAGEDIR}${DATADIR}/common/gen/main.py
 	${CHMOD} 0755 ${STAGEDIR}${DATADIR}/common/gen/save_config.py
+	${CHMOD} 0755 ${STAGEDIR}${DATADIR}/common/core/letsencrypt/jobs/certbot-auth.py \
+		${STAGEDIR}${DATADIR}/common/core/letsencrypt/jobs/certbot-cleanup.py \
+		${STAGEDIR}${DATADIR}/common/core/letsencrypt/jobs/certbot-deploy.py
 
 	${INSTALL_SCRIPT} ${FILESDIR}/freebsd-migrate.py \
 		${STAGEDIR}${DATADIR}/common/db/

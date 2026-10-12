@@ -17,11 +17,12 @@
          }
  
          self._server_env_cache: Dict[str, Environment] = {}
-@@ -721,6 +722,7 @@
+@@ -721,6 +722,8 @@
          template_vars = self._base_template_vars.copy()
          template_vars["all"] = full_config
          template_vars.update(config)
-+        template_vars["NGINX_PREFIX"] = f"{self._target}/"
++        if "NGINX_PREFIX" not in config:
++            template_vars["NGINX_PREFIX"] = f"{self._target}/"
  
          for template in templates:
              name = basename(template) if any(template.endswith(root_conf) for root_conf in self._global_templates) else None
