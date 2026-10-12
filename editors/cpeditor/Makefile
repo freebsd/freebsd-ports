@@ -1,5 +1,6 @@
 PORTNAME=	cpeditor
-DISTVERSION=	7.1.1
+DISTVERSION=	7.1.1-45
+DISTVERSIONSUFFIX=	-ge836127
 CATEGORIES=	editors devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,27 +11,21 @@ WWW=		https://cpeditor.org/ \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:noninja compiler:c++17-lang desktop-file-utils kde:5 qt:5
-USE_QT=		core gui network widgets \
-		buildtools:build linguisttools:build qmake:build
+USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gl kde:6 qt:6
+USE_QT=		5compat base tools:build
+USE_GL=		gl opengl
 USE_KDE=	syntaxhighlighting
 
 USE_GITHUB=	yes
-GH_TUPLE=	cpeditor:FakeVim:dce7b08:FakeVim/third_party/FakeVim \
-		itay-grudev:SingleApplication:a8da87d:itay_grudev_SingleApplication/third_party/singleapplication \
-		cpeditor:QtFindReplaceDialog:a86ed0b:cpeditor_QtFindReplaceDialog/third_party/QtFindReplaceDialog \
-		cpeditor:lsp-cpp:69c8afa:cpeditor_lsp_cpp/third_party/lsp-cpp \
-		cpeditor:qhttp:fd780d2a0bee1246f2ab0a17f6eebab6403fce64:cpeditor_qhttp/third_party/qhttp \
+GH_TUPLE=	cpeditor:FakeVim:50b62ce:FakeVim/third_party/FakeVim \
+		itay-grudev:SingleApplication:a218603:itay_grudev_SingleApplication/third_party/singleapplication \
+		cpeditor:QtFindReplaceDialog:d190d9b:cpeditor_QtFindReplaceDialog/third_party/QtFindReplaceDialog \
+		cpeditor:lsp-cpp:6dcfd56:cpeditor_lsp_cpp/third_party/lsp-cpp \
+		cpeditor:qhttp:091cebd:cpeditor_qhttp/third_party/qhttp \
 		MikeMirzayanov:testlib:1e4e8a2:MikeMirzayanov_testlib/third_party/testlib
 
 PLIST_FILES=	bin/cpeditor \
 		share/applications/cpeditor.desktop \
-		${DATADIR}/translations/el_GR.qm \
-		${DATADIR}/translations/es_MX.qm \
-		${DATADIR}/translations/pt_BR.qm \
-		${DATADIR}/translations/ru_RU.qm \
-		${DATADIR}/translations/zh_CN.qm \
-		${DATADIR}/translations/zh_TW.qm \
 		share/icons/hicolor/512x512/apps/cpeditor.png \
 		share/metainfo/cpeditor.appdata.xml
 
