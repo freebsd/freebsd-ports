@@ -1,6 +1,6 @@
 PORTNAME=	serialize
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.3
+DISTVERSION=	1.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	glenn@mas-bandwidth.com
