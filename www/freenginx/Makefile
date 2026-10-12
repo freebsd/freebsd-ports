@@ -261,6 +261,12 @@ NJS_CONFIGURE_ARGS+=	--cc-opt="${CFLAGS} -I${LOCALBASE}/include/quickjs" \
 
 pre-everything::
 	@${ECHO_MSG}
+.if ${PORT_OPTIONS:MHTTP_NOTICE}
+	@${ECHO_MSG} "${PORTNAME} can return a fixed body itself.  HTTP_NOTICE will be"
+	@${ECHO_MSG} "removed after 2026-12-31: replace notice with return 200 and the"
+	@${ECHO_MSG} "text, and notice_type with default_type.  Unlike a static file,"
+	@${ECHO_MSG} "return answers every request method."
+.endif
 .if ${PORT_OPTIONS:MHTTP_UPSTREAM_FAIR}
 	@${ECHO_MSG} "${PORTNAME} can balance by least connections itself.  HTTP_UPSTREAM_FAIR"
 	@${ECHO_MSG} "will be removed after 2026-12-31: replace fair; with least_conn;, and"
