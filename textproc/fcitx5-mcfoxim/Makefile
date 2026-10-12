@@ -1,5 +1,6 @@
 PORTNAME=	fcitx5-mcfoxim
 DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	lwhsu@FreeBSD.org

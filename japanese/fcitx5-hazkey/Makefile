@@ -1,6 +1,6 @@
 PORTNAME=	fcitx5-hazkey
 DISTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	LOCAL/tagattie/${PORTNAME}:swiftpackages
 DISTFILES=	${PORTNAME}-${DISTVERSION}-swift-packages${EXTRACT_SUFX}:swiftpackages

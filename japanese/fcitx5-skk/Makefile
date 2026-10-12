@@ -1,6 +1,6 @@
 PORTNAME=	fcitx5-skk
 DISTVERSION=	5.1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/fcitx5-skk/
 
