@@ -1,0 +1,8 @@
+The sflow module samples requests and sends them to an sFlow collector as
+UDP datagrams, along with counters for the server as a whole.  The
+collector's address and the sampling rate are read from a configuration
+file, the one host-sflow's hsflowd writes, and the rate travels in every
+datagram so that a collector can scale the samples back up.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their SFLOW option is enabled.

@@ -547,6 +547,7 @@
     SUBDIR += nginx-module-njs
     SUBDIR += nginx-module-postgres
     SUBDIR += nginx-module-redis2
+    SUBDIR += nginx-module-sflow
     SUBDIR += nginx-module-slowfs-cache
     SUBDIR += nginx-module-vod
     SUBDIR += nginx-module-websockify
