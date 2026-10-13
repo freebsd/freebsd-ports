@@ -1,4 +1,4 @@
-TIMESTAMP = 1791531373
+TIMESTAMP = 1791873320
 SHA256 (rust/crates/accesskit-0.24.1.crate) = d3b7f7f85a7e5f68090000ed7622545829afd484d210358702ae4cb97dd0c320
 SIZE (rust/crates/accesskit-0.24.1.crate) = 36947
 SHA256 (rust/crates/accesskit_atspi_common-0.19.1.crate) = 023da0e5097f46df7092d5280b02efb9bbf8d93298daeced42652463e357d636
@@ -3039,5 +3039,5 @@ SHA256 (zed-industries-tree-sitter-yaml-baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a
 SIZE (zed-industries-tree-sitter-yaml-baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a_GH0.tar.gz) = 145319
 SHA256 (zed-industries-calloop-eb6b4fd17b9af5ecc226546bdd04185391b3e265_GH0.tar.gz) = 8698ebc194a6c3ee377cde94f4fdff590f6a7973bc7987c880801fa7fd69e5c3
 SIZE (zed-industries-calloop-eb6b4fd17b9af5ecc226546bdd04185391b3e265_GH0.tar.gz) = 94768
-SHA256 (zed-industries-zed-v1.23.2_GH0.tar.gz) = 6752dd00f248f1f684a69f9381b5cb359f6c0264d032b239d61a51fec625e7d4
-SIZE (zed-industries-zed-v1.23.2_GH0.tar.gz) = 24965450
+SHA256 (zed-industries-zed-v1.23.3_GH0.tar.gz) = 4a5db0aced94bba54f1b8fa5b51bba849385ae869851260fbdc44385d76ee02d
+SIZE (zed-industries-zed-v1.23.3_GH0.tar.gz) = 24967544
