@@ -106,6 +106,7 @@
     SUBDIR += R-cran-parallelly
     SUBDIR += R-cran-parsedate
     SUBDIR += R-cran-patrick
+    SUBDIR += R-cran-pbapply
     SUBDIR += R-cran-pillar
     SUBDIR += R-cran-pkgbuild
     SUBDIR += R-cran-pkgcache
