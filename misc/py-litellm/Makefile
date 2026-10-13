@@ -1,5 +1,5 @@
 PORTNAME=	litellm
-DISTVERSION=	1.104.2
+DISTVERSION=	1.105.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.15.0:devel/py-maturin@${PY_FLAVOR}
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastuuid>=0.14.0<1.0:devel/py-fastuuid@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}filelock>=3.16.1:sysutils/py-filelock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}filelock>=3.16.1<5.0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.0<1.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>=2.20.0<4.0.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.0.0<2.0:www/py-python-dotenv@${PY_FLAVOR} \
@@ -78,10 +78,10 @@ PROXY_RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}azure-storage-blob>=12.28.0<13.0:devel/py-azure-storage-blob@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mcp>=2.2.0<3.0:misc/py-mcp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx2>=2.5.0<3:www/py-httpx2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}litellm-proxy-extras>=0.4.102:misc/py-litellm-proxy-extras@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}litellm-proxy-extras>=0.4.105:misc/py-litellm-proxy-extras@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.9.4<16.0:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.3<1.0:textproc/py-tomlkit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}polars>=1.38.1:misc/py-polars@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}polars>=1.38.1<3.0:misc/py-polars@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}soundfile>=0.12.1<1.0:audio/py-SoundFile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}expression>=5.6.0<6.0:devel/py-expression@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.0<3.0:www/py-requests@${PY_FLAVOR} \
