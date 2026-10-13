@@ -1,5 +1,5 @@
 PORTNAME=	wine-proton
-DISTVERSION=	10.0-4
+DISTVERSION=	11.0-2
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
@@ -11,7 +11,7 @@ LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		${LOCALBASE}/ffmpeg4/include/libavformat/avformat.h:multimedia/ffmpeg4 \
@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgnutls.so:security/gnutls \
-		libvulkan.so:graphics/vulkan-loader
+		libvulkan.so:graphics/vulkan-loader \
+		libhwloc.so:devel/hwloc2
 
 # amd_ags_x64.so
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm \
@@ -62,6 +63,7 @@ GNU_CONFIGURE=		yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/${PORTNAME}
 
 CONFIGURE_ARGS=	--verbose \
+		--enable-archs=i386,x86_64 \
 		--with-mingw CROSSCC="clang" \
 		--libdir=${PREFIX}/${PORTNAME}/lib \
 		--disable-kerberos \
@@ -70,6 +72,7 @@ CONFIGURE_ARGS=	--verbose \
 		--with-freetype \
 		--with-gnutls \
 		--with-gstreamer \
+		--with-hwloc \
 		--with-opengl \
 		--with-oss \
 		--with-pthread \
@@ -94,7 +97,6 @@ CONFIGURE_ARGS=	--verbose \
 		--without-krb5 \
 		--without-netapi \
 		--without-opencl \
-		--without-osmesa \
 		--without-pcap \
 		--without-pcsclite \
 		--without-sane \
@@ -121,26 +123,14 @@ OPTIONS_DEFAULT=	${OPTIONS_DEFAULT_${FLAVOR}}
 OPTIONS_DEFAULT_pulse=	PULSEAUDIO
 OPTIONS_SUB=		yes
 
-PULSEAUDIO_DESC=		Build winepulse.drv
-
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_WITH=	pulse
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
-CONFIGURE_ARGS+=--enable-archs=i386,x86_64
-PLIST_SUB+=	WINE32="@comment " WINE64="" WINEARCH="x86_64"
-.else
-CONFIGURE_ARGS+=--enable-archs=i386
-PLIST_SUB+=	WINE32="" WINE64="@comment " WINEARCH="i386"
-.endif
-
-.if ${LLVM_VERSION} >= 22
-# include/winnt.h:7065:19: error:
-# incompatible pointer types passing 'LONG *' (aka 'int *') to parameter of type 'volatile long *'
-# [-Wincompatible-pointer-types]
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-configure.ac
+CONFIGURE_ARGS+=	--enable-win64
+PLIST_SUB+=		WINEARCH="x86_64"
 .endif
 
 pre-configure:
@@ -153,26 +143,11 @@ pre-build:
 	cd ${WRKSRC} && ${PERL5} tools/make_requests
 
 post-install:
-.if ${ARCH} == i386
-	${MV} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wineserver ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wineserver32
-	${MV} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine       ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine.bin
-	-${ELFCTL} -e +noaslr                                 ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine.bin
-	${INSTALL_SCRIPT} ${FILESDIR}/wine.sh                 ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine
-.else
-	${INSTALL_SCRIPT} ${FILESDIR}/pkg32.sh                ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/pkg32.sh
-	${MV} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine       ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine64.bin
-	${INSTALL_SCRIPT} ${FILESDIR}/wine.sh                 ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine64
-	${INSTALL_SCRIPT} ${FILESDIR}/wine-wow64.sh           ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin-wow64
-	${CP} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/msidb      ${STAGEDIR}${PREFIX}/${PORTNAME}/bin-wow64/msidb
-	${CP} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine64.bin ${STAGEDIR}${PREFIX}/${PORTNAME}/bin-wow64/wine
-	${CP} ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wineserver ${STAGEDIR}${PREFIX}/${PORTNAME}/bin-wow64/wineserver
-.endif
-	${RM} -r ${STAGEDIR}${PREFIX}/${PORTNAME}/include
-	${RM} -r ${STAGEDIR}${PREFIX}/share/man
+	${ELFCTL} -e +noaslr	${STAGEDIR}${PREFIX}/${PORTNAME}/bin/wine
+	${RM} -r ${STAGEDIR}${PREFIX}/${PORTNAME}/include \
+		 ${STAGEDIR}${PREFIX}/share/man
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in README.md ANNOUNCE.md AUTHORS
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${ANNOUNCE.md AUTHORS README.md:L:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
