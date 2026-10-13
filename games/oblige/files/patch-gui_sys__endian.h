@@ -1,4 +1,4 @@
---- gui/sys_endian.h.orig	2023-07-31 15:43:29 UTC
+--- gui/sys_endian.h.orig	2017-08-06 03:12:11 UTC
 +++ gui/sys_endian.h
 @@ -61,10 +61,7 @@ static inline u16_t UT_Swap16(u16_t x)
  #elif defined(__GNUC__) && (defined(__powerpc__) || defined(__ppc__))

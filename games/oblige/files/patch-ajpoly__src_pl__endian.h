@@ -1,4 +1,4 @@
---- ajpoly_src/pl_endian.h.orig	2023-07-31 15:43:19 UTC
+--- ajpoly_src/pl_endian.h.orig	2017-08-06 03:12:11 UTC
 +++ ajpoly_src/pl_endian.h
 @@ -57,10 +57,7 @@ static inline u16_t UT_Swap16(u16_t x)
  #elif defined(__GNUC__) && (defined(__powerpc__) || defined(__ppc__))

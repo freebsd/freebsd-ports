@@ -17,8 +17,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
 
-USES=		dos2unix gmake jpeg xorg zip
-DOS2UNIX_FILES=	ajpoly_src/pl_endian.h gui/sys_endian.h
+USES=		gmake jpeg xorg zip
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
 WRKSRC=		${WRKDIR}/Oblige-${PORTVERSION}-source
 
