@@ -73,13 +73,12 @@ FORMINPUT_BUILD_DEPENDS=	nginx-module-form-input>0:www/nginx-module-form-input
 WRKSRC_forminput=	${WRKDIR}/nginx-form-input-module
 FORMINPUT_VARS=		DSO_EXTMODS+=forminput
 
-GRIDFS_GH_TUPLE=	nieoding:nginx-gridfs:059bdc3:gridfs
 GRIDFS_LIB_DEPENDS=	libbson2.so:devel/libbson \
 			libmongoc2.so:devel/mongo-c-driver
 GRIDFS_USES=		pkgconfig
-GRIDFS_VARS=		DSO_EXTMODS+=gridfs GRIDFS_SUBDIR=/nginx-gridfs
-GRIDFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-gridfs_ngx_http_gridfs_module.c \
-			${PATCHDIR}/extra-patch-nginx-gridfs_config
+GRIDFS_BUILD_DEPENDS=	nginx-module-gridfs>0:www/nginx-module-gridfs
+WRKSRC_gridfs=		${WRKDIR}/nginx-gridfs-module
+GRIDFS_VARS=		DSO_EXTMODS+=gridfs
 
 HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:06dc0be:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
@@ -296,8 +295,8 @@ PASSENGER_VARS=         WRKSRC_passenger=${WRKDIR}/passenger-${PASSENGER_NGINX_V
                         DSO_EXTDIRS+=passenger-${PASSENGER_NGINX_VER}/src/nginx_module
 
 POSTGRES_USES=		pgsql
-POSTGRES_GH_TUPLE=	konstruxi:ngx_postgres:8aa7359:postgres
-POSTGRES_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_postgres-config
+POSTGRES_BUILD_DEPENDS=	nginx-module-postgres>0:www/nginx-module-postgres
+WRKSRC_postgres=	${WRKDIR}/nginx-postgres-module
 POSTGRES_VARS=		DSO_EXTMODS+=postgres
 
 RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:v0.09:rdscsv
@@ -308,7 +307,8 @@ RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:v0.15:rdsjson
 RDS_JSON_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rds-json-nginx-module-config
 RDS_JSON_VARS=		DSO_EXTMODS+=rdsjson
 
-REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:v0.15:redis2
+REDIS2_BUILD_DEPENDS=	nginx-module-redis2>0:www/nginx-module-redis2
+WRKSRC_redis2=		${WRKDIR}/nginx-redis2-module
 REDIS2_VARS=		DSO_EXTMODS+=redis2
 
 RTMP_GH_TUPLE=		arut:nginx-rtmp-module:v1.2.2:rtmp
@@ -318,10 +318,9 @@ SET_MISC_IMPLIES=	DEVEL_KIT
 SET_MISC_GH_TUPLE=	openresty:set-misc-nginx-module:3937e7b:setmisc
 SET_MISC_VARS=		DSO_EXTMODS+=setmisc
 
-SFLOW_GH_TUPLE=		sflow:nginx-sflow-module:543c72a:sflow
-SFLOW_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
-			${PATCHDIR}/extra-patch-ngx_http_sflow_config.h \
-			${PATCHDIR}/extra-patch-ngx_http_sflow_module.c
+SFLOW_BUILD_DEPENDS=	nginx-module-sflow>0:www/nginx-module-sflow
+WRKSRC_sflow=		${WRKDIR}/nginx-sflow-module
+SFLOW_VARS=		DSO_EXTMODS+=sflow
 
 SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:be12df5:shibboleth
 SHIBBOLETH_VARS=	DSO_EXTMODS+=shibboleth

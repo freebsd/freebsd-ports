@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION?=	20
+PORTREVISION?=	21
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/joneum
@@ -332,14 +332,6 @@ post-patch-PASSENGER-on:
 		s!-Iext/libeio!!' \
 		${WRKSRC_PASSENGER}/build/common_library.rb
 
-post-patch-POSTGRES-on:
-	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_postgres}/config
-
-post-patch-SFLOW-on:
-	@${REINPLACE_CMD} \
-		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKSRC_sflow}/ngx_http_sflow_config.h
-
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
 
@@ -368,6 +360,11 @@ pre-configure-FORMINPUT-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-form-input ${WRKSRC_forminput}
 	@${CHMOD} -R u+w ${WRKSRC_forminput}
 
+pre-configure-GRIDFS-on:
+	@${RM} -rf ${WRKSRC_gridfs}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-gridfs ${WRKSRC_gridfs}
+	@${CHMOD} -R u+w ${WRKSRC_gridfs}
+
 pre-configure-LET-on:
 	@${RM} -rf ${WRKSRC_let}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-let ${WRKSRC_let}
@@ -388,6 +385,23 @@ pre-configure-NJS-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-njs ${WRKSRC_njs}
 	@${CHMOD} -R u+w ${WRKSRC_njs}
 	@${CHMOD} u+x ${WRKSRC_njs}/configure
+
+pre-configure-POSTGRES-on:
+	@${RM} -rf ${WRKSRC_postgres}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-postgres ${WRKSRC_postgres}
+	@${CHMOD} -R u+w ${WRKSRC_postgres}
+
+pre-configure-REDIS2-on:
+	@${RM} -rf ${WRKSRC_redis2}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-redis2 ${WRKSRC_redis2}
+	@${CHMOD} -R u+w ${WRKSRC_redis2}
+
+pre-configure-SFLOW-on:
+	@${RM} -rf ${WRKSRC_sflow}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-sflow ${WRKSRC_sflow}
+	@${CHMOD} -R u+w ${WRKSRC_sflow}
+	@${REINPLACE_CMD} 's!"/etc/hsflowd.auto"!"${LOCALBASE}/etc/hsflowd.auto"!' \
+		${WRKSRC_sflow}/src/ngx_http_sflow_config.h
 
 pre-configure-SLOWFS_CACHE-on:
 	@${RM} -rf ${WRKSRC_slowfs_cache}

@@ -73,6 +73,7 @@
 %%DSO%%%%REDIS2%%libexec/freenginx/ngx_http_redis2_module.so
 %%DSO%%%%RTMP%%libexec/freenginx/ngx_rtmp_module.so
 %%DSO%%%%SET_MISC%%libexec/freenginx/ngx_http_set_misc_module.so
+%%DSO%%%%SFLOW%%libexec/freenginx/ngx_http_sflow_module.so
 %%DSO%%%%SHIBBOLETH%%libexec/freenginx/ngx_http_shibboleth_module.so
 %%DSO%%%%SLOWFS_CACHE%%libexec/freenginx/ngx_http_slowfs_module.so
 %%DSO%%%%SRCACHE%%libexec/freenginx/ngx_http_srcache_filter_module.so
