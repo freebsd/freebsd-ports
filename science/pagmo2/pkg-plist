@@ -16,6 +16,7 @@ include/pagmo/algorithms/moead_gen.hpp
 include/pagmo/algorithms/nlopt.hpp
 include/pagmo/algorithms/not_population_based.hpp
 include/pagmo/algorithms/nsga2.hpp
+include/pagmo/algorithms/nsga3.hpp
 include/pagmo/algorithms/nspso.hpp
 include/pagmo/algorithms/null_algorithm.hpp
 include/pagmo/algorithms/pso.hpp
@@ -41,7 +42,9 @@ include/pagmo/detail/eigen_s11n.hpp
 include/pagmo/detail/free_form_fwd.hpp
 include/pagmo/detail/gte_getter.hpp
 include/pagmo/detail/island_fwd.hpp
+include/pagmo/detail/nsga3_impl.hpp
 include/pagmo/detail/prime_numbers.hpp
+include/pagmo/detail/reference_point.hpp
 include/pagmo/detail/s11n_wrappers.hpp
 include/pagmo/detail/support_xeus_cling.hpp
 include/pagmo/detail/task_queue.hpp
@@ -107,7 +110,6 @@ include/pagmo/utils/hv_algos/hv_hvwfg.hpp
 include/pagmo/utils/hypervolume.hpp
 include/pagmo/utils/multi_objective.hpp
 lib/cmake/pagmo/Findpagmo_IPOPT.cmake
-lib/cmake/pagmo/PagmoFindBoost.cmake
 lib/cmake/pagmo/pagmo-config-version.cmake
 lib/cmake/pagmo/pagmo-config.cmake
 lib/cmake/pagmo/pagmo_export-%%CMAKE_BUILD_TYPE%%.cmake

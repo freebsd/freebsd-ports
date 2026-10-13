@@ -1,7 +1,6 @@
 PORTNAME=	pagmo2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.1
-PORTREVISION=	9
+DISTVERSION=	2.20.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,6 +31,6 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 2.19.1: 100% tests passed, 0 tests failed out of 86
+# tests as of 2.20.0: 100% tests passed out of 8
 
 .include <bsd.port.mk>
