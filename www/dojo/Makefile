@@ -1,5 +1,5 @@
 PORTNAME=	dojo
-DISTVERSION=	1.15.6
+DISTVERSION=	1.16.5
 CATEGORIES=	www
 MASTER_SITES=	https://download.dojotoolkit.org/release-${PORTVERSION}/
 DISTNAME=	dojo-release-${PORTVERSION}
@@ -13,10 +13,10 @@ LICENSE=	BSD3CLAUSE
 USES=		cpe
 CPE_VENDOR=	linuxfoundation
 
-NO_ARCH=	yes
-NO_BUILD=	yes
 SHAREOWN=	www
 SHAREGRP=	www
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 OPTIONS_DEFINE=	APACHE
 OPTIONS_SUB=	yes
