@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2026-10-13 22:56:52 UTC
++++ pyproject.toml
+@@ -15,8 +15,6 @@ maintainers = [
+     {name = "Skarn"},
+     {name = "Dustin Spicuzza"},
+ ]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE"]
+ dynamic = ["readme"]
+ 
+ [project.urls]
