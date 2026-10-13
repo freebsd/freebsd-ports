@@ -25,7 +25,7 @@ LICENSE_NAME=	Subscription license agreement for business and organizations
 LICENSE_TEXT=	See: https://www.jetbrains.com/store/license.html
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	cmake:devel/cmake-core \
@@ -52,13 +52,23 @@ SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 WRKSRC=		${WRKDIR}/clion-${PORTVERSION}
 
 _CLANG_ARCH=	linux/${ARCH:S/amd64/x64/}
-_PTY4J_ARCH=	freebsd/${ARCH:S/amd64/x86-64/}
-_SQLITE_ARCH=	linux-${ARCH:S/amd64/x86_64/}
+_PTY4J_ARCH=	freebsd/${ARCH:S/amd64/x86-64/:S/powerpc64le/ppc64le/}
+# The IDE only knows aarch64 and x86_64 for the sqlite native library path
+_SQLITE_ARCH=	linux-${ARCH:S/amd64/x86_64/:S/powerpc64le/x86_64/}
 
 PLIST_SUB+=	ARCH=${ARCH} \
 		CLANG_ARCH=${_CLANG_ARCH} \
 		PTY4J_ARCH=${_PTY4J_ARCH} \
 		SQLITE_ARCH=${_SQLITE_ARCH}
+
+.include <bsd.port.options.mk>
+
+# No FreeBSD build of the JetBrains clangd fork exists for powerpc64le
+.if ${ARCH} == powerpc64le
+PLIST_SUB+=	CLANG="@comment "
+.else
+PLIST_SUB+=	CLANG=""
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -E '1s/^.{6}//' \
@@ -67,7 +77,7 @@ post-patch:
 do-install:
 # Linux/Windows/OS X only so remove them
 	@${RM} -r \
-		${WRKSRC}/bin/clang/linux \
+		${WRKSRC}/bin/clang \
 		${WRKSRC}/bin/clion \
 		${WRKSRC}/bin/cmake/linux \
 		${WRKSRC}/bin/fsnotifier \
@@ -118,6 +128,7 @@ do-install:
 	${LN} -sf ../../../../sqlite/${ARCH}/libsqliteij.so ${STAGEDIR}${DATADIR}/lib/native/${_SQLITE_ARCH}/libsqliteij.so
 # Disable automatic updates
 	${ECHO} "ide.no.platform.update=FreeBSD Ports" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
+.if ${ARCH} != powerpc64le
 # Install FreeBSD native clang
 	${MKDIR} ${STAGEDIR}${DATADIR}/bin/clang/${_CLANG_ARCH}/bin
 	${INSTALL_PROGRAM} \
@@ -129,5 +140,6 @@ do-install:
 		${STAGEDIR}${DATADIR}/bin/clang/${_CLANG_ARCH}/bin/
 	${MKDIR} ${STAGEDIR}${DATADIR}/bin/clang/${_CLANG_ARCH}/lib
 	${INSTALL_LIB} ${WRKDIR}/lib/libclazyPlugin.so ${STAGEDIR}${DATADIR}/bin/clang/${_CLANG_ARCH}/lib/
+.endif
 
 .include <bsd.port.mk>
