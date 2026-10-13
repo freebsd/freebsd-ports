@@ -1,5 +1,5 @@
 PORTNAME=	gifsicle
-PORTVERSION=	1.96
+PORTVERSION=	1.97
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.lcdf.org/gifsicle/
 
@@ -21,8 +21,10 @@ CPE_VENDOR=	lcdf
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	NEWS.md README.md
-PLIST_FILES=	bin/gifdiff bin/gifsicle \
-		share/man/man1/gifdiff.1.gz share/man/man1/gifsicle.1.gz
+PLIST_FILES=	bin/gifdiff \
+		bin/gifsicle \
+		share/man/man1/gifdiff.1.gz \
+		share/man/man1/gifsicle.1.gz
 
 .if ${FLAVOR} == x11
 USES+=			xorg
@@ -40,6 +42,6 @@ OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
