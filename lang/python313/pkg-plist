@@ -2236,9 +2236,6 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy%%PYTHON_TAG%%.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy_user%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy_user%%PYTHON_TAG%%.opt-2.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy_user%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/tkinter_testing_utils%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/tkinter_testing_utils%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/tkinter_testing_utils%%PYTHON_TAG%%.pyc
@@ -2307,7 +2304,6 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_window.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_zoomheight.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_zzdummy.py
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_zzdummy_user.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/tkinter_testing_utils.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/iomenu.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/macosx.py
@@ -2847,9 +2843,6 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mapping_tests%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mapping_tests%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mapping_tests%%PYTHON_TAG%%.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/memory_watchdog%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/memory_watchdog%%PYTHON_TAG%%.opt-2.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/memory_watchdog%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mock_socket%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mock_socket%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mock_socket%%PYTHON_TAG%%.pyc
@@ -4533,7 +4526,6 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mathdata/formatfloat_testcases.txt
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mathdata/ieee754.txt
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mathdata/math_testcases.txt
-%%PYTHON_BASELIBDIR%%%%THREAD%%/test/memory_watchdog.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mime.types
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mime.types2
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mock_socket.py
@@ -5010,6 +5002,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_set%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_set%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_set%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_slice%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_slice%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_slice%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_structmembers%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_structmembers%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_structmembers%%PYTHON_TAG%%.pyc
@@ -5058,6 +5053,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_pyatomic.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_run.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_set.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_slice.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_structmembers.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_sys.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_time.py
