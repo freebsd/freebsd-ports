@@ -3,6 +3,7 @@ PORTNAME=	strawberry-graphql
 # updated along with its py-djXX-strawberry-graphql counterpart(s) whenever
 # a new version of net-mgmt/netbox is released.
 DISTVERSION=	0.327.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,8 +30,8 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=		AIOHTTP APOLLO-FEDERATION ASGI CHANNELS CLI DEBUG DJANGO \
-			FASTAPI FLASK OPENTELEMETRY PYDANTIC
+OPTIONS_DEFINE=	AIOHTTP APOLLO-FEDERATION ASGI CHANNELS CLI DEBUG DJANGO \
+		FASTAPI FLASK OPENTELEMETRY PYDANTIC
 
 AIOHTTP_DESC=		Basic AIOHTTP integration
 APOLLO-FEDERATION_DESC=	Apollo Federation GraphQL support
@@ -46,15 +47,19 @@ PYDANTIC_DESC=		Support for Pydantic models
 
 AIOHTTP_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.7.4<4:www/py-aiohttp@${PY_FLAVOR}
 APOLLO-FEDERATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3.20:devel/py-protobuf@${PY_FLAVOR}
-ASGI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}multipart>=0.0.7:devel/py-multipart@${PY_FLAVOR} \
+ASGI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.7:www/py-python-multipart@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}starlette>=0.18.0:www/py-starlette@${PY_FLAVOR}
 CHANNELS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}asgiref>=3.2:www/py-asgiref@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}channels>=4.0.0:www/py-channels@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}django52>=5.2:www/py-django52@${PY_FLAVOR}
 CLI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>=1.9.0:devel/py-libcst@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pygments>=2.3:textproc/py-pygments@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.7:www/py-python-multipart@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}rich>=12.0.0:textproc/py-rich@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}typer>=0.12.4:devel/py-typer@${PY_FLAVOR}
+				${PYTHON_PKGNAMEPREFIX}starlette>=0.18.0:www/py-starlette@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}typer>=0.12.4:devel/py-typer@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}uvicorn>=0.11.6:www/py-uvicorn@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}websockets>=15.0.1:devel/py-websockets@${PY_FLAVOR}
 DEBUG_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>=1.9.0:devel/py-libcst@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}rich>=12.0.0:textproc/py-rich@${PY_FLAVOR}
 # NB: www/py-channels (via CHANNELS) options depends on www/py-djangoXX, which
@@ -62,10 +67,20 @@ DEBUG_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}libcst>=1.9.0:devel/py-libcst@${PY_FL
 DJANGO_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}asgiref>=3.2:www/py-asgiref@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}django52>=5.2:www/py-django52@${PY_FLAVOR}
 FASTAPI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}fastapi>=0.65.0:www/py-fastapi@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}multipart>=0.0.7:devel/py-multipart@${PY_FLAVOR}
+				${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.7:www/py-python-multipart@${PY_FLAVOR}
 FLASK_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}flask>=1.1:www/py-flask@${PY_FLAVOR}
 OPENTELEMETRY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-api<2:devel/py-opentelemetry-api@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk<2:devel/py-opentelemetry-sdk@${PY_FLAVOR}
 PYDANTIC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pydantic2>1.6.1:devel/py-pydantic2@${PY_FLAVOR}
+
+# Vendored pre-3.10 dataclasses __init__ helper: unused (strawberry needs
+# Python 3.10+ and uses kw_only) and it imports names removed in 3.13
+post-patch:
+	@${RM} ${WRKSRC}/strawberry/ext/dataclasses/dataclasses.py
+
+# The strawberry command needs the CLI option dependencies
+post-install-CLI-off:
+	@${RM} ${STAGEDIR}${PREFIX}/bin/strawberry
+	@${REINPLACE_CMD} -e '/^bin\/strawberry$$/d' ${_PYTHONPKGLIST}
 
 .include <bsd.port.mk>
