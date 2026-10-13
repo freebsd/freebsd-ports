@@ -1,5 +1,5 @@
-TIMESTAMP = 1791159563
-SHA256 (go/x11_nwg-look/nwg-look-v1.1.2/v1.1.2.mod) = 900aa129381f6b5fec9bd632dcac1ce8ab3085efb4b13bf8fdab8252eba1e653
-SIZE (go/x11_nwg-look/nwg-look-v1.1.2/v1.1.2.mod) = 204
-SHA256 (go/x11_nwg-look/nwg-look-v1.1.2/v1.1.2.zip) = eb55334b7cf81eed72ae0138d30f236363af99253ae039ed2f11fbc780985a0a
-SIZE (go/x11_nwg-look/nwg-look-v1.1.2/v1.1.2.zip) = 41048
+TIMESTAMP = 1791863869
+SHA256 (go/x11_nwg-look/nwg-look-v1.2.0/v1.2.0.mod) = 4351ed4f00d70ede681914d8152396129b4d4cb3893faf8d831031dcdd5a40dd
+SIZE (go/x11_nwg-look/nwg-look-v1.2.0/v1.2.0.mod) = 204
+SHA256 (go/x11_nwg-look/nwg-look-v1.2.0/v1.2.0.zip) = 1825f20cdfcdd0c062ada15acbfe39d62fc855876142e15090cf6151fbddd377
+SIZE (go/x11_nwg-look/nwg-look-v1.2.0/v1.2.0.zip) = 42468
