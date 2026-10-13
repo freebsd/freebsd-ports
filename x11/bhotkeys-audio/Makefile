@@ -1,5 +1,5 @@
 PORTNAME=	bhotkeys-audio
-DISTVERSION=	1.1
+DISTVERSION=	1.2
 CATEGORIES=	x11
 
 MAINTAINER=	dteske@FreeBSD.org
