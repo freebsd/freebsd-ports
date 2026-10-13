@@ -1,5 +1,6 @@
 PORTNAME=	ngrep
 DISTVERSION=	1.48.3
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/v${DISTVERSION}/
 DISTNAME=	v${DISTVERSION}%20source%20code
@@ -44,6 +45,7 @@ PORTS_PCAP_BUILD_DEPENDS=	${LOCALBASE}/include/pcap.h:net/libpcap
 PORTS_PCAP_LIB_DEPENDS=		libpcap.so:net/libpcap
 PORTS_PCAP_CONFIGURE_ON=	--with-pcap-includes=${LOCALBASE}/include
 PORTS_PCAP_CONFIGURE_OFF=	--with-pcap-includes=/usr/include
+PORTS_PCAP_LDFLAGS_OFF=		-L/usr/lib
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
