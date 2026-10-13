@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>0.24.0<2.0.0:devel/py-asn1crypto@
 		${PYTHON_PKGNAMEPREFIX}idna>=3.7<4.0:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2024.7.4:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.3<5.0:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}filelock>=3.5<4.0:sysutils/py-filelock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}filelock>=3.5:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.4.0:devel/py-sortedcontainers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.6.0<5.0.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>0:textproc/py-tomlkit@${PY_FLAVOR}
