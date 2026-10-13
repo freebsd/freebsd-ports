@@ -1,0 +1,50 @@
+--- CMakeLists.txt.orig	2022-09-16 09:12:03 UTC
++++ CMakeLists.txt
+@@ -41,14 +41,8 @@ add_subdirectory(src/singleapplication)
+ 
+ find_package(Qt5 COMPONENTS Widgets LinguistTools DBus REQUIRED)
+ 
+-find_package(ECM REQUIRED NO_MODULE)
+-list(APPEND CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+-
+ include(CPack)
+ include(GNUInstallDirs)
+-include(ECMInstallIcons)
+-include(ECMConfiguredInstall)
+-include(KDEInstallDirs)
+ 
+ find_package(PolkitQt5-1 REQUIRED)
+ 
+@@ -129,7 +123,10 @@ install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_IN
+ install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/translations)
+ install(FILES data/${DESKTOP_FILE} DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
+ 
+-ecm_install_icons(ICONS ${APP_ICONS} DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons)
++foreach(ICON IN LISTS APP_ICONS)
++    string(REGEX MATCH "[0-9]+" SIZE ${ICON})
++    install(FILES ${ICON} DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME ${PROJECT_NAME}.png)
++endforeach()
+ 
+ # Helper
+ add_executable(${PROJECT_NAME}_helper
+@@ -142,11 +139,15 @@ target_link_libraries(${PROJECT_NAME}_helper
+     PolkitQt5-1::Core
+ )
+ 
+-install(TARGETS ${PROJECT_NAME}_helper DESTINATION ${KDE_INSTALL_LIBEXECDIR})
+-install(FILES data/dev.jonmagon.kdiskmark.helperinterface.conf DESTINATION ${KDE_INSTALL_DBUSDIR}/system.d)
++install(TARGETS ${PROJECT_NAME}_helper DESTINATION ${CMAKE_INSTALL_LIBEXECDIR})
++install(FILES data/dev.jonmagon.kdiskmark.helperinterface.conf DESTINATION share/dbus-1/system.d)
+ 
+ install(FILES data/dev.jonmagon.kdiskmark.helper.policy DESTINATION ${POLKITQT-1_POLICY_FILES_INSTALL_DIR})
+-ecm_install_configured_files(
+-    INPUT data/dev.jonmagon.kdiskmark.helperinterface.service.in
+-    DESTINATION ${KDE_INSTALL_DBUSDIR}/system-services
++set(KDE_INSTALL_FULL_LIBEXECDIR ${CMAKE_INSTALL_LIBEXECDIR})
++configure_file(
++    data/dev.jonmagon.kdiskmark.helperinterface.service.in
++    data/dev.jonmagon.kdiskmark.helperinterface.service @ONLY
++)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/data/dev.jonmagon.kdiskmark.helperinterface.service
++    DESTINATION share/dbus-1/system-services
+ )
