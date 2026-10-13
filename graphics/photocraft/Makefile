@@ -1,6 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.2
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -246,7 +246,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
 		heck-0.5.0 \
-		heic-rs-0.1.1 \
+		heic-rs-0.1.4 \
 		hermit-abi-0.5.3 \
 		hex-0.4.3 \
 		iana-time-zone-0.1.65 \
@@ -720,7 +720,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		zune-jpegxl-0.5.2 \
 		zvariant-5.15.0 \
 		zvariant_derive-5.15.0 \
-		zvariant_utils-4.2.0
+		zvariant_utils-4.2.0 \
+		craft-ui@git+https://github.com/storytold/craft-libs?rev=5c874d51eeb3de70e735c8ce87a59a7dedd47675\#5c874d51eeb3de70e735c8ce87a59a7dedd47675
 
 CARGO_FEATURES=	heif
 CARGO_BUILD_ARGS=	-p ${PORTNAME} -p ${PORTNAME}-cli
@@ -732,7 +733,7 @@ CARGO_INSTALL=	no
 OPTIONS_DEFINE=	DOCS
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-10-11
+RELEASE_DATE=	2026-10-12
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
