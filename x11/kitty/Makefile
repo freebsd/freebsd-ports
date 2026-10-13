@@ -1,7 +1,7 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.49.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -22,9 +22,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		nerd-fonts-symbols>=3.1.1:x11-fonts/nerd-fonts-symbols \
 		roboto-fonts-ttf>=2.134:x11-fonts/roboto-fonts-ttf \
 		simde>=0.7.6:devel/simde \
+		slangc:graphics/linux-slang \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
 		urw-base35-fonts>=20200910:x11-fonts/urw-base35-fonts \
-		slangc:graphics/linux-slang \
 		wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libcanberra.so:audio/libcanberra \
@@ -40,12 +40,11 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libwayland-cursor.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxxhash.so:devel/xxhash
-RUN_DEPENDS=	slangc:graphics/linux-slang
 
 # ncursesw and tinfo >= 6.1 seem to be needed
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		go:modules linux:rl9 ncurses pkgconfig python shebangfix ssl tar:xz \
-		terminfo xorg
+		go:modules linux:rl9 ncurses pkgconfig python shebangfix ssl \
+		tar:xz terminfo xorg
 CPE_VENDOR=	kovidgoyal
 
 USE_GL=		gl
@@ -80,7 +79,11 @@ _STRIP_TARGETS=	kitty/fast_data_types.so kitty/glfw-x11.so \
 
 _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	CUSTOM_SHADERS DOCS
+
+CUSTOM_SHADERS_DESC=		Enable custom shaders
+CUSTOM_SHADERS_RUN_DEPENDS=	slangc:graphics/linux-slang
+
 DOCS_MAKE_ENV=	BUILD_DOCS=yes
 
 .include <bsd.port.options.mk>
