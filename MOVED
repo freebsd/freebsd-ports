@@ -5735,3 +5735,6 @@ math/mumps|math/mumps-edf|2026-10-07|Repomove to math/mumps-edf
 math/mumps4|math/mumps|2026-10-07|Repomove to math/mumps
 textproc/py-hieroglyph||2026-10-09|Has expired: Broken with textproc/py-sphinx 7 and newer, last upstream release in 2020
 graphics/kamerka||2026-10-11|Remove abandonware
+www/node20||2026-10-13|Has expired: Node.js 20.* has reached its EoL on 2026-04-30. Use Node.js 24.* (www/node24) instead
+www/yarn-node20||2026-10-13|Removed, part of expired www/node20
+www/npm-node20||2026-10-13|Removed, part of expired www/node20
