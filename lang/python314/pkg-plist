@@ -2330,9 +2330,6 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy%%PYTHON_TAG%%.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy_user%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy_user%%PYTHON_TAG%%.opt-2.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/test_zzdummy_user%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/tkinter_testing_utils%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/tkinter_testing_utils%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/__pycache__/tkinter_testing_utils%%PYTHON_TAG%%.pyc
@@ -2401,7 +2398,6 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_window.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_zoomheight.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_zzdummy.py
-%%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/test_zzdummy_user.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/idle_test/tkinter_testing_utils.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/iomenu.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/idlelib/macosx.py
@@ -5161,6 +5157,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_set%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_set%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_set%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_slice%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_slice%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_slice%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_structmembers%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_structmembers%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/__pycache__/test_structmembers%%PYTHON_TAG%%.pyc
@@ -5216,6 +5215,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_pyatomic.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_run.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_set.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_slice.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_structmembers.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_sys.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_capi/test_time.py
@@ -5855,6 +5855,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/__pycache__/test_collections%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/__pycache__/test_collections%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/__pycache__/test_collections%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/__pycache__/test_context%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/__pycache__/test_context%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/__pycache__/test_context%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/__pycache__/test_cprofile%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/__pycache__/test_cprofile%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/__pycache__/test_cprofile%%PYTHON_TAG%%.pyc
@@ -5976,6 +5979,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/test_capi.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/test_code.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/test_collections.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/test_context.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/test_cprofile.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/test_csv.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_free_threading/test_dbm_gnu.py
