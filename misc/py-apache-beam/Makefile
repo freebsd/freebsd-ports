@@ -1,5 +1,5 @@
 PORTNAME=	apache-beam
-DISTVERSION=	2.75.0
+DISTVERSION=	2.77.0
 CATEGORIES=	misc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,9 +21,10 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beartype>=0.21.0:devel/py-beartype@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.14.3:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}objsize>=0.6.1:devel/py-objsize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=22.0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=12.1.1:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}proto-plus>=1.7.1:devel/py-proto-plus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.20.3:devel/py-protobuf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyarrow>=6.0.1:databases/py-pyarrow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyarrow>=14.0.1:databases/py-pyarrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymongo>=3.8.0:databases/py-pymongo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2018.3:devel/py-pytz@${PY_FLAVOR} \
