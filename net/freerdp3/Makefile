@@ -1,16 +1,10 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.32.1
+DISTVERSION=	3.32.2
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/:freerdp \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/:freerdp
 PKGNAMESUFFIX=	3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:freerdp
-
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES=	e3596595b86ea27c38de4ecf47045f989cea039a.patch:-p1 \
-		6682e9ca667271b8ba148a301b4a2f9ac78be2b9.patch:-p1 \
-		d15a71e0a2ef264093514934553586c12192dbda.patch:-p1 \
-		e47f3880177b8680ab76bf75aba0732ae1fa5ccd.patch:-p1
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
@@ -53,7 +47,7 @@ OPTIONS_DEFINE=			ALSA AOM BROKENFOCUS CUPS DAV1D FAAC FAAD \
 				FDKAAC FFMPEG FFMPEG_HWACCEL GSM ICU JPEG LAME \
 				MANPAGES OPENH264 OPUS PCSC PKCS11 PULSEAUDIO \
 				RDPECAM SDL2 SDL3 SNDIO SOXR URIPARSER WAYLAND \
-				WEBVIEW X11 YUV
+				WEBVIEW WEBVIEW_QT X11 YUV
 OPTIONS_DEFINE_aarch64=		SIMD
 OPTIONS_DEFINE_amd64=		SIMD
 OPTIONS_DEFINE_armv7=		SIMD
@@ -61,8 +55,7 @@ OPTIONS_DEFINE_i386=		SIMD
 OPTIONS_DEFAULT=		AAD AOM CUPS FFMPEG FFMPEG_HWACCEL DAV1D \
 				GSSAPI_MIT ICU JPEG JPEG_CB JSON_C \
 				KEYBOARD_LAYOUT MANPAGES PNG RDPECAM SDL2 SDL3 \
-				SNDIO SWSCALE TIMEZONE_FILE WAYLAND WEBP \
-				WEBVIEW X11 YUV
+				SNDIO SWSCALE TIMEZONE_FILE WAYLAND WEBP X11 YUV
 OPTIONS_DEFAULT_aarch64=	SIMD
 OPTIONS_DEFAULT_amd64=		SIMD
 OPTIONS_DEFAULT_armv7=		SIMD
@@ -76,7 +69,7 @@ OPTIONS_SINGLE=			SCALE
 OPTIONS_SINGLE_SCALE=		CAIRO SWSCALE
 OPTIONS_SUB=			yes
 
-AAD_DESC=		Compile with support for Azure AD authentication (require SDL and WEBVIEW)
+AAD_DESC=		Compile with support for Azure AD authentication
 AOM_DESC=		Enable AV1 support for GFX channel encoding/decoding via AOM (experimental)
 BROKENFOCUS_DESC=	Work around focus bug in some WMs (PR \#254908)
 CAIRO_DESC=		Use CAIRO image library for screen resizing
@@ -99,11 +92,11 @@ SWSCALE_DESC=		Use SWScale image library for screen resizing (recommended)
 TIMEZONE_FILE_DESC=	Support timezones as JSON resources (if OFF, compiled in is used)
 URIPARSER_DESC=		Use uriparser RFC 3986 URI parsing library to handle URIs
 WAYLAND_DESC=		Build FreeRDP Wayland client
-WEBVIEW_DESC=		Build with WebView support for AAD login popup browser
+WEBVIEW_DESC=		Build with WebView support for AAD login popup browser (webkit gtk4)
+WEBVIEW_QT_DESC=	Build with WebView support for AAD login popup browser (Qt6)
 X11_DESC=		Build FreeRDP X11 client
 YUV_DESC=		Use graphics/libyuv
 
-AAD_IMPLIES=		SDL3 WEBVIEW
 AAD_CMAKE_BOOL=		WITH_AAD
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -196,11 +189,8 @@ PULSEAUDIO_CMAKE_BOOL=	WITH_PULSE
 RDPECAM_IMPLIES=	FFMPEG
 RDPECAM_BUILD_DEPENDS=	${LOCALBASE}/include/linux/uvcvideo.h:multimedia/v4l_compat \
 			${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-RDPECAM_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l \
-			libv4lconvert.so:multimedia/libv4l
 RDPECAM_CMAKE_BOOL=	CHANNEL_RDPECAM_CLIENT
 
-SDL2_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 SDL2_USES=		sdl
 SDL2_USE=		sdl=sdl2,ttf2,image2
 SDL2_CMAKE_BOOL=	WITH_CLIENT_SDL2 WITH_SDL_IMAGE_DIALOGS
@@ -242,10 +232,16 @@ WEBP_CMAKE_BOOL=	WINPR_UTILS_IMAGE_WEBP
 WEBVIEW_LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 			libharfbuzz.so:print/harfbuzz \
 			libwebkitgtk-6.0.so:www/webkit2-gtk@60 \
-			libgraphene-1.0.so:graphics/graphene
+			libgraphene-1.0.so:graphics/graphene \
+			libvulkan.so:graphics/vulkan-loader
 WEBVIEW_USES=		gnome
 WEBVIEW_USE=		gnome=cairo,gdkpixbuf,glib20,gtk40,pango
-WEBVIEW_CMAKE_BOOL=	WITH_WEBVIEW
+WEBVIEW_CMAKE_BOOL=	WITH_WEBVIEW_AAD_AUTH_HELPER
+
+WEBVIEW_QT_USES=	gl qt:6
+WEBVIEW_QT_USE=		GL=opengl \
+			QT=base,declarative,positioning,webchannel,webengine
+WEBVIEW_QT_CMAKE_BOOL=	WITH_QT_AAD_AUTH_HELPER
 
 X11_USE=		xorg=xcursor,xfixes,xi,xinerama,xkbfile,xorgproto,xrandr,xrender,xv
 X11_CMAKE_ON=		-DWITH_X11:BOOL=ON -DWITH_XCURSOR:BOOL=ON \
