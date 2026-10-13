@@ -25,7 +25,8 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@OPTIM@|-DHAVE_CONFIG_H|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/flphoto\.h/ { x; \
+		s/^/#include <stdlib.h>/; G; }' ${WRKSRC}/slideshow.cxx
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flphoto ${STAGEDIR}${PREFIX}/bin/flphoto

@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2006-11-19 15:51:00 UTC
++++ Makefile.in
+@@ -52,7 +52,7 @@ CFLAGS		=	@CFLAGS@ @CPPFLAGS@ $(OPTIM)
+ CXXFLAGS	=	@CXXFLAGS@ @CPPFLAGS@ $(OPTIM)
+ LDFLAGS		=	@LDFLAGS@ $(OPTIM)
+ LIBS		=	@LIBS@
+-OPTIM		=	@OPTIM@ @DEFS@
++OPTIM		=	-DHAVE_CONFIG_H @DEFS@
+ 
+ 
+ #
+@@ -85,8 +85,6 @@ VPATH		=	$(srcdir)
+ # Rules...
+ #
+ 
+-.SILENT:
+-
+ .SUFFIXES:	.c .cxx .h .mo .o .po
+ .c.o:
+ 	echo Compiling $<...
+@@ -360,7 +358,7 @@ TSSOBJS	=	\
+ 
+ testslideshow$(EXEEXT):	$(TSSOBJS)
+ 	echo Linking $@...
+-	$(CXX) -o $@ $(TSSOBJS) $(LIBS)
++	$(CXX) -o $@ $(TSSOBJS) $(LIBS) -lXext
+ 
+ $(TSSOBJS):	Compositor.h Fl_Slideshow.h
+ 
