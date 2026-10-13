@@ -1,6 +1,7 @@
---- pulp/apis/core.py.orig2025-04-25 18:37:16 UTC
+--- pulp/apis/core.py.orig	2025-04-25 18:37:16 UTC
 +++ pulp/apis/core.py
-@@ -42,6 +42,8 @@ def get_operating_system():
+@@ -69,6 +69,8 @@ def get_operating_system() -> str:
+     if sys.platform in ["win32", "cli"]:
          return "win"
      if sys.platform in ["darwin"]:
          return "osx"
