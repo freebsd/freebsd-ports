@@ -59,11 +59,13 @@ bin/ros
 %%ETCDIR%%/install-allegro.lisp
 %%ETCDIR%%/install-asdf.lisp
 %%ETCDIR%%/install-ccl-bin.lisp
+%%ETCDIR%%/install-clamiga.lisp
 %%ETCDIR%%/install-clasp-bin.lisp
 %%ETCDIR%%/install-clasp.lisp
 %%ETCDIR%%/install-clisp-head.lisp
 %%ETCDIR%%/install-clisp.lisp
 %%ETCDIR%%/install-cmu-bin.lisp
+%%ETCDIR%%/install-dotcl-bin.lisp
 %%ETCDIR%%/install-ecl.lisp
 %%ETCDIR%%/install-lispworks.lisp
 %%ETCDIR%%/install-mkcl.lisp
