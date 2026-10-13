@@ -1,5 +1,5 @@
 PORTNAME=	phono3py
-DISTVERSION=	4.4.0
+DISTVERSION=	4.8.2
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>0:devel/py-scikit-build-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phonopy>=4.4.0:science/py-phonopy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phonopy>=4.8.0:science/py-phonopy@${PY_FLAVOR}
 
 USES=		blaslapack:openblas fortran localbase python
 USE_PYTHON=	pep517 cython autoplist pytest
@@ -28,6 +28,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/test
 PYTEST_BROKEN_TESTS=	test_reciprocal_to_normal_vs_c
 
-# tests as of 4.4.0: 469 passed, 11 skipped, 1 deselected in 306.60s
+# tests as of 4.8.2: 231 passed, 11 skipped, 1 deselected
 
 .include <bsd.port.mk>
