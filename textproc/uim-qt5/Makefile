@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-qt5
 
 COMMENT=	Qt5 modules of uim input method
@@ -6,9 +7,9 @@ LIB_DEPENDS=	libuim.so:textproc/uim
 
 USES=		cmake:indirect compiler:c++11-lang gl iconv kde:5 libtool qt:5
 USE_GL=		gl
-USE_KDE=	plasma-framework \
-		ecm:build
-USE_QT=		buildtools:build core declarative gui network qmake:build widgets x11extras
+USE_KDE=	ecm:build
+USE_QT=		core gui widgets x11extras \
+		buildtools:build qmake:build
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
