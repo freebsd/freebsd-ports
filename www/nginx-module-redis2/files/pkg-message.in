@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the redis2 module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use redis2, build
+www/nginx, www/nginx-devel or www/freenginx with the REDIS2 option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-redis2 and produce
+ngx_http_redis2_module.so.
+EOM
+}
+]
