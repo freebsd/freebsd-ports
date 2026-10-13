@@ -545,6 +545,7 @@
     SUBDIR += nginx-module-lua-stream
     SUBDIR += nginx-module-ndk
     SUBDIR += nginx-module-njs
+    SUBDIR += nginx-module-postgres
     SUBDIR += nginx-module-slowfs-cache
     SUBDIR += nginx-module-vod
     SUBDIR += nginx-module-websockify
