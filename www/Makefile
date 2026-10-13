@@ -539,6 +539,7 @@
     SUBDIR += nginx-module-array-var
     SUBDIR += nginx-module-cache-purge
     SUBDIR += nginx-module-form-input
+    SUBDIR += nginx-module-gridfs
     SUBDIR += nginx-module-let
     SUBDIR += nginx-module-lua
     SUBDIR += nginx-module-lua-stream
