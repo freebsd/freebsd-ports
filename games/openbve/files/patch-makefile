@@ -1,14 +1,5 @@
 --- makefile.orig	2026-08-10 15:56:18 UTC
 +++ makefile
-@@ -3,7 +3,7 @@
- # Version checking
- MSBUILD := msbuild
- NUGET := nuget
--MIN_MONO_VERSION:= "5.18.0"
-+MIN_MONO_VERSION:= "5.10.0"
- MONO_VERSION:= $(shell mono --version | awk '/version/ { print $$5 }')
- MIN_NUGET_VERSION:= "2.16.0"
- NUGET_VERSION:= $(shell $NUGET help 2> /dev/null | awk '/Version:/ { print $$3; exit 0}')
 @@ -61,7 +61,7 @@ reset:=$(shell tput sgr0)
  .PHONY: prequisite-check
  
