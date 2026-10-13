@@ -1,0 +1,5 @@
+TIMESTAMP = 1791916338
+SHA256 (go/security_tailcat/tailcat-v0.7.0/v0.7.0.mod) = 895494293dab796282dfcd1f0f94d014a960471a6e6416779bf98da47c12b4f3
+SIZE (go/security_tailcat/tailcat-v0.7.0/v0.7.0.mod) = 5842
+SHA256 (go/security_tailcat/tailcat-v0.7.0/v0.7.0.zip) = 1cd6c9f594bdf7dc921018f36958ab56671bb97f515806aa9fcf628fbb580321
+SIZE (go/security_tailcat/tailcat-v0.7.0/v0.7.0.zip) = 244946

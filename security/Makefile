@@ -1403,6 +1403,7 @@
     SUBDIR += susshi
     SUBDIR += swatchdog
     SUBDIR += syft
+    SUBDIR += tailcat
     SUBDIR += tailscale
     SUBDIR += tang
     SUBDIR += tclsasl
