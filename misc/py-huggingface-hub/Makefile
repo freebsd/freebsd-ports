@@ -1,5 +1,5 @@
 PORTNAME=	huggingface-hub
-DISTVERSION=	1.16.1
+DISTVERSION=	2.2.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,17 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=3.10.0:sysutils/py-filelock@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.4.2<9.0.0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}filelock>=3.10.0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fsspec>=2023.5.0:filesystems/py-fsspec@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0<1:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx2>=2.0.0<3:www/py-httpx2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.9:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.1:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.42.1:misc/py-tqdm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typer>=0.20.0:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${RUN_DEPENDS_${ARCH}}
-RUN_DEPENDS_amd64=	${PYTHON_PKGNAMEPREFIX}hf-xet>=1.4.3<2.0.0:misc/py-hf-xet@${PY_FLAVOR}
-RUN_DEPENDS_aarch4=	${PYTHON_PKGNAMEPREFIX}hf-xet>=1.4.3<2.0.0:misc/py-hf-xet@${PY_FLAVOR}
+RUN_DEPENDS_amd64=	${PYTHON_PKGNAMEPREFIX}hf-xet>=1.6.0<2.0.0:misc/py-hf-xet@${PY_FLAVOR}
+RUN_DEPENDS_aarch4=	${PYTHON_PKGNAMEPREFIX}hf-xet>=1.6.0<2.0.0:misc/py-hf-xet@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
