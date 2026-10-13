@@ -1,6 +1,6 @@
 --- configure.ac.orig	2025-11-07 06:35:47 UTC
 +++ configure.ac
-@@ -138,7 +138,35 @@ AS_IF([test $use_pcap_restart = yes], [
+@@ -138,7 +138,37 @@ AS_IF([test $use_pcap_restart = yes], [
      USE_PCAP_RESTART="0"
  ])
  
@@ -20,6 +20,8 @@
 +#
 +# All of them must be available in order to enable capsicum sandboxing.
 +#
++USE_CAPSICUM="0"
++
 +if test $use_capsicum = yes && test $use_capsicum != no ; then
 +	AC_CHECK_FUNCS(cap_enter cap_rights_limit cap_ioctls_limit openat,
 +	    ac_lbl_capsicum_function_seen=yes,
@@ -36,7 +38,7 @@
  dnl
  dnl Configure the regular expression library.
  dnl
-@@ -553,6 +581,7 @@ AC_DEFINE_UNQUOTED(USE_VLAN_HACK,             $USE_VLA
+@@ -553,6 +583,7 @@ AC_DEFINE_UNQUOTED(USE_VLAN_HACK,             $USE_VLA
  AC_DEFINE_UNQUOTED(USE_IPv6,                  $USE_IPv6,                  [whether to use IPv6 (default off)])
  AC_DEFINE_UNQUOTED(USE_TCPKILL,               $USE_TCPKILL,               [whether to enable tcpkill functionality (default off)])
  AC_DEFINE_UNQUOTED(USE_VLAN_HACK,             $USE_VLAN_HACK,             [whether to automatically include VLAN frames (default on)])
@@ -44,7 +46,7 @@
  
  AC_DEFINE_UNQUOTED(USE_DROPPRIVS,             $USE_DROPPRIVS,             [whether to use privileges dropping (default yes)])
  AC_DEFINE_UNQUOTED(DROPPRIVS_USER,           "$DROPPRIVS_USER",           [pseudo-user for running ngrep (default "nobody")])
-@@ -613,6 +642,12 @@ AS_IF([test "$USE_VLAN_HACK" = "1"], [
+@@ -613,6 +644,12 @@ AS_IF([test "$USE_VLAN_HACK" = "1"], [
      AC_MSG_RESULT(CONFIG: automatically including VLAN frames)
  ], [
      AC_MSG_RESULT(CONFIG: NOT automatically including VLAN frames)
