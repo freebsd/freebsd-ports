@@ -104,6 +104,18 @@ _COMPONENTS+=		cargo-${_PACKAGE_VERS}-${_RUST_TARGET} \
 IGNORE=		is only for FreeBSD
 .endif
 
+# cc-rs appends the target specific CFLAGS_<target> to CFLAGS, it does not
+# replace them.  Pass the flags per target only, so that the -march/-mtune/
+# -mcpu that CPUTYPE adds for the host do not reach the C code built for
+# wasm32 (compiler-builtins), where clang rejects them.
+_RUST_CC_ENV=	CFLAGS= CXXFLAGS= \
+		CFLAGS_${_RUST_TARGET:S/-/_/g}="${CFLAGS}" \
+		CXXFLAGS_${_RUST_TARGET:S/-/_/g}="${CXXFLAGS}"
+.if ${PORT_OPTIONS:MWASM}
+_RUST_CC_ENV+=	CFLAGS_wasm32_unknown_unknown="${CFLAGS:N-march=*:N-mtune=*:N-mcpu=*}" \
+		CXXFLAGS_wasm32_unknown_unknown="${CXXFLAGS:N-march=*:N-mtune=*:N-mcpu=*}"
+.endif
+
 .if ${ARCH} == powerpc
 LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
 MAKE_ENV+=	RUSTFLAGS="-L/usr/local/lib/gcc${GCC_DEFAULT}"
@@ -256,7 +268,7 @@ do-configure:
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} x.py dist --jobs=${MAKE_JOBS_NUMBER}
+		${SETENV} ${MAKE_ENV} ${_RUST_CC_ENV} ${PYTHON_CMD} x.py dist --jobs=${MAKE_JOBS_NUMBER}
 
 do-install:
 	${RM} -r ${WRKDIR}/_extractdist
@@ -302,6 +314,6 @@ post-install-SOURCES-on:
 # Note that make test does not work when rust is already installed.
 do-test:
 	@cd ${WRKSRC} && \
-		${SETENV} ${TEST_ENV} ${PYTHON_CMD} x.py test --jobs=${MAKE_JOBS_NUMBER}
+		${SETENV} ${TEST_ENV} ${_RUST_CC_ENV} ${PYTHON_CMD} x.py test --jobs=${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.post.mk>
