@@ -1,5 +1,5 @@
 PORTNAME=	mellea
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	devel python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}math-verify>0:math/py-math-verify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mistletoe>=1.4.0:textproc/py-mistletoe@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nltk>0:textproc/py-nltk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nltk>=3.9:textproc/py-nltk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ollama>=0.5.1:misc/py-ollama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openai>0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
@@ -32,11 +32,5 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-
-post-extract:
-	#@${REINPLACE_CMD} -e '/^license-files/d' ${WRKSRC}/pyproject.toml
-	@${ECHO_CMD} "" >> ${WRKSRC}/pyproject.toml
-	@${ECHO_CMD} "[tool.pdm.build]" >> ${WRKSRC}/pyproject.toml
-	@${ECHO_CMD} "excludes = [\"docs\", \"docs.*\", \"test\", \"test.*\", \"tooling\", \"tooling.*\", \"scratchpad\", \"scratchpad.*\", \"tmp\", \"tmp.*\"]" >> ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
