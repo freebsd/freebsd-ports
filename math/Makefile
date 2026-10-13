@@ -102,6 +102,7 @@
     SUBDIR += R-cran-mcmc
     SUBDIR += R-cran-memisc
     SUBDIR += R-cran-metadat
+    SUBDIR += R-cran-metafor
     SUBDIR += R-cran-minqa
     SUBDIR += R-cran-misc3d
     SUBDIR += R-cran-miscTools
