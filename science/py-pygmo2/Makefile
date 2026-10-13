@@ -1,13 +1,13 @@
 PORTNAME=	pygmo2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.8
-PORTREVISION=	1
+DISTVERSION=	2.20.0
 CATEGORIES=	science graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python platform to perform parallel computations of optimisation tasks
-WWW=		https://esa.github.io/pygmo2/
+WWW=		https://esa.github.io/pygmo2/ \
+		https://github.com/esa/pygmo2
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -34,10 +34,13 @@ CMAKE_ARGS=	-DFREEBSD_PYTHON_DISTVERSION=${PYTHON_DISTVERSION}
 
 CXXFLAGS+=	-I${LOCALBASE}/include/coin # see https://github.com/esa/pygmo2/issues/58
 
-do-test: install # tests require sysctl sudo sysctl kern.threads.max_threads_per_proc variable to be at least 15000 ; test taken from azure-pipelines.yml
-	# some tests fail, see https://github.com/esa/pygmo2/issues/135
-	@${PYTHON_CMD} -c "import pygmo; pygmo.test.run_test_suite(1); pygmo.mp_island.shutdown_pool(); pygmo.mp_bfe.shutdown_pool()"
+#TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 2.19.8: Ran 71 tests, 22 errors (known issues, see do-test)
+do-test: # tests require sysctl sudo sysctl kern.threads.max_threads_per_proc variable to be at least 15000 ; test taken from azure-pipelines.yml
+	# some tests fail, see https://github.com/esa/pygmo2/issues/135
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -c "import pygmo; pygmo.test.run_test_suite(1); pygmo.mp_island.shutdown_pool(); pygmo.mp_bfe.shutdown_pool()"
+
+# tests as of 2.20.0: Ran 72 tests in 28.615s
 
 .include <bsd.port.mk>
