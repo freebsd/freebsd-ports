@@ -208,7 +208,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/pdfium/cpp
-	${INSTALL_LIB} ${WRKSRC}/${GN_OUT}/obj/libpdfium.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/${GN_OUT}/obj/libpdfium.a ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_LIB} ${WRKSRC}/${GN_OUT}/obj/libpdfium.so ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/public/*.h ${STAGEDIR}${PREFIX}/include/pdfium/
 	${INSTALL_DATA} ${WRKSRC}/public/cpp/*.h ${STAGEDIR}${PREFIX}/include/pdfium/cpp/
