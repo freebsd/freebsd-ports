@@ -1,3 +1,52 @@
+  <vuln vid="07e99f22-c176-4c8f-9678-a57ba8114959">
+    <topic>Timing leaks of the nonce in ECDSA, EdDSA and DSA signatures</topic>
+    <affects>
+      <package>
+        <name>py312-pycryptodome</name>
+        <name>py312-pycryptodomex</name>
+        <name>py313-pycryptodome</name>
+        <name>py313-pycryptodomex</name>
+        <name>py313t-pycryptodome</name>
+        <name>py313t-pycryptodomex</name>
+        <name>py314-pycryptodome</name>
+        <name>py314-pycryptodomex</name>
+        <name>py314t-pycryptodome</name>
+        <name>py314t-pycryptodomex</name>
+        <name>py311-pycryptodome</name>
+        <name>py311-pycryptodomex</name>
+        <name>py315-pycryptodome</name>
+        <name>py315-pycryptodomex</name>
+        <name>py27-pycryptodome</name>
+        <name>py27-pycryptodomex</name>
+        <range>
+          <lt>3.24.1</lt>
+        </range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Helder Eijs reports</p>
+        <blockquote cite="://github.com/Legrandin/pycryptodome/commit/59351474682db6648825f17b11112d6821d66cb9">
+          <p>Fix timing leaks of the nonce in ECDSA, EdDSA and DSA signatures
+            The signing time depended on the secret nonce, enough to recover the
+            private key with a lattice attack.
+
+            - EC: scalars are encoded and processed on the full length of the
+              order, and ec_mix_add() is constant time for the point at infinity
+              (a zero digit).
+            - DSA: g^k uses k + q or k + 2q (fixed length) and mpz_powm_sec, or the
+              library's Montgomery exponentiation without GMP. About 40% slower.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      </references>
+    <dates>
+      <discovery>2026-10-11</discovery>
+      <entry>2026-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5518664d-c652-11f1-b273-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
