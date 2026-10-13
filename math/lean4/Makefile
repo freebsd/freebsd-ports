@@ -1,6 +1,6 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.34.1
+DISTVERSION=	4.35.0
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,8 @@ USES=		cmake:noninja,testing compiler:c++14-lang gmake pkgconfig python:build # 
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	leanprover
-GH_TUPLE=	microsoft:mimalloc:v3.4.4:mimalloc/cmake/mimalloc/src/mimalloc
+GH_TUPLE=	microsoft:mimalloc:v3.4.5:mimalloc/cmake/mimalloc/src/mimalloc \
+		Kha:lean4lean:lean4-bundle-4.35:lean4lean/ext/lean4lean
 
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
@@ -84,6 +85,12 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
+	# Disable git downloads of optional checkers (not built by default)
+	@${REINPLACE_CMD} -E \
+		-e 's|GIT_REPOSITORY https://github.com/(ammkrn/nanoda_lib\|leanprover/con-leche\|leanprover/con-ron)|DOWNLOAD_COMMAND ""|' \
+		-e '/GIT_TAG [0-9a-f]{40}/d' \
+		-e '/GIT_SUBMODULES ""/d' \
+		${WRKSRC}/src/CMakeLists.txt ${WRKSRC}/stage0/src/CMakeLists.txt
 	# Add weakLeancArgs = ["-fPIC"] to all test lakefile.toml files
 	# Skip inputFile test: its translate-config test expects exact TOML-to-Lean output
 	@${FIND} ${WRKSRC}/tests -name "lakefile.toml" -not -path "*/inputFile/*" | while read f; do \
@@ -121,5 +128,6 @@ post-install:
 # tests as of 4.33.1: 100% tests passed, 0 tests failed out of 3988
 # tests as of 4.34.0: 100% tests pass (individual testsuite runs have intermittent failures with different tests, but all individual tests pass when run separately)
 # tests as of 4.34.1: 99% tests passed, 1 tests failed out of 4068: the 2 months old test cacheTransfer/test.sh fails, see https://github.com/leanprover/lean4/issues/15335
+# tests as of 4.35.0: 99% tests passed, 2 tests failed out of 4218: same cacheTransfer/test.sh failure, pkg/float failure
 
 .include <bsd.port.mk>

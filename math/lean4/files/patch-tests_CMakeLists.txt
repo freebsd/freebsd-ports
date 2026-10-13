@@ -7,11 +7,11 @@
 
 -- Disable the lint.py test because it calls git to find the list of tracked files to lint.
 
---- tests/CMakeLists.txt.orig	2026-08-21 10:26:01 UTC
+--- tests/CMakeLists.txt.orig	2026-10-12 15:51:15 UTC
 +++ tests/CMakeLists.txt
-@@ -21,6 +21,13 @@ endif()
- 
- set(LEAN_BIN "${MANGLED_BINARY_DIR}/bin")
+@@ -31,6 +31,13 @@ string(APPEND TEST_VARS " SCRIPT_DIR='${MANGLED_SOURCE
+ string(APPEND TEST_VARS " BUILD_DIR='${MANGLED_BINARY_DIR}'")
+ string(APPEND TEST_VARS " SCRIPT_DIR='${MANGLED_SOURCE_DIR}/../script'")
  
 +# FreeBSD: prepend test-bin (contains 'make' -> gmake symlink) to PATH so that tests
 +# using GNU make syntax (e.g. reverse-ffi) work correctly with FreeBSD's BSD make.
@@ -36,7 +36,7 @@
  set(WITH_TEST_ENV "${CMAKE_CURRENT_SOURCE_DIR}/with_stage${STAGE}_test_env.sh")
  set(WITH_BENCH_ENV "${CMAKE_CURRENT_SOURCE_DIR}/with_stage${STAGE}_bench_env.sh")
  
-@@ -309,7 +322,7 @@ endforeach(T)
+@@ -313,7 +326,7 @@ endforeach(T)
  endforeach(T)
  
  # Lint test suite and parts of the repository.

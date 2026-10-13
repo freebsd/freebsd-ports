@@ -1,4 +1,4 @@
---- src/include/lean/lean.h.orig	2026-07-22 17:50:04 UTC
+--- src/include/lean/lean.h.orig	2026-10-12 15:51:15 UTC
 +++ src/include/lean/lean.h
 @@ -17,6 +17,10 @@ Author: Leonardo de Moura
  #include <lean/mimalloc.h>
@@ -11,7 +11,7 @@
  #ifdef __cplusplus
  #include <atomic>
  #include <stdlib.h>
-@@ -484,7 +488,15 @@ __attribute__((nothrow))
+@@ -570,7 +574,15 @@ __attribute__((nothrow))
  // `__attribute__((nothrow))` to be present or `noexcept`.
  __attribute__((nothrow))
  #endif
