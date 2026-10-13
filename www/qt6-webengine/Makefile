@@ -77,7 +77,7 @@ LIB_DEPENDS+=	libabsl_base.so:devel/abseil \
 		libvpx.so:multimedia/libvpx \
 		libwebp.so:graphics/webp
 
-USES+=		bison gnome gperf jpeg minizip xorg
+USES+=		bison gnome gperf jpeg minizip nodejs:build,lts xorg
 USE_GL+=	gbm
 USE_QT+=	positioning quick3d:build webchannel
 USE_GNOME+=	glib20 libxml2 libxslt
@@ -156,15 +156,6 @@ SNDIO_CMAKE_OFF=	-DQT_FEATURE_webengine_system_sndio:BOOL=OFF
 .endif
 
 .include <bsd.port.options.mk>
-
-.if !defined(BUILD_QTPDF)
-.  if ${ARCH:Mi386}
-DEPRECATED=	Depends on expired www/node20 (on i386 only)
-USES+=		nodejs:build,20  # expired 2026-05-31
-.  else
-USES+=		nodejs:build,lts
-.  endif
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/src/3rdparty/chromium/media/audio/sndio \
