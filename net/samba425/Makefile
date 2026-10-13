@@ -1,6 +1,6 @@
 PORTNAME=	samba425
 DISTVERSION=	4.25.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	net
 MASTER_SITES=	SAMBA/samba/stable \
 		SAMBA/samba/rc
@@ -281,6 +281,7 @@ MANPAGES_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:tex
 MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="false"
 
 MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
+MDNSRESPONDER_CONFIGURE_ENABLE=	dnssd
 MDNSRESPONDER_VARS=		_SAMBA_SERVICES+=mdnsd
 
 # FreeBSD 14+ uses jemalloc as the base system allocator.
