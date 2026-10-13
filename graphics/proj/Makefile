@@ -1,5 +1,5 @@
 PORTNAME=	proj
-DISTVERSION=	9.8.1
+DISTVERSION=	9.9.0
 PORTEPOCH=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://github.com/OSGeo/PROJ/releases/download/${DISTVERSION}/ \
