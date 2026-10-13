@@ -1,5 +1,5 @@
 PORTNAME=	atf
-DISTVERSION=	0.25
+DISTVERSION=	0.26
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/freebsd/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 

@@ -93,6 +93,7 @@ share/aclocal/atf-sh.m4
 %%TEST%%tests/atf/atf-sh/atf-check_test
 %%TEST%%tests/atf/atf-sh/config_test
 %%TEST%%tests/atf/atf-sh/integration_test
+%%TEST%%tests/atf/atf-sh/kmod_test
 %%TEST%%tests/atf/atf-sh/normalize_test
 %%TEST%%tests/atf/atf-sh/tc_test
 %%TEST%%tests/atf/atf-sh/tp_test
