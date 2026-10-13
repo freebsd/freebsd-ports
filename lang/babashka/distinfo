@@ -1,5 +1,5 @@
-TIMESTAMP = 1790754703
-SHA256 (babashka-1.13.225-linux-aarch64-static.tar.gz) = 7fd4ce2c6ac9975bfd6f20a42a49f5d6f95d8ac0b2c4d9336dc6afc67ad11ce2
-SIZE (babashka-1.13.225-linux-aarch64-static.tar.gz) = 28564532
-SHA256 (babashka-1.13.225-linux-amd64.tar.gz) = fedc96dc5674eec3a4e345e73f7eb8627fe6cf1d257ba9ca4ab99f8a07c1f60b
-SIZE (babashka-1.13.225-linux-amd64.tar.gz) = 28628409
+TIMESTAMP = 1791864410
+SHA256 (babashka-1.13.226-linux-aarch64-static.tar.gz) = 85d62914ce1183634e9f81db67ec8e4db41f927ab8caf5b92076da9e46fda679
+SIZE (babashka-1.13.226-linux-aarch64-static.tar.gz) = 28597815
+SHA256 (babashka-1.13.226-linux-amd64.tar.gz) = c0174f7de467f00726e696a03b40b238e9a729656764169cbb7b01f4e71f6afb
+SIZE (babashka-1.13.226-linux-amd64.tar.gz) = 28695587
