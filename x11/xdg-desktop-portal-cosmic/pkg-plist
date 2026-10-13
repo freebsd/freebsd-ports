@@ -1,0 +1,7 @@
+libexec/xdg-desktop-portal-cosmic
+share/dbus-1/services/org.freedesktop.impl.portal.desktop.cosmic.service
+share/icons/hicolor/scalable/actions/screenshot-screen-symbolic.svg
+share/icons/hicolor/scalable/actions/screenshot-selection-symbolic.svg
+share/icons/hicolor/scalable/actions/screenshot-window-symbolic.svg
+share/xdg-desktop-portal/cosmic-portals.conf
+share/xdg-desktop-portal/portals/cosmic.portal

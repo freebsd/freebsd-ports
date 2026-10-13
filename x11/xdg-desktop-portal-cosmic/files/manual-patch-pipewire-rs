@@ -1,0 +1,28 @@
+--- pipewire/src/lib.rs.orig
++++ pipewire/src/lib.rs
+@@ -180,7 +180,7 @@ pub fn init() {
+ pub fn init() {
+     use std::sync::OnceLock;
+     static INITIALIZED: OnceLock<()> = OnceLock::new();
+-    INITIALIZED.get_or_init(|| unsafe { pw_sys::pw_init(ptr::null_mut(), ptr::null_mut()) });
++    INITIALIZED.get_or_init(|| unsafe { pw_sys::pipewire_init(ptr::null_mut(), ptr::null_mut()) });
+ }
+ 
+ /// Deinitialize PipeWire
+@@ -189,5 +189,5 @@ pub fn deinit() {
+ /// This must only be called once during the lifetime of the process, once no PipeWire threads
+ /// are running anymore and all PipeWire resources are released.
+ pub unsafe fn deinit() {
+-    pw_sys::pw_deinit()
++    pw_sys::pipewire_deinit()
+ }
+--- pipewire-sys/build.rs.orig
++++ pipewire-sys/build.rs
+@@ -19,6 +19,7 @@ fn main() {
+         // included header files changed.
+         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
+         .size_t_is_usize(true)
++        .allowlist_function("pipewire_.*")
+         .allowlist_function("pw_.*")
+         .allowlist_type("pw_.*")
+         .allowlist_var("pw_.*")

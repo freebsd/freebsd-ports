@@ -587,6 +587,7 @@
     SUBDIR += xcur2png
     SUBDIR += xcursorgen
     SUBDIR += xcut
+    SUBDIR += xdg-desktop-portal-cosmic
     SUBDIR += xdg-desktop-portal-gnome
     SUBDIR += xdg-desktop-portal-gtk
     SUBDIR += xdg-desktop-portal-hyprland
