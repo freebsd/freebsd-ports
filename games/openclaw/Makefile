@@ -14,6 +14,7 @@ WWW=		https://github.com/pjasicek/OpenClaw
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Last release 9 years ago, does not build with CMake 4
 EXPIRATION_DATE=2026-11-30
 
