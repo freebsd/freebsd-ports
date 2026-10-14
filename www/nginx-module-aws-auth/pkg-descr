@@ -1,0 +1,6 @@
+The aws_auth module signs requests the way Amazon S3 wants them signed,
+with signature version 4, so that nginx can proxy to a private bucket
+without the credentials travelling any further than its own configuration.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their AWS_AUTH option is enabled.
