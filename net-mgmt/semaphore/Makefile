@@ -7,7 +7,7 @@ MASTER_SITES+=	https://github.com/joneum/FreeBSD-Semaphore/releases/download/${P
 DISTFILES+=	${PORTNAME}-webui-${DISTVERSION}${EXTRACT_SUFX}:webui \
 		${PORTNAME}-provendor-${DISTVERSION}${EXTRACT_SUFX}:webui
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source alternative to Ansible Tower
 WWW=		https://semaphoreui.com/
 
