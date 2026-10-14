@@ -1,13 +1,12 @@
 PORTNAME=	semaphore
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.7
-PORTREVISION=	4
+DISTVERSION=	2.19.16
 CATEGORIES=	net-mgmt
 MASTER_SITES+=	https://github.com/joneum/FreeBSD-Semaphore/releases/download/${PORTNAME}-${DISTVERSION}/:webui
 DISTFILES+=	${PORTNAME}-webui-${DISTVERSION}${EXTRACT_SUFX}:webui \
 		${PORTNAME}-provendor-${DISTVERSION}${EXTRACT_SUFX}:webui
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Open Source alternative to Ansible Tower
 WWW=		https://semaphoreui.com/
 
