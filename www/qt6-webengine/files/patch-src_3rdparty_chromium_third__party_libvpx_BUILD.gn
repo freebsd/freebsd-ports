@@ -1,0 +1,33 @@
+--- src/3rdparty/chromium/third_party/libvpx/BUILD.gn.orig	2026-05-08 07:54:08 UTC
++++ src/3rdparty/chromium/third_party/libvpx/BUILD.gn
+@@ -47,6 +47,8 @@ if (current_cpu == "x86") {
+   }
+ } else if (current_cpu == "riscv64") {
+   cpu_arch_full = "generic"
++} else if (current_cpu == "ppc64") {
++  cpu_arch_full = "generic"
+ } else if (current_cpu == "loong64") {
+   cpu_arch_full = "loongarch"
+ } else {
+@@ -512,10 +514,6 @@ source_set("libvpx_loongarch_headers") {
+   sources = libvpx_srcs_loongarch_headers
+ }
+ 
+-source_set("libvpx_ppc64_headers") {
+-  sources = libvpx_srcs_ppc64_headers
+-}
+-
+ source_set("libvpx_generic_headers") {
+   sources = libvpx_srcs_generic_headers
+ }
+@@ -563,8 +561,8 @@ static_library("bundled_libvpx") {
+       public_deps = [ ":libvpx_arm64_headers" ]
+     }
+   } else if (current_cpu == "ppc64") {
+-    sources = libvpx_srcs_ppc64
+-    public_deps = [ ":libvpx_ppc64_headers" ]
++    sources = libvpx_srcs_generic
++    public_deps = [ ":libvpx_generic_headers" ]
+   } else if (current_cpu == "riscv64") {
+     sources = libvpx_srcs_generic
+     public_deps = [ ":libvpx_generic_headers" ]
