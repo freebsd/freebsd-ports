@@ -1,0 +1,8 @@
+libnbd is a userspace client library for the Network Block Device (NBD)
+protocol, which provides access to disk-like devices over a network.
+It offers a stable C API with synchronous operations for blocking clients
+and asynchronous operations for non-blocking, multithreaded clients.
+
+The package includes shared and static libraries and the nbddump tool.
+Optional components provide TLS, URI support, nbdcopy, nbdinfo, FUSE
+integration, and Python bindings and tools.

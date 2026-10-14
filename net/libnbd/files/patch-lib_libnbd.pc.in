@@ -1,0 +1,15 @@
+Provide configured include/library paths and private static-link dependencies.
+
+--- lib/libnbd.pc.in.orig	2023-11-16 10:50:20 UTC
++++ lib/libnbd.pc.in
+@@ -24,6 +24,7 @@ Description: NBD client library in userspace
+ Name: @PACKAGE_NAME@
+ Version: @PACKAGE_VERSION@
+ Description: NBD client library in userspace
+-Requires:
+-Cflags:
+-Libs: -lnbd
++Requires.private: @LIBNBD_REQUIRES_PRIVATE@
++Cflags: -I${includedir}
++Libs: -L${libdir} -lnbd
++Libs.private: @PTHREAD_LIBS@

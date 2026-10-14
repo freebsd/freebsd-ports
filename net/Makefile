@@ -405,6 +405,7 @@
     SUBDIR += libmaxminddb
     SUBDIR += libmdf
     SUBDIR += libnatpmp
+    SUBDIR += libnbd
     SUBDIR += libndp
     SUBDIR += libnet
     SUBDIR += libnfs
