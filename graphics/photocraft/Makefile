@@ -1,7 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.2
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -74,7 +73,11 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		av-scenechange-0.14.1 \
 		av1-grain-0.2.5 \
 		avif-serialize-0.8.9 \
+		aws-lc-rs-1.18.2 \
+		aws-lc-sys-0.46.0 \
 		base64-0.22.1 \
+		base64-0.23.1 \
+		base64ct-1.8.3 \
 		bindgen-0.72.1 \
 		bit-set-0.8.0 \
 		bit-set-0.10.0 \
@@ -86,6 +89,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		bitstream-io-4.10.0 \
 		blake3-1.8.7 \
 		block-0.1.6 \
+		block-buffer-0.10.4 \
 		block2-0.5.1 \
 		block2-0.6.2 \
 		blocking-1.7.0 \
@@ -119,12 +123,16 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		clap_builder-4.6.7 \
 		clap_lex-1.1.1 \
 		clipboard-win-5.4.1 \
+		cmake-0.1.58 \
+		cmpv2-0.2.0 \
+		cms-0.2.3 \
 		codespan-reporting-0.13.1 \
 		color-0.3.3 \
 		color_quant-1.1.0 \
 		colored-2.2.0 \
 		combine-4.6.8 \
 		concurrent-queue-2.5.0 \
+		const-oid-0.9.6 \
 		constant_time_eq-0.4.2 \
 		cookie-factory-0.3.3 \
 		core-foundation-0.9.4 \
@@ -133,22 +141,29 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		core-graphics-0.23.2 \
 		core-graphics-types-0.1.3 \
 		core-graphics2-0.6.1 \
+		core_detect-1.0.0 \
 		core_maths-0.1.1 \
+		cpufeatures-0.2.17 \
 		cpufeatures-0.3.1 \
 		crc32fast-1.5.2 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
+		crmf-0.2.0 \
 		crossbeam-channel-0.5.17 \
 		crossbeam-deque-0.8.8 \
 		crossbeam-epoch-0.9.21 \
 		crossbeam-utils-0.8.23 \
 		crunchy-0.2.4 \
+		crypto-common-0.1.7 \
 		cursor-icon-1.2.0 \
 		darling-0.24.1 \
 		darling_core-0.24.1 \
 		darling_macro-0.24.1 \
 		data-url-0.3.2 \
+		der-0.7.10 \
+		der_derive-0.7.3 \
 		dify-0.8.0 \
+		digest-0.10.7 \
 		dispatch-0.2.0 \
 		dispatch2-0.3.1 \
 		displaydoc-0.2.7 \
@@ -161,6 +176,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		drm-ffi-0.9.1 \
 		drm-fourcc-2.2.0 \
 		drm-sys-0.8.1 \
+		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
 		ecolor-0.36.2 \
 		eframe-0.36.2 \
@@ -172,6 +188,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		egui_kittest-0.36.2 \
 		either-1.18.0 \
 		emath-0.36.2 \
+		encoding_rs-0.8.42 \
 		endi-1.1.1 \
 		enum-map-2.7.3 \
 		enum-map-derive-0.17.0 \
@@ -194,10 +211,14 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		fax_derive-0.2.0 \
 		fdeflate-0.3.7 \
 		fearless_simd-0.4.1 \
+		filetime-0.2.29 \
 		find-msvc-tools-0.1.14 \
 		fixedbitset-0.5.7 \
+		flagset-0.4.7 \
 		flate2-1.1.10 \
 		float-cmp-0.9.0 \
+		fmt-derive-0.1.2 \
+		fmt-derive-proc-0.1.2 \
 		fmv-macos-events-0.1.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
@@ -211,6 +232,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		foreign-types-shared-0.3.1 \
 		form_urlencoded-1.2.2 \
 		fs-set-times-0.20.3 \
+		fs_extra-1.3.0 \
 		futures-0.3.34 \
 		futures-channel-0.3.34 \
 		futures-core-0.3.34 \
@@ -223,8 +245,10 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		futures-util-0.3.34 \
 		gbm-0.18.0 \
 		gbm-sys-0.4.0 \
+		generic-array-0.14.7 \
 		gethostname-1.1.0 \
 		getopts-0.2.24 \
+		getrandom-0.2.17 \
 		getrandom-0.3.4 \
 		getrandom-0.4.3 \
 		gif-0.13.3 \
@@ -241,6 +265,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		glutin_wgl_sys-0.6.1 \
 		gpu-allocator-0.28.0 \
 		guillotiere-0.7.0 \
+		h2-0.4.20 \
 		half-2.7.1 \
 		harfrust-0.12.0 \
 		hashbrown-0.15.5 \
@@ -250,6 +275,13 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		heic-rs-0.1.4 \
 		hermit-abi-0.5.3 \
 		hex-0.4.3 \
+		http-1.5.0 \
+		http-body-1.1.0 \
+		http-body-util-0.1.5 \
+		httparse-1.10.1 \
+		hyper-1.12.0 \
+		hyper-rustls-0.27.10 \
+		hyper-util-0.1.21 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-2.3.0 \
@@ -330,18 +362,21 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		lock_api-0.4.14 \
 		log-0.4.34 \
 		loop9-0.1.5 \
+		lru-slab-0.1.3 \
 		maybe-owned-0.3.4 \
 		maybe-rayon-0.1.1 \
 		memchr-2.8.3 \
 		memmap2-0.9.11 \
 		memoffset-0.9.1 \
 		memory-stats-1.2.0 \
+		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		miniz_oxide-0.9.1 \
 		mio-1.2.3 \
 		moxcms-0.8.1 \
 		muda-0.21.1 \
+		multiversion_no_op-1.0.0 \
 		naga-30.0.1 \
 		naga-types-30.0.1 \
 		ndk-0.9.0 \
@@ -402,6 +437,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		once_cell-1.21.4 \
 		oorandom-11.1.5 \
 		open-5.4.4 \
+		openssl-probe-0.2.1 \
 		orbclient-0.3.55 \
 		ordered-float-5.5.0 \
 		ordered-stream-0.2.0 \
@@ -415,6 +451,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		paste-1.0.15 \
 		pastey-0.1.1 \
 		pastey-0.2.3 \
+		pem-3.0.6 \
+		pem-rfc7468-0.7.0 \
 		peniko-0.6.1 \
 		percent-encoding-2.3.2 \
 		petgraph-0.8.3 \
@@ -444,6 +482,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		presser-0.3.1 \
 		primal-check-0.3.4 \
 		proc-macro-crate-3.5.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.107 \
 		profiling-1.0.18 \
 		profiling-procmacros-1.0.18 \
@@ -455,14 +495,19 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
 		quick-xml-0.41.0 \
+		quinn-0.11.12 \
+		quinn-proto-0.11.19 \
+		quinn-udp-0.5.16 \
 		quote-1.0.47 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		rand-0.9.5 \
 		rand-0.10.3 \
 		rand_chacha-0.9.0 \
+		rand_core-0.6.4 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
+		rand_pcg-0.10.2 \
 		rand_xorshift-0.4.0 \
 		range-alloc-0.1.5 \
 		rav1e-0.8.1 \
@@ -483,9 +528,11 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
 		renderdoc-sys-1.1.0 \
+		reqwest-0.13.5 \
 		resvg-0.45.1 \
 		rfd-0.17.2 \
 		rgb-0.8.53 \
+		ring-0.17.14 \
 		rmcp-3.5.0 \
 		rmcp-macros-3.5.0 \
 		ron-0.12.2 \
@@ -497,15 +544,26 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		rustix-0.38.44 \
 		rustix-1.1.5 \
 		rustix-linux-procfs-0.1.1 \
+		rustls-0.23.45 \
+		rustls-native-certs-0.8.4 \
+		rustls-pki-types-1.15.1 \
+		rustls-platform-verifier-0.7.1 \
+		rustls-platform-verifier-android-0.2.0 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.23 \
 		rusty-fork-0.3.1 \
 		rustybuzz-0.20.1 \
 		ruzstd-0.9.0 \
+		ryu-1.0.23 \
+		ryu-js-1.0.3 \
 		same-file-1.0.6 \
+		schannel-0.1.29 \
 		schemars-1.2.2 \
 		schemars_derive-1.2.2 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
+		security-framework-3.7.0 \
+		security-framework-sys-2.17.0 \
 		self_cell-1.3.0 \
 		semver-1.0.28 \
 		serde-1.0.229 \
@@ -513,11 +571,24 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		serde_derive-1.0.229 \
 		serde_derive_internals-0.30.0 \
 		serde_json-1.0.151 \
+		serde_json_canonicalizer-0.3.2 \
 		serde_repr-0.1.21 \
 		serde_spanned-1.1.1 \
+		serde_urlencoded-0.7.1 \
+		sha1-0.10.7 \
+		sha2-0.10.9 \
 		shlex-1.3.0 \
 		shlex-2.0.1 \
 		signal-hook-registry-1.4.8 \
+		signature-2.2.0 \
+		sigstore-bundle-0.6.6 \
+		sigstore-crypto-0.6.6 \
+		sigstore-merkle-0.6.6 \
+		sigstore-rekor-0.6.6 \
+		sigstore-trust-root-0.6.6 \
+		sigstore-tsa-0.6.6 \
+		sigstore-types-0.6.6 \
+		sigstore-verify-0.6.6 \
 		simd-adler32-0.3.10 \
 		simd_cesu8-1.2.0 \
 		simd_helpers-0.1.0 \
@@ -535,18 +606,27 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		socket2-0.6.5 \
 		spin-0.9.9 \
 		spirv-0.4.0+sdk-1.4.341.0 \
+		spki-0.7.3 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
 		strength_reduce-0.2.4 \
 		strict-num-0.1.1 \
 		string-interner-0.19.0 \
 		strsim-0.11.1 \
+		strum-0.28.0 \
+		strum_macros-0.28.0 \
+		subtle-2.6.1 \
 		svgtypes-0.15.3 \
+		syn-1.0.109 \
 		syn-2.0.119 \
 		syn-3.0.6 \
+		sync_wrapper-1.0.2 \
 		synstructure-0.14.0 \
 		sys-locale-0.3.2 \
+		system-configuration-0.7.0 \
+		system-configuration-sys-0.6.0 \
 		system-deps-7.0.8 \
+		tar-0.4.46 \
 		target-lexicon-0.13.5 \
 		tempfile-3.27.0 \
 		termcolor-1.4.1 \
@@ -560,8 +640,11 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		tinystr-0.8.4 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.13.3 \
+		tls_codec-0.4.2 \
+		tls_codec_derive-0.4.2 \
 		tokio-1.53.1 \
 		tokio-macros-2.7.2 \
+		tokio-rustls-0.26.6 \
 		tokio-stream-0.1.19 \
 		tokio-util-0.7.19 \
 		toml-1.1.6+spec-1.1.0 \
@@ -569,15 +652,21 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		toml_edit-0.25.15+spec-1.1.0 \
 		toml_parser-1.1.3+spec-1.1.0 \
 		toml_writer-1.1.2+spec-1.1.0 \
+		tower-0.5.3 \
+		tower-http-0.6.11 \
+		tower-layer-0.3.3 \
+		tower-service-0.3.3 \
 		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
 		transpose-0.2.3 \
 		tree_magic_mini-3.2.2 \
+		try-lock-0.2.5 \
 		ttf-parser-0.25.1 \
 		twox-hash-2.1.4 \
 		type-map-0.5.1 \
 		typeid-1.0.3 \
+		typenum-1.20.1 \
 		uds_windows-1.2.1 \
 		unarray-0.1.4 \
 		unicode-bidi-0.3.18 \
@@ -590,6 +679,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		unicode-segmentation-1.13.3 \
 		unicode-vo-0.1.0 \
 		unicode-width-0.2.2 \
+		untrusted-0.7.1 \
+		untrusted-0.9.0 \
 		url-2.5.8 \
 		usvg-0.45.1 \
 		utf8_iter-1.0.4 \
@@ -601,6 +692,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		version_check-0.9.5 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
+		want-0.3.2 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.4+wasi-0.2.12 \
 		wasm-bindgen-0.2.129 \
@@ -631,6 +723,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		wayland-sys-0.31.11 \
 		web-sys-0.3.106 \
 		web-time-1.1.0 \
+		webpki-root-certs-1.0.9 \
 		weezl-0.1.12 \
 		wgpu-30.0.1 \
 		wgpu-core-30.0.1 \
@@ -651,6 +744,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		windows-interface-0.59.3 \
 		windows-link-0.2.1 \
 		windows-numerics-0.3.1 \
+		windows-registry-0.6.1 \
 		windows-result-0.4.1 \
 		windows-strings-0.5.1 \
 		windows-sys-0.52.0 \
@@ -687,11 +781,15 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		x11-dl-2.21.0 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
+		x509-cert-0.2.5 \
+		x509-tsp-0.1.0 \
+		xattr-1.6.1 \
 		xcap-0.9.8 \
 		xcb-1.7.1 \
 		xcursor-0.3.11 \
 		xkbcommon-dl-0.4.2 \
 		xkeysym-0.2.1 \
+		xml-1.4.0 \
 		xml-rs-0.8.29 \
 		xmlwriter-0.1.0 \
 		y4m-0.8.0 \
@@ -708,6 +806,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		zerocopy-derive-0.8.59 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.8 \
+		zeroize-1.9.1 \
+		zeroize_derive-1.5.0 \
 		zerotrie-0.2.5 \
 		zerovec-0.11.8 \
 		zerovec-derive-0.11.6 \
@@ -722,6 +822,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		zvariant-5.15.0 \
 		zvariant_derive-5.15.0 \
 		zvariant_utils-4.2.0 \
+		winprint@git+https://github.com/storytold/winprint.rs?rev=5f80b9baf6b58937c401656634e42d33f00ddf49\#5f80b9baf6b58937c401656634e42d33f00ddf49 \
+		craft-winprint-gdi@git+https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312\#417ac3c4d14d3da5485a99c7d5ce8f05664ec312 \
+		craft-print@git+https://github.com/storytold/craft-libs?rev=3d37da389a3618ab9b76109da11416e9ca4ea719\#3d37da389a3618ab9b76109da11416e9ca4ea719 \
 		craft-ui@git+https://github.com/storytold/craft-libs?rev=5c874d51eeb3de70e735c8ce87a59a7dedd47675\#5c874d51eeb3de70e735c8ce87a59a7dedd47675
 
 CARGO_FEATURES=	heif
@@ -734,7 +837,7 @@ CARGO_INSTALL=	no
 OPTIONS_DEFINE=	DOCS
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-10-12
+RELEASE_DATE=	2026-10-14
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
