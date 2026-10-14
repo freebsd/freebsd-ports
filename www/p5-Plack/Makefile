@@ -1,5 +1,5 @@
 PORTNAME=	Plack
-PORTVERSION=	1.0054
+PORTVERSION=	1.0055
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -32,14 +32,18 @@ RUN_DEPENDS=	p5-Apache-LogFormat-Compiler>=0.33:www/p5-Apache-LogFormat-Compiler
 TEST_DEPENDS=	p5-Authen-Simple-Passwd>=0:security/p5-Authen-Simple-Passwd \
 		p5-CGI-Compile>=0:www/p5-CGI-Compile \
 		p5-CGI-Emulate-PSGI>=0:www/p5-CGI-Emulate-PSGI \
+		p5-FCGI-ProcManager>=0:www/p5-FCGI-ProcManager \
+		p5-FCGI>=0:www/p5-FCGI \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-HTTP-Request-AsCGI>=0:www/p5-HTTP-Request-AsCGI \
 		p5-HTTP-Server-Simple-PSGI>=0:www/p5-HTTP-Server-Simple-PSGI \
 		p5-IO-Handle-Util>=0:devel/p5-IO-Handle-Util \
 		p5-libwww>=5.814:www/p5-libwww \
 		p5-Log-Dispatch-Array>=0:devel/p5-Log-Dispatch-Array \
+		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl \
 		p5-LWP-Protocol-http10>=0:www/p5-LWP-Protocol-http10 \
 		p5-MIME-Types>=0:mail/p5-MIME-Types \
+		p5-Module-Refresh>=0:devel/p5-Module-Refresh \
 		p5-Test-MockTime-HiRes>=0.06:devel/p5-Test-MockTime-HiRes \
 		p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-Test-TCP>=0:devel/p5-Test-TCP
