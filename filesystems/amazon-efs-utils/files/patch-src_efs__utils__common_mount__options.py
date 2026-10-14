@@ -8,8 +8,8 @@
 +
  from efs_utils_common.constants import (
      AP_REGEX_PATTERN,
-     MOUNT_TYPE_S3FILES,
-@@ -65,6 +67,13 @@ def get_nfs_mount_options(options, config):
+     JWTPATH_REGEX_PATTERN,
+@@ -67,6 +69,13 @@ def get_nfs_mount_options(options, config):
                      "which is not compatible with S3 Files."
                  )
              options["nfsvers"] = "4.2"
@@ -23,7 +23,7 @@
          else:
              options["nfsvers"] = "4.1" if not check_if_platform_is_mac() else "4.0"
  
-@@ -87,6 +96,15 @@ def get_nfs_mount_options(options, config):
+@@ -89,6 +98,15 @@ def get_nfs_mount_options(options, config):
      if "noresvport" not in options:
          options["noresvport"] = None
  

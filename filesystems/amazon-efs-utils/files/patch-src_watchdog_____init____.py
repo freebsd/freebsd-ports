@@ -1,6 +1,6 @@
 --- src/watchdog/__init__.py.orig
 +++ src/watchdog/__init__.py
-@@ -178,7 +178,7 @@ Mount = namedtuple(
+@@ -186,7 +186,7 @@ Mount = namedtuple(
  
  NFSSTAT_TIMEOUT = 5
  
@@ -9,7 +9,7 @@
  PROCESS_NAME_TIMEOUT_SEC = 5
  
  PROC_STAT_PATH_FORMAT = "/proc/%s/stat"
-@@ -814,6 +814,58 @@ def get_file_safe_mountpoint(mount):
+@@ -826,6 +826,58 @@ def get_file_safe_mountpoint(mount):
      return mountpoint + "." + opts["port"]
  
  
@@ -68,7 +68,7 @@
  def get_current_local_nfs_mounts(mount_file="/proc/mounts"):
      """
      Return a dict of the current NFS mounts for servers running on localhost, keyed by the mountpoint and port as it
-@@ -821,7 +873,92 @@ def get_current_local_nfs_mounts(mount_file="/proc/mounts"):
+@@ -833,7 +885,92 @@ def get_current_local_nfs_mounts(mount_file="/proc/mounts"):
      """
      mounts = []
  
@@ -162,7 +162,7 @@
          with open(mount_file) as f:
              for mount in f:
                  try:
-@@ -1585,6 +1722,65 @@ def check_stunnel_health(
+@@ -1598,6 +1735,65 @@ def check_stunnel_health(
          rewrite_state_file(state, state_file_dir, state_file)
  
      stunnel_pid = state["pid"]
@@ -228,7 +228,7 @@
      process = subprocess.Popen(
          ["df", mountpoint],
          stdout=subprocess.DEVNULL,
-@@ -2499,10 +2695,12 @@ def check_process_name_and_state(pid):
+@@ -2556,10 +2752,12 @@ def check_process_name_and_state(pid):
  
      Reads /proc/<pid>/stat, never /proc/<pid>/cmdline: a cmdline read enters the
      target's address space and can block forever on a wedged process. `state` is
@@ -242,7 +242,7 @@
  
      try:
          with open(PROC_STAT_PATH_FORMAT % pid, "rb") as f:
-@@ -2550,6 +2748,34 @@ def _check_process_name_and_state_macos(pid):
+@@ -2607,6 +2805,34 @@ def _check_process_name_and_state_macos(pid):
          return None, None
  
  

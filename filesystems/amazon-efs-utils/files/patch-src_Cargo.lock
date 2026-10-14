@@ -1,0 +1,15 @@
+libc 0.2.190 drops NOTE_PCTRLMASK on FreeBSD, still used by mio 1.2.3 and nix 0.26.4
+--- src/Cargo.lock.orig
++++ src/Cargo.lock
+@@ -2500,9 +2500,9 @@
+ 
+ [[package]]
+ name = "libc"
+-version = "0.2.190"
++version = "0.2.189"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78"
++checksum = "3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2"
+ 
+ [[package]]
+ name = "libloading"
