@@ -26,8 +26,6 @@ USE_GITHUB=	yes
 USE_PERL5=	build
 USE_RC_SUBR=	qdrant
 
-MAKE_ENV=	AWS_LC_SYS_NO_JITTER_ENTROPY=1 # workaround for https://github.com/aws/aws-lc-rs/issues/1097
-
 QDRANT_DBDIR?=	/var/db/qdrant
 QDRANT_USER?=	nobody
 QDRANT_GROUP?=	nobody
