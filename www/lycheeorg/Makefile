@@ -1,6 +1,6 @@
 PORTNAME=	lycheeorg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.8.3
+DISTVERSION=	7.11.1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/LycheeOrg/Lychee/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	Lychee
@@ -47,6 +47,9 @@ LYCHEEORG_WRITABLE_DIRS=	database storage/framework \
 				storage/tmp/extract storage/tmp/jobs \
 				storage/tmp/uploads bootstrap/cache public/dist \
 				public/uploads storage/debugbar
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" ${WRKSRC}/app/Actions/Diagnostics/Pipes/Checks/ImagickPdfCheck.php
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
