@@ -13,6 +13,8 @@
 #   fjordd_env="FJORD_CATALOG_URL=https://... FJORD_LISTEN=:3567"
 # (FJORD_STACKS_DIR, FJORD_ENGINE, FJORD_PODMAN_SOCKET, FJORD_HOST_ADDR also
 # available; defaults suit a host install.)
+# fjordd answers only to an IP, localhost and this host's own name; behind a
+# reverse proxy, add its name: FJORD_ALLOWED_HOSTS=fjord.example.com
 
 . /etc/rc.subr
 
