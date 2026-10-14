@@ -1,1 +1,7 @@
-Threema Gateway Message SDK for Python https://gateway.threema.ch/.
+Threema Gateway Message SDK for Python.
+
+threema-gateway is a Python 3 module for the Threema Gateway service.  It
+can send and receive text messages, images, files and delivery reports to
+and from any Threema user, in both the basic (server-side encryption) and
+end-to-end encrypted modes, and includes a callback server for incoming
+messages and a threema-gateway command-line tool.

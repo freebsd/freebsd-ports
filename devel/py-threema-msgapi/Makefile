@@ -1,29 +1,25 @@
 PORTNAME=	threema-msgapi
-PORTVERSION=	3.0.6
-DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTVERSION=	8.0.0
 CATEGORIES=	devel python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	threema_gateway-${PORTVERSION}
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Threema Gateway Message SDK for Python
-WWW=		https://github.com/lgrahl/threema-msgapi-sdk-python/
+WWW=		https://github.com/threema-ch/threema-msgapi-sdk-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
-USE_PYTHON=	distutils autoplist
-USE_GITHUB=	yes
-GH_ACCOUNT=	lgrahl
-GH_PROJECT=	threema-msgapi-sdk-python
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.7.3:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click>=8:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libnacl>=1.5.2:security/py-libnacl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}logbook>=1.1.0:devel/py-logbook@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wrapt>=1.10.10:devel/py-wrapt@${PY_FLAVOR}
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pylru-cache>0:devel/py-pylru-cache@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}logbook>0:devel/py-logbook@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wrapt>0:devel/py-wrapt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}libnacl>0:security/py-libnacl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR}
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
