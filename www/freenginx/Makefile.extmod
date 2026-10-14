@@ -246,6 +246,7 @@ MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.19:memc
 MEMC_VARS=		DSO_EXTMODS+=memc
 
 MODSECURITY3_IMPLIES=		HTTP_ADDITION HTTP_IMAGE_FILTER HTTP_GUNZIP_FILTER HTTP_XSLT
+MODSECURITY3_CONFLICTS_INSTALL=	modsecurity3-nginx
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
 MODSECURITY3_BUILD_DEPENDS=	nginx-module-modsecurity3>0:www/nginx-module-modsecurity3
 WRKSRC_modsecurity3=		${WRKDIR}/ModSecurity-nginx
