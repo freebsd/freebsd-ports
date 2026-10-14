@@ -1,9 +1,9 @@
 PORTNAME=	liveMedia
-DISTVERSION=	2026.08.14
+DISTVERSION=	2026.10.13
 PORTEPOCH=	2
 CATEGORIES=	net devel
 MASTER_SITES=	https://download.live555.com/ \
-		https://download.videolan.org/contrib/live555/
+		LOCAL/jhale/${PORTNAME}
 DISTNAME=	live.${DISTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
