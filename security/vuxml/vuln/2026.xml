@@ -1,3 +1,52 @@
+  <vuln vid="fdb34ad1-c7ac-11f1-97dc-40b034429ecf">
+    <topic>p5-Plack -- Multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>p5-Plack</name>
+<range><lt>1.0055</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Plack project reports:</p>
+	<blockquote cite="https://metacpan.org/dist/Plack/changes">
+	  <p>[SECURITY]</p>
+	  <ul>
+	    <li>Fix memory leak of every request env in Plack::Middleware::Recursive (CVE-2026-110333)</li>
+	    <li>Plack::Request::Upload->basename never returns '', '.' or '..' (CVE-2026-110332)</li>
+	    <li>Plack::App::URLMap matches SERVER_PORT literally when stripping it from Host (CVE-2026-110335)</li>
+	  </ul>
+	  <p>[BUG FIXES]</p>
+	  <ul>
+	    <li>Plack::Middleware::ErrorDocument restores the env after a subrequest, so outer
+            middleware such as AccessLog sees the original request (CVE-2026-110334)</li>
+	  </ul>
+	  <p>[BUG FIXES]</p>
+	  <ul>
+	    <li>Document that Plack::Handler::FCGI and Apache2 keep dot segments in PATH_INFO and
+          warn against relying on front-server path-based access control (CVE-2026-110336)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-110333</cvename>
+      <cvename>CVE-2026-110332</cvename>
+      <cvename>CVE-2026-110335</cvename>
+      <cvename>CVE-2026-110334</cvename>
+      <cvename>CVE-2026-110336</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-110333</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-110332</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-110335</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-110334</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-110336</url>
+    </references>
+    <dates>
+      <discovery>2026-10-13</discovery>
+      <entry>2026-10-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="14dab969-c797-11f1-a6ea-8447094a420f">
     <topic>Curl -- Multiple vulnerabilities</topic>
     <affects>
