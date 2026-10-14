@@ -1,5 +1,5 @@
-TIMESTAMP = 1778749425
-SHA256 (go/net-mgmt_junos_exporter/junos_exporter-v0.15.4/v0.15.4.mod) = 6ec46567006b27774adedd1610664b42b21d8e58836f9dfd91de23a83e2d5b8b
-SIZE (go/net-mgmt_junos_exporter/junos_exporter-v0.15.4/v0.15.4.mod) = 1860
-SHA256 (go/net-mgmt_junos_exporter/junos_exporter-v0.15.4/v0.15.4.zip) = c1ad31eed4374c87f821c6a8dbf4f10dc390e7e1ead1321cae266d61f1f02fbd
-SIZE (go/net-mgmt_junos_exporter/junos_exporter-v0.15.4/v0.15.4.zip) = 817263
+TIMESTAMP = 1791979781
+SHA256 (go/net-mgmt_junos_exporter/junos_exporter-v0.17.3/v0.17.3.mod) = 3a0e5fd9d5eb6cc8d40b9985c7613a687b282c6fae89f73ff2f3f10d8ccda404
+SIZE (go/net-mgmt_junos_exporter/junos_exporter-v0.17.3/v0.17.3.mod) = 2266
+SHA256 (go/net-mgmt_junos_exporter/junos_exporter-v0.17.3/v0.17.3.zip) = 560d0be980133dc693ef5ac5b5a0ae1704eedf316cc02c8b36ffedc575669712
+SIZE (go/net-mgmt_junos_exporter/junos_exporter-v0.17.3/v0.17.3.zip) = 910945
