@@ -1,7 +1,6 @@
 PORTNAME=	stgit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.1
-PORTREVISION=	2
+DISTVERSION=	2.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,116 +25,121 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.102 \
-		arc-swap-1.9.1 \
+		anyhow-1.0.104 \
+		arc-swap-1.9.2 \
+		autocfg-1.5.1 \
 		bitflags-1.3.2 \
-		bitflags-2.13.0 \
-		block-buffer-0.10.4 \
+		bitflags-2.13.2 \
 		block2-0.6.2 \
-		bstr-1.12.1 \
+		bstr-1.13.1 \
 		byteorder-1.5.0 \
-		bytes-1.12.0 \
+		bytes-1.12.1 \
 		bzip2-rs-0.1.2 \
-		cc-1.2.65 \
-		cfg-if-1.0.4 \
-		cfg_aliases-0.2.1 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
-		clap_lex-1.1.0 \
+		cc-1.6.0 \
+		cfg-if-1.0.5 \
+		cfg_aliases-0.2.2 \
+		clap-4.6.7 \
+		clap_builder-4.6.7 \
+		clap_lex-1.1.1 \
 		clru-0.6.3 \
 		colorchoice-1.0.5 \
-		cpufeatures-0.2.17 \
-		crc32fast-1.5.0 \
-		crypto-common-0.1.7 \
+		core_detect-1.0.0 \
+		crc32fast-1.5.2 \
+		crossbeam-channel-0.5.17 \
+		crossbeam-utils-0.8.23 \
 		ctrlc-3.5.2 \
-		curl-0.4.50 \
-		curl-sys-0.4.89+curl-8.20.0 \
-		defmt-1.1.0 \
-		defmt-macros-1.1.0 \
+		curl-0.4.51 \
+		curl-sys-0.4.91+curl-8.22.0 \
+		dashmap-6.2.1 \
+		defmt-0.3.100 \
+		defmt-1.1.1 \
+		defmt-macros-1.1.1 \
 		defmt-parser-1.0.0 \
-		digest-0.10.7 \
 		dispatch2-0.3.1 \
 		dunce-1.0.5 \
-		encoding_rs-0.8.35 \
+		encoding_rs-0.8.42 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
-		faster-hex-0.10.0 \
-		fastrand-2.4.1 \
+		faster-hex-0.10.1 \
+		fastrand-2.5.0 \
 		filetime-0.2.29 \
-		find-msvc-tools-0.1.9 \
-		flate2-1.1.9 \
+		find-msvc-tools-0.1.14 \
+		flate2-1.1.10 \
 		fnv-1.0.7 \
 		foldhash-0.2.0 \
-		generic-array-0.14.7 \
 		getrandom-0.4.3 \
-		gix-0.84.0 \
-		gix-actor-0.41.1 \
-		gix-attributes-0.33.1 \
-		gix-bitmap-0.3.2 \
-		gix-chunk-0.7.2 \
-		gix-command-0.9.1 \
-		gix-commitgraph-0.37.1 \
-		gix-config-0.57.0 \
-		gix-config-value-0.18.1 \
-		gix-date-0.15.4 \
-		gix-diff-0.64.0 \
-		gix-discover-0.52.0 \
-		gix-error-0.2.4 \
-		gix-features-0.48.1 \
-		gix-filter-0.31.0 \
-		gix-fs-0.21.2 \
-		gix-glob-0.26.1 \
-		gix-hash-0.25.1 \
-		gix-hashtable-0.15.1 \
-		gix-index-0.52.0 \
-		gix-lock-23.0.1 \
-		gix-object-0.61.0 \
-		gix-odb-0.81.0 \
-		gix-pack-0.71.0 \
-		gix-packetline-0.21.5 \
-		gix-path-0.12.1 \
-		gix-protocol-0.62.0 \
-		gix-quote-0.7.2 \
-		gix-ref-0.64.0 \
-		gix-refspec-0.42.0 \
-		gix-revision-0.46.0 \
-		gix-revwalk-0.32.0 \
-		gix-sec-0.14.1 \
-		gix-shallow-0.12.1 \
-		gix-tempfile-23.0.1 \
-		gix-trace-0.1.20 \
-		gix-transport-0.57.1 \
-		gix-traverse-0.58.0 \
-		gix-url-0.36.1 \
-		gix-utils-0.3.3 \
-		gix-validate-0.11.2 \
-		gix-worktree-stream-0.33.0 \
+		gix-0.89.0 \
+		gix-actor-0.44.0 \
+		gix-attributes-0.37.0 \
+		gix-bitmap-0.6.0 \
+		gix-chunk-0.10.0 \
+		gix-command-0.12.0 \
+		gix-commitgraph-0.41.0 \
+		gix-config-0.62.0 \
+		gix-config-value-0.21.0 \
+		gix-date-0.18.0 \
+		gix-diff-0.69.0 \
+		gix-discover-0.57.0 \
+		gix-error-0.5.0 \
+		gix-filter-0.36.0 \
+		gix-fs-0.24.0 \
+		gix-glob-0.29.0 \
+		gix-hash-0.28.0 \
+		gix-hashtable-0.18.0 \
+		gix-index-0.57.0 \
+		gix-lock-26.0.0 \
+		gix-macros-0.2.0 \
+		gix-note-0.3.0 \
+		gix-object-0.66.0 \
+		gix-odb-0.86.0 \
+		gix-pack-0.76.0 \
+		gix-packetline-0.24.0 \
+		gix-parallel-0.50.0 \
+		gix-path-0.14.0 \
+		gix-protocol-0.67.0 \
+		gix-quote-0.10.0 \
+		gix-ref-0.69.0 \
+		gix-refspec-0.47.0 \
+		gix-revision-0.51.0 \
+		gix-revwalk-0.37.0 \
+		gix-sec-0.16.0 \
+		gix-shallow-0.15.0 \
+		gix-tempfile-26.0.0 \
+		gix-trace-0.3.0 \
+		gix-transport-0.61.0 \
+		gix-traverse-0.63.0 \
+		gix-url-0.40.0 \
+		gix-utils-0.5.0 \
+		gix-validate-0.13.0 \
+		gix-worktree-stream-0.38.0 \
+		gix-zlib-0.3.0 \
 		hash32-0.3.1 \
+		hashbrown-0.14.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
 		heapless-0.8.0 \
-		hermit-abi-0.5.2 \
-		indexmap-2.14.0 \
+		hermit-abi-0.5.3 \
+		indexmap-2.14.2 \
 		is-terminal-0.4.17 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
-		jiff-0.2.29 \
-		jiff-static-0.2.29 \
-		jiff-tzdb-0.1.6 \
+		jiff-0.2.38 \
+		jiff-core-0.1.1 \
+		jiff-static-0.2.38 \
+		jiff-tzdb-0.1.9 \
 		jiff-tzdb-platform-0.1.3 \
-		kstring-2.0.2 \
-		libc-0.2.186 \
+		libc-0.2.190 \
 		libz-sys-1.1.29 \
 		linux-raw-sys-0.12.1 \
 		lock_api-0.4.14 \
-		log-0.4.33 \
-		maybe-async-0.2.11 \
-		memchr-2.8.2 \
-		memmap2-0.9.10 \
-		miniz_oxide-0.8.9 \
+		log-0.4.34 \
+		memchr-2.8.3 \
+		memmap2-0.9.11 \
+		miniz_oxide-0.9.1 \
+		multiversion_no_op-1.0.0 \
 		nix-0.31.3 \
 		nonempty-0.12.0 \
-		objc2-0.6.4 \
+		objc2-0.6.5 \
 		objc2-encode-4.1.0 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
@@ -144,60 +148,54 @@ CARGO_CRATES=	adler2-2.0.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		percent-encoding-2.3.2 \
-		pkg-config-0.3.33 \
-		portable-atomic-1.13.1 \
-		portable-atomic-util-0.2.7 \
-		proc-macro-error-attr2-2.0.0 \
-		proc-macro-error2-2.0.1 \
-		proc-macro2-1.0.106 \
-		prodash-31.0.0 \
-		quote-1.0.45 \
+		pkg-config-0.3.34 \
+		portable-atomic-1.15.0 \
+		portable-atomic-util-0.2.8 \
+		proc-macro2-1.0.107 \
+		prodash-31.0.1 \
+		quote-1.0.47 \
 		r-efi-6.0.0 \
 		redox_syscall-0.5.18 \
-		regex-automata-0.4.14 \
-		rustix-1.1.4 \
-		rustversion-1.0.22 \
+		regex-automata-0.4.18 \
+		rustix-1.1.5 \
+		rustversion-1.0.23 \
 		same-file-1.0.6 \
 		schannel-0.1.29 \
 		scopeguard-1.2.0 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
-		serde_json-1.0.150 \
-		sha1-0.10.6 \
-		sha1-checked-0.10.0 \
-		shell-words-1.1.1 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
+		serde_json-1.0.152 \
+		sha1dc-0.1.5 \
 		shlex-2.0.1 \
-		simd-adler32-0.3.9 \
-		smallvec-1.15.2 \
-		socket2-0.6.4 \
+		simd-adler32-0.3.10 \
+		simdutf8-0.1.5 \
+		smallvec-1.16.3 \
+		socket2-0.6.5 \
 		stable_deref_trait-1.2.1 \
-		static_assertions-1.1.0 \
 		strsim-0.11.1 \
-		syn-2.0.118 \
+		syn-2.0.119 \
+		syn-3.0.6 \
 		tar-0.4.46 \
 		tempfile-3.27.0 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.4 \
-		thiserror-2.0.18 \
-		thiserror-impl-2.0.18 \
-		tinyvec-1.11.0 \
-		tinyvec_macros-0.1.1 \
-		typenum-1.20.1 \
+		thiserror-2.0.21 \
+		thiserror-impl-2.0.21 \
+		tinyvec-1.13.3 \
 		unicode-bom-2.0.3 \
-		unicode-ident-1.0.24 \
+		unicode-ident-1.0.26 \
 		unicode-normalization-0.1.25 \
 		utf8parse-0.2.2 \
 		vcpkg-0.2.15 \
-		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
 		windows-sys-0.61.2 \
-		winnow-1.0.3 \
+		winnow-1.0.4 \
 		xattr-1.6.1 \
-		zlib-rs-0.6.4 \
-		zmij-1.0.21
+		zlib-rs-0.6.8 \
+		zmij-1.0.23
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
