@@ -1,5 +1,5 @@
 PORTNAME=	xscreensaver
-DISTVERSION=	6.16
+DISTVERSION=	6.17
 CATEGORIES=	x11
 MASTER_SITES=	${WWW} \
 		LOCAL/vvd
@@ -19,8 +19,8 @@ RUN_DEPENDS=	giftopnm:graphics/netpbm \
 		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
 		unix-selfauth-helper>0:security/unix-selfauth-helper
 
-USES=		autoreconf cpe gettext-runtime gettext-tools gl gmake gnome \
-		jpeg localbase:ldflags perl5 pkgconfig shebangfix xorg
+USES=		cpe gettext-runtime gettext-tools gl gmake gnome jpeg \
+		localbase:ldflags perl5 pkgconfig shebangfix xorg
 CPE_VENDOR=	xscreensaver_project
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf gtk30 intltool libxml2
@@ -70,6 +70,7 @@ XSNOW_DESC=		Add extra port x11/xsnow
 
 FIREF_RUN_DEPENDS=		${FIREF_HACKBIN}:x11/fireflies
 NLS_CONFIGURE_ENABLE=		nls
+NLS_LDFLAGS=			-lintl
 SETUID_HACKS_CONFIGURE_WITH=	setuid-hacks
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=		libwayland-client.so:graphics/wayland

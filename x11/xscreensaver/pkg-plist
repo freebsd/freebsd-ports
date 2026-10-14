@@ -317,8 +317,11 @@ share/fonts/xscreensaver/SpecialElite.ttf
 share/fonts/xscreensaver/clacon.ttf
 share/fonts/xscreensaver/gallant12x22.ttf
 share/fonts/xscreensaver/luximr.ttf
+%%NLS%%share/locale/be/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/et/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xscreensaver.mo
@@ -326,7 +329,9 @@ share/fonts/xscreensaver/luximr.ttf
 %%NLS%%share/locale/hu/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xscreensaver.mo
@@ -335,6 +340,8 @@ share/fonts/xscreensaver/luximr.ttf
 %%NLS%%share/locale/ru/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xscreensaver.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/wa/LC_MESSAGES/xscreensaver.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xscreensaver.mo
