@@ -1,6 +1,7 @@
 PORTNAME=	qtractor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	audio
 EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX} \
 		free-audio-clap-195b42a_GH0${EXTRACT_SUFX} \
@@ -37,10 +38,11 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libvorbisfile.so:audio/libvorbis
 RUN_DEPENDS=	alsa-seq-server>0:audio/alsa-seq-server
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig qt:5 shared-mime-info
+USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime \
+		gl gnome localbase:ldflags pkgconfig qt:6 shared-mime-info
 USE_GNOME=	atk cairo gdkpixbuf gtk20 gtkmm24 pango
-USE_QT=		core gui network svg widgets x11extras xml buildtools:build linguisttools:build qmake:build
-#USE_QT=		base svg tools:build # for Qt6
+USE_QT=		base svg tools:build
+USE_GL=		gl opengl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
@@ -51,7 +53,7 @@ GH_TUPLE=	free-audio:clap:195b42a:clap/src/clap \
 		steinbergmedia:vst3_public_sdk:586dc5e:vst3_public_sdk/src/vst3/public.sdk
 
 CMAKE_OFF=	CONFIG_CLAP # for audio/clap, but it doesn't install anything
-CMAKE_OFF+=	CONFIG_QT6 # breaks with Qt6: Gtk-ERROR **: 21:10:56.939: GTK 2.x symbols detected. Using GTK 2.x and GTK 3 in the same process is not supported
+#CMAKE_OFF+=	CONFIG_QT6 # breaks with Qt6: Gtk-ERROR **: 21:10:56.939: GTK 2.x symbols detected. Using GTK 2.x and GTK 3 in the same process is not supported
 
 OPTIONS_DEFINE=		VST3
 OPTIONS_DEFAULT=	VST3
