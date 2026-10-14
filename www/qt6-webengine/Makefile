@@ -22,7 +22,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT?=	Qt 6 library to render web content
 
 # 32-bit platforms are not supported by upstream, but we're limping them along.
-ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc64le
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 		${PYTHON_PKGNAMEPREFIX}cyclonedx-python-lib>0:textproc/py-cyclonedx-python-lib@${PY_FLAVOR} \

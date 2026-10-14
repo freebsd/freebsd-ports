@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h.orig	2025-09-06 10:01:20 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h.orig	2026-05-08 07:54:08 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h
 @@ -43,7 +43,7 @@ AslrMask(uintptr_t bits) {
  
@@ -18,3 +18,12 @@
  
        // Linux on arm64 can use 39, 42, 48, or 52-bit user space, depending on
        // page size and number of levels of translation pages used. We use
+@@ -183,7 +183,7 @@ AslrMask(uintptr_t bits) {
+         }
+ 
+       #else  // !PA_BUILDFLAG(IS_AIX) && !PA_BUILDFLAG(PA_ARCH_CPU_BIG_ENDIAN)
+-        #if PA_BUILDFLAG(IS_LINUX)
++        #if PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_BSD)
+ 
+         // Little-endian Linux PPC has 48 bits of virtual addressing. Use 46.
+         PA_ALWAYS_INLINE PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR uintptr_t ASLRMask() {

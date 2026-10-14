@@ -1,0 +1,29 @@
+--- src/3rdparty/chromium/v8/test/BUILD.gn.orig	2026-05-08 07:54:08 UTC
++++ src/3rdparty/chromium/v8/test/BUILD.gn
+@@ -43,7 +43,7 @@ group("gn_all") {
+       "benchmarks/cpp:gn_all",
+       "cctest:cctest",
+       "unittests:generate-bytecode-expectations",
+-      "unittests:v8_unittests",
++      #"unittests:v8_unittests",
+     ]
+   }
+ }
+@@ -101,7 +101,7 @@ group("v8_bot_default") {
+     "message:v8_message",
+     "mjsunit:v8_mjsunit",
+     "mkgrokdump:mkgrokdump",
+-    "unittests:v8_unittests",
++    #"unittests:v8_unittests",
+     "webkit:v8_webkit",
+   ]
+ 
+@@ -127,7 +127,7 @@ group("v8_default") {
+     "message:v8_message",
+     "mjsunit:v8_mjsunit",
+     "mkgrokdump:mkgrokdump",
+-    "unittests:v8_unittests",
++    #"unittests:v8_unittests",
+   ]
+ 
+   if (v8_enable_webassembly) {

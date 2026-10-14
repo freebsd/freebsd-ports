@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/third_party/libaom/BUILD.gn.orig	2026-05-08 07:54:08 UTC
++++ src/3rdparty/chromium/third_party/libaom/BUILD.gn
+@@ -37,6 +37,8 @@ if (current_cpu == "x86") {
+   cpu_arch_full = "generic"
+ } else if (current_cpu == "loong64") {
+   cpu_arch_full = "generic"
++} else if (current_cpu == "ppc64") {
++  cpu_arch_full = "generic"
+ } else {
+   cpu_arch_full = current_cpu
+ }
