@@ -586,6 +586,7 @@
     SUBDIR += cwrap
     SUBDIR += cxmon
     SUBDIR += cxref
+    SUBDIR += cxx-rust-cssparser
     SUBDIR += cxxopts
     SUBDIR += cxxtest
     SUBDIR += cxxtools

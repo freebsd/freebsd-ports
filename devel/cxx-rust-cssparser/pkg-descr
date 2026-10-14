@@ -1,0 +1,5 @@
+A C++ library for parsing CSS that uses the Rust cssparser crate internally.
+The goal of this library is not necessarily to implement a full-fledged
+web-compatible CSS parser. Instead, it intends to give enough building blocks
+to be able to implement such a parser, but also allows you to deviate from the
+specification if needed.
