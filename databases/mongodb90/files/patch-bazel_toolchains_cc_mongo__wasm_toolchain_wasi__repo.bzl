@@ -1,6 +1,6 @@
 --- bazel/toolchains/cc/mongo_wasm/toolchain/wasi_repo.bzl.orig	2026-10-06 00:00:00 UTC
 +++ bazel/toolchains/cc/mongo_wasm/toolchain/wasi_repo.bzl
-@@ -45,7 +45,8 @@ def _normalize_arch(arch):
+@@ -51,20 +51,28 @@
      return arch
  
  def _setup_wasi_deps(rctx):
@@ -10,7 +10,36 @@
      arch = _normalize_arch(rctx.os.arch)
      key = (os, arch)
  
-@@ -75,6 +76,21 @@ def _setup_wasi_deps(rctx):
+-    if key not in _WASI_SDK_DIST:
+-        fail("Unsupported platform for wasi-sdk: os={}, arch={}".format(os, arch))
++    if host_os.startswith("freebsd"):
++        # FreeBSD uses the native clang (see below), so only the wasm32-wasip2
++        # sysroot and clang resource files of the wasi-sdk are needed. The
++        # port prepares them in a directory with the same layout.
++        for child in rctx.path(rctx.os.environ["WASI_SDK_DIR"]).readdir():
++            rctx.symlink(child, child.basename)
++    else:
++        if key not in _WASI_SDK_DIST:
++            fail("Unsupported platform for wasi-sdk: os={}, arch={}".format(os, arch))
+ 
+-    dist = _WASI_SDK_DIST[key]
+-    rctx.download_and_extract(
+-        dist["url"],
+-        output = "",
+-        sha256 = dist["sha256"],
+-        stripPrefix = dist["stripPrefix"],
+-    )
++        dist = _WASI_SDK_DIST[key]
++        rctx.download_and_extract(
++            dist["url"],
++            output = "",
++            sha256 = dist["sha256"],
++            stripPrefix = dist["stripPrefix"],
++        )
+ 
+     # This results from bazel not being able to copy empty directories.
+     rctx.file(
+@@ -75,6 +83,21 @@
      # the toolchain config can use the same label on all platforms.
      exe = ".exe" if os == "windows" else ""
  
@@ -32,11 +61,9 @@
      rctx.file(
          "BUILD.bazel",
          content = """
-@@ -93,6 +108,7 @@ alias(name = "llvm-ar",               actual = "bin/llvm-ar{exe}")
-         """.format(exe = exe),
-     )
+@@ -95,4 +118,5 @@
  
  setup_wasi_deps = repository_rule(
      implementation = _setup_wasi_deps,
-+    environ = ["LOCALBASE"],
++    environ = ["LOCALBASE", "WASI_SDK_DIR"],
  )

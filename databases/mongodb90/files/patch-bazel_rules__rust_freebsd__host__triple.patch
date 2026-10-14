@@ -1,6 +1,6 @@
 --- /dev/null
 +++ bazel/rules_rust/freebsd_host_triple.patch
-@@ -0,0 +1,67 @@
+@@ -0,0 +1,109 @@
 +diff --git rust/platform/triple.bzl rust/platform/triple.bzl
 +index 5f69bdb..dfb802c 100644
 +--- rust/platform/triple.bzl
@@ -68,3 +68,45 @@
 ++CARGO_BAZEL_URLS = {}
 ++CARGO_BAZEL_SHA256S = {}
 ++CARGO_BAZEL_LABEL = Label("@cargo_bazel_bootstrap//:binary")
++diff --git rust/platform/triple_mappings.bzl rust/platform/triple_mappings.bzl
++--- rust/platform/triple_mappings.bzl
+++++ rust/platform/triple_mappings.bzl
++@@ -76,6 +76,7 @@
++ }
++ 
++ _T3_PLATFORM_TRIPLES = {
+++    "aarch64-unknown-freebsd": _support(std = True, host_tools = True),
++     "aarch64-unknown-nto-qnx710": _support(std = True, host_tools = False),
++     "wasm64-unknown-unknown": _support(std = False, host_tools = False),
++ }
++diff --git rust/repositories.bzl rust/repositories.bzl
++--- rust/repositories.bzl
+++++ rust/repositories.bzl
++@@ -44,6 +44,7 @@
++ DEFAULT_TOOLCHAIN_TRIPLES = {
++     "aarch64-apple-darwin": "rust_macos_aarch64",
++     "aarch64-pc-windows-msvc": "rust_windows_aarch64",
+++    "aarch64-unknown-freebsd": "rust_freebsd_aarch64",
++     "aarch64-unknown-linux-gnu": "rust_linux_aarch64",
++     "powerpc64le-unknown-linux-gnu": "rust_linux_powerpc64le",
++     "s390x-unknown-linux-gnu": "rust_linux_s390x",
++diff --git crate_universe/src/metadata/cargo_tree_resolver.rs crate_universe/src/metadata/cargo_tree_resolver.rs
++--- crate_universe/src/metadata/cargo_tree_resolver.rs
+++++ crate_universe/src/metadata/cargo_tree_resolver.rs
++@@ -23,7 +23,7 @@
++ ///
++ /// [Tier 1](https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-1-with-host-tools)
++ /// [Tier 2](https://doc.rust-lang.org/nightly/rustc/platform-support.html#tier-2-with-host-tools)
++-const RUSTC_TRIPLES_WITH_HOST_TOOLS: [&str; 26] = [
+++const RUSTC_TRIPLES_WITH_HOST_TOOLS: [&str; 27] = [
++     // Tier 1
++     "aarch64-apple-darwin",
++     "aarch64-unknown-linux-gnu",
++@@ -35,6 +35,7 @@
++     "x86_64-pc-windows-msvc",
++     "x86_64-unknown-linux-gnu",
++     // Tier 2
+++    "aarch64-unknown-freebsd",
++     "aarch64-pc-windows-msvc",
++     "aarch64-unknown-linux-musl",
++     "arm-unknown-linux-gnueabi",

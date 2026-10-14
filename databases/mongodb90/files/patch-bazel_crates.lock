@@ -1,13 +1,19 @@
 --- bazel/crates.lock.orig
 +++ bazel/crates.lock
-@@ -1,5 +1,5 @@
- {
--  "checksum": "b01cc541b36e01fc3bdb689603bcc4967bc3f75d36e39e5f2ff96e7d45f306df",
-+  "checksum": "0d097b413bb31c3c6e8a99e5acad5ce69c458e211ec7fbe905c10aec3c095bb3",
-   "crates": {
-     "addr2line 0.26.1": {
-       "name": "addr2line",
-@@ -1611,6 +1611,12 @@
+@@ -1587,6 +1587,12 @@
+           ],
+           "selects": {
+             "aarch64-apple-darwin": [
++              {
++                "id": "libc 0.2.184",
++                "target": "libc"
++              }
++            ],
++            "aarch64-unknown-freebsd": [
+               {
+                 "id": "libc 0.2.184",
+                 "target": "libc"
+@@ -1611,6 +1617,12 @@
                }
              ],
              "x86_64-apple-darwin": [
@@ -20,40 +26,91 @@
                {
                  "id": "libc 0.2.184",
                  "target": "libc"
-@@ -4260,6 +4266,9 @@
-             "x86_64-apple-darwin": [
+@@ -4248,6 +4260,9 @@
+             "aarch64-apple-darwin": [
                "default"
              ],
-+            "x86_64-unknown-freebsd": [
++            "aarch64-unknown-freebsd": [
 +              "default"
 +            ],
-             "x86_64-unknown-linux-gnu": [
+             "aarch64-unknown-linux-gnu": [
                "default"
-             ]
-@@ -8585,6 +8594,9 @@
+             ],
+@@ -4258,6 +4273,9 @@
+               "default"
              ],
              "x86_64-apple-darwin": [
-               "extra_traits"
++              "default"
 +            ],
 +            "x86_64-unknown-freebsd": [
+               "default"
+             ],
+             "x86_64-unknown-linux-gnu": [
+@@ -8575,6 +8593,9 @@
+           ],
+           "selects": {
+             "aarch64-apple-darwin": [
 +              "extra_traits"
-             ]
-           }
-         },
-@@ -11039,6 +11051,12 @@
-               }
++            ],
++            "aarch64-unknown-freebsd": [
+               "extra_traits"
+             ],
+             "powerpc64le-unknown-linux-gnu": [
+@@ -8584,6 +8605,9 @@
+               "extra_traits"
              ],
              "x86_64-apple-darwin": [
++              "extra_traits"
++            ],
++            "x86_64-unknown-freebsd": [
+               "extra_traits"
+             ]
+           }
+@@ -11015,6 +11039,12 @@
+           ],
+           "selects": {
+             "aarch64-apple-darwin": [
 +              {
 +                "id": "libc 0.2.184",
 +                "target": "libc"
 +              }
 +            ],
-+            "x86_64-unknown-freebsd": [
++            "aarch64-unknown-freebsd": [
                {
                  "id": "libc 0.2.184",
                  "target": "libc"
-@@ -11994,6 +12012,17 @@
+@@ -11044,6 +11074,12 @@
+                 "target": "libc"
+               }
+             ],
++            "x86_64-unknown-freebsd": [
++              {
++                "id": "libc 0.2.184",
++                "target": "libc"
++              }
++            ],
+             "x86_64-unknown-linux-gnu": [
+               {
+                 "id": "libc 0.2.184",
+@@ -11918,6 +11954,17 @@
+           ],
+           "selects": {
+             "aarch64-apple-darwin": [
++              {
++                "id": "errno 0.3.14",
++                "target": "errno",
++                "alias": "libc_errno"
++              },
++              {
++                "id": "libc 0.2.184",
++                "target": "libc"
++              }
++            ],
++            "aarch64-unknown-freebsd": [
+               {
+                 "id": "errno 0.3.14",
+                 "target": "errno",
+@@ -11994,6 +12041,17 @@
                  "id": "libc 0.2.184",
                  "target": "libc"
                }
@@ -71,7 +128,23 @@
              ]
            }
          },
-@@ -12113,6 +12142,15 @@
+@@ -12077,6 +12135,15 @@
+               "thread",
+               "time"
+             ],
++            "aarch64-unknown-freebsd": [
++              "fs",
++              "mm",
++              "param",
++              "process",
++              "termios",
++              "thread",
++              "time"
++            ],
+             "aarch64-unknown-linux-gnu": [
+               "fs",
+               "mm",
+@@ -12113,6 +12180,15 @@
                "thread",
                "time"
              ],
@@ -87,7 +160,25 @@
              "x86_64-unknown-linux-gnu": [
                "fs",
                "mm",
-@@ -12220,6 +12258,17 @@
+@@ -12147,6 +12223,17 @@
+                 "target": "libc"
+               }
+             ],
++            "aarch64-unknown-freebsd": [
++              {
++                "id": "errno 0.3.14",
++                "target": "errno",
++                "alias": "libc_errno"
++              },
++              {
++                "id": "libc 0.2.184",
++                "target": "libc"
++              }
++            ],
+             "cfg(all(any(target_os = \"linux\", target_os = \"android\"), any(rustix_use_libc, miri, not(all(target_os = \"linux\", any(target_endian = \"little\", any(target_arch = \"s390x\", target_arch = \"powerpc\")), any(target_arch = \"arm\", all(target_arch = \"aarch64\", target_pointer_width = \"64\"), target_arch = \"riscv64\", all(rustix_use_experimental_asm, target_arch = \"powerpc\"), all(rustix_use_experimental_asm, target_arch = \"powerpc64\"), all(rustix_use_experimental_asm, target_arch = \"s390x\"), all(rustix_use_experimental_asm, target_arch = \"mips\"), all(rustix_use_experimental_asm, target_arch = \"mips32r6\"), all(rustix_use_experimental_asm, target_arch = \"mips64\"), all(rustix_use_experimental_asm, target_arch = \"mips64r6\"), target_arch = \"x86\", all(target_arch = \"x86_64\", target_pointer_width = \"64\")))))))": [
+               {
+                 "id": "linux-raw-sys 0.12.1",
+@@ -12220,6 +12307,17 @@
                  "target": "errno",
                  "alias": "libc_errno"
                }
@@ -105,10 +196,30 @@
              ]
            }
          },
-@@ -14553,6 +14602,16 @@
+@@ -14498,7 +14596,17 @@
+           ],
+           "selects": {
+             "aarch64-apple-darwin": [
++              {
++                "id": "libc 0.2.184",
++                "target": "libc"
++              },
+               {
++                "id": "signal-hook-registry 1.4.8",
++                "target": "signal_hook_registry"
++              }
++            ],
++            "aarch64-unknown-freebsd": [
++              {
+                 "id": "libc 0.2.184",
+                 "target": "libc"
+               },
+@@ -14551,6 +14659,16 @@
+               {
+                 "id": "windows-sys 0.61.2",
                  "target": "windows_sys"
-               }
-             ],
++              }
++            ],
 +            "x86_64-unknown-freebsd": [
 +              {
 +                "id": "libc 0.2.184",
@@ -117,12 +228,10 @@
 +              {
 +                "id": "signal-hook-registry 1.4.8",
 +                "target": "signal_hook_registry"
-+              }
-+            ],
+               }
+             ],
              "x86_64-unknown-linux-gnu": [
-               {
-                 "id": "libc 0.2.184",
-@@ -17149,13 +17208,13 @@
+@@ -17149,13 +17267,13 @@
          "Http": {
            "url": "https://static.crates.io/crates/wasmtime/44.0.1/download",
            "sha256": "372db8bbad8ec962038101f75ab2c3ffcd18797d7d3ae877a58ab9873cd0c4bd",
@@ -139,7 +248,20 @@
            ]
          }
        },
-@@ -17455,6 +17514,12 @@
+@@ -17398,6 +17516,12 @@
+                 "id": "mach2 0.4.3",
+                 "target": "mach2"
+               },
++              {
++                "id": "rustix 1.1.4",
++                "target": "rustix"
++              }
++            ],
++            "aarch64-unknown-freebsd": [
+               {
+                 "id": "rustix 1.1.4",
+                 "target": "rustix"
+@@ -17455,6 +17579,12 @@
                {
                  "id": "windows-sys 0.61.2",
                  "target": "windows_sys"
@@ -152,7 +274,7 @@
                }
              ],
              "x86_64-unknown-linux-gnu": [
-@@ -20196,11 +20261,11 @@
+@@ -20196,11 +20326,11 @@
          "Http": {
            "url": "https://static.crates.io/crates/wasmtime-wast/44.0.1/download",
            "sha256": "5db969fb0fbd4c3e4acfa73f768b2530b6cec43180902934599b1668480094c2",
@@ -167,8 +289,21 @@
            ]
          }
        },
-@@ -24518,13 +24583,15 @@
+@@ -24479,6 +24609,9 @@
+     ],
+     "aarch64-linux-android": [],
+     "aarch64-pc-windows-gnullvm": [],
++    "aarch64-unknown-freebsd": [
++      "aarch64-unknown-freebsd"
++    ],
+     "aarch64-unknown-linux-gnu": [
+       "aarch64-unknown-linux-gnu"
+     ],
+@@ -24516,15 +24649,19 @@
+     ],
+     "cfg(all(not(windows), any(rustix_use_libc, miri, not(all(target_os = \"linux\", any(target_endian = \"little\", any(target_arch = \"s390x\", target_arch = \"powerpc\")), any(target_arch = \"arm\", all(target_arch = \"aarch64\", target_pointer_width = \"64\"), target_arch = \"riscv64\", all(rustix_use_experimental_asm, target_arch = \"powerpc\"), all(rustix_use_experimental_asm, target_arch = \"powerpc64\"), all(rustix_use_experimental_asm, target_arch = \"s390x\"), all(rustix_use_experimental_asm, target_arch = \"mips\"), all(rustix_use_experimental_asm, target_arch = \"mips32r6\"), all(rustix_use_experimental_asm, target_arch = \"mips64\"), all(rustix_use_experimental_asm, target_arch = \"mips64r6\"), target_arch = \"x86\", all(target_arch = \"x86_64\", target_pointer_width = \"64\")))))))": [
        "aarch64-apple-darwin",
++      "aarch64-unknown-freebsd",
        "powerpc64le-unknown-linux-gnu",
        "s390x-unknown-linux-gnu",
 -      "x86_64-apple-darwin"
@@ -177,6 +312,7 @@
      ],
      "cfg(all(not(windows), any(rustix_use_libc, miri, not(all(target_os = \"linux\", any(target_endian = \"little\", target_arch = \"s390x\"), any(target_arch = \"arm\", all(target_arch = \"aarch64\", target_pointer_width = \"64\"), target_arch = \"riscv64\", all(rustix_use_experimental_asm, target_arch = \"powerpc64\"), all(rustix_use_experimental_asm, target_arch = \"s390x\"), all(rustix_use_experimental_asm, target_arch = \"mips\"), all(rustix_use_experimental_asm, target_arch = \"mips32r6\"), all(rustix_use_experimental_asm, target_arch = \"mips64\"), all(rustix_use_experimental_asm, target_arch = \"mips64r6\"), target_arch = \"x86\", all(target_arch = \"x86_64\", target_pointer_width = \"64\")))))))": [
        "aarch64-apple-darwin",
++      "aarch64-unknown-freebsd",
        "powerpc64le-unknown-linux-gnu",
        "s390x-unknown-linux-gnu",
 -      "x86_64-apple-darwin"
@@ -185,7 +321,11 @@
      ],
      "cfg(all(target_arch = \"aarch64\", target_env = \"msvc\", not(windows_raw_dylib)))": [],
      "cfg(all(target_arch = \"aarch64\", target_os = \"linux\"))": [
-@@ -24549,6 +24616,7 @@
+@@ -24546,9 +24683,11 @@
+     "cfg(any())": [],
+     "cfg(any(target_arch = \"aarch64\", target_arch = \"x86_64\", target_arch = \"x86\"))": [
+       "aarch64-apple-darwin",
++      "aarch64-unknown-freebsd",
        "aarch64-unknown-linux-gnu",
        "x86_64-apple-darwin",
        "x86_64-pc-windows-msvc",
@@ -193,18 +333,21 @@
        "x86_64-unknown-linux-gnu"
      ],
      "cfg(any(target_os = \"android\", target_os = \"linux\"))": [
-@@ -24557,7 +24625,9 @@
+@@ -24557,15 +24696,20 @@
        "s390x-unknown-linux-gnu",
        "x86_64-unknown-linux-gnu"
      ],
 -    "cfg(any(target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"hurd\", target_os = \"illumos\", target_os = \"cygwin\", all(target_os = \"horizon\", target_arch = \"arm\")))": [],
 +    "cfg(any(target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"hurd\", target_os = \"illumos\", target_os = \"cygwin\", all(target_os = \"horizon\", target_arch = \"arm\")))": [
++      "aarch64-unknown-freebsd",
 +      "x86_64-unknown-freebsd"
 +    ],
      "cfg(any(target_os = \"haiku\", target_os = \"redox\", target_os = \"nto\", target_os = \"aix\"))": [],
      "cfg(any(target_os = \"ios\", target_os = \"visionos\", target_os = \"watchos\", target_os = \"tvos\"))": [],
      "cfg(any(target_os = \"linux\", target_vendor = \"apple\", target_os = \"freebsd\", target_os = \"android\"))": [
-@@ -24566,6 +24636,7 @@
+       "aarch64-apple-darwin",
++      "aarch64-unknown-freebsd",
+       "aarch64-unknown-linux-gnu",
        "powerpc64le-unknown-linux-gnu",
        "s390x-unknown-linux-gnu",
        "x86_64-apple-darwin",
@@ -212,7 +355,12 @@
        "x86_64-unknown-linux-gnu"
      ],
      "cfg(any(target_os = \"macos\", target_os = \"ios\"))": [
-@@ -24582,6 +24653,7 @@
+@@ -24578,35 +24722,43 @@
+     ],
+     "cfg(any(unix, target_os = \"hermit\", target_os = \"wasi\"))": [
+       "aarch64-apple-darwin",
++      "aarch64-unknown-freebsd",
+       "aarch64-unknown-linux-gnu",
        "powerpc64le-unknown-linux-gnu",
        "s390x-unknown-linux-gnu",
        "x86_64-apple-darwin",
@@ -220,7 +368,9 @@
        "x86_64-unknown-linux-gnu"
      ],
      "cfg(any(unix, target_os = \"wasi\"))": [
-@@ -24590,6 +24662,7 @@
+       "aarch64-apple-darwin",
++      "aarch64-unknown-freebsd",
+       "aarch64-unknown-linux-gnu",
        "powerpc64le-unknown-linux-gnu",
        "s390x-unknown-linux-gnu",
        "x86_64-apple-darwin",
@@ -228,7 +378,10 @@
        "x86_64-unknown-linux-gnu"
      ],
      "cfg(not(target_has_atomic = \"ptr\"))": [],
-@@ -24599,6 +24672,7 @@
+     "cfg(not(target_os = \"windows\"))": [
+       "aarch64-apple-darwin",
++      "aarch64-unknown-freebsd",
+       "aarch64-unknown-linux-gnu",
        "powerpc64le-unknown-linux-gnu",
        "s390x-unknown-linux-gnu",
        "x86_64-apple-darwin",
@@ -236,7 +389,9 @@
        "x86_64-unknown-linux-gnu"
      ],
      "cfg(not(windows))": [
-@@ -24607,6 +24681,7 @@
+       "aarch64-apple-darwin",
++      "aarch64-unknown-freebsd",
+       "aarch64-unknown-linux-gnu",
        "powerpc64le-unknown-linux-gnu",
        "s390x-unknown-linux-gnu",
        "x86_64-apple-darwin",
@@ -244,7 +399,12 @@
        "x86_64-unknown-linux-gnu"
      ],
      "cfg(target_arch = \"riscv64\")": [],
-@@ -24631,6 +24706,7 @@
+@@ -24627,10 +24779,12 @@
+     ],
+     "cfg(unix)": [
+       "aarch64-apple-darwin",
++      "aarch64-unknown-freebsd",
+       "aarch64-unknown-linux-gnu",
        "powerpc64le-unknown-linux-gnu",
        "s390x-unknown-linux-gnu",
        "x86_64-apple-darwin",
@@ -252,7 +412,7 @@
        "x86_64-unknown-linux-gnu"
      ],
      "cfg(windows)": [
-@@ -24652,6 +24728,9 @@
+@@ -24652,6 +24806,9 @@
      "x86_64-pc-windows-msvc": [
        "x86_64-pc-windows-msvc"
      ],
@@ -262,7 +422,7 @@
      "x86_64-unknown-linux-gnu": [
        "x86_64-unknown-linux-gnu"
      ]
-@@ -24664,4 +24743,4 @@
+@@ -24664,4 +24821,4 @@
    ],
    "direct_dev_deps": [],
    "unused_patches": []
