@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	3
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -141,25 +141,18 @@ USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 USES+=		elfctl
 ELF_FEATURES=	+wxneeded:instdir/program/soffice.bin
 
-OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA LTO MMEDIA PDFIUM PGSQL MARIADB SDK TEST WEBDAV
-OPTIONS_RADIO=	QT KDE
-OPTIONS_RADIO_QT=	QT5 QT6
-OPTIONS_RADIO_KDE=	KF5 KF6
+OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF6 LTO MMEDIA PDFIUM PGSQL QT6 MARIADB SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS DOCS GTK3 JAVA MMEDIA PDFIUM QT6
 #OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
 GTK4_DESC=	GTK+ 4 GUI toolkit support (experimental)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
-KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 KF6_DESC=	KF6/Qt6 GUI toolkit support (implies QT6)
 MMEDIA_DESC=	Enable multimedia backend for Impress
 PDFIUM_DESC=	Enable PDFium secure engine
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 MARIADB_DESC=	Build with MariaDB/MySQL-SDBC driver
-QT_DESC=	Select Qt GUI engine version
-KDE_DESC=	Select KDE GUI engine version
-QT5_DESC=	Qt5 GUI toolkit support
 QT6_DESC=	Qt6 GUI toolkit support (default visual style)
 SDK_DESC=	Build with SDK
 TEST_DESC=	Run all regression tests
@@ -227,19 +220,10 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 JAVA_USES=	java
 JAVA_VARS=	JAVA_VERSION=17+ NO_SHLIB_REQUIRES_GLOB=libjawt.so
 
-KF5_CONFIGURE_ENABLE=	kf5
-KF5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
-KF5_USES=	kde:5
-KF5_IMPLIES=	QT5
-KF5_PREVENTS=	KF6
-KF5_PREVENTS_MSG=	KF5 cannot coexist with KF6
-
 KF6_CONFIGURE_ENABLE=	kf6
 KF6_USE=	kde=config,coreaddons,i18n,kio,windowsystem
 KF6_USES=	kde:6
 KF6_IMPLIES=	QT6
-KF6_PREVENTS=	KF5
-KF6_PREVENTS_MSG=	KF6 cannot coexist with KF5
 
 LTO_CONFIGURE_ENABLE=	lto
 
@@ -258,16 +242,8 @@ PGSQL_USES=	pgsql
 MARIADB_CONFIGURE_ENABLE=	mariadb-sdbc
 MARIADB_USES=	mysql:client
 
-QT5_CONFIGURE_ENABLE=	qt5
-QT5_PREVENTS=	KF6
-QT5_PREVENTS_MSG=	KF6 support require Qt6 engine
-QT5_USE=	qt=buildtools:build,core,gui,network,qmake:build,widgets,x11extras
-QT5_USES=	qt:5
-
 QT6_CONFIGURE_ENABLE=	qt6
 QT6_CONFIGURE_ENV=	QMAKE6=${QMAKE} MOC6=${MOC} PATH="${QT_TOOLDIR}:${PATH}"
-QT6_PREVENTS=	KF5
-QT6_PREVENTS_MSG=	KF5 support require Qt5 engine
 QT6_USE=	qt=base,declarative,multimedia,tools:build
 QT6_USES=	qt:6
 
@@ -289,8 +265,10 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-epm \
 		--disable-fetch-external \
 		--disable-firebird-sdbc \
+		--disable-kf5 \
 		--disable-mergelibs \
 		--disable-online-update \
+		--disable-qt5 \
 		--enable-cairo-canvas \
 		--enable-python=system \
 		--enable-release-build \
