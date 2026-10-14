@@ -1,18 +1,6 @@
---- configure.ac.orig	2026-09-26 23:11:57 UTC
+--- configure.ac.orig	2026-10-13 23:02:16 UTC
 +++ configure.ac
-@@ -153,10 +153,7 @@ if test "${PYTHONFRAMEWORKDIR}" = "no-framework" -o \
- 
- if test "${PYTHONFRAMEWORKDIR}" = "no-framework" -o \
-         "${ENABLE_FRAMEWORK}" != "yes"; then
--    if test "${PYTHONLIBDIR}" != "${APXS_LIBDIR}" ; then
--        LDFLAGS1="-L${PYTHONLIBDIR}"
--    fi
--
-+    LDFLAGS1="-L${PYTHONLIBDIR}"
-     LDLIBS1="-lpython${PYTHON_LDVERSION}"
- 
-     # MacOS X seems to be broken and doesn't use ABIFLAGS suffix
-@@ -166,12 +163,8 @@ if test "${PYTHONFRAMEWORKDIR}" = "no-framework" -o \
+@@ -161,12 +161,8 @@ if test "${PYTHONFRAMEWORKDIR}" = "no-framework" -o \
          LDLIBS1="-lpython${PYTHON_VERSION}"
      fi
  
@@ -24,6 +12,6 @@
 -        stdout.write(sysconfig.get_config_var("SYSLIBS"))'`
 +    LDLIBS2=""
 +    LDLIBS3=""
- else
-     LDFLAGS1="-Wl,-F${PYTHONFRAMEWORKPREFIX} -framework ${PYTHONFRAMEWORK}"
  
+     # Only add the Python library directory to the linker search path
+     # when the linker cannot find libpython without it. The directory
