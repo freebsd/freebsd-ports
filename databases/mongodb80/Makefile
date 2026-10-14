@@ -1,7 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	8.0.32
-PORTREVISION=			1
+DISTVERSION=	8.0.34
 CATEGORIES=	databases net
 MASTER_SITES+=	LOCAL/ronald:mongodb_bazel \
 		https://codeload.github.com/bazelbuild/bazel-central-registry/tar.gz/${BAZEL_REGISTRY_COMMIT}?dummy=/:bazel_registry \
@@ -83,8 +82,8 @@ BAZEL_REPOSITORY_CACHE=${WRKDIR}/bazel-repository-cache
 # check (GetProcessCWD() in blaze_util_bsd.cc) returns an empty path instead
 # of nullptr when the kernel cannot resolve the cwd, e.g. inside a poudriere
 # jail, which makes the client kill and restart the server forever.
-BAZEL_STARTUP_ARGS=	--output_user_root=${BAZEL_OUTPUT_USER_ROOT} \
-			--batch
+BAZEL_STARTUP_ARGS=	--batch \
+			--output_user_root=${BAZEL_OUTPUT_USER_ROOT}
 BAZEL_ENV=		BAZEL_SH=${LOCALBASE}/bin/bash \
 			CC="${CC}" \
 			CXX="${CXX}" \
@@ -134,7 +133,7 @@ BAZEL_ARGS=		--repository_cache=${BAZEL_REPOSITORY_CACHE} \
 			--linkopt=-lexecinfo \
 			--linkopt=-lkvm \
 			--noexperimental_collect_system_network_usage
-ALL_TARGET=		install-core
+ALL_TARGET=		install-dist
 
 CONFLICTS_INSTALL=	mongodb[0-9][0-9]
 
@@ -208,8 +207,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${BAZEL_INSTALL_WRKSRC}/bin/mongod ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${BAZEL_INSTALL_WRKSRC}/bin/mongos ${STAGEDIR}${PREFIX}/bin/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mongod
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mongos
+	${INSTALL_SCRIPT} ${BAZEL_INSTALL_WRKSRC}/bin/install_compass ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/rpm/mongod.conf ${STAGEDIR}${PREFIX}/etc/mongodb.conf.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in LICENSE-Community.txt distsrc/MPL-2 distsrc/README distsrc/THIRD-PARTY-NOTICES

@@ -1,11 +1,11 @@
-TIMESTAMP = 1790933801
-SHA256 (mongodb-r8.0.32-bazel-repository-cache.tar.gz) = 277e1d56850d380e8a5bcf77534aed9806704759a5f6ba3729069bc5e926bb2b
-SIZE (mongodb-r8.0.32-bazel-repository-cache.tar.gz) = 40004955
+TIMESTAMP = 1792012216
+SHA256 (mongodb-r8.0.34-bazel-repository-cache.tar.gz) = 037e9bee9e05def801c3316b58aa730c8b25f84daf7ece9451b1fbc1f025771b
+SIZE (mongodb-r8.0.34-bazel-repository-cache.tar.gz) = 40005717
 SHA256 (bazelbuild-bazel-central-registry-5df17720d4367282afb8e5ca27a35199ab7620e4_GH0.tar.gz) = 8e50f26b47e345a32aaff54d8477b4d9a277cab1cb7d4db6b7aa361191d55be4
 SIZE (bazelbuild-bazel-central-registry-5df17720d4367282afb8e5ca27a35199ab7620e4_GH0.tar.gz) = 14273558
 SHA256 (mongodb-forks-rules_poetry-917630033c736c188605cf0f558c34afc1eca540_GH0.tar.gz) = 48001b928488e78f03a47bcc712c56432a471fc6cdd90fe57c884efbfcd13696
 SIZE (mongodb-forks-rules_poetry-917630033c736c188605cf0f558c34afc1eca540_GH0.tar.gz) = 339587
-SHA256 (mongodb-mongo-r8.0.32_GH0.tar.gz) = 4be14971c1d2a70029920b91b4fa1e44a5148a029da95e4300b73db6a5b9e959
-SIZE (mongodb-mongo-r8.0.32_GH0.tar.gz) = 88843806
+SHA256 (mongodb-mongo-r8.0.34_GH0.tar.gz) = b86778267f530e430fc3013a37578e9698cf9b58aa185e93f0cf5c8e92465974
+SIZE (mongodb-mongo-r8.0.34_GH0.tar.gz) = 88892937
 SHA256 (mongodb-forks-spidermonkey-7aeaf7a44d420360bde75db8453636092c3e2f56_GH0.tar.gz) = 8ec7aa1399b6fb15b859c448ae6f361ab28cf48bd8fc4f0de2fb3776582e202f
 SIZE (mongodb-forks-spidermonkey-7aeaf7a44d420360bde75db8453636092c3e2f56_GH0.tar.gz) = 392664341
