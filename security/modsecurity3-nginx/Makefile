@@ -1,13 +1,12 @@
 PORTNAME=	modsecurity3-nginx
-DISTVERSION=	1.0.4
-PORTREVISION=	9
+DISTVERSION=	1.0.4.20260926
 CATEGORIES=	security www
 MASTER_SITES=	https://nginx.org/download/
 DISTFILES=	${_NGINX_DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	joneum@FreeBSD.org
-COMMENT=	Instruction detection and prevention engine / nginx Wrapper
-WWW=		https://github.com/SpiderLabs/ModSecurity-nginx
+COMMENT=	Intrusion detection and prevention engine / nginx Wrapper
+WWW=		https://github.com/owasp-modsecurity/ModSecurity-nginx
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
 
 USES=		compiler:c11
 USE_GITHUB=	nodefault
-GH_TUPLE=	owasp-modsecurity:ModSecurity-nginx:9eb44fd:modsecurity3
+GH_TUPLE=	owasp-modsecurity:ModSecurity-nginx:b7cf44e:modsecurity3
 
 HAS_CONFIGURE=	yes
 # Most arguments should be derived from www/nginx's Makefile to be in sync
