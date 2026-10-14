@@ -1,6 +1,7 @@
 PORTNAME=	container-libs-common
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.67.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/podman-container-tools/container-libs/archive/refs/tags/common/v${DISTVERSION}/:libs \
 		https://github.com/podman-container-tools/skopeo/archive/refs/tags/:skopeo
@@ -10,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dfr@FreeBSD.org
 COMMENT=	Common manpages and config files for podman and buildah
-WWW=		https://github.com/containers
+WWW=		https://github.com/podman-container-tools/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/common/LICENSE
