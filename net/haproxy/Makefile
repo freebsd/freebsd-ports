@@ -1,5 +1,5 @@
 PORTNAME=	haproxy
-DISTVERSION=	3.4.6
+DISTVERSION=	3.4.7
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/3.4/src/
 
