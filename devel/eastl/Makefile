@@ -9,8 +9,8 @@ WWW=		https://github.com/electronicarts/EASTL
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#NOT_FOR_ARCHS=		aarch64 riscv64
-#NOT_FOR_ARCHS_REASON=	EABase/include/Common/EABase/config/eaplatform.h:436:4: error: Unknown processor
+BROKEN_aarch64=		fails to compile: EABase/include/Common/EABase/config/eaplatform.h:436:4: error: Unknown processor, see https://github.com/electronicarts/EASTL/issues/598
+BROKEN_riscv64=		fails to compile: EABase/include/Common/EABase/config/eaplatform.h:436:4: error: Unknown processor, see https://github.com/electronicarts/EASTL/issues/598
 
 USES=		cmake compiler:c++17-lang
 USE_LDCONFIG=	yes
