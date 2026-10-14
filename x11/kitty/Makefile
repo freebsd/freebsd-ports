@@ -1,7 +1,7 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.49.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -43,7 +43,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 
 # ncursesw and tinfo >= 6.1 seem to be needed
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		go:modules linux:rl9 ncurses pkgconfig python shebangfix ssl \
+		go:modules ncurses pkgconfig python shebangfix ssl \
 		tar:xz terminfo xorg
 CPE_VENDOR=	kovidgoyal
 
