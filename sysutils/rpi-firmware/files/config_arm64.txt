@@ -9,3 +9,9 @@ kernel=u-boot.bin
 [pi4]
 hdmi_safe=1
 armstub=armstub8-gic.bin
+
+[cm4]
+otg_mode=1
+
+[cm5]
+dtoverlay=dwc2,dr_mode=host
