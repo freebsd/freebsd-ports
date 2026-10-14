@@ -1,8 +1,8 @@
 PORTNAME=	pysimdjson
 PORTVERSION=	6.0.2
-PORTREVISION=	5
+DISTVERSIONPREFIX=	v
+PORTREVISION=	6
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -17,9 +17,16 @@ LICENSE=	MIT
 #		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>=0:devel/py-pytest-benchmark@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	cython distutils
+USE_GITHUB=	yes
+GH_ACCOUNT=	TkTech
+USE_PYTHON=	concurrent cython distutils
 
-.if ! defined(WITH_DEBUG)
+# The PyPI sdist ships csimdjson.cpp from Cython 3.0.2, which fails with
+# Python 3.13, but not csimdjson.pyx.  Use the GitHub tag and rebuild it.
+MAKE_ENV+=	BUILD_WITH_CYTHON=1 \
+		FORCE_REBUILD=1
+
+.if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif
 
