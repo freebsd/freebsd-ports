@@ -535,6 +535,7 @@
     SUBDIR += nginx-devel
     SUBDIR += nginx-full
     SUBDIR += nginx-lite
+    SUBDIR += nginx-module-accept-language
     SUBDIR += nginx-module-ajp
     SUBDIR += nginx-module-array-var
     SUBDIR += nginx-module-cache-purge
