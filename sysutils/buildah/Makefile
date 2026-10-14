@@ -1,7 +1,6 @@
 PORTNAME=	buildah
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.43.2
-PORTREVISION=	6
+DISTVERSION=	1.43.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	as:devel/binutils \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libgpgme.so:security/gpgme
 RUN_DEPENDS=	containernetworking-plugins>=0:net/containernetworking-plugins \
-		containers-common>=0:sysutils/containers-common \
+		container-libs-common>=0:sysutils/containers-common \
 		ocijail:sysutils/ocijail
 
 USES=		gmake go:no_targets pkgconfig
