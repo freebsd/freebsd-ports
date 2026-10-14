@@ -1,6 +1,15 @@
 --- CMakeLists.txt.orig	2016-07-01 17:09:02 UTC
 +++ CMakeLists.txt
-@@ -36,6 +36,9 @@ SET(CAS_LIB_DIR            "lib"     CACHE STRING "Lib
+@@ -3,7 +3,7 @@ PROJECT(cas)
+ #
+ PROJECT(cas)
+ 
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0 FATAL_ERROR)
++CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0...9.9.9)
+ 
+ # ################################################################################
+ # Defaults
+@@ -36,6 +36,9 @@ SET(CAS_SHAREDIR "${CMAKE_INSTALL_PREFIX}/share/cas")
  # CAS share dir
  SET(CAS_SHAREDIR "${CMAKE_INSTALL_PREFIX}/share/cas")
  
