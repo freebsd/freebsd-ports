@@ -1,7 +1,7 @@
 PORTNAME=	deltalake
 DISTVERSIONPREFIX=	python-v
 DISTVERSION=	1.6.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -885,7 +885,6 @@ CARGO_CRATES=	RustyXML-0.3.0 \
 
 pre-test:
 	${CP} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/deltalake/_internal.abi3.so ${WRKSRC}/deltalake/
-
 
 # tests as of 1.6.3: 657 passed, 4 skipped, 89 deselected, 1 xfailed, 2 xpassed, 22 warnings
 

@@ -1,5 +1,6 @@
 PORTNAME=	czkawka
 DISTVERSION=	12.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	uzsolt@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	utls
 PORTVERSION=	2026.9.21
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/utls/releases/download/${PORTVERSION}/

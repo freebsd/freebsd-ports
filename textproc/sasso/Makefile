@@ -1,6 +1,6 @@
 PORTNAME=	sasso
 DISTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/momiji-rs/sasso/releases/download/v${DISTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

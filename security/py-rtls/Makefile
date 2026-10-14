@@ -1,5 +1,6 @@
 PORTNAME=	rtls
 PORTVERSION=	2026.9.21
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/rtls/releases/download/${PORTVERSION}/

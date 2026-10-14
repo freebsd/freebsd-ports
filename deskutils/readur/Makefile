@@ -1,7 +1,7 @@
 PORTNAME=	readur
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:

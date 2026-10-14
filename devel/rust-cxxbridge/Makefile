@@ -1,5 +1,6 @@
 PORTNAME=	cxxbridge
 PORTVERSION=	1.0.199
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://crates.io/api/v1/crates/${PORTNAME}-cmd/${PORTVERSION}/download?dummy=/
 PKGNAMEPREFIX=	rust-

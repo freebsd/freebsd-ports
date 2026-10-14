@@ -1,6 +1,7 @@
 PORTNAME=	seqwish
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.12
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://github.com/pangenome/seqwish/releases/download/v${DISTVERSION}/
 DISTFILES=	seqwish-v0.7.12.tar.gz

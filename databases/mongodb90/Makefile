@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	9.0.0-alpha1
+PORTREVISION=			1
 CATEGORIES=	databases net
 MASTER_SITES+=	LOCAL/ronald:mongodb_bazel \
 		https://codeload.github.com/bazelbuild/bazel-central-registry/tar.gz/${BAZEL_REGISTRY_COMMIT}?dummy=/:bazel_registry \

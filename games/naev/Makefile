@@ -1,7 +1,7 @@
 PORTNAME=	naev
 PORTVERSION=	0.13.5
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://codeberg.org/naev/naev/releases/download/v${PORTVERSION}/:naev_source \
 		LOCAL/acm/${PORTNAME}/:naev_cache

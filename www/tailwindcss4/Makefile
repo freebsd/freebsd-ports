@@ -1,6 +1,6 @@
 PORTNAME=	tailwindcss4
 DISTVERSION=	4.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www devel
 MASTER_SITES=	LOCAL/dch/${PORTNAME}/:npm
 MASTER_SITES+=	https://codeload.github.com/tailwindlabs/tailwindcss/tar.gz/v${DISTVERSION}?dummy=/:twsrc \

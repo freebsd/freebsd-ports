@@ -1,5 +1,6 @@
 PORTNAME=	mcp-inspector
 DISTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 

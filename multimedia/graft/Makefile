@@ -1,6 +1,7 @@
 PORTNAME=	graft
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	abinashsena@gmail.com
