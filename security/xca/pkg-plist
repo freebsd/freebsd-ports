@@ -34,6 +34,7 @@ share/bash-completion/completions/xca
 %%PORTDOCS%%%%DOCSDIR%%/_static/documentation_options.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/english-stemmer.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/github-banner.svg
 %%PORTDOCS%%%%DOCSDIR%%/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
