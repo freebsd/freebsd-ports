@@ -5,7 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio decoder
-WWW=		https://github.com/knik0/faad2
+WWW=		https://github.com/FreewareAdvancedAudio/faad2
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -15,7 +15,7 @@ CPE_VENDOR=	faad2_project
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	knik0
+GH_ACCOUNT=	FreewareAdvancedAudio
 
 PLIST_SUB=	SOVERSION=${DISTVERSION}
 
