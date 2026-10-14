@@ -1,0 +1,7 @@
+The modsecurity3 module is the connector between nginx and libmodsecurity,
+the engine of ModSecurity 3: it hands each request and response to the
+engine and acts on what the rules say.  The rules themselves are not part of
+it -- the OWASP core rule set is one place to get them.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their MODSECURITY3 option is enabled.
