@@ -9,7 +9,7 @@
 +     supported_architectures = {
 +         "linux": ["aarch64", "x86_64", "s390x", "powerpc64le"],
 +         "macos": ["aarch64", "x86_64"],
-++        "freebsd": ["x86_64"],
+++        "freebsd": ["aarch64", "x86_64"],
 +         "windows": ["aarch64", "x86_64"],
 +     }
 + 

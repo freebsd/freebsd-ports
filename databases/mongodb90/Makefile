@@ -29,7 +29,6 @@ ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD
 
 BUILD_DEPENDS=	bazel:devel/bazel7 \
 		bash:shells/bash \
-		clang22:devel/llvm22@lite \
 		rg:textproc/ripgrep \
 		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
@@ -79,7 +78,8 @@ CONFIGURE_ENV+=		PYTHON3="${PYTHON_CMD}"
 BAZEL=			${LOCALBASE}/bin/bazel
 BAZEL_OUTPUT_USER_ROOT=	${WRKDIR}/bazel
 BAZEL_REPOSITORY_CACHE=${WRKDIR}/bazel-repository-cache
-BAZEL_STARTUP_ARGS=	--output_user_root=${BAZEL_OUTPUT_USER_ROOT}
+BAZEL_STARTUP_ARGS=	--batch \
+			--output_user_root=${BAZEL_OUTPUT_USER_ROOT}
 BAZEL_ENV=		BAZEL_SH=${LOCALBASE}/bin/bash \
 			CARGO_NET_OFFLINE=true \
 			CC="${CC}" \
@@ -188,6 +188,15 @@ MOZJS_ARCH=	x86_64
 MOZJS_ARCH=	ppc64le
 .elif ${ARCH} == aarch64
 MOZJS_ARCH=	${ARCH}
+.endif
+
+# The default wasm JS engine embeds wasmtime, which needs a Rust toolchain.
+# Use the legacy native mozjs engine there, like upstream does on ppc64le.
+.if ${ARCH} == aarch64
+BAZEL_ARGS+=	--//bazel/config:js_engine=mozjs
+.else
+# clang22 compiles the mozjs wasm module, see the wasi_repo.bzl patch
+BUILD_DEPENDS+=	clang22:devel/llvm22@lite
 .endif
 
 post-extract:
