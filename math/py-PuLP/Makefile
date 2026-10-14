@@ -1,6 +1,5 @@
 PORTNAME=	pulp
-DISTVERSION=	4.0.0
-PORTREVISION=	1
+DISTVERSION=	4.0.1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +16,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.4<2:devel/py-maturin@${PY_FLAVO
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}orloge>=1.0.0:devel/py-orloge@${PY_FLAVOR} \
 		cbc:math/cbc \
 		glpsol:math/glpk
+OPT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cbcbox>0:math/py-cbcbox@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}highspy>0:math/py-highspy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PySCIPOpt>0:math/py-PySCIPOpt@${PY_FLAVOR}
+TEST_DEPENDS=	${OPT_DEPENDS}
 
 USES=		cargo cpe python
 CPE_VENDOR=	pulpproject
@@ -63,6 +66,6 @@ do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} \
 		${PYTHON_CMD} -m pytest ${TEST_ARGS} --import-mode=importlib ${STAGEDIR}${PYTHON_SITELIBDIR}/pulp
 
-# tests as of 4.0.0: 2 failed, 358 passed, 671 skipped, 3 warnings in 8.47s # skipped tests are due to missing yaposib, sascas, etc solver, for failures see https://github.com/coin-or/pulp/issues/959
+# tests as of 4.0.1: 1 failed, 365 passed, 672 skipped, 3 warnings in 9.71s # skipped tests are due to missing yaposib, sascas, etc solver, for 1 test failure see https://github.com/coin-or/pulp/issues/959
 
 .include <bsd.port.mk>
