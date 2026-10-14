@@ -540,6 +540,7 @@
     SUBDIR += nginx-module-array-var
     SUBDIR += nginx-module-aws-auth
     SUBDIR += nginx-module-cache-purge
+    SUBDIR += nginx-module-fips-check
     SUBDIR += nginx-module-form-input
     SUBDIR += nginx-module-gridfs
     SUBDIR += nginx-module-let
