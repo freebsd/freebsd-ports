@@ -1,7 +1,7 @@
 PORTNAME=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -348,6 +348,11 @@ pre-configure-ARRAYVAR-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-array-var ${WRKSRC_arrayvar}
 	@${CHMOD} -R u+w ${WRKSRC_arrayvar}
 
+pre-configure-AWS_AUTH-on:
+	@${RM} -rf ${WRKSRC_aws_auth}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-aws-auth ${WRKSRC_aws_auth}
+	@${CHMOD} -R u+w ${WRKSRC_aws_auth}
+
 pre-configure-CACHE_PURGE-on:
 	@${RM} -rf ${WRKSRC_cache_purge}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-cache-purge ${WRKSRC_cache_purge}
@@ -358,6 +363,11 @@ pre-configure-DEVEL_KIT-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-ndk ${WRKSRC_devel_kit}
 	@${CHMOD} -R u+w ${WRKSRC_devel_kit}
 
+pre-configure-FIPS_CHECK-on:
+	@${RM} -rf ${WRKSRC_fipscheck}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-fips-check ${WRKSRC_fipscheck}
+	@${CHMOD} -R u+w ${WRKSRC_fipscheck}
+
 pre-configure-FORMINPUT-on:
 	@${RM} -rf ${WRKSRC_forminput}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-form-input ${WRKSRC_forminput}
@@ -367,6 +377,11 @@ pre-configure-GRIDFS-on:
 	@${RM} -rf ${WRKSRC_gridfs}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-gridfs ${WRKSRC_gridfs}
 	@${CHMOD} -R u+w ${WRKSRC_gridfs}
+
+pre-configure-HTTP_ACCEPT_LANGUAGE-on:
+	@${RM} -rf ${WRKSRC_accept_language}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-accept-language ${WRKSRC_accept_language}
+	@${CHMOD} -R u+w ${WRKSRC_accept_language}
 
 pre-configure-LET-on:
 	@${RM} -rf ${WRKSRC_let}
@@ -382,6 +397,11 @@ pre-configure-LUASTREAM-on:
 	@${RM} -rf ${WRKSRC_luastream}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-lua-stream ${WRKSRC_luastream}
 	@${CHMOD} -R u+w ${WRKSRC_luastream}
+
+pre-configure-MODSECURITY3-on:
+	@${RM} -rf ${WRKSRC_modsecurity3}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-modsecurity3 ${WRKSRC_modsecurity3}
+	@${CHMOD} -R u+w ${WRKSRC_modsecurity3}
 
 pre-configure-NJS-on:
 	@${RM} -rf ${WRKSRC_njs}
@@ -410,6 +430,11 @@ pre-configure-SLOWFS_CACHE-on:
 	@${RM} -rf ${WRKSRC_slowfs_cache}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-slowfs-cache ${WRKSRC_slowfs_cache}
 	@${CHMOD} -R u+w ${WRKSRC_slowfs_cache}
+
+pre-configure-STS-on:
+	@${RM} -rf ${WRKSRC_sts}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-sts ${WRKSRC_sts}
+	@${CHMOD} -R u+w ${WRKSRC_sts}
 
 pre-configure-VOD-on:
 	@${RM} -rf ${WRKSRC_vod}

@@ -24,7 +24,8 @@ ARRAYVAR_BUILD_DEPENDS=	nginx-module-array-var>0:www/nginx-module-array-var
 WRKSRC_arrayvar=	${WRKDIR}/array-var-nginx-module
 ARRAYVAR_VARS=		DSO_EXTMODS+=arrayvar
 
-AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:f3d9862:aws_auth
+AWS_AUTH_BUILD_DEPENDS=	nginx-module-aws-auth>0:www/nginx-module-aws-auth
+WRKSRC_aws_auth=	${WRKDIR}/ngx_aws_auth
 AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
@@ -58,7 +59,9 @@ ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
 ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:v0.09:encryptsession
 ENCRYPTSESSION_VARS=		DSO_EXTMODS+=encryptsession
 
-FIPS_CHECK_GH_TUPLE=	ogarrett:nginx-fips-check-module:6cb4270:fipscheck
+FIPS_CHECK_IMPLIES=	HTTP_SSL
+FIPS_CHECK_BUILD_DEPENDS=	nginx-module-fips-check>0:www/nginx-module-fips-check
+WRKSRC_fipscheck=	${WRKDIR}/nginx-fips-check-module
 FIPS_CHECK_VARS=	DSO_EXTMODS+=fipscheck
 
 FORMINPUT_IMPLIES=	DEVEL_KIT
@@ -76,7 +79,8 @@ GRIDFS_VARS=		DSO_EXTMODS+=gridfs
 HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:06dc0be:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
 
-HTTP_ACCEPT_LANGUAGE_GH_TUPLE=	dvershinin:nginx_accept_language_module:5683967:accept_language
+HTTP_ACCEPT_LANGUAGE_BUILD_DEPENDS=	nginx-module-accept-language>0:www/nginx-module-accept-language
+WRKSRC_accept_language=		${WRKDIR}/nginx-accept-language-module
 HTTP_ACCEPT_LANGUAGE_VARS=	DSO_EXTMODS+=accept_language
 
 HTTP_AUTH_DIGEST_GH_TUPLE=	atomx:nginx-http-auth-digest:274490c:auth_digest
@@ -235,7 +239,8 @@ MEMC_VARS=		DSO_EXTMODS+=memc
 
 MODSECURITY3_IMPLIES=		HTTP_ADDITION HTTP_IMAGE_FILTER HTTP_GUNZIP_FILTER HTTP_XSLT
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
-MODSECURITY3_GH_TUPLE=		owasp-modsecurity:ModSecurity-nginx:9eb44fd:modsecurity3
+MODSECURITY3_BUILD_DEPENDS=	nginx-module-modsecurity3>0:www/nginx-module-modsecurity3
+WRKSRC_modsecurity3=		${WRKDIR}/ModSecurity-nginx
 MODSECURITY3_VARS=		DSO_EXTMODS+=modsecurity3
 
 NAXSI_NGINX_VER=	1.6
@@ -325,7 +330,8 @@ SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:be22ac0:srcache
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
 STS_IMPLIES=		STREAM
-STS_GH_TUPLE=		vozlt:nginx-module-sts:3c10d42:sts
+STS_BUILD_DEPENDS=	nginx-module-sts>0:www/nginx-module-sts
+WRKSRC_sts=		${WRKDIR}/nginx-module-sts
 STS_VARS=		DSO_EXTMODS+=sts
 
 VOD_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
