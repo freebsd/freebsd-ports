@@ -1,3 +1,71 @@
+  <vuln vid="14dab969-c797-11f1-a6ea-8447094a420f">
+    <topic>Curl -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>8.23.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Curl project reports:</p>
+	<blockquote cite="">
+	  <ul>
+	    <li>local interface connection reuse mixup (CVE-2026-107929)</li>
+	    <li>info leak uploading over WebSockets with GnuTLS (CVE-2026-107928)</li>
+	    <li>password leak in CURLINFO_EFFECTIVE_URL (CVE-2026-94266)</li>
+	    <li>Authorization: Negotiate sent to foreign origin (CVE-2026-94265)</li>
+	    <li>server-set cookie aborts cookie jar load (CVE-2026-92386)</li>
+	    <li>never-ending loop via server response omission (CVE-2026-92387)</li>
+	    <li>FTP wildcard write callback mixup (CVE-2026-92388)</li>
+	    <li>TFTP direction confusion (CVE-2026-92389)</li>
+	    <li>-J no-clobber guarantee bypassed with 103 early hints (CVE-2026-92390)</li>
+	    <li>curl_mime_free stack overflow by recursion (CVE-2026-92391)</li>
+	    <li>HTTP/2 upload Use-After-Free (CVE-2026-92392)</li>
+	    <li>redirect to SFTP or SCP bypasses host verification (CVE-2026-86410)</li>
+	    <li>server-set cookie erases cookie jar (CVE-2026-86412)</li>
+	    <li>Negotiate credentials sent to redirected origin (CVE-2026-86413)</li>
+	    <li>leaking host credentials to HTTP proxy (CVE-2026-86414)</li>
+	    <li>auto client cert connection reuse mixup (CVE-2026-86415)</li>
+	    <li>cross-origin reuse of a Negotiate connection (CVE-2026-87861)</li>
+	    <li>HSTS cache import drops longer-lived child (CVE-2026-87862)</li>
+	    <li>HSTS response erases persisted entries (CVE-2026-87863)</li>
+	    <li>knownhost callback mismatches key as missing (CVE-2026-87865)</li>
+	    <li>wolfSSL public-key pinning bypass (CVE-2026-87866)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-107929</cvename>
+      <cvename>CVE-2026-107928</cvename>
+      <cvename>CVE-2026-94266</cvename>
+      <cvename>CVE-2026-94265</cvename>
+      <cvename>CVE-2026-92386</cvename>
+      <cvename>CVE-2026-92387</cvename>
+      <cvename>CVE-2026-92388</cvename>
+      <cvename>CVE-2026-92389</cvename>
+      <cvename>CVE-2026-92390</cvename>
+      <cvename>CVE-2026-92391</cvename>
+      <cvename>CVE-2026-92392</cvename>
+      <cvename>CVE-2026-86410</cvename>
+      <cvename>CVE-2026-86412</cvename>
+      <cvename>CVE-2026-86413</cvename>
+      <cvename>CVE-2026-86414</cvename>
+      <cvename>CVE-2026-86415</cvename>
+      <cvename>CVE-2026-87861</cvename>
+      <cvename>CVE-2026-87862</cvename>
+      <cvename>CVE-2026-87863</cvename>
+      <cvename>CVE-2026-87865</cvename>
+      <cvename>CVE-2026-87866</cvename>
+      <url>https://curl.se/docs/security.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-10-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="371fc9b2-c543-11f1-b115-74563cf85f9d">
     <topic>libwasmtime -- Multiple vulnerabilities</topic>
     <affects>
