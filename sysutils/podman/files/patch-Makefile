@@ -1,0 +1,34 @@
+--- Makefile.orig	2026-10-12 17:19:35 UTC
++++ Makefile
+@@ -21,7 +21,7 @@
+ ###
+ 
+ # Default shell `/bin/sh` has different meanings depending on the platform.
+-SHELL := $(shell command -v bash;)
++SHELL := $(shell command -v sh;)
+ GO ?= go
+ GO_LDFLAGS:= $(shell if $(GO) version|grep -q gccgo ; then echo "-gccgoflags"; else echo "-ldflags"; fi)
+ GOCMD = CGO_ENABLED=$(CGO_ENABLED) GOOS=$(GOOS) GOARCH=$(GOARCH) $(GO)
+@@ -115,7 +115,8 @@ COMMIT_NO ?= $(shell git rev-parse HEAD 2> /dev/null |
+ 
+ 
+ COMMIT_NO ?= $(shell git rev-parse HEAD 2> /dev/null || true)
+-GIT_COMMIT ?= $(if $(shell git status --porcelain --untracked-files=no),$(call err_if_empty,COMMIT_NO)-dirty,$(COMMIT_NO))
++#GIT_COMMIT ?= $(if $(shell git status --porcelain --untracked-files=no),$(call err_if_empty,COMMIT_NO)-dirty,$(COMMIT_NO))
++GIT_COMMIT = unknown
+ DATE_FMT = %s
+ ifdef SOURCE_DATE_EPOCH
+ 	BUILD_INFO ?= $(shell date -u -d "@$(call err_if_empty,SOURCE_DATE_EPOCH)" "+$(DATE_FMT)" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "+$(DATE_FMT)" 2>/dev/null || date -u "+$(DATE_FMT)")
+@@ -644,10 +645,10 @@ docker-docs: docs
+ ###
+ 
+ .PHONY: validate.completions
+-validate.completions: SHELL:=/usr/bin/env bash # Set shell to bash for this target
++validate.completions: SHELL:=/usr/bin/env sh # Set shell to bash for this target
+ validate.completions: completions
+ 	# Check if the files can be loaded by the shell
+-	. completions/bash/podman
++	#. completions/bash/podman
+ 	if [ -x /bin/zsh ]; then /bin/zsh completions/zsh/_podman; fi
+ 	if [ -x /bin/fish ]; then /bin/fish completions/fish/podman.fish; fi
+ 

@@ -1,6 +1,6 @@
 PORTNAME=	podman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.8.8
+DISTVERSION=	5.8.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libgpgme.so:security/gpgme
 RUN_DEPENDS=	conmon:sysutils/conmon \
 		containernetworking-plugins>=0:net/containernetworking-plugins \
-		containers-common>=0:sysutils/containers-common \
+		container-libs-common>=0:sysutils/containers-common \
 		ocijail:sysutils/ocijail
 
 USES=		gmake go:no_targets pkgconfig python:build shebangfix
