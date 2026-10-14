@@ -1,6 +1,14 @@
---- test/CMakeLists.txt.orig	2017-02-07 12:14:17 UTC
+--- test/CMakeLists.txt.orig	2023-08-28 10:32:04 UTC
 +++ test/CMakeLists.txt
-@@ -14,7 +14,7 @@ endif()
+@@ -1,7 +1,3 @@
+-if(POLICY CMP0037)
+-    cmake_policy(SET CMP0037 OLD) # don't blame custom target names
+-endif(POLICY CMP0037)
+-
+ include_directories("../")
+ 
+ #find_program(PROVE prove)
+@@ -14,7 +10,7 @@ foreach (test msgpuck)
  set(alltests)
  foreach (test msgpuck)
      add_executable(${test}.test ${test}.c test.c)
