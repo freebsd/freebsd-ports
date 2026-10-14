@@ -1,16 +1,15 @@
 PORTNAME=	maolan
-DISTVERSION=	0.2.4
-PORTREVISION=	2
+DISTVERSION=	0.3.2
 CATEGORIES=	audio
 
-MAINTAINER=	meka@tilda.center
+MAINTAINER=	meka@sys.it.com
 COMMENT=	Rust digital audio workstation
-WWW=		https://maolan.github.io
+WWW=		https://maolan.rs
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
@@ -20,17 +19,18 @@ GH_ACCOUNT=	maolan
 
 USE_XORG=	x11
 
-CARGO_BUILD_ARGS+=	--workspace
 CARGO_INSTALL_PATH=	. plugin-host
-CARGO_TEST_AFTER_ARGS=	--skip \
-			gui::tests::session_save_and_load_roundtrip_preserves_plugin_positions
+
+# The jitterentropy source must be compiled without optimizations, but the
+# ports framework appends CFLAGS after aws-lc-sys's per-file -O0 flag.
+MAKE_ENV+=	AWS_LC_SYS_NO_JITTER_ENTROPY=1
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/assets/desktop/maolan-bsd.desktop \
+	${INSTALL_DATA} ${WRKSRC}/assets/desktop/maolan.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/maolan.desktop
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/assets/images/maolan.svg \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/assets/images/maolan-icon.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/maolan.svg
 
 .include <bsd.port.mk>
