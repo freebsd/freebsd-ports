@@ -28,6 +28,38 @@
     </dates>
   </vuln>
 
+  <vuln vid="f0604004-c87b-11f1-9006-3497f65b111b">
+    <topic>nginx-module-cache-purge -- symlink traversal when walking cache trees</topic>
+    <affects>
+      <package>
+       <name>nginx-module-cache-purge</name>
+       <range><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The ngx_cache_purge developers report:</p>
+       <blockquote cite="https://github.com/nginx-modules/ngx_cache_purge/releases/tag/3.0.4">
+       <p>
+       Fixed a symlink traversal vulnerability during cache tree traversal.
+       An attacker with the ability to create symbolic links inside the
+       cache directory could potentially cause cache purge operations to
+       delete arbitrary files accessible to the NGINX worker process
+       (CVE-2026-108981).
+       </p>
+      </blockquote>
+     </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-108981</cvename>
+      <url>https://github.com/nginx-modules/ngx_cache_purge/releases/tag/3.0.4</url>
+    </references>
+    <dates>
+      <discovery>2026-10-11</discovery>
+      <entry>2026-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3f9e602e-c849-11f1-ada3-bc241121aa0a">
     <topic>FreeBSD -- Multiple vulnerabilities in bhyve device models</topic>
     <affects>
