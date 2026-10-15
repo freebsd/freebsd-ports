@@ -69,7 +69,11 @@ share/nginx/modules/nginx-module-lua/src/ngx_http_lua_pcrefix.h
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_phase.c
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_pipe.c
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_pipe.h
+share/nginx/modules/nginx-module-lua/src/ngx_http_lua_precontentby.c
+share/nginx/modules/nginx-module-lua/src/ngx_http_lua_precontentby.h
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_probe.h
+share/nginx/modules/nginx-module-lua/src/ngx_http_lua_proxy_ssl_certby.c
+share/nginx/modules/nginx-module-lua/src/ngx_http_lua_proxy_ssl_certby.h
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_proxy_ssl_verifyby.c
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_proxy_ssl_verifyby.h
 share/nginx/modules/nginx-module-lua/src/ngx_http_lua_regex.c
