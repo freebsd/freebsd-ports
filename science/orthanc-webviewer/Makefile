@@ -17,7 +17,7 @@ DISTFILES=	OrthancWebViewer-${PORTVERSION}.tar.gz:webviewer \
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancWebViewer-${PORTVERSION}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Orthanc web viewer plugin
 WWW=		https://www.orthanc-server.com/static.php?page=web-viewer
 

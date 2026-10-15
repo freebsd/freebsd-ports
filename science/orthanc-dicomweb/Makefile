@@ -19,7 +19,7 @@ DISTFILES+=	${EXTRADISTFILES}
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancDicomWeb-${PORTVERSION}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Orthanc DICOMWeb plugin
 WWW=		https://www.orthanc-server.com/static.php?page=dicomweb
 
