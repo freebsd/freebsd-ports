@@ -188,9 +188,11 @@ share/nginx/modules/nginx-module-njs/src/qjs.h
 share/nginx/modules/nginx-module-njs/src/qjs_buffer.c
 share/nginx/modules/nginx-module-njs/src/quickjs_compat.h
 share/nginx/modules/nginx-module-njs/src/test/flathsh_unit_test.c
+share/nginx/modules/nginx-module-njs/src/test/mp_unit_test.c
 share/nginx/modules/nginx-module-njs/src/test/njs_benchmark.c
 share/nginx/modules/nginx-module-njs/src/test/njs_externals_test.c
 share/nginx/modules/nginx-module-njs/src/test/njs_externals_test.h
+share/nginx/modules/nginx-module-njs/src/test/njs_test262.c
 share/nginx/modules/nginx-module-njs/src/test/njs_unit_test.c
 share/nginx/modules/nginx-module-njs/src/test/random_unit_test.c
 share/nginx/modules/nginx-module-njs/src/test/rbtree_unit_test.c
