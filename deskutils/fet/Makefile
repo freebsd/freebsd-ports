@@ -1,5 +1,5 @@
 PORTNAME=	fet
-DISTVERSION=	7.10.1
+DISTVERSION=	7.12.0
 CATEGORIES=	deskutils education
 MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://lalescu.ro/liviu/fet/download/old/ \
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++17-lang gl qt:6 tar:xz xorg
 USE_GL=		opengl
-USE_QT=		base
+USE_QT=		base tools
 USE_XORG=	ice x11 xcb
 
 DESKTOP_ENTRIES=	"FET" \
@@ -47,7 +47,7 @@ do-install-EXAMPLES-on:
 
 do-install-NLS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
-	cd ${WRKSRC}/translations && ${INSTALL_DATA} *.qm ${STAGEDIR}${DATADIR}/translations
+	cd ${BUILD_WRKSRC}/translations && ${INSTALL_DATA} *.qm ${STAGEDIR}${DATADIR}/translations
 
 do-test:
 	cd ${WRKSRC} && ${PREFIX}/bin/fet-cl --inputfile=${WRKSRC}/examples/official/by-Volker-Dirr/German_subact_constr.fet \
