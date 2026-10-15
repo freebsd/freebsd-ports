@@ -1,6 +1,6 @@
---- doc/imv.1.txt.orig	2023-01-18 22:20:52 UTC
+--- doc/imv.1.txt.orig	2025-11-27 20:03:44 UTC
 +++ doc/imv.1.txt
-@@ -265,10 +265,9 @@ - $HOME/.imv/config
+@@ -274,10 +274,9 @@ - $HOME/.imv/config
  - $HOME/.config/imv/config
  - $HOME/.imv_config
  - $HOME/.imv/config
