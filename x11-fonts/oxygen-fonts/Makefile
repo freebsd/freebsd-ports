@@ -20,7 +20,7 @@ USE_KDE=	ecm:build
 KDE_PLASMA_VERSION=	${DISTVERSION}
 KDE_PLASMA_BRANCH=	Attic
 
-USE_QT=	core:build
+USE_QT=	base:build
 
 # XXX variables not set in kf6-ecm
 CMAKE_ARGS=	-DCMAKECONFIG_INSTALL_PREFIX=${QT_CMAKEDIR_REL} \
