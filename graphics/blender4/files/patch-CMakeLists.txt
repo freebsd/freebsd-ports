@@ -1,0 +1,19 @@
+Description: Look up NumPy headers under numpy/_core/include on all
+ Python versions. numpy 2.x no longer ships numpy/core/include, so on
+ Python < 3.13 WITH_PYTHON_NUMPY was silently disabled. Same change as
+ graphics/blender.
+Issue ID: none
+Changeset: none
+TODO: none
+
+--- CMakeLists.txt.orig	2025-07-10 09:43:42 UTC
++++ CMakeLists.txt
+@@ -2550,7 +2550,7 @@ if(WITH_PYTHON)
+     if(("${PYTHON_NUMPY_PATH}" STREQUAL "") OR (${PYTHON_NUMPY_PATH} MATCHES NOTFOUND))
+       set(_numpy_include "_core/include")
+       if(PYTHON_VERSION VERSION_LESS "3.13")
+-        set(_numpy_include "core/include")
++#        set(_numpy_include "core/include")
+       endif()
+       find_python_package(numpy "${_numpy_include}")
+       unset(_numpy_include)

@@ -1,6 +1,6 @@
 PORTNAME=	blender4
 DISTVERSION=	4.5.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -14,11 +14,10 @@ WWW=		https://www.blender.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/license/GPL3-license.txt
 
-BROKEN=		Fails to find Python 3.11 while port depends on default version which is 3.12
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	static_assert(sizeof(unsigned long long) == sizeof(struct hipArray*))
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.0:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libepoxy.so:graphics/libepoxy \
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.0:math/py-numpy@${PY_FLAVOR}
 # libboost_regex.so just acts as a placeholder; several boost
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
@@ -41,7 +40,8 @@ SHEBANG_FILES=	scripts/modules/bl_i18n_utils/merge_po.py \
 		scripts/modules/blend_render_info.py
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD:INTEGER=17 \
-		-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}"
+		-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
+		-DPYTHON_VERSION=${PYTHON_VER}
 .if defined(WITH_DEBUG)
 CMAKE_ARGS+=	-DWITH_GHOST_DEBUG:BOOL=ON
 .endif
