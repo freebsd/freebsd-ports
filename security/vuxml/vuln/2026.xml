@@ -1,13 +1,13 @@
   <vuln vid="fdb34ad1-c7ac-11f1-97dc-40b034429ecf">
     <topic>p5-Plack -- Multiple vulnerabilities</topic>
     <affects>
-<package>
-<name>p5-Plack</name>
-<range><lt>1.0055</lt></range>
-</package>
+	<package>
+	<name>p5-Plack</name>
+	<range><lt>1.0055</lt></range>
+	</package>
     </affects>
     <description>
-	<body xmlns="http://www.w3.org/1999/xhtml">
+      <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Plack project reports:</p>
 	<blockquote cite="https://metacpan.org/dist/Plack/changes">
 	  <p>[SECURITY]</p>
@@ -19,15 +19,15 @@
 	  <p>[BUG FIXES]</p>
 	  <ul>
 	    <li>Plack::Middleware::ErrorDocument restores the env after a subrequest, so outer
-            middleware such as AccessLog sees the original request (CVE-2026-110334)</li>
+	    middleware such as AccessLog sees the original request (CVE-2026-110334)</li>
 	  </ul>
 	  <p>[BUG FIXES]</p>
 	  <ul>
 	    <li>Document that Plack::Handler::FCGI and Apache2 keep dot segments in PATH_INFO and
-          warn against relying on front-server path-based access control (CVE-2026-110336)</li>
+	    warn against relying on front-server path-based access control (CVE-2026-110336)</li>
 	  </ul>
 	</blockquote>
-	</body>
+      </body>
     </description>
     <references>
       <cvename>CVE-2026-110333</cvename>
