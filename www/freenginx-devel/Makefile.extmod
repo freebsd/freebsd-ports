@@ -37,7 +37,7 @@ BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 
-CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:3.0.2:cache_purge
+CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:3.0.4:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:ebed47c:echo
