@@ -115,6 +115,69 @@
     </dates>
   </vuln>
 
+  <vuln vid="95970257-c867-11f1-9006-3497f65b111b">
+    <topic>nginx -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>nginx</name>
+       <name>nginx-full</name>
+       <name>nginx-lite</name>
+       <range><lt>1.30.6,3</lt></range>
+      </package>
+      <package>
+       <name>nginx-devel</name>
+       <range><lt>1.31.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The nginx developers report:</p>
+       <blockquote cite="https://nginx.org/en/security_advisories.html">
+       <p>
+       A buffer overflow might occur in a worker process when using the
+       "alias" directive if the request URI was changed by the "rewrite"
+       directive and was then mapped to a file path (CVE-2026-15176).
+       </p>
+       <p>
+       A buffer overflow might occur in a worker process while evaluating
+       string expressions with variables, which affected the document root
+       calculation and request logging in the http and stream modules
+       (CVE-2026-93479).
+       </p>
+       <p>
+       When using HTTP/3 a part of an unknown frame might be treated as the
+       request body, which might result in bypassing the
+       "client_max_body_size" limit or injecting data in the proxied
+       request (CVE-2026-95101).
+       </p>
+       <p>
+       When using TLS session ticket key rotation, one of the keys was left
+       uninitialized, which might allow to forge a session (CVE-2026-97629).
+       </p>
+       <p>
+       When using asynchronous file I/O (AIO), use-after-free might occur in
+       certain configurations if the SSI page has "include virtual" commands
+       (CVE-2026-97205).
+       </p>
+      </blockquote>
+     </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-15176</cvename>
+      <cvename>CVE-2026-93479</cvename>
+      <cvename>CVE-2026-95101</cvename>
+      <cvename>CVE-2026-97629</cvename>
+      <cvename>CVE-2026-97205</cvename>
+      <url>https://nginx.org/en/security_advisories.html</url>
+      <url>https://nginx.org/en/CHANGES-1.30</url>
+      <url>https://nginx.org/en/CHANGES</url>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fdb34ad1-c7ac-11f1-97dc-40b034429ecf">
     <topic>p5-Plack -- Multiple vulnerabilities</topic>
     <affects>
