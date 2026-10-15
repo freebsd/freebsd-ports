@@ -1,6 +1,6 @@
 PORTNAME=	bunkerweb
-DISTVERSION=	1.6.15
-PORTREVISION=	4
+DISTVERSION=	1.6.16
+PORTREVISION=	0
 CATEGORIES=	www security
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -18,6 +18,7 @@ GH_TAGNAME=	v${DISTVERSION}
 
 RUN_DEPENDS=	openresty:www/openresty \
 		sudo:security/sudo \
+		${PYTHON_PKGNAMEPREFIX}brotli>0:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>0:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}schedule>0:devel/py-schedule@${PY_FLAVOR} \
@@ -43,6 +44,7 @@ RUN_DEPENDS=	openresty:www/openresty \
 		${PYTHON_PKGNAMEPREFIX}cachelib>0:www/py-cachelib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>0:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Flask-Compress>0:www/py-flask-compress@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Login>0:www/py-flask-login@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-session>0:www/py-flask-session@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask_wtf>0:www/py-flask-wtf@${PY_FLAVOR} \
