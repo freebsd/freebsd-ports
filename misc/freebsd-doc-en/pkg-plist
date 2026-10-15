@@ -284,6 +284,7 @@
 %%HTML%%%%DOCBASE%%/images/books/handbook/bsdinstall/bsdinstall-distfile-extracting.png
 %%HTML%%%%DOCBASE%%/images/books/handbook/bsdinstall/bsdinstall-distfile-fetching.png
 %%HTML%%%%DOCBASE%%/images/books/handbook/bsdinstall/bsdinstall-distfile-verifying.png
+%%HTML%%%%DOCBASE%%/images/books/handbook/bsdinstall/bsdinstall-distributions-sets-pkgbase.png
 %%HTML%%%%DOCBASE%%/images/books/handbook/bsdinstall/bsdinstall-final-confirmation.png
 %%HTML%%%%DOCBASE%%/images/books/handbook/bsdinstall/bsdinstall-final-modification-shell.png
 %%HTML%%%%DOCBASE%%/images/books/handbook/bsdinstall/bsdinstall-finalconfiguration.png
@@ -809,11 +810,13 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/linimon.key
 %%HTML%%%%DOCBASE%%/pgpkeys/loader.key
 %%HTML%%%%DOCBASE%%/pgpkeys/lofi.key
+%%HTML%%%%DOCBASE%%/pgpkeys/longros.key
 %%HTML%%%%DOCBASE%%/pgpkeys/loos.key
 %%HTML%%%%DOCBASE%%/pgpkeys/lstewart.key
 %%HTML%%%%DOCBASE%%/pgpkeys/lth.key
 %%HTML%%%%DOCBASE%%/pgpkeys/luoqi.key
 %%HTML%%%%DOCBASE%%/pgpkeys/lwhsu.key
+%%HTML%%%%DOCBASE%%/pgpkeys/lytboris.key
 %%HTML%%%%DOCBASE%%/pgpkeys/madpilot.key
 %%HTML%%%%DOCBASE%%/pgpkeys/maho.key
 %%HTML%%%%DOCBASE%%/pgpkeys/makc.key
