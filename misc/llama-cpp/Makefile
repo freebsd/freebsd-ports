@@ -1,6 +1,6 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	10975
+DISTVERSION=	11429 # gh release view --repo ggml-org/llama.cpp --json tagName -q .tagName (0.6.0 now but there is a compilation issue with it, so keep using the old scheme instead)
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://huggingface.co/buckets/ggml-org/llama-ui/resolve/${UI_ASSETS_TAG}/:ui_assets
 DISTFILES=	dist.tar.gz:ui_assets \
