@@ -1399,13 +1399,14 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/CodeGenUtils/BackendDiagnosticHandler.h
 %%CLANG%%llvm-devel/include/clang/CodeGenUtils/CallUtils.h
 %%CLANG%%llvm-devel/include/clang/CodeGenUtils/ClassUtils.h
-%%CLANG%%llvm-devel/include/clang/CodeGenUtils/CodeGenUtils.h
 %%CLANG%%llvm-devel/include/clang/CodeGenUtils/EHPersonality.h
 %%CLANG%%llvm-devel/include/clang/CodeGenUtils/ExprUtils.h
 %%CLANG%%llvm-devel/include/clang/CodeGenUtils/FunctionUtils.h
 %%CLANG%%llvm-devel/include/clang/CodeGenUtils/ItaniumCXXABIUtils.h
 %%CLANG%%llvm-devel/include/clang/CodeGenUtils/ModuleUtils.h
+%%CLANG%%llvm-devel/include/clang/CodeGenUtils/RecordLayoutUtils.h
 %%CLANG%%llvm-devel/include/clang/CodeGenUtils/StmtUtils.h
+%%CLANG%%llvm-devel/include/clang/CodeGenUtils/TargetUtils.h
 %%CLANG%%llvm-devel/include/clang/Config/config.h
 %%CLANG%%llvm-devel/include/clang/CrossTU/CrossTUDiagnostic.h
 %%CLANG%%llvm-devel/include/clang/CrossTU/CrossTranslationUnit.h
@@ -2034,7 +2035,6 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/ArrayConstructor.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Assign.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/CUDA/Descriptor.h
-%%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/CUDA/Support.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Character.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Command.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Derived.h
@@ -2881,6 +2881,7 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Utility/StringExtractor.h
 %%LLDB%%llvm-devel/include/lldb/Utility/StringExtractorGDBRemote.h
 %%LLDB%%llvm-devel/include/lldb/Utility/StringList.h
+%%LLDB%%llvm-devel/include/lldb/Utility/StringPool.h
 %%LLDB%%llvm-devel/include/lldb/Utility/StructuredData.h
 %%LLDB%%llvm-devel/include/lldb/Utility/SupportFile.h
 %%LLDB%%llvm-devel/include/lldb/Utility/ThreadSafeDenseMap.h
@@ -3142,6 +3143,8 @@ llvm-devel/include/llvm/Analysis/InlineAdvisor.h
 llvm-devel/include/llvm/Analysis/InlineCost.h
 llvm-devel/include/llvm/Analysis/InlineModelFeatureMaps.h
 llvm-devel/include/llvm/Analysis/InlineOrder.h
+llvm-devel/include/llvm/Analysis/InlinerModels.def
+llvm-devel/include/llvm/Analysis/InlinerModels.h
 llvm-devel/include/llvm/Analysis/InstCount.h
 llvm-devel/include/llvm/Analysis/InstSimplifyFolder.h
 llvm-devel/include/llvm/Analysis/InstructionPrecedenceTracking.h
@@ -3237,6 +3240,7 @@ llvm-devel/include/llvm/Analysis/ValueTracking.h
 llvm-devel/include/llvm/Analysis/VecFuncs.def
 llvm-devel/include/llvm/Analysis/VectorUtils.h
 llvm-devel/include/llvm/Analysis/WithCache.h
+llvm-devel/include/llvm/Analysis/inliner_Model1.h
 llvm-devel/include/llvm/AsmParser/AsmParserContext.h
 llvm-devel/include/llvm/AsmParser/FileLoc.h
 llvm-devel/include/llvm/AsmParser/LLLexer.h
@@ -3551,6 +3555,8 @@ llvm-devel/include/llvm/CodeGen/RDFLiveness.h
 llvm-devel/include/llvm/CodeGen/RDFRegisters.h
 llvm-devel/include/llvm/CodeGen/ReachingDefAnalysis.h
 llvm-devel/include/llvm/CodeGen/RegAllocCommon.h
+llvm-devel/include/llvm/CodeGen/RegAllocEvictModels.def
+llvm-devel/include/llvm/CodeGen/RegAllocEvictModels.h
 llvm-devel/include/llvm/CodeGen/RegAllocEvictionAdvisor.h
 llvm-devel/include/llvm/CodeGen/RegAllocFast.h
 llvm-devel/include/llvm/CodeGen/RegAllocGreedyPass.h
@@ -3635,6 +3641,7 @@ llvm-devel/include/llvm/CodeGen/WinEHPrepare.h
 llvm-devel/include/llvm/CodeGen/WindowScheduler.h
 llvm-devel/include/llvm/CodeGen/XRayInstrumentation.h
 llvm-devel/include/llvm/CodeGen/pch.h
+llvm-devel/include/llvm/CodeGen/regalloc_Model1.h
 llvm-devel/include/llvm/CodeGenTypes/LowLevelType.h
 llvm-devel/include/llvm/CodeGenTypes/MachineValueType.h
 llvm-devel/include/llvm/Config/AsmParsers.def
@@ -4635,6 +4642,7 @@ llvm-devel/include/llvm/ProfileData/MemProfSummaryBuilder.h
 llvm-devel/include/llvm/ProfileData/MemProfYAML.h
 llvm-devel/include/llvm/ProfileData/PGOCtxProfReader.h
 llvm-devel/include/llvm/ProfileData/PGOCtxProfWriter.h
+llvm-devel/include/llvm/ProfileData/ProfCorrelatorKind.h
 llvm-devel/include/llvm/ProfileData/ProfileCommon.h
 llvm-devel/include/llvm/ProfileData/SampleProf.h
 llvm-devel/include/llvm/ProfileData/SampleProfReader.h
@@ -4946,6 +4954,7 @@ llvm-devel/include/llvm/Target/TargetOptions.h
 llvm-devel/include/llvm/Target/TargetPfmCounters.td
 llvm-devel/include/llvm/Target/TargetSchedule.td
 llvm-devel/include/llvm/Target/TargetSelectionDAG.td
+llvm-devel/include/llvm/Target/TargetSubtarget.td
 llvm-devel/include/llvm/TargetParser/AArch64CPUFeatures.inc
 llvm-devel/include/llvm/TargetParser/AArch64FeatPriorities.inc
 llvm-devel/include/llvm/TargetParser/AArch64TargetParser.h
@@ -5404,6 +5413,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir-c/Interfaces.h
 %%MLIR%%llvm-devel/include/mlir-c/Pass.h
 %%MLIR%%llvm-devel/include/mlir-c/RegisterEverything.h
+%%MLIR%%llvm-devel/include/mlir-c/Remarks.h
 %%MLIR%%llvm-devel/include/mlir-c/Rewrite.h
 %%MLIR%%llvm-devel/include/mlir-c/Support.h
 %%MLIR%%llvm-devel/include/mlir-c/Target/ExportSMTLIB.h
@@ -5481,6 +5491,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Interfaces.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Pass.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Registration.h
+%%MLIR%%llvm-devel/include/mlir/CAPI/Remarks.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Rewrite.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Support.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Utils.h
@@ -8855,6 +8866,7 @@ llvm-devel/lib/libRemarks.so.%%LLVM_MAJOR_MINOR%%git
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIIR/IR.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIIR/IntegerSet.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIIR/Pass.cpp.o
+%%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIIR/Remarks.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIIR/Support.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIIRDL/IRDL.cpp.o
 %%MLIR%%llvm-devel/lib/objects-Release/obj.MLIRCAPIIndex/Index.cpp.o
