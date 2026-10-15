@@ -1,5 +1,6 @@
 PORTNAME=	modsecurity3-nginx
 DISTVERSION=	1.0.4.20260926
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	https://nginx.org/download/
 DISTFILES=	${_NGINX_DISTNAME}${EXTRACT_SUFX}
