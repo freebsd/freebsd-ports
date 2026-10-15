@@ -11,6 +11,7 @@ include/faiss/IndexBinaryFromFloat.h
 include/faiss/IndexBinaryHNSW.h
 include/faiss/IndexBinaryHash.h
 include/faiss/IndexBinaryIVF.h
+include/faiss/IndexEDEN.h
 include/faiss/IndexFastScan.h
 include/faiss/IndexFlat.h
 include/faiss/IndexFlatCodes.h
@@ -19,6 +20,7 @@ include/faiss/IndexIDMap.h
 include/faiss/IndexIVF.h
 include/faiss/IndexIVFAdditiveQuantizer.h
 include/faiss/IndexIVFAdditiveQuantizerFastScan.h
+include/faiss/IndexIVFEDEN.h
 include/faiss/IndexIVFFastScan.h
 include/faiss/IndexIVFFlat.h
 include/faiss/IndexIVFFlatPanorama.h
@@ -75,6 +77,7 @@ include/faiss/c_api/impl/AuxIndexStructures_c.h
 include/faiss/c_api/impl/io_c.h
 include/faiss/c_api/index_factory_c.h
 include/faiss/c_api/index_io_c.h
+include/faiss/c_api/invlists/DirectMap_c.h
 include/faiss/c_api/macros_impl.h
 include/faiss/c_api/utils/distances_c.h
 include/faiss/c_api/utils/utils_c.h
@@ -88,6 +91,7 @@ include/faiss/impl/ClusteringInitialization.h
 include/faiss/impl/CodePacker.h
 include/faiss/impl/CodePackerRaBitQ.h
 include/faiss/impl/DistanceComputer.h
+include/faiss/impl/EDENQuantizer.h
 include/faiss/impl/FaissAssert.h
 include/faiss/impl/FaissException.h
 include/faiss/impl/HNSW.h
@@ -141,6 +145,7 @@ include/faiss/impl/lattice_Zn.h
 include/faiss/impl/mapped_io.h
 include/faiss/impl/maybe_owned_vector.h
 include/faiss/impl/platform_macros.h
+include/faiss/impl/polysemous_training/dispatch.h
 include/faiss/impl/pq_code_distance/IVFPQScanner_impl.h
 include/faiss/impl/pq_code_distance/IVFPQ_QueryTables.h
 include/faiss/impl/pq_code_distance/PQDistanceComputer_impl.h
@@ -191,7 +196,7 @@ include/faiss/utils/hamming.h
 include/faiss/utils/hamming_distance/common.h
 include/faiss/utils/hamming_distance/hamming_computer-avx2.h
 include/faiss/utils/hamming_distance/hamming_computer-avx512.h
-include/faiss/utils/hamming_distance/hamming_computer-avx512_spr.h
+include/faiss/utils/hamming_distance/hamming_computer-avx512_vpopcnt.h
 include/faiss/utils/hamming_distance/hamming_computer-generic.h
 include/faiss/utils/hamming_distance/hamming_computer-neon.h
 include/faiss/utils/hamming_distance/hamming_computer-rvv.h

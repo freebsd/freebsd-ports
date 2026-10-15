@@ -1,7 +1,6 @@
 PORTNAME=	faiss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.3
-PORTREVISION=	1
+DISTVERSION=	1.15.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,10 +9,6 @@ WWW=		https://github.com/facebookresearch/faiss
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-.if !exists(/usr/include/omp.h)
-BROKEN=		requires OpenMP support that is missing on this architecture
-.endif
 
 BUILD_DEPENDS=	openblas>0:math/openblas # faiss links with libopenblasp-rN.N.N.so (installed by default only on amd64,i386), so use non-filename-specific DEPENDS commands
 RUN_DEPENDS=	openblas>0:math/openblas
@@ -29,9 +24,11 @@ GH_ACCOUNT=	facebookresearch
 CMAKE_ON=	BUILD_SHARED_LIBS FAISS_ENABLE_C_API
 CMAKE_OFF=	BUILD_TESTING FAISS_ENABLE_GPU FAISS_ENABLE_PYTHON
 
-post-extract: # workaround for https://github.com/facebookresearch/faiss/issues/3913
-	@${LN} -s ${WRKSRC} ${WRKDIR}/faiss
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 # tests as of 1.13.1: 100% tests passed, 0 tests failed out of 138
+# tests as of 1.15.1: 94% tests passed, 16 tests failed out of 283, all failures seem to be die to OpenBLAS mis-identifying the CPU architecture, see https://github.com/OpenMathLib/OpenBLAS/issues/6029
 
 .include <bsd.port.mk>
