@@ -934,7 +934,7 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/he/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
 %%NLS%%share/locale/he/LC_MESSAGES/pg_basebackup-%%PG_VERSION%%.mo
 %%NLS%%share/locale/he/LC_MESSAGES/pg_ctl-%%PG_VERSION%%.mo
-%%NLS%%share/locale/id/LC_MESSAGES/%%PG_USER%%-%%PG_VERSION%%.mo
+%%NLS%%share/locale/id/LC_MESSAGES/postgres-%%PG_VERSION%%.mo
 %%NLS%%share/locale/it/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
 %%NLS%%share/locale/it/LC_MESSAGES/pg_archivecleanup-%%PG_VERSION%%.mo
 %%NLS%%share/locale/it/LC_MESSAGES/pg_basebackup-%%PG_VERSION%%.mo
@@ -999,7 +999,6 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_walsummary-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/postgres-%%PG_VERSION%%.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/%%PG_USER%%-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pg_archivecleanup-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pg_basebackup-%%PG_VERSION%%.mo
@@ -1010,7 +1009,7 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/pl/LC_MESSAGES/pg_test_fsync-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pg_test_timing-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/%%PG_USER%%-%%PG_VERSION%%.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/postgres-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_archivecleanup-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_basebackup-%%PG_VERSION%%.mo
@@ -1023,6 +1022,7 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_test_timing-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pg_walsummary-%%PG_VERSION%%.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/postgres-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_archivecleanup-%%PG_VERSION%%.mo
@@ -1056,7 +1056,6 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_walsummary-%%PG_VERSION%%.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/postgres-%%PG_VERSION%%.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/%%PG_USER%%-%%PG_VERSION%%.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pg_archivecleanup-%%PG_VERSION%%.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pg_basebackup-%%PG_VERSION%%.mo
@@ -1070,6 +1069,7 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/tr/LC_MESSAGES/pg_upgrade-%%PG_VERSION%%.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pg_waldump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/postgres-%%PG_VERSION%%.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_archivecleanup-%%PG_VERSION%%.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_basebackup-%%PG_VERSION%%.mo
@@ -1111,14 +1111,21 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/postgres-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_archivecleanup-19.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_basebackup-19.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_checksums-%%PG_VERSION%%.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_combinebackup-19.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_controldata-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_ctl-%%PG_VERSION%%.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_resetwal-19.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_rewind-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_test_fsync-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_test_timing-%%PG_VERSION%%.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_upgrade-19.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_waldump-%%PG_VERSION%%.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_walsummary-19.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/postgres-19.mo
 %%DATADIR%%/errcodes.txt
 %%DATADIR%%/extension/plpgsql--1.0.sql
 %%DATADIR%%/extension/plpgsql.control

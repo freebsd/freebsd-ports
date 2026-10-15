@@ -1421,6 +1421,7 @@ share/man/man7/WITH.7.gz
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pgscripts-19.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/psql-%%PG_VERSION%%.mo
 %%DATADIR%%/postgres.bki
 %%DATADIR%%/system_constraints.sql
