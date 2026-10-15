@@ -1,3 +1,42 @@
+  <vuln vid="bac88b3f-c8a1-11f1-866a-3c7c3fba4204">
+    <topic>NSD -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>nsd</name>
+	  <range><ge>4.10.0</ge><lt>4.15.3</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs reports:</p>
+	<blockquote cite="https://community.nlnetlabs.nl/t/nsd-4-15-3-security-release/3490">
+	  <p>This security release has fixes for vulnerabilities which were all for cases with specially crafted and formatted data in zone files. Zone files which are written out by NSD itself, such as for zones for which NSD is secondary, would not be formatted like this. The zone file had to be fed to NSD directly, but could in multi-tenant configurations, come from an operator controlled provisioning system accessible to third parties. Zone files that are regularly formatted (generated from DNS software) or come from trusted sources would not trigger these vulnerabilities.</p>
+	  <ul>
+	  <li>CVE-2026-101337: Reserve correct number of bytes for base64 sequence tokens, regardless of stream decoder phase.</li>
+	  <li>CVE-2026-101338: No SVCB and/or HTTPS parameters are parsed when the RDATA is already filled to the brim.</li>
+	  <li>CVE-2026-101339: Fix for dname possibility to overwrite the stack when near the RDATA limit.</li>
+	  <li>CVE-2026-101341: Also check that RDATA stays within bounds while parsing string tokens under 32 bytes.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101337</cvename>
+      <cvename>CVE-2026-101338</cvename>
+      <cvename>CVE-2026-101339</cvename>
+      <cvename>CVE-2026-101341</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-101337.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-101338.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-101339.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/nsd/CVE-2026-101341.txt</url>
+      <url>https://community.nlnetlabs.nl/t/nsd-4-15-3-security-release/3490</url>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1be69a2e-c883-11f1-b5c5-3c7c3fba4204">
     <topic>Newsboat -- vulnerabilities</topic>
     <affects>
