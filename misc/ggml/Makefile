@@ -1,8 +1,6 @@
 PORTNAME=	ggml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.0-38 # latest hash for llama-cpp
-DISTVERSIONSUFFIX=	-g7840aaba
-PORTREVISION=	1
+DISTVERSION=	0.26.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,9 +32,11 @@ CMAKE_OFF=	GGML_NATIVE \
 		GGML_F16C
 CMAKE_TESTING_ON=	GGML_BUILD_TESTS
 
+SO_SUFFIX=	${PORTVERSION}
+
 BINARY_ALIAS=	git=false
 
-PLIST_SUB+=	DISTVERSION=${DISTVERSION}
+PLIST_SUB+=	SO_SUFFIX=${SO_SUFFIX}
 
 OPTIONS_DEFINE=		VULKAN
 OPTIONS_DEFAULT=	VULKAN
@@ -47,6 +47,6 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-# tests as of 0.13.1: 100% tests passed, 0 tests failed out of 21
+# tests as of 0.26.0: 95% tests passed, 1 tests failed out of 21 # 1 test (test-backend-ops) failed due to OOM in a Vulkan device
 
 .include <bsd.port.mk>

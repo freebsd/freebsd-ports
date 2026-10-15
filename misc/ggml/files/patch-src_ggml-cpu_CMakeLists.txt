@@ -1,16 +1,16 @@
---- src/ggml-cpu/CMakeLists.txt.orig	2025-12-31 16:24:07 UTC
+--- src/ggml-cpu/CMakeLists.txt.orig	2026-10-05 14:26:51 UTC
 +++ src/ggml-cpu/CMakeLists.txt
-@@ -137,8 +137,7 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
-                 endif()
+@@ -151,8 +151,7 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
+                     endif()
  
-                 if ("${ARM_NATIVE_FLAG}" STREQUAL "")
--                    set(ARM_NATIVE_FLAG -mcpu=native)
--                    message(WARNING "ARM -march/-mcpu not found, -mcpu=native will be used")
-+                    message(WARNING "ARM: CPUTYPE will be used")
-                 else()
-                     message(STATUS "ARM detected flags: ${ARM_NATIVE_FLAG}")
-                 endif()
-@@ -387,16 +386,6 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
+                     if ("${ARM_NATIVE_FLAG}" STREQUAL "")
+-                        set(ARM_NATIVE_FLAG -mcpu=native)
+-                        message(WARNING "ARM -march/-mcpu not found, -mcpu=native will be used")
++                        message(WARNING "ARM: CPUTYPE will be used")
+                     else()
+                         message(STATUS "ARM detected flags: ${ARM_NATIVE_FLAG}")
+                     endif()
+@@ -429,16 +428,6 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
              string(TOUPPER "${POWER10_M}" POWER10_M_UPPER)
              string(REGEX MATCHALL "POWER *([0-9]+)" MATCHED_STRING "${POWER10_M_UPPER}")
              string(REGEX REPLACE "POWER *([0-9]+)" "\\1" EXTRACTED_NUMBER "${MATCHED_STRING}")
