@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	49.0.2
+PORTVERSION=	50.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	longros@FreeBSD.org
@@ -23,8 +22,8 @@ CPE_PRODUCT=	wasmtime
 USE_GITHUB=	yes
 GH_ACCOUNT=	bytecodealliance
 GH_PROJECT=	wasmtime
-GH_TUPLE=	WebAssembly:component-model:7c67611:component_model/tests/component-model \
-		WebAssembly:testsuite:0dc0343:testsuite/tests/spec_testsuite \
+GH_TUPLE=	WebAssembly:component-model:5b724da:component_model/tests/component-model \
+		WebAssembly:testsuite:b464a4c:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:6345da2:wasi_testsuite/tests/wasi-testsuite
 USE_LDCONFIG=	yes
 
