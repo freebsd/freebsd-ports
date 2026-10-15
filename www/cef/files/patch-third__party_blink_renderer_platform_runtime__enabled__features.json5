@@ -1,0 +1,119 @@
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-08-31 10:59:09 UTC
++++ third_party/blink/renderer/platform/runtime_enabled_features.json5
+@@ -459,7 +459,7 @@
+         "default": "",
+       },
+       origin_trial_feature_name: "AIPromptAPIParams",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+     },
+     {
+@@ -491,7 +491,7 @@
+         "default": "",
+       },
+       origin_trial_feature_name: "AIProofreaderAPI",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+       base_feature_status: "enabled",
+       copied_from_base_feature_if: "overridden",
+@@ -506,7 +506,7 @@
+         "default": "",
+       },
+       origin_trial_feature_name: "AIRewriterAPI",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+       base_feature_status: "enabled",
+       copied_from_base_feature_if: "overridden",
+@@ -542,7 +542,7 @@
+         "default": "",
+       },
+       origin_trial_feature_name: "AIWriterAPI",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+       base_feature_status: "enabled",
+       copied_from_base_feature_if: "overridden",
+@@ -698,7 +698,7 @@
+       name: "AppTitle",
+       status: "experimental",
+       origin_trial_feature_name: "AppTitle",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       base_feature: "WebAppEnableAppTitle",
+     },
+     {
+@@ -1507,7 +1507,7 @@
+       name: "CSPHashesV1",
+       base_feature: "none",
+       origin_trial_feature_name: "CSPExtendedScriptSrcHashes",
+-      origin_trial_os: ["win", "linux", "mac", "android", "chromeos"],
++      origin_trial_os: ["win", "linux", "mac", "android", "chromeos", "openbsd", "freebsd"],
+       status: "experimental",
+       public: true,
+     },
+@@ -2477,7 +2477,7 @@
+       name: "DocumentIsolationPolicy",
+       status: "experimental",
+       origin_trial_feature_name: "DocumentIsolationPolicy",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       base_feature: "none",
+     },
+     {
+@@ -2675,7 +2675,7 @@
+       public: true,
+       origin_trial_feature_name: "EmailVerificationProtocol",
+       origin_trial_allows_third_party: true,
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       status: {
+         "Win": "experimental",
+         "Mac": "experimental",
+@@ -2867,7 +2867,7 @@
+       base_feature: "none",
+       public: true,
+       origin_trial_feature_name: "FedCmMultipleIdentityProviders",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+     },
+     {
+@@ -3764,7 +3764,7 @@
+       name: "InstallElement",
+       status: {"Android": "", "default": "test"},
+       origin_trial_feature_name: "InstallElement",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       public: true,
+       base_feature_status: "enabled",
+       copied_from_base_feature_if: "overridden",
+@@ -6661,7 +6661,7 @@
+       name: "UnrestrictedSharedArrayBuffer",
+       base_feature: "none",
+       origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
+-      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
+     },
+     // Enables using policy-controlled feature "usb-unrestricted" to allow
+     // isolated context to access protected USB interface classes and to
+@@ -6889,7 +6889,7 @@
+       name: "WebAppInstallation",
+       status: {"Android": "", "default": "test"},
+       origin_trial_feature_name: "WebAppInstallation",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       public: true,
+       base_feature_status: "enabled",
+       copied_from_base_feature_if: "overridden",
+@@ -6903,7 +6903,7 @@
+     {
+       name: "WebAppScopeExtensions",
+       origin_trial_feature_name: "WebAppScopeExtensions",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       status: "experimental",
+       base_feature: "none",
+     },

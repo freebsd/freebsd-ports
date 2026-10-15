@@ -1,0 +1,11 @@
+--- components/performance_manager/decorators/process_metrics_decorator.cc.orig	2026-08-12 09:02:10 UTC
++++ components/performance_manager/decorators/process_metrics_decorator.cc
+@@ -53,7 +53,7 @@ class ProcessMetricsDecorator::NodeMetricsUpdater {
+     auto* process_node = ProcessNodeImpl::FromNode(context.GetProcessNode());
+     process_node->set_private_footprint(memory_summary_->private_footprint);
+     process_node->set_resident_set(memory_summary_->resident_set_size);
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+     process_node->set_private_swap(memory_summary_->private_swap);
+ #endif
+   }

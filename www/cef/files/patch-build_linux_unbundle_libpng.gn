@@ -1,0 +1,30 @@
+--- build/linux/unbundle/libpng.gn.orig	2025-12-05 10:12:50 UTC
++++ build/linux/unbundle/libpng.gn
+@@ -21,3 +21,27 @@ source_set("libpng") {
+   deps = [ ":libpng_shim" ]
+   public_configs = [ ":libpng_config" ]
+ }
++
++libpng_testonly_visibility = [
++  "//chrome/test:accessibility_live_site_tests",
++  "//chrome/test:captured_sites_interactive_tests",
++  "//chrome/test:interactive_ui_tests",
++  "//tools/imagediff",
++
++  # Using a wildcard, to cover template-generated targets (e.g.
++  # `run_libpng_progressive_read_fuzzer` on `ios-catalyst` trybot).
++  "//testing/libfuzzer/fuzzers:*",
++
++  # Using a wildcard, to cover template-generated targets (e.g.
++  # `//ui/gfx:gfx_unittests__library__jni_registration__native_sources` or
++  # `//ui/gfx:gfx_unittests__exec`).
++  "//ui/gfx:*",
++]
++
++group("libpng_for_testonly") {
++  testonly = true
++  public_deps = [ ":libpng" ]
++
++  visibility = []
++  visibility = libpng_testonly_visibility
++}  

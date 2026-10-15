@@ -1,0 +1,19 @@
+--- cef/BUILD.gn.orig	2026-09-06 17:31:54 UTC
++++ cef/BUILD.gn
+@@ -1037,6 +1037,16 @@ source_set("libcef_static") {
+     "//v8",
+   ]
+ 
++  if (is_bsd) {
++    # Crashpad does not support BSD, see
++    # //components/crash/core/app/BUILD.gn.
++    sources -= [
++      "libcef/browser/crashpad_runner.cc",
++      "libcef/browser/crashpad_runner.h",
++    ]
++    deps -= [ "//third_party/crashpad/crashpad/handler" ]
++  }
++
+   if (is_win) {
+     sources += includes_win + [
+       "libcef/browser/native/browser_platform_delegate_native_win.cc",

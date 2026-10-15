@@ -1,0 +1,10 @@
+The Chromium Embedded Framework (CEF) is a framework for embedding
+Chromium-based browsers in other applications.  It provides a stable C and
+C++ API on top of Chromium and Blink, including off-screen rendering, which
+applications such as OBS Studio use for their browser sources and docks.
+
+This port builds CEF natively from the Chromium and CEF sources, with the
+FreeBSD patches of www/chromium.  It installs a CEF binary distribution in
+lib/cef: the headers, libcef.so with its resources, the CMake files and the
+libcef_dll_wrapper static library that CEF clients link against.  Point a CEF
+client to it with CEF_ROOT_DIR (or CEF_ROOT) set to that directory.

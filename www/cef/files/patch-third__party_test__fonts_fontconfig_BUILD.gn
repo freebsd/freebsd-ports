@@ -1,0 +1,46 @@
+--- third_party/test_fonts/fontconfig/BUILD.gn.orig	2026-09-02 20:45:18 UTC
++++ third_party/test_fonts/fontconfig/BUILD.gn
+@@ -8,9 +8,14 @@ if (is_linux || is_chromeos) {
+   group("test_support") {
+     testonly = true
+     public_deps = [ ":fontconfig_util_linux" ]
+-    data_deps = [ "//third_party/test_fonts" ]
+-    if (current_toolchain == host_toolchain) {
+-      data_deps += [ ":do_generate_fontconfig_caches" ]
++    # The test fonts are not part of the -lite release tarball.  They are only
++    # needed to run tests, while libcef links this code through
++    # //cef:libcef_test_support (the test helpers of the CEF API).
++    if (!is_bsd) {
++      data_deps = [ "//third_party/test_fonts" ]
++      if (current_toolchain == host_toolchain) {
++        data_deps += [ ":do_generate_fontconfig_caches" ]
++      }
+     }
+   }
+ 
+@@ -26,7 +31,11 @@ if (is_linux || is_chromeos) {
+ 
+   copy("fonts_conf") {
+     sources = [ "fonts.conf" ]
+-    outputs = [ "$root_out_dir/etc/fonts/{{source_file_part}}" ]
++    if (is_freebsd) {
++      outputs = [ "$root_out_dir/usr/local/etc/fonts/{{source_file_part}}" ]
++    } else {
++      outputs = [ "$root_out_dir/etc/fonts/{{source_file_part}}" ]
++    }
+   }
+ 
+   if (current_toolchain == host_toolchain) {
+@@ -47,7 +56,11 @@ if (is_linux || is_chromeos) {
+         "//third_party/test_fonts",
+       ]
+       args = []
+-      inputs = [ "$root_out_dir/etc/fonts/fonts.conf" ]
++      if (is_freebsd) {
++        inputs = [ "$root_out_dir/usr/local/etc/fonts/fonts.conf" ]
++      } else {
++        inputs = [ "$root_out_dir/etc/fonts/fonts.conf" ]
++      }
+       outputs = [
+         "$root_out_dir/fontconfig_caches/fb5c91b2895aa445d23aebf7f9e2189c-le64.cache-11",
+         "$root_out_dir/fontconfig_caches/CACHEDIR.TAG",
