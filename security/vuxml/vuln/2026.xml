@@ -1,3 +1,120 @@
+  <vuln vid="3f9e602e-c849-11f1-ada3-bc241121aa0a">
+    <topic>FreeBSD -- Multiple vulnerabilities in bhyve device models</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.1</ge><lt>15.1_5</lt></range>
+	<range><ge>14.5</ge><lt>14.5_2</lt></range>
+	<range><ge>14.4</ge><lt>14.4_11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>Several vulnerabilities were found in the bhyve hypervisor's
+	  device models.</p>
+	  <p>The xHCI (USB 3) device model did not validate or save the event
+	  ring size provided by the guest.  The size was re-read from guest
+	  memory on each use, and Transfer Request Block (TRB) fields were
+	  loaded without protection against concurrent modification by the
+	  guest.  This race condition could be triggered by a guest running
+	  malicious, privileged code.  (CVE-2026-101309)</p>
+	  <p>The HDA audio device model did not check for zero-length Buffer
+	  Descriptor List (BDL) entries when starting a stream.  A zero-length
+	  entry caused an out-of-bounds read or write during DMA transfer
+	  processing.  BDL fields were also subject to modification by the
+	  guest after validation.  (CVE-2026-101310)</p>
+	  <p>The framebuffer device model's maximum resolution constants were
+	  duplicated between the framebuffer and RFB modules and had gotten
+	  out of sync.  Additionally, writes to the framebuffer BAR could set
+	  arbitrary width and height values without validation, and the
+	  framebuffer BAR I/O and RFB rendering threads were not synchronized.
+	  (CVE-2026-101311)</p>
+	<h1>Impact:</h1>
+	  <p>A malicious guest can crash the bhyve process or potentially
+	  execute arbitrary code in the host userspace context running the
+	  virtual machine, subject to bhyve's Capsicum sandbox.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101309</cvename>
+      <cvename>CVE-2026-101310</cvename>
+      <cvename>CVE-2026-101311</cvename>
+      <freebsdsa>SA-26:72.bhyve</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-10-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1fef3562-c848-11f1-ada3-bc241121aa0a">
+    <topic>FreeBSD -- TOCTOU race between sound(4) buffer resizing and mmap</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_5</lt></range>
+	<range><ge>14.5</ge><lt>14.5_2</lt></range>
+	<range><ge>14.4</ge><lt>14.4_11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When an audio channel's buffer needs to be resized, the sound(4)
+	  driver checks that the buffer is not memory-mapped and then drops
+	  the channel lock to allocate a new buffer.  An mmap(2) call on
+	  another thread can complete during this window, after which the
+	  resize path frees the now-mapped buffer without rechecking.</p>
+	<h1>Impact:</h1>
+	  <p>An unprivileged local user with access to a sound device can
+	  exploit this race to trigger a use-after-free in the kernel,
+	  potentially escalating privileges.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101308</cvename>
+      <freebsdsa>SA-26:71.sound</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-10-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e40e981e-c847-11f1-ada3-bc241121aa0a">
+    <topic>FreeBSD -- Remotely triggerable buffer overflow in tcp_rack</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.1</ge><lt>15.1_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>When the PCM sample array needs to grow, the RACK stack doubles
+	  a 16-bit allocation counter.  Repeated doublings caused the counter
+	  to wrap to zero, resulting in a near-zero-length allocation followed
+	  by a copy of the existing samples into the undersized buffer.  A
+	  remote peer can trigger the expansion by sending a sufficient number
+	  of ACKs on an established connection.</p>
+	<h1>Impact:</h1>
+	  <p>A remote attacker who can establish a TCP connection to a system
+	  using the RACK stack can trigger an out-of-bounds write of approximately
+	  512 KB in the kernel heap possibly resulting in a kernel panic.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101307</cvename>
+      <freebsdsa>SA-26:70.tcp</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fdb34ad1-c7ac-11f1-97dc-40b034429ecf">
     <topic>p5-Plack -- Multiple vulnerabilities</topic>
     <affects>
