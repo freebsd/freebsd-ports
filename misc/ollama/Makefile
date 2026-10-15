@@ -1,6 +1,7 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.40.4
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 ## Q: Why does misc/ollama use the fork yurivict/ollama ?
@@ -31,7 +32,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 		patchelf:sysutils/patchelf
 
 USES=		cmake:indirect go:modules localbase pkgconfig
-USE_LDCONFIG=	${PREFIX}/lib/ollama ${PREFIX}/lib/ollama/vulkan
 USE_RC_SUBR=	ollama
 
 USE_GITHUB=	nodefault
