@@ -212,18 +212,18 @@ KEYVAL_VARS=		DSO_EXTMODS+=keyval
 LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
-LUA_GH_TUPLE=		openresty:lua-nginx-module:de7e57f:lua \
-			openresty:lua-resty-core:be42297:luarc \
-			openresty:lua-resty-lrucache:1c7cf6b:luarl
+LUA_GH_TUPLE=		openresty:lua-nginx-module:58ece96:lua \
+			openresty:lua-resty-core:97ff492:luarc \
+			openresty:lua-resty-lrucache:ad373f4:luarl
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
 LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_VARS=		DSO_EXTMODS+=lua
 
-LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:11f9e38:luastream \
-			openresty:lua-resty-core:be42297:luarc \
-			openresty:lua-resty-lrucache:1c7cf6b:luarl
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:102c784:luastream \
+			openresty:lua-resty-core:97ff492:luarc \
+			openresty:lua-resty-lrucache:ad373f4:luarl
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
 LUASTREAM_IMPLIES=	DEVEL_KIT
