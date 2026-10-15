@@ -11,8 +11,6 @@ WWW=		https://hyperrate.com/dir.php?eid=67
 
 LICENSE=	LGPL21
 
-BROKEN_powerpc64=	fails to build: gmake[3]: *** [Makefile:30: en-american] Error 255
-
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake gnome pkgconfig tar:xz xorg
