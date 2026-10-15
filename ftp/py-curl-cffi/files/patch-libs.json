@@ -59,7 +59,7 @@
 +    },
 +    {
 +        "system": "FreeBSD",
-+        "machine": "powerpc64",
++        "machine": "powerpc",
 +        "pointer_size": 64,
 +        "sysname": "freebsd",
 +        "link_type": "dynamic",
