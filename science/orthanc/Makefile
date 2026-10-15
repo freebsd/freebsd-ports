@@ -5,7 +5,7 @@ CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight DICOM server for healthcare and medical research
 WWW=		https://www.orthanc-server.com/
 

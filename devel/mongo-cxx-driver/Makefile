@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	r
 DISTVERSION=	4.5.3
 CATEGORIES=	devel databases
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MongoDB C++ driver
 WWW=		https://github.com/mongodb/mongo-cxx-driver/
 

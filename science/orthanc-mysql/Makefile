@@ -11,7 +11,7 @@ DISTFILES=	OrthancMySQL-${PORTVERSION}.tar.gz:mysql \
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancMySQL-${PORTVERSION}.tar.gz
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Orthanc plugin to use MySQL/MariaDB for indexing or storage
 WWW=		https://www.orthanc-server.com/static.php?page=mysql
 

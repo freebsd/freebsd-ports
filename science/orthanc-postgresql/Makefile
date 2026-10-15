@@ -11,7 +11,7 @@ DISTFILES=	OrthancPostgreSQL-${PORTVERSION}.tar.gz:pgsql \
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancPostgreSQL-${PORTVERSION}.tar.gz
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Orthanc plugin to use PostgreSQL for indexing or storage
 WWW=		https://www.orthanc-server.com/static.php?page=postgresql
 

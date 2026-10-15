@@ -3,7 +3,7 @@ PORTVERSION=	2.1
 CATEGORIES=	biology python
 MASTER_SITES=	# empty
 
-MAINTAINER=	jwb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for Biostar Handbook tools
 WWW=		https://www.biostarhandbook.com
 
