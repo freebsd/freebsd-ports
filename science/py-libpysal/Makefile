@@ -40,7 +40,7 @@ PLUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}joblib>=1.5.0:devel/py-joblib@${PY_FLAV
 			${PYTHON_PKGNAMEPREFIX}networkx>=3.4,2:math/py-networkx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}numba>=0.60:devel/py-numba@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pandarm>=0:graphics/py-pandarm@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}PuLP>=0:math/py-PuLP@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pulp>=0:math/py-PuLP@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyarrow>=16.1:databases/py-pyarrow@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=2.0:databases/py-sqlalchemy20@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xarray>=2024.5:devel/py-xarray@${PY_FLAVOR} \
