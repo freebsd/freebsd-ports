@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Doom64EX needs an IWAD and a soundfont generated from a Doom 64 N64 ROM
+image:
+
+  $ doom64ex-wadgen /path/to/Doom64.z64
+
+This writes DOOM64.WAD and DOOMSND.SF2 to the current directory. Copy them
+to %%DATADIR%% or run doom64ex from the directory containing them.
+EOM
+}
+]

@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.16)
+project(Doom64EX-Classic LANGUAGES C)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/kex)
+add_subdirectory(kex)
+add_subdirectory(wadgen)
