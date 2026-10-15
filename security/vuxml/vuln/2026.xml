@@ -1,3 +1,33 @@
+  <vuln vid="1be69a2e-c883-11f1-b5c5-3c7c3fba4204">
+    <topic>Newsboat -- vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>newsboat</name>
+	  <range><ge>2.10</ge><lt>2.45</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Newsboat Team reports:</p>
+	<blockquote cite="https://github.com/newsboat/newsboat/blob/r2.45/CHANGELOG.md#security">
+	<ul>
+	  <li>(CVE ID Pending) Remote code execution via manual OPML import (--import-from-opml)</li>
+	  <li><a href="https://github.com/newsboat/newsboat/security/advisories/GHSA-4m8m-vj3m-hfxx">GHSA-4m8m-vj3m-hfxx</a>: Remote code execution via OPML import (both manual --import-from-opml and opml-url config setting)</li>
+	  <li><a href="https://github.com/newsboat/newsboat/security/advisories/GHSA-pvg7-gjxf-23c9">GHSA-pvg7-gjxf-23c9</a>: Podboat could write at arbitrary paths</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/newsboat/newsboat/security/advisories/GHSA-4m8m-vj3m-hfxx</url>
+      <url>https://github.com/newsboat/newsboat/security/advisories/GHSA-pvg7-gjxf-23c9</url>
+    </references>
+    <dates>
+      <discovery>2026-10-04</discovery>
+      <entry>2026-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3f9e602e-c849-11f1-ada3-bc241121aa0a">
     <topic>FreeBSD -- Multiple vulnerabilities in bhyve device models</topic>
     <affects>
