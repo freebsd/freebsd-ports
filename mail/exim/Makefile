@@ -1,6 +1,6 @@
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	mail
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -53,7 +53,7 @@ EXIMON_USE=	xorg=x11,xaw,xext,xmu,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 ICONV_USES=	iconv:lib,build
 INTERNATIONAL_LIB_DEPENDS=	libidn.so:dns/libidn libidn2.so:dns/libidn2
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LMDB_LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 MYSQL_USES=	mysql
 OPENLDAP_USES=	ldap
 PGSQL_LIB_DEPENDS=	libicudata.so:devel/icu
@@ -331,8 +331,8 @@ SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS:S/,/\\,/g},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES:S/,/\\,/g},'
 
 .if ${PORT_OPTIONS:MLMDB}
-_LMDB_LIBS=	-L${LOCALBASE}/lib -llmdb
-_LMDB_INCLUDES=	-I${LOCALBASE}/include
+_LMDB_LIBS=	-L${LOCALBASE}/lmdb0/lib -llmdb
+_LMDB_INCLUDES=	-I${LOCALBASE}/lmdb0/include
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_LMDB=),\1,'
 .else
 _LMDB_LIBS=

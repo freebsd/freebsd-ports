@@ -1,6 +1,6 @@
 PORTNAME=	samba425
 DISTVERSION=	4.25.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	net
 MASTER_SITES=	SAMBA/samba/stable \
 		SAMBA/samba/rc
@@ -388,6 +388,7 @@ _BUNDLED_LIBS+=	${"${PORT_OPTIONS:MBUNDLED_TALLOC}" == "BUNDLED_TALLOC":?:!}pyta
 _LMDB_DEPENDS=	lmdb>=1.0:databases/lmdb
 .         else
 _LMDB_DEPENDS=	lmdb0>=0.9.16:databases/lmdb0
+CONFIGURE_ENV+=			PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 .         endif
 PLIST_FILES+=	${SAMBA_LDB_MODULESDIR}/mdb.so \
 		${SAMBA_LIBDIR}/private/libldb-mdb-int-private-samba.so

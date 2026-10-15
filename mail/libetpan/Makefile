@@ -1,6 +1,7 @@
 PORTNAME=	libetpan
 PORTVERSION=	1.10.1
 CATEGORIES=	mail
+PORTREVISION=	1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mail framework for C language
@@ -39,7 +40,10 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libgpg-error.so:security/libgpg-error
 IPV6_CONFIGURE_ENABLE=	ipv6
 LMDB_CONFIGURE_ENABLE=	lmdb
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LMDB_CPPFLAGS=		-I${LOCALBASE}/lmdb0/include
+LMDB_LDFLAGS=		-L${LOCALBASE}/lmdb0/lib
+LMDB_CONFIGURE_ENV=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
+LMDB_LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 OPENSSL_CONFIGURE_WITH=	openssl="${OPENSSLBASE}"
 OPENSSL_USES=		ssl
 

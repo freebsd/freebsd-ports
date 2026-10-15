@@ -1,7 +1,8 @@
 PORTNAME=	cardano-db-sync
 PORTVERSION=	13.7.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p databases
+MAKE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	ghc-9.8.4:lang/ghc98 \
 LIB_DEPENDS=	libsecp256k1.so:math/secp256k1 \
 		libblst.so:security/blst \
 		libicuuc.so:devel/icu \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libsnappy.so:archivers/snappy
 RUN_DEPENDS=	cardano-node:net-p2p/cardano-node \
 		bash:shells/bash \

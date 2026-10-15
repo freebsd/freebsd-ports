@@ -2,6 +2,8 @@ PORTNAME=	cardano-cli
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	11.3.0.0
 CATEGORIES=	sysutils net-p2p
+PORTREVISION=	1
+MAKE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -15,7 +17,7 @@ NOT_FOR_ARCHS=	i386
 
 LIB_DEPENDS=	libsecp256k1.so:math/secp256k1 \
 		libblst.so:security/blst \
-		liblmdb.so:databases/lmdb0
+		liblmdb0.so:databases/lmdb0
 
 USES=		autoreconf:build cabal gmake libtool pkgconfig
 

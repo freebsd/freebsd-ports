@@ -1,6 +1,6 @@
 PORTNAME=	postfix
 DISTVERSION=	3.12-20260925
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	https://postfix-mirror.horus-it.com/postfix-release/ \
@@ -370,12 +370,14 @@ MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
 .if ${PORT_OPTIONS:MLMDB}
 .  if ${PORT_OPTIONS:MLMDB1}
 LIB_DEPENDS+=	liblmdb.so:databases/lmdb
+LMDB_PKG=	lmdb
 .  else
-LIB_DEPENDS+=	liblmdb.so:databases/lmdb0
+LIB_DEPENDS+=	liblmdb0.so:databases/lmdb0
+LMDB_PKG=	lmdb0
 .  endif
 DYN_EXT+=		lmdb
-POSTFIX_CCARGS+=	-DHAS_LMDB `pkg-config --cflags lmdb`
-POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LMDB=`pkg-config --libs lmdb`"
+POSTFIX_CCARGS+=	-DHAS_LMDB `pkg-config --cflags ${LMDB_PKG}`
+POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LMDB=`pkg-config --libs ${LMDB_PKG}`"
 .endif
 
 # sed script for files in ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man

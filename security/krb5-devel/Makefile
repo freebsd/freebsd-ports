@@ -1,6 +1,7 @@
 PORTNAME=		krb5
 PORTVERSION=		1.23.${MIT_COMMIT_DATE}
 CATEGORIES=		security
+PORTREVISION=	1
 .if !defined(MASTERDIR)
 PKGNAME_X=		-${FLAVOR:S/default//}-devel
 .else
@@ -57,7 +58,9 @@ LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
 LMDB_CONFIGURE_WITH=	lmdb
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LMDB_CPPFLAGS=		-I${LOCALBASE}/lmdb0/include
+LMDB_LDFLAGS=		-L${LOCALBASE}/lmdb0/lib
+LMDB_LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 LMDB_IMPLIES=		LDAP
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls

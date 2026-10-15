@@ -1,6 +1,10 @@
 PORTNAME=	cde
 PORTVERSION=	${COMMIT_DATE}
 CATEGORIES=	x11
+PORTREVISION=	1
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	-devel
 .endif
@@ -37,7 +41,7 @@ RUN_DEPENDS=	ksh93:shells/ksh			\
 		xrdb:x11/xrdb \
 		xset:x11/xset \
 		sessreg:x11/sessreg
-LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 
 USES=		autoreconf:build iconv gmake jpeg libtool motif perl5 \
 		pkgconfig shebangfix tcl:86 xorg

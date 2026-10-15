@@ -7,7 +7,7 @@ DISTVERSION=	9.20.29
 PORTREVISION=	0
 .else
 # dns/bind920 here
-PORTREVISION=	0
+PORTREVISION=	1
 .endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
@@ -154,8 +154,8 @@ IDN_CONFIGURE_OFF=	--without-libidn2
 
 LARGE_FILE_CONFIGURE_ENABLE=	largefile
 
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
-LMDB_CONFIGURE_WITH=	lmdb=${LOCALBASE}
+LMDB_LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
+LMDB_CONFIGURE_WITH=	lmdb=${LOCALBASE}/lmdb0
 
 OVERRIDECACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 

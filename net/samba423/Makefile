@@ -1,6 +1,6 @@
 PORTNAME=			samba423
 DISTVERSION=			4.23.13
-PORTREVISION=			1
+PORTREVISION=	2
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			samba-${DISTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
@@ -441,6 +441,7 @@ _BUNDLED_LIBS+=			${"${PORT_OPTIONS:MBUNDLED_TDB}" == "BUNDLED_TDB":?:!}pytdb
 _LMDB_DEPDENDS=			lmdb>=1.0:databases/lmdb
 .		else
 _LMDB_DEPDENDS=			lmdb0>=0.9.16:databases/lmdb0
+CONFIGURE_ENV+=			PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 .		endif
 PLIST_FILES+=			${SAMBA_LIBDIR}/private/libldb-mdb-int-private-samba.so \
 				${SAMBA_LDB_MODULESDIR}/mdb.so

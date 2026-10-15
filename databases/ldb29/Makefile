@@ -1,6 +1,6 @@
 PORTNAME=	ldb
 PORTVERSION=	2.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	SAMBA
 PKGNAMESUFFIX?=	${PORTVERSION:C/([[:digit:]]+)[.]([[:digit:]]+).*/\1\2/}
@@ -33,6 +33,7 @@ CONFIGURE_ARGS+=	--bundled-libraries=!talloc,!tevent,!tdb,!popt,!cmocka \
 			--with-privatelibdir=${PREFIX}/lib/ldb \
 			--without-gettext
 CONFIGURE_ENV+=		NOCOLOR=yes
+CONFIGURE_ENV+=		PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MAKE_ENV+=		NOCOLOR=yes
 CFLAGS+=		${_CFLAGS_${COMPILER_TYPE}}
 DEBUG_FLAGS=		-g -ggdb3 -O0

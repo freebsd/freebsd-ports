@@ -1,7 +1,7 @@
 PORTNAME=	caffe
 DISTVERSION=	1.0-136
 DISTVERSIONSUFFIX=	-g9b891540
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	misc # machine-learning
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libsnappy.so:archivers/snappy \
 		libleveldb.so:databases/leveldb \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libboost_thread.so:devel/boost-libs \
 		${PY_BOOST} \
 		libgflags.so:devel/gflags \
@@ -47,6 +47,9 @@ CMAKE_ARGS=	-DBLAS=Open \
 		-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
 		-DFREEBSD_PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
 CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/lmdb0/include
+CMAKE_ARGS+=	-DCMAKE_LIBRARY_PATH=${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 CXXFLAGS+=	-DGLOG_USE_GLOG_EXPORT
 LDFLAGS+=	-lpython${PYTHON_VER}
 

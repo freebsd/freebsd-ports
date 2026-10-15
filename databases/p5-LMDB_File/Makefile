@@ -1,6 +1,6 @@
 PORTNAME=	LMDB_File
 PORTVERSION=	0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SORTIZ
@@ -12,10 +12,11 @@ WWW=		https://metacpan.org/dist/LMDB_File
 
 LICENSE=	ART20
 
-LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 
 USES=		localbase perl5
 USE_PERL5=	configure
+CONFIGURE_ARGS=	INC=-I${LOCALBASE}/lmdb0/include LIBS=-L${LOCALBASE}/lmdb0/lib\ -llmdb
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/LMDB_File/LMDB_File.so

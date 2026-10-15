@@ -1,7 +1,10 @@
 PORTNAME=	cde
 DISTVERSION=	2.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	SF/cdesktopenv/src/
 
 MAINTAINER=	cy@FreeBSD.org
@@ -26,7 +29,7 @@ RUN_DEPENDS=	ksh93:shells/ksh			\
 		xrdb:x11/xrdb \
 		xset:x11/xset \
 		sessreg:x11/sessreg
-LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 
 USES=		autoreconf:build iconv gmake jpeg libtool motif perl5 \
 		shebangfix tcl:86 xorg

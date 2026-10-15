@@ -1,7 +1,8 @@
 PORTNAME=	dnsdist
 DISTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns net
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -88,7 +89,7 @@ GNUTLS_MESON_ENABLED=	tls-gnutls
 IPCIPHER_IMPLIES=	OPENSSL
 IPCIPHER_MESON_ENABLED=	ipcipher
 
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LMDB_LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 LMDB_MESON_ENABLED=	lmdb
 
 LUAJIT_USES=		luajit

@@ -1,8 +1,9 @@
 PORTNAME=	ogmios
 PORTVERSION=	7.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-p2p
+MAKE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsecp256k1.so:math/secp256k1 \
 		libblst.so:security/blst \
-		liblmdb.so:databases/lmdb0
+		liblmdb0.so:databases/lmdb0
 RUN_DEPENDS=	cardano-node:net-p2p/cardano-node
 
 USES=		autoreconf:build cabal gmake libtool pkgconfig

@@ -1,6 +1,10 @@
 PORTNAME=	ot-recorder
 PORTVERSION=	1.0.3
 CATEGORIES=	www
+PORTREVISION=	1
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Store and access data published by OwnTracks apps
@@ -17,7 +21,7 @@ BUILD_DEPENDS=	curl>0:ftp/curl \
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libcurl.so:ftp/curl \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libmosquitto.so:net/mosquitto \
 		libuuid.so:misc/libuuid
 

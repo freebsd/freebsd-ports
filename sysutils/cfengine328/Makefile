@@ -1,6 +1,7 @@
 PORTNAME=	cfengine
 DISTVERSION=	3.28.0
 CATEGORIES=	sysutils
+PORTREVISION=	1
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}
 
@@ -39,13 +40,13 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--mandir=${PREFIX}/man \
 		--with-workdir=/var/cfengine \
 		--with-pcre2=${LOCALBASE} \
-		--with-lmdb=${LOCALBASE} \
+		--with-lmdb=${LOCALBASE}/lmdb0 \
 		--enable-fhs
 INSTALL_TARGET=	install-strip
 
 LIB_DEPENDS+=	libpcre.so:devel/pcre \
 		libpcre2-posix.so:devel/pcre2 \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libyaml.so:textproc/libyaml \
 		libcurl.so:ftp/curl \
 		librsync.so:net/librsync

@@ -1,6 +1,6 @@
 PORTNAME=	cyrus-imapd
 PORTVERSION=	3.0.18
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	30
@@ -70,8 +70,11 @@ LDAP_DESC=		Enable LDAP support (experimental)
 LDAP_USES=		ldap
 LDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
 LMDB_DESC=		Use LMDB backend
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LMDB_LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 LMDB_CONFIGURE_WITH=	lmdb
+LMDB_CPPFLAGS=		-I${LOCALBASE}/lmdb0/include
+LMDB_LDFLAGS=		-L${LOCALBASE}/lmdb0/lib
+LMDB_CONFIGURE_ENV=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MURDER_DESC=		Enable IMAP Murder support
 MURDER_CONFIGURE_ENABLE=murder
 MURDER_MAKE_ENV=	PTHREAD_LIBS="-lpthread"

@@ -1,8 +1,9 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 
 PATCH_SITES=	https://github.com/Nheko-Reborn/nheko/commit/
 PATCHFILES+=	af2ca72030deb14a920a888e807dc732d93e3714.patch:-p1 # Fix configure with Qt 6.10
@@ -24,7 +25,7 @@ LIB_DEPENDS=	\
 		libkdsingleapplication-qt6.so:devel/kdsingleapplication \
 		libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libmatrix_client.so:net-im/mtxclient \
 		libolm.so:security/olm \
 		libqt6keychain.so:security/qtkeychain@qt6
@@ -41,6 +42,8 @@ USE_QT=		base declarative multimedia svg \
 #  - lmdb++ is a single header file, it just needs to be included
 CMAKE_ARGS=	-DLMDBXX_INCLUDE_DIR=${WRKSRC}/deps/lmdb \
 		-DCMAKE_INSTALL_MANDIR=share/man
+CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/lmdb0/include
+CMAKE_ARGS+=	-DCMAKE_LIBRARY_PATH=${LOCALBASE}/lmdb0/lib
 CFLAGS+=	-DSPDLOG_FMT_EXTERNAL=1
 LDFLAGS+=	-L${LOCALBASE}/lib -lfmt
 

@@ -1,6 +1,8 @@
 PORTNAME=	cardano-node
 PORTVERSION=	11.1.3
 CATEGORIES=	net-p2p
+PORTREVISION=	1
+MAKE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -16,7 +18,7 @@ BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96 \
 		protoc:devel/protobuf
 LIB_DEPENDS=	libsecp256k1.so:math/secp256k1 \
 		libblst.so:security/blst \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libsnappy.so:archivers/snappy
 RUN_DEPENDS=	${LOCALBASE}/share/rc-subr-jail/rc.subr.jail:ports-mgmt/rc-subr-jail
 

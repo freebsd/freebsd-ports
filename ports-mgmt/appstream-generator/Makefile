@@ -2,7 +2,8 @@ PORTNAME=	appstream-generator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
 CATEGORIES=	ports-mgmt
-
+PORTREVISION=	1
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Fast AppStream metadata generator
 WWW=		https://github.com/ximion/appstream-generator
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libappstream.so:devel/appstream \
 		libappstream-compose.so:devel/appstream-compose \
 		libCatch2.so:devel/catch2 \
 		libcurl.so:ftp/curl \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libicuuc.so:devel/icu \
 		libtbb.so:devel/onetbb \
 		libfyaml.so:textproc/libfyaml

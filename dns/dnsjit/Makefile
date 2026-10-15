@@ -1,7 +1,10 @@
 PORTNAME=	dnsjit
 DISTVERSION=	1.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns net
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	https://www.dns-oarc.net/files/${PORTNAME}/
 
 MAINTAINER=	freebsd@dns.company
@@ -13,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libgnutls.so:security/gnutls \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
 

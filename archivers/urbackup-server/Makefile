@@ -1,7 +1,10 @@
 PORTNAME=	urbackup-server
 DISTVERSION=	2.5.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
 MAINTAINER=	ek@purplehat.org
@@ -13,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/server-license.txt
 
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
 		libcurl.so:ftp/curl \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libzstd.so:archivers/zstd
 
 USES=		autoreconf compiler:c++11-lang dos2unix fakeroot fuse libtool \
