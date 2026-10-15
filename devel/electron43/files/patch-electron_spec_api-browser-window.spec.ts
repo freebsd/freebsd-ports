@@ -1,4 +1,4 @@
---- electron/spec/api-browser-window.spec.ts.orig	2026-09-30 08:47:42 UTC
+--- electron/spec/api-browser-window.spec.ts.orig	2026-10-13 23:40:13 UTC
 +++ electron/spec/api-browser-window.spec.ts
 @@ -105,7 +105,7 @@ describe('BrowserWindow module', () => {
        }).not.to.throw();
@@ -99,7 +99,7 @@
          const maximize = once(w, 'maximize');
          w.show();
          w.maximize();
-@@ -3883,7 +3883,7 @@ describe('BrowserWindow module', () => {
+@@ -3876,7 +3876,7 @@ describe('BrowserWindow module', () => {
          expect(preMaxHeight).to.equal(size);
  
          // 'maximize' event is not emitted on Linux in CI.
@@ -108,7 +108,7 @@
            const maximize = once(w, 'maximize');
            w.show();
            w.maximize();
-@@ -5071,7 +5071,7 @@ describe('BrowserWindow module', () => {
+@@ -5064,7 +5064,7 @@ describe('BrowserWindow module', () => {
          expect(test.nodeTimers).to.equal(true);
          expect(test.nodeUrl).to.equal(true);
  
@@ -117,7 +117,7 @@
            expect(test.creationTime).to.be.null('creation time');
            expect(test.systemMemoryInfo).to.be.null('system memory info');
          } else {
-@@ -5587,7 +5587,7 @@ describe('BrowserWindow module', () => {
+@@ -5580,7 +5580,7 @@ describe('BrowserWindow module', () => {
      });
    });
  
@@ -126,7 +126,7 @@
      afterEach(closeAllWindows);
      it('emits an event when window is maximized', async () => {
        const w = new BrowserWindow({ show: false });
-@@ -5863,7 +5863,7 @@ describe('BrowserWindow module', () => {
+@@ -5856,7 +5856,7 @@ describe('BrowserWindow module', () => {
      // TODO(zcbenz):
      // This test does not run on Linux CI. See:
      // https://github.com/electron/electron/issues/28699
@@ -135,16 +135,16 @@
        'should bring a minimized maximized window back to maximized state',
        async () => {
          const w = new BrowserWindow({});
-@@ -5881,7 +5881,7 @@ describe('BrowserWindow module', () => {
+@@ -5874,7 +5874,7 @@ describe('BrowserWindow module', () => {
        }
      );
  
--    ifit(process.platform !== 'linux')('should not break fullscreen state', async () => {
-+    ifit(process.platform !== 'linux' && process.platform !== 'freebsd')('should not break fullscreen state', async () => {
+-    ifit(process.platform !== 'linux')('should not break fullscreen state', { tags: ['serial'] }, async () => {
++    ifit(process.platform !== 'linux' && process.platform !== 'freebsd')('should not break fullscreen state', { tags: ['serial'] }, async () => {
        const w = new BrowserWindow({ show: false });
        w.show();
  
-@@ -5904,7 +5904,7 @@ describe('BrowserWindow module', () => {
+@@ -5897,7 +5897,7 @@ describe('BrowserWindow module', () => {
    });
  
    // TODO(dsanders11): Enable once maximize event works on Linux again on CI
@@ -153,7 +153,7 @@
      afterEach(closeAllWindows);
      it('should show the window if it is not currently shown', async () => {
        const w = new BrowserWindow({ show: false });
-@@ -5941,7 +5941,7 @@ describe('BrowserWindow module', () => {
+@@ -5934,7 +5934,7 @@ describe('BrowserWindow module', () => {
  
      // TODO(dsanders11): Enable once minimize event works on Linux again.
      //                   See https://github.com/electron/electron/issues/28699
@@ -162,7 +162,7 @@
        const w = new BrowserWindow();
        const minimize = once(w, 'minimize');
        w.minimize();
-@@ -6456,7 +6456,7 @@ describe('BrowserWindow module', () => {
+@@ -6453,7 +6453,7 @@ describe('BrowserWindow module', () => {
        });
  
        // On Linux there is no "resizable" property of a window.
@@ -171,7 +171,7 @@
          const w = new BrowserWindow({ show: false });
          expect(w.resizable).to.be.true('resizable');
  
-@@ -6697,7 +6697,7 @@ describe('BrowserWindow module', () => {
+@@ -6694,7 +6694,7 @@ describe('BrowserWindow module', () => {
      });
    });
  
@@ -180,7 +180,7 @@
      // Not implemented on Linux.
      afterEach(closeAllWindows);
  
-@@ -8060,7 +8060,7 @@ describe('BrowserWindow module', () => {
+@@ -8061,7 +8061,7 @@ describe('BrowserWindow module', () => {
    describe('"transparent" option', { tags: ['serial'] }, () => {
      afterEach(closeAllWindows);
  

@@ -1,6 +1,6 @@
---- components/named_mojo_ipc_server/endpoint_options.h.orig	2026-03-13 16:54:03 UTC
+--- components/named_mojo_ipc_server/endpoint_options.h.orig	2026-10-14 12:14:13 UTC
 +++ components/named_mojo_ipc_server/endpoint_options.h
-@@ -65,7 +65,7 @@ struct EndpointOptions {
+@@ -77,7 +77,7 @@ struct EndpointOptions {
    std::wstring security_descriptor;
  #endif
  
