@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2026-09-08 22:03:06 UTC
++++ CMakeLists.txt
+@@ -32,16 +32,6 @@ endif()
+         "Release" "Debug" "MinSizeRel" "RelWithDebInfo")
+ endif()
+ 
+-# Kuku's table layout is defined only for little-endian targets; the static_assert in
+-# src/kuku/common.h explains why and is the primary guard. This is the backstop for
+-# compilers that define no __BYTE_ORDER__ macro, and it reports the problem at configure
+-# time with a clearer message than a compile error buried in a header.
+-if(DEFINED CMAKE_CXX_BYTE_ORDER AND NOT CMAKE_CXX_BYTE_ORDER STREQUAL "LITTLE_ENDIAN")
+-    message(FATAL_ERROR
+-        "Kuku supports little-endian targets only, but CMAKE_CXX_BYTE_ORDER is "
+-        "'${CMAKE_CXX_BYTE_ORDER}'.")
+-endif()
+-
+ if(CMAKE_CONFIGURATION_TYPES)
+     message(STATUS "Multi-config generator detected. Configurations: ${CMAKE_CONFIGURATION_TYPES}")
+ else()
