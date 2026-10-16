@@ -1,6 +1,5 @@
 PORTNAME=	gomuks
-DISTVERSION=	26.08
-PORTREVISION=	2
+DISTVERSION=	26.09
 CATEGORIES=	net-im
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -29,6 +28,7 @@ PLIST_FILES=	bin/gomuks \
 		bin/gomuks-terminal
 
 NPM_EXTRACT_WRKSRC=	${WRKSRC}/web
+NPM_PREFETCH_ARCHS=	amd64
 
 do-build:
 	cd ${WRKSRC}/web \
