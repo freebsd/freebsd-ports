@@ -1,4 +1,4 @@
-TIMESTAMP = 1791357480
+TIMESTAMP = 1792139771
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -641,5 +641,5 @@ SHA256 (rust/crates/zune-core-0.4.12.crate) = 3f423a2c17029964870cfaabb1f13dfab7
 SIZE (rust/crates/zune-core-0.4.12.crate) = 17355
 SHA256 (rust/crates/zune-jpeg-0.4.21.crate) = 29ce2c8a9384ad323cf564b67da86e21d3cfdff87908bc1223ed5c99bc792713
 SIZE (rust/crates/zune-jpeg-0.4.21.crate) = 68268
-SHA256 (kavehtehrani-cloudflare-speed-cli-v1.0.9_GH0.tar.gz) = bf54d0e8d89262d50b777a5bf2f545a333107e85fc9e634bba366d62194448b4
-SIZE (kavehtehrani-cloudflare-speed-cli-v1.0.9_GH0.tar.gz) = 712169
+SHA256 (kavehtehrani-cloudflare-speed-cli-v1.0.10_GH0.tar.gz) = 230a5ecac583107b94d33ef9e603923278dcdda40c7e14d909e413657834d99a
+SIZE (kavehtehrani-cloudflare-speed-cli-v1.0.10_GH0.tar.gz) = 713243
