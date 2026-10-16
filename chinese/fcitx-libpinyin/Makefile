@@ -1,6 +1,6 @@
 PORTNAME=	fcitx-libpinyin
 PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/:body \
 		http://download.fcitx-im.org/data/:data
@@ -15,12 +15,13 @@ WWW=		https://fcitx-im.org/wiki/Fcitx
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
-		libpinyin.so:chinese/libpinyin\
-		libFcitxQt5WidgetsAddons.so:textproc/fcitx-qt5
+BUILD_DEPENDS=	bash:shells/bash \
+		zh-fcitx>0:chinese/fcitx
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libpinyin.so:chinese/libpinyin
 
 USES=		cmake gettext gnome pkgconfig tar:xz
+USE_GNOME=	glib20
 
 _MODEL_VER=	20161206
 
