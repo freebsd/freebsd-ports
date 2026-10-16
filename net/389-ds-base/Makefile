@@ -58,6 +58,14 @@ LIBS+=		-lexecinfo
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le && (${OSVERSION} < 1405000 || \
+	(${OSVERSION} >= 1500000 && ${OSVERSION} < 1501501) || \
+	(${OSVERSION} >= 1600000 && ${OSVERSION} < 1600019))
+MAKE_ENV+=	RUST_LIB_BACKTRACE=0
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}/var/db/dirsrv \
 		${STAGEDIR}/var/log/dirsrv
