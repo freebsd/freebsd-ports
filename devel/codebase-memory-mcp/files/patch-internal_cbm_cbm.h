@@ -1,8 +1,8 @@
---- internal/cbm/cbm.h.orig	2026-09-15 17:16:24 UTC
+--- internal/cbm/cbm.h.orig	2026-10-16 05:39:05 UTC
 +++ internal/cbm/cbm.h
-@@ -380,6 +380,21 @@ typedef struct {
-     CBMChannelDirection direction;
- } CBMChannel;
+@@ -580,6 +580,21 @@ typedef struct {
+     const char *type_text;  // raw annotation text, resolved later per file
+ } CBMFieldType;
  
 +// FreeBSD/DragonFly sysctl OID declaration collected from a SYSCTL_* macro.
 +// The runtime dotted path (kern.ipc.maxsockbuf) is NOT stored here — it is
@@ -22,9 +22,9 @@
  // Rust: impl Trait for Struct
  typedef struct {
      const char *trait_name;  // trait name (raw text)
-@@ -493,6 +508,12 @@ typedef struct {
-     int cap;
- } CBMChannelArray;
+@@ -826,6 +841,12 @@ typedef struct {
+     bool failed;
+ } CBMDocLinkArray;
  
 +typedef struct {
 +    CBMSysctl *items;
@@ -35,27 +35,27 @@
  // Full extraction result for one file.
  typedef struct CBMFileResult {
      CBMArena arena; // owns local memory; composites may also retain child arenas below
-@@ -511,6 +532,7 @@ typedef struct CBMFileResult {
-     CBMStringRefArray string_refs;       // URL/config string literals from AST
+@@ -846,6 +867,7 @@ typedef struct CBMFileResult {
      CBMInfraBindingArray infra_bindings; // topic→URL pairs from IaC configs
+     CBMK8sFactArray k8s_facts;           // Kubernetes references and CRD declarations
      CBMChannelArray channels;            // Socket.IO / EventEmitter pub/sub participation
 +    CBMSysctlArray sysctls;              // FreeBSD/DragonFly SYSCTL_* OID declarations
+     CBMDiagramArrowArray diagram_arrows; // arrows between the file's DiagramElement defs
+     CBMFieldTypeArray field_types;       // Python: annotated instance fields (#1277)
  
-     const char *module_qn;      // module qualified name
-     const char *namespace_name; // declared namespace/package (Java/Kotlin/C#/PHP), NULL if none
-@@ -824,6 +846,7 @@ void cbm_channels_push(CBMChannelArray *arr, CBMArena 
- void cbm_impltrait_push(CBMImplTraitArray *arr, CBMArena *a, CBMImplTrait it);
+@@ -1326,6 +1348,7 @@ void cbm_channels_push(CBMChannelArray *arr, CBMArena 
+ #endif
  void cbm_resolvedcall_push(CBMResolvedCallArray *arr, CBMArena *a, CBMResolvedCall rc);
  void cbm_channels_push(CBMChannelArray *arr, CBMArena *a, CBMChannel ch);
 +void cbm_sysctl_push(CBMSysctlArray *arr, CBMArena *a, CBMSysctl s);
+ void cbm_diagram_arrows_push(CBMDiagramArrowArray *arr, CBMArena *a, CBMDiagramArrow da);
  
  // --- Sub-extractor entry points ---
- 
-@@ -842,6 +865,7 @@ void cbm_extract_channels(CBMExtractCtx *ctx);
+@@ -1345,6 +1368,7 @@ void cbm_extract_channels(CBMExtractCtx *ctx);
  void cbm_extract_env_accesses(CBMExtractCtx *ctx);
  void cbm_extract_type_assigns(CBMExtractCtx *ctx);
  void cbm_extract_channels(CBMExtractCtx *ctx);
 +void cbm_extract_sysctl(CBMExtractCtx *ctx);
- 
- // Single-pass unified extraction (replaces the 7 calls above except defs+imports).
- void cbm_extract_unified(CBMExtractCtx *ctx);
+ /* Diagrams (diagram.c): a Diagram definition per diagram -- a Markdown, reST
+  * or AsciiDoc block, or a diagram file -- with a DiagramElement definition per
+  * element and the arrows between them. */

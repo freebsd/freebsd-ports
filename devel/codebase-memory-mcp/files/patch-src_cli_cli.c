@@ -1,6 +1,6 @@
---- src/cli/cli.c.orig	2026-09-16 19:47:37 UTC
+--- src/cli/cli.c.orig	2026-10-16 05:39:05 UTC
 +++ src/cli/cli.c
-@@ -9003,7 +9003,12 @@ static void cbm_agent_installed_binary_path(const char
+@@ -9223,7 +9223,12 @@ static void cbm_agent_installed_binary_path(const char
  
  static void cbm_agent_installed_binary_path(const char *home, char *binary_path,
                                              size_t binary_path_size) {
@@ -14,7 +14,7 @@
      snprintf(binary_path, binary_path_size, "%s/.local/bin/codebase-memory-mcp.exe", home);
  #else
      snprintf(binary_path, binary_path_size, "%s/.local/bin/codebase-memory-mcp", home);
-@@ -11147,6 +11152,13 @@ int cbm_cmd_install(int argc, char **argv) {
+@@ -11366,6 +11371,13 @@ int cbm_cmd_install(int argc, char **argv) {
                     manager ? " by " : "", manager ? manager : "", self_path, bin_dir);
          }
          skip_binary = true;

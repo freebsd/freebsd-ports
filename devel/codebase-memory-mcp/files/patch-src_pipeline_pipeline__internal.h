@@ -1,6 +1,6 @@
---- src/pipeline/pipeline_internal.h.orig	2026-08-18 20:39:59 UTC
+--- src/pipeline/pipeline_internal.h.orig	2026-10-16 05:39:05 UTC
 +++ src/pipeline/pipeline_internal.h
-@@ -570,6 +570,13 @@ int cbm_pipeline_pass_definitions(cbm_pipeline_ctx_t *
+@@ -1167,6 +1167,13 @@ int cbm_pipeline_pass_definitions(cbm_pipeline_ctx_t *
  int cbm_pipeline_pass_definitions(cbm_pipeline_ctx_t *ctx, const cbm_file_info_t *files,
                                    int file_count);
  

@@ -1,6 +1,6 @@
---- src/daemon/ipc.c.orig	2026-09-16 19:49:25 UTC
+--- src/daemon/ipc.c.orig	2026-10-16 05:39:05 UTC
 +++ src/daemon/ipc.c
-@@ -381,6 +381,9 @@ int cbm_daemon_ipc_wait_pending(const cbm_ipc_pending_
+@@ -482,6 +482,9 @@ int cbm_daemon_ipc_wait_pending(const cbm_ipc_pending_
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <sys/un.h>
@@ -9,8 +9,8 @@
 +#endif
  #include <time.h>
  #include <unistd.h>
- 
-@@ -3467,6 +3470,19 @@ uint64_t cbm_daemon_ipc_connection_peer_pid(const cbm_
+ #if defined(__linux__)
+@@ -3755,6 +3758,19 @@ uint64_t cbm_daemon_ipc_connection_peer_pid(const cbm_
          return 0;
      }
      return (uint64_t)peer_id.unp_pid;
