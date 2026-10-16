@@ -1,5 +1,5 @@
 PORTNAME=	nmap
-DISTVERSION=	7.991
+DISTVERSION=	7.992
 CATEGORIES=	security
 MASTER_SITES=	https://nmap.org/dist/
 
