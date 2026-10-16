@@ -122,13 +122,6 @@ LLD_COMMANDS=	\
 		lld-link \
 		wasm-ld
 
-LLDB_COMMANDS=	\
-		lldb \
-		lldb-argdumper \
-		lldb-instr \
-		lldb-server \
-		lldb-vscode
-
 MLIR_COMMANDS=	\
 		mlir-cpu-runner \
 		mlir-linalg-ods-yaml-gen \

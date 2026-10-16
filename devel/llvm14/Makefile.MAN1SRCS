@@ -56,9 +56,6 @@ LIT_MAN1SRCS= \
 	lit.1 \
 	FileCheck.1
 
-LLDB_MAN1SRCS= \
-	lldb-tblgen.1
-
 MLIR_MAN1SRCS= \
 	mlir-tblgen.1
 
