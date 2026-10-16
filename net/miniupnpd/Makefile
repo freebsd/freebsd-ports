@@ -1,15 +1,11 @@
 PORTNAME=	miniupnpd
-DISTVERSION=	2.3.9
-PORTREVISION=	1
+DISTVERSION=	2.3.11
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/ \
 		https://github.com/miniupnp/miniupnp/releases/download/${PORTNAME}_${DISTVERSION:S|.|_|g}/
 
-PATCH_SITES=	https://github.com/miniupnp/miniupnp/commit/
-PATCHFILES=	7949a7acb3b8471681157863387339ea2ca749fb.patch:-p2
-
-MAINTAINER=	squat@squat.no
+MAINTAINER=	rcm@FreeBSD.org
 COMMENT=	Lightweight UPnP IGD & PCP/NAT-PMP daemon which uses pf
 WWW=		http://miniupnp.free.fr/
 
