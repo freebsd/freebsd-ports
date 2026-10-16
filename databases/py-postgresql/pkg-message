@@ -1,0 +1,44 @@
+[
+{ type: install
+  message: <<EOM
+py-postgresql verifies the server certificate of SSL/TLS connections
+against a CA (like libpq's sslmode=verify-ca; the host name is not
+checked), and trusts no CA unless one is configured.
+
+Set the sslrootcrtfile connection parameter to a CA file.
+postgresql.open(), the DB-API connect() and pg_python also use
+~/.postgresql/root.crt if it exists (~ being the passwd home directory
+of $LOGNAME or $USER); postgresql.driver.connect() does not, it needs
+an explicit sslrootcrtfile.
+
+With the default sslmode=prefer, a failed verification does not fall
+back to an unencrypted connection.  To connect without verification,
+use sslmode=disable, or sslmode=allow (no SSL unless the server
+requires it).
+EOM
+}
+{ type: upgrade
+  maximum_version: "1.3.1"
+  message: <<EOM
+Since py-postgresql 1.3.1, SSL/TLS connections verify the server
+certificate against a CA (like libpq's sslmode=verify-ca; the host
+name is not checked).  1.3.0 did not verify it.
+
+No CA is trusted unless one is configured: set the sslrootcrtfile
+connection parameter to a CA file.  postgresql.open(), the DB-API
+connect() and pg_python also use ~/.postgresql/root.crt if it exists
+(~ being the passwd home directory of $LOGNAME or $USER);
+postgresql.driver.connect() does not, it needs an explicit
+sslrootcrtfile.
+
+With the default sslmode=prefer, a failed verification does not fall
+back to an unencrypted connection; the connection fails.
+
+So connections to SSL-enabled servers fail until you either:
+  - set sslrootcrtfile=<CA file> (or install ~/.postgresql/root.crt
+    where that applies), or
+  - opt out with sslmode=disable, or sslmode=allow (no SSL unless
+    the server requires it).
+EOM
+}
+]
