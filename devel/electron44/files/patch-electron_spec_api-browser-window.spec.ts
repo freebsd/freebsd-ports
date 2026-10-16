@@ -1,4 +1,4 @@
---- electron/spec/api-browser-window.spec.ts.orig	2026-10-07 16:24:25 UTC
+--- electron/spec/api-browser-window.spec.ts.orig	2026-10-13 23:18:11 UTC
 +++ electron/spec/api-browser-window.spec.ts
 @@ -118,7 +118,7 @@ describe('BrowserWindow module', () => {
        }).not.to.throw();
@@ -121,8 +121,8 @@
        }
      );
  
--    ifit(process.platform !== 'linux')('should not break fullscreen state', async () => {
-+    ifit(process.platform !== 'linux' && process.platform !== 'freebsd')('should not break fullscreen state', async () => {
+-    ifit(process.platform !== 'linux')('should not break fullscreen state', { tags: ['serial'] }, async () => {
++    ifit(process.platform !== 'linux' && process.platform !== 'freebsd')('should not break fullscreen state', { tags: ['serial'] }, async () => {
        const w = new BrowserWindow({ show: false });
        w.show();
  
@@ -144,7 +144,7 @@
        const w = new BrowserWindow();
        const minimize = once(w, 'minimize');
        w.minimize();
-@@ -6622,7 +6622,7 @@ describe('BrowserWindow module', () => {
+@@ -6626,7 +6626,7 @@ describe('BrowserWindow module', () => {
        });
  
        // On Linux there is no "resizable" property of a window.
@@ -153,7 +153,7 @@
          const w = new BrowserWindow({ show: false });
          expect(w.resizable).to.be.true('resizable');
  
-@@ -6863,7 +6863,7 @@ describe('BrowserWindow module', () => {
+@@ -6867,7 +6867,7 @@ describe('BrowserWindow module', () => {
      });
    });
  
@@ -162,7 +162,7 @@
      // Not implemented on Linux.
      afterEach(closeAllWindows);
  
-@@ -8226,7 +8226,7 @@ describe('BrowserWindow module', () => {
+@@ -8234,7 +8234,7 @@ describe('BrowserWindow module', () => {
    describe('"transparent" option', { tags: ['serial'] }, () => {
      afterEach(closeAllWindows);
  

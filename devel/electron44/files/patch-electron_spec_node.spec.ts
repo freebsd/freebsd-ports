@@ -1,6 +1,6 @@
---- electron/spec/node.spec.ts.orig	2026-09-29 23:27:57 UTC
+--- electron/spec/node.spec.ts.orig	2026-10-13 23:18:11 UTC
 +++ electron/spec/node.spec.ts
-@@ -237,7 +237,7 @@ describe('node feature', () => {
+@@ -239,7 +239,7 @@ describe('node feature', () => {
      });
  
      describe('child_process.exec', () => {

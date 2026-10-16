@@ -1,6 +1,6 @@
---- electron/spec/api-browser-window-ignore-mouse-events.spec.ts.orig	2026-10-08 11:20:01 UTC
+--- electron/spec/api-browser-window-ignore-mouse-events.spec.ts.orig	2026-10-13 23:18:11 UTC
 +++ electron/spec/api-browser-window-ignore-mouse-events.spec.ts
-@@ -41,11 +41,11 @@ const hasRealInput =
+@@ -45,11 +45,11 @@ const hasRealInput =
  // Nothing can inject input into a Wayland compositor from a client, so only
  // X11 is covered on Linux.
  const hasRealInput =

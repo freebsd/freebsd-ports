@@ -1,6 +1,6 @@
---- electron/spec/api-menu.spec.ts.orig	2026-09-29 23:27:57 UTC
+--- electron/spec/api-menu.spec.ts.orig	2026-10-13 23:18:11 UTC
 +++ electron/spec/api-menu.spec.ts
-@@ -955,7 +955,7 @@ describe('Menu module', function () {
+@@ -957,7 +957,7 @@ describe('Menu module', function () {
      // https://github.com/electron/electron/issues/35724
      // Maximizing window is enough to trigger the bug
      // FIXME(dsanders11): Test always passes on CI, even pre-fix
