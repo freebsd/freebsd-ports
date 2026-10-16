@@ -11,6 +11,4 @@ LICENSE=	GPLv2+
 
 USES=		cran:auto-plist
 
-NO_ARCH=	yes
-
 .include <bsd.port.mk>

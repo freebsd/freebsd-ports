@@ -17,6 +17,4 @@ TEST_DEPENDS=	R-cran-digest>0:security/R-cran-digest \
 
 USES=		cran:auto-plist
 
-NO_ARCH=	yes
-
 .include <bsd.port.mk>
