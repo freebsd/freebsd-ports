@@ -24,6 +24,7 @@ lib/ipfixcol2/libipfix-input.so
 lib/ipfixcol2/libipfix-output.so
 lib/ipfixcol2/libjson-kafka-output.so
 lib/ipfixcol2/libjson-output.so
+lib/ipfixcol2/liboverview-output.so
 lib/ipfixcol2/libtcp-input.so
 lib/ipfixcol2/libtimecheck-output.so
 lib/ipfixcol2/libudp-input.so
@@ -39,6 +40,7 @@ share/man/man7/ipfixcol2-ipfix-input.7.gz
 share/man/man7/ipfixcol2-ipfix-output.7.gz
 share/man/man7/ipfixcol2-json-kafka-output.7.gz
 share/man/man7/ipfixcol2-json-output.7.gz
+share/man/man7/ipfixcol2-overview-output.7.gz
 share/man/man7/ipfixcol2-tcp-input.7.gz
 share/man/man7/ipfixcol2-timecheck-output.7.gz
 share/man/man7/ipfixcol2-udp-input.7.gz

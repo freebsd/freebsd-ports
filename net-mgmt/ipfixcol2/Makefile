@@ -1,6 +1,6 @@
 PORTNAME=	ipfixcol2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
+DISTVERSION=	2.9.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
@@ -13,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Requires 64bit time_t: static_assert(sizeof(uint64_t) == sizeof(time_t), "Assumed that time_t is uint64_t, but it's not")
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils
+BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libfds.so:net-mgmt/libfds \
 		liblz4.so:archivers/liblz4 \
 		librdkafka.so:net/librdkafka
 
-USES=		cmake:testing localbase:ldflags pkgconfig
+USES=		cmake:testing localbase:ldflags pkgconfig python:env
 USE_GITHUB=	yes
 GH_ACCOUNT=	CESNET
 USE_RC_SUBR=	${PORTNAME}
