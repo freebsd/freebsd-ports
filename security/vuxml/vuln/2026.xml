@@ -1,3 +1,31 @@
+  <vuln vid="43dc274d-f74b-4420-8ef8-d2e108213002">
+    <topic>miniupnpd -- Integer underflow in SOAPAction header parsing</topic>
+    <affects>
+      <package>
+	<name>miniupnpd</name>
+	<range><lt>2.3.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An integer underflow in the SOAPAction header parsing in
+	  ParseHttpHeaders() lets a remote attacker trigger an
+	  out-of-bounds read by sending a malformed SOAPAction header
+	  containing a single quote.  This can crash miniupnpd or
+	  disclose memory beyond the HTTP request buffer.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-5720</cvename>
+      <url>https://www.vulncheck.com/advisories/miniupnpd-integer-underflow-soapaction-header-parsing</url>
+      <url>https://github.com/miniupnp/miniupnp/commit/f56bd09b2f2650126b832c5f30a65a09e28167fa</url>
+    </references>
+    <dates>
+      <discovery>2026-04-17</discovery>
+      <entry>2026-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dec22770-c953-11f1-bebb-3c7c3fba4204">
     <topic>Text::CSV_XS -- multiple vulnerabilities</topic>
     <affects>
