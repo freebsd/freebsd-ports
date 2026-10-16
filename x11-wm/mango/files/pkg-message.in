@@ -54,4 +54,21 @@ In particular, if you use x11/waybar, version 0.15.0, you have to consider
 that version is not compatible with the current version of Mango.
 EOM
 }
+{ type: upgrade
+  maximum_version: "0.18.0"
+  message: <<EOM
+To make the configuration format appear more regular, some configuration keys
+have now been renamed/duplicated. Please run the following commands to migrate
+them globally:
+
+    fetch -o migrate-config-keys.sh \
+    https://github.com/user-attachments/files/33058895/migrate-config-keys.sh
+
+    pkg install bash # as root
+
+    bash migrate-config-keys.sh -b ~/.config/mango
+
+    pkg delete bash # as root, if you no longer need the bash program
+EOM
+}
 ]

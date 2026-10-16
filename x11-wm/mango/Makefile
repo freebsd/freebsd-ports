@@ -1,5 +1,5 @@
 PORTNAME=	mango
-DISTVERSION=	0.17.5
+DISTVERSION=	0.18.0
 PORTREVISION=	0
 CATEGORIES=	x11-wm
 
@@ -41,7 +41,7 @@ OPTIONS_DEFINE=	DOCS
 ICONSDIR=	share/icons/hicolor/512x512/apps
 
 post-patch:
-	@${REINPLACE_CMD} -E -e "s|(assets/(config.conf))|\1', rename : '\2.sample|1" \
+	@${REINPLACE_CMD} -E -e "s#(assets/(config.(conf|toml)))#\1', rename : '\2.sample#1" \
 		${WRKSRC}/meson.build
 
 post-install:
