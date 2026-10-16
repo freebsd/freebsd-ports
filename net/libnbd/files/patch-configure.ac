@@ -1,38 +1,8 @@
-Define TLS_PRIORITY even without GnuTLS, since the handle and URI code
-use it unconditionally. Export enabled library dependencies for static
-pkg-config consumers.
+Export enabled library dependencies for static pkg-config consumers.
 
---- configure.ac.orig	2026-07-15 10:54:49 UTC
+--- configure.ac.orig	2026-10-13 11:57:24 UTC
 +++ configure.ac
-@@ -267,17 +267,17 @@ AM_CONDITIONAL([HAVE_GNUTLS], [test "x$GNUTLS_LIBS" !=
- ])
- AM_CONDITIONAL([HAVE_GNUTLS], [test "x$GNUTLS_LIBS" != "x"])
- 
--AS_IF([test "$GNUTLS_LIBS" != ""],[
--    AC_MSG_CHECKING([for default TLS session priority string])
--    AC_ARG_WITH([tls-priority],
--        [AS_HELP_STRING([--with-tls-priority=...],
--                        [default TLS session priority string @<:@default=NORMAL@:>@])],
--        [tls_priority=$withval],
--        [tls_priority=NORMAL])
--    AC_MSG_RESULT([$tls_priority])
--    AC_DEFINE_UNQUOTED([TLS_PRIORITY],["$tls_priority"],
--                       [Default TLS session priority string])
-+AC_MSG_CHECKING([for default TLS session priority string])
-+AC_ARG_WITH([tls-priority],
-+    [AS_HELP_STRING([--with-tls-priority=...],
-+                    [default TLS session priority string @<:@default=NORMAL@:>@])],
-+    [tls_priority=$withval],
-+    [tls_priority=NORMAL])
-+AC_MSG_RESULT([$tls_priority])
-+AC_DEFINE_UNQUOTED([TLS_PRIORITY],["$tls_priority"],
-+                   [Default TLS session priority string])
- 
-+AS_IF([test "$GNUTLS_LIBS" != ""],[
-     # Check for working <gnutls/socket.h>.  This is only needed for
-     # gnutls 3.7.9 and no other version (unfortunately used by Debian
-     # 12 and others).  In that release kTLS functionality was added to
-@@ -326,6 +326,15 @@ AM_CONDITIONAL([HAVE_LIBXML2], [test "x$LIBXML2_LIBS" 
+@@ -328,6 +328,15 @@
      ])
  ])
  AM_CONDITIONAL([HAVE_LIBXML2], [test "x$LIBXML2_LIBS" != "x"])

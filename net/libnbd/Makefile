@@ -1,5 +1,5 @@
 PORTNAME=	libnbd
-PORTVERSION=	1.24.3
+PORTVERSION=	1.24.4
 CATEGORIES=	net
 MASTER_SITES=	https://download.libguestfs.org/${PORTNAME}/${PORTVERSION:R}-stable/
 
