@@ -1,5 +1,5 @@
 PORTNAME=	cryptopp-modern
-DISTVERSION=	2026.9.1
+DISTVERSION=	2026.10.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/cryptopp-modern/${PORTNAME}/releases/download/${DISTVERSION}/
 
