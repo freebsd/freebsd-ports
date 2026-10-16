@@ -1,6 +1,7 @@
 PORTNAME=	wasabi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.4 # 1.0.1 is still broken
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +10,6 @@ WWW=		https://github.com/BlackMIDIDevs/wasabi
 
 LICENSE=	APACHE20 # Don't Be a Dick Public License based on Apache 2.0, see http://www.dbad-license.org/
 
-BUILD_DEPENDS=	rust-nightly>0:lang/rust-nightly
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 USES=		cargo gmake perl5 pkgconfig python:build
@@ -19,7 +19,7 @@ USE_PERL5=	build
 
 GH_ACCOUNT=	BlackMIDIDevs
 
-CARGO_BUILDDEP=	no
+CARGO_ENV=	RUSTC_BOOTSTRAP=1
 CARGO_CRATES=	ab_glyph-0.2.23 \
 		ab_glyph_rasterizer-0.1.8 \
 		accesskit-0.17.1 \
