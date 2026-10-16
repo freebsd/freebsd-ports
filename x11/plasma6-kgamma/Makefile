@@ -1,9 +1,13 @@
 PORTNAME=	kgamma
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Adjust gamma settings
+
+DEPRECATED=	KDE Plasma 6.8 release is Wayland-exclusive: https://blogs.kde.org/2025/11/26/going-all-in-on-a-wayland-future/
+EXPIRATION_DATE=	2026-12-31
 
 USES=		cmake gettext gl kde:6 qt:6 tar:xz xorg
 USE_GL=		gl opengl
