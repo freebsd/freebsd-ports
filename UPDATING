@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261116:
+  AFFECTS: users of x11-wm/mango
+  AUTHOR: nivit@FreeBSD.org
+
+To make the configuration format appear more regular, some configuration keys
+have now been renamed/duplicated. Please run the following commands to migrate
+them globally:
+
+    fetch -o migrate-config-keys.sh \
+    https://github.com/user-attachments/files/33058895/migrate-config-keys.sh
+
+    pkg install bash # as root
+
+    bash migrate-config-keys.sh -b ~/.config/mango
+
+    pkg delete bash # as root, if you no longer need the bash program
+
 20261011:
   AFFECTS: users of devel/maven
   AUTHOR: michaelo@FreeBSD.org
