@@ -116,13 +116,13 @@ MAKE_ARGS+=	ARCH=arm
 .endif
 
 pre-configure:
-	@if [ ! $$(${CAT} ${WRKSRC}/lib/erl_interface/vsn.mk | ${GREP} "_EI_VSN *=" | ${CUT} -w -f3) = ${_EI_VSN} ]; then \
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/erl_interface/vsn.mk | ${GREP} -E "^EI_VSN *=" | ${CUT} -w -f3) = ${_EI_VSN} ]; then \
 		${ECHO_MSG} "===>  _EI_VSN (${_EI_VSN}) in Makefile does not match value in lib/erl_interface/vsn.mk"; exit 1; \
 	fi
-	@if [ ! $$(${CAT} ${WRKSRC}/lib/tools/vsn.mk | ${GREP} "_TOOLS_VSN *=" | ${CUT} -w -f3) = ${_TOOLS_VSN} ]; then \
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/tools/vsn.mk | ${GREP} -E "^TOOLS_VSN *=" | ${CUT} -w -f3) = ${_TOOLS_VSN} ]; then \
 		${ECHO_MSG} "===>  _TOOLS_VSN (${_TOOLS_VSN}) in Makefile does not match value in lib/tools/vsn.mk"; exit 1; \
 	fi
-	@if [ ! $$(${CAT} ${WRKSRC}/lib/snmp/vsn.mk | ${GREP} -E "_SNMP_VSN *=" | ${CUT} -w -f3) = ${_SNMP_VSN} ]; then \
+	@if [ ! $$(${CAT} ${WRKSRC}/lib/snmp/vsn.mk | ${GREP} -E "^SNMP_VSN *=" | ${CUT} -w -f3) = ${_SNMP_VSN} ]; then \
 		${ECHO_MSG} "===>  _SNMP_VSN (${_SNMP_VSN}) in Makefile does not match value in lib/snmp/vsn.mk"; exit 1; \
 	fi
 
