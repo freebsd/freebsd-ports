@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-08-25 21:10:07 UTC
+--- CMakeLists.txt.orig	2026-08-12 08:28:49 UTC
 +++ CMakeLists.txt
-@@ -49,7 +49,7 @@ set(POSTSRSD_CONFIGDIR
+@@ -42,7 +42,7 @@ set(POSTSRSD_DATADIR
          "The default directory where PostSRSd should look for configuration files"
  )
  set(POSTSRSD_DATADIR
@@ -9,14 +9,19 @@
      CACHE PATH "The default directory where PostSRSd should put runtime data"
  )
  set(POSTSRSD_CHROOTDIR
-@@ -73,24 +73,21 @@ option(WITH_REDIS
+@@ -66,6 +66,8 @@ add_feature_info(WITH_REDIS WITH_REDIS "use Redis as d
         OFF
  )
  add_feature_info(WITH_REDIS WITH_REDIS "use Redis as database backend")
 +set(DOC_DIR "share/doc/${PROJECT_NAME}" CACHE PATH "Path for documentation files")
 +option(MK_CHROOT_DIR "Chroot jail for daemon" OFF)
- option(TESTS_WITH_ASAN "Run test suite with AddressSanitizer" ON)
- option(DEVELOPER_BUILD "Add strict compiler options for development only" OFF)
+ option(WITH_SECCOMP "Enable additional sandboxing with seccomp" OFF)
+ add_feature_info(
+     WITH_SECCOMP WITH_SECCOMP "use seccomp for additional sandboxing"
+@@ -90,13 +92,13 @@ option(EXECUTABLE_WITH_ASAN "Build PostSRSd executable
+ option(EXECUTABLE_WITH_ASAN "Build PostSRSd executable with AddressSanitizer"
+        OFF
+ )
 -option(GENERATE_SRS_SECRET "Generate and install a postsrsd.secret" ON)
 +option(GENERATE_SRS_SECRET "Generate and install a postsrsd.secret" OFF)
  add_feature_info(
@@ -29,6 +34,9 @@
  add_feature_info(
      INSTALL_SYSTEMD_SERVICE INSTALL_SYSTEMD_SERVICE
      "install the systemd postsrsd.service unit"
+@@ -108,11 +110,6 @@ add_feature_info(
+     INSTALL_SYSTEMD_SYSUSERS DO_INSTALL_SYSTEMD_SYSUSERS
+     "instruct systemd to create the PostSRSd user \"${POSTSRSD_USER}\""
  )
 -find_systemd_unit_destination(DETECTED_SYSTEMD_UNITDIR)
 -set(SYSTEMD_UNITDIR
@@ -38,28 +46,7 @@
  find_systemd_sysusers_destination(DETECTED_SYSTEMD_SYSUSERSDIR)
  set(SYSTEMD_SYSUSERSDIR
      "${DETECTED_SYSTEMD_SYSUSERSDIR}"
-@@ -118,7 +115,6 @@ mark_as_advanced(
-     TESTS_WITH_ASAN
-     GENERATE_SRS_SECRET
-     DEVELOPER_BUILD
--    SYSTEMD_UNITDIR
-     POSTSRSD_CONFIGDIR
-     POSTSRSD_CHROOTDIR
-     POSTSRSD_DATADIR
-@@ -200,11 +196,7 @@ endif()
- set(THREADS_PREFER_PTHREAD_FLAG TRUE)
- find_package(Threads QUIET)
- 
--add_autotools_dependency(
--    Confuse
--    LIBRARY_NAME confuse
--    EXPORTED_TARGET Confuse::Confuse
--)
-+find_package(Confuse REQUIRED)
- 
- if(WITH_REDIS)
-     set(DISABLE_TESTS
-@@ -221,6 +213,7 @@ if(WITH_REDIS)
+@@ -303,6 +300,7 @@ if(WITH_REDIS)
              DIRECTORY "${hiredis_SOURCE_DIR}" PROPERTY EXCLUDE_FROM_ALL TRUE
          )
      endif()
@@ -67,20 +54,29 @@
      if(TARGET hiredis::hiredis_static)
          set(HIREDIS_TARGET hiredis::hiredis_static)
      elseif(TARGET hiredis::hiredis)
-@@ -364,13 +357,9 @@ install(TARGETS postsrsd RUNTIME DESTINATION ${CMAKE_I
- install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.conf"
+@@ -342,11 +340,7 @@ if(WITH_SECCOMP)
+ endif()
+ 
+ if(WITH_SECCOMP)
+-    add_autotools_dependency(
+-        seccomp
+-        LIBRARY_NAME seccomp
+-        EXPORTED_TARGET seccomp::seccomp
+-    )
++find_package(Confuse REQUIRED)
+ endif()
+ 
+ configure_file(
+@@ -422,10 +416,8 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_N
          DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/${PROJECT_NAME}"
  )
+ 
 -if(INSTALL_SYSTEMD_SERVICE)
 -    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.service"
 -            DESTINATION "${SYSTEMD_UNITDIR}"
 -    )
--    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/sysusers.d/${PROJECT_NAME}.conf"
--            DESTINATION "${SYSTEMD_SYSUSERSDIR}"
--    )
-+
 +if(ENABLE_DOCS)
 +       install(FILES README.rst CHANGELOG.rst doc/postsrsd.conf DESTINATION "${DOC_DIR}" )
  endif()
- 
- if(GENERATE_SRS_SECRET)
+ if(INSTALL_SYSTEMD_SYSUSERS AND NOT POSTSRSD_USER STREQUAL "nobody")
+     install(FILES "${CMAKE_CURRENT_BINARY_DIR}/sysusers.d/${PROJECT_NAME}.conf"

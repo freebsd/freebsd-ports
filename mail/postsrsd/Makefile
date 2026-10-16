@@ -1,6 +1,5 @@
 PORTNAME=	postsrsd
-DISTVERSION=	2.0.11
-PORTREVISION=	1
+DISTVERSION=	2.4.1
 PORTEPOCH=	1
 CATEGORIES=	mail
 
@@ -50,9 +49,6 @@ REDIS_CMAKE_BOOL=	WITH_REDIS
 SQLITE_DESC=	Use sqlite3 backebd for storing envelope senders
 SQLITE_USES=	sqlite
 SQLITE_CMAKE_BOOL=	WITH_SQLITE
-
-post-patch:
-		${REINPLACE_CMD} -e '/^chroot-dir/ s/^/#/' ${WRKSRC}/doc/postsrsd.conf
 
 post-install:
 		${INSTALL_DATA} ${WRKSRC}/doc/postsrsd.conf ${STAGEDIR}${PREFIX}/etc/postsrsd.conf.sample
