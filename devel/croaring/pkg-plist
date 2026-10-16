@@ -31,7 +31,7 @@ include/roaring/isadetection.h
 include/roaring/array_util.h
 include/roaring/utilasm.h
 lib/libroaring.so.%%DISTVERSION%%
-lib/libroaring.so.28
+lib/libroaring.so.29
 lib/libroaring.so
 lib/cmake/roaring/roaring-config-version.cmake
 lib/cmake/roaring/roaring-config.cmake
