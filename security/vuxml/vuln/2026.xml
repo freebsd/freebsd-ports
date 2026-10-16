@@ -1,3 +1,115 @@
+  <vuln vid="3749073b-c8f9-11f1-9ceb-4c526214c986">
+    <topic>Erlang/OTP -- multiple vulnerabilities in ssl, inets, public_key and snmp</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>28.5.0.8,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.19</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.8</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Erlang/OTP project reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories">
+	  <p>OTP 29.1.2, 28.5.0.8 and 27.3.4.19 fix the following
+	  issues, three of which complete earlier incomplete
+	  fixes:</p>
+	  <ul>
+	    <li>CVE-2026-105236: (D)TLS-1.2 session resumption could
+	    cross SNI virtual-host boundaries.  An SNI-aware server
+	    resumed a cached session even when the resumption
+	    request's server_name differed from the one that
+	    established it, so a client could bypass the
+	    client-authentication boundary of a second virtual
+	    service and skip the certificate exchange.</li>
+	    <li>CVE-2026-94200: a malicious or man-in-the-middle
+	    TLS-1.3 server could poison a client's ticket store with
+	    a NewSessionTicket carrying a zero-length early_data
+	    extension.  A client using automatic session-ticket
+	    management stored the ticket and crashed on a later
+	    resumption, taking down the node-global client ticket
+	    store.</li>
+	    <li>CVE-2026-42789: the earlier fix for certificate chain
+	    forgery via non-CA intermediates in public_key left the
+	    X.509 version 1 and version 2 path uncovered.  Such
+	    certificates carry no basicConstraints and are now
+	    rejected in issuer position.</li>
+	    <li>CVE-2026-48856: the earlier fix for credential leaks
+	    on cross-origin httpc redirects did not clear the
+	    userinfo component of the request URI, so credentials
+	    given as http://user:password@host/path were still sent
+	    to the redirect target.</li>
+	    <li>CVE-2026-70405: the earlier byte-length bounds on
+	    snmp varbind values did not cover the v3 header fields,
+	    the USM security parameters or the PDU integer fields,
+	    which could still be decoded into arbitrarily large
+	    integers.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42789</cvename>
+      <cvename>CVE-2026-48856</cvename>
+      <cvename>CVE-2026-70405</cvename>
+      <cvename>CVE-2026-94200</cvename>
+      <cvename>CVE-2026-105236</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-c99q-jmpx-v8qq</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-m75x-4vwg-ggjh</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-q7cq-pfgf-5hr7</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-m5mh-q53w-67jq</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-2g23-cgjh-34gq</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-29.1.2</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-28.5.0.8</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-27.3.4.19</url>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-10-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="37492489-c8f9-11f1-9ceb-4c526214c986">
+    <topic>Erlang/OTP -- erl_tar denial of service via crafted GNU sparse member</topic>
+    <affects>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-phm5-m6cj-5382 reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-phm5-m6cj-5382">
+	  <p>A loop with unreachable exit condition ('infinite loop')
+	  vulnerability in the erl_tar module allowed an attacker who
+	  supplied a tar archive to cause a denial of service via a
+	  crafted GNU sparse member with a trailing hole.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-96596</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-phm5-m6cj-5382</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-29.1.2</url>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="10baec0d-ca7a-11f1-8dcf-5404a68ad561">
     <topic>traefik -- Multiple vulnerabilities</topic>
     <affects>
