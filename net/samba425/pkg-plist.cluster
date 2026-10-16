@@ -80,4 +80,4 @@ share/ctdb/scripts/winbind_ctdb_updatekeytab.sh
 @dir /var/lib/ctdb/persistent
 @dir /var/lib/ctdb
 @dir /var/lib
-@dir /var/run/ctdb
+@dir /var/run/samba4/ctdb
