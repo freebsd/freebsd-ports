@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	15.0.7
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}${RCDIR}/
@@ -84,7 +84,7 @@ OPTIONS_SUB=	yes
 .if ${FLAVOR:Mlite}
 OPTIONS_DEFAULT+=	BE_FREEBSD
 .else
-OPTIONS_DEFINE+=	EXTRAS FLANG LIT LLDB MLIR OPENMP PYCLANG
+OPTIONS_DEFINE+=	EXTRAS FLANG LIT MLIR OPENMP PYCLANG
 OPTIONS_DEFINE_aarch64=	OPENMP
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
@@ -93,7 +93,7 @@ OPTIONS_DEFINE_powerpc64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_powerpc64le=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_riscv64=	COMPILER_RT OPENMP
 
-OPTIONS_DEFAULT+=	BE_STANDARD EXTRAS LIT LLDB PYCLANG STATIC_LIBS
+OPTIONS_DEFAULT+=	BE_STANDARD EXTRAS LIT PYCLANG STATIC_LIBS
 OPTIONS_DEFAULT_aarch64=	OPENMP
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT
@@ -106,10 +106,9 @@ OPTIONS_EXCLUDE_armv6=	FLANG
 OPTIONS_EXCLUDE_armv7=	FLANG
 OPTIONS_EXCLUDE_i386=	FLANG
 OPTIONS_EXCLUDE_powerpc=	FLANG
-OPTIONS_EXCLUDE_riscv64=	LLDB
 .endif
 # All non-backend options
-_ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS FLANG GOLD LIT LLD LLDB MLIR OPENMP PYCLANG STATIC_LIBS
+_ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS FLANG GOLD LIT LLD MLIR OPENMP PYCLANG STATIC_LIBS
 
 BE_AMDGPU_DESC=		AMD GPU backend (required by mesa)
 BE_FREEBSD_DESC=	Backends for FreeBSD architectures
@@ -164,21 +163,6 @@ GOLD_EXTRA_PATCHES_OFF=	${PATCHDIR}/gold-off-llvm_tools_CMakeLists.txt
 LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker
-LLDB_BUILD_DEPENDS=	swig:devel/swig
-LLDB_CMAKE_ON= \
-	-DLUA_INCLUDE_DIR=${LOCALBASE}/include/lua${LUA_VER_STR} \
-	-DLUA_LIBRARY=${LOCALBASE}/lib/liblua-${LUA_VER}.so \
-	-DCURSES_INCLUDE_PATH=/usr/include \
-	-DCURSES_CURSES_LIBRARY=/usr/lib/libcurses.so \
-	-DCURSES_FORM_LIBRARY=/usr/lib/libform.so \
-	-DCURSES_NCURSES_LIBRARY=/usr/lib/libncurses.so \
-	-DLLDB_ENABLE_LIBXML2=OFF \
-	-DPANEL_LIBRARIES=/usr/lib/libpanel.so
-LLDB_DESC=		Install lldb, the LLVM debugger
-LLDB_IMPLIES=		CLANG
-LLDB_PLIST_SUB=		PYTHON_ABIVER=${PYTHON_ABIVER}
-LLDB_USES=		lua:53 libedit
-LLDB_VARS=		_USES_PYTHON=python
 MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CMAKE_ON= \
@@ -292,12 +276,6 @@ MAN1SRCS+=	${LIT_MAN1SRCS}
 LLVM_ENABLE_PROJECTS+=	lld
 COMMANDS+=	${LLD_COMMANDS}
 PORTDOCS+=	lld
-.endif
-
-.if ${PORT_OPTIONS:MLLDB}
-LLVM_ENABLE_PROJECTS+=	lldb
-MAN1SRCS+=	${LLDB_MAN1SRCS}
-COMMANDS+=	${LLDB_COMMANDS}
 .endif
 
 .if ${PORT_OPTIONS:MMLIR}
@@ -608,6 +586,9 @@ post-install-DOCS-on:
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc/LLVM/* ${STAGEDIR}${DOCSDIR}
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc/LLVM
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/doc
+.if ${PORT_OPTIONS:MOPENMP}
+	${RMDIR} ${STAGEDIR}${DOCSDIR}/openmp/html/_sources
+.endif
 .for _man in ${MAN1SRCS}
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
 	    ${STAGEDIR}${PREFIX}/share/man/man1/${_man:R}${LLVM_SUFFIX}.1
@@ -616,9 +597,7 @@ post-install-DOCS-on:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lit.1
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/FileCheck.1
 .endif
-.if ! ${PORT_OPTIONS:MLLDB}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lldb-tblgen.1
-.endif
 .if ! ${PORT_OPTIONS:MMLIR}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/mlir-tblgen.1
 .endif
@@ -710,7 +689,6 @@ build-plist:
 	    ${GREP} -v '[/-]lit$$' | ${GREP} -v 'FileCheck$$' | \
 	    ${GREP} -v man/man1 | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
 	    -e 's|${PYTHON_SITELIBDIR:C|${PREFIX}/||}|%%PYTHON_SITELIBDIR%%|' \
-	    -e 's|${PYTHON_TAG:C/\./\\./g}${PYTHON_ABIVER}|%%PYTHON_TAG%%%%PYTHON_ABIVER%%|' \
 	    -e 's|${LLVM_RELEASE}|%%LLVM_RELEASE%%|' \
 	    -e 's|release.cmake|%%CMAKE_BUILD_TYPE%%.cmake|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
@@ -733,7 +711,6 @@ build-plist:
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
 	    if ($$0 ~ /(${FLANG_PATTERN})/) {printf "%%%%FLANG%%%%"} \
 	    if ($$0 ~ /(bin\/(ld|lld|wasm-ld))|liblld[^b]|\/lld\// && $$0 !~ /(lldb)/) {printf "%%%%LLD%%%%"} \
-	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /(${MLIR_PATTERN})/) {printf "%%%%MLIR%%%%"} \
 	    if ($$0 ~ /(${OPENMP_PATTERN})/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /(LLVMgold)/) {printf "%%%%GOLD%%%%"} \
