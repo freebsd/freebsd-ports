@@ -6,6 +6,9 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fcitx support for Qt5
 WWW=		https://github.com/fcitx/fcitx-qt5
 
+DEPRECATED=	Archived upstream because fcitx has been superceded by fcitx5-qt{5,6}
+EXPIRATION_DATE=	2026-12-25
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
