@@ -1,5 +1,5 @@
 PORTNAME=	dialog
-DISTVERSION=	1.3-20260107
+DISTVERSION=	1.3-20260721
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME}/ \
