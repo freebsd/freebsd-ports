@@ -1,7 +1,7 @@
 PORTNAME=	ares
 DISTVERSIONPREFIX=	v
 DISTVERSION=	148
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/${PORTNAME}-emulator/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	${PORTNAME}-source
@@ -17,8 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # Needs resolution by upstream, see also
 # https://github.com/ares-emulator/ares/issues/2350
 BROKEN_i386=	unsigned long long to size_type narrowing conversion issue introduced in version 147
-
-BUILD_DEPENDS=	librashader>0:devel/librashader
 
 USES=		cmake compiler:c++20-lang gl gnome pkgconfig xorg
 USE_GL=		opengl
@@ -37,7 +35,6 @@ CMAKE_OFF=	ARES_BUILD_LOCAL \
 EXTRACT_AFTER_ARGS=	--exclude thirdparty/GL \
 			--exclude thirdparty/KHR \
 			--exclude thirdparty/libchdr \
-			--exclude thirdparty/librashader \
 			--exclude thirdparty/sse2neon.h \
 			--exclude thirdparty/xxhash.h \
 			--no-same-owner --no-same-permissions
@@ -186,6 +183,10 @@ USBHID_CMAKE_BOOL=		ARES_ENABLE_USBHID
 WS_VARS=			_CORES+=ws
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLIBRASHADER}
+EXTRACT_AFTER_ARGS+=	--exclude thirdparty/librashader
+.endif
 
 .if ${PORT_OPTIONS:MTOOLS} && (${PORT_OPTIONS:MGBA} || ${PORT_OPTIONS:MSFC})
 PLIST_SUB+=	TOOLSARM7TDMI=""
