@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=40.0:devel/py-setuptools@${PY_
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.2<1.6:devel/py-asn1crypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bincopy>=17.14.5<17.15:converters/py-bincopy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bitstring>=3.1:devel/py-bitstring@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}click>=7.1<8.4:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click>=7.1:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-plugins>0:devel/py-click-plugins@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-option-group>=0.3.0<0.6:devel/py-click-option-group@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-command-tree<1.2:devel/py-click-command-tree@${PY_FLAVOR} \
