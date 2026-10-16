@@ -1,3 +1,46 @@
+  <vuln vid="dec22770-c953-11f1-bebb-3c7c3fba4204">
+    <topic>Text::CSV_XS -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>p5-Text-CSV_XS</name>
+	  <range><lt>1.65</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>H.Merijn Brand - Tux &lt;linux@tux.freedom.nl&gt; reports:</p>
+	<blockquote cite="https://metacpan.org/dist/Text-CSV_XS/changes">
+	  <p>Text::CSV_XS versions before 1.65 have these vulnerabilities listed below.</p>
+	  <ul>
+	    <li>CVE-2026-110759: parse (): report trailing lone CR, do not store EOF as 0xFF</li>
+	    <li>CVE-2026-110758: Under allow_whitespace, do not strip beyond field start</li>
+	    <li>CVE-2026-110757: combine (): decide quoting from the bytes, not the NV flags</li>
+	    <li>CVE-2026-110756: Flush saved bytes in Combine ()</li>
+	    <li>CVE-2026-110755: Re-use AHEAD with \r instead of copying</li>
+	    <li>CVE-2026-110754: getline (): free the result array when the parse fails</li>
+	    <li>CVE-2026-110753: Do not free the bound column scalar in skip_empty_rows</li>
+	    <li>CVE-2026-110752: fragment (): do not size memory by the selector integers</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-110759</cvename>
+      <cvename>CVE-2026-110758</cvename>
+      <cvename>CVE-2026-110757</cvename>
+      <cvename>CVE-2026-110756</cvename>
+      <cvename>CVE-2026-110755</cvename>
+      <cvename>CVE-2026-110754</cvename>
+      <cvename>CVE-2026-110753</cvename>
+      <cvename>CVE-2026-110752</cvename>
+      <url>https://metacpan.org/dist/Text-CSV_XS/changes</url>
+    </references>
+    <dates>
+      <discovery>2026-10-15</discovery>
+      <entry>2026-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bac88b3f-c8a1-11f1-866a-3c7c3fba4204">
     <topic>NSD -- multiple vulnerabilities</topic>
     <affects>
