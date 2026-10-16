@@ -1,0 +1,10 @@
+--- src/mongo/util/BUILD.bazel.orig	2026-10-14 17:59:44 UTC
++++ src/mongo/util/BUILD.bazel
+@@ -510,6 +510,7 @@
+     srcs_select = [{
+         "@platforms//os:{}".format(os): ["processinfo_{}.cpp".format(os)]
+         for os in [
++            "freebsd",
+             "linux",
+             "osx",
+             "windows",

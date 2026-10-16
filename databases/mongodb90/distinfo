@@ -1,4 +1,4 @@
-TIMESTAMP = 1792065294
+TIMESTAMP = 1792141438
 SHA256 (bazelbuild-bazel-central-registry-5df17720d4367282afb8e5ca27a35199ab7620e4_GH0.tar.gz) = 8e50f26b47e345a32aaff54d8477b4d9a277cab1cb7d4db6b7aa361191d55be4
 SIZE (bazelbuild-bazel-central-registry-5df17720d4367282afb8e5ca27a35199ab7620e4_GH0.tar.gz) = 14273558
 SHA256 (mongodb-forks-rules_poetry-092d43107d13e711ac4ac92050d8b570bcc8ef43_GH0.tar.gz) = 533a0178767be4d79a67ae43890970485217f031adf090ef28c5c18e8fd337d8
@@ -1401,7 +1401,7 @@ SHA256 (rust/crates/zstd-safe-7.0.0.crate) = 43747c7422e2924c11144d5229878b98180
 SIZE (rust/crates/zstd-safe-7.0.0.crate) = 20463
 SHA256 (rust/crates/zstd-sys-2.0.9+zstd.1.5.5.crate) = 9e16efa8a874a0481a574084d34cc26fdb3b99627480f785888deb6386506656
 SIZE (rust/crates/zstd-sys-2.0.9+zstd.1.5.5.crate) = 728791
-SHA256 (mongodb-mongo-r9.0.0-alpha1_GH0.tar.gz) = 7aadc37373fc88954ae1f358ae2ac05a14a430d2fb1cec1f5823a6618631359a
-SIZE (mongodb-mongo-r9.0.0-alpha1_GH0.tar.gz) = 116678568
+SHA256 (mongodb-mongo-r9.0.4_GH0.tar.gz) = 788aa3b71287edc5f77a51aab381b1a962629db6305aa0a4962f9caf1163de80
+SIZE (mongodb-mongo-r9.0.4_GH0.tar.gz) = 116516190
 SHA256 (mongodb-forks-spidermonkey-7aeaf7a44d420360bde75db8453636092c3e2f56_GH0.tar.gz) = 8ec7aa1399b6fb15b859c448ae6f361ab28cf48bd8fc4f0de2fb3776582e202f
 SIZE (mongodb-forks-spidermonkey-7aeaf7a44d420360bde75db8453636092c3e2f56_GH0.tar.gz) = 392664341

@@ -1,7 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	9.0.0-alpha1
-PORTREVISION=	2
+DISTVERSION=	9.0.4
 CATEGORIES=	databases net
 MASTER_SITES+=	https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${WASI_SDK_VERSION:R}/:wasi_sdk \
 		https://codeload.github.com/bazelbuild/bazel-central-registry/tar.gz/${BAZEL_REGISTRY_COMMIT}?dummy=/:bazel_registry \
@@ -203,6 +202,11 @@ BAZEL_ARGS=		--repository_cache=${BAZEL_REPOSITORY_CACHE} \
 			--linkopt=-lexecinfo \
 			--linkopt=-lkvm \
 			--noexperimental_collect_system_network_usage
+# rules_java registers the @local_jdk toolchains, which Bazel loads even though
+# the build does not use Java. Without JAVA_HOME, @local_jdk takes the java home
+# from "which javac", which for the javavm wrapper is ${LOCALBASE}, and globs all
+# of it. A JAVA_HOME without bin/java gives stub toolchains instead.
+BAZEL_ARGS+=		--repo_env=JAVA_HOME=/nonexistent
 ALL_TARGET=		install-core
 
 CONFLICTS_INSTALL=	mongodb[0-9][0-9]

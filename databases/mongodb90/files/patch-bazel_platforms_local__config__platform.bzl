@@ -1,6 +1,6 @@
---- bazel/platforms/local_config_platform.bzl.orig	2026-08-11 19:14:56 UTC
+--- bazel/platforms/local_config_platform.bzl.orig	2026-10-14 17:59:44 UTC
 +++ bazel/platforms/local_config_platform.bzl
-@@ -18,8 +18,10 @@ def _setup_local_config_platform(ctx):
+@@ -15,8 +15,10 @@ def _setup_local_config_platform(ctx):
          os = "windows"
      elif "mac" in ctx.os.name:
          os = "macos"
@@ -10,8 +10,8 @@
 +    elif "freebsd" in ctx.os.name:
 +        os = "freebsd"
  
-     arch = ctx.os.arch
- 
+     raw_arch = ctx.os.arch
+     toolchain_arch = ARCH_NORMALIZE_MAP[raw_arch]
 @@ -29,7 +31,9 @@ def _setup_local_config_platform(ctx):
      # So Starlark doesn't throw an indentation error when this gets injected.
      constraints_str = ",\n        ".join(['"%s"' % c for c in constraints])

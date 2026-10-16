@@ -1,8 +1,8 @@
---- src/third_party/IntelRDFPMathLib20U1/BUILD.bazel.orig
+--- src/third_party/IntelRDFPMathLib20U1/BUILD.bazel.orig	2026-10-14 17:59:44 UTC
 +++ src/third_party/IntelRDFPMathLib20U1/BUILD.bazel
-@@ -31,6 +31,10 @@ INTEL_RDFP_MATHLIB_DEFINES = [
-         "LINUX=1",
+@@ -38,6 +38,10 @@ INTEL_RDFP_MATHLIB_DEFINES = [
          "linux=1",
+         "UNCHANGED_BINARY_STATUS_FLAGS=0",
      ],
 +    "@platforms//os:freebsd": [
 +        "LINUX=1",

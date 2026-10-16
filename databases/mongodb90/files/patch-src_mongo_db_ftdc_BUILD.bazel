@@ -1,10 +1,10 @@
---- src/mongo/db/ftdc/BUILD.bazel.orig
+--- src/mongo/db/ftdc/BUILD.bazel.orig	2026-10-14 17:59:44 UTC
 +++ src/mongo/db/ftdc/BUILD.bazel
-@@ -143,6 +143,7 @@ mongo_cc_library(
+@@ -95,6 +95,7 @@ mongo_cc_library(
              "@platforms//os:windows": "windows",
              "@platforms//os:linux": "linux",
              "@platforms//os:macos": "osx",
 +            "@platforms//os:freebsd": "osx",
          }.items()
-     }),
-     hdrs = [
+     }],
+     deps = [
