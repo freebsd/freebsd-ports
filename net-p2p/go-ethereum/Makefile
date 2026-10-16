@@ -1,7 +1,6 @@
 PORTNAME=	go-ethereum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.7
-PORTREVISION=	1
+DISTVERSION=	1.17.8
 CATEGORIES=	net-p2p
 
 MAINTAINER=	me@enriquefynn.com
@@ -20,6 +19,8 @@ CPE_PRODUCT=	go_ethereum
 GO_MODULE=	github.com/ethereum/go-ethereum
 
 CGO_LDFLAGS=	-liconv
+
+TESTING_UNSAFE=	wants blst.h (security/blst) and extra test-related modules
 
 TMPDIR=		${WRKDIR}
 
