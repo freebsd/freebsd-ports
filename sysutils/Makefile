@@ -1555,6 +1555,7 @@
     SUBDIR += u-boot-pine64-lts
     SUBDIR += u-boot-pinebook
     SUBDIR += u-boot-pinebookpro
+    SUBDIR += u-boot-pinetab
     SUBDIR += u-boot-qemu-arm
     SUBDIR += u-boot-qemu-arm64
     SUBDIR += u-boot-qemu-riscv64
