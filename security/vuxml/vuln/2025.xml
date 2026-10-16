@@ -8016,7 +8016,7 @@ This issue has been patched in version 2.25.2.</p>
       </package>
       <package>
 	<name>linux-rl9-libxml2</name>
-	<range><lt>2.14.5</lt></range> <!-- needs update once fixed version appears -->
+	<range><lt>2.9.13_10</lt></range> <!-- needs update once fixed version appears -->
       </package>
     </affects>
     <description>
