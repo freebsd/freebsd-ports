@@ -1,7 +1,7 @@
-PORTNAME=		fastp
+PORTNAME=	fastp
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.2.0
-CATEGORIES=		biology
+DISTVERSION=	1.4.0
+CATEGORIES=	biology
 
 MAINTAINER=	hayzam@alchemilla.io
 COMMENT=	Ultra-fast all-in-one FASTQ preprocessor
@@ -11,12 +11,11 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdeflate.so:archivers/libdeflate \
-		libisal.so:devel/isa-l \
-		libhwy.so:devel/highway
+		libhwy.so:devel/highway \
+		libisal.so:devel/isa-l
 
-USES=		gmake localbase:ldflags
+USES=		gmake localbase:ldflags pkgconfig
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	OpenGene
 
 ALL_TARGET=	fastp
