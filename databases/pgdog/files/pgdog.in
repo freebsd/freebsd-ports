@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# PROVIDE: pgdog
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pgdog_enable (bool):		Set to NO by default.
+#				Set it to YES to enable pgdog.
+# pgdog_user (user):		The user to run pgdog as.
+# 				Set to "pgdog" by default.
+# pgdog_flags (flags):		Set to load config from %%PREFIX%%/etc/pgdog/
+#				by default.
+
+. /etc/rc.subr
+
+desc="PgDog PostgreSQL pooler"
+name=pgdog
+rcvar=pgdog_enable
+
+load_rc_config ${name}
+
+: ${pgdog_enable:=NO}
+: ${pgdog_user=pgdog}
+: ${pgdog_flags="-c %%PREFIX%%/etc/pgdog/pgdog.toml -u %%PREFIX%%/etc/pgdog/users.toml"}
+
+command=%%PREFIX%%/bin/${name}
+start_cmd=pgdog_start
+
+pgdog_start()
+{
+	/usr/sbin/daemon -Sfc \
+		-p /var/run/pgdog.pid \
+		-u ${pgdog_user} \
+		${command} ${pgdog_flags}
+}
+
+run_rc_command $1

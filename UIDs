@@ -667,7 +667,7 @@ _sndio:*:702:702::0:0:sndio privsep:/var/empty:/usr/sbin/nologin
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 _dnscrypt-wrapper:*:718:65534::0:0:dnscrypt-wrapper user:/var/empty:/usr/sbin/nologin
 # free: 719
-# free: 720
+pgdog:*:720:720::0:0:PgDog PostgreSQL pooler:/nonexistent:/usr/sbin/nologin
 # free: 721
 # free: 722
 # free: 723
