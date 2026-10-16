@@ -1,6 +1,9 @@
 PORTNAME=	dolphin
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-fm kde kde-applications
+PATCH_SITES=	https://invent.kde.org/system/dolphin/-/commit/
+PATCHFILES=	9685acf1bbc6ba1f591b37b8be4250a604fcc0bf.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE filemanager dolphin
