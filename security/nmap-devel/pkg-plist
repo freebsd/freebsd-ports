@@ -304,7 +304,15 @@ share/man/man1/nping.1.gz
 %%DATADIR%%/scripts/deluge-rpc-brute.nse
 %%DATADIR%%/scripts/dhcp-discover.nse
 %%DATADIR%%/scripts/dicom-brute.nse
+%%DATADIR%%/scripts/dicom-cfind-ls.nse
+%%DATADIR%%/scripts/dicom-cmove.nse
+%%DATADIR%%/scripts/dicom-get.nse
+%%DATADIR%%/scripts/dicom-info.nse
 %%DATADIR%%/scripts/dicom-ping.nse
+%%DATADIR%%/scripts/dicom-slowloris.nse
+%%DATADIR%%/scripts/dicom-store-fuzzer.nse
+%%DATADIR%%/scripts/dicom-store-inject.nse
+%%DATADIR%%/scripts/dicom-web-enum.nse
 %%DATADIR%%/scripts/dict-info.nse
 %%DATADIR%%/scripts/distcc-cve2004-2687.nse
 %%DATADIR%%/scripts/dns-blacklist.nse
