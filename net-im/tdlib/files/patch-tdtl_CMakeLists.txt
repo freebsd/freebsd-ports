@@ -1,9 +1,15 @@
---- tdtl/CMakeLists.txt.orig	2025-05-09 16:52:10 UTC
+--- tdtl/CMakeLists.txt.orig	2026-10-08 21:02:52 UTC
 +++ tdtl/CMakeLists.txt
-@@ -24,5 +24,5 @@ set(TDTL_SOURCE
+@@ -24,5 +24,11 @@ set(TDTL_SOURCE
    td/tl/tl_writer.h
  )
  
 -add_library(tdtl STATIC ${TDTL_SOURCE})
 +add_library(tdtl ${TDTL_SOURCE})
  target_include_directories(tdtl PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
++
++# Add SOVERSION to shared libraries
++set_target_properties(tdtl PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tdtl )

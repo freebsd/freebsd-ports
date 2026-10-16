@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2026-07-14 11:54:57 UTC
+--- CMakeLists.txt.orig	2026-10-08 21:02:52 UTC
 +++ CMakeLists.txt
 @@ -230,7 +230,7 @@ endif()
    add_subdirectory(test)
@@ -9,7 +9,7 @@
    add_subdirectory(benchmark)
  endif()
  
-@@ -1307,7 +1307,7 @@ set(MEMPROF_STAT_SOURCE
+@@ -1323,7 +1323,7 @@ set(MEMPROF_STAT_SOURCE
  # LIBRARIES
  
  # memprof - simple library for memory usage profiling
@@ -18,7 +18,7 @@
  target_include_directories(memprof PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
  target_link_libraries(memprof PRIVATE tdutils)
  if (MEMPROF)
-@@ -1321,12 +1321,12 @@ endif()
+@@ -1337,12 +1337,12 @@ endif()
    endif()
  endif()
  
@@ -33,7 +33,7 @@
  target_include_directories(tdapi PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> INTERFACE $<BUILD_INTERFACE:${TL_TD_AUTO_INCLUDE_DIR}>)
  target_link_libraries(tdapi PRIVATE tdutils)
  
-@@ -1343,7 +1343,7 @@ endif()
+@@ -1359,7 +1359,7 @@ endif()
    add_dependencies(tdapi tl_generate_common)
  endif()
  
@@ -42,7 +42,7 @@
  target_include_directories(tdmtproto PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> $<BUILD_INTERFACE:${TL_TD_AUTO_INCLUDE_DIR}>)
  target_include_directories(tdmtproto SYSTEM PRIVATE ${OPENSSL_INCLUDE_DIR})
  target_link_libraries(tdmtproto PUBLIC tdactor tdnet tdutils PRIVATE ${OPENSSL_CRYPTO_LIBRARY} ${CMAKE_DL_LIBS} ${ZLIB_LIBRARIES})
-@@ -1360,11 +1360,11 @@ if (MSVC AND TD_ENABLE_LTO)
+@@ -1376,11 +1376,11 @@ if (MSVC AND TD_ENABLE_LTO)
  
  # tdcore - internal TDLib interface
  if (MSVC AND TD_ENABLE_LTO)
@@ -56,7 +56,7 @@
    target_include_directories(tdcore_part2 PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> $<BUILD_INTERFACE:${TL_TD_AUTO_INCLUDE_DIR}>)
    target_link_libraries(tdcore_part2 PUBLIC tdapi tdnet tddb tdactor tde2e tdutils PRIVATE tdmtproto)
  
-@@ -1373,7 +1373,7 @@ else()
+@@ -1389,7 +1389,7 @@ else()
  
    set(TD_CORE_PART_TARGETS tdcore_part1 tdcore_part2)
  else()
@@ -65,7 +65,7 @@
    target_include_directories(tdcore PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> $<BUILD_INTERFACE:${TL_TD_AUTO_INCLUDE_DIR}>)
    target_link_libraries(tdcore PUBLIC tdapi tdnet tddb tdactor tde2e tdutils PRIVATE tdmtproto)
  
-@@ -1387,7 +1387,7 @@ endif()
+@@ -1403,7 +1403,7 @@ endif()
    endif()
  endif()
  
@@ -74,7 +74,7 @@
  target_include_directories(tdclient PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
  target_link_libraries(tdclient PUBLIC tdapi PRIVATE tdcore)
  
-@@ -1420,14 +1420,14 @@ endif()
+@@ -1436,7 +1436,7 @@ endif()
  endif()
  
  # tdc - TDLib interface in pure C
@@ -83,20 +83,58 @@
  target_include_directories(tdc PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> $<BUILD_INTERFACE:${TL_TD_AUTO_INCLUDE_DIR}>)
  target_link_libraries(tdc PRIVATE tdclient tdutils)
  if (NOT CMAKE_CROSSCOMPILING)
-   add_dependencies(tdc tl_generate_c)
- endif()
+@@ -1611,5 +1611,53 @@ install(FILES "TdConfig.cmake" "${CMAKE_CURRENT_BINARY
+   DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Td"
+ )
  
--add_library(tdjson_private STATIC ${TL_TD_JSON_SOURCE} td/telegram/ClientJson.cpp td/telegram/ClientJson.h)
-+add_library(tdjson_private ${TL_TD_JSON_SOURCE} td/telegram/ClientJson.cpp td/telegram/ClientJson.h)
- target_include_directories(tdjson_private PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> $<BUILD_INTERFACE:${TL_TD_AUTO_INCLUDE_DIR}>)
- target_link_libraries(tdjson_private PUBLIC tdclient tdutils)
- if (NOT CMAKE_CROSSCOMPILING)
-@@ -1447,7 +1447,7 @@ endif()
-   set_target_properties(tdjson PROPERTIES LINK_FLAGS "-Wl,-exported_symbols_list,${CMAKE_CURRENT_SOURCE_DIR}/tdclientjson_export_list")
- endif()
- 
--add_library(tdjson_static STATIC ${TD_JSON_SOURCE} ${TD_JSON_HEADERS})
-+add_library(tdjson_static ${TD_JSON_SOURCE} ${TD_JSON_HEADERS})
- target_link_libraries(tdjson_static PRIVATE tdjson_private)
- target_compile_definitions(tdjson_static PUBLIC TDJSON_STATIC_DEFINE)
- target_include_directories(tdjson_static PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}> $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
++# Let find_package(tde2e) succeed against the full TDLib too -- as with TD_E2E_ONLY above,
++# only the tde2e:: namespace differs from the Td:: targets
++if (TD_INSTALL_STATIC_LIBRARIES)
++  install(EXPORT TdStaticTargets
++    FILE tde2eStaticTargets.cmake
++    NAMESPACE tde2e::
++    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/tde2e"
++  )
++  file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/tde2eConfig.cmake"
++    "include(\"\${CMAKE_CURRENT_LIST_DIR}/tde2eStaticTargets.cmake\")\n"
++    "include(CMakePackageConfigHelpers)\n"
++    "include(CMakeFindDependencyMacro)\n"
++    "find_dependency(Td ${TDLib_VERSION} EXACT CONFIG)\n"
++    "foreach (_tde2e_target tde2e tdutils)\n"
++    "  if (NOT TARGET tde2e::\${_tde2e_target})\n"
++    "    add_library(tde2e::\${_tde2e_target} INTERFACE IMPORTED)\n"
++    "    set_target_properties(tde2e::\${_tde2e_target} PROPERTIES INTERFACE_LINK_LIBRARIES Td::\${_tde2e_target})\n"
++    "  endif()\n"
++    "endforeach()\n"
++  )
++  write_basic_package_version_file("tde2eConfigVersion.cmake"
++    VERSION "${TDLib_VERSION}"
++    COMPATIBILITY ExactVersion
++  )
++  install(FILES "${CMAKE_CURRENT_BINARY_DIR}/tde2eConfig.cmake" "${CMAKE_CURRENT_BINARY_DIR}/tde2eConfigVersion.cmake"
++    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/tde2e"
++  )
++endif()
++
+ # Add SOVERSION to shared libraries
+-set_property(TARGET tdjson PROPERTY SOVERSION "${TDLib_VERSION}")
++set_target_properties(tdapi PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tdapi )
++set_target_properties(tdcore PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tdcore )
++set_target_properties(tdclient PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tdclient )
++set_target_properties(tdjson PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tdjson )
++set_target_properties(tdmtproto PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tdmtproto )

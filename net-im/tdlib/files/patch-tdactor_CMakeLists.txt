@@ -1,4 +1,4 @@
---- tdactor/CMakeLists.txt.orig	2025-05-09 16:50:48 UTC
+--- tdactor/CMakeLists.txt.orig	2026-10-08 21:02:52 UTC
 +++ tdactor/CMakeLists.txt
 @@ -44,7 +44,7 @@ set(TDACTOR_TEST_SOURCE
    PARENT_SCOPE
@@ -9,3 +9,13 @@
  target_include_directories(tdactor PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
  target_link_libraries(tdactor PUBLIC tdutils)
  
+@@ -59,3 +59,9 @@ endif()
+     ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+   )
+ endif()
++
++# Add SOVERSION to shared libraries
++set_target_properties(tdactor PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tdactor )

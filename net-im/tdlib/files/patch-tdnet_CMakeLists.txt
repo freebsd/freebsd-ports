@@ -1,4 +1,4 @@
---- tdnet/CMakeLists.txt.orig	2026-07-14 11:54:57 UTC
+--- tdnet/CMakeLists.txt.orig	2026-10-08 21:02:52 UTC
 +++ tdnet/CMakeLists.txt
 @@ -61,7 +61,7 @@ endif()
    set_source_files_properties(td/net/DarwinHttp.mm PROPERTIES COMPILE_FLAGS -fobjc-arc)
@@ -9,3 +9,13 @@
  target_include_directories(tdnet PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
  target_include_directories(tdnet SYSTEM PRIVATE $<BUILD_INTERFACE:${OPENSSL_INCLUDE_DIR}>)
  target_link_libraries(tdnet PUBLIC tdutils tdactor)
+@@ -89,3 +89,9 @@ endif()
+     ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+   )
+ endif()
++
++# Add SOVERSION to shared libraries
++set_target_properties(tdnet PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tdnet )

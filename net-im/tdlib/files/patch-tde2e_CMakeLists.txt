@@ -1,4 +1,4 @@
---- tde2e/CMakeLists.txt.orig	2026-07-14 11:54:57 UTC
+--- tde2e/CMakeLists.txt.orig	2026-10-08 21:02:52 UTC
 +++ tde2e/CMakeLists.txt
 @@ -66,7 +66,7 @@ set(TDE2E_TEST_SOURCE "${TDE2E_TEST_SOURCE}" PARENT_SC
  
@@ -9,3 +9,13 @@
  if (NOT CMAKE_CROSSCOMPILING)
    add_dependencies(tde2e tl_generate_common)
  endif()
+@@ -92,3 +92,9 @@ endif()
+     install(FILES td/e2e/e2e_api.h td/e2e/e2e_errors.h DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/td/e2e")
+   endif()
+ endif()
++
++# Add SOVERSION to shared libraries
++set_target_properties(tde2e PROPERTIES 
++        VERSION ${PROJECT_VERSION}
++        SOVERSION ${PROJECT_VERSION_MAJOR}
++        EXPORT_NAME tde2e )
