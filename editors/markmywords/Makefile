@@ -24,9 +24,11 @@ GH_PROJECT=	MarkMyWords
 GH_TAGNAME=	970b459
 
 post-patch:
-# Set a displayable icon to something close to "document export"
-	@${REINPLACE_CMD} -e 's,document-export,document-revert,' \
-		${WRKSRC}/resources/headerbar.ui \
-		${WRKSRC}/resources/toolbar.ui
+	@${REINPLACE_CMD} -e '/add_custom_command/ \
+	    s,TARGET pot,& POST_BUILD,' \
+		${WRKSRC}/cmake/Translations.cmake
+# 3:2 (450x300) "About" window looks much better
+	@${REINPLACE_CMD} -e '/set_default_size/s,500,300,' \
+		${WRKSRC}/src/Widgets/AboutDialog.vala
 
 .include <bsd.port.mk>
