@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	--enable-dirty-schedulers \
 		--enable-smp-support \
 		--enable-threads
 MAKE_ARGS=	all
-MAKE_ENV+=	ERL_LIBS=${WRKSRC}/lib
 
 _ERLANG_LIB=	${PORTNAME}
 
