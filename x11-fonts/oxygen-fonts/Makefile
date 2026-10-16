@@ -1,7 +1,8 @@
-PKGNAMEPREFIX=
 PORTNAME=	oxygen-fonts
 DISTVERSION=	5.4.3
-CATEGORIES=	x11-fonts kde-plasma
+CATEGORIES=	x11-fonts
+MASTER_SITES=	KDE/Attic/plasma/${DISTVERSION}
+DIST_SUBDIR=	KDE/plasma/${DISTVERSION}
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Plasma5 Oxygen font family
@@ -15,12 +16,8 @@ LICENSE_FILE_GPLv3RLE+ =	${WRKSRC}/COPYING-GPL+FE.txt
 BUILD_DEPENDS=	fontforge:print/fontforge
 
 USES=		cmake fonts:none kde qt:6 tar:xz
-
 USE_KDE=	ecm:build
-KDE_PLASMA_VERSION=	${DISTVERSION}
-KDE_PLASMA_BRANCH=	Attic
-
-USE_QT=	base:build
+USE_QT=		base:build
 
 # XXX variables not set in kf6-ecm
 CMAKE_ARGS=	-DCMAKECONFIG_INSTALL_PREFIX=${QT_CMAKEDIR_REL} \
