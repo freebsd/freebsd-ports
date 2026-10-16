@@ -8,7 +8,6 @@ you have to fetch the dictionaries to make it work correctly.
 
 	# mkdir -p %%PREFIX%%/share/stardict/dic
 
-
 2. Please put your dictionary file at :
 
  	%%PREFIX%%/share/stardict/dic/
