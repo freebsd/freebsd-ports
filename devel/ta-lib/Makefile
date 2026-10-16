@@ -1,5 +1,5 @@
 PORTNAME=	ta-lib
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	devel finance
 MASTER_SITES=	https://github.com/TA-Lib/ta-lib/releases/download/v${PORTVERSION}/
