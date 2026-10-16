@@ -1,3 +1,36 @@
+  <vuln vid="83f5b20f-4429-4ee1-a764-66a231ed9dab">
+    <topic>mod_wsgi -- race condition at process start can leak request context between requests</topic>
+    <affects>
+      <package>
+	<name>ap24-py312-mod_wsgi</name>
+	<range><lt>6.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Graham Dumpleton reports:</p>
+	<blockquote cite="https://github.com/GrahamDumpleton/mod_wsgi/security/advisories/GHSA-q67r-wxfm-97hj">
+	  <p>A race condition at process startup could let two threads be
+	  handed the same per-thread record, because records were allocated
+	  from an Apache memory pool shared by every thread without a lock.
+	  Threads sharing a record also shared the mod_wsgi.thread_id value
+	  and, for named application groups, the same Python thread state,
+	  so one request's context (such as session data) could leak into
+	  another concurrent request. On Python 3.14 and later the shared
+	  thread state could instead crash the worker process.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/GrahamDumpleton/mod_wsgi/security/advisories/GHSA-q67r-wxfm-97hj</url>
+      <url>https://modwsgi.readthedocs.io/en/latest/release-notes/version-6.1.1.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-13</discovery>
+      <entry>2026-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="43dc274d-f74b-4420-8ef8-d2e108213002">
     <topic>miniupnpd -- Integer underflow in SOAPAction header parsing</topic>
     <affects>
