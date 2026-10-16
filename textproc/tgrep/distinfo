@@ -1,4 +1,4 @@
-TIMESTAMP = 1791888319
+TIMESTAMP = 1792183052
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
 SIZE (rust/crates/aho-corasick-1.1.4.crate) = 184015
 SHA256 (rust/crates/allocator-api2-0.2.21.crate) = 683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923
@@ -405,7 +405,7 @@ SHA256 (rust/crates/zerocopy-derive-0.8.48.crate) = 70e3cd084b1788766f53af483dd2
 SIZE (rust/crates/zerocopy-derive-0.8.48.crate) = 97646
 SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
-SHA256 (rusqlite-rusqlite-2a71e35d94b2a02f7dd4a0c4cfd59c339370e747_GH0.tar.gz) = f9b201c8487f6119347ab641c2727670088592d3203d087120bdfed058dc2df7
-SIZE (rusqlite-rusqlite-2a71e35d94b2a02f7dd4a0c4cfd59c339370e747_GH0.tar.gz) = 5577341
-SHA256 (microsoft-tgrep-v1.2.0_GH0.tar.gz) = d8cabe8ea25a8526043767507e69e327985e9277b00881323b722f89909e9d0f
-SIZE (microsoft-tgrep-v1.2.0_GH0.tar.gz) = 2228742
+SHA256 (rusqlite-rusqlite-a1a23ea2a6a8a27bc07c8b10cbd363760287e1cc_GH0.tar.gz) = affff27fd1b1dd5347e01ca6a7ea68207bc3d93fd32164d4af94928529f704bf
+SIZE (rusqlite-rusqlite-a1a23ea2a6a8a27bc07c8b10cbd363760287e1cc_GH0.tar.gz) = 5621802
+SHA256 (microsoft-tgrep-v1.2.2_GH0.tar.gz) = 6d60e118f17bc22a9842d5aea3fe9cfc467ae1eccd5f9b680afd4bbe0342a407
+SIZE (microsoft-tgrep-v1.2.2_GH0.tar.gz) = 2298317
