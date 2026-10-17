@@ -1,3 +1,32 @@
+  <vuln vid="10baec0d-ca7a-11f1-8dcf-5404a68ad561">
+    <topic>traefik -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+      <name>traefik</name>
+      <range><lt>3.7.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>The traefik project releases a new version addressing multiple vulnerabilities:</p>
+      <blockquote cite="https://github.com/traefik/traefik/releases/tag/v3.7.15">
+      <ul>
+      <li>GHSA-p8wx-ph99-xgcr (mTLS (auth-tls-secret) silently disabled for a host)</li>
+      <li>GHSA-ww7c-q3mv-xx22 (Data race on the shared bufio.Reader)</li>
+      <li>GHSA-28hp-c82p-8vqj (TLS-option cache hit skips the cross-namespace authorization check)</li>
+      </ul>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/traefik/traefik/releases/tag/v3.7.15</url>
+    </references>
+    <dates>
+      <discovery>2026-10-15</discovery>
+      <entry>2026-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="39d5f71d-ca2a-11f1-ada1-ac5afc632ba3">
     <topic>libXtst -- multiple vulnerabilities</topic>
     <affects>
