@@ -1,5 +1,6 @@
 bin/victoria-logs
 bin/vlogscli
+bin/vlagent
 %%PORTDOCS%%%%DOCSDIR%%/README-components.excalidraw
 %%PORTDOCS%%%%DOCSDIR%%/README-components.webp
 %%PORTDOCS%%%%DOCSDIR%%/cluster-ha.excalidraw

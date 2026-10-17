@@ -1,7 +1,7 @@
 PORTNAME=	victoria-logs
 PORTVERSION=	1.53.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	samm@FreeBSD.org
@@ -28,7 +28,7 @@ MAKE_ENV=	BUILDINFO_TAG=tags-v${PORTVERSION}-victorialogs \
 		GOFLAGS=-buildvcs=false \
 		GOOS=${OPSYS:tl} \
 		PKG_TAG=v${PORTVERSION}
-ALL_TARGET=	${PORTNAME}-pure vlogscli-pure vmalert-pure
+ALL_TARGET=	${PORTNAME}-pure vlagent-pure vlogscli-pure vmalert-pure
 
 SUB_LIST+=	VICTORIA_DATA=${VICTORIA_DATA} \
 		VICTORIA_GROUP=${GROUPS} \
@@ -54,6 +54,8 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/${PORTNAME}-pure \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/vlagent-pure \
+		${STAGEDIR}${PREFIX}/bin/vlagent
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/vlogscli-pure \
 		${STAGEDIR}${PREFIX}/bin/vlogscli
 	@${MKDIR} ${STAGEDIR}${VICTORIA_DATA} ${STAGEDIR}${VICTORIA_LOGS} \
