@@ -1,1 +1,7 @@
 Parse and manipulate apache conf files.
+
+apache_conf_parser reads Apache httpd configuration files into a tree of
+nodes: comments, blank lines, simple directives and complex directives
+(sections such as <VirtualHost> that contain other nodes).  The tree can
+be inspected and modified from Python and turned back into configuration
+text.
