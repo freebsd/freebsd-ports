@@ -1,6 +1,6 @@
---- src/fork_gc.c.orig	2025-03-20 10:46:28 UTC
+--- src/fork_gc.c.orig	2025-05-26 05:26:53 UTC
 +++ src/fork_gc.c
-@@ -280,6 +280,7 @@ static void sendHeaderString(ForkGC *gc, void *arg) {
+@@ -281,6 +281,7 @@ static void sendHeaderString(ForkGC *gc, void *arg) {
  }
  
  static void sendHeaderString(ForkGC *gc, void *arg) {
@@ -8,7 +8,7 @@
    struct iovec *iov = arg;
    FGC_sendBuffer(gc, iov->iov_base, iov->iov_len);
  }
-@@ -295,7 +296,9 @@ static void FGC_childCollectTerms(ForkGC *gc, RedisSea
+@@ -296,7 +297,9 @@ static void FGC_childCollectTerms(ForkGC *gc, RedisSea
      char *term = runesToStr(rstr, slen, &termLen);
      InvertedIndex *idx = Redis_OpenInvertedIndex(sctx, term, strlen(term), DONT_CREATE_INDEX, NULL);
      if (idx) {
