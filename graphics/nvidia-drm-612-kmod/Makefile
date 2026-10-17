@@ -1,5 +1,5 @@
 PORTNAME=	nvidia-drm-612-kmod
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-612-kmod

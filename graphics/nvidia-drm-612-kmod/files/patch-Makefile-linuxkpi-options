@@ -1,0 +1,12 @@
+--- Makefile.orig
++++ Makefile
+@@ -24,7 +24,8 @@
+ # get our conftest and sources lists from here
+ .include "nvidia-drm-sources.mk"
+ 
+-GENERATED_KMOD_SRCS += device_if.h \
++GENERATED_KMOD_SRCS += opt_linuxkpi.h \
++        device_if.h \
+         vnode_if.h \
+         bus_if.h \
+         pci_if.h \
