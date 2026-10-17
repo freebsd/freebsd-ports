@@ -1,6 +1,6 @@
 PORTNAME=	vera++
 PORTVERSION=	1.3.0
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/verateam/vera/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -29,13 +29,7 @@ PLIST_FILES=	bin/vera++ share/man/man1/vera++.1.gz
 PORTDATA=	*
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS LUA
-OPTIONS_DEFAULT=	LUA
-
-LUA_LIB_DEPENDS=	libluabind.so:devel/luabind
-LUA_USES=		lua:51
-LUA_CMAKE_ON=		-DVERA_LUA:BOOL=ON
-LUA_CMAKE_OFF=		-DVERA_LUA:BOOL=OFF
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^add_subdirectory(doc/d' \
