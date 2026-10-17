@@ -1,6 +1,6 @@
 PORTNAME=	netgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2.2607
+DISTVERSION=	6.2.2608
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/alexxy/netgen/commit/
@@ -23,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON_i386=	unsupported CPU architecture
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		git:devel/git
 
