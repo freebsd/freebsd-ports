@@ -1,6 +1,6 @@
 PORTNAME=	fsc
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	samm@FreeBSD.org
@@ -15,7 +15,7 @@ PLIST_FILES=	bin/fscadm sbin/fscd etc/rc.d/fscd share/man/man5/fscd.conf.5.gz \
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdtrhodes
 GH_PROJECT=	freebsd-fscd
-GH_TAGNAME=	ef16626
+GH_TAGNAME=	ba40279
 
 .include <bsd.port.options.mk>
 
