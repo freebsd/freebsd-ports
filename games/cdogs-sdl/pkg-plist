@@ -821,10 +821,10 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/bones2.txt
 %%DATADIR%%/graphics/bones3.png
 %%DATADIR%%/graphics/bones3.txt
-%%DATADIR%%/graphics/bookshelf.png
 %%DATADIR%%/graphics/bookshelf2.png
 %%DATADIR%%/graphics/bookshelf2.txt
 %%DATADIR%%/graphics/bookshelf2_wreck.png
+%%DATADIR%%/graphics/bookshelf_16x19.png
 %%DATADIR%%/graphics/bottle.png
 %%DATADIR%%/graphics/bottle2.png
 %%DATADIR%%/graphics/bottle2.txt
@@ -858,6 +858,8 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/bullet_pickup.png
 %%DATADIR%%/graphics/bullet_pickup.txt
 %%DATADIR%%/graphics/bulletmarks.png
+%%DATADIR%%/graphics/button_back.png
+%%DATADIR%%/graphics/button_back_11x11.png
 %%DATADIR%%/graphics/cabinet.png
 %%DATADIR%%/graphics/cabinet_server.txt
 %%DATADIR%%/graphics/cabinet_server_16x24.png
@@ -1054,6 +1056,7 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/column.png
 %%DATADIR%%/graphics/confusion_grenade.png
 %%DATADIR%%/graphics/confusion_grenade.txt
+%%DATADIR%%/graphics/controller.png
 %%DATADIR%%/graphics/crate.png
 %%DATADIR%%/graphics/crate.txt
 %%DATADIR%%/graphics/crate2.png
@@ -1828,6 +1831,7 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/door/tech/yellow_top.png
 %%DATADIR%%/graphics/door/tech/yellow_v.png
 %%DATADIR%%/graphics/door/tech/yellow_vmid.png
+%%DATADIR%%/graphics/dpad_14x14.png
 %%DATADIR%%/graphics/drain0.png
 %%DATADIR%%/graphics/drain1.png
 %%DATADIR%%/graphics/drain1.txt
@@ -1945,6 +1949,10 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/jail_cell_broken.png
 %%DATADIR%%/graphics/jail_cell_skeleton.png
 %%DATADIR%%/graphics/jail_cell_skeleton.txt
+%%DATADIR%%/graphics/key_back.png
+%%DATADIR%%/graphics/key_back_11x12.png
+%%DATADIR%%/graphics/key_back_wide.png
+%%DATADIR%%/graphics/key_back_wide_16x12.png
 %%DATADIR%%/graphics/keys/card/blue.png
 %%DATADIR%%/graphics/keys/card/green.png
 %%DATADIR%%/graphics/keys/card/red.png
@@ -2022,14 +2030,21 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/particles/boom_16x16.txt
 %%DATADIR%%/graphics/particles/brass_1x1.png
 %%DATADIR%%/graphics/particles/brass_big_2x2.png
+%%DATADIR%%/graphics/particles/bubble_6x6.png
 %%DATADIR%%/graphics/particles/bullet_hole.png
 %%DATADIR%%/graphics/particles/cells.txt
 %%DATADIR%%/graphics/particles/cells_12x12.png
+%%DATADIR%%/graphics/particles/confusion_stars.txt
+%%DATADIR%%/graphics/particles/confusion_stars_32x24.png
+%%DATADIR%%/graphics/particles/dust_16x12.png
 %%DATADIR%%/graphics/particles/explosion_small_34x34.png
 %%DATADIR%%/graphics/particles/explosion_small_34x34.txt
+%%DATADIR%%/graphics/particles/flame_8x8.png
 %%DATADIR%%/graphics/particles/footprint.png
 %%DATADIR%%/graphics/particles/health_plus.txt
 %%DATADIR%%/graphics/particles/health_plus_9x9.png
+%%DATADIR%%/graphics/particles/ice_sparkle.txt
+%%DATADIR%%/graphics/particles/ice_sparkle_8x8.png
 %%DATADIR%%/graphics/particles/laser_trail_3x30.png
 %%DATADIR%%/graphics/particles/mini_cells.txt
 %%DATADIR%%/graphics/particles/mini_cells_9x9.png
@@ -2065,7 +2080,7 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/graphics/pillar_blue.png
 %%DATADIR%%/graphics/pistol.png
 %%DATADIR%%/graphics/pistol.txt
-%%DATADIR%%/graphics/plant.png
+%%DATADIR%%/graphics/plant_14x20.png
 %%DATADIR%%/graphics/plant_brown.png
 %%DATADIR%%/graphics/plant_brown.txt
 %%DATADIR%%/graphics/plant_brown_wreck.png
@@ -2774,6 +2789,7 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/missions/custom/Wuzzy/gungame.cdogscpn/sounds/storm.ogg
 %%DATADIR%%/missions/custom/Wuzzy/gungame.cdogscpn/sounds/x90.ogg
 %%DATADIR%%/missions/custom/techdemo/followtheleader.cpn
+%%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/ammo.json
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/bullets.json
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/campaign.json
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/character_classes.json
@@ -2781,7 +2797,11 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/chaser2_bullet.png
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/crystal_8x8.png
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/crystal_8x8.txt
-%%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/grenade_12x12.png
+%%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/flare_64x50.png
+%%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/flare_64x50.txt
+%%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/he_grenade_8x8.png
+%%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/he_grenade_pickup.png
+%%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/he_grenade_pickup.txt
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/laser_beam_64x64.png
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/laser_dot_4x4.png
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/muzzle_flash_thin_32x32.png
@@ -2791,6 +2811,7 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/spearhead.txt
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/spearhead_13x13.png
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/spreadgun_bullet.png
+%%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/stick_grenade_12x12.png
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/graphics/vulcan_bullet_7x7.png
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/guns.json
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/missions.json
@@ -3248,6 +3269,8 @@ share/applications/io.github.cxong.cdogs-sdl.desktop
 %%DATADIR%%/sounds/grenade_pickup.txt
 %%DATADIR%%/sounds/hahaha.ogg
 %%DATADIR%%/sounds/hahaha.txt
+%%DATADIR%%/sounds/headshot.ogg
+%%DATADIR%%/sounds/headshot.txt
 %%DATADIR%%/sounds/health.txt
 %%DATADIR%%/sounds/health.wav
 %%DATADIR%%/sounds/heatseeker_switch.ogg
