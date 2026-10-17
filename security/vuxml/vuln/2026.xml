@@ -1,3 +1,36 @@
+  <vuln vid="39d5f71d-ca2a-11f1-ada1-ac5afc632ba3">
+    <topic>libXtst -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>libXtst</name>
+<range><lt>1.2.6</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>X.Org reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-October/003752.html">
+	  <p>Multiple issues have been found in the X client library
+	  implementations published by X.Org for which we are
+	  releasing security fixes for.</p>
+	  <ul>
+	    <li>CVE-2026-94286: Out-of-bounds read in libXtst's RECORD reply parser</li>
+	    <li>CVE-2026-109088: libXtst RECORD EnableContext Reply Endless Loop</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-94286</cvename>
+      <cvename>CVE-2026-109088</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2026-October/003752.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-17</discovery>
+      <entry>2026-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c6ec104-ca27-11f1-ada1-ac5afc632ba3">
     <topic>libXrender -- vulnerability</topic>
     <affects>
