@@ -1,7 +1,6 @@
 PORTNAME=	gdu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.37.0
-PORTREVISION=	2
+DISTVERSION=	5.38.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/dundee/gdu
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:modules
+USES=		go:1.26+,modules
 
 GO_MODULE=	github.com/dundee/${PORTNAME}/${DISTVERSIONFULL:R:R}
 GO_TARGET=	./cmd/${PORTNAME}
