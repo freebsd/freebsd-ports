@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-tools
 
 MAINTAINER=	vova@zote.me
 COMMENT=	Fast, modern and secure VPN Tunnel with AmneziaVPN anti-detection
-WWW=		https://github.com/amnezia-vpn/amneziawg-tools/
+WWW=		https://github.com/vgrebenschikov/amneziawg-tools/
 
 LICENSE=	GPLv2
 
@@ -14,8 +14,9 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	amnezia-vpn
+GH_ACCOUNT=	vgrebenschikov
 GH_PROJECT=	amneziawg-tools
+GH_TAGNAME=	v3.1.20260812-fbsd-2
 USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	wg-quick/freebsd.bash
