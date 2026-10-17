@@ -1,0 +1,21 @@
+--- node_modules/@vscode/os-proxy-resolver-freebsd-arm64/package.json.orig	2026-10-09 21:33:43 UTC
++++ node_modules/@vscode/os-proxy-resolver-freebsd-arm64/package.json
+@@ -1,13 +1,12 @@
+ {
+-  "name": "@vscode/os-proxy-resolver-linux-arm64-gnu",
++  "name": "@vscode/os-proxy-resolver-freebsd-arm64",
+   "version": "0.4.0",
+-  "description": "Native binding for @vscode/os-proxy-resolver on Linux arm64",
++  "description": "Native binding for @vscode/os-proxy-resolver on FreeBSD arm64",
+   "main": "os_proxy_resolver.node",
+   "files": ["os_proxy_resolver.node", "LICENSE.txt", "ThirdPartyNotices.txt"],
+-  "os": ["linux"],
++  "os": ["freebsd"],
+   "cpu": ["arm64"],
+-  "libc": ["glibc"],
+   "publishConfig": { "access": "public" },
+   "license": "MIT",
+   "repository": "github:microsoft/os-proxy-resolver"
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,11 @@
+--- os-proxy-resolver/Cargo.toml.orig	2026-09-06 06:20:36 UTC
++++ os-proxy-resolver/Cargo.toml
+@@ -117,7 +117,7 @@ rquickjs-sys = { version = "0.12.1", optional = true }
+ # non-Windows dependency above.
+ rquickjs-sys = { version = "0.12.1", optional = true }
+ 
+-[target.'cfg(target_os = "linux")'.dependencies]
++[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies]
+ libc = "0.2"
+ 
+ [dev-dependencies]

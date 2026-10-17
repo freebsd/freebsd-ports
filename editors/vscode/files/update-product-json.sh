@@ -1,6 +1,6 @@
 #! /bin/sh
 
-PATH=/bin:/usr/bin:/usr/local/bin
+PATH=/bin:/usr/bin:${LOCALBASE:=/usr/local}/bin
 
 WRKSRC=$1
 PRODUCT_JSON=product.json

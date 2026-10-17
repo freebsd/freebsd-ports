@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DIS
 		https://registry.npmjs.org/@github/copilot-linux-${NODEJS_ARCH}/-/:copilot_cli \
 		https://registry.npmjs.org/@github/copilot-sdk-linux-${NODEJS_ARCH}/-/:copilot_sdk
 PKGNAMESUFFIX=	-reh
-DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
+DISTFILES=	vscode-node-modules-${DISTVERSION}-${NODEJS_ARCH}${EXTRACT_SUFX}:node_modules \
 		copilot-linux-${NODEJS_ARCH}-${COPILOT_CLI_VERSION}.tgz:copilot_cli \
 		copilot-sdk-linux-${NODEJS_ARCH}-${COPILOT_SDK_VERSION}.tgz:copilot_sdk
 DIST_SUBDIR=	${PORTNAME}
@@ -59,14 +59,15 @@ SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
 
 MAKE_ENV=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH} \
-		VSCODE_QUALITY=stable
+		VSCODE_QUALITY=stable \
+		NODE_OPTIONS="--max-old-space-size=8192"
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
 
-NODEJS_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
+NODEJS_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 NODEJS_DIR=	${PORTSDIR}/www/node${NODEJS_VERSION}
 .include "${NODEJS_DIR}/Makefile.version"
 
@@ -137,7 +138,8 @@ pre-build:
 				${SETENV} ${MAKE_ENV} $${npm_env} \
 					npm --userconfig=${WRKSRC}/build/.npmrc run install --if-present && \
 				${SETENV} ${MAKE_ENV} $${npm_env} \
-					node-gyp --userconfig=${WRKSRC}/build/.npmrc rebuild; \
+					node-gyp --userconfig=${WRKSRC}/build/.npmrc \
+					--jobs ${MAKE_JOBS_NUMBER} rebuild; \
 			elif [ "`${ECHO_CMD} $${subdir} | ${GREP} /remote/`" ]; then \
 				cd $${subdir} && \
 				npm_env="npm_config_runtime=node \
@@ -146,7 +148,8 @@ pre-build:
 				${SETENV} ${MAKE_ENV} $${npm_env} \
 					npm --userconfig=${WRKSRC}/remote/.npmrc run install --if-present && \
 				${SETENV} ${MAKE_ENV} $${npm_env} \
-					node-gyp --userconfig=${WRKSRC}/remote/.npmrc rebuild; \
+					node-gyp --userconfig=${WRKSRC}/remote/.npmrc \
+					--jobs ${MAKE_JOBS_NUMBER} rebuild; \
 			fi; \
 		done; \
 	done
@@ -185,7 +188,7 @@ do-build:
 	while true; do \
 		${SETENV} ${MAKE_ENV} $${npm_env} \
 			npm --userconfig=${WRKSRC}/remote/.npmrc run \
-				gulp vscode-reh-linux-${NODEJS_ARCH} && break; \
+				gulp vscode-reh-linux-${NODEJS_ARCH}-min && break; \
 		count=$$((count + 1)); \
 		if [ $${count} -ge $${max_tries} ]; then \
 			${ECHO_MSG} "Failed to build after $${max_tries} attempts."; \
