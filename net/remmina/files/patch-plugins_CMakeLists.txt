@@ -1,0 +1,24 @@
+--- plugins/CMakeLists.txt.orig	2024-02-23 14:29:23 UTC
++++ plugins/CMakeLists.txt
+@@ -127,15 +127,15 @@ add_subdirectory(exec)
+ 
+ add_subdirectory(exec)
+ 
+-option(WITH_KF5WALLET "Building KF5WALLET plugin" OFF)
+-if(WITH_KF5WALLET)
+-    CheckHasModule(KF5Wallet)
+-    if(HAS_MODULE_KF5Wallet)
++option(WITH_KF6WALLET "Building KF6WALLET plugin" OFF)
++if(WITH_KF6WALLET)
++    CheckHasModule(KF6Wallet)
++    if(HAS_MODULE_KF6Wallet)
+         message(STATUS "Enabling KDE Wallet plugin.")
+-        add_definitions(-DWITH_KF5WALLET)
++        add_definitions(-DWITH_KF6WALLET)
+         add_subdirectory(kwallet)
+     else()
+-        message(FATAL_ERROR "libKF5wallet not found but requested")
++        message(FATAL_ERROR "libKF6wallet not found but requested")
+     endif()
+ endif()
+ 
