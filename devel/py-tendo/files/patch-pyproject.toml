@@ -1,0 +1,20 @@
+Description: Lower the setuptools build requirement to 61 and drop
+  setuptools_scm_git_archive, so the PEP 517 build dependency check passes
+  with the ports tree: setuptools-scm >= 7 handles git archives itself,
+  and nothing here needs setuptools newer than 61.
+Issue ID: none
+Changeset: none
+TODO: FreeBSD-specific (the tree's setuptools version), not for upstream.
+
+--- pyproject.toml.orig	2022-10-09 20:02:06 UTC
++++ pyproject.toml
+@@ -1,8 +1,7 @@
+ [build-system]
+ requires = [
+-  "setuptools >= 65.4.0", # required by pyproject+setuptools_scm integration
++  "setuptools >= 61",
+   "setuptools_scm[toml] >= 3.5.0", # required for "no-local-version" scheme
+-  "setuptools_scm_git_archive >= 1.0",
+   "wheel",
+ ]
+ build-backend = "setuptools.build_meta"
