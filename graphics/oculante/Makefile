@@ -1,6 +1,6 @@
 PORTNAME=	oculante
 DISTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libzstd.so:archivers/zstd
 
-USES=		cargo python:build
+USES=		cargo desktop-file-utils python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	woelper
@@ -1041,6 +1041,17 @@ CARGO_CRATES+=	shaderc-0.8.3 \
 BINARY_ALIAS=	python3=${PYTHON_CMD} \
 		git=/usr/bin/false
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/${PORTNAME}.desktop \
+		share/pixmaps/${PORTNAME}.png
+
+post-stage:
+	${INSTALL_DATA} \
+		${WRKSRC}/res/oculante.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/oculante.desktop
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} \
+		${WRKSRC}/res/icons/icon.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/oculante.png
 
 .include <bsd.port.mk>
