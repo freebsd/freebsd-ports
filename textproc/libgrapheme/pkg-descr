@@ -1,0 +1,9 @@
+libgrapheme is a minimal freestanding C99 library for handling strings
+according to the Unicode standard.  It provides grapheme cluster (i.e.
+user-perceived character), word, and sentence segmentation, line break
+opportunity detection, case detection, and case conversion, on UTF-8
+strings and codepoint arrays.
+
+The necessary lookup tables are generated from the Unicode character
+database at build time, and the library has no runtime dependency on
+libc.
