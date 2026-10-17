@@ -1,0 +1,6 @@
+tzupdate looks up the geographical location of the current public IP
+address using IP geolocation services, and sets the system timezone to
+match by pointing /etc/localtime at the corresponding zoneinfo file and
+recording the zone name in /var/db/zoneinfo, as tzsetup(8) does.
+
+It can also print the detected timezone without changing anything.

@@ -1512,6 +1512,7 @@
     SUBDIR += tw_cli
     SUBDIR += twa-kmod
     SUBDIR += tzdialog
+    SUBDIR += tzupdate
     SUBDIR += u-boot-a13-olinuxino
     SUBDIR += u-boot-a64-olinuxino
     SUBDIR += u-boot-bananapi
