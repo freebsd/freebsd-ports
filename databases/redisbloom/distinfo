@@ -1,8 +1,8 @@
-TIMESTAMP = 1786839063
-SHA256 (RedisBloom-RedisBloom-v8.10.0_GH0.tar.gz) = 26e8d7ed05c92a1eb7b90538f169e974a4dde7cbd36d20c4ecc31638254d0ae8
-SIZE (RedisBloom-RedisBloom-v8.10.0_GH0.tar.gz) = 257326
-SHA256 (RedisBloom-t-digest-c-5b89d70_GH0.tar.gz) = b8666a9e7172c05d7cbdff05e2740bb6e2543e4738a2ceb4ae2e8f7a71ec1191
-SIZE (RedisBloom-t-digest-c-5b89d70_GH0.tar.gz) = 24896
+TIMESTAMP = 1792203242
+SHA256 (RedisBloom-RedisBloom-v8.10.1_GH0.tar.gz) = 679f0faeb85ce97a0cc1ea1cabaf0107e484224c8b31e538ec6d0e823f94ad2f
+SIZE (RedisBloom-RedisBloom-v8.10.1_GH0.tar.gz) = 257814
+SHA256 (RedisBloom-t-digest-c-daf1f4a_GH0.tar.gz) = 13ad2c1924b583dc17b165483a05f642f716698a95f24376a51e12fbe35e590d
+SIZE (RedisBloom-t-digest-c-daf1f4a_GH0.tar.gz) = 37064
 SHA256 (RedisLabsModules-readies-f31347b_GH0.tar.gz) = cd942b28da637981297c69b81304f0022da9ac4f13649690baeed15d0d10fc08
 SIZE (RedisLabsModules-readies-f31347b_GH0.tar.gz) = 94640
 SHA256 (RedisLabsModules-RedisModulesSDK-3b2f684_GH0.tar.gz) = 2274091a62ced18fa44d1543896086b7f1a7882f32ace742689f879dfc77effc
