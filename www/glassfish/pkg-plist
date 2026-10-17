@@ -758,6 +758,7 @@
 %%DATADIR%%/glassfish/modules/jdbc-config.jar
 %%DATADIR%%/glassfish/modules/jdbc-runtime.jar
 %%DATADIR%%/glassfish/modules/jersey-bean-validation.jar
+%%DATADIR%%/glassfish/modules/jersey-cdi-rs-inject.jar
 %%DATADIR%%/glassfish/modules/jersey-cdi1x-servlet.jar
 %%DATADIR%%/glassfish/modules/jersey-cdi1x-transaction.jar
 %%DATADIR%%/glassfish/modules/jersey-cdi1x.jar
@@ -833,6 +834,7 @@
 %%DATADIR%%/glassfish/modules/org.eclipse.persistence.jpa.jar
 %%DATADIR%%/glassfish/modules/org.eclipse.persistence.jpa.jpql.jar
 %%DATADIR%%/glassfish/modules/org.eclipse.persistence.jpa.modelgen.processor.jar
+%%DATADIR%%/glassfish/modules/org.eclipse.persistence.json.jar
 %%DATADIR%%/glassfish/modules/org.eclipse.persistence.oracle.jar
 %%DATADIR%%/glassfish/modules/osgi-adapter.jar
 %%DATADIR%%/glassfish/modules/osgi-cli-remote.jar
