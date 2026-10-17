@@ -158,6 +158,7 @@
     SUBDIR += hyprcursor
     SUBDIR += hypridle
     SUBDIR += hyprland-guiutils
+    SUBDIR += hyprland-preview-share-picker
     SUBDIR += hyprlauncher
     SUBDIR += hyprlock
     SUBDIR += hyprls
