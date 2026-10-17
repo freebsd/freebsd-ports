@@ -1590,6 +1590,7 @@
     SUBDIR += ucspi-tcp
     SUBDIR += ucspi-unix
     SUBDIR += udfclient
+    SUBDIR += udiskie
     SUBDIR += ufetch
     SUBDIR += ufs-utils
     SUBDIR += uhidd
