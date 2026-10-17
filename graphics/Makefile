@@ -1257,6 +1257,7 @@
     SUBDIR += synfigstudio
     SUBDIR += tachyon
     SUBDIR += telak
+    SUBDIR += tensaku
     SUBDIR += tesseract
     SUBDIR += tesseract-data
     SUBDIR += tgif
