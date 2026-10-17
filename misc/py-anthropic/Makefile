@@ -1,5 +1,5 @@
 PORTNAME=	anthropic
-DISTVERSION=	1.12.1
+DISTVERSION=	1.15.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=4.1.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docstring_parser>=0.15:textproc/py-docstring_parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx2>=2.0.0:www/py-httpx2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jiter>=0.4.0:textproc/py-jiter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.1.0:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=1.10.0:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sniffio>=0:devel/py-sniffio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14:devel/py-typing-extensions@${PY_FLAVOR}
