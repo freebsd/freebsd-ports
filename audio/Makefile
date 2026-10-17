@@ -86,6 +86,7 @@
     SUBDIR += chordpack
     SUBDIR += chromaprint
     SUBDIR += cli-visualizer
+    SUBDIR += cliamp
     SUBDIR += clunk
     SUBDIR += cmt
     SUBDIR += cmus

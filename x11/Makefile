@@ -158,6 +158,7 @@
     SUBDIR += hyprcursor
     SUBDIR += hypridle
     SUBDIR += hyprland-guiutils
+    SUBDIR += hyprland-preview-share-picker
     SUBDIR += hyprlauncher
     SUBDIR += hyprlock
     SUBDIR += hyprls
@@ -349,6 +350,8 @@
     SUBDIR += nxcomp
     SUBDIR += openrgb
     SUBDIR += oscar
+    SUBDIR += owe
+    SUBDIR += owe-lockfeed
     SUBDIR += p5-Clipboard
     SUBDIR += p5-X11-GUITest
     SUBDIR += p5-X11-IdleTime
