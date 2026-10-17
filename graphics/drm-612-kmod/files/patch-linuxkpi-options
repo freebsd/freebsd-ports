@@ -1,0 +1,162 @@
+diff --git a/amd/amdgpu/Makefile b/amd/amdgpu/Makefile
+index 16c6e8f..a60ad9e 100644
+--- amd/amdgpu/Makefile
++++ amd/amdgpu/Makefile
+@@ -1273,8 +1273,13 @@ SRCS+=	device_if.h \
+ 
+ CLEANFILES+= ${KMOD}.ko.full ${KMOD}.ko.debug
+ 
++# LinuxKPI headers require the generated options and common configuration.
++SRCS+=	opt_linuxkpi.h
++
+ .include <bsd.kmod.mk>
+ 
++CFLAGS+= -include ${SYSDIR}/compat/linuxkpi/common/include/linux/kconfig.h
++
+ # These Makefiles are included after <bsd.kmod.mk> because they expand
+ # variables defined by it.
+ .include "../../linuxkpi_version.mk"
+diff --git a/amd/amdkfd/Makefile b/amd/amdkfd/Makefile
+index 6082038..3fe65d0 100644
+--- amd/amdkfd/Makefile
++++ amd/amdkfd/Makefile
+@@ -51,8 +51,13 @@ SRCS+=	device_if.h \
+ 
+ CLEANFILES+= ${KMOD}.ko.full ${KMOD}.ko.debug
+ 
++# LinuxKPI headers require the generated options and common configuration.
++SRCS+=	opt_linuxkpi.h
++
+ .include <bsd.kmod.mk>
+ 
++CFLAGS+= -include ${SYSDIR}/compat/linuxkpi/common/include/linux/kconfig.h
++
+ # These Makefiles are included after <bsd.kmod.mk> because they expand
+ # variables defined by it.
+ .include "../../linuxkpi_version.mk"
+diff --git a/dmabuf/Makefile b/dmabuf/Makefile
+index 8aa6a87..41561cd 100644
+--- dmabuf/Makefile
++++ dmabuf/Makefile
+@@ -24,8 +24,13 @@ SRCS+=	device_if.h \
+ 
+ CLEANFILES+= ${KMOD}.ko.full ${KMOD}.ko.debug
+ 
++# LinuxKPI headers require the generated options and common configuration.
++SRCS+=	opt_linuxkpi.h
++
+ .include <bsd.kmod.mk>
+ 
++CFLAGS+= -include ${SYSDIR}/compat/linuxkpi/common/include/linux/kconfig.h
++
+ # These Makefiles are included after <bsd.kmod.mk> because they expand
+ # variables defined by it.
+ .include "../linuxkpi_version.mk"
+diff --git a/drm/Makefile b/drm/Makefile
+index 841fa16..96892f7 100644
+--- drm/Makefile
++++ drm/Makefile
+@@ -161,8 +161,13 @@ SRCS+=	device_if.h \
+ 
+ CLEANFILES+= ${KMOD}.ko.full ${KMOD}.ko.debug
+ 
++# LinuxKPI headers require the generated options and common configuration.
++SRCS+=	opt_linuxkpi.h
++
+ .include <bsd.kmod.mk>
+ 
++CFLAGS+= -include ${SYSDIR}/compat/linuxkpi/common/include/linux/kconfig.h
++
+ # These Makefiles are included after <bsd.kmod.mk> because they expand
+ # variables defined by it.
+ .include "../linuxkpi_version.mk"
+diff --git a/dummygfx/Makefile b/dummygfx/Makefile
+index 7578e77..f95ec43 100644
+--- dummygfx/Makefile
++++ dummygfx/Makefile
+@@ -29,8 +29,13 @@ SRCS	+=			\
+ 
+ CLEANFILES+= ${KMOD}.ko.full ${KMOD}.ko.debug
+ 
++# LinuxKPI headers require the generated options and common configuration.
++SRCS+=	opt_linuxkpi.h
++
+ .include <bsd.kmod.mk>
+ 
++CFLAGS+= -include ${SYSDIR}/compat/linuxkpi/common/include/linux/kconfig.h
++
+ # These Makefiles are included after <bsd.kmod.mk> because they expand
+ # variables defined by it.
+ .include "../linuxkpi_version.mk"
+diff --git a/i915/Makefile b/i915/Makefile
+index ccc4c5c..e047270 100644
+--- i915/Makefile
++++ i915/Makefile
+@@ -358,8 +358,13 @@ SRCS	+=			\
+ 
+ CLEANFILES+= ${KMOD}.ko.full ${KMOD}.ko.debug
+ 
++# LinuxKPI headers require the generated options and common configuration.
++SRCS+=	opt_linuxkpi.h
++
+ .include <bsd.kmod.mk>
+ 
++CFLAGS+= -include ${SYSDIR}/compat/linuxkpi/common/include/linux/kconfig.h
++
+ # These Makefiles are included after <bsd.kmod.mk> because they expand
+ # variables defined by it.
+ .include "../linuxkpi_version.mk"
+diff --git a/linuxkpi_video/Makefile b/linuxkpi_video/Makefile
+index fde77c7..9f0849e 100644
+--- linuxkpi_video/Makefile
++++ linuxkpi_video/Makefile
+@@ -25,8 +25,13 @@ SRCS+=	bus_if.h \
+ 	pci_if.h \
+ 	vnode_if.h \
+ 
++# LinuxKPI headers require the generated options and common configuration.
++SRCS+=	opt_linuxkpi.h
++
+ .include <bsd.kmod.mk>
+ 
++CFLAGS+= -include ${SYSDIR}/compat/linuxkpi/common/include/linux/kconfig.h
++
+ # These Makefiles are included after <bsd.kmod.mk> because they expand
+ # variables defined by it.
+ .include "../linuxkpi_version.mk"
+diff --git a/radeon/Makefile b/radeon/Makefile
+index fad5cce..b6cb9cb 100644
+--- radeon/Makefile
++++ radeon/Makefile
+@@ -127,8 +127,13 @@ SRCS+=	device_if.h \
+ 
+ CLEANFILES+= ${KMOD}.ko.full ${KMOD}.ko.debug
+ 
++# LinuxKPI headers require the generated options and common configuration.
++SRCS+=	opt_linuxkpi.h
++
+ .include <bsd.kmod.mk>
+ 
++CFLAGS+= -include ${SYSDIR}/compat/linuxkpi/common/include/linux/kconfig.h
++
+ # These Makefiles are included after <bsd.kmod.mk> because they expand
+ # variables defined by it.
+ .include "../linuxkpi_version.mk"
+diff --git a/ttm/Makefile b/ttm/Makefile
+index 60b0f54..99121d1 100644
+--- ttm/Makefile
++++ ttm/Makefile
+@@ -38,8 +38,13 @@ SRCS+=	device_if.h \
+ 
+ CLEANFILES+= ${KMOD}.ko.full ${KMOD}.ko.debug
+ 
++# LinuxKPI headers require the generated options and common configuration.
++SRCS+=	opt_linuxkpi.h
++
+ .include <bsd.kmod.mk>
+ 
++CFLAGS+= -include ${SYSDIR}/compat/linuxkpi/common/include/linux/kconfig.h
++
+ # These Makefiles are included after <bsd.kmod.mk> because they expand
+ # variables defined by it.
+ .include "../linuxkpi_version.mk"
