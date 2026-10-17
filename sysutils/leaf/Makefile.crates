@@ -26,6 +26,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cc-1.2.59 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
+		chacha20-0.10.2 \
 		clap-4.6.1 \
 		clap_builder-4.6.0 \
 		clap_derive-4.6.1 \
@@ -34,6 +35,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		compact_str-0.9.0 \
 		convert_case-0.10.0 \
 		cpufeatures-0.2.17 \
+		cpufeatures-0.3.1 \
 		crc32fast-1.5.0 \
 		critical-section-1.2.0 \
 		crossterm-0.29.0 \
@@ -163,22 +165,21 @@ CARGO_CRATES=	adler2-2.0.1 \
 		portable-atomic-1.13.1 \
 		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
-		ppv-lite86-0.2.21 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
 		pulldown-cmark-0.12.2 \
 		pulldown-cmark-escape-0.11.0 \
 		quinn-0.11.9 \
-		quinn-proto-0.11.15 \
+		quinn-proto-0.11.18 \
 		quinn-udp-0.5.14 \
 		quote-1.0.45 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		rand-0.8.6 \
-		rand-0.9.4 \
-		rand_chacha-0.9.0 \
+		rand-0.10.3 \
 		rand_core-0.6.4 \
-		rand_core-0.9.5 \
+		rand_core-0.10.1 \
+		rand_pcg-0.10.2 \
 		ratatui-0.30.2 \
 		ratatui-core-0.1.2 \
 		ratatui-crossterm-0.1.2 \
@@ -195,7 +196,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.45 \
+		rustls-0.23.46 \
 		rustls-pki-types-1.14.0 \
 		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
@@ -326,8 +327,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		xterm-color-1.0.2 \
 		yoke-0.8.2 \
 		yoke-derive-0.8.2 \
-		zerocopy-0.8.48 \
-		zerocopy-derive-0.8.48 \
 		zerofrom-0.1.7 \
 		zerofrom-derive-0.1.7 \
 		zeroize-1.8.2 \
