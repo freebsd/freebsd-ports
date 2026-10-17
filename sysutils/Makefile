@@ -649,6 +649,7 @@
     SUBDIR += kubo-go
     SUBDIR += kustomize
     SUBDIR += kvmclock-kmod
+    SUBDIR += lazydocker
     SUBDIR += lazyssh
     SUBDIR += lbl-cf
     SUBDIR += lbl-hf
