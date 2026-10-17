@@ -1,5 +1,5 @@
 PORTNAME=	traefik
-PORTVERSION=	3.7.14
+PORTVERSION=	3.7.15
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/riggs/${PORTNAME}
 DISTNAME=	${PORTNAME}-${DISTVERSIONPREFIX}${BASE_SRC}${DISTVERSIONSUFFIX}
@@ -12,7 +12,8 @@ PATCHFILES=	${PORTNAME}-${BASE_SRC}-3.7.5.patch.xz:-p1 \
 		${PORTNAME}-3.7.9-3.7.10.patch.xz:-p1 \
 		${PORTNAME}-3.7.10-3.7.11.patch.xz:-p1 \
 		${PORTNAME}-3.7.11-3.7.13.patch.xz:-p1 \
-		${PORTNAME}-3.7.13-${PORTVERSION}.patch.xz:-p1
+		${PORTNAME}-3.7.13-3.7.14.patch.xz:-p1 \
+		${PORTNAME}-3.7.14-${PORTVERSION}.patch.xz:-p1
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	High availability reverse proxy and load balancer
