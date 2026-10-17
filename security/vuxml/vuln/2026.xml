@@ -1,3 +1,40 @@
+  <vuln vid="fbf59c13-ca23-11f1-ada1-ac5afc632ba3">
+    <topic>libX11 -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>libX11</name>
+<range><lt>1.8.14</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>X.Org reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-October/003752.html">
+	  <p>Multiple issues have been found in the X client library
+	  implementations published by X.Org for which we are
+	  releasing security fixes for.</p>
+	  <ul>
+	    <li>CVE-2026-88806: Out-of-bounds write vulnerability in libX11's XKB (X Keyboard Extension) action parser</li>
+	    <li>CVE-2026-94283: Out-of-bounds read vulnerability in libX11's XIM (X Input Method) attribute parser</li>
+	    <li>CVE-2026-94284: Out-of-bounds read vulnerability in libX11's XIM trigger-key registration parser</li>
+	    <li>CVE-2026-94285: Out-of-bounds read in libX11's byte-oriented codeset parser</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-88806</cvename>
+      <cvename>CVE-2026-94283</cvename>
+      <cvename>CVE-2026-94284</cvename>
+      <cvename>CVE-2026-94285</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2026-October/003752.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-17</discovery>
+      <entry>2026-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="83f5b20f-4429-4ee1-a764-66a231ed9dab">
     <topic>mod_wsgi -- race condition at process start can leak request context between requests</topic>
     <affects>
