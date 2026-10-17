@@ -1,7 +1,5 @@
 PORTNAME=	hared
-DISTVERSION=	1.0-45
-DISTVERSIONSUFFIX=	-g8341d8a
-PORTREVISION=	46
+DISTVERSION=	1.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,11 +14,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jpmens
 GH_PROJECT=	hared-hare
 
-GH_TUPLE=	go-gcfg:gcfg:f02745a:gcfg/vendor/gopkg.in/gcfg.v1 \
+GH_TUPLE=	go-gcfg:gcfg:438aed9:gcfg/vendor/gopkg.in/gcfg.v1 \
 		go-warnings:warnings:27b9fab:warnings/vendor/gopkg.in/warnings.v0 \
-		eclipse:paho.mqtt.golang:d4f545e:paho/vendor/github.com/eclipse/paho.mqtt.golang \
-		golang:net:9dfe398:net/vendor/golang.org/x/net \
-		gorilla:websocket:7a8dacf:websocket/vendor/github.com/gorilla/websocket
+		eclipse:paho.mqtt.golang:v1.5.1:paho/vendor/github.com/eclipse/paho.mqtt.golang \
+		golang:sync:v0.24.0:sync/vendor/golang.org/x/sync \
+		golang:net:v0.61.0:net/vendor/golang.org/x/net \
+		gorilla:websocket:v1.5.3:websocket/vendor/github.com/gorilla/websocket
 
 GO_TARGET=	./daemon:${PORTNAME}
 
