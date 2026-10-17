@@ -1,3 +1,50 @@
+  <vuln vid="9022f1ac-ca25-11f1-ada1-ac5afc632ba3">
+    <topic>libXi -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>libXi</name>
+<range><lt>1.8.4</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>X.Org reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-October/003752.html">
+	  <p>Multiple issues have been found in the X client library
+	  implementations published by X.Org for which we are
+	  releasing security fixes for.</p>
+	  <ul>
+	    <li>CVE-2026-93541: Out-of-bounds read in libXi's XQueryDeviceState()</li>
+	    <li>CVE-2026-93542: Out-of-bounds read in libXi's XI2 class parsing via size_classes() and copy_classes()</li>
+	    <li>CVE-2026-93543: Out-of-bounds read in libXi's XI2 class parser</li>
+	    <li>CVE-2026-93544: Out-of-bounds read in libXi's XI2 XIQueryDevice reply parsing</li>
+	    <li>CVE-2026-93545: Out-of-bounds read in libXi's XListInputDevices()</li>
+	    <li>CVE-2026-94281: Out-of-bounds read in libXi's XListInputDevices() class parsing</li>
+	    <li>CVE-2026-94282: Out-of-bounds read in libXi's XI2 enter/leave/focus cookie conversion.</li>
+	    <li>CVE-2026-109089: libXi XGetDeviceControl Control Type Mismatch Heap Buffer Overflow</li>
+	    <li>CVE-2026-109090: libXi XGetDeviceControl DEVICE_ENABLE Heap Buffer Overflow</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-93541</cvename>
+      <cvename>CVE-2026-93542</cvename>
+      <cvename>CVE-2026-93543</cvename>
+      <cvename>CVE-2026-93544</cvename>
+      <cvename>CVE-2026-93545</cvename>
+      <cvename>CVE-2026-94281</cvename>
+      <cvename>CVE-2026-94282</cvename>
+      <cvename>CVE-2026-109089</cvename>
+      <cvename>CVE-2026-109090</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2026-October/003752.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-17</discovery>
+      <entry>2026-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fbf59c13-ca23-11f1-ada1-ac5afc632ba3">
     <topic>libX11 -- multiple vulnerabilities</topic>
     <affects>
