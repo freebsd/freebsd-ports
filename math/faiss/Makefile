@@ -1,7 +1,11 @@
 PORTNAME=	faiss
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.15.1
+PORTREVISION=	1
 CATEGORIES=	math
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	ffc5c9a500b7a854c5ad6a3e77fabd31ec0a9300.patch:-p1 # Fix build for CPUTYPE=znver4: https://github.com/facebookresearch/faiss/pull/5752
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for efficient similarity search & clustering of dense vectors
