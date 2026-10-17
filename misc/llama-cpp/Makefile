@@ -1,12 +1,15 @@
 PORTNAME=	llama-cpp
 DISTVERSIONPREFIX=	b
-DISTVERSION=	11429 # gh release view --repo ggml-org/llama.cpp --json tagName -q .tagName (0.6.0 now but there is a compilation issue with it, so keep using the old scheme instead)
+DISTVERSION=	11669 # gh release view --repo ggml-org/llama.cpp --json tagName -q .tagName (0.6.0 now but there is a compilation issue with it, so keep using the old scheme instead)
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://huggingface.co/buckets/ggml-org/llama-ui/resolve/${UI_ASSETS_TAG}/:ui_assets
 DISTFILES=	dist.tar.gz:ui_assets \
 		dist.tar.gz.sha256:ui_assets
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+# latest release tag in bNNNNN format:
+# curl -s https://api.github.com/repos/ggml-org/llama.cpp/releases/latest | grep -oE "b[0-9]{5,}" | head -n 1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Facebook's LLaMA model in C/C++ # '
@@ -30,7 +33,7 @@ GH_PROJECT=	llama.cpp
 
 SHEBANG_GLOB=	*.py
 
-UI_ASSETS_TAG=	b10970
+UI_ASSETS_TAG=	b${DISTVERSION}
 
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		BUILD_STATIC_LIBS \
