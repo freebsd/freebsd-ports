@@ -143,12 +143,8 @@ PLIST_SUB+=	GOLD="@comment "
 CONFIGURE_ARGS+=	--enable-new-dtags
 .endif
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.elif ${ARCH} == powerpcspe
+.if ${ARCH} == powerpcspe
 CONFIGURE_TARGET=	powerpc-portbld-freebsd${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
 post-patch:

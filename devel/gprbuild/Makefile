@@ -25,8 +25,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
 GH_PROJECT=	gprconfig_kb:kb xmlada:xa
 
-CONFIGURE_TARGET=	${_CONFIGURE_ARCH}-portbld-${_CONFIGURE_PLATFORM}
-
 MAKE_CMD=	gprbuild
 
 NO_SHLIB_REQUIRES_GLOB=	libgnarl-${_ada_version}.so libgnat-${_ada_version}.so
@@ -72,8 +70,6 @@ _BOOTSTRAP_XMLADA_GPRINSTALL_ARGS=	${_XMLADA_GPR_PROJECT_ARGS} \
 					--prefix='${_BOOTSTRAP_PREFIX}' -p -v
 _BOOTSTRAP_XMLADA_LIBRARY_TYPES=	static-pic
 _BOOTSTRAP_XMLADA_WRKSRC=		${WRKDIR}/xmlada-${DISTVERSION}
-_CONFIGURE_ARCH=			${ARCH:S/amd64/x86_64/}
-_CONFIGURE_PLATFORM=			${OPSYS:tl}${OSREL}
 _DIST_BUILD_DATE=			20251007
 _DIST_BUILD_TYPE=			FSF
 _DOCS_INSTALL_EXCLUDES=			"-not -name .buildinfo -not -regex ^./_sources.*"

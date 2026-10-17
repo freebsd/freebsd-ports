@@ -76,10 +76,7 @@ GRAPHITE_CONFIGURE_WITH+=      isl
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-
-.elif ${ARCH} == powerpc64
+.if ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--with-abi=elfv2
 .endif
 

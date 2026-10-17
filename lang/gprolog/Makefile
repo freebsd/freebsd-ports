@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}" \
 		--with-doc-dir="${DOCSDIR}" \
 		--with-examples-dir="${EXAMPLESDIR}"
-CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC_SUBDIR=	src
 

@@ -125,10 +125,6 @@ PLIST_SUB+=	LIBCXX="@comment "
 EXCLUDE+=	zlib
 .endif
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
-
 # powerpc64le switched long double to IEEE-128 in FreeBSD 16; apply the gdb
 # long-double format fix only there so 14/15 packages keep the 64-bit format.
 .if ${ARCH} == powerpc64le && ${OSVERSION} >= 1600019

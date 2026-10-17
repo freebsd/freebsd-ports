@@ -53,10 +53,6 @@ PLIST_SUB=	SP_VER=${SP_VER}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
-
 .if ${ARCH} == powerpc64le && (${OSVERSION} < 1405000 || \
 	(${OSVERSION} >= 1500000 && ${OSVERSION} < 1501501) || \
 	(${OSVERSION} >= 1600000 && ${OSVERSION} < 1600019))

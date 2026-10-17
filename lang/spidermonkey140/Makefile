@@ -53,10 +53,6 @@ PLIST_SUB=	SP_VER=${SP_VER}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
-
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 CONFIGURE_ENV+=	LLVM_CONFIG=${LLVM_CONFIG} \
 		LLVM_OBJDUMP=llvm-objdump${LLVM_VERSION}
