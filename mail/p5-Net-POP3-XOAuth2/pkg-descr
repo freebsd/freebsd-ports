@@ -1,0 +1,3 @@
+Net::POP3::XOAuth2 is an extension for Net::POP3.  It adds an xoauth2()
+method that lets one authenticate to a POP3 server (for example, Gmail
+or Office 365) using SASL XOAUTH2 with an OAuth2 access token.
