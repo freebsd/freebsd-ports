@@ -1,5 +1,5 @@
 PORTNAME=	xcircuit
-DISTVERSION=	3.10.45
+DISTVERSION=	3.10.46
 PORTEPOCH=	1
 CATEGORIES=	cad
 
@@ -29,10 +29,8 @@ MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 
 DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/${PORTNAME}.gif" \
 		"${PORTNAME}" "" false
-# Restrict to stable (even) versions, indicated by the second component.
-PORTSCOUT=	limitw:1,even
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
 post-patch:
@@ -45,9 +43,12 @@ post-patch:
 post-install:
 	cd ${STAGEDIR}${DATADIR} && ${STRIP_CMD} xcircdnull xcircexec xcircuit.so
 
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
+
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_DATA} \
-		*.lgf *.lps *.ps *.sim .xcircuitrc ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
