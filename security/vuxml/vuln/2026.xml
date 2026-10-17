@@ -1,3 +1,35 @@
+  <vuln vid="d4bc120a-ca26-11f1-ada1-ac5afc632ba3">
+    <topic>libXpm -- vulnerability</topic>
+    <affects>
+<package>
+<name>libXpm</name>
+<range><lt>3.5.20</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<p>X.Org reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-October/003752.html">
+	  <p>Multiple issues have been found in the X client library
+	  implementations published by X.Org for which we are
+	  releasing security fixes for.</p>
+	  <ul>
+	    <li>CVE-2026-94287: Denial of service via unsigned underflow in libXpm's write path</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-94287</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2026-October/003752.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-17</discovery>
+      <entry>2026-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9022f1ac-ca25-11f1-ada1-ac5afc632ba3">
     <topic>libXi -- multiple vulnerabilities</topic>
     <affects>
