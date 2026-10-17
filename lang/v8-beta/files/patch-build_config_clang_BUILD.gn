@@ -1,6 +1,6 @@
---- build/config/clang/BUILD.gn.orig	2026-09-21 01:17:00 UTC
+--- build/config/clang/BUILD.gn.orig	2026-10-12 03:47:41 UTC
 +++ build/config/clang/BUILD.gn
-@@ -282,6 +282,10 @@ clang_lib("compiler_builtins") {
+@@ -286,6 +286,10 @@ clang_lib("compiler_builtins") {
      } else {
        assert(false, "unsupported target_platform=$target_platform")
      }
