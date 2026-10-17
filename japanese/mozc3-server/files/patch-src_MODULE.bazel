@@ -1,0 +1,118 @@
+--- src/MODULE.bazel.orig	2026-07-15 15:24:24 UTC
++++ src/MODULE.bazel
+@@ -219,7 +219,7 @@ pkg_config_repository(
+ # iBus
+ pkg_config_repository(
+     name = "ibus",
+-    exec_os = ["linux"],
++    exec_os = ["linux", "freebsd"],
+     packages = [
+         "glib-2.0",
+         "gobject-2.0",
+@@ -228,16 +228,20 @@ pkg_config_repository(
+ )
+ 
+ # Fcitx
+-new_local_repository(
++pkg_config_repository(
+     name = "fcitx",
+-    build_file = "BUILD.fcitx.bazel",
+-    # This path should be updated per the environment.
+-    path = "/usr",  # For Debian
++    exec_os = ["linux","freebsd"],
++    packages = [
++      "fcitx",
++      "fcitx-config",
++      "fcitx-utils",
++    ],
+ )
+ 
+ # Fcitx 5
+ pkg_config_repository(
+     name = "fcitx5",
++    exec_os = ["linux","freebsd"],
+     packages = [
+         "Fcitx5Core",
+         "Fcitx5Module",
+@@ -247,12 +251,18 @@ pkg_config_repository(
+ # Qt for Linux
+ pkg_config_repository(
+     name = "qt_linux",
+-    exec_os = ["linux"],
++    exec_os = ["linux","freebsd"],
+     packages = [
+         "Qt6Core",
+         "Qt6Gui",
+         "Qt6Widgets",
+     ],
++    symlinks = [
++        "%%LOCALBASE%%/include/GL",
++    ],
++    includedirs = [
++        "%%LOCALBASE%%/include",
++    ],
+ )
+ 
+ # Qt for macOS
+@@ -384,13 +394,12 @@ http_archive(
+ )
+ 
+ # Japanese Usage Dictionary (2025-01-25)
+-JA_USAGE_DICT_TAG = "2025-01-25"
++#JA_USAGE_DICT_TAG = "2025-01-25"
+ 
+-http_archive(
++new_local_repository(
+     name = "ja_usage_dict",
+-    sha256 = "140f24f71f7d78d5eb5b93a9c079f44f23728dca5ab16bf857fe8a3fa1bf20ed",
+-    strip_prefix = "japanese-usage-dictionary-%s" % JA_USAGE_DICT_TAG,
+-    url = "https://github.com/hiroyuki-komatsu/japanese-usage-dictionary/archive/refs/tags/%s.zip" % JA_USAGE_DICT_TAG,
++    build_file = "@//bazel:BUILD.ja_usage_dict.bazel",
++    path = "japanese_usage_dictionary",
+ )
+ 
+ # Zip code (2026-04-03, 621d059fbcbfae17bfca15b439692bae934268c3)
+@@ -399,16 +408,37 @@ http_archive(
+ # The data files are mirror of the following files.
+ # * https://www.post.japanpost.jp/zipcode/dl/jigyosyo/zip/jigyosyo.zip
+ # * https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip
+-http_archive(
++new_local_repository(
+     name = "zip_code_jigyosyo",
+     build_file_content = "exports_files([\"JIGYOSYO.CSV\"])",
+-    sha256 = "14be1030f607c5f819f2f45a485e89511907bdd1d62e7fb1931b6e48a3431c3a",
+-    url = "https://github.com/hiroyuki-komatsu/japanpost_zipcode/raw/621d059fbcbfae17bfca15b439692bae934268c3/jigyosyo.zip",
++    path = "japanpost_zipcode",
+ )
+ 
+-http_archive(
++new_local_repository(
+     name = "zip_code_ken_all",
+     build_file_content = "exports_files([\"KEN_ALL.CSV\"])",
+-    sha256 = "3adc97d8e19e1168a6cdcb2fce759d0e9e613a9a3b630cc180aecfd56ae81eaf",
+-    url = "https://github.com/hiroyuki-komatsu/japanpost_zipcode/raw/621d059fbcbfae17bfca15b439692bae934268c3/ken_all.zip",
++    path = "japanpost_zipcode",
+ )
++
++register_toolchains("@bazel_tools//tools/python:autodetecting_toolchain")
++
++#single_version_override(
++#    module_name = "rules_buf",
++#    patches = [
++#      "//:rules_buf.patch",
++#    ],
++#)
++
++#single_version_override(
++#    module_name = "rules_rust",
++#    patches = [
++#      "//:rules_rust.patch",
++#    ],
++#)
++
++#single_version_override(
++#    module_name = "rules_go",
++#    patches = [
++#      "//:rules_go.patch",
++#    ],
++#)

@@ -1,0 +1,12 @@
+--- src/ipc/BUILD.bazel.orig	2025-07-17 21:17:26 UTC
++++ src/ipc/BUILD.bazel
+@@ -58,6 +58,9 @@ mozc_cc_library(
+         "//session:__pkg__",
+         "//win32:__subpackages__",
+     ],
++    linkopts = [
++        "-lprocstat",
++    ],
+     deps = [
+         ":ipc_path_manager",
+         "//base:const",

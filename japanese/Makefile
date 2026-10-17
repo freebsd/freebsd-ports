@@ -54,6 +54,7 @@
     SUBDIR += fcitx5-cskk
     SUBDIR += fcitx5-hazkey
     SUBDIR += fcitx5-karukan
+    SUBDIR += fcitx5-mozc3
     SUBDIR += fcitx5-skk
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
@@ -129,6 +130,7 @@
     SUBDIR += hns
     SUBDIR += ibus-anthy
     SUBDIR += ibus-mozc
+    SUBDIR += ibus-mozc3
     SUBDIR += ibus-skk
     SUBDIR += icanna
     SUBDIR += ipadic
@@ -175,9 +177,12 @@
     SUBDIR += migemo.el
     SUBDIR += mime_pls
     SUBDIR += mozc-el
+    SUBDIR += mozc3-el
     SUBDIR += mozc-modeless
     SUBDIR += mozc-server
+    SUBDIR += mozc3-server
     SUBDIR += mozc-tool
+    SUBDIR += mozc3-tool
     SUBDIR += multiskkserv
     SUBDIR += mypaedia-fpw-package
     SUBDIR += namazu2
@@ -282,6 +287,7 @@
     SUBDIR += tomoe
     SUBDIR += uim-anthy-unicode
     SUBDIR += uim-mozc
+    SUBDIR += uim-mozc3
     SUBDIR += uim-tomoe-gtk
     SUBDIR += unidic-to-mozc
     SUBDIR += vera-fpw

@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+UTDIC option enhances mozc's Japanese input conversion by
+utilizing the UT dictionary, but it requires recompilation
+to use.
+EOM
+}
+]

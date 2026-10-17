@@ -35,6 +35,8 @@ BUILD_MOZC_LIST?=	mozc_server
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-server
 
+CONFLICTS_INSTALL=	ja-mozc3-server
+
 LICENSE=		BSD3CLAUSE NAISTL
 LICENSE_COMB=		multi
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE
@@ -48,12 +50,14 @@ USES+=		qt:6 gnome
 USE_GNOME=	glib20 gtk20
 USE_QT=		base tools:build
 EXTRA_PATCHES=	${PATCHDIR}/qt6
+CONFLICTS_INSTALL=	ja-mozc3-tool
 .elif ${BUILD_MOZC_LIST:Mibus_mozc} == "ibus_mozc"
 USES+=		gettext-runtime gnome xorg
 USE_XORG=	xcb
 USE_GNOME=	cairo gdkpixbuf glib20 gtk20
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
+CONFLICTS_INSTALL=	ja-ibus-mozc3
 .elif ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
 USES+=		emacs
 .elif ${BUILD_MOZC_LIST:Mfcitx_mozc}
@@ -267,6 +271,8 @@ LIB_DEPENDS+=	libuim.so:textproc/uim
 RUN_DEPENDS+=	mozc_server:japanese/mozc-server \
 		mozc_tool:japanese/mozc-tool
 
+CONFLICTS_INSTALL=	ja-uim-mozc3
+
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-unix-uim-mozc.cc \
 		${PATCHDIR}/extra-patch-src-unix-uim-uim.gyp \
 		${PATCHDIR}/extra-patch-src-unix-uim-key_translator.h \
@@ -376,6 +382,8 @@ do-install-fcitx_mozc:
 .if ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
 CATEGORIES+=	elisp
 RUN_DEPENDS+=	mozc_server:japanese/mozc-server
+
+CONFLICTS_INSTALL=	ja-mozc3-el
 
 NO_ARCH=	yes
 PLIST_FILES+=	${EMACS_SITE_LISPDIR}/mozc/mozc.el.gz \

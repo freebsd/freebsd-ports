@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+To activate uim-mozc, please add the following into ~/.xinitrc or
+~/.xsession:
+
+export GTK_IM_MODULE=uim
+export QT_IM_MODULE=uim
+export XMODIFIERS=@im=uim
+export XIM=uim
+%%PREFIX%%/bin/mozc start
+uim-xim &
+EOM
+}
+]

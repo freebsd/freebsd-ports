@@ -1,0 +1,10 @@
+--- src/data/symbol/symbol.tsv.orig	2025-01-21 06:39:26 UTC
++++ src/data/symbol/symbol.tsv
+@@ -46,6 +46,7 @@ POS	CHAR	Reading (space separated)	description	additio
+ 記号	＼	ばっくすらっしゅ ぎゃくしゃせん ・ / ／ \ ＼ ¥ ￥ きごう しゃせん すらっしゅ ななめ	バックスラッシュ		GENERAL
+ 記号	\	ばっくすらっしゅ ぎゃくしゃせん ・ / ／ \ ＼ ¥ ￥ きごう しゃせん すらっしゅ ななめ	バックスラッシュ		GENERAL
+ 記号	〜	にょろ なみ から ー - ~ きごう より	波ダッシュ		GENERAL
++記号	～	にょろ なみ から ー - ~ きごう より	全角チルダ		GENERAL
+ 記号	∥	| || たてぼう たてせん へいこう きごう	縦線 平行		SYMBOL
+ 記号	‖	| || たてぼう たてせん そうちゅう きごう	縦線 双柱		SYMBOL
+ 記号	｜	| たてぼう たてせん きごう	縦線		GENERAL

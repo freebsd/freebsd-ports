@@ -1,0 +1,25 @@
+--- src/unix/BUILD.bazel.orig	2024-11-08 14:39:25 UTC
++++ src/unix/BUILD.bazel
+@@ -64,14 +64,14 @@ genrule(
+             "//data/images/unix:ui-properties.png",
+             "//data/images/unix:ui-tool.png",
+         ],
+-        oss = [
+-            "@material_icon_dictionary_png//file",
+-            "@material_icon_dictionary_svg//file",
+-            "@material_icon_properties_png//file",
+-            "@material_icon_properties_svg//file",
+-            "@material_icon_tool_png//file",
+-            "@material_icon_tool_svg//file",
+-        ],
++        #oss = [
++        #    "@material_icon_dictionary_png//file",
++        #    "@material_icon_dictionary_svg//file",
++        #    "@material_icon_properties_png//file",
++        #    "@material_icon_properties_svg//file",
++        #    "@material_icon_tool_png//file",
++        #    "@material_icon_tool_svg//file",
++        #],
+     ),
+     outs = ["icons.zip"],
+     cmd = "$(location :build_icons) --inputs $(SRCS) --output $@",

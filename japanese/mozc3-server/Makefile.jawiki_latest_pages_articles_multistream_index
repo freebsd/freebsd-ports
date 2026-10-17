@@ -1,0 +1,2 @@
+UTDIC_MASTER_SITES+=	http://download.wikimedia.org/jawiki/20261001/:jawiki_latest_pages_articles_multistream_index
+UTDIC_DISTFILES+=	jawiki-20261001-pages-articles-multistream-index.txt.bz2:jawiki_latest_pages_articles_multistream_index
