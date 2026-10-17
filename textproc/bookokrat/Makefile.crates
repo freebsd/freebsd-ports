@@ -34,10 +34,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bitflags-1.3.2 \
 		bitflags-2.10.0 \
 		bitstream-io-2.6.0 \
+		bitvec-1.1.1 \
 		block-buffer-0.10.4 \
 		built-0.7.7 \
 		bumpalo-3.19.0 \
+		by_address-1.2.1 \
 		bytemuck-1.24.0 \
+		bytemuck_derive-1.12.1 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
 		bzip2-0.4.4 \
@@ -135,6 +138,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		foreign-types-shared-0.3.1 \
 		freetype-sys-0.20.1 \
 		fsevent-sys-4.1.0 \
+		funty-2.0.0 \
 		futf-0.1.5 \
 		futures-core-0.3.31 \
 		futures-executor-0.3.31 \
@@ -158,7 +162,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		html5ever-0.27.0 \
 		iana-time-zone-0.1.63 \
 		iana-time-zone-haiku-0.1.2 \
-		icy_sixel-0.1.3 \
+		icy_sixel-0.5.1 \
 		ident_case-1.0.1 \
 		image-0.25.6 \
 		image-webp-0.2.4 \
@@ -249,8 +253,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		open-5.3.3 \
 		option-ext-0.2.0 \
 		ordered-float-4.6.0 \
+		ordered-float-5.5.0 \
 		os_pipe-1.2.3 \
 		outref-0.5.2 \
+		palette-0.7.7 \
+		palette_derive-0.7.7 \
+		palette_math-0.7.7 \
 		parking_lot-0.12.4 \
 		parking_lot_core-0.9.11 \
 		paste-1.0.15 \
@@ -286,14 +294,19 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		protobuf-parse-3.7.2 \
 		protobuf-support-3.7.2 \
 		qoi-0.4.1 \
+		quantette-0.6.0 \
 		quick-error-2.0.1 \
 		quick-xml-0.26.0 \
 		quick-xml-0.38.4 \
 		quote-1.0.40 \
 		r-efi-5.3.0 \
+		radium-0.7.0 \
 		rand-0.8.5 \
+		rand-0.10.3 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
+		rand_core-0.10.1 \
+		rand_xoshiro-0.8.1 \
 		ratatui-0.30.0 \
 		ratatui-core-0.1.0 \
 		ratatui-crossterm-0.1.0 \
@@ -307,6 +320,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		redox_syscall-0.5.17 \
 		redox_users-0.4.6 \
 		redox_users-0.5.2 \
+		ref-cast-1.0.27 \
+		ref-cast-impl-1.0.27 \
 		regex-1.12.2 \
 		regex-automata-0.4.13 \
 		regex-syntax-0.8.5 \
@@ -322,7 +337,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustversion-1.0.22 \
 		rustybuzz-0.20.1 \
 		ryu-1.0.20 \
-		safe_arch-0.7.4 \
+		safe_arch-1.2.0 \
 		same-file-1.0.6 \
 		scc-2.4.0 \
 		scopeguard-1.2.0 \
@@ -371,7 +386,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		symbolic-demangle-12.16.2 \
 		syn-1.0.109 \
 		syn-2.0.105 \
+		syn-3.0.7 \
 		system-deps-6.2.2 \
+		tap-1.0.1 \
 		target-lexicon-0.12.16 \
 		tempfile-3.20.0 \
 		tendril-0.4.3 \
@@ -451,7 +468,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wezterm-dynamic-derive-0.1.1 \
 		wezterm-input-types-0.1.0 \
 		which-4.4.2 \
-		wide-0.7.33 \
+		wide-1.7.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.9 \
@@ -502,6 +519,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wio-0.2.2 \
 		wit-bindgen-rt-0.39.0 \
 		wl-clipboard-rs-0.9.3 \
+		wyz-0.5.1 \
 		x11rb-0.13.1 \
 		x11rb-protocol-0.13.1 \
 		xml-1.2.0 \
