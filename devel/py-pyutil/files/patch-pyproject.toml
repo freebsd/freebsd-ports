@@ -1,0 +1,33 @@
+Description: Build with the setuptools in the ports tree (63.1.0): replace
+  the PEP 639 license string and license-files (setuptools>=77) with the
+  license table.  Also drop the randcookie extra: randcookie no longer
+  needs zbase32 (see patch-pyutil_scripts_randcookie.py).
+Issue ID: https://github.com/tpltnt/pyutil/pull/15
+Changeset: none
+TODO: Drop the license hunk once devel/py-setuptools is 77 or later; report
+  the randcookie extra upstream (https://github.com/tpltnt/pyutil).
+
+--- pyproject.toml.orig	2026-05-31 11:24:39 UTC
++++ pyproject.toml
+@@ -6,12 +6,7 @@ authors = [
+ description = "a collection of utilities for Python programmers"
+ dynamic = ["version"]
+ readme = "README.rst"
+-license = "GPL-2.0-or-later"
+-license-files = [
+-    "COPYING.GPL",
+-    "COPYING.SPL.txt",
+-    "COPYING.TGPPL.rst",
+-]
++license = {text = "GPL-2.0-or-later"}
+ requires-python = ">=3.10"
+ keywords = ["utilities", "twisted"]
+ classifiers = [
+@@ -40,7 +35,6 @@ dependencies = ["simplejson>=2.1.0"]
+ 
+ [project.optional-dependencies]
+ jsonutil = ['simplejson >= 2.1.0']
+-randcookie = ['zbase32 >= 1.0']
+ 
+ [project.entry-points.'console_scripts']
+ randcookie = 'pyutil.scripts.randcookie:main'
