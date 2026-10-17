@@ -470,7 +470,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		httpdate-1.0.3 \
 		hybrid-array-0.2.3 \
 		hybrid-array-0.4.12 \
-		hyper-1.8.1 \
+		hyper-1.11.1 \
 		hyper-rustls-0.27.7 \
 		hyper-timeout-0.5.2 \
 		hyper-tls-0.6.0 \
@@ -564,6 +564,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libsqlite3-sys-0.37.0 \
 		line-clipping-0.3.7 \
 		link-section-0.17.2 \
+		linkify-0.11.0 \
 		linktime-proc-macro-0.1.0 \
 		linux-keyutils-0.2.4 \
 		linux-raw-sys-0.4.15 \
@@ -773,7 +774,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		quick-xml-0.41.0 \
 		quickcheck-1.1.0 \
 		quinn-0.11.9 \
-		quinn-proto-0.11.15 \
+		quinn-proto-0.11.18 \
 		quinn-udp-0.5.14 \
 		quinn-udp-0.6.1 \
 		quote-1.0.45 \
@@ -806,6 +807,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
+		rand_pcg-0.10.2 \
 		rand_regex-0.18.1 \
 		rand_xorshift-0.4.0 \
 		ratatui-0.30.2 \
@@ -1294,9 +1296,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		runfiles@git+https://github.com/dzbarsky/rules_rust?rev=b56cbaa8465e74127f1ea216f813cd377295ad81\#b56cbaa8465e74127f1ea216f813cd377295ad81 \
 		nucleo,nucleo-matcher@git+https://github.com/helix-editor/nucleo.git?rev=4253de9faabb4e5c6d81d946a5e35a90f87347ee\#4253de9faabb4e5c6d81d946a5e35a90f87347ee \
 		appcontainer_common,learning_mode_core,learning_mode_windows,mxc_config_contract,mxc_telemetry,process_security_environment_spec,sandbox_spec,wxc_common@git+https://github.com/microsoft/mxc?rev=6cd3d58f05d3447e67109cfb75e042803b843ca4\#6cd3d58f05d3447e67109cfb75e042803b843ca4 \
-		rmcp,rmcp-macros@git+https://github.com/modelcontextprotocol/rust-sdk?rev=3e636cab26c013eca5131103c03d20237f12c4df\#3e636cab26c013eca5131103c03d20237f12c4df \
 		crossterm@git+https://github.com/openai-oss-forks/crossterm?rev=ed1cdab335221515706178d68495bba2aed1924f\#ed1cdab335221515706178d68495bba2aed1924f \
 		tungstenite@git+https://github.com/openai-oss-forks/tungstenite-rs?rev=4fffad30fe373adbdcffab9545e9e9bf4f2fc19f\#4fffad30fe373adbdcffab9545e9e9bf4f2fc19f \
+		rmcp,rmcp-macros@git+https://github.com/modelcontextprotocol/rust-sdk?rev=4048ac40e958fb1a7d614617a2ae8d26666ee2fa\#4048ac40e958fb1a7d614617a2ae8d26666ee2fa \
 		tokio-tungstenite@git+https://github.com/openai-oss-forks/tokio-tungstenite?rev=0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186\#0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186 \
 		notify,notify-types@git+https://github.com/notify-rs/notify.git?rev=48415246732dc426577684bf03c558579cf0b081\#48415246732dc426577684bf03c558579cf0b081 \
 		h3,h3-quinn@git+https://github.com/hyperium/h3?rev=e07e69412876f7e26f026bd75a48b2704d8c8283\#e07e69412876f7e26f026bd75a48b2704d8c8283

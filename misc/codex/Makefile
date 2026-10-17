@@ -1,7 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.162.1
-PORTREVISION=	1
+DISTVERSION=	0.163.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -119,6 +118,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec_stdin_approval.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec_stdin_review_size.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
+		${BUILD_WRKSRC}/exec-server/src/environment/discovery_v2_tests.rs \
 		${BUILD_WRKSRC}/exec-server/src/process_sandbox_tests.rs \
 		${BUILD_WRKSRC}/exec-server/src/shell_snapshot_file_tests.rs \
 		${BUILD_WRKSRC}/exec-server/src/shell_snapshot_tests.rs \
@@ -128,7 +128,6 @@ post-patch:
 		${BUILD_WRKSRC}/shell-command/src/parse_command.rs \
 		${BUILD_WRKSRC}/shell-command/src/shell_detect.rs \
 		${BUILD_WRKSRC}/shell-command/src/shell_snapshot_tests.rs \
-		${BUILD_WRKSRC}/shell-escalation/src/unix/escalate_server.rs \
 		${BUILD_WRKSRC}/tui/src/exec_command.rs \
 		${BUILD_WRKSRC}/utils/path-uri/src/tests.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
@@ -142,7 +141,6 @@ post-patch:
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/thread_shell_command.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/turn_interrupt.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/turn_start.rs \
-		${BUILD_WRKSRC}/app-server/tests/suite/v2/turn_start_zsh_fork.rs \
 		${BUILD_WRKSRC}/cli/tests/sandbox_tty.rs \
 		${BUILD_WRKSRC}/config/src/config_requirements.rs \
 		${BUILD_WRKSRC}/config/src/hooks_tests.rs \
@@ -157,6 +155,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
 		${BUILD_WRKSRC}/core/tests/suite/code_mode.rs \
 		${BUILD_WRKSRC}/core/tests/suite/compact.rs \
+		${BUILD_WRKSRC}/core/tests/suite/dynamic_tool_cancellation.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/guardian_mcp_elicitation.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks.rs \
@@ -182,9 +181,9 @@ post-patch:
 		${BUILD_WRKSRC}/hooks/src/events/compact.rs \
 		${BUILD_WRKSRC}/hooks/src/events/post_tool_use.rs \
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/daemon_sockets_tests.rs \
-		${BUILD_WRKSRC}/linux-sandbox/tests/suite/landlock.rs \
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/managed_proxy.rs \
 		${BUILD_WRKSRC}/linux-sandbox/tests/suite/managed_proxy_unix_sockets_tests.rs \
+		${BUILD_WRKSRC}/linux-sandbox/tests/suite/sandbox.rs \
 		${BUILD_WRKSRC}/memories/write/src/startup_tests.rs \
 		${BUILD_WRKSRC}/rmcp-client/tests/stdio_descriptor_boundary.rs \
 		${BUILD_WRKSRC}/rmcp-client/tests/stdio_stderr_cleanup.rs \

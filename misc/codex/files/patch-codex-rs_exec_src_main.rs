@@ -1,6 +1,6 @@
---- codex-rs/exec/src/main.rs.orig	2026-09-13 10:30:38 UTC
+--- codex-rs/exec/src/main.rs.orig	2026-10-15 18:57:07 UTC
 +++ codex-rs/exec/src/main.rs
-@@ -9,6 +9,9 @@
+@@ -13,6 +13,9 @@
  //!
  //! This allows us to ship a completely separate set of functionality as part
  //! of the `codex-exec` binary.
