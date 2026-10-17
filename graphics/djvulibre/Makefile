@@ -1,5 +1,5 @@
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.29
+DISTVERSION=	3.5.30
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
@@ -13,31 +13,29 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 USES=		cpe gmake iconv jpeg libtool
+CPE_VENDOR=	djvulibre_project
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
-CPE_VENDOR=	djvulibre_project
-
-PORTDOCS=	*.djvu *.pdf *.txt
-
-INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
 		TIFF_CFLAGS="-I${LOCALBASE}/include" \
 		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff"
-LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		DESKTOPFILES DOCS ANY2DJVU
+PORTDOCS=	*.djvu *.pdf *.txt
+
+OPTIONS_DEFINE=		ANY2DJVU DESKTOPFILES DOCS
 OPTIONS_DEFAULT=	DESKTOPFILES
 OPTIONS_SUB=		yes
 
 ANY2DJVU_DESC=		Install any2djvu script (requires curl)
-ANY2DJVU_RUN_DEPENDS=	curl:ftp/curl
 DESKTOPFILES_DESC=	Install icons and mime types
-DESKTOPFILES_CONFIGURE_ENABLE=	desktopfiles
+
+ANY2DJVU_RUN_DEPENDS=	curl:ftp/curl
 DESKTOPFILES_USES=	gnome
+DESKTOPFILES_CONFIGURE_ENABLE=	desktopfiles
 
 post-patch:
 # Remove custom optimization compiler flags
