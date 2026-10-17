@@ -1,0 +1,11 @@
+--- plugins/wireguard/wireguard_.orig	2026-08-20 03:39:03 UTC
++++ plugins/wireguard/wireguard_
+@@ -151,7 +151,7 @@ EOF
+         fi
+ 
+         if should_emit_values; then
+-            active_threshold="${active_threshold:-$(date --date="${active_threshold_m:-3} min ago" +%s)}"
++            active_threshold="${active_threshold:-$(date -v "${active_threshold_m:-3}M" +%s)}"
+ 
+             declare -a peers
+             wg_peers peers "$iface"
