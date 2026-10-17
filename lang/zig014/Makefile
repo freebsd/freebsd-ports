@@ -1,5 +1,6 @@
 PORTNAME=	zig
 DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
@@ -13,6 +14,9 @@ WWW=		https://ziglang.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Old pinned release. Use lang/zig if possible for new Zig ports
+EXPIRATION_DATE=	2026-11-30
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	not yet supported
