@@ -29,6 +29,8 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/conftest%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/const%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/const%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/dependencies%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/dependencies%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/docthread%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/docthread%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/__pycache__/document%%PYTHON_TAG%%.opt-1.pyc
@@ -89,6 +91,7 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/config.py
 %%PYTHON_SITELIBDIR%%/scantpaper/conftest.py
 %%PYTHON_SITELIBDIR%%/scantpaper/const.py
+%%PYTHON_SITELIBDIR%%/scantpaper/dependencies.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__init__.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/__init__%%PYTHON_TAG%%.pyc
