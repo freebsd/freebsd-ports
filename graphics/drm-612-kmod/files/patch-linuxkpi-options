@@ -56,27 +56,7 @@ diff --git a/drm/Makefile b/drm/Makefile
 index 841fa16..96892f7 100644
 --- drm/Makefile
 +++ drm/Makefile
-@@ -40,9 +40,11 @@ SRCS=	drm_atomic.c \
- 	drm_flip_work.c \
- 	drm_fourcc.c \
- 	drm_framebuffer.c \
-+	drm_format_helper.c \
- 	drm_gem.c \
- 	drm_gem_atomic_helper.c \
- 	drm_gem_framebuffer_helper.c \
-+	drm_gem_shmem_helper.c \
- 	drm_gpuvm.c \
- 	drm_hdmi_state_helper.c \
- 	drm_ioctl.c \
-@@ -81,6 +83,7 @@ SRCS+=	drm_writeback.c
- 
- .if !empty(KCONFIG:MDRM_FBDEV_EMULATION)
- SRCS+=	drm_fb_helper.c \
-+	drm_fbdev_shmem.c \
- 	drm_fbdev_ttm.c
- .endif
- 
-@@ -161,8 +164,13 @@ SRCS+=	device_if.h \
+@@ -161,8 +161,13 @@ SRCS+=	device_if.h \
  
  CLEANFILES+= ${KMOD}.ko.full ${KMOD}.ko.debug
  
