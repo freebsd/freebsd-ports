@@ -1,7 +1,7 @@
 PORTNAME=	node
 PORTVERSION=	${NODEJS_PORTVERSION}
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	${PORTVERSION:R:R}
@@ -119,6 +119,11 @@ post-configure:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
+# Fail if two simdutf copies end up in one process (node exports its bundled
+# simdutf; a DSO linking the system libsimdutf.so, e.g. libmerve, then binds
+# to the wrong one and CJS export lexing SIGBUSes). Importing a CommonJS
+# module from ESM runs that lexer; stdin avoids a temp file.
+	${ECHO_CMD} 'exports.ok = 1' | ${STAGEDIR}${PREFIX}/bin/node --input-type=module -e 'import "/dev/stdin"'
 
 post-install-BUNDLED_SSL-on:
 	cd ${STAGEDIR}${PREFIX} && ${FIND} include/node/openssl/ -type f >> ${TMPPLIST}
