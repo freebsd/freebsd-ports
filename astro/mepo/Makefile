@@ -1,8 +1,6 @@
 PORTNAME=	mepo
-DISTVERSION=	1.3.4
-PORTREVISION=	3
+DISTVERSION=	1.4.0
 CATEGORIES=	astro geography wayland
-MASTER_SITES=	https://git.sr.ht/~mil/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	kenrap@FreeBSD.org
 COMMENT=	Fast, simple, and hackable OSM map viewer
@@ -15,7 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	jq:textproc/jq
 
-USES=		pkgconfig sdl shebangfix zig:014
+USES=		pkgconfig sdl shebangfix zig
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	kenrap
+
 USE_SDL=	gfx2 image2 ttf2
 SHEBANG_FILES=	scripts/*
 SHEBANG_LANG=	sh
