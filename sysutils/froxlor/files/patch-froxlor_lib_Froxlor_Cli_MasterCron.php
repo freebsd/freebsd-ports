@@ -1,6 +1,6 @@
---- froxlor/lib/Froxlor/Cli/MasterCron.php.orig	2025-05-07 03:26:39 UTC
+--- froxlor/lib/Froxlor/Cli/MasterCron.php.orig	2026-10-04 07:11:11 UTC
 +++ froxlor/lib/Froxlor/Cli/MasterCron.php
-@@ -211,7 +211,7 @@ final class MasterCron extends CliCommand
+@@ -219,7 +219,7 @@ final class MasterCron extends CliCommand
  	private function lockJob(string $job, OutputInterface $output): bool
  	{
  
