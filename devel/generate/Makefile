@@ -1,11 +1,11 @@
 PORTNAME=	generate
 DISTVERSION=	3.2
 CATEGORIES=	devel
-MASTER_SITES=	https://www.druid.net/darcy/
+MASTER_SITES=	https://darcy.druid.net/
 
 MAINTAINER=	darcy@druid.net
 COMMENT=	Simple text pre-processor
-WWW=		https://www.druid.net/darcy/readme-generate.html
+WWW=		https://darcy.druid.net/readme-generate.html
 
 LICENSE=	UNKNOWN
 LICENSE_NAME=	unknown
