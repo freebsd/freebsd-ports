@@ -1,5 +1,6 @@
 PORTNAME=	mozc-modeless
 DISTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	japanese elisp
 
 MAINTAINER=	mce@FreeBSD.org
@@ -9,8 +10,7 @@ WWW=		https://github.com/kiyoka/mozc-modeless-emacs
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ja-mozc-el>0:japanese/mozc-el \
-		markdown-mode.el>0:textproc/markdown-mode.el
+RUN_DEPENDS=	markdown-mode.el>0:textproc/markdown-mode.el
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kiyoka
