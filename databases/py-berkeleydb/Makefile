@@ -1,5 +1,5 @@
 PORTNAME=	berkeleydb
-DISTVERSION=	18.1.15
+DISTVERSION=	18.1.16
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,11 @@ WWW=		https://www.jcea.es/programacion/pybsddb.htm
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		bdb python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist pep517
 
 PYDISTUTILS_CONFIGUREARGS=--libs="-l${BDB_LIB_NAME}" --berkeley-db=${LOCALBASE}
 PYDISTUTILS_BUILDARGS=	--libs="-l${BDB_LIB_NAME}" --berkeley-db=${LOCALBASE}
@@ -35,6 +38,7 @@ post-patch:
 		s|%%BDB_LIB_NAME%%|${BDB_LIB_NAME}|' \
 		${WRKSRC}/setup3.py
 	@${REINPLACE_CMD} 's|<db\.h>|<${BDB_INCLUDE_DIR}/db.h>|' ${WRKSRC}/src/Module/berkeleydb.h
+	@${REINPLACE_CMD} 's|80.9|63|g' ${WRKSRC}/pyproject.toml
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/_${PORTNAME}*.so
