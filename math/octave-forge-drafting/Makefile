@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-drafting
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
