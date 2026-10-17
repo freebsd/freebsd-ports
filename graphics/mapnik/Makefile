@@ -11,6 +11,8 @@ WWW=		http://www.mapnik.org/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build, No known features for C compiler
+
 BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
 		protozero>0:devel/protozero
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
