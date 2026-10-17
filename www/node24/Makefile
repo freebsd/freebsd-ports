@@ -1,7 +1,7 @@
 PORTNAME=	node
 PORTVERSION=	${NODEJS_PORTVERSION}
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	${PORTVERSION:R:R}
@@ -26,7 +26,6 @@ LIB_DEPENDS=	libada.so:devel/libada \
 		libhdr_histogram.so:graphics/hdr_histogram \
 		libicui18n.so:devel/icu \
 		libllhttp.so:www/llhttp \
-		libmerve.so:devel/merve \
 		libnbytes.so:www/nbytes \
 		libnghttp2.so:www/libnghttp2 \
 		libnghttp3.so:www/libnghttp3 \
@@ -40,6 +39,10 @@ RUN_DEPENDS=	corepack>=0:www/corepack
 
 USES=		compiler:c++20-lang gmake localbase pkgconfig python:build shebangfix tar:xz
 
+# merve stays bundled: devel/merve links the system libsimdutf, while node
+# bundles and exports its own simdutf. rtld binds libsimdutf's internal calls
+# to node's copy, the dispatch tables disagree, and CJS export lexing jumps
+# to garbage (SIGBUS). Revisit together with --shared-simdutf.
 CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-ada \
 		--shared-brotli \
@@ -48,7 +51,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-hdr-histogram \
 		--shared-http-parser \
 		--shared-libuv \
-		--shared-merve \
 		--shared-nbytes \
 		--shared-nghttp2 \
 		--shared-nghttp3 \
@@ -107,7 +109,6 @@ post-patch:
 	@${RM} -r ${WRKSRC}/deps/histogram/
 	@${RM} -r ${WRKSRC}/deps/icu-small/
 	@${RM} -r ${WRKSRC}/deps/llhttp/
-	@${RM} -r ${WRKSRC}/deps/merve/
 	@${RM} -r ${WRKSRC}/deps/nbytes/
 	@${RM} -r ${WRKSRC}/deps/nghttp2/
 	@${RM} -r ${WRKSRC}/deps/ngtcp2/
@@ -130,6 +131,11 @@ post-configure:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
+# Fail if two simdutf copies end up in one process (node exports its bundled
+# simdutf; a DSO linking the system libsimdutf.so, e.g. libmerve, then binds
+# to the wrong one and CJS export lexing SIGBUSes). Importing a CommonJS
+# module from ESM runs that lexer; stdin avoids a temp file.
+	${ECHO_CMD} 'exports.ok = 1' | ${STAGEDIR}${PREFIX}/bin/node --input-type=module -e 'import "/dev/stdin"'
 
 post-install-BUNDLED_SSL-on:
 	cd ${STAGEDIR}${PREFIX} && ${FIND} include/node/openssl/ -type f >> ${TMPPLIST}
