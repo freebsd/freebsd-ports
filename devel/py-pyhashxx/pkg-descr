@@ -1,1 +1,7 @@
-Python wrapper of xxhash that supports concurrency
+Python wrapper of xxhash that supports concurrency.
+
+pyhashxx wraps the 32-bit xxHash non-cryptographic hash algorithm.  It
+provides a convenience function, hashxx, that hashes the bytes of its
+arguments (traversing tuples recursively), and a Hashxx class for
+incremental hashing.  Unlike older wrappers it keeps no static global
+hash context, so separate hash objects can be used concurrently.
