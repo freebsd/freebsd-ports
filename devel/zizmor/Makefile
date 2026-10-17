@@ -1,7 +1,6 @@
 PORTNAME=	zizmor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.30.1
-PORTREVISION=	1
+DISTVERSION=	1.31.1
 CATEGORIES=	devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -38,15 +37,11 @@ post-build-COMPLETIONS-on:
 .endfor
 
 post-install-COMPLETIONS-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/fish/completions \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.fish \
-		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+	@${MKDIR} ${COMPLETIONS_PLIST_FILES:H:S|^|${STAGEDIR}${PREFIX}/|}
+.for sh in bash fish zsh
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.${sh} \
+		${COMPLETIONS_PLIST_FILES:M*${sh}*:S|^|${STAGEDIR}${PREFIX}/|}
+.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

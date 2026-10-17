@@ -5,7 +5,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		allocator-api2-0.2.21 \
 		annotate-snippets-0.12.16 \
 		anstream-1.0.0 \
-		anstyle-1.0.13 \
+		anstyle-1.0.14 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.4 \
 		anstyle-wincon-3.0.10 \
@@ -21,6 +21,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		backtrace-0.3.76 \
 		base64-0.21.7 \
 		base64-0.22.1 \
+		base64-0.23.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
 		bitflags-2.10.0 \
@@ -32,18 +33,18 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bytecount-0.6.9 \
 		bytes-1.11.1 \
 		cacache-13.1.0 \
-		camino-1.2.5 \
-		cc-1.2.49 \
+		camino-1.2.6 \
+		cc-1.4.6 \
 		cesu8-1.1.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.1 \
-		clap-4.6.1 \
+		clap-4.6.7 \
 		clap-verbosity-flag-3.0.4 \
-		clap_builder-4.6.0 \
-		clap_complete-4.6.9 \
-		clap_complete_nushell-4.6.1 \
-		clap_derive-4.6.1 \
+		clap_builder-4.6.7 \
+		clap_complete-4.6.11 \
+		clap_complete_nushell-4.6.2 \
+		clap_derive-4.6.7 \
 		clap_lex-1.0.0 \
 		cmake-0.1.54 \
 		cobs-0.3.0 \
@@ -55,7 +56,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
-		crc32fast-1.5.0 \
 		crossbeam-channel-0.5.16 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
@@ -85,15 +85,15 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		fancy-regex-0.19.0 \
 		fastrand-2.3.0 \
 		filetime-0.2.26 \
-		find-msvc-tools-0.1.5 \
-		flate2-1.1.9 \
+		find-msvc-tools-0.1.12 \
+		flate2-1.1.10 \
 		fluent-uri-0.3.2 \
 		fluent-uri-0.4.1 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
 		form_urlencoded-1.2.2 \
-		fraction-0.16.0 \
+		fraction-0.17.0 \
 		fs_extra-1.3.0 \
 		fst-0.4.7 \
 		futures-0.3.34 \
@@ -120,8 +120,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		http-1.5.0 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
-		http-cache-1.0.0-alpha.7 \
-		http-cache-reqwest-1.0.0-alpha.8 \
+		http-cache-1.0.0-alpha.8 \
+		http-cache-reqwest-1.0.0-alpha.9 \
 		http-cache-semantics-3.0.0 \
 		http-serde-2.1.1 \
 		httparse-1.10.1 \
@@ -141,9 +141,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
 		ignore-0.4.33 \
-		indexmap-2.14.0 \
+		indexmap-2.14.2 \
 		indicatif-0.18.6 \
-		insta-1.48.0 \
+		insta-1.49.0 \
 		ipnet-2.11.0 \
 		iri-string-0.7.8 \
 		is_terminal_polyfill-1.70.2 \
@@ -154,16 +154,16 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.34 \
 		js-sys-0.3.85 \
-		jsonschema-0.51.0 \
-		jsonschema-regex-0.51.0 \
-		jsonschema-value-0.51.0 \
+		jsonschema-0.58.5 \
+		jsonschema-regex-0.58.5 \
+		jsonschema-value-0.58.5 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
 		libc-0.2.185 \
 		libredox-0.1.10 \
 		libyaml-rs-0.3.0 \
 		line-index-0.1.2 \
-		linux-raw-sys-0.11.0 \
+		linux-raw-sys-0.12.1 \
 		litemap-0.8.0 \
 		lock_api-0.4.14 \
 		log-0.4.28 \
@@ -198,7 +198,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		once_cell_polyfill-1.70.2 \
 		openssl-probe-0.1.6 \
 		outref-0.5.2 \
-		owo-colors-4.3.0 \
+		owo-colors-4.4.0 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
@@ -226,17 +226,17 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		redox_syscall-0.5.18 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		referencing-0.51.0 \
+		referencing-0.58.5 \
 		reflink-copy-0.1.30 \
 		regex-1.13.1 \
 		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
-		reqwest-0.13.4 \
+		reqwest-0.13.5 \
 		reqwest-middleware-0.5.2 \
 		ring-0.17.14 \
 		rustc-demangle-0.1.26 \
 		rustc-hash-2.1.1 \
-		rustix-1.1.2 \
+		rustix-1.1.4 \
 		rustls-0.23.34 \
 		rustls-native-certs-0.8.1 \
 		rustls-pki-types-1.12.0 \
@@ -265,8 +265,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		sha1-0.10.7 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
-		shlex-1.3.0 \
-		simd-adler32-0.3.7 \
+		shlex-2.0.1 \
 		similar-2.7.0 \
 		similar-3.2.0 \
 		slab-0.4.11 \
@@ -288,14 +287,14 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		system-configuration-sys-0.6.0 \
 		tagptr-0.2.0 \
 		tar-0.4.46 \
-		tempfile-3.23.0 \
+		tempfile-3.27.0 \
 		terminal-link-0.1.0 \
 		termtree-0.5.1 \
 		text-size-1.1.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.20 \
+		thiserror-2.0.21 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.20 \
+		thiserror-impl-2.0.21 \
 		thread_local-1.1.9 \
 		tikv-jemalloc-sys-0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8 \
 		tikv-jemallocator-0.7.0 \
@@ -305,7 +304,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tinystr-0.8.1 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.53.1 \
+		tokio-1.53.2 \
 		tokio-macros-2.7.2 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.19 \
@@ -324,10 +323,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tracing-indicatif-0.3.14 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.23 \
-		tree-sitter-0.26.13 \
+		tree-sitter-0.27.0 \
 		tree-sitter-bash-0.25.1 \
-		tree-sitter-language-0.1.5 \
-		tree-sitter-powershell-0.26.4 \
+		tree-sitter-language-0.1.8 \
 		tree-sitter-yaml-0.7.2 \
 		try-lock-0.2.5 \
 		typenum-1.20.1 \
@@ -424,6 +422,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wit-bindgen-rust-macro-0.51.0 \
 		wit-component-0.244.0 \
 		wit-parser-0.244.0 \
+		woodruffw-trough-tree-sitter-powershell-0.1.2 \
 		writeable-0.6.1 \
 		xattr-1.6.1 \
 		xxhash-rust-0.8.18 \
@@ -438,4 +437,5 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		zerotrie-0.2.2 \
 		zerovec-0.11.4 \
 		zerovec-derive-0.11.1 \
-		zmij-1.0.2
+		zlib-rs-0.6.7 \
+		zmij-1.0.23
