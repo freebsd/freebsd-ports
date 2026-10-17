@@ -1,3 +1,34 @@
+  <vuln vid="8c6ec104-ca27-11f1-ada1-ac5afc632ba3">
+    <topic>libXrender -- vulnerability</topic>
+    <affects>
+<package>
+<name>libXrender</name>
+<range><lt>0.9.13</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>X.Org reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-October/003752.html">
+	  <p>Multiple issues have been found in the X client library
+	  implementations published by X.Org for which we are
+	  releasing security fixes for.</p>
+	  <ul>
+	    <li>CVE-2026-88807: Out-of-bounds read in libXrender's XRenderQueryFormat reply parser</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-88807</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2026-October/003752.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-17</discovery>
+      <entry>2026-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d4bc120a-ca26-11f1-ada1-ac5afc632ba3">
     <topic>libXpm -- vulnerability</topic>
     <affects>
@@ -8,7 +39,6 @@
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
 	<p>X.Org reports:</p>
 	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-October/003752.html">
 	  <p>Multiple issues have been found in the X client library
