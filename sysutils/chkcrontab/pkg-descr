@@ -1,0 +1,2 @@
+Crontab linter. It checks files like /etc/crontab, /etc/cron.d/* and user
+crontabs, catches glaring errors and warns about suspect lines.
