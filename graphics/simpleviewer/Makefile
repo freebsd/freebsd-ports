@@ -1,12 +1,11 @@
 PORTNAME=	simpleviewer
-PORTVERSION=	3.1.9
-PORTREVISION=	6
+PORTVERSION=	3.1.12
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
-MASTER_SITES=	https://bitbucket.org/andreyu/simple-viewer-gl/get/${BB_COMMIT}.tar.bz2?dummy=/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Small and simple image viewer based on OpenGL
-WWW=		https://bitbucket.org/andreyu/simple-viewer-gl
+COMMENT=	Small and simple OpenGL-based image viewer
+WWW=		https://www.ugolnik.info/simple-viewer-gl/
 
 LICENSE=	GPLv2
 
@@ -15,16 +14,16 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		liblz4.so:archivers/liblz4 \
 		libpng.so:graphics/png
 
-USES=		cmake:insource compiler:c++11-lang gl jpeg pkgconfig \
+USES=		cmake compiler:c++14-lang gl jpeg pkgconfig \
 		tar:bzip2 xorg
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xcursor xext xinerama xrandr xxf86vm
 CMAKE_ARGS=	-DAPP_VERSION_MAJOR:STRING=${PORTVERSION:S/./ /g:[1]} \
 		-DAPP_VERSION_MINOR:STRING=${PORTVERSION:S/./ /g:[2]} \
 		-DAPP_VERSION_RELEASE:STRING=${PORTVERSION:S/./ /g:[3]}
-
-BB_COMMIT=	cded7dfe23c4
-WRKSRC=		${WRKDIR}/andreyu-simple-viewer-gl-${BB_COMMIT}
+USE_GITHUB=	yes
+GH_ACCOUNT=	reybits
+GH_PROJECT=	simple-viewer-gl
 
 PLIST_FILES=	bin/sviewgl ${DATADIR_REL}/Icon-1024.png \
 		${DATADIR_REL}/Icon-16.png ${DATADIR_REL}/Icon-32.png
@@ -64,6 +63,10 @@ TIFF_CMAKE_OFF=		-DDISABLE_TIFF_SUPPORT:STRING=1
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CMAKE_OFF=		-DDISABLE_WEBP_SUPPORT:STRING=1
 
+post-extract:
+# Assert known number of optional features to catch unnoticed changes
+	${TEST} $$(${GREP} -c '^if(.*FOUND)' ${WRKSRC}/CMakeLists.txt) = 24
+
 post-patch:
 	@${REINPLACE_CMD} -e '/#include/s,lz4/,,' \
 		${WRKSRC}/src/formats/formatage.cpp
@@ -71,7 +74,7 @@ post-patch:
 		${WRKSRC}/src/main.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sviewgl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/sviewgl ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/res/Icon-*.png ${STAGEDIR}${DATADIR}
 
