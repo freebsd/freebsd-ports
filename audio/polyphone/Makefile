@@ -1,5 +1,6 @@
 PORTNAME=	polyphone
 DISTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,8 @@ WWW=		https://www.polyphone.io/en \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
-LIB_DEPENDS=	libFLAC.so:audio/flac \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libFLAC.so:audio/flac \
 		libjack.so:audio/jack \
 		libogg.so:audio/libogg \
 		libportaudio.so:audio/portaudio \
@@ -32,6 +34,7 @@ GH_ACCOUNT=	davy7125
 
 CXXFLAGS+=	-D__UNIX_JACK__
 LIBS+=		-lssl -lcrypto
+LDFLAGS+=	`pkg-config --libs alsa` # alsa depencency is triggered by ALSA option in rtmidi turned on
 
 WRKSRC_SUBDIR=	sources
 
