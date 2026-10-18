@@ -1,0 +1,3 @@
+Computes the distribution function of quadratic forms in normal
+variables using Imhof's method, Davies's algorithm, Farebrother's
+algorithm or Liu et al.'s algorithm.
