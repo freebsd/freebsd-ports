@@ -1,6 +1,6 @@
 PORTNAME=	MDAnalysis
 DISTVERSION=	2.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,30 +13,37 @@ WWW=		https://www.mdanalysis.org
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.26.0:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=2.0:devel/py-packaging@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GridDataFormats>=0.4.0:math/py-GridDataFormats@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}biopython>=1.80:biology/py-biopython@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2.0.0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=2.0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=40.9.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}biopython>=1.80:biology/py-biopython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}GridDataFormats>=0.4.0:math/py-GridDataFormats@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gsd>3.0.0:science/py-gsd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}joblib>=0.12:devel/py-joblib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.1:math/py-matplotlib@${PY_FLAVOR} \
-		clustalw2:biology/clustalw \
-		rdkit>0:science/rdkit \
+		${PYTHON_PKGNAMEPREFIX}mda-xdrlib>0:misc/py-mda-xdrlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mmtf-python>=1.0.0:science/py-mmtf-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.0:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.26.0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.5.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}seaborn>0:math/py-seaborn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tqdm>=4.43.0:misc/py-tqdm@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}threadpoolctl>0:devel/py-threadpoolctl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tqdm>=4.43.0:misc/py-tqdm@${PY_FLAVOR} \
+		clustalw2:biology/clustalw \
+		rdkit>0:science/rdkit
 
 USES=		compiler:c++11-lang python
-USE_PYTHON=	distutils cython autoplist pytest
+USE_PYTHON=	autoplist concurrent cython pep517 pytest
+
+TEST_ENV=	${MAKE_ENV} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif
-
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-patch:
 	@${RM} -r ${WRKSRC}/doc
