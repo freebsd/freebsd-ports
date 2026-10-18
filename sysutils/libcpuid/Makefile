@@ -1,5 +1,5 @@
 PORTNAME=	libcpuid
-DISTVERSION=	0.8.1
+DISTVERSION=	0.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/anrieff/libcpuid/releases/download/v${DISTVERSION}/
 
@@ -11,15 +11,16 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool pathfix python:test shebangfix
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	tests/run_tests.py
-GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	test
 
 PORTDOCS=	AUTHORS ChangeLog Readme.md
 
 OPTIONS_DEFINE=	DOCS MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=	yes
 
 MANPAGES_BUILD_DEPENDS=		doxygen:devel/doxygen
