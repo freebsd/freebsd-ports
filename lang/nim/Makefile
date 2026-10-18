@@ -1,7 +1,11 @@
 PORTNAME=	nim
 DISTVERSION=	2.2.12
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
+# e97b0bb541ee: semfold folded shr wrongly on big-endian hosts
+PATCH_SITES=	https://github.com/nim-lang/Nim/commit/
+PATCHFILES=	e97b0bb541ee182c4f38709e2dbbaee03be12138.patch:-p1
 
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Nim programming language
@@ -20,7 +24,6 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		DOCS TOOLS
 OPTIONS_DEFAULT=	TOOLS
-OPTIONS_EXCLUDE_powerpc64=	DOCS
 OPTIONS_SUB=		yes
 
 TOOLS_DESC=	Build and install nim tools, not including nimble nor nimfind
