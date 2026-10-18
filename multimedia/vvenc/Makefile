@@ -24,7 +24,8 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Marmv?} || ${ARCH} == i386 || ${ARCH} == powerpc
+# powerpc64: clang 19 cannot select v4f32 froundeven, llvm/llvm-project#121390
+.if ${ARCH:Marmv?} || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64
 CMAKE_OFF+=	VVENC_ENABLE_X86_SIMD
 .endif
 
