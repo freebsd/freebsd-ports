@@ -31,7 +31,7 @@ DEFAULT_FPC_VER=	${FPC_DEFAULT}
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
 FPC_VER=		${DEFAULT_FPC_VER}
-FPC_ARCH=		${ARCH:S/amd64/x86_64/}
+FPC_ARCH=		${ARCH:S/amd64/x86_64/:S/powerpc64le/powerpc64/}
 
 .  if exists(${LOCALBASE}/bin/fpc)
 FPC_CURRENT_VER!=	${LOCALBASE}/bin/fpc -iV
