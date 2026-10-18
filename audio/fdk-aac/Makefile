@@ -3,7 +3,7 @@ DISTVERSION=	3.0.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencore-amr/${PORTNAME}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Port of the Fraunhofer FDK AAC Codec Library
 WWW=		https://sourceforge.net/projects/opencore-amr/
 
