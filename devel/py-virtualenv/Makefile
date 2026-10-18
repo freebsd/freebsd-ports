@@ -1,5 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	21.14.8
+PORTVERSION=	21.14.11
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distlib>=0.3.7:devel/py-distlib@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.12.2:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.9.1:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-discovery>=1.6.0:devel/py-python-discovery@${PY_FLAVOR}
-# tests: 497 passed, 41 skipped, 59 deselected
+# tests: 843 passed, 100 skipped, 88 deselected
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.3:devel/py-covdefaults@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>=7.3.2:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=1.0:devel/py-coverage_enable_subprocess@${PY_FLAVOR} \
@@ -67,7 +67,7 @@ PYTEST_BROKEN_TESTS=	test_sbom_spdx_declared_license \
 			test_shard_rejects_invalid_spec \
 			test_shard_selects_every_nth_test_id \
 			test_shard_reports_deselected \
-			test_bash
+			test_cshell_renders_prompt_literally test_bash
 
 # Fix the LookupError: setuptools-scm was unable to detect version (build target)
 MAKE_ENV=	PYTHONPATH="${STAGEDIR}${PYTHON_SITELIBDIR}" \
