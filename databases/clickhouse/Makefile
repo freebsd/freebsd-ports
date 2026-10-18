@@ -12,8 +12,8 @@ WWW=		https://clickhouse.com/
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	only supported on aarch64 and amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	only supported on aarch64, amd64 and powerpc64le
 
 BUILD_DEPENDS=	bash:shells/bash \
 	gfind:misc/findutils \
@@ -86,6 +86,10 @@ USES+=	llvm:min=21
 CFLAGS+=-Wno-error=int-conversion
 .endif
 
+.if ${ARCH:Mpowerpc64*} && ${OSVERSION} < 1600028
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-contrib_llvm-project_libunwind_src_DwarfInstructions.hpp
+.endif
+
 .if ${OPSYS} == FreeBSD
 SUB_LIST+=	LEGACY_LIMITS="@comment " \
 		MODERN_LIMITS=""
@@ -105,6 +109,15 @@ post-patch:
 	cd ${WRKSRC}/contrib/openldap-cmake && ${LN} -s freebsd_x86_64 freebsd_aarch64
 	@${REINPLACE_CMD} -e '/clickhouse-docker-init/d; /add_subdirectory \(docker-init\)/d' ${WRKSRC}/programs/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/mainEntryClickHouseDockerInit/d' ${WRKSRC}/programs/main.cpp
+
+.if ${ARCH} == powerpc64le
+# Bundled pre-generated POWER8 asm lacks the little-endian fixups
+pre-configure:
+.  for f in aes/aesp8-ppc modes/ghashp8-ppc modes/aes-gcm-ppc
+	${PERL} ${WRKSRC}/contrib/openssl/crypto/${f:H}/asm/${f:T}.pl linux64le \
+		${WRKSRC}/contrib/openssl-cmake/asm/crypto/${f}.s
+.  endfor
+.endif
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/config-processor
