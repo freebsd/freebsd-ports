@@ -38,7 +38,7 @@ R_POSTCMD_CHECK_OPTIONS+=	--no-manual --no-build-vignettes
 
 do-test:
 	@${FIND} ${WRKSRC} \( -name '*.o' -o -name '*.so' \) -delete
-	@cd ${WRKDIR} ; ${SETENVI} ${WRK_ENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
+	@cd ${WRKDIR} ; ${SETENVI} ${WRK_ENV} ${TEST_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
 	${R_COMMAND} ${R_PRECMD_CHECK_OPTIONS} CMD check \
 	${R_POSTCMD_CHECK_OPTIONS} ${PORTNAME}
 .  endif
