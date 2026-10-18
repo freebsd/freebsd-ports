@@ -1,5 +1,6 @@
 bin/jny
 bin/ny
+libexec/ny
 %%JAVAJARDIR%%/jNyqIDE.jar
 %%JAVAJARDIR%%/jnyqide/NyquistWords.txt
 %%DATADIR%%/demos/allewis/cmusic_pres.pdf

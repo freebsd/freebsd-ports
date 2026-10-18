@@ -1,6 +1,5 @@
 PORTNAME=	nyquist
-DISTVERSION=	3.23
-PORTREVISION=	2
+DISTVERSION=	3.24
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	nyqsrc${DISTVERSION:S/.//}
@@ -27,7 +26,15 @@ post-patch:
 
 do-install:
 	# executable
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ny ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ny ${STAGEDIR}${PREFIX}/libexec
+	# create wrapper script with: export XLISPPATH=/usr/local/share/nyquist/runtime:/usr/local/share/nyquist/lib:/usr/local/share/nyquist/rawwaves
+	(${ECHO} "#!/bin/sh"; \
+	  ${ECHO} ""; \
+	  ${ECHO} "export XLISPPATH=${DATADIR}/runtime:${DATADIR}/lib:${DATADIR}/rawwaves"; \
+	  ${ECHO} ""; \
+	  ${ECHO} "exec ${PREFIX}/libexec/ny \"$$@\"" \
+	) > ${STAGEDIR}${PREFIX}/bin/ny
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/ny
 	# runtime
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && \
