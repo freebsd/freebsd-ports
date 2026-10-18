@@ -1,0 +1,7 @@
+Phusion Passenger is an application server for Ruby, Python and Node.js
+applications.  Its nginx part is a module that hands requests to the
+Passenger agent, which runs and supervises the applications.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their PASSENGER option is enabled.  The agent is not
+part of it and comes from www/rubygem-passenger.
