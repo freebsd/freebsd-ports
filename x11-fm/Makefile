@@ -3,6 +3,7 @@
     SUBDIR += 4pane
     SUBDIR += caja
     SUBDIR += catseye-fm
+    SUBDIR += cosmic-files
     SUBDIR += deforaos-browser
     SUBDIR += dolphin
     SUBDIR += doublecmd

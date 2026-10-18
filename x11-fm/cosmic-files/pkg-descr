@@ -1,0 +1,7 @@
+COSMIC Files is the official file manager of the COSMIC desktop
+environment. It supports common features such as thumbnailing,
+archive creation and extraction, and external mounts such as
+USB drives or remote file systems.
+
+COSMIC Files also implements a desktop applet and XDG's file
+chooser interface.
