@@ -1,6 +1,6 @@
---- crates/zed/Cargo.toml.orig	2026-10-07 17:31:55 UTC
+--- crates/zed/Cargo.toml.orig	2026-10-14 15:50:18 UTC
 +++ crates/zed/Cargo.toml
-@@ -96,7 +96,6 @@ copilot_ui.workspace = true
+@@ -97,7 +97,6 @@ copilot_ui.workspace = true
  copilot.workspace = true
  copilot_chat.workspace = true
  copilot_ui.workspace = true
@@ -8,7 +8,7 @@
  dap_adapters.workspace = true
  db.workspace = true
  debug_adapter_extension.workspace = true
-@@ -250,10 +249,10 @@ image.workspace = true
+@@ -254,10 +253,10 @@ image.workspace = true
  
  [target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.build-dependencies]
  image.workspace = true

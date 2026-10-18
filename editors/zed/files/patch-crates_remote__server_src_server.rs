@@ -1,6 +1,6 @@
---- crates/remote_server/src/server.rs.orig	2026-07-29 14:43:24 UTC
+--- crates/remote_server/src/server.rs.orig	2026-10-14 15:50:18 UTC
 +++ crates/remote_server/src/server.rs
-@@ -573,6 +573,7 @@ pub fn execute_run(
+@@ -569,6 +569,7 @@ pub fn execute_run(
      let should_install_crash_handler =
          client::telemetry::should_install_crash_handler(*RELEASE_CHANNEL);
  
@@ -8,7 +8,7 @@
      let crash_handler = if should_install_crash_handler {
          Some(app.background_executor().spawn(crashes::init(
              crashes::InitCrashHandler {
-@@ -636,6 +637,7 @@ pub fn execute_run(
+@@ -632,6 +633,7 @@ pub fn execute_run(
  
      let git_hosting_provider_registry = Arc::new(GitHostingProviderRegistry::new());
      let run = move |cx: &mut App| {
@@ -16,7 +16,7 @@
          if let Some(crash_handler) = crash_handler {
              cx.spawn(async move |_cx| {
                  let _crash_handler = crash_handler.await;
-@@ -852,6 +854,7 @@ pub(crate) fn execute_proxy(
+@@ -848,6 +850,7 @@ pub(crate) fn execute_proxy(
          client::telemetry::should_install_crash_handler(*RELEASE_CHANNEL);
  
      if should_install_crash_handler {

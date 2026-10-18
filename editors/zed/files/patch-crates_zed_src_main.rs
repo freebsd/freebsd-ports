@@ -1,4 +1,4 @@
---- crates/zed/src/main.rs.orig	2026-09-30 14:36:45 UTC
+--- crates/zed/src/main.rs.orig	2026-10-14 15:50:18 UTC
 +++ crates/zed/src/main.rs
 @@ -22,6 +22,7 @@ use collections::HashMap;
  use client::{Client, ProxySettings, RefreshLlmTokenListener, UserStore, parse_zed_link};
@@ -51,7 +51,7 @@
          reliability::init(client.clone(), app_state.workspace_store.clone(), cx);
          extension_host::init(
              extension_host_proxy.clone(),
-@@ -727,7 +735,7 @@ fn main() {
+@@ -725,7 +733,7 @@ fn main() {
          dev_container::init(cx);
  
          load_embedded_fonts(cx);
@@ -60,7 +60,7 @@
          prewarm_fonts(cx);
  
          editor::init(cx);
-@@ -856,6 +864,7 @@ fn main() {
+@@ -854,6 +862,7 @@ fn main() {
          let menus = app_menus(cx);
          cx.set_menus(menus);
  
@@ -68,7 +68,7 @@
          if let Some(mut crash_handler) = crash_handler {
              let crash_handler2 = block_on(poll_once(&mut crash_handler));
              match crash_handler2 {
-@@ -1849,7 +1858,7 @@ fn load_embedded_fonts(cx: &App) {
+@@ -1847,7 +1856,7 @@ fn load_embedded_fonts(cx: &App) {
          .unwrap();
  }
  
