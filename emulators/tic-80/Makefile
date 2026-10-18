@@ -4,7 +4,7 @@ DISTVERSION=	1.1.2837
 PORTREVISION=	3
 CATEGORIES=	emulators games
 
-MAINTAINER=	fuz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fantasy game console
 WWW=		https://tic80.com
 
