@@ -1228,6 +1228,51 @@
     </dates>
   </vuln>
 
+  <vuln vid="3de00266-caf6-11f1-881f-d89ef317b2fc">
+    <topic>Drupal 10 and 11 -- remote code execution</topic>
+    <affects>
+    <package>
+	<name>drupal11</name>
+	<range><ge>11.4.0</ge><lt>11.4.10</lt></range>
+    </package>
+    <package>
+	<name>drupal10</name>
+	<range><lt>10.6.19</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal core reports:</p>
+	<blockquote cite="https://www.drupal.org/sa-core-2026-014">
+	<p>
+	  A remote code execution vulnerability exists within the
+	  Field UI module in Drupal core.
+	</p>
+	<p>
+	  The vulnerability is not directly exploitable with core
+	  alone, but multiple serious exploit paths exist with
+	  contributed modules. At least one known exploit path does
+	  not require authentication. Custom code may also expose
+	  the vulnerable functionality.
+	</p>
+	<p>
+	  The vulnerability can be mitigated by uninstalling the
+	  core Field UI module (field_ui), which will provide
+	  protection while sites are updated.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-108097</cvename>
+      <url>https://www.drupal.org/sa-core-2026-014</url>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="049d88bb-c4a2-11f1-9d0b-5404a68ad561">
     <topic>traefik -- Multiple vulnerabilities</topic>
     <affects>
