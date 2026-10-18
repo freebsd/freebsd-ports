@@ -3,9 +3,9 @@ In aslr-mode the system does that implicitly (probably because that benefits ran
 The downside is that we fix the entry main address in the aslr-mode as well, making it entirely predictable, which is against the spirit of aslr.
 Note: -Text-segment is for gcc, --image-base isn't a strict equivalent for clang
 
---- configure.ac.orig	2026-09-18 20:36:23 UTC
+--- configure.ac.orig	2026-10-16 19:08:59 UTC
 +++ configure.ac
-@@ -1100,6 +1100,19 @@ case $host_os in
+@@ -1099,6 +1099,19 @@ case $host_os in
              ;;
          esac
          ;;
