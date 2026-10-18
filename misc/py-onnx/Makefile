@@ -1,5 +1,5 @@
 PORTNAME=	onnx
-DISTVERSION=	1.23.0
+DISTVERSION=	1.23.2
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI \
 		https://github.com/abseil/abseil-cpp/archive/refs/tags/:abseil \
@@ -27,12 +27,11 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=6.31.1:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>0:devel/py-scikit-build-core@${PY_FLAVOR}
 LIB_DEPENDS=	libprotobuf-lite.so:devel/protobuf
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-re2>0:devel/py-google-re2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0.5.4:math/py-ml-dtypes@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0.5.4:math/py-ml-dtypes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.23.2:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=6.31.1:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.7.1:devel/py-typing-extensions@${PY_FLAVOR}
+OPT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=12.2.0:graphics/py-pillow@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang python shebangfix
@@ -55,6 +54,6 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/onnx/onnx_cpp2py_export*.so
 
-# tests as of 1.23.0: 6695 passed, 4157 skipped, 2 xpassed, 42 warnings in 18.20s
+# tests as of 1.23.2: 1 failed, 6698 passed, 4157 skipped, 2 xpassed, 42 warnings in 16.64s, see https://github.com/onnx/onnx/issues/8620
 
 .include <bsd.port.mk>
