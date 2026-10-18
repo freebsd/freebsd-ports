@@ -1,3 +1,5 @@
-TIMESTAMP = 1528734532
-SHA256 (sanger-pathogens-artemis-v17.0.1-11-g3e43d27e_GH0.tar.gz) = a490d4b76bfdd8a531d22f2e0495e8c2c6e8efad18e6a9a0043ac425c7ab16dc
-SIZE (sanger-pathogens-artemis-v17.0.1-11-g3e43d27e_GH0.tar.gz) = 77195529
+TIMESTAMP = 1792339000
+SHA256 (artemis-18.2.0-deps.tar.gz) = 37e047b35d905ddbc6b8af1f3daa0971d4e4e029ee78341bc4608317d9ed4c85
+SIZE (artemis-18.2.0-deps.tar.gz) = 80223690
+SHA256 (sanger-pathogens-artemis-v18.2.0_GH0.tar.gz) = 842c055f5cce021adbaea4f076b2ea80335ab1e44fbaa34b2ab608df6314a18e
+SIZE (sanger-pathogens-artemis-v18.2.0_GH0.tar.gz) = 18847117
