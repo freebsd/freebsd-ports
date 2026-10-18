@@ -11,7 +11,6 @@ WWW=		https://cran.r-project.org/package=CVST
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-kernlab>0:science/R-cran-kernlab
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

@@ -10,7 +10,6 @@ WWW=		https://cran.r-project.org/package=e1071
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-proxy>0:math/R-cran-proxy
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-mlbench>0:devel/R-cran-mlbench \
 		R-cran-randomForest>0:devel/R-cran-randomForest \

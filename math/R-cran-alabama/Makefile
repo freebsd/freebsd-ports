@@ -10,7 +10,6 @@ WWW=		https://cran.r-project.org/package=alabama
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-numDeriv>0:math/R-cran-numDeriv
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

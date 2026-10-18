@@ -14,7 +14,6 @@ CRAN_DEPENDS=	R-cran-ggplot2>=3.5.2:graphics/R-cran-ggplot2 \
 		R-cran-rlang>=1.1.6:devel/R-cran-rlang \
 		R-cran-scales>=1.4.0:graphics/R-cran-scales \
 		R-cran-withr>=3.0.2:devel/R-cran-withr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-devtools>0:devel/R-cran-devtools \
 		R-cran-dplyr>0:math/R-cran-dplyr \

@@ -21,7 +21,6 @@ CRAN_DEPENDS=	R-cran-cli>=3.4.1:devel/R-cran-cli \
 		R-cran-tibble>=2.1.1:devel/R-cran-tibble \
 		R-cran-tidyselect>=1.2.1:devel/R-cran-tidyselect \
 		R-cran-vctrs>=0.5.2:devel/R-cran-vctrs
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-readr>0:textproc/R-cran-readr \

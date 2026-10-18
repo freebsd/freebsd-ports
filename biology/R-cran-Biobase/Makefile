@@ -11,7 +11,6 @@ WWW=		https://bioconductor.org/packages/Biobase
 LICENSE=	ART20
 
 CRAN_DEPENDS=	R-cran-BiocGenerics>=0.27.1:biology/R-cran-BiocGenerics
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles

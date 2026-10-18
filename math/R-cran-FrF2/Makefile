@@ -14,7 +14,6 @@ CRAN_DEPENDS=	R-cran-BsMD>0:math/R-cran-BsMD \
 		R-cran-igraph>=0.7:math/R-cran-igraph \
 		R-cran-scatterplot3d>0:math/R-cran-scatterplot3d \
 		R-cran-sfsmisc>=1.0.26:devel/R-cran-sfsmisc
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

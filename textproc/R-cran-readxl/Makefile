@@ -9,9 +9,6 @@ WWW=		https://cran.r-project.org/package=readxl
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
-		R-cran-cpp11>=0.4.0:devel/R-cran-cpp11 \
-		R-cran-progress>0:devel/R-cran-progress
 RUN_DEPENDS=	R-cran-cpp11>=0.5.5:devel/R-cran-cpp11 \
 		R-cran-tibble>=2.0.1:devel/R-cran-tibble \
 		R-cran-cellranger>0:textproc/R-cran-cellranger \

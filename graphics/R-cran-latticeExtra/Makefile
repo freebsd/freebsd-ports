@@ -14,7 +14,6 @@ CRAN_DEPENDS=	R-cran-png>0:graphics/R-cran-png \
 		R-cran-jpeg>0:graphics/R-cran-jpeg \
 		R-cran-RColorBrewer>0:graphics/R-cran-RColorBrewer \
 		R-cran-interp>0:devel/R-cran-interp
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

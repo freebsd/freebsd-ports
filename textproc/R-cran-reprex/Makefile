@@ -21,7 +21,6 @@ CRAN_DEPENDS=	R-cran-callr>=3.6.0:devel/R-cran-callr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
 		R-cran-withr>=2.3.0:devel/R-cran-withr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS} \
 		hs-pandoc>=2.0:textproc/hs-pandoc
 TEST_DEPENDS=	R-cran-testthat>=3.0.2:devel/R-cran-testthat

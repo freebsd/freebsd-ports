@@ -11,7 +11,6 @@ WWW=		https://cran.r-project.org/package=jquerylib
 LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-htmltools>0:textproc/R-cran-htmltools
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

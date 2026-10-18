@@ -21,7 +21,6 @@ CRAN_DEPENDS=	R-cran-brew>0:textproc/R-cran-brew \
 		R-cran-rlang>=1.1.0:devel/R-cran-rlang \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-xml2>0:textproc/R-cran-xml2
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-R.methodsS3>0:devel/R-cran-R.methodsS3 \

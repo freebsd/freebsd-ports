@@ -10,7 +10,6 @@ WWW=		https://cran.r-project.org/package=xts
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-zoo>=1.7.12:math/R-cran-zoo
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles

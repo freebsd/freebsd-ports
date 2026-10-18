@@ -10,7 +10,6 @@ WWW=		https://cran.r-project.org/package=mitools
 LICENSE=	GPLv2
 
 CRAN_DEPENDS=	R-cran-DBI>=0:databases/R-cran-DBI
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

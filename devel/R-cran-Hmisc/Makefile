@@ -18,7 +18,6 @@ CRAN_DEPENDS=	R-cran-latticeExtra>0:graphics/R-cran-latticeExtra \
 		R-cran-htmlTable>0:textproc/R-cran-htmlTable \
 		R-cran-Formula>0:math/R-cran-Formula \
 		R-cran-colorspace>0:graphics/R-cran-colorspace
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles

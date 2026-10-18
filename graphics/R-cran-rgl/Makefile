@@ -16,7 +16,6 @@ CRAN_DEPENDS=	R-cran-base64enc>0:converters/R-cran-base64enc \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-mime>0:misc/R-cran-mime \
 		R-cran-R6>0:devel/R-cran-R6
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 RUN_DEPENDS=	${CRAN_DEPENDS}

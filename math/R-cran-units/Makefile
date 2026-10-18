@@ -10,7 +10,6 @@ WWW=		https://cran.r-project.org/package=units
 LICENSE=	GPLv2
 
 CRAN_DEPENDS=	R-cran-Rcpp>=1.1.0:devel/R-cran-Rcpp
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libudunits2.so:science/udunits
 RUN_DEPENDS=	${CRAN_DEPENDS}

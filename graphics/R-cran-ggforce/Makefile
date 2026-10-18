@@ -21,7 +21,6 @@ CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-tweenr>=0.1.5:graphics/R-cran-tweenr \
 		R-cran-vctrs>0:devel/R-cran-vctrs \
 		R-cran-withr>0:devel/R-cran-withr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-deldir>0:math/R-cran-deldir \

@@ -15,7 +15,6 @@ CRAN_DEPENDS=	R-cran-assertthat>0:math/R-cran-assertthat \
 		R-cran-stringr>0:textproc/R-cran-stringr \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-xtable>0:textproc/R-cran-xtable
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

@@ -10,7 +10,6 @@ WWW=		https://cran.r-project.org/package=checkmate
 LICENSE=	BSD3CLAUSE
 
 CRAN_DEPENDS=	R-cran-backports>0:math/R-cran-backports
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-data.table>=1.9.8:devel/R-cran-data.table \

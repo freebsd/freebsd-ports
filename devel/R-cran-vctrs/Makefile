@@ -14,7 +14,6 @@ CRAN_DEPENDS=	R-cran-cli>=3.4.0:devel/R-cran-cli \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-lifecycle>=1.0.3:devel/R-cran-lifecycle \
 		R-cran-rlang>=1.1.7:devel/R-cran-rlang
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-covr>0:devel/R-cran-covr \

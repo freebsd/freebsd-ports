@@ -11,7 +11,6 @@ LICENSE=	GPLv3
 
 CRAN_DEPENDS=	R-cran-broom>=0:devel/R-cran-broom \
 		R-cran-magrittr>=0:devel/R-cran-magrittr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles

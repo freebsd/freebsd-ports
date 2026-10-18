@@ -38,7 +38,6 @@ CRAN_DEPENDS=	R-cran-broom>=1.0.3:devel/R-cran-broom \
 		R-cran-tibble>=3.1.8:devel/R-cran-tibble \
 		R-cran-tidyr>=1.3.0:devel/R-cran-tidyr \
 		R-cran-xml2>=1.3.3:textproc/R-cran-xml2
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-mockr>0:devel/R-cran-mockr \
 		R-cran-testthat>0:devel/R-cran-testthat

@@ -10,7 +10,6 @@ WWW=		https://cran.r-project.org/package=influenceR
 LICENSE=	GPLv2
 
 CRAN_DEPENDS=	R-cran-igraph>=1.0.1:math/R-cran-igraph
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles

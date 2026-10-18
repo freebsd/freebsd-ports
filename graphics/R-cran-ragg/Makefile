@@ -14,7 +14,6 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 CRAN_DEPENDS=	R-cran-systemfonts>=1.0.3:devel/R-cran-systemfonts \
 		R-cran-textshaping>=0.3.0:print/R-cran-textshaping
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libjpeg.so:graphics/jpeg-turbo \
 		libpng16.so:graphics/png \

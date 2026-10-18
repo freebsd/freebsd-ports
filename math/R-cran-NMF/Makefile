@@ -24,7 +24,6 @@ CRAN_DEPENDS=	R-cran-Biobase>0:biology/R-cran-Biobase \
 		R-cran-reshape2>0:devel/R-cran-reshape2 \
 		R-cran-rngtools>=1.2.3:devel/R-cran-rngtools \
 		R-cran-stringr>=1.0.0:textproc/R-cran-stringr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr
 

@@ -11,7 +11,6 @@ LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-purrr>0:devel/R-cran-purrr \
 		R-cran-stringr>0:textproc/R-cran-stringr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

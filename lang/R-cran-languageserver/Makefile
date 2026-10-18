@@ -21,7 +21,6 @@ CRAN_DEPENDS=	R-cran-callr>=3.0.0:devel/R-cran-callr \
 		R-cran-styler>=1.5.1:devel/R-cran-styler \
 		R-cran-xml2>=1.2.2:textproc/R-cran-xml2 \
 		R-cran-xmlparsedata>=1.0.3:textproc/R-cran-xmlparsedata
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-covr>=3.4.0:devel/R-cran-covr \
 		R-cran-magrittr>=1.5:devel/R-cran-magrittr \

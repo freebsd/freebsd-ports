@@ -12,12 +12,12 @@ LICENSE=	APACHE20
 NOT_FOR_ARCHS=	armv6
 NOT_FOR_ARCHS_REASON=	is currently 64-bit only
 
-BUILD_RUN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp \
-			R-cran-wk>=0.6.0:math/R-cran-wk
-LIB_DEPENDS=		libabsl_base.so:devel/abseil
-TEST_DEPENDS=		R-cran-sf>0:math/R-cran-sf \
-			R-cran-testthat>0:devel/R-cran-testthat \
-			R-cran-vctrs>0:devel/R-cran-vctrs
+LIB_DEPENDS=	libabsl_base.so:devel/abseil
+RUN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp \
+		R-cran-wk>=0.6.0:math/R-cran-wk
+TEST_DEPENDS=	R-cran-sf>0:math/R-cran-sf \
+		R-cran-testthat>0:devel/R-cran-testthat \
+		R-cran-vctrs>0:devel/R-cran-vctrs
 
 USES=		cran:auto-plist,compiles pkgconfig ssl
 

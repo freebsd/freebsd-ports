@@ -11,7 +11,6 @@ LICENSE=	MIT
 CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-cpp11>0:devel/R-cran-cpp11 \
 		R-cran-rlang>0:devel/R-cran-rlang
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \

@@ -10,7 +10,6 @@ WWW=		http://www.r-qualitytools.org/
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 CRAN_DEPENDS=	R-cran-Rsolnp>0:math/R-cran-Rsolnp

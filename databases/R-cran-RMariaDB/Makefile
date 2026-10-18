@@ -16,7 +16,6 @@ CRAN_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-hms>=0.5.0:devel/R-cran-hms \
 		R-cran-lubridate>0:devel/R-cran-lubridate \
 		R-cran-rlang>0:devel/R-cran-rlang
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles mysql

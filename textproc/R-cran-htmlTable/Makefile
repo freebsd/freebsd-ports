@@ -16,7 +16,6 @@ CRAN_DEPENDS=	R-cran-stringr>0:textproc/R-cran-stringr \
 		R-cran-htmltools>0:textproc/R-cran-htmltools \
 		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
 		R-cran-checkmate>0:devel/R-cran-checkmate
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist

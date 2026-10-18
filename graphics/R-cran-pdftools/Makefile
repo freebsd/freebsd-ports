@@ -11,7 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CRAN_DEPENDS=	R-cran-qpdf>0:graphics/R-cran-qpdf \
 		R-cran-Rcpp>=0.12.12:devel/R-cran-Rcpp
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 LIB_DEPENDS=	libpoppler-cpp.so:graphics/poppler
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-png>0:graphics/R-cran-png \

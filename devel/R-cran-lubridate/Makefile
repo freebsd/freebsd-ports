@@ -11,7 +11,6 @@ LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-generics>0:devel/R-cran-generics \
 		R-cran-timechange>=0.4.0:devel/R-cran-timechange
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-testthat>0:devel/R-cran-testthat

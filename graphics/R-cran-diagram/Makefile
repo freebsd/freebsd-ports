@@ -11,7 +11,6 @@ WWW=		https://cran.r-project.org/package=diagram
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-shape>0:graphics/R-cran-shape
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist

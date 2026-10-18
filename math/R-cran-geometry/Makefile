@@ -14,7 +14,6 @@ CRAN_DEPENDS=	R-cran-linprog>0:math/R-cran-linprog \
 		R-cran-magic>0:math/R-cran-magic \
 		R-cran-Rcpp>0:devel/R-cran-Rcpp \
 		R-cran-RcppProgress>0:devel/R-cran-RcppProgress
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
 

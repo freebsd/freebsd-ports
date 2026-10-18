@@ -17,7 +17,6 @@ CRAN_DEPENDS=	R-cran-classInt>=0.4.1:devel/R-cran-classInt \
 		R-cran-Rcpp>=0.12.18:devel/R-cran-Rcpp \
 		R-cran-s2>=1.1.0:graphics/R-cran-s2 \
 		R-cran-units>=0.7.0:math/R-cran-units
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
 		libproj.so:graphics/proj

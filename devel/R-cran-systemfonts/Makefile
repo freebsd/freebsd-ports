@@ -13,7 +13,6 @@ CRAN_DEPENDS=	R-cran-base64enc>0:converters/R-cran-base64enc \
 		R-cran-cpp11>=0.2.1:devel/R-cran-cpp11 \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${CRAN_DEPENDS}

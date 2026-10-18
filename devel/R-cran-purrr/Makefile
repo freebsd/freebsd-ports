@@ -14,7 +14,6 @@ CRAN_DEPENDS=	R-cran-cli>=3.6.1:devel/R-cran-cli \
 		R-cran-magrittr>=1.5.0:devel/R-cran-magrittr \
 		R-cran-rlang>=1.1.1:devel/R-cran-rlang \
 		R-cran-vctrs>=0.6.3:devel/R-cran-vctrs
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-dplyr>=0.7.8:math/R-cran-dplyr \
