@@ -1,5 +1,5 @@
 PORTNAME=	pkgconf
-DISTVERSION=	3.0.7
+DISTVERSION=	3.0.9
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/ \
