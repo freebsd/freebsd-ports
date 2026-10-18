@@ -253,11 +253,6 @@ CFLAGS+=	-DNDEBUG
 CONFIGURE_ENV+=	EXTRA_PRE_CXXFLAGS="-std=c++14"
 .endif
 
-.if (PORT_OPTIONS:MMODSECURITY3)
-CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre"
-LIB_DEPENDS+=		libpcre.so:devel/pcre
-.endif
-
 .if ${PORT_OPTIONS:MNJS} && empty(PORT_OPTIONS:MNJS_XML)
 CONFIGURE_ENV+=		NJS_LIBXSLT=NO
 NJS_CONFIGURE_ARGS=	--no-libxml2
