@@ -1,6 +1,6 @@
 PORTNAME=	zeno
 DISTVERSION=	2024.10.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -13,23 +13,31 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	boost-libs>=1.85.0:devel/boost-libs \
 		c-blosc2>0:archivers/c-blosc2 \
 		onetbb>0:devel/onetbb \
-		openmpi>0:net/openmpi
+		openmpi>0:net/openmpi \
+		${_QWT_LIB}:x11-toolkits/qwt6@qt6
 
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libboost_chrono.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs \
 		libcryptopp.so:security/cryptopp \
-		libminizip.so:archivers/minizip \
-		libqwt.so:x11-toolkits/qwt6@qt5
+		libminizip.so:archivers/minizip
+RUN_DEPENDS=	${_QWT_LIB}:x11-toolkits/qwt6@qt6
 
-USES=		cmake compiler:c++17-lang eigen:3 localbase:ldflags pkgconfig \
-		qt:5
+USES=		cmake compiler:c++17-lang eigen:3 gl localbase:ldflags pkgconfig \
+		qt:6
+USE_GL=		gl opengl
 USE_LDCONFIG=	yes
-USE_QT=		core gui network opengl svg widgets buildtools:build qmake:build
+USE_QT=		base svg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zenustech
 
+# The bundled Qwt is a prebuilt static library for Qt 5, use the Qt 6 flavor
+# of x11-toolkits/qwt6 instead.  Both flavors install libqwt.so, so depend on
+# the Qt 6 one by path: LIB_DEPENDS would be satisfied by qwt6-qt5 as well.
+_QWT_LIB=	${LOCALBASE}/${QT_LIBDIR_REL}/libqwt.so
+CMAKE_ARGS=	-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/${QT_INCDIR_REL}/qwt6 \
+		-DQWT_LIBRARY:FILEPATH=${_QWT_LIB}
 CMAKE_ON=	ZENO_BUILD_EDITOR ZENO_BUILD_SHARED ZENO_IPC_USE_TCP \
 		ZENO_MULTIPROCESS ZENO_NO_WARNING ZENO_USE_CCACHE \
 		ZENO_SYSTEM_OPENVDB
@@ -45,7 +53,7 @@ CMAKE_OFF=	ZENO_BUILD_DESIGNER ZENO_BUILD_PLAYER ZENO_INSTALL_TARGET \
 
 # Every extension below is a set of nodes compiled into libzeno.so, so these
 # options only change what the editor offers - the package always installs the
-# same three files.  Extensions that stay off and why:
+# same files.  Extensions that stay off and why:
 #   zenvdb, FastFLIP	# need the openvdb submodule, add it to GH_TUPLE first
 #   Euler		# needs zenvdb, and compiling it killed gcc
 #   SampleModel		# error: '_pgmptr' was not declared in this scope
@@ -187,9 +195,15 @@ CGMESHTOOLS_IMPLIES=		CGMESH
 FLIPTOOLS_CMAKE_BOOL=		ZENO_WITH_TOOL_FLIPtools
 HERCULESTOOLS_CMAKE_BOOL=	ZENO_WITH_TOOL_HerculesTools
 
+DESKTOP_ENTRIES=	"ZENO" "Node based simulation and rendering engine" \
+			"zeno" "zenoedit" "Graphics;3DGraphics;" false
+
+ICON_SIZES=	64 128 256
+
 PLIST_FILES=	bin/autotest \
 		bin/zenoedit \
-		lib/libzeno.so
+		lib/libzeno.so \
+		${ICON_SIZES:@s@share/icons/hicolor/${s}x${s}/apps/zeno.png@}
 
 BULLET_FORK=	${WRKSRC}/projects/Rigid/bullet3
 
@@ -198,9 +212,11 @@ post-extract-RIGID-on:
 		src/BulletDynamics src/BulletSoftBody src/LinearMath src/clew \
 		src/*.cpp src/*.h
 
+BULLET_INCLUDE=	\#include "(\.\./)+(LinearMath|BulletCollision|BulletDynamics|Bullet3Common|btBullet)
+
 post-patch-RIGID-on:
-	@${FIND} ${BULLET_FORK}/src -name '*.[ch]*' -exec ${REINPLACE_CMD} -E \
-		's@#include "(\.\./)+(LinearMath|BulletCollision|BulletDynamics|Bullet3Common|btBullet)@#include "\2@' {} +
+	@${FIND} ${BULLET_FORK}/src -name '*.[ch]*' -exec ${GREP} -lE '${BULLET_INCLUDE}' {} + | \
+		${XARGS} ${REINPLACE_CMD} -E 's@${BULLET_INCLUDE}@#include "\2@'
 
 pre-configure-RIGID-on:
 	@if ${GREP} -q BT_USE_DOUBLE_PRECISION ${LOCALBASE}/libdata/pkgconfig/bullet.pc; then \
@@ -208,12 +224,14 @@ pre-configure-RIGID-on:
 		${FALSE}; \
 	fi
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/ui/zenoui/CMakeLists.txt
-
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/autotest ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/zenoedit ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_LIB} ${BUILD_WRKSRC}/bin/libzeno.so ${STAGEDIR}${PREFIX}/lib
+.for s in ${ICON_SIZES}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	${INSTALL_DATA} ${WRKSRC}/ui/zenoedit/res/icons/ZENO-logo${s}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/zeno.png
+.endfor
 
 .include <bsd.port.mk>

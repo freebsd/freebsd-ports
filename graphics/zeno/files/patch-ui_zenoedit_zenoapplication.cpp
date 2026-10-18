@@ -1,6 +1,6 @@
 --- ui/zenoedit/zenoapplication.cpp.orig	2024-09-30 13:46:54 UTC
 +++ ui/zenoedit/zenoapplication.cpp
-@@ -13,9 +13,9 @@ ZenoApplication::ZenoApplication(int &argc, char **arg
+@@ -13,9 +13,9 @@
  
  ZenoApplication::ZenoApplication(int &argc, char **argv)
      : QApplication(argc, argv)
@@ -12,7 +12,18 @@
      , m_bUIApp(true)
  {
      initMetaTypes();
-@@ -175,7 +175,7 @@ QStandardItemModel* ZenoApplication::logModel() const
+@@ -90,8 +90,8 @@ QString ZenoApplication::readQss(const Q
+ 
+ void ZenoApplication::initMetaTypes() 
+ {
+-    QMetaType::registerEqualsComparator<UI_VECTYPE>();
+-    QMetaType::registerEqualsComparator<CURVES_DATA>();
++    // Qt 6 registers the equality comparators of UI_VECTYPE and CURVES_DATA
++    // on its own, QMetaType::registerEqualsComparator() is gone
+ }
+ 
+ void ZenoApplication::initStyleSheets()
+@@ -175,7 +175,7 @@ QStandardItemModel* ZenoApplication::log
      return graphsManagment()->logModel();
  }
  

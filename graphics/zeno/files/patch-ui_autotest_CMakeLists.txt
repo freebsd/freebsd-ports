@@ -1,0 +1,17 @@
+--- ui/autotest/CMakeLists.txt.orig	2024-09-30 13:46:54 UTC
++++ ui/autotest/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ file(GLOB_RECURSE source CONFIGURE_DEPENDS *.h *.cpp *.ui)
+ 
+-find_package(Qt5 COMPONENTS Widgets OpenGL REQUIRED)
++find_package(Qt6 COMPONENTS Widgets OpenGL REQUIRED)
+ 
+ add_executable(autotest ${source}) 
+ 
+@@ -11,5 +11,5 @@ set_property(TARGET autotest PROPERTY AU
+ set_property(TARGET autotest PROPERTY AUTORCC ON)
+ 
+ target_link_libraries(autotest PUBLIC zenomodel zenoio zeno)
+-target_link_libraries(autotest PRIVATE Qt5::Widgets Qt5::OpenGL)
++target_link_libraries(autotest PRIVATE Qt6::Widgets Qt6::OpenGL)
+ target_include_directories(autotest PRIVATE . .. ../zenoui ../include)

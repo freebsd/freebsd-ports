@@ -1,0 +1,39 @@
+--- ui/zenoedit/CMakeLists.txt.orig	2024-09-30 13:46:54 UTC
++++ ui/zenoedit/CMakeLists.txt
+@@ -1,6 +1,6 @@
+-find_package(Qt5 COMPONENTS Widgets OpenGL Network REQUIRED)
++find_package(Qt6 COMPONENTS Widgets OpenGL OpenGLWidgets Network REQUIRED)
+ 
+-message(STATUS "Found Qt5 version ${Qt5_VERSION}: ${Qt5_DIR}")
++message(STATUS "Found Qt6 version ${Qt6_VERSION}: ${Qt6_DIR}")
+ 
+ #if (ZENO_WITH_PYTHON3)
+ #    find_package(Python3 COMPONENTS Development REQUIRED)
+@@ -21,8 +21,8 @@ FOREACH(item ${resource})
+     ENDIF(item IN_LIST bigresource)
+ ENDFOREACH(item)
+ 
+-qt5_add_big_resources(source ${bigresource})  # cihou msvc: fatal error C1060: compiler is out of heap space
+-qt5_add_resources(source ${resource})
++qt6_add_big_resources(source ${bigresource})  # cihou msvc: fatal error C1060: compiler is out of heap space
++qt6_add_resources(source ${resource})
+ 
+ if (ZENO_WIN32_RC)
+     enable_language("RC")
+@@ -57,7 +57,7 @@ if (NOT ZENO_MULTIPROCESS OR NOT ZENO_IP
+     find_package(Threads REQUIRED)
+     target_link_libraries(zenoedit PRIVATE Threads::Threads)
+ endif()
+-target_link_libraries(zenoedit PRIVATE Qt5::Widgets Qt5::OpenGL Qt5::Network)
++target_link_libraries(zenoedit PRIVATE Qt6::Widgets Qt6::OpenGL Qt6::OpenGLWidgets Qt6::Network)
+ 
+ if (WIN32)
+     target_link_libraries(zenoedit PRIVATE Dbghelp Version)
+@@ -66,7 +66,6 @@ endif()
+ target_link_libraries(zenoedit PRIVATE zenoui zenoio zenomodel zenovis)
+ target_link_libraries(zenoedit PRIVATE zeno)
+ target_include_directories(zenoedit PRIVATE . .. ../zenoui ../include)
+-target_include_directories(zenoedit PRIVATE ${Qt5Widgets_PRIVATE_INCLUDE_DIRS})
+ if(ZENO_LIVESYNC)
+     find_package(Crow CONFIG REQUIRED)
+     target_link_libraries(zenoedit PRIVATE Crow::Crow)
