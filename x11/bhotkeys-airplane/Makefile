@@ -1,5 +1,5 @@
 PORTNAME=	bhotkeys-airplane
-DISTVERSION=	1.2
+DISTVERSION=	1.2.1
 CATEGORIES=	x11
 
 MAINTAINER=	dteske@FreeBSD.org
