@@ -103,4 +103,4 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		ez80@git+https://github.com/tomm/ez80.git?rev=0cc736392919c647995c0ac6a153e4aaef56f3f2\#0cc736392919c647995c0ac6a153e4aaef56f3f2
+		ez80@git+https://github.com/tomm/ez80.git?rev=13c151e89f520b3bae3343bea9d67d06e8037cfa\#13c151e89f520b3bae3343bea9d67d06e8037cfa

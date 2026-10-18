@@ -1,6 +1,5 @@
 PORTNAME=	fab-agon-emulator
-DISTVERSION=	1.2.2
-PORTREVISION=	4
+DISTVERSION=	1.2.6
 CATEGORIES=	emulators
 
 MAINTAINER=	alexey@pentode.fi
@@ -18,10 +17,9 @@ USE_SDL=	sdl3
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomm
-GH_TUPLE=	tomm:userspace-vdp-gl:ecb8aabffe97d66d6c6eb30a8a08e09932dbe2e4:userspacegl/src/vdp/userspace-vdp-gl \
+GH_TUPLE=	tomm:userspace-vdp-gl:075b10cb72970a27c9563d9c94ee78e3e0f45cdd:userspacegl/src/vdp/userspace-vdp-gl \
 		tomm:popup-mos:6b056597d560fbf5802db7c97172d0aaee62da4f:popup_mos/sdcard \
-		tomm:agon-vdp:7bcf28e0a2376e32328a6a5554d0df852b75c80e:vdp_console8/src/vdp/vdp-console8 \
-		tomm:agon-vdp:883d0f1e300cecaac1a5fe72dc9e5c44b4184167:vdp_quark/src/vdp/vdp-quark \
+		tomm:agon-vdp:1056ee38ec1cc68ed327bd32ee47d04b1c30597c:vdp_console8/src/vdp/vdp-console8 \
 		S0urceror:AgonElectronHAL:69d51197334658411d82c44bd8abd6fc2ff88c9d:electronhal/src/vdp/AgonElectronHAL
 
 do-build:

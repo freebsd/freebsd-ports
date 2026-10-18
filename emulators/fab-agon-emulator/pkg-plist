@@ -12,7 +12,6 @@ bin/fab-agon-emulator
 %%DATADIR%%/vdp_console8.so
 %%DATADIR%%/vdp_electron.so
 %%DATADIR%%/vdp_platform.so
-%%DATADIR%%/vdp_quark.so
 share/applications/io.github.tomm.fab_agon_emulator.desktop
 share/icons/hicolor/256x256/apps/io.github.tomm.fab_agon_emulator.png
 share/metainfo/io.github.tomm.fab_agon_emulator.metainfo.xml
