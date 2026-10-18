@@ -41,6 +41,7 @@ include/simdutf/scalar/utf8_to_latin1/valid_utf8_to_latin1.h
 include/simdutf/scalar/utf8_to_utf16/utf8_to_utf16.h
 include/simdutf/scalar/utf8_to_utf16/valid_utf8_to_utf16.h
 include/simdutf/scalar/utf8_to_utf32/utf8_to_utf32.h
+include/simdutf/scalar/utf8_to_utf16/utf8_to_utf16_with_replacement.h
 include/simdutf/scalar/utf8_to_utf32/valid_utf8_to_utf32.h
 include/simdutf/simdutf_version.h
 include/simdutf_c.h
@@ -49,8 +50,8 @@ lib/cmake/simdutf/simdutf-config.cmake
 lib/cmake/simdutf/simdutfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/simdutf/simdutfTargets.cmake
 lib/libsimdutf.so
-lib/libsimdutf.so.36
-lib/libsimdutf.so.36.0.0
+lib/libsimdutf.so.37
+lib/libsimdutf.so.37.0.0
 libdata/pkgconfig/simdutf.pc
 %%TOOLS%%share/man/man1/fastbase64.1.gz
 %%TOOLS%%share/man/man1/fastbase64.coreutils.1.gz
