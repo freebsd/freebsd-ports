@@ -5740,3 +5740,4 @@ www/yarn-node20||2026-10-13|Removed, part of expired www/node20
 www/npm-node20||2026-10-13|Removed, part of expired www/node20
 devel/compiler-rt||2026-10-15|Now ships with the base system
 textproc/py-pypa-docs-theme||2026-10-15|Has expired: Upstream archived the repo on Mar 16, 2024
+www/py-wikitools||2026-10-18|Has expired: Not compatible with Python 3

@@ -2063,7 +2063,6 @@
     SUBDIR += py-wfuzz
     SUBDIR += py-whitenoise
     SUBDIR += py-wikipedia
-    SUBDIR += py-wikitools
     SUBDIR += py-woob
     SUBDIR += py-woob-qt
     SUBDIR += py-wsgidav
