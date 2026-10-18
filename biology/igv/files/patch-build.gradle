@@ -1,0 +1,25 @@
+-- Make unit tests runnable: pass the real working directory to the test JVM (the inherited user.dir
+-- breaks relative test data paths) and skip tests that need network access.
+
+--- build.gradle.orig	2026-10-18 08:58:23 UTC
++++ build.gradle
+@@ -193,6 +193,7 @@ tasks.withType(Test).configureEach {
+ tasks.withType(Test).configureEach {
+     systemProperties.clear()
+     systemProperties.putAll( System.getProperties() )
++    systemProperties['user.dir'] = projectDir.absolutePath
+     systemProperties['java.awt.headless'] = 'true'
+     systemProperties['make.fail'] = 'false'
+     systemProperties['include.longrunning'] = 'false'
+@@ -201,6 +202,11 @@ tasks.withType(Test).configureEach {
+     maxHeapSize = '2g'
+     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+     useJUnitPlatform()
++    filter {
++        // these tests need network access
++        excludeTestsMatching '*Htsget*'
++        excludeTestsMatching '*FileFormatUtilsTest.testDetermineFormat'
++    }
+ }
+ 
+ tasks.register('createDist', Copy) {
