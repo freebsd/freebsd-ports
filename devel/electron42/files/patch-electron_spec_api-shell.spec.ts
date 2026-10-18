@@ -1,6 +1,6 @@
---- electron/spec/api-shell.spec.ts.orig	2026-10-07 13:38:33 UTC
+--- electron/spec/api-shell.spec.ts.orig	2026-10-15 23:46:52 UTC
 +++ electron/spec/api-shell.spec.ts
-@@ -38,7 +38,7 @@ describe('shell module', () => {
+@@ -37,7 +37,7 @@ describe('shell module', () => {
  
      afterEach(async () => {
        // reset env vars to prevent side effects
@@ -9,7 +9,7 @@
          process.env.DE = envVars.de;
          process.env.BROWSER = envVars.browser;
          process.env.DISPLAY = envVars.display;
-@@ -55,6 +55,11 @@ describe('shell module', () => {
+@@ -54,6 +54,11 @@ describe('shell module', () => {
        let requestReceived: Promise<any>;
        if (process.platform === 'linux') {
          process.env.BROWSER = '/bin/true';

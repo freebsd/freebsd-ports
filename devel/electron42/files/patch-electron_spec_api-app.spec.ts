@@ -1,6 +1,6 @@
---- electron/spec/api-app.spec.ts.orig	2026-10-14 00:49:29 UTC
+--- electron/spec/api-app.spec.ts.orig	2026-10-15 23:46:52 UTC
 +++ electron/spec/api-app.spec.ts
-@@ -128,7 +128,7 @@ describe('app module', () => {
+@@ -131,7 +131,7 @@ describe('app module', () => {
      });
    });
  
@@ -9,21 +9,21 @@
      it('sets the desktop name to the CHROME_DESKTOP environment variable', () => {
        const original = process.env.CHROME_DESKTOP;
        defer(() => {
-@@ -157,11 +157,11 @@ describe('app module', () => {
+@@ -160,11 +160,11 @@ describe('app module', () => {
    });
  
    describe('app.getPreferredSystemLanguages()', () => {
 -    ifit(process.platform !== 'linux')('should not be empty', () => {
 +    ifit(process.platform !== 'linux' && process.platform !== 'freebsd')('should not be empty', () => {
-       expect(app.getPreferredSystemLanguages().length).to.not.equal(0);
+       expect(app.getPreferredSystemLanguages().length).not.toBe(0);
      });
  
 -    ifit(process.platform === 'linux')('should be empty or contain C entry', () => {
 +    ifit(process.platform === 'linux' || process.platform === 'freebsd')('should be empty or contain C entry', () => {
        const languages = app.getPreferredSystemLanguages();
        if (languages.length) {
-         expect(languages).to.not.include('C');
-@@ -203,7 +203,7 @@ describe('app module', () => {
+         expect(languages).not.toContain('C');
+@@ -206,7 +206,7 @@ describe('app module', () => {
      });
    });
  
@@ -32,7 +32,7 @@
      'when a D-Bus bus goes away',
      () => {
        it('exits cleanly instead of crashing', async () => {
-@@ -297,7 +297,7 @@ describe('app module', () => {
+@@ -300,7 +300,7 @@ describe('app module', () => {
      // A missing display makes toolkit initialisation fail before the main loop
      // runs; that early return must still tear the JS environment down cleanly.
      // Skipped under ASan for the same reason as the test above.
@@ -41,16 +41,16 @@
        'exits with code 1 when no display is available',
        async () => {
          const appPath = path.join(fixturesPath, 'api', 'no-display');
-@@ -318,7 +318,7 @@ describe('app module', () => {
+@@ -321,7 +321,7 @@ describe('app module', () => {
        }
      );
  
--    ifit(['darwin', 'linux'].includes(process.platform))('exits gracefully', async function () {
-+    ifit(['darwin', 'linux', 'freebsd'].includes(process.platform))('exits gracefully', async function () {
+-    ifit(['darwin', 'linux'].includes(process.platform))('exits gracefully', async () => {
++    ifit(['darwin', 'linux', 'freebsd'].includes(process.platform))('exits gracefully', async () => {
        const electronPath = process.execPath;
        const appPath = path.join(fixturesPath, 'api', 'singleton');
        appProcess = cp.spawn(electronPath, [appPath]);
-@@ -538,7 +538,7 @@ describe('app module', () => {
+@@ -554,7 +554,7 @@ describe('app module', () => {
    });
  
    // GitHub Actions macOS-13 runners used for x64 seem to have a problem with this test.
@@ -59,7 +59,7 @@
      const tempFiles = [
        path.join(fixturesPath, 'foo.txt'),
        path.join(fixturesPath, 'bar.txt'),
-@@ -667,7 +667,7 @@ describe('app module', () => {
+@@ -691,7 +691,7 @@ describe('app module', () => {
    //   let w = null
  
    //   before(function () {
@@ -68,7 +68,7 @@
    //       this.skip()
    //     }
    //   })
-@@ -780,7 +780,7 @@ describe('app module', () => {
+@@ -804,7 +804,7 @@ describe('app module', () => {
  
    describe('app.badgeCount', () => {
      const platformIsNotSupported =
@@ -77,16 +77,16 @@
  
      const expectedBadgeCount = 42;
  
-@@ -827,7 +827,7 @@ describe('app module', () => {
+@@ -851,7 +851,7 @@ describe('app module', () => {
    });
  
    ifdescribe(
 -    process.platform !== 'linux' && !process.mas && (process.platform !== 'darwin' || process.arch === 'arm64')
 +    process.platform !== 'linux' && process.platform !== 'freebsd' && !process.mas && (process.platform !== 'darwin' || process.arch === 'arm64')
-   )('app.get/setLoginItemSettings API', function () {
+   )('app.get/setLoginItemSettings API', () => {
      const isMac = process.platform === 'darwin';
      const isWin = process.platform === 'win32';
-@@ -1254,7 +1254,7 @@ describe('app module', () => {
+@@ -1278,7 +1278,7 @@ describe('app module', () => {
      });
    });
  
@@ -95,7 +95,7 @@
      // These tests toggle a process-wide AXMode. Turn it back off so the rest of
      // the suite doesn't run with renderer accessibility enabled.
      afterEach(() => {
-@@ -1530,7 +1530,7 @@ describe('app module', () => {
+@@ -1555,7 +1555,7 @@ describe('app module', () => {
      });
    });
  
@@ -103,18 +103,18 @@
 +  ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd')('select-client-certificate event', () => {
      let w: BrowserWindow;
  
-     before(function () {
-@@ -1673,7 +1673,7 @@ describe('app module', () => {
+     beforeAll(() => {
+@@ -1701,7 +1701,7 @@ describe('app module', () => {
  
    describe('getApplicationNameForProtocol()', () => {
      // TODO: Linux CI doesn't have registered http & https handlers
 -    ifit(!(process.env.CI && process.platform === 'linux') && !isWayland)(
 +    ifit(!(process.env.CI && (process.platform === 'linux' || process.platform === 'freebsd')) && !isWayland)(
        'returns application names for common protocols',
-       function () {
+       () => {
          // We can't expect particular app names here, but these protocols should
-@@ -1690,7 +1690,7 @@ describe('app module', () => {
-       expect(app.getApplicationNameForProtocol('bogus-protocol://')).to.equal('');
+@@ -1718,7 +1718,7 @@ describe('app module', () => {
+       expect(app.getApplicationNameForProtocol('bogus-protocol://')).toBe('');
      });
  
 -    ifdescribe(process.platform === 'linux')('on Linux with mocked XDG dirs', () => {
@@ -122,35 +122,35 @@
        const desktopFileId = 'mock-browser.desktop';
        const mockDisplayName = 'Mock Browser';
        const mockScheme = 'mockproto';
-@@ -1740,7 +1740,7 @@ describe('app module', () => {
+@@ -1768,7 +1768,7 @@ describe('app module', () => {
      let xdgBinDir: string;
  
-     before(() => {
+     beforeAll(() => {
 -      if (process.platform !== 'linux') {
 +      if (process.platform !== 'linux' && process.platform !== 'freebsd') {
          return;
        }
  
-@@ -1757,7 +1757,7 @@ describe('app module', () => {
+@@ -1785,7 +1785,7 @@ describe('app module', () => {
      });
  
-     after(() => {
+     afterAll(() => {
 -      if (process.platform === 'linux') {
 +      if (process.platform === 'linux' || process.platform === 'freebsd') {
          fs.rmSync(xdgDir, { recursive: true, force: true });
        }
      });
-@@ -1769,7 +1769,7 @@ describe('app module', () => {
+@@ -1797,7 +1797,7 @@ describe('app module', () => {
      });
  
-     it('returns resolved promise with appPath, displayName and icon', async function () {
+     it('returns resolved promise with appPath, displayName and icon', async () => {
 -      if (process.platform === 'linux') {
 +      if (process.platform === 'linux' || process.platform === 'freebsd') {
          const appInfo = await spawnProtocolInfoWithXdgMock(`${mockScheme}://`, xdgDataHome, xdgConfigHome);
-         expect(appInfo.name).to.equal(mockDisplayName);
-         expect(appInfo.path).to.equal('/usr/bin/true');
-@@ -1783,7 +1783,7 @@ describe('app module', () => {
-       expect(appInfo.icon).not.to.be.undefined();
+         expect(appInfo.name).toBe(mockDisplayName);
+         expect(appInfo.path).toBe('/usr/bin/true');
+@@ -1811,7 +1811,7 @@ describe('app module', () => {
+       expect(appInfo.icon).not.toBeUndefined();
      });
  
 -    ifit(process.platform === 'linux')('resolves an executable name via PATH', async () => {
@@ -158,7 +158,7 @@
        const pathLookupExecutable = 'mock-browser';
        const pathLookupExecutablePath = path.join(xdgBinDir, pathLookupExecutable);
        const pathLookupDisplayName = 'Mock Browser PATH';
-@@ -1817,7 +1817,7 @@ describe('app module', () => {
+@@ -1845,7 +1845,7 @@ describe('app module', () => {
      });
    });
  
@@ -167,7 +167,7 @@
      const protocol = 'electron-test-linux';
      const desktopFileId = 'electron-test.desktop';
      const protocolMimeType = `x-scheme-handler/${protocol}`;
-@@ -1934,7 +1934,7 @@ describe('app module', () => {
+@@ -1962,7 +1962,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -176,16 +176,16 @@
      const iconPath = path.join(import.meta.dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -2016,7 +2016,7 @@ describe('app module', () => {
-           expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0);
+@@ -2051,7 +2051,7 @@ describe('app module', () => {
+           expect(entry.memory.privateBytes).toBeGreaterThan(0);
          }
  
 -        if (process.platform !== 'linux') {
 +        if (process.platform !== 'linux' && process.platform !== 'freebsd') {
-           expect(entry.sandboxed).to.be.a('boolean');
+           expect(entry.sandboxed).toBeTypeOf('boolean');
          }
  
-@@ -2085,7 +2085,7 @@ describe('app module', () => {
+@@ -2125,7 +2125,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -194,7 +194,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -2109,7 +2109,7 @@ describe('app module', () => {
+@@ -2148,7 +2148,7 @@ describe('app module', () => {
      });
    });
  

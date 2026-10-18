@@ -1,7 +1,7 @@
---- electron/spec/api-net-log.spec.ts.orig	2026-10-14 00:49:29 UTC
+--- electron/spec/api-net-log.spec.ts.orig	2026-10-15 23:46:52 UTC
 +++ electron/spec/api-net-log.spec.ts
-@@ -133,7 +133,7 @@ describe('netLog module', () => {
-     ).to.be.true('uuid present in dump');
+@@ -137,7 +137,7 @@ describe('netLog module', () => {
+     ).toBe(true);
    });
  
 -  ifit(process.platform !== 'linux')(
@@ -9,7 +9,7 @@
      'should begin and end logging automatically when --log-net-log is passed',
      async () => {
        const appProcess = ChildProcess.spawn(process.execPath, [appPath], {
-@@ -148,7 +148,7 @@ describe('netLog module', () => {
+@@ -152,7 +152,7 @@ describe('netLog module', () => {
      }
    );
  
@@ -18,7 +18,7 @@
      'should begin and end logging automatically when --log-net-log is passed, and behave correctly when .startLogging() and .stopLogging() is called',
      async () => {
        const appProcess = ChildProcess.spawn(process.execPath, [appPath], {
-@@ -166,7 +166,7 @@ describe('netLog module', () => {
+@@ -170,7 +170,7 @@ describe('netLog module', () => {
      }
    );
  

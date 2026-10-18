@@ -1,4 +1,4 @@
---- electron/spec/api-clipboard.spec.ts.orig	2026-09-30 08:48:04 UTC
+--- electron/spec/api-clipboard.spec.ts.orig	2026-10-15 23:46:52 UTC
 +++ electron/spec/api-clipboard.spec.ts
 @@ -54,7 +54,7 @@ ifdescribe(process.platform !== 'win32' || process.arc
      });
@@ -20,10 +20,10 @@
        expect(() => {
 @@ -114,7 +114,7 @@ ifdescribe(process.platform !== 'win32' || process.arc
        const readImage = clipboard.readImage();
-       expect(readImage.toDataURL()).to.equal(i.toDataURL());
+       expect(readImage.toDataURL()).toBe(i.toDataURL());
  
 -      if (process.platform !== 'linux') {
 +      if (process.platform !== 'linux' && process.platform !== 'freebsd') {
          if (process.platform !== 'win32') {
-           expect(clipboard.readBookmark()).to.deep.equal(bookmark);
+           expect(clipboard.readBookmark()).toEqual(bookmark);
          } else {

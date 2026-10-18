@@ -1,6 +1,6 @@
---- electron/script/spec-runner.js.orig	2026-09-30 08:48:04 UTC
+--- electron/script/spec-runner.js.orig	2026-10-15 23:46:52 UTC
 +++ electron/script/spec-runner.js
-@@ -399,7 +399,7 @@ function toVitestInvocation(exe, specDir, runnerArgs) 
+@@ -397,7 +397,7 @@ function toVitestInvocation(exe, specDir, runnerArgs) 
    };
    let command = process.execPath;
    let commandArgs = vitestArgs;
@@ -9,7 +9,7 @@
      // The mock D-Bus services are started once around the whole run; every
      // Electron worker inherits the bus addresses from the CLI's environment.
      commandArgs = [path.resolve(__dirname, 'dbus_mock.py'), command, ...commandArgs];
-@@ -503,7 +503,7 @@ async function installSpecModules(dir) {
+@@ -501,7 +501,7 @@ async function installSpecModules(dir) {
      process.exit(1);
    }
  
@@ -18,7 +18,7 @@
      const { status: rebuildStatus } = childProcess.spawnSync('npm', ['rebuild', 'abstract-socket'], {
        env,
        cwd: dir,
-@@ -581,7 +581,7 @@ function getNativeAddonToolchainEnv() {
+@@ -579,7 +579,7 @@ function getNativeAddonToolchainEnv() {
  // the same GCC that rejects the headers, so nothing on that host can build
  // the fixtures.
  function getNativeAddonToolchainEnv() {

@@ -1,13 +1,13 @@
---- electron/spec/chromium.spec.ts.orig	2026-10-14 00:49:29 UTC
+--- electron/spec/chromium.spec.ts.orig	2026-10-15 23:46:52 UTC
 +++ electron/spec/chromium.spec.ts
-@@ -618,15 +618,15 @@ describe('command line switches', () => {
+@@ -611,15 +611,15 @@ describe('command line switches', () => {
        testLocale('asdfkl', `${currentLocale}|${currentSystemLocale}|${currentPreferredLanguages}`));
  
      const lcAll = String(process.env.LC_ALL);
 -    ifit(process.platform === 'linux')('current process has a valid LC_ALL env', async () => {
 +    ifit(process.platform === 'linux' || process.platform === 'freebsd')('current process has a valid LC_ALL env', async () => {
        // The LC_ALL env should not be set to DOM locale string.
-       expect(lcAll).to.not.equal(app.getLocale());
+       expect(lcAll).not.toBe(app.getLocale());
      });
 -    ifit(process.platform === 'linux')('should not change LC_ALL', async () => testLocale('fr', lcAll, true));
 -    ifit(process.platform === 'linux')('should not change LC_ALL when setting invalid locale', async () =>
@@ -20,22 +20,22 @@
        testLocale('', lcAll, true)
      );
    });
-@@ -4246,12 +4246,12 @@ describe('font fallback', () => {
-       expect(fonts[0].familyName).to.equal('Arial');
+@@ -4265,12 +4265,12 @@ describe('font fallback', () => {
+       expect(fonts[0].familyName).toBe('Arial');
      } else if (process.platform === 'darwin') {
-       expect(fonts[0].familyName).to.equal('Helvetica');
+       expect(fonts[0].familyName).toBe('Helvetica');
 -    } else if (process.platform === 'linux') {
 +    } else if (process.platform === 'linux' || process.platform === 'freebsd') {
-       expect(fonts[0].familyName).to.equal('DejaVu Sans');
+       expect(fonts[0].familyName).toBe('DejaVu Sans');
      } // I think this depends on the distro? We don't specify a default.
    });
  
--  ifit(process.platform !== 'linux')(
-+  ifit(process.platform !== 'linux' && process.platform !== 'freebsd')(
-     'should fall back to Japanese font for sans-serif Japanese script',
-     async function () {
-       const html = `
-@@ -4986,7 +4986,7 @@ describe('paste execCommand', { tags: ['serial'] }, ()
+-  ifit(process.platform !== 'linux')('should fall back to Japanese font for sans-serif Japanese script', async () => {
++  ifit(process.platform !== 'linux' && process.platform !== 'freebsd')('should fall back to Japanese font for sans-serif Japanese script', async () => {
+     const html = `
+     <html lang="ja-JP">
+       <head>
+@@ -4998,7 +4998,7 @@ describe('paste execCommand', { tags: ['serial'] }, ()
    });
  });
  
