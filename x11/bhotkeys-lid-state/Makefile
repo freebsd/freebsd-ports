@@ -1,5 +1,5 @@
 PORTNAME=	bhotkeys-lid-state
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	x11
 
 MAINTAINER=	dteske@FreeBSD.org
