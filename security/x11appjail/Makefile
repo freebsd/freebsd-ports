@@ -37,7 +37,8 @@ OPTIONS_DEFINE=		BLAKE3 DBUS
 OPTIONS_DEFAULT=	BLAKE3 DBUS
 
 BLAKE3_DESC=		Enable support for Blake3
-BLAKE3_RUN_DEPENDS=	b3sum:sysutils/b3sum
 DBUS_DESC=		Install with xdg-dbus-proxy
+BLAKE3_RUN_DEPENDS=	b3sum:sysutils/b3sum
+DBUS_RUN_DEPENDS=	xdg-dbus-proxy:devel/xdg-dbus-proxy
 
 .include <bsd.port.mk>
