@@ -1,5 +1,5 @@
 PORTNAME=	muon
-DISTVERSION=	0.6.0
+DISTVERSION=	0.7.0
 CATEGORIES=	devel
 MASTER_SITES=	https://muon.build/releases/v${DISTVERSION}/ \
 		https://muon.build/releases/v${DISTVERSION}/docs/:docs
@@ -50,5 +50,8 @@ do-install:
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+do-test:
+	(cd ${BUILD_WRKSRC} && ${SETENVI} ${MAKE_ENV} ${BUILD_WRKSRC}/muon test -d dots -v)
 
 .include <bsd.port.mk>
