@@ -1,17 +1,18 @@
 PORTNAME=	mapnik
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
+
+PATCH_SITES=	https://github.com/mapnik/mapnik/commit/
+PATCHFILES=	af6f249333ee1c536a9765da9b90347b304b9e43.patch:-p1
 
 MAINTAINER=	hummeltech@sherpaguru.com
 COMMENT=	Free Toolkit For Developing Mapping Applications
-WWW=		http://www.mapnik.org/
+WWW=		https://www.mapnik.org/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		Fails to build, No known features for C compiler
 
 BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu \
 		protozero>0:devel/protozero

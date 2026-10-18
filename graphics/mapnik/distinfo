@@ -1,4 +1,4 @@
-TIMESTAMP = 1790172421
+TIMESTAMP = 1792293691
 SHA256 (mapnik-mapnik-v4.3.2_GH0.tar.gz) = 9760b60fb4e2e443b76e3b51854ff9ff13316e2be200f57bde9dca6e64ccd7c3
 SIZE (mapnik-mapnik-v4.3.2_GH0.tar.gz) = 13297292
 SHA256 (catchorg-Catch2-v2.13.10_GH0.tar.gz) = d54a712b7b1d7708bc7a819a8e6e47b2fde9536f487b89ccbca295072a7d9943
@@ -13,3 +13,5 @@ SHA256 (mapnik-polylabel-1edc167_GH0.tar.gz) = 317ce1da90620b65215739580a14cb41f
 SIZE (mapnik-polylabel-1edc167_GH0.tar.gz) = 61336
 SHA256 (mapnik-test-data-5716a27_GH0.tar.gz) = 2c4d2d513fffd9394869b325058ef30052fad40587647d1ac11f6bc30ba54308
 SIZE (mapnik-test-data-5716a27_GH0.tar.gz) = 14237135
+SHA256 (af6f249333ee1c536a9765da9b90347b304b9e43.patch) = b79c5df21b9a5a2f5d1a4bd746100dab32461112356cc6b1a66012a1be19550c
+SIZE (af6f249333ee1c536a9765da9b90347b304b9e43.patch) = 783
