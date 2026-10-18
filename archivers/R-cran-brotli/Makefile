@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Compression Format Optimized for the Web
-WWW=		https://CRAN.R-project.org/package=brotli
+WWW=		https://cran.r-project.org/package=brotli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	General Smoothing Splines
-WWW=		https://CRAN.R-project.org/package=gss
+WWW=		https://cran.r-project.org/package=gss
 
 LICENSE=	GPLv2+
 

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	jpbeconne@free.fr
 COMMENT=	Tools to Make Developing R Packages Easier
-WWW=		https://CRAN.R-project.org/package=devtools
+WWW=		https://cran.r-project.org/package=devtools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

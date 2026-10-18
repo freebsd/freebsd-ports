@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FastICA Algorithms to Perform ICA and Projection Pursuit
-WWW=		https://CRAN.R-project.org/package=fastICA
+WWW=		https://cran.r-project.org/package=fastICA
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

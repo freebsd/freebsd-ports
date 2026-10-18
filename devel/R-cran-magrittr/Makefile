@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Forward-Pipe Operator for R
-WWW=		http://cran.r-project.org/web/magrittr/
+WWW=		https://cran.r-project.org/package=magrittr
 
 LICENSE=	MIT
 

@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Meta-analysis package for R
-WWW=		https://cran.r-project.org/web/packages/metafor/index.html
+WWW=		https://cran.r-project.org/package=metafor
 
 LICENSE=	GPLv2+
 

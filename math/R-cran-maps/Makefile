@@ -5,7 +5,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Draw Geographical Maps
-WWW=		https://CRAN.R-project.org/package=maps
+WWW=		https://cran.r-project.org/package=maps
 
 LICENSE=	GPLv2
 
