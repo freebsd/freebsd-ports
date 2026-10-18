@@ -1,6 +1,6 @@
 DISTFILES=	\
 		20250814.0.zip:abseil_cpp \
-		7.1.zip:coremltools \
+		9.0.zip:coremltools \
 		3c73d91c0b04e2b59462f0a741be8c07024c1bc0.zip:cxxopts \
 		v3.0.1.zip:date \
 		5c210da409e7f1e51ddf445134a4376fdbd70d7d.zip:dlpack \
@@ -8,7 +8,7 @@ DISTFILES=	\
 		v23.5.26.zip:flatbuffers \
 		0a92994d729ff76a58f692d3028ca1b64b145d91.zip:fp16 \
 		63058eff77e11aa15bf531df5dd34395ec3017c8.zip:fxdiv \
-		v1.8.5.zip:google_benchmark \
+		v1.9.5.zip:google_benchmark \
 		v1.17.0.zip:googletest \
 		3cf85e705098622d59056dcb8f5f963ea7bb0a00.zip:googlexnnpack \
 		v3.11.3.zip:json \
@@ -37,11 +37,11 @@ DISTFILES=	\
 		c24b7bab0c12f53da76d0c31b03b9f0f8ec8f3b4.zip:extensions \
 		v1.613.1.zip:directx_headers \
 		v1.27.0.zip:cudnn_frontend \
-		v20260818.211311.zip:dawn \
-		1.721.0-preview:dawn_agility_sdk \
-		v1.20.0.tar.gz:kleidiai \
-		2f10c9a8d32f81ffeeb6d4885a29cc35d2b0da87.zip:kleidiai_qmx \
+		v20260916.214021.zip:dawn \
+		1.721.3-preview:dawn_agility_sdk \
+		v1.30.0.tar.gz:kleidiai \
+		2f10c9a8d32f81ffeeb6d4885a29cc35d2b0da87.zip:kleidiai-qmx \
 		v1.4.344:vulkan_headers \
-		v3.10.173.1.zip:cpp_client_telemetry \
+		v3.10.279.1.zip:cpp_client_telemetry \
 		curl-8.21.0.tar.xz:curl \
 		mbedtls-3.6.7.tar.bz2:mbedtls \
