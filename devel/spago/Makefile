@@ -1,5 +1,5 @@
 PORTNAME=	spago
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 CATEGORIES=	devel
 MASTER_SITES=	https://registry.npmjs.org/spago/-/
 
@@ -20,8 +20,8 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/package
 
-PLIST_FILES=	${PREFIX}/bin/spago \
-		${PREFIX}/bin/docs-search-app.js
+PLIST_FILES=	bin/spago \
+		bin/docs-search-app.js
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/bundle.js ${STAGEDIR}${PREFIX}/bin/spago
