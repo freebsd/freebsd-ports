@@ -1,9 +1,9 @@
---- python/sites/mach.txt.orig	2026-08-25 22:54:55 UTC
+--- python/sites/mach.txt.orig	2026-10-13 17:53:34 UTC
 +++ python/sites/mach.txt
 @@ -59,13 +59,14 @@ pth:xpcom/idl-parser
  # glean-sdk may not be installable if a wheel isn't available
  # and it has to be built from source.
- # pypi-optional:glean-sdk==68.0.1:telemetry will not be collected
+ # pypi-optional:glean-sdk==70.2.0:telemetry will not be collected
 -pypi-optional:orjson>=3.10:json operations will be slower in various tools
 +# pypi-optional:orjson>=3.10:json operations will be slower in various tools
  # Mach gracefully handles the case where `psutil` is unavailable.
