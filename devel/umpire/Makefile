@@ -1,7 +1,6 @@
 PORTNAME=	umpire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.07.1
-PORTREVISION=	1
+DISTVERSION=	2026.07.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,6 +33,6 @@ CXXFLAGS+=	-Dftruncate64=ftruncate \
 		-DMAP_NORESERVE=0
 LDFLAGS+=	-lexecinfo
 
-# tests as of 2026.07.1: 100% tests passed, 0 tests failed out of 47
+# tests as of 2026.07.2: 100% tests passed, 0 tests failed out of 47
 
 .include <bsd.port.mk>
