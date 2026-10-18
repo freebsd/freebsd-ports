@@ -102,6 +102,7 @@
     SUBDIR += R-cran-mclust
     SUBDIR += R-cran-mcmc
     SUBDIR += R-cran-memisc
+    SUBDIR += R-cran-meta
     SUBDIR += R-cran-metabook
     SUBDIR += R-cran-metadat
     SUBDIR += R-cran-metafor
