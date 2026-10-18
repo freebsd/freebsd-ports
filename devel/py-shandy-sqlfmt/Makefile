@@ -1,9 +1,8 @@
 PORTNAME=	shandy-sqlfmt
 PORTVERSION=	0.32.0
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:S/-/_/g}-${PORTVERSION}
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Sqlfmt formats your dbt SQL files so you don't have to
@@ -19,10 +18,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0<9.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0<4.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.4<5.0:devel/py-platformdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tqdm>=4.0<5.0:misc/py-tqdm@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tqdm>=4.67<5.0:misc/py-tqdm@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	tconbeer
+GH_PROJECT=	sqlfmt
+GH_TAGNAME=	v${PORTVERSION}
 
 NO_ARCH=	yes
 
