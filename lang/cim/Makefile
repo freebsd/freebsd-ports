@@ -1,6 +1,6 @@
 PORTNAME=	cim
-PORTVERSION=	3.37
-PORTREVISION=	3
+DISTVERSION=	3.37
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://simula67.at.ifi.uio.no/Cim/
 
@@ -10,11 +10,13 @@ WWW=		http://folk.uio.no/simula67/cim.shtml
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upstream website is no longer available
+EXPIRATION_DATE=	2026-11-18
+
 USES=		libtool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check-TESTS
