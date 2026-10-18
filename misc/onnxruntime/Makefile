@@ -1,6 +1,6 @@
 PORTNAME=	onnxruntime
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.30.0
+DISTVERSION=	1.31.0
 CATEGORIES=	misc # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
@@ -78,8 +78,8 @@ test-quick: install do-test-quick
 post-install: do-test-quick
 	@${DO_NADA}
 
-# tests as of 1.30.0 (make test):
-# CTest runs 10 test executables (41 sec total); all 10 passed.
+# tests as of 1.31.0: 100% tests passed out of 15
+
 # The main executable onnxruntime_test_all internally contains thousands of
 # individual GoogleTest cases; the previous 1.21.1 note counted those directly
 # by running ./onnxruntime_test_all instead of ctest.

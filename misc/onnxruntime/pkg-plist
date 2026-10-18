@@ -5,16 +5,17 @@ include/onnxruntime/onnxruntime_c_api.h
 include/onnxruntime/onnxruntime_cxx_api.h
 include/onnxruntime/onnxruntime_cxx_inline.h
 include/onnxruntime/onnxruntime_env_config_keys.h
+include/onnxruntime/onnxruntime_ep_c_api.h
+include/onnxruntime/onnxruntime_ep_device_ep_metadata_keys.h
 include/onnxruntime/onnxruntime_error_code.h
 include/onnxruntime/onnxruntime_experimental_c_api.h
 include/onnxruntime/onnxruntime_experimental_c_api.inc
 include/onnxruntime/onnxruntime_experimental_cxx_api.h
-include/onnxruntime/onnxruntime_ep_c_api.h
-include/onnxruntime/onnxruntime_ep_device_ep_metadata_keys.h
 include/onnxruntime/onnxruntime_float16.h
 include/onnxruntime/onnxruntime_lite_custom_op.h
 include/onnxruntime/onnxruntime_run_options_config_keys.h
 include/onnxruntime/onnxruntime_session_options_config_keys.h
+include/onnxruntime/onnxruntime_type_conversion.h
 include/onnxruntime/provider_options.h
 lib/cmake/onnxruntime/onnxruntimeConfig.cmake
 lib/cmake/onnxruntime/onnxruntimeConfigVersion.cmake
@@ -22,6 +23,6 @@ lib/cmake/onnxruntime/onnxruntimeTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/onnxruntime/onnxruntimeTargets.cmake
 lib/libonnxruntime.so
 lib/libonnxruntime.so.1
-lib/libonnxruntime.so.1.30.0
+lib/libonnxruntime.so.1.31.0
 lib/libonnxruntime_providers_shared.so
 libdata/pkgconfig/libonnxruntime.pc
