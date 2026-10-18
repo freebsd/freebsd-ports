@@ -2,7 +2,8 @@ PORTNAME=	grace
 PORTVERSION=	5.1.25
 PORTREVISION=	11
 CATEGORIES=	math print
-MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
+MASTER_SITES=	https://plasma-gate.weizmann.ac.il/pub/grace/src/grace5/ \
+		ftp://ftp.fu-berlin.de/unix/graphics/grace/src/stable/ \
 		ftp://ftp.ntua.gr/pub/graphics/grace/src/stable/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/grace/src/stable/ \
 		ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/
