@@ -11,6 +11,7 @@
 %%R_MOD_DIR%%/NAMESPACE
 %%R_MOD_DIR%%/NEWS
 %%R_MOD_DIR%%/NEWS.md
+%%R_MOD_DIR%%/README.md
 %%R_MOD_DIR%%/R/pracma
 %%R_MOD_DIR%%/R/pracma.rdb
 %%R_MOD_DIR%%/R/pracma.rdx
