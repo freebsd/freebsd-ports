@@ -133,9 +133,9 @@ HTTP_IP2PROXY_GH_TUPLE=		ip2location:ip2proxy-nginx:f3e7e7d:ip2proxy
 HTTP_IP2PROXY_LIB_DEPENDS=	libIP2Proxy.so:net/ip2proxy
 HTTP_IP2PROXY_VARS=		DSO_EXTMODS+=ip2proxy
 
-HTTP_JSON_STATUS_GH_TUPLE=	nginx-modules:ngx_http_json_status_module:c77dff4:json_status
+HTTP_JSON_STATUS_BUILD_DEPENDS=	nginx-module-json-status>0:www/nginx-module-json-status
+WRKSRC_json_status=		${WRKDIR}/nginx-json-status-module
 HTTP_JSON_STATUS_VARS=		DSO_EXTMODS+=json_status
-HTTP_JSON_STATUS_EXTRA_PATCHES= ${PATCHDIR}/extra-patch-ngx_http_json_status_module-config
 
 HTTP_MOGILEFS_MASTER_SITES=	http://www.grid.net.ru/nginx/download/:mogilefs
 HTTP_MOGILEFS_DISTFILES=	nginx_mogilefs_module-1.0.4.tar.gz:mogilefs
@@ -205,9 +205,9 @@ HTTP_ZIP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-mod_zip
 
 ICONV_IMPLIES=		DEVEL_KIT
 ICONV_USES=		iconv
-ICONV_GH_TUPLE=		calio:iconv-nginx-module:v0.14:iconv
+ICONV_BUILD_DEPENDS=	nginx-module-iconv>0:www/nginx-module-iconv
+WRKSRC_iconv=		${WRKDIR}/nginx-iconv-module
 ICONV_VARS=		DSO_EXTMODS+=iconv
-ICONV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module-config
 
 LET_BUILD_DEPENDS=	nginx-module-let>0:www/nginx-module-let
 WRKSRC_let=		${WRKDIR}/nginx-let-module

@@ -1,7 +1,7 @@
 PORTNAME=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -314,9 +314,6 @@ post-patch-HTTP_AUTH_KRB5-on:
 post-patch-HTTP_TARANTOOL-on:
 	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_nginx_tarantool}/config
 
-post-patch-ICONV-on:
-	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_iconv}/config
-
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
 
@@ -364,6 +361,17 @@ pre-configure-HTTP_ACCEPT_LANGUAGE-on:
 	@${RM} -rf ${WRKSRC_accept_language}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-accept-language ${WRKSRC_accept_language}
 	@${CHMOD} -R u+w ${WRKSRC_accept_language}
+
+pre-configure-ICONV-on:
+	@${RM} -rf ${WRKSRC_iconv}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-iconv ${WRKSRC_iconv}
+	@${CHMOD} -R u+w ${WRKSRC_iconv}
+
+pre-configure-HTTP_JSON_STATUS-on:
+	@${RM} -rf ${WRKSRC_json_status}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-json-status \
+		${WRKSRC_json_status}
+	@${CHMOD} -R u+w ${WRKSRC_json_status}
 
 pre-configure-LET-on:
 	@${RM} -rf ${WRKSRC_let}
