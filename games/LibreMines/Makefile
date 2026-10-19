@@ -1,5 +1,5 @@
 PORTNAME=	LibreMines
-PORTVERSION=	2.3.0
+PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake gl qt:6
-USE_GL=		gl opengl
+USE_GL=		opengl
 USE_QT=		base multimedia svg
 
 USE_GITHUB=	yes
