@@ -1,13 +1,12 @@
 PORTNAME=	xf86-video-intel
-DISTVERSION=	2.99.917-923
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g${GL_TAGNAME:C/(.{12}).*/\1/}
+DISTVERSION=	2.99.917-939
+DISTVERSIONSUFFIX=	-g4a64400e
 PORTEPOCH=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org legacy driver for Intel integrated graphics chipsets
-WWW=		https://01.org/linuxgraphics/
+WWW=		https://gitlab.freedesktop.org/xorg/driver/xf86-video-intel
 
 LICENSE=	MIT	# various
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -20,7 +19,6 @@ LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm
 USES=		cpe localbase xorg xorg-cat:driver
 CPE_VENDOR=	x
 USE_GITLAB=	yes
-GL_TAGNAME=	b74b67f0f321875492968f7097b9d6e82a66d7df
 USE_XORG=	pciaccess pixman
 CONFIGURE_ENV=	ac_cv_header_sys_sysinfo_h=no # XXX ports/242236
 CONFIGURE_ARGS=	--with-builderstring="${DISTVERSIONFULL}"
@@ -38,7 +36,8 @@ UDEV_LIB_DEPENDS=	libudev.so:devel/libudev-devd
 UDEV_CONFIGURE_ENABLE=	udev
 
 TOOLS_DESC=		Install the intel-virtual-output tool
-TOOLS_USE=		XORG=xrandr,xdamage,xfixes,xcursor,xtst,xrender,xscrnsaver,xext,x11,pixman
+TOOLS_LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence
+TOOLS_USE=		XORG=xrandr,xdamage,xfixes,xcursor,xtst,xrender,xscrnsaver,xext,x11,pixman,xinerama
 TOOLS_CONFIGURE_ENABLE=	tools
 
 XVMC_LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
