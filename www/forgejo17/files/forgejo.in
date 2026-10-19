@@ -1,0 +1,88 @@
+#!/bin/sh
+
+# PROVIDE: forgejo
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable forgejo:
+#
+#forgejo_enable="YES"
+
+. /etc/rc.subr
+
+name="forgejo"
+rcvar="forgejo_enable"
+
+load_rc_config $name
+
+: ${forgejo_user:="%%GITUSER%%"}
+: ${forgejo_enable:="NO"}
+: ${forgejo_configcheck_enable:="YES"}
+: ${forgejo_facility:="daemon"}
+: ${forgejo_priority:="info"}
+: ${forgejo_custom:="%%PREFIX%%/etc/${name}"}
+
+procname="%%PREFIX%%/sbin/${name}"
+githome="$(eval echo ~${forgejo_user})"
+
+pidfile="/var/run/${name}.pid"
+
+command="%%PREFIX%%/sbin/${name} web"
+extra_commands="admin doctor manager"
+admin_cmd="${name}_admin"
+doctor_cmd="${name}_doctor"
+manager_cmd="${name}_manager"
+start_cmd="${name}_start"
+start_precmd="${name}_prestart"
+
+forgejo_start() {
+	for d in %%DBDIR%% %%LOGDIR%%; do
+		if [ ! -e "$d" ]; then
+			mkdir "$d"
+			chown ${forgejo_user} "$d"
+		fi
+	done
+	/usr/sbin/daemon \
+		-S -l ${forgejo_facility} -s ${forgejo_priority} -T ${name} \
+		-u ${forgejo_user} -p ${pidfile} \
+		/usr/bin/env -i \
+		"FORGEJO_CUSTOM=${forgejo_custom}" \
+		"HOME=${githome}" \
+		"PATH=%%PREFIX%%/bin:${PATH}" \
+		"USER=${forgejo_user}" \
+		$command
+}
+
+forgejo() {
+	/usr/bin/env -i \
+	    "FORGEJO_CUSTOM=${forgejo_custom}" \
+	    "HOME=${githome}" \
+	    "PATH=%%PREFIX%%/bin:${PATH}" \
+	    "USER=${forgejo_user}" \
+	    /usr/bin/su -m ${forgejo_user} -c \
+	    "%%PREFIX%%/sbin/${name} $*"
+}
+
+forgejo_admin() {
+	forgejo admin "$@"
+}
+
+forgejo_doctor() {
+	forgejo doctor "$@"
+}
+
+forgejo_manager() {
+	forgejo manager "$@"
+}
+
+forgejo_prestart() {
+	if checkyesno forgejo_configcheck_enable; then
+		if ! errstr=$(forgejo doctor check 2>&1); then
+			rc=$?
+			echo "$errstr" >&2
+			return $rc
+		fi
+	fi
+}
+
+run_rc_command "$@"
