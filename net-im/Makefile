@@ -7,7 +7,6 @@
     SUBDIR += conduit
     SUBDIR += convey
     SUBDIR += coyim
-    SUBDIR += debugtox
     SUBDIR += deltachat-desktop
     SUBDIR += dendrite
     SUBDIR += dino
