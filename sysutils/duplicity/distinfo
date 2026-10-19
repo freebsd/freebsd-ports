@@ -1,3 +1,3 @@
-TIMESTAMP = 1790617864
-SHA256 (duplicity-3.2.1.tar.gz) = 4284e3d8f0082a85d3dcfa634901532a1087463df7a33ead417670c0d63b9ef5
-SIZE (duplicity-3.2.1.tar.gz) = 1740226
+TIMESTAMP = 1792352225
+SHA256 (duplicity-rel.3.2.2.tar.bz2) = 6dfec866532001460635b18d3c56f76bef9bface00e26ba2ba4a2e1613279b42
+SIZE (duplicity-rel.3.2.2.tar.bz2) = 1069512

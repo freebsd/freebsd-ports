@@ -1,7 +1,6 @@
 PORTNAME=	duplicity
-DISTVERSION=	3.2.1
+DISTVERSION=	3.2.2
 CATEGORIES=	sysutils
-MASTER_SITES=	PYPI
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Backup tool that uses librsync and GnuPG
@@ -15,25 +14,31 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	librsync.so:net/librsync
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0:devel/py-fasteners@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0.19:devel/py-fasteners@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>0:www/py-httplib2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}paramiko>0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycodestyle>0:devel/py-pycodestyle@${PY_FLAVOR} \
+		gtar:archivers/gtar
 
 USES=		cpe gettext-tools localbase python shebangfix
 CPE_VENDOR=	${PORTNAME}_project
+USE_GITLAB=	yes
+GL_TAGNAME=	rel.${DISTVERSION}
 USE_LDCONFIG=	yes
-USE_PYTHON=	autoplist noflavors pep517
+USE_PYTHON=	autoplist noflavors pep517 pytest
 
-SHEBANG_FILES=	duplicity/__main__.py
+# TestCode only runs upstream linters (black, pylint, pycodestyle)
+PYTEST_IGNORED_TESTS=	TestCode
 
-PORTDOCS=	AUTHORS.md README-REPO.md README.md
+SHEBANG_FILES=	duplicity/__main__.py testing/overrides/bin/*
+
+PORTDOCS=	AUTHORS.md CHANGELOG.md README-LOG.md README.md
 
 OPTIONS_DEFINE=		B2 DOCS DROPBOX FTP FTPS S3
 OPTIONS_DEFAULT=	B2 DROPBOX GNUPG2 S3
-OPTIONS_GROUP=		GPG
 OPTIONS_SINGLE=		GPG
 OPTIONS_SINGLE_GPG=	GNUPG GNUPG2
 
@@ -46,7 +51,7 @@ GNUPG_DESC=	Use GnuPG 1
 GNUPG2_DESC=	Use GnuPG 2
 S3_DESC=	Amazon S3 backend
 
-B2_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}b2sdk>=0.1.8:devel/py-b2sdk@${PY_FLAVOR}
+B2_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}b2sdk>0:devel/py-b2sdk@${PY_FLAVOR}
 DROPBOX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dropbox>0:www/py-dropbox@${PY_FLAVOR}
 FTP_RUN_DEPENDS=	ncftp>=3.2.2:ftp/ncftp3
 FTPS_RUN_DEPENDS=	lftp>=3.7.15:ftp/lftp
