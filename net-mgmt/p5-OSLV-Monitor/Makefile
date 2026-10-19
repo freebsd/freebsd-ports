@@ -1,5 +1,5 @@
 PORTNAME=	OSLV-Monitor
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -18,6 +18,7 @@ RUN_DEPENDS=	jq>0:textproc/jq \
 		p5-IO-Interface>0:net/p5-IO-Interface \
 		p5-JSON-XS>0:converters/p5-JSON-XS \
 		p5-JSON>0:converters/p5-JSON \
+		p5-List-AllUtils>0:devel/p5-List-AllUtils \
 		p5-MIME-Base64>0:converters/p5-MIME-Base64
 
 USES=		perl5
