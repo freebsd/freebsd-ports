@@ -11,6 +11,8 @@ WWW=		https://pavuk.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to build, ld: error: undefined symbol: XCloseDisplay
+
 USES=		cpe localbase ssl tar:bzip2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
