@@ -30,7 +30,8 @@ CONFLICTS_INSTALL+=	${P}-2.*
 .endfor
 
 .if ${BUILD_MOZC_LIST:Mmozc_el} != "mozc_el"
-BUILD_DEPENDS=	bazel9>=9.0.0:devel/bazel9
+BUILD_DEPENDS=	bazel9>=9.0.0:devel/bazel9 \
+		bash:shells/bash
 USES=		compiler:c++20-lang pkgconfig java:build python:3.12+,build
 USE_CXXSTD=	c++20
 JAVA_VERSION=	21
