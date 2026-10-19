@@ -1,0 +1,13 @@
+--- src/.bazelrc.orig	2026-10-17 21:11:34 UTC
++++ src/.bazelrc
+@@ -11,6 +11,10 @@ common:prod_linux_dev --noenable_platform_specific_con
+ common:prod_linux     --noenable_platform_specific_config --config=linux_env --define TARGET=prod_linux
+ common:prod_linux_dev --noenable_platform_specific_config --config=linux_env --define TARGET=prod_linux --config=dev_channel
+ 
++common:oss_freebsd    --noenable_platform_specific_config --config=freebsd_env --define TARGET=oss_linux
++common:freebsd_env    --config=compiler_gcc_like
++build:freebsd_env     --copt=-fPIC --linkopt=-lm --host_linkopt=-lm
++
+ common:macos          --config=macos_env --define TARGET=oss_macos
+ common:oss_macos      --noenable_platform_specific_config --config=macos_env --define TARGET=oss_macos
+ common:prod_macos     --noenable_platform_specific_config --config=macos_env --define TARGET=prod_macos

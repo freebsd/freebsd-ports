@@ -1,0 +1,16 @@
+--- src/MODULE.bazel.orig
++++ src/MODULE.bazel
+@@ -215,6 +215,13 @@
+     "pkg_config_repository",
+ )
+ 
++# uim
++pkg_config_repository(
++    name = "uim",
++    exec_os = ["linux", "freebsd"],
++    packages = ["uim"],
++)
++
+ # iBus
+ pkg_config_repository(
+     name = "ibus",

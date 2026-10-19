@@ -48,12 +48,12 @@
     SUBDIR += eijiro-fpw
     SUBDIR += epwutil
     SUBDIR += fcitx-anthy
-    SUBDIR += fcitx-mozc
     SUBDIR += fcitx-skk
     SUBDIR += fcitx5-anthy
     SUBDIR += fcitx5-cskk
     SUBDIR += fcitx5-hazkey
     SUBDIR += fcitx5-karukan
+    SUBDIR += fcitx5-mozc
     SUBDIR += fcitx5-mozc3
     SUBDIR += fcitx5-skk
     SUBDIR += flower-fpw

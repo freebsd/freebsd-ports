@@ -1,0 +1,19 @@
+--- src/MODULE.bazel.orig
++++ src/MODULE.bazel
+@@ -215,6 +215,16 @@
+     "pkg_config_repository",
+ )
+ 
++# Fcitx 5
++pkg_config_repository(
++    name = "fcitx5",
++    exec_os = ["linux", "freebsd"],
++    packages = [
++        "Fcitx5Core",
++        "Fcitx5Module",
++    ],
++)
++
+ # iBus
+ pkg_config_repository(
+     name = "ibus",

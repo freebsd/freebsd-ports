@@ -1,0 +1,16 @@
+--- src/bazel/cc_target_os/BUILD.bazel.orig	2026-10-17 21:20:47 UTC
++++ src/bazel/cc_target_os/BUILD.bazel
+@@ -102,6 +102,13 @@ config_setting(
+ )
+ 
+ config_setting(
++    name = "oss_freebsd",
++    values = {
++        "define": "TARGET=oss_freebsd",
++    },
++)
++
++config_setting(
+     name = "wasm",
+     values = {
+         "define": "TARGET=wasm",

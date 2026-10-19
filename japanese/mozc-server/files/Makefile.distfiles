@@ -1,0 +1,204 @@
+# Bazel versions: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# Generated from Bazel download requests; review before inclusion.
+# Keep these files out of EXTRACT_ONLY; run make makesum.
+
+# Local BCR inputs and directories for conflicting download basenames.
+BAZEL_DISTDIR_FLAGS+=	--distdir="${DISTDIR}/${DIST_SUBDIR}/bazel/sha256/9b01b133be1caffc680f132d385d0e594262d6cfd29759a63c428050b83fe628"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${DISTDIR}/${DIST_SUBDIR}/bazel/sha256/a4c7b9bfb442a7497b72d74358c31034c4fef1ab2a50659834784580751ac04d"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${DISTDIR}/${DIST_SUBDIR}/bazel/sha256/df34fba3d09778db69503a23b688761051dbf65b5bccb0d7b729c69ff61c3804"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/abseil-cpp/20260107.1"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/abseil-py/2.1.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/abseil-py/2.1.0/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/apple_support/2.4.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/apple_support/2.4.0/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/apple_support/2.5.2"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/apple_support/2.5.2/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/aspect_bazel_lib/2.22.5"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/aspect_bazel_lib/2.22.5/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/bazel_features/1.42.1"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/bazel_features/1.42.1/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/bazel_lib/3.0.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/bazel_lib/3.0.0/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/bazel_skylib/1.9.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/platforms/1.0.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/protobuf/34.1"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_android/0.7.1"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_android_ndk/0.1.5"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_android_ndk/0.1.5/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_apple/4.5.2"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_apple/4.5.2/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_cc/0.2.17"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_cc/0.2.17/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_go/0.60.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_go/0.60.0/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_java/9.3.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_kotlin/2.2.2"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_kotlin/2.2.2/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_license/1.0.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_pkg/1.2.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_python/1.9.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_python/1.9.0/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_shell/0.6.1"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_shell/0.6.1/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_swift/3.5.0"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/rules_swift/3.5.0/patches"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/tar.bzl/0.5.1"
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKSRC_bcr}/modules/tar.bzl/0.5.1/patches"
+
+.if !defined(USE_GITHUB)
+USE_GITHUB=	nodefault
+.endif
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:8a3d0830e4eb4f66c4fa907c06edf6ce1c719ced811a12e26d9d3162f8471758
+# Bazel URL: https://github.com/abseil/abseil-py/archive/refs/tags/v2.1.0.tar.gz
+GH_TUPLE+=	abseil:abseil-py:v2.1.0:bazelgh0001
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKDIR}/bazel-distdir/bazelgh0001"
+BAZEL_GH_DISTFILES+=	${DISTFILE_bazelgh0001}:bazelgh0001/v2.1.0.tar.gz
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:a1a9f7875aa4b6a9480ca384d5865f1ccf1b0b1faead6b47aa47d79709a5c5fd
+# Bazel URL: https://github.com/bats-core/bats-core/archive/v1.10.0.tar.gz
+GH_TUPLE+=	bats-core:bats-core:v1.10.0:bazelgh0002
+BAZEL_DISTDIR_FLAGS+=	--distdir="${WRKDIR}/bazel-distdir/bazelgh0002"
+BAZEL_GH_DISTFILES+=	${DISTFILE_bazelgh0002}:bazelgh0002/v1.10.0.tar.gz
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:9b01b133be1caffc680f132d385d0e594262d6cfd29759a63c428050b83fe628
+MASTER_SITES+=	https://raw.githubusercontent.com/google/material-design-icons/4.0.0/src/action/settings/materialiconsround/24px.svg?dummy=/:bazelfetch0001
+DISTFILES+=	bazel/sha256/9b01b133be1caffc680f132d385d0e594262d6cfd29759a63c428050b83fe628/24px.svg:bazelfetch0001
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:a4c7b9bfb442a7497b72d74358c31034c4fef1ab2a50659834784580751ac04d
+MASTER_SITES+=	https://raw.githubusercontent.com/google/material-design-icons/4.0.0/src/action/chrome_reader_mode/materialiconsoutlined/24px.svg?dummy=/:bazelfetch0002
+DISTFILES+=	bazel/sha256/a4c7b9bfb442a7497b72d74358c31034c4fef1ab2a50659834784580751ac04d/24px.svg:bazelfetch0002
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:df34fba3d09778db69503a23b688761051dbf65b5bccb0d7b729c69ff61c3804
+MASTER_SITES+=	https://raw.githubusercontent.com/google/material-design-icons/4.0.0/src/action/build/materialicons/24px.svg?dummy=/:bazelfetch0003
+DISTFILES+=	bazel/sha256/df34fba3d09778db69503a23b688761051dbf65b5bccb0d7b729c69ff61c3804/24px.svg:bazelfetch0003
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:4314e2a7cbac89cac25a2f2322870f343d81579756ceff7f431803c2c9090195
+MASTER_SITES+=	https://github.com/abseil/abseil-cpp/releases/download/20260107.1/:bazelfetch0004
+DISTFILES+=	abseil-cpp-20260107.1.tar.gz:bazelfetch0004
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0
+# sha256:9f2ee0d23bf46b1c8ac88cea73ab13d415f340ec777e1e68841e09153880a67e
+MASTER_SITES+=	https://github.com/bazelbuild/apple_support/releases/download/2.4.0/:bazelfetch0005
+DISTFILES+=	apple_support.2.4.0.tar.gz:bazelfetch0005
+
+# Required by Bazel: 9.3.0
+# sha256:ce4fc3e360c151af7c142da190abd4cfb49ca90aa833291d136afa05e94ba4ea
+MASTER_SITES+=	https://github.com/bazelbuild/apple_support/releases/download/2.5.2/:bazelfetch0006
+DISTFILES+=	apple_support.2.5.2.tar.gz:bazelfetch0006
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:269433bf6d6948a93ab6a57a73ceb5930870223046052cfffe01eeca37327d3e
+MASTER_SITES+=	https://raw.githubusercontent.com/google/material-design-icons/4.0.0/png/action/build/materialicons/48dp/1x/:bazelfetch0007
+DISTFILES+=	baseline_build_black_48dp.png:bazelfetch0007
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:94e192033ca8027f26de71c9000a67ef9c73695c2b88e2c559045170917ead0c
+MASTER_SITES+=	https://github.com/bazel-contrib/bazel-lib/releases/download/v2.22.5/:bazelfetch0008
+DISTFILES+=	bazel-lib-v2.22.5.tar.gz:bazelfetch0008
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:6fd3b1e1a38ca744f9664be4627ced80895c7d2ee353891c172f1ab61309c933
+MASTER_SITES+=	https://github.com/bazel-contrib/bazel-lib/releases/download/v3.0.0/:bazelfetch0009
+DISTFILES+=	bazel-lib-v3.0.0.tar.gz:bazelfetch0009
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:3b5b49006181f5f8ff626ef8ddceaa95e9bb8ad294f7b5d7b11ea9f7ddaf8c59
+MASTER_SITES+=	https://github.com/bazelbuild/bazel-skylib/releases/download/1.9.0/:bazelfetch0010
+DISTFILES+=	bazel-skylib-1.9.0.tar.gz:bazelfetch0010
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:8189bac9a6bf9cc155a854c4cbebfebf58b9ca7a2d0a67645f7d0c1f83c523ac
+MASTER_SITES+=	https://github.com/bazel-contrib/bazel_features/releases/download/v1.42.1/:bazelfetch0011
+DISTFILES+=	bazel_features-v1.42.1.tar.gz:bazelfetch0011
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:6d2ac7befa038d4f32e07136293acaf5d8645a4daecb6d063f34be2ffea59b55
+MASTER_SITES+=	https://raw.githubusercontent.com/google/material-design-icons/4.0.0/png/action/chrome_reader_mode/materialiconsoutlined/48dp/1x/:bazelfetch0012
+DISTFILES+=	outline_chrome_reader_mode_black_48dp.png:bazelfetch0012
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:3384eb1c30762704fbe38e440204e114154086c8fc8a8c2e3e28441028c019a8
+MASTER_SITES+=	https://github.com/bazelbuild/platforms/releases/download/1.0.0/:bazelfetch0013
+DISTFILES+=	platforms-1.0.0.tar.gz:bazelfetch0013
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:9f0933ad12abb0a8957b3b64aefc34774ccbe57f77f890c66cb4067519bb83c1
+MASTER_SITES+=	https://github.com/protocolbuffers/protobuf/releases/download/v34.1/:bazelfetch0014
+DISTFILES+=	protobuf-34.1.bazel.tar.gz:bazelfetch0014
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:c4ae8bb7992f43157be9d026f76a7039af6e0e3de0f220842208dfda8c38714a
+MASTER_SITES+=	https://raw.githubusercontent.com/google/material-design-icons/4.0.0/png/action/settings/materialiconsround/48dp/1x/:bazelfetch0015
+DISTFILES+=	round_settings_black_48dp.png:bazelfetch0015
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:7c45b6aaa837fb6f2f23ad11387638cb00fa9f839a04ec564caac70a543a9cd5
+MASTER_SITES+=	https://github.com/bazelbuild/rules_android/releases/download/v0.7.1/:bazelfetch0016
+DISTFILES+=	rules_android-v0.7.1.tar.gz:bazelfetch0016
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:07e7a2777113bb3d0a432265d1c78cfaa140a5bc4c82be4c8cd988b34382ec90
+MASTER_SITES+=	https://github.com/bazelbuild/rules_android_ndk/releases/download/v0.1.5/:bazelfetch0017
+DISTFILES+=	rules_android_ndk-v0.1.5.tar.gz:bazelfetch0017
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:bdac384944a8a7b555f403e10fecb25de6096ff340722e090847bfb562c0ce89
+MASTER_SITES+=	https://github.com/bazelbuild/rules_apple/releases/download/4.5.2/:bazelfetch0018
+DISTFILES+=	rules_apple.4.5.2.tar.gz:bazelfetch0018
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:283fa1cdaaf172337898749cf4b9b1ef5ea269da59540954e51fba0e7b8f277a
+MASTER_SITES+=	https://github.com/bazelbuild/rules_cc/releases/download/0.2.17/:bazelfetch0019
+DISTFILES+=	rules_cc-0.2.17.tar.gz:bazelfetch0019
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:86d3dc8f59d253524f933aaf2f3c05896cb0b605fc35b460c0b4b039996124c6
+MASTER_SITES+=	https://github.com/bazel-contrib/rules_go/releases/download/v0.60.0/:bazelfetch0020
+DISTFILES+=	rules_go-v0.60.0.zip:bazelfetch0020
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:6ef26d4f978e8b4cf5ce1d47532d70cb62cd18431227a1c8007c8f7843243c06
+MASTER_SITES+=	https://github.com/bazelbuild/rules_java/releases/download/9.3.0/:bazelfetch0021
+DISTFILES+=	rules_java-9.3.0.tar.gz:bazelfetch0021
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:411db26afb3492cc8351b5b5349931522afe2c54f2651b6d127730a1256d0f60
+MASTER_SITES+=	https://github.com/bazelbuild/rules_kotlin/releases/download/v2.2.2/:bazelfetch0022
+DISTFILES+=	rules_kotlin-v2.2.2.tar.gz:bazelfetch0022
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:26d4021f6898e23b82ef953078389dd49ac2b5618ac564ade4ef87cced147b38
+MASTER_SITES+=	https://github.com/bazelbuild/rules_license/releases/download/1.0.0/:bazelfetch0023
+DISTFILES+=	rules_license-1.0.0.tar.gz:bazelfetch0023
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:b5c9184a23bb0bcff241981fd9d9e2a97638a1374c9953bb1808836ce711f990
+MASTER_SITES+=	https://github.com/bazelbuild/rules_pkg/releases/download/1.2.0/:bazelfetch0024
+DISTFILES+=	rules_pkg-1.2.0.tar.gz:bazelfetch0024
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:098ba13578e796c00c853a2161f382647f32eb9a77099e1c88bc5299333d0d6e
+MASTER_SITES+=	https://github.com/bazel-contrib/rules_python/releases/download/1.9.0/:bazelfetch0025
+DISTFILES+=	rules_python-1.9.0.tar.gz:bazelfetch0025
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:e6b87c89bd0b27039e3af2c5da01147452f240f75d505f5b6880874f31036307
+MASTER_SITES+=	https://github.com/bazelbuild/rules_shell/releases/download/v0.6.1/:bazelfetch0026
+DISTFILES+=	rules_shell-v0.6.1.tar.gz:bazelfetch0026
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:c98f201bc217d2ce28e01afc78b410d05c67b846c04a7095e4e701b37422ecb2
+MASTER_SITES+=	https://github.com/bazelbuild/rules_swift/releases/download/3.5.0/:bazelfetch0027
+DISTFILES+=	rules_swift.3.5.0.tar.gz:bazelfetch0027
+
+# Required by Bazel: 9.0.1, 9.1.0, 9.1.1, 9.2.0, 9.3.0
+# sha256:b47e3c83a0c1440ce335aa1ae18753da6eb7cd551d4946fa303de2abde07e20b
+MASTER_SITES+=	https://github.com/bazel-contrib/tar.bzl/releases/download/v0.5.1/:bazelfetch0028
+DISTFILES+=	tar.bzl-v0.5.1.tar.gz:bazelfetch0028

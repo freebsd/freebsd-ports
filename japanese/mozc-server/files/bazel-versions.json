@@ -1,0 +1,22 @@
+[
+  {
+    "version": "9.0.1",
+    "commit": "0130386c6903257df345990069a5aa8edcb0a848"
+  },
+  {
+    "version": "9.1.0",
+    "commit": "83d8a324ee192af252dfd10d6d087c7ddd23db8d"
+  },
+  {
+    "version": "9.1.1",
+    "commit": "3c288518d2cf075cb26362e8782d5d962204231c"
+  },
+  {
+    "version": "9.2.0",
+    "commit": "f034f2f2da5189f71abf1e004f3bb8c7a562609e"
+  },
+  {
+    "version": "9.3.0",
+    "commit": "f24c69c8f6bfde8ab8f76955355abcb9eb3fe5fb"
+  }
+]
