@@ -1,0 +1,4 @@
+OpenCode is an open-source, model-agnostic AI coding agent that runs in the
+terminal.  It combines a full-screen TUI and a scriptable CLI with a
+client/server architecture, LSP awareness, and multi-session support, and can
+talk to dozens of model providers or local models.
