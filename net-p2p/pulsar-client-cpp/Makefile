@@ -11,7 +11,7 @@ WWW=		https://pulsar.apache.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386 # due to requirement of instruction sets crc32, pclmul
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le # x86 due to requirement of instruction sets crc32, pclmul
 BROKEN_i386=	compilation fails due to overflow, see https://github.com/apache/pulsar-client-cpp/issues/449
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
@@ -30,6 +30,7 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DOPENSSL_ROOT_DIR=/usr
 CMAKE_TESTING_ON=	BUILD_TESTS # tests fail to compile, see https://github.com/apache/pulsar-client-cpp/issues/472
 
-CXXFLAGS+=	-mcrc32 -mpclmul
+CXXFLAGS_amd64+=	-mcrc32 -mpclmul
+CXXFLAGS_i386+=	-mcrc32 -mpclmul
 
 .include <bsd.port.mk>
