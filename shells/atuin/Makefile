@@ -1,7 +1,7 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.23.0
-PORTREVISION=	1
+DISTVERSION=	18.24.1
+PORTREVISION=	0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,6 +37,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anyhow-1.0.104 \
 		approx-0.5.1 \
 		arboard-3.6.1 \
+		arc-swap-1.9.2 \
 		argon2-0.5.3 \
 		arraydeque-0.5.1 \
 		arrayvec-0.7.8 \
@@ -44,7 +45,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		async-compression-0.4.43 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
-		async-trait-0.1.89 \
+		async-trait-0.1.92 \
 		atoi-2.0.0 \
 		atomic-0.6.1 \
 		atomic-waker-1.1.2 \
@@ -57,6 +58,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		axum-core-0.5.6 \
 		base64-0.22.1 \
 		base64ct-1.8.3 \
+		basic-toml-0.1.10 \
 		beef-0.5.2 \
 		bit-set-0.5.3 \
 		bit-set-0.8.0 \
@@ -96,7 +98,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clipboard-win-5.4.1 \
 		cmov-0.5.4 \
 		colorchoice-1.0.5 \
-		colored-2.2.0 \
+		colored-3.1.1 \
 		compact_str-0.9.0 \
 		compare-0.0.6 \
 		compression-codecs-0.4.38 \
@@ -105,6 +107,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		config-0.15.25 \
 		console-0.16.3 \
 		const-oid-0.9.6 \
+		const-oid-0.10.2 \
 		convert_case-0.10.0 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
@@ -143,7 +146,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		digest-0.11.3 \
-		directories-6.0.0 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.1 \
@@ -171,17 +173,25 @@ CARGO_CRATES=	adler2-2.0.1 \
 		eye_declare-0.7.1 \
 		eye_declare_engine-0.7.1 \
 		eyre-0.6.14 \
+		fallible-iterator-0.3.0 \
+		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.11.0 \
 		fast-srgb8-1.0.0 \
 		fastrand-2.4.1 \
 		fiat-crypto-0.2.9 \
+		file-id-0.2.3 \
 		filedescriptor-0.8.3 \
+		find-crate-0.6.3 \
 		find-msvc-tools-0.1.9 \
 		finl_unicode-1.4.0 \
 		fixedbitset-0.4.2 \
 		fixedbitset-0.5.7 \
 		fjall-3.1.10 \
 		flate2-1.1.9 \
+		fluent-0.17.0 \
+		fluent-bundle-0.16.0 \
+		fluent-langneg-0.13.1 \
+		fluent-syntax-0.12.0 \
 		flume-0.12.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
@@ -217,6 +227,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
+		hashlink-0.9.1 \
 		hashlink-0.11.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
@@ -236,6 +247,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hyper-timeout-0.5.2 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.20 \
+		i18n-config-0.4.8 \
+		i18n-embed-0.16.0 \
+		i18n-embed-fl-0.10.1 \
+		i18n-embed-impl-0.8.4 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-2.2.0 \
@@ -261,6 +276,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		instability-0.3.12 \
 		interim-0.2.1 \
 		interval-heap-0.0.5 \
+		intl-memoizer-0.5.3 \
+		intl_pluralrules-7.0.2 \
 		ipnet-2.12.0 \
 		is_terminal_polyfill-1.70.2 \
 		iso8601-0.6.3 \
@@ -275,7 +292,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lab-0.11.0 \
 		lasso-0.7.3 \
 		lazy_static-1.5.0 \
-		libc-0.2.186 \
+		libc-0.2.189 \
 		libm-0.2.16 \
 		libredox-0.1.16 \
 		libsqlite3-sys-0.30.1 \
@@ -307,6 +324,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		miette-7.6.0 \
 		miette-derive-7.6.0 \
 		mime-0.3.17 \
+		mime_guess-2.0.5 \
 		minijinja-2.18.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
@@ -322,6 +340,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		nom-8.0.0 \
 		norm-0.1.1 \
 		notify-8.2.0 \
+		notify-debouncer-full-0.7.0 \
 		notify-types-2.1.0 \
 		ntapi-0.4.3 \
 		nu-ansi-term-0.50.3 \
@@ -390,6 +409,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pretty_assertions-1.4.1 \
 		prettyplease-0.2.37 \
 		proc-macro-crate-3.5.0 \
+		proc-macro-error-attr3-3.1.1 \
+		proc-macro-error3-3.1.1 \
 		proc-macro2-1.0.107 \
 		proptest-1.11.0 \
 		prost-0.14.3 \
@@ -441,15 +462,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ring-0.17.14 \
 		rmcp-3.3.0 \
 		rmp-0.8.15 \
+		rmp-serde-1.3.1 \
 		rpassword-7.5.4 \
 		rstest-0.27.0 \
 		rstest_macros-0.27.0 \
 		rtoolbox-0.0.3 \
 		runtime-format-0.1.3 \
+		rusqlite-0.32.1 \
+		rust-embed-8.12.0 \
+		rust-embed-impl-8.12.0 \
+		rust-embed-utils-8.12.0 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
-		rustix-1.1.4 \
+		rustix-1.1.5 \
 		rustls-pki-types-1.14.1 \
 		rustversion-1.0.22 \
 		rusty-fork-0.3.1 \
@@ -463,6 +489,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		schemars-1.2.1 \
 		schemars_derive-1.2.1 \
 		scopeguard-1.2.0 \
+		secrecy-0.10.3 \
 		security-framework-3.7.0 \
 		security-framework-sys-2.17.0 \
 		self-replace-1.5.0 \
@@ -532,9 +559,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		termios-0.3.3 \
 		termwiz-0.23.3 \
 		thiserror-1.0.69 \
-		thiserror-2.0.19 \
+		thiserror-2.0.21 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.19 \
+		thiserror-impl-2.0.21 \
 		thread_local-1.1.9 \
 		time-0.3.55 \
 		time-core-0.1.9 \
@@ -547,7 +574,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tokio-macros-2.7.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-stream-0.1.18 \
-		tokio-util-0.7.18 \
+		tokio-util-0.7.19 \
+		toml-0.5.11 \
 		toml-1.1.2+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.25.12+spec-1.1.0 \
@@ -580,11 +608,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		try-lock-0.2.5 \
 		tui-textarea-2-0.13.2 \
 		twox-hash-2.1.4 \
+		type-map-0.5.1 \
 		typed-builder-0.23.2 \
 		typed-builder-macro-0.23.2 \
 		typenum-1.20.1 \
 		ucd-trie-0.1.7 \
 		unarray-0.1.4 \
+		unic-langid-0.9.6 \
+		unic-langid-impl-0.9.6 \
 		unicase-2.9.0 \
 		unicode-bidi-0.3.18 \
 		unicode-ident-1.0.24 \
@@ -660,7 +691,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-strings-0.4.2 \
 		windows-strings-0.5.1 \
 		windows-sys-0.52.0 \
-		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
@@ -691,7 +721,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		writeable-0.6.3 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
-		xxhash-rust-0.8.15 \
+		xxhash-rust-0.8.19 \
 		yaml-rust2-0.11.1 \
 		yansi-1.0.1 \
 		yoke-0.8.3 \
