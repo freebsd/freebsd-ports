@@ -1,9 +1,9 @@
 PORTNAME=	openfx-misc
-PORTVERSION=	2.4.3
+PORTVERSION=	2.5.0
 DISTVERSIONPREFIX=	Natron-
 CATEGORIES=	graphics
 
-MAINTAINER=	olivier@FreeBSD.org
+MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Miscellaneous OpenFX Effects plugins
 WWW=		https://github.com/devernay/openfx-misc
 
@@ -15,8 +15,8 @@ USES=		gl gmake
 USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	NatronGitHub
-GH_TUPLE=	NatronGitHub:openfx-supportext:79d8c22:openfx_supportext/SupportExt \
-		NatronGitHub:openfx:d5db5d0:openfx/openfx \
+GH_TUPLE=	NatronGitHub:openfx-supportext:8aff0b0:openfx_supportext/SupportExt \
+		NatronGitHub:openfx:a5d9ca8:openfx/openfx \
 		dtschump:CImg:b33dcc8f9f1acf1f276ded92c04f8231f6c23fcd:CImg
 
 MAKE_ENV+=	CONFIG=release
