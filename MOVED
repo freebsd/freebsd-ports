@@ -5743,3 +5743,4 @@ textproc/py-pypa-docs-theme||2026-10-15|Has expired: Upstream archived the repo 
 www/py-wikitools||2026-10-18|Has expired: Not compatible with Python 3
 japanese/fcitx-mozc|japanese/fcitx5-mozc|2026-10-18|Deprecated: Use fcitx5 instead
 benchmarks/mangohud||2026-10-19|Broken for years in tree
+cad/yosys-systemverilog||2026-10-19|Broken for years in tree

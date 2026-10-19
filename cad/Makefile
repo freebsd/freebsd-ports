@@ -167,7 +167,6 @@
     SUBDIR += xyce
     SUBDIR += yosys
     SUBDIR += yosys-ghdl-plugin
-    SUBDIR += yosys-systemverilog
     SUBDIR += z88
     SUBDIR += zcad
 
