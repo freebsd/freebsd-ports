@@ -1,0 +1,9 @@
+A perl module to parse a domain down to the root TLD utilizing the
+Mozilla Public Suffix List.
+
+This module utilizes the "public_suffix_list.dat" or "effective_tld_names.dat"
+provided by Mozilla as a way to effectively reduce a fully qualified
+domain name down to the absolute root. The Mozilla PublicSuffix file
+is an open source, fully documented format that shows absolute root
+TLDs, primarily for Mozilla's browser products to be able to determine
+how far a cookie's security boundaries go.

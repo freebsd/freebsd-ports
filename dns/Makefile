@@ -125,6 +125,7 @@
     SUBDIR += p5-DNS-ZoneParse
     SUBDIR += p5-DNS-nsdiff
     SUBDIR += p5-Data-Validate-Domain
+    SUBDIR += p5-Domain-PublicSuffix
     SUBDIR += p5-IO-Async-Resolver-DNS
     SUBDIR += p5-Mozilla-PublicSuffix
     SUBDIR += p5-Net-Amazon-Route53
