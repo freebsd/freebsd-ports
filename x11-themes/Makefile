@@ -7,6 +7,7 @@
     SUBDIR += adwaita-icon-theme-legacy
     SUBDIR += adwaita-qt5
     SUBDIR += adwaita-qt6
+    SUBDIR += aether
     SUBDIR += ant-dracula-theme
     SUBDIR += arc-gruvbox-theme
     SUBDIR += audacious-skins

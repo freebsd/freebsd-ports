@@ -1,0 +1,9 @@
+owe is the wallpaper engine of the Omarchy desktop. A small daemon
+(owed) follows the Omarchy background symlink and Hyprland state, and
+drives a renderer (owe-render) that draws MP4 or GIF video through
+libmpv, or still images, on wlr-layer-shell background surfaces. It
+pauses playback for fullscreen windows, blocklisted processes, battery
+power and idle, and exports a frame feed for the lock screen.
+
+The owe command-line client controls the daemon; owe-idle is a helper
+for hypridle and 10-owe-sync is an Omarchy theme-set hook.
