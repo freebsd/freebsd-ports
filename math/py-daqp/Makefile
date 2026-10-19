@@ -1,5 +1,5 @@
 PORTNAME=	daqp
-DISTVERSION=	0.9.1
+DISTVERSION=	0.10.3
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,6 @@ post-install:
 do-test:
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test.py
 
-# tests as of 0.9.1: solution: xstar=[-1. -1.] fval=-1.0 exitflag=1
+# tests as of 0.10.3: solution: xstar=[-1. -1.] fval=-1.0 exitflag=1 info={'solve_time': 4e-08, 'setup_time': 0.000244963, 'iterations': 1, 'nodes': 1, 'lam': array([0., 0., 0., 0.])}
 
 .include <bsd.port.mk>
