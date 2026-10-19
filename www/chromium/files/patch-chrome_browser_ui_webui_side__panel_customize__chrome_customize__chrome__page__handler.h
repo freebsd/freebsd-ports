@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/side_panel/customize_chrome/customize_chrome_page_handler.h.orig	2026-06-04 10:12:25 UTC
+--- chrome/browser/ui/webui/side_panel/customize_chrome/customize_chrome_page_handler.h.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/webui/side_panel/customize_chrome/customize_chrome_page_handler.h
-@@ -217,7 +217,7 @@ class CustomizeChromePageHandler
+@@ -227,7 +227,7 @@ class CustomizeChromePageHandler
    // value needs to be requeried by the page.
    GURL last_source_url_{chrome::ChromeUINewTabPageURLAsGURL()};
  

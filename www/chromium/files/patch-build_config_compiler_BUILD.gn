@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2026-09-25 15:26:43 UTC
+--- build/config/compiler/BUILD.gn.orig	2026-10-18 13:29:39 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -203,7 +203,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
@@ -68,7 +68,7 @@
        current_os != "zos") {
      _perform_consistency_checks = current_toolchain == default_toolchain
      if (llvm_force_head_revision) {
-@@ -1592,7 +1596,7 @@ config("clang_warning_suppression") {
+@@ -1625,7 +1629,7 @@ config("clang_warning_suppression") {
  # See also: https://crbug.com/40891132#comment10
  ubsan_hardening("c_array_bounds") {
    sanitizer = "array-bounds"
@@ -77,15 +77,24 @@
  
    # Because we've enabled array-bounds sanitizing we also want to suppress
    # the related warning about "unsafe-buffer-usage-in-static-sized-array",
-@@ -1606,6 +1610,7 @@ ubsan_hardening("c_array_bounds") {
+@@ -1639,6 +1643,7 @@ ubsan_hardening("c_array_bounds") {
  # `NOTREACHED()` at the end of such functions.
  ubsan_hardening("return") {
    sanitizer = "return"
 +  condition = !is_bsd
  }
  
+ # Enable `-fsanitize=unreachable` to crash deterministically if control
+@@ -1650,7 +1655,7 @@ ubsan_hardening("unreachable") {
+   # 1.  `fuchsia-binary-size` tells us that web_engine and
+   #     chrome_fuchsia both grow 32768 bytes (10x that, uncompressed).
+   # 2.  `headless_shell_wpt_tests` fail on `mac-rel`.
+-  condition = is_debug || !(is_mac || is_fuchsia)
++  condition = is_debug || !(is_mac || is_fuchsia || is_bsd)
+ }
+ 
  config("rustc_revision") {
-@@ -1922,7 +1927,7 @@ config("default_warnings") {
+@@ -1967,7 +1972,7 @@ config("default_warnings") {
        "-Wno-psabi",
      ]
  
@@ -94,7 +103,7 @@
        cflags += [
          # TODO(crbug.com/526996813): Figure out what to do about this.
          "-Wno-stringop-overread",
-@@ -1955,7 +1960,7 @@ config("default_warnings") {
+@@ -2000,7 +2005,7 @@ config("default_warnings") {
        "-Wno-nontrivial-memcall",
      ]
  
@@ -103,7 +112,7 @@
        cflags += [
          # TODO(crbug.com/432275627): Fix and re-enable.
          "-Wno-uninitialized-const-pointer",
-@@ -2789,7 +2794,7 @@ config("afdo_optimize_size") {
+@@ -2832,7 +2837,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -112,7 +121,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2816,7 +2821,7 @@ config("afdo") {
+@@ -2859,7 +2864,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }

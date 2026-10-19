@@ -1,6 +1,6 @@
---- device/gamepad/public/cpp/gamepad_features.h.orig	2026-05-07 17:02:56 UTC
+--- device/gamepad/public/cpp/gamepad_features.h.orig	2026-10-18 13:29:39 UTC
 +++ device/gamepad/public/cpp/gamepad_features.h
-@@ -22,7 +22,7 @@ GAMEPAD_FEATURES_EXPORT BASE_DECLARE_FEATURE(
+@@ -26,7 +26,7 @@ GAMEPAD_FEATURES_EXPORT BASE_DECLARE_FEATURE(kAndroidU
  GAMEPAD_FEATURES_EXPORT BASE_DECLARE_FEATURE(kIgnorePS5GamepadsInWgi);
  #endif  // BUILDFLAG(IS_WIN)
  

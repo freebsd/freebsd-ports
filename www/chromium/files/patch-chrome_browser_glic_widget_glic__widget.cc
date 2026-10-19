@@ -1,6 +1,6 @@
---- chrome/browser/glic/widget/glic_widget.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/glic/widget/glic_widget.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/glic/widget/glic_widget.cc
-@@ -53,7 +53,7 @@
+@@ -51,7 +51,7 @@
  #include "ui/views/win/hwnd_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/shell_integration_linux.h"
  #include "chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.h"
  #endif
-@@ -108,7 +108,7 @@ class GlicClientView : public views::ClientView {
+@@ -106,7 +106,7 @@ class GlicClientView : public views::ClientView {
    GlicView* glic_view() { return static_cast<GlicView*>(contents_view()); }
  };
  
@@ -18,7 +18,7 @@
  class GlicFrameView : public views::NativeFrameView {
   public:
    explicit GlicFrameView(views::Widget* widget)
-@@ -127,7 +127,7 @@ class GlicFrameView : public views::NativeFrameView {
+@@ -125,7 +125,7 @@ class GlicFrameView : public views::NativeFrameView {
  #if BUILDFLAG(IS_WIN)
      int resize_border = resize_border =
          display::win::GetScreenWin()->GetSystemMetricsInDIP(SM_CXSIZEFRAME);
@@ -27,7 +27,7 @@
      int resize_border = OpaqueBrowserFrameViewLayout::kFrameBorderThickness;
  #endif
      const bool can_resize = GetWidget()->widget_delegate() &&
-@@ -359,7 +359,7 @@ std::unique_ptr<views::WidgetDelegate> GlicWidget::Cre
+@@ -357,7 +357,7 @@ std::unique_ptr<views::WidgetDelegate> GlicWidget::Cre
          return std::make_unique<GlicClientView>(widget, contents_view);
        }));
  
@@ -36,7 +36,7 @@
    delegate->SetFrameViewFactory(base::BindRepeating(
        [](views::Widget* widget) -> std::unique_ptr<views::FrameView> {
          return std::make_unique<GlicFrameView>(widget);
-@@ -439,7 +439,7 @@ std::unique_ptr<GlicWidget> GlicWidget::Create(views::
+@@ -433,7 +433,7 @@ std::unique_ptr<GlicWidget> GlicWidget::Create(views::
  #if BUILDFLAG(IS_MAC)
    params.animation_enabled = true;
  #endif  // BUILDFLAG(IS_MAC)

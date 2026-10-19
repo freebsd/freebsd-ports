@@ -1,6 +1,6 @@
---- components/device_signals/core/common/platform_utils.cc.orig	2026-09-25 15:26:43 UTC
+--- components/device_signals/core/common/platform_utils.cc.orig	2026-10-18 13:29:39 UTC
 +++ components/device_signals/core/common/platform_utils.cc
-@@ -78,7 +78,7 @@ std::vector<std::string> GetMacAddresses() {
+@@ -79,7 +79,7 @@ std::vector<std::string> GetMacAddresses() {
      mac_addresses = test_addresses.value();
    } else {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

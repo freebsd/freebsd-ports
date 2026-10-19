@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/intro/intro_ui.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/webui/intro/intro_ui.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/webui/intro/intro_ui.cc
-@@ -53,7 +53,7 @@ int GetBackupCardDescriptionId(bool is_first_run_deskt
+@@ -55,7 +55,7 @@ int GetBackupCardDescriptionId(bool is_first_run_deskt
               : IDS_UNO_FRE_BACKUP_CARD_DESCRIPTION_WITH_PASSWORDS;
  }
  
@@ -9,7 +9,7 @@
  bool IsDefaultBrowserDisabledByPolicy() {
    const auto* local_state = g_browser_process->local_state();
    return local_state->IsManagedPreference(
-@@ -63,7 +63,7 @@ bool IsDefaultBrowserDisabledByPolicy() {
+@@ -65,7 +65,7 @@ bool IsDefaultBrowserDisabledByPolicy() {
  #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
  bool ShouldShowDefaultBrowserToggle() {
@@ -18,7 +18,7 @@
    return !IsDefaultBrowserDisabledByPolicy() &&
           shell_integration::CanSetAsDefaultBrowser();
  #else
-@@ -73,7 +73,7 @@ bool ShouldShowDefaultBrowserToggle() {
+@@ -75,7 +75,7 @@ bool ShouldShowDefaultBrowserToggle() {
  
  bool ShouldShowMetricsOptIn() {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING) && \

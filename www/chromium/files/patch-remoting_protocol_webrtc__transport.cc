@@ -1,6 +1,6 @@
---- remoting/protocol/webrtc_transport.cc.orig	2026-09-25 15:26:43 UTC
+--- remoting/protocol/webrtc_transport.cc.orig	2026-10-18 13:29:39 UTC
 +++ remoting/protocol/webrtc_transport.cc
-@@ -1205,7 +1205,7 @@ void WebrtcTransport::SendOffer() {
+@@ -1204,7 +1204,7 @@ void WebrtcTransport::SendOffer() {
    // `recvonly` if microphone remoting is not enabled. Only Linux hosts support
    // audio injection (microphone remoting).
    // TODO: crbug.com/513327818 - Hook this up with AudioInjector::IsSupported().

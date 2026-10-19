@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/dawn_context_provider.cc.orig	2026-09-25 15:26:43 UTC
+--- gpu/command_buffer/service/dawn_context_provider.cc.orig	2026-10-18 13:29:39 UTC
 +++ gpu/command_buffer/service/dawn_context_provider.cc
-@@ -447,7 +447,7 @@ wgpu::BackendType DawnContextProvider::GetDefaultBacke
+@@ -484,7 +484,7 @@ wgpu::BackendType DawnContextProvider::GetDefaultBacke
    }
  #if BUILDFLAG(IS_WIN)
    return wgpu::BackendType::D3D11;

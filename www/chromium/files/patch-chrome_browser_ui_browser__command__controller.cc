@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -174,7 +174,7 @@
+@@ -184,7 +184,7 @@
  #include "components/user_manager/user_manager.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/text_edit_commands.h"
  #include "ui/base/ime/text_input_flags.h"
  #include "ui/linux/linux_ui.h"
-@@ -184,7 +184,7 @@
+@@ -194,7 +194,7 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/ui/shortcuts/desktop_shortcuts_utils.h"
  #endif  // BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  
-@@ -506,7 +506,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -517,7 +517,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  #endif
    }
  
@@ -27,7 +27,7 @@
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    auto* linux_ui = ui::LinuxUi::instance();
-@@ -872,7 +872,7 @@ void BrowserCommandController::HandleCommandWithDispos
+@@ -879,7 +879,7 @@ void BrowserCommandController::HandleCommandWithDispos
        break;
  #endif
  
@@ -36,7 +36,7 @@
      case IDC_MINIMIZE_WINDOW:
        browser_->GetWindow()->Minimize();
        break;
-@@ -885,7 +885,7 @@ void BrowserCommandController::HandleCommandWithDispos
+@@ -892,7 +892,7 @@ void BrowserCommandController::HandleCommandWithDispos
  
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  
@@ -45,7 +45,7 @@
      case IDC_USE_SYSTEM_TITLE_BAR: {
        PrefService* prefs = profile()->GetPrefs();
        prefs->SetBoolean(prefs::kUseCustomChromeFrame,
-@@ -1131,7 +1131,7 @@ void BrowserCommandController::HandleCommandWithDispos
+@@ -1138,7 +1138,7 @@ void BrowserCommandController::HandleCommandWithDispos
        break;
      case IDC_CREATE_SHORTCUT:
        base::RecordAction(base::UserMetricsAction("CreateShortcut"));
@@ -54,7 +54,7 @@
        chrome::CreateDesktopShortcutForActiveWebContents(browser_);
  #else
        web_app::CreateWebAppFromCurrentWebContents(
-@@ -1346,7 +1346,7 @@ void BrowserCommandController::HandleCommandWithDispos
+@@ -1363,7 +1363,7 @@ void BrowserCommandController::HandleCommandWithDispos
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
      case IDC_CHROME_WHATS_NEW:
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING) && \
@@ -63,7 +63,7 @@
        ShowChromeWhatsNew(browser_);
        break;
  #else
-@@ -1778,13 +1778,13 @@ void BrowserCommandController::InitCommandState() {
+@@ -1791,13 +1791,13 @@ void BrowserCommandController::InitCommandState() {
    command_updater_->UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_4, true);
    command_updater_->UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_5, true);
  #endif
@@ -79,7 +79,7 @@
    bool use_system_title_bar = true;
  #if BUILDFLAG(IS_OZONE)
    use_system_title_bar = ui::OzonePlatform::GetInstance()
-@@ -2200,7 +2200,7 @@ void BrowserCommandController::UpdateCommandsForTabSta
+@@ -2203,7 +2203,7 @@ void BrowserCommandController::UpdateCommandsForTabSta
    bool can_create_web_app = web_app::CanCreateWebApp(browser_);
    command_updater_->UpdateCommandEnabled(IDC_INSTALL_PWA, can_create_web_app);
  

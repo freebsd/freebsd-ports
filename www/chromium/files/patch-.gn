@@ -1,6 +1,6 @@
---- .gn.orig	2026-09-25 15:26:43 UTC
+--- .gn.orig	2026-10-18 13:29:39 UTC
 +++ .gn
-@@ -9,7 +9,7 @@ import("//third_party/angle/dotfile_settings.gni")
+@@ -11,7 +11,7 @@ import("//third_party/angle/dotfile_settings.gni")
  buildconfig = "//build/config/BUILDCONFIG.gn"
  
  # The hermetic Python interpreter to use by default.

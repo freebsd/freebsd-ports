@@ -1,26 +1,41 @@
---- components/web_package/BUILD.gn.orig	2026-09-25 15:26:43 UTC
+--- components/web_package/BUILD.gn.orig	2026-10-18 13:29:39 UTC
 +++ components/web_package/BUILD.gn
-@@ -40,7 +40,6 @@ static_library("web_package") {
-     "//base",
+@@ -51,8 +51,8 @@ source_set("web_package_rust_impl") {
      "//components/base32",
      "//components/cbor",
+     "//components/web_package/mojom",
+-    "//components/web_package/rust:web_package_rust_bindings",
 -    "//components/web_package/signed_web_bundles/rust:signed_web_bundles_rust_bindings",
++#    "//components/web_package/rust:web_package_rust_bindings",
++# crubit    "//components/web_package/signed_web_bundles/rust:signed_web_bundles_rust_bindings",
      "//mojo/public/cpp/bindings",
      "//net",
      "//services/network/public/mojom",
-@@ -70,7 +69,6 @@ source_set("mojom_mapped_types") {
+@@ -72,7 +72,6 @@ static_library("web_package") {
+   ]
  
    deps = [
+-    ":web_package_rust_impl",
+     "//base",
+     "//components/base32",
+     "//components/cbor",
+@@ -115,7 +114,7 @@ source_set("mojom_mapped_types_rust_impl") {
+   deps = [
+     ":mojom_mapped_types_headers",
      "//base",
 -    "//components/web_package/signed_web_bundles/rust:signed_web_bundles_rust_bindings",
++#    "//components/web_package/signed_web_bundles/rust:signed_web_bundles_rust_bindings",
      "//crypto",
      "//mojo/public/cpp/bindings",
    ]
-@@ -98,7 +96,6 @@ source_set("unit_tests") {
+@@ -159,8 +158,8 @@ source_set("unit_tests") {
      ":web_package",
      "//base/test:test_support",
      "//components/cbor",
+-    "//components/web_package/rust:web_package_rust_unittests",
 -    "//components/web_package/signed_web_bundles/rust:signed_web_bundles_rust_unittests",
++#    "//components/web_package/rust:web_package_rust_unittests",
++#    "//components/web_package/signed_web_bundles/rust:signed_web_bundles_rust_unittests",
      "//components/web_package/test_support",
      "//mojo/public/cpp/bindings",
      "//mojo/public/cpp/test_support:test_utils",

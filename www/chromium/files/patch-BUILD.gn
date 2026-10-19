@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2026-09-25 15:26:43 UTC
+--- BUILD.gn.orig	2026-10-18 13:29:39 UTC
 +++ BUILD.gn
 @@ -69,7 +69,7 @@ declare_args() {
    root_extra_deps = []
@@ -17,7 +17,7 @@
        "//net:net_unittests",
        "//sandbox:sandbox_unittests",
        "//services:services_unittests",
-@@ -441,7 +440,7 @@ group("gn_all") {
+@@ -447,7 +446,7 @@ group("gn_all") {
        }
      }
  
@@ -26,7 +26,7 @@
        deps += [
          "//third_party/breakpad:breakpad_unittests",
          "//third_party/breakpad:core-2-minidump",
-@@ -612,6 +611,15 @@ group("gn_all") {
+@@ -618,6 +617,15 @@ group("gn_all") {
        }
      }
  
@@ -42,7 +42,7 @@
      if (is_mac) {
        deps += [
          "//third_party/breakpad:dump_syms($host_system_allocator_toolchain)",
-@@ -660,7 +668,7 @@ group("gn_all") {
+@@ -666,7 +674,7 @@ group("gn_all") {
        }
      }
  
@@ -51,7 +51,7 @@
        # The official builders use this binary from the default toolchain's
        # output directory after building in order to upload the symbols of that
        # binary. They build the binary like `ninja symupload` which requires the
-@@ -695,7 +703,7 @@ group("gn_all") {
+@@ -701,7 +709,7 @@ group("gn_all") {
        ]
      }
  
@@ -60,7 +60,7 @@
        deps += [
          "//third_party/crashpad/crashpad:crashpad_tests",
          "//third_party/crashpad/crashpad/tools:crashpad_database_util",
-@@ -1116,7 +1124,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1124,7 +1132,7 @@ if (use_blink && !is_cronet_build) {
        "//third_party/blink/public:all_blink",
      ]
  
@@ -69,7 +69,7 @@
        deps += [
          ":chrome_wpt_tests",
          ":headless_shell_wpt",
-@@ -1268,7 +1276,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1276,7 +1284,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -78,7 +78,7 @@
        # Using the default toolchain for this tool, as it's run during tests not
        # during the build. This places a symlink in the root_build_dir for scrips
        # to use.
-@@ -1282,7 +1290,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1290,7 +1298,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//third_party/breakpad:dump_syms" ]
      }
  
@@ -87,7 +87,7 @@
        # Using the default toolchain for this tool, as it's run during tests not
        # during the build. This places a symlink in the root_build_dir for scrips
        # to use.
-@@ -1562,7 +1570,7 @@ group("chromium_builder_perf") {
+@@ -1571,7 +1579,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

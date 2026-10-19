@@ -1,4 +1,4 @@
---- chrome/browser/renderer_preferences_util.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/renderer_preferences_util.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/renderer_preferences_util.cc
 @@ -40,12 +40,12 @@
  #include "ui/base/ui_base_features.h"
@@ -42,7 +42,7 @@
    if (auto* linux_ui = ui::LinuxUi::instance()) {
      prefs->middle_click_paste_allowed = linux_ui->PrimaryPasteEnabled();
    }
-@@ -256,7 +256,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -252,7 +252,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
    prefs->view_source_line_wrap_enabled =
        pref_service->GetBoolean(prefs::kViewSourceLineWrappingEnabled);
  

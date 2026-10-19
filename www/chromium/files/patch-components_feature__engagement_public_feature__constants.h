@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2026-09-25 15:26:43 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2026-10-18 13:29:39 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -32,7 +32,7 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHDemoMode);
  FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHDummyFeature);
@@ -18,7 +18,7 @@
  FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHAutofillAtMemoryFeature);
  FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHAutofillBnplAffirmOrZipSuggestionFeature);
  FEATURE_CONSTANTS_DECLARE_FEATURE(
-@@ -476,13 +476,13 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHLauncherSearchHe
+@@ -475,13 +475,13 @@ FEATURE_CONSTANTS_DECLARE_FEATURE(kIPHLauncherSearchHe
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

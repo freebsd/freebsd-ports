@@ -1,4 +1,4 @@
---- services/screen_ai/public/cpp/utilities.cc.orig	2026-08-31 10:59:09 UTC
+--- services/screen_ai/public/cpp/utilities.cc.orig	2026-10-18 13:29:39 UTC
 +++ services/screen_ai/public/cpp/utilities.cc
 @@ -26,7 +26,7 @@ namespace {
  // The maximum image dimension which is processed without downsampling by OCR.
@@ -18,7 +18,7 @@
  constexpr base::FilePath::CharType kScreenAIResourcePathForTests[] =
      FILE_PATH_LITERAL("third_party/screen-ai/linux/resources");
  #elif BUILDFLAG(IS_MAC)
-@@ -170,7 +170,7 @@ base::FilePath GetComponentBinaryPathForTests() {
+@@ -175,7 +175,7 @@ base::FilePath GetComponentBinaryPathForTests() {
  
  const char* GetBinaryPathSwitch() {
    // This is only used on Linux and ChromeOS.

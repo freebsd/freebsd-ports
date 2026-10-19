@@ -1,4 +1,4 @@
---- third_party/fontconfig/include/meson-config.h.orig	2026-09-25 15:26:43 UTC
+--- third_party/fontconfig/include/meson-config.h.orig	2026-10-18 13:29:39 UTC
 +++ third_party/fontconfig/include/meson-config.h
 @@ -17,7 +17,7 @@
  
@@ -24,7 +24,7 @@
  #define HAVE_READLINK 1
  
  #define HAVE_STDATOMIC_PRIMITIVES 1
-@@ -132,7 +135,7 @@
+@@ -130,7 +133,7 @@
  
  #define HAVE_SYS_PARAM_H 1
  
@@ -33,7 +33,7 @@
  
  #define HAVE_SYS_STATVFS_H 1
  
-@@ -140,7 +143,7 @@
+@@ -138,7 +141,7 @@
  
  #define HAVE_SYS_TYPES_H 1
  

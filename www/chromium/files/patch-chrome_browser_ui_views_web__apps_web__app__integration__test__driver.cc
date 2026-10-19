@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/views/web_apps/web_app_integration_test_driver.cc
-@@ -569,7 +569,7 @@ std::string GetFileExtension(FileExtension file_extens
+@@ -574,7 +574,7 @@ std::string GetFileExtension(FileExtension file_extens
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  SiteConfig GetSiteConfigurationFromAppName(const std::string& app_name) {
    SiteConfig config;
    bool is_app_found = false;
-@@ -2327,7 +2327,7 @@ void WebAppIntegrationTestDriver::DeletePlatformShortc
+@@ -2328,7 +2328,7 @@ void WebAppIntegrationTestDriver::DeletePlatformShortc
    if (app_name.empty()) {
      app_name = GetSiteConfiguration(site).app_name;
    }

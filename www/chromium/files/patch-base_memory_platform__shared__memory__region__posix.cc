@@ -1,6 +1,6 @@
---- base/memory/platform_shared_memory_region_posix.cc.orig	2026-09-25 15:26:43 UTC
+--- base/memory/platform_shared_memory_region_posix.cc.orig	2026-10-18 13:29:39 UTC
 +++ base/memory/platform_shared_memory_region_posix.cc
-@@ -263,7 +263,7 @@ bool PlatformSharedMemoryRegion::ConvertToUnsafe() {
+@@ -281,7 +281,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
  // static
  PlatformSharedMemoryRegion PlatformSharedMemoryRegion::Create(Mode mode,
                                                                size_t size
@@ -9,7 +9,7 @@
                                                                ,
                                                                bool executable
  #endif
-@@ -299,7 +299,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
+@@ -317,7 +317,7 @@ PlatformSharedMemoryRegion PlatformSharedMemoryRegion:
    // flag.
    FilePath directory;
    if (!GetShmemTempDir(

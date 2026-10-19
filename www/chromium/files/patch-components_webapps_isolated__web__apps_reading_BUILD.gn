@@ -1,0 +1,13 @@
+--- components/webapps/isolated_web_apps/reading/BUILD.gn.orig	2026-10-18 13:29:39 UTC
++++ components/webapps/isolated_web_apps/reading/BUILD.gn
+@@ -14,8 +14,8 @@ source_set("reading") {
+     "response_reader_registry.h",
+     "response_reader_registry_factory.cc",
+     "response_reader_registry_factory.h",
+-    "signed_web_bundle_reader.cc",
+-    "signed_web_bundle_reader.h",
++# XXX crubit    "signed_web_bundle_reader.cc",
++#    "signed_web_bundle_reader.h",
+     "validator.cc",
+     "validator.h",
+   ]
