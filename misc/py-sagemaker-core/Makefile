@@ -1,5 +1,5 @@
 PORTNAME=	sagemaker-core
-DISTVERSION=	2.23.0
+DISTVERSION=	2.25.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=20.3.0:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}boto3>=1.43.20:www/py-boto3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}boto3>=1.43.90:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cloudpickle>=2.0.0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=46.0.0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.4.0:devel/py-importlib-metadata@${PY_FLAVOR} \
