@@ -10,9 +10,6 @@ DISTVERSION_llvm18=	18.1.28
 DISTVERSION_llvm17=	17.0.28
 DISTVERSION_llvm16=	16.0.29
 DISTVERSION_llvm15=	15.0.28
-DISTVERSION_llvm14=	14.0.28
-DISTVERSION_llvm13=	13.0.5
-DISTVERSION_llvm12=	12.0.1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -25,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR}
 
-FLAVORS=	${23 22 21 20 19 18 17 16 15 14 13 12:L:S/^/llvm/}
+FLAVORS=	${23 22 21 20 19 18 17 16 15:L:S/^/llvm/}
 CONFLICTS_BUILD=${FLAVOR}-lite
 
 USES=		cmake compiler:c++11-lib
@@ -33,13 +30,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/${FLAVOR}/lib
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	SPIRV-LLVM-Translator
-.if ${FLAVOR:U:Mllvm1[12]}
-# empty
-.elif ${FLAVOR:U} == llvm13
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-411-gaa6cef1:headers/projects/SPIRV-Headers
-.else
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-493-g575b651:headers/projects/SPIRV-Headers
-.endif
 DISTINFO_FILE=	${.CURDIR}/distinfo.${FLAVOR}
 PATCHDIR=	${.CURDIR}/files.${FLAVOR}
 CXXFLAGS+=	${${FLAVOR:S/llvm//} < 16 && ${COMPILER_TYPE} == clang:?-Wno-enum-constexpr-conversion:}
