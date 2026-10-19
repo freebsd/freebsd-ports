@@ -1,5 +1,5 @@
---- cargo-crates/pipewire-sys-0.10.0/src/lib.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/pipewire-sys-0.10.0/src/lib.rs
+--- cargo-crates/pipewire-sys-0.10.1/src/lib.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/pipewire-sys-0.10.1/src/lib.rs
 @@ -12,6 +12,13 @@ pub use bindings::*;
  }
  pub use bindings::*;
