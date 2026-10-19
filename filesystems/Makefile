@@ -15,7 +15,6 @@
     SUBDIR += cramfs
     SUBDIR += cryptofs
     SUBDIR += curlftpfs
-    SUBDIR += darling-dmg
     SUBDIR += davfs2
     SUBDIR += diffsnap
     SUBDIR += dsbmc
