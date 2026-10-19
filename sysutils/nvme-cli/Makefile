@@ -16,7 +16,7 @@ LIB_DEPENDS=	libnvme.so:devel/libnvme \
 
 USES=		meson pkgconfig
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bsdimp
