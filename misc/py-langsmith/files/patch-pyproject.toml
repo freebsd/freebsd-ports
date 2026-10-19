@@ -1,0 +1,14 @@
+-- Remove exact version pin on hatchling to allow building with the installed version.
+-- The project requires hatchling==1.26.3 exactly, but FreeBSD ports install
+-- a newer version. Removing the pin allows building with any compatible version.
+--- pyproject.toml.orig	2026-10-18 22:16:29 UTC
++++ pyproject.toml
+@@ -223,7 +223,7 @@ test = [
+ ]
+ 
+ [build-system]
+-requires = ["hatchling==1.26.3", "hatch-fancy-pypi-readme"]
++requires = ["hatchling>0", "hatch-fancy-pypi-readme"]
+ build-backend = "hatchling.build"
+ 
+ [tool.hatch.build]
