@@ -1,7 +1,6 @@
 PORTNAME=	wandb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.0
-PORTREVISION=	1
+DISTVERSION=	0.31.0
 CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -58,8 +57,8 @@ CARGO_BUILD=		no
 CARGO_INSTALL=		no
 CARGO_TEST=		no
 CARGO_CONFIGURE=	no
-CARGO_CARGOTOML=	${WRKSRC}/xpu/Cargo.toml
-CARGO_CARGOLOCK=	${WRKSRC}/xpu/Cargo.lock
+CARGO_CARGOTOML=	${WRKSRC}/symon/Cargo.toml
+CARGO_CARGOLOCK=	${WRKSRC}/symon/Cargo.lock
 CARGO_VENDOR_DIR=	${WRKSRC}/cargo-crates
 
 MAKE_ENV+=	CARGO_HOME=${WRKDIR}/cargo-home \
@@ -108,8 +107,7 @@ TEST_ARGS=	--disable-plugin-autoload \
 		--ignore=tests/unit_tests/test_torch.py \
 		--ignore=tests/unit_tests/test_sandbox \
 		--ignore=tests/unit_tests/test_util.py \
-		--deselect=tests/unit_tests/test_data_types_box3d.py::test_box3d_always_box \
-		--deselect=tests/unit_tests/test_wandb_agent/test_cli_agent.py::test_agent_subprocess_with_import_readline
+		--deselect=tests/unit_tests/test_data_types_box3d.py::test_box3d_always_box
 # Tests broken due to library version mismatches or environment differences:
 # TestProgressCallback: responses library now returns bytes, not file-like for request.body
 # TestAzure: azure SDK not available; some tests fail even without explicit azure import
@@ -149,6 +147,6 @@ post-install:
 		${MV} ${STAGEDIR}${PREFIX}/bin/wb-${PYTHON_VER} ${STAGEDIR}${PREFIX}/bin/wb; \
 	fi
 
-# tests as of 0.30.0: 3170 passed, 240 skipped, 7 deselected, 4 xfailed, 2 xpassed in 76.60s
+# tests as of 0.31.0: 3393 passed, 241 skipped, 15 deselected, 4 xfailed, 2 xpassed in 98.05s (0:01:38)
 
 .include <bsd.port.mk>
