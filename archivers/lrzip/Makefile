@@ -11,8 +11,8 @@ WWW=		https://github.com/ckolivas/lrzip
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	Only 64-bit platforms are supported
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	Only 64-bit platforms are supported
 
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		liblzo2.so:archivers/lzo2
