@@ -1,3 +1,53 @@
+  <vuln vid="69adacad-cba3-11f1-8135-8447094a420f">
+    <topic>Roundcube -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube-php82</name>
+	<name>roundcube-php83</name>
+	<name>roundcube-php84</name>
+	<name>roundcube-php85</name>
+	<name>roundcube-php85</name>
+	<range><lt>1.7.5,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube Mail project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2026/10/19/security-updates-1.6.20-and-1.7.5">
+	  <ul>
+	    <li>IMAP command injection via CRLF in _uid parameter of mail/headers and mail/viewsource action</li>
+	    <li>bug where an alias login wasn’t qualified by IMAP host</li>
+	    <li>Add a size limit to the CSS proxy content processing</li>
+	    <li>SSRF filter (is_local_url()) bypass via NAT64 64:ff9b::/96</li>
+	    <li>remote content blocking bypass via SVG SMIL by attribute</li>
+	    <li>remote content blocking bypass via CSS escapes in FuncIRI attributes (again)</li>
+	    <li>passing potentally unsafe attachment content into ImageMagick on image resize</li>
+	    <li>mail header injection via the From display-name in the Bounce (resend) action</li>
+	    <li>mail header injection via References/In-Reply-To/Message-ID/From parameters</li>
+	    <li>object injection primitive in rcube_session::unserialize() via “!”-prefixed session keys</li>
+	    <li>ImageMagick resource limits bypass by GD fallback during thumbnail generation</li>
+	    <li>CSS scoping bypass in HTML messages using at-rules</li>
+	    <li>bug where deprecated action aliases bypassed disabled_actions setting</li>
+	    <li>IMAP command injection via CRLF in _flag parameter of mail/mark action</li>
+	    <li>CSRF validation bypass in the mark-as-junk action</li>
+	    <li>XSS issue in handling of password driver error responses</li>
+	    <li>mail header injection via subject of a message forwarded as attachment</li>
+	    <li>mail header injection via media type in an inline image data URI</li>
+	    <li>bug where Password Modoboa driver could change password for another account</li>
+	    <li>unsafe use of a login name in SquirrelMail import file path</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2026/10/19/security-updates-1.6.20-and-1.7.5</url>
+    </references>
+    <dates>
+      <discovery>2026-10-19</discovery>
+      <entry>2026-10-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3749073b-c8f9-11f1-9ceb-4c526214c986">
     <topic>Erlang/OTP -- multiple vulnerabilities in ssl, inets, public_key and snmp</topic>
     <affects>
