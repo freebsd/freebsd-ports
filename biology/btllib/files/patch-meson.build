@@ -1,8 +1,8 @@
---- meson.build.orig	2026-03-11 18:55:57 UTC
+--- meson.build.orig	2026-10-16 20:52:17 UTC
 +++ meson.build
 @@ -1,7 +1,7 @@ project('btllib', 'cpp',
  project('btllib', 'cpp',
-         version : '1.7.6',
+         version : '1.8.0',
          license : 'GPL3',
 -        default_options : [ 'cpp_std=c++17', 'warning_level=3', 'werror=true', 'b_coverage=true' ],
 +        default_options : [ 'cpp_std=c++17', 'warning_level=3', 'b_coverage=true' ],

@@ -1,6 +1,6 @@
 PORTNAME=	btllib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.8
+DISTVERSION=	1.8.0
 CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,5 +28,14 @@ GH_TUPLE=	p-ranav:argparse:15d745f:argparse/subprojects/argparse \
 		skystrife:cpptoml:fededad:cpptoml/subprojects/cpptoml
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} # python3-config=${PYTHON_CMD}-config # installs python binding into a wrong location, see https://github.com/bcgsc/btllib/issues/111
+BINARY_ALIAS+=	python3-config=${PYTHON_CMD}-config
+
+post-patch: # workaround for https://github.com/BirolLab/btllib/issues/151
+	@${REINPLACE_CMD} \
+		-e "s|install_dir : 'lib/btllib/python|install_dir : '${PYTHONPREFIX_SITELIBDIR:S/${PREFIX}//:S/^\///}|g" \
+		${WRKSRC}/wrappers/python/meson.build
+
+test-quick-python:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} ${FILESDIR}/example.py ${WRKSRC}/examples/my_reads.fq.gz
 
 .include <bsd.port.mk>
