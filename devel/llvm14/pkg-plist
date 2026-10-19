@@ -4106,7 +4106,6 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm%%LLVM_SUFFIX%%/include/mlir/Transforms/ViewOpGraph.h
 %%MLIR%%llvm%%LLVM_SUFFIX%%/include/mlir/Translation.h
 %%OPENMP%%llvm%%LLVM_SUFFIX%%/include/ompt-multiplex.h
-%%GOLD%%llvm%%LLVM_SUFFIX%%/lib/LLVMgold.so
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_cmath.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_RELEASE%%/include/__clang_cuda_complex_builtins.h
