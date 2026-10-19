@@ -1,6 +1,6 @@
 PORTNAME=	scim
 PORTVERSION=	1.4.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -9,6 +9,9 @@ COMMENT=	Smart Common Input Method platform
 WWW=		https://github.com/scim-im/scim
 
 LICENSE=	LGPL21
+
+DEPRECATED=	Abandoned and Unmentenanced, this version is 17 years old and the latest version 1.4.18 is 9 years old
+EXPIRATION_DATE=2026-12-31
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
