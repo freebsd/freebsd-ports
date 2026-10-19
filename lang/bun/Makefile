@@ -35,7 +35,8 @@ DISTFILES=	bun-freebsd-${BUN_ASSET_ARCH}.zip:bootstrap \
 DIST_SUBDIR=	${PORTNAME}
 # Only the GitHub source tarball is auto-extracted; the bootstrap/WebKit/headers
 # tarballs are unpacked by hand in post-extract.
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
+		${CARGO_CRATES:S/^/rust\/crates\//:S/$/.crate/}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	JavaScript runtime, bundler, test runner, and package manager
@@ -48,7 +49,7 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires an upstream FreeBSD bootstrap binary (only aarch64/amd64 are published)
 
-USES=		shebangfix
+USES=		shebangfix cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	oven-sh
 GH_TUPLE=	oven-sh:boringssl:41bf9b59c2ebf277a7aa427e1ecad5cc80dd4d4f:boringssl \
@@ -83,6 +84,16 @@ BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_VER}/bin/clang++:devel/llvm${LLVM_VER} \
 # do-fetch builds the offline caches, so the toolchain is needed at fetch too.
 FETCH_DEPENDS=	${RUST_PREFIX}/bin/cargo:lang/rust-nightly-bun
 
+RUST_PREFIX=		${LOCALBASE}/rust-nightly-bun
+CARGO_BUILDDEP=		no
+CARGO=			${RUST_PREFIX}/bin/cargo
+RUSTC=			${RUST_PREFIX}/bin/rustc
+RUSTDOC=			${RUST_PREFIX}/bin/rustdoc
+CARGO_CONFIGURE=	no
+CARGO_BUILD=		no
+CARGO_INSTALL=		no
+CARGO_TEST=		no
+
 .include <bsd.port.pre.mk>
 
 # Asset names: bun uses x64/aarch64, the WebKit prebuilt amd64/arm64.
@@ -116,7 +127,10 @@ BUN_CACHE_DIR=		${WRKDIR}/bun-cache
 BUN_BUILD_DIR=		${WRKSRC}/build/release
 BUN_INSTALL_CACHE_DIR=	${WRKDIR}/bun-install-cache
 CARGO_HOME=		${WRKDIR}/cargo-home
-RUST_PREFIX=		${LOCALBASE}/rust-nightly-bun
+# USES=cargo adds crate distfiles after ALLFILES is first expanded; keep
+# makesum/checksum aware of them.
+_CKSUMFILES=		${ALLFILES:S/^/${DIST_SUBDIR}\//} \
+			${CARGO_CRATES:S/^/rust\/crates\//:S/$/.crate/:S/^/${DIST_SUBDIR}\//}
 WEBKIT_CACHE_DIR=	${BUN_CACHE_DIR}/webkit-${WEBKIT_SHORT}-freebsd${WEBKIT_CACHE_SUFFIX}
 NODE_HEADERS_CACHE_DIR=	${BUN_CACHE_DIR}/nodejs-headers-${NODE_VERSION}
 
@@ -154,38 +168,20 @@ _BUN_DEP_CACHE=	\
 _BUN_LOLHTML_DISTFILE=	oven-sh-lol-html-725ce499aa9b71e38b7a2d0a9fbb6d7294a4079e_GH0.tar.gz
 _BUN_RUST_ARGON2_DISTFILE=	sru-systems-rust-argon2-ed81866f163f0c7026aa6fd8388adf37242eb32a_GH0.tar.gz
 
-# post-fetch builds the derived cargo and bun caches.  The dependency source
-# archives are normal distfiles (GH_TUPLE) and are copied into the build cache
-# in post-extract.
+# post-fetch builds the derived bun install cache.  Dependency source archives
+# and Rust crates are normal distfiles (GH_TUPLE and USES=cargo).
 post-fetch:
-	@${ECHO_MSG} "===> Building bun offline caches"
+	@${ECHO_MSG} "===> Building bun install cache"
 	@${MKDIR} ${BUN_BOOTSTRAP_DIR}
 	@cd ${BUN_BOOTSTRAP_DIR} && ${TAR} xf ${DD}/bun-freebsd-${BUN_ASSET_ARCH}.zip
 	@${MV} ${BUN_BOOTSTRAP_DIR}/bun-freebsd-${BUN_ASSET_ARCH}/bun ${BUN_BOOTSTRAP}
 	@${CHMOD} +x ${BUN_BOOTSTRAP}
 	# 1. Dependency archives are standard distfiles (GH_TUPLE); they are
 	# copied into the build cache in post-extract.
-	# 2. extract the pristine source once, for cargo/bun cache warming
+	# 2. extract the pristine source once, for bun install cache warming
 	@${RM} -rf ${WRKDIR}/gen && ${MKDIR} ${WRKDIR}/gen
 	@${TAR} xf ${DD}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR}/gen
-	# 3. warm CARGO_HOME (with -Zbuild-std so std-only crates are fetched too)
-	@if [ ! -f "${DD}/bun-cargo-home-${DISTVERSION}.tar.gz" ]; then \
-		${ECHO_MSG} "  cargo fetch"; \
-		cd ${WRKDIR}/gen/${WRKSRC:T} && \
-			${MKDIR} vendor/lolhtml vendor/rust-argon2 && \
-			${TAR} xf ${DD}/${_BUN_LOLHTML_DISTFILE} \
-				-C vendor/lolhtml --strip-components 1 && \
-			${TAR} xf ${DD}/${_BUN_RUST_ARGON2_DISTFILE} \
-				-C vendor/rust-argon2 --strip-components 1 && \
-			${SETENV} CARGO_HOME=${CARGO_HOME} \
-			PATH=${RUST_PREFIX}/bin:${LOCALBASE}/bin:/usr/bin:/bin \
-			RUSTC=${RUST_PREFIX}/bin/rustc \
-			${RUST_PREFIX}/bin/cargo fetch --locked \
-				-Zbuild-std=core,alloc,std,proc_macro,panic_abort \
-				-Zbuild-std-features=panic-unwind,default && \
-		${TAR} czf ${DD}/bun-cargo-home-${DISTVERSION}.tar.gz -C ${WRKDIR} cargo-home; \
-	fi
-	# 4. warm the bun install cache (root + the two standalone package dirs)
+	# 3. warm the bun install cache (root + the two standalone package dirs)
 	@if [ ! -f "${DD}/bun-install-cache-${DISTVERSION}.tar.gz" ]; then \
 		${ECHO_MSG} "  bun install (warming cache)"; \
 		cd ${WRKDIR}/gen/${WRKSRC:T} && \
@@ -220,14 +216,21 @@ post-extract:
 		${NODE_HEADERS_CACHE_DIR}/include/node/uv \
 		${NODE_HEADERS_CACHE_DIR}/include/node/uv.h
 	@${ECHO_CMD} "${NODE_VERSION}" > ${NODE_HEADERS_CACHE_DIR}/.identity
-	# dependency tarball cache + warmed cargo/install caches
+	# dependency tarball cache + warmed bun install cache
 	@${MKDIR} ${BUN_CACHE_DIR}/tarballs
 	@for _e in ${_BUN_DEP_CACHE}; do \
 		_cache=$${_e%%:*}; _dist=$${_e#*:}; \
 		${CP} ${DD}/$${_dist} ${BUN_CACHE_DIR}/tarballs/$${_cache}; \
 	done
-	@${TAR} xf ${DD}/bun-cargo-home-${DISTVERSION}.tar.gz -C ${WRKDIR}
 	@${MKDIR} ${BUN_INSTALL_CACHE_DIR}
+	# Cargo uses the vendored crates fetched by USES=cargo.  Keep this in
+	# $CARGO_HOME rather than the project .cargo/config.toml, which the bun
+	# build regenerates for its own linker settings.
+	@${MKDIR} ${CARGO_HOME}
+	@${ECHO_CMD} "[source.cargo]" > ${CARGO_HOME}/config.toml
+	@${ECHO_CMD} "directory = '${CARGO_VENDOR_DIR}'" >> ${CARGO_HOME}/config.toml
+	@${ECHO_CMD} "[source.crates-io]" >> ${CARGO_HOME}/config.toml
+	@${ECHO_CMD} "replace-with = 'cargo'" >> ${CARGO_HOME}/config.toml
 	@${TAR} xf ${DD}/bun-install-cache-${DISTVERSION}.tar.gz -C ${BUN_INSTALL_CACHE_DIR}
 
 # Fail early if the pinned toolchain is not the one these patches target.
@@ -235,22 +238,13 @@ pre-configure:
 	@if ${RUST_PREFIX}/bin/rustc --version | ${GREP} -Fq "${RUSTC_TESTED_VERSION}"; then \
 		${ECHO_MSG} "Rust nightly matches ${RUSTC_TESTED_VERSION}"; \
 	else \
-		${ECHO_MSG} "bun is only tested against Rust ${RUSTC_TESTED_VERSION},"; \
-		${ECHO_MSG} "but the installed toolchain is:"; \
+		${ECHO_MSG} "bun requires Rust ${RUSTC_TESTED_VERSION}; installed:"; \
 		${RUST_PREFIX}/bin/rustc --version | ${SED} 's/^/    /'; \
-		${ECHO_MSG} ""; \
-		${ECHO_MSG} "lang/rust-nightly-bun's pin was most likely changed.  bun's source patches target"; \
-		${ECHO_MSG} "one specific nightly; re-sync the MultiArrayList reflection code from"; \
-		${ECHO_MSG} "upstream main:"; \
-		${ECHO_MSG} "    https://raw.githubusercontent.com/oven-sh/bun/main/src/collections/multi_array_list.rs"; \
-		${ECHO_MSG} "then regenerate files/patch-src_collections_multi_array_list.rs and update"; \
-		${ECHO_MSG} "RUSTC_TESTED_VERSION in this Makefile."; \
-		${ECHO_MSG} ""; \
 		if [ "${ALLOW_UNTESTED_RUST}" != "yes" ]; then \
-			${ECHO_MSG} "Refusing to build; re-run with ALLOW_UNTESTED_RUST=yes to override."; \
+			${ECHO_MSG} "Refusing to build; set ALLOW_UNTESTED_RUST=yes to override."; \
 			exit 1; \
 		fi; \
-		${ECHO_MSG} "ALLOW_UNTESTED_RUST=yes set; continuing with an untested toolchain."; \
+		${ECHO_MSG} "ALLOW_UNTESTED_RUST=yes set; continuing."; \
 	fi
 
 do-build:
