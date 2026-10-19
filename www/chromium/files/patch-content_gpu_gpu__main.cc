@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2026-08-31 10:59:09 UTC
+--- content/gpu/gpu_main.cc.orig	2026-10-18 13:29:39 UTC
 +++ content/gpu/gpu_main.cc
 @@ -112,14 +112,18 @@
  #include "sandbox/win/src/sandbox.h"
@@ -36,7 +36,7 @@
  #endif
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     webnn::PreSandboxWebNNInitialization();
+     webnn::PreSandboxWebNNInitialization(/*is_gpu_process=*/true);
  #endif
  
 @@ -207,7 +211,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel

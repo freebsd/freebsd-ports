@@ -1,4 +1,4 @@
---- remoting/host/ipc_constants.cc.orig	2026-05-07 17:02:56 UTC
+--- remoting/host/ipc_constants.cc.orig	2026-10-18 13:29:39 UTC
 +++ remoting/host/ipc_constants.cc
 @@ -13,7 +13,7 @@
  #include "mojo/public/cpp/platform/named_platform_channel.h"
@@ -27,7 +27,7 @@
    return GetVarLibDir().Append(name).value();
  #else
    return mojo::NamedPlatformChannel::ServerNameFromUTF8(name);
-@@ -105,7 +105,7 @@ GetChromotingHostServicesServerName() {
+@@ -112,7 +112,7 @@ GetChromotingHostServicesServerName() {
    return *server_name;
  }
  
@@ -36,7 +36,7 @@
  const mojo::NamedPlatformChannel::ServerName&
  GetLegacyChromotingHostServicesServerName() {
    static const base::NoDestructor<mojo::NamedPlatformChannel::ServerName>
-@@ -137,7 +137,7 @@ GetAgentProcessBrokerServerName() {
+@@ -144,7 +144,7 @@ GetAgentProcessBrokerServerName() {
  
  #endif
  

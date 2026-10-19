@@ -1,6 +1,6 @@
---- chrome/browser/about_flags.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/about_flags.cc.orig	2026-10-22 09:04:01 UTC
 +++ chrome/browser/about_flags.cc
-@@ -359,13 +359,13 @@
+@@ -357,13 +357,13 @@
  #include "components/stylus_handwriting/win/features.h"
  #endif
  
@@ -16,7 +16,7 @@
  #include "chrome/browser/enterprise/data_protection/data_protection_features.h"
  #include "chrome/browser/enterprise/profile_management/profile_management_features.h"
  #include "chrome/browser/enterprise/webstore/features.h"
-@@ -373,7 +373,7 @@
+@@ -371,7 +371,7 @@
          // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -25,7 +25,7 @@
  #include "chrome/browser/glic/suggestions/contextual_cueing_features.h"  // nogncheck
  #include "chrome/browser/ui/webui/new_tab_page/composebox/variations/composebox_fieldtrial.h"  // nogncheck
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) ||
-@@ -383,7 +383,7 @@
+@@ -381,7 +381,7 @@
  #include "components/enterprise/platform_auth/platform_auth_features.h"
  #endif
  
@@ -34,7 +34,7 @@
  #include "components/enterprise/browser/reporting/reporting_features.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
  
-@@ -973,6 +973,23 @@ const FeatureEntry::FeatureVariation
+@@ -976,6 +976,23 @@ const FeatureEntry::FeatureVariation
           "identity request to Android OS",
           kWebIdentityDigitalIdentityCredentialHighRiskDialogParam, nullptr}};
  
@@ -58,8 +58,8 @@
  const FeatureEntry::FeatureParam kMBIModeLegacy[] = {{"mode", "legacy"}};
  const FeatureEntry::FeatureParam kMBIModeEnabledPerRenderProcessHost[] = {
      {"mode", "per_render_process_host"}};
-@@ -1452,7 +1469,7 @@ const FeatureEntry::FeatureVariation
-          kContextManagementEnableContextMenuTooltipsParams, nullptr}};
+@@ -1447,7 +1464,7 @@ const FeatureEntry::FeatureVariation
+          kContextManagementEnableFaviconSkeletonLoaderParams, nullptr}};
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
@@ -67,7 +67,7 @@
  
  // A limited number of combinations of the rich autocompletion params.
  const FeatureEntry::FeatureParam kOmniboxRichAutocompletionAggressive1[] = {
-@@ -1681,7 +1698,7 @@ const FeatureEntry::FeatureVariation
+@@ -1676,7 +1693,7 @@ const FeatureEntry::FeatureVariation
          // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -76,7 +76,7 @@
  
  const FeatureEntry::FeatureParam kNtpNextAllowDisablement[] = {
      {"NtpNextDisablementContextMenuParam", "true"},
-@@ -3369,7 +3386,7 @@ const FeatureEntry::FeatureVariation kAndroidThemeReso
+@@ -3483,7 +3500,7 @@ const FeatureEntry::FeatureVariation kClankMiniOmnibox
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -85,7 +85,7 @@
  const flags_ui::FeatureEntry::FeatureParam kPwaNavigationCapturingDefaultOn[] =
      {{"link_capturing_state", "on_by_default"}};
  const flags_ui::FeatureEntry::FeatureParam kPwaNavigationCapturingDefaultOff[] =
-@@ -3401,7 +3418,7 @@ const flags_ui::FeatureEntry::FeatureVariation
+@@ -3515,7 +3532,7 @@ const flags_ui::FeatureEntry::FeatureVariation
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) ||
          // BUILDFLAG(IS_CHROMEOS)
  
@@ -94,7 +94,7 @@
  const char kReplaceSyncPromosWithSignInPromosDesktopFeatures[] =
      "ReplaceSyncPromosWithSignInPromos,"
      "IPH_SignInBenefits,"
-@@ -3499,7 +3516,7 @@ const FeatureEntry::FeatureVariation kComposeSelection
+@@ -3613,7 +3630,7 @@ const FeatureEntry::FeatureVariation kComposeSelection
      {"30 char - 2sec", kComposeSelectionNudge_30_2s, nullptr}};
  #endif  // ENABLE_COMPOSE
  
@@ -103,7 +103,7 @@
  const FeatureEntry::FeatureParam kLocationProviderManagerModeNetworkOnly[] = {
      {"LocationProviderManagerMode", "NetworkOnly"}};
  const FeatureEntry::FeatureParam kLocationProviderManagerModePlatformOnly[] = {
-@@ -3589,7 +3606,7 @@ const FeatureEntry::FeatureVariation kSensitiveContent
+@@ -3703,7 +3720,7 @@ const FeatureEntry::FeatureVariation kSensitiveContent
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -112,16 +112,16 @@
  const FeatureEntry::FeatureParam kContextualCueingEnabledNoEngagementCap[] = {
      {"BackoffTime", "0h"},
      {"BackoffMultiplierBase", "0.0"},
-@@ -4269,7 +4286,7 @@ const FeatureEntry::FeatureVariation
+@@ -4452,7 +4469,7 @@ const FeatureEntry::FeatureVariation
  };
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- const FeatureEntry::FeatureParam kNtpCustomizeChromeAutoOpenOnEveryNTP[] = {
+ 
+ const FeatureEntry::FeatureParam kNtpCustomizeChromeAutoOpenOnFirstNTPOnly[] = {
      {"max_customize_chrome_auto_shown_count", "5"},
-     {"max_customize_chrome_auto_shown_session_count", "5"}};
-@@ -4417,7 +4434,7 @@ const FeatureEntry::FeatureVariation kXplatSyncedSetup
+@@ -4575,7 +4592,7 @@ const FeatureEntry::FeatureVariation kXplatSyncedSetup
  };
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -130,7 +130,7 @@
  const FeatureEntry::FeatureParam kCrossDeviceSigninFromDesktopDefaultUrl[] = {
      {"url",
       "https://www.google.com/chrome/go-mobile?entry_point_id=1&email=$1"},
-@@ -5766,7 +5783,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5933,7 +5950,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kEnableProcessIsolationUiDescription, kOsWin,
       FEATURE_VALUE_TYPE(features::kProcessIsolationSettings)},
  #endif  // BUILDFLAG(IS_WIN)
@@ -139,7 +139,7 @@
      {"enable-iwa-key-distribution-component",
       flag_descriptions::kEnableIwaKeyDistributionComponentName,
       flag_descriptions::kEnableIwaKeyDistributionComponentDescription,
-@@ -5976,7 +5993,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6138,7 +6155,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(media::kUseSCContentSharingPicker)},
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -148,7 +148,7 @@
      {"pulseaudio-loopback-for-cast",
       flag_descriptions::kPulseaudioLoopbackForCastName,
       flag_descriptions::kPulseaudioLoopbackForCastDescription, kOsLinux,
-@@ -5991,6 +6008,16 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6153,6 +6170,16 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kWaylandSessionManagementName,
       flag_descriptions::kWaylandSessionManagementDescription, kOsLinux,
       FEATURE_VALUE_TYPE(features::kWaylandSessionManagement)},
@@ -165,16 +165,16 @@
  #endif  // BUILDFLAG(IS_LINUX)
  
  #if BUILDFLAG(ENABLE_VR)
-@@ -6421,7 +6448,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6562,7 +6589,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kFillOnAccountSelectDescription, kOsAll,
       FEATURE_VALUE_TYPE(password_manager::features::kFillOnAccountSelect)},
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-     {"first-run-desktop-choice-screen-refresh",
-      flag_descriptions::kFirstRunDesktopChoiceScreenRefreshName,
-      flag_descriptions::kFirstRunDesktopChoiceScreenRefreshDescription,
-@@ -6727,7 +6754,7 @@ const FeatureEntry kFeatureEntries[] = {
+     {"enterprise-signin-dialogs-refresh",
+      flag_descriptions::kEnterpriseSigninDialogsRefreshName,
+      flag_descriptions::kEnterpriseSigninDialogsRefreshDescription,
+@@ -6866,7 +6893,7 @@ const FeatureEntry kFeatureEntries[] = {
                                      "MlUrlScoring")},
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -183,7 +183,7 @@
      {"contextual-search-box-uses-contextual-search-provider",
       flag_descriptions::kContextualSearchBoxUsesContextualSearchProviderName,
       flag_descriptions::
-@@ -7131,7 +7158,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7274,7 +7301,7 @@ const FeatureEntry kFeatureEntries[] = {
           kVoiceSearchCoherenceComposeboxVariations,
           "VoiceSearchCoherenceComposeboxVariations")},
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -192,7 +192,7 @@
      {"history-embeddings", flag_descriptions::kHistoryEmbeddingsName,
       flag_descriptions::kHistoryEmbeddingsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(history_embeddings::kHistoryEmbeddings)},
-@@ -7419,7 +7446,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7590,7 +7617,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(omnibox::kContextMenuAnimationLimiting)},
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -201,7 +201,7 @@
      {"ntp-customize-chrome-auto-open",
       flag_descriptions::kNtpCustomizeChromeAutoOpenName,
       flag_descriptions::kNtpCustomizeChromeAutoOpenDescription, kOsDesktop,
-@@ -7689,7 +7716,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7860,7 +7887,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(ENABLE_PRINTING)
@@ -210,7 +210,7 @@
      {"cups-ipp-printing-backend",
       flag_descriptions::kCupsIppPrintingBackendName,
       flag_descriptions::kCupsIppPrintingBackendDescription, kOsDesktop,
-@@ -7911,7 +7938,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -8089,7 +8116,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(media::kHeadlessCaptionEarlyStart)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -219,7 +219,7 @@
      {"enable-input-protection", flag_descriptions::kEnableInputProtectionName,
       flag_descriptions::kEnableInputProtectionDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(views::features::kEnableInputProtection)},
-@@ -8427,7 +8454,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -8516,7 +8543,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(ash::features::kGesturePropertiesDBusService)},
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -228,7 +228,7 @@
      {"enable-network-service-sandbox",
       flag_descriptions::kEnableNetworkServiceSandboxName,
       flag_descriptions::kEnableNetworkServiceSandboxDescription,
-@@ -8511,7 +8538,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -8592,7 +8619,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kViewportSegmentsDescription, kOsAll,
       FEATURE_VALUE_TYPE(blink::features::kViewportSegments)},
  
@@ -237,7 +237,7 @@
      {"enable-location-provider-manager",
       flag_descriptions::kLocationProviderManagerName,
       flag_descriptions::kLocationProviderManagerDescription,
-@@ -8860,7 +8887,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -8931,7 +8958,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kGlobalVaapiLockDescription, kOsCrOS | kOsLinux,
       FEATURE_VALUE_TYPE(media::kGlobalVaapiLock)},
  
@@ -246,7 +246,7 @@
      {
          "ui-debug-tools",
          flag_descriptions::kUIDebugToolsName,
-@@ -9333,7 +9360,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -9394,7 +9421,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -255,7 +255,7 @@
      {"auto-picture-in-picture-on-window-occluded",
       flag_descriptions::kAutoPictureInPictureOnWindowOccludedName,
       flag_descriptions::kAutoPictureInPictureOnWindowOccludedDescription,
-@@ -9522,7 +9549,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -9584,7 +9611,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(ash::features::kAnnotatorMode)},
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -264,8 +264,8 @@
      {"approximate-geolocation-permission",
       flag_descriptions::kApproximateGeolocationPermissionName,
       flag_descriptions::kApproximateGeolocationPermissionDescription,
-@@ -10063,7 +10090,7 @@ const FeatureEntry kFeatureEntries[] = {
-          autofill::features::kAutofillEnablePrefetchingRiskDataForRetrieval)},
+@@ -10099,7 +10126,7 @@ const FeatureEntry kFeatureEntries[] = {
+ #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_CHROMEOS)
@@ -273,7 +273,7 @@
      {"enable-user-navigation-capturing-pwa",
       flag_descriptions::kPwaNavigationCapturingName,
       flag_descriptions::kPwaNavigationCapturingDescription,
-@@ -10486,7 +10513,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -10537,7 +10564,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kResponsiveIframesDescription, kOsAll,
       FEATURE_VALUE_TYPE(blink::features::kResponsiveIframes)},
  
@@ -282,7 +282,7 @@
      {"replace-sync-promos-with-sign-in-promos-desktop",
       flag_descriptions::kReplaceSyncPromosWithSignInPromosName,
       flag_descriptions::kReplaceSyncPromosWithSignInPromosDescription,
-@@ -10845,7 +10872,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -10891,7 +10918,7 @@ const FeatureEntry kFeatureEntries[] = {
           segmentation_platform::features::kSegmentationSurveyPage)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -291,7 +291,7 @@
      {"autofill-enable-buy-now-pay-later",
       flag_descriptions::kAutofillEnableBuyNowPayLaterName,
       flag_descriptions::kAutofillEnableBuyNowPayLaterDescription,
-@@ -11451,7 +11478,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11494,7 +11521,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(ui::kUseNewEtc1Encoder)},
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -300,7 +300,7 @@
      {"automatic-usb-detach", flag_descriptions::kAutomaticUsbDetachName,
       flag_descriptions::kAutomaticUsbDetachDescription, kOsAndroid | kOsLinux,
       FEATURE_VALUE_TYPE(features::kAutomaticUsbDetach)},
-@@ -11474,7 +11501,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11517,7 +11544,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // !BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -309,7 +309,7 @@
      {"autofill-enable-amount-extraction",
       flag_descriptions::kAutofillEnableAmountExtractionName,
       flag_descriptions::kAutofillEnableAmountExtractionDescription,
-@@ -11585,7 +11612,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11635,7 +11662,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(
           feature_engagement::kIPHAutofillCreditCardBenefitFeature)},
  
@@ -318,7 +318,7 @@
      {"chrome-web-store-navigation-throttle",
       flag_descriptions::kChromeWebStoreNavigationThrottleName,
       flag_descriptions::kChromeWebStoreNavigationThrottleDescription,
-@@ -11601,7 +11628,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11651,7 +11678,7 @@ const FeatureEntry kFeatureEntries[] = {
           printing::features::kAlignPdfDefaultPrintSettingsWithHTML)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -327,7 +327,7 @@
      {"autofill-enable-amount-extraction-testing",
       flag_descriptions::kAutofillEnableAmountExtractionTestingName,
       flag_descriptions::kAutofillEnableAmountExtractionTestingDescription,
-@@ -11611,7 +11638,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11661,7 +11688,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
  
@@ -336,7 +336,7 @@
      {"root-scrollbar-follows-browser-theme",
       flag_descriptions::kRootScrollbarFollowsTheme,
       flag_descriptions::kRootScrollbarFollowsThemeDescription,
-@@ -11776,7 +11803,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11827,7 +11854,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -345,7 +345,7 @@
      {"tab-group-home", tabs::flag_descriptions::kTabGroupHomeName,
       tabs::flag_descriptions::kTabGroupHomeDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(tabs::kTabGroupHome)},
-@@ -11883,7 +11910,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11930,7 +11957,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -354,7 +354,7 @@
      {"autofill-enable-buy-now-pay-later-for-klarna",
       flag_descriptions::kAutofillEnableBuyNowPayLaterForKlarnaName,
       flag_descriptions::kAutofillEnableBuyNowPayLaterForKlarnaDescription,
-@@ -11927,7 +11954,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -11965,7 +11992,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -363,7 +363,7 @@
      {"autofill-enable-buy-now-pay-later-for-externally-linked",
       flag_descriptions::kAutofillEnableBuyNowPayLaterForExternallyLinkedName,
       flag_descriptions::
-@@ -12003,7 +12030,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12035,7 +12062,7 @@ const FeatureEntry kFeatureEntries[] = {
  
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -372,7 +372,7 @@
      {"cross-device-signin-from-desktop",
       flag_descriptions::kCrossDeviceSigninFromDesktopName,
       flag_descriptions::kCrossDeviceSigninFromDesktopDescription,
-@@ -12308,7 +12335,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12329,7 +12356,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -381,7 +381,7 @@
      {"contextual-suggestion-ui-improvements",
       flag_descriptions::kContextualSuggestionsUiImprovementsName,
       flag_descriptions::kContextualSuggestionsUiImprovementsDescription,
-@@ -12524,7 +12551,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12581,7 +12608,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kCryptographyComplianceCnsa)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -390,7 +390,7 @@
      {"lens-reinvocation-affordance",
       flag_descriptions::kLensSearchReinvocationAffordanceName,
       flag_descriptions::kLensSearchReinvocationAffordanceDescription,
-@@ -12560,7 +12587,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12617,7 +12644,7 @@ const FeatureEntry kFeatureEntries[] = {
       STRING_VALUE_TYPE(variations::switches::kVariationsSeedCorpus, "")},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -399,7 +399,7 @@
      {"passkey-unlock-error-ui", flag_descriptions::kPasskeyUnlockErrorUiName,
       flag_descriptions::kPasskeyUnlockErrorUiDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(device::kPasskeyUnlockErrorUi)},
-@@ -12595,7 +12622,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12652,7 +12679,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kHandleMdmErrorsForDasherAccountsDescription, kOsAll,
       FEATURE_VALUE_TYPE(switches::kHandleMdmErrorsForDasherAccounts)},
  
@@ -408,7 +408,7 @@
      {"profile-creation-decline-signin-cta-experiment",
       flag_descriptions::kProfileCreationDeclineSigninCTAExperimentName,
       flag_descriptions::kProfileCreationDeclineSigninCTAExperimentDescription,
-@@ -12616,7 +12643,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12673,7 +12700,7 @@ const FeatureEntry kFeatureEntries[] = {
           enterprise_signals::features::kProfileSignalsReportingEnabled)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -417,7 +417,7 @@
      {"organizer-panel", flag_descriptions::kOrganizerPanelName,
       flag_descriptions::kOrganizerPanelDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(organizer_panel::kOrganizerPanel)},
-@@ -12667,7 +12694,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12725,7 +12752,7 @@ const FeatureEntry kFeatureEntries[] = {
       MULTI_VALUE_TYPE(kConnectionAllowlistsChoices)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -426,7 +426,7 @@
      {"read-anything-with-readability-enabled",
       flag_descriptions::kReadAnythingWithReadabilityName,
       flag_descriptions::kReadAnythingWithReadabilityDescription, kOsDesktop,
-@@ -12675,7 +12702,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12733,7 +12760,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -435,7 +435,7 @@
      {"read-anything-omnibox-chip",
       flag_descriptions::kReadAnythingOmniboxChipName,
       flag_descriptions::kReadAnythingOmniboxChipDescription, kOsDesktop,
-@@ -12697,7 +12724,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12755,7 +12782,7 @@ const FeatureEntry kFeatureEntries[] = {
           autofill::features::kAutofillDisableBnplCountryCheckForTesting)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -444,7 +444,7 @@
      {"lens-overlay-non-blocking-privacy-notice",
       flag_descriptions::kLensOverlayNonBlockingPrivacyNoticeName,
       flag_descriptions::kLensOverlayNonBlockingPrivacyNoticeDescription,
-@@ -12914,7 +12941,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -12965,7 +12992,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(autofill::features::kAutofillAiWithDataSchema)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -453,7 +453,7 @@
      {"read-anything-line-focus", flag_descriptions::kReadAnythingLineFocusName,
       flag_descriptions::kReadAnythingLineFocusDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kReadAnythingLineFocus)},
-@@ -13404,7 +13431,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -13441,7 +13468,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(blink::features::kUserMediaElementLegacy)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -462,7 +462,7 @@
      {"read-anything-readability-select-text",
       flag_descriptions::kReadAnythingReadabilitySelectTextName,
       flag_descriptions::kReadAnythingReadabilitySelectTextDescription,
-@@ -13741,7 +13768,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -13772,7 +13799,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kLongScreenshotsNoMemoryCheckDescription, kOsAndroid,
       FEATURE_VALUE_TYPE(chrome::android::kLongScreenshotsNoMemoryCheck)},
  #endif
@@ -471,7 +471,7 @@
      {"device-signals-backfill-disclaimer",
       flag_descriptions::kDeviceSignalsBackfillDisclaimerName,
       flag_descriptions::kDeviceSignalsBackfillDisclaimerDescription,
-@@ -13831,7 +13858,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -13868,7 +13895,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -480,7 +480,7 @@
      {"read-anything-improved-ui",
       flag_descriptions::kReadAnythingImprovedUiName,
       flag_descriptions::kReadAnythingImprovedUiDescription, kOsDesktop,
-@@ -13931,7 +13958,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -13972,7 +13999,7 @@ const FeatureEntry kFeatureEntries[] = {
               kAutofillIgnorePaymentsChurnedUsersStrikesForTesting)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -489,3 +489,12 @@
      {"read-anything-distiller-refactor",
       flag_descriptions::kReadAnythingDistillerRefactorName,
       flag_descriptions::kReadAnythingDistillerRefactorDescription, kOsDesktop,
+@@ -14239,7 +14266,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(
+          autofill::features::kAutofillEnableCardholderNameFixFlow)},
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+     // Guarded to Windows, Mac, and Linux because the QR code URL relies on
+     // `switches::kCrossDeviceSigninFromDesktopUrl` in
+     // `components/signin/public/base/signin_switches.h`.

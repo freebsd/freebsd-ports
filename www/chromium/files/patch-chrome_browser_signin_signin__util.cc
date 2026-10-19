@@ -1,6 +1,6 @@
---- chrome/browser/signin/signin_util.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/signin/signin_util.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/signin/signin_util.cc
-@@ -43,7 +43,7 @@
+@@ -40,7 +40,7 @@
  #include "google_apis/gaia/gaia_id.h"
  #include "ui/base/l10n/l10n_util.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/dialogs/browser_dialogs.h"
  #include "components/strings/grit/components_strings.h"
  #include "ui/base/interaction/element_identifier.h"
-@@ -325,7 +325,7 @@ bool IsSyncingUserSelectableTypesAllowedByPolicy(
+@@ -322,7 +322,7 @@ bool IsSyncingUserSelectableTypesAllowedByPolicy(
    return true;
  }
  

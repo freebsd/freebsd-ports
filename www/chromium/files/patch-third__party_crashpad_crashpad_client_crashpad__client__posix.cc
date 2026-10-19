@@ -1,6 +1,6 @@
---- third_party/crashpad/crashpad/client/crashpad_client_posix.cc.orig	2022-02-07 13:39:41 UTC
+--- third_party/crashpad/crashpad/client/crashpad_client_posix.cc.orig	2026-10-18 13:29:39 UTC
 +++ third_party/crashpad/crashpad/client/crashpad_client_posix.cc
-@@ -0,0 +1,40 @@
+@@ -0,0 +1,41 @@
 +// Copyright 2017 The Crashpad Authors. All rights reserved.
 +//
 +// Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,8 +34,9 @@
 +    const std::map<std::string, std::string>& annotations,
 +    const std::vector<std::string>& arguments,
 +    bool restartable,
-+    bool asynchronous_start,   
-+    const std::vector<base::FilePath>& attachments) {
++    bool asynchronous_start,
++    const std::vector<base::FilePath>& attachments,
++    const std::set<FileHandle>& preserve_file_handles) {
 +  NOTREACHED();  // TODO(scottmg): https://crashpad.chromium.org/bug/196
 +  return false;
 +}

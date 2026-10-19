@@ -1,6 +1,6 @@
---- third_party/perfetto/src/base/android_utils.cc.orig	2026-03-13 06:02:14 UTC
+--- third_party/perfetto/src/base/android_utils.cc.orig	2026-10-18 13:29:39 UTC
 +++ third_party/perfetto/src/base/android_utils.cc
-@@ -36,8 +36,10 @@
+@@ -38,8 +38,10 @@
  #include <unistd.h>
  #endif
  
@@ -13,7 +13,7 @@
  #include <sys/sysinfo.h>
  #endif
  
-@@ -103,8 +105,10 @@ SystemInfo GetSystemInfo() {
+@@ -105,8 +107,10 @@ SystemInfo GetSystemInfo() {
    info.page_size = static_cast<uint32_t>(sysconf(_SC_PAGESIZE));
    info.num_cpus = static_cast<uint32_t>(sysconf(_SC_NPROCESSORS_CONF));
  

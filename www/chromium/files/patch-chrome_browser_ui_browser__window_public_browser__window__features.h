@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_window/public/browser_window_features.h.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/browser_window/public/browser_window_features.h.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/browser_window/public/browser_window_features.h
-@@ -135,7 +135,7 @@ class ZoomBubbleManager;
+@@ -127,7 +127,7 @@ class ZoomBubbleManager;
  class WindowsTaskbarIconUpdater;
  #endif
  
@@ -9,7 +9,7 @@
  class ProfileCustomizationBubbleSyncController;
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -237,7 +237,7 @@ namespace send_tab_to_self {
+@@ -224,7 +224,7 @@ namespace send_tab_to_self {
  class SendTabToSelfToolbarBubbleController;
  }  // namespace send_tab_to_self
  
@@ -18,7 +18,7 @@
  namespace session_restore_infobar {
  class SessionRestoreInfobarController;
  }  // namespace session_restore_infobar
-@@ -637,7 +637,7 @@ class BrowserWindowFeatures {
+@@ -527,7 +527,7 @@ class BrowserWindowFeatures {
        pin_infobar_controller_;
  #endif
  

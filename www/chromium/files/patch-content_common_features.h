@@ -1,6 +1,6 @@
---- content/common/features.h.orig	2026-09-25 15:26:43 UTC
+--- content/common/features.h.orig	2026-10-18 13:29:39 UTC
 +++ content/common/features.h
-@@ -87,7 +87,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kEarlyTopAppForSan
+@@ -91,7 +91,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kEarlyTopAppForSan
  #endif
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEditContextSelectionSync);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kKillOnUnexpectedOriginHeader);
@@ -9,7 +9,7 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnforceGamepadPermissionsPolicy);
-@@ -105,8 +105,8 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(
+@@ -109,8 +109,8 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(
      kFocusRenderWidgetHostViewAndroidOnMouseDown);
  #endif
  
@@ -20,7 +20,7 @@
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceLinux);
  #else
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceChromeOS);
-@@ -122,7 +122,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
+@@ -126,7 +126,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE_PARAM(FontDataServ
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataManagerPrewarming);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFontDataServiceForCSSLocalFonts);
  

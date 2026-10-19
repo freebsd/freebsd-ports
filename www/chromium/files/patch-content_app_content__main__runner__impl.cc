@@ -1,6 +1,6 @@
---- content/app/content_main_runner_impl.cc.orig	2026-09-25 15:26:43 UTC
+--- content/app/content_main_runner_impl.cc.orig	2026-10-18 13:29:39 UTC
 +++ content/app/content_main_runner_impl.cc
-@@ -160,13 +160,13 @@
+@@ -162,13 +162,13 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -16,7 +16,7 @@
  #include <fcntl.h>
  
  #include "base/environment.h"
-@@ -176,7 +176,10 @@
+@@ -178,7 +178,10 @@
  #include "base/posix/eintr_wrapper.h"
  #include "base/rand_util.h"
  #include "content/public/common/zygote/sandbox_support_linux.h"
@@ -27,7 +27,7 @@
  #include "third_party/boringssl/src/include/openssl/crypto.h"
  #include "third_party/webrtc_overrides/init_webrtc.h"  // nogncheck
  
-@@ -200,6 +203,10 @@
+@@ -202,6 +205,10 @@
  #include "media/base/media_switches.h"
  #endif
  
@@ -38,7 +38,7 @@
  #if BUILDFLAG(IS_ANDROID)
  #include "base/android/background_thread_pool_field_trial.h"
  #include "base/system/sys_info.h"
-@@ -379,7 +386,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+@@ -375,7 +382,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE)
  
@@ -47,7 +47,7 @@
  
  #if BUILDFLAG(ENABLE_LIBRARY_CDMS)
  // Loads registered library CDMs but does not initialize them. This is needed by
-@@ -427,7 +434,10 @@ void PreallocateFileDescriptorTable() {
+@@ -423,7 +430,10 @@ void PreallocateFileDescriptorTable() {
  
  void PreSandboxInit() {
    // Ensure the /dev/urandom is opened.
@@ -58,7 +58,7 @@
  
    // May use sysinfo(), sched_getaffinity(), and open various /sys/ and /proc/
    // files.
-@@ -439,9 +449,16 @@ void PreSandboxInit() {
+@@ -435,9 +445,16 @@ void PreSandboxInit() {
    // https://boringssl.googlesource.com/boringssl/+/HEAD/SANDBOXING.md
    CRYPTO_pre_sandbox_init();
  
@@ -75,7 +75,7 @@
  
  #if BUILDFLAG(ENABLE_LIBRARY_CDMS)
    // Ensure access to the library CDMs before the sandbox is turned on.
-@@ -691,7 +708,7 @@ NO_STACK_PROTECTOR int RunZygote(ContentMainDelegate* 
+@@ -687,7 +704,7 @@ NO_STACK_PROTECTOR int RunZygote(ContentMainDelegate* 
    // Once Zygote forks and feature list initializes we can start a thread to
    // begin tracing immediately.
    if (delegate->ShouldInitializePerfetto(invoked_in_child)) {
@@ -84,7 +84,7 @@
      if (process_type == switches::kGpuProcess) {
        tracing::InitTracingPostFeatureList(/*enable_consumer=*/false,
                                            /*will_trace_thread_restart=*/true);
-@@ -796,7 +813,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
+@@ -792,7 +809,7 @@ NO_STACK_PROTECTOR int RunOtherNamedProcessTypeMain(
      base::HangWatcher::CreateHangWatcherInstance();
      unregister_thread_closure = base::HangWatcher::RegisterThread(
          base::HangWatcher::ThreadType::kMainThread);
@@ -93,7 +93,7 @@
      // On Linux/ChromeOS, the HangWatcher can't start until after the sandbox is
      // initialized, because the sandbox can't be started with multiple threads.
      // TODO(mpdenton): start the HangWatcher after the sandbox is initialized.
-@@ -869,7 +886,7 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -865,7 +882,7 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -102,7 +102,7 @@
    // Must run while the process is still single-threaded, i.e. before the
    // thread pool (and, in Chrome, the stack sampling profiler) is created below.
    // Zygotes fork their children with a right-sized copy of the table and grow
-@@ -927,11 +944,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -923,11 +940,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
                   base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -116,7 +116,7 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1065,7 +1081,7 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1061,7 +1077,7 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
  
    delegate_->PreSandboxStartup();
  
@@ -125,7 +125,7 @@
    // Set environment variables for fontconfig fontations indexing and before
    // creating threads.
    if (process_type.empty()) {
-@@ -1100,7 +1116,7 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1096,7 +1112,7 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
      // SeatbeltExecServer.
      CHECK(sandbox::Seatbelt::IsSandboxed());
    }
@@ -134,7 +134,7 @@
    // In sandboxed processes and zygotes, certain resource should be pre-warmed
    // as they cannot be initialized under a sandbox. In addition, loading these
    // resources in zygotes (including the unsandboxed zygote) allows them to be
-@@ -1114,6 +1130,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1110,6 +1126,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
    ChildProcessEnterSandbox();
  #endif
  
@@ -151,7 +151,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1242,6 +1268,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
+@@ -1238,6 +1264,11 @@ NO_STACK_PROTECTOR int ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

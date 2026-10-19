@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/canvas/imagebitmap/image_bitmap_rendering_context.cc.orig	2026-08-31 10:59:09 UTC
+--- third_party/blink/renderer/modules/canvas/imagebitmap/image_bitmap_rendering_context.cc.orig	2026-10-18 13:29:39 UTC
 +++ third_party/blink/renderer/modules/canvas/imagebitmap/image_bitmap_rendering_context.cc
-@@ -70,7 +70,7 @@ scoped_refptr<StaticBitmapImage> ImageBitmapRenderingC
+@@ -61,7 +61,7 @@ scoped_refptr<StaticBitmapImage> ImageBitmapRenderingC
      return source;
    }
  

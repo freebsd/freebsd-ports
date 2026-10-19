@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/layout/browser_view_app_layout_impl.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/views/frame/layout/browser_view_app_layout_impl.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/views/frame/layout/browser_view_app_layout_impl.cc
-@@ -400,7 +400,7 @@ void BrowserViewAppLayoutImpl::DoPostLayoutVisualAdjus
+@@ -401,7 +401,7 @@ void BrowserViewAppLayoutImpl::DoPostLayoutVisualAdjus
  #elif BUILDFLAG(IS_WIN)
      label.SetSubpixelRenderingEnabled(false);
      label.SetAutoColorReadabilityEnabled(false);

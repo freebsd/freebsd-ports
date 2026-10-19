@@ -1,4 +1,4 @@
---- components/cbor/BUILD.gn.orig	2026-09-25 15:26:43 UTC
+--- components/cbor/BUILD.gn.orig	2026-10-18 13:29:39 UTC
 +++ components/cbor/BUILD.gn
 @@ -12,7 +12,7 @@ buildflag_header("buildflags") {
    # TODO(crbug.com/535682335): Remove `USE_CBOR_RUST` buildflag entirely,
@@ -8,23 +8,42 @@
 +  flags = [ "USE_CBOR_RUST=false" ]
  }
  
- component("cbor") {
-@@ -35,12 +35,12 @@ component("cbor") {
+ source_set("cbor_headers") {
+@@ -48,12 +48,12 @@ source_set("cbor_rust_impl") {
      "//base",
    ]
  
 -  if (!is_cronet_build) {
--    public_deps = [
+-    deps += [
 -      "//build/rust/crubit",
 -      "//components/cbor/rust:cbor_rust_bindings",
 -    ]
 -  }
 +#  if (!is_cronet_build) {
-+#    public_deps = [
++#    deps += [
 +#      "//build/rust/crubit",
 +#      "//components/cbor/rust:cbor_rust_bindings",
 +#    ]
 +#  }
  }
  
- source_set("unit_tests") {
+ component("cbor") {
+@@ -91,12 +91,12 @@ source_set("unit_tests") {
+     "//testing/gtest",
+     "//third_party/fuzztest",
+   ]
+-  if (!is_cronet_build) {
+-    deps += [
+-      "//components/cbor/rust:cbor_rust_bindings",
+-      "//components/cbor/rust:cbor_rust_unittests",
+-    ]
+-  }
++#  if (!is_cronet_build) {
++#    deps += [
++#      "//components/cbor/rust:cbor_rust_bindings",
++#      "//components/cbor/rust:cbor_rust_unittests",
++#    ]
++#  }
+ 
+   data = [ "reader_fuzzer_corpus/" ]
+ 

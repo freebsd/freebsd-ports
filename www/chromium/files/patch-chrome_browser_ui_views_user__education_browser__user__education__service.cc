@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/user_education/browser_user_education_service.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/views/user_education/browser_user_education_service.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/views/user_education/browser_user_education_service.cc
-@@ -317,7 +317,7 @@ CreateNavigationAction(GURL target) {
+@@ -321,7 +321,7 @@ CreateNavigationAction(GURL target) {
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  void NavigateToSettingsPage(ContextPtr ctx,
                              user_education::FeaturePromoHandle promo_handle) {
    BrowserWindowInterface* const browser = GetBrowser(ctx);
-@@ -1577,7 +1577,7 @@ void MaybeRegisterChromeFeaturePromos(
+@@ -1566,7 +1566,7 @@ void MaybeRegisterChromeFeaturePromos(
                  "Triggered when a shared tab becomes the active tab.")));
    }
  
@@ -18,7 +18,7 @@
    // kIPHSupervisedUserProfileSigninFeature:
    registry.RegisterFeature(std::move(
        FeaturePromoSpecification::CreateForCustomAction(
-@@ -1920,7 +1920,7 @@ void MaybeRegisterChromeFeaturePromos(
+@@ -1895,7 +1895,7 @@ void MaybeRegisterChromeFeaturePromos(
                "Omnibox Everywhere.")));
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
@@ -27,9 +27,9 @@
    // kIPHDesktopPWAsLinkCapturingLaunch:
    registry.RegisterFeature(std::move(
        FeaturePromoSpecification::CreateForCustomAction(
-@@ -2768,7 +2768,7 @@ void MaybeRegisterChromeNewBadges(user_education::NewB
-       user_education::Metadata(153, "amyasinghal@google.com",
-                                "Shown on the Dictation context menu item.")));
+@@ -2748,7 +2748,7 @@ void MaybeRegisterChromeNewBadges(user_education::NewB
+       user_education::Metadata(158, "xinlongyi@google.com",
+                                "Shown on the Skills item in the app menu.")));
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

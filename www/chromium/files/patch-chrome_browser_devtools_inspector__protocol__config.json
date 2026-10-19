@@ -1,0 +1,14 @@
+--- chrome/browser/devtools/inspector_protocol_config.json.orig	2026-10-18 13:29:39 UTC
++++ chrome/browser/devtools/inspector_protocol_config.json
+@@ -49,9 +49,8 @@
+             },
+             {
+                 "domain": "Storage",
+-                "include": ["runBounceTrackingMitigations", "getPrivateVerificationTokens", "getPrivateVerificationTokensIssuerConfigs", "clearPrivateVerificationTokens", "deletePrivateVerificationToken", "setPrivateVerificationTokensTracking"],
+-                "include_events": ["privateVerificationTokensUpdated"],
+-                "async": ["runBounceTrackingMitigations", "getPrivateVerificationTokens", "clearPrivateVerificationTokens", "deletePrivateVerificationToken"]
++                "include": ["runBounceTrackingMitigations", "getRelatedWebsiteSets"],
++                "async": ["runBounceTrackingMitigations", "getRelatedWebsiteSets"]
+             },
+             {
+                 "domain": "SystemInfo",

@@ -1,4 +1,4 @@
---- base/memory/platform_shared_memory_region.h.orig	2026-04-09 06:05:42 UTC
+--- base/memory/platform_shared_memory_region.h.orig	2026-10-18 13:29:39 UTC
 +++ base/memory/platform_shared_memory_region.h
 @@ -104,7 +104,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
  #if BUILDFLAG(IS_FUCHSIA)
@@ -9,7 +9,7 @@
      kFcntlFailed,
      kReadOnlyFdNotReadOnly,
      kUnexpectedReadOnlyFd,
-@@ -249,7 +249,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
+@@ -260,7 +260,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
                             CheckPlatformHandlePermissionsCorrespondToMode);
    static PlatformSharedMemoryRegion Create(Mode mode,
                                             size_t size

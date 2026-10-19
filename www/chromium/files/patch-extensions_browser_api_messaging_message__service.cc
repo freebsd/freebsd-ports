@@ -1,4 +1,4 @@
---- extensions/browser/api/messaging/message_service.cc.orig	2026-09-25 15:26:43 UTC
+--- extensions/browser/api/messaging/message_service.cc.orig	2026-10-22 09:04:01 UTC
 +++ extensions/browser/api/messaging/message_service.cc
 @@ -92,7 +92,7 @@ const char kReceivingEndIncompatibleMessageSerializati
      "Could not establish connection. Receiving end uses different message "
@@ -9,7 +9,7 @@
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -734,7 +734,7 @@ void MessageService::OpenChannelToNativeAppImpl(
+@@ -738,7 +738,7 @@ void MessageService::OpenChannelToNativeAppImpl(
      return;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

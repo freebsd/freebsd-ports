@@ -1,6 +1,6 @@
---- content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2026-08-31 10:59:09 UTC
+--- content/browser/zygote_host/zygote_host_impl_linux.cc.orig	2026-10-18 13:29:39 UTC
 +++ content/browser/zygote_host/zygote_host_impl_linux.cc
-@@ -20,8 +20,10 @@
+@@ -21,8 +21,10 @@
  #include "build/build_config.h"
  #include "content/common/zygote/zygote_commands_linux.h"
  #include "content/common/zygote/zygote_communication_linux.h"
@@ -11,7 +11,7 @@
  #include "sandbox/linux/services/credentials.h"
  #include "sandbox/linux/services/namespace_sandbox.h"
  #include "sandbox/linux/suid/client/setuid_sandbox_host.h"
-@@ -39,6 +41,7 @@ namespace content {
+@@ -40,6 +42,7 @@ namespace content {
  
  namespace {
  
@@ -19,7 +19,7 @@
  // Receive a fixed message on fd and return the sender's PID.
  // Returns true if the message received matches the expected message.
  bool ReceiveFixedMessage(int fd,
-@@ -61,6 +64,7 @@ bool ReceiveFixedMessage(int fd,
+@@ -62,6 +65,7 @@ bool ReceiveFixedMessage(int fd,
      return false;
    return true;
  }
@@ -27,7 +27,7 @@
  
  }  // namespace
  
-@@ -70,9 +74,13 @@ ZygoteHost* ZygoteHost::GetInstance() {
+@@ -71,9 +75,13 @@ ZygoteHost* ZygoteHost::GetInstance() {
  }
  
  ZygoteHostImpl::ZygoteHostImpl()
@@ -41,7 +41,7 @@
        sandbox_binary_(),
        zygote_pids_lock_(),
        zygote_pids_() {}
-@@ -85,6 +93,7 @@ ZygoteHostImpl* ZygoteHostImpl::GetInstance() {
+@@ -86,6 +94,7 @@ ZygoteHostImpl* ZygoteHostImpl::GetInstance() {
  }
  
  void ZygoteHostImpl::Init(const base::CommandLine& command_line) {
@@ -49,7 +49,7 @@
    if (command_line.HasSwitch(sandbox::policy::switches::kNoSandbox)) {
      return;
    }
-@@ -139,6 +148,7 @@ void ZygoteHostImpl::Init(const base::CommandLine& com
+@@ -140,6 +149,7 @@ void ZygoteHostImpl::Init(const base::CommandLine& com
             "you can try using --"
          << sandbox::policy::switches::kNoSandbox << ".";
    }
@@ -57,20 +57,36 @@
  }
  
  void ZygoteHostImpl::AddZygotePid(pid_t pid) {
-@@ -163,6 +173,7 @@ pid_t ZygoteHostImpl::LaunchZygote(
+@@ -164,6 +174,7 @@ ZygoteLaunchCompletionCallback ZygoteHostImpl::LaunchZ
      base::CommandLine* cmd_line,
      base::ScopedFD* control_fd,
      base::FileHandleMappingVector additional_remapped_fds) {
 +#if !BUILDFLAG(IS_BSD)
-   int fds[2];
-   CHECK_EQ(0, socketpair(AF_UNIX, SOCK_SEQPACKET | SOCK_CLOEXEC, 0, fds));
-   CHECK(base::UnixDomainSocket::EnableReceiveProcessId(fds[0]));
-@@ -251,9 +262,12 @@ pid_t ZygoteHostImpl::LaunchZygote(
+   has_zygote_ = true;
  
+   int fds[2];
+@@ -209,10 +220,15 @@ ZygoteLaunchCompletionCallback ZygoteHostImpl::LaunchZ
+   const pid_t pid = process.Pid();
    AddZygotePid(pid);
-   return pid;
+   return base::BindOnce([](pid_t pid) { return pid; }, pid);
 +#else
-+  return 0;
++  const pid_t pid = getpid();
++  return base::BindOnce([](pid_t pid) { return pid; }, pid);
++#endif
+ }
+ 
+ pid_t ZygoteHostImpl::FinishSandboxedZygoteLaunch(base::Process process,
+                                                   int control_fd) {
++#if !BUILDFLAG(IS_BSD)
+   // The namespace and SUID sandbox will execute the zygote in a new
+   // PID namespace, and the main zygote process will then fork from
+   // there. Watch now our elaborate dance to find and validate the
+@@ -263,9 +279,12 @@ pid_t ZygoteHostImpl::FinishSandboxedZygoteLaunch(base
+ 
+   AddZygotePid(real_pid);
+   return real_pid;
++#else
++  return getpid();
 +#endif
  }
  

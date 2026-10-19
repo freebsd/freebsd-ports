@@ -1,6 +1,6 @@
---- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/startup/startup_browser_creator.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -136,7 +136,7 @@
+@@ -137,7 +137,7 @@
  #include "chrome/credential_provider/common/gcp_strings.h"
  #endif  // BUILDFLAG(IS_WIN)
  

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_widget.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/views/frame/browser_widget.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/views/frame/browser_widget.cc
-@@ -50,7 +50,7 @@
+@@ -51,7 +51,7 @@
  #include "ui/aura/window.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -87,7 +87,7 @@ class ThemeChangedObserver : public views::WidgetObser
+@@ -88,7 +88,7 @@ class ThemeChangedObserver : public views::WidgetObser
  };
  
  bool IsUsingLinuxSystemTheme(Profile* profile) {
@@ -18,7 +18,7 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -165,7 +165,7 @@ void BrowserWidget::InitBrowserWidget() {
+@@ -167,7 +167,7 @@ void BrowserWidget::InitBrowserWidget() {
  #endif
    }
  
@@ -27,7 +27,7 @@
    params.startup_id =
        BrowserInitState::From(browser)->create_params().startup_id;
  #endif
-@@ -225,7 +225,7 @@ void BrowserWidget::InitBrowserWidget() {
+@@ -227,7 +227,7 @@ void BrowserWidget::InitBrowserWidget() {
                                  base::Unretained(this)));
    }
  
@@ -36,7 +36,7 @@
    SelectNativeTheme();
  #else
    SetNativeTheme(ui::NativeTheme::GetInstanceForNativeUi());
-@@ -539,7 +539,7 @@ void BrowserWidget::OnMenuClosed() {
+@@ -544,7 +544,7 @@ void BrowserWidget::OnMenuClosed() {
  }
  
  void BrowserWidget::SelectNativeTheme() {
@@ -45,7 +45,7 @@
    // Use the regular NativeTheme instance if running incognito mode or
    // enterprise isolated mode, regardless of system theme (gtk, qt etc).
    ui::NativeTheme* native_theme = ui::NativeTheme::GetInstanceForNativeUi();
-@@ -586,7 +586,7 @@ void BrowserWidget::OnGlassFrameEligibilityChanged(boo
+@@ -591,7 +591,7 @@ void BrowserWidget::OnGlassFrameEligibilityChanged(boo
  bool BrowserWidget::RegenerateFrameOnThemeChange(
      BrowserThemeChangeType theme_change_type) {
    bool need_regenerate = false;

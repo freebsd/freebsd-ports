@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/features/password_features.cc.orig	2026-09-25 15:26:43 UTC
+--- components/password_manager/core/browser/features/password_features.cc.orig	2026-10-18 13:29:39 UTC
 +++ components/password_manager/core/browser/features/password_features.cc
 @@ -76,7 +76,7 @@ BASE_FEATURE(kClearUndecryptablePasswords,
  BASE_FEATURE(kClearUndecryptablePasswordsOnSync,
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -189,7 +189,7 @@ BASE_FEATURE(kPreventPasswordManagerOnFederatedLogin,
+@@ -188,7 +188,7 @@ BASE_FEATURE(kPreventPasswordManagerOnFederatedLogin,
  // Remove in or after M155.
  BASE_FEATURE(kRecordPasswordReadiness, base::FEATURE_ENABLED_BY_DEFAULT);
  

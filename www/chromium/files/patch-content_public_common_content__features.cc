@@ -1,4 +1,4 @@
---- content/public/common/content_features.cc.orig	2026-09-25 15:26:43 UTC
+--- content/public/common/content_features.cc.orig	2026-10-18 13:29:39 UTC
 +++ content/public/common/content_features.cc
 @@ -159,7 +159,7 @@ BASE_FEATURE(kAttachUnownedInnerWebContents, base::FEA
  
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1279,10 +1279,10 @@ BASE_FEATURE(kWebAssemblyTiering, base::FEATURE_ENABLE
+@@ -1309,10 +1309,10 @@ BASE_FEATURE(kWebAssemblyTiering, base::FEATURE_ENABLE
  
  // Enable WebAssembly trap handler.
  BASE_FEATURE(kWebAssemblyTrapHandler,
@@ -31,7 +31,7 @@
       defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -1343,7 +1343,11 @@ BASE_FEATURE(kWebUIInProcessResourceLoadingV2,
+@@ -1375,7 +1375,11 @@ BASE_FEATURE(kWebUIInProcessResourceLoadingV2,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

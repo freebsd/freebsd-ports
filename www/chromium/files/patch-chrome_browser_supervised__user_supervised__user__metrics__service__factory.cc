@@ -1,6 +1,6 @@
---- chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc
-@@ -17,7 +17,7 @@
+@@ -16,7 +16,7 @@
  #include "components/supervised_user/core/browser/supervised_user_metrics_service.h"
  #include "content/public/browser/browser_context.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/supervised_user/linux_mac_windows/supervised_user_extensions_metrics_delegate_impl.h"
  #endif
  
-@@ -70,7 +70,7 @@ SupervisedUserMetricsServiceFactory::BuildServiceInsta
+@@ -69,7 +69,7 @@ SupervisedUserMetricsServiceFactory::BuildServiceInsta
    std::unique_ptr<supervised_user::SupervisedUserMetricsService ::
                        SupervisedUserMetricsServiceExtensionDelegate>
        extensions_metrics_delegate = nullptr;

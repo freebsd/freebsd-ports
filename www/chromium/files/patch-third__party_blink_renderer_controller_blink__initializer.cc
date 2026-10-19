@@ -1,4 +1,4 @@
---- third_party/blink/renderer/controller/blink_initializer.cc.orig	2026-09-25 15:26:43 UTC
+--- third_party/blink/renderer/controller/blink_initializer.cc.orig	2026-10-18 13:29:39 UTC
 +++ third_party/blink/renderer/controller/blink_initializer.cc
 @@ -83,12 +83,12 @@
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
@@ -16,8 +16,8 @@
  #endif
  
 @@ -260,7 +260,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
+           CrossThreadBindRepeating(&CrashMemoryMetricsReporterImpl::Bind)),
        main_thread_task_runner);
- #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/sampling/task_group.h.orig	2026-02-11 09:05:39 UTC
+--- chrome/browser/task_manager/sampling/task_group.h.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/task_manager/sampling/task_group.h
 @@ -40,7 +40,7 @@ inline constexpr int kUnsupportedVMRefreshFlags =
      REFRESH_TYPE_WEBCACHE_STATS | REFRESH_TYPE_NETWORK_USAGE |
@@ -8,7 +8,7 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
      REFRESH_TYPE_FD_COUNT |
  #endif
-     REFRESH_TYPE_HARD_FAULTS;
+     REFRESH_TYPE_HARD_FAULTS | REFRESH_TYPE_CPPGC_MEMORY;
 @@ -139,7 +139,7 @@ class TaskGroup {
    int64_t hard_faults_per_second() const { return hard_faults_per_second_; }
  #endif  // BUILDFLAG(IS_WIN)

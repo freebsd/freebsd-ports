@@ -1,7 +1,7 @@
---- chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/chrome_browser_interface_binders_webui_parts_desktop.cc
-@@ -140,7 +140,7 @@
- #include "ui/webui/resources/cr_components/theme_color_picker/theme_color_picker.mojom.h"
+@@ -143,7 +143,7 @@
+ #include "ui/webui/resources/js/batch_upload_promo/batch_upload_promo.mojom.h"
  #include "ui/webui/resources/js/browser_command/browser_command.mojom.h"
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/app_home/app_home.mojom.h"
  #include "chrome/browser/ui/webui/app_home/app_home_ui.h"
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
-@@ -359,7 +359,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -319,7 +319,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          HistoryClustersSidePanelUI, NewTabPageUI, BookmarksSidePanelUI>(map);
    }
  
@@ -18,7 +18,7 @@
    RegisterWebUIControllerInterfaceBinder<whats_new::mojom::PageHandlerFactory,
                                           WhatsNewUI>(map);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -389,7 +389,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -329,7 +329,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
  
    RegisterWebUIControllerInterfaceBinder<
        browser_command::mojom::CommandHandlerFactory,
@@ -27,7 +27,7 @@
        WhatsNewUI,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
        NewTabPageUI>(map);
-@@ -579,7 +579,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -512,7 +512,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
          DrivePickerUntrustedHostUI>(map);
    }
  
@@ -36,7 +36,7 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  
-@@ -605,7 +605,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
+@@ -538,7 +538,7 @@ void PopulateChromeWebUIFrameBindersPartsDesktop(
                                           webapps::AppHomeUI>(map);
  #endif
  

@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h.orig	2026-10-18 13:29:39 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.h
-@@ -60,7 +60,7 @@ class SigninViewControllerDelegateViews
+@@ -59,7 +59,7 @@ class SigninViewControllerDelegateViews
        SyncConfirmationStyle style,
        bool is_sync_promo);
  
@@ -9,7 +9,7 @@
    static std::unique_ptr<views::WebView> CreateHistorySyncOptInWebView(
        BrowserWindowInterface* browser,
        bool should_close_modal_dialog,
-@@ -86,7 +86,7 @@ class SigninViewControllerDelegateViews
+@@ -85,7 +85,7 @@ class SigninViewControllerDelegateViews
        SignoutConfirmationCallback callback);
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
@@ -18,7 +18,7 @@
    static std::unique_ptr<views::WebView>
    CreateManagedUserNoticeConfirmationWebView(
        BrowserWindowInterface& browser,
-@@ -158,7 +158,7 @@ class SigninViewControllerDelegateViews
+@@ -157,7 +157,7 @@ class SigninViewControllerDelegateViews
        std::optional<int> dialog_width,
        InitializeSigninWebDialogUI initialize_signin_web_dialog_ui);
  

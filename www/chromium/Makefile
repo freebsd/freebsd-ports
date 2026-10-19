@@ -1,6 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	154.0.8037.57
-PORTREVISION=	3
+PORTVERSION=	156.0.8078.47
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 TSV=		7.0.2
@@ -9,14 +8,13 @@ MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official
 		https://nerd.hu/distfiles/:external \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio \
 		https://github.com/chromium-linux-tarballs/chromium-tarballs/releases/download/${PORTVERSION}/:unofficial
-DISTFILES=	${DISTNAME}-linux${EXTRACT_SUFX}:unofficial \
+DISTFILES=	${DISTNAME}-lite${EXTRACT_SUFX} \
 		${DISTNAME}-profdata${EXTRACT_SUFX}:external \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio \
 		TypeScript-${TSV}-vendor.tar.gz:external
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	rollup:rollup:v4.60.4:rollup/rollup \
-		evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/esbuild \
+GH_TUPLE=	evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/esbuild \
 		microsoft:TypeScript:v${TSV}:typescript/typescript
 
 MAINTAINER=	chromium@FreeBSD.org
@@ -38,6 +36,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		node:www/node \
 		rustc:lang/rust \
 		tsc:lang/typescript-go \
+		vulkan-headers>0:graphics/vulkan-headers \
 		xcb-proto>0:x11/xcb-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
@@ -85,19 +84,11 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
-USES=		bison cargo compiler:c++17-lang cpe desktop-file-utils gl gmake \
+USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gmake \
 		go:no_targets gnome iconv:wchar_t jpeg localbase:ldflags ninja perl5 \
 		pkgconfig python:build qt:5 shebangfix tar:xz xorg
 
 WITHOUT_FBSD10_FIX=	Yes
-
-CARGO_CARGOTOML=	${WRKSRC}/rollup/rust/Cargo.toml
-CARGO_CARGOLOCK=	${WRKSRC}/rollup/rust/Cargo.lock
-CARGO_TARGET_DIR=	${WRKSRC}/rollup/rust/target
-
-CARGO_INSTALL=		No
-CARGO_BUILD=		No
-CARGO_TEST=		No
 
 _ESBUILD_VERSION=	${MAKE} -C ${PORTSDIR}/devel/esbuild -V DISTVERSION
 
@@ -149,6 +140,8 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_system_libffi=true \
 		use_system_libjpeg=true \
 		use_udev=false \
+		v8_metagen_libclang_so="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so" \
+		v8_metagen_libclang_bindings_dir="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/python${PYTHON_VER}/site-packages" \
 		extra_cxxflags="${CXXFLAGS} -I${LOCALBASE}/include/libepoll-shim ${PINCLUDES}" \
 		extra_ldflags="${LDFLAGS}" \
 		ffmpeg_branding="${FFMPEG_BRAND}" \
@@ -305,6 +298,10 @@ pre-everything::
 	@${ECHO_MSG} "- 1.5 million free inodes"
 	@${ECHO_MSG}
 
+post-patch:
+	patch -d ${WRKSRC}/typescript/tsc/internal/bundled/libs -Ep2 < \
+		${WRKSRC}/third_party/typescript/linux-amd64/3pp/patches/typescript_native_preview.patch
+
 pre-configure:
 	# We used to remove bundled libraries to be sure that chromium uses
 	# system libraries and not shipped ones.
@@ -326,29 +323,17 @@ pre-configure:
 	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
 	touch ${WRKDIR}/pulseaudio-${PULSEV}/src/pulse/version.h
-	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|' \
+	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|g;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|g' \
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
-		${WRKSRC}/build/rust/rust_bindgen_generator.gni
-	patch -d ${WRKSRC}/typescript/tsc/internal/bundled/libs -Ep2 < \
-		${WRKSRC}/third_party/typescript/linux-amd64/3pp/patches/typescript_native_preview.patch
+		${WRKSRC}/build/rust/rust_bindgen_generator.gni \
+		${WRKSRC}/v8/BUILD.gn
 
 pre-build:
 	cd ${WRKSRC}/typescript/tsc && \
 		${SETENV} ${MAKE_ENV} go build -v -p ${MAKE_JOBS_NUMBER} -mod=vendor ./cmd/tsgo && \
 		ln -sf ${WRKSRC}/typescript/tsc/tsgo \
 		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc
-	@${CARGO_CARGO_RUN} build \
-		--manifest-path ${CARGO_CARGOTOML} \
-		--verbose \
-		--verbose \
-		${CARGO_BUILD_ARGS}
-	(cd ${WRKSRC}/third_party/devtools-frontend/src/node_modules/@rollup && \
-		mkdir -p rollup-freebsd && \
-		cp ${CARGO_TARGET_DIR}/release/libbindings_napi.so \
-			rollup-freebsd/rollup.freebsd.node && \
-		echo '{ "main": "./rollup.freebsd.node" }' \
-			> rollup-freebsd/package.json)
 
 do-configure:
 	(cd ${WRKSRC}/esbuild && \
@@ -358,7 +343,9 @@ do-configure:
 		ln -sf ${WRKSRC}/esbuild/npm/esbuild \
 		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
 	)
+
 	# GN generator bootstrapping and generating ninja files
+	${LN} -sf ${WRKSRC}/out/${BUILDTYPE}/gn ${WRKSRC}/buildtools/linux64/gn
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
 		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
 		./tools/gn/bootstrap/bootstrap.py ${GN_BOOTSTRAP_FLAGS}
