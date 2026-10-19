@@ -10,7 +10,7 @@ WWW=		https://github.com/linux-nvme/libnvme
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 BUILD_DEPENDS=	freebsd-nvme-shim>0:devel/freebsd-nvme-shim \
 		bash>0:shells/bash
 LIB_DEPENDS=	libjson-c.so:devel/json-c
