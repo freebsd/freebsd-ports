@@ -482,12 +482,14 @@ post-patch:
 	done
 # FreeBSD: copy per-dependency FreeBSD patches to WRKSRC/bazel/ so Bazel can
 # reference them as @pomerium_envoy//bazel:<name> from the http_archive patches
-# lists injected by freebsd-repositories.patch (v8, msgpack, dd_trace,
-# rules_foreign_cc) and the WORKSPACE luajit definition.
+# lists injected by freebsd-repositories.patch (v8, msgpack, gperftools,
+# dd_trace, rules_foreign_cc) and the WORKSPACE luajit definition.
 	${CP} ${FILESDIR}/v8_freebsd.patch \
 		${WRKSRC}/bazel/v8_freebsd.patch
 	${CP} ${FILESDIR}/msgpack_freebsd.patch \
 		${WRKSRC}/bazel/msgpack_freebsd.patch
+	${CP} ${FILESDIR}/gperftools_freebsd.patch \
+		${WRKSRC}/bazel/gperftools_freebsd.patch
 	${CP} ${FILESDIR}/dd_trace_freebsd.patch \
 		${WRKSRC}/bazel/dd_trace_freebsd.patch
 	${CP} ${FILESDIR}/luajit_freebsd.patch \

@@ -1,6 +1,6 @@
 --- a/bazel/repositories.bzl
 +++ b/bazel/repositories.bzl
-@@ -636,6 +636,8 @@
+@@ -622,6 +622,8 @@
          name = "msgpack-cxx",
          location_name = "msgpack_cxx",
          build_file = "@envoy//bazel/external:msgpack.BUILD",
@@ -9,7 +9,7 @@
      )
  
  def _hyperscan():
-@@ -669,6 +671,8 @@
+@@ -655,6 +657,8 @@
          "dd-trace-cpp",
          location_name = "dd_trace_cpp",
          repo_mapping = {"@com_google_absl": "@abseil-cpp"},
@@ -18,7 +18,7 @@
      )
  
  def _cpp2sky():
-@@ -761,6 +765,7 @@
+@@ -747,6 +751,7 @@
              "@envoy//bazel:v8_ppc64le.patch",
              # https://issues.chromium.org/issues/423403090
              "@envoy//bazel:v8_python.patch",
@@ -26,7 +26,16 @@
          ],
          patch_args = ["-p1"],
          patch_cmds = [
-@@ -1039,7 +1044,7 @@
+@@ -928,6 +933,8 @@
+ def _gperftools():
+     external_http_archive(
+         name = "gperftools",
++        patches = ["@pomerium_envoy//bazel:gperftools_freebsd.patch"],
++        patch_args = ["-p1"],
+     )
+ 
+ def _jemalloc():
+@@ -1034,7 +1041,7 @@
  def _foreign_cc_dependencies():
      external_http_archive(
          name = "rules_foreign_cc",
