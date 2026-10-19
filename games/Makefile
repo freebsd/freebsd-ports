@@ -1061,7 +1061,6 @@
     SUBDIR += worldofpadman
     SUBDIR += wtf
     SUBDIR += wxlauncher
-    SUBDIR += wyrmgus
     SUBDIR += xasteroids
     SUBDIR += xbat
     SUBDIR += xbill
