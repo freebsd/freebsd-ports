@@ -2,9 +2,10 @@
 -- 1. llvmSearchPaths: add /usr/local/llvmNN/bin (FreeBSD ports layout)
 -- 2. resolveLlvmToolchain: use ld.lld for FreeBSD (same as Linux)
 -- 3. llvmInstallHint: add FreeBSD install hint
---- scripts/build/tools.ts.orig	2026-04-27 08:09:39 UTC
-+++ scripts/build/tools.ts
-@@ -312,6 +312,12 @@ function llvmSearchPaths(os: OS, arch: Arch): string[]
+
+--- scripts/build/tools.ts.orig	2026-10-04 00:00:00 UTC
++++ scripts/build/tools.ts	2026-10-04 00:00:00 UTC
+@@ -345,6 +345,12 @@
      paths.push(`/usr/lib/llvm${LLVM_MAJOR}/bin`);
    }
  
@@ -17,7 +18,7 @@
    return paths;
  }
  
-@@ -332,6 +338,7 @@ function llvmInstallHint(os: OS): string {
+@@ -365,6 +371,7 @@
    if (os === "darwin") return `Install with: brew install llvm@${LLVM_MAJOR}`;
    if (os === "linux")
      return `Install with: apt install clang-${LLVM_MAJOR} lld-${LLVM_MAJOR}  (or equivalent for your distro)`;
@@ -25,9 +26,9 @@
    if (os === "windows") return `Install LLVM ${LLVM_VERSION} from https://github.com/llvm/llvm-project/releases`;
    return "";
  }
-@@ -419,7 +426,7 @@ export function resolveLlvmToolchain(
+@@ -515,7 +522,7 @@
    let ld: string;
-   if (os === "windows") {
+   if (msvcTarget) {
      ld = findLlvmTool("lld-link", paths, os, { checkVersion: false, required: true })?.path ?? "";
 -  } else if (os === "linux") {
 +  } else if (os === "linux" || os === "freebsd") {
