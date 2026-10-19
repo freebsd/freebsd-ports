@@ -1,5 +1,5 @@
 PORTNAME=	zarr
-DISTVERSION=	3.4.0
+DISTVERSION=	3.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}donfig>=0.8:devel/py-donfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-crc32c>=1.5:devel/py-google-crc32c@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgspec>=0.19:devel/py-msgspec@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numcodecs>=0.14:misc/py-numcodecs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numcodecs>=0.16:misc/py-numcodecs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=2:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=22.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.14:devel/py-typing-extensions@${PY_FLAVOR}
@@ -36,7 +36,7 @@ NO_ARCH=	yes
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${WRKSRC}/src
 TEST_ARGS=	--ignore ${WRKSRC}/tests/test_regression
 
-# tests as of 3.4.0:
+# tests as of 3.4.1:
 # Results (829.32s):
 #          1 failed
 #      28056 passed
