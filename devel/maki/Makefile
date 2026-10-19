@@ -1,7 +1,6 @@
 PORTNAME=	maki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.3
-PORTREVISION=	1
+DISTVERSION=	0.6.4
 CATEGORIES=	devel
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -11,12 +10,12 @@ WWW=		https://maki.sh
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	bash:shells/bash
+
 USES=		cargo gmake perl5 pkgconfig python:build ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	tontinton
 USE_PERL5=	build
-
-RUN_DEPENDS=	bash:shells/bash
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
