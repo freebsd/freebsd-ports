@@ -11,6 +11,9 @@ WWW=		https://01.org/compute-runtime
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	Unmaintained port that nothing depends on
+EXPIRATION_DATE=	2026-12-25
+
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 #BROKEN_FreeBSD_14_i386=	lld crashes during build
