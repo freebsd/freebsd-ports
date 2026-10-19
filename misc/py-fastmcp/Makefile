@@ -1,5 +1,5 @@
 PORTNAME=	fastmcp # should be updated together with fastmcp-slim
-DISTVERSION=	4.0.10
+DISTVERSION=	4.1.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
