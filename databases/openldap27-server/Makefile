@@ -47,7 +47,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	0.201
 
@@ -78,9 +78,6 @@ OPTIONS_GROUP_OVLYS+=	ACCESSLOG ADDPARTIAL ALLOP AUDITLOG AUTOCA AUTOGROUP \
 
 OPTIONS_DEFINE+=	ACI ARGON2 DYNACL LLOADD NETWORKING OUTLOOK PBKDF2 \
 			RLOOKUPS SLAPI SLP
-
-OPTIONS_EXCLUDE_FreeBSD_15=	SMBPWD # Only works with Heimdal
-OPTIONS_EXCLUDE_FreeBSD_16=	SMBPWD # Only works with Heimdal
 
 OPTIONS_DEFAULT+=	${BKNDS_DEFAULTS} ${OPTIONS_GROUP_OVLYS} ARGON2 LLOADD
 
@@ -367,6 +364,14 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e '/ldap_dump_(connection|requests_and_responses);/d' \
 		${WRKSRC}/libraries/libldap/ldap.map.in
+.endif
+
+post-patch-SMBPWD-on:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
+	@${REINPLACE_CMD} -e 's|-DDO_KRB5 ||' \
+		-e 's|^HEIMDAL_INC =.*|HEIMDAL_INC =|' \
+		-e 's|^HEIMDAL_LIB =.*|HEIMDAL_LIB =|' \
+		${WRKSRC}/contrib/slapd-modules/smbk5pwd/Makefile
 .endif
 
 post-patch-NSSOV-on:
