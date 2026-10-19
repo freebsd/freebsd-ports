@@ -1,0 +1,12 @@
+Rust nightly toolchain (rustc, cargo, rust-std and rust-src) pinned to
+the version required by lang/bun and installed from the official
+upstream binary distribution.
+
+This port exists because lang/bun requires a specific Rust nightly:
+bun's source uses unstable language and library features, and its
+release build passes -Zbuild-std, which needs the rust-src component.
+Depending on lang/rust-nightly makes lang/bun break whenever that port
+is updated, so lang/bun depends on this pinned toolchain instead.
+
+The toolchain is installed under PREFIX/rust-nightly-bun and does not
+conflict with lang/rust or lang/rust-nightly.
