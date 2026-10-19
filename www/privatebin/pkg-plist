@@ -4,6 +4,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY.md
 %%WWWDIR%%/.htaccess.disabled
+@comment %%WWWDIR%%/.run/Frontend tests.run.xml
 %%WWWDIR%%/Procfile
 %%WWWDIR%%/bin/administration
 %%WWWDIR%%/bin/migrate
@@ -69,6 +70,7 @@
 %%WWWDIR%%/i18n/tr.json
 %%WWWDIR%%/i18n/uk.json
 %%WWWDIR%%/i18n/zh.json
+%%WWWDIR%%/i18n/zh-tw.json
 %%WWWDIR%%/img/bootstrap-icons.svg
 %%WWWDIR%%/img/android-chrome-192x192.png
 %%WWWDIR%%/img/android-chrome-512x512.png
@@ -96,12 +98,10 @@
 %%WWWDIR%%/index.php.bak
 %%WWWDIR%%/index.php.orig
 %%WWWDIR%%/js/base-x-5.0.1.js
-%%WWWDIR%%/js/bootstrap-3.4.1.js
 %%WWWDIR%%/js/bootstrap-5.3.8.js
 %%WWWDIR%%/js/comment.jsonld
 %%WWWDIR%%/js/commentmeta.jsonld
 %%WWWDIR%%/js/dark-mode-switch.js
-%%WWWDIR%%/js/jquery-3.7.1.js
 %%WWWDIR%%/js/kjua-0.10.0.js
 %%WWWDIR%%/js/legacy.js
 %%WWWDIR%%/js/package-lock.json
@@ -110,7 +110,7 @@
 %%WWWDIR%%/js/pastemeta.jsonld
 %%WWWDIR%%/js/prettify.js
 %%WWWDIR%%/js/privatebin.js
-%%WWWDIR%%/js/purify-3.4.12.js
+%%WWWDIR%%/js/purify-3.4.17.js
 %%WWWDIR%%/js/showdown-2.1.0.js
 %%WWWDIR%%/js/types.jsonld
 %%WWWDIR%%/js/zlib-1.3.2.js
@@ -137,6 +137,7 @@
 %%WWWDIR%%/lib/Persistence/PurgeLimiter.php
 %%WWWDIR%%/lib/Persistence/ServerSalt.php
 %%WWWDIR%%/lib/Persistence/TrafficLimiter.php
+%%WWWDIR%%/lib/Proxy/ChhotoProxy.php
 %%WWWDIR%%/lib/Request.php
 %%WWWDIR%%/lib/TemplateSwitcher.php
 %%WWWDIR%%/lib/View.php
@@ -147,7 +148,6 @@
 %%WWWDIR%%/manifest.json
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/tpl/.htaccess
-%%WWWDIR%%/tpl/bootstrap.php
 %%WWWDIR%%/tpl/bootstrap5.php
 %%WWWDIR%%/tpl/shortenerproxy.php
 %%WWWDIR%%/vendor/.htaccess
