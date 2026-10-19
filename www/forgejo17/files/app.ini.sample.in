@@ -1,0 +1,94 @@
+#
+# Sample Configuration for Forgejo using SQLite
+#
+# For information on the available settings, consult the online
+# documentation, or see the accompanying file app.ini.defaults, which
+# contains the settings incorporated into the forgejo binary.
+#
+# This sample configuration runs Forgejo with a local database.  Before
+# running this configuration, make sure to change the INTERNAL_TOKEN,
+# JWT_SECRET, and SECRET_KEY variables.  SECRET_KEY is a password of your
+# choosing, INTERNAL_TOKEN is a 64-byte random number in BASE64 encoding,
+# JWT_SECRET is a 32-byte random number in BASE64 encoding.
+#
+# You can generate appropriate values using:
+#   gitea generate secret [INTERNAL_TOKEN|JWT_SECRET|LFS_JWT_SECRET|SECRET_KEY]
+# and then copy that output to the appropriate place in this file.
+#
+# You can let Forgejo add these to the config for you; you need to make
+# app.ini writeable by the git user.
+#
+# There are no pre-configured users; the first user to register becomes an
+# admin.  In this sample configuration, the HTTP server only listens on
+# localhost.
+#
+# If you'd rather use the web-based installer, remove this conf/app.ini file
+# and make %%ETCDIR%%/conf writeable to the git user.
+
+APP_NAME = Forgejo: A self-hosted lightweight software forge
+RUN_MODE = prod
+RUN_USER = %%GITUSER%%
+
+[database]
+DB_TYPE  = sqlite3
+HOST     = 127.0.0.1:3306
+NAME     = forgejo
+PASSWD   =
+PATH     = %%DBDIR%%/forgejo.db
+SSL_MODE = disable
+USER     = root
+
+[indexer]
+ISSUE_INDEXER_PATH = %%DBDIR%%/indexers/issues.bleve
+
+[log]
+LEVEL     = Info
+MODE      = file
+ROOT_PATH = %%LOGDIR%%
+
+[mailer]
+ENABLED = false
+
+[oauth2]
+JWT_SECRET = CHANGE_ME
+
+[picture]
+AVATAR_UPLOAD_PATH      = %%DBDIR%%/data/avatars
+DISABLE_GRAVATAR        = true
+ENABLE_FEDERATED_AVATAR = false
+
+[repository]
+ROOT = %%DBDIR%%/forgejo-repositories
+# Forgejo's default is 'bash', so if you have bash installed, you can comment
+# this out.
+SCRIPT_TYPE = sh
+
+[repository.upload]
+TEMP_PATH = %%DBDIR%%/data/tmp/uploads
+
+[security]
+INSTALL_LOCK   = true
+INTERNAL_TOKEN = CHANGE_ME
+SECRET_KEY     = CHANGE_ME
+
+[session]
+PROVIDER        = file
+PROVIDER_CONFIG = %%DBDIR%%/data/sessions
+
+[server]
+APP_DATA_PATH = %%DBDIR%%/data
+DISABLE_SSH   = false
+DOMAIN        = localhost
+HTTP_ADDR     = 127.0.0.1
+HTTP_PORT     = 3000
+OFFLINE_MODE  = false
+ROOT_URL      = http://localhost:3000/
+SSH_DOMAIN    = %(DOMAIN)s
+SSH_PORT      = 22
+
+[service]
+DISABLE_REGISTRATION   = false
+ENABLE_CAPTCHA         = true
+ENABLE_NOTIFY_MAIL     = false
+REGISTER_EMAIL_CONFIRM = false
+REQUIRE_SIGNIN_VIEW    = false
