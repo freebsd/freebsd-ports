@@ -1,6 +1,5 @@
 PORTNAME=	ormsgpack
-DISTVERSION=	1.12.2
-PORTREVISION=	7
+DISTVERSION=	1.13.0
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,29 +37,31 @@ GH_ACCOUNT=	aviramha
 
 CARGO_CRATES=	ahash-0.8.12 \
 		autocfg-1.5.0 \
-		bytecount-0.6.9 \
 		cfg-if-1.0.4 \
-		chrono-0.4.43 \
+		chrono-0.4.45 \
 		crunchy-0.2.4 \
 		half-2.7.1 \
-		itoa-1.0.17 \
+		heck-0.5.0 \
+		itoa-1.0.18 \
 		libc-0.2.180 \
-		memoffset-0.9.1 \
 		num-traits-0.2.19 \
 		once_cell-1.21.3 \
 		portable-atomic-1.13.0 \
 		proc-macro2-1.0.105 \
-		pyo3-0.27.2 \
-		pyo3-build-config-0.27.2 \
-		pyo3-ffi-0.27.2 \
+		pyo3-0.30.1 \
+		pyo3-build-config-0.30.1 \
+		pyo3-ffi-0.30.1 \
+		pyo3-macros-0.30.1 \
+		pyo3-macros-backend-0.30.1 \
 		quote-1.0.43 \
-		serde-1.0.228 \
+		serde-1.0.229 \
 		serde_bytes-0.11.19 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
 		simdutf8-0.1.5 \
-		smallvec-1.15.1 \
+		smallvec-1.16.2 \
 		syn-2.0.114 \
+		syn-3.0.2 \
 		target-lexicon-0.13.4 \
 		unicode-ident-1.0.22 \
 		version_check-0.9.5 \
@@ -73,7 +74,8 @@ CARGO_TEST=	no
 CARGO_TARGET_DIR=	${WRKSRC}/target
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
-# tests as of 1.12.1: 516 passed, 1 skipped in 1.16s
+# tests as of 1.13.0: 623 passed in 0.61s
 
 .include <bsd.port.mk>
