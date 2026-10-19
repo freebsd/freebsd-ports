@@ -1,5 +1,6 @@
 PORTNAME=	mozc
 PORTVERSION=	3.35.6354.101
+PORTREVISION=	1
 CATEGORIES=	japanese
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILE_DEFAULT}
@@ -29,16 +30,6 @@ CONFLICTS_INSTALL+=	${P}-2.*
 .endfor
 
 .if ${BUILD_MOZC_LIST:Mmozc_el} != "mozc_el"
-LICENSE=	BSD3CLAUSE APACHE20 MIT
-LICENSE_COMB=	multi
-LICENSE_FILE_BSD3CLAUSE=	${WRKDIR}/LICENSE.BSD3CLAUSE
-LICENSE_DISTFILES_BSD3CLAUSE=	${DISTFILE_DEFAULT} \
-				protobuf-34.1.bazel.tar.gz
-LICENSE_FILE_APACHE20=	${WRKDIR}/LICENSE.abseil
-LICENSE_DISTFILES_APACHE20=	abseil-cpp-20260107.1.tar.gz
-LICENSE_FILE_MIT=	${WRKDIR}/LICENSE.utf8_range
-LICENSE_DISTFILES_MIT=	protobuf-34.1.bazel.tar.gz
-
 BUILD_DEPENDS=	bazel9>=9.0.0:devel/bazel9
 USES=		compiler:c++20-lang pkgconfig java:build python:3.12+,build
 USE_CXXSTD=	c++20
@@ -49,22 +40,7 @@ MAKE_ENV+=	JAVA_HOME=${JAVA_HOME:Q}
 .if ${BUILD_MOZC_LIST:Mmozc_server} == "mozc_server"
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-server
-
-LICENSE+=	BSD2CLAUSE NAISTL
-LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/src/japanese_usage_dictionary/LICENSE
-LICENSE_DISTFILES_BSD2CLAUSE=	${DISTFILE_udic}
-LICENSE_NAME_NAISTL=	Nara Institute of Science and Technology License
-LICENSE_PERMS_NAISTL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_FILE_NAISTL=	${WRKSRC}/src/data/dictionary_oss/README.txt
-LICENSE_DISTFILES_NAISTL=	${DISTFILE_DEFAULT}
-LICENSE_FILE_MIT=	${WRKDIR}/LICENSE.MIT.server
-LICENSE_DISTFILES_MIT+=	${DISTFILE_DEFAULT}
 .elif ${BUILD_MOZC_LIST:Mmozc_tool} == "mozc_tool"
-LICENSE+=	NAISTL
-LICENSE_NAME_NAISTL=	Nara Institute of Science and Technology License
-LICENSE_PERMS_NAISTL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_FILE_NAISTL=	${WRKSRC}/src/data/dictionary_oss/README.txt
-LICENSE_DISTFILES_NAISTL=	${DISTFILE_DEFAULT}
 USES+=		gl qt:6
 USE_GL=		gl
 USE_QT=		base
@@ -74,12 +50,7 @@ USE_GNOME+=	glib20
 USE_GL=		gl
 USE_QT=		base
 .elif ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
-LICENSE=	BSD3CLAUSE BSD2CLAUSE
-LICENSE_COMB=	multi
-LICENSE_FILE_BSD3CLAUSE=	${WRKDIR}/LICENSE.mozc-el
-LICENSE_DISTFILES_BSD3CLAUSE=	${DISTFILE_DEFAULT}
-LICENSE_FILE_BSD2CLAUSE=	${WRKDIR}/LICENSE.leim-list
-LICENSE_DISTFILES_BSD2CLAUSE=
+CATEGORIES+=	elisp
 USES+=		emacs
 .elif ${BUILD_MOZC_LIST:Muim_mozc} == "uim_mozc"
 USES+=		gettext-runtime
@@ -94,6 +65,7 @@ USES+=		gettext-tools
 .if ${BUILD_MOZC_LIST:Mmozc_el} != "mozc_el" || make(makesum)
 . include "${FILESDIR}/Makefile.distfiles"
 .endif
+. include "${FILESDIR}/Makefile.licenses"
 
 EMACS_SITE_LISPDIR?=	share/emacs/site-lisp
 EXTRA_SUB_LIST=	PREFIX LOCALBASE DOCSDIR EMACS_SITE_LISPDIR
@@ -113,26 +85,6 @@ post-extract-zipcode:
 	cd ${BUILD_WRKSRC} && ${UNZIP_NATIVE_CMD} -q \
 	    japanpost_zipcode/jigyosyo.zip -d japanpost_zipcode
 post-extract: post-extract-zipcode
-.endif
-
-.if ${BUILD_MOZC_LIST:Mmozc_el} != "mozc_el"
-post-extract-mozc-licenses:
-	${TAR} -xOf \
-	    ${DISTDIR}/${DIST_SUBDIR}/protobuf-34.1.bazel.tar.gz \
-	    protobuf-34.1/third_party/utf8_range/LICENSE \
-	    > ${WRKDIR}/LICENSE.utf8_range
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKDIR}/LICENSE.BSD3CLAUSE
-	${ECHO_CMD} "" >> ${WRKDIR}/LICENSE.BSD3CLAUSE
-	${TAR} -xOf \
-	    ${DISTDIR}/${DIST_SUBDIR}/protobuf-34.1.bazel.tar.gz \
-	    protobuf-34.1/LICENSE \
-	    >> ${WRKDIR}/LICENSE.BSD3CLAUSE
-	${TAR} -xOf \
-	    ${DISTDIR}/${DIST_SUBDIR}/abseil-cpp-20260107.1.tar.gz \
-	    abseil-cpp-20260107.1/LICENSE \
-	    > ${WRKDIR}/LICENSE.abseil
-
-post-extract: post-extract-mozc-licenses
 .endif
 
 # mozc_server
@@ -169,20 +121,6 @@ PLIST_FILES+=	bin/mozc \
 		%%DATADIR%%/icons/outlined/properties.svg \
 		%%DATADIR%%/icons/outlined/tool.svg
 SUB_FILES+=	mozc
-
-post-extract-mozc_server-mit: post-extract-mozc-licenses
-	${INSTALL_DATA} ${WRKDIR}/LICENSE.utf8_range \
-	    ${WRKDIR}/LICENSE.MIT.server
-	${ECHO_CMD} "" >> ${WRKDIR}/LICENSE.MIT.server
-	${AWK} '\
-	    /<h3>Tamachi Phonetic Kanji Alphabet / { section = 1 } \
-	    section && /^<pre>/ { body = 1; next } \
-	    body && /^<\/pre>/ { exit } \
-	    body { print }' \
-	    ${BUILD_WRKSRC}/data/installer/credits_en.html \
-	    >> ${WRKDIR}/LICENSE.MIT.server
-
-post-extract: post-extract-mozc_server-mit
 
 do-build-mozc_server:
 	${BUILD_MOZC_CMD} \
@@ -273,9 +211,6 @@ do-install-ibus_mozc:
 GH_TUPLE+=	e-kato:macuim:7beac7b:MU
 EXTRACT_ONLY+=	${DISTFILE_MU}
 
-LICENSE_DISTFILES_BSD3CLAUSE+=	${DISTFILE_MU}
-LICENSE_FILE_BSD3CLAUSE=	${WRKDIR}/LICENSE.BSD3CLAUSE.uim
-
 LIB_DEPENDS+=	libuim.so:textproc/uim
 RUN_DEPENDS+=	${LOCALBASE}/libexec/mozc_server:japanese/mozc-server \
 		mozc_tool:japanese/mozc-tool
@@ -306,20 +241,6 @@ post-extract-uim_mozc:
 	    ${BUILD_WRKSRC}/unix/uim/BUILD.bazel
 
 post-extract: post-extract-uim_mozc
-
-post-extract-uim-licenses: post-extract-mozc-licenses post-extract-uim_mozc
-	${INSTALL_DATA} ${WRKDIR}/LICENSE.BSD3CLAUSE \
-	    ${WRKDIR}/LICENSE.BSD3CLAUSE.uim
-	${ECHO_CMD} "" >> ${WRKDIR}/LICENSE.BSD3CLAUSE.uim
-	${SED} -n '1,/^[[:space:]]*\*\//p' \
-	    ${BUILD_WRKSRC}/unix/uim/mozc.cc \
-	    >> ${WRKDIR}/LICENSE.BSD3CLAUSE.uim
-	${ECHO_CMD} "" >> ${WRKDIR}/LICENSE.BSD3CLAUSE.uim
-	${SED} '/^$$/q' \
-	    ${BUILD_WRKSRC}/unix/uim/key_translator.cc \
-	    >> ${WRKDIR}/LICENSE.BSD3CLAUSE.uim
-
-post-extract: post-extract-uim-licenses
 
 post-patch-uim_mozc:
 	${REINPLACE_CMD} -e "s,/usr/lib/mozc,${LOCALBASE}/libexec," \
@@ -364,14 +285,6 @@ DISTFILES+=	legalcode.txt:cc0
 .endif
 
 .if ${BUILD_MOZC_LIST:Mfcitx5_mozc} == "fcitx5_mozc"
-LICENSE+=	LGPL20+ CC0-1.0
-LICENSE_FILE_LGPL20+ =	${WRKDIR}/LICENSE.LGPL20.fcitx5
-LICENSE_DISTFILES_LGPL20+ =	${DISTFILE_fcitx}
-LICENSE_DISTFILES_CC0-1.0=	${DISTFILE_fcitx}
-LICENSE_FILE_BSD3CLAUSE=	${WRKDIR}/LICENSE.BSD3CLAUSE.fcitx5
-LICENSE_DISTFILES_BSD3CLAUSE+=	${DISTFILE_fcitx}
-LICENSE_FILE_CC0-1.0=	${WRKDIR}/LICENSE.CC0
-
 LIB_DEPENDS+=	libFcitx5Core.so:textproc/fcitx5
 RUN_DEPENDS+=	${LOCALBASE}/libexec/mozc_server:japanese/mozc-server \
 		xdg-open:devel/xdg-utils \
@@ -394,31 +307,6 @@ post-extract-fcitx5_mozc:
 	${MV} ${WRKSRC_fcitx}/src/unix/fcitx5 ${BUILD_WRKSRC}/unix
 	${MV} ${WRKSRC_fcitx}/src/unix/fcitx/gen_fcitx_mozc_i18n.sh \
 	    ${BUILD_WRKSRC}/unix/fcitx5/
-
-post-extract-fcitx5-licenses: post-extract-mozc-licenses post-extract-fcitx5_mozc
-	${INSTALL_DATA} ${WRKDIR}/LICENSE.BSD3CLAUSE \
-	    ${WRKDIR}/LICENSE.BSD3CLAUSE.fcitx5
-.for src in fcitx_key_event_handler fcitx_key_translator mozc_client_pool \
-	mozc_response_parser mozc_state surrounding_text_util
-. for ext in cc h
-	${ECHO_CMD} "" >> ${WRKDIR}/LICENSE.BSD3CLAUSE.fcitx5
-	${SED} '/^$$/q' \
-	    ${BUILD_WRKSRC}/unix/fcitx5/${src}.${ext} \
-	    >> ${WRKDIR}/LICENSE.BSD3CLAUSE.fcitx5
-. endfor
-.endfor
-	${INSTALL_DATA} ${PORTSDIR}/Templates/Licenses/LGPL20 \
-	    ${WRKDIR}/LICENSE.LGPL20.fcitx5
-.for src in mozc_engine.cc mozc_engine.h mozc_engine_factory.cc i18nwrapper.h
-	${ECHO_CMD} "" >> ${WRKDIR}/LICENSE.LGPL20.fcitx5
-	${SED} -n '1,/^[[:space:]]*\*\//p' \
-	    ${BUILD_WRKSRC}/unix/fcitx5/${src} \
-	    >> ${WRKDIR}/LICENSE.LGPL20.fcitx5
-.endfor
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/legalcode.txt \
-	    ${WRKDIR}/LICENSE.CC0
-
-post-extract: post-extract-fcitx5-licenses
 
 do-build-fcitx5_mozc:
 	${BUILD_MOZC_CMD} //unix/fcitx5:fcitx5-mozc.so
@@ -465,7 +353,6 @@ do-install-fcitx5_mozc:
 
 # mozc_el
 .if ${BUILD_MOZC_LIST:Mmozc_el} == "mozc_el"
-CATEGORIES+=	elisp
 RUN_DEPENDS+=	${LOCALBASE}/libexec/mozc_server:japanese/mozc-server
 
 NO_ARCH=	yes
@@ -474,15 +361,6 @@ PLIST_FILES+=	${EMACS_SITE_LISPDIR}/mozc/mozc.el.gz \
 PLIST_DIRS+=	${EMACS_SITE_LISPDIR}/mozc
 
 EXTRA_SUB_FILES+= unix/emacs/mozc.el
-
-post-extract-mozc-el-licenses:
-	${SED} -n '/^;; Copyright/p; /^;; Redistribution/,/^$$/p' \
-	    ${BUILD_WRKSRC}/unix/emacs/mozc.el \
-	    > ${WRKDIR}/LICENSE.mozc-el
-	${SED} '/^$$/q' ${FILESDIR}/leim-list.el \
-	    > ${WRKDIR}/LICENSE.leim-list
-
-post-extract: post-extract-mozc-el-licenses
 
 do-build-mozc_el:
 	cd ${BUILD_WRKSRC}/unix/emacs && ${GZIP_CMD} mozc.el

@@ -1,4 +1,4 @@
---- src/ipc/unix_ipc.cc.orig	2026-10-17 20:10:12 UTC
+--- src/ipc/unix_ipc.cc.orig	2026-10-16 12:33:33 UTC
 +++ src/ipc/unix_ipc.cc
 @@ -28,13 +28,16 @@
  // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -112,7 +112,7 @@
      pid_t pid = 0;
      if (::connect(socket_, reinterpret_cast<const sockaddr *>(&address),
                    sun_len) != 0 ||
-@@ -381,7 +417,12 @@ IPCServer::IPCServer(absl::string_view name, int32_t n
+@@ -381,10 +417,22 @@ IPCServer::IPCServer(absl::string_view name, int32_t n
    int on = 1;
    ::setsockopt(socket_, SOL_SOCKET, SO_REUSEADDR, reinterpret_cast<char *>(&on),
                 sizeof(on));
@@ -124,8 +124,26 @@
 +#endif	// __FreeBSD__
    if (is_file_socket) {
      // Linux does not use files for IPC.
++#if defined(__FreeBSD__)
++    if (::fchmod(socket_, 0600) != 0) {
++      LOG(ERROR) << "fchmod() failed: " << strerror(errno);
++      return;
++    }
++#else	// __FreeBSD__
      ::chmod(server_address_.c_str(), 0600);
-@@ -481,4 +522,4 @@ void IPCServer::Terminate() {
++#endif	// __FreeBSD__
+   }
+   if (::bind(socket_, reinterpret_cast<sockaddr *>(&addr), sun_len) != 0) {
+     // The UNIX domain socket file (server_address_) already exists?
+@@ -434,6 +482,7 @@ void IPCServer::Loop() {
+       return;
+     }
+     if (!IsPeerValid(new_sock, &pid)) {
++      ::close(new_sock);
+       continue;
+     }
+ 
+@@ -481,4 +530,4 @@ void IPCServer::Terminate() {
  
  }  // namespace mozc
  
