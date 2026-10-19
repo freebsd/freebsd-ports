@@ -4,7 +4,7 @@ DISTVERSION=	${ELECTRON_VER}
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v44.7.2/:chromium \
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v44.9.0/:chromium \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
 PKGNAMESUFFIX=	${ELECTRON_VER_MAJOR}
 DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.0:chromium \
@@ -91,7 +91,6 @@ GH_TUPLE=	electron:electron:${DISTVERSIONFULL}:electron \
 		ReactiveCocoa:ReactiveObjC:${REACTIVEOBJC_VER}:reactiveobjc \
 		Mantle:Mantle:${MANTLE_VER}:mantle \
 		sparkle-project:Sparkle:${SPARKLE_VER}:sparkle \
-		EngFlow:reclient-configs:${ENGFLOW_RECLIENT_CONFIGS_VER}:reclient_configs \
 		rollup:rollup:v${ROLLUP_VER}:rollup
 USE_GL=		gbm gl glesv2
 USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 libxslt pango
@@ -239,9 +238,9 @@ SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
-CHROMIUM_VER=			152.0.7977.149
+CHROMIUM_VER=			152.0.7977.167
 # See ${WRKSRC}/electron/DEPS for NODE_VER
-NODE_VER=			24.21.0
+NODE_VER=			24.22.0
 # See ${WRKSRC}/electron/DEPS for NAN_VER
 NAN_VER=			675cefebca42410733da8a454c8d9391fcebfbc2
 # See ${WRKSRC}/electron/DEPS for SQUIRREL_MAC_VER
@@ -252,8 +251,6 @@ REACTIVEOBJC_VER=		74ab5baccc6f7202c8ac69a8d1e152c29dc1ea76
 MANTLE_VER=			2a8e2123a3931038179ee06105c9e6ec336b12ea
 # See ${WRKSRC}/electron/DEPS for SPARKLE_VER
 SPARKLE_VER=			79bc9e872948e47877e76f194cb0c8e0412b0b90
-# See ${WRKSRC}/electron/DEPS for ENGFLOW_RECLIENT_CONFIGS_VER
-ENGFLOW_RECLIENT_CONFIGS_VER=	955335c30a752e9ef7bff375baab5e0819b6c00d
 # See ${WRKSRC}/third_party/devtools-frontend/src/node_modules/rollup/package.json
 ROLLUP_VER=			4.60.4
 # See ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild/package.json
@@ -344,8 +341,6 @@ post-extract:
 		${WRKSRC}/third_party/squirrel.mac/vendor/Mantle
 	${MV} ${WRKDIR}/${GH_PROJECT_sparkle}-${SPARKLE_VER} \
 		${WRKSRC}/third_party/squirrel.mac/vendor/Sparkle
-	${MV} ${WRKDIR}/${GH_PROJECT_reclient_configs}-${ENGFLOW_RECLIENT_CONFIGS_VER} \
-		${WRKSRC}/third_party/engflow-reclient-configs
 	${MV} ${WRKDIR}/${GH_PROJECT_rollup}-${ROLLUP_VER} \
 		${WRKSRC}/rollup
 	${MV} ${WRKDIR}/package ${WRKSRC}/esbuild

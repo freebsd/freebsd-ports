@@ -1,4 +1,4 @@
---- electron/BUILD.gn.orig	2026-10-13 23:18:11 UTC
+--- electron/BUILD.gn.orig	2026-10-17 02:46:46 UTC
 +++ electron/BUILD.gn
 @@ -635,7 +635,7 @@ source_set("electron_lib") {
      defines += [ "GDK_DISABLE_DEPRECATION_WARNINGS" ]
@@ -9,7 +9,7 @@
      deps += [
        "//components/crash/core/app",
        "//components/crash/core/browser",
-@@ -742,6 +742,12 @@ source_set("electron_lib") {
+@@ -745,6 +745,12 @@ source_set("electron_lib") {
        cflags_objcc = [ "-fobjc-weak" ]
      }
    }
@@ -22,7 +22,7 @@
    if (is_linux) {
      libs = [ "xshmfence" ]
      deps += [
-@@ -1609,7 +1615,6 @@ if (is_mac) {
+@@ -1638,7 +1644,6 @@ if (is_mac) {
      ":electron_app_manifest",
      ":electron_lib",
      ":electron_win32_resources",
@@ -30,7 +30,7 @@
      "//content:sandbox_helper_win",
      "//electron/buildflags",
      "//third_party/electron_node:libnode",
-@@ -1646,7 +1651,7 @@ if (is_mac) {
+@@ -1675,7 +1680,7 @@ if (is_mac) {
      } else if (is_linux) {
        sources = [
          "shell/app/electron_main_linux.cc",
@@ -39,7 +39,7 @@
          "shell/app/uv_stdio_fix.cc",
          "shell/app/uv_stdio_fix.h",
        ]
-@@ -1674,7 +1679,7 @@ if (is_mac) {
+@@ -1703,7 +1708,7 @@ if (is_mac) {
        public_deps = [ "//tools/v8_context_snapshot" ]
      }
  
@@ -48,7 +48,7 @@
        data_deps += [ "//components/crash/core/app:chrome_crashpad_handler" ]
      }
  
-@@ -1741,7 +1746,7 @@ if (is_mac) {
+@@ -1770,7 +1775,7 @@ if (is_mac) {
          configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
        }
  
@@ -57,7 +57,7 @@
          deps += [ "//sandbox/linux:chrome_sandbox" ]
        }
      }
-@@ -1844,7 +1849,9 @@ dist_zip("electron_dist_zip") {
+@@ -1874,7 +1879,9 @@ dist_zip("electron_dist_zip") {
        ]
      }
  

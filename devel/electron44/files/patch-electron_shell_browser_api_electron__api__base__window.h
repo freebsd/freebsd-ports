@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_base_window.h.orig	2026-08-31 00:54:19 UTC
+--- electron/shell/browser/api/electron_api_base_window.h.orig	2026-10-17 02:46:46 UTC
 +++ electron/shell/browser/api/electron_api_base_window.h
-@@ -273,7 +273,7 @@ class BaseWindow : public gin_helper::TrackableObject<
+@@ -281,7 +281,7 @@ class BaseWindow : public gin_helper::TrackableObject<
    v8::Local<v8::Value> GetAccentColor() const;
  #endif
  

@@ -1,4 +1,4 @@
---- chrome/browser/chrome_content_browser_client.cc.orig	2026-08-24 20:59:34 UTC
+--- chrome/browser/chrome_content_browser_client.cc.orig	2026-10-12 21:12:37 UTC
 +++ chrome/browser/chrome_content_browser_client.cc
 @@ -620,7 +620,7 @@
  #include "third_party/cros_system_api/switches/chrome_switches.h"
@@ -145,7 +145,7 @@
    if (content::AreIsolatedWebAppsEnabled(browser_context) &&
        !browser_context->ShutdownStarted()) {
      factories->emplace(webapps::kIsolatedAppScheme,
-@@ -6565,7 +6567,7 @@ void ChromeContentBrowserClient::
+@@ -6568,7 +6570,7 @@ void ChromeContentBrowserClient::
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -154,7 +154,7 @@
    {
      auto* rph = content::RenderProcessHost::FromID(render_process_id);
      content::BrowserContext* browser_context = rph->GetBrowserContext();
-@@ -6677,7 +6679,7 @@ void ChromeContentBrowserClient::WillCreateURLLoaderFa
+@@ -6680,7 +6682,7 @@ void ChromeContentBrowserClient::WillCreateURLLoaderFa
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -163,7 +163,7 @@
    // Install the HTTP Header Injection proxying factory.
    enterprise_custom_headers::HttpHeaderInjectionProxyingURLLoaderFactory::
        MaybeProxyRequest(browser_context, factory_builder);
-@@ -6727,7 +6729,7 @@ void ChromeContentBrowserClient::WillCreateURLLoaderFa
+@@ -6730,7 +6732,7 @@ void ChromeContentBrowserClient::WillCreateURLLoaderFa
        factory_builder, factory_override, isolation_info);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -172,7 +172,7 @@
    // WARNING: This must be the last wrapper in the chain for
    // TrustedURLLoaderHeaderClient. This ensures that our client is the outermost
    // wrapper of `header_client`, allowing us to apply enterprise headers AFTER
-@@ -6824,7 +6826,7 @@ ChromeContentBrowserClient::GetWebSocketOptions(
+@@ -6827,7 +6829,7 @@ ChromeContentBrowserClient::GetWebSocketOptions(
    options.options = network::mojom::kWebSocketOptionNone;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -181,7 +181,7 @@
    if (frame) {
      enterprise_custom_headers::MaybeCreateWebSocketHeaderClient(
          frame->GetBrowserContext(), &options.header_client);
-@@ -7246,7 +7248,7 @@ bool ChromeContentBrowserClient::HandleExternalProtoco
+@@ -7249,7 +7251,7 @@ bool ChromeContentBrowserClient::HandleExternalProtoco
    CHECK(content::BrowserThread::CurrentlyOn(content::BrowserThread::UI));
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -190,7 +190,7 @@
    // Handle the google-chrome:// scheme (and chromium://).
    // If the scheme is present, we strip it and navigate to the inner URL.
    // This avoids launching a new browser instance via the OS handler.
-@@ -7398,7 +7400,7 @@ bool ChromeContentBrowserClient::HandleWebUI(
+@@ -7401,7 +7403,7 @@ bool ChromeContentBrowserClient::HandleWebUI(
    }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -199,7 +199,7 @@
  
    // Rewrite chrome://settings/addresses to chrome://settings/contactInfo.
    if (url->SchemeIs(content::kChromeUIScheme) &&
-@@ -7676,7 +7678,7 @@ bool ChromeContentBrowserClient::ShouldRunOutOfProcess
+@@ -7679,7 +7681,7 @@ bool ChromeContentBrowserClient::ShouldRunOutOfProcess
  bool ChromeContentBrowserClient::ShouldRunOutOfProcessSystemDnsResolution() {
  // This enterprise policy is supported on Android, but the feature will not be
  // launched there.
@@ -208,7 +208,7 @@
    // This is possibly called before `g_browser_process` is initialized.
    PrefService* local_state;
    if (g_browser_process) {
-@@ -8091,7 +8093,7 @@ void ChromeContentBrowserClient::
+@@ -8094,7 +8096,7 @@ void ChromeContentBrowserClient::
      GrantAdditionalRequestPrivilegesToWorkerProcess(int child_id,
                                                      const GURL& script_url) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -217,7 +217,7 @@
    // IWA Service Workers need to be explicitly granted access to their origin
    // because isolated-app: isn't a web-safe scheme that can be accessed by
    // default.
-@@ -8560,7 +8562,7 @@ ChromeContentBrowserClient::GetAlternativeErrorPageOve
+@@ -8563,7 +8565,7 @@ ChromeContentBrowserClient::GetAlternativeErrorPageOve
      content::BrowserContext* browser_context,
      int32_t error_code) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

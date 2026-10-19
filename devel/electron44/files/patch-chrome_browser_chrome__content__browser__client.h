@@ -1,6 +1,6 @@
---- chrome/browser/chrome_content_browser_client.h.orig	2026-08-24 20:59:34 UTC
+--- chrome/browser/chrome_content_browser_client.h.orig	2026-10-12 21:12:37 UTC
 +++ chrome/browser/chrome_content_browser_client.h
-@@ -562,7 +562,7 @@ class ChromeContentBrowserClient : public content::Con
+@@ -566,7 +566,7 @@ class ChromeContentBrowserClient : public content::Con
        const GURL& site_url) override;
    std::unique_ptr<content::TracingDelegate> CreateTracingDelegate() override;
    bool IsSystemWideTracingEnabled() override;

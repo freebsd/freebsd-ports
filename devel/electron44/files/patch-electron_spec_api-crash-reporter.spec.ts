@@ -1,4 +1,4 @@
---- electron/spec/api-crash-reporter.spec.ts.orig	2026-09-29 23:27:57 UTC
+--- electron/spec/api-crash-reporter.spec.ts.orig	2026-10-17 02:46:46 UTC
 +++ electron/spec/api-crash-reporter.spec.ts
 @@ -182,7 +182,7 @@ ifdescribe(!process.mas && !process.env.DISABLE_CRASH_
  
@@ -9,7 +9,7 @@
        const { port, waitForCrash } = await startServer();
        let exitCode: number | null = null;
        const appPath = path.join(import.meta.dirname, 'fixtures', 'apps', 'crash');
-@@ -661,7 +661,7 @@ ifdescribe(!process.mas && !process.env.DISABLE_CRASH_
+@@ -658,7 +658,7 @@ ifdescribe(!process.mas && !process.env.DISABLE_CRASH_
      }
  
      const processList =
@@ -18,7 +18,7 @@
          ? ['main', 'renderer', 'sandboxed-renderer']
          : ['main', 'renderer', 'sandboxed-renderer', 'node'];
      for (const crashingProcess of processList) {
-@@ -678,7 +678,7 @@ ifdescribe(!process.mas && !process.env.DISABLE_CRASH_
+@@ -675,7 +675,7 @@ ifdescribe(!process.mas && !process.env.DISABLE_CRASH_
              return app.getPath('crashDumps');
            });
            let reportsDir = crashesDir;
@@ -27,8 +27,8 @@
              reportsDir = path.join(crashesDir, 'completed');
            } else if (process.platform === 'win32') {
              reportsDir = path.join(crashesDir, 'reports');
-@@ -706,7 +706,7 @@ ifdescribe(!process.mas && !process.env.DISABLE_CRASH_
-           expect(remoteCrashesDir).to.equal(crashesDir);
+@@ -703,7 +703,7 @@ ifdescribe(!process.mas && !process.env.DISABLE_CRASH_
+           expect(remoteCrashesDir).toBe(crashesDir);
  
            let reportsDir = crashesDir;
 -          if (process.platform === 'darwin' || process.platform === 'linux') {

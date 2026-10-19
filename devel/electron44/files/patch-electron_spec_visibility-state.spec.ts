@@ -1,4 +1,4 @@
---- electron/spec/visibility-state.spec.ts.orig	2026-09-29 23:27:57 UTC
+--- electron/spec/visibility-state.spec.ts.orig	2026-10-17 02:46:46 UTC
 +++ electron/spec/visibility-state.spec.ts
 @@ -19,7 +19,7 @@ import { closeAllWindows } from './lib/window-helpers.
  
@@ -8,4 +8,4 @@
 +ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd')('document.visibilityState', () => {
    let w: BaseWindow & { webContents: WebContents };
  
-   before(() => {
+   beforeAll(() => {
