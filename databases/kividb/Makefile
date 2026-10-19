@@ -1,5 +1,6 @@
 PORTNAME=	kividb
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -7,11 +8,8 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Fast, multi-threaded Redis and Valkey
 WWW=		https://kividb.io/
 
-LICENSE=	APACHE20
+LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-NOT_FOR_ARCHS=	armv7 i386
-NOT_FOR_ARCHS_REASON=	build currently failing
 
 USES=		cargo cpe
 CPE_VENDOR=	kividb
