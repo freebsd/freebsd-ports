@@ -14,7 +14,7 @@ BROKEN_i386=	format specifies type 'unsigned long' but the argument has type 'ui
 
 BROKEN_FreeBSD_16=	Fails to build
 
-ONLY_FOR_ARCHS=     amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USES=		kmod ssl uidfix
 USE_GITHUB=	yes
