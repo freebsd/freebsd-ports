@@ -1,29 +1,29 @@
---- electron/spec/api-screen.spec.ts.orig	2026-09-30 08:47:42 UTC
+--- electron/spec/api-screen.spec.ts.orig	2026-10-16 03:32:58 UTC
 +++ electron/spec/api-screen.spec.ts
-@@ -95,7 +95,7 @@ describe('screen module', { tags: ['serial'] }, () => 
+@@ -97,7 +97,7 @@ describe('screen module', { tags: ['serial'] }, () => 
  
        const { size } = display!;
  
 -      if (process.platform === 'linux') {
 +      if (process.platform === 'linux' || process.platform === 'freebsd') {
-         expect(size).to.have.property('width').that.is.a('number');
-         expect(size).to.have.property('height').that.is.a('number');
+         expect(size).toHaveProperty('width', expect.any(Number));
+         expect(size).toHaveProperty('height', expect.any(Number));
        } else {
-@@ -109,7 +109,7 @@ describe('screen module', { tags: ['serial'] }, () => 
+@@ -113,7 +113,7 @@ describe('screen module', { tags: ['serial'] }, () => 
  
        const { workAreaSize } = display!;
  
 -      if (process.platform === 'linux') {
 +      if (process.platform === 'linux' || process.platform === 'freebsd') {
-         expect(workAreaSize).to.have.property('width').that.is.a('number');
-         expect(workAreaSize).to.have.property('height').that.is.a('number');
+         expect(workAreaSize).toHaveProperty('width', expect.any(Number));
+         expect(workAreaSize).toHaveProperty('height', expect.any(Number));
        } else {
-@@ -125,7 +125,7 @@ describe('screen module', { tags: ['serial'] }, () => 
-       expect(bounds).to.have.property('x').that.is.a('number');
-       expect(bounds).to.have.property('y').that.is.a('number');
+@@ -131,7 +131,7 @@ describe('screen module', { tags: ['serial'] }, () => 
+       expect(bounds).toHaveProperty('x', expect.any(Number));
+       expect(bounds).toHaveProperty('y', expect.any(Number));
  
 -      if (process.platform === 'linux') {
 +      if (process.platform === 'linux' || process.platform === 'freebsd') {
-         expect(bounds).to.have.property('width').that.is.a('number');
-         expect(bounds).to.have.property('height').that.is.a('number');
+         expect(bounds).toHaveProperty('width', expect.any(Number));
+         expect(bounds).toHaveProperty('height', expect.any(Number));
        } else {

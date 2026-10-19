@@ -1,4 +1,4 @@
---- electron/shell/browser/browser_linux.cc.orig	2026-06-29 20:35:15 UTC
+--- electron/shell/browser/browser_linux.cc.orig	2026-10-16 03:32:58 UTC
 +++ electron/shell/browser/browser_linux.cc
 @@ -9,7 +9,7 @@
  
@@ -9,7 +9,7 @@
  #include <gio/gdesktopappinfo.h>
  #include <gio/gio.h>
  #include <gtk/gtk.h>
-@@ -37,7 +37,7 @@
+@@ -38,7 +38,7 @@
  #include "ui/gtk/gtk_compat.h"  // nogncheck
  #include "ui/gtk/gtk_util.h"    // nogncheck
  

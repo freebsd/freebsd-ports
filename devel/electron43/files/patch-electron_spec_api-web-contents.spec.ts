@@ -1,6 +1,6 @@
---- electron/spec/api-web-contents.spec.ts.orig	2026-10-13 23:40:13 UTC
+--- electron/spec/api-web-contents.spec.ts.orig	2026-10-16 03:32:58 UTC
 +++ electron/spec/api-web-contents.spec.ts
-@@ -1645,7 +1645,7 @@ describe('webContents module', () => {
+@@ -1631,7 +1631,7 @@ describe('webContents module', () => {
      // back to OpenFolder() which does a blocking DirectoryExists() on the UI
      // thread (pre-existing behavior). Workspace-gating is covered by the test
      // above.

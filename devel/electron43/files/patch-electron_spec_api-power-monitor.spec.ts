@@ -1,4 +1,4 @@
---- electron/spec/api-power-monitor.spec.ts.orig	2026-09-30 08:47:42 UTC
+--- electron/spec/api-power-monitor.spec.ts.orig	2026-10-16 03:32:58 UTC
 +++ electron/spec/api-power-monitor.spec.ts
 @@ -21,7 +21,7 @@ describe('powerMonitor', { tags: ['serial'] }, () => {
  describe('powerMonitor', { tags: ['serial'] }, () => {
@@ -8,4 +8,4 @@
 +  ifdescribe((process.platform === 'linux' || process.platform === 'freebsd') && process.env.DBUS_SYSTEM_BUS_ADDRESS != null)(
      'when powerMonitor module is loaded with dbus mock',
      () => {
-       before(async () => {
+       beforeAll(async () => {

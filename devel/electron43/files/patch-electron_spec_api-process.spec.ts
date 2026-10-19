@@ -1,24 +1,24 @@
---- electron/spec/api-process.spec.ts.orig	2026-09-30 08:47:42 UTC
+--- electron/spec/api-process.spec.ts.orig	2026-10-16 03:32:58 UTC
 +++ electron/spec/api-process.spec.ts
-@@ -43,7 +43,7 @@ describe('process module', () => {
+@@ -44,7 +44,7 @@ describe('process module', () => {
        it('resolves promise successfully with valid data', async () => {
          const memoryInfo = await invoke(() => process.getProcessMemoryInfo());
-         expect(memoryInfo).to.be.an('object');
+         expect(memoryInfo).toBeTypeOf('object');
 -        if (process.platform === 'linux' || process.platform === 'win32') {
 +        if (process.platform === 'linux' || process.platform === 'win32' || process.platform === 'freebsd') {
-           expect(memoryInfo.residentSet).to.be.a('number').greaterThan(0);
+           expect(memoryInfo.residentSet).toBeTypeOf('number');
+           expect(memoryInfo.residentSet).toBeGreaterThan(0);
          }
-         expect(memoryInfo.private).to.be.a('number').greaterThan(0);
-@@ -57,7 +57,7 @@ describe('process module', () => {
+@@ -61,7 +61,7 @@ describe('process module', () => {
          const systemMemoryInfo = await invoke(() => process.getSystemMemoryInfo());
-         expect(systemMemoryInfo.free).to.be.a('number');
-         expect(systemMemoryInfo.total).to.be.a('number');
+         expect(systemMemoryInfo.free).toBeTypeOf('number');
+         expect(systemMemoryInfo.total).toBeTypeOf('number');
 -        if (process.platform === 'linux') {
 +        if (process.platform === 'linux' || process.platform === 'freebsd') {
-           expect(systemMemoryInfo.available).to.be.a('number').greaterThan(0);
+           expect(systemMemoryInfo.available).toBeTypeOf('number');
+           expect(systemMemoryInfo.available).toBeGreaterThan(0);
          }
-       });
-@@ -136,7 +136,7 @@ describe('process module', () => {
+@@ -141,7 +141,7 @@ describe('process module', () => {
      generateSpecs((fn, ...args) => fn(...args));
    });
  
