@@ -1,0 +1,10 @@
+--- swift/utils/build-script-impl.orig	2026-10-10 18:48:34 UTC
++++ swift/utils/build-script-impl
+@@ -467,6 +467,7 @@
+     case ${host} in
+       freebsd-aarch64           \
+       | freebsd-x86_64          \
++      | freebsd-powerpc64le     \
+       | openbsd-x86_64          \
+       | openbsd-aarch64         \
+       | cygwin-x86_64           \

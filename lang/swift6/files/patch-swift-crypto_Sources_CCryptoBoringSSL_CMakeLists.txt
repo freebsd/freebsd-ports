@@ -1,0 +1,12 @@
+--- swift-crypto/Sources/CCryptoBoringSSL/CMakeLists.txt.orig	2026-10-10 18:48:34 UTC
++++ swift-crypto/Sources/CCryptoBoringSSL/CMakeLists.txt
+@@ -353,6 +353,9 @@
+     gen/bcm/vpaes-armv8-win.S
+     gen/crypto/chacha-armv8-win.S
+     gen/crypto/chacha20_poly1305_armv8-win.S)
++elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "powerpc64|ppc64")
++  # BoringSSL carries no PowerPC assembly; use the portable C implementation.
++  target_compile_definitions(CCryptoBoringSSL PRIVATE OPENSSL_NO_ASM)
+ else()
+    message(FATAL_ERROR "platform sources are not defined here for ${CMAKE_SYSTEM_NAME} on ${CMAKE_SYSTEM_PROCESSOR}")
+ endif()

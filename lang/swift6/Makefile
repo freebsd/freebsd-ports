@@ -7,19 +7,39 @@ CATEGORIES=	lang
 PKGNAMESUFFIX=	6
 DIST_SUBDIR=	${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+# powerpc64le bootstrap toolchains exist for both long-double ABIs: freebsd14
+# (64-bit long double, also usable on 15.x via misc/compat14x) and freebsd16
+# (IEEE binary128, for the ABI flag day at OSVERSION 1600019).
+.if ${ARCH} == powerpc64le
+.   if ${OSVERSION} >= 1600019
+_BOOTSTRAP_OSSUFX=	16
+.   else
+_BOOTSTRAP_OSSUFX=	14
+.   endif
+.endif
+_BOOTSTRAP_OSSUFX?=	# empty
+
 OLD_SWIFT_VERSION=		6.3.3
 .if !defined(BOOTSTRAP_MODE)
 BOOTSTRAP_SWIFT_VERSION=	${DISTVERSION}
 .else
 BOOTSTRAP_SWIFT_VERSION=	${OLD_SWIFT_VERSION}
 .endif
+.if ${ARCH} == powerpc64le
+MASTER_SITES=	LOCAL/pkubaj/${PORTNAME}:bootstrap
+.else
 MASTER_SITES=	LOCAL/tagattie/${PORTNAME}:bootstrap
+.endif
 .if make(makesum) && defined(MAKESUM_MODE)
 .   for version in ${OLD_SWIFT_VERSION} ${DISTVERSION}
-DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${version}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX}:bootstrap
+DISTFILES+=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${version}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${_BOOTSTRAP_OSSUFX}${EXTRACT_SUFX}:bootstrap
 .   endfor
 .else
-DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${BOOTSTRAP_SWIFT_VERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX}:bootstrap
+DISTFILES=	${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${BOOTSTRAP_SWIFT_VERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${_BOOTSTRAP_OSSUFX}${EXTRACT_SUFX}:bootstrap
 .endif
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -29,8 +49,8 @@ WWW=		https://www.swift.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/swift/LICENSE.txt
 
-ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	bootstrap is available only on amd64 architecture
+ONLY_FOR_ARCHS=		amd64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	bootstrap is available only on amd64 and powerpc64le
 
 BUILD_DEPENDS=	rsync:net/rsync \
 		bash:shells/bash
@@ -109,9 +129,17 @@ WRKSRC=		${WRKDIR}/swift-${DISTVERSION}
 
 PLIST_SUB=	SWIFT_ARCH=${SWIFT_ARCH} \
 		SWIFT_TARGET_TRIPLE=${SWIFT_ARCH}-unknown-${OPSYS:tl}
+# Sanitizer/profiling runtimes that compiler-rt does not support on
+# FreeBSD/powerpc64le (ASan, UBSan, profile and static XRay do build there).
+.if ${ARCH} == powerpc64le
+PLIST_SUB+=	MSAN="@comment " TSAN="@comment " CFI="@comment " \
+		FUZZER="@comment " SAFESTACK="@comment " XRAYDSO="@comment " \
+		ORCRT="@comment " BUILTINSI386="@comment "
+.else
+PLIST_SUB+=	MSAN="" TSAN="" CFI="" FUZZER="" SAFESTACK="" XRAYDSO="" \
+		ORCRT="" BUILTINSI386=""
+.endif
 PORTDOCS=	CHANGELOG.md CONTRIBUTING.md README.md
-
-OPTIONS_DEFINE=	DOCS
 
 SWIFT_ARCH=	${ARCH:S/amd64/x86_64/}
 # SwiftPM expects swift toolchain executables are located in
@@ -159,7 +187,7 @@ COMMON_BUILDFLAGS=	\
 		--extra-cmake-options="-DSWIFT_USE_LINKER=lld" \
 		--verbose-build true \
 		--skip-clean-libdispatch true \
-		--llvm-targets-to-build "AArch64;X86" \
+		--llvm-targets-to-build "AArch64;PowerPC;X86" \
 		--llvm-install-components "llvm-ar;llvm-nm;llvm-ranlib;llvm-cov;llvm-profdata;llvm-objdump;llvm-objcopy;llvm-symbolizer;IndexStore;clang;clang-resource-headers;builtins;runtimes;clangd;libclang;lld;LTO;clang-features-file" \
 		--bootstrapping hosttools \
 		${CCACHE_BUILDFLAGS} \
@@ -397,7 +425,7 @@ make-bootstrap-archive:
 		-f ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}.pkg \
 		-C ${STAGEDIR} \
 		--include '/usr/local/swift6/*'
-	${TAR} -cJf ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${DISTVERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${EXTRACT_SUFX} \
+	${TAR} -cJf ${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-bootstrap-${DISTVERSION}-${SWIFT_ARCH}-unknown-${OPSYS:tl}${_BOOTSTRAP_OSSUFX}${EXTRACT_SUFX} \
 		--options 'xz:threads=${MAKE_JOBS_NUMBER}' \
 		-s '|^\./|${PORTNAME}${PKGNAMESUFFIX}-bootstrap/|' \
 		-C ${STAGEDIR} .
