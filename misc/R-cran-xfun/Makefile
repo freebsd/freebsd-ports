@@ -1,17 +1,15 @@
 PORTNAME=	xfun
-DISTVERSION=	0.61
+DISTVERSION=	0.62
 CATEGORIES=	misc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Miscellaneous Functions by Yihui Xie
-WWW=		https://cran.r-project.org/package=xfun
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	R-cran-commonmark>0:textproc/R-cran-commonmark \
-		R-cran-curl>0:ftp/R-cran-curl \
+TEST_DEPENDS=	R-cran-curl>0:ftp/R-cran-curl \
 		R-cran-data.table>0:devel/R-cran-data.table \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-knitr>=1.50:print/R-cran-knitr \
@@ -24,8 +22,11 @@ TEST_DEPENDS=	R-cran-commonmark>0:textproc/R-cran-commonmark \
 		R-cran-testit>0:devel/R-cran-testit \
 		R-cran-tinytex>=0.30:print/R-cran-tinytex \
 		R-cran-xml2>0:textproc/R-cran-xml2 \
-		R-cran-yaml>0:textproc/R-cran-yaml
+		R-cran-yaml>0:textproc/R-cran-yaml \
+		zip>0:archivers/zip
 
 USES=		cran:auto-plist,compiles
+
+MAKE_ENV+=	R_ZIPCMD=${LOCALBASE}/bin/zip
 
 .include <bsd.port.mk>
