@@ -17,8 +17,8 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	Upstream only targets 64-bit archs and plugins are only optimized and/or runs reasonably fast on aarch64 and amd64
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	Upstream only targets 64-bit archs and plugins are only optimized and/or runs reasonably fast on aarch64 and amd64
 
 WITH_LTO=	yes
 LDFLAGS+=	-lpthread
