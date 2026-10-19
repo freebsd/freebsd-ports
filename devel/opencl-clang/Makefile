@@ -22,6 +22,9 @@ WWW=		https://github.com/intel/opencl-clang
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unmaintained with no working dependant ports
+EXPIRATION=	2026-12-25
+
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
 		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}
 
