@@ -1,7 +1,6 @@
 PORTNAME=	tflite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.0
-PORTREVISION=	2
+DISTVERSION=	2.18.0
 CATEGORIES=	misc python # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,5 +23,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jackwish
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
+
+# tests as of 2.18.0: 4 passed in 0.67s
 
 .include <bsd.port.mk>
