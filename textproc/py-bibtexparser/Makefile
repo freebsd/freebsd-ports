@@ -1,5 +1,5 @@
 PORTNAME=	bibtexparser
-DISTVERSION=	2.0.1
+DISTVERSION=	2.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,6 @@ TEST_ARGS=	--disable-plugin-autoload \
 		-p pytest_cov \
 		-p xdist
 
-# tests as of 2.0.1: 2776 passed, 12 skipped, 1 deselected, 4 warnings in 5.38s
+# tests as of 2.1.0: 2777 passed, 12 skipped, 1 deselected, 4 warnings in 6.91s
 
 .include <bsd.port.mk>

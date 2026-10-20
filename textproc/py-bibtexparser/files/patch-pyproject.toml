@@ -3,7 +3,7 @@
 -- Also fix the PEP 621 license and license-files fields to use formats supported by
 -- older setuptools.
 
---- pyproject.toml.orig	2026-09-14 14:22:24 UTC
+--- pyproject.toml.orig	2026-10-18 15:50:17 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -12,7 +12,7 @@
 +requires = ["setuptools>=63.1.0"]
  
  [project]
- authors = [{name = "Michael Weiss and other contributors", email = "code@mweiss.ch"}]
+ authors = [{ name = "Michael Weiss and other contributors", email = "code@mweiss.ch" }]
 @@ -18,8 +18,7 @@ dynamic = ["version"]
  dependencies = ["pylatexenc~=2.10"]
  description = "Bibtex parser for python 3"
@@ -20,6 +20,6 @@
 -license = "MIT"
 -license-files = ["LICENSE"]
 +license = {text = "MIT"}
- maintainers = [{name = "Michael Weiss", email = "code@mweiss.ch"}]
+ maintainers = [{ name = "Michael Weiss", email = "code@mweiss.ch" }]
  name = "bibtexparser"
  readme = "README.md"
