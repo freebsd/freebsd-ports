@@ -56,7 +56,8 @@ WRKSRC_devel_kit=		${WRKDIR}/nginx-module-ndk
 DEVEL_KIT_VARS=			FIRST_DSO_EXTMODS+=devel_kit
 
 ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
-ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:7ffe4ec:encryptsession
+ENCRYPTSESSION_BUILD_DEPENDS=	nginx-module-encrypted-session>0:www/nginx-module-encrypted-session
+WRKSRC_encryptsession=		${WRKDIR}/encrypted-session-nginx-module
 ENCRYPTSESSION_VARS=		DSO_EXTMODS+=encryptsession
 
 FIPS_CHECK_IMPLIES=	HTTP_SSL
@@ -100,7 +101,8 @@ HTTP_AUTH_LDAP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_auth_ldap_module.
 HTTP_AUTH_LDAP_VARS=		DSO_EXTMODS+=http_auth_ldap
 HTTP_AUTH_LDAP_USES=		ldap
 
-HTTP_AUTH_PAM_GH_TUPLE=		sto:ngx_http_auth_pam_module:v1.5.5:auth_pam
+HTTP_AUTH_PAM_BUILD_DEPENDS=	nginx-module-auth-pam>0:www/nginx-module-auth-pam
+WRKSRC_auth_pam=		${WRKDIR}/ngx_http_auth_pam_module
 HTTP_AUTH_PAM_VARS=		DSO_EXTMODS+=auth_pam
 
 HTTP_DAV_EXT_IMPLIES=		HTTP_DAV
@@ -113,14 +115,16 @@ HTTP_DAV_EXT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_dav_ext_module.c
 HTTP_EVAL_GH_TUPLE=		openresty:nginx-eval-module:13425e8:eval
 HTTP_EVAL_VARS=			DSO_EXTMODS+=eval
 
-HTTP_FANCYINDEX_GH_TUPLE=	aperezdc:ngx-fancyindex:cbc0d3f:fancyindex
+HTTP_FANCYINDEX_BUILD_DEPENDS=	nginx-module-fancyindex>0:www/nginx-module-fancyindex
+WRKSRC_fancyindex=		${WRKDIR}/ngx-fancyindex
 HTTP_FANCYINDEX_VARS=		DSO_EXTMODS+=fancyindex
 
 HTTP_FOOTER_GH_TUPLE=		alibaba:nginx-http-footer-filter:1.2.2:footer
 HTTP_FOOTER_VARS=		DSO_EXTMODS+=footer
 HTTP_FOOTER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-http-footer-filter-config
 
-HTTP_GEOIP2_GH_TUPLE=		leev:ngx_http_geoip2_module:445df24:geoip2
+HTTP_GEOIP2_BUILD_DEPENDS=	nginx-module-geoip2>0:www/nginx-module-geoip2
+WRKSRC_geoip2=			${WRKDIR}/ngx_http_geoip2_module
 HTTP_GEOIP2_CFLAGS=		-I${LOCALBASE}/include
 HTTP_GEOIP2_VARS=		DSO_EXTMODS+=geoip2
 HTTP_GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
@@ -236,7 +240,8 @@ LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
 			${PATCHDIR}/extra-patch-ngx_link_func_module.c
 LINK_VARS=		DSO_EXTMODS+=link
 
-MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.20:memc
+MEMC_BUILD_DEPENDS=	nginx-module-memc>0:www/nginx-module-memc
+WRKSRC_memc=		${WRKDIR}/memc-nginx-module
 MEMC_VARS=		DSO_EXTMODS+=memc
 
 MODSECURITY3_IMPLIES=		HTTP_ADDITION HTTP_IMAGE_FILTER HTTP_GUNZIP_FILTER HTTP_XSLT

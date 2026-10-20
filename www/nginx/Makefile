@@ -1,7 +1,7 @@
 PORTNAME=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -372,6 +372,36 @@ pre-configure-HTTP_JSON_STATUS-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-json-status \
 		${WRKSRC_json_status}
 	@${CHMOD} -R u+w ${WRKSRC_json_status}
+
+pre-configure-MEMC-on:
+	@${RM} -rf ${WRKSRC_memc}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-memc \
+		${WRKSRC_memc}
+	@${CHMOD} -R u+w ${WRKSRC_memc}
+
+pre-configure-ENCRYPTSESSION-on:
+	@${RM} -rf ${WRKSRC_encryptsession}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-encrypted-session \
+		${WRKSRC_encryptsession}
+	@${CHMOD} -R u+w ${WRKSRC_encryptsession}
+
+pre-configure-HTTP_FANCYINDEX-on:
+	@${RM} -rf ${WRKSRC_fancyindex}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-fancyindex \
+		${WRKSRC_fancyindex}
+	@${CHMOD} -R u+w ${WRKSRC_fancyindex}
+
+pre-configure-HTTP_AUTH_PAM-on:
+	@${RM} -rf ${WRKSRC_auth_pam}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-auth-pam \
+		${WRKSRC_auth_pam}
+	@${CHMOD} -R u+w ${WRKSRC_auth_pam}
+
+pre-configure-HTTP_GEOIP2-on:
+	@${RM} -rf ${WRKSRC_geoip2}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-geoip2 \
+		${WRKSRC_geoip2}
+	@${CHMOD} -R u+w ${WRKSRC_geoip2}
 
 pre-configure-LET-on:
 	@${RM} -rf ${WRKSRC_let}
