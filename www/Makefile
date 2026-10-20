@@ -540,6 +540,7 @@
     SUBDIR += nginx-module-accept-language
     SUBDIR += nginx-module-ajp
     SUBDIR += nginx-module-array-var
+    SUBDIR += nginx-module-auth-pam
     SUBDIR += nginx-module-aws-auth
     SUBDIR += nginx-module-cache-purge
     SUBDIR += nginx-module-encrypted-session
