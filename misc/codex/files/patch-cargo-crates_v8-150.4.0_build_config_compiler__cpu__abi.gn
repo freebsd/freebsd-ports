@@ -36,3 +36,12 @@
        cpu_abi_cflags += [ "--target=aarch64-linux-gnu" ]
        cpu_abi_ldflags += [ "--target=aarch64-linux-gnu" ]
      }
+@@ -333,7 +333,7 @@ if ((is_posix && !is_apple) || is_fuchsia) {
+         cpu_abi_cflags += [ "-maix64" ]
+         cpu_abi_ldflags += [ "-maix64" ]
+       }
+-    } else if (is_clang) {
++    } else if (is_clang && !is_bsd) {
+       cpu_abi_cflags += [ "--target=powerpc64le-unknown-linux-gnu" ]
+       cpu_abi_ldflags += [ "--target=powerpc64le-unknown-linux-gnu" ]
+     } else {

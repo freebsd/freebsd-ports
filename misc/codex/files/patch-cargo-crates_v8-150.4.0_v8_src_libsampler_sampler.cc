@@ -1,6 +1,6 @@
 --- cargo-crates/v8-150.4.0/v8/src/libsampler/sampler.cc.orig	2006-07-24 01:21:28 UTC
 +++ cargo-crates/v8-150.4.0/v8/src/libsampler/sampler.cc
-@@ -529,6 +529,16 @@ void SignalHandler::FillRegisterState(void* context, R
+@@ -529,6 +529,20 @@ void SignalHandler::FillRegisterState(void* context, R
    state->pc = reinterpret_cast<void*>(mcontext.__gregs[_REG_PC]);
    state->sp = reinterpret_cast<void*>(mcontext.__gregs[_REG_SP]);
    state->fp = reinterpret_cast<void*>(mcontext.__gregs[_REG_FP]);
@@ -14,6 +14,10 @@
 +  state->sp = reinterpret_cast<void*>(mcontext.mc_gpregs.gp_sp);
 +  state->fp = reinterpret_cast<void*>(mcontext.mc_gpregs.gp_x[29]);
 +#endif  // __CHERI_PURE_CAPABILITY__
++#elif V8_HOST_ARCH_PPC64
++  state->pc = reinterpret_cast<void*>(mcontext.mc_srr0);
++  state->sp = reinterpret_cast<void*>(mcontext.mc_frame[1]);
++  state->fp = reinterpret_cast<void*>(mcontext.mc_frame[31]);
  #endif  // V8_HOST_ARCH_*
  #elif V8_OS_NETBSD
  #if V8_HOST_ARCH_IA32
