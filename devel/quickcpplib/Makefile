@@ -2,6 +2,9 @@ PORTNAME=	quickcpplib
 DISTVERSION=	g20260310
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/ned14/quickcpplib/commit/
+PATCHFILES=	3a7e55d5a8c39ff78ca4034903c2e2f67715a989.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Eliminate hassle when making state-of-the-art C++14-23 libraries
 WWW=		https://github.com/ned14/quickcpplib
@@ -10,8 +13,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/Licence.txt
 
 BROKEN_powerpc=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276824
-NOT_FOR_ARCHS=		powerpc64 powerpc64le
-NOT_FOR_ARCHS_REASON=	test/timing.h:113:2: error: Unsupported platform
 
 USES=		cmake:testing
 
