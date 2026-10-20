@@ -1,12 +1,11 @@
 PORTNAME=	Ymir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.3
-PORTREVISION=	2
+DISTVERSION=	0.4.1
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
 COMMENT=	Sega Saturn emulator
-WWW=		https://github.com/StrikerX3/Ymir/
+WWW=		https://github.com/ymir-emu/Ymir/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -24,6 +23,7 @@ BUILD_DEPENDS=	cereal>0:devel/cereal \
 		libngtcp2>0:net/libngtcp2 \
 		nlohmann-json>0:devel/nlohmann-json \
 		semver>0:devel/semver \
+		spirv-tools>0:graphics/spirv-tools \
 		stb>0:devel/stb \
 		vulkan-headers>0:graphics/vulkan-headers
 
@@ -47,12 +47,12 @@ _gtk4_BR_DEPENDS=		zenity:x11/zenity4
 ${FLAVOR}_BUILD_DEPENDS=	${_${FLAVOR}_BR_DEPENDS}
 ${FLAVOR}_RUN_DEPENDS=		${_${FLAVOR}_BR_DEPENDS}
 
-USES=		cmake compiler:c++20-lang gl llvm${_LLVM_${ARCH}} localbase \
-		pkgconfig sdl xorg
+USES=		cmake compiler:c++20-lang gl iconv llvm${_LLVM_${ARCH}} \
+		localbase pkgconfig sdl xorg
 _LLVM_aarch64=	:min=21
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	StrikerX3
+GH_ACCOUNT=	ymir-emu
 GH_TUPLE=	StrikerX3:mio:4e4cdc711d73d9dc96c0cb9475e6951f476218e6:mio/vendor/mio
 
 USE_GL=		glut
@@ -63,24 +63,28 @@ CMAKE_OFF=	Ymir_DEV_BUILD \
 		Ymir_ENABLE_IMGUI_DEMO \
 		Ymir_ENABLE_SANDBOX \
 		Ymir_ENABLE_TESTS \
-		Ymir_ENABLE_UPDATE_CHECKS
+		Ymir_ENABLE_UPDATE_CHECKS \
+		Ymir_FF_ENABLE_UNIMPL_GFX_BACKENDS
 
 CFLAGS+=	-I${LOCALBASE}/include/concurrentqueue/moodycamel \
 		-I${LOCALBASE}/include/stb \
 		-I${WRKSRC}/vendor/imgui/ymir
+
+EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/vendor/concurrentqueue \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/vendor/libchdr \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/vendor/lz4 \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/vendor/xxHash \
+			--no-same-owner --no-same-permissions
 
 PLIST_FILES=	bin/ymir-sdl3 \
 		share/applications/io.github.strikerx3.ymir.desktop \
 		share/icons/hicolor/256x256/apps/ymir.png \
 		share/metainfo/io.github.strikerx3.ymir.xml
 
-OPTIONS_DEFINE=		FEATUREFLAG LTO YMDASM
+OPTIONS_DEFINE=		LTO YMDASM
 OPTIONS_DEFAULT=	LTO
 
-FEATUREFLAG_DESC=	Enable experimental features
 YMDASM_DESC=		Include Ymir disassembly tool
-
-FEATUREFLAG_CMAKE_BOOL=	Ymir_FEATUREFLAG_DEFAULT
 
 LTO_CMAKE_BOOL=		Ymir_ENABLE_IPO
 

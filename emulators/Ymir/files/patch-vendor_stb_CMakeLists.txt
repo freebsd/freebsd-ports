@@ -1,0 +1,10 @@
+--- vendor/stb/CMakeLists.txt.orig	2026-10-17 23:24:12 UTC
++++ vendor/stb/CMakeLists.txt
+@@ -1,7 +1,4 @@ add_library(stb OBJECT
+ add_library(stb OBJECT
+-    stb/stb_image.h
+-    stb/stb_image_write.h
+-    stb/stb_vorbis.c
+ 
+     # Add more features as needed
+ 
