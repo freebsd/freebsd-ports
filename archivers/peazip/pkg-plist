@@ -92,6 +92,7 @@ share/icons/hicolor/256x256/apps/peazip_extract.png
 %%DATADIR%%/res/share/lang/sl.txt
 %%DATADIR%%/res/share/lang/sv.txt
 %%DATADIR%%/res/share/lang/sw.txt
+%%DATADIR%%/res/share/lang/ta.txt
 %%DATADIR%%/res/share/lang/th.txt
 %%DATADIR%%/res/share/lang/tj.txt
 %%DATADIR%%/res/share/lang/tr.txt
@@ -102,8 +103,8 @@ share/icons/hicolor/256x256/apps/peazip_extract.png
 %%DATADIR%%/res/share/lang/vn.txt
 %%DATADIR%%/res/share/lang/zh-cn.txt
 %%DATADIR%%/res/share/lang/zh-hant.txt
-%%DATADIR%%/res/share/themes/line-dark.theme.7z
-%%DATADIR%%/res/share/themes/line.theme.7z
+%%DATADIR%%/res/share/themes/blue-dark.theme.7z
+%%DATADIR%%/res/share/themes/blue.theme.7z
 %%DATADIR%%/res/share/themes/mac-dark.theme.7z
 %%DATADIR%%/res/share/themes/mac.theme.7z
 %%DATADIR%%/res/share/themes/main-dark.theme.7z
@@ -112,7 +113,5 @@ share/icons/hicolor/256x256/apps/peazip_extract.png
 %%DATADIR%%/res/share/themes/main.theme.7z
 %%DATADIR%%/res/share/themes/ten-dark.theme.7z
 %%DATADIR%%/res/share/themes/ten.theme.7z
-%%DATADIR%%/res/share/themes/tux-alt-dark.theme.7z
-%%DATADIR%%/res/share/themes/tux-alt.theme.7z
 %%DATADIR%%/res/share/themes/tux-dark.theme.7z
 %%DATADIR%%/res/share/themes/tux.theme.7z
