@@ -1,6 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.11.1
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -205,6 +205,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		euclid-0.22.14 \
 		event-listener-5.4.2 \
 		event-listener-strategy-0.5.4 \
+		exacl-0.13.0 \
 		exr-1.74.2 \
 		fastrand-2.5.0 \
 		fax-0.2.6 \
@@ -838,7 +839,7 @@ CARGO_INSTALL=	no
 OPTIONS_DEFINE=	DOCS
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-10-18
+RELEASE_DATE=	2026-10-20
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
