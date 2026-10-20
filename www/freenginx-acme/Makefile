@@ -33,8 +33,6 @@ NGX_CONFIGURE_ARGS=	--with-compat \
 			--with-ld-opt="-L ${LOCALBASE}/lib" \
 			--with-http_ssl_module
 
-.include "${.CURDIR}/Makefile.crates"
-
 PLIST_FILES=	libexec/freenginx/ngx_http_acme_module.so
 
 pre-configure:
