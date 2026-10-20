@@ -11,6 +11,9 @@ WWW=		https://github.com/NASA-SW-VnV/ikos
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.pdf
 
+DEPRECATED=	Requires LLVM 14 and broken with libc++ 21
+EXPIRATION_DATE=	2027-03-31
+
 BROKEN_armv7=	configure fails: error when running a program linked with GMP: Segmentation fault
 BROKEN_FreeBSD_16=	requires LLVM 14 which is incompatible with FreeBSD 16's libc++ headers, see https://github.com/NASA-SW-VnV/ikos/issues/337
 
