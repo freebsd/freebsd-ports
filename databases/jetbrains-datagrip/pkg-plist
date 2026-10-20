@@ -486,7 +486,7 @@ share/applications/datagrip.desktop
 %%DATADIR%%/plugins/datagrip-impl/lib/tips-datagrip.jar
 %%DATADIR%%/plugins/dev/lib/dev.jar
 %%DATADIR%%/plugins/fullLine/full-line-model-python-v2.zip
-%%DATADIR%%/plugins/fullLine/full-line-native-server-%%SQLITE_ARCH%%.zip
+%%DATADIR%%/plugins/fullLine/full-line-native-server-linux-x86_64.zip
 %%DATADIR%%/plugins/fullLine/lib/clikt.jar
 %%DATADIR%%/plugins/fullLine/lib/fullLine.jar
 %%DATADIR%%/plugins/fullLine/lib/jetbrains.ai.completion.trigger.model.markdown.cloud.jar
