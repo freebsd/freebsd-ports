@@ -1,5 +1,5 @@
 PORTNAME=	DBD-cego
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.9
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ LIB_DEPENDS=	liblfcbase.so:devel/lfcbase \
 		liblfcxml.so:devel/lfcxml \
 		libcego.so:databases/cego
 
-USES=		compiler gmake perl5
+USES=		compiler gmake perl5 tar:bzip2
 USE_PERL5=	configure
 CC:=		${CXX}
 COMPILER_TYPE=	clang
