@@ -11,7 +11,7 @@ WWW=		https://github.com/trzy/Supermodel
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/Docs/LICENSE.txt
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USES=		compiler gl gmake localbase:ldflags sdl
 
