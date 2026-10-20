@@ -1,4 +1,4 @@
-FreeBSD ConsoleKit is patched to return proper IDs instead D-Bus paths, so
+ConsoleKit 2.0 release is changed to return proper IDs instead D-Bus paths, so
 adapt Polkit to this case.
 
 --- src/polkit/polkitunixsession.c.orig	2025-12-17 16:14:53 UTC
