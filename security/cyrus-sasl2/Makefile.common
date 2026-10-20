@@ -85,14 +85,16 @@ CPPFLAGS+=	-fPIC
 
 .if ${PORT_OPTIONS:MLMDB}
 .if ${PORT_OPTIONS:MLMDB0}
-LMDB_PKG=	lmdb0
+LIB_DEPENDS+=	liblmdb0.so:databases/lmdb0
+CFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 .else
-LMDB_PKG=	lmdb
+LIB_DEPENDS+=	liblmdb.so:databases/lmdb
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig
 .endif
-LIB_DEPENDS+=	lib${LMDB_PKG}.so:databases/${LMDB_PKG}
-CFLAGS+=	-I${LOCALBASE}/${LMDB_PKG}/include
-LDFLAGS+=	-L${LOCALBASE}/${LMDB_PKG}/lib
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/${LMDB_PKG}/libdata/pkgconfig
 .endif
 
 .if ${PORT_OPTIONS:MSASLDB_IN_VAR}
