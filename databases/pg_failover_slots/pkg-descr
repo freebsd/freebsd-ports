@@ -1,0 +1,4 @@
+pg_failover_slots copies logical replication slots from a primary to its
+physical standbys, so logical replication consumers can carry on after a
+failover instead of losing their slot. Load it with shared_preload_libraries
+on the primary and on every standby.
