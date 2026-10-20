@@ -31,4 +31,11 @@ MAKE_ENV=	USE_PGXS=1 PG_CONFIG=${PG_CONFIG}
 PG_CONFIG=	${LOCALBASE}/bin/pg_config
 PG_VERSION=	${PGSQL_VER}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+# the simd crate uses unstable std::arch powerpc64 features
+MAKE_ENV+=	RUSTC_BOOTSTRAP=1
+.endif
+
 .include <bsd.port.mk>
