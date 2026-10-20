@@ -24,10 +24,12 @@ include/dftd4/dftd4_ncoord.mod
 include/dftd4/dftd4_numdiff.mod
 include/dftd4/dftd4_output.mod
 include/dftd4/dftd4_param.mod
+include/dftd4/dftd4_partition.mod
 include/dftd4/dftd4_reference.mod
 include/dftd4/dftd4_utils.mod
 include/dftd4/dftd4_version.mod
 lib/cmake/dftd4/Findcustom-blas.cmake
+lib/cmake/dftd4/Findcustom-lapack.cmake
 lib/cmake/dftd4/Findmctc-lib.cmake
 lib/cmake/dftd4/Findmstore.cmake
 lib/cmake/dftd4/Findmulticharge.cmake
@@ -38,5 +40,5 @@ lib/cmake/dftd4/dftd4-targets.cmake
 lib/cmake/dftd4/dftd4-utils.cmake
 lib/libdftd4.so
 lib/libdftd4.so.4
-lib/libdftd4.so.4.2.0
+lib/libdftd4.so.4.3.0
 libdata/pkgconfig/dftd4.pc
