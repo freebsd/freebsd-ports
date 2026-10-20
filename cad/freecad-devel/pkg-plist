@@ -404,6 +404,9 @@ FreeCAD/Mod/CAM/CAMTests/TestDressupPost.py
 FreeCAD/Mod/CAM/CAMTests/TestDrillCycleExpander.py
 FreeCAD/Mod/CAM/CAMTests/TestDrillingPostIntegration.py
 FreeCAD/Mod/CAM/CAMTests/TestDxfPost.py
+FreeCAD/Mod/CAM/CAMTests/TestDynapath4060Post.py
+FreeCAD/Mod/CAM/CAMTests/TestDynapathPost.py
+FreeCAD/Mod/CAM/CAMTests/TestEstlCamPost.py
 FreeCAD/Mod/CAM/CAMTests/TestFanucLegacyPost.py
 FreeCAD/Mod/CAM/CAMTests/TestFanucPost.py
 FreeCAD/Mod/CAM/CAMTests/TestFeedsSpeedsResolver.py
@@ -435,6 +438,7 @@ FreeCAD/Mod/CAM/CAMTests/TestPathCustom.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDepthParams.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDressupArray.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDressupDogboneII.py
+FreeCAD/Mod/CAM/CAMTests/TestPathDressupDragknife.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDressupHoldingTags.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDrillGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathDrillable.py
@@ -448,12 +452,14 @@ FreeCAD/Mod/CAM/CAMTests/TestPathGeom.py
 FreeCAD/Mod/CAM/CAMTests/TestPathHelix.py
 FreeCAD/Mod/CAM/CAMTests/TestPathHelixGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathHelpers.py
+FreeCAD/Mod/CAM/CAMTests/TestPathJobModelLinks.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLanguage.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLeadInOutGenerator.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLog.py
 FreeCAD/Mod/CAM/CAMTests/TestPathLogNew.py
 FreeCAD/Mod/CAM/CAMTests/TestPathMillFacing.py
 FreeCAD/Mod/CAM/CAMTests/TestPathOpDeburr.py
+FreeCAD/Mod/CAM/CAMTests/TestPathOpDeprecation.py
 FreeCAD/Mod/CAM/CAMTests/TestPathOpUtil.py
 FreeCAD/Mod/CAM/CAMTests/TestPathPocket.py
 FreeCAD/Mod/CAM/CAMTests/TestPathPreferences.py
@@ -743,7 +749,9 @@ FreeCAD/Mod/CAM/Path/Post/scripts/centroid_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/dxf_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/dynapath_4060_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/dynapath_legacy_post.py
+FreeCAD/Mod/CAM/Path/Post/scripts/dynapath_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/estlcam_legacy_post.py
+FreeCAD/Mod/CAM/Path/Post/scripts/estlcam_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/fablin_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/fangling_legacy_post.py
 FreeCAD/Mod/CAM/Path/Post/scripts/fanuc_legacy_post.py
@@ -2092,6 +2100,7 @@ FreeCAD/Mod/Sketcher/SketcherTests/TestSketchInternalFaces.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketchValidateCoincidents.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketcherEllipse.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketcherSolver.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestVisualLayerListGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/__init__.py
 FreeCAD/Mod/Sketcher/TestSketcherApp.py
 FreeCAD/Mod/Sketcher/TestSketcherGui.py
@@ -2121,6 +2130,7 @@ FreeCAD/Mod/TechDraw/TDTest/DrawViewPartTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewScaleTypeTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewSectionTest.py
 FreeCAD/Mod/TechDraw/TDTest/DrawViewSymbolTest.py
+FreeCAD/Mod/TechDraw/TDTest/PythonFeatureTest.py
 FreeCAD/Mod/TechDraw/TDTest/TechDrawTaskTest.py
 FreeCAD/Mod/TechDraw/TDTest/TechDrawTestUtilities.py
 FreeCAD/Mod/TechDraw/TDTest/TestHatch.svg
