@@ -11,7 +11,7 @@ WWW=		https://postgrest.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	ghc-9.6.7:lang/ghc96 \
 		pg_config:databases/postgresql${PGSQL_DEFAULT}-client
