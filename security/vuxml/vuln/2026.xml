@@ -1,3 +1,67 @@
+  <vuln vid="436ad1a7-ccc8-11f1-af18-c4ff99d93a55">
+    <topic>Emacs -- Local command injection via crafted file names in TRAMP</topic>
+    <affects>
+      <package>
+	<name>emacs</name>
+	<name>emacs-canna</name>
+	<name>emacs-nox</name>
+	<name>emacs-wayland</name>
+	<range><lt>31.1_3,3</lt></range>
+      </package>
+      <package>
+	<name>emacs-devel</name>
+	<name>emacs-devel-nox</name>
+	<range><lt>32.0.50.20261019,3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <h1>Problem Description</h1>
+	  <p>TRAMP (Transparent Remote (file) Access, Multiple Protocol) is a
+	  part of Emacs that provides an interface for editing remote files
+	  transparently.  It builds the login command for a remote connection
+	  from tramp-login-args by joining the expanded values without quoting
+	  and passes the resulting string to a local shell.  The user name part
+	  of a remote file name may contain shell metacharacters, and nothing
+	  sanitizes them.  Because the file name dispatch regexp was anchored to
+	  the start of a line rather than the start of the string, a file name
+	  containing a newline followed by a remote file name syntax, for
+	  example in a symbolic link target, is handed to TRAMP.</p>
+	  <p>The first fix (CVE-2026-79992), included in Emacs 31.1, excluded
+	  shell metacharacters from TRAMP user names, but tramp-user-regexp
+	  still permitted "!", "#", "&amp;", "," and control characters.  User
+	  and host names were also not re-validated after environment variable
+	  expansion, and the values of tramp-default-user and tramp-default-host
+	  were not validated at all.  This incomplete fix was assigned
+	  CVE-2026-108976.  The commit completing the fix cites CVE-2026-79992
+	  because it was written before the second identifier was published.
+	  The FreeBSD Emacs package versions 31.1,3 through 31.1_2,3 and
+	  emacs-devel snapshots from 32.0.50.20260902 through 32.0.50.20261001
+	  are affected only by CVE-2026-108976.</p>
+	  <h1>Impact</h1>
+	  <p>Merely processing a crafted file name, for example with
+	  file-exists-p, executes the embedded command with the privileges of
+	  the user running Emacs.  No remote connection has to succeed.</p>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-79992</cvename>
+      <cvename>CVE-2026-108976</cvename>
+      <url>https://www.openwall.com/lists/oss-security/2026/08/21/1</url>
+      <url>https://www.openwall.com/lists/oss-security/2026/08/26/15</url>
+      <url>https://www.openwall.com/lists/oss-security/2026/10/11/1</url>
+      <url>https://www.openwall.com/lists/oss-security/2026/10/14/4</url>
+      <url>https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=f3e7104d05bdb8e32ba13bf75604108ad88536dc</url>
+      <url>https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=044b0203267db3b7912325d076d79a79000afe75</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-79992</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-108976</url>
+    </references>
+    <dates>
+      <discovery>2026-08-21</discovery>
+      <entry>2026-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e1e332d7-cbe2-11f1-8d05-74563cf85f9d">
     <topic>anki -- page manipulation via deck description links</topic>
     <affects>
