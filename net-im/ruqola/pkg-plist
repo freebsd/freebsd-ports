@@ -1,6 +1,4 @@
 bin/ruqola
-lib/libcmark-rc-copy.so.0
-lib/libcmark-rc-copy.so.0.31.0
 lib/librocketchatrestapi-qt.so.0
 lib/librocketchatrestapi-qt.so.%%SO_VER%%
 lib/libruqolacore.so.0
@@ -11,12 +9,22 @@ lib/libruqolawidgets.so.%%SO_VER%%
 %%QT_PLUGINDIR%%/ruqolaplugins/authentication/ruqola_gitlabauthenticationplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/authentication/ruqola_passwordauthenticationplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/authentication/ruqola_personalaccesstokenauthenticationplugin.so
+%%QT_PLUGINDIR%%/ruqolaplugins/textplugins/ruqola_aitextplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/textplugins/ruqola_sharetextplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/textplugins/ruqola_webshortcuttextplugin.so
+%%QT_PLUGINDIR%%/ruqolaplugins/toolsplugins/ruqola_aiactionsplugin.so
+%%QT_PLUGINDIR%%/ruqolaplugins/toolsplugins/ruqola_autogenerateplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/toolsplugins/ruqola_grabscreenplugin.so
 share/applications/org.kde.ruqola.desktop
+share/config.kcfg/ruqolaglobalconfig.kcfg
+share/doc/HTML/ca/ruqola/index.cache.bz2
+share/doc/HTML/ca/ruqola/index.docbook
 share/doc/HTML/en/ruqola/index.cache.bz2
 share/doc/HTML/en/ruqola/index.docbook
+share/doc/HTML/nl/ruqola/index.cache.bz2
+share/doc/HTML/nl/ruqola/index.docbook
+share/doc/HTML/uk/ruqola/index.cache.bz2
+share/doc/HTML/uk/ruqola/index.docbook
 share/icons/hicolor/128x128/apps/ruqola.png
 share/icons/hicolor/22x22/apps/ruqola.png
 share/icons/hicolor/32x32/apps/ruqola.png
@@ -35,7 +43,9 @@ share/locale/et/LC_MESSAGES/ruqola.mo
 share/locale/eu/LC_MESSAGES/ruqola.mo
 share/locale/fi/LC_MESSAGES/ruqola.mo
 share/locale/fr/LC_MESSAGES/ruqola.mo
+share/locale/ga/LC_MESSAGES/ruqola.mo
 share/locale/gl/LC_MESSAGES/ruqola.mo
+share/locale/hi/LC_MESSAGES/ruqola.mo
 share/locale/hu/LC_MESSAGES/ruqola.mo
 share/locale/ia/LC_MESSAGES/ruqola.mo
 share/locale/it/LC_MESSAGES/ruqola.mo
@@ -47,10 +57,12 @@ share/locale/pl/LC_MESSAGES/ruqola.mo
 share/locale/pt/LC_MESSAGES/ruqola.mo
 share/locale/pt_BR/LC_MESSAGES/ruqola.mo
 share/locale/ru/LC_MESSAGES/ruqola.mo
+share/locale/sa/LC_MESSAGES/ruqola.mo
 share/locale/sk/LC_MESSAGES/ruqola.mo
 share/locale/sl/LC_MESSAGES/ruqola.mo
 share/locale/sv/LC_MESSAGES/ruqola.mo
 share/locale/tr/LC_MESSAGES/ruqola.mo
+share/locale/ug/LC_MESSAGES/ruqola.mo
 share/locale/uk/LC_MESSAGES/ruqola.mo
 share/locale/zh_CN/LC_MESSAGES/ruqola.mo
 share/locale/zh_TW/LC_MESSAGES/ruqola.mo
@@ -58,3 +70,4 @@ share/messageviewer/openurlwith/ruqola.openurl
 share/metainfo/org.kde.ruqola.appdata.xml
 share/qlogging-categories6/ruqola.categories
 share/qlogging-categories6/ruqola.renamecategories
+%%DATADIR%%/icons/hicolor/22x22/apps/ruqola-symbolic.svg
