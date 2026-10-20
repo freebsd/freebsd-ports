@@ -1,14 +1,14 @@
 -- Fix PEP 621 license field for the setuptools version in ports.
 -- Old setuptools rejects the shorthand "license = \"MIT\"" syntax.
 
---- pyproject.toml.orig	2026-09-14 22:12:06 UTC
+--- pyproject.toml.orig	2026-10-14 19:38:44 UTC
 +++ pyproject.toml
-@@ -5,7 +5,7 @@ version = "1.43.94"
+@@ -5,7 +5,7 @@ version = "1.43.114"
  [project]
  name = "boto3-stubs"
- version = "1.43.94"
+ version = "1.43.114"
 -license = "MIT"
 +license = {text = "MIT"}
  authors = [{ name = "Vlad Emelianov", email = "vlad.emelianov.nz@gmail.com" }]
- description = "Type annotations for boto3 1.43.94 generated with mypy-boto3-builder 8.12.0"
+ description = "Type annotations for boto3 1.43.114 generated with mypy-boto3-builder 8.12.0"
  readme = "README.md"
