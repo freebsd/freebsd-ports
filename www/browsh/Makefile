@@ -1,7 +1,7 @@
 PORTNAME=	browsh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/browsh-org/browsh/releases/download/${DISTVERSIONFULL}/:xpi
 DISTFILES=	${PORTNAME}-${DISTVERSION}.xpi:xpi
