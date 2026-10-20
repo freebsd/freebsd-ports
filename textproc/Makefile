@@ -1589,6 +1589,7 @@
     SUBDIR += py-ntc-templates
     SUBDIR += py-numpydoc
     SUBDIR += py-ocrmypdf
+    SUBDIR += py-odfdo
     SUBDIR += py-openpyxl
     SUBDIR += py-opensearch-py
     SUBDIR += py-openstackdocstheme
