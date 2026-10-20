@@ -1,6 +1,5 @@
 PORTNAME=	epazote
-PORTVERSION=	3.7.0
-PORTREVISION=	3
+PORTVERSION=	5.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io
@@ -12,6 +11,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
+
+# Mk/Features/lto.mk forces panic=abort. epazote refuses that: a panicking
+# service task must unwind, and Drop must still reap timed-out commands.
+WITHOUT_LTO=	yes
 
 USE_GITHUB=	yes
 
