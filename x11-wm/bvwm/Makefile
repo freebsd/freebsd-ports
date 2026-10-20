@@ -37,9 +37,9 @@ GO_DESC=		Build and install modules written in Go
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_MESON_ENABLED=	bidi
 
-# go.mod says "go 1.21". modules: vendor dir is in the tarball.
+# modules: vendor dir is in the tarball.
 # no_targets: meson runs go; this port only borrows the toolchain.
-GO_USES=		go:1.21+,modules,no_targets
+GO_USES=		go:modules,no_targets
 GO_MESON_ENABLED=	golang
 
 FVWM_ICONS=	fvwm_icons-20070101
