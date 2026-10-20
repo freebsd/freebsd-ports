@@ -1,7 +1,6 @@
 PORTNAME=	opencode
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.32
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	misc
 
 # Upstream ships no FreeBSD builds of OpenTUI's Zig core, fff's Rust cdylib, the
@@ -11,9 +10,9 @@ CATEGORIES=	misc
 # files/setup-*-freebsd.py, files/*.patch and files/webui-wasm-package.json.
 #
 # OPENTUI_VERSION and FFF_VERSION must match the pinned @opentui/core and
-# @ff-labs/fff-bun releases (packages/cli/package.json, packages/core/package.json)
-# or the native FFI ABI breaks.
-OPENTUI_VERSION=	0.5.17
+# @ff-labs/fff-bun releases (the root package.json catalog and
+# packages/core/package.json) or the native FFI ABI breaks.
+OPENTUI_VERSION=	0.6.6
 FFF_VERSION=	0.10.5
 #
 # opencode-pty is the persistent terminal daemon the client spawns.  Its version
@@ -21,7 +20,7 @@ FFF_VERSION=	0.10.5
 # as the bundled client (packages/cli/package.json, packages/core/package.json),
 # and GHOSTTY_REVISION must match its ghostty-revision file, or the client
 # rejects the daemon as a protocol mismatch.
-OPENCODE_PTY_VERSION=	0.2.0
+OPENCODE_PTY_VERSION=	0.3.1
 GHOSTTY_REVISION=	ab0b9da9e88fcb4b0533a1854e84628f663930af
 
 MASTER_SITES=	https://registry.npmjs.org/@ff-labs/fff-bun/-/:fffbun

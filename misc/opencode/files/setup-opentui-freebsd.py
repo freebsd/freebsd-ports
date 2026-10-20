@@ -137,7 +137,7 @@ def create_platform_package(root: str, lib: str, version: str, arch: str) -> str
 def main() -> int:
     root = sys.argv[1]
     lib = sys.argv[2]
-    version = sys.argv[3] if len(sys.argv) > 3 else "0.5.17"
+    version = sys.argv[3] if len(sys.argv) > 3 else "0.6.6"
     arch = sys.argv[4] if len(sys.argv) > 4 else "x64"
     if arch not in ("x64", "arm64"):
         raise SystemExit(f"unsupported arch tag: {arch}")
