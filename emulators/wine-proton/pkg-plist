@@ -999,6 +999,7 @@ wine-proton/lib/wine/i386-windows/wineoss.drv
 wine-proton/lib/wine/i386-windows/winepath.exe
 wine-proton/lib/wine/i386-windows/wineps.drv
 wine-proton/lib/wine/i386-windows/wineps16.drv16
+%%PULSEAUDIO%%wine-proton/lib/wine/i386-windows/winepulse.drv
 wine-proton/lib/wine/i386-windows/winevdm.exe
 wine-proton/lib/wine/i386-windows/winevulkan.dll
 wine-proton/lib/wine/i386-windows/winewayland.drv
@@ -2317,6 +2318,7 @@ wine-proton/lib/wine/%%WINEARCH%%-windows/winemsibuilder.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/wineoss.drv
 wine-proton/lib/wine/%%WINEARCH%%-windows/winepath.exe
 wine-proton/lib/wine/%%WINEARCH%%-windows/wineps.drv
+%%PULSEAUDIO%%wine-proton/lib/wine/%%WINEARCH%%-windows/winepulse.drv
 wine-proton/lib/wine/%%WINEARCH%%-windows/winevulkan.dll
 wine-proton/lib/wine/%%WINEARCH%%-windows/winewayland.drv
 wine-proton/lib/wine/%%WINEARCH%%-windows/winex11.drv
