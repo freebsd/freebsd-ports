@@ -1,0 +1,1020 @@
+--- plugins.d/dwm-bar.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-bar
+@@ -1,7 +1,7 @@ label Toggle bar
+ id dwm-bar
+ group x11/bhotkeys-dwm
+ label Toggle bar
+-chord Alt+b
++chord Super+b
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show or hide the bar. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show or hide the bar. dwm owns the key.
+-# dwm Mod1Mask XK_b togglebar
++# dwm Mod4Mask XK_b togglebar
+--- plugins.d/dwm-dmenu.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-dmenu
+@@ -1,7 +1,7 @@ label Run command
+ id dwm-dmenu
+ group x11/bhotkeys-dwm
+ label Run command
+-chord Alt+p
++chord Super+p
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Run dmenu. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Run dmenu. dwm owns the key.
+-# dwm Mod1Mask XK_p spawn dmenu_run
++# dwm Mod4Mask XK_p spawn dmenu_run
+--- plugins.d/dwm-float.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-float
+@@ -1,7 +1,7 @@ label Toggle floating
+ id dwm-float
+ group x11/bhotkeys-dwm
+ label Toggle floating
+-chord Alt+Shift+space
++chord Super+Shift+space
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Float or tile the focused window. dwm owns the ke
+ greeter 0
+ listen 0
+ desc Float or tile the focused window. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_space togglefloating
++# dwm Mod4Mask|ShiftMask XK_space togglefloating
+--- plugins.d/dwm-focus-next.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-focus-next
+@@ -1,7 +1,7 @@ label Focus next
+ id dwm-focus-next
+ group x11/bhotkeys-dwm
+ label Focus next
+-chord Alt+j
++chord Super+j
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Focus the next window. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Focus the next window. dwm owns the key.
+-# dwm Mod1Mask XK_j focusstack 1
++# dwm Mod4Mask XK_j focusstack 1
+--- plugins.d/dwm-focus-prev.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-focus-prev
+@@ -1,7 +1,7 @@ label Focus previous
+ id dwm-focus-prev
+ group x11/bhotkeys-dwm
+ label Focus previous
+-chord Alt+k
++chord Super+k
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Focus the previous window. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Focus the previous window. dwm owns the key.
+-# dwm Mod1Mask XK_k focusstack -1
++# dwm Mod4Mask XK_k focusstack -1
+--- plugins.d/dwm-kill.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-kill
+@@ -1,7 +1,7 @@ label Close window
+ id dwm-kill
+ group x11/bhotkeys-dwm
+ label Close window
+-chord Alt+Shift+c
++chord Super+Shift+c
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Close the focused window. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Close the focused window. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_c killclient
++# dwm Mod4Mask|ShiftMask XK_c killclient
+--- plugins.d/dwm-layout-float.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-layout-float
+@@ -1,7 +1,7 @@ label Floating layout
+ id dwm-layout-float
+ group x11/bhotkeys-dwm
+ label Floating layout
+-chord Alt+f
++chord Super+f
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Use the floating layout. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Use the floating layout. dwm owns the key.
+-# dwm Mod1Mask XK_f setlayout 1
++# dwm Mod4Mask XK_f setlayout 1
+--- plugins.d/dwm-layout-monocle.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-layout-monocle
+@@ -1,7 +1,7 @@ label Monocle layout
+ id dwm-layout-monocle
+ group x11/bhotkeys-dwm
+ label Monocle layout
+-chord Alt+m
++chord Super+m
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Use the monocle layout. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Use the monocle layout. dwm owns the key.
+-# dwm Mod1Mask XK_m setlayout 2
++# dwm Mod4Mask XK_m setlayout 2
+--- plugins.d/dwm-layout-tile.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-layout-tile
+@@ -1,7 +1,7 @@ label Tile layout
+ id dwm-layout-tile
+ group x11/bhotkeys-dwm
+ label Tile layout
+-chord Alt+t
++chord Super+t
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Use the tile layout. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Use the tile layout. dwm owns the key.
+-# dwm Mod1Mask XK_t setlayout 0
++# dwm Mod4Mask XK_t setlayout 0
+--- plugins.d/dwm-layout-toggle.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-layout-toggle
+@@ -1,7 +1,7 @@ label Next layout
+ id dwm-layout-toggle
+ group x11/bhotkeys-dwm
+ label Next layout
+-chord Alt+space
++chord Super+space
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Cycle the layout. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Cycle the layout. dwm owns the key.
+-# dwm Mod1Mask XK_space setlayout toggle
++# dwm Mod4Mask XK_space setlayout toggle
+--- plugins.d/dwm-mfact-dec.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-mfact-dec
+@@ -1,7 +1,7 @@ label Shrink master
+ id dwm-mfact-dec
+ group x11/bhotkeys-dwm
+ label Shrink master
+-chord Alt+h
++chord Super+h
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Shrink the master area. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Shrink the master area. dwm owns the key.
+-# dwm Mod1Mask XK_h setmfact -0.05
++# dwm Mod4Mask XK_h setmfact -0.05
+--- plugins.d/dwm-mfact-inc.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-mfact-inc
+@@ -1,7 +1,7 @@ label Grow master
+ id dwm-mfact-inc
+ group x11/bhotkeys-dwm
+ label Grow master
+-chord Alt+l
++chord Super+l
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Grow the master area. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Grow the master area. dwm owns the key.
+-# dwm Mod1Mask XK_l setmfact 0.05
++# dwm Mod4Mask XK_l setmfact 0.05
+--- plugins.d/dwm-mon-next.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-mon-next
+@@ -1,7 +1,7 @@ label Next monitor
+ id dwm-mon-next
+ group x11/bhotkeys-dwm
+ label Next monitor
+-chord Alt+period
++chord Super+period
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Focus the next monitor. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Focus the next monitor. dwm owns the key.
+-# dwm Mod1Mask XK_period focusmon 1
++# dwm Mod4Mask XK_period focusmon 1
+--- plugins.d/dwm-mon-prev.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-mon-prev
+@@ -1,7 +1,7 @@ label Previous monitor
+ id dwm-mon-prev
+ group x11/bhotkeys-dwm
+ label Previous monitor
+-chord Alt+comma
++chord Super+comma
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Focus the previous monitor. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Focus the previous monitor. dwm owns the key.
+-# dwm Mod1Mask XK_comma focusmon -1
++# dwm Mod4Mask XK_comma focusmon -1
+--- plugins.d/dwm-nmaster-dec.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-nmaster-dec
+@@ -1,7 +1,7 @@ label Fewer masters
+ id dwm-nmaster-dec
+ group x11/bhotkeys-dwm
+ label Fewer masters
+-chord Alt+d
++chord Super+d
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Remove a master window. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Remove a master window. dwm owns the key.
+-# dwm Mod1Mask XK_d incnmaster -1
++# dwm Mod4Mask XK_d incnmaster -1
+--- plugins.d/dwm-nmaster-inc.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-nmaster-inc
+@@ -1,7 +1,7 @@ label More masters
+ id dwm-nmaster-inc
+ group x11/bhotkeys-dwm
+ label More masters
+-chord Alt+i
++chord Super+i
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add a master window. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Add a master window. dwm owns the key.
+-# dwm Mod1Mask XK_i incnmaster 1
++# dwm Mod4Mask XK_i incnmaster 1
+--- plugins.d/dwm-quit.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-quit
+@@ -1,7 +1,7 @@ label Quit dwm
+ id dwm-quit
+ group x11/bhotkeys-dwm
+ label Quit dwm
+-chord Alt+Shift+q
++chord Super+Shift+q
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Quit dwm. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Quit dwm. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_q quit
++# dwm Mod4Mask|ShiftMask XK_q quit
+--- plugins.d/dwm-tag-1.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tag-1
+@@ -1,7 +1,7 @@ label Move to tag 1
+ id dwm-tag-1
+ group x11/bhotkeys-dwm
+ label Move to tag 1
+-chord Alt+Shift+1
++chord Super+Shift+1
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Move the focused window to tag 1. dwm owns the ke
+ greeter 0
+ listen 0
+ desc Move the focused window to tag 1. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_1 tag 1
++# dwm Mod4Mask|ShiftMask XK_1 tag 1
+--- plugins.d/dwm-tag-2.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tag-2
+@@ -1,7 +1,7 @@ label Move to tag 2
+ id dwm-tag-2
+ group x11/bhotkeys-dwm
+ label Move to tag 2
+-chord Alt+Shift+2
++chord Super+Shift+2
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Move the focused window to tag 2. dwm owns the ke
+ greeter 0
+ listen 0
+ desc Move the focused window to tag 2. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_2 tag 2
++# dwm Mod4Mask|ShiftMask XK_2 tag 2
+--- plugins.d/dwm-tag-3.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tag-3
+@@ -1,7 +1,7 @@ label Move to tag 3
+ id dwm-tag-3
+ group x11/bhotkeys-dwm
+ label Move to tag 3
+-chord Alt+Shift+3
++chord Super+Shift+3
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Move the focused window to tag 3. dwm owns the ke
+ greeter 0
+ listen 0
+ desc Move the focused window to tag 3. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_3 tag 4
++# dwm Mod4Mask|ShiftMask XK_3 tag 4
+--- plugins.d/dwm-tag-4.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tag-4
+@@ -1,7 +1,7 @@ label Move to tag 4
+ id dwm-tag-4
+ group x11/bhotkeys-dwm
+ label Move to tag 4
+-chord Alt+Shift+4
++chord Super+Shift+4
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Move the focused window to tag 4. dwm owns the ke
+ greeter 0
+ listen 0
+ desc Move the focused window to tag 4. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_4 tag 8
++# dwm Mod4Mask|ShiftMask XK_4 tag 8
+--- plugins.d/dwm-tag-5.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tag-5
+@@ -1,7 +1,7 @@ label Move to tag 5
+ id dwm-tag-5
+ group x11/bhotkeys-dwm
+ label Move to tag 5
+-chord Alt+Shift+5
++chord Super+Shift+5
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Move the focused window to tag 5. dwm owns the ke
+ greeter 0
+ listen 0
+ desc Move the focused window to tag 5. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_5 tag 16
++# dwm Mod4Mask|ShiftMask XK_5 tag 16
+--- plugins.d/dwm-tag-6.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tag-6
+@@ -1,7 +1,7 @@ label Move to tag 6
+ id dwm-tag-6
+ group x11/bhotkeys-dwm
+ label Move to tag 6
+-chord Alt+Shift+6
++chord Super+Shift+6
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Move the focused window to tag 6. dwm owns the ke
+ greeter 0
+ listen 0
+ desc Move the focused window to tag 6. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_6 tag 32
++# dwm Mod4Mask|ShiftMask XK_6 tag 32
+--- plugins.d/dwm-tag-7.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tag-7
+@@ -1,7 +1,7 @@ label Move to tag 7
+ id dwm-tag-7
+ group x11/bhotkeys-dwm
+ label Move to tag 7
+-chord Alt+Shift+7
++chord Super+Shift+7
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Move the focused window to tag 7. dwm owns the ke
+ greeter 0
+ listen 0
+ desc Move the focused window to tag 7. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_7 tag 64
++# dwm Mod4Mask|ShiftMask XK_7 tag 64
+--- plugins.d/dwm-tag-8.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tag-8
+@@ -1,7 +1,7 @@ label Move to tag 8
+ id dwm-tag-8
+ group x11/bhotkeys-dwm
+ label Move to tag 8
+-chord Alt+Shift+8
++chord Super+Shift+8
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Move the focused window to tag 8. dwm owns the ke
+ greeter 0
+ listen 0
+ desc Move the focused window to tag 8. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_8 tag 128
++# dwm Mod4Mask|ShiftMask XK_8 tag 128
+--- plugins.d/dwm-tag-9.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tag-9
+@@ -1,7 +1,7 @@ label Move to tag 9
+ id dwm-tag-9
+ group x11/bhotkeys-dwm
+ label Move to tag 9
+-chord Alt+Shift+9
++chord Super+Shift+9
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Move the focused window to tag 9. dwm owns the ke
+ greeter 0
+ listen 0
+ desc Move the focused window to tag 9. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_9 tag 256
++# dwm Mod4Mask|ShiftMask XK_9 tag 256
+--- plugins.d/dwm-tag-all.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tag-all
+@@ -1,7 +1,7 @@ label Show on all tags
+ id dwm-tag-all
+ group x11/bhotkeys-dwm
+ label Show on all tags
+-chord Alt+Shift+0
++chord Super+Shift+0
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Put the focused window on every tag. dwm owns the
+ greeter 0
+ listen 0
+ desc Put the focused window on every tag. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_0 tag ~0
++# dwm Mod4Mask|ShiftMask XK_0 tag ~0
+--- plugins.d/dwm-tagmon-next.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tagmon-next
+@@ -1,7 +1,7 @@ label Send to next monitor
+ id dwm-tagmon-next
+ group x11/bhotkeys-dwm
+ label Send to next monitor
+-chord Alt+Shift+period
++chord Super+Shift+period
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Send the focused window to the next monitor. dwm 
+ greeter 0
+ listen 0
+ desc Send the focused window to the next monitor. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_period tagmon 1
++# dwm Mod4Mask|ShiftMask XK_period tagmon 1
+--- plugins.d/dwm-tagmon-prev.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-tagmon-prev
+@@ -1,7 +1,7 @@ label Send to previous monitor
+ id dwm-tagmon-prev
+ group x11/bhotkeys-dwm
+ label Send to previous monitor
+-chord Alt+Shift+comma
++chord Super+Shift+comma
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Send the focused window to the previous monitor. 
+ greeter 0
+ listen 0
+ desc Send the focused window to the previous monitor. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_comma tagmon -1
++# dwm Mod4Mask|ShiftMask XK_comma tagmon -1
+--- plugins.d/dwm-term.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-term
+@@ -1,7 +1,7 @@ label Terminal
+ id dwm-term
+ group x11/bhotkeys-dwm
+ label Terminal
+-chord Alt+Shift+Return
++chord Super+Shift+Return
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Open a terminal. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Open a terminal. dwm owns the key.
+-# dwm Mod1Mask|ShiftMask XK_Return spawn st
++# dwm Mod4Mask|ShiftMask XK_Return spawn st
+--- plugins.d/dwm-toggletag-1.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggletag-1
+@@ -1,7 +1,7 @@ label Toggle tag 1
+ id dwm-toggletag-1
+ group x11/bhotkeys-dwm
+ label Toggle tag 1
+-chord Alt+Ctrl+Shift+1
++chord Super+Ctrl+Shift+1
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 1 on the focused window. dwm ow
+ greeter 0
+ listen 0
+ desc Add or remove tag 1 on the focused window. dwm owns the key.
+-# dwm ControlMask|Mod1Mask|ShiftMask XK_1 toggletag 1
++# dwm Mod4Mask|ControlMask|ShiftMask XK_1 toggletag 1
+--- plugins.d/dwm-toggletag-2.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggletag-2
+@@ -1,7 +1,7 @@ label Toggle tag 2
+ id dwm-toggletag-2
+ group x11/bhotkeys-dwm
+ label Toggle tag 2
+-chord Alt+Ctrl+Shift+2
++chord Super+Ctrl+Shift+2
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 2 on the focused window. dwm ow
+ greeter 0
+ listen 0
+ desc Add or remove tag 2 on the focused window. dwm owns the key.
+-# dwm ControlMask|Mod1Mask|ShiftMask XK_2 toggletag 2
++# dwm Mod4Mask|ControlMask|ShiftMask XK_2 toggletag 2
+--- plugins.d/dwm-toggletag-3.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggletag-3
+@@ -1,7 +1,7 @@ label Toggle tag 3
+ id dwm-toggletag-3
+ group x11/bhotkeys-dwm
+ label Toggle tag 3
+-chord Alt+Ctrl+Shift+3
++chord Super+Ctrl+Shift+3
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 3 on the focused window. dwm ow
+ greeter 0
+ listen 0
+ desc Add or remove tag 3 on the focused window. dwm owns the key.
+-# dwm ControlMask|Mod1Mask|ShiftMask XK_3 toggletag 4
++# dwm Mod4Mask|ControlMask|ShiftMask XK_3 toggletag 4
+--- plugins.d/dwm-toggletag-4.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggletag-4
+@@ -1,7 +1,7 @@ label Toggle tag 4
+ id dwm-toggletag-4
+ group x11/bhotkeys-dwm
+ label Toggle tag 4
+-chord Alt+Ctrl+Shift+4
++chord Super+Ctrl+Shift+4
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 4 on the focused window. dwm ow
+ greeter 0
+ listen 0
+ desc Add or remove tag 4 on the focused window. dwm owns the key.
+-# dwm ControlMask|Mod1Mask|ShiftMask XK_4 toggletag 8
++# dwm Mod4Mask|ControlMask|ShiftMask XK_4 toggletag 8
+--- plugins.d/dwm-toggletag-5.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggletag-5
+@@ -1,7 +1,7 @@ label Toggle tag 5
+ id dwm-toggletag-5
+ group x11/bhotkeys-dwm
+ label Toggle tag 5
+-chord Alt+Ctrl+Shift+5
++chord Super+Ctrl+Shift+5
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 5 on the focused window. dwm ow
+ greeter 0
+ listen 0
+ desc Add or remove tag 5 on the focused window. dwm owns the key.
+-# dwm ControlMask|Mod1Mask|ShiftMask XK_5 toggletag 16
++# dwm Mod4Mask|ControlMask|ShiftMask XK_5 toggletag 16
+--- plugins.d/dwm-toggletag-6.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggletag-6
+@@ -1,7 +1,7 @@ label Toggle tag 6
+ id dwm-toggletag-6
+ group x11/bhotkeys-dwm
+ label Toggle tag 6
+-chord Alt+Ctrl+Shift+6
++chord Super+Ctrl+Shift+6
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 6 on the focused window. dwm ow
+ greeter 0
+ listen 0
+ desc Add or remove tag 6 on the focused window. dwm owns the key.
+-# dwm ControlMask|Mod1Mask|ShiftMask XK_6 toggletag 32
++# dwm Mod4Mask|ControlMask|ShiftMask XK_6 toggletag 32
+--- plugins.d/dwm-toggletag-7.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggletag-7
+@@ -1,7 +1,7 @@ label Toggle tag 7
+ id dwm-toggletag-7
+ group x11/bhotkeys-dwm
+ label Toggle tag 7
+-chord Alt+Ctrl+Shift+7
++chord Super+Ctrl+Shift+7
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 7 on the focused window. dwm ow
+ greeter 0
+ listen 0
+ desc Add or remove tag 7 on the focused window. dwm owns the key.
+-# dwm ControlMask|Mod1Mask|ShiftMask XK_7 toggletag 64
++# dwm Mod4Mask|ControlMask|ShiftMask XK_7 toggletag 64
+--- plugins.d/dwm-toggletag-8.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggletag-8
+@@ -1,7 +1,7 @@ label Toggle tag 8
+ id dwm-toggletag-8
+ group x11/bhotkeys-dwm
+ label Toggle tag 8
+-chord Alt+Ctrl+Shift+8
++chord Super+Ctrl+Shift+8
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 8 on the focused window. dwm ow
+ greeter 0
+ listen 0
+ desc Add or remove tag 8 on the focused window. dwm owns the key.
+-# dwm ControlMask|Mod1Mask|ShiftMask XK_8 toggletag 128
++# dwm Mod4Mask|ControlMask|ShiftMask XK_8 toggletag 128
+--- plugins.d/dwm-toggletag-9.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggletag-9
+@@ -1,7 +1,7 @@ label Toggle tag 9
+ id dwm-toggletag-9
+ group x11/bhotkeys-dwm
+ label Toggle tag 9
+-chord Alt+Ctrl+Shift+9
++chord Super+Ctrl+Shift+9
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 9 on the focused window. dwm ow
+ greeter 0
+ listen 0
+ desc Add or remove tag 9 on the focused window. dwm owns the key.
+-# dwm ControlMask|Mod1Mask|ShiftMask XK_9 toggletag 256
++# dwm Mod4Mask|ControlMask|ShiftMask XK_9 toggletag 256
+--- plugins.d/dwm-toggleview-1.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggleview-1
+@@ -1,7 +1,7 @@ label Toggle view tag 1
+ id dwm-toggleview-1
+ group x11/bhotkeys-dwm
+ label Toggle view tag 1
+-chord Alt+Ctrl+1
++chord Super+Ctrl+1
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 1 from the view. dwm owns the k
+ greeter 0
+ listen 0
+ desc Add or remove tag 1 from the view. dwm owns the key.
+-# dwm ControlMask|Mod1Mask XK_1 toggleview 1
++# dwm Mod4Mask|ControlMask XK_1 toggleview 1
+--- plugins.d/dwm-toggleview-2.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggleview-2
+@@ -1,7 +1,7 @@ label Toggle view tag 2
+ id dwm-toggleview-2
+ group x11/bhotkeys-dwm
+ label Toggle view tag 2
+-chord Alt+Ctrl+2
++chord Super+Ctrl+2
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 2 from the view. dwm owns the k
+ greeter 0
+ listen 0
+ desc Add or remove tag 2 from the view. dwm owns the key.
+-# dwm ControlMask|Mod1Mask XK_2 toggleview 2
++# dwm Mod4Mask|ControlMask XK_2 toggleview 2
+--- plugins.d/dwm-toggleview-3.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggleview-3
+@@ -1,7 +1,7 @@ label Toggle view tag 3
+ id dwm-toggleview-3
+ group x11/bhotkeys-dwm
+ label Toggle view tag 3
+-chord Alt+Ctrl+3
++chord Super+Ctrl+3
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 3 from the view. dwm owns the k
+ greeter 0
+ listen 0
+ desc Add or remove tag 3 from the view. dwm owns the key.
+-# dwm ControlMask|Mod1Mask XK_3 toggleview 4
++# dwm Mod4Mask|ControlMask XK_3 toggleview 4
+--- plugins.d/dwm-toggleview-4.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggleview-4
+@@ -1,7 +1,7 @@ label Toggle view tag 4
+ id dwm-toggleview-4
+ group x11/bhotkeys-dwm
+ label Toggle view tag 4
+-chord Alt+Ctrl+4
++chord Super+Ctrl+4
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 4 from the view. dwm owns the k
+ greeter 0
+ listen 0
+ desc Add or remove tag 4 from the view. dwm owns the key.
+-# dwm ControlMask|Mod1Mask XK_4 toggleview 8
++# dwm Mod4Mask|ControlMask XK_4 toggleview 8
+--- plugins.d/dwm-toggleview-5.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggleview-5
+@@ -1,7 +1,7 @@ label Toggle view tag 5
+ id dwm-toggleview-5
+ group x11/bhotkeys-dwm
+ label Toggle view tag 5
+-chord Alt+Ctrl+5
++chord Super+Ctrl+5
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 5 from the view. dwm owns the k
+ greeter 0
+ listen 0
+ desc Add or remove tag 5 from the view. dwm owns the key.
+-# dwm ControlMask|Mod1Mask XK_5 toggleview 16
++# dwm Mod4Mask|ControlMask XK_5 toggleview 16
+--- plugins.d/dwm-toggleview-6.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggleview-6
+@@ -1,7 +1,7 @@ label Toggle view tag 6
+ id dwm-toggleview-6
+ group x11/bhotkeys-dwm
+ label Toggle view tag 6
+-chord Alt+Ctrl+6
++chord Super+Ctrl+6
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 6 from the view. dwm owns the k
+ greeter 0
+ listen 0
+ desc Add or remove tag 6 from the view. dwm owns the key.
+-# dwm ControlMask|Mod1Mask XK_6 toggleview 32
++# dwm Mod4Mask|ControlMask XK_6 toggleview 32
+--- plugins.d/dwm-toggleview-7.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggleview-7
+@@ -1,7 +1,7 @@ label Toggle view tag 7
+ id dwm-toggleview-7
+ group x11/bhotkeys-dwm
+ label Toggle view tag 7
+-chord Alt+Ctrl+7
++chord Super+Ctrl+7
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 7 from the view. dwm owns the k
+ greeter 0
+ listen 0
+ desc Add or remove tag 7 from the view. dwm owns the key.
+-# dwm ControlMask|Mod1Mask XK_7 toggleview 64
++# dwm Mod4Mask|ControlMask XK_7 toggleview 64
+--- plugins.d/dwm-toggleview-8.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggleview-8
+@@ -1,7 +1,7 @@ label Toggle view tag 8
+ id dwm-toggleview-8
+ group x11/bhotkeys-dwm
+ label Toggle view tag 8
+-chord Alt+Ctrl+8
++chord Super+Ctrl+8
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 8 from the view. dwm owns the k
+ greeter 0
+ listen 0
+ desc Add or remove tag 8 from the view. dwm owns the key.
+-# dwm ControlMask|Mod1Mask XK_8 toggleview 128
++# dwm Mod4Mask|ControlMask XK_8 toggleview 128
+--- plugins.d/dwm-toggleview-9.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-toggleview-9
+@@ -1,7 +1,7 @@ label Toggle view tag 9
+ id dwm-toggleview-9
+ group x11/bhotkeys-dwm
+ label Toggle view tag 9
+-chord Alt+Ctrl+9
++chord Super+Ctrl+9
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Add or remove tag 9 from the view. dwm owns the k
+ greeter 0
+ listen 0
+ desc Add or remove tag 9 from the view. dwm owns the key.
+-# dwm ControlMask|Mod1Mask XK_9 toggleview 256
++# dwm Mod4Mask|ControlMask XK_9 toggleview 256
+--- plugins.d/dwm-view-1.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-1
+@@ -1,7 +1,7 @@ label View tag 1
+ id dwm-view-1
+ group x11/bhotkeys-dwm
+ label View tag 1
+-chord Alt+1
++chord Super+1
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show tag 1. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show tag 1. dwm owns the key.
+-# dwm Mod1Mask XK_1 view 1
++# dwm Mod4Mask XK_1 view 1
+--- plugins.d/dwm-view-2.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-2
+@@ -1,7 +1,7 @@ label View tag 2
+ id dwm-view-2
+ group x11/bhotkeys-dwm
+ label View tag 2
+-chord Alt+2
++chord Super+2
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show tag 2. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show tag 2. dwm owns the key.
+-# dwm Mod1Mask XK_2 view 2
++# dwm Mod4Mask XK_2 view 2
+--- plugins.d/dwm-view-3.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-3
+@@ -1,7 +1,7 @@ label View tag 3
+ id dwm-view-3
+ group x11/bhotkeys-dwm
+ label View tag 3
+-chord Alt+3
++chord Super+3
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show tag 3. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show tag 3. dwm owns the key.
+-# dwm Mod1Mask XK_3 view 4
++# dwm Mod4Mask XK_3 view 4
+--- plugins.d/dwm-view-4.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-4
+@@ -1,7 +1,7 @@ label View tag 4
+ id dwm-view-4
+ group x11/bhotkeys-dwm
+ label View tag 4
+-chord Alt+4
++chord Super+4
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show tag 4. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show tag 4. dwm owns the key.
+-# dwm Mod1Mask XK_4 view 8
++# dwm Mod4Mask XK_4 view 8
+--- plugins.d/dwm-view-5.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-5
+@@ -1,7 +1,7 @@ label View tag 5
+ id dwm-view-5
+ group x11/bhotkeys-dwm
+ label View tag 5
+-chord Alt+5
++chord Super+5
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show tag 5. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show tag 5. dwm owns the key.
+-# dwm Mod1Mask XK_5 view 16
++# dwm Mod4Mask XK_5 view 16
+--- plugins.d/dwm-view-6.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-6
+@@ -1,7 +1,7 @@ label View tag 6
+ id dwm-view-6
+ group x11/bhotkeys-dwm
+ label View tag 6
+-chord Alt+6
++chord Super+6
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show tag 6. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show tag 6. dwm owns the key.
+-# dwm Mod1Mask XK_6 view 32
++# dwm Mod4Mask XK_6 view 32
+--- plugins.d/dwm-view-7.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-7
+@@ -1,7 +1,7 @@ label View tag 7
+ id dwm-view-7
+ group x11/bhotkeys-dwm
+ label View tag 7
+-chord Alt+7
++chord Super+7
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show tag 7. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show tag 7. dwm owns the key.
+-# dwm Mod1Mask XK_7 view 64
++# dwm Mod4Mask XK_7 view 64
+--- plugins.d/dwm-view-8.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-8
+@@ -1,7 +1,7 @@ label View tag 8
+ id dwm-view-8
+ group x11/bhotkeys-dwm
+ label View tag 8
+-chord Alt+8
++chord Super+8
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show tag 8. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show tag 8. dwm owns the key.
+-# dwm Mod1Mask XK_8 view 128
++# dwm Mod4Mask XK_8 view 128
+--- plugins.d/dwm-view-9.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-9
+@@ -1,7 +1,7 @@ label View tag 9
+ id dwm-view-9
+ group x11/bhotkeys-dwm
+ label View tag 9
+-chord Alt+9
++chord Super+9
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show tag 9. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show tag 9. dwm owns the key.
+-# dwm Mod1Mask XK_9 view 256
++# dwm Mod4Mask XK_9 view 256
+--- plugins.d/dwm-view-all.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-all
+@@ -1,7 +1,7 @@ label View all tags
+ id dwm-view-all
+ group x11/bhotkeys-dwm
+ label View all tags
+-chord Alt+0
++chord Super+0
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show every tag. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show every tag. dwm owns the key.
+-# dwm Mod1Mask XK_0 view ~0
++# dwm Mod4Mask XK_0 view ~0
+--- plugins.d/dwm-view-prev.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-view-prev
+@@ -1,7 +1,7 @@ label Previous view
+ id dwm-view-prev
+ group x11/bhotkeys-dwm
+ label Previous view
+-chord Alt+Tab
++chord Super+Tab
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Show the previous tag set. dwm owns the key.
+ greeter 0
+ listen 0
+ desc Show the previous tag set. dwm owns the key.
+-# dwm Mod1Mask XK_Tab view 0
++# dwm Mod4Mask XK_Tab view 0
+--- plugins.d/dwm-zoom.orig	2026-10-20 20:20:24 UTC
++++ plugins.d/dwm-zoom
+@@ -1,7 +1,7 @@ label Zoom
+ id dwm-zoom
+ group x11/bhotkeys-dwm
+ label Zoom
+-chord Alt+Return
++chord Super+Return
+ enabled 0
+ enabled 1 dwm
+ session 0
+@@ -10,4 +10,4 @@ desc Swap the focused window with the master. dwm owns
+ greeter 0
+ listen 0
+ desc Swap the focused window with the master. dwm owns the key.
+-# dwm Mod1Mask XK_Return zoom
++# dwm Mod4Mask XK_Return zoom

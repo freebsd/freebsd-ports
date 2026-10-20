@@ -1,0 +1,3 @@
+Stock dwm chords for bhotkeys.  Mod is Alt unless SUPERASMODKEY
+is on, matching dwm built with that option.  dwm needs the
+RUNTIMEKEYS option for a changed row to take effect.
