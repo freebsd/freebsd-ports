@@ -1,5 +1,5 @@
 PORTNAME=	pybase64
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}:${WRKSRC}
 TEST_WRKSRC=	${WRKSRC}
 TEST_ARGS=	--disable-plugin-autoload
 
-# tests as of 1.5.0: 22074 passed, 58 skipped
+# tests as of 1.5.1: 6334 passed, 18 skipped in 2.46s
 
 .include <bsd.port.mk>
