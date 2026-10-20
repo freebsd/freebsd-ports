@@ -465,7 +465,7 @@ libvirtdbus:*:520:
 davmail:*:521:
 nullmail:*:522:
 freevo:*:523:
-# free: 524
+semaphore:*:524:
 dkimproxy:*:525:
 # free: 526
 # free: 527

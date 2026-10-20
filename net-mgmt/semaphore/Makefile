@@ -1,7 +1,7 @@
 PORTNAME=	semaphore
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.19.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES+=	https://github.com/joneum/FreeBSD-Semaphore/releases/download/${PORTNAME}-${DISTVERSION}/:webui
 DISTFILES+=	${PORTNAME}-webui-${DISTVERSION}${EXTRACT_SUFX}:webui \
@@ -91,6 +91,9 @@ GL_TUPLE=	cznic:libc:533f38d8beab45d5a69acb60903422d454f0fac1:cznic_libc/vendor/
 		cznic:sqlite:66b4d20f42485b9823a2d35c86b08335d927d0e5:cznic_sqlite/vendor/modernc.org/sqlite
 USE_RC_SUBR=	semaphore
 
+USERS=		semaphore
+GROUPS=		semaphore
+
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./cli:${PORTNAME}
 GO_BUILDFLAGS=	-trimpath \
@@ -106,7 +109,8 @@ post-extract:
 	@${CP} ${WRKDIR}/vendor/modules.txt ${WRKSRC}/vendor/modules.txt
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME} \
+		${STAGEDIR}/var/db/${PORTNAME}
 	${INSTALL_DATA} ${FILESDIR}/config.json.sample \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/config.json.sample
 

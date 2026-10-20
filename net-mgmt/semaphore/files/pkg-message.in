@@ -34,5 +34,25 @@ See the ports UPDATING entry of 20260826 for the same instructions, and
 https://semaphoreui.com/docs/admin-guide/cli/migrations for the upstream
 documentation of the import.
 EOM
+},
+{ type: upgrade
+  maximum_version: 2.19.16_2
+  message: <<EOM
+The service no longer runs as root but as the dedicated user "semaphore".
+The data directory itself changes owner with this update, the files in it
+do not.  With sqlite the database stays owned by root and the service
+dies on startup with "attempt to write a readonly database".  With mysql
+or postgres there is no database file, but tmp_path and the stored SSH
+keys are still owned by root and the first task run fails.  Hand the
+contents over once:
+
+  service semaphore stop
+  chown -R semaphore:semaphore /var/db/semaphore
+  service semaphore start
+
+Adjust the path if your configuration keeps the database, tmp_path or the
+SSH keys somewhere else.  To run the service as a different user, set
+semaphore_uname in rc.conf.
+EOM
 }
 ]

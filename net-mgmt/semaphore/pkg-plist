@@ -1,2 +1,3 @@
 bin/semaphore
-@sample %%ETCDIR%%/config.json.sample
+@sample(,semaphore,0640) %%ETCDIR%%/config.json.sample
+@dir(semaphore,semaphore,0750) /var/db/semaphore
