@@ -530,4 +530,4 @@ lib/cmake/reflectcpp/reflectcpp-exports-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/reflectcpp/reflectcpp-exports.cmake
 lib/cmake/reflectcpp/reflectcpp-version.cmake
 lib/libreflectcpp.so
-lib/libreflectcpp.so.0.26.0
+lib/libreflectcpp.so.0.26.2

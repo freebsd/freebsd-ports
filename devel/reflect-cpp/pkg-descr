@@ -1,5 +1,5 @@
-reflect-cpp is a C++-20 library for fast serialization, deserialization and
-validation using reflection, similar to pydantic in Python, serde in Rust,
+reflect-cpp is a C++-20/C++-26 library for fast serialization, deserialization
+and validation using reflection, similar to pydantic in Python, serde in Rust,
 encoding in Go or aeson in Haskell.
 
 reflect-cpp fills an important gap in C++ development. It minimizes boilerplate
