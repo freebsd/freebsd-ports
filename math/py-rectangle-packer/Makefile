@@ -1,5 +1,5 @@
 PORTNAME=	rectangle-packer
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -26,6 +26,6 @@ post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/rpack/_core${PYTHON_TAG}.so
 
-# tests as of 2.1.0: Ran 85 tests in 2.154s, OK (skipped=1)
+# tests as of 2.1.1: Ran 85 tests in 2.000s, OK (skipped=1)
 
 .include <bsd.port.mk>
