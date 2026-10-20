@@ -1,0 +1,10 @@
+BVWM (B? Virtual Window Manager) is a fork of fvwm3 with core window-manager
+enhancements (ButtonStyle hover states and TitleStyle ButtonWidth). This port
+ships a self-contained, coinstallable tree: bin/bvwm, modules under
+libexec/bvwm/, share/bvwm, prefixed helpers (bvwm-root, ...), and prefixed man
+pages (bvwm.1, bvwm-FvwmAnimate.1, ...).
+
+Configs keep the Fvwm module vocabulary (Module FvwmButtons, and so on). BVWM
+defaults to ~/.bvwm and .bvwmrc so stock fvwm3 configs are not asked to parse
+BVWM-only decor syntax. PATH tools and man pages use a bvwm- prefix so this
+port coinstalls with x11-wm/fvwm3.

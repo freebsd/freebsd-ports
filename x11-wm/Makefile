@@ -12,6 +12,7 @@
     SUBDIR += blackbox
     SUBDIR += bspwm
     SUBDIR += bspwm-devel
+    SUBDIR += bvwm
     SUBDIR += cage
     SUBDIR += cagebreak
     SUBDIR += chamfer
