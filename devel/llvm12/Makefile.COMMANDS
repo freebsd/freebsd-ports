@@ -77,25 +77,6 @@ CLANG_COMMANDS=	\
 		scan-build \
 		scan-view
 
-EXTRAS_COMMANDS= \
-		clangd \
-		clang-apply-replacements \
-		clang-change-namespace \
-		clang-doc \
-		clang-include-fixer \
-		clang-move \
-		clang-query \
-		clang-reorder-fields \
-		clang-tidy \
-		find-all-symbols \
-		modularize \
-		pp-trace
-
-LIT_COMMANDS=	\
-		FileCheck \
-		lit \
-		llvm-lit
-
 LLD_COMMANDS=	\
 		ld.lld \
 		ld64.lld \
