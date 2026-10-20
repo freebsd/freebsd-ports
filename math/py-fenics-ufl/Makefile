@@ -1,5 +1,5 @@
 PORTNAME=	fenics-ufl
-DISTVERSION=	2026.1.0
+DISTVERSION=	2026.2.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,6 +23,6 @@ GH_PROJECT=	ufl
 
 NO_ARCH=	yes
 
-# tests as of 2026.1.0: 969 passed in 47.95s
+# tests as of 2026.2.0: 1034 passed in 19.20s
 
 .include <bsd.port.mk>
