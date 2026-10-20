@@ -1,5 +1,5 @@
 PORTNAME=	cx88
-DISTVERSION=	1.5.6
+DISTVERSION=	1.5.7
 CATEGORIES=	multimedia
 MASTER_SITES=	https://corona.homeunix.net/distfiles/ports/cx88/
 
