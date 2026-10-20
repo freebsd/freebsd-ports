@@ -1,7 +1,6 @@
 PORTNAME=	hyprlauncher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.6
-PORTREVISION=	3
+DISTVERSION=	0.1.7
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -16,9 +15,12 @@ LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libhyprwire.so:devel/hyprwire \
 		libicuuc.so:devel/icu \
+		libhyprgraphics.so:graphics/hyprgraphics \
 		libdrm.so:graphics/libdrm \
 		libqalculate.so:math/libqalculate \
+		libxkbcommon.so:x11/libxkbcommon \
 		libfontconfig.so:x11-fonts/fontconfig \
+		libaquamarine.so:x11-toolkits/aquamarine \
 		libhyprtoolkit.so:x11-toolkits/hyprtoolkit
 RUN_DEPENDS=	wl-copy:x11/wl-clipboard
 
@@ -31,7 +33,7 @@ USE_XORG=	pixman
 
 LDFLAGS+=	-pthread
 
-PLIST_FILES=	bin/hyprlauncher
+PLIST_FILES=	bin/${PORTNAME}
 
 # XXX Drop after FreeBSD 14.* EOL around 2028-11-30
 # https://cgit.freebsd.org/src/commit/?id=3965de642c29
