@@ -1,10 +1,12 @@
 -- Relax uv-build upper bound so the port builds with the latest
 -- devel/py-uv-build package in the tree.
 
---- pyproject.toml.orig	2026-09-14 14:59:07 UTC
+--- pyproject.toml.orig	2026-10-18 15:19:29 UTC
 +++ pyproject.toml
-@@ -1,3 +1,3 @@
+@@ -1,5 +1,5 @@
  [build-system]
--requires = ["uv_build>=0.12.5,<0.13"]
-+requires = ["uv_build>=0.12.5"]
+-requires = ["uv_build>=0.12.17,<0.13"]
++requires = ["uv_build>=0.12.17"]
  build-backend = "uv_build"
+ 
+ [tool.uv.build-backend]
