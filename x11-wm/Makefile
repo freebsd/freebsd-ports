@@ -57,6 +57,7 @@
     SUBDIR += jwm
     SUBDIR += kickshaw
     SUBDIR += korgwm
+    SUBDIR += kwin-zones
     SUBDIR += labwc
     SUBDIR += leftwm
     SUBDIR += libcompizconfig
