@@ -37,13 +37,13 @@
  	@if [ "$<" = "interface/hpddm_python.cpp" ]; then \
 -		echo ${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} ${PYTHON_INCS} -shared $< -o $@ ${LIBS} ${PYTHON_LIBS}; \
 -		${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} ${PYTHON_INCS} -shared $< -o $@ ${LIBS} ${PYTHON_LIBS}; \
-+		echo ${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} ${PYTHON_INCS} -shared $< -o $@ -Wl,-soname,$@ ${LIBS} ${PYTHON_LIBS}; \
-+		${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} ${PYTHON_INCS} -shared $< -o $@ -Wl,-soname,$@ ${LIBS} ${PYTHON_LIBS}; \
++		echo ${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} ${PYTHON_INCS} -shared $< -o $@ -Wl,-soname,$(@F) ${LIBS} ${PYTHON_LIBS}; \
++		${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} ${PYTHON_INCS} -shared $< -o $@ -Wl,-soname,$(@F) ${LIBS} ${PYTHON_LIBS}; \
  	else \
 -		echo ${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} -shared $< -o $@ ${LIBS}; \
 -		${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} -shared $< -o $@ ${LIBS}; \
-+		echo ${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} -shared $< -o $@  -Wl,-soname,$@ ${LIBS}; \
-+		${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} -shared $< -o $@  -Wl,-soname,$@ ${LIBS}; \
++		echo ${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} -shared $< -o $@  -Wl,-soname,$(@F) ${LIBS}; \
++		${MPICXX} ${DEPFLAGS} ${CXXFLAGS} ${HPDDMFLAGS} ${INCS} -shared $< -o $@  -Wl,-soname,$(@F) ${LIBS}; \
  	fi
  	${POSTCOMPILE}
  
