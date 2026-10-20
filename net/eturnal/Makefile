@@ -1,6 +1,5 @@
 PORTNAME=	eturnal
-DISTVERSION=	1.12.2
-PORTREVISION=	4
+DISTVERSION=	1.12.3
 CATEGORIES=	net
 
 MAINTAINER=	yzrh@noema.org
@@ -40,19 +39,19 @@ USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
 .ifnmake portclippy
-ACCEPT_VERSION=			e1faefa # 0.3.6
+ACCEPT_VERSION=			3604977 # 0.3.7
 CONF_VERSION=			1d80a8b # 0.2.6
-FAST_TLS_VERSION=		1.1.22
-FAST_YAML_VERSION=		1.0.37
+FAST_TLS_VERSION=		1.1.26
+FAST_YAML_VERSION=		1.0.40
 INFLUX_UDP_VERSION=		c744ccf # 1.1.2
-P1_UTILS_VERSION=		1.0.26
+P1_UTILS_VERSION=		1.0.29
 PC_VERSION=			935c207 # 1.15.0
 POOLBOY_VERSION=		1.5.2
-PROMETHEUS_HTTPD_VERSION=	849deb3 # 2.1.14
-PROMETHEUS_VERSION=		09b95f8 # 4.13.0
+PROMETHEUS_HTTPD_VERSION=	1deb9e0 # 2.1.15
+PROMETHEUS_VERSION=		02df2e1 # 5.1.1
 QUANTILE_ESTIMATOR_VERSION=	3c4c505 # 1.0.2
 RECON_VERSION=			2.5.6
-STUN_VERSION=			1.2.19
+STUN_VERSION=			1.2.23
 ULITOS_VERSION=			0.4.0
 YVAL_VERSION=			1.0.10
 .endif
@@ -73,23 +72,20 @@ post-patch:
 		${WRKSRC}/overlay/eturnalctl
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/eturnal
-	cd ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal && \
-		${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX}/lib/eturnal/
-	cd ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal && \
-		${COPYTREE_SHARE} lib ${STAGEDIR}${PREFIX}/lib/eturnal/
-	cd ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal && \
-		${COPYTREE_SHARE} releases ${STAGEDIR}${PREFIX}/lib/eturnal/
-	${REINPLACE_CMD} 's|__erts_dir="$$RELEASE_ROOT_DIR/erts-$$ERTS_VSN"|__erts_dir="${LOCALBASE}/lib/erlang/erts-$$ERTS_VSN"|' \
+	${MKDIR} ${STAGEDIR}${ETCDIR} \
+		 ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}/var/log/eturnal
+	(cd ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal && \
+		${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX}/lib/eturnal && \
+		${COPYTREE_SHARE} "lib releases" ${STAGEDIR}${PREFIX}/lib/eturnal)
+	${REINPLACE_CMD} \
+		's|__erts_dir="$$RELEASE_ROOT_DIR/erts-$$ERTS_VSN"|__erts_dir="${LOCALBASE}/lib/erlang/erts-$$ERTS_VSN"|' \
 		${STAGEDIR}${PREFIX}/lib/eturnal/bin/eturnal
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/eturnal
 	${INSTALL_DATA} ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal/etc/eturnal.yml \
-		${STAGEDIR}${PREFIX}/etc/eturnal/eturnal.yml.sample
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+		${STAGEDIR}${ETCDIR}/eturnal.yml.sample
 	${INSTALL_DATA} ${WRKSRC}/_build/${REBAR_PROFILE}/rel/eturnal/doc/README.md \
 		${STAGEDIR}${DOCSDIR}/
 	${RLN} ${STAGEDIR}${PREFIX}/lib/eturnal/bin/eturnalctl ${STAGEDIR}${PREFIX}/sbin/eturnalctl
-	${MKDIR} ${STAGEDIR}/var/log/eturnal
 	${FIND} ${STAGEDIR}${PREFIX}/lib/eturnal/lib -type f -name '*.so' \
 		-exec ${STRIP_CMD} {} +
 
