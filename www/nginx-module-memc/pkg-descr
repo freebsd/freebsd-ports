@@ -1,0 +1,7 @@
+The memc module speaks the memcached protocol as an upstream, so a
+location can store, fetch and delete entries instead of only reading them
+like the built-in memcached module does.  The verb comes from a variable,
+which lets a plain nginx configuration act as a memcached client.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their MEMC option is enabled.

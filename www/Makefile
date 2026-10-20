@@ -550,6 +550,7 @@
     SUBDIR += nginx-module-let
     SUBDIR += nginx-module-lua
     SUBDIR += nginx-module-lua-stream
+    SUBDIR += nginx-module-memc
     SUBDIR += nginx-module-modsecurity3
     SUBDIR += nginx-module-ndk
     SUBDIR += nginx-module-njs
