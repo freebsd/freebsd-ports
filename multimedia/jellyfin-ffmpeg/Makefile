@@ -10,8 +10,8 @@ WWW=		https://github.com/jellyfin/jellyfin-ffmpeg
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	upstream jellyfin-ffmpeg targets 64-bit; 32-bit builds non-PIC asm that lld rejects
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	upstream jellyfin-ffmpeg targets 64-bit; 32-bit builds non-PIC asm that lld rejects
 
 BUILD_DEPENDS=	nasm:devel/nasm \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
