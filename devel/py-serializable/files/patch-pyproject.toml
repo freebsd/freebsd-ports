@@ -1,0 +1,12 @@
+-- Relax the setuptools requirement to match the version in the ports tree (devel/py-setuptools).
+-- Required by FreeBSD ports policy: devel/py-setuptools is pinned and not updated.
+
+--- pyproject.toml.orig	2026-10-18 15:18:47 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=64", "wheel"]
++requires = ["setuptools>=63", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
