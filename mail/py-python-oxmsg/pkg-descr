@@ -1,0 +1,2 @@
+Parse Outlook MSG (.msg) files to extract email messages and attachments.
+It also installs a small CLI for inspecting MSG files.

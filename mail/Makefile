@@ -547,6 +547,7 @@
     SUBDIR += py-pymilter
     SUBDIR += py-pysasl
     SUBDIR += py-pyspf
+    SUBDIR += py-python-oxmsg
     SUBDIR += py-python-slimta
     SUBDIR += py-pyzmail
     SUBDIR += py-resend
