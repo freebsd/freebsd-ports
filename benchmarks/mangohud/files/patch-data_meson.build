@@ -1,0 +1,11 @@
+--- data/meson.build.orig	2023-04-13 17:40:23 UTC
++++ data/meson.build
+@@ -43,7 +43,7 @@ endif
+ 
+ install_data(
+   files('MangoHud.conf'),
+-  install_dir : join_paths(get_option('datadir'), 'doc', 'mangohud'),
++  install_dir : join_paths(get_option('datadir'), 'examples', 'mangohud'),
+   rename : ['MangoHud.conf.example'],
+   install_tag : 'doc',
+ )

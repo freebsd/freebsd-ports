@@ -5742,7 +5742,6 @@ devel/compiler-rt||2026-10-15|Now ships with the base system
 textproc/py-pypa-docs-theme||2026-10-15|Has expired: Upstream archived the repo on Mar 16, 2024
 www/py-wikitools||2026-10-18|Has expired: Not compatible with Python 3
 japanese/fcitx-mozc|japanese/fcitx5-mozc|2026-10-18|Deprecated: Use fcitx5 instead
-benchmarks/mangohud||2026-10-19|Broken for years in tree
 cad/yosys-systemverilog||2026-10-19|Broken for years in tree
 deskutils/gnome-todo||2026-10-19|Broken for several months in tree
 devel/rubygem-mmap2||2026-10-19|Broken for over a year in tree

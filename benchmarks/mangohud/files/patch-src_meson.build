@@ -1,0 +1,28 @@
+--- src/meson.build.orig	2023-04-13 17:40:23 UTC
++++ src/meson.build
+@@ -3,7 +3,7 @@ glslang = find_program('glslangValidator')
+ # Needs prefix for configure_file()
+ if get_option('append_libdir_mangohud')
+   libdir_mangohud = join_paths(get_option('prefix'), get_option('libdir'), 'mangohud')
+-  ld_libdir_mangohud = get_option('prefix') + '/\$LIB/mangohud/'
++  ld_libdir_mangohud = get_option('prefix') + '/lib/mangohud/'
+ else
+   libdir_mangohud = join_paths(get_option('prefix'), get_option('libdir'))
+   ld_libdir_mangohud = get_option('prefix') + '/\$LIB/'
+@@ -143,6 +143,7 @@ endif
+ link_args = cc.get_supported_link_arguments(['-Wl,-Bsymbolic-functions', '-Wl,-z,relro', '-Wl,--exclude-libs,ALL', '-lGL'])
+ # meson fails to check version-script so just force add
+ link_args += '-Wl,--version-script,@0@'.format(join_paths(meson.current_source_dir(), 'mangohud.version'))
++link_args += '-Wl,--undefined-version' # required for LLVM 17+
+ 
+ mangohud_static_lib = static_library(
+   'MangoHud',
+@@ -168,7 +169,7 @@ mangohud_static_lib = static_library(
+     spdlog_dep,
+     dbus_dep,
+     dep_dl,
+-    dep_rt,
++    dep_inotify,
+     dep_pthread,
+     dep_vulkan,
+     windows_deps,

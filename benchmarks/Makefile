@@ -50,6 +50,7 @@
     SUBDIR += linux-vdbench
     SUBDIR += lmbench
     SUBDIR += lzbench
+    SUBDIR += mangohud
     SUBDIR += mdtest
     SUBDIR += mst-bench
     SUBDIR += nbench
