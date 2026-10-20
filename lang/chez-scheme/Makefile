@@ -12,7 +12,7 @@ WWW=		https://cisco.github.io/ChezScheme
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv7 powerpc
+ONLY_FOR_ARCHS=	amd64 i386 aarch64 armv7 powerpc powerpc64 powerpc64le
 BROKEN_armv7=	No suitable machine type found in "./boot".
 
 LIB_DEPENDS=	libuuid.so:misc/libuuid \
@@ -55,6 +55,10 @@ CHEZ_ARCH=	tarm64fb
 CHEZ_ARCH=	tarm32fb
 .elif (${ARCH} == "powerpc")
 CHEZ_ARCH=	tppc32fb
+.elif ${ARCH:Mpowerpc64*}
+# no native backend, build the portable bytecode variant
+CHEZ_ARCH=	tpb64${ARCH:S/powerpc64le/l/:S/powerpc64/b/}
+CONFIGURE_ARGS+=	--pbarch
 .endif
 
 .if defined(NCURSES_RPATH)
