@@ -44,8 +44,6 @@ GDBM_CONFIGURE_ON=	--with-dblib=gdbm \
 			--with-gdbm=${LOCALBASE}
 LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
 LMDB_CONFIGURE_ON=	--with-dblib=lmdb
-LMDB_CFLAGS=		-I${LOCALBASE}/include
-LMDB_LDFLAGS=		-L${LOCALBASE}/lib
 # LMDB_IMPLIES=		SASLDB_IN_VAR
 LMDB0_DESC=		Use LMDB 0.9 library
 SASLDB_IN_VAR_DESC=	sasldb in /var/db/sasl2
