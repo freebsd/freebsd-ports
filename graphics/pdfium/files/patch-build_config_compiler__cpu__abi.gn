@@ -1,8 +1,10 @@
 -- Use an x86_64-unknown-freebsd Clang target triple on FreeBSD so the compiler
 -- finds the correct C++ standard library headers.
---- build/config/compiler_cpu_abi.gn.orig	2026-09-24 10:57:02 UTC
+-- powerpc64: current_cpu does not encode the endianness, so rely on the
+-- default (host) target of clang instead of a hard-coded triple.
+--- build/config/compiler_cpu_abi.gn.orig	2026-10-20 01:49:47 UTC
 +++ build/config/compiler_cpu_abi.gn
-@@ -49,8 +49,13 @@ if ((is_posix && !is_apple) || is_fuchsia) {
+@@ -49,8 +49,13 @@
    # simplicity we always explicitly set the architecture.
    if (current_cpu == "x64") {
      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
@@ -18,7 +20,8 @@
      } else {
        cpu_abi_cflags += [ "-m64" ]
        cpu_abi_ldflags += [ "-m64" ]
-@@ -85,7 +90,12 @@ if ((is_posix && !is_apple) || is_fuchsia) {
+@@ -84,8 +89,13 @@
+     ]
    } else if (current_cpu == "arm64") {
      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
 -      cpu_abi_cflags += [ "--target=aarch64-linux-gnu" ]
@@ -32,3 +35,13 @@
 +      }
      }
      if (target_os == "chromeos" && cros_target_cpu_arch != "" &&
+         is_a_target_toolchain) {
+@@ -333,7 +343,7 @@
+         cpu_abi_cflags += [ "-maix64" ]
+         cpu_abi_ldflags += [ "-maix64" ]
+       }
+-    } else if (is_clang) {
++    } else if (is_clang && current_os != "freebsd") {
+       cpu_abi_cflags += [ "--target=powerpc64le-unknown-linux-gnu" ]
+       cpu_abi_ldflags += [ "--target=powerpc64le-unknown-linux-gnu" ]
+     } else {
