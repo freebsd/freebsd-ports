@@ -11,8 +11,8 @@ WWW=		https://www.kdab.com/development-resources/qt-tools/gammaray/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
-ONLY_FOR_ARCHS_REASON=	upstream only supports aarch64, amd64, armv6, armv7, and i386
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	upstream only supports aarch64, amd64, armv6, armv7, i386, powerpc64, and powerpc64le
 
 BUILD_DEPENDS=	vulkan-headers>=1.4:graphics/vulkan-headers
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
