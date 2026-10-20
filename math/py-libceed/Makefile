@@ -1,8 +1,6 @@
 PORTNAME=	libceed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0-763
-PORTREVISION=	3
-DISTVERSIONSUFFIX=	-ge3ae47f6
+DISTVERSION=	1.0.1
 CATEGORIES=	math # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -41,5 +39,7 @@ do-test:
 		${SETENV} PYTHON=${PYTHON_CMD} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${GMAKE} test
 
 # rebuilds and reinstalls the C library, see https://github.com/CEED/libCEED/issues/1707
+
+# tests as of 1.0.1: 64 passed in 17.96s
 
 .include <bsd.port.mk>
