@@ -1,5 +1,5 @@
 PORTNAME=	liquidsfz
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,8 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	swesterfeld
-GH_TUPLE=	ocornut:imgui:dbee23e:imgui/3rdparty/imgui
+GH_TUPLE=	ocornut:imgui:dbee23e:imgui/3rdparty/imgui # request to unbundle imgui: https://github.com/swesterfeld/liquidsfz/issues/93
+# imgui is only for a LV2 plugin GUI, otherwise this is a command line tool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
@@ -31,12 +32,14 @@ PLIST_FILES=	bin/liquidsfz \
 		include/liquidsfz.hh \
 		lib/libliquidsfz.so \
 		lib/libliquidsfz.so.4 \
-		lib/libliquidsfz.so.4.0.0 \
+		lib/libliquidsfz.so.4.0.2 \
 		lib/lv2/liquidsfz.lv2/dejavu-lgc-sans.ttf \
 		lib/lv2/liquidsfz.lv2/liquidsfz.ttl \
 		lib/lv2/liquidsfz.lv2/liquidsfz_lv2.so \
 		lib/lv2/liquidsfz.lv2/manifest.ttl \
 		libdata/pkgconfig/liquidsfz.pc
+
+CONFLICTS_BUILD=	imgui # request to unbundle imgui: https://github.com/swesterfeld/liquidsfz/issues/93
 
 .include <bsd.port.pre.mk>
 
