@@ -612,7 +612,6 @@ share/icons/SE98/actions/16/media-optical-burn.png
 share/icons/SE98/actions/16/media-optical-copy.png
 share/icons/SE98/actions/16/media-optical-data-new.png
 share/icons/SE98/actions/16/media-optical-video-new.png
-share/icons/SE98/actions/16/media-playback-pause-symbolic.png
 share/icons/SE98/actions/16/media-playback-pause-symbolic.symbolic.png
 share/icons/SE98/actions/16/media-playback-pause.png
 share/icons/SE98/actions/16/media-playback-start-symbolic.symbolic.png
@@ -668,9 +667,8 @@ share/icons/SE98/actions/16/node-join-symbolic.png
 share/icons/SE98/actions/16/node-join.png
 share/icons/SE98/actions/16/node-smooth-symbolic.png
 share/icons/SE98/actions/16/node-smooth.png
-share/icons/SE98/actions/16/node-symmectric
-share/icons/SE98/actions/16/node-symmectric-symbolic.node-symmectric
 share/icons/SE98/actions/16/node-symmectric-symbolic.png
+share/icons/SE98/actions/16/node-symmectric.png
 share/icons/SE98/actions/16/node-symmetric-symbolic.png
 share/icons/SE98/actions/16/node-symmetric.png
 share/icons/SE98/actions/16/notifications.png
@@ -1588,7 +1586,6 @@ share/icons/SE98/actions/22/media-optical-burn.png
 share/icons/SE98/actions/22/media-optical-copy.png
 share/icons/SE98/actions/22/media-optical-data-new.png
 share/icons/SE98/actions/22/media-optical-video-new.png
-share/icons/SE98/actions/22/media-playback-pause-symbolic.png
 share/icons/SE98/actions/22/media-playback-pause-symbolic.symbolic.png
 share/icons/SE98/actions/22/media-playback-pause.png
 share/icons/SE98/actions/22/media-playback-start-symbolic.symbolic.png
@@ -2510,7 +2507,6 @@ share/icons/SE98/actions/24/media-optical-burn.png
 share/icons/SE98/actions/24/media-optical-copy.png
 share/icons/SE98/actions/24/media-optical-data-new.png
 share/icons/SE98/actions/24/media-optical-video-new.png
-share/icons/SE98/actions/24/media-playback-pause-symbolic.png
 share/icons/SE98/actions/24/media-playback-pause-symbolic.symbolic.png
 share/icons/SE98/actions/24/media-playback-pause.png
 share/icons/SE98/actions/24/media-playback-start-symbolic.symbolic.png
@@ -3307,7 +3303,6 @@ share/icons/SE98/actions/32/media-optical-burn.png
 share/icons/SE98/actions/32/media-optical-copy.png
 share/icons/SE98/actions/32/media-optical-data-new.png
 share/icons/SE98/actions/32/media-optical-video-new.png
-share/icons/SE98/actions/32/media-playback-pause-symbolic.png
 share/icons/SE98/actions/32/media-playback-pause-symbolic.symbolic.png
 share/icons/SE98/actions/32/media-playback-pause.png
 share/icons/SE98/actions/32/media-playback-start-symbolic.symbolic.png
@@ -4083,7 +4078,6 @@ share/icons/SE98/actions/48/media-optical-burn.png
 share/icons/SE98/actions/48/media-optical-copy.png
 share/icons/SE98/actions/48/media-optical-data-new.png
 share/icons/SE98/actions/48/media-optical-video-new.png
-share/icons/SE98/actions/48/media-playback-pause-symbolic.png
 share/icons/SE98/actions/48/media-playback-pause-symbolic.symbolic.png
 share/icons/SE98/actions/48/media-playback-pause.png
 share/icons/SE98/actions/48/media-playback-start-symbolic.symbolic.png
@@ -4669,7 +4663,6 @@ share/icons/SE98/actions/64/media-optical-burn.png
 share/icons/SE98/actions/64/media-optical-copy.png
 share/icons/SE98/actions/64/media-optical-data-new.png
 share/icons/SE98/actions/64/media-optical-video-new.png
-share/icons/SE98/actions/64/media-playback-pause-symbolic.png
 share/icons/SE98/actions/64/media-playback-pause-symbolic.symbolic.png
 share/icons/SE98/actions/64/media-playback-pause.png
 share/icons/SE98/actions/64/media-playback-start-symbolic.symbolic.png
@@ -5408,6 +5401,7 @@ share/icons/SE98/apps/128/cs-extensions.png
 share/icons/SE98/apps/128/cs-language.png
 share/icons/SE98/apps/128/cs-region.png
 share/icons/SE98/apps/128/cs-sources.png
+share/icons/SE98/apps/128/cs-windows.png
 share/icons/SE98/apps/128/cs-workspaces.png
 share/icons/SE98/apps/128/d3lphin.png
 share/icons/SE98/apps/128/dde-file-manager.png
@@ -5432,6 +5426,7 @@ share/icons/SE98/apps/128/file-system-manager.png
 share/icons/SE98/apps/128/file.manager.png
 share/icons/SE98/apps/128/filelight.png
 share/icons/SE98/apps/128/finalterm.png
+share/icons/SE98/apps/128/firefox.png
 share/icons/SE98/apps/128/galeon.png
 share/icons/SE98/apps/128/geary.png
 share/icons/SE98/apps/128/gimp-2.10.png
@@ -5450,6 +5445,7 @@ share/icons/SE98/apps/128/gnome-term.png
 share/icons/SE98/apps/128/gnome-terminal.png
 share/icons/SE98/apps/128/gnome-translate.png
 share/icons/SE98/apps/128/gnome-web-browser.png
+share/icons/SE98/apps/128/gnome-window-manager.png
 share/icons/SE98/apps/128/gnome-workspace-switcher.png
 share/icons/SE98/apps/128/gnome-workspace.png
 share/icons/SE98/apps/128/gnome-xterm.png
@@ -5481,6 +5477,7 @@ share/icons/SE98/apps/128/konsole.png
 share/icons/SE98/apps/128/kpdf.png
 share/icons/SE98/apps/128/kplayer.png
 share/icons/SE98/apps/128/krusader.png
+share/icons/SE98/apps/128/kwin.png
 share/icons/SE98/apps/128/language-selector.png
 share/icons/SE98/apps/128/libreoffice-writer.png
 share/icons/SE98/apps/128/locale.png
@@ -5495,6 +5492,8 @@ share/icons/SE98/apps/128/master-pdf-editor.png
 share/icons/SE98/apps/128/mate-disk-usage-analyzer.png
 share/icons/SE98/apps/128/mate-panel-launcher-symbolic.png
 share/icons/SE98/apps/128/mate-panel-launcher.png
+share/icons/SE98/apps/128/mate-panel-window-list.png
+share/icons/SE98/apps/128/mate-panel-window-menu.png
 share/icons/SE98/apps/128/mate-panel-workspace-switcher.png
 share/icons/SE98/apps/128/mini.xterm.png
 share/icons/SE98/apps/128/mintupdate.png
@@ -5505,6 +5504,8 @@ share/icons/SE98/apps/128/mupdf.png
 share/icons/SE98/apps/128/nautilus.png
 share/icons/SE98/apps/128/nemo.png
 share/icons/SE98/apps/128/nestopia.png
+share/icons/SE98/apps/128/obconf-qt.png
+share/icons/SE98/apps/128/obconf.png
 share/icons/SE98/apps/128/office-writer.png
 share/icons/SE98/apps/128/ogmrip.png
 share/icons/SE98/apps/128/okular.png
@@ -5541,10 +5542,11 @@ share/icons/SE98/apps/128/org.kde.yakuake.png
 share/icons/SE98/apps/128/org.libreoffice.LibreOffice.writer.png
 share/icons/SE98/apps/128/org.pwmt.zathura.png
 share/icons/SE98/apps/128/org.videolan.VLC.png
-share/icons/SE98/apps/128/org.xfce.filemanager
 share/icons/SE98/apps/128/org.xfce.filemanager.png
 share/icons/SE98/apps/128/org.xfce.gigolo.png
 share/icons/SE98/apps/128/org.xfce.panel.directorymenu.png
+share/icons/SE98/apps/128/org.xfce.panel.pager.png
+share/icons/SE98/apps/128/org.xfce.panel.windowmenu.png
 share/icons/SE98/apps/128/org.xfce.parole.png
 share/icons/SE98/apps/128/org.xfce.settings.color.png
 share/icons/SE98/apps/128/org.xfce.settings.default-applications.png
@@ -5557,6 +5559,8 @@ share/icons/SE98/apps/128/org.xfce.thunar.png
 share/icons/SE98/apps/128/org.xfce.videoplayer.png
 share/icons/SE98/apps/128/org.xfce.webbrowser.png
 share/icons/SE98/apps/128/org.xfce.workspaces.png
+share/icons/SE98/apps/128/org.xfce.xfwm4-tweaks.png
+share/icons/SE98/apps/128/org.xfce.xfwm4.png
 share/icons/SE98/apps/128/package_internet_terminal.png
 share/icons/SE98/apps/128/package_settings.png
 share/icons/SE98/apps/128/package_system_terminal.png
@@ -5569,8 +5573,10 @@ share/icons/SE98/apps/128/pcmanfm.png
 share/icons/SE98/apps/128/pdf-viewer.png
 share/icons/SE98/apps/128/preferences-desktop-default-applications.png
 share/icons/SE98/apps/128/preferences-desktop-locale.png
+share/icons/SE98/apps/128/preferences-desktop-theme-windowdecorations.png
 share/icons/SE98/apps/128/preferences-desktop.png
 share/icons/SE98/apps/128/preferences-plugin.png
+share/icons/SE98/apps/128/preferences-system-windows.png
 share/icons/SE98/apps/128/product_logo_48.png
 share/icons/SE98/apps/128/proxy.png
 share/icons/SE98/apps/128/pup.png
@@ -5613,6 +5619,7 @@ share/icons/SE98/apps/128/vim.png
 share/icons/SE98/apps/128/vlc.png
 share/icons/SE98/apps/128/web-browser.png
 share/icons/SE98/apps/128/wilber-gimp.png
+share/icons/SE98/apps/128/window-manager.png
 share/icons/SE98/apps/128/wine-browser.png
 share/icons/SE98/apps/128/workspace-switcher.png
 share/icons/SE98/apps/128/www-browser.png
@@ -5632,6 +5639,8 @@ share/icons/SE98/apps/128/xfce4_xicon2.png
 share/icons/SE98/apps/128/xfce4_xicon3.png
 share/icons/SE98/apps/128/xfce4_xicon4.png
 share/icons/SE98/apps/128/xfsm-chooser-icon.png
+share/icons/SE98/apps/128/xfwm4-default.png
+share/icons/SE98/apps/128/xfwm4.png
 share/icons/SE98/apps/128/xine.png
 share/icons/SE98/apps/128/xpdf.png
 share/icons/SE98/apps/128/xreader.png
@@ -5649,7 +5658,6 @@ share/icons/SE98/apps/128/yast-online_update.png
 share/icons/SE98/apps/128/zathura.png
 share/icons/SE98/apps/128/zen-icon.png
 share/icons/SE98/apps/128/zsnes.png
-share/icons/SE98/apps/16/0ad.png
 share/icons/SE98/apps/16/AdobeReader.png
 share/icons/SE98/apps/16/AdobeReader10.png
 share/icons/SE98/apps/16/AdobeReader8.png
@@ -5665,7 +5673,6 @@ share/icons/SE98/apps/16/VBox.png
 share/icons/SE98/apps/16/Vbox.png
 share/icons/SE98/apps/16/a4.png
 share/icons/SE98/apps/16/abiword.png
-share/icons/SE98/apps/16/abrt.png
 share/icons/SE98/apps/16/access.png
 share/icons/SE98/apps/16/accessibility-directory.png
 share/icons/SE98/apps/16/accessories-archiver.png
@@ -5688,18 +5695,10 @@ share/icons/SE98/apps/16/addressbook.png
 share/icons/SE98/apps/16/administration.png
 share/icons/SE98/apps/16/adobe-reader.png
 share/icons/SE98/apps/16/akonadiconsole.png
-share/icons/SE98/apps/16/akregator.png
 share/icons/SE98/apps/16/alacarte.png
-share/icons/SE98/apps/16/alchemy.png
-share/icons/SE98/apps/16/alien-arena.png
-share/icons/SE98/apps/16/amarok.png
-share/icons/SE98/apps/16/amule.png
-share/icons/SE98/apps/16/anjuta.png
-share/icons/SE98/apps/16/anki.png
 share/icons/SE98/apps/16/appfinder.png
 share/icons/SE98/apps/16/applets-screenshooter.png
 share/icons/SE98/apps/16/application-community.png
-share/icons/SE98/apps/16/application-x-clementine.png
 share/icons/SE98/apps/16/appointment.png
 share/icons/SE98/apps/16/apport.png
 share/icons/SE98/apps/16/aqualung.png
@@ -5716,9 +5715,6 @@ share/icons/SE98/apps/16/audacious.png
 share/icons/SE98/apps/16/audio-player.png
 share/icons/SE98/apps/16/audio-tag-tool.png
 share/icons/SE98/apps/16/audiobook.png
-share/icons/SE98/apps/16/autoplus.png
-share/icons/SE98/apps/16/avant-window-navigator.png
-share/icons/SE98/apps/16/awn-settings.png
 share/icons/SE98/apps/16/ax-applet.png
 share/icons/SE98/apps/16/background.png
 share/icons/SE98/apps/16/badge-small.png
@@ -5727,12 +5723,8 @@ share/icons/SE98/apps/16/banshee-1.png
 share/icons/SE98/apps/16/banshee.png
 share/icons/SE98/apps/16/baobab.png
 share/icons/SE98/apps/16/bash.png
-share/icons/SE98/apps/16/bazaar.png
 share/icons/SE98/apps/16/beryl-settings.png
 share/icons/SE98/apps/16/bleachbit.png
-share/icons/SE98/apps/16/bluefish-icon.png
-share/icons/SE98/apps/16/bluefish.png
-share/icons/SE98/apps/16/bluegriffon.png
 share/icons/SE98/apps/16/blueman.png
 share/icons/SE98/apps/16/blueradio-48.png
 share/icons/SE98/apps/16/blueradio.png
@@ -5952,8 +5944,6 @@ share/icons/SE98/apps/16/gajim.png
 share/icons/SE98/apps/16/galculator.png
 share/icons/SE98/apps/16/galeon.png
 share/icons/SE98/apps/16/gallery-app.png
-share/icons/SE98/apps/16/gazpacho-icon.png
-share/icons/SE98/apps/16/gazpacho.png
 share/icons/SE98/apps/16/gbrainy.png
 share/icons/SE98/apps/16/gcleaner.png
 share/icons/SE98/apps/16/gcolor2.png
@@ -6598,7 +6588,6 @@ share/icons/SE98/apps/16/org.xfce.about.png
 share/icons/SE98/apps/16/org.xfce.appfinder.png
 share/icons/SE98/apps/16/org.xfce.audioplayer.png
 share/icons/SE98/apps/16/org.xfce.catfish.png
-share/icons/SE98/apps/16/org.xfce.filemanager
 share/icons/SE98/apps/16/org.xfce.filemanager.png
 share/icons/SE98/apps/16/org.xfce.garcon.png
 share/icons/SE98/apps/16/org.xfce.genmon.png
@@ -6720,6 +6709,7 @@ share/icons/SE98/apps/16/preferences-desktop-effects.png
 share/icons/SE98/apps/16/preferences-desktop-font.png
 share/icons/SE98/apps/16/preferences-desktop-fonts.png
 share/icons/SE98/apps/16/preferences-desktop-gaming.png
+share/icons/SE98/apps/16/preferences-desktop-icons.png
 share/icons/SE98/apps/16/preferences-desktop-keyboard-shortcut.png
 share/icons/SE98/apps/16/preferences-desktop-keyboard-shortcuts-symbolic.png
 share/icons/SE98/apps/16/preferences-desktop-keyboard-shortcuts.png
@@ -7077,7 +7067,6 @@ share/icons/SE98/apps/16/xfce4-logo.png
 share/icons/SE98/apps/16/xfce4-mcs-manager.png
 share/icons/SE98/apps/16/xfce4-menueditor.png
 share/icons/SE98/apps/16/xfce4-mixer.png
-share/icons/SE98/apps/16/xfce4-netload-plugin.png
 share/icons/SE98/apps/16/xfce4-notes-plugin.png
 share/icons/SE98/apps/16/xfce4-notifyd.png
 share/icons/SE98/apps/16/xfce4-panel-menu.png
@@ -7089,6 +7078,7 @@ share/icons/SE98/apps/16/xfce4-session.png
 share/icons/SE98/apps/16/xfce4-settings.png
 share/icons/SE98/apps/16/xfce4-statusnotifier-plugin.png
 share/icons/SE98/apps/16/xfce4-terminal.png
+share/icons/SE98/apps/16/xfce4-weather.png
 share/icons/SE98/apps/16/xfce4-whiskermenu.png
 share/icons/SE98/apps/16/xfce4-workspaces.png
 share/icons/SE98/apps/16/xfce4-xicon1.png
@@ -7170,6 +7160,7 @@ share/icons/SE98/apps/160/epiphany-webkit.png
 share/icons/SE98/apps/160/epiphany.png
 share/icons/SE98/apps/160/evince.png
 share/icons/SE98/apps/160/falkon.png
+share/icons/SE98/apps/160/firefox.png
 share/icons/SE98/apps/160/galeon.png
 share/icons/SE98/apps/160/geary.png
 share/icons/SE98/apps/160/gnome-panel-launcher-symbolic.png
@@ -7270,6 +7261,7 @@ share/icons/SE98/apps/192/epiphany-webkit.png
 share/icons/SE98/apps/192/epiphany.png
 share/icons/SE98/apps/192/evince.png
 share/icons/SE98/apps/192/falkon.png
+share/icons/SE98/apps/192/firefox.png
 share/icons/SE98/apps/192/galeon.png
 share/icons/SE98/apps/192/geary.png
 share/icons/SE98/apps/192/gnome-panel-launcher-symbolic.png
@@ -7308,6 +7300,7 @@ share/icons/SE98/apps/192/org.gnome.Geary.png
 share/icons/SE98/apps/192/org.kde.okular.png
 share/icons/SE98/apps/192/org.pwmt.zathura.png
 share/icons/SE98/apps/192/org.xfce.gigolo.png
+share/icons/SE98/apps/192/org.xfce.panel.pager.png
 share/icons/SE98/apps/192/org.xfce.settings.color.png
 share/icons/SE98/apps/192/org.xfce.webbrowser.png
 share/icons/SE98/apps/192/org.xfce.workspaces.png
@@ -7349,7 +7342,6 @@ share/icons/SE98/apps/192/yast-online_update-symbolic.png
 share/icons/SE98/apps/192/yast-online_update.png
 share/icons/SE98/apps/192/zathura.png
 share/icons/SE98/apps/192/zen-icon.png
-share/icons/SE98/apps/22/0ad.png
 share/icons/SE98/apps/22/AdobeReader.png
 share/icons/SE98/apps/22/AdobeReader10.png
 share/icons/SE98/apps/22/AdobeReader8.png
@@ -7365,7 +7357,6 @@ share/icons/SE98/apps/22/VBox.png
 share/icons/SE98/apps/22/a4.png
 share/icons/SE98/apps/22/abiword.png
 share/icons/SE98/apps/22/abiword_48.png
-share/icons/SE98/apps/22/abrt.png
 share/icons/SE98/apps/22/access.png
 share/icons/SE98/apps/22/accessibility-directory.png
 share/icons/SE98/apps/22/accessories-archiver.png
@@ -7388,17 +7379,9 @@ share/icons/SE98/apps/22/addressbook.png
 share/icons/SE98/apps/22/administration.png
 share/icons/SE98/apps/22/adobe-reader.png
 share/icons/SE98/apps/22/akonadiconsole.png
-share/icons/SE98/apps/22/akregator.png
 share/icons/SE98/apps/22/alacarte.png
-share/icons/SE98/apps/22/alchemy.png
-share/icons/SE98/apps/22/alien-arena.png
-share/icons/SE98/apps/22/amarok.png
-share/icons/SE98/apps/22/amule.png
-share/icons/SE98/apps/22/anjuta.png
-share/icons/SE98/apps/22/anki.png
 share/icons/SE98/apps/22/appfinder.png
 share/icons/SE98/apps/22/applets-screenshooter.png
-share/icons/SE98/apps/22/application-x-clementine.png
 share/icons/SE98/apps/22/appointment.png
 share/icons/SE98/apps/22/apport.png
 share/icons/SE98/apps/22/aqualung.png
@@ -7415,9 +7398,6 @@ share/icons/SE98/apps/22/audacious.png
 share/icons/SE98/apps/22/audio-player.png
 share/icons/SE98/apps/22/audio-tag-tool.png
 share/icons/SE98/apps/22/audiobook.png
-share/icons/SE98/apps/22/autoplus.png
-share/icons/SE98/apps/22/avant-window-navigator.png
-share/icons/SE98/apps/22/awn-settings.png
 share/icons/SE98/apps/22/ax-applet.png
 share/icons/SE98/apps/22/background.png
 share/icons/SE98/apps/22/badge-small.png
@@ -7426,12 +7406,8 @@ share/icons/SE98/apps/22/banshee-1.png
 share/icons/SE98/apps/22/banshee.png
 share/icons/SE98/apps/22/baobab.png
 share/icons/SE98/apps/22/bash.png
-share/icons/SE98/apps/22/bazaar.png
 share/icons/SE98/apps/22/beryl-settings.png
 share/icons/SE98/apps/22/bleachbit.png
-share/icons/SE98/apps/22/bluefish-icon.png
-share/icons/SE98/apps/22/bluefish.png
-share/icons/SE98/apps/22/bluegriffon.png
 share/icons/SE98/apps/22/blueman.png
 share/icons/SE98/apps/22/blueradio-48.png
 share/icons/SE98/apps/22/blueradio.png
@@ -7648,8 +7624,6 @@ share/icons/SE98/apps/22/gajim.png
 share/icons/SE98/apps/22/galculator.png
 share/icons/SE98/apps/22/galeon.png
 share/icons/SE98/apps/22/gallery-app.png
-share/icons/SE98/apps/22/gazpacho-icon.png
-share/icons/SE98/apps/22/gazpacho.png
 share/icons/SE98/apps/22/gbrainy.png
 share/icons/SE98/apps/22/gcleaner.png
 share/icons/SE98/apps/22/gcolor2.png
@@ -8130,7 +8104,6 @@ share/icons/SE98/apps/22/nautilus-cd-burner.png
 share/icons/SE98/apps/22/nautilus.png
 share/icons/SE98/apps/22/nemo-fileroller.png
 share/icons/SE98/apps/22/nemo.png
-share/icons/SE98/apps/22/nestopia
 share/icons/SE98/apps/22/nestopia.png
 share/icons/SE98/apps/22/netbeans.png
 share/icons/SE98/apps/22/network-manager.png
@@ -8302,7 +8275,6 @@ share/icons/SE98/apps/22/org.xfce.about.png
 share/icons/SE98/apps/22/org.xfce.appfinder.png
 share/icons/SE98/apps/22/org.xfce.audioplayer.png
 share/icons/SE98/apps/22/org.xfce.catfish.png
-share/icons/SE98/apps/22/org.xfce.filemanager
 share/icons/SE98/apps/22/org.xfce.filemanager.png
 share/icons/SE98/apps/22/org.xfce.garcon.png
 share/icons/SE98/apps/22/org.xfce.genmon.png
@@ -8417,6 +8389,7 @@ share/icons/SE98/apps/22/preferences-desktop-effects.png
 share/icons/SE98/apps/22/preferences-desktop-font.png
 share/icons/SE98/apps/22/preferences-desktop-fonts.png
 share/icons/SE98/apps/22/preferences-desktop-gaming.png
+share/icons/SE98/apps/22/preferences-desktop-icons.png
 share/icons/SE98/apps/22/preferences-desktop-keyboard-shortcut.png
 share/icons/SE98/apps/22/preferences-desktop-keyboard-shortcuts-symbolic.png
 share/icons/SE98/apps/22/preferences-desktop-keyboard-shortcuts.png
@@ -8468,7 +8441,6 @@ share/icons/SE98/apps/22/product_logo_22.png
 share/icons/SE98/apps/22/promoe.png
 share/icons/SE98/apps/22/proxy.png
 share/icons/SE98/apps/22/psensor.png
-share/icons/SE98/apps/22/punes
 share/icons/SE98/apps/22/punes.png
 share/icons/SE98/apps/22/pup.png
 share/icons/SE98/apps/22/pychess.png
@@ -8773,7 +8745,6 @@ share/icons/SE98/apps/22/xfce4-logo.png
 share/icons/SE98/apps/22/xfce4-mcs-manager.png
 share/icons/SE98/apps/22/xfce4-menueditor.png
 share/icons/SE98/apps/22/xfce4-mixer.png
-share/icons/SE98/apps/22/xfce4-netload-plugin.png
 share/icons/SE98/apps/22/xfce4-notes-plugin.png
 share/icons/SE98/apps/22/xfce4-notifyd.png
 share/icons/SE98/apps/22/xfce4-panel-menu.png
@@ -8782,7 +8753,9 @@ share/icons/SE98/apps/22/xfce4-power-manager-settings.png
 share/icons/SE98/apps/22/xfce4-pulseaudio-plugin.png
 share/icons/SE98/apps/22/xfce4-sensors.png
 share/icons/SE98/apps/22/xfce4-session.png
+share/icons/SE98/apps/22/xfce4-settings.png
 share/icons/SE98/apps/22/xfce4-terminal.png
+share/icons/SE98/apps/22/xfce4-weather.png
 share/icons/SE98/apps/22/xfce4-whiskermenu.png
 share/icons/SE98/apps/22/xfce4-workspaces.png
 share/icons/SE98/apps/22/xfce4_xicon.png
@@ -8836,7 +8809,6 @@ share/icons/SE98/apps/22/zim.png
 share/icons/SE98/apps/22/zorin-appearance.png
 share/icons/SE98/apps/22/zorin-connect.png
 share/icons/SE98/apps/22/zsnes.png
-share/icons/SE98/apps/24/0ad.png
 share/icons/SE98/apps/24/7z.png
 share/icons/SE98/apps/24/7zip.png
 share/icons/SE98/apps/24/AdobeReader.png
@@ -8855,7 +8827,6 @@ share/icons/SE98/apps/24/Vbox.png
 share/icons/SE98/apps/24/a4.png
 share/icons/SE98/apps/24/abiword.png
 share/icons/SE98/apps/24/abiword_48.png
-share/icons/SE98/apps/24/abrt.png
 share/icons/SE98/apps/24/access.png
 share/icons/SE98/apps/24/accessibility-directory.png
 share/icons/SE98/apps/24/accessories-archiver.png
@@ -8878,18 +8849,10 @@ share/icons/SE98/apps/24/addressbook.png
 share/icons/SE98/apps/24/administration.png
 share/icons/SE98/apps/24/adobe-reader.png
 share/icons/SE98/apps/24/akonadiconsole.png
-share/icons/SE98/apps/24/akregator.png
 share/icons/SE98/apps/24/alacarte.png
-share/icons/SE98/apps/24/alchemy.png
-share/icons/SE98/apps/24/alien-arena.png
-share/icons/SE98/apps/24/amarok.png
-share/icons/SE98/apps/24/amule.png
-share/icons/SE98/apps/24/anjuta.png
-share/icons/SE98/apps/24/anki.png
 share/icons/SE98/apps/24/appfinder.png
 share/icons/SE98/apps/24/applets-screenshooter.png
 share/icons/SE98/apps/24/application-community.png
-share/icons/SE98/apps/24/application-x-clementine.png
 share/icons/SE98/apps/24/appointment.png
 share/icons/SE98/apps/24/apport.png
 share/icons/SE98/apps/24/aqualung.png
@@ -8906,9 +8869,6 @@ share/icons/SE98/apps/24/audacious.png
 share/icons/SE98/apps/24/audio-player.png
 share/icons/SE98/apps/24/audio-tag-tool.png
 share/icons/SE98/apps/24/audiobook.png
-share/icons/SE98/apps/24/autoplus.png
-share/icons/SE98/apps/24/avant-window-navigator.png
-share/icons/SE98/apps/24/awn-settings.png
 share/icons/SE98/apps/24/ax-applet.png
 share/icons/SE98/apps/24/background.png
 share/icons/SE98/apps/24/badge-small.png
@@ -8917,12 +8877,8 @@ share/icons/SE98/apps/24/banshee-1.png
 share/icons/SE98/apps/24/banshee.png
 share/icons/SE98/apps/24/baobab.png
 share/icons/SE98/apps/24/bash.png
-share/icons/SE98/apps/24/bazaar.png
 share/icons/SE98/apps/24/beryl-settings.png
 share/icons/SE98/apps/24/bleachbit.png
-share/icons/SE98/apps/24/bluefish-icon.png
-share/icons/SE98/apps/24/bluefish.png
-share/icons/SE98/apps/24/bluegriffon.png
 share/icons/SE98/apps/24/blueman.png
 share/icons/SE98/apps/24/blueradio-48.png
 share/icons/SE98/apps/24/blueradio.png
@@ -9141,8 +9097,6 @@ share/icons/SE98/apps/24/gajim.png
 share/icons/SE98/apps/24/galculator.png
 share/icons/SE98/apps/24/galeon.png
 share/icons/SE98/apps/24/gallery-app.png
-share/icons/SE98/apps/24/gazpacho-icon.png
-share/icons/SE98/apps/24/gazpacho.png
 share/icons/SE98/apps/24/gbrainy.png
 share/icons/SE98/apps/24/gcleaner.png
 share/icons/SE98/apps/24/gcolor2.png
@@ -9797,7 +9751,6 @@ share/icons/SE98/apps/24/org.xfce.about.png
 share/icons/SE98/apps/24/org.xfce.appfinder.png
 share/icons/SE98/apps/24/org.xfce.audioplayer.png
 share/icons/SE98/apps/24/org.xfce.catfish.png
-share/icons/SE98/apps/24/org.xfce.filemanager
 share/icons/SE98/apps/24/org.xfce.filemanager.png
 share/icons/SE98/apps/24/org.xfce.garcon.png
 share/icons/SE98/apps/24/org.xfce.genmon.png
@@ -9917,6 +9870,7 @@ share/icons/SE98/apps/24/preferences-desktop-effects.png
 share/icons/SE98/apps/24/preferences-desktop-font.png
 share/icons/SE98/apps/24/preferences-desktop-fonts.png
 share/icons/SE98/apps/24/preferences-desktop-gaming.png
+share/icons/SE98/apps/24/preferences-desktop-icons.png
 share/icons/SE98/apps/24/preferences-desktop-keyboard-shortcut.png
 share/icons/SE98/apps/24/preferences-desktop-keyboard-shortcuts-symbolic.png
 share/icons/SE98/apps/24/preferences-desktop-keyboard-shortcuts.png
@@ -9968,7 +9922,6 @@ share/icons/SE98/apps/24/product_logo_24.png
 share/icons/SE98/apps/24/promoe.png
 share/icons/SE98/apps/24/proxy.png
 share/icons/SE98/apps/24/psensor.png
-share/icons/SE98/apps/24/punes
 share/icons/SE98/apps/24/punes.png
 share/icons/SE98/apps/24/pup.png
 share/icons/SE98/apps/24/pychess.png
@@ -10276,7 +10229,6 @@ share/icons/SE98/apps/24/xfce4-logo.png
 share/icons/SE98/apps/24/xfce4-mcs-manager.png
 share/icons/SE98/apps/24/xfce4-menueditor.png
 share/icons/SE98/apps/24/xfce4-mixer.png
-share/icons/SE98/apps/24/xfce4-netload-plugin.png
 share/icons/SE98/apps/24/xfce4-notes-plugin.png
 share/icons/SE98/apps/24/xfce4-notifyd.png
 share/icons/SE98/apps/24/xfce4-panel-menu.png
@@ -10370,6 +10322,7 @@ share/icons/SE98/apps/256/epiphany.png
 share/icons/SE98/apps/256/evince.png
 share/icons/SE98/apps/256/falkon.png
 share/icons/SE98/apps/256/far.png
+share/icons/SE98/apps/256/firefox.png
 share/icons/SE98/apps/256/galeon.png
 share/icons/SE98/apps/256/geary.png
 share/icons/SE98/apps/256/gimp-2.10.png
@@ -10413,6 +10366,7 @@ share/icons/SE98/apps/256/org.gnome.Geary.png
 share/icons/SE98/apps/256/org.kde.okular.png
 share/icons/SE98/apps/256/org.pwmt.zathura.png
 share/icons/SE98/apps/256/org.xfce.gigolo.png
+share/icons/SE98/apps/256/org.xfce.panel.pager.png
 share/icons/SE98/apps/256/org.xfce.settings.color.png
 share/icons/SE98/apps/256/org.xfce.webbrowser.png
 share/icons/SE98/apps/256/org.xfce.workspaces.png
@@ -10442,7 +10396,6 @@ share/icons/SE98/apps/256/xfsm-chooser-icon.png
 share/icons/SE98/apps/256/xpdf.png
 share/icons/SE98/apps/256/xreader.png
 share/icons/SE98/apps/256/zathura.png
-share/icons/SE98/apps/32/0ad.png
 share/icons/SE98/apps/32/7z.png
 share/icons/SE98/apps/32/7zip.png
 share/icons/SE98/apps/32/AdobeReader.png
@@ -10470,7 +10423,6 @@ share/icons/SE98/apps/32/WorldofPadman.png
 share/icons/SE98/apps/32/a4.png
 share/icons/SE98/apps/32/abiword.png
 share/icons/SE98/apps/32/abiword_48.png
-share/icons/SE98/apps/32/abrt.png
 share/icons/SE98/apps/32/access.png
 share/icons/SE98/apps/32/accessibility-directory.png
 share/icons/SE98/apps/32/accessories-archiver.png
@@ -10493,20 +10445,11 @@ share/icons/SE98/apps/32/addressbook.png
 share/icons/SE98/apps/32/administration.png
 share/icons/SE98/apps/32/adobe-reader.png
 share/icons/SE98/apps/32/akonadiconsole.png
-share/icons/SE98/apps/32/akregator.png
 share/icons/SE98/apps/32/alacarte.png
-share/icons/SE98/apps/32/alchemy.png
-share/icons/SE98/apps/32/alien-arena.png
 share/icons/SE98/apps/32/alltray.png
-share/icons/SE98/apps/32/amarok.png
-share/icons/SE98/apps/32/amnesia-dark-decent.png
-share/icons/SE98/apps/32/amule.png
-share/icons/SE98/apps/32/anjuta.png
-share/icons/SE98/apps/32/anki.png
 share/icons/SE98/apps/32/appfinder.png
 share/icons/SE98/apps/32/applets-screenshooter.png
 share/icons/SE98/apps/32/application-community.png
-share/icons/SE98/apps/32/application-x-clementine.png
 share/icons/SE98/apps/32/appointment.png
 share/icons/SE98/apps/32/aptoncd.png
 share/icons/SE98/apps/32/aqualung.png
@@ -10523,9 +10466,6 @@ share/icons/SE98/apps/32/audacious.png
 share/icons/SE98/apps/32/audio-player.png
 share/icons/SE98/apps/32/audio-tag-tool.png
 share/icons/SE98/apps/32/audiobook.png
-share/icons/SE98/apps/32/autoplus.png
-share/icons/SE98/apps/32/avant-window-navigator.png
-share/icons/SE98/apps/32/awn-settings.png
 share/icons/SE98/apps/32/ax-applet.png
 share/icons/SE98/apps/32/background.png
 share/icons/SE98/apps/32/badge-small.png
@@ -10534,12 +10474,8 @@ share/icons/SE98/apps/32/banshee-1.png
 share/icons/SE98/apps/32/banshee.png
 share/icons/SE98/apps/32/baobab.png
 share/icons/SE98/apps/32/bash.png
-share/icons/SE98/apps/32/bazaar.png
 share/icons/SE98/apps/32/beryl-settings.png
 share/icons/SE98/apps/32/bleachbit.png
-share/icons/SE98/apps/32/bluefish-icon.png
-share/icons/SE98/apps/32/bluefish.png
-share/icons/SE98/apps/32/bluegriffon.png
 share/icons/SE98/apps/32/blueman.png
 share/icons/SE98/apps/32/blueradio-48.png
 share/icons/SE98/apps/32/blueradio.png
@@ -10706,7 +10642,6 @@ share/icons/SE98/apps/32/emacs23.png
 share/icons/SE98/apps/32/emerald-theme-manager-icon.png
 share/icons/SE98/apps/32/emerillon.png
 share/icons/SE98/apps/32/emesene.png
-share/icons/SE98/apps/32/emilnes
 share/icons/SE98/apps/32/emilnes.png
 share/icons/SE98/apps/32/empathy.png
 share/icons/SE98/apps/32/engrampa.png
@@ -10767,8 +10702,6 @@ share/icons/SE98/apps/32/gajim.png
 share/icons/SE98/apps/32/galculator.png
 share/icons/SE98/apps/32/galeon.png
 share/icons/SE98/apps/32/gallery-app.png
-share/icons/SE98/apps/32/gazpacho-icon.png
-share/icons/SE98/apps/32/gazpacho.png
 share/icons/SE98/apps/32/gbrainy.png
 share/icons/SE98/apps/32/gcleaner.png
 share/icons/SE98/apps/32/gcolor2.png
@@ -11435,7 +11368,6 @@ share/icons/SE98/apps/32/org.xfce.about.png
 share/icons/SE98/apps/32/org.xfce.appfinder.png
 share/icons/SE98/apps/32/org.xfce.audioplayer.png
 share/icons/SE98/apps/32/org.xfce.catfish.png
-share/icons/SE98/apps/32/org.xfce.filemanager
 share/icons/SE98/apps/32/org.xfce.filemanager.png
 share/icons/SE98/apps/32/org.xfce.garcon.png
 share/icons/SE98/apps/32/org.xfce.genmon.png
@@ -11501,7 +11433,6 @@ share/icons/SE98/apps/32/package_settings.png
 share/icons/SE98/apps/32/package_system_terminal.png
 share/icons/SE98/apps/32/palemoon.png
 share/icons/SE98/apps/32/palimpsest.png
-share/icons/SE98/apps/32/palm-pilot-sync
 share/icons/SE98/apps/32/pamac-updater-symbolic.png
 share/icons/SE98/apps/32/pamac-updater.png
 share/icons/SE98/apps/32/panel-searchtool.png
@@ -11561,6 +11492,7 @@ share/icons/SE98/apps/32/preferences-desktop-effects.png
 share/icons/SE98/apps/32/preferences-desktop-font.png
 share/icons/SE98/apps/32/preferences-desktop-fonts.png
 share/icons/SE98/apps/32/preferences-desktop-gaming.png
+share/icons/SE98/apps/32/preferences-desktop-icons.png
 share/icons/SE98/apps/32/preferences-desktop-keyboard-shortcut.png
 share/icons/SE98/apps/32/preferences-desktop-keyboard-shortcuts-symbolic.png
 share/icons/SE98/apps/32/preferences-desktop-keyboard-shortcuts.png
@@ -11935,7 +11867,6 @@ share/icons/SE98/apps/32/xfce4-logo.png
 share/icons/SE98/apps/32/xfce4-mcs-manager.png
 share/icons/SE98/apps/32/xfce4-menueditor.png
 share/icons/SE98/apps/32/xfce4-mixer.png
-share/icons/SE98/apps/32/xfce4-netload-plugin.png
 share/icons/SE98/apps/32/xfce4-notes-plugin.png
 share/icons/SE98/apps/32/xfce4-notifyd.png
 share/icons/SE98/apps/32/xfce4-panel-menu.png
@@ -12005,7 +11936,6 @@ share/icons/SE98/apps/32/zim.png
 share/icons/SE98/apps/32/zorin-appearance.png
 share/icons/SE98/apps/32/zorin-connect.png
 share/icons/SE98/apps/32/zsnes.png
-share/icons/SE98/apps/48/0ad.png
 share/icons/SE98/apps/48/7z.png
 share/icons/SE98/apps/48/7zip.png
 share/icons/SE98/apps/48/AdobeReader.png
@@ -12033,7 +11963,6 @@ share/icons/SE98/apps/48/WorldofPadman.png
 share/icons/SE98/apps/48/a4.png
 share/icons/SE98/apps/48/abiword.png
 share/icons/SE98/apps/48/abiword_48.png
-share/icons/SE98/apps/48/abrt.png
 share/icons/SE98/apps/48/access.png
 share/icons/SE98/apps/48/accessibility-directory.png
 share/icons/SE98/apps/48/accessories-archiver.png
@@ -12058,17 +11987,9 @@ share/icons/SE98/apps/48/adobe-reader.png
 share/icons/SE98/apps/48/akonadiconsole.png
 share/icons/SE98/apps/48/akregator.png
 share/icons/SE98/apps/48/alacarte.png
-share/icons/SE98/apps/48/alchemy.png
-share/icons/SE98/apps/48/alien-arena.png
-share/icons/SE98/apps/48/amarok.png
-share/icons/SE98/apps/48/amnesia-dark-decent.png
-share/icons/SE98/apps/48/amule.png
-share/icons/SE98/apps/48/anjuta.png
-share/icons/SE98/apps/48/anki.png
 share/icons/SE98/apps/48/appfinder.png
 share/icons/SE98/apps/48/applets-screenshooter.png
 share/icons/SE98/apps/48/application-community.png
-share/icons/SE98/apps/48/application-x-clementine.png
 share/icons/SE98/apps/48/appointment.png
 share/icons/SE98/apps/48/apport.png
 share/icons/SE98/apps/48/aptoncd.png
@@ -12086,9 +12007,6 @@ share/icons/SE98/apps/48/audacious.png
 share/icons/SE98/apps/48/audio-player.png
 share/icons/SE98/apps/48/audio-tag-tool.png
 share/icons/SE98/apps/48/audiobook.png
-share/icons/SE98/apps/48/autoplus.png
-share/icons/SE98/apps/48/avant-window-navigator.png
-share/icons/SE98/apps/48/awn-settings.png
 share/icons/SE98/apps/48/ax-applet.png
 share/icons/SE98/apps/48/background.png
 share/icons/SE98/apps/48/badge-small.png
@@ -12097,11 +12015,8 @@ share/icons/SE98/apps/48/banshee-1.png
 share/icons/SE98/apps/48/banshee.png
 share/icons/SE98/apps/48/baobab.png
 share/icons/SE98/apps/48/bash.png
-share/icons/SE98/apps/48/bazaar.png
 share/icons/SE98/apps/48/bleachbit.png
 share/icons/SE98/apps/48/bluefish-icon.png
-share/icons/SE98/apps/48/bluefish.png
-share/icons/SE98/apps/48/bluegriffon.png
 share/icons/SE98/apps/48/blueman.png
 share/icons/SE98/apps/48/blueradio-48.png
 share/icons/SE98/apps/48/blueradio.png
@@ -12328,8 +12243,6 @@ share/icons/SE98/apps/48/gajim.png
 share/icons/SE98/apps/48/galculator.png
 share/icons/SE98/apps/48/galeon.png
 share/icons/SE98/apps/48/gallery-app.png
-share/icons/SE98/apps/48/gazpacho-icon.png
-share/icons/SE98/apps/48/gazpacho.png
 share/icons/SE98/apps/48/gbrainy.png
 share/icons/SE98/apps/48/gcleaner.png
 share/icons/SE98/apps/48/gcolor2.png
@@ -12989,7 +12902,6 @@ share/icons/SE98/apps/48/org.xfce.about.png
 share/icons/SE98/apps/48/org.xfce.appfinder.png
 share/icons/SE98/apps/48/org.xfce.audioplayer.png
 share/icons/SE98/apps/48/org.xfce.catfish.png
-share/icons/SE98/apps/48/org.xfce.filemanager
 share/icons/SE98/apps/48/org.xfce.filemanager.png
 share/icons/SE98/apps/48/org.xfce.garcon.png
 share/icons/SE98/apps/48/org.xfce.genmon.png
@@ -13115,6 +13027,7 @@ share/icons/SE98/apps/48/preferences-desktop-effects.png
 share/icons/SE98/apps/48/preferences-desktop-font.png
 share/icons/SE98/apps/48/preferences-desktop-fonts.png
 share/icons/SE98/apps/48/preferences-desktop-gaming.png
+share/icons/SE98/apps/48/preferences-desktop-icons.png
 share/icons/SE98/apps/48/preferences-desktop-keyboard-shortcut.png
 share/icons/SE98/apps/48/preferences-desktop-keyboard-shortcuts-symbolic.png
 share/icons/SE98/apps/48/preferences-desktop-keyboard-shortcuts.png
@@ -13498,12 +13411,12 @@ share/icons/SE98/apps/48/xfce4-power-manager-settings.png
 share/icons/SE98/apps/48/xfce4-pulseaudio-plugin.png
 share/icons/SE98/apps/48/xfce4-sensors.png
 share/icons/SE98/apps/48/xfce4-session.png
+share/icons/SE98/apps/48/xfce4-settings.png
 share/icons/SE98/apps/48/xfce4-splash.png
 share/icons/SE98/apps/48/xfce4-systray.png
 share/icons/SE98/apps/48/xfce4-taskbar.png
 share/icons/SE98/apps/48/xfce4-terminal.png
 share/icons/SE98/apps/48/xfce4-ui.png
-share/icons/SE98/apps/48/xfce4-weather.png
 share/icons/SE98/apps/48/xfce4-whiskermenu.png
 share/icons/SE98/apps/48/xfce4-workspaces.png
 share/icons/SE98/apps/48/xfce4-xicon1.png
@@ -13579,7 +13492,6 @@ share/icons/SE98/apps/64/Trine.png
 share/icons/SE98/apps/64/WorldofPadman.png
 share/icons/SE98/apps/64/abiword.png
 share/icons/SE98/apps/64/abiword_48.png
-share/icons/SE98/apps/64/abrt.png
 share/icons/SE98/apps/64/access.png
 share/icons/SE98/apps/64/accessibility-directory.png
 share/icons/SE98/apps/64/accessories-archiver.png
@@ -13598,16 +13510,9 @@ share/icons/SE98/apps/64/addressbook.png
 share/icons/SE98/apps/64/administration.png
 share/icons/SE98/apps/64/adobe-reader.png
 share/icons/SE98/apps/64/akonadiconsole.png
-share/icons/SE98/apps/64/akregator.png
 share/icons/SE98/apps/64/alacarte.png
-share/icons/SE98/apps/64/alien-arena.png
-share/icons/SE98/apps/64/amarok.png
-share/icons/SE98/apps/64/amnesia-dark-decent.png
-share/icons/SE98/apps/64/amule.png
-share/icons/SE98/apps/64/anjuta.png
 share/icons/SE98/apps/64/appfinder.png
 share/icons/SE98/apps/64/applets-screenshooter.png
-share/icons/SE98/apps/64/application-x-clementine.png
 share/icons/SE98/apps/64/aqualung.png
 share/icons/SE98/apps/64/archive-manager.png
 share/icons/SE98/apps/64/archivemanager.png
@@ -13618,20 +13523,13 @@ share/icons/SE98/apps/64/as-powered.png
 share/icons/SE98/apps/64/athena.png
 share/icons/SE98/apps/64/atril.png
 share/icons/SE98/apps/64/audacious.png
-share/icons/SE98/apps/64/autoplus.png
-share/icons/SE98/apps/64/avant-window-navigator.png
-share/icons/SE98/apps/64/awn-settings.png
 share/icons/SE98/apps/64/ax-applet.png
 share/icons/SE98/apps/64/baloo.png
 share/icons/SE98/apps/64/banshee-1.png
 share/icons/SE98/apps/64/banshee.png
 share/icons/SE98/apps/64/baobab.png
 share/icons/SE98/apps/64/bash.png
-share/icons/SE98/apps/64/bazaar.png
 share/icons/SE98/apps/64/bleachbit.png
-share/icons/SE98/apps/64/bluefish-icon.png
-share/icons/SE98/apps/64/bluefish.png
-share/icons/SE98/apps/64/bluegriffon.png
 share/icons/SE98/apps/64/blueman.png
 share/icons/SE98/apps/64/blueradio-48.png
 share/icons/SE98/apps/64/blueradio.png
@@ -13809,6 +13707,7 @@ share/icons/SE98/apps/64/file.manager.png
 share/icons/SE98/apps/64/filelight.png
 share/icons/SE98/apps/64/filezilla.png
 share/icons/SE98/apps/64/finalterm.png
+share/icons/SE98/apps/64/firefox.png
 share/icons/SE98/apps/64/firestarter.png
 share/icons/SE98/apps/64/flash-player-properties.png
 share/icons/SE98/apps/64/flash.png
@@ -13826,8 +13725,6 @@ share/icons/SE98/apps/64/gajim.png
 share/icons/SE98/apps/64/galculator.png
 share/icons/SE98/apps/64/galeon.png
 share/icons/SE98/apps/64/gallery-app.png
-share/icons/SE98/apps/64/gazpacho-icon.png
-share/icons/SE98/apps/64/gazpacho.png
 share/icons/SE98/apps/64/gbrainy.png
 share/icons/SE98/apps/64/gcleaner.png
 share/icons/SE98/apps/64/gcolor2.png
@@ -14343,7 +14240,6 @@ share/icons/SE98/apps/64/org.xfce.ScreenSaver.png
 share/icons/SE98/apps/64/org.xfce.appfinder.png
 share/icons/SE98/apps/64/org.xfce.audioplayer.png
 share/icons/SE98/apps/64/org.xfce.catfish.png
-share/icons/SE98/apps/64/org.xfce.filemanager
 share/icons/SE98/apps/64/org.xfce.filemanager.png
 share/icons/SE98/apps/64/org.xfce.genmon.png
 share/icons/SE98/apps/64/org.xfce.gigolo.png
@@ -14359,7 +14255,10 @@ share/icons/SE98/apps/64/org.xfce.orage.png
 share/icons/SE98/apps/64/org.xfce.panel.applicationsmenu.png
 share/icons/SE98/apps/64/org.xfce.panel.directorymenu.png
 share/icons/SE98/apps/64/org.xfce.panel.notes.png
+share/icons/SE98/apps/64/org.xfce.panel.pager.png
 share/icons/SE98/apps/64/org.xfce.panel.png
+share/icons/SE98/apps/64/org.xfce.panel.tasklist.png
+share/icons/SE98/apps/64/org.xfce.panel.windowmenu.png
 share/icons/SE98/apps/64/org.xfce.parole.png
 share/icons/SE98/apps/64/org.xfce.powermanager.png
 share/icons/SE98/apps/64/org.xfce.ristretto.png
@@ -14439,6 +14338,7 @@ share/icons/SE98/apps/64/preferences-desktop-effects.png
 share/icons/SE98/apps/64/preferences-desktop-font.png
 share/icons/SE98/apps/64/preferences-desktop-fonts.png
 share/icons/SE98/apps/64/preferences-desktop-gaming.png
+share/icons/SE98/apps/64/preferences-desktop-icons.png
 share/icons/SE98/apps/64/preferences-desktop-keyboard-shortcut.png
 share/icons/SE98/apps/64/preferences-desktop-keyboard-shortcuts-symbolic.png
 share/icons/SE98/apps/64/preferences-desktop-keyboard-shortcuts.png
@@ -14529,6 +14429,7 @@ share/icons/SE98/apps/64/screenruler.png
 share/icons/SE98/apps/64/screensaver.png
 share/icons/SE98/apps/64/scribes.png
 share/icons/SE98/apps/64/scribus.png
+share/icons/SE98/apps/64/seamonkey.png
 share/icons/SE98/apps/64/sensors-applets.png
 share/icons/SE98/apps/64/sensors-temperature-symbolic.png
 share/icons/SE98/apps/64/sensors-temperature.png
@@ -14751,6 +14652,7 @@ share/icons/SE98/apps/64/xfce4-panel.png
 share/icons/SE98/apps/64/xfce4-pulseaudio-plugin.png
 share/icons/SE98/apps/64/xfce4-sensors.png
 share/icons/SE98/apps/64/xfce4-session.png
+share/icons/SE98/apps/64/xfce4-settings.png
 share/icons/SE98/apps/64/xfce4-terminal.png
 share/icons/SE98/apps/64/xfce4-whiskermenu.png
 share/icons/SE98/apps/64/xfce4-workspaces.png
@@ -14839,6 +14741,7 @@ share/icons/SE98/apps/72/cs-region.png
 share/icons/SE98/apps/72/cs-sources.png
 share/icons/SE98/apps/72/cs-theme.png
 share/icons/SE98/apps/72/cs-themes.png
+share/icons/SE98/apps/72/cs-windows.png
 share/icons/SE98/apps/72/d3lphin.png
 share/icons/SE98/apps/72/dde-file-manager.png
 share/icons/SE98/apps/72/deepin-reader.png
@@ -14869,6 +14772,7 @@ share/icons/SE98/apps/72/file-system-manager.png
 share/icons/SE98/apps/72/file.manager.png
 share/icons/SE98/apps/72/filelight.png
 share/icons/SE98/apps/72/finalterm.png
+share/icons/SE98/apps/72/firefox.png
 share/icons/SE98/apps/72/galeon.png
 share/icons/SE98/apps/72/gdeb.png
 share/icons/SE98/apps/72/gdebi.png
@@ -14900,6 +14804,7 @@ share/icons/SE98/apps/72/gnome-term.png
 share/icons/SE98/apps/72/gnome-terminal.png
 share/icons/SE98/apps/72/gnome-translate.png
 share/icons/SE98/apps/72/gnome-web-browser.png
+share/icons/SE98/apps/72/gnome-window-manager.png
 share/icons/SE98/apps/72/gnome-word.png
 share/icons/SE98/apps/72/gnome-xterm.png
 share/icons/SE98/apps/72/gobby-0.5.png
@@ -14943,6 +14848,7 @@ share/icons/SE98/apps/72/kpersonalizer.png
 share/icons/SE98/apps/72/kplayer.png
 share/icons/SE98/apps/72/krusader.png
 share/icons/SE98/apps/72/kthememgr.png
+share/icons/SE98/apps/72/kwin.png
 share/icons/SE98/apps/72/kynpatic.png
 share/icons/SE98/apps/72/language-selector.png
 share/icons/SE98/apps/72/leafpad.png
@@ -14963,6 +14869,8 @@ share/icons/SE98/apps/72/master-pdf-editor.png
 share/icons/SE98/apps/72/mate-disk-usage-analyzer.png
 share/icons/SE98/apps/72/mate-panel-launcher-symbolic.png
 share/icons/SE98/apps/72/mate-panel-launcher.png
+share/icons/SE98/apps/72/mate-panel-window-list.png
+share/icons/SE98/apps/72/mate-panel-window-menu.png
 share/icons/SE98/apps/72/mdmflexiserver.png
 share/icons/SE98/apps/72/mdmsetup.png
 share/icons/SE98/apps/72/media-player-banshee.png
@@ -14982,6 +14890,8 @@ share/icons/SE98/apps/72/mupdf.png
 share/icons/SE98/apps/72/nautilus.png
 share/icons/SE98/apps/72/nemo.png
 share/icons/SE98/apps/72/nestopia.png
+share/icons/SE98/apps/72/obconf-qt.png
+share/icons/SE98/apps/72/obconf.png
 share/icons/SE98/apps/72/office-writer.png
 share/icons/SE98/apps/72/ogmrip.png
 share/icons/SE98/apps/72/okular.png
@@ -15029,11 +14939,11 @@ share/icons/SE98/apps/72/org.mozilla.Thunderbird.png
 share/icons/SE98/apps/72/org.pwmt.zathura.png
 share/icons/SE98/apps/72/org.videolan.VLC.png
 share/icons/SE98/apps/72/org.xfce.audioplayer.png
-share/icons/SE98/apps/72/org.xfce.filemanager
 share/icons/SE98/apps/72/org.xfce.filemanager.png
 share/icons/SE98/apps/72/org.xfce.gigolo.png
 share/icons/SE98/apps/72/org.xfce.mousepad.png
 share/icons/SE98/apps/72/org.xfce.panel.directorymenu.png
+share/icons/SE98/apps/72/org.xfce.panel.windowmenu.png
 share/icons/SE98/apps/72/org.xfce.parole.png
 share/icons/SE98/apps/72/org.xfce.settings.appearance.png
 share/icons/SE98/apps/72/org.xfce.settings.color.png
@@ -15047,6 +14957,8 @@ share/icons/SE98/apps/72/org.xfce.texteditor.png
 share/icons/SE98/apps/72/org.xfce.thunar.png
 share/icons/SE98/apps/72/org.xfce.videoplayer.png
 share/icons/SE98/apps/72/org.xfce.webbrowser.png
+share/icons/SE98/apps/72/org.xfce.xfwm4-tweaks.png
+share/icons/SE98/apps/72/org.xfce.xfwm4.png
 share/icons/SE98/apps/72/package-manager-icon.png
 share/icons/SE98/apps/72/package_internet_terminal.png
 share/icons/SE98/apps/72/package_settings.png
@@ -15065,10 +14977,12 @@ share/icons/SE98/apps/72/pragha-panel.png
 share/icons/SE98/apps/72/pragha.png
 share/icons/SE98/apps/72/preferences-desktop-default-applications.png
 share/icons/SE98/apps/72/preferences-desktop-locale.png
+share/icons/SE98/apps/72/preferences-desktop-theme-windowdecorations.png
 share/icons/SE98/apps/72/preferences-desktop-theme.png
 share/icons/SE98/apps/72/preferences-desktop.png
 share/icons/SE98/apps/72/preferences-plugin.png
 share/icons/SE98/apps/72/preferences-system-login.png
+share/icons/SE98/apps/72/preferences-system-windows.png
 share/icons/SE98/apps/72/preferences-theme.png
 share/icons/SE98/apps/72/preferences_desktop_theme.png
 share/icons/SE98/apps/72/product_logo_48.png
@@ -15145,6 +15059,7 @@ share/icons/SE98/apps/72/vim.png
 share/icons/SE98/apps/72/vlc.png
 share/icons/SE98/apps/72/web-browser.png
 share/icons/SE98/apps/72/wilber-gimp.png
+share/icons/SE98/apps/72/window-manager.png
 share/icons/SE98/apps/72/wine-browser.png
 share/icons/SE98/apps/72/wine-notepad.png
 share/icons/SE98/apps/72/www-browser.png
@@ -15168,6 +15083,8 @@ share/icons/SE98/apps/72/xfce4_xicon2.png
 share/icons/SE98/apps/72/xfce4_xicon3.png
 share/icons/SE98/apps/72/xfce4_xicon4.png
 share/icons/SE98/apps/72/xfsm-chooser-icon.png
+share/icons/SE98/apps/72/xfwm4-default.png
+share/icons/SE98/apps/72/xfwm4.png
 share/icons/SE98/apps/72/xine.png
 share/icons/SE98/apps/72/xmms.png
 share/icons/SE98/apps/72/xpdf.png
@@ -15231,6 +15148,7 @@ share/icons/SE98/apps/96/cs-region.png
 share/icons/SE98/apps/96/cs-sources.png
 share/icons/SE98/apps/96/cs-theme.png
 share/icons/SE98/apps/96/cs-themes.png
+share/icons/SE98/apps/96/cs-windows.png
 share/icons/SE98/apps/96/cs-workspaces.png
 share/icons/SE98/apps/96/d3lphin.png
 share/icons/SE98/apps/96/dde-file-manager.png
@@ -15262,6 +15180,7 @@ share/icons/SE98/apps/96/file-system-manager.png
 share/icons/SE98/apps/96/file.manager.png
 share/icons/SE98/apps/96/filelight.png
 share/icons/SE98/apps/96/finalterm.png
+share/icons/SE98/apps/96/firefox.png
 share/icons/SE98/apps/96/galeon.png
 share/icons/SE98/apps/96/gdeb.png
 share/icons/SE98/apps/96/gdebi.png
@@ -15291,6 +15210,7 @@ share/icons/SE98/apps/96/gnome-term.png
 share/icons/SE98/apps/96/gnome-terminal.png
 share/icons/SE98/apps/96/gnome-translate.png
 share/icons/SE98/apps/96/gnome-web-browser.png
+share/icons/SE98/apps/96/gnome-window-manager.png
 share/icons/SE98/apps/96/gnome-word.png
 share/icons/SE98/apps/96/gnome-workspace-switcher.png
 share/icons/SE98/apps/96/gnome-workspace.png
@@ -15335,6 +15255,7 @@ share/icons/SE98/apps/96/kpersonalizer.png
 share/icons/SE98/apps/96/kplayer.png
 share/icons/SE98/apps/96/krusader.png
 share/icons/SE98/apps/96/kthememgr.png
+share/icons/SE98/apps/96/kwin.png
 share/icons/SE98/apps/96/kynpatic.png
 share/icons/SE98/apps/96/language-selector.png
 share/icons/SE98/apps/96/leafpad.png
@@ -15351,6 +15272,8 @@ share/icons/SE98/apps/96/master-pdf-editor.png
 share/icons/SE98/apps/96/mate-disk-usage-analyzer.png
 share/icons/SE98/apps/96/mate-panel-launcher-symbolic.png
 share/icons/SE98/apps/96/mate-panel-launcher.png
+share/icons/SE98/apps/96/mate-panel-window-list.png
+share/icons/SE98/apps/96/mate-panel-window-menu.png
 share/icons/SE98/apps/96/mate-panel-workspace-switcher.png
 share/icons/SE98/apps/96/media-player-banshee.png
 share/icons/SE98/apps/96/menu-editor.png
@@ -15369,6 +15292,8 @@ share/icons/SE98/apps/96/mupdf.png
 share/icons/SE98/apps/96/nautilus.png
 share/icons/SE98/apps/96/nemo.png
 share/icons/SE98/apps/96/nestopia.png
+share/icons/SE98/apps/96/obconf-qt.png
+share/icons/SE98/apps/96/obconf.png
 share/icons/SE98/apps/96/office-writer.png
 share/icons/SE98/apps/96/ogmrip.png
 share/icons/SE98/apps/96/okular.png
@@ -15416,11 +15341,12 @@ share/icons/SE98/apps/96/org.mozilla.Thunderbird.png
 share/icons/SE98/apps/96/org.pwmt.zathura.png
 share/icons/SE98/apps/96/org.videolan.VLC.png
 share/icons/SE98/apps/96/org.xfce.audioplayer.png
-share/icons/SE98/apps/96/org.xfce.filemanager
 share/icons/SE98/apps/96/org.xfce.filemanager.png
 share/icons/SE98/apps/96/org.xfce.gigolo.png
 share/icons/SE98/apps/96/org.xfce.mousepad.png
 share/icons/SE98/apps/96/org.xfce.panel.directorymenu.png
+share/icons/SE98/apps/96/org.xfce.panel.pager.png
+share/icons/SE98/apps/96/org.xfce.panel.windowmenu.png
 share/icons/SE98/apps/96/org.xfce.parole.png
 share/icons/SE98/apps/96/org.xfce.settings.appearance.png
 share/icons/SE98/apps/96/org.xfce.settings.color.png
@@ -15435,6 +15361,8 @@ share/icons/SE98/apps/96/org.xfce.thunar.png
 share/icons/SE98/apps/96/org.xfce.videoplayer.png
 share/icons/SE98/apps/96/org.xfce.webbrowser.png
 share/icons/SE98/apps/96/org.xfce.workspaces.png
+share/icons/SE98/apps/96/org.xfce.xfwm4-tweaks.png
+share/icons/SE98/apps/96/org.xfce.xfwm4.png
 share/icons/SE98/apps/96/package-manager-icon.png
 share/icons/SE98/apps/96/package_internet_terminal.png
 share/icons/SE98/apps/96/package_settings.png
@@ -15453,9 +15381,11 @@ share/icons/SE98/apps/96/pragha-panel.png
 share/icons/SE98/apps/96/pragha.png
 share/icons/SE98/apps/96/preferences-desktop-default-applications.png
 share/icons/SE98/apps/96/preferences-desktop-locale.png
+share/icons/SE98/apps/96/preferences-desktop-theme-windowdecorations.png
 share/icons/SE98/apps/96/preferences-desktop-theme.png
 share/icons/SE98/apps/96/preferences-desktop.png
 share/icons/SE98/apps/96/preferences-plugin.png
+share/icons/SE98/apps/96/preferences-system-windows.png
 share/icons/SE98/apps/96/preferences-theme.png
 share/icons/SE98/apps/96/preferences_desktop_theme.png
 share/icons/SE98/apps/96/product_logo_48.png
@@ -15532,6 +15462,7 @@ share/icons/SE98/apps/96/vim.png
 share/icons/SE98/apps/96/vlc.png
 share/icons/SE98/apps/96/web-browser.png
 share/icons/SE98/apps/96/wilber-gimp.png
+share/icons/SE98/apps/96/window-manager.png
 share/icons/SE98/apps/96/wine-browser.png
 share/icons/SE98/apps/96/wine-notepad.png
 share/icons/SE98/apps/96/workspace-switcher.png
@@ -15557,6 +15488,8 @@ share/icons/SE98/apps/96/xfce4_xicon2.png
 share/icons/SE98/apps/96/xfce4_xicon3.png
 share/icons/SE98/apps/96/xfce4_xicon4.png
 share/icons/SE98/apps/96/xfsm-chooser-icon.png
+share/icons/SE98/apps/96/xfwm4-default.png
+share/icons/SE98/apps/96/xfwm4.png
 share/icons/SE98/apps/96/xine.png
 share/icons/SE98/apps/96/xmms.png
 share/icons/SE98/apps/96/xpdf.png
@@ -15612,7 +15545,6 @@ share/icons/SE98/categories/16/applications-haskell.png
 share/icons/SE98/categories/16/applications-ide.png
 share/icons/SE98/categories/16/applications-interfacedesign.png
 share/icons/SE98/categories/16/applications-internet.png
-share/icons/SE98/categories/16/applications-java
 share/icons/SE98/categories/16/applications-java.png
 share/icons/SE98/categories/16/applications-libraries.png
 share/icons/SE98/categories/16/applications-lisp.png
@@ -15720,7 +15652,6 @@ share/icons/SE98/categories/22/applications-haskell.png
 share/icons/SE98/categories/22/applications-ide.png
 share/icons/SE98/categories/22/applications-interfacedesign.png
 share/icons/SE98/categories/22/applications-internet.png
-share/icons/SE98/categories/22/applications-java
 share/icons/SE98/categories/22/applications-java.png
 share/icons/SE98/categories/22/applications-libraries.png
 share/icons/SE98/categories/22/applications-lisp.png
@@ -15828,7 +15759,6 @@ share/icons/SE98/categories/24/applications-haskell.png
 share/icons/SE98/categories/24/applications-ide.png
 share/icons/SE98/categories/24/applications-interfacedesign.png
 share/icons/SE98/categories/24/applications-internet.png
-share/icons/SE98/categories/24/applications-java
 share/icons/SE98/categories/24/applications-java.png
 share/icons/SE98/categories/24/applications-libraries.png
 share/icons/SE98/categories/24/applications-lisp.png
@@ -15940,7 +15870,6 @@ share/icons/SE98/categories/32/applications-haskell.png
 share/icons/SE98/categories/32/applications-ide.png
 share/icons/SE98/categories/32/applications-interfacedesign.png
 share/icons/SE98/categories/32/applications-internet.png
-share/icons/SE98/categories/32/applications-java
 share/icons/SE98/categories/32/applications-java.png
 share/icons/SE98/categories/32/applications-libraries.png
 share/icons/SE98/categories/32/applications-lisp.png
@@ -16052,7 +15981,6 @@ share/icons/SE98/categories/48/applications-haskell.png
 share/icons/SE98/categories/48/applications-ide.png
 share/icons/SE98/categories/48/applications-interfacedesign.png
 share/icons/SE98/categories/48/applications-internet.png
-share/icons/SE98/categories/48/applications-java
 share/icons/SE98/categories/48/applications-java.png
 share/icons/SE98/categories/48/applications-libraries.png
 share/icons/SE98/categories/48/applications-lisp.png
@@ -16556,6 +16484,7 @@ share/icons/SE98/devices/16/media-removable-symbolic.png
 share/icons/SE98/devices/16/media-removable.png
 share/icons/SE98/devices/16/media-tape.png
 share/icons/SE98/devices/16/media-zip.png
+share/icons/SE98/devices/16/memory.png
 share/icons/SE98/devices/16/microphone-symbolic.png
 share/icons/SE98/devices/16/modem.png
 share/icons/SE98/devices/16/monitor.png
@@ -16611,7 +16540,6 @@ share/icons/SE98/devices/16/xfce-mount.png
 share/icons/SE98/devices/16/xfce-printer-symbolic.png
 share/icons/SE98/devices/16/xfce-printer.png
 share/icons/SE98/devices/16/xfce4-display.png
-share/icons/SE98/devices/16/xfce4-keyboard.png
 share/icons/SE98/devices/16/xfce4-mouse.png
 share/icons/SE98/devices/16/yast_HD.png
 share/icons/SE98/devices/16/yast_idetude.png
@@ -16978,6 +16906,7 @@ share/icons/SE98/devices/22/media-removable-symbolic.png
 share/icons/SE98/devices/22/media-removable.png
 share/icons/SE98/devices/22/media-tape.png
 share/icons/SE98/devices/22/media-zip.png
+share/icons/SE98/devices/22/memory.png
 share/icons/SE98/devices/22/microphone-symbolic.png
 share/icons/SE98/devices/22/modem.png
 share/icons/SE98/devices/22/monitor.png
@@ -17031,7 +16960,6 @@ share/icons/SE98/devices/22/xfce-mount.png
 share/icons/SE98/devices/22/xfce-printer-symbolic.png
 share/icons/SE98/devices/22/xfce-printer.png
 share/icons/SE98/devices/22/xfce4-display.png
-share/icons/SE98/devices/22/xfce4-keyboard.png
 share/icons/SE98/devices/22/xfce4-mouse.png
 share/icons/SE98/devices/22/yast_HD.png
 share/icons/SE98/devices/22/yast_idetude.png
@@ -17256,6 +17184,7 @@ share/icons/SE98/devices/24/media-removable-symbolic.png
 share/icons/SE98/devices/24/media-removable.png
 share/icons/SE98/devices/24/media-tape.png
 share/icons/SE98/devices/24/media-zip.png
+share/icons/SE98/devices/24/memory.png
 share/icons/SE98/devices/24/microphone-symbolic.png
 share/icons/SE98/devices/24/modem.png
 share/icons/SE98/devices/24/monitor.png
@@ -17309,7 +17238,6 @@ share/icons/SE98/devices/24/xfce-mount.png
 share/icons/SE98/devices/24/xfce-printer-symbolic.png
 share/icons/SE98/devices/24/xfce-printer.png
 share/icons/SE98/devices/24/xfce4-display.png
-share/icons/SE98/devices/24/xfce4-keyboard.png
 share/icons/SE98/devices/24/xfce4-mouse.png
 share/icons/SE98/devices/24/yast_HD.png
 share/icons/SE98/devices/24/yast_idetude.png
@@ -17609,6 +17537,7 @@ share/icons/SE98/devices/32/media-removable.png
 share/icons/SE98/devices/32/media-tape.png
 share/icons/SE98/devices/32/media-zip-symbolic.png
 share/icons/SE98/devices/32/media-zip.png
+share/icons/SE98/devices/32/memory.png
 share/icons/SE98/devices/32/microphone-symbolic.png
 share/icons/SE98/devices/32/modem.png
 share/icons/SE98/devices/32/monitor.png
@@ -17668,7 +17597,6 @@ share/icons/SE98/devices/32/xfce-mount.png
 share/icons/SE98/devices/32/xfce-printer-symbolic.png
 share/icons/SE98/devices/32/xfce-printer.png
 share/icons/SE98/devices/32/xfce4-display.png
-share/icons/SE98/devices/32/xfce4-keyboard.png
 share/icons/SE98/devices/32/xfce4-mouse.png
 share/icons/SE98/devices/32/yast_HD.png
 share/icons/SE98/devices/32/yast_idetude.png
@@ -17912,6 +17840,7 @@ share/icons/SE98/devices/48/media-optical.png
 share/icons/SE98/devices/48/media-removable.png
 share/icons/SE98/devices/48/media-tape.png
 share/icons/SE98/devices/48/media-zip.png
+share/icons/SE98/devices/48/memory.png
 share/icons/SE98/devices/48/microphone-symbolic.png
 share/icons/SE98/devices/48/modem.png
 share/icons/SE98/devices/48/monitor.png
@@ -17962,7 +17891,6 @@ share/icons/SE98/devices/48/xfce-mount.png
 share/icons/SE98/devices/48/xfce-printer-symbolic.png
 share/icons/SE98/devices/48/xfce-printer.png
 share/icons/SE98/devices/48/xfce4-display.png
-share/icons/SE98/devices/48/xfce4-keyboard.png
 share/icons/SE98/devices/48/xfce4-mouse.png
 share/icons/SE98/devices/48/yast_HD.png
 share/icons/SE98/devices/48/yast_idetude.png
@@ -18179,7 +18107,6 @@ share/icons/SE98/devices/64/xfce-mount.png
 share/icons/SE98/devices/64/xfce-printer-symbolic.png
 share/icons/SE98/devices/64/xfce-printer.png
 share/icons/SE98/devices/64/xfce4-display.png
-share/icons/SE98/devices/64/xfce4-keyboard.png
 share/icons/SE98/devices/64/xfce4-mouse.png
 share/icons/SE98/devices/64/yast_HD.png
 share/icons/SE98/devices/64/yast_idetude.png
@@ -18797,6 +18724,7 @@ share/icons/SE98/mimes/128/application-postscript.png
 share/icons/SE98/mimes/128/application-rtf.png
 share/icons/SE98/mimes/128/application-smil+xml.png
 share/icons/SE98/mimes/128/application-text.png
+share/icons/SE98/mimes/128/application-toml.png
 share/icons/SE98/mimes/128/application-trash.png
 share/icons/SE98/mimes/128/application-video.png
 share/icons/SE98/mimes/128/application-vnd.appimage-symbolic.png
@@ -18841,6 +18769,7 @@ share/icons/SE98/mimes/128/application-x-alpm-package.png
 share/icons/SE98/mimes/128/application-x-apple-diskimage.png
 share/icons/SE98/mimes/128/application-x-appliance-symbolic.png
 share/icons/SE98/mimes/128/application-x-appliance.png
+share/icons/SE98/mimes/128/application-x-awk.png
 share/icons/SE98/mimes/128/application-x-bin.png
 share/icons/SE98/mimes/128/application-x-bittorrent.png
 share/icons/SE98/mimes/128/application-x-brasero.png
@@ -18869,12 +18798,16 @@ share/icons/SE98/mimes/128/application-x-ms-shortcut_SHARP.png
 share/icons/SE98/mimes/128/application-x-ms-shortcut_SMOOTH.png
 share/icons/SE98/mimes/128/application-x-mswinurl.png
 share/icons/SE98/mimes/128/application-x-nintendo-ds-rom.png
+share/icons/SE98/mimes/128/application-x-nrg.png
+share/icons/SE98/mimes/128/application-x-perl.png
+share/icons/SE98/mimes/128/application-x-php.png
 share/icons/SE98/mimes/128/application-x-qemu-disk.png
 share/icons/SE98/mimes/128/application-x-raw-disk-image.png
 share/icons/SE98/mimes/128/application-x-riff-symbolic.png
 share/icons/SE98/mimes/128/application-x-riff.png
 share/icons/SE98/mimes/128/application-x-rpm-redhat.png
 share/icons/SE98/mimes/128/application-x-rpm.png
+share/icons/SE98/mimes/128/application-x-ruby.png
 share/icons/SE98/mimes/128/application-x-sami.png
 share/icons/SE98/mimes/128/application-x-srt.png
 share/icons/SE98/mimes/128/application-x-srtrip.png
@@ -19120,6 +19053,7 @@ share/icons/SE98/mimes/128/text-rtf.png
 share/icons/SE98/mimes/128/text-spreadsheet.png
 share/icons/SE98/mimes/128/text-tcl.png
 share/icons/SE98/mimes/128/text-vtt.png
+share/icons/SE98/mimes/128/text-x-awk.png
 share/icons/SE98/mimes/128/text-x-bak.png
 share/icons/SE98/mimes/128/text-x-c++.png
 share/icons/SE98/mimes/128/text-x-c++src.png
@@ -19129,15 +19063,19 @@ share/icons/SE98/mimes/128/text-x-chdr.png
 share/icons/SE98/mimes/128/text-x-cmake.png
 share/icons/SE98/mimes/128/text-x-copying.png
 share/icons/SE98/mimes/128/text-x-csrc.png
+share/icons/SE98/mimes/128/text-x-erlang.png
+share/icons/SE98/mimes/128/text-x-gawk.png
 share/icons/SE98/mimes/128/text-x-generic-rtl.png
 share/icons/SE98/mimes/128/text-x-generic-template.png
 share/icons/SE98/mimes/128/text-x-generic.png
 share/icons/SE98/mimes/128/text-x-gettext-translation.png
+share/icons/SE98/mimes/128/text-x-groovy.png
 share/icons/SE98/mimes/128/text-x-java-source.png
 share/icons/SE98/mimes/128/text-x-java.png
 share/icons/SE98/mimes/128/text-x-javascript.png
 share/icons/SE98/mimes/128/text-x-kgw.png
 share/icons/SE98/mimes/128/text-x-log.png
+share/icons/SE98/mimes/128/text-x-lua.png
 share/icons/SE98/mimes/128/text-x-makefile.png
 share/icons/SE98/mimes/128/text-x-meson.png
 share/icons/SE98/mimes/128/text-x-microdvd.png
@@ -19147,6 +19085,8 @@ share/icons/SE98/mimes/128/text-x-perl.png
 share/icons/SE98/mimes/128/text-x-preview.png
 share/icons/SE98/mimes/128/text-x-qml.png
 share/icons/SE98/mimes/128/text-x-readme.png
+share/icons/SE98/mimes/128/text-x-script.png
+share/icons/SE98/mimes/128/text-x-shellscript.png
 share/icons/SE98/mimes/128/text-x-source.png
 share/icons/SE98/mimes/128/text-x-ssa.png
 share/icons/SE98/mimes/128/text-x-subviewer.png
@@ -19235,6 +19175,7 @@ share/icons/SE98/mimes/16/application-slf+xml.png
 share/icons/SE98/mimes/16/application-smil+xml.png
 share/icons/SE98/mimes/16/application-tcx+xml.png
 share/icons/SE98/mimes/16/application-text.png
+share/icons/SE98/mimes/16/application-toml.png
 share/icons/SE98/mimes/16/application-trash.png
 share/icons/SE98/mimes/16/application-video.png
 share/icons/SE98/mimes/16/application-vnd-google-earth-kml.png
@@ -19327,6 +19268,7 @@ share/icons/SE98/mimes/16/application-x-7z-compressed.png
 share/icons/SE98/mimes/16/application-x-7zip.png
 share/icons/SE98/mimes/16/application-x-abiword.png
 share/icons/SE98/mimes/16/application-x-ace.png
+share/icons/SE98/mimes/16/application-x-alpinequest-wpt.png
 share/icons/SE98/mimes/16/application-x-alpm-package.png
 share/icons/SE98/mimes/16/application-x-apple-diskimage.png
 share/icons/SE98/mimes/16/application-x-appliance-symbolic.png
@@ -19407,6 +19349,7 @@ share/icons/SE98/mimes/16/application-x-msi.png
 share/icons/SE98/mimes/16/application-x-mswinurl.png
 share/icons/SE98/mimes/16/application-x-nes-rom.png
 share/icons/SE98/mimes/16/application-x-nintendo-ds-rom.png
+share/icons/SE98/mimes/16/application-x-nrg.png
 share/icons/SE98/mimes/16/application-x-object.png
 share/icons/SE98/mimes/16/application-x-ole-storage.png
 share/icons/SE98/mimes/16/application-x-osm+xml.png
@@ -19891,6 +19834,7 @@ share/icons/SE98/mimes/16/text-vcard.png
 share/icons/SE98/mimes/16/text-vnd.rn-realtext.png
 share/icons/SE98/mimes/16/text-vtt.png
 share/icons/SE98/mimes/16/text-x-authors.png
+share/icons/SE98/mimes/16/text-x-awk.png
 share/icons/SE98/mimes/16/text-x-bak.png
 share/icons/SE98/mimes/16/text-x-bibtex.png
 share/icons/SE98/mimes/16/text-x-c++.png
@@ -19908,12 +19852,15 @@ share/icons/SE98/mimes/16/text-x-csrc.png
 share/icons/SE98/mimes/16/text-x-css.png
 share/icons/SE98/mimes/16/text-x-emacs-lisp.png
 share/icons/SE98/mimes/16/text-x-emacs.png
+share/icons/SE98/mimes/16/text-x-erlang.png
+share/icons/SE98/mimes/16/text-x-gawk.png
 share/icons/SE98/mimes/16/text-x-generic-rtl.png
 share/icons/SE98/mimes/16/text-x-generic-symbolic.png
 share/icons/SE98/mimes/16/text-x-generic-template.png
 share/icons/SE98/mimes/16/text-x-generic.png
 share/icons/SE98/mimes/16/text-x-generic.svapplication-x-awk.png
 share/icons/SE98/mimes/16/text-x-gettext-translation.png
+share/icons/SE98/mimes/16/text-x-groovy.png
 share/icons/SE98/mimes/16/text-x-gtkrc.png
 share/icons/SE98/mimes/16/text-x-install.png
 share/icons/SE98/mimes/16/text-x-java-source.png
@@ -19937,6 +19884,7 @@ share/icons/SE98/mimes/16/text-x-qml.png
 share/icons/SE98/mimes/16/text-x-readme.png
 share/icons/SE98/mimes/16/text-x-ruby.png
 share/icons/SE98/mimes/16/text-x-script.png
+share/icons/SE98/mimes/16/text-x-shellscript.png
 share/icons/SE98/mimes/16/text-x-source.png
 share/icons/SE98/mimes/16/text-x-sql.png
 share/icons/SE98/mimes/16/text-x-ssa.png
@@ -20058,6 +20006,7 @@ share/icons/SE98/mimes/160/application-x-ms-shortcut.png
 share/icons/SE98/mimes/160/application-x-ms-shortcut_SHARP.png
 share/icons/SE98/mimes/160/application-x-ms-shortcut_SMOOTH.png
 share/icons/SE98/mimes/160/application-x-mswinurl.png
+share/icons/SE98/mimes/160/application-x-nrg.png
 share/icons/SE98/mimes/160/application-x-qemu-disk.png
 share/icons/SE98/mimes/160/application-x-raw-disk-image.png
 share/icons/SE98/mimes/160/application-x-riff-symbolic.png
@@ -20212,6 +20161,7 @@ share/icons/SE98/mimes/160/text-richtext.png
 share/icons/SE98/mimes/160/text-rtf.png
 share/icons/SE98/mimes/160/text-spreadsheet.png
 share/icons/SE98/mimes/160/text-vtt.png
+share/icons/SE98/mimes/160/text-x-awk.png
 share/icons/SE98/mimes/160/text-x-bak.png
 share/icons/SE98/mimes/160/text-x-c++.png
 share/icons/SE98/mimes/160/text-x-c++src.png
@@ -20221,6 +20171,7 @@ share/icons/SE98/mimes/160/text-x-chdr.png
 share/icons/SE98/mimes/160/text-x-cmake.png
 share/icons/SE98/mimes/160/text-x-copying.png
 share/icons/SE98/mimes/160/text-x-csrc.png
+share/icons/SE98/mimes/160/text-x-gawk.png
 share/icons/SE98/mimes/160/text-x-generic-rtl.png
 share/icons/SE98/mimes/160/text-x-generic-template.png
 share/icons/SE98/mimes/160/text-x-generic.png
@@ -20237,6 +20188,7 @@ share/icons/SE98/mimes/160/text-x-nfo.png
 share/icons/SE98/mimes/160/text-x-perl.png
 share/icons/SE98/mimes/160/text-x-preview.png
 share/icons/SE98/mimes/160/text-x-readme.png
+share/icons/SE98/mimes/160/text-x-script.png
 share/icons/SE98/mimes/160/text-x-source.png
 share/icons/SE98/mimes/160/text-x-ssa.png
 share/icons/SE98/mimes/160/text-x-subviewer.png
@@ -20330,6 +20282,7 @@ share/icons/SE98/mimes/192/application-x-ms-shortcut.png
 share/icons/SE98/mimes/192/application-x-ms-shortcut_SHARP.png
 share/icons/SE98/mimes/192/application-x-ms-shortcut_SMOOTH.png
 share/icons/SE98/mimes/192/application-x-mswinurl.png
+share/icons/SE98/mimes/192/application-x-nrg.png
 share/icons/SE98/mimes/192/application-x-qemu-disk.png
 share/icons/SE98/mimes/192/application-x-raw-disk-image.png
 share/icons/SE98/mimes/192/application-x-riff-symbolic.png
@@ -20484,6 +20437,7 @@ share/icons/SE98/mimes/192/text-richtext.png
 share/icons/SE98/mimes/192/text-rtf.png
 share/icons/SE98/mimes/192/text-spreadsheet.png
 share/icons/SE98/mimes/192/text-vtt.png
+share/icons/SE98/mimes/192/text-x-awk.png
 share/icons/SE98/mimes/192/text-x-bak.png
 share/icons/SE98/mimes/192/text-x-c++.png
 share/icons/SE98/mimes/192/text-x-c++src.png
@@ -20493,6 +20447,7 @@ share/icons/SE98/mimes/192/text-x-chdr.png
 share/icons/SE98/mimes/192/text-x-cmake.png
 share/icons/SE98/mimes/192/text-x-copying.png
 share/icons/SE98/mimes/192/text-x-csrc.png
+share/icons/SE98/mimes/192/text-x-gawk.png
 share/icons/SE98/mimes/192/text-x-generic-rtl.png
 share/icons/SE98/mimes/192/text-x-generic-template.png
 share/icons/SE98/mimes/192/text-x-generic.png
@@ -20509,6 +20464,7 @@ share/icons/SE98/mimes/192/text-x-nfo.png
 share/icons/SE98/mimes/192/text-x-perl.png
 share/icons/SE98/mimes/192/text-x-preview.png
 share/icons/SE98/mimes/192/text-x-readme.png
+share/icons/SE98/mimes/192/text-x-script.png
 share/icons/SE98/mimes/192/text-x-source.png
 share/icons/SE98/mimes/192/text-x-ssa.png
 share/icons/SE98/mimes/192/text-x-subviewer.png
@@ -20590,6 +20546,7 @@ share/icons/SE98/mimes/22/application-slf+xml.png
 share/icons/SE98/mimes/22/application-smil+xml.png
 share/icons/SE98/mimes/22/application-tcx+xml.png
 share/icons/SE98/mimes/22/application-text.png
+share/icons/SE98/mimes/22/application-toml.png
 share/icons/SE98/mimes/22/application-trash.png
 share/icons/SE98/mimes/22/application-video.png
 share/icons/SE98/mimes/22/application-vnd-google-earth-kml.png
@@ -20680,6 +20637,7 @@ share/icons/SE98/mimes/22/application-x-7z-compressed.png
 share/icons/SE98/mimes/22/application-x-7zip.png
 share/icons/SE98/mimes/22/application-x-abiword.png
 share/icons/SE98/mimes/22/application-x-ace.png
+share/icons/SE98/mimes/22/application-x-alpinequest-wpt.png
 share/icons/SE98/mimes/22/application-x-alpm-package.png
 share/icons/SE98/mimes/22/application-x-apple-diskimage.png
 share/icons/SE98/mimes/22/application-x-appliance-symbolic.png
@@ -20760,6 +20718,7 @@ share/icons/SE98/mimes/22/application-x-msi.png
 share/icons/SE98/mimes/22/application-x-mswinurl.png
 share/icons/SE98/mimes/22/application-x-nes-rom.png
 share/icons/SE98/mimes/22/application-x-nintendo-ds-rom.png
+share/icons/SE98/mimes/22/application-x-nrg.png
 share/icons/SE98/mimes/22/application-x-object.png
 share/icons/SE98/mimes/22/application-x-ole-storage.png
 share/icons/SE98/mimes/22/application-x-osm+xml.png
@@ -21240,6 +21199,7 @@ share/icons/SE98/mimes/22/text-tcl.png
 share/icons/SE98/mimes/22/text-vnd.rn-realtext.png
 share/icons/SE98/mimes/22/text-vtt.png
 share/icons/SE98/mimes/22/text-x-authors.png
+share/icons/SE98/mimes/22/text-x-awk.png
 share/icons/SE98/mimes/22/text-x-bak.png
 share/icons/SE98/mimes/22/text-x-bibtex.png
 share/icons/SE98/mimes/22/text-x-c++.png
@@ -21257,12 +21217,15 @@ share/icons/SE98/mimes/22/text-x-csrc.png
 share/icons/SE98/mimes/22/text-x-css.png
 share/icons/SE98/mimes/22/text-x-emacs-lisp.png
 share/icons/SE98/mimes/22/text-x-emacs.png
+share/icons/SE98/mimes/22/text-x-erlang.png
+share/icons/SE98/mimes/22/text-x-gawk.png
 share/icons/SE98/mimes/22/text-x-generic-rtl.png
 share/icons/SE98/mimes/22/text-x-generic-symbolic.png
 share/icons/SE98/mimes/22/text-x-generic-template.png
 share/icons/SE98/mimes/22/text-x-generic.png
 share/icons/SE98/mimes/22/text-x-generic.svapplication-x-awk.png
 share/icons/SE98/mimes/22/text-x-gettext-translation.png
+share/icons/SE98/mimes/22/text-x-groovy.png
 share/icons/SE98/mimes/22/text-x-gtkrc.png
 share/icons/SE98/mimes/22/text-x-install.png
 share/icons/SE98/mimes/22/text-x-java-source.png
@@ -21286,6 +21249,7 @@ share/icons/SE98/mimes/22/text-x-qml.png
 share/icons/SE98/mimes/22/text-x-readme.png
 share/icons/SE98/mimes/22/text-x-ruby.png
 share/icons/SE98/mimes/22/text-x-script.png
+share/icons/SE98/mimes/22/text-x-shellscript.png
 share/icons/SE98/mimes/22/text-x-source.png
 share/icons/SE98/mimes/22/text-x-sql.png
 share/icons/SE98/mimes/22/text-x-ssa.png
@@ -21395,6 +21359,7 @@ share/icons/SE98/mimes/24/application-slf+xml.png
 share/icons/SE98/mimes/24/application-smil+xml.png
 share/icons/SE98/mimes/24/application-tcx+xml.png
 share/icons/SE98/mimes/24/application-text.png
+share/icons/SE98/mimes/24/application-toml.png
 share/icons/SE98/mimes/24/application-trash.png
 share/icons/SE98/mimes/24/application-video.png
 share/icons/SE98/mimes/24/application-vnd-google-earth-kml.png
@@ -21485,6 +21450,7 @@ share/icons/SE98/mimes/24/application-x-7z-compressed.png
 share/icons/SE98/mimes/24/application-x-7zip.png
 share/icons/SE98/mimes/24/application-x-abiword.png
 share/icons/SE98/mimes/24/application-x-ace.png
+share/icons/SE98/mimes/24/application-x-alpinequest-wpt.png
 share/icons/SE98/mimes/24/application-x-alpm-package.png
 share/icons/SE98/mimes/24/application-x-apple-diskimage.png
 share/icons/SE98/mimes/24/application-x-appliance-symbolic.png
@@ -21564,6 +21530,7 @@ share/icons/SE98/mimes/24/application-x-msdownload.png
 share/icons/SE98/mimes/24/application-x-msi.png
 share/icons/SE98/mimes/24/application-x-mswinurl.png
 share/icons/SE98/mimes/24/application-x-nes-rom.png
+share/icons/SE98/mimes/24/application-x-nrg.png
 share/icons/SE98/mimes/24/application-x-object.png
 share/icons/SE98/mimes/24/application-x-ole-storage.png
 share/icons/SE98/mimes/24/application-x-osm+xml.png
@@ -22046,6 +22013,7 @@ share/icons/SE98/mimes/24/text-vcard.png
 share/icons/SE98/mimes/24/text-vnd.rn-realtext.png
 share/icons/SE98/mimes/24/text-vtt.png
 share/icons/SE98/mimes/24/text-x-authors.png
+share/icons/SE98/mimes/24/text-x-awk.png
 share/icons/SE98/mimes/24/text-x-bak.png
 share/icons/SE98/mimes/24/text-x-bibtex.png
 share/icons/SE98/mimes/24/text-x-c++.png
@@ -22063,12 +22031,15 @@ share/icons/SE98/mimes/24/text-x-csrc.png
 share/icons/SE98/mimes/24/text-x-css.png
 share/icons/SE98/mimes/24/text-x-emacs-lisp.png
 share/icons/SE98/mimes/24/text-x-emacs.png
+share/icons/SE98/mimes/24/text-x-erlang.png
+share/icons/SE98/mimes/24/text-x-gawk.png
 share/icons/SE98/mimes/24/text-x-generic-rtl.png
 share/icons/SE98/mimes/24/text-x-generic-symbolic.png
 share/icons/SE98/mimes/24/text-x-generic-template.png
 share/icons/SE98/mimes/24/text-x-generic.png
 share/icons/SE98/mimes/24/text-x-generic.svapplication-x-awk.png
 share/icons/SE98/mimes/24/text-x-gettext-translation.png
+share/icons/SE98/mimes/24/text-x-groovy.png
 share/icons/SE98/mimes/24/text-x-gtkrc.png
 share/icons/SE98/mimes/24/text-x-install.png
 share/icons/SE98/mimes/24/text-x-java-source.png
@@ -22092,6 +22063,7 @@ share/icons/SE98/mimes/24/text-x-qml.png
 share/icons/SE98/mimes/24/text-x-readme.png
 share/icons/SE98/mimes/24/text-x-ruby.png
 share/icons/SE98/mimes/24/text-x-script.png
+share/icons/SE98/mimes/24/text-x-shellscript.png
 share/icons/SE98/mimes/24/text-x-source.png
 share/icons/SE98/mimes/24/text-x-sql.png
 share/icons/SE98/mimes/24/text-x-ssa.png
@@ -22212,6 +22184,7 @@ share/icons/SE98/mimes/256/application-x-ms-shortcut_SHARP.png
 share/icons/SE98/mimes/256/application-x-ms-shortcut_SMOOTH.png
 share/icons/SE98/mimes/256/application-x-mswinurl.png
 share/icons/SE98/mimes/256/application-x-nintendo-ds-rom.png
+share/icons/SE98/mimes/256/application-x-nrg.png
 share/icons/SE98/mimes/256/application-x-qemu-disk.png
 share/icons/SE98/mimes/256/application-x-raw-disk-image.png
 share/icons/SE98/mimes/256/application-x-riff-symbolic.png
@@ -22365,6 +22338,7 @@ share/icons/SE98/mimes/256/text-richtext.png
 share/icons/SE98/mimes/256/text-rtf.png
 share/icons/SE98/mimes/256/text-spreadsheet.png
 share/icons/SE98/mimes/256/text-vtt.png
+share/icons/SE98/mimes/256/text-x-awk.png
 share/icons/SE98/mimes/256/text-x-bak.png
 share/icons/SE98/mimes/256/text-x-c++.png
 share/icons/SE98/mimes/256/text-x-c++src.png
@@ -22374,6 +22348,7 @@ share/icons/SE98/mimes/256/text-x-chdr.png
 share/icons/SE98/mimes/256/text-x-cmake.png
 share/icons/SE98/mimes/256/text-x-copying.png
 share/icons/SE98/mimes/256/text-x-csrc.png
+share/icons/SE98/mimes/256/text-x-gawk.png
 share/icons/SE98/mimes/256/text-x-generic-rtl.png
 share/icons/SE98/mimes/256/text-x-generic-template.png
 share/icons/SE98/mimes/256/text-x-generic.png
@@ -22389,6 +22364,7 @@ share/icons/SE98/mimes/256/text-x-nfo.png
 share/icons/SE98/mimes/256/text-x-perl.png
 share/icons/SE98/mimes/256/text-x-preview.png
 share/icons/SE98/mimes/256/text-x-readme.png
+share/icons/SE98/mimes/256/text-x-script.png
 share/icons/SE98/mimes/256/text-x-source.png
 share/icons/SE98/mimes/256/text-x-ssa.png
 share/icons/SE98/mimes/256/text-x-subviewer.png
@@ -22471,6 +22447,7 @@ share/icons/SE98/mimes/32/application-slf+xml.png
 share/icons/SE98/mimes/32/application-smil+xml.png
 share/icons/SE98/mimes/32/application-tcx+xml.png
 share/icons/SE98/mimes/32/application-text.png
+share/icons/SE98/mimes/32/application-toml.png
 share/icons/SE98/mimes/32/application-trash.png
 share/icons/SE98/mimes/32/application-video.png
 share/icons/SE98/mimes/32/application-vnd-google-earth-kml.png
@@ -22563,6 +22540,7 @@ share/icons/SE98/mimes/32/application-x-7z-compressed.png
 share/icons/SE98/mimes/32/application-x-7zip.png
 share/icons/SE98/mimes/32/application-x-abiword.png
 share/icons/SE98/mimes/32/application-x-ace.png
+share/icons/SE98/mimes/32/application-x-alpinequest-wpt.png
 share/icons/SE98/mimes/32/application-x-alpm-package.png
 share/icons/SE98/mimes/32/application-x-apple-diskimage.png
 share/icons/SE98/mimes/32/application-x-appliance-symbolic.png
@@ -22643,6 +22621,7 @@ share/icons/SE98/mimes/32/application-x-msi.png
 share/icons/SE98/mimes/32/application-x-mswinurl.png
 share/icons/SE98/mimes/32/application-x-nes-rom.png
 share/icons/SE98/mimes/32/application-x-nintendo-ds-rom.png
+share/icons/SE98/mimes/32/application-x-nrg.png
 share/icons/SE98/mimes/32/application-x-object.png
 share/icons/SE98/mimes/32/application-x-ole-storage.png
 share/icons/SE98/mimes/32/application-x-osm+xml.png
@@ -23124,6 +23103,7 @@ share/icons/SE98/mimes/32/text-vcard.png
 share/icons/SE98/mimes/32/text-vnd.rn-realtext.png
 share/icons/SE98/mimes/32/text-vtt.png
 share/icons/SE98/mimes/32/text-x-authors.png
+share/icons/SE98/mimes/32/text-x-awk.png
 share/icons/SE98/mimes/32/text-x-bak.png
 share/icons/SE98/mimes/32/text-x-bibtex.png
 share/icons/SE98/mimes/32/text-x-c++.png
@@ -23141,12 +23121,15 @@ share/icons/SE98/mimes/32/text-x-csrc.png
 share/icons/SE98/mimes/32/text-x-css.png
 share/icons/SE98/mimes/32/text-x-emacs-lisp.png
 share/icons/SE98/mimes/32/text-x-emacs.png
+share/icons/SE98/mimes/32/text-x-erlang.png
+share/icons/SE98/mimes/32/text-x-gawk.png
 share/icons/SE98/mimes/32/text-x-generic-rtl.png
 share/icons/SE98/mimes/32/text-x-generic-symbolic.png
 share/icons/SE98/mimes/32/text-x-generic-template.png
 share/icons/SE98/mimes/32/text-x-generic.png
 share/icons/SE98/mimes/32/text-x-generic.svapplication-x-awk.png
 share/icons/SE98/mimes/32/text-x-gettext-translation.png
+share/icons/SE98/mimes/32/text-x-groovy.png
 share/icons/SE98/mimes/32/text-x-gtkrc.png
 share/icons/SE98/mimes/32/text-x-install.png
 share/icons/SE98/mimes/32/text-x-java-source.png
@@ -23171,6 +23154,7 @@ share/icons/SE98/mimes/32/text-x-qml.png
 share/icons/SE98/mimes/32/text-x-readme.png
 share/icons/SE98/mimes/32/text-x-ruby.png
 share/icons/SE98/mimes/32/text-x-script.png
+share/icons/SE98/mimes/32/text-x-shellscript.png
 share/icons/SE98/mimes/32/text-x-source.png
 share/icons/SE98/mimes/32/text-x-sql.png
 share/icons/SE98/mimes/32/text-x-ssa.png
@@ -23279,6 +23263,7 @@ share/icons/SE98/mimes/48/application-slf+xml.png
 share/icons/SE98/mimes/48/application-smil+xml.png
 share/icons/SE98/mimes/48/application-tcx+xml.png
 share/icons/SE98/mimes/48/application-text.png
+share/icons/SE98/mimes/48/application-toml.png
 share/icons/SE98/mimes/48/application-trash.png
 share/icons/SE98/mimes/48/application-video.png
 share/icons/SE98/mimes/48/application-vnd-google-earth-kml.png
@@ -23369,6 +23354,7 @@ share/icons/SE98/mimes/48/application-x-7z-compressed.png
 share/icons/SE98/mimes/48/application-x-7zip.png
 share/icons/SE98/mimes/48/application-x-abiword.png
 share/icons/SE98/mimes/48/application-x-ace.png
+share/icons/SE98/mimes/48/application-x-alpinequest-wpt.png
 share/icons/SE98/mimes/48/application-x-alpm-package.png
 share/icons/SE98/mimes/48/application-x-apple-diskimage.png
 share/icons/SE98/mimes/48/application-x-appliance-symbolic.png
@@ -23449,6 +23435,7 @@ share/icons/SE98/mimes/48/application-x-msi.png
 share/icons/SE98/mimes/48/application-x-mswinurl.png
 share/icons/SE98/mimes/48/application-x-nes-rom.png
 share/icons/SE98/mimes/48/application-x-nintendo-ds-rom.png
+share/icons/SE98/mimes/48/application-x-nrg.png
 share/icons/SE98/mimes/48/application-x-object.png
 share/icons/SE98/mimes/48/application-x-ole-storage.png
 share/icons/SE98/mimes/48/application-x-osm+xml.png
@@ -23931,6 +23918,7 @@ share/icons/SE98/mimes/48/text-vcard.png
 share/icons/SE98/mimes/48/text-vnd.rn-realtext.png
 share/icons/SE98/mimes/48/text-vtt.png
 share/icons/SE98/mimes/48/text-x-authors.png
+share/icons/SE98/mimes/48/text-x-awk.png
 share/icons/SE98/mimes/48/text-x-bak.png
 share/icons/SE98/mimes/48/text-x-bibtex.png
 share/icons/SE98/mimes/48/text-x-c++.png
@@ -23948,11 +23936,14 @@ share/icons/SE98/mimes/48/text-x-csrc.png
 share/icons/SE98/mimes/48/text-x-css.png
 share/icons/SE98/mimes/48/text-x-emacs-lisp.png
 share/icons/SE98/mimes/48/text-x-emacs.png
+share/icons/SE98/mimes/48/text-x-erlang.png
+share/icons/SE98/mimes/48/text-x-gawk.png
 share/icons/SE98/mimes/48/text-x-generic-rtl.png
 share/icons/SE98/mimes/48/text-x-generic-template.png
 share/icons/SE98/mimes/48/text-x-generic.png
 share/icons/SE98/mimes/48/text-x-generic.svapplication-x-awk.png
 share/icons/SE98/mimes/48/text-x-gettext-translation.png
+share/icons/SE98/mimes/48/text-x-groovy.png
 share/icons/SE98/mimes/48/text-x-gtkrc.png
 share/icons/SE98/mimes/48/text-x-install.png
 share/icons/SE98/mimes/48/text-x-java-source.png
@@ -23977,6 +23968,7 @@ share/icons/SE98/mimes/48/text-x-qml.png
 share/icons/SE98/mimes/48/text-x-readme.png
 share/icons/SE98/mimes/48/text-x-ruby.png
 share/icons/SE98/mimes/48/text-x-script.png
+share/icons/SE98/mimes/48/text-x-shellscript.png
 share/icons/SE98/mimes/48/text-x-source.png
 share/icons/SE98/mimes/48/text-x-sql.png
 share/icons/SE98/mimes/48/text-x-ssa.png
@@ -24077,6 +24069,7 @@ share/icons/SE98/mimes/64/application-slf+xml.png
 share/icons/SE98/mimes/64/application-smil+xml.png
 share/icons/SE98/mimes/64/application-tcx+xml.png
 share/icons/SE98/mimes/64/application-text.png
+share/icons/SE98/mimes/64/application-toml.png
 share/icons/SE98/mimes/64/application-trash.png
 share/icons/SE98/mimes/64/application-video.png
 share/icons/SE98/mimes/64/application-vnd-google-earth-kml.png
@@ -24145,6 +24138,7 @@ share/icons/SE98/mimes/64/application-x-7z-compressed.png
 share/icons/SE98/mimes/64/application-x-7zip.png
 share/icons/SE98/mimes/64/application-x-abiword.png
 share/icons/SE98/mimes/64/application-x-ace.png
+share/icons/SE98/mimes/64/application-x-alpinequest-wpt.png
 share/icons/SE98/mimes/64/application-x-alpm-package.png
 share/icons/SE98/mimes/64/application-x-apple-diskimage.png
 share/icons/SE98/mimes/64/application-x-appliance-symbolic.png
@@ -24222,6 +24216,7 @@ share/icons/SE98/mimes/64/application-x-msi.png
 share/icons/SE98/mimes/64/application-x-mswinurl.png
 share/icons/SE98/mimes/64/application-x-nes-rom.png
 share/icons/SE98/mimes/64/application-x-nintendo-ds-rom.png
+share/icons/SE98/mimes/64/application-x-nrg.png
 share/icons/SE98/mimes/64/application-x-object.png
 share/icons/SE98/mimes/64/application-x-ole-storage.png
 share/icons/SE98/mimes/64/application-x-osm+xml.png
@@ -24638,6 +24633,7 @@ share/icons/SE98/mimes/64/text-tcl-symbolic.png
 share/icons/SE98/mimes/64/text-tcl.png
 share/icons/SE98/mimes/64/text-vnd.rn-realtext.png
 share/icons/SE98/mimes/64/text-vtt.png
+share/icons/SE98/mimes/64/text-x-awk.png
 share/icons/SE98/mimes/64/text-x-bak.png
 share/icons/SE98/mimes/64/text-x-bibtex.png
 share/icons/SE98/mimes/64/text-x-c++.png
@@ -24653,11 +24649,14 @@ share/icons/SE98/mimes/64/text-x-csrc.png
 share/icons/SE98/mimes/64/text-x-css.png
 share/icons/SE98/mimes/64/text-x-emacs-lisp.png
 share/icons/SE98/mimes/64/text-x-emacs.png
+share/icons/SE98/mimes/64/text-x-erlang.png
+share/icons/SE98/mimes/64/text-x-gawk.png
 share/icons/SE98/mimes/64/text-x-generic-rtl.png
 share/icons/SE98/mimes/64/text-x-generic-template.png
 share/icons/SE98/mimes/64/text-x-generic.png
 share/icons/SE98/mimes/64/text-x-generic.svapplication-x-awk.png
 share/icons/SE98/mimes/64/text-x-gettext-translation.png
+share/icons/SE98/mimes/64/text-x-groovy.png
 share/icons/SE98/mimes/64/text-x-gtkrc.png
 share/icons/SE98/mimes/64/text-x-install.png
 share/icons/SE98/mimes/64/text-x-java-source.png
@@ -24682,6 +24681,7 @@ share/icons/SE98/mimes/64/text-x-qml.png
 share/icons/SE98/mimes/64/text-x-readme.png
 share/icons/SE98/mimes/64/text-x-ruby.png
 share/icons/SE98/mimes/64/text-x-script.png
+share/icons/SE98/mimes/64/text-x-shellscript.png
 share/icons/SE98/mimes/64/text-x-source.png
 share/icons/SE98/mimes/64/text-x-ssa.png
 share/icons/SE98/mimes/64/text-x-subviewer.png
@@ -24766,6 +24766,7 @@ share/icons/SE98/mimes/72/application-slf+xml.png
 share/icons/SE98/mimes/72/application-smil+xml.png
 share/icons/SE98/mimes/72/application-tcx+xml.png
 share/icons/SE98/mimes/72/application-text.png
+share/icons/SE98/mimes/72/application-toml.png
 share/icons/SE98/mimes/72/application-trash.png
 share/icons/SE98/mimes/72/application-video.png
 share/icons/SE98/mimes/72/application-vnd-google-earth-kml.png
@@ -24825,6 +24826,7 @@ share/icons/SE98/mimes/72/application-x-7z-compressed.png
 share/icons/SE98/mimes/72/application-x-7zip.png
 share/icons/SE98/mimes/72/application-x-abiword.png
 share/icons/SE98/mimes/72/application-x-ace.png
+share/icons/SE98/mimes/72/application-x-alpinequest-wpt.png
 share/icons/SE98/mimes/72/application-x-alpm-package.png
 share/icons/SE98/mimes/72/application-x-apple-diskimage.png
 share/icons/SE98/mimes/72/application-x-appliance-symbolic.png
@@ -24878,6 +24880,7 @@ share/icons/SE98/mimes/72/application-x-ms-shortcut.png
 share/icons/SE98/mimes/72/application-x-ms-shortcut_SHARP.png
 share/icons/SE98/mimes/72/application-x-ms-shortcut_SMOOTH.png
 share/icons/SE98/mimes/72/application-x-mswinurl.png
+share/icons/SE98/mimes/72/application-x-nrg.png
 share/icons/SE98/mimes/72/application-x-osm+xml.png
 share/icons/SE98/mimes/72/application-x-pak.png
 share/icons/SE98/mimes/72/application-x-partial-download.png
@@ -25216,6 +25219,7 @@ share/icons/SE98/mimes/72/text-tcl-symbolic.png
 share/icons/SE98/mimes/72/text-tcl.png
 share/icons/SE98/mimes/72/text-vnd.rn-realtext.png
 share/icons/SE98/mimes/72/text-vtt.png
+share/icons/SE98/mimes/72/text-x-awk.png
 share/icons/SE98/mimes/72/text-x-bak.png
 share/icons/SE98/mimes/72/text-x-c++.png
 share/icons/SE98/mimes/72/text-x-c++src.png
@@ -25228,11 +25232,14 @@ share/icons/SE98/mimes/72/text-x-copying.png
 share/icons/SE98/mimes/72/text-x-csrc.png
 share/icons/SE98/mimes/72/text-x-emacs-lisp.png
 share/icons/SE98/mimes/72/text-x-emacs.png
+share/icons/SE98/mimes/72/text-x-erlang.png
+share/icons/SE98/mimes/72/text-x-gawk.png
 share/icons/SE98/mimes/72/text-x-generic-rtl.png
 share/icons/SE98/mimes/72/text-x-generic-template.png
 share/icons/SE98/mimes/72/text-x-generic.png
 share/icons/SE98/mimes/72/text-x-generic.svapplication-x-awk.png
 share/icons/SE98/mimes/72/text-x-gettext-translation.png
+share/icons/SE98/mimes/72/text-x-groovy.png
 share/icons/SE98/mimes/72/text-x-gtkrc.png
 share/icons/SE98/mimes/72/text-x-java-source.png
 share/icons/SE98/mimes/72/text-x-java.png
@@ -25254,6 +25261,7 @@ share/icons/SE98/mimes/72/text-x-qml.png
 share/icons/SE98/mimes/72/text-x-readme.png
 share/icons/SE98/mimes/72/text-x-ruby.png
 share/icons/SE98/mimes/72/text-x-script.png
+share/icons/SE98/mimes/72/text-x-shellscript.png
 share/icons/SE98/mimes/72/text-x-source.png
 share/icons/SE98/mimes/72/text-x-ssa.png
 share/icons/SE98/mimes/72/text-x-subviewer.png
@@ -25332,6 +25340,7 @@ share/icons/SE98/mimes/96/application-slf+xml.png
 share/icons/SE98/mimes/96/application-smil+xml.png
 share/icons/SE98/mimes/96/application-tcx+xml.png
 share/icons/SE98/mimes/96/application-text.png
+share/icons/SE98/mimes/96/application-toml.png
 share/icons/SE98/mimes/96/application-trash.png
 share/icons/SE98/mimes/96/application-video.png
 share/icons/SE98/mimes/96/application-vnd-google-earth-kml.png
@@ -25391,6 +25400,7 @@ share/icons/SE98/mimes/96/application-x-7z-compressed.png
 share/icons/SE98/mimes/96/application-x-7zip.png
 share/icons/SE98/mimes/96/application-x-abiword.png
 share/icons/SE98/mimes/96/application-x-ace.png
+share/icons/SE98/mimes/96/application-x-alpinequest-wpt.png
 share/icons/SE98/mimes/96/application-x-alpm-package.png
 share/icons/SE98/mimes/96/application-x-apple-diskimage.png
 share/icons/SE98/mimes/96/application-x-appliance-symbolic.png
@@ -25444,6 +25454,7 @@ share/icons/SE98/mimes/96/application-x-ms-shortcut.png
 share/icons/SE98/mimes/96/application-x-ms-shortcut_SHARP.png
 share/icons/SE98/mimes/96/application-x-ms-shortcut_SMOOTH.png
 share/icons/SE98/mimes/96/application-x-mswinurl.png
+share/icons/SE98/mimes/96/application-x-nrg.png
 share/icons/SE98/mimes/96/application-x-osm+xml.png
 share/icons/SE98/mimes/96/application-x-pak.png
 share/icons/SE98/mimes/96/application-x-partial-download.png
@@ -25779,6 +25790,7 @@ share/icons/SE98/mimes/96/text-tcl-symbolic.png
 share/icons/SE98/mimes/96/text-tcl.png
 share/icons/SE98/mimes/96/text-vnd.rn-realtext.png
 share/icons/SE98/mimes/96/text-vtt.png
+share/icons/SE98/mimes/96/text-x-awk.png
 share/icons/SE98/mimes/96/text-x-bak.png
 share/icons/SE98/mimes/96/text-x-c++.png
 share/icons/SE98/mimes/96/text-x-c++src.png
@@ -25791,11 +25803,14 @@ share/icons/SE98/mimes/96/text-x-copying.png
 share/icons/SE98/mimes/96/text-x-csrc.png
 share/icons/SE98/mimes/96/text-x-emacs-lisp.png
 share/icons/SE98/mimes/96/text-x-emacs.png
+share/icons/SE98/mimes/96/text-x-erlang.png
+share/icons/SE98/mimes/96/text-x-gawk.png
 share/icons/SE98/mimes/96/text-x-generic-rtl.png
 share/icons/SE98/mimes/96/text-x-generic-template.png
 share/icons/SE98/mimes/96/text-x-generic.png
 share/icons/SE98/mimes/96/text-x-generic.svapplication-x-awk.png
 share/icons/SE98/mimes/96/text-x-gettext-translation.png
+share/icons/SE98/mimes/96/text-x-groovy.png
 share/icons/SE98/mimes/96/text-x-gtkrc.png
 share/icons/SE98/mimes/96/text-x-java-source.png
 share/icons/SE98/mimes/96/text-x-java.png
@@ -25817,6 +25832,7 @@ share/icons/SE98/mimes/96/text-x-qml.png
 share/icons/SE98/mimes/96/text-x-readme.png
 share/icons/SE98/mimes/96/text-x-ruby.png
 share/icons/SE98/mimes/96/text-x-script.png
+share/icons/SE98/mimes/96/text-x-shellscript.png
 share/icons/SE98/mimes/96/text-x-source.png
 share/icons/SE98/mimes/96/text-x-ssa.png
 share/icons/SE98/mimes/96/text-x-subviewer.png
@@ -25897,6 +25913,7 @@ share/icons/SE98/places/128/folder-downloads-symbolic.png
 share/icons/SE98/places/128/folder-downloads.png
 share/icons/SE98/places/128/folder-drag-accept.png
 share/icons/SE98/places/128/folder-favorites.png
+share/icons/SE98/places/128/folder-github.png
 share/icons/SE98/places/128/folder-images.png
 share/icons/SE98/places/128/folder-music-stack.png
 share/icons/SE98/places/128/folder-music-symbolic.png
@@ -26040,6 +26057,7 @@ share/icons/SE98/places/16/folder-downloads.png
 share/icons/SE98/places/16/folder-drag-accept.png
 share/icons/SE98/places/16/folder-favorites.png
 share/icons/SE98/places/16/folder-games.png
+share/icons/SE98/places/16/folder-github.png
 share/icons/SE98/places/16/folder-home.png
 share/icons/SE98/places/16/folder-images.png
 share/icons/SE98/places/16/folder-music-open.png
@@ -26531,6 +26549,7 @@ share/icons/SE98/places/22/folder-downloads.png
 share/icons/SE98/places/22/folder-drag-accept.png
 share/icons/SE98/places/22/folder-favorites.png
 share/icons/SE98/places/22/folder-games.png
+share/icons/SE98/places/22/folder-github.png
 share/icons/SE98/places/22/folder-home.png
 share/icons/SE98/places/22/folder-images.png
 share/icons/SE98/places/22/folder-music-stack.png
@@ -26737,6 +26756,7 @@ share/icons/SE98/places/24/folder-drag-accept.icon
 share/icons/SE98/places/24/folder-drag-accept.png
 share/icons/SE98/places/24/folder-favorites.png
 share/icons/SE98/places/24/folder-games.png
+share/icons/SE98/places/24/folder-github.png
 share/icons/SE98/places/24/folder-home.png
 share/icons/SE98/places/24/folder-images.png
 share/icons/SE98/places/24/folder-music-stack.png
@@ -27073,6 +27093,7 @@ share/icons/SE98/places/32/folder-downloads.png
 share/icons/SE98/places/32/folder-drag-accept.png
 share/icons/SE98/places/32/folder-favorites.png
 share/icons/SE98/places/32/folder-games.png
+share/icons/SE98/places/32/folder-github.png
 share/icons/SE98/places/32/folder-home.png
 share/icons/SE98/places/32/folder-images.png
 share/icons/SE98/places/32/folder-music-drag-accept.png
@@ -27286,6 +27307,7 @@ share/icons/SE98/places/48/folder-downloads.png
 share/icons/SE98/places/48/folder-drag-accept.png
 share/icons/SE98/places/48/folder-favorites.png
 share/icons/SE98/places/48/folder-games.png
+share/icons/SE98/places/48/folder-github.png
 share/icons/SE98/places/48/folder-home.png
 share/icons/SE98/places/48/folder-images.png
 share/icons/SE98/places/48/folder-music-stack.png
@@ -27490,6 +27512,7 @@ share/icons/SE98/places/64/folder-downloads.png
 share/icons/SE98/places/64/folder-drag-accept.png
 share/icons/SE98/places/64/folder-favorites.png
 share/icons/SE98/places/64/folder-games.png
+share/icons/SE98/places/64/folder-github.png
 share/icons/SE98/places/64/folder-home.png
 share/icons/SE98/places/64/folder-images.png
 share/icons/SE98/places/64/folder-music-stack.png
@@ -27676,6 +27699,7 @@ share/icons/SE98/places/72/folder-downloads.png
 share/icons/SE98/places/72/folder-drag-accept.png
 share/icons/SE98/places/72/folder-favorites.png
 share/icons/SE98/places/72/folder-games.png
+share/icons/SE98/places/72/folder-github.png
 share/icons/SE98/places/72/folder-home.png
 share/icons/SE98/places/72/folder-images.png
 share/icons/SE98/places/72/folder-music-stack.png
@@ -27847,6 +27871,7 @@ share/icons/SE98/places/96/folder-downloads.png
 share/icons/SE98/places/96/folder-drag-accept.png
 share/icons/SE98/places/96/folder-favorites.png
 share/icons/SE98/places/96/folder-games.png
+share/icons/SE98/places/96/folder-github.png
 share/icons/SE98/places/96/folder-home.png
 share/icons/SE98/places/96/folder-images.png
 share/icons/SE98/places/96/folder-music-stack.png
@@ -28434,6 +28459,7 @@ share/icons/SE98/status/16/network-vpn.png
 share/icons/SE98/status/16/network-wired-acquiring.png
 share/icons/SE98/status/16/network-wired-activated-limited.png
 share/icons/SE98/status/16/network-wired-activated.png
+share/icons/SE98/status/16/network-wired-disconnected.png
 share/icons/SE98/status/16/network-wired.png
 share/icons/SE98/status/16/network-wireless-0-locked.png
 share/icons/SE98/status/16/network-wireless-0.png
@@ -28521,6 +28547,7 @@ share/icons/SE98/status/16/nm-device-wired-symbolic.png
 share/icons/SE98/status/16/nm-device-wired.png
 share/icons/SE98/status/16/nm-device-wireless.png
 share/icons/SE98/status/16/nm-device-wwan.png
+share/icons/SE98/status/16/nm-no-connection-symbolic.png
 share/icons/SE98/status/16/nm-no-connection.png
 share/icons/SE98/status/16/nm-secure-lock.png
 share/icons/SE98/status/16/nm-signal-0-secure-symbolic.png
@@ -28757,7 +28784,6 @@ share/icons/SE98/status/16/user-available.png
 share/icons/SE98/status/16/user-away-panel.png
 share/icons/SE98/status/16/user-away-symbolic.png
 share/icons/SE98/status/16/user-away.png
-share/icons/SE98/status/16/user-away.pnh
 share/icons/SE98/status/16/user-busy-panel.png
 share/icons/SE98/status/16/user-busy-symbolic.png
 share/icons/SE98/status/16/user-busy.png
@@ -28871,7 +28897,6 @@ share/icons/SE98/status/16/xfce4-mixer-volume-muted.png
 share/icons/SE98/status/16/xfce4-mixer-volume-ultra-low.png
 share/icons/SE98/status/16/xfce4-mixer-volume-very-high.png
 share/icons/SE98/status/16/xfce4-terminal.png
-share/icons/SE98/status/16/xfce4-weather.png
 share/icons/SE98/status/16/xfpm-ac-adapter.png
 share/icons/SE98/status/16/xfpm-battery-000-charging.png
 share/icons/SE98/status/16/xfpm-battery-000.png
@@ -29346,6 +29371,7 @@ share/icons/SE98/status/22/network-unavailable.png
 share/icons/SE98/status/22/network-wired-acquiring.png
 share/icons/SE98/status/22/network-wired-activated-limited.png
 share/icons/SE98/status/22/network-wired-activated.png
+share/icons/SE98/status/22/network-wired-disconnected.png
 share/icons/SE98/status/22/network-wireless-0-locked.png
 share/icons/SE98/status/22/network-wireless-0.png
 share/icons/SE98/status/22/network-wireless-00.png
@@ -29433,6 +29459,7 @@ share/icons/SE98/status/22/nm-device-wired.png
 share/icons/SE98/status/22/nm-device-wireless.png
 share/icons/SE98/status/22/nm-device-wwan.png
 share/icons/SE98/status/22/nm-mb-roam.png
+share/icons/SE98/status/22/nm-no-connection-symbolic.png
 share/icons/SE98/status/22/nm-no-connection.png
 share/icons/SE98/status/22/nm-secure-lock.png
 share/icons/SE98/status/22/nm-signal-0-secure-symbolic.png
@@ -29794,7 +29821,6 @@ share/icons/SE98/status/22/xfce4-mixer-volume-medium.png
 share/icons/SE98/status/22/xfce4-mixer-volume-muted.png
 share/icons/SE98/status/22/xfce4-mixer-volume-ultra-low.png
 share/icons/SE98/status/22/xfce4-mixer-volume-very-high.png
-share/icons/SE98/status/22/xfce4-weather.png
 share/icons/SE98/status/22/xfpm-ac-adapter.png
 share/icons/SE98/status/22/xfpm-battery-000-charging.png
 share/icons/SE98/status/22/xfpm-battery-000.png
@@ -30237,6 +30263,7 @@ share/icons/SE98/status/24/network-unavailable.png
 share/icons/SE98/status/24/network-wired-acquiring.png
 share/icons/SE98/status/24/network-wired-activated-limited.png
 share/icons/SE98/status/24/network-wired-activated.png
+share/icons/SE98/status/24/network-wired-disconnected.png
 share/icons/SE98/status/24/network-wired.png
 share/icons/SE98/status/24/network-wireless-0-locked.png
 share/icons/SE98/status/24/network-wireless-0.png
@@ -30325,6 +30352,7 @@ share/icons/SE98/status/24/nm-device-wired.png
 share/icons/SE98/status/24/nm-device-wireless.png
 share/icons/SE98/status/24/nm-device-wwan.png
 share/icons/SE98/status/24/nm-mb-roam.png
+share/icons/SE98/status/24/nm-no-connection-symbolic.png
 share/icons/SE98/status/24/nm-no-connection.png
 share/icons/SE98/status/24/nm-secure-lock.png
 share/icons/SE98/status/24/nm-signal-0-secure-symbolic.png
@@ -30673,7 +30701,6 @@ share/icons/SE98/status/24/xfce4-mixer-volume-medium.png
 share/icons/SE98/status/24/xfce4-mixer-volume-muted.png
 share/icons/SE98/status/24/xfce4-mixer-volume-ultra-low.png
 share/icons/SE98/status/24/xfce4-mixer-volume-very-high.png
-share/icons/SE98/status/24/xfce4-weather.png
 share/icons/SE98/status/24/xfpm-ac-adapter.png
 share/icons/SE98/status/24/xfpm-battery-000-charging.png
 share/icons/SE98/status/24/xfpm-battery-000.png
@@ -31074,7 +31101,7 @@ share/icons/SE98/status/32/network-unavailable.png
 share/icons/SE98/status/32/network-wired-acquiring.png
 share/icons/SE98/status/32/network-wired-activated-limited.png
 share/icons/SE98/status/32/network-wired-activated.png
-share/icons/SE98/status/32/network-wired-disconnected
+share/icons/SE98/status/32/network-wired-disconnected.png
 share/icons/SE98/status/32/network-wireless-0-locked.png
 share/icons/SE98/status/32/network-wireless-0.png
 share/icons/SE98/status/32/network-wireless-00.png
@@ -31161,6 +31188,7 @@ share/icons/SE98/status/32/nm-device-wired-symbolic.png
 share/icons/SE98/status/32/nm-device-wired.png
 share/icons/SE98/status/32/nm-device-wireless.png
 share/icons/SE98/status/32/nm-device-wwan.png
+share/icons/SE98/status/32/nm-no-connection-symbolic.png
 share/icons/SE98/status/32/nm-no-connection.png
 share/icons/SE98/status/32/nm-secure-lock.png
 share/icons/SE98/status/32/nm-signal-0-secure-symbolic.png
@@ -31478,7 +31506,6 @@ share/icons/SE98/status/32/xfce4-mixer-volume-medium.png
 share/icons/SE98/status/32/xfce4-mixer-volume-muted.png
 share/icons/SE98/status/32/xfce4-mixer-volume-ultra-low.png
 share/icons/SE98/status/32/xfce4-mixer-volume-very-high.png
-share/icons/SE98/status/32/xfce4-weather.png
 share/icons/SE98/status/32/xfpm-ac-adapter.png
 share/icons/SE98/status/32/xfpm-battery-000-charging.png
 share/icons/SE98/status/32/xfpm-battery-000.png
@@ -31867,6 +31894,7 @@ share/icons/SE98/status/48/network-unavailable.png
 share/icons/SE98/status/48/network-wired-acquiring.png
 share/icons/SE98/status/48/network-wired-activated-limited.png
 share/icons/SE98/status/48/network-wired-activated.png
+share/icons/SE98/status/48/network-wired-disconnected.png
 share/icons/SE98/status/48/network-wired.png
 share/icons/SE98/status/48/network-wireless-0-locked.png
 share/icons/SE98/status/48/network-wireless-0.png
@@ -31954,6 +31982,7 @@ share/icons/SE98/status/48/nm-device-wired-symbolic.png
 share/icons/SE98/status/48/nm-device-wired.png
 share/icons/SE98/status/48/nm-device-wireless.png
 share/icons/SE98/status/48/nm-device-wwan.png
+share/icons/SE98/status/48/nm-no-connection-symbolic.png
 share/icons/SE98/status/48/nm-no-connection.png
 share/icons/SE98/status/48/nm-secure-lock.png
 share/icons/SE98/status/48/nm-signal-0-secure-symbolic.png
@@ -32362,6 +32391,8 @@ share/icons/SE98/status/64/network-bluetooth-inactive.png
 share/icons/SE98/status/64/network-bluetooth.png
 share/icons/SE98/status/64/network-idle-symbolic.png
 share/icons/SE98/status/64/network-idle.png
+share/icons/SE98/status/64/network-offline-symbolic.png
+share/icons/SE98/status/64/network-offline.png
 share/icons/SE98/status/64/network-receive-symbolic.png
 share/icons/SE98/status/64/network-receive.png
 share/icons/SE98/status/64/network-transmit-receive-symbolic.png
@@ -32372,7 +32403,10 @@ share/icons/SE98/status/64/network-unavailable.png
 share/icons/SE98/status/64/network-wired-acquiring.png
 share/icons/SE98/status/64/network-wired-activated-limited.png
 share/icons/SE98/status/64/network-wired-activated.png
+share/icons/SE98/status/64/network-wired-disconnected.png
 share/icons/SE98/status/64/network-wireless-bluetooth.png
+share/icons/SE98/status/64/nm-no-connection-symbolic.png
+share/icons/SE98/status/64/nm-no-connection.png
 share/icons/SE98/status/64/nm-secure-lock.png
 share/icons/SE98/status/64/nm-vpn-lock.png
 share/icons/SE98/status/64/notification-active.png
@@ -32383,6 +32417,8 @@ share/icons/SE98/status/64/notification-audio-volume-muted.png
 share/icons/SE98/status/64/notification-audio-volume-off.png
 share/icons/SE98/status/64/notification-disabled-symbolic.png
 share/icons/SE98/status/64/notification-inactive.png
+share/icons/SE98/status/64/notification-network-disconnected-symbolic.png
+share/icons/SE98/status/64/notification-network-disconnected.png
 share/icons/SE98/status/64/notification-new-symbolic.png
 share/icons/SE98/status/64/notification-printer.png
 share/icons/SE98/status/64/notification-symbolic.png
@@ -32439,6 +32475,8 @@ share/icons/SE98/status/72/knemo-monitor-transmit.png
 share/icons/SE98/status/72/messagebox_info.png
 share/icons/SE98/status/72/network-idle-symbolic.png
 share/icons/SE98/status/72/network-idle.png
+share/icons/SE98/status/72/network-offline-symbolic.png
+share/icons/SE98/status/72/network-offline.png
 share/icons/SE98/status/72/network-receive-symbolic.png
 share/icons/SE98/status/72/network-receive.png
 share/icons/SE98/status/72/network-transmit-receive-symbolic.png
@@ -32449,6 +32487,11 @@ share/icons/SE98/status/72/network-unavailable.png
 share/icons/SE98/status/72/network-wired-acquiring.png
 share/icons/SE98/status/72/network-wired-activated-limited.png
 share/icons/SE98/status/72/network-wired-activated.png
+share/icons/SE98/status/72/network-wired-disconnected.png
+share/icons/SE98/status/72/nm-no-connection-symbolic.png
+share/icons/SE98/status/72/nm-no-connection.png
+share/icons/SE98/status/72/notification-network-disconnected-symbolic.png
+share/icons/SE98/status/72/notification-network-disconnected.png
 share/icons/SE98/status/72/online.png
 share/icons/SE98/status/72/stock_connect.png
 share/icons/SE98/status/72/stock_dialog-info.png
@@ -32510,6 +32553,8 @@ share/icons/SE98/status/96/knemo-monitor-transmit.png
 share/icons/SE98/status/96/messagebox_info.png
 share/icons/SE98/status/96/network-idle-symbolic.png
 share/icons/SE98/status/96/network-idle.png
+share/icons/SE98/status/96/network-offline-symbolic.png
+share/icons/SE98/status/96/network-offline.png
 share/icons/SE98/status/96/network-receive-symbolic.png
 share/icons/SE98/status/96/network-receive.png
 share/icons/SE98/status/96/network-transmit-receive-symbolic.png
@@ -32520,6 +32565,9 @@ share/icons/SE98/status/96/network-unavailable.png
 share/icons/SE98/status/96/network-wired-acquiring.png
 share/icons/SE98/status/96/network-wired-activated-limited.png
 share/icons/SE98/status/96/network-wired-activated.png
+share/icons/SE98/status/96/network-wired-disconnected.png
+share/icons/SE98/status/96/nm-no-connection-symbolic.png
+share/icons/SE98/status/96/nm-no-connection.png
 share/icons/SE98/status/96/nm-secure-lock.png
 share/icons/SE98/status/96/nm-vpn-lock.png
 share/icons/SE98/status/96/notification-audio-volume-high.png
@@ -32527,6 +32575,8 @@ share/icons/SE98/status/96/notification-audio-volume-low.png
 share/icons/SE98/status/96/notification-audio-volume-medium.png
 share/icons/SE98/status/96/notification-audio-volume-muted.png
 share/icons/SE98/status/96/notification-audio-volume-off.png
+share/icons/SE98/status/96/notification-network-disconnected-symbolic.png
+share/icons/SE98/status/96/notification-network-disconnected.png
 share/icons/SE98/status/96/online.png
 share/icons/SE98/status/96/stock_connect.png
 share/icons/SE98/status/96/stock_dialog-info.png
