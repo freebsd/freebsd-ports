@@ -118,6 +118,7 @@
     SUBDIR += kdb
     SUBDIR += kexi
     SUBDIR += keydb
+    SUBDIR += kividb
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ladybug
