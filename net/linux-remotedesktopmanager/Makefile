@@ -1,5 +1,5 @@
 PORTNAME=	linux-remotedesktopmanager
-DISTVERSION=	2026.3.1.1
+DISTVERSION=	2026.3.1.2
 CATEGORIES=	net linux
 MASTER_SITES=	https://cdn.devolutions.net/download/Linux/RDM/${DISTVERSION}/
 DISTNAME=	RemoteDesktopManager_${DISTVERSION}_amd64
@@ -35,8 +35,6 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME}
 
 NO_WRKSUBDIR=	yes
-
-PORTSCOUT=	site:https://devolutions.net/productinfo.htm
 
 pre-extract:
 	${LOCALBASE}/bin/deb2targz ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
