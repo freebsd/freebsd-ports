@@ -66,5 +66,5 @@ lib/cmake/mctc-lib/mctc-lib-targets.cmake
 lib/cmake/mctc-lib/mctc-utils.cmake
 lib/libmctc-lib.so
 lib/libmctc-lib.so.0
-lib/libmctc-lib.so.0.5.2
+lib/libmctc-lib.so.0.6.1
 libdata/pkgconfig/mctc-lib.pc
