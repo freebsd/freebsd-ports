@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES_GPLv2=	qemu-11.0.1.tar.xz
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 riscv64
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	only x86(i386), x86_64(AMD64), Aarch64(ARM64), armv6, \
 	armv7, riscv64 and LoongArch64 are supported, see \
 	https://github.com/BlitterStudio/amiberry/wiki/Compile-from-source#supported-architectures
@@ -39,7 +39,9 @@ OPTIONS_DEFAULT=	IPC_SOCKET LIBENET LIBMPEG2 LIBSERIALPORT OPENGL \
 OPTIONS_EXCLUDE_armv6= QEMU_PPC
 OPTIONS_EXCLUDE_armv7= QEMU_PPC
 OPTIONS_EXCLUDE_i386= QEMU_PPC
-OPTIONS_EXCLUDE_risv64=	PCEM
+OPTIONS_EXCLUDE_riscv64=	PCEM
+OPTIONS_EXCLUDE_powerpc64=	PCEM
+OPTIONS_EXCLUDE_powerpc64le=	PCEM
 OPTIONS_SUB=	yes
 
 BUNDLE_SDL_DESC=	Bundle SDL3 shared libraries
