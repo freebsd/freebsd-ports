@@ -547,6 +547,7 @@
     SUBDIR += nginx-module-fancyindex
     SUBDIR += nginx-module-fips-check
     SUBDIR += nginx-module-form-input
+    SUBDIR += nginx-module-geoip2
     SUBDIR += nginx-module-gridfs
     SUBDIR += nginx-module-iconv
     SUBDIR += nginx-module-json-status
