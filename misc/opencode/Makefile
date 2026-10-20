@@ -1,5 +1,7 @@
 PORTNAME=	opencode
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.32
+PORTREVISION=	1
 CATEGORIES=	misc
 
 # Upstream ships no FreeBSD builds of OpenTUI's Zig core, fff's Rust cdylib, the
@@ -22,19 +24,18 @@ FFF_VERSION=	0.10.5
 OPENCODE_PTY_VERSION=	0.2.0
 GHOSTTY_REVISION=	ab0b9da9e88fcb4b0533a1854e84628f663930af
 
-MASTER_SITES=	https://github.com/anomalyco/opencode/archive/refs/tags/:opencode \
-		https://github.com/anomalyco/opentui/archive/refs/tags/:opentui \
-		https://github.com/dmtrKovalenko/fff/archive/refs/tags/:fff \
-		https://registry.npmjs.org/@ff-labs/fff-bun/-/:fffbun \
-		https://github.com/anomalyco/opencode-pty/archive/refs/tags/:opencodepty \
-		https://github.com/ghostty-org/ghostty/archive/:ghostty
-DISTFILES=	v${DISTVERSION}${EXTRACT_SUFX}:opencode \
-		v${OPENTUI_VERSION}${EXTRACT_SUFX}:opentui \
-		v${FFF_VERSION}${EXTRACT_SUFX}:fff \
-		fff-bun-${FFF_VERSION}.tgz:fffbun \
-		v${OPENCODE_PTY_VERSION}${EXTRACT_SUFX}:opencodepty \
-		${GHOSTTY_REVISION}${EXTRACT_SUFX}:ghostty
+MASTER_SITES=	https://registry.npmjs.org/@ff-labs/fff-bun/-/:fffbun
+DISTFILES=	fff-bun-${FFF_VERSION}.tgz:fffbun
 DIST_SUBDIR=	${PORTNAME}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	anomalyco
+GH_PROJECT=	opencode
+GH_TAGNAME=	v${DISTVERSION}
+GH_TUPLE=	anomalyco:opentui:v${OPENTUI_VERSION}:opentui \
+		dmtrKovalenko:fff:v${FFF_VERSION}:fff \
+		anomalyco:opencode-pty:v${OPENCODE_PTY_VERSION}:opencodepty \
+		ghostty-org:ghostty:${GHOSTTY_REVISION}:ghostty
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	AI coding agent for the terminal
@@ -70,7 +71,6 @@ FETCH_DEPENDS=	${LOCALBASE}/bin/bun:lang/bun \
 # and the grep/glob tools.
 RUN_DEPENDS=	rg:textproc/ripgrep
 
-WRKSRC=		${WRKDIR}/opencode-${DISTVERSION}
 OPENTUI_WRKSRC=	${WRKDIR}/opentui-${OPENTUI_VERSION}
 FFF_WRKSRC=	${WRKDIR}/fff-${FFF_VERSION}
 OPENCODE_PTY_WRKSRC=	${WRKDIR}/opencode-pty-${OPENCODE_PTY_VERSION}
@@ -117,7 +117,7 @@ OPENCODE_PTY_BIN=	${CARGO_TARGET_DIR}/release/opencode-pty
 post-fetch:
 	@${ECHO_MSG} "===> Warming bun install cache"
 	@${RM} -rf ${WRKDIR}/gen && ${MKDIR} ${WRKDIR}/gen
-	@${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/v${DISTVERSION}${EXTRACT_SUFX} -C ${WRKDIR}/gen
+	@${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_DEFAULT} -C ${WRKDIR}/gen
 	@if [ ! -f ${BUN_CACHE_TARBALL} ]; then \
 		cd ${WRKDIR}/gen/opencode-${DISTVERSION} && \
 		${SETENV} BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR} \
@@ -135,7 +135,7 @@ post-fetch:
 	@if [ ! -f ${ZIG_PTY_CACHE} ]; then \
 		${ECHO_MSG} "===> Warming the Ghostty Zig dependency cache"; \
 		${RM} -rf ${WRKDIR}/gen-ghostty && ${MKDIR} ${WRKDIR}/gen-ghostty && \
-		${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${GHOSTTY_REVISION}${EXTRACT_SUFX} \
+		${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_ghostty} \
 			-C ${WRKDIR}/gen-ghostty && \
 		cd ${WRKDIR}/gen-ghostty/ghostty-${GHOSTTY_REVISION} && \
 		${SETENV} ZIG_GLOBAL_CACHE_DIR=${ZIG_PTY_CACHE_DIR} \
