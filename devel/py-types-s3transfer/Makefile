@@ -1,5 +1,5 @@
 PORTNAME=	types-s3transfer
-DISTVERSION=	0.16.0
+DISTVERSION=	0.19.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscrt>0:devel/py-awscrt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}botocore>0:devel/py-botocore@${PY_FLAVOR} # deps not declared, see https://github.com/youtype/types-s3transfer/issues/4
 
 USES=		python
 USE_PYTHON=	pep517 autoplist
