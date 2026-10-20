@@ -1,8 +1,8 @@
 PORTNAME=	tritonclient
-DISTVERSION=	2.72.0
+DISTVERSION=	2.73.0
 CATEGORIES=	misc python
 MASTER_SITES=	${MASTER_SITE_PYPI}
-MASTER_SITE_SUBDIR=	45/4a/b8e30fe3763d8c1211f3513f0196bef8ff7413c24556be59f892c0cdfdb9
+MASTER_SITE_SUBDIR=	py3/t/tritonclient
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-py3-none-any
 EXTRACT_SUFX=	.whl # this package doesn't distribute source tarballs, only wheels, and the upstream repo is not tagged with releases
@@ -37,6 +37,8 @@ do-build:
 
 post-stage:
 	@${RM} ${STAGEDIR}${PREFIX}/LICENSE.txt
+	# remove #!/usr/bin/env python3 in all *.py files that are installed in ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/tritonclient
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -type f -name '*.py' -exec ${REINPLACE_CMD} -i '' -e 's|#!/usr/bin/env python3||' {} \;
 
 POST_PLIST=	fix-plist
 
