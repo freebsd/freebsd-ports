@@ -1,6 +1,7 @@
 PORTNAME=	opencode
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	misc
 
 # Upstream ships no FreeBSD builds of OpenTUI's Zig core, fff's Rust cdylib, the
@@ -156,10 +157,18 @@ post-patch:
 	@${PATCH} -d ${OPENCODE_PTY_WRKSRC} -p1 --batch < ${FILESDIR}/opencode-pty-build.rs.patch
 	@${PATCH} -d ${GHOSTTY_WRKSRC} -p1 --batch < ${FILESDIR}/ghostty-zig-0.16-std.patch
 
+# Effect 4.0.1 rejects 64-bit st_dev values, which ZFS on FreeBSD reports.
+# Upstream fixed this in Effect 4.0.5, but OpenCode still pins 4.0.1.
 do-build:
 	@${ECHO_MSG} "===> Installing OpenCode dependencies (offline)"
 	@cd ${WRKSRC} && ${SETENV} BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR} \
 		${BUN} install --frozen-lockfile
+	@${ECHO_MSG} "===> Allowing 64-bit ZFS device IDs in @effect/platform-node-shared"
+	@for f in ${WRKSRC}/node_modules/.bun/@effect+platform-node-shared@*/node_modules/@effect/platform-node-shared/dist/NodeFileSystem.js \
+		${WRKSRC}/node_modules/@effect/platform-node-shared/dist/NodeFileSystem.js; do \
+		[ -f "$${f}" ] || continue; \
+		${SED} -i '' 's/dev: bigintToNumber(stat.dev, "dev")/dev: Number(stat.dev)/' "$${f}"; \
+	done
 	@${ECHO_MSG} "===> Installing @ff-labs/fff-bun (upstream ships no FreeBSD package)"
 	@${MKDIR} ${WRKSRC}/node_modules/@ff-labs
 	@${RM} -rf ${WRKSRC}/node_modules/@ff-labs/fff-bun
