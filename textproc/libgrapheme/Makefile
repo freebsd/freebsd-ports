@@ -18,8 +18,12 @@ MAKE_ARGS=	CC="${CC}" \
 		LDFLAGS="${LDFLAGS}" \
 		PCPREFIX="${PREFIX}/libdata/pkgconfig" \
 		PREFIX="${PREFIX}"
+TEST_TARGET=	test
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}.so.${DISTVERSION}
+
+# tests as of 3.0.0: 744 of 19338 line break conformance tests fail (mostly
+# on newer UAX #14 rules that upstream has not implemented yet)
 
 .include <bsd.port.mk>

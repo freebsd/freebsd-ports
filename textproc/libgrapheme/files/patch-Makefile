@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-10-18 10:00:03 UTC
++++ Makefile
+@@ -327,7 +327,7 @@ test: $(TEST:=$(BINSUFFIX))
+ check: test
+ 
+ test: $(TEST:=$(BINSUFFIX))
+-	for m in $(TEST:=$(BINSUFFIX)); do ./$$m; done
++	rc=0; for m in $(TEST:=$(BINSUFFIX)); do ./$$m || rc=1; done; exit $$rc
+ 
+ install: all
+ 	mkdir -p "$(DESTDIR)$(LIBPREFIX)"
