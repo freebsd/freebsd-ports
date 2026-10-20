@@ -1,6 +1,7 @@
 PORTNAME=	openvpn-auth-oauth2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	security net net-vpn
 
 MAINTAINER=	otis@FreeBSD.org

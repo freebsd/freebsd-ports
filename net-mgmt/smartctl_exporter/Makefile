@@ -1,6 +1,7 @@
 PORTNAME=	smartctl_exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	delphij@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	goredo
 DISTVERSION=	2.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.goredo.stargrave.org//download/
 

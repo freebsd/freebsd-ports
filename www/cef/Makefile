@@ -1,5 +1,6 @@
 PORTNAME=	cef
 DISTVERSION=	152.0.6
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:chromium
 DISTFILES=	chromium-${CHROMIUM_VERSION}-lite${EXTRACT_SUFX}:chromium
