@@ -10,7 +10,7 @@ WWW=		https://www.linuxsampler.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	not yet ported to this architecture
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
