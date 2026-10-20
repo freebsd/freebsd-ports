@@ -1,5 +1,6 @@
 PORTNAME=	gap
 DISTVERSION=	4.16.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION}/
 
@@ -17,12 +18,9 @@ BUILD_DEPENDS=	autoconf:devel/autoconf \
 # attempt to fix the intermittent failure: WARNING: 'automake-1.16' is missing on your system.
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		gmake libtool localbase perl5 readline shebangfix
+USES=		gmake libtool localbase perl5 pkgconfig readline shebangfix
 USE_PERL5=	run
 USE_LDCONFIG=	yes
-
-BROKEN_powerpc64=	compilation fails: error: static assertion failed due to requirement 'sizeof(struct GAPState) < 32768': GAPState is too big
-BROKEN_powerpc64le=	compilation fails: error: static assertion failed due to requirement 'sizeof(struct GAPState) < 32768': GAPState is too big
 
 SHEBANG_FILES=	. -not -name '*.ac' -not -name '*.am' -not -name '*.m4'
 
