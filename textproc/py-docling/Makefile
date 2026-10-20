@@ -1,5 +1,6 @@
 PORTNAME=	docling
 DISTVERSION=	2.137.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,6 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.12.3:www/py-beautifulsoup4
 		${PYTHON_PKGNAMEPREFIX}pypdfium2>=4.30.0:graphics/py-pypdfium2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-docx>=1.2.0:textproc/py-python-docx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.0:www/py-python-dotenv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-oxmsg>=0.0.2:mail/py-python-oxmsg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-pptx>=1.0.2:textproc/py-python-pptx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rapidocr>=3.9.1:graphics/py-rapidocr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.2:www/py-requests@${PY_FLAVOR} \
@@ -47,7 +49,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup4>=4.12.3:www/py-beautifulsoup4
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.65.0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.19.0:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=14.0:devel/py-websockets@${PY_FLAVOR}
-		#${PYTHON_PKGNAMEPREFIX}python-oxmsg>=0.0.2:mail/py-python-oxmsg@${PY_FLAVOR} # missing
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
