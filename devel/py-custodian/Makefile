@@ -1,5 +1,5 @@
 PORTNAME=	custodian
-DISTVERSION=	2025.12.14
+DISTVERSION=	2026.10.11
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,6 +34,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-# tests as of 2025.12.14: 16 passed, 1 warning in 42.39s
+# tests as of 2026.10.11: 14 passed, 1 warning in 62.29s (0:01:02)
 
 .include <bsd.port.mk>
