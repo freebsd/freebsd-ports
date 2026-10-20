@@ -11,8 +11,8 @@ WWW=		https://github.com/sbstp/kubie
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 riscv64
-ONLY_FOR_ARCHS_REASON=	Requires 64-bit processor
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 
 USES=		cargo
 USE_GITHUB=	yes
