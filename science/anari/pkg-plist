@@ -34,8 +34,8 @@ include/anari/backend/helium/utility/ParameterizedObject.h
 include/anari/backend/helium/utility/TimeStamp.h
 include/anari/ext/anari_debug.h
 include/anari/ext/anari_ext_interface.h
-include/anari/ext/helide/anariNewHelideDevice.h
-include/anari/ext/helide/anari_library_helide_export.h
+%%HELIDE%%include/anari/ext/helide/anariNewHelideDevice.h
+%%HELIDE%%include/anari/ext/helide/anari_library_helide_export.h
 include/anari/frontend/anari_device_introspection.hpp
 include/anari/frontend/anari_enums.h
 include/anari/frontend/anari_extension_utility.h
@@ -56,7 +56,7 @@ lib/libanari.so.0.16.0
 lib/libanari_backend.a
 lib/libanari_device_introspection.a
 lib/libanari_library_debug.so
-lib/libanari_library_helide.so
+%%HELIDE%%lib/libanari_library_helide.so
 lib/libanari_library_sink.so
 lib/libanari_static.a
 lib/libanari_test_scenes.so

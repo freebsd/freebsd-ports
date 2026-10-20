@@ -42,6 +42,14 @@ PORTEXAMPLES=	*
 BROKEN=		unsupported (Unknown ISA)
 .endif
 
+.if ${ARCH:Mpowerpc64*}
+# embree, used by the helide example device, has no PowerPC support
+CMAKE_ARGS+=	-DBUILD_HELIDE_DEVICE=OFF
+PLIST_SUB+=	HELIDE="@comment "
+.else
+PLIST_SUB+=	HELIDE=""
+.endif
+
 pre-configure:
 	${MKDIR} ${CONFIGURE_WRKSRC}/deps/source
 	${MV} ${WRKDIR}/embree-${EMBREE_VER}	\
