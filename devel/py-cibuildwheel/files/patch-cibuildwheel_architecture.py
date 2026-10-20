@@ -2,8 +2,10 @@
 -- Normalize the FreeBSD machine name "amd64" to "x86_64", include "freebsd"
 -- in architecture tables/synonyms, and handle it in the 32-bit auto-arch path.
 -- The host-platform detection for FreeBSD was already present in this file.
+-- Also normalize "arm64" (reported by platform.machine() on FreeBSD/aarch64)
+-- to "aarch64", otherwise native arch detection fails on arm64 hosts.
 
---- cibuildwheel/architecture.py.orig	2026-09-14 15:11:41 UTC
+--- cibuildwheel/architecture.py.orig	2026-10-18 16:38:45 UTC
 +++ cibuildwheel/architecture.py
 @@ -26,12 +26,13 @@ PRETTY_NAMES: Final[dict[PlatformName, str]] = {
      "pyodide": "Pyodide",
@@ -11,7 +13,7 @@
      "ios": "iOS",
 +    "freebsd": "FreeBSD",
  }
-
+ 
  ARCH_SYNONYMS: Final[list[dict[PlatformName, str | None]]] = [
 -    {"linux": "x86_64", "macos": "x86_64", "windows": "AMD64", "android": "x86_64"},
 -    {"linux": "i686", "macos": None, "windows": "x86"},
@@ -20,9 +22,9 @@
 +    {"linux": "i686", "macos": None, "windows": "x86", "freebsd": None},
 +    {"linux": "aarch64", "macos": "arm64", "windows": "ARM64", "android": "arm64_v8a", "freebsd": "aarch64"},
  ]
-
-
-@@ -133,6 +134,11 @@ class Architecture(StrEnum):
+ 
+ 
+@@ -133,6 +134,13 @@ class Architecture(StrEnum):
      @classmethod
      def native_arch(cls, platform: PlatformName) -> Self | None:
          native_machine = platform_module.machine()
@@ -30,12 +32,14 @@
 +        # FreeBSD reports amd64 instead of x86_64; normalize so the enum lookup works.
 +        if sys.platform.startswith("freebsd") and native_machine == "amd64":
 +            native_machine = "x86_64"
++        elif sys.platform.startswith("freebsd") and native_machine == "arm64":
++            native_machine = "aarch64"
 +
          native_architecture = cls(native_machine)
-
+ 
          # Cross-platform support. Used for --print-build-identifiers or docker builds.
-@@ -189,16 +195,18 @@ class Architecture(StrEnum):
-
+@@ -185,16 +193,18 @@ class Architecture(StrEnum):
+ 
      @classmethod
      def all_archs(cls, platform: PlatformName) -> set[Self]:
 +        linux_archs = {
@@ -62,7 +66,7 @@
              "macos": {cls.x86_64, cls.arm64, cls.universal2},
              "windows": {cls.x86, cls.AMD64, cls.ARM64},
              "pyodide": {cls.wasm32},
-@@ -233,7 +241,7 @@ class Architecture(StrEnum):
+@@ -229,7 +239,7 @@ class Architecture(StrEnum):
              case "32":
                  if native_arch in archs_map.values():
                      return {native_arch}
