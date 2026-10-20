@@ -1,11 +1,10 @@
 PORTNAME=	qcs-sdk-python
-DISTVERSIONPREFIX=	python/v
-DISTVERSION=	0.21.22
-PORTREVISION=	9
+DISTVERSION=	0.31.1
 CATEGORIES=	devel python
-#MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/g}-${DISTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python interface for the QCS Rust SDK
@@ -13,157 +12,180 @@ WWW=		https://github.com/rigetti/qcs-sdk-rust
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.2.3:devel/py-maturin@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.9.4:devel/py-maturin@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.24.1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qcs-api-client-common>=0.19.0:devel/py-qcs-api-client-common@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.25.0:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0.23.6:devel/py-pytest-asyncio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.14.0:devel/py-pytest-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}syrupy>=4.0.0:devel/py-syrupy@${PY_FLAVOR}
 
 USES=		cargo python
-USE_PYTHON=	pep517 autoplist
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	rigetti
-GH_PROJECT=	qcs-sdk-rust
+USE_PYTHON=	pep517 autoplist pytest
 
 RUSTFLAGS=	${ARCH:S/i386/YES/:C/^[a-z].*//:S/YES/-C target-feature=+sse,+sse2/} # add sse sse2 target-features only on i386
 
-CARGO_CRATES=	ahash-0.8.12 \
+CARGO_CRATES=	adler2-2.0.1 \
+		ahash-0.8.12 \
 		aho-corasick-1.1.4 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.100 \
+		anyhow-1.0.104 \
 		approx-0.5.1 \
-		arc-swap-1.8.0 \
+		arc-swap-1.8.1 \
 		assert2-0.3.16 \
 		assert2-macros-0.3.16 \
+		async-lock-3.4.2 \
 		async-socks5-0.6.0 \
-		async-stream-0.3.6 \
-		async-stream-impl-0.3.6 \
-		async-tempfile-0.7.0 \
-		async-trait-0.1.89 \
+		async-tempfile-0.8.0 \
+		async-trait-0.1.92 \
 		atomic-0.6.1 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.0 \
-		axum-0.7.9 \
-		axum-core-0.4.5 \
-		backoff-0.4.0 \
+		aws-lc-rs-1.18.1 \
+		aws-lc-sys-0.45.0 \
+		axum-0.8.8 \
+		axum-core-0.5.6 \
+		backon-1.6.0 \
 		base64-0.21.7 \
 		base64-0.22.1 \
+		base64ct-1.8.3 \
 		bindgen-0.72.1 \
 		bitflags-1.3.2 \
-		bitflags-2.10.0 \
+		bitflags-2.11.1 \
 		block-buffer-0.10.4 \
 		built-0.6.1 \
 		bumpalo-3.19.1 \
 		bytecount-0.6.9 \
-		bytemuck-1.24.0 \
-		bytes-1.11.0 \
-		cached-0.44.0 \
-		cached_proc_macro-0.17.0 \
-		cached_proc_macro_types-0.1.1 \
+		bytemuck-1.25.0 \
+		bytes-1.11.1 \
+		cached-4.0.0 \
+		cached_proc_macro-3.0.1 \
+		cached_proc_macro_types-3.0.0 \
 		cargo-lock-9.0.0 \
-		cc-1.2.53 \
-		cesu8-1.1.0 \
+		cc-1.2.55 \
 		cexpr-0.6.0 \
 		cfg-expr-0.15.8 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		chrono-0.4.43 \
+		chacha20-0.10.2 \
+		chrono-0.4.45 \
 		clang-sys-1.8.1 \
+		cmake-0.1.57 \
+		colored-3.1.1 \
 		combine-4.6.7 \
 		console-0.15.11 \
+		const-hex-1.19.0 \
+		const-oid-0.9.6 \
+		convert_case-0.10.0 \
+		cookie-0.18.1 \
+		cookie_store-0.22.0 \
 		core-foundation-0.9.4 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.17 \
+		cpufeatures-0.3.0 \
+		crc32fast-1.5.0 \
 		crossbeam-0.8.4 \
 		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
-		crossbeam-epoch-0.9.18 \
+		crossbeam-epoch-0.9.20 \
 		crossbeam-queue-0.3.12 \
 		crossbeam-utils-0.8.21 \
+		crunchy-0.2.4 \
 		crypto-common-0.1.7 \
-		darling-0.14.4 \
 		darling-0.20.11 \
-		darling_core-0.14.4 \
+		darling-0.23.0 \
 		darling_core-0.20.11 \
-		darling_macro-0.14.4 \
+		darling_core-0.23.0 \
 		darling_macro-0.20.11 \
+		darling_macro-0.23.0 \
 		dashmap-5.5.3 \
-		deranged-0.3.11 \
-		derive_builder-0.12.0 \
+		der-0.7.10 \
+		deranged-0.5.5 \
+		derive-where-1.6.1 \
 		derive_builder-0.20.2 \
-		derive_builder_core-0.12.0 \
 		derive_builder_core-0.20.2 \
-		derive_builder_macro-0.12.0 \
 		derive_builder_macro-0.20.2 \
+		derive_more-2.1.1 \
+		derive_more-impl-2.1.1 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		dircpy-0.3.19 \
+		dispatch2-0.3.1 \
 		displaydoc-0.2.5 \
-		either-1.15.0 \
+		document-features-0.2.12 \
+		dunce-1.0.5 \
+		dyn-clone-1.0.20 \
+		either-1.17.0 \
 		encode_unicode-1.0.0 \
+		encoding_rs-0.8.35 \
 		enum-as-inner-0.5.1 \
 		equivalent-1.0.2 \
 		erased-serde-0.3.31 \
 		errno-0.3.14 \
+		event-listener-5.4.2 \
+		event-listener-strategy-0.5.4 \
 		fastrand-2.3.0 \
 		figment-0.10.19 \
-		find-msvc-tools-0.1.8 \
+		find-msvc-tools-0.1.9 \
 		fixedbitset-0.4.2 \
 		fixedbitset-0.5.7 \
+		flate2-1.1.9 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
+		foldhash-0.2.0 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.2 \
+		fs_extra-1.3.0 \
 		futures-0.3.31 \
-		futures-channel-0.3.31 \
-		futures-core-0.3.31 \
+		futures-channel-0.3.32 \
+		futures-core-0.3.32 \
 		futures-executor-0.3.31 \
-		futures-io-0.3.31 \
-		futures-macro-0.3.31 \
-		futures-sink-0.3.31 \
-		futures-task-0.3.31 \
+		futures-io-0.3.32 \
+		futures-macro-0.3.32 \
+		futures-sink-0.3.32 \
+		futures-task-0.3.32 \
 		futures-timer-3.0.3 \
-		futures-util-0.3.31 \
+		futures-util-0.3.32 \
 		generic-array-0.14.7 \
+		getopts-0.2.24 \
 		getrandom-0.2.17 \
 		getrandom-0.3.4 \
+		getrandom-0.4.3 \
+		glam-0.30.10 \
+		glam-0.31.1 \
+		glam-0.32.1 \
+		glam-0.33.5 \
 		glob-0.3.3 \
-		h2-0.3.27 \
-		h2-0.4.13 \
-		handlebars-4.5.0 \
+		gloo-timers-0.3.0 \
+		h2-0.4.16 \
+		handlebars-6.4.0 \
 		hashbrown-0.12.3 \
-		hashbrown-0.13.2 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
-		headers-0.3.9 \
+		hashbrown-0.17.1 \
 		headers-0.4.1 \
-		headers-core-0.2.0 \
 		headers-core-0.3.0 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		home-0.5.12 \
-		http-0.2.12 \
 		http-1.4.0 \
-		http-body-0.4.6 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
 		httpdate-1.0.3 \
-		hyper-0.14.32 \
 		hyper-1.8.1 \
-		hyper-proxy2-0.1.0 \
-		hyper-rustls-0.26.0 \
 		hyper-rustls-0.27.7 \
 		hyper-socks2-0.9.1 \
 		hyper-timeout-0.5.2 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.19 \
-		iana-time-zone-0.1.64 \
+		hyper-util-0.1.20 \
+		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
 		icu_collections-2.1.1 \
 		icu_locale_core-2.1.1 \
@@ -177,25 +199,27 @@ CARGO_CRATES=	ahash-0.8.12 \
 		idna_adapter-1.2.1 \
 		indexmap-1.9.3 \
 		indexmap-2.13.0 \
-		indoc-2.0.7 \
 		inlinable_string-0.1.15 \
-		insta-1.46.1 \
-		instant-0.1.13 \
+		insta-1.46.3 \
 		internment-0.8.6 \
-		inventory-0.3.21 \
+		inventory-0.3.24 \
 		ipnet-2.11.0 \
 		iri-string-0.7.10 \
+		is-macro-0.3.7 \
 		itertools-0.11.0 \
 		itertools-0.12.1 \
-		itertools-0.13.0 \
 		itertools-0.14.0 \
-		itoa-1.0.17 \
-		jni-0.21.1 \
-		jni-sys-0.3.0 \
+		itoa-1.0.18 \
+		jni-0.22.4 \
+		jni-macros-0.22.4 \
+		jni-sys-0.4.1 \
+		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
 		js-sys-0.3.85 \
 		jsonwebtoken-9.3.1 \
+		jsonwebtoken-10.3.0 \
 		jwalk-0.8.1 \
+		lalrpop-util-0.20.2 \
 		lazy_static-1.5.0 \
 		lexical-7.0.5 \
 		lexical-core-1.0.6 \
@@ -204,152 +228,191 @@ CARGO_CRATES=	ahash-0.8.12 \
 		lexical-util-1.0.7 \
 		lexical-write-float-1.0.6 \
 		lexical-write-integer-1.0.6 \
-		libc-0.2.180 \
+		libc-0.2.186 \
 		libloading-0.8.9 \
-		libm-0.2.15 \
-		libquil-sys-0.4.1 \
+		libm-0.2.16 \
+		libquil-sys-0.5.1 \
 		linux-raw-sys-0.11.0 \
 		litemap-0.8.1 \
+		litrs-1.0.0 \
 		lock_api-0.4.14 \
-		log-0.4.29 \
+		log-0.4.33 \
 		lru-slab-0.1.2 \
-		malloc_buf-0.0.6 \
 		maplit-1.0.2 \
 		matchers-0.2.0 \
-		matchit-0.7.3 \
-		matchit-0.8.6 \
+		matchit-0.8.4 \
 		matrixmultiply-0.3.10 \
-		memchr-2.7.6 \
-		memoffset-0.9.1 \
+		memchr-2.8.0 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
-		mio-1.1.1 \
+		miniz_oxide-0.8.9 \
+		mio-1.2.0 \
 		multimap-0.10.1 \
-		nalgebra-0.29.0 \
-		nalgebra-macros-0.1.0 \
+		nalgebra-0.35.0 \
 		native-tls-0.2.14 \
-		ndarray-0.15.6 \
+		ndarray-0.17.2 \
 		ndk-context-0.1.1 \
 		nom-7.1.3 \
 		nom_locate-4.2.0 \
 		nu-ansi-term-0.50.3 \
 		num-0.4.3 \
 		num-bigint-0.4.6 \
+		num-bigint-dig-0.8.6 \
 		num-complex-0.4.6 \
-		num-conv-0.1.0 \
+		num-conv-0.2.0 \
 		num-integer-0.1.46 \
 		num-iter-0.1.45 \
+		num-modular-0.6.1 \
+		num-order-1.2.0 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
-		numpy-0.20.0 \
+		numpy-0.29.0 \
 		oauth2-5.0.0 \
-		objc-0.2.7 \
-		once_cell-1.21.3 \
+		oauth2-test-server-0.1.3 \
+		objc2-0.6.3 \
+		objc2-app-kit-0.3.2 \
+		objc2-core-foundation-0.3.2 \
+		objc2-encode-4.1.0 \
+		objc2-foundation-0.3.2 \
+		once_cell-1.21.4 \
 		openssl-0.10.75 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.6 \
-		openssl-probe-0.2.0 \
+		openssl-probe-0.2.1 \
 		openssl-sys-0.9.111 \
-		opentelemetry-0.27.1 \
-		opentelemetry-http-0.27.0 \
-		opentelemetry-otlp-0.27.0 \
-		opentelemetry-proto-0.27.0 \
-		opentelemetry_sdk-0.27.1 \
+		opentelemetry-0.32.0 \
+		opentelemetry-http-0.32.0 \
+		opentelemetry-otlp-0.32.0 \
+		opentelemetry-proto-0.32.0 \
+		opentelemetry_sdk-0.32.1 \
+		optipy-0.1.4 \
+		optipy-0.2.2 \
+		ordered-float-5.3.0 \
+		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
-		paste-1.0.15 \
-		pbjson-0.7.0 \
-		pbjson-build-0.7.0 \
-		pbjson-types-0.7.0 \
+		pastey-0.2.2 \
+		pbjson-0.9.0 \
+		pbjson-build-0.9.0 \
+		pbjson-types-0.9.0 \
 		pear-0.2.9 \
 		pear_codegen-0.2.9 \
 		pem-3.0.6 \
+		pem-rfc7468-0.7.0 \
 		percent-encoding-2.3.2 \
 		pest-2.8.5 \
 		pest_derive-2.8.5 \
 		pest_generator-2.8.5 \
 		pest_meta-2.8.5 \
 		petgraph-0.6.5 \
-		petgraph-0.7.1 \
-		pin-project-1.1.10 \
-		pin-project-internal-1.1.10 \
-		pin-project-lite-0.2.16 \
+		petgraph-0.8.3 \
+		phf-0.11.3 \
+		phf_codegen-0.11.3 \
+		phf_generator-0.11.3 \
+		phf_shared-0.11.3 \
+		pin-project-1.1.12 \
+		pin-project-internal-1.1.12 \
+		pin-project-lite-0.2.17 \
 		pin-utils-0.1.0 \
+		pkcs1-0.7.5 \
+		pkcs8-0.10.2 \
 		pkg-config-0.3.32 \
-		portable-atomic-1.13.0 \
+		portable-atomic-1.13.1 \
+		portable-atomic-util-0.2.5 \
 		potential_utf-0.1.4 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
 		prettyplease-0.2.37 \
-		proc-macro2-1.0.105 \
+		proc-macro-crate-3.4.0 \
+		proc-macro2-1.0.106 \
 		proc-macro2-diagnostics-0.10.1 \
-		prost-0.13.5 \
-		prost-build-0.13.5 \
-		prost-derive-0.13.5 \
-		prost-types-0.13.5 \
-		pyo3-0.20.3 \
-		pyo3-asyncio-0.20.0 \
-		pyo3-build-config-0.20.3 \
-		pyo3-build-config-0.22.6 \
-		pyo3-ffi-0.20.3 \
-		pyo3-log-0.8.4 \
-		pyo3-macros-0.20.3 \
-		pyo3-macros-backend-0.20.3 \
-		pyo3-opentelemetry-0.4.0 \
-		pyo3-opentelemetry-macros-0.4.0 \
-		pyo3-tracing-subscriber-0.2.0 \
-		qcs-api-client-common-0.12.12 \
-		qcs-api-client-grpc-0.12.12 \
-		qcs-api-client-openapi-0.13.13 \
+		proptest-1.11.0 \
+		prost-0.14.3 \
+		prost-build-0.14.3 \
+		prost-derive-0.14.3 \
+		prost-types-0.14.3 \
+		psl-types-2.0.11 \
+		publicsuffix-2.3.0 \
+		pulldown-cmark-0.13.3 \
+		pulldown-cmark-to-cmark-22.0.0 \
+		pyo3-0.29.2 \
+		pyo3-async-runtimes-0.29.0 \
+		pyo3-async-runtimes-macros-0.29.0 \
+		pyo3-build-config-0.29.2 \
+		pyo3-ffi-0.29.2 \
+		pyo3-log-0.13.4 \
+		pyo3-macros-0.29.2 \
+		pyo3-macros-backend-0.29.2 \
+		pyo3-opentelemetry-0.11.1 \
+		pyo3-opentelemetry-macros-0.11.1 \
+		pyo3-stub-gen-0.23.0 \
+		pyo3-stub-gen-derive-0.23.0 \
+		pyo3-tracing-subscriber-0.9.2 \
+		pyo3-tracing-subscriber-build-0.9.2 \
+		qcs-api-client-common-0.27.0 \
+		qcs-api-client-grpc-0.27.0 \
+		qcs-api-client-openapi-0.28.0 \
+		qcs-dependencies-client-0.6.0 \
+		quil-rs-0.37.2 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.13 \
 		quinn-udp-0.5.14 \
-		quote-1.0.43 \
+		quote-1.0.45 \
 		r-efi-5.3.0 \
+		r-efi-6.0.0 \
 		rand-0.8.5 \
 		rand-0.9.2 \
+		rand-0.10.2 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.5 \
-		rand_distr-0.4.3 \
-		raw-window-handle-0.5.2 \
+		rand_core-0.10.1 \
+		rand_xorshift-0.4.0 \
 		rawpointer-0.2.1 \
 		rayon-1.11.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.18 \
-		regex-1.12.2 \
-		regex-automata-0.4.13 \
-		regex-syntax-0.8.8 \
+		ref-cast-1.0.25 \
+		ref-cast-impl-1.0.25 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.9 \
+		relative-path-1.9.3 \
 		reqwest-0.12.28 \
-		reqwest-middleware-0.3.3 \
-		reqwest-middleware-0.4.2 \
-		reqwest-tracing-0.5.8 \
-		rigetti-pyo3-0.3.6 \
-		rigetti-pyo3-0.4.4 \
+		reqwest-0.13.3 \
+		reqwest-middleware-0.5.1 \
+		reqwest-tracing-0.7.1 \
+		rigetti-hyper-proxy-1.1.1 \
+		rigetti-pyo3-0.8.3 \
 		ring-0.17.14 \
 		rmp-0.8.15 \
 		rmp-serde-1.3.1 \
-		rstest-0.17.0 \
-		rstest_macros-0.17.0 \
+		rsa-0.9.10 \
+		rstest-0.26.1 \
+		rstest_macros-0.26.1 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-1.1.3 \
-		rustls-0.22.4 \
-		rustls-0.23.36 \
-		rustls-native-certs-0.7.3 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.3 \
-		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.14.0 \
-		rustls-webpki-0.102.8 \
-		rustls-webpki-0.103.9 \
+		rustls-platform-verifier-0.7.0 \
+		rustls-platform-verifier-android-0.1.1 \
+		rustls-webpki-0.103.15 \
+		rustpython-ast-0.4.0 \
+		rustpython-parser-0.4.0 \
+		rustpython-parser-core-0.4.0 \
+		rustpython-parser-vendored-0.4.0 \
 		rustversion-1.0.22 \
-		ryu-1.0.22 \
-		safe_arch-0.7.4 \
+		ryu-1.0.23 \
+		safe_arch-1.2.0 \
 		same-file-1.0.6 \
 		schannel-0.1.28 \
+		schemars-0.9.0 \
+		schemars-1.2.1 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
 		security-framework-2.11.1 \
@@ -361,73 +424,90 @@ CARGO_CRATES=	ahash-0.8.12 \
 		serde_derive-1.0.228 \
 		serde_json-1.0.149 \
 		serde_path_to_error-0.1.20 \
+		serde_repr-0.1.20 \
 		serde_spanned-0.6.9 \
-		serde_spanned-1.0.4 \
+		serde_spanned-1.1.1 \
 		serde_urlencoded-0.7.1 \
+		serde_with-3.18.0 \
+		serde_with_macros-3.18.0 \
 		sha1-0.10.6 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
 		shellexpand-3.1.1 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.8 \
-		simba-0.6.0 \
+		signature-2.2.0 \
+		simba-0.10.2 \
+		simd-adler32-0.3.8 \
+		simd_cesu8-1.1.1 \
+		simdutf8-0.1.5 \
 		similar-2.7.0 \
 		simple_asn1-0.6.3 \
 		simple_logger-4.3.3 \
-		slab-0.4.11 \
+		siphasher-1.0.2 \
+		slab-0.4.12 \
 		smallvec-1.15.1 \
-		socket2-0.5.10 \
-		socket2-0.6.1 \
+		socket2-0.6.3 \
+		spin-0.9.8 \
+		spki-0.7.3 \
 		stable_deref_trait-1.2.1 \
-		statrs-0.16.1 \
-		strsim-0.10.0 \
+		static_assertions-1.1.0 \
+		statrs-0.19.1 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-1.0.109 \
-		syn-2.0.114 \
+		syn-2.0.117 \
+		syn-3.0.4 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
+		system-configuration-0.7.0 \
+		system-configuration-sys-0.6.0 \
 		system-deps-6.2.2 \
 		target-lexicon-0.12.16 \
+		target-lexicon-0.13.4 \
 		tempfile-3.24.0 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.18 \
+		thiserror-2.0.20 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.18 \
+		thiserror-impl-2.0.20 \
 		thread_local-1.1.9 \
-		time-0.3.36 \
-		time-core-0.1.2 \
-		time-macros-0.2.18 \
+		time-0.3.47 \
+		time-core-0.1.8 \
+		time-macros-0.2.27 \
+		tiny-keccak-2.0.2 \
 		tinystr-0.8.2 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.49.0 \
-		tokio-macros-2.6.0 \
+		tokio-1.52.3 \
+		tokio-macros-2.7.0 \
 		tokio-native-tls-0.3.1 \
-		tokio-rustls-0.25.0 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.18 \
 		tokio-util-0.7.18 \
 		toml-0.7.8 \
 		toml-0.8.23 \
 		toml-0.9.11+spec-1.1.0 \
+		toml-1.1.4+spec-1.1.0 \
 		toml_datetime-0.6.11 \
 		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.19.15 \
 		toml_edit-0.22.27 \
 		toml_edit-0.23.10+spec-1.0.0 \
-		toml_parser-1.0.6+spec-1.1.0 \
+		toml_parser-1.1.3+spec-1.1.0 \
 		toml_write-0.1.2 \
-		toml_writer-1.0.6+spec-1.1.0 \
-		tonic-0.12.3 \
-		tonic-build-0.12.3 \
-		tonic-web-0.12.3 \
-		tower-0.4.13 \
+		toml_writer-1.1.2+spec-1.1.0 \
+		tonic-0.14.6 \
+		tonic-build-0.14.6 \
+		tonic-health-0.14.6 \
+		tonic-prost-0.14.6 \
+		tonic-prost-build-0.14.6 \
+		tonic-types-0.14.6 \
 		tower-0.5.3 \
 		tower-http-0.5.2 \
 		tower-http-0.6.8 \
@@ -437,28 +517,40 @@ CARGO_CRATES=	ahash-0.8.12 \
 		tracing-attributes-0.1.31 \
 		tracing-core-0.1.36 \
 		tracing-log-0.2.0 \
-		tracing-opentelemetry-0.28.0 \
+		tracing-opentelemetry-0.33.0 \
 		tracing-serde-0.2.0 \
 		tracing-subscriber-0.3.22 \
 		try-lock-0.2.5 \
-		typenum-1.19.0 \
+		typenum-1.20.0 \
 		ucd-trie-0.1.7 \
+		unarray-0.1.4 \
 		uncased-0.9.10 \
+		unic-char-property-0.9.0 \
+		unic-char-range-0.9.0 \
+		unic-common-0.9.0 \
+		unic-emoji-char-0.9.0 \
+		unic-ucd-ident-0.9.0 \
+		unic-ucd-version-0.9.0 \
 		unicase-2.9.0 \
-		unicode-ident-1.0.22 \
-		unindent-0.2.4 \
+		unicode-ident-1.0.24 \
+		unicode-segmentation-1.13.3 \
+		unicode-width-0.2.2 \
+		unicode-xid-0.2.6 \
+		unicode_names2-1.3.0 \
+		unicode_names2_generator-1.3.0 \
+		untrusted-0.7.1 \
 		untrusted-0.9.0 \
 		url-2.5.8 \
-		urlpattern-0.4.2 \
+		urlpattern-0.6.0 \
 		utf8_iter-1.0.4 \
-		uuid-1.19.0 \
+		uuid-1.20.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version-compare-0.2.1 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		want-0.3.1 \
-		warp-0.3.7 \
+		warp-0.4.3 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.2+wasi-0.2.9 \
 		wasm-bindgen-0.2.108 \
@@ -466,68 +558,52 @@ CARGO_CRATES=	ahash-0.8.12 \
 		wasm-bindgen-macro-0.2.108 \
 		wasm-bindgen-macro-support-0.2.108 \
 		wasm-bindgen-shared-0.2.108 \
+		wasm-streams-0.4.2 \
 		web-sys-0.3.85 \
 		web-time-1.1.0 \
-		webbrowser-0.8.15 \
-		webpki-0.22.4 \
-		webpki-roots-1.0.5 \
-		wide-0.7.33 \
+		webbrowser-1.2.4 \
+		webpki-root-certs-1.0.7 \
+		webpki-roots-1.0.6 \
+		wide-1.6.1 \
 		winapi-util-0.1.11 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
 		windows-interface-0.59.3 \
 		windows-link-0.2.1 \
+		windows-registry-0.6.1 \
 		windows-result-0.4.1 \
 		windows-strings-0.5.1 \
-		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
-		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
-		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.5 \
-		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.1 \
-		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.1 \
-		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.1 \
-		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.1 \
-		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.1 \
-		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.1 \
-		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.1 \
 		winnow-0.5.40 \
 		winnow-0.7.14 \
+		winnow-1.0.4 \
 		wit-bindgen-0.51.0 \
 		writeable-0.6.2 \
 		yansi-1.0.1 \
 		yoke-0.8.1 \
 		yoke-derive-0.8.1 \
-		zerocopy-0.8.33 \
-		zerocopy-derive-0.8.33 \
+		zerocopy-0.8.38 \
+		zerocopy-derive-0.8.38 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
 		zeroize-1.8.2 \
@@ -535,34 +611,26 @@ CARGO_CRATES=	ahash-0.8.12 \
 		zerotrie-0.2.3 \
 		zerovec-0.11.5 \
 		zerovec-derive-0.11.2 \
-		zmij-1.0.15 \
+		zmij-1.0.21 \
 		zmq-0.10.0 \
-		zmq-sys-0.12.0 \
-		quil-rs@git+https://github.com/rigetti/quil-rs?tag=quil-rs%2Fv0.32.0\#9db8cb4cfe75e67a4fa572e96e86ae8e59d0bdfc
+		zmq-sys-0.12.0
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
-CARGO_TARGET_DIR=	${WRKSRC}/crates/python
 
 MAKE_ENV=	${CARGO_ENV}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${BUILD_WRKDIR}
-
-WRKSRC_SUBDIR=	crates/python
+TEST_WRKSRC=	${WRKSRC}/crates/lib/tests_py
+TEST_ARGS=	--disable-plugin-autoload -p pytest_asyncio.plugin -p pytest_mock -p syrupy \
+		--ignore=compiler/test_quilc.py --ignore=test_tracing_subscriber.py \
+		-k 'not instruction_set_architecture_public and not list_quantum_processors_timeout and not execute_qvm'
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-post-patch:
-	@${MKDIR} ${WRKDIR}/quil-rs-quil-rs%2Fv0.32.0
-	@${MV} ${WRKDIR}/quil-rs-quil-rs-v0.32.0/* ${WRKDIR}/quil-rs-quil-rs-v0.32.0/.[!.]* ${WRKDIR}/quil-rs-quil-rs%2Fv0.32.0/ 2>/dev/null || true
-	@${RMDIR} ${WRKDIR}/quil-rs-quil-rs-v0.32.0 || true
-	# prevent breakage due to crates/.cargo inclusion
-	@${REINPLACE_CMD} \
-		-e 's|members = \["crates/\*"\]|members = ["crates/python"]|' \
-		${WRKSRC}/../../Cargo.toml
+# tests as of 0.31.1: 30 passed, 16 skipped, 5 deselected in 0.22s (tests requiring quilc/qvm servers and network are excluded)
 
 .include <bsd.port.mk>
