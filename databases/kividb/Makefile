@@ -19,8 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kividbio
 GH_PROJECT=	kividb
 
-.include "${.CURDIR}/Makefile.crates"
-
 PLIST_FILES=	bin/kividb
 
 .include <bsd.port.mk>
