@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	typedef redefinition with different types ('unsigned long' vs 'unsigned long long')
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 USES=		gmake
 MAKE_ARGS+=	INSTROOT=${STAGEDIR}
