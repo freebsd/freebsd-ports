@@ -1,6 +1,6 @@
 PORTNAME=	opendht
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.0
+DISTVERSION=	4.4.1
 CATEGORIES=	devel net
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -32,6 +32,6 @@ post-extract:
 post-stage:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/opendht/_core*.so
 
-# tests as of 4.4.0: 4 tests passed, 1 skipped in 2.031s (test_bootstrap skipped, network ping fails in sandbox; see https://github.com/savoirfairelinux/opendht/issues/683)
+# tests as of 4.4.1: 5 tests, OK (skipped=1) in 6.865s (test_bootstrap skipped, network ping fails in sandbox; see https://github.com/savoirfairelinux/opendht/issues/683)
 
 .include <bsd.port.mk>

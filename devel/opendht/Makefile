@@ -1,7 +1,6 @@
 PORTNAME=	opendht
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.0
-PORTREVISION=	2
+DISTVERSION=	4.4.1
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,7 +33,7 @@ USE_LDCONFIG=	yes
 LDFLAGS+=	-lcrypto
 
 CMAKE_OFF=	OPENDHT_STATIC BUILD_TESTING OPENDHT_TESTS_NETWORK
-CMAKE_TESTING_ON=	BUILD_TESTING OPENDHT_TESTS_NETWORK # tests Tests assert and crash, see https://github.com/savoirfairelinux/opendht/issues/696
+CMAKE_TESTING_ON=	BUILD_TESTING # network tests (test_http, test_dhtproxy) assert and crash, see https://github.com/savoirfairelinux/opendht/issues/696
 
 OPTIONS_DEFINE=			INDEX PROXY_CLIENT PROXY_SERVER PUSH_NOTIFICATIONS DOCS
 OPTIONS_DEFAULT=		INDEX PROXY_CLIENT PROXY_SERVER PUSH_NOTIFICATIONS DOCS
@@ -58,7 +57,7 @@ DOCS_CMAKE_BOOL=		OPENDHT_DOCUMENTATION
 
 PORTDOCS=	*
 
-# tests as of 4.4.0: 100% tests passed out of 12 (test_http and test_dhtproxy disabled,
-# see files/patch-CMakeLists.txt)
+# tests as of 4.4.1: 91% tests passed, 1 tests failed out of 11 (test_dhtrunner testListen fails on loopback UDP
+# put loss, same as with 4.4.0 on this host; test_http and test_dhtproxy are disabled, see CMAKE_TESTING_ON)
 
 .include <bsd.port.mk>

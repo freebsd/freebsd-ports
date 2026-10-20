@@ -10,7 +10,7 @@
  set(CURRENT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
  set(CURRENT_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR})
  
-+set(PACKAGE_VERSION "4.4.0")
++set(PACKAGE_VERSION "4.4.1")
 +
  configure_file(setup.py.in setup.py)
  configure_file(pyproject.toml pyproject.toml COPYONLY)
