@@ -9,8 +9,8 @@ WWW=		https://clickhouse.com/
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	only supported on aarch64, amd64 and powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	only supported on aarch64, amd64, powerpc64 and powerpc64le
 
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		liblz4.so:archivers/liblz4 \
