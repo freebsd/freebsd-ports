@@ -249,6 +249,7 @@
     SUBDIR += libsx
     SUBDIR += libsynaptics
     SUBDIR += libwacom
+    SUBDIR += libwinpos
     SUBDIR += libxcb
     SUBDIR += libxcvt
     SUBDIR += libxdg-basedir
