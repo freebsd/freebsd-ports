@@ -1,9 +1,10 @@
 PORTNAME=	bcal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5
+DISTVERSION=	2.6
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/jarun/bcal/releases/download/${DISTVERSIONFULL}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Storage expression, unit conversion & address offset CLI calculator
 WWW=		https://github.com/jarun/bcal
 
@@ -16,10 +17,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		gmake python:test readline
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	jarun
-
 MAKE_ARGS=	CFLAGS_OPTIMIZATION=
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/bcal \
 		share/man/man1/bcal.1.gz
