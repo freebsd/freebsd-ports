@@ -9,8 +9,7 @@ WWW=		https://libsemigroups.readthedocs.io/en/latest/
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	HPCombi>0:math/hpcombi	\
-		eigen5>0:math/eigen5
+BUILD_DEPENDS=	eigen5>0:math/eigen5
 LIB_DEPENDS=	libfmt.so:devel/libfmt
 TEST_DEPENDS=	eigen5>0:math/eigen5
 
@@ -31,8 +30,11 @@ TEST_TARGET=	check
 
 .if ${ARCH} != amd64
 CONFIGURE_ARGS+=	--disable-hpcombi
+PLIST_SUB+=	HPCOMBI="@comment "
 .else
+BUILD_DEPENDS+=	HPCombi>0:math/hpcombi
 CONFIGURE_ARGS+=	--enable-hpcombi
+PLIST_SUB+=	HPCOMBI=""
 .endif
 
 .include <bsd.port.post.mk>
