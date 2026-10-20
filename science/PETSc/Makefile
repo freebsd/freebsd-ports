@@ -1,5 +1,5 @@
 PORTNAME=	PETSc
-DISTVERSION=	3.26.1
+DISTVERSION=	${PETSC_VER}
 CATEGORIES=	science devel
 MASTER_SITES=	https://web.cels.anl.gov/projects/petsc/download/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -25,12 +25,16 @@ SHEBANG_FILES=	configure lib/petsc/bin/*.py lib/petsc/bin/*.sh		\
 		lib/petsc/bin/petscnagfor share/petsc/chkerrconvert.py	\
 		config/*.py src/sys/tests/ex55.py
 
+HPDDM_VER=	2.4.1
+
 GNU_CONFIGURE=	yes
 CONFIGURE_LOG=	configure.log
 CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		--with-mpi-dir=${MPI_HOME} \
 		--with-python=1	\
 		--with-python-pkg-config=${LOCALBASE}/libdata/pkgconfig \
+		--with-blaslapack=1 \
+		--with-openblas=1 \
 		FCFLAGS="${FCFLAGS}" FFLAGS="${FCFLAGS}"	\
 		${CONFIGURE_ARGS_${ARCH}} CPPFLAGS="${CPPFLAGS}" \
 		AR=${AR} RANLIB=${RANLIB} \
@@ -39,9 +43,11 @@ CONFIGURE_ARGS_amd64=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
 CONFIGURE_ARGS_i386=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
 
 .if defined(WITH_DEBUG)
+PETSC_ARCH=	arch-${OPSYS:tl}${OSREL:R}-c-debug
 PLIST_SUB+=	DEBUG="" NO_DEBUG="@comment "
 .else
 CONFIGURE_ARGS+=--with-debugging=no
+PETSC_ARCH=	arch-${OPSYS:tl}${OSREL:R}-c-opt
 PLIST_SUB+=	NODEBUG="" DEBUG="@comment "
 .endif
 
@@ -58,18 +64,20 @@ PLIST_SUB+=	SHLIB=${DISTVERSION} SHL=${DISTVERSION:C/\.[0-9]$//}
 
 # Trilinos not supported: see https://gitlab.com/petsc/petsc/-/work_items/1943
 # Trilinos-ML deprecated: see https://code-aster.org/forum/d/31916-code-aster-1754-petsc-and-trilinos-ml
-OPTIONS_DEFINE=		HPDDM HYPRE METIS SOWING SUPERLU
+OPTIONS_DEFINE=		HPDDM HYPRE METIS MUMPS SOWING SUPERLU
+OPTIONS_DEFAULT=	HPDDM HYPRE METIS MUMPS SOWING SUPERLU
 # LONGINDEX match IDXTYPEWIDTH being set to 64 in math/metis
 OPTIONS_DEFINE_amd64=	LONGINDEX
 OPTIONS_DEFINE_aarch64=	LONGINDEX
 OPTIONS_DEFINE_powerpc64=LONGINDEX
 OPTIONS_DEFINE_powerpc64le=LONGINDEX
 OPTIONS_DEFINE_riscv64=	LONGINDEX
-OPTIONS_DEFAULT=	HPDDM HYPRE METIS SOWING SUPERLU
+OPTIONS_SUB=		yes
 
 HPDDM_DESC=		Support HP domain decomposition methods
 HPDDM_LIB_DEPENDS=	libhpddm_c.so:science/hpddm
-HPDDM_CONFIGURE_ON=	--with-hpddm=1
+HPDDM_CONFIGURE_ON=	--with-hpddm=1	\
+			--with-hpddm-include=${LOCALBASE}/include/HPDDM
 
 HYPRE_DESC=		Enable Hypre Scalable Linear Solvers
 HYPRE_LIB_DEPENDS=	libHYPRE.so:science/hypre
@@ -83,8 +91,14 @@ METIS_DESC=		Enable metis support for graph partitioning algorithms
 METIS_LIB_DEPENDS=	libmetis.so:math/metis
 METIS_CONFIGURE_ON=	--with-metis=1 # --with-parmetis=1 to use include/parmetis.h
 
+MUMPS_DESC=		Enable the MUMPS solver
+MUMPS_BUILD_RUN_DEPENDS=mumps>=5.3.1:math/mumps
+MUMPS_LIB_DEPENDS=	libscalapack.so:math/scalapack
+MUMPS_CONFIGURE_ON=	--with-mumps=1	\
+			--with-scalapack=1
+
 SOWING_DESC=		Enable text processing with Sowing
-SOWING_BUILD_DESC=	tohtml:textproc/sowing
+SOWING_BUILD_DEPENDS=	tohtml:textproc/sowing
 SOWING_CONFIGURE_ON=	--with-sowing=1
 
 SUPERLU_DESC=		Enable SuperLU for sparse factorization
@@ -105,4 +119,5 @@ post-install:
 
 # the file /usr/local/share/petsc/examples/config/gmakegen.py is expected by some dependencies, at least by math/slepc
 
+.include <./Makefile.version>
 .include <bsd.port.mk>
