@@ -1,0 +1,8 @@
+KenLM is a fast and memory-efficient library for estimating and querying
+n-gram language models.
+
+This package provides the official Python bindings for KenLM, allowing users
+to load trained language models, query n-gram probabilities, and compute
+sentence scores directly within Python pipelines. It is commonly used in
+speech recognition, machine translation, and text generation tasks for fast
+perplexity estimation.
