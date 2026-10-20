@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Friendly Regular Expressions
-WWW=		https://cran.r-project.org/package=rex
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

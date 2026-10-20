@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Robust, High Performance JSON Parser and Generator for R
-WWW=		https://cran.r-project.org/package=jsonlite
 
 LICENSE=	MIT
 

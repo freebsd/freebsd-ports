@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	3D Visualization Using OpenGL
-WWW=		https://cran.r-project.org/package=${PORTNAME}
 
 LICENSE=	GPLv3
 

@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Visual Regression Testing and Graphical Diffing
-WWW=		https://cran.r-project.org/package=vdiffr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

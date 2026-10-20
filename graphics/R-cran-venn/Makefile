@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Draw and display Venn diagrams up to 7 sets
-WWW=		https://cran.r-project.org/package=venn
 
 LICENSE=	GPLv3
 

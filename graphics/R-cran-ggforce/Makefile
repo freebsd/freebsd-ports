@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Accelerating ggplot2
-WWW=		https://cran.r-project.org/package=${PORTNAME}
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Generate an attractive and useful website from a source package
-WWW=		https://cran.r-project.org/package=pkgdown
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

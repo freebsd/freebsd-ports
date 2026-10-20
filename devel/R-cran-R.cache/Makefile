@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Caching (Memoization) of Objects and Results
-WWW=		https://cran.r-project.org/package=R.cache
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	R Markdown Format for 'reveal.js' Presentations
-WWW=		https://cran.r-project.org/package=${PORTNAME}
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

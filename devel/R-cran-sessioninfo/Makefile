@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	R Session Information
-WWW=		https://cran.r-project.org/package=sessioninfo
 
 LICENSE=	GPLv2
 

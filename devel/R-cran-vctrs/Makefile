@@ -6,7 +6,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Vector Helpers
-WWW=		https://cran.r-project.org/package=vctrs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

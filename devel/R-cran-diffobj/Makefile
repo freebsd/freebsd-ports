@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Diffs for R Objects
-WWW=		https://cran.r-project.org/package=diffobj
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

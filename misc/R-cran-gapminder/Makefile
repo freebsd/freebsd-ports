@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Data from Gapminder
-WWW=		https://cran.r-project.org/package=gapminder
 
 LICENSE=	CC0-1.0
 

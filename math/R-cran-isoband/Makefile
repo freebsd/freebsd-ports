@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Generate Isolines and Isobands from Regularly Spaced Elevation Grids
-WWW=		https://cran.r-project.org/package=isoband
 
 LICENSE=	MIT
 

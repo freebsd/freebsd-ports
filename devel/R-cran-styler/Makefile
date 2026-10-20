@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Non-Invasive Pretty Printing of R Code
-WWW=		https://cran.r-project.org/package=styler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

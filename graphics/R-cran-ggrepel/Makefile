@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Help to avoid overlapping text labels of ggplot2
-WWW=		https://cran.r-project.org/package=ggrepel
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

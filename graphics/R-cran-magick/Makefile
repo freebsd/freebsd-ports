@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Advanced Graphics and Image-Processing in R
-WWW=		https://cran.r-project.org/package=magick
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

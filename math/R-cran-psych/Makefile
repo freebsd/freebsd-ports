@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Psych package for the R project
-WWW=		https://cran.r-project.org/package=psych
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

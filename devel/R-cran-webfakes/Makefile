@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Fake Web Apps for HTTP Testing
-WWW=		https://cran.r-project.org/package=webfakes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

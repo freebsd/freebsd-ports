@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Automatic generation of exams in R
-WWW=		https://cran.r-project.org/package=exams
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	multi

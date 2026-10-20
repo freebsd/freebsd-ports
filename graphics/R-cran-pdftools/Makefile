@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Utilities based on libpoppler
-WWW=		https://cran.r-project.org/package=pdftools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Writing Shiny apps that work well on small screens
-WWW=		https://cran.r-project.org/package=miniUI
 
 LICENSE=	GPLv3
 

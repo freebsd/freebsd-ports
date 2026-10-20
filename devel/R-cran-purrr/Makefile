@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Functional Programming Tools
-WWW=		https://cran.r-project.org/package=purrr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

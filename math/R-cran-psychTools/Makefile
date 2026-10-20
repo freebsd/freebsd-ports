@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Tools to Accompany the 'psych' Package
-WWW=		https://cran.r-project.org/package=psychTools
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

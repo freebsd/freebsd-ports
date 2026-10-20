@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Utilities for Delaying Function Execution
-WWW=		https://cran.r-project.org/package=later
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

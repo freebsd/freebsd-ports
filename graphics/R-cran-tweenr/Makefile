@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Interpolate Data for Smooth Animations
-WWW=		https://cran.r-project.org/package=tweenr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

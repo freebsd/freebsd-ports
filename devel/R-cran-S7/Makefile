@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Object Oriented System, Successor to S3 and S4
-WWW=		https://cran.r-project.org/package=S7
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

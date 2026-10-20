@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Dynamic Generation of Scientific Reports
-WWW=		https://cran.r-project.org/package=R.rsp
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	multi

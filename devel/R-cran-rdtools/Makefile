@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Manipulation of 'Rd' Files and Help Topics
-WWW=		https://cran.r-project.org/package=rdtools
 
 LICENSE=	MIT
 

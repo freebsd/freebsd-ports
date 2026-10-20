@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Language Server Protocol
-WWW=		https://cran.r-project.org/package=languageserver
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

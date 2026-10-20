@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Parses http request data
-WWW=		https://cran.r-project.org/package=webutils
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

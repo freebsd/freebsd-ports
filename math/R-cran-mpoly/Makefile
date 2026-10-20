@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Symbolic computing with multivariate polynomials in R
-WWW=		https://cran.r-project.org/package=${PORTNAME}
 
 LICENSE=	GPLv2
 

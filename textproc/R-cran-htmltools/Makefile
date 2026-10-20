@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Tools for HTML generation and output
-WWW=		https://cran.r-project.org/package=htmltools
 
 LICENSE=	GPLv2+
 

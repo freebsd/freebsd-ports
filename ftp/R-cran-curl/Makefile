@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Modern and Flexible Web Client for R
-WWW=		https://cran.r-project.org/package=curl
 
 LICENSE=	MIT
 

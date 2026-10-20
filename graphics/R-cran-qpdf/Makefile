@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Content-preserving transformations of PDF files
-WWW=		https://cran.r-project.org/package=qpdf
 
 LICENSE=	APACHE20
 

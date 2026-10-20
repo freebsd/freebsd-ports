@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Make it easier to work with strings
-WWW=		https://cran.r-project.org/package=stringr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

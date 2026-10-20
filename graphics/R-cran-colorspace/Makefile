@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Color Space Manipulation
-WWW=		https://cran.r-project.org/package=colorspace
 
 LICENSE=	BSD3CLAUSE
 

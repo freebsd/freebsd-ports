@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Lightweight Version of R Markdown
-WWW=		https://cran.r-project.org/package=litedown
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
