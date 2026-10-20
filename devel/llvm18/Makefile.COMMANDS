@@ -129,13 +129,6 @@ LLD_COMMANDS=	\
 		lld-link \
 		wasm-ld
 
-LLDB_COMMANDS=	\
-		lldb \
-		lldb-argdumper \
-		lldb-dap \
-		lldb-instr \
-		lldb-server
-
 MLIR_COMMANDS=	\
 		mlir-cat \
 		mlir-cpu-runner \
