@@ -1,7 +1,7 @@
 PORTNAME=	clboss
 DISTVERSIONPREFIX=	v
 # To build from an arbitrary git commit comment DISTVERSION
-DISTVERSION=	0.17.1
+DISTVERSION=	0.17.2
 # and uncomment the following two lines (use for example -gf8d8348c where f8d8348c is a commit hash)
 #DISTVERSION=	0
 #DISTVERSIONSUFFIX=	-g0673c50e7
@@ -44,7 +44,7 @@ PLIST_FILES=	bin/clboss
 
 post-patch:
 	echo "#pragma once" > ${WRKSRC}/commit_hash.h
-	echo "#define GIT_COMMIT_HASH \"02c42dd01b72b1611253c1f705e85c97723d2e46\"" >> ${WRKSRC}/commit_hash.h
-	echo "#define GIT_DESCRIBE \"v0.17.1-0-g02c42dd-dirty\"" >> ${WRKSRC}/commit_hash.h
+	echo "#define GIT_COMMIT_HASH \"553b24ed600e1d5a18ba2da0c2ae76526ffbbc3b\"" >> ${WRKSRC}/commit_hash.h
+	echo "#define GIT_DESCRIBE \"v0.17.2-0-g553b24e-dirty\"" >> ${WRKSRC}/commit_hash.h
 
 .include <bsd.port.mk>
