@@ -1,6 +1,6 @@
 --- pyproject.toml.orig	2006-07-24 01:21:28 UTC
 +++ pyproject.toml
-@@ -298,7 +298,7 @@ benchmarks = [
+@@ -305,7 +305,7 @@ benchmarks = [
  ]
  
  [build-system]
