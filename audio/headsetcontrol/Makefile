@@ -1,5 +1,5 @@
 PORTNAME=	headsetcontrol
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	audio
 
 MAINTAINER=	avereeken@fastmail.de
