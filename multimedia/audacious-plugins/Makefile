@@ -1,5 +1,5 @@
 PORTNAME=	audacious-plugins
-DISTVERSION=	4.6.1
+DISTVERSION=	4.6.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
