@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-labkit
-PORTVERSION=	5.0.1
+PORTVERSION=	5.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,14 +16,15 @@ RUN_DEPENDS=	rubygem-actionpack-gitlab>=5<8.2:www/rubygem-actionpack-gitlab \
 		rubygem-grpc-gitlab>=1.75:net/rubygem-grpc-gitlab \
 		rubygem-jaeger-client>=1.1.0<1.2:devel/rubygem-jaeger-client \
 		rubygem-json_schemer>=2.3.0<3:devel/rubygem-json_schemer \
-		rubygem-openssl3>=3.3.2<3.4:security/rubygem-openssl3 \
+		rubygem-openssl3>=3.3.2<5:security/rubygem-openssl3 \
 		rubygem-opentelemetry-exporter-otlp-gitlab>=0.31.1<1:devel/rubygem-opentelemetry-exporter-otlp-gitlab \
 		rubygem-opentelemetry-instrumentation-all-gitlab>=0.89.1<1:devel/rubygem-opentelemetry-instrumentation-all-gitlab \
 		rubygem-opentelemetry-sdk-gitlab>=1.10<2:devel/rubygem-opentelemetry-sdk-gitlab \
 		rubygem-opentracing>=0.4<1:devel/rubygem-opentracing \
 		rubygem-pg_query>=6.1.0<7:databases/rubygem-pg_query \
 		rubygem-prometheus-client-mmap>=1.2.9<2:devel/rubygem-prometheus-client-mmap \
-		rubygem-redis-gitlab>3.0.0<6.0.0:databases/rubygem-redis-gitlab
+		rubygem-redis-gitlab>3.0.0<6.0.0:databases/rubygem-redis-gitlab \
+		rubygem-thrift>=0<0.25,1:devel/rubygem-thrift
 
 USES=		gem
 
