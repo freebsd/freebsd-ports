@@ -8,7 +8,16 @@
  }
  
  /// CPU architecture
-@@ -59,10 +60,19 @@
+@@ -20,6 +21,8 @@
+ pub enum Arch {
+     X64,
+     Arm64,
++    Ppc64,
++    Ppc64le,
+ }
+ 
+ impl Platform {
+@@ -59,10 +62,19 @@
          {
              Self::Windows
          }
@@ -30,11 +39,54 @@
              )
          }
      }
-@@ -74,6 +84,7 @@
+@@ -74,6 +86,7 @@
              Self::Linux => write!(f, "linux"),
              Self::Darwin => write!(f, "darwin"),
              Self::Windows => write!(f, "windows"),
 +            Self::FreeBSD => write!(f, "freebsd"),
+         }
+     }
+ }
+@@ -84,6 +97,8 @@
+     /// # Supported architectures
+     /// - `x86_64` (`target_arch = "x86_64"`)
+     /// - ARM64/AArch64 (`target_arch = "aarch64"`)
++    /// - PowerPC64 (`target_arch = "powerpc64"`, `target_endian = "big"`)
++    /// - PowerPC64LE (`target_arch = "powerpc64"`, `target_endian = "little"`)
+     ///
+     /// Compilation will fail on unsupported architectures.
+     #[must_use]
+@@ -96,10 +111,22 @@
+         {
+             Self::Arm64
+         }
+-        #[cfg(not(any(target_arch = "x86_64", target_arch = "aarch64")))]
++        #[cfg(all(target_arch = "powerpc64", target_endian = "big"))]
+         {
++            Self::Ppc64
++        }
++        #[cfg(all(target_arch = "powerpc64", target_endian = "little"))]
++        {
++            Self::Ppc64le
++        }
++        #[cfg(not(any(
++            target_arch = "x86_64",
++            target_arch = "aarch64",
++            target_arch = "powerpc64"
++        )))]
++        {
+             compile_error!(
+-                "Unsupported CPU architecture. vp_js_runtime only supports x86_64 and aarch64."
++                "Unsupported CPU architecture. vp_js_runtime only supports x86_64, aarch64, powerpc64, and powerpc64le."
+             )
+         }
+     }
+@@ -110,6 +137,8 @@
+         match self {
+             Self::X64 => write!(f, "x64"),
+             Self::Arm64 => write!(f, "arm64"),
++            Self::Ppc64 => write!(f, "ppc64"),
++            Self::Ppc64le => write!(f, "ppc64le"),
          }
      }
  }
@@ -50,7 +102,7 @@
          }
      }
  
-@@ -601,6 +601,7 @@
+@@ -601,10 +601,13 @@
              Os::Linux => "linux",
              Os::Darwin => "darwin",
              Os::Windows => "win",
@@ -58,7 +110,13 @@
          };
          let arch = match platform.arch {
              crate::platform::Arch::X64 => "x64",
-@@ -655,14 +656,14 @@
+             crate::platform::Arch::Arm64 => "arm64",
++            crate::platform::Arch::Ppc64 => "ppc64",
++            crate::platform::Arch::Ppc64le => "ppc64le",
+         };
+         // On musl targets, append "-musl" to match unofficial-builds filename pattern
+         // e.g. "linux-x64-musl" instead of "linux-x64"
+@@ -655,14 +658,14 @@
      fn binary_relative_path(&self, platform: Platform) -> Str {
          match platform.os {
              Os::Windows => "node.exe".into(),
