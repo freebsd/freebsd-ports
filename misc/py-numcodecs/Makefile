@@ -1,12 +1,13 @@
 PORTNAME=	numcodecs
-DISTVERSION=	0.17.0
+DISTVERSION=	0.17.1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package providing buffer compression and transformation codecs for use
-WWW=		https://numcodecs.readthedocs.io/en/stable/
+WWW=		https://numcodecs.readthedocs.io/en/stable/ \
+		https://github.com/zarr-developers/numcodecs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -49,6 +50,6 @@ PEP517_BUILD_CONFIG_SETTING+=	"-Csetup-args=-Dsse2=disabled" \
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/numcodecs/*${PYTHON_SOABI}.so
 
-# tests as of 0.17.0: 862 passed, 22 skipped in 5.15s
+# tests as of 0.17.1: 872 passed, 22 skipped in 5.29s
 
 .include <bsd.port.mk>
