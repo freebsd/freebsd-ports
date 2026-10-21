@@ -1,6 +1,6 @@
-TIMESTAMP = 1791664683
-SHA256 (arro3_io-0.9.0.tar.gz) = 0d2ef24fb5c63b49a2fd41178a69d9e721de5a569b1b31897f37e6f877c74613
-SIZE (arro3_io-0.9.0.tar.gz) = 88855
+TIMESTAMP = 1792568809
+SHA256 (arro3_io-0.9.1.tar.gz) = 9b9d8c2260a99e61714c47efe0a1648a7893e65a24afd2d3394dc1fb5615bd5e
+SIZE (arro3_io-0.9.1.tar.gz) = 88873
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
