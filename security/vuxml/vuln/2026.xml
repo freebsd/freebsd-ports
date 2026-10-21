@@ -1,3 +1,252 @@
+  <vuln vid="c0892724-d4a0-11f1-8df4-74563cf85f9d">
+    <topic>libwasmtime -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libwasmtime</name>
+	<name>wasmtime</name>
+	<range><lt>36.0.20</lt></range>
+	<range><ge>37.0.0</ge><lt>48.0.8</lt></range>
+	<range><ge>49.0.0</ge><lt>49.0.5</lt></range>
+	<range><ge>50.0.0</ge><lt>50.0.1</lt></range>
+      </package>
+      <package>
+	<name>codemark</name>
+	<range><le>0.7.30_2</le></range>
+      </package>
+      <package>
+	<name>gram-text-editor</name>
+	<range><le>3.3.0_1</le></range>
+      </package>
+      <package>
+	<name>lapce</name>
+	<range><le>0.4.6_8</le></range>
+      </package>
+      <package>
+	<name>mongodb90</name>
+	<name>mongodb90-armv80a</name>
+	<range><le>9.0.4</le></range>
+      </package>
+      <package>
+	<name>moon</name>
+	<range><le>2.6.3</le></range>
+      </package>
+      <package>
+	<name>surfer</name>
+	<range><le>0.7.0_4</le></range>
+      </package>
+      <package>
+	<name>surrealdb</name>
+	<range><le>3.3.5</le></range>
+      </package>
+      <package>
+	<name>tree-sitter-cli</name>
+	<range><le>0.26.13_2</le></range>
+      </package>
+      <package>
+	<name>veloren-weekly</name>
+	<range><le>s20261027</le></range>
+      </package>
+      <package>
+	<name>veryl</name>
+	<range><le>0.22.0_1</le></range>
+      </package>
+      <package>
+	<name>vscode</name>
+	<range><le>1.143.1_1</le></range>
+      </package>
+      <package>
+	<name>waveterm</name>
+	<range><le>0.14.5_32</le></range>
+      </package>
+      <package>
+	<name>wizer</name>
+	<range><le>11.0.3_5</le></range>
+      </package>
+      <package>
+	<name>zed-editor</name>
+	<range><le>1.25.3</le></range>
+      </package>
+      <package>
+	<name>zeroclaw</name>
+	<range><le>0.8.0.b.2_3</le></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wasmtime development team reports:</p>
+	<blockquote cite="https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1">
+	  <ul>
+	    <li>wasi-sockets: UDP connect only required the address to be
+	    permitted for sending or receiving, allowing guests to send
+	    datagrams to addresses denied for UdpSend.</li>
+	    <li>Cross-engine type confusion with host-created
+	    struct-types-with-supertypes has been fixed.</li>
+	    <li>Panic with typed functions with i31 or nullref arguments has
+	    been fixed.</li>
+	    <li>Unchecked memory usage in transferring borrowed resources
+	    between components has been fixed.</li>
+	    <li>Fixed a possibility of content-length being invalid or not
+	    matching body length in wasi-http p2.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-hmmr-87qq-258j</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-qw58-7h65-crq2</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-3982-jqvv-277m</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-6fr9-xmw9-5352</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-h4wp-g4x3-7398</url>
+    </references>
+    <dates>
+      <discovery>2026-10-29</discovery>
+      <entry>2026-10-30</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="57e6e702-cd69-11f1-b0e3-74563cf85f9d">
+    <topic>libwasmtime -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libwasmtime</name>
+	<name>wasmtime</name>
+	<range><lt>36.0.19</lt></range>
+	<range><ge>37.0.0</ge><lt>48.0.7</lt></range>
+	<range><ge>49.0.0</ge><lt>49.0.4</lt></range>
+      </package>
+      <package>
+	<name>codemark</name>
+	<range><le>0.7.30_2</le></range>
+      </package>
+      <package>
+	<name>gram-text-editor</name>
+	<range><le>3.3.0_1</le></range>
+      </package>
+      <package>
+	<name>lapce</name>
+	<range><le>0.4.6_8</le></range>
+      </package>
+      <package>
+	<name>mongodb90</name>
+	<name>mongodb90-armv80a</name>
+	<range><le>9.0.4</le></range>
+      </package>
+      <package>
+	<name>moon</name>
+	<range><le>2.6.3</le></range>
+      </package>
+      <package>
+	<name>surfer</name>
+	<range><le>0.7.0_4</le></range>
+      </package>
+      <package>
+	<name>surrealdb</name>
+	<range><le>3.2.6</le></range>
+      </package>
+      <package>
+	<name>tree-sitter-cli</name>
+	<range><le>0.26.13_2</le></range>
+      </package>
+      <package>
+	<name>veloren-weekly</name>
+	<range><lt>s20261027</lt></range>
+      </package>
+      <package>
+	<name>veryl</name>
+	<range><le>0.22.0_1</le></range>
+      </package>
+      <package>
+	<name>vscode</name>
+	<range><le>1.143.1</le></range>
+      </package>
+      <package>
+	<name>waveterm</name>
+	<range><le>0.14.5_32</le></range>
+      </package>
+      <package>
+	<name>wizer</name>
+	<range><le>11.0.3_5</le></range>
+      </package>
+      <package>
+	<name>zed-editor</name>
+	<range><lt>1.25.3</lt></range>
+      </package>
+      <package>
+	<name>zeroclaw</name>
+	<range><le>0.8.0.b.2_3</le></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wasmtime development team reports:</p>
+	<blockquote cite="https://github.com/bytecodealliance/wasmtime/releases/tag/v49.0.3">
+	  <ul>
+	    <li>Out-of-bounds zero-length stream writes can panic.</li>
+	    <li>Host panic when component call_async is cancelled under some
+	    conditions.</li>
+	    <li>Panic on erroneous call-to-host from guest realloc call.</li>
+	    <li>Yielding in a component start function can lead to a host panic.</li>
+	    <li>Panic when invoking an async-lifted function via call.</li>
+	    <li>Panic when pending calls are run after a trap.</li>
+	    <li>Stack overflow dropping a long chain of recursive types.</li>
+	    <li>Wasmtime may not properly enforce async-entrypoint requirement.</li>
+	    <li>Panic viewing component model stream or future as the wrong
+	    type.</li>
+	    <li>Component-model handle tables are capped only per instance and
+	    charged to no limit.</li>
+	    <li>Exception tags can cause host data structures to be unaligned.</li>
+	    <li>Filesystem sandbox escape when renaming symlinks with trailing
+	    slashes.</li>
+	    <li>Overlapping string transcode in a fused adapter can panic.</li>
+	    <li>Guests can send absolute-form HTTP requests to different hosts.</li>
+	    <li>wasi-http: Request with long url before query parameter crashes
+	    host.</li>
+	  </ul>
+	</blockquote>
+	<blockquote cite="https://github.com/bytecodealliance/wasmtime/releases/tag/v49.0.4">
+	  <ul>
+	    <li>wasi-http: Guests can add conflicting content lengths to
+	    messages</li>
+	    <li>wasi-http p3: forwarded trailers aren't checked against
+	    is_forbidden_header hook</li>
+	    <li>wasi-http p3: Guests can set incorrect content-length for
+	    spliced response bodies</li>
+	    <li>Cranelift backend on aarch64 can jump to incorrect target on
+	    large Wasm br_table instruction</li>
+	    <li>Panic lowering a host-created component model stream into a
+	    guest that expects a different payload type.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-93g3-36p8-x2gc</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-3r89-v5mq-j5xf</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-7v24-42x9-pxf7</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-5hhx-4wrr-3j9g</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-m6w2-jwq2-cv2c</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-hmwq-g22x-qjw5</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-wjc8-633q-pwxr</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-vcg5-q8m5-8379</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-63h4-6cx9-pjfj</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-q554-3cjc-rx7p</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-p79w-pv2r-29qp</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-m9f7-9w4p-gv38</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-54p9-vhhq-8f7q</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-5qpp-g3j2-8frx</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-w36r-2hch-9xp9</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-r8xh-cgf7-392j</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-jxcf-8qw5-5c33</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-9prg-84vf-g5fc</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-mghf-wjfp-p5xm</url>
+      <url>https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-9pvw-hwfg-92h5</url>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-10-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aafad06c-d519-11f1-8135-8447094a420f">
     <topic>LibreSSL -- Multiple OCSP client vulnerabilities</topic>
     <affects>
