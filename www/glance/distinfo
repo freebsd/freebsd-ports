@@ -1,5 +1,5 @@
-TIMESTAMP = 1788496822
-SHA256 (go/www_glance/glance-v0.8.6/v0.8.6.mod) = 45129fb221fe467380e77421f8ed51bc34877da0f045f8cef71c45cd5bb33d8b
-SIZE (go/www_glance/glance-v0.8.6/v0.8.6.mod) = 1048
-SHA256 (go/www_glance/glance-v0.8.6/v0.8.6.zip) = 9a57e5415824fb14b01108711c6228037b6f1b509729aaec1fbbe706d9ba632f
-SIZE (go/www_glance/glance-v0.8.6/v0.8.6.zip) = 17249863
+TIMESTAMP = 1792608114
+SHA256 (go/www_glance/glance-v0.8.7/v0.8.7.mod) = 45129fb221fe467380e77421f8ed51bc34877da0f045f8cef71c45cd5bb33d8b
+SIZE (go/www_glance/glance-v0.8.7/v0.8.7.mod) = 1048
+SHA256 (go/www_glance/glance-v0.8.7/v0.8.7.zip) = 7dd05e3b5df429cce7f607543d4dac449544e084cf5a9ffdb5e3594f1eccd989
+SIZE (go/www_glance/glance-v0.8.7/v0.8.7.zip) = 17250228
