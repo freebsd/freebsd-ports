@@ -2,7 +2,7 @@
 
 OPTIONS_GROUP+=	THIRDPARTYGRP
 # External modules (arrayvar MUST appear after devel_kit for build-dep)
-OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE CT \
+OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE CERT_EXPIRY CT \
 	DEVEL_KIT ARRAYVAR DRIZZLE DYNAMIC_UPSTREAM ECHO ENCRYPTSESSION \
 	FIPS_CHECK FORMINPUT GRIDFS HEADERS_MORE HTTP_ACCEPT_LANGUAGE HTTP_AUTH_DIGEST \
 	HTTP_AUTH_KRB5 HTTP_AUTH_LDAP HTTP_AUTH_PAM HTTP_DAV_EXT HTTP_EVAL \
@@ -10,10 +10,10 @@ OPTIONS_GROUP_THIRDPARTYGRP=	AJP AWS_AUTH BROTLI CACHE_PURGE CT \
 	HTTP_JSON_STATUS HTTP_MOGILEFS HTTP_NOTICE HTTP_PUSH \
 	HTTP_PUSH_STREAM HTTP_REDIS HTTP_SLICE_AHEAD HTTP_SUBS_FILTER HTTP_TARANTOOL \
 	HTTP_UPLOAD HTTP_UPLOAD_PROGRESS HTTP_UPSTREAM_CHECK HTTP_UPSTREAM_FAIR \
-	HTTP_UPSTREAM_STICKY HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV LET LINK LUA LUASTREAM \
+	HTTP_UPSTREAM_STICKY HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV IP_ANON LET LINK LUA LUASTREAM \
 	MEMC MODSECURITY3 NAXSI PASSENGER POSTGRES RDS_CSV RDS_JSON \
-	REDIS2 RTMP SET_MISC SFLOW SHIBBOLETH SLOWFS_CACHE SRCACHE STS \
-	VOD VTS XSS WEBSOCKIFY ZSTD
+	REDIS2 RTMP SET_MISC SFLOW SHIBBOLETH SLOWFS_CACHE SRCACHE STREAM_LIMIT_REQ STS \
+	SYSLOG5424 VOD VTS XSS WEBSOCKIFY ZSTD
 
 AJP_BUILD_DEPENDS=	nginx-module-ajp>0:www/nginx-module-ajp
 WRKSRC_ajp=		${WRKDIR}/nginx_ajp_module
@@ -37,6 +37,11 @@ BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 CACHE_PURGE_BUILD_DEPENDS=	nginx-module-cache-purge>0:www/nginx-module-cache-purge
 WRKSRC_cache_purge=	${WRKDIR}/ngx_cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
+
+CERT_EXPIRY_IMPLIES=		HTTP_SSL
+CERT_EXPIRY_BUILD_DEPENDS=	nginx-module-cert-expiry>0:www/nginx-module-cert-expiry
+WRKSRC_cert_expiry=		${WRKDIR}/nginx-cert-expiry-module
+CERT_EXPIRY_VARS=		DSO_EXTMODS+=cert_expiry
 
 CT_IMPLIES=		HTTP_SSL
 CT_GH_TUPLE=		grahamedgecombe:nginx-ct:93e9884:ct
@@ -98,8 +103,8 @@ HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:3575542:auth_krb
 HTTP_AUTH_KRB5_VARS=		DSO_EXTMODS+=auth_krb5
 HTTP_AUTH_KRB5_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config
 
-HTTP_AUTH_LDAP_GH_TUPLE=	kvspb:nginx-auth-ldap:83c059b:http_auth_ldap
-HTTP_AUTH_LDAP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_auth_ldap_module.c
+HTTP_AUTH_LDAP_BUILD_DEPENDS=	nginx-module-auth-ldap>0:www/nginx-module-auth-ldap
+WRKSRC_http_auth_ldap=		${WRKDIR}/nginx-auth-ldap-module
 HTTP_AUTH_LDAP_VARS=		DSO_EXTMODS+=http_auth_ldap
 HTTP_AUTH_LDAP_USES=		ldap
 
@@ -218,6 +223,10 @@ ICONV_USES=		iconv
 ICONV_BUILD_DEPENDS=	nginx-module-iconv>0:www/nginx-module-iconv
 WRKSRC_iconv=		${WRKDIR}/nginx-iconv-module
 ICONV_VARS=		DSO_EXTMODS+=iconv
+
+IP_ANON_BUILD_DEPENDS=	nginx-module-ip-anon>0:www/nginx-module-ip-anon
+WRKSRC_ip_anon=		${WRKDIR}/nginx-ip-anon-module
+IP_ANON_VARS=		DSO_EXTMODS+=ip_anon
 
 LET_BUILD_DEPENDS=	nginx-module-let>0:www/nginx-module-let
 WRKSRC_let=		${WRKDIR}/nginx-let-module
@@ -339,10 +348,19 @@ SLOWFS_CACHE_VARS=	DSO_EXTMODS+=slowfs_cache
 SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:be22ac0:srcache
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
+STREAM_LIMIT_REQ_IMPLIES=	STREAM
+STREAM_LIMIT_REQ_BUILD_DEPENDS=	nginx-module-stream-limit-req>0:www/nginx-module-stream-limit-req
+WRKSRC_stream_limit_req=	${WRKDIR}/nginx-stream-limit-req-module
+STREAM_LIMIT_REQ_VARS=		DSO_EXTMODS+=stream_limit_req
+
 STS_IMPLIES=		STREAM
 STS_BUILD_DEPENDS=	nginx-module-sts>0:www/nginx-module-sts
 WRKSRC_sts=		${WRKDIR}/nginx-module-sts
 STS_VARS=		DSO_EXTMODS+=sts
+
+SYSLOG5424_BUILD_DEPENDS=	nginx-module-syslog5424>0:www/nginx-module-syslog5424
+WRKSRC_syslog5424=		${WRKDIR}/nginx-syslog5424-module
+SYSLOG5424_VARS=		DSO_EXTMODS+=syslog5424
 
 VOD_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 			libavutil.so:multimedia/ffmpeg

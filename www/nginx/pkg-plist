@@ -14,6 +14,7 @@
 %%DSO%%%%BROTLI%%libexec/nginx/ngx_http_brotli_filter_module.so
 %%DSO%%%%BROTLI%%libexec/nginx/ngx_http_brotli_static_module.so
 %%DSO%%%%CACHE_PURGE%%libexec/nginx/ngx_http_cache_purge_module.so
+%%DSO%%%%CERT_EXPIRY%%libexec/nginx/ngx_http_cert_expiry_module.so
 %%DSO%%%%DEVEL_KIT%%libexec/nginx/ndk_http_module.so
 %%DSO%%%%DRIZZLE%%libexec/nginx/ngx_http_drizzle_module.so
 %%DSO%%%%DYNAMIC_UPSTREAM%%libexec/nginx/ngx_http_dynamic_upstream_module.so
@@ -54,6 +55,7 @@
 %%DSO%%%%HTTP%%%%HTTP_GEOIP2%%libexec/nginx/ngx_http_geoip2_module.so
 %%DSO%%%%HTTP%%%%NJS%%libexec/nginx/ngx_http_js_module.so
 %%DSO%%%%ICONV%%libexec/nginx/ngx_http_iconv_module.so
+%%DSO%%%%IP_ANON%%libexec/nginx/ngx_http_ip_anon_module.so
 %%DSO%%%%LET%%libexec/nginx/ngx_http_let_module.so
 %%DSO%%%%LINK%%libexec/nginx/ngx_http_link_func_module.so
 %%DSO%%%%LUA%%libexec/nginx/ngx_http_lua_module.so
@@ -77,8 +79,10 @@
 %%DSO%%%%STREAM%%%%HTTP_GEOIP2%%libexec/nginx/ngx_stream_geoip2_module.so
 %%DSO%%%%STREAM%%%%NJS%%libexec/nginx/ngx_stream_js_module.so
 %%DSO%%%%STREAM%%libexec/nginx/ngx_stream_module.so
+%%DSO%%%%STREAM_LIMIT_REQ%%libexec/nginx/ngx_stream_limit_req_module.so
 %%DSO%%%%STS%%libexec/nginx/ngx_http_stream_server_traffic_status_module.so
 %%DSO%%%%STS%%libexec/nginx/ngx_stream_server_traffic_status_module.so
+%%DSO%%%%SYSLOG5424%%libexec/nginx/ngx_http_syslog5424_module.so
 %%DSO%%%%VOD%%libexec/nginx/ngx_http_vod_module.so
 %%DSO%%%%VTS%%libexec/nginx/ngx_http_vhost_traffic_status_module.so
 %%DSO%%%%WEBSOCKIFY%%libexec/nginx/ngx_http_websockify_module.so
