@@ -1,3 +1,43 @@
+  <vuln vid="070a35ef-cd22-11f1-ada3-bc241121aa0a">
+    <topic>FreeBSD -- TLS certificate store update due to eMudhra compromise</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.1</ge><lt>15.1_6</lt></range>
+	<range><ge>14.5</ge><lt>14.5_3</lt></range>
+	<range><ge>14.4</ge><lt>14.4_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>eMudhra generated several of its TLS intermediate CA certificates
+	  using a flawed procedure that used trivially small private keys.
+	  The keys have been recovered by several parties and publicly
+	  disclosed.  The intermediates are signed by the "emSign ECC Root
+	  CA - G3" root certificate, which was included in the trusted
+	  certificate bundle.</p>
+	  <p>The intermediates have been revoked, but OpenSSL does not check
+	  certificate revocation by default.</p>
+	  <p>The corrected bundle marks "emSign ECC Root CA - G3" as untrusted.
+	  It also incorporates the other root certificate additions and
+	  removals in NSS 3.131.1.</p>
+	<h1>Impact:</h1>
+	  <p>An attacker able to intercept network traffic can use the
+	  compromised keys to issue a certificate that impersonates any TLS
+	  server, allowing the traffic to be read or modified without
+	  detection.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-26:73.caroot</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-10-21</discovery>
+      <entry>2026-10-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="436ad1a7-ccc8-11f1-af18-c4ff99d93a55">
     <topic>Emacs -- Local command injection via crafted file names in TRAMP</topic>
     <affects>
