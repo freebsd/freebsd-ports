@@ -1,4 +1,6 @@
---- test/CMakeLists.txt.orig	2026-03-14 22:29:05 UTC
+-- Replace FetchContent (which requires network access) with find_package(GTest).
+-- Use namespaced GTest targets to ensure all required gtest symbols are linked.
+--- test/CMakeLists.txt.orig	2026-10-21 09:01:01 UTC
 +++ test/CMakeLists.txt
 @@ -1,14 +1,7 @@ project(test)
  cmake_minimum_required(VERSION 3.14)
@@ -16,11 +18,12 @@
  
  enable_testing()
  
-@@ -31,6 +24,7 @@ target_include_directories(peglib-test-main PRIVATE ..
- )
+@@ -43,7 +36,7 @@ target_compile_definitions(peglib-test-main PRIVATE
+ target_compile_definitions(peglib-test-main PRIVATE
+   GRAMMAR_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../grammar/"
+   CPPPEGLIB_TEST)
+-target_link_libraries(peglib-test-main PRIVATE gtest_main)
++target_link_libraries(peglib-test-main PRIVATE GTest::gtest_main GTest::gtest)
  
- target_include_directories(peglib-test-main PRIVATE ..)
-+target_link_libraries(peglib-test-main PRIVATE gtest)
- 
- include(GoogleTest)
  gtest_discover_tests(peglib-test-main)
+ # The same tests again with every grammar reloaded from its serialized blob

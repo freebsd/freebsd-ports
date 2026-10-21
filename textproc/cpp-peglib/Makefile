@@ -1,6 +1,6 @@
 PORTNAME=	cpp-peglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.0
+DISTVERSION=	1.24.0
 CATEGORIES=	textproc devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +24,6 @@ NO_ARCH=	yes
 
 PLIST_FILES=	include/peglib.h
 
-# tests as of 1.17.0: 100% tests passed, 0 tests failed out of 520
+# tests as of 1.24.0: 100% tests passed out of 1498
 
 .include <bsd.port.mk>
