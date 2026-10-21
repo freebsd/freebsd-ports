@@ -1,5 +1,5 @@
 PORTNAME=	Crypt-RIPEMD160
-DISTVERSION=	0.09
+DISTVERSION=	0.14
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TODDR
@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RIPEMD-160 message digest algorithm
-WWW=	 	https://metacpan.org/release/TODDR/Crypt-RIPEMD160-0.09
+WWW=	 	https://metacpan.org/release/TODDR/Crypt-RIPEMD160
 
 LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
