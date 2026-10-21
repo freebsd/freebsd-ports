@@ -544,6 +544,7 @@
     SUBDIR += nginx-module-auth-pam
     SUBDIR += nginx-module-aws-auth
     SUBDIR += nginx-module-cache-purge
+    SUBDIR += nginx-module-cert-expiry
     SUBDIR += nginx-module-encrypted-session
     SUBDIR += nginx-module-fancyindex
     SUBDIR += nginx-module-fips-check
