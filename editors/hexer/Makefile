@@ -31,7 +31,7 @@ MYC_ALL_TARGET=	myc
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-USES+=	llvm:max=14
+USES+=	llvm:max=14,build
 .endif
 
 post-install:
