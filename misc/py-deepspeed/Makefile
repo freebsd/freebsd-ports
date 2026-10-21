@@ -1,5 +1,5 @@
 PORTNAME=	deepspeed
-DISTVERSION=	0.19.6
+DISTVERSION=	0.19.8
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,6 +36,6 @@ TEST_ARGS=	--disable-plugin-autoload
 
 NO_ARCH=	yes
 
-# tests as of 0.19.6: 2 failed, 44 passed, 1 warning in 2.87s, see https://github.com/deepspeedai/DeepSpeed/issues/8554
+# tests as of 0.19.8: 2 failed, 44 passed, 1 warning in 3.25s, see https://github.com/deepspeedai/DeepSpeed/issues/8554
 
 .include <bsd.port.mk>
