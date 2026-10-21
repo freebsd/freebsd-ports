@@ -1,5 +1,5 @@
 PORTNAME=	h5json
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,14 +10,15 @@ WWW=		https://github.com/HDFGroup/hdf5-json
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pkgconfig>0:devel/py-pkgconfig@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h5py>=3.10:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.4.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=2.0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	pep517 concurrent autoplist
 
 NO_ARCH=	yes
 
