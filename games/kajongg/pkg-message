@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Kajongg requires support for double-quoted string literals in SQLite which
+is not enabled by default. Rebuild databases/sqlite3 with DQS option to allow
+double-quoted string literals.
+EOM
+}
+]
