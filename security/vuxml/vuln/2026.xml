@@ -1,3 +1,46 @@
+  <vuln vid="d8e16d08-cd2f-11f1-8135-8447094a420f">
+    <topic>PHP -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php82</name>
+	<range><lt>8.2.35</lt></range>
+      </package>
+      <package>
+	<name>php83</name>
+	<range><lt>8.3.36</lt></range>
+      </package>
+      <package>
+	<name>php84</name>
+	<range><lt>8.4.27</lt></range>
+      </package>
+      <package>
+	<name>php85</name>
+	<range><lt>8.5.13</lt></range>
+      </package>
+      <package>
+	<name>php86</name>
+	<range><lt>8.6.0.r4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP project reports:</p>
+	<blockquote cite="https://www.php.net/archive/2026.php#2026-10-20-1">
+	  <p>Upcoming Critical PHP Security Release</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-109618</cvename>
+      <cvename>CVE-2026-109619</cvename>
+      <url>https://www.php.net/archive/2026.php#2026-10-20-1</url>
+    </references>
+    <dates>
+      <discovery>2026-10-20</discovery>
+      <entry>2026-10-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0be28489-cd2f-11f1-8135-8447094a420f">
     <topic>Unbound -- Multiple vulnerabilities</topic>
     <affects>
