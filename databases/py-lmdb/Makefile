@@ -26,9 +26,9 @@ USE_PYTHON=	autoplist pep517
 
 MAKE_ENV=	LMDB_FORCE_SYSTEM=1 \
 		LMDB_FORCE_CFFI=1 \
-		CPPFLAGS="-I${LOCALBASE}/lmdb0/include" \
-		LDFLAGS="-L${LOCALBASE}/lmdb0/lib" \
 		PKG_CONFIG_PATH="${LOCALBASE}/lmdb0/libdata/pkgconfig"
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/lmdb/lmdb_cffi*.so
