@@ -1,0 +1,34 @@
+--- Makefile.orig	2026-10-15 08:04:34 UTC
++++ Makefile
+@@ -64,7 +64,7 @@ LIBFFI_CFLAGS ?= -O2 -fPIC -Wno-deprecated-declaration
+ # is no upstream configure switch that drops that translation unit. The
+ # suppression applies only to the libffi build, never to Nift's own sources.
+ LIBFFI_CFLAGS ?= -O2 -fPIC -Wno-deprecated-declarations
+-CPPFLAGS += -I$(LIBFFI_INCLUDE)
++override CPPFLAGS += -I$(LIBFFI_INCLUDE)
+ # The deep profile permits stack-slot reuse for the broad recursion corpus.
+ # The lifetime profile retains use-after-scope checking. Compatibility dispatch
+ # uses independent sanitizer frames so expression depth guards remain reachable.
+@@ -99,6 +99,10 @@ RECOVERY_EPOCH_GUARD := $(TEST_DIR)/nift-recovery-epoc
+ CP21_BYTES_EMBED_TEST := $(TEST_DIR)/nift-cp21-bytes-embed$(EXEEXT)
+ RECOVERY_EPOCH_GUARD := $(TEST_DIR)/nift-recovery-epoch-guard$(EXEEXT)
+ 
++ifeq ($(shell uname -s),FreeBSD)
++export PATH := $(PATH):/sbin:/usr/sbin
++endif
++
+ all: $(TARGET)
+ 
+ FORCE:
+@@ -1002,7 +1006,10 @@ test-pagination-ordering: $(TARGET)
+ 	NIFT_BIN="$(CURDIR)/$(TARGET)" python3 tests/repair_campaign.py
+ 
+ test-pagination-ordering: $(TARGET)
+-	NIFT_BIN="$(CURDIR)/$(TARGET)" tests/pagination_ordering_smoke.sh
++	@NIFT_BIN="$(CURDIR)/$(TARGET)" tests/pagination_ordering_smoke.sh; \
++	  status=$$?; \
++	  if [ $$status -eq 77 ]; then echo "test-pagination-ordering: skipped"; \
++	  else exit $$status; fi
+ 
+ test-pagination: $(TARGET)
+ 	NIFT_BIN="$(CURDIR)/$(TARGET)" tests/pagination_smoke.sh
