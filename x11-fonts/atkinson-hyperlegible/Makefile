@@ -1,11 +1,9 @@
 PORTNAME=	atkinson-hyperlegible
 PORTVERSION=	2020.0514
-PORTREVISION=	1
 CATEGORIES=	x11-fonts accessibility
-MASTER_SITES=	https://brailleinstitute.org/wp-content/uploads/${PORTNAME}-font/:source1 \
-		http://brailleinstitute.org/wp-content/uploads/2020/11/:source2
-DISTFILES=	${AHF}-Print-and-Web-${PORTVERSION:S/./-/}.zip:source1 \
-		${AHF}-License-2020-1104.pdf:source2
+MASTER_SITES=	SF/bsdsrc/${.CURDIR:T}
+DISTFILES=	${AHF}-Print-and-Web-${PORTVERSION:S/./-/}.zip \
+		Atkinson-Hyperlegible-SIL-OPEN-FONT-LICENSE-Version-1.1-v2-ACC.pdf
 EXTRACT_ONLY=	${AHF}-Print-and-Web-${PORTVERSION:S/./-/}.zip
 
 MAINTAINER=	jgh@FreeBSD.org
@@ -14,10 +12,8 @@ WWW=		https://brailleinstitute.org/freefont
 
 LICENSE=	ATKINSON-HYPERLEGIBLE
 LICENSE_NAME=	ATKINSON HYPERLEGIBLE FONT LICENSE
-LICENSE_FILE=	${DISTDIR}/${AHF}-License-2020-1104.pdf
+LICENSE_FILE=	${DISTDIR}/Atkinson-Hyperlegible-SIL-OPEN-FONT-LICENSE-Version-1.1-v2-ACC.pdf
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
-
-BROKEN=		Fails to fetch
 
 USES=		fonts zip
 
