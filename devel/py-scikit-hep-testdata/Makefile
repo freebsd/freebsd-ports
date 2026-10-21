@@ -1,5 +1,5 @@
 PORTNAME=	scikit-hep-testdata
-DISTVERSION=	0.6.8
+DISTVERSION=	0.6.9
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +29,6 @@ TEST_ARGS=	--disable-plugin-autoload
 
 NO_ARCH=	yes
 
-# tests as of 0.6.8: 9 passed in 3.44s
+# tests as of 0.6.9: 9 passed in 0.63s
 
 .include <bsd.port.mk>
