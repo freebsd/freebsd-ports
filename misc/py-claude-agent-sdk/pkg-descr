@@ -1,0 +1,5 @@
+The Claude Agent SDK lets Python programs drive Claude Code as an agent.
+It starts the claude command line tool as a subprocess and exchanges
+structured messages with it, so applications can run queries, hold
+interactive sessions, define their own tools as in-process MCP servers,
+hook into tool use and control permissions.

@@ -469,6 +469,7 @@
     SUBDIR += py-bitsandbytes
     SUBDIR += py-boost-histogram
     SUBDIR += py-censys
+    SUBDIR += py-claude-agent-sdk
     SUBDIR += py-cmap
     SUBDIR += py-codecarbon
     SUBDIR += py-cohere
