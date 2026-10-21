@@ -386,8 +386,13 @@ _BUNDLED_LIBS+=	${"${PORT_OPTIONS:MBUNDLED_TALLOC}" == "BUNDLED_TALLOC":?:!}pyta
 # LMDB
 .         if ${PORT_OPTIONS:MLMDB1}
 _LMDB_DEPENDS=	lmdb>=1.0:databases/lmdb
+CFLAGS+=			-I${LOCALBASE}/include
+LDFLAGS+=			-L${LOCALBASE}/lib
+CONFIGURE_ENV+=			PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig
 .         else
 _LMDB_DEPENDS=	lmdb0>=0.9.16<1:databases/lmdb0
+CFLAGS+=			-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=			-L${LOCALBASE}/lmdb0/lib
 CONFIGURE_ENV+=			PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 .         endif
 PLIST_FILES+=	${SAMBA_LDB_MODULESDIR}/mdb.so \

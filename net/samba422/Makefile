@@ -439,6 +439,8 @@ _BUNDLED_LIBS+=			${"${PORT_OPTIONS:MBUNDLED_TDB}" == "BUNDLED_TDB":?:!}pytdb
 .	if (${PORT_OPTIONS:MAD_DC} || ${PORT_OPTIONS:MDEVELOPER})
 # LMDB
 _LMDB_DEPDENDS=			lmdb0>=0.9.16:databases/lmdb0
+CFLAGS+=			-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=			-L${LOCALBASE}/lmdb0/lib
 CONFIGURE_ENV+=			PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 PLIST_FILES+=			${SAMBA_LIBDIR}/private/libldb-mdb-int-private-samba.so \
 				${SAMBA_LDB_MODULESDIR}/mdb.so

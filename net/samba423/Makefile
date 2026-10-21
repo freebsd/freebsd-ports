@@ -439,7 +439,12 @@ _BUNDLED_LIBS+=			${"${PORT_OPTIONS:MBUNDLED_TDB}" == "BUNDLED_TDB":?:!}pytdb
 # LMDB
 .		if ${PORT_OPTIONS:MLMDB1}
 _LMDB_DEPDENDS=			lmdb>=1.0:databases/lmdb
+CFLAGS+=			-I${LOCALBASE}/include
+LDFLAGS+=			-L${LOCALBASE}/lib
+CONFIGURE_ENV+=			PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig
 .		else
+CFLAGS+=			-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=			-L${LOCALBASE}/lmdb0/lib
 _LMDB_DEPDENDS=			lmdb0>=0.9.16:databases/lmdb0
 CONFIGURE_ENV+=			PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 .		endif
