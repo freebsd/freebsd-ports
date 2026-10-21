@@ -1,6 +1,6 @@
 --- mlx/dynamic.go.orig	1979-11-30 08:00:00 UTC
 +++ mlx/dynamic.go
-@@ -98,7 +98,7 @@ func libOllamaRoots() []string {
+@@ -109,7 +109,7 @@ func libOllamaRoots() []string {
  			roots = append(roots, filepath.Join(exeDir, "lib", "ollama"))
  			roots = append(roots, filepath.Join(exeDir, "..", "lib", "ollama"))
  			roots = append(roots, exeDir) // app bundle: Contents/Resources/
@@ -9,17 +9,17 @@
  			roots = append(roots, filepath.Join(exeDir, "..", "lib", "ollama"))
  		case "windows":
  			roots = append(roots, filepath.Join(exeDir, "lib", "ollama"))
-@@ -175,7 +175,7 @@ func prependLibraryPath(dir string) {
- 	switch runtime.GOOS {
+@@ -184,7 +184,7 @@ func libraryPathEnvVar() string {
+ 		return "PATH"
  	case "darwin":
- 		envVar = "DYLD_LIBRARY_PATH"
+ 		return "DYLD_LIBRARY_PATH"
 -	case "linux":
 +	case "linux", "freebsd":
- 		envVar = "LD_LIBRARY_PATH"
+ 		return "LD_LIBRARY_PATH"
  	default:
- 		return
-@@ -189,7 +189,7 @@ func init() {
-
+ 		return ""
+@@ -276,7 +276,7 @@ func init() {
+ 
  func init() {
  	switch runtime.GOOS {
 -	case "darwin", "linux", "windows":
