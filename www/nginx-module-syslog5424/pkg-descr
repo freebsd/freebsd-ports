@@ -1,0 +1,8 @@
+The syslog5424 module sends an access line in the format RFC 5424 asks for:
+version, RFC 3339 timestamp, hostname, app name, process id, message id and
+structured data.  The destination is parsed by nginx's own syslog code, so
+server, facility, severity and tag mean what they mean in access_log, and
+the value of a variable is escaped where the text around it is not.
+
+This port only installs the module sources.  The module itself is built by
+the nginx ports when their SYSLOG5424 option is enabled.
