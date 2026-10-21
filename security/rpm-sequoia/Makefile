@@ -1,7 +1,7 @@
 PORTNAME=	rpm-sequoia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ BROKEN_i386=	compilation fails, see https://gitlab.com/sequoia-pgp/nettle-sys/-/
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libnettle.so:security/nettle
 
-USES=		cargo pkgconfig llvm:15
+USES=		cargo pkgconfig llvm:build,noexport
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
