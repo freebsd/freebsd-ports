@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the auth_ldap module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use auth_ldap, build
+www/nginx, www/nginx-devel or www/freenginx with the HTTP_AUTH_LDAP option
+enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-auth-ldap and produce
+ngx_http_auth_ldap_module.so.
+EOM
+}
+]
