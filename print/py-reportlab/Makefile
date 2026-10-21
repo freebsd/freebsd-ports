@@ -1,5 +1,5 @@
 PORTNAME=	reportlab
-DISTVERSION=	4.5.0
+DISTVERSION=	5.0.0
 CATEGORIES=	print python
 MASTER_SITES=	PYPI:python \
 	LOCAL/bofh/print/py-${PORTNAME}:pfbfer
