@@ -43,7 +43,7 @@ PSVIEWER?=	gv
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-USES+=		llvm:max=15
+USES+=		llvm:max=12
 CPPFLAGS+=	-Wno-error=int-conversion
 .endif
 CFLAGS+=	-fpic
