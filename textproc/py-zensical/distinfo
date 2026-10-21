@@ -1,6 +1,6 @@
-TIMESTAMP = 1792049731
-SHA256 (zensical-0.0.70.tar.gz) = ed5fb8c6ee439ae8d1a27ba606e10c651918499184a50aa135f1d5d83a54c4db
-SIZE (zensical-0.0.70.tar.gz) = 4319716
+TIMESTAMP = 1792603026
+SHA256 (zensical-0.0.71.tar.gz) = 3b206f150eb38d2885158e093113460a5e667847cf36915119c21b20776cee18
+SIZE (zensical-0.0.71.tar.gz) = 4328098
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
