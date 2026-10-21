@@ -1,6 +1,5 @@
 PORTNAME=	bazel
-DISTVERSION=	9.3.0
-PORTREVISION=	2
+DISTVERSION=	9.3.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/bazelbuild/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	9
