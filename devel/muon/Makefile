@@ -35,6 +35,7 @@ do-configure:
 	@(cd ${WRKSRC} && \
 		${SETENVI} ${CONFIGURE_ENV} ${SH} bootstrap.sh . && \
 		${SETENVI} ${CONFIGURE_ENV} ./muon-bootstrap setup \
+			-Dprefix=${PREFIX} \
 			-Dlibcurl=disabled \
 			-Dlibarchive=disabled \
 			-Dtracy=disabled \
