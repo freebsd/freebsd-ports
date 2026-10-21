@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the stream_limit_req module only.  It
+does not install a loadable module.
+
+The module itself is built by the nginx ports.  To use stream_limit_req,
+build www/nginx, www/nginx-devel or www/freenginx with the STREAM_LIMIT_REQ
+option enabled.  Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-stream-limit-req and produce
+ngx_stream_limit_req_module.so.
+EOM
+}
+]

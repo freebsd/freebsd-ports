@@ -566,6 +566,7 @@
     SUBDIR += nginx-module-redis2
     SUBDIR += nginx-module-sflow
     SUBDIR += nginx-module-slowfs-cache
+    SUBDIR += nginx-module-stream-limit-req
     SUBDIR += nginx-module-sts
     SUBDIR += nginx-module-vod
     SUBDIR += nginx-module-websockify
