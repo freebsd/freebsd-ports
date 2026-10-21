@@ -1,0 +1,3 @@
+Interface between PETSc and HPDDM.
+This is an extension of PETSc, but SLEPc is required, therefore it is built
+separately to avoid a circular dependency.

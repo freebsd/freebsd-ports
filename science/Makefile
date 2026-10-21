@@ -129,6 +129,7 @@
     SUBDIR += hepmc3
     SUBDIR += highfive
     SUBDIR += hpddm
+    SUBDIR += hpddm_petsc
     SUBDIR += hypre
     SUBDIR += iboview
     SUBDIR += isaac-cfd
