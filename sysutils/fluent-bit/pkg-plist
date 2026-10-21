@@ -103,6 +103,7 @@ include/fluent-bit/flb_metrics_exporter.h
 include/fluent-bit/flb_motd.h
 include/fluent-bit/flb_mp.h
 include/fluent-bit/flb_mp_chunk.h
+include/fluent-bit/flb_mp_preflight.h
 include/fluent-bit/flb_msgpack_append_message.h
 include/fluent-bit/flb_net_dns.h
 include/fluent-bit/flb_network.h
