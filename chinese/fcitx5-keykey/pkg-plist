@@ -1,4 +1,5 @@
 bin/keykey-about
+bin/keykey-cangjie-settings
 bin/keykey-fcitx-app
 bin/keykey-update-notify
 bin/keykey-smart-phrases
@@ -9,6 +10,7 @@ share/applications/org.chichi77.KeyKey.TextEditor.desktop
 share/applications/org.chichi77.KeyKey.UpdateNotification.desktop
 share/chichi77-keykey/ProjectMotivation.txt
 share/chichi77-keykey/about_gui.py
+share/chichi77-keykey/cangjie_settings.py
 share/chichi77-keykey/chichi77.png
 share/chichi77-keykey/data/associated-phrases/McBopomofo.occ
 share/chichi77-keykey/data/associated-phrases/display-names.tsv
@@ -54,6 +56,7 @@ share/doc/chichi77-keykey/LICENSE-McBopomofo.txt
 share/doc/chichi77-keykey/LICENSE-associated-phrase-collections.txt
 share/doc/chichi77-keykey/LICENSE-linux-frontend.txt
 share/doc/chichi77-keykey/LICENSE-yahoo-bsd.txt
+share/doc/chichi77-keykey/Unicode-LICENSE.txt
 share/fcitx5/addon/chichi77-keykey.conf
 share/fcitx5/inputmethod/chichi77-keykey-bopomofo.conf
 share/fcitx5/inputmethod/chichi77-keykey-cangjie.conf
