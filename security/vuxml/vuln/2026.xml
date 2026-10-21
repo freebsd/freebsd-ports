@@ -55,7 +55,7 @@
       </package>
       <package>
 	<name>php85</name>
-	<range><lt>8.5.13</lt></range>
+	<range><lt>8.5.12</lt></range>
       </package>
       <package>
 	<name>php86</name>
@@ -65,19 +65,24 @@
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The PHP project reports:</p>
-	<blockquote cite="https://www.php.net/archive/2026.php#2026-10-20-1">
-	  <p>Upcoming Critical PHP Security Release</p>
+	<blockquote cite="https://www.php.net/archive/2026.php#2026-10-21-5">
+	  <p>PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35 fix two critical
+	    vulnerabilities that can allow unauthenticated remote code
+	    execution.</p>
 	</blockquote>
 	</body>
     </description>
     <references>
       <cvename>CVE-2026-109618</cvename>
       <cvename>CVE-2026-109619</cvename>
-      <url>https://www.php.net/archive/2026.php#2026-10-20-1</url>
+      <url>https://www.php.net/archive/2026.php#2026-10-21-5</url>
+      <url>https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w</url>
+      <url>https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp</url>
     </references>
     <dates>
       <discovery>2026-10-20</discovery>
       <entry>2026-10-21</entry>
+      <modified>2026-10-21</modified>
     </dates>
   </vuln>
 
