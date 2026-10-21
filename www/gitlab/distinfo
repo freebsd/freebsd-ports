@@ -1,6 +1,6 @@
-TIMESTAMP = 1791819936
-SHA256 (gitlab-foss-v19.4.2.tar.bz2) = d07f30f662bf50efaee8f15540b091aba0a1ca4ab540d5b8eaa384fdcf5bdf56
-SIZE (gitlab-foss-v19.4.2.tar.bz2) = 146883287
-TIMESTAMP = 1791819996
-SHA256 (gitlab-v19.4.2-ee.tar.bz2) = 6a1e7f9b6b94a65e95935b938aa61dcd2432ca0a02c5dec57ccdd558fccdc2f2
-SIZE (gitlab-v19.4.2-ee.tar.bz2) = 172009128
+TIMESTAMP = 1792211671
+SHA256 (gitlab-foss-v19.5.0.tar.bz2) = ecbed5bdfaf168fc2d72994ba765f67a725098f303940088991617b55808982f
+SIZE (gitlab-foss-v19.5.0.tar.bz2) = 149875770
+TIMESTAMP = 1792211672
+SHA256 (gitlab-v19.5.0-ee.tar.bz2) = 595b17ddfb09398f6313aa2582c169f0d0bb36e25f0a43856a084ef7c608564d
+SIZE (gitlab-v19.5.0-ee.tar.bz2) = 176318347
