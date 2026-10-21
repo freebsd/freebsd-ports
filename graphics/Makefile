@@ -30,6 +30,7 @@
     SUBDIR += R-cran-magick
     SUBDIR += R-cran-munsell
     SUBDIR += R-cran-pROC
+    SUBDIR += R-cran-patchwork
     SUBDIR += R-cran-pdftools
     SUBDIR += R-cran-pixmap
     SUBDIR += R-cran-plotrix
