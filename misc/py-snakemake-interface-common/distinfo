@@ -1,3 +1,3 @@
-TIMESTAMP = 1789892448
-SHA256 (snakemake_interface_common-1.23.1.tar.gz) = 5c2bdce96194de290859ac45f863026c431a9c81d749a36b1eee995be32ff05a
-SIZE (snakemake_interface_common-1.23.1.tar.gz) = 14344
+TIMESTAMP = 1792573075
+SHA256 (snakemake_interface_common-1.24.0.tar.gz) = f77f567ef3c7b56c27dce69b08490bf0b49ab4ca0fc98995ae800e927ec28d3a
+SIZE (snakemake_interface_common-1.24.0.tar.gz) = 14705
