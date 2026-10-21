@@ -1,5 +1,5 @@
 PORTNAME=	nanoflann
-DISTVERSION=	1.13.0
+DISTVERSION=	2.0.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +9,10 @@ WWW=		https://github.com/jlblancoc/nanoflann
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+TEST_DEPEDNS=	eigen>0:math/eigen # tests fail with eigen5
+
 USES=		cmake
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jlblancoc
 
@@ -35,6 +38,6 @@ benchmarks: build # benchmarks fail to run: https://github.com/jlblancoc/nanofla
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} benchmarks
 
-# tests as of 1.13.0: 100% tests passed, 0 tests failed out of 1
+# tests as of 2.0.1: 100% tests passed, 0 tests failed out of 1
 
 .include <bsd.port.mk>
