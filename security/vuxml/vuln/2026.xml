@@ -1,3 +1,48 @@
+  <vuln vid="0be28489-cd2f-11f1-8135-8447094a420f">
+    <topic>Unbound -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.26.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLNetLabs reports:</p>
+	<blockquote cite="https://community.nlnetlabs.nl/t/unbound-1-26-2-released/3495">
+	  <p>This release consolidates security fixes for issues reported over
+a period of time.</p>
+	  <ul>
+	    <li>CVE-2026-97206, DoQ path-migration can lead to use-after-free on
+multi-threaded deployments.</li>
+	    <li>CVE-2026-50106, Possible insecure NXDOMAIN for non-existing
+records under a configured island trust anchor underneath an
+insecure parent.</li>
+	    <li>CVE-2026-96405, Aggregate DNS name chained pointer decompression
+work leads to degradation of service.</li>
+	    <li>CVE-2026-109125, Possible cache poisoning vulnerability via
+a cache side-channel exposed by ‘unwanted-reply-threshold’.</li>
+	    <li>CVE-2026-35501, Bypass of a configured island trust anchor
+underneath an insecure parent from an attacker-controlled NSEC
+record.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-97206</cvename>
+      <cvename>CVE-2026-50106</cvename>
+      <cvename>CVE-2026-96405</cvename>
+      <cvename>CVE-2026-109125</cvename>
+      <cvename>CVE-2026-35501</cvename>
+      <url>https://community.nlnetlabs.nl/t/unbound-1-26-2-released/3495</url>
+    </references>
+    <dates>
+      <discovery>2026-10-21</discovery>
+      <entry>2026-10-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="070a35ef-cd22-11f1-ada3-bc241121aa0a">
     <topic>FreeBSD -- TLS certificate store update due to eMudhra compromise</topic>
     <affects>
