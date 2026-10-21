@@ -1,6 +1,5 @@
 PORTNAME=	powerdns
-DISTVERSION=	5.1.4
-PORTREVISION=	3
+DISTVERSION=	5.1.5
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -21,7 +20,6 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 
 USES=		compiler:c++17-lang cpe libtool localbase meson pkgconfig \
 		python:build ssl tar:bzip2
-
 USE_RC_SUBR=	pdns
 
 MESON_ARGS=	--datadir=${PREFIX}/share/doc \
@@ -46,19 +44,18 @@ SUB_FILES=	pkg-message
 USERS=		pdns
 GROUPS=		pdns
 
-OPTIONS_DEFINE=		DOCS EXAMPLES GEOIP GNUTLS IXFRDIST LMDB LUABACKEND \
-			MYSQL OPENLDAP PGSQL REMOTE SQLITE3 TINYDNS TOOLS \
-			UNIXODBC ZEROMQ
-OPTIONS_DEFAULT=	LMDB LUA MYSQL PGSQL SQLITE3
-OPTIONS_SINGLE=		EXTLUA
-OPTIONS_SINGLE_EXTLUA=	LUA LUAJIT
+OPTIONS_DEFINE=		DOCS EXAMPLES GEOIP GNUTLS IXFRDIST LMDB LMDB0 \
+			LUABACKEND MYSQL OPENLDAP PGSQL REMOTE SQLITE3 TINYDNS \
+			TOOLS UNIXODBC ZEROMQ
+OPTIONS_DEFAULT=	LMDB LMDB0 LUA MYSQL PGSQL SQLITE3
+OPTIONS_SINGLE=		SG1
+OPTIONS_SINGLE_SG1=	LUA LUAJIT
+OPTIONS_SUB=		yes
 
-OPTIONS_SUB=	yes
-
-EXTLUA_DESC=		Lua library implementation
 GEOIP_DESC=		GeoIP backend (GeoIP2 DB)
 GNUTLS_DESC=		DoT support via GnuTLS (sdig only)
 IXFRDIST_DESC=		Build ixfrdist
+LMDB0_DESC=		Use LMDB 0.9 library
 LMDB_DESC=		LMDB backend
 LUABACKEND_DESC=	Lua2 backend module (launch=lua2)
 LUAJIT_DESC=		Use LuaJIT (enables Lua records)
@@ -67,6 +64,7 @@ MYSQL_DESC=		MySQL backend
 OPENLDAP_DESC=		OpenLDAP backend
 PGSQL_DESC=		PostgreSQL backend
 REMOTE_DESC=		Remote backend
+SG1_DESC=		Lua library implementation
 SQLITE3_DESC=		SQLite 3 backend
 TINYDNS_DESC=		TinyDNS backend
 TOOLS_DESC=		Build extra tools
@@ -83,11 +81,9 @@ GNUTLS_MESON_ENABLED=	tls-gnutls
 IXFRDIST_LIB_DEPENDS=	libyaml-cpp.so:devel/yaml-cpp
 IXFRDIST_MESON_TRUE=	tools-ixfrdist
 
-LMDB_LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
-			liblmdb0.so:databases/lmdb0
+LMDB_LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 LMDB_MESON_ON=		-Dmodule-lmdb=dynamic
 LMDB_VARS=		MODULES+=lmdb
-LMDB_CONFIGURE_ENV=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 
 LUABACKEND_MESON_ON=	-Dmodule-lua2=dynamic
 LUABACKEND_VARS=	MODULES+=lua2
@@ -95,12 +91,12 @@ LUABACKEND_VARS=	MODULES+=lua2
 LUAJIT_USES=		luajit
 LUAJIT_MESON_ON=	-Dlua=luajit
 
-LUA_USES=		lua
-LUA_MESON_ON=		-Dlua=lua
+LUA_USES=	lua
+LUA_MESON_ON=	-Dlua=lua
 
-MYSQL_USES=		mysql
-MYSQL_MESON_ON=		-Dmodule-gmysql=dynamic
-MYSQL_VARS=		MODULES+=gmysql
+MYSQL_USES=	mysql
+MYSQL_MESON_ON=	-Dmodule-gmysql=dynamic
+MYSQL_VARS=	MODULES+=gmysql
 
 OPENLDAP_BUILD_DEPENDS=	krb5>=0:security/krb5
 OPENLDAP_LIB_DEPENDS=	libkrb5.so:security/krb5
@@ -109,9 +105,9 @@ OPENLDAP_MESON_ON=	-Dmodule-ldap=dynamic
 OPENLDAP_CXXFLAGS=	-DLDAP_DEPRECATED=1
 OPENLDAP_VARS=		MODULES+=ldap
 
-PGSQL_USES=		pgsql
-PGSQL_MESON_ON=		-Dmodule-gpgsql=dynamic
-PGSQL_VARS=		MODULES+=gpgsql
+PGSQL_USES=	pgsql
+PGSQL_MESON_ON=	-Dmodule-gpgsql=dynamic
+PGSQL_VARS=	MODULES+=gpgsql
 
 REMOTE_MESON_ON=	-Dmodule-remote=dynamic
 REMOTE_VARS=		MODULES+=remote
@@ -133,6 +129,17 @@ UNIXODBC_VARS=		MODULES+=godbc
 ZEROMQ_IMPLIES=		REMOTE
 ZEROMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
 ZEROMQ_MESON_TRUE=	module-remote-zeromq
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLMDB}
+. if ${PORT_OPTIONS:MLMDB0}
+LIB_DEPENDS+=	liblmdb0.so:databases/lmdb0
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
+.	else
+LIB_DEPENDS+=	liblmdb.so:databases/lmdb
+. endif
+.endif
 
 post-install::
 .for bin in dnsdemog kvresp
