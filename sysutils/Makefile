@@ -1719,6 +1719,7 @@
     SUBDIR += yadm
     SUBDIR += yank
     SUBDIR += yazi
+    SUBDIR += ytop
     SUBDIR += z
     SUBDIR += zbackup
     SUBDIR += zeitgeist
