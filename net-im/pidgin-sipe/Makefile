@@ -1,6 +1,5 @@
 PORTNAME=	pidgin-sipe
-PORTVERSION=	1.24.0
-PORTREVISION=	7
+PORTVERSION=	1.25.0
 CATEGORIES=	net-im
 MASTER_SITES=	SF/sipe/sipe/${DISTNAME}
 
@@ -44,15 +43,11 @@ CONFIGURE_ARGS=	--enable-purple \
 		--disable-telepathy
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 CFLAGS+=	-Wno-error
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-USES+=	llvm:max=15
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's/LDLAGS/LDFLAGS/' ${WRKSRC}/configure
