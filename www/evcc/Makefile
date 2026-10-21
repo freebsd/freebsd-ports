@@ -1,6 +1,5 @@
 PORTNAME=	evcc
-DISTVERSION=	0.317.1
-PORTREVISION=	1
+DISTVERSION=	0.317.2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/mfechner/${PORTNAME}/:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -26,7 +25,7 @@ BUILD_DEPENDS=	npm-node24>0:www/npm-node24
 USES=		gmake go:1.27+,modules,no_targets nodejs:24,build tar:zstd
 
 # Find here: https://github.com/evcc-io/evcc/releases
-_SHA=		259d5fd99774ccb3690eb0de8ebbf873089bd13d
+_SHA=		ece5b74724dbf66487501731b528721edc99e341
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	evcc-io
@@ -75,11 +74,11 @@ make-npm-cache: patch
 	@cd ${WRKSRC} && ${SETENV} HOME=${WRKDIR} npm install --force
 	@cd ${WRKDIR} \
 		&& ${TAR} -c --zstd -f ${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} .npm \
+		&& ${ECHO} "Copy locally: cp ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} ../../distfiles/go/www_evcc/evcc-io-evcc-${DISTVERSION}_GH0/" \
 		&& ${ECHO} "Please upload the file: scp ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} mfechner@freefall.freebsd.org:public_distfiles/${PORTNAME}/"
 # cd ../..
 # make makepatch
 # make make-npm-cache
-# cp work/evcc-npm-cache* ../../distfiles/go/www_evcc/evcc-io-evcc-0.317.0_GH0/
 # uncomment DISTFILES
 # make makesum
 
