@@ -1,5 +1,5 @@
 PORTNAME=	numpy-groupies
-DISTVERSION=	0.12.2
+DISTVERSION=	0.14.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Optimised tools for group-indexing operations: aggregated sum and more
 WWW=		https://github.com/ml31415/numpy-groupies
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
@@ -27,6 +27,6 @@ NO_ARCH=	yes
 do-test:
 	@cd ${WRKSRC} && pytest
 
-# tests as of 0.12.2: 1179 passed, 103 skipped, 595 deselected in 22.37s
+# tests as of 0.14.2: 3769 passed, 323 skipped in 44.77s
 
 .include <bsd.port.mk>
