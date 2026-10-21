@@ -24,10 +24,11 @@ GH_PROJECT=	OpenSYCL
 SHEBANG_FILES=	bin/syclcc-clang cmake/syclcc-launcher
 
 .if !exists(/usr/include/omp.h)
-USES+=	compiler:gcc-c++11-lib llvm:15
+USES+=	compiler:gcc-c++11-lib llvm:min=15,max=21
 .else
-USES+=	compiler:c++11-lang llvm:15
+USES+=	compiler:c++11-lang
 .endif
+USES+=	llvm:min=15,max=21
 
 do-test: # many tests fail, see https://github.com/OpenSYCL/OpenSYCL/issues/996
 	@cd ${WRKSRC}/tests && \
