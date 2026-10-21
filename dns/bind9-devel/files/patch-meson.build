@@ -1,6 +1,6 @@
 Use bind-tools option to ease the server/tools package split
 
---- meson.build.orig	2026-09-03 13:06:38 UTC
+--- meson.build.orig	2026-10-09 09:06:40 UTC
 +++ meson.build
 @@ -73,6 +73,8 @@ zlib_opt = get_option('zlib').enable_auto_if(developer
  tracing_opt = get_option('tracing')
@@ -11,7 +11,7 @@ Use bind-tools option to ease the server/tools package split
  build_options = meson.build_options()
  if build_options == ''
      build_options = 'default'
-@@ -1382,6 +1384,7 @@ libisccfg_dep = declare_dependency(
+@@ -1381,6 +1383,7 @@ libisccfg_dep = declare_dependency(
      include_directories: isccfg_inc,
  )
  
@@ -19,7 +19,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'arpaname',
      arpaname_src,
-@@ -1609,7 +1612,9 @@ executable(
+@@ -1608,7 +1611,9 @@ executable(
          libisc_dep,
      ],
  )
@@ -29,7 +29,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'named-checkconf',
      named_checkconf_src,
-@@ -1686,7 +1691,9 @@ executable(
+@@ -1685,7 +1690,9 @@ executable(
          lmdb_dep,
      ],
  )
@@ -39,7 +39,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'named-rrchecker',
      named_rrchecker_src,
-@@ -1700,6 +1707,7 @@ executable(
+@@ -1699,6 +1706,7 @@ executable(
      ],
  
  )
@@ -47,7 +47,7 @@ Use bind-tools option to ease the server/tools package split
  
  named_deps = []
  
-@@ -1737,6 +1745,7 @@ named_srcconf = named_srcset.apply(config, strict: fal
+@@ -1736,6 +1744,7 @@ named_srcconf = named_srcset.apply(config, strict: fal
  
  named_srcconf = named_srcset.apply(config, strict: false)
  
@@ -55,7 +55,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'named',
      named_srcconf.sources(),
-@@ -1766,7 +1775,9 @@ executable(
+@@ -1765,7 +1774,9 @@ executable(
          named_srcconf.dependencies(),
      ],
  )
@@ -65,7 +65,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'nsec3hash',
      nsec3hash_src,
-@@ -1814,7 +1825,9 @@ executable(
+@@ -1813,7 +1824,9 @@ executable(
          edit_dep,
      ],
  )
@@ -75,7 +75,7 @@ Use bind-tools option to ease the server/tools package split
  executable(
      'rndc-confgen',
      rndc_confgen_src,
-@@ -1925,6 +1938,7 @@ shared_library(
+@@ -1924,6 +1937,7 @@ shared_library(
          libns_dep,
      ],
  )
@@ -83,7 +83,7 @@ Use bind-tools option to ease the server/tools package split
  
  subdir('doc')
  subdir('tests')
-@@ -2007,7 +2021,6 @@ print(release_date, end="")
+@@ -2006,7 +2020,6 @@ print(release_date, end="")
  print(release_date, end="")
  '''
  
@@ -91,7 +91,7 @@ Use bind-tools option to ease the server/tools package split
      release_date = ''
      if python.found()
          release_date = run_command(python, ['-c', get_release_date], check: true).stdout()
-@@ -2028,6 +2041,7 @@ if doc_opt.allowed()
+@@ -2027,6 +2040,7 @@ if doc_opt.allowed()
  
      install_man(man_pages)
  
