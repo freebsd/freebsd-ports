@@ -1,8 +1,9 @@
 PORTNAME=	czmq
-PORTVERSION=	4.1.1
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.2.1
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/zeromq/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/zeromq/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High-level C Binding for ZeroMQ
@@ -18,12 +19,22 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libzmq=${LOCALBASE} \
-		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
-		--without-docs
+		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-CFLAGS+=	-Wno-error
+PLIST_SUB=	PORTVERSION=${DISTVERSION}
+
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=	yes
+
+MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+			xmlto:textproc/xmlto
+MANPAGES_USES=		perl5 shebangfix
+MANPAGES_USE=	PERL5=build
+MANPAGES_CONFIGURE_WITH=	docs
+MANPAGES_VARS=	SHEBANG_FILES=doc/mkman
 
 .include <bsd.port.mk>
