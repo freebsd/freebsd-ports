@@ -3,6 +3,8 @@ include/nbdkit-common.h
 include/nbdkit-filter.h
 include/nbdkit-plugin.h
 include/nbdkit-version.h
+lib/nbdkit/filters/nbdkit-bzip2-filter.so
+lib/nbdkit/filters/nbdkit-xor-filter.so
 lib/nbdkit/filters/nbdkit-count-filter.so
 lib/nbdkit/filters/nbdkit-map-filter.so
 lib/nbdkit/filters/nbdkit-blocksize-filter.so
@@ -238,3 +240,9 @@ share/bash-completion/completions/nbdkit
 %%MANPAGES%%share/man/man1/nbdkit-map-filter.1.gz
 %%MANPAGES%%share/man/man1/nbdkit-release-notes-1.46.1.gz
 %%MANPAGES%%share/man/man3/nbdkit_debug_hexdump.3.gz
+%%MANPAGES%%share/man/man1/nbdkit-bzip2-filter.1.gz
+%%MANPAGES%%share/man/man1/nbdkit-release-notes-1.48.1.gz
+%%MANPAGES%%share/man/man1/nbdkit-xor-filter.1.gz
+%%MANPAGES%%share/man/man3/nbdkit_debug_hexdiff.3.gz
+%%MANPAGES%%share/man/man3/nbdkit_name.3.gz
+%%MANPAGES%%share/man/man3/nbdkit_timestamp.3.gz
