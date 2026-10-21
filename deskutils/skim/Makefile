@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.7.4
+DISTVERSION=	5.8.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -33,10 +33,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.104 \
 		approx-0.5.1 \
-		arrayvec-0.7.8 \
 		assert_enum_variants-0.1.2 \
 		atomic-0.6.1 \
 		autocfg-1.5.1 \
+		avt-0.18.0 \
 		base64-0.22.1 \
 		base64-simd-0.8.0 \
 		bincode-next-3.1.1 \
@@ -56,7 +56,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytes-1.12.1 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.6.0 \
+		cc-1.9.0 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.2 \
@@ -96,11 +96,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		darling_core-0.24.1 \
 		darling_macro-0.20.11 \
 		darling_macro-0.24.1 \
-		defmt-1.1.1 \
-		defmt-macros-1.1.1 \
-		defmt-parser-1.0.0 \
+		defmt-1.2.0 \
+		defmt-macros-1.2.0 \
+		defmt-parser-1.1.0 \
 		deltae-0.3.2 \
-		deranged-0.5.8 \
+		deranged-0.5.9 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
@@ -110,12 +110,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		doctest-file-1.1.1 \
 		document-features-0.2.12 \
 		downcast-rs-1.2.1 \
-		either-1.18.0 \
+		either-1.19.0 \
 		either-or-both-0.3.1 \
 		encode_unicode-1.0.0 \
 		env_filter-2.0.0 \
 		env_logger-0.11.11 \
-		equivalent-1.0.2 \
+		equivalent-1.0.3 \
 		errno-0.3.14 \
 		euclid-0.22.14 \
 		eyre-0.6.14 \
@@ -123,7 +123,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fastrand-2.5.0 \
 		fdeflate-0.3.7 \
 		filedescriptor-0.8.3 \
-		find-msvc-tools-0.1.14 \
+		find-msvc-tools-0.1.15 \
 		finl_unicode-1.5.0 \
 		fixedbitset-0.4.2 \
 		flate2-1.1.10 \
@@ -146,11 +146,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		getrandom-0.4.3 \
 		gif-0.14.2 \
 		gnuplot-0.0.46 \
-		gungraun-0.19.4 \
-		gungraun-macros-0.9.1 \
-		gungraun-runner-0.19.4 \
+		gungraun-0.20.0 \
+		gungraun-common-0.1.0 \
+		gungraun-macros-0.10.0 \
+		gungraun-runner-0.20.0 \
 		half-2.7.1 \
-		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
 		heck-0.5.0 \
 		hex-0.4.3 \
@@ -160,33 +160,33 @@ CARGO_CRATES=	adler2-2.0.1 \
 		image-webp-0.2.4 \
 		indenter-0.3.4 \
 		indexmap-2.14.2 \
-		indoc-2.0.7 \
+		indoc-2.0.8 \
 		insta-1.49.0 \
 		instability-0.3.14 \
-		interprocess-2.4.4 \
+		interprocess-2.4.6 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.18 \
-		jiff-0.2.37 \
+		jiff-0.2.38 \
 		jiff-core-0.1.1 \
-		jiff-static-0.2.37 \
+		jiff-static-0.2.38 \
 		js-sys-0.3.106 \
 		kanal-0.1.1 \
-		kasuari-0.4.12 \
+		kasuari-0.4.13 \
 		lab-0.11.0 \
 		lazy_static-1.5.1 \
-		libc-0.2.190 \
+		libc-0.2.191 \
 		libm-0.2.16 \
 		libmimalloc-sys-0.1.44 \
 		line-clipping-0.3.8 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.12.1 \
-		litrs-1.0.0 \
+		litrs-1.0.1 \
 		lock_api-0.4.14 \
 		log-0.4.34 \
 		lru-0.18.5 \
-		mac_address-1.2.0 \
+		mac_address-1.2.1 \
 		memchr-2.8.3 \
 		memmem-0.1.1 \
 		memoffset-0.9.1 \
@@ -198,14 +198,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		moxcms-0.8.1 \
 		nix-0.28.0 \
 		nix-0.29.0 \
-		nix-0.30.1 \
 		nix-0.31.3 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		num-conv-0.2.2 \
 		num-derive-0.4.2 \
 		num-traits-0.2.19 \
-		num_threads-0.1.7 \
+		num_threads-0.1.8 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
@@ -219,10 +218,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		pastey-0.2.3 \
-		pest-2.9.2 \
-		pest_derive-2.9.2 \
-		pest_generator-2.9.2 \
-		pest_meta-2.9.2 \
+		pest-2.9.4 \
+		pest_derive-2.9.4 \
+		pest_generator-2.9.4 \
+		pest_meta-2.9.4 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
@@ -236,11 +235,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		portable-atomic-1.15.0 \
 		portable-atomic-util-0.2.8 \
 		portable-pty-0.9.0 \
-		powerfmt-0.2.0 \
+		powerfmt-0.2.1 \
 		ppv-lite86-0.2.21 \
 		proc-macro-error-attr3-3.1.1 \
 		proc-macro-error3-3.1.1 \
 		proc-macro2-1.0.107 \
+		psm-0.1.24 \
 		pulldown-cmark-0.13.4 \
 		pxfm-0.1.30 \
 		quantette-0.6.0 \
@@ -273,6 +273,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		regex-1.13.1 \
 		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
+		rgb-0.8.53 \
 		roff-1.1.1 \
 		ron-0.12.2 \
 		rustc_version-0.4.1 \
@@ -288,7 +289,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde-1.0.229 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
-		serde_json-1.0.151 \
+		serde_json-1.0.154 \
 		serial2-0.2.38 \
 		serial_test-3.5.0 \
 		serial_test_derive-3.5.0 \
@@ -305,15 +306,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		similar-2.7.0 \
 		siphasher-1.0.4 \
 		slab-0.4.12 \
-		smallvec-1.16.2 \
+		smallvec-1.16.3 \
 		socket2-0.6.5 \
+		stacker-0.1.25 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		syn-1.0.109 \
 		syn-2.0.119 \
-		syn-3.0.6 \
+		syn-3.0.9 \
 		tap-1.0.1 \
 		tempfile-3.27.0 \
 		termina-0.3.3 \
@@ -329,28 +331,26 @@ CARGO_CRATES=	adler2-2.0.1 \
 		time-core-0.1.9 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.13.3 \
-		tokio-1.53.2 \
+		tokio-1.54.0 \
 		tokio-macros-2.7.2 \
-		tokio-util-0.7.19 \
-		tui-term-0.3.4 \
+		tokio-util-0.7.20 \
 		typeid-1.0.3 \
 		typenum-1.20.1 \
 		ucd-trie-0.1.7 \
-		unicase-2.9.0 \
+		unicase-2.10.0 \
 		unicode-display-width-0.3.0 \
-		unicode-ident-1.0.26 \
-		unicode-normalization-0.1.25 \
+		unicode-ident-1.0.27 \
+		unicode-normalization-0.1.26 \
 		unicode-segmentation-1.13.3 \
 		unicode-truncate-2.0.1 \
+		unicode-width-0.1.14 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		unty-next-0.1.2 \
 		utf8parse-0.2.2 \
-		uuid-1.27.0 \
+		uuid-1.28.0 \
 		version_check-0.9.5 \
 		vsimd-0.8.0 \
-		vt100-0.16.2 \
-		vte-0.15.0 \
 		vtparse-0.6.2 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
@@ -395,8 +395,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winreg-0.10.1 \
 		wit-bindgen-0.57.1 \
 		wyz-0.5.1 \
-		zerocopy-0.8.59 \
-		zerocopy-derive-0.8.59 \
+		zerocopy-0.8.63 \
+		zerocopy-derive-0.8.63 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
 		zune-core-0.5.3 \
