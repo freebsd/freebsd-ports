@@ -1,6 +1,6 @@
---- bin/background_jobs.orig	2026-02-09 19:24:50 UTC
+--- bin/background_jobs.orig	2026-10-15 00:39:19 UTC
 +++ bin/background_jobs
-@@ -61,7 +61,7 @@ start_sidekiq()
+@@ -63,7 +63,7 @@ start_sidekiq()
      processes_args+=("${sidekiq_queues}")
    done
  

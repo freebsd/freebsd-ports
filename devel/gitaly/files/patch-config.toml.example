@@ -1,4 +1,4 @@
---- config.toml.example.orig	2025-08-20 06:37:58 UTC
+--- config.toml.example.orig	2026-10-15 00:35:47 UTC
 +++ config.toml.example
 @@ -2,10 +2,10 @@
  # For Gitaly documentation, see https://docs.gitlab.com/administration/gitaly/.
@@ -13,7 +13,7 @@
  
  # # Optional. The directory where Gitaly can create all files required to
  # # properly operate at runtime. If not set, Gitaly will create a directory in
-@@ -58,7 +58,7 @@ name = "default"
+@@ -68,7 +68,7 @@ name = "default"
  # # The name of the storage
  name = "default"
  # # The path to the storage.
@@ -22,13 +22,16 @@
  
  # # You can optionally configure more storages for this Gitaly instance to serve up
  #
-@@ -89,18 +89,18 @@ sentry_environment = ""
+@@ -99,7 +99,7 @@ sentry_environment = ""
  # # Custom Git hooks that are used to perform tasks based on changes performed in any repository.
  [hooks]
  # # Directory where custom Git hooks are installed. If left unset, no custom hooks are used.
 -custom_hooks_dir = "/home/git/custom_hooks"
 +custom_hooks_dir = "%%PREFIX%%/git/custom_hooks"
- 
+ # # Maximum time the post-receive hook waits for Praefect to finish transaction
+ # # coordination (including the database generation update) before failing the push.
+ # # Only applies when running through Praefect with the post-receive signal feature
+@@ -109,13 +109,13 @@ custom_hooks_dir = "/home/git/custom_hooks"
  # # Gitaly must connect to the GitLab application to perform access checks when a user performs a change.
  [gitlab]
  # # URL of the GitLab server.

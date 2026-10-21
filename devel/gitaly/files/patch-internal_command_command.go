@@ -1,6 +1,6 @@
---- internal/command/command.go.orig	2026-05-02 00:01:37 UTC
+--- internal/command/command.go.orig	2026-10-15 00:35:47 UTC
 +++ internal/command/command.go
-@@ -738,10 +738,10 @@ func (c *Command) logProcessComplete() {
+@@ -773,10 +773,10 @@ func (c *Command) logProcessComplete() {
  
  	if ok {
  		attributes = append(attributes,
@@ -14,4 +14,4 @@
 +			attribute.Int64("majflt", int64(rusage.Majflt)),
  		)
  	}
- 	attributes = append(attributes, attribute.Int64("maxrssanon_bytes", c.maxRssAnon.Load()))
+ 	if signal != 0 {
