@@ -1,8 +1,6 @@
 PORTNAME=	ngrep
 DISTVERSION=	1.49.0
 CATEGORIES=	net security
-MASTER_SITES=	https://github.com/jpr5/${PORTNAME}/archive/refs/tags/
-DISTNAME=	v${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	fabio.tleitao@gmail.com
@@ -13,13 +11,14 @@ LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	jpr5
+GH_TAGNAME=	v${DISTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-pcap-restart
 
 MAKE_JOBS_UNSAFE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/ngrep share/man/man8/ngrep.8.gz
 PORTDOCS=	CREDITS EXAMPLES.md INSTALL README.md
@@ -50,4 +49,3 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
-
