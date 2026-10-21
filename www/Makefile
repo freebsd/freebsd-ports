@@ -552,6 +552,7 @@
     SUBDIR += nginx-module-geoip2
     SUBDIR += nginx-module-gridfs
     SUBDIR += nginx-module-iconv
+    SUBDIR += nginx-module-ip-anon
     SUBDIR += nginx-module-json-status
     SUBDIR += nginx-module-let
     SUBDIR += nginx-module-lua

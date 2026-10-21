@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the ip_anon module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use ip_anon, build
+www/nginx, www/nginx-devel or www/freenginx with the IP_ANON option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-ip-anon and produce
+ngx_http_ip_anon_module.so.
+EOM
+}
+]
