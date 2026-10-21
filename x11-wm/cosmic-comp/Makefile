@@ -10,8 +10,8 @@ WWW=		https://github.com/pop-os/cosmic-comp
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	only x86-64 is directly supported upstream
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	overflows a 32-bit usize in src/shell/mod.rs
 
 LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libdisplay-info.so:sysutils/libdisplay-info \
