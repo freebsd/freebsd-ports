@@ -1,3 +1,43 @@
+  <vuln vid="1701e8a6-cd43-11f1-8135-8447094a420f">
+    <topic>PowerDNS -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>5.4.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS reports:</p>
+	<blockquote cite="https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2026-12.html">
+	  <ul>
+	    <li>CVE-2026-73206: A crafted DNS packet can cause a denial of service decompressing the DNS names in the packet</li>
+	    <li>CVE-2026-73205: A malicious client can cause too many TCP connections in TIME_WAIT state</li>
+	    <li>CVE-2026-85555: DNSSEC validation bypass and cache poisoning in PowerDNS Recursor via out-of-band NS resolution</li>
+	    <li>CVE-2026-85556: Missing OPT RR owner-name validation bypasses ECS hardening</li>
+	    <li>CVE-2026-85557: Single web client not doing TLS handshake monopolizes web access</li>
+	    <li>CVE-2026-85558: Recursor retains closed TCP client addresses until process exit</li>
+	    <li>CVE-2026-85559: Out-of-bounds read in Recursor findScopeZero</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-73206</cvename>
+      <cvename>CVE-2026-73205</cvename>
+      <cvename>CVE-2026-85555</cvename>
+      <cvename>CVE-2026-85556</cvename>
+      <cvename>CVE-2026-85557</cvename>
+      <cvename>CVE-2026-85558</cvename>
+      <cvename>CVE-2026-85559</cvename>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2026-12.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-21</discovery>
+      <entry>2026-10-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d8e16d08-cd2f-11f1-8135-8447094a420f">
     <topic>PHP -- Multiple vulnerabilities</topic>
     <affects>
