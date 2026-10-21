@@ -76,6 +76,7 @@
     SUBDIR += controllermap
     SUBDIR += cool-retro-term
     SUBDIR += coreterminal
+    SUBDIR += cosmic-bg
     SUBDIR += damask
     SUBDIR += darktile
     SUBDIR += deforaos-integration
