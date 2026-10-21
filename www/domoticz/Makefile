@@ -1,6 +1,6 @@
 PORTNAME=	domoticz
 DISTVERSION=	2026.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	kiwi@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \
 		libmosquitto.so:net/mosquitto
 
-USES=		cmake compiler:c++11-lang cpe minizip pkgconfig ssl lua:53 sqlite ssl
+USES=		cmake compiler:c++11-lang cpe minizip pkgconfig ssl lua sqlite ssl
 USE_GITHUB=	yes
 GH_SUBDIR=      extern/libwebem:libwebem
 GH_TUPLE=       domoticz:libwebem:dde28f2:libwebem
@@ -39,6 +39,8 @@ CMAKE_INSTALL_PREFIX=	${PREFIX}/domoticz
 CONFLICTS_INSTALL=	domoticz-devel-[234]*
 
 EXTRACT_AFTER_ARGS=	--exclude ${PORTNAME}-${PORTVERSION}/hardware/plugins/Include \
+			--exclude ${PORTNAME}-${PORTVERSION}/scripts/build_server \
+			--exclude ${PORTNAME}-${PORTVERSION}/scripts/support \
 			--no-same-owner --no-same-permissions
 
 USERS=		domoticz
