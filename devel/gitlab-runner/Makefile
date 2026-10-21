@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-runner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	19.4.1
-PORTREVISION=	1
+DISTVERSION=	19.5.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -34,7 +33,7 @@ GL_ACCOUNT=	gitlab-org
 USE_RC_SUBR=	gitlab_runner
 GO_MOD_DIST=	gitlab
 
-GITBRANCH=	19-4-stable
+GITBRANCH=	19-5-stable
 GO_MODULE=	gitlab.com/gitlab-org/gitlab-runner
 
 _BUILD_DATE=	$$(date -u +%Y-%m-%dT%H:%M:%S%z)
