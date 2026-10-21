@@ -1,6 +1,5 @@
 PORTNAME=	pinecone
-DISTVERSION=	10.0.0
-PORTREVISION=	2
+DISTVERSION=	10.1.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -111,10 +110,10 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		regex-syntax-0.8.10 \
 		ring-0.17.14 \
 		rustix-1.1.4 \
-		rustls-0.23.37 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.14.0 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
 		schannel-0.1.29 \
 		security-framework-3.7.0 \
