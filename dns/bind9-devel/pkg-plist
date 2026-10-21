@@ -206,7 +206,6 @@ include/isc/tid.h
 include/isc/time.h
 include/isc/timer.h
 include/isc/tls.h
-include/isc/tm.h
 include/isc/types.h
 include/isc/urcu.h
 include/isc/url.h
@@ -244,11 +243,11 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/bind/synthrecord.so
-lib/libdns-9.21.26.so
-lib/libisc-9.21.26.so
-lib/libisccc-9.21.26.so
-lib/libisccfg-9.21.26.so
-lib/libns-9.21.26.so
+lib/libdns-9.21.27.so
+lib/libisc-9.21.27.so
+lib/libisccc-9.21.27.so
+lib/libisccfg-9.21.27.so
+lib/libns-9.21.27.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
