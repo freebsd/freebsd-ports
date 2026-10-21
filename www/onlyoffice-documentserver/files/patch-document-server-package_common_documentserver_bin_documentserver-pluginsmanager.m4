@@ -1,5 +1,5 @@
---- document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4.orig	2026-02-23 08:17:20 UTC
-+++ document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4
+--- document-server-package/common/documentserver/bin/documentserver-pluginsmanager.m4.orig	2026-10-11 09:45:15 UTC
++++ document-server-package/common/documentserver/bin/documentserver-pluginsmanager.m4
 @@ -1,17 +1,16 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -36,12 +36,12 @@
  done
  
 -export LD_LIBRARY_PATH=/var/www/M4_DS_PREFIX/server/FileConverter/bin:$LD_LIBRARY_PATH
-+export LD_LIBRARY_PATH=%%LOCALBASE%%/www/M4_DS_PREFIX/server/FileConverter/bin:$LD_LIBRARY_PATH
++export LD_LIBRARY_PATH=M4_DS_ROOT/server/FileConverter/bin:$LD_LIBRARY_PATH
  
 -PLUGIN_MANAGER="/var/www/M4_DS_PREFIX/server/tools/pluginsmanager"
 -PLUGIN_DIR="/var/www/M4_DS_PREFIX/sdkjs-plugins/"
-+PLUGIN_MANAGER="/%%LOCALBASE%%/www/M4_DS_PREFIX/server/tools/pluginsmanager"
-+PLUGIN_DIR="/%%LOCALBASE%%/www/M4_DS_PREFIX/sdkjs-plugins/"
++PLUGIN_MANAGER="M4_DS_ROOT/server/tools/pluginsmanager"
++PLUGIN_DIR="M4_DS_ROOT/sdkjs-plugins/"
  
 -"${PLUGIN_MANAGER}" --directory=\"${PLUGIN_DIR}\" "${args[@]}"
 +"${PLUGIN_MANAGER}" --directory=\"${PLUGIN_DIR}\" "$@"
@@ -49,7 +49,7 @@
 -if [ "${K8S_CONTAINER}" != "true" ]; then
 -  chown -R ds:ds "${PLUGIN_DIR}"
 -fi
-+chown -R onlyoffice:onlyoffice "${PLUGIN_DIR}"
++chown -R M4_DS_USER:M4_DS_GROUP "${PLUGIN_DIR}"
  
  if [ "$RESTART_CONDITION" != "false" ]; then
 -	if pgrep -x ""systemd"" >/dev/null; then
@@ -58,4 +58,4 @@
 +	if pgrep -f "supervisord" >/dev/null; then
  		supervisorctl restart ds:docservice
  	fi
- 	documentserver-flush-cache.sh
+ 	documentserver-flush-cache

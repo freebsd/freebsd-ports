@@ -1,0 +1,54 @@
+--- core/Common/3dParty/libxml/libxml2/error.c.orig	2026-09-01 16:16:32 UTC
++++ core/Common/3dParty/libxml/libxml2/error.c
+@@ -228,6 +228,7 @@
+  * @param msg  printf-like format string
+  * @param ...  arguments to format
+  */
++#ifndef XML_ERROR_DISABLE_MODE
+ void
+ xmlGenericErrorDefaultFunc(void *ctx ATTRIBUTE_UNUSED, const char *msg, ...) {
+     va_list args;
+@@ -239,6 +240,12 @@
+     vfprintf((FILE *)xmlGenericErrorContext, msg, args);
+     va_end(args);
+ }
++#else
++void
++xmlGenericErrorDefaultFunc(void *ctx ATTRIBUTE_UNUSED, const char *msg, ...) {
++    //NONE
++}
++#endif
+ 
+ /**
+  * Set the thread-local "generic" handler and context for error
+--- core/Common/3dParty/libxml/libxml2/globals.c.orig	2026-09-01 16:16:32 UTC
++++ core/Common/3dParty/libxml/libxml2/globals.c
+@@ -216,7 +216,7 @@
+  */
+ 
+ static int xmlDoValidityCheckingDefaultValueThrDef = 0;
+-static int xmlGetWarningsDefaultValueThrDef = 1;
++static int xmlGetWarningsDefaultValueThrDef = 0;
+ static int xmlLoadExtDtdDefaultValueThrDef = 0;
+ static int xmlPedanticParserDefaultValueThrDef = 0;
+ static int xmlKeepBlanksDefaultValueThrDef = 1;
+--- core/Common/3dParty/libxml/libxml2/include/libxml/parserInternals.h.orig	2026-09-01 16:16:32 UTC
++++ core/Common/3dParty/libxml/libxml2/include/libxml/parserInternals.h
+@@ -47,7 +47,7 @@
+  * use XML_PARSE_HUGE option to override it.
+  * Introduced in 2.9.0
+  */
+-#define XML_MAX_TEXT_LENGTH 10000000
++#define XML_MAX_TEXT_LENGTH 15000000
+ 
+ /**
+  * Maximum size allowed when XML_PARSE_HUGE is set.
+@@ -78,7 +78,7 @@
+  * behaviour on "unfriendly' content
+  * Introduced in 2.9.0
+  */
+-#define XML_MAX_LOOKUP_LIMIT 10000000
++#define XML_MAX_LOOKUP_LIMIT 15000000
+ 
+ /**
+  * Identifiers can be longer, but this will be more costly

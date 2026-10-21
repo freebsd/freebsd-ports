@@ -1,20 +1,20 @@
-bin/documentserver-flush-cache.sh
-bin/documentserver-generate-allfonts.sh
-bin/documentserver-jwt-status.sh
-bin/documentserver-pluginsmanager.sh
-bin/documentserver-prepare4shutdown.sh
-bin/documentserver-static-gzip.sh
-bin/documentserver-update-securelink.sh
+bin/documentserver-flush-cache
+bin/documentserver-generate-allfonts
+bin/documentserver-jwt-status
+bin/documentserver-pluginsmanager
+bin/documentserver-prepare4shutdown
+bin/documentserver-static-gzip
+bin/documentserver-update-securelink
 %%ETCDIR%%/documentserver/default.json
 %%ETCDIR%%/documentserver/development-freebsd.json
-@sample(onlyoffice,onlyoffice,640)  %%ETCDIR%%/documentserver/local.json.sample
+@sample(%%DS_USERNAME%%,%%DS_GROUPNAME%%,640)  %%ETCDIR%%/documentserver/local.json.sample
 %%ETCDIR%%/documentserver/log4js/development.json
 %%ETCDIR%%/documentserver/log4js/production.json
 %%ETCDIR%%/documentserver/logrotate/ds.conf
 @sample %%ETCDIR%%/documentserver/newsyslog.conf.d/onlyoffice.newsyslog.sample
 @sample %%ETCDIR%%/documentserver/nginx/ds.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/ds-ssl.conf.sample
-%%ETCDIR%%/documentserver/nginx/includes/ds-cache.conf.sample
+@sample %%ETCDIR%%/documentserver/nginx/includes/ds-cache.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-common.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-docservice.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-letsencrypt.conf.sample
@@ -41,6 +41,7 @@ lib/libgraphics.so
 lib/libkernel.so
 lib/libkernel_network.so
 lib/libooxmlsignature.so
+%%WWWDIR%%/documentserver/3rd-Party.txt
 %%WWWDIR%%/documentserver/LICENSE.txt
 %%WWWDIR%%/documentserver/core-fonts/ASC.ttf
 %%WWWDIR%%/documentserver/core-fonts/README.md
@@ -771,6 +772,19 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/document-templates/sample/sample.pdf
 %%WWWDIR%%/documentserver/document-templates/sample/sample.pptx
 %%WWWDIR%%/documentserver/document-templates/sample/sample.xlsx
+%%WWWDIR%%/documentserver/license/Backbone.license
+%%WWWDIR%%/documentserver/license/Bootstrap.license
+%%WWWDIR%%/documentserver/license/Hunspell.license
+%%WWWDIR%%/documentserver/license/Megapixel.license
+%%WWWDIR%%/documentserver/license/PerfectScrollbar.license
+%%WWWDIR%%/documentserver/license/RequireJS.license
+%%WWWDIR%%/documentserver/license/SocketIO.license
+%%WWWDIR%%/documentserver/license/Underscore.license
+%%WWWDIR%%/documentserver/license/XRegExp.license
+%%WWWDIR%%/documentserver/license/jQuery.browser.license
+%%WWWDIR%%/documentserver/license/jQuery.license
+%%WWWDIR%%/documentserver/license/less.license
+%%WWWDIR%%/documentserver/license/requirejs-text.license
 @(,,755) %%WWWDIR%%/documentserver/npm/json
 %%WWWDIR%%/documentserver/npm/package.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/marketplace/config.json
@@ -1263,6 +1277,78 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/server/tools/allfontsgen
 %%WWWDIR%%/documentserver/server/tools/allthemesgen
 %%WWWDIR%%/documentserver/server/tools/pluginsmanager
+%%WWWDIR%%/documentserver/server/welcome/example/admin-disabled.html
+%%WWWDIR%%/documentserver/server/welcome/example/css/OpenSans-Bold.ttf
+%%WWWDIR%%/documentserver/server/welcome/example/css/OpenSans-Regular.ttf
+%%WWWDIR%%/documentserver/server/welcome/example/css/OpenSans-Semibold.ttf
+%%WWWDIR%%/documentserver/server/welcome/example/css/app-ai.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/app-files.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/app-forms.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/app-rooms.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/docx-big.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/favicon.ico
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-admin-1.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-admin-2.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-admin-3.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-admin-4.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-admin-5.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-ai-1.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-ai-2.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-ai-3.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-ai-4.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-ai-5.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-files-1.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-files-2.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-files-3.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-files-4.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-forms-1.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-forms-2.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-forms-3.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-forms-4.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-rooms-1.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-rooms-2.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-rooms-3.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/feat-rooms-4.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/footer_github.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/footer_help.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/icon-check.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/icon-chevron.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/icon-close-hover.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/icon-close.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/icon-copy-hover.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/icon-copy.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/icon-github.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/icon-info-blue.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/icon-info.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/index.css
+%%WWWDIR%%/documentserver/server/welcome/example/css/logo-docs.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/logo.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/modal-admin-promo.png
+%%WWWDIR%%/documentserver/server/welcome/example/css/modal-ai.png
+%%WWWDIR%%/documentserver/server/welcome/example/css/modal-files.png
+%%WWWDIR%%/documentserver/server/welcome/example/css/modal-forms.png
+%%WWWDIR%%/documentserver/server/welcome/example/css/modal-rooms.png
+%%WWWDIR%%/documentserver/server/welcome/example/css/pdf-big.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/pptx-big.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/promo-gift.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/stylesheet.css
+%%WWWDIR%%/documentserver/server/welcome/example/css/trial-ai.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/trial-automation.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/trial-code.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/trial-full.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/trial-info.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/trial-mobile.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/trial-scale.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/trial-support.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/trial-white-label.svg
+%%WWWDIR%%/documentserver/server/welcome/example/css/xlsx-big.svg
+%%WWWDIR%%/documentserver/server/welcome/example/docker.html
+%%WWWDIR%%/documentserver/server/welcome/example/example-disabled.html
+%%WWWDIR%%/documentserver/server/welcome/example/index.html
+%%WWWDIR%%/documentserver/server/welcome/example/k8s.html
+%%WWWDIR%%/documentserver/server/welcome/example/linux-rpm.html
+%%WWWDIR%%/documentserver/server/welcome/example/linux.html
+%%WWWDIR%%/documentserver/server/welcome/example/win.html
 %%WWWDIR%%/documentserver/server/welcome/img/favicon.ico
 %%WWWDIR%%/documentserver/server/welcome/img/icon-cross.png
 %%WWWDIR%%/documentserver/server/welcome/img/icon-done.png
@@ -1276,11 +1362,11 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/api/documents/resources/templates/plan.png
 %%WWWDIR%%/documentserver/web-apps/apps/api/wopi/convert-and-edit-wopi.ejs
 %%WWWDIR%%/documentserver/web-apps/apps/api/wopi/editor-wopi.ejs
-%%WWWDIR%%/documentserver/web-apps/apps/common/Analytics.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/Gateway.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/IrregularStack.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/checkExtendedPDF.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/embed/resources/img/logo.svg
+%%WWWDIR%%/documentserver/web-apps/apps/common/forms/lib/view/modals.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/index.html
 %%WWWDIR%%/documentserver/web-apps/apps/common/locale.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/collection/ChatMessages.js
@@ -1385,10 +1471,14 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/template/CommentsPanel.template
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/template/CommentsPopover.template
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/template/ExtendedColorDialog.template
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/template/FillingStatusSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/template/ReviewChangesPopover.template
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/template/RolesManagerDlg.template
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/template/SearchPanel.template
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/template/SendForSigningSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/util/LanguageInfo.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/util/LocalStorage.js
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/util/Print.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/util/ScreenReaderHelper.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/util/Shortcuts.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/util/Tip.js
@@ -1419,6 +1509,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/ExternalLinksDlg.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/ExternalMergeEditor.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/ExternalOleEditor.js
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/FillingStatusSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/FormatSettingsDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/Header.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/History.js
@@ -1430,6 +1521,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/OpenDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/OptionsDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/PasswordDialog.js
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/PdfSavedSignatureMenu.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/PdfSignDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/PluginDlg.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/PluginPanel.js
@@ -1439,11 +1531,15 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/RenameDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/ReviewChanges.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/ReviewPopover.js
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/RoleDeleteDlg.js
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/RoleEditDlg.js
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/RolesManagerDlg.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/SaveAsDlg.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/SearchBar.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/SearchDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/SearchPanel.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/SelectFileDlg.js
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/SendForSigningSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/ShapeShadowDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/ShortcutsDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/ShortcutsEditDialog.js
@@ -1452,7 +1548,6 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/SymbolTableDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/TextInputDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/UserNameDialog.js
-%%WWWDIR%%/documentserver/web-apps/apps/common/main/lib/view/modals.js
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/alphabetletters/alphabetletters.json
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/alphabetletters/qwertyletters.json
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/de/images/3dchart.png
@@ -1716,6 +1811,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/hwpx.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/jpg.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/key.svg
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/animated.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/blank.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/csv.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/djvu.svg
@@ -1725,7 +1821,9 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/dotx.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/epub.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/fb2.svg
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/gif.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/html.svg
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/hwp.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/jpg.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/md.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/odp.svg
@@ -1748,7 +1846,9 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/rtf.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/svg.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/txt.svg
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/video.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/vsdx.svg
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/xls.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/xlsb.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/xlsm.svg
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/img/doc-formats/large/xlsx.svg
@@ -1914,7 +2014,6 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/lo.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/lv.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/ms.json
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/nb.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/nl.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/no.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/pl.json
@@ -1965,7 +2064,6 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/ControlSettingsDialog.template
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/DropcapSettingsAdvanced.template
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/FileMenu.template
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/FillingStatusSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/FormSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/HeaderFooterSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/ImageSettings.template
@@ -1976,8 +2074,6 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/ParagraphSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/ParagraphSettingsAdvanced.template
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/RightMenu.template
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/RolesManagerDlg.template
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/SendForSigningSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/ShapeSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/SignatureSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/template/StatusBar.template
@@ -2003,12 +2099,12 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/EditListItemDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/FileMenu.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/FileMenuPanels.js
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/FillingStatusSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/FootnoteTip.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/FormSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/FormsTab.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/HeaderFooterSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/HeaderFooterTab.js
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/HorizontalLineSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/HyperlinkSettingsDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/HyphenationDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/ImageSettings.js
@@ -2033,11 +2129,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/ParagraphSettingsAdvanced.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/ProtectDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/RightMenu.js
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/RoleDeleteDlg.js
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/RoleEditDlg.js
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/RolesManagerDlg.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/SaveFormDlg.js
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/SendForSigningSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/ShapeSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/SignatureSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app/view/Statusbar.js
@@ -2119,6 +2211,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/HelpfulHints/Viewer.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/ProgramInterface/FormsTab.htm
@@ -2183,6 +2276,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/UsageInstructions/InsertTextObjects.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/UsageInstructions/Jitsi.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/UsageInstructions/LineSpacing.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/UsageInstructions/ManagingRoles.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/UsageInstructions/MathAutoCorrect.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/UsageInstructions/NonprintingCharacters.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/UsageInstructions/OCR.htm
@@ -2231,6 +2325,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/chartsettings3.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/chartsettings4.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/chartsettings5.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/chartsettings6.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/chatgpt_contextmenu.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/chatgpt_features.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/chatgpt_image.png
@@ -2303,6 +2398,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/fill_gradient.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/fill_pattern.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/fill_picture.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/fillable_form.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/floatingcontentcontrol.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/footnotes_settings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/footnotesadded.png
@@ -2312,6 +2408,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/frame_properties_1.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/groupup.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/highlight_settings.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/horizontalline.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/hyperlinkwindow1.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/hyphenation_settings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/image_form_settings.png
@@ -2327,6 +2424,8 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/insert_symbols_windows.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/insertcaptionbox.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/insertedfields.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/interface/chartdesigntab.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/interface/desktop_chartdesigntab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/interface/desktop_editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/interface/desktop_filetab.png
@@ -2375,6 +2474,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/navigationpanel.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/navigationpanel_viewer.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/oform.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/order_of_signing.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/orderedlistsettings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/pagescaling.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/de/images/pagethumbnails.png
@@ -2495,6 +2595,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/HelpfulHints/Viewer.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/ProgramInterface/FormsTab.htm
@@ -2529,6 +2630,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/DecorationStyles.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/DrawingOperations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/Drawio.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/FillingOutForm.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/FontTypeSizeColor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/FormattingPresets.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/HTML.htm
@@ -2558,6 +2660,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/InsertTextObjects.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/Jitsi.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/LineSpacing.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/ManagingRoles.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/MathAutoCorrect.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/NonprintingCharacters.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/OCR.htm
@@ -2678,6 +2781,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/fill_gradient.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/fill_pattern.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/fill_picture.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/fillable_form.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/floatingcontentcontrol.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/footnotes_settings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/footnotesadded.png
@@ -2687,6 +2791,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/frame_properties_1.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/groupup.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/highlight_settings.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/horizontalline.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/hyperlinkwindow1.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/hyphenation_settings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/image_form_settings.png
@@ -2703,6 +2808,8 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/insert_symbols_windows.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/insertcaptionbox.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/insertedfields.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/chartdesigntab.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_chartdesigntab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_editorwindow.png
@@ -2752,6 +2859,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/navigationpanel.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/navigationpanel_viewer.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/oform.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/order_of_signing.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/orderedlistsettings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/pagescaling.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/pagethumbnails_settings.png
@@ -2864,6 +2972,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/HelpfulHints/Search.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/HelpfulHints/SupportedFormats.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/ProgramInterface/HomeTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/ProgramInterface/InsertTab.htm
@@ -2885,6 +2994,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/CreateLists.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/CreateTableOfContents.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/DecorationStyles.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/FillingOutForm.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/FontTypeSizeColor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/FormattingPresets.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/InsertAutoshapes.htm
@@ -2900,6 +3010,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/InsertTables.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/InsertTextObjects.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/LineSpacing.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/ManagingRoles.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/NonprintingCharacters.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/OpenCreateNew.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/es/UsageInstructions/PageBreaks.htm
@@ -3048,6 +3159,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/HelpfulHints/Viewer.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/ProgramInterface/FormsTab.htm
@@ -3112,6 +3224,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/InsertTextObjects.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/Jitsi.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/LineSpacing.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/ManagingRoles.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/MathAutoCorrect.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/NonprintingCharacters.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/OCR.htm
@@ -3482,15 +3595,15 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/search/indexes.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/search/search.html
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/big.png
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/easybib_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/highlight_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/html_plugin.gif
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/easybib_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/highlight_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/html_plugin.webp
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/icons.png
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/image_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/jitsi_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/ocr_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/rainbow.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/speechinput_plugin.gif
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/image_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/jitsi_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/ocr_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/rainbow.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/speechinput_plugin.webp
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/sprite.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/src/big/checkbox_checked.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/src/big/checkbox_inserted.png
@@ -3877,14 +3990,13 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/src/icons/zoomin.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/src/icons/zoomout.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/src/icons/zotero.png
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/telegram.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/thesaurus_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/translator_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/typograf_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/uniqueduplicates.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/wordcounter_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/wordpress_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/youtube_plugin.gif
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/telegram.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/thesaurus_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/translator_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/typograf_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/wordcounter_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/wordpress_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/youtube_plugin.webp
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/Contents.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/HelpfulHints/About.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/HelpfulHints/AdvancedSettings.htm
@@ -3896,6 +4008,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/HelpfulHints/Search.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/HelpfulHints/SupportedFormats.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/ProgramInterface/HomeTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/ProgramInterface/InsertTab.htm
@@ -3919,6 +4032,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/CreateLists.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/CreateTableOfContents.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/DecorationStyles.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/FillingOutForm.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/FontTypeSizeColor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/FormattingPresets.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/InsertAutoshapes.htm
@@ -3935,6 +4049,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/InsertTables.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/InsertTextObjects.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/LineSpacing.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/ManagingRoles.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/NonprintingCharacters.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/OpenCreateNew.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/it/UsageInstructions/PageBreaks.htm
@@ -4110,6 +4225,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/HelpfulHints/Viewer.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/ProgramInterface/FormsTab.htm
@@ -4171,6 +4287,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/UsageInstructions/InsertTextObjects.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/UsageInstructions/Jitsi.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/UsageInstructions/LineSpacing.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/UsageInstructions/ManagingRoles.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/UsageInstructions/MathAutoCorrect.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/UsageInstructions/NonprintingCharacters.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/pt/UsageInstructions/OCR.htm
@@ -4480,6 +4597,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/HelpfulHints/Viewer.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/ProgramInterface/FormsTab.htm
@@ -4533,6 +4651,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/UsageInstructions/InsertTables.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/UsageInstructions/InsertTextObjects.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/UsageInstructions/LineSpacing.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/UsageInstructions/ManagingRoles.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/UsageInstructions/MathAutoCorrect.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/UsageInstructions/NonprintingCharacters.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/UsageInstructions/OpenCreateNew.htm
@@ -5169,6 +5288,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/HelpfulHints/Viewer.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/ProgramInterface/FormsTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/ProgramInterface/HomeTab.htm
@@ -5226,6 +5346,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/UsageInstructions/InsertTextObjects.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/UsageInstructions/Jitsi.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/UsageInstructions/LineSpacing.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/UsageInstructions/ManagingRoles.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/UsageInstructions/MathAutoCorrect.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/UsageInstructions/NonprintingCharacters.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/tr/UsageInstructions/OCR.htm
@@ -5542,7 +5663,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/symboltable/ru.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/symboltable/zh-TW.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/watermark/wm-text.json
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/css/526.6819d76e66345bd94815.css
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/css/526.189a85a5f060722033d9.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/css/app.9c160f9d9d045320aaa4.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/css/framework7-rtl.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/css/framework7.css
@@ -5610,6 +5731,9 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/resources/img/bullets/bullet-rombus.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/resources/img/bullets/bullet-square.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/resources/img/charts/chart-100-stacked-markers.svg
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/resources/img/charts/chart-26.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/resources/img/charts/chart-27.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/resources/img/charts/chart-28.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/resources/img/charts/chart-area-normal.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/resources/img/charts/chart-area-pstack.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/resources/img/charts/chart-area-stack.svg
@@ -5787,10 +5911,12 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/model/EquationGroup.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/model/Pages.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/model/ShapeGroup.js
+%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/AnnotationSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/ChartSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/ChartSettingsAdvanced.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/FileMenu.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/FormSettings.template
+%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/FormSettingsAdvanced.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/ImageSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/ImageSettingsAdvanced.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/LeftMenu.template
@@ -5799,6 +5925,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/RightMenu.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/ShapeSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/ShapeSettingsAdvanced.template
+%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/SignatureSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/StatusBar.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/TableSettings.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/TableSettingsAdvanced.template
@@ -5806,6 +5933,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/Toolbar.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/ToolbarView.template
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/template/Viewport.template
+%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/AnnotationSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/ChartSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/ChartSettingsAdvanced.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/DocumentHolder.js
@@ -5813,7 +5941,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/FileMenu.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/FileMenuPanels.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/FormSettings.js
-%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/FormatSettingsDialog.js
+%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/FormSettingsAdvanced.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/FormsTab.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/HyperlinkSettingsDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/ImageSettings.js
@@ -5825,9 +5953,11 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/ParagraphSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/ParagraphSettingsAdvanced.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/RedactTab.js
+%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/RemoveMetaDlg.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/RightMenu.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/ShapeSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/ShapeSettingsAdvanced.js
+%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/SignatureSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/Statusbar.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/TableSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/app/view/TableSettingsAdvanced.js
@@ -6171,9 +6301,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/fr/search/js/page-search.js
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/fr/search/search.html
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/big.png
-%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/html_plugin.gif
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/icons.png
-%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/speechinput_plugin.gif
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/sprite.css
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/src/big/checkbox_checked.png
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/src/icons/about.png
@@ -6228,10 +6356,6 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/src/icons/versionhistoryicon.png
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/src/icons/zoomin.png
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/src/icons/zoomout.png
-%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/telegram.gif
-%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/thesaurus_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/translator_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/images/typograf_plugin.gif
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/pt/Contents.json
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/pt/HelpfulHints/About.htm
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/help/pt/HelpfulHints/AdvancedSettings.htm
@@ -6431,6 +6555,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/img/blank.svg
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/img/favicon.ico
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/img/file-template.svg
+%%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/img/form-points.svg
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/img/iconsbig.png
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/img/iconsbig@1.25x.png
 %%WWWDIR%%/documentserver/web-apps/apps/pdfeditor/main/resources/img/iconsbig@1.5x.png
@@ -6527,10 +6652,10 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/DocumentHolderExt.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/LeftMenu.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/Main.js
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/MasterTabs.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/Print.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/RightMenu.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/Search.js
-%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/SlideMasterTab.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/Statusbar.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/Toolbar.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/controller/Transitions.js
@@ -6569,14 +6694,17 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/DocumentHolder.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/DocumentHolderExt.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/DocumentPreview.js
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/ExportAnimatedDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/FileMenu.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/FileMenuPanels.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/GridSettings.js
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/HandoutMasterTab.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/HeaderFooterDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/HyperlinkSettingsDialog.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/ImageSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/ImageSettingsAdvanced.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/LeftMenu.js
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/NotesMasterTab.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/ParagraphSettings.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/ParagraphSettingsAdvanced.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/app/view/RightMenu.js
@@ -6661,6 +6789,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/HelpfulHints/UsingChat.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/ProgramInterface/AnimationTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/ProgramInterface/DesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/ProgramInterface/DrawTab.htm
@@ -6761,9 +6890,11 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/insert_symbol_window2.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/insert_symbols_windows.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/interface/animationtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/interface/chartdesigntab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/interface/collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/interface/designtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/interface/desktop_animationtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/interface/desktop_chartdesigntab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/interface/desktop_collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/interface/desktop_designtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/de/images/interface/desktop_drawtab.png
@@ -6863,6 +6994,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/HelpfulHints/UsingChat.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/AnimationTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/DesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/DrawTab.htm
@@ -6963,9 +7095,11 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/insert_symbol_window2.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/insert_symbols_windows.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/animationtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/chartdesigntab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/designtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_animationtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_chartdesigntab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_designtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_drawtab.png
@@ -7065,6 +7199,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/es/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/es/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/es/HelpfulHints/UsingChat.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/es/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/es/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/es/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/es/ProgramInterface/HomeTab.htm
@@ -7170,6 +7305,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/HelpfulHints/UsingChat.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/AnimationTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/DesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/DrawTab.htm
@@ -7348,10 +7484,10 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/search/indexes.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/search/search.html
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/big.png
-%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/highlight_plugin.gif
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/highlight_plugin.webp
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/icons.png
-%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/image_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/rainbow.gif
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/image_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/rainbow.webp
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/sprite.css
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/src/big/bordersize.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/src/big/bordertype.png
@@ -7602,10 +7738,10 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/src/icons/zoom_icon.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/src/icons/zoomin.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/src/icons/zoomout.png
-%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/telegram.gif
-%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/thesaurus_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/translator_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/youtube_plugin.gif
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/telegram.webp
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/thesaurus_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/translator_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/images/youtube_plugin.webp
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/Contents.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/HelpfulHints/About.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/HelpfulHints/AdvancedSettings.htm
@@ -7616,6 +7752,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/HelpfulHints/UsingChat.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/it/ProgramInterface/HomeTab.htm
@@ -7734,6 +7871,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/pt/HelpfulHints/UsingChat.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/pt/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/pt/ProgramInterface/AnimationTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/pt/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/pt/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/pt/ProgramInterface/DesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/pt/ProgramInterface/DrawTab.htm
@@ -7930,6 +8068,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/HelpfulHints/UsingChat.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/AnimationTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/FileTab.htm
@@ -8295,6 +8434,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/tr/HelpfulHints/UsingChat.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/tr/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/tr/ProgramInterface/AnimationTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/tr/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/tr/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/tr/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/tr/ProgramInterface/HomeTab.htm
@@ -8495,7 +8635,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/img/v2/iconssmall@2x.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/symboltable/ru.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/symboltable/zh-TW.json
-%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/css/923.03703c0aaaf383d983b3.css
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/css/923.3be153e9fba3e48427c2.css
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/css/app.9c160f9d9d045320aaa4.css
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/css/framework7-rtl.css
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/css/framework7.css
@@ -8563,6 +8703,9 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/resources/img/bullets/bullet-rombus.svg
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/resources/img/bullets/bullet-square.svg
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/resources/img/charts/chart-100-stacked-markers.svg
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/resources/img/charts/chart-26.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/resources/img/charts/chart-27.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/resources/img/charts/chart-28.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/resources/img/charts/chart-area-normal.svg
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/resources/img/charts/chart-area-pstack.svg
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/resources/img/charts/chart-area-stack.svg
@@ -9534,6 +9677,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/HelpfulHints/VersionHistory.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/ProgramInterface/DataTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/ProgramInterface/DrawTab.htm
@@ -9734,7 +9878,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/average_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/blankerror_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/cellvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/cellvalueformula.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/cellvalueformula.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/comparison.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/databars.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/date_example.png
@@ -9749,7 +9893,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/text_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/topbottom_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/topbottomvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/uniqueduplicates.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/uniqueduplicates.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting/valueis_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting_dropdown.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/conditionalformatting_hometab.png
@@ -9930,13 +10074,13 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/hex2dec.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/hex2oct.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/hlookup.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/hlookup_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/hlookup_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/hour.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/hyperlinkfunction.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/hypgeom-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/hypgeomdist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/iferror.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/iferror_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/iferror_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/iffalse.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/ifna.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/ifs.png
@@ -9984,8 +10128,10 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/insertfunctionwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/insertslicer_window.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/intercept.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/interface/chartdesigntab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/interface/collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/interface/datatab.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/interface/desktop_chartdesigntab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/interface/desktop_collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/interface/desktop_datatab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/interface/desktop_drawtab.png
@@ -10051,7 +10197,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/lognorm-inv.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/lognormdist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/lookup.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/lookup_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/lookup_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/lower.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/managerules.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/margins.png
@@ -10080,7 +10226,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/mode-sngl.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/mode.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/month.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/move_sheet.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/move_sheet.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/mround.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/multilevelstructure.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/multinomial.png
@@ -10320,7 +10466,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/subtotal.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/subtotal2.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/sumif.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/sumif_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/sumif_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/sumifs.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/summary.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/de/images/sumproduct.png
@@ -10922,6 +11068,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/HelpfulHints/VersionHistory.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/DataTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/DrawTab.htm
@@ -11123,7 +11270,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/average_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/blankerror_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/cellvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/cellvalueformula.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/cellvalueformula.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/comparison.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/databars.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/date_example.png
@@ -11138,7 +11285,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/text_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/topbottom_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/topbottomvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/uniqueduplicates.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/uniqueduplicates.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting/valueis_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting_dropdown.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/conditionalformatting_hometab.png
@@ -11326,14 +11473,14 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/hex2dec.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/hex2oct.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/hlookup.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/hlookup_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/hlookup_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/hour.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/hstack.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/hyperlinkfunction.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/hypgeom-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/hypgeomdist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/iferror.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/iferror_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/iferror_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/iffalse.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/ifna.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/ifs.png
@@ -11382,8 +11529,10 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/insertslicer_window.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/int.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/intercept.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/chartdesigntab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/datatab.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_chartdesigntab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_datatab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_drawtab.png
@@ -11450,7 +11599,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/lognorm-inv.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/lognormdist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/lookup.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/lookup_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/lookup_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/lower.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/managerules.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/margins.png
@@ -11479,7 +11628,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/mode-sngl.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/mode.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/month.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/move_sheet.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/move_sheet.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/mround.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/multilevelstructure.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/multinomial.png
@@ -11735,7 +11884,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/subtotal2.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sum.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sumif.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sumif_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sumif_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sumifs.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/summary.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sumproduct.png
@@ -12308,6 +12457,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/es/HelpfulHints/Navigation.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/es/HelpfulHints/Search.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/es/HelpfulHints/SupportedFormats.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/es/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/es/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/es/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/es/ProgramInterface/HomeTab.htm
@@ -13408,6 +13558,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/HelpfulHints/VersionHistory.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/DataTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/DrawTab.htm
@@ -13598,7 +13749,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/average_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/blankerror_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/cellvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/cellvalueformula.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/cellvalueformula.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/comparison.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/databars.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/date_example.png
@@ -13613,7 +13764,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/text_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/topbottom_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/topbottomvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/uniqueduplicates.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/uniqueduplicates.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting/valueis_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting_dropdown.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/conditionalformatting_rightclick.png
@@ -13792,16 +13943,16 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hex2bin.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hex2dec.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hex2oct.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hlookup.gif
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hlookup.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hlookup.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hour.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hyperlinkfunction.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hyperlinkwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hyperlinkwindow2.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hypgeom-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/hypgeomdist.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/iferror.gif
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/iferror.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/iferror.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/iffalse.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/ifna.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/ifs.png
@@ -13916,8 +14067,8 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/lognorm-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/lognorm-inv.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/lognormdist.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/lookup.gif
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/lookup.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/lookup.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/lower.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/mailmerge_options.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/managerules.png
@@ -13946,7 +14097,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/mode-sngl.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/mode.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/month.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/move_sheet.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/move_sheet.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/mround.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/multilevelstructure.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/multinomial.png
@@ -14191,8 +14342,8 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/substitute.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/subtotal.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/subtotal2.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/sumif.gif
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/sumif.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/sumif.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/sumifs.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/summary.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/sumproduct.png
@@ -14299,10 +14450,10 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/search/indexes.js
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/search/search.html
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/big.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/highlight_plugin.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/highlight_plugin.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/icons.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/image_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/rainbow.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/image_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/rainbow.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/sprite.css
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/src/big/autofill.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/src/big/autoforeach.png
@@ -14625,10 +14776,10 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/src/icons/zoom_icon.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/src/icons/zoomin.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/src/icons/zoomout.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/telegram.gif
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/thesaurus_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/translator_plugin.gif
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/youtube_plugin.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/telegram.webp
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/thesaurus_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/translator_plugin.webp
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/images/youtube_plugin.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/Contents.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/Functions/abs.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/Functions/accrint.htm
@@ -15090,6 +15241,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/HelpfulHints/Search.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/HelpfulHints/SupportedFormats.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/ProgramInterface/DataTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/it/ProgramInterface/FileTab.htm
@@ -16224,6 +16376,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/HelpfulHints/VersionHistory.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/ProgramInterface/DataTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/ProgramInterface/DrawTab.htm
@@ -16419,7 +16572,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/average_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/blankerror_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/cellvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/cellvalueformula.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/cellvalueformula.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/comparison.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/databars.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/date_example.png
@@ -16434,7 +16587,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/text_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/topbottom_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/topbottomvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/uniqueduplicates.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/uniqueduplicates.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting/valueis_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting_dropdown.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/conditionalformatting_hometab.png
@@ -16622,14 +16775,14 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/hex2dec.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/hex2oct.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/hlookup.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/hlookup_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/hlookup_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/hour.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/hstack.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/hyperlinkfunction.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/hypgeom-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/hypgeomdist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/iferror.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/iferror_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/iferror_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/iffalse.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/ifna.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/ifs.png
@@ -16744,7 +16897,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/lognorm-inv.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/lognormdist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/lookup.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/lookup_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/lookup_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/lower.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/managerules.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/margins.png
@@ -16773,7 +16926,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/mode-sngl.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/mode.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/month.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/move_sheet.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/move_sheet.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/mround.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/multilevelstructure.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/multinomial.png
@@ -17020,7 +17173,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/subtotal2.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/sum.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/sumif.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/sumif_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/sumif_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/sumifs.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/summary.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/pt/images/sumproduct.png
@@ -17629,6 +17782,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/HelpfulHints/VersionHistory.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/ProgramInterface/DataTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/ProgramInterface/DrawTab.htm
@@ -17806,7 +17960,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/average_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/blankerror_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/cellvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/cellvalueformula.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/cellvalueformula.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/comparison.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/databars.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/date_example.png
@@ -17821,7 +17975,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/text_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/topbottom_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/topbottomvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/uniqueduplicates.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/uniqueduplicates.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting/valueis_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting_dropdown.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/conditionalformatting_rightclick.png
@@ -17995,14 +18149,14 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/hex2bin.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/hex2dec.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/hex2oct.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/hlookup.gif
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/hlookup.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/hlookup.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/hour.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/hyperlinkfunction.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/hypgeom-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/hypgeomdist.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/iferror.gif
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/iferror.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/iferror.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/iffalse.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/ifna.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/ifs.png
@@ -18113,8 +18267,8 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/lognorm-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/lognorm-inv.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/lognormdist.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/lookup.gif
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/lookup.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/lookup.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/lower.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/managerules.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/match.png
@@ -18137,7 +18291,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/mode-sngl.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/mode.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/month.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/move_sheet.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/move_sheet.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/mround.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/multilevelstructure.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/multinomial.png
@@ -18364,8 +18518,8 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/substitute.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/subtotal.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/subtotal2.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/sumif.gif
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/sumif.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/sumif.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/sumifs.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/summary.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/sumproduct.png
@@ -19157,7 +19311,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/average_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/blankerror_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/cellvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/cellvalueformula.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/cellvalueformula.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/comparison.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/databars.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/date_example.png
@@ -19172,7 +19326,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/text_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/topbottom_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/topbottomvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/uniqueduplicates.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/uniqueduplicates.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting/valueis_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting_dropdown.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/conditionalformatting_hometab.png
@@ -19360,14 +19514,14 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/hex2dec.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/hex2oct.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/hlookup.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/hlookup_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/hlookup_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/hour.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/hstack.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/hyperlinkfunction.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/hypgeom-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/hypgeomdist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/iferror.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/iferror_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/iferror_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/iffalse.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/ifna.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/ifs.png
@@ -19481,7 +19635,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/lognorm-inv.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/lognormdist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/lookup.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/lookup_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/lookup_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/lower.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/managerules.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/margins.png
@@ -19510,7 +19664,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/mode-sngl.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/mode.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/month.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/move_sheet.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/move_sheet.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/mround.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/multilevelstructure.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/multinomial.png
@@ -19760,7 +19914,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/subtotal2.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/sum.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/sumif.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/sumif_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/sumif_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/sumifs.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/summary.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/sr-Latn/images/sumproduct.png
@@ -20344,6 +20498,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/HelpfulHints/SpellChecking.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/HelpfulHints/VersionHistory.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/ProgramInterface/ChartDesignTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/ProgramInterface/DataTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/ProgramInterface/FileTab.htm
@@ -20527,7 +20682,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/average_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/blankerror_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/cellvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/cellvalueformula.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/cellvalueformula.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/comparison.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/databars.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/date_example.png
@@ -20543,7 +20698,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/text_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/topbottom_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/topbottomvalue.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/uniqueduplicates.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/uniqueduplicates.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting/valueis_example.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting_dropdown.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/conditionalformatting_hometab.png
@@ -20722,13 +20877,13 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/hex2dec.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/hex2oct.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/hlookup.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/hlookup_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/hlookup_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/hour.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/hyperlinkfunction.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/hypgeom-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/hypgeomdist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/iferror.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/iferror_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/iferror_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/iffalse.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/ifna.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/ifs.png
@@ -20839,7 +20994,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/lognorm-inv.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/lognormdist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/lookup.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/lookup_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/lookup_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/lower.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/managerules.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/match.png
@@ -20867,7 +21022,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/mode-sngl.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/mode.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/month.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/move_sheet.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/move_sheet.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/mround.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/multilevelstructure.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/multinomial.png
@@ -21101,7 +21256,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/subtotal2.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/sum.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/sumif.png
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/sumif_function.gif
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/sumif_function.webp
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/sumifs.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/summary.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/tr/images/sumproduct.png
@@ -21251,7 +21406,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/img/v2/iconssmall@2x.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/symboltable/ru.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/symboltable/zh-TW.json
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/css/611.f7bd7125a45f99df274b.css
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/css/611.a4b172d62b07a979d29c.css
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/css/app.9c160f9d9d045320aaa4.css
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/css/framework7-rtl.css
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/css/framework7.css
@@ -21384,6 +21539,9 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/resources/img/about/logo-white_s.svg
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/resources/img/about/logo_s.svg
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/resources/img/charts/chart-100-stacked-markers.svg
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/resources/img/charts/chart-26.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/resources/img/charts/chart-27.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/resources/img/charts/chart-28.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/resources/img/charts/chart-area-normal.svg
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/resources/img/charts/chart-area-pstack.svg
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/resources/img/charts/chart-area-stack.svg
@@ -21787,7 +21945,7 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/main/resources/img/v2/iconssmall@1.75x.png
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/main/resources/img/v2/iconssmall@2.5x.svg
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/main/resources/img/v2/iconssmall@2x.png
-%%WWWDIR%%/documentserver/web-apps/apps/visioeditor/mobile/css/935.b6d9806a551c3b23d80a.css
+%%WWWDIR%%/documentserver/web-apps/apps/visioeditor/mobile/css/935.513cfdd47b7e77d844f0.css
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/mobile/css/app.9c160f9d9d045320aaa4.css
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/mobile/css/framework7-rtl.css
 %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/mobile/css/framework7.css
@@ -22185,28 +22343,28 @@ lib/libooxmlsignature.so
 %%WWWDIR%%/documentserver/web-apps/vendor/requirejs/require.js
 %%WWWDIR%%/documentserver/web-apps/vendor/socketio/socket.io.min.js
 %%WWWDIR%%/documentserver/web-apps/vendor/underscore/underscore-min.js
+%%WWWDIR%%/documentserver/web-apps/vendor/underscore/underscore-umd.js.map
 %%WWWDIR%%/documentserver/web-apps/vendor/underscore/underscore.js
 %%WWWDIR%%/documentserver/web-apps/vendor/xregexp/xregexp-all-min.js
 @dir %%ETCDIR%%/documentserver/nginx/includes
 @dir %%ETCDIR%%/documentserver/nginx
 @dir %%ETCDIR%%/documentserver
 @dir %%ETCDIR%%
-@owner onlyoffice
-@group onlyoffice
+@owner %%DS_USERNAME%%
+@group %%DS_GROUPNAME%%
 @dir %%WWWDIR%%/Data
 @dir %%WWWDIR%%/documentserver/server/Common/config/log4js
 @dir %%WWWDIR%%/documentserver/server/DocService/sharp
-@dir /var/db/onlyoffice/documentserver/App_Data/cache/files
-@dir /var/db/onlyoffice/documentserver/App_Data/cache
-@dir /var/db/onlyoffice/documentserver/App_Data/docbuilder
-@dir /var/db/onlyoffice/documentserver/App_Data
-@dir /var/db/onlyoffice/documentserver
-@dir /var/db/onlyoffice
-@dir /var/log/onlyoffice/documentserver/converter
-@dir /var/log/onlyoffice/documentserver/docservice
-@dir /var/log/onlyoffice/documentserver/metrics
-@dir /var/log/onlyoffice/documentserver
-@dir /var/log/onlyoffice
+@dir %%DS_DBDIR%%/App_Data/cache/files
+@dir %%DS_DBDIR%%/App_Data/cache
+@dir %%DS_DBDIR%%/App_Data/docbuilder
+@dir %%DS_DBDIR%%/App_Data
+@dir %%DS_DBDIR%%
+@dir %%DS_DBROOT%%
+@dir %%DS_LOGDIR%%/docservice
+@dir %%DS_LOGDIR%%/metrics
+@dir %%DS_LOGDIR%%
+@dir %%DS_LOGROOT%%
 @group
 @owner
 @dir %%WWWDIR%%/documentserver/document-formats
@@ -22217,6 +22375,7 @@ lib/libooxmlsignature.so
 @dir %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/img/toolbar
 @dir %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/img/toolbar
 @dir %%WWWDIR%%/documentserver/web-apps/apps/visioeditor/main/resources/img/toolbar
+@preunexec find %D/%%WWWDIR%%/documentserver -type f -name '*.gz' -delete
 @preunexec rm -f %D/%%ETCDIR%%/documentserver/nginx/includes/ds-cache.conf
 @preunexec rm -rf %D/%%WWWDIR%%/documentserver/fonts/*
 @preunexec rm -f %D/%%WWWDIR%%/documentserver/sdkjs/cell/sdk-all.cache

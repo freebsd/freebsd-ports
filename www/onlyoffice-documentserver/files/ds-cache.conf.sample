@@ -1,0 +1,2 @@
+# Production ds-cache.conf is created by running documentserver-flush-cache
+set $cache_tag "initial";

@@ -14,5 +14,5 @@
 -           $$PWD/md4c/src/md4c-html.c \
 -           $$PWD/md4c/src/entity.c \
 -           $$PWD/md2html.cpp
-+INCLUDEPATH += /usr/local/include
++INCLUDEPATH += %%LOCALBASE%%/include
 +LIBS        += -L%%LOCALBASE%%/lib -lmd4c -lmd4c-html

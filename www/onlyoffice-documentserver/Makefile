@@ -1,7 +1,6 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.4.0
-PORTREVISION=	4
+DISTVERSION=	10.0.0
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		https://nodejs.org/dist/v${_PKGFETCH_NODE_VERSION}/:source2 \
@@ -26,20 +25,21 @@ ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and arm64
 
 # node version used with "npm install" inside ${WRKSRC}/yao-pkg
 # kept in sync with patch-build__tools_scripts_build__server.py and patch-document-server-package_Makefile
-_DS_BUILD=		129
-_PKGFETCH_NODE_VERSION=	24.21.0
-_NPM_CACHE_TAG=		${_DS_TAGNAME}-202609220214
+_DS_BUILD=		169
+_PKGFETCH_NODE_VERSION=	26.12.1
+_NPM_CACHE_TAG=		${_DS_TAGNAME}-202610260059
 _HYPHEN_VERSION=	2.8.9
 # end of cache build config
 
 _NODE_DISTFILE=		node-v${_PKGFETCH_NODE_VERSION}.tar.gz
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
+		asio>0:net/asio \
 		boost-libs>0:devel/boost-libs \
 		glib>=2.54:devel/glib20 \
 		gn:devel/gn \
 		ninja:devel/ninja \
-		npm:www/npm-node24 \
+		npm:www/npm-node26 \
 		optipng:graphics/optipng
 
 # Need libvips because npm module sharp requires it on Unix OS's
@@ -61,16 +61,17 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLAVOR} \
-		gsed:textproc/gsed \
 		nginx:www/nginx \
-		pwgen:sysutils/pwgen \
 		webfonts>=0:x11-fonts/webfonts
 
-USES=		autoreconf:build dos2unix fakeroot gmake gnome iconv:wchar_t \
+USES=		autoreconf:build cpe dos2unix fakeroot gmake gnome iconv:wchar_t \
 		java:build localbase pkgconfig python:build qt:6 ssl trigger
 
 BROKEN_SSL=	boringssl libressl libressl-devel
 BROKEN_SSL_REASON=	upstream Node.js requires OpenSSL
+
+CPE_VENDOR=	onlyoffice
+CPE_PRODUCT=	document_server
 
 DOS2UNIX_FILES=	document-server-package/common/documentserver/nginx/includes/http-common.conf.m4
 
@@ -91,7 +92,8 @@ GH_TUPLE=	ONLYOFFICE:build_tools:${_DS_TAGNAME}:buildtools/build_tools \
 		ONLYOFFICE:web-apps:${_DS_TAGNAME}:webapps/web-apps \
 		ONLYOFFICE:DocumentBuilder:${DISTVERSIONPREFIX}${DISTVERSION}:document_builder/DocumentBuilder \
 		ONLYOFFICE:onlyoffice.github.io:b26d001664d771df4f663d2d3ba7dd4a188b6cab:sdkjs_plugins_v1/onlyoffice.github.io \
-		jasenhuang:katana-parser:be6df45:jasenhuang_katana/core/Common/3dParty/html/katana-parser
+		jasenhuang:katana-parser:be6df45:jasenhuang_katana/core/Common/3dParty/html/katana-parser \
+		GNOME:libxml2:v2.15.4:gnome_xml2/core/Common/3dParty/libxml/libxml2
 
 JAVA_VERSION=	11+
 
@@ -119,21 +121,29 @@ WWWDIR=		${PREFIX}/www/onlyoffice
 
 BINARY_ALIAS=	python=${PYTHON_CMD} strip=true
 
-SUB_FILES=	onlyoffice.newsyslog.sample pkg-message
+SUB_FILES=	onlyoffice.newsyslog.sample pkg-message \
+		ds-docservice.conf ds-metrics.conf
 SUB_LIST=	DS_GROUPNAME=${DS_GROUPNAME} \
 		DS_USERNAME=${DS_USERNAME} \
-		ETCDIR=${ETCDIR} \
-		PREFIX=${PREFIX} \
-		WWWDIR=${WWWDIR}
+		DS_LOGDIR=${DS_LOGDIR} \
+		DS_DBDIR=${DS_DBDIR}
 
 DS_USERNAME=	onlyoffice
 DS_GROUPNAME=	onlyoffice
+DS_LOGROOT=	/var/log/onlyoffice
+DS_DBROOT=	/var/db/onlyoffice
+DS_LOGDIR=	${DS_LOGROOT}/documentserver
+DS_DBDIR=	${DS_DBROOT}/documentserver
 
 USERS=		${DS_USERNAME}
 GROUPS=		${DS_GROUPNAME}
 
 PLIST_SUB=	DS_GROUPNAME=${DS_GROUPNAME} \
 		DS_USERNAME=${DS_USERNAME} \
+		DS_LOGROOT=${DS_LOGROOT} \
+		DS_DBROOT=${DS_DBROOT} \
+		DS_LOGDIR=${DS_LOGDIR} \
+		DS_DBDIR=${DS_DBDIR} \
 		SHARP_NODE_FILE=${_SHARP_NODE_FILE}
 
 OPTIONS_DEFINE_amd64=		LLVM_PORTS
@@ -200,57 +210,69 @@ post-extract:
 
 # linux has moved to systemd init files, continue to using supervisord for now
 	${MKDIR} ${WRKSRC}/document-server-package/common/documentserver/supervisor
-.for i in ds-docservice.conf ds-metrics.conf ds.conf
-	${CP} ${FILESDIR}/${i} \
+	${CP} ${FILESDIR}/ds.conf \
 		${WRKSRC}/document-server-package/common/documentserver/supervisor
-.endfor
+
+# Files whose only placeholder is %%LOCALBASE%% (paths relative to ${WRKSRC})
+_LOCALBASE_FILES=	core/Apple/IWork.pro \
+			core/Common/3dParty/boost/boost.pri \
+			core/Common/3dParty/brotli/brotli.pri \
+			core/Common/3dParty/heif/heif.pri \
+			core/Common/3dParty/html/gumbo.pri \
+			core/Common/3dParty/icu/icu.pri \
+			core/Common/3dParty/md/md2html.pri \
+			core/Common/3dParty/v8_89/v8/buildtools/third_party/libc++/BUILD.gn \
+			core/DesktopEditor/fontengine/ApplicationFonts.cpp \
+			core/X2tConverter/build/Qt/X2tConverter.pri \
+			web-apps/build/patches/optipng-bin+5.1.0.patch
+
+_PKGFETCH_NODE_MAJOR=	${_PKGFETCH_NODE_VERSION:C/^([0-9]+)\..*/\1/}
 
 pre-configure:
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/core/Apple/IWork.pro \
-		${WRKSRC}/core/Common/3dParty/boost/boost.pri \
-		${WRKSRC}/core/Common/3dParty/brotli/brotli.pri \
-		${WRKSRC}/core/Common/3dParty/heif/heif.pri \
-		${WRKSRC}/core/Common/3dParty/html/gumbo.pri \
-		${WRKSRC}/core/Common/3dParty/icu/icu.pri \
-		${WRKSRC}/core/Common/3dParty/md/md2html.pri \
-		${WRKSRC}/core/Common/3dParty/v8_89/v8/build/toolchain/gcc_toolchain.gni \
-		${WRKSRC}/core/Common/3dParty/v8_89/v8/buildtools/third_party/libc++/BUILD.gn \
-		${WRKSRC}/core/DesktopEditor/fontengine/ApplicationFonts.cpp \
-		${WRKSRC}/core/X2tConverter/build/Qt/X2tConverter.pri \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-generate-allfonts.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-jwt-status.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-docservice.conf \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-metrics.conf \
-		${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch
-	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|' -e 's|%%CXX%%|${CXX}|' \
-		${WRKSRC}/core/Common/3dParty/v8_89/v8/build/toolchain/gcc_toolchain.gni \
+# Files that only need %%LOCALBASE%%
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${_LOCALBASE_FILES:S|^|${WRKSRC}/|}
+
+# Files that need several placeholders: one pass per file
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|%%CC%%|${CC}|g' \
+		-e 's|%%CXX%%|${CXX}|g' \
+		${WRKSRC}/core/Common/3dParty/v8_89/v8/build/toolchain/gcc_toolchain.gni
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' \
+		-e 's|%%CXX%%|${CXX}|g' \
 		${WRKSRC}/core/Common/base.pri
-	@${REINPLACE_CMD} 's|%%WRKDIR%%|${WRKDIR}|' \
+	@${REINPLACE_CMD} -e 's|%%WRKDIR%%|${WRKDIR}|g' \
+		-e 's|%%WRKSRC%%|${WRKSRC}|g' \
+		-e 's|%%PKGFETCH_NODE_MAJOR_VERSION%%|${_PKGFETCH_NODE_MAJOR}|g' \
+		-e 's|%%WWWDIR%%|${WWWDIR}|g' \
+		-e 's|%%ETCDIR%%|${ETCDIR}|g' \
+		-e 's|%%DS_USERNAME%%|${DS_USERNAME}|g' \
+		-e 's|%%DS_GROUPNAME%%|${DS_GROUPNAME}|g' \
+		-e 's|%%DS_LOGDIR%%|${DS_LOGDIR}|g' \
+		-e 's|%%DS_DBDIR%%|${DS_DBDIR}|g' \
 		${WRKSRC}/document-server-package/Makefile
-	@${REINPLACE_CMD} 's|%%WRKSRC%%|${WRKSRC}|' \
-		${WRKSRC}/build_tools/scripts/build_js.py \
-		${WRKSRC}/build_tools/scripts/build_server.py \
-		${WRKSRC}/document-server-package/Makefile
-	@${REINPLACE_CMD} 's|%%PKGFETCH_NODE_MAJOR_VERSION%%|${_PKGFETCH_NODE_VERSION:C/^([0-9]+)\..*/\1/}|' \
-		${WRKSRC}/build_tools/scripts/build_server.py \
-		${WRKSRC}/document-server-package/Makefile
-	@${REINPLACE_CMD} -e 's|/var/lib|/var/db|' -e 's|/var/www|${LOCALBASE}/www|' \
-			  -e 's|/usr/share|${LOCALBASE}/share|' -e 's|/etc|${LOCALBASE}/etc|' \
-		${WRKSRC}/server/Common/config/production-freebsd.json \
-		${WRKSRC}/server/Common/config/development-freebsd.json
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' -e 's|%%ETCDIR%%|${ETCDIR}|' \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-flush-cache.sh.m4 \
-		${WRKSRC}/document-server-package/Makefile
-	@${REINPLACE_CMD} -e 's|%%OPENSSL_INC%%|${OPENSSLINC}|' -e 's|%%OPENSSL_LIB%%|${OPENSSLLIB}|' \
+	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|g' \
+		-e 's|%%PKGFETCH_NODE_MAJOR_VERSION%%|${_PKGFETCH_NODE_MAJOR}|g' \
+		${WRKSRC}/build_tools/scripts/build_server.py
+	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|g' \
+		${WRKSRC}/build_tools/scripts/build_js.py
+	@${REINPLACE_CMD} -e 's|%%OPENSSL_INC%%|${OPENSSLINC}|g' \
+		-e 's|%%OPENSSL_LIB%%|${OPENSSLLIB}|g' \
 		${WRKDIR}/extra-patch-pkg-fetch_lib-es5_build.js \
 		${WRKSRC}/core/Common/3dParty/openssl/openssl.pri
-	@${REINPLACE_CMD} -e 's|%%QT_LIBDIR%%|${QT_LIBDIR}|' \
-			  -e 's|%%QT_VERSION%%|${QT6_VERSION}|' \
+	@${REINPLACE_CMD} -e 's|%%QT_LIBDIR%%|${QT_LIBDIR}|g' \
+		-e 's|%%QT_VERSION%%|${QT6_VERSION}|g' \
 		${WRKSRC}/build_tools/tools/freebsd/automate.py
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/core/Common/3dParty/libxml/config.h
+
+# Convert upstream Linux paths in the FreeBSD configs
+	@${REINPLACE_CMD} -e 's|/var/lib/onlyoffice|${DS_DBROOT}|g' \
+		-e 's|/var/www/onlyoffice|${WWWDIR}|g' \
+		-e 's|/etc/onlyoffice|${ETCDIR}|g' \
+		-e 's|/usr/share|${LOCALBASE}/share|g' \
+		${WRKSRC}/server/Common/config/production-freebsd.json \
+		${WRKSRC}/server/Common/config/development-freebsd.json
 	@${RM} ${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch.orig
 
 # Copy optimized shrinkwrap files from cache repo, overwriting upstream
@@ -303,7 +325,16 @@ do-install:
 # install the project
 # do not strip docservice, converter, metrics and json
 	cd ${WRKSRC}/document-server-package/common/documentserver/home && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/documentserver
-	${INSTALL_SCRIPT} ${WRKSRC}/document-server-package/common/documentserver/bin/*.sh ${STAGEDIR}${PREFIX}/bin
+.for script in \
+	documentserver-flush-cache \
+	documentserver-generate-allfonts \
+	documentserver-jwt-status \
+	documentserver-pluginsmanager \
+	documentserver-prepare4shutdown \
+	documentserver-static-gzip \
+	documentserver-update-securelink
+	${INSTALL_SCRIPT} ${WRKSRC}/document-server-package/common/documentserver/bin/${script} ${STAGEDIR}${PREFIX}/bin/
+.endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/document-server-package/common/documentserver/home/server/tools/all* ${STAGEDIR}${WWWDIR}/documentserver/server/tools
 	${INSTALL_PROGRAM} ${WRKSRC}/document-server-package/common/documentserver/home/server/FileConverter/bin/x2t ${STAGEDIR}${WWWDIR}/documentserver/server/FileConverter/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/document-server-package/common/documentserver/home/server/FileConverter/bin/docbuilder ${STAGEDIR}${WWWDIR}/documentserver/server/FileConverter/bin
@@ -317,6 +348,8 @@ do-install:
 		 ${STAGEDIR}${ETCDIR}/documentserver/logrotate
 	${RM} ${WRKSRC}/document-server-package/common/documentserver/config/*-mac.json ${WRKSRC}/document-server-package/common/documentserver/config/*-windows.json
 	cd ${WRKSRC}/document-server-package/common/documentserver/supervisor && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/supervisor "-name *\.conf"
+	${INSTALL_DATA} ${WRKDIR}/ds-docservice.conf ${WRKDIR}/ds-metrics.conf \
+		${STAGEDIR}${ETCDIR}/documentserver/supervisor
 	cd ${WRKSRC}/document-server-package/common/documentserver/logrotate && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/logrotate "-name *\.conf"
 	${INSTALL_DATA} ${WRKSRC}/document-server-package/common/documentserver/nginx/ds-ssl.conf.tmpl ${WRKSRC}/document-server-package/common/documentserver/nginx/ds-ssl.conf
 .for f in ds.conf ds-ssl.conf includes/http-common.conf includes/ds-common.conf \
@@ -324,7 +357,8 @@ do-install:
 	includes/ds-mime.types.conf
 	${INSTALL_DATA} ${WRKSRC}/document-server-package/common/documentserver/nginx/${f} ${STAGEDIR}${ETCDIR}/documentserver/nginx/${f}.sample
 .endfor
-	@echo "# Production ds-cache.conf is created automatically by documentserver-flush-cache.sh" > ${STAGEDIR}${ETCDIR}/documentserver/nginx/includes/ds-cache.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/ds-cache.conf.sample \
+		${STAGEDIR}${ETCDIR}/documentserver/nginx/includes/ds-cache.conf.sample
 	cd ${WRKSRC}/document-server-package/common/documentserver/nginx/includes && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/nginx/includes "-name *\.conf"
 	cd ${WRKSRC}/document-server-package/common/documentserver/config && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver
 	${INSTALL_DATA} ${FILESDIR}/local.json.sample ${STAGEDIR}${ETCDIR}/documentserver
@@ -339,17 +373,15 @@ do-install:
 		${STAGEDIR}${_SHARP_INSTALL_DIR}/${_SHARP_NODE_FILE}
 
 # create missing dir
-	${MKDIR} ${STAGEDIR}/var/log/onlyoffice/documentserver/docservice \
-		 ${STAGEDIR}/var/log/onlyoffice/documentserver/converter \
-		 ${STAGEDIR}/var/log/onlyoffice/documentserver/metrics \
-		 ${STAGEDIR}/var/db/onlyoffice/documentserver/App_Data/cache/files \
-		 ${STAGEDIR}/var/db/onlyoffice/documentserver/App_Data/docbuilder \
+	${MKDIR} ${STAGEDIR}${DS_LOGDIR}/docservice \
+		 ${STAGEDIR}${DS_LOGDIR}/metrics \
+		 ${STAGEDIR}${DS_DBDIR}/App_Data/cache/files \
+		 ${STAGEDIR}${DS_DBDIR}/App_Data/docbuilder \
 		 ${STAGEDIR}${WWWDIR}/Data \
 		 ${STAGEDIR}${WWWDIR}/documentserver/fonts
 
 post-install:
 # Remove unwanted files from STAGE
-	${RM} ${STAGEDIR}${PREFIX}/bin/documentserver-letsencrypt.sh
 	${RM} ${STAGEDIR}${WWWDIR}/documentserver/server/Common/config/*.bak
 	${RM} ${STAGEDIR}${WWWDIR}/documentserver/dictionaries/sl_SI/hyph_sl_SI.dic.bak
 

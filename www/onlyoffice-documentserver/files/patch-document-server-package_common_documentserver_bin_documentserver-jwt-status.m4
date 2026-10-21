@@ -1,5 +1,5 @@
---- document-server-package/common/documentserver/bin/documentserver-jwt-status.sh.m4.orig	2023-06-20 13:37:09 UTC
-+++ document-server-package/common/documentserver/bin/documentserver-jwt-status.sh.m4
+--- document-server-package/common/documentserver/bin/documentserver-jwt-status.m4.orig        2026-10-11 09:45:15 UTC
++++ document-server-package/common/documentserver/bin/documentserver-jwt-status.m4
 @@ -1,27 +1,27 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -9,8 +9,8 @@
  
 -CONF_DIR="/etc/M4_DS_PREFIX"
 -DIR="/var/www/M4_DS_PREFIX"
-+CONF_DIR="%%LOCALBASE%%/etc/M4_DS_PREFIX"
-+DIR="%%LOCALBASE%%/www/M4_DS_PREFIX"
++CONF_DIR="M4_DS_CONF"
++DIR="M4_DS_ROOT"
  
  LOCAL_CONFIG="${CONF_DIR}/local.json"
  DEFAULT_CONFIG="${CONF_DIR}/default.json"

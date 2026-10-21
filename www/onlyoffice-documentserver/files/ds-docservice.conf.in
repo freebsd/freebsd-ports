@@ -1,0 +1,13 @@
+[program:docservice]
+command=%%WWWDIR%%/documentserver/server/DocService/docservice
+directory=%%WWWDIR%%/documentserver/server/DocService
+user=%%DS_USERNAME%%
+environment=NODE_ENV=production-freebsd,NODE_CONFIG_DIR=%%ETCDIR%%/documentserver,NODE_DISABLE_COLORS=1
+stdout_logfile=%%DS_LOGDIR%%/docservice/out.log
+stdout_logfile_backups=0
+stdout_logfile_maxbytes=0
+stderr_logfile=%%DS_LOGDIR%%/docservice/err.log
+stderr_logfile_backups=0
+stderr_logfile_maxbytes=0
+autostart=true
+autorestart=true

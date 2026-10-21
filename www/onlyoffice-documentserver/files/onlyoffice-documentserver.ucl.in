@@ -3,7 +3,7 @@ trigger: {
 	type: lua
 	sandbox: false
 	script: <<EOS
-print("Running documentserver-generate-allfonts.sh to generate OnlyOffice fonts and themes...")
-pkg.exec({"%%PREFIX%%/bin/documentserver-generate-allfonts.sh"})
+print("Running documentserver-generate-allfonts to generate OnlyOffice fonts and themes...")
+pkg.exec({"%%PREFIX%%/bin/documentserver-generate-allfonts"})
 EOS
 }

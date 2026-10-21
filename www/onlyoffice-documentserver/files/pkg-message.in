@@ -28,7 +28,7 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
 
 3. Set up nginx:
   - Include the configuration appropriate for your deployment within
-    your %%PREFIX%%/etc/nginx/nginx.conf file:
+    your %%LOCALBASE%%/etc/nginx/nginx.conf file:
 
      HTTP:
        include %%ETCDIR%%/documentserver/nginx/ds.conf;
@@ -40,8 +40,8 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
    before use, including the listen directives, TLS configuration, and any site-
    specific settings.
 
-  - run documentserver-update-securelink.sh once for creating a verysecretstring
-Note: documentserver-update-securelink.sh updates only the packaged ds.conf, ds-ssl.conf,
+  - run documentserver-update-securelink once for creating a verysecretstring
+Note: documentserver-update-securelink updates only the packaged ds.conf, ds-ssl.conf,
 and local.json files in their default locations. If your nginx configuration uses custom
 copies or alternate paths, synchronize the secure_link_secret values manually.
 
@@ -49,7 +49,7 @@ copies or alternate paths, synchronize the secure_link_secret values manually.
     # service nginx start
 
 4. Install OnlyOffice plugins (you'll need internet):
-   # %%PREFIX%%/bin/documentserver-pluginsmanager.sh --update=%%PREFIX%%/www/onlyoffice/documentserver/sdkjs-plugins/plugin-list-default.json
+   # %%PREFIX%%/bin/documentserver-pluginsmanager --update=%%WWWDIR%%/documentserver/sdkjs-plugins/plugin-list-default.json
 
 5. Set up Onlyoffice with Nextcloud, if desired:
   - JWT is mandated within Onlyoffice Nextcloud app, requiring edits to %%ETCDIR%%/documentserver/local.json:
@@ -108,8 +108,8 @@ All configuration remains fully available through %%ETCDIR%%/documentserver/loca
 as before, with no loss of functionality for the community edition.
 
 You may safely remove any Admin Panel logs and configuration files:
-  # rm -rf /var/log/onlyoffice/documentserver/adminpanel
-  # rm -f %%ETCDIR%%/documentserver/supervisor/adminpanel.conf
+  # rm -rf %%DS_LOGDIR%%/adminpanel
+  # rm -f %%ETCDIR%%/documentserver/supervisor/ds-adminpanel.conf
 EOM
 }
 { type: upgrade
@@ -123,6 +123,49 @@ If upgrading from a version prior to 9.4.0, net/rabbitmq and any
 database client packages used solely by ONLYOFFICE Docs may be removed.
 After verifying proper operation, any database previously dedicated to
 ONLYOFFICE Docs may be archived and deleted.
+EOM
+}
+{ type: upgrade
+  maximum_version: 10.0.0
+  message: <<EOM
+Notice for users upgrading OnlyOffice Document Server to version 10.0.0 or later:
+
+Upstream has removed the `.sh` extension from all command-line administration
+and utility scripts located in %%PREFIX%%/bin.
+
+If you have custom shell scripts, crontab entries, monitoring checks, or
+external automation workflows that invoke these commands, you must update them
+to remove the trailing `.sh`.
+
+Examples of changed command names:
+  - documentserver-update-securelink.sh -> documentserver-update-securelink
+  - documentserver-flush-cache.sh     -> documentserver-flush-cache
+  - documentserver-generate-allfonts.sh -> documentserver-generate-allfonts
+  - documentserver-jwt-status.sh        -> documentserver-jwt-status
+  - documentserver-pluginsmanager.sh    -> documentserver-pluginsmanager
+  - documentserver-prepare4shutdown.sh  -> documentserver-prepare4shutdown
+  - documentserver-static-gzip.sh       -> documentserver-static-gzip
+
+Static gzip compression is now enabled by default. The generated nginx
+configuration uses "gzip_static on;", and the documentserver-generate-allfonts
+step creates the pre-compressed .gz files. This requires nginx to be built
+with the ngx_http_gzip_static_module (the HTTP_GZIP_STATIC option of the nginx
+port). Without it, nginx will reject the configuration. You can check with:
+
+  # nginx -V 2>&1 | grep -c http_gzip_static_module
+
+Static gzip is re-enabled in ds-docservice.conf whenever
+documentserver-static-gzip or documentserver-generate-allfonts runs,
+including on every upgrade of this package. To disable it permanently,
+delete the gzip_static lines from the file rather than commenting or setting
+them to off.
+
+The converter process now runs within the docservice process and is no longer
+built, run or needed. You may safely remove any converter logs and
+configuration files:
+
+  # rm -rf %%DS_LOGDIR%%/converter
+  # rm -f %%ETCDIR%%/documentserver/supervisor/ds-converter.conf
 EOM
 }
 ]
