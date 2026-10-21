@@ -1,8 +1,8 @@
 -- Disable the debug-runtime requirement so the release Boost libraries
 -- installed by devel/boost-libs are accepted on FreeBSD.
---- CMakeLists.txt.orig
+--- CMakeLists.txt.orig	2026-09-29 06:31:30 UTC
 +++ CMakeLists.txt
-@@ -192,6 +192,7 @@
+@@ -190,6 +190,7 @@ if(AUDI_BUILD_AUDI)
      # We rely on the modern BoostConfig.cmake package (CONFIG mode + imported
      # targets). First find only the Boost headers so we can inspect the detected
      # version before deciding which compiled components to request: newer Boost
