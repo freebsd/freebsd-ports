@@ -1,7 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.148
-PORTREVISION=	1
+DISTVERSION=	0.9.149
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -304,7 +303,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ordered-float-4.6.0 \
 		os_pipe-1.2.2 \
 		outref-0.5.2 \
-		owo-colors-4.3.0 \
+		owo-colors-4.4.0 \
 		parking_lot-0.12.4 \
 		parking_lot_core-0.9.11 \
 		pathdiff-0.2.3 \
@@ -375,7 +374,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustls-pki-types-1.12.0 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.15 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.22 \
 		rusty-fork-0.3.0 \
 		same-file-1.0.6 \
@@ -542,7 +541,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		web-sys-0.3.91 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.6 \
-		webpki-roots-1.0.0 \
+		webpki-roots-1.0.10 \
 		wezterm-bidi-0.2.3 \
 		wezterm-blob-leases-0.1.1 \
 		wezterm-color-types-0.3.0 \
