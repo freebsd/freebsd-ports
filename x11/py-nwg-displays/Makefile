@@ -1,11 +1,11 @@
 PORTNAME=	nwg-displays
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.4
+DISTVERSION=	0.5.0
 CATEGORIES=	x11 wayland python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tagattie@FreeBSD.org
-COMMENT=	Output management utility for sway and Hyprland
+COMMENT=	Output management utility for sway, Hyprland and Niri
 WWW=		https://github.com/nwg-piotr/nwg-displays
 
 LICENSE=	MIT
