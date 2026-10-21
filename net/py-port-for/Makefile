@@ -1,5 +1,5 @@
 PORTNAME=	port-for
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	net devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} '/DEFAULT_CONFIG_PATH/ s|/etc|${PREFIX}&|' ${WRKSRC}/port_for/store.py
+	@${REINPLACE_CMD} '/DEFAULT_CONFIG_PATH/ s|/etc|${PREFIX}&|' ${WRKSRC}/src/port_for/store.py
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest \
