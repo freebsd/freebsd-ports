@@ -3,7 +3,6 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
 DISTVERSION_llvm17=	17.0.0
 DISTVERSION_llvm16=	16.0.0
-DISTVERSION_llvm15=	15.0.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -28,7 +27,7 @@ EXPIRATION=	2026-12-25
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
 		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}
 
-FLAVORS=	${17 16 15:L:S/^/llvm/}
+FLAVORS=	${17 16:L:S/^/llvm/}
 
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
