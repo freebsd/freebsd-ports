@@ -1,3 +1,29 @@
+  <vuln vid="f1e61d76-cdb6-11f1-b15e-589cfc104230">
+    <topic>brotli -- out-of-bounds write permits remote code execution</topic>
+    <affects>
+<package>
+<name>brotli</name>
+<range><lt>1.2.1</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>-Brotli project reports:</p>
+	<blockquote cite="https://github.com/google/brotli/releases/tag/v1.2.1">
+	  <p>CVE-2026-111497: out-of-bounds write permits remote code execution.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-111497</cvename>
+      <url>https://github.com/google/brotli/releases/tag/v1.2.1</url>
+    </references>
+    <dates>
+      <discovery>2026-10-22</discovery>
+      <entry>2026-10-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="23eecf73-cd85-11f1-97dc-40b034429ecf">
     <topic>p5-DBI -- Prevent dbi_profile crash</topic>
     <affects>
