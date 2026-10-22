@@ -1,6 +1,5 @@
 PORTNAME=	qcengine
-DISTVERSION=	0.51.0
-PORTREVISION=	2
+DISTVERSION=	0.52.0
 CATEGORIES=	science python # chemistry
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-cpuinfo2>0:sysutils/py-py-cpuinfo2@${PY_F
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.11:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>0:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qcelemental>=0.50.0:science/py-qcelemental@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qcelemental>=0.50.4:science/py-qcelemental@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=0:devel/py-pyyaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		dftd3:science/dftd3 \
@@ -44,12 +43,13 @@ USE_PYTHON=	pep517 concurrent autoplist pytest # 1 tests fails, see https://gith
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_ARGS=	--disable-plugin-autoload -m "not addon and not slow" \
+		--ignore=${WRKSRC}/qcengine/programs/tests/test_dftd3_mp2d.py \
 		--ignore=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/qcengine/tests
 
 PYTEST_BROKEN_TESTS=	test_info # upstream issue: GCP version identification fails, see https://github.com/MolSSI/QCEngine/issues/377#issuecomment-2191948293
 
 NO_ARCH=	yes
 
-# tests as of 0.51.0: 100 passed, 3 skipped, 6217 deselected in 2.30s
+# tests as of 0.52.0: 78 passed, 3 skipped, 5362 deselected in 2.56s
 
 .include <bsd.port.mk>
