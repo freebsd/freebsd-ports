@@ -1,26 +1,37 @@
---- src/CMakeLists.txt.orig	2022-11-12 17:27:40 UTC
+--- src/CMakeLists.txt.orig	2026-09-27 15:25:08 UTC
 +++ src/CMakeLists.txt
-@@ -23,7 +23,13 @@ endif(WITH_GTK)
+@@ -29,6 +29,18 @@ if(WITH_NCURSES)
+ 	find_package(Curses REQUIRED)
+ 	if(CURSES_FOUND)
+ 		include_directories(${CURSES_INCLUDE_DIRS})
++		if(NOT NCURSES_VERSION)
++			# XXX: NCURSES_VERSION not defined on FreeBSD 13.x
++			find_package(Python REQUIRED)
++			execute_process(COMMAND ${Python_EXECUTABLE} -c
++				"import ctypes as ct; \
++				lib = ct.CDLL('${CURSES_CURSES_LIBRARY}'); \
++				lib.curses_version.restype = ct.c_char_p; \
++				print(lib.curses_version().decode('ascii') \
++				.split()[1])" COMMAND_ERROR_IS_FATAL ANY
++			OUTPUT_VARIABLE NCURSES_VERSION
++			OUTPUT_STRIP_TRAILING_WHITESPACE)
++		endif(NOT NCURSES_VERSION)
+ 	endif(CURSES_FOUND)
+ endif(WITH_NCURSES)
+ 
+@@ -219,13 +231,13 @@ if(WITH_GTK AND GTK3_FOUND)
+ endif(WITH_GTK AND GTK3_FOUND)
  
  # NCurses
- if(WITH_NCURSES)
--	pkg_check_modules(NCURSES ncursesw)
-+	# Assume ncurses from the base on FreeBSD
-+	if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-+		set(NCURSES_FOUND 1)
-+		set(NCURSES_LIBRARIES "-l:libncursesw.so")
-+	else()
-+		pkg_check_modules(NCURSES ncursesw)
-+	endif()
- 	if(NCURSES_FOUND)
- 		include_directories(${NCURSES_INCLUDE_DIRS})
- 		link_directories(${NCURSES_LIBRARY_DIRS})
-@@ -37,7 +43,7 @@ endif(WITH_NCURSES)
- 
- # Gettext
- if(Intl_FOUND)
--	include_directories(${CMAKE_BINARY_DIR}/po)
-+	include_directories(${Intl_INCLUDE_DIRS})
- endif(Intl_FOUND)
+-if(WITH_NCURSES AND NCURSES_FOUND)
++if(WITH_NCURSES AND CURSES_FOUND)
+ 	target_sources(${APP_EXEC}
+ 		PRIVATE
+ 		ui/ncurses.cpp
+ 		ui/ncurses.hpp
+ 	)
+-endif(WITH_NCURSES AND NCURSES_FOUND)
++endif(WITH_NCURSES AND CURSES_FOUND)
  
  # Libcpuid
+ if(WITH_LIBCPUID AND LIBCPUID_FOUND)
