@@ -1,5 +1,6 @@
 PORTNAME=	vtk
 DISTVERSION=	9.7.1
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -53,9 +54,9 @@ DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
 DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
 
 # Options
-OPTIONS_DEFINE=	DESIGNER DOCS OMPI PYTHON QT5 EXAMPLES
-OPTIONS_DEFAULT=	OMPI PYTHON QT5 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
-OMPI_DESC=	OpenMPI (Message Passing Interface) support
+OPTIONS_DEFINE=	DESIGNER DOCS MPICH PYTHON QT5 EXAMPLES
+OPTIONS_DEFAULT=	MPICH PYTHON QT5 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
+MPICH_DESC=	MPICH (Message Passing Interface) support
 DESIGNER_DESC=	Build the Qt Designer plugin
 OPTIONS_SUB=	yes
 
@@ -87,10 +88,10 @@ DESIGNER_CMAKE_BOOL=	QT_DESIGNER_PLUGIN
 DESIGNER_USE=		QT=designer
 DESIGNER_IMPLIES=	QT5
 
-OMPI_CMAKE_BOOL=	VTK_USE_MPI
-OMPI_USES=		mpi:openmpi
-OMPI_CMAKE_ON=		-DMPI_HOME=${LOCALBASE}/mpi/openmpi
-OMPI_LDFLAGS=		${MPI_LIBS}
+MPICH_CMAKE_BOOL=	VTK_USE_MPI
+MPICH_USES=		mpi
+MPICH_CMAKE_ON=		-DMPI_HOME=${MPI_HOME}
+MPICH_LDFLAGS=		${MPI_LIBS}
 
 JAVA_USES=		java
 JAVA_CMAKE_BOOL=	VTK_WRAP_JAVA
@@ -111,9 +112,8 @@ EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MPYTHON} && ${PORT_OPTIONS:MOMPI}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
+.if ${PORT_OPTIONS:MPYTHON} && ${PORT_OPTIONS:MMPICH}
+BUILD_RUN_DEPENDS=	${MPI4PY}
 .endif
 
 do-install-PYTHON-on:
