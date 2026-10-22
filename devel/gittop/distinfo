@@ -1,5 +1,5 @@
-TIMESTAMP = 1792059587
-SHA256 (go/devel_gittop/gittop-v0.5.0/v0.5.0.mod) = 228521eeac48038887558279828ceb81a7f0ab59545f5d6d7f61b00caa80dccd
-SIZE (go/devel_gittop/gittop-v0.5.0/v0.5.0.mod) = 2266
-SHA256 (go/devel_gittop/gittop-v0.5.0/v0.5.0.zip) = e5b64476c2473ab772fbe3536c0ad813434635c84b3c61aaa84e765f3fcb3f94
-SIZE (go/devel_gittop/gittop-v0.5.0/v0.5.0.zip) = 1126585
+TIMESTAMP = 1792654412
+SHA256 (go/devel_gittop/gittop-v0.6.0/v0.6.0.mod) = 228521eeac48038887558279828ceb81a7f0ab59545f5d6d7f61b00caa80dccd
+SIZE (go/devel_gittop/gittop-v0.6.0/v0.6.0.mod) = 2266
+SHA256 (go/devel_gittop/gittop-v0.6.0/v0.6.0.zip) = f5417febb921fd765172f1045519fae78b6405117453e1d82dca90faf55546df
+SIZE (go/devel_gittop/gittop-v0.6.0/v0.6.0.zip) = 1134113
