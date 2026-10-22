@@ -1,0 +1,4 @@
+The langgraph-checkpoint-conformance library is a test suite for verifying
+that implementations of LangGraph checkpointers conform to the checkpointer
+interface defined by langgraph-checkpoint. It provides a set of capability
+tests that can be run against any custom checkpointer implementation.
