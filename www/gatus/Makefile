@@ -1,7 +1,6 @@
 PORTNAME=	gatus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.36.0
-PORTREVISION=	8
+DISTVERSION=	5.37.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 # For instructions on how to create assets:
