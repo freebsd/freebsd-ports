@@ -144,7 +144,6 @@
     SUBDIR += spectral
     SUBDIR += ssh-chat
     SUBDIR += sshout
-    SUBDIR += tde2e
     SUBDIR += tdlib
     SUBDIR += teams
     SUBDIR += telegram-cli
