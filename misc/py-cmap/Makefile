@@ -1,5 +1,5 @@
 PORTNAME=	cmap
-DISTVERSION=	0.7.2
+DISTVERSION=	0.8.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>0:www/py-bokeh@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorspacious>0:devel/py-colorspacious@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colour>0:graphics/py-colour@${PY_FLAVOR} \
@@ -31,8 +31,5 @@ USES=		python
 USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
-
-# tests disabled: upstream test suite has known failures and requires
-# GUI/Qt display as well as several optional colormap backends
 
 .include <bsd.port.mk>
