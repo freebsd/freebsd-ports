@@ -1,4 +1,8 @@
---- pyproject.toml.orig	2026-09-06 18:22:27 UTC
+-- Downgrade setuptools requirement, remove SPDX license fields, and fix
+-- tool.setuptools.packages format for compatibility with setuptools 63.x.
+-- FreeBSD ports ship setuptools 63.x which does not support the modern
+-- SPDX license format or the 'packages' key in [tool.setuptools].
+--- pyproject.toml.orig	2026-10-22 08:31:32 UTC
 +++ pyproject.toml
 @@ -1,12 +1,10 @@ build-backend = "setuptools.build_meta"
  [build-system]
@@ -8,20 +12,20 @@
  
  [project]
  name = "types-python-dateutil"
- version = "2.9.0.20260807"
+ version = "2.9.0.20261021"
 -license = "Apache-2.0"
 -license-files = ["LICENSE"]
  description = "Typing stubs for python-dateutil"
  readme = { text = """\
  ## Typing stubs for python-dateutil
-@@ -49,8 +47,9 @@ dependencies = []
+@@ -50,8 +48,9 @@ dependencies = []
  "Chat" = "https://gitter.im/python/typing"
  
  [tool.setuptools]
 -packages = ['dateutil-stubs']
  include-package-data = false
 +[tool.setuptools.packages.find]
-+include = ["dateutil-stubs*"]
++include = ['dateutil-stubs*']
  
  [tool.setuptools.package-data]
 -'dateutil-stubs' = ['__init__.pyi', '_common.pyi', '_version.pyi', 'easter.pyi', 'parser/__init__.pyi', 'parser/_parser.pyi', 'parser/isoparser.pyi', 'relativedelta.pyi', 'rrule.pyi', 'tz/__init__.pyi', 'tz/_common.pyi', 'tz/tz.pyi', 'tz/win.pyi', 'tzwin.pyi', 'utils.pyi', 'zoneinfo/__init__.pyi', 'zoneinfo/rebuild.pyi', 'METADATA.toml', 'py.typed']
