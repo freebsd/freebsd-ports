@@ -1,0 +1,4 @@
+pymssql is a simple database interface for Python that builds on top of
+FreeTDS to provide a Python DB-API (PEP-249) interface to Microsoft SQL
+Server. It includes the low-level _mssql module and the DB-API compliant
+pymssql module.
