@@ -1,7 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.24.1
-PORTREVISION=	0
+DISTVERSION=	18.24.2
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,7 +48,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		atoi-2.0.0 \
 		atomic-0.6.1 \
 		atomic-waker-1.1.2 \
-		atuin-vt100-0.19.1 \
+		atuin-service-manager-0.12.0 \
+		atuin-vt100-0.19.2 \
+		atuin-vte-0.15.1 \
 		autocfg-1.5.1 \
 		axoprocess-0.2.1 \
 		axotag-0.3.0 \
@@ -57,6 +58,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		axum-0.8.9 \
 		axum-core-0.5.6 \
 		base64-0.22.1 \
+		base64-0.23.1 \
 		base64ct-1.8.3 \
 		basic-toml-0.1.10 \
 		beef-0.5.2 \
@@ -89,11 +91,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		chrono-0.4.45 \
 		chrono-humanize-0.2.3 \
 		cipher-0.4.4 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
-		clap_complete-4.6.9 \
-		clap_complete_nushell-4.6.0 \
-		clap_derive-4.6.1 \
+		clap-4.6.7 \
+		clap_builder-4.6.7 \
+		clap_complete-4.6.11 \
+		clap_complete_nushell-4.6.1 \
+		clap_derive-4.6.7 \
 		clap_lex-1.1.0 \
 		clipboard-win-5.4.1 \
 		cmov-0.5.4 \
@@ -103,7 +105,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		compare-0.0.6 \
 		compression-codecs-0.4.38 \
 		compression-core-0.4.32 \
-		condtype-1.3.0 \
 		config-0.15.25 \
 		console-0.16.3 \
 		const-oid-0.9.6 \
@@ -146,12 +147,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		digest-0.11.3 \
+		dirs-4.0.0 \
 		dirs-6.0.0 \
+		dirs-sys-0.3.7 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.1 \
 		displaydoc-0.2.6 \
-		divan-0.1.21 \
-		divan-macros-0.1.21 \
 		document-features-0.2.12 \
 		dotenvy-0.15.7 \
 		downcast-rs-1.2.1 \
@@ -358,6 +359,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-io-kit-0.3.2 \
 		objc2-io-surface-0.3.2 \
 		objc2-open-directory-0.3.2 \
+		objc2-security-0.3.2 \
+		objc2-service-management-0.3.2 \
 		objc2-system-configuration-0.3.2 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
@@ -400,6 +403,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pin-project-lite-0.2.17 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.33 \
+		plist-1.10.3 \
 		poly1305-0.8.0 \
 		portable-atomic-1.14.0 \
 		portable-pty-0.9.0 \
@@ -427,6 +431,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		quanta-0.12.6 \
 		quick-error-1.2.3 \
 		quick-xml-0.39.4 \
+		quick-xml-0.42.0 \
 		quick_cache-0.6.24 \
 		quote-1.0.47 \
 		r-efi-5.3.0 \
@@ -441,20 +446,21 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rand_core-0.10.1 \
 		rand_xorshift-0.4.0 \
 		rand_xoshiro-0.7.0 \
-		ratatui-0.30.0 \
+		ratatui-0.30.2 \
 		ratatui-core-0.1.2 \
-		ratatui-crossterm-0.1.0 \
-		ratatui-macros-0.7.0 \
-		ratatui-termwiz-0.1.0 \
-		ratatui-widgets-0.3.0 \
+		ratatui-crossterm-0.1.2 \
+		ratatui-macros-0.7.2 \
+		ratatui-termina-0.1.0 \
+		ratatui-termwiz-0.1.2 \
+		ratatui-widgets-0.3.2 \
 		raw-cpuid-11.6.0 \
 		redox_syscall-0.5.18 \
+		redox_users-0.4.6 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
 		regex-1.12.4 \
 		regex-automata-0.4.14 \
-		regex-lite-0.1.9 \
 		regex-syntax-0.8.11 \
 		relative-path-1.9.3 \
 		reqwest-0.13.4 \
@@ -549,12 +555,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		symlink-0.1.0 \
 		syn-1.0.109 \
 		syn-2.0.119 \
-		syn-3.0.0 \
+		syn-3.0.9 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		sysinfo-0.39.6 \
 		tempfile-3.27.0 \
-		terminal_size-0.4.4 \
+		termina-0.3.3 \
 		terminfo-0.9.0 \
 		termios-0.3.3 \
 		termwiz-0.23.3 \
@@ -666,6 +672,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wezterm-dynamic-0.2.1 \
 		wezterm-dynamic-derive-0.1.1 \
 		wezterm-input-types-0.1.0 \
+		which-8.0.6 \
 		whoami-2.1.1 \
 		widestring-1.2.1 \
 		winapi-0.3.9 \
@@ -721,6 +728,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		writeable-0.6.3 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
+		xml-rs-0.8.29 \
 		xxhash-rust-0.8.19 \
 		yaml-rust2-0.11.1 \
 		yansi-1.0.1 \
