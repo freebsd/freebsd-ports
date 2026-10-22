@@ -1,5 +1,5 @@
 PORTNAME=	ros-urdfdom
-DISTVERSION=	3.0.2
+DISTVERSION=	6.0.2
 CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -8,10 +8,10 @@ WWW=		https://wiki.ros.org/urdf
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	ros-urdfdom_headers>=1.0.6:devel/ros-urdfdom_headers
-LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
+BUILD_DEPENDS=	ros-urdfdom_headers>=3.0.0:devel/ros-urdfdom_headers
+LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2 \
 		libconsole_bridge.so:devel/ros-console_bridge
-RUN_DEPENDS=	ros-urdfdom_headers>=1.0.6:devel/ros-urdfdom_headers
+RUN_DEPENDS=	ros-urdfdom_headers>=3.0.0:devel/ros-urdfdom_headers
 
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
@@ -19,6 +19,7 @@ USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	ros
 GH_PROJECT=	${PORTNAME:S/ros-//}
+GH_TAGNAME=	5c261d6
 
 do-test: # some tests are known to fail: https://github.com/ros/urdfdom/issues/118
 	@cd ${BUILD_WRKSRC} && \
