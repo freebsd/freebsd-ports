@@ -1,5 +1,5 @@
-TIMESTAMP = 1791616394
-SHA256 (go/multimedia_go2tv/go2tv-v2.7.0/v2.7.0.mod) = 82bbd76632fe138edd4aa019bf82a991fcdb557c86031544c32d705c35790b63
-SIZE (go/multimedia_go2tv/go2tv-v2.7.0/v2.7.0.mod) = 7944
-SHA256 (go/multimedia_go2tv/go2tv-v2.7.0/v2.7.0.zip) = 88ced39fab5b3327e0e0afbb549d5402f89f043711a9ce98e4a97f69c70c4ae5
-SIZE (go/multimedia_go2tv/go2tv-v2.7.0/v2.7.0.zip) = 6814376
+TIMESTAMP = 1792656776
+SHA256 (go/multimedia_go2tv/go2tv-v2.8.0/v2.8.0.mod) = db69a2b665b6345074f80c247977a0f2a390f190fe62a12f39eb1a515a23600e
+SIZE (go/multimedia_go2tv/go2tv-v2.8.0/v2.8.0.mod) = 7908
+SHA256 (go/multimedia_go2tv/go2tv-v2.8.0/v2.8.0.zip) = 9bdb20ca99ccc7e292157804997f577ca824ae8a2edf4da80f90a760c2cdd0db
+SIZE (go/multimedia_go2tv/go2tv-v2.8.0/v2.8.0.zip) = 7027990
