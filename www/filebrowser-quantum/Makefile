@@ -1,7 +1,6 @@
 PORTNAME=	filebrowser-quantum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.8
-PORTREVISION=	2
+DISTVERSION=	2.0.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/:assets
@@ -50,7 +49,7 @@ FFMPEG_RUN_DEPENDS=	ffmpeg>=0:multimedia/ffmpeg
 
 # Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION}-${FILEBROWSER_QUANTUM_CHANNEL} && git rev-parse HEAD'
 # in the FileBrowser Quantum repository to get the value of GITID.
-GITID=		84024e2
+GITID=		aa4dd3a
 
 FILEBROWSER_QUANTUM_USER=	www
 FILEBROWSER_QUANTUM_GROUP=	${FILEBROWSER_QUANTUM_USER}
@@ -59,8 +58,8 @@ FILEBROWSER_QUANTUM_CHANNEL=	stable
 post-extract:
 	@${MKDIR} ${WRKSRC}/vendor
 	@cd ${WRKDIR}/filebrowser-quantum-vendor && ${COPYTREE_SHARE} . ${WRKSRC}/vendor
-	@${MKDIR} ${WRKSRC}/http/embed
-	@cd ${WRKDIR}/filebrowser-quantum-frontend && ${COPYTREE_SHARE} . ${WRKSRC}/http/embed
+	@${MKDIR} ${WRKSRC}/internal/web/embed
+	@cd ${WRKDIR}/filebrowser-quantum-frontend && ${COPYTREE_SHARE} . ${WRKSRC}/internal/web/embed
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
