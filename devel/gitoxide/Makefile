@@ -1,7 +1,6 @@
 PORTNAME=	gitoxide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.60.0
-PORTREVISION=	1
+DISTVERSION=	0.61.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Byron
 
 CARGO_CRATES=	adler2-2.0.1 \
+		adler32furious-0.1.1 \
 		aho-corasick-1.1.4 \
 		alloca-0.4.0 \
 		allocator-api2-0.2.21 \
@@ -67,7 +67,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
 		cc-1.2.65 \
-		cesu8-1.1.0 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.2 \
@@ -189,9 +188,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		heapless-0.8.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
-		hickory-net-0.26.1 \
-		hickory-proto-0.26.1 \
-		hickory-resolver-0.26.1 \
+		hickory-net-0.26.3 \
+		hickory-proto-0.26.3 \
+		hickory-resolver-0.26.3 \
 		http-1.4.2 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
@@ -233,10 +232,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jiff-static-0.2.31 \
 		jiff-tzdb-0.1.6 \
 		jiff-tzdb-platform-0.1.3 \
-		jni-0.21.1 \
 		jni-0.22.4 \
 		jni-macros-0.22.4 \
-		jni-sys-0.3.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
@@ -261,6 +258,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lru-0.18.0 \
 		lru-slab-0.1.2 \
 		lzma-sys-0.1.20 \
+		macro_rules_attribute-0.2.3 \
+		macro_rules_attribute-proc_macro-0.2.3 \
 		maplit-1.0.2 \
 		matchers-0.2.0 \
 		memchr-2.8.2 \
@@ -299,6 +298,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
+		pastey-0.2.3 \
 		percent-encoding-2.3.2 \
 		permutohedron-0.2.4 \
 		pin-project-lite-0.2.17 \
@@ -358,14 +358,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.45 \
-		rustls-ffi-0.15.0 \
+		rustls-0.23.46 \
+		rustls-ffi-0.15.6 \
 		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.15.0 \
-		rustls-platform-verifier-0.5.3 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.15 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.22 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
@@ -393,6 +392,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		simd_cesu8-1.1.1 \
 		simdutf8-0.1.5 \
 		similar-2.7.0 \
+		sirocco-0.2.0 \
 		slab-0.4.12 \
 		smallvec-1.15.2 \
 		socket2-0.6.4 \
@@ -421,9 +421,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		terminal-trx-0.2.6 \
 		terminal_size-0.4.4 \
 		termtree-1.0.0 \
-		thiserror-1.0.69 \
 		thiserror-2.0.18 \
-		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
 		time-0.3.53 \
@@ -485,8 +483,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasm-bindgen-shared-0.2.126 \
 		web-sys-0.3.103 \
 		web-time-1.1.0 \
-		webpki-root-certs-0.26.11 \
-		webpki-root-certs-1.0.8 \
+		webpki-root-certs-1.0.10 \
 		widestring-1.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -504,9 +501,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows-registry-0.6.1 \
 		windows-result-0.4.1 \
 		windows-strings-0.5.1 \
-		windows-sys-0.45.0 \
 		windows-sys-0.52.0 \
-		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.42.2 \
