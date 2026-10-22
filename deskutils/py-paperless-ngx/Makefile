@@ -1,7 +1,7 @@
 PORTNAME=	paperless-ngx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.20.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:webui \
 		GH:gh
@@ -152,7 +152,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/var/db/paperless/consume/input \
 		${STAGEDIR}/var/db/paperless/data/log \
 		${STAGEDIR}/var/db/paperless/media \
-		${STAGEDIR}/var/db/paperless/nltkdata
+		${STAGEDIR}/var/db/paperless/nltk_data
 	${INSTALL_MAN} ${WRKDIR}/paperless-ngx.7 ${STAGEDIR}${PREFIX}/share/man/man7
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} static ${STAGEDIR}${WWWDIR}

@@ -63,4 +63,17 @@ See %%EXAMPLESDIR%%/nginx.conf for an example
 of how this can be configured when using nginx.
 EOM
 }
+{ type: upgrade
+  maximum_version: "2.20.2_2"
+  message: <<EOM
+Language data moved to /var/db/paperless/nltk_data, please change
+NLTK_DIR in %%PREFIX%%/etc/paperless.conf accordingly.
+
+Then re-download nltk data using:
+
+  su -l paperless -c '%%PYTHON_CMD%% -m nltk.downloader \
+    stopwords snowball_data punkt_tab -d /var/db/paperless/nltk_data'
+
+EOM
+}
 ]

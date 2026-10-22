@@ -3339,6 +3339,6 @@ share/man/man7/paperless-ngx.7.gz
 @dir(paperless,paperless,0700) /var/db/paperless/data/log
 @dir(paperless,paperless,0700) /var/db/paperless/data
 @dir(paperless,paperless,0700) /var/db/paperless/media
-@dir(paperless,paperless,0700) /var/db/paperless/nltkdata
+@dir(paperless,paperless,0700) /var/db/paperless/nltk_data
 @dir /var/db/paperless
 @dir /var/run/paperless

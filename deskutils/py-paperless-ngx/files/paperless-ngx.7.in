@@ -1,5 +1,5 @@
 .\"
-.\" Copyright (c) 2024 Michael Gmelin
+.\" Copyright (c) 2024,2025,2026 Michael Gmelin
 .\"
 .\" All rights reserved.
 .\"
@@ -23,7 +23,7 @@
 .\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 .\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 .\"
-.Dd January 24, 2025
+.Dd October 22, 2026
 .Dt PAPERLESS-NGX 7
 .Os
 .Sh NAME
@@ -101,7 +101,7 @@ This is where paperless stored its log files
 .It Pa media/
 Directory used by paperless-ngx to store original files and
 thumbnails.
-.It Pa nltkdata/
+.It Pa nltk_data/
 Directory containing data used for natural language processing.
 .El
 .El
@@ -165,7 +165,7 @@ paperless-ngx requires NLTK (natural language toolkit) data.
 The required files can be downloaded by using these commands:
 .Bd -literal -offset indent
 su -l paperless -c '%%PYTHON_CMD%% -m nltk.downloader \\
-  stopwords snowball_data punkt -d /var/db/paperless/nltkdata'
+  stopwords snowball_data punkt -d /var/db/paperless/nltk_data'
 .Ed
 .Pp
 In case you are using py-nltk >= 3.9, you need to download
@@ -173,7 +173,7 @@ In case you are using py-nltk >= 3.9, you need to download
 instead:
 .Bd -literal -offset indent
 su -l paperless -c '%%PYTHON_CMD%% -m nltk.downloader \\
-  stopwords snowball_data punkt_tab -d /var/db/paperless/nltkdata'
+  stopwords snowball_data punkt_tab -d /var/db/paperless/nltk_data'
 .Ed
 .Pp
 Normally, the document classifier is run automatically by
