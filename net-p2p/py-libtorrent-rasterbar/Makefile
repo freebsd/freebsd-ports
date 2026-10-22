@@ -1,7 +1,7 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.13
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,13 +29,13 @@ GH_TUPLE=	arvidn:try_signal:105cce5:try_signal/deps/try_signal \
 		paullouisageneau:boost-asio-gnutls:a57d4d3:asio/deps/asio-gnutls
 
 PYDISTUTILS_PKGNAME=	libtorrent
-PYDISTUTILS_BUILD_TARGET=	build_ext --b2-args="fpic=on libtorrent-python-pic=on libtorrent-link=shared boost-link=shared"
-PYDISTUTILS_INSTALL_TARGET=	build_ext --b2-args="fpic=on libtorrent-python-pic=on libtorrent-link=shared boost-link=shared" install
+PYDISTUTILS_BUILD_TARGET=	build_ext --b2-args="fpic=on libtorrent-python-pic=on libtorrent-link=prebuilt boost-link=shared"
+PYDISTUTILS_INSTALL_TARGET=	build_ext --b2-args="fpic=on libtorrent-python-pic=on libtorrent-link=prebuilt boost-link=shared" install
 
 BINARY_ALIAS=	b2=${FILESDIR}/b2
 
-CFLAGS+=	-fPIC -DTORRENT_DISABLE_LOGGING # undefined symbol: https://github.com/arvidn/libtorrent/issues/3331
-CXXFLAGS+=	-fPIC -DTORRENT_DISABLE_LOGGING # undefined symbol: https://github.com/arvidn/libtorrent/issues/3331
+CFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC
 LDFLAGS+=	${LOCALBASE}/lib/libboost_python${PYTHON_SUFFIX}.so ${ICONV_LIB} # fails to link libs: https://github.com/arvidn/libtorrent/issues/3330
 
 BUILD_WRKSRC=	${WRKSRC}/bindings/python
