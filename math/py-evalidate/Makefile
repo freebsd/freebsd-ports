@@ -1,6 +1,6 @@
 PORTNAME=	evalidate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.4
+DISTVERSION=	2.1.5
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,6 +30,6 @@ GH_ACCOUNT=	yaroslaff
 
 NO_ARCH=	yes
 
-# tests as of 2.1.4: 31 passed, 1 deselected in 0.05s
+# tests as of 2.1.5: 31 passed, 1 deselected in 0.03s
 
 .include <bsd.port.mk>
