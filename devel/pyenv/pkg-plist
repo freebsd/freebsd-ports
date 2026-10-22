@@ -327,6 +327,8 @@ libexec/pyenv-plugins/python-build/share/python-build/3.13.15
 libexec/pyenv-plugins/python-build/share/python-build/3.13.15t
 libexec/pyenv-plugins/python-build/share/python-build/3.13.16
 libexec/pyenv-plugins/python-build/share/python-build/3.13.16t
+libexec/pyenv-plugins/python-build/share/python-build/3.13.17
+libexec/pyenv-plugins/python-build/share/python-build/3.13.17t
 libexec/pyenv-plugins/python-build/share/python-build/3.14t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.14-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.14.0
@@ -347,10 +349,14 @@ libexec/pyenv-plugins/python-build/share/python-build/3.14.7
 libexec/pyenv-plugins/python-build/share/python-build/3.14.7t
 libexec/pyenv-plugins/python-build/share/python-build/3.14.8
 libexec/pyenv-plugins/python-build/share/python-build/3.14.8t
+libexec/pyenv-plugins/python-build/share/python-build/3.14.9
+libexec/pyenv-plugins/python-build/share/python-build/3.14.9t
 libexec/pyenv-plugins/python-build/share/python-build/3.15t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.15-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.15.0
 libexec/pyenv-plugins/python-build/share/python-build/3.15.0t
+libexec/pyenv-plugins/python-build/share/python-build/3.15.1
+libexec/pyenv-plugins/python-build/share/python-build/3.15.1t
 libexec/pyenv-plugins/python-build/share/python-build/3.16t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.16-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.16.0a1
@@ -1349,8 +1355,10 @@ libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.6t
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.6/Python-3.14.6/0001-3.14-gh-148292-Add-OpenSSL-4-support.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.7t
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.8t
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.9t
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.7/Python-3.14.7/0001-3.14-gh-148292-Add-OpenSSL-4-support.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.8/Python-3.14.8/0001-3.14-gh-148292-Add-OpenSSL-4-support.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.14.9/Python-3.14.9/0001-3.14-gh-148292-Add-OpenSSL-4-support.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/cinder-3.8-dev/Cinder-3.8-dev/001-disable-werror.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/cinder-3.10-dev/Cinder-3.10-dev/001-disable-werror.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/micropython-1.22.0/micropython-1.22.0/0001-py-misc-Don-t-warn-about-a-GNU-extension-for-static-.patch
@@ -1455,6 +1463,8 @@ libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.23
 libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-7.3.23-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-8.0.0
 libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-8.0.0-src
+libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-8.0.1
+libexec/pyenv-plugins/python-build/share/python-build/pypy2.7-8.0.1-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3-2.3.1
 libexec/pyenv-plugins/python-build/share/python-build/pypy3-2.3.1-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3-2.4.0
@@ -1571,8 +1581,12 @@ libexec/pyenv-plugins/python-build/share/python-build/pypy3.11-7.3.23
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.11-7.3.23-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.11-8.0.0
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.11-8.0.0-src
+libexec/pyenv-plugins/python-build/share/python-build/pypy3.11-8.0.1
+libexec/pyenv-plugins/python-build/share/python-build/pypy3.11-8.0.1-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.12-8.0.0
 libexec/pyenv-plugins/python-build/share/python-build/pypy3.12-8.0.0-src
+libexec/pyenv-plugins/python-build/share/python-build/pypy3.12-8.0.1
+libexec/pyenv-plugins/python-build/share/python-build/pypy3.12-8.0.1-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy-1.5-src
 libexec/pyenv-plugins/python-build/share/python-build/pypy-1.6
 libexec/pyenv-plugins/python-build/share/python-build/pypy-1.7
