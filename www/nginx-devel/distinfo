@@ -1,6 +1,6 @@
-TIMESTAMP = 1792594839
-SHA256 (nginx-1.31.7.tar.gz) = 89ea8a3dc171511f7325043b50e4c036248d9fad5feb7ec809c0b82d5df42c65
-SIZE (nginx-1.31.7.tar.gz) = 1392370
+TIMESTAMP = 1792656928
+SHA256 (nginx-1.31.8.tar.gz) = 0652b760b3b772d2ec17b47c2fc15d9a95e6fe35cd5b877eadc1a62d9bc75af1
+SIZE (nginx-1.31.8.tar.gz) = 1385338
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
 SIZE (nginx_mogilefs_module-1.0.4.tar.gz) = 11208
 SHA256 (google-ngx_brotli-a71f931_GH0.tar.gz) = b3312a045d5303a40d02beb34711b8ca27f7b72d647e9ee2012a8eddd14d9b22
