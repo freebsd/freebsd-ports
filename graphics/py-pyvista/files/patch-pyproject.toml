@@ -4,7 +4,7 @@
 -- because the pytest-pyvista helper is not packaged for FreeBSD yet; the remaining
 -- tests do not need it.
 
---- pyproject.toml.orig	2026-05-18 02:25:26 UTC
+--- pyproject.toml.orig	2026-10-22 08:33:11 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ build-backend = 'setuptools.build_meta'
  [build-system]
@@ -14,7 +14,7 @@
  
  [project]
  authors = [{ name = 'PyVista Developers', email = 'info@pyvista.org' }]
-@@ -33,7 +33,7 @@ keywords = ['mesh', 'numpy', 'plotting', 'vtk']
+@@ -35,7 +35,7 @@ keywords = ['mesh', 'numpy', 'plotting', 'vtk']
  description = '3D visualization and mesh analysis for science and engineering.'
  dynamic = ['version']
  keywords = ['mesh', 'numpy', 'plotting', 'vtk']
@@ -23,8 +23,8 @@
  name = 'pyvista'
  readme = 'README.md'
  requires-python = '>=3.10'
-@@ -300,19 +300,6 @@ xfail_strict = true
- testpaths = 'tests'
+@@ -332,19 +332,6 @@ xfail_strict = true
+ type_assert_cases = 'tests/typing/cases'
  xfail_strict = true
  
 -# pytest-pyvista options
@@ -39,7 +39,7 @@
 -image_format = 'png'
 -include_vtksz = true
 -max_image_size = 400 # pixels
--max_vtksz_file_size = 25 # MB
+-max_vtksz_file_size = 5 # MB
  
  [tool.mypy]
  check_untyped_defs = true
