@@ -11,7 +11,7 @@ WWW=		https://github.com/github/copilot-language-server-release
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/node_modules/${PACKAGE_NAME}/LICENSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le powerpc64
 ONLY_FOR_ARCHS_REASON=	distinfo was only generated for these architectures # feel free to add more architectures
 
 FETCH_DEPENDS=	npm:www/npm \
@@ -32,7 +32,7 @@ PACKAGE_NAME=	@github/copilot-language-server
 
 NODE_HEADERS=	node-v24.21.0-headers
 
-JS_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/:S/i386/ia32/:S/powerpc64le/ppc64le/:S/powerpc64/ppc64/:C/armv[67]/arm/} # modeled after electron.mk
+JS_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/:S/i386/ia32/:S/powerpc64le/ppc64/:S/powerpc64/ppc64/:C/armv[67]/arm/} # modeled after electron.mk
 PLIST_SUB=	JS_ARCH=${JS_ARCH}
 
 DD=		${DISTDIR}/${DIST_SUBDIR}
@@ -94,6 +94,11 @@ do-fetch:
 			${FILESDIR}/package-lock.json \
 			${DD}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}; \
 	fi
+
+post-extract:
+	# the official headers describe a GCC build; base compiler is clang
+	@${REINPLACE_CMD} -e "s|\"clang\": 0,|\"clang\": 1,|" \
+		${WRKDIR}/${NODE_HEADERS:S/-headers//}/include/node/config.gypi
 
 do-build:
 	# Create directory for FreeBSD native modules
