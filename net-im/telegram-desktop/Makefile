@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	7.3.1
+DISTVERSION=	7.3.3
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -26,7 +26,6 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		v4l_compat>0:multimedia/v4l_compat \
 		vulkan-headers>0:graphics/vulkan-headers \
 		yasm:devel/yasm \
-		${LOCALBASE}/lib/libtde2e.a:net-im/tde2e \
 		${LOCALBASE}/lib/libtg_owt.a:net-im/tg_owt \
 		${LOCALBASE}/lib/libtlottie.a:graphics/tlottie \
 		${LOCALBASE}/lib/libwallet_engine.a:net-p2p/wallet-engine
@@ -48,6 +47,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libqrcodegencpp.so:graphics/qr-code-generator \
 		librnnoise.so:audio/rnnoise \
 		libsrtp2.so:net/libsrtp2 \
+		libtde2e.so:net-im/tdlib \
 		libxxhash.so:devel/xxhash \
 		libvpx.so:multimedia/libvpx
 
@@ -75,7 +75,7 @@ CMAKE_ON=	DESKTOP_APP_USE_PACKAGED \
 CMAKE_ARGS+=	-DLINUX=true
 
 # libdispatch components
-LDFLAGS+=	-lBlocksRuntime
+#LDFLAGS+=	-lBlocksRuntime
 
 # Telegram uses OpenAL for its audio, but libtgvoip (for voice calls) can use PulseAudio or ALSA.
 # It dynamically loads PulseAudio, and if this fails, it loads ALSA.
