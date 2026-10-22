@@ -9,7 +9,7 @@ WWW=		https://github.com/tobi/qmd
 
 LICENSE=	MIT
 
-ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	distinfo was only generated for these architectures # feel free to add more architectures
 
 FETCH_DEPENDS=	jq:textproc/jq \
@@ -22,7 +22,7 @@ PACKAGE_NAME=	@tobilu/qmd
 
 FETCH_SCRIPT=	${PORTSDIR}/Tools/scripts/npmjs-fetch-with-dependencies.sh
 
-NODE_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/:S/i386/ia32/:S/powerpc64le/ppc64le/:S/powerpc64/ppc64/:C/armv[67]/arm/}
+NODE_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/:S/i386/ia32/:S/powerpc64le/ppc64/:S/powerpc64/ppc64/:C/armv[67]/arm/}
 PLIST_SUB=	NODE_ARCH=${NODE_ARCH}
 
 # Native modules that require building
@@ -96,10 +96,10 @@ do-build:
 	@cd ${WRKDIR}/node-llama-cpp-${dep_node_llama_cpp_version}/node_modules/${dep_node_llama_cpp_npm_name} && \
 		${SETENV} HOME=${WRKDIR} CFLAGS="-I${LOCALBASE}/include" CXXFLAGS="-I${LOCALBASE}/include" \
 			node ./dist/cli/cli.js postinstall 2>&1 || true
-	@${MKDIR} ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/localBuilds/freebsd-x64/Release 2>/dev/null || true
-	@${CP} ${WRKDIR}/node-llama-cpp-${dep_node_llama_cpp_version}/node_modules/${dep_node_llama_cpp_npm_name}/llama/localBuilds/freebsd-x64/Release/*.so ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/localBuilds/freebsd-x64/Release/ 2>/dev/null || true
-	@${CP} ${WRKDIR}/node-llama-cpp-${dep_node_llama_cpp_version}/node_modules/${dep_node_llama_cpp_npm_name}/llama/localBuilds/freebsd-x64/Release/*.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/localBuilds/freebsd-x64/Release/ 2>/dev/null || true
-	@${ECHO_CMD} '{"version":"3.18.1","nodeAbi":99,"platform":"freebsd","arch":"x64"}' > ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/lastBuild.json
+	@${MKDIR} ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/localBuilds/freebsd-${NODE_ARCH}/Release 2>/dev/null || true
+	@${CP} ${WRKDIR}/node-llama-cpp-${dep_node_llama_cpp_version}/node_modules/${dep_node_llama_cpp_npm_name}/llama/localBuilds/freebsd-${NODE_ARCH}/Release/*.so ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/localBuilds/freebsd-${NODE_ARCH}/Release/ 2>/dev/null || true
+	@${CP} ${WRKDIR}/node-llama-cpp-${dep_node_llama_cpp_version}/node_modules/${dep_node_llama_cpp_npm_name}/llama/localBuilds/freebsd-${NODE_ARCH}/Release/*.node ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/localBuilds/freebsd-${NODE_ARCH}/Release/ 2>/dev/null || true
+	@${ECHO_CMD} '{"version":"3.18.1","nodeAbi":99,"platform":"freebsd","arch":"${NODE_ARCH}"}' > ${WRKSRC}/node_modules/${PACKAGE_NAME}/node_modules/node-llama-cpp/llama/lastBuild.json
 	@${ECHO_MSG} "====> Building tree-sitter modules for FreeBSD..."
 .for dep in tree_sitter_go tree_sitter_javascript tree_sitter_python tree_sitter_rust tree_sitter_typescript
 	@cd ${WRKDIR}/${dep:S/_/-/g}-${dep_${dep}_version}/node_modules/${dep_${dep}_npm_name} && \
