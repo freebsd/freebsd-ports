@@ -1,0 +1,47 @@
+-- Remove hatch-vcs (VCS-based versioning fails for tarball builds),
+-- SPDX license fields unsupported by older hatchling, and switch to
+-- static version for FreeBSD ports tarball builds.
+--- pyproject.toml.orig	2026-10-22 08:34:05 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@
+ # plus `license-files`); older versions reject project.license-files. Pinning a
+ # floor matters for --no-build-isolation builds, where the backend comes from
+ # the environment rather than being resolved fresh.
+-requires = ["hatchling>=1.27", "hatch-vcs>=0.4"]
++requires = ["hatchling"]
+ build-backend = "hatchling.build"
+ 
+ [project]
+@@ -11,8 +11,6 @@ requires-python = ">=3.10"
+ description = "A Python interface to archive.org."
+ readme = "README.rst"
+ requires-python = ">=3.10"
+-license = "AGPL-3.0-only"
+-license-files = ["LICENSE"]
+ authors = [{ name = "Jacob M. Johnson", email = "jake@archive.org" }]
+ classifiers = [
+   "Development Status :: 5 - Production/Stable",
+@@ -30,7 +28,7 @@ dependencies = [
+   "tqdm>=4.0.0",
+   "urllib3>=1.26.0",
+ ]
+-dynamic = ["version"]
++version = "5.12.0"
+ 
+ [project.urls]
+ Homepage = "https://github.com/jjjake/internetarchive"
+@@ -88,14 +86,9 @@ release = ["twine", "packaging"]
+ # release is `git tag vX.Y.Z` and nothing else -- no version-bump PR, and no
+ # way for the tag and the packaged version to disagree. Working from a
+ # checkout between tags yields the next patch version with a .devN suffix.
+-[tool.hatch.version]
+-source = "vcs"
+-raw-options = { local_scheme = "no-local-version" }
+ 
+ # Written at build time and imported by internetarchive/__version__.py.
+ # Not tracked in git -- see .gitignore.
+-[tool.hatch.build.hooks.vcs]
+-version-file = "internetarchive/_version.py"
+ 
+ # Selecting the `internetarchive` directory takes everything in it, including
+ # any untracked-but-not-gitignored subdirectory that happens to be sitting
