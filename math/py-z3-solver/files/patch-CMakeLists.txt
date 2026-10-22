@@ -1,13 +1,17 @@
--- Add a minimum CMake version declaration required by CMake 4.0.
-
---- CMakeLists.txt.orig	2026-02-18 22:57:51 UTC
+-- Add cmake_minimum_required for CMake 4.x compatibility.
+-- Define Z3_FULL_PATH_API_HEADER_FILES_TO_SCAN (normally done by the top-level
+-- CMakeLists.txt but missing when building just the Python bindings standalone).
+-- Define z3::libz3 as an imported target so the CMakeLists.txt can find
+-- the pre-installed z3 library (FreeBSD's math/z3 port).
+-- Also read the Z3_VERSION_MAJOR/MINOR from the installed headers for versioned symlinks.
+--- CMakeLists.txt.orig	2026-10-22 08:38:18 UTC
 +++ CMakeLists.txt
-@@ -1,4 +1,40 @@ message(STATUS "Emitting rules to build Z3 python bind
+@@ -1,4 +1,50 @@
 +cmake_minimum_required(VERSION 3.5)
 +
  message(STATUS "Emitting rules to build Z3 python bindings")
 +
-+## portion of src/CMakeLists.txt
++## portion of z3's top-level CMakeLists.txt
 +set(Z3_API_HEADER_FILES_TO_SCAN
 +  z3_api.h
 +  z3_ast_containers.h
@@ -28,16 +32,26 @@
 +  endif()
 +endforeach()
 +
-+## Define libz3 as an imported target pointing to the pre-installed library
-+if (NOT TARGET libz3)
++## Define z3::libz3 as an imported target pointing to the pre-installed library
++if (NOT TARGET z3::libz3)
 +  find_library(LIBZ3_LIBRARY NAMES z3 libz3)
 +  if (NOT LIBZ3_LIBRARY)
 +    message(FATAL_ERROR "Could not find libz3 library")
 +  endif()
-+  add_library(libz3 SHARED IMPORTED)
-+  set_target_properties(libz3 PROPERTIES
++  add_library(z3::libz3 SHARED IMPORTED)
++  set_target_properties(z3::libz3 PROPERTIES
 +    IMPORTED_LOCATION "${LIBZ3_LIBRARY}"
 +  )
++endif()
++
++## Get Z3 version from the installed library's header
++find_path(Z3_INCLUDE_DIR NAMES z3.h)
++if (Z3_INCLUDE_DIR)
++  file(READ "${Z3_INCLUDE_DIR}/z3_version.h" Z3_VERSION_CONTENT)
++  string(REGEX MATCH "Z3_MAJOR_VERSION ([0-9]+)" _ "${Z3_VERSION_CONTENT}")
++  set(Z3_VERSION_MAJOR "${CMAKE_MATCH_1}")
++  string(REGEX MATCH "Z3_MINOR_VERSION ([0-9]+)" _ "${Z3_VERSION_CONTENT}")
++  set(Z3_VERSION_MINOR "${CMAKE_MATCH_1}")
 +endif()
 +
  ###############################################################################

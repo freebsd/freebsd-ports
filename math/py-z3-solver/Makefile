@@ -1,6 +1,5 @@
 PORTNAME=	z3-solver
-DISTVERSION=	5.1.0.0
-PORTREVISION=	1
+DISTVERSION=	5.3.1.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +18,7 @@ USE_PYTHON=	flavors autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	Z3Prover
 GH_PROJECT=	z3
-GH_TAGNAME=	z3-5.1.0
+GH_TAGNAME=	z3-5.3.1
 
 WRKSRC_SUBDIR=	src/api/python
 WRKSRC_top=	${WRKSRC}/../../..
@@ -52,6 +51,6 @@ do-test:
 	@${ECHO} "All tests succeeded."
 .endfor
 
-# tests as of 5.0.0.0: z3/z3num unit tests + kinematics, power-of-two, dog-cat-mouse, sudoku, eight-queens examples all passed.
+# tests as of 5.3.1.0: z3/z3num unit tests + kinematics, power-of-two, dog-cat-mouse, sudoku, eight-queens examples all passed.
 
 .include <bsd.port.mk>
