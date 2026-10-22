@@ -1,7 +1,7 @@
-libc 0.2.190 drops NOTE_PCTRLMASK on FreeBSD, still used by mio 1.2.3 and nix 0.26.4
+libc 0.2.190 drops NOTE_PCTRLMASK on FreeBSD, still used by nix 0.26.4
 --- src/Cargo.lock.orig
 +++ src/Cargo.lock
-@@ -2500,9 +2500,9 @@
+@@ -2499,9 +2499,9 @@
  
  [[package]]
  name = "libc"

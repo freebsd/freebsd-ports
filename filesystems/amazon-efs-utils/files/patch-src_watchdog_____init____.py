@@ -162,7 +162,7 @@
          with open(mount_file) as f:
              for mount in f:
                  try:
-@@ -1598,6 +1735,65 @@ def check_stunnel_health(
+@@ -1790,6 +1927,65 @@ def check_stunnel_health(
          rewrite_state_file(state, state_file_dir, state_file)
  
      stunnel_pid = state["pid"]
@@ -228,7 +228,7 @@
      process = subprocess.Popen(
          ["df", mountpoint],
          stdout=subprocess.DEVNULL,
-@@ -2556,10 +2752,12 @@ def check_process_name_and_state(pid):
+@@ -2748,10 +2944,12 @@ def check_process_name_and_state(pid):
  
      Reads /proc/<pid>/stat, never /proc/<pid>/cmdline: a cmdline read enters the
      target's address space and can block forever on a wedged process. `state` is
@@ -242,7 +242,7 @@
  
      try:
          with open(PROC_STAT_PATH_FORMAT % pid, "rb") as f:
-@@ -2607,6 +2805,34 @@ def _check_process_name_and_state_macos(pid):
+@@ -2799,6 +2997,34 @@ def _check_process_name_and_state_macos(pid):
          return None, None
  
  

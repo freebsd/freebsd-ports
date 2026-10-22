@@ -9,7 +9,7 @@
          release in system_release_version
          for release in SKIP_NO_SO_BINDTODEVICE_RELEASES
      ):
-@@ -624,7 +624,9 @@ def poll_tunnel_process(tunnel_proc, fs_id, mount_completed):
+@@ -682,7 +682,9 @@ def poll_tunnel_process(tunnel_proc, fs_id, mount_completed):
  
  def get_init_system(comm_file="/proc/1/comm"):
      init_system = DEFAULT_UNKNOWN_VALUE
@@ -20,7 +20,7 @@
          try:
              with open(comm_file) as f:
                  init_system = f.read().strip()
-@@ -670,6 +672,25 @@ def start_watchdog(init_system):
+@@ -728,6 +730,25 @@ def start_watchdog(init_system):
          else:
              logging.debug("%s is already running", WATCHDOG_SERVICE)
  
