@@ -1,6 +1,6 @@
---- src/bw/lua/bunkerweb/api.lua.orig	2026-09-21 08:05:39 UTC
+--- src/bw/lua/bunkerweb/api.lua.orig	2026-10-21 13:42:35 UTC
 +++ src/bw/lua/bunkerweb/api.lua
-@@ -65,7 +65,7 @@
+@@ -68,7 +68,7 @@ local function get_nginx_bin()
  end
  
  local function get_nginx_bin()
@@ -9,7 +9,7 @@
  	for _, candidate in ipairs(candidates) do
  		if file_exists(candidate) then
  			return candidate
-@@ -81,7 +81,7 @@
+@@ -84,7 +84,7 @@ local function get_nginx_conf()
  			return candidate
  		end
  	end
@@ -18,7 +18,7 @@
  end
  
  api.global = { GET = {}, POST = {}, PUT = {}, DELETE = {} }
-@@ -249,7 +249,7 @@
+@@ -279,7 +279,7 @@ local function check_audit_storage(variables_path)
  
  local function check_audit_storage(variables_path)
  	-- Only called with our fixed config path or the internally generated staging path.
@@ -27,16 +27,16 @@
  	if not handle then
  		return false, "cannot run ModSecurity audit preflight"
  	end
-@@ -261,7 +261,7 @@
- -- The body returns the response triple instead of sending it, so the wrapper has one
- -- place to release the swap lock whichever way the reload ends.
- local function reload_locked(test_arg)
+@@ -518,7 +518,7 @@ local function reload_checked(test_arg)
+ end
+ 
+ local function reload_checked(test_arg)
 -	local valid, validation_error = check_audit_storage("/etc/nginx/variables.env")
 +	local valid, validation_error = check_audit_storage("/usr/local/etc/nginx/variables.env")
  	if not valid then
  		return HTTP_INTERNAL_SERVER_ERROR, "error", validation_error
  	end
-@@ -351,19 +351,19 @@
+@@ -618,19 +618,19 @@ api.global.POST["^/confs$"] = function(self)
  	-- second scheduler or the UI reaches the same instance on its own.
  	local request_id = tostring(ngx.worker.pid()) .. "." .. tostring(ngx.var.connection)
  	local tmp = "/var/tmp/bunkerweb/api_" .. self.ctx.bw.uri:sub(2) .. "." .. request_id .. ".tar.gz"
@@ -61,7 +61,7 @@
  	end
  	local form, err = upload:new(4096)
  	if not form then
-@@ -431,7 +431,7 @@
+@@ -699,7 +699,7 @@ api.global.POST["^/confs$"] = function(self)
  		return self:response(HTTP_INTERNAL_SERVER_ERROR, "error", "cannot extract archive")
  	end
  
@@ -70,3 +70,12 @@
  		local ran, valid, validation_error = pcall(check_audit_storage, staging .. "/variables.env")
  		if not ran or not valid then
  			execute("rm -rf '" .. staging .. "'")
+@@ -716,7 +716,7 @@ api.global.POST["^/confs$"] = function(self)
+ 		return self:response(HTTP_SERVICE_UNAVAILABLE, "error", "another push swap is in progress")
+ 	end
+ 	local generating
+-	if destination == "/etc/nginx" then
++	if destination == "/usr/local/etc/nginx" then
+ 		local status, failure
+ 		generating, status, failure = acquire_generating_lock()
+ 		if not generating then
