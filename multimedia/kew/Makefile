@@ -1,6 +1,6 @@
 PORTNAME=	kew
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.8
+DISTVERSION=	4.4.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libchafa.so:graphics/chafa \
 		libtag.so:audio/taglib \
 		libvorbis.so:audio/libvorbis
 
-USES=		gettext-runtime gmake gnome pkgconfig
+USES=		desktop-file-utils gettext-runtime gmake gnome pkgconfig
 USE_GNOME=	glib20
 
 USE_GITHUB=	yes

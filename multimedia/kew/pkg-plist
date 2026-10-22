@@ -31,7 +31,9 @@ share/icons/hicolor/512x512/apps/kew.png
 %%DATADIR%%/themes/solarizedlight.theme
 %%DATADIR%%/themes/synthwave.theme
 %%DATADIR%%/themes/tokyonight.theme
+share/locale/es/LC_MESSAGES/kew.mo
 share/locale/ja/LC_MESSAGES/kew.mo
+share/locale/ru/LC_MESSAGES/kew.mo
 share/locale/zh_CN/LC_MESSAGES/kew.mo
 share/man/man1/kew.1.gz
 share/man/man5/kew.5.gz
