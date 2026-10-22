@@ -1,5 +1,5 @@
 PORTNAME=	pulp
-DISTVERSION=	4.0.1
+DISTVERSION=	4.1.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -66,6 +66,6 @@ do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} \
 		${PYTHON_CMD} -m pytest ${TEST_ARGS} --import-mode=importlib ${STAGEDIR}${PYTHON_SITELIBDIR}/pulp
 
-# tests as of 4.0.1: 1 failed, 365 passed, 672 skipped, 3 warnings in 9.71s # skipped tests are due to missing yaposib, sascas, etc solver, for 1 test failure see https://github.com/coin-or/pulp/issues/959
+# tests as of 4.1.0: 1 failed, 368 passed, 672 skipped, 3 warnings in 9.02s # skipped tests are due to missing yaposib, sascas, etc solver, for 1 test failure see https://github.com/coin-or/pulp/issues/959
 
 .include <bsd.port.mk>
