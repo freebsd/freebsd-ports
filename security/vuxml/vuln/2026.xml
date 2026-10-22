@@ -1,3 +1,103 @@
+  <vuln vid="8c1b47e2-cf3d-11f1-a655-3497f65b111b">
+    <topic>jackson-databind -- type parameters bypass the polymorphic type validator</topic>
+    <affects>
+    <package>
+	<name>jackson-databind</name>
+	<range><lt>2.22.4</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Jackson project reports:</p>
+	<blockquote cite="https://github.com/FasterXML/jackson-databind/blob/2.x/release-notes/VERSION-2.x">
+	  <p>Type parameters of generic type ids, and element types of array
+	    type ids, were not passed to the configured
+	    PolymorphicTypeValidator, so a deny-listed type could be reached
+	    through a type parameter.</p>
+	  <p>They are now validated like direct type ids. Approval by base
+	    type only covers subtypes of that base type, allowIfSubTypeIsArray()
+	    no longer accepts abstract or interface element types without
+	    allow-listing, and approval of an array type covers its element
+	    type only when given as exactly that class.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-110879</cvename>
+      <url>https://github.com/FasterXML/jackson-databind/blob/2.x/release-notes/VERSION-2.x</url>
+    </references>
+    <dates>
+      <discovery>2026-10-17</discovery>
+      <entry>2026-10-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7b3ea5d6-cf3d-11f1-a655-3497f65b111b">
+    <topic>jackson-databind -- denial of service</topic>
+    <affects>
+    <package>
+	<name>jackson-databind</name>
+	<range><lt>2.22.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Jackson project reports:</p>
+	<blockquote cite="https://github.com/FasterXML/jackson-databind/blob/2.x/release-notes/VERSION-2.x">
+	  <p>CVE-2026-91776: TypeDeserializerBase caches the resolved
+	    deserializer under the raw, attacker supplied type id. With name
+	    based polymorphism and a fallback, every unrecognized type id adds
+	    an entry and the cache grows without bound.</p>
+	  <p>CVE-2026-91777: forward reference completion for JsonIdentityInfo
+	    object ids scans the pending reference accumulator for every
+	    resolved id, which is quadratic in the number of references.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-91776</cvename>
+      <cvename>CVE-2026-91777</cvename>
+      <url>https://github.com/FasterXML/jackson-databind/blob/2.x/release-notes/VERSION-2.x</url>
+    </references>
+    <dates>
+      <discovery>2026-09-21</discovery>
+      <entry>2026-10-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6a9d0f14-cf3d-11f1-a655-3497f65b111b">
+    <topic>jackson-core -- denial of service</topic>
+    <affects>
+    <package>
+	<name>jackson-core</name>
+	<range><lt>2.22.3</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Jackson project reports:</p>
+	<blockquote cite="https://github.com/FasterXML/jackson-core/blob/2.x/release-notes/VERSION-2.x">
+	  <p>CVE-2026-89407: NumberInput.looksLikeValidNumber() pre-validates
+	    stringified numbers with PATTERN_FLOAT, whose adjacent quantifiers
+	    allow catastrophic backtracking on crafted input.</p>
+	  <p>CVE-2026-89425: UTF8DataInputJsonParser builds the offending token
+	    text for an error message in a loop without an upper bound, so it
+	    ignores maxErrorTokenLength. The other three parser implementations
+	    are not affected.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-89407</cvename>
+      <cvename>CVE-2026-89425</cvename>
+      <url>https://github.com/FasterXML/jackson-core/blob/2.x/release-notes/VERSION-2.x</url>
+    </references>
+    <dates>
+      <discovery>2026-09-21</discovery>
+      <entry>2026-10-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f1e61d76-cdb6-11f1-b15e-589cfc104230">
     <topic>brotli -- out-of-bounds write permits remote code execution</topic>
     <affects>
