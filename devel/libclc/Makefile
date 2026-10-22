@@ -6,7 +6,6 @@ DISTVERSION_llvm20=	20.1.8
 DISTVERSION_llvm19=	19.1.7
 DISTVERSION_llvm18=	18.1.8
 DISTVERSION_llvm17=	17.0.6
-DISTVERSION_llvm16=	16.0.6
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
 DISTNAME=	libclc-${DISTVERSION}.src
@@ -24,7 +23,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	spirv-llvm-translator-${FLAVOR}>0:devel/spirv-llvm-translator@${FLAVOR} \
 		libedit>=0:devel/libedit
 
-FLAVORS=	${16 17 18 19 20 21 22:L:S/^/llvm/}
+FLAVORS=	${17 18 19 20 21 22:L:S/^/llvm/}
 
 USES=		cmake compiler:c++11-lib llvm:${FLAVOR:S/llvm//},build python:build tar:xz
 USE_LDCONFIG=	${PREFIX}/${FLAVOR}/lib
