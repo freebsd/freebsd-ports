@@ -1,5 +1,5 @@
 PORTNAME=	mysql-connector-python
-DISTVERSION=	26.7.0
+DISTVERSION=	26.10.0
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +11,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=5.29.4:devel/py-protobuf@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
