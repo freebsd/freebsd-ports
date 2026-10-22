@@ -14,12 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libboost_graph.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
-		libLLVM-16.so:devel/llvm16 \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing llvm:build,min=20,max=20,noexport localbase:ldflags python shebangfix sqlite compiler:c++20-lang
+USES=		cmake:testing localbase:ldflags python shebangfix sqlite compiler:c++20-lang
+# LLVM 16-22 supported with 16 and 22 most tested, we need 20+ for C++ support so use 22
+USES+=		llvm:22,build
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.py *.sh
@@ -30,13 +31,8 @@ CMAKE_TESTING_ON=	PHASAR_BUILD_UNITTESTS
 
 .include <bsd.port.pre.mk>
 
-# The C++20 code requires a newer clang than LLVM 16; compile with LLVM 20
-# while still linking against the LLVM 16 libraries.
-CMAKE_ARGS+=	-DLLVM_DIR=${LOCALBASE}/llvm16/lib/cmake/llvm
-
-CC=		${LOCALBASE}/llvm20/bin/clang
-CPP=		${LOCALBASE}/llvm20/bin/clang-cpp
-CXX=		${LOCALBASE}/llvm20/bin/clang++
+CMAKE_ARGS+=	-DPHASAR_LLVM_VERSION=${LLVM_VERSION}.1
+CMAKE_ARGS+=	-DLLVM_DIR=${LOCALBASE}/llvm${PHASER_LLVM_VERSION}/lib/cmake/llvm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	secure-software-engineering
