@@ -2,17 +2,10 @@ PORTNAME=	opencl-clang
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
 DISTVERSION_llvm17=	17.0.0
-DISTVERSION_llvm16=	16.0.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-.if ${FLAVOR:U} == llvm16
-PATCHFILES+=	529a9188114b.patch:-p1 # https://github.com/intel/opencl-clang/pull/415
-PATCHFILES+=	9f50367661bb.patch:-p1 # https://github.com/intel/opencl-clang/pull/419
-PATCHFILES+=	5491ffa3fde5.patch:-p1 # https://github.com/intel/opencl-clang/pull/416
-PATCHFILES+=	8102ee2f83c3.patch:-p1 # https://github.com/intel/opencl-clang/pull/439
-.endif
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clang wrapper to compile OpenCL C kernels to SPIR-V modules
@@ -27,7 +20,7 @@ EXPIRATION=	2026-12-25
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
 		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}
 
-FLAVORS=	${17 16:L:S/^/llvm/}
+FLAVORS=	${17:L:S/^/llvm/}
 
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
@@ -48,10 +41,6 @@ _PLIST_FILES=	include/cclang/module.modulemap \
 _PLIST_FILES+=	lib/libopencl-clang.so \
 		lib/libopencl-clang.so.${DISTVERSION:R:R}
 PLIST_FILES=	${_PLIST_FILES:S,^,${FLAVOR}/,}
-
-.if ${FLAVOR:U} == llvm15
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-common__clang.map
-.endif
 
 .if !defined(DEFAULT_MAKESUM)
 makesum:
