@@ -344,6 +344,8 @@ GO_BUILDFLAGS=	-ldflags "${STRIP} -w \
 		-X github.com/pomerium/pomerium/internal/version.ProjectName=${PORTNAME} \
 		-X github.com/pomerium/pomerium/internal/version.ProjectURL=https://pomerium.com"
 CGO_ENABLED=	0
+# Go cannot internally link PIE on FreeBSD, and -buildmode=pie needs cgo.
+PIE_UNSAFE=	yes
 
 POMERIUMPIDDIR=	/var/run/${PORTNAME}/
 POMERIUM_USER?=	www
