@@ -1,8 +1,8 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.14.8
+DISTVERSION=	4.14.9
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/54/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/55/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
@@ -37,7 +37,7 @@ USES=		cpe dos2unix gmake perl5 python:3.11 readline shebangfix uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	alonsobsd
 GH_PROJECT=	wazuh-freebsd
-GH_TAGNAME=	d7a31169cf0afd646db38408dd56d5148090aba0
+GH_TAGNAME=	9fbc25e4d88330cfe6e83a5889e105f648d4494c
 
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -55,7 +55,7 @@ EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			bzip2.tar.gz:wazuh_sources \
 			cJSON.tar.gz:wazuh_sources \
 			cpp-httplib.tar.gz:wazuh_sources \
-			cpython-3.11.16.tar.gz:wazuh_cache \
+			cpython-3.11.17.tar.gz:wazuh_cache \
 			curl.tar.gz:wazuh_sources \
 			flatbuffers.tar.gz:wazuh_sources \
 			googletest.tar.gz:wazuh_sources \
@@ -96,6 +96,7 @@ WAZUH_GROUP=	wazuh
 USERS=		${WAZUH_USER}
 GROUPS=		${WAZUH_GROUP}
 
+PLIST_SUB=	PYTHON_DISTVERSION=${PYTHON_DISTVERSION}
 SUB_FILES=	pkg-message
 CONFLICTS=	ossec-* wazuh-agent
 
@@ -137,7 +138,7 @@ WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/lists/malicious-ioc
 WAZUHPREFIX=	/var/ossec
 
 WZPYTHONWHEELS=	cffi-2.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		cryptography-48.0.1-cp311-abi3-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		cryptography-50.0.1-cp311-abi3-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		greenlet-3.0.3-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		grpcio-1.76.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		lazy_object_proxy-1.10.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
@@ -157,11 +158,13 @@ FBSD_RELEASE=	freebsd_${UNAME_r:S/./_/g:S/-/_/g}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "aarch64"
-FBSD15_PATCH_LEVEL=	_p3
+FBSD14_PATCH_LEVEL=	_p2
+FBSD15_PATCH_LEVEL=	_p5
 .endif
 
 .if ${ARCH} != "aarch64"
-FBSD15_PATCH_LEVEL=	_p3
+FBSD14_PATCH_LEVEL=	_p2
+FBSD15_PATCH_LEVEL=	_p5
 .endif
 
 .if ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
