@@ -1,6 +1,6 @@
 PORTNAME=	ytop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	vim@vimer.org
@@ -16,6 +16,7 @@ GH_ACCOUNT=	Yeatol
 GH_PROJECT=	freebsd_ytop
 
 ALL_TARGET=	all
+NO_TEST=	yes
 PLIST_FILES=	bin/ytop
 
 do-install:
