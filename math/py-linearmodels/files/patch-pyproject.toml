@@ -1,9 +1,10 @@
+-- Remove upper version bound for numpy in build-system requirements.
 --- pyproject.toml.orig	2026-04-17 15:53:18 UTC
 +++ pyproject.toml
 @@ -3,7 +3,7 @@ requires = [
  requires = [
    'meson-python',
-   "cython>=3.0.13,<4",  # Sync with CYTHON_MIN_VER in setup
+   "cython>=3.1.0,<4",  # Sync with the Cython check in meson.build
 -  "numpy>=2.0.0,<3",
 +  "numpy",
    "setuptools_scm>=9.2.0,<10",

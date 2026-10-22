@@ -1,6 +1,5 @@
 PORTNAME=	linearmodels
-DISTVERSION=	7.0
-PORTREVISION=	1
+DISTVERSION=	7.1
 CATEGORIES=	math python # statistics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,13 +15,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meson-python>0:devel/meson-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}formulaic>=1.0.2:math/py-formulaic@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}formulaic>=1.2.1:math/py-formulaic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy_extensions>=0.4:devel/py-mypy_extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.4.0:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyhdfe>=0.1:math/py-pyhdfe@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyhdfe>=0.2.0:math/py-pyhdfe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.8.0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.13.0:math/py-statsmodels@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.14.6:math/py-statsmodels@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8>0:devel/py-flake8@${PY_FLAVOR} \
@@ -37,10 +37,13 @@ USES=		python shebangfix
 USE_PYTHON=	pep517 autoplist cython pytest # 14 tests fail, see https://github.com/bashtage/linearmodels/issues/550
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-
+TEST_ARGS=	--disable-plugin-autoload \
+		--skip-slow \
+		-p no:xdist
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/linearmodels/panel/_utility${PYTHON_SOABI}.so
 
-# tests as of 7.0: 12503 passed, 2461 skipped, 47 xfailed, 6 warnings in 6274.70s (1:44:34)
+# tests as of 7.1: 6 failed, 22966 passed, 2771 skipped, 47 xfailed, 22 warnings in 450.45s (0:07:30), (ran with -p no:xdist), 6 tests fail:  see https://github.com/bashtage/linearmodels/issues/853
+# w/out -p no:xdist tess hang, see https://github.com/bashtage/linearmodels/issues/852
 
 .include <bsd.port.mk>
