@@ -3,7 +3,7 @@
 # https://support.google.com/earth/answer/168344
 
 PORTNAME=	google-earth-pro
-DISTVERSION=	7.3.6.10441
+DISTVERSION=	7.3.7.1327
 DISTVERSIONSUFFIX=	-0
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/linux/earth/rpm/stable/x86_64/
