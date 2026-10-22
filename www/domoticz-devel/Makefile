@@ -1,5 +1,5 @@
 PORTNAME=	domoticz
-DISTVERSION=	2026.3.${DOMOTICZ_REL}
+DISTVERSION=	2026.4.${DOMOTICZ_REL}
 PORTREVISION=	0
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
@@ -18,12 +18,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \
 		libmosquitto.so:net/mosquitto
 
-USES=		cmake compiler:c++11-lang cpe lua:53 minizip pkgconfig sqlite \
+USES=		cmake compiler:c++11-lang cpe lua minizip pkgconfig sqlite \
 		ssl
 
 USE_GITHUB=	yes
-GH_TAGNAME=	7d3ae2b0f
-GH_TUPLE=	domoticz:libwebem:dde28f2:libwebem
+GH_TAGNAME=	623d51af5
+GH_TUPLE=	domoticz:libwebem:b7fd46e:libwebem
 GH_SUBDIR=	extern/libwebem:libwebem
 USE_RC_SUBR=	domoticz
 
@@ -41,12 +41,14 @@ CMAKE_INSTALL_PREFIX=   ${PREFIX}/domoticz
 CONFLICTS_INSTALL=	domoticz-[234]*
 
 EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/hardware/plugins/Include \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/scripts/build_server \
+			--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/scripts/support \
 			--no-same-owner --no-same-permissions
 
 # This hack is to get rid of dependency of git while building
 # the package.
-DOMOTICZ_REL=	18378
-DOMOTICZ_TS=	1790669368
+DOMOTICZ_REL=	18490
+DOMOTICZ_TS=	1792399750
 
 USERS=		domoticz
 GROUPS=		domoticz

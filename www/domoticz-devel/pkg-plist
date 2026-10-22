@@ -214,9 +214,6 @@ domoticz/plugins/examples/WebSocketChannelTest/wschanneltest.html
 domoticz/scripts/_domoticz_main
 domoticz/scripts/_domoticz_main.bat
 domoticz/scripts/buienradar_rain_example.pl
-domoticz/scripts/build_server/README.md
-domoticz/scripts/build_server/domake.sh
-domoticz/scripts/build_server/domoticz_upload_creds.example
 domoticz/scripts/domoticz.conf
 domoticz/scripts/dzVents/data/README.md
 domoticz/scripts/dzVents/dumps/.gitignore
@@ -259,11 +256,6 @@ domoticz/scripts/python/script_device_demo.py
 domoticz/scripts/python/script_time_demo.py
 domoticz/scripts/readme.txt
 domoticz/scripts/restart_domoticz
-domoticz/scripts/support/README.md
-domoticz/scripts/support/get_build_versions.sh
-domoticz/scripts/support/mqtt_ad/README.md
-domoticz/scripts/support/mqtt_ad/mqtt_ad_record.sh
-domoticz/scripts/support/mqtt_ad/mqtt_ad_send.sh
 domoticz/scripts/templates/All.Lua
 domoticz/scripts/templates/All.Python
 domoticz/scripts/templates/All.dzVents
