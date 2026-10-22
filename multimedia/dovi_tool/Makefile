@@ -1,6 +1,5 @@
 PORTNAME=	dovi_tool
-DISTVERSION=	2.3.3
-PORTREVISION=	2
+DISTVERSION=	2.3.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	michiel@vanbaak.eu
@@ -14,7 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	quietvoid
 
 CARGO_FEATURES=	--no-default-features \
-	internal-font
+		internal-font
 
 PLIST_FILES=	bin/dovi_tool
 
