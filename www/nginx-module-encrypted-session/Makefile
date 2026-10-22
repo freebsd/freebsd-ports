@@ -1,5 +1,6 @@
 PORTNAME=	nginx-module-encrypted-session
-DISTVERSION=	0.09.20240817
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.10
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -11,7 +12,6 @@ LICENSE=	BSD2CLAUSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	openresty
 GH_PROJECT=	encrypted-session-nginx-module
-GH_TAGNAME=	7ffe4ec
 
 NO_ARCH=	yes
 NO_BUILD=	yes
