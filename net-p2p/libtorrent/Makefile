@@ -33,4 +33,6 @@ INSTALL_TARGET=	install-strip
 TEST_ARGS=	CPPUNIT_LIBS="-L${LOCALBASE}/lib -lcppunit"
 TEST_TARGET=	check
 
+CONFLICTS_INSTALL=	libtorrent-devel
+
 .include <bsd.port.mk>
