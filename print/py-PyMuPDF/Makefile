@@ -20,14 +20,15 @@ BROKEN_i386=	fails to build
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		bash:shells/bash \
 		swig:devel/swig \
-		${PYTHON_PKGNAMEPREFIX}clang>0:devel/py-clang@${PY_FLAVOR} \
-		${LOCALBASE}/llvm16/lib/libclang.so.16:devel/llvm16
+		${PYTHON_PKGNAMEPREFIX}clang>0:devel/py-clang@${PY_FLAVOR}
 
 USES=		gmake gettext-runtime python
+# Need LLVM 18+ so the libclang.so ends in .1
+USES+=		llvm:build,min=18
 USE_PYTHON=	autoplist concurrent pep517 pytest # 35 tests fail, see https://github.com/pymupdf/PyMuPDF/issues/4960
 
 MAKE_ENV+=	MUPDF_MAKE=gmake \
-		CLANG_LIBRARY_FILE=${LOCALBASE}/llvm16/lib/libclang.so.16
+		CLANG_LIBRARY_FILE=${LOCALBASE}/llvm19/lib/libclang.so.${LLVM_VERSION}.1
 TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		PATH=${STAGEDIR}${PREFIX}/bin:"${PATH}"
