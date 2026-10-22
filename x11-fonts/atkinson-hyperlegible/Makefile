@@ -1,5 +1,6 @@
 PORTNAME=	atkinson-hyperlegible
 PORTVERSION=	2020.0514
+PORTREVISION=	1
 CATEGORIES=	x11-fonts accessibility
 MASTER_SITES=	SF/bsdsrc/${.CURDIR:T}
 DISTFILES=	${AHF}-Print-and-Web-${PORTVERSION:S/./-/}.zip \
