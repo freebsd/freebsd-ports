@@ -1,5 +1,5 @@
 PORTNAME=	tox
-DISTVERSION=	4.46.2
+DISTVERSION=	4.46.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>=7.0.1:devel/py-cachetools@${PY_F
 		${PYTHON_PKGNAMEPREFIX}pyproject-api>=1.10:devel/py-pyproject-api@${PY_FLAVOR} \
 		${PY_TOMLI} \
 		${PY_TYPING_EXTENSIONS} \
-		${PYTHON_PKGNAMEPREFIX}virtualenv>=20.38:devel/py-virtualenv@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}virtualenv>=20.39:devel/py-virtualenv@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
