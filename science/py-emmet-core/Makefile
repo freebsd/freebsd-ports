@@ -1,5 +1,5 @@
 PORTNAME=	emmet-core
-DISTVERSION=	0.87.2
+DISTVERSION=	0.88.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,8 @@ WWW=		https://github.com/materialsproject/emmet
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}uv-dynamic-versioning>0:devel/py-uv-dynamic-versioning@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blake3>0:security/py-blake3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}inflect>0:devel/py-inflect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}monty>=2024.2.2:devel/py-monty@${PY_FLAVOR} \
@@ -22,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blake3>0:security/py-blake3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.12:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pybtex>=0.24:textproc/py-pybtex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymatgen>=2024.6.10:science/py-pymatgen@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pymatgen-io-validation>=0.1.1:science/py-pymatgen-io-validation@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7:devel/py-typing-extensions@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pymatgen-core>=2026.7.31:science/py-pymatgen-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymatgen-io-validation>=0.1.1:science/py-pymatgen-io-validation@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
