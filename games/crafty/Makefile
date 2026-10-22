@@ -13,12 +13,6 @@ EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess program for playing and analyzing games
 
-BROKEN_aarch64=		fails to compile: invokes amd64 assembler
-BROKEN_armv6=		fails to compile: invokes amd64 assembler
-BROKEN_armv7=		fails to compile: invokes amd64 assembler
-BROKEN_i386=		fails to compile: invokes amd64 assembler
-BROKEN_riscv64=		fails to compile: invokes amd64 assembler
-
 USES=		gmake zip
 
 ALL_TARGET=	unix-gcc
@@ -40,6 +34,7 @@ OPT=		-DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
 OPT+=		-DCPUS=4
+CFLAGS+=	-mpopcnt
 .else
 OPT+=		-DCPUS=1 # disables x86 assembler
 .endif
