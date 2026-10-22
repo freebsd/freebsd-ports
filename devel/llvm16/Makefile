@@ -12,6 +12,9 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 WWW=		https://llvm.org/
 
+DEPRECATED=	Dependencies removed or deprecated
+EXPIRATION_DATE=	2026-12-25
+
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
