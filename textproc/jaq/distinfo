@@ -1,4 +1,4 @@
-TIMESTAMP = 1785993821
+TIMESTAMP = 1792657858
 SHA256 (rust/crates/aho-corasick-1.1.5.crate) = c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
 SIZE (rust/crates/aho-corasick-1.1.5.crate) = 184315
 SHA256 (rust/crates/arbitrary-1.4.2.crate) = c3d036a3c4ab069c7b410a2ce876bd74808d2d0888a82667669f8e783a898bf1
@@ -229,5 +229,5 @@ SHA256 (rust/crates/xmlparser-0.13.6.crate) = 66fee0b777b0f5ac1c69bb06d361268faa
 SIZE (rust/crates/xmlparser-0.13.6.crate) = 26718
 SHA256 (rust/crates/zmij-1.0.23.crate) = 29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b
 SIZE (rust/crates/zmij-1.0.23.crate) = 28612
-SHA256 (01mf02-jaq-v3.1.1_GH0.tar.gz) = 9b8587436be48b5791c8276573321a3d4f404e0dc77ea6503d05725a55edd266
-SIZE (01mf02-jaq-v3.1.1_GH0.tar.gz) = 228535
+SHA256 (01mf02-jaq-v3.1.2_GH0.tar.gz) = 54ac66fac30a1d28c54f19716215cf4256877c69964c1c0150c3976bde618b93
+SIZE (01mf02-jaq-v3.1.2_GH0.tar.gz) = 234184
