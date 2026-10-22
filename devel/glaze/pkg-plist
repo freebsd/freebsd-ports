@@ -40,6 +40,7 @@ include/glaze/bson/bson_to_json.hpp
 include/glaze/bson/header.hpp
 include/glaze/bson/read.hpp
 include/glaze/bson/skip.hpp
+include/glaze/bson/wrappers.hpp
 include/glaze/bson/write.hpp
 include/glaze/cbor.hpp
 include/glaze/cbor/cbor_to_json.hpp
@@ -119,7 +120,6 @@ include/glaze/ext/glaze_asio.hpp
 include/glaze/ext/jsonrpc.hpp
 include/glaze/file/file_ops.hpp
 include/glaze/file/file_watch.hpp
-include/glaze/file/hostname_include.hpp
 include/glaze/file/raw_or_file.hpp
 include/glaze/file/read_directory.hpp
 include/glaze/file/write_directory.hpp
@@ -167,6 +167,7 @@ include/glaze/msgpack.hpp
 include/glaze/msgpack/common.hpp
 include/glaze/msgpack/read.hpp
 include/glaze/msgpack/skip.hpp
+include/glaze/msgpack/wrappers.hpp
 include/glaze/msgpack/write.hpp
 include/glaze/net/cors.hpp
 include/glaze/net/http.hpp
@@ -198,6 +199,7 @@ include/glaze/simd/backends.hpp
 include/glaze/simd/neon.hpp
 include/glaze/simd/simd.hpp
 include/glaze/simd/sse.hpp
+include/glaze/simd/structural.hpp
 include/glaze/simd/utf8_validation.hpp
 include/glaze/stencil/stencil.hpp
 include/glaze/stencil/stencilcount.hpp
@@ -206,10 +208,7 @@ include/glaze/thread/async_string.hpp
 include/glaze/thread/async_vector.hpp
 include/glaze/thread/atomic.hpp
 include/glaze/thread/guard.hpp
-include/glaze/thread/shared_async_map.hpp
-include/glaze/thread/shared_async_vector.hpp
 include/glaze/thread/threadpool.hpp
-include/glaze/thread/value_proxy.hpp
 include/glaze/toml.hpp
 include/glaze/toml/common.hpp
 include/glaze/toml/opts.hpp

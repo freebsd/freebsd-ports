@@ -1,6 +1,6 @@
 PORTNAME=	glaze
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.4.0
+DISTVERSION=	9.0.0
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +30,6 @@ LDFLAGS+=	-pthread
 
 NO_ARCH=	yes
 
-# tests as of 8.4.0: 99% tests passed, 1 tests failed out of 123
+# tests as of 9.0.0: 99% tests passed, 1 tests failed out of 145, see https://github.com/stephenberry/glaze/issues/3028
 
 .include <bsd.port.mk>
