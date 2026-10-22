@@ -1,4 +1,4 @@
---- src/nrpe-ssl.c.orig	2024-12-23 03:34:53 UTC
+--- src/nrpe-ssl.c.orig	2026-10-21 15:08:06 UTC
 +++ src/nrpe-ssl.c
 @@ -33,7 +33,7 @@ void ssl_set_protocol_version(SslVer ssl_proto_ver, un
  
@@ -6,7 +6,7 @@
  {
 -#if OPENSSL_VERSION_NUMBER >= 0x10100000
 +#if OPENSSL_VERSION_NUMBER >= 0x10100000 && !defined(LIBRESSL_VERSION_NUMBER)
- 
+ 	(void)ssl_opts;
  	SSL_CTX_set_max_proto_version(ctx, 0);
  
 @@ -126,7 +126,7 @@ void ssl_log_startup(int server)
