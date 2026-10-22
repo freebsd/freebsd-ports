@@ -1,4 +1,4 @@
-TIMESTAMP = 1790512702
+TIMESTAMP = 1792655376
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -573,5 +573,5 @@ SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
 SHA256 (rust/crates/zmij-1.0.23.crate) = 29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b
 SIZE (rust/crates/zmij-1.0.23.crate) = 28612
-SHA256 (rcieri-glab-tui-v0.9.2_GH0.tar.gz) = da2c6d38f5d9a0b077d0483aca90be8efcd7edb0a0ce94fa6c973f1c0a5deb9e
-SIZE (rcieri-glab-tui-v0.9.2_GH0.tar.gz) = 10399667
+SHA256 (rcieri-glab-tui-v0.9.3_GH0.tar.gz) = a002816445acedbc924fce8f60cefd480123a4b0e3d9f8fedef0552af2742c10
+SIZE (rcieri-glab-tui-v0.9.3_GH0.tar.gz) = 10518880
