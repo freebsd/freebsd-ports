@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# PROVIDE: speederv2
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# speederv2_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable speederv2.
+# speederv2_flags (str):	Command line passed to speederv2 (required).
+#				Examples (client / server):
+#				"-c -l127.0.0.1:51821 -r203.0.113.1:14350 --mode 1 --mtu 1456 -f20:10"
+#				"-s -l203.0.113.1:14350 -r127.0.0.1:51821 --mode 1 --mtu 1500 -f20:10"
+# speederv2_user (str):		User to run speederv2 as. Default: "nobody".
+#				Set to an empty string to run as root (needed
+#				to bind a port below 1024).
+#
+# /var/run/speederv2 is created writable by speederv2_user, e.g. for --fifo.
+# Output goes to syslog (facility daemon, tag "speederv2"), so colour is
+# disabled. speederv2 is restarted automatically if it exits.
+
+. /etc/rc.subr
+
+name=speederv2
+rcvar=speederv2_enable
+
+load_rc_config $name
+
+: ${speederv2_enable:=NO}
+: ${speederv2_user=nobody}
+
+command=/usr/sbin/daemon
+piddir=/var/run/${name}
+pidfile=${piddir}/${name}.pid
+start_precmd=speederv2_precmd
+
+speederv2_precmd()
+{
+	if [ -z "${_speederv2_flags}" ]; then
+		err 1 "speederv2_flags is not set"
+	fi
+	install -d -o "${speederv2_user:-root}" -m 0755 "${piddir}"
+}
+
+# unset variable so rc.subr does not insert them in front of daemon(8).
+_speederv2_flags="${speederv2_flags}"
+unset speederv2_flags
+
+command_args="-S -T ${name} -r -R 5 -P ${pidfile} %%PREFIX%%/bin/speederv2 --disable-color ${_speederv2_flags}"
+
+run_rc_command "$1"
