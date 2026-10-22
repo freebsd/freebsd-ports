@@ -1,15 +1,41 @@
---- pyproject.toml.orig	2025-05-19 13:17:34 UTC
+-- Remove hatch-vcs (VCS-based versioning fails for tarball builds),
+-- SPDX license field unsupported by older hatchling, remove dynamic version,
+-- hardcode static version, and remove VCS build hooks for FreeBSD ports builds.
+--- pyproject.toml.orig	2026-10-22 08:39:10 UTC
 +++ pyproject.toml
-@@ -1,9 +1,9 @@ requires = [
+@@ -1,7 +1,6 @@ requires = [
  [build-system]
  requires = [
--    "setuptools>=69.4.0",
-+    "setuptools",
+     "hatchling",
+-    "hatch-vcs",
+     "hatch-cython",
+     "setuptools",
      # see https://numpy.org/devdocs/dev/depending_on_numpy.html#numpy-2-0-specific-advice
--    "numpy>=2.0.0",
--    "setuptools_scm[toml]>=8.1",
-+    "numpy",
-+    "setuptools_scm[toml]",
-     "Cython>=3.0.0"
+@@ -12,11 +11,10 @@ name = "vispy"
+ 
+ [project]
+ name = "vispy"
+-dynamic = ["version"]
++version = "0.17.0"
+ description = "Interactive visualization in Python"
+ readme = { file = "README.rst", content-type = "text/x-rst" }
+ requires-python = ">=3.10"
+-license = "BSD-3-Clause"
+ authors = [
+     { name = "Vispy contributors", email = "vispy@googlegroups.com" },
+ ]
+@@ -121,14 +119,7 @@ test = [
+     "imageio",
  ]
  
+-[tool.hatch.version]
+-source = "vcs"
+ 
+-[tool.hatch.version.raw-options]
+-local_scheme = "dirty-tag"
+-
+-[tool.hatch.build.hooks.vcs]
+-version-file = "vispy/version.py"
+ 
+ # things like "vispy.glsl" = ["*.vert", "*.frag", "*.glsl"] not needed because hatch includes it
+ [tool.hatch.build.targets.wheel]
