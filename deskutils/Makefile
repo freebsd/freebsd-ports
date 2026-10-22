@@ -200,7 +200,6 @@
     SUBDIR += owncloudclient
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Data-ICal-DateTime
-    SUBDIR += p5-Goo
     SUBDIR += pal
     SUBDIR += parcellite
     SUBDIR += peaclock
