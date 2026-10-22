@@ -4355,6 +4355,7 @@
     SUBDIR += php-raphf
     SUBDIR += php-swoole
     SUBDIR += php80-APCu
+    SUBDIR += php80-arcanist
     SUBDIR += php82-ffi
     SUBDIR += php82-gettext
     SUBDIR += php82-intl
