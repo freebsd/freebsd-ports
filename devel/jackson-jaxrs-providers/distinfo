@@ -1,5 +1,5 @@
-TIMESTAMP = 1787503622
-SHA256 (jackson-jaxrs-base-2.22.2.jar) = b47d3e7e24ffa978d13b407f0a1e8d2f25de4b095ab7aa71eaeedfc67582ecbc
-SIZE (jackson-jaxrs-base-2.22.2.jar) = 36647
-SHA256 (jackson-jaxrs-json-provider-2.22.2.jar) = 4f05e6fd19507bdbbcf5701292c46d5fa66e5dbaafac4b93c02afbcf8d2c8020
-SIZE (jackson-jaxrs-json-provider-2.22.2.jar) = 16688
+TIMESTAMP = 1792621893
+SHA256 (jackson-jaxrs-base-2.22.4.jar) = 5cf1465c70c2a7dc64b5b3a9f598c03527a547647f46f4178ae5b1904039a7cb
+SIZE (jackson-jaxrs-base-2.22.4.jar) = 36398
+SHA256 (jackson-jaxrs-json-provider-2.22.4.jar) = 23e76831428173753fd391134b785f287107ce457a21e4db6b88910126900fcf
+SIZE (jackson-jaxrs-json-provider-2.22.4.jar) = 16611
