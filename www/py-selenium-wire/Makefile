@@ -12,6 +12,9 @@ WWW=		https://github.com/wkeeling/selenium-wire
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Vendored mitmproxy needs blinker._saferef and pyOpenSSL X509Extension, both removed; upstream archived
+BROKEN=		imports blinker._saferef, removed in blinker 1.8
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=1.4:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotli>=1.0.9:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2019.9.1:security/py-certifi@${PY_FLAVOR} \
