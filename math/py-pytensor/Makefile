@@ -1,5 +1,5 @@
 PORTNAME=	pytensor
-DISTVERSION=	3.3.2
+DISTVERSION=	3.3.4
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,6 +40,6 @@ post-install:
 # BUG: sdist omits test helpers such as tests/unittest_tools.py and
 # tests/graph/utils.py, so run only tests present in the distfile.
 
-# tests as of 3.3.2: 19 passed, 1 warning in 8.93s
+# tests as of 3.3.4: 19 passed, 1 warning in 3.65s
 
 .include <bsd.port.mk>
