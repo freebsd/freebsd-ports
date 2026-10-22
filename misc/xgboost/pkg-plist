@@ -38,5 +38,5 @@ lib/cmake/xgboost/xgboost-config-version.cmake
 lib/cmake/xgboost/xgboost-config.cmake
 lib/libxgboost.so
 lib/libxgboost.so.3
-lib/libxgboost.so.3.4.1
+lib/libxgboost.so.3.4.2
 libdata/pkgconfig/xgboost.pc

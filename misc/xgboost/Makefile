@@ -1,6 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.1
+DISTVERSION=	3.4.2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,9 +24,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dmlc
-GH_TUPLE=	\
-		NVlabs:cub:af39ee2:NVlabs_cub/cub \
-		rapidsai:gputreeshap:acb5be3:rapidsai_gputreeshap/gputreeshap
 
 LDFLAGS+=	${LOCALBASE}/lib/libdmlc.so -lexecinfo
 
@@ -38,7 +35,6 @@ OPTIONS_DEFINE=		OPENMP
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP
 
-# tests as of 2.1.4: 100% tests passed, 0 tests failed out of 1 (failures when machine is loaded, see https://github.com/dmlc/xgboost/issues/11214)
-# tests fail to compile in 3.4.1, see https://github.com/dmlc/xgboost/issues/12559
+# tests as of 3.4.2: 100% tests passed out of 1
 
 .include <bsd.port.mk>
