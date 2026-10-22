@@ -1,6 +1,6 @@
 PORTNAME=	csvw
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.0
+DISTVERSION=	4.1.1
 CATEGORIES=	misc python
 #MASTER_SITES=	PYPI # tests are broken there
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}language-tags>0:textproc/py-language-tags@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rdflib>0:textproc/py-rdflib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rfc3986>=2:www/py-rfc3986@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rfc3986>0:www/py-rfc3986@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}termcolor>0:devel/py-termcolor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uritemplate>=3.0.0:net/py-uritemplate@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frictionless>0:devel/py-frictionless@${PY_FLAVOR} \
@@ -42,6 +42,6 @@ TEST_WRKSRC=	${WRKSRC}/tests
 TEST_ARGS=	--disable-plugin-autoload \
 		-p pytest_cov -p pytest_mock -p requests_mock
 
-# tests as of 4.1.0: 807 passed, 16 xfailed in 3.93s
+# tests as of 4.1.1: 825 passed, 16 xfailed in 2.59s
 
 .include <bsd.port.mk>
