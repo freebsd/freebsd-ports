@@ -1,7 +1,7 @@
 PORTNAME=	yt
-DISTVERSION=	4.4.2
+DISTVERSIONPREFIX=	yt-
+DISTVERSION=	4.4.3
 CATEGORIES=	math astro python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cmyt>=1.1.2:math/py-cmyt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unyt>=2.9.2:math/py-unyt@${PY_FLAVOR}
 
 USES=		dos2unix localbase python
+USE_GITHUB=	yes
+GH_ACCOUNT=	yt-project
 USE_PYTHON=	autoplist concurrent cython distutils
 
 post-install:
@@ -36,14 +38,16 @@ TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
 		MPLBACKEND=Agg \
 		PYTEST_ADDOPTS="-p no:black -p no:ruff -p no:mypy -p no:flake8 -p no:cov -p no:benchmark -p no:inline-snapshot -p no:xdist -p no:randomly"
+TEST_ARGS=	--disable-plugin-autoload
 
 do-test:
 	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && \
 		${SETENV} ${TEST_ENV} pytest yt/tests \
 		--deselect=yt/data_objects/tests/test_data_containers.py::TestDataContainers::test_to_astropy_table
 
-# tests as of 4.4.2: 53 passed, 10 skipped, 1 xfailed in 9.87s
-# Additional tests are excluded because they depend on nose (broken on Python 3.12)
-# or on data files/network access.
+# tests as of 4.4.3:
+#       136 passed
+#        10 skipped
+#         1 xfailed
 
 .include <bsd.port.mk>
