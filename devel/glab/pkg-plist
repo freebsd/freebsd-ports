@@ -66,6 +66,7 @@
 %%MANPAGES%%share/man/man1/glab-container-registry-tag.1.gz
 %%MANPAGES%%share/man/man1/glab-container-registry.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-bundle.1.gz
+%%MANPAGES%%share/man/man1/glab-dependency-firewall-cargo.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-ci-summary.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-gem.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-gradle.1.gz
@@ -130,8 +131,6 @@
 %%MANPAGES%%share/man/man1/glab-label-get.1.gz
 %%MANPAGES%%share/man/man1/glab-label-list.1.gz
 %%MANPAGES%%share/man/man1/glab-label.1.gz
-%%MANPAGES%%share/man/man1/glab-mcp-serve.1.gz
-%%MANPAGES%%share/man/man1/glab-mcp.1.gz
 %%MANPAGES%%share/man/man1/glab-milestone-create.1.gz
 %%MANPAGES%%share/man/man1/glab-milestone-delete.1.gz
 %%MANPAGES%%share/man/man1/glab-milestone-edit.1.gz
