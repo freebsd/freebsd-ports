@@ -16,7 +16,7 @@ LICENSE=	APACHE20
 DEPRECATED=	Support for ${DISTVERSION:R}.x has ended 03 Feb 2026 - use ${PORTNAME}94 or ${PORTNAME}95 instead
 EXPIRATION_DATE=	2026-12-31
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 RUN_DEPENDS=	bash:shells/bash
 
@@ -34,7 +34,7 @@ EXTRACT_AFTER_ARGS=	--exclude jdk.app \
 			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/*-darwin \
 			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/*-linux \
 			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/x86-freebsd \
-			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/${ARCH:S|aarch64|x86_64|}-freebsd \
+			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/${ARCH:Namd64:C|.+|x86_64|}-freebsd \
 			--no-same-owner --no-same-permissions
 
 NO_BUILD=	yes
