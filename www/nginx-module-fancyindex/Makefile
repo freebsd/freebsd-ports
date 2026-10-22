@@ -1,5 +1,6 @@
 PORTNAME=	nginx-module-fancyindex
-DISTVERSION=	0.5.2.20230120
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.0
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -12,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	aperezdc
 GH_PROJECT=	ngx-fancyindex
-GH_TAGNAME=	cbc0d3f
 
 NO_ARCH=	yes
 NO_BUILD=	yes
