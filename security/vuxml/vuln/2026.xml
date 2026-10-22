@@ -1,3 +1,69 @@
+  <vuln vid="5101359e-ce3c-11f1-bf7a-3c7c3fba4204">
+    <topic>Keycloak -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>keycloak</name>
+	  <range><lt>26.8.1</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Keycloak Team reports:</p>
+	<blockquote cite="https://www.keycloak.org/2026/10/keycloak-2681-released">
+	  <ul>
+	    <li>[CVE-2026-15943]: OIDC identity provider update reuses masked client secret after token URL changes.</li>
+	    <li>[CVE-2026-18569]: OIDC broker backchannel logout accepts unsigned forged logout tokens when signature validation is disabled.</li>
+	    <li>[CVE-2026-82968]: Persistent wrong-account linking through null / GitHub identity provider.</li>
+	    <li>[CVE-2026-94001]: Admin credential DELETE bypasses denied reset-password permission.</li>
+	    <li>[CVE-2026-94000]: A delegated admin with only `manage-users` can become `realm-admin` by joining (or being created into) a group that maps an admin role.</li>
+	    <li>[CVE-2026-94218]: 2FA setup enforcement bypass via /realms/{realm}/login-actions/restart — #YWH-PGM40475-254</li>
+	    <li>[CVE-2026-94215]: Cross-realm realm resource read/write via per-request session-level cache in RealmCacheSession.</li>
+	    <li>[CVE-2026-94213]: Missing user view authorization in the Authorization Services policy evaluation endpoint, possible incomplete fix of CVE-2026-37978.</li>
+	    <li>[CVE-2026-94217]: UMA scope merge across resource owners via name collision in resolveResourcePermission.</li>
+	    <li>[CVE-2026-96446]: Security vulnerability in Keycloak 26.7.3 — PAR single-use bypass via prompt=none.</li>
+	    <li>[CVE-2026-96445]: Conditional OTP trusts skip headers on untrusted proxy paths.</li>
+	    <li>[CVE-2026-97177]: Generic user update bypasses denied reset-password permission.</li>
+	    <li>[CVE-2026-95503]: Potential KDC spoofing attack when Kerberos password authentication is enabled.</li>
+	    <li>[CVE-2026-97311]: Broken access control in Admin REST API: roles/{role-name}/groups discloses groups the caller cannot view (incomplete fix of the 26.7.2 hardening).</li>
+	    <li>[CVE-2026-97846]: Standard Token Exchange bypasses required mTLS certificate binding and issues an active bearer token when no client certificate is supplied.</li>
+	    <li>[CVE-2026-101333]: Unbounded metric series creation via idp tag on broker login endpoint.</li>
+	    <li>[CVE-2026-91777]: Third-party dependency fix, com.fasterxml.jackson.core:jackson-databind</li>
+	    <li>Multiple CVEs in third-party dependency tools.jackson.core:jackson-databind</li>
+	    <li>[CVE-2026-103884]: Path traversal via X.509 CRL Distribution Point - client-supplied CRL path escapes $KC_HOME/conf</li>
+	    <li>Multiple CVEs in third-party dependency simple-git.</li>
+	    <li>Flaky test: initial-access.spec.ts 'Initial access token' fails with TypeError on table data read.</li>
+	    <li>[CVE-2026-107121]: SMTP starttls=true permits plaintext credential and message downgrade.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-15943</cvename>
+      <cvename>CVE-2026-18569</cvename>
+      <cvename>CVE-2026-82968</cvename>
+      <cvename>CVE-2026-94001</cvename>
+      <cvename>CVE-2026-94000</cvename>
+      <cvename>CVE-2026-94218</cvename>
+      <cvename>CVE-2026-94215</cvename>
+      <cvename>CVE-2026-94213</cvename>
+      <cvename>CVE-2026-94217</cvename>
+      <cvename>CVE-2026-96446</cvename>
+      <cvename>CVE-2026-96445</cvename>
+      <cvename>CVE-2026-97177</cvename>
+      <cvename>CVE-2026-95503</cvename>
+      <cvename>CVE-2026-97311</cvename>
+      <cvename>CVE-2026-97846</cvename>
+      <cvename>CVE-2026-101333</cvename>
+      <cvename>CVE-2026-103884</cvename>
+      <cvename>CVE-2026-107121</cvename>
+      <url>https://www.keycloak.org/2026/10/keycloak-2681-released</url>
+    </references>
+    <dates>
+      <discovery>2026-10-13</discovery>
+      <entry>2026-10-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f4f0bb8d-ce20-11f1-9bfa-a8a1599412c6">
     <topic>chromium -- security fixes</topic>
     <affects>
