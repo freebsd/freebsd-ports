@@ -1,6 +1,6 @@
 --- bridges/source/cpp_uno/gcc3_freebsd_powerpc64/uno2cpp.cxx.orig
 +++ bridges/source/cpp_uno/gcc3_freebsd_powerpc64/uno2cpp.cxx
-@@ -26,6 +26,12 @@
+@@ -26,7 +26,14 @@
  
  #include <stdlib.h>
  
@@ -11,14 +11,14 @@
 +#include <com/sun/star/uno/Exception.hpp>
 +#include <com/sun/star/uno/RuntimeException.hpp>
  #include <com/sun/star/uno/genfunc.hxx>
++#include <osl/endian.h>
  #include <uno/data.h>
  
-@@ -42,10 +48,68 @@
+ #include "bridges/cpp_uno/shared/bridge.hxx"
+@@ -42,10 +49,127 @@
  
  using namespace ::rtl;
  using namespace ::com::sun::star::uno;
--
--void MapReturn(long r3, double dret, typelib_TypeClass eTypeClass, void *pRegisterReturn)
 +#ifdef __GLIBCXX__
 +using CPPU_CURRENT_NAMESPACE::__cxa_exception;
 +using CPPU_CURRENT_NAMESPACE::__cxa_get_globals;
@@ -29,8 +29,7 @@
 +#endif
 +
 +namespace ppc64
- {
--    switch (eTypeClass)
++{
 +#if defined(_CALL_ELF) && _CALL_ELF == 2
 +    bool is_complex_struct(const typelib_TypeDescription * type)
 +    {
@@ -56,7 +55,61 @@
 +            return is_complex_struct(&p->pBaseTypeDescription->aBase);
 +        return false;
 +    }
++
++    static bool collect_fpr_members(const typelib_TypeDescription * type,
++                                    typelib_TypeClass & eBase, sal_Int32 & nMembers)
++    {
++        const typelib_CompoundTypeDescription * p
++            = reinterpret_cast< const typelib_CompoundTypeDescription * >(type);
++        if (p->pBaseTypeDescription != 0
++            && !collect_fpr_members(&p->pBaseTypeDescription->aBase, eBase, nMembers))
++            return false;
++        for (sal_Int32 i = 0; i < p->nMembers; ++i)
++        {
++            typelib_TypeClass eClass = p->ppTypeRefs[i]->eTypeClass;
++            if (eClass == typelib_TypeClass_STRUCT)
++            {
++                typelib_TypeDescription * t = 0;
++                TYPELIB_DANGER_GET(&t, p->ppTypeRefs[i]);
++                bool b = collect_fpr_members(t, eBase, nMembers);
++                TYPELIB_DANGER_RELEASE(t);
++                if (!b)
++                    return false;
++            }
++            else if (eClass == typelib_TypeClass_FLOAT || eClass == typelib_TypeClass_DOUBLE)
++            {
++                if (eBase == typelib_TypeClass_VOID)
++                    eBase = eClass;
++                else if (eBase != eClass)
++                    return false;
++                ++nMembers;
++            }
++            else
++                return false;
++        }
++        return true;
++    }
 +#endif
++
++    sal_Int32 return_in_fprs( typelib_TypeDescriptionReference *pTypeRef, typelib_TypeClass & eBase )
++    {
++        eBase = typelib_TypeClass_VOID;
++#if defined(_CALL_ELF) && _CALL_ELF == 2
++        if (pTypeRef->eTypeClass == typelib_TypeClass_STRUCT)
++        {
++            typelib_TypeDescription * pTypeDescr = 0;
++            TYPELIB_DANGER_GET( &pTypeDescr, pTypeRef );
++            sal_Int32 nMembers = 0;
++            if (!collect_fpr_members(pTypeDescr, eBase, nMembers) || nMembers > 8)
++                nMembers = 0;
++            TYPELIB_DANGER_RELEASE( pTypeDescr );
++            return nMembers;
++        }
++#else
++        (void)pTypeRef;
++#endif
++        return 0;
++    }
 +
 +    bool return_in_hidden_param( typelib_TypeDescriptionReference *pTypeRef )
 +    {
@@ -65,6 +118,10 @@
 +#if defined(_CALL_ELF) && _CALL_ELF == 2
 +        else if (pTypeRef->eTypeClass == typelib_TypeClass_STRUCT || pTypeRef->eTypeClass == typelib_TypeClass_EXCEPTION)
 +        {
++            typelib_TypeClass eBase;
++            if (return_in_fprs(pTypeRef, eBase) != 0)
++                return false;
++
 +            typelib_TypeDescription * pTypeDescr = 0;
 +            TYPELIB_DANGER_GET( &pTypeDescr, pTypeRef );
 +
@@ -78,14 +135,17 @@
 +        return true;
 +    }
 +}
-+
-+extern "C" void MapReturn(long r3, long r4, double dret, typelib_TypeDescriptionReference* pReturnType, void *pRegisterReturn)
-+{
+ 
+-void MapReturn(long r3, double dret, typelib_TypeClass eTypeClass, void *pRegisterReturn)
++extern "C" void MapReturn(long r3, long r4, typelib_TypeDescriptionReference* pReturnType, void *pRegisterReturn,
++    double dret, double f2, double f3, double f4, double f5, double f6, double f7, double f8)
+ {
+-    switch (eTypeClass)
 +    switch (pReturnType->eTypeClass)
      {
      case typelib_TypeClass_HYPER:
      case typelib_TypeClass_UNSIGNED_HYPER:
-@@ -67,10 +131,23 @@
+@@ -67,10 +191,49 @@
              break;
      case typelib_TypeClass_FLOAT:
              *reinterpret_cast<float *>( pRegisterReturn ) = dret;
@@ -97,20 +157,46 @@
 +#if defined(_CALL_ELF) && _CALL_ELF == 2
 +    case typelib_TypeClass_STRUCT:
 +    case typelib_TypeClass_EXCEPTION:
-+            if (!ppc64::return_in_hidden_param(pReturnType))
++        {
++            typelib_TypeClass eBase;
++            sal_Int32 nMembers = ppc64::return_in_fprs(pReturnType, eBase);
++            if (nMembers != 0)
 +            {
-+                sal_uInt64 *pRegisters = reinterpret_cast<sal_uInt64*>(pRegisterReturn);
-+                pRegisters[0] = r3;
-+                if (pReturnType->pType->nSize > 8)
-+                    pRegisters[1] = r4;
++                const double fpr[8] = { dret, f2, f3, f4, f5, f6, f7, f8 };
++                for (sal_Int32 i = 0; i < nMembers; ++i)
++                {
++                    if (eBase == typelib_TypeClass_FLOAT)
++                        reinterpret_cast<float *>( pRegisterReturn )[i] = fpr[i];
++                    else
++                        reinterpret_cast<double *>( pRegisterReturn )[i] = fpr[i];
++                }
 +            }
++            else if (!ppc64::return_in_hidden_param(pReturnType))
++            {
++                char *p = reinterpret_cast<char *>(pRegisterReturn);
++                sal_Int32 nSize = pReturnType->pType->nSize;
++                if (nSize > 8)
++                {
++                    memcpy(p, &r3, 8);
++                    memcpy(p + 8, &r4, nSize - 8);
++                }
++                else
++#ifdef OSL_BIGENDIAN
++                    memcpy(p, reinterpret_cast<char *>(&r3) + 8 - nSize, nSize);
++#else
++                    memcpy(p, &r3, nSize);
++#endif
++            }
++        }
++        break;
 +#else
 +    (void)r4;
++    (void)f2; (void)f3; (void)f4; (void)f5; (void)f6; (void)f7; (void)f8;
 +#endif
      default:
              break;
      }
-@@ -79,11 +156,13 @@
+@@ -79,11 +242,13 @@
  namespace
  {
  //==================================================================================================
@@ -127,7 +213,7 @@
  {
      // Stack, if used, must be 16-bytes aligned
      if ( nStack )
-@@ -99,13 +178,13 @@
+@@ -99,13 +264,13 @@
          // Let's figure out what is really going on here
          {
                  fprintf( stderr, "= callVirtualMethod() =\nGPR's (%d): ", nGPR );
@@ -145,7 +231,7 @@
                          fprintf( stderr, "0x%lx, ", pStack[i] );
                  fprintf( stderr, "\n" );
          }
-@@ -120,52 +199,40 @@
+@@ -120,52 +285,40 @@
      pMethod += 8 * nVtableIndex;
      pMethod = *((sal_uInt64 *)pMethod);
  
@@ -213,14 +299,13 @@
 -    register sal_uInt64 r9 asm("r9");
 -    register sal_uInt64 r10 asm("r10");
 -    register sal_uInt64 r11 asm("r11");
--
+ 
 -    (*pFunc)(r3, r4, r5, r6, r7, r8, r9, r10);
-+
 +    (*pFunc)(pGPR[0], pGPR[1], pGPR[2], pGPR[3], pGPR[4], pGPR[5], pGPR[6], pGPR[7]);
  
      // get return value
      __asm__ __volatile__ (
-@@ -174,8 +241,9 @@
+@@ -174,8 +327,9 @@
                  "fmr    %0,     1\n\t"
                  : "=f" (dret), "=r" (r3), "=r" (r4) : );
  
@@ -231,7 +316,7 @@
  
  // Macros for easier insertion of values to registers or stack
  // pSV - pointer to the source
-@@ -185,23 +253,35 @@
+@@ -185,23 +339,35 @@
  
  // The value in %xmm register is already prepared to be retrieved as a float,
  // thus we treat float and double the same
@@ -274,7 +359,7 @@
          if ( nr < ppc64::MAX_GPR_REGS ) \
                  pGPR[nr++] = *reinterpret_cast<sal_uInt64 *>( pSV ); \
          else \
-@@ -209,7 +289,15 @@
+@@ -209,7 +375,15 @@
  	if (bOverFlow) \
                  *pDS++ = *reinterpret_cast<sal_uInt64 *>( pSV );
  
@@ -291,7 +376,7 @@
          if ( nr < ppc64::MAX_GPR_REGS ) \
                  pGPR[nr++] = *reinterpret_cast<sal_uInt32 *>( pSV ); \
          else \
-@@ -217,7 +305,15 @@
+@@ -217,7 +391,15 @@
          if (bOverFlow) \
                  *pDS++ = *reinterpret_cast<sal_uInt32 *>( pSV );
  
@@ -308,7 +393,7 @@
          if ( nr < ppc64::MAX_GPR_REGS ) \
                  pGPR[nr++] = *reinterpret_cast<sal_uInt16 *>( pSV ); \
          else \
-@@ -225,7 +321,15 @@
+@@ -225,7 +407,15 @@
          if (bOverFlow) \
                  *pDS++ = *reinterpret_cast<sal_uInt16 *>( pSV );
  
@@ -325,7 +410,16 @@
          if ( nr < ppc64::MAX_GPR_REGS ) \
                  pGPR[nr++] = *reinterpret_cast<sal_uInt8 *>( pSV ); \
          else \
-@@ -337,19 +441,23 @@
+@@ -265,7 +455,7 @@
+ #ifdef CMC_DEBUG
+ 		fprintf(stderr, "return type is %d\n", pReturnTypeDescr->eTypeClass);
+ #endif
+-		if (bridges::cpp_uno::shared::isSimpleType( pReturnTypeDescr ))
++		if (!ppc64::return_in_hidden_param( pReturnTypeRef ))
+ 		{
+ 			pCppReturn = pUnoReturn; // direct way for simple types
+ #ifdef CMC_DEBUG
+@@ -337,19 +527,23 @@
                                  INSERT_INT32( pCppArgs[nPos], nGPR, pGPR, pStack, bOverFlow );
                                  break;
                          case typelib_TypeClass_SHORT:
@@ -352,7 +446,7 @@
                                  break;
                          }
  
-@@ -448,9 +556,18 @@
+@@ -448,9 +642,18 @@
  	}
   	catch (...)
   	{
@@ -373,7 +467,7 @@
          
  		// temporary params
  		for ( ; nTempIndizes--; )
-@@ -475,8 +592,8 @@
+@@ -475,8 +678,8 @@
  	void * pReturn, void * pArgs[], uno_Any ** ppException )
  {
  	// is my surrogate
@@ -384,7 +478,7 @@
  	typelib_InterfaceTypeDescription * pTypeDescr = pThis->pTypeDescr;
  	
  	switch (pMemberDescr->eTypeClass)
-@@ -484,8 +601,8 @@
+@@ -484,8 +687,8 @@
  	case typelib_TypeClass_INTERFACE_ATTRIBUTE:
  	{
  
@@ -395,7 +489,7 @@
                  reinterpret_cast<
                      typelib_InterfaceAttributeTypeDescription const * >(
                          pMemberDescr)));
-@@ -529,8 +646,8 @@
+@@ -529,8 +732,8 @@
  	case typelib_TypeClass_INTERFACE_METHOD:
  	{
  
@@ -406,4 +500,3 @@
                  reinterpret_cast<
                      typelib_InterfaceMethodTypeDescription const * >(
                          pMemberDescr)));
-

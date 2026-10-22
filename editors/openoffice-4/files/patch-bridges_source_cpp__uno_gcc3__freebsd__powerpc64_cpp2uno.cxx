@@ -20,7 +20,29 @@
  
  using namespace ::com::sun::star::uno;
  
-@@ -144,14 +150,14 @@
+@@ -70,12 +76,18 @@
+ 	
+ 	void * pUnoReturn = 0;
+ 	void * pCppReturn = 0; // complex return ptr: if != 0 && != pUnoReturn, reconversion need
+-	
++	double * pFprReturn = reinterpret_cast< double * >( fpreg );
++	typelib_TypeClass eFprBase = typelib_TypeClass_VOID;
++	sal_Int32 nFprMembers = 0;
++
+ 	if (pReturnTypeDescr)
+ 	{
+-		if (bridges::cpp_uno::shared::isSimpleType( pReturnTypeDescr ))
++		if (!ppc64::return_in_hidden_param( pReturnTypeRef ))
+ 		{
+-			pUnoReturn = pRegisterReturn; // direct way for simple types
++			nFprMembers = ppc64::return_in_fprs( pReturnTypeRef, eFprBase );
++			pUnoReturn = (nFprMembers != 0
++						  ? alloca( pReturnTypeDescr->nSize )
++						  : pRegisterReturn); // direct way for simple types
+ 		}
+ 		else // complex return via ptr (pCppReturn)
+ 		{
+@@ -144,14 +156,14 @@
                  case typelib_TypeClass_BYTE:
                  case typelib_TypeClass_BOOLEAN:
                      if (ng < ppc64::MAX_GPR_REGS)
@@ -39,7 +61,7 @@
                          bOverFlowUsed = true;
                      }
                      if (bOverFlowUsed) ovrflw++;
-@@ -160,14 +166,14 @@
+@@ -160,14 +172,14 @@
                  case typelib_TypeClass_SHORT:
                  case typelib_TypeClass_UNSIGNED_SHORT:
                      if (ng < ppc64::MAX_GPR_REGS)
@@ -58,7 +80,7 @@
                          bOverFlowUsed = true;
                      }
                      if (bOverFlowUsed) ovrflw++;
-@@ -176,14 +182,14 @@
+@@ -176,14 +188,14 @@
                  case typelib_TypeClass_LONG:
                  case typelib_TypeClass_UNSIGNED_LONG:
                      if (ng < ppc64::MAX_GPR_REGS)
@@ -77,28 +99,50 @@
                          bOverFlowUsed = true;
                      }
                      if (bOverFlowUsed) ovrflw++;
-@@ -327,21 +333,25 @@
+@@ -319,6 +331,23 @@
+ 		if (pReturnTypeDescr)
+ 		{
+ 			typelib_TypeClass eRet = (typelib_TypeClass)pReturnTypeDescr->eTypeClass;
++			if (nFprMembers != 0)
++			{
++				for (sal_Int32 i = 0; i < nFprMembers; ++i)
++					pFprReturn[i] = (eFprBase == typelib_TypeClass_FLOAT
++									 ? static_cast< float * >( pUnoReturn )[i]
++									 : static_cast< double * >( pUnoReturn )[i]);
++				eRet = ppc64::TYPECLASS_FPRS;
++			}
++#ifdef OSL_BIGENDIAN
++			else if (eRet == typelib_TypeClass_STRUCT && !pCppReturn && pReturnTypeDescr->nSize < 8)
++			{
++				sal_uInt64 n = 0;
++				memcpy( reinterpret_cast< char * >( &n ) + 8 - pReturnTypeDescr->nSize,
++						pRegisterReturn, pReturnTypeDescr->nSize );
++				*reinterpret_cast< sal_uInt64 * >( pRegisterReturn ) = n;
++			}
++#endif
+ 			TYPELIB_DANGER_RELEASE( pReturnTypeDescr );
+ 			return eRet;
+ 		}
+@@ -327,21 +356,25 @@
  	}
  }
  
--
--//==================================================================================================
--static typelib_TypeClass cpp_mediate(
--	sal_uInt64 nOffsetAndIndex,
 +#if defined(_CALL_ELF) && _CALL_ELF == 2
 +#  define PARAMSAVE 32
 +#else
 +#  define PARAMSAVE 48
 +#endif
-+
+ 
+-//==================================================================================================
+-static typelib_TypeClass cpp_mediate(
+-	sal_uInt64 nOffsetAndIndex,
 +extern "C" typelib_TypeClass cpp_mediate(
 +    sal_uInt64 nOffsetAndIndex,
          void ** gpreg, void ** fpreg, long sp,
 -	sal_Int64 * pRegisterReturn /* space for register return */ )
--{
--    OSL_ENSURE( sizeof(sal_Int64)==sizeof(void *), "### unexpected!" );
 +    sal_Int64 * pRegisterReturn /* space for register return */ )
-+{
+ {
+-    OSL_ENSURE( sizeof(sal_Int64)==sizeof(void *), "### unexpected!" );
 +    static_assert(sizeof(sal_Int64)==sizeof(void *), "### unexpected!");
  
      sal_Int32 nVtableOffset = (nOffsetAndIndex >> 32);
@@ -112,20 +156,21 @@
      // gpreg:  [ret *], this, [other gpr params]
      // fpreg:  [fpr params]
      // ovrflw: [gpr or fpr params (properly aligned)]
-@@ -501,54 +511,52 @@
+@@ -501,54 +534,52 @@
  	return eRet;
  }
  
 -extern "C" void privateSnippetExecutor( ... )
--{
--    volatile long nOffsetAndIndex;
--
--    //mr %r3, %r11            # move into arg1 the 64bit value passed from OOo
 +extern "C" void privateSnippetExecutor( ... );
 +#if 0
-+{
+ {
+-    volatile long nOffsetAndIndex;
 +    sal_uInt64 gpreg[ppc64::MAX_GPR_REGS];
-+
+ 
+-    //mr %r3, %r11            # move into arg1 the 64bit value passed from OOo
+-    __asm__ __volatile__ (
+-                "mr     %0,    11\n\t"
+-                : "=r" (nOffsetAndIndex) : );
 +    register long r3 asm("r3"); gpreg[0] = r3;
 +    register long r4 asm("r4"); gpreg[1] = r4;
 +    register long r5 asm("r5"); gpreg[2] = r5;
@@ -134,17 +179,11 @@
 +    register long r8 asm("r8"); gpreg[5] = r8;
 +    register long r9 asm("r9"); gpreg[6] = r9;
 +    register long r10 asm("r10"); gpreg[7] = r10;
-+
-+    double fpreg[ppc64::MAX_SSE_REGS];
-+
-     __asm__ __volatile__ (
--                "mr     %0,    11\n\t"
--                : "=r" (nOffsetAndIndex) : );
--
+ 
 -    sal_uInt64 gpreg[ppc64::MAX_GPR_REGS];
--    double fpreg[ppc64::MAX_SSE_REGS];
--
--    __asm__ __volatile__ (
+     double fpreg[ppc64::MAX_SSE_REGS];
+ 
+     __asm__ __volatile__ (
 -        "std 3,   0(%0)\t\n"
 -        "std 4,   8(%0)\t\n"
 -        "std 5,  16(%0)\t\n"
@@ -188,18 +227,16 @@
      );
  
 -    volatile long sp;
--
++    register long r11 asm("r11");
++    const long nOffsetAndIndex = r11;
+ 
 -    //stack pointer
 -    __asm__ __volatile__ (
 -                "mr     %0,    1\n\t"
 -                : "=r" (sp) : );
--
-+    register long r11 asm("r11");
-+    const long nOffsetAndIndex = r11;
-+
 +    register long r1 asm("r1");
 +    const long sp = r1;
-+
+ 
 +#if defined(_CALL_ELF) && _CALL_ELF == 2
 +    volatile long nRegReturn[2];
 +#else
@@ -208,7 +245,7 @@
  
      typelib_TypeClass aType =
          cpp_mediate( nOffsetAndIndex, (void**)gpreg, (void**)fpreg, sp, (sal_Int64*)nRegReturn);
-@@ -591,11 +599,20 @@
+@@ -591,11 +622,20 @@
          default:
              __asm__( "ld 3,%0\n\t" 
                  : : "m" (nRegReturn[0]) );
@@ -219,9 +256,8 @@
              break;
      }
  }
--
 +#endif
-+
+ 
 +#if defined(_CALL_ELF) && _CALL_ELF == 2
 +const int codeSnippetSize = 32;
 +#else
@@ -230,14 +266,13 @@
  
  unsigned char *  codeSnippet( unsigned char * code, sal_Int32 nFunctionIndex, sal_Int32 nVtableOffset, 
                                bool simpleRetType)
-@@ -609,10 +626,22 @@
+@@ -609,10 +649,22 @@
  
      if ( !simpleRetType )
          nOffsetAndIndex |= 0x80000000;
--
 +#if defined(_CALL_ELF) && _CALL_ELF == 2
 +    unsigned int *raw = (unsigned int *)&code[0];
-+
+ 
 +    raw[0] = 0xe96c0018;        /* 0:   ld      11,2f-0b(12)    */
 +    raw[1] = 0xe98c0010;        /*      ld      12,1f-0b(12)    */
 +    raw[2] = 0x7d8903a6;        /*      mtctr   12              */
@@ -254,4 +289,21 @@
  #ifdef CMC_DEBUG
      fprintf(stderr, "in: offset/index is %x %x %d, %lx\n", 
  	nFunctionIndex, nVtableOffset, !simpleRetType, raw[2]);
-
+@@ -681,7 +733,7 @@
+             (s++)->fn = code + writetoexecdiff;
+             code = codeSnippet(
+                 code, functionOffset++, vtableOffset,
+-                bridges::cpp_uno::shared::isSimpleType(
++                !ppc64::return_in_hidden_param(
+                     reinterpret_cast<
+                     typelib_InterfaceAttributeTypeDescription * >(
+                         member)->pAttributeTypeRef));
+@@ -700,7 +752,7 @@
+             (s++)->fn = code + writetoexecdiff;
+             code = codeSnippet(
+                 code, functionOffset++, vtableOffset,
+-                bridges::cpp_uno::shared::isSimpleType(
++                !ppc64::return_in_hidden_param(
+                     reinterpret_cast<
+                     typelib_InterfaceMethodTypeDescription * >(
+                         member)->pReturnTypeRef));

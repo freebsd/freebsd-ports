@@ -10,7 +10,7 @@
 +#define _GLIBCXX_CDTOR_CALLABI
 +#endif
  #include <cstddef>
-+
+ 
 +#ifndef CONFIG_CXXABI_H
 +#define CONFIG_CXXABI_H
 +
@@ -53,7 +53,7 @@
 +};
 +}
 +#endif
- 
++
  namespace CPPU_CURRENT_NAMESPACE
  {
  
@@ -89,7 +89,7 @@
  
  // -----
  
-@@ -82,11 +133,16 @@
+@@ -82,11 +133,18 @@
  void raiseException(
      uno_Any * pUnoExc, uno_Mapping * pUno2Cpp );
  //==================================================================================================
@@ -106,5 +106,6 @@
 -	enum ppclimits { MAX_GPR_REGS = 8, MAX_SSE_REGS = 13 };
 +     enum ppclimits { MAX_GPR_REGS = 8, MAX_SSE_REGS = 13 };
 +    bool return_in_hidden_param( typelib_TypeDescriptionReference *pTypeRef );
++    sal_Int32 return_in_fprs( typelib_TypeDescriptionReference *pTypeRef, typelib_TypeClass & eBase );
++    const typelib_TypeClass TYPECLASS_FPRS = (typelib_TypeClass) 100;
  }
-
