@@ -1,0 +1,5 @@
+bin/monitor-sensor
+usr/lib/iio-sensor-proxy
+usr/lib/udev/rules.d/80-iio-sensor-proxy.rules
+share/dbus-1/system.d/net.hadess.SensorProxy.conf
+share/polkit-1/actions/net.hadess.SensorProxy.policy
