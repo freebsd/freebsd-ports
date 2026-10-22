@@ -82,6 +82,7 @@ lib/mlt-7/libmltcore.so
 %%OLDFILM%%lib/mlt-7/libmltoldfilm.so
 %%OPENCV%%lib/mlt-7/libmltopencv.so
 %%OPENFX%%lib/mlt-7/libmltopenfx.so
+%%PLACEBO%%lib/mlt-7/libmltplacebo.so
 %%PLUS%%lib/mlt-7/libmltplus.so
 %%PLUSGPL%%lib/mlt-7/libmltplusgpl.so
 %%RESAMPLE%%lib/mlt-7/libmltresample.so
@@ -230,6 +231,8 @@ share/man/man1/melt-7.1.gz
 %%OLDFILM%%%%DATADIR%%/oldfilm/vignette.svg
 %%OPENCV%%%%DATADIR%%/opencv/filter_opencv_tracker.yml
 %%OPENFX%%%%DATADIR%%/openfx/filter_openfx.yml
+%%PLACEBO%%%%DATADIR%%/placebo/filter_placebo_render.yml
+%%PLACEBO%%%%DATADIR%%/placebo/filter_placebo_shader.yml
 %%PLUS%%%%DATADIR%%/plus/consumer_blipflash.yml
 %%PLUS%%%%DATADIR%%/plus/filter_affine.yml
 %%PLUS%%%%DATADIR%%/plus/filter_charcoal.yml
