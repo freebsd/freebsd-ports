@@ -1068,6 +1068,7 @@
     SUBDIR += py-rasterstats
     SUBDIR += py-rawkit
     SUBDIR += py-rawpy
+    SUBDIR += py-rendercanvas
     SUBDIR += py-rich-pixels
     SUBDIR += py-rioxarray
     SUBDIR += py-rlpycairo
