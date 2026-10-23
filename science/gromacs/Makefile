@@ -1,5 +1,5 @@
 PORTNAME=	gromacs
-DISTVERSION=	2026.3
+DISTVERSION=	2026.4
 CATEGORIES=	science
 MASTER_SITES=	https://ftp.gromacs.org/pub/gromacs/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # only for googletest
@@ -129,6 +129,6 @@ post-patch:
 # Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/src/external/tinyxml2/
 
-# tests as of 2026.3: 100% tests passed, 0 tests failed out of 104
+# tests as of 2026.4: 100% tests passed out of 104
 
 .include <bsd.port.mk>
