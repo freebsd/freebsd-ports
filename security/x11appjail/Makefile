@@ -1,10 +1,10 @@
 PORTNAME=	x11appjail
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	security
 
 MAINTAINER=	dtxdf@FreeBSD.org
-COMMENT=	Tool for creating, verifying, installing, and running AppJails
+COMMENT=	FreeBSD application sandboxing and distribution framework
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
