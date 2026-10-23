@@ -1,3 +1,38 @@
+  <vuln vid="df4083bc-cea6-11f1-94b3-10ffe07f9334">
+    <topic>mailpit -- Unbounded CPU and memory consumption in thumbnail endpoint via cyclic EXIF IFD chain</topic>
+    <affects>
+      <package>
+	<name>mailpit</name>
+	<range><lt>1.32.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/security/advisories/GHSA-379p-g4f4-hq5h">
+	  <p>The thumbnail endpoint GET
+	  /api/v1/message/{ID}/part/{PartID}/thumb parses EXIF
+	  metadata of image attachments with github.com/rwcarlsen/goexif
+	  to apply orientation. goexif's TIFF IFD walker only detects
+	  a self-referencing IFD (next == prev). An attachment whose
+	  IFD chain forms a cycle of length 2 (IFD0 → IFD1 → IFD0)
+	  sends the request handler into an infinite loop that
+	  appends a new *tiff.Dir on every iteration. The goroutine
+	  never terminates, pins one CPU core permanently, and its
+	  live heap grows without bound. A 651-byte JPEG is
+	  sufficient.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-379p-g4f4-hq5h</url>
+    </references>
+    <dates>
+      <discovery>2026-10-23</discovery>
+      <entry>2026-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5101359e-ce3c-11f1-bf7a-3c7c3fba4204">
     <topic>Keycloak -- multiple vulnerabilities</topic>
     <affects>
