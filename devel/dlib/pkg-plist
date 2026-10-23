@@ -16,6 +16,7 @@ include/d/dlib/container/array.d
 include/d/dlib/container/bst.d
 include/d/dlib/container/buffer.d
 include/d/dlib/container/dict.d
+include/d/dlib/container/hashmap.d
 include/d/dlib/container/linkedlist.d
 include/d/dlib/container/mappedlist.d
 include/d/dlib/container/package.d
@@ -60,6 +61,9 @@ include/d/dlib/geometry/support.d
 include/d/dlib/geometry/triangle.d
 include/d/dlib/geometry/trimesh.d
 include/d/dlib/geometry/utils.d
+include/d/dlib/hash/package.d
+include/d/dlib/hash/xxhash32.d
+include/d/dlib/hash/xxhash64.d
 include/d/dlib/image/animation.d
 include/d/dlib/image/arithmetics.d
 include/d/dlib/image/canvas.d
@@ -84,7 +88,16 @@ include/d/dlib/image/hsv.d
 include/d/dlib/image/image.d
 include/d/dlib/image/io/bmp.d
 include/d/dlib/image/io/hdr.d
-include/d/dlib/image/io/jpeg.d
+include/d/dlib/image/io/jpeg/baseline.d
+include/d/dlib/image/io/jpeg/bitstream.d
+include/d/dlib/image/io/jpeg/dct.d
+include/d/dlib/image/io/jpeg/huffman.d
+include/d/dlib/image/io/jpeg/image.d
+include/d/dlib/image/io/jpeg/marker.d
+include/d/dlib/image/io/jpeg/mcu.d
+include/d/dlib/image/io/jpeg/package.d
+include/d/dlib/image/io/jpeg/progressive.d
+include/d/dlib/image/io/jpeg/reading.d
 include/d/dlib/image/io/package.d
 include/d/dlib/image/io/png.d
 include/d/dlib/image/io/tga.d
@@ -102,6 +115,7 @@ include/d/dlib/image/resampling/package.d
 include/d/dlib/image/signal2d.d
 include/d/dlib/image/transform.d
 include/d/dlib/image/unmanaged.d
+include/d/dlib/math/base.d
 include/d/dlib/math/combinatorics.d
 include/d/dlib/math/complex.d
 include/d/dlib/math/decomposition.d
@@ -122,7 +136,6 @@ include/d/dlib/math/linsolve.d
 include/d/dlib/math/matrix.d
 include/d/dlib/math/package.d
 include/d/dlib/math/quaternion.d
-include/d/dlib/math/sse.d
 include/d/dlib/math/tensor.d
 include/d/dlib/math/transformation.d
 include/d/dlib/math/utils.d
@@ -139,7 +152,10 @@ include/d/dlib/network/socket.d
 include/d/dlib/network/url.d
 include/d/dlib/package.d
 include/d/dlib/random/package.d
+include/d/dlib/random/pcg.d
 include/d/dlib/random/random.d
+include/d/dlib/random/seed.d
+include/d/dlib/random/ziggurat.d
 include/d/dlib/serialization/json.d
 include/d/dlib/serialization/package.d
 include/d/dlib/serialization/xml.d
