@@ -20,7 +20,7 @@ GH_PROJECT=	apcu
 
 PLIST_FILES=	${DATADIR}/apc.php
 
-.include "${PORTSDIR}/lang/php80-legacy/Makefile.inc"
+.include "${.CURDIR}/../../lang/php80-legacy/Makefile.inc"
 
 PHP_MODNAME=	${GH_PROJECT}
 

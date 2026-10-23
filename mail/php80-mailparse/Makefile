@@ -14,6 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	php
 GH_PROJECT=	pecl-mail-${PORTNAME}
 
-.include "${PORTSDIR}/lang/php80-legacy/Makefile.inc"
+.include "${.CURDIR}/../../lang/php80-legacy/Makefile.inc"
 
 .include <bsd.port.mk>
