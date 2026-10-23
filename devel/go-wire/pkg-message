@@ -1,0 +1,9 @@
+[
+{ type: install
+  message:<<EOM
+go-wire requires a symlink pointing to the Go binary without version number.
+This can be achieved by installing lang/go package which just installs symlinks.
+$ pkg install lang/go
+EOM
+}
+]
