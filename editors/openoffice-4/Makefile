@@ -120,6 +120,8 @@ USE_PERL5=	build
 USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
 		xinerama xrandr xrender xt
 
+NO_SHLIB_REQUIRES_GLOB=	libjawt.so
+
 # ftp/curl uses OpenSSL by default. However, curl 8.18.0 drops OpenSSL 1.x support
 # which is used in FreeBSD 13 base system. Therefore, we change the curl defaults to
 # wolfSSL instead.
