@@ -1,23 +1,28 @@
 PORTNAME=	stund
-PORTVERSION=	0.96
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.1
 CATEGORIES=	net
-MASTER_SITES=	SF/stun/stun/${PORTVERSION}
-DISTNAME=	${PORTNAME}_${PORTVERSION}_Aug13
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simple STUN (RFC 3489) server and client
-WWW=		http://www.vovida.org/applications/downloads/stun/
+MAINTAINER=	vim@vimer.org
+COMMENT=	Minimal STUN (RFC 8489) binding server
+WWW=		https://github.com/Yeatol/freebsd_stund
 
-USES=		gmake tar:tgz
-USE_RC_SUBR=	stund
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-MAKE_ENV=	"CXX=${CXX}"
+USES=		compiler:c++23-lang
+USE_GITHUB=	yes
+GH_ACCOUNT=	Yeatol
+GH_PROJECT=	freebsd_stund
 
-post-extract:
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
+MAKE_ARGS=	WITH_RC_SUBR=yes
+
+NO_TEST=	yes
+PLIST_FILES=	etc/rc.d/stund \
+		sbin/stund
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/server ${STAGEDIR}${PREFIX}/sbin/stund
-	${INSTALL_PROGRAM} ${WRKSRC}/client ${STAGEDIR}${PREFIX}/bin/stun_client
+	${INSTALL_PROGRAM} ${WRKSRC}/stund ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/stund.sh ${STAGEDIR}${PREFIX}/etc/rc.d/stund
 
 .include <bsd.port.mk>
