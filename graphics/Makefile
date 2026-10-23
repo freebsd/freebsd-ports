@@ -1104,6 +1104,7 @@
     SUBDIR += py-vulkan
     SUBDIR += py-wand
     SUBDIR += py-webcolors
+    SUBDIR += py-wgpu
     SUBDIR += py-willow
     SUBDIR += py-yaswfp
     SUBDIR += py-zbar-py
