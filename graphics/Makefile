@@ -1319,6 +1319,7 @@
     SUBDIR += waylandpp
     SUBDIR += webp
     SUBDIR += webp-pixbuf-loader
+    SUBDIR += wgpu-native
     SUBDIR += wings
     SUBDIR += wmicons
     SUBDIR += wrapland
