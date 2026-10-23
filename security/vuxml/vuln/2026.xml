@@ -1,3 +1,34 @@
+  <vuln vid="158544f8-cf02-11f1-b0f1-d0f4051da3a3">
+    <topic>vifm -- Unverified Ownership</topic>
+    <affects>
+    <package>
+	<name>vifm</name>
+	<range><lt>0.14.5</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://hackmd.io/@1ExmmukzRMWN7B4gQ4W-4Q/SkX7Pmiofg reports:</p>
+	<blockquote cite="https://hackmd.io/@1ExmmukzRMWN7B4gQ4W-4Q/SkX7Pmiofg">
+	  <p>Vifm 0.8.1-beta through 0.14.4 reuses a pre-existing IPC FIFO in
+the shared temporary directory without checking ownership, allowing
+local users to execute commands as another user.  Attackers can
+pre-create a world-writable vifm-ipc-vifm FIFO and write IPC packets
+with -c and !  shell commands that execute with the victim's
+privileges.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-110237</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-110237</url>
+    </references>
+    <dates>
+      <discovery>2026-10-13</discovery>
+      <entry>2026-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7db37b57-ced8-11f1-ac90-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
