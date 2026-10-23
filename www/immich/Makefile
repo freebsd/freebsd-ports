@@ -5,6 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
 DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
+EXTRACT_ONLY=	${DISTFILES:N*\:npm:C/:[^:]*$//}
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	High performance self-hosted photo and video management solution
@@ -13,7 +14,7 @@ WWW=		https://immich.app/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	native Node.js modules are only tested on \
 			64-bit platforms
 
@@ -62,13 +63,42 @@ MAKE_ENV=	CI=1 \
 
 SUB_FILES=	immich-admin pkg-message
 SUB_LIST=	NODE=${LOCALBASE}/bin/node
+PLIST_SUB=	NODE_ARCH=${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/powerpc64le/ppc64/}
 
 USERS=		immich
 GROUPS=		immich
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+PNPM_INSTALL_ARGS=	--ignore-scripts
+WASM_RD=	rolldown@1.2.5/node_modules/@rolldown/binding-wasm32-wasi
+WASM_NPM=	@rolldown/binding-wasm32-wasi/-/binding-wasm32-wasi-1.2.5.tgz ${WASM_RD} \
+		@emnapi/core/-/core-2.0.0-alpha.4.tgz ${WASM_RD}/node_modules/@emnapi/core \
+		@emnapi/runtime/-/runtime-2.0.0-alpha.4.tgz ${WASM_RD}/node_modules/@emnapi/runtime \
+		@emnapi/wasi-threads/-/wasi-threads-2.0.1.tgz ${WASM_RD}/node_modules/@emnapi/wasi-threads \
+		@napi-rs/wasm-runtime/-/wasm-runtime-1.2.5.tgz ${WASM_RD}/node_modules/@napi-rs/wasm-runtime \
+		@tybys/wasm-util/-/wasm-util-0.10.4.tgz ${WASM_RD}/node_modules/@tybys/wasm-util \
+		tslib/-/tslib-2.8.1.tgz ${WASM_RD}/node_modules/tslib \
+		@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.3.3.tgz \
+		@tailwindcss+oxide@4.3.3/node_modules/@tailwindcss/oxide-wasm32-wasi \
+		lightningcss-wasm/-/lightningcss-wasm-1.32.0.tgz \
+		lightningcss@1.32.0/node_modules/lightningcss-freebsd-ppc64 \
+		lightningcss-wasm/-/lightningcss-wasm-1.33.0.tgz \
+		lightningcss@1.33.0/node_modules/lightningcss-freebsd-ppc64 \
+		esbuild-wasm/-/esbuild-wasm-0.28.2.tgz esbuild@0.28.2/node_modules/esbuild
+MASTER_SITES+=	https://registry.npmjs.org/:npm
+DISTFILES+=	${WASM_NPM:M*.tgz:S/$/:npm/}
+TSC_SHIM=	${WRKSRC}/node_modules/.pnpm/typescript@7.0.2/node_modules/@typescript/typescript-freebsd-ppc64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/postgresql/[^/]*/bin/|${LOCALBASE}/bin/|' \
 		${WRKSRC}/server/src/services/database-backup.service.ts
+.if ${ARCH} == powerpc64le
+	@${SED} -i '' -e 's|$$i18n/|../../../../i18n/|' \
+		${WRKSRC}/web/src/lib/utils/i18n.ts
+.endif
 
 pre-build:
 	cd ${WRKDIR} && ${SETENV} ${MAKE_ENV} PATH=${PATH} \
@@ -77,8 +107,28 @@ pre-build:
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${PNPM} install --offline --frozen-lockfile \
+		${PNPM} install --offline --frozen-lockfile ${PNPM_INSTALL_ARGS} \
 		--store-dir ${BUILDKIT}/pnpm-store
+.if ${ARCH} == powerpc64le
+.for f d in ${WASM_NPM}
+	@${RM} -r ${WRKSRC}/node_modules/.pnpm/${d}
+	@${MKDIR} ${WRKSRC}/node_modules/.pnpm/${d}
+	@${TAR} -xf ${DISTDIR}/${f} -C ${WRKSRC}/node_modules/.pnpm/${d} \
+		--strip-components 1
+.endfor
+	@${MKDIR} ${TSC_SHIM}/lib
+	@${ECHO_CMD} '{"name":"@typescript/typescript-freebsd-ppc64"}' > \
+		${TSC_SHIM}/package.json
+	@${PRINTF} '#!/bin/sh\nexec ${LOCALBASE}/bin/node %s "$$@"\n' \
+		${WRKSRC}/node_modules/.pnpm/typescript@6.0.3/node_modules/typescript/bin/tsc \
+		> ${TSC_SHIM}/lib/tsc
+	@${CHMOD} +x ${TSC_SHIM}/lib/tsc
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PNPM} rebuild
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${PNPM} --filter immich-web run prepare
+	@${SED} -i '' -e "s|\"../node_modules/@immich/ui\"|\"$$(${REALPATH} \
+		${WRKSRC}/web/node_modules/@immich/ui)\"|" ${WRKSRC}/web/src/app.css
+.endif
 	cd $$(${ECHO_CMD} ${WRKSRC}/node_modules/.pnpm/sharp@*/node_modules/sharp) && \
 		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node install/build.js
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
