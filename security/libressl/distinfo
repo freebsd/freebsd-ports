@@ -1,3 +1,3 @@
-TIMESTAMP = 1792750941
-SHA256 (libressl-4.3.4.tar.gz) = 57c8b2f8c6f9505587abaeddab003ea243d615edb7ed71957968121fc6316bd6
-SIZE (libressl-4.3.4.tar.gz) = 9311161
+TIMESTAMP = 1792751149
+SHA256 (libressl-4.4.0.tar.gz) = 7d02522ad5070b9adb32eb253ecabce181184a3750cf65abac0675ee908687c1
+SIZE (libressl-4.4.0.tar.gz) = 9442907
