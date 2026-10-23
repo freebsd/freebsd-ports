@@ -77,6 +77,7 @@
     SUBDIR += controllermap
     SUBDIR += cool-retro-term
     SUBDIR += coreterminal
+    SUBDIR += cosmic-app-library
     SUBDIR += cosmic-bg
     SUBDIR += damask
     SUBDIR += darktile
