@@ -1,3 +1,54 @@
+  <vuln vid="7db37b57-ced8-11f1-ac90-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.5.0</ge><lt>19.5.1</lt></range>
+	<range><ge>19.4.0</ge><lt>19.4.3</lt></range>
+	<range><ge>7.0.0</ge><lt>19.3.6</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/?nav=19.5.1">
+	  <p>Integer Overflow issue in Regular Expression Compiler impacts GitLab CE/EE</p>
+	  <p>Improper Authentication issue in OmniAuth-to-LDAP auto-linking email lookup impacts GitLab CE/EE</p>
+	  <p>Cache Poisoning issue in OAuth/OIDC discovery endpoints impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in GraphQL work item email address field impacts GitLab CE/EE</p>
+	  <p>Incomplete enforcement of instance-wide SAML/LDAP membership lock allows unauthorized member additions in GitLab EE</p>
+	  <p>Internal Credential Exposure issue in internal response headers impacts GitLab CE/EE</p>
+	  <p>Authorization Bypass Through User-Controlled Key issue in group milestones API impacts GitLab CE/EE</p>
+	  <p>Use of Less Trusted Source issue in AI Gateway feature enablement header impacts GitLab EE</p>
+	  <p>Use of Cache Containing Sensitive Information issue in merge request title rendering impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in merge request approval policy enforcement impacts GitLab EE</p>
+	  <p>Improper Cleanup on Thrown Exception issue in security findings impacts GitLab EE</p>
+	  <p>Improper Access Control issue in group Duo admin-lock enforcement for Amazon Q settings impacts GitLab EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-110264</cvename>
+      <cvename>CVE-2026-15723</cvename>
+      <cvename>CVE-2026-112212</cvename>
+      <cvename>CVE-2026-12664</cvename>
+      <cvename>CVE-2026-16255</cvename>
+      <cvename>CVE-2026-105777</cvename>
+      <cvename>CVE-2026-13319</cvename>
+      <cvename>CVE-2026-112378</cvename>
+      <cvename>CVE-2026-105711</cvename>
+      <cvename>CVE-2026-14288</cvename>
+      <cvename>CVE-2026-112326</cvename>
+      <cvename>CVE-2026-103515</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/?nav=19.5.1</url>
+    </references>
+    <dates>
+      <discovery>2026-10-21</discovery>
+      <entry>2026-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df4083bc-cea6-11f1-94b3-10ffe07f9334">
     <topic>mailpit -- Unbounded CPU and memory consumption in thumbnail endpoint via cyclic EXIF IFD chain</topic>
     <affects>
