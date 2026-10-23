@@ -992,7 +992,7 @@
     <affects>
 <package>
 <name>brotli</name>
-<range><lt>1.2.1</lt></range>
+<range><lt>1.2.1,1</lt></range>
 </package>
     </affects>
     <description>
