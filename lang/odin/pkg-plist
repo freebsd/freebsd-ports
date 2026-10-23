@@ -303,6 +303,7 @@ lib/odin/core/debug/trace/trace_linux.odin
 lib/odin/core/debug/trace/trace_other.odin
 lib/odin/core/debug/trace/trace_windows.odin
 lib/odin/core/dynlib/doc.odin
+lib/odin/core/dynlib/example/documentation.odin
 lib/odin/core/dynlib/example/example.odin
 lib/odin/core/dynlib/example/lib.odin
 lib/odin/core/dynlib/lib.odin
@@ -1064,6 +1065,9 @@ lib/odin/core/simd/x86/abm.odin
 lib/odin/core/simd/x86/adx.odin
 lib/odin/core/simd/x86/aes.odin
 lib/odin/core/simd/x86/avx.odin
+lib/odin/core/simd/x86/avx2.odin
+lib/odin/core/simd/x86/avx512bw.odin
+lib/odin/core/simd/x86/avx512f.odin
 lib/odin/core/simd/x86/bmi.odin
 lib/odin/core/simd/x86/bmi2.odin
 lib/odin/core/simd/x86/cmpxchg16b.odin
@@ -1089,7 +1093,9 @@ lib/odin/core/slice/sort_private.odin
 lib/odin/core/sort/sort.odin
 lib/odin/core/strconv/decimal/decimal.odin
 lib/odin/core/strconv/deprecated.odin
+lib/odin/core/strconv/fast_float.odin
 lib/odin/core/strconv/generic_float.odin
+lib/odin/core/strconv/hex_float.odin
 lib/odin/core/strconv/integers.odin
 lib/odin/core/strconv/strconv.odin
 lib/odin/core/strings/ascii_set.odin
@@ -1369,6 +1375,7 @@ lib/odin/core/testing/signal_handler_libc.odin
 lib/odin/core/testing/signal_handler_other.odin
 lib/odin/core/testing/signal_handler_posix.odin
 lib/odin/core/testing/signal_handler_windows.odin
+lib/odin/core/testing/terminal_window.odin
 lib/odin/core/testing/testing.odin
 lib/odin/core/text/edit/text_edit.odin
 lib/odin/core/text/i18n/doc.odin
@@ -1506,8 +1513,10 @@ lib/odin/vendor/box3d/box3d_id.odin
 lib/odin/vendor/box3d/box3d_math.odin
 lib/odin/vendor/box3d/box3d_types.odin
 lib/odin/vendor/box3d/box3d_wasm.odin
+lib/odin/vendor/box3d/lib/box3d.dll
 lib/odin/vendor/box3d/lib/box3d.lib
 lib/odin/vendor/box3d/lib/box3d_wasm.o
+lib/odin/vendor/box3d/lib/box3ddll.lib
 lib/odin/vendor/box3d/lib/darwin/libbox3d.a
 lib/odin/vendor/box3d/lib/linux-amd64/libbox3d.a
 lib/odin/vendor/box3d/src/build.bat
