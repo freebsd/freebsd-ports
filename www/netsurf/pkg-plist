@@ -4,7 +4,6 @@ share/applications/netsurf-gtk.desktop
 %%DATADIR%%/Messages
 %%DATADIR%%/SearchEngines
 %%DATADIR%%/adblock.css
-%%DATADIR%%/ca-bundle.txt
 %%DATADIR%%/cookies.ui
 %%DATADIR%%/credits.html
 %%DATADIR%%/de/Messages

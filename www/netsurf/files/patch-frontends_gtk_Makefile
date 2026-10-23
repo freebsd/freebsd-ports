@@ -1,0 +1,11 @@
+--- frontends/gtk/Makefile.orig	2026-10-23 14:23:45 UTC
++++ frontends/gtk/Makefile
+@@ -185,7 +185,7 @@ GTK_RESOURCES_LIST := \
+ # ----------------------------------------------------------------------------
+ 
+ GTK_RESOURCES_LIST := \
+-	languages SearchEngines ca-bundle.txt \
++	languages SearchEngines \
+ 	default.css adblock.css quirks.css internal.css \
+ 	credits.html licence.html welcome.html Messages \
+ 	default.ico favicon.png netsurf.png netsurf.xpm netsurf-16x16.xpm

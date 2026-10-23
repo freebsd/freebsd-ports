@@ -1,6 +1,6 @@
 PORTNAME=	netsurf
 PORTVERSION=	3.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -31,8 +31,7 @@ LIB_DEPENDS=	libcss.so:textproc/libcss \
 		libutf8proc.so:textproc/utf8proc \
 		libwapcaplet.so:textproc/libwapcaplet \
 		libwebp.so:graphics/webp
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
-		duk:lang/duktape
+RUN_DEPENDS=	duk:lang/duktape
 
 USES=		bison cpe desktop-file-utils gmake gnome iconv:translit jpeg \
 		localbase pkgconfig shebangfix ssl
@@ -57,6 +56,8 @@ ALL_TARGET=	#empty
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lssl -lcrypto
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
+
+EXTRACT_AFTER_ARGS=	--exclude resources/ca-bundle
 
 post-patch:
 	@${REINPLACE_CMD} '/CFLAGS/d' \
