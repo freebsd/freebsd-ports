@@ -149,7 +149,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-faraday_middleware-aws-sigv4-gitlab>=1.0.1<1.1:devel/rubygem-faraday_middleware-aws-sigv4-gitlab \
 	rubygem-typhoeus-gitlab>=1.4.0<1.5:www/rubygem-typhoeus-gitlab \
 	rubygem-html-pipeline-gitlab>=2.14.3<2.15:textproc/rubygem-html-pipeline-gitlab \
-	rubygem-gitlab-markup>=2.1.0<2.2:textproc/rubygem-gitlab-markup \
+	rubygem-gitlab-markup>=2.2.0<2.3:textproc/rubygem-gitlab-markup \
 	rubygem-commonmarker0>=0.23.12<0.24:textproc/rubygem-commonmarker0 \
 	rubygem-kramdown-gitlab>=2.5.2<2.6:textproc/rubygem-kramdown-gitlab \
 	rubygem-redcloth>=4.3.3<4.4.0:www/rubygem-redcloth \
