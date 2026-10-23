@@ -1,5 +1,5 @@
 PORTNAME=		sope
-PORTVERSION=		5.12.11
+PORTVERSION=		5.12.12
 CATEGORIES=		devel gnustep
 MASTER_SITES=		https://packages.sogo.nu/sources/
 PKGNAMESUFFIX=		-${FLAVOR}
