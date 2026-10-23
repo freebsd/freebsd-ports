@@ -1,5 +1,5 @@
-TIMESTAMP = 1791396320
-SHA256 (immich-public-proxy-freebsd-buildkit-3.4.1.tar.gz) = 294aca6405b0a99a35d7c7a7e18c8d09172d8166c4e2fd0c046044cb62155b7c
-SIZE (immich-public-proxy-freebsd-buildkit-3.4.1.tar.gz) = 45750131
-SHA256 (alangrainger-immich-public-proxy-v3.4.1_GH0.tar.gz) = fa43fa5f3a0efa6ce45e988253a460d9f953d4a2b99afc7cdc7e0f033396b87c
-SIZE (alangrainger-immich-public-proxy-v3.4.1_GH0.tar.gz) = 541353
+TIMESTAMP = 1792744225
+SHA256 (immich-public-proxy-freebsd-buildkit-4.1.1.tar.gz) = 2301c99e8b6af5390b8ac0307f8de891c79466f3c47eb7982faef0a464008448
+SIZE (immich-public-proxy-freebsd-buildkit-4.1.1.tar.gz) = 45570764
+SHA256 (alangrainger-immich-public-proxy-v4.1.1_GH0.tar.gz) = 568ea233348af497b06f07d9f21c3d56eb92241982534c666a02b16f98729fbf
+SIZE (alangrainger-immich-public-proxy-v4.1.1_GH0.tar.gz) = 659024
