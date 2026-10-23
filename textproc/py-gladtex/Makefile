@@ -1,7 +1,7 @@
 PORTNAME=	gladtex
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0
-CATEGORIES=	textproc math www
+CATEGORIES=	textproc python math www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	alven@FreeBSD.org
