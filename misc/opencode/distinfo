@@ -1,4 +1,4 @@
-TIMESTAMP = 1792491194
+TIMESTAMP = 1792737782
 SHA256 (opencode/fff-bun-0.10.5.tgz) = 16afa70bcb078c9b28378545396298f73a67fc10e7ff7bba4f9ff1d0462c27f0
 SIZE (opencode/fff-bun-0.10.5.tgz) = 83121
 SHA256 (opencode/rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
@@ -741,8 +741,8 @@ SHA256 (opencode/rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217af
 SIZE (opencode/rust/crates/zmij-1.0.21.crate) = 26665
 SHA256 (opencode/rust/crates/zmij-1.0.23.crate) = 29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b
 SIZE (opencode/rust/crates/zmij-1.0.23.crate) = 28612
-SHA256 (opencode/anomalyco-opencode-v2.1.0_GH0.tar.gz) = c2e3f3b1684c93e61efb5bf94ea3dec62f6cfaf9b4930e5103ab49b37d3b2a39
-SIZE (opencode/anomalyco-opencode-v2.1.0_GH0.tar.gz) = 79690631
+SHA256 (opencode/anomalyco-opencode-v2.1.3_GH0.tar.gz) = b7eae27a223b8b1c41d65bb90676f90b80811c3b1012b307b6a2e63c7eb8ffa5
+SIZE (opencode/anomalyco-opencode-v2.1.3_GH0.tar.gz) = 79767193
 SHA256 (opencode/anomalyco-opentui-v0.6.6_GH0.tar.gz) = 9c7539a47c73f11022fcb81840fb7856342804a3d133a8e2a0a8cbe0c66a4fed
 SIZE (opencode/anomalyco-opentui-v0.6.6_GH0.tar.gz) = 31020853
 SHA256 (opencode/dmtrKovalenko-fff-v0.10.5_GH0.tar.gz) = db50fa8aaabb77211f8dbeb4d77dc8852e0ee52070e40bfd9ef5af44ac50accc

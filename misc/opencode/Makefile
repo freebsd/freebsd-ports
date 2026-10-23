@@ -1,7 +1,6 @@
 PORTNAME=	opencode
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
-PORTREVISION=	1
+DISTVERSION=	2.1.3
 CATEGORIES=	misc
 
 # Upstream ships no FreeBSD builds of OpenTUI's Zig core, fff's Rust cdylib, the
@@ -57,12 +56,14 @@ CARGO_TEST=	no
 
 # node (husky `prepare` + Vite 8 web UI).  Use node24: on aarch64 Vite 8's
 # rolldown has no native binding and its WASI fallback SIGSEGVs under node26.
-BUILD_DEPENDS=	${LOCALBASE}/bin/bun:lang/bun \
+BUILD_DEPENDS=	bun>=1.4.4:lang/bun \
 		${LOCALBASE}/bin/zig:lang/zig \
-		${LOCALBASE}/bin/node:www/node24
+		${LOCALBASE}/bin/node:www/node24 \
+		npm-node24>0:www/npm-node24 \
+		gmake:devel/gmake
 # post-fetch warms the offline bun and Ghostty Zig caches, so both are needed.
 # Zig 0.16 hardcodes /etc/ssl/cert.pem on FreeBSD; ca_root_nss provides it.
-FETCH_DEPENDS=	${LOCALBASE}/bin/bun:lang/bun \
+FETCH_DEPENDS=	bun>=1.4.4:lang/bun \
 		${LOCALBASE}/bin/zig:lang/zig \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
@@ -82,6 +83,8 @@ FFF_SO=			${CARGO_TARGET_DIR}/release/libfff_c.so
 
 BUN=			${LOCALBASE}/bin/bun
 ZIG=			${LOCALBASE}/bin/zig
+NODE=			${LOCALBASE}/bin/node
+NODE_GYP=		${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
 BUN_INSTALL_CACHE_DIR=	${WRKDIR}/bun-cache
 WEBUI_WASM_DIR=	${WRKDIR}/gen-webui
 WEBUI_WASM_CACHE=	${DISTDIR}/${DIST_SUBDIR}/opencode-webui-wasm-${DISTVERSION}.tar.gz
@@ -89,7 +92,8 @@ BUN_CACHE_TARBALL=	${DISTDIR}/${DIST_SUBDIR}/opencode-bun-cache-${DISTVERSION}.t
 ZIG_PTY_CACHE_DIR=	${WRKDIR}/zig-pty-cache
 ZIG_PTY_CACHE=		${DISTDIR}/${DIST_SUBDIR}/opencode-pty-zig-cache-${DISTVERSION}.tar.gz
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		lib/opencode/watcher.node
 
 .include <bsd.port.pre.mk>
 
@@ -163,6 +167,12 @@ do-build:
 	@${ECHO_MSG} "===> Installing OpenCode dependencies (offline)"
 	@cd ${WRKSRC} && ${SETENV} BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR} \
 		${BUN} install --frozen-lockfile
+	@${ECHO_MSG} "===> Building the @parcel/watcher kqueue backend"
+	@for d in ${WRKSRC}/node_modules/.bun/@parcel+watcher@*/node_modules/@parcel/watcher; do \
+		[ -d "$${d}" ] || continue; \
+		(cd "$${d}" && ${SETENV} HOME=${WRKDIR} ${MAKE_ENV} \
+			${NODE} ${NODE_GYP} rebuild --nodedir=${LOCALBASE} --python=${PYTHON_CMD}); \
+	done
 	@${ECHO_MSG} "===> Allowing 64-bit ZFS device IDs in @effect/platform-node-shared"
 	@for f in ${WRKSRC}/node_modules/.bun/@effect+platform-node-shared@*/node_modules/@effect/platform-node-shared/dist/NodeFileSystem.js \
 		${WRKSRC}/node_modules/@effect/platform-node-shared/dist/NodeFileSystem.js; do \
@@ -225,6 +235,11 @@ do-install:
 	# it (the default ${INSTALL_PROGRAM}) discards that payload, leaving a binary
 	# that runs as plain bun, so install it unstripped.
 	${INSTALL} -m 555 ${OPENCODE_BIN} ${STAGEDIR}${PREFIX}/bin/opencode
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/opencode
+	@for f in ${WRKSRC}/node_modules/.bun/@parcel+watcher@*/node_modules/@parcel/watcher/build/Release/watcher.node; do \
+		[ -f "$${f}" ] || continue; \
+		${INSTALL} -m 555 "$${f}" ${STAGEDIR}${PREFIX}/lib/opencode/watcher.node; \
+	done
 
 do-test:
 	@${ECHO_MSG} "==> Running OpenCode smoke test..."
@@ -239,5 +254,8 @@ do-test:
 		${ECHO_MSG} "ERROR: the opencode-pty terminal daemon is not embedded in the binary"; \
 		${FALSE}; \
 	fi
+	@${ECHO_MSG} "==> Checking the @parcel/watcher native binding is installed..."
+	@test -f ${STAGEDIR}${PREFIX}/lib/opencode/watcher.node || \
+		(${ECHO_MSG} "ERROR: watcher.node is missing"; ${FALSE})
 
 .include <bsd.port.post.mk>
