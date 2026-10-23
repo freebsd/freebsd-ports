@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-checkpoint
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,6 +38,6 @@ TEST_ARGS=	--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_datafra
 		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df16] \
 		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series9]
 
-# tests as of 4.2.0: 203 passed, 17 skipped, 1 warning in 215.06s
+# tests as of 4.3.0: 227 passed, 16 skipped, 4 deselected in 146.18s (0:02:26)
 
 .include <bsd.port.mk>
