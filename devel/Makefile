@@ -8269,6 +8269,7 @@
     SUBDIR += rubygem-rb-kqueue
     SUBDIR += rubygem-rblineprof
     SUBDIR += rubygem-rbs
+    SUBDIR += rubygem-rbs-gitlab
     SUBDIR += rubygem-rbs_json_schema
     SUBDIR += rubygem-rbtrace
     SUBDIR += rubygem-rbtree
