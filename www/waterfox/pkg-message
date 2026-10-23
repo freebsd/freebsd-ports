@@ -10,7 +10,6 @@ Some features found on Windows, macOS and Linux are not implemented:
 - Reduced memory usage (requires mozjemalloc)
 - Crash Reporter (requires Google Breakpad and reproducible builds)
 - WebVR (requires open source runtime)
-- TCP fast open
 - `about:networking` (requires link state notification)
 
 ## Audio backend
