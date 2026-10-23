@@ -1,4 +1,4 @@
-TIMESTAMP = 1792660401
+TIMESTAMP = 1792769835
 SHA256 (chromium-156.0.8078.47-lite.tar.xz) = 28432028890ef70e1f2e9db880c500907ad1b04f5ae6b655a3f394b9f2eaa705
 SIZE (chromium-156.0.8078.47-lite.tar.xz) = 2009127748
 SHA256 (chromium-156.0.8078.47-profdata.tar.xz) = 4dc3904e822fc2a094517e46718455535c9cf59368aa8d34503475e29680b595
@@ -7,7 +7,7 @@ SHA256 (pulseaudio-16.1.tar.gz) = 027266c62f2a84422ac45fa721a649508f0f1628fb1fd9
 SIZE (pulseaudio-16.1.tar.gz) = 2763111
 SHA256 (TypeScript-7.0.2-vendor.tar.gz) = 2128fab8682400f0f3c61f567344569b587102ce43accc9e97378fa4d14b6575
 SIZE (TypeScript-7.0.2-vendor.tar.gz) = 3166777
-SHA256 (evanw-esbuild-v0.28.1_GH0.tar.gz) = 65c756fa87d43178ac4a5242454c2bd0fde325f8ecf77997f8fa4b88f94d5cd2
-SIZE (evanw-esbuild-v0.28.1_GH0.tar.gz) = 1997481
+SHA256 (evanw-esbuild-v0.28.2_GH0.tar.gz) = 300162f899361d9f0263065f8728ef9086dcfc1a3d36bcbc4e0abe5de9c58bf8
+SIZE (evanw-esbuild-v0.28.2_GH0.tar.gz) = 2008796
 SHA256 (microsoft-TypeScript-v7.0.2_GH0.tar.gz) = 8472f284b1465f5c4826a64c88853eccba667446f31a435ed1d0b28d373dbc0b
 SIZE (microsoft-TypeScript-v7.0.2_GH0.tar.gz) = 49788068
