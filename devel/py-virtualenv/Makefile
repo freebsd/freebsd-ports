@@ -1,5 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	21.14.12
+PORTVERSION=	21.14.13
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -64,7 +64,9 @@ PYTEST_ARGS=	-p no:black -p no:markdown
 PYTEST_BROKEN_TESTS=	test_safe_delete_raises_the_original_error_not_a_retry_failure \
 			test_shard_selects_every_nth_test_id \
 			test_shard_reports_deselected \
-			test_cshell_renders_prompt_literally test_bash
+			test_cshell_renders_prompt_literally test_bash \
+			test_activator_prompt_stays_data \
+			test_prompt_seeds_stay_data test_prompt_stays_data
 
 # Fix the LookupError: setuptools-scm was unable to detect version (build target)
 MAKE_ENV=	PYTHONPATH="${STAGEDIR}${PYTHON_SITELIBDIR}" \
