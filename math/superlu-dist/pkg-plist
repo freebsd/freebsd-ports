@@ -45,9 +45,6 @@ include/util_dist.h
 include/xlupanels_GPU.cuh
 include/zlustruct_gpu.h
 lib/PYTHON/GP_demo.py
-lib/PYTHON/libsuperlu_dist_python.so
-lib/PYTHON/libsuperlu_dist_python.so.9
-lib/PYTHON/libsuperlu_dist_python.so.9.3.0
 lib/PYTHON/pdbridge.py
 lib/PYTHON/pddrive.py
 lib/PYTHON/pddrive_master.py
