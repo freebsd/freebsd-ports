@@ -1,6 +1,6 @@
 PORTNAME=	SQLAlchemy-ImageAttach
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,13 @@ WWW=		https://github.com/dahlia/sqlalchemy-imageattach
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy14>0:databases/py-sqlalchemy14@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wand>0:graphics/py-wand@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
