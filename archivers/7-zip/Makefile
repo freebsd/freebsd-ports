@@ -1,7 +1,7 @@
 PORTNAME=	7-zip
-DISTVERSION=	26.04
+DISTVERSION=	26.05
 CATEGORIES=	archivers
-MASTER_SITES=	https://www.7-zip.org/a/
+MASTER_SITES=	https://github.com/ip7z/7zip/releases/download/${DISTVERSION}/
 DISTNAME=	7z${DISTVERSION:S/.//}-src
 
 MAINTAINER=	makc@FreeBSD.org
