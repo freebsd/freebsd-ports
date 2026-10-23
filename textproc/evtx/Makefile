@@ -1,7 +1,6 @@
 PORTNAME=	evtx
-DISTVERSION=	0.12.2
+DISTVERSION=	0.13.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	31
 CATEGORIES=	textproc
 
 MAINTAINER=	acm@FreeBSD.org
@@ -27,18 +26,14 @@ CARGO_CRATES=	ahash-0.8.12 \
 		assert_cmd-2.1.1 \
 		autocfg-1.4.0 \
 		bitflags-1.3.2 \
-		bitflags-2.8.0 \
+		bitflags-2.13.2 \
 		bstr-1.11.3 \
-		bumpalo-3.19.1 \
-		bytecount-0.6.8 \
+		bumpalo-3.20.3 \
 		byteorder-1.5.0 \
-		bytes-1.11.1 \
-		camino-1.1.9 \
-		cargo-platform-0.1.9 \
-		cargo_metadata-0.14.2 \
+		bytes-1.12.1 \
 		cast-0.3.0 \
 		cc-1.2.15 \
-		cfg-if-1.0.0 \
+		cfg-if-1.0.5 \
 		chrono-0.4.39 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
@@ -50,6 +45,7 @@ CARGO_CRATES=	ahash-0.8.12 \
 		comma-1.0.0 \
 		console-0.15.10 \
 		console-0.16.2 \
+		core_detect-1.0.0 \
 		crc32fast-1.4.2 \
 		criterion-0.8.1 \
 		criterion-plot-0.8.1 \
@@ -59,57 +55,47 @@ CARGO_CRATES=	ahash-0.8.12 \
 		crunchy-0.2.3 \
 		deranged-0.5.5 \
 		dialoguer-0.12.0 \
-		diff-0.1.13 \
 		difflib-0.4.0 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
-		encoding-0.2.33 \
-		encoding-index-japanese-1.20141219.5 \
-		encoding-index-korean-1.20141219.5 \
-		encoding-index-simpchinese-1.20141219.5 \
-		encoding-index-singlebyte-1.20141219.5 \
-		encoding-index-tradchinese-1.20141219.5 \
-		encoding_index_tests-0.1.4 \
+		encoding_rs-0.8.42 \
 		env_filter-0.1.3 \
 		env_logger-0.11.6 \
-		equivalent-1.0.2 \
+		equivalent-1.0.3 \
 		errno-0.3.10 \
-		error-chain-0.12.4 \
 		fastrand-2.3.0 \
-		faststr-0.2.32 \
-		float-cmp-0.10.0 \
-		getrandom-0.3.1 \
+		faststr-0.2.34 \
+		getrandom-0.3.4 \
 		glob-0.3.2 \
 		goblin-0.10.4 \
 		half-2.4.1 \
-		hashbrown-0.15.2 \
 		hashbrown-0.17.1 \
 		humantime-2.1.0 \
-		indexmap-2.7.1 \
+		indexmap-2.14.2 \
 		indoc-2.0.7 \
 		insta-1.42.1 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
-		itoa-1.0.14 \
+		itoa-1.0.18 \
 		jiff-0.2.17 \
 		jiff-static-0.2.17 \
 		jiff-tzdb-0.1.5 \
 		jiff-tzdb-platform-0.1.3 \
 		js-sys-0.3.77 \
-		libc-0.2.186 \
+		libc-0.2.191 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.15 \
-		log-0.4.26 \
+		log-0.4.34 \
 		memchr-2.7.4 \
+		multiversion_no_op-1.0.0 \
 		munge-0.4.7 \
 		munge_macro-0.4.7 \
 		nix-0.27.1 \
-		normalize-line-endings-0.3.0 \
 		num-conv-0.2.0 \
 		num-derive-0.3.3 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
-		once_cell-1.20.3 \
+		once_cell-1.21.4 \
 		oorandom-11.1.4 \
 		page_size-0.6.0 \
 		pin-project-1.1.9 \
@@ -125,73 +111,70 @@ CARGO_CRATES=	ahash-0.8.12 \
 		predicates-3.1.3 \
 		predicates-core-1.0.9 \
 		predicates-tree-1.0.12 \
-		pretty_assertions-1.4.1 \
-		proc-macro2-1.0.104 \
-		ptr_meta-0.3.1 \
-		ptr_meta_derive-0.3.1 \
-		pulldown-cmark-0.9.6 \
-		quote-1.0.42 \
-		rancor-0.1.1 \
+		proc-macro2-1.0.107 \
+		ptr_meta-0.3.2 \
+		ptr_meta_derive-0.3.2 \
+		quote-1.0.47 \
+		r-efi-5.3.0 \
+		rancor-0.1.3 \
 		rayon-1.10.0 \
 		rayon-core-1.12.1 \
-		ref-cast-1.0.25 \
-		ref-cast-impl-1.0.25 \
+		ref-cast-1.0.27 \
+		ref-cast-impl-1.0.27 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rend-0.5.3 \
+		rend-0.5.4 \
 		rexpect-0.6.0 \
-		rkyv-0.8.16 \
-		rkyv_derive-0.8.16 \
+		rkyv-0.8.18 \
+		rkyv_derive-0.8.18 \
 		rpmalloc-0.2.2 \
 		rpmalloc-sys-0.2.3+b097fd0 \
 		rustix-0.38.44 \
-		rustversion-1.0.19 \
+		rustversion-1.0.23 \
 		ryu-1.0.19 \
 		same-file-1.0.6 \
+		scopeguard-1.2.0 \
 		scroll-0.13.0 \
 		scroll_derive-0.13.1 \
-		semver-1.0.25 \
-		serde-1.0.228 \
-		serde_core-1.0.228 \
-		serde_derive-1.0.228 \
+		serde-1.0.229 \
+		serde_core-1.0.229 \
+		serde_derive-1.0.229 \
 		serde_json-1.0.139 \
 		shell-words-1.1.1 \
 		shlex-1.3.0 \
 		simdutf8-0.1.5 \
 		similar-2.7.0 \
 		simplelog-0.12.2 \
-		skeptic-0.13.7 \
-		sonic-number-0.1.0 \
-		sonic-rs-0.5.6 \
-		sonic-simd-0.1.2 \
+		sonic-number-0.1.3 \
+		sonic-rs-0.5.10 \
+		sonic-simd-0.1.4 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
-		syn-2.0.111 \
+		syn-2.0.119 \
+		syn-3.0.9 \
 		tempfile-3.17.1 \
 		termcolor-1.4.1 \
 		termtree-0.5.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.17 \
+		thiserror-2.0.21 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.17 \
+		thiserror-impl-2.0.21 \
 		tikv-jemalloc-sys-0.6.0+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7 \
 		tikv-jemallocator-0.6.0 \
 		time-0.3.47 \
 		time-core-0.1.8 \
 		time-macros-0.2.27 \
 		tinytemplate-1.2.1 \
-		tinyvec-1.10.0 \
-		tinyvec_macros-0.1.1 \
-		unicase-2.8.1 \
-		unicode-ident-1.0.17 \
+		tinyvec-1.13.3 \
+		unicode-ident-1.0.27 \
 		unicode-width-0.2.2 \
 		utf8parse-0.2.2 \
-		uuid-1.19.0 \
+		uuid-1.28.0 \
 		version_check-0.9.5 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
-		wasi-0.13.3+wasi-0.2.2 \
+		wasip2-1.0.4+wasi-0.2.12 \
 		wasm-bindgen-0.2.100 \
 		wasm-bindgen-backend-0.2.100 \
 		wasm-bindgen-macro-0.2.100 \
@@ -215,12 +198,11 @@ CARGO_CRATES=	ahash-0.8.12 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
 		winstructs-0.3.2 \
-		wit-bindgen-rt-0.33.0 \
-		yansi-1.0.1 \
-		zerocopy-0.8.31 \
-		zerocopy-derive-0.8.31 \
+		wit-bindgen-0.57.1 \
+		zerocopy-0.8.63 \
+		zerocopy-derive-0.8.63 \
 		zeroize-1.8.2 \
-		zmij-1.0.1
+		zmij-1.0.23
 
 PLIST_FILES=	bin/evtx_dump
 
