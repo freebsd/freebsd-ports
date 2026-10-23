@@ -11,10 +11,14 @@ include/d/dcd/server/autocomplete/localuse.d
 include/d/dcd/server/autocomplete/package.d
 include/d/dcd/server/autocomplete/symbols.d
 include/d/dcd/server/autocomplete/util.d
+include/d/dcd/server/lsp/ddoc.d
+include/d/dcd/server/lsp/dfmt.d
 include/d/dcd/server/lsp/document.d
+include/d/dcd/server/lsp/dscanner.d
 include/d/dcd/server/lsp/handlers.d
 include/d/dcd/server/lsp/jsonrpc.d
 include/d/dcd/server/lsp/protocol.d
+include/d/dcd/server/lsp/stdlib.d
 include/d/dcd/server/lsp_server.d
 include/d/dcd/server/main.d
 include/d/dcd/server/server.d
@@ -27,6 +31,7 @@ include/d/dsymbol/conversion/second.d
 include/d/dsymbol/conversion/third.d
 include/d/dsymbol/deferred.d
 include/d/dsymbol/import_.d
+include/d/dsymbol/mixin_eval.d
 include/d/dsymbol/modulecache.d
 include/d/dsymbol/scope_.d
 include/d/dsymbol/semantic.d
