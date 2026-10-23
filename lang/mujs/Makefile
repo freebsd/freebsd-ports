@@ -1,5 +1,5 @@
 PORTNAME=	mujs
-DISTVERSION=	1.3.10
+DISTVERSION=	1.3.11
 CATEGORIES=	lang devel
 MASTER_SITES=	https://mujs.com/downloads/ \
 		https://www.unicode.org/Public/16.0.0/ucd/:unicode
