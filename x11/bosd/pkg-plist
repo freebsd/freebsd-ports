@@ -29,6 +29,7 @@ libdata/pkgconfig/bosd.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/glyph.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lid.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mirror.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/picom.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tile.py
 share/man/man1/bosd.1.gz
 share/man/man1/bosd-start.1.gz
