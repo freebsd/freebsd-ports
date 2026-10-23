@@ -131,15 +131,17 @@ share/icons/hicolor/scalable/apps/kraft.svg
 %%DATADIR%%/manual/kraftmanual.css
 %%DATADIR%%/meta/21_meta.xml
 %%DATADIR%%/pics/kraftapp_logo.png
-%%DATADIR%%/reports/delivery_receipt.trml
+%%DATADIR%%/reports/allvars.gtmpl
+%%DATADIR%%/reports/delivery_note.gtmpl
 %%DATADIR%%/reports/images/docdigestdetailview/kraft_customer.png
 %%DATADIR%%/reports/images/docdigestdetailview/postit.png
 %%DATADIR%%/reports/images/identity.png
 %%DATADIR%%/reports/images/lurchie.png
 %%DATADIR%%/reports/invoice.gtmpl
-%%DATADIR%%/reports/invoice.trml
 %%DATADIR%%/reports/kraft.css
+%%DATADIR%%/reports/pagestyle.css
 %%DATADIR%%/reports/xrechnung.xrtmpl
+%%DATADIR%%/styles/alltemplatevars.css
 %%DATADIR%%/styles/catalogview.css
 %%DATADIR%%/styles/docdigestview.css
 %%DATADIR%%/styles/docoverview.css
@@ -158,6 +160,7 @@ share/icons/hicolor/scalable/apps/kraft.svg
 %%DATADIR%%/views/monthdigest.gtmpl
 %%DATADIR%%/views/systemviewdetails.gtmpl
 %%DATADIR%%/views/systemviewerror.gtmpl
+%%DATADIR%%/views/templatevars.gtmpl
 %%DATADIR%%/views/welcome.gtmpl
 %%DATADIR%%/views/yeardigest.gtmpl
 share/locale/de/LC_MESSAGES/kraft.mo
