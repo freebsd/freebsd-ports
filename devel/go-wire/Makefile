@@ -1,7 +1,6 @@
 PORTNAME=	wire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	1
+DISTVERSION=	1.3.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
 
@@ -12,7 +11,7 @@ WWW=		https://github.com/goforj/wire/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:modules,run
 
 GO_MODULE=	github.com/goforj/wire
 GO_TARGET=	./cmd/wire
