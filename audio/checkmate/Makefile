@@ -1,6 +1,5 @@
 PORTNAME=	checkmate
-DISTVERSION=	0.21
-PORTREVISION=	1
+DISTVERSION=	0.22
 CATEGORIES=	audio
 MASTER_SITES=	http://checkmate.gissen.nl/ \
 		LOCAL/ehaupt
