@@ -41,6 +41,7 @@
     SUBDIR += coolreader
     SUBDIR += copyq
     SUBDIR += coregarage
+    SUBDIR += cosmic-screenshot
     SUBDIR += countdown
     SUBDIR += crengine-ng
     SUBDIR += crqt-ng
