@@ -1,0 +1,14 @@
+-- Patch fastmcp-tasks to allow the redis client version shipped in FreeBSD
+-- ports (8.1.0). The upstream exclusion was added as a workaround for
+-- redis/redis-py#4260, but FreeBSD currently only provides 8.1.0 and the
+-- fastmcp test suite still exercises the task code paths successfully.
+-- Reference: https://github.com/redis/redis-py/issues/4260
+--- fastmcp_tasks/pyproject.toml.orig	2026-11-09 03:34:23 UTC
++++ fastmcp_tasks/pyproject.toml
+@@ -75,5 +75,5 @@ dependencies = [
+     "pydocket>=0.26.1",
+     # Redis 8.1.0 reuses server-closed connections instead of reconnecting.
+     # Remove after the fix in redis/redis-py#4260 is released.
+-    "redis!=8.1.0",
++    "redis>0",
+ ]
