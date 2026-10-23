@@ -3,7 +3,7 @@
 # PORTVERSION can also be obtained from the plugin's manifest.json file
 
 PORTNAME=	widevine-cdm
-PORTVERSION=	4.10.3057.0
+PORTVERSION=	4.10.3112.0
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/
 PKGNAMEPREFIX=	linux-
@@ -26,7 +26,7 @@ PLIST_FILES=	lib/WidevineCdm/_platform_specific/linux_${LINUX_ARCH}/libwidevinec
 		lib/WidevineCdm/manifest.json
 
 LINUX_ARCH=	${ARCH:S/amd64/x64/:S/aarch64/arm64/}
-CHROME_VERSION=	152.0.7977.75-1
+CHROME_VERSION=	156.0.8078.47-1
 
 .if make(makesum)
 .  for arch in ${ONLY_FOR_ARCHS}
