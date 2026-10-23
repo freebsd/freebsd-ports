@@ -1079,6 +1079,7 @@
     SUBDIR += py-moarchiving
     SUBDIR += py-modin
     SUBDIR += py-moocore
+    SUBDIR += py-mplcursors
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
     SUBDIR += py-narwhals
