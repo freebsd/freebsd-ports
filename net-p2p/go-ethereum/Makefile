@@ -1,7 +1,6 @@
 PORTNAME=	go-ethereum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.8
-PORTREVISION=	1
+DISTVERSION=	1.17.9
 CATEGORIES=	net-p2p
 
 MAINTAINER=	me@enriquefynn.com
@@ -21,8 +20,6 @@ GO_MODULE=	github.com/ethereum/go-ethereum
 
 CGO_LDFLAGS=	-liconv
 
-TESTING_UNSAFE=	wants blst.h (security/blst) and extra test-related modules
-
 TMPDIR=		${WRKDIR}
 
 OPTIONS_DEFINE=	DEVTOOLS
@@ -31,5 +28,8 @@ DEVTOOLS_DESC=	Ethereum developer tools
 
 DEVTOOLS_VARS=		GO_TARGET="./cmd/geth ./cmd/abigen ./cmd/evm ./cmd/rlpdump ./cmd/ethkey ./cmd/blsync ./cmd/era"
 DEVTOOLS_VARS_OFF=	GO_TARGET=./cmd/geth
+
+do-test:
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} CGO_ENABLED=0 go run ./build/ci.go test -short -p ${MAKE_JOBS_NUMBER} ./...
 
 .include <bsd.port.mk>
