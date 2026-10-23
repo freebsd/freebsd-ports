@@ -5754,3 +5754,4 @@ textproc/regex2dfa||2026-10-19|Broken for 6+ months in tree
 databases/pecl-redis|databases/php-redis|2026-10-21|PECL is deprecated. Migrated to databases/php-redis
 net-im/tde2e|net-im/tdlib|2026-10-22|No longer necessary; migrate to net-im/tdlib
 deskutils/p5-Goo||2026-10-22|Has expired: Upstream dists no longer available
+devel/shiboken2||2026-10-23|Removed: not needed anymore
