@@ -1,6 +1,6 @@
 PORTNAME=	odoo
-PORTVERSION=	16.0.20260618
-CATEGORIES=	finance www
+PORTVERSION=	16.0.20261023
+CATEGORIES=	finance www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	16
 
@@ -10,9 +10,8 @@ WWW=		https://www.odoo.com
 
 LICENSE=	LGPL3
 
-USE_GITHUB=	yes
-GH_TAGNAME=	6859fbf063fe9e25d5f41f695554cc11feea3c77
-
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 		libevent.so:devel/libevent \
 		libsasl2.so:security/cyrus-sasl2
@@ -29,6 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}greenlet>=0:devel/py-greenlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html2text>=0:textproc/py-html2text@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libsass>0:www/py-libsass@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml-html-clean>=0:devel/py-lxml-html-clean@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
@@ -62,51 +62,51 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0:deskutils/py-vobject@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlrd>=1.2.0:textproc/py-xlrd@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xlsxwriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlwt>=1.3.0:textproc/py-xlwt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zeep>=0:net/py-zeep@${PY_FLAVOR} \
-		${PY_SETUPTOOLS}
+		${PYTHON_PKGNAMEPREFIX}xlsxwriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}zeep>=0:net/py-zeep@${PY_FLAVOR}
 
-USES=		cpe gnome ldap python pgsql shebangfix
+USES=		cpe gnome ldap pgsql python shebangfix
+USE_GITHUB=	yes
+GH_TAGNAME=	dd8c4a0b9e7054c2cc8b4ca5624923429dfce540
 USE_GNOME=	libxml2
-USE_PYTHON=	cryptography distutils
-
-NO_ARCH=	yes
+USE_PYTHON=	cryptography distutils pep517
+USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_LANG=	python
-SHEBANG_FILES=	${WRKSRC}/${PORTNAME}/addons/point_of_sale/tools/posbox/overwrite_before_init/etc/init.d/odoo \
+SHEBANG_FILES=	${WRKSRC}/${PORTNAME}-bin \
+		${WRKSRC}/${PORTNAME}/addons/mail/static/scripts/odoo-mailgate.py \
+		${WRKSRC}/${PORTNAME}/addons/point_of_sale/tools/posbox/overwrite_before_init/etc/init.d/odoo \
 		${WRKSRC}/${PORTNAME}/addons/web/static/lib/select2/release.sh \
 		${WRKSRC}/${PORTNAME}/addons/web/tooling/*.sh \
-		${WRKSRC}/${PORTNAME}/addons/web/tooling/hooks/pre-commit \
-		${WRKSRC}/${PORTNAME}/addons/mail/static/scripts/odoo-mailgate.py \
-		${WRKSRC}/${PORTNAME}-bin
+		${WRKSRC}/${PORTNAME}/addons/point_of_sale/tools/posbox/overwrite_before_init/etc/init.d/odoo
 
+CONFLICTS=	odoo odoo17 odoo18
+
+ETCDIR=		${PREFIX}/etc/odoo
+NO_ARCH=	yes
+SUB_FILES=	pkg-message
 USERS=		odoo
 GROUPS=		${USERS}
 
-USE_RC_SUBR=	${PORTNAME}
-SUB_FILES=	pkg-message
+.include <bsd.port.pre.mk>
 
-CONFLICTS=	odoo odoo17
-
-ETCDIR=		${PREFIX}/etc/odoo
+.if ${PYTHON_REL} >= 31300
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}legacy-cgi>=0:www/py-legacy-cgi@${PY_FLAVOR}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
 		${WRKSRC}/odoo/addons/web/static/src/legacy/js/libs/content-disposition.js \
 		${WRKSRC}/odoo/addons/web/static/src/core/network/download.js
 
-	@${RM} ${WRKSRC}/odoo/release.py.orig \
-		${WRKSRC}/odoo/__init__.py.orig \
-		${WRKSRC}/odoo/addons/account/models/ir_actions_report.py.orig \
-		${WRKSRC}/odoo/addons/account/tests/test_ir_actions_report.py.orig \
-		${WRKSRC}/odoo/addons/account_edi/models/account_edi_format.py.orig \
-		${WRKSRC}/odoo/addons/base/models/ir_actions_report.py.orig \
-		${WRKSRC}/odoo/addons/snailmail/models/snailmail_letter.py.orig \
-		${WRKSRC}/odoo/addons/website_slides/models/slide_slide.py.orig \
-		${WRKSRC}/odoo/addons/website_event/controllers/main.py.orig \
-		${WRKSRC}/odoo/addons/website/models/website.py.orig \
-		${WRKSRC}/odoo/http.py.orig \
-		${WRKSRC}/odoo/tools/pdf.py.orig
+# drop the patch backups so they are not packaged
+	@${FIND} ${WRKSRC}/odoo -name '*.orig' -delete
+# release.py's version is 16.0; name the wheel after PORTVERSION so it
+# matches the pep517 install glob (the runtime version is unchanged)
+	@${REINPLACE_CMD} -e "s|^    version=version,$$|    version='${PORTVERSION}',|" \
+		${WRKSRC}/setup.py
 
 post-extract:
 	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/
@@ -115,6 +115,6 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/odoo.conf ${STAGEDIR}${ETCDIR}/odoo.conf.sample
+	${INSTALL_SCRIPT} ${FILESDIR}/odoo.conf ${STAGEDIR}${ETCDIR}/odoo.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
