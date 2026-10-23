@@ -173,7 +173,6 @@ CARGO_CRATES=	addr2line-0.27.1 \
 		thiserror-2.0.18 \
 		thiserror-impl-2.0.18 \
 		tinytemplate-1.2.1 \
-		typed-arena-2.0.2 \
 		typenum-1.20.0 \
 		unicode-ident-1.0.24 \
 		unicode-xid-0.2.6 \
