@@ -17,6 +17,7 @@
     SUBDIR += lsknobs
     SUBDIR += mkreadmes
     SUBDIR += modules2tuple
+    SUBDIR += nuget2tuple
     SUBDIR += octopkg
     SUBDIR += optique
     SUBDIR += p5-FreeBSD-Ports

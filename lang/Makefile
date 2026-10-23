@@ -192,6 +192,7 @@
     SUBDIR += luajit-openresty
     SUBDIR += malbolge
     SUBDIR += maude
+    SUBDIR += marksman
     SUBDIR += mawk
     SUBDIR += mdk
     SUBDIR += mecrisp-stellaris
