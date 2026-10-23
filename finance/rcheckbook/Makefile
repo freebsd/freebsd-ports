@@ -25,7 +25,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		${MANDIR}/rcheckbook-list.1.gz \
 		${MANDIR}/rcheckbook-remove.1.gz \
 		${MANDIR}/rcheckbook-summary.1.gz \
-		${MANDIR}/rcheckbook-update.1.gz \
+		${MANDIR}/rcheckbook-update.1.gz
 
 MANDIR=		${LOCALBASE}/share/man/man1
 
