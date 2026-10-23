@@ -1,0 +1,4 @@
+lib/libdtlv.so
+lib/libjniDTLV.so
+%%JAVAJARDIR%%/dtlvnative-0.16.4.jar
+%%JAVAJARDIR%%/dtlvnative.jar
