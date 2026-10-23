@@ -1,5 +1,5 @@
 PORTNAME=	bzip3
-DISTVERSION=	1.5.4
+DISTVERSION=	1.5.5
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/kspalaiologos/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -12,7 +12,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/3rdparty/libsais-LICENSE
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE
 
-USES=		cpe libtool tar:xz
+USES=		cpe libtool pkgconfig tar:xz
 CPE_VENDOR=	bzip3_project
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
