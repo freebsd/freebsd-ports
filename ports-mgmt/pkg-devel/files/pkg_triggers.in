@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# KEYWORD: firstboot
+# PROVIDE: pkg_triggers
+# REQUIRE: mountcritlocal
+# BEFORE: LOGIN
+
+# Triggers are deferred when packages are installed or removed with a root
+# directory other than /, for example while preparing an installation image.
+# They can only be executed from the installed system, on its first boot.
+#
+
+. /etc/rc.subr
+
+name="pkg_triggers"
+rcvar="pkg_triggers_enable"
+
+: ${pkg_triggers_enable:="YES"}
+: ${pkg_triggers_command:="%%PREFIX%%/sbin/pkg"}
+: ${pkg_triggers_dir:="/var/db/pkg/triggers"}
+
+start_cmd="pkg_triggers_start"
+stop_cmd=":"
+
+pkg_triggers_start()
+{
+	# Nothing to do when no trigger has been deferred.
+	set -- "${pkg_triggers_dir}"/*
+	if [ ! -e "$1" ]; then
+		return 0
+	fi
+	"${pkg_triggers_command}" triggers
+}
+
+load_rc_config "${name}"
+run_rc_command "$1"
