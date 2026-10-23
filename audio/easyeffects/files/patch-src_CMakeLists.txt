@@ -1,0 +1,13 @@
+GCC's libstdc++ aparently requires -ltbb for <execution> support.
+We use libc++ there, so presumably we don't need this.
+
+--- src/CMakeLists.txt.orig	2026-09-29 00:31:17 UTC
++++ src/CMakeLists.txt
+@@ -272,7 +272,6 @@ target_link_libraries(easyeffects PRIVATE
+     Qt::Quick
+     Qt::QuickControls2
+     Qt::Widgets
+-    TBB::tbb
+     GSL::gsl
+     GSL::gslcblas
+     #SoundTouch::SoundTouch # As of SoundTouch 2.4.0 its cmake files are bugged
