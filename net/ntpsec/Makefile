@@ -1,6 +1,6 @@
 PORTNAME=	ntpsec
 DISTVERSIONPREFIX=	NTPsec_
-DISTVERSION=	1_2_5
+DISTVERSION=	1_2_6
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,6 +46,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libntpc.so.1.1.0 \
 		${STAGEDIR}${PREFIX}/sbin/ntpd
 
-# tests as of 1.2.4: 151 Tests 0 Failures 0 Ignored
+# tests as of 1.2.6: Ran 63 tests in 0.003s
 
 .include <bsd.port.mk>
