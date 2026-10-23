@@ -1,7 +1,7 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_FULL_VERSION:S/.0.0//}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/openjdk:boot
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
@@ -17,6 +17,9 @@ COMMENT_jre_headless=	Java Runtime Environment (headless version)
 WWW=		https://openjdk.java.net/projects/jdk/26/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	No longer maintained by upstream, use latest or LTS versions instead
+EXPIRATION_DATE=	2026-12-01
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
