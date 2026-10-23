@@ -1,5 +1,5 @@
 PORTNAME=	bacnet-stack
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
