@@ -1,6 +1,6 @@
 PORTNAME=	pgdog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.61
+DISTVERSION=	0.1.62
 CATEGORIES=	databases
 
 MAINTAINER=	mahlon@martini.nu
@@ -35,7 +35,7 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
-post-extract:
+pre-patch:
 	${RMDIR} ${WRKSRC_crate_pg_raw_parse}/libpg_query
 	${CP} -R ${WRKSRC_libpg_query} ${WRKSRC_crate_pg_raw_parse}/libpg_query
 
