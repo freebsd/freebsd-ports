@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	4.1.0-beta2
+DISTVERSION=	4.1.0
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	41
 MASTER_SITES=	https://github.com/openssl/openssl/releases/download/${DISTNAME}/
@@ -136,9 +136,9 @@ FIPS-JITTER_LDFLAGS=	-L${PREFIX}/lib
 FIPS-JITTER_BUILD_DEPENDS=	${LOCALBASE}/lib/libjitterentropy.a:devel/libjitterentropy
 I386_CONFIGURE_ON=	386
 KTLS_BROKEN=		KTLS patch update for 4.0 pending
-MAN3_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-MAN3_OFF
 LEGACY_VARS=		shlibs+=lib/ossl-modules/legacy.so
-MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-util_find-doc-nits
+MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-util_find-doc-nits \
+			${PATCHDIR}/extra-patch-MAN3_OFF
 SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_PLIST_SUB=	SHLIBVER=${OPENSSL_SHLIBVER}
 SHARED_USE=		ldconfig=yes
