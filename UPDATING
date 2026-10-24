@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20261024:
+  AFFECTS: users of devel/phorgeit-phorge
+  AUTHOR: grembo@FreeBSD.org
+
+  The package built from devel/phorgeit-phorge has been renamed from
+  phorgeitphorge-php8x to phorgeit-phorge-php8x. In order to upgrade an
+  already installed package, run
+
+  # pkg set -n phorgeitphorge-php8x:phorgeit-phorge-php8x
+
+  before upgrading, with php8x being the exact PHP version you are
+  using, e.g., php85.
+
+20261024:
   AFFECTS: users of net-mgmt/librenms
   AUTHOR: dvl@FreeBSD.org
 
