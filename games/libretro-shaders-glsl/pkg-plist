@@ -526,6 +526,7 @@
 %%DATADIR%%/gpu/shaders/3dfx/3dfx_pass_1.glsl
 %%DATADIR%%/gpu/shaders/3dfx/3dfx_pass_2.glsl
 %%DATADIR%%/gpu/shaders/powervr2.glsl
+%%DATADIR%%/handheld/PT_SkyWalker541.glslp
 %%DATADIR%%/handheld/agb001-gba-color-motionblur.glslp
 %%DATADIR%%/handheld/agb001.glslp
 %%DATADIR%%/handheld/ags001-gba-color-motionblur.glslp
@@ -685,6 +686,7 @@
 %%DATADIR%%/handheld/sameboy-gbp-response-time.glslp
 %%DATADIR%%/handheld/sameboy-lcd-gbc-color-motionblur.glslp
 %%DATADIR%%/handheld/sameboy-lcd.glslp
+%%DATADIR%%/handheld/shaders/PT_SkyWalker541.glsl
 %%DATADIR%%/handheld/shaders/authentic_gbc/authentic_gbc.glsl
 %%DATADIR%%/handheld/shaders/authentic_gbc/authentic_gbc_fast.glsl
 %%DATADIR%%/handheld/shaders/authentic_gbc/authentic_gbc_single_pass.glsl
@@ -1330,6 +1332,7 @@
 %%DATADIR%%/scalenx/scale2xSFX.glslp
 %%DATADIR%%/scalenx/scale2xplus.glslp
 %%DATADIR%%/scalenx/scale3x.glslp
+%%DATADIR%%/scalenx/scale3xSFX.glslp
 %%DATADIR%%/scalenx/shaders/epx.glsl
 %%DATADIR%%/scalenx/shaders/mmpx.glsl
 %%DATADIR%%/scalenx/shaders/scale2x.glsl
@@ -1464,6 +1467,7 @@
 %%DATADIR%%/xbrz/shaders/xbrz-freescale-multipass/xbrz-freescale-pass0.glsl
 %%DATADIR%%/xbrz/shaders/xbrz-freescale-multipass/xbrz-freescale-pass1.glsl
 %%DATADIR%%/xbrz/shaders/xbrz-freescale.glsl
+%%DATADIR%%/xbrz/xbrz-crisp.glslp
 %%DATADIR%%/xbrz/xbrz-freescale-multipass.glslp
 %%DATADIR%%/xbrz/xbrz-freescale.glslp
 %%DATADIR%%/xsal/2xsal-level2-crt.glslp
