@@ -1,6 +1,6 @@
 PORTNAME=	openscad
 PORTVERSION=	${GIT_SRC_DATE}
-PORTREVISION=	2
+#PORTREVISION=	2
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 
@@ -56,7 +56,7 @@ GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc submodules/manifold:
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
-CMAKE_ARGS+=	-DUSE_QT6="ON" -DUSE_MIMALLOC="OFF" -DENABLE_CGAL="ON" -DUSE_BUILTIN_OPENCSG="ON" -DENABLE_GLX="ON" -DCMAKE_BUILD_TYPE=Debug
+CMAKE_ARGS+=	-DEXPERIMENTAL="1" -DUSE_QT6="ON" -DUSE_MIMALLOC="OFF" -DENABLE_CGAL="ON" -DUSE_BUILTIN_OPENCSG="ON" -DENABLE_GLX="ON" -DCMAKE_BUILD_TYPE=Debug
 
 .include "Makefile.git_rev"
 
