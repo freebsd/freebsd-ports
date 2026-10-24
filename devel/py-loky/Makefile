@@ -1,5 +1,5 @@
 PORTNAME=	loky
-DISTVERSION=	3.6.0
+DISTVERSION=	3.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_ARGS=	--disable-plugin-autoload
 TEST_ARGS+=	-k "not test_no_failure_on_large_data_send" # crashes, see https://github.com/joblib/loky/issues/665
 
-# tests as of 3.6.0: 6 failed, 319 passed, 20 skipped, 3 deselected, 6 warnings in 215.91s (0:03:35)
+# tests as of 3.7.0: 6 failed, 327 passed, 23 skipped, 3 deselected, 5 warnings in 315.78s (0:05:15)
 
 .include <bsd.port.mk>
