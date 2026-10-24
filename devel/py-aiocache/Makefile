@@ -11,6 +11,9 @@ WWW=		https://github.com/aio-libs/aiocache
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer used by any port in the tree
+EXPIRATION_DATE=	2026-12-31
+
 USES=		python
 USE_PYTHON=	autoplist distutils
 
