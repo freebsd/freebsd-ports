@@ -10,6 +10,9 @@ WWW=		https://insightface.ai/
 
 LICENSE=	MIT
 
+DEPRECATED=	No longer used by any port in the tree
+EXPIRATION_DATE=	2026-12-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
