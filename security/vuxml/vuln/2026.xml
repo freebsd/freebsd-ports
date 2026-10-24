@@ -1,3 +1,30 @@
+  <vuln vid="67ba2e09-cff9-11f1-a264-5404a68ad561">
+    <topic>traefik -- ForwardAuth vulnerability</topic>
+    <affects>
+      <package>
+      <name>traefik</name>
+      <range><lt>3.7.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      <p>The traefik project releases a new version addressing ForwardAuth vulnerabilities:</p>
+      <blockquote cite="https://github.com/traefik/traefik/releases/tag/v3.7.16">
+      <ul>
+      <li> GHSA-hrpp-p4fc-wwf8 (ForwardAuth leaking NTLM/Negotiate-bound identity across clients)</li>
+      </ul>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/traefik/traefik/releases/tag/v3.7.16</url>
+    </references>
+    <dates>
+      <discovery>2026-10-20</discovery>
+      <entry>2026-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="33a752ba-4cbe-46d8-abda-587011d90575">
     <topic>Node.js -- multiple vulnerabilities</topic>
     <affects>
