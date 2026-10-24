@@ -1,6 +1,6 @@
 PORTNAME=	pathlib2
-PORTVERSION=	2.3.7
-PORTREVISION=	1
+DISTVERSION=	2.3.7.post1
+PORTEPOCH=	1 # adding PORTEPOCH because when only .postN is appended to the version of a Python package no other methods work (like suggested in the ports@ ML discussion recently)
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,6 @@ DOS2UNIX_FILES=	tests/test_pathlib2.py
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKDIR=	${WRKSRC}/tests
 
-# tests as of 2.3.7: 313 passed, 115 skipped in 0.65s
+# tests as of 2.3.7.post1: 313 passed, 115 skipped in 6.31s
 
 .include <bsd.port.mk>
