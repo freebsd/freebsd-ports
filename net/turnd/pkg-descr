@@ -1,0 +1,13 @@
+turnd is Minimal NAT traversal and UDP relay server for FreeBSD, built with
+a custom protocol inspired by STUN (RFC 8489) / TURN (RFC 8656) standards.
+
+turnd is a lightweight UDP server for FreeBSD that provides basic NAT traversal
+and peer-to-peer datagram relaying. It uses a compact custom protocol inspired
+by STUN and TURN: clients can obtain their observed IP address and port, and the
+server can forward UDP packets to a peer. The server listens on UDP port 1213
+and supports IPv4 and IPv6.
+
+To enable and start the service:
+
+  sysrc turnd_enable="YES"
+  service turnd start
