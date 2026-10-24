@@ -1,35 +1,3 @@
-  <vuln vid="be3687ad-cf33-11f1-bceb-0050569f0b83">
-    <topic>archivers/brotli -- Buffer Overflow/RCE</topic>
-    <affects>
-<package>
-<name>brotli</name>
-<range><lt>1.2.1,1</lt></range>
-</package>
-    </affects>
-    <description>
-	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Google Security Team reports:</p>
-	<blockquote cite="https://github.com/advisories/GHSA-9v8h-qqgm-4m35">
-	  <p>A buffer overflow vulnerability in the Brotli decoder
-	     (c/dec/decode.c) in Google Brotli versions 1.0.3 through
-	     1.2.0 on all platforms allows a remote unauthenticated
-	     attacker to corrupt adjacent decoder state memory, disclose
-	     sensitive memory contents, cause a denial of service, or
-	     potentially execute arbitrary code using a crafted
-	     Brotli-compressed stream.</p>
-	</blockquote>
-	</body>
-    </description>
-    <references>
-      <cvename>CVE-2026-111497</cvename>
-      <url>https://github.com/advisories/GHSA-9v8h-qqgm-4m35</url>
-    </references>
-    <dates>
-      <discovery>2026-10-22</discovery>
-      <entry>2026-10-23</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="b755b277-cf12-11f1-bae2-3497f65b111b">
     <topic>ca_root_nss -- trusted root certificate from compromised CA eMudhra</topic>
     <affects>
