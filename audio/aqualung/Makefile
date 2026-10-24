@@ -1,6 +1,6 @@
 PORTNAME=	aqualung
 DISTVERSION=	1.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -11,6 +11,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	a991c13d0df734a5d0fea7db6b181176858f3e58.patch:-p1 # Support newer audio/mac
 PATCHFILES+=	d2c88317b6042a05c236faf3c09f600337c6379e.patch:-p1 # Support newer audio/mac
 PATCHFILES+=	1c2a295a72e1e3abc6df40714d9753e311541550.patch:-p1 # Support newer audio/mac
+PATCHFILES+=	668285ea523a4adecbae78ec0e6bedc3640ca6b3.patch:-p1 # Fix build with audio/mac >= 13.40
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
