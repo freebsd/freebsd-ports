@@ -2,6 +2,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	4.14.2
+PORTREVISION=   1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
