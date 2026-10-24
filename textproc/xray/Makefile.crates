@@ -3,16 +3,24 @@ CARGO_CRATES=	anstream-1.0.0 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
+		block-buffer-0.12.1 \
+		cfg-if-1.0.5 \
 		clap-4.6.7 \
 		clap_builder-4.6.7 \
 		clap_derive-4.6.7 \
 		clap_lex-1.1.1 \
 		colorchoice-1.0.5 \
+		const-oid-0.10.2 \
+		cpufeatures-0.3.1 \
+		crypto-common-0.2.2 \
 		csv-1.4.0 \
 		csv-core-0.1.13 \
+		digest-0.11.3 \
 		heck-0.5.0 \
+		hybrid-array-0.4.15 \
 		is_terminal_polyfill-1.70.2 \
 		itoa-1.0.18 \
+		libc-0.2.191 \
 		memchr-2.8.3 \
 		once_cell_polyfill-1.70.2 \
 		proc-macro2-1.0.107 \
@@ -21,10 +29,12 @@ CARGO_CRATES=	anstream-1.0.0 \
 		serde-1.0.229 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
-		serde_json-1.0.151 \
+		serde_json-1.0.154 \
+		sha2-0.11.1 \
 		strsim-0.11.1 \
-		syn-3.0.6 \
-		unicode-ident-1.0.26 \
+		syn-3.0.9 \
+		typenum-1.20.1 \
+		unicode-ident-1.0.27 \
 		unicode-width-0.2.2 \
 		utf8parse-0.2.2 \
 		windows-link-0.2.1 \
