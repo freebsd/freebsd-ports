@@ -22,15 +22,15 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net-mgmt/librenms
   AUTHOR: dvl@FreeBSD.org
 
-sudo is no longer a dependency.
+  sudo is no longer a dependency.
 
 20261016:
   AFFECTS: users of x11-wm/mango
   AUTHOR: nivit@FreeBSD.org
 
-To make the configuration format appear more regular, some configuration keys
-have now been renamed/duplicated. Please run the following commands to migrate
-them globally:
+  To make the configuration format appear more regular, some configuration
+  keys have now been renamed/duplicated. Please run the following commands
+  to migrate them globally:
 
     fetch -o migrate-config-keys.sh \
     https://github.com/user-attachments/files/33058895/migrate-config-keys.sh
