@@ -1,5 +1,5 @@
 PORTNAME=	fastf1
-PORTVERSION=	3.8.3
+PORTVERSION=	3.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,13 +15,14 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVO
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.3.3:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=0:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-cache>=0:www/py-requests-cache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests-cache>=1.3.0:www/py-requests-cache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}signalr-client-aio>=0:devel/py-signalr-client-aio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}thefuzz>=0:devel/py-thefuzz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rapidfuzz>=0:devel/py-rapidfuzz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}timple>=0:math/py-timple@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}timple>=0:math/py-timple@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjwt>0:www/py-pyjwt@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
