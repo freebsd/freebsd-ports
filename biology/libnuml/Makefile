@@ -1,7 +1,6 @@
 PORTNAME=	libnuml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.7
-PORTREVISION=	1
+DISTVERSION=	1.1.8
 CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libsbml.so:biology/libsbml
 
-USES=		cmake gnome
+USES=		cmake gnome iconv
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
