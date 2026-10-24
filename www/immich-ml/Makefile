@@ -1,7 +1,6 @@
 PORTNAME=	immich-ml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.4
-PORTREVISION=	1
+DISTVERSION=	3.3.5
 CATEGORIES=	www python
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -15,14 +14,12 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	the ONNX runtime does not build on 32-bit platforms
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiocache>0:devel/py-aiocache@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fastapi>0:www/py-fastapi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ftfy>0:textproc/py-ftfy@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>0:www/py-gunicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>0:misc/py-huggingface-hub@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}insightface>0:misc/py-insightface@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ml-dtypes>0:math/py-ml-dtypes@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}immich-model>0:misc/py-immich-model@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}onnx>=1.22.0:misc/py-onnx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}onnxruntime>0:misc/py-onnxruntime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>0:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
