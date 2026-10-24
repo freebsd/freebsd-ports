@@ -1,5 +1,5 @@
 PORTNAME=	polyxios
-DISTVERSION=	0.4.1
+DISTVERSION=	0.5.1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,6 @@ USE_PYTHON=	pep517 autoplist pytest
 post-patch:
 	@${REINPLACE_CMD} -e '1s|#!/usr/bin/env python3|#!${PYTHON_CMD}|' ${WRKSRC}/tools/gitversion.py
 
-# tests as of 0.4.1: 2527 passed, 58 skipped, 3 xfailed
+# tests as of 0.5.1: 4709 passed, 3 failed, 3 xfailed
 
 .include <bsd.port.mk>
