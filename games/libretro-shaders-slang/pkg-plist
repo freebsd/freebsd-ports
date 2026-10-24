@@ -3569,6 +3569,7 @@
 %%DATADIR%%/edge-smoothing/scalenx/scale2xSFX.slangp
 %%DATADIR%%/edge-smoothing/scalenx/scale2xplus.slangp
 %%DATADIR%%/edge-smoothing/scalenx/scale3x.slangp
+%%DATADIR%%/edge-smoothing/scalenx/scale3xSFX.slangp
 %%DATADIR%%/edge-smoothing/scalenx/shaders/epx.slang
 %%DATADIR%%/edge-smoothing/scalenx/shaders/mmpx-ADV.slang
 %%DATADIR%%/edge-smoothing/scalenx/shaders/mmpx.slang
@@ -3685,6 +3686,7 @@
 %%DATADIR%%/edge-smoothing/xbrz/shaders/xbrz-freescale-multipass/xbrz-freescale-pass0.slang
 %%DATADIR%%/edge-smoothing/xbrz/shaders/xbrz-freescale-multipass/xbrz-freescale-pass1.slang
 %%DATADIR%%/edge-smoothing/xbrz/shaders/xbrz-freescale.slang
+%%DATADIR%%/edge-smoothing/xbrz/xbrz-crisp.slangp
 %%DATADIR%%/edge-smoothing/xbrz/xbrz-freescale-multipass.slangp
 %%DATADIR%%/edge-smoothing/xbrz/xbrz-freescale.slangp
 %%DATADIR%%/edge-smoothing/xsal/2xsal-level2-crt.slangp
@@ -3877,6 +3879,7 @@
 %%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-pass3.slang
 %%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-pass4.slang
 %%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-pass5.slang
+%%DATADIR%%/handheld/shaders/gameboy/shader-files/gb-shared.inc
 %%DATADIR%%/handheld/shaders/gb-palette/gb-palette.slang
 %%DATADIR%%/handheld/shaders/gb-palette/resources/palette-dmg.png
 %%DATADIR%%/handheld/shaders/gb-palette/resources/palette-light.png
@@ -3900,8 +3903,8 @@
 %%DATADIR%%/handheld/shaders/mgba/agb001.slang
 %%DATADIR%%/handheld/shaders/mgba/ags001-light.slang
 %%DATADIR%%/handheld/shaders/mgba/ags001.slang
+%%DATADIR%%/handheld/shaders/pixel_transparency/film_noise_cache.slang
 %%DATADIR%%/handheld/shaders/pixel_transparency/pixel_transparency.slang
-%%DATADIR%%/handheld/shaders/pixel_transparency/pt_base.inc
 %%DATADIR%%/handheld/shaders/pixel_transparency/sunlight_shimmer.slang
 %%DATADIR%%/handheld/shaders/retro-tiles.slang
 %%DATADIR%%/handheld/shaders/retro-v2.slang
