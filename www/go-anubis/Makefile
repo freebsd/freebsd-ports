@@ -1,11 +1,10 @@
 PORTNAME=	anubis
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.27.0
-PORTREVISION=	3
+DISTVERSION=	1.28.1
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/techarohq/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	https://github.com/techarohq/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}/
 PKGNAMEPREFIX=	go-
-DISTNAME=	anubis-src-vendor-npm-${DISTVERSION}
+DISTNAME=	anubis-src-vendor-npm-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Anti-scraper web proxy using browser-based proof-of-work challenges
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:no_targets,1.26+
 USE_RC_SUBR=	${PORTNAME}
 
-MAKE_FLAGS=	VERSION=${DISTVERSION} GOFLAGS="-buildvcs=false"
+MAKE_FLAGS=	VERSION=${DISTVERSION}${DISTVERSIONSUFFIX} GOFLAGS="-buildvcs=false"
 ALL_TARGET=	prebaked-build
 
 post-patch:

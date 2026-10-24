@@ -10,6 +10,7 @@ sbin/robots2policy
 %%DATADIR%%/bots/aggressive-brazilian-scrapers.yaml
 %%DATADIR%%/bots/ai-catchall.yaml
 %%DATADIR%%/bots/ai-robots-txt.yaml
+%%DATADIR%%/bots/cloudflare-kitesurf.yaml
 %%DATADIR%%/bots/cloudflare-workers.yaml
 %%DATADIR%%/bots/custom-async-http-client.yaml
 %%DATADIR%%/bots/headless-browsers.yaml
@@ -35,6 +36,7 @@ sbin/robots2policy
 %%DATADIR%%/common/acts-like-browser.yaml
 %%DATADIR%%/common/allow-api-like.yaml
 %%DATADIR%%/common/allow-private-addresses.yaml
+%%DATADIR%%/common/domain-fronting.yaml
 %%DATADIR%%/common/json-api.yaml
 %%DATADIR%%/common/keep-internet-working.yaml
 %%DATADIR%%/common/rfc-violations.yaml
@@ -71,3 +73,4 @@ sbin/robots2policy
 %%DATADIR%%/meta/messengers-preview.yaml
 %%DATADIR%%/services/updown.yaml
 %%DATADIR%%/services/uptime-robot.yaml
+
