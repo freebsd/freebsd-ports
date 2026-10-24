@@ -1,5 +1,5 @@
 PORTNAME=	Workflow
-DISTVERSION=	2.11
+DISTVERSION=	2.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JONASBN
@@ -13,7 +13,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BR_DEPENDS=	p5-Class-Accessor>=0.18:devel/p5-Class-Accessor \
+BUILD_RUN_DEPENDS=	p5-Class-Accessor>=0.18:devel/p5-Class-Accessor \
 		p5-Class-Factory>=1:devel/p5-Class-Factory \
 		p5-Data-UUID>=0:devel/p5-Data-UUID \
 		p5-DateTime-Format-Strptime>=1:devel/p5-DateTime-Format-Strptime \
@@ -27,8 +27,6 @@ BR_DEPENDS=	p5-Class-Accessor>=0.18:devel/p5-Class-Accessor \
 		p5-Syntax-Keyword-Try>=0.25:devel/p5-Syntax-Keyword-Try \
 		p5-XML-Simple>=2.00:textproc/p5-XML-Simple \
 		p5-YAML>=1.30:textproc/p5-YAML
-BUILD_DEPENDS=	${BR_DEPENDS}
-RUN_DEPENDS=	${BR_DEPENDS}
 TEST_DEPENDS=	p5-DBD-Mock>=1.59:databases/p5-DBD-Mock \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
@@ -49,6 +47,7 @@ LINKS_TEST_DEPENDS=	p5-Test-Pod-Links>=0:devel/p5-Test-Pod-Links
 
 .if ${PORT_OPTIONS:MLINKS}
 TEST_ENV+=	POD_LINKS=yes
+TEST_DEPENDS+=	p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https
 .endif
 
 post-install:
