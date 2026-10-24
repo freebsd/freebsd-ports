@@ -1,14 +1,27 @@
--- Lower the setuptools lower bound to match the version provided by devel/py-setuptools.
--- Do not update devel/py-setuptools; instead patch this port to use its declared version.
+-- Convert PEP 639 license field to the legacy dict format and lower the setuptools
+-- build requirement to match the version provided by devel/py-setuptools.
+-- The new "license = string" + "license-files" syntax (PEP 639) requires setuptools 77+,
+-- but devel/py-setuptools currently provides 63.x. Also lower build-system
+-- setuptools>=83.0.0 to >=61.2 which is what devel/py-setuptools provides.
 
---- pyproject.toml.orig	2026-09-17 12:24:23 UTC
+--- pyproject.toml.orig	2026-10-20 20:59:54 UTC
 +++ pyproject.toml
-@@ -97,7 +97,7 @@ select = "*-win_amd64"
+@@ -5,8 +5,7 @@ authors = [
+ authors = [
+ 	{name = "J. Derek Tucker", email = "jdtuck@sandia.gov"}
+ ]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = {file = "LICENSE.txt"}
+ readme = "README.md"
+ requires-python = ">=3.10"
+ 
+@@ -97,7 +96,7 @@ select = "*-win_amd64"
  #environment = { PKG_CONFIG_PATH = "c:/opt/64/lib/pkgconfig" }
  
  [build-system]
 -requires = ["setuptools>=83.0.0", "wheel", "cffi>=1.0.0", "Cython", "numpy"]  # PEP 518 - what is required to build
-+requires = ["setuptools>=63.1.0", "wheel", "cffi>=1.0.0", "Cython", "numpy"]  # PEP 518 - what is required to build
++requires = ["setuptools>=61.2", "wheel", "cffi>=1.0.0", "Cython", "numpy"]  # PEP 518 - what is required to build
  build-backend = "setuptools.build_meta"
  
  [tool.pytest.ini_options]
