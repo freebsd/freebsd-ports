@@ -1,3 +1,3 @@
-TIMESTAMP = 1783822611
-SHA256 (chroma_hnswlib-0.7.6.tar.gz) = 4dce282543039681160259d29fcde6151cc9106c6461e0485f57cdccd83059b7
-SIZE (chroma_hnswlib-0.7.6.tar.gz) = 32256
+TIMESTAMP = 1792881538
+SHA256 (chroma-core-hnswlib-0.8.2_GH0.tar.gz) = 5e3abbe2f8b4cb8dcc39009baee579c206a78e2d8b94447a43d687c1559943e7
+SIZE (chroma-core-hnswlib-0.8.2_GH0.tar.gz) = 80195
