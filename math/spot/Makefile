@@ -1,5 +1,5 @@
 PORTNAME=	spot
-DISTVERSION=	2.16
+DISTVERSION=	2.16.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
@@ -37,14 +37,15 @@ PORTDOCS=	tl.pdf
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
+# below failures were reported to then upstream @ spot@lrde.epita.fr on 2026-10-24
 # ============================================================================
-# Testsuite summary for spot 2.15.1
+# Testsuite summary for spot 2.16.1
 # ============================================================================
-# TOTAL: 213
-# PASS:  192
+# TOTAL: 218
+# PASS:  187
 # SKIP:  21
 # XFAIL: 0
-# FAIL:  0
+# FAIL:  10
 # XPASS: 0
 # ERROR: 0
 
