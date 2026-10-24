@@ -612,6 +612,7 @@
     SUBDIR += py-numcodecs
     SUBDIR += py-ollama
     SUBDIR += py-onnx
+    SUBDIR += py-onnx-ir
     SUBDIR += py-onnx-tf
     SUBDIR += py-onnxconverter-common
     SUBDIR += py-onnxruntime
