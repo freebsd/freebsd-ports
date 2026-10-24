@@ -1,5 +1,5 @@
 PORTNAME=	music21
-DISTVERSION=	10.5.0
+DISTVERSION=	10.5.1
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,6 +38,6 @@ post-patch:
 		s|/usr/bin/xdg-open|${LOCALBASE}/bin/xdg-open|" \
 		${WRKSRC}/music21/environment.py
 
-# tests as of 10.5.0: 927 passed, 2 skipped in 77.74s (0:01:17)
+# tests as of 10.5.1: 546 passed, 68 subtests passed in 18.41s
 
 .include <bsd.port.mk>
