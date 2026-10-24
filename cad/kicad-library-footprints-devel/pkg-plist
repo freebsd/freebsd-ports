@@ -4020,6 +4020,10 @@
 %%DATADIR%%/footprints/Connector_PCBEdge.pretty/Samtec_MECF-70-02-NP-L-DV_2x70_P1.27mm_Socket_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Connector_PCBEdge.pretty/Samtec_MECF-70-0_-L-DV_2x70_P1.27mm_Polarized_Edge.kicad_mod
 %%DATADIR%%/footprints/Connector_PCBEdge.pretty/Samtec_MECF-70-0_-NP-L-DV_2x70_P1.27mm_Edge.kicad_mod
+%%DATADIR%%/footprints/Connector_PCBEdge.pretty/TE_M.2_A_2x38-1MP_P0.5mm.kicad_mod
+%%DATADIR%%/footprints/Connector_PCBEdge.pretty/TE_M.2_B_2x38-1MP_P0.5mm.kicad_mod
+%%DATADIR%%/footprints/Connector_PCBEdge.pretty/TE_M.2_E_2x38-1MP_P0.5mm.kicad_mod
+%%DATADIR%%/footprints/Connector_PCBEdge.pretty/TE_M.2_M_2x38-1MP_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Connector_PCBEdge.pretty/molex_EDGELOCK_2-CKT.kicad_mod
 %%DATADIR%%/footprints/Connector_PCBEdge.pretty/molex_EDGELOCK_4-CKT.kicad_mod
 %%DATADIR%%/footprints/Connector_PCBEdge.pretty/molex_EDGELOCK_6-CKT.kicad_mod
@@ -8282,6 +8286,7 @@
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMPW10_1xx_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMPW25_1xx_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMPW5-1xx_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TMPW50-1xx_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_TRACO_TPP-15-1xx-D_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_Vigortronix_VTX-214-010-1xx_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_Vigortronix_VTX-214-010-2xx_THT.kicad_mod
@@ -8383,6 +8388,8 @@
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMV-051xS_121xS_Single_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMV-241xD_Dual_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMV-241xS_Single_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMV-xxxxDEN_Dual_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMV-xxxxEN_Single_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TOS06-05SIL_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TOS06-12SIL_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TRA3-xxxx_THT.kicad_mod
@@ -9158,6 +9165,7 @@
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_APV_APH1770.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_APV_APH2213.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_AVX_LMLP07A7.kicad_mod
+%%DATADIR%%/footprints/Inductor_SMD.pretty/L_Abracon_AOTA-B201610S.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Abracon_ASPI-0425.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Abracon_ASPI-0628.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Abracon_ASPI-0630LR.kicad_mod
@@ -9523,6 +9531,7 @@
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Pulse_PA4344.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Pulse_PA4349.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_Pulse_PA5402.kicad_mod
+%%DATADIR%%/footprints/Inductor_SMD.pretty/L_Pulse_PA5449.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_SOREDE_SNR.1050_10x10x5mm.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_SXN_SMDRI124.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_SXN_SMDRI125.kicad_mod
@@ -10956,6 +10965,7 @@
 %%DATADIR%%/footprints/Package_BGA.pretty/Maxim_WLP-12.kicad_mod
 %%DATADIR%%/footprints/Package_BGA.pretty/Maxim_WLP-12_2.008x1.608mm_Layout4x3_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_BGA.pretty/Maxim_WLP-9_1.595x1.415_Layout3x3_P0.4mm_Ball0.27mm_Pad0.25mm_NSMD.kicad_mod
+%%DATADIR%%/footprints/Package_BGA.pretty/Microchip_4HB_TFBGA-343_14x14mm_Layout21x21_P0.65mm.kicad_mod
 %%DATADIR%%/footprints/Package_BGA.pretty/Microchip_FCG1152_BGA-1152_35x35mm_Layout34x34_P1.0mm.kicad_mod
 %%DATADIR%%/footprints/Package_BGA.pretty/Microchip_FCSG325_BGA-325_11x11mm_Layout21x21_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_BGA.pretty/Microchip_FCSG536_BGA-536_16x16mm_Layout30x30_P0.5mm.kicad_mod
@@ -11178,6 +11188,8 @@
 %%DATADIR%%/footprints/Package_CSP.pretty/Maxim_WLCSP-35_2.998x2.168mm_Layout7x5_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_CSP.pretty/NXP_SOT1444-5_WLCSP-49_3.44x3.44mm_Layout7x7_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_CSP.pretty/NXP_SOT1450-2_WLCSP-100_5.07x5.07mm_Layout10x10_P0.5mm.kicad_mod
+%%DATADIR%%/footprints/Package_CSP.pretty/NXP_WLCSP-12_1.055x1.405mm_Layout3x4_P0.35mm.kicad_mod
+%%DATADIR%%/footprints/Package_CSP.pretty/NXP_WLCSP-15_1.54x2.56mm_Layout3x5_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_CSP.pretty/Nexperia_WLCSP-15_2.37x1.17mm_Layout6x3_P0.4mmP0.8mm.kicad_mod
 %%DATADIR%%/footprints/Package_CSP.pretty/OnSemi_ODCSP36_BGA-36_6.13x6.13mm_Layout6x6_P1.0mm.kicad_mod
 %%DATADIR%%/footprints/Package_CSP.pretty/OnSemi_ODCSP36_BGA-36_6.13x6.13mm_Layout6x6_P1.0mm_ManualAssembly.kicad_mod
@@ -11448,6 +11460,7 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Mini-Circuits_FG873-4_3x3mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/NXP_LQFN-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm_16xMask0.45x0.45.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/NXP_LQFN-48-1EP_7x7mm_P0.5mm_EP3.5x3.5mm_16xMask0.45x0.45_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/NXP_SOT1832-1_UQFN-16-1EP_1.6x2.4mm_P0.4mm_EP0.6x1.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/NXP_VQFN-16-1EP_4x4mm_P0.65mm_EP2.1x2.1mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Nisshinbo_DFN-6_1EP_1x1mm_P0.35mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Nordic_AQFN-73-1EP_7x7mm_P0.5mm.kicad_mod
@@ -13610,6 +13623,7 @@
 %%DATADIR%%/footprints/Potentiometer_THT.pretty/Potentiometer_Vishay_T73YP_Vertical.kicad_mod
 %%DATADIR%%/footprints/Potentiometer_THT.pretty/Potentiometer_Vishay_T93XA_Horizontal.kicad_mod
 %%DATADIR%%/footprints/Potentiometer_THT.pretty/Potentiometer_Vishay_T93YA_Vertical.kicad_mod
+%%DATADIR%%/footprints/RF.pretty/Skyworks_SKY13351_378LF.kicad_mod
 %%DATADIR%%/footprints/RF.pretty/Skyworks_SKY13575_639LF.kicad_mod
 %%DATADIR%%/footprints/RF.pretty/Skyworks_SKY65404-31.kicad_mod
 %%DATADIR%%/footprints/RF_Antenna.pretty/AVX_M620720.kicad_mod

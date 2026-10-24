@@ -4,7 +4,6 @@ bin/_gerbview.kiface
 bin/_pcb_calculator.kiface
 bin/_pcbnew.kiface
 bin/_pl_editor.kiface
-bin/bitmap2component
 bin/eeschema
 bin/gerbview
 bin/kicad
@@ -24,14 +23,12 @@ lib/libkicommon.so
 lib/libkicommon.so.10.99.0
 lib/libkigal.so
 lib/libkigal.so.10.99.0
-%%DESKTOPDIR%%/org.kicad.bitmap2component.desktop
 %%DESKTOPDIR%%/org.kicad.eeschema.desktop
 %%DESKTOPDIR%%/org.kicad.gerbview.desktop
 %%DESKTOPDIR%%/org.kicad.kicad.desktop
 %%DESKTOPDIR%%/org.kicad.pcbcalculator.desktop
 %%DESKTOPDIR%%/org.kicad.pcbnew.desktop
 share/bash-completion/completions/kicad-cli
-share/icons/hicolor/128x128/apps/bitmap2component.png
 share/icons/hicolor/128x128/apps/eeschema.png
 share/icons/hicolor/128x128/apps/gerbview.png
 share/icons/hicolor/128x128/apps/kicad.png
@@ -43,7 +40,6 @@ share/icons/hicolor/128x128/mimetypes/application-x-kicad-project.png
 share/icons/hicolor/128x128/mimetypes/application-x-kicad-schematic.png
 share/icons/hicolor/128x128/mimetypes/application-x-kicad-symbol.png
 share/icons/hicolor/128x128/mimetypes/application-x-kicad-worksheet.png
-share/icons/hicolor/16x16/apps/bitmap2component.png
 share/icons/hicolor/16x16/apps/eeschema.png
 share/icons/hicolor/16x16/apps/gerbview.png
 share/icons/hicolor/16x16/apps/kicad.png
@@ -55,7 +51,6 @@ share/icons/hicolor/16x16/mimetypes/application-x-kicad-project.png
 share/icons/hicolor/16x16/mimetypes/application-x-kicad-schematic.png
 share/icons/hicolor/16x16/mimetypes/application-x-kicad-symbol.png
 share/icons/hicolor/16x16/mimetypes/application-x-kicad-worksheet.png
-share/icons/hicolor/24x24/apps/bitmap2component.png
 share/icons/hicolor/24x24/apps/eeschema.png
 share/icons/hicolor/24x24/apps/gerbview.png
 share/icons/hicolor/24x24/apps/kicad.png
@@ -67,7 +62,6 @@ share/icons/hicolor/24x24/mimetypes/application-x-kicad-project.png
 share/icons/hicolor/24x24/mimetypes/application-x-kicad-schematic.png
 share/icons/hicolor/24x24/mimetypes/application-x-kicad-symbol.png
 share/icons/hicolor/24x24/mimetypes/application-x-kicad-worksheet.png
-share/icons/hicolor/32x32/apps/bitmap2component.png
 share/icons/hicolor/32x32/apps/eeschema.png
 share/icons/hicolor/32x32/apps/gerbview.png
 share/icons/hicolor/32x32/apps/kicad.png
@@ -79,7 +73,6 @@ share/icons/hicolor/32x32/mimetypes/application-x-kicad-project.png
 share/icons/hicolor/32x32/mimetypes/application-x-kicad-schematic.png
 share/icons/hicolor/32x32/mimetypes/application-x-kicad-symbol.png
 share/icons/hicolor/32x32/mimetypes/application-x-kicad-worksheet.png
-share/icons/hicolor/48x48/apps/bitmap2component.png
 share/icons/hicolor/48x48/apps/eeschema.png
 share/icons/hicolor/48x48/apps/gerbview.png
 share/icons/hicolor/48x48/apps/kicad.png
@@ -91,7 +84,6 @@ share/icons/hicolor/48x48/mimetypes/application-x-kicad-project.png
 share/icons/hicolor/48x48/mimetypes/application-x-kicad-schematic.png
 share/icons/hicolor/48x48/mimetypes/application-x-kicad-symbol.png
 share/icons/hicolor/48x48/mimetypes/application-x-kicad-worksheet.png
-share/icons/hicolor/64x64/apps/bitmap2component.png
 share/icons/hicolor/64x64/apps/eeschema.png
 share/icons/hicolor/64x64/apps/gerbview.png
 share/icons/hicolor/64x64/apps/kicad.png
@@ -103,7 +95,6 @@ share/icons/hicolor/64x64/mimetypes/application-x-kicad-project.png
 share/icons/hicolor/64x64/mimetypes/application-x-kicad-schematic.png
 share/icons/hicolor/64x64/mimetypes/application-x-kicad-symbol.png
 share/icons/hicolor/64x64/mimetypes/application-x-kicad-worksheet.png
-share/icons/hicolor/scalable/apps/bitmap2component.svg
 share/icons/hicolor/scalable/apps/eeschema.svg
 share/icons/hicolor/scalable/apps/gerbview.svg
 share/icons/hicolor/scalable/apps/kicad.svg
