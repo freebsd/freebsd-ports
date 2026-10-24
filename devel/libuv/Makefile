@@ -1,9 +1,13 @@
 PORTNAME=	libuv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.52.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://dist.libuv.org/dist/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSIONFULL}-dist
+
+PATCH_SITES=	https://github.com/libuv/libuv/commit/
+PATCHFILES=	096a02d14cb9d3de6d55a29ec02c4dfcb7643c7f.patch:-p1
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multi-platform support library with a focus on asynchronous I/O
