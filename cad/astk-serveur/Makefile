@@ -14,6 +14,8 @@ WWW=		http://www.code-aster.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	will be removed with the next upgrade of Code_Aster
+
 NOT_FOR_ARCHS=		armv6 armv7 i386 powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	ARG_MAX is too small for Code_Aster on 32 bits systems
 
