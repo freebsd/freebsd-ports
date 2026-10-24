@@ -24,6 +24,11 @@ WWW=		${MASTER_SITES}
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+.ifdef WORDPRESS_LANG
+DEPRECATED=	Localized tarballs are re-rolled upstream in place; use www/wordpress and let it download language packs
+EXPIRATION_DATE=	2026-12-31
+.endif
+
 RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
 
 USES=		cpe php:web
