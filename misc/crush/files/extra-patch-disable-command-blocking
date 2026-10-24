@@ -1,22 +1,22 @@
 --- internal/agent/common_test.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/agent/common_test.go
-@@ -167,7 +167,7 @@ func coderAgent(r *vcr.Recorder, env fakeEnv, large, s
+@@ -166,7 +166,7 @@ func coderAgent(r *vcr.Recorder, env fakeEnv, large, s
  	}
  
  	allTools := []fantasy.AgentTool{
--		tools.NewBashTool(env.permissions, env.workingDir, cfg.Config().Options.DataDirectory, cfg.Config().Options.Attribution, modelName),
-+		tools.NewBashTool(env.permissions, env.workingDir, cfg.Config().Options.DataDirectory, cfg.Config().Options.Attribution, modelName, cfg.Config().Options.DisableCommandBlocking),
+-		tools.NewBashTool(env.permissions, env.workingDir, cfg.Config().Options.DataDirectory, cfg.Config().Options.Attribution, modelName, cfg.Config().Options.GetMaxBackgroundJobs()),
++		tools.NewBashTool(env.permissions, env.workingDir, cfg.Config().Options.DataDirectory, cfg.Config().Options.Attribution, modelName, cfg.Config().Options.GetMaxBackgroundJobs(), cfg.Config().Options.DisableCommandBlocking),
  		tools.NewDownloadTool(env.permissions, env.workingDir, r.GetDefaultClient()),
  		tools.NewEditTool(nil, env.permissions, env.history, *env.filetracker, env.workingDir),
  		tools.NewMultiEditTool(nil, env.permissions, env.history, *env.filetracker, env.workingDir),
 --- internal/agent/coordinator.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/agent/coordinator.go
-@@ -878,7 +878,7 @@ func (c *coordinator) buildTools(ctx context.Context, 
+@@ -894,7 +894,7 @@ func (c *coordinator) buildTools(ctx context.Context, 
  
  	allTools = append(
  		allTools,
--		tools.NewBashTool(c.permissions, c.cfg.WorkingDir(), c.cfg.Config().Options.DataDirectory, c.cfg.Config().Options.Attribution, modelID),
-+		tools.NewBashTool(c.permissions, c.cfg.WorkingDir(), c.cfg.Config().Options.DataDirectory, c.cfg.Config().Options.Attribution, modelID, c.cfg.Config().Options.DisableCommandBlocking),
+-		tools.NewBashTool(c.permissions, c.cfg.WorkingDir(), c.cfg.Config().Options.DataDirectory, c.cfg.Config().Options.Attribution, modelID, c.cfg.Config().Options.GetMaxBackgroundJobs()),
++		tools.NewBashTool(c.permissions, c.cfg.WorkingDir(), c.cfg.Config().Options.DataDirectory, c.cfg.Config().Options.Attribution, modelID, c.cfg.Config().Options.GetMaxBackgroundJobs(), c.cfg.Config().Options.DisableCommandBlocking),
  		tools.NewCrushInfoTool(c.cfg, c.lspManager, c.allSkills, c.activeSkills, c.skillTracker),
  		tools.NewCrushLogsTool(logFile),
  		tools.NewJobOutputTool(c.cfg.Config().Options.DataDirectory),
@@ -51,8 +51,8 @@
  	}
  }
  
--func NewBashTool(permissions permission.Service, workingDir, spillDir string, attribution *config.Attribution, modelID string) fantasy.AgentTool {
-+func NewBashTool(permissions permission.Service, workingDir, spillDir string, attribution *config.Attribution, modelID string, disableBlocking bool) fantasy.AgentTool {
+-func NewBashTool(permissions permission.Service, workingDir, spillDir string, attribution *config.Attribution, modelID string, maxBackgroundJobs int) fantasy.AgentTool {
++func NewBashTool(permissions permission.Service, workingDir, spillDir string, attribution *config.Attribution, modelID string, maxBackgroundJobs int, disableBlocking bool) fantasy.AgentTool {
  	return fantasy.NewAgentTool(
  		BashToolName,
 -		string(bashDescription(attribution, modelID)),
@@ -60,41 +60,41 @@
  		func(ctx context.Context, params BashParams, call fantasy.ToolCall) (fantasy.ToolResponse, error) {
  			if params.Command == "" {
  				return fantasy.NewTextErrorResponse("missing command"), nil
-@@ -252,7 +258,7 @@ func NewBashTool(permissions permission.Service, worki
+@@ -251,7 +257,7 @@ func NewBashTool(permissions permission.Service, worki
+ 				startTime := time.Now()
  				bgManager := shell.GetBackgroundShellManager()
- 				bgManager.Cleanup()
  				// Use background context so it continues after tool returns
--				bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(), params.Command, params.Description)
-+				bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(disableBlocking), params.Command, params.Description)
+-				bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(), params.Command, params.Description, maxBackgroundJobs)
++				bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(disableBlocking), params.Command, params.Description, maxBackgroundJobs)
  				if err != nil {
  					return fantasy.ToolResponse{}, fmt.Errorf("error starting background shell: %w", err)
  				}
-@@ -307,7 +313,7 @@ func NewBashTool(permissions permission.Service, worki
+@@ -305,7 +311,7 @@ func NewBashTool(permissions permission.Service, worki
+ 
  			// Start with detached context so it can survive if moved to background
  			bgManager := shell.GetBackgroundShellManager()
- 			bgManager.Cleanup()
--			bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(), params.Command, params.Description)
-+			bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(disableBlocking), params.Command, params.Description)
+-			bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(), params.Command, params.Description, maxBackgroundJobs)
++			bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(disableBlocking), params.Command, params.Description, maxBackgroundJobs)
  			if err != nil {
  				return fantasy.ToolResponse{}, fmt.Errorf("error starting shell: %w", err)
  			}
 --- internal/agent/tools/bash_test.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/agent/tools/bash_test.go
-@@ -117,7 +117,7 @@ func newBashToolForTest(workingDir string) fantasy.Age
+@@ -125,7 +125,7 @@ func newBashToolForTest(workingDir string) fantasy.Age
  func newBashToolForTest(workingDir string) fantasy.AgentTool {
  	permissions := &mockBashPermissionService{Broker: pubsub.NewBroker[permission.PermissionRequest]()}
  	attribution := &config.Attribution{TrailerStyle: config.TrailerStyleNone}
--	return NewBashTool(permissions, workingDir, workingDir, attribution, "test-model")
-+	return NewBashTool(permissions, workingDir, workingDir, attribution, "test-model", false)
+-	return NewBashTool(permissions, workingDir, workingDir, attribution, "test-model", config.DefaultMaxBackgroundJobs)
++	return NewBashTool(permissions, workingDir, workingDir, attribution, "test-model", config.DefaultMaxBackgroundJobs, false)
  }
  
  func newBashToolWithRecordingPerms(workingDir string, allow bool) (fantasy.AgentTool, *recordingPermissionService) {
-@@ -126,7 +126,7 @@ func newBashToolWithRecordingPerms(workingDir string, 
+@@ -134,7 +134,7 @@ func newBashToolWithRecordingPerms(workingDir string, 
  		allow:  allow,
  	}
  	attribution := &config.Attribution{TrailerStyle: config.TrailerStyleNone}
--	return NewBashTool(perms, workingDir, workingDir, attribution, "test-model"), perms
-+	return NewBashTool(perms, workingDir, workingDir, attribution, "test-model", false), perms
+-	return NewBashTool(perms, workingDir, workingDir, attribution, "test-model", config.DefaultMaxBackgroundJobs), perms
++	return NewBashTool(perms, workingDir, workingDir, attribution, "test-model", config.DefaultMaxBackgroundJobs, false), perms
  }
  
  func TestBashTool_ChainedCommandsRequirePermission(t *testing.T) {
