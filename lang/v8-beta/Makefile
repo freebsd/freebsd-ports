@@ -4,7 +4,7 @@
 # Browse current beta branch: https://chromium.googlesource.com/v8/v8/+/refs/heads/15.7-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	15.7.112
+PORTVERSION=	15.7.112.9
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-beta
 
