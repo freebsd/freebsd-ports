@@ -1,6 +1,6 @@
---- buildtools/third_party/libc++/BUILD.gn.orig	2026-09-13 16:45:18 UTC
+--- buildtools/third_party/libc++/BUILD.gn.orig	2026-09-08 05:55:26 UTC
 +++ buildtools/third_party/libc++/BUILD.gn
-@@ -595,6 +595,19 @@ target(libcxx_target_type, "libc++") {
+@@ -614,6 +614,19 @@ target(libcxx_target_type, "libc++") {
      }
    }
  

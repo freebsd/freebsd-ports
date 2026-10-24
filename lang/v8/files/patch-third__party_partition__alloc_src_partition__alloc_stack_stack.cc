@@ -1,4 +1,4 @@
---- third_party/partition_alloc/src/partition_alloc/stack/stack.cc.orig	2026-09-01 03:39:43 UTC
+--- third_party/partition_alloc/src/partition_alloc/stack/stack.cc.orig	2026-09-18 16:27:42 UTC
 +++ third_party/partition_alloc/src/partition_alloc/stack/stack.cc
 @@ -17,7 +17,10 @@
  #include <windows.h>

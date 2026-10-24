@@ -1,4 +1,4 @@
---- build/config/BUILD.gn.orig	2026-09-13 16:45:17 UTC
+--- build/config/BUILD.gn.orig	2026-09-21 01:17:00 UTC
 +++ build/config/BUILD.gn
 @@ -117,7 +117,7 @@ config("debug") {
        # builds, and we have to tell it to turn it off.
@@ -19,7 +19,7 @@
      ]
    }
  }
-@@ -341,7 +339,7 @@ config("executable_config") {
+@@ -342,7 +340,7 @@ config("executable_config") {
        "//build/config/ios:ios_dynamic_flags",
        "//build/config/ios:ios_executable_flags",
      ]

@@ -23,11 +23,11 @@ CARGO_CRATES=	autocfg-1.5.1 \
 		serde-1.0.229 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
-		smallvec-1.15.2 \
+		smallvec-1.16.1 \
 		stable_deref_trait-1.2.1 \
 		strck-1.0.0 \
 		syn-2.0.119 \
-		syn-3.0.4 \
+		syn-3.0.5 \
 		synstructure-0.13.2 \
 		temporal_capi-0.2.6 \
 		temporal_rs-0.2.6 \

@@ -1,4 +1,4 @@
---- build/config/BUILDCONFIG.gn.orig	2026-09-01 03:36:21 UTC
+--- build/config/BUILDCONFIG.gn.orig	2026-09-21 01:17:00 UTC
 +++ build/config/BUILDCONFIG.gn
 @@ -224,8 +224,8 @@ if (host_toolchain == "") {
    # TODO(dpranke): Add some sort of assert here that verifies that
@@ -34,16 +34,16 @@
  
  is_apple = is_ios || is_mac || is_watchos
  is_posix = !is_win && !is_fuchsia
-@@ -625,6 +626,8 @@ foreach(_target_type,
-             filter_include([ _current_label ], STRICT_DEPS_EXCLUDE) == [] ||
-             filter_include([ _current_label ], STRICT_DEPS_INCLUDE) != []
+@@ -630,6 +631,8 @@ foreach(_target_type,
+             filter_include([ _current_label ],
+                            CHECK_INCLUDES_STRICT_ALLOWLIST) != []
        }
 +      # devel/gn predates check_includes_strict (added in gn 2489)
 +      not_needed([ "check_includes_strict" ])
  
        if (use_libcxx_modules && is_clang) {
          if (strict_deps) {
-@@ -637,6 +640,7 @@ foreach(_target_type,
+@@ -642,6 +645,7 @@ foreach(_target_type,
        if (!defined(generate_modulemap)) {
          generate_modulemap = default_modulemap_mode
        }
@@ -51,16 +51,16 @@
  
        if (use_libcxx_modules) {
          # Add a dependency needed for Clang modules builds.
-@@ -768,6 +772,8 @@ foreach(_target_type,
-             filter_include([ _current_label ], STRICT_DEPS_EXCLUDE) == [] ||
-             filter_include([ _current_label ], STRICT_DEPS_INCLUDE) != []
+@@ -774,6 +778,8 @@ foreach(_target_type,
+             filter_include([ _current_label ],
+                            CHECK_INCLUDES_STRICT_ALLOWLIST) != []
        }
 +      # devel/gn predates check_includes_strict (added in gn 2489)
 +      not_needed([ "check_includes_strict" ])
  
        if (use_libcxx_modules && is_clang) {
          if (strict_deps) {
-@@ -780,6 +786,7 @@ foreach(_target_type,
+@@ -786,6 +792,7 @@ foreach(_target_type,
        if (!defined(generate_modulemap)) {
          generate_modulemap = default_modulemap_mode
        }

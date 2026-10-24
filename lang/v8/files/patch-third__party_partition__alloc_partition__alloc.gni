@@ -1,4 +1,4 @@
---- third_party/partition_alloc/partition_alloc.gni.orig	2026-09-01 03:39:43 UTC
+--- third_party/partition_alloc/partition_alloc.gni.orig	2026-09-18 16:27:42 UTC
 +++ third_party/partition_alloc/partition_alloc.gni
 @@ -110,8 +110,8 @@ use_large_empty_slot_span_ring = true
  # TODO(crbug.com/329199197): Clean this up when experiments are complete.
@@ -18,6 +18,6 @@
 -    (is_linux || is_chromeos) && current_cpu == "x64" && !is_cronet_build
 +    (is_linux || is_chromeos) && !is_bsd && current_cpu == "x64" &&
 +    !is_cronet_build
+ 
  declare_args() {
    enable_pkeys = is_pkeys_available
- }
