@@ -5,7 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20261116:
+20261024:
+  AFFECTS: users of net-mgmt/librenms
+  AUTHOR: dvl@FreeBSD.org
+
+sudo is no longer a dependency.
+
+20261016:
   AFFECTS: users of x11-wm/mango
   AUTHOR: nivit@FreeBSD.org
 
