@@ -22,7 +22,8 @@ GH_TAGNAME=	5.2.2:corba
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-dirty-schedulers \
+CONFIGURE_ARGS=	--enable-deterministic-build \
+		--enable-dirty-schedulers \
 		--enable-kernel-poll \
 		--enable-smp-support \
 		--enable-threads

@@ -24,7 +24,8 @@ USE_PERL5=	build
 USE_RC_SUBR=	epmd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-dirty-schedulers \
+CONFIGURE_ARGS=	--enable-deterministic-build \
+		--enable-dirty-schedulers \
 		--enable-kernel-poll \
 		--enable-smp-support \
 		--enable-threads
