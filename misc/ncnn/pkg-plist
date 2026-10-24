@@ -4,6 +4,8 @@ bin/mxnet2ncnn
 bin/ncnn2int8
 bin/ncnn2mem
 bin/ncnn2table
+bin/ncnnllm2int
+bin/ncnnllm2table
 bin/ncnnmerge
 bin/ncnnoptimize
 include/ncnn/allocator.h
@@ -39,5 +41,7 @@ lib/cmake/ncnn/ncnn-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ncnn/ncnn.cmake
 lib/cmake/ncnn/ncnnConfig.cmake
 lib/cmake/ncnn/ncnnConfigVersion.cmake
-lib/libncnn.a
+lib/libncnn.so
+lib/libncnn.so.1
+lib/libncnn.so.1.0.20261024
 libdata/pkgconfig/ncnn.pc
