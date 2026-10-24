@@ -1,6 +1,6 @@
 PORTNAME=	markterm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
+DISTVERSION=	0.16.0
 CATEGORIES=	textproc
 
 MAINTAINER=	dch@FreeBSD.org
@@ -47,15 +47,21 @@ GH_TUPLE=	ralsina:markd:490f0bc3129d1e625464b3f4da7336a2a978cffe:markd/deps/mark
 		luislavena:radix:v0.4.1:radix/deps/radix \
 		crystal-loot:exception_page:v0.5.0:exception_page/deps/exception_page \
 		Sija:backtracer.cr:v1.2.4:backtracer/deps/backtracer.cr
-# C/C++ sources for the litepdf shim: git submodules plus libharu,
+# C/C++ sources for the litepdf shim: git submodules (litehtml,
+# libtexprintf via TEXMATH, MicroTex for vector math) plus libharu,
 # which ext/build-libharu.sh builds from source with the CID font
 # patch (print/libharu ships unpatched, so it cannot be used).
 GH_TUPLE+=	ralsina:litehtml:bf76f100647e19d1938047d23f7258281586e87b:litehtml/ext/litehtml \
-		libharu:libharu:v2.4.6:libharu/ext/build/libharu
+		libharu:libharu:v2.4.6:libharu/ext/build/libharu \
+		NanoMichael:MicroTeX:0e3707f6dafebb121d98b53c64364d16fefe481d:microtex/ext/microtex
 USE_GNOME=	libxml2
+USE_RC_SUBR=	markpdf
+
+SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/markmark \
 		bin/markpdf \
+		bin/markpdf-web \
 		bin/markterm
 
 PORTDOCS=	BUILDING.md CHANGELOG.md README.md
@@ -90,15 +96,15 @@ do-build:
 		CFLAGS="${CFLAGS} -fPIC" \
 		CXXFLAGS="${CXXFLAGS} -std=c++17 -fPIC" \
 		WITH_TEXMATH=${_WITH_TEXMATH})
-# the Crystal binaries; markpdf-web (a Kemal playground) is left out
+# the Crystal binaries
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${LOCALBASE}/bin/shards lock ${SHARDS_ENV} && \
 		${SETENV} ${MAKE_ENV} WITH_TEXMATH=${_WITH_TEXMATH} \
 		${LOCALBASE}/bin/shards build ${SHARDS_ENV} \
-		markterm markmark markpdf)
+		markterm markmark markpdf markpdf-web)
 
 do-install:
-.for f in markterm markmark markpdf
+.for f in markterm markmark markpdf markpdf-web
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 

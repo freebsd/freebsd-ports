@@ -1,6 +1,6 @@
-TIMESTAMP = 1791450645
-SHA256 (ralsina-markterm-v0.14.0_GH0.tar.gz) = 7001c3d63d8f613092467251d97ddbb3d3a3c5c7f60bb1012f1076489cdc84ae
-SIZE (ralsina-markterm-v0.14.0_GH0.tar.gz) = 914346
+TIMESTAMP = 1792590273
+SHA256 (ralsina-markterm-v0.16.0_GH0.tar.gz) = 143c265d9ac4441fe40d86feda4c7c4fce71636cb0b6e04331b027310808116b
+SIZE (ralsina-markterm-v0.16.0_GH0.tar.gz) = 1013868
 SHA256 (ralsina-markd-490f0bc3129d1e625464b3f4da7336a2a978cffe_GH0.tar.gz) = 6a8e13849237fa7678c9c132d626d025edd7a37daff1b352f73206c6c83b516e
 SIZE (ralsina-markd-490f0bc3129d1e625464b3f4da7336a2a978cffe_GH0.tar.gz) = 177711
 SHA256 (ralsina-docopt.cr-v0.3.1_GH0.tar.gz) = c9b07aeb771ca415e2441f36a75b58a2c7d8c11c13c611098eee1238c396fdaa
@@ -39,5 +39,7 @@ SHA256 (ralsina-litehtml-bf76f100647e19d1938047d23f7258281586e87b_GH0.tar.gz) = 
 SIZE (ralsina-litehtml-bf76f100647e19d1938047d23f7258281586e87b_GH0.tar.gz) = 865915
 SHA256 (libharu-libharu-v2.4.6_GH0.tar.gz) = ec8f327520d1d354ce58b5d2af75b64f380cddc522437c169463b39760921348
 SIZE (libharu-libharu-v2.4.6_GH0.tar.gz) = 1420425
+SHA256 (NanoMichael-MicroTeX-0e3707f6dafebb121d98b53c64364d16fefe481d_GH0.tar.gz) = 47476269d29c41df322bce6bdd2daa7017cc50b9eda841b2bec1767dba28daa6
+SIZE (NanoMichael-MicroTeX-0e3707f6dafebb121d98b53c64364d16fefe481d_GH0.tar.gz) = 1599003
 SHA256 (bartp5-libtexprintf-18977837b20649d56a651eb6bf846f1c914db77a_GH0.tar.gz) = 50b12a00451526ed75c5274c4d7dc2803250ad735dd5b192c84ec14251788f90
 SIZE (bartp5-libtexprintf-18977837b20649d56a651eb6bf846f1c914db77a_GH0.tar.gz) = 155634

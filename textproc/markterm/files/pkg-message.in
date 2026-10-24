@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+markpdf-web is the HTTP render API (POST /render) and playground.
+
+Enable it in /etc/rc.conf:
+
+  markpdf_enable="YES"
+
+Optional knobs (defaults shown):
+
+  markpdf_user="www"
+  markpdf_port="3000"
+  markpdf_opts=""       # extra args, e.g. "--fontdir /path/to/fonts"
+
+Custom fonts: markpdf-web renders with fonts auto-scanned from
+/usr/share/fonts, /usr/local/share/fonts, and $HOME/.local/share/fonts.
+To use your own faces (e.g. the MB Type Advocate, Valkyrie and
+Triplicate families), point markpdf_opts at a fontdir holding the
+TrueType (.ttf) files, which are then matched by their internal family
+name in CSS.
+EOM
+}
+]

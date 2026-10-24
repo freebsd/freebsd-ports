@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: markpdf
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+#
+# markpdf_enable (bool):  Set to YES to enable the markpdf-web API server.
+# markpdf_user (user):    User to run markpdf-web as. Default "www".
+# markpdf_port (int):     TCP port markpdf-web listens on. Default "3000".
+# markpdf_opts (str):     Extra arguments passed to markpdf-web itself
+#                         (e.g. "--fontdir /path/to/fonts").
+
+. /etc/rc.subr
+
+name=markpdf
+rcvar=markpdf_enable
+
+load_rc_config $name
+
+: ${markpdf_enable:="NO"}
+: ${markpdf_user:="www"}
+: ${markpdf_port:="3000"}
+
+procname="%%PREFIX%%/bin/markpdf-web"
+pidfile="/var/run/${name}.pid"
+
+# markpdf-web runs in the foreground. daemon(8) detaches it, writes the
+# pidfile as root, then drops privileges to ${markpdf_user} via -u.
+# start_cmd is overridden (rather than command=/usr/sbin/daemon) so that
+# rc.subr's ${name}_user -> su -m path never double-drops privileges.
+start_cmd="/usr/sbin/daemon -f -p ${pidfile} -t ${name} -u ${markpdf_user} ${procname} --port ${markpdf_port} ${markpdf_opts}"
+
+run_rc_command "$1"
