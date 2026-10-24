@@ -1,0 +1,12 @@
+-- Relax the setuptools requirement
+-- The setuptools version in the ports tree is older than 68 and is not updated for this port
+
+--- pyproject.toml.orig	2026-10-18 19:46:36 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=68", "wheel"]
++requires = ["setuptools>=63", "wheel"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
