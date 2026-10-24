@@ -1,5 +1,5 @@
 PORTNAME=	searxng
-DISTVERSION=	20260803
+DISTVERSION=	20261024
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -18,11 +18,10 @@ RUN_DEPENDS=	${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotli>=0:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}curl-cffi>=0:ftp/py-curl-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fasttext-predict>=0:textproc/py-fasttext-predict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-babel>=0:devel/py-flask-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask>=0:www/py-flask@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx-socks>=0:www/py-httpx-socks@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0:devel/py-isodate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langdetect>=0:textproc/py-langdetect@${PY_FLAVOR} \
@@ -45,7 +44,7 @@ RUN_DEPENDS=	${PY_TOMLI} \
 
 USES=		python
 USE_GITHUB=	yes
-GH_TAGNAME=	aa059419ff027cb23be88ffa3b080a41e386fa95
+GH_TAGNAME=	ef0ec03da02b62d0a977264cb90a0833dfe001ae
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	searxng
 
