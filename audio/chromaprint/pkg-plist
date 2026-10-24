@@ -5,6 +5,6 @@ lib/cmake/Chromaprint/ChromaprintConfigVersion.cmake
 lib/cmake/Chromaprint/ChromaprintTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Chromaprint/ChromaprintTargets.cmake
 lib/libchromaprint.so
-lib/libchromaprint.so.1
-lib/libchromaprint.so.1.6.0
+lib/libchromaprint.so.%%SO_VER%%
+lib/libchromaprint.so.%%SO_VERSION%%
 libdata/pkgconfig/libchromaprint.pc

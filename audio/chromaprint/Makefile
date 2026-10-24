@@ -1,6 +1,5 @@
 PORTNAME=	chromaprint
-DISTVERSION=	1.6.0
-PORTREVISION=	1
+DISTVERSION=	1.6.2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/acoustid/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -18,10 +17,13 @@ USES=		cmake:testing compiler:c++14-lang
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DAUDIO_PROCESSOR_LIB:STRING=swresample \
-		-DFFT_LIB:STRING=`if [ -f ${LOCALBASE}/include/libavcodec/avfft.h ]; then ${ECHO_CMD} avfft; else ${ECHO_CMD} avtx; fi`
+		-DFFT_LIB:STRING=avtx
 CMAKE_ON=	BUILD_TOOLS
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_TESTING_ON=	BUILD_TESTS
+
+PLIST_SUB=	SO_VER=${DISTVERSION:R:R} \
+		SO_VERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=		DOCS DOXYGEN
 
