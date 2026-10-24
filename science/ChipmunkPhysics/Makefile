@@ -13,6 +13,8 @@ WWW=		https://chipmunk-physics.net/
 
 LICENSE=	MIT
 
+BROKEN=		Fails to build with CMake 4
+
 BROKEN_armv7=	src/cpHastySpace.c:31:4: error: Cannot use CP_USE_DOUBLES on 32 bit ARM
 
 USES=		cmake tar:tgz

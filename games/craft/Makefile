@@ -9,6 +9,8 @@ MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Simple Minecraft clone written in C using modern OpenGL
 WWW=		https://www.michaelfogleman.com/craft/
 
+BROKEN=		Fails to build with CMake 4
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cmake:insource compiler:c11 gl xorg
