@@ -39,7 +39,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytecheck_derive-0.8.2 \
 		bytes-1.12.0 \
 		cachedir-0.3.1 \
-		camino-1.2.5 \
+		camino-1.2.6 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
 		cc-1.2.65 \
@@ -51,12 +51,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
-		clap-4.6.6 \
-		clap_builder-4.6.6 \
+		clap-4.6.7 \
+		clap_builder-4.6.7 \
 		clap_complete-4.5.58 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.8 \
-		clap_derive-4.6.4 \
+		clap_derive-4.6.7 \
 		clap_lex-1.0.0 \
 		clearscreen-4.0.6 \
 		codspeed-5.0.1 \
@@ -261,10 +261,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pest_meta-2.8.2 \
 		phf-0.11.3 \
 		phf-0.13.1 \
+		phf-0.14.0 \
 		phf_codegen-0.11.3 \
+		phf_codegen-0.14.0 \
 		phf_generator-0.11.3 \
+		phf_generator-0.14.0 \
 		phf_shared-0.11.3 \
 		phf_shared-0.13.1 \
+		phf_shared-0.14.0 \
 		pin-project-lite-0.2.16 \
 		pkg-config-0.3.32 \
 		portable-atomic-1.13.1 \
@@ -296,7 +300,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		radium-0.7.0 \
 		rancor-0.1.1 \
 		rand-0.8.8 \
-		rand-0.10.2 \
+		rand-0.10.3 \
 		rand_core-0.6.4 \
 		rand_core-0.10.0 \
 		rayon-1.12.0 \
@@ -358,7 +362,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strum_macros-0.28.0 \
 		supports-hyperlinks-3.2.0 \
 		syn-2.0.119 \
-		syn-3.0.5 \
+		syn-3.0.6 \
 		synstructure-0.13.2 \
 		tap-1.0.1 \
 		tempfile-3.27.0 \
@@ -368,7 +372,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		test-case-3.3.1 \
 		test-case-core-3.3.1 \
 		test-case-macros-3.3.1 \
-		thin-vec-0.2.19 \
+		thin-vec-0.2.20 \
 		thiserror-1.0.69 \
 		thiserror-2.0.20 \
 		thiserror-impl-1.0.69 \
