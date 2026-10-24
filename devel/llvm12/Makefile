@@ -1,3 +1,9 @@
+#
+# NOTE: This port exits to support a small number of ports:
+#  - devel/openjdk11 - Bootstrapping on powerpc
+#  - emulators/libretro-kronos - Building with reasonable amounts of RAM
+#
+
 PORTNAME=	llvm
 DISTVERSION=	12.0.1
 PORTREVISION=	16
@@ -28,10 +34,8 @@ LLVM_PREFIX=	${PREFIX}/${LLVM_DIR}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
-USES=		cmake compiler:c++11-lib cpe perl5 tar:xz \
+USES=		cmake compiler:c++11-lib cpe perl5 python:build tar:xz \
 		shebangfix
-_USES_PYTHON?=	python:build
-USES+=		${_USES_PYTHON}
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 SHEBANG_FILES=	llvm/utils/lit/lit.py llvm/utils/llvm-lit/llvm-lit.in \
 		llvm/tools/opt-viewer/optrecord.py \
@@ -61,35 +65,19 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_LIBEDIT=OFF
 # LLVM likes to pick up ${LOCALBASE}/lib/libtinfo.so.*
 CMAKE_ARGS+=	-DLLVM_ENABLE_TERMINFO=OFF
 
-OPTIONS_DEFINE=	BE_AMDGPU BE_WASM CLANG DOCS EXTRAS LIT LLD PYCLANG
-OPTIONS_DEFINE_aarch64=	OPENMP
-OPTIONS_DEFINE_amd64=	COMPILER_RT OPENMP
-OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
-OPTIONS_DEFINE_powerpc=
-OPTIONS_DEFINE_powerpc64=	OPENMP
-OPTIONS_DEFINE_powerpc64le=	OPENMP
-OPTIONS_DEFINE_riscv64=	OPENMP
-OPTIONS_DEFAULT=	BE_AMDGPU BE_FREEBSD BE_WASM CLANG EXTRAS LLD
-OPTIONS_DEFAULT_aarch64=	OPENMP
-OPTIONS_DEFAULT_amd64=	COMPILER_RT OPENMP
-OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
-OPTIONS_DEFAULT_powerpc=
-OPTIONS_DEFAULT_powerpc64=	OPENMP
-OPTIONS_DEFAULT_powerpc64le=	OPENMP
-OPTIONS_DEFAULT_riscv64=	OPENMP
+OPTIONS_DEFINE=	CLANG DOCS LLD
+OPTIONS_DEFAULT=	BE_NATIVE CLANG LLD
 OPTIONS_SINGLE=		BACKENDS
 OPTIONS_SINGLE_BACKENDS=BE_FREEBSD BE_NATIVE BE_STANDARD
 OPTIONS_SUB=	yes
 # All non-backend options
-_ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS LIT LLD PYCLANG OPENMP
+_ALL_OPTIONS=	CLANG DOCS LLD
 
-BE_AMDGPU_DESC=		AMD GPU backend (required by mesa)
 BE_FREEBSD_DESC=	Backends for FreeBSD architectures
 BE_FREEBSD_CMAKE_ON=	-DLLVM_TARGETS_TO_BUILD="${FREEBSD_BACKENDS:ts;}"
 BE_NATIVE_DESC=		Backend(s) for this architecture (${_NATIVE_BACKENDS})
 BE_NATIVE_CMAKE_ON=	-DLLVM_TARGETS_TO_BUILD="${NATIVE_BACKENDS:ts;}"
 BE_STANDARD_DESC=	All non-experimental backends
-BE_WASM_DESC=		WebAssembly backend (required by firefox via wasi)
 .for BE in FREEBSD NATIVE STANDARD
 BE_${BE}_PLIST_FILES=	${_BE_LIBS_${BE}:O:S/$/.a/:S|^|${LLVM_DIR}/lib/libLLVM|}
 .endfor
@@ -104,11 +92,6 @@ CLANG_SUB_LIST=		XCC=clang${LLVM_SUFFIX} \
 			XLD=ld.lld${LLVM_SUFFIX} \
 			X_COMPILER_TYPE=clang
 CLANG_USE=		GNOME=libxml2
-COMPILER_RT_DESC=	Sanitizer libraries
-COMPILER_RT_CMAKE_ON= \
-	-DCOMPILER_RT_INSTALL_PATH=${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}
-COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|} \
-			${_COMPILER_RT_BLACKLISTS:S|^|${_CRTBLDIR}/|}
 DOCS_BUILD_DEPENDS= \
 	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
@@ -119,22 +102,7 @@ DOCS_CMAKE_ON= \
 	-DSPHINX_WARNINGS_AS_ERRORS=OFF \
 	-DLLVM_BUILD_DOCS=ON
 DOCS_PLIST_FILES=	${MAN1SRCS:S|^|share/man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
-EXTRAS_DESC=		Extra clang tools
-EXTRAS_IMPLIES=		CLANG
-LIT_DESC=		Install lit and FileCheck test tools
-LIT_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker
-OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
-OPENMP_CMAKE_ON= \
-	-DLIBOMPTARGET_DEP_LIBELF_INCLUDE_DIR="/usr/include/libelf.h" \
-	-DLIBOMPTARGET_DEP_LIBELF_LIBRARIES="/usr/lib/libelf.so" \
-	-DLIBOMPTARGET_DEP_LIBFFI_INCLUDE_DIR="" \
-	-DLIBOMPTARGET_DEP_LIBFFI_LIBRARIES=""
-OPENMP_PORTDOCS=	openmp
-PYCLANG_DESC=		Install python bindings to libclang
-PYCLANG_IMPLIES=	CLANG
-PYCLANG_VARS=		_USES_PYTHON=python
-PYCLANG_CMAKE_ON=	-DCLANG_PYTHON_BINDINGS_VERSIONS=${PYTHON_VER}
 
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=	RelWithDebInfo
@@ -156,32 +124,6 @@ STRIP_LIBS=	BugpointPasses.so \
 		libLTO.so
 
 CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer|AnalyzerPlugin.so)
-
-COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/fuzzer|profile\/InstrProfData.inc)
-
-EXTRAS_LIBS=	libclangApplyReplacements \
-		libclangChangeNamespace \
-		libclangDaemon \
-		libclangDoc \
-		libclangIncludeFixer \
-		libclangMove \
-		libclangQuery \
-		libclangRename \
-		libclangReorderFields \
-		libclangTidy \
-		libclangTidyGoogleModule \
-		libclangTidyLLVMModule \
-		libclangTidyMiscModule \
-		libclangTidyReadabilityModule \
-		libclangTidyUtils \
-		libfindAllSymbols \
-		libmodernizeCore
-EXTRAS_FILES=	index.js
-EXTRAS_PATTERN=	${EXTRAS_COMMANDS:tW:C/  */|/g}|${EXTRAS_LIBS:tW:C/  */|/g}|${EXTRAS_FILES:tW:C/  */|/g}
-
-OPENMP_PATTERN=	libarcher|lib[ig]*omp|omp.h|ompt.h|ompt-multiplex.h|omp-tools.h
-
-PYCLANG_PATTERN=	(clang\/(__init__|cindex|enumerations).py)$$
 
 .include <bsd.port.options.mk>
 
@@ -208,31 +150,10 @@ MAN1SRCS+=	${CLANG_MAN1SRCS}
 USES+=		gnome
 .endif
 
-.if ${PORT_OPTIONS:MCOMPILER_RT}
-LLVM_ENABLE_PROJECTS+=	compiler-rt
-.endif
-
-.if ${PORT_OPTIONS:MEXTRAS}
-LLVM_ENABLE_PROJECTS+=	clang-tools-extra
-COMMANDS+=	${EXTRAS_COMMANDS}
-MAN1SRCS+=	${EXTRAS_MAN1SRCS}
-PORTDOCS+=	clang-tools
-PLIST_DIRS+=	${LLVM_DIR}/include/clang-tidy/plugin
-.endif
-
-.if ${PORT_OPTIONS:MLIT}
-MAN1SRCS+=	${LIT_MAN1SRCS}
-.endif
-
 .if ${PORT_OPTIONS:MLLD}
 LLVM_ENABLE_PROJECTS+=	lld
 COMMANDS+=	${LLD_COMMANDS}
 PORTDOCS+=	lld
-.endif
-
-.if ${PORT_OPTIONS:MOPENMP}
-LLVM_ENABLE_PROJECTS+=	openmp
-MAN1SRCS+=	${OPENMP_MAN1SRCS}
 .endif
 
 .if defined(LLVM_ENABLE_PROJECTS)
@@ -259,14 +180,6 @@ _NATIVE_BACKENDS=	PowerPC
 _NATIVE_BACKENDS=	RISCV
 .endif
 NATIVE_BACKENDS=	${_NATIVE_BACKENDS}
-.if ${PORT_OPTIONS:MBE_AMDGPU}
-FREEBSD_BACKENDS+=	AMDGPU
-NATIVE_BACKENDS+=	AMDGPU
-.endif
-.if ${PORT_OPTIONS:MBE_WASM}
-FREEBSD_BACKENDS+=	WebAssembly
-NATIVE_BACKENDS+=	WebAssembly
-.endif
 STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
 			Mips MSP430 NVPTX Sparc SystemZ WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
@@ -293,77 +206,6 @@ _BE_LIBS_${BE}+=	${_BE_LIBS_COMMON:S/^/${BE_ARCH}/} \
 .endfor
 .endfor
 BE_PATTERN=${_BE_LIBS_STANDARD:O:S/$/.a/:ts|}
-
-_CRTLIBDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/lib/freebsd
-_CRTBLDIR=	${LLVM_DIR}/lib/clang/${LLVM_RELEASE}/share
-_COMPILER_RT_BLACKLISTS=	cfi_blacklist.txt
-_COMPILER_RT_LIBS_i386= \
-	libclang_rt.asan-i386.a \
-	libclang_rt.asan-i386.so \
-	libclang_rt.asan-preinit-i386.a \
-	libclang_rt.asan_cxx-i386.a \
-	libclang_rt.builtins-i386.a \
-	libclang_rt.cfi-i386.a \
-	libclang_rt.cfi_diag-i386.a \
-	libclang_rt.profile-i386.a \
-	libclang_rt.safestack-i386.a \
-	libclang_rt.stats-i386.a \
-	libclang_rt.stats_client-i386.a \
-	libclang_rt.ubsan_minimal-i386.a \
-	libclang_rt.ubsan_minimal-i386.so \
-	libclang_rt.ubsan_standalone-i386.a \
-	libclang_rt.ubsan_standalone-i386.so \
-	libclang_rt.ubsan_standalone_cxx-i386.a
-.if ${ARCH} == "amd64"
-_COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
-_COMPILER_RT_BLACKLISTS+=	msan_blacklist.txt
-_COMPILER_RT_LIBS= \
-	libclang_rt.asan-preinit-x86_64.a \
-	libclang_rt.asan-x86_64.a \
-	libclang_rt.asan-x86_64.a.syms \
-	libclang_rt.asan-x86_64.so \
-	libclang_rt.asan_cxx-x86_64.a \
-	libclang_rt.asan_cxx-x86_64.a.syms \
-	libclang_rt.builtins-x86_64.a \
-	libclang_rt.cfi-x86_64.a \
-	libclang_rt.cfi_diag-x86_64.a \
-	libclang_rt.dd-x86_64.a \
-	libclang_rt.dyndd-x86_64.so \
-	libclang_rt.fuzzer_interceptors-x86_64.a \
-	libclang_rt.fuzzer_no_main-x86_64.a \
-	libclang_rt.fuzzer-x86_64.a \
-	libclang_rt.msan-x86_64.a \
-	libclang_rt.msan-x86_64.a.syms \
-	libclang_rt.msan_cxx-x86_64.a \
-	libclang_rt.msan_cxx-x86_64.a.syms \
-	libclang_rt.profile-x86_64.a \
-	libclang_rt.safestack-x86_64.a \
-	libclang_rt.stats-x86_64.a \
-	libclang_rt.stats_client-x86_64.a \
-	libclang_rt.tsan-x86_64.a \
-	libclang_rt.tsan-x86_64.a.syms \
-	libclang_rt.tsan_cxx-x86_64.a \
-	libclang_rt.tsan_cxx-x86_64.a.syms \
-	libclang_rt.ubsan_minimal-x86_64.a \
-	libclang_rt.ubsan_minimal-x86_64.a.syms \
-	libclang_rt.ubsan_minimal-x86_64.so \
-	libclang_rt.ubsan_standalone-x86_64.a \
-	libclang_rt.ubsan_standalone-x86_64.a.syms \
-	libclang_rt.ubsan_standalone-x86_64.so \
-	libclang_rt.ubsan_standalone_cxx-x86_64.a \
-	libclang_rt.ubsan_standalone_cxx-x86_64.a.syms \
-	libclang_rt.xray-basic-x86_64.a \
-	libclang_rt.xray-fdr-x86_64.a \
-	libclang_rt.xray-profiling-x86_64.a \
-	libclang_rt.xray-x86_64.a
-.if exists(/usr/lib32/libc.so.7)
-_COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
-.endif
-.endif
-.if ${ARCH} == "i386"
-_COMPILER_RT_BLACKLISTS+=	asan_blacklist.txt
-_COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
-.endif
 
 .if ${ARCH} == "armv6"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
@@ -418,10 +260,8 @@ post-install-DOCS-on:
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
 	    ${STAGEDIR}${PREFIX}/share/man/man1/${_man:R}${LLVM_SUFFIX}.1
 .endfor
-.if ! ${PORT_OPTIONS:MLIT}
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/lit.1
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/FileCheck.1
-.endif
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
 
@@ -441,29 +281,6 @@ post-install-CLANG-on:
 	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
 	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
 
-post-install-LIT-on:
-	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/llvm/utils/lit/lit.py \
-	    ${STAGEDIR}${LLVM_PREFIX}/bin/lit
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
-	    ${STAGEDIR}${LLVM_PREFIX}/bin/llvm-lit
-	${LN} -fs ../${LLVM_DIR}/bin/lit \
-	    ${STAGEDIR}${PREFIX}/bin/lit${LLVM_SUFFIX}
-	${LN} -fs ../${LLVM_DIR}/bin/lit \
-	    ${STAGEDIR}${PREFIX}/bin/llvm-lit${LLVM_SUFFIX}
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/builtin_commands
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/formats
-	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/*.py \
-	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
-	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/builtin_commands/*.py \
-			${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/builtin_commands
-	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/formats/*.py \
-			${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/formats
-	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/FileCheck \
-	    ${STAGEDIR}${LLVM_PREFIX}/bin/
-	${LN} -fs ../${LLVM_DIR}/bin/FileCheck \
-	    ${STAGEDIR}${PREFIX}/bin/FileCheck${LLVM_SUFFIX}
-
 post-install-LLD-on:
 	${LN} -s ld.lld ${STAGEDIR}${LLVM_PREFIX}/bin/ld
 
@@ -476,19 +293,12 @@ do-test:
 		${SH} -c ${TEST_CMD}; \
 	fi
 
-post-install-OPENMP-on:
-	${RMDIR} ${STAGEDIR}/${DOCSDIR}/openmp/html/_sources
-
 build-plist:
 	${RM} ${PLIST} ${PLIST}.tmp
 	${ECHO_CMD} "@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<" >> ${PLIST}.tmp
 	${ECHO_CMD} "@comment Alter build-plist target and regenerate as required" >> ${PLIST}.tmp
 .for command in ${COMMANDS}
 	${ECHO_CMD} bin/${command}%%LLVM_SUFFIX%% >> ${PLIST}.tmp
-.endfor
-.for command in ${LIT_COMMANDS}
-	${ECHO_CMD} %%LIT%%bin/${command}%%LLVM_SUFFIX%% >> ${PLIST}.tmp
-	${ECHO_CMD} %%LIT%%${LLVM_DIR:C|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|}/bin/${command} >> ${PLIST}.tmp
 .endfor
 
 	${FIND} ${STAGEDIR}${LLVM_PREFIX} -type f -o -type l | \
@@ -504,20 +314,15 @@ build-plist:
 	    -e 's|\([^0-9]\)${LLVM_MAJOR}\([^0-9]\)|\1%%LLVM_MAJOR%%\2|' \
 	    | ${SORT} >> ${PLIST}.tmp
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
-	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' \
+	    ${SED} \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
 	    -e 's|${LLVM_SUFFIX:C/\./\\./g}|%%LLVM_SUFFIX%%|' \
 	    -e 's|\([^0-9]\)${LLVM_MAJOR}$$|\1%%LLVM_MAJOR%%|' \
 	    -e 's|\([^0-9]\)${LLVM_MAJOR}\([^0-9]\)|\1%%LLVM_MAJOR%%\2|' \
 	    | ${SORT} >> ${PLIST}.tmp
 	${AWK} '{ \
-	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /(${OPENMP_PATTERN}|${EXTRAS_PATTERN}|libclang_rt|${PYCLANG_PATTERN})/) {printf "%%%%CLANG%%%%"} \
-	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
-		{printf "%%%%COMPILER_RT%%%%"} \
-	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
+	    if ($$0 ~ /${CLANG_PATTERN}/ && $$0 !~ /libclang_rt/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /(bin\/(ld|lld|wasm-ld))|liblld[^b]|\/lld\// && $$0 !~ /(lldb)/) {printf "%%%%LLD%%%%"} \
-	    if ($$0 ~ /(${OPENMP_PATTERN})/) {printf "%%%%OPENMP%%%%"} \
-	    if ($$0 ~ /${PYCLANG_PATTERN}/) {printf "%%%%PYCLANG%%%%"} \
 	    if ($$0 !~ /(libclang_rt)/ && $$0 !~ /(${BE_PATTERN})$$/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}

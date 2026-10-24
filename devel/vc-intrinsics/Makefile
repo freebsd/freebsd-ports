@@ -10,7 +10,10 @@ WWW=		https://github.com/intel/vc-intrinsics
 
 LICENSE=	MIT
 
-FLAVORS=	${15 14 13 12:L:S/^/llvm/}
+DEPRECATED=	Port only supports obsolete LLVM versions
+EXPIRATION_DATA=	2026-12-25
+
+FLAVORS=	${15:L:S/^/llvm/}
 
 BUILD_DEPENDS=	${FLAVOR}>0:devel/${FLAVOR}
 
