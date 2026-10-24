@@ -1,4 +1,4 @@
---- chrome/browser/chrome_content_browser_client.cc.orig	2026-04-28 21:06:17 UTC
+--- chrome/browser/chrome_content_browser_client.cc.orig	2026-10-23 21:08:39 UTC
 +++ chrome/browser/chrome_content_browser_client.cc
 @@ -601,7 +601,7 @@
  #include "third_party/cros_system_api/switches/chrome_switches.h"
@@ -109,7 +109,7 @@
    if (scheme == webapps::kIsolatedAppScheme) {
      if (content::AreIsolatedWebAppsEnabled(browser_context) &&
          !browser_context->ShutdownStarted()) {
-@@ -6133,7 +6135,7 @@ void ChromeContentBrowserClient::
+@@ -6176,7 +6178,7 @@ void ChromeContentBrowserClient::
    DCHECK(factories);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -118,7 +118,7 @@
    if (content::AreIsolatedWebAppsEnabled(browser_context) &&
        !browser_context->ShutdownStarted()) {
      factories->emplace(webapps::kIsolatedAppScheme,
-@@ -6162,7 +6164,7 @@ void ChromeContentBrowserClient::
+@@ -6205,7 +6207,7 @@ void ChromeContentBrowserClient::
    DCHECK(factories);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -127,7 +127,7 @@
    if (content::AreIsolatedWebAppsEnabled(browser_context) &&
        !browser_context->ShutdownStarted()) {
      factories->emplace(webapps::kIsolatedAppScheme,
-@@ -6435,7 +6437,7 @@ void ChromeContentBrowserClient::
+@@ -6478,7 +6480,7 @@ void ChromeContentBrowserClient::
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -136,7 +136,7 @@
    {
      auto* rph = content::RenderProcessHost::FromID(render_process_id);
      content::BrowserContext* browser_context = rph->GetBrowserContext();
-@@ -7041,7 +7043,7 @@ bool ChromeContentBrowserClient::HandleExternalProtoco
+@@ -7084,7 +7086,7 @@ bool ChromeContentBrowserClient::HandleExternalProtoco
    CHECK(content::BrowserThread::CurrentlyOn(content::BrowserThread::UI));
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -145,7 +145,7 @@
    // Handle the google-chrome:// scheme (and chromium://).
    // If the scheme is present, we strip it and navigate to the inner URL.
    // This avoids launching a new browser instance via the OS handler.
-@@ -7170,7 +7172,7 @@ bool ChromeContentBrowserClient::HandleWebUI(
+@@ -7213,7 +7215,7 @@ bool ChromeContentBrowserClient::HandleWebUI(
    }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -154,7 +154,7 @@
  
    // Rewrite chrome://settings/enhancedAutofill to chrome://settings/autofill.
    if (url->SchemeIs(content::kChromeUIScheme) &&
-@@ -7459,7 +7461,7 @@ bool ChromeContentBrowserClient::ShouldRunOutOfProcess
+@@ -7502,7 +7504,7 @@ bool ChromeContentBrowserClient::ShouldRunOutOfProcess
  bool ChromeContentBrowserClient::ShouldRunOutOfProcessSystemDnsResolution() {
  // This enterprise policy is supported on Android, but the feature will not be
  // launched there.
@@ -163,7 +163,7 @@
    // This is possibly called before `g_browser_process` is initialized.
    PrefService* local_state;
    if (g_browser_process) {
-@@ -7885,7 +7887,7 @@ void ChromeContentBrowserClient::
+@@ -7928,7 +7930,7 @@ void ChromeContentBrowserClient::
      GrantAdditionalRequestPrivilegesToWorkerProcess(int child_id,
                                                      const GURL& script_url) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -172,7 +172,7 @@
    // IWA Service Workers need to be explicitly granted access to their origin
    // because isolated-app: isn't a web-safe scheme that can be accessed by
    // default.
-@@ -8331,7 +8333,7 @@ ChromeContentBrowserClient::GetAlternativeErrorPageOve
+@@ -8374,7 +8376,7 @@ ChromeContentBrowserClient::GetAlternativeErrorPageOve
      content::BrowserContext* browser_context,
      int32_t error_code) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
