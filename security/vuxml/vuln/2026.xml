@@ -1,3 +1,59 @@
+  <vuln vid="33a752ba-4cbe-46d8-abda-587011d90575">
+    <topic>Node.js -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>node</name>
+	<range><lt>24.22.1</lt></range>
+      </package>
+      <package>
+	<name>node22</name>
+	<range><lt>22.23.4</lt></range>
+      </package>
+      <package>
+	<name>node24</name>
+	<range><lt>24.22.1</lt></range>
+      </package>
+      <package>
+	<name>node26</name>
+	<range><lt>26.12.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases">
+	  <p>dns.resolve truncates names containing NUL char (CVE-2026-105482) - (high)</p>
+	  <p>TLS certificate hostname bypass when the IP is written fullwidth digits (CVE-2026-105483) - (high)</p>
+	  <p>TLS certificate hostname bypass when the host loosely resolves to an IP address (CVE-2026-106069) - (high)</p>
+	  <p>Node.js Brotli decoder out-of-bounds write permits remote code execution (CVE-2026-111497) - (high)</p>
+	  <p>Keep-alive socket process a response that was written before the request was sent (CVE-2026-105481) - (medium)</p>
+	  <p>Improper certificate validation for non-canonical IPv4 hostnames allows DNS SANs to authenticate IP endpoints (CVE-2026-106072) - (medium)</p>
+	  <p>crypto.randomUUID() and randomInt() entropy caches are saved into user-land startup snapshots and SEAs, so every process repeats the same values (CVE-2026-106074) - (medium)</p>
+	  <p>Node.js ZipFile returns attacker-controlled prefix bytes after failed ZIP header validation (CVE-2026-106070) - (low)</p>
+	  <p>Permission Model filesystem over-grant via wildcard radix lookup (CVE-2026-106071) - (low)</p>
+	  <p>Permission Model bypass with fs.realpathSync (CVE-2026-106073) - (low)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-105481</cvename>
+      <cvename>CVE-2026-105482</cvename>
+      <cvename>CVE-2026-105483</cvename>
+      <cvename>CVE-2026-106069</cvename>
+      <cvename>CVE-2026-106070</cvename>
+      <cvename>CVE-2026-106071</cvename>
+      <cvename>CVE-2026-106072</cvename>
+      <cvename>CVE-2026-106073</cvename>
+      <cvename>CVE-2026-106074</cvename>
+      <cvename>CVE-2026-111497</cvename>
+      <url>https://nodejs.org/en/blog/vulnerability/october-2026-security-releases</url>
+    </references>
+    <dates>
+      <discovery>2026-10-21</discovery>
+      <entry>2026-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b755b277-cf12-11f1-bae2-3497f65b111b">
     <topic>ca_root_nss -- trusted root certificate from compromised CA eMudhra</topic>
     <affects>
