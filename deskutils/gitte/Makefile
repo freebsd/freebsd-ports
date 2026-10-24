@@ -1,6 +1,6 @@
 PORTNAME=	gitte
-DISTVERSION=	0.10.1
-PORTREVISION=	2
+DISTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	https://codeberg.org/ckruse/Gitte/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -26,8 +26,8 @@ MAKE_ENV=	${CARGO_ENV}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS_DEFINE=	TEST
-TEST_DESC=	Run appstream and desktop-file validation tests
+OPTIONS_DEFINE=		TEST
+TEST_DESC=		Run appstream and desktop-file validation tests
 TEST_BUILD_DEPENDS=	appstreamcli:devel/appstream \
 			desktop-file-validate:devel/desktop-file-utils
 
