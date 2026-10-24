@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	german
 MASTER_SITES=	https://de.wordpress.org/
 

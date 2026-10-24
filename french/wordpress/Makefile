@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	french
 MASTER_SITES=	https://fr.wordpress.org/
