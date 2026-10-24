@@ -1,6 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	28.5.0.8
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
@@ -23,7 +24,8 @@ USE_PERL5=	build
 USE_RC_SUBR=	epmd
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-dirty-schedulers \
+CONFIGURE_ARGS=	--enable-deterministic-build \
+		--enable-dirty-schedulers \
 		--enable-kernel-poll \
 		--enable-smp-support \
 		--enable-threads
