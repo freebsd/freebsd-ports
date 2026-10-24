@@ -9,7 +9,7 @@ WWW=		https://bitbucket.org/malb/m4ri/src/master/
 LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libpng.so:graphics/png
-#		libpapi.so:devel/papi	# BROKEN ATM
+#		libpapi.so:devel/papi	# Not packageable
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	malb
