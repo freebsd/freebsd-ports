@@ -1,6 +1,5 @@
 PORTNAME=	mcp-inspector
-DISTVERSION=	2.8.0
-PORTREVISION=	1
+DISTVERSION=	2.12.0
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -41,9 +40,9 @@ FETCH_SCRIPT=	${PORTSDIR}/Tools/scripts/npmjs-fetch-with-dependencies.sh
 # avoid depending on unverifiable prebuilt binaries on any architecture, we
 # always fetch their Rust source and rebuild them ourselves with cargo, on
 # every architecture, the same way.
-RUST_KEYRING_VERSION=		1.3.0
+RUST_KEYRING_VERSION=		2.1.2
 RUST_LIGHTNINGCSS_VERSION=	1.33.0
-RUST_ROLLDOWN_VERSION=		1.2.11
+RUST_ROLLDOWN_VERSION=		1.2.15
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	Brooooooklyn:keyring-node:v${RUST_KEYRING_VERSION}:keyring \
@@ -79,8 +78,6 @@ pre-fetch:
 	fi
 
 post-extract:
-	# keyring-node does not ship a Cargo.lock, use the one we generated
-	@${CP} ${FILESDIR}/Cargo.lock.keyring ${WRKSRC_keyring}/Cargo.lock
 	# single vendored-sources config shared by the 3 cargo projects above
 	@${MKDIR} ${WRKDIR}/.cargo
 	@${ECHO_CMD} '[source.crates-io]' > ${WRKDIR}/.cargo/config.toml

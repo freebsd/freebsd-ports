@@ -1,5 +1,5 @@
---- node_modules/@modelcontextprotocol/inspector/node_modules/rolldown/dist/shared/binding-BY0qR5iS.mjs.orig	2026-10-09 14:24:07 UTC
-+++ node_modules/@modelcontextprotocol/inspector/node_modules/rolldown/dist/shared/binding-BY0qR5iS.mjs
+--- node_modules/@modelcontextprotocol/inspector/node_modules/rolldown/dist/shared/binding-BMtuZhvP.mjs.orig	2026-10-09 14:24:07 UTC
++++ node_modules/@modelcontextprotocol/inspector/node_modules/rolldown/dist/shared/binding-BMtuZhvP.mjs
 @@ -259,7 +259,11 @@ var require_binding = /* @__PURE__ */ __commonJSMin(((
  				} catch (e) {
  					loadErrors.push(e);
