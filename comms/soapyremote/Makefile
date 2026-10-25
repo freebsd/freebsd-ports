@@ -1,7 +1,6 @@
 PORTNAME=	SoapyRemote
 DISTVERSIONPREFIX=	soapy-remote-
-DISTVERSION=	0.5.2
-PORTREVISION=	2
+DISTVERSION=	0.5.3
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,7 @@ GH_ACCOUNT=	pothosware
 CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/pothosware/SoapyRemote/issues/110
 
 PLIST_FILES=	bin/SoapySDRServer \
-		lib/SoapySDR/modules0.8/libremoteSupport.so \
+		lib/SoapySDR/modules0.9/libremoteSupport.so \
 		share/man/man1/SoapySDRServer.1.gz
 
 .include <bsd.port.mk>
