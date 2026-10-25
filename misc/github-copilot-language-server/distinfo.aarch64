@@ -1,6 +1,6 @@
-TIMESTAMP = 1790013395
-SHA256 (github-copilot-language-server/aarch64/github-copilot-language-server-1.549.0.tar.gz) = 0ba81bba3e244b39442d15991f4fe2c4eb7ccfbbdfdbb0b62a247a79a3cb161d
-SIZE (github-copilot-language-server/aarch64/github-copilot-language-server-1.549.0.tar.gz) = 26919835
+TIMESTAMP = 1792886450
+SHA256 (github-copilot-language-server/aarch64/github-copilot-language-server-1.561.0.tar.gz) = 5f012a33c556035505c074733d04a2324fc915f4822e600748edcfe9f35ec2db
+SIZE (github-copilot-language-server/aarch64/github-copilot-language-server-1.561.0.tar.gz) = 26978297
 SHA256 (github-copilot-language-server/aarch64/node-v24.21.0-headers.tar.gz) = 57c6bee2e30bbbee5bd51d6cc343eb992e174b56a2a1d0eab7a7510771c20ea2
 SIZE (github-copilot-language-server/aarch64/node-v24.21.0-headers.tar.gz) = 10291794
 SHA256 (github-copilot-language-server/aarch64/policy-watcher-1.3.5.tar.gz) = 432efc2fd3d142ac00398b3bf83aa1441db1f13060fc42da9d3539430adfb9f6
