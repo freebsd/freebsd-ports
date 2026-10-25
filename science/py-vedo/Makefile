@@ -1,6 +1,6 @@
 PORTNAME=	vedo
 DISTVERSION=	2026.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,25 +15,27 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
-		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R} \
-		bash:shells/bash
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} # optional
+		bash:shells/bash \
+		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} # optional
 
 USES=		python shebangfix
-USE_PYTHON=	pep517 concurrent autoplist
+USE_PYTHON=	autoplist concurrent pep517
 
 SHEBANG_GLOB=	*.sh
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
 do-test: # run some examples as tests
-.for example in advanced/interpolate_scalar3.py advanced/spline_draw1.py advanced/warp6.py simulations/optics_main3.py
+.for example in advanced/interpolate_scalar3.py advanced/spline_draw1.py \
+	advanced/warp6.py simulations/optics_main3.py
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${WRKSRC}/examples/${example}
 .endfor
 
