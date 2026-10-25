@@ -1,36 +1,27 @@
 PORTNAME=	znotes
-DISTVERSION=	0.4.7
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.5.2
 CATEGORIES=	deskutils
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simple notes managment application based on Qt
-WWW=		http://znotes.sourceforge.net
+MAINTAINER=	daeron767@gmail.com
+COMMENT=	Lightweight cross-platform note-taking application (Qt 6 port)
+WWW=		https://github.com/daeron767/zNotes/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Abandonware, depends on legacy QT 5 and last release in 2011
-EXPIRATION_DATE=2025-12-31
-
-USES=		compiler:c++11-lang gl qmake qt:5
-USE_GL=		gl
-USE_QT=		buildtools:build linguisttools:build core gui network \
-		printsupport widgets xml
-
+USES=		compiler:c++17-lang gl qmake qt:6
 USE_GITHUB=	yes
-GH_ACCOUNT=	proton
+GH_ACCOUNT=	daeron767
 GH_PROJECT=	zNotes
-
-CONFLICTS_INSTALL=	znotes-qt[45]
-
-DESKTOP_ENTRIES="zNotes" "Notes managment" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
-		"Utility;TextEditor;Qt;" true
+USE_GL=		opengl
+USE_QT=		base tools:build
 
 post-patch:
-	@${REINPLACE_CMD} -e '/.path =/s|/usr|$$$$PREFIX|g' \
-		-e '/PREFIX = /d' \
-		${WRKSRC}/${PORTNAME}.pro
+	@${REINPLACE_CMD} -e 's|isEmpty(PREFIX):PREFIX = /usr|PREFIX = ${PREFIX}|g' \
+		-e 's|/usr/share/|$$\$$PREFIX/share/|g' \
+		-e 's|pixmap.files = \*\.png|pixmap.files = znotes.png|g' \
+		${WRKSRC}/znotes.pro
 
 pre-configure:
 #Work around badly written .pro

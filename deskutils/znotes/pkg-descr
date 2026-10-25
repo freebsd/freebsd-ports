@@ -1,2 +1,2 @@
-Simple lightweight crossplatform application for notes managment
-based on Qt 4.
+Simple desktop/system tray notebook application ported to Qt6 for viewing and
+editing a directory of text, html rich text, and xml todo files.
