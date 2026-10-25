@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
 CATEGORIES=	finance
 
-MAINTAINER=	tonyhawk2100@gmail.com
+MAINTAINER=	dev@rcheckbook.org
 COMMENT=	CLI based checkbook ledger
 WWW=		https://rcheckbook.org
 
