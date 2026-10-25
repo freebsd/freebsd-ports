@@ -5764,3 +5764,4 @@ net/p5-Net-Delicious||2026-10-25|Has expired: Defunct service
 net/p5-Net-Mosso-CloudFiles||2026-10-25|Has expired: Defunct service
 devel/p5-Test-YAML-Meta||2026-10-25|Has expired: Upstream deprecated
 net/p5-JavaScript-RPC||2026-10-25|Has expired: Deprecated by upstream
+devel/p5-DateTime-Format-IBeat||2026-10-25|Has expired: Upstream distribution has never had an authorized release on CPAN
