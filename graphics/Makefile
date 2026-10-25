@@ -392,6 +392,7 @@
     SUBDIR += jasper
     SUBDIR += jave6
     SUBDIR += jbig2dec
+    SUBDIR += jbig2enc
     SUBDIR += jbigkit
     SUBDIR += jdraw
     SUBDIR += jgraph
