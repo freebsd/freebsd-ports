@@ -1,6 +1,6 @@
---- vite.config.ts.orig	2026-10-09 10:12:20 UTC
+--- vite.config.ts.orig	2026-10-24 20:14:09 UTC
 +++ vite.config.ts
-@@ -1,90 +1,17 @@
+@@ -1,93 +1,17 @@
 -import { defineConfig, lazyPlugins } from "vite-plus";
 +import { defineConfig } from "vite";
  import vuePlugin from "@vitejs/plugin-vue";
@@ -89,12 +89,15 @@
 -    trailingComma: "es5",
 -    sortPackageJson: false,
 -    ignorePatterns: ["tests/custom-css.css"],
--    overrides: [{ files: ["**/*.vue"], options: { tabWidth: 4 } }],
+-    overrides: [
+-      { files: ["**/*.vue"], options: { tabWidth: 4 } },
+-      { files: ["i18n/glossary/*.json"], options: { tabWidth: 4 } },
+-    ],
 -  },
    root: "./assets",
    publicDir: "public",
    base: "./",
-@@ -121,7 +48,7 @@ export default defineConfig({
+@@ -124,7 +48,7 @@
        "/ws": { target: backendUrl.replace("http", "ws"), ws: true },
      },
    },
@@ -103,7 +106,7 @@
      legacy({
        modernPolyfills: ["es.promise.all-settled"],
      }),
-@@ -133,5 +60,5 @@ export default defineConfig({
+@@ -136,5 +60,5 @@
        },
      }),
      visualizer({ filename: "asset-stats.html" }),
