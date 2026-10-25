@@ -1,7 +1,7 @@
 PORTNAME=	torcs
 DISTVERSION=	1.3.10
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/all-in-one/${DISTVERSION}
 
 MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Free, open-source racing car simulator
@@ -15,13 +15,13 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lang cpe gl gmake openal:al,alut shebangfix \
-		tar:bzip2 xorg
+USES=		compiler:c++11-lang cpe gl gmake localbase:ldflags \
+		openal:al,alut shebangfix tar:bzip2 xorg
 CPE_VENDOR=	bernhard_wymann
 USE_CXXSTD=	c++11
-USE_GL=		glut glu gl
+USE_GL=		gl glu glut
 USE_LDCONFIG=	yes
-USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr xi xt sm
+USE_XORG=	ice sm x11 xext xi xmu xrandr xrender xt xxf86vm
 
 SHEBANG_FILES=	src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in \
 		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in \
@@ -34,12 +34,7 @@ MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	default
 INSTALL_TARGET=	install datainstall
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-INSTDIR=	${PREFIX}/share/games/${PORTNAME}
-
-BASH2FIX=	src/linux/torcs.in Make-default.mk
+DATADIR=	${PREFIX}/share/games/${PORTNAME}
 
 STRIPFILES=	drivers/berniw/berniw.so \
 		drivers/berniw2/berniw2.so \
@@ -70,35 +65,21 @@ STRIPFILES=	drivers/berniw/berniw.so \
 
 OPTIONS_DEFINE=	DOCS
 
-EMPTYDIR=	champ dtmrace endrace ncrace practice quickrace
-
 # shebangfix does not catch these two (not at top of file):
 post-patch:
-.for FILE in ${BASH2FIX}
 	@${REINPLACE_CMD} -E -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
-	    ${WRKSRC}/${FILE}
-.endfor
+	    ${src/linux/torcs.in Make-default.mk:L:S|^|${WRKSRC}/|}
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/torcs.desktop
 
-post-build:
-.for FILE in ${STRIPFILES}
-	${STRIP_CMD} ${WRKSRC}/export/${FILE}
-.endfor
-
-pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games
+do-install-DOCS-on:
+	(cd ${WRKSRC}/doc/userman && \
+		${COPYTREE_SHARE} "how_to_drive.html images" ${STAGEDIR}${DOCSDIR})
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/userman/how_to_drive.html ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/doc/userman && ${COPYTREE_SHARE} "images" ${STAGEDIR}${DOCSDIR}
-	# strip simuv2.so as reported by Q/A tests
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/torcs/modules/simu/simuv2.so
-	${INSTALL_DATA} ${WRKSRC}/torcs.desktop ${STAGEDIR}${PREFIX}/share/applications
-
-.for ed in ${EMPTYDIR}
-	${TOUCH} ${STAGEDIR}${INSTDIR}/results/${ed}/.keep_me
-.endfor
+	${STRIP_CMD} ${STRIPFILES:S|^|${STAGEDIR}${PREFIX}/lib/torcs/|}
+	${INSTALL_DATA} ${WRKSRC}/torcs.desktop ${STAGEDIR}${DESKTOPDIR}
+	${TOUCH} ${champ dtmrace endrace ncrace practice quickrace \
+		:L:C|^(.*)$|${STAGEDIR}${DATADIR}/results/\1/.keep_me|}
 
 .include <bsd.port.mk>
