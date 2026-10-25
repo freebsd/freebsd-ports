@@ -144,7 +144,6 @@
     SUBDIR += p5-Net-DNS-TestNS
     SUBDIR += p5-Net-DNS-ToolKit
     SUBDIR += p5-Net-DNS-Zone-Parser
-    SUBDIR += p5-Net-DNS-ZoneFile-Fast
     SUBDIR += p5-Net-DNSBL-MultiDaemon
     SUBDIR += p5-Net-DNSBL-Statistics
     SUBDIR += p5-Net-DRI

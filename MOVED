@@ -5741,6 +5741,7 @@ devel/compiler-rt||2026-10-15|Now ships with the base system
 textproc/py-pypa-docs-theme||2026-10-15|Has expired: Upstream archived the repo on Mar 16, 2024
 www/py-wikitools||2026-10-18|Has expired: Not compatible with Python 3
 japanese/fcitx-mozc|japanese/fcitx5-mozc|2026-10-18|Deprecated: Use fcitx5 instead
+graphics/py-agx-emulsion|graphics/py-spektrafilm|2026-10-18|Renamed upstream to spektrafilm
 cad/yosys-systemverilog||2026-10-19|Broken for years in tree
 deskutils/gnome-todo||2026-10-19|Broken for several months in tree
 devel/rubygem-mmap2||2026-10-19|Broken for over a year in tree
@@ -5754,5 +5755,5 @@ databases/pecl-redis|databases/php-redis|2026-10-21|PECL is deprecated. Migrated
 net-im/tde2e|net-im/tdlib|2026-10-22|No longer necessary; migrate to net-im/tdlib
 deskutils/p5-Goo||2026-10-22|Has expired: Upstream dists no longer available
 devel/shiboken2||2026-10-23|Removed: not needed anymore
-graphics/py-agx-emulsion|graphics/py-spektrafilm|2026-10-18|Renamed upstream to spektrafilm
 net-im/py-unmessage||2026-10-24|Remove abandonware, upstream has been inactive for 9 years with code still being for Python-2.x
+dns/p5-Net-DNS-ZoneFile-Fast||2026-10-25|Has expired: Upstream module marked obsolete by its author
