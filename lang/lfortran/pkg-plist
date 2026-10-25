@@ -1,6 +1,8 @@
 bin/lfortran
 include/lfortran/ISO_Fortran_binding.h
 include/lfortran/impure/lfortran_intrinsics.h
+include/lfortran/impure/lfortran_stdin.h
+lib/lfortran_display.mod
 lib/lfortran_intrinsic_custom.mod
 lib/lfortran_intrinsic_ieee_arithmetic.mod
 lib/lfortran_intrinsic_iso_c_binding.mod
@@ -10,9 +12,11 @@ lib/liblfortran_runtime.so.0
 lib/liblfortran_runtime.so.%%VER%%
 lib/liblfortran_runtime_static.a
 lib/omp_lib.mod
-libasr/runtime/cuda_cpu_device.h
-libasr/runtime/lfortran_gpu_cpu.c
-libasr/runtime/lfortran_gpu_cuda.cu
+libasr/runtime/cuda_cpu/cuda_cpu_device.h
+libasr/runtime/cuda_cpu/cuda_cpu_emulator.h
+libasr/runtime/cuda_cpu/cuda_cpu_runtime.c
+libasr/runtime/cuda_cpu/cuda_runtime.h
+libasr/runtime/lfortran_gpu_cuda.c
 libasr/runtime/lfortran_gpu_metal.m
 libasr/runtime/lfortran_gpu_runtime.h
 %%DATADIR%%/dat_convert.py
