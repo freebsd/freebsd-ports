@@ -1883,6 +1883,7 @@
     SUBDIR += py-httmock
     SUBDIR += py-http-parser
     SUBDIR += py-http-sf
+    SUBDIR += py-httpagentparser
     SUBDIR += py-httpbin
     SUBDIR += py-httpcore
     SUBDIR += py-httpcore2
