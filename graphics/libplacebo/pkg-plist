@@ -1,6 +1,7 @@
 include/libplacebo/cache.h
 include/libplacebo/colorspace.h
 include/libplacebo/common.h
+include/libplacebo/compositor.h
 include/libplacebo/config.h
 include/libplacebo/d3d11.h
 include/libplacebo/dispatch.h
@@ -33,5 +34,5 @@ include/libplacebo/utils/libav_internal.h
 include/libplacebo/utils/upload.h
 include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.360
+lib/libplacebo.so.387
 libdata/pkgconfig/libplacebo.pc
