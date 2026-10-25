@@ -5767,3 +5767,4 @@ net/p5-JavaScript-RPC||2026-10-25|Has expired: Deprecated by upstream
 devel/p5-DateTime-Format-IBeat||2026-10-25|Has expired: Upstream distribution has never had an authorized release on CPAN
 www/p5-CGI-Response||2026-10-25|Has expired: Legacy functionality
 www/p5-WebService-Linode||2026-10-25|Has expired: Defunct service
+misc/py-kartograph||2026-10-25|Removed: Contains python2 code, no users and no upstream activity for 12+ years
