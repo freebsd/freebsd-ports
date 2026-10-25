@@ -5757,3 +5757,4 @@ deskutils/p5-Goo||2026-10-22|Has expired: Upstream dists no longer available
 devel/shiboken2||2026-10-23|Removed: not needed anymore
 net-im/py-unmessage||2026-10-24|Remove abandonware, upstream has been inactive for 9 years with code still being for Python-2.x
 dns/p5-Net-DNS-ZoneFile-Fast||2026-10-25|Has expired: Upstream module marked obsolete by its author
+finance/p5-Business-OnlinePayment-Network1Financial||2026-10-25|Has expired: Backend for the defunct Network1Financial payment gateway
