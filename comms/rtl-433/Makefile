@@ -1,5 +1,6 @@
 PORTNAME=	rtl-433
 PORTVERSION=	25.12
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	rodrigo@FreeBSD.org

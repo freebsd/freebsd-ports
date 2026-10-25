@@ -1,6 +1,7 @@
 PORTNAME=	SoapyHackRF
 DISTVERSIONPREFIX=	soapy-hackrf-
 DISTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -18,6 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pothosware
 USE_LDCONFIG=	yes
 
-PLIST_FILES=	lib/SoapySDR/modules0.8/libHackRFSupport.so
+PLIST_FILES=	lib/SoapySDR/modules0.9/libHackRFSupport.so
 
 .include <bsd.port.mk>
