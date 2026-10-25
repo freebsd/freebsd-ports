@@ -74,6 +74,13 @@
 %%MANPAGES%%share/man/man1/gh-gpg-key-delete.1.gz
 %%MANPAGES%%share/man/man1/gh-gpg-key-list.1.gz
 %%MANPAGES%%share/man/man1/gh-gpg-key.1.gz
+%%MANPAGES%%share/man/man1/gh-issue-artifact-create.1.gz
+%%MANPAGES%%share/man/man1/gh-issue-artifact-delete.1.gz
+%%MANPAGES%%share/man/man1/gh-issue-artifact-download.1.gz
+%%MANPAGES%%share/man/man1/gh-issue-artifact-edit.1.gz
+%%MANPAGES%%share/man/man1/gh-issue-artifact-list.1.gz
+%%MANPAGES%%share/man/man1/gh-issue-artifact-view.1.gz
+%%MANPAGES%%share/man/man1/gh-issue-artifact.1.gz
 %%MANPAGES%%share/man/man1/gh-issue-close.1.gz
 %%MANPAGES%%share/man/man1/gh-issue-comment.1.gz
 %%MANPAGES%%share/man/man1/gh-issue-create.1.gz

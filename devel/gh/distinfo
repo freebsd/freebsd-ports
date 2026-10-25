@@ -1,5 +1,5 @@
-TIMESTAMP = 1791700918
-SHA256 (go/devel_gh/gh-v2.102.0/v2.102.0.mod) = 115bc54638dc4fa5a72da79d9f87fca699ee5b1fc7e21ea9314a517fb18fb40b
-SIZE (go/devel_gh/gh-v2.102.0/v2.102.0.mod) = 9021
-SHA256 (go/devel_gh/gh-v2.102.0/v2.102.0.zip) = 228283c5f027c067f1328e3f5228588926dcfaa660fe0b605f5a6f505ac59cae
-SIZE (go/devel_gh/gh-v2.102.0/v2.102.0.zip) = 16148922
+TIMESTAMP = 1792939688
+SHA256 (go/devel_gh/gh-v2.103.2/v2.103.2.mod) = db11ba3547fe6420c763b5fb208bb5e41a44598895f94481be01ea967fc421e2
+SIZE (go/devel_gh/gh-v2.103.2/v2.103.2.mod) = 8753
+SHA256 (go/devel_gh/gh-v2.103.2/v2.103.2.zip) = 62c0d77d473399b125c2735819ace97623df26978b6fa0a6495673665670815e
+SIZE (go/devel_gh/gh-v2.103.2/v2.103.2.zip) = 16363224
