@@ -19,13 +19,13 @@ USES=		gmake zip
 
 MAKE_ARGS=	-w CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	bin/tass64
+PLIST_FILES=	bin/64tass
 PORTDOCS=	README README.html README.md
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/64tass ${STAGEDIR}${PREFIX}/bin/tass64
+	${INSTALL_PROGRAM} ${WRKSRC}/64tass ${STAGEDIR}${PREFIX}/bin/64tass
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
