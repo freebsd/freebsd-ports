@@ -1,6 +1,6 @@
---- services/network/network_context.cc.orig	2026-07-07 05:57:55 UTC
+--- services/network/network_context.cc.orig	2026-10-24 11:41:04 UTC
 +++ services/network/network_context.cc
-@@ -761,7 +761,7 @@ NetworkContext::NetworkContextHttpAuthPreferences::
+@@ -782,7 +782,7 @@ NetworkContext::NetworkContextHttpAuthPreferences::
  NetworkContext::NetworkContextHttpAuthPreferences::
      ~NetworkContextHttpAuthPreferences() = default;
  
@@ -9,7 +9,7 @@
  bool NetworkContext::NetworkContextHttpAuthPreferences::AllowGssapiLibraryLoad()
      const {
    if (network_service_) {
-@@ -2833,7 +2833,7 @@ void NetworkContext::OnHttpAuthDynamicParamsChanged(
+@@ -2854,7 +2854,7 @@ void NetworkContext::OnHttpAuthDynamicParamsChanged(
        http_auth_dynamic_network_service_params->android_negotiate_account_type);
  #endif  // BUILDFLAG(IS_ANDROID)
  
