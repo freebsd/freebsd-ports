@@ -1,5 +1,5 @@
-TIMESTAMP = 1788351283
-SHA256 (google-chrome-stable-152.0.7977.75-1.aarch64.rpm) = 8bc20dc590b5bfa17857111fe321a9d49025d9f4c12505b379637a23990683b3
-SIZE (google-chrome-stable-152.0.7977.75-1.aarch64.rpm) = 135617181
-SHA256 (google-chrome-stable-152.0.7977.75-1.x86_64.rpm) = 85c5770c5c07de5eedc4cc2615716d21c85de14287d56ee79de7bca151cb6446
-SIZE (google-chrome-stable-152.0.7977.75-1.x86_64.rpm) = 144513581
+TIMESTAMP = 1792960711
+SHA256 (google-chrome-stable-156.0.8078.47-1.aarch64.rpm) = 8620ccce82d2b93ec9b7f46133e73b01d4392a56e984df3b05027697e9e06fef
+SIZE (google-chrome-stable-156.0.8078.47-1.aarch64.rpm) = 138956789
+SHA256 (google-chrome-stable-156.0.8078.47-1.x86_64.rpm) = b921c49ddabcd23ca5ec351cd089ab8111d272bd0d2e965c41ab9ef22fe9c0e3
+SIZE (google-chrome-stable-156.0.8078.47-1.x86_64.rpm) = 148859165
