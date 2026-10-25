@@ -111,6 +111,8 @@ post-patch:
 		${WRKSRC}/src/appleseed/renderer/kernel/shading/oslshadingsystem.cpp
 	@${REINPLACE_CMD} -e 's/filesystem::path/bf::path/' \
 		${WRKSRC}/src/appleseed/renderer/modeling/project/projectfilewriter.cpp
+	@${REINPLACE_CMD} -e '/: m_threads_init/s,Eval_Threads,_Is,' \
+		${WRKSRC}/src/appleseed.python/gillocks.cpp
 
 .include <bsd.port.mk>
 
