@@ -1,6 +1,6 @@
 PORTNAME=	SoapySDR
 DISTVERSIONPREFIX=	soapy-sdr-
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.0
 CATEGORIES=	misc hamradio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,7 +9,7 @@ COMMENT=	Vendor and platform neutral SDR support library (python binding)
 WWW=		https://github.com/pothosware/SoapySDR
 
 LICENSE=	BSL
-LICENSE_FILE=	${WRKSRC}/../LICENSE_1_0.txt
+LICENSE_FILE=	${WRKSRC}/../../LICENSE_1_0.txt
 
 BUILD_DEPENDS=	swig:devel/swig \
 		${PY_SETUPTOOLS}
@@ -23,7 +23,7 @@ USE_PYTHON=	flavors
 CMAKE_ARGS=	-DPYTHON_EXECUTABLE:STRING=${PYTHON_CMD}
 CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/pothosware/SoapySDR/issues/480
 
-WRKSRC_SUBDIR=	python
+WRKSRC_SUBDIR=	swig/python
 
 PLIST_FILES=	${PYTHON_SITELIBDIR}/SoapySDR.py \
 		${PYTHON_SITELIBDIR}/_SoapySDR.so
