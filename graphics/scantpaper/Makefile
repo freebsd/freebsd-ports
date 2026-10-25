@@ -1,7 +1,6 @@
 PORTNAME=	scantpaper
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.24
-PORTREVISION=	1
+DISTVERSION=	4.0.1
 CATEGORIES=	graphics python
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -17,9 +16,11 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpoppler.so:graphics/poppler \
 		libgoocanvas-2.0.so:graphics/goocanvas2
 RUN_DEPENDS=	unpaper:graphics/unpaper \
+		jbig2:graphics/jbig2enc \
 		${PYTHON_PKGNAMEPREFIX}img2pdf>0:graphics/py-img2pdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tesserocr>0:graphics/py-tesserocr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ocrmypdf>=15.4.3:textproc/py-ocrmypdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ocrmypdf>=16.10.0:textproc/py-ocrmypdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pikepdf>0:textproc/py-pikepdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-iso639>0:textproc/py-python-iso639@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sane>0:graphics/py-sane@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
