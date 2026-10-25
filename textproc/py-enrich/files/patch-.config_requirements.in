@@ -1,0 +1,5 @@
+--- .config/requirements.in.orig	2026-10-24 15:52:25 UTC
++++ .config/requirements.in
+@@ -1 +1 @@
+-rich>=10.0.0,<12.5.0 # https://github.com/pycontribs/enrich/issues/40
++rich>=10.0.0 # https://github.com/pycontribs/enrich/issues/40

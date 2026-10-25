@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2024-06-14 12:49:49 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-  "setuptools >= 65.3.0", # required by pyproject+setuptools_scm integration and editable installs
++  "setuptools >= 63.1.0", # required by pyproject+setuptools_scm integration and editable installs
+   "setuptools_scm[toml] >= 7.0.5", # required for "no-local-version" scheme
+ ]
+ build-backend = "setuptools.build_meta"
+@@ -65,7 +65,7 @@ doctest_optionflags = ["ALLOW_UNICODE", "ELLIPSIS"]
+ [tool.pytest]
+ addopts = "--doctest-modules --durations 10 --durations-min=3 --color=yes"
+ doctest_optionflags = ["ALLOW_UNICODE", "ELLIPSIS"]
+-norecursedirs = "dist doc build .tox .eggs"
++norecursedirs = ["dist", "doc", "build", ".tox", ".eggs"]
+ filterwarnings = [
+   # treat warnings as errors unless we add them below
+   "error"
