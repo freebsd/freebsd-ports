@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.40.3
 CATEGORIES=	devel
 
-MAINTAINER=	ashish@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern Linker
 WWW=		https://github.com/rui314/mold
 
