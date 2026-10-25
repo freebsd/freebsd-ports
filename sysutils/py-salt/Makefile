@@ -1,5 +1,5 @@
 PORTNAME=	salt
-PORTVERSION=	3008.2
+PORTVERSION=	3008.4
 PORTEPOCH=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
@@ -11,9 +11,6 @@ WWW=		https://pypi.org/project/salt/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-PATCH_SITES=    https://github.com/saltstack/salt/pull/
-PATCHFILES+=    69710.patch:-p1
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
