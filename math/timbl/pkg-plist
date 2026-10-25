@@ -20,7 +20,7 @@ include/timbl/TimblExperiment.h
 include/timbl/Types.h
 include/timbl/neighborSet.h
 lib/libtimbl.so
-lib/libtimbl.so.7
-lib/libtimbl.so.7.0.0
+lib/libtimbl.so.8
+lib/libtimbl.so.8.0.0
 libdata/pkgconfig/timbl.pc
 share/man/man1/timbl.1.gz

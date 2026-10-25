@@ -1,12 +1,12 @@
 PORTNAME=	timbl
-DISTVERSION=	6.10
-PORTREVISION=	2
+DISTVERSION=	7.0
 CATEGORIES=	math education
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tilburg Memory Based Learner
-WWW=		https://ilk.uvt.nl/timbl/
+WWW=		https://ilk.uvt.nl/timbl/ \
+		https://github.com/LanguageMachines/timbl
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
