@@ -5,7 +5,8 @@ CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simulation framework for nonsmooth dynamical systems
-WWW=		https://nonsmooth.gricad-pages.univ-grenoble-alpes.fr/siconos/index.html
+WWW=		https://nonsmooth.gricad-pages.univ-grenoble-alpes.fr/siconos/index.html \
+		https://github.com/siconos/siconos
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
