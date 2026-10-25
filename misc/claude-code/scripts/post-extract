@@ -1,0 +1,233 @@
+#!/bin/sh
+#
+# Unpack the JS out of the Bun standalone binary and adapt it for Node.js.
+#
+# This lives in scripts/ rather than in a Makefile target because the
+# compressed documentation has to be round-tripped through the same rewrite as
+# everything else, and a decompress-edit-recompress loop does not read well as
+# a sequence of tab-indented make(1) lines.
+#
+# bsd.port.mk runs it via ${SH} with SCRIPTS_ENV in the environment, which
+# supplies WRKDIR, WRKSRC and PREFIX; EXTRACTED_JS is added by the port.
+
+set -e
+
+: "${EXTRACTED_JS:?not set}" "${WRKSRC:?not set}" "${WRKDIR:?not set}" "${PREFIX:?not set}"
+: "${APPDIR:?not set}"
+
+root=$EXTRACTED_JS/root
+
+# The bundled native addons are excluded rather than extracted and deleted
+# afterwards. They are Linux x86-64 glibc shared objects, so the FreeBSD-native
+# node cannot dlopen them on any architecture -- not even amd64 with the
+# Linuxulator, because ELF branding is per-process and node itself is
+# FreeBSD-branded. Every load site is wrapped in try/catch, so the clipboard and
+# audio features degrade cleanly rather than erroring. Images no longer come
+# through an addon at all: 2.1.268 dropped image-processor.js for Bun.Image,
+# which the polyfill does not implement, and that call sits in a try of its own.
+unhare -o "$EXTRACTED_JS" -x '*.node' "$WRKSRC/claude"
+
+# The rewrite, written once to a file so the plain and the compressed passes
+# cannot drift apart:
+#
+#   - /$bunfs/root/, the root of the filesystem embedded in the executable,
+#     becomes APPDIR, where do-install puts the same tree. Relative paths
+#     would do for the chunks in the top directory, but not for everything:
+#     src/plugins/functionHooks/hooks-worker/hooks-worker.js sits three
+#     directories down and imports those chunks, and HOOKS_WORKER_URL is
+#     handed to new URL(`file://${path}`), which wants an absolute path.
+#     (The worker still will not run under node, which has no global
+#     Worker, but its paths are no longer wrong as well.)  Spotted by
+#     Grzegorz Junka, who rewrites it to the same absolute path.
+#   - /usr/local references follow our PREFIX. This matters in documentation
+#     too, not just in code: a skill telling the reader to "tar -xz -C
+#     /usr/local/bin" means the place local software goes on *this* system.
+#   - import.meta.require, for which Node has no per-module hook, is redirected
+#     to the global that bun-polyfill.cjs installs. Rewriting the call sites
+#     beats prepending a prologue to every file: only 65 of the ~1770 chunks
+#     call it, and a prologue also landed above the YAML frontmatter of every
+#     skill .md.
+#   - import.meta.dir is Bun's spelling of the directory holding the module.
+#     Node calls it import.meta.dirname -- which this same bundle uses 139
+#     times -- and leaves .dir undefined, so the five call sites that kept the
+#     Bun spelling registered every builtin plugin from path.join(undefined,
+#     ...) and 2.1.282 died on startup. The word-boundary match is what keeps
+#     the rewrite off the .dirname spelling.
+#
+# It is kept in WRKDIR rather than under $root, so that it cannot be picked up
+# by the COPYTREE in do-install and end up in the package.
+sed_script=$WRKDIR/bun-to-node.sed
+cat > "$sed_script" <<EOF
+s|/*\$bunfs/root/*|$APPDIR/|g
+s|/usr/local|$PREFIX|g
+s|import\\.meta\\.require|globalThis.__bunRequire|g
+s|import\\.meta\\.dir[[:>:]]|import.meta.dirname|g
+EOF
+
+find "$root" -type f \( -name '*.js' -o -name cli -o -name '*.md' -o -name '*.txt' \) \
+    -exec sed -i '' -f "$sed_script" {} +
+
+# Upstream is migrating the skills and docs to zstd -- as of 2.1.251 there are
+# already more .md.zst than .md -- so the same rewrite has to reach inside the
+# compressed ones or its coverage erodes with every release. Each file is
+# decompressed to WRKDIR, rewritten, and only written back when the content
+# actually changed, so the ones that need no edit stay byte-identical to what
+# upstream shipped.
+#
+# zstd(1) has been in the base system since 2017 (FreeBSD 12.0 and every branch
+# after it), and the Ports Collection refuses to build below 14.4, so this needs
+# no EXTRACT_DEPENDS on archivers/zstd.
+plain=$WRKDIR/.zst-plain
+edited=$WRKDIR/.zst-edited
+
+find "$root" -type f -name '*.zst' -print | while IFS= read -r f; do
+	zstd -dqc "$f" > "$plain"
+	sed -f "$sed_script" "$plain" > "$edited"
+	if cmp -s "$plain" "$edited"; then
+		continue
+	fi
+	# Redirection preserves the existing mode; zstd writes to stdout so the
+	# original is not touched until the new content is ready.
+	zstd -qc "$edited" > "$f"
+	echo "===>   rewrote compressed ${f#$root/}"
+done
+
+rm -f "$plain" "$edited"
+
+# The shell-search-tools feature assumes ${CLAUDE_CODE_EXECPATH} is the
+# Bun-compiled claude binary, which is multi-call: it embeds ugrep and bfs and
+# picks one by looking at its own argv[0]. With the feature on, claude replaces
+# bash's grep and find with shell functions that re-exec that path through
+# `exec -a ugrep` / `exec -a bfs`, and -- since bash can then search on its own
+# -- hides the Grep and Glob tools from the model.
+#
+# Neither half survives the move to node(1). CLAUDE_CODE_EXECPATH is assigned
+# from process.execPath, which here is node itself, so the shims hand ugrep and
+# bfs arguments to node, which parses them as its own and exits:
+#
+#	$ printf 'foo\nbar\n' | grep bar
+#	ugrep: bad option: -G
+#
+# (node reports the argv[0] it was handed, which is what makes this read like a
+# complaint from ugrep). The user is left with a broken grep, a broken find and
+# no search tools to fall back on.
+#
+# So force the feature's gate to false. That drops the shims, leaving bash with
+# the real grep(1) and find(1), and brings back Grep and Glob, which search
+# through ${LOCALBASE}/bin/rg and are unaffected by any of this.
+#
+# The gate is matched by shape, not by name: chunk file names and minified
+# identifiers change with every release, but the entrypoint comparison it ends
+# with is stable. A release that no longer matches is a release where the whole
+# assumption needs re-checking, so a miss is fatal rather than silent.
+
+# The built-in plugins written as hooks modules (agents-md, telemetry,
+# responsive mode, the diff panel, the security default and others) are
+# declared through one helper, which takes the module from the bundle inside
+# Anthropic's executable and otherwise from its TypeScript source, as in
+# Anthropic's source tree:
+#
+#	var x5=(e,o,r)=>Ed()?kt(o,r(),e):{module:o,folder:e};
+#
+# Ed() is Bun.isStandaloneExecutable, false here, and the release carries no
+# such sources, so every one of them would fail to load ("agents-md: hooks
+# module did not load: .../hooks/register.ts: no such file") and, for one,
+# AGENTS.md files would never be read. Make the helper always take the
+# bundled module. Matched by shape and fatal unless it matches exactly once,
+# as for the gate above.
+#
+# The rewrite is Grzegorz Junka's, from the Yoonka ports overlay, taken as
+# written: it matches without assuming how the helper is declared, and it
+# counts occurrences rather than files, so a second copy in one chunk cannot
+# slip through the one-per-line substitution unnoticed.
+id='[A-Za-z0-9_$]+'
+mods="=\\(($id),($id),($id)\\)=>$id\\(\\)\\?($id)\\(($id),($id)\\(\\),($id)\\):\\{module:$id,folder:$id\\}"
+
+mods_files=$(find "$root" -type f -name '*.js' -exec grep -lE "$mods" {} + || :)
+mods_count=$(printf %s "$mods_files" | grep -c . || :)
+if [ "$mods_count" = 1 ]; then
+	mods_count=$(grep -oE "$mods" "$mods_files" | grep -c . || :)
+fi
+
+if [ "$mods_count" != 1 ]; then
+	echo "post-extract: expected the built-in hooks module helper exactly once," >&2
+	echo "found it $mods_count times. Check how built-in plugins get their hooks" >&2
+	echo "module outside the executable (see the comment above)." >&2
+	exit 1
+fi
+
+sed -i '' -E "s/$mods/=(\1,\2,\3)=>\4(\5,\6(),\7)/" "$mods_files"
+echo "===>   made built-in hooks modules load from the bundle in ${mods_files#$root/}"
+
+gate='function ([A-Za-z0-9_$]+)\(\)\{if\(![A-Za-z0-9_$]+\([^()]*\)\)return!1;if\([A-Za-z0-9_$]+\(\)\)return!1;return [A-Za-z0-9_$]+\.CLAUDE_CODE_ENTRYPOINT!=="local-agent"\}'
+
+gate_files=$(find "$root" -type f -name '*.js' -exec grep -lE "$gate" {} + || :)
+gate_count=$(printf %s "$gate_files" | grep -c . || :)
+
+if [ "$gate_count" != 1 ]; then
+	echo "post-extract: expected the shell-search-tools gate in exactly one" >&2
+	echo "chunk, found it in $gate_count. Check whether bash's grep and find" >&2
+	echo "still get argv0 shims (see the comment above) before adjusting this." >&2
+	exit 1
+fi
+
+sed -i '' -E "s/$gate/function \1(){return!1}/" "$gate_files"
+echo "===>   disabled the argv0 grep/find shims in ${gate_files#$root/}"
+
+# Path completion skips symbolic links to directories. Both completers -- the
+# directory-only one behind /cd and /add-dir, and the general one -- classify
+# readdir() entries by Dirent.isDirectory(), which is false for any link, so
+# the readdir() result of each is passed through files/follow-dir-links.cjs,
+# which do-install puts beside the chunks:
+#
+#	(await F().readdir(D)).filter((E)=>E.isDirectory()&&!E.name.startsWith("."))
+#	(await F().readdir(D)).filter((E)=>!E.name.startsWith(".")).map(...)
+#
+# This is an upstream bug, not a Bun-to-node one, and is kept apart from the
+# rewrites above so that it can be dropped on its own. Matched by shape, and
+# fatal unless both completers turn up in one chunk: a release that changes
+# them may no longer need the fix, or may need a different one.
+dirls="\\(await ($id)\\(\\)\\.readdir\\(($id)\\)\\)(\\.filter\\(\\(($id)\\)=>(($id)\\.isDirectory\\(\\)&&)?!($id)\\.name\\.startsWith\\(\"\\.\"\\)\\))"
+
+dirls_files=$(find "$root" -type f -name '*.js' -exec grep -lE "$dirls" {} + || :)
+dirls_count=$(printf %s "$dirls_files" | grep -c . || :)
+if [ "$dirls_count" = 1 ]; then
+	dirls_count=$(grep -oE "$dirls" "$dirls_files" | grep -c . || :)
+else
+	dirls_count=0
+fi
+
+if [ "$dirls_count" != 2 ]; then
+	echo "post-extract: expected the readdir() of both path completers in one" >&2
+	echo "chunk, found $dirls_count of them there. Check whether completion" >&2
+	echo "still skips symlinked directories (see the comment above)." >&2
+	exit 1
+fi
+
+sed -i '' -E "s/$dirls/(await globalThis.__bunRequire(\".\\/follow-dir-links.cjs\")(await \\1().readdir(\\2),\\2,\\1()))\\3/g" "$dirls_files"
+echo "===>   made path completion follow directory links in ${dirls_files#$root/}"
+
+# claude-code relaunches itself for remote-control sessions, the self-hosted
+# runner, plugin evals and its background host, always the same way:
+#
+#	$u() ? [process.execPath] : [process.execPath, process.argv[1]]
+#
+# Out of a standalone binary that is a whole program; out of node it is
+# "node .../cli" without process.execArgv, so the child never gets the
+# wrapper's --require of the polyfill and dies on its first import.meta.require
+# ("globalThis.__bunRequire is not a function"). Rather than chase every spawn
+# site, have the entry point import the polyfill itself, ahead of its other
+# imports, so that every launch of it is complete however it was started.
+entry=$root/cli
+
+if [ ! -f "$entry" ] || head -1 "$entry" | grep -q '^#!'; then
+	echo "post-extract: expected $entry to exist and to begin without a" >&2
+	echo "shebang; the polyfill import has to be its first statement." >&2
+	exit 1
+fi
+
+{
+	printf 'import "%s/bun-polyfill.cjs";\n' "$APPDIR"
+	cat "$entry"
+} > "$entry.new" && mv "$entry.new" "$entry"
+echo "===>   made the entry point load the Bun polyfill itself"

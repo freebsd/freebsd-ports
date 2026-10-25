@@ -1,46 +1,22 @@
 #!/bin/sh
 #
-# FreeBSD ports wrapper for Anthropic Claude Code (Linux ELF via Linuxulator)
+# FreeBSD ports wrapper for Anthropic Claude Code (native Node.js)
 #
 
-export DISABLE_AUTOUPDATER=1
-export DISABLE_UPDATES=1
+export USE_BUILTIN_RIPGREP=false
 
-# Anthropic's FreeBSD guidance requires this Bun workaround under Linuxulator.
-# https://github.com/anthropics/claude-code/issues/30640#issuecomment-4227236808
-export BUN_JSC_useBBQJIT=0
+# Updates are managed through ports/pkg. The bundled auto-updater replaces this
+# installation with an npm wrapper that does not support FreeBSD, leaving a
+# broken bin/claude behind (anthropics/claude-code#51833). Assignment is
+# conditional, so DISABLE_AUTOUPDATER=0 in the environment still opts back in.
+: ${DISABLE_AUTOUPDATER:=1}
+export DISABLE_AUTOUPDATER
 
-#
-# Required Linuxulator mounts. Without linrdlnk on fdescfs, Bun resolves cwd
-# via open(path, O_PATH) + readlink("/dev/fd/N"), gets EINVAL, and hangs.
-# service linux start mounts these correctly; hand-rolled fstab often does not.
-#
-if [ ! -e /compat/linux/proc/version ]; then
-	echo "claude: error: linprocfs is not mounted on /compat/linux/proc" >&2
-	echo "claude: enable with: sysrc linux_enable=YES && service linux start" >&2
-	exit 1
-fi
-if [ ! -d /compat/linux/dev/fd ]; then
-	echo "claude: error: fdescfs is not mounted on /compat/linux/dev/fd" >&2
-	echo "claude: enable with: sysrc linux_enable=YES && service linux start" >&2
-	exit 1
-fi
-if ! [ -L /compat/linux/dev/fd/2 ]; then
-	echo "claude: error: fdescfs must be mounted with linrdlnk (claude will hang otherwise)" >&2
-	echo "claude: /etc/fstab: fdescfs /compat/linux/dev/fd fdescfs rw,linrdlnk 0 0" >&2
-	echo "claude: then: umount /compat/linux/dev/fd && mount /compat/linux/dev/fd" >&2
-	echo "claude: (or: sysrc linux_enable=YES && service linux start)" >&2
-	exit 1
-fi
-
-#
-# Bake-in of:
-#   alias claude='SHELL=/usr/local/bin/bash bash --noprofile --norc -c claude'
-#
-# Claude's shell-detection child inherits stdin; bash startup files that read
-# fd 0 make the TUI fall through to --print mode (see
-# https://github.com/anthropics/claude-code/issues/12507 for more details).
-# Launch from a clean bash; keep SHELL=bash for the tool runner.
-#
+# Set SHELL=bash so claude uses bash for tool execution (avoids issues with
+# non-bash shells like tcsh that claude's tool runner may not handle correctly).
 export SHELL=%%LOCALBASE%%/bin/bash
-exec %%LOCALBASE%%/bin/bash --noprofile --norc -c 'exec "$@"' bash %%PREFIX%%/libexec/claude "$@"
+
+# Load Bun polyfill before cli (provides Bun-specific APIs for Bun-compiled code)
+exec %%PREFIX%%/bin/node \
+    --require %%PREFIX%%/lib/node_modules/@anthropic-ai/claude-code/bun-polyfill.cjs \
+    %%PREFIX%%/lib/node_modules/@anthropic-ai/claude-code/cli "$@"
