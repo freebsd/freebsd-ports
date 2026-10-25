@@ -699,7 +699,6 @@
     SUBDIR += p5-Net-DHCPClient
     SUBDIR += p5-Net-DLookup
     SUBDIR += p5-Net-Daemon
-    SUBDIR += p5-Net-Delicious
     SUBDIR += p5-Net-Dict
     SUBDIR += p5-Net-Divert
     SUBDIR += p5-Net-Dropbox-API

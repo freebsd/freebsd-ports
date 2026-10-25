@@ -5760,3 +5760,4 @@ dns/p5-Net-DNS-ZoneFile-Fast||2026-10-25|Has expired: Upstream module marked obs
 finance/p5-Business-OnlinePayment-Network1Financial||2026-10-25|Has expired: Backend for the defunct Network1Financial payment gateway
 finance/p5-Business-OnlinePayment-SurePay||2026-10-25|Has expired: Backend for the defunct Pure Payments SurePay gateway
 finance/p5-Business-WorldPay-Junior||2026-10-25|Has expired: Upstream module withdrawn by its author on CPAN
+net/p5-Net-Delicious||2026-10-25|Has expired: Defunct service
