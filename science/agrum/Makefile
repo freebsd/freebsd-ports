@@ -1,5 +1,5 @@
 PORTNAME=	agrum
-DISTVERSION=	3.2.1
+DISTVERSION=	3.3.0
 CATEGORIES=	science math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -58,9 +58,9 @@ do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ./act test release agrum -t all
 
-# tests as of 3.2.1: test cases:    2458 |    2458 passed | 0 failed | 0 skipped
-# [doctest] test cases:    2595 |    2595 passed | 0 failed | 0 skipped
-# [doctest] assertions: 1192401 | 1192401 passed | 0 failed |
+# tests as of 3.3.0: test cases:    2458 |    2458 passed | 0 failed | 0 skipped
+# [doctest] test cases:    2816 |    2816 passed | 0 failed | 0 skipped
+# [doctest] assertions: 1196873 | 1196873 passed | 0 failed |
 # [doctest] Status: SUCCESS!
 
 .include <bsd.port.mk>

@@ -568,7 +568,15 @@ include/agrum/base/core/cast_unicode_inl.h
 include/agrum/base/core/cocoR/common.h
 include/agrum/base/core/concepts.h
 include/agrum/base/core/concepts_inl.h
+include/agrum/base/core/configuration/configuration.h
+include/agrum/base/core/configuration/configuration_inl.h
+include/agrum/base/core/configuration/configuration_tpl.h
 include/agrum/base/core/debug.h
+include/agrum/base/core/dot/dotColor.h
+include/agrum/base/core/dot/dotElements.h
+include/agrum/base/core/dot/dotOptions.h
+include/agrum/base/core/dot/dotStyle.h
+include/agrum/base/core/dot/dotWriter.h
 include/agrum/base/core/errorsContainer.h
 include/agrum/base/core/errorsContainer_inl.h
 include/agrum/base/core/exceptions.h
@@ -741,6 +749,7 @@ include/agrum/base/graphicalModels/graphicalModel.h
 include/agrum/base/graphicalModels/graphicalModel_inl.h
 include/agrum/base/graphicalModels/inference/graphicalModelInference.h
 include/agrum/base/graphicalModels/inference/graphicalModelInference_tpl.h
+include/agrum/base/graphicalModels/inference/junctionTreeRoots.h
 include/agrum/base/graphicalModels/inference/scheduler/IScheduleMultiDim.h
 include/agrum/base/graphicalModels/inference/scheduler/IScheduleMultiDim_inl.h
 include/agrum/base/graphicalModels/inference/scheduler/schedule.h
@@ -887,6 +896,10 @@ include/agrum/base/multidim/aggregators/min.h
 include/agrum/base/multidim/aggregators/min_tpl.h
 include/agrum/base/multidim/aggregators/multiDimAggregator.h
 include/agrum/base/multidim/aggregators/multiDimAggregator_tpl.h
+include/agrum/base/multidim/aggregators/multiDimFoldAggregator.h
+include/agrum/base/multidim/aggregators/multiDimFoldAggregator_tpl.h
+include/agrum/base/multidim/aggregators/multiDimValueAggregator.h
+include/agrum/base/multidim/aggregators/multiDimValueAggregator_tpl.h
 include/agrum/base/multidim/aggregators/or.h
 include/agrum/base/multidim/aggregators/or_tpl.h
 include/agrum/base/multidim/aggregators/sum.h
@@ -1135,7 +1148,6 @@ lib/libagrumPRM.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/clg/notebook.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/clg/variableElimination.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/common.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/config.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/credal_net/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/credal_net/_cncpp.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/credal_net/cncpp.py
@@ -1149,7 +1161,6 @@ lib/libagrumPRM.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/ctbn/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/ctbn/constants.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/ctbn/notebook.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/defaults.ini
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/deprecated.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/explain/_ComputationCausal.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/explain/_ComputationConditional.py
@@ -1191,6 +1202,7 @@ lib/libagrumPRM.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/lib/cn2graph.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/lib/discreteTypeProcessor.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/lib/discretizer.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/lib/dotstyle.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/lib/dynamicBN.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/lib/explain.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/lib/export.py
