@@ -38,7 +38,7 @@ LIB_DEPENDS=	libada.so:devel/libada \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	corepack>=0:www/corepack
 
-USES=		compiler:c++20-lang gmake localbase pkgconfig python:build shebangfix tar:xz
+USES=		cargo compiler:c++20-lang gmake localbase pkgconfig python:build shebangfix tar:xz
 
 # merve stays bundled: devel/merve links the system libsimdutf, while node
 # bundles and exports its own simdutf. rtld binds libsimdutf's internal calls
@@ -65,16 +65,27 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-uvwasi-includes=${LOCALBASE}/include \
 		--shared-zlib \
 		--shared-zstd \
+		--v8-enable-temporal-support \
 		--with-intl=system-icu \
 		--without-npm
+CONFIGURE_ENV=	CARGO=${CARGO} \
+		RUSTC=${RUSTC}
 HAS_CONFIGURE=	yes
 MAKE_ENV=	CC.host="${CCACHE_BIN} ${CC}" \
 		CFLAGS.host="${CFLAGS}" \
 		CXX.host="${CCACHE_BIN} ${CXX}" \
 		CXXFLAGS.host="${CXXFLAGS}" \
 		LDFLAGS.host="${LDFLAGS}" \
-		LINK.host="${CXX}"
+		LINK.host="${CXX}" \
+		${CARGO_ENV}
 REINPLACE_ARGS=	-i ''
+
+# Temporal is built by gyp from the Rust crates vendored in deps/crates;
+# only the cargo toolchain and environment are needed from USES=cargo.
+CARGO_BUILD=	no
+CARGO_CONFIGURE=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
 
 CONFLICTS_INSTALL=	node[0-9][0-9]
 
@@ -139,6 +150,9 @@ post-install:
 # to the wrong one and CJS export lexing SIGBUSes). Importing a CommonJS
 # module from ESM runs that lexer; stdin avoids a temp file.
 	${ECHO_CMD} 'exports.ok = 1' | ${STAGEDIR}${PREFIX}/bin/node --input-type=module -e 'import "/dev/stdin"'
+# Fail if Temporal is missing or cannot resolve named time zones (a broken
+# zoneinfo/ICU setup fails silently at runtime).
+	${STAGEDIR}${PREFIX}/bin/node -e 'if (Temporal.ZonedDateTime.from("2026-01-01T00:00[America/New_York]").offset !== "-05:00") process.exit(1)'
 
 post-install-BUNDLED_SSL-on:
 	cd ${STAGEDIR}${PREFIX} && ${FIND} include/node/openssl/ -type f >> ${TMPPLIST}
