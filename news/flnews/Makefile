@@ -1,5 +1,5 @@
 PORTNAME=	flnews
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	news
 MASTER_SITES=	https://micha.freeshell.org/flnews/src/
 
@@ -12,7 +12,8 @@ LICENSE_NAME=	flnews license (BSD-style with identification clause)
 LICENSE_FILE=	${WRKSRC}/src/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		pkgconfig ssl tar:bzip2 xorg
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xrender
