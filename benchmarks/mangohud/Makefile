@@ -35,7 +35,7 @@ PLIST_FILES=	bin/mangohud lib/mangohud/libMangoHud.so \
 		lib/mangohud/libMangoHud_dlsym.so share/man/man1/mangohud.1.gz \
 		share/icons/hicolor/scalable/apps/io.github.flightlessmango.mangohud.svg \
 		share/metainfo/io.github.flightlessmango.mangohud.metainfo.xml \
-		share/vulkan/implicit_layer.d/MangoHud.${ARCH:S/amd64/x86_64/:S/i386/x86/}.json
+		share/vulkan/implicit_layer.d/MangoHud.${ARCH:S/amd64/x86_64/:S/i386/x86/:C/powerpc64(le)?/ppc64/}.json
 PORTEXAMPLES=	MangoHud.conf.example
 
 OPTIONS_DEFINE=	DBUS EXAMPLES
