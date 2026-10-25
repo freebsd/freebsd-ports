@@ -97,5 +97,6 @@
     SUBDIR += znc
     SUBDIR += znc-clientbuffer
     SUBDIR += znc-push
+    SUBDIR += zoitechat
 
 .include <bsd.port.subdir.mk>
