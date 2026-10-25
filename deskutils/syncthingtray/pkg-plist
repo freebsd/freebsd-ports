@@ -11,7 +11,7 @@ bin/syncthingtray
 %%PLASMA%%lib/libqtquickforkawesome.so.1
 %%PLASMA%%lib/libqtutilities.so
 %%PLASMA%%lib/libqtutilities.so.6
-%%PLASMA%%lib/libqtutilities.so.6.22.3
+%%PLASMA%%lib/libqtutilities.so.6.23.0
 %%PLASMA%%lib/libsyncthingconnector.so
 %%PLASMA%%lib/libsyncthingconnector.so.%%LIBVERSION%%
 %%PLASMA%%lib/libsyncthingconnector.so.41

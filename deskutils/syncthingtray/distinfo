@@ -1,10 +1,10 @@
-TIMESTAMP = 1791468271
-SHA256 (Martchus-syncthingtray-v2.1.8_GH0.tar.gz) = 057cf086943c2a8b4521b8f068188ff975d3403c42cc0292bca532169ce5d577
-SIZE (Martchus-syncthingtray-v2.1.8_GH0.tar.gz) = 6834940
+TIMESTAMP = 1792763314
+SHA256 (Martchus-syncthingtray-v2.1.9_GH0.tar.gz) = 1ea90b8e92d19989f6e3fd900027b4e11c8e28bf2e1994834df7aeab8924cbca
+SIZE (Martchus-syncthingtray-v2.1.9_GH0.tar.gz) = 6836294
 SHA256 (Martchus-cpp-utilities-v5.37.0_GH0.tar.gz) = 9e212e8c873b2de410bb9e23a7fcf65ddbae3ba5484cd52992ed66eefa30e608
 SIZE (Martchus-cpp-utilities-v5.37.0_GH0.tar.gz) = 219244
-SHA256 (Martchus-qtutilities-v6.22.3_GH0.tar.gz) = 403d8df04fa66ba3dfb76da0f709286adca97c30a52f930167cad7fba9f918ac
-SIZE (Martchus-qtutilities-v6.22.3_GH0.tar.gz) = 176333
+SHA256 (Martchus-qtutilities-v6.23.0_GH0.tar.gz) = ae984301e080278b5eda612a8628845fd826efda5fb8b8aa651df7f28c347a78
+SIZE (Martchus-qtutilities-v6.23.0_GH0.tar.gz) = 247774
 SHA256 (Martchus-qtforkawesome-v0.3.4_GH0.tar.gz) = 001324d008b44a136ec296733d5ef9bd519ea93ec820d5144163b98dc888f23b
 SIZE (Martchus-qtforkawesome-v0.3.4_GH0.tar.gz) = 20258
 SHA256 (ForkAwesome-Fork-Awesome-4fef70f_GH0.tar.gz) = 93906cd38eb92fe853c9e3723b1f0fa56df6ddcd2d87ac82c97b5a188e5cdae6
