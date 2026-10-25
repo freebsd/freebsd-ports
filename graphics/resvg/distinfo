@@ -1,4 +1,4 @@
-TIMESTAMP = 1788672656
+TIMESTAMP = 1792889108
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/arrayref-0.3.9.crate) = 76a2e8124351fda1ef8aaaa3bbd7ebbcb486bbcd4225aca0aa0d84bb2db8fecb
@@ -175,5 +175,5 @@ SHA256 (rust/crates/zune-core-0.5.1.crate) = cb8a0807f7c01457d0379ba880ba6322660
 SIZE (rust/crates/zune-core-0.5.1.crate) = 27883
 SHA256 (rust/crates/zune-jpeg-0.5.15.crate) = 27bc9d5b815bc103f142aa054f561d9187d191692ec7c2d1e2b4737f8dbd7296
 SIZE (rust/crates/zune-jpeg-0.5.15.crate) = 88879
-SHA256 (RazrFalcon-resvg-v0.48.1_GH0.tar.gz) = 40dafea6b4b9d01e9d28b6d49f1e912daf3e9055676ad9179a5a2db6e7386945
-SIZE (RazrFalcon-resvg-v0.48.1_GH0.tar.gz) = 8763695
+SHA256 (RazrFalcon-resvg-v0.49.0_GH0.tar.gz) = 3077d547f755d3ca4ab9144a8fb9ec6d366415157bf8d26727f0b5dcdd22742f
+SIZE (RazrFalcon-resvg-v0.49.0_GH0.tar.gz) = 8787464
