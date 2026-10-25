@@ -1,6 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.1
+DISTVERSION=	0.16.0
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -45,7 +45,11 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		android_system_properties-0.1.6 \
 		anes-0.1.6 \
 		annotate-snippets-0.11.5 \
+		anstream-1.0.0 \
 		anstyle-1.0.14 \
+		anstyle-parse-1.0.0 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
 		anyhow-1.0.104 \
 		arbitrary-1.4.2 \
 		arboard-3.6.1 \
@@ -121,7 +125,10 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		clang-sys-1.9.1 \
 		clap-4.6.7 \
 		clap_builder-4.6.7 \
+		clap_complete-4.6.11 \
+		clap_derive-4.6.7 \
 		clap_lex-1.1.1 \
+		clap_mangen-0.3.3 \
 		clipboard-win-5.4.1 \
 		cmake-0.1.58 \
 		cmpv2-0.2.0 \
@@ -129,6 +136,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		codespan-reporting-0.13.1 \
 		color-0.3.3 \
 		color_quant-1.1.0 \
+		colorchoice-1.0.5 \
 		colored-2.2.0 \
 		combine-4.6.8 \
 		concurrent-queue-2.5.0 \
@@ -312,6 +320,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		is-docker-0.2.0 \
 		is-terminal-0.4.17 \
 		is-wsl-0.4.0 \
+		is_terminal_polyfill-1.70.2 \
 		itertools-0.10.5 \
 		itertools-0.14.0 \
 		itertools-0.15.0 \
@@ -436,6 +445,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		objc2-uniform-type-identifiers-0.2.2 \
 		objc2-user-notifications-0.2.2 \
 		once_cell-1.21.4 \
+		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
 		open-5.4.4 \
 		openssl-probe-0.2.1 \
@@ -536,6 +546,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		ring-0.17.14 \
 		rmcp-3.5.0 \
 		rmcp-macros-3.5.0 \
+		roff-1.1.1 \
 		ron-0.12.2 \
 		roxmltree-0.20.0 \
 		roxmltree-0.21.1 \
@@ -546,7 +557,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		rustix-0.38.44 \
 		rustix-1.1.5 \
 		rustix-linux-procfs-0.1.1 \
-		rustls-0.23.45 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.15.1 \
 		rustls-platform-verifier-0.7.1 \
@@ -683,9 +694,13 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		unicode-width-0.2.2 \
 		untrusted-0.7.1 \
 		untrusted-0.9.0 \
+		ureq-3.5.0 \
+		ureq-proto-0.6.5 \
 		url-2.5.8 \
 		usvg-0.45.1 \
+		utf8-zero-0.8.1 \
 		utf8_iter-1.0.4 \
+		utf8parse-0.2.2 \
 		uuid-1.26.1 \
 		v_frame-0.3.9 \
 		vello_common-0.1.0 \
@@ -726,6 +741,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		web-sys-0.3.106 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.9 \
+		webpki-roots-1.0.10 \
 		weezl-0.1.12 \
 		wgpu-30.0.1 \
 		wgpu-core-30.0.1 \
@@ -828,6 +844,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		winprint@git+https://github.com/storytold/winprint.rs?rev=5f80b9baf6b58937c401656634e42d33f00ddf49\#5f80b9baf6b58937c401656634e42d33f00ddf49 \
 		craft-winprint-gdi@git+https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312\#417ac3c4d14d3da5485a99c7d5ce8f05664ec312 \
 		craft-print@git+https://github.com/storytold/craft-libs?rev=3d37da389a3618ab9b76109da11416e9ca4ea719\#3d37da389a3618ab9b76109da11416e9ca4ea719 \
+		craft-jpeg@git+https://github.com/storytold/craft-libs?rev=6e7f28518dd1cb57e1624bdc269c3c14316b13ae\#6e7f28518dd1cb57e1624bdc269c3c14316b13ae \
 		craft-docpath@git+https://github.com/storytold/craft-libs?rev=82a24b006eefa036b43c09a67fb9a3fbd17ffe63\#82a24b006eefa036b43c09a67fb9a3fbd17ffe63 \
 		craft-ui@git+https://github.com/storytold/craft-libs?rev=5c874d51eeb3de70e735c8ce87a59a7dedd47675\#5c874d51eeb3de70e735c8ce87a59a7dedd47675
 
@@ -841,15 +858,34 @@ CARGO_INSTALL=	no
 OPTIONS_DEFINE=	DOCS
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-10-23
+RELEASE_DATE=	2026-10-25
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
 		${WRKSRC}/packaging/linux/${APP_ID}.metainfo.xml.in
 
+# photocraft-cli's man pages and shell completions are written by an
+# example with its own dev-dependencies; building it separately keeps
+# their features out of the binaries, like upstream's packaging does
+post-build:
+	@${CARGO_CARGO_RUN} build --manifest-path ${CARGO_CARGOTOML} \
+		--verbose --verbose --release --features='${CARGO_FEATURES}' \
+		-p ${PORTNAME}-cli --example man-and-completions
+	${CARGO_TARGET_DIR}/release/examples/man-and-completions ${WRKDIR}/cli-docs
+
 do-install:
 	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/release/${PORTNAME} \
 		${CARGO_TARGET_DIR}/release/${PORTNAME}-cli ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/cli-docs/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions \
+		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKDIR}/cli-docs/${PORTNAME}-cli.bash \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}-cli
+	${INSTALL_DATA} ${WRKDIR}/cli-docs/${PORTNAME}-cli.fish \
+		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
+	${INSTALL_DATA} ${WRKDIR}/cli-docs/_${PORTNAME}-cli \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/packaging/linux/${APP_ID}.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo \
