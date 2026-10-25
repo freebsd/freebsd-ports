@@ -1418,7 +1418,6 @@
     SUBDIR += p5-WebService-Google-Sets
     SUBDIR += p5-WebService-IMDB
     SUBDIR += p5-WebService-ISBNDB
-    SUBDIR += p5-WebService-Linode
     SUBDIR += p5-WebService-MoviePosterDB
     SUBDIR += p5-WebService-MusicBrainz
     SUBDIR += p5-WebService-NoPaste
