@@ -319,6 +319,10 @@ privileges.</p>
        <name>ungoogled-chromium</name>
        <range><lt>156.0.8078.47</lt></range>
       </package>
+      <package>
+       <name>linux-chrome</name>
+       <range><lt>156.0.8078.47</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
