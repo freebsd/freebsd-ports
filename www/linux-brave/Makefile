@@ -4,6 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-browser/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	linux-
+PKGNAMESUFFIX=	-browser
 DISTNAME=	${PORTNAME}-browser-${BRAVE_VER}-${BRAVE_BUILD}
 DISTFILES=	${DISTNAME}.${ARCH:S,amd64,x86_64,}.rpm
 .if make(makesum) || make(checksum)
@@ -35,7 +36,7 @@ SUB_FILES=	brave-browser
 
 NO_WRKSUBDIR=	yes
 
-BRAVE_VER?=	1.94.117
+BRAVE_VER?=	1.98.60
 BRAVE_BUILD?=	1
 
 OPTIONS_DEFINE=		DOCS WIDEVINE
