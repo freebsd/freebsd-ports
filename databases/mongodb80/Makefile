@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	8.0.34
+PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES+=	LOCAL/ronald:mongodb_bazel \
 		https://codeload.github.com/bazelbuild/bazel-central-registry/tar.gz/${BAZEL_REGISTRY_COMMIT}?dummy=/:bazel_registry \
@@ -22,8 +23,6 @@ LICENSE_COMB=	multi
 LICENSE_NAME_SSPLv1=	Server Side Public License Version 1
 LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-BROKEN_FreeBSD_16=	src/third_party/boost/boost/mpl/aux_/integral_wrapper.hpp:71:51: error: in-class initializer for static data member is not a constant expression
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD; upstream supports arm64, ppc64le, s390x, and x86-64
@@ -207,7 +206,6 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${BAZEL_INSTALL_WRKSRC}/bin/mongod ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${BAZEL_INSTALL_WRKSRC}/bin/mongos ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${BAZEL_INSTALL_WRKSRC}/bin/install_compass ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/rpm/mongod.conf ${STAGEDIR}${PREFIX}/etc/mongodb.conf.sample
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in LICENSE-Community.txt distsrc/MPL-2 distsrc/README distsrc/THIRD-PARTY-NOTICES
