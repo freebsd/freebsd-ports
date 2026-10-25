@@ -1,5 +1,5 @@
-TIMESTAMP = 1784564207
-SHA256 (go/misc_sonoscli/sonoscli-v0.3.4/v0.3.4.mod) = 556864b042d3bddd847e0930c37c2811ec23c1e1b2a54505ece63e32d5b71079
-SIZE (go/misc_sonoscli/sonoscli-v0.3.4/v0.3.4.mod) = 199
-SHA256 (go/misc_sonoscli/sonoscli-v0.3.4/v0.3.4.zip) = 6dd720ae9a21e7a5dd4fd31fc31a4fdd4217398ce08b328a8ce3048ff2256909
-SIZE (go/misc_sonoscli/sonoscli-v0.3.4/v0.3.4.zip) = 293362
+TIMESTAMP = 1792909577
+SHA256 (go/misc_sonoscli/sonoscli-v0.3.5/v0.3.5.mod) = 2bea8ab0fceb99efc8788bbfd0a8eb03f077fd950272b1134346337fef582394
+SIZE (go/misc_sonoscli/sonoscli-v0.3.5/v0.3.5.mod) = 219
+SHA256 (go/misc_sonoscli/sonoscli-v0.3.5/v0.3.5.zip) = c39f1e37db4587c6dbf1d5b8288bd2b3ce86d16cf49b035db007b749dbb34d66
+SIZE (go/misc_sonoscli/sonoscli-v0.3.5/v0.3.5.zip) = 302442
