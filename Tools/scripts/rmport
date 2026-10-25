@@ -216,21 +216,26 @@ check_dep()
 get_PRs()
 {
 	catport=${1}
+	category="$(echo "${catport}" | cut -f 1 -d /)"
+	port="$(echo "${catport}" | cut -f 2 -d /)"
 
 	log "${catport}: getting PRs having ${catport} in the synopsis"
 
-	url="https://bugs.freebsd.org/bugzilla/buglist.cgi?quicksearch=${catport}"
-
+	url="https://bugs.freebsd.org/bugzilla/rest/bug?bug_status=__open__&product=Ports%20%26%20Packages&summary=${category}%2f${port}"
 	raw="$(fetch -q -T 20 -o - "${url}")"
-
 	if [ -z "${raw}" ] ; then
 		log "${catport}: empty result from URL: ${url}"
 		exit 67
 	fi
 
-	printf "%s" "${raw}" \
-	|sed -ne 's,^[[:space:]]*.a href="show_bug.cgi?id=\([0-9][0-9]*\)".\([^0-9][^<]*\).*,\1: \2,p' \
-	|sort
+	pr_list="$(echo "${raw}" | jq '[.bugs.[]|{id,assigned_to,summary}]')"
+	# format the output as one line per PR:
+	num_prs=$(echo "${pr_list}" | jq length)
+	if [ ${num_prs} -gt 0 ] ; then
+		for i in $(jot ${num_prs} 0) ; do
+			echo "${pr_list}" | jq -r --argjson i ${i} '[.[$i].id,.[$i].assigned_to,.[$i].summary]|@tsv'
+		done
+	fi
 }
 
 # check if any PRs exist that are related to the port
