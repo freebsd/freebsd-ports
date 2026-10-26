@@ -1,5 +1,6 @@
 PORTNAME=	wand
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
 		https://github.com/emcconville/wand/releases/download/${PORTVERSION}/
