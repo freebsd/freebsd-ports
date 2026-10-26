@@ -13,6 +13,8 @@ WWW=		https://github.com/owntracks/recorder
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Package 'lmdb' not found
+
 BUILD_DEPENDS=	curl>0:ftp/curl \
 		libconfig>0:devel/libconfig \
 		lmdb0>0:databases/lmdb0 \
