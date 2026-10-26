@@ -1,5 +1,5 @@
 PORTNAME=	murmurhash
-DISTVERSION=	1.0.15
+DISTVERSION=	1.0.16
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,6 @@ pre-test: # tests fail to run with __init__.py: they can't find the murmurhash m
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/murmurhash/mrmr*.so
 
-# tests as of 1.0.15: 2 passed in 8.13s
+# tests as of 1.0.16: 2 passed in 0.86s
 
 .include <bsd.port.mk>
