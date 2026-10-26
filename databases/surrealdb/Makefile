@@ -1,7 +1,7 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.5
-PORTREVISION=	1
+DISTVERSION=	3.2.6
+PORTREVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,7 +39,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		alloca-0.4.0 \
 		allocator-api2-0.2.21 \
 		ambient-authority-0.0.2 \
-		ammonia-4.1.4 \
+		ammonia-4.1.7 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
 		anstream-1.0.0 \
@@ -155,19 +155,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cpp_demangle-0.5.1 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
-		cranelift-assembler-x64-0.135.5 \
-		cranelift-assembler-x64-meta-0.135.5 \
-		cranelift-bforest-0.135.5 \
-		cranelift-bitset-0.135.5 \
-		cranelift-codegen-0.135.5 \
-		cranelift-codegen-meta-0.135.5 \
-		cranelift-codegen-shared-0.135.5 \
-		cranelift-control-0.135.5 \
-		cranelift-entity-0.135.5 \
-		cranelift-frontend-0.135.5 \
-		cranelift-isle-0.135.5 \
-		cranelift-native-0.135.5 \
-		cranelift-srcgen-0.135.5 \
+		cranelift-assembler-x64-0.135.6 \
+		cranelift-assembler-x64-meta-0.135.6 \
+		cranelift-bforest-0.135.6 \
+		cranelift-bitset-0.135.6 \
+		cranelift-codegen-0.135.6 \
+		cranelift-codegen-meta-0.135.6 \
+		cranelift-codegen-shared-0.135.6 \
+		cranelift-control-0.135.6 \
+		cranelift-entity-0.135.6 \
+		cranelift-frontend-0.135.6 \
+		cranelift-isle-0.135.6 \
+		cranelift-native-0.135.6 \
+		cranelift-srcgen-0.135.6 \
 		crc32fast-1.5.0 \
 		criterion-0.8.2 \
 		criterion-plot-0.8.2 \
@@ -503,8 +503,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		psl-types-2.0.11 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
-		pulley-interpreter-48.0.5 \
-		pulley-macros-48.0.5 \
+		pulley-interpreter-48.0.6 \
+		pulley-macros-48.0.6 \
 		quick_cache-0.6.22 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.14 \
@@ -573,7 +573,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rusticata-macros-4.1.0 \
 		rustix-1.1.4 \
 		rustix-linux-procfs-0.1.1 \
-		rustls-0.23.45 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.14.1 \
 		rustls-platform-verifier-0.7.0 \
@@ -771,21 +771,21 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wasmparser-0.254.2 \
 		wasmparser-0.261.0 \
 		wasmprinter-0.254.2 \
-		wasmtime-48.0.5 \
-		wasmtime-environ-48.0.5 \
-		wasmtime-internal-component-macro-48.0.5 \
-		wasmtime-internal-component-util-48.0.5 \
-		wasmtime-internal-core-48.0.5 \
-		wasmtime-internal-cranelift-48.0.5 \
-		wasmtime-internal-fiber-48.0.5 \
-		wasmtime-internal-jit-debug-48.0.5 \
-		wasmtime-internal-jit-icache-coherence-48.0.5 \
-		wasmtime-internal-unwinder-48.0.5 \
-		wasmtime-internal-versioned-export-macros-48.0.5 \
-		wasmtime-internal-winch-48.0.5 \
-		wasmtime-internal-wit-bindgen-48.0.5 \
-		wasmtime-wasi-48.0.5 \
-		wasmtime-wasi-io-48.0.5 \
+		wasmtime-48.0.6 \
+		wasmtime-environ-48.0.6 \
+		wasmtime-internal-component-macro-48.0.6 \
+		wasmtime-internal-component-util-48.0.6 \
+		wasmtime-internal-core-48.0.6 \
+		wasmtime-internal-cranelift-48.0.6 \
+		wasmtime-internal-fiber-48.0.6 \
+		wasmtime-internal-jit-debug-48.0.6 \
+		wasmtime-internal-jit-icache-coherence-48.0.6 \
+		wasmtime-internal-unwinder-48.0.6 \
+		wasmtime-internal-versioned-export-macros-48.0.6 \
+		wasmtime-internal-winch-48.0.6 \
+		wasmtime-internal-wit-bindgen-48.0.6 \
+		wasmtime-wasi-48.0.6 \
+		wasmtime-wasi-io-48.0.6 \
 		wasmtimer-0.4.3 \
 		wast-35.0.2 \
 		wast-261.0.0 \
@@ -796,14 +796,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		webpki-root-certs-1.0.7 \
 		webpki-roots-0.26.11 \
 		webpki-roots-1.0.7 \
-		wiggle-48.0.5 \
-		wiggle-generate-48.0.5 \
-		wiggle-macro-48.0.5 \
+		wiggle-48.0.6 \
+		wiggle-generate-48.0.6 \
+		wiggle-macro-48.0.6 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winch-codegen-48.0.5 \
+		winch-codegen-48.0.6 \
 		windows-0.61.3 \
 		windows-collections-0.2.0 \
 		windows-core-0.61.2 \
