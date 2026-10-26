@@ -53,15 +53,15 @@ CARGO_CRATES=	ahash-0.8.11 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
 		leb128-0.2.5 \
-		libc-0.2.186 \
+		libc-0.2.169 \
 		lock_api-0.4.14 \
 		log-0.4.27 \
 		loom-0.7.2 \
-		loro-1.16.2 \
-		loro-common-1.16.0 \
+		loro-1.17.1 \
+		loro-common-1.17.0 \
 		loro-delta-1.13.0 \
-		loro-internal-1.16.2 \
-		loro-kv-store-1.16.0 \
+		loro-internal-1.17.1 \
+		loro-kv-store-1.17.0 \
 		loro-rle-1.6.0 \
 		loro-thunderdome-0.6.2 \
 		loro_fractional_index-1.13.0 \
