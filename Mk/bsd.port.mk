@@ -2677,6 +2677,35 @@ WRKDIR_PKGFILE${_SP.${sp}}=	${WRKDIR}/pkg/${PKGNAME${_SP.${sp}}}${PKG_SUFX}
 .include "${PORTSDIR}/Mk/bsd.licenses.mk"
 .    endif
 
+.    if !defined(DISABLE_SBOM)
+SBOMDIR=		${PREFIX}/share/sbom/pc
+SBOM_REL=		share/sbom/pc
+
+PORT_SBOM_VERSION?=	${PORTVERSION}
+PORT_SBOM_URL?=		${WWW:[1]}
+PORT_SBOM_LICENSE?=	${_LICENSE}
+PORT_SBOM_CPE?=		${CPE_STR}
+PORT_SBOM_COPYRIGHT?=
+PORT_SBOM_PROVIDES?=
+
+# Only claim a Source: URL when the main distfile is unambiguous and at
+# least one master site is known
+_SBOM_DISTFILE=		${_DISTFILES:M${DISTNAME}${EXTRACT_SUFX}}
+.      if !empty(_SBOM_DISTFILE) && !empty(_MASTER_SITES_ALL)
+PORT_SBOM_SOURCE?=	${_MASTER_SITES_ALL:[1]}${_SBOM_DISTFILE:[1]}
+.      else
+PORT_SBOM_SOURCE?=
+.      endif
+
+# Per package/subpackage: defaults to COMMENT / COMMENT.${sp} (bsd.port.mk:2655
+# appends " (subpkg: ${sp})" for subpackages), overridable as
+# PORT_SBOM_DESC / PORT_SBOM_DESC.${sp}.
+.      for sp in ${_PKGS}
+PORT_SBOM_DESC${_SP.${sp}}?=	${COMMENT${_SP.${sp}}}
+PLIST_FILES${_SP.${sp}}+=	${SBOM_REL}/${sp}.pc
+.      endfor
+.    endif
+
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_CMD?=		./${CONFIGURE_SCRIPT}
 CONFIGURE_TARGET?=	${HOSTARCH}-portbld-${OPSYS:tl}${OSREL}
@@ -4356,6 +4385,36 @@ ACTUAL-PACKAGE-DEPENDS${_SP.${sp}}?= \
 	${SETENV} PKG_BIN="${PKG_BIN}" ${SH} ${SCRIPTSDIR}/actual-package-depends.sh $${depfiles} ${RUN_DEPENDS${_SP.${sp}}:C/(.*)\:.*/"\1"/}
 .    endfor
 
+.    if !defined(DISABLE_SBOM)
+.      for sp in ${_PKGS}
+create-sbom: create-sbom.${sp}
+create-sbom.${sp}:
+	@${SETENV} \
+			dp_ACTUAL_PACKAGE_DEPENDS='${ACTUAL-PACKAGE-DEPENDS${_SP.${sp}}}' \
+			dp_COMMENT=${PORT_SBOM_DESC${_SP.${sp}}:Q}            \
+			dp_LICENSE='${PORT_SBOM_LICENSE}'                     \
+			dp_LICENSE_COMB='${LICENSE_COMB:Usingle}'             \
+			dp_MAINTAINER='${MAINTAINER}'                         \
+			dp_PKGBASE='${sp}'                                    \
+			dp_PKGORIGIN='${PKGORIGIN}'                           \
+			dp_PKGVERSION='${PKGVERSION}'                         \
+			dp_PKG_BIN='${PKG_BIN}'                               \
+			dp_PKG_IGNORE_DEPENDS='${PKG_IGNORE_DEPENDS}'         \
+			dp_PORTVERSION='${PORT_SBOM_VERSION}'                 \
+			dp_PORT_SBOM_COPYRIGHT='${PORT_SBOM_COPYRIGHT}'       \
+			dp_PORT_SBOM_CPE='${PORT_SBOM_CPE}'                   \
+			dp_PORT_SBOM_PROVIDES='${PORT_SBOM_PROVIDES}'         \
+			dp_PORT_SBOM_SOURCE='${PORT_SBOM_SOURCE}'             \
+			dp_PORT_SBOM_URL='${PORT_SBOM_URL}'                   \
+			dp_PREFIX='${PREFIX}'                                 \
+			dp_SBOMDIR='${SBOMDIR}'                               \
+			dp_SBOMNAME='${sp}'                                   \
+			dp_SCRIPTSDIR='${SCRIPTSDIR}'                         \
+			dp_STAGEDIR='${STAGEDIR}'                             \
+			${SH} ${SCRIPTSDIR}/create-sbom.sh
+.      endfor
+.    endif
+
 PKG_NOTES_ENV?=
 .    for note in ${PKG_NOTES}
 PKG_NOTES_ENV+=	dp_PKG_NOTE_${note}=${PKG_NOTE_${note}:Q}
@@ -5481,6 +5540,7 @@ _STAGE_SEQ=		050:stage-message 100:stage-dir 150:run-depends \
 				500:do-install 550:kmod-post-install 600:fixup-lib-pkgconfig 700:post-install \
 				750:post-install-script 800:post-stage 850:compress-man \
 				860:install-rc-script 870:install-ldconfig-file \
+				875:create-sbom \
 				880:install-license 890:install-desktop-entries \
 				900:add-plist-info 910:add-plist-docs 920:add-plist-examples \
 				930:add-plist-data 940:add-plist-post 994:stage-sanity \
