@@ -1,11 +1,10 @@
 PORTNAME=	turnd
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	net
 
 MAINTAINER=	vim@vimer.org
 COMMENT=	Minimal NAT traversal and UDP relay server
-WWW=		https://github.com/Yeatol/freebsd_turnd
+WWW=		https://github.com/Yeatol/freebsd-turnd
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c++23-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yeatol
-GH_PROJECT=	freebsd_turnd
+GH_PROJECT=	freebsd-turnd
 
 MAKE_ARGS=	WITH_RC_SUBR=yes
 
