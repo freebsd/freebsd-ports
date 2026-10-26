@@ -1,5 +1,5 @@
 PORTNAME=	carddav
-PORTVERSION=	5.1.3
+PORTVERSION=	5.1.4
 DISTVERSIONPREFIX=v
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/mstilkerich/rcmcarddav/releases/download/${DISTVERSIONFULL}/
