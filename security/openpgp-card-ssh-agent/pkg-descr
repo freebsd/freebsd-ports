@@ -1,0 +1,8 @@
+The openpgp-card-ssh-agent package provides a specialized SSH agent that
+uses OpenPGP card authentication keys for SSH-based authentication. It allows
+users to leverage their security tokens or smart cards as hardware-backed
+identities for secure remote access.
+
+This implementation ensures that private authentication keys never leave the
+card, providing a robust and hardware-protected alternative to software-only
+SSH keys, while remaining fully compatible with standard SSH clients.
