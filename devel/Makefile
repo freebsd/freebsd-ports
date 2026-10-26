@@ -5487,6 +5487,7 @@
     SUBDIR += py-minimongo
     SUBDIR += py-minio
     SUBDIR += py-mirakuru
+    SUBDIR += py-mktestdocs
     SUBDIR += py-mmh3
     SUBDIR += py-mock
     SUBDIR += py-mockito
