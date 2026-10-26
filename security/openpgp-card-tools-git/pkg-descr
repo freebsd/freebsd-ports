@@ -1,0 +1,7 @@
+The openpgp-card-tools-git package (formerly oct-git) provides a specialized
+tooling for Git signing and verification using OpenPGP cards. It focuses on
+making hardware-backed cryptographic operations seamless within Git workflows.
+
+This tool ensures that developers can easily use their security tokens or
+smart cards to sign commits and verify signatures, providing a higher level
+of security for source code integrity through hardware-protected private keys.
