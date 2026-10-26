@@ -1,0 +1,17 @@
+%%TOOLS%%bin/fastconv-float
+%%TOOLS%%bin/fastconvr-float
+%%TOOLS%%bin/fft-float
+%%TOOLS%%bin/psdpng-float
+include/kissfft/kiss_fft.h
+include/kissfft/kiss_fftnd.h
+include/kissfft/kiss_fftndr.h
+include/kissfft/kiss_fftr.h
+include/kissfft/kissfft.hh
+lib/cmake/kissfft/kissfft-config-version.cmake
+lib/cmake/kissfft/kissfft-config.cmake
+lib/cmake/kissfft/kissfft-float-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/kissfft/kissfft-float-shared-targets.cmake
+lib/libkissfft-float.so
+lib/libkissfft-float.so.131
+lib/libkissfft-float.so.131.1.0
+libdata/pkgconfig/kissfft-float.pc
