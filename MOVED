@@ -5745,7 +5745,6 @@ graphics/py-agx-emulsion|graphics/py-spektrafilm|2026-10-18|Renamed upstream to 
 cad/yosys-systemverilog||2026-10-19|Broken for years in tree
 deskutils/gnome-todo||2026-10-19|Broken for several months in tree
 devel/rubygem-mmap2||2026-10-19|Broken for over a year in tree
-filesystems/darling-dmg||2026-10-19|Broken for over a year in tree
 games/wyrmsun||2026-10-19|Depends on games/wyrmgus which has been broken for more than 5 months
 games/wyrmgus||2026-10-19|Broken for several months in tree
 multimedia/wl-screenrec||2026-10-19|Broken for more than 5 months

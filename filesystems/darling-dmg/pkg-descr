@@ -1,0 +1,7 @@
+FUSE module for .dmg files (containing an HFS+ filesystem)
+
+Supported file types
+
+* DMG (UDIF) files containing an Apple Disk Image.
+* Apple Disk Images containing an HFS+/HFSX file system.
+* HFS+/HFSX file systems (incl. file systems embedded within HFS).
