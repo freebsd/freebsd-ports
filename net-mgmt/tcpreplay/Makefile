@@ -1,5 +1,5 @@
 PORTNAME=	tcpreplay
-DISTVERSION=	4.6.1
+DISTVERSION=	4.6.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/appneta/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -8,7 +8,7 @@ COMMENT=	Tool to replay saved packet capture files
 WWW=		https://github.com/appneta/tcpreplay
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/docs/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libdnet.so:net/libdnet \
 		libopts.so:devel/autogen
