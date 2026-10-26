@@ -70,7 +70,6 @@
     SUBDIR += lxqt-session
     SUBDIR += lxqt-wayland-session
     SUBDIR += lxsession
-    SUBDIR += magpie
     SUBDIR += mango
     SUBDIR += marco
     SUBDIR += mcwm

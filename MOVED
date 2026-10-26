@@ -5775,3 +5775,4 @@ x11/budgie-desktop||2026-10-26|Broken for more than 5 months in tree
 x11/budgie-screensaver||2026-10-26|Broken for more than 5 months in tree
 x11/budgie-session||2026-10-26|Broken for more than 5 months in tree
 x11/budgie||2026-10-26|Broken for more than 5 months in tree
+x11-wm/magpie||2026-10-26|Removed as Budgie desktop is no longer in tree
