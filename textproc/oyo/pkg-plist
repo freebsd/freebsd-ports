@@ -34,6 +34,7 @@ bin/oy-profile
 %%PORTDOCS%%%%DOCSDIR%%/assets/fg_theme_bg_true_hi_none.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/fg_theme_bg_true_hi_text.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/fg_theme_bg_true_word.png
+%%PORTDOCS%%%%DOCSDIR%%/assets/incremental-review.gif
 %%PORTDOCS%%%%DOCSDIR%%/assets/preview.csv
 %%PORTDOCS%%%%DOCSDIR%%/assets/preview.json
 %%PORTDOCS%%%%DOCSDIR%%/assets/preview.png
