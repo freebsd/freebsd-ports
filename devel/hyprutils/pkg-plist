@@ -37,6 +37,7 @@ include/hyprutils/signal/Signal.hpp
 include/hyprutils/string/ConstVarList.hpp
 include/hyprutils/string/Numeric.hpp
 include/hyprutils/string/String.hpp
+include/hyprutils/string/UTF8.hpp
 include/hyprutils/string/VarList.hpp
 include/hyprutils/string/VarList2.hpp
 include/hyprutils/utils/ScopeGuard.hpp
