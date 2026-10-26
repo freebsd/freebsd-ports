@@ -1,5 +1,6 @@
 PORTNAME=	openmolcas
-DISTVERSION=	26.06
+DISTVERSIONPREFIX=	v
+DISTVERSION=	26.10
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +28,6 @@ USE_GCC=	yes # see https://gitlab.com/Molcas/OpenMolcas/-/issues/351
 USE_GITLAB=	yes
 GL_ACCOUNT=	Molcas
 GL_PROJECT=	OpenMolcas
-GL_TAGNAME=	8355057f32d65706a35996b5ab07cac2962bb728
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	Reference-LAPACK:lapack:04b044e0:lapack/External/lapack \
