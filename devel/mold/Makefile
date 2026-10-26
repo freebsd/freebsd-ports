@@ -1,6 +1,6 @@
 PORTNAME=	mold
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.40.3
+DISTVERSION=	3.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -10,77 +10,53 @@ WWW=		https://github.com/rui314/mold
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	armhf armv7 i386
-
-LIB_DEPENDS=	libmimalloc.so:devel/mimalloc \
-		libtbb.so:devel/onetbb \
-		libzstd.so:archivers/zstd
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 TEST_DEPENDS=	bash:shells/bash \
 		gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT} \
-		ggrep:textproc/gnugrep \
 		${LOCALBASE}/bin/readelf:devel/binutils
 
-USES=		cmake:testing compiler:c++20-lang localbase:ldflags shebangfix
-SHEBANG_FILES=	test/*.sh
+USES=		cargo shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rui314
+GH_TUPLE=	microsoft:mimalloc:02a2f5df9d7d46d30263b83832eebeeab62dc5fe:mimalloc_v2/../${WRKSRC_crate_mimalloc:T}/libmimalloc-sys/c_src/mimalloc/v2 \
+		microsoft:mimalloc:d4881d338125e1cb7c47ba4cfb398d6f7c0c8d45:mimalloc_v3/../${WRKSRC_crate_mimalloc:T}/libmimalloc-sys/c_src/mimalloc/v3
 
-PLIST_FILES=	bin/ld.mold \
-		bin/mold \
-		lib/mold/mold-wrapper.so \
-		libexec/mold/ld \
-		share/man/man1/ld.mold.1.gz \
-		share/man/man1/mold.1.gz
+SHEBANG_FILES=	tests/*.sh
 
+CARGO_INSTALL=	no
+CARGO_ENV=	TEST_GCC=${LOCALBASE}/bin/gcc${GCC_DEFAULT} \
+		TEST_GXX=${LOCALBASE}/bin/g++${GCC_DEFAULT} \
+		ZSTD_SYS_USE_PKG_CONFIG=1
 
-CMAKE_TESTING_OFF=	MOLD_ENABLE_QEMU_TESTS
+PLIST_FILES=	bin/ld.${PORTNAME} \
+		bin/${PORTNAME} \
+		lib/${PORTNAME}/${PORTNAME}-wrapper.so \
+		libexec/${PORTNAME}/ld \
+		share/man/man1/ld.${PORTNAME}.1.gz \
+		share/man/man1/${PORTNAME}.1.gz
 
-CMAKE_ON=	MOLD_USE_MIMALLOC \
-		MOLD_USE_SYSTEM_MIMALLOC \
-		MOLD_USE_SYSTEM_TBB
+.include <bsd.port.pre.mk>
 
-CMAKE_OFF=	MOLD_USE_MOLD \
-		MOLD_USE_TSAN \
-		MOLD_MOSTLY_STATIC \
-		BUILD_TESTING
+.if ${ARCH} == armv7 || ${ARCH} == i386
+LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
+LDFLAGS+=	-L${LOCALBASE}/lib/gcc${GCC_DEFAULT} -latomic
+.endif
 
-OPTIONS_DEFINE=	ASAN LTO
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/*/${PORTNAME}-wrapper.so \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
+	${RLN} ${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/ld.${PORTNAME}
+	${RLN} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/ld
+	${RLN} ${PORTNAME}.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/ld.${PORTNAME}.1
 
-ASAN_DESC=	Enable Address Sanitizer
-
-ASAN_CMAKE_BOOL=MOLD_USE_ASAN
-
-LTO_CMAKE_BOOL=	MOLD_LTO
-
-pre-test:
-	### BINARY_ALIAS doesn't work for tests so we need to fix it manually
-	@${REINPLACE_CMD} -e 's|OBJCOPY=objcopy|OBJCOPY=${PREFIX}/bin/objcopy|g' \
-	    ${PATCH_WRKSRC}/test/common.inc
-	@${REINPLACE_CMD} -e 's|OBJDUMP=objdump|OBJDUMP=${PREFIX}/bin/objdump|g' \
-	    ${PATCH_WRKSRC}/test/common.inc
-	@${REINPLACE_CMD} -e 's|$$GCC |gcc${GCC_DEFAULT} |g' \
-	    ${PATCH_WRKSRC}/test/*.sh
-	@${REINPLACE_CMD} -e 's|gcc |gcc${GCC_DEFAULT} |g' \
-	    ${PATCH_WRKSRC}/test/*.sh
-	@${REINPLACE_CMD} -e 's|grep -|${PREFIX}/bin/ggrep -|g' \
-	    ${PATCH_WRKSRC}/test/*.sh
-	@${REINPLACE_CMD} -e 's|readelf |${PREFIX}/bin/readelf |g' \
-	    ${PATCH_WRKSRC}/test/*.sh
-	### Depends on LLVMgold plugin which isn't built by binutils
-	@${RM} ${WRKSRC}/test/defsym-lto.sh
-	@${RM} ${WRKSRC}/test/lto-archive.sh
-	@${RM} ${WRKSRC}/test/lto-archive2.sh
-	@${RM} ${WRKSRC}/test/lto-dso.sh
-	@${RM} ${WRKSRC}/test/lto-version-script.sh
-	@${RM} ${WRKSRC}/test/symbol-version-lto.sh
-	### These tests errors out with "Unsupported relocation type 36 in non-PLT relocations"
-	@${RM} ${WRKSRC}/test/tlsdesc.sh
-	@${RM} ${WRKSRC}/test/tlsdesc-dlopen.sh
-	@${RM} ${WRKSRC}/test/tlsdesc-initial-exec.sh
-	@${RM} ${WRKSRC}/test/tlsdesc-local-dynamic.sh
-	@${RM} ${WRKSRC}/test/wrap-lto.sh
-	@${RM} ${WRKSRC}/test/x86_64_tlsdesc.sh
-	@${RM} ${WRKSRC}/test/x86_64_tls-module-base.sh
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
