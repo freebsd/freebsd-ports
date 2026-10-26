@@ -1,8 +1,7 @@
 PORTNAME=	tcl
-DISTVERSION=	${TCL_VERSION}${TCL_RC}
+DISTVERSION=	9.1.0
 CATEGORIES=	lang
-MASTER_SITES=	SF/tcl/Tcl/${TCL_VERSION}
-PKGNAMESUFFIX=	${SHORT_TCL_VER}
+MASTER_SITES=	SF/tcl/Tcl/${DISTVERSION}
 DISTNAME=	${PORTNAME}${DISTVERSION}-src
 
 MAINTAINER=	tcltk@FreeBSD.org
@@ -34,7 +33,7 @@ OPTIONS_SUB=	yes
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${TCL_VERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}${DISTVERSION}
 WRKSRC_SUBDIR=	unix
 
 ALL_TARGET=	binaries libraries doc
@@ -43,6 +42,7 @@ INSTALL_TARGET=	install-libraries \
 		install-msgs \
 		install-private-headers
 
+TCL_VER=	${DISTVERSION:R}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
@@ -50,15 +50,9 @@ CONFIGURE_ARGS=	--enable-shared \
 		--includedir=${PREFIX}/include/tcl${TCL_VER} \
 		--with-system-libtommath
 LDFLAGS+=	-Wl,-z,muldefs
+PLIST_SUB+=	TCL_VER=${TCL_VER}
 
-TCL_VERSION=	9.0.4
-TCL_VER=	${TCL_VERSION:R}
-TCL_RC=
-SHORT_TCL_VER=	${TCL_VER:S/.//}
-MAN_SUFFIX=	${PKGBASE}
-
-PLIST_SUB=	TCL_VER=${TCL_VER} \
-		PKGNAMESUFFIX=${PKGNAMESUFFIX}
+MAN_SUFFIX=	${PORTNAME}
 
 TCLMAN_INSTALL_TARGET=	install-doc
 TZDATA_INSTALL_TARGET=	install-tzdata
@@ -84,25 +78,17 @@ post-patch:
 	    's|@TCL_BUILD_LIB_SPEC@|@TCL_LIB_SPEC@|; \
 	     s|@TCL_BUILD_STUB_LIB_SPEC@|@TCL_STUB_LIB_SPEC@|; \
 	     s|@TCL_BUILD_STUB_LIB_PATH@|@TCL_STUB_LIB_PATH@|; \
-	     s|@TCL_SRC_DIR@|${PREFIX}/include/tcl${TCL_VER}|' \
+	     s|@TCL_SRC_DIR@|${PREFIX}/lib/tcl${TCL_VER}|' \
 	     ${WRKSRC}/tclConfig.sh.in
-	${REINPLACE_CMD} \
-		-e 's|libtclstub.a|libtclstub${TCL_VER}.a|' \
-		-e 's|-ltclstub|-ltclstub${TCL_VER}|' \
-		-e 's|-O2||' \
-		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 	${REINPLACE_CMD} \
 		-e '/^INSTALL_PACKAGE_TARGETS/d' \
 		-e '/^CONFIG_INSTALL_DIR/s|= .*$$|= $${SCRIPT_INSTALL_DIR}|' \
 		-e 's|$$(LIB_INSTALL_DIR)/pkgconfig|${STAGEDIR}${PREFIX}/libdata/pkgconfig|g' \
-		-e 's|pkgconfig/tcl.pc|pkgconfig/tcl${SHORT_TCL_VER}.pc|' \
 		-e 's|strip -x|strip --strip-unneeded|' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} \
 		-e '/Target=/s|.$$Section$$Suffix|$$Suffix.$$Section|' \
 		${WRKSRC}/installManPage
-
-post-install:
-	${LN} -fs libtcl${TCL_VER}.so ${STAGEDIR}${PREFIX}/lib/libtcl${SHORT_TCL_VER}.so
 
 .include <bsd.port.mk>

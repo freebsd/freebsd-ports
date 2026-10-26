@@ -387,7 +387,7 @@
     SUBDIR += tcl-manual
     SUBDIR += tcl-wrapper
     SUBDIR += tcl86
-    SUBDIR += tcl90
+    SUBDIR += tcl
     SUBDIR += tclX
     SUBDIR += tolua
     SUBDIR += tolua++

@@ -41,6 +41,7 @@ PORTSCOUT=	limit:^3\.
 post-patch:
 	@${REINPLACE_CMD} "/INSTALL_LIBRARY=/s|'\$$| -s'|" \
 	    ${WRKSRC}/tclconfig/tcl.m4
+	@${REINPLACE_CMD} "/TCL_LIBRARY=/d" ${WRKSRC}/Makefile.in
 	@${FIND} ${WRKSRC}/doc/man -name "*.n" | \
 		while read f; \
 		do \

@@ -205,7 +205,7 @@ SSL_DEFAULT?=	base
 .  endif
 # Possible values: default, sssd
 SUDO_DEFAULT?=		default
-# Possible values: 8.6, 9.0
+# Possible values: 8.6, 9.1
 TCLTK_DEFAULT?=		8.6
 # Possible values: 6, 7
 VARNISH_DEFAULT?=	6

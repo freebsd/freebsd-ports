@@ -5791,3 +5791,5 @@ mail/mailman-postfix||2026-11-01|Has expired: Uses expired lang/python27
 mail/mailman||2026-11-01|Has expired: Uses expired lang/python27
 dns/py-dnspython1||2026-11-01|Has expired: Depends on expired lang/cython0
 lang/cython0|lang/cython|2026-11-01|Has expired: Legacy version. Does not work with newer Python versions. Use lang/cython instead
+lang/tcl90|lang/tcl|2026-11-02|Tcl 9.x will be provided as a single port
+x11-toolkits/tk90|x11-toolkits/tk|2026-11-02|Tk 9.x will be provided as single port
