@@ -1,6 +1,6 @@
---- agent/anthropic_adapter.py.orig	2026-09-24 10:08:47 UTC
+--- agent/anthropic_adapter.py.orig	2026-10-23 02:24:27 UTC
 +++ agent/anthropic_adapter.py
-@@ -338,9 +338,37 @@ def _attribution_headers() -> Dict[str, str]:
+@@ -375,9 +375,37 @@ def _attribution_headers() -> dict[str, str]:
      }
  
  
@@ -40,14 +40,12 @@
      read = timeout if (isinstance(timeout, (int, float)) and timeout > 0) else 900.0
      return Timeout(timeout=float(read), connect=10.0)
  
-@@ -372,7 +400,9 @@ def _build_anthropic_client_with_bearer_hook(
-     normalize_proxy_env_vars()
-     from agent.azure_identity_adapter import build_bearer_http_client
-     normalized_base_url, kwargs = _base_client_kwargs(base_url, timeout)
--    kwargs["http_client"] = build_bearer_http_client(token_provider, timeout=kwargs["timeout"])
-+    kwargs["http_client"] = build_bearer_http_client(
-+        token_provider, httpx_mod=_sdk_httpx(), timeout=kwargs["timeout"]
-+    )
+@@ -414,7 +442,7 @@ def _build_anthropic_client_with_bearer_hook(
+     # auth header follows each mint, the OAuth identity below the first one: a key_cmd switching
+     # between OAuth and a Console key mid-session needs a client rebuild.
+     kwargs["http_client"] = build_bearer_http_client(
+-        token_provider, timeout=kwargs["timeout"],
++        token_provider, httpx_mod=_sdk_httpx(), timeout=kwargs["timeout"],
+         sends_as_api_key=(lambda token: not _is_oauth_token(token)) if is_native_anthropic_host(base_url) else None,
+     )
      kwargs["auth_token"] = "entra-id-bearer-via-http-hook"
-     betas = _common_betas_for_base_url(normalized_base_url, drop_context_1m_beta=drop_context_1m_beta)
-     from agent.anthropic_credentials import anthropic_route_is_oauth
