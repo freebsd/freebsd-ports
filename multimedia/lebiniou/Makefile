@@ -1,7 +1,7 @@
 PORTNAME=	lebiniou
 DISTVERSIONPREFIX=	version-
 DISTVERSION=	3.67.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia graphics
 
 MAINTAINER=	thierry@FreeBSD.org

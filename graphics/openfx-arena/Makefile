@@ -1,6 +1,7 @@
 PORTNAME=	openfx-arena
 PORTVERSION=	2.5.0
 DISTVERSIONPREFIX=	Natron-
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	freebsd@sysctl.cz
