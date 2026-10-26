@@ -1,0 +1,5 @@
+LLD is the LLVM linker, a drop-in replacement for system linkers
+supporting ELF, COFF, Mach-O, MinGW and WebAssembly.
+
+It is part of the LLVM 20 toolchain, built standalone against
+devel/llvm20 and installed into ${PREFIX}/llvm20.

@@ -19,7 +19,7 @@ LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Requires 64-bit architecture
 
-BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT}
 
 USES=		cargo
 USE_GITHUB=	yes

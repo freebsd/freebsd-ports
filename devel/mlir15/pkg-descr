@@ -1,0 +1,6 @@
+MLIR (Multi-Level Intermediate Representation) is a reusable and
+extensible compiler infrastructure for building domain specific
+compilers.
+
+It is part of the LLVM 15 toolchain, built standalone against
+devel/llvm15 and installed into ${PREFIX}/llvm15.

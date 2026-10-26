@@ -1,0 +1,5 @@
+Flang-RT is the runtime library for Fortran programs compiled with
+flang.
+
+It is part of the LLVM 23 toolchain, built standalone against
+devel/llvm23 and installed into ${PREFIX}/llvm23.

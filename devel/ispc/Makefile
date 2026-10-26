@@ -1,6 +1,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.31.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 LIB_DEPENDS=	${LLVM_LIBLLVM}:devel/llvm${LLVM_VERSION} \
 		libtbb.so:devel/onetbb
 
-USES=		bison cmake compiler:c++17-lang llvm:lib,min=20,max=20 python:build,test shebangfix
+USES=		bison cmake compiler:c++17-lang llvm:lib,min=20,max=20,clang python:build,test shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

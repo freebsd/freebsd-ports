@@ -42,7 +42,7 @@ CXXFLAGS+=	-DMSGPACK_NO_BOOST # workaround for the above
 .include <bsd.port.pre.mk>
 
 # veles needs clang-format and clang-tidy that are only provided by the port
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:lang/clang${LLVM_DEFAULT}
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CPP=		clang-cpp${LLVM_DEFAULT}

@@ -1,0 +1,11 @@
+PORTREVISION=	0
+
+LLVM_COMPONENT=	openmp
+LLVM_VERDIR=	${.CURDIR}/../../devel/llvm17
+
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
+NOT_FOR_ARCHS_REASON=	not supported on 32-bit platforms
+
+.include "${.CURDIR}/../../devel/llvm/Makefile.component"
+
+.include <bsd.port.mk>

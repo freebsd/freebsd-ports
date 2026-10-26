@@ -1,7 +1,7 @@
 PORTNAME=	pocl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 
 MAINTAINER=	ohartmann@walstatt.org
@@ -85,17 +85,19 @@ DOCS_CMAKE_OFF=		-DENABLE_DOCS=OFF
 DOCS_PDF_IMPLIES=	DOCS
 DOCS_PDF_BROKEN=	TeX error: Unicode character ≈ (U+2248) not set up for use with LaTeX.
 
-LLVM17_USES=		llvm:17,build,lib,run
-LLVM18_USES=		llvm:18,build,lib,run
-LLVM19_USES=		llvm:19,build,lib,run
-LLVM20_USES=		llvm:20,build,lib,run
-LLVM21_USES=		llvm:21,build,lib,run
-LLVMDEFAULT_USES=	llvm:min=17,max=21,build,lib,run
+LLVM17_USES=		llvm:17,build,lib,run,clang,lld
+LLVM18_USES=		llvm:18,build,lib,run,clang,lld
+LLVM19_USES=		llvm:19,build,lib,run,clang,lld
+LLVM20_USES=		llvm:20,build,lib,run,clang,lld
+LLVM21_USES=		llvm:21,build,lib,run,clang,lld
+LLVMDEFAULT_USES=	llvm:min=17,max=21,build,lib,run,clang,lld
 
 LTTNG_LIB_DEPENDS=	liblttng-ust.so:sysutils/lttng-ust
 LTTNG_CMAKE_ON=		-DENABLE_LTTNG=YES
 LTTNG_CMAKE_OFF=	-DENABLE_LTTNG=NO
 
+OMP_BUILD_DEPENDS=	${LLVM_PREFIX}/lib/libomp.so:devel/openmp${LLVM_VERSION}
+OMP_RUN_DEPENDS=	${LLVM_PREFIX}/lib/libomp.so:devel/openmp${LLVM_VERSION}
 OMP_CMAKE_ON=	-DENABLE_HOST_CPU_DEVICES_OPENMP=YES
 OMP_CMAKE_OFF=	-DENABLE_HOST_CPU_DEVICES_OPENMP=NO
 

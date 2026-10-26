@@ -16,7 +16,7 @@ WWW=		https://vllm.ai/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/llvm19/bin/clang:devel/llvm19 \
+BUILD_DEPENDS=	${LOCALBASE}/llvm19/bin/clang:lang/clang19 \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ninja>=1.13:devel/py-ninja@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=24.2:devel/py-packaging@${PY_FLAVOR} \

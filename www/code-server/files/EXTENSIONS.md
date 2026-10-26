@@ -23,8 +23,8 @@ packing lists.
 |---|---|---|---|
 | Rust | `rust-lang.rust-analyzer` | `pkg install rust-analyzer` | `"rust-analyzer.server.path": "/usr/local/bin/rust-analyzer"` |
 | Go | `golang.go` | `pkg install go gopls delve` | `"go.alternateTools": { "gopls": "/usr/local/bin/gopls", "dlv": "/usr/local/bin/dlv" }` |
-| C/C++ | `llvm-vs-code-extensions.vscode-clangd` | `pkg install llvm21` | `"clangd.path": "/usr/local/llvm21/bin/clangd"` |
-| C/C++ debug | `llvm-vs-code-extensions.lldb-dap` | `pkg install llvm21` | `"lldb-dap.executable-path": "/usr/local/llvm21/bin/lldb-dap"` |
+| C/C++ | `llvm-vs-code-extensions.vscode-clangd` | `pkg install clang21` | `"clangd.path": "/usr/local/llvm21/bin/clangd"` |
+| C/C++ debug | `llvm-vs-code-extensions.lldb-dap` | `pkg install lldb21` | `"lldb-dap.executable-path": "/usr/local/llvm21/bin/lldb-dap"` |
 | Python | `ms-python.python` | `pkg install python` | `"python.defaultInterpreterPath": "/usr/local/bin/python3"` (the extension needs a findable interpreter; for type checking add `ms-pyright.pyright`, pure JS, no setup) |
 | Java | `redhat.java` | `pkg install openjdk21` | `"java.jdt.ls.java.home": "/usr/local/openjdk21"` |
 | Lua | `sumneko.lua` | `pkg install lua-language-server` | `"Lua.misc.executablePath": "/usr/local/bin/lua-language-server"` |
@@ -35,7 +35,7 @@ packing lists.
 | Zig | `ziglang.vscode-zig` | `pkg install zig zls` | `"zig.path": "/usr/local/bin/zig", "zig.zls.path": "/usr/local/bin/zls"` |
 | Ruby | `shopify.ruby-lsp` | `pkg install ruby rubygem-ruby-lsp` | `"rubyLsp.rubyExecutablePath": "/usr/local/bin/ruby"` |
 
-Note: versioned package names and paths (`llvm21`, `openjdk21`, the
+Note: versioned package names and paths (`clang21`, `openjdk21`, the
 `py312-` prefix) follow the current ports defaults; when the default
 changes, check the new path with `pkg info -l <package>`.
 

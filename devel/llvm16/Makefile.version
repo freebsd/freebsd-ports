@@ -1,0 +1,7 @@
+DISTVERSION=	16.0.6
+LLVM_SUFFIX=	16
+MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
+		https://releases.llvm.org/${DISTVERSION}/
+
+# LLVM likes to pick up ${LOCALBASE}/lib/libtinfo.so.*
+CMAKE_ARGS+=	-DLLVM_ENABLE_TERMINFO=OFF

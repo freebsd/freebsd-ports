@@ -1,0 +1,5 @@
+@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<
+@comment Run 'make build-plist' after staging to regenerate
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/lib/%%CONFIGURE_TARGET%%/libflang_rt.runtime.a
+@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
+@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi

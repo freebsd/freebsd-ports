@@ -46,7 +46,7 @@ pre-build:
 .if ${CHOSEN_COMPILER_TYPE} == clang
 # clang13 runs out of memory
 LLVM_VER=	12
-BUILD_DEPENDS+=	clang++${LLVM_VER}:devel/llvm${LLVM_VER}
+BUILD_DEPENDS+=	clang++${LLVM_VER}:lang/clang${LLVM_VER}
 CC=	${LOCALBASE}/bin/clang${LLVM_VER}
 CXX=	${LOCALBASE}/bin/clang++${LLVM_VER}
 .endif

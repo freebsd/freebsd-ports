@@ -1,6 +1,7 @@
 PORTNAME=	lfortran
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.66.0
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -24,7 +25,7 @@ RUN_DEPENDS=	dwarfdump:devel/dwarfdump
 
 USE_GITHUB=	yes
 
-USES=		bison cmake:testing compiler:c++17-lang llvm:${LLVM_VERSION},lib	\
+USES=		bison cmake:testing compiler:c++17-lang llvm:${LLVM_VERSION},build,lib,mlir	\
 		pkgconfig python:build ssl shebangfix
 SHEBANG_GLOB=	*.py *.sh
 BINARY_ALIAS=	python=${PYTHON_CMD}

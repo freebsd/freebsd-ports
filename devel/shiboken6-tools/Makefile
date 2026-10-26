@@ -1,5 +1,6 @@
 PORTNAME=	shiboken6-tools
 DISTVERSION=	${PYSIDE6_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/pyside6/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libxslt.so:textproc/libxslt
 
-USES=		cmake compiler:c++17-lang gnome llvm:lib,min=17,max=22,noexport \
+USES=		cmake compiler:c++17-lang gnome llvm:build,lib,clang,min=17,max=22,noexport \
 		python qt:6 tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	${PREFIX}/${PORTNAME}

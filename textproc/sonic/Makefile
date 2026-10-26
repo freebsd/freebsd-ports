@@ -10,7 +10,7 @@ WWW=		https://github.com/valeriansaliou/sonic
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT}
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo compiler:c++11-lang gmake

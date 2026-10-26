@@ -1,6 +1,6 @@
 PORTNAME=	acme
 DISTVERSION=	0.4.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nginx/nginx-${PORTNAME}/releases/download/v${PORTVERSION}/:acme \
 		https://freenginx.org/download/:freenginx
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/nginx:www/freenginx-devel
 
-USES=		cargo cpe llvm:lib,noexport ssl
+USES=		cargo cpe llvm:build,lib,clang,noexport ssl
 
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 

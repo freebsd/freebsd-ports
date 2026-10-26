@@ -1,0 +1,38 @@
+@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<
+@comment Run 'make build-plist' after staging to regenerate
+bin/ld.lld%%LLVM_SUFFIX%%
+bin/ld64.lld%%LLVM_SUFFIX%%
+bin/lld%%LLVM_SUFFIX%%
+bin/lld-link%%LLVM_SUFFIX%%
+bin/wasm-ld%%LLVM_SUFFIX%%
+llvm%%LLVM_SUFFIX%%/bin/ld
+llvm%%LLVM_SUFFIX%%/bin/ld.lld
+llvm%%LLVM_SUFFIX%%/bin/ld64.lld
+llvm%%LLVM_SUFFIX%%/bin/lld
+llvm%%LLVM_SUFFIX%%/bin/lld-link
+llvm%%LLVM_SUFFIX%%/bin/wasm-ld
+llvm%%LLVM_SUFFIX%%/include/lld/Common/Args.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/Arrays.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/CommonLinkerContext.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/DWARF.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/Driver.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/ErrorHandler.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/Filesystem.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/LLVM.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/Memory.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/Reproduce.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/Strings.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/TargetOptionsCommandFlags.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/Timer.h
+llvm%%LLVM_SUFFIX%%/include/lld/Common/Version.h
+llvm%%LLVM_SUFFIX%%/lib/cmake/lld/LLDConfig.cmake
+llvm%%LLVM_SUFFIX%%/lib/cmake/lld/LLDTargets-%%CMAKE_BUILD_TYPE%%.cmake
+llvm%%LLVM_SUFFIX%%/lib/cmake/lld/LLDTargets.cmake
+llvm%%LLVM_SUFFIX%%/lib/liblldCOFF.a
+llvm%%LLVM_SUFFIX%%/lib/liblldCommon.a
+llvm%%LLVM_SUFFIX%%/lib/liblldELF.a
+llvm%%LLVM_SUFFIX%%/lib/liblldMachO.a
+llvm%%LLVM_SUFFIX%%/lib/liblldMinGW.a
+llvm%%LLVM_SUFFIX%%/lib/liblldWasm.a
+@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
+@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi

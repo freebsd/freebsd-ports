@@ -1,5 +1,6 @@
 PORTNAME=	emscripten
 DISTVERSION=	6.0.3
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +15,9 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	llvm-devel>0:devel/llvm-devel
 RUN_DEPENDS=	bash:shells/bash \
 		binaryen>0:devel/binaryen \
-		llvm-devel>0:devel/llvm-devel
+		llvm-devel>0:devel/llvm-devel \
+		clang-devel:lang/clang-devel \
+		wasm-ld-devel:devel/lld-devel
 		# the upstream requires to use either the latest llvm version, or their own llvm fork called emscripten-fastcomp
 
 USES=		nodejs:run python shebangfix

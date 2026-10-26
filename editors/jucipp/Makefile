@@ -1,6 +1,7 @@
 PORTNAME=	jucipp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	info@babaei.net
@@ -12,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libboost_filesystem.so:devel/boost-libs \
-		libclang.so:devel/llvm${LLVM_DEFAULT} \
+		libclang.so:${CLANG_PORT} \
 		libgit2.so:devel/libgit2 \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	uctags:devel/universal-ctags
 
 USES=		cmake compiler:c++14-lang desktop-file-utils gnome \
-		llvm:build,noexport,run pkgconfig
+		llvm:build,noexport,run,clang pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	cppit
 GL_TUPLE=	cppit:libclangmm:8dca5d81af05d5184da92a2ca2ce175b5577de25:libclangmm/lib/libclangmm \

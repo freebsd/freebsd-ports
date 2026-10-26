@@ -160,7 +160,7 @@ CFLAGS+=	-Wno-deprecated-builtins -Wno-inline-asm -Wno-unknown-attributes
 MAKE_ENV+=	USE_CLANG=true
 .if ${ARCH:Mpowerpc64*}
 LLVM_VER=	12
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
+BUILD_DEPENDS+=	clang${LLVM_VER}:lang/clang${LLVM_VER}
 CC=		${LOCALBASE}/bin/clang${LLVM_VER}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
 .endif

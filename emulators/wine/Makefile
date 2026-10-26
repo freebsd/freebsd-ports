@@ -20,7 +20,7 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc2
 
 # Only devel/llvm17 and later come with necessary include files - PR274542
 USES=		bison cpe desktop-file-utils gmake \
-		llvm:min=17,build,noexport localbase \
+		llvm:min=17,build,clang,lld,noexport localbase \
 		pkgconfig sdl shebangfix tar:xz
 CPE_VENDOR=	winehq
 USE_GCC=	yes

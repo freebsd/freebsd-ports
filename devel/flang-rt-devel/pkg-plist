@@ -1,0 +1,20 @@
+@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<
+@comment Run 'make build-plist' after staging to regenerate
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/__cuda_builtins.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/__cuda_device.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/__fortran_builtins.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/__fortran_ieee_exceptions.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/__fortran_type_info.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/cooperative_groups.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/cuda_runtime_api.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/cudadevice.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/flang_debug.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/ieee_arithmetic.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/ieee_exceptions.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/ieee_features.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/iso_c_binding.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/iso_fortran_env.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/finclude/flang/%%CONFIGURE_TARGET%%/iso_fortran_env_impl.mod
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/lib/%%CONFIGURE_TARGET%%/libflang_rt.runtime.a
+@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
+@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi

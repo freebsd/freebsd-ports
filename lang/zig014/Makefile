@@ -1,5 +1,6 @@
 PORTNAME=	zig
 DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
 		https://ziglang.org/builds/
@@ -18,7 +19,9 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	not yet supported
 
 BUILD_DEPENDS=	icu>=71:devel/icu \
-		llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
+		llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER} \
+		clang${_LLVM_VER}:lang/clang${_LLVM_VER} \
+		ld.lld${_LLVM_VER}:devel/lld${_LLVM_VER}
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
@@ -34,7 +37,8 @@ OPTIONS_DEFAULT=	DOCS
 
 STATIC_DESC=	sets ZIG_STATIC to avoid 800MiB LLVM runtime dependency
 
-STATIC_RUN_DEPENDS_OFF=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER}
+STATIC_RUN_DEPENDS_OFF=	llvm${_LLVM_VER}>=0:devel/llvm${_LLVM_VER} \
+			clang${_LLVM_VER}:lang/clang${_LLVM_VER}
 STATIC_CMAKE_BOOL=	ZIG_STATIC
 STATIC_LDFLAGS=		-licudata -licuuc -llzma -lm -lmd -lxml2 -lz -lzstd
 STATIC_LIB_DEPENDS+=	libxml2.so:textproc/libxml2

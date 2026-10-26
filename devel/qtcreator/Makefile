@@ -1,5 +1,6 @@
 PORTNAME=	qtcreator
 DISTVERSION=	20.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake compiler:c++20-lang desktop-file-utils gl \
-		libarchive llvm:build,run,noexport,min=17 pkgconfig \
+		libarchive llvm:build,run,clang,noexport,min=17 pkgconfig \
 		python qt:6 shebangfix tar:xz
 USE_GL=		opengl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}

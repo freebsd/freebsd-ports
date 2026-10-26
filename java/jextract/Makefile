@@ -1,5 +1,6 @@
 PORTNAME=	jextract
 DISTVERSION=	g20260826
+PORTREVISION=	1
 CATEGORIES=	java devel
 
 MAINTAINER=	igor@kolesnik.es
@@ -10,7 +11,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gradle:devel/gradle
 
-USES=		java llvm:build,run
+USES=		java llvm:build,run,clang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openjdk

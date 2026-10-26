@@ -210,3 +210,14 @@ COMPILER_RT_LIBS_${CRT_ARCH}:= ${COMPILER_RT_LIBS_${CRT_ARCH}} ${RT_LIBS_${CRT_A
 .endif
 .endfor
 
+# Sanitizer ignore lists installed into share/ of the resource directory:
+# hwasan_ignorelist.txt on every architecture but powerpc, the others
+# along with their runtime.  powerpc has none and is left undefined.
+.for CRT_ARCH in ${RT_ARCHES:Npowerpc}
+COMPILER_RT_SHARE_${CRT_ARCH}=	hwasan_ignorelist.txt
+.for RT in asan cfi msan
+.if ${COMPILER_RT_LIBS_${CRT_ARCH}:Mlibclang_rt.${RT}.a}
+COMPILER_RT_SHARE_${CRT_ARCH}+=	${RT}_ignorelist.txt
+.endif
+.endfor
+.endfor

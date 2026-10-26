@@ -21,7 +21,7 @@
    if (os === "darwin") return `Install with: brew install llvm@${LLVM_MAJOR}`;
    if (os === "linux")
      return `Install with: apt install clang-${LLVM_MAJOR} lld-${LLVM_MAJOR}  (or equivalent for your distro)`;
-+  if (os === "freebsd") return `Install with: pkg install llvm${LLVM_MAJOR}`;
++  if (os === "freebsd") return `Install with: pkg install clang${LLVM_MAJOR} lld${LLVM_MAJOR}`;
    if (os === "windows") return `Install LLVM ${LLVM_VERSION} from https://github.com/llvm/llvm-project/releases`;
    return "";
  }

@@ -1,5 +1,6 @@
 PORTNAME=	include-what-you-use
 DISTVERSION=	0.26
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		https://include-what-you-use.org
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-USES=		cmake llvm:${LLVM_VER},build,run ncurses python:run shebangfix
+USES=		cmake llvm:${LLVM_VER},build,run,clang ncurses python:run shebangfix
 USE_GITHUB=	yes
 
 SHEBANG_FILES=	fix_includes.py \

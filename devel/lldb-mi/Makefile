@@ -1,5 +1,6 @@
 PORTNAME=	lldb-mi
 DISTVERSION=	g20250923
+PORTREVISION=	1
 CATEGORIES=	devel lang
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		https://lldb.llvm.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-USES=		cmake llvm:lib,noexport
+USES=		cmake llvm:build,lib,lldb,noexport
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	lldb-tools

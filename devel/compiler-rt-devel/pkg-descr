@@ -1,0 +1,6 @@
+compiler-rt provides the clang builtins, sanitizer, profile, XRay and
+fuzzer runtime libraries.  They are installed into the clang resource
+directory.
+
+It is part of the LLVM-devel toolchain, built standalone against
+devel/llvm-devel and installed into ${PREFIX}/llvm-devel.

@@ -1,4 +1,5 @@
 LLVM_COMMANDS=	\
+		clang-offload-packager \
 		dsymutil \
 		llc \
 		lli \
@@ -80,7 +81,6 @@ LLVM_COMMANDS=	\
 CLANG_COMMANDS=	\
 		amdgpu-arch \
 		analyze-build \
-		c-index-test \
 		clang \
 		clang++ \
 		clang-check \
@@ -88,15 +88,17 @@ CLANG_COMMANDS=	\
 		clang-dxc \
 		clang-extdef-mapping \
 		clang-format \
+		clang-installapi \
 		clang-linker-wrapper \
+		clang-nvlink-wrapper \
 		clang-offload-bundler \
-		clang-offload-packager \
 		clang-repl \
 		clang-scan-deps \
 		clang-ssaf-analyzer \
 		clang-ssaf-format \
 		clang-ssaf-linker \
 		clang-ssaf-src-edit-merge \
+		clang-sycl-linker \
 		clang-tblgen \
 		diagtool \
 		hmaptool \
@@ -114,12 +116,9 @@ EXTRAS_COMMANDS= \
 		clang-doc \
 		clang-include-cleaner \
 		clang-include-fixer \
-		clang-installapi \
 		clang-move \
-		clang-nvlink-wrapper \
 		clang-query \
 		clang-reorder-fields \
-		clang-sycl-linker \
 		clang-tidy \
 		find-all-symbols \
 		modularize \
@@ -157,11 +156,8 @@ LLDB_COMMANDS=	\
 		yaml2macho-core
 
 MLIR_COMMANDS=	\
-		mlir-cat \
 		mlir-irdl-to-cpp \
 		mlir-lsp-server \
-		mlir-minimal-opt \
-		mlir-minimal-opt-canonicalize \
 		mlir-opt \
 		mlir-pdll \
 		mlir-pdll-lsp-server \
@@ -171,7 +167,6 @@ MLIR_COMMANDS=	\
 		mlir-runner \
 		mlir-src-sharder \
 		mlir-tblgen \
-		mlir-transform-opt \
 		mlir-translate \
 		tblgen-lsp-server \
 		tblgen-to-irdl

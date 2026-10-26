@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		bash:shells/bash \
 		swig:devel/swig \
 		${PYTHON_PKGNAMEPREFIX}clang>0:devel/py-clang@${PY_FLAVOR} \
-		${LOCALBASE}/llvm16/lib/libclang.so.16:devel/llvm16
+		${LOCALBASE}/llvm16/lib/libclang.so.16:lang/clang16
 
 USES=		gmake gettext-runtime python
 USE_PYTHON=	autoplist concurrent pep517 pytest # 35 tests fail, see https://github.com/pymupdf/PyMuPDF/issues/4960

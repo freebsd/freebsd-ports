@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	wasmer-vm crate currently only supports aarch64 and amd64
 
-BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzstd.so:archivers/zstd
 

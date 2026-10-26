@@ -1,0 +1,5 @@
+Polly is a high-level loop and data-locality optimizer for LLVM based on
+the polyhedral model.  It is installed as the LLVMPolly.so pass plugin.
+
+It is part of the LLVM 21 toolchain, built standalone against
+devel/llvm21 and installed into ${PREFIX}/llvm21.

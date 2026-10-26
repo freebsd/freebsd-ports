@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	amd64 aarch64
 ONLY_FOR_ARCHS_REASON=	only amd64 and aarch64 works so far
 
 BUILD_DEPENDS=	bash>0:shells/bash \
-		clang${_LLVM_VERSION}:devel/llvm${_LLVM_VERSION}
+		clang${_LLVM_VERSION}:lang/clang${_LLVM_VERSION}
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libzstd.so:archivers/zstd
 

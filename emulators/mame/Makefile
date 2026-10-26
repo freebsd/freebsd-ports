@@ -32,7 +32,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libutf8proc.so:textproc/utf8proc \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c++17-lang gmake jpeg llvm:min=16 localbase \
+USES=		compiler:c++17-lang gmake jpeg llvm:min=16,lld localbase \
 		pkgconfig python:build sdl sqlite:3 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev

@@ -1,23 +1,26 @@
 # llvm-morello
 
-LLVM_SUFFIX=	-morello
+PORTREVISION=	1
 
-COMMENT=	LLVM and Clang with support the Arm Morello architecture
-WWW=		https://git.morello-project.org/morello/llvm-project
+LLVM_COMPONENT=	llvm
+LLVM_VERDIR=	${.CURDIR}
 
-DISTINFO_FILE=	${.CURDIR}/distinfo
-DESCR=		${.CURDIR}/pkg-descr
-PLIST=		${.CURDIR}/pkg-plist
+COMMENT=	LLVM core libraries and tools with support for Arm Morello
 
-USE_GITLAB=	yes
-GL_SITE=	https://git.morello-project.org
-GL_ACCOUNT=	morello
-GL_PROJECT=	llvm-project
-GL_TAGNAME=	${LLVM_COMMIT}
+SHEBANG_FILES=	llvm/tools/opt-viewer/opt-diff.py \
+		llvm/tools/opt-viewer/opt-stats.py \
+		llvm/tools/opt-viewer/opt-viewer.py \
+		llvm/tools/opt-viewer/optrecord.py \
+		llvm/utils/lit/lit.py \
+		llvm/utils/llvm-lit/llvm-lit.in
 
-# Regularly tested targets as part of Android development
-LLVM_TARGETS=	AArch64;ARM;BPF;X86
+.include "${.CURDIR}/../llvm/Makefile.component"
+FILESDIR=	${.CURDIR}/../llvm-cheri/files
+PATCHDIR=	${FILESDIR}
+.include <bsd.port.pre.mk>
 
-MASTERDIR=	${.CURDIR}/../llvm-cheri
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 210
+EXTRA_PATCHES+=	${PATCHDIR}/clang21-patch-llvm_tools_sancov_sancov.cpp
+.endif
 
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.post.mk>

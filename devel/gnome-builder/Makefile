@@ -1,6 +1,6 @@
 PORTNAME=	gnome-builder
 PORTVERSION=	47.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -79,7 +79,7 @@ OPTIONS_DEFAULT=	CLANG
 # track the latest llvm/clang version, the config script picks the newest available
 CLANG_DESC=		Build the clang plugin
 CLANG_MESON_TRUE=	plugin_clang
-CLANG_USES=		llvm:build,run
+CLANG_USES=		llvm:build,run,clang
 CLANG_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG}
 
 # 11.1 and older has issues with vala generated code.

@@ -226,7 +226,7 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 #USES+=		llvm:min=11,max=14
 #CC=		clang${LLVM_VERSION}
 #CXX=		clang++${LLVM_VERSION}
-BUILD_DEPENDS+=	clang${VBOX_LLVM_VER}:devel/llvm${VBOX_LLVM_VER}
+BUILD_DEPENDS+=	clang${VBOX_LLVM_VER}:lang/clang${VBOX_LLVM_VER}
 CC=		clang${VBOX_LLVM_VER}
 CXX=		clang++${VBOX_LLVM_VER}
 .if ${LLVM_DEFAULT} < 11 || ${LLVM_DEFAULT} > 14

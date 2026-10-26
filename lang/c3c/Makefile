@@ -12,7 +12,7 @@ LICENSE=	LGPL3 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang llvm:19
+USES=		cmake compiler:c++17-lang llvm:19,lld
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	c3lang

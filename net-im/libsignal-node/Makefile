@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 
 EXTRACT_DEPENDS=npm:www/npm${NODEJS_SUFFIX}
-BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT} \
 		npm:www/npm${NODEJS_SUFFIX} \
 		protoc:devel/protobuf
 

@@ -1,6 +1,7 @@
 PORTNAME=	castxml
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${LOCALBASE}/lib/libxml2.so:textproc/libxml2
 
-USES=		cmake:testing compiler:c++11-lang llvm:lib
+USES=		cmake:testing compiler:c++11-lang llvm:lib,clang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CastXML

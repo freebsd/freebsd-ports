@@ -1,0 +1,24 @@
+@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<
+@comment Run 'make build-plist' after staging to regenerate
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/fuzzer/FuzzedDataProvider.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/orc/c_api.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/profile/InstrProfData.inc
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/allocator_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/asan_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/common_interface_defs.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/coverage_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/dfsan_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/hwasan_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/linux_syscall_hooks.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/lsan_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/msan_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/netbsd_syscall_hooks.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/scudo_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/tsan_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/tsan_interface_atomic.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/sanitizer/ubsan_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/xray/xray_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/xray/xray_log_interface.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/xray/xray_records.h
+@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
+@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi

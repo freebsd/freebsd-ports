@@ -1,7 +1,7 @@
 PORTNAME=	cvise
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -35,7 +35,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-flake8>=0:devel/py-pytest-flake8@${P
 # once this is installed, all tests pass for me:
 # 260 passed, 1 skipped in 64.82 seconds
 
-USES=		cmake compiler llvm:min=16,build,run python shebangfix
+USES=		cmake compiler llvm:min=16,build,run,clang python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	marxin
 USE_PYTHON=	pytest

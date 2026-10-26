@@ -1,6 +1,7 @@
 PORTNAME=	halide
 DISTVERSIONPREFIX=	v
 DISTVERSION=	18.0.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 
@@ -19,7 +20,7 @@ BROKEN_riscv64=		fails to build: /usr/include/c++/v1/__config:1141:6: No thread 
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} # because halide expects LLVMConfig.cmake
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
 
-USES=		cmake:testing llvm:${LLVM_VERSION},lib
+USES=		cmake:testing llvm:${LLVM_VERSION},build,lib,lld
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

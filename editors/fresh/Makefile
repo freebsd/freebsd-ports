@@ -10,7 +10,7 @@ WWW=		https://getfresh.dev
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT}
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 
 USES=		cargo

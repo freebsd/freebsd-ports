@@ -1,0 +1,4 @@
+Flang is the LLVM Fortran compiler front end.
+
+It is part of the LLVM-devel toolchain, built standalone against
+devel/llvm-devel and installed into ${PREFIX}/llvm-devel.

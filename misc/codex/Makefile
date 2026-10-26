@@ -23,7 +23,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		rg:textproc/ripgrep
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cargo dos2unix gnome llvm:min=21 ninja:build python:test \
+USES=		cargo dos2unix gnome llvm:min=21,lld ninja:build python:test \
 		shebangfix ssl
 
 DOS2UNIX_WRKSRC=${WRKSRC_crate_mxc_telemetry}

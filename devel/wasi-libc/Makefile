@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 FLAVORS=	19 20 21 22 23 18 17
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		cmake llvm:${FLAVOR}
+USES=		cmake llvm:${FLAVOR},lld
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly
 GH_TUPLE=	WebAssembly:WASI:59cbe14:wasi/tools/wasi-headers/WASI

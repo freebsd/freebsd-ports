@@ -11,7 +11,7 @@ WWW=		https://github.com/pvolok/dekit
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=  ${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=  ${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT}
 
 USES=		cargo gmake
 USE_GITHUB=	yes

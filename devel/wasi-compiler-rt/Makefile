@@ -24,7 +24,7 @@ USES=		cmake tar:xz
 IGNORE=		is a meta-port; there is nothing to build
 PKGNAMESUFFIX=	-master
 .else
-USES+=		llvm:${LLVM_SUFFIX}
+USES+=		llvm:${LLVM_SUFFIX},lld
 .endif
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}

@@ -1,6 +1,6 @@
 PORTNAME=	pipewire-spa-oss
 DISTVERSION=	g20260807
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
 
 LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
 
-USES=		cargo llvm:lib,noexport
+USES=		cargo llvm:build,lib,clang,noexport
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shkhln

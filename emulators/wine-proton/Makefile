@@ -38,7 +38,7 @@ FLAVORS=	default pulse
 FLAVOR?=	default
 
 USES=		autoreconf bison desktop-file-utils gl gmake gnome gstreamer \
-		llvm:min=17,build,noexport localbase perl5 pkgconfig \
+		llvm:min=17,build,clang,lld,noexport localbase perl5 pkgconfig \
 		python:build sdl shebangfix tar:xz xorg
 USE_CSTD=	gnu11
 USE_GCC=	yes

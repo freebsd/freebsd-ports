@@ -3,6 +3,7 @@
 #  devel/kdev-python
 PORTNAME=	kdevelop
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,7 +22,7 @@ RUN_DEPENDS=	gmake:devel/gmake \
 		lldb-mi:devel/lldb-mi
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gettext-tools gl \
-		kde:6 llvm:build,run,noexport pkgconfig qt:6 shared-mime-info \
+		kde:6 llvm:build,run,clang,noexport pkgconfig qt:6 shared-mime-info \
 		shebangfix tar:xz xorg
 USE_GL=		gl opengl # GLX
 USE_KDE=	archive attica bookmarks codecs colorscheme completion config \

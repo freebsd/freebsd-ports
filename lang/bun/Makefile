@@ -35,11 +35,12 @@ ONLY_FOR_ARCHS_REASON=	bootstrap binary is only available for amd64 for now
 FETCH_DEPENDS=	${LOCALBASE}/bin/npm:www/npm-node24 \
 		git:devel/git \
 		cargo:lang/rust \
-		${LOCALBASE}/llvm${LLVM_VER}/bin/clang++:devel/llvm${LLVM_VER} \
+		${LOCALBASE}/llvm${LLVM_VER}/bin/clang++:lang/clang${LLVM_VER} \
 		cmake:devel/cmake-core \
 		ninja:devel/ninja \
 		${LOCALBASE}/bin/node:www/node24
-BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_VER}/bin/clang++:devel/llvm${LLVM_VER} \
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_VER}/bin/clang++:lang/clang${LLVM_VER} \
+		${LOCALBASE}/llvm${LLVM_VER}/bin/ld.lld:devel/lld${LLVM_VER} \
 		cmake:devel/cmake-core \
 		git:devel/git \
 		ninja:devel/ninja \

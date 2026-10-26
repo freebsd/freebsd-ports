@@ -1,0 +1,4 @@
+LLDB is the LLVM debugger, with Python and Lua scripting support.
+
+It is part of the LLVM-devel toolchain, built standalone against
+devel/llvm-devel and installed into ${PREFIX}/llvm-devel.

@@ -260,7 +260,9 @@ IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in bas
 .endif
 
 LLVM_DEFAULT=		22
-BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:lang/clang${LLVM_DEFAULT} \
+			ld.lld${LLVM_DEFAULT}:devel/lld${LLVM_DEFAULT} \
+			llvm-ar${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
 			c++=${LOCALBASE}/bin/clang++${LLVM_DEFAULT} \

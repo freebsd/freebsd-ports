@@ -26,7 +26,7 @@ PKGNAMESUFFIX=	-master
 .else
 BUILD_DEPENDS=	${WASI_SYSROOT}/include/${TRIPLE}/stdlib.h:devel/wasi-libc@${LLVM_VERSION} \
 		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
-USES+=		llvm:${LLVM_SUFFIX}
+USES+=		llvm:${LLVM_SUFFIX},lld
 .endif
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}

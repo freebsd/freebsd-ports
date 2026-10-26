@@ -1,6 +1,6 @@
 The LLVM Project is a collection of modular and reusable compiler and
 toolchain technologies.
 
-This port includes Clang (a C/C++/Objective-C compiler), LLD (a linker),
-LLDB (a debugger), an OpenMP runtime library, and the LLVM infrastructure
-these are built on.
+This port installs the LLVM core libraries (libLLVM) and tools such as
+llc, opt and llvm-objdump into ${PREFIX}/llvm20.  The other LLVM
+sub-projects are packaged separately and build against it.

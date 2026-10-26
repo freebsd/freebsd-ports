@@ -78,9 +78,12 @@ CLANG_COMMANDS=	\
 		clang-cpp \
 		clang-extdef-mapping \
 		clang-format \
+		clang-installapi \
 		clang-linker-wrapper \
+		clang-nvlink-wrapper \
 		clang-offload-bundler \
 		clang-offload-packager \
+		clang-rename \
 		clang-repl \
 		clang-scan-deps \
 		clang-tblgen \
@@ -99,12 +102,9 @@ EXTRAS_COMMANDS= \
 		clang-doc \
 		clang-include-cleaner \
 		clang-include-fixer \
-		clang-installapi \
 		clang-move \
-		clang-nvlink-wrapper \
 		clang-pseudo \
 		clang-query \
-		clang-rename \
 		clang-reorder-fields \
 		clang-tidy \
 		find-all-symbols \
@@ -138,18 +138,14 @@ LLDB_COMMANDS=	\
 		lldb-server
 
 MLIR_COMMANDS=	\
-		mlir-cat \
 		mlir-cpu-runner \
 		mlir-lsp-server \
-		mlir-minimal-opt \
-		mlir-minimal-opt-canonicalize \
 		mlir-opt \
 		mlir-pdll \
 		mlir-pdll-lsp-server \
 		mlir-query \
 		mlir-reduce \
 		mlir-tblgen \
-		mlir-transform-opt \
 		mlir-translate \
 		tblgen-lsp-server \
 		tblgen-to-irdl

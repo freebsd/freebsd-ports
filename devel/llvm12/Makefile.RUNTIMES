@@ -1,0 +1,67 @@
+# Only the native target is built (COMPILER_RT_DEFAULT_TARGET_ONLY), so
+# amd64 no longer gets the i386 (lib32) runtimes.
+
+COMPILER_RT_LIBS_x86_64= \
+	libclang_rt.asan-preinit-x86_64.a \
+	libclang_rt.asan-x86_64.a \
+	libclang_rt.asan-x86_64.a.syms \
+	libclang_rt.asan-x86_64.so \
+	libclang_rt.asan_cxx-x86_64.a \
+	libclang_rt.asan_cxx-x86_64.a.syms \
+	libclang_rt.builtins-x86_64.a \
+	libclang_rt.cfi-x86_64.a \
+	libclang_rt.cfi_diag-x86_64.a \
+	libclang_rt.dd-x86_64.a \
+	libclang_rt.dyndd-x86_64.so \
+	libclang_rt.fuzzer-x86_64.a \
+	libclang_rt.fuzzer_interceptors-x86_64.a \
+	libclang_rt.fuzzer_no_main-x86_64.a \
+	libclang_rt.msan-x86_64.a \
+	libclang_rt.msan-x86_64.a.syms \
+	libclang_rt.msan_cxx-x86_64.a \
+	libclang_rt.msan_cxx-x86_64.a.syms \
+	libclang_rt.profile-x86_64.a \
+	libclang_rt.safestack-x86_64.a \
+	libclang_rt.stats-x86_64.a \
+	libclang_rt.stats_client-x86_64.a \
+	libclang_rt.tsan-x86_64.a \
+	libclang_rt.tsan-x86_64.a.syms \
+	libclang_rt.tsan_cxx-x86_64.a \
+	libclang_rt.tsan_cxx-x86_64.a.syms \
+	libclang_rt.ubsan_minimal-x86_64.a \
+	libclang_rt.ubsan_minimal-x86_64.a.syms \
+	libclang_rt.ubsan_minimal-x86_64.so \
+	libclang_rt.ubsan_standalone-x86_64.a \
+	libclang_rt.ubsan_standalone-x86_64.a.syms \
+	libclang_rt.ubsan_standalone-x86_64.so \
+	libclang_rt.ubsan_standalone_cxx-x86_64.a \
+	libclang_rt.ubsan_standalone_cxx-x86_64.a.syms \
+	libclang_rt.xray-basic-x86_64.a \
+	libclang_rt.xray-fdr-x86_64.a \
+	libclang_rt.xray-profiling-x86_64.a \
+	libclang_rt.xray-x86_64.a
+COMPILER_RT_SHARE_x86_64= \
+	cfi_blacklist.txt \
+	asan_blacklist.txt \
+	msan_blacklist.txt
+
+COMPILER_RT_LIBS_i386= \
+	libclang_rt.asan-i386.a \
+	libclang_rt.asan-i386.so \
+	libclang_rt.asan-preinit-i386.a \
+	libclang_rt.asan_cxx-i386.a \
+	libclang_rt.builtins-i386.a \
+	libclang_rt.cfi-i386.a \
+	libclang_rt.cfi_diag-i386.a \
+	libclang_rt.profile-i386.a \
+	libclang_rt.safestack-i386.a \
+	libclang_rt.stats-i386.a \
+	libclang_rt.stats_client-i386.a \
+	libclang_rt.ubsan_minimal-i386.a \
+	libclang_rt.ubsan_minimal-i386.so \
+	libclang_rt.ubsan_standalone-i386.a \
+	libclang_rt.ubsan_standalone-i386.so \
+	libclang_rt.ubsan_standalone_cxx-i386.a
+COMPILER_RT_SHARE_i386= \
+	cfi_blacklist.txt \
+	asan_blacklist.txt

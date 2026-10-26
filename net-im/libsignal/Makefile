@@ -11,7 +11,7 @@ WWW=		https://github.com/signalapp/libsignal
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT} \
 		protoc:devel/protobuf
 
 USES=		cargo

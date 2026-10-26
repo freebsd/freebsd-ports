@@ -1,6 +1,6 @@
 PORTNAME=	acme
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nginx/nginx-${PORTNAME}/releases/download/v${PORTVERSION}/:acme \
 		https://nginx.org/download/:nginx
@@ -20,7 +20,7 @@ LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 FLAVORS=	default devel
 FLAVOR?=	default
 
-USES=		cargo cpe llvm:lib,noexport ssl
+USES=		cargo cpe llvm:build,lib,clang,noexport ssl
 
 default_PKGNAMEPREFIX=	nginx-
 devel_PKGNAMEPREFIX=	nginx-devel-

@@ -1,6 +1,6 @@
 PORTNAME=	ldc
 PORTVERSION=	1.43.0
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/llvm19/lib/libLLVM-19.so:devel/llvm19 # required for
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libzstd.so:archivers/zstd
 
-USES=		llvm:lib,run,min=15,max=22 ninja cmake:insource pkgconfig
+USES=		llvm:build,lib,run,lld,min=15,max=22 ninja cmake:insource pkgconfig
 
 USE_LDCONFIG=	yes
 

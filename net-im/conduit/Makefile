@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	fails to build
 
-BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT}
 LIB_DEPENDS=	librocksdb.so:databases/rocksdb
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 

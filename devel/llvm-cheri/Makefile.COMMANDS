@@ -1,5 +1,4 @@
 LLVM_COMMANDS=	\
-		amdgpu-arch \
 		bugpoint \
 		dsymutil \
 		llc \
@@ -69,11 +68,11 @@ LLVM_COMMANDS=	\
 		llvm-undname \
 		llvm-windres \
 		llvm-xray \
-		nvptx-arch \
 		opt \
 		sancov
 
 CLANG_COMMANDS=	\
+		amdgpu-arch \
 		analyze-build \
 		c-index-test \
 		clang \
@@ -82,7 +81,6 @@ CLANG_COMMANDS=	\
 		clang-cpp \
 		clang-extdef-mapping \
 		clang-format \
-		clang-include-cleaner \
 		clang-linker-wrapper \
 		clang-offload-bundler \
 		clang-offload-packager \
@@ -93,6 +91,7 @@ CLANG_COMMANDS=	\
 		diagtool \
 		hmaptool \
 		intercept-build \
+		nvptx-arch \
 		scan-build \
 		scan-build-py \
 		scan-view
@@ -102,6 +101,7 @@ EXTRAS_COMMANDS= \
 		clang-apply-replacements \
 		clang-change-namespace \
 		clang-doc \
+		clang-include-cleaner \
 		clang-include-fixer \
 		clang-move \
 		clang-pseudo \

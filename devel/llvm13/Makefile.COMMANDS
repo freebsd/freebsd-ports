@@ -138,5 +138,5 @@ MLIR_COMMANDS=	\
 		mlir-tblgen \
 		mlir-translate
 
-OPENMP_COMMANDS=	\
-		llvm-omp-device-info
+# libomptarget (llvm-omp-device-info) is not built.
+OPENMP_COMMANDS=

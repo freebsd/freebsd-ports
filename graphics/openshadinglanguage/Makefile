@@ -5,7 +5,7 @@ DISTVERSION=	1.14.8.0
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -28,7 +28,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpartio.so:graphics/partio \
 		libpugixml.so:textproc/pugixml
 
-USES=		bison cmake compiler:c++17-lang llvm:lib localbase ncurses
+USES=		bison cmake compiler:c++17-lang llvm:lib,clang localbase ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation

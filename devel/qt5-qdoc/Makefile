@@ -1,12 +1,13 @@
 PORTNAME=	qdoc
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation generator
 
-USES=		compiler:c++11-lang llvm:build,run qmake qt-dist:5,tools
+USES=		compiler:c++11-lang llvm:build,run,clang qmake qt-dist:5,tools
 USE_QT=		core declarative buildtools:build qdoc-data:run
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}

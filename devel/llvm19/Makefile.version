@@ -1,0 +1,4 @@
+DISTVERSION=	19.1.7
+LLVM_SUFFIX=	19
+MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
+#MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/

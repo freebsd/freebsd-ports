@@ -141,10 +141,7 @@ LLDB_COMMANDS=	\
 		lldb-server
 
 MLIR_COMMANDS=	\
-		mlir-cat \
 		mlir-lsp-server \
-		mlir-minimal-opt \
-		mlir-minimal-opt-canonicalize \
 		mlir-opt \
 		mlir-pdll \
 		mlir-pdll-lsp-server \
@@ -153,7 +150,6 @@ MLIR_COMMANDS=	\
 		mlir-rewrite \
 		mlir-runner \
 		mlir-tblgen \
-		mlir-transform-opt \
 		mlir-translate \
 		tblgen-lsp-server \
 		tblgen-to-irdl

@@ -16,7 +16,8 @@ ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 #BROKEN_FreeBSD_14_i386=	lld crashes during build
 BROKEN=		Fails to build, error: a template argument list is expected after a name prefixed by the template keyword
 
-BUILD_DEPENDS=	vc-intrinsics-${FLAVOR}>=0.4.0:devel/vc-intrinsics@${FLAVOR}
+BUILD_DEPENDS=	vc-intrinsics-${FLAVOR}>=0.4.0:devel/vc-intrinsics@${FLAVOR} \
+		clang${FLAVOR:S/llvm//}:lang/clang${FLAVOR:S/llvm//}
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
 		libopencl-clang.so.${FLAVOR:S/llvm//}:devel/opencl-clang@${FLAVOR} \
 		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}

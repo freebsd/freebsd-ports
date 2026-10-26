@@ -1,5 +1,6 @@
 PORTNAME=	clang-uml
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	graphics lang textproc
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libyaml-cpp.so:devel/yaml-cpp
 
-USES=		cmake:testing compiler:c++17-lang llvm:noexport,lib \
+USES=		cmake:testing compiler:c++17-lang llvm:noexport,build,lib,clang \
 		localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	bkryza

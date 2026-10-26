@@ -1,0 +1,5 @@
+DISTVERSION=	18.1.8
+LLVM_SUFFIX=	18
+
+# LLVM likes to pick up ${LOCALBASE}/lib/libtinfo.so.*
+CMAKE_ARGS+=	-DLLVM_ENABLE_TERMINFO=OFF

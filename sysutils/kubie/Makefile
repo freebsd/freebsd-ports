@@ -18,7 +18,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sbstp
 
-BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/bash_completion.d/${PORTNAME}.bash \

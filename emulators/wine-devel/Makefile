@@ -31,7 +31,7 @@ FLAVORS=	default allaudio
 FLAVOR?=	default
 
 # Only devel/llvm17 and later come with necessary include files - PR274542
-USES=		autoreconf bison cpe desktop-file-utils gmake llvm:min=17,build,noexport \
+USES=		autoreconf bison cpe desktop-file-utils gmake llvm:min=17,build,clang,lld,noexport \
 		localbase pkgconfig sdl shebangfix tar:xz
 CPE_VENDOR=	winehq
 USE_GCC=	yes

@@ -53,7 +53,7 @@ BONMIN_LIB_DEPENDS=	libbonmin.so:math/bonmin \
 			libOsi.so:math/osi
 
 CLANG_DESC=		Build with clang for JIT
-CLANG_USES=		llvm:16,build,run
+CLANG_USES=		llvm:16,build,run,clang
 CLANG_CMAKE_BOOL=	WITH_CLANG
 CLANG_CMAKE_ON=		-DLLVM_INSTALL_PREFIX=${LLVM_PREFIX} -DOLD_LLVM=ON
 CLANG_BROKEN=		fails to find clang, see https://github.com/casadi/casadi/issues/3089

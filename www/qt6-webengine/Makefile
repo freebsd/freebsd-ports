@@ -147,7 +147,7 @@ RUST_DESC=		Build with Rust (experimental)
 RUST_BROKEN=		doesn't link
 RUST_BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli \
 			rustc:lang/rust
-RUST_USES=		llvm:lib,noexport
+RUST_USES=		llvm:build,lib,clang,noexport
 RUST_CMAKE_BOOL=	QT_FEATURE_webengine_rust_build
 
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio

@@ -1,6 +1,6 @@
 PORTNAME=	YouCompleteMe
 DISTVERSION=	g20240320
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -44,7 +44,7 @@ OPTIONS_SUB=		yes
 C_DESC=			C-family Semantic Completion Support
 
 C_CMAKE_ON=		-DPATH_TO_LLVM_ROOT=${LOCALBASE}/llvm${LLVM_DEFAULT}
-C_LIB_DEPENDS=		libclang.so:devel/llvm${LLVM_DEFAULT}
+C_LIB_DEPENDS=		libclang.so:lang/clang${LLVM_DEFAULT}
 
 VIMFILESDIR=		${PREFIX}/share/vim/vimfiles
 

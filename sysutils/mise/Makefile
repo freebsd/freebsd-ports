@@ -1,7 +1,7 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2026.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,11 +16,11 @@ BROKEN_aarch64=	compilation fails: unsupported freebsd architecture, see https:/
 BROKEN_i386=	compilation fails: LLVM ERROR: out of memory
 BROKEN_armv7=	compilation fails: LLVM ERROR: out of memory
 
-BUILD_DEPENDS+=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS+=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT}
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2 \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
+RUN_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT}
 
 USES=		cargo localbase:ldflags pkgconfig ssl
 

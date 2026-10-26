@@ -42,7 +42,7 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} == 140
 LLVM_VER=	15
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
+BUILD_DEPENDS+=	clang${LLVM_VER}:lang/clang${LLVM_VER}
 CC=		${LOCALBASE}/bin/clang${LLVM_VER}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
 .endif

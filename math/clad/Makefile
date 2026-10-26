@@ -1,6 +1,7 @@
 PORTNAME=	clad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,7 @@ BROKEN=		requires OpenMP support that is missing on this architecture
 
 TEST_DEPENDS=	kokkos>0:devel/kokkos
 
-USES=		cmake:testing llvm:build,run localbase
+USES=		cmake:testing llvm:build,run,clang localbase
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

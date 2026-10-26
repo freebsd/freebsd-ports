@@ -1,5 +1,6 @@
 PORTNAME=	ccls
 DISTVERSION=	0.20240202
+PORTREVISION=	1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -17,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rapidjson>=1.1.0_4:devel/rapidjson
 
-USES=		cmake compiler:c++17-lang llvm:lib localbase
+USES=		cmake compiler:c++17-lang llvm:lib,clang localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	MaskRay
 GH_TAGNAME=	${DISTVERSION}

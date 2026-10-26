@@ -1,7 +1,7 @@
 PORTNAME=	fccf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	MIT
 BUILD_DEPENDS=	argparse>0:devel/argparse
 LIB_DEPENDS=	libfmt.so:devel/libfmt
 
-USES=		cmake llvm:build,lib,run
+USES=		cmake llvm:build,lib,run,clang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	p-ranav

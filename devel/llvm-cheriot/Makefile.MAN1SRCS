@@ -1,5 +1,6 @@
 LLVM_MAN1SRCS= \
 	bugpoint.1 \
+	clang-tblgen.1 \
 	dsymutil.1 \
 	llc.1 \
 	lli.1 \
@@ -54,7 +55,6 @@ LLVM_MAN1SRCS= \
 
 CLANG_MAN1SRCS= \
 	clang.1 \
-	clang-tblgen.1 \
 	diagtool.1 \
 	scan-build.1
 

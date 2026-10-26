@@ -205,7 +205,7 @@ _LLVM_REQ=	${_LLVM_MINVER}
 .        else
 _LLVM_REQ=	${LLVM_DEFAULT}
 .        endif
-BUILD_DEPENDS+=	clang${_LLVM_REQ}:devel/llvm${_LLVM_REQ}
+BUILD_DEPENDS+=	clang${_LLVM_REQ}:lang/clang${_LLVM_REQ}
 CPP=	${LOCALBASE}/bin/clang-cpp${_LLVM_REQ}
 CC=	${LOCALBASE}/bin/clang${_LLVM_REQ}
 CXX=	${LOCALBASE}/bin/clang++${_LLVM_REQ}

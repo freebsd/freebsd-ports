@@ -1,7 +1,7 @@
 PORTNAME=	oclgrind
 PORTVERSION=	26.03.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -14,10 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LLVM_VER=	${LLVM_DEFAULT}
 BUILD_DEPENDS=	opencl>=0:devel/opencl \
-		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER} \
+		clang${LLVM_VER}:lang/clang${LLVM_VER}
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	opencl>=0:devel/opencl \
-		llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER}
+		llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER} \
+		clang${LLVM_VER}:lang/clang${LLVM_VER}
 
 USES=		cmake
 USE_GITHUB=	yes

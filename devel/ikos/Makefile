@@ -1,7 +1,7 @@
 PORTNAME=	ikos
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,14 +14,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.pdf
 BROKEN_armv7=	configure fails: error when running a program linked with GMP: Segmentation fault
 BROKEN_FreeBSD_16=	requires LLVM 14 which is incompatible with FreeBSD 16's libc++ headers, see https://github.com/NASA-SW-VnV/ikos/issues/337
 
-BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
+BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
+		clang${LLVM_VERSION}:lang/clang${LLVM_VERSION}
 LIB_DEPENDS=	libapron.so:math/apron \
 		libboost_thread.so:devel/boost-libs \
 		libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp \
 		libppl.so:devel/ppl \
 		libtbb.so:devel/onetbb
-RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
+RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
+		clang${LLVM_VERSION}:lang/clang${LLVM_VERSION}
 
 USES=		cmake ncurses python sqlite
 USE_GITHUB=	yes

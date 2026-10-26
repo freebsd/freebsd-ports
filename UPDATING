@@ -5,6 +5,49 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261026:
+  AFFECTS: users of devel/llvm, devel/llvm1[2-9], devel/llvm2[0-3],
+    devel/llvm-devel, devel/llvm-cheri, devel/llvm-cheriot,
+    devel/llvm-morello
+  AUTHOR: aokblast@FreeBSD.org
+
+  The LLVM ports have been split into one port per LLVM sub-project,
+  modelled after Gentoo's llvm-core packages:
+
+    devel/llvmN		core libraries and tools (libLLVM, llc, opt, lit)
+    lang/clangN		clang (EXTRAS: clangd, clang-tidy, ...)
+    devel/lldN		lld
+    devel/lldbN		lldb
+    devel/mlirN		MLIR
+    devel/pollyN	Polly (now a pass plugin, LLVMPolly.so)
+    lang/flangN		flang
+    devel/flang-rtN	flang runtime (21 and later)
+    devel/compiler-rtN	sanitizers, builtins, profile
+    devel/openmpN	libomp
+
+  The installation layout is unchanged: everything is still installed into
+  ${LOCALBASE}/llvmN (llvm-devel, llvm-cheri, ...) and the versioned
+  commands in ${LOCALBASE}/bin (clang22, ld.lld22, ...) keep their names.
+
+  The CLANG, COMPILER_RT, EXTRAS (now an option of lang/clangN), FLANG,
+  LLD, LLDB, MLIR, OPENMP, POLLY and PYCLANG options of devel/llvmN are
+  gone: install the component ports you need instead.  The STATIC_LIBS
+  option is gone as the static libraries and cmake packages are needed to
+  build the components.  The "lite" flavor is gone; select the BE_FREEBSD
+  option for a smaller backend set.
+
+  devel/llvmN no longer pulls in clang.  To get the usual toolchain:
+    # pkg install llvmN clangN lldN
+
+  Files move from the old llvmN package to the new component packages, so
+  upgrade them together:
+    # pkg upgrade llvmN
+    # pkg install clangN lldN ...	(the components you used)
+  or with ports, deinstall the old llvmN first.
+
+  Ports using USES=llvm can depend on components with e.g.
+  USES=llvm:lib,clang.
+
 20260924:
   AFFECTS: users of net/openldap25-client, net/openldap25-server,
     net/openldap26-client, net/openldap26-server

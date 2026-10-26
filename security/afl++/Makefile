@@ -1,6 +1,7 @@
 PORTNAME=	afl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.03c
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	++-${FLAVOR}
 
@@ -23,7 +24,7 @@ FLAVOR?=	${FLAVORS:[1]}
 
 USES=		gmake shebangfix tar:tgz
 .if ${FLAVOR} == llvm
-USES+=		llvm:build,run
+USES+=		llvm:build,run,clang,lld
 .endif
 
 .if ${FLAVOR} == gcc

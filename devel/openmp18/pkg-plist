@@ -1,0 +1,15 @@
+@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<
+@comment Run 'make build-plist' after staging to regenerate
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/omp-tools.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/omp.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/ompt-multiplex.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/ompt.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/include/ompx.h
+llvm%%LLVM_SUFFIX%%/lib/cmake/openmp/FindOpenMPTarget.cmake
+llvm%%LLVM_SUFFIX%%/lib/libarcher.so
+llvm%%LLVM_SUFFIX%%/lib/libarcher_static.a
+llvm%%LLVM_SUFFIX%%/lib/libgomp.so
+llvm%%LLVM_SUFFIX%%/lib/libiomp5.so
+llvm%%LLVM_SUFFIX%%/lib/libomp.so
+@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
+@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi

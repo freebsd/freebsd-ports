@@ -1,0 +1,6 @@
+Clang is a C, C++, Objective-C and Objective-C++ front end for LLVM,
+with static analysis tools (scan-build) and, optionally, the extra clang
+tools such as clangd and clang-tidy.
+
+It is part of the LLVM 13 toolchain, built standalone against
+devel/llvm13 and installed into ${PREFIX}/llvm13.

@@ -1,0 +1,7 @@
+DISTVERSION=	14.0.6
+LLVM_SUFFIX=	14
+
+LLVM_RUNTIMES_PER_TARGET=	no
+
+# googletest lives in llvm/utils/unittest in this release.
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/llvm/utils/unittest/googletest/LICENSE.TXT

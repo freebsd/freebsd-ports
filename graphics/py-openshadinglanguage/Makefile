@@ -1,4 +1,4 @@
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics multimedia python
 # Note this port shares its PORTREVISION with graphics/openshadinglanguage!
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

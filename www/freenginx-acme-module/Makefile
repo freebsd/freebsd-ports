@@ -1,6 +1,6 @@
 PORTNAME=	freenginx-acme-module
 DISTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nginx/nginx-acme/releases/download/v${DISTVERSION}/:acme \
 		https://freenginx.org/download/:freenginx
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 RUN_DEPENDS=	${LOCALBASE}/sbin/nginx:www/freenginx
 
-USES=		cargo cpe llvm:lib,noexport ssl
+USES=		cargo cpe llvm:build,lib,clang,noexport ssl
 
 CPE_VENDOR=	f5
 CPE_PRODUCT=	nginx-acme

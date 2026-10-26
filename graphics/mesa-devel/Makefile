@@ -1,5 +1,6 @@
 PORTNAME=	mesa
 DISTVERSION=	26.2-branchpoint-3834
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g7b5888e8ca7
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
@@ -106,7 +107,8 @@ OPENCL_BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli \
 			libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T} \
 			spirv-tools>0:graphics/spirv-tools \
 			rustc:lang/${RUST_DEFAULT}
-OPENCL_LIB_DEPENDS=	libLLVMSPIRVLib.so.${OPENCL_SOVERSION}:devel/spirv-llvm-translator@${LLVM_PORT:T}
+OPENCL_LIB_DEPENDS=	libLLVMSPIRVLib.so.${OPENCL_SOVERSION}:devel/spirv-llvm-translator@${LLVM_PORT:T} \
+			libclang-cpp.so.${OPENCL_SOVERSION}:${CLANG_PORT}
 OPENCL_RUN_DEPENDS=	libclc-${LLVM_PORT:T}>0:devel/libclc@${LLVM_PORT:T}
 OPENCL_SOVERSION=	${LLVM_VERSION}${${LLVM_VERSION}>=18:?.1:}
 OPENCL_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"

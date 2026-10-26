@@ -147,7 +147,9 @@ _SHARP_NODE_ARCH=		x64
 .endif
 
 .if ${ARCH} == aarch64 || ${PORT_OPTIONS:MLLVM_PORTS}
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:lang/clang${LLVM_DEFAULT} \
+		ld.lld${LLVM_DEFAULT}:devel/lld${LLVM_DEFAULT} \
+		llvm-ar${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=	ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT} \
 		c++=${LOCALBASE}/bin/clang++${LLVM_DEFAULT} \
 		cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \

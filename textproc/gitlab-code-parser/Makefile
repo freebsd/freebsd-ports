@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BROKEN_i386=	compilation fails: error: undefined symbol: __atomic_load
 
-BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT} \
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:lang/clang${LLVM_DEFAULT} \
 		oniguruma>=0:devel/oniguruma \
 		zstd>=0:archivers/zstd
 

@@ -1,0 +1,35 @@
+@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<
+@comment Run 'make build-plist' after staging to regenerate
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/allocator-registry.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/array-constructor.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/assign-impl.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/buffer.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/connection.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/derived.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/descriptor.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/emit-encoded.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/environment.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/file.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/format-implementation.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/format.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/internal-unit.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/io-error.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/io-stmt.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/iostat.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/lock.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/memory.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/namelist.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/non-tbp-dio.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/numeric-templates.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/random-templates.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/reduction-templates.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/stat.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/terminator.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/tools.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/type-code.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/type-info.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/utf.h
+llvm%%LLVM_SUFFIX%%/include/flang-rt/runtime/work-queue.h
+llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/lib/%%CONFIGURE_TARGET%%/libflang_rt.runtime.a
+@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
+@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi

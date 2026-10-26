@@ -18,7 +18,7 @@ LIB_DEPENDS=	libboost_graph.so:devel/boost-libs \
 RUN_DEPENDS=	bash:shells/bash
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing llvm:build,min=20,max=20,noexport localbase:ldflags python shebangfix sqlite compiler:c++20-lang
+USES=		cmake:testing llvm:build,min=20,max=20,clang,noexport localbase:ldflags python shebangfix sqlite compiler:c++20-lang
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.py *.sh

@@ -1,0 +1,680 @@
+# Shared framework for the split LLVM component ports: every LLVM
+# sub-project is built standalone against an installed libLLVM.
+#
+# Filesystem layout:
+#   ${PREFIX}/llvm${LLVM_SUFFIX}		LLVM_PREFIX (bin, lib, include, ...)
+#   ${LLVM_PREFIX}/lib/clang/${CLANG_RESOURCE_VER}
+#					clang resource directory (builtin
+#					headers, compiler-rt, flang-rt, omp.h)
+#   ${PREFIX}/bin/<command>${LLVM_SUFFIX}	wrappers for LLVM_PREFIX/bin
+#
+# Variables a port sets before including this file:
+#   LLVM_COMPONENT	One of: llvm clang lld lldb mlir polly flang flang-rt
+#			compiler-rt openmp
+#   LLVM_VERDIR		Directory holding the data shared by all components
+#			of one LLVM release: Makefile.version, distinfo,
+#			files/, Makefile.COMMANDS, Makefile.MAN1SRCS,
+#			Makefile.BACKENDS and Makefile.RUNTIMES.
+#
+# Optional:
+#   LLVM_RUNTIMES_PER_TARGET  "no" for releases whose runtimes use the old
+#			lib/freebsd/libclang_rt.<rt>-<arch>.a layout (set in
+#			Makefile.version).  Makefile.RUNTIMES then lists the
+#			full file names in COMPILER_RT_LIBS_<arch>.
+#   LLVM_PLIST_AWK	Extra awk rules run by build-plist (e.g. to prefix
+#			option-dependent entries with %%OPTION%%).
+#   LLVM_PLIST_EXCLUDE	grep(1) arguments for staged files build-plist
+#			leaves out (because PLIST_FILES lists them).
+#
+# Makefile.version must define LLVM_SUFFIX and either DISTVERSION (for
+# releases) or LLVM_MAJOR, LLVM_RELEASE and the distfile variables (for
+# snapshots).
+#
+# Variables exported to the port:
+#   LLVM_MAJOR LLVM_RELEASE LLVM_DIR LLVM_PREFIX LLVM_PORT
+#   CLANG_PORT CLANG_RESOURCE_VER CLANG_RESOURCE_SUBDIR CLANG_RESOURCE_DIR
+#   CONFIGURE_TARGET COMMANDS MAN1SRCS LLVM_BACKENDS
+
+.if !defined(LLVM_COMPONENT)
+.error LLVM_COMPONENT must be set before including Makefile.component
+.endif
+.if !defined(LLVM_VERDIR)
+.error LLVM_VERDIR must be set before including Makefile.component
+.endif
+
+_LLVM_COMPONENTS=	llvm clang lld lldb mlir polly flang flang-rt \
+			compiler-rt openmp
+.if empty(_LLVM_COMPONENTS:M${LLVM_COMPONENT})
+.error Unknown LLVM_COMPONENT: ${LLVM_COMPONENT}
+.endif
+
+.include "${LLVM_VERDIR}/Makefile.version"
+
+PORTNAME=	${LLVM_COMPONENT}
+.if defined(DISTVERSION)
+MASTER_SITES?=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/
+DISTNAME?=	llvm-project-${DISTVERSION}.src
+USES+=		tar:xz
+LLVM_RELEASE=	${DISTVERSION:C/-rc.*//}
+LLVM_MAJOR=	${LLVM_RELEASE:C/\..*//}
+.endif
+LLVM_MAJOR_MINOR=${LLVM_RELEASE:C/\.[0-9]*$//}
+PKGNAMESUFFIX=	${LLVM_SUFFIX}
+DISTINFO_FILE=	${LLVM_VERDIR}/distinfo
+PATCHDIR=	${LLVM_VERDIR}/files
+FILESDIR=	${LLVM_VERDIR}/files
+
+MAINTAINER?=	brooks@FreeBSD.org
+WWW?=		https://llvm.org/
+
+.include "${.CURDIR}/../../devel/llvm-devel/Makefile.LICENSE"
+
+# --- layout ---------------------------------------------------------------
+LLVM_DIR=	llvm${LLVM_SUFFIX}
+LLVM_PREFIX=	${PREFIX}/${LLVM_DIR}
+LLVM_PORT=	devel/llvm${LLVM_SUFFIX}
+CLANG_PORT=	lang/clang${LLVM_SUFFIX}
+# clang < 16 named its resource directory after the full version.
+.if ${LLVM_MAJOR} < 16
+CLANG_RESOURCE_VER?=	${LLVM_RELEASE}
+.else
+CLANG_RESOURCE_VER?=	${LLVM_MAJOR}
+.endif
+CLANG_RESOURCE_SUBDIR=	${LLVM_DIR}/lib/clang/${CLANG_RESOURCE_VER}
+CLANG_RESOURCE_DIR=	${PREFIX}/${CLANG_RESOURCE_SUBDIR}
+DOCSDIR=	${PREFIX}/share/doc/${LLVM_COMPONENT}${LLVM_SUFFIX}
+DATADIR=	${PREFIX}/share/${LLVM_COMPONENT}${LLVM_SUFFIX}
+
+# --- build ----------------------------------------------------------------
+USES+=		cmake cpe shebangfix
+# The runtimes use the matching clang, which compiler.mk would probe
+# while parsing, before it is installed.
+.if !${LLVM_COMPONENT:Mcompiler-rt} && !${LLVM_COMPONENT:Mopenmp} && \
+    !${LLVM_COMPONENT:Mflang-rt}
+USES+=		compiler:c++17-lang
+.endif
+.if ${LLVM_COMPONENT:Mlldb} || ${LLVM_COMPONENT:Mllvm}
+USES+=		python
+.else
+USES+=		python:build
+.endif
+CPE_VENDOR?=	llvm
+USE_LDCONFIG=	${LLVM_PREFIX}/lib
+LIB_DEPENDS+=	libzstd.so:archivers/zstd
+
+CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
+.if ${LLVM_COMPONENT} == flang-rt
+CMAKE_SOURCE_PATH=	${WRKSRC}/runtimes
+.else
+CMAKE_SOURCE_PATH=	${WRKSRC}/${LLVM_COMPONENT}
+.endif
+# Following commit https://github.com/kitware/cmake/commit/956054
+# we need to either change the whole man-shuffle below, or simply
+# redefine CMAKE_INSTALL_MANDIR
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=share/man \
+		-DLLVM_PARALLEL_LINK_JOBS=1 \
+		-DLLVM_VERSION_SUFFIX= \
+		-DLLVM_INCLUDE_TESTS=OFF \
+		-DLLVM_INCLUDE_BENCHMARKS=OFF \
+		-DLLVM_ENABLE_LIBXML2=OFF \
+		-DLLVM_ENABLE_LIBEDIT=OFF \
+		-DLLVM_ENABLE_Z3_SOLVER=OFF
+
+.if ${LLVM_COMPONENT} != llvm
+# LLVMConfig.cmake does not export LLVM_BUILD_{LLVM_DYLIB,TOOLS,UTILS} or
+# LLVM_INCLUDE_DOCS; without them standalone builds skip libMLIR.so, leave
+# tools out of "all" and do not install tablegen tools or documentation.
+BUILD_DEPENDS+=	${LLVM_PREFIX}/bin/llvm-config:${LLVM_PORT}
+RUN_DEPENDS+=	${LLVM_PREFIX}/bin/llvm-config:${LLVM_PORT}
+CMAKE_ARGS+=	-DLLVM_DIR=${LLVM_PREFIX}/lib/cmake/llvm \
+		-DLLVM_CMAKE_DIR=${LLVM_PREFIX}/lib/cmake/llvm \
+		-DLLVM_ROOT=${LLVM_PREFIX} \
+		-DCMAKE_PREFIX_PATH=${LLVM_PREFIX} \
+		-DLLVM_CONFIG=${LLVM_PREFIX}/bin/llvm-config \
+		-DLLVM_CONFIG_PATH=${LLVM_PREFIX}/bin/llvm-config \
+		-DLLVM_TABLEGEN_EXE=${LLVM_PREFIX}/bin/llvm-tblgen \
+		-DLLVM_BUILD_LLVM_DYLIB=ON \
+		-DLLVM_BUILD_TOOLS=ON \
+		-DLLVM_BUILD_UTILS=ON \
+		-DLLVM_EXTERNAL_LIT=${LLVM_PREFIX}/bin/lit \
+		-DLLVM_LINK_LLVM_DYLIB=ON
+.endif
+
+# llvm-config --src-root points at the long gone build tree of the core.
+# (polly takes a defined LLVM_MAIN_SRC_DIR to mean an in-tree build.)
+.if ${LLVM_COMPONENT} != llvm && ${LLVM_COMPONENT} != polly
+CMAKE_ARGS+=	-DLLVM_MAIN_SRC_DIR=${WRKSRC}/llvm
+.endif
+
+.if ${LLVM_COMPONENT:Mlldb} || ${LLVM_COMPONENT:Mflang}
+BUILD_DEPENDS+=	${LLVM_PREFIX}/lib/cmake/clang/ClangConfig.cmake:${CLANG_PORT}
+RUN_DEPENDS+=	${LLVM_PREFIX}/bin/clang:${CLANG_PORT}
+CMAKE_ARGS+=	-DClang_DIR=${LLVM_PREFIX}/lib/cmake/clang
+.endif
+
+# Runtimes are built with the matching clang.
+.if ${LLVM_COMPONENT:Mcompiler-rt} || ${LLVM_COMPONENT:Mopenmp} || \
+    ${LLVM_COMPONENT:Mflang-rt}
+_LLVM_IS_RUNTIME=	yes
+BUILD_DEPENDS+=	${LLVM_PREFIX}/bin/clang:${CLANG_PORT}
+CC=		${LLVM_PREFIX}/bin/clang
+CXX=		${LLVM_PREFIX}/bin/clang++
+CPP=		${LLVM_PREFIX}/bin/clang-cpp
+.endif
+
+.if defined(WITH_DEBUG)
+CMAKE_BUILD_TYPE=	RelWithDebInfo
+STRIP=
+.endif
+
+SUB_FILES+=	llvm-wrapper.sh
+SUB_LIST+=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
+OPTIONS_SUB=	yes
+
+# --- options --------------------------------------------------------------
+# Backends are chosen in devel/llvmN; clang and flang install
+# backend-specific headers/modules, so they carry the same choice and
+# insist that it matches the installed LLVM.
+.if ${LLVM_COMPONENT:Mllvm} || ${LLVM_COMPONENT:Mclang} || \
+    ${LLVM_COMPONENT:Mflang}
+_LLVM_HAS_BACKENDS=	yes
+.endif
+
+.if defined(_LLVM_HAS_BACKENDS) && !defined(LLVM_NO_BACKEND_OPTIONS)
+OPTIONS_DEFINE+=	BE_AMDGPU BE_WASM
+OPTIONS_SINGLE+=	BACKENDS
+OPTIONS_SINGLE_BACKENDS=BE_FREEBSD BE_NATIVE BE_STANDARD
+OPTIONS_DEFAULT+=	BE_AMDGPU BE_WASM
+# BE_NATIVE for 32-bit
+.for _arch in armv6 armv7 i386 powerpc powerpcspe
+OPTIONS_DEFAULT_${_arch}+=	BE_NATIVE
+.endfor
+.for _arch in aarch64 amd64 powerpc64 powerpc64le riscv64
+OPTIONS_DEFAULT_${_arch}+=	BE_STANDARD
+.endfor
+BE_AMDGPU_DESC=		AMD GPU backend (required by mesa)
+BE_FREEBSD_DESC=	Backends for FreeBSD architectures
+BE_NATIVE_DESC=		Backend(s) for this architecture
+BE_STANDARD_DESC=	All non-experimental backends
+BE_WASM_DESC=		WebAssembly backend (required by firefox via wasi)
+.endif
+
+.if !defined(_LLVM_IS_RUNTIME) && !defined(LLVM_NO_DOCS)
+OPTIONS_DEFINE+=	DOCS
+DOCS_BUILD_DEPENDS+= \
+	${PYTHON_PKGNAMEPREFIX}myst-parser>0:textproc/py-myst-parser@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}sphinx-markdown-tables>=0:textproc/py-sphinx-markdown-tables@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
+DOCS_CMAKE_ON+=	-DLLVM_ENABLE_SPHINX=ON \
+		-DSPHINX_EXECUTABLE=${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} \
+		-DSPHINX_WARNINGS_AS_ERRORS=OFF \
+		-DSPHINX_OUTPUT_HTML=ON \
+		-DSPHINX_OUTPUT_MAN=ON \
+		-DLLVM_INCLUDE_DOCS=ON \
+		-DLLVM_BUILD_DOCS=ON
+DOCS_CMAKE_OFF+=	-DLLVM_INCLUDE_DOCS=OFF
+.endif
+
+# --- per-component settings ----------------------------------------------
+.if ${LLVM_COMPONENT} == lldb
+NOT_FOR_ARCHS?=		riscv64
+.elif ${LLVM_COMPONENT:Mflang*} || ${LLVM_COMPONENT} == mlir || \
+    ${LLVM_COMPONENT} == openmp || ${LLVM_COMPONENT} == polly
+NOT_FOR_ARCHS?=		armv6 armv7 i386 powerpc
+.elif ${LLVM_COMPONENT} == compiler-rt
+NOT_FOR_ARCHS?=		armv6 armv7
+.endif
+NOT_FOR_ARCHS_REASON?=	not supported by LLVM${LLVM_SUFFIX} on this architecture
+
+.if ${LLVM_COMPONENT} == llvm
+CATEGORIES?=	devel lang
+COMMENT?=	LLVM compiler infrastructure: core libraries and tools
+CPE_PRODUCT?=	llvm
+CMAKE_ARGS+=	-DLLVM_BUILD_LLVM_DYLIB=ON \
+		-DLLVM_LINK_LLVM_DYLIB=ON \
+		-DLLVM_ENABLE_RTTI=ON \
+		-DLLVM_DEFAULT_TARGET_TRIPLE=${CONFIGURE_TARGET} \
+		-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET} \
+		-DLLVM_INSTALL_UTILS=ON
+OPTIONS_DEFINE+=	LIT
+OPTIONS_DEFAULT+=	LIT
+LIT_DESC=		Install lit and FileCheck test tools
+.for _arch in amd64 powerpc powerpc64 powerpc64le
+OPTIONS_DEFINE_${_arch}+=	GOLD
+OPTIONS_DEFAULT_${_arch}+=	GOLD
+.endfor
+GOLD_DESC=		Build the LLVM Gold plugin for LTO
+GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
+GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
+GOLD_EXTRA_PATCHES_OFF=	${PATCHDIR}/gold-off-llvm_tools_CMakeLists.txt
+GOLD_PLIST_FILES=	${LLVM_DIR}/lib/LLVMgold.so
+
+.elif ${LLVM_COMPONENT} == clang
+CATEGORIES?=	lang devel
+COMMENT?=	C language family frontend for LLVM
+CPE_PRODUCT?=	clang
+CMAKE_ARGS+=	-DCLANG_LINK_CLANG_DYLIB=ON \
+		-DCLANG_INCLUDE_TESTS=OFF \
+		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
+OPTIONS_DEFINE+=	EXTRAS PYCLANG
+OPTIONS_DEFAULT+=	EXTRAS PYCLANG
+EXTRAS_DESC=		Extra clang tools (clangd, clang-tidy, ...)
+EXTRAS_CMAKE_ON=	-DLLVM_EXTERNAL_CLANG_TOOLS_EXTRA_SOURCE_DIR=${WRKSRC}/clang-tools-extra
+EXTRAS_CMAKE_OFF=	-DLLVM_TOOL_CLANG_TOOLS_EXTRA_BUILD=OFF
+PYCLANG_DESC=		Install python bindings to libclang
+PYCLANG_CMAKE_ON=	-DCLANG_PYTHON_BINDINGS_VERSIONS=${PYTHON_VER}
+PYCLANG_USES=		python
+USES+=			perl5
+USE_PERL5=		run
+# The cross toolchain file references ld.lld${LLVM_SUFFIX}.
+RUN_DEPENDS+=		ld.lld${LLVM_SUFFIX}:devel/lld${LLVM_SUFFIX}
+SUB_FILES+=		xtoolchain.mk
+SUB_LIST+=		XCC=clang${LLVM_SUFFIX} \
+			XCXX=clang++${LLVM_SUFFIX} \
+			XCPP=clang-cpp${LLVM_SUFFIX} \
+			XLD=ld.lld${LLVM_SUFFIX} \
+			X_COMPILER_TYPE=clang
+PLIST_FILES+=		share/toolchains/llvm${LLVM_SUFFIX}.mk
+
+.elif ${LLVM_COMPONENT} == lld
+CATEGORIES?=	devel lang
+COMMENT?=	LLVM linker
+CPE_PRODUCT?=	lld
+
+.elif ${LLVM_COMPONENT} == lldb
+CATEGORIES?=	devel lang
+COMMENT?=	LLVM debugger
+CPE_PRODUCT?=	lldb
+USES+=		gnome libedit lua:54
+USE_GNOME=	libxml2
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
+		swig:devel/swig
+CMAKE_ARGS+=	-DLLDB_INCLUDE_TESTS=OFF \
+		-DLLDB_EXTERNAL_CLANG_RESOURCE_DIR=${CLANG_RESOURCE_DIR} \
+		-DLUA_INCLUDE_DIR=${LOCALBASE}/include/lua${LUA_VER_STR} \
+		-DLUA_LIBRARY=${LOCALBASE}/lib/liblua-${LUA_VER}.so \
+		-DCURSES_INCLUDE_PATH=/usr/include \
+		-DCURSES_CURSES_LIBRARY=/usr/lib/libcurses.so \
+		-DCURSES_FORM_LIBRARY=/usr/lib/libform.so \
+		-DCURSES_NCURSES_LIBRARY=/usr/lib/libncurses.so \
+		-DPANEL_LIBRARIES=/usr/lib/libpanel.so \
+		-DLLDB_ENABLE_LIBXML2=OFF \
+		-DLLDB_ENABLE_PYTHON_LIMITED_API=OFF \
+		-DPython3_EXECUTABLE=${PYTHON_CMD}
+PLIST_SUB+=	PYTHON_ABIVER=${PYTHON_ABIVER}
+
+.elif ${LLVM_COMPONENT} == mlir
+CATEGORIES?=	devel lang
+COMMENT?=	LLVM Multi-Level Intermediate Representation
+CPE_PRODUCT?=	mlir
+CMAKE_ARGS+=	-DMLIR_INCLUDE_TESTS=OFF \
+		-DMLIR_INCLUDE_INTEGRATION_TESTS=OFF
+
+.elif ${LLVM_COMPONENT} == polly
+CATEGORIES?=	devel lang
+COMMENT?=	LLVM polyhedral loop and data-locality optimizer
+CPE_PRODUCT?=	polly
+
+.elif ${LLVM_COMPONENT} == flang
+CATEGORIES?=	lang devel
+COMMENT?=	LLVM Fortran compiler
+CPE_PRODUCT?=	flang
+BUILD_DEPENDS+=	${LLVM_PREFIX}/lib/cmake/mlir/MLIRConfig.cmake:devel/mlir${LLVM_SUFFIX}
+RUN_DEPENDS+=	${LLVM_PREFIX}/lib/cmake/mlir/MLIRConfig.cmake:devel/mlir${LLVM_SUFFIX}
+# MLIRConfig.cmake only names the tools; tell flang where they are.
+CMAKE_ARGS+=	-DMLIR_DIR=${LLVM_PREFIX}/lib/cmake/mlir \
+		-DMLIR_TABLEGEN_EXE=${LLVM_PREFIX}/bin/mlir-tblgen \
+		-DMLIR_PDLL_TABLEGEN_EXE=${LLVM_PREFIX}/bin/mlir-pdll \
+		-DMLIR_SRC_SHARDER_TABLEGEN_EXE=${LLVM_PREFIX}/bin/mlir-src-sharder \
+		-DMLIR_IRDL_TO_CPP_EXE=${LLVM_PREFIX}/bin/mlir-irdl-to-cpp \
+		-DFLANG_INCLUDE_TESTS=OFF \
+		-DFLANG_ENABLE_WERROR=OFF
+
+.elif ${LLVM_COMPONENT} == flang-rt
+CATEGORIES?=	devel lang
+COMMENT?=	LLVM Fortran runtime library
+CPE_PRODUCT?=	flang
+BUILD_DEPENDS+=	${LLVM_PREFIX}/bin/flang:lang/flang${LLVM_SUFFIX}
+CMAKE_ARGS+=	-DLLVM_ENABLE_RUNTIMES=flang-rt \
+		-DCMAKE_Fortran_COMPILER=${LLVM_PREFIX}/bin/flang \
+		-DCMAKE_Fortran_COMPILER_WORKS=ON \
+		-DFLANG_RT_INCLUDE_TESTS=OFF \
+		-DLLVM_ENABLE_PER_TARGET_RUNTIME_DIR=ON \
+		-DRUNTIMES_INSTALL_RESOURCE_PATH=${CLANG_RESOURCE_DIR} \
+		-DFLANG_RT_INSTALL_RESOURCE_PATH=${CLANG_RESOURCE_DIR}
+
+.elif ${LLVM_COMPONENT} == compiler-rt
+CATEGORIES?=	devel lang
+COMMENT?=	LLVM compiler runtime (builtins, sanitizers, profile, xray)
+CPE_PRODUCT?=	compiler-rt
+CONFLICTS_BUILD=${ARCH}-binutils
+CMAKE_ARGS+=	-DCOMPILER_RT_INSTALL_PATH=${CLANG_RESOURCE_DIR} \
+		-DCOMPILER_RT_DEFAULT_TARGET_ONLY=ON \
+		-DCOMPILER_RT_INCLUDE_TESTS=OFF
+
+.elif ${LLVM_COMPONENT} == openmp
+CATEGORIES?=	devel lang
+COMMENT?=	LLVM OpenMP runtime library
+CPE_PRODUCT?=	openmp
+CMAKE_ARGS+=	-DOPENMP_ENABLE_LIBOMPTARGET=OFF \
+		-DOPENMP_INSTALL_LIBDIR=lib \
+		-DLIBOMP_HEADERS_INSTALL_PATH=${CLANG_RESOURCE_DIR}/include \
+		-DLLVM_ENABLE_PER_TARGET_RUNTIME_DIR=OFF \
+		-DOPENMP_LLVM_TOOLS_DIR=${LLVM_PREFIX}/bin
+.endif
+
+.include <bsd.port.options.mk>
+
+# keep in sync with /usr/src/lib/clang/clang.build.mk
+# ----------- start of sync block ------------------
+# Armv6 and armv7 uses hard float abi, unless the CPUTYPE has soft in it.
+# arm (for armv4 and armv5 CPUs) always uses the soft float ABI.
+# For all other targets, we stick with 'unknown'.
+.if ${ARCH:Marmv[67]*} && (!defined(CPUTYPE) || ${CPUTYPE:M*soft*} == "")
+TARGET_ABI=	-gnueabihf
+.elif ${ARCH:Marm*}
+TARGET_ABI=	-gnueabi
+.else
+TARGET_ABI=
+.endif
+
+CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${OSREL}${TARGET_ABI}
+# ----------- end of sync block --------------------
+
+.if defined(_LLVM_IS_RUNTIME)
+CMAKE_ARGS+=	-DCMAKE_C_COMPILER_TARGET=${CONFIGURE_TARGET} \
+		-DCMAKE_CXX_COMPILER_TARGET=${CONFIGURE_TARGET} \
+		-DCMAKE_ASM_COMPILER_TARGET=${CONFIGURE_TARGET} \
+		-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET} \
+		-DLLVM_DEFAULT_TARGET_TRIPLE=${CONFIGURE_TARGET}
+.endif
+
+.include "${LLVM_VERDIR}/Makefile.COMMANDS"
+.include "${LLVM_VERDIR}/Makefile.MAN1SRCS"
+
+_LLVM_VAR_llvm=		LLVM
+_LLVM_VAR_clang=	CLANG
+_LLVM_VAR_lld=		LLD
+_LLVM_VAR_lldb=		LLDB
+_LLVM_VAR_mlir=		MLIR
+_LLVM_VAR_polly=	POLLY
+_LLVM_VAR_flang=	FLANG
+_LLVM_VAR_flang-rt=	FLANG_RT
+_LLVM_VAR_compiler-rt=	COMPILER_RT
+_LLVM_VAR_openmp=	OPENMP
+_LLVM_VAR=	${_LLVM_VAR_${LLVM_COMPONENT}}
+
+COMMANDS+=	${${_LLVM_VAR}_COMMANDS}
+.if ${LLVM_COMPONENT} == clang && ${PORT_OPTIONS:MEXTRAS}
+COMMANDS+=	${EXTRAS_COMMANDS}
+.endif
+FIRST_COMMAND=	${COMMANDS:[1]}
+
+.if ${PORT_OPTIONS:MDOCS}
+MAN1SRCS+=	${${_LLVM_VAR}_MAN1SRCS}
+.if ${LLVM_COMPONENT} == clang && ${PORT_OPTIONS:MEXTRAS}
+MAN1SRCS+=	${EXTRAS_MAN1SRCS}
+.endif
+.if ${LLVM_COMPONENT} == llvm && ${PORT_OPTIONS:MLIT}
+MAN1SRCS+=	${LIT_MAN1SRCS}
+.endif
+.if !empty(MAN1SRCS:M*)
+PLIST_FILES+=	${MAN1SRCS:S|^|share/man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
+.endif
+PORTDOCS+=	*
+.endif
+
+.if defined(_LLVM_HAS_BACKENDS)
+.include "${LLVM_VERDIR}/Makefile.BACKENDS"
+# Makefile.BACKENDS is read after the option helpers were processed, so
+# apply the BE_* helpers it defines here.
+.for BE in FREEBSD NATIVE STANDARD
+.if ${PORT_OPTIONS:MBE_${BE}}
+.if ${LLVM_COMPONENT} == llvm
+CMAKE_ARGS+=	${BE_${BE}_CMAKE_ON}
+.endif
+PLIST_FILES+=	${BE_${BE}_PLIST_FILES}
+.endif
+.endfor
+.endif
+
+.if ${LLVM_COMPONENT} == compiler-rt
+.include "${LLVM_VERDIR}/Makefile.RUNTIMES"
+.if ${ARCH} == "amd64"
+COMPILER_RT_ARCH=	x86_64
+.else
+COMPILER_RT_ARCH=	${ARCH}
+.endif
+LLVM_RUNTIMES_PER_TARGET?=	yes
+.if ${LLVM_RUNTIMES_PER_TARGET} == yes
+CMAKE_ARGS+=	-DLLVM_ENABLE_PER_TARGET_RUNTIME_DIR=ON
+_CRTLIBDIR=	${CLANG_RESOURCE_SUBDIR}/lib/${CONFIGURE_TARGET}
+.else
+CMAKE_ARGS+=	-DLLVM_ENABLE_PER_TARGET_RUNTIME_DIR=OFF
+_CRTLIBDIR=	${CLANG_RESOURCE_SUBDIR}/lib/${OPSYS:tl}
+.endif
+# Architecture dependent; listed in Makefile.RUNTIMES instead.
+LLVM_PLIST_EXCLUDE=	-e '^${STAGEDIR}${PREFIX}/${_CRTLIBDIR}/' \
+			-e '^${STAGEDIR}${CLANG_RESOURCE_DIR}/share/[a-z]*_[a-z]*list.txt$$'
+PLIST_FILES+=	${COMPILER_RT_LIBS_${COMPILER_RT_ARCH}:S|^|${_CRTLIBDIR}/|}
+# Sanitizer ignore lists; Makefile.RUNTIMES may list them explicitly in
+# COMPILER_RT_SHARE_<arch> (e.g. the older *_blacklist.txt names).
+.if defined(COMPILER_RT_SHARE_${COMPILER_RT_ARCH})
+PLIST_FILES+=	${COMPILER_RT_SHARE_${COMPILER_RT_ARCH}:S|^|${CLANG_RESOURCE_SUBDIR}/share/|}
+.else
+.for RT in asan cfi msan
+.if !empty(COMPILER_RT_LIBS_${COMPILER_RT_ARCH}:Mlibclang_rt.${RT}.a)
+PLIST_FILES+=	${CLANG_RESOURCE_SUBDIR}/share/${RT}_ignorelist.txt
+.endif
+.endfor
+.endif
+.endif
+
+.if ${ARCH} == "armv6"
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+.endif
+
+# lit is installed as a python module named after the slot; a "-" (named
+# variants) is not valid in a module name.
+LIT_MOD_NAME=	lit${LLVM_SUFFIX:S/-/_/g}
+
+PLIST_SUB+=	CONFIGURE_TARGET=${CONFIGURE_TARGET} \
+		LIT_MOD_NAME=${LIT_MOD_NAME} \
+		CLANG_RESOURCE_VER=${CLANG_RESOURCE_VER} \
+		LLVM_MAJOR_MINOR=${LLVM_MAJOR_MINOR} \
+		LLVM_MAJOR=${LLVM_MAJOR} \
+		LLVM_RELEASE=${LLVM_RELEASE} \
+		LLVM_SUFFIX=${LLVM_SUFFIX}
+
+# --- targets --------------------------------------------------------------
+LLVM_PLIST_EXCLUDE?=	-e '^/nonexistent/'
+llvm-component-post-patch:
+	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
+	    ${WRKSRC}/llvm/CMakeLists.txt
+.if ${LLVM_COMPONENT} == llvm
+	${FIND} ${WRKSRC}/llvm/utils/lit/lit.py ${WRKSRC}/llvm/utils/lit/lit \
+	    -name '*.py' -exec ${REINPLACE_CMD} \
+	    -e 's|import lit[[:>:]]|import ${LIT_MOD_NAME}|' \
+	    -e 's|from lit[[:>:]]|from ${LIT_MOD_NAME}|' \
+	    -e 's|[[:<:]]lit\.|${LIT_MOD_NAME}.|g' {} +
+.elif ${LLVM_COMPONENT} == clang
+	${REINPLACE_CMD} -e 's|%%LLVM_PREFIX%%|${LLVM_PREFIX}|' \
+	    ${WRKSRC}/clang/lib/Driver/ToolChains/CommonArgs.cpp
+	${REINPLACE_CMD} -e 's|%%LLVM_SUFFIX%%|${LLVM_SUFFIX}|' \
+	    ${WRKSRC}/clang/tools/clang-format/clang-format.py \
+	    ${WRKSRC}/clang/tools/clang-format/clang-format-sublime.py \
+	    ${WRKSRC}/clang/tools/clang-format/git-clang-format
+.elif ${LLVM_COMPONENT} == lld
+	${REINPLACE_CMD} -e "s|'indexsidebar.html'|['indexsidebar.html']|" \
+	    ${WRKSRC}/lld/docs/conf.py
+.elif ${LLVM_COMPONENT} == openmp
+# Standalone openmp hardcodes the header directory, ignoring the -D.
+	${REINPLACE_CMD} -e 's|set(LIBOMP_HEADERS_INSTALL_PATH "$${CMAKE_INSTALL_INCLUDEDIR}")|set(LIBOMP_HEADERS_INSTALL_PATH "${CLANG_RESOURCE_DIR}/include")|' \
+	    ${WRKSRC}/openmp/CMakeLists.txt
+.endif
+
+.if ${LLVM_COMPONENT} == clang || ${LLVM_COMPONENT} == flang
+llvm-component-check-backends:
+	@_have="$$(${LLVM_PREFIX}/bin/llvm-config --targets-built | ${TR} ' ' '\n' | ${SORT} | ${XARGS})"; \
+	_want="$$(${ECHO_CMD} ${LLVM_BACKENDS} | ${TR} ' ' '\n' | ${SORT} | ${XARGS})"; \
+	if [ "$${_have}" != "$${_want}" ]; then \
+		${ECHO_MSG} "===> Backend options do not match ${LLVM_PORT}:"; \
+		${ECHO_MSG} "     installed: $${_have}"; \
+		${ECHO_MSG} "     selected:  $${_want}"; \
+		${FALSE}; \
+	fi
+pre-configure: llvm-component-check-backends
+.endif
+
+llvm-component-install:
+.if ${LLVM_COMPONENT} == llvm && ${PORT_OPTIONS:MLIT}
+	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/llvm/utils/lit/lit.py \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/lit
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/llvm-lit
+.for _c in lit llvm-lit FileCheck
+	${LN} -fs ../${LLVM_DIR}/bin/${_c} \
+	    ${STAGEDIR}${PREFIX}/bin/${_c}${LLVM_SUFFIX}
+.endfor
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}
+	(cd ${WRKSRC}/llvm/utils/lit/lit && ${FIND} . -name '*.py' | \
+	    ${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} \
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME})
+.endif
+.if ${LLVM_COMPONENT} == clang
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
+	[ -e ${STAGEDIR}${LLVM_PREFIX}/bin/clang-tblgen ] || \
+	    ${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/clang-tblgen \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains
+	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
+	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
+.endif
+.if ${LLVM_COMPONENT} == lld
+	${LN} -sf ld.lld ${STAGEDIR}${LLVM_PREFIX}/bin/ld
+.endif
+
+# Wrappers, manual pages, documentation and cleanup common to all
+# components.
+llvm-component-post-install: llvm-component-install
+.if !empty(COMMANDS)
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
+	    ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
+.for command in ${COMMANDS:[2..-1]}
+	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
+	    ${STAGEDIR}${PREFIX}/bin/${command}${LLVM_SUFFIX}
+.endfor
+.endif
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1 ${STAGEDIR}${DOCSDIR}
+.for _man in ${MAN1SRCS}
+	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/${_man} \
+	    ${STAGEDIR}${PREFIX}/share/man/man1/${_man:R}${LLVM_SUFFIX}.1
+.endfor
+	if [ -d ${STAGEDIR}${LLVM_PREFIX}/share/doc ]; then \
+		${FIND} ${STAGEDIR}${LLVM_PREFIX}/share/doc -mindepth 2 \
+		    -maxdepth 2 -exec ${MV} {} ${STAGEDIR}${DOCSDIR}/ \; ; \
+	fi
+	${FIND} ${STAGEDIR}${DOCSDIR} -type d -name _sources -prune \
+	    -exec ${RM} -r {} \;
+	@${RMDIR} ${STAGEDIR}${DOCSDIR} 2>/dev/null || ${TRUE}
+.endif
+	${RM} -r ${STAGEDIR}${LLVM_PREFIX}/share/man \
+	    ${STAGEDIR}${LLVM_PREFIX}/share/doc
+	${FIND} ${STAGEDIR}${LLVM_PREFIX} \
+	    -type d -empty -delete 2>/dev/null || ${TRUE}
+
+post-patch: llvm-component-post-patch
+.if ${LLVM_COMPONENT} == mlir
+# Standalone MLIR misses some tool -> generated header dependencies.
+pre-build:
+	@cd ${BUILD_WRKSRC} && ${DO_MAKE_BUILD} mlir-headers
+.endif
+post-install: llvm-component-post-install
+
+# Regenerate pkg-plist from the staging area: make build-plist
+_LLVM_PLIST_SED= \
+	    -e 's|^${STAGEDIR}${PREFIX}/||' \
+	    -e 's|^${PYTHONPREFIX_SITELIBDIR:S|${PREFIX}/||}/|%%PYTHON_SITELIBDIR%%/|' \
+	    -e 's|/${PYTHONPREFIX_SITELIBDIR:S|${PREFIX}/||}/|/%%PYTHON_SITELIBDIR%%/|' \
+	    -e 's|${PYTHON_SOABI}|%%PYTHON_SOABI%%|' \
+	    -e 's|^${CLANG_RESOURCE_SUBDIR}/|llvm%%LLVM_SUFFIX%%/lib/clang/%%CLANG_RESOURCE_VER%%/|' \
+	    -e 's|^${LLVM_DIR}/|llvm%%LLVM_SUFFIX%%/|' \
+	    -e 's|${CONFIGURE_TARGET}|%%CONFIGURE_TARGET%%|' \
+	    -e 's|release\.cmake$$|%%CMAKE_BUILD_TYPE%%.cmake|' \
+	    -e 's|${LLVM_RELEASE:S/./\\./g}|%%LLVM_RELEASE%%|g' \
+	    -e 's|\.so\.${LLVM_MAJOR_MINOR:S/./\\./g}$$|.so.%%LLVM_MAJOR_MINOR%%|' \
+	    -e 's|\.so\.${LLVM_MAJOR}$$|.so.%%LLVM_MAJOR%%|' \
+	    -e 's|/\(lib[A-Za-z]*\)-${LLVM_MAJOR}\.so$$|/\1-%%LLVM_MAJOR%%.so|' \
+	    -e 's|/bin/\([a-z]*\)-${LLVM_MAJOR}$$|/bin/\1-%%LLVM_MAJOR%%|' \
+	    -e 's|^\(bin/[^/]*\)${LLVM_SUFFIX}$$|\1%%LLVM_SUFFIX%%|' \
+	    -e 's|^%%PYTHON_SITELIBDIR%%/${LIT_MOD_NAME}/|%%PYTHON_SITELIBDIR%%/%%LIT_MOD_NAME%%/|'
+
+# Option dependent parts of the staging area: each tag T in
+# LLVM_PLIST_TAGS has the staged paths that get %%T%% prepended listed
+# in ${WRKDIR}/plist-tag-T, written by the llvm-plist-tags target.
+.if ${LLVM_COMPONENT} == clang
+LLVM_PLIST_TAGS+=	PYCLANG
+.if ${PORT_OPTIONS:MEXTRAS}
+LLVM_PLIST_TAGS+=	EXTRAS
+.endif
+.endif
+
+llvm-plist-tags:
+.for _t in ${LLVM_PLIST_TAGS}
+	@${RM} ${WRKDIR}/plist-tag-${_t}
+	@${TOUCH} ${WRKDIR}/plist-tag-${_t}
+.endfor
+.if ${LLVM_COMPONENT} == clang
+	@${FIND} ${STAGEDIR}${LLVM_PREFIX} -path '*/site-packages/clang/*' \
+	    >> ${WRKDIR}/plist-tag-PYCLANG
+.if ${PORT_OPTIONS:MEXTRAS}
+	@${RM} -r ${WRKDIR}/stage-extras
+	@cd ${BUILD_WRKSRC} && ${SETENV} DESTDIR=${WRKDIR}/stage-extras \
+	    ${CMAKE_BIN} -P tools/extra/cmake_install.cmake > /dev/null
+	@${FIND} ${WRKDIR}/stage-extras \( -type f -o -type l \) | \
+	    ${SED} -e 's|^${WRKDIR}/stage-extras|${STAGEDIR}|' \
+	    >> ${WRKDIR}/plist-tag-EXTRAS
+.for _c in ${EXTRAS_COMMANDS}
+	@${ECHO_CMD} ${STAGEDIR}${PREFIX}/bin/${_c}${LLVM_SUFFIX} \
+	    >> ${WRKDIR}/plist-tag-EXTRAS
+.endfor
+.endif
+.endif
+
+build-plist: llvm-plist-tags
+	@[ -d ${STAGEDIR} ] || (echo "Can't make plist before package is staged ${STAGEDIR}" && exit 1)
+	@${RM} ${WRKDIR}/plist-tags
+.for _t in ${LLVM_PLIST_TAGS}
+	@${SED} ${_LLVM_PLIST_SED} ${WRKDIR}/plist-tag-${_t} | \
+	    ${SED} -e 's|^|${_t} |' >> ${WRKDIR}/plist-tags
+.endfor
+	@${TOUCH} ${WRKDIR}/plist-tags
+	@${ECHO_CMD} "@comment >>>>> GENERATED FILE, DO NOT EDIT <<<<<" > ${PLIST}
+	@${ECHO_CMD} "@comment Run 'make build-plist' after staging to regenerate" >> ${PLIST}
+	@${FIND} ${STAGEDIR}${PREFIX} \( -type f -o -type l \) | \
+	    ${GREP} -v '^${STAGEDIR}${PREFIX}/share/toolchains/' | \
+	    ${GREP} -v '^${STAGEDIR}${PREFIX}/share/man/man1/' | \
+	    ${GREP} -v '^${STAGEDIR}${DOCSDIR}/' | \
+	    ${GREP} -v '^${STAGEDIR}${PREFIX}/share/licenses/' | \
+	    ${GREP} -v '^${STAGEDIR}${LLVM_PREFIX}/lib/LLVMgold.so$$' | \
+	    ${GREP} -v ${LLVM_PLIST_EXCLUDE} | \
+	    ${SED} ${_LLVM_PLIST_SED} | \
+	    ${SORT} -u | \
+	    ${AWK} -v tags=${WRKDIR}/plist-tags \
+	    'FILENAME == tags { tag[$$2] = tag[$$2] "%%" $$1 "%%"; next } \
+	    ($$0 in tag) { printf "%s", tag[$$0] } \
+	    ${LLVM_PLIST_AWK} !/(${BE_PATTERN:Unone_xxx})$$/ { print }' \
+	    ${WRKDIR}/plist-tags - >> ${PLIST}
+	@${RM} ${WRKDIR}/plist-tags
+	@${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
+	@${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
+
+check-commands:
+.for command in ${COMMANDS}
+	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
+.endfor

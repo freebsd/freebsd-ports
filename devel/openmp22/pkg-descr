@@ -1,0 +1,5 @@
+The LLVM OpenMP runtime library (libomp) and the omp.h header used by
+clang's -fopenmp.
+
+It is part of the LLVM 22 toolchain, built standalone against
+devel/llvm22 and installed into ${PREFIX}/llvm22.

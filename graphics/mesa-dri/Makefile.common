@@ -57,6 +57,8 @@ BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 CONFIGURE_ENV+=	LLVM_CONFIG=${LLVM_CONFIG}
 # Needed to locate libclc
 CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
+# mesa_clc (built for the libclc users) links against libclang-cpp
+BUILD_DEPENDS+=	${LLVM_PREFIX}/lib/cmake/clang/ClangConfig.cmake:${CLANG_PORT}
 
 # mesa 25.x removed the -Dlibelf option; libelf is now auto-detected.
 # If the user has elfutils installed in LOCALBASE, propagate it as a

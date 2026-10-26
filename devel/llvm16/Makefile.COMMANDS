@@ -81,6 +81,7 @@ CLANG_COMMANDS=	\
 		clang-linker-wrapper \
 		clang-offload-bundler \
 		clang-offload-packager \
+		clang-rename \
 		clang-repl \
 		clang-scan-deps \
 		clang-tblgen \
@@ -102,7 +103,6 @@ EXTRAS_COMMANDS= \
 		clang-move \
 		clang-pseudo \
 		clang-query \
-		clang-rename \
 		clang-reorder-fields \
 		clang-tidy \
 		find-all-symbols \
@@ -148,6 +148,5 @@ MLIR_COMMANDS=	\
 		mlir-translate \
 		tblgen-lsp-server
 
-OPENMP_COMMANDS=	\
-		llvm-omp-device-info \
-		llvm-omp-kernel-replay
+# libomptarget (llvm-omp-device-info, llvm-omp-kernel-replay) is not built.
+OPENMP_COMMANDS=

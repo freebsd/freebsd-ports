@@ -1,6 +1,7 @@
 PORTNAME=	opencl-clang
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
+PORTREVISION=	1
 DISTVERSION_llvm17=	17.0.0
 DISTVERSION_llvm16=	16.0.0
 DISTVERSION_llvm15=	15.0.0
@@ -26,6 +27,7 @@ LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
+		libclang-cpp.so.${FLAVOR:S/llvm//}:lang/clang${FLAVOR:S/llvm//} \
 		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}
 
 FLAVORS=	${17 16 15 14 13 12:L:S/^/llvm/}

@@ -1,6 +1,7 @@
 The LLVM Project is a collection of modular and reusable compiler and
-toolchain technologies.  This version adds support for the Arm Morello
-prototype architecture (CHERI ported to ARMv8-A).
+toolchain technologies.  This version adds support for the CHERIoT
+microcontroller.
 
-This port includes Clang (a C/C++/Objective-C compiler), LLD (a linker),
-and the LLVM infrastructure these are built on.
+This port installs the LLVM core libraries (libLLVM) and tools such as
+llc, opt and llvm-objdump into ${PREFIX}/llvm-cheriot.  The other
+LLVM sub-projects are packaged separately and build against it.
