@@ -5768,3 +5768,10 @@ devel/p5-DateTime-Format-IBeat||2026-10-25|Has expired: Upstream distribution ha
 www/p5-CGI-Response||2026-10-25|Has expired: Legacy functionality
 www/p5-WebService-Linode||2026-10-25|Has expired: Defunct service
 misc/py-kartograph||2026-10-25|Removed: Contains python2 code, no users and no upstream activity for 12+ years
+deskutils/budgie-desktop-view||2026-10-26|Broken for more than 5 months in tree
+sysutils/budgie-control-center||2026-10-26|Broken for more than 5 months in tree
+x11-themes/budgie-backgrounds||2026-10-26|Broken for more than 5 months in tree
+x11/budgie-desktop||2026-10-26|Broken for more than 5 months in tree
+x11/budgie-screensaver||2026-10-26|Broken for more than 5 months in tree
+x11/budgie-session||2026-10-26|Broken for more than 5 months in tree
+x11/budgie||2026-10-26|Broken for more than 5 months in tree

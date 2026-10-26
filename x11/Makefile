@@ -51,10 +51,6 @@
     SUBDIR += boomer
     SUBDIR += bosd
     SUBDIR += brisk-menu
-    SUBDIR += budgie
-    SUBDIR += budgie-desktop
-    SUBDIR += budgie-screensaver
-    SUBDIR += budgie-session
     SUBDIR += cde
     SUBDIR += cde-devel
     SUBDIR += chayang
