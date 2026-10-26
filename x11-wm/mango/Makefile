@@ -1,5 +1,5 @@
 PORTNAME=	mango
-DISTVERSION=	0.18.2
+DISTVERSION=	0.18.3
 PORTREVISION=	0
 CATEGORIES=	x11-wm
 
@@ -15,7 +15,9 @@ BUILD_DEPENDS=	evdev-proto>=5.8:devel/evdev-proto \
 		wayland-protocols>=1.24:graphics/wayland-protocols
 LIB_DEPENDS=	libcjson.so:devel/libcjson \
 		libdrm.so:graphics/libdrm \
+		libdisplay-info.so:sysutils/libdisplay-info \
 		libinput.so:x11/libinput \
+		libliftoff.so:graphics/libliftoff \
 		libpcre2-8.so:devel/pcre2 \
 		libpixman-1.so:x11/pixman \
 		libscenefx-0.5.so:x11-toolkits/scenefx05 \
@@ -46,7 +48,7 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${ICONSDIR}
-	${INSTALL_DATA} ${WRKSRC}/assets/mango.png ${STAGEDIR}${PREFIX}/${ICONSDIR}
+	${INSTALL_DATA} ${WRKSRC}/assets/mango.svg ${STAGEDIR}${PREFIX}/${ICONSDIR}
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
