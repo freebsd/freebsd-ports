@@ -1,1 +1,4 @@
-qico FIDO mailer log analyzer and statistic builder.
+qlas is a statistics builder for the qico FidoNet mailer. It analyzes the qico
+log and builds the busy graph and the session list for every line (dial-up
+modems and TCP/IP lines: binkp and ifcico), the links summary and the top
+lists of downloaders, uploaders and on-liners.
