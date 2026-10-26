@@ -1,6 +1,6 @@
 PORTNAME=	shell-gpt
 DISTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=2.0.0<4.0.0:misc/py-openai@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.7.0<1.0.0:devel/py-typer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click>=8.0.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=13.1.0<16.0.0:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=1.8.0<2.0.0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.51:devel/py-prompt-toolkit@${PY_FLAVOR} \
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=2.0.0<4.0.0:misc/py-openai@${PY_FLAV
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests-mock>=1.10.0<2.0.0:www/py-requests-mock@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist pep517 pytest
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 NO_ARCH=	yes
