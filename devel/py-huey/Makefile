@@ -1,5 +1,5 @@
 PORTNAME=	huey
-DISTVERSION=	3.4.0
+DISTVERSION=	3.5.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,14 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 USES=		python
 USE_PYTHON=	pep517 autoplist concurrent pytest
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
+
 NO_ARCH=	yes
 
-# tests as of 3.4.0: 243 passed, 171 skipped, 2 warnings in 20.76s
+pre-test:
+	@${RM} -rf ${WRKSRC}/build
+
+# tests as of 3.5.3: 292 passed, 137 skipped, 2 warnings in 24.58s
 
 .include <bsd.port.mk>
