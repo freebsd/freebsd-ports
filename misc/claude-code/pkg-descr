@@ -3,6 +3,6 @@ terminal, understands your codebase, and helps you code faster by executing
 routine tasks, explaining complex code, and handling git workflows - all
 through natural language commands.
 
-claude is a closed source Linux binary working through Linuxlator.
-
-This port replaces the NodeJS-based misc/claude-code-legacy port.
+Claude Code supports Anthropic AI endpoints as well as any third-party services
+compatible with the Anthropic protocol, including local Ollama instances, Amazon
+Bedrock, and Google Cloud's Vertex AI Agent Builder.
