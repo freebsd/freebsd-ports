@@ -1,6 +1,6 @@
 PORTNAME=	magpie
 DISTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm budgie
 MASTER_SITES=	BUDGIE
 
@@ -31,6 +31,7 @@ LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libcolord.so:graphics/colord
 RUN_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
+		mutter>0:x11-wm/mutter \
 		xkeyboard-config>0:x11/xkeyboard-config
 
 USES=		budgie compiler:c++0x gettext-tools gl gnome localbase meson \
