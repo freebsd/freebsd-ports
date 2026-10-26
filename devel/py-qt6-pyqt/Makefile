@@ -31,7 +31,7 @@ PORTSCOUT=	limit:^${_QT_VERSION:R}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64le
 USE_QT+=	pdf
 PLIST_SUB+=	PDF=""
 .else

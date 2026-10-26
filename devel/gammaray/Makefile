@@ -31,7 +31,7 @@ WRKSRC=		${WRKDIR}/GammaRay-${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == powerpc64le
 PLIST_SUB+=	WEBENGINE=""
 USE_QT+=	webengine
 .else
