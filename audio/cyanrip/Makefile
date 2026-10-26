@@ -1,7 +1,7 @@
 PORTNAME=	cyanrip
 #DISTVERSIONPREFIX=	v
 #DISTVERSION=	0.9.3.1
-DISTVERSION=	0.9.4-rc2.20260821
+DISTVERSION=	0.9.4-rc3.20261016
 CATEGORIES=	audio
 #MASTER_SITES=	https://github.com/cyanreg/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 #DISTNAME=	${PORTNAME}-src-${DISTVERSIONFULL}
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libcdio.so:sysutils/libcdio \
 		libcdio_paranoia.so:sysutils/libcdio-paranoia \
+		libchromaprint.so:audio/chromaprint \
 		libcurl.so:ftp/curl \
 		libmusicbrainz5.so:audio/libmusicbrainz5 \
 		libqrencode.so:graphics/libqrencode
@@ -24,7 +25,7 @@ USES=		localbase:ldflags meson pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cyanreg
-GH_TAGNAME=	f8ebf48fc0d6926796c785fe2dbd9dec54ac15a5
+GH_TAGNAME=	7dbe56aad2f0ab039ab7b238a30ed662b1c017de
 
 #NO_WRKSUBDIR=	yes
 
