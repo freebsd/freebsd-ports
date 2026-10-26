@@ -1,11 +1,10 @@
 PORTNAME=	stund
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	net
 
 MAINTAINER=	vim@vimer.org
 COMMENT=	Minimal STUN (RFC 8489) binding server
-WWW=		https://github.com/Yeatol/freebsd_stund
+WWW=		https://github.com/Yeatol/freebsd-stund
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c++23-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yeatol
-GH_PROJECT=	freebsd_stund
+GH_PROJECT=	freebsd-stund
 
 MAKE_ARGS=	WITH_RC_SUBR=yes
 
