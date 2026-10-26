@@ -1,0 +1,8 @@
+The openpgp-card-tools package provides a set of command-line utilities for
+interacting with OpenPGP cards. It supports common operations such as
+listing card information, managing PINs, generating keys, and performing
+cryptographic operations directly on the hardware.
+
+The primary tool, 'oct', serves as a versatile interface for administrative
+tasks and user-level card management, ensuring secure handling of private
+keys stored on OpenPGP-compliant smart cards and security tokens.
