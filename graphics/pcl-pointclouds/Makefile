@@ -1,7 +1,7 @@
 PORTNAME=	pcl
 DISTVERSIONPREFIX=	pcl-
 DISTVERSION=	1.15.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics math
 #MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-pointclouds
@@ -80,9 +80,8 @@ VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R} \
 
 # tests as of 1.15.1: 98% tests passed, 2 tests failed out of 133, see https://github.com/PointCloudLibrary/pcl/issues/6373
 
-.include <../../math/vtk9/Makefile.version>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/MODULES/s| system||' ${WRKSRC}/cmake/pcl_find_boost.cmake
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

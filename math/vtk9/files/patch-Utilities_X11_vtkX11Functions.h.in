@@ -1,0 +1,13 @@
+-- workaround for https://gitlab.kitware.com/vtk/vtk/-/work_items/20220
+
+--- Utilities/X11/vtkX11Functions.h.in.orig	2026-09-27 18:37:38 UTC
++++ Utilities/X11/vtkX11Functions.h.in
+@@ -127,6 +127,8 @@
+ #endif // VTK_HAVE_XCURSOR
+ #endif // defined(VTK_USE_X)
+ 
++#define Status int // opencascade-8.0.1 fails to compile w/out this
++
+ #define vtkX11FunctionsInitialize VTK_ABI_NAMESPACE_MANGLE(vtkX11FunctionsInitialize)
+ #define vtkX11FunctionsFinalize VTK_ABI_NAMESPACE_MANGLE(vtkX11FunctionsFinalize)
+ 
