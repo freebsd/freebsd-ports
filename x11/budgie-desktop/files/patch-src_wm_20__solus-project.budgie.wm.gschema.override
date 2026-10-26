@@ -1,7 +1,7 @@
---- src/wm/20_solus-project.budgie.wm.gschema.override.orig	2022-08-30 16:36:31 UTC
+--- src/wm/20_solus-project.budgie.wm.gschema.override.orig	2025-11-09 13:21:57 UTC
 +++ src/wm/20_solus-project.budgie.wm.gschema.override
-@@ -3,13 +3,13 @@ edge-tiling = true
- attach-modal-dialogs = true
+@@ -4,13 +4,13 @@ overlay-key = "Super_L"
+ overlay-key = "Super_L"
  
  [org.gnome.desktop.background:Budgie]
 -picture-uri = 'file:///usr/share/backgrounds/budgie/default.jpg'
