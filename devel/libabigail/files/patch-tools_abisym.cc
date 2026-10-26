@@ -1,7 +1,7 @@
---- tools/abisym.cc.orig	2025-01-13 11:40:45 UTC
+--- tools/abisym.cc.orig	2026-07-30 18:04:29 UTC
 +++ tools/abisym.cc
-@@ -12,6 +12,7 @@
- 
+@@ -13,6 +13,7 @@
+ #include <argp.h>
  #include <libgen.h>
  #include <elf.h>
 +#include <libgen.h>

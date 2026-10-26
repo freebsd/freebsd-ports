@@ -35,8 +35,8 @@ include/libabigail/abg-workers.h
 include/libabigail/abg-writer.h
 lib/libabigail.a
 lib/libabigail.so
-lib/libabigail.so.8
-lib/libabigail.so.8.0.0
+lib/libabigail.so.9
+lib/libabigail.so.9.0.0
 lib/libabigail/default.abignore
 libdata/pkgconfig/libabigail.pc
 share/aclocal/abigail.m4

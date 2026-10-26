@@ -1,5 +1,5 @@
 PORTNAME=	libabigail
-DISTVERSION=	2.9
+DISTVERSION=	2.10
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/${PORTNAME}/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libdw.so:devel/elfutils \
 		libxxhash.so:devel/xxhash
 
-USES=		compiler:c++11-lang gmake gnome libtool localbase pkgconfig \
+USES=		compiler:c++17-lang gmake gnome libtool localbase pkgconfig \
 		python tar:xz
 USE_GNOME=	libxml2
 
