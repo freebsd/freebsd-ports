@@ -1,5 +1,5 @@
-TIMESTAMP = 1774577578
-SHA256 (go/devel_forgejo-runner/act_runner-v12.7.3/v12.7.3.mod) = 9a966588e95334777164772041f8cc886874f032a769ab27758ba261353c7a41
-SIZE (go/devel_forgejo-runner/act_runner-v12.7.3/v12.7.3.mod) = 4955
-SHA256 (go/devel_forgejo-runner/act_runner-v12.7.3/v12.7.3.zip) = c94a7cecb7606cd25c56dee9b48cb1e9cc2a75d878d93aa4da4e222a5f21d1e1
-SIZE (go/devel_forgejo-runner/act_runner-v12.7.3/v12.7.3.zip) = 4068694
+TIMESTAMP = 1792906998
+SHA256 (go/devel_forgejo-runner/act_runner-v13.2.0/v13.2.0.mod) = 3e6b1f0b412ccb0d017012e712251afd3e0380e58247300386ac7c526b08ee81
+SIZE (go/devel_forgejo-runner/act_runner-v13.2.0/v13.2.0.mod) = 3590
+SHA256 (go/devel_forgejo-runner/act_runner-v13.2.0/v13.2.0.zip) = ad2a7778646121d8ae821b6610ab44577a4d367b3968ff3505563102cfb297b0
+SIZE (go/devel_forgejo-runner/act_runner-v13.2.0/v13.2.0.zip) = 4349684
