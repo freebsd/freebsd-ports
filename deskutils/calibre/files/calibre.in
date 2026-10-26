@@ -43,28 +43,35 @@ load_rc_config $name
 : ${calibre_logsize:=10}
 
 pidfile=/var/run/${name}/${name}.pid
-command=%%PREFIX%%/bin/calibre-server
-command_interpreter=%%LOCALBASE%%/bin/%%PYTHON_VERSION%%
+calibre_command=%%PREFIX%%/bin/calibre-server
+procname=%%LOCALBASE%%/bin/%%PYTHON_VERSION%%
+command=/usr/sbin/daemon
 required_dirs=${calibre_library}
 
 start_precmd=calibre_prestart
 
 calibre_home=${calibre_home:-$(getent passwd ${calibre_user} | awk -F: '{print $6}')}
 calibre_env="${calibre_env} HOME=${calibre_home:-/nonexistent}"
+calibre_args="${calibre_flags} --log ${calibre_logfile} --max-log-size ${calibre_logsize} --pidfile ${pidfile}"
 
 if [ ! -z "${calibre_port}" ]; then
-	command_args="${command_args} --port=${calibre_port}"
+	calibre_args="${calibre_args} --port=${calibre_port}"
 fi
 if [ ! -z "${calibre_url_prefix}" ]; then
-	command_args="${command_args} --url-prefix=${calibre_url_prefix}"
+	calibre_args="${calibre_args} --url-prefix=${calibre_url_prefix}"
 fi
 
-command_args="${command_args} --log ${calibre_logfile} --pidfile ${pidfile} --max-log-size ${calibre_logsize} --daemonize ${calibre_library}"
+command_args="-f ${calibre_command} ${calibre_args} ${calibre_library}"
 
 calibre_prestart()
 {
 	install -d -o ${calibre_user} -m 755 /var/run/${name}
 	install -d -o ${calibre_user} -m 755 `dirname ${calibre_logfile}`
+
+	# "calibre_flags" must be passed to calibre-server executable, but
+	# if assigned to rc_flags they end up at the start of the daemon command line.
+	# Force this to be empty and put "calibre_flags" after the actual calibre_server command.
+	rc_flags=""
 }
 
 run_rc_command "$1"
