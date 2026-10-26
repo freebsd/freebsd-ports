@@ -1,12 +1,9 @@
 PORTNAME=	bouncycastle
-DISTVERSION=	1.83
-PORTREVISION=	1
+DISTVERSION=	1.86.2
 CATEGORIES=	java security
-MASTER_SITES=	https://github.com/bcgit/bc-java/archive/refs/tags/
-DISTNAME=	r${DVERSION1}rv${DVERSION2}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 WWW=		https://www.bouncycastle.org/
 
@@ -20,6 +17,10 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 USES=		cpe java:ant,run
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	bc-java
+USE_GITHUB=	yes
+GH_ACCOUNT=	bcgit
+GH_PROJECT=	bc-java
+GH_TAGNAME=	r1rv86v2
 
 MAKE_ARGS=	-f \
 		ant/jdk${JDKNVERSION}+.xml
@@ -35,9 +36,6 @@ OPTIONS_SUB=		yes
 ZIPSRC_DESC=		Install bundled ZIP source files
 ZIPSRC_ALL_TARGET=	zip-src
 
-DVERSION1=	${PORTVERSION:R}
-DVERSION2=	${PORTVERSION:E}
-WRKSRC=		${WRKDIR}/bc-java-${DISTNAME}
 ARTIFACTSDIR=	${WRKSRC}/build/artifacts/jdk${JDKMVERSION}
 JDKMVERSION=	1.8
 JDKNVERSION=	18
@@ -50,6 +48,9 @@ JARSUFFIX=	-jdk${JDKNVERSION}on-${PORTVERSION}.jar
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 EXTRA_PATCHES+=	${FILESDIR}/armv6-patch-bc+-build.xml
 .endif
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/core/src/main/resources
 
 do-install:
 	for src in $$(${FIND} ${ARTIFACTSDIR}/jars -name "*${JARSUFFIX}"); do \
