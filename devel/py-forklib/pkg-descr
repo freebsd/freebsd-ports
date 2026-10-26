@@ -1,0 +1,3 @@
+forklib makes it easy to fork a single process into multiple workers.
+It supports forking with restart on failure, parallel map-style processing,
+and optional async and thread callbacks.
