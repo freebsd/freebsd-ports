@@ -1,0 +1,13 @@
+--- data/meson.build.orig	2022-06-11 04:30:52 UTC
++++ data/meson.build
+@@ -7,10 +7,5 @@ custom_target(
+     install : true,
+ )
+ 
+-install_data(
+-    'budgie-screensaver',
+-    install_dir: join_paths(sysconfdir, 'pam.d'),
+-)
+-
+ install_man('budgie-screensaver-command.1')
+ install_man('budgie-screensaver.1')

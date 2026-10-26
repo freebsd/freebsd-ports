@@ -1,0 +1,24 @@
+--- panels/info-overview/cc-info-overview-panel.ui.orig	2023-08-01 19:09:00 UTC
++++ panels/info-overview/cc-info-overview-panel.ui
+@@ -37,10 +37,9 @@
+                 </child>
+ 
+                 <child>
+-                  <object class="GtkListBox">
++                  <object class="GtkListBox" id="hostname_box">
+                     <property name="visible">True</property>
+                     <property name="selection-mode">none</property>
+-                    <signal name="row-activated" handler="cc_info_panel_row_activated_cb" swapped="yes"/>
+                     <style>
+                       <class name="content" />
+                     </style>
+@@ -50,8 +49,7 @@
+                       <object class="CcListRow" id="hostname_row">
+                         <property name="visible">True</property>
+                         <property name="title" translatable="yes">Device Name</property>
+-                        <property name="secondary-label" bind-source="hostname_entry" bind-property="text" bind-flags="sync-create" />
+-                        <property name="icon-name">go-next-symbolic</property>
++                        <property name="activatable">False</property>
+                       </object>
+                     </child>
+ 

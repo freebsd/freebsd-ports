@@ -19,6 +19,7 @@
     SUBDIR += bijiben
     SUBDIR += birdtray
     SUBDIR += bookworm
+    SUBDIR += budgie-desktop-view
     SUBDIR += cairo-dock
     SUBDIR += cairo-dock-plugins
     SUBDIR += caja-extensions

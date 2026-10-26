@@ -1,0 +1,18 @@
+--- src/wm/20_solus-project.budgie.wm.gschema.override.orig	2022-08-30 16:36:31 UTC
++++ src/wm/20_solus-project.budgie.wm.gschema.override
+@@ -3,13 +3,13 @@ edge-tiling = true
+ attach-modal-dialogs = true
+ 
+ [org.gnome.desktop.background:Budgie]
+-picture-uri = 'file:///usr/share/backgrounds/budgie/default.jpg'
++picture-uri = 'file://%%PREFIX%%/share/backgrounds/budgie/default.jpg'
+ 
+ [org.gnome.desktop.wm.preferences:Budgie]
+ button-layout = 'appmenu:minimize,maximize,close'
+ 
+ [org.gnome.desktop.screensaver:Budgie]
+-picture-uri = 'file:///usr/share/backgrounds/budgie/default.jpg'
++picture-uri = 'file://%%PREFIX%%/share/backgrounds/budgie/default.jpg'
+ 
+ [org.gnome.desktop.wm.keybindings:Budgie]
+ switch-input-source = ['<Alt>Shift_L', '<Super>space', 'XF86Keyboard']

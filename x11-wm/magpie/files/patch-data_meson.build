@@ -1,0 +1,20 @@
+--- data/meson.build.orig	2023-07-10 19:45:21 UTC
++++ data/meson.build
+@@ -47,12 +47,12 @@ if have_shared_components
+   install_data(['mutter-schemas.convert'],
+     install_dir: join_paths(datadir, 'GConf/gsettings'),
+   )
++endif
+ 
+-  if have_libgudev
+-    install_data(['61-magpie.rules'],
+-      install_dir: join_paths(udev_dir, 'rules.d'),
+-    )
+-  endif
++if have_libgudev
++  install_data(['61-magpie.rules'],
++    install_dir: join_paths(udev_dir, 'rules.d'),
++  )
+ endif
+ 
+ subdir('dbus-interfaces')
