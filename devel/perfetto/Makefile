@@ -1,6 +1,6 @@
 PORTNAME=	perfetto
 DISTVERSIONPREFIX=	v
-DISTVERSION=	58.2
+DISTVERSION=	59.1
 CATEGORIES=	devel
 MASTER_SITES=	https://storage.googleapis.com/perfetto/:perfetto
 DISTFILES=	sqlite-amalgamation-3500300.zip:perfetto \
