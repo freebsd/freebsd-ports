@@ -1,5 +1,5 @@
 PORTNAME=	salt
-PORTVERSION=	3008.4
+PORTVERSION=	3008.5
 PORTEPOCH=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
@@ -68,21 +68,6 @@ NO_ARCH=	yes
 
 CONFLICTS=	py[0-9]*-salt-300*
 
-# we must pass these options before the target name, and python.mk has no
-# early-arguments variable, so we have to manipulate the target
-PYDISTUTILS_INSTALL_TARGET=\
-	--salt-root-dir=/ \
-	--salt-config-dir=${ETCDIR} \
-	--salt-cache-dir=/var/cache/salt \
-	--salt-sock-dir=/var/run/salt \
-	--salt-srv-root-dir=${ETCDIR} \
-	--salt-base-file-roots-dir=${ETCDIR}/states \
-	--salt-base-pillar-roots-dir=${ETCDIR}/pillar \
-	--salt-base-master-roots-dir=${ETCDIR}/salt-master \
-	--salt-logs-dir=/var/log/salt \
-	--salt-pidfile-dir=/var/run \
-	install
-
 USE_RC_SUBR=	salt_api \
 		salt_master \
 		salt_minion \
@@ -91,7 +76,7 @@ USE_RC_SUBR=	salt_api \
 
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
-SUB_FILES=	pkg-message
+SUB_FILES=	_syspaths.py pkg-message
 
 OPTIONS_DEFINE=	AWS BASH FISH TCP ZEROMQ ZSH
 OPTIONS_DEFAULT=	BASH FISH ZEROMQ ZSH
@@ -133,6 +118,11 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's|yumpkg5|pkgng|' ${WRKSRC}/conf/minion
 	@${REINPLACE_CMD} -e 's|"/usr/bin/python3"|"${PYTHON_CMD}"|' ${WRKSRC}/salt/auth/pam.py
+
+# The PEP 517 build does not run "setup.py install", which used to generate
+# salt/_syspaths.py from --salt-*-dir options, so ship it ourselves
+pre-configure:
+	${CP} ${WRKDIR}/_syspaths.py ${WRKSRC}/salt/_syspaths.py
 
 do-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/

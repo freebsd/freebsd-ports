@@ -25,6 +25,14 @@ To configure a Salt Proxy Minion, do the following:
 
 
 
+Starting with Salt 3008, the FreeBSD-specific modules (service, sysrc,
+sysctl, kmod, jail, ports, freebsd_update, shadow) are no longer part of Salt.
+They are provided by a separate extension; install it on every FreeBSD minion:
+
+  o pkg install py%%PYTHON_SUFFIX%%-saltext.freebsd
+
+
+
 To change the Transport method from the default option of Zeromq to either TCP or RAET:
 
   o Re-build the port with the desired options enabled to install the correct runtime dependencies
