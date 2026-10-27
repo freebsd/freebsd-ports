@@ -1,16 +1,14 @@
 PORTNAME=	forgejo-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	5
+DISTVERSION=	0.7.0
 CATEGORIES=	devel
-MASTER_SITES=	https://codeberg.org/forgejo-contrib/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/ \
-		LOCAL/jrm:comp
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		fj-comp-${DISTVERSIONFULL}${EXTRACT_SUFX}:comp
+# MASTER_SITES=	https://codeberg.org/forgejo-contrib/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/ \
+# 		LOCAL/jrm:comp
+# DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+# 		fj-comp-${DISTVERSIONFULL}${EXTRACT_SUFX}:comp
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	CLI client for Forgejo
-WWW=		https://codeberg.org/forgejo-contrib/forgejo-cli
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
@@ -21,8 +19,8 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
 USES=		cargo ssl
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_FORGEJO=	yes
+FJ_ACCOUNT=	forgejo-contrib
 
 PLIST_FILES=	bin/fj \
 		share/bash-completion/completions/fj \
@@ -30,14 +28,15 @@ PLIST_FILES=	bin/fj \
 		share/zsh/site-functions/_fj
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions \
-		 ${STAGEDIR}${PREFIX}/share/fish/completions \
-		 ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKDIR}/fj-comp/fj \
-		${STAGEDIR}${PREFIX}/share/bash-completion/completions/
-	${INSTALL_DATA} ${WRKDIR}/fj-comp/fj.fish \
-		${STAGEDIR}${PREFIX}/share/fish/completions/
-	${INSTALL_DATA} ${WRKDIR}/fj-comp/_fj \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/
+	${MKDIR} \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions \
+		${STAGEDIR}${PREFIX}/share/fish/completions \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${CARGO_TARGET_DIR}/release/fj completion bash > \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/fj
+	${CARGO_TARGET_DIR}/release/fj completion fish > \
+		${STAGEDIR}${PREFIX}/share/fish/completions/fj.fish
+	${CARGO_TARGET_DIR}/release/fj completion zsh > \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_fj
 
 .include <bsd.port.mk>
