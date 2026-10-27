@@ -1,5 +1,5 @@
 PORTNAME=	ccache
-DISTVERSION=	4.14.1
+DISTVERSION=	4.14.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ccache/ccache/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	4
@@ -78,7 +78,7 @@ CCACHE_COMPILERS+=	cc c++ CC gcc g++ ${GNU_COMPILERS:S|^|gcc|} \
 			${GNU_COMPILERS:S|^|cpp|}
 
 .if ${PORT_OPTIONS:MCLANGLINK}
-CLANG_COMPILERS+=	12 13 14 15 16 17 18 19 20 21 22 -devel
+CLANG_COMPILERS+=	12 13 14 15 16 17 18 19 20 21 22 23 -devel
 CCACHE_COMPILERS+=	clang clang++ ${CLANG_COMPILERS:S|^|clang|} \
 			${CLANG_COMPILERS:S|^|clang++|} \
 			${CLANG_COMPILERS:S|^|cpp|}
