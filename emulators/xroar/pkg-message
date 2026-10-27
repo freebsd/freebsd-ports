@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Firmware ROM images are required to usefully run this emulator.
+If you have difficulty extracting these from your real Dragon,
+CoCo or MC-10, dumps may be available from the Dragon Archive [0]
+or the Color Computer Archive [1].
+
+[0] https://archive.worldofdragon.org/
+[1] https://colorcomputerarchive.com/
+EOM
+}
+]

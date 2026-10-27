@@ -199,6 +199,7 @@
     SUBDIR += xemu
     SUBDIR += xen-kernel
     SUBDIR += xhomer
+    SUBDIR += xroar
     SUBDIR += xsystem35
     SUBDIR += xzx
     SUBDIR += yaze-ag
