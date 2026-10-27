@@ -18,6 +18,7 @@ USE_QT=		core gui wayland widgets \
 		buildtools:build qmake:build
 USE_XORG=	x11
 
+KDE_PLASMA_BRANCH=	${KDE_PLASMA6_BRANCH}
 KDE_PLASMA_VERSION=	${KDE_PLASMA6_VERSION}
 PKGNAMEPREFIX?=		plasma6-
 DESCR=			${.CURDIR:H:H}/x11/plasma6-plasma/pkg-descr
