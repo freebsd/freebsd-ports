@@ -1,5 +1,5 @@
---- scripts/nodejs-patches/002-workaround-node-bug-52229.orig	2025-07-02 13:57:45 UTC
-+++ scripts/nodejs-patches/002-workaround-node-bug-52229
+--- scripts/nodejs-patches/002-workaround-node-bug-52229.patch.orig	2025-07-02 13:57:45 UTC
++++ scripts/nodejs-patches/002-workaround-node-bug-52229.patch
 @@ -2,7 +2,7 @@ diff --git a/common.gypi b/common.gypi
  index 888b8b94ca1a..375956862d2d 100644
  --- a/common.gypi
