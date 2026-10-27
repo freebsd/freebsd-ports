@@ -1,5 +1,5 @@
 PORTNAME=	django-tree-queries
-DISTVERSION=	0.26.1
+DISTVERSION=	0.28.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=4.2:www/py-django52@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2:www/py-django52@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
@@ -26,6 +26,6 @@ OPTIONS_DEFINE=	ADMIN
 
 ADMIN_DESC=	Tree management support for Django admin
 
-ADMIN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-js-asset>0:www/py-django-js-asset@${PY_FLAVOR}
+ADMIN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-js-asset>=4:www/py-django-js-asset@${PY_FLAVOR}
 
 .include <bsd.port.mk>
