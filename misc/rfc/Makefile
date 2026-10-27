@@ -1,10 +1,10 @@
 PORTNAME=	rfc
 PORTVERSION=	3.2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	https://BSDforge.com/projects/source/misc/rfc/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script to search for RFC's
 WWW=		http://www.dewn.com/rfc/
 

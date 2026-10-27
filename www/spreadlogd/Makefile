@@ -1,9 +1,10 @@
 PORTNAME=	spreadlogd
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	http://www.lethargy.org/mod_log_spread/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backend for mod_log_spread
 WWW=		https://BSDforge.com/projects/www/spreadlogd/
 

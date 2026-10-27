@@ -1,10 +1,10 @@
 PORTNAME=	paexec
 PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel executor, distributes tasks over network
 WWW=		https://sourceforge.net/projects/paexec/
 

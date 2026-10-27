@@ -1,11 +1,11 @@
 PORTNAME?=	cvstrac
 PORTVERSION=	2.0.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvstrac.org/
 DISTNAME=	cvstrac-${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Web-Based Bug And Patch-Set Tracking System For CVS
 WWW=		http://www.cvstrac.org/
 

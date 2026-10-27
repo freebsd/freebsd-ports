@@ -1,12 +1,13 @@
 PORTNAME=	tkcvs
 DISTVERSION=	9.3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://sourceforge.net/projects/tkcvs/files/:tkcvs \
 		https://BSDforge.com/projects/source/devel/tkcvs/:tkcvsicon
 DISTFILES=	tkcvs_9.3.3.tar.gz:tkcvs \
 		tkcvs.tgz:tkcvsicon
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk based GUI for CVS, Subversion, Git and RCS
 WWW=		https://sourceforge.net/projects/tkcvs/
 

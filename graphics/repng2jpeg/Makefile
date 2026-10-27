@@ -1,10 +1,10 @@
 PORTNAME=	repng2jpeg
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://BSDforge.com/projects/source/graphics/repng2jpeg/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small tool to recompress JPEG, PNG, and GIF images
 WWW=		https://BSDforge.COM/projects/graphics/repng2jpeg/
 

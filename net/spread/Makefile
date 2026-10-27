@@ -1,11 +1,11 @@
 PORTNAME=	spread
 PORTVERSION=	3.17.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net perl5
 MASTER_SITES=	https://BSDforge.com/projects/source/net/spread/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Spread Group Communication System, a network toolkit
 WWW=		http://www.spread.org/
 

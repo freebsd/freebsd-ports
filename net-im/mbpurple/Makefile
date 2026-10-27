@@ -1,10 +1,10 @@
 PORTNAME=	mbpurple
 PORTVERSION=	0.3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-im
 MASTER_SITES=	https://BSDforge.com/projects/source/net-im/mbpurple/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrate Twitter with Pidgin (AKA microblog-purple)
 WWW=		https://BSDforge.com/projects/net-im/mbpurple/
 

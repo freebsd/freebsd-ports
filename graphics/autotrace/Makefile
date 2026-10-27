@@ -1,6 +1,6 @@
 PORTNAME=	autotrace
 DISTVERSION=	0.31.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/autotrace/autotrace/commit/
@@ -14,7 +14,7 @@ PATCHFILES=	eeeb813a416ff309804f6833729fab20d036e667.patch:-p1 \
 		1a1b29e4e041098d920a3a1f2fd237bca98eecda.patch:-p1 \
 		190f18251b8fe9a361cd8154f2f746855472ffed.patch:-p1
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert bitmap to vector graphics
 WWW=		https://github.com/autotrace/autotrace
 

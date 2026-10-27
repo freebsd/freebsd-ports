@@ -1,11 +1,11 @@
 PORTNAME=	hotkeys
 PORTVERSION=	0.5.7.1
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	misc
 MASTER_SITES=	https://BSDforge.com/projects/source/misc/hotkeys/${PORTVERSION}/
 DISTNAME=	hotkeys_${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows usage of special keys on internet/multimedia keyboards
 WWW=		http://ypwong.org/hotkeys/
 

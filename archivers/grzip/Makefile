@@ -1,9 +1,10 @@
 PORTNAME=	grzip
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Efficient file compressor
 WWW=		https://BSDforge.com/projects/archivers/grzip
 

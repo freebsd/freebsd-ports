@@ -1,9 +1,10 @@
 PORTNAME=	gettext
 DISTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lua 5+ bindings for Gettext
 WWW=		https://gitlab.com/ports1/lua-gettext
 

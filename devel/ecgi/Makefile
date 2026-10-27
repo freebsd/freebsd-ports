@@ -1,9 +1,10 @@
 PORTNAME=	ecgi
 PORTVERSION=	0.6.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for the creation of CGI-based Web applications
 WWW=		https://github.com/Sven-Dawitz/${PORTNAME}
 

@@ -1,11 +1,11 @@
 PORTNAME=	cryptofs
 PORTVERSION=	0.6.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	filesystems
 MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/fusefs-cryptofs/
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encrypted filesystem for FUSE
 WWW=		https://BSDforge.com/projects/sysutils/fusefs-cryptofs/
 

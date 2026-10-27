@@ -1,6 +1,6 @@
 PORTNAME=	secpanel
 PORTVERSION=	0.6.1
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	security tcl tk
 MASTER_SITES=	SF/${PORTNAME} \
@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}.tgz \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tgz
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for managing and running ssh and related utilities
 WWW=		http://themediahost.de/secpanel/
 

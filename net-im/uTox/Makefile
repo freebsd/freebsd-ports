@@ -1,11 +1,11 @@
 PORTNAME=	uTox
 DISTVERSION=	0.18.1
 DISTVERSIONSUFFIX=	-full
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im net-p2p
 MASTER_SITES=	https://github.com/uTox/uTox/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Tox client
 WWW=		https://github.com/uTox/uTox
 

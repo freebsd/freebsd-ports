@@ -1,10 +1,10 @@
 PORTNAME=	xrdesktop2
 PORTVERSION=	2.00
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	https://BSDforge.com/projects/source/net/xrdesktop2/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 frontend for Rdesktop
 WWW=		https://BSDforge.com/projects/net/xrdesktop2/
 

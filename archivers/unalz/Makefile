@@ -1,9 +1,10 @@
 PORTNAME=	unalz
 DISTVERSION=	0.66
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://BSDforge.com/projects/source/archivers/unalz/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts AlZip archives
 WWW=		https://bsdforge.com/projects/archivers/unalz/
 

@@ -1,12 +1,12 @@
 PORTNAME=	zerowait
 PORTVERSION=	0.8d
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	https://BSDforge.com/projects/source/www/zerowait-httpd/
 PKGNAMESUFFIX=	-httpd
 DISTNAME=	0W-httpd-${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight and fast http server
 WWW=		https://www.0w.ru/httpd/
 

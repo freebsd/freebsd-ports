@@ -1,12 +1,12 @@
 PORTNAME=	rvm
 PORTVERSION=	1.11
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	an
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Archive manager that uses rsync to manage backups
 WWW=		https://rvm.sourceforge.net/
 

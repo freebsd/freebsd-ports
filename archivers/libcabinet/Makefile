@@ -1,9 +1,10 @@
 PORTNAME=	libcabinet
 DISTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	portmaster@BSDForge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable library and utility to use Microsoft cabinet files (.cab)
 WWW=		https://codeberg.org/BSDforge/libcabinet
 

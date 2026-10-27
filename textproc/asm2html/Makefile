@@ -1,10 +1,10 @@
 PORTNAME=	asm2html
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://BSDforge.com/projects/source/textproc/asm2html/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts NASM syntax assembly code to HTML code
 WWW=		https://bsdforge.com/projects/textproc/asm2html/
 

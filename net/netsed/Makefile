@@ -1,9 +1,10 @@
 PORTNAME=	netsed
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://silicone.homelinux.org/release/netsed/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alters the contents of network packets in real time
 WWW=		http://silicone.homelinux.org/projects/netsed/
 

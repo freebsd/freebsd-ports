@@ -1,10 +1,10 @@
 PORTNAME=	quirc
 PORTVERSION=	0.9.84
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	irc tk
 MASTER_SITES=	https://BSDforge.com/projects/source/irc/quirc/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk IRC client for the X Window System
 WWW=		https://BSDforge.com/projects/irc/quirc/
 
