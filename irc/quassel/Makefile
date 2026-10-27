@@ -30,7 +30,7 @@ USE_QT=		tools:build 5compat base
 CPE_VENDOR=	quassel-irc
 CPE_PRODUCT=	quassel_irc
 
-OPTIONS_DEFINE=		NLS
+OPTIONS_DEFINE=		NLS WEBENGINE
 OPTIONS_MULTI=		MODULE DB
 OPTIONS_GROUP=		UI
 MODULE_DESC=		Quassel components
@@ -40,12 +40,17 @@ OPTIONS_MULTI_MODULE=	CLIENT CORE MONO
 OPTIONS_MULTI_DB=	PGSQL SQLITE3
 OPTIONS_GROUP_UI=	KDE SPELL
 OPTIONS_DEFAULT=	CLIENT MONO SQLITE3
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
 OPTIONS_SUB=		yes
 
 CLIENT_DESC=		Quassel client (for use with core)
 CLIENT_CMAKE_BOOL=	WANT_QTCLIENT
 CLIENT_USES=		desktop-file-utils kde:6
-CLIENT_USE=		qt=multimedia,webengine
+CLIENT_USE=		qt=multimedia
 CLIENT_PREVENTS=	CORE
 CLIENT_PREVENTS_MSG=	Quassel core server should be installed via irc/quassel-core port
 
@@ -58,12 +63,12 @@ CORE_VARS=		use_rc_subr=quasselcore \
 			groups=quasselcore \
 			plist=${NONEXISTENT} # allow core to override PLIST_FILES
 CORE_PLIST_FILES=	bin/quasselcore
-CORE_PREVENTS=		CLIENT MONO KDE SPELL NLS
+CORE_PREVENTS=		CLIENT MONO KDE SPELL NLS WEBENGINE
 
 MONO_DESC=		Quassel standalone (monolithic binary: core+client combined)
 MONO_CMAKE_BOOL=	WANT_MONO
 MONO_USES=		desktop-file-utils kde:6
-MONO_USE=		qt=multimedia,webengine
+MONO_USE=		qt=multimedia
 MONO_PREVENTS=		CORE
 MONO_PREVENTS_MSG=	Quassel core server should be installed via irc/quassel-core port
 
@@ -82,6 +87,10 @@ NLS_USES=		gettext
 PGSQL_USE=		qt=sqldriver-psql:run
 
 SQLITE3_USE=		qt=sqldriver-sqlite:run
+
+WEBENGINE_DESC=		URL previews in the chat view (requires QtWebEngine)
+WEBENGINE_USE=		qt=webengine
+WEBENGINE_CMAKE_BOOL=	WITH_WEBENGINE
 
 PLIST_SUB=		LIBVERSION=${DISTVERSION}
 
