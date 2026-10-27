@@ -2113,7 +2113,7 @@ include/qgis/qgsvtpkvectortiledataprovider.h
 include/qgis/qgsvtpkvectortileguiprovider.h
 include/qgis/qgsvtpkvectortilesourcewidget.h
 include/qgis/qgsweakrelation.h
-include/qgis/qgswebenginepage.h
+%%WEBENGINE%%include/qgis/qgswebenginepage.h
 include/qgis/qgswebframe.h
 include/qgis/qgswebpage.h
 include/qgis/qgswebview.h
