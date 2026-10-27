@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNU/non-gnu/${PORTNAME}/source/feature/${DISTVERSION}
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	bdheeman@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv6 enabled cvs. You can use IPv6 connection when using pserver
 WWW=		https://www.nongnu.org/cvs/
 

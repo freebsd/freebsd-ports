@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-src
 CATEGORIES=	devel finance
 MASTER_SITES=	https://github.com/TA-Lib/ta-lib/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	bdheeman@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNIX, POSIX Library for Technical Analysis
 WWW=		https://ta-lib.org/ \
 		https://github.com/TA-Lib/ta-lib
