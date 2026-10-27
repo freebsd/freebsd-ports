@@ -243,6 +243,7 @@
     SUBDIR += copytape
     SUBDIR += coreos-ct
     SUBDIR += coreutils
+    SUBDIR += coxswain
     SUBDIR += cpdup
     SUBDIR += cpdup-FreeBSD
     SUBDIR += cpu-microcode

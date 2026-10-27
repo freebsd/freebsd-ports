@@ -1,0 +1,13 @@
+Coxswain is a two-panel file manager in the Norton Commander tradition,
+built for developers. The panels show git status for every file, the
+function keys copy, move and delete, and archives (zip, 7z, tar) open
+like folders.
+
+It finds any file on the machine by name as you type, searches the text
+inside documents (PDF, Office, e-mail, source code), and can search by
+meaning with a small model that runs on the machine itself, or with a
+local model server such as Ollama. Nothing leaves the machine unless the
+user asks.
+
+This port installs the terminal app, coxswain (also as cox), its manual
+page, and an rc.d script that runs the search helper for one user.
