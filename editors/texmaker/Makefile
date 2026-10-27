@@ -16,14 +16,28 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 USES=		cmake compiler:c++11-lang desktop-file-utils \
 		ghostscript:x11,run gl pkgconfig qt:6 tar:bzip2 tex
 USE_GL=		opengl
-USE_QT=		5compat base declarative positioning webchannel webengine \
+USE_QT=		5compat base declarative positioning webchannel \
 		tools:build
 USE_TEX=	latex dvipsk
 
 EXTRACT_AFTER_ARGS=	--exclude 3rdparty/hunspell
 
+OPTIONS_DEFINE=		WEBENGINE
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
+
+WEBENGINE_DESC=		Built-in browser for the manual and check results (requires QtWebEngine)
+WEBENGINE_USE=		QT=webengine
+
 _ISIZE=		16x16 22x22 32x32 44x44 48x48 64x64 128x128 256x256 scalable
 _IDIR=		${PREFIX}/share/icons/hicolor
+
+post-patch-WEBENGINE-off:
+	${REINPLACE_CMD} -e 's/set(INTERNALBROWSER "yes")/set(INTERNALBROWSER "no")/' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${MKDIR} ${_ISIZE:S,^,${STAGEDIR}${_IDIR}/,:S,$,/apps,}
