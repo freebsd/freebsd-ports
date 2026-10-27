@@ -23,6 +23,72 @@
     </dates>
   </vuln>
 
+  <vuln vid="bdac753c-d1d5-11f1-985e-901b0edee044">
+    <topic>py-svglib -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+      <name>py311-svglib</name>
+      <name>py312-svglib</name>
+      <name>py313-svglib</name>
+      <name>py313t-svglib</name>
+      <name>py314-svglib</name>
+      <name>py314t-svglib</name>
+      <name>py315-svglib</name>
+      <range><lt>2.3.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dinu Gherman reports:</p>
+	<blockquote cite="https://github.com/deeplook/svglib/security/advisories/GHSA-249c-7rgc-f52h">
+	<p>The SVG &lt;path&gt; elliptical-arc parser in
+	"svglib.utils.split_arc_values()" builds a regex with multiple empty-matchable
+	float groups and two mandatory flag groups, then runs it under "re.finditer()".
+	An arc argument that is a long run of digits (containing no 0/1 where a flag is
+	expected) triggers catastrophic backtracking whose cost grows exponentially
+	(~2x per ~4 extra digits). Reachable from any untrusted SVG via svg2rlg /
+	svg2pdf.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/deeplook/svglib/security/advisories/GHSA-555j-qj3j-c8jv">
+	<p>"svg2rlg()" expands &lt;use&gt; references without any limit on the
+	total number of expansions. Only direct cycles are rejected (CircularRefError).
+	A group containing N &lt;use&gt; elements that point to another such group
+	multiplies the work by N per nesting level, so an SVG of about 1.4 KB makes
+	svglib clone and render over 100,000 nodes, taking tens of seconds of CPU time
+	and hundreds of MiB of memory. Each additional level adds about 245 bytes to
+	the document and multiplies time by ~10.
+
+	This is the SVG &lt;use&gt; variant of the XML "billion laughs" attack (the
+	same class as librsvg CVE-2019-20446).</p>
+	</blockquote>
+	<blockquote cite="https://github.com/deeplook/svglib/security/advisories/GHSA-2p5c-8vcc-4rcw">
+	<p>svglib converts SVG into ReportLab drawings / PDF / PNG (svg2rlg).
+	When it renders an or element, SvgRenderer.xlink_href_target() resolves the
+	element's xlink:href / href to a local file path and embeds that file into the
+	output. The resolution joins the attacker-controlled reference onto the SVG's
+	own directory with "os.path.join()" and performs no containment check.  Because
+	"os.path.join(base, iri)" discards base the moment iri is absolute, and ..
+	segments collapse above base, a crafted SVG can name any file the rendering
+	process can read. If that file decodes as a raster image (any extension) its
+	bytes are copied verbatim into the output; if it is an XML-parseable .svg its
+	rendered content, text included, is inlined. The result is arbitrary local file
+	read against a service that converts untrusted SVGs from a file path. This is a
+	different class and a different code path from the 2020 XXE (CVE-2020-10799,
+	fixed in 0.9.4).</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/deeplook/svglib/security/advisories/GHSA-249c-7rgc-f52h</url>
+      <url>https://github.com/deeplook/svglib/security/advisories/GHSA-555j-qj3j-c8jv</url>
+      <url>https://github.com/deeplook/svglib/security/advisories/GHSA-2p5c-8vcc-4rcw</url>
+    </references>
+    <dates>
+      <discovery>2026-10-22</discovery>
+      <entry>2026-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc4d0a5b-d0c6-11f1-bae2-3497f65b111b">
     <topic>ImageMagick7 -- multiple vulnerabilities</topic>
     <affects>
