@@ -6,5 +6,5 @@ include/ta-lib/ta_libc.h
 lib/libta-lib.a
 lib/libta-lib.so
 lib/libta-lib.so.1
-lib/libta-lib.so.1.1.0
+lib/libta-lib.so.1.2.0
 libdata/pkgconfig/ta-lib.pc
