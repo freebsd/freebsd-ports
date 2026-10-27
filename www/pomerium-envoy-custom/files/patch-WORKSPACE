@@ -1,4 +1,4 @@
---- WORKSPACE.orig	2026-10-01 21:17:51 UTC
+--- WORKSPACE.orig	2026-10-26 22:26:54 UTC
 +++ WORKSPACE
 @@ -2,31 +2,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "
  
@@ -29,7 +29,7 @@
 -
 -hedron_compile_commands_setup_transitive_transitive_transitive()
 -
- envoy_version = "4be7862a2a6d9a7867f576385d545bb0b47b9181"  # v1.38.5
+ envoy_version = "d098c69f64497010931e92fb6f580ee67638fa51"  # v1.38.8
  
  openssh_version = "V_10_3_P1"
 @@ -35,8 +11,6 @@ readerwriterqueue_version = "1.0.7"

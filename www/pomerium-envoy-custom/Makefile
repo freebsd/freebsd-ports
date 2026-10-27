@@ -1,7 +1,6 @@
 PORTNAME=	pomerium-envoy-custom
 DISTVERSIONPREFIX=
-DISTVERSION=	1.37.0.20261001
-PORTREVISION=	1
+DISTVERSION=	1.37.0.20261026
 CATEGORIES=	www
 MASTER_SITES+=	https://github.com/envoyproxy/envoy/archive/:envoy_src \
 		https://github.com/openssh/openssh-portable/archive/:openssh_portable \
@@ -56,8 +55,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/autoconf:devel/autoconf \
 		zip:archivers/zip
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
-		libmaxminddb.so:net/libmaxminddb \
-		libnghttp2.so:www/libnghttp2 \
 		libre2.so:devel/re2 \
 		libxxhash.so:devel/xxhash \
 		libyaml-cpp.so:devel/yaml-cpp \
@@ -67,12 +64,12 @@ USES=		cmake:indirect compiler:c++20-lang gmake go:no_targets \
 		java:build ninja:build python:build
 USE_GITHUB=	yes
 
-ENVOY_SRC_COMMIT=	4be7862a2a6d9a7867f576385d545bb0b47b9181
+ENVOY_SRC_COMMIT=	d098c69f64497010931e92fb6f580ee67638fa51
 ZLIBBASE=		${LOCALBASE:H}
 
 GH_ACCOUNT=	pomerium
 GH_PROJECT=	envoy-custom
-GH_TAGNAME=	8b998d0f6ff30a8243296168125a783c35772141
+GH_TAGNAME=	30d955cf07bd68f148c4f4fcaa4a82b1ff2709de
 
 # Bazel-managed dependencies (GitHub archive format).
 # These are fetched by Bazel as http_archive during the build, sourced from
@@ -131,14 +128,14 @@ GH_TUPLE+=	grailbio:bazel-compilation-database:40864791135333e1446a04553b63cbe74
 		bazelbuild:rules_python:1.9.0:rules_python \
 		protocolbuffers:rules_ruby:37cf5900d0b0e44fa379c0ea3f5fcee0035d77ca:rules_ruby \
 		apache:skywalking-data-collect-protocol:v10.4.0:skywalking_data_collect_protocol \
-		apache:thrift:v0.23.0:thrift \
+		apache:thrift:v0.24.0:thrift \
 		census-instrumentation:opencensus-cpp:5501a1a255805e0be83a41348bb5f2630d5ed6b3:io_opencensus_cpp \
 		census-instrumentation:opencensus-proto:v0.3.0:opencensus_proto \
 		Linaro:uadk:v2.9:uadk \
 		protocolbuffers:utf8_range:de0b4a8ff9b5d4c98108bdfe723291a33c52c54f:utf8_range \
 		v8:v8:14.6.202.10:v8 \
 		bytecodealliance:wasm-micro-runtime:WAMR-2.4.4:com_github_wamr \
-		bytecodealliance:wasmtime:v24.0.9:com_github_wasmtime \
+		bytecodealliance:wasmtime:v24.0.10:com_github_wasmtime \
 		intel:ittapi:a3911fff01a775023a06af8754f9ec1e5977dd97:intel_ittapi
 
 JAVA_VERSION=	21+
@@ -381,8 +378,6 @@ BAZEL_BUILD_OPTS=	--distdir=${WRKDIR}/bazel-distdir \
 			--override_repository=net_zlib=${WRKDIR}/sys_repos/zlib \
 			--override_repository=zlib_ng=${WRKDIR}/sys_repos/zlib \
 			--override_repository=zlib-ng=${WRKDIR}/sys_repos/zlib \
-			--override_repository=com_github_maxmind_libmaxminddb=${WRKDIR}/sys_repos/libmaxminddb \
-			--override_repository=libmaxminddb=${WRKDIR}/sys_repos/libmaxminddb \
 			--override_repository=build_bazel_rules_apple=${WRKDIR}/sys_repos/apple_stub \
 			--override_repository=base_pip3=${WRKDIR}/sys_repos/base_pip3 \
 			--override_repository=io_hyperscan=${WRKDIR}/sys_repos/hyperscan \
@@ -466,9 +461,7 @@ post-patch:
 # source) and is referenced by the @envoy http_archive patches list in WORKSPACE.
 	${CP} ${FILESDIR}/envoy_freebsd-dependency-imports.patch \
 		${WRKSRC}/patches/envoy/freebsd-dependency-imports.patch
-	for f in foreign-cc-maxmind \
-	    maxmind-extension \
-	    luajit \
+	for f in luajit \
 	    platform \
 	    terminate-thread \
 	    thread-impl \
@@ -540,8 +533,6 @@ pre-build:
 	    fix-transport-socket-options.patch \
 	    freebsd-dependency-imports.patch \
 	    freebsd-repositories.patch \
-	    freebsd-foreign-cc-maxmind.patch \
-	    freebsd-maxmind-extension.patch \
 	    freebsd-luajit.patch \
 	    freebsd-platform.patch \
 	    freebsd-terminate-thread.patch \
@@ -695,24 +686,6 @@ pre-build:
 	${LN} -sf ${ZLIBBASE}/include/zlib.h ${WRKDIR}/sys_repos/zlib/zlib/include/zlib.h
 	${LN} -sf ${ZLIBBASE}/include/zconf.h ${WRKDIR}/sys_repos/zlib/zlib/include/zconf.h
 	${LN} -sf ${ZLIBBASE}/lib/libz.so ${WRKDIR}/sys_repos/zlib/libz.so
-# nghttp2: shared lib, www/nghttp2
-	@${MKDIR} ${WRKDIR}/sys_repos/nghttp2/include/nghttp2
-	@echo "" > ${WRKDIR}/sys_repos/nghttp2/WORKSPACE
-	${CP} ${FILESDIR}/sys_repos_nghttp2.BUILD.bazel ${WRKDIR}/sys_repos/nghttp2/BUILD.bazel
-	${LN} -sf ${LOCALBASE}/include/nghttp2/nghttp2.h \
-		${WRKDIR}/sys_repos/nghttp2/include/nghttp2/nghttp2.h
-	${LN} -sf ${LOCALBASE}/include/nghttp2/nghttp2ver.h \
-		${WRKDIR}/sys_repos/nghttp2/include/nghttp2/nghttp2ver.h
-	${LN} -sf ${LOCALBASE}/lib/libnghttp2.so ${WRKDIR}/sys_repos/nghttp2/libnghttp2.so
-# libmaxminddb: shared lib, net/libmaxminddb
-	@${MKDIR} ${WRKDIR}/sys_repos/libmaxminddb/include
-	@echo "" > ${WRKDIR}/sys_repos/libmaxminddb/WORKSPACE
-	${CP} ${FILESDIR}/sys_repos_libmaxminddb.BUILD.bazel ${WRKDIR}/sys_repos/libmaxminddb/BUILD.bazel
-	${LN} -sf ${LOCALBASE}/include/maxminddb.h \
-		${WRKDIR}/sys_repos/libmaxminddb/include/maxminddb.h
-	${LN} -sf ${LOCALBASE}/include/maxminddb_config.h \
-		${WRKDIR}/sys_repos/libmaxminddb/include/maxminddb_config.h
-	${LN} -sf ${LOCALBASE}/lib/libmaxminddb.so ${WRKDIR}/sys_repos/libmaxminddb/libmaxminddb.so
 # hyperscan: override always so Bazel never fetches the source archive.
 # On amd64: real system library from devel/hyperscan (exact version match 5.4.2).
 # On other arches: empty stub (hyperscan targets are linux/freebsd_x86_64-only).
