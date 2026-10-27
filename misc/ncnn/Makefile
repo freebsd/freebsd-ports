@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=	VULKAN
 
 VULKAN_DESC=		Vulkan compute support
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
-		glslangValidator:graphics/glslang
+			glslangValidator:graphics/glslang
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_CMAKE_BOOL=	NCNN_VULKAN
 

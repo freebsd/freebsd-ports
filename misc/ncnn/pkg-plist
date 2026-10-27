@@ -43,5 +43,5 @@ lib/cmake/ncnn/ncnnConfig.cmake
 lib/cmake/ncnn/ncnnConfigVersion.cmake
 lib/libncnn.so
 lib/libncnn.so.1
-lib/libncnn.so.1.0.20261024
+lib/libncnn.so.1.0.20261027
 libdata/pkgconfig/ncnn.pc
