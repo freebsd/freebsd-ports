@@ -1,6 +1,6 @@
 PORTNAME=	paraview
 DISTVERSION=	${PARAVIEW_VER}.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -71,7 +71,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils eigen:3 fortran gl gnome	\
 		jpeg localbase pkgconfig python qt:6 shebangfix sqlite tar:xz xorg
 USE_GL=		glew opengl
 USE_GNOME=	libxml2
-USE_QT=		5compat base svg tools webengine
+USE_QT=		5compat base svg tools
 #buildtools:build core gui help network opengl qmake:build sql svg	\
 #		webengine widgets x11extras glew xmlpatterns
 USE_XORG=	ice sm x11 xau xcb xcursor xdamage xdmcp xext xfixes xorgproto xrender	\
