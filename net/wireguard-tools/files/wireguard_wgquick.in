@@ -4,14 +4,26 @@
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown
 #
-# wireguard_enable (bool):    Set to "YES" to enable wireguard.
-#                             (default: "NO")
+# wireguard_enable (bool):     Set to "YES" to enable wireguard.
+#                              (default: "NO")
 #
-# wireguard_interfaces (str): List of interfaces to bring up/down
-#                             on start/stop. (eg: "wg0 wg1")
-#                             (default: "")
-# wireguard_env (str):        Environment variables for the userspace
-#                             implementation. (eg: "LOG_LEVEL=debug")
+# wireguard_interfaces (str):  List of interfaces to bring up/down
+#                              on start/stop. (eg: "wg0 wg1")
+#                              (default: "")
+# wireguard_chdir (str):       Directory to cd to for wg-quick or "" for no cd.
+#                              (default: "")
+# wireguard_env (str):         Environment variables for the userspace
+#                              implementation. (eg: "LOG_LEVEL=debug")
+#                              (default: "")
+# wireguard_fib (str):         Number of a non-default routing table or "" for
+#                              the default.
+#                              (default: "")
+# wireguard_limits (str):      limits(1) for the userspace implementation.
+#                              (default: "")
+# wireguard_login_class (str): Login class to use.
+#                              (default: daemon)
+# wireguard_prepend (str):     Command prepended to the wg-quick invocation.
+#                              (default: "")
 
 . /etc/rc.subr
 
@@ -26,42 +38,131 @@ status_cmd="${name}_status"
 
 wireguard_start()
 {
-	${wireguard_env:+eval export $wireguard_env}
+	startmsg "Starting ${name}."
+	eval wireguard_login_class=\${${name}_login_class:-daemon}
+	_status=0
 
 	for interface in ${wireguard_interfaces}; do
-		%%PREFIX%%/bin/wg-quick up ${interface}
+		_command="%%PREFIX%%/bin/wg-quick up ${interface}"
+
+
+		_cd="${wireguard_chdir:+cd $wireguard_chdir && }"
+		_doit="\
+${wireguard_fib:+setfib -F $wireguard_fib }\
+${wireguard_env:+env $wireguard_env }\
+$_command"
+		if [ -n "$wireguard_prepend" ]; then
+			_doit="$wireguard_prepend $_doit"
+		fi
+
+		# Prepend default limits
+		_doit="$_cd limits -C $wireguard_login_class $wireguard_limits $_doit"
+
+		# run the full command
+		if ! _run_rc_doit "$_doit"; then
+			warn "failed to run ${_command}"
+			_status=1
+		fi
 	done
+	return $_status
 }
 
 wireguard_stop()
 {
+	startmsg "Stopping ${name}."
+	eval wireguard_login_class=\${${name}_login_class:-daemon}
+	_status=0
+
 	for interface in ${wireguard_interfaces}; do
-		%%PREFIX%%/bin/wg-quick down ${interface}
+		_command="%%PREFIX%%/bin/wg-quick down ${interface}"
+
+
+		_cd="${wireguard_chdir:+cd $wireguard_chdir && }"
+		_doit="\
+${wireguard_fib:+setfib -F $wireguard_fib }\
+${wireguard_env:+env $wireguard_env }\
+$_command"
+		if [ -n "$wireguard_prepend" ]; then
+			_doit="$wireguard_prepend $_doit"
+		fi
+
+		# Prepend default limits
+		_doit="$_cd limits -C $wireguard_login_class $wireguard_limits $_doit"
+
+		# run the full command
+		if ! _run_rc_doit "$_doit"; then
+			warn "failed to run ${_command}"
+			_status=1
+		fi
 	done
+	return $_status
 }
 
 wireguard_reload()
 {
-	${wireguard_env:+eval export $wireguard_env}
+	startmsg "Reloading ${name}."
+	eval wireguard_login_class=\${${name}_login_class:-daemon}
+	_status=0
 
 	for interface in ${wireguard_interfaces}; do
 		tmpfile="`mktemp`"
-		%%PREFIX%%/bin/wg-quick strip ${interface} > ${tmpfile}
-		%%PREFIX%%/bin/wg syncconf ${interface} ${tmpfile}
+
+                for _command in \
+                        "%%PREFIX%%/bin/wg-quick strip ${interface} > ${tmpfile}" \
+		        "%%PREFIX%%/bin/wg syncconf ${interface} ${tmpfile}"
+                do
+			_cd="${wireguard_chdir:+cd $wireguard_chdir && }"
+			_doit="\
+	${wireguard_fib:+setfib -F $wireguard_fib }\
+	${wireguard_env:+env $wireguard_env }\
+	$_command"
+			if [ -n "$wireguard_prepend" ]; then
+				_doit="$wireguard_prepend $_doit"
+			fi
+
+			# Prepend default limits
+			_doit="$_cd limits -C $wireguard_login_class $wireguard_limits $_doit"
+
+			# run the full command
+			if ! _run_rc_doit "$_doit"; then
+				warn "failed to run ${_command}"
+				_status=1
+			fi
+                done
+
 		rm -f ${tmpfile}
 	done
+	return $_status
 }
 
 wireguard_status()
 {
-	${wireguard_env:+eval export $wireguard_env}
-	wireguard_status="0"
+	eval wireguard_login_class=\${${name}_login_class:-daemon}
+	_status=0
 
 	for interface in ${wireguard_interfaces}; do
-		%%PREFIX%%/bin/wg show ${interface} || wireguard_status="1"
-	done
+		_command="%%PREFIX%%/bin/wg show ${interface}"
 
-	return ${wireguard_status}
+
+		_cd="${wireguard_chdir:+cd $wireguard_chdir && }"
+		_doit="\
+${wireguard_fib:+setfib -F $wireguard_fib }\
+${wireguard_env:+env $wireguard_env }\
+$_command"
+		if [ -n "$wireguard_prepend" ]; then
+			_doit="$wireguard_prepend $_doit"
+		fi
+
+		# Prepend default limits
+		_doit="$_cd limits -C $wireguard_login_class $wireguard_limits $_doit"
+
+		# run the full command
+		if ! _run_rc_doit "$_doit"; then
+			warn "failed to run ${_command}"
+			_status=1
+		fi
+	done
+	return $_status
 }
 
 load_rc_config $name
