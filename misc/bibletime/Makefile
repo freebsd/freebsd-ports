@@ -1,6 +1,7 @@
 PORTNAME=	bibletime
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	misc kde
 
 MAINTAINER=	ericbsd@FreeBSD.org
@@ -23,7 +24,7 @@ USES=		cmake compiler:c++17-lang gl qt:6 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	bibletime
 USE_GL=		opengl
-USE_QT=		5compat base declarative multimedia speech svg webengine \
+USE_QT=		5compat base declarative multimedia speech svg \
 		tools:build
 
 OPTIONS_DEFINE=	DOCS
