@@ -1,6 +1,6 @@
 PORTNAME=	merkaartor
 PORTVERSION=	0.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 
 MAINTAINER=	makc@FreeBSD.org
@@ -21,11 +21,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
 USE_LDCONFIG=	yes
 
-USE_QT=		5compat base networkauth svg webengine \
+USE_QT=		5compat base networkauth svg \
 		imageformats:run \
 		tools:build
 
-CMAKE_ON=	LIBPROXY WEBENGINE
+CMAKE_ON=	LIBPROXY
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
