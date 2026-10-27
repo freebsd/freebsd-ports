@@ -67,7 +67,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		cast-0.3.0 \
 		cbc-0.1.2 \
 		cbc-0.2.1 \
-		cc-1.9.0 \
+		cc-1.10.0 \
 		cfg-expr-0.20.10 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
@@ -112,7 +112,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		crossbeam-queue-0.3.14 \
 		crossbeam-utils-0.8.23 \
 		crunchy-0.2.4 \
-		crypto-bigint-0.7.5 \
+		crypto-bigint-0.7.6 \
 		crypto-common-0.1.7 \
 		crypto-common-0.2.2 \
 		crypto-mac-0.11.0 \
@@ -122,7 +122,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		csv-1.4.0 \
 		csv-core-0.1.13 \
 		ctr-0.10.1 \
-		ctutils-0.4.3 \
+		ctutils-0.4.5 \
 		curve25519-dalek-5.0.0-rc.1 \
 		curve25519-dalek-derive-0.1.1 \
 		dasp_sample-0.11.0 \
@@ -242,13 +242,13 @@ CARGO_CRATES=	addchain-0.2.1 \
 		hyper-util-0.1.21 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
-		icu_collections-2.3.0 \
-		icu_locale_core-2.3.0 \
-		icu_normalizer-2.3.0 \
-		icu_normalizer_data-2.3.0 \
-		icu_properties-2.3.0 \
-		icu_properties_data-2.3.0 \
-		icu_provider-2.3.1 \
+		icu_collections-2.4.0 \
+		icu_locale_core-2.4.0 \
+		icu_normalizer-2.4.0 \
+		icu_normalizer_data-2.4.0 \
+		icu_properties-2.4.0 \
+		icu_properties_data-2.4.0 \
+		icu_provider-2.4.0 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
 		image-webp-0.2.4 \
@@ -325,7 +325,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		md-5-0.11.0 \
 		md4-0.10.2 \
 		memchr-2.8.3 \
-		memmap2-0.9.11 \
+		memmap2-0.9.12 \
 		memoffset-0.9.1 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
@@ -372,7 +372,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		once_cell_polyfill-1.70.2 \
 		oo7-0.6.0 \
 		oorandom-11.1.5 \
-		open-5.4.4 \
+		open-5.4.5 \
 		openh264-0.9.9 \
 		openh264-sys2-0.9.9 \
 		openssl-0.10.81 \
@@ -511,7 +511,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		slab-0.4.12 \
 		slotmap-1.1.1 \
 		slug-0.1.6 \
-		smallvec-1.16.3 \
+		smallvec-1.16.4 \
 		socket2-0.6.5 \
 		soup3-0.9.0 \
 		soup3-sys-0.9.0 \
@@ -534,7 +534,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		system-configuration-0.7.0 \
 		system-configuration-sys-0.6.0 \
 		system-deps-7.0.8 \
-		system-deps-9.0.0 \
+		system-deps-9.0.1 \
 		tap-1.0.1 \
 		tar-0.4.46 \
 		target-lexicon-0.13.5 \
@@ -550,12 +550,12 @@ CARGO_CRATES=	addchain-0.2.1 \
 		time-macros-0.2.32 \
 		tiny-skia-0.12.0 \
 		tiny-skia-path-0.12.0 \
-		tinystr-0.8.4 \
+		tinystr-0.8.5 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.13.3 \
 		tls_codec-0.4.2 \
 		tls_codec_derive-0.4.2 \
-		tokio-1.54.0 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.2 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.6 \
@@ -595,7 +595,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		usvg-0.48.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.28.0 \
+		uuid-1.29.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version-compare-0.2.1 \
@@ -666,7 +666,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		x509-cert-0.2.5 \
 		xattr-1.6.1 \
 		xmlwriter-0.1.0 \
-		yoke-0.8.3 \
+		yoke-0.8.4 \
 		yoke-derive-0.8.4 \
 		yuv-0.8.19 \
 		zbus-5.19.0 \
@@ -680,8 +680,8 @@ CARGO_CRATES=	addchain-0.2.1 \
 		zeroize-1.9.1 \
 		zeroize_derive-1.5.0 \
 		zerotrie-0.2.5 \
-		zerovec-0.11.8 \
-		zerovec-derive-0.11.6 \
+		zerovec-0.11.9 \
+		zerovec-derive-0.11.7 \
 		zip-9.0.5 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
