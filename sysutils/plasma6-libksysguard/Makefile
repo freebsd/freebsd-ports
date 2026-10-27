@@ -1,5 +1,6 @@
 PORTNAME=	libksysguard
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ USE_KDE=	auth colorscheme completion config configwidgets coreaddons \
 		globalaccel i18n iconthemes jobwidgets kio newstuff package \
 		service solid widgetsaddons windowsystem \
 		ecm:build
-USE_QT=		5compat base declarative positioning webchannel webengine
+USE_QT=		5compat base declarative positioning webchannel
 USE_XORG=	x11
 
 .include <bsd.port.mk>
