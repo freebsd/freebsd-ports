@@ -1,6 +1,6 @@
 PORTNAME=	qgis
 DISTVERSION=	3.44.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -114,10 +114,10 @@ USES=		bison cmake compiler:features desktop-file-utils \
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_PYQT=	pyqt6 pysip qscintilla2 qtbuilder:build sip:build webengine
-USE_QT=		3d 5compat base declarative location multimedia pdf positioning \
+USE_PYQT=	pyqt6 pysip qscintilla2 qtbuilder:build sip:build
+USE_QT=		3d 5compat base declarative location multimedia positioning \
 		sensors serialport sqldriver-psql sqldriver-sqlite svg tools \
-		webchannel webengine
+		webchannel
 # https://www.freebsd.org/doc/de_DE.ISO8859-1/books/porters-handbook/dads-pthread.html
 #MAKE_ARGS=	PTHREAD_LIBS="-lpthread"
 #CONFIGURE_ENV=	LD=${CC}
@@ -137,7 +137,7 @@ CMAKE_ON=	BUILD_WITH_QT6 USE_OPENCL WITH_3D WITH_ANALYSIS WITH_ASTYLE \
 		WITH_AUTH WITH_BINDINGS WITH_COPC WITH_CUSTOM_WIDGETS WITH_DRACO \
 		WITH_EPT WITH_INTERNAL_LAZPERF WITH_INTERNAL_SPATIALINDEX \
 		WITH_PDAL WITH_POSTGRESQL WITH_PYTHON \
-		WITH_QTWEBENGINE WITH_QUICK \
+		WITH_QUICK \
 		WITH_SPATIALITE WITH_STAGED_PLUGINS
 CMAKE_ON+=	WITH_PDF4QT
 CMAKE_OFF=	ENABLE_TESTS USE_CCACHE PDF4QT_INSTALL_TO_USR WITH_QSPATIALITE WITH_QTWEBKIT
@@ -151,14 +151,20 @@ PLIST_SUB=	DISTVERSION=${PORTVERSION}
 CMAKE_ARGS+=	-Wno-dev
 .endif
 
-OPTIONS_DEFINE=		SERVER MDAL GRASS
+OPTIONS_DEFINE=		SERVER MDAL GRASS WEBENGINE
 OPTIONS_DEFAULT=	SERVER GRASS
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=		yes
 
 GRASS_DESC=		Add GRASS GIS to processing tools
 MDAL_DESC=		Use external MDAL
 SERVER_DESC=		Enable QGIS server
+WEBENGINE_DESC=		Documentation panel and QgsWebEnginePage API (requires QtWebEngine)
 
 GRASS_BUILD_DEPENDS=	grass8:databases/grass8
 GRASS_RUN_DEPENDS=	${GRASS_BUILD_DEPENDS}
@@ -170,6 +176,9 @@ MDAL_CMAKE_OFF=		-DWITH_INTERNAL_MDAL:BOOL=true
 
 SERVER_LIB_DEPENDS=	libfcgi.so:www/fcgi
 SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS
+
+WEBENGINE_USE=		QT=webengine PYQT=webengine
+WEBENGINE_CMAKE_BOOL=	WITH_QTWEBENGINE
 
 .include <bsd.port.pre.mk>
 
