@@ -33,9 +33,20 @@ USE_KDE=	activities archive attica auth bookmarks codecs colorscheme \
 		doctools:build ecm:build
 USE_LDCONFIG=	yes
 USE_QT=		5compat base declarative positioning svg \
-		webchannel webengine \
+		webchannel \
 		tools:build
 USE_XORG=	x11
+
+OPTIONS_DEFINE=		WEBENGINE
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
+
+WEBENGINE_DESC=		Render reports and dashboards with QtWebEngine
+WEBENGINE_USE=		QT=webengine
+WEBENGINE_CMAKE_BOOL=	SKG_WEBENGINE
 
 SHEBANG_FILES=	plugins/import/skrooge_import_backend/skrooge-sabb.py \
 		plugins/import/skrooge_import_backend/skrooge-woob.py \
