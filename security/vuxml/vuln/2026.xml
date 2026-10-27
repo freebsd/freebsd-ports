@@ -1,3 +1,28 @@
+  <vuln vid="4538886a-d1d9-11f1-8135-8447094a420f">
+    <topic>rustls-ffi -- Read after free</topic>
+    <affects>
+      <package>
+	<name>rustls-ffi</name>
+	<range><lt>0.15.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The RusTLS project reports:</p>
+	<blockquote cite="https://github.com/rustls/rustls-ffi/releases/tag/v0.15.7">
+	  <p>functions retained a reference to the caller's server_name buffer after returning, rather than copying it. The API documentation did not require the buffer to outlive the call and as a result if the caller freed or reused the buffer, later TLS processing read freed memory. [GHSA-rc3f-4j82-cmrg]</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/rustls/rustls-ffi/releases/tag/v0.15.7</url>
+    </references>
+    <dates>
+      <discovery>2026-10-26</discovery>
+      <entry>2026-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc4d0a5b-d0c6-11f1-bae2-3497f65b111b">
     <topic>ImageMagick7 -- multiple vulnerabilities</topic>
     <affects>
