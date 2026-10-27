@@ -61,8 +61,8 @@ lib/libplasmaweatherion.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.timer.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.userswitcher.so
 %%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.weather.so
-%%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.webbrowser.so
-%%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma_applet_dict.so
+%%WEBENGINE%%%%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma.webbrowser.so
+%%WEBENGINE%%%%QT_PLUGINDIR%%/plasma/applets/org.kde.plasma_applet_dict.so
 %%QT_PLUGINDIR%%/plasma/weather_ions/bbcukmet.so
 %%QT_PLUGINDIR%%/plasma/weather_ions/dwd.so
 %%QT_PLUGINDIR%%/plasma/weather_ions/envcan.so
@@ -82,10 +82,10 @@ lib/libplasmaweatherion.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/private/alternatecalendarconfig/libplasmacalendaralternatecalendarconfig.so
 %%QT_QMLDIR%%/org/kde/plasma/private/alternatecalendarconfig/plasmacalendaralternatecalendarconfig.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/private/alternatecalendarconfig/qmldir
-%%QT_QMLDIR%%/org/kde/plasma/private/dict/dictplugin.qmltypes
-%%QT_QMLDIR%%/org/kde/plasma/private/dict/kde-qmlmodule.version
-%%QT_QMLDIR%%/org/kde/plasma/private/dict/libdictplugin.so
-%%QT_QMLDIR%%/org/kde/plasma/private/dict/qmldir
+%%WEBENGINE%%%%QT_QMLDIR%%/org/kde/plasma/private/dict/dictplugin.qmltypes
+%%WEBENGINE%%%%QT_QMLDIR%%/org/kde/plasma/private/dict/kde-qmlmodule.version
+%%WEBENGINE%%%%QT_QMLDIR%%/org/kde/plasma/private/dict/libdictplugin.so
+%%WEBENGINE%%%%QT_QMLDIR%%/org/kde/plasma/private/dict/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/private/fifteenpuzzle/fifteenpuzzleplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/private/fifteenpuzzle/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/plasma/private/fifteenpuzzle/libfifteenpuzzleplugin.so

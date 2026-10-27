@@ -18,8 +18,20 @@ USE_KDE=	colorscheme completion config configwidgets coreaddons \
 		service solid sonnet unitconversion widgetsaddons windowsystem \
 		xmlgui \
 		ecm:build
-USE_QT=		base declarative webchannel webengine \
+USE_QT=		base declarative webchannel \
 		quick3d
 USE_XORG=	x11
+
+OPTIONS_DEFINE=		WEBENGINE
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
+OPTIONS_SUB=		yes
+
+WEBENGINE_DESC=		Dictionary and web browser applets (requires QtWebEngine)
+WEBENGINE_USE=		QT=webengine
+WEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineQuick
 
 .include <bsd.port.mk>
