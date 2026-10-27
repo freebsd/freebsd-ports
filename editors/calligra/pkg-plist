@@ -150,7 +150,7 @@ lib/libwordsprivate.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/calligra/parts/karbonpart.so
 %%QT_PLUGINDIR%%/calligra/presentationeventactions/calligrastageeventactions.so
 %%QT_PLUGINDIR%%/calligra/shapefiltereffects/calligra_filtereffects.so
-%%QT_PLUGINDIR%%/calligra/shapes/braindump_shape_web.so
+%%WEBENGINE%%%%QT_PLUGINDIR%%/calligra/shapes/braindump_shape_web.so
 %%QT_PLUGINDIR%%/calligra/shapes/calligra_shape_artistictext.so
 %%QT_PLUGINDIR%%/calligra/shapes/calligra_shape_chart.so
 %%QT_PLUGINDIR%%/calligra/shapes/calligra_shape_formula.so
