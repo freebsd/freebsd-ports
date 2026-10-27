@@ -1,21 +1,8 @@
 PORTNAME=	mongosh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.3
-PORTREVISION=	1
+DISTVERSION=	2.14.0
 CATEGORIES=	databases shells net
-MASTER_SITES=	https://registry.npmjs.org/mongodb-client-encryption/-/:mongocrypt \
-		https://registry.npmjs.org/kerberos/-/:kerberos \
-		https://registry.npmjs.org/os-dns-native/-/:dns \
-		https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${DISTVERSIONFULL}/:modules
-#		https://nodejs.org/dist/latest-v${NODEJS_VERSION}.x/:node
-DISTFILES=	mongodb-client-encryption-${MONGO_CRYPT_VER}.tgz:mongocrypt \
-		kerberos-${KERBEROS_VER}.tgz:kerberos \
-		os-dns-native-${OSDNSNATIVE_VER}.tgz:dns \
-		${NODE_MODULES_TARBALL}:modules
-#		${NODEJS_TARBALL}:node \
-#		SHASUMS256.txt:node
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTFILE_DEFAULT}
 
 MAINTAINER=	fabien.amelinck+freebsd@advens.fr
 COMMENT=	MongoDB Shell CLI REPL
@@ -23,13 +10,13 @@ WWW=		https://github.com/mongodb-js/mongosh/
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	nx node_module error: Unsupported architecture on FreeBSD: ${ARCH}
 # issue created upstream https://github.com/nrwl/nx/issues/29257
 
-PATCH_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	objdump:devel/binutils \
 		bash>0:shells/bash \
-		git>0:devel/git
+		git:devel/git@tiny
 LIB_DEPENDS=	libada.so:devel/libada \
 		libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
@@ -49,13 +36,23 @@ LIB_DEPENDS=	libada.so:devel/libada \
 		libmongocrypt.so:databases/libmongocrypt
 RUN_DEPENDS=	corepack>=0:www/corepack
 
-USES=		compiler:c++20-lang cpe gmake gssapi:mit localbase nodejs:24,build \
-		pkgconfig python:build shebangfix sqlite ssl tar:xz
+USES=		compiler:c++20-lang cpe gmake gssapi:mit localbase \
+		nodejs:24,build npm:npm,fetch,build pkgconfig python:build \
+		shebangfix sqlite ssl
 
 CPE_VENDOR=	mongodb
 USE_GITHUB=	yes
-GH_ACCOUNT=	VultureProject
+GH_ACCOUNT=	mongodb-js
 GH_PROJECT=	mongosh
+
+# Node modules are installed from registry.npmjs.org during the fetch phase and
+# archived locally by post-fetch, so the port only depends on the upstream
+# mongodb-js repository and the npm registry; no fork-hosted tarball and no
+# pre-generated node_modules in the ports tree.
+#
+# The archive is per-architecture because npm installs different platform-
+# specific optional dependencies.  It is produced with --ignore-scripts, so the
+# native addons are rebuilt in do-build (see NATIVE_ADDONS below).
 
 CUSTOM_ENV=	SEGMENT_API_KEY=dummy \
 		GYP_DEFINES="libmongocrypt_link_type=dynamic" \
@@ -66,6 +63,10 @@ MAKE_ENV=	${CUSTOM_ENV} \
 		NODE_JS_VERSION=file://${DISTDIR}/${DIST_SUBDIR}/${NODEJS_TARBALL} \
 		BOXEDNODE_CONFIGURE_ARGS="--prefix=${PREFIX:S|^${DESTDIR}||},--shared-ada,--shared-brotli,--shared-cares,--shared-gtest,--shared-hdr-histogram,--shared-http-parser,--shared-libuv,--shared-merve,--shared-nbytes,--shared-nghttp2,--shared-nghttp3,--shared-ngtcp2,--shared-simdjson,--shared-sqlite,--shared-uvwasi,--shared-uvwasi-includes=${LOCALBASE}/include,--shared-zlib,--shared-zstd,--shared-openssl,--openssl-use-def-ca-store,--with-intl=system-icu,--without-corepack,--without-npm" \
 		BOXEDNODE_MAKE_ARGS="V=0" \
+		RUST_BACKTRACE=full \
+		NODE_OPTIONS=--max-old-space-size=8192 \
+		npm_config_nodedir=${LOCALBASE} \
+		PYTHON=${PYTHON_CMD} \
 		CC="${CCACHE_BIN} ${CC}" \
 		CFLAGS="${CFLAGS}" \
 		CXX="${CCACHE_BIN} ${CXX}" \
@@ -74,26 +75,30 @@ MAKE_ENV=	${CUSTOM_ENV} \
 		LINK="${CXX}"
 # CXXFLAGS+=	-DNODE_API_EXPERIMENTAL \
 # 		-DNODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT
-EXTRACT_AFTER_ARGS=	--exclude scripts/nodejs-patches/008-windows-tcp-connect-crash-fix-node-62561.patch \
-			--no-same-owner --no-same-permissions
+
 REINPLACE_ARGS=	-i ''
 
-MONGO_CRYPT_VER=7.0.0
-KERBEROS_VER=	7.0.0
-OSDNSNATIVE_VER=2.0.1
-MODULES=	\
-	mongodb-client-encryption ${MONGO_CRYPT_VER} \
-	kerberos ${KERBEROS_VER} \
-	os-dns-native ${OSDNSNATIVE_VER}
+# Native modules built by the port itself instead of during the (script-less)
+# npm prefetch, because they need FreeBSD-specific spackling.
+MODULES=	mongodb-client-encryption kerberos os-dns-native
+
+# Remaining native addons from node_modules that npm would normally build via
+# their install scripts.  Versions are pinned by files/packagejsons/package-lock.json.
+NATIVE_ADDONS=	@mongodb-js/native-machine-id \
+		glibc-version \
+		interruptor \
+		mongodb-crypt-library-dummy \
+		mongodb-crypt-library-version
 
 NODE_MODULES_DIR=	${WRKSRC}/node_modules
-BOXEDNODE_DIR=		${WRKSRC}/packages/build/node_modules/boxednode
-NODE_MODULES_TARBALL=	${PORTNAME}-${DISTVERSIONFULL}-${ARCH}-node-modules.tar.xz
-NPM_CACHE_DIR=		${TMPDIR}/.npm
+BOXEDNODE_DIR=		${NODE_MODULES_DIR}/boxednode
+NPM_CACHE_DIR=		${TMPDIR:U/tmp}/.npm
 NODEJS_TARBALL=		node-v${NODEJS_PORTVERSION}.tar.gz
 NODEJS_SHAFILE=		node-v${NODEJS_PORTVERSION}-SHASUMS256.txt
+NODE_MODULES_TARBALL=	${PORTNAME}-${DISTVERSION}-node-modules-${ARCH}.tar.gz
 
 post-fetch:
+	${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
 	if [ ! -r ${DISTDIR}/${DIST_SUBDIR}/${NODEJS_TARBALL} -o \
 	     ! -r ${DISTDIR}/${DIST_SUBDIR}/${NODEJS_SHAFILE} ]; then \
 		${FETCH_CMD} -o ${DISTDIR}/${DIST_SUBDIR} \
@@ -101,17 +106,31 @@ post-fetch:
 		${FETCH_CMD} -o ${DISTDIR}/${DIST_SUBDIR}/${NODEJS_SHAFILE} \
 			https://nodejs.org/dist/v${NODEJS_PORTVERSION}/SHASUMS256.txt; \
 	fi
+	if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/${NODE_MODULES_TARBALL} ]; then \
+		${ECHO_MSG} "===>  Generating node_modules archive"; \
+		${RM} -rf ${WRKDIR}/node-modules-src; \
+		${MKDIR} ${WRKDIR}/node-modules-src; \
+		${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_DEFAULT} \
+			-C ${WRKDIR}/node-modules-src; \
+		cd ${WRKDIR}/node-modules-src/${GH_PROJECT}-${DISTVERSION} && \
+			${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/npm ci \
+				--ignore-scripts --no-audit --no-fund; \
+		cd ${WRKDIR}/node-modules-src/${GH_PROJECT}-${DISTVERSION} && \
+			${TAR} -cz --options 'gzip:!timestamp' \
+				-f ${DISTDIR}/${DIST_SUBDIR}/${NODE_MODULES_TARBALL} \
+				node_modules packages/*/node_modules; \
+		${RM} -rf ${WRKDIR}/node-modules-src; \
+	fi
 
 post-extract:
-.if !exists(${NODE_MODULES_DIR})
 	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${NODE_MODULES_TARBALL} -C ${WRKSRC}
 	${MKDIR} -v ${WRKDIR}/boxednode/mongosh
 	${REINPLACE_CMD} -e "s|'make'|'${GMAKE}'|g" \
 		-e "s/if (inputIsFileUrl)/if (false)/g" \
-		-e 's/(await nv_1.default(range)).pop()/{"version":"${NODEJS_PORTVERSION}"}/g' \
+		-e 's/(await (0, nv_1.default)(range)).pop()/{"version":"${NODEJS_PORTVERSION}"}/g' \
 		-e 's/path_1.default.join(dir, tarballName)/url_1.fileURLToPath(range)/g' \
 		-e "s|\$${releaseBaseUrl}/SHASUMS256.txt|${DISTDIR}/${DIST_SUBDIR}/${NODEJS_SHAFILE}|g" \
-		-e 's/await node_fetch_1.default(shaSumsUrl)/{"ok":1}/g' \
+		-e 's/await (0, node_fetch_1.default)(shaSumsUrl)/{"ok":1}/g' \
 		-e "s/shaSums.text()/fs_1.promises.readFile(shaSumsUrl, 'utf8')/g" \
 		-e "s/catch (_a) { }/catch (_a) { console.error(_a) }/g" \
 		-e "s|os_1.default.tmpdir()|'${WRKDIR}'|g" \
@@ -120,7 +139,6 @@ post-extract:
 	${REINPLACE_CMD} -e "s|'install', '--ignore-scripts', '--production'|'--version'|g" \
 		${BOXEDNODE_DIR}/lib/native-addons.js
 	${GREP} "version" ${BOXEDNODE_DIR}/lib/native-addons.js
-.endif
 
 post-patch:
 	${CP} -v ${FILESDIR}/node-patches/* ${WRKSRC}/scripts/nodejs-patches
@@ -129,13 +147,22 @@ do-configure:
 	${FIND} ${WRKSRC}/scripts -name "*.orig" -delete
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${NODE_MODULES_DIR}/mongodb-client-encryption/binding.gyp
-.for module ver in ${MODULES}
+.for module in ${MODULES}
 	cd ${NODE_MODULES_DIR}/${module} && \
 		${CONFIGURE_ENV} node-gyp configure --nodedir=${LOCALBASE}
 .endfor
+	@if [ "${ARCH}" != amd64 ]; then \
+		${ECHO_MSG} "Dropping cpu-features on ${ARCH}"; \
+		${RM} -rf ${NODE_MODULES_DIR}/cpu-features; \
+	fi
 
 do-build:
-.for module ver in ${MODULES}
+# The npm prefetch runs with --ignore-scripts, so build the addons npm would
+# have built.  --dangerously-allow-all-scripts only affects the packages named
+# here; npm 12 otherwise blocks unreviewed install scripts.
+	cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/npm rebuild \
+		--dangerously-allow-all-scripts ${NATIVE_ADDONS}
+.for module in ${MODULES}
 	cd ${NODE_MODULES_DIR}/${module} && \
 		${MAKE_ENV} ${MAKE_CMD} BUILDTYPE=Release -C build -d
 .endfor
@@ -153,43 +180,15 @@ do-test:
 	${STAGEDIR}${PREFIX}/bin/mongosh --nodb --eval "print('ok')" | ${GREP} "ok"
 	${STAGEDIR}${PREFIX}/bin/mongosh --smokeTests | ${GREP} "all tests passed"
 
-npm-pkg-list: extract
-	${GREP} registry.npmjs.org ${WRKSRC}/package-lock.json | \
-		| ${SED} -E 's/^[[:space:]]+//g' \
-		| ${SED} -E 's#^.*org/|.tgz",##g' \
-		| ${SORT} \
-		| /usr/bin/uniq \
-		| ${SED} -E 's/(.*)-([^-])/\1@\2/g' \
-		| ${SED} -E 's|/-/.*@|@|g' \
-		> ${FILESDIR}/npm-pkg.list
-
-.for module in mongodb-client-encryption kerberos os-dns-native \
-		mongodb-crypt-library-version glibc-version
-	cd ${NODE_MODULES_DIR}/${module} && ${LOCALBASE}/bin/npm list 2>/dev/null \
-		| ${GREP} UNMET \
-		| ${AWK} 'BEGIN{FS="UNMET DEPENDENCY "}{print $$2}' \
-		> ${FILESDIR}/npm-pkg-${module}.list
-.endfor
-
-node-modules-archive: patch
-#	Comment ${NODE_MODULES_TARBALL}:modules and post-extract
-.for module ver in ${MODULES}
-	${MKDIR} -v ${NODE_MODULES_DIR}/${module}
-	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${module}-${ver}.tgz \
-		-C ${NODE_MODULES_DIR}/${module} --strip-components 1
-.endfor
-	cd ${WRKSRC} && ${LOCALBASE}/bin/npx cross-env ${CONFIGURE_ENV} \
-		${LOCALBASE}/bin/npm clean-install \
-			--cache ${NPM_CACHE_DIR} --no-audit --no-fund
-
-	for f in ${FILESDIR}/node-modules-patches/*; do ${PATCH} -Nd ${WRKSRC} < $$f; done
-	${FIND} ${WRKSRC} -name "*.orig" -or -name "*.bak" -delete
-
-	cd ${WRKSRC} && ${TAR} cf - node_modules packages/*/node_modules | \
-		${LOCALBASE}/bin/pv -s $$(/usr/bin/du -sAk node_modules | \
-		${AWK} '{print $$1}')000 | ${XZ_CMD} > ${TMPDIR}/${NODE_MODULES_TARBALL}
-
 .include <bsd.port.pre.mk>
+
+# cpu-features 0.0.10 bundles an old google/cpu_features revision with no
+# FreeBSD/aarch64 backend, so its addon has an undefined GetAarch64Info and
+# aborts the dynamic loader.  It is only an optional ssh2 accelerator (ssh2
+# falls back to its JS implementation), so it is only built on amd64.
+.if ${ARCH} == amd64
+NATIVE_ADDONS+=	cpu-features
+.endif
 
 .include "${PORTSDIR}/www/node${NODEJS_VERSION}/Makefile.version"
 
