@@ -1,8 +1,7 @@
 PORTNAME=	swift
 DISTVERSIONPREFIX=	swift-
-DISTVERSION=	6.4.0
+DISTVERSION=	6.4.1
 DISTVERSIONSUFFIX=	-RELEASE
-PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	6
 DIST_SUBDIR=	${PORTNAME}
@@ -23,7 +22,7 @@ _BOOTSTRAP_OSSUFX=	14
 .endif
 _BOOTSTRAP_OSSUFX?=	# empty
 
-OLD_SWIFT_VERSION=		6.3.3
+OLD_SWIFT_VERSION=		6.4.0
 .if !defined(BOOTSTRAP_MODE)
 BOOTSTRAP_SWIFT_VERSION=	${DISTVERSION}
 .else
@@ -76,7 +75,7 @@ GH_TUPLE=	\
 		apple:swift-atomics:1.3.1:swift_atomics/swift-atomics \
 		swiftlang:swift-build:${DISTVERSIONFULL}:swift_build/swift-build \
 		apple:swift-certificates:1.10.1:swift_certificates/swift-certificates \
-		apple:swift-collections:1.1.6:swift_collections/swift-collections \
+		apple:swift-collections:1.7.3:swift_collections/swift-collections \
 		swiftlang:swift-corelibs-blocksruntime:${DISTVERSIONFULL}:swift_corelibs_blocksruntime/swift-corelibs-blocksruntime \
 		swiftlang:swift-corelibs-foundation:${DISTVERSIONFULL}:swift_corelibs_foundation/swift-corelibs-foundation \
 		swiftlang:swift-corelibs-libdispatch:${DISTVERSIONFULL}:swift_corelibs_libdispatch/swift-corelibs-libdispatch \
@@ -100,17 +99,17 @@ GH_TUPLE=	\
 		apple:swift-numerics:1.0.2:swift_numerics/swift-numerics \
 		swiftlang:swift-sdk-generator:${DISTVERSIONFULL}:swift_sdk_generator/swift-sdk-generator \
 		swiftlang:swift-stress-tester:${DISTVERSIONFULL}:swift_stress_tester/swift-stress-tester \
-		swiftlang:swift-subprocess:0.5:swift_subprocess/swift-subprocess \
+		swiftlang:swift-subprocess:1.0.1:swift_subprocess/swift-subprocess \
 		swiftlang:swift-syntax:${DISTVERSIONFULL}:swift_syntax/swift-syntax \
-		apple:swift-system:1.5.0:swift_system/swift-system \
+		apple:swift-system:1.8.1:swift_system/swift-system \
 		swiftlang:swift-testing:${DISTVERSIONFULL}:swift_testing/swift-testing \
-		swiftlang:swift-toolchain-sarif:519c296:swift_toolchain_sarif/swift-toolchain-sarif \
-		swiftlang:swift-toolchain-sqlite:1.0.9:swift_toolchain_sqlite/swift-toolchain-sqlite \
+		swiftlang:swift-toolchain-sarif:7a26547:swift_toolchain_sarif/swift-toolchain-sarif \
+		swiftlang:swift-toolchain-sqlite:1.0.13:swift_toolchain_sqlite/swift-toolchain-sqlite \
 		swiftlang:swift-tools-protocols:${DISTVERSIONFULL}:swift_tools_protocols/swift-tools-protocols \
 		swiftlang:swift-tools-support-core:${DISTVERSIONFULL}:swift_tools_support_core/swift-tools-support-core \
 		swiftlang:swift-package-manager:${DISTVERSIONFULL}:swift_package_manager/swiftpm \
-		WebAssembly:wasi-libc:wasi-sdk-32:wasi_libc/wasi-libc \
-		swiftwasm:WasmKit:0.3.1:WasmKit/wasmkit
+		WebAssembly:wasi-libc:wasi-sdk-34:wasi_libc/wasi-libc \
+		swiftwasm:WasmKit:0.4.1:WasmKit/wasmkit
 
 USE_PERL5=	build
 USE_GNOME=	libxml2
@@ -286,14 +285,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libutil.so.9:misc/compat14x
 .endif
 
 post-extract:
-# FIXME: Bootstrap toolchain (6.3.3) has been prepared to use wrong paths.
-# So adjust the toolchain paths to meet Swift's expectation.
-# Remove this after bootstrap toolchain is updated to 6.4.0.
-	@if [ -f ${BOOTSTRAP_DIR}/swift6/bin/swift ]; then \
-		${CP} -R ${BOOTSTRAP_DIR}/swift6/* \
-			${BOOTSTRAP_DIR}; \
-		${RM} -r ${BOOTSTRAP_DIR}/swift6; \
-	fi
 # Work around a clang 21 header modules/libc++ wchar.h regression on FreeBSD
 .if (${OSVERSION} >= 1404501 && ${OSVERSION} < 1500000) || \
     (${OSVERSION} >= 1501501 && ${OSVERSION} < 1600000) || \
@@ -392,7 +383,7 @@ do-build:
 
 do-install:
 .for dir in bin lib
-	@${FIND} ${OUT5_DIR}${SWIFT_TOOLCHAIN_PREFIX}/${dir} -type f -exec ${FILE} {} ';' | \
+	@${FIND} ${OUT5_DIR}${SWIFT_TOOLCHAIN_PREFIX}/${dir} -type f -exec ${FILE} {} + | \
 		${GREP} 'ELF.*FreeBSD' | ${CUT} -d ':' -f 1 | \
 		${XARGS} ${STRIP_CMD} --strip-debug
 .endfor

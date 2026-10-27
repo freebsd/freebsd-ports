@@ -1250,6 +1250,8 @@ swift6/usr/local/lib/swift/freebsd/_Differentiation.swiftmodule/%%SWIFT_TARGET_T
 swift6/usr/local/lib/swift/freebsd/_Differentiation.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftmodule
 swift6/usr/local/lib/swift/freebsd/_FoundationCollections.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftdoc
 swift6/usr/local/lib/swift/freebsd/_FoundationCollections.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftmodule
+swift6/usr/local/lib/swift/freebsd/_FoundationContainersPreview.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftdoc
+swift6/usr/local/lib/swift/freebsd/_FoundationContainersPreview.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftmodule
 %%NON_BOOTSTRAP%%swift6/usr/local/lib/swift/freebsd/_RegexParser.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.abi.json
 swift6/usr/local/lib/swift/freebsd/_RegexParser.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.private.swiftinterface
 swift6/usr/local/lib/swift/freebsd/_RegexParser.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftdoc
@@ -2164,6 +2166,8 @@ swift6/usr/local/lib/swift_static/freebsd/_Differentiation.swiftmodule/%%SWIFT_T
 swift6/usr/local/lib/swift_static/freebsd/_Differentiation.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftmodule
 swift6/usr/local/lib/swift_static/freebsd/_FoundationCollections.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftdoc
 swift6/usr/local/lib/swift_static/freebsd/_FoundationCollections.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftmodule
+swift6/usr/local/lib/swift_static/freebsd/_FoundationContainersPreview.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftdoc
+swift6/usr/local/lib/swift_static/freebsd/_FoundationContainersPreview.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftmodule
 swift6/usr/local/lib/swift_static/freebsd/_RegexParser.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.private.swiftinterface
 swift6/usr/local/lib/swift_static/freebsd/_RegexParser.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftdoc
 swift6/usr/local/lib/swift_static/freebsd/_RegexParser.swiftmodule/%%SWIFT_TARGET_TRIPLE%%.swiftinterface
@@ -2187,6 +2191,7 @@ swift6/usr/local/lib/swift_static/freebsd/lib_CFURLSessionInterface.a
 swift6/usr/local/lib/swift_static/freebsd/lib_CFXMLInterface.a
 swift6/usr/local/lib/swift_static/freebsd/lib_FoundationCShims.a
 swift6/usr/local/lib/swift_static/freebsd/lib_FoundationCollections.a
+swift6/usr/local/lib/swift_static/freebsd/lib_FoundationContainersPreview.a
 swift6/usr/local/lib/swift_static/freebsd/lib_FoundationICU.a
 swift6/usr/local/lib/swift_static/freebsd/libcxxshim.h
 swift6/usr/local/lib/swift_static/freebsd/libcxxshim.modulemap

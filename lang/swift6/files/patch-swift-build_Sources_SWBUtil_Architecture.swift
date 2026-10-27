@@ -1,6 +1,6 @@
---- swift-build/Sources/SWBUtil/Architecture.swift.orig	2026-10-11 19:59:42 UTC
-+++ swift-build/Sources/SWBUtil/Architecture.swift	2026-10-11 19:59:42 UTC
-@@ -105,6 +105,19 @@
+--- swift-build/Sources/SWBUtil/Architecture.swift.orig	2026-09-23 20:00:50 UTC
++++ swift-build/Sources/SWBUtil/Architecture.swift
+@@ -105,6 +105,19 @@ public struct Architecture: Sendable {
                          return "x86_64"
                      case "arm64":
                          return "aarch64"
