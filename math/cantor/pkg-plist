@@ -58,7 +58,7 @@ lib/libcantorlibs.so.28
 %%R%%%%QT_PLUGINDIR%%/cantor_plugins/backends/cantor_rbackend.so
 %%QT_PLUGINDIR%%/cantor_plugins/backends/cantor_sagebackend.so
 %%QT_PLUGINDIR%%/cantor_plugins/backends/cantor_scilabbackend.so
-%%QT_PLUGINDIR%%/cantor_plugins/panels/cantor_documentationpanelplugin.so
+%%WEBENGINE%%%%QT_PLUGINDIR%%/cantor_plugins/panels/cantor_documentationpanelplugin.so
 %%QT_PLUGINDIR%%/cantor_plugins/panels/cantor_filebrowserpanelplugin.so
 %%QT_PLUGINDIR%%/cantor_plugins/panels/cantor_helppanelplugin.so
 %%QT_PLUGINDIR%%/cantor_plugins/panels/cantor_tocpanelplugin.so
