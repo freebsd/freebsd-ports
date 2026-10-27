@@ -1,0 +1,27 @@
+startup --batch
+
+# Everything is fetched ahead of time from the port's distfiles
+common --registry=file://%%BCR_DIR%%
+common --lockfile_mode=off
+common --repository_cache=%%WRKDIR%%/bazel-cache
+common --override_module=xla=%%XLA_DIR%%
+common --override_module=rules_ml_toolchain=%%RMT_DIR%%
+
+common --repo_env=HERMETIC_PYTHON_VERSION=%%PYTHON_VER%%
+common --repo_env=JAVA_HOME=%%JAVA_HOME%%
+common --action_env=JAVA_HOME=%%JAVA_HOME%%
+common --repo_env=ML_WHEEL_TYPE=release
+common --config=clang_local
+
+build --verbose_failures --noshow_loading_progress
+build --spawn_strategy=local --genrule_strategy=local
+build --jobs=%%JOBS%%
+build --local_resources=memory=HOST_RAM*.7
+build --keep_going
+
+# FreeBSD headers hide POSIX/BSD declarations without these; LOCALBASE has
+# the system-wide dependencies (e.g. libexecinfo for backtrace()).
+build --copt=-D_XOPEN_SOURCE=700 --copt=-D__BSD_VISIBLE=1 --copt=-isystem%%LOCALBASE%%/include
+build --host_copt=-D_XOPEN_SOURCE=700 --host_copt=-D__BSD_VISIBLE=1 --host_copt=-isystem%%LOCALBASE%%/include
+build --linkopt=-lexecinfo --host_linkopt=-lexecinfo
+build --linkopt=-L%%LOCALBASE%%/lib --host_linkopt=-L%%LOCALBASE%%/lib

@@ -1,0 +1,26 @@
+-- Optional (WITH_CCACHE_BUILD): the BSD toolchain of rules_cc hard-codes /usr/bin/clang,
+-- so point it at a ccache wrapper. The module version is also set so that this
+-- tree can be used with --override_module.
+diff -ru r1/rules_cc-0.2.25/MODULE.bazel r2/rules_cc-0.2.25/MODULE.bazel
+--- a/MODULE.bazel	2026-10-26 06:32:51.075165000 -0700
++++ b/MODULE.bazel	2026-10-26 06:32:51.280194000 -0700
+@@ -1,6 +1,6 @@
+ module(
+     name = "rules_cc",
+-    version = "0.0.0",
++    version = "0.2.25",
+     compatibility_level = 1,
+ )
+ 
+diff -ru r1/rules_cc-0.2.25/cc/private/toolchain/bsd_cc_toolchain_config.bzl r2/rules_cc-0.2.25/cc/private/toolchain/bsd_cc_toolchain_config.bzl
+--- a/cc/private/toolchain/bsd_cc_toolchain_config.bzl	2026-10-26 06:32:51.109982000 -0700
++++ b/cc/private/toolchain/bsd_cc_toolchain_config.bzl	2026-10-26 06:32:51.278935000 -0700
+@@ -253,7 +253,7 @@
+                 tool_path(name = "compat-ld", path = "/usr/bin/ld"),
+                 tool_path(name = "cpp", path = "/usr/bin/cpp"),
+                 tool_path(name = "dwp", path = "/usr/bin/dwp"),
+-                tool_path(name = "gcc", path = "/usr/bin/clang"),
++                tool_path(name = "gcc", path = "%%CCACHE_CLANG%%"),
+                 tool_path(name = "gcov", path = "/usr/bin/gcov"),
+                 tool_path(name = "ld", path = "/usr/bin/ld"),
+                 tool_path(name = "nm", path = "/usr/bin/nm"),

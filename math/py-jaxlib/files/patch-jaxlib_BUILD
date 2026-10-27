@@ -1,0 +1,19 @@
+-- gloo and mpitrampoline do not build on FreeBSD; drop them from the deps. Not supported upstream.
+--- jaxlib/BUILD.orig	2026-10-20 13:31:57 UTC
++++ jaxlib/BUILD
+@@ -501,6 +501,7 @@ nanobind_pywrap_extension(
+             "@xla//xla/backends/cpu/collectives:gloo_kv_store",
+         ],
+         "@xla//xla/tsl:windows": [],
++        "@platforms//os:freebsd": [],
+         "//conditions:default": [
+             ":py_socket_transfer",
+             "@gloo//:transport_tcp",
+@@ -510,6 +511,7 @@ nanobind_pywrap_extension(
+     }) + select({
+         # mpitrampoline does not build on windows
+         "@xla//xla/tsl:windows": [],
++        "@platforms//os:freebsd": [],
+         # we support MPI collectives only in OSS builds
+         "//conditions:default": if_oss(["@xla//xla/backends/cpu/collectives:mpi_collectives"]),
+     }),

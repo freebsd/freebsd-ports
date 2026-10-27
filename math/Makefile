@@ -1051,6 +1051,7 @@
     SUBDIR += py-isosurfaces
     SUBDIR += py-jacobi
     SUBDIR += py-jax
+    SUBDIR += py-jaxlib
     SUBDIR += py-jij-cimod
     SUBDIR += py-kahip
     SUBDIR += py-keras

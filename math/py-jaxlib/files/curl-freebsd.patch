@@ -1,0 +1,12 @@
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -306,6 +306,9 @@
+             "/DWIN32",
+         ],
+         "@platforms//os:macos": _BASE_CURL_COPTS,
++        "@platforms//os:freebsd": _BASE_CURL_COPTS + [
++            "-DHAVE_MSG_NOSIGNAL=1",
++        ],
+         "//conditions:default": _BASE_CURL_COPTS + [
+             "-DHAVE_LINUX_TCP_H=1",
+             "-DHAVE_MSG_NOSIGNAL=1",

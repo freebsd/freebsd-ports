@@ -1,0 +1,39 @@
+-- Replace the rules_ml_toolchain pip hub with a local stub; pip is not usable
+-- during an offline FreeBSD port build and Python deps come from the ports.
+diff --git a/MODULE.bazel b/MODULE.bazel
+index 711e7cd..3ef3a37 100644
+--- a/MODULE.bazel
++++ b/MODULE.bazel
+@@ -56,26 +56,12 @@ python.toolchain(python_version = "3.13")
+ python.toolchain(python_version = "3.14")
+ 
+ ### Pypi
+-pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+-
+-[pip.parse(
+-    extra_hub_aliases = {
+-        "numpy": ["numpy_headers"],
+-    },
+-    hub_name = "rules_ml_toolchain_pypi",
+-    python_version = python_version,
+-    requirements_lock = "//build:requirements_lock_{}.txt".format(python_version.replace(".", "_")),
+-    whl_modifications = {
+-        "//build:numpy.json": "numpy",  # @pypi_mods is defined in XLA's MODULE.bazel
+-    },
+-) for python_version in [
+-    "3.11",
+-    "3.12",
+-    "3.13",
+-    "3.14",
+-]]
+-
+-use_repo(pip, pypi = "rules_ml_toolchain_pypi")
++local_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:local.bzl", "local_repository")
++
++local_repository(
++    name = "pypi",
++    path = "%%PYPI_STUB%%",
++)
+ 
+ ### Pybind
+ pybind11_internal_configure = use_extension(

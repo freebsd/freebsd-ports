@@ -1,0 +1,6 @@
+jaxlib is the support library for JAX. It contains the XLA compiler and
+runtime, the Python bindings to them, and the CPU kernels that JAX uses to
+compile and run NumPy-style programs.
+
+JAX is a Python library for high-performance numerical computing with
+automatic differentiation and just-in-time compilation to XLA.
