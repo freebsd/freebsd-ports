@@ -5,7 +5,6 @@
     SUBDIR += coccinella
     SUBDIR += concord
     SUBDIR += conduit
-    SUBDIR += convey
     SUBDIR += coyim
     SUBDIR += deltachat-desktop
     SUBDIR += dendrite
