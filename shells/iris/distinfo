@@ -1,5 +1,5 @@
-TIMESTAMP = 1792242493
-SHA256 (go/shells_iris/iris-v0.7.4/v0.7.4.mod) = 8b9289f8e910d83de0ede000c09898781e1356616803811cb3f53e2e143ced24
-SIZE (go/shells_iris/iris-v0.7.4/v0.7.4.mod) = 2705
-SHA256 (go/shells_iris/iris-v0.7.4/v0.7.4.zip) = cac0429195c07ab24983c02d10c6d14fce474fdd7e44e8f6a58e2d66fd7160e9
-SIZE (go/shells_iris/iris-v0.7.4/v0.7.4.zip) = 878692
+TIMESTAMP = 1793133050
+SHA256 (go/shells_iris/iris-v0.7.5/v0.7.5.mod) = 8b9289f8e910d83de0ede000c09898781e1356616803811cb3f53e2e143ced24
+SIZE (go/shells_iris/iris-v0.7.5/v0.7.5.mod) = 2705
+SHA256 (go/shells_iris/iris-v0.7.5/v0.7.5.zip) = d7a9474bfb57790263ba57f3f83152ab7fd37c10739b1fe30ec39cff3b3e563f
+SIZE (go/shells_iris/iris-v0.7.5/v0.7.5.zip) = 882554
