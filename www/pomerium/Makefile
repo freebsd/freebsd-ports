@@ -1,7 +1,6 @@
 PORTNAME=	pomerium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.4
-PORTREVISION=	2
+DISTVERSION=	0.33.6
 PORTEPOCH=	1
 CATEGORIES=	www
 # Custom distfiles for packages not on GitHub
@@ -136,7 +135,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		golang:groupcache:2c02b8208cf8:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:v0.42.0:golang_image/vendor/golang.org/x/image \
 		golang:mod:v0.41.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.58.0:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.60.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.36.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:snappy:v1.0.0:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:v0.23.0:golang_sync/vendor/golang.org/x/sync \
@@ -264,7 +263,7 @@ GH_TUPLE=	Azure:azure-sdk-for-go:f6309d465ff4:azure_azure_sdk_for_go \
 		planetscale:vtprotobuf:0393e58bdf10:planetscale_vtprotobuf/vendor/github.com/planetscale/vtprotobuf \
 		pmezard:go-difflib:5d4384ee4fb2:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pomerium:datasource:aec349b682d9:pomerium_datasource/vendor/github.com/pomerium/datasource \
-		pomerium:envoy-custom:8b998d0f6ff3:pomerium_envoy_custom/vendor/github.com/pomerium/envoy-custom \
+		pomerium:envoy-custom:30d955cf07bd:pomerium_envoy_custom/vendor/github.com/pomerium/envoy-custom \
 		pomerium:protoutil:a733aa3acfed:pomerium_protoutil/vendor/github.com/pomerium/protoutil \
 		pomerium:webauthn:07401bebfe9c:pomerium_webauthn/vendor/github.com/pomerium/webauthn \
 		power-devops:perfstat:82ca36839d55:power_devops_perfstat/vendor/github.com/power-devops/perfstat \
