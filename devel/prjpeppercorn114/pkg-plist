@@ -1,0 +1,15 @@
+bin/gmpack
+bin/gmunpack
+%%DATADIR%%/delay/cc_best_eco_dly.dly
+%%DATADIR%%/delay/cc_best_lpr_dly.dly
+%%DATADIR%%/delay/cc_best_spd_dly.dly
+%%DATADIR%%/delay/cc_typ_eco_dly.dly
+%%DATADIR%%/delay/cc_typ_lpr_dly.dly
+%%DATADIR%%/delay/cc_typ_spd_dly.dly
+%%DATADIR%%/delay/cc_worst_eco_dly.dly
+%%DATADIR%%/delay/cc_worst_lpr_dly.dly
+%%DATADIR%%/delay/cc_worst_spd_dly.dly
+%%DATADIR%%/gatemate/__init__.py
+%%DATADIR%%/gatemate/chip.py
+%%DATADIR%%/gatemate/die.py
+%%DATADIR%%/gatemate/timing.py
