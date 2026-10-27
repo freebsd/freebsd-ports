@@ -1,6 +1,6 @@
 PORTNAME=	openslide-python
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.6
+DISTVERSION=	1.4.7
 CATEGORIES=	graphics
 #MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/openslide/_convert.abi3.so
 
-# tests as of 1.4.1: 59 passed in 11.97s
+# tests as of 1.4.7: 59 passed in 1.55s
 
 .include <bsd.port.mk>
