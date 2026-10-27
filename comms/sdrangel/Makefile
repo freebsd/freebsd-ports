@@ -37,7 +37,7 @@ GH_ACCOUNT=	f4exb
 GH_TAGNAME=	v${DISTVERSION}
 
 USE_QT=		base charts declarative location multimedia positioning scxml \
-		serialport speech svg tools webchannel webengine websockets
+		serialport speech svg tools webchannel websockets
 USE_GL=		gl glu
 
 CMAKE_ARGS=	-DENABLE_QT6=ON \
@@ -58,5 +58,20 @@ CMAKE_ARGS=	-DENABLE_QT6=ON \
 		-DENABLE_PERSEUS=OFF \
 		-DENABLE_MIRISDR=OFF \
 		-DENABLE_FOBOS=OFF
+
+OPTIONS_DEFINE=		WEBENGINE
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
+OPTIONS_SUB=		yes
+
+WEBENGINE_DESC=		3D map and sky map features (requires QtWebEngine)
+WEBENGINE_USE=		QT=webengine
+WEBENGINE_CMAKE_BOOL=	ENABLE_FEATURE_SKYMAP
+WEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineCore \
+				CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineQuick \
+				CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineWidgets
 
 .include <bsd.port.mk>

@@ -56,7 +56,7 @@ lib/sdrangel/plugins/libfeatureremotecontrol.so
 lib/sdrangel/plugins/libfeaturerigctlserver.so
 lib/sdrangel/plugins/libfeaturesid.so
 lib/sdrangel/plugins/libfeaturesimpleptt.so
-lib/sdrangel/plugins/libfeatureskymap.so
+%%WEBENGINE%%lib/sdrangel/plugins/libfeatureskymap.so
 lib/sdrangel/plugins/libfilesink.so
 lib/sdrangel/plugins/libfilesource.so
 lib/sdrangel/plugins/libfreqscanner.so
