@@ -1,6 +1,6 @@
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.21
+DISTVERSION=	2.10.22
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${DISTVERSION:R:R}
 
@@ -30,7 +30,6 @@ GH_ACCOUNT=	RediSearch
 GH_PROJECT=	RediSearch
 GH_TUPLE=	RedisAI:VectorSimilarity:f3cf513:vectorsimilarity/deps/VectorSimilarity \
 		redis:hiredis:1387948:hiredis/deps/hiredis \
-		RedisLabsModules:readies:c609278:readies/deps/readies \
 		RedisLabs:RedisModulesSDK:6a62be4:redismodulesdk/deps/RedisModulesSDK \
 
 CMAKE_ARGS=	-DBOOST_DIR=${LOCALBASE} \
