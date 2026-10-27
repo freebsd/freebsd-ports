@@ -33,6 +33,7 @@ share/pixmaps/org.scummvm.scummvm.xpm
 %%DATADIR%%/cryomni3d.dat
 %%DATADIR%%/darkseed.dat
 %%DATADIR%%/drascula.dat
+%%DATADIR%%/eem.dat
 %%DATADIR%%/encoding.dat
 %%DATADIR%%/fonts-cjk.dat
 %%DATADIR%%/fonts-imgui.dat
@@ -48,6 +49,7 @@ share/pixmaps/org.scummvm.scummvm.xpm
 %%DATADIR%%/kyra.dat
 %%DATADIR%%/lure.dat
 %%DATADIR%%/macgui.dat
+%%DATADIR%%/macs2_translation.dat
 %%XENGINES%%%%DATADIR%%/macventure.dat
 %%DATADIR%%/mm.dat
 %%XENGINES%%%%DATADIR%%/monkey4-patch.m4b
@@ -207,6 +209,10 @@ share/pixmaps/org.scummvm.scummvm.xpm
 %%DATADIR%%/shaders/stark_surface.vertex
 %%DATADIR%%/shaders/stark_surface_fill.fragment
 %%DATADIR%%/shaders/stark_surface_fill.vertex
+%%DATADIR%%/shaders/wme_brightness_julia.fragment
+%%DATADIR%%/shaders/wme_brightness_julia.vertex
+%%DATADIR%%/shaders/wme_brightness_oknytt.fragment
+%%DATADIR%%/shaders/wme_brightness_oknytt.vertex
 %%DATADIR%%/shaders/wme_fade.fragment
 %%DATADIR%%/shaders/wme_fade.vertex
 %%DATADIR%%/shaders/wme_flat_shadow_modelx.fragment
