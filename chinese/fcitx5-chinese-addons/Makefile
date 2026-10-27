@@ -27,16 +27,27 @@ RUN_DEPENDS=	fcitx5-lua>0:textproc/fcitx5-lua
 USES=		cmake compiler:c++17-lang gettext-tools kde localbase pkgconfig \
 		tar:zst
 
-OPTIONS_DEFINE=		GUI
+OPTIONS_DEFINE=		GUI WEBENGINE
 OPTIONS_DEFAULT=	GUI
+OPTIONS_DEFAULT_aarch64=	WEBENGINE
+OPTIONS_DEFAULT_amd64=		WEBENGINE
+OPTIONS_DEFAULT_armv7=		WEBENGINE
+OPTIONS_DEFAULT_i386=		WEBENGINE
+OPTIONS_DEFAULT_powerpc64le=	WEBENGINE
 
 USE_LDCONFIG=	yes
 
 GUI_DESC=	Configuration GUI
 GUI_USES=	qt:6
-GUI_USE=	qt=base,webengine
+GUI_USE=	qt=base
 GUI_LIB_DEPENDS=	libFcitx5Qt6WidgetsAddons.so:textproc/fcitx5-qt@qt6
 GUI_CMAKE_ON=	-DUSE_WEBKIT:BOOL=false
+
+WEBENGINE_DESC=		Built-in browser in the dictionary manager (requires QtWebEngine)
+WEBENGINE_IMPLIES=	GUI
+WEBENGINE_USES=		qt:6
+WEBENGINE_USE=		qt=webengine
+WEBENGINE_CMAKE_BOOL=	ENABLE_BROWSER
 
 USE_KDE=	ecm:build
 
