@@ -5766,3 +5766,4 @@ devel/p5-DateTime-Format-IBeat||2026-10-25|Has expired: Upstream distribution ha
 www/p5-CGI-Response||2026-10-25|Has expired: Legacy functionality
 www/p5-WebService-Linode||2026-10-25|Has expired: Defunct service
 misc/py-kartograph||2026-10-25|Removed: Contains python2 code, no users and no upstream activity for 12+ years
+www/mod_tls||2026-10-27|Removed: No longer maintained, removed from Apache httpd 2025-01-23

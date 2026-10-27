@@ -1,2 +1,0 @@
-A module for Apache httpd that uses rustls to provide a memory safe TLS
-implementation in Rust.
