@@ -1,3 +1,3 @@
-TIMESTAMP = 1789914159
-SHA256 (redis-8.10.2.tar.gz) = b9ffee226b5eecdba98a679260dad764b2a4ebd90dce4ad5ac9e9f3eef9c02b3
-SIZE (redis-8.10.2.tar.gz) = 21645436
+TIMESTAMP = 1793119160
+SHA256 (redis-8.10.3.tar.gz) = edde778f6bdee7581e42fc139ca9e07e2822212092f7501f99989656e3629d02
+SIZE (redis-8.10.3.tar.gz) = 21647086
