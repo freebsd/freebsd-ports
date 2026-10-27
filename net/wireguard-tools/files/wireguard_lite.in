@@ -40,7 +40,7 @@ wireguard_start()
 		eval wireguard_key="\${wireguard_${interface}_key}"
 		eval wireguard_psk="\${wireguard_${interface}_psk}"
 
-		ifconfig ${interface} create
+		ifconfig wg create name ${interface}
 		%%PREFIX%%/bin/wg setconf ${interface} ${wireguard_confdir}/${interface}.conf
 		if [ ! -z "${wireguard_key}" ]; then
 			%%PREFIX%%/bin/wg set ${interface} private-key ${wireguard_key}

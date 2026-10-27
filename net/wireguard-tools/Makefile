@@ -1,5 +1,6 @@
 PORTNAME=	wireguard-tools
 DISTVERSION=	1.0.20260223
+PORTREVISION=	1
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-tools/snapshot/
 
@@ -13,12 +14,14 @@ WWW=		https://git.zx2c4.com/wireguard-tools/about/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-FLAVORS=	default lite
+FLAVORS=		default lite
 lite_PKGNAMESUFFIX=	-lite
 
 USES=		gmake tar:xz
 
-MAKE_ARGS+=	DEBUG=no WITH_BASHCOMPLETION=yes WITH_SYSTEMDUNITS=no
+MAKE_ARGS+=	DEBUG=no \
+		WITH_BASHCOMPLETION=yes \
+		WITH_SYSTEMDUNITS=no
 MAKE_ENV+=	SYSCONFDIR="${PREFIX}/etc"
 
 WRKSRC_SUBDIR=	src
