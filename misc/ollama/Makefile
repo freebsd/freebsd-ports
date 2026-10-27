@@ -51,7 +51,7 @@ JSON_VERSION=		3.11.3
 DISTFILES+=	${LLAMA_CPP_VERSION}.tar.gz:llamasrc \
 		llama-${LLAMA_CPP_UI_VERSION}-ui.tar.gz:llamasrc
 MASTER_SITES+=	https://github.com/ggml-org/llama.cpp/archive/refs/tags/:llamasrc \
-		https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_CPP_VERSION}/:llamasrc
+		https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_CPP_UI_VERSION}/:llamasrc
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/ollama-limit-gpu-layers
