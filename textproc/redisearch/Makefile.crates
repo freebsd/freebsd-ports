@@ -28,6 +28,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		chacha20-0.10.1 \
 		cheadergen-0.3.1 \
 		cheadergen_macros-0.3.1 \
+		chrono-0.4.45 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -166,9 +167,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.41 \
+		rustls-0.23.45 \
 		rustls-pki-types-1.14.1 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
