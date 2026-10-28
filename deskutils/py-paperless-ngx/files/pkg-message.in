@@ -67,7 +67,7 @@ EOM
   maximum_version: "2.20.2_2"
   message: <<EOM
 Language data moved to /var/db/paperless/nltk_data, please change
-NLTK_DIR in %%PREFIX%%/etc/paperless.conf accordingly.
+PAPERLESS_NLTK_DIR in %%PREFIX%%/etc/paperless.conf accordingly.
 
 Then re-download nltk data using:
 
