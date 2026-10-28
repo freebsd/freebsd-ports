@@ -1,3 +1,5 @@
-TIMESTAMP = 1786584095
-SHA256 (contour-terminal-libunicode-v0.9.3_GH0.tar.gz) = 78b715bc2d929530bc89e47c1c6772b72f511e1831b14e7d6d92cceb62592920
-SIZE (contour-terminal-libunicode-v0.9.3_GH0.tar.gz) = 146384
+TIMESTAMP = 1793217582
+SHA256 (libunicode-contour/0.9.4/UCD.zip) = 2066d1909b2ea93916ce092da1c0ee4808ea3ef8407c94b4f14f5b7eb263d28e
+SIZE (libunicode-contour/0.9.4/UCD.zip) = 9101877
+SHA256 (libunicode-contour/0.9.4/contour-terminal-libunicode-v0.9.4_GH0.tar.gz) = aa6bc519712c541649553096c2b722c39a3ede765b9dc2d103012f1f90bec331
+SIZE (libunicode-contour/0.9.4/contour-terminal-libunicode-v0.9.4_GH0.tar.gz) = 164883
