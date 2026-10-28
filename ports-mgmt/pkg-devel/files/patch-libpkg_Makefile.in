@@ -1,0 +1,10 @@
+--- libpkg/Makefile.in.orig	2026-10-23 09:26:31 UTC
++++ libpkg/Makefile.in
+@@ -212,6 +212,7 @@ install: all pkg.h lib$(LIB)$(LIBSOEXT) lib$(LIB)_flat
+ 	ln -sf lib$(LIB)$(LIBSOEXT) $(DESTDIR)$(libdir)/lib$(LIB)$(SH_SOEXT)
+ 	install -m 644 lib$(LIB)_flat.a $(DESTDIR)$(libdir)/lib$(LIB).a
+ 	install -m 644 pkg.h $(DESTDIR)$(includedir)/
++	install -m 644 $(top_srcdir)/libpkg/pkg/sb.h $(DESTDIR)$(includedir)/pkg
+ 	install -m 644 $(top_srcdir)/libpkg/pkg/vec.h $(DESTDIR)$(includedir)/pkg
+ 	install -m 644 $(top_srcdir)/libpkg/pkg/audit.h $(DESTDIR)$(includedir)/pkg
+ 	install -m 644 $(top_srcdir)/libpkg/pkg/checksum.h $(DESTDIR)$(includedir)/pkg
