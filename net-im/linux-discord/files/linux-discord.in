@@ -1,15 +1,15 @@
 #!%%LINUXBASE%%/bin/bash
 
-DISCORD_CONF="$HOME/.config/discord/settings.json"
+DISCORD_CONF="${XDG_CONFIG_HOME:-$HOME/.config}/discord/settings.json"
 
-# disable automatic update
+# disable automatic host update
+mkdir -p "$(dirname "$DISCORD_CONF")"
 if [ ! -f "$DISCORD_CONF" ]; then
   echo '{"SKIP_HOST_UPDATE": true}' > "$DISCORD_CONF"
-else 
-  /usr/bin/grep -q 'SKIP_HOST_UPDATE' "$DISCORD_CONF" || \
-    mv -f "$DISCORD_CONF" "${DISCORD_CONF}.bak"
-    awk '{print $0; if (R==0 && $0 ~ /\{/) {print "  \"SKIP_HOST_UPDATE\": true,"; R=1;}}' \
-    "${DISCORD_CONF}.bak"  > "$DISCORD_CONF"
+elif ! /usr/bin/grep -q 'SKIP_HOST_UPDATE' "$DISCORD_CONF"; then
+  mv -f "$DISCORD_CONF" "${DISCORD_CONF}.bak"
+  awk '{print $0; if (R==0 && $0 ~ /\{/) {print "  \"SKIP_HOST_UPDATE\": true,"; R=1;}}' \
+    "${DISCORD_CONF}.bak" > "$DISCORD_CONF"
 fi
 
 # workaround Chromium bug https://bugs.chromium.org/p/chromium/issues/detail?id=918234
@@ -21,4 +21,4 @@ export ELECTRON_IS_DEV=0
 export LIBGL_DRI3_DISABLE=1
 export NODE_ENV=production
 
-exec -a "$0" "%%DATADIR%%/Discord" --no-sandbox --no-zygote "$@"
+exec "$0" "%%DATADIR%%/Discord" --no-sandbox --no-zygote --ozone-platform=x11 --browser-subprocess-path="%%DATADIR%%/Discord" "$@"
