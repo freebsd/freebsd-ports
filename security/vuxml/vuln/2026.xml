@@ -1,3 +1,76 @@
+  <vuln vid="b9a3fd21-d2af-11f1-bae2-3497f65b111b">
+    <topic>Pillow -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py311-pillow</name>
+	<name>py312-pillow</name>
+	<name>py313-pillow</name>
+	<name>py313t-pillow</name>
+	<name>py314-pillow</name>
+	<name>py314t-pillow</name>
+	<name>py315-pillow</name>
+	<range><lt>13.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Pillow project published security advisories for issues fixed
+	  in release 13.0.0.  They include an argument injection in the
+	  Ghostscript call used for EPS images, heap buffer overflows in
+	  several image decoders that can lead to code execution, and
+	  infinite loops and unbounded memory use when opening crafted
+	  image files.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-96636</cvename>
+      <cvename>CVE-2026-96637</cvename>
+      <cvename>CVE-2026-96638</cvename>
+      <cvename>CVE-2026-96639</cvename>
+      <cvename>CVE-2026-96640</cvename>
+      <cvename>CVE-2026-96641</cvename>
+      <cvename>CVE-2026-96642</cvename>
+      <cvename>CVE-2026-96643</cvename>
+      <cvename>CVE-2026-96644</cvename>
+      <cvename>CVE-2026-96778</cvename>
+      <cvename>CVE-2026-112390</cvename>
+      <cvename>CVE-2026-112391</cvename>
+      <cvename>CVE-2026-112392</cvename>
+      <cvename>CVE-2026-112393</cvename>
+      <cvename>CVE-2026-112394</cvename>
+      <cvename>CVE-2026-112395</cvename>
+      <cvename>CVE-2026-112396</cvename>
+      <cvename>CVE-2026-112397</cvename>
+      <cvename>CVE-2026-112398</cvename>
+      <cvename>CVE-2026-112399</cvename>
+      <cvename>CVE-2026-112400</cvename>
+      <cvename>CVE-2026-112401</cvename>
+      <cvename>CVE-2026-112402</cvename>
+      <cvename>CVE-2026-112403</cvename>
+      <cvename>CVE-2026-112404</cvename>
+      <cvename>CVE-2026-112405</cvename>
+      <cvename>CVE-2026-112406</cvename>
+      <cvename>CVE-2026-112891</cvename>
+      <cvename>CVE-2026-112892</cvename>
+      <cvename>CVE-2026-112893</cvename>
+      <cvename>CVE-2026-112894</cvename>
+      <cvename>CVE-2026-112895</cvename>
+      <cvename>CVE-2026-112896</cvename>
+      <cvename>CVE-2026-112897</cvename>
+      <cvename>CVE-2026-112898</cvename>
+      <cvename>CVE-2026-112899</cvename>
+      <cvename>CVE-2026-112900</cvename>
+      <cvename>CVE-2026-112901</cvename>
+      <cvename>CVE-2026-112902</cvename>
+      <cvename>CVE-2026-114501</cvename>
+      <url>https://github.com/python-pillow/Pillow/security/advisories</url>
+    </references>
+    <dates>
+      <discovery>2026-10-17</discovery>
+      <entry>2026-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3caa3b4b-d2ab-11f1-bae2-3497f65b111b">
     <topic>trafficserver -- multiple vulnerabilities</topic>
     <affects>
