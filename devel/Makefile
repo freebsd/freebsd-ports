@@ -5056,6 +5056,7 @@
     SUBDIR += py-expression
     SUBDIR += py-extras
     SUBDIR += py-extremes
+    SUBDIR += py-f90nml
     SUBDIR += py-fabric
     SUBDIR += py-fabric3
     SUBDIR += py-face
