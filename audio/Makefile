@@ -433,6 +433,7 @@
     SUBDIR += liquidsfz
     SUBDIR += listener
     SUBDIR += littlefly-lv2
+    SUBDIR += lmms
     SUBDIR += lollypop
     SUBDIR += lpcnet
     SUBDIR += lsp-plugins-lv2

@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2026-08-30 03:45:12 UTC
++++ CMakeLists.txt
+@@ -872,13 +872,13 @@ ADD_SUBDIRECTORY(cmake/install)
+ 
+ # install headers
+ 
+-IF(LMMS_BUILD_LINUX)
++IF(LMMS_BUILD_LINUX OR LMMS_BUILD_FREEBSD)
+ 	INSTALL(FILES ${LMMS_INCLUDES}
+ 		"${CMAKE_BINARY_DIR}/lmmsconfig.h"
+ 		"${CMAKE_BINARY_DIR}/lmmsversion.h"
+ 		"${CMAKE_SOURCE_DIR}/src/gui/embed.cpp"
+ 		DESTINATION "include/lmms/")
+-ENDIF(LMMS_BUILD_LINUX)
++ENDIF(LMMS_BUILD_LINUX OR LMMS_BUILD_FREEBSD)
+ 
+ #
+ # add distclean-target
