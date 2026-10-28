@@ -46,7 +46,7 @@ PPNAME=			ppc386
 PPNAME=			ppcx64
 .  elif ${ARCH} == "aarch64"
 PPNAME=			ppca64
-.  elif ${ARCH} == "powerpc64" || "powerpc64le"
+.  elif ${ARCH} == "powerpc64" || ${ARCH} == "powerpc64le"
 PPNAME=			ppcppc64
 .  else
 PPNAME=			ppc_not_yet_ported
