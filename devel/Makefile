@@ -5433,6 +5433,7 @@
     SUBDIR += py-lockfile
     SUBDIR += py-logan
     SUBDIR += py-logbook
+    SUBDIR += py-logfire-sdk
     SUBDIR += py-logfury
     SUBDIR += py-logilab-common
     SUBDIR += py-logistro
