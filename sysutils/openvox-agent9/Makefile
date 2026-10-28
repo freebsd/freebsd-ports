@@ -1,5 +1,5 @@
 PORTNAME=	openvox-agent
-DISTVERSION=	9.0.0
+DISTVERSION=	9.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	9
@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-base64>=0.1<0.4:converters/rubygem-base64 \
 		rubygem-deep_merge>1.0<2:devel/rubygem-deep_merge \
 		rubygem-fast_gettext>=2.1<5:devel/rubygem-fast_gettext \
 		rubygem-getoptlong>=0.2.0<0.3:devel/rubygem-getoptlong \
+		rubygem-json2>=2.0:devel/rubygem-json2 \
 		rubygem-locale>=2.1<3.0:devel/rubygem-locale \
 		rubygem-openfact>=6.0.0<7:sysutils/rubygem-openfact \
 		rubygem-ostruct>=0.6.0<0.7:devel/rubygem-ostruct \
