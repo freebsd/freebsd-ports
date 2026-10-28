@@ -203,6 +203,56 @@
     </dates>
   </vuln>
 
+  <vuln vid="d8b29eb8-d2d8-11f1-97dc-40b034429ecf">
+    <topic>p5-Starman -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>p5-Starman</name>
+<range><lt>0.4019</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Starman project reports:</p>
+	<blockquote cite="https://metacpan.org/dist/Starman/changes">
+	  <p>[SECURITY]</p>
+      <ul>
+        <li>Stream chunked request bodies to the temporary buffer instead of
+          holding whole chunks in memory (CVE-2026-115824)</li>
+        <li>Parse chunk-size lines in linear time with a 4 KiB length limit and
+          strict syntax; malformed lines get 400 (CVE-2026-115822)</li>
+        <li>Do not send a response body for HEAD requests or 1xx, 204 and 304
+          responses, on both the array and streaming paths (CVE-2026-115823)</li>
+        <li>Limit how long a request body may take to arrive: --read-timeout
+          (default 5 seconds) now also applies to each wait for more of the
+          body, and the new --body-timeout option limits the total time
+          (default 300 seconds; raise it or set it to 0 for slower uploads).
+          Expiry gets 408 (CVE-2026-115817)</li>
+        <li>Reject Transfer-Encoding other than "chunked" (400/501) and close
+          the connection after a request with both Transfer-Encoding and
+          Content-Length. Completes the fix for CVE-2026-40560</li>
+      </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-115824</cvename>
+      <cvename>CVE-2026-115822</cvename>
+      <cvename>CVE-2026-115823</cvename>
+      <cvename>CVE-2026-115817</cvename>
+      <cvename>CVE-2026-40560</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-115824</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-115822</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-115823</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-115817</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-40560</url>
+    </references>
+    <dates>
+      <discovery>2026-10-25</discovery>
+      <entry>2026-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3bd1edbf-d2d4-11f1-97dc-40b034429ecf">
     <topic>p5-Plack -- memory allocation vulnerability</topic>
     <affects>
