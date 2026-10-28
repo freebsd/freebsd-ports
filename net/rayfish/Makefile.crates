@@ -49,6 +49,7 @@ CARGO_CRATES=	acto-0.8.2 \
 		binary-merge-0.1.2 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
+		bitflags-1.3.2 \
 		bitflags-2.13.1 \
 		blake2-0.10.6 \
 		blake2-0.11.0 \
@@ -95,7 +96,6 @@ CARGO_CRATES=	acto-0.8.2 \
 		clap_complete-4.6.9 \
 		clap_derive-4.6.4 \
 		clap_lex-1.1.0 \
-		clocksource-0.8.3 \
 		cmov-0.5.4 \
 		cobs-0.3.0 \
 		colorchoice-1.0.5 \
@@ -139,12 +139,15 @@ CARGO_CRATES=	acto-0.8.2 \
 		ctr-0.10.1 \
 		ctutils-0.4.2 \
 		curve25519-dalek-3.2.0 \
-		curve25519-dalek-5.0.0-rc.0 \
+		curve25519-dalek-5.0.0 \
 		curve25519-dalek-derive-0.1.1 \
 		dashmap-6.2.1 \
 		data-encoding-2.11.1 \
 		data-encoding-macro-0.1.21 \
 		data-encoding-macro-internal-0.1.19 \
+		defmt-1.2.0 \
+		defmt-macros-1.2.0 \
+		defmt-parser-1.1.0 \
 		delegate-0.13.5 \
 		der-0.8.1 \
 		deranged-0.5.8 \
@@ -169,13 +172,13 @@ CARGO_CRATES=	acto-0.8.2 \
 		dtoa-1.0.11 \
 		dtoa-short-0.3.5 \
 		dunce-1.0.5 \
-		ecdsa-0.17.0-rc.18 \
+		ecdsa-0.17.0 \
 		ed25519-1.5.3 \
 		ed25519-3.0.0 \
 		ed25519-dalek-1.0.1 \
-		ed25519-dalek-3.0.0-rc.0 \
+		ed25519-dalek-3.0.0 \
 		either-1.18.0 \
-		elliptic-curve-0.14.0-rc.33 \
+		elliptic-curve-0.14.1 \
 		embedded-io-0.4.0 \
 		embedded-io-0.6.1 \
 		enable-ansi-support-0.3.1 \
@@ -251,19 +254,19 @@ CARGO_CRATES=	acto-0.8.2 \
 		h2-0.4.19 \
 		half-2.7.1 \
 		hash32-0.2.1 \
+		hash32-0.3.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
 		hashlink-0.11.1 \
 		heapless-0.7.17 \
+		heapless-0.9.3 \
 		heck-0.4.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.3 \
 		hex-0.4.3 \
 		hex-literal-1.1.0 \
-		hickory-net-0.26.1 \
 		hickory-proto-0.26.1 \
-		hickory-resolver-0.26.1 \
 		hkdf-0.13.0 \
 		hmac-0.11.0 \
 		hmac-0.13.0 \
@@ -300,12 +303,11 @@ CARGO_CRATES=	acto-0.8.2 \
 		inout-0.1.4 \
 		inout-0.2.2 \
 		inplace-vec-builder-0.1.1 \
-		internal-russh-num-bigint-0.5.0 \
 		ipconfig-0.3.4 \
 		ipnet-2.12.1 \
-		iroh-blobs-0.103.0 \
+		iroh-blobs-0.103.1 \
 		iroh-io-0.6.2 \
-		iroh-metrics-1.0.1 \
+		iroh-metrics-1.0.2 \
 		iroh-metrics-derive-1.0.1 \
 		iroh-tickets-1.0.0 \
 		iroh-tor-transport-0.1.0 \
@@ -344,6 +346,7 @@ CARGO_CRATES=	acto-0.8.2 \
 		lru-0.18.3 \
 		lru-slab-0.1.2 \
 		mac-addr-0.3.0 \
+		managed-0.8.0 \
 		markup5ever-0.39.0 \
 		matchers-0.2.0 \
 		md5-0.8.1 \
@@ -357,9 +360,9 @@ CARGO_CRATES=	acto-0.8.2 \
 		mio-1.2.2 \
 		ml-kem-0.3.2 \
 		module-lattice-0.2.3 \
-		moka-0.12.16 \
 		moxcms-0.8.1 \
 		muda-0.20.0 \
+		n0-dns-resolver-0.1.0 \
 		n0-error-1.0.1 \
 		n0-error-macros-1.0.0 \
 		n0-future-0.3.2 \
@@ -370,7 +373,6 @@ CARGO_CRATES=	acto-0.8.2 \
 		nested_enum_utils-0.2.3 \
 		netconfig-rs-0.1.6 \
 		netdev-0.45.0 \
-		netdev-0.46.2 \
 		netlink-packet-core-0.8.2 \
 		netlink-packet-core-0.9.0 \
 		netlink-packet-route-0.25.1 \
@@ -384,12 +386,13 @@ CARGO_CRATES=	acto-0.8.2 \
 		nix-0.30.1 \
 		nix-0.31.3 \
 		nom-7.1.3 \
+		nom-8.0.0 \
 		noq-1.3.0 \
 		noq-proto-1.3.0 \
 		noq-udp-1.3.0 \
 		noyalib-0.0.5 \
 		nu-ansi-term-0.50.3 \
-		num-bigint-0.4.8 \
+		num-bigint-0.5.1 \
 		num-conv-0.2.2 \
 		num-integer-0.1.47 \
 		num-traits-0.2.19 \
@@ -428,9 +431,9 @@ CARGO_CRATES=	acto-0.8.2 \
 		opentelemetry_sdk-0.32.1 \
 		option-ext-0.2.0 \
 		ordered-stream-0.2.0 \
-		p256-0.14.0-rc.10 \
-		p384-0.14.0-rc.10 \
-		p521-0.14.0-rc.10 \
+		p256-0.14.0 \
+		p384-0.14.0 \
+		p521-0.14.0 \
 		pageant-0.2.2 \
 		pango-0.18.3 \
 		pango-sys-0.18.0 \
@@ -478,9 +481,8 @@ CARGO_CRATES=	acto-0.8.2 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
 		precomputed-hash-0.1.1 \
-		prefix-trie-0.8.4 \
 		primefield-0.14.0 \
-		primeorder-0.14.0-rc.10 \
+		primeorder-0.14.0 \
 		proc-macro-crate-1.3.1 \
 		proc-macro-crate-2.0.2 \
 		proc-macro-crate-3.5.0 \
@@ -515,7 +517,7 @@ CARGO_CRATES=	acto-0.8.2 \
 		rand_pcg-0.10.2 \
 		rand_xorshift-0.4.0 \
 		range-collections-0.4.6 \
-		ratelimit-0.10.1 \
+		ratelimit-2.0.0 \
 		raw-window-handle-0.6.2 \
 		rayon-1.12.0 \
 		rayon-core-1.13.0 \
@@ -529,8 +531,7 @@ CARGO_CRATES=	acto-0.8.2 \
 		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
 		reqwest-0.13.4 \
-		resolv-conf-0.7.6 \
-		rfc6979-0.5.0 \
+		rfc6979-0.6.0 \
 		ring-0.17.14 \
 		rmp-0.8.15 \
 		rmp-serde-1.3.1 \
@@ -538,8 +539,8 @@ CARGO_CRATES=	acto-0.8.2 \
 		rpassword-7.5.4 \
 		rtnetlink-0.21.0 \
 		rtoolbox-0.0.6 \
-		russh-0.61.2 \
-		russh-cryptovec-0.61.0 \
+		russh-0.64.1 \
+		russh-cryptovec-0.62.0 \
 		russh-util-0.52.0 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
@@ -589,6 +590,7 @@ CARGO_CRATES=	acto-0.8.2 \
 		sha2-0.11.0 \
 		sha3-0.9.1 \
 		sha3-0.11.0 \
+		sha3-0.12.0 \
 		sharded-slab-0.1.7 \
 		shlex-2.0.1 \
 		signal-hook-0.3.18 \
@@ -608,15 +610,17 @@ CARGO_CRATES=	acto-0.8.2 \
 		smawk-0.3.3 \
 		smol_str-0.1.24 \
 		smol_str-0.3.6 \
+		smoltcp-0.14.0 \
 		socket2-0.6.5 \
 		sorted-index-buffer-0.2.1 \
 		spez-0.1.2 \
 		spin-0.9.9 \
 		spin-0.10.1 \
 		spki-0.8.0 \
-		ssh-cipher-0.3.0-rc.9 \
-		ssh-encoding-0.3.0-rc.9 \
-		ssh-key-0.7.0-rc.10 \
+		sponge-cursor-0.1.0 \
+		ssh-cipher-0.3.0 \
+		ssh-encoding-0.3.0 \
+		ssh-key-0.7.0-rc.11 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
 		string_cache-0.9.0 \
@@ -625,7 +629,7 @@ CARGO_CRATES=	acto-0.8.2 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
 		subtle-2.6.1 \
-		swarm-discovery-0.6.3 \
+		swarm-discovery-0.6.5 \
 		symlink-0.1.0 \
 		syn-1.0.109 \
 		syn-2.0.119 \
@@ -634,9 +638,9 @@ CARGO_CRATES=	acto-0.8.2 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		system-configuration-0.7.0 \
+		system-configuration-0.8.0 \
 		system-configuration-sys-0.6.0 \
 		system-deps-6.2.2 \
-		tagptr-0.2.0 \
 		tao-0.37.0 \
 		tao-macros-0.1.4 \
 		tar-0.4.46 \
@@ -689,7 +693,6 @@ CARGO_CRATES=	acto-0.8.2 \
 		tracing-subscriber-0.3.23 \
 		tray-icon-0.25.1 \
 		try-lock-0.2.5 \
-		tun-rs-2.8.9 \
 		typenum-1.20.1 \
 		uds_windows-1.2.1 \
 		unarray-0.1.4 \
@@ -795,6 +798,7 @@ CARGO_CRATES=	acto-0.8.2 \
 		winresource-0.1.31 \
 		wit-bindgen-0.57.1 \
 		wmi-0.18.4 \
+		wnaf-0.14.1 \
 		writeable-0.6.4 \
 		wry-0.57.0 \
 		ws_stream_wasm-0.7.5 \
@@ -822,6 +826,8 @@ CARGO_CRATES=	acto-0.8.2 \
 		zvariant-5.15.0 \
 		zvariant_derive-5.15.0 \
 		zvariant_utils-4.2.0 \
-		netwatch@git+https://github.com/n0-computer/net-tools?branch=main\#d73b994abce8f683d7d6dcc163eee5eaefb952f5 \
-		iroh,iroh-base,iroh-dns,iroh-relay@git+https://github.com/rayfish/iroh?branch=rayfish-integration\#251af60ba1ca39645b6dd62ba0f845a74a764cb0 \
-		iroh-mdns-address-lookup@git+https://github.com/rayfish/iroh-address-lookups?rev=3c439994559d15fd6683695757ca72f70eccc060\#3c439994559d15fd6683695757ca72f70eccc060
+		iroh-mdns-address-lookup@git+https://github.com/n0-computer/iroh-address-lookups?rev=6f103e7a92ddbd2007383527ab5024c983e3c1c6\#6f103e7a92ddbd2007383527ab5024c983e3c1c6 \
+		tun-rs@git+https://github.com/extrowerk/tun-rs?branch=illumos\#9ef6a5edb05135d0df0be480d906bbb16143a91c \
+		netwatch@git+https://github.com/extrowerk/net-tools?branch=illumos-0.19\#b9096bb9d8bca5184276704f552bca4056d96862 \
+		netdev@git+https://github.com/extrowerk/netdev.git?branch=illumos\#7e0ac1372b3f1bc95ca5da4415e2463025012a2b \
+		iroh,iroh-base,iroh-dns,iroh-relay@git+https://github.com/rayfish/iroh?rev=9dab676bb935caeddde67af273fcdc7d61daf6fc\#9dab676bb935caeddde67af273fcdc7d61daf6fc
