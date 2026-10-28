@@ -1,5 +1,5 @@
 PORTNAME=	fltk
-PORTVERSION=	1.3.11
+PORTVERSION=	1.4.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://github.com/fltk/fltk/releases/download/release-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
