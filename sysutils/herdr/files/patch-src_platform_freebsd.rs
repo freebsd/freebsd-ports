@@ -1,6 +1,6 @@
 --- src/platform/freebsd.rs.orig	1970-01-01 00:00:00 UTC
 +++ src/platform/freebsd.rs
-@@ -0,0 +1,812 @@
+@@ -0,0 +1,866 @@
 +//! FreeBSD platform support.
 +//!
 +//! Mirrors the Linux backend (clipboard, notifications, and shell helpers are
@@ -193,11 +193,15 @@
 +#[derive(Debug, Clone, PartialEq, Eq)]
 +struct ProcEntry {
 +    pid: u32,
++    ppid: u32,
 +    pgid: i32,
 +    sid: i32,
 +    tpgid: i32,
 +    comm: String,
 +    stat: libc::c_char,
++    /// Process start time in microseconds; with the pid it names one process
++    /// even after the pid is reused.
++    start_token: u64,
 +}
 +
 +/// Read a sysctl(3) node, retrying while the value grows between the size
@@ -266,11 +270,15 @@
 +            }
 +            Some(ProcEntry {
 +                pid: info.ki_pid as u32,
++                ppid: u32::try_from(info.ki_ppid).unwrap_or(0),
 +                pgid: info.ki_pgid,
 +                sid: info.ki_sid,
 +                tpgid: info.ki_tpgid,
 +                comm: String::from_utf8_lossy(&c_chars_to_bytes(&info.ki_comm)).into_owned(),
 +                stat: info.ki_stat,
++                start_token: (info.ki_start.tv_sec as u64)
++                    .wrapping_mul(1_000_000)
++                    .wrapping_add(info.ki_start.tv_usec as u64),
 +            })
 +        })
 +        .collect()
@@ -812,4 +820,50 @@
 +}
 +fn process_session_id(pid: u32) -> Option<i32> {
 +    proc_entry(pid).map(|entry| entry.sid)
++}
++
++pub fn process_start_token(pid: u32) -> Option<u64> {
++    proc_entry(pid).map(|entry| entry.start_token)
++}
++
++/// The process group of `pid`, if it is still the process that was recorded
++/// with `start_token` and still belongs to the pane shell's session.
++pub fn live_pane_process_group(shell_pid: u32, pid: u32, start_token: u64) -> Option<u32> {
++    let process = proc_entry(pid)?;
++    let shell_session = proc_entry(shell_pid)?.sid;
++    (process.stat != libc::SZOMB
++        && process.start_token == start_token
++        && process.sid == shell_session
++        && process.pgid > 0)
++        .then_some(process.pgid as u32)
++}
++
++pub fn clipboard_text_matches(_bytes: &[u8]) -> Option<bool> {
++    None
++}
++
++pub(super) fn process_name_and_parent(pid: u32) -> Option<(String, u32)> {
++    let entry = proc_entry(pid)?;
++    Some((entry.comm, entry.ppid))
++}
++
++/// The pid of a local socket's peer, from LOCAL_PEERCRED (FreeBSD 13 and
++/// later fill in cr_pid).
++pub(super) fn socket_peer_pid(fd: RawFd) -> Option<u32> {
++    let mut cred: libc::xucred = unsafe { std::mem::zeroed() };
++    let mut len = std::mem::size_of::<libc::xucred>() as libc::socklen_t;
++    let result = unsafe {
++        libc::getsockopt(
++            fd,
++            libc::SOL_LOCAL,
++            libc::LOCAL_PEERCRED,
++            (&mut cred as *mut libc::xucred).cast(),
++            &mut len,
++        )
++    };
++    if result != 0 || cred.cr_version != libc::XUCRED_VERSION {
++        return None;
++    }
++    let pid = unsafe { cred.cr_pid__c_anonymous_union.cr_pid };
++    (pid > 0).then_some(pid as u32)
 +}
