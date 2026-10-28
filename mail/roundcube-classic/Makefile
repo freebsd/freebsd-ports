@@ -11,14 +11,11 @@ WWW=		https://github.com/roundcube/classic/
 
 LICENSE=	GPLv3+
 
-USES=		cpe php:flavors
+USES=		php:flavors
 
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.6.0:mail/roundcube@${PHP_FLAVOR}
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-CPE_PRODUCT=	webmail
-CPE_VENDOR=	roundcube
 
 WWWDIR=		${PREFIX}/www/${PKGNAMEPREFIX:S/-//}/skins/${PORTNAME}
 
