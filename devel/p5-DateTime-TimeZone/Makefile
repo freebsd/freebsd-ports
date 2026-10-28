@@ -1,5 +1,5 @@
 PORTNAME=	DateTime-TimeZone
-DISTVERSION=	2.71
+DISTVERSION=	2.72
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -14,19 +14,17 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BR_DEPENDS=	p5-Class-Singleton>=1.03:devel/p5-Class-Singleton \
-		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
-		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
-		p5-Params-ValidationCompiler>=0.13:devel/p5-Params-ValidationCompiler \
-		p5-Specio>=0:devel/p5-Specio \
-		p5-Try-Tiny>=0:lang/p5-Try-Tiny
-BUILD_DEPENDS=	${BR_DEPENDS}
-RUN_DEPENDS=	${BR_DEPENDS}
-TEST_DEPENDS=	p5-DateTime>=0.1501:devel/p5-DateTime \
-		p5-Test-Fatal>0:devel/p5-Test-Fatal \
-		p5-Test-Output>0:devel/p5-Test-Output \
-		p5-Test-Requires>0:devel/p5-Test-Requires \
-		p5-Test-Taint>=1.06:devel/p5-Test-Taint
+BUILD_RUN_DEPENDS=	p5-Class-Singleton>=1.03:devel/p5-Class-Singleton \
+			p5-Module-Runtime>=0:devel/p5-Module-Runtime \
+			p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
+			p5-Params-ValidationCompiler>=0.13:devel/p5-Params-ValidationCompiler \
+			p5-Specio>=0:devel/p5-Specio \
+			p5-Try-Tiny>=0:lang/p5-Try-Tiny
+TEST_DEPENDS=		p5-DateTime>=0.1501:devel/p5-DateTime \
+			p5-Test-Fatal>0:devel/p5-Test-Fatal \
+			p5-Test-Output>0:devel/p5-Test-Output \
+			p5-Test-Requires>0:devel/p5-Test-Requires \
+			p5-Test-Taint>=1.06:devel/p5-Test-Taint
 
 USES=		perl5
 USE_PERL5=	configure
