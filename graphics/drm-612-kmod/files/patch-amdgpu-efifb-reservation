@@ -1,0 +1,56 @@
+--- drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c.orig
++++ drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c
+@@ -25,6 +25,10 @@
+  */
+ 
+ #include <linux/io-64-nonatomic-lo-hi.h>
++#ifdef __FreeBSD__
++#include <sys/linker.h>
++#include <machine/metadata.h>
++#endif
+ #ifdef CONFIG_X86
+ #include <asm/hypervisor.h>
+ #endif
+@@ -941,6 +945,32 @@
+ 	}
+ }
+ 
++#if defined(__FreeBSD__) && defined(MODINFOMD_EFI_FB)
++/* vt(efifb) remains active until drmfb takes over.  Its buffer need not start
++ * at the beginning of the VRAM BAR, unlike the reservation below.
++ */
++static unsigned int amdgpu_gmc_efifb_size(struct amdgpu_device *adev,
++				       unsigned int size)
++{
++	struct efi_fb *efifb;
++	u64 offset, end;
++
++	efifb = (struct efi_fb *)preload_search_info(preload_kmdp,
++	    MODINFO_METADATA | MODINFOMD_EFI_FB);
++	if (!efifb || !efifb->fb_size || efifb->fb_addr < adev->gmc.aper_base)
++		return size;
++	offset = efifb->fb_addr - adev->gmc.aper_base;
++	/* Ignore another device's framebuffer and reject overflowing ranges. */
++	if (offset >= adev->gmc.aper_size ||
++	    efifb->fb_size > adev->gmc.aper_size - offset)
++		return size;
++	end = offset + efifb->fb_size;
++	if (end > UINT_MAX)
++		return size;
++	return max(size, (unsigned int)end);
++}
++#endif
++
+ void amdgpu_gmc_get_vbios_allocations(struct amdgpu_device *adev)
+ {
+ 	unsigned size;
+@@ -997,6 +1027,9 @@
+ 		size = 0;
+ 	} else {
+ 		size = amdgpu_gmc_get_vbios_fb_size(adev);
++#if defined(__FreeBSD__) && defined(MODINFOMD_EFI_FB)
++		size = amdgpu_gmc_efifb_size(adev, size);
++#endif
+ 
+ 		if (adev->mman.keep_stolen_vga_memory)
+ 			size = max(size, (unsigned)AMDGPU_VBIOS_VGA_ALLOCATION);
