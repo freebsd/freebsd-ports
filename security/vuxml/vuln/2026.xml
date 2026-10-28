@@ -1,3 +1,53 @@
+  <vuln vid="cacb4538-d2d0-11f1-8062-64bc58adb10f">
+    <topic>git-lfs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>git-lfs</name>
+	<range><lt>3.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Git LFS project reports:</p>
+	<blockquote cite="https://github.com/git-lfs/git-lfs/releases/tag/v3.8.1">
+	  <p>This release introduces security fixes for four vulnerabilities that
+	    have been assigned the identifiers CVE-2026-69260, CVE-2026-69261,
+	    CVE-2026-105802, and CVE-2026-105803.  These vulnerabilities apply to
+	    all of the operating systems supported by Git LFS.</p>
+	  <p>CVE-2026-69260: When Git LFS sends a remote command via SSH, it does
+	    not properly format the argument it derives from the remote SSH URL.
+	    Servers which pass remote commands to a shell without sanitizing
+	    their arguments may be induced to execute malicious programs.</p>
+	  <p>CVE-2026-69261: After receiving an HTTP redirection, Git LFS may
+	    forward Cookie headers to a host other than the one for which they
+	    were intended.  If credentials or other secrets are stored in HTTP
+	    cookies, they may be leaked to a potentially malicious host.</p>
+	  <p>CVE-2026-105802: When operating in a malicious repository which
+	    contains a submodule, Git LFS may execute an arbitrary program after
+	    incorrectly parsing line feed (LF) characters in the submodule's URL.</p>
+	  <p>CVE-2026-105803: When operating in a malicious repository, Git LFS
+	    may execute an arbitrary program as a custom transfer adapter after
+	    incorrectly filtering the options defined in an .lfsconfig file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-69260</cvename>
+      <cvename>CVE-2026-69261</cvename>
+      <cvename>CVE-2026-105802</cvename>
+      <cvename>CVE-2026-105803</cvename>
+      <url>https://github.com/git-lfs/git-lfs/releases/tag/v3.8.1</url>
+      <url>https://github.com/git-lfs/git-lfs/security/advisories/GHSA-w3f2-pr6x-wwjc</url>
+      <url>https://github.com/git-lfs/git-lfs/security/advisories/GHSA-x7xj-4j4f-88xr</url>
+      <url>https://github.com/git-lfs/git-lfs/security/advisories/GHSA-xrgv-7vx6-5vx6</url>
+      <url>https://github.com/git-lfs/git-lfs/security/advisories/GHSA-x72p-hmqp-46hw</url>
+    </references>
+    <dates>
+      <discovery>2026-10-22</discovery>
+      <entry>2026-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b9a3fd21-d2af-11f1-bae2-3497f65b111b">
     <topic>Pillow -- multiple vulnerabilities</topic>
     <affects>
