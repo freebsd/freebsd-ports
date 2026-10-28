@@ -1,8 +1,9 @@
 PORTNAME=	openvox-server
-DISTVERSION=	9.0.1
+DISTVERSION=	9.1.0
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${DISTVERSION:S/-/~/}/
+MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${DISTVERSION:S/-/~/}/ RG:gem
 PKGNAMESUFFIX=	9
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} json-2.21.2-java.gem:gem
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Puppet Server running in the JVM
@@ -86,5 +87,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/irb ${STAGEDIR}${DATADIR}/cli/apps/irb
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/ruby ${STAGEDIR}${DATADIR}/cli/apps/ruby
 	${INSTALL_DATA} ${WRKSRC}/ext/cli_defaults/cli-defaults.sh ${STAGEDIR}${DATADIR}/cli/cli-defaults.sh
+
+	${TAR} zxf ${WRKDIR}/data.tar.gz -C ${STAGEDIR}${DATADIR} lib
 
 .include <bsd.port.mk>

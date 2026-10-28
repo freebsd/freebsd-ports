@@ -1,3 +1,5 @@
-TIMESTAMP = 1790997353
-SHA256 (openvox-server-9.0.1.tar.gz) = 4b6f28690230c5d22342889fe88f93d3f3e1a89a5bf978d21ff5dd598e397a4c
-SIZE (openvox-server-9.0.1.tar.gz) = 76938636
+TIMESTAMP = 1793156099
+SHA256 (openvox-server-9.1.0.tar.gz) = d64e3aff1a1c62b5652cba677a53b4c42f0efc8db1f83ad6f49ce2c8e4cb1c0c
+SIZE (openvox-server-9.1.0.tar.gz) = 76960886
+SHA256 (json-2.21.2-java.gem) = f01521cd90639cc26b63040fb00d2b949f18f41ecaab5c82b02fb31d0b8b736c
+SIZE (json-2.21.2-java.gem) = 143360

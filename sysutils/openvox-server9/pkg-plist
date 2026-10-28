@@ -11,6 +11,30 @@
 @sample %%ETCDIR%%/services.d/bootstrap.cfg.sample
 @sample %%ETCDIR%%/services.d/ca.cfg.sample
 @dir(,puppet,750) etc/puppet/code
+%%DATADIR%%/lib/json.rb
+%%DATADIR%%/lib/json/add/bigdecimal.rb
+%%DATADIR%%/lib/json/add/complex.rb
+%%DATADIR%%/lib/json/add/core.rb
+%%DATADIR%%/lib/json/add/date.rb
+%%DATADIR%%/lib/json/add/date_time.rb
+%%DATADIR%%/lib/json/add/exception.rb
+%%DATADIR%%/lib/json/add/ostruct.rb
+%%DATADIR%%/lib/json/add/range.rb
+%%DATADIR%%/lib/json/add/rational.rb
+%%DATADIR%%/lib/json/add/regexp.rb
+%%DATADIR%%/lib/json/add/set.rb
+%%DATADIR%%/lib/json/add/string.rb
+%%DATADIR%%/lib/json/add/struct.rb
+%%DATADIR%%/lib/json/add/symbol.rb
+%%DATADIR%%/lib/json/add/time.rb
+%%DATADIR%%/lib/json/common.rb
+%%DATADIR%%/lib/json/ext.rb
+%%DATADIR%%/lib/json/ext/generator.jar
+%%DATADIR%%/lib/json/ext/generator/state.rb
+%%DATADIR%%/lib/json/ext/parser.jar
+%%DATADIR%%/lib/json/generic_object.rb
+%%DATADIR%%/lib/json/truffle_ruby/generator.rb
+%%DATADIR%%/lib/json/version.rb
 %%DATADIR%%/puppet-server-release.jar
 @(,,755) %%DATADIR%%/cli/apps/ca
 @(,,755) %%DATADIR%%/cli/apps/foreground
