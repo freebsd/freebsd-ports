@@ -1,6 +1,6 @@
 PORTNAME=	kmplayer
 PORTVERSION=	0.12.0b
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}
@@ -11,6 +11,9 @@ WWW=		https://kmplayer.kde.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
+
+DEPRECATED=		Abandoned, not ported to Qt6
+EXPIRATION_DATE=	2026-11-30
 
 NOT_FOR_ARCHS=		aarch64
 NOT_FOR_ARCHS_REASON=	prcpucfg.h:764:2: error: "Unknown CPU architecture"
