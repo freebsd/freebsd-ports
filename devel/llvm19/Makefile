@@ -314,6 +314,11 @@ PORTDOCS+=	clang-tools
 .if ${PORT_OPTIONS:MFLANG}
 LLVM_ENABLE_PROJECTS+=	flang
 COMMANDS+=	${FLANG_COMMANDS}
+.if ${OSVERSION} > 1600017 || \
+    (${OSVERSION} < 1600000 && ${OSVERSION} > 1501501) || \
+    (${OSVERSION} < 1500000 && ${OSVERSION} > 1404501)
+EXTRA_PATCHES+=	${PATCHDIR}/libc++21-flang_runtime_io-api-minimal.cpp
+.endif
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
