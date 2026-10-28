@@ -1,5 +1,6 @@
 PORTNAME=	omarchy-nvim
 DISTVERSION=	2026.9.21
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -14,7 +15,7 @@ RUN_DEPENDS=	git:devel/git \
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	LazyVim:starter:803bc181d7c0d6d5eeba9274d9be49b287294d99:starter \
-		omacom:omarchy-pkgs:3dbba7e478c7aefc7a8eda39fd79212a9bb17f66:omarchy
+		omacom:omarchy-pkgs:60551aaddc098c34cd69862ed8c0569e1ce74d5f:omarchy
 
 NO_ARCH=	yes
 NO_BUILD=	yes
