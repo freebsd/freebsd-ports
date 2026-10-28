@@ -1,7 +1,7 @@
 PORTNAME=	publisher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.9.12
-PORTREVISION=	1
+DISTVERSION=	5.9.20
+PORTREVISION=	0
 CATEGORIES=	print
 PKGNAMESUFFIX=	-devel
 
@@ -37,14 +37,13 @@ GH_TUPLE=	\
 		Masterminds:semver:v1.5.0:masterminds_semver/src/go/vendor/github.com/Masterminds/semver \
 		PuerkitoBio:goquery:v1.9.1:puerkitobio_goquery/src/go/vendor/github.com/PuerkitoBio/goquery \
 		alecthomas:chroma:v2.13.0:alecthomas_chroma_v2/src/go/vendor/github.com/alecthomas/chroma/v2 \
-		andybalholm:cascadia:v1.3.2:andybalholm_cascadia/src/go/vendor/github.com/andybalholm/cascadia \
 		anthonynsimon:bild:v0.17.1:anthonynsimon_bild/src/go/vendor/github.com/anthonynsimon/bild \
 		dlclark:regexp2:v1.11.0:dlclark_regexp2/src/go/vendor/github.com/dlclark/regexp2 \
 		fsnotify:fsnotify:v1.7.0:fsnotify_fsnotify/src/go/vendor/github.com/fsnotify/fsnotify \
 		gammazero:deque:v0.2.1:gammazero_deque/src/go/vendor/github.com/gammazero/deque \
 		gammazero:workerpool:v1.1.3:gammazero_workerpool/src/go/vendor/github.com/gammazero/workerpool \
 		golang:image:v0.45.0:golang_image/src/go/vendor/golang.org/x/image \
-		golang:net:v0.53.0:golang_net/src/go/vendor/golang.org/x/net \
+		golang:net:v0.55.0:golang_net/src/go/vendor/golang.org/x/net \
 		golang:sys:v0.47.0:golang_sys/src/go/vendor/golang.org/x/sys \
 		golang:text:v0.41.0:golang_text/src/go/vendor/golang.org/x/text \
 		google:btree:v1.1.2:google_btree/src/go/vendor/github.com/google/btree \
@@ -110,7 +109,13 @@ JAVA_TOOLS_RUN_DEPENDS=	saxon-he>0:textproc/saxon-he \
 # Required because Go 1.21+ needs modules.txt in vendor/, and GH_TUPLE
 # extraction does not produce it. Generated on host with: go mod vendor
 post-extract:
-	${CP} ${FILESDIR}/modules.txt ${WRKSRC}/src/go/vendor/modules.txt
+		${CP} ${FILESDIR}/modules.txt ${WRKSRC}/src/go/vendor/modules.txt
+		${MKDIR} ${WRKSRC}/src/go/vendor/github.com/andybalholm
+		${CP} -R ${WRKSRC}/src/go/third_party/cascadia \
+		${WRKSRC}/src/go/vendor/github.com/andybalholm/
+		${RM} ${WRKSRC}/src/go/vendor/github.com/andybalholm/cascadia/go.mod \
+		${WRKSRC}/src/go/vendor/github.com/andybalholm/cascadia/go.sum \
+		${WRKSRC}/src/go/vendor/github.com/andybalholm/cascadia/is_test.go
 
 do-build:
 	# libsplib.so -- Go shared library (c-shared mode, CGO uses Lua headers via CGO_CFLAGS)
