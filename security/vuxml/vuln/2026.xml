@@ -1,3 +1,85 @@
+  <vuln vid="3caa3b4b-d2ab-11f1-bae2-3497f65b111b">
+    <topic>trafficserver -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>trafficserver</name>
+	<range><lt>10.1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Traffic Server project published security advisories
+	  for issues fixed in releases 10.1.1 through 10.1.5.  They include
+	  request smuggling and cache poisoning through malformed requests and
+	  responses, memory corruption, and unauthenticated access in the
+	  experimental plugins, which the port builds (tsmemcache, wasm, and
+	  magick with the IMAGEMAGICK option).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-31699</cvename>
+      <cvename>CVE-2025-55702</cvename>
+      <cvename>CVE-2025-58136</cvename>
+      <cvename>CVE-2025-65114</cvename>
+      <cvename>CVE-2026-22068</cvename>
+      <cvename>CVE-2026-24033</cvename>
+      <cvename>CVE-2026-33267</cvename>
+      <cvename>CVE-2026-33930</cvename>
+      <cvename>CVE-2026-41920</cvename>
+      <cvename>CVE-2026-57834</cvename>
+      <cvename>CVE-2026-58150</cvename>
+      <cvename>CVE-2026-58151</cvename>
+      <cvename>CVE-2026-58152</cvename>
+      <cvename>CVE-2026-58153</cvename>
+      <cvename>CVE-2026-58154</cvename>
+      <cvename>CVE-2026-58155</cvename>
+      <cvename>CVE-2026-58156</cvename>
+      <cvename>CVE-2026-58157</cvename>
+      <cvename>CVE-2026-58158</cvename>
+      <cvename>CVE-2026-58159</cvename>
+      <cvename>CVE-2026-58160</cvename>
+      <cvename>CVE-2026-58161</cvename>
+      <cvename>CVE-2026-58162</cvename>
+      <cvename>CVE-2026-58163</cvename>
+      <cvename>CVE-2026-58164</cvename>
+      <cvename>CVE-2026-58175</cvename>
+      <cvename>CVE-2026-58177</cvename>
+      <cvename>CVE-2026-58178</cvename>
+      <cvename>CVE-2026-58179</cvename>
+      <cvename>CVE-2026-58180</cvename>
+      <cvename>CVE-2026-58181</cvename>
+      <cvename>CVE-2026-58182</cvename>
+      <cvename>CVE-2026-58183</cvename>
+      <cvename>CVE-2026-58184</cvename>
+      <cvename>CVE-2026-58185</cvename>
+      <cvename>CVE-2026-58186</cvename>
+      <cvename>CVE-2026-58187</cvename>
+      <cvename>CVE-2026-58188</cvename>
+      <cvename>CVE-2026-58189</cvename>
+      <cvename>CVE-2026-59173</cvename>
+      <cvename>CVE-2026-65100</cvename>
+      <cvename>CVE-2026-65324</cvename>
+      <cvename>CVE-2026-65325</cvename>
+      <cvename>CVE-2026-102795</cvename>
+      <cvename>CVE-2026-111804</cvename>
+      <cvename>CVE-2026-111805</cvename>
+      <cvename>CVE-2026-111808</cvename>
+      <cvename>CVE-2026-111809</cvename>
+      <cvename>CVE-2026-111811</cvename>
+      <cvename>CVE-2026-111812</cvename>
+      <cvename>CVE-2026-111813</cvename>
+      <cvename>CVE-2026-111814</cvename>
+      <cvename>CVE-2026-111815</cvename>
+      <cvename>CVE-2026-111816</cvename>
+      <cvename>CVE-2026-111817</cvename>
+      <url>https://lists.apache.org/list.html?announce@trafficserver.apache.org</url>
+    </references>
+    <dates>
+      <discovery>2026-04-02</discovery>
+      <entry>2026-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4538886a-d1d9-11f1-8135-8447094a420f">
     <topic>rustls-ffi -- Read after free</topic>
     <affects>
