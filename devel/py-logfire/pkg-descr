@@ -1,0 +1,2 @@
+Pydantic Logfire is a Python observability tool. This metapackage provides
+the command-line interface and depends on the Logfire SDK.
