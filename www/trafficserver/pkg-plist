@@ -152,6 +152,7 @@ include/yaml-cpp/emittermanip.h
 include/yaml-cpp/emitterstyle.h
 include/yaml-cpp/eventhandler.h
 include/yaml-cpp/exceptions.h
+include/yaml-cpp/fptostring.h
 include/yaml-cpp/mark.h
 include/yaml-cpp/node/convert.h
 include/yaml-cpp/node/detail/impl.h
@@ -187,8 +188,8 @@ lib/libswoc.so.1.5.12
 lib/libtsapi.so
 lib/libtscppapi.so
 lib/libyaml-cpp.so
-lib/libyaml-cpp.so.0.8
-lib/libyaml-cpp.so.0.8.0
+lib/libyaml-cpp.so.0.9
+lib/libyaml-cpp.so.0.9.0
 libdata/pkgconfig/ts.pc
 libdata/pkgconfig/yaml-cpp.pc
 libexec/trafficserver/access_control.so
