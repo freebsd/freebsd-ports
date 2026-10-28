@@ -1,5 +1,5 @@
 PORTNAME=	biosig
-DISTVERSION=	3.9.5
+DISTVERSION=	3.9.8
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/BioSig%20for%20C_C%2B%2B/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -38,7 +38,7 @@ CFLAGS+=	-Wno-error=int-conversion
 .endif
 
 post-install:
-.for f in bin/biosig_fhir bin/biosig2gdf bin/physicalunits bin/save2gdf lib/libbiosig.so.3
+.for f in bin/biosig_fhir bin/biosig2gdf bin/physicalunits bin/save2gdf lib/libbiosig.so.4
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
 .endfor
 
