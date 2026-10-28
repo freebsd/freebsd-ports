@@ -1,15 +1,17 @@
---- CMakeLists.txt.orig	2026-04-10 16:03:32 UTC
+--- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -122,7 +122,7 @@ if (NOT "${PHASAR_TARGET_ARCH_INTERNAL}" STREQUAL "")
+@@ -122,8 +122,8 @@
    check_cxx_compiler_flag("-march=${PHASAR_TARGET_ARCH_INTERNAL}" MARCH_SUPPORTED)
    if (MARCH_SUPPORTED)
      message(STATUS "Target architecture '${PHASAR_TARGET_ARCH_INTERNAL}' enabled")
 -    string(APPEND CMAKE_CXX_FLAGS_RELEASE " -march=${PHASAR_TARGET_ARCH_INTERNAL}")
+-    string(APPEND CMAKE_C_FLAGS_RELEASE " -march=${PHASAR_TARGET_ARCH_INTERNAL}")
 +    #string(APPEND CMAKE_CXX_FLAGS_RELEASE " -march=${PHASAR_TARGET_ARCH_INTERNAL}")
++    #string(APPEND CMAKE_C_FLAGS_RELEASE " -march=${PHASAR_TARGET_ARCH_INTERNAL}")
    else()
      message(WARNING "Target architecture '${PHASAR_TARGET_ARCH_INTERNAL}' not supported. Fallback to generic build")
    endif()
-@@ -449,6 +449,8 @@ if (PHASAR_BUILD_UNITTESTS)
+@@ -455,6 +455,8 @@
  # Add Phasar unittests and build all IR test code
  if (PHASAR_BUILD_UNITTESTS)
    message("Phasar unittests")

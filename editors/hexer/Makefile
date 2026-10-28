@@ -9,6 +9,9 @@ MAINTAINER=	anastasios@mageirias.com
 COMMENT=	Multi buffer editor for binary files
 WWW=		https://gitlab.com/hexer/hexer
 
+DEPRECATED=	Unmaintained since import and doesn't compile with modern clang
+EXPIRATION_DATE=	2027-03-31
+
 LICENSE=	DEMETRIO
 LICENSE_NAME=	Sascha Demetrio Custom License
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
@@ -28,7 +31,7 @@ MYC_ALL_TARGET=	myc
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-USES+=	llvm:max=14
+USES+=	llvm:max=14,build
 .endif
 
 post-install:

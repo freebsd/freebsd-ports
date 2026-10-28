@@ -8,6 +8,12 @@ MAINTAINER=	ports@freebsd.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 WWW=		https://brlcad.org/
 
+DEPRECATED=	Unmaintained port depends on ancient compiler (llvm14) and doesn't build with ssp
+EXPIRATION_DATE=	2027-01-31
+
+BROKEN_FreeBSD_15=	Attempts to redeclare ssp string functions (strlcat, strlcpy)
+BROKEN_FreeBSD_16=	Attempts to redeclare ssp string functions (strlcat, strlcpy)
+
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
