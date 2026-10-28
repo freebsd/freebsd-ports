@@ -1,6 +1,6 @@
 PORTNAME=	pod
 PORTVERSION=	0.5.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	filesystems audio
 MASTER_SITES=	SF/fuse${PORTNAME}/fuse${PORTNAME}/FUSEPod%20v${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
@@ -10,14 +10,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based filesystem for iPod
 WWW=		https://fusepod.sourceforge.net/
 
-BROKEN=		Fails to build
-
-LIB_DEPENDS=	libgpod.so:audio/libgpod\
+LIB_DEPENDS=	libgpod.so:audio/libgpod \
 		libtag.so:audio/taglib
 
-USES=		compiler:c++11-lang fuse pkgconfig tar:bzip2
+USES=		compiler:c++11-lang fuse gnome pkgconfig tar:bzip2
+USE_GNOME=	glib20
+
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-PLIST_FILES=	bin/fusepod share/man/man1/fusepod.1.gz
+PLIST_FILES=	bin/fusepod \
+		share/man/man1/fusepod.1.gz
 
 .include <bsd.port.mk>
