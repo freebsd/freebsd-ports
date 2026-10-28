@@ -1,12 +1,15 @@
 PORTNAME=	photoqt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, powerful and good looking Qt5 image viewer
 WWW=		https://photoqt.org/
+
+DEPRECATED=		Outdated, depends on deprecated Qt 5
+EXPIRATION_DATE=	2026-11-30
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -19,7 +22,7 @@ LIB_DEPENDS=	libfreeimage.so:graphics/freeimage \
 		libpugixml.so:textproc/pugixml
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
-		kde:5 libarchive localbase:ldflags magick:7 qt:5
+		kde libarchive localbase:ldflags magick:7 qt:5
 USE_QT=		concurrent core dbus declarative graphicaleffects gui multimedia \
 		printsupport network quickcontrols sql svg widgets xml \
 		buildtools:build concurrent:build linguisttools:build qmake:build
