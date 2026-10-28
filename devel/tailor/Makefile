@@ -1,38 +1,32 @@
 PORTNAME=	tailor
-DISTVERSION=	0.9.37
-PORTREVISION=	2
+DISTVERSION=	0.9.42
 CATEGORIES=	devel python
+MASTER_SITES=	https://codeberg.org/BSDforge/${PORTNAME}/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Migrates changesets between version control systems
-WWW=		https://gitlab.com/ports1/tailor/
+WWW=		https://codeberg.org/BSDforge/tailor
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:net/rsync \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
+# This is sure annoying :/
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GITLAB=	yes
-GL_ACCOUNT=	ports1
-GL_PROJECT=	tailor
-GL_TAGNAME=	06d9068d84a4e78f30579fbdc46ed22ec9d953c7
+PORTDOCS=	DOC.* README README.*
 
 OPTIONS_DEFINE=	DOCS
 
-PORTDOCS=	README README.* DOC.*
-
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 31200
-BROKEN= Does not build with Python 3.12 and later
-# No module named configparser
-.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
