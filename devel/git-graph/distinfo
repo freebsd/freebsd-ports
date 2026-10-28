@@ -1,4 +1,4 @@
-TIMESTAMP = 1787416898
+TIMESTAMP = 1793197944
 SHA256 (rust/crates/aho-corasick-1.1.5.crate) = c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
 SIZE (rust/crates/aho-corasick-1.1.5.crate) = 184315
 SHA256 (rust/crates/android_system_properties-0.1.6.crate) = ae221649c9976a6f6c56ae1facf410f3ddb33cc661c4b7b61020a912d4237fbc
@@ -245,5 +245,5 @@ SHA256 (rust/crates/winnow-1.0.4.crate) = 23b97319f7b8343df12cc98938e5c3eb436064
 SIZE (rust/crates/winnow-1.0.4.crate) = 188513
 SHA256 (rust/crates/yansi-1.0.1.crate) = cfe53a6657fd280eaa890a3bc59152892ffa3e30101319d168b781ed6529b049
 SIZE (rust/crates/yansi-1.0.1.crate) = 75497
-SHA256 (mlange-42-git-graph-v0.8.0_GH0.tar.gz) = 906ef8f5931c32324ab372ac0047b6440faf76b8ce61fda811d8b85cdc3da577
-SIZE (mlange-42-git-graph-v0.8.0_GH0.tar.gz) = 42857
+SHA256 (mlange-42-git-graph-v0.8.2_GH0.tar.gz) = b2f9184af26e200e952cde24904bae8a57abcfeb5ccd38c55ae8f3f693c41569
+SIZE (mlange-42-git-graph-v0.8.2_GH0.tar.gz) = 43246
