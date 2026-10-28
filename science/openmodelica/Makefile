@@ -80,6 +80,16 @@ BINARY_ALIAS=	make=${GMAKE}
 
 CONFLICTS_INSTALL=	cminpack # see https://github.com/OpenModelica/OpenModelica/issues/14701
 
+.include <bsd.port.options.mk>
+
+# CMinpack only builds libcminpackld when long double is wider than double,
+# which on powerpc64le is only the case since 16.0 (IEEE binary128).
+.if ${ARCH} == powerpc64le && ${OSVERSION} < 1600019
+PLIST_SUB+=	LONG_DOUBLE="@comment "
+.else
+PLIST_SUB+=	LONG_DOUBLE=""
+.endif
+
 post-extract:
 	# remove stray *.orig files
 	@${FIND} ${WRKSRC} -name "*.orig" -delete

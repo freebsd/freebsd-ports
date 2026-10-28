@@ -660,7 +660,7 @@ lib/omc/libamd.a
 lib/omc/libbtf.a
 lib/omc/libcdaskr.a
 lib/omc/libcminpack.a
-lib/omc/libcminpackld.a
+%%LONG_DOUBLE%%lib/omc/libcminpackld.a
 lib/omc/libcminpacks.a
 lib/omc/libcolamd.a
 lib/omc/libexpat.a
@@ -704,7 +704,7 @@ lib/omc/libumfpack.a
 lib/omc/libzlib.a
 lib/omc/libzmq.a
 lib/omc/pkgconfig/cminpack.pc
-lib/omc/pkgconfig/cminpackld.pc
+%%LONG_DOUBLE%%lib/omc/pkgconfig/cminpackld.pc
 lib/omc/pkgconfig/cminpacks.pc
 lib/omc/pkgconfig/expat.pc
 lib/omc/pkgconfig/libzmq.pc
