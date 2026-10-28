@@ -1,5 +1,5 @@
 PORTNAME=	openvoxdb
-PORTVERSION=	8.14.1
+PORTVERSION=	8.17.0
 CATEGORIES=	databases java
 MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${PORTVERSION}/
 PKGNAMESUFFIX=	8
@@ -23,7 +23,7 @@ SHEBANG_FILES=	ext/bin/puppetdb \
 		ext/cli/foreground \
 		ext/cli/ssl-setup \
 		ext/cli/upgrade
-JAVA_VERSION=	17+
+JAVA_VERSION=	11 17 21
 NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/puppetdb-${PORTVERSION}
