@@ -1,6 +1,6 @@
 PORTNAME=	dynamechs
 PORTVERSION=	4.0.p1
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/4.0pre1
@@ -10,19 +10,21 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multibody Dynamic Simulation Library
 WWW=		https://dynamechs.sourceforge.net/
 
-BROKEN=		Fails to build, dm/svd_linpack.cpp:182:2: error: reference to 'complex' is ambiguous
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gl gmake perl5 shebangfix tar:bzip2
+USES=		gl gmake perl5 shebangfix tar:bzip2 xorg
 USE_CXXSTD=	c++14
-USE_GL=		glut
+USE_GL=		gl glu glut
 USE_LDCONFIG=	yes
 USE_PERL5=	build
+USE_XORG=	x11
 
 SHEBANG_FILES=	make/*.pl
 
 MAKE_ENV=	OPENGLINCDIR="${LOCALBASE}/include" \
 		OPENGLLIBDIR="${LOCALBASE}/lib"
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	freebsd
 
 post-patch:
