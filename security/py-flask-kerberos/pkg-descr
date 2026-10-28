@@ -1,1 +1,6 @@
 GSSAPI Negotiate HTTP authentication for Flask routes.
+
+Flask-Kerberos provides Kerberos authentication support for Flask
+applications.  A decorator protects views with SPNEGO (HTTP Negotiate)
+authentication, passing the authenticated principal to the view and
+returning the mutual authentication token to the client.
