@@ -1,6 +1,6 @@
-TIMESTAMP = 1785318929
-SHA256 (nim-lang-nimble-v0.24.1_GH0.tar.gz) = dfa8e7bbbe7b05f8cff9bffd5aa25ddb5d73d92e85b752711df844456724e58c
-SIZE (nim-lang-nimble-v0.24.1_GH0.tar.gz) = 805740
+TIMESTAMP = 1793201991
+SHA256 (nim-lang-nimble-v0.26.2_GH0.tar.gz) = d4f47b74647ea3f829db5923471d762cd7643ad873ea251b9502dd505c947352
+SIZE (nim-lang-nimble-v0.26.2_GH0.tar.gz) = 925094
 SHA256 (guzba-zippy-bcb8c1e1be6abb0a0e35a3c6040cdd9391cc993f_GH0.tar.gz) = d2283a8de48af729d46e78ec240449e26e32f49b566988fb6e8969fe53e0e135
 SIZE (guzba-zippy-bcb8c1e1be6abb0a0e35a3c6040cdd9391cc993f_GH0.tar.gz) = 21329585
 SHA256 (status-im-nim-bearssl-25197fec8a3988d1153be7a1a79890b70e69d6db_GH0.tar.gz) = 551c2c386fb8dd38e0f569204f148d850c05d6ae14c34601e35d4b840aa25970

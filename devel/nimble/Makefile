@@ -1,6 +1,6 @@
 PORTNAME=	nimble
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.1
+DISTVERSION=	0.26.2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@nicandneal.net
@@ -51,6 +51,8 @@ post-patch:
 
 	@${REINPLACE_CMD} -e 's|import chronos|import "${WRKSRC_chronos}"/chronos|g' ${WRKSRC}/src/nimblepkg/nimenv.nim
 
+	@${REINPLACE_CMD} -e 's|import chronos|import "${WRKSRC_chronos}"/chronos|g' ${WRKSRC}/src/nimblepkg/nimblesolver.nim
+
 	@${REINPLACE_CMD} -e 's|import chronos|import "${WRKSRC_chronos}"/chronos|g' ${WRKSRC}/src/nimblepkg/nimresolution.nim
 
 	@${REINPLACE_CMD} -e 's|import chronos|import "${WRKSRC_chronos}"/chronos|g' ${WRKSRC}/src/nimblepkg/nimblesat.nim
@@ -63,6 +65,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|import zippy|import "${WRKSRC_zippy}"/src/zippy|g' ${WRKSRC}/src/nimblepkg/packageinfo.nim
 
 	@${REINPLACE_CMD} -e 's|import chronos|import "${WRKSRC_chronos}"/chronos|g' ${WRKSRC}/src/nimblepkg/publish.nim
+
+	@${REINPLACE_CMD} -e 's|import chronos|import "${WRKSRC_chronos}"/chronos|g' ${WRKSRC}/src/nimblepkg/refresh.nim
 
 	@${REINPLACE_CMD} -e 's|import pkg/checksums/|import "${WRKSRC_checksums}"/src/checksums/|g' ${WRKSRC}/src/nimblepkg/sha1hashes.nim
 
