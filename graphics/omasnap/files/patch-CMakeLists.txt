@@ -1,8 +1,8 @@
---- CMakeLists.txt.orig	2026-09-29 13:36:55 UTC
+--- CMakeLists.txt.orig	2026-10-24 16:11:55 UTC
 +++ CMakeLists.txt
-@@ -9,12 +9,16 @@ find_program(WAYLAND_SCANNER wayland-scanner REQUIRED)
- find_package(LayerShellQt REQUIRED)
+@@ -10,12 +10,16 @@ find_program(WAYLAND_SCANNER wayland-scanner REQUIRED)
  pkg_check_modules(WaylandClient REQUIRED IMPORTED_TARGET wayland-client)
+ pkg_check_modules(Libdeflate REQUIRED IMPORTED_TARGET libdeflate)
  find_program(WAYLAND_SCANNER wayland-scanner REQUIRED)
 +pkg_get_variable(WAYLAND_PROTOCOLS_DIR wayland-protocols pkgdatadir)
 +if(NOT WAYLAND_PROTOCOLS_DIR)
@@ -20,7 +20,7 @@
    ${CMAKE_CURRENT_SOURCE_DIR}/protocols/wlr-virtual-pointer-unstable-v1.xml
  )
  set(PROTOCOL_SOURCES)
-@@ -207,11 +211,11 @@ install(FILES assets/OFL.txt
+@@ -230,11 +234,11 @@ install(FILES assets/OFL.txt
    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
  )
  install(FILES assets/OFL.txt
