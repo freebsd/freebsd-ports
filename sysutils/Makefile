@@ -243,6 +243,7 @@
     SUBDIR += copytape
     SUBDIR += coreos-ct
     SUBDIR += coreutils
+    SUBDIR += cosmic-monitor
     SUBDIR += coxswain
     SUBDIR += cpdup
     SUBDIR += cpdup-FreeBSD
