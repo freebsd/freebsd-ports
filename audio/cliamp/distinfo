@@ -1,5 +1,5 @@
-TIMESTAMP = 1790689372
-SHA256 (go/audio_cliamp/bjarneo-cliamp-v2.2.0_GH0/go.mod) = 59e641860f86d6a7fe23bcc67baa88f02ee8f34b8f185cc9adc7119b3036dbba
-SIZE (go/audio_cliamp/bjarneo-cliamp-v2.2.0_GH0/go.mod) = 3723
-SHA256 (go/audio_cliamp/bjarneo-cliamp-v2.2.0_GH0/bjarneo-cliamp-v2.2.0_GH0.tar.gz) = 54ffbba6983880c915d2c13c83ca1339de2d2a3c5af3bb0a176923faa9afc015
-SIZE (go/audio_cliamp/bjarneo-cliamp-v2.2.0_GH0/bjarneo-cliamp-v2.2.0_GH0.tar.gz) = 1195228
+TIMESTAMP = 1793170047
+SHA256 (go/audio_cliamp/bjarneo-cliamp-v2.3.0_GH0/go.mod) = 4c6f901d8ae1d1479652e4eac42406244a49a229d11aac6f500c060aa7fe085d
+SIZE (go/audio_cliamp/bjarneo-cliamp-v2.3.0_GH0/go.mod) = 3723
+SHA256 (go/audio_cliamp/bjarneo-cliamp-v2.3.0_GH0/bjarneo-cliamp-v2.3.0_GH0.tar.gz) = 51828895ddb5b236fa0a119c1f06102c127065bf44911849c910fe798362fec5
+SIZE (go/audio_cliamp/bjarneo-cliamp-v2.3.0_GH0/bjarneo-cliamp-v2.3.0_GH0.tar.gz) = 1578712
