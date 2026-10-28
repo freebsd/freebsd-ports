@@ -1,0 +1,17 @@
+Description: Use the lowercase project name, so the wheel and its
+  dist-info are named crossmap as the ports framework expects for
+  USE_PYTHON=pep517 (setuptools 63 keeps the case of the name).  The
+  normalized project name is unchanged.
+Issue ID: none
+Changeset: none
+TODO: FreeBSD-specific (ports framework naming), not for upstream.
+
+--- pyproject.toml.orig	2026-07-31 02:36:01 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [project]
+-name = "CrossMap"
++name = "crossmap"
+ version = "0.7.4"
+ 
+ description = "Convert genomic coordinates, annotations, and alignments between genome assemblies."
