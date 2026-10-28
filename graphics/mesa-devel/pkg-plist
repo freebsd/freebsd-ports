@@ -26,7 +26,6 @@ lib/libEGL_mesa%%SUFFIX%%.so.0.0.0
 %%OPENCL%%lib/libRusticlOpenCL.so
 %%OPENCL%%lib/libRusticlOpenCL.so.1
 %%OPENCL%%lib/libRusticlOpenCL.so.1.0.0
-%%VKLAYERS%%lib/libVkLayer_MESA_anti_lag.so
 %%VKLAYERS%%lib/libVkLayer_MESA_device_select.so
 %%VKLAYERS%%lib/libVkLayer_MESA_overlay.so
 %%VKLAYERS%%lib/libVkLayer_MESA_screenshot.so
@@ -50,8 +49,7 @@ share/drirc.d/00-mesa%%SUFFIX%%-defaults.conf
 %%NO_COINST%%share/glvnd/egl_vendor.d/50_mesa.json
 %%VKLAYERS%%share/vulkan/explicit_layer.d/VkLayer_MESA_overlay.json
 %%VKLAYERS%%share/vulkan/explicit_layer.d/VkLayer_MESA_screenshot.json
-%%VKLAYERS%%share/vulkan/explicit_layer.d/VkLayer_MESA_vram_report_limit.json
 %%anv%%%%NO_COINST%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
 %%radv%%%%NO_COINST%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
-%%VKLAYERS%%share/vulkan/implicit_layer.d/VkLayer_MESA_anti_lag.json
 %%VKLAYERS%%share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json
+%%VKLAYERS%%share/vulkan/implicit_layer.d/VkLayer_MESA_vram_report_limit.json

@@ -1,7 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	26.2-branchpoint-4658
-DISTVERSIONSUFFIX=	-gbe847f97bd4
-PORTREVISION=	1
+DISTVERSION=	26.3-branchpoint-896
+DISTVERSIONSUFFIX=	-g087e1fe4e6a
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -98,7 +97,7 @@ LLVM_DESC=		Build with LLVM support (see implies)
 LLVM_USES=		llvm:min=18,lib,noexport
 LLVM_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG}
 LLVM_MESON_ENABLED=	llvm
-LLVM_MESON_TRUE=	amd-use-llvm
+LLVM_MESON_OFF=		-Damd-options=
 
 LTO_MESON_TRUE=		b_lto allow-broken-lto
 
@@ -122,7 +121,7 @@ VAAPI_MESON_ENABLED=	gallium-va
 VKLAYERS_DESC=		Vulkan layers: ${VKLAYERS_MESON_ON:C/.*=//} (implies ${VKLAYERS_IMPLIES})
 VKLAYERS_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 VKLAYERS_LIB_DEPENDS=	libpng.so:graphics/png
-VKLAYERS_MESON_ON=	-Dvulkan-layers=anti-lag,device-select,overlay,screenshot,vram-report-limit
+VKLAYERS_MESON_ON=	-Dvulkan-layers=device-select,overlay,screenshot,vram-report-limit
 VKLAYERS_IMPLIES=	${"${PORT_OPTIONS:Manv}":?anv:radv} # any from OPTIONS_GROUP_VULKAN
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
