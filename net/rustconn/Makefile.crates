@@ -34,8 +34,8 @@ CARGO_CRATES=	addchain-0.2.1 \
 		atomic-polyfill-1.0.3 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.1 \
-		aws-lc-rs-1.18.2 \
-		aws-lc-sys-0.46.0 \
+		aws-lc-rs-1.19.0 \
+		aws-lc-sys-0.47.0 \
 		base16ct-1.0.0 \
 		base64-0.22.1 \
 		base64-0.23.1 \
@@ -310,7 +310,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		libredox-0.1.25 \
-		libz-sys-1.1.30 \
+		libz-sys-1.1.31 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.3 \
 		locale_config-0.3.0 \
