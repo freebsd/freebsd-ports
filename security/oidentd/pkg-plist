@@ -1,0 +1,4 @@
+@sample %%ETCDIR%%.conf.sample
+sbin/oidentd
+share/man/man5/oidentd.conf.5.gz
+share/man/man8/oidentd.8.gz
