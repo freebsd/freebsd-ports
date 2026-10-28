@@ -1,6 +1,6 @@
 PORTNAME=	ddgs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.16.0
+DISTVERSION=	9.16.1
 CATEGORIES=	www
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ GH_ACCOUNT=	deedy5
 NO_ARCH=	yes
 
 # tests as of 9.6.1: 1 failed, 16 passed, 1 skipped in 49.04s, see https://github.com/deedy5/ddgs/issues/481
-# tests as of 9.16.0: testsuite fails with key lookup issues, see https://github.com/deedy5/ddgs/issues/490
+# tests as of 9.16.1: testsuite fails with key lookup issues (aiomisc conflict), see https://github.com/deedy5/ddgs/issues/490
 
 .include <bsd.port.mk>
