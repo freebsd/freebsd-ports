@@ -203,6 +203,33 @@
     </dates>
   </vuln>
 
+  <vuln vid="3bd1edbf-d2d4-11f1-97dc-40b034429ecf">
+    <topic>p5-Plack -- memory allocation vulnerability</topic>
+    <affects>
+<package>
+<name>p5-Plack</name>
+<range><lt>1.0057</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Plack project reports:</p>
+	<blockquote cite="https://metacpan.org/dist/Plack/changes">
+	  <p>Fix HTTP::Server::PSGI allocating a buffer as large as the declared Content-Length,
+          which let a single request crash the server with "Out of memory!" (CVE-2026-115825).</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-115825</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-115825</url>
+    </references>
+    <dates>
+      <discovery>2026-10-25</discovery>
+      <entry>2026-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="005c73c2-d2d1-11f1-97dc-40b034429ecf">
     <topic>p5-HTTP-Body -- multiple vulnerabilities</topic>
     <affects>
