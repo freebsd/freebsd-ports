@@ -1,8 +1,9 @@
 PORTNAME=	openvox-server
-PORTVERSION=	8.14.1
+PORTVERSION=	8.17.0
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${PORTVERSION}/ RG:gem
 PKGNAMESUFFIX=	8
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} json-2.21.2-java.gem:gem
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Puppet Server running in the JVM
@@ -19,14 +20,14 @@ RUN_DEPENDS=	bash>=0:shells/bash \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
 USES=		ruby java shebangfix sudo
-JAVA_VERSION=	17+
+JAVA_VERSION=	11 17 21
 USE_RC_SUBR=	puppetserver
 WRKSRC=		${WRKDIR}/puppetserver-${PORTVERSION}
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-CONFLICTS_INSTALL=	openvox-server[0-9] puppetserver[0-9]
+CONFLICTS_INSTALL=	openvox-server[0-9]
 
 SHEBANG_FILES=	ext/bin/puppetserver
 
@@ -86,5 +87,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/irb ${STAGEDIR}${DATADIR}/cli/apps/irb
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/ruby ${STAGEDIR}${DATADIR}/cli/apps/ruby
 	${INSTALL_DATA} ${WRKSRC}/ext/cli_defaults/cli-defaults.sh ${STAGEDIR}${DATADIR}/cli/cli-defaults.sh
+
+	${TAR} zxf ${WRKDIR}/data.tar.gz -C ${STAGEDIR}${DATADIR} lib
 
 .include <bsd.port.mk>
