@@ -68,6 +68,15 @@ X11_LIB_DEPENDS=	libxcb-errors.so:x11/xcb-util-errors \
 X11_USE=		XORG=xcb
 X11_CMAKE_BOOL_OFF=	NO_XWAYLAND
 
+.include <bsd.port.options.mk>
+
+# On aarch64, clang from devel/llvm19 (selected on -CURRENT, whose base clang
+# has assertions) fails every precompiled-header translation unit with
+# "reference to '__builtin_va_list' is ambiguous". Build without PCH there.
+.if ${ARCH} == aarch64
+CMAKE_ON+=	CMAKE_DISABLE_PRECOMPILE_HEADERS
+.endif
+
 post-patch:
 # Respect consolekit2 as XDG_RUNTIME_DIR fallback
 	@${REINPLACE_CMD} 's|/run/user|/var&|' \
