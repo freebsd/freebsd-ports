@@ -203,6 +203,33 @@
     </dates>
   </vuln>
 
+  <vuln vid="2b47c440-d2c0-11f1-97dc-40b034429ecf">
+    <topic>p5-GD -- OS command injection</topic>
+    <affects>
+<package>
+<name>p5-GD</name>
+<range><lt>2.86</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GD project reports:</p>
+	<blockquote cite="https://metacpan.org/release/RURBAN/GD-2.86/changes">
+	  <p>Fix CVE-2026-11526, command injection via 2-arg open() in _make_filehandle.
+         CWE-78, CWE-73 (Reported and fixed by Paul Johnson)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-11526</cvename> 2026-06-14T12:16:22.403
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-11526</url>
+    </references>
+    <dates>
+      <discovery>2026-09-17</discovery>
+      <entry>2026-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4538886a-d1d9-11f1-8135-8447094a420f">
     <topic>rustls-ffi -- Read after free</topic>
     <affects>
