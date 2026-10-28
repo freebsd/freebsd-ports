@@ -1,3 +1,79 @@
+  <vuln vid="bbad76d0-3b09-485d-bb13-28cbab009cbc">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>jenkins</name>
+	<range><lt>2.588</lt></range>
+    </package>
+    <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.580.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory 2026-10-28:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2026-10-28/">
+	  <ul>
+	    <li>(High) SECURITY-4125 / CVE-2026-117612: RCE vulnerability in
+	    XStream deserialization due to improper resolves-to attribute
+	    handling</li>
+	    <li>(High) SECURITY-4225 / CVE-2026-117613: Collection element
+	    type check bypass vulnerability</li>
+	    <li>(High) SECURITY-4123 / CVE-2026-117614: Agent launch command
+	    approval bypass vulnerability</li>
+	    <li>(High) SECURITY-4187 / CVE-2026-117615: Link following
+	    vulnerability allows arbitrary file read</li>
+	    <li>(High) SECURITY-4188 / CVE-2026-117616: Path traversal
+	    vulnerability in agent names</li>
+	    <li>(High) SECURITY-4248 / CVE-2026-117617: Race condition in
+	    artifact extraction allows arbitrary file creation</li>
+	    <li>(High) SECURITY-4232 / CVE-2026-117621: XSS vulnerability in
+	    workspace browser</li>
+	    <li>(High) SECURITY-4249 / CVE-2026-117622: XSS vulnerability in
+	    handling of agent errors</li>
+	    <li>(High) SECURITY-4229 / CVE-2026-117623: Stored XSS
+	    vulnerability in breadcrumb bar overflow menu</li>
+	    <li>(High) SECURITY-4122 / CVE-2026-117618: Race condition in
+	    setup wizard allows creating an administrator account</li>
+	    <li>(High) SECURITY-4189 / CVE-2026-117619: Insufficient session
+	    expiration vulnerability</li>
+	    <li>(High) SECURITY-4226 / CVE-2026-117620: Old Data Monitor
+	    injection lets users take over administrator accounts</li>
+	    <li>(High) SECURITY-4243 / CVE-2026-117624: Root element
+	    restriction bypass in XStream deserialization</li>
+	    <li>(Medium) SECURITY-4206 / CVE-2026-117625: Missing permission
+	    check allows obtaining HTTP proxy configuration</li>
+	    <li>(Medium) SECURITY-4237 / CVE-2026-117626: Path traversal
+	    vulnerability in file browser</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-117612</cvename>
+      <cvename>CVE-2026-117613</cvename>
+      <cvename>CVE-2026-117614</cvename>
+      <cvename>CVE-2026-117615</cvename>
+      <cvename>CVE-2026-117616</cvename>
+      <cvename>CVE-2026-117617</cvename>
+      <cvename>CVE-2026-117618</cvename>
+      <cvename>CVE-2026-117619</cvename>
+      <cvename>CVE-2026-117620</cvename>
+      <cvename>CVE-2026-117621</cvename>
+      <cvename>CVE-2026-117622</cvename>
+      <cvename>CVE-2026-117623</cvename>
+      <cvename>CVE-2026-117624</cvename>
+      <cvename>CVE-2026-117625</cvename>
+      <cvename>CVE-2026-117626</cvename>
+      <url>https://www.jenkins.io/security/advisory/2026-10-28/</url>
+    </references>
+    <dates>
+      <discovery>2026-10-28</discovery>
+      <entry>2026-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cacb4538-d2d0-11f1-8062-64bc58adb10f">
     <topic>git-lfs -- multiple vulnerabilities</topic>
     <affects>
