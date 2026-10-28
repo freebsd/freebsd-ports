@@ -1,5 +1,5 @@
 PORTNAME=	openvox-agent
-PORTVERSION=	8.28.0
+PORTVERSION=	8.31.1
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	8
@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-base64>=0.1:converters/rubygem-base64 \
 		rubygem-fast_gettext>=2.1:devel/rubygem-fast_gettext \
 		rubygem-getoptlong>=0.2.0:devel/rubygem-getoptlong \
 		rubygem-locale>=2.1:devel/rubygem-locale \
-		rubygem-multi_json>=1.13:devel/rubygem-multi_json \
+		rubygem-json>=2.0:devel/rubygem-json \
 		rubygem-openfact>=5.0.0:sysutils/rubygem-openfact \
 		rubygem-ostruct>=0.6.0:devel/rubygem-ostruct \
 		rubygem-puppet-resource_api>=1.5:devel/rubygem-puppet-resource_api \
@@ -62,7 +62,7 @@ FORGE_MODULES=	augeas_core=1.5.0 \
 		selinux_core=1.4.0 \
 		sshkeys_core=2.5.0 \
 		yumrepo_core=2.1.0 \
-		zfs_core=1.5.0 \
+		zfs_core=1.6.1 \
 		zone_core=1.2.0
 
 .for module in ${FORGE_MODULES}
