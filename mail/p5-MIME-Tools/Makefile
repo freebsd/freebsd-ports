@@ -1,5 +1,5 @@
 PORTNAME=	MIME-Tools
-PORTVERSION=	5.519
+PORTVERSION=	5.522
 PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
@@ -17,7 +17,9 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Convert-BinHex>=0:converters/p5-Convert-BinHex \
 		p5-Mail-Tools>=1.05:mail/p5-Mail-Tools
-TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
+TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
+		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage \
+		p5-Test-Pod>=0:devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure
