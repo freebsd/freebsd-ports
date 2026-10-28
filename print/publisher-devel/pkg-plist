@@ -78,6 +78,7 @@ share/speedata-publisher/sw/lua/common/lua-visual-debug.lua
 share/speedata-publisher/sw/lua/common/sd-callbacks.lua
 share/speedata-publisher/sw/lua/common/sd-debug.lua
 share/speedata-publisher/sw/lua/css.lua
+share/speedata-publisher/sw/lua/csscalc.lua
 share/speedata-publisher/sw/lua/dimexpr.lua
 share/speedata-publisher/sw/lua/fonts/fontloader.lua
 share/speedata-publisher/sw/lua/html.lua
@@ -101,6 +102,7 @@ share/speedata-publisher/sw/lua/publisher/attributes.lua
 share/speedata-publisher/sw/lua/publisher/colors.lua
 share/speedata-publisher/sw/lua/publisher/commandattributes.lua
 share/speedata-publisher/sw/lua/publisher/commands.lua
+share/speedata-publisher/sw/lua/publisher/cssstyle.lua
 share/speedata-publisher/sw/lua/publisher/dispatch.lua
 share/speedata-publisher/sw/lua/publisher/drawing.lua
 share/speedata-publisher/sw/lua/publisher/fontfamilies.lua
