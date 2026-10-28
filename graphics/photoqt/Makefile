@@ -4,7 +4,7 @@ DISTVERSION=	3.4
 PORTREVISION=	10
 CATEGORIES=	graphics
 
-MAINTAINER=	melanhit@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, powerful and good looking Qt5 image viewer
 WWW=		https://photoqt.org/
 
