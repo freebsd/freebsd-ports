@@ -1,0 +1,16 @@
+-- Add FreeBSD to the libc target dependency so that decmpfs compiles on FreeBSD.
+-- The crate uses libc:: constants in #[cfg(unix)] code paths (e.g. remove.rs),
+-- but the Cargo.toml only declared libc for linux and macos.
+-- Upstream PR: https://github.com/SocketDev/decmpfs/compare/main...yurivict:freebsd-libc
+
+--- cargo-crates/decmpfs-0.1.5/Cargo.toml.orig	2026-10-29 16:27:45 UTC
++++ cargo-crates/decmpfs-0.1.5/Cargo.toml
+@@ -77,7 +77,7 @@ version = "=3.27.0"
+ [dev-dependencies.tempfile]
+ version = "=3.27.0"
+ 
+-[target.'cfg(any(target_os = "linux", target_os = "macos"))'.dependencies.libc]
++[target.'cfg(any(target_os = "linux", target_os = "macos", target_os = "freebsd"))'.dependencies.libc]
+ version = "=0.2.186"
+ 
+ [target."cfg(windows)".dependencies.windows-sys]
