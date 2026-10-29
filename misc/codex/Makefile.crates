@@ -3,6 +3,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		adler2-2.0.1 \
 		aead-0.5.2 \
 		aes-0.8.4 \
+		aes-0.9.3 \
 		aes-gcm-0.10.3 \
 		age-0.12.1 \
 		age-core-0.12.0 \
@@ -23,7 +24,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.103 \
 		approx-0.5.1 \
-		arbitrary-1.4.2 \
 		arboard-3.6.1 \
 		arc-swap-1.9.0 \
 		arrayref-0.3.9 \
@@ -61,7 +61,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		audioadapter-5.0.0 \
 		audioadapter-buffers-5.2.0 \
 		audioadapter-sample-5.2.0 \
-		autocfg-1.5.0 \
+		autocfg-1.5.1 \
 		aws-config-1.8.12 \
 		aws-credential-types-1.2.11 \
 		aws-lc-rs-1.18.1 \
@@ -124,7 +124,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		byteorder-lite-0.1.0 \
 		bytes-1.12.1 \
 		bytes-utils-0.1.4 \
-		bzip2-0.5.2 \
+		bzip2-0.6.1 \
 		bzip2-sys-0.1.13+1.0.8 \
 		cached-0.56.0 \
 		cached_proc_macro-0.25.0 \
@@ -148,6 +148,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		chunked_transfer-1.5.0 \
 		cidr-0.3.2 \
 		cipher-0.4.4 \
+		cipher-0.5.2 \
 		clang-sys-1.8.1 \
 		clap-4.5.58 \
 		clap_builder-4.5.58 \
@@ -172,9 +173,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		console-0.15.11 \
 		const-hex-1.17.0 \
 		const-oid-0.9.6 \
+		const-oid-0.10.2 \
 		const_format-0.2.35 \
 		const_format_proc_macros-0.2.34 \
 		constant_time_eq-0.3.1 \
+		constant_time_eq-0.4.2 \
 		convert_case-0.6.0 \
 		convert_case-0.10.0 \
 		cookie-0.18.1 \
@@ -186,6 +189,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		core_maths-0.1.1 \
 		coreaudio-rs-0.14.2 \
 		cpal-0.18.2 \
+		cpubits-0.1.1 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.0 \
 		crc-3.4.0 \
@@ -212,7 +216,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ctor-1.0.6 \
 		ctor-proc-macro-0.0.7 \
 		ctr-0.9.2 \
-		ctutils-0.4.2 \
+		ctutils-0.4.5 \
+		curl-0.4.50 \
+		curl-sys-0.4.90+curl-8.21.0 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
 		darling-0.20.11 \
@@ -237,14 +243,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		debugid-0.8.0 \
 		debugserver-types-0.5.0 \
 		deflate64-0.1.10 \
+		defmt-0.3.100 \
+		defmt-1.1.1 \
+		defmt-macros-1.1.1 \
+		defmt-parser-1.0.0 \
 		deltae-0.3.2 \
-		deno_core_icudata-0.77.0 \
+		deno_core_icudata-0.78.0 \
 		der-0.7.10 \
 		der-parser-9.0.0 \
 		der-parser-10.0.0 \
 		deranged-0.5.5 \
 		derivative-2.2.0 \
-		derive_arbitrary-1.4.2 \
 		derive_more-1.0.0 \
 		derive_more-2.1.1 \
 		derive_more-impl-1.0.0 \
@@ -310,8 +319,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fancy-regex-0.11.0 \
 		fancy-regex-0.16.2 \
 		fast-srgb8-1.0.0 \
-		faster-hex-0.10.0 \
-		fastrand-2.3.0 \
+		faster-hex-0.10.1 \
+		fastrand-2.5.0 \
 		fax-0.2.6 \
 		fax_derive-0.2.0 \
 		fd-lock-4.0.4 \
@@ -343,6 +352,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.2 \
 		fs_extra-1.3.0 \
+		fsevent-sys-4.1.0 \
 		fslock-0.2.1 \
 		futures-0.3.34 \
 		futures-channel-0.3.34 \
@@ -366,59 +376,49 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		gif-0.14.1 \
 		gimli-0.32.3 \
 		gio-sys-0.22.8 \
-		gix-0.81.0 \
-		gix-actor-0.40.0 \
-		gix-archive-0.30.0 \
-		gix-attributes-0.31.0 \
-		gix-bitmap-0.3.0 \
-		gix-blame-0.11.0 \
-		gix-chunk-0.7.0 \
-		gix-command-0.8.0 \
-		gix-commitgraph-0.35.0 \
-		gix-config-0.54.0 \
-		gix-config-value-0.17.1 \
-		gix-date-0.15.1 \
-		gix-diff-0.61.0 \
-		gix-dir-0.23.0 \
-		gix-discover-0.49.0 \
-		gix-error-0.2.1 \
-		gix-features-0.46.2 \
-		gix-filter-0.28.0 \
-		gix-fs-0.19.2 \
-		gix-glob-0.24.0 \
-		gix-hash-0.23.0 \
-		gix-hashtable-0.13.0 \
-		gix-ignore-0.19.1 \
-		gix-index-0.49.0 \
-		gix-lock-21.0.2 \
-		gix-merge-0.14.0 \
-		gix-negotiate-0.29.0 \
-		gix-object-0.58.0 \
-		gix-odb-0.78.0 \
-		gix-pack-0.68.0 \
-		gix-packetline-0.21.2 \
-		gix-path-0.11.2 \
-		gix-pathspec-0.16.1 \
-		gix-protocol-0.59.0 \
-		gix-quote-0.7.0 \
-		gix-ref-0.61.0 \
-		gix-refspec-0.39.0 \
-		gix-revision-0.43.0 \
-		gix-revwalk-0.29.0 \
-		gix-sec-0.13.2 \
-		gix-shallow-0.10.0 \
-		gix-status-0.28.0 \
-		gix-submodule-0.28.0 \
-		gix-tempfile-21.0.2 \
-		gix-trace-0.1.18 \
-		gix-transport-0.55.1 \
-		gix-traverse-0.55.0 \
-		gix-url-0.35.2 \
-		gix-utils-0.3.1 \
-		gix-validate-0.11.0 \
-		gix-worktree-0.50.0 \
-		gix-worktree-state-0.28.0 \
-		gix-worktree-stream-0.30.0 \
+		gix-0.89.0 \
+		gix-actor-0.44.0 \
+		gix-attributes-0.37.0 \
+		gix-chunk-0.10.0 \
+		gix-command-0.12.0 \
+		gix-commitgraph-0.41.0 \
+		gix-config-0.62.0 \
+		gix-config-value-0.21.0 \
+		gix-date-0.18.0 \
+		gix-diff-0.69.0 \
+		gix-discover-0.57.0 \
+		gix-error-0.5.0 \
+		gix-filter-0.36.0 \
+		gix-fs-0.24.0 \
+		gix-glob-0.29.0 \
+		gix-hash-0.28.0 \
+		gix-hashtable-0.18.0 \
+		gix-lock-26.0.0 \
+		gix-macros-0.2.0 \
+		gix-note-0.3.0 \
+		gix-object-0.66.0 \
+		gix-odb-0.86.0 \
+		gix-pack-0.76.0 \
+		gix-packetline-0.24.0 \
+		gix-parallel-0.50.0 \
+		gix-path-0.14.0 \
+		gix-protocol-0.67.0 \
+		gix-quote-0.10.0 \
+		gix-ref-0.69.0 \
+		gix-refspec-0.47.0 \
+		gix-revision-0.51.0 \
+		gix-revwalk-0.37.0 \
+		gix-sec-0.16.0 \
+		gix-shallow-0.15.0 \
+		gix-tempfile-26.0.0 \
+		gix-trace-0.3.0 \
+		gix-transport-0.61.0 \
+		gix-traverse-0.63.0 \
+		gix-url-0.40.0 \
+		gix-utils-0.5.0 \
+		gix-validate-0.13.0 \
+		gix-worktree-stream-0.38.0 \
+		gix-zlib-0.3.0 \
 		glib-0.22.8 \
 		glib-macros-0.22.6 \
 		glib-sys-0.22.8 \
@@ -503,23 +503,21 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ignore-0.4.25 \
 		image-0.25.9 \
 		image-webp-0.2.4 \
-		imara-diff-0.1.8 \
-		imara-diff-0.2.0 \
 		include_dir-0.7.4 \
 		include_dir_macros-0.7.4 \
 		indenter-0.3.4 \
 		indexmap-1.9.3 \
 		indexmap-2.14.0 \
 		indoc-2.0.7 \
-		inotify-0.11.5 \
-		inotify-sys-0.1.8 \
+		inotify-0.11.0 \
+		inotify-sys-0.1.5 \
 		inout-0.1.4 \
+		inout-0.2.2 \
 		insta-1.46.3 \
 		instability-0.3.11 \
 		intl-memoizer-0.5.3 \
 		intl_pluralrules-7.0.2 \
 		inventory-0.3.24 \
-		io-close-0.3.7 \
 		io_tee-0.1.1 \
 		ipconfig-0.3.2 \
 		ipnet-2.11.0 \
@@ -532,8 +530,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		itertools-0.15.0 \
 		itoa-1.0.17 \
 		ixdtf-0.6.4 \
-		jiff-0.2.23 \
-		jiff-static-0.2.23 \
+		jiff-0.2.38 \
+		jiff-core-0.1.1 \
+		jiff-static-0.2.38 \
 		jiff-tzdb-0.1.6 \
 		jiff-tzdb-platform-0.1.3 \
 		jni-0.22.4 \
@@ -549,19 +548,21 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		keccak-0.1.6 \
 		kem-0.3.0-pre.0 \
 		keyring-3.6.3 \
-		kqueue-1.2.1 \
-		kqueue-sys-1.1.2 \
+		kqueue-1.1.1 \
+		kqueue-sys-1.0.4 \
 		kstring-2.0.2 \
 		lab-0.11.0 \
 		landlock-0.4.4 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
+		libbz2-rs-sys-0.2.5 \
 		libc-0.2.186 \
 		libdbus-sys-0.2.7 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		libredox-0.1.12 \
 		libsqlite3-sys-0.37.0 \
+		libz-sys-1.1.29 \
 		line-clipping-0.3.7 \
 		link-section-0.17.2 \
 		linkify-0.11.0 \
@@ -581,20 +582,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lru-0.18.2 \
 		lru-slab-0.1.2 \
 		lsp-types-0.97.0 \
-		lzma-rs-0.3.0 \
-		lzma-sys-0.1.20 \
+		lzma-rust2-0.21.0 \
 		mac_address-1.1.8 \
 		mach2-0.6.0 \
 		maplit-1.0.2 \
 		matchers-0.2.0 \
 		matchit-0.8.4 \
 		matchit-0.9.1 \
-		maybe-async-0.2.10 \
 		md-5-0.10.6 \
 		md-5-0.11.0 \
 		md5-0.8.0 \
 		memchr-2.8.1 \
-		memmap2-0.9.10 \
+		memmap2-0.9.11 \
 		memmem-0.1.1 \
 		memoffset-0.9.1 \
 		mime-0.3.17 \
@@ -622,6 +621,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		nom-8.0.0 \
 		nonempty-0.12.0 \
 		normalize-line-endings-0.3.0 \
+		notify-8.2.0 \
+		notify-types-2.1.0 \
 		nu-ansi-term-0.50.3 \
 		num-0.4.3 \
 		num-bigint-0.4.6 \
@@ -650,13 +651,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		objc2-core-graphics-0.3.2 \
 		objc2-core-image-0.3.2 \
 		objc2-core-location-0.3.2 \
-		objc2-core-services-0.3.2 \
 		objc2-core-text-0.3.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.3.2 \
 		objc2-io-surface-0.3.2 \
 		objc2-local-authentication-0.3.2 \
 		objc2-quartz-core-0.3.2 \
+		objc2-security-0.3.2 \
 		objc2-ui-kit-0.3.2 \
 		objc2-user-notifications-0.3.2 \
 		object-0.37.3 \
@@ -703,6 +704,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pastey-0.2.1 \
 		pathdiff-0.2.3 \
 		pbkdf2-0.12.2 \
+		pbkdf2-0.13.0 \
 		pem-3.0.6 \
 		pem-rfc7468-0.7.0 \
 		percent-encoding-2.3.2 \
@@ -746,7 +748,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		proc-macro-error3-3.1.1 \
 		proc-macro2-1.0.106 \
 		process-wrap-10.0.0 \
-		prodash-31.0.0 \
+		prodash-31.0.1 \
 		proptest-1.9.0 \
 		prost-0.14.3 \
 		prost-build-0.14.3 \
@@ -867,12 +869,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rusticata-macros-4.1.0 \
 		rustix-0.38.44 \
 		rustix-1.1.4 \
-		rustls-0.23.45 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.14.0 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.15 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.22 \
 		rustyline-14.0.0 \
 		ryu-1.0.22 \
@@ -925,8 +927,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serial_test_derive-3.3.1 \
 		sha1-0.10.6 \
 		sha1-0.11.0 \
-		sha1-checked-0.10.0 \
 		sha1_smol-1.0.1 \
+		sha1dc-0.1.5 \
 		sha2-0.10.9 \
 		sha2-0.11.0 \
 		sha3-0.10.9 \
@@ -1099,6 +1101,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ts-rs-macros-11.1.0 \
 		two-face-0.5.1 \
 		type-map-0.5.1 \
+		typed-path-0.12.3 \
 		typeid-1.0.3 \
 		typenum-1.20.0 \
 		ucd-trie-0.1.7 \
@@ -1129,7 +1132,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
 		uuid-1.20.0 \
-		v8-150.4.0 \
+		v8-152.2.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version-compare-0.2.1 \
@@ -1165,8 +1168,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		web-sys-0.3.85 \
 		web-time-1.1.0 \
 		webbrowser-1.2.4 \
-		webpki-root-certs-1.0.5 \
-		webpki-roots-1.0.5 \
+		webpki-root-certs-1.0.10 \
+		webpki-roots-1.0.10 \
 		webrtc-0.20.3 \
 		weezl-0.1.12 \
 		wezterm-bidi-0.2.3 \
@@ -1241,6 +1244,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winreg-0.10.1 \
 		winreg-0.50.0 \
 		winreg-0.55.0 \
+		winresource-0.1.34 \
 		winsafe-0.0.19 \
 		winsplit-0.1.0 \
 		wiremock-0.6.5 \
@@ -1259,8 +1263,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		x509-parser-0.18.1 \
 		xdg-home-1.3.0 \
 		xmlparser-0.13.6 \
-		xxhash-rust-0.8.18 \
-		xz2-0.1.7 \
 		yansi-1.0.1 \
 		yasna-0.6.0 \
 		yoke-0.8.2 \
@@ -1277,7 +1279,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zerotrie-0.2.4 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
-		zip-2.4.2 \
+		zip-9.0.0 \
 		zlib-rs-0.5.5 \
 		zlib-rs-0.6.3 \
 		zmij-1.0.19 \
@@ -1295,10 +1297,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zvariant_utils-2.1.0 \
 		runfiles@git+https://github.com/dzbarsky/rules_rust?rev=b56cbaa8465e74127f1ea216f813cd377295ad81\#b56cbaa8465e74127f1ea216f813cd377295ad81 \
 		nucleo,nucleo-matcher@git+https://github.com/helix-editor/nucleo.git?rev=4253de9faabb4e5c6d81d946a5e35a90f87347ee\#4253de9faabb4e5c6d81d946a5e35a90f87347ee \
-		appcontainer_common,learning_mode_core,learning_mode_windows,mxc_config_contract,mxc_telemetry,process_security_environment_spec,sandbox_spec,wxc_common@git+https://github.com/microsoft/mxc?rev=6cd3d58f05d3447e67109cfb75e042803b843ca4\#6cd3d58f05d3447e67109cfb75e042803b843ca4 \
 		crossterm@git+https://github.com/openai-oss-forks/crossterm?rev=ed1cdab335221515706178d68495bba2aed1924f\#ed1cdab335221515706178d68495bba2aed1924f \
 		tungstenite@git+https://github.com/openai-oss-forks/tungstenite-rs?rev=4fffad30fe373adbdcffab9545e9e9bf4f2fc19f\#4fffad30fe373adbdcffab9545e9e9bf4f2fc19f \
-		rmcp,rmcp-macros@git+https://github.com/modelcontextprotocol/rust-sdk?rev=4048ac40e958fb1a7d614617a2ae8d26666ee2fa\#4048ac40e958fb1a7d614617a2ae8d26666ee2fa \
+		mxc-sdk@git+https://github.com/microsoft/mxc?rev=b21120168d70befe12356411423266bfef168446\#b21120168d70befe12356411423266bfef168446 \
 		tokio-tungstenite@git+https://github.com/openai-oss-forks/tokio-tungstenite?rev=0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186\#0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186 \
-		notify,notify-types@git+https://github.com/notify-rs/notify.git?rev=48415246732dc426577684bf03c558579cf0b081\#48415246732dc426577684bf03c558579cf0b081 \
+		rmcp,rmcp-macros@git+https://github.com/modelcontextprotocol/rust-sdk?rev=98a54789b80110ad210495c4ad845c89e1980471\#98a54789b80110ad210495c4ad845c89e1980471 \
 		h3,h3-quinn@git+https://github.com/hyperium/h3?rev=e07e69412876f7e26f026bd75a48b2704d8c8283\#e07e69412876f7e26f026bd75a48b2704d8c8283

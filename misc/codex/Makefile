@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.163.0
+DISTVERSION=	0.165.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -23,11 +23,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		rg:textproc/ripgrep
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cargo dos2unix gnome llvm:min=21 ninja:build python:test \
-		shebangfix ssl
-
-DOS2UNIX_WRKSRC=${WRKSRC_crate_mxc_telemetry}
-DOS2UNIX_REGEX=	.*/Cargo\.toml
+USES=		cargo gnome llvm:min=21 ninja:build python:test shebangfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openai
@@ -93,6 +89,8 @@ post-extract:
 		${WRKSRC_crate_v8}/third_party/icu/common
 
 post-patch:
+	@${BSDMAKE} PATCHDIR=${PATCHDIR}/mxc-sdk \
+		WRKSRC=${WRKSRC_crate_mxc-sdk} do-patch
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/environment_info.rs \
 		${BUILD_WRKSRC}/cli/src/debug_sandbox/pid_tracker.rs \
@@ -112,9 +110,11 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/tools/sandboxing_tests.rs \
 		${BUILD_WRKSRC}/core/src/unified_exec/process_manager_tests.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
+		${BUILD_WRKSRC}/core/tests/suite/executor_discovery_v2.rs \
 		${BUILD_WRKSRC}/core/tests/suite/guardian_review.rs \
 		${BUILD_WRKSRC}/core/tests/suite/shell_snapshot.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
+		${BUILD_WRKSRC}/core/tests/suite/unified_exec_process_events.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec_stdin_approval.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec_stdin_review_size.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
