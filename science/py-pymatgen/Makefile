@@ -1,6 +1,6 @@
 PORTNAME=	pymatgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2026.9.24
+DISTVERSION=	2026.10.24
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,21 +17,18 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymatgen-core>=2026.3.9:science/py-pymatgen-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}certifi>=2024.8.30:security/py-certifi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}charset-normalizer>=3.4.0:textproc/py-charset-normalizer@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}idna>=3.10:dns/py-idna@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruamel.yaml.clib>=0.2.12:devel/py-ruamel.yaml.clib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.18.10:devel/py-ruamel.yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tenacity>=9.0.0:devel/py-tenacity@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tzdata>=2024.2:devel/py-tzdata@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urllib3>=2.6.3:net/py-urllib3@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ase>=3.23.0:science/py-ase@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymatgen-core>=2026.9.23:science/py-pymatgen-core@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ase>=3.27.0:science/py-ase@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup4>0:www/py-beautifulsoup4@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}f90nml>0:devel/py-f90nml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}galore>0:science/py-galore@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jarvis-tools>=2020.7.14:science/py-jarvis-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=3.11.0:science/py-h5py@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}phonopy>=2.33.3:science/py-phonopy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}phonopy>=4.0.0:science/py-phonopy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyzeo>0:science/py-pyzeo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}seekpath>=2.0.1:science/py-seekpath@${PY_FLAVOR} # optional dependencies
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybtex>0:textproc/py-pybtex@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybtex>0:textproc/py-pybtex@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openbabel>0:science/py-openbabel@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python
 USE_PYTHON=	pep517 cython concurrent autoplist pytest
@@ -55,8 +52,6 @@ post-patch:
 		${WRKSRC}/src/pymatgen/analysis/phase_diagram.py \
 		${WRKSRC}/src/pymatgen/analysis/reaction_calculator.py
 
-# tests as of 2025.2.18: 56 failed, 2912 passed, 149 skipped, 1980 warnings in 11080.55s (3:04:40), see https://github.com/materialsproject/pymatgen/issues/4264
-# tests as of 2025.5.28: 56 failed, 3015 passed, 161 skipped, 131 warnings, 7 errors in 5700.13s (1:35:00)
-# tests as of 2026.3.23: 0 failed (2 spglib-version-sensitive tests patched), 719 passed, 275 skipped, 7 xfailed, 1 xpassed
+# tests as of 2026.10.24: 1 failed, 607 passed, 53 skipped, 7 xfailed, 251 warnings in 185.40s (0:03:05), failure is due to this VTK issue: https://gitlab.kitware.com/vtk/vtk/-/work_items/19993
 
 .include <bsd.port.mk>
