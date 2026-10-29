@@ -1704,7 +1704,6 @@
     SUBDIR += lua-sysctl
     SUBDIR += luabind
     SUBDIR += luafilesystem
-    SUBDIR += luajava
     SUBDIR += lutok
     SUBDIR += luv
     SUBDIR += lwgrp
