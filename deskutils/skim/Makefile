@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.8.0
+DISTVERSION=	5.9.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -56,7 +56,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bytes-1.12.1 \
 		cast-0.3.0 \
 		castaway-0.2.4 \
-		cc-1.9.0 \
+		cc-1.10.0 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.2 \
@@ -78,7 +78,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		convert_case-0.10.0 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.1 \
-		crc32fast-1.5.2 \
+		crc32fast-1.5.3 \
 		criterion-0.8.2 \
 		criterion-plot-0.8.2 \
 		critical-section-1.2.0 \
@@ -163,7 +163,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		indoc-2.0.8 \
 		insta-1.49.0 \
 		instability-0.3.14 \
-		interprocess-2.4.6 \
+		interprocess-2.4.7 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
@@ -209,7 +209,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
 		ordered-float-4.6.0 \
-		ordered-float-5.5.0 \
+		ordered-float-5.5.1 \
 		outref-0.5.2 \
 		page_size-0.6.0 \
 		palette-0.7.7 \
@@ -218,10 +218,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		pastey-0.2.3 \
-		pest-2.9.4 \
-		pest_derive-2.9.4 \
-		pest_generator-2.9.4 \
-		pest_meta-2.9.4 \
+		pest-2.9.5 \
+		pest_derive-2.9.5 \
+		pest_generator-2.9.5 \
+		pest_meta-2.9.5 \
+		pest_stack_guard-1.0.0 \
 		phf-0.11.3 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
@@ -241,7 +242,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		proc-macro-error3-3.1.1 \
 		proc-macro2-1.0.107 \
 		psm-0.1.24 \
-		pulldown-cmark-0.13.4 \
+		pulldown-cmark-0.13.5 \
 		pxfm-0.1.30 \
 		quantette-0.6.0 \
 		quick-error-2.0.1 \
@@ -278,7 +279,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ron-0.12.2 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
-		rustix-1.1.5 \
+		rustix-1.1.6 \
 		rustversion-1.0.23 \
 		ryu-1.0.23 \
 		safe_arch-1.2.0 \
@@ -290,7 +291,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_json-1.0.154 \
-		serial2-0.2.38 \
+		serial2-0.2.39 \
 		serial_test-3.5.0 \
 		serial_test_derive-3.5.0 \
 		sha2-0.10.9 \
@@ -306,7 +307,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		similar-2.7.0 \
 		siphasher-1.0.4 \
 		slab-0.4.12 \
-		smallvec-1.16.3 \
+		smallvec-1.16.4 \
 		socket2-0.6.5 \
 		stacker-0.1.25 \
 		static_assertions-1.1.0 \
@@ -331,7 +332,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		time-core-0.1.9 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.13.3 \
-		tokio-1.54.0 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.2 \
 		tokio-util-0.7.20 \
 		typeid-1.0.3 \
@@ -348,7 +349,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-xid-0.2.6 \
 		unty-next-0.1.2 \
 		utf8parse-0.2.2 \
-		uuid-1.28.0 \
+		uuid-1.29.0 \
 		version_check-0.9.5 \
 		vsimd-0.8.0 \
 		vtparse-0.6.2 \
