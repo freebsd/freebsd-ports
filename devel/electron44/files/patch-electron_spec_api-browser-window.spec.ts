@@ -1,4 +1,4 @@
---- electron/spec/api-browser-window.spec.ts.orig	2026-10-17 02:46:46 UTC
+--- electron/spec/api-browser-window.spec.ts.orig	2026-10-26 22:10:04 UTC
 +++ electron/spec/api-browser-window.spec.ts
 @@ -118,7 +118,7 @@ describe('BrowserWindow module', () => {
        }).not.toThrow();
@@ -90,7 +90,7 @@
            const maximize = once(w, 'maximize');
            w.show();
            w.maximize();
-@@ -5267,7 +5267,7 @@ describe('BrowserWindow module', () => {
+@@ -5570,7 +5570,7 @@ describe('BrowserWindow module', () => {
          expect(test.nodeTimers).toBe(true);
          expect(test.nodeUrl).toBe(true);
  
@@ -99,7 +99,7 @@
            expect(test.creationTime, 'creation time').toBeNull();
            expect(test.systemMemoryInfo, 'system memory info').toBeNull();
          } else {
-@@ -5785,7 +5785,7 @@ describe('BrowserWindow module', () => {
+@@ -6088,7 +6088,7 @@ describe('BrowserWindow module', () => {
      });
    });
  
@@ -108,7 +108,7 @@
      afterEach(closeAllWindows);
      it('emits an event when window is maximized', async () => {
        const w = new BrowserWindow({ show: false });
-@@ -6061,7 +6061,7 @@ describe('BrowserWindow module', () => {
+@@ -6364,7 +6364,7 @@ describe('BrowserWindow module', () => {
      // TODO(zcbenz):
      // This test does not run on Linux CI. See:
      // https://github.com/electron/electron/issues/28699
@@ -117,7 +117,7 @@
        'should bring a minimized maximized window back to maximized state',
        async () => {
          const w = new BrowserWindow({});
-@@ -6079,7 +6079,7 @@ describe('BrowserWindow module', () => {
+@@ -6382,7 +6382,7 @@ describe('BrowserWindow module', () => {
        }
      );
  
@@ -126,7 +126,7 @@
        const w = new BrowserWindow({ show: false });
        w.show();
  
-@@ -6102,7 +6102,7 @@ describe('BrowserWindow module', () => {
+@@ -6405,7 +6405,7 @@ describe('BrowserWindow module', () => {
    });
  
    // TODO(dsanders11): Enable once maximize event works on Linux again on CI
@@ -135,7 +135,7 @@
      afterEach(closeAllWindows);
      it('should show the window if it is not currently shown', async () => {
        const w = new BrowserWindow({ show: false });
-@@ -6139,7 +6139,7 @@ describe('BrowserWindow module', () => {
+@@ -6442,7 +6442,7 @@ describe('BrowserWindow module', () => {
  
      // TODO(dsanders11): Enable once minimize event works on Linux again.
      //                   See https://github.com/electron/electron/issues/28699
@@ -144,7 +144,7 @@
        const w = new BrowserWindow();
        const minimize = once(w, 'minimize');
        w.minimize();
-@@ -6659,7 +6659,7 @@ describe('BrowserWindow module', () => {
+@@ -6962,7 +6962,7 @@ describe('BrowserWindow module', () => {
        });
  
        // On Linux there is no "resizable" property of a window.
@@ -153,7 +153,7 @@
          const w = new BrowserWindow({ show: false });
          expect(w.resizable, 'resizable').toBe(true);
  
-@@ -6900,7 +6900,7 @@ describe('BrowserWindow module', () => {
+@@ -7203,7 +7203,7 @@ describe('BrowserWindow module', () => {
      });
    });
  
@@ -162,7 +162,7 @@
      // Not implemented on Linux.
      afterEach(closeAllWindows);
  
-@@ -8267,7 +8267,7 @@ describe('BrowserWindow module', () => {
+@@ -8570,7 +8570,7 @@ describe('BrowserWindow module', () => {
    describe('"transparent" option', { tags: ['serial'] }, () => {
      afterEach(closeAllWindows);
  
