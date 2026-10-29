@@ -1,5 +1,5 @@
 PORTNAME=	desktop-installer
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
