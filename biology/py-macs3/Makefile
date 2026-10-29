@@ -1,12 +1,12 @@
 PORTNAME=		MACS3
 DISTVERSIONPREFIX=	v
-DISTVERSION=		3.0.5
+DISTVERSION=		3.1.0
 CATEGORIES=		biology python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Peak caller aimed at transcription factor binding sites
-WWW=		https://github.com/taoliu/MACS
+WWW=		https://github.com/macs3-project/MACS
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

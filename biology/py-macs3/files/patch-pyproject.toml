@@ -1,5 +1,5 @@
---- pyproject.toml.orig	2026-09-25 16:23:47 UTC
-+++ pyproject.toml
+--- pyproject.toml.orig	2026-10-24 18:26:35
++++ pyproject.toml	2026-10-24 18:27:06
 @@ -1,5 +1,5 @@
  [build-system]
 -requires=['setuptools>=80.0', 'numpy>=1.25', 'Cython>=3.0']
@@ -7,11 +7,14 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -10,7 +10,6 @@ requires-python = ">=3.12"
+@@ -10,10 +10,6 @@
  	   {name = "Philippa Doherty", email = "Philippa.Doherty@RoswellPark.org"}]
  readme = "README.md"
  requires-python = ">=3.12"
 -license = "BSD-3-Clause"
+-license-files = ["LICENSE", "MACS3/IO/libdeflate/COPYING",
+-                 "MACS3/Signal/NUMPY_LICENSE.txt", "MACS3/fermi-lite/LICENSE.txt",
+-                 "MACS3/fermi-lite/lib/COPYING"]
  classifiers =['Development Status :: 5 - Production/Stable',
                'Environment :: Console',
                'Intended Audience :: Developers',
