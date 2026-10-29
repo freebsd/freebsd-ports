@@ -369,32 +369,32 @@
 	<p>HTTP-Body oroject  reports:</p>
 	<blockquote cite="https://metacpan.org/dist/HTTP-Body/changes">
 	  <p>Multiple security issues:</p>
-      <ul>
-        <li>SECURITY, CVE-2026-116131: urlencoded bodies are limited to
-          $HTTP::Body::UrlEncoded::max_params fields and multipart bodies to
-          $HTTP::Body::MultiPart::max_parts parts (1000 each); reported and
-          patched by CPANSec</li>
-        <li>SECURITY, CVE-2026-116132: the temporary file of an upload that is
-          still incomplete at DESTROY-time is now always deleted; reported and
-          patched by CPANSec (also fixes RT#84004)</li>
-        <li>SECURITY, CVE-2026-116133: a multipart body without a boundary or with
-          a malformed delimiter line no longer takes quadratic time; a malformed
-          delimiter line now croaks, and padding or an epilogue after the close
-          delimiter is accepted; reported and patched by CPANSec</li>
-        <li>SECURITY, CVE-2026-116134: a multipart part's header block is limited
-          to $HTTP::Body::MultiPart::max_header_size bytes (32768) and
-          $HTTP::Body::MultiPart::max_header_lines lines (100); reported and
-          patched by CPANSec</li>
-        <li>SECURITY, CVE-2026-116135: mixed-case percent escapes (e.g. %aB) in
-          urlencoded bodies are decoded instead of being dropped; reported and
-          patched by CPANSec</li>
-        <li>SECURITY, CVE-2026-116285: the chunk size line of a chunked body is
-          matched in linear instead of quadratic time</li>
-        <li>SECURITY, CVE-2026-116531: a chunked body is now framed independently
-          of where the reads feeding add() fall; a read that split a chunk could
-          leave the parser never reaching 'done', hanging a server that reads
-          until done</li>
-      </ul>
+	  <ul>
+	  <li>SECURITY, CVE-2026-116131: urlencoded bodies are limited to
+	  $HTTP::Body::UrlEncoded::max_params fields and multipart bodies to
+	  $HTTP::Body::MultiPart::max_parts parts (1000 each); reported and
+	  patched by CPANSec</li>
+	  <li>SECURITY, CVE-2026-116132: the temporary file of an upload that is
+	  still incomplete at DESTROY-time is now always deleted; reported and
+	  patched by CPANSec (also fixes RT#84004)</li>
+	  <li>SECURITY, CVE-2026-116133: a multipart body without a boundary or with
+	  a malformed delimiter line no longer takes quadratic time; a malformed
+	  delimiter line now croaks, and padding or an epilogue after the close
+	  delimiter is accepted; reported and patched by CPANSec</li>
+	  <li>SECURITY, CVE-2026-116134: a multipart part's header block is limited
+	  to $HTTP::Body::MultiPart::max_header_size bytes (32768) and
+	  $HTTP::Body::MultiPart::max_header_lines lines (100); reported and
+	  patched by CPANSec</li>
+	  <li>SECURITY, CVE-2026-116135: mixed-case percent escapes (e.g. %aB) in
+	  urlencoded bodies are decoded instead of being dropped; reported and
+	  patched by CPANSec</li>
+	  <li>SECURITY, CVE-2026-116285: the chunk size line of a chunked body is
+	  matched in linear instead of quadratic time</li>
+	  <li>SECURITY, CVE-2026-116531: a chunked body is now framed independently
+	  of where the reads feeding add() fall; a read that split a chunk could
+	  leave the parser never reaching 'done', hanging a server that reads
+	  until done</li>
+	  </ul>
 	</blockquote>
 	</body>
     </description>
