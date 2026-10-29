@@ -292,22 +292,22 @@
 	<p>Starman project reports:</p>
 	<blockquote cite="https://metacpan.org/dist/Starman/changes">
 	  <p>[SECURITY]</p>
-      <ul>
-        <li>Stream chunked request bodies to the temporary buffer instead of
-          holding whole chunks in memory (CVE-2026-115824)</li>
-        <li>Parse chunk-size lines in linear time with a 4 KiB length limit and
-          strict syntax; malformed lines get 400 (CVE-2026-115822)</li>
-        <li>Do not send a response body for HEAD requests or 1xx, 204 and 304
-          responses, on both the array and streaming paths (CVE-2026-115823)</li>
-        <li>Limit how long a request body may take to arrive: --read-timeout
-          (default 5 seconds) now also applies to each wait for more of the
-          body, and the new --body-timeout option limits the total time
-          (default 300 seconds; raise it or set it to 0 for slower uploads).
-          Expiry gets 408 (CVE-2026-115817)</li>
-        <li>Reject Transfer-Encoding other than "chunked" (400/501) and close
-          the connection after a request with both Transfer-Encoding and
-          Content-Length. Completes the fix for CVE-2026-40560</li>
-      </ul>
+	  <ul>
+	  <li>Stream chunked request bodies to the temporary buffer instead of
+	  holding whole chunks in memory (CVE-2026-115824)</li>
+	  <li>Parse chunk-size lines in linear time with a 4 KiB length limit and
+	  strict syntax; malformed lines get 400 (CVE-2026-115822)</li>
+	  <li>Do not send a response body for HEAD requests or 1xx, 204 and 304
+	  responses, on both the array and streaming paths (CVE-2026-115823)</li>
+	  <li>Limit how long a request body may take to arrive: --read-timeout
+	  (default 5 seconds) now also applies to each wait for more of the
+	  body, and the new --body-timeout option limits the total time
+	  (default 300 seconds; raise it or set it to 0 for slower uploads).
+	  Expiry gets 408 (CVE-2026-115817)</li>
+	  <li>Reject Transfer-Encoding other than "chunked" (400/501) and close
+	  the connection after a request with both Transfer-Encoding and
+	  Content-Length. Completes the fix for CVE-2026-40560</li>
+	  </ul>
 	</blockquote>
 	</body>
     </description>
