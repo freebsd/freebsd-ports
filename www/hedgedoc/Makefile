@@ -48,6 +48,14 @@ _YARN_ENV=	HOME=${WRKDIR} PATH=${PATH} YARN_CACHE_FOLDER=${_YARN_CACHE} \
 _YARN_CMD=	${SETENV} ${_YARN_ENV} YARN_ENABLE_NETWORK=false \
 		${LOCALBASE}/bin/node ${_YARN}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64
+PLIST_SUB+=	ESBUILD=""
+.else
+PLIST_SUB+=	ESBUILD="@comment "
+.endif
+
 yarn-cache: patch
 	@${RM} -r ${_YARN_CACHE}
 	@${PRINTF} 'supportedArchitectures:\n  os:\n    - freebsd\n  cpu:\n    - arm64\n    - x64\n' \
@@ -115,4 +123,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config.json.example \
 		${STAGEDIR}${ETCDIR}/config.json.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

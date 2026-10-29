@@ -453,9 +453,9 @@ libexec/hedgedoc/node_modules/@discoveryjs/json-ext/src/text-decoder-browser.js
 libexec/hedgedoc/node_modules/@discoveryjs/json-ext/src/text-decoder.js
 libexec/hedgedoc/node_modules/@discoveryjs/json-ext/src/utils.js
 libexec/hedgedoc/node_modules/@discoveryjs/json-ext/src/version.js
-libexec/hedgedoc/node_modules/@esbuild/freebsd-%%ARCH%%/README.md
-libexec/hedgedoc/node_modules/@esbuild/freebsd-%%ARCH%%/bin/esbuild
-libexec/hedgedoc/node_modules/@esbuild/freebsd-%%ARCH%%/package.json
+%%ESBUILD%%libexec/hedgedoc/node_modules/@esbuild/freebsd-%%ARCH%%/README.md
+%%ESBUILD%%libexec/hedgedoc/node_modules/@esbuild/freebsd-%%ARCH%%/bin/esbuild
+%%ESBUILD%%libexec/hedgedoc/node_modules/@esbuild/freebsd-%%ARCH%%/package.json
 libexec/hedgedoc/node_modules/@eslint-community/eslint-utils/LICENSE
 libexec/hedgedoc/node_modules/@eslint-community/eslint-utils/README.md
 libexec/hedgedoc/node_modules/@eslint-community/eslint-utils/index.d.mts

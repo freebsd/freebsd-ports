@@ -1,0 +1,11 @@
+--- yarn.lock.orig	2026-08-21 21:41:56 UTC
++++ yarn.lock
+@@ -1668,6 +1668,8 @@
+   dependenciesMeta:
+     bufferutil:
+       optional: true
++    esbuild:
++      built: false
+     utf-8-validate:
+       optional: true
+   languageName: unknown

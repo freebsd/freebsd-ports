@@ -1,0 +1,13 @@
+--- package.json.orig	2026-08-21 21:41:56 UTC
++++ package.json
+@@ -210,5 +210,10 @@
+     "bufferutil": "4.1.0",
+     "utf-8-validate": "6.0.6"
+   },
++  "dependenciesMeta": {
++    "esbuild": {
++      "built": false
++    }
++  },
+   "packageManager": "yarn@4.13.0"
+ }
