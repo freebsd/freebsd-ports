@@ -1,5 +1,14 @@
 --- src/Makefile.orig	2026-04-25 15:21:08 UTC
 +++ src/Makefile
+@@ -424,7 +424,7 @@ CFILES_WAYLANDX11 = $(WLCFILES)
+ CFILES_XFT = $(XLIBCFILES)
+ 
+ CFILES_WAYLANDX11 = $(WLCFILES)
+-EXTRA_OBJECTS_WAYLAND =  ../libdecor/build/fl_libdecor.o ../libdecor/build/libdecor-cairo-blur.o \
++EXTRA_OBJECTS_WAYLAND = ../libdecor/build/fl_libdecor.o \
+   ../libdecor/build/fl_libdecor-plugins.o \
+   xdg-decoration-protocol.o xdg-shell-protocol.o text-input-protocol.o \
+   gtk-shell-protocol.o \
 @@ -856,13 +856,13 @@ install: $(LIBNAME) $(DSONAME) \
  	-$(INSTALL_DIR) "$(DESTDIR)$(libdir)"
  	-$(INSTALL_DIR) "$(DESTDIR)$(bindir)"

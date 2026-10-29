@@ -27,12 +27,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	CAIRO EXAMPLES
+OPTIONS_DEFINE=	CAIRO EXAMPLES WAYLAND
+OPTIONS_DEFAULT=	WAYLAND
 OPTIONS_SUB=	yes
 
 CAIRO_USES=	gnome
 CAIRO_USE=	GNOME=cairo XORG=pixman
 CAIRO_CONFIGURE_ON=	--enable-cairo
+
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.15:graphics/wayland-protocols \
+			${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+WAYLAND_LIB_DEPENDS=	libdecor-0.so:x11-toolkits/libdecor
+WAYLAND_CONFIGURE_OFF=	--disable-wayland
 
 post-patch: .SILENT
 	prefix="${PREFIX}" ; fplen=$$(($${#prefix}+10)) ; \
@@ -42,5 +48,7 @@ post-patch: .SILENT
 		${WRKSRC}/test/Makefile
 	${REINPLACE_CMD} -e '/^INSTALL_[BL]I/s,-m,${STRIP} &, ; \
 		s,^\.SILENT,#&,' ${WRKSRC}/makeinclude.in
+	${REINPLACE_CMD} -e '/^OBJECTS =/s, libdecor-cairo-blur\.o,,' \
+		${WRKSRC}/libdecor/build/Makefile
 
 .include <bsd.port.mk>
