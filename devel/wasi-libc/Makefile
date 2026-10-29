@@ -59,4 +59,11 @@ CMAKE_ARGS=	-DCMAKE_SYSTEM_NAME=WASI \
 		-DCMAKE_SYSROOT=${WASI_SYSROOT} \
 		-DBUILD_SHARED=OFF
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${FLAVOR} == 17 || ${FLAVOR} == 18
+DEPRECATED=	Depends on deprecated LLVM version
+EXPIRATION_DATE=	2026-12-25
+.endif
+
+.include <bsd.port.post.mk>
