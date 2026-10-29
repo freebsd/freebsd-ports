@@ -10,6 +10,9 @@ WWW=		https://www.phacility.com/phabricator/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Discontinued, use devel/phorgeit-phorge instead
+EXPIRATION_DATE=2026-12-31
+
 RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>=20210113_4:devel/arcanist-lib@${PHP_FLAVOR} \
 		git:devel/git
 
