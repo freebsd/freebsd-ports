@@ -1,4 +1,4 @@
-TIMESTAMP = 1792864177
+TIMESTAMP = 1793286442
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/anstream-1.0.0.crate) = 824a212faf96e9acacdbd09febd34438f8f711fb84e09a8916013cd7815ca28d
@@ -303,3 +303,5 @@ SHA256 (rust/crates/zmij-1.0.21.crate) = b8848ee67ecc8aedbaf3e4122217aff89263923
 SIZE (rust/crates/zmij-1.0.21.crate) = 26665
 SHA256 (kividbio-kividb-v1.1.2_GH0.tar.gz) = 7cffb7ebea98d4345fe10c8481fceaac39299053c904046a857892794151ba6d
 SIZE (kividbio-kividb-v1.1.2_GH0.tar.gz) = 4424825
+SHA256 (bda8603b065a8385fe05f623a10183d2069ecec5.patch) = 08298cee3bed285f650ded67bd5798125ffe0c6e64b92550cac21aedc52c4581
+SIZE (bda8603b065a8385fe05f623a10183d2069ecec5.patch) = 4496
