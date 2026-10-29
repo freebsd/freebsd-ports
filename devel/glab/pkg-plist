@@ -70,6 +70,7 @@
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-ci-summary.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-gem.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-gradle.1.gz
+%%MANPAGES%%share/man/man1/glab-dependency-firewall-go.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-maven.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-npm.1.gz
 %%MANPAGES%%share/man/man1/glab-dependency-firewall-package.1.gz
