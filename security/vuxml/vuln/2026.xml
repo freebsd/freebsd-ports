@@ -433,20 +433,20 @@
 	<p>MIME-tools project reports:</p>
 	<blockquote cite="https://metacpan.org/dist/MIME-tools/changes">
 	  <p>Many security issues were addressed (see the following ten CVEs)
-          Issues were brought to my attention, and patches supplied, by the
-          CPANSec security group.</p>
-      <ul>
-        <li>CVE-2026-116264 invalid parameter hides boundary/filename</li>
-        <li>CVE-2026-116265 RFC 2231 boundary skips ambiguity checks</li>
-        <li>CVE-2026-116266 boundary changed by decoding not flagged</li>
-        <li>CVE-2026-116267 indent stored per message per level</li>
-        <li>CVE-2026-116268 unclosed "(" comments backtrack CPU exhaustion</li>
-        <li>CVE-2026-116269 RFC 2231 language tag empties filename</li>
-        <li>CVE-2026-116270 each bad "=?" copies the input into $@</li>
-        <li>CVE-2026-116271 FileUnder reuses a pre-created directory</li>
-        <li>CVE-2026-116272  comment hides a duplicate boundary</li>
-        <li>CVE-2026-116273 max_parts and max_depth unlimited</li>
-      </ul>
+	  Issues were brought to my attention, and patches supplied, by the
+	  CPANSec security group.</p>
+	  <ul>
+	  <li>CVE-2026-116264 invalid parameter hides boundary/filename</li>
+	  <li>CVE-2026-116265 RFC 2231 boundary skips ambiguity checks</li>
+	  <li>CVE-2026-116266 boundary changed by decoding not flagged</li>
+	  <li>CVE-2026-116267 indent stored per message per level</li>
+	  <li>CVE-2026-116268 unclosed "(" comments backtrack CPU exhaustion</li>
+	  <li>CVE-2026-116269 RFC 2231 language tag empties filename</li>
+	  <li>CVE-2026-116270 each bad "=?" copies the input into $@</li>
+	  <li>CVE-2026-116271 FileUnder reuses a pre-created directory</li>
+	  <li>CVE-2026-116272  comment hides a duplicate boundary</li>
+	  <li>CVE-2026-116273 max_parts and max_depth unlimited</li>
+	  </ul>
 	</blockquote>
 	</body>
     </description>
