@@ -1,5 +1,6 @@
 PORTNAME=	freebsd-git-arc
 PORTVERSION=	20260901
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/freebsd/freebsd-src/${_REV}/tools/tools/git/
 DISTFILES=	git-arc.sh \
@@ -12,7 +13,7 @@ WWW=		https://github.com/freebsd/freebsd-src/tree/main/tools/tools/git
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${LOCALBASE}/lib/php/arcanist/bin/arc:devel/arcanist-lib \
+RUN_DEPENDS=	${LOCALBASE}/lib/php/arcanist/bin/arc:devel/phorgeit-arcanist-lib \
 		git:devel/git \
 		jq:textproc/jq
 
