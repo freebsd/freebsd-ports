@@ -1,5 +1,5 @@
 PORTNAME=	textual-fastdatatable
-DISTVERSION=	0.19.3
+DISTVERSION=	0.19.5
 PORTREVISION=	0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.28.0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyarrow>=21.0.0:databases/py-pyarrow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}textual>=0.89.1:textproc/py-textual@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}textual>=7.3.0:textproc/py-textual@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.16.0:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tzdata>=2025.3:devel/py-tzdata@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyarrow>=24.0.0:databases/py-pyarrow@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
