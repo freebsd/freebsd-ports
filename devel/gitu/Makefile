@@ -1,7 +1,6 @@
 PORTNAME=	gitu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.43.0
-PORTREVISION=	3
+DISTVERSION=	0.44.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,9 +36,7 @@ CARGO_CRATES=	ahash-0.8.12 \
 		cached-0.56.0 \
 		cached_proc_macro-0.25.0 \
 		cached_proc_macro_types-0.1.1 \
-		cassowary-0.3.0 \
 		cast-0.3.0 \
-		castaway-0.2.4 \
 		cc-1.2.49 \
 		cfg-if-1.0.4 \
 		chrono-0.4.42 \
@@ -48,11 +45,11 @@ CARGO_CRATES=	ahash-0.8.12 \
 		ciborium-ll-0.2.2 \
 		clap-4.5.54 \
 		clap_builder-4.5.54 \
+		clap_complete-4.6.9 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.6 \
 		clipboard-win-5.4.1 \
 		colorchoice-1.0.4 \
-		compact_str-0.8.1 \
 		console-0.15.11 \
 		core-foundation-sys-0.8.7 \
 		criterion-0.8.1 \
@@ -69,6 +66,7 @@ CARGO_CRATES=	ahash-0.8.12 \
 		diff-0.1.13 \
 		dispatch2-0.3.0 \
 		displaydoc-0.2.5 \
+		downcast-rs-1.2.1 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
 		equivalent-1.0.2 \
@@ -78,6 +76,7 @@ CARGO_CRATES=	ahash-0.8.12 \
 		fastrand-2.3.0 \
 		figment-0.10.19 \
 		find-msvc-tools-0.1.5 \
+		fixedbitset-0.5.7 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		form_urlencoded-1.2.2 \
@@ -87,7 +86,7 @@ CARGO_CRATES=	ahash-0.8.12 \
 		getrandom-0.3.4 \
 		git-version-0.3.9 \
 		git-version-macro-0.3.9 \
-		git2-0.20.3 \
+		git2-0.21.0 \
 		half-2.7.1 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
@@ -106,11 +105,9 @@ CARGO_CRATES=	ahash-0.8.12 \
 		idna_adapter-1.2.1 \
 		imara-diff-0.2.0 \
 		indexmap-2.12.1 \
-		indoc-2.0.7 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		insta-1.46.0 \
-		instability-0.3.10 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
@@ -121,14 +118,13 @@ CARGO_CRATES=	ahash-0.8.12 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
 		libc-0.2.178 \
-		libgit2-sys-0.18.3+1.9.2 \
+		libgit2-sys-0.18.8+1.9.7 \
 		libz-sys-1.1.23 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.11.0 \
 		litemap-0.8.1 \
 		lock_api-0.4.14 \
 		log-0.4.29 \
-		lru-0.12.5 \
 		memchr-2.7.6 \
 		mio-1.1.1 \
 		nom-8.0.0 \
@@ -145,11 +141,12 @@ CARGO_CRATES=	ahash-0.8.12 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
 		oorandom-11.1.5 \
+		os_pipe-1.2.3 \
 		page_size-0.6.0 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
-		paste-1.0.15 \
 		percent-encoding-2.3.2 \
+		petgraph-0.8.3 \
 		pkg-config-0.3.32 \
 		plotters-0.3.7 \
 		plotters-backend-0.3.7 \
@@ -157,10 +154,9 @@ CARGO_CRATES=	ahash-0.8.12 \
 		potential_utf-0.1.4 \
 		pretty_assertions-1.4.1 \
 		proc-macro2-1.0.103 \
+		quick-xml-0.41.0 \
 		quote-1.0.42 \
 		r-efi-5.3.0 \
-		ratatui-0.29.0 \
-		ratatui-macros-0.6.0 \
 		rayon-1.11.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.1.57 \
@@ -188,7 +184,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		smallvec-1.15.1 \
 		smashquote-0.1.2 \
 		stable_deref_trait-1.2.1 \
-		static_assertions-1.1.0 \
 		stdext-0.3.3 \
 		streaming-iterator-0.1.9 \
 		strip-ansi-escapes-0.2.1 \
@@ -233,12 +228,10 @@ CARGO_CRATES=	ahash-0.8.12 \
 		tree-sitter-scala-0.23.4 \
 		tree-sitter-toml-ng-0.7.0 \
 		tree-sitter-typescript-0.23.2 \
-		tui-prompts-0.5.2 \
+		tree_magic_mini-3.2.2 \
 		uncased-0.9.10 \
 		unicode-ident-1.0.22 \
 		unicode-segmentation-1.12.0 \
-		unicode-truncate-1.1.0 \
-		unicode-width-0.1.14 \
 		unicode-width-0.2.0 \
 		url-2.5.7 \
 		utf8_iter-1.0.4 \
@@ -253,6 +246,12 @@ CARGO_CRATES=	ahash-0.8.12 \
 		wasm-bindgen-macro-0.2.106 \
 		wasm-bindgen-macro-support-0.2.106 \
 		wasm-bindgen-shared-0.2.106 \
+		wayland-backend-0.3.16 \
+		wayland-client-0.31.15 \
+		wayland-protocols-0.32.13 \
+		wayland-protocols-wlr-0.3.12 \
+		wayland-scanner-0.31.11 \
+		wayland-sys-0.31.11 \
 		web-sys-0.3.83 \
 		web-time-1.1.0 \
 		winapi-0.3.9 \
@@ -288,6 +287,7 @@ CARGO_CRATES=	ahash-0.8.12 \
 		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.14 \
 		wit-bindgen-0.46.0 \
+		wl-clipboard-rs-0.9.3 \
 		writeable-0.6.2 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
