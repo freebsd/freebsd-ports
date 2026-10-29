@@ -23,7 +23,6 @@ include/torrent/download_info.h
 include/torrent/exceptions.h
 include/torrent/hash_string.h
 include/torrent/net/address_info.h
-include/torrent/net/connection_state.h
 include/torrent/net/fd.h
 include/torrent/net/http_get.h
 include/torrent/net/http_stack.h
@@ -71,6 +70,7 @@ include/torrent/utils/chrono.h
 include/torrent/utils/directory_events.h
 include/torrent/utils/extents.h
 include/torrent/utils/file_stat.h
+include/torrent/utils/functional.h
 include/torrent/utils/log.h
 include/torrent/utils/log_buffer.h
 include/torrent/utils/option_strings.h
@@ -81,6 +81,6 @@ include/torrent/utils/string_manip.h
 include/torrent/utils/unordered_vector.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.54
-lib/libtorrent.so.54.0.0
+lib/libtorrent.so.55
+lib/libtorrent.so.55.0.0
 libdata/pkgconfig/libtorrent.pc
