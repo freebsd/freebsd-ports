@@ -17,12 +17,13 @@ to allow building on FreeBSD (and preferably other BSDs) persistently.
 
 --- build/ninja_gen/src/archives.rs.orig	2025-06-13 08:38:15 UTC
 +++ build/ninja_gen/src/archives.rs
-@@ -34,6 +34,8 @@ impl Platform {
+@@ -34,6 +34,9 @@ impl Platform {
          let os = std::env::consts::OS;
          let arch = std::env::consts::ARCH;
          match (os, arch) {
 +            ("freebsd", "x86_64") => Self::LinuxX64,
 +            ("freebsd", "aarch64") => Self::LinuxArm,
++            ("freebsd", "powerpc64") => Self::LinuxX64,
              ("linux", "x86_64") => Self::LinuxX64,
              ("linux", "aarch64") => Self::LinuxArm,
              ("macos", "x86_64") => Self::MacX64,

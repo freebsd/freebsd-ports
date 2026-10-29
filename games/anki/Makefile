@@ -85,6 +85,38 @@ MPV_DESC=	mpv media player support
 MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 
+.include <bsd.port.options.mk>
+
+# FreeBSD prebuilt binaries of esbuild and rollup only exist for aarch64 and
+# amd64, so use their WebAssembly builds on powerpc64le.  The versions are
+# taken from yarn.lock.  The distfiles are also listed for makesum to keep
+# their checksums in distinfo when it is regenerated on amd64.
+.if ${ARCH} == powerpc64le || make(makesum)
+_MY_ESBUILD_VERSIONS!=	${AWK} '/^"esbuild@npm:/ { f = 1; next } \
+			f && /^  version:/ { print $$2; f = 0 }' \
+			${.CURDIR}/files/packagejsons/yarn.lock
+_MY_ROLLUP_VERSIONS!=	${AWK} '/^"rollup@npm:/ { f = 1; next } \
+			f && /^  version:/ { print $$2; f = 0 }' \
+			${.CURDIR}/files/packagejsons/yarn.lock
+MASTER_SITES+=	https://registry.npmjs.org/esbuild-wasm/-/:esbuild \
+		https://registry.npmjs.org/@rollup/wasm-node/-/:rollup
+.  for v in ${_MY_ESBUILD_VERSIONS}
+DISTFILES+=	esbuild-wasm-${v}.tgz:esbuild
+.  endfor
+.  for v in ${_MY_ROLLUP_VERSIONS}
+DISTFILES+=	wasm-node-${v}.tgz:rollup
+.  endfor
+EXTRACT_ONLY=	${_DISTFILES:Nesbuild-wasm-*:Nwasm-node-*}
+.endif
+
+.if ${ARCH} == powerpc64le
+# Resolve the platform-specific node modules for amd64, as the prefetched
+# archive in distinfo was created there.  They are not used.
+NPM_CACHE_SETUP_CMD=	${SH} -c "${NPM_CMDNAME} config set enableGlobalCache false; \
+			${NPM_CMDNAME} config set cacheFolder \"./${NPM_MODULE_CACHE}\"; \
+			${NPM_CMDNAME} config set supportedArchitectures.cpu --json '[\"x64\"]'"
+.endif
+
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
@@ -103,6 +135,21 @@ post-extract:
 	@${RM} -r ${WRKSRC}/ftl/core-repo ${WRKSRC}/ftl/qt-repo
 	@${RLN} ${WRKSRC_ftlrslib} ${WRKSRC}/ftl/core-repo
 	@${RLN} ${WRKSRC_ftlextra} ${WRKSRC}/ftl/qt-repo
+.if ${ARCH} == powerpc64le
+# Replace every copy of esbuild and rollup with the WebAssembly build of the
+# same version
+	@${FIND} ${WRKSRC}/node_modules -type d \( -path '*/node_modules/esbuild' \
+		-o -path '*/node_modules/rollup' \) -prune | while read dir; do \
+		version=`${LOCALBASE}/bin/node -p "require('$${dir}/package.json').version"`; \
+		case $${dir} in \
+		*/esbuild) distfile=esbuild-wasm-$${version}.tgz ;; \
+		*/rollup) distfile=wasm-node-$${version}.tgz ;; \
+		esac; \
+		${RM} -r $${dir} && ${MKDIR} $${dir} && \
+		${TAR} -xf ${_DISTDIR}/$${distfile} -C $${dir} \
+			--strip-components 1 || exit 1; \
+	done
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\@PREFIX\@|${PREFIX}|' \

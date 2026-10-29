@@ -1,4 +1,12 @@
 TIMESTAMP = 1792343800
+SHA256 (esbuild-wasm-0.25.5.tgz) = 824737c69de21cd122e197d4e565a79f5ab646b89a3343eb624e77531d7f31ce
+SIZE (esbuild-wasm-0.25.5.tgz) = 3323201
+SHA256 (esbuild-wasm-0.28.2.tgz) = 61594de12ce998652be2aa0ab72dda54bfa49407fb37ee3464468a2aac306baa
+SIZE (esbuild-wasm-0.28.2.tgz) = 3863419
+SHA256 (esbuild-wasm-0.28.0.tgz) = 83b1d57542ab703328aef03a6d69b769afb58026eec43e8af4e127a40ad530cc
+SIZE (esbuild-wasm-0.28.0.tgz) = 3845798
+SHA256 (wasm-node-4.59.0.tgz) = 9c208e538f6fa8ae2a4a82ade6c0f144448ebfdcbbc24d6ac188be453d82cd16
+SIZE (wasm-node-4.59.0.tgz) = 793357
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
