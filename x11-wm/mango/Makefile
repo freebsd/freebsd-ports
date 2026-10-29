@@ -1,5 +1,5 @@
 PORTNAME=	mango
-DISTVERSION=	0.18.3
+DISTVERSION=	0.18.4
 PORTREVISION=	0
 CATEGORIES=	x11-wm
 
@@ -14,8 +14,8 @@ BUILD_DEPENDS=	evdev-proto>=5.8:devel/evdev-proto \
 		hwdata>=0.399:misc/hwdata \
 		wayland-protocols>=1.24:graphics/wayland-protocols
 LIB_DEPENDS=	libcjson.so:devel/libcjson \
-		libdrm.so:graphics/libdrm \
 		libdisplay-info.so:sysutils/libdisplay-info \
+		libdrm.so:graphics/libdrm \
 		libinput.so:x11/libinput \
 		libliftoff.so:graphics/libliftoff \
 		libpcre2-8.so:devel/pcre2 \
