@@ -1,4 +1,4 @@
---- electron/shell/common/node_bindings.cc.orig	2026-09-10 01:17:27 UTC
+--- electron/shell/common/node_bindings.cc.orig	2026-10-27 11:01:02 UTC
 +++ electron/shell/common/node_bindings.cc
 @@ -57,7 +57,7 @@
  #include "third_party/electron_node/src/node_snapshot_builder.h"
@@ -27,7 +27,7 @@
    // TryGetCurrent() instead of GetCurrent() to avoid FATAL if no isolate.
    v8::Isolate* isolate = v8::Isolate::TryGetCurrent();
    electron::v8_oom::RecordErrorDetails(isolate, location, details);
-@@ -655,7 +655,7 @@ void NodeBindings::Initialize(v8::Isolate* const isola
+@@ -652,7 +652,7 @@ void NodeBindings::Initialize(v8::Isolate* const isola
    TRACE_EVENT0("electron", "NodeBindings::Initialize");
    // Open node's error reporting system for browser process.
  

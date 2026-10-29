@@ -1,4 +1,4 @@
---- electron/spec/api-app.spec.ts.orig	2026-10-16 03:32:58 UTC
+--- electron/spec/api-app.spec.ts.orig	2026-10-27 11:01:02 UTC
 +++ electron/spec/api-app.spec.ts
 @@ -131,7 +131,7 @@ describe('app module', () => {
      });
@@ -192,9 +192,9 @@
 -  ifdescribe(process.platform === 'linux')('GDK_BACKEND', () => {
 +  ifdescribe(process.platform === 'linux' || process.platform === 'freebsd')('GDK_BACKEND', () => {
      const fixture = path.join(fixturesPath, 'apps', 'gdk-backend');
-     const run = async (env: NodeJS.ProcessEnv) => {
-       const child = cp.spawn(process.execPath, [fixture], { env, stdio: ['ignore', 'pipe', 'ignore'] });
-@@ -2156,7 +2156,7 @@ describe('app module', () => {
+     // Wait for the app to exit, not just for its output. Otherwise the next
+     // test (or retry) launches the fixture again while this copy is still
+@@ -2157,7 +2157,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -203,7 +203,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -2179,7 +2179,7 @@ describe('app module', () => {
+@@ -2180,7 +2180,7 @@ describe('app module', () => {
      });
    });
  
