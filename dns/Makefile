@@ -13,6 +13,7 @@
     SUBDIR += c-ares
     SUBDIR += cascade
     SUBDIR += cli53
+    SUBDIR += cmdns-cli
     SUBDIR += coredns
     SUBDIR += ddclient
     SUBDIR += ddns

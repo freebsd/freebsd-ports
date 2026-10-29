@@ -1,0 +1,17 @@
+TIMESTAMP = 1793288114
+SHA256 (cmdns-cli-cmdns-cli-1.3.0_GH0.tar.gz) = ddbe6f14c687ec20b8ef3d3b4321f92ad5d4bbd8a0ada3e0ea602701b915bd9d
+SIZE (cmdns-cli-cmdns-cli-1.3.0_GH0.tar.gz) = 6130
+SHA256 (golang-mod-v0.31.0_GH0.tar.gz) = cc335e1334764995f23d93b5fcd8074ade6261709ea64dd810fbbd4974982665
+SIZE (golang-mod-v0.31.0_GH0.tar.gz) = 126364
+SHA256 (golang-net-v0.48.0_GH0.tar.gz) = 999b4eeae1b018ce0e2353cd656b47297c57fedcb9a419904ff856de0438898f
+SIZE (golang-net-v0.48.0_GH0.tar.gz) = 1528679
+SHA256 (golang-sync-v0.19.0_GH0.tar.gz) = bb77b590cf5b3703d30cbd19a4ac7ed5f0fb4af67fbc87340ba06023e81db533
+SIZE (golang-sync-v0.19.0_GH0.tar.gz) = 18196
+SHA256 (golang-sys-v0.39.0_GH0.tar.gz) = 2af1491dde3e8296440bf95f99f2e866b317d3842c8334aa49e1c55f397a3ae7
+SIZE (golang-sys-v0.39.0_GH0.tar.gz) = 1535479
+SHA256 (golang-tools-v0.40.0_GH0.tar.gz) = e39e3550f2881d7c54ca3fbba3ef1ad8901bd82135579b67412fd412ca7d05c2
+SIZE (golang-tools-v0.40.0_GH0.tar.gz) = 8333939
+SHA256 (gorilla-websocket-v1.5.3_GH0.tar.gz) = 707f217e9a46c516c289b71c45a4e51b11b5e0fcec54c1fbfecde47b8a001799
+SIZE (gorilla-websocket-v1.5.3_GH0.tar.gz) = 54884
+SHA256 (miekg-dns-v1.1.72_GH0.tar.gz) = 55a44cb97ff5ac5dacc05661db03baf4e41777c4cea16d203f583c1f624c3892
+SIZE (miekg-dns-v1.1.72_GH0.tar.gz) = 223297
