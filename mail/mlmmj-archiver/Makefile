@@ -1,5 +1,6 @@
 PORTNAME=	mlmmj-archiver
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	https://codeberg.org/bapt/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -17,5 +18,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cs2tpl \
+		${STAGEDIR}${PREFIX}/bin/mlmmj-archiver
 
 .include <bsd.port.mk>
