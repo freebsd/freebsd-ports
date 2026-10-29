@@ -342,7 +342,7 @@
 	<p>Plack project reports:</p>
 	<blockquote cite="https://metacpan.org/dist/Plack/changes">
 	  <p>Fix HTTP::Server::PSGI allocating a buffer as large as the declared Content-Length,
-          which let a single request crash the server with "Out of memory!" (CVE-2026-115825).</p>
+	  which let a single request crash the server with "Out of memory!" (CVE-2026-115825).</p>
 	</blockquote>
 	</body>
     </description>
