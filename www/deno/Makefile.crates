@@ -43,8 +43,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		atomic-waker-1.1.2 \
 		auto_impl-1.2.0 \
 		autocfg-1.3.0 \
-		aws-lc-rs-1.16.3 \
+		aws-lc-rs-1.18.2 \
 		aws-lc-sys-0.40.0 \
+		aws-lc-sys-0.46.0 \
 		backhand-0.25.1 \
 		backtrace-0.3.74 \
 		base16ct-0.2.0 \
@@ -193,7 +194,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		deno_doc-0.207.0 \
 		deno_error-0.7.1 \
 		deno_error_macro-0.7.1 \
-		deno_graph-0.111.0 \
+		deno_graph-0.111.1 \
 		deno_lint-0.84.1 \
 		deno_media_type-0.4.0 \
 		deno_native_certs-0.3.0 \
@@ -335,7 +336,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		gpu-descriptor-types-0.2.0 \
 		group-0.13.0 \
 		gzip-header-1.0.0 \
-		h2-0.4.7 \
+		h2-0.4.19 \
 		half-2.7.1 \
 		handlebars-6.1.0 \
 		hash2curve-0.14.0-rc.10 \
@@ -370,10 +371,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		httparse-1.10.0 \
 		httpdate-1.0.3 \
 		hybrid-array-0.4.7 \
-		hyper-1.6.0 \
+		hyper-1.11.1 \
 		hyper-rustls-0.27.2 \
 		hyper-timeout-0.5.2 \
-		hyper-util-0.1.17 \
+		hyper-util-0.1.21 \
 		icu_calendar-2.2.1 \
 		icu_calendar_data-2.2.0 \
 		icu_collator-2.2.1 \
@@ -581,7 +582,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pkcs5-0.7.1 \
 		pkcs8-0.10.2 \
 		pkcs8-0.11.0-rc.11 \
-		pkg-config-0.3.30 \
+		pkg-config-0.3.34 \
 		plist-1.9.0 \
 		plotters-0.3.7 \
 		plotters-backend-0.3.7 \
@@ -620,7 +621,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		radium-0.7.0 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
-		rand-0.9.2 \
+		rand-0.9.3 \
 		rand-0.10.2 \
 		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
@@ -675,7 +676,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustls-pemfile-2.1.2 \
 		rustls-pki-types-1.12.0 \
 		rustls-tokio-stream-0.8.0 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.22 \
 		rusty-fork-0.3.1 \
 		rustyline-17.0.0 \
@@ -909,8 +910,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		web-sys-0.3.99 \
 		web-time-1.1.0 \
 		web-transport-proto-0.2.7 \
-		webpki-root-certs-0.26.6 \
-		webpki-roots-0.26.1 \
+		webpki-root-certs-1.0.10 \
+		webpki-roots-0.26.11 \
+		webpki-roots-1.0.10 \
 		weezl-0.1.8 \
 		wgpu-core-29.0.1 \
 		wgpu-core-deps-apple-29.0.3 \
