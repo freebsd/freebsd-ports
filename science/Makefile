@@ -351,6 +351,7 @@
     SUBDIR += py-endf
     SUBDIR += py-esda
     SUBDIR += py-fresnel
+    SUBDIR += py-galore
     SUBDIR += py-gemmi
     SUBDIR += py-geolinks
     SUBDIR += py-geomet
