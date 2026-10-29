@@ -8906,7 +8906,6 @@
     SUBDIR += uid_wrapper
     SUBDIR += ultragetopt
     SUBDIR += umbrello
-    SUBDIR += umlgraph
     SUBDIR += umpire
     SUBDIR += undead
     SUBDIR += unibilium
