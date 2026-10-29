@@ -10,6 +10,8 @@ WWW=		https://astron.github.io/astron
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN=		Fails to build with CMake 4
+
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 LIB_DEPENDS=	libuv.so:devel/libuv \
 		libyaml-cpp.so:devel/yaml-cpp

@@ -12,6 +12,8 @@ WWW=		https://icculus.org/avp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with CMake 4
+
 USES=		cmake compiler:c++11-lang gl openal sdl
 USE_GL=		gl
 USE_SDL=	sdl
