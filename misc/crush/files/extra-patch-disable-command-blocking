@@ -11,7 +11,7 @@
  		tools.NewMultiEditTool(nil, env.permissions, env.history, *env.filetracker, env.workingDir),
 --- internal/agent/coordinator.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/agent/coordinator.go
-@@ -894,7 +894,7 @@ func (c *coordinator) buildTools(ctx context.Context, 
+@@ -915,7 +915,7 @@ func (c *coordinator) buildTools(ctx context.Context, 
  
  	allTools = append(
  		allTools,
@@ -67,7 +67,7 @@
 -				bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(), params.Command, params.Description, maxBackgroundJobs)
 +				bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(disableBlocking), params.Command, params.Description, maxBackgroundJobs)
  				if err != nil {
- 					return fantasy.ToolResponse{}, fmt.Errorf("error starting background shell: %w", err)
+ 					return fantasy.NewTextErrorResponse("Failed to start background shell: " + err.Error()), nil
  				}
 @@ -305,7 +311,7 @@ func NewBashTool(permissions permission.Service, worki
  
@@ -76,7 +76,7 @@
 -			bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(), params.Command, params.Description, maxBackgroundJobs)
 +			bgShell, err := bgManager.Start(context.Background(), execWorkingDir, blockFuncs(disableBlocking), params.Command, params.Description, maxBackgroundJobs)
  			if err != nil {
- 				return fantasy.ToolResponse{}, fmt.Errorf("error starting shell: %w", err)
+ 				return fantasy.NewTextErrorResponse("Failed to start shell: " + err.Error()), nil
  			}
 --- internal/agent/tools/bash_test.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/agent/tools/bash_test.go
@@ -100,7 +100,7 @@
  func TestBashTool_ChainedCommandsRequirePermission(t *testing.T) {
 --- internal/config/config.go.orig	1979-11-29 15:00:00 UTC
 +++ internal/config/config.go
-@@ -463,6 +463,7 @@ type Options struct {
+@@ -443,6 +443,7 @@ type Options struct {
  	Debug                bool        `json:"debug,omitempty" jsonschema:"description=Enable debug logging,default=false"`
  	DebugLSP             bool        `json:"debug_lsp,omitempty" jsonschema:"description=Enable debug logging for LSP servers,default=false"`
  	DisableAutoSummarize bool        `json:"disable_auto_summarize,omitempty" jsonschema:"description=Disable automatic conversation summarization,default=false"`
