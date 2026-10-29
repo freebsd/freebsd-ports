@@ -1,6 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.24.2
+DISTVERSION=	18.24.3
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	compilation fails: evaluation of constant value failed, see https://github.com/briansmith/ring/issues/2006
 
 BUILD_DEPENDS=	protoc:devel/protobuf
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cargo
+USES=		cargo ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	atuinsh
@@ -41,7 +42,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		arraydeque-0.5.1 \
 		arrayvec-0.7.8 \
 		assert-json-diff-2.0.2 \
-		async-compression-0.4.43 \
+		async-compression-0.4.51 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
 		async-trait-0.1.92 \
@@ -54,7 +55,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		autocfg-1.5.1 \
 		axoprocess-0.2.1 \
 		axotag-0.3.0 \
-		axoupdater-0.10.0 \
+		axoupdater-0.10.3 \
 		axum-0.8.9 \
 		axum-core-0.5.6 \
 		base64-0.22.1 \
@@ -92,19 +93,21 @@ CARGO_CRATES=	adler2-2.0.1 \
 		chrono-humanize-0.2.3 \
 		cipher-0.4.4 \
 		clap-4.6.7 \
+		clap-couture-0.1.1 \
+		clap-couture-derive-0.1.1 \
 		clap_builder-4.6.7 \
 		clap_complete-4.6.11 \
 		clap_complete_nushell-4.6.1 \
 		clap_derive-4.6.7 \
 		clap_lex-1.1.0 \
-		clipboard-win-5.4.1 \
+		clipboard-win-5.4.3 \
 		cmov-0.5.4 \
 		colorchoice-1.0.5 \
 		colored-3.1.1 \
 		compact_str-0.9.0 \
 		compare-0.0.6 \
-		compression-codecs-0.4.38 \
-		compression-core-0.4.32 \
+		compression-codecs-0.4.46 \
+		compression-core-0.4.34 \
 		config-0.15.25 \
 		console-0.16.3 \
 		const-oid-0.9.6 \
@@ -129,16 +132,22 @@ CARGO_CRATES=	adler2-2.0.1 \
 		crypto-common-0.2.2 \
 		crypto_secretbox-0.1.1 \
 		csscolorparser-0.6.2 \
-		ctutils-0.4.2 \
+		ctutils-0.4.5 \
 		curve25519-dalek-4.1.3 \
 		curve25519-dalek-derive-0.1.1 \
 		daemonix-0.1.0 \
 		darling-0.23.0 \
+		darling-0.24.1 \
 		darling_core-0.23.0 \
+		darling_core-0.24.1 \
 		darling_macro-0.23.0 \
+		darling_macro-0.24.1 \
 		dashmap-6.2.1 \
 		deadpool-0.12.3 \
 		deadpool-runtime-0.1.4 \
+		defmt-1.2.0 \
+		defmt-macros-1.2.0 \
+		defmt-parser-1.1.0 \
 		deltae-0.3.2 \
 		der-0.7.10 \
 		deranged-0.5.8 \
@@ -204,16 +213,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fs-err-3.3.1 \
 		fsevent-sys-4.1.0 \
 		futures-0.3.32 \
-		futures-channel-0.3.33 \
-		futures-core-0.3.33 \
+		futures-channel-0.3.34 \
+		futures-core-0.3.34 \
 		futures-executor-0.3.32 \
 		futures-intrusive-0.5.0 \
-		futures-io-0.3.33 \
-		futures-macro-0.3.33 \
-		futures-sink-0.3.33 \
-		futures-task-0.3.33 \
+		futures-io-0.3.34 \
+		futures-macro-0.3.34 \
+		futures-sink-0.3.34 \
+		futures-task-0.3.34 \
 		futures-timer-3.0.4 \
-		futures-util-0.3.33 \
+		futures-util-0.3.34 \
 		generic-array-0.14.7 \
 		gethostname-1.1.0 \
 		getopts-0.2.24 \
@@ -285,6 +294,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.14.0 \
 		itertools-0.15.0 \
 		itoa-1.0.18 \
+		jiff-0.2.38 \
+		jiff-core-0.1.1 \
+		jiff-static-0.2.38 \
+		jiff-tzdb-0.1.9 \
+		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.35 \
 		js-sys-0.3.100 \
 		kasuari-0.4.12 \
@@ -293,7 +307,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lab-0.11.0 \
 		lasso-0.7.3 \
 		lazy_static-1.5.0 \
-		libc-0.2.189 \
+		libc-0.2.190 \
 		libm-0.2.16 \
 		libredox-0.1.16 \
 		libsqlite3-sys-0.30.1 \
@@ -406,6 +420,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		plist-1.10.3 \
 		poly1305-0.8.0 \
 		portable-atomic-1.14.0 \
+		portable-atomic-util-0.2.8 \
 		portable-pty-0.9.0 \
 		potential_utf-0.1.5 \
 		powerfmt-0.2.0 \
@@ -424,7 +439,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		prost-types-0.14.3 \
 		protox-0.9.1 \
 		protox-parse-0.9.0 \
-		pulldown-cmark-0.13.4 \
+		pulldown-cmark-0.13.5 \
 		pulldown-cmark-escape-0.11.0 \
 		pulldown-cmark-to-cmark-22.0.0 \
 		pxfm-0.1.30 \
@@ -505,13 +520,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_derive_internals-0.29.1 \
-		serde_json-1.0.151 \
+		serde_json-1.0.154 \
 		serde_path_to_error-0.1.20 \
 		serde_regex-1.2.0 \
 		serde_spanned-1.1.1 \
 		serde_urlencoded-0.7.1 \
-		serde_with-3.21.0 \
-		serde_with_macros-3.21.0 \
+		serde_with-3.24.0 \
+		serde_with_macros-3.24.0 \
 		serial2-0.2.36 \
 		sfa-1.0.0 \
 		sha1-0.11.0 \
@@ -576,11 +591,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinystr-0.8.3 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.52.3 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-stream-0.1.18 \
-		tokio-util-0.7.19 \
+		tokio-util-0.7.20 \
 		toml-0.5.11 \
 		toml-1.1.2+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
@@ -744,12 +759,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerovec-0.11.6 \
 		zerovec-derive-0.11.3 \
 		zmij-1.0.23 \
-		zstd-0.13.3 \
-		zstd-safe-7.2.4 \
-		zstd-sys-2.1.0+zstd.1.5.7
-
-OPENSSLINC=	/usr/include
-OPENSSLLIB=	/usr/lib
+		zstd-0.14.3 \
+		zstd-safe-8.2.0 \
+		zstd-sys-2.1.2+zstd.1.5.7
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-server
