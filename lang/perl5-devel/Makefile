@@ -34,11 +34,13 @@ PORTSCOUT=	limit:^${PERL_VER}.
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-Darchlib=${PREFIX}/${_ARCH_LIB} \
+			-Accflags="${CFLAGS}" \
 			-Dcc="${CC}" \
 			-Dcf_by=${MAINTAINER:C,@.*,,} \
 			-Dcf_email=${MAINTAINER} \
 			-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`" \
 			-Dinc_version_list=none \
+			-Dldflags="${_PERL_LDFLAGS}" \
 			-Dlibperl=libperl.so.${LIBPERL_VER} \
 			-Dman1dir=${PREFIX}/${PERLMANPREFIX_REL}/man/man1 \
 			-Dman3dir=${PREFIX}/${PERLMANPREFIX_REL}/man/man3 \
@@ -56,11 +58,18 @@ CONFIGURE_ARGS=		-Darchlib=${PREFIX}/${_ARCH_LIB} \
 			-Ui_iconv \
 			-Ui_malloc \
 			-Uinstallusrbinperl
+# LDFLAGS build perl and its bundled modules, but are stripped from the
+# installed Config so they do not leak into consumers.  Configure links its
+# probes with ldflags alone, so ccflags needs CFLAGS (e.g. -fPIE for -pie);
+# those already leak through optimize, keep them.
+_PERL_LDFLAGS=		${LDFLAGS:M*}
+_PERL_LDFLAGS_RE=	${_PERL_LDFLAGS:S/./\./g:S/*/\*/g:S/[/\[/g:S/|/\|/g}
+
 # Keep the following two in sync.
 # lddlflags is used for all .so linking
 # shrpldflags is used for libperl.so, so remove all the extra bits inherited from lddlflags.
 # XXX change the soname to $$(LIBPERL:R)
-CONFIGURE_ARGS+=	-Alddlflags='-L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
+CONFIGURE_ARGS+=	-Alddlflags='${_PERL_LDFLAGS} -L${WRKSRC} -L${PREFIX}/${_ARCH_LIB}/CORE -lperl' \
 			-Dshrpldflags='$$(LDDLFLAGS:N-L${WRKSRC}:N-L${PREFIX}/${_ARCH_LIB}/CORE:N-lperl) -Wl,-soname,$$(LIBPERL)'
 
 # XXX Remove
@@ -278,7 +287,8 @@ post-patch:
 	done
 
 post-install:
-	@${REINPLACE_CMD} -e '/^lddlflags/s|-L${WRKSRC} ||' \
+	@re='${_PERL_LDFLAGS_RE}'; ${REINPLACE_CMD} -e '/^lddlflags/s|-L${WRKSRC} ||' \
+		$${re:+-e "/^ldflags=/s| $$re||" -e "/^lddlflags=/s| $$re||"} \
 		${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl
 	@${TOUCH} -r ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl.bak ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl
 	@${RM} ${STAGEDIR}${PREFIX}/${_ARCH_LIB}/Config_heavy.pl.bak
