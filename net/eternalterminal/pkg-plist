@@ -1,4 +1,6 @@
 bin/et
+bin/et1
+bin/etctl
 bin/etserver
 bin/etterminal
 bin/htm
