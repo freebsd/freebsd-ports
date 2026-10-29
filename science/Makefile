@@ -371,6 +371,7 @@
     SUBDIR += py-igor2
     SUBDIR += py-inequality
     SUBDIR += py-ipygany
+    SUBDIR += py-jarvis-tools
     SUBDIR += py-jupyter_jsmol
     SUBDIR += py-kim-query
     SUBDIR += py-kimpy
