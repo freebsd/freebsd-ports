@@ -1,6 +1,6 @@
 PORTNAME=	trunk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
+DISTVERSION=	0.22.1
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -74,7 +74,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cargo-platform-0.3.3 \
 		cargo_metadata-0.23.1 \
 		castaway-0.2.4 \
-		cc-1.9.0 \
+		cc-1.10.0 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
 		chacha20-0.10.2 \
@@ -107,7 +107,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cpubits-0.1.1 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.1 \
-		crc32fast-1.5.2 \
+		crc32fast-1.5.3 \
 		critical-section-1.2.0 \
 		crossbeam-channel-0.5.17 \
 		crossbeam-deque-0.8.8 \
@@ -120,7 +120,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cssparser-color-0.5.0 \
 		cssparser-macros-0.6.1 \
 		cssparser-macros-0.7.1 \
-		ctutils-0.4.3 \
+		ctutils-0.4.6 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
 		darling_macro-0.20.11 \
@@ -157,7 +157,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		env_logger-0.11.11 \
 		equivalent-1.0.3 \
 		errno-0.3.14 \
-		escape-simd-0.1.0 \
+		escape-simd-0.1.1 \
 		fastrand-2.5.0 \
 		file-id-0.2.3 \
 		filetime-0.2.29 \
@@ -172,7 +172,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		from_variant-3.0.0 \
 		fs-err-3.3.2 \
 		fs_extra-1.3.0 \
-		fsevent-sys-4.1.0 \
 		funty-2.0.0 \
 		futures-channel-0.3.34 \
 		futures-core-0.3.34 \
@@ -216,17 +215,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hyper-rustls-0.27.10 \
 		hyper-tls-0.6.0 \
 		hyper-util-0.1.21 \
-		icu_collections-2.3.0 \
-		icu_locale_core-2.3.0 \
-		icu_locale_fallback-2.3.0 \
-		icu_locale_fallback_data-2.3.0 \
-		icu_normalizer-2.3.0 \
-		icu_normalizer_data-2.3.0 \
-		icu_properties-2.3.0 \
-		icu_properties_data-2.3.0 \
-		icu_provider-2.3.1 \
-		icu_segmenter-2.3.0 \
-		icu_segmenter_data-2.3.0 \
+		icu_collections-2.4.0 \
+		icu_locale_core-2.4.0 \
+		icu_locale_fallback-2.4.0 \
+		icu_locale_fallback_data-2.4.0 \
+		icu_normalizer-2.4.0 \
+		icu_normalizer_data-2.4.0 \
+		icu_properties-2.4.0 \
+		icu_properties_data-2.4.0 \
+		icu_provider-2.4.0 \
+		icu_segmenter-2.4.0 \
+		icu_segmenter_data-2.4.0 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
@@ -250,7 +249,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.35 \
 		js-sys-0.3.106 \
-		json-escape-simd-3.1.2 \
+		json-escape-simd-3.1.3 \
 		kqueue-1.2.1 \
 		kqueue-sys-1.1.2 \
 		lazy_static-1.5.1 \
@@ -267,8 +266,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		local-ip-address-0.6.13 \
 		lock_api-0.4.14 \
 		log-0.4.34 \
-		lol_html-3.0.1 \
-		lzma-rust2-0.22.0 \
+		lol_html-3.0.2 \
+		lzma-rust2-0.23.0 \
 		matchers-0.2.0 \
 		matches-0.1.10 \
 		matchit-0.8.4 \
@@ -288,7 +287,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		new_debug_unreachable-1.0.6 \
 		nix-0.31.3 \
 		nonmax-0.5.5 \
-		notify-8.2.0 \
+		notify-8.2.1 \
 		notify-debouncer-full-0.7.0 \
 		notify-types-2.1.0 \
 		nu-ansi-term-0.50.3 \
@@ -297,10 +296,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		num-integer-0.1.47 \
 		num-traits-0.2.19 \
 		num_cpus-1.17.0 \
+		objc2-core-foundation-0.3.2 \
+		objc2-core-services-0.3.2 \
 		object-0.39.1 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
-		open-5.4.4 \
+		open-5.4.5 \
 		openssl-0.10.81 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.2.1 \
@@ -364,7 +365,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		postcard-1.1.3 \
 		potential_utf-0.1.6 \
 		powerfmt-0.2.1 \
-		ppmd-rust-1.5.1 \
+		ppmd-rust-1.5.2 \
 		ppv-lite86-0.2.21 \
 		precomputed-hash-0.1.1 \
 		prefix-trie-0.8.4 \
@@ -414,7 +415,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustls-pki-types-1.15.1 \
 		rustls-platform-verifier-0.7.1 \
 		rustls-platform-verifier-android-0.2.0 \
-		rustls-webpki-0.103.15 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.23 \
 		ryu-1.0.23 \
 		ryu-js-1.0.3 \
@@ -454,7 +455,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		siphasher-0.3.11 \
 		siphasher-1.0.4 \
 		slab-0.4.12 \
-		smallvec-1.16.3 \
+		smallvec-1.16.4 \
 		smawk-0.3.3 \
 		socket2-0.6.5 \
 		spki-0.7.3 \
@@ -472,14 +473,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		swc_config-6.0.1 \
 		swc_config_macro-1.0.1 \
 		swc_ecma_ast-29.0.2 \
-		swc_ecma_codegen-32.0.4 \
+		swc_ecma_codegen-32.0.5 \
 		swc_ecma_codegen_macros-2.0.2 \
 		swc_ecma_hooks-1.0.0 \
-		swc_ecma_minifier-63.0.2 \
-		swc_ecma_parser-46.1.1 \
-		swc_ecma_transforms_base-50.0.2 \
+		swc_ecma_minifier-63.0.4 \
+		swc_ecma_parser-46.1.2 \
+		swc_ecma_transforms_base-50.0.3 \
 		swc_ecma_transforms_optimization-53.0.0 \
-		swc_ecma_utils-35.0.3 \
+		swc_ecma_utils-35.1.0 \
 		swc_ecma_visit-29.0.0 \
 		swc_eq_ignore_macros-1.0.1 \
 		swc_macros_common-1.0.1 \
@@ -504,9 +505,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		time-0.3.55 \
 		time-core-0.1.9 \
 		time-macros-0.2.32 \
-		tinystr-0.8.4 \
+		tinystr-0.8.5 \
 		tinyvec-1.13.3 \
-		tokio-1.54.0 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.2 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.6 \
@@ -533,7 +534,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		try-lock-0.2.5 \
 		tungstenite-0.29.0 \
 		tungstenite-0.30.0 \
-		typed-path-0.12.4 \
+		typed-path-0.13.0 \
 		typenum-1.20.1 \
 		unicase-2.10.0 \
 		unicode-id-start-1.5.0 \
@@ -544,7 +545,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		url-2.5.8 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.28.0 \
+		uuid-1.29.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
@@ -561,7 +562,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasm-bindgen-shared-0.2.129 \
 		wasm-streams-0.5.0 \
 		web-sys-0.3.106 \
-		webpki-root-certs-1.0.10 \
+		webpki-root-certs-1.0.11 \
 		which-8.0.6 \
 		widestring-1.2.1 \
 		winapi-util-0.1.11 \
@@ -596,7 +597,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wyz-0.5.1 \
 		xattr-1.6.1 \
 		yaml_serde-0.10.7 \
-		yoke-0.8.3 \
+		yoke-0.8.4 \
 		yoke-derive-0.8.4 \
 		zerocopy-0.8.63 \
 		zerocopy-derive-0.8.63 \
@@ -604,9 +605,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerofrom-derive-0.1.8 \
 		zeroize-1.9.1 \
 		zerotrie-0.2.5 \
-		zerovec-0.11.8 \
-		zerovec-derive-0.11.6 \
-		zip-9.0.5 \
+		zerovec-0.11.9 \
+		zerovec-derive-0.11.7 \
+		zip-9.1.1 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
 		zopfli-0.8.3 \
