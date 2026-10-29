@@ -358,7 +358,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		web-sys-0.3.98 \
 		web-time-1.1.0 \
 		webpki-roots-0.26.11 \
-		webpki-roots-1.0.7 \
+		webpki-roots-1.0.10 \
 		winapi-util-0.1.11 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
