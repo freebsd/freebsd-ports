@@ -212,8 +212,8 @@ KEYVAL_VARS=		DSO_EXTMODS+=keyval
 LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
-LUA_GH_TUPLE=		openresty:lua-nginx-module:58ece96:lua \
-			openresty:lua-resty-core:97ff492:luarc \
+LUA_GH_TUPLE=		openresty:lua-nginx-module:e672520:lua \
+			openresty:lua-resty-core:084ff6d:luarc \
 			openresty:lua-resty-lrucache:ad373f4:luarl
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
@@ -221,8 +221,8 @@ LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_VARS=		DSO_EXTMODS+=lua
 
-LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:102c784:luastream \
-			openresty:lua-resty-core:97ff492:luarc \
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:10378d5:luastream \
+			openresty:lua-resty-core:084ff6d:luarc \
 			openresty:lua-resty-lrucache:ad373f4:luarl
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
@@ -335,6 +335,8 @@ VOD_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 			libavutil.so:multimedia/ffmpeg
 VOD_USES=		iconv
 VOD_VARS=		DSO_EXTMODS+=vod
+VOD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-vod-module-audio_decoder.c \
+			${PATCHDIR}/extra-patch-vod-module-audio_encoder.c
 
 VTS_GH_TUPLE=		vozlt:nginx-module-vts:d421ab0:vts
 VTS_VARS=		DSO_EXTMODS+=vts
