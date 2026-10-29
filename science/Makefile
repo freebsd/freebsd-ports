@@ -445,6 +445,7 @@
     SUBDIR += py-pysal
     SUBDIR += py-pyscf
     SUBDIR += py-pyteomics
+    SUBDIR += py-pyzeo
     SUBDIR += py-qcelemental
     SUBDIR += py-qcengine
     SUBDIR += py-qcmanybody

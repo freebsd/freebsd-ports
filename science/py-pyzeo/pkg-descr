@@ -1,0 +1,5 @@
+PyZeo is a Python interface to Zeo++, a software package for the geometry-based
+analysis of porous materials and for the generation of structure
+representations. It bundles Zeo++ and Voro++ and provides access to pore
+diameters, accessible surface areas and volumes, channel analysis and other
+properties.
