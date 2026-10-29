@@ -1478,7 +1478,6 @@
     SUBDIR += librashader
     SUBDIR += librcc
     SUBDIR += librcd
-    SUBDIR += libreadline-java
     SUBDIR += libregf
     SUBDIR += librelp
     SUBDIR += librest
