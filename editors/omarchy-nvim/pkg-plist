@@ -12,6 +12,7 @@
 %%DATADIR%%/config/lua/plugins/all-themes.lua
 %%DATADIR%%/config/lua/plugins/disable-news-alert.lua
 %%DATADIR%%/config/lua/plugins/example.lua
+%%DATADIR%%/config/lua/plugins/lualine-transparent.lua
 %%DATADIR%%/config/lua/plugins/omarchy-theme-hotreload.lua
 %%DATADIR%%/config/lua/plugins/snacks-animated-scrolling-off.lua
 %%DATADIR%%/config/plugin/after/transparency.lua

@@ -1,6 +1,6 @@
 PORTNAME=	omasnap
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.0
+DISTVERSION=	1.22.0
 CATEGORIES=	graphics wayland
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -16,10 +16,12 @@ LICENSE_FILE_OFL11=	${WRKSRC}/assets/OFL.txt
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.37:graphics/wayland-protocols \
 		wayland-scanner:graphics/wayland
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+LIB_DEPENDS=	libdeflate.so:archivers/libdeflate \
+		libwayland-client.so:graphics/wayland
 RUN_DEPENDS=	hyprctl:x11-wm/hyprland \
 		tesseract:graphics/tesseract \
-		wl-copy:x11/wl-clipboard
+		wl-copy:x11/wl-clipboard \
+		xdg-open:devel/xdg-utils
 
 USES=		cmake:testing compiler:c++23-lang gl kde:6 pkgconfig qt:6
 USE_GITHUB=	yes

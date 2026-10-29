@@ -1,6 +1,6 @@
---- src/update.rs.orig	2026-09-29 14:11:37 UTC
+--- src/update.rs.orig	2026-10-14 15:56:41 UTC
 +++ src/update.rs
-@@ -2112,6 +2112,13 @@ pub fn self_update(options: SelfUpdateOptions) -> Resu
+@@ -2109,6 +2109,13 @@ pub fn self_update(options: SelfUpdateOptions) -> Resu
  pub fn self_update(options: SelfUpdateOptions) -> Result<Version, String> {
      let channel = UpdateChannel::configured();
  
@@ -14,7 +14,7 @@
      if is_homebrew_managed_install() {
          if channel == UpdateChannel::Preview {
              return Err(
-@@ -2242,6 +2249,10 @@ pub fn auto_update(events: tokio::sync::mpsc::Sender<c
+@@ -2346,6 +2353,10 @@ pub fn auto_update(events: tokio::sync::mpsc::Sender<c
  /// Background update check: only surface availability and release notes.
  /// Runs in a background thread at startup.
  pub fn auto_update(events: tokio::sync::mpsc::Sender<crate::events::AppEvent>) {

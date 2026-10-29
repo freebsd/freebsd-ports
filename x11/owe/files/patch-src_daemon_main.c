@@ -1,4 +1,4 @@
---- src/daemon/main.c.orig	2026-09-29 13:36:53 UTC
+--- src/daemon/main.c.orig	2026-10-22 07:21:43 UTC
 +++ src/daemon/main.c
 @@ -14,6 +14,11 @@
  #include <sys/stat.h>
@@ -12,7 +12,7 @@
  #include <unistd.h>
  
  #include "yyjson.h"
-@@ -713,8 +718,64 @@ static void on_sigchld(int sig) {
+@@ -1069,8 +1074,64 @@ static void on_sigchld(int sig) {
      errno = saved_errno;
  }
  
@@ -77,7 +77,7 @@
      DIR *dir;
      struct dirent *ent;
      bool found = false;
-@@ -730,7 +791,6 @@ static bool blocklist_active(void) {
+@@ -1086,7 +1147,6 @@ static bool blocklist_active(void) {
          char path[320];
          char comm[128];
          FILE *f;
@@ -85,7 +85,7 @@
  
          if (ent->d_name[0] < '0' || ent->d_name[0] > '9') {
              continue;
-@@ -746,17 +806,12 @@ static bool blocklist_active(void) {
+@@ -1102,17 +1162,12 @@ static bool blocklist_active(void) {
          }
          fclose(f);
          comm[strcspn(comm, "\n")] = '\0';

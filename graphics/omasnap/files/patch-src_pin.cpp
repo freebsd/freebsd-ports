@@ -1,6 +1,6 @@
---- src/pin.cpp.orig	2026-09-29 13:36:55 UTC
+--- src/pin.cpp.orig	2026-10-24 16:11:55 UTC
 +++ src/pin.cpp
-@@ -951,10 +951,19 @@ class PinWindow final : public QWidget { (protected)
+@@ -1051,10 +1051,19 @@ class PinWindow final : public QWidget { (protected)
    // devices, the pointer-event and stillness paths still finish the drag.
    void openButtonWatch() {
      closeButtonWatch();

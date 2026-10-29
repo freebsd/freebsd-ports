@@ -1,6 +1,6 @@
---- src/cli/plugin.rs.orig	2026-09-29 14:11:37 UTC
+--- src/cli/plugin.rs.orig	2026-10-14 15:56:41 UTC
 +++ src/cli/plugin.rs
-@@ -1539,7 +1539,8 @@ fn current_plugin_platform() -> PluginPlatform {
+@@ -1723,7 +1723,8 @@ fn current_plugin_platform() -> PluginPlatform {
  }
  
  fn current_plugin_platform() -> PluginPlatform {
