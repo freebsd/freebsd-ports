@@ -1,4 +1,3 @@
 #!/bin/sh
 
-cd %%DATADIR%% || exit 1
-exec %%DATADIR%%/OneDriveGUI.py "$@"
+exec %%PYTHON_CMD%% -m onedrivegui "$@"

@@ -1,10 +1,10 @@
---- src/resources/OneDriveGUI.desktop.orig	2025-09-10 08:49:21 UTC
-+++ src/resources/OneDriveGUI.desktop
-@@ -1,9 +1,9 @@ Name=OneDriveGUI
+--- src/onedrivegui/resources/OneDriveGUI.desktop.orig	2026-10-25 06:07:16 UTC
++++ src/onedrivegui/resources/OneDriveGUI.desktop
+@@ -1,10 +1,10 @@ Name=OneDriveGUI
  [Desktop Entry]
  Name=OneDriveGUI
 -Comment=A simple GUI for OneDrive Linux client
--Exec=OneDriveGUI
+-Exec=onedrive-gui
 +Comment=A simple GUI for OneDrive FreeBSD client
 +Exec=onedrivegui
  Terminal=false
@@ -13,3 +13,4 @@
 +Icon=onedrivegui
  Categories=Network;Office
  StartupNotify=true
+ StartupWMClass=OneDriveGUI
