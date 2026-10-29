@@ -1,7 +1,7 @@
-TIMESTAMP = 1790544808
-SHA256 (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.1.0_GH0/v10.1.0.mod) = 5db0fd17eadeafc05c54d1c553016c31dee67628c50a1d47a00b1c8506af1ad8
-SIZE (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.1.0_GH0/v10.1.0.mod) = 438
-SHA256 (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.1.0_GH0/v10.1.0.zip) = 28fcc2fa002f8415cf396745a103e23efe27b9701b0b6920ab09298019ddcec8
-SIZE (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.1.0_GH0/v10.1.0.zip) = 530001
-SHA256 (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.1.0_GH0/bazelbuild-buildtools-v10.1.0_GH0.tar.gz) = fa0b905032d49a621679e7318875736e451895a1417d992fbbebd27f82b83c38
-SIZE (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.1.0_GH0/bazelbuild-buildtools-v10.1.0_GH0.tar.gz) = 367648
+TIMESTAMP = 1793263063
+SHA256 (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.2.0_GH0/v10.2.0.mod) = 3b1d2865f20e75b4a646170ee6350b2fce1ff374db9eacaa6a334c5df7885d8e
+SIZE (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.2.0_GH0/v10.2.0.mod) = 332
+SHA256 (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.2.0_GH0/v10.2.0.zip) = fb60f96b6ffcb6b0623947c3655689af9af1f3b9098d44eb604f7be6c1623550
+SIZE (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.2.0_GH0/v10.2.0.zip) = 537845
+SHA256 (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.2.0_GH0/bazelbuild-buildtools-v10.2.0_GH0.tar.gz) = 5af90068e9e8812abdc455ad04cc474470bccc8bbabc8b571e3f58a66799680f
+SIZE (go/devel_bazel-buildtools/bazelbuild-buildtools-v10.2.0_GH0/bazelbuild-buildtools-v10.2.0_GH0.tar.gz) = 373185
