@@ -1,7 +1,6 @@
 PORTNAME=	crowdsec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
-PORTREVISION=	2
+DISTVERSION=	1.8.2
 CATEGORIES=	security
 
 MAINTAINER=	manuel@crowdsec.net
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libre2.so:devel/re2
 
 USES=		go:modules pkgconfig
-_COMMIT=	909b515
+_COMMIT=	3d369d6
 _BUILD_DATE=	$$(date -u "+%F_%T")
 USE_RC_SUBR=	crowdsec
 
@@ -49,8 +48,8 @@ FIREWALL_BOUNCER_DESC=	Depend on security/crowdsec-firewall-bouncer
 FIREWALL_BOUNCER_RUN_DEPENDS=	crowdsec-firewall-bouncer>=0.0.27:security/crowdsec-firewall-bouncer
 
 PLUGIN_DIR=	${PREFIX}/lib/crowdsec/plugins
-STAGE_PLUGINS=	${STAGEDIR}${PLUGIN_DIR}
 STAGE_BIN=	${STAGEDIR}${PREFIX}/bin
+STAGE_PLUGINS=	${STAGEDIR}${PLUGIN_DIR}
 
 post-patch:
 	@${REINPLACE_CMD} 's,/etc/crowdsec/,${ETCDIR}/,g' \
