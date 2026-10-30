@@ -17,7 +17,7 @@ WWW=		https://tailwindcss.com/
 
 LICENSE=	MIT
 
-ONLY_FOR_ARCHS=	aarch64 amd64 # internal .node libraries not supported elsewhere
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le # internal .node libraries not supported elsewhere
 BUILD_DEPENDS=	corepack:www/corepack \
 		npm:www/npm-node${_NODE_VERSION}
 USES=		nodejs:${_NODE_VERSION},build,run python:build tar:txz
@@ -25,6 +25,7 @@ USES=		nodejs:${_NODE_VERSION},build,run python:build tar:txz
 CONFLICTS_INSTALL=	tailwindcss*
 
 _LCSS_VER=	1.32.0
+_NODE_ARCH=	${ARCH:S/aarch64/arm64/:C/powerpc64.*/ppc64/}
 _NODE_VERSION=	26
 _TAILWIND_VER=	${DISTVERSION}
 _WATCHER_VER=	2.5.1
@@ -42,9 +43,12 @@ _CARGO_VENDOR=	${WRKDIR}/cargo-vendor
 
 .include <bsd.port.pre.mk>
 
-PLIST=		${.CURDIR}/pkg-plist.${ARCH}
+.if ${ARCH} == amd64
+PLIST=		${.CURDIR}/pkg-plist.amd64
+.endif
+PLIST_SUB=	NODE_ARCH=${_NODE_ARCH}
 
-# oxide & lightningcss need to be built from source crates on aarch64
+# oxide & lightningcss need to be built from source crates on all but amd64
 DISTFILES+=	tailwindcss-v${DISTVERSION}.tar.gz:twsrc \
 		lightningcss-v${_LCSS_VER}.tar.gz:lcsssrc \
 		${_CARGO_ARCHIVE}:cargo
@@ -53,7 +57,7 @@ BUILD_DEPENDS+=	rust>0:lang/rust
 do-extract:
 	@${MKDIR} ${_NPM_CACHE}
 	${TAR} -xf ${_DISTDIR}/${_NPM_ARCHIVE} -C ${_NPM_CACHE}
-.if ${ARCH} == aarch64
+.if ${ARCH} != amd64
 	${TAR} -xf ${_DISTDIR}/tailwindcss-v${DISTVERSION}.tar.gz -C ${WRKDIR}
 	${TAR} -xf ${_DISTDIR}/lightningcss-v${_LCSS_VER}.tar.gz -C ${WRKDIR}
 	${MKDIR} ${_CARGO_VENDOR}
@@ -67,17 +71,17 @@ do-build:
 # npm's self-update check ignores offline=true; keep the build off the network
 	${ECHO_CMD} update-notifier=false >> ${WRKDIR}/.npmrc
 	${ECHO_CMD} python=${PYTHON_CMD} >> ${WRKDIR}/.npmrc
-.if ${ARCH} == aarch64
+.if ${ARCH} != amd64
 # configure cargo for offline vendored build
 	${MKDIR} ${WRKDIR}/.cargo
 	${PRINTF} '[source.crates-io]\nreplace-with = "vendor"\n[source.vendor]\ndirectory = "%s"\n' \
 		${_CARGO_VENDOR} > ${WRKDIR}/.cargo/config.toml
-# build tailwind-oxide Rust NAPI module for freebsd-arm64
+# build tailwind-oxide Rust NAPI module for freebsd-${_NODE_ARCH}
 	(cd ${_TAILWIND_SRC} && \
 		${SETENV} CARGO_HOME=${WRKDIR}/.cargo CARGO_NET_OFFLINE=true \
 		cargo build --release -p tailwind-oxide && \
-		${CP} target/release/libtailwind_oxide.so crates/node/tailwindcss-oxide.freebsd-arm64.node)
-# build lightningcss Rust NAPI module for freebsd-arm64
+		${CP} target/release/libtailwind_oxide.so crates/node/tailwindcss-oxide.freebsd-${_NODE_ARCH}.node)
+# build lightningcss Rust NAPI module for freebsd-${_NODE_ARCH}
 	(cd ${_LCSS_SRC} && \
 		${SETENV} CARGO_HOME=${WRKDIR}/.cargo CARGO_NET_OFFLINE=true \
 		cargo build --release -p lightningcss_node)
@@ -114,34 +118,42 @@ do-install:
 	config.gypi watcher.target.mk
 	${RM} -rf ${STAGEDIR}${PREFIX}/lib/node_modules/@parcel/watcher/build/${file}
 .endfor
-.if ${ARCH} == aarch64
+.if ${ARCH} != amd64
 # drop x86 binaries in favour of our source-built ones
 	${RM} -rf ${_TW_MODULES}/@tailwindcss/oxide-freebsd-x64 \
 		${_TW_MODULES}/lightningcss-freebsd-x64 \
 		${_WATCHER_PKG}/node_modules/@parcel/watcher-freebsd-x64
-	${MKDIR} ${_TW_MODULES}/@tailwindcss/oxide-freebsd-arm64
-	${INSTALL_DATA} ${_TAILWIND_SRC}/crates/node/tailwindcss-oxide.freebsd-arm64.node \
-		${_TW_MODULES}/@tailwindcss/oxide-freebsd-arm64/
-	${PRINTF} '{"name":"@tailwindcss/oxide-freebsd-arm64","version":"%s","main":"tailwindcss-oxide.freebsd-arm64.node"}\n' \
-		${_TAILWIND_VER} > ${_TW_MODULES}/@tailwindcss/oxide-freebsd-arm64/package.json
-	${MKDIR} ${_TW_MODULES}/lightningcss-freebsd-arm64
+	${MKDIR} ${_TW_MODULES}/@tailwindcss/oxide-freebsd-${_NODE_ARCH}
+	${INSTALL_DATA} ${_TAILWIND_SRC}/crates/node/tailwindcss-oxide.freebsd-${_NODE_ARCH}.node \
+		${_TW_MODULES}/@tailwindcss/oxide-freebsd-${_NODE_ARCH}/
+	${PRINTF} '{"name":"@tailwindcss/oxide-freebsd-${_NODE_ARCH}","version":"%s","main":"tailwindcss-oxide.freebsd-${_NODE_ARCH}.node"}\n' \
+		${_TAILWIND_VER} > ${_TW_MODULES}/@tailwindcss/oxide-freebsd-${_NODE_ARCH}/package.json
+	${MKDIR} ${_TW_MODULES}/lightningcss-freebsd-${_NODE_ARCH}
 	${INSTALL_DATA} ${_LCSS_SRC}/target/release/liblightningcss_node.so \
-		${_TW_MODULES}/lightningcss-freebsd-arm64/lightningcss.freebsd-arm64.node
-	${PRINTF} '{"name":"lightningcss-freebsd-arm64","version":"%s","main":"lightningcss.freebsd-arm64.node"}\n' \
-		${_LCSS_VER} > ${_TW_MODULES}/lightningcss-freebsd-arm64/package.json
-	${MKDIR} ${_WATCHER_PKG}/node_modules/@parcel/watcher-freebsd-arm64
+		${_TW_MODULES}/lightningcss-freebsd-${_NODE_ARCH}/lightningcss.freebsd-${_NODE_ARCH}.node
+	${PRINTF} '{"name":"lightningcss-freebsd-${_NODE_ARCH}","version":"%s","main":"lightningcss.freebsd-${_NODE_ARCH}.node"}\n' \
+		${_LCSS_VER} > ${_TW_MODULES}/lightningcss-freebsd-${_NODE_ARCH}/package.json
+	${MKDIR} ${_WATCHER_PKG}/node_modules/@parcel/watcher-freebsd-${_NODE_ARCH}
 	${INSTALL_DATA} ${_WATCHER_PKG}/build/Release/watcher.node \
-		${_WATCHER_PKG}/node_modules/@parcel/watcher-freebsd-arm64/
-	${PRINTF} '{"name":"@parcel/watcher-freebsd-arm64","version":"%s","main":"watcher.node"}\n' \
-		${_WATCHER_VER} > ${_WATCHER_PKG}/node_modules/@parcel/watcher-freebsd-arm64/package.json
+		${_WATCHER_PKG}/node_modules/@parcel/watcher-freebsd-${_NODE_ARCH}/
+	${PRINTF} '{"name":"@parcel/watcher-freebsd-${_NODE_ARCH}","version":"%s","main":"watcher.node"}\n' \
+		${_WATCHER_VER} > ${_WATCHER_PKG}/node_modules/@parcel/watcher-freebsd-${_NODE_ARCH}/package.json
 # the x86 shims we replaced shipped a LICENSE, keep one alongside ours. oxide &
 # lightningcss come from the source trees we built, watcher from its own package
 	${INSTALL_DATA} ${_TAILWIND_SRC}/LICENSE \
-		${_TW_MODULES}/@tailwindcss/oxide-freebsd-arm64/
+		${_TW_MODULES}/@tailwindcss/oxide-freebsd-${_NODE_ARCH}/
 	${INSTALL_DATA} ${_LCSS_SRC}/LICENSE \
-		${_TW_MODULES}/lightningcss-freebsd-arm64/
+		${_TW_MODULES}/lightningcss-freebsd-${_NODE_ARCH}/
 	${INSTALL_DATA} ${_WATCHER_PKG}/LICENSE \
-		${_WATCHER_PKG}/node_modules/@parcel/watcher-freebsd-arm64/
+		${_WATCHER_PKG}/node_modules/@parcel/watcher-freebsd-${_NODE_ARCH}/
+# the napi-rs loader of oxide only probes x64 & arm64 on FreeBSD
+	@${REINPLACE_CMD} -e '/Unsupported architecture on FreeBSD/s|loadErrors\.push(.*)|try { return require(`@tailwindcss/oxide-freebsd-$${process.arch}`) } catch (e) { loadErrors.push(e) }|' \
+		${_TW_MODULES}/@tailwindcss/oxide/index.js
+	@${RM} ${_TW_MODULES}/@tailwindcss/oxide/index.js.bak
+	@if ! ${GREP} -q 'oxide-freebsd-$${process.arch}' ${_TW_MODULES}/@tailwindcss/oxide/index.js; then \
+		${ECHO_CMD} "===> oxide loader not patched; upstream layout changed"; \
+		exit 1; \
+	fi
 .endif
 # upstream JS plugin resolvers probe only .js/.json/.node/.ts
 # Phoenix & DaisyUI reference plugins by appending .mjs/.cjs to the resolver
