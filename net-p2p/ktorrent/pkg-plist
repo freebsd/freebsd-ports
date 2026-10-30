@@ -117,7 +117,7 @@ share/kxmlgui5/ktorrent/ktorrent_downloadorderui.rc
 share/kxmlgui5/ktorrent/ktorrent_magnetgeneratorui.rc
 share/kxmlgui5/ktorrent/ktorrent_mediaplayerui.rc
 %%WEBENGINE%%share/kxmlgui5/ktorrent/ktorrent_searchui.rc
-%%WORKSPACE%%share/kxmlgui5/ktorrent/ktorrent_shutdownui.rc
+share/kxmlgui5/ktorrent/ktorrent_shutdownui.rc
 %%WEBENGINE%%share/kxmlgui5/ktorrent/ktorrent_syndicationui.rc
 share/kxmlgui5/ktorrent/ktorrentui.rc
 share/kxmlgui5/ktorrent/kttorrentactivityui.rc
