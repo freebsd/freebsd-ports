@@ -97,6 +97,7 @@ lib/mysql/mysqlrouter/routing.so
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
+lib/mysql/plugin/authentication_webauthn.so
 lib/mysql/plugin/component_audit_api_message_emit.so
 lib/mysql/plugin/component_connection_control.so
 lib/mysql/plugin/component_example_component1.so

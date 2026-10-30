@@ -1,6 +1,5 @@
 PORTNAME?=		mysql
-PORTVERSION=		9.7.2
-PORTREVISION?=		3
+PORTVERSION=		9.7.4
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-9.7
 PKGNAMESUFFIX?=		97-server
@@ -43,6 +42,7 @@ BUILD_DEPENDS+=	curl>0:ftp/curl \
 LIB_DEPENDS+=	libfido2.so:security/libfido2
 .else
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
+		libfido2.so:security/libfido2 \
 		libicutu.so:devel/icu \
 		liblz4.so:archivers/liblz4
 .endif
