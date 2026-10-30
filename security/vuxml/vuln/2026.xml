@@ -1,3 +1,50 @@
+  <vuln vid="6dc20034-d4a7-11f1-9893-3c7c3fba4204">
+    <topic>Routinator -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>routinator</name>
+	  <range><lt>0.15.3</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Routinator Team reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/projects/routinator/security-advisories/">
+	  <ul>
+	    <li>CVE-2026-72752: Routinator runs out of memory when the JSON output is requested many times concurrently. This condition can be triggered maliciously by an attacker by opening a large number of connections to the HTTP server. Additionally Routinator runs into a stack overflow and exits when a payload item with too much metadata is discarded at once.</li>
+	    <li>CVE-2026-72753: When Routinator encounters an RRDP notification file with gaps in the delta entries, it is still accepted and parsed, potentially leading to missing data. If it encounters too many delta entries it may run out of memory.</li>
+	    <li>CVE-2026-72754: When Routinator encounters a CRL with many entries, it may hang or run out of memory. If Routinator encounters a CRL file with the wrong encoding, it may exit.</li>
+	    <li>CVE-2026-72755: Routinator stores a newly-retrieved TA certificate via HTTPS in cache before validation, potentially overwriting a known good TA certificate even if validation fails.</li>
+	    <li>CVE-2026-72756: Routinator exits when an rsync URI for a file obtained over RRDP contains a path that cannot be stored on disk, such as too long file names, and folder names that overlap with existing file names.</li>
+	    <li>CVE-2026-72757: Routinator runs out of open connections on the HTTP server when many connections are opened but never closed, leaving the HTTP server unavailable. This condition can be triggered maliciously by an attacker by opening a large number of connections to the HTTP server.</li>
+	    <li>CVE-2026-72758: When parsing an AS range in Routinator, if the maximum value of the range is smaller than the minimum value of the range, Routinator will never reach the maximum value and run out of memory.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-72752</cvename>
+      <cvename>CVE-2026-72753</cvename>
+      <cvename>CVE-2026-72754</cvename>
+      <cvename>CVE-2026-72755</cvename>
+      <cvename>CVE-2026-72756</cvename>
+      <cvename>CVE-2026-72757</cvename>
+      <cvename>CVE-2026-72758</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-72752.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-72753.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-72754.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-72755.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-72756.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-72757.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/routinator/CVE-2026-72758.txt</url>
+      <url>https://www.nlnetlabs.nl/projects/routinator/security-advisories/</url>
+    </references>
+    <dates>
+      <discovery>2026-10-26</discovery>
+      <entry>2026-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84cd82e1-d49f-11f1-bae2-3497f65b111b">
     <topic>sqlite3 -- multiple vulnerabilities</topic>
     <affects>
