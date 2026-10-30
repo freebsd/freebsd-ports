@@ -17,6 +17,7 @@ RUN_DEPENDS=	/boot/modules/biosfont.ko:sysutils/biosfont
 WRKSRC_SUBDIR=	biosfont-demos
 
 INSTALL_TARGET=	install-strip
-PLIST_FILES=	bin/show_char bin/showdati
+PLIST_FILES=	bin/show_char \
+		bin/showdati
 
 .include <bsd.port.mk>
