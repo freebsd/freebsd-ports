@@ -1003,7 +1003,6 @@
 %%DATADIR%%/netbox/models/deletion.py
 %%DATADIR%%/netbox/models/features.py
 %%DATADIR%%/netbox/models/mixins.py
-%%DATADIR%%/netbox/monkey.py
 %%DATADIR%%/netbox/navigation/__init__.py
 %%DATADIR%%/netbox/navigation/menu.py
 %%DATADIR%%/netbox/object_actions.py
