@@ -15,7 +15,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		Carla>0:audio/carla \
 		help2man:misc/help2man \
 		${LOCALBASE}/lib/libbacktrace.a:devel/libbacktrace \
-		sassc:textproc/sassc
+		sassc:textproc/sassc \
+		xdg-open:devel/xdg-utils
 LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libavcodec.so:multimedia/ffmpeg \
 		libbacktrace.so:devel/libbacktrace \
