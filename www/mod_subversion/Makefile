@@ -10,8 +10,8 @@ WWW=		https://subversion.apache.org/
 
 USES=		apache
 
-PORTREVISION_LATEST=	1
-PORTREVISION_LTS=		1
+PORTREVISION_LATEST=	2
+PORTREVISION_LTS=		2
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 
@@ -30,5 +30,8 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 	${INSTALL_DATA} ${WRKDIR}/220_subversion.conf.sample \
 		${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_dav_svn.so \
+		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so \
+		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
 
 .include <bsd.port.post.mk>

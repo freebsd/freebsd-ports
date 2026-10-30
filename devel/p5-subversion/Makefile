@@ -7,8 +7,8 @@ WWW=		https://subversion.apache.org/
 USES=		perl5
 USE_PERL5=	build run
 
-PORTREVISION_LATEST=	0
-PORTREVISION_LTS=		0
+PORTREVISION_LATEST=	1
+PORTREVISION_LTS=		1
 
 SVN_BUILD_BINDINGS=	yes
 
@@ -32,6 +32,7 @@ pre-install:
 	${REINPLACE_CMD} '/SWIG_PL_DIR/s, install$$, all pure_install,g' ${WRKSRC}/Makefile
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsvn_swig_perl-1.so.0.0.0
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/SVN/_Client/_Client.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/SVN/_Core/_Core.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/SVN/_Delta/_Delta.so
@@ -39,5 +40,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/SVN/_Ra/_Ra.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/SVN/_Repos/_Repos.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/SVN/_Wc/_Wc.so
+	${RM} ${STAGEDIR}${PREFIX}/lib/libsvn_swig_perl-1.a
 
 .include <bsd.port.post.mk>

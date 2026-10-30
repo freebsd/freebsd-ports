@@ -7,8 +7,8 @@ WWW=		https://subversion.apache.org/
 USES=		compiler java
 JAVA_OS=	native
 
-PORTREVISION_LATEST=	3
-PORTREVISION_LTS=		3
+PORTREVISION_LATEST=	4
+PORTREVISION_LTS=		4
 
 SVN_BUILD_BINDINGS=	yes
 
@@ -40,5 +40,9 @@ post-configure:
 
 pre-build:
 	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsvnjavahl-1.so.0.0.0
+	${RM} ${STAGEDIR}${PREFIX}/lib/libsvnjavahl-1.a
 
 .include <bsd.port.post.mk>

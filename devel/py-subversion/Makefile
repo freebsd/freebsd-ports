@@ -12,8 +12,8 @@ USE_PYTHON=	flavors py3kplist
 # There is bug in python bindings Makefile
 MAKE_JOBS_UNSAFE=yes
 
-PORTREVISION_LATEST=	1
-PORTREVISION_LTS=		1
+PORTREVISION_LATEST=	2
+PORTREVISION_LTS=		2
 
 SVN_BUILD_BINDINGS=	yes
 
@@ -32,5 +32,10 @@ CONFIGURE_ARGS+=	--with-swig-python=${PYTHON_CMD} \
 ALL_TARGET=	swig-py
 TEST_TARGET=	check-swig-py
 INSTALL_TARGET=	install-swig-py
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsvn_swig_py-1.so.0.0.0
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/libsvn/_*.so
+	${RM} ${STAGEDIR}${PREFIX}/lib/libsvn_swig_py-1.a
 
 .include <bsd.port.post.mk>
