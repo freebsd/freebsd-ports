@@ -1,6 +1,6 @@
 PORTNAME=	opencircuitx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -14,7 +14,9 @@ LIB_DEPENDS=	libwx_baseu-3.2.so:x11-toolkits/wxgtk32 \
 		libwx_baseu_net-3.2.so:x11-toolkits/wxgtk32 \
 		libwx_gtk3u_aui-3.2.so:x11-toolkits/wxgtk32 \
 		libwx_gtk3u_core-3.2.so:x11-toolkits/wxgtk32 \
-		libwx_gtk3u_stc-3.2.so:x11-toolkits/wxgtk32
+		libwx_gtk3u_stc-3.2.so:x11-toolkits/wxgtk32 \
+		libcurl.so:ftp/curl
+
 RUN_DEPENDS=	ghdl>0:cad/ghdl \
 		iverilog>0:cad/iverilog \
 		nextpnr>0:devel/nextpnr \
@@ -26,7 +28,6 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	openlab-x
 GH_PROJECT=	OpenCircuitX
-GH_TAGNAME=	cbfb1f9
 
 PLIST_FILES=	bin/OpenCircuitX \
 		"@dir bin/plugins" \
