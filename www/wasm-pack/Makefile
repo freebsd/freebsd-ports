@@ -1,7 +1,7 @@
 PORTNAME=	wasm-pack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
-PORTREVISION=	4
+DISTVERSION=	0.15.1
+PORTREVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -77,7 +77,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		dialoguer-0.12.0 \
 		difflib-0.4.0 \
 		digest-0.10.7 \
+		dirs-6.0.0 \
 		dirs-next-2.0.0 \
+		dirs-sys-0.5.0 \
 		dirs-sys-next-0.1.2 \
 		displaydoc-0.2.5 \
 		encode_unicode-1.0.0 \
@@ -150,6 +152,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		object-0.37.3 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
+		option-ext-0.2.0 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		path-clean-1.0.1 \
@@ -169,6 +172,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		r-efi-6.0.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.4.6 \
+		redox_users-0.5.2 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
@@ -176,9 +180,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rustc-demangle-0.1.27 \
 		rustix-0.38.44 \
 		rustix-1.1.4 \
-		rustls-0.23.40 \
+		rustls-0.23.46 \
 		rustls-pki-types-1.14.1 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
 		same-file-1.0.6 \
 		scc-2.4.0 \
@@ -208,7 +212,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		syn-2.0.117 \
 		synstructure-0.13.2 \
 		sysinfo-0.38.4 \
-		tar-0.4.45 \
+		tar-0.4.46 \
 		tempfile-3.27.0 \
 		termtree-0.5.1 \
 		thiserror-1.0.69 \
