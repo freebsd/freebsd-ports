@@ -1,10 +1,12 @@
 PORTNAME=	mysql-shell
 DISTVERSION=	9.7.1
+PORTREVISION=	1
 CATEGORIES=	databases
+MYSQL_DISTVERSION=	9.7.4
 MASTER_SITES=	https://downloads.mysql.com/archives/get/p/43/file/:shell \
-		https://downloads.mysql.com/archives/get/p/23/file/:server
+		MYSQL/MySQL-9.7:server
 DISTFILES=	mysql-shell-${DISTVERSION}-src.tar.gz:shell \
-		mysql-${DISTVERSION}.tar.gz:server
+		mysql-${MYSQL_DISTVERSION}.tar.gz:server
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Advanced client and code editor for MySQL
@@ -44,19 +46,21 @@ SHEBANG_FILES=	${WRKSRC}/plugins/external/migration_plugin/scripts/build.sh \
 
 CMAKE_ARGS=	-DBUNDLED_ANTLR_DIR=${LOCALBASE} \
 		-DHAVE_PYTHON=1 \
-		-DMYSQL_BUILD_DIR=${WRKDIR}/mysql-${DISTVERSION}/build \
-		-DMYSQL_SOURCE_DIR=${WRKDIR}/mysql-${DISTVERSION}
+		-DMYSQL_BUILD_DIR=${WRKDIR}/mysql-${MYSQL_DISTVERSION}/build \
+		-DMYSQL_SOURCE_DIR=${WRKDIR}/mysql-${MYSQL_DISTVERSION}
 CMAKE_BUILD_TYPE=	Release
 
 WRKSRC=		${WRKDIR}/mysql-shell-${DISTVERSION}-src
 
 post-patch:
-	@cd ${WRKDIR}/mysql-${DISTVERSION} && ${PATCH} -s < ${FILESDIR}/mysql-server.patch
+	@cd ${WRKDIR}/mysql-${MYSQL_DISTVERSION} && ${PATCH} -s < ${FILESDIR}/mysql-server.patch
 
 pre-configure:
-	@${MKDIR} ${WRKDIR}/mysql-${DISTVERSION}/build
-	@cd ${WRKDIR}/mysql-${DISTVERSION}/build && \
+	@${MKDIR} ${WRKDIR}/mysql-${MYSQL_DISTVERSION}/build
+	@cd ${WRKDIR}/mysql-${MYSQL_DISTVERSION}/build && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} .. \
+			-DWITH_AUTHENTICATION_WEBAUTHN=OFF \
+			-DWITH_FIDO=none \
 			-DWITH_SSL=system \
 			-DWITH_UNIT_TESTS=OFF \
 			-DCMAKE_INSTALL_PREFIX=${WRKDIR}/mysql && \
