@@ -1,3 +1,36 @@
+  <vuln vid="4488c0db-d45b-11f1-bae2-3497f65b111b">
+    <topic>metasploit -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>metasploit</name>
+	<range><lt>6.5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rapid7 published security advisories for issues fixed in releases
+	  6.5.2 through 6.5.7.  The credential endpoint of the msf-ws REST
+	  API is reachable without authentication, authentication in the
+	  JSON-RPC service is skipped when the database health check fails,
+	  a post module writes files outside the loot directory through a
+	  crafted path, and requests follow HTTP redirects and FTP PASV
+	  responses to arbitrary hosts.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-16895</cvename>
+      <cvename>CVE-2026-87689</cvename>
+      <cvename>CVE-2026-87690</cvename>
+      <cvename>CVE-2026-109681</cvename>
+      <cvename>CVE-2026-109682</cvename>
+      <url>https://github.com/rapid7/metasploit-framework/releases/tag/6.5.7</url>
+    </references>
+    <dates>
+      <discovery>2026-08-27</discovery>
+      <entry>2026-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4d4c2b6e-d433-11f1-a215-a0369f7f7be0">
     <topic>OpenResty -- multiple vulnerabilities in the bundled nginx core</topic>
     <affects>
