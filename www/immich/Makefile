@@ -1,9 +1,10 @@
 PORTNAME=	immich
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.5
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${DISTVERSION}/:buildkit
-DISTFILES=	immich-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit
+MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/v${BUILDKIT_VERSION}/:buildkit
+DISTFILES=	immich-freebsd-buildkit-${BUILDKIT_VERSION}${EXTRACT_SUFX}:buildkit
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	High performance self-hosted photo and video management solution
@@ -44,7 +45,8 @@ USE_RC_SUBR=	immich_server
 #   cd <kit> && npm pack pnpm@<version>
 # plus the geodata files from geonames.org and natural-earth-vector, and
 # the immich-plugin-core payload from the upstream container image.
-BUILDKIT=	${WRKDIR}/immich-freebsd-buildkit-${DISTVERSION}
+BUILDKIT=	${WRKDIR}/immich-freebsd-buildkit-${BUILDKIT_VERSION}
+BUILDKIT_VERSION=	${DISTVERSION}_1
 PNPM=		${WRKDIR}/pnpm-prefix/bin/pnpm
 PNPM_VERSION=	11.27.1
 PLUGIN_SDK=	@immich+plugin-sdk@file+packages+plugin-sdk
