@@ -1,10 +1,7 @@
 PORTNAME=	ot-recorder
 PORTVERSION=	1.0.3
+PORTREVISION=	2
 CATEGORIES=	www
-PORTREVISION=	1
-CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
-LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Store and access data published by OwnTracks apps
@@ -13,21 +10,19 @@ WWW=		https://github.com/owntracks/recorder
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Package 'lmdb' not found
-
 BUILD_DEPENDS=	curl>0:ftp/curl \
 		libconfig>0:devel/libconfig \
-		lmdb0>0:databases/lmdb0 \
 		mosquitto>0:net/mosquitto \
 		pkgconf>0:devel/pkgconf
-
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libcurl.so:ftp/curl \
-		liblmdb0.so:databases/lmdb0 \
 		libmosquitto.so:net/mosquitto \
 		libuuid.so:misc/libuuid
 
 USES=		gmake
+
+OPTIONS_DEFINE=	LMDB0
+LMDB0_DESC=	Use LMDB 0.9 library
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	owntracks
@@ -38,10 +33,19 @@ GROUPS=		ot-recorder
 
 SUB_FILES=	ot-recorder
 
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MLMDB0}
+LIB_DEPENDS+=	liblmdb.so.0:databases/lmdb0
+.else
+LIB_DEPENDS+=	liblmdb.so.1:databases/lmdb
+.endif
+
 post-patch:
 	${CP} ${WRKSRC}/config.mk.in ${WRKSRC}/config.mk
-
-.include <bsd.port.pre.mk>
+.if ${PORT_OPTIONS:MLMDB0}
+	${REINPLACE_CMD} -e 's|lmdb`|lmdb0`|' ${WRKSRC}/config.mk
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ocat        ${STAGEDIR}${PREFIX}/bin
