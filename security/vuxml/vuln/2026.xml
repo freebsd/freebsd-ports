@@ -1,3 +1,54 @@
+  <vuln vid="84cd82e1-d49f-11f1-bae2-3497f65b111b">
+    <topic>sqlite3 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>sqlite3</name>
+	<range><lt>3.54.0,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VulnCheck reports:</p>
+	<blockquote cite="https://www.vulncheck.com/advisories/sqlite-before-3.54.0-fts5-heap-buffer-overflow-via-fts5mergerowidlists">
+	  <p>Ten vulnerabilities fixed in SQLite 3.54.0 were published on
+	    2026-10-30. Four of them corrupt the heap: buffer overflows in
+	    the FTS5 functions fts5MergeRowidLists() and
+	    fts5DoSecureDelete() and in the session extension
+	    sessionUpdateFind(), and a use-after-free in the R-Tree function
+	    nodeWrite(). A fifth, a use-after-free in the FTS3 function
+	    fts3BestSnippet(), is reached through snippet().</p>
+	  <p>The remaining five crash the process or leak data: unbounded
+	    recursion through a chain of common table expressions, through a
+	    chain of COLLATE operators and through countOfViewOptimization()
+	    in a VALUES clause, an information leak on a page size mismatch
+	    in the write-ahead log, and an authorizer bypass with RIGHT or
+	    FULL JOIN USING.</p>
+	  <p>An attacker has to supply a database file or SQL text, so the
+	    FTS5 and FTS3 issues apply wherever those options are built in;
+	    both are on by default in databases/sqlite3.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-119371</cvename>
+      <cvename>CVE-2026-119372</cvename>
+      <cvename>CVE-2026-119373</cvename>
+      <cvename>CVE-2026-119374</cvename>
+      <cvename>CVE-2026-119375</cvename>
+      <cvename>CVE-2026-119376</cvename>
+      <cvename>CVE-2026-119377</cvename>
+      <cvename>CVE-2026-119378</cvename>
+      <cvename>CVE-2026-119379</cvename>
+      <cvename>CVE-2026-119591</cvename>
+      <url>https://www.vulncheck.com/advisories/sqlite-before-3.54.0-fts5-heap-buffer-overflow-via-fts5mergerowidlists</url>
+      <url>https://www.sqlite.org/releaselog/3_54_0.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-30</discovery>
+      <entry>2026-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e6b90d23-d49d-11f1-bae2-3497f65b111b">
     <topic>phpMyAdmin -- Multiple vulnerabilities, no fix available</topic>
     <affects>
