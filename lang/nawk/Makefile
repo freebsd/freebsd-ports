@@ -1,23 +1,24 @@
 PORTNAME=	nawk
-PORTVERSION=	20121220
-PORTREVISION=	3
+DISTVERSION=	20260426
 CATEGORIES=	lang
-MASTER_SITES=	https://BSDforge.com/projects/source/lang/nawk/
-DISTNAME=	awk
-DIST_SUBDIR=	nawk-${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	Brian Kernighan's pattern scanning and processing language
 WWW=		https://github.com/onetrueawk/awk
 
-NO_WRKSUBDIR=	yes
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		bison gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	onetrueawk
+GH_PROJECT=	awk
+
 MAKEFILE=	makefile
 ALL_TARGET=	a.out
+TEST_TARGET=	test check
 CFLAGS+=	-DHAS_ISBLANK
 PLIST_FILES=	bin/nawk share/man/man1/nawk.1.gz
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|awk|nawk|g' ${WRKSRC}/awk.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/a.out ${STAGEDIR}${PREFIX}/bin/nawk
