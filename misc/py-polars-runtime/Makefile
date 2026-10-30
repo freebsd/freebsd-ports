@@ -1,6 +1,6 @@
 PORTNAME=	polars-runtime
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,11 +29,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pola-rs
 GH_PROJECT=	polars
 
-# the below RUSTFLAGS builds the polars package that fails in the run-time with the TLS error about insufficient TLS memory
-# this RUSTFLAGS is replaced with ugly patches in files/ that allow to build a working package
-# the reason is unclear, needs to be investigated
-RUSTFLAGS=	--cfg allocator=\"default\" # other choices are "default" and "jemalloc" (jemalloc is broken due to the conflict with system allocator)
-MAKE_ENV+=	RUSTFLAGS="${RUSTFLAGS}" # pass RUSTFLAGS to rustc via python's "build" module and maturin
+# jemalloc is disabled on FreeBSD via patches in files/. The upstream default
+# for the polars-ooc fast_alloc feature is tikv-jemallocator, but that git
+# source does not ship the jemalloc submodule, so tikv-jemalloc-sys fails to
+# build. Using jemalloc as the global allocator also causes runtime TLS errors
+# on FreeBSD, so the patches fall back to the system allocator on FreeBSD.
 
 CARGO_BUILDDEP=	no
 CARGO_CRATES=	adler2-2.0.1 \
@@ -49,11 +49,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ar_archive_writer-0.5.3 \
 		arboard-3.6.1 \
 		arc-swap-1.9.2 \
-		argminmax-0.6.3 \
+		argminmax-0.7.0 \
 		array-init-cursor-0.2.1 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.8 \
 		async-channel-2.5.0 \
+		async-ffi-0.5.1 \
 		async-stream-0.3.6 \
 		async-stream-impl-0.3.6 \
 		async-trait-0.1.92 \
@@ -120,7 +121,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		chacha20-0.10.2 \
 		chrono-0.4.45 \
 		chrono-tz-0.10.4 \
-		clipboard-win-5.4.1 \
+		clipboard-win-5.4.3 \
 		cmake-0.1.58 \
 		cmov-0.5.4 \
 		combine-4.6.7 \
@@ -214,7 +215,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hex-0.4.3 \
 		hmac-0.12.1 \
 		hmac-0.13.0 \
-		home-0.5.12 \
 		http-0.2.12 \
 		http-1.5.0 \
 		http-body-0.4.6 \
@@ -377,12 +377,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc_version-0.4.1 \
 		rustflags-0.1.7 \
 		rustix-1.1.4 \
-		rustls-0.23.45 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.15.1 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.14 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.23 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
@@ -414,7 +414,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		signal-hook-registry-1.4.8 \
 		signature-2.2.0 \
 		simd-adler32-0.3.10 \
-		simd-json-0.17.3 \
+		simd-json-0.18.1 \
 		simd_cesu8-1.2.0 \
 		simdutf8-0.1.5 \
 		siphasher-1.0.3 \
@@ -456,7 +456,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		thiserror-2.0.20 \
 		thiserror-impl-2.0.20 \
 		thread_local-1.1.10 \
-		tikv-jemallocator-0.7.0 \
 		time-0.3.55 \
 		time-core-0.1.9 \
 		time-macros-0.2.32 \
@@ -513,8 +512,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasm-streams-0.5.0 \
 		web-sys-0.3.104 \
 		web-time-1.1.0 \
-		webpki-root-certs-1.0.9 \
-		webpki-roots-1.0.9 \
+		webpki-root-certs-1.0.10 \
+		webpki-roots-1.0.10 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
@@ -576,7 +575,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
 		hashbrown@git+https://github.com/pola-rs/hashbrown?rev=d76a6f81abd8f388676aff15068236a8d21c7e1a\#d76a6f81abd8f388676aff15068236a8d21c7e1a \
-		tikv-jemalloc-sys@git+https://github.com/pola-rs/jemallocator?rev=0d683dfb157097e2075d5e0eaf25f71f514a7552\#0d683dfb157097e2075d5e0eaf25f71f514a7552 \
 		color-backtrace@git+https://github.com/orlp/color-backtrace?rev=20f5eea183563bb4cfac9a4d65901d4a1002cde2\#20f5eea183563bb4cfac9a4d65901d4a1002cde2
 CARGO_TARGET_DIR=	${WRKSRC}/target
 CARGO_BUILD=	no

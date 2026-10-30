@@ -1,15 +1,11 @@
--- Update from 1.40.1 to 1.41.2:
---   remove git source for color-backtrace
---   remove git source for object_store (now apache/arrow-rs-object-store)
---   remove tikv-jemallocator dependency (use default allocator)
---
--- The FreeBSD ports cargo infrastructure uses vendored crates,
--- so git sources must be removed. The default allocator is used
--- instead of jemalloc to avoid runtime TLS errors.
+-- Remove tikv-jemalloc-sys and tikv-jemallocator from the lock file.
+-- The port builds without jemalloc on FreeBSD because tikv-jemalloc-sys
+-- from the pola-rs/jemallocator git source fails to build (missing jemalloc
+-- submodule) and jemalloc causes runtime TLS errors on FreeBSD.
 
---- Cargo.lock.orig	2026-10-06 06:15:22 UTC
+--- Cargo.lock.orig	2026-10-25 14:18:24 UTC
 +++ Cargo.lock
-@@ -1084,7 +1084,6 @@ version = "0.7.4"
+@@ -1091,7 +1091,6 @@ version = "0.7.4"
  [[package]]
  name = "color-backtrace"
  version = "0.7.4"
@@ -17,18 +13,36 @@
  dependencies = [
   "btparse",
   "termcolor",
-@@ -3530,7 +3529,6 @@ dependencies = [
+@@ -1945,7 +1944,6 @@ version = "0.17.1"
+ [[package]]
+ name = "hashbrown"
+ version = "0.17.1"
+-source = "git+https://github.com/pola-rs/hashbrown?rev=d76a6f81abd8f388676aff15068236a8d21c7e1a#d76a6f81abd8f388676aff15068236a8d21c7e1a"
+ dependencies = [
+  "allocator-api2",
+  "equivalent",
+@@ -3534,8 +3532,6 @@ dependencies = [
   "rand 0.10.2",
   "rand_distr",
   "thread_local",
+- "tikv-jemalloc-sys",
 - "tikv-jemallocator",
   "tokio",
   "uuid",
  ]
-@@ -5341,16 +5339,6 @@ dependencies = [
+@@ -5345,25 +5341,6 @@ dependencies = [
+ checksum = "1ad99c4c6d32803332c548b1af0540b357b3f5fc0be8f6c6bfe8b2e6ae784070"
  dependencies = [
-  "cc",
-  "libc",
+  "cfg-if",
+-]
+-
+-[[package]]
+-name = "tikv-jemalloc-sys"
+-version = "0.7.1+5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8"
+-source = "git+https://github.com/pola-rs/jemallocator?rev=0d683dfb157097e2075d5e0eaf25f71f514a7552#0d683dfb157097e2075d5e0eaf25f71f514a7552"
+-dependencies = [
+- "cc",
+- "libc",
 -]
 -
 -[[package]]

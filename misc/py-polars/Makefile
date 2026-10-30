@@ -1,7 +1,6 @@
 PORTNAME=	polars
 DISTVERSIONPREFIX=	py-
-DISTVERSION=	2.0.0
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	misc
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -56,6 +55,6 @@ PORTSCOUT=	limit:^py-
 test-quick: stage
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/example.py
 
-# tests as of 2.0.0: 270 failed, 40160 passed, 67 skipped, 13 xfailed in 892.77s (0:14:52) # see https://github.com/pola-rs/polars/issues/29907 about failing tests
+# tests as of 2.1.0: 354 failed, 43335 passed, 96 skipped, 10 xfailed in 674.44s (0:11:14) # see https://github.com/pola-rs/polars/issues/29907 about failing tests
 
 .include <bsd.port.mk>

@@ -1,6 +1,10 @@
---- crates/polars-ooc/src/global_alloc.rs.orig	2026-10-06 06:15:22 UTC
+-- Use the system allocator on FreeBSD instead of jemalloc.
+-- This avoids both the broken tikv-jemalloc-sys build and runtime TLS
+-- errors that occur when jemalloc is used as the global allocator.
+
+--- crates/polars-ooc/src/global_alloc.rs.orig	2026-10-25 14:18:24 UTC
 +++ crates/polars-ooc/src/global_alloc.rs
-@@ -66,6 +66,7 @@ fn oomkill() -> ! {
+@@ -72,6 +72,7 @@ fn oomkill() -> ! {
      feature = "fast_alloc",
      target_family = "unix",
      not(target_os = "emscripten"),
@@ -8,7 +12,7 @@
  ))]
  static UNDERLYING_ALLOC: tikv_jemallocator::Jemalloc = tikv_jemallocator::Jemalloc;
  
-@@ -75,7 +76,7 @@ static UNDERLYING_ALLOC: mimalloc::MiMalloc = mimalloc
+@@ -81,7 +82,7 @@ static UNDERLYING_ALLOC: mimalloc::MiMalloc = mimalloc
  ))]
  static UNDERLYING_ALLOC: mimalloc::MiMalloc = mimalloc::MiMalloc;
  
