@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	michaelo@apache.org
 COMMENT=	Apache Subversion is a full-featured version control system

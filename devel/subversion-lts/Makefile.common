@@ -22,7 +22,8 @@ LIB_DEPENDS+=		libapr-1.so:devel/apr1 \
 			libutf8proc.so:textproc/utf8proc \
 			liblz4.so:archivers/liblz4
 
-CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat
+CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat \
+			--without-apr_memcache
 
 # ===============================================================
 OPTIONS_SUB=			yes
