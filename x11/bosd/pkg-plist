@@ -77,6 +77,7 @@ share/man/man3/bosd.3.gz
 %%TESTS%%%%DATADIR%%/tests/icon_10_color.sh
 %%TESTS%%%%DATADIR%%/tests/icon_11_face.sh
 %%TESTS%%%%DATADIR%%/tests/lib.sh
+%%TESTS%%%%DATADIR%%/tests/screen_01.sh
 %%TESTS%%%%DATADIR%%/tests/stext_01.sh
 %%TESTS%%%%DATADIR%%/tests/stext_02_alpha.sh
 %%TESTS%%%%DATADIR%%/tests/stext_03_no_outline.sh
