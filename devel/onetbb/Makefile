@@ -1,7 +1,11 @@
 PORTNAME=	onetbb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2023.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+# https://github.com/uxlfoundation/oneTBB/pull/2194 (not in 2023.2.0)
+PATCHFILES=	2deef980fcae7c141f11ba8fd6cefd262fcb01d0.patch:-p1
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Library that provides thread building blocks
