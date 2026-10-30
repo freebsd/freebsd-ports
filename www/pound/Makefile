@@ -1,5 +1,5 @@
 PORTNAME=	pound
-PORTVERSION=	4.23
+PORTVERSION=	4.24
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/graygnuorg/pound/releases/download/v${PORTVERSION}/
 
@@ -11,7 +11,8 @@ WWW=		https://github.com/graygnuorg/pound \
 LICENSE=	GPLv3+
 
 TEST_DEPENDS=	p5-IO-FDPass>=0:devel/p5-IO-FDPass \
-		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
+		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
+		p5-JSON>=0:converters/p5-JSON
 
 USES=		cpe gmake ssl
 CPE_VENDOR=	apsis
