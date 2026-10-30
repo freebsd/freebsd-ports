@@ -1,6 +1,15 @@
 --- mysqlshdk/libs/utils/uuid_gen.cc.orig	2026-01-26 17:13:17 UTC
 +++ mysqlshdk/libs/utils/uuid_gen.cc
-@@ -168,7 +168,7 @@ my_bool my_gethwaddr(unsigned char *to) {
+@@ -36,7 +36,7 @@
+ #include <windows.h>
+ #include <algorithm>
+ // clang-format on
+-#elif __APPLE__
++#else
+ #include <pthread.h>
+ #endif
+ 
+@@ -170,7 +170,7 @@
    char zero_array[ETHER_ADDR_LEN] = {0};
  
    if (sysctl(mib, 6, NULL, &len, NULL, 0) == -1) goto err;
