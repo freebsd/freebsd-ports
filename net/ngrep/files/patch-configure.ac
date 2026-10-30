@@ -1,6 +1,6 @@
---- configure.ac.orig	2025-11-07 06:35:47 UTC
+--- configure.ac.orig	2026-02-08 03:34:00 UTC
 +++ configure.ac
-@@ -138,7 +138,37 @@ AS_IF([test $use_pcap_restart = yes], [
+@@ -138,6 +138,36 @@ AS_IF([test $use_pcap_restart = yes], [
      USE_PCAP_RESTART="0"
  ])
  
@@ -12,7 +12,7 @@
 +[ 
 +  use_capsicum="no"
 +])  
- 
++
 +#
 +# Check whether various functions are available.  If any are, set
 +# ac_lbl_capsicum_function_seen to yes; if any are not, set
@@ -34,28 +34,27 @@
 +else
 +	AC_MSG_RESULT(no)
 +fi
-+
+ 
  dnl
  dnl Configure the regular expression library.
- dnl
-@@ -553,6 +583,7 @@ AC_DEFINE_UNQUOTED(USE_VLAN_HACK,             $USE_VLA
- AC_DEFINE_UNQUOTED(USE_IPv6,                  $USE_IPv6,                  [whether to use IPv6 (default off)])
+@@ -572,6 +602,7 @@ AC_DEFINE_UNQUOTED(USE_IPv6,
  AC_DEFINE_UNQUOTED(USE_TCPKILL,               $USE_TCPKILL,               [whether to enable tcpkill functionality (default off)])
  AC_DEFINE_UNQUOTED(USE_VLAN_HACK,             $USE_VLAN_HACK,             [whether to automatically include VLAN frames (default on)])
+ AC_DEFINE_UNQUOTED(USE_CONTAINER_RESOLUTION,  $USE_CONTAINER_RESOLUTION,  [whether to enable container name resolution (default off)])
 +AC_DEFINE_UNQUOTED(USE_CAPSICUM,              $USE_CAPSICUM,              [whether to use capsicum])
  
  AC_DEFINE_UNQUOTED(USE_DROPPRIVS,             $USE_DROPPRIVS,             [whether to use privileges dropping (default yes)])
  AC_DEFINE_UNQUOTED(DROPPRIVS_USER,           "$DROPPRIVS_USER",           [pseudo-user for running ngrep (default "nobody")])
-@@ -613,6 +644,12 @@ AS_IF([test "$USE_VLAN_HACK" = "1"], [
-     AC_MSG_RESULT(CONFIG: automatically including VLAN frames)
- ], [
+@@ -634,6 +665,12 @@ AS_IF([test "$USE_VLAN_HACK" = "1"], [
      AC_MSG_RESULT(CONFIG: NOT automatically including VLAN frames)
-+])
-+
+ ])
+ 
 +AS_IF([test "$USE_CAPSICUM" = "1"], [
 +    AC_MSG_RESULT(CONFIG: capsicum enabled)
 +], [
 +    AC_MSG_RESULT(CONFIG: capsicum disabled)
- ])
- 
- dnl
++])
++
+ AS_IF([test "$USE_CONTAINER_RESOLUTION" = "1"], [
+     AC_MSG_RESULT(CONFIG: container name resolution enabled)
+ ], [
