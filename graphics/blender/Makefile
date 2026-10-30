@@ -1,6 +1,5 @@
 PORTNAME=	blender
-DISTVERSION=	5.0.1
-PORTREVISION=	3
+DISTVERSION=	5.2.2
 PORTEPOCH=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
@@ -17,18 +16,27 @@ LICENSE_FILE=	${WRKSRC}/doc/license/GPL3-license.txt
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	static_assert(sizeof(unsigned long long) == sizeof(struct hipArray*))
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libepoxy.so:graphics/libepoxy \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>2.3:math/py-numpy@${PY_FLAVOR}
+LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
+		libexpat.so:textproc/expat2 \
+		libfreetype.so:print/freetype2 \
+		libImath.so:math/Imath \
+		libOpenColorIO.so:graphics/opencolorio \
+		libOpenEXR.so:graphics/openexr \
 		libOpenImageIO.so:graphics/openimageio \
-		libpng.so:graphics/png \
+		libpng16.so:graphics/png \
+		libpystring.so:devel/pystring \
 		libsamplerate.so:audio/libsamplerate \
 		libtiff.so:graphics/tiff \
+		libyaml-cpp.so:devel/yaml-cpp \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>2.3:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cattrs>0:devel/py-cattrs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		cmake:noninja compiler:c++17-lang cpe eigen:3 jpeg llvm:build,run \
-		pkgconfig python shebangfix tar:xz xorg
+USES=		cmake:noninja compiler:c++20-lang cpe eigen:3 jpeg llvm:build,run \
+		minizip pkgconfig python:3.13+ shebangfix tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 
 SHEBANG_FILES=	scripts/modules/blend_render_info.py
@@ -36,17 +44,19 @@ SHEBANG_FILES=	scripts/modules/blend_render_info.py
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD:INTEGER=17 \
 		-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
 		-DCMAKE_POLICY_DEFAULT_CMP0167=NEW \
-		-DPYTHON_VERSION=${PYTHON_VER}
+		-DPYTHON_VERSION=${PYTHON_VER} \
+		-DPYTHON_NUMPY_PATH=${PYTHON_SITELIBDIR} \
+		-DPYTHON_NUMPY_INCLUDE_DIRS:STRING="${PYTHON_SITELIBDIR}/numpy/_core/include"
 .if defined(WITH_DEBUG)
 CMAKE_ARGS+=	-DWITH_GHOST_DEBUG:BOOL=ON
 .endif
-CMAKE_ON=	WITH_AUDASPACE WITH_BOOST WITH_CLANG WITH_GHOST_X11 WITH_GHOST_XDND \
+CMAKE_ON=	WITH_AUDASPACE WITH_CLANG WITH_GHOST_X11 WITH_GHOST_XDND \
 		WITH_HYDRA WITH_IO_PLY WITH_IO_STL WITH_IO_WAVEFRONT_OBJ \
-		WITH_LLVM WITH_OPENGL_BACKEND WITH_PYTHON WITH_SYSTEM_EIGEN3 \
+		WITH_LLVM WITH_OPENGL_BACKEND WITH_PYTHON \
 		WITH_SYSTEM_FREETYPE WITH_X11_XINPUT WITH_X11_XFIXES
 CMAKE_OFF=	WITH_GHOST_SDL WITH_INSTALL_PORTABLE WITH_LIBS_PRECOMPILED \
-		LLVM_STATIC WITH_MEM_JEMALLOC WITH_MEM_VALGRIND \
-		WITH_NANOVDB WITH_PYTHON_INSTALL WITH_PYTHON_INSTALL_NUMPY
+		LLVM_STATIC WITH_MEM_VALGRIND WITH_NANOVDB \
+		WITH_PYTHON_INSTALL WITH_PYTHON_INSTALL_NUMPY
 
 CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_gcc=	-Wno-float-conversion
@@ -64,12 +74,14 @@ ALEMBIC_IMPLIES=		OPENEXR
 ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic
 BULLET_CMAKE_BOOL=		WITH_BULLET
 CAMERATRACK_CMAKE_BOOL=		WITH_LIBMV WITH_SYSTEM_GLOG
-CAMERATRACK_LIB_DEPENDS=	libglog.so:devel/glog
+CAMERATRACK_LIB_DEPENDS=	libceres.so:math/ceres-solver \
+				libglog.so:devel/glog
 CINEON_CMAKE_BOOL=		WITH_IMAGE_CINEON
 CYCLES_CMAKE_BOOL=		WITH_CYCLES
 CYCLES_IMPLIES=			TBB
-CYCLES_LDFLAGS=			-L${LOCALBASE}/lib -lgflags
-CYCLES_LIB_DEPENDS=		libgflags.so:devel/gflags
+CYCLES_LDFLAGS=			-L${LOCALBASE}/lib -lgflags -lglog
+CYCLES_LIB_DEPENDS=		libgflags.so:devel/gflags \
+				libglog.so:devel/glog
 CYCLES_EMBR_CMAKE_BOOL=		WITH_CYCLES_EMBREE
 CYCLES_EMBR_IMPLIES=		CYCLES
 CYCLES_EMBR_LIB_DEPENDS=	libembree4.so:graphics/embree
@@ -80,7 +92,7 @@ CYCLES_OSL_CMAKE_ON=		-DOSL_SHADER_DIR:STRING="${LOCALBASE}/share/openshadinglan
 CYCLES_OSL_IMPLIES=		CYCLES OPENEXR PUGIXML
 CYCLES_OSL_LIB_DEPENDS=		liboslcomp.so:graphics/openshadinglanguage
 DRACO_CMAKE_BOOL=		WITH_DRACO
-DRACO_USE=			LDCONFIG=${PYTHON_SITELIBDIR}
+DRACO_LIB_DEPENDS=		libdraco.so:archivers/draco
 EBOOL_CMAKE_BOOL=		WITH_GMP
 EBOOL_LIB_DEPENDS=		libgmp.so:math/gmp
 FFMPEG_CMAKE_BOOL=		WITH_CODEC_FFMPEG
@@ -123,16 +135,6 @@ NLS_CMAKE_BOOL=			WITH_INTERNATIONAL
 NLS_USES=			gettext-tools
 OPENAL_CMAKE_BOOL=		WITH_OPENAL
 OPENAL_USES=			openal:al,alut
-OPENCOLORIO_CMAKE_BOOL=		WITH_OPENCOLORIO
-OPENCOLORIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
-				libyaml-cpp.so:devel/yaml-cpp \
-				libexpat.so:textproc/expat2 \
-				libpystring.so:devel/pystring
-OPENCOLORIO_USES=		minizip
-OPENEXR_CFLAGS=			-I${LOCALBASE}/include/Imath
-OPENEXR_CMAKE_BOOL=		WITH_IMAGE_OPENEXR
-OPENEXR_LIB_DEPENDS=		libImath.so:math/Imath \
-				libOpenEXR.so:graphics/openexr
 OPENIMAGEDN_CMAKE_BOOL=		WITH_OPENIMAGEDENOISE
 OPENIMAGEDN_IMPLIES=		TBB
 OPENIMAGEDN_LIB_DEPENDS=	libOpenImageDenoise.so:graphics/oidn
@@ -163,9 +165,8 @@ QUADRIFLOW_CMAKE_BOOL=		WITH_QUADRIFLOW
 RUBBERBAND_CMAKE_BOOL=		WITH_RUBBERBAND
 RUBBERBAND_LIB_DEPENDS=		librubberband.so:audio/rubberband
 SDL_CMAKE_BOOL=			WITH_SDL
-SDL_USE=			SDL=sdl2
+SDL_USE=			SDL=sdl3
 SDL_USES=			sdl
-SIMD_CMAKE_BOOL=		WITH_CPU_SIMD
 SIMD_EXTRA_PATCHES_OFF=		${PATCHDIR}/extra-patch-simd-off
 SNDFILE_CMAKE_BOOL=		WITH_CODEC_SNDFILE
 SNDFILE_LIB_DEPENDS=		libsndfile.so:audio/libsndfile
@@ -189,13 +190,18 @@ WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols \
 				wayland>=1.12:graphics/wayland \
 				libdecor>0:x11-toolkits/libdecor
 WAYLAND_CATEGORIES=		wayland
-WAYLAND_CMAKE_BOOL=		WITH_GHOST_WAYLAND WITH_GHOST_WAYLAND_LIBDECOR \
-				WITH_GHOST_WAYLAND_DYNLOAD
+WAYLAND_CMAKE_BOOL=		WITH_GHOST_WAYLAND WITH_GHOST_WAYLAND_DYNLOAD
 WAYLAND_LIB_DEPENDS=		libxkbcommon.so:x11/libxkbcommon
 WEBP_CMAKE_BOOL=		WITH_IMAGE_WEBP
 WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
 XINPUT_CMAKE_BOOL=		WITH_X11_XINPUT
 XINPUT_USE=			XORG=xi
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE=		requires Python 3.13 or newer as default version, set DEFAULT_VERSIONS+=python=3.13
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LLVM_VER%%|${LLVM_VERSION}|g' \
@@ -210,19 +216,15 @@ post-build:
 post-install:
 	${INSTALL_MAN} ${INSTALL_WRKSRC}/bin/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
-	${MV} ${STAGEDIR}/${PREFIX}/bin/blender ${STAGEDIR}/${PREFIX}/bin/blender-bin
+	${MV} ${STAGEDIR}${PREFIX}/bin/blender ${STAGEDIR}${PREFIX}/bin/blender-bin
 	${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' ${WRKDIR}/blender
-	${INSTALL_SCRIPT} ${WRKDIR}/blender ${STAGEDIR}/${PREFIX}/bin/blender
+	${INSTALL_SCRIPT} ${WRKDIR}/blender ${STAGEDIR}${PREFIX}/bin/blender
 
 post-install-DRACO-on:
-	# move draco pylib into site-packages
-	${MKDIR} ${STAGEDIR}/${PYTHON_SITELIBDIR}/
-	${INSTALL_LIB} ${INSTALL_WRKSRC}/lib/libextern_draco.so ${STAGEDIR}/${PYTHON_SITELIBDIR}/
-	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/libextern_draco.so
-	@${RM} -R ${STAGEDIR}/${DATADIR}/${DISTVERSION:R}/python
-	@${RM} ${STAGEDIR}/${DATADIR}/${DISTVERSION:R}/scripts/addons_core/io_scene_gltf2/libextern_draco.so
+	@(cd ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${DISTVERSION:R}/scripts/addons_core/io_scene_gltf2 && \
+		${STRIP_CMD} libbf_intern_draco_bridge.so)
 
 post-install-MENU-on:
 	@-update-desktop-database -q
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

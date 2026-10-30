@@ -1,0 +1,11 @@
+--- extern/audaspace/CMakeLists.txt.orig	2026-09-05 13:21:02 UTC
++++ extern/audaspace/CMakeLists.txt
+@@ -1222,7 +1222,7 @@ if(WITH_PYTHON)
+ 	if(DEFINED PYTHON_LIBRARIES)
+ 		target_link_libraries(audaspace-py audaspace ${PYTHON_LIBRARIES})
+ 	else()
+-		target_link_libraries(audaspace-py audaspace)
++		target_link_libraries(audaspace-py audaspace ${PYTHON_LIBRARIES})
+ 	endif()
+ 	set_target_properties(audaspace-py PROPERTIES SOVERSION ${AUDASPACE_VERSION})
+ 
