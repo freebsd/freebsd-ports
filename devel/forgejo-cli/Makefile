@@ -2,10 +2,6 @@ PORTNAME=	forgejo-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
 CATEGORIES=	devel
-# MASTER_SITES=	https://codeberg.org/forgejo-contrib/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/ \
-# 		LOCAL/jrm:comp
-# DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-# 		fj-comp-${DISTVERSIONFULL}${EXTRACT_SUFX}:comp
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	CLI client for Forgejo
