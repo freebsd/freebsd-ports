@@ -1,4 +1,4 @@
-TIMESTAMP = 1792779592
+TIMESTAMP = 1793462755
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/actix-codec-0.5.2.crate) = 5f7b0a21988c1bf877cf4759ef5ddaac04c1c9fe808c9142ecb78ba97d97a28a
@@ -1761,3 +1761,9 @@ SHA256 (qdrant-tonic-a40343f9359c4380fa8fe7c10f8c8b9f4d8a8e08_GH0.tar.gz) = 7396
 SIZE (qdrant-tonic-a40343f9359c4380fa8fe7c10f8c8b9f4d8a8e08_GH0.tar.gz) = 38502345
 SHA256 (qdrant-qdrant-v1.20.0_GH0.tar.gz) = af99d21802edb5039b17d9c6fce2b367a0d3064e42a0c36b56d3a5e17973ee70
 SIZE (qdrant-qdrant-v1.20.0_GH0.tar.gz) = 7430530
+SHA256 (e1d8c216ce5b2cb75f0aa5378fbfecd5976e63f0.patch) = b41f5df29b5843a6d5fcd590df6ba6491320d64771da8828db0ef0fc6ff770a0
+SIZE (e1d8c216ce5b2cb75f0aa5378fbfecd5976e63f0.patch) = 4235
+SHA256 (b54ddb8d0338547aa21c73d416ec9fbbcbe9c76a.patch) = 67a2607b6ce85ffaba1e049d7915769f939c8241348b9fd7992ca83567215882
+SIZE (b54ddb8d0338547aa21c73d416ec9fbbcbe9c76a.patch) = 9079
+SHA256 (7d8c3e397d0fa0b1b4fa5eadbbf1f19735ddaac8.patch) = 5772689ceea2019ef4973044c92acec425903902bf4f6cec03cfe953343f45b9
+SIZE (7d8c3e397d0fa0b1b4fa5eadbbf1f19735ddaac8.patch) = 7516
