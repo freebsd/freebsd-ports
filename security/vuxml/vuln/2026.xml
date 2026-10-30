@@ -1,3 +1,85 @@
+  <vuln vid="b0395fb0-d45c-11f1-985e-901b0edee044">
+    <topic>py-djangorestframework -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+      <name>py311-djangorestframework</name>
+      <name>py312-djangorestframework</name>
+      <name>py313-djangorestframework</name>
+      <name>py313t-djangorestframework</name>
+      <name>py314-djangorestframework</name>
+      <name>py314t-djangorestframework</name>
+      <name>py315-djangorestframework</name>
+      <range><lt>3.18.2,1</lt></range>
+    </package>
+    <package>
+      <name>py312-dj60-djangorestframework</name>
+      <name>py313-dj60-djangorestframework</name>
+      <name>py313t-dj60-djangorestframework</name>
+      <name>py314-dj60-djangorestframework</name>
+      <name>py314t-dj60-djangorestframework</name>
+      <name>py315-dj60-djangorestframework</name>
+      <range><lt>3.18.2</lt></range>
+    </package>
+    <package>
+      <name>py311-dj61-djangorestframework</name>
+      <name>py312-dj61-djangorestframework</name>
+      <name>py313-dj61-djangorestframework</name>
+      <name>py313t-dj61-djangorestframework</name>
+      <name>py314-dj61-djangorestframework</name>
+      <name>py314t-dj61-djangorestframework</name>
+      <name>py315-dj61-djangorestframework</name>
+      <range><lt>3.18.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bruno Alla reports:</p>
+	<blockquote cite="https://github.com/encode/django-rest-framework/security/advisories/GHSA-3547-9m27-7rxg">
+	<p>An unauthenticated attacker can defeat Django's
+	"DATA_UPLOAD_MAX_MEMORY_SIZE" limit and force a worker process to allocate
+	arbitrary memory, by naming a compression codec in the Content-Type charset
+	parameter. A 108-byte request body produces a 50,331,648-character value inside
+	the view, an amplification factor of 466,033, and grows process peak RSS by
+	about 97 MiB. No application configuration is required beyond DRF's default
+	parser set; the endpoint only has to accept a JSON body.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/encode/django-rest-framework/security/advisories/GHSA-xw6w-gcfp-cf8m">
+	<p>Deleting an authentication token through "TokenProxy" silently
+	deletes nothing. The call raises no exception and reports success, the database
+	row survives, and the token keeps authenticating. Any application, admin
+	integration or operational script that revokes credentials by calling
+	".delete()" on a "TokenProxy" instance believes it has revoked a token that is
+	still live.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/encode/django-rest-framework/security/advisories/GHSA-33wh-fxxf-88vv">
+	<p>DRF's content negotiation parses each Accept token several times per
+	request and never limits the number of tokens or their total size. Each parse
+	ends up in Django's parse_header_parameters, which takes quadratic time when a
+	quoted parameter value is packed with semicolons. On my machine a single GET
+	with a 780KB Accept header made of 96 such tokens kept one gunicorn worker busy
+	for 18.87 seconds (Django 6.1, djangorestframework 3.18.0, gunicorn 26.0.0,
+	Python 3.13, Docker on macOS). The header is syntactically valid, fits inside
+	gunicorn's default header limits, and needs no authentication. Two concurrent
+	requests, which is one per sync worker, made a default two worker deployment
+	stop answering for my whole 40 second test window. It recovered half a second
+	after I stopped sending.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-114136</cvename>
+      <cvename>CVE-2026-114137</cvename>
+      <cvename>CVE-2026-114138</cvename>
+      <url>https://github.com/encode/django-rest-framework/security/advisories/GHSA-3547-9m27-7rxg</url>
+      <url>https://github.com/encode/django-rest-framework/security/advisories/GHSA-xw6w-gcfp-cf8m</url>
+      <url>https://github.com/encode/django-rest-framework/security/advisories/GHSA-33wh-fxxf-88vv</url>
+    </references>
+    <dates>
+      <discovery>2026-10-06</discovery>
+      <entry>2026-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4488c0db-d45b-11f1-bae2-3497f65b111b">
     <topic>metasploit -- multiple vulnerabilities</topic>
     <affects>
