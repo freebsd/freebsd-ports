@@ -80,12 +80,14 @@ PGSQL_CONFIGURE_ON=	--with-pgsql-includes=${LOCALBASE}/include \
 			--with-pgsql-libs=${LOCALBASE}/lib
 PGSQL_USES=		pgsql
 
-# Why does this insist on linking against the libre2.a static library?
+# re2 depends on abseil, and this old autoconf cannot find those libraries
+# for a static link. Use the shared libre2.so, which pulls them in by itself.
 
 RE2_DESC=		Enable re2 regular expression library
 RE2_CONFIGURE_WITH=	re2
-RE2_BUILD_DEPENDS=	${LOCALBASE}/lib/libre2.a:devel/re2
-RE2_BROKEN=		Bad C++ code in re2.h
+RE2_CONFIGURE_ON=	--with-re2-includes=${LOCALBASE}/include \
+			--with-re2-libs=${LOCALBASE}/lib/libre2.so
+RE2_LIB_DEPENDS=	libre2.so:devel/re2
 
 SYSLOG_DESC=		Enable logging via syslog
 SYSLOG_CONFIGURE_WITH=	syslog
