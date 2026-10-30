@@ -1,5 +1,6 @@
 bin/pizauth
 share/bash-completion/completions/pizauth
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pizauth.conf
 share/fish/vendor_completions.d/pizauth.fish
 share/man/man1/pizauth.1.gz
 share/man/man5/pizauth.conf.5.gz
