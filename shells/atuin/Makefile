@@ -1,6 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.24.3
+DISTVERSION=	18.24.4
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -530,6 +530,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serial2-0.2.36 \
 		sfa-1.0.0 \
 		sha1-0.11.0 \
+		sha1_smol-1.0.1 \
 		sha2-0.10.9 \
 		sha2-0.11.0 \
 		sharded-slab-0.1.7 \
