@@ -55,6 +55,8 @@ lib/pcb-rnd/plugins/import_mentor_sch.pup
 lib/pcb-rnd/plugins/import_mentor_sch.so
 lib/pcb-rnd/plugins/import_orcad_net.pup
 lib/pcb-rnd/plugins/import_orcad_net.so
+lib/pcb-rnd/plugins/io_diptrace.pup
+lib/pcb-rnd/plugins/io_diptrace.so
 lib/pcb-rnd/plugins/io_dsn.pup
 lib/pcb-rnd/plugins/io_dsn.so
 lib/pcb-rnd/plugins/io_kicad.pup

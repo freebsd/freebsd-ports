@@ -1,5 +1,5 @@
 PORTNAME=	pcb-rnd
-DISTVERSION=	3.1.8
+DISTVERSION=	3.1.9
 CATEGORIES=	cad
 MASTER_SITES=	http://www.repo.hu/projects/${PORTNAME}/releases/
 
