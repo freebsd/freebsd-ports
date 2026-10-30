@@ -1,6 +1,6 @@
 PORTNAME=	nginx-module-encrypted-session
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10
+DISTVERSION=	0.11
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
