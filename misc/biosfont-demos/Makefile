@@ -1,5 +1,6 @@
 PORTNAME=	biosfont-demos
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	misc
 FJ_ACCOUNT=	rene0
 FJ_PROJECT=	biosfont
@@ -8,6 +9,9 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Demos for the biosfont kernel module
 
 LICENSE=	BSD2CLAUSE
+
+DEPRECATED=	No development in years
+EXPIRATION_DATE=2026-12-31
 
 USE_FORGEJO=	yes
 
