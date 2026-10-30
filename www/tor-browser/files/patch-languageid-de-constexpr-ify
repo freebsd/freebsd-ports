@@ -1,0 +1,138 @@
+commit 87f49da7a84ed9bbce4b8ef263d85b9bd5c42eac
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    Partially de-constexpr'ify LanguageId code
+    
+    This is to deal with our (FreeBSD) libc++, where in some cases
+    std:pair<> is not a "literal type" (suitable for constexpr), even
+    if the same std:pair<> is just fine on all other relevant systems.
+    
+    This removes just enough constexpr annotations to make the code
+    compile.
+    
+    Sample compiler error message:
+    
+    /wrkdirs/usr/ports/www/firefox/work/firefox-151.0/js/src/util/LanguageId.h:234:66: error: constexpr function's return type 'mozilla::Maybe<std::pair<LanguageId>
+      234 |   static constexpr mozilla::Maybe<std::pair<LanguageId, size_t>> from(
+          |                                                                  ^
+    /wrkdirs/usr/ports/www/firefox/work/.build/dist/include/mozilla/Maybe.h:367:7: note: 'Maybe<std::pair<js::LanguageId, unsigned long>>' is not literal because i>
+      367 |     : private detail::MaybeStorage<T>,
+          |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+diff --git js/src/builtin/intl/LocaleNegotiation.cpp js/src/builtin/intl/LocaleNegotiation.cpp
+index 0aff7274eda1..5c25e53b8ea1 100644
+--- js/src/builtin/intl/LocaleNegotiation.cpp
++++ js/src/builtin/intl/LocaleNegotiation.cpp
+@@ -1124,13 +1124,13 @@ struct OldStyleLanguageTagMapping {
+   LanguageId oldStyle;
+   LanguageId modernStyle;
+ 
+-  consteval OldStyleLanguageTagMapping(std::string_view oldStyle,
++  OldStyleLanguageTagMapping(std::string_view oldStyle,
+                                        std::string_view modernStyle)
+       : oldStyle(LanguageId::fromValidBcp49(oldStyle)),
+         modernStyle(LanguageId::fromValidBcp49(modernStyle)) {}
+ };
+ 
+-static constexpr OldStyleLanguageTagMapping oldStyleLanguageTagMappings[] = {
++static OldStyleLanguageTagMapping oldStyleLanguageTagMappings[] = {
+     {"pa-PK", "pa-Arab-PK"}, {"zh-CN", "zh-Hans-CN"}, {"zh-HK", "zh-Hant-HK"},
+     {"zh-SG", "zh-Hans-SG"}, {"zh-TW", "zh-Hant-TW"},
+ };
+diff --git js/src/builtin/intl/SharedIntlData.cpp js/src/builtin/intl/SharedIntlData.cpp
+index 581c9d1e6ebd..9dd3a50acb1c 100644
+--- js/src/builtin/intl/SharedIntlData.cpp
++++ js/src/builtin/intl/SharedIntlData.cpp
+@@ -431,11 +431,11 @@ bool js::intl::SharedIntlData::getAvailableLocales(
+   // directly support it (but does support it through fallback, e.g. supporting
+   // "en-GB" indirectly using "en" support).
+   {
+-    static constexpr auto lastDitch = LastDitchLocale();
+-    static_assert(std::string_view{lastDitch.toString()} == "en-GB");
++    static auto lastDitch = LastDitchLocale();
++    // static_assert(std::string_view{lastDitch.toString()} == "en-GB");
+ 
+ #ifdef DEBUG
+-    static constexpr auto lastDitchParent = lastDitch.parentLocale();
++    static auto lastDitchParent = lastDitch.parentLocale();
+     static_assert(std::string_view{lastDitchParent.toString()} == "en");
+ 
+     MOZ_ASSERT(locales.has(lastDitchParent),
+diff --git js/src/util/LanguageId.h js/src/util/LanguageId.h
+index 7c193c3e2e07..bf391ef39717 100644
+--- js/src/util/LanguageId.h
++++ js/src/util/LanguageId.h
+@@ -231,7 +231,7 @@ class LanguageId final {
+ 
+  private:
+   template <char... separators, typename CharT>
+-  static constexpr mozilla::Maybe<std::pair<LanguageId, size_t>> from(
++  static /* constexpr */ mozilla::Maybe<std::pair<LanguageId, size_t>> from(
+       std::basic_string_view<CharT> localeId) {
+     // Return true iff |sv| starts with a subtag of length |len|.
+     auto hasSubtag = [](std::basic_string_view<CharT> sv, size_t len) {
+@@ -313,7 +313,7 @@ class LanguageId final {
+    *
+    * Subtags in ICU and Unicode locale identifiers are separated by "-" or "_".
+    */
+-  static constexpr auto fromId(std::string_view localeId) {
++  static auto fromId(std::string_view localeId) {
+     return from<'-', '_'>(localeId);
+   }
+ 
+@@ -327,7 +327,7 @@ class LanguageId final {
+    *
+    * Subtags in ICU and Unicode locale identifiers are separated by "-" or "_".
+    */
+-  static constexpr auto fromId(mozilla::Span<const char> localeId) {
++  static auto fromId(mozilla::Span<const char> localeId) {
+     return fromId(std::string_view{localeId.data(), localeId.size()});
+   }
+ 
+@@ -341,7 +341,7 @@ class LanguageId final {
+    *
+    * Subtags in BCP 47 locale identifiers are separated by "-".
+    */
+-  static constexpr auto fromBcp49(std::string_view localeId) {
++  static auto fromBcp49(std::string_view localeId) {
+     return from<'-'>(localeId);
+   }
+ 
+@@ -355,7 +355,7 @@ class LanguageId final {
+    *
+    * Subtags in BCP 47 locale identifiers are separated by "-".
+    */
+-  static constexpr auto fromBcp49(std::u16string_view localeId) {
++  static auto fromBcp49(std::u16string_view localeId) {
+     return from<u'-'>(localeId);
+   }
+ 
+@@ -370,7 +370,7 @@ class LanguageId final {
+    * Subtags in BCP 47 locale identifiers are separated by "-".
+    */
+   template <typename CharT>
+-  static constexpr auto fromBcp49(mozilla::Span<const CharT> localeId) {
++  static auto fromBcp49(mozilla::Span<const CharT> localeId) {
+     return fromBcp49(std::basic_string_view{localeId.data(), localeId.size()});
+   }
+ 
+@@ -381,7 +381,7 @@ class LanguageId final {
+    *
+    * Subtags in BCP 47 locale identifiers are separated by "-".
+    */
+-  static consteval auto fromValidBcp49(std::string_view localeId) {
++  static auto fromValidBcp49(std::string_view localeId) {
+     return fromBcp49(localeId)->first;
+   }
+ 
+@@ -408,8 +408,8 @@ class LanguageId final {
+   /**
+    * Return the language identifier for the undetermined locale "und".
+    */
+-  static constexpr auto und() {
+-    constexpr LanguageId locale = fromValidBcp49("und");
++  static auto und() {
++    LanguageId locale = fromValidBcp49("und");
+     return locale;
+   }
+ 

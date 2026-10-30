@@ -1,10 +1,6 @@
-Let geoip/geoip6 file paths be set by prefs like everything else and let
-the new getTorFile() deal with it.
-
-Index: toolkit/components/tor-launcher/TorProcess.sys.mjs
---- toolkit/components/tor-launcher/TorProcess.sys.mjs.orig	2024-04-22 21:47:56 UTC
+--- toolkit/components/tor-launcher/TorProcess.sys.mjs.orig	2026-10-29 19:45:00 UTC
 +++ toolkit/components/tor-launcher/TorProcess.sys.mjs
-@@ -216,6 +216,7 @@ export class TorProcess {
+@@ -254,6 +254,7 @@ export class TorProcess {
      }
  
      this.#args = [];
@@ -12,23 +8,42 @@ Index: toolkit/components/tor-launcher/TorProcess.sys.mjs
      this.#args.push("-f", torrcFile.path);
      this.#args.push("DataDirectory", this.#dataDir.path);
      this.#args.push("ClientOnionAuthDir", onionAuthDir.path);
-@@ -230,11 +231,15 @@ export class TorProcess {
-       // The geoip and geoip6 files are in the same directory as torrc-defaults.
-       // TODO: Change TorFile to return the generic path to these files to make
-       // them independent from the torrc-defaults.
--      const geoipFile = torrcDefaultsFile.clone();
--      geoipFile.leafName = "geoip";
-+      // const geoipFile = torrcDefaultsFile.clone();
-+      // geoipFile.leafName = "geoip";
-+      // this.#args.push("GeoIPFile", geoipFile.path);
-+      // const geoip6File = torrcDefaultsFile.clone();
-+      // geoip6File.leafName = "geoip6";
-+      // this.#args.push("GeoIPv6File", geoip6File.path);
-+      const geoipFile = lazy.TorLauncherUtil.getTorFile("geoip", false);
-+      const geoip6File = lazy.TorLauncherUtil.getTorFile("geoip6", false);
-       this.#args.push("GeoIPFile", geoipFile.path);
--      const geoip6File = torrcDefaultsFile.clone();
--      geoip6File.leafName = "geoip6";
-       this.#args.push("GeoIPv6File", geoip6File.path);
-     } else {
-       logger.warn(
+@@ -271,34 +272,10 @@ export class TorProcess {
+       );
+     }
+ 
+-    const torAppDataDir = lazy.TorLauncherUtil.getTorFile(
+-      "torappdatadir",
+-      false
+-    );
+-    if (torAppDataDir) {
+-      const geoipFile = torAppDataDir.clone();
+-      geoipFile.append("geoip");
+-      if (geoipFile.exists()) {
+-        this.#args.push("GeoIPFile", geoipFile.path);
+-      } else {
+-        logger.warn(
+-          "GeoIP file not found, the circuit display will not show locations."
+-        );
+-      }
+-      const geoip6File = torAppDataDir.clone();
+-      geoip6File.append("geoip6");
+-      if (geoip6File.exists()) {
+-        this.#args.push("GeoIPv6File", geoip6File.path);
+-      } else {
+-        logger.warn(
+-          "GeoIP6 file not found, the circuit display will not show locations for IPv6-only relays."
+-        );
+-      }
+-    } else {
+-      logger.warn(
+-        "App data directory not found, the circuit display will not show locations."
+-      );
+-    }
++    const geoipFile = lazy.TorLauncherUtil.getTorFile("geoip", false);
++	const geoip6File = lazy.TorLauncherUtil.getTorFile("geoip6", false);
++    this.#args.push("GeoIPFile", geoipFile.path);
++    this.#args.push("GeoIPv6File", geoip6File.path);
+   }
+ 
+   /**

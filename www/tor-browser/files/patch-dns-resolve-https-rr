@@ -1,0 +1,34 @@
+commit c6452bc491ef6b531ae4e948926bd8d863ad1fc3
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    enable resolving HTTPS RRs via the OS's resolver on FreeBSD
+    
+    see RFC 9460 https://www.rfc-editor.org/rfc/rfc9460  for details
+    on HTTPS RRs.
+
+diff --git netwerk/dns/moz.build netwerk/dns/moz.build
+index 2369794f2407..7e3bff4b5092 100644
+--- netwerk/dns/moz.build
++++ netwerk/dns/moz.build
+@@ -56,6 +56,8 @@ if CONFIG["MOZ_WIDGET_TOOLKIT"] == "windows":
+ elif CONFIG["OS_TARGET"] == "Linux":
+     SOURCES += ["PlatformDNSUnix.cpp"]
+     OS_LIBS += ["resolv"]
++elif CONFIG["OS_TARGET"] == "FreeBSD":
++    SOURCES += ["PlatformDNSUnix.cpp"]
+ elif CONFIG["MOZ_WIDGET_TOOLKIT"] == "cocoa":
+     SOURCES += ["PlatformDNSMac.cpp"]
+ elif CONFIG["MOZ_WIDGET_TOOLKIT"] == "android":
+diff --git netwerk/dns/nsHostResolver.cpp netwerk/dns/nsHostResolver.cpp
+index 2ef4006a3b17..29c4c7cf5730 100644
+--- netwerk/dns/nsHostResolver.cpp
++++ netwerk/dns/nsHostResolver.cpp
+@@ -175,7 +175,7 @@ nsresult nsHostResolver::Init() MOZ_NO_THREAD_SAFETY_ANALYSIS {
+ #elif defined(MOZ_WIDGET_ANDROID)
+   // android_res_nquery only got added in API level 29
+   sNativeHTTPSSupported = jni::GetAPIVersion() >= 29;
+-#elif defined(XP_LINUX) || defined(XP_MACOSX)
++#elif defined(XP_LINUX) || defined(XP_MACOSX) || defined(XP_FREEBSD)
+   sNativeHTTPSSupported = true;
+ #endif
+   LOG(("Native HTTPS records supported=%d", bool(sNativeHTTPSSupported)));

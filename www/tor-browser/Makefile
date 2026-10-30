@@ -1,9 +1,8 @@
 PORTNAME=	tor-browser
-DISTVERSION=	16.0a1
-PORTREVISION=	13
+DISTVERSION=	16.0
 CATEGORIES=	www net security wayland
-TAG_BASE=	d366318349af0977ff23b492fa87e436e8672fdd
-TAG_TOR=	45b67d3be52f79e8a4b361fd04ab12f342ab0016
+TAG_BASE=	62b5df0dd7513b83c15945d9dabe1b47783adf0a
+TAG_TOR=	c27a3e317da477b0d9b0d67ee4fc2a5f9d0eb740
 MASTER_SITES=	TOR \
 		LOCAL/vvd \
 		https://build-sources.tbb.torproject.org/:source1 \
@@ -18,9 +17,9 @@ MASTER_SITES=	TOR \
 		LOCAL/vvd:source5
 MASTER_SITE_SUBDIR=	torbrowser/${DISTVERSION}/:DEFAULT \
 			download/releases/:source3
-DISTNAME=	src-firefox-tor-browser-146.0a1-16.0-2-build2
+DISTNAME=	src-firefox-tor-browser-153.6.0esr-16.0-1-build3
 MANUAL=		manual_215922.zip
-NOSCRIPT=	noscript-13.5.4.1984.xpi
+NOSCRIPT=	noscript-13.6.37.1984.xpi
 DISTFILES=	${DISTNAME}.tar.xz \
 		${MANUAL}:source1 \
 		fonts-3--4348e1.tar.zst:source2 \
@@ -36,14 +35,13 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.112:security/nss \
-		icu>=76.1:devel/icu \
+		nss>=3.125:security/nss \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=10.1.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.45:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
-		libvpx>=1.14:multimedia/libvpx \
+		libvpx>=1.15:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf2.13:devel/autoconf2.13 \
@@ -57,9 +55,9 @@ USES=		compiler:c++11-lib libtool localbase:ldflags perl5 pkgconfig \
 		python shebangfix tar:xz
 USE_GECKO=	gecko
 USE_GITHUB=	nodefault
-TAG_L10N=	4b41b2ae00d50633e5e9d8204b0f45e468920743
+TAG_L10N=	c1523924f0e10259e1a80b8268556f6f7a0b29bf
 GH_TUPLE=	mozilla-l10n:firefox-l10n:${TAG_L10N}:ffl10n
-USE_MOZILLA=	-sqlite
+USE_MOZILLA=	-icu -sqlite
 
 LOCALES=	af ar az be bg bs ca cs da de el es-ES et fa fi fr ga-IE gu-IN \
 		he hi-IN hr hu hy-AM id is it ja ka km ko lt lv mk mr ms my \
@@ -129,10 +127,6 @@ post-patch:
 		"${WRKSRC}/browser/app/profile/000-tor-browser.js"
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
-.if ${ARCH} != powerpc64
-	@${REINPLACE_CMD} 's|wasm32-wasi|&p1|' \
-		${WRKSRC}/build/moz.configure/toolchain.configure
-.endif
 	${MKDIR} ${WRKSRC}/tmp-manual
 	${UNZIP_NATIVE_CMD} -d ${WRKSRC}/tmp-manual ${DISTDIR}/${MANUAL}
 
