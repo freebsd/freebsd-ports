@@ -1,6 +1,5 @@
 PORTNAME=	zutty
-DISTVERSION=	0.17
-PORTREVISION=	1
+DISTVERSION=	0.18
 CATEGORIES=	x11
 MASTER_SITES=	https://git.hq.sig7.se/zutty.git/snapshot/${ZUTTY_COMMIT}?dummy=/
 
@@ -18,8 +17,8 @@ USES=		gl pkgconfig waf xorg
 USE_GL=		egl glesv2
 USE_XORG=	x11 xmu xt
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-4b6bfc1
-ZUTTY_COMMIT=	4b6bfc16be46c4e1f45959ff76e7b6ce047af8a6
+WRKSRC=		${WRKDIR}/${PORTNAME}-f88edf7
+ZUTTY_COMMIT=	f88edf7ecc87708415dbfb2c7d6a886fbe4e5a01
 
 PLIST_FILES=	bin/zutty \
 		share/applications/zutty.desktop \
