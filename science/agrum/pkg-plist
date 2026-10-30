@@ -152,7 +152,6 @@ include/agrum/BN/learning/K2_inl.h
 include/agrum/BN/learning/K2_tpl.h
 include/agrum/BN/learning/Miic.h
 include/agrum/BN/learning/PC.h
-include/agrum/BN/learning/SimpleMiic.h
 include/agrum/BN/learning/constraints/structuralConstraint.h
 include/agrum/BN/learning/constraints/structuralConstraintDAG.h
 include/agrum/BN/learning/constraints/structuralConstraintDAG_inl.h
@@ -1221,6 +1220,7 @@ lib/libagrumPRM.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/prm/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/prm/_prmcpp.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/prm/prmcpp.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/py.typed
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/pyagrumcpp.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/qBNSampling/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyagrum/qBNSampling/_qBNMC.py

@@ -1,11 +1,12 @@
 PORTNAME=	agrum
-DISTVERSION=	3.3.0
+DISTVERSION=	3.3.2
 CATEGORIES=	science math
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical modeler for Bayesian networks, influence diagrams, etc
 WWW=		https://agrum.gitlab.io \
-		https://gitlab.com/agrumery/aGrUM
+		https://gitlab.com/agrumery/aGrUM \
+		https://github.com/agrumery/aGrUM
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -58,9 +59,9 @@ do-test:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ./act test release agrum -t all
 
-# tests as of 3.3.0: test cases:    2458 |    2458 passed | 0 failed | 0 skipped
-# [doctest] test cases:    2816 |    2816 passed | 0 failed | 0 skipped
-# [doctest] assertions: 1196873 | 1196873 passed | 0 failed |
+# tests as of 3.3.2:
+# [doctest] test cases:    2814 |    2814 passed | 0 failed | 0 skipped
+# [doctest] assertions: 1196881 | 1196881 passed | 0 failed |
 # [doctest] Status: SUCCESS!
 
 .include <bsd.port.mk>
