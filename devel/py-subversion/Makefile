@@ -1,7 +1,7 @@
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	michaelo@apache.org
-COMMENT=	Python bindings for version control system
+COMMENT=	Python bindings for Apache Subversion
 WWW=		https://subversion.apache.org/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/py3c.h:devel/py3c

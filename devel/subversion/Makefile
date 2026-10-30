@@ -1,7 +1,7 @@
 PORTREVISION=	1
 
 MAINTAINER=	michaelo@apache.org
-COMMENT=	Version control system
+COMMENT=	Apache Subversion is a full-featured version control system
 WWW=		https://subversion.apache.org/
 
 CONFLICTS_INSTALL=	subversion-lts
@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	\
 
 OPTIONS_DEFAULT=GPG_AGENT SERF TOOLS
 
-GPG_AGENT_DESC=		Enable GPG agent password store
+GPG_AGENT_DESC=		Enable GPG agent credential cache
 SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TEST_DESC=		Run subversion test suite
@@ -119,10 +119,10 @@ pre-configure:
 
 post-configure:
 # Enable GNOME Keyring / KWallet support in main code, as it is harmless
-	@${REINPLACE_CMD} -E 's%.*#undef SVN_HAVE_(GNOME_KEYRING|KWALLET).*%#define SVN_HAVE_\1 1%' ${WRKSRC}/subversion/svn_private_config.h
+	${REINPLACE_CMD} -E 's%.*#undef SVN_HAVE_(GNOME_KEYRING|KWALLET).*%#define SVN_HAVE_\1 1%' ${WRKSRC}/subversion/svn_private_config.h
 # ugly hack: save tools directory so we don't have to cleanup before installing
-	@${CP} -R ${WRKSRC}/tools ${WRKSRC}/tools.examples
-	@${CHMOD} -R a-st,o+rX ${WRKSRC}/tools.examples
+	${CP} -R ${WRKSRC}/tools ${WRKSRC}/tools.examples
+	${CHMOD} -R a-st,o+rX ${WRKSRC}/tools.examples
 
 # takes a long time, and will fail but gives maintainer a good oversight
 .if ${PORT_OPTIONS:MTEST}
@@ -131,23 +131,23 @@ test: build
 .endif
 
 post-build-TOOLS-on:
-	@${MAKE} -C ${WRKSRC} tools ${MAKE_ARGS}
+	${MAKE} -C ${WRKSRC} tools ${MAKE_ARGS}
 
 post-install:	${MKREPOS_TARGET}
 	for F in ${BINS_TO_STRIP} ; do \
 	 ${STRIP_CMD} "${STAGEDIR}${PREFIX}/bin/$${F}" ; \
 	done
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 post-install-SVNSERVE_WRAPPER-on:
-	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve.sample
+	${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve.sample
 
 post-install-TOOLS-on:
-	@${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
+	${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
 	for F in ${TOOLS_TO_STRIP} ; do \
 	 ${STRIP_CMD} "${STAGEDIR}${PREFIX}/bin/$${F}" ; \
 	done
@@ -187,11 +187,11 @@ _mkrepos:	.USE
 	fi
 .endif
 	@${MKDIR} ${SVNREPOS}
-	@${PREFIX}/bin/svnadmin create --fs-type ${SVNFSTYPE} ${SVNREPOS}
+	${PREFIX}/bin/svnadmin create --fs-type ${SVNFSTYPE} ${SVNREPOS}
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-	@${CHOWN} ${SVNUSER}:${SVNGROUP} ${SVNGRPFILES}
-	@${CHMOD} g+w ${SVNGRPFILES}
-	@for i in ${SVNREPOS}/db/* ; do \
+	${CHOWN} ${SVNUSER}:${SVNGROUP} ${SVNGRPFILES}
+	${CHMOD} g+w ${SVNGRPFILES}
+	for i in ${SVNREPOS}/db/* ; do \
 	    i=$${i##*/}; \
 	    case $$i in \
 	    DB_CONFIG|fs-type|uuid) ;; \

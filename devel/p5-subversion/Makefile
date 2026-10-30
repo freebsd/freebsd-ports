@@ -1,7 +1,7 @@
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	michaelo@apache.org
-COMMENT=	Perl bindings for Version control system
+COMMENT=	Perl bindings for Apache Subversion
 WWW=		https://subversion.apache.org/
 
 USES=		perl5

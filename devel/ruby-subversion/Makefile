@@ -1,7 +1,7 @@
 PKGNAMEPREFIX=	ruby-
 
 MAINTAINER=	michaelo@apache.org
-COMMENT=	Ruby bindings for version control system
+COMMENT=	Ruby bindings for Apache Subversion
 WWW=		https://subversion.apache.org/
 
 USES+=		compiler:c11 ruby

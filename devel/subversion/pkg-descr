@@ -1,2 +1,4 @@
-Subversion is a version control system designed to be as similar to cvs(1)
-as possible, while fixing many outstanding problems with cvs(1).
+Apache Subversion is an enterprise-class centralized version control
+system, providing reliable long-term storage of changes to files and
+directories, remote access for working across networks, and the ability
+to branch and tag changesets cheaply.

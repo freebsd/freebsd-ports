@@ -2,7 +2,7 @@ PORTREVISION=	1
 PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	michaelo@apache.org
-COMMENT=	Version control system, long-term-support version
+COMMENT=	Apache Subversion is a full-featured version control system (LTS)
 WWW=		https://subversion.apache.org/
 
 CONFLICTS_INSTALL=	subversion
@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	\
 
 OPTIONS_DEFAULT=GPG_AGENT SERF TOOLS
 
-GPG_AGENT_DESC=		Enable GPG agent password store
+GPG_AGENT_DESC=		Enable GPG agent credential cache
 SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TEST_DESC=		Run subversion test suite
