@@ -1,6 +1,6 @@
 PORTNAME=	akonadi-search
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,12 +12,11 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
 USES=		cmake compiler:c++11-lib gettext kde:6 qt:6 tar:xz
-USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
-		i18n itemmodels kcmutils ktextaddons libplasma package runner \
-		service widgetsaddons \
+USE_KDE=	calendarcore contacts crash dbusaddons i18n \
+		kcmutils kio ktextaddons mime runner \
 		ecm:build
 # pim components
-USE_KDE+=	akonadi akonadimime calendarcore contacts mime
+USE_KDE+=	akonadi akonadimime calendarcore contacts
 USE_QT=		base
 USE_LDCONFIG=	yes
 
