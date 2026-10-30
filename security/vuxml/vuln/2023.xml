@@ -13500,7 +13500,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>StÃ©phane Bruckert</p>
+	<p>Stéphane Bruckert</p>
   <blockquote cite="https://github.com/spotipy-dev/spotipy/security/advisories/GHSA-q764-g6fm-555v">
 	  <p>If a malicious URI is passed to the library, the library can be tricked into performing an operation on a different API endpoint than intended.</p>
 	</blockquote>
@@ -13514,6 +13514,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2023-01-16</discovery>
       <entry>2023-02-02</entry>
+      <modified>2026-10-29</modified>
     </dates>
   </vuln>
 
