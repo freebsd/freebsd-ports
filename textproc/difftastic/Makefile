@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.71.0
-PORTREVISION=	2
+DISTVERSION=	0.72.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -66,7 +65,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		is_terminal_polyfill-1.70.1 \
 		itoa-1.0.10 \
 		lazy_static-1.4.0 \
-		libc-0.2.186 \
+		libc-0.2.169 \
 		libm-0.2.8 \
 		line-numbers-0.3.1 \
 		linux-raw-sys-0.4.14 \
@@ -130,16 +129,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		tree-sitter-erlang-0.20.0 \
 		tree-sitter-fish-3.6.0 \
 		tree-sitter-fortran-0.6.0 \
-		tree-sitter-fsharp-0.3.0 \
 		tree-sitter-gleam-1.0.0 \
 		tree-sitter-go-0.25.0 \
-		tree-sitter-haskell-0.23.1 \
+		tree-sitter-haskell-0.24.1 \
 		tree-sitter-hcl-1.1.0 \
 		tree-sitter-html-0.23.2 \
 		tree-sitter-java-orchard-0.5.9 \
 		tree-sitter-javascript-0.25.0 \
 		tree-sitter-json-0.24.8 \
 		tree-sitter-julia-0.23.1 \
+		tree-sitter-kotlin-sg-0.4.1 \
 		tree-sitter-language-0.1.7 \
 		tree-sitter-lua-0.5.0 \
 		tree-sitter-make-1.1.1 \
@@ -164,7 +163,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		tree-sitter-swift-0.7.1 \
 		tree-sitter-toml-ng-0.7.0 \
 		tree-sitter-typescript-0.23.2 \
-		tree-sitter-verilog-1.0.3 \
 		tree-sitter-vhdl-1.4.0 \
 		tree-sitter-xml-0.7.0 \
 		tree-sitter-yaml-0.7.2 \
