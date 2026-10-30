@@ -6,6 +6,8 @@ MASTER_SITES=	LOCAL/acm/freepascal/:bootstrap \
 		LOCAL/pkubaj:bootstrap
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	freepascal
+PATCH_SITES=	https://gitlab.com/freepascal.org/fpc/source/-/commit/
+PATCHFILES=	f323f2f8ec6ec1a966072a8dcd2c0144cf95f87c.patch:-p1
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal compiler with Turbo and Delphi (devel)
