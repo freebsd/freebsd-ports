@@ -2,18 +2,16 @@ PORTNAME=	radio_datetime_analyzer
 DISTVERSION=	1.2.0
 PORTREVISION=	10
 CATEGORIES=	misc
-MASTER_SITES=	https://codeberg.org/rene0/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # prevent USES=cargo from overriding default DISTFILES
+FJ_ACCOUNT=	rene0
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Analyzer for DCF77 and MSF log files
-WWW=		https://codeberg.org/rene0/${PORTNAME}
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 
 USES=		cargo
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_FORGEJO=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
