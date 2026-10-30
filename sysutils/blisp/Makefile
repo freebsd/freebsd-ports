@@ -1,8 +1,8 @@
 PORTNAME=	blisp
-DISTVERSION=	g20230703
+DISTVERSION=	g20250802
 CATEGORIES=	sysutils
 
-MAINTAINER=	porsolic@gmail.com
+MAINTAINER=	bsd@orsolic.org
 COMMENT=	Utility and library for flashing Bouffalo RISC-V MCUs
 WWW=		https://github.com/pine64/blisp
 
@@ -15,8 +15,8 @@ USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pine64
-GH_TAGNAME=	048a724
-GH_TUPLE=	argtable:argtable3:6f0e40b:group_argtable/vendor/argtable3
+GH_TAGNAME=	b1d9a69
+GH_TUPLE=	argtable:argtable3:b50c6c8:group_argtable/vendor/argtable3
 
 PLIST_FILES=	bin/blisp \
 		etc/devd/blisp.conf

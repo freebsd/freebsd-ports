@@ -8,7 +8,7 @@ A devd conf file is included which will set permission on USB device to enable f
 To activate execute following command: service devd restart
 
 Example:
-blisp --write -c bl70x --reset <path/to/firmware.bin>
+blisp write -c bl70x --reset <path/to/firmware.bin>
 EOM
 }
 ]
