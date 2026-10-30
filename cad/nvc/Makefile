@@ -2,6 +2,9 @@ PORTNAME=	nvc
 DISTVERSION=	1.23.0
 CATEGORIES=	cad
 MASTER_SITES=	https://www.nickg.me.uk/files/
+PATCH_SITES=	https://github.com/nickg/nvc/commit/
+# https://github.com/nickg/nvc/pull/1712 (PowerPC64 support, merged after 1.23.1)
+PATCHFILES=	da58925054f6508bb07df3356a4d45bd8e65a7bc.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	VHDL compiler and simulator
@@ -11,7 +14,7 @@ WWW=		https://www.nickg.me.uk/nvc/ \
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 # /wrkdirs/usr/ports/cad/nvc/work/nvc-1.18.0/src/jit/jit-code.c:858:42: error: use of undeclared identifier 'veneer'
 #  858 |                        veneer, ARRAY_LEN(veneer));
 #      |
