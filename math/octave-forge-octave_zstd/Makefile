@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-octave_zstd
 DISTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
-
-RUN_DEPENDS+=	${OCTAVE_TARBALLS_DIR}/octave_tar.tar.gz:math/octave-forge-octave_tar
 
 USES=		octave
 USE_GITHUB=	yes
