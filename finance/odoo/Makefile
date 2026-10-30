@@ -1,5 +1,5 @@
 PORTNAME=	odoo
-PORTVERSION=	19.0.20260618
+PORTVERSION=	19.0.20261023
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,26 +9,24 @@ WWW=		https://www.odoo.com
 
 LICENSE=	LGPL3
 
-USE_GITHUB=	yes
-GH_TAGNAME=	77cda8dd500c7f24bd0ee98a0e6b7fadc6be5c31
-
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 		libevent.so:devel/libevent \
 		libsasl2.so:security/cyrus-sasl2
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}GeoIP2>0:net/py-GeoIP2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xlsxwriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}asn1crypto>=0:devel/py-asn1crypto@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=0:devel/py-asn1crypto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cbor2>0:devel/py-cbor2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>0:devel/py-freezegun@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}GeoIP2>0:net/py-GeoIP2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}greenlet>=0:devel/py-greenlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html2text>=0:textproc/py-html2text@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libsass>0:www/py-libsass@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml-html-clean>=0:devel/py-lxml-html-clean@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
@@ -63,43 +61,48 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vobject>=0:deskutils/py-vobject@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlrd>=1.2.0:textproc/py-xlrd@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xlsxwriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlwt>=1.3.0:textproc/py-xlwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zeep>=0:net/py-zeep@${PY_FLAVOR} \
 		${PY_SETUPTOOLS}
 
-USES=		cpe gnome ldap python pgsql shebangfix
+USES=		cpe gnome ldap pgsql python shebangfix
+USE_GITHUB=	yes
+GH_TAGNAME=	a2825bced0f61f5acb7e9f0c3139cf9a2a9c3708
 USE_GNOME=	libxml2
-USE_PYTHON=	cryptography distutils
-
-NO_ARCH=	yes
-
-SHEBANG_LANG=	python
-SHEBANG_FILES=	${WRKSRC}/${PORTNAME}/addons/web/tooling/*.sh \
-		${WRKSRC}/${PORTNAME}/addons/web/tooling/hooks/pre-commit \
-		${WRKSRC}/${PORTNAME}/addons/mail/static/scripts/odoo-mailgate.py \
-		${WRKSRC}/${PORTNAME}-bin
-
-USERS=		odoo
-GROUPS=		${USERS}
-
+USE_PYTHON=	autoplist cryptography pep517
 USE_RC_SUBR=	${PORTNAME}
-SUB_FILES=	pkg-message
+
+SHEBANG_FILES=	${WRKSRC}/${PORTNAME}-bin \
+		${WRKSRC}/${PORTNAME}/addons/iot_box_image/configuration/led_manager.sh \
+		${WRKSRC}/${PORTNAME}/addons/mail/static/scripts/odoo-mailgate.py \
+		${WRKSRC}/${PORTNAME}/addons/web/tooling/*.sh \
+		${WRKSRC}/${PORTNAME}/addons/web/tooling/hooks/pre-commit
 
 CONFLICTS=	odoo16 odoo17 odoo18
 
 ETCDIR=		${PREFIX}/etc/odoo
+NO_ARCH=	yes
+SUB_FILES=	odoo.conf pkg-message
+
+USERS=		odoo
+GROUPS=		${USERS}
+
+post-extract:
+	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
 		${WRKSRC}/odoo/addons/web/static/src/core/network/download.js
-
-post-extract:
-	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/
+# release.py's version is 19.0; name the wheel after PORTVERSION so it
+# matches the pep517 install glob (the runtime version is unchanged)
+	@${REINPLACE_CMD} -i "" -e "s|^    version=version,$$|    version='${PORTVERSION}',|" \
+		${WRKSRC}/setup.py
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/odoo.conf ${STAGEDIR}${ETCDIR}/odoo.conf.sample
+	@${INSTALL_DATA} ${WRKDIR}/odoo.conf ${STAGEDIR}${ETCDIR}/odoo.conf.sample
 
 .include <bsd.port.mk>
