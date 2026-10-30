@@ -1,3 +1,63 @@
+  <vuln vid="e6b90d23-d49d-11f1-bae2-3497f65b111b">
+    <topic>phpMyAdmin -- Multiple vulnerabilities, no fix available</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<name>phpMyAdmin-php82</name>
+	<name>phpMyAdmin-php83</name>
+	<name>phpMyAdmin-php84</name>
+	<name>phpMyAdmin-php85</name>
+	<name>phpMyAdmin-php86</name>
+	<name>phpMyAdmin5</name>
+	<name>phpMyAdmin5-php82</name>
+	<name>phpMyAdmin5-php83</name>
+	<name>phpMyAdmin5-php84</name>
+	<name>phpMyAdmin5-php85</name>
+	<name>phpMyAdmin5-php86</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VulnCheck reports:</p>
+	<blockquote cite="https://www.vulncheck.com/advisories/phpmyadmin-through-5.2.3-webauthn-two-factor-authentication-bypass-via-customserver">
+	  <p>Seven vulnerabilities in phpMyAdmin up to and including 5.2.3
+	    were published on 2026-10-30. The most severe of them, an
+	    authentication bypass, is in the WebAuthn second factor:
+	    assertion signatures are never verified against the stored
+	    public keys, so an attacker who already has the MySQL
+	    credentials of a victim can skip the second factor.</p>
+	  <p>The others are a server-side request forgery in
+	    setup/validate.php, which needs no authentication at all and can
+	    be used to probe internal hosts and ports; the removal of two-
+	    factor authentication without re-authentication; SQL injection
+	    in Central Columns and in the Designer, both running with
+	    controluser privileges; stored cross-site scripting in the
+	    Designer history; and a missing cross-site request forgery
+	    token.</p>
+	  <p>There is no fixed release. The phpMyAdmin project has published
+	    neither a security announcement nor a new version, and only the
+	    request forgery has a fix in the development branch so far.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-119426</cvename>
+      <cvename>CVE-2026-119427</cvename>
+      <cvename>CVE-2026-119428</cvename>
+      <cvename>CVE-2026-119429</cvename>
+      <cvename>CVE-2026-119561</cvename>
+      <cvename>CVE-2026-119562</cvename>
+      <cvename>CVE-2026-119563</cvename>
+      <url>https://www.vulncheck.com/advisories/phpmyadmin-through-5.2.3-webauthn-two-factor-authentication-bypass-via-customserver</url>
+      <url>https://abraxaslabs.tech/research/phpmyadmin-webauthn</url>
+    </references>
+    <dates>
+      <discovery>2026-10-30</discovery>
+      <entry>2026-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b0395fb0-d45c-11f1-985e-901b0edee044">
     <topic>py-djangorestframework -- Multiple vulnerabilities</topic>
     <affects>
