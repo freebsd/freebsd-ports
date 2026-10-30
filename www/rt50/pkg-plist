@@ -178,6 +178,7 @@ bin/rt-run-scheduled-processes
 %%SITE_PERL%%/RT/Lifecycle/Ticket.pm
 %%SITE_PERL%%/RT/Link.pm
 %%SITE_PERL%%/RT/Links.pm
+%%SITE_PERL%%/RT/MFA/TOTP.pm
 %%SITE_PERL%%/RT/Migrate.pm
 %%SITE_PERL%%/RT/Migrate/Importer.pm
 %%SITE_PERL%%/RT/Migrate/Importer/File.pm
@@ -397,6 +398,7 @@ sbin/rt-validator
 sbin/standalone_httpd
 @group wheel
 %%PORTDOCS%%%%DOCSDIR%%/GDPR.pod
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-2.0
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.0
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.2
@@ -756,6 +758,10 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/4.5.7/schema.SQLite
 %%DOCSDIR%%/upgrade/4.5.7/schema.mysql
 %%DOCSDIR%%/upgrade/4.5.8/content
+%%DOCSDIR%%/upgrade/5.0.11/content
+%%DOCSDIR%%/upgrade/5.0.11/schema.Oracle
+%%DOCSDIR%%/upgrade/5.0.11/schema.Pg
+%%DOCSDIR%%/upgrade/5.0.11/schema.mysql
 %%DOCSDIR%%/upgrade/5.0.2/content
 %%DOCSDIR%%/upgrade/5.0.3/indexes
 %%DOCSDIR%%/upgrade/5.0.3/schema.Pg
@@ -902,10 +908,12 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Global/index.html
 %%DATADIR%%/html/Admin/Groups/GroupRights.html
 %%DATADIR%%/html/Admin/Groups/History.html
+%%DATADIR%%/html/Admin/Groups/MFAPolicy.html
 %%DATADIR%%/html/Admin/Groups/Members.html
 %%DATADIR%%/html/Admin/Groups/Memberships.html
 %%DATADIR%%/html/Admin/Groups/Modify.html
 %%DATADIR%%/html/Admin/Groups/ModifyLinks.html
+%%DATADIR%%/html/Admin/Groups/PasswordPolicy.html
 %%DATADIR%%/html/Admin/Groups/UserRights.html
 %%DATADIR%%/html/Admin/Groups/autohandler
 %%DATADIR%%/html/Admin/Groups/index.html
@@ -1336,9 +1344,17 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Install/Sendmail.html
 %%DATADIR%%/html/Install/autohandler
 %%DATADIR%%/html/Install/index.html
+%%DATADIR%%/html/NoAuth/Elements/Error
 %%DATADIR%%/html/NoAuth/Helpers/CustomLogo/dhandler
 %%DATADIR%%/html/NoAuth/Login.html
 %%DATADIR%%/html/NoAuth/Logout.html
+%%DATADIR%%/html/NoAuth/MFA/Elements/CodeInput
+%%DATADIR%%/html/NoAuth/MFA/Enroll.html
+%%DATADIR%%/html/NoAuth/MFA/Reset/Request.html
+%%DATADIR%%/html/NoAuth/MFA/Reset/dhandler
+%%DATADIR%%/html/NoAuth/MFA/Verify.html
+%%DATADIR%%/html/NoAuth/ResetPassword/Request.html
+%%DATADIR%%/html/NoAuth/ResetPassword/Reset/dhandler
 %%DATADIR%%/html/NoAuth/RichText/autohandler
 %%DATADIR%%/html/NoAuth/css/autohandler
 %%DATADIR%%/html/NoAuth/css/dhandler
@@ -1358,7 +1374,9 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Prefs/CustomDateRanges.html
 %%DATADIR%%/html/Prefs/DashboardsInMenu.html
 %%DATADIR%%/html/Prefs/Elements/EditAboutMe
+%%DATADIR%%/html/Prefs/Elements/MFAControls
 %%DATADIR%%/html/Prefs/Elements/ShowAboutMe
+%%DATADIR%%/html/Prefs/ExistingPasswordChange.html
 %%DATADIR%%/html/Prefs/MyRT.html
 %%DATADIR%%/html/Prefs/Other.html
 %%DATADIR%%/html/Prefs/QueueList.html
@@ -1461,6 +1479,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Elements/MyRequests
 %%DATADIR%%/html/SelfService/Elements/RequestUpdate
 %%DATADIR%%/html/SelfService/Elements/SearchArticle
+%%DATADIR%%/html/SelfService/ExistingPasswordChange.html
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Principals
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Users

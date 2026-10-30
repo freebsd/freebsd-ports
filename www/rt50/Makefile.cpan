@@ -43,11 +43,11 @@
 ### HTML::FormatExternal
 ### HTML::FormatText::WithLinks 0.14
 ### HTML::FormatText::WithLinks::AndTables 0.06
-### HTML::Gumbo
+### HTML::Gumbo 0.19
 ### HTML::Mason 1.43
 ### HTML::Mason::PSGIHandler 0.52
 ### HTML::Quoted
-### HTML::RewriteAttributes 0.05
+### HTML::RewriteAttributes 0.06
 ### HTML::Scrubber 0.08
 ### HTTP::Message 6.07
 ### IPC::Run3
@@ -61,7 +61,7 @@
 ### LWP::Simple
 ### Mail::Header 2.12
 ### Mail::Mailer 1.57
-### MIME::Entity 5.504
+### MIME::Entity 5.522
 ### MIME::Types
 ### Module::Refresh 0.03
 ### Module::Runtime
@@ -70,7 +70,7 @@
 ### Net::IP
 ### Parallel::ForkManager
 ### Plack 1.0002
-### Plack::Handler::Starlet
+### Starlet 0.33
 ### Regexp::Common
 ### Regexp::Common::net::CIDR
 ### Regexp::IPv6
@@ -126,12 +126,12 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-HTML-FormatExternal>0:textproc/p5-HTML-FormatExternal		\
 		p5-HTML-FormatText-WithLinks-AndTables>0:textproc/p5-HTML-FormatText-WithLinks-AndTables	\
 		p5-HTML-FormatText-WithLinks>=0.14:textproc/p5-HTML-FormatText-WithLinks	\
-		p5-HTML-Gumbo>0:www/p5-HTML-Gumbo					\
+		p5-HTML-Gumbo>=0.19:www/p5-HTML-Gumbo					\
 		p5-HTML-Mason-PSGIHandler>=0.52:www/p5-HTML-Mason-PSGIHandler		\
 		p5-HTML-Mason>=1.43:www/p5-HTML-Mason					\
 		p5-HTML-Parser>0:www/p5-HTML-Parser					\
 		p5-HTML-Quoted>0:textproc/p5-HTML-Quoted				\
-		p5-HTML-RewriteAttributes>=0.05:textproc/p5-HTML-RewriteAttributes	\
+		p5-HTML-RewriteAttributes>=0.06:textproc/p5-HTML-RewriteAttributes	\
 		p5-HTML-Scrubber>=0.08:www/p5-HTML-Scrubber				\
 		p5-HTTP-Message>=6.07:www/p5-HTTP-Message				\
 		p5-IPC-Run3>0:devel/p5-IPC-Run3						\
@@ -152,8 +152,8 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP						\
 		p5-Parallel-ForkManager>=0:devel/p5-Parallel-ForkManager		\
 		p5-Plack>=1.0002:www/p5-Plack						\
-		p5-Pod-Parser>=0:textproc/p5-Pod-Parser							\
-		p5-Starlet>0:www/p5-Starlet						\
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser					\
+		p5-Starlet>=0.33:www/p5-Starlet					\
 		p5-Regexp-Common-net-CIDR>0:textproc/p5-Regexp-Common-net-CIDR		\
 		p5-Regexp-Common>0:textproc/p5-Regexp-Common				\
 		p5-Regexp-IPv6>0:textproc/p5-Regexp-IPv6				\
@@ -213,7 +213,7 @@ REST2_DEPS=	p5-Module-Runtime>0:devel/p5-Module-Runtime				\
 		p5-Sub-Exporter>0:devel/p5-Sub-Exporter					\
 		p5-Web-Machine>=0.12:www/p5-Web-Machine					\
 		p5-Module-Path>0:devel/p5-Module-Path					\
-		p5-Path-Dispatcher>0:devel/p5-Path-Dispatcher
+		p5-Path-Dispatcher>=1.07:devel/p5-Path-Dispatcher
 		
 
 ### --- DEVELOPER ---
@@ -285,9 +285,9 @@ MODPERL2_DEPS=	p5-libapreq2>0:www/p5-libapreq2 \
 MYSQL_DEPS=	${DBD_MYSQL}
 
 ### --- PGSQL ---
-### DBD::Pg 1.43
+### DBD::Pg 3.008
 
-PGSQL_DEPS=	p5-DBD-Pg>=1.43:databases/p5-DBD-Pg
+PGSQL_DEPS=	p5-DBD-Pg>=3.008:databases/p5-DBD-Pg
 
 ### --- SQLITE ---
 ### DBD::SQLite 1.72
@@ -296,11 +296,11 @@ SQLITE_DEPS=	p5-DBD-SQLite>=1.72:databases/p5-DBD-SQLite
 
 ### --- GPG ---
 ### File::Which
-### GnuPG::Interface 1.00
+### GnuPG::Interface 1.02
 ### PerlIO::eol
 
 GPG_DEPS=	p5-File-Which>0:sysutils/p5-File-Which \
-		p5-GnuPG-Interface>=1.00:security/p5-GnuPG-Interface \
+		p5-GnuPG-Interface>=1.02:security/p5-GnuPG-Interface \
 		p5-PerlIO-eol>0:devel/p5-PerlIO-eol
 
 ### --- SMIME---
@@ -327,6 +327,17 @@ GRAPHVIZ_DEPS=	p5-GraphViz2>0:graphics/p5-GraphViz2 \
 GD_DEPS=	p5-GD>0:graphics/p5-GD \
 		p5-GD-Graph>=1.56:graphics/p5-GD-Graph \
 		p5-GD-TextUtil>0:graphics/p5-GD-TextUtil
+
+### -- MFA --
+# Auth::GoogleAuth 1.09
+# Crypt::URandom
+# CryptX
+# Text::QRCode
+
+MFA_DEPS=	p5-Auth-GoogleAuth>=1.09:security/p5-Auth-GoogleAuth \
+		p5-Crypt-URandom>0:security/p5-Crypt-URandom \
+		p5-CryptX>0:security/p5-CryptX \
+		p5-Text-QRCode>0:textproc/p5-Text-QRCode
 
 ### --- EXTERNALAUTH ---
 # XXX p5-Net-LDAP-Server-Test>0:net/p5-Net-LDAP-Server-Test DEVELOPER
