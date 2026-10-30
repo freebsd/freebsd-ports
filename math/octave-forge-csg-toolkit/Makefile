@@ -1,7 +1,7 @@
 PORTNAME=	octave-forge-csg-toolkit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -11,7 +11,9 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/io.tar.gz:math/octave-forge-io
+RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/io.tar.gz:math/octave-forge-io \
+		${OCTAVE_TARBALLS_DIR}/io.tar.gz:math/octave-forge-statistics \
+		${OCTAVE_TARBALLS_DIR}/io.tar.gz:math/octave-forge-datatypes
 
 USES=		compiler octave
 USE_GCC=	yes
