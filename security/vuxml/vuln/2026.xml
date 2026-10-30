@@ -1,3 +1,55 @@
+  <vuln vid="4d4c2b6e-d433-11f1-a215-a0369f7f7be0">
+    <topic>OpenResty -- multiple vulnerabilities in the bundled nginx core</topic>
+    <affects>
+      <package>
+	<name>openresty</name>
+	<range><lt>1.31.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenResty developers report:</p>
+	<blockquote cite="https://openresty.org/en/changelog-1031008.html">
+	  <p>The nginx core was upgraded from nginx 1.31.1 to 1.31.8, which
+	    incorporates 12 CVE fixes, grouped by the first fixed version:
+	    1.31.2: HTTP/3 use-after-free (CVE-2026-42530), HTTP/2 and gRPC
+	    upstream buffer overflow (CVE-2026-42055), and charset conversion
+	    buffer overread (CVE-2026-48142); 1.31.3: buffer overflow
+	    involving map and regex (CVE-2026-42533), memory disclosure
+	    involving slice or background cache updates (CVE-2026-60005),
+	    and SSI use-after-free (CVE-2026-56434); 1.31.6: HTTP/3 heap
+	    buffer overflow with certain OpenSSL versions and
+	    configurations (CVE-2026-90439); 1.31.7: buffer overflow
+	    involving alias and rewrite (CVE-2026-15176), buffer overflow
+	    during variable expression evaluation (CVE-2026-93479), HTTP/3
+	    request body injection (CVE-2026-95101), TLS session ticket
+	    forgery (CVE-2026-97629), and AIO and SSI use-after-free
+	    (CVE-2026-97205).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-42530</cvename>
+      <cvename>CVE-2026-42055</cvename>
+      <cvename>CVE-2026-48142</cvename>
+      <cvename>CVE-2026-42533</cvename>
+      <cvename>CVE-2026-60005</cvename>
+      <cvename>CVE-2026-56434</cvename>
+      <cvename>CVE-2026-90439</cvename>
+      <cvename>CVE-2026-15176</cvename>
+      <cvename>CVE-2026-93479</cvename>
+      <cvename>CVE-2026-95101</cvename>
+      <cvename>CVE-2026-97629</cvename>
+      <cvename>CVE-2026-97205</cvename>
+      <url>https://openresty.org/en/changelog-1031008.html</url>
+      <url>https://nginx.org/en/security_advisories.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-26</discovery>
+      <entry>2026-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bbad76d0-3b09-485d-bb13-28cbab009cbc">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
