@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261030:
+  AFFECTS: users of devel/java-subversion
+  AUTHOR: michaelo@apache.org
+
+  The installed svn-javahl.jar has moved from lib/svn-javahl/svn-javahl.jar
+  to the standard JAVAJARDIR location. Update any classpath references
+  accordingly.
+
 20261024:
   AFFECTS: users of devel/phorgeit-phorge
   AUTHOR: grembo@FreeBSD.org

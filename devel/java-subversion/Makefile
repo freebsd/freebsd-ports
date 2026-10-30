@@ -4,11 +4,11 @@ MAINTAINER=	michaelo@apache.org
 COMMENT=	Java bindings for Apache Subversion
 WWW=		https://subversion.apache.org/
 
-USES=		compiler java
+USES=		compiler java:build
 JAVA_OS=	native
 
-PORTREVISION_LATEST=	4
-PORTREVISION_LTS=		4
+PORTREVISION_LATEST=	5
+PORTREVISION_LTS=		5
 
 SVN_BUILD_BINDINGS=	yes
 
@@ -18,7 +18,7 @@ CATEGORIES+=	java
 
 CONFIGURE_ARGS+=	--enable-javahl \
 			--without-swig-perl \
-			--without-siwg-python \
+			--without-swig-python \
 			--without-swig-ruby \
 			--with-jdk=${JAVA_HOME} \
 			--with-jikes=no \
@@ -37,6 +37,9 @@ post-configure:
 .else
 	${DO_NADA}
 .endif
+
+pre-configure:
+	${REINPLACE_CMD} "s#^javahl_javadir = .*#javahl_javadir = ${JAVAJARDIR}#" ${WRKSRC}/Makefile.in
 
 pre-build:
 	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
