@@ -83,14 +83,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cubeb-sys-0.38.0 \
 		curve25519-dalek-5.0.0 \
 		curve25519-dalek-derive-0.1.1 \
+		darling-0.20.11 \
 		darling-0.23.0 \
+		darling_core-0.20.11 \
 		darling_core-0.23.0 \
+		darling_macro-0.20.11 \
 		darling_macro-0.23.0 \
 		defmt-1.1.1 \
 		defmt-macros-1.1.1 \
 		defmt-parser-1.0.0 \
 		deranged-0.5.8 \
 		derive-where-1.6.1 \
+		derive_builder-0.20.2 \
+		derive_builder_core-0.20.2 \
+		derive_builder_macro-0.20.2 \
 		derive_more-2.1.1 \
 		derive_more-impl-2.1.1 \
 		digest-0.10.7 \
