@@ -1,5 +1,5 @@
 PORTNAME=	rex-powershell
-PORTVERSION=	0.1.103
+PORTVERSION=	0.1.105
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
