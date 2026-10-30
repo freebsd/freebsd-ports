@@ -1,1 +1,6 @@
-Spawns fastcgi applications.
+Spawn-fcgi is used to spawn FastCGI applications
+It has the following features:
+ - binds to IPv4/IPv6 and Unix domain sockets
+ - supports privilege separation: chmod/chown socket, drop to uid/gid
+ - supports chroot
+ - supports daemontools supervise

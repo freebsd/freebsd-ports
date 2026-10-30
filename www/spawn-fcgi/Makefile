@@ -1,6 +1,5 @@
 PORTNAME=	spawn-fcgi
-PORTVERSION=	1.6.4
-PORTREVISION=	4
+PORTVERSION=	1.6.6
 CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/spawn-fcgi/releases-1.6.x/
 
@@ -8,9 +7,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spawns fastcgi applications
 WWW=		https://redmine.lighttpd.net/projects/spawn-fcgi
 
-USES=		cmake
-CMAKE_ARGS=	-DCMAKE_MAN_DIR:string=${PREFIX}/share/man \
-		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		meson
 USE_RC_SUBR=	spawn-fcgi
 
 CFLAGS+=	-I${LOCALBASE}/include
