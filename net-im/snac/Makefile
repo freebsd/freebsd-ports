@@ -1,7 +1,6 @@
 PORTNAME=	snac
-DISTVERSION=	2.96
+DISTVERSION=	2.97
 CATEGORIES=	net-im www
-MASTER_SITES=	https://codeberg.org/grunfink/snac2/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	matthew@matthewphillips.info
 COMMENT=	Simple, minimalistic ActivityPub instance written in portable C
@@ -13,6 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		ssl
+USE_FORGEJO=	yes
+FJ_ACCOUNT=	grunfink
+FJ_PROJECT=	snac2
+
 USE_RC_SUBR=	snac
 
 SUB_FILES=	pkg-message \
@@ -22,8 +25,6 @@ SUB_LIST=	SNACDATADIR="${SNACDATADIR}" \
 		USER="${USERS}"
 
 SNACDATADIR=	/var/db/snac
-
-WRKSRC=		${WRKDIR}/snac2
 
 USERS=		snac
 GROUPS=		snac
