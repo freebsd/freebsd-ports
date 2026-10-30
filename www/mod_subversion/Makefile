@@ -10,7 +10,7 @@ WWW=		https://subversion.apache.org/
 
 USES=		apache
 
-PORTREVISION_LATEST=	3
+PORTREVISION_LATEST=	0
 PORTREVISION_LTS=		3
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"

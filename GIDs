@@ -345,7 +345,7 @@ evcc:*:400:
 spectrumknx:*:401:
 lid_switchd:*:402:
 airplane_radiosd:*:403:
-# free: 404
+svn:*:404:
 # free: 405
 # free: 406
 # free: 407

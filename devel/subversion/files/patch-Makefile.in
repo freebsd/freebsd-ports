@@ -1,0 +1,13 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -1043,8 +1043,8 @@
+   fi; \
+   printf '\043\041/bin/sh\n%s\n' \
+     'exec $(bindir)/svnfsfs stats $${2:+"-M"} $${2:+"$$2"} "$$1"' \
+-    > $(DESTDIR)$(toolsdir)/fsfs-stats$(EXEEXT) && \
+-  chmod +x $(DESTDIR)$(toolsdir)/fsfs-stats$(EXEEXT)
++    > $(DESTDIR)$(toolsdir)/svnfsfs-stats$(EXEEXT) && \
++  chmod +x $(DESTDIR)$(toolsdir)/svnfsfs-stats$(EXEEXT)
+ # \043\041 is a "#!".  It's written this way because gmake and bmake disagree on
+ # how to include a literal '#' in a command, and because '!' is special to some
+ # shells.

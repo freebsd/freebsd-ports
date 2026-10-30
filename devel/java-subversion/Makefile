@@ -6,16 +6,17 @@ WWW=		https://subversion.apache.org/
 
 USES=		java:build
 
-PORTREVISION_LATEST=	7
-PORTREVISION_LTS=		7
-
-SVN_BUILD_BINDINGS=	yes
+PORTREVISION_LATEST=	0
+PORTREVISION_LTS=		9
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 
 CATEGORIES+=	java
 
+BUILD_DEPENDS+=	${JAVAJARDIR}/junit.jar:java/junit
+
 CONFIGURE_ARGS+=	--enable-javahl \
+			--with-junit=${JAVAJARDIR}/junit.jar \
 			--without-swig-perl \
 			--without-swig-python \
 			--without-swig-ruby \

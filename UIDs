@@ -350,7 +350,7 @@ evcc:*:400:400::0:0:evcc Daemon:/nonexistent:/usr/sbin/nologin
 spectrumknx:*:401:401::0:0:SpectrumKNX Daemon:/var/db/spectrumknx:/usr/sbin/nologin
 # free: 402
 # free: 403
-# free: 404
+svn:*:404:404::0:0:Subversion daemon:/var/db/svn:/usr/sbin/nologin
 # free: 405
 # free: 406
 # free: 407

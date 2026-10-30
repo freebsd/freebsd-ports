@@ -1,15 +1,11 @@
 PORTNAME?=	subversion
-PORTVERSION=	1.14.5
+DISTVERSION=	1.15.0
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	APACHE/subversion
 
 GNU_CONFIGURE=	yes
 USES+=		cpe libtool pathfix pkgconfig python:patch,test shebangfix tar:bzip2
-SHEBANG_FILES=	tools/server-side/svnpubsub/rc.d/svnpubsub.solaris \
-		tools/server-side/svnpubsub/rc.d/svnwcsub.solaris
-
-EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/tools/bdb
 
 LICENSE=	APACHE20
 
@@ -27,6 +23,12 @@ LIB_DEPENDS+=		libapr-1.so:devel/apr1 \
 CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat \
 			--without-berkeley-db --disable-bdb6 \
 			--without-apr_memcache
+
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/tools/bdb \
+			--exclude ${DISTNAME}/tools/buildbot \
+			--exclude ${DISTNAME}/tools/dist \
+			--exclude ${DISTNAME}/tools/po \
+			--exclude ${DISTNAME}/tools/examples
 
 # ===============================================================
 OPTIONS_SUB=			yes
@@ -64,17 +66,11 @@ OPTIONS_FILE_SET?=""
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
-	${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
+	${REINPLACE_CMD} "s#/etc/subversion#${LOCALBASE}/etc/subversion#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
+	${REINPLACE_CMD} "s#/etc/subversion#${LOCALBASE}/etc/subversion#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
 	${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} "s#^toolsdir =.*#toolsdir = @bindir@#" ${WRKSRC}/Makefile.in
-# shebangfix
-	${FIND} ${WRKSRC}/tools/ -type f -exec ${GREP} -l -e '#!/bin/b' -e '#!/bin/env' \
-		-e '#!/usr/bin/p' {} + | ${XARGS} ${REINPLACE_CMD} -e \
-		'1s|#\!/bin/b|#\!/usr/local/bin/b|' \
-		-e '1s|#\!/bin/env|#\!/usr/bin/env|' \
-		-e '1s|#\!/usr/bin/p|#\!/usr/local/bin/p|'
 # remove all .bak files to clean the stage
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 # regenerate build-outputs.mk from build.conf instead of carrying a frozen,

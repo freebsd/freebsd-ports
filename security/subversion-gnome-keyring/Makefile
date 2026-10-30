@@ -8,7 +8,7 @@ WWW=		https://subversion.apache.org/
 USES=		gnome
 USE_GNOME=	glib20
 
-PORTREVISION_LATEST=	2
+PORTREVISION_LATEST=	0
 PORTREVISION_LTS=		2
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"

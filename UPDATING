@@ -5,6 +5,35 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261101:
+  AFFECTS: users of devel/subversion
+  AUTHOR: michaelo@apache.org
+
+  The port has been updated to 1.15.0 and received a full rework of
+  both the master and slave ports, not just a version bump. A lot of
+  content that used to ship has been thrown out: the TOOLS option now
+  only gates a handful of genuinely niche binaries (svnauthz,
+  svnauthz-validate, and svnbench moved into the core package); the
+  svnmover, fsfs-access-map, and x509-parser tools are no longer
+  built or installed at all; fsfs-stats is renamed to svnfsfs-stats;
+  and the example-scripts DATADIR no longer ships upstream's
+  contributor/CI/release tooling (dist/, buildbot/, po/, dev/,
+  examples/, client-side/, server-side/, backup/) -- only xslt/ is
+  still installed unconditionally, with hook-scripts/ moved behind a
+  new HOOKS option. Repository creation (the old WITH_REPOSITORY_CREATION
+  knob) has also been dropped entirely; that is now solely the admin's
+  job, not the port's.
+
+  Separately, the svnserve user and group are now managed through the
+  ports framework (USERS=/GROUPS=, registered in the tree's UIDs/GIDs
+  files) instead of the port's own pw useradd/groupadd logic. The
+  standard home directory for the svn account is now /var/db/svn,
+  matching svnserve's own rc.d default. If you already have a
+  manually-created svn user/group from a previous install with a
+  different home directory (e.g. /home/svn), either migrate your data
+  to /var/db/svn or edit the svn user's home directory accordingly;
+  the port will not do this for you.
+
 20261031:
   AFFECTS: users of devel/subversion
   AUTHOR: michaelo@apache.org
