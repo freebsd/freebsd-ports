@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PLIST_FILES=	bin/radio_datetime_analyzer
 PORTDOCS=	README.md
-PORTEXAMPLES=	sample_dcf77.log sample_msf.log edge-999.log
+PORTEXAMPLES=	edge-999.log sample_dcf77.log sample_msf.log
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
