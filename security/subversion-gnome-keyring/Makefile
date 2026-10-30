@@ -2,7 +2,7 @@ PKGNAMESUFFIX=	-gnome-keyring
 CATEGORIES=	security gnome
 
 MAINTAINER=	michaelo@apache.org
-COMMENT=	Gnome Keyring integration for Version control system
+COMMENT=	GNOME Keyring credential cache for Apache Subversion
 WWW=		https://subversion.apache.org/
 
 PORTREVISION_LATEST=	0
@@ -18,6 +18,6 @@ ALL_TARGET=	gnome-keyring-lib
 INSTALL_TARGET=	install-gnome-keyring-lib
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.post.mk>
