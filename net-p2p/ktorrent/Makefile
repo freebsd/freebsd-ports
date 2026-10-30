@@ -1,5 +1,6 @@
 PORTNAME=	ktorrent
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-p2p kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,13 +26,7 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 USE_QT=		base
 USE_XORG=	x11
 
-OPTIONS_DEFINE=		DOCS WORKSPACE
-OPTIONS_DEFAULT=	WORKSPACE
-OPTIONS_SUB=		yes
-
-WORKSPACE_USE=	KDE=plasma-workspace
-WORKSPACE_DESC=	Shutdown on completion support
-WORKSPACE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_LibKWorkspace
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
