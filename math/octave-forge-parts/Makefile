@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-parts
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -10,7 +11,8 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-RUN_DEPENDS+=	${OCTAVE_TARBALLS_DIR}/drafting.tar.gz:math/octave-forge-drafting
+RUN_DEPENDS+=	${OCTAVE_TARBALLS_DIR}/drafting.tar.gz:math/octave-forge-drafting \
+		${OCTAVE_TARBALLS_DIR}/drafting.tar.gz:math/octave-forge-datatypes
 
 USES=		octave
 USE_GITHUB=	yes
