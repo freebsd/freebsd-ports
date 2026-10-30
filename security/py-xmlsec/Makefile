@@ -1,5 +1,5 @@
 PORTNAME=	xmlsec
-DISTVERSION=	1.3.17
+DISTVERSION=	1.3.18
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ USE_PYTHON=	autoplist pep517 flavors pytest
 INSTALL_TARGET=	install-strip
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|==80.9.0|>=63|g; s|==6.0.2|>=6.0.1|g' ${WRKSRC}/pyproject.toml
+	@${REINPLACE_CMD} -e '/license-files/d; s|^license = "MIT"|license = { text = "MIT" }|; s|==6.0.2|>=6.0.1|g' ${WRKSRC}/pyproject.toml
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/xmlsec*.so
