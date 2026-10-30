@@ -11,13 +11,38 @@
 	<p>Routinator Team reports:</p>
 	<blockquote cite="https://www.nlnetlabs.nl/projects/routinator/security-advisories/">
 	  <ul>
-	    <li>CVE-2026-72752: Routinator runs out of memory when the JSON output is requested many times concurrently. This condition can be triggered maliciously by an attacker by opening a large number of connections to the HTTP server. Additionally Routinator runs into a stack overflow and exits when a payload item with too much metadata is discarded at once.</li>
-	    <li>CVE-2026-72753: When Routinator encounters an RRDP notification file with gaps in the delta entries, it is still accepted and parsed, potentially leading to missing data. If it encounters too many delta entries it may run out of memory.</li>
-	    <li>CVE-2026-72754: When Routinator encounters a CRL with many entries, it may hang or run out of memory. If Routinator encounters a CRL file with the wrong encoding, it may exit.</li>
-	    <li>CVE-2026-72755: Routinator stores a newly-retrieved TA certificate via HTTPS in cache before validation, potentially overwriting a known good TA certificate even if validation fails.</li>
-	    <li>CVE-2026-72756: Routinator exits when an rsync URI for a file obtained over RRDP contains a path that cannot be stored on disk, such as too long file names, and folder names that overlap with existing file names.</li>
-	    <li>CVE-2026-72757: Routinator runs out of open connections on the HTTP server when many connections are opened but never closed, leaving the HTTP server unavailable. This condition can be triggered maliciously by an attacker by opening a large number of connections to the HTTP server.</li>
-	    <li>CVE-2026-72758: When parsing an AS range in Routinator, if the maximum value of the range is smaller than the minimum value of the range, Routinator will never reach the maximum value and run out of memory.</li>
+	    <li>CVE-2026-72752: Routinator runs out of memory when the JSON
+	      output is requested many times concurrently. This condition can
+	      be triggered maliciously by an attacker by opening a large
+	      number of connections to the HTTP server. Additionally
+	      Routinator runs into a stack overflow and exits when a payload
+	      item with too much metadata is discarded at once.</li>
+	    <li>CVE-2026-72753: When Routinator encounters an RRDP
+	      notification file with gaps in the delta entries, it is still
+	      accepted and parsed, potentially leading to missing data. If it
+	      encounters too many delta entries it may run out of
+	      memory.</li>
+	    <li>CVE-2026-72754: When Routinator encounters a CRL with many
+	      entries, it may hang or run out of memory. If Routinator
+	      encounters a CRL file with the wrong encoding, it may
+	      exit.</li>
+	    <li>CVE-2026-72755: Routinator stores a newly-retrieved TA
+	      certificate via HTTPS in cache before validation, potentially
+	      overwriting a known good TA certificate even if validation
+	      fails.</li>
+	    <li>CVE-2026-72756: Routinator exits when an rsync URI for a
+	      file obtained over RRDP contains a path that cannot be stored
+	      on disk, such as too long file names, and folder names that
+	      overlap with existing file names.</li>
+	    <li>CVE-2026-72757: Routinator runs out of open connections on
+	      the HTTP server when many connections are opened but never
+	      closed, leaving the HTTP server unavailable. This condition can
+	      be triggered maliciously by an attacker by opening a large
+	      number of connections to the HTTP server.</li>
+	    <li>CVE-2026-72758: When parsing an AS range in Routinator, if
+	      the maximum value of the range is smaller than the minimum
+	      value of the range, Routinator will never reach the maximum
+	      value and run out of memory.</li>
 	  </ul>
 	</blockquote>
 	</body>
