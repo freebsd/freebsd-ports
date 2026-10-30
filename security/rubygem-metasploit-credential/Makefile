@@ -1,5 +1,5 @@
 PORTNAME=	metasploit-credential
-PORTVERSION=	6.0.14
+PORTVERSION=	6.0.25
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,15 +10,19 @@ WWW=		https://github.com/rapid7/metasploit-credential
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
+RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-csv>=0:devel/rubygem-csv \
+		rubygem-drb>=0:devel/rubygem-drb \
+		rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
 		rubygem-metasploit_data_models>=5.0.0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
+		rubygem-mutex_m>=0:devel/rubygem-mutex_m \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-pg>=0:databases/rubygem-pg \
-		rubygem-railties71>=7.1:www/rubygem-railties71 \
+		rubygem-railties80>=8.0:www/rubygem-railties80 \
 		rubygem-rex-socket>=0:security/rubygem-rex-socket \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
-		rubygem-rubyzip>=0:archivers/rubygem-rubyzip
+		rubygem-rubyzip>=3.1.1:archivers/rubygem-rubyzip
 
 NO_ARCH=	yes
 USES=		gem
