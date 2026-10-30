@@ -1,0 +1,27 @@
+-- Update otel-arrow-rust for the opentelemetry-proto 0.32 definitions.
+-- The upstream repo pins an older opentelemetry-proto, but greptimedb's
+-- Cargo.lock now pulls in 0.32.0, which added StringValueStrindex and
+-- key_strindex.  Render the new variant as an empty string and default
+-- the new field to 0.
+--- rust/otel-arrow-rust/src/otlp/common.rs.orig	2025-09-05 14:53:42.000000000 -0700
++++ rust/otel-arrow-rust/src/otlp/common.rs
+@@ -164,6 +164,9 @@
+                     }
+                     write!(f, "")?;
+                 }
++                Value::StringValueStrindex(_) => {
++                    write!(f, "")?;
++                }
+             }
+         } else {
+             write!(f, "")?;
+--- rust/otel-arrow-rust/src/otlp/attributes/store.rs.orig	2025-09-05 14:53:42.000000000 -0700
++++ rust/otel-arrow-rust/src/otlp/attributes/store.rs
+@@ -173,6 +173,7 @@
+
+         self.push(KeyValue {
+             key: key.to_string(),
++            key_strindex: 0,
+             value: None,
+         });
+         &mut self.last_mut().expect("vec is not empty").value
