@@ -10,6 +10,9 @@ WWW=		https://www.mysql.com/
 
 LICENSE=		GPLv2
 
+DEPRECATED=	EOLed upstream with unfixed vulnerabilities, use databases/mysql2610-server
+EXPIRATION_DATE=2026-11-06
+
 # Tracks one MySQL release series; the others are separate mysql*-server ports.
 # repology merges all series into one project and measures against the newest
 # train upstream ships, so its outdated report is an artifact, not an update.

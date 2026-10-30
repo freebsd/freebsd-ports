@@ -5,6 +5,9 @@ COMMENT=	Multithreaded SQL database (client)
 
 LICENSE+=	LGPL21
 
+DEPRECATED=	EOLed upstream with unfixed vulnerabilities, use databases/mysql2610-client
+EXPIRATION_DATE=2026-11-06
+
 # Slave port of databases/mysql267-server; see the note there on repology
 # reporting this series as outdated.
 
