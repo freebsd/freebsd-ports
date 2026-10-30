@@ -1,5 +1,5 @@
 PORTNAME=	dnspython
-DISTVERSION=	2.9.0
+DISTVERSION=	2.9.1
 PORTEPOCH=	1
 CATEGORIES=	dns python
 MASTER_SITES=	PYPI
@@ -36,12 +36,12 @@ IDNA_DESC=		Internationalized Domain Names in Application Support
 TRIO_DESC=		Concurrent async IO library support with TRIO backend
 
 DNSSEC_USE=		PYTHON=cryptography
-DOH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=4.1.0:www/py-h2@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}httpcore>=1.0.0:www/py-httpcore@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}httpx>=0.28.0:www/py-httpx@${PY_FLAVOR}
-DOQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioquic>=1.2.0:www/py-aioquic@${PY_FLAVOR}
-IDNA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>=3.10:dns/py-idna@${PY_FLAVOR}
-TRIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trio>=0.30:net/py-trio@${PY_FLAVOR}
+DOH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=4.4:www/py-h2@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}httpcore2>=2.13:www/py-httpcore2@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}httpx2>=2.13:www/py-httpx2@${PY_FLAVOR}
+DOQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioquic>=1.3.0:www/py-aioquic@${PY_FLAVOR}
+IDNA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}idna>=3.20:dns/py-idna@${PY_FLAVOR}
+TRIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trio>=0.34:net/py-trio@${PY_FLAVOR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
