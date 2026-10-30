@@ -1,0 +1,17 @@
+Description: Drop setuptools_scm_git_archive from the build requirements;
+  setuptools-scm >= 7 handles git archives itself.
+Issue ID: none
+Changeset: none
+TODO: FreeBSD-specific (obsolete setuptools_scm_git_archive port), not for
+  upstream.
+
+--- pyproject.toml.orig	2026-05-12 06:07:12 UTC
++++ pyproject.toml
+@@ -2,7 +2,6 @@ requires = [
+ requires = [
+     "setuptools",
+     "setuptools_scm[toml]",
+-    "setuptools_scm_git_archive",
+     "wheel",
+ ]
+ build-backend = "setuptools.build_meta"
