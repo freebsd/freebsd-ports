@@ -1,10 +1,8 @@
 PORTNAME=	sqlobject
-PORTVERSION=	3.11.0
-PORTREVISION=	1
+PORTVERSION=	3.14.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	SQLObject-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python object for manipulation with SQL table row
@@ -12,12 +10,15 @@ WWW=		http://www.sqlobject.org
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}formencode>=1.2.2:www/py-formencode@${PY_FLAVOR}
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}formencode>=2.1.1:www/py-formencode@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydispatcher>=2.0.4:devel/py-pydispatcher@${PY_FLAVOR}
 
 NO_ARCH=	yes
+
 USES=		dos2unix python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 # currently MaxDB(SAP), ADODB are not supported
 OPTIONS_DEFINE=	DOCS PGSQL SQLITE MSSQL
