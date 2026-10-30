@@ -1,5 +1,6 @@
 PORTNAME=	dnaio
 DISTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>0:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xopen>=1.4.0:archivers/py-xopen@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist cython pep517
+USE_PYTHON=	autoplist concurrent cython pep517
 
 .include <bsd.port.mk>
