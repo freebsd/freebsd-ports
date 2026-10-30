@@ -1,7 +1,7 @@
 PORTNAME=       dcf77pi
 PORTVERSION=    3.7.1.1
 DISTVERSIONPREFIX=      v
-PORTREVISION=   2
+PORTREVISION=   3
 CATEGORIES=     comms
 MASTER_SITES=   https://codeberg.org/rene0/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -11,6 +11,9 @@ WWW=            https://codeberg.org/rene0/dcf77pi
 
 LICENSE=        BSD2CLAUSE
 LICENSE_FILE=   ${WRKSRC}/LICENSE.md
+
+DEPRECATED=	No development for years, consider using misc/radio_datetime_analyzer instead
+EXPIRATION_DATE=2026-12-31
 
 LIB_DEPENDS=    libjson-c.so:devel/json-c
 
