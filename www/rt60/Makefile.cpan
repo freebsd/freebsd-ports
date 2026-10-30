@@ -3,6 +3,7 @@
 ###############################################################################
 ### --- Core_DEPS ---
 ### Apache::Session 1.53
+### Archive::Zip
 ### Business::Hours
 ### CGI 3.38                                    perl std (perl<5.22)
 ### CGI::Cookie 1.20                            perl std (perl<5.22)
@@ -13,6 +14,7 @@
 ### Convert::Color
 ### Imager
 ### Crypt::Eksblowfish
+### Crypt::URandom 0.55
 ### CSS::Minifier::XS
 ### CSS::Squish 0.06
 ### CSS::Inliner 4027
@@ -26,7 +28,7 @@
 ### DateTime::Locale 0.40
 ### DateTime::Set
 ### DBI 1.37
-### DBIx::SearchBuilder 1.85
+### DBIx::SearchBuilder 1.86
 ### Devel::GlobalDestruction
 ### Devel::StackTrace 1.19
 ### Digest::base                                perl std
@@ -48,7 +50,7 @@
 ### HTML::FormatExternal
 ### HTML::FormatText::WithLinks 0.14
 ### HTML::FormatText::WithLinks::AndTables 0.06
-### HTML::Gumbo
+### HTML::Gumbo 0.19
 ### HTML::Mason 1.43
 ### HTML::Mason::PSGIHandler 0.52
 ### HTML::Quoted
@@ -66,7 +68,7 @@
 ### LWP::Simple
 ### Mail::Header 2.12
 ### Mail::Mailer 1.57
-### MIME::Entity 5.504
+### MIME::Tools 5.522
 ### MIME::Types
 ### Module::Refresh 0.03
 ### Module::Runtime
@@ -75,7 +77,7 @@
 ### Net::IP
 ### Parallel::ForkManager
 ### Plack 1.0002
-### Plack::Handler::Starlet
+### Starlet 0.33
 ### Regexp::Common
 ### Regexp::Common::net::CIDR
 ### Regexp::IPv6
@@ -100,6 +102,7 @@
 ### XML::RSS 1.05
 
 CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
+		p5-Archive-Zip>0:archivers/p5-Archive-Zip				\
 		p5-CGI>4.0:www/p5-CGI							\
 		p5-Business-Hours>0:misc/p5-Business-Hours				\
 		p5-CGI-Emulate-PSGI>0:www/p5-CGI-Emulate-PSGI				\
@@ -111,8 +114,9 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Clone>=0:devel/p5-Clone						\
 		p5-Convert-Color>0:graphics/p5-Convert-Color				\
 		p5-Crypt-Eksblowfish>0:security/p5-Crypt-Eksblowfish			\
+		p5-Crypt-URandom>=0.55:security/p5-Crypt-URandom			\
 		p5-DBI>=1.37:databases/p5-DBI						\
-		p5-DBIx-SearchBuilder>=1.85:databases/p5-DBIx-SearchBuilder		\
+		p5-DBIx-SearchBuilder>=1.86:databases/p5-DBIx-SearchBuilder		\
 		p5-Data-GUID>0:devel/p5-Data-GUID					\
 		p5-Data-ICal>0:deskutils/p5-Data-ICal					\
 		p5-Data-Page>0:databases/p5-Data-Page					\
@@ -134,7 +138,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-HTML-FormatExternal>0:textproc/p5-HTML-FormatExternal		\
 		p5-HTML-FormatText-WithLinks-AndTables>0:textproc/p5-HTML-FormatText-WithLinks-AndTables	\
 		p5-HTML-FormatText-WithLinks>=0.14:textproc/p5-HTML-FormatText-WithLinks	\
-		p5-HTML-Gumbo>0:www/p5-HTML-Gumbo					\
+		p5-HTML-Gumbo>=0.19:www/p5-HTML-Gumbo					\
 		p5-HTML-Mason-PSGIHandler>=0.52:www/p5-HTML-Mason-PSGIHandler		\
 		p5-HTML-Mason>=1.43:www/p5-HTML-Mason					\
 		p5-HTML-Parser>0:www/p5-HTML-Parser					\
@@ -151,7 +155,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Locale-Maketext-Fuzzy>=0.11:devel/p5-Locale-Maketext-Fuzzy		\
 		p5-Locale-Maketext-Lexicon>=0.32:devel/p5-Locale-Maketext-Lexicon	\
 		p5-Log-Dispatch>=2.30:devel/p5-Log-Dispatch				\
-		p5-MIME-Tools>=5.504,2:mail/p5-MIME-Tools				\
+		p5-MIME-Tools>=5.522,2:mail/p5-MIME-Tools				\
 		p5-MIME-Types>=0:mail/p5-MIME-Types					\
 		p5-Mail-Tools>=2.12:mail/p5-Mail-Tools					\
 		p5-Module-Refresh>=0.03:devel/p5-Module-Refresh				\
@@ -161,8 +165,8 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP						\
 		p5-Parallel-ForkManager>=0:devel/p5-Parallel-ForkManager		\
 		p5-Plack>=1.0002:www/p5-Plack						\
-		p5-Pod-Parser>=0:textproc/p5-Pod-Parser							\
-		p5-Starlet>0:www/p5-Starlet						\
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser					\
+		p5-Starlet>=0.33:www/p5-Starlet						\
 		p5-Regexp-Common-net-CIDR>0:textproc/p5-Regexp-Common-net-CIDR		\
 		p5-Regexp-Common>0:textproc/p5-Regexp-Common				\
 		p5-Regexp-IPv6>0:textproc/p5-Regexp-IPv6				\
@@ -184,7 +188,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 ### Getopt::Long                           perl std
 ### LWP::Protocol::https
 ### LWP::UserAgent 6.02
-### Mozilla::CA
+### Mozilla::CA 20261020
 ### Pod::Usage                             perl std
 
 MAILGATE_DEPS=	p5-libwww>6.02:www/p5-libwww \
@@ -353,3 +357,13 @@ EXTERNALAUTH_DEPS=	p5-Net-SSLeay>0:security/p5-Net-SSLeay \
 # no port available
 # https://metacpan.org/pod/File::Dropbox
 
+### --- MFA ---
+### Auth::GoogleAuth 1.09
+### Crypt::URandom
+### CryptX
+### Text::QRCode
+
+MFA_DEPS=	p5-Auth-GoogleAuth>=1.09:security/p5-Auth-GoogleAuth	\
+		p5-Crypt-URandom>0:security/p5-Crypt-URandom		\
+		p5-CryptX>0:security/p5-CryptX				\
+		p5-Text-QRCode>0:textproc/p5-Text-QRCode
