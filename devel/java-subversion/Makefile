@@ -1,5 +1,4 @@
 PKGNAMEPREFIX=	java-
-CATEGORIES=	java
 
 MAINTAINER=	michaelo@apache.org
 COMMENT=	Java bindings for Apache Subversion
@@ -8,12 +7,14 @@ WWW=		https://subversion.apache.org/
 USES=		compiler java
 JAVA_OS=	native
 
-PORTREVISION_LATEST=	2
-PORTREVISION_LTS=		2
+PORTREVISION_LATEST=	3
+PORTREVISION_LTS=		3
 
 SVN_BUILD_BINDINGS=	yes
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
+
+CATEGORIES+=	java
 
 CONFIGURE_ARGS+=	--enable-javahl \
 			--without-swig-perl \

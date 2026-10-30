@@ -41,7 +41,6 @@
     SUBDIR += jattach
     SUBDIR += java-cup
     SUBDIR += java-getopt
-    SUBDIR += java-subversion
     SUBDIR += java-zoneinfo
     SUBDIR += java3d
     SUBDIR += javacpp

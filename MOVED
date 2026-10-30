@@ -5769,3 +5769,4 @@ databases/immudb||2026-10-27|Has expired: Not actively maintained. Multiple vers
 devel/umlgraph||2026-10-29|Has expired: 10 years old, not activaly maintained, does not run with jdk11+
 devel/luajava||2026-10-29|Has expired: No new version since 2008, upstream website is gone, JDK8 only, old Lua version
 devel/libreadline-java||2026-10-29|Has expired: 20 years old, does not build with jdk11+, not actively maintained, no users in the tree, forked(?) to https://github.com/aclemons/java-readline
+java/java-subversion|devel/java-subversion|2026-10-30|Use consistent category: all other Subversion language bindings (py-/ruby-/p5-subversion) live under devel/
