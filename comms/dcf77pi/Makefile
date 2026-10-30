@@ -3,11 +3,10 @@ PORTVERSION=	3.7.1.1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	comms
-MASTER_SITES=	https://codeberg.org/rene0/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
+FJ_ACCOUNT=	rene0
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	DCF77 receiver/logger/analyzer and library for the Raspberry Pi
-WWW=		https://codeberg.org/rene0/dcf77pi
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -15,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 USES=		ncurses pkgconfig
+USE_FORGEJO=	yes
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 INSTALL_TARGET=	install-strip
 
