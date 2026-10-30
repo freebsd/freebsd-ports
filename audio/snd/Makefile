@@ -1,11 +1,10 @@
 PORTNAME=	snd
-DISTVERSION=	25.7
-PORTREVISION=	1
+DISTVERSION=	26.8
 CATEGORIES=	audio
 MASTER_SITES=	https://ccrma.stanford.edu/software/snd/ \
 		SF
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Multitracking sound editor and utilities
 WWW=		https://ccrma.stanford.edu/software/snd/
 
