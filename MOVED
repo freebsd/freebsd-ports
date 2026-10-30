@@ -5770,3 +5770,4 @@ devel/umlgraph||2026-10-29|Has expired: 10 years old, not activaly maintained, d
 devel/luajava||2026-10-29|Has expired: No new version since 2008, upstream website is gone, JDK8 only, old Lua version
 devel/libreadline-java||2026-10-29|Has expired: 20 years old, does not build with jdk11+, not actively maintained, no users in the tree, forked(?) to https://github.com/aclemons/java-readline
 java/java-subversion|devel/java-subversion|2026-10-30|Use consistent category: all other Subversion language bindings (py-/ruby-/p5-subversion) live under devel/
+www/mod_dav_svn|www/mod_subversion|2026-10-30|Renamed: the port has always built and installed three Apache modules (mod_dav_svn, mod_authz_svn, mod_dontdothat), not just DAV support

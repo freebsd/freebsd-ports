@@ -450,7 +450,6 @@
     SUBDIR += mod_authnz_external24
     SUBDIR += mod_authz_unixgroup24
     SUBDIR += mod_cfg_ldap
-    SUBDIR += mod_dav_svn
     SUBDIR += mod_defensible
     SUBDIR += mod_dnssd
     SUBDIR += mod_evasive
@@ -484,6 +483,7 @@
     SUBDIR += mod_scgi
     SUBDIR += mod_security
     SUBDIR += mod_setenvifplus
+    SUBDIR += mod_subversion
     SUBDIR += mod_umask
     SUBDIR += mod_webauth
     SUBDIR += mod_webkit

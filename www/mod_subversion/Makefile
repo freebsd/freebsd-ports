@@ -1,5 +1,6 @@
-PORTNAME=	mod_dav_svn
+PORTNAME=	mod_subversion
 DISTNAME=	subversion-${PORTVERSION}
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 CATEGORIES=	www
 
@@ -9,8 +10,8 @@ WWW=		https://subversion.apache.org/
 
 USES=		apache
 
-PORTREVISION_LATEST=	0
-PORTREVISION_LTS=		0
+PORTREVISION_LATEST=	1
+PORTREVISION_LTS=		1
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 
