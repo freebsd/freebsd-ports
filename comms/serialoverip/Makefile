@@ -1,5 +1,6 @@
 PORTNAME=	serialoverip
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	comms net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}
 DISTNAME=	${PORTNAME}
@@ -9,6 +10,9 @@ COMMENT=	Transport of serial interfaces over UDP/IP
 WWW=		https://www.sourceforge.net/projects/serialoverip/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Hasn't been touched in 24yrs. Too niche in todays world.
+EXPIRATION_DATE=	2026-12-31
 
 USES=		tar:tgz
 
