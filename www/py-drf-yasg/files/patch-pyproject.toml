@@ -1,16 +1,17 @@
 Relax version requirements and enable build for older versions of py-setuptools.
 
---- pyproject.toml.orig	2025-09-26 22:17:55 UTC
+--- pyproject.toml.orig	2026-10-09 16:44:37 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
+@@ -1,6 +1,6 @@ build-backend = "setuptools.build_meta"
  [build-system]
+ build-backend = "setuptools.build_meta"
 -requires = ["setuptools >= 77.0.3", "setuptools-scm ~= 7.0"]
 +requires = ["setuptools", "setuptools-scm"]
- build-backend = "setuptools.build_meta"
  
  [project]
+ name = "drf-yasg"
 @@ -9,8 +9,7 @@ dynamic = ["version"]
- requires-python = ">= 3.9"
+ requires-python = ">= 3.10"
  dynamic = ["version"]
  
 -license = "BSD-3-Clause"
