@@ -1,18 +1,18 @@
 PORTNAME=	bun
 DISTVERSIONPREFIX=	bun-v
-DISTVERSION=	1.4.2
+DISTVERSION=	1.4.4
 CATEGORIES=	lang
 
-LLVM_VER=	21
+LLVM_VER=	23
 NODE_VERSION=	26.3.0
-# samm-git/WebKit release = bun's pinned commit (2e2aa2290fac856d) + the FreeBSD
+# samm-git/WebKit release = bun's pinned commit (d6375c72affe0f70) + the FreeBSD
 # membarrier fix.  bun keys its prebuilt cache/identity by the commit *it* pins,
 # so WEBKIT_COMMIT/WEBKIT_SHORT use that, not the fork's WEBKIT_VERSION.
-WEBKIT_VERSION=	808354a3cce576c0c9ac20ece440fee481e8737d
-WEBKIT_COMMIT=	2e2aa2290fac856d6f451ceacb58f7f5b44dd057
-WEBKIT_SHORT=	2e2aa2290fac856d
+WEBKIT_VERSION=	b590f37da67cd02009bec23d112167cc1bf1a1d3
+WEBKIT_COMMIT=	d6375c72affe0f70222cdcb45012b10f0bf3a9d5
+WEBKIT_SHORT=	d6375c72affe0f70
 # Full sha: bun's build const-slices it and the source tarball has no .git.
-BUN_GIT_SHA=	744846f844374847c902b5e7fd59b4342a51ef99
+BUN_GIT_SHA=	38afee6c84fcf48c0edb2466aa4b27d287a59c30
 
 # bun needs a Rust nightly: its source uses unstable `#![feature(...)]`s (stable
 # rustc fails E0554) and the release profile passes -Zbuild-std (which needs
@@ -53,22 +53,22 @@ USES=		shebangfix cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	oven-sh
 GH_TUPLE=	oven-sh:boringssl:41bf9b59c2ebf277a7aa427e1ecad5cc80dd4d4f:boringssl \
-		google:brotli:v1.1.0:brotli \
+		google:brotli:db24a98aed38a16de78cc05ca15cdd8dc2a0d92d:brotli \
 		c-ares:c-ares:c7a3138dcfe3bb0eaaf10c0c24c36dc66dc790ab:cares \
-		HdrHistogram:HdrHistogram_c:be60a9987ee48d0abf0d7b6a175bad8d6c1585d1:hdrhistogram \
+		HdrHistogram:HdrHistogram_c:18c7a324383dded1451d15621cd018b0048057d0:hdrhistogram \
 		google:highway:2607d3b5b0113992fe84d3848859eae13b3b52c1:highway \
-		libarchive:libarchive:ded82291ab41d5e355831b96b0e1ff49e24d8939:libarchive \
-		ebiggers:libdeflate:c8c56a20f8f621e6a966b716b31f1dedab6a41e3:libdeflate \
-		libjpeg-turbo:libjpeg-turbo:e352b02f794f701407b39af08576035ba3360d60:libjpeg_turbo \
+		libarchive:libarchive:27cbc7827172698143e440801fc0ba39ccb4f1f5:libarchive \
+		ebiggers:libdeflate:92e6a0db9fa848d742f9eb286c92afc60f2c3dda:libdeflate \
+		libjpeg-turbo:libjpeg-turbo:c85e6b905bf237038faa936dab160ebfc5da0344:libjpeg_turbo \
 		randy408:libspng:fb768002d4288590083a476af628e51c3f1d47cd:libspng \
 		oven-sh:libuv:8023581113b276e7c1aee3f82da57ca0893faab1:libuv \
 		webmproject:libwebp:b7e29b9d75bd31422b00c2a446d49d7af06c328d:libwebp \
 		oven-sh:lol-html:725ce499aa9b71e38b7a2d0a9fbb6d7294a4079e:lolhtml \
-		litespeedtech:ls-hpack:8905c024b6d052f083a3d11d0a169b3c2735c8a1:lshpack \
-		litespeedtech:ls-qpack:1e9c5b8e59f8161c54f168a570c8bfdc59ded0c3:lsqpack \
-		litespeedtech:lsquic:3181911301b1aa4f54c1ed690901abc674ee08fb:lsquic \
-		oven-sh:mimalloc:6a64e1ba7f5b2130d4efccb67ec87fd0003f0f6a:mimalloc \
-		h2o:picohttpparser:066d2b1e9ab820703db0837a7255d92d30f0c9f5:picohttpparser \
+		litespeedtech:ls-hpack:cf0f70dd10b352194c97448eb5d00b4aa484f531:lshpack \
+		litespeedtech:ls-qpack:91567706c41c0d97ab8dc576873ecd472d7869fa:lsqpack \
+		litespeedtech:lsquic:f812ceb9529e26717df78c6064a2ff648b949f3e:lsquic \
+		oven-sh:mimalloc:92ef6587c57b262f6e6abf513f7776a2f8d12aeb:mimalloc \
+		h2o:picohttpparser:f4d94b48b31e0abae029ebeafcfd9ca0680ede58:picohttpparser \
 		sru-systems:rust-argon2:ed81866f163f0c7026aa6fd8388adf37242eb32a:rust_argon2 \
 		oven-sh:tinycc:05f0fafaa3be31e31d7b4b5c17dc60f62c991171:tinycc \
 		zlib-ng:zlib-ng:12731092979c6d07f42da27da673a9f6c7b13586:zlib \
@@ -144,22 +144,22 @@ PLIST_FILES=	bin/${PORTNAME}
 # then run `make makesum`.
 _BUN_DEP_CACHE=	\
 		boringssl-ce854d7300ee8a35.tar.gz:oven-sh-boringssl-41bf9b59c2ebf277a7aa427e1ecad5cc80dd4d4f_GH0.tar.gz \
-		brotli-723494d4c3a9902a.tar.gz:google-brotli-v1.1.0_GH0.tar.gz \
+		brotli-27f9ec806f9750c6.tar.gz:google-brotli-db24a98aed38a16de78cc05ca15cdd8dc2a0d92d_GH0.tar.gz \
 		cares-1685a3355527fdec.tar.gz:c-ares-c-ares-c7a3138dcfe3bb0eaaf10c0c24c36dc66dc790ab_GH0.tar.gz \
-		hdrhistogram-97084f213075a65e.tar.gz:HdrHistogram-HdrHistogram_c-be60a9987ee48d0abf0d7b6a175bad8d6c1585d1_GH0.tar.gz \
+		hdrhistogram-89207ecaa5b6a22f.tar.gz:HdrHistogram-HdrHistogram_c-18c7a324383dded1451d15621cd018b0048057d0_GH0.tar.gz \
 		highway-b2dcc6002e95cc47.tar.gz:google-highway-2607d3b5b0113992fe84d3848859eae13b3b52c1_GH0.tar.gz \
-		libarchive-4296b191210d6b1b.tar.gz:libarchive-libarchive-ded82291ab41d5e355831b96b0e1ff49e24d8939_GH0.tar.gz \
-		libdeflate-ce0e2d9805b30dcc.tar.gz:ebiggers-libdeflate-c8c56a20f8f621e6a966b716b31f1dedab6a41e3_GH0.tar.gz \
-		libjpeg-turbo-297099166a01f75e.tar.gz:libjpeg-turbo-libjpeg-turbo-e352b02f794f701407b39af08576035ba3360d60_GH0.tar.gz \
+		libarchive-1a3a126350c6e47f.tar.gz:libarchive-libarchive-27cbc7827172698143e440801fc0ba39ccb4f1f5_GH0.tar.gz \
+		libdeflate-9113bd7317ae5193.tar.gz:ebiggers-libdeflate-92e6a0db9fa848d742f9eb286c92afc60f2c3dda_GH0.tar.gz \
+		libjpeg-turbo-a7b6d7c73979a459.tar.gz:libjpeg-turbo-libjpeg-turbo-c85e6b905bf237038faa936dab160ebfc5da0344_GH0.tar.gz \
 		libspng-e6aca86c593b51ad.tar.gz:randy408-libspng-fb768002d4288590083a476af628e51c3f1d47cd_GH0.tar.gz \
 		libuv-0f29c74cc80722ca.tar.gz:oven-sh-libuv-8023581113b276e7c1aee3f82da57ca0893faab1_GH0.tar.gz \
 		libwebp-2ced709f169b40bd.tar.gz:webmproject-libwebp-b7e29b9d75bd31422b00c2a446d49d7af06c328d_GH0.tar.gz \
 		lolhtml-d63099fc6ce4f6e5.tar.gz:oven-sh-lol-html-725ce499aa9b71e38b7a2d0a9fbb6d7294a4079e_GH0.tar.gz \
-		lshpack-73e0c55d12ea4fc2.tar.gz:litespeedtech-ls-hpack-8905c024b6d052f083a3d11d0a169b3c2735c8a1_GH0.tar.gz \
-		lsqpack-ceeb8e315778b938.tar.gz:litespeedtech-ls-qpack-1e9c5b8e59f8161c54f168a570c8bfdc59ded0c3_GH0.tar.gz \
-		lsquic-d3ef6cf1fbedd7f9.tar.gz:litespeedtech-lsquic-3181911301b1aa4f54c1ed690901abc674ee08fb_GH0.tar.gz \
-		mimalloc-46af79b3cf5b6977.tar.gz:oven-sh-mimalloc-6a64e1ba7f5b2130d4efccb67ec87fd0003f0f6a_GH0.tar.gz \
-		picohttpparser-fad59b16ad4752cc.tar.gz:h2o-picohttpparser-066d2b1e9ab820703db0837a7255d92d30f0c9f5_GH0.tar.gz \
+		lshpack-57f11d39f91979cb.tar.gz:litespeedtech-ls-hpack-cf0f70dd10b352194c97448eb5d00b4aa484f531_GH0.tar.gz \
+		lsqpack-24fd48c0f630f603.tar.gz:litespeedtech-ls-qpack-91567706c41c0d97ab8dc576873ecd472d7869fa_GH0.tar.gz \
+		lsquic-ecd56644a06346db.tar.gz:litespeedtech-lsquic-f812ceb9529e26717df78c6064a2ff648b949f3e_GH0.tar.gz \
+		mimalloc-139477488b3dc239.tar.gz:oven-sh-mimalloc-92ef6587c57b262f6e6abf513f7776a2f8d12aeb_GH0.tar.gz \
+		picohttpparser-f0abcbe6c6083ef3.tar.gz:h2o-picohttpparser-f4d94b48b31e0abae029ebeafcfd9ca0680ede58_GH0.tar.gz \
 		rust-argon2-87c5404c7fc9aa9c.tar.gz:sru-systems-rust-argon2-ed81866f163f0c7026aa6fd8388adf37242eb32a_GH0.tar.gz \
 		tinycc-e715321533b32b83.tar.gz:oven-sh-tinycc-05f0fafaa3be31e31d7b4b5c17dc60f62c991171_GH0.tar.gz \
 		zlib-655c6ecdb6fc9cd5.tar.gz:zlib-ng-zlib-ng-12731092979c6d07f42da27da673a9f6c7b13586_GH0.tar.gz \
