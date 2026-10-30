@@ -14,7 +14,7 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib
 RUN_DEPENDS=	wget>0:ftp/wget \
 		unzip>0:archivers/unzip
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 USES=		fpc gnome gmake lazarus:flavors shebangfix ssl:run dos2unix \
 		mysql:server xorg
