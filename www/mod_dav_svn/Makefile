@@ -4,7 +4,7 @@ DISTNAME=	subversion-${PORTVERSION}
 CATEGORIES=	www
 
 MAINTAINER=	michaelo@apache.org
-COMMENT=	Apache module for subversion serving
+COMMENT=	Apache HTTP Server modules for Apache Subversion
 WWW=		https://subversion.apache.org/
 
 USES=		apache
