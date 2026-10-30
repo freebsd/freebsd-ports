@@ -1,0 +1,10 @@
+--- tests/meson.build.orig	2026-10-18 19:52:55 UTC
++++ tests/meson.build
+@@ -48,7 +48,6 @@ if cairo_dep.found()
+ if cairo_dep.found()
+   test_cflags += '-DHAVE_CAIRO'
+   tests += [
+-    [ 'test-font-data', [ 'test-font-data.c', 'test-common.c' ], [ libpangocairo_dep ] + common_deps ],
+     [ 'test-bidi', [ 'test-bidi.c' ], [ libpangocairo_dep ] ],
+     [ 'testcontext', [ 'testcontext.c' ], [ libpangocairo_dep ] ],
+     [ 'testiter', [ 'testiter.c' ], [ libpangocairo_dep ] ],

@@ -1,0 +1,11 @@
+--- tests/fontsets/mono2.orig	2026-10-18 20:13:01 UTC
++++ tests/fontsets/mono2
+@@ -4,7 +4,7 @@ Droid Sans Japanese 20
+ DejaVu Sans 20
+ Noto Sans CJK JP 20
+ Droid Sans Japanese 20
+-Cantarell 20
++Cantarell 20 @wght=400
+ Amiri 20
+ DejaVu Sans Bold 20
+ Font Awesome 5 Free Solid Heavy 20

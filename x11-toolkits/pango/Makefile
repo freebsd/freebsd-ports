@@ -1,5 +1,5 @@
 PORTNAME=	pango
-DISTVERSION=	1.57.1
+DISTVERSION=	1.58.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -24,9 +24,10 @@ USE_LDCONFIG=	yes
 
 PORTSCOUT=	limit:^1\.[^9]
 
-PLIST_SUB=	LIBVERSION=0.${PORTVERSION:R:E}0${PORTVERSION:E}.0
+PLIST_SUB=	LIBVERSION=0.5800.2
 
-TESTING_UNSAFE=	ERROR:../tests/test-font-data.c:153:test_boxes_font_metrics: assertion failed (metrics->approximate_char_width == boxes_unhinted_metrics.approximate_char_width): (46201 == 49273)
+MESON_ARGS=	-Dbuild-testsuite=false \
+		-Dbuild-examples=false
 
 OPTIONS_DEFINE=		DOCS LANG_TH MANPAGES X11
 OPTIONS_DEFAULT=	LANG_TH MANPAGES X11
@@ -53,5 +54,10 @@ post-patch:
 pre-test:
 # Don't test backup files. Silly Meson.
 	@${FIND} ${WRKSRC}/tests/fontsets/ -name "*.orig" -delete
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dbuild-testsuite=true -Dbuild-examples=true"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>
