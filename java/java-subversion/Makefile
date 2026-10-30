@@ -2,7 +2,7 @@ PKGNAMEPREFIX=	java-
 CATEGORIES=	java
 
 MAINTAINER=	michaelo@apache.org
-COMMENT=	Java bindings for Version control system
+COMMENT=	Java bindings for Apache Subversion
 WWW=		https://subversion.apache.org/
 
 USES=		compiler java
@@ -32,9 +32,9 @@ INSTALL_TARGET=	install-javahl
 
 post-configure:
 .if ${COMPILER_TYPE} == clang
-	@${REINPLACE_CMD} "s#^LT_CXX_LIBADD = .*#LT_CXX_LIBADD =#" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} "s#^LT_CXX_LIBADD = .*#LT_CXX_LIBADD =#" ${WRKSRC}/Makefile
 .else
-	@${DO_NADA}
+	${DO_NADA}
 .endif
 
 pre-build:
