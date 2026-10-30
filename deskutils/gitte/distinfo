@@ -1,6 +1,6 @@
-TIMESTAMP = 1791993013
-SHA256 (gitte-0.11.0.tar.gz) = b2cb52b4b2b9a8399cafaf03812fd25a1ee16dc7293525bd462e48795eb247cf
-SIZE (gitte-0.11.0.tar.gz) = 957973
+TIMESTAMP = 1793385688
+SHA256 (gitte-0.11.1.tar.gz) = da2072f7c0626e10573d4cc9c5661b9ef55b0d50283263f90191b15f036908ca
+SIZE (gitte-0.11.1.tar.gz) = 960357
 SHA256 (rust/crates/aes-0.8.4.crate) = b169f7a6d4742236a0a00c541b845991d0ac43e546831af1249753ab4c3aa3a0
 SIZE (rust/crates/aes-0.8.4.crate) = 124812
 SHA256 (rust/crates/aho-corasick-1.1.5.crate) = c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
