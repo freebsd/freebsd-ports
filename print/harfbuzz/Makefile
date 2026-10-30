@@ -1,5 +1,5 @@
 PORTNAME=	harfbuzz
-DISTVERSION=	14.6.0
+DISTVERSION=	15.0.0
 PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
