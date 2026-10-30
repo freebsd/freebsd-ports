@@ -13,6 +13,7 @@
     SUBDIR += dissent
     SUBDIR += echat
     SUBDIR += ejabberd
+    SUBDIR += faro
     SUBDIR += farstream
     SUBDIR += finch
     SUBDIR += flare

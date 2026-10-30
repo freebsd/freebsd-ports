@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+faro is a linked device, like Signal Desktop: your phone stays
+your primary device.
+
+Quick start:
+  faro demo   try it first with a fake account (nothing is sent)
+  faro link   scan the QR code in Signal > Settings > Linked devices
+  faro        run it
+
+Your messages and keys live in ~/.local/share/faro/, and the
+config file is ~/.config/faro/config.toml (written on first run).
+
+Press F1 inside faro for every key, or search them in the command
+palette (Ctrl+P). To quit, press Ctrl+Q.
+EOM
+}
+]
