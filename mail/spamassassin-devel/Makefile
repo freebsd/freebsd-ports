@@ -1,6 +1,6 @@
 PORTNAME=	spamassassin
 PORTVERSION=	${SA_COMMIT_DATE}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	mail perl5
 PKGNAMESUFFIX=	-devel
 
@@ -153,7 +153,7 @@ SPF_QUERY_INITVAR=	SPF
 DOCS=		CREDITS Changes INSTALL NOTICE PACKAGING README TRADEMARK UPGRADE USAGE procmailrc.example
 DOCSSQL=	README README.awl README.bayes awl_mysql.sql awl_pg.sql bayes_mysql.sql bayes_pg.sql userpref_mysql.sql userpref_pg.sql
 DOCSLDAP=	README README.testing sa_test.ldif
-PORTDOCS=	${DOCS} sql ldap
+PORTDOCS=	${DOCS} sql ldap HOWTO.Bayes-Redis Redirectors-Selenium-Security.pod
 
 USE_RC_SUBR=	sa-spamd
 
