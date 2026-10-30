@@ -1,7 +1,7 @@
 PORTNAME=	safetensors
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,12 +16,12 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}maturin>0:devel/py-maturin@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytorch>=1.10:misc/py-pytorch@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h5py>=3.7.0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.12.1:misc/py-huggingface-hub@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>=6.70.2:devel/py-hypothesis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>=4.0.0:devel/py-pytest-benchmark@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>=4.0.0:devel/py-pytest-benchmark@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytorch>=1.10:misc/py-pytorch@${PY_FLAVOR}
 
 USES=		cargo python
 USE_PYTHON=	pep517 autoplist pytest
@@ -109,5 +109,10 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${BUILD_WRKDIR}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+OPTIONS_DEFINE=	TORCH
+TORCH_DESC=	PyTorch tensor support
+
+TORCH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytorch>=1.10:misc/py-pytorch@${PY_FLAVOR}
 
 .include <bsd.port.mk>
