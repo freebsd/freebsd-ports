@@ -1,7 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.29.0
-PORTREVISION=	5
+DISTVERSION=	8.33.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm
 DISTFILES=	signal-desktop-${DISTVERSION}-npm-cache.tar.gz:npm
@@ -60,10 +59,6 @@ USE_GL=		gbm gl
 USE_GNOME=	atk cairo gdkpixbuf glib20 gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xi xrandr xrender xtst
 
-PACKAGE_ENV=	SIGNAL_ENV=production \
-		npm_config_runtime=electron \
-		npm_config_target=${ELECTRON_VER_MAJOR} \
-		npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers
 MAKE_ENV+=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR} \
 		HOME=${WRKDIR} \
 		USE_SYSTEM_APP_BUILDER=true \
@@ -81,7 +76,7 @@ MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 _BUILD_DATE=	$$(date +'%s')
 
 ELECTRON_VER_MAJOR=	44
-PNPM_VERS=		11.24.0
+PNPM_VERS=		12.16.1
 
 .include <bsd.port.pre.mk>
 
@@ -128,7 +123,7 @@ do-build:
 
 	# found in reproducible-builds/docker-entrypoint.sh
 	cd ${WRKSRC}/sticker-creator && \
-		${SETENV} ${MAKE_ENV} pnpm install --frozen-lock
+		${SETENV} ${MAKE_ENV} pnpm install
 	cd ${WRKSRC}/sticker-creator && \
 		${SETENV} ${MAKE_ENV} pnpm run build
 
@@ -136,12 +131,15 @@ do-build:
 		${SETENV} ${MAKE_ENV} pnpm run generate
 
 do-install:
-# taken from https://github.com/tagattie/FreeBSD-Electron/blob/master/Mk/Uses/electron.mk#L387
-# and editors/vscode
+# taken from Mk/Uses/electron.mk:405
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PACKAGE_ENV} npm run build:electron -- \
-			--linux --dir --config.npmRebuild=false \
-			--config.electronDist=${WRKDIR}/electron${ELECTRON_VER_MAJOR}
+		${SETENV} ${MAKE_ENV} SIGNAL_ENV=production pnpm electron-builder \
+		--linux \
+		--dir \
+		--publish never \
+		--config.npmRebuild=false \
+		--config.electronVersion=44 \
+		--config.electronDist=${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/dist/linux-unpacked && \
