@@ -49,4 +49,17 @@ To upgrade your database schema, preserving ticket history:
 and answer the prompts.
 EOM
 }
+{ type: upgrade
+  maximum_version: "5.0.11"
+  message: <<EOM
+A new configuration option $SecretKey has been added. This key is used
+as keying material for cryptographic operations such as MFA-reset tokens
+and TOTP secret encryption. When empty (the default), RT falls back to
+$DatabasePassword. We recommend setting this to a long, random value
+in RT_SiteConfig.pm so that application-level crypto is not coupled to
+the database credential. Set it before any user enrolls in MFA: changing it
+later (or changing $DatabasePassword while it is empty) makes stored TOTP
+secrets undecryptable, so all enrolled users have to reset MFA and re-enroll.
+EOM
+}
 ]
