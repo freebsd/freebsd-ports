@@ -2,5 +2,5 @@ include/nxml.h
 lib/libnxml.a
 lib/libnxml.so
 lib/libnxml.so.0
-lib/libnxml.so.0.18.5
+lib/libnxml.so.0.18.6
 libdata/pkgconfig/nxml.pc
