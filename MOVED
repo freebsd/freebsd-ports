@@ -5773,3 +5773,4 @@ java/java-subversion|devel/java-subversion|2026-10-30|Use consistent category: a
 www/mod_dav_svn|www/mod_subversion|2026-10-30|Renamed: the port has always built and installed three Apache modules (mod_dav_svn, mod_authz_svn, mod_dontdothat), not just DAV support
 www/gnome-user-share||2026-10-31|Has expired: Depends on expired www/mod_dnssd
 www/mod_dnssd||2026-10-31|Has expired: Abandoned upstream, last release 0.6 in 2008
+www/moodle50||2026-10-31|Has expired: Upstream EOL
