@@ -1,6 +1,6 @@
 PORTNAME=	simdjson
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.5
+DISTVERSION=	5.1.0
 CATEGORIES=	devel textproc
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 GH_TUPLE=	simdjson:simdjson-data:351949906abde446f0314bf79606fb5d884f5be7:simdjson_data/dependencies/.cache/simdjson-data
 USE_LDCONFIG=	yes
 
+# test suite does not currently build
+# see https://github.com/simdjson/simdjson/issues/3004
 CMAKE_ON=		BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	SIMDJSON_DEVELOPER_MODE
 CMAKE_TESTING_OFF=	SIMDJSON_ALLOW_DOWNLOADS \
