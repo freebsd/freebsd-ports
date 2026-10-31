@@ -1,0 +1,11 @@
+--- bin/omarchy-install-hermes-cli.orig	2026-10-02 14:42:09 UTC
++++ bin/omarchy-install-hermes-cli
+@@ -232,7 +232,7 @@ cat >"$HOME/.local/bin/hermes" <<EOF
+ rm -f "$HOME/.local/bin/hermes"
+ 
+ cat >"$HOME/.local/bin/hermes" <<EOF
+-#!/bin/bash
++#!%%LOCALBASE%%/bin/bash
+ 
+ $marker
+ 

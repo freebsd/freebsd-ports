@@ -1,0 +1,12 @@
+Omarchy is an opinionated, keyboard-driven desktop built on the Hyprland
+Wayland compositor and a Quickshell bar, launcher, and control panels. It
+ships a curated set of themes that restyle the whole desktop at once, a menu
+system for setup and maintenance, and defaults for terminals, editors, and
+common tools.
+
+This port installs the Omarchy runtime with a FreeBSD compatibility layer:
+package management through pkg(8), boot environments through bectl(8),
+session services under daemon(8) in place of systemd user units, and
+backlight(8), acpiconf(8), sysctl(8), and ifconfig(8) in place of Linux
+sysfs and NetworkManager. For the complete desktop as the Omarchy ISO
+installs it, install x11-wm/daemonarchy (Daemonarchy).

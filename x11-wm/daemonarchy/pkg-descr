@@ -1,0 +1,16 @@
+Daemonarchy is the Omarchy desktop on FreeBSD: DHH's opinionated,
+keyboard-driven desktop built on Hyprland and Quickshell, as installed by
+the Omarchy ISO, assembled from FreeBSD ports. This port installs the
+Omarchy runtime (x11-wm/omarchy) together with the applications and tools a
+full Omarchy installation ships: the Hyprland session stack, fonts and
+themes, the default terminal, browser, office, media and note-taking
+applications, Omarchy's own utilities, and the command-line tools its shell
+configuration expects. Each group can be turned off through port options.
+
+It also carries Daemonarchy's own look, kept apart from Omarchy's files: a
+wallpaper, screensaver and About art for new users, and a login theme with
+the Daemonarchy wordmark.
+
+Daemonarchy is not affiliated with or endorsed by Omarchy, the FreeBSD
+Project, or The FreeBSD Foundation. FreeBSD is a registered trademark of The
+FreeBSD Foundation.

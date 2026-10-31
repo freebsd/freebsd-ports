@@ -1,0 +1,11 @@
+--- etc/fastfetch/config.jsonc.orig	2026-10-01 01:22:23 UTC
++++ etc/fastfetch/config.jsonc
+@@ -71,7 +71,7 @@
+       "type": "command",
+       "key": "\ue900 OS",
+       "keyColor": "blue",
+-      "text": "version=$(omarchy-version) && echo \"Omarchy $version\""
++      "text": "version=$(omarchy-version) && echo \"Omarchy $version on $(uname -sr)\""
+     },
+     {
+       "type": "command",
