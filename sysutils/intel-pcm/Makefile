@@ -3,7 +3,7 @@ DISTVERSION=	202405
 PORTREVISION=	9
 CATEGORIES=	sysutils
 
-MAINTAINER=	imp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Process Count Monitor (PCM) for Intel processors
 WWW=		https://github.com/intel/pcm
 
