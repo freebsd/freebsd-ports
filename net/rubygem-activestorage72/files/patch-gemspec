@@ -1,9 +1,9 @@
---- activestorage.gemspec.orig	2026-09-13 06:02:28 UTC
+--- activestorage.gemspec.orig	2026-09-30 18:33:57 UTC
 +++ activestorage.gemspec
 @@ -25,6 +25,6 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<actionpack>.freeze, ["= 7.2.3.2".freeze])
-   s.add_runtime_dependency(%q<activejob>.freeze, ["= 7.2.3.2".freeze])
-   s.add_runtime_dependency(%q<activerecord>.freeze, ["= 7.2.3.2".freeze])
+   s.add_runtime_dependency(%q<actionpack>.freeze, ["= 7.2.4".freeze])
+   s.add_runtime_dependency(%q<activejob>.freeze, ["= 7.2.4".freeze])
+   s.add_runtime_dependency(%q<activerecord>.freeze, ["= 7.2.4".freeze])
 -  s.add_runtime_dependency(%q<marcel>.freeze, ["~> 1.0".freeze])
 +  s.add_runtime_dependency(%q<marcel>.freeze, ["~> 2.0".freeze])
  end
