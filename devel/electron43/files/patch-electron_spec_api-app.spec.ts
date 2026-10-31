@@ -1,4 +1,4 @@
---- electron/spec/api-app.spec.ts.orig	2026-10-27 11:01:02 UTC
+--- electron/spec/api-app.spec.ts.orig	2026-10-30 20:58:40 UTC
 +++ electron/spec/api-app.spec.ts
 @@ -131,7 +131,7 @@ describe('app module', () => {
      });
@@ -32,7 +32,7 @@
      'when a D-Bus bus goes away',
      () => {
        it('exits cleanly instead of crashing', async () => {
-@@ -300,7 +300,7 @@ describe('app module', () => {
+@@ -378,7 +378,7 @@ describe('app module', () => {
      // A missing display makes toolkit initialisation fail before the main loop
      // runs; that early return must still tear the JS environment down cleanly.
      // Skipped under ASan for the same reason as the test above.
@@ -41,7 +41,7 @@
        'exits with code 1 when no display is available',
        async () => {
          const appPath = path.join(fixturesPath, 'api', 'no-display');
-@@ -321,7 +321,7 @@ describe('app module', () => {
+@@ -399,7 +399,7 @@ describe('app module', () => {
        }
      );
  
@@ -50,7 +50,7 @@
        const electronPath = process.execPath;
        const appPath = path.join(fixturesPath, 'api', 'singleton');
        appProcess = cp.spawn(electronPath, [appPath]);
-@@ -554,7 +554,7 @@ describe('app module', () => {
+@@ -632,7 +632,7 @@ describe('app module', () => {
    });
  
    // GitHub Actions macOS-13 runners used for x64 seem to have a problem with this test.
@@ -59,7 +59,7 @@
      const tempFiles = [
        path.join(fixturesPath, 'foo.txt'),
        path.join(fixturesPath, 'bar.txt'),
-@@ -691,7 +691,7 @@ describe('app module', () => {
+@@ -769,7 +769,7 @@ describe('app module', () => {
    //   let w = null
  
    //   before(function () {
@@ -68,7 +68,7 @@
    //       this.skip()
    //     }
    //   })
-@@ -804,7 +804,7 @@ describe('app module', () => {
+@@ -882,7 +882,7 @@ describe('app module', () => {
  
    describe('app.badgeCount', () => {
      const platformIsNotSupported =
@@ -77,7 +77,7 @@
  
      const expectedBadgeCount = 42;
  
-@@ -851,7 +851,7 @@ describe('app module', () => {
+@@ -929,7 +929,7 @@ describe('app module', () => {
    });
  
    ifdescribe(
@@ -86,7 +86,7 @@
    )('app.get/setLoginItemSettings API', () => {
      const isMac = process.platform === 'darwin';
      const isWin = process.platform === 'win32';
-@@ -1278,7 +1278,7 @@ describe('app module', () => {
+@@ -1356,7 +1356,7 @@ describe('app module', () => {
      });
    });
  
@@ -95,7 +95,7 @@
      // These tests toggle a process-wide AXMode. Turn it back off so the rest of
      // the suite doesn't run with renderer accessibility enabled.
      afterEach(() => {
-@@ -1561,7 +1561,7 @@ describe('app module', () => {
+@@ -1639,7 +1639,7 @@ describe('app module', () => {
      });
    });
  
@@ -104,7 +104,7 @@
      let w: BrowserWindow;
  
      beforeAll(() => {
-@@ -1707,7 +1707,7 @@ describe('app module', () => {
+@@ -1785,7 +1785,7 @@ describe('app module', () => {
  
    describe('getApplicationNameForProtocol()', () => {
      // TODO: Linux CI doesn't have registered http & https handlers
@@ -113,7 +113,7 @@
        'returns application names for common protocols',
        () => {
          // We can't expect particular app names here, but these protocols should
-@@ -1724,7 +1724,7 @@ describe('app module', () => {
+@@ -1802,7 +1802,7 @@ describe('app module', () => {
        expect(app.getApplicationNameForProtocol('bogus-protocol://')).toBe('');
      });
  
@@ -122,7 +122,7 @@
        const desktopFileId = 'mock-browser.desktop';
        const mockDisplayName = 'Mock Browser';
        const mockScheme = 'mockproto';
-@@ -1774,7 +1774,7 @@ describe('app module', () => {
+@@ -1852,7 +1852,7 @@ describe('app module', () => {
      let xdgBinDir: string;
  
      beforeAll(() => {
@@ -131,7 +131,7 @@
          return;
        }
  
-@@ -1791,7 +1791,7 @@ describe('app module', () => {
+@@ -1869,7 +1869,7 @@ describe('app module', () => {
      });
  
      afterAll(() => {
@@ -140,7 +140,7 @@
          fs.rmSync(xdgDir, { recursive: true, force: true });
        }
      });
-@@ -1803,7 +1803,7 @@ describe('app module', () => {
+@@ -1881,7 +1881,7 @@ describe('app module', () => {
      });
  
      it('returns resolved promise with appPath, displayName and icon', async () => {
@@ -149,7 +149,7 @@
          const appInfo = await spawnProtocolInfoWithXdgMock(`${mockScheme}://`, xdgDataHome, xdgConfigHome);
          expect(appInfo.name).toBe(mockDisplayName);
          expect(appInfo.path).toBe('/usr/bin/true');
-@@ -1817,7 +1817,7 @@ describe('app module', () => {
+@@ -1895,7 +1895,7 @@ describe('app module', () => {
        expect(appInfo.icon).not.toBeUndefined();
      });
  
@@ -158,7 +158,7 @@
        const pathLookupExecutable = 'mock-browser';
        const pathLookupExecutablePath = path.join(xdgBinDir, pathLookupExecutable);
        const pathLookupDisplayName = 'Mock Browser PATH';
-@@ -1851,7 +1851,7 @@ describe('app module', () => {
+@@ -1929,7 +1929,7 @@ describe('app module', () => {
      });
    });
  
@@ -167,7 +167,7 @@
      const protocol = 'electron-test-linux';
      const desktopFileId = 'electron-test.desktop';
      const protocolMimeType = `x-scheme-handler/${protocol}`;
-@@ -1968,7 +1968,7 @@ describe('app module', () => {
+@@ -2046,7 +2046,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -176,7 +176,7 @@
      const iconPath = path.join(import.meta.dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -2057,7 +2057,7 @@ describe('app module', () => {
+@@ -2135,7 +2135,7 @@ describe('app module', () => {
            expect(entry.memory.privateBytes).toBeGreaterThan(0);
          }
  
@@ -185,7 +185,7 @@
            expect(entry.sandboxed).toBeTypeOf('boolean');
          }
  
-@@ -2074,7 +2074,7 @@ describe('app module', () => {
+@@ -2152,7 +2152,7 @@ describe('app module', () => {
      });
    });
  
@@ -194,7 +194,7 @@
      const fixture = path.join(fixturesPath, 'apps', 'gdk-backend');
      // Wait for the app to exit, not just for its output. Otherwise the next
      // test (or retry) launches the fixture again while this copy is still
-@@ -2157,7 +2157,7 @@ describe('app module', () => {
+@@ -2235,7 +2235,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -203,7 +203,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -2180,7 +2180,7 @@ describe('app module', () => {
+@@ -2258,7 +2258,7 @@ describe('app module', () => {
      });
    });
  
