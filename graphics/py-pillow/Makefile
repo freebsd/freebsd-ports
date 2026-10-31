@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Imaging Library (fork)
-WWW=		https://python-pillow.github.io/ \
+WWW=		https://python-pillow.org/ \
 		https://pillow.readthedocs.io/en/stable/ \
 		https://github.com/python-pillow/Pillow
 
