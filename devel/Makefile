@@ -984,7 +984,6 @@
     SUBDIR += gradle62
     SUBDIR += gradle761
     SUBDIR += gradle8
-    SUBDIR += grantlee5
     SUBDIR += grcov
     SUBDIR += grex
     SUBDIR += grpc
