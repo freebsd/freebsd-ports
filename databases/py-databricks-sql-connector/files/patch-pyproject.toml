@@ -1,6 +1,15 @@
 --- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
-@@ -40,7 +40,7 @@ pybreaker = "^1.0.0"
+@@ -34,7 +34,7 @@ requests = "^2.18.1"
+     { version = "^4.4.5", python = ">=3.14" }
+ ]
+ requests = "^2.18.1"
+-oauthlib = "^3.1.0"
++oauthlib = ">=3.1.0,<5"
+ openpyxl = "^3.0.10"
+ urllib3 = ">=1.26"
+ python-dateutil = "^2.8.0"
+@@ -45,7 +45,7 @@ pybreaker = "^1.0.0"
  ]
  pyjwt = "^2.0.0"
  pybreaker = "^1.0.0"
@@ -8,4 +17,4 @@
 +requests-kerberos = {version = "<0.16", optional = true}
  # Optional Rust kernel backend for ``use_kernel=True`` (PyO3 wheel).
  # Pulled in only via the ``[kernel]`` extra below. The published wheel
- # is ``abi3`` with ``Requires-Python: >=3.10`` (built ``abi3-py310``),
+ # is ``abi3`` with ``Requires-Python: >=3.9`` (built ``abi3-py39``); the
