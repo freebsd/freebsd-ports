@@ -9,6 +9,7 @@
     SUBDIR += alertmanager
     SUBDIR += andwatch
     SUBDIR += ap-utils
+    SUBDIR += apiary
     SUBDIR += argus
     SUBDIR += argus-clients
     SUBDIR += arpscan

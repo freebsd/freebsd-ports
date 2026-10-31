@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+# PROVIDE: apiary_raftd
+# REQUIRE: NETWORKING
+# BEFORE: apiary_managerd
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="apiary_raftd"
+rcvar="apiary_raftd_enable"
+
+load_rc_config "$name"
+
+: ${apiary_raftd_enable:="NO"}
+: ${apiary_raftd_args:=""}
+: ${apiary_raftd_logfile:="/var/log/apiary/raftd.log"}
+
+rc_flags=""
+raftd_bin="%%PREFIX%%/libexec/apiary/raftd"
+# procname/pidfile identify the daemon(8) supervisor itself, not the
+# raftd child - see the -P vs -p note below. A supervisor process
+# always runs as /usr/sbin/daemon, identically across every apiary_*
+# service on this host; the per-service pidfile path is what keeps
+# these from ever being confused with each other.
+procname="/usr/sbin/daemon"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+# -P (supervisor pidfile), not -p (child pidfile): daemon(8)'s own man
+# page names -p combined with -r as broken for exactly this reason -
+# "the --child-pidfile option will give you the child's ID to signal
+# when you attempt to stop the service, causing daemon to restart the
+# child." Confirmed live: every restart under the old -p was leaving
+# the supervisor alive, orphaned, immediately respawning a replacement
+# child that raced the new instance for the same port - the real root
+# cause behind repeated orphaned-process sightings on both apiarium and
+# apiverse, only some of which the poststop hook below could paper over
+# (it addresses a related but distinct pidfile-timing race, not this
+# one). -P makes rc.subr signal the supervisor directly, which forwards
+# SIGTERM to the child and exits cleanly instead of restarting it.
+command_args="-f -r -R 5 -C 24 -o ${apiary_raftd_logfile} -P ${pidfile} ${raftd_bin} ${apiary_raftd_args}"
+
+# daemon(8)'s own pidfile can briefly outlive the process it supervised
+# - rc.subr's stop step only waits for the process to leave the process
+# table, not for daemon(8) to finish unlinking its own pidfile. A
+# restart's immediate following start step can then race that
+# still-present pidfile and refuse to launch a new instance ("process
+# already running, pid: -1") even though nothing is actually running -
+# confirmed live, every restart, on both apiarium and apiverse.
+# check_pidfile (rc.subr's own utility, also used internally by
+# run_rc_command) confirms nothing matching the recorded pid is still
+# alive before removing it, so a pidfile for a genuinely-still-running
+# process is never touched.
+stop_postcmd="apiary_raftd_poststop"
+apiary_raftd_poststop()
+{
+	if [ -f "$pidfile" ] && [ -z "$(check_pidfile "$pidfile" "$procname")" ]; then
+		rm -f "$pidfile"
+	fi
+}
+
+# /var/run is a tmpfs, so the package's runtime directory is gone at
+# the next boot. raftd owns the socket inside it, and the REQUIRE
+# ordering puts raftd before every daemon that dials that socket.
+start_precmd="apiary_raftd_precmd"
+apiary_raftd_precmd()
+{
+	install -d -m 0755 /var/run/apiary || return 1
+}
+
+run_rc_command "$1"

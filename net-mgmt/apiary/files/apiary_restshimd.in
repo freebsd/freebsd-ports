@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# PROVIDE: apiary_restshimd
+# REQUIRE: NETWORKING apiary_managerd
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="apiary_restshimd"
+rcvar="apiary_restshimd_enable"
+
+load_rc_config "$name"
+
+: ${apiary_restshimd_enable:="NO"}
+: ${apiary_restshimd_args:=""}
+: ${apiary_restshimd_logfile:="/var/log/apiary/restshimd.log"}
+
+rc_flags=""
+restshimd_bin="%%PREFIX%%/libexec/apiary/restshimd"
+# See apiary_raftd's own copy of this -P/procname setup for why it's
+# needed - the same daemon(8) -p+-r orphan-respawn defect applies
+# identically here.
+procname="/usr/sbin/daemon"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-f -r -R 5 -C 24 -o ${apiary_restshimd_logfile} -P ${pidfile} ${restshimd_bin} ${apiary_restshimd_args}"
+
+# See apiary_raftd's own copy of this hook for why it's needed - the
+# same daemon(8)/rc.subr pidfile race applies identically here.
+stop_postcmd="apiary_restshimd_poststop"
+apiary_restshimd_poststop()
+{
+	if [ -f "$pidfile" ] && [ -z "$(check_pidfile "$pidfile" "$procname")" ]; then
+		rm -f "$pidfile"
+	fi
+}
+
+run_rc_command "$1"

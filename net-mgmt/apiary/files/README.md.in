@@ -1,0 +1,70 @@
+Apiary has been installed.
+
+WHAT THIS PACKAGE INSTALLED
+
+  /usr/local/libexec/apiary/    the four daemons and the two operator
+                                tools, plus the optional MCP connector
+  /usr/local/etc/rc.d/          the five rc.d scripts (none enabled)
+  /usr/local/etc/apiary/        four sample configuration files and the
+                                sample README, installed as .sample
+                                files so pkg upgrade will not
+                                overwrite an edited copy
+  /var/db/apiary/               runtime state: the Raft data directory
+                                and the ISO image store
+  /var/run/apiary/              the Raft socket directory
+  /var/log/apiary/              the daemon logfiles
+
+WHAT THIS PACKAGE DELIBERATELY DID NOT DO
+
+  It did not write any configuration. The real config files
+  (raftd.json, managerd.json, frontend.json, restshimd.json) are
+  written by `apiaryctl install`, which preserves every field that is
+  already set rather than overwriting it. Shipping a config with the
+  package would put a second source of truth next to the one the tool
+  owns.
+
+  It did not issue a TLS certificate. managerd's serving certificate
+  is issued in Go by `apiaryctl install`, on every Comb including a
+  single-node one, because TLS being on by default is a decision and
+  not a consequence of there being peers.
+
+  It did not write a PAM policy. /etc/pam.d/apiary is system
+  configuration outside the package's own prefix, and the project's
+  `make setup-pam` writes it only if it is absent, so a hand-edited
+  policy is never clobbered. Without it, managerd will refuse to
+  start with -pam-service set.
+
+  It did not enable any service. Run `sysrc apiary_raftd_enable=YES`
+  and the rest yourself, in the order the rc.d scripts declare:
+  raftd, then managerd, then frontend and restshimd.
+
+NEXT STEPS
+
+  1. Write the configuration:
+
+	/usr/local/libexec/apiary/apiaryctl install
+
+     Run it with no arguments first to see what it would do. It needs
+     a ZFS pool, a VLAN uplink and a bhyve bridge; it will tell you
+     if any of them are missing.
+
+  2. Create the PAM policy, if you have not already:
+
+	make setup-pam
+
+  3. Enable and start the services:
+
+	sysrc apiary_raftd_enable=YES
+	sysrc apiary_managerd_enable=YES
+	sysrc apiary_frontend_enable=YES
+	sysrc apiary_restshimd_enable=YES
+	service apiary_raftd start
+	service apiary_managerd start
+	service apiary_frontend start
+	service apiary_restshimd start
+
+  4. Log in to the web UI with any existing UNIX account. On a Comb
+     whose role map is empty, whoever logs in first becomes Admin.
+
+  The full bring-up walkthrough, including the parts this package does
+  not cover, is in the project's docs/bootstrap.md.
