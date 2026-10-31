@@ -1,5 +1,6 @@
 PORTNAME=	merkuro
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +16,7 @@ USE_KDE=	akonadi akonadicalendar akonadicontacts auth calendarcore \
 		calendarsupport calendarutils codecs config configwidgets \
 		contacts coreaddons dbusaddons eventviews grantleetheme i18n \
 		identitymanagement itemmodels kio kirigami-addons kirigami2 \
-		mailcommon mime mimetreeparser notifications people \
+		libplasma mailcommon mime mimetreeparser notifications people \
 		pimtextedit qqc2-desktop-style service sonnet textwidgets \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build
