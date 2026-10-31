@@ -5607,6 +5607,7 @@
     SUBDIR += py-opentelemetry-instrumentation-aiohttp-client
     SUBDIR += py-opentelemetry-instrumentation-aiohttp-server
     SUBDIR += py-opentelemetry-instrumentation-asgi
+    SUBDIR += py-opentelemetry-instrumentation-botocore
     SUBDIR += py-opentelemetry-instrumentation-dbapi
     SUBDIR += py-opentelemetry-instrumentation-django
     SUBDIR += py-opentelemetry-instrumentation-fastapi
