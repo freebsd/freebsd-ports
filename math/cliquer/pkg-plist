@@ -9,6 +9,7 @@ lib/libcliquer.a
 lib/libcliquer.so
 lib/libcliquer.so.1
 lib/libcliquer.so.1.0.21
+libdata/pkgconfig/libcliquer.pc
 %%DATADIR%%/testcase-large-w.b
 %%DATADIR%%/testcase-large.b
 %%DATADIR%%/testcase-small.a
