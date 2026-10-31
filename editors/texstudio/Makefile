@@ -1,5 +1,5 @@
 PORTNAME=	texstudio
-DISTVERSION=	4.9.7
+DISTVERSION=	4.9.9
 CATEGORIES=	editors
 
 MAINTAINER=	wen@FreeBSD.org
@@ -27,8 +27,7 @@ USE_XORG=	x11
 USE_GL=		gl
 USE_TEX=	latex dvipsk
 
-DOS2UNIX_FILES=	${PORTNAME}.pro \
-		src/manhattanstyle.cpp \
+DOS2UNIX_FILES=	src/manhattanstyle.cpp \
 		src/pdfviewer/PDFDocument.h \
 		src/qcodeedit/lib/widgets/qfoldpanel.cpp
 
