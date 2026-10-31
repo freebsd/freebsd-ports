@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-exporter-otlp-metrics
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	rubygem-google-protobuf>=3.18<5.0:devel/rubygem-google-protobuf \
 		rubygem-googleapis-common-protos-types>=1.3<2:devel/rubygem-googleapis-common-protos-types \
 		rubygem-opentelemetry-api>=1.1<2:devel/rubygem-opentelemetry-api \
 		rubygem-opentelemetry-common>=0.20<1:devel/rubygem-opentelemetry-common \
+		rubygem-opentelemetry-exporter-otlp-common>=0.2<1:devel/rubygem-opentelemetry-exporter-otlp-common \
 		rubygem-opentelemetry-metrics-api>=0.2<1:devel/rubygem-opentelemetry-metrics-api \
 		rubygem-opentelemetry-metrics-sdk>=0.5<1:devel/rubygem-opentelemetry-metrics-sdk \
 		rubygem-opentelemetry-sdk>=1.2<2:devel/rubygem-opentelemetry-sdk \
