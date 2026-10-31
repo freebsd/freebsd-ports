@@ -1,5 +1,5 @@
---- vendor/github.com/elastic/elastic-agent-system-metrics/metric/cpu/metrics_procfs_common.go.orig	2026-03-16 23:39:28 UTC
-+++ vendor/github.com/elastic/elastic-agent-system-metrics/metric/cpu/metrics_procfs_common.go
+--- pkg/systemmetrics/metric/cpu/metrics_procfs_common.go.orig	2026-03-16 23:39:28 UTC
++++ pkg/systemmetrics/metric/cpu/metrics_procfs_common.go
 @@ -31,7 +31,7 @@ func Get(m *Monitor) (CPUMetrics, error) {
  func Get(m *Monitor) (CPUMetrics, error) {
  	procfs := m.Hostfs

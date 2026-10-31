@@ -1,6 +1,6 @@
---- vendor/modules.txt.orig	2026-09-22 21:07:55 UTC
+--- vendor/modules.txt.orig	2026-10-31 13:41:40 UTC
 +++ vendor/modules.txt
-@@ -2001,6 +2001,7 @@ github.com/elastic/go-sysinfo/providers/darwin
+@@ -2000,6 +2000,7 @@ github.com/elastic/go-sysinfo/providers/darwin
  github.com/elastic/go-sysinfo/internal/registry
  github.com/elastic/go-sysinfo/providers/aix
  github.com/elastic/go-sysinfo/providers/darwin
