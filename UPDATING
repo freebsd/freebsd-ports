@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261031:
+  AFFECTS: users of devel/subversion
+  AUTHOR: michaelo@apache.org
+
+  The BDB option has been removed. Berkeley DB support in Subversion has
+  been deprecated upstream for over a decade; the port now always builds
+  with --without-berkeley-db --disable-bdb6. If you were using the BDB
+  filesystem backend, you must migrate your repositories to FSFS before
+  upgrading:
+
+  # svnadmin dump /path/to/repo > repo.dump
+  # svnadmin create --fs-type fsfs /path/to/new-repo
+  # svnadmin load /path/to/new-repo < repo.dump
+
 20261030:
   AFFECTS: users of devel/java-subversion
   AUTHOR: michaelo@apache.org

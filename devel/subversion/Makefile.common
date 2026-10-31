@@ -9,6 +9,8 @@ USES+=		cpe libtool pathfix pkgconfig shebangfix tar:bzip2
 SHEBANG_FILES=	tools/server-side/svnpubsub/rc.d/svnpubsub.solaris \
 		tools/server-side/svnpubsub/rc.d/svnwcsub.solaris
 
+EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/tools/bdb
+
 LICENSE=	APACHE20
 
 CPE_VENDOR=	apache
@@ -23,14 +25,11 @@ LIB_DEPENDS+=		libapr-1.so:devel/apr1 \
 			liblz4.so:archivers/liblz4
 
 CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include:${LOCALBASE}/lib:expat \
+			--without-berkeley-db --disable-bdb6 \
 			--without-apr_memcache
 
 # ===============================================================
 OPTIONS_SUB=			yes
-
-BDB_CONFIGURE_WITH=		berkeley-db
-BDB_CONFIGURE_ENABLE=	bdb6
-BDB_USES=			bdb
 
 NLS_CONFIGURE_OFF=		--disable-nls
 NLS_USES=			gettext

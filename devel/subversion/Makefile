@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	4
 
 MAINTAINER=	michaelo@apache.org
 COMMENT=	Apache Subversion is a full-featured version control system
@@ -11,7 +11,6 @@ USE_RC_SUBR=	svnserve
 PORTDOCS=	BUGS CHANGES COMMITTERS INSTALL README
 
 OPTIONS_DEFINE=	\
-		BDB		\
 		DOCS		\
 		GPG_AGENT 	\
 		NLS		\
@@ -102,20 +101,6 @@ pre-everything::
 
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}"
-
-pre-configure:
-.if ${PORT_OPTIONS:MBDB}
-	@BDB_VERSION=`${APR_APU_DIR}/${APU_CONFIG} --db-version`; \
-	if [ "$${BDB_VERSION}" != "5" -a "$${BDB_VERSION}" != "185" ] ; then \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (5, or 18) support to use subversion with it." ; \
-		${ECHO_MSG} 'Please rebuild `'"devel/apr1' with option "'`'"BDB' and try again." ; \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "Or you can disable Berkeley DB support. Only 'fs' repository backend will be available." ; \
-		${ECHO_MSG} "" ; \
-		${FALSE} ; \
-	fi
-.endif
 
 post-configure:
 # Enable GNOME Keyring / KWallet support in main code, as it is harmless

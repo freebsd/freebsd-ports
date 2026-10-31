@@ -87,10 +87,6 @@ lib/libsvn_fs-1.a
 lib/libsvn_fs-1.so
 lib/libsvn_fs-1.so.0
 lib/libsvn_fs-1.so.0.0.0
-%%BDB%%lib/libsvn_fs_base-1.a
-%%BDB%%lib/libsvn_fs_base-1.so
-%%BDB%%lib/libsvn_fs_base-1.so.0
-%%BDB%%lib/libsvn_fs_base-1.so.0.0.0
 lib/libsvn_fs_fs-1.a
 lib/libsvn_fs_fs-1.so
 lib/libsvn_fs_fs-1.so.0
@@ -135,7 +131,6 @@ libdata/pkgconfig/libsvn_client.pc
 libdata/pkgconfig/libsvn_delta.pc
 libdata/pkgconfig/libsvn_diff.pc
 libdata/pkgconfig/libsvn_fs.pc
-%%BDB%%libdata/pkgconfig/libsvn_fs_base.pc
 libdata/pkgconfig/libsvn_fs_fs.pc
 libdata/pkgconfig/libsvn_fs_util.pc
 libdata/pkgconfig/libsvn_fs_x.pc
@@ -169,11 +164,6 @@ share/man/man1/svnversion.1.gz
 share/man/man5/svnserve.conf.5.gz
 share/man/man8/svnserve.8.gz
 %%DATADIR%%/backup/hot-backup.py
-%%DATADIR%%/bdb/erase-all-text-data.py
-%%DATADIR%%/bdb/skel.py
-%%DATADIR%%/bdb/svn-bdb-view.py
-%%DATADIR%%/bdb/svnfs.py
-%%DATADIR%%/bdb/whatis-rep.py
 %%DATADIR%%/buildbot/master/README
 %%DATADIR%%/buildbot/slaves/README
 %%DATADIR%%/buildbot/slaves/bb-openbsd/svnbuild.sh
