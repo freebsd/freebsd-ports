@@ -249,7 +249,6 @@
     SUBDIR += glance
     SUBDIR += glassfish
     SUBDIR += glpi
-    SUBDIR += gnome-user-share
     SUBDIR += go-anubis
     SUBDIR += go-away
     SUBDIR += go-www
