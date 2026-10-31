@@ -1,6 +1,6 @@
---- app/proc_globdata.pas.orig	2025-01-12 09:06:24.000000000 -0800
-+++ app/proc_globdata.pas	2025-01-24 13:45:23.584690000 -0800
-@@ -1406,7 +1406,7 @@
+--- app/proc_globdata.pas.orig	2026-10-28 14:12:01 UTC
++++ app/proc_globdata.pas
+@@ -1493,7 +1493,7 @@ begin
    {$endif}
  
    {$ifdef freebsd}
@@ -9,7 +9,7 @@
    {$endif}
  
    {$ifdef openbsd}
-@@ -1456,6 +1456,10 @@
+@@ -1543,6 +1543,10 @@ begin
    exit(ExtractFileDir(OpDirExe)+'/Resources');
    {$endif}
  
@@ -20,7 +20,7 @@
    Result:= '';
  end;
  
-@@ -1597,6 +1601,16 @@
+@@ -1698,6 +1702,16 @@ end;
    CreateDir(OpDirLocal);
  end;
  
@@ -37,7 +37,7 @@
  procedure InitDirs_UnixCommon;
  var
    HomeConfig: string;
-@@ -1656,8 +1670,10 @@
+@@ -1757,8 +1771,10 @@ begin
      {$ifdef darwin}
      InitDirs_macOS;
      {$else}
@@ -49,7 +49,7 @@
        {$else}
        InitDirs_UnixCommon;
        {$endif}
-@@ -1726,6 +1742,15 @@
+@@ -1829,6 +1845,15 @@ begin
        MsgLogConsole('ERROR: Cannot find pre-copy folder: '+OpDirPrecopy);
      end;
    end;

@@ -490,6 +490,340 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_testing_finder_proc/install.inf
 %%DATADIR%%/py/cuda_testing_gaps/__init__.py
 %%DATADIR%%/py/cuda_testing_gaps/install.inf
+%%DATADIR%%/py/cuda_testing_lexers/__init__.py
+%%DATADIR%%/py/cuda_testing_lexers/install.inf
+%%DATADIR%%/py/cuda_testing_lexers/lexers/AWK (2).awk
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Ada.adb
+%%DATADIR%%/py/cuda_testing_lexers/lexers/AsciiDoc.adoc
+%%DATADIR%%/py/cuda_testing_lexers/lexers/AutoHotkey.ahk
+%%DATADIR%%/py/cuda_testing_lexers/lexers/AutoIt.au3
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Bash_script.sh
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Batch_files.bat
+%%DATADIR%%/py/cuda_testing_lexers/lexers/C (2).c
+%%DATADIR%%/py/cuda_testing_lexers/lexers/C++.cpp
+%%DATADIR%%/py/cuda_testing_lexers/lexers/CMake.cmake
+%%DATADIR%%/py/cuda_testing_lexers/lexers/CMakeLists.txt
+%%DATADIR%%/py/cuda_testing_lexers/lexers/CSS (2).css
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Clojure.clj
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Cobol.cob
+%%DATADIR%%/py/cuda_testing_lexers/lexers/CoffeeScript.coffee
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Crystal.cr
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Csharp.cs
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Cython.pyx
+%%DATADIR%%/py/cuda_testing_lexers/lexers/D (2).d
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Dart.dart
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Diff (2).diff
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Erlang.erl
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Fortran.f90
+%%DATADIR%%/py/cuda_testing_lexers/lexers/GDScript.gd
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Gleam.gleam
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Go (2).go
+%%DATADIR%%/py/cuda_testing_lexers/lexers/GraphQL.graphql
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Groovy.groovy
+%%DATADIR%%/py/cuda_testing_lexers/lexers/HTML (2).html
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Haskell.hs
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Ini_files.ini
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Inno_Setup.iss
+%%DATADIR%%/py/cuda_testing_lexers/lexers/JSON (2).json
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Java (2).java
+%%DATADIR%%/py/cuda_testing_lexers/lexers/JavaScript.js
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Jinja2.j2
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Julia.jl
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Kotlin.kt
+%%DATADIR%%/py/cuda_testing_lexers/lexers/LESS.less
+%%DATADIR%%/py/cuda_testing_lexers/lexers/LaTeX.tex
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Lua (2).lua
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Markdown (2).md
+%%DATADIR%%/py/cuda_testing_lexers/lexers/MoonBit.mbt
+%%DATADIR%%/py/cuda_testing_lexers/lexers/NSIS.nsi
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Nim (2).nim
+%%DATADIR%%/py/cuda_testing_lexers/lexers/PHP (2).php
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Pascal.pas
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Perl (2).pl
+%%DATADIR%%/py/cuda_testing_lexers/lexers/PowerShell (2).ps1
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Prolog.pl
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Properties.properties
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Protocol_Buffers.proto
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Python (2).py
+%%DATADIR%%/py/cuda_testing_lexers/lexers/R.r
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Racket.rkt
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Ruby (2).rb
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Rust (2).rs
+%%DATADIR%%/py/cuda_testing_lexers/lexers/SCSS.scss
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Sass.sass
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Scala.scala
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Scheme.scm
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Solidity.sol
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Standard_ML.sml
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Svelte.svelte
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Swift.swift
+%%DATADIR%%/py/cuda_testing_lexers/lexers/TODO.TODO
+%%DATADIR%%/py/cuda_testing_lexers/lexers/TOML.toml
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Tcl (2).tcl
+%%DATADIR%%/py/cuda_testing_lexers/lexers/TypeScript.ts
+%%DATADIR%%/py/cuda_testing_lexers/lexers/VBScript (2).vbs
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Vala.vala
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Vimscript.vim
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Vue.vue
+%%DATADIR%%/py/cuda_testing_lexers/lexers/XML (2).xml
+%%DATADIR%%/py/cuda_testing_lexers/lexers/YAML (2).yaml
+%%DATADIR%%/py/cuda_testing_lexers/lexers/Zig.zig
+%%DATADIR%%/py/cuda_testing_lexers/lexers/ahk.ahk
+%%DATADIR%%/py/cuda_testing_lexers/lexers/au3.au3
+%%DATADIR%%/py/cuda_testing_lexers/lexers/awk.awk
+%%DATADIR%%/py/cuda_testing_lexers/lexers/bat.bat
+%%DATADIR%%/py/cuda_testing_lexers/lexers/c.c
+%%DATADIR%%/py/cuda_testing_lexers/lexers/ccharp.cs
+%%DATADIR%%/py/cuda_testing_lexers/lexers/cmd.cmd
+%%DATADIR%%/py/cuda_testing_lexers/lexers/cpp.cpp
+%%DATADIR%%/py/cuda_testing_lexers/lexers/css.css
+%%DATADIR%%/py/cuda_testing_lexers/lexers/d.d
+%%DATADIR%%/py/cuda_testing_lexers/lexers/diff.diff
+%%DATADIR%%/py/cuda_testing_lexers/lexers/go.go
+%%DATADIR%%/py/cuda_testing_lexers/lexers/html.html
+%%DATADIR%%/py/cuda_testing_lexers/lexers/ini.ini
+%%DATADIR%%/py/cuda_testing_lexers/lexers/java.java
+%%DATADIR%%/py/cuda_testing_lexers/lexers/js.js
+%%DATADIR%%/py/cuda_testing_lexers/lexers/json.json
+%%DATADIR%%/py/cuda_testing_lexers/lexers/log.log
+%%DATADIR%%/py/cuda_testing_lexers/lexers/lua.lua
+%%DATADIR%%/py/cuda_testing_lexers/lexers/markdown.md
+%%DATADIR%%/py/cuda_testing_lexers/lexers/nim.nim
+%%DATADIR%%/py/cuda_testing_lexers/lexers/perl.pl
+%%DATADIR%%/py/cuda_testing_lexers/lexers/php.php
+%%DATADIR%%/py/cuda_testing_lexers/lexers/php_.phpt
+%%DATADIR%%/py/cuda_testing_lexers/lexers/powershell.ps1
+%%DATADIR%%/py/cuda_testing_lexers/lexers/python.py
+%%DATADIR%%/py/cuda_testing_lexers/lexers/reStructuredText.rst
+%%DATADIR%%/py/cuda_testing_lexers/lexers/ruby.rb
+%%DATADIR%%/py/cuda_testing_lexers/lexers/rust.rs
+%%DATADIR%%/py/cuda_testing_lexers/lexers/sh.sh
+%%DATADIR%%/py/cuda_testing_lexers/lexers/tcl.tcl
+%%DATADIR%%/py/cuda_testing_lexers/lexers/vbscript.vbs
+%%DATADIR%%/py/cuda_testing_lexers/lexers/xml.xml
+%%DATADIR%%/py/cuda_testing_lexers/lexers/yaml.yaml
+%%DATADIR%%/py/cuda_testing_lexers/readme/readme.txt
+%%DATADIR%%/py/cuda_testing_lexers/results_base/AWK (2).awk_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/AWK (2).awk_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Ada.adb_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Ada.adb_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/AsciiDoc.adoc_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/AsciiDoc.adoc_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/AutoHotkey.ahk_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/AutoHotkey.ahk_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/AutoIt.au3_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/AutoIt.au3_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Bash_script.sh_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Bash_script.sh_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Batch_files.bat_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Batch_files.bat_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/C (2).c_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/C (2).c_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/C++.cpp_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/C++.cpp_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/CMake.cmake_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/CMake.cmake_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/CMakeLists.txt_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/CMakeLists.txt_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/CSS (2).css_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/CSS (2).css_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Clojure.clj_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Clojure.clj_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Cobol.cob_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Cobol.cob_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/CoffeeScript.coffee_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/CoffeeScript.coffee_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Crystal.cr_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Crystal.cr_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Csharp.cs_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Csharp.cs_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Cython.pyx_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Cython.pyx_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/D (2).d_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/D (2).d_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Dart.dart_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Dart.dart_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Diff (2).diff_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Diff (2).diff_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Erlang.erl_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Erlang.erl_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Fortran.f90_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Fortran.f90_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/GDScript.gd_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/GDScript.gd_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Gleam.gleam_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Gleam.gleam_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Go (2).go_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Go (2).go_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/GraphQL.graphql_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/GraphQL.graphql_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Groovy.groovy_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Groovy.groovy_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/HTML (2).html_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/HTML (2).html_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Haskell.hs_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Haskell.hs_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Ini_files.ini_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Ini_files.ini_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Inno_Setup.iss_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Inno_Setup.iss_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/JSON (2).json_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/JSON (2).json_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Java (2).java_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Java (2).java_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/JavaScript.js_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/JavaScript.js_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Jinja2.j2_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Jinja2.j2_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Julia.jl_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Julia.jl_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Kotlin.kt_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Kotlin.kt_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/LESS.less_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/LESS.less_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/LaTeX.tex_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/LaTeX.tex_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Lua (2).lua_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Lua (2).lua_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Markdown (2).md_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Markdown (2).md_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/MoonBit.mbt_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/MoonBit.mbt_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/NSIS.nsi_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/NSIS.nsi_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Nim (2).nim_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Nim (2).nim_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/PHP (2).php_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/PHP (2).php_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Pascal.pas_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Pascal.pas_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Perl (2).pl_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Perl (2).pl_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/PowerShell (2).ps1_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/PowerShell (2).ps1_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Prolog.pl_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Prolog.pl_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Properties.properties_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Properties.properties_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Protocol_Buffers.proto_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Protocol_Buffers.proto_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Python (2).py_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Python (2).py_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/R.r_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/R.r_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Racket.rkt_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Racket.rkt_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Ruby (2).rb_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Ruby (2).rb_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Rust (2).rs_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Rust (2).rs_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/SCSS.scss_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/SCSS.scss_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Sass.sass_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Sass.sass_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Scala.scala_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Scala.scala_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Scheme.scm_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Scheme.scm_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Solidity.sol_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Solidity.sol_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Standard_ML.sml_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Standard_ML.sml_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Svelte.svelte_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Svelte.svelte_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Swift.swift_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Swift.swift_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/TODO.TODO_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/TODO.TODO_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/TOML.toml_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/TOML.toml_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Tcl (2).tcl_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Tcl (2).tcl_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/TypeScript.ts_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/TypeScript.ts_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/VBScript (2).vbs_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/VBScript (2).vbs_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Vala.vala_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Vala.vala_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Vimscript.vim_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Vimscript.vim_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Vue.vue_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Vue.vue_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/XML (2).xml_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/XML (2).xml_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/YAML (2).yaml_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/YAML (2).yaml_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Zig.zig_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/Zig.zig_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/_info.txt
+%%DATADIR%%/py/cuda_testing_lexers/results_base/ahk.ahk_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/ahk.ahk_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/au3.au3_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/au3.au3_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/awk.awk_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/awk.awk_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/bat.bat_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/bat.bat_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/c.c_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/c.c_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/ccharp.cs_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/ccharp.cs_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/cmd.cmd_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/cmd.cmd_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/cpp.cpp_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/cpp.cpp_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/css.css_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/css.css_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/d.d_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/d.d_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/diff.diff_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/diff.diff_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/go.go_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/go.go_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/html.html_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/html.html_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/ini.ini_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/ini.ini_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/java.java_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/java.java_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/js.js_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/js.js_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/json.json_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/json.json_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/log.log_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/log.log_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/lua.lua_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/lua.lua_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/markdown.md_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/markdown.md_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/nim.nim_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/nim.nim_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/perl.pl_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/perl.pl_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/php.php_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/php.php_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/php_.phpt_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/php_.phpt_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/powershell.ps1_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/powershell.ps1_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/python.py_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/python.py_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/reStructuredText.rst_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/reStructuredText.rst_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/ruby.rb_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/ruby.rb_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/rust.rs_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/rust.rs_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/sh.sh_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/sh.sh_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/tcl.tcl_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/tcl.tcl_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/vbscript.vbs_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/vbscript.vbs_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/xml.xml_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/xml.xml_tokens.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/yaml.yaml_fold.json
+%%DATADIR%%/py/cuda_testing_lexers/results_base/yaml.yaml_tokens.json
 %%DATADIR%%/py/cuda_testing_perf/__init__.py
 %%DATADIR%%/py/cuda_testing_perf/base_threshold__generic.txt
 %%DATADIR%%/py/cuda_testing_perf/base_threshold__personal.txt
