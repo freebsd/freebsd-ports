@@ -1,3 +1,36 @@
+  <vuln vid="5cd347f3-d573-11f1-a2bb-50ebf6bdf8e9">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq-php83</name>
+	<name>phpmyfaq-php84</name>
+	<name>phpmyfaq-php85</name>
+	<range><lt>4.1.11</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyFAQ team reports:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2026-10-21/">
+	  <p>The WebAuthn prepare-login endpoint returns stable credential IDs for
+	    existing accounts with registered passkeys and rotating credential IDs
+	    for unknown accounts, so an unauthenticated attacker can enumerate user
+	    accounts and passkeys.</p>
+	  <p>Insufficient authorization checks allow a delegated group
+	    administrator to delete groups with higher privileges than their
+	    own.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://www.phpmyfaq.de/security/advisory-2026-10-21/</url>
+    </references>
+    <dates>
+      <discovery>2026-10-21</discovery>
+      <entry>2026-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d6aba3d5-d549-11f1-95a4-3c7c3fba4204">
     <topic>uriparser -- Integer overflow vulnerability</topic>
     <affects>
