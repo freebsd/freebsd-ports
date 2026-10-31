@@ -6647,7 +6647,6 @@
     SUBDIR += qbe
     SUBDIR += qbs
     SUBDIR += qca
-    SUBDIR += qconf
     SUBDIR += qcoro
     SUBDIR += qgit
     SUBDIR += qlementine
