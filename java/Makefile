@@ -7,7 +7,6 @@
     SUBDIR += apache-commons-collections
     SUBDIR += apache-commons-collections4
     SUBDIR += apache-commons-dbcp
-    SUBDIR += apache-commons-httpclient
     SUBDIR += apache-commons-lang
     SUBDIR += apache-commons-lang3
     SUBDIR += apache-commons-logging
