@@ -1,3 +1,61 @@
+  <vuln vid="cc1f80fa-d50e-11f1-8135-8447094a420f">
+    <topic>libreswan -- Multiple vulnerabilities.</topic>
+    <affects>
+      <package>
+	<name>libreswan</name>
+	<range><lt>5.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The libreswan project reports:</p>
+	<blockquote cite="https://github.com/libreswan/libreswan/releases#release-v5.4.1">
+	  <ul>
+	    <li>CVE-2026-50721: Libreswan, via the function
+	      RSA_authenticate_hash_signature_raw_rsa(), did not correctly verify
+	      the length of the authentication hash when the SIG payload of an IKEv1
+	      packet was encoded using PKCS #1 RSA Encryption as per RFC 2313.</li>
+	    <li>CVE-2026-50722: Libreswan, via the function
+	      RSA_authenticate_hash_signature_pkcs1_1_5_rsa(), did not correctly
+	      verify the DER encoding of the ASN.1 digest when the IKEv2 AUTH
+	      payload was encoded using RSASSA-PKCS1-v1_5 (RFC 8017).</li>
+	   <li>CVE-2026-77206: Libreswan's IKEv2 state machine has a null pointer
+	      dereference bug in the EAP handling code for authentication. As a
+	      result of inconsistency within the IKEv2 state machine code, this bug
+	      can be triggered by any IKEv2 connection, even if EAP is not
+	      configured at all.</li>
+	    <li>CVE-2026-77207: Libreswan has a null pointer dereference bug in the
+	      PKCS#7 handling code for IKE certificate authentication.</li>
+	    <li>CVE-2026-94453: Libreswan's pluto daemon has a use-after-free
+	      vulnerability when a client connecting using IKE over TCP closes the
+	      connection and another packet (retransmit or malicious) is received
+	      for the same tuple.</li>
+	    <li>CVE-2026-12413: An invalidly formatted IKEv2 fragment causes the
+	      Libreswan pluto daemon to crash and restart. Continued exploitation
+	      would cause a denial of service.</li>
+	    <li>CVE-2024-3652: The Libreswan Project was notified of an issue causing
+	      libreswan to restart when using IKEv1 without specifying an esp= line.</li>
+	    <li>CVE-2026-77205: Denial of Service via sending bogus X.509 certificates</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-50721</cvename>
+      <cvename>CVE-2026-77205</cvename>
+      <cvename>CVE-2026-77206</cvename>
+      <cvename>CVE-2026-77207</cvename>
+      <cvename>CVE-2026-50722</cvename>
+      <cvename>CVE-2026-94453</cvename>
+      <cvename>CVE-2026-12413</cvename>
+      <url>https://github.com/libreswan/libreswan/releases#release-v5.4.1</url>
+    </references>
+    <dates>
+      <discovery>2026-10-05</discovery>
+      <entry>2026-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="65abbad5-da78-11f0-b6d5-843a4b343614">
     <topic>uriparser -- Denial of Service through Unbound Recursion</topic>
     <affects>
