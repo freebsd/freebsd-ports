@@ -545,6 +545,7 @@
     SUBDIR += nginx-module-encrypted-session
     SUBDIR += nginx-module-fancyindex
     SUBDIR += nginx-module-fips-check
+    SUBDIR += nginx-module-footer
     SUBDIR += nginx-module-form-input
     SUBDIR += nginx-module-geoip2
     SUBDIR += nginx-module-gridfs
