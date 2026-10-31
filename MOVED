@@ -5782,3 +5782,4 @@ misc/kde-thumbnailer-chm||2026-10-31|Has expired: Depends on deprecated Qt5, sup
 misc/kde-thumbnailer-epub||2026-10-31|Has expired: Depends on deprecated Qt5, superseded by KDE Frameworks 6
 misc/kde-thumbnailer-fb2||2026-10-31|Has expired: Depends on deprecated Qt5, superseded by KDE Frameworks 6
 textproc/xom||2026-10-31|Has expired: Unmaintained, unused in the ports tree, only copies a jar, 8 years behind on upstream
+net/java-beepcore||2026-10-31|Has expired: Unmaintained, unused, upstream is dormant for 10+ years. The repo is still in CVS format

@@ -305,7 +305,6 @@
     SUBDIR += isc-dhcp44-server
     SUBDIR += istgt
     SUBDIR += iwnet
-    SUBDIR += java-beepcore
     SUBDIR += jcifs
     SUBDIR += jgroups
     SUBDIR += jose
