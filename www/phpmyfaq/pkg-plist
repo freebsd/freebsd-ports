@@ -230,6 +230,7 @@
 %%WWWDIR%%/admin/assets/src/content/._comment.ts
 %%WWWDIR%%/admin/assets/src/content/._csvimport.ts
 %%WWWDIR%%/admin/assets/src/content/._editor.ts
+%%WWWDIR%%/admin/assets/src/content/._faqs.autocomplete.test.ts
 %%WWWDIR%%/admin/assets/src/content/._faqs.autocomplete.ts
 %%WWWDIR%%/admin/assets/src/content/._faqs.editor.ts
 %%WWWDIR%%/admin/assets/src/content/._faqs.overview.ts
@@ -251,6 +252,7 @@
 %%WWWDIR%%/admin/assets/src/content/comment.ts
 %%WWWDIR%%/admin/assets/src/content/csvimport.ts
 %%WWWDIR%%/admin/assets/src/content/editor.ts
+%%WWWDIR%%/admin/assets/src/content/faqs.autocomplete.test.ts
 %%WWWDIR%%/admin/assets/src/content/faqs.autocomplete.ts
 %%WWWDIR%%/admin/assets/src/content/faqs.editor.ts
 %%WWWDIR%%/admin/assets/src/content/faqs.overview.ts
