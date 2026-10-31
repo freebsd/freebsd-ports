@@ -1,5 +1,5 @@
 PORTNAME=	imageio
-PORTVERSION=	2.37.4
+PORTVERSION=	2.38.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
 		https://github.com/imageio/imageio/releases/download/v${PORTVERSION}/
@@ -33,7 +33,7 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	FFMPEG FITS FREEIMAGE GDAL PILLOW_HEIF PYAV RAWPY TIFFFILE
+OPTIONS_DEFINE=	FFMPEG FITS FREEIMAGE GDAL PILLOW_HEIF PYAV PYDICOM RAWPY TIFFFILE
 OPTIONS_DEFAULT=FFMPEG
 FFMPEG_DESC=		Read/Write video using FFmpeg
 FITS_DESC=		Read FITS files
@@ -41,6 +41,7 @@ FREEIMAGE_DESC=		FreeImage support
 GDAL_DESC=		GDAL support
 PILLOW_HEIF_DESC=	Read HEIF files
 PYAV_DESC=		Read/Write video and image files
+PYDICOM_DESC=		Advanced DICOM processing
 RAWPY_DESC=		Read/Write images via rawpy
 TIFFFILE_DESC=		Read/Write TIFF files
 
@@ -51,6 +52,7 @@ FREEIMAGE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0:filesystems/py-fsspec@${
 GDAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdal>=0:graphics/py-gdal@${PY_FLAVOR}
 PILLOW_HEIF_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}pillow-heif>=0:graphics/py-pillow-heif@${PY_FLAVOR}
 PYAV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}av>=0:multimedia/py-av@${PY_FLAVOR}
+PYDICOM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydicom>=0:science/py-pydicom@${PY_FLAVOR}
 RAWPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=2,1:math/py-numpy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}rawpy>=0:graphics/py-rawpy@${PY_FLAVOR}
 TIFFFILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tifffile>=0:graphics/py-tifffile@${PY_FLAVOR}
