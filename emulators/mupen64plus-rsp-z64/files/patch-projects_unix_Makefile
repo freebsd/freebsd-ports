@@ -1,0 +1,16 @@
+--- projects/unix/Makefile.orig	2024-05-27 02:51:19 UTC
++++ projects/unix/Makefile
+@@ -103,6 +103,13 @@ endif
+   PIC ?= 1
+   $(warning Architecture "$(HOST_CPU)" not officially supported.')
+ endif
++ifneq ("$(filter ppc64le powerpc64le,$(HOST_CPU))","")
++  CPU := PPC
++  ARCH_DETECTED := 64BITS
++  BIG_ENDIAN := 0
++  PIC ?= 1
++  $(warning Architecture "$(HOST_CPU)" not officially supported.')
++endif
+ ifneq ("$(filter arm%,$(HOST_CPU))","")
+   ifeq ("$(filter arm%b,$(HOST_CPU))","")
+     CPU := ARM

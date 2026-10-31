@@ -18,7 +18,7 @@ USES+=		gl gmake pkgconfig sdl
 USE_GL?=	glu
 USE_SDL?=	sdl2
 USE_LDCONFIG?=	yes
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 RELEASE_DATE?=	20240714
 OPTFLAGS=	#

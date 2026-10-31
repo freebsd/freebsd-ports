@@ -6,6 +6,10 @@ PATCHDIR=		${.CURDIR}/files
 BUILD_WRKSRC?=		${WRKSRC}/projects/unix
 
 .if ${PKGNAMESUFFIX} == "-core"
+# https://github.com/mupen64plus/mupen64plus-core/pull/1197
+PATCH_SITES=		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=		dc1411a196b0e35745e9a5661a44e60809fad250.patch:-p1
+
 BUILD_DEPENDS=		bash:shells/bash \
 			nasm:devel/nasm \
 			vulkan-headers>0:graphics/vulkan-headers
@@ -13,6 +17,8 @@ LIB_DEPENDS+=		libfreetype.so:print/freetype2 \
 			libpng.so:graphics/png
 USES+=			minizip
 .else
+# the plugin Makefiles still detect the CPU with uname -m (powerpc on FreeBSD)
+MAKE_ENV+=		HOST_CPU=${ARCH}
 PLIST=			${WRKDIR}/pkg-plist
 .endif
 

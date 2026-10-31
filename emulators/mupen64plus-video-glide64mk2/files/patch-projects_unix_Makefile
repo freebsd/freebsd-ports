@@ -1,6 +1,14 @@
---- projects/unix/Makefile	2024-07-14 18:01:05.000000000 -0700
-+++ projects/unix/Makefile	2024-09-09 20:28:23.981567000 -0700
-@@ -152,7 +152,7 @@
+--- projects/unix/Makefile.orig	2024-07-15 01:01:05 UTC
++++ projects/unix/Makefile
+@@ -104,6 +104,7 @@ ifneq ("$(filter ppc64 powerpc64,$(HOST_CPU))","")
+   BIG_ENDIAN := 1
+   PIC ?= 1
+   NO_ASM := 1
++  NO_SSE := 1
+   $(warning Architecture "$(HOST_CPU)" not officially supported.')
+ endif
+ ifneq ("$(filter ppc64le powerpc64le,$(HOST_CPU))","")
+@@ -152,7 +153,7 @@ CFLAGS += $(OPTFLAGS) $(WARNFLAGS) -ffast-math -fno-st
  OPTFLAGS ?= -O3 -flto
  WARNFLAGS ?= -Wall -Wno-unused-function
  CFLAGS += $(OPTFLAGS) $(WARNFLAGS) -ffast-math -fno-strict-aliasing -fvisibility=hidden -I$(SRCDIR) -I$(SRCDIR)/Glitch64/inc -DGCC
@@ -9,7 +17,7 @@
  LDFLAGS += $(SHARED)
  
  ifeq ($(CPU), X86)
-@@ -222,6 +222,7 @@
+@@ -222,6 +223,7 @@ ifeq ($(OS), FREEBSD)
  endif
  ifeq ($(OS), FREEBSD)
    LDLIBS += -lc
@@ -17,7 +25,7 @@
  endif
  ifeq ($(OS), MINGW)
    ifeq ($(origin GLEW_CFLAGS) $(origin GLEW_LDLIBS), undefined undefined)
-@@ -285,7 +286,7 @@
+@@ -285,7 +287,7 @@ ifeq ($(origin SDL_CFLAGS) $(origin SDL_LDLIBS), undef
  ifeq ($(origin SDL_CFLAGS) $(origin SDL_LDLIBS), undefined undefined)
    SDL_CONFIG = $(CROSS_COMPILE)sdl2-config
    ifeq ($(shell which $(SDL_CONFIG) 2>/dev/null),)
@@ -26,7 +34,7 @@
      ifeq ($(shell which $(SDL_CONFIG) 2>/dev/null),)
        $(error No SDL development libraries found!)
      else
-@@ -337,8 +338,8 @@
+@@ -337,8 +339,8 @@ endif
  endif
  
  # set base program pointers and flags
