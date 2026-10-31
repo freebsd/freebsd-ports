@@ -5779,3 +5779,4 @@ x11-themes/qgnomeplatform||2026-10-31|Has expired: Depends on deprecated Qt5, ab
 x11-toolkits/kirigami-addons-qt5||2026-10-31|Has expired: Depends on deprecated Qt5, has no consumers
 japanese/skkinput3||2026-10-31|Has expired: Abandoned, cannot be executed on amd64 due to an error
 misc/kde-thumbnailer-chm||2026-10-31|Has expired: Depends on deprecated Qt5, superseded by KDE Frameworks 6
+misc/kde-thumbnailer-epub||2026-10-31|Has expired: Depends on deprecated Qt5, superseded by KDE Frameworks 6

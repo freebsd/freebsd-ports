@@ -237,7 +237,6 @@
     SUBDIR += json-tui
     SUBDIR += kbdscan
     SUBDIR += kcd
-    SUBDIR += kde-thumbnailer-epub
     SUBDIR += kde-thumbnailer-fb2
     SUBDIR += kdeedu
     SUBDIR += kdeedu-data
