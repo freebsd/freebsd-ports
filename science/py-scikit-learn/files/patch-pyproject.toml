@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2026-06-02 08:32:39 UTC
+--- pyproject.toml.orig	2026-10-31 07:43:47 UTC
 +++ pyproject.toml
 @@ -14,8 +14,7 @@ requires-python = ">=3.11"
    "threadpoolctl>=3.5.0",
@@ -6,21 +6,20 @@
  requires-python = ">=3.11"
 -license = "BSD-3-Clause"
 -license-files = ["COPYING"]
-+license = {text="BSD-3-Clause"}
++license = { text = "BSD-3-Clause"}
  classifiers=[
    "Intended Audience :: Science/Research",
    "Intended Audience :: Developers",
-@@ -99,10 +98,10 @@ requires = [
+@@ -47,10 +46,10 @@ requires = [
  build-backend = "mesonpy"
  # Minimum requirements for the build system to execute.
  requires = [
--    "meson-python>=0.17.1,<0.20.0",
-+    "meson-python>=0.17.1",
-     "cython>=3.1.2,<3.3.0",
--    "numpy>=2,<2.5.0",
--    "scipy>=1.10.0,<1.18.0",
-+    "numpy>=2",
-+    "scipy>=1.10.0",
+-    "meson-python>=0.17.1,<0.22.0",
++    "meson-python>=0.17.1,<0.23.0",
+     # TODO: once https://github.com/cython/cython/issues/7846 is fixed and in a Cython release
+     # change to "cython>[fixed-version]" or "cython>=3.1.2,!=3.2.6,!=3.2.7,!=3.2.8,!=3.2.9"
+-    "cython>=3.1.2,<3.2.6",
++    "cython>=3.1.2,<3.3",
+     "numpy>=2,<2.6.0",
+     "scipy>=1.10.0,<1.19.0",
  ]
- 
- [tool.pytest.ini_options]
