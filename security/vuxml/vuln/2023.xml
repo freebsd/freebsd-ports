@@ -9717,13 +9717,17 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
   </vuln>
 
   <vuln vid="f767d615-01db-47e9-b4ab-07bb8d3409fd">
-    <topic>py39-cinder -- insecure-credentials flaw</topic>
+    <topic>py-cinder -- insecure-credentials flaw</topic>
     <affects>
       <package>
-    <name>py39-cinder</name>
-    <range><lt>14.1.0</lt></range>
-    <range><ge>15.0.0</ge><lt>15.2.0</lt></range>
-    <range><ge>16.0.0</ge><lt>15.1.0</lt></range>
+	<name>py37-cinder</name>
+	<name>py38-cinder</name>
+	<name>py39-cinder</name>
+	<name>py310-cinder</name>
+	<name>py311-cinder</name>
+	<range><lt>14.1.0</lt></range>
+	<range><ge>15.0.0</ge><lt>15.2.0</lt></range>
+	<range><ge>16.0.0</ge><lt>15.1.0</lt></range>
       </package>
     </affects>
     <description>
@@ -9744,14 +9748,19 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2020-06-10</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="e5d117b3-2153-4129-81ed-42b0221afa78">
-    <topic>py39-OWSLib -- arbitrary file read vulnerability</topic>
+    <topic>py-OWSLib -- arbitrary file read vulnerability</topic>
     <affects>
       <package>
+    <name>py37-OWSLib</name>
+    <name>py38-OWSLib</name>
     <name>py39-OWSLib</name>
+    <name>py310-OWSLib</name>
+    <name>py311-OWSLib</name>
     <range><lt>0.28.1</lt></range>
       </package>
     </affects>
@@ -9771,15 +9780,20 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2023-03-07</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="17083017-d993-43eb-8aaf-7138f4486d1c">
-    <topic>py39-unicorn -- sandbox escape and arbitrary code execution vulnerability</topic>
+    <topic>py-unicorn -- sandbox escape and arbitrary code execution vulnerability</topic>
     <affects>
       <package>
-    <name>py39-unicorn</name>
-    <range><lt>2.0.0rc1</lt></range>
+	<name>py37-unicorn</name>
+	<name>py38-unicorn</name>
+	<name>py39-unicorn</name>
+	<name>py310-unicorn</name>
+	<name>py311-unicorn</name>
+	<range><lt>2.0.0rc1</lt></range>
       </package>
     </affects>
     <description>
@@ -9802,15 +9816,20 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2021-12-26</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="43e9ffd4-d6e0-11ed-956f-7054d21a9e2a">
-    <topic>py39-pycares -- domain hijacking vulnerability</topic>
+    <topic>py-pycares -- domain hijacking vulnerability</topic>
     <affects>
       <package>
-    <name>py39-pycares</name>
-    <range><lt>4.2.0</lt></range>
+	<name>py37-pycares</name>
+	<name>py38-pycares</name>
+	<name>py39-pycares</name>
+	<name>py310-pycares</name>
+	<name>py311-pycares</name>
+	<range><lt>4.2.0</lt></range>
       </package>
     </affects>
     <description>
@@ -9829,17 +9848,32 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2021-06-11</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="1b38aec4-4149-4c7d-851c-3c4de3a1fbd0">
-    <topic>py39-setuptools -- denial of service vulnerability</topic>
+    <topic>py-setuptools -- denial of service vulnerability</topic>
     <affects>
       <package>
-    <name>py39-setuptools</name>
-    <range><lt>44.1.1_1</lt></range>
-    <range><ge>57.0.0</ge><lt>58.5.3_3</lt></range>
-    <range><ge>62.1.0</ge><lt>63.1.0_1</lt></range>
+	<name>py37-setuptools</name>
+	<name>py38-setuptools</name>
+	<name>py39-setuptools</name>
+	<name>py310-setuptools</name>
+	<name>py311-setuptools</name>
+	<range><lt>63.1.0_1</lt></range>
+      </package>
+      <package>
+	<name>py37-setuptools58</name>
+	<name>py38-setuptools58</name>
+	<name>py39-setuptools58</name>
+	<name>py310-setuptools58</name>
+	<name>py311-setuptools58</name>
+	<range>><lt>58.5.3_3</lt></range>
+      </package>
+      <package>
+	<name>py27-setuptools44</name>
+	<range><lt>44.1.2</lt></range>
       </package>
     </affects>
     <description>
@@ -9859,75 +9893,28 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2022-12-23</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="187ab98e-2953-4495-b379-4060bd4b75ee">
-    <topic>py27-setuptools44 -- denial of service vulnerability</topic>
-    <affects>
-      <package>
-    <name>py27-setuptools44</name>
-    <range><lt>44.1.1_1</lt></range>
-    <range><ge>57.0.0</ge><lt>58.5.3_3</lt></range>
-    <range><ge>62.1.0</ge><lt>63.1.0_1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>SCH227 reports:</p>
-    <blockquote cite="https://osv.dev/vulnerability/GHSA-r9hx-vwmv-q579">
-      <p>Python Packaging Authority (PyPA)'s setuptools is a library designed to facilitate packaging Python projects.</p>
-      <p>Setuptools version 65.5.0 and earlier could allow remote attackers to cause a denial of service by fetching malicious HTML from a PyPI package or custom PackageIndex page due to a vulnerable Regular Expression in `package_index`.</p>
-      <p>This has been patched in version 65.5.1. The patch backported to the revision 44.1.1_1.</p>
-    </blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CVE-2022-40897</cvename>
-      <url>https://osv.dev/vulnerability/GHSA-r9hx-vwmv-q579</url>
-    </references>
-    <dates>
-      <discovery>2022-12-23</discovery>
-      <entry>2023-04-09</entry>
-    </dates>
+    <cancelled superseded="1b38aec4-4149-4c7d-851c-3c4de3a1fbd0"/>
   </vuln>
 
   <vuln vid="24da150a-33e0-4fee-b4ee-2c6b377d3395">
-    <topic>py39-setuptools58 -- denial of service vulnerability</topic>
-    <affects>
-      <package>
-    <name>py39-setuptools58</name>
-    <range><lt>44.1.1_1</lt></range>
-    <range><ge>57.0.0</ge><lt>58.5.3_3</lt></range>
-    <range><ge>62.1.0</ge><lt>63.1.0_1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>SCH227 reports:</p>
-    <blockquote cite="https://osv.dev/vulnerability/GHSA-r9hx-vwmv-q579">
-      <p>Python Packaging Authority (PyPA)'s setuptools is a library designed to facilitate packaging Python projects.</p>
-      <p>Setuptools version 65.5.0 and earlier could allow remote attackers to cause a denial of service by fetching malicious HTML from a PyPI package or custom PackageIndex page due to a vulnerable Regular Expression in `package_index`.</p>
-      <p>This has been patched in version 65.5.1. The patch backported to the revision 58.5.3_3.</p>
-    </blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CVE-2022-40897</cvename>
-      <url>https://osv.dev/vulnerability/GHSA-r9hx-vwmv-q579</url>
-    </references>
-    <dates>
-      <discovery>2022-12-23</discovery>
-      <entry>2023-04-09</entry>
-    </dates>
+    <cancelled superseded="1b38aec4-4149-4c7d-851c-3c4de3a1fbd0"/>
   </vuln>
 
   <vuln vid="15dae5cc-9ee6-4577-a93e-2ab57780e707">
-    <topic>py39-sentry-sdk -- sensitive cookies leak</topic>
+    <topic>py-sentry-sdk -- sensitive cookies leak</topic>
     <affects>
       <package>
-    <name>py39-sentry-sdk</name>
-    <range><lt>1.14.0</lt></range>
+	<name>py37-sentry-sdk</name>
+	<name>py38-sentry-sdk</name>
+	<name>py39-sentry-sdk</name>
+	<name>py310-sentry-sdk</name>
+	<name>py311-sentry-sdk</name>
+	<range><lt>1.14.0</lt></range>
       </package>
     </affects>
     <description>
@@ -9946,15 +9933,20 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2023-03-21</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="28a37df6-ba1a-4eed-bb64-623fc8e8dfd0">
-    <topic>py39-py -- Regular expression Denial of Service vulnerability</topic>
+    <topic>py-py -- Regular expression Denial of Service vulnerability</topic>
     <affects>
       <package>
-    <name>py39-py</name>
-    <range><le>1.11.0</le></range>
+	<name>py37-py</name>
+	<name>py38-py</name>
+	<name>py39-py</name>
+	<name>py310-py</name>
+	<name>py311-py</name>
+	<range><le>1.11.0</le></range>
       </package>
     </affects>
     <description>
@@ -9973,14 +9965,19 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2022-11-04</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="845f8430-d0ee-4134-ae35-480a3e139b8a">
-    <topic>py39-joblib -- arbitrary code execution</topic>
+    <topic>py-joblib -- arbitrary code execution</topic>
     <affects>
       <package>
-    <name>py39-joblib</name>
+	<name>py37-joblib</name>
+	<name>py38-joblib</name>
+	<name>py39-joblib</name>
+	<name>py310-joblib</name>
+	<name>py311-joblib</name>
     <range><lt>1.2.0</lt></range>
       </package>
     </affects>
@@ -10000,15 +9997,20 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2022-09-26</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="de970aef-d60e-466b-8e30-1ae945a047f1">
-    <topic>py39-configobj -- vulnerable to Regular Expression Denial of Service</topic>
+    <topic>py-configobj -- vulnerable to Regular Expression Denial of Service</topic>
     <affects>
       <package>
-    <name>py39-configobj</name>
-    <range><le>5.0.6_1</le></range>
+	<name>py37-configobj</name>
+	<name>py38-configobj</name>
+	<name>py39-configobj</name>
+	<name>py310-configobj</name>
+	<name>py311-configobj</name>
+	<range><le>5.0.6_1</le></range>
       </package>
     </affects>
     <description>
@@ -10027,15 +10029,20 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2023-04-03</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="0a38a0d9-757f-4ac3-9561-b439e933dfa9">
-    <topic>py39-celery -- command injection vulnerability</topic>
+    <topic>py-celery -- command injection vulnerability</topic>
     <affects>
       <package>
-    <name>py39-celery</name>
-    <range><lt>5.2.2</lt></range>
+	<name>py37-celery</name>
+	<name>py37-celery</name>
+	<name>py39-celery</name>
+	<name>py310-celery</name>
+	<name>py311-celery</name>
+	<range><lt>5.2.2</lt></range>
       </package>
     </affects>
     <description>
@@ -10057,16 +10064,36 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2021-12-09</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="8aa6340d-e7c6-41e0-b2a3-3c9e9930312a">
-    <topic>py39-redis -- can send response data to the client of an unrelated request</topic>
+    <topic>py-redis -- can send response data to the client of an unrelated request</topic>
     <affects>
       <package>
-    <name>py39-redis</name>
-    <range><ge>4.4.0</ge><lt>4.4.4</lt></range>
-    <range><ge>4.5.0</ge><lt>4.5.4</lt></range>
+	<name>py37-redis2</name>
+	<name>py38-redis2</name>
+	<name>py39-redis2</name>
+	<name>py310-redis2</name>
+	<name>py311-redis2</name>
+	<range><lt>2.10.6</lt></range>
+      </package>
+      <package>
+	<name>py37-redis3</name>
+	<name>py38-redis3</name>
+	<name>py39-redis3</name>
+	<name>py310-redis3</name>
+	<name>py311-redis3</name>
+	<range><lt>3.5.4</lt></range>
+      </package>
+      <package>
+	<name>py37-redis</name>
+	<name>py38-redis</name>
+	<name>py39-redis</name>
+	<name>py310-redis</name>
+	<name>py311-redis</name>
+	<range><lt>4.5.4</lt></range>
       </package>
     </affects>
     <description>
@@ -10085,37 +10112,12 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2023-03-26</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="3f6d6181-79b2-4d33-bb1e-5d3f9df0c1d1">
-    <topic>py39-redis -- can send response data to the client of an unrelated request</topic>
-    <affects>
-      <package>
-    <name>py39-redis</name>
-    <range><lt>4.3.6</lt></range>
-    <range><ge>4.4.0</ge><lt>4.4.3</lt></range>
-    <range><ge>4.5.0</ge><lt>4.5.3</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>drago-balto reports:</p>
-    <blockquote cite="https://osv.dev/vulnerability/GHSA-24wv-mv5m-xv4h">
-      <p>redis-py before 4.5.3, as used in ChatGPT and other products, leaves a connection open after canceling an async Redis command at an inopportune time (in the case of a pipeline operation), and can send response data to the client of an unrelated request in an off-by-one manner.</p>
-      <p>The fixed versions for this CVE Record are 4.3.6, 4.4.3, and 4.5.3, but [are believed to be incomplete](https://github.com/redis/redis-py/issues/2665).</p>
-      <p>CVE-2023-28859 has been assigned the issues caused by the incomplete fixes.</p>
-    </blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CVE-2023-28858</cvename>
-      <url>https://osv.dev/vulnerability/GHSA-24wv-mv5m-xv4h</url>
-    </references>
-    <dates>
-      <discovery>2023-03-26</discovery>
-      <entry>2023-04-09</entry>
-    </dates>
+    <cancelled superseded="e4181981-ccf1-11ed-956f-7054d21a9e2a"/>
   </vuln>
 
   <vuln vid="d2293e22-4390-42c2-a323-34cca2066000">
@@ -10149,49 +10151,40 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2019-02-06</discovery>
       <entry>2023-04-09</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="8ccff771-ceca-43a0-85ad-3e595e73b425">
-    <topic>py39-sqlalchemy11 -- multiple SQL Injection vulnerabilities</topic>
-    <affects>
-      <package>
-    <name>py39-sqlalchemy11</name>
-    <range><lt>1.3.0</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>21k reports:</p>
-    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2019-123">
-      <p>SQLAlchemy through 1.2.17 and 1.3.x through 1.3.0b2 allows SQL Injection via the order_by parameter.</p>
-    </blockquote>
-    <p>nosecurity reports:</p>
-    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2019-124">
-      <p>SQLAlchemy 1.2.17 has SQL Injection when the group_by parameter can be controlled.</p>
-    </blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CVE-2019-7164</cvename>
-      <cvename>CVE-2019-7548</cvename>
-      <url>https://osv.dev/vulnerability/PYSEC-2019-123</url>
-      <url>https://osv.dev/vulnerability/PYSEC-2019-124</url>
-      <url>https://osv.dev/vulnerability/GHSA-38fc-9xqv-7f7q</url>
-      <url>https://osv.dev/vulnerability/GHSA-887w-45rq-vxgf</url>
-    </references>
-    <dates>
-      <discovery>2019-02-06</discovery>
-      <entry>2023-04-09</entry>
-    </dates>
+    <cancelled superseded="e4181981-ccf1-11ed-956f-7054d21a9e2a"/>
    </vuln>
 
   <vuln vid="e4181981-ccf1-11ed-956f-7054d21a9e2a">
-    <topic>py39-sqlalchemy10 -- multiple SQL Injection vulnerabilities</topic>
+    <topic>py-sqlalchemy -- multiple SQL Injection vulnerabilities</topic>
     <affects>
       <package>
-    <name>py39-sqlalchemy10</name>
-    <range><lt>1.3.0</lt></range>
+	<name>py37-sqlalchemy10</name>
+	<name>py38-sqlalchemy10</name>
+	<name>py39-sqlalchemy10</name>
+	<name>py310-sqlalchemy10</name>
+	<name>py311-sqlalchemy10</name>
+	<range><lt>1.3.0</lt></range>
+      </package>
+      <package>
+	<name>py37-sqlalchemy11</name>
+	<name>py38-sqlalchemy11</name>
+	<name>py39-sqlalchemy11</name>
+	<name>py310-sqlalchemy11</name>
+	<name>py311-sqlalchemy11</name>
+	<range><lt>1.3.0</lt></range>
+      </package>
+      <package>
+	<name>py37-sqlalchemy12</name>
+	<name>py38-sqlalchemy12</name>
+	<name>py39-sqlalchemy12</name>
+	<name>py310-sqlalchemy12</name>
+	<name>py311-sqlalchemy12</name>
+	<range><lt>1.3.0</lt></range>
       </package>
     </affects>
     <description>
@@ -10217,15 +10210,20 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2019-02-06</discovery>
       <entry>2023-03-28</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="c13a8c17-cbeb-11ed-956f-7054d21a9e2a">
-    <topic>py39-lmdb -- multiple vulnerabilities</topic>
+    <topic>py-lmdb -- multiple vulnerabilities</topic>
     <affects>
       <package>
-    <name>py39-lmdb</name>
-    <range><lt>0.98</lt></range>
+	<name>py37-lmdb</name>
+	<name>py38-lmdb</name>
+	<name>py39-lmdb</name>
+	<name>py310-lmdb</name>
+	<name>py311-lmdb</name>
+	<range><lt>0.98</lt></range>
       </package>
     </affects>
     <description>
@@ -10263,15 +10261,20 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2019-09-11</discovery>
       <entry>2023-03-26</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="2991178f-cbe8-11ed-956f-7054d21a9e2a">
-    <topic>py39-Elixir -- weak use of cryptography</topic>
+    <topic>py-Elixir -- weak use of cryptography</topic>
     <affects>
       <package>
-    <name>py39-Elixir</name>
-    <range><le>0.8.0</le></range>
+	<name>py37-Elixir</name>
+	<name>py38-Elixir</name>
+	<name>py39-Elixir</name>
+	<name>py310-Elixir</name>
+	<name>py311-Elixir</name>
+	<range><le>0.8.0</le></range>
       </package>
     </affects>
     <description>
@@ -10289,15 +10292,20 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2012-08-26</discovery>
       <entry>2023-03-26</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
   <vuln vid="70d0d2ec-cb62-11ed-956f-7054d21a9e2a">
-    <topic>py39-rencode -- infinite loop that could lead to Denial of Service</topic>
+    <topic>py-rencode -- infinite loop that could lead to Denial of Service</topic>
     <affects>
       <package>
-    <name>py39-rencode</name>
-    <range><le>1.0.6_1</le></range>
+	<name>py37-rencode</name>
+	<name>py38-rencode</name>
+	<name>py39-rencode</name>
+	<name>py310-rencode</name>
+	<name>py311-rencode</name>
+	<range><le>1.0.6_1</le></range>
       </package>
     </affects>
     <description>
@@ -10316,7 +10324,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2021-09-09</discovery>
       <entry>2023-03-25</entry>
-      <modified>2023-03-26</modified>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
