@@ -1,11 +1,11 @@
 PORTNAME=	us
-PORTVERSION=	3.2.0
+PORTVERSION=	4.0.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	US state meta information and other fun stuff
+COMMENT=	US state metadata
 WWW=		https://github.com/unitedstates/python-us
 
 LICENSE=	BSD3CLAUSE
