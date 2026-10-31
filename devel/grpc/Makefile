@@ -51,7 +51,7 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		SHLIB_VER=${PORTVERSION:R}
 
-CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9]
+CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9] gprbuild-*
 
 USE_GITHUB=	yes
 GH_TUPLE=	envoyproxy:data-plane-api:102e9b1:envoyproxy_data_plane_api/third_party/envoy-api \

@@ -20,6 +20,8 @@ BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 USES=		ada:run python:build
 USE_BINUTILS=	yes
 
+CONFLICTS_INSTALL=	grpc-1.*	# libgpr.so
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
 GH_PROJECT=	gprconfig_kb:kb xmlada:xa
