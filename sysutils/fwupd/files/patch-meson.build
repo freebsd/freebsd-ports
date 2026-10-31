@@ -1,11 +1,12 @@
---- meson.build.orig	2026-07-27 15:39:53 UTC
+--- meson.build.orig	2026-10-23 13:27:58 UTC
 +++ meson.build
-@@ -484,7 +484,7 @@ if get_option('default_library') != 'static'
+@@ -503,7 +503,8 @@ if get_option('default_library') != 'static'
      platform_deps += cc.find_library('shlwapi')
    endif
    if host_machine.system() == 'freebsd'
 -    platform_deps += dependency('efivar')
 +    platform_deps += cc.find_library('efivar')
++    platform_deps += cc.find_library('geom')
      platform_deps += dependency(
        'libinotify',
        required: false,

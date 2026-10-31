@@ -1,4 +1,4 @@
---- libfwupdplugin/fu-freebsd-efivars.c.orig	2026-07-27 15:39:53 UTC
+--- libfwupdplugin/fu-freebsd-efivars.c.orig	2026-10-23 13:27:58 UTC
 +++ libfwupdplugin/fu-freebsd-efivars.c
 @@ -17,6 +17,7 @@
  
@@ -43,7 +43,7 @@
  }
  
  static gboolean
-@@ -104,8 +111,45 @@ fu_freebsd_efivars_get_data(FuEfivars *efivars,
+@@ -89,8 +96,45 @@ fu_freebsd_efivars_get_data(FuEfivars *efivars,
  			    GError **error)
  {
  	efi_guid_t guidt;
@@ -90,7 +90,7 @@
  }
  
  static gboolean
-@@ -182,7 +226,7 @@ fu_freebsd_efivars_set_data(FuEfivars *efivars,
+@@ -163,7 +207,7 @@ fu_freebsd_efivars_set_data(FuEfivars *efivars,
  	efi_guid_t guidt;
  	efi_str_to_guid(guid, &guidt);
  

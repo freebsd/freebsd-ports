@@ -60,9 +60,9 @@ include/fwupd-3/libfwupd/fwupd-security-attr-struct.h
 include/fwupd-3/libfwupd/fwupd-security-attr.h
 include/fwupd-3/libfwupd/fwupd-variant.h
 include/fwupd-3/libfwupd/fwupd-version.h
-lib/fwupd-2.1.8/libfwupdengine.so
-lib/fwupd-2.1.8/libfwupdplugin.so
-lib/fwupd-2.1.8/libfwupdutil.so
+lib/fwupd-2.1.9/libfwupdengine.so
+lib/fwupd-2.1.9/libfwupdplugin.so
+lib/fwupd-2.1.9/libfwupdutil.so
 lib/girepository-1.0/Fwupd-2.0.typelib
 lib/libfwupd.so
 lib/libfwupd.so.3
@@ -1720,6 +1720,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/const.QUIRKS_VERSION_FORMAT.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.QUIRKS_VERSION_HIGHEST.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.QUIRKS_VERSION_LOWEST.html
+%%PORTDOCS%%share/doc/libfwupdplugin/const.QUIRKS_VERSION_RAW.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.SMBIOS_CHASSIS_KIND_LAST.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.SMBIOS_STRUCTURE_TYPE_LAST.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.TPM_DIGEST_SIZE_SHA1.html
