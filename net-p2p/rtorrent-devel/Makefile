@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--disable-debug \
 
 TEST_ARGS=	CPPUNIT_LIBS="-L${LOCALBASE}/lib -lcppunit"
 TEST_TARGET=	check
-TESTING_UNSAFE=	https://github.com/rakshasa/rtorrent/issues/2082
 
 CONFLICTS_INSTALL=	rtorrent
 
