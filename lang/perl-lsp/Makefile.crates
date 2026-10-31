@@ -145,9 +145,10 @@ CARGO_CRATES=	ahash-0.8.12 \
 		tree-sitter-cmake-0.7.1 \
 		tree-sitter-cpp-0.23.4 \
 		tree-sitter-language-0.1.7 \
+		tree-sitter-php-0.24.2 \
 		tree-sitter-python-0.25.0 \
 		tree-sitter-r-1.2.0 \
-		ts-parser-perl-2.0.0 \
+		ts-parser-perl-2.0.3 \
 		ts-parser-pod-1.0.0 \
 		unicode-ident-1.0.24 \
 		url-2.5.8 \
