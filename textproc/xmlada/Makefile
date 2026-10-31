@@ -1,6 +1,5 @@
 PORTNAME=	xmlada
-DISTVERSIONPREFIX=	v
-DISTVERSION=	26.0.0
+DISTVERSION=	27.1
 CATEGORIES=	textproc
 MASTER_SITES=	${_TEST_SITE_XMLTS} \
 		${_TEST_SITE_XSTS}
@@ -17,7 +16,7 @@ LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING3
 LICENSE_FILE_GPLv3RLE+ =	${WRKSRC}/COPYING.RUNTIME
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
-		gprbuild>=25:devel/gprbuild \
+		gprbuild>=${DISTVERSION}:devel/gprbuild \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 TEST_DEPENDS=	gmake:devel/gmake
 
@@ -26,6 +25,7 @@ USE_BINUTILS=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AdaCore
+GH_TAGNAME=	9823ffb294187897a08b14bbce00743ff647cae1
 
 MAKE_CMD=	gprbuild
 
@@ -33,7 +33,8 @@ TEST_ENV=	GPR_PROJECT_PATH=${STAGEDIR}${PREFIX}/share/gpr
 
 NO_SHLIB_REQUIRES_GLOB=	libgnat-${_ada_version}.so
 
-PLIST_SUB=	SO_VERSION=${DISTVERSION}
+PLIST_SUB=	SO_VERSION=${_SO_VERSION} \
+		SO_VERSION_MAJOR=${_SO_VERSION_MAJOR}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -59,7 +60,10 @@ _GPRBUILD_ARGS=		${_GPR_PROJECT_ARGS} -p -vh -vP2 \
 			-XPROCESSORS=${MAKE_JOBS_NUMBER}
 _GPRINSTALL_ARGS=	${_GPR_PROJECT_ARGS} --no-manifest \
 			--prefix='${STAGEDIR}${PREFIX}' -p -v
+_GPR_LIBRARY_TYPES=	relocatable static static-pic
 _GPR_PROJECT_ARGS=	-XXMLADA_BUILD_MODE=${WITH_DEBUG:UProduction:DDebug}
+_SO_VERSION=		${DISTVERSION}
+_SO_VERSION_MAJOR=	${DISTVERSION:R}
 _TEST_DIST_XMLTS=	xmlts20080827.tar
 _TEST_DIST_XSTS=	xsts-2007-06-20.tar.gz
 _TEST_SITE_XMLTS=	https://www.w3.org/XML/Test/:test_xmlts
@@ -75,21 +79,15 @@ post-patch:
 	${REINPLACE_CMD} -e 's|@DEFAULT_LIBRARY_TYPE@|static|' \
 		-e 's|@BUILD_TYPE@|${_GPR_PROJECT_ARGS:C/.*=//}|' \
 		${WRKSRC}/${PORTNAME}_shared.gpr.in
-	${REINPLACE_CMD} -e 's|@exec_prefix@/||' \
-		${WRKSRC}/tests/dom/default.gpr.in
-	${REINPLACE_CMD} -e 's|%%TESTS_GPRBUILD_ARGS%%|${_TESTS_GPRBUILD_ARGS}|' \
-		${WRKSRC}/tests/Makefile
-	${MV} ${WRKSRC}/tests/dom/default.gpr.in \
-		${WRKSRC}/tests/dom/default.gpr
 	${MV} ${WRKSRC}/${PORTNAME}_shared.gpr.in \
 		${WRKSRC}/${PORTNAME}_shared.gpr
 
 do-build:
-.for _library_type in relocatable static static-pic
+.  for _library_type in ${_GPR_LIBRARY_TYPES}
 	(cd ${WRKSRC}/ && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_GPRBUILD_ARGS} -XLIBRARY_TYPE=${_library_type} \
 		-P ${PORTNAME})
-.endfor
+.  endfor
 	(cd ${WRKSRC}/docs && \
 		${SETENV} ${MAKE_ENV} sphinx-build-${PYTHON_VER} -d ./doctrees \
 		-b man . build/man)
@@ -100,26 +98,27 @@ do-build-DOCS-on:
 		-b html . build/html)
 
 do-install:
-. for _xmlada_component in dom sax schema unicode
-.  for _library_type in relocatable static static-pic
+.  for _xmlada_component in dom input sax schema unicode
+.   for _library_type in ${_GPR_LIBRARY_TYPES}
+# Separate input because the directory name is not consistent with the library
+# name
+.     if ${_xmlada_component} == input
+	(cd ${WRKSRC}/ && \
+		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --build-name=${_library_type} \
+		--build-var=${_library_type} --ali-subdir=libdata/${PORTNAME}/${_xmlada_component}/${_library_type} \
+		--lib-subdir=lib/${PORTNAME}/${_xmlada_component}/${_library_type} \
+		--sources-subdir=include/${PORTNAME}/${_xmlada_component} \
+		-XLIBRARY_TYPE=${_library_type} -P ${_xmlada_component}_sources/${PORTNAME}_${_xmlada_component})
+.     else
 	(cd ${WRKSRC}/ && \
 		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --build-name=${_library_type} \
 		--build-var=${_library_type} --ali-subdir=libdata/${PORTNAME}/${_xmlada_component}/${_library_type} \
 		--lib-subdir=lib/${PORTNAME}/${_xmlada_component}/${_library_type} \
 		--sources-subdir=include/${PORTNAME}/${_xmlada_component} \
 		-XLIBRARY_TYPE=${_library_type} -P ${_xmlada_component}/${PORTNAME}_${_xmlada_component})
+.     endif
+.   endfor
 .  endfor
-. endfor
-# Separate XML/Ada Input from above because the directory name is not
-# consistent with the library name
-. for _library_type in relocatable static static-pic
-	(cd ${WRKSRC}/ && \
-		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --build-name=${_library_type} \
-		--build-var=${_library_type} --ali-subdir=libdata/${PORTNAME}/input/${_library_type} \
-		--lib-subdir=lib/${PORTNAME}/input/${_library_type} \
-		--sources-subdir=include/${PORTNAME}/input -XLIBRARY_TYPE=${_library_type} \
-		-P input_sources/${PORTNAME}_input)
-. endfor
 	${INSTALL_MAN} ${WRKSRC}/docs/build/man/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
 	${FIND} ${STAGEDIR}${PREFIX}/lib -name *.a -exec ${STRIP_CMD} {} \
@@ -139,12 +138,10 @@ pre-test:
 	${RLN} ${WRKDIR}/xmlschema2006-11-06 ${WRKSRC}/tests/schema
 
 do-test:
-	(cd ${WRKSRC}/ && \
-		${SETENV} ${MAKE_ENV} ${TEST_ENV} ${MAKE_CMD} ${_GPR_PROJECT_ARGS} \
-		${_GPRBUILD_ARGS} -XLIBRARY_TYPE=static -XTESTS_ACTIVATED=Only \
-		xmlada.gpr)
 	(cd ${WRKSRC}/tests && \
-		${SETENV} ${MAKE_ENV} ${TEST_ENV} -XLIBRARY_TYPE=static \
-		-XTESTS_ACTIVATED=Only gmake tests)
+		${SETENV} ${MAKE_ENV} ${TEST_ENV} ${MAKE_CMD} ${_GPR_PROJECT_ARGS} \
+		${_GPRBUILD_ARGS} -XLIBRARY_TYPE=static -P ${PORTNAME}_tests)
+	(cd ${WRKSRC}/ && \
+		${SETENV} ${MAKE_ENV} ${TEST_ENV} ${GMAKE} -C tests)
 
 .include <bsd.port.mk>
