@@ -8073,6 +8073,7 @@
     SUBDIR += rubygem-opentelemetry-common
     SUBDIR += rubygem-opentelemetry-common-gitlab
     SUBDIR += rubygem-opentelemetry-exporter-otlp
+    SUBDIR += rubygem-opentelemetry-exporter-otlp-common
     SUBDIR += rubygem-opentelemetry-exporter-otlp-gitlab
     SUBDIR += rubygem-opentelemetry-exporter-otlp-logs
     SUBDIR += rubygem-opentelemetry-exporter-otlp-metrics
