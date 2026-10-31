@@ -1,5 +1,5 @@
 PORTNAME=	chirp
-DISTVERSION=	20260904
+DISTVERSION=	20261030
 CATEGORIES=	comms hamradio
 MASTER_SITES=	https://archive.chirpmyradio.com/chirp_next/next-${DISTVERSION}/ \
 		LOCAL/vishwin
