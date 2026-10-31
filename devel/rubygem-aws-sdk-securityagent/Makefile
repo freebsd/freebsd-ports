@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-securityagent
-PORTVERSION=	1.15.0
+PORTVERSION=	1.19.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
