@@ -1,5 +1,5 @@
 PORTNAME=	xarray
-PORTVERSION=	2026.7.0
+PORTVERSION=	2026.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,7 @@ WWW=		https://xarray.dev/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=7:devel/py-setuptools-scm@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.26,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=24.2:devel/py-packaging@${PY_FLAVOR} \
@@ -30,7 +29,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cartopy>=0.24:graphics/py-cartopy@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}sparse>=0.15:devel/py-sparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zarr>=2.18:devel/py-zarr@${PY_FLAVOR}
 
-USES=		python:3.11+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
