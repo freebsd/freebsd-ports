@@ -2919,7 +2919,6 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     </description>
     <references>
       <cvename>CVE-2023-5207</cvename>
-      <cvename>CVE-2023-5207</cvename>
       <cvename>CVE-2023-4379</cvename>
       <cvename>CVE-2023-3413</cvename>
       <cvename>CVE-2023-3914</cvename>
@@ -5426,8 +5425,6 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <references>
       <cvename>CVE-2022-4899</cvename>
       <cvename>CVE-2023-0361</cvename>
-      <cvename>CVE-2022-4899</cvename>
-      <cvename>CVE-2022-4899</cvename>
       <cvename>CVE-2023-22053</cvename>
       <cvename>CVE-2023-22008</cvename>
       <cvename>CVE-2023-22046</cvename>
@@ -13963,7 +13960,6 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     </description>
     <references>
       <cvename>CVE-2022-32221</cvename>
-      <cvename>CVE-2022-24407</cvename>
       <cvename>CVE-2022-24407</cvename>
       <cvename>CVE-2022-3171</cvename>
       <cvename>CVE-2022-1941</cvename>

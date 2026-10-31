@@ -267,7 +267,6 @@
     <references>
       <cvename>CVE-2021-2322</cvename>
       <url>https://www.oracle.com/security-alerts/oracle-open-source-cves-outside-other-oracle-public-documents.html</url>
-      <url>https://www.oracle.com/security-alerts/oracle-open-source-cves-outside-other-oracle-public-documents.html</url>
       <url>https://github.com/oracle/opengrok/pull/3528</url>
     </references>
     <dates>

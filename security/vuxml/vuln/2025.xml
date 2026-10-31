@@ -1239,7 +1239,6 @@
       <cvename>CVE-2025-13638</cvename>
       <cvename>CVE-2025-13639</cvename>
       <cvename>CVE-2025-13640</cvename>
-      <cvename>CVE-2025-13634</cvename>
       <cvename>CVE-2025-13720</cvename>
       <cvename>CVE-2025-13721</cvename>
       <url>https://chromereleases.googleblog.com/2025/12/stable-channel-update-for-desktop.html</url>
@@ -1321,8 +1320,6 @@ This issue has been patched in version 2.25.2.</p>
       <url>https://cveawg.mitre.org/api/cve/CVE-2018-15859</url>
       <cvename>CVE-2018-15861</cvename>
       <url>https://cveawg.mitre.org/api/cve/CVE-2018-15861</url>
-      <cvename>CVE-2018-15863</cvename>
-      <url>https://cveawg.mitre.org/api/cve/CVE-2018-15863</url>
     </references>
     <dates>
       <discovery>2025-12-03</discovery>
@@ -8047,7 +8044,6 @@ This issue has been patched in version 2.25.2.</p>
       <cvename>CVE-2025-6021</cvename>
       <cvename>CVE-2025-6170</cvename>
       <cvename>CVE-2025-49794</cvename>
-      <cvename>CVE-2025-49795</cvename>
       <cvename>CVE-2025-49795</cvename>
       <url>https://www.openwall.com/lists/oss-security/2025/06/16/6</url>
       <url>https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt</url>
