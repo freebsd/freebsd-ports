@@ -177,11 +177,11 @@
     SUBDIR += migemo.el
     SUBDIR += mime_pls
     SUBDIR += mozc-el
-    SUBDIR += mozc3-el
     SUBDIR += mozc-modeless
     SUBDIR += mozc-server
-    SUBDIR += mozc3-server
     SUBDIR += mozc-tool
+    SUBDIR += mozc3-el
+    SUBDIR += mozc3-server
     SUBDIR += mozc3-tool
     SUBDIR += multiskkserv
     SUBDIR += mypaedia-fpw-package

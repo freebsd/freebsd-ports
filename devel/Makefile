@@ -1728,10 +1728,10 @@
     SUBDIR += matreshka
     SUBDIR += maven
     SUBDIR += maven-wrapper
+    SUBDIR += maven310
     SUBDIR += maven363
     SUBDIR += maven38
     SUBDIR += maven39
-    SUBDIR += maven310
     SUBDIR += mcpp
     SUBDIR += mdb
     SUBDIR += mdds
