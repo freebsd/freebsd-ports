@@ -1,5 +1,5 @@
-TIMESTAMP = 1791055407
-SHA256 (go/sysutils_nerdctl/containerd-nerdctl-v2.4.1_GH0/go.mod) = 71277312a4e181c0ee20923ae571dbeb1532aa819433fbf68cad50852b375ce3
-SIZE (go/sysutils_nerdctl/containerd-nerdctl-v2.4.1_GH0/go.mod) = 8295
-SHA256 (go/sysutils_nerdctl/containerd-nerdctl-v2.4.1_GH0/containerd-nerdctl-v2.4.1_GH0.tar.gz) = ddae9bac35fe8ad35a631d64a179d17589bed3055756f94ef59cf2e0b2a95ee7
-SIZE (go/sysutils_nerdctl/containerd-nerdctl-v2.4.1_GH0/containerd-nerdctl-v2.4.1_GH0.tar.gz) = 1671857
+TIMESTAMP = 1793438420
+SHA256 (go/sysutils_nerdctl/containerd-nerdctl-v2.4.2_GH0/go.mod) = f74e7a466f3f5175a3f833921fd826f2e3320d58ef4f83f61f10774b06f02fe0
+SIZE (go/sysutils_nerdctl/containerd-nerdctl-v2.4.2_GH0/go.mod) = 8319
+SHA256 (go/sysutils_nerdctl/containerd-nerdctl-v2.4.2_GH0/containerd-nerdctl-v2.4.2_GH0.tar.gz) = f73026262a1cab7b6a8f3df66da54dbe52268184359c41408468d9b75d3b41d8
+SIZE (go/sysutils_nerdctl/containerd-nerdctl-v2.4.2_GH0/containerd-nerdctl-v2.4.2_GH0.tar.gz) = 1683975
