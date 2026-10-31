@@ -1,11 +1,10 @@
 PORTNAME=	waitforssh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.1
+DISTVERSION=	0.1.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Wait for a target to be up and running using SSH
-WWW=		https://github.com/DtxdF/${PORTNAME}
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
