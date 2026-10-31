@@ -1,6 +1,6 @@
 PORTNAME=	calibre
 PORTVERSION=	8.16.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://download.calibre-ebook.com/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -69,6 +69,7 @@ RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}apsw>=3.50.4.0:databases/py-apsw@${PY_FLAVO
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tzdata>=2023.3:devel/py-tzdata@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tzlocal>=5.0.1:devel/py-tzlocal@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}unrardll>=0.1.7:archivers/py-unrardll@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xxhash>=3.3.0:devel/py-xxhash@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}zeroconf>0.115.0:net/py-zeroconf@${PY_FLAVOR} \
 			liberation-fonts-ttf>=2.1.3:x11-fonts/liberation-fonts-ttf \
@@ -170,9 +171,8 @@ do-install:
 #   pykakasi	no port for pykakasi
 #   qt		calls JxrDecApp, a bundled JPEG-XR tool that is not built
 #   sqlite	databases/py-sqlite3 lacks enable_load_extension()
-#   unrar	no port for unrardll
 #
-TEST_IGNORE?=	7z piper plugins pychm pykakasi qt sqlite unrar
+TEST_IGNORE?=	7z piper plugins pychm pykakasi qt sqlite
 
 _TEST_BUILD_PY=	${STAGEDIR}${PREFIX}/lib/calibre/calibre/test_build.py
 
