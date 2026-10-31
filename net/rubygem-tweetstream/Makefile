@@ -5,7 +5,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	TweetStream provides simple Ruby access to Twitter Streaming API
+COMMENT=	Simple wrapper for consuming the Twitter Streaming API
 WWW=		https://github.com/tweetstream/tweetstream
 
 LICENSE=	MIT
@@ -18,8 +18,9 @@ RUN_DEPENDS=	rubygem-daemons>=1.1<2:devel/rubygem-daemons \
 		rubygem-twitter>=5.5:net/rubygem-twitter
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}_project
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	tweetstream_project
 
 .include <bsd.port.mk>
