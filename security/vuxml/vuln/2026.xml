@@ -1,3 +1,49 @@
+  <vuln vid="1a0c64ff-5f9f-11f1-8ea1-fb4f92e650aa">
+    <topic>py-django -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py311-django52</name>
+	<name>py312-django52</name>
+	<name>py313-django52</name>
+	<name>py313t-django52</name>
+	<name>py314-django52</name>
+	<name>py314t-django52</name>
+	<name>py315-django52</name>
+	<range><lt>5.2.15</lt></range>
+      </package>
+      <package>
+	<name>py311-django60</name>
+	<name>py312-django60</name>
+	<name>py313-django60</name>
+	<name>py313t-django60</name>
+	<name>py314-django60</name>
+	<name>py314t-django60</name>
+	<name>py315-django60</name>
+	<range><lt>6.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>django reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2026/jun/03/security-releases/">
+	  <p>In accordance with our security release policy, the Django team is issuing releases for Django 6.0.6 and Django 5.2.15. These releases address the security issues detailed below. We encourage all users of Django to upgrade as soon as possible.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-6873</cvename>
+      <cvename>CVE-2026-7666</cvename>
+      <cvename>CVE-2026-8404</cvename>
+      <cvename>CVE-2026-35193</cvename>
+      <cvename>CVE-2026-48587</cvename>
+      <url>http://www.djangoproject.com/weblog/2026/jun/03/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2026-06-03</discovery>
+      <entry>2026-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cc1f80fa-d50e-11f1-8135-8447094a420f">
     <topic>libreswan -- Multiple vulnerabilities.</topic>
     <affects>
