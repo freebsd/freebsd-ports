@@ -1,6 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.0
+DISTVERSION=	0.18.0
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -851,21 +851,28 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		zvariant_utils-4.2.0 \
 		winprint@git+https://github.com/storytold/winprint.rs?rev=5f80b9baf6b58937c401656634e42d33f00ddf49\#5f80b9baf6b58937c401656634e42d33f00ddf49 \
 		craft-winprint-gdi@git+https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312\#417ac3c4d14d3da5485a99c7d5ce8f05664ec312 \
-		craft-docpath,craft-fonts-build,craft-i18n,craft-jpeg,craft-print,craft-ui,craft-update@git+https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0\#92d392cff132eaf53e13afff77f38b5c11b73aa0 \
+		craft-docpath,craft-fonts-build,craft-i18n,craft-jpeg,craft-print,craft-ui@git+https://github.com/storytold/craft-libs?rev=92d392cff132eaf53e13afff77f38b5c11b73aa0\#92d392cff132eaf53e13afff77f38b5c11b73aa0 \
 		ecolor,eframe,egui,egui-wgpu,egui-winit,egui_extras,egui_glow,egui_kittest,emath,epaint,epaint_default_fonts@git+https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a\#6d518fc799681571963842f95b55a6b68431b15a \
+		craft-update@git+https://github.com/storytold/craft-libs?rev=04aa1703b32d299e54f78fcde4182f2b393a9116\#04aa1703b32d299e54f78fcde4182f2b393a9116 \
 		winit@git+https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc\#a517b3846ee8457d84ee4975110bfda6797c44dc
 
-CARGO_FEATURES=	heif
 CARGO_BUILD_ARGS=	-p ${PORTNAME} -p ${PORTNAME}-cli
 CARGO_ENV=	PHOTOCRAFT_BUILD_DATE=${RELEASE_DATE}
 # Install the binaries of the joint build: a per-package cargo install
 # unifies features differently and rebuilds most of the workspace
 CARGO_INSTALL=	no
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	AVIF DOCS HEIF
+OPTIONS_DEFAULT=	HEIF
+AVIF_DESC=	AVIF export (encoder only, pure Rust rav1e)
+HEIF_DESC=	Open HEIC/HEIF photos (pure Rust decoder)
+
+# The apps only expose heif; avif is a feature of the codecs crate
+AVIF_VARS=	CARGO_FEATURES+=photocraft-codecs/avif
+HEIF_VARS=	CARGO_FEATURES+=heif
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-10-28
+RELEASE_DATE=	2026-10-31
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
