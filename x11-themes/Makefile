@@ -150,7 +150,6 @@
     SUBDIR += pocillo-gtk-themes
     SUBDIR += pop-gtk-themes
     SUBDIR += pop-icon-theme
-    SUBDIR += qgnomeplatform
     SUBDIR += qogir-gtk-themes
     SUBDIR += qogir-icon-themes
     SUBDIR += qt5-style-plugins
