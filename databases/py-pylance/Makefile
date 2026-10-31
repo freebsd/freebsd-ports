@@ -1,13 +1,13 @@
 PORTNAME=	pylance
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.0.0
-PORTREVISION=	1
+DISTVERSION=	14.0.2
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python wrapper for Lance columnar format
-WWW=		https://lance.org \
+WWW=		https://www.lancedb.com/ \
+		https://docs.lancedb.com/ \
 		https://github.com/lancedb/lance
 
 LICENSE=	APACHE20
@@ -99,29 +99,31 @@ CARGO_CRATES=	adler2-2.0.1 \
 		async-recursion-1.1.1 \
 		async-trait-0.1.91 \
 		async_cell-0.2.3 \
-		asyncband-0.6.7 \
+		asyncband-0.7.2 \
 		atoi-2.0.0 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.1 \
 		aws-config-1.8.14 \
 		aws-credential-types-1.2.13 \
-		aws-lc-rs-1.17.0 \
-		aws-lc-sys-0.41.0 \
+		aws-lc-rs-1.18.1 \
+		aws-lc-sys-0.45.0 \
 		aws-runtime-1.7.1 \
 		aws-sdk-dynamodb-1.107.0 \
 		aws-sdk-sso-1.95.0 \
 		aws-sdk-ssooidc-1.97.0 \
 		aws-sdk-sts-1.99.0 \
 		aws-sigv4-1.4.1 \
-		aws-smithy-async-1.2.13 \
+		aws-smithy-async-1.2.14 \
 		aws-smithy-http-0.63.5 \
 		aws-smithy-http-client-1.1.11 \
-		aws-smithy-json-0.62.4 \
+		aws-smithy-json-0.62.7 \
 		aws-smithy-observability-0.2.5 \
 		aws-smithy-query-0.60.14 \
 		aws-smithy-runtime-1.10.2 \
-		aws-smithy-runtime-api-1.11.5 \
-		aws-smithy-types-1.4.5 \
+		aws-smithy-runtime-api-1.12.3 \
+		aws-smithy-runtime-api-macros-1.0.0 \
+		aws-smithy-schema-0.1.0 \
+		aws-smithy-types-1.5.0 \
 		aws-smithy-xml-0.60.14 \
 		aws-types-1.3.13 \
 		axum-0.7.9 \
@@ -159,7 +161,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		chacha20-0.10.0 \
+		chacha20-0.10.2 \
 		chrono-0.4.45 \
 		chrono-tz-0.10.4 \
 		cipher-0.4.4 \
@@ -199,7 +201,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		csv-1.4.0 \
 		csv-core-0.1.13 \
 		ctor-1.0.7 \
-		ctutils-0.4.2 \
+		ctutils-0.4.4 \
 		daachorse-2.1.1 \
 		darling-0.20.11 \
 		darling-0.23.0 \
@@ -243,6 +245,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		datafusion-session-54.1.0 \
 		datafusion-sql-54.1.0 \
 		datafusion-substrait-54.1.0 \
+		datasketches-0.3.0 \
 		der-0.7.10 \
 		deranged-0.5.8 \
 		derive_builder-0.20.2 \
@@ -279,6 +282,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		foldhash-0.1.5 \
 		foldhash-0.2.0 \
 		form_urlencoded-1.2.2 \
+		foyer-common-0.22.6 \
+		foyer-intrusive-collections-0.10.0-dev \
+		foyer-memory-0.22.6 \
+		foyer-tokio-0.22.6 \
 		frostem-1.20260804.0 \
 		fs_extra-1.3.0 \
 		fst-0.4.7 \
@@ -311,7 +318,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		git-version-macro-0.3.9 \
 		glob-0.3.3 \
 		gloo-timers-0.3.0 \
-		goosefs-sdk-0.1.9 \
+		goosefs-sdk-0.2.2 \
 		h2-0.4.16 \
 		half-2.7.1 \
 		hash32-0.3.1 \
@@ -387,11 +394,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.34 \
 		js-sys-0.3.102 \
-		jsonb-0.5.6 \
 		kanaria-0.2.0 \
 		konst-0.4.3 \
 		konst_proc_macros-0.4.1 \
-		lance-namespace-reqwest-client-0.12.0 \
+		lance-namespace-reqwest-client-0.13.0 \
 		lazy_static-1.5.0 \
 		lexical-core-1.0.6 \
 		lexical-parse-float-1.0.6 \
@@ -404,6 +410,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libm-0.2.16 \
 		libredox-0.1.17 \
 		libsais-rs-0.2.0 \
+		libyaml-rs-0.3.0 \
 		lindera-3.0.7 \
 		lindera-dictionary-3.0.7 \
 		link-section-0.18.2 \
@@ -413,7 +420,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lock_api-0.4.14 \
 		log-0.4.33 \
 		loom-0.7.2 \
-		lru-0.18.4 \
+		lru-0.16.4 \
 		lru-slab-0.1.2 \
 		lz4-1.28.1 \
 		lz4-sys-1.11.1+lz4-1.10.0 \
@@ -425,17 +432,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		mea-0.6.4 \
 		memchr-2.8.2 \
 		memmap2-0.9.11 \
+		memoffset-0.9.1 \
 		metrics-0.24.6 \
 		metrics-util-0.19.1 \
 		mime-0.3.17 \
 		mime_guess-2.0.5 \
 		miniz_oxide-0.8.9 \
 		mio-1.2.1 \
+		mixtrics-0.2.5 \
 		moka-0.12.15 \
 		more-asserts-0.3.1 \
 		multimap-0.10.1 \
 		munge-0.4.7 \
 		munge_macro-0.4.7 \
+		nalgebra-0.33.3 \
 		ndarray-0.16.1 \
 		nibble_vec-0.1.0 \
 		nix-0.31.3 \
@@ -448,6 +458,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		num-conv-0.2.2 \
 		num-integer-0.1.46 \
 		num-iter-0.1.45 \
+		num-rational-0.4.2 \
 		num-traits-0.2.19 \
 		num_cpus-1.17.0 \
 		num_enum-0.7.6 \
@@ -456,28 +467,28 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-io-kit-0.3.2 \
 		objc2-system-configuration-0.3.2 \
 		object_store-0.13.2 \
-		object_store-0.14.1 \
-		object_store_opendal-0.60.1 \
+		object_store-0.14.2 \
+		object_store_opendal-0.60.2 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		oneshot-0.1.13 \
-		opendal-0.59.1 \
-		opendal-core-0.59.1 \
-		opendal-http-transport-reqwest-0.59.1 \
-		opendal-layer-concurrent-limit-0.59.1 \
-		opendal-layer-logging-0.59.1 \
-		opendal-layer-retry-0.59.1 \
-		opendal-layer-timeout-0.59.1 \
-		opendal-service-azblob-0.59.1 \
-		opendal-service-azdls-0.59.1 \
-		opendal-service-azure-common-0.59.1 \
-		opendal-service-cos-0.59.1 \
-		opendal-service-gcs-0.59.1 \
-		opendal-service-goosefs-0.59.1 \
-		opendal-service-hf-0.59.1 \
-		opendal-service-oss-0.59.1 \
-		opendal-service-s3-0.59.1 \
-		opendal-service-tos-0.59.1 \
+		opendal-0.59.2 \
+		opendal-core-0.59.2 \
+		opendal-http-transport-reqwest-0.59.2 \
+		opendal-layer-concurrent-limit-0.59.2 \
+		opendal-layer-logging-0.59.2 \
+		opendal-layer-retry-0.59.2 \
+		opendal-layer-timeout-0.59.2 \
+		opendal-service-azblob-0.59.2 \
+		opendal-service-azdls-0.59.2 \
+		opendal-service-azure-common-0.59.2 \
+		opendal-service-cos-0.59.2 \
+		opendal-service-gcs-0.59.2 \
+		opendal-service-goosefs-0.59.2 \
+		opendal-service-hf-0.59.2 \
+		opendal-service-oss-0.59.2 \
+		opendal-service-s3-0.59.2 \
+		opendal-service-tos-0.59.2 \
 		openssl-probe-0.2.1 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.1 \
@@ -598,15 +609,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.40 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.4 \
 		rustls-pki-types-1.15.0 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.15 \
 		rustversion-1.0.22 \
 		ryu-1.0.23 \
 		safe-transmute-0.11.3 \
+		safe_arch-0.7.4 \
 		salsa20-0.10.2 \
 		same-file-1.0.6 \
 		schannel-0.1.29 \
@@ -643,6 +655,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		shlex-2.0.1 \
 		signal-hook-registry-1.4.8 \
 		signature-2.2.0 \
+		simba-0.9.1 \
 		simd-adler32-0.3.9 \
 		simd_cesu8-1.1.1 \
 		simdutf8-0.1.5 \
@@ -700,7 +713,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinystr-0.8.3 \
 		tinyvec-1.11.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.53.1 \
+		tokio-1.53.3 \
 		tokio-macros-2.7.0 \
 		tokio-retry-0.3.2 \
 		tokio-rustls-0.26.4 \
@@ -766,8 +779,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		web-sys-0.3.102 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.8 \
-		webpki-roots-1.0.8 \
 		whoami-2.1.2 \
+		wide-0.7.33 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
@@ -817,6 +830,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		xet-runtime-1.6.0 \
 		xmlparser-0.13.6 \
 		xxhash-rust-0.8.18 \
+		yaml_serde-0.10.7 \
 		yoke-0.8.3 \
 		yoke-derive-0.8.2 \
 		zerocopy-0.8.52 \
@@ -829,13 +843,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerovec-derive-0.11.3 \
 		zlib-rs-0.6.3 \
 		zmij-1.0.21 \
-		zstd-0.13.3 \
-		zstd-safe-7.2.4 \
-		zstd-sys-2.0.16+zstd.1.5.7
+		zstd-0.13.1 \
+		zstd-0.14.3 \
+		zstd-safe-7.2.1 \
+		zstd-safe-8.2.0 \
+		zstd-sys-2.1.2+zstd.1.5.7
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/dynamic = \["version"\]/version = "${DISTVERSION}"/g' ${WRKSRC}/pyproject.toml
 
-# tests as of 12.0.0: 1494 passed, 1204 skipped, 72 deselected, 16 warnings in 110.16s
+# tests as of 14.0.0.1: 19 failed, 1780 passed, 1233 skipped, 72 deselected, 16 warnings in 112.98s (0:01:52), all failures are due to: The pyarrow installation is not built with support for 'substrait' (No module named 'pyarrow._substrait')
 
 .include <bsd.port.mk>
