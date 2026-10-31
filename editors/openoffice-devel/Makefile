@@ -49,7 +49,7 @@ LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Depends on expired textproc/lucene
+DEPRECATED=	Depends on expired java/apache-commons-lang and textproc/lucene
 EXPIRATION_DATE=2026-12-31
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
