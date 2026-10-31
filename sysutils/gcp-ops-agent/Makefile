@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	gcp-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gather logs and metrics from Google Compute Engine instances
-WWW=		https://cloud.google.com/stackdriver/docs/solutions/agents/ops-agent
+WWW=		https://docs.cloud.google.com/stackdriver/docs/solutions/agents/ops-agent \
+		https://github.com/GoogleCloudPlatform/ops-agent
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
