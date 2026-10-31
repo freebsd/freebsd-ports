@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-guardduty
-PORTVERSION=	1.163.0
+PORTVERSION=	1.164.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
