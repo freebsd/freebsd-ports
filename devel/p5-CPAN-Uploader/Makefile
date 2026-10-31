@@ -1,7 +1,8 @@
 PORTNAME=	CPAN-Uploader
 PORTVERSION=	0.103019
 CATEGORIES=	devel perl5
-MASTER_SITES=	https://cpan.metacpan.org/authors/id/R/RJ/RJBS/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info

@@ -1,8 +1,8 @@
 PORTNAME=	Auth-GoogleAuth
 DISTVERSION=	1.09
 CATEGORIES=	security perl5
-MASTER_SITES=	https://cpan.metacpan.org/authors/id/G/GR/GRYPHON/ \
-		https://www.cpan.org/authors/id/G/GR/GRYPHON/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:GRYPHON
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	freebsd@gushi.org
