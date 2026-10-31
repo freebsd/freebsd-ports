@@ -6,8 +6,8 @@ WWW=		https://subversion.apache.org/
 
 USES+=		compiler:c11 ruby
 
-PORTREVISION_LATEST=	1
-PORTREVISION_LTS=		1
+PORTREVISION_LATEST=	2
+PORTREVISION_LTS=		2
 
 SVN_BUILD_BINDINGS=	yes
 
@@ -24,12 +24,6 @@ CONFIGURE_ARGS+=	--with-swig-ruby=${RUBY} \
 
 ALL_TARGET=	swig-rb-lib swig-rb
 INSTALL_TARGET=	install-swig-rb
-
-CFLAGS+=	-fdeclspec
-
-.if ${OPSYS} == FreeBSD
-CFLAGS+=	-Wno-error=int-conversion -Wno-error=incompatible-function-pointer-types
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsvn_swig_ruby-1.so.0.0.0

@@ -4,11 +4,10 @@ MAINTAINER=	michaelo@apache.org
 COMMENT=	Java bindings for Apache Subversion
 WWW=		https://subversion.apache.org/
 
-USES=		compiler java:build
-JAVA_OS=	native
+USES=		java:build
 
-PORTREVISION_LATEST=	5
-PORTREVISION_LTS=		5
+PORTREVISION_LATEST=	6
+PORTREVISION_LTS=		6
 
 SVN_BUILD_BINDINGS=	yes
 
@@ -30,13 +29,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	javahl
 INSTALL_TARGET=	install-javahl
-
-post-configure:
-.if ${COMPILER_TYPE} == clang
-	${REINPLACE_CMD} "s#^LT_CXX_LIBADD = .*#LT_CXX_LIBADD =#" ${WRKSRC}/Makefile
-.else
-	${DO_NADA}
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} "s#^javahl_javadir = .*#javahl_javadir = ${JAVAJARDIR}#" ${WRKSRC}/Makefile.in
