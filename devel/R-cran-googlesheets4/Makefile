@@ -1,5 +1,5 @@
 PORTNAME=	googlesheets4
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,12 +12,11 @@ LICENSE=	MIT
 RUN_DEPENDS=	R-cran-cellranger>0:textproc/R-cran-cellranger \
 		R-cran-cli>=3.0.0:devel/R-cran-cli \
 		R-cran-curl>0:ftp/R-cran-curl \
-		R-cran-gargle>=1.6.0:devel/R-cran-gargle \
+		R-cran-gargle>=1.7.0:devel/R-cran-gargle \
 		R-cran-glue>=1.3.0:devel/R-cran-glue \
 		R-cran-googledrive>=2.1.0:devel/R-cran-googledrive \
 		R-cran-httr>0:www/R-cran-httr \
 		R-cran-ids>0:devel/R-cran-ids \
-		R-cran-lifecycle>0:devel/R-cran-lifecycle \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-purrr>0:devel/R-cran-purrr \
 		R-cran-rematch2>0:devel/R-cran-rematch2 \
