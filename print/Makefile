@@ -177,6 +177,7 @@
     SUBDIR += py-dehinter
     SUBDIR += py-font-v
     SUBDIR += py-fontaine
+    SUBDIR += py-fontbakery
     SUBDIR += py-fontparts
     SUBDIR += py-fontpens
     SUBDIR += py-fonttools
