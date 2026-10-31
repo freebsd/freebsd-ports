@@ -2341,7 +2341,6 @@
     SUBDIR += xmlstarlet
     SUBDIR += xmlto
     SUBDIR += xmlwrapp
-    SUBDIR += xom
     SUBDIR += xorg-sgml-doctools
     SUBDIR += xql
     SUBDIR += xray
