@@ -296,8 +296,8 @@
     <topic>Weechat -- Multiple vulnerabilities</topic>
     <affects>
       <package>
-	<name></name>
-	<range><lt></lt></range>
+	<name>weechat</name>
+	<range><lt>4.10.2</lt></range>
       </package>
     </affects>
     <description>
@@ -324,6 +324,7 @@
     <dates>
       <discovery>2026-10-31</discovery>
       <entry>2026-10-31</entry>
+      <modified>2026-10-31</modified>
     </dates>
   </vuln>
 
