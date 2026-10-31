@@ -9,7 +9,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Roundcube project reports:</p>
-	<blockquote cite="://roundcube.net/news/2021/12/30/update-1.5.2-released">
+	<blockquote cite="https://roundcube.net/news/2021/12/30/update-1.5.2-released">
 	  <p>Cross-site scripting (XSS) via HTML messages with malicious CSS
 	    content</p>
 	</blockquote>
@@ -2577,7 +2577,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Red Hat reports:</p>
-	<blockquote cite="">
+	<blockquote cite="https://access.redhat.com/security/cve/CVE-2021-3620">
        <p>A flaw was found in Ansible Engine's ansible-connection
        module, where sensitive information such as the Ansible
        user credentials is disclosed by default in the traceback

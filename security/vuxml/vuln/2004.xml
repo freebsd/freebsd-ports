@@ -6343,7 +6343,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>An iDEFENSE security advisory reports:</p>
-	<blockquote cite="www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities">
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities">
 	  <p>Remote exploitation of an input validation error in the
 	    uudecoding feature of Adobe Acrobat Reader (Unix) 5.0
 	    allows an attacker to execute arbitrary code.</p>

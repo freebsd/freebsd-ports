@@ -4233,7 +4233,7 @@ record.</li>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Curl project reports:</p>
-	<blockquote cite="">
+	<blockquote cite="https://curl.se/docs/security.html">
 	  <ul>
 	    <li>local interface connection reuse mixup (CVE-2026-107929)</li>
 	    <li>info leak uploading over WebSockets with GnuTLS (CVE-2026-107928)</li>

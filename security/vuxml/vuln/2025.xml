@@ -9354,7 +9354,7 @@ This issue has been patched in version 2.25.2.</p>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>GitHub Security Advisories reports:</p>
-	<blockquote cite="null">
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2025-52560">
 	<p>
 	Kanboard allows password reset emails to be sent with URLs
 	derived from the unvalidated Host header when the

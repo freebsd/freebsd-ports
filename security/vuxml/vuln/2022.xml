@@ -2151,7 +2151,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The OpenSSL project reports:</p>
-	<blockquote cite="://www.openssl.org/news/secadv/20221011.txt">
+	<blockquote cite="https://www.openssl.org/news/secadv/20221011.txt">
 	  <p>Using a Custom Cipher with NID_undef may lead to NULL encryption (low)</p>
 	</blockquote>
       </body>

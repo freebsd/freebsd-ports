@@ -2054,7 +2054,7 @@
      <description>
        <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Wireshark project reports:</p>
-	<blockquote cite="://www.wireshark.org/docs/relnotes/wireshark-2.2.2.html">
+	<blockquote cite="https://www.wireshark.org/docs/relnotes/wireshark-2.2.2.html">
 	 <p>Wireshark project is releasing Wireshark 2.2.2, which addresses:</p>
 	 <ul>
 	   <li>wnpa-sec-2016-58: Profinet I/O long loop - CVE-2016-9372</li>
