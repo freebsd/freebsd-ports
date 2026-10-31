@@ -5618,6 +5618,7 @@
     SUBDIR += py-opentelemetry-instrumentation-psycopg2
     SUBDIR += py-opentelemetry-instrumentation-pyramid
     SUBDIR += py-opentelemetry-instrumentation-requests
+    SUBDIR += py-opentelemetry-instrumentation-sqlalchemy
     SUBDIR += py-opentelemetry-instrumentation-urllib
     SUBDIR += py-opentelemetry-instrumentation-urllib3
     SUBDIR += py-opentelemetry-instrumentation-wsgi

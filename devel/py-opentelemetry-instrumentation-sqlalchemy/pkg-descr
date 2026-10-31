@@ -1,0 +1,2 @@
+OpenTelemetry SQLAlchemy Instrumentation allows tracing requests made by the
+SQLAlchemy library.
