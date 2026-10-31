@@ -1,3 +1,31 @@
+  <vuln vid="38d8dd83-285c-11f1-9f7b-001b217e4ee5">
+    <topic>ISC KEA -- Stack overflow in Kea daemons</topic>
+    <affects>
+      <package>
+	<name>kea</name>
+	<range><ge>2.6.0</ge><lt>2.6.5</lt></range>
+	<range><ge>3.0.0</ge><lt>3.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Internet Systems Consortium, Inc. reports:</p>
+	<blockquote cite="https://kb.isc.org/docs/cve-2026-3608">
+	    <p>Sending a maliciously crafted message to the kea-ctrl-agent, kea-dhcp-ddns, kea-dhcp4, or kea-dhcp6 daemons
+	    over any configured API socket or HA listener can cause the receiving daemon to exit with a stack overflow error.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-3608</cvename>
+      <url>https://kb.isc.org/docs/cve-2026-3608</url>
+    </references>
+    <dates>
+      <discovery>2026-03-18</discovery>
+      <entry>2026-03-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a0c64ff-5f9f-11f1-8ea1-fb4f92e650aa">
     <topic>py-django -- Multiple vulnerabilities</topic>
     <affects>
