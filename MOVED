@@ -5776,3 +5776,4 @@ www/mod_dnssd||2026-10-31|Has expired: Abandoned upstream, last release 0.6 in 2
 www/moodle50||2026-10-31|Has expired: Upstream EOL
 java/apache-commons-httpclient|www/httpclient|2026-10-31|Has expired: The Commons HttpClient project is end of life. Replaced by the Apache HttpComponents project in port www/httpclient
 x11-themes/qgnomeplatform||2026-10-31|Has expired: Depends on deprecated Qt5, abandoned upstream
+x11-toolkits/kirigami-addons-qt5||2026-10-31|Has expired: Depends on deprecated Qt5, has no consumers

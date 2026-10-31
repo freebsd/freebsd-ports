@@ -77,7 +77,6 @@
     SUBDIR += kf6-ktextwidgets
     SUBDIR += kf6-kwidgetsaddons
     SUBDIR += kf6-kxmlgui
-    SUBDIR += kirigami-addons-qt5
     SUBDIR += kirigami-addons-qt6
     SUBDIR += kirigami-app-components
     SUBDIR += kproperty
