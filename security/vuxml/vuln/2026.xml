@@ -1,3 +1,30 @@
+  <vuln vid="d6aba3d5-d549-11f1-95a4-3c7c3fba4204">
+    <topic>uriparser -- Integer overflow vulnerability</topic>
+    <affects>
+	<package>
+	  <name>uriparser</name>
+	  <range><lt>1.0.3</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The URIparser project reports:</p>
+	<blockquote cite="https://github.com/uriparser/uriparser/pull/313">
+	  <ul><li>CVE-2026-48841: Protect 'ComposeQueryEngine' from integer overflow.</li></ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-48841</cvename>
+      <url>https://github.com/uriparser/uriparser/pull/313</url>
+      <url>https://github.com/uriparser/uriparser/blob/uriparser-1.0.3/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2026-05-20</discovery>
+      <entry>2026-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c0892724-d4a0-11f1-8df4-74563cf85f9d">
     <topic>libwasmtime -- Multiple vulnerabilities</topic>
     <affects>
