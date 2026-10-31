@@ -1,13 +1,13 @@
 PORTNAME=	msgspec
-PORTVERSION=	0.21.1
+PORTVERSION=	0.22.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast serialization and validation library
-WWW=		https://jcristharif.com/msgspec/ \
-		https://github.com/jcrist/msgspec
+WWW=		https://msgspec.dev/ \
+		https://github.com/msgspec/msgspec
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
