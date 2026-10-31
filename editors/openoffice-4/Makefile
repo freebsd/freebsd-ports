@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}${AOORCN:?.p${AOORCN}:}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	editors java
 #MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}${AOORCN:?-RC${AOORCN}:}/source/
 MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
@@ -48,6 +48,9 @@ LICENSE_PERMS_ADOBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+DEPRECATED=	Depends on expired textproc/lucene
+EXPIRATION_DATE=2026-12-31
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 
