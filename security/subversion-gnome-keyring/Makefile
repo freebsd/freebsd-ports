@@ -5,8 +5,11 @@ MAINTAINER=	michaelo@apache.org
 COMMENT=	GNOME Keyring credential cache for Apache Subversion
 WWW=		https://subversion.apache.org/
 
-PORTREVISION_LATEST=	0
-PORTREVISION_LTS=		0
+USES=		gnome
+USE_GNOME=	glib20
+
+PORTREVISION_LATEST=	1
+PORTREVISION_LTS=		1
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 
