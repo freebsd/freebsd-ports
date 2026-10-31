@@ -1,18 +1,20 @@
 PORTNAME=	netaddr
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Package for manipulating network addresses
-WWW=		https://github.com/dspinhirne/netaddr
+COMMENT=	Ruby library for performing calculations on IPv4 and IPv6 subnets
+WWW=		https://github.com/dspinhirne/netaddr-rb
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
 USES=		cpe gem shebangfix
-CPE_VENDOR=	${PORTNAME}_project
+
+NO_ARCH=	yes
+
+CPE_VENDOR=	netaddr_project
 
 SHEBANG_FILES=	test/*
 
