@@ -1,10 +1,10 @@
 PORTNAME=	ytop
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	vim@vimer.org
 COMMENT=	Minimal process monitor for FreeBSD
-WWW=		https://github.com/Yeatol/freebsd_ytop
+WWW=		https://github.com/Yeatol/freebsd-ytop
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c++23-lang ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yeatol
-GH_PROJECT=	freebsd_ytop
+GH_PROJECT=	freebsd-ytop
 
 NO_TEST=	yes
 PLIST_FILES=	bin/ytop
