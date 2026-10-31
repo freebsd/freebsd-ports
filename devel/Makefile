@@ -5604,6 +5604,7 @@
     SUBDIR += py-opentelemetry-exporter-otlp-proto-http
     SUBDIR += py-opentelemetry-exporter-prometheus
     SUBDIR += py-opentelemetry-instrumentation
+    SUBDIR += py-opentelemetry-instrumentation-aiohttp-client
     SUBDIR += py-opentelemetry-instrumentation-asgi
     SUBDIR += py-opentelemetry-instrumentation-dbapi
     SUBDIR += py-opentelemetry-instrumentation-django
