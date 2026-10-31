@@ -119,9 +119,9 @@ HTTP_FANCYINDEX_BUILD_DEPENDS=	nginx-module-fancyindex>0:www/nginx-module-fancyi
 WRKSRC_fancyindex=		${WRKDIR}/ngx-fancyindex
 HTTP_FANCYINDEX_VARS=		DSO_EXTMODS+=fancyindex
 
-HTTP_FOOTER_GH_TUPLE=		alibaba:nginx-http-footer-filter:1.2.2:footer
+HTTP_FOOTER_BUILD_DEPENDS=	nginx-module-footer>0:www/nginx-module-footer
+WRKSRC_footer=		${WRKDIR}/nginx-footer-module
 HTTP_FOOTER_VARS=		DSO_EXTMODS+=footer
-HTTP_FOOTER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-http-footer-filter-config
 
 HTTP_GEOIP2_BUILD_DEPENDS=	nginx-module-geoip2>0:www/nginx-module-geoip2
 WRKSRC_geoip2=			${WRKDIR}/ngx_http_geoip2_module

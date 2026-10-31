@@ -1,7 +1,7 @@
 PORTNAME?=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/
 PKGNAMESUFFIX?=	-devel
@@ -377,6 +377,11 @@ pre-configure-HTTP_ACCEPT_LANGUAGE-on:
 	@${RM} -rf ${WRKSRC_accept_language}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-accept-language ${WRKSRC_accept_language}
 	@${CHMOD} -R u+w ${WRKSRC_accept_language}
+
+pre-configure-HTTP_FOOTER-on:
+	@${RM} -rf ${WRKSRC_footer}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-footer ${WRKSRC_footer}
+	@${CHMOD} -R u+w ${WRKSRC_footer}
 
 pre-configure-ICONV-on:
 	@${RM} -rf ${WRKSRC_iconv}
