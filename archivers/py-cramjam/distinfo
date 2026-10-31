@@ -1,6 +1,6 @@
-TIMESTAMP = 1788500016
-SHA256 (cramjam-2.12.1.tar.gz) = 75187b77a84b1f457f9555604775b70d04102af312224d03c873da59011bba31
-SIZE (cramjam-2.12.1.tar.gz) = 89977
+TIMESTAMP = 1791046990
+SHA256 (cramjam-2.13.0.tar.gz) = 3c8f332b59b6c43fac9b2710aa3eeecffa5a6aa258350e782f7aa5db76ec5fa6
+SIZE (cramjam-2.13.0.tar.gz) = 93659
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
 SIZE (rust/crates/adler2-2.0.0.crate) = 13529
 SHA256 (rust/crates/alloc-no-stdlib-2.0.4.crate) = cc7bb162ec39d46ab1ca8c77bf72e890535becd1751bb45f64c597edb4c8c6b3
