@@ -1,5 +1,5 @@
 PORTNAME=	stone
-PORTVERSION=	3.5.4
+PORTVERSION=	3.5.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=9:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=26.2:devel/py-packaging@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}packaging>=26.3:devel/py-packaging@${PY_FLAVOR}
 
-USES=		python:3.11+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
