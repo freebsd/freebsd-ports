@@ -13,6 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 #BROKEN_armv7=	compilation fails, see https://github.com/LostRuins/koboldcpp/issues/1129
 #BROKEN_i386=	compilation fails, see https://github.com/LostRuins/koboldcpp/issues/1129
 
+ONLY_FOR_ARCHS=	amd64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	ggml only reads little-endian GGUF files
+
 FLAVORS=	default portable
 FLAVOR?=	${FLAVORS:[1]}
 portable_PKGNAMESUFFIX=	-portable
@@ -89,7 +92,7 @@ do-install-VULKAN-on:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != amd64
+.if ${FLAVOR} == portable && ${ARCH} != amd64
 IGNORE=	portable flavor isn't defined on ${ARCH} because it is based on AVX2, etc. (?)
 .endif
 
