@@ -1,5 +1,5 @@
 PORTNAME=	werkzeug
-PORTVERSION=	3.1.8
+PORTVERSION=	3.1.9
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/pallets/werkzeug/releases/download/${PORTVERSION}/
@@ -13,7 +13,7 @@ WWW=		https://palletsprojects.com/projects/werkzeug/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=0<4:devel/py-flit-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.11<5:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=2.1.1:textproc/py-markupsafe@${PY_FLAVOR}
 
 USES=		cpe python
