@@ -6633,13 +6633,13 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Kazuhiro Ito reports:</p>
-	<blockquote cite="mailto:edict@ring.gr.jp">
+	<blockquote>
 	  <p>Potential buffer overrun vulnerability is found in eb/multiplex.c.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <url>mailto:edict@ring.gr.jp</url>
+      <url>https://cgit.freebsd.org/ports/commit/?id=2140f32d4586</url>
     </references>
     <dates>
       <discovery>2022-04-25</discovery>

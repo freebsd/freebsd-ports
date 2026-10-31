@@ -3261,7 +3261,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     </description>
     <references>
       <cvename>CVE-2023-38039</cvename>
-      <url>https://curl.se/docs/CVE-2023-38039.html HERE</url>
+      <url>https://curl.se/docs/CVE-2023-38039.html</url>
     </references>
     <dates>
       <discovery>2023-09-13</discovery>
