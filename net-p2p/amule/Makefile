@@ -1,5 +1,5 @@
 PORTNAME=	amule
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.0
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/amule-org/amule/releases/download/${DISTVERSION}/
 DISTNAME=	aMule-${DISTVERSION}-src

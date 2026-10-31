@@ -5,9 +5,9 @@ We don't compile with gcc, so libatomic is not needed in any case.
 Patch out the check for libatomic to fix the build on all 32-bit
 platforms.
 
---- CMakeLists.txt.orig	2026-09-21 10:20:45 UTC
+--- CMakeLists.txt.orig	2026-10-28 12:06:58 UTC
 +++ CMakeLists.txt
-@@ -383,7 +383,7 @@ set (LIBATOMIC "")
+@@ -396,7 +396,7 @@ set (LIBATOMIC "")
  # atomic references actually do need the library (see #643). Just
  # require libatomic unconditionally on 32-bit builds.
  set (LIBATOMIC "")
