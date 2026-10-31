@@ -15,7 +15,7 @@ RUN_DEPENDS=	aria2c:www/aria2 \
 		curl:ftp/curl \
 		yt-dlp:www/yt-dlp
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64le
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt6
@@ -38,7 +38,7 @@ DESKTOP_ENTRIES="AWGG" \
 USE_GNOME_gtk2=	cairo
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
 
-LAZBUILD_ARGS=	-d --cpu=${ARCH:S/amd64/x86_64/g}
+LAZBUILD_ARGS=	-d --cpu=${LAZARUS_ARCH}
 LAZARUS_PROJECT_FILES=	src/awgg.lpi
 
 post-patch:
