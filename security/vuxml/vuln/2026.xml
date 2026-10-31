@@ -55,7 +55,7 @@
       <entry>2026-10-31</entry>
     </dates>
   </vuln>
-	
+
   <vuln vid="ac97113e-d514-11f1-b2f0-002b67dfc673">
     <topic>amule -- multiple vulnerabilities</topic>
     <affects>
@@ -278,7 +278,7 @@
 	<blockquote cite="https://github.com/uriparser/uriparser/issues/282">
 	<p>uriparser through 0.9.9 allows unbounded recursion and stack
 	  consumption, as demonstrated by ParseMustBeSegmentNzNc with large
-          input containing many commas.</p>
+	  input containing many commas.</p>
 	</blockquote>
       </body>
     </description>
