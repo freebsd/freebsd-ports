@@ -1,11 +1,11 @@
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.8.0
+DISTVERSION=	3.2.1.1
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	10
+PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -17,16 +17,18 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${LOCALBASE}/include/tsl/robin_map.h:devel/robin-map \
 		libfmt>10.0.0:devel/libfmt \
 		libjpeg-turbo>3.0.0:graphics/libjpeg-turbo
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
-		libImath.so:math/Imath \
+LIB_DEPENDS=	libImath.so:math/Imath \
 		libOpenColorIO.so:graphics/opencolorio \
 		libOpenEXR.so:graphics/openexr \
+		libdeflate.so:archivers/libdeflate \
 		libheif.so:graphics/libheif \
 		libjxl.so:graphics/libjxl \
 		libopenjph.so:graphics/openjph \
 		libpng.so:graphics/png \
 		libpugixml.so:textproc/pugixml \
 		libtiff.so:graphics/tiff \
+		libuhdr.so:graphics/libultrahdr \
+		libzstd.so:archivers/zstd \
 		libwebp.so:graphics/webp
 RUN_DEPENDS=	libfmt>10.0.0:devel/libfmt \
 		libjpeg-turbo>3.0.0:graphics/libjpeg-turbo
@@ -83,7 +85,7 @@ GIF_CMAKE_BOOL=		USE_GIF
 
 IMAGEVIEWER_IMPLIES=	TOOLS
 IMAGEVIEWER_USES=	gl qt:6
-IMAGEVIEWER_USE=	GL=gl,glu QT=base
+IMAGEVIEWER_USE=	GL=opengl,glu QT=base
 IMAGEVIEWER_CMAKE_BOOL=	USE_QT
 
 OPENCV_IMPLIES=		OPENJPEG
@@ -117,11 +119,13 @@ post-patch:
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == yes
-BUILD_DEPENDS+=	${PREFIX}/share/cmake/pybind11/pybind11Config.cmake:devel/pybind11
+BUILD_DEPENDS+=	${PREFIX}/share/cmake/pybind11/pybind11Config.cmake:devel/pybind11 \
+		${PREFIX}/cmake/nanobind-config.cmake:devel/nanobind
 LIB_DEPENDS+=	libOpenImageIO.so:graphics/openimageio
 USES+=		python
 USE_PYTHON=	flavors
-CMAKE_ARGS+=	-DPYTHON_VERSION:STRING=${PYTHON_VER}
+CMAKE_ARGS+=	-DPYTHON_VERSION:STRING=${PYTHON_VER} \
+		-Dnanobind_DIR:PATH=${LOCALBASE}/cmake
 CMAKE_ON+=	USE_PYTHON
 # we don't need the apps built - only libs.
 CMAKE_OFF+=	EMBED_PLUGINS OIIO_BUILD_TESTS OIIO_BUILD_TOOLS USE_DICOM USE_FFMPEG USE_FREETYPE USE_GIF USE_LIBRAW USE_OPENCV USE_OPENJPEG USE_OPENVDB USE_QT USE_TBB
