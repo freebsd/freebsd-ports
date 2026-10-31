@@ -9408,7 +9408,7 @@ and CVE-2013-0155.</p>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Apache Software Foundation reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="http://mail-archives.apache.org/mod_mbox/httpd-announce/201607.mbox/CVE-2016-4979-68283">
 	  <p>The Apache HTTPD web server (from 2.4.18-2.4.20) did not validate a X509
 	    client certificate correctly when experimental module for the HTTP/2
 	    protocol is used to access a resource.</p>

@@ -8601,7 +8601,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>git developers reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="https://github.com/git/git/security/advisories/GHSA-2hvf-7c8p-28fx">
 	  <p>This update includes 2 security fixes:</p>
 	  <ul>
 	     <li>CVE-2023-25652: By feeding specially crafted input to `git apply --reject`, a path outside the working tree can be overwritten with partially controlled contents (corresponding to the rejected hunk(s) from the given patch)</li>

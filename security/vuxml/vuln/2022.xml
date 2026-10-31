@@ -9735,7 +9735,7 @@ every major Linux distribution.</p>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>David Bouman reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45417">
 	  <p>AIDE before 0.17.4 allows local users to obtain root privileges
 	     via crafted file metadata (such as XFS extended attributes or
 	     tmpfs ACLs), because of a heap-based buffer overflow.</p>

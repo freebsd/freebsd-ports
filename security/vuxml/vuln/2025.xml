@@ -4225,7 +4225,7 @@ This issue has been patched in version 2.25.2.</p>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Tim Wojtulewicz of Corelight reports:</p>
-	<blockquote cite="INSERT URL HERE">
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v8.0.2">
 	  <p>The KRB analyzer can leak information about hosts in
 	  analyzed traffic via external DNS lookups.</p>
 	</blockquote>
