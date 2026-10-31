@@ -12,6 +12,9 @@ WWW=		https://metacpan.org/release/HTTP-Session2
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Upstream indicated that it is deprecated and no longer suitable for use
+EXPIRATION_DATE=2026-11-30
+
 BUILD_RUN_DEPENDS=	p5-Cookie-Baker>0:www/p5-Cookie-Baker \
 			p5-Crypt-CBC>0:security/p5-Crypt-CBC \
 			p5-Crypt-Rijndael>0:security/p5-Crypt-Rijndael \
@@ -20,12 +23,11 @@ BUILD_RUN_DEPENDS=	p5-Cookie-Baker>0:www/p5-Cookie-Baker \
 			p5-Digest-HMAC>0:security/p5-Digest-HMAC \
 			p5-Digest-SHA1>0:security/p5-Digest-SHA1 \
 			p5-Mouse>0:devel/p5-Mouse
-
 TEST_DEPENDS=	p5-Test-WWW-Mechanize-PSGI>0:devel/p5-Test-WWW-Mechanize-PSGI
 
 USES=		perl5
 USE_PERL5=	modbuildtiny
 
-NO_ARCH=	YES
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
