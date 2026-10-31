@@ -266,7 +266,6 @@
     SUBDIR += skk-jisyo-cdb
     SUBDIR += skk-tools
     SUBDIR += skkinput
-    SUBDIR += skkinput3
     SUBDIR += skkserv
     SUBDIR += slimeforest
     SUBDIR += slrn
