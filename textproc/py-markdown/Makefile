@@ -1,5 +1,5 @@
 PORTNAME=	markdown
-PORTVERSION=	3.10.3
+PORTVERSION=	3.11
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/Python-Markdown/markdown/releases/download/${PORTVERSION}/
