@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-configuration
-PORTVERSION=	0.65b0
+PORTVERSION=	0.66b0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,8 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.44.${PORTVERSION:C|.*b||}<1.44.${PORTVERSION:C|.*b||}_99:devel/py-opentelemetry-api@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.44.${PORTVERSION:C|.*b||}<1.44.${PORTVERSION:C|.*b||}_99:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=1.45.${PORTVERSION:C|.*b||}<1.45.${PORTVERSION:C|.*b||}_99:devel/py-opentelemetry-api@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}opentelemetry-sdk>=1.45.${PORTVERSION:C|.*b||}<1.45.${PORTVERSION:C|.*b||}_99:devel/py-opentelemetry-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.4:devel/py-pyyaml@${PY_FLAVOR}
 
 USES=		python
