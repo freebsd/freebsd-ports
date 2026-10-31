@@ -10,6 +10,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Avoid Third-Party File Extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/BCH_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/en/BC_Logo_30x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/en/BLAKE2b-512.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/BLAKE2s-256.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Beginner's Tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Beginner's Tutorial_Image_001.jpg
@@ -94,6 +95,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Donation_donate_GBP.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Donation_donate_PLN.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Donation_donate_YEN.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/en/EFISecureBoot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/EMV Smart Cards.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Encryption Algorithms.html
 %%PORTDOCS%%%%DOCSDIR%%/html/en/Encryption Scheme.html
@@ -223,11 +225,13 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/AES.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Acknowledgements.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Additional Security Requirements and Precautions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/Argon2id.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Authenticity and Integrity.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Authors.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Avoid Third-Party File Extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/BCH_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/BC_Logo_30x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/BLAKE2b-512.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/BLAKE2s-256.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Beginner's Tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Beginner's Tutorial_Image_001.png
@@ -310,6 +314,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Donation_donate_GBP.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Donation_donate_PLN.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Donation_donate_YEN.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/EFISecureBoot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/EMV Smart Cards.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Encryption Algorithms.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Encryption Scheme.html
@@ -333,6 +338,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Issues and Limitations.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Journaling File Systems.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/Key Derivation Algorithms.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Keyfiles in VeraCrypt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Keyfiles in VeraCrypt_Image_040.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/Keyfiles.html
@@ -432,16 +438,19 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/liberapay_donate.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/mastodon_veracrypt.PNG
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/paypal_30x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/ru/pbkdf2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/html/ru/twitter_veracrypt.PNG
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/AES.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Acknowledgements.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Additional Security Requirements and Precautions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Argon2id.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Authenticity and Integrity.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Authors.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Avoid Third-Party File Extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/BCH_Logo_30x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/BC_Logo_30x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/BLAKE2b-512.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/BLAKE2s-256.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Beginner's Tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Beginner's Tutorial_Image_001.jpg
@@ -524,6 +533,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Donation_donate_GBP.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Donation_donate_PLN.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Donation_donate_YEN.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/EFISecureBoot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/EMV Smart Cards.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Encryption Algorithms.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Encryption Scheme.html
@@ -547,6 +557,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Issues and Limitations.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Journaling File Systems.html
+%%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Key Derivation Algorithms.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Keyfiles in VeraCrypt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Keyfiles in VeraCrypt_Image_040.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/Keyfiles.html
@@ -646,6 +657,7 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/liberapay_donate.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/mastodon_veracrypt.PNG
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/paypal_30x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/pbkdf2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/html/zh-cn/twitter_veracrypt.PNG
 share/icons/hicolor/1024x1024/apps/veracrypt.png
