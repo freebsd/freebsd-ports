@@ -1,0 +1,2 @@
+OpenTelemetry Pyramid Instrumentation provides instrumentation supporting
+pyramid. It can be enabled by using PyramidInstrumentor.
