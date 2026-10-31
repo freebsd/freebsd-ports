@@ -1,0 +1,4 @@
+OpenTelemetry OTLP Utilities is intended to be used by OpenTelemetry signal
+exporters (traces, metrics, logs) that send telemetry with OTLP. Currently, all
+functionality in this package is marked as internal and is not intended for use
+directly by application developers.
