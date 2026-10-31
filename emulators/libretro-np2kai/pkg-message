@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+The core needs PC-98 BIOS files in a folder named "np2kai" inside the
+frontend's system directory: bios.rom, itf.rom, sound.rom and font.bmp
+(or FONT.ROM).
+
+Leave out d8000.rom (the real IDE BIOS). With it, floppy images wait
+several minutes on a black screen before booting. Hard disk images
+still boot without it.
+
+PC-98 games ran on very different machines, and some need more memory
+or a faster CPU than the defaults. Change those settings per game
+(in RetroArch: Manage Core Options, Save Game Options), so one game's
+settings don't break another.
+
+The core writes to the disk images it runs, so keep a copy of the
+originals.
+
+The core doesn't support .m3u playlists. To load several images (e.g.
+two floppy disks, or a boot floppy and a CD), list them in a .cmd file,
+using paths without spaces, and load that file as content:
+
+  np2kai /path/to/disk1.hdm /path/to/disk2.hdm
+EOM
+}
+]

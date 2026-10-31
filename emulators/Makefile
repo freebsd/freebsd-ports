@@ -70,6 +70,7 @@
     SUBDIR += libretro-bsnes
     SUBDIR += libretro-flycast
     SUBDIR += libretro-kronos
+    SUBDIR += libretro-np2kai
     SUBDIR += libretro-pcsx2
     SUBDIR += libretro-ppsspp
     SUBDIR += libretro-reicast

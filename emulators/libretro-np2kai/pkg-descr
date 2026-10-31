@@ -1,0 +1,7 @@
+Neko Project II kai is an emulator of the NEC PC-9801 series of Japanese
+personal computers, based on Neko Project II. This port builds its libretro
+core, for use with RetroArch and other libretro frontends.
+
+It supports floppy disk images (.hdm, .fdi, .d88 and others) and hard disk
+images (.hdi, .nhd, .thd). CD-ROM images (.cue) can be loaded through a
+.cmd file.

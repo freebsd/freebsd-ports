@@ -1,0 +1,11 @@
+--- sdl/Makefile.common.orig	2026-10-31 16:52:12 UTC
++++ sdl/Makefile.common
+@@ -104,6 +104,8 @@ SOURCES_C :=	$(NP2_PATH)/calendar.c \
+ 	$(NP2_PATH)/sound/soundrom.c \
+ 	$(NP2_PATH)/sound/tms3631c.c \
+ 	$(NP2_PATH)/sound/tms3631g.c \
++	$(NP2_PATH)/sound/ymzadpcmc.c \
++	$(NP2_PATH)/sound/ymzadpcmg.c \
+ 	$(wildcard $(NP2_PATH)/sound/getsnd/*.c) \
+ 	$(wildcard $(NP2_PATH)/sound/mame/*.c) \
+ 	$(wildcard $(NP2_PATH)/sound/vermouth/*.c) \
