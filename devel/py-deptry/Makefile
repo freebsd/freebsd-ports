@@ -20,11 +20,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0.0<9:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requirements-parser>=0.11.0<1:devel/py-requirements-parser@${PY_FLAVOR} \
 		${PY_TOMLI}
 
-USES=		cargo python:3.11+
+USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
+CARGO_TEST=	no
 WRKSRC=		${WRKDIR}/deptry-${PORTVERSION}
 
 .include <bsd.port.mk>
