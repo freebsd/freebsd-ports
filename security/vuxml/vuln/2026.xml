@@ -1,3 +1,31 @@
+  <vuln vid="65abbad5-da78-11f0-b6d5-843a4b343614">
+    <topic>uriparser -- Denial of Service through Unbound Recursion</topic>
+    <affects>
+      <package>
+	<name>uriparser</name>
+	<range><lt>1.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The URIparser project reports:</p>
+	<blockquote cite="https://github.com/uriparser/uriparser/issues/282">
+	<p>uriparser through 0.9.9 allows unbounded recursion and stack
+	  consumption, as demonstrated by ParseMustBeSegmentNzNc with large
+          input containing many commas.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-67899</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-67899</url>
+    </references>
+    <dates>
+      <discovery>2025-12-14</discovery>
+      <entry>2026-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="91ea9062-d50a-11f1-8135-8447094a420f">
     <topic>Weechat -- Multiple vulnerabilities</topic>
     <affects>
