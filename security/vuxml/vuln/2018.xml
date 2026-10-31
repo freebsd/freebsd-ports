@@ -2522,7 +2522,7 @@ TCP Server functionality disabled by default, leaving them unaffected.</p>
     </description>
     <references>
       <url>https://github.com/go-gitea/gitea/issues/4357</url>
-      <url>ttps://github.com/go-gitea/gitea/pull/4840</url>
+      <url>https://github.com/go-gitea/gitea/pull/4840</url>
     </references>
     <dates>
       <discovery>2018-10-01</discovery>
@@ -5890,7 +5890,7 @@ ed by aCaB.</li>
       <cvename>CVE-2018-7725</cvename>
       <cvename>CVE-2018-7726</cvename>
       <cvename>CVE-2018-7727</cvename>
-      <url>https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;results_type=overview&amp;query=zziplib&amp;search_type=all&amp;pub_start_date=01%2F01%2F2017&amp;pub_end_date=07%2F06%2F2018"</url>
+      <url>https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;results_type=overview&amp;query=zziplib&amp;search_type=all&amp;pub_start_date=01%2F01%2F2017&amp;pub_end_date=07%2F06%2F2018</url>
     </references>
     <dates>
       <discovery>2017-03-01</discovery>

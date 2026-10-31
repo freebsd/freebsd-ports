@@ -2725,7 +2725,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>cacti developers report:</p>
-	<blockquote cite=" https://github.com/Cacti/cacti/commit/93f661d8adcfa6618b11522cdab30e97bada33fd">
+	<blockquote cite="https://github.com/Cacti/cacti/commit/93f661d8adcfa6618b11522cdab30e97bada33fd">
 	  <p>The file include/global_session.php in Cacti 1.1.25 has XSS related to (1) the URI or (2) the refresh page.</p>
 	</blockquote>
       </body>
@@ -7644,7 +7644,7 @@ maliciously crafted GET request to the Horde server.</p>
       </body>
     </description>
     <references>
-      <url>CVE-2017-6594</url>
+      <cvename>CVE-2017-6594</cvename>
       <freebsdpr>ports/219657</freebsdpr>
     </references>
     <dates>

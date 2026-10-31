@@ -3376,7 +3376,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Node.js reports:</p>
-	<blockquote cite="ihttps://nodejs.org/en/blog/vulnerability/july-2021-security-releases-2/">
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/july-2021-security-releases-2/">
 	  <h1>Use after free on close http2 on stream canceling (High) (CVE-2021-22930)</h1>
 	  <p>Node.js is vulnerable to a use after free attack where an attacker might be able to exploit the memory corruption, to change process behavior.</p>
 	</blockquote>
@@ -10457,7 +10457,7 @@ In limited circumstances it was possible for users to authenticate using variati
       </body>
     </description>
     <references>
-      <url>"https://saltproject.io/security_announcements/active-saltstack-cve-release-2021-feb-25/"</url>
+      <url>https://saltproject.io/security_announcements/active-saltstack-cve-release-2021-feb-25/</url>
       <cvename>CVE-2021-3197</cvename>
       <cvename>CVE-2021-25281</cvename>
       <cvename>CVE-2021-25282</cvename>
@@ -11668,45 +11668,45 @@ raptor_xml_writer_start_element_common.</p>
       </body>
     </description>
     <references>
+      <cvename>CVE-2021-2046</cvename>
+      <cvename>CVE-2021-2020</cvename>
+      <cvename>CVE-2021-2024</cvename>
+      <cvename>CVE-2021-2011</cvename>
+      <cvename>CVE-2021-2006</cvename>
+      <cvename>CVE-2021-2048</cvename>
+      <cvename>CVE-2021-2028</cvename>
+      <cvename>CVE-2021-2122</cvename>
+      <cvename>CVE-2021-2058</cvename>
+      <cvename>CVE-2021-2001</cvename>
+      <cvename>CVE-2021-2016</cvename>
+      <cvename>CVE-2021-2021</cvename>
+      <cvename>CVE-2021-2030</cvename>
+      <cvename>CVE-2021-2031</cvename>
+      <cvename>CVE-2021-2036</cvename>
+      <cvename>CVE-2021-2055</cvename>
+      <cvename>CVE-2021-2060</cvename>
+      <cvename>CVE-2021-2070</cvename>
+      <cvename>CVE-2021-2076</cvename>
+      <cvename>CVE-2021-2065</cvename>
+      <cvename>CVE-2021-2014</cvename>
+      <cvename>CVE-2021-2002</cvename>
+      <cvename>CVE-2021-2012</cvename>
+      <cvename>CVE-2021-2009</cvename>
+      <cvename>CVE-2021-2072</cvename>
+      <cvename>CVE-2021-2081</cvename>
+      <cvename>CVE-2021-2022</cvename>
+      <cvename>CVE-2021-2038</cvename>
+      <cvename>CVE-2021-2061</cvename>
+      <cvename>CVE-2021-2056</cvename>
+      <cvename>CVE-2021-2087</cvename>
+      <cvename>CVE-2021-2088</cvename>
+      <cvename>CVE-2021-2032</cvename>
+      <cvename>CVE-2021-2010</cvename>
+      <cvename>CVE-2021-1998</cvename>
+      <cvename>CVE-2021-2007</cvename>
+      <cvename>CVE-2021-2019</cvename>
+      <cvename>CVE-2021-2042</cvename>
       <url>https://www.oracle.com/security-alerts/cpujan2021.html#AppendixMSQL</url>
-      <url>CVE-2021-2046</url>
-      <url>CVE-2021-2020</url>
-      <url>CVE-2021-2024</url>
-      <url>CVE-2021-2011</url>
-      <url>CVE-2021-2006</url>
-      <url>CVE-2021-2048</url>
-      <url>CVE-2021-2028</url>
-      <url>CVE-2021-2122</url>
-      <url>CVE-2021-2058</url>
-      <url>CVE-2021-2001</url>
-      <url>CVE-2021-2016</url>
-      <url>CVE-2021-2021</url>
-      <url>CVE-2021-2030</url>
-      <url>CVE-2021-2031</url>
-      <url>CVE-2021-2036</url>
-      <url>CVE-2021-2055</url>
-      <url>CVE-2021-2060</url>
-      <url>CVE-2021-2070</url>
-      <url>CVE-2021-2076</url>
-      <url>CVE-2021-2065</url>
-      <url>CVE-2021-2014</url>
-      <url>CVE-2021-2002</url>
-      <url>CVE-2021-2012</url>
-      <url>CVE-2021-2009</url>
-      <url>CVE-2021-2072</url>
-      <url>CVE-2021-2081</url>
-      <url>CVE-2021-2022</url>
-      <url>CVE-2021-2038</url>
-      <url>CVE-2021-2061</url>
-      <url>CVE-2021-2056</url>
-      <url>CVE-2021-2087</url>
-      <url>CVE-2021-2088</url>
-      <url>CVE-2021-2032</url>
-      <url>CVE-2021-2010</url>
-      <url>CVE-2021-1998</url>
-      <url>CVE-2021-2007</url>
-      <url>CVE-2021-2019</url>
-      <url>CVE-2021-2042</url>
     </references>
     <dates>
       <discovery>2021-01-23</discovery>

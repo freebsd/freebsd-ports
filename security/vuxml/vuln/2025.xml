@@ -2557,7 +2557,6 @@ This issue has been patched in version 2.25.2.</p>
     </description>
     <references>
       <cvename>CVE-2025-62507</cvename>
-      <url></url>
     </references>
     <dates>
       <discovery>2025-11-03</discovery>

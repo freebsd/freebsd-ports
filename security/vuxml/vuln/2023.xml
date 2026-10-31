@@ -7585,7 +7585,6 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     </description>
     <references>
       <cvename>CVE-2023-2801</cvename>
-      <url>CVE-2023-2801</url>
     </references>
     <dates>
       <discovery>2023-06-06</discovery>

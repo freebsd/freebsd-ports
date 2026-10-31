@@ -4224,8 +4224,8 @@ and CVE-2013-0155.</p>
       </body>
     </description>
     <references>
-      <url>"http://www.openwall.com/lists/oss-security/2016/09/08/2"</url>
-      <url>"http://www.openwall.com/lists/oss-security/2016/09/08/3"</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/09/08/2</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/09/08/3</url>
       <cvename>CVE-2016-5157</cvename>
       <cvename>CVE-2016-7163</cvename>
     </references>
@@ -4889,7 +4889,7 @@ and CVE-2013-0155.</p>
       </body>
     </description>
     <references>
-      <url>"http://www.openwall.com/lists/oss-security/2016/09/15/2"</url>
+      <url>http://www.openwall.com/lists/oss-security/2016/09/15/2</url>
       <cvename>CVE-2016-7406</cvename>
       <cvename>CVE-2016-7407</cvename>
       <cvename>CVE-2016-7408</cvename>
@@ -7832,7 +7832,7 @@ and CVE-2013-0155.</p>
       </body>
     </description>
     <references>
-      <url>We have identified and fixed several XSS security issues in this release.</url>
+      <url>https://piwik.org/changelog/piwik-2-16-2/</url>
     </references>
     <dates>
       <discovery>2016-08-03</discovery>
@@ -10115,7 +10115,7 @@ and CVE-2013-0155.</p>
     </description>
     <references>
       <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2177</url>
-      <url>ihttps://bugzilla.redhat.com/show_bug.cgi?id=1341705</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1341705</url>
       <url>https://www.openssl.org/blog/blog/2016/06/27/undefined-pointer-arithmetic/</url>
       <cvename>CVE-2016-2177</cvename>
     </references>

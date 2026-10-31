@@ -282,7 +282,7 @@
 	    resolution. The flaw was discovered by Florian Maury of
 	    ANSSI, and applies to any recursive resolver that does not
 	    support a limit on the number of recursions. [<a href="http://cert.ssi.gouv.fr/site/CERTFR-2014-AVI-512/index.html">CERTFR-2014-AVI-512</a>],
-	    [USCERT <a href="www.kb.cert.org/vuls/id/264212">VU#264212</a>]</p>
+	    [USCERT <a href="https://www.kb.cert.org/vuls/id/264212">VU#264212</a>]</p>
 	  <p>A flaw in delegation handling could be exploited to put named
 	    into an infinite loop, in which each lookup of a name server
 	    triggered additional lookups of more name servers.  This has
@@ -5818,7 +5818,7 @@
       </body>
     </description>
     <references>
-      <url>CVE-2014-0032</url>
+      <cvename>CVE-2014-0032</cvename>
       <url>https://subversion.apache.org/security/CVE-2014-0032-advisory.txt</url>
     </references>
     <dates>
