@@ -1,3 +1,3 @@
-TIMESTAMP = 1789128256
-SHA256 (opentelemetry_instrumentation_grpc-0.65b0.tar.gz) = b05b3a1f476f350fdb12514ca1ebaed0d596095f91188c2efd26b3e6e2a4cc82
-SIZE (opentelemetry_instrumentation_grpc-0.65b0.tar.gz) = 31971
+TIMESTAMP = 1791047092
+SHA256 (opentelemetry_instrumentation_grpc-0.66b0.tar.gz) = 188119b0313df42f168c5ebcd2eb3929db26085f487b2828b0dd98148b0038f5
+SIZE (opentelemetry_instrumentation_grpc-0.66b0.tar.gz) = 31922
