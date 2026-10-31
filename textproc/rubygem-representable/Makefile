@@ -1,5 +1,5 @@
 PORTNAME=	representable
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
