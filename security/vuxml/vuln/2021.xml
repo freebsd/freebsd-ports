@@ -11525,6 +11525,17 @@ raptor_xml_writer_start_element_common.</p>
 	<name>py37-pysaml2</name>
 	<name>py38-pysaml2</name>
 	<name>py39-pysaml2</name>
+	<name>py310-pysaml2</name>
+	<name>py311-pysaml2</name>
+	<range><lt>6.5.0</lt></range>
+      </package>
+      <package>
+	<name>py36-pysaml24</name>
+	<name>py37-pysaml24</name>
+	<name>py38-pysaml24</name>
+	<name>py39-pysaml24</name>
+	<name>py310-pysaml24</name>
+	<name>py311-pysaml24</name>
 	<range><lt>6.5.0</lt></range>
       </package>
     </affects>
@@ -11541,12 +11552,15 @@ raptor_xml_writer_start_element_common.</p>
       <url>https://github.com/IdentityPython/pysaml2/releases</url>
       <url>https://github.com/IdentityPython/pysaml2/security/advisories/GHSA-f4g9-h89h-jgv9</url>
       <url>https://github.com/IdentityPython/pysaml2/security/advisories/GHSA-5p3x-r448-pc62</url>
+      <url>https://osv.dev/vulnerability/PYSEC-2021-48</url>
+      <url>https://osv.dev/vulnerability/PYSEC-2021-49</url>
       <cvename>CVE-2021-21238</cvename>
       <cvename>CVE-2021-21239</cvename>
     </references>
     <dates>
       <discovery>2021-01-20</discovery>
       <entry>2021-01-26</entry>
+      <modified>2023-04-12</modified>
     </dates>
   </vuln>
 
