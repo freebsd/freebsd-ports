@@ -9869,7 +9869,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
 	<name>py39-setuptools58</name>
 	<name>py310-setuptools58</name>
 	<name>py311-setuptools58</name>
-	<range>><lt>58.5.3_3</lt></range>
+	<range><lt>58.5.3_3</lt></range>
       </package>
       <package>
 	<name>py27-setuptools44</name>
