@@ -1,3 +1,38 @@
+  <vuln vid="91ea9062-d50a-11f1-8135-8447094a420f">
+    <topic>Weechat -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name></name>
+	<range><lt></lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Weechat project reports:</p>
+	<blockquote cite="https://github.com/weechat/weechat/releases/tag/v4.10.2E">
+	  <ul>
+	    <li>core: integer overflow in dynamic strings when their size exceeds 4 GiB (GHSA-h394-85x4-68c7)</li>
+	    <li>core: heap buffer overflow in charset conversion when the converted string is more than 4 times longer than the input and contains invalid chars (GHSA-q32h-5qvq-3936)</li>
+	    <li>irc: limit number of prefix modes in PREFIX of message 005 to prevent memory exhaustion</li>
+	    <li>irc: escape ${ in values of variables $nick, $channel and $server in commands /allchan, /allpv and /allserv, to prevent evaluation of untrusted values</li>
+	    <li>irc: escape ${ in server options addresses, nicks, password and autojoin set from an IRC URL (irc://...), to prevent evaluation of untrusted values</li>
+	    <li>irc: escape ${ in channel names saved in server option autojoin, to prevent evaluation of channel names received from the server (for example on channel forward)</li>
+	    <li>irc: heap buffer overflow in nick prefixes when the server sends an empty PREFIX in message 005 and the connection is lost before message 001 (GHSA-xj8h-x2w9-m8m6)</li>
+	    <li>relay: limit size of HTTP headers received from a client to prevent memory exhaustion (GHSA-h394-85x4-68c7)</li>
+	    <li>relay: fix heap buffer overflow in path of hdata sent to clients with "weechat" protocol (GHSA-8wr2-x42m-7fxv)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/weechat/weechat/releases/tag/v4.10.2</url>
+    </references>
+    <dates>
+      <discovery>2026-10-31</discovery>
+      <entry>2026-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6dc20034-d4a7-11f1-9893-3c7c3fba4204">
     <topic>Routinator -- multiple vulnerabilities</topic>
     <affects>
