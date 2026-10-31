@@ -1,3 +1,79 @@
+  <vuln vid="ac97113e-d514-11f1-b2f0-002b67dfc673">
+    <topic>amule -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>amule</name>
+	<range><lt>3.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>aMule developers report:</p>
+	<blockquote cite="https://github.com/amule-org/amule/releases/tag/3.2.0">
+	  <p>A security release first: it fixes 15 vulnerabilities reported
+	    through GitHub Security Advisories, and 11 of them are also
+	    present in aMule 2.3.3. If you still run 2.3.x or any 3.x
+	    release, please upgrade.</p>
+	  <ul>
+	    <li>GHSA-cp82-q55r-936c (High): heap off-by-one write and
+	      use-after-free in the UPnP control point, reachable from the
+	      local network when UPnP is enabled.</li>
+	    <li>GHSA-2crf-cv3v-53w5 (High): unbounded EC tag nesting crashes
+	      amuled before authentication.</li>
+	    <li>GHSA-52mv-r67q-c985 (High): a single Kad search request can
+	      block the main thread for tens of seconds.</li>
+	    <li>GHSA-q2jr-xf54-v364 (High): a remote-control user can move
+	      files anywhere on the host.</li>
+	    <li>GHSA-3j74-m5qw-75xg (High): EC-settable ffprobe path leads to
+	      execution of arbitrary binaries.</li>
+	    <li>GHSA-cvxg-rcqx-rp9p (Medium): heap memory disclosure to eD2k
+	      peers.</li>
+	    <li>GHSA-g22c-pmwf-qmwm (Medium): peer-supplied OS info used as a
+	      format string in the statistics tree.</li>
+	    <li>GHSA-6qxf-6fj4-q8fv (Medium): unchecked EC tag types leak heap
+	      bytes into the log before authentication.</li>
+	    <li>GHSA-hv8p-rp6f-rmf7 (Medium): memory exhaustion triggered by
+	      an upload source.</li>
+	    <li>GHSA-vh6g-8m3v-wfmf (Medium): amuleweb guests can add
+	      downloads and make the core fetch arbitrary URLs.</li>
+	    <li>GHSA-42j9-4vh7-jvw6 (Medium): malicious update files can fill
+	      the disk or crash aMule.</li>
+	    <li>GHSA-7rxg-6w2f-3w57 (Medium): multi-part downloads can complete
+	      without MD4 verification.</li>
+	    <li>GHSA-frfq-582f-4jww (Medium): server list URLs fetched without
+	      protocol restriction allow SSRF via gopher://.</li>
+	    <li>GHSA-gc7p-357m-xj2j (Low): synchronous EC clients accept
+	      cleartext replies on an encrypted session.</li>
+	    <li>GHSA-vj9g-4mg6-q9hw (Low): cross-port request forgery against
+	      amuleapi.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/amule-org/amule/releases/tag/3.2.0</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-cp82-q55r-936c</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-2crf-cv3v-53w5</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-52mv-r67q-c985</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-q2jr-xf54-v364</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-3j74-m5qw-75xg</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-cvxg-rcqx-rp9p</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-g22c-pmwf-qmwm</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-6qxf-6fj4-q8fv</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-hv8p-rp6f-rmf7</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-vh6g-8m3v-wfmf</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-42j9-4vh7-jvw6</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-7rxg-6w2f-3w57</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-frfq-582f-4jww</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-gc7p-357m-xj2j</url>
+      <url>https://github.com/amule-org/amule/security/advisories/GHSA-vj9g-4mg6-q9hw</url>
+    </references>
+    <dates>
+      <discovery>2026-10-28</discovery>
+      <entry>2026-10-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="38d8dd83-285c-11f1-9f7b-001b217e4ee5">
     <topic>ISC KEA -- Stack overflow in Kea daemons</topic>
     <affects>
