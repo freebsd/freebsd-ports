@@ -1,5 +1,5 @@
 PORTNAME=	multipart
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/defnull/multipart/releases/download/v${PORTVERSION}/
