@@ -297,6 +297,7 @@
     SUBDIR += pomsky
     SUBDIR += prql
     SUBDIR += ptoc
+    SUBDIR += puffin
     SUBDIR += purescript
     SUBDIR += py-dhall
     SUBDIR += py-gherkin-official
