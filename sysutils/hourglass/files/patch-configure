@@ -1,14 +1,14 @@
---- configure.orig	Thu Oct  9 20:19:54 2003
-+++ configure	Mon Apr 12 16:14:58 2004
-@@ -3114,7 +3114,6 @@
+--- configure.orig	2003-10-09 20:19:54 UTC
++++ configure
+@@ -3173,7 +3173,6 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -3161,7 +3160,6 @@
+ _ACEOF
+@@ -3230,7 +3229,6 @@
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
@@ -16,8 +16,8 @@
  
  fi
  
-@@ -3994,8 +3992,10 @@
-   on_unix='yes' ;
+@@ -4129,8 +4127,10 @@
+   on_mach='no';
    on_windows='no' ;;
  *freebsd*)
 -  LDFLAGS='-llthread -llgcc_r -L/usr/local/lib' ;
@@ -27,5 +27,14 @@
 +  LDFLAGS="$LDFLAGS_sav %THREAD_LIBS%" ;
 +  CFLAGS="$CFLAGS_sav %THREAD_CFLAGS%" ;
    on_unix='yes' ;
+   on_mach='no';
    on_windows='no' ;;
- *cygwin*)
+@@ -4199,7 +4199,7 @@
+ fi
+ 
+ case "$host_cpu" in
+-powerpc)
++powerpc*)
+   cpu_ppc='yes' ;
+   cpu_586='no' ;;
+ i*86)

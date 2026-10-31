@@ -1,8 +1,8 @@
---- src/hourglass.h.orig	Wed Oct  8 20:26:08 2003
-+++ src/hourglass.h	Tue Jan 23 05:28:40 2007
-@@ -38,6 +38,11 @@
- #include <pthread.h>
+--- src/hourglass.h.orig	2003-10-08 20:26:08 UTC
++++ src/hourglass.h
+@@ -39,6 +39,11 @@
  #include <assert.h>
+ #include <stdint.h>
  
 +#ifdef __FreeBSD__
 +#include <machine/cpufunc.h>
@@ -12,38 +12,38 @@
  #include "config.h"
  
  #define DBGPrint(lev,str) do {      \
-@@ -197,6 +202,8 @@
-   cycle_time start, end;
+@@ -211,7 +216,7 @@
+   cycle_time start, end, gap;   // rjd -- added thread id dependent gap for SMP
  };
  
-+#ifndef __FreeBSD__
-+
- #ifdef CPU_586
+-#ifdef CPU_586
++#if defined(CPU_586) && !defined(__FreeBSD__)
  /*
   * a bit of documentation since the rdrsc function seems to often be
-@@ -228,7 +235,7 @@
+  * misimplemented:
+@@ -282,6 +287,7 @@
+   return ts;
+ }
+ #endif
++#ifndef __FreeBSD__
+ /* these routines snagged from Wine */
  
- static inline int my_InterlockedIncrement (long *dest)
- {
--    return my_InterlockedExchangeAdd (dest, 1) + 1;
-+    return my_InterlockedExchangeAdd (dest, 1L) + 1;
+ static inline int my_InterlockedExchangeAdd (long *dest, long incr)
+@@ -306,8 +312,17 @@
+     return my_InterlockedExchangeAdd (dest, 1) + 1;
  }
  
- #endif  /* defined CPU_586 */
-@@ -275,6 +282,16 @@
- }
- 
++#endif
  #endif /* defined CPU_PPC */
-+
-+#else
-+
+ 
++#ifdef __FreeBSD__
 +static inline long my_InterlockedIncrement (long *dest)
 +{
 +    atomic_add_long(dest, 1L);
 +    return *dest;
 +}
++#endif
 +
-+#endif /* !__FreeBSD__ */
- 
  static inline sec_time cycle_to_sec (cycle_time c)
  {
+   assert (TSC_MHZ != -1);
