@@ -1,0 +1,3 @@
+unrardll is a Python wrapper around the UnRAR DLL (libunrar) that allows
+listing, reading and extracting files from RAR archives, including
+multi-volume and password protected archives.
