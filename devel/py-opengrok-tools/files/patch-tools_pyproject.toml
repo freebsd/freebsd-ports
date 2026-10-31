@@ -1,6 +1,17 @@
---- tools/pyproject.toml.orig	2026-09-13 19:43:04 UTC
+Description: Use the table form of license (setuptools 63 does not support
+  PEP 639 license strings and license-files), and drop the 'resource' and
+  'jsonschema' requirements: opengrok-tools only uses the standard library
+  resource module (the PyPI 'resource' package is unrelated), and it does
+  not import jsonschema at all (its 2.6.0 pin also conflicts with the
+  tree's 4.x).
+Issue ID: none
+Changeset: none
+TODO: Drop the license hunk once devel/py-setuptools supports PEP 639; the
+  resource and jsonschema hunks are worth submitting upstream.
+
+--- tools/pyproject.toml.orig	2026-09-14 12:32:37 UTC
 +++ tools/pyproject.toml
-@@ -8,8 +8,7 @@ requires-python = ">=3.9"
+@@ -8,8 +8,7 @@ description = "Tools for managing OpenGr
  readme = "README.txt"
  dynamic = ["version"]
  requires-python = ">=3.9"
@@ -10,3 +21,14 @@
  classifiers = [
      "Development Status :: 5 - Production/Stable",
      "Natural Language :: English",
+@@ -20,10 +19,8 @@ classifiers = [
+     "Programming Language :: Python :: 3.11",
+ ]
+ dependencies = [
+-    'jsonschema==2.6.0',    # to avoid Rust
+     'pyyaml',
+     'requests>=2.20.0',
+-    'resource',
+     'filelock',
+ ]
+ 
