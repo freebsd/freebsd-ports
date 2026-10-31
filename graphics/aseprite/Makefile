@@ -1,12 +1,13 @@
 PORTNAME=		aseprite
-DISTVERSION=		1.3.18.5
+DISTVERSION=		1.3.18.6
 CATEGORIES=		graphics
 MASTER_SITES=		https://github.com/aseprite/aseprite/releases/download/v${DISTVERSION}/
 DISTNAME=		Aseprite-v${DISTVERSION}-Source
 
 MAINTAINER=		yuri@FreeBSD.org
 COMMENT=		Animated sprite editor and pixel art tool
-WWW=		https://www.aseprite.org/
+WWW=			https://www.aseprite.org/ \
+			https://github.com/aseprite/aseprite
 
 LICENSE=		EULA
 LICENSE_NAME=		END-USER LICENSE AGREEMENT FOR ASEPRITE
@@ -18,7 +19,6 @@ BROKEN_armv7=		fails to compile: undefined reference to __va_copy
 
 BUILD_DEPENDS=		skia124>0:graphics/skia124
 LIB_DEPENDS=		libcmark.so:textproc/cmark \
-			libcurl.so:ftp/curl \
 			libGL.so:graphics/libglvnd \
 			libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
@@ -26,16 +26,24 @@ LIB_DEPENDS=		libcmark.so:textproc/cmark \
 			libharfbuzz.so:print/harfbuzz \
 			libicuuc.so:devel/icu \
 			libpixman-1.so:x11/pixman \
-			libpng16.so:graphics/png \
-			libXi.so:x11/libXi \
-			libXrandr.so:x11/libXrandr
+			libpng16.so:graphics/png
 
-USES=			cmake compiler:c++17-lang gnome iconv:wchar_t jpeg \
-			localbase:ldflags ninja pkgconfig ssl xorg zip
+USES=			cmake compiler:c++17-lang jpeg \
+			localbase:ldflags ninja pkgconfig ssl xorg
 USE_GL=			gl
-USE_XORG+=		xrandr
-USE_GNOME=		libxml2
-USE_XORG=		x11 xcb xcursor xext ice sm
+USE_XORG=		ice sm x11 xcb xcursor xext xi xrandr
+
+EXTRACT_SUFX=		.zip
+EXTRACT_AFTER_ARGS=	--exclude third_party/cmark \
+			--exclude third_party/curl \
+			--exclude third_party/freetype2 \
+			--exclude third_party/giflib \
+			--exclude third_party/harfbuzz \
+			--exclude third_party/libpng \
+			--exclude third_party/pixman-cmake \
+			--exclude third_party/libwebp \
+			--exclude third_party/zlib \
+			--no-same-owner --no-same-permissions
 
 CMAKE_ON=		USE_SHARED_CMARK \
 			USE_SHARED_CURL \
@@ -56,7 +64,6 @@ CMAKE_ARGS=		-DLAF_BACKEND=skia \
 			-DVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=		STEAM
-OPTIONS_DEFAULT=
 
 STEAM_DESC=		Compile with Steam library
 STEAM_CMAKE_BOOL=	ENABLE_STEAM
