@@ -1,6 +1,6 @@
 PORTNAME=	sqlfluff
-PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTVERSION=	4.5.0
+PORTREVISION=	0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -32,6 +32,7 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 PYTEST_BROKEN_TESTS=	test__plugin_manager_registers_example_plugin \
 			test__plugin_example_rules_returned[Rule_Example_L001] \
 			test__plugin_default_config_read[Example_L001-forbidden_columns]
+TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sqlfluff
