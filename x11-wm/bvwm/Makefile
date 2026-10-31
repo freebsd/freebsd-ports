@@ -1,5 +1,5 @@
 PORTNAME=	bvwm
-DISTVERSION=	1.1.5-bvwm.6
+DISTVERSION=	1.1.5-bvwm.7
 CATEGORIES=	x11-wm
 # Extra icons tarball (optional); GitHub distfile comes from USE_GITHUB.
 MASTER_SITES=	http://fvwm.sourceforge.net/generated/icon_download/:icons
