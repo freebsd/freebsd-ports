@@ -64,6 +64,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		gperf:devel/gperf \
 		rustc:lang/rust \
 		xcb-proto>0:x11/xcb-proto
+
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libcairo.so:graphics/cairo \
@@ -367,17 +368,17 @@ pre-build:
 			> rollup-freebsd/package.json)
 
 do-configure:
-	@cd ${WRKSRC}/esbuild && \
+	(cd ${WRKSRC}/esbuild && \
 		${LOCALBASE}/bin/node scripts/esbuild.js \
 		${LOCALBASE}/bin/esbuild --neutral && \
 		${RM} -r ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild && \
 		${LN} -sf ${WRKSRC}/esbuild/npm/esbuild \
-		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild
-	@${LN} -sf ${LOCALBASE}/bin/esbuild \
+		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild)
+	${LN} -sf ${LOCALBASE}/bin/esbuild \
 		${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 
 # gn itself is built from the Chromium tree, no prebuilt binary is fetched
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} \
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} \
 		LD=${CXX} READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
 		./tools/gn/bootstrap/bootstrap.py -j${MAKE_JOBS_NUMBER} \
 		--build-path=out/${BUILDTYPE} ${GN_BOOTSTRAP_FLAGS}
