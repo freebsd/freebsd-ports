@@ -9,3 +9,12 @@
  build-backend = "setuptools.build_meta"
  
  [project]
+@@ -45,7 +45,7 @@ dependencies = [
+   "rich ~= 14.0; python_version == '3.8'",
+   "rich ~= 15.0; python_version >= '3.9'",
+   "shellingham ~= 1.5",
+-  "Deprecated ~= 1.2",  # Backport of deprecated decorator for python 3.8
++  "Deprecated >= 1.2",  # Backport of deprecated decorator for python 3.8
+ ]
+ 
+ [project.scripts]

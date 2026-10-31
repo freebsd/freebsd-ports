@@ -1,5 +1,6 @@
 PORTNAME=	python-semantic-release
 PORTVERSION=	10.7.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-semantic-release/python-semantic-release/releases/download/v${PORTVERSION}/
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0.0:devel/py-setuptools@${P
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.42<1:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.0<8.6.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-option-group>=0.5.0<0.6:devel/py-click-option-group@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}deprecated>=1.2<2:devel/py-deprecated@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}deprecated>=1.2:devel/py-deprecated@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dotty-dict>=1.3<2:devel/py-dotty-dict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gitpython>=3.0<4:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-resources>=6.0:devel/py-importlib-resources@${PY_FLAVOR} \
