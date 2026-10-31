@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.271.0
+PORTVERSION=	3.274.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -93,6 +93,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-cloudwatchevents>=1<2:devel/rubygem-aws-sdk-cloudwatchevents \
 		rubygem-aws-sdk-cloudwatchlogs>=1<2:devel/rubygem-aws-sdk-cloudwatchlogs \
 		rubygem-aws-sdk-cloudwatchrum>=1<2:devel/rubygem-aws-sdk-cloudwatchrum \
+		rubygem-aws-sdk-cloudwatchomni>=1<2:devel/rubygem-aws-sdk-cloudwatchomni \
 		rubygem-aws-sdk-codeartifact>=1<2:devel/rubygem-aws-sdk-codeartifact \
 		rubygem-aws-sdk-codebuild>=1<2:devel/rubygem-aws-sdk-codebuild \
 		rubygem-aws-sdk-codecatalyst>=1<2:devel/rubygem-aws-sdk-codecatalyst \
@@ -168,6 +169,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-emrserverless>=1<2:devel/rubygem-aws-sdk-emrserverless \
 		rubygem-aws-sdk-entityresolution>=1<2:devel/rubygem-aws-sdk-entityresolution \
 		rubygem-aws-sdk-eventbridge>=1<2:devel/rubygem-aws-sdk-eventbridge \
+		rubygem-aws-sdk-eventbridgev2>=1<2:devel/rubygem-aws-sdk-eventbridgev2 \
 		rubygem-aws-sdk-evs>=1<2:devel/rubygem-aws-sdk-evs \
 		rubygem-aws-sdk-finspace>=1<2:devel/rubygem-aws-sdk-finspace \
 		rubygem-aws-sdk-finspacedata>=1<2:devel/rubygem-aws-sdk-finspacedata \
@@ -293,6 +295,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-networkflowmonitor>=1<2:devel/rubygem-aws-sdk-networkflowmonitor \
 		rubygem-aws-sdk-networkmanager>=1<2:devel/rubygem-aws-sdk-networkmanager \
 		rubygem-aws-sdk-networkmonitor>=1<2:devel/rubygem-aws-sdk-networkmonitor \
+		rubygem-aws-sdk-networksecuritymanager>=1<2:devel/rubygem-aws-sdk-networksecuritymanager \
 		rubygem-aws-sdk-notifications>=1<2:devel/rubygem-aws-sdk-notifications \
 		rubygem-aws-sdk-notificationscontacts>=1<2:devel/rubygem-aws-sdk-notificationscontacts \
 		rubygem-aws-sdk-novaact>=1<2:devel/rubygem-aws-sdk-novaact \
