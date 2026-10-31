@@ -1,5 +1,5 @@
 PORTNAME=	isort
-PORTVERSION=	9.0.1
+PORTVERSION=	9.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/PyCQA/isort/releases/download/${PORTVERSION}/
