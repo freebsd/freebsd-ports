@@ -1,3 +1,61 @@
+  <vuln vid="aafad06c-d519-11f1-8135-8447094a420f">
+    <topic>LibreSSL -- Multiple OCSP client vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<name>libressl-devel</name>
+	<range><le>4.4.0_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VulnCheck reports:</p>
+	<blockquote cite="https://www.vulncheck.com/advisories/libressl-through-4.4.0-crlf-injection-via-ocsp-sendreq-new-request-line">
+	<p>CVE-2026-118371: LibreSSL through 4.4.0 contains a CRLF injection
+	  vulnerability in the libcrypto OCSP_sendreq_new() and OCSP_parse_url()
+	  functions, which write unvalidated request paths into the OCSP POST
+	  request line. Attackers can embed carriage return and line feed
+	  characters in a certificate's Authority Information Access OCSP URI to
+	  inject HTTP headers or split requests sent to responders and proxies.</p>
+	<p>CVE-2026-118372: LibreSSL ocspcheck through 4.4.0 contains a CRLF
+	  injection vulnerability that allows attackers to inject HTTP headers
+	  by embedding CR/LF sequences in a certificate's AIA OCSP URI path.
+	  Because url2host() copies the path without rejecting control
+	  characters and http_open() places it in the POST request line,
+	  attackers can inject headers or split OCSP requests sent to the
+	  responder host.</p>
+	<p>CVE-2026-118373: LibreSSL ocspcheck through 4.4.0 contains a cleartext
+	  transmission vulnerability because url2host() discards the OCSP URL
+	  scheme and http_alloc() only selects TLS for port 443. On-path network
+	  attackers can read OCSP requests sent to https responder URLs on
+	  non-443 ports, exposing certificate serial numbers, issuer hashes, and
+	  nonces.</p>
+	<p>CVE-2026-118374: LibreSSL ocspcheck through 4.4.0 contains a memory
+	  exhaustion vulnerability that allows malicious OCSP responders to
+	  exhaust memory by sending unbounded HTTP responses. Attackers
+	  controlling the responder or intercepting plain HTTP AIA OCSP traffic
+	  can stream endless headers or body data to http_head_read() and
+	  http_body_read(), denying certificate status checks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-118371</cvename>
+      <cvename>CVE-2026-118372</cvename>
+      <cvename>CVE-2026-118373</cvename>
+      <cvename>CVE-2026-118374</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-118371</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-118372</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-118373</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-118374</url>
+      <url>https://www.vulncheck.com/advisories/libressl-through-4.4.0-crlf-injection-via-ocsp-sendreq-new-request-line</url>
+    </references>
+    <dates>
+      <discovery>2026-10-28</discovery>
+      <entry>2026-10-31</entry>
+    </dates>
+  </vuln>
+	
   <vuln vid="ac97113e-d514-11f1-b2f0-002b67dfc673">
     <topic>amule -- multiple vulnerabilities</topic>
     <affects>
