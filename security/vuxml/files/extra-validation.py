@@ -11,6 +11,7 @@ if len(sys.argv) != 2:
 
 re_date = re.compile(r'^(19|20)[0-9]{2}-[0-9]{2}-[0-9]{2}$')
 re_invalid_package_name = re.compile(R'[@!#$%^&*()<>?/\|}{~:]')
+re_url = re.compile(r'^https?://[^\s/?#]+\S*\Z')
 
 # warn if description has more than X characters
 DESCRIPTION_LENGTH = 5000
@@ -19,6 +20,7 @@ tree = ET.parse(sys.argv[1])
 root = tree.getroot()
 
 namespace = "{http://www.vuxml.org/apps/vuxml-1}"
+xhtml = "{http://www.w3.org/1999/xhtml}"
 
 ret = 0
 
@@ -53,6 +55,23 @@ for vuln in root:
                 #print("Warn: tags out of order ({1} and {2}): {0}".format(vid, prev.tag[len(namespace):], reference.tag[len(namespace):]))
                 pass
             prev = reference
+
+    # Validate URLs in the references and the cite attributes of the quotes
+    for url in vuln.iter(namespace + "url"):
+        if url.text is None or not re_url.match(url.text):
+            print("Error: url is not a URL: {0} for VID {1}".format(url.text, vid))
+            ret = 1
+
+    description = vuln.find(namespace + "description")
+    if description is None:
+        print("Error: description is None : {0}".format(vid))
+        ret = 1
+    else:
+        for quote in description.iter(xhtml + "blockquote"):
+            cite = quote.get("cite")
+            if cite is not None and not re_url.match(cite):
+                print("Error: cite is not an absolute URL: {0} for VID {1}".format(cite, vid))
+                ret = 1
 
     # Validate Dates
     dates = vuln.find(namespace+"dates")
