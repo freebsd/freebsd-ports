@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	34
 CATEGORIES=	net
 
-MAINTAINER=	loic.blot@unix-experience.fr
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kubernetes controller manager daemon
 WWW=		https://github.com/kubernetes/kubernetes
 
