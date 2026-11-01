@@ -5785,3 +5785,4 @@ devel/grantlee5||2026-10-31|Has expired: Depends on deprecated Qt5, has no consu
 devel/qconf||2026-10-31|Has expired: Not ported to Qt6, has no consumers
 devel/tabby||2026-11-01|Has expired: Depends on expiring lang/rust188
 lang/rust188||2026-11-01|Has expired: Old version with several vulnerabilities
+devel/py-importlib-metadata7|devel/py-importlib-metadata8|2026-11-01|Has expired: No consumers left use devel/py-importlib-metadata8
