@@ -88,7 +88,7 @@ XGAP_CONFIGURE_ARGS=			--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBA
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB+=	BITS=${ARCH:S/amd64/64/:S/aarch64/64/:S/powerpc64/64/:S/powerpc64le/64/:S/riscv64/64/:S/i386/32/:S/armv6/32/:S/armv7/32/:S/powerpc/32/:S/powerpcspe/32/}
+PLIST_SUB+=	BITS=${ARCH:S/amd64/64/:S/aarch64/64/:S/powerpc64le/64/:S/powerpc64/64/:S/riscv64/64/:S/i386/32/:S/armv6/32/:S/armv7/32/:S/powerpcspe/32/:S/powerpc/32/}
 
 pre-configure:
 # Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
