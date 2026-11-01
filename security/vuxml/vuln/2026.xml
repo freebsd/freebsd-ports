@@ -1,3 +1,211 @@
+  <vuln vid="3749ce48-d5ce-11f1-9bfa-a8a1599412c6">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>156.0.8078.79</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>156.0.8078.79</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_02107719452.html">
+	 <p>This update includes 21 security fixes:</p>
+	 <ul>
+	    <li>[576215540] Critical CVE-2026-76024: Memory corruption in MediaStream.</li>
+	    <li>[559780982] High CVE-2026-76025: Use after free in FileSystem.</li>
+	    <li>[567673200] High CVE-2026-76026: Memory corruption in Autofill.</li>
+	    <li>[568894475] High CVE-2026-76027: Memory corruption in CacheStorage.</li>
+	    <li>[569012015] High CVE-2026-76028: Use after free in FileSystem.</li>
+	    <li>[572055997] High CVE-2026-76029: Memory corruption in Network.</li>
+	    <li>[572269631] High CVE-2026-76030: Memory corruption in FileSystem.</li>
+	    <li>[572556403] High CVE-2026-76031: Use after free in Input.</li>
+	    <li>[573264074] High CVE-2026-119260: Use after free in Frames.</li>
+	    <li>[574213633] High CVE-2026-119261: Improper input validation in Skia.</li>
+	    <li>[574660146] High CVE-2026-119262: Improper input validation in V8.</li>
+	    <li>[575143870] High CVE-2026-119263: Memory corruption in GarbageCollection.</li>
+	    <li>[575150692] High CVE-2026-119264: Memory corruption in Dawn.</li>
+	    <li>[575201795] High CVE-2026-119265: Memory corruption in Quota.</li>
+	    <li>[575202553] High CVE-2026-119266: Use after free in Quota.</li>
+	    <li>[576203565] High CVE-2026-119267: Memory corruption in DOM.</li>
+	    <li>[576984708] High CVE-2026-119268: Integer overflow in Editing.</li>
+	    <li>[577072000] High CVE-2026-119269: Use after free in Blink.</li>
+	    <li>[577333729] High CVE-2026-119270: Improper input validation in CacheStorage.</li>
+	    <li>[577403270] High CVE-2026-119271: Use after free in Skia.</li>
+	    <li>[569012543] Medium CVE-2026-119272: Out of bounds read in FileSystem.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-76024</cvename>
+      <cvename>CVE-2026-76025</cvename>
+      <cvename>CVE-2026-76026</cvename>
+      <cvename>CVE-2026-76027</cvename>
+      <cvename>CVE-2026-76028</cvename>
+      <cvename>CVE-2026-76029</cvename>
+      <cvename>CVE-2026-76030</cvename>
+      <cvename>CVE-2026-76031</cvename>
+      <cvename>CVE-2026-119260</cvename>
+      <cvename>CVE-2026-119261</cvename>
+      <cvename>CVE-2026-119262</cvename>
+      <cvename>CVE-2026-119263</cvename>
+      <cvename>CVE-2026-119264</cvename>
+      <cvename>CVE-2026-119265</cvename>
+      <cvename>CVE-2026-119266</cvename>
+      <cvename>CVE-2026-119267</cvename>
+      <cvename>CVE-2026-119268</cvename>
+      <cvename>CVE-2026-119269</cvename>
+      <cvename>CVE-2026-119270</cvename>
+      <cvename>CVE-2026-119271</cvename>
+      <cvename>CVE-2026-119272</cvename>
+      <url>https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_02107719452.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-29</discovery>
+      <entry>2026-11-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60814125-d630-11f1-9bfa-a8a1599412c6">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>156.0.8078.73</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>156.0.8078.73</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_0562499947.html">
+	 <p>This update includes 52 security fixes:</p>
+	 <ul>
+	    <li>[571156746] Critical CVE-2026-118306: Memory corruption in FileSystem.</li>
+	    <li>[572193211] Critical CVE-2026-118331: Improper input validation in FileAPI.</li>
+	    <li>[574776938] Critical CVE-2026-118348: Improper input validation in Skia.</li>
+	    <li>[574852698] Critical CVE-2026-118344: Use after free in Layout.</li>
+	    <li>[562191732] High CVE-2026-118357: Use after free in FileSystem.</li>
+	    <li>[565133743] High CVE-2026-118318: Improper access control in V8.</li>
+	    <li>[567129324] High CVE-2026-118350: Use after free in Turbolev.</li>
+	    <li>[567645136] High CVE-2026-118339: Use after free in Animation.</li>
+	    <li>[568348290] High CVE-2026-118305: Memory corruption in Turbolev.</li>
+	    <li>[568730797] High CVE-2026-118317: Memory corruption in HTML.</li>
+	    <li>[568894515] High CVE-2026-118320: Memory corruption in V8.</li>
+	    <li>[568895029] High CVE-2026-118322: Memory corruption in ANGLE.</li>
+	    <li>[568900535] High CVE-2026-118329: Improper input validation in ANGLE.</li>
+	    <li>[568936430] High CVE-2026-118354: Improper input validation in Skia.</li>
+	    <li>[568936530] High CVE-2026-118340: Memory corruption in Skia.</li>
+	    <li>[568937139] High CVE-2026-118321: Improper input validation in Core.</li>
+	    <li>[569286605] High CVE-2026-118337: Improper access control in Forms.</li>
+	    <li>[569674221] High CVE-2026-118352: Memory corruption in Cache.</li>
+	    <li>[570638833] High CVE-2026-118355: Improper input validation in Command.</li>
+	    <li>[570675085] High CVE-2026-118307: Use after free in Paint.</li>
+	    <li>[570825067] High CVE-2026-118351: Memory corruption in Skia.</li>
+	    <li>[570927027] High CVE-2026-118328: Improper input validation in WebRTC.</li>
+	    <li>[571147583] High CVE-2026-118333: Missing authorization in Video.</li>
+	    <li>[572111820] High CVE-2026-118336: Improper input validation in Headless.</li>
+	    <li>[572191610] High CVE-2026-118358: Memory corruption in WebAudio.</li>
+	    <li>[572312175] High CVE-2026-118353: Use after free in Paint.</li>
+	    <li>[572422506] High CVE-2026-118349: Memory corruption in Payments.</li>
+	    <li>[572878518] High CVE-2026-118327: Memory corruption in Media.</li>
+	    <li>[573378812] High CVE-2026-118359: Memory corruption in V8.</li>
+	    <li>[573389782] High CVE-2026-118343: Improper input validation in ReadingList.</li>
+	    <li>[573938968] High CVE-2026-118311: Memory corruption in Media.</li>
+	    <li>[574027204] High CVE-2026-118334: Use after free in ImageCapture.</li>
+	    <li>[574030524] High CVE-2026-118332: Improper input validation in Compositing.</li>
+	    <li>[574032795] High CVE-2026-118313: Use after free in Video.</li>
+	    <li>[574061024] High CVE-2026-118345: Use after free in PDFium.</li>
+	    <li>[574101376] High CVE-2026-118304: Improper input validation in SVG.</li>
+	    <li>[574223268] High CVE-2026-118316: Improper input validation in V8.</li>
+	    <li>[574382050] High CVE-2026-118346: Use after free in Compositing.</li>
+	    <li>[574412629] High CVE-2026-118342: Out of bounds write in Editing.</li>
+	    <li>[574516887] High CVE-2026-118310: Improper input validation in Views.</li>
+	    <li>[574606539] High CVE-2026-118335: Improper input validation in Metrics.</li>
+	    <li>[574791952] High CVE-2026-118308: Use after free in SVG.</li>
+	    <li>[574803484] High CVE-2026-118314: Improper input validation in UI.</li>
+	    <li>[574911589] High CVE-2026-118347: Use after free in FileSystem.</li>
+	    <li>[574911701] High CVE-2026-118341: Use after free in Modularization.</li>
+	    <li>[575090745] High CVE-2026-118330: Use after free in Browser.</li>
+	    <li>[575184164] High CVE-2026-118315: Improper input validation in SVG.</li>
+	    <li>[575851252] High CVE-2026-118356: Use after free in WTF.</li>
+	    <li>[576133777] High CVE-2026-118309: Improper input validation in UI.</li>
+	    <li>[576194994] High CVE-2026-118319: Memory corruption in Skia.</li>
+	    <li>[540025369] Medium CVE-2026-118312: Memory corruption in Paint.</li>
+	    <li>[575826638] Medium CVE-2026-118338: Use after free in Animation.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-118306</cvename>
+      <cvename>CVE-2026-118331</cvename>
+      <cvename>CVE-2026-118348</cvename>
+      <cvename>CVE-2026-118344</cvename>
+      <cvename>CVE-2026-118357</cvename>
+      <cvename>CVE-2026-118318</cvename>
+      <cvename>CVE-2026-118350</cvename>
+      <cvename>CVE-2026-118339</cvename>
+      <cvename>CVE-2026-118305</cvename>
+      <cvename>CVE-2026-118317</cvename>
+      <cvename>CVE-2026-118320</cvename>
+      <cvename>CVE-2026-118322</cvename>
+      <cvename>CVE-2026-118329</cvename>
+      <cvename>CVE-2026-118354</cvename>
+      <cvename>CVE-2026-118340</cvename>
+      <cvename>CVE-2026-118321</cvename>
+      <cvename>CVE-2026-118337</cvename>
+      <cvename>CVE-2026-118352</cvename>
+      <cvename>CVE-2026-118355</cvename>
+      <cvename>CVE-2026-118307</cvename>
+      <cvename>CVE-2026-118351</cvename>
+      <cvename>CVE-2026-118328</cvename>
+      <cvename>CVE-2026-118333</cvename>
+      <cvename>CVE-2026-118336</cvename>
+      <cvename>CVE-2026-118358</cvename>
+      <cvename>CVE-2026-118353</cvename>
+      <cvename>CVE-2026-118349</cvename>
+      <cvename>CVE-2026-118327</cvename>
+      <cvename>CVE-2026-118359</cvename>
+      <cvename>CVE-2026-118343</cvename>
+      <cvename>CVE-2026-118311</cvename>
+      <cvename>CVE-2026-118334</cvename>
+      <cvename>CVE-2026-118332</cvename>
+      <cvename>CVE-2026-118313</cvename>
+      <cvename>CVE-2026-118345</cvename>
+      <cvename>CVE-2026-118304</cvename>
+      <cvename>CVE-2026-118316</cvename>
+      <cvename>CVE-2026-118346</cvename>
+      <cvename>CVE-2026-118342</cvename>
+      <cvename>CVE-2026-118310</cvename>
+      <cvename>CVE-2026-118335</cvename>
+      <cvename>CVE-2026-118308</cvename>
+      <cvename>CVE-2026-118314</cvename>
+      <cvename>CVE-2026-118347</cvename>
+      <cvename>CVE-2026-118341</cvename>
+      <cvename>CVE-2026-118330</cvename>
+      <cvename>CVE-2026-118315</cvename>
+      <cvename>CVE-2026-118356</cvename>
+      <cvename>CVE-2026-118309</cvename>
+      <cvename>CVE-2026-118319</cvename>
+      <cvename>CVE-2026-118312</cvename>
+      <cvename>CVE-2026-118338</cvename>
+      <url>https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_0562499947.html</url>
+    </references>
+    <dates>
+      <discovery>2026-10-27</discovery>
+      <entry>2026-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6f31f4ab-d5fd-11f1-b2f0-002b67dfc673">
     <topic>unarr -- multiple vulnerabilities in the rar, zip and tar readers</topic>
     <affects>
