@@ -173,6 +173,7 @@
 %%WWWDIR%%/materials/nodes/MeshStandardNodeMaterial.js
 %%WWWDIR%%/materials/nodes/MeshToonNodeMaterial.js
 %%WWWDIR%%/materials/nodes/NodeMaterial.js
+%%WWWDIR%%/materials/nodes/NodeMaterialInstance.js
 %%WWWDIR%%/materials/nodes/NodeMaterials.js
 %%WWWDIR%%/materials/nodes/PointsNodeMaterial.js
 %%WWWDIR%%/materials/nodes/ShadowNodeMaterial.js
@@ -232,6 +233,7 @@
 %%WWWDIR%%/nodes/accessors/Object3DNode.js
 %%WWWDIR%%/nodes/accessors/PointUVNode.js
 %%WWWDIR%%/nodes/accessors/Position.js
+%%WWWDIR%%/nodes/accessors/ReferenceAttributeNode.js
 %%WWWDIR%%/nodes/accessors/ReferenceBaseNode.js
 %%WWWDIR%%/nodes/accessors/ReferenceElementNode.js
 %%WWWDIR%%/nodes/accessors/ReferenceNode.js
@@ -318,6 +320,7 @@
 %%WWWDIR%%/nodes/display/ViewportSharedTextureNode.js
 %%WWWDIR%%/nodes/display/ViewportTextureNode.js
 %%WWWDIR%%/nodes/fog/Fog.js
+%%WWWDIR%%/nodes/functions/BSDF/BRDF_EON.js
 %%WWWDIR%%/nodes/functions/BSDF/BRDF_GGX.js
 %%WWWDIR%%/nodes/functions/BSDF/BRDF_Lambert.js
 %%WWWDIR%%/nodes/functions/BSDF/BRDF_Sheen.js
@@ -491,6 +494,7 @@
 %%WWWDIR%%/renderers/common/RendererUtils.js
 %%WWWDIR%%/renderers/common/SampledTexture.js
 %%WWWDIR%%/renderers/common/Sampler.js
+%%WWWDIR%%/renderers/common/StandardDrawingPipeline.js
 %%WWWDIR%%/renderers/common/Storage3DTexture.js
 %%WWWDIR%%/renderers/common/StorageArrayTexture.js
 %%WWWDIR%%/renderers/common/StorageBuffer.js
@@ -544,7 +548,6 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/colorspace_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/colorspace_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/common.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/cube_uv_reflection_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/default_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/default_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/defaultnormal_vertex.glsl.js
@@ -658,6 +661,7 @@
 %%WWWDIR%%/renderers/webgl-fallback/utils/WebGLTextureUtils.js
 %%WWWDIR%%/renderers/webgl-fallback/utils/WebGLTimestampQueryPool.js
 %%WWWDIR%%/renderers/webgl-fallback/utils/WebGLUtils.js
+%%WWWDIR%%/renderers/webgl-fallback/utils/WebGLVertexArrayUtils.js
 %%WWWDIR%%/renderers/webgl/WebGLAnimation.js
 %%WWWDIR%%/renderers/webgl/WebGLAttributes.js
 %%WWWDIR%%/renderers/webgl/WebGLBackground.js
