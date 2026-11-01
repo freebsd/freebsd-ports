@@ -5789,3 +5789,4 @@ devel/py-importlib-metadata7|devel/py-importlib-metadata8|2026-11-01|Has expired
 mail/mailman-exim4||2026-11-01|Has expired: Uses expired lang/python27
 mail/mailman-postfix||2026-11-01|Has expired: Uses expired lang/python27
 mail/mailman||2026-11-01|Has expired: Uses expired lang/python27
+dns/py-dnspython1||2026-11-01|Has expired: Depends on expired lang/cython0

@@ -185,7 +185,6 @@
     SUBDIR += py-dns-lexicon
     SUBDIR += py-dnslib
     SUBDIR += py-dnspython
-    SUBDIR += py-dnspython1
     SUBDIR += py-easyzone
     SUBDIR += py-idna
     SUBDIR += py-ldns
