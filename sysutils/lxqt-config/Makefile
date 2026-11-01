@@ -1,6 +1,6 @@
 PORTNAME=	lxqt-config
 PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 DIST_SUBDIR=	lxqt
 
@@ -15,12 +15,13 @@ BUILD_DEPENDS=	lxqt-menu-data>=2.3.0:x11/lxqt-menu-data \
 		${LOCALBASE}/lib/xorg/modules/input/libinput_drv.so:x11-drivers/xf86-input-libinput
 RUN_DEPENDS=	lxqt-menu-data>=2.0.0:x11/lxqt-menu-data
 
-LIB_DEPENDS=	libudev.so:devel/libudev-devd
+LIB_DEPENDS=	libudev.so:devel/libudev-devd \
+		libKF6Screen.so:x11/sonic-screen-library
 
 USES=		cmake compiler:c++20-lang kde:6 localbase:ldflags lxqt:2 \
 		qt:6 perl5 pkgconfig tar:xz xorg gnome
 USE_QT=		base:run tools:build svg
-USE_KDE=	libkscreen windowsystem
+USE_KDE=	windowsystem
 USE_GNOME=	glib20
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xcb xcursor xext xfixes xrandr xi
