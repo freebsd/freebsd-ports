@@ -1,6 +1,6 @@
---- electron/spec/asar.spec.ts.orig	2026-10-26 22:10:04 UTC
+--- electron/spec/asar.spec.ts.orig	2026-10-30 06:33:33 UTC
 +++ electron/spec/asar.spec.ts
-@@ -745,7 +745,7 @@ describe('asar package', () => {
+@@ -749,7 +749,7 @@ describe('asar package', () => {
          expect(code).toBe(0);
        });
  
