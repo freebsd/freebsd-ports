@@ -10,6 +10,8 @@ WWW=		https://www.centreon.com/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libfmt.so:devel/libfmt
+
 USES=		cmake compiler:c++11-lang
 
 USE_GITHUB=	yes
@@ -19,7 +21,7 @@ GH_PROJECT=	centreon-collect
 WRKSRC_SUBDIR=	clib
 
 COLLECT_MAJOR=24
-COLLECT_MINOR=09
+COLLECT_MINOR=10
 COLLECT_PATCH=0
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
