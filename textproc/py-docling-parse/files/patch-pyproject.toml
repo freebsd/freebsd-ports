@@ -1,14 +1,22 @@
 -- Remove build-system dependencies (cmake, cibuildwheel, delocate) that are provided by the ports framework.
---- pyproject.toml.orig	2026-10-10 11:20:08 UTC
+--- pyproject.toml.orig	2026-10-29 16:25:49 UTC
 +++ pyproject.toml
-@@ -40,27 +40,17 @@ requires = [
+@@ -2,7 +2,6 @@ description = "Simple package to extract text with coo
+ name = "docling-parse"
+ version = "7.24.2"
+ description = "Simple package to extract text with coordinates from programmatic PDFs"
+-license = "MIT"
+ keywords = ["docling", "pdf", "parser"]
+ classifiers = [
+     "Operating System :: MacOS :: MacOS X",
+@@ -41,27 +40,17 @@ requires = [
  
  [build-system]
  requires = [
 -    "setuptools>=77.0.3",
 -    "pybind11>=2.13.6",
 -    "cibuildwheel>=2.19.2,<3.0.0; python_version < '3.11'",
--    "cibuildwheel>=2.19.2,<4.0.0; python_version >= '3.11'",
+-    "cibuildwheel>=4.3.0,<5.0.0; python_version >= '3.11'",
 +    "setuptools>=0",
 +    "pybind11>=0",
      "wheel>=0.43.0,<1.0.0",
@@ -23,7 +31,7 @@
 -    "setuptools>=77.0.3",
 -    "pybind11>=2.13.6",
 -    "cibuildwheel>=2.19.2,<3.0.0; python_version < '3.11'",
--    "cibuildwheel>=2.19.2,<4.0.0; python_version >= '3.11'",
+-    "cibuildwheel>=4.3.0,<5.0.0; python_version >= '3.11'",
 +    "setuptools>=0",
 +    "pybind11>=0",
      "wheel>=0.43.0,<1.0.0",
