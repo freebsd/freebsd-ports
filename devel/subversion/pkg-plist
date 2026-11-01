@@ -141,6 +141,12 @@ libdata/pkgconfig/libsvn_ra_svn.pc
 libdata/pkgconfig/libsvn_repos.pc
 libdata/pkgconfig/libsvn_subr.pc
 libdata/pkgconfig/libsvn_wc.pc
+share/bash-completion/completions/svn
+share/bash-completion/completions/svnadmin
+share/bash-completion/completions/svndumpfilter
+share/bash-completion/completions/svnlook
+share/bash-completion/completions/svnsync
+share/bash-completion/completions/svnversion
 %%NLS%%share/locale/de/LC_MESSAGES/subversion.mo
 %%NLS%%share/locale/es/LC_MESSAGES/subversion.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/subversion.mo

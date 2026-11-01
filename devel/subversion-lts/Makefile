@@ -1,4 +1,4 @@
-PORTREVISION=	5
+PORTREVISION=	6
 PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	michaelo@apache.org
@@ -142,6 +142,15 @@ post-install:	${MKREPOS_TARGET}
 	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA} ${WRKSRC}/tools/client-side/bash_completion \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/svn
+# bash_completion defines completions for svn, svnadmin, svndumpfilter,
+# svnlook, svnsync, and svnversion; the loader looks up one file per
+# command name, so symlink the other five to the real file
+.for cmd in svnadmin svndumpfilter svnlook svnsync svnversion
+	${LN} -sf svn ${STAGEDIR}${PREFIX}/share/bash-completion/completions/${cmd}
+.endfor
 
 post-install-SVNSERVE_WRAPPER-on:
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve.sample
