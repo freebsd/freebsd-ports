@@ -1,3 +1,41 @@
+  <vuln vid="6f31f4ab-d5fd-11f1-b2f0-002b67dfc673">
+    <topic>unarr -- multiple vulnerabilities in the rar, zip and tar readers</topic>
+    <affects>
+    <package>
+	<name>unarr</name>
+	<range><lt>1.2.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The unarr project reports:</p>
+	<blockquote cite="https://github.com/selmf/unarr/blob/v1.2.0/CHANGELOG.md">
+	  <ul>
+	    <li>rar: Fix OOB read in rar_conv_unicode_to_utf8</li>
+	    <li>rar: Prevent heap overflow when copying filters into RAR VM</li>
+	    <li>zip: Fix off-by-3 heap out-of-bounds read in ZIP64 extra
+	      field parser</li>
+	    <li>tar: Fix off-by-1 heap overflow in tar_get_name when
+	      concatenating USTAR filename and prefix at full length</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-111273</cvename>
+      <cvename>CVE-2026-111274</cvename>
+      <url>https://github.com/selmf/unarr/security/advisories/GHSA-fj4h-mpx9-46qj</url>
+      <url>https://github.com/selmf/unarr/security/advisories/GHSA-qm4g-jf39-jwjj</url>
+      <url>https://github.com/selmf/unarr/security/advisories/GHSA-3pwm-h93f-p4qh</url>
+      <url>https://github.com/selmf/unarr/security/advisories/GHSA-r5fr-9636-6xpp</url>
+      <url>https://github.com/selmf/unarr/blob/v1.2.0/CHANGELOG.md</url>
+    </references>
+    <dates>
+      <discovery>2026-10-15</discovery>
+      <entry>2026-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5cd347f3-d573-11f1-a2bb-50ebf6bdf8e9">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
