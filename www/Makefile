@@ -568,6 +568,7 @@
     SUBDIR += nginx-module-slowfs-cache
     SUBDIR += nginx-module-stream-limit-req
     SUBDIR += nginx-module-sts
+    SUBDIR += nginx-module-subs-filter
     SUBDIR += nginx-module-syslog5424
     SUBDIR += nginx-module-upload
     SUBDIR += nginx-module-vod
