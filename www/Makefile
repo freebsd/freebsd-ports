@@ -555,6 +555,7 @@
     SUBDIR += nginx-module-ip-anon
     SUBDIR += nginx-module-json-status
     SUBDIR += nginx-module-let
+    SUBDIR += nginx-module-link
     SUBDIR += nginx-module-lua
     SUBDIR += nginx-module-lua-stream
     SUBDIR += nginx-module-memc
