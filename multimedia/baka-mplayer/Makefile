@@ -15,6 +15,9 @@ WWW=		https://bakamplayer.u8sand.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=     Upstream remains only Qt5. Consider using multimedia/haruna as an alternative
+EXPIRATION_DATE=        2026-12-31
+
 LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USE_GITHUB=	yes
