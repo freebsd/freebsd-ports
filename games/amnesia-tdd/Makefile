@@ -1,7 +1,6 @@
 PORTNAME=	amnesia-tdd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
-PORTREVISION=	1
+DISTVERSION=	0.3.3
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
@@ -19,7 +18,6 @@ LIB_DEPENDS=	libIL.so:graphics/devil \
 		libogg.so:audio/libogg
 
 USES=		cmake gl sdl openal perl5
-USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	AmnesiaTheDarkDescent
