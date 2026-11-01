@@ -5,6 +5,9 @@ MASTER_SITES=	https://www.fftw.org/
 PKGNAMESUFFIX=	${FFTW3_PKGNAMESUFFIX}
 DISTNAME=	fftw-${DISTVERSION}
 
+PATCH_SITES=	https://github.com/FFTW/fftw3/commit/
+PATCHFILES=	40e620ec4441d0502e55d73744ef5d29a340a288.patch:-p1
+
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 WWW=		https://www.fftw.org/
@@ -139,8 +142,11 @@ CONFIGURE_ARGS+=	--enable-long-double
 FFTW3_SUFX=		q
 FFTW3_PKGNAMESUFFIX=	-quad
 CONFIGURE_ARGS+=	--enable-quad-precision
-ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS=		amd64 i386 powerpc64le
 USE_GCC=		yes
+.  if ${ARCH} == powerpc64le && ${OSVERSION} < 1600019
+IGNORE=			needs libquadmath, which GCC builds on powerpc64le only with IEEE 128-bit long double (FreeBSD 16.0 and later)
+.  endif
 .endif
 
 PLIST_SUB+=	FFTW3_SUFX="${FFTW3_SUFX}"
