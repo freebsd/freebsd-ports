@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/ozone_image_backing.cc.orig	2026-08-13 07:41:05 UTC
+--- gpu/command_buffer/service/shared_image/ozone_image_backing.cc.orig	2026-10-31 12:09:36 UTC
 +++ gpu/command_buffer/service/shared_image/ozone_image_backing.cc
-@@ -497,7 +497,7 @@ std::unique_ptr<VulkanImageRepresentation> OzoneImageB
+@@ -500,7 +500,7 @@ std::unique_ptr<VulkanImageRepresentation> OzoneImageB
      native_pixmap_handle.planes[1].offset = image_size.GetArea();
      native_pixmap_handle.planes[1].size = image_size.GetArea() / 2;
  

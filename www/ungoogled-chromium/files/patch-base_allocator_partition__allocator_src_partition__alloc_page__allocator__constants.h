@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/src/partition_alloc/page_allocator_constants.h.orig	2026-02-15 10:01:45 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/page_allocator_constants.h.orig	2026-10-31 12:09:36 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/page_allocator_constants.h
-@@ -26,9 +26,9 @@
+@@ -27,9 +27,9 @@
  #define PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR __attribute__((const))
  
  #elif (PA_BUILDFLAG(IS_ANDROID) && PA_BUILDFLAG(PA_ARCH_CPU_64_BITS)) || \

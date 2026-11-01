@@ -1,18 +1,21 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	151.0.7922.169
-PORTREVISION=	5
+PORTVERSION=	156.0.8078.79
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 UGVERSION=	${DISTVERSION}-1
+TSV=		7.0.2
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:goo \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
 DISTFILES=	chromium-${DISTVERSION}-lite${EXTRACT_SUFX}:goo \
-		pulseaudio-${PULSEV}.tar.gz:pulseaudio
+		pulseaudio-${PULSEV}.tar.gz:pulseaudio \
+		TypeScript-${TSV}-vendor.tar.gz:external
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ungoogled-software
 GH_TAGNAME=	${UGVERSION}
+
+GH_TUPLE=	microsoft:TypeScript:v${TSV}:typescript/typescript
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit sans integration with Google
@@ -34,6 +37,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		flock:sysutils/flock \
 		node:www/node \
 		rustc:lang/rust \
+		tsc:lang/typescript-go \
+		vulkan-headers>0:graphics/vulkan-headers \
 		xcb-proto>0:x11/xcb-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
@@ -128,9 +133,12 @@ GN_ARGS+=	enable_widevine=true \
 		use_system_libffi=true \
 		use_system_libjpeg=true \
 		use_udev=false \
+		v8_metagen_libclang_so="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so" \
+		v8_metagen_libclang_bindings_dir="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/python${PYTHON_VER}/site-packages" \
 		extra_cxxflags="${CXXFLAGS} -I${LOCALBASE}/include/libepoll-shim ${PINCLUDES}" \
 		extra_ldflags="${LDFLAGS}" \
-		ffmpeg_branding="${FFMPEG_BRAND}"
+		ffmpeg_branding="${FFMPEG_BRAND}" \
+		use_typescript_go=false
 
 # sync with flags.gni
 GN_ARGS+=	chrome_pgo_phase=0 \
@@ -300,6 +308,8 @@ pre-everything::
 	@${ECHO_MSG}
 
 pre-patch:
+	${REINPLACE_CMD} -e "s#'third_party/typescript/linux-amd64/',##g" \
+		${WRKDIR}/ungoogled-chromium-${UGVERSION}/utils/prune_binaries.py
 	cd ${WRKDIR}/ungoogled-chromium-${UGVERSION} && ${PYTHON_CMD} \
 		utils/prune_binaries.py ${WRKSRC} pruning.list
 	cd ${WRKDIR}/ungoogled-chromium-${UGVERSION} && PATCH_BIN=gpatch \
@@ -307,6 +317,10 @@ pre-patch:
 	cd ${WRKDIR}/ungoogled-chromium-${UGVERSION} && ${PYTHON_CMD} \
 		utils/domain_substitution.py apply -r domain_regex.list -f \
 		domain_substitution.list -c ${WRKSRC}/domsubcache.tar.gz ${WRKSRC}
+
+post-patch:
+	patch -d ${WRKSRC}/typescript/tsc/internal/bundled/libs -Ep2 < \
+		${WRKSRC}/third_party/typescript/linux-amd64/3pp/patches/typescript_native_preview.patch
 
 pre-configure:
 	# We used to remove bundled libraries to be sure that chromium uses
@@ -327,13 +341,21 @@ pre-configure:
 	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
 	touch ${WRKDIR}/pulseaudio-${PULSEV}/src/pulse/version.h
-	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|' \
+	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|g;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|g' \
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
-		${WRKSRC}/build/rust/rust_bindgen_generator.gni
+		${WRKSRC}/build/rust/rust_bindgen_generator.gni \
+		${WRKSRC}/v8/BUILD.gn
+
+pre-build:
+	cd ${WRKSRC}/typescript/tsc && \
+		${SETENV} ${MAKE_ENV} go build -v -p ${MAKE_JOBS_NUMBER} -mod=vendor ./cmd/tsgo && \
+		ln -sf ${WRKSRC}/typescript/tsc/tsgo \
+		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc
 
 do-configure:
 	# GN generator bootstrapping and generating ninja files
+	${LN} -sf ${WRKSRC}/out/${BUILDTYPE}/gn ${WRKSRC}/buildtools/linux64/gn
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
 		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
 		./tools/gn/bootstrap/bootstrap.py ${GN_BOOTSTRAP_FLAGS}
@@ -347,6 +369,9 @@ do-configure:
 	# Setup rustc dependency
 	@${MKDIR} ${WRKSRC}/third_party/rust-toolchain/bin
 	${LN} -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+
+	# Setup esbuild dependency
+	${LN} -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
 
 	# Setup gperf dependency
 	@${MKDIR} ${WRKSRC}/third_party/gperf/cipd/bin

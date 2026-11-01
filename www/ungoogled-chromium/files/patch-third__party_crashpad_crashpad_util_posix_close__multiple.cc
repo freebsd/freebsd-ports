@@ -1,9 +1,9 @@
---- third_party/crashpad/crashpad/util/posix/close_multiple.cc.orig	2023-12-23 12:33:28 UTC
+--- third_party/crashpad/crashpad/util/posix/close_multiple.cc.orig	2026-10-31 12:09:36 UTC
 +++ third_party/crashpad/crashpad/util/posix/close_multiple.cc
-@@ -73,7 +73,7 @@ void CloseNowOrOnExec(int fd, bool ebadf_ok) {
- // This is an advantage over looping over all possible file descriptors, because
+@@ -75,7 +75,7 @@ void CloseNowOrOnExec(int fd, bool ebadf_ok) {
  // no attempt needs to be made to close file descriptors that are not open.
- bool CloseMultipleNowOrOnExecUsingFDDir(int min_fd, int preserve_fd) {
+ bool CloseMultipleNowOrOnExecUsingFDDir(int min_fd,
+                                         const std::set<int>& preserve_fds) {
 -#if BUILDFLAG(IS_APPLE)
 +#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)
    static constexpr char kFDDir[] = "/dev/fd";

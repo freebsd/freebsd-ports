@@ -1,6 +1,6 @@
---- third_party/unrar/src/crypt.cpp.orig	2026-02-15 10:01:45 UTC
+--- third_party/unrar/src/crypt.cpp.orig	2026-10-31 12:09:36 UTC
 +++ third_party/unrar/src/crypt.cpp
-@@ -123,6 +123,8 @@ void GetRnd(byte *RndBuf,size_t BufSize)
+@@ -126,6 +126,8 @@ void GetRnd(byte *RndBuf,size_t BufSize)
      Success=CryptGenRandom(hProvider, (DWORD)BufSize, RndBuf) != FALSE;
      CryptReleaseContext(hProvider, 0);
    }

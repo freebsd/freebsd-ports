@@ -1,6 +1,6 @@
---- ui/views/widget/widget.h.orig	2026-08-13 07:41:05 UTC
+--- ui/views/widget/widget.h.orig	2026-10-31 12:09:36 UTC
 +++ ui/views/widget/widget.h
-@@ -489,7 +489,7 @@ class VIEWS_EXPORT Widget : public internal::NativeWid
+@@ -493,7 +493,7 @@ class VIEWS_EXPORT Widget : public internal::NativeWid
      bool dont_show_in_taskbar = false;
  #endif  // BUILDFLAG(IS_WIN)
  

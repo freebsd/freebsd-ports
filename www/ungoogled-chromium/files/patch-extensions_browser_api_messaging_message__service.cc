@@ -1,6 +1,6 @@
---- extensions/browser/api/messaging/message_service.cc.orig	2026-08-13 07:41:05 UTC
+--- extensions/browser/api/messaging/message_service.cc.orig	2026-10-31 12:09:36 UTC
 +++ extensions/browser/api/messaging/message_service.cc
-@@ -89,7 +89,7 @@ const char kReceivingEndIncompatibleMessageSerializati
+@@ -92,7 +92,7 @@ const char kReceivingEndIncompatibleMessageSerializati
      "Could not establish connection. Receiving end uses different message "
      "serialization format.";
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -714,7 +714,7 @@ void MessageService::OpenChannelToNativeAppImpl(
+@@ -738,7 +738,7 @@ void MessageService::OpenChannelToNativeAppImpl(
      return;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -17,4 +17,4 @@
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
    bool has_permission = extension->permissions_data()->HasAPIPermission(
        mojom::APIPermissionID::kNativeMessaging);
-   if (!has_permission) {
+ 

@@ -1,11 +1,11 @@
---- components/soda/soda_util.cc.orig	2026-05-09 18:09:27 UTC
+--- components/soda/soda_util.cc.orig	2026-10-31 12:09:36 UTC
 +++ components/soda/soda_util.cc
 @@ -23,7 +23,7 @@
  #include "base/win/windows_version.h"
  #endif
  
--#if BUILDFLAG(IS_LINUX) && defined(ARCH_CPU_X86_FAMILY)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_X86_FAMILY)
+-#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)) && defined(ARCH_CPU_X86_FAMILY)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_X86_FAMILY)
  #include "base/cpu.h"
  #endif
  
@@ -14,16 +14,16 @@
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) 
  bool IsSupportedLinux() {
  #if defined(ARCH_CPU_X86_FAMILY)
    // Check if the CPU has the required instruction set to run the Speech
-@@ -67,7 +67,7 @@ bool IsOnDeviceSpeechRecognitionSupported() {
+@@ -85,7 +85,7 @@ bool IsOnDeviceSpeechRecognitionSupported() {
    // support Gemini Nano.
  #if BUILDFLAG(IS_CHROMEOS)
    return IsSupportedChromeOS();
 -#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) 
    return IsSupportedLinux();
- #elif BUILDFLAG(IS_WIN)
-   return IsSupportedWin();
+ #elif BUILDFLAG(IS_MAC)
+   return IsSupportedMac();

@@ -1,6 +1,6 @@
---- third_party/webrtc/modules/video_coding/codecs/av1/libaom_av1_encoder.cc.orig	2026-03-15 18:32:51 UTC
+--- third_party/webrtc/modules/video_coding/codecs/av1/libaom_av1_encoder.cc.orig	2026-10-31 12:09:36 UTC
 +++ third_party/webrtc/modules/video_coding/codecs/av1/libaom_av1_encoder.cc
-@@ -67,6 +67,10 @@
+@@ -66,6 +66,10 @@
  #define AOM_EFLAG_CALCULATE_PSNR (1 << 3)
  #endif
  

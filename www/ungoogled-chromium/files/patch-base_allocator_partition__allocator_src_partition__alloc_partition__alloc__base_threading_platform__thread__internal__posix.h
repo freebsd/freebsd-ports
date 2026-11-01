@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_internal_posix.h.orig	2026-02-15 10:01:45 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_internal_posix.h.orig	2026-10-31 12:09:36 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_internal_posix.h
-@@ -10,7 +10,7 @@
+@@ -11,7 +11,7 @@
  
  namespace partition_alloc::internal::base::internal {
  

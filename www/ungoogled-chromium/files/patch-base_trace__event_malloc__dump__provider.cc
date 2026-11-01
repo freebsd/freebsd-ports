@@ -1,4 +1,4 @@
---- base/trace_event/malloc_dump_provider.cc.orig	2026-08-13 07:41:05 UTC
+--- base/trace_event/malloc_dump_provider.cc.orig	2026-10-31 12:09:36 UTC
 +++ base/trace_event/malloc_dump_provider.cc
 @@ -29,6 +29,8 @@
  
@@ -9,7 +9,7 @@
  #else
  #include <malloc.h>
  #endif
-@@ -222,7 +224,7 @@ void ReportAppleAllocStats(size_t* total_virtual_size,
+@@ -266,7 +268,7 @@ void ReportAppleAllocStats(size_t* total_virtual_size,
  
  #if (PA_BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && BUILDFLAG(IS_ANDROID)) || \
      (!PA_BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && !BUILDFLAG(IS_WIN) &&    \
@@ -18,8 +18,8 @@
  void ReportMallinfoStats(ProcessMemoryDump* pmd,
                           size_t* total_virtual_size,
                           size_t* resident_size,
-@@ -436,6 +438,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
-                      &allocated_objects_count);
+@@ -534,6 +536,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
+                      nullptr);
  #elif BUILDFLAG(IS_FUCHSIA)
  // TODO(fuchsia): Port, see https://crbug.com/706592.
 +#elif BUILDFLAG(IS_BSD)

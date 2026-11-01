@@ -1,6 +1,6 @@
---- third_party/ffmpeg/BUILD.gn.orig	2026-02-15 10:01:45 UTC
+--- third_party/ffmpeg/BUILD.gn.orig	2026-10-31 12:09:36 UTC
 +++ third_party/ffmpeg/BUILD.gn
-@@ -362,7 +362,6 @@ target(link_target_type, "ffmpeg_internal") {
+@@ -389,7 +389,6 @@ target(link_target_type, "ffmpeg_internal") {
        libs += [
          "m",
          "z",

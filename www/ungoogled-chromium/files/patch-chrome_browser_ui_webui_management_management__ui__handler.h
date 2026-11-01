@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2026-08-13 07:41:05 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.h
-@@ -33,7 +33,7 @@ namespace enterprise_management {
+@@ -38,7 +38,7 @@ namespace enterprise_management {
  class GetUserEligiblePromotionsResponse;
  }  // namespace enterprise_management
  
@@ -9,7 +9,7 @@
  namespace device_signals {
  class UserPermissionService;
  }  // namespace device_signals
-@@ -91,7 +91,7 @@ class ManagementUIHandler : public content::WebUIMessa
+@@ -98,7 +98,7 @@ class ManagementUIHandler : public content::WebUIMessa
    base::ListValue GetManagedWebsitesInfo(Profile* profile) const;
    base::ListValue GetApplicationsInfo(Profile* profile) const;
    virtual policy::PolicyService* GetPolicyService();

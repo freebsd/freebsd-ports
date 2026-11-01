@@ -1,6 +1,6 @@
---- chrome/browser/glic/glic_settings_util_desktop.cc.orig	2026-08-13 07:41:05 UTC
+--- chrome/browser/glic/glic_settings_util_desktop.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/glic/glic_settings_util_desktop.cc
-@@ -108,7 +108,7 @@ std::string_view GetPlatformHelpSuffix() {
+@@ -122,7 +122,7 @@ std::string_view GetPlatformHelpSuffix() {
    return "_mac";
  #elif BUILDFLAG(IS_CHROMEOS)
    return "_chromeos";

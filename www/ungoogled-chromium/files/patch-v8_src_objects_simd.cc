@@ -1,23 +1,11 @@
---- v8/src/objects/simd.cc.orig	2026-08-13 07:41:05 UTC
+--- v8/src/objects/simd.cc.orig	2026-10-31 12:09:36 UTC
 +++ v8/src/objects/simd.cc
-@@ -348,7 +348,7 @@ uintptr_t fast_search_avx(T* array, uintptr_t array_le
- }
- #endif  // ifdef __SSE3__
- 
--#ifdef NEON64
-+#if defined(NEON64) && !defined(V8_TARGET_OS_OPENBSD)
+@@ -353,7 +353,7 @@ uintptr_t fast_search_avx(T* array, uintptr_t array_le
+ // mangling SVE types with the Microsoft C++ ABI since version 21.
+ // Fallback to Neon in cases where SVE is not supported.
+ #if defined(NEON64) && defined(__clang__) && \
+-    (!defined(V8_TARGET_OS_WIN) || __clang_major__ >= 21)
++    (!defined(V8_TARGET_OS_WIN) || __clang_major__ >= 21) && !defined(__OpenBSD__)
+ #define V8_ENABLE_SIMD_SVE 1
  
  template <typename ScalarType>
- struct SVEOperations {
-@@ -638,9 +638,11 @@ template <typename T>
- inline uintptr_t search(T* array, uintptr_t array_len, uintptr_t index,
-                         T search_element) {
- #ifdef NEON64
-+#ifndef V8_TARGET_OS_OPENBSD
-   if (get_vectorization_kind() == SimdKinds::kSVE) {
-     return fast_search_sve(array, array_len, index, search_element);
-   }
-+#endif
- #else
-   if (get_vectorization_kind() == SimdKinds::kAVX2) {
-     return fast_search_avx(array, array_len, index, search_element);

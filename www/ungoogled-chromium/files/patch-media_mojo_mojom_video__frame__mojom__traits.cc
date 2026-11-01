@@ -1,4 +1,4 @@
---- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2026-08-13 07:41:05 UTC
+--- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2026-10-31 12:09:36 UTC
 +++ media/mojo/mojom/video_frame_mojom_traits.cc
 @@ -24,7 +24,7 @@
  #include "ui/gfx/mojom/color_space_mojom_traits.h"
@@ -27,7 +27,7 @@
  // static
  bool StructTraits<
      media::mojom::ColorPlaneLayoutDataView,
-@@ -438,7 +438,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+@@ -451,7 +451,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
  
      bool is_mappable = shared_image_data.is_mappable();
      if (is_mappable) {
@@ -36,7 +36,7 @@
        // TODO(crbug.com/513289253): Avoid CloneGpuMemoryBufferHandle() only for
        // validation.
        const auto video_pixel_format =
-@@ -477,7 +477,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+@@ -495,7 +495,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
      frame = media::VideoFrame::WrapTrackingToken(
          format, *metadata.tracking_token, coded_size, visible_rect,
          natural_size, timestamp);

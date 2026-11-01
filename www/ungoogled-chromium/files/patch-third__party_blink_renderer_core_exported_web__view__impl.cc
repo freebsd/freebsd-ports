@@ -1,6 +1,15 @@
---- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2026-08-13 07:41:05 UTC
+--- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2026-10-31 12:09:36 UTC
 +++ third_party/blink/renderer/core/exported/web_view_impl.cc
-@@ -402,7 +402,7 @@ void RecordPrerenderActivationSignalDelay(const String
+@@ -197,7 +197,7 @@
+ #include "ui/gfx/geometry/skia_conversions.h"
+ 
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ #include "ui/native_theme/native_theme.h"
+ #endif
+ 
+@@ -403,7 +403,7 @@ void RecordPrerenderActivationSignalDelay(const String
  #if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_WIN)
  SkFontHinting RendererPreferencesToSkiaHinting(
      const blink::RendererPreferences& prefs) {
@@ -9,7 +18,16 @@
    if (!prefs.should_antialias_text) {
      // When anti-aliasing is off, GTK maps all non-zero hinting settings to
      // 'Normal' hinting so we do the same. Otherwise, folks who have 'Slight'
-@@ -3631,7 +3631,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
+@@ -463,7 +463,7 @@ void MaybePreloadSystemFonts(Page* page) {
+ }
+ 
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ void UpdateUseOverlayScrollbar(bool use_overlay_scrollbar) {
+   ui::NativeTheme::GetInstanceForWeb()->set_use_overlay_scrollbar(
+       use_overlay_scrollbar);
+@@ -3721,7 +3721,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
        gfx::FontRenderParams::SUBPIXEL_RENDERING_NONE);
    WebFontRenderStyle::SetSubpixelPositioning(
        renderer_preferences_.use_subpixel_positioning);
@@ -18,7 +36,7 @@
    if (!renderer_preferences_.system_font_family_name.empty()) {
      WebFontRenderStyle::SetSystemFontFamily(blink::WebString::FromUtf8(
          renderer_preferences_.system_font_family_name));
-@@ -3781,7 +3781,7 @@ void WebViewImpl::UpdateRendererPreferences(
+@@ -3865,7 +3865,7 @@ void WebViewImpl::UpdateRendererPreferences(
        renderer_preferences_.selection_clipboard_buffer_available);
  #endif  // BUILDFLAG(IS_OZONE)
  
@@ -27,3 +45,12 @@
    GetSettings()->SetMiddleClickPasteAllowed(
        renderer_preferences_.middle_click_paste_allowed);
  #endif  // BUILDFLAG(IS_LINUX)
+@@ -3874,7 +3874,7 @@ void WebViewImpl::UpdateRendererPreferences(
+       renderer_preferences_.explicitly_allowed_network_ports);
+ 
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+   if (!ScrollbarTheme::MockScrollbarsEnabled()) {
+     // DevTools emulation can update Blink's overlay scrollbar setting,
+     // while OS theme updates can update NativeTheme before renderer preferences

@@ -1,7 +1,7 @@
---- chrome/browser/ui/views/profiles/profile_picker_view.cc.orig	2026-08-13 07:41:05 UTC
+--- chrome/browser/ui/views/profiles/profile_picker_view.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/ui/views/profiles/profile_picker_view.cc
-@@ -87,7 +87,7 @@
- #include "chrome/browser/global_keyboard_shortcuts_mac.h"
+@@ -93,7 +93,7 @@
+ #include "chrome/browser/renderer_host/chrome_render_widget_host_view_mac_history_swiping_control.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX)

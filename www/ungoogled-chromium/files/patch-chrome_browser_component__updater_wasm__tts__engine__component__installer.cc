@@ -1,15 +1,15 @@
---- chrome/browser/component_updater/wasm_tts_engine_component_installer.cc.orig	2026-03-15 18:32:51 UTC
+--- chrome/browser/component_updater/wasm_tts_engine_component_installer.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/component_updater/wasm_tts_engine_component_installer.cc
-@@ -14,7 +14,7 @@
- #include "components/prefs/pref_registry_simple.h"
+@@ -25,7 +25,7 @@
  #include "content/public/browser/browser_thread.h"
+ #include "content/public/common/content_switches.h"
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "base/no_destructor.h"
  #include "chrome/browser/accessibility/embedded_a11y_extension_loader.h"
  #include "chrome/common/extensions/extension_constants.h"
-@@ -23,7 +23,7 @@
+@@ -34,7 +34,7 @@
  
  namespace {
  
@@ -18,7 +18,7 @@
  const base::FilePath::CharType kBindingsMainWasmFileName[] =
      FILE_PATH_LITERAL("bindings_main.wasm");
  const base::FilePath::CharType kBindingsMainJsFileName[] =
-@@ -51,7 +51,7 @@ constexpr std::array<uint8_t, 32> kWasmTtsEnginePublic
+@@ -62,7 +62,7 @@ constexpr std::array<uint8_t, 32> kWasmTtsEnginePublic
  
  const char kWasmTtsEngineManifestName[] = "WASM TTS Engine";
  
@@ -27,7 +27,7 @@
  class WasmTTSEngineDirectory {
   public:
    static WasmTTSEngineDirectory* Get() {
-@@ -108,7 +108,7 @@ WasmTtsEngineComponentInstallerPolicy::WasmTtsEngineCo
+@@ -119,7 +119,7 @@ WasmTtsEngineComponentInstallerPolicy::WasmTtsEngineCo
  // static
  void WasmTtsEngineComponentInstallerPolicy::RegisterPrefs(
      PrefRegistrySimple* registry) {
@@ -36,16 +36,16 @@
    registry->RegisterTimePref(prefs::kAccessibilityReadAnythingDateLastOpened,
                               base::Time());
    registry->RegisterBooleanPref(
-@@ -141,7 +141,7 @@ void WasmTtsEngineComponentInstallerPolicy::ComponentR
+@@ -152,7 +152,7 @@ void WasmTtsEngineComponentInstallerPolicy::ComponentR
    VLOG(1) << "Component ready, version " << version.GetString() << " in "
            << install_dir.value();
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (!features::IsWasmTtsEngineAutoInstallDisabled()) {
-     // Instead of installing the component extension as soon as it is ready,
-     // store the install directory, so that the install can be triggered
-@@ -165,7 +165,7 @@ void WasmTtsEngineComponentInstallerPolicy::ComponentR
+   if (base::CommandLine::ForCurrentProcess()->HasSwitch(
+           ::switches::kTestType)) {
+     return;
+@@ -180,7 +180,7 @@ void WasmTtsEngineComponentInstallerPolicy::ComponentR
  // be removed the next time Chrome is restarted.
  void WasmTtsEngineComponentInstallerPolicy::MaybeReinstallTtsEngine(
      const base::FilePath& install_dir) {
@@ -54,7 +54,7 @@
    const base::Time current_time = base::Time::Now();
    const base::Time date_last_opened =
        pref_service_->GetTime(prefs::kAccessibilityReadAnythingDateLastOpened);
-@@ -225,7 +225,7 @@ void WasmTtsEngineComponentInstallerPolicy::MaybeReins
+@@ -240,7 +240,7 @@ void WasmTtsEngineComponentInstallerPolicy::MaybeReins
  bool WasmTtsEngineComponentInstallerPolicy::VerifyInstallation(
      const base::DictValue& /* manifest */,
      const base::FilePath& install_dir) const {
@@ -63,7 +63,7 @@
    return base::PathExists(install_dir.Append(kManifestV3FileName)) &&
           base::PathExists(install_dir.Append(kBindingsMainWasmFileName)) &&
           base::PathExists(install_dir.Append(kBindingsMainJsFileName)) &&
-@@ -291,7 +291,7 @@ void RegisterWasmTtsEngineComponent(ComponentUpdateSer
+@@ -312,7 +312,7 @@ void RegisterWasmTtsEngineComponent(ComponentUpdateSer
  
  void WasmTtsEngineComponentInstallerPolicy::GetWasmTTSEngineDirectory(
      base::OnceCallback<void(const base::FilePath&)> callback) {
@@ -72,7 +72,7 @@
    WasmTTSEngineDirectory* wasm_directory = WasmTTSEngineDirectory::Get();
    wasm_directory->Get(std::move(callback));
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-@@ -299,7 +299,7 @@ void WasmTtsEngineComponentInstallerPolicy::GetWasmTTS
+@@ -320,7 +320,7 @@ void WasmTtsEngineComponentInstallerPolicy::GetWasmTTS
  
  // static
  bool WasmTtsEngineComponentInstallerPolicy::IsWasmTTSEngineDirectorySet() {

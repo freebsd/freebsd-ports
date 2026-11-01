@@ -1,4 +1,4 @@
---- services/screen_ai/screen_ai_service_impl.cc.orig	2026-08-13 07:41:05 UTC
+--- services/screen_ai/screen_ai_service_impl.cc.orig	2026-10-31 12:09:36 UTC
 +++ services/screen_ai/screen_ai_service_impl.cc
 @@ -32,7 +32,7 @@
  #include "ui/accessibility/ax_tree_id.h"
@@ -9,7 +9,7 @@
  #include "partition_alloc/buildflags.h"
  
  #if PA_BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
-@@ -209,7 +209,7 @@ ScreenAIService::ScreenAIService(
+@@ -215,7 +215,7 @@ ScreenAIService::ScreenAIService(
      : factory_receiver_(this, std::move(receiver)),
        ocr_receiver_(this),
        main_content_extraction_receiver_(this) {

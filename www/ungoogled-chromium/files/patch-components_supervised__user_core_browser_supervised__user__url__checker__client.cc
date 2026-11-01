@@ -1,6 +1,6 @@
---- components/supervised_user/core/browser/supervised_user_url_checker_client.cc.orig	2026-08-13 07:41:05 UTC
+--- components/supervised_user/core/browser/supervised_user_url_checker_client.cc.orig	2026-10-31 12:09:36 UTC
 +++ components/supervised_user/core/browser/supervised_user_url_checker_client.cc
-@@ -65,7 +65,7 @@ void OnResponse(
+@@ -66,7 +66,7 @@ void OnResponse(
  
  FetcherConfig GetFetcherConfig(
      bool is_subject_to_family_link_parental_controls) {

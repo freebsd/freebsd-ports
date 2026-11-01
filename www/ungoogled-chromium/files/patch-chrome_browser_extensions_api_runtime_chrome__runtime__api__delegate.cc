@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc.orig	2026-06-05 13:45:06 UTC
+--- chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc
-@@ -368,7 +368,9 @@ bool ChromeRuntimeAPIDelegate::GetPlatformInfo(Platfor
+@@ -343,7 +343,9 @@ bool ChromeRuntimeAPIDelegate::GetPlatformInfo(Platfor
    } else if (os == "linux") {
      info->os = extensions::api::runtime::PlatformOs::kLinux;
    } else if (os == "openbsd") {

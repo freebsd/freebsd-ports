@@ -1,6 +1,6 @@
---- tools/grit/grit/node/base.py.orig	2025-09-10 13:22:16 UTC
+--- tools/grit/grit/node/base.py.orig	2026-10-31 12:09:36 UTC
 +++ tools/grit/grit/node/base.py
-@@ -491,7 +491,8 @@ class Node:
+@@ -511,7 +511,8 @@ class Node:
          value = defs
  
        elif name == 'is_linux':

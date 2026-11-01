@@ -1,4 +1,4 @@
---- ui/views/controls/textfield/textfield.cc.orig	2026-08-13 07:41:05 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2026-10-31 12:09:36 UTC
 +++ ui/views/controls/textfield/textfield.cc
 @@ -90,7 +90,7 @@
  #include "base/win/win_util.h"
@@ -18,7 +18,7 @@
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -826,7 +826,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -840,7 +840,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
      return handled;
    }
  
@@ -27,7 +27,7 @@
    if (!handled) {
      if (auto* linux_ui = ui::LinuxUi::instance()) {
        const auto command =
-@@ -1011,7 +1011,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -1025,7 +1025,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -36,7 +36,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    if (auto* linux_ui = ui::LinuxUi::instance()) {
      if (IsTextEditCommandEnabled(linux_ui->GetTextEditCommandForEvent(
-@@ -2132,7 +2132,7 @@ bool Textfield::ShouldDoLearning() {
+@@ -2157,7 +2157,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }
  
@@ -45,7 +45,7 @@
  // TODO(crbug.com/41452689): Implement this method to support Korean IME
  // reconversion feature on native text fields (e.g. find bar).
  bool Textfield::SetCompositionFromExistingText(
-@@ -2659,7 +2659,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2684,7 +2684,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }
@@ -54,7 +54,7 @@
        // Only erase by line break on Linux and ChromeOS.
        if (shift) {
          return ui::TextEditCommand::DELETE_TO_BEGINNING_OF_LINE;
-@@ -2667,7 +2667,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2692,7 +2692,7 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
        return ui::TextEditCommand::DELETE_WORD_BACKWARD;
      case ui::VKEY_DELETE:

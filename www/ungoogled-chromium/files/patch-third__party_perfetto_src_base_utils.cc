@@ -1,16 +1,20 @@
---- third_party/perfetto/src/base/utils.cc.orig	2026-08-13 07:41:05 UTC
+--- third_party/perfetto/src/base/utils.cc.orig	2026-10-31 12:09:36 UTC
 +++ third_party/perfetto/src/base/utils.cc
-@@ -43,7 +43,8 @@
+@@ -47,7 +47,12 @@
  #include <sys/sysctl.h>
  #endif
  
 -#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) || \
++#if PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
++#include <sys/param.h>
++#endif
++
 +#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) && \
 +    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/prctl.h>
  
-@@ -293,14 +294,22 @@ void Daemonize(std::function<int(pid_t)> parent_cb) {
+@@ -244,14 +249,29 @@ void Daemonize(std::function<int(pid_t)> parent_cb) {
  
  std::string GetCurExecutablePath() {
    std::string self_path;
@@ -25,17 +29,24 @@
    PERFETTO_CHECK(size != -1);
    // readlink does not null terminate.
    self_path = std::string(buf, static_cast<size_t>(size));
-+#elif PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)
++#elif PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
++#if (OpenBSD >= 202610)
++  char execpath[PATH_MAX];
++  int ret = getexecpath(execpath, sizeof(execpath));
++  PERFETTO_CHECK(ret != 0);
++  self_path = std::string(execpath);
++#else
 +  char *buf;
 +  const char *cpath = "/usr/local/chrome/chrome";
 +  if ((buf = getenv("CHROME_EXE_PATH")) != NULL)
 +    self_path = std::string(buf);
 +  else
 +    self_path = std::string(cpath);
++#endif
  #elif PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
    uint32_t size = 0;
    PERFETTO_CHECK(_NSGetExecutablePath(nullptr, &size));
-@@ -364,7 +373,8 @@ void AlignedFree(void* ptr) {
+@@ -315,7 +335,8 @@ void AlignedFree(void* ptr) {
  }
  
  bool IsSyncMemoryTaggingEnabled() {

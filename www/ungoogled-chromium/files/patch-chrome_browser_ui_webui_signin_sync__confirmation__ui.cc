@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/signin/sync_confirmation_ui.cc.orig	2026-05-09 18:09:27 UTC
+--- chrome/browser/ui/webui/signin/sync_confirmation_ui.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/ui/webui/signin/sync_confirmation_ui.cc
-@@ -166,7 +166,7 @@ SyncConfirmationUI::SyncConfirmationUI(content::WebUI*
+@@ -180,7 +180,7 @@ SyncConfirmationUI::SyncConfirmationUI(content::WebUI*
                      IDS_SYNC_LOADING_CONFIRMATION_TITLE);
  
    bool is_first_run_desktop_refresh_enabled = false;

@@ -1,29 +1,11 @@
---- chrome/browser/ui/autofill/chrome_autofill_client.h.orig	2026-08-13 07:41:05 UTC
+--- chrome/browser/ui/autofill/chrome_autofill_client.h.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/ui/autofill/chrome_autofill_client.h
-@@ -125,7 +125,7 @@ class ChromeAutofillClient : public ContentAutofillCli
+@@ -133,7 +133,7 @@ class ChromeAutofillClient : public ContentAutofillCli
    ~ChromeAutofillClient() override;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+-    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+   // Triggers the AtMemory promo bubble.
    void ShowAutofillAtMemoryPromo();
  #endif
- 
-@@ -346,7 +346,7 @@ class ChromeAutofillClient : public ContentAutofillCli
- 
-  protected:
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   class AtMemoryPromoObserver : public content::WebContentsObserver {
-    public:
-     explicit AtMemoryPromoObserver(ChromeAutofillClient* client);
-@@ -449,7 +449,7 @@ class ChromeAutofillClient : public ContentAutofillCli
-   std::unique_ptr<ActorKeyMetricsRecorder> actor_key_metrics_recorder_;
- 
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   AtMemoryPromoObserver at_memory_promo_observer_{this};
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
-         // BUILDFLAG(IS_CHROMEOS)

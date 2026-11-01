@@ -1,6 +1,6 @@
---- ui/accessibility/ax_node.h.orig	2026-08-13 07:41:05 UTC
+--- ui/accessibility/ax_node.h.orig	2026-10-31 12:09:36 UTC
 +++ ui/accessibility/ax_node.h
-@@ -584,7 +584,7 @@ class AX_EXPORT AXNode final {
+@@ -590,7 +590,7 @@ class AX_EXPORT AXNode final {
    const std::vector<raw_ptr<AXNode, VectorExperimental>>* GetExtraMacNodes()
        const;
  

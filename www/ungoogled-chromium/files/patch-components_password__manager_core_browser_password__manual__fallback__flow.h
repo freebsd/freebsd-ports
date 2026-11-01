@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/password_manual_fallback_flow.h.orig	2026-08-13 07:41:05 UTC
+--- components/password_manager/core/browser/password_manual_fallback_flow.h.orig	2026-10-31 12:09:36 UTC
 +++ components/password_manager/core/browser/password_manual_fallback_flow.h
-@@ -20,7 +20,7 @@
+@@ -18,7 +18,7 @@
  #include "components/password_manager/core/browser/ui/saved_passwords_presenter.h"
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
  #include "components/password_manager/core/browser/password_cross_domain_confirmation_popup_controller.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -185,7 +185,7 @@ class PasswordManualFallbackFlow : public autofill::Au
+@@ -186,7 +186,7 @@ class PasswordManualFallbackFlow : public autofill::Au
    std::unique_ptr<device_reauth::DeviceAuthenticator> authenticator_;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

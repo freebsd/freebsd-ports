@@ -1,6 +1,6 @@
---- chrome/utility/services.cc.orig	2026-08-13 07:41:05 UTC
+--- chrome/utility/services.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/utility/services.cc
-@@ -52,7 +52,7 @@
+@@ -59,7 +59,7 @@
  #include "services/proxy_resolver_mac/mac_system_proxy_resolver_impl.h"
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -9,7 +9,7 @@
  #include "chrome/services/system_signals/linux/linux_system_signals_service.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -207,7 +207,7 @@ auto RunMacSystemProxyResolver(
+@@ -225,7 +225,7 @@ auto RunMacSystemProxyResolver(
  }
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -18,7 +18,7 @@
  auto RunSystemSignalsService(
      mojo::PendingReceiver<device_signals::mojom::SystemSignalsService>
          receiver) {
-@@ -468,7 +468,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -523,7 +523,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunWindowsIconReader);
  #endif  // BUILDFLAG(IS_WIN)
  

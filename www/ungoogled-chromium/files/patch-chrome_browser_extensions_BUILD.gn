@@ -1,6 +1,6 @@
---- chrome/browser/extensions/BUILD.gn.orig	2026-08-13 07:41:05 UTC
+--- chrome/browser/extensions/BUILD.gn.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1525,6 +1525,10 @@ source_set("extensions") {
+@@ -1208,6 +1208,10 @@ source_set("extensions") {
        ]
      }
  

@@ -1,6 +1,24 @@
---- chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc.orig	2026-08-13 07:41:05 UTC
+--- chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/ui/views/tabs/dragging/tab_drag_controller.cc
-@@ -217,7 +217,7 @@ BrowserView* GetBrowserViewForContext(const TabDragCon
+@@ -109,7 +109,7 @@
+ #include "ui/wm/core/window_modality_controller.h"  // nogncheck
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.h"
+ #endif
+ 
+@@ -186,7 +186,7 @@ void CloseOrRestoreDeferredEmptyBrowsers(
+     if (weak_browser->GetTabStripModel()->empty()) {
+       weak_browser->GetWindow()->Close();
+     } else {
+-#if !BUILDFLAG(IS_LINUX)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
+       weak_browser->GetWindow()->ShowInactive();
+ #endif
+     }
+@@ -263,7 +263,7 @@ BrowserView* GetBrowserViewForContext(const TabDragCon
  
  void UpdateSystemDnDDragImage(TabDragContext* attached_context,
                                const gfx::ImageSkia& image) {
@@ -9,7 +27,7 @@
    VLOG(1) << __func__ << " image size=" << image.size().ToString();
    aura::Window* root_window =
        attached_context->GetWidget()->GetNativeWindow()->GetRootWindow();
-@@ -426,7 +426,7 @@ TabDragController::Liveness TabDragController::Init(
+@@ -475,7 +475,7 @@ TabDragController::Liveness TabDragController::Init(
    //     synchronous on desktop Linux, so use that.
    // - ChromeOS Ash
    //     Releasing capture on Ash cancels gestures so avoid it.
@@ -18,16 +36,34 @@
    ref->can_release_capture_ = false;
  #endif
    ref->start_point_in_screen_ =
-@@ -1056,7 +1056,7 @@ TabDragController::Liveness TabDragController::DragBro
+@@ -1174,7 +1174,7 @@ TabDragController::Liveness TabDragController::DragBro
        CHECK_EQ(SetCapture(target_context), Liveness::kAlive);
      }
  
 -#if !BUILDFLAG(IS_LINUX)
 +#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
-     // EndMoveLoop is going to snap the window back to its original location.
-     // Hide it so users don't see this. Hiding a window in Linux aura causes
-     // it to lose capture so skip it.
-@@ -2329,7 +2329,7 @@ void TabDragController::CompleteDrag() {
+     const bool is_dragging_all_tabs =
+         source_context_ && drag_data_.num_dragging_tabs() ==
+                                source_context_->GetTabStripModel()->count();
+@@ -1603,7 +1603,7 @@ void TabDragController::AttachToNewContext(
+ }
+ 
+ void TabDragController::HideDeferredEmptyBrowsers() {
+-#if !BUILDFLAG(IS_LINUX)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
+   // `Browser::TabStripEmpty()` normally closes the window, which hides it
+   // immediately. Since the close is deferred until the drag ends, hide the
+   // window here so it doesn't linger on screen tabless for the rest of the
+@@ -1902,7 +1902,7 @@ TabDragController::DetachIntoNewBrowserAndRunMoveLoop(
+       current_state_ = DragState::kWaitingForWindowToShow;
+       VisibilityWaiter waiter(dragged_widget);
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+       // VisibilityWaiter runs a kNestableTasksAllowed loop while the user holds
+       // the pointer button, before the move loop's own suppression scope is
+       // established; suppress data drags for its duration as well.
+@@ -2556,7 +2556,7 @@ void TabDragController::CompleteDrag() {
      }
  
      // If source window was maximized - maximize the new window as well.
@@ -36,12 +72,3 @@
      // Keeping maximized state breaks snap to Grid on Windows when dragging
      // tabs from maximized windows. TODO:(crbug.com/41321838) Explore doing this
      // for other desktop OS's. kMaximizedStateRetainedOnTabDrag in
-@@ -2750,7 +2750,7 @@ TabDragController::Liveness TabDragController::GetLoca
-     }
-   }
- 
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // Exclude windows which are pending deletion via Browser::TabStripEmpty().
-   // These windows can be returned in the Linux Aura port because the browser
-   // window which was used for dragging is not hidden once all of its tabs are

@@ -1,8 +1,8 @@
---- chrome/browser/media/webrtc/desktop_media_picker_controller.cc.orig	2026-08-13 07:41:05 UTC
+--- chrome/browser/media/webrtc/desktop_media_picker_controller.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/media/webrtc/desktop_media_picker_controller.cc
-@@ -99,7 +99,7 @@ bool DesktopMediaPickerController::IsSystemAudioCaptur
-             base::FeatureList::IsEnabled(
-                 media::kMacCatapLoopbackAudioForScreenShare));
+@@ -112,7 +112,7 @@ bool DesktopMediaPickerController::IsSystemAudioCaptur
+   } else {
+     return media::IsMacCatapSystemLoopbackCaptureSupported();
    }
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

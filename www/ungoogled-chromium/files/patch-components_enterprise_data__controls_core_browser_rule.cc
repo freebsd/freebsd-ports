@@ -1,6 +1,6 @@
---- components/enterprise/data_controls/core/browser/rule.cc.orig	2026-08-13 07:41:05 UTC
+--- components/enterprise/data_controls/core/browser/rule.cc.orig	2026-10-31 12:09:36 UTC
 +++ components/enterprise/data_controls/core/browser/rule.cc
-@@ -549,7 +549,7 @@ bool Rule::AddUnsupportedAttributeErrors(
+@@ -611,7 +611,7 @@ bool Rule::AddUnsupportedAttributeErrors(
                },
            },
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
            {
                Restriction::kFileDownload,
                {
-@@ -632,7 +632,7 @@ bool Rule::AddUnsupportedRestrictionErrors(
+@@ -731,7 +731,7 @@ bool Rule::AddUnsupportedRestrictionErrors(
            },
  #endif  // BUILDFLAG(ENTERPRISE_SCREENSHOT_PROTECTION)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

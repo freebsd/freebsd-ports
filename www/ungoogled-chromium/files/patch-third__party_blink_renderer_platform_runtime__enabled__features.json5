@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-08-13 07:41:05 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-10-31 12:09:36 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -449,7 +449,7 @@
+@@ -476,7 +476,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIPromptAPIParams",
@@ -9,7 +9,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -481,7 +481,7 @@
+@@ -508,7 +508,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIProofreaderAPI",
@@ -18,7 +18,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -496,7 +496,7 @@
+@@ -523,7 +523,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIRewriterAPI",
@@ -27,7 +27,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -532,7 +532,7 @@
+@@ -566,7 +566,7 @@
          "default": "",
        },
        origin_trial_feature_name: "AIWriterAPI",
@@ -36,7 +36,7 @@
        origin_trial_allows_third_party: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -688,7 +688,7 @@
+@@ -711,7 +711,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -45,7 +45,7 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1489,7 +1489,7 @@
+@@ -1523,7 +1523,7 @@
        name: "CSPHashesV1",
        base_feature: "none",
        origin_trial_feature_name: "CSPExtendedScriptSrcHashes",
@@ -54,7 +54,7 @@
        status: "experimental",
        public: true,
      },
-@@ -2437,7 +2437,7 @@
+@@ -2497,7 +2497,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -63,16 +63,16 @@
        base_feature: "none",
      },
      {
-@@ -2625,7 +2625,7 @@
+@@ -2716,7 +2716,7 @@
        public: true,
        origin_trial_feature_name: "EmailVerificationProtocol",
        origin_trial_allows_third_party: true,
--      origin_trial_os: ["win", "mac", "linux", "chromeos"],
-+      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
-       status: {
-         "Win": "experimental",
-         "Mac": "experimental",
-@@ -2802,7 +2802,7 @@
+-      origin_trial_os: ["win", "mac", "linux", "chromeos", "android"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "android", "openbsd", "freebsd"],
+       status: "experimental",
+       base_feature: "none",
+       browser_process_read_access: true,
+@@ -2905,7 +2905,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -81,7 +81,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3671,7 +3671,7 @@
+@@ -3835,7 +3835,7 @@
        name: "InstallElement",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "InstallElement",
@@ -90,7 +90,7 @@
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6509,7 +6509,7 @@
+@@ -6705,7 +6705,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -99,7 +99,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -6734,7 +6734,7 @@
+@@ -6905,7 +6905,7 @@
        name: "WebAppInstallation",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "WebAppInstallation",
@@ -108,7 +108,7 @@
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6748,7 +6748,7 @@
+@@ -6919,7 +6919,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",

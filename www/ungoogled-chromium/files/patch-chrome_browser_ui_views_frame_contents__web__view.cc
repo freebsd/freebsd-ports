@@ -1,7 +1,7 @@
---- chrome/browser/ui/views/frame/contents_web_view.cc.orig	2026-08-13 07:41:05 UTC
+--- chrome/browser/ui/views/frame/contents_web_view.cc.orig	2026-10-31 12:09:36 UTC
 +++ chrome/browser/ui/views/frame/contents_web_view.cc
-@@ -171,7 +171,7 @@ void ContentsWebView::SetWebContents(content::WebConte
-   }
+@@ -170,7 +170,7 @@ void ContentsWebView::SetWebContents(content::WebConte
+       .Then(&web_modal::WebContentsModalDialogManager::UpdateDialogHost);
  }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
