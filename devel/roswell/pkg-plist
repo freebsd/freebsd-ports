@@ -26,6 +26,7 @@ bin/ros
 %%ETCDIR%%/dist-versions.lisp
 %%ETCDIR%%/dist.ros
 %%ETCDIR%%/dump-ccl.lisp
+%%ETCDIR%%/dump-clasp.lisp
 %%ETCDIR%%/dump-clisp.lisp
 %%ETCDIR%%/dump-cmucl.lisp
 %%ETCDIR%%/dump-ecl.lisp
