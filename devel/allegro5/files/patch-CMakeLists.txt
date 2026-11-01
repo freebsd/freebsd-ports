@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2024-12-29 03:52:10 UTC
+--- CMakeLists.txt.orig	2024-05-17 09:29:04 UTC
 +++ CMakeLists.txt
+@@ -5,7 +5,7 @@
+ # - some documentation targets still missing
+ # - installing documentation
+ #
+-cmake_minimum_required(VERSION 3.0)
++cmake_minimum_required(VERSION 3.5)
+ if(COMMAND cmake_policy)
+     cmake_policy(SET CMP0003 NEW)
+     if(POLICY CMP0026)
 @@ -927,6 +927,8 @@ set(PLATFORM_LIBS)
  # Libraries that we always need to link against on this platform.
  set(PLATFORM_LIBS)
