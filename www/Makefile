@@ -537,6 +537,7 @@
     SUBDIR += nginx-module-accept-language
     SUBDIR += nginx-module-ajp
     SUBDIR += nginx-module-array-var
+    SUBDIR += nginx-module-auth-digest
     SUBDIR += nginx-module-auth-ldap
     SUBDIR += nginx-module-auth-pam
     SUBDIR += nginx-module-aws-auth

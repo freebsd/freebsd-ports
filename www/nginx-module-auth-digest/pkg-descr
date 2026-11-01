@@ -1,0 +1,6 @@
+The auth_digest module supplements nginx's built-in basic authentication with
+support for RFC 2617 digest authentication, so a password is never sent over
+the wire in the clear.
+
+This port only installs the module sources.  The module itself is built by the
+nginx ports when their HTTP_AUTH_DIGEST option is enabled.
