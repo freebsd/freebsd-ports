@@ -5784,3 +5784,4 @@ net/java-beepcore||2026-10-31|Has expired: Unmaintained, unused, upstream is dor
 devel/grantlee5||2026-10-31|Has expired: Depends on deprecated Qt5, has no consumers
 devel/qconf||2026-10-31|Has expired: Not ported to Qt6, has no consumers
 devel/tabby||2026-11-01|Has expired: Depends on expiring lang/rust188
+lang/rust188||2026-11-01|Has expired: Old version with several vulnerabilities
