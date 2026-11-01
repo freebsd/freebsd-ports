@@ -1,5 +1,6 @@
 PORTNAME=	manifold
 DISTVERSION=	3.5.4
+PORTREVISION=	1
 CATEGORIES=	math cad graphics
 MASTER_SITES=	https://github.com/elalish/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -33,13 +34,13 @@ EXTRACT_AFTER_ARGS=	--include ${PORTNAME}-${DISTVERSION}/samples \
 PLIST_SUB+=		VERS=${DISTVERSION}
 
 OPTIONS_DEFINE=		CBIND CROSS PARA PYBIND TEST_EXPORT
-OPTIONS_DEFAULT=	CBIND CROSS PARA
+OPTIONS_DEFAULT=	CBIND CROSS PARA PYBIND
 OPTIONS_SUB=		yes
 
 CBIND_DESC=		Enable C FFI binding
 CROSS_DESC=		Enable CrossSection for 2D support
 PARA_DESC=		Enable multi-thread parallelization
-PYBIND_DESC=		Enable python binding
+PYBIND_DESC=		Enable manifold3d python binding
 TEST_EXPORT_DESC=	Enable export of models from tests
 
 CBIND_IMPLIES=		CROSS
