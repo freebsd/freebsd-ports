@@ -37,6 +37,7 @@ libdata/pkgconfig/bosd.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/airplane.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/audio.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auto-rotate.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bosd.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bsd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/glyph.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lid.py
@@ -46,6 +47,7 @@ libdata/pkgconfig/bosd.pc
 share/man/man1/bosd.1.gz
 share/man/man1/bosd-start.1.gz
 share/man/man3/bosd.3.gz
+share/man/man5/bosd.conf.5.gz
 %%TESTS%%%%DATADIR%%/tests/run
 %%TESTS%%%%DATADIR%%/tests/bar_01.sh
 %%TESTS%%%%DATADIR%%/tests/bar_02_alpha.sh
