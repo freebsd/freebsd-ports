@@ -1,5 +1,5 @@
 PORTNAME=	libspectrum
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	emulators devel
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -9,8 +9,7 @@ WWW=		https://fuse-emulator.sourceforge.net/libspectrum.php
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
-		libgcrypt.so:security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
