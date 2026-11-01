@@ -1,7 +1,6 @@
 PORTNAME=	opencode
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
-PORTREVISION=	1
+DISTVERSION=	2.2.5
 CATEGORIES=	misc
 
 # Upstream ships no FreeBSD builds of OpenTUI's Zig core, fff's Rust cdylib, the
@@ -13,15 +12,13 @@ CATEGORIES=	misc
 # OPENTUI_VERSION and FFF_VERSION must match the pinned @opentui/core and
 # @ff-labs/fff-bun releases (the root package.json catalog and
 # packages/core/package.json) or the native FFI ABI breaks.
-OPENTUI_VERSION=	0.6.6
+OPENTUI_VERSION=	0.8.0
 FFF_VERSION=	0.10.5
 #
-# opencode-pty is the persistent terminal daemon the client spawns.  Its version
-# must match the pinned @opencode-ai/pty release and speak the same wire protocol
-# as the bundled client (packages/cli/package.json, packages/core/package.json),
-# and GHOSTTY_REVISION must match its ghostty-revision file, or the client
-# rejects the daemon as a protocol mismatch.
-OPENCODE_PTY_VERSION=	0.3.1
+# opencode-pty is the persistent terminal daemon the client spawns.  It is built
+# from the same source tree as the client (packages/process-daemon), and
+# GHOSTTY_REVISION must match its ghostty-revision file, or the client rejects
+# the daemon as a protocol mismatch.
 GHOSTTY_REVISION=	ab0b9da9e88fcb4b0533a1854e84628f663930af
 
 MASTER_SITES=	https://registry.npmjs.org/@ff-labs/fff-bun/-/:fffbun
@@ -34,7 +31,6 @@ GH_PROJECT=	opencode
 GH_TAGNAME=	v${DISTVERSION}
 GH_TUPLE=	anomalyco:opentui:v${OPENTUI_VERSION}:opentui \
 		dmtrKovalenko:fff:v${FFF_VERSION}:fff \
-		anomalyco:opencode-pty:v${OPENCODE_PTY_VERSION}:opencodepty \
 		ghostty-org:ghostty:${GHOSTTY_REVISION}:ghostty
 
 MAINTAINER=	samm@FreeBSD.org
@@ -59,7 +55,9 @@ CARGO_TEST=	no
 # rolldown has no native binding and its WASI fallback SIGSEGVs under node26.
 BUILD_DEPENDS=	${LOCALBASE}/bin/bun:lang/bun \
 		${LOCALBASE}/bin/zig:lang/zig \
-		${LOCALBASE}/bin/node:www/node24
+		${LOCALBASE}/bin/node:www/node24 \
+		npm-node24>0:www/npm-node24 \
+		gmake:devel/gmake
 # post-fetch warms the offline bun and Ghostty Zig caches, so both are needed.
 # Zig 0.16 hardcodes /etc/ssl/cert.pem on FreeBSD; ca_root_nss provides it.
 FETCH_DEPENDS=	${LOCALBASE}/bin/bun:lang/bun \
@@ -73,7 +71,7 @@ RUN_DEPENDS=	rg:textproc/ripgrep
 
 OPENTUI_WRKSRC=	${WRKDIR}/opentui-${OPENTUI_VERSION}
 FFF_WRKSRC=	${WRKDIR}/fff-${FFF_VERSION}
-OPENCODE_PTY_WRKSRC=	${WRKDIR}/opencode-pty-${OPENCODE_PTY_VERSION}
+OPENCODE_PTY_WRKSRC=	${WRKSRC}/packages/process-daemon
 GHOSTTY_WRKSRC=		${WRKDIR}/ghostty-${GHOSTTY_REVISION}
 
 # Build only the fff C-ABI cdylib (not the nvim/python/mcp crates).
@@ -82,6 +80,8 @@ FFF_SO=			${CARGO_TARGET_DIR}/release/libfff_c.so
 
 BUN=			${LOCALBASE}/bin/bun
 ZIG=			${LOCALBASE}/bin/zig
+NODE=			${LOCALBASE}/bin/node
+NODE_GYP=		${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
 BUN_INSTALL_CACHE_DIR=	${WRKDIR}/bun-cache
 WEBUI_WASM_DIR=	${WRKDIR}/gen-webui
 WEBUI_WASM_CACHE=	${DISTDIR}/${DIST_SUBDIR}/opencode-webui-wasm-${DISTVERSION}.tar.gz
@@ -89,7 +89,8 @@ BUN_CACHE_TARBALL=	${DISTDIR}/${DIST_SUBDIR}/opencode-bun-cache-${DISTVERSION}.t
 ZIG_PTY_CACHE_DIR=	${WRKDIR}/zig-pty-cache
 ZIG_PTY_CACHE=		${DISTDIR}/${DIST_SUBDIR}/opencode-pty-zig-cache-${DISTVERSION}.tar.gz
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		lib/opencode/watcher.node
 
 .include <bsd.port.pre.mk>
 
@@ -149,25 +150,23 @@ post-extract:
 	@${MKDIR} ${ZIG_PTY_CACHE_DIR}
 	@${TAR} xf ${ZIG_PTY_CACHE} -C ${ZIG_PTY_CACHE_DIR}
 
-# OpenTUI, opencode-pty and Ghostty are extra source trees, so their patches are
-# applied by hand.
+# OpenTUI and Ghostty are extra source trees, and opencode-pty lives in
+# packages/process-daemon, so their patches are applied by hand.
 post-patch:
 	@${PATCH} -d ${OPENTUI_WRKSRC} -p0 --batch < ${FILESDIR}/opentui-build.zig.patch
 	@${PATCH} -d ${OPENTUI_WRKSRC} -p0 --batch < ${FILESDIR}/opentui-ghostty-vt-freebsd.patch
 	@${PATCH} -d ${OPENCODE_PTY_WRKSRC} -p1 --batch < ${FILESDIR}/opencode-pty-build.rs.patch
 	@${PATCH} -d ${GHOSTTY_WRKSRC} -p1 --batch < ${FILESDIR}/ghostty-zig-0.16-std.patch
 
-# Effect 4.0.1 rejects 64-bit st_dev values, which ZFS on FreeBSD reports.
-# Upstream fixed this in Effect 4.0.5, but OpenCode still pins 4.0.1.
 do-build:
 	@${ECHO_MSG} "===> Installing OpenCode dependencies (offline)"
 	@cd ${WRKSRC} && ${SETENV} BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR} \
 		${BUN} install --frozen-lockfile
-	@${ECHO_MSG} "===> Allowing 64-bit ZFS device IDs in @effect/platform-node-shared"
-	@for f in ${WRKSRC}/node_modules/.bun/@effect+platform-node-shared@*/node_modules/@effect/platform-node-shared/dist/NodeFileSystem.js \
-		${WRKSRC}/node_modules/@effect/platform-node-shared/dist/NodeFileSystem.js; do \
-		[ -f "$${f}" ] || continue; \
-		${SED} -i '' 's/dev: bigintToNumber(stat.dev, "dev")/dev: Number(stat.dev)/' "$${f}"; \
+	@${ECHO_MSG} "===> Building the @parcel/watcher kqueue backend"
+	@for d in ${WRKSRC}/node_modules/.bun/@parcel+watcher@*/node_modules/@parcel/watcher; do \
+		[ -d "$${d}" ] || continue; \
+		(cd "$${d}" && ${SETENV} HOME=${WRKDIR} ${MAKE_ENV} \
+			${NODE} ${NODE_GYP} rebuild --nodedir=${LOCALBASE} --python=${PYTHON_CMD}); \
 	done
 	@${ECHO_MSG} "===> Installing @ff-labs/fff-bun (upstream ships no FreeBSD package)"
 	@${MKDIR} ${WRKSRC}/node_modules/@ff-labs
@@ -212,10 +211,10 @@ do-build:
 	@cd ${WRKSRC}/packages/cli && ${SETENV} \
 		HOME=${WRKDIR} \
 		OPENCODE_VERSION=${DISTVERSION} \
+		OPENCODE_TARGET=freebsd-${OPENTUI_ARCH} \
 		BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR} \
 		OPENCODE_PTY_BIN=${OPENCODE_PTY_BIN} \
 		${BUN} run script/build.ts \
-			--target=opencode-freebsd-${OPENTUI_ARCH} \
 			--skip-install \
 			--outdir=dist
 	@test -x ${OPENCODE_BIN} || (${ECHO_MSG} "Missing ${OPENCODE_BIN}"; ${FALSE})
@@ -225,6 +224,11 @@ do-install:
 	# it (the default ${INSTALL_PROGRAM}) discards that payload, leaving a binary
 	# that runs as plain bun, so install it unstripped.
 	${INSTALL} -m 555 ${OPENCODE_BIN} ${STAGEDIR}${PREFIX}/bin/opencode
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/opencode
+	@for f in ${WRKSRC}/node_modules/.bun/@parcel+watcher@*/node_modules/@parcel/watcher/build/Release/watcher.node; do \
+		[ -f "$${f}" ] || continue; \
+		${INSTALL} -m 555 "$${f}" ${STAGEDIR}${PREFIX}/lib/opencode/watcher.node; \
+	done
 
 do-test:
 	@${ECHO_MSG} "==> Running OpenCode smoke test..."
@@ -239,5 +243,8 @@ do-test:
 		${ECHO_MSG} "ERROR: the opencode-pty terminal daemon is not embedded in the binary"; \
 		${FALSE}; \
 	fi
+	@${ECHO_MSG} "==> Checking the @parcel/watcher native binding is installed..."
+	@test -f ${STAGEDIR}${PREFIX}/lib/opencode/watcher.node || \
+		(${ECHO_MSG} "ERROR: watcher.node is missing"; ${FALSE})
 
 .include <bsd.port.post.mk>

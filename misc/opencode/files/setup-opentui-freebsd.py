@@ -15,7 +15,6 @@ Where <arch> is "x64" or "arm64" (the Node/Bun arch tag), and
 containing node_modules/).
 """
 import os
-import re
 import shutil
 import sys
 
@@ -43,13 +42,6 @@ BRANCH = """  if (process.platform === "freebsd") {
     }
   }
 """
-
-# Upstream disables the native renderer thread on Linux because it is
-# unreliable; on FreeBSD it deadlocks (the TUI freezes after the first render),
-# so force it off there too.  The bundle keeps the guard and the assignment on
-# separate lines, so match across the whitespace between them.
-RENDERER_THREAD_RE = re.compile(r'(if \(process\.platform === "linux")\)(\s*config\.useThread = false)')
-RENDERER_THREAD_NEW = r'\1 || process.platform === "freebsd")\2'
 
 INDEX_BUN = """const module = await import("./libopentui.so", { with: { type: "file" } })
 
@@ -111,11 +103,6 @@ def patch_bundles(core: str) -> None:
         if 'process.platform === "freebsd"' not in src and THROW in src:
             src = src.replace(THROW, BRANCH + THROW, 1)
             changed = True
-        # Disable the native renderer thread on FreeBSD (see RENDERER_THREAD_RE).
-        out, n = RENDERER_THREAD_RE.subn(RENDERER_THREAD_NEW, src)
-        if n:
-            src = out
-            changed = True
         if changed:
             open(path, "w", encoding="utf-8").write(src)
             print(f"  - patched {name}")
@@ -137,7 +124,7 @@ def create_platform_package(root: str, lib: str, version: str, arch: str) -> str
 def main() -> int:
     root = sys.argv[1]
     lib = sys.argv[2]
-    version = sys.argv[3] if len(sys.argv) > 3 else "0.6.6"
+    version = sys.argv[3] if len(sys.argv) > 3 else "0.8.0"
     arch = sys.argv[4] if len(sys.argv) > 4 else "x64"
     if arch not in ("x64", "arm64"):
         raise SystemExit(f"unsupported arch tag: {arch}")

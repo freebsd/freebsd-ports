@@ -8,7 +8,7 @@ binary passed via OPENCODE_PTY_BIN is embedded into the executable.
 --- packages/cli/script/opencode-pty.ts.orig
 +++ packages/cli/script/opencode-pty.ts
 @@ -19,7 +19,13 @@
- const pty = createRequire(core.resolve("@opencode-ai/pty/package.json"))
+ const pty = createRequire(core.resolve("@opencode/pty/package.json"))
  
  export async function resolveOpencodePty(target: Target): Promise<OpencodePtyAsset | undefined> {
 -  if (target.platform !== "darwin" && target.platform !== "linux" && target.platform !== "win32") return undefined
