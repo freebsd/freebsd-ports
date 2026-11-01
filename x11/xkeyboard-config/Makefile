@@ -1,19 +1,19 @@
 PORTNAME=	xkeyboard-config
-DISTVERSION=	2.48
+DISTVERSION=	2.49
 CATEGORIES=	x11
-MASTER_SITES=	XORG/individual/data/${PORTNAME}
+MASTER_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/archive/${PORTNAME}-${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Keyboard Configuration Database
-WWW=		https://freedesktop.org/wiki/Software/XKeyboardConfig/
+WWW=		https://xkeyboard-config.freedesktop.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	gawk:lang/gawk
 
-USES=		meson gnome localbase pathfix perl5 python:build \
-		tar:xz
+USES=		gnome localbase meson pathfix perl5 python:build tar:bz2
 
 NO_ARCH=	yes
 USE_GNOME=	libxslt:build
