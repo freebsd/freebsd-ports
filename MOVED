@@ -5783,3 +5783,4 @@ textproc/xom||2026-10-31|Has expired: Unmaintained, unused in the ports tree, on
 net/java-beepcore||2026-10-31|Has expired: Unmaintained, unused, upstream is dormant for 10+ years. The repo is still in CVS format
 devel/grantlee5||2026-10-31|Has expired: Depends on deprecated Qt5, has no consumers
 devel/qconf||2026-10-31|Has expired: Not ported to Qt6, has no consumers
+devel/tabby||2026-11-01|Has expired: Depends on expiring lang/rust188
