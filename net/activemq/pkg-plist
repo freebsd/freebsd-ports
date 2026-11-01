@@ -5,6 +5,7 @@ bin/activemq-diag
 @sample %%ETCDIR%%/activemq.xml.sample
 @sample %%ETCDIR%%/broker.ks.sample
 @sample %%ETCDIR%%/broker.ts.sample
+@sample %%ETCDIR%%/clientids.properties.sample
 @sample %%ETCDIR%%/credentials-enc.properties.sample
 @sample %%ETCDIR%%/credentials.properties.sample
 @sample %%ETCDIR%%/groups.properties.sample
