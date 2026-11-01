@@ -34,7 +34,7 @@ LIB_DEPENDS=	libcrack.so:security/cracklib \
 
 USES=		autoreconf cpe gmake gssapi:mit ldap libtool localbase:ldflags \
 		perl5 pkgconfig python:3.12+ shebangfix ssl tar:bzip2
-CPE_VENDOR=	fedoraproject
+CPE_VENDOR=	redhat
 CPE_PRODUCT=	389_directory_server
 
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/dirsrv
