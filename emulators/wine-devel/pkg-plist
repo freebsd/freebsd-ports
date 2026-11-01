@@ -2182,6 +2182,7 @@ lib/wine/i386-windows/mfplat.dll
 lib/wine/i386-windows/mfplay.dll
 lib/wine/i386-windows/mfreadwrite.dll
 lib/wine/i386-windows/mfsrcsnk.dll
+lib/wine/i386-windows/mfwmaaec.dll
 lib/wine/i386-windows/mgmtapi.dll
 lib/wine/i386-windows/midimap.dll
 lib/wine/i386-windows/mlang.dll
@@ -3523,6 +3524,7 @@ lib/wine/%%WINEARCH%%-windows/mfplat.dll
 lib/wine/%%WINEARCH%%-windows/mfplay.dll
 lib/wine/%%WINEARCH%%-windows/mfreadwrite.dll
 lib/wine/%%WINEARCH%%-windows/mfsrcsnk.dll
+lib/wine/%%WINEARCH%%-windows/mfwmaaec.dll
 lib/wine/%%WINEARCH%%-windows/mgmtapi.dll
 lib/wine/%%WINEARCH%%-windows/midimap.dll
 lib/wine/%%WINEARCH%%-windows/mlang.dll
