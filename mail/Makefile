@@ -535,6 +535,7 @@
     SUBDIR += py-mailnag
     SUBDIR += py-mailsuite
     SUBDIR += py-managesieve3
+    SUBDIR += py-minismtpd
     SUBDIR += py-notmuch
     SUBDIR += py-notmuch2
     SUBDIR += py-offlineimap
