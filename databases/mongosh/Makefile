@@ -1,7 +1,6 @@
 PORTNAME=	mongosh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.3
-PORTREVISION=	1
+DISTVERSION=	2.14.0
 CATEGORIES=	databases shells net
 MASTER_SITES=	https://registry.npmjs.org/mongodb-client-encryption/-/:mongocrypt \
 		https://registry.npmjs.org/kerberos/-/:kerberos \
@@ -23,13 +22,14 @@ WWW=		https://github.com/mongodb-js/mongosh/
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 aarch64
+ONLY_FOR_ARCHS_REASON=	nx node_module error: Unsupported architecture on FreeBSD: ${ARCH}
 # issue created upstream https://github.com/nrwl/nx/issues/29257
 
 PATCH_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	objdump:devel/binutils \
 		bash>0:shells/bash \
-		git>0:devel/git
+		git:devel/git@tiny
 LIB_DEPENDS=	libada.so:devel/libada \
 		libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
@@ -66,6 +66,9 @@ MAKE_ENV=	${CUSTOM_ENV} \
 		NODE_JS_VERSION=file://${DISTDIR}/${DIST_SUBDIR}/${NODEJS_TARBALL} \
 		BOXEDNODE_CONFIGURE_ARGS="--prefix=${PREFIX:S|^${DESTDIR}||},--shared-ada,--shared-brotli,--shared-cares,--shared-gtest,--shared-hdr-histogram,--shared-http-parser,--shared-libuv,--shared-merve,--shared-nbytes,--shared-nghttp2,--shared-nghttp3,--shared-ngtcp2,--shared-simdjson,--shared-sqlite,--shared-uvwasi,--shared-uvwasi-includes=${LOCALBASE}/include,--shared-zlib,--shared-zstd,--shared-openssl,--openssl-use-def-ca-store,--with-intl=system-icu,--without-corepack,--without-npm" \
 		BOXEDNODE_MAKE_ARGS="V=0" \
+		RUST_BACKTRACE=full \
+		CI=true \
+		NODE_OPTIONS=--max-old-space-size=8192 \
 		CC="${CCACHE_BIN} ${CC}" \
 		CFLAGS="${CFLAGS}" \
 		CXX="${CCACHE_BIN} ${CXX}" \
@@ -74,20 +77,18 @@ MAKE_ENV=	${CUSTOM_ENV} \
 		LINK="${CXX}"
 # CXXFLAGS+=	-DNODE_API_EXPERIMENTAL \
 # 		-DNODE_API_EXPERIMENTAL_NOGC_ENV_OPT_OUT
-EXTRACT_AFTER_ARGS=	--exclude scripts/nodejs-patches/008-windows-tcp-connect-crash-fix-node-62561.patch \
-			--no-same-owner --no-same-permissions
+EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions
 REINPLACE_ARGS=	-i ''
 
-MONGO_CRYPT_VER=7.0.0
+MONGO_CRYPT_VER=7.2.0
 KERBEROS_VER=	7.0.0
 OSDNSNATIVE_VER=2.0.1
-MODULES=	\
-	mongodb-client-encryption ${MONGO_CRYPT_VER} \
-	kerberos ${KERBEROS_VER} \
-	os-dns-native ${OSDNSNATIVE_VER}
+MODULES=	mongodb-client-encryption ${MONGO_CRYPT_VER} \
+		kerberos ${KERBEROS_VER} \
+		os-dns-native ${OSDNSNATIVE_VER}
 
 NODE_MODULES_DIR=	${WRKSRC}/node_modules
-BOXEDNODE_DIR=		${WRKSRC}/packages/build/node_modules/boxednode
+BOXEDNODE_DIR=		${NODE_MODULES_DIR}/boxednode
 NODE_MODULES_TARBALL=	${PORTNAME}-${DISTVERSIONFULL}-${ARCH}-node-modules.tar.xz
 NPM_CACHE_DIR=		${TMPDIR}/.npm
 NODEJS_TARBALL=		node-v${NODEJS_PORTVERSION}.tar.gz
@@ -106,20 +107,12 @@ post-extract:
 .if !exists(${NODE_MODULES_DIR})
 	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${NODE_MODULES_TARBALL} -C ${WRKSRC}
 	${MKDIR} -v ${WRKDIR}/boxednode/mongosh
-	${REINPLACE_CMD} -e "s|'make'|'${GMAKE}'|g" \
-		-e "s/if (inputIsFileUrl)/if (false)/g" \
-		-e 's/(await nv_1.default(range)).pop()/{"version":"${NODEJS_PORTVERSION}"}/g' \
-		-e 's/path_1.default.join(dir, tarballName)/url_1.fileURLToPath(range)/g' \
-		-e "s|\$${releaseBaseUrl}/SHASUMS256.txt|${DISTDIR}/${DIST_SUBDIR}/${NODEJS_SHAFILE}|g" \
-		-e 's/await node_fetch_1.default(shaSumsUrl)/{"ok":1}/g' \
-		-e "s/shaSums.text()/fs_1.promises.readFile(shaSumsUrl, 'utf8')/g" \
-		-e "s/catch (_a) { }/catch (_a) { console.error(_a) }/g" \
-		-e "s|os_1.default.tmpdir()|'${WRKDIR}'|g" \
+	${REINPLACE_CMD} -e "s|%%GMAKE%%|${GMAKE}|g" \
+		-e "s|%%NODEJS_PORTVERSION%%|${NODEJS_PORTVERSION}|g" \
+		-e "s|%%NODEJS_SHAFILE%%|${DISTDIR}/${DIST_SUBDIR}/${NODEJS_SHAFILE}|g" \
+		-e "s|%%WRKDIR%%|${WRKDIR}|g" \
 		${BOXEDNODE_DIR}/lib/index.js
 	${GREP} -A36 "let version;" ${BOXEDNODE_DIR}/lib/index.js
-	${REINPLACE_CMD} -e "s|'install', '--ignore-scripts', '--production'|'--version'|g" \
-		${BOXEDNODE_DIR}/lib/native-addons.js
-	${GREP} "version" ${BOXEDNODE_DIR}/lib/native-addons.js
 .endif
 
 post-patch:
@@ -141,6 +134,16 @@ do-build:
 .endfor
 	${REINPLACE_CMD} -E 's/"version": ".*"/"version": "${DISTVERSION}"/g' \
 		${WRKSRC}/packages/cli-repl/package.json
+#	Race condition randomly happening with Lerna/Nx that I don't have the time to dig in
+#	thread 'tui-logger::move_events' panicked at ./parking_lot_core-0.9.12/src/thread_parker/wasm.rs:26:9:
+#	Parking not supported on this platform
+#	cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/npm run compile-cli || \
+#		(cat ${WRKSRC}/lerna-debug.log && false)
+.for dir in errors history js-multiline-to-singleline types async-rewriter2 i18n \
+logging shell-bson arg-parser service-provider-core service-provider-node-driver \
+shell-api autocomplete shell-evaluator snippet-manager editor cli-repl
+	cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/npm run compile --workspace=@mongosh/${dir}
+.endfor
 	cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/npm run compile-exec || \
 		(cat ${WRKSRC}/lerna-debug.log && false)
 
@@ -178,16 +181,26 @@ node-modules-archive: patch
 	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${module}-${ver}.tgz \
 		-C ${NODE_MODULES_DIR}/${module} --strip-components 1
 .endfor
-	cd ${WRKSRC} && ${LOCALBASE}/bin/npx cross-env ${CONFIGURE_ENV} \
+	cd ${WRKSRC} && ${LOCALBASE}/bin/npx --yes cross-env ${CONFIGURE_ENV} \
 		${LOCALBASE}/bin/npm clean-install \
 			--cache ${NPM_CACHE_DIR} --no-audit --no-fund
 
+	# cpu-features 0.0.10 bundles an old google/cpu_features revision with no
+	# FreeBSD/aarch64 backend, so its addon has an undefined GetAarch64Info and
+	# aborts the dynamic loader. It is only an optional ssh2 accelerator (ssh2
+	# falls back to its JS implementation), so drop it on non-amd64.
+	if [ "${ARCH}" != amd64 ]; then ${RM} -r ${NODE_MODULES_DIR}/cpu-features; fi
+
+	${REINPLACE_CMD} "s|'install', '--ignore-scripts', '--production'|'--version'|g" \
+		${BOXEDNODE_DIR}/lib/native-addons.js
+	${GREP} "version" ${BOXEDNODE_DIR}/lib/native-addons.js
 	for f in ${FILESDIR}/node-modules-patches/*; do ${PATCH} -Nd ${WRKSRC} < $$f; done
 	${FIND} ${WRKSRC} -name "*.orig" -or -name "*.bak" -delete
 
 	cd ${WRKSRC} && ${TAR} cf - node_modules packages/*/node_modules | \
-		${LOCALBASE}/bin/pv -s $$(/usr/bin/du -sAk node_modules | \
-		${AWK} '{print $$1}')000 | ${XZ_CMD} > ${TMPDIR}/${NODE_MODULES_TARBALL}
+		${LOCALBASE}/bin/pv -s $$(/usr/bin/du -sAk node_modules packages/*/node_modules | \
+		${AWK} '{sum += $$1} END {print sum}')K | \
+		${XZ_CMD} > ${TMPDIR}/${NODE_MODULES_TARBALL}
 
 .include <bsd.port.pre.mk>
 
