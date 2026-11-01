@@ -38,6 +38,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		clap_complete-4.5.66 \
 		clap_derive-4.5.45 \
 		clap_lex-0.7.5 \
+		clap_mangen-0.2.33 \
 		color-eyre-0.6.5 \
 		color-spantrace-0.3.0 \
 		colorchoice-1.0.4 \
@@ -63,7 +64,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		derive_more-impl-2.1.1 \
 		derive_setters-0.1.9 \
 		digest-0.10.7 \
-		dirs-6.0.0 \
+		dirs-7.0.0 \
 		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
 		dmidecode-1.0.1 \
@@ -83,16 +84,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		fnv-1.0.7 \
 		foldhash-0.2.0 \
 		form_urlencoded-1.2.1 \
-		framework_lib-0.6.5 \
-		futures-0.3.33 \
-		futures-channel-0.3.33 \
-		futures-core-0.3.33 \
-		futures-executor-0.3.33 \
-		futures-io-0.3.33 \
-		futures-macro-0.3.33 \
-		futures-sink-0.3.33 \
-		futures-task-0.3.33 \
-		futures-util-0.3.33 \
+		framework_lib-0.6.6 \
+		futures-0.3.34 \
+		futures-channel-0.3.34 \
+		futures-core-0.3.34 \
+		futures-executor-0.3.34 \
+		futures-io-0.3.34 \
+		futures-macro-0.3.34 \
+		futures-sink-0.3.34 \
+		futures-task-0.3.34 \
+		futures-util-0.3.34 \
 		generic-array-0.14.7 \
 		getrandom-0.2.16 \
 		getrandom-0.3.3 \
@@ -215,6 +216,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
+		roff-1.1.1 \
 		rusb-0.9.4 \
 		rustc-demangle-0.1.26 \
 		rustc_version-0.4.1 \
@@ -262,7 +264,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinystr-0.8.1 \
 		tokio-1.50.0 \
 		tokio-macros-2.6.1 \
-		toml-1.1.4+spec-1.1.0 \
+		toml-1.1.6+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_parser-1.1.3+spec-1.1.0 \
 		toml_writer-1.1.2+spec-1.1.0 \
