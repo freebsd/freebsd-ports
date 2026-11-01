@@ -1,12 +1,13 @@
 PORTNAME=	burr-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
 base_COMMENT=	Puzzle solver (GUI)
 python_COMMENT=	Puzzle solver (Python bindings)
-COMMENT=	${FLAVOR}_COMMENT
+COMMENT=	${${FLAVOR}_COMMENT}
 WWW=		https://burrtools.sourceforge.net/
 
 LICENSE=	GPLv2+ # COPYING is GPLv3
