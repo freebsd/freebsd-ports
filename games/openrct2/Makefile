@@ -1,6 +1,6 @@
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.6
+DISTVERSION=	0.5.7
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/OpenRCT2/title-sequences/releases/download/v0.5.6/:sequence \
 		https://github.com/OpenRCT2/objects/releases/download/v1.8.0/:object \
@@ -25,35 +25,47 @@ NOT_FOR_ARCHS=	powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	Only for little-endian architectures
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
-LIB_DEPENDS=	libbenchmark.so:devel/benchmark \
-		libcurl.so:ftp/curl \
-		libFLAC.so:audio/flac \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libicuuc.so:devel/icu \
-		libogg.so:audio/libogg \
+LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libpng.so:graphics/png \
-		libvorbisfile.so:audio/libvorbis \
 		libzip.so:archivers/libzip \
 		libzstd.so:archivers/zstd
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl \
+USES=		cmake:testing compiler:c++17-lang desktop-file-utils \
 		localbase:ldflags pkgconfig sdl shared-mime-info ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenRCT2
 GH_PROJECT=	OpenRCT2
-USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+# Discord-RPC is not in ports, so do not let CMake probe for it
+CMAKE_ON=	BUILD_SHARED_LIBS DISABLE_DISCORD_RPC
 CMAKE_TESTING_ON=	WITH_TESTS
 # Replays are supplied via DISTFILES; unlike the other assets this download
 # has no SKIP_IF_EXISTS guard, so it would run even with them already staged.
 CMAKE_TESTING_OFF=	DOWNLOAD_REPLAYS
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS FLAC FREETYPE HTTP OPENGL SCRIPTING VORBIS
+OPTIONS_DEFAULT=	FLAC FREETYPE HTTP OPENGL SCRIPTING VORBIS
+
+HTTP_DESC=	Server list, object download and update check via cURL
+SCRIPTING_DESC=	Plugin support via bundled QuickJS-ng
+
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
+FLAC_CMAKE_BOOL_OFF=	DISABLE_FLAC
+FREETYPE_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
+FREETYPE_CMAKE_BOOL_OFF=	DISABLE_TTF
+HTTP_LIB_DEPENDS=	libcurl.so:ftp/curl
+HTTP_CMAKE_BOOL_OFF=	DISABLE_HTTP
+OPENGL_USES=		gl
+OPENGL_USE=		GL=gl
+OPENGL_CMAKE_BOOL_OFF=	DISABLE_OPENGL
+SCRIPTING_CMAKE_BOOL=	ENABLE_SCRIPTING
+VORBIS_LIB_DEPENDS=	libogg.so:audio/libogg \
+			libvorbisfile.so:audio/libvorbis
+VORBIS_CMAKE_BOOL_OFF=	DISABLE_VORBIS
 
 post-patch:
 	${MKDIR} ${WRKSRC}/data/sequence
