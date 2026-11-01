@@ -210,7 +210,6 @@
     SUBDIR += mailhog
     SUBDIR += mailio
     SUBDIR += mailman
-    SUBDIR += mailman-postfix
     SUBDIR += mailman3
     SUBDIR += mailpit
     SUBDIR += mailscanner
