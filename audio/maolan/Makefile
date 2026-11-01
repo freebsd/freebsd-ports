@@ -1,5 +1,5 @@
 PORTNAME=	maolan
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	audio
 
 MAINTAINER=	meka@sys.it.com
@@ -28,7 +28,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/assets/desktop/maolan.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/maolan.desktop
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/assets/images/maolan-icon.svg \
+	${INSTALL_DATA} ${WRKSRC}/assets/images/maolan.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/maolan.svg
 
 .include <bsd.port.mk>
