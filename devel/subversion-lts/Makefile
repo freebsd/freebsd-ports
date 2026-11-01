@@ -1,4 +1,4 @@
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	michaelo@apache.org
@@ -122,8 +122,10 @@ post-patch-SVNSERVE_WRAPPER-on:
 		${WRKSRC}/build-outputs.mk
 
 post-configure:
-# Enable GNOME Keyring / KWallet support in main code, as it is harmless
-	@${REINPLACE_CMD} -E 's%.*#undef SVN_HAVE_(GNOME_KEYRING|KWALLET).*%#define SVN_HAVE_\1 1%' ${WRKSRC}/subversion/svn_private_config.h
+# security/subversion-gnome-keyring provides the library for
+# --with-gnome-keyring (SVN_HAVE_LIBSECRET), not the legacy
+# --with-old-gnome-keyring (SVN_HAVE_GNOME_KEYRING)
+	@${REINPLACE_CMD} -E 's%.*#undef SVN_HAVE_LIBSECRET.*%#define SVN_HAVE_LIBSECRET 1%' ${WRKSRC}/subversion/svn_private_config.h
 # ugly hack: save tools directory so we don't have to cleanup before installing
 	@${CP} -R ${WRKSRC}/tools ${WRKSRC}/tools.examples
 	@${CHMOD} -R a-st,o+rX ${WRKSRC}/tools.examples
