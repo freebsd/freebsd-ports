@@ -12,6 +12,10 @@ WWW=		https://www.phusionpassenger.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cpe
+CPE_VENDOR=	phusion
+CPE_PRODUCT=	passenger
+
 PORTSCOUT=	site:https://github.com/phusion/passenger/releases
 
 NO_ARCH=	yes
