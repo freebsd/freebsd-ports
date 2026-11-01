@@ -9,7 +9,7 @@ WWW=		https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 LIB_DEPENDS=	libpci.so:devel/libpci
 
