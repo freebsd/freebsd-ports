@@ -1,7 +1,6 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	13.1.0
-PORTREVISION=	1
+DISTVERSION=	14.0.0
 CATEGORIES=	misc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -49,8 +48,8 @@ test-quick:
 		[ -f ${WRKSRC}/mygrids.vdb ] && \
 		${ECHO} "Test has succeeded."
 
-# tests as of 13.1.0:
-# Ran 17 tests in 4.564s
+# tests as of 14.0.0:
+# Ran 19 tests in 5.473s
 # OK
 
 .include <bsd.port.mk>
