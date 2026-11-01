@@ -1,12 +1,12 @@
 PORTNAME=	vi
 PORTVERSION=	050325
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	SF/ex-${PORTNAME}/ex-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	2bsd-
 DISTNAME=	ex-${PORTVERSION}
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	mce@FreeBSD.org
 COMMENT=	The original vi editor, updated to run on modern OSes
 WWW=		https://ex-vi.sourceforge.net/
 
