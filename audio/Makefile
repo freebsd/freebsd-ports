@@ -452,6 +452,7 @@
     SUBDIR += malint
     SUBDIR += mamba
     SUBDIR += maolan
+    SUBDIR += maolan-plugins
     SUBDIR += mate-media
     SUBDIR += mclk-lv2
     SUBDIR += mda-lv2

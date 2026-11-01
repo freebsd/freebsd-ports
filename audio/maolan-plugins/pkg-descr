@@ -1,0 +1,8 @@
+Maolan plugins are a collection of CLAP plugins which currently includes:
+- drust: A DrumGizmo-inspired drum sampler plugin.
+- rural-modeler: A guitar amp modeler based on NAM and IR.
+- EQ: parametric and graphic
+- maximizer: adaptive clipper/limiter with Vintage and Modern variants
+- imager: stereo width processor with Mild, Wide, and Aggressive algorithms
+- monitoring: monitoring toolbox with 17 modes
+- saturator: waveshape saturation
