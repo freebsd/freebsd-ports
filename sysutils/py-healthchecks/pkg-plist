@@ -232,6 +232,7 @@ bin/hcks
 %%HOMEDIR%%/hc/api/__pycache__/apps%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/api/__pycache__/decorators%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/api/__pycache__/middleware%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/__pycache__/models%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/__pycache__/models%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/api/__pycache__/transports%%PYTHON_TAG%%.opt-1.pyc
@@ -262,6 +263,7 @@ bin/hcks
 %%HOMEDIR%%/hc/api/management/commands/settelegramwebhook.py
 %%HOMEDIR%%/hc/api/management/commands/smtpd.py
 %%HOMEDIR%%/hc/api/management/commands/submitchallenge.py
+%%HOMEDIR%%/hc/api/middleware.py
 %%HOMEDIR%%/hc/api/migrations/0001_initial.py
 %%HOMEDIR%%/hc/api/migrations/0002_auto_20150616_0732.py
 %%HOMEDIR%%/hc/api/migrations/0003_auto_20150616_1249.py
@@ -1173,12 +1175,14 @@ bin/hcks
 %%HOMEDIR%%/hc/integrations/shell/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/integrations/shell/forms.py
 %%HOMEDIR%%/hc/integrations/shell/static/img/shell.png
-%%HOMEDIR%%/hc/integrations/shell/templates/add_shell.html
+%%HOMEDIR%%/hc/integrations/shell/templates/shell_form.html
 %%HOMEDIR%%/hc/integrations/shell/tests/__init__.py
 %%HOMEDIR%%/hc/integrations/shell/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/integrations/shell/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/shell/tests/__pycache__/test_edit%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/integrations/shell/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/integrations/shell/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/shell/tests/test_edit.py
 %%HOMEDIR%%/hc/integrations/shell/tests/test_notify.py
 %%HOMEDIR%%/hc/integrations/shell/transport.py
 %%HOMEDIR%%/hc/integrations/shell/urls.py
@@ -1490,7 +1494,6 @@ bin/hcks
 %%HOMEDIR%%/hc/logs/__pycache__/admin%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/logs/__pycache__/models%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/logs/__pycache__/models%%PYTHON_TAG%%.pyc
-%%HOMEDIR%%/hc/logs/__pycache__/tests%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/logs/admin.py
 %%HOMEDIR%%/hc/logs/management/__init__.py
 %%HOMEDIR%%/hc/logs/management/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -1505,7 +1508,10 @@ bin/hcks
 %%HOMEDIR%%/hc/logs/migrations/__pycache__/0002_record_host%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/logs/migrations/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/logs/models.py
-%%HOMEDIR%%/hc/logs/tests.py
+%%HOMEDIR%%/hc/logs/tests/__init__.py
+%%HOMEDIR%%/hc/logs/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/logs/tests/__pycache__/test_sendlogs%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/logs/tests/test_sendlogs.py
 %%HOMEDIR%%/hc/payments/__init__.py
 %%HOMEDIR%%/hc/payments/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/payments/__pycache__/__init__%%PYTHON_TAG%%.pyc
@@ -2687,6 +2693,8 @@ bin/hcks
 @dir %%HOMEDIR%%/hc/logs/management
 @dir %%HOMEDIR%%/hc/logs/migrations/__pycache__
 @dir %%HOMEDIR%%/hc/logs/migrations
+@dir %%HOMEDIR%%/hc/logs/tests/__pycache__
+@dir %%HOMEDIR%%/hc/logs/tests
 @dir %%HOMEDIR%%/hc/logs
 @dir %%HOMEDIR%%/hc/payments/__pycache__
 @dir %%HOMEDIR%%/hc/payments/migrations/__pycache__
