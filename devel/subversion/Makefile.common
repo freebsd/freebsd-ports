@@ -44,7 +44,6 @@ SERF_LIB_DEPENDS=		libserf-1.so:www/serf
 
 GPG_AGENT_CONFIGURE_OFF=	--without-gpg-agent
 GPG_AGENT_CONFIGURE_ON=		--with-gpg-agent
-GPG_AGENT_BUILD_DEPENDS=	gpg-agent:security/gnupg
 GPG_AGENT_RUN_DEPENDS=		gpg-agent:security/gnupg
 
 # ===============================================================
@@ -65,10 +64,8 @@ OPTIONS_FILE_SET?=""
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if ${PREFIX} != "/usr"
 	${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
 	${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
-.endif
 	${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} "s#^toolsdir =.*#toolsdir = @bindir@#" ${WRKSRC}/Makefile.in

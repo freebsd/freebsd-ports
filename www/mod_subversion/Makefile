@@ -21,8 +21,6 @@ CONFIGURE_ARGS+=	--with-apxs=${APXS} \
 			--without-kwallet
 SUB_FILES+=	220_subversion.conf.sample
 
-PLIST_SUB+=	SED=${SED}
-
 ALL_TARGET=	apache-mod
 INSTALL_TARGET=	install-mods-shared
 
