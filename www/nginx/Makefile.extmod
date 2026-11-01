@@ -89,7 +89,8 @@ HTTP_ACCEPT_LANGUAGE_BUILD_DEPENDS=	nginx-module-accept-language>0:www/nginx-mod
 WRKSRC_accept_language=		${WRKDIR}/nginx-accept-language-module
 HTTP_ACCEPT_LANGUAGE_VARS=	DSO_EXTMODS+=accept_language
 
-HTTP_AUTH_DIGEST_GH_TUPLE=	atomx:nginx-http-auth-digest:274490c:auth_digest
+HTTP_AUTH_DIGEST_BUILD_DEPENDS=	nginx-module-auth-digest>0:www/nginx-module-auth-digest
+WRKSRC_auth_digest=		${WRKDIR}/nginx-module-auth-digest
 HTTP_AUTH_DIGEST_VARS=		DSO_EXTMODS+=auth_digest
 
 HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:3575542:auth_krb5
@@ -108,9 +109,9 @@ HTTP_AUTH_PAM_VARS=		DSO_EXTMODS+=auth_pam
 HTTP_DAV_EXT_IMPLIES=		HTTP_DAV
 HTTP_DAV_EXT_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 				libxslt.so:textproc/libxslt
-HTTP_DAV_EXT_GH_TUPLE=		arut:nginx-dav-ext-module:v3.0.0:dav_ext
+HTTP_DAV_EXT_BUILD_DEPENDS=	nginx-module-dav-ext>0:www/nginx-module-dav-ext
+WRKSRC_dav_ext=		${WRKDIR}/nginx-module-dav-ext
 HTTP_DAV_EXT_VARS=		DSO_EXTMODS+=dav_ext
-HTTP_DAV_EXT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_dav_ext_module.c
 
 HTTP_EVAL_GH_TUPLE=		openresty:nginx-eval-module:582bd25:eval
 HTTP_EVAL_VARS=			DSO_EXTMODS+=eval
@@ -165,7 +166,8 @@ HTTP_REDIS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_redis_module.c
 
 HTTP_SLICE_AHEAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_http_modules_ngx_http_slice_read_ahead.c
 
-HTTP_SUBS_FILTER_GH_TUPLE=	yaoweibin:ngx_http_substitutions_filter_module:c6f825f:subs_filter
+HTTP_SUBS_FILTER_BUILD_DEPENDS=	nginx-module-subs-filter>0:www/nginx-module-subs-filter
+WRKSRC_subs_filter=		${WRKDIR}/nginx-module-subs-filter
 HTTP_SUBS_FILTER_VARS=		DSO_EXTMODS+=subs_filter
 
 HTTP_TARANTOOL_LIB_DEPENDS=	libmsgpuck.so:devel/msgpuck \
@@ -174,9 +176,9 @@ HTTP_TARANTOOL_GH_TUPLE=	tarantool:nginx_upstream_module:aeb8696:nginx_tarantool
 HTTP_TARANTOOL_VARS=		DSO_EXTMODS+=nginx_tarantool
 HTTP_TARANTOOL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
 
-HTTP_UPLOAD_GH_TUPLE=		fdintino:nginx-upload-module:2.3.0:upload
+HTTP_UPLOAD_BUILD_DEPENDS=	nginx-module-upload>0:www/nginx-module-upload
+WRKSRC_upload=		${WRKDIR}/nginx-upload-module
 HTTP_UPLOAD_VARS=		DSO_EXTMODS+=upload
-HTTP_UPLOAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_upload_module.c
 
 HTTP_UPLOAD_PROGRESS_GH_TUPLE=		masterzen:nginx-upload-progress-module:68b3ab3:uploadprogress
 HTTP_UPLOAD_PROGRESS_VARS=		DSO_EXTMODS+=uploadprogress
@@ -242,9 +244,8 @@ LUASTREAM_BUILD_DEPENDS=nginx-module-lua-stream>0:www/nginx-module-lua-stream
 WRKSRC_luastream=	${WRKDIR}/lua-stream-nginx-module
 LUASTREAM_VARS=		DSO_EXTMODS+=luastream
 
-LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
-LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
-			${PATCHDIR}/extra-patch-ngx_link_func_module.c
+LINK_BUILD_DEPENDS=	nginx-module-link>0:www/nginx-module-link
+WRKSRC_link=		${WRKDIR}/nginx-module-link
 LINK_VARS=		DSO_EXTMODS+=link
 
 MEMC_BUILD_DEPENDS=	nginx-module-memc>0:www/nginx-module-memc

@@ -62,7 +62,6 @@ HTTP_SLICE_DESC=		Enable http_slice module
 HTTP_SLICE_AHEAD_DESC=		3rd party http_slice_ahead module
 HTTP_SSL_DESC=			Enable http_ssl module
 HTTP_STATUS_DESC=		Enable http_stub_status module
-HTTP_SUBS_FILTER_DESC=		3rd party subs filter module
 HTTP_SUB_DESC=			Enable http_sub module
 HTTP_TARANTOOL_DESC=		3rd party tarantool upstream module
 HTTP_UPLOAD_DESC=		3rd party upload module
