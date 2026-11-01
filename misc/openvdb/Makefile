@@ -1,7 +1,6 @@
 PORTNAME=	openvdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	13.1.0
-PORTREVISION=	1
+DISTVERSION=	14.0.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,10 +11,8 @@ WWW=		https://www.openvdb.org/ \
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
-		libboost_iostreams.so:devel/boost-libs \
-		libImath.so:math/Imath \
-		libtbb.so:devel/onetbb
+LIB_DEPENDS=	libtbb.so:devel/onetbb \
+		libzstd.so:archivers/zstd
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags pkgconfig
@@ -40,8 +37,7 @@ OPTIONS_SUB=		yes
 TOOLS_DESC=		Build CLI tools
 TOOLS_CMAKE_BOOL=	OPENVDB_BUILD_BINARIES OPENVDB_BUILD_VDB_LOD \
 			OPENVDB_BUILD_VDB_RENDER OPENVDB_BUILD_VDB_VIEW
-TOOLS_LIB_DEPENDS=	libglfw.so:graphics/glfw \
-			libOpenEXR.so:graphics/openexr
+TOOLS_LIB_DEPENDS=	libglfw.so:graphics/glfw
 TOOLS_USES=		gl xorg
 TOOLS_USE=		GL=gl,glu XORG=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 
@@ -51,9 +47,9 @@ TOOLS_USE=		GL=gl,glu XORG=ice,sm,x11,xcursor,xext,xi,xinerama,xrandr,xxf86vm
 
 #PORTDOCS=	*
 
-# tests as of 13.1.0:
-# [==========] 769 tests from 148 test suites ran. (42610 ms total)
-# [  PASSED  ] 769 tests.
-# TestStreamCompression.testPagedStreams is excluded (flaky; upstream issue #2133).
+post-install: # remove license files
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
+
+# tests as of 13.1.0: 100% tests passed out of 1
 
 .include <bsd.port.mk>
