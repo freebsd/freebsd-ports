@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-10-22 09:04:01 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2026-10-31 11:52:57 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -476,7 +476,7 @@
          "default": "",
@@ -45,7 +45,7 @@
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1516,7 +1516,7 @@
+@@ -1523,7 +1523,7 @@
        name: "CSPHashesV1",
        base_feature: "none",
        origin_trial_feature_name: "CSPExtendedScriptSrcHashes",
@@ -54,7 +54,7 @@
        status: "experimental",
        public: true,
      },
-@@ -2490,7 +2490,7 @@
+@@ -2497,7 +2497,7 @@
        name: "DocumentIsolationPolicy",
        status: "experimental",
        origin_trial_feature_name: "DocumentIsolationPolicy",
@@ -63,7 +63,7 @@
        base_feature: "none",
      },
      {
-@@ -2709,7 +2709,7 @@
+@@ -2716,7 +2716,7 @@
        public: true,
        origin_trial_feature_name: "EmailVerificationProtocol",
        origin_trial_allows_third_party: true,
@@ -72,7 +72,7 @@
        status: "experimental",
        base_feature: "none",
        browser_process_read_access: true,
-@@ -2898,7 +2898,7 @@
+@@ -2905,7 +2905,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -81,7 +81,7 @@
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3819,7 +3819,7 @@
+@@ -3826,7 +3826,7 @@
        name: "InstallElement",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "InstallElement",
@@ -90,7 +90,7 @@
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6689,7 +6689,7 @@
+@@ -6696,7 +6696,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -99,7 +99,7 @@
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -6889,7 +6889,7 @@
+@@ -6896,7 +6896,7 @@
        name: "WebAppInstallation",
        status: {"Android": "", "default": "test"},
        origin_trial_feature_name: "WebAppInstallation",
@@ -108,7 +108,7 @@
        public: true,
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
-@@ -6903,7 +6903,7 @@
+@@ -6910,7 +6910,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",

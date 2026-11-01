@@ -1,6 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	156.0.8078.47
-PORTREVISION=	1
+PORTVERSION=	156.0.8078.79
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 TSV=		7.0.2
@@ -238,7 +237,7 @@ WIDEVINE_DESC=		Depend on foreign-cdm to enable playback of DRM content
 WIDEVINE_RUN_DEPENDS=	foreign-cdm>0:www/foreign-cdm
 
 .include "Makefile.tests"
-#TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
+TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
 TEST_ALL_TARGET=	${TEST_TARGETS}
 
 .include <bsd.port.options.mk>
