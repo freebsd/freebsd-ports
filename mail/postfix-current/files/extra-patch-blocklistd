@@ -1,4 +1,23 @@
---- src/postscreen/pfilter.c.orig	2025-07-11 20:30:00 UTC
+--- src/postscreen/Makefile.in.orig	2026-09-19 22:24:12 UTC
++++ src/postscreen/Makefile.in
+@@ -3,13 +3,13 @@ SRCS	= postscreen.c postscreen_dict.c postscreen_dnsbl
+ 	postscreen_early.c postscreen_smtpd.c postscreen_misc.c \
+ 	postscreen_state.c postscreen_tests.c postscreen_send.c \
+ 	postscreen_starttls.c postscreen_expand.c postscreen_endpt.c \
+-	postscreen_haproxy.c postscreen_tls_conf.c
++	postscreen_haproxy.c postscreen_tls_conf.c pfilter.c
+ OBJS	= postscreen.o postscreen_dict.o postscreen_dnsbl.o \
+ 	postscreen_early.o postscreen_smtpd.o postscreen_misc.o \
+ 	postscreen_state.o postscreen_tests.o postscreen_send.o \
+ 	postscreen_starttls.o postscreen_expand.o postscreen_endpt.o \
+-	postscreen_haproxy.o postscreen_tls_conf.o
+-HDRS	= 
++	postscreen_haproxy.o postscreen_tls_conf.o pfilter.o
++HDRS	= pfilter.h
+ TESTSRC	= postscreen_dnsbl_test.c
+ DEFS	= -I. -I$(INC_DIR) -D$(SYSTYPE)
+ CFLAGS	= $(DEBUG) $(OPT) $(DEFS)
+--- src/postscreen/pfilter.c.orig	2026-11-01 15:36:59 UTC
 +++ src/postscreen/pfilter.c
 @@ -0,0 +1,19 @@
 +#include "pfilter.h"
@@ -20,7 +39,7 @@
 +		blstate = NULL;
 +	}
 +}
---- src/postscreen/pfilter.h.orig	2025-07-11 20:30:00 UTC
+--- src/postscreen/pfilter.h.orig	2026-11-01 15:36:59 UTC
 +++ src/postscreen/pfilter.h
 @@ -0,0 +1 @@
 +void pfilter_notify(int, int);
@@ -45,7 +64,7 @@
  		switch (psc_dnsbl_action) {
  		case PSC_ACT_DROP:
  		    state->dnsbl_reply = vstring_sprintf(vstring_alloc(100),
---- src/smtpd/Makefile.in.orig	2026-04-03 19:46:09 UTC
+--- src/smtpd/Makefile.in.orig	2026-09-19 22:24:12 UTC
 +++ src/smtpd/Makefile.in
 @@ -2,14 +2,14 @@ SRCS	= smtpd.c smtpd_token.c smtpd_check.c smtpd_chat.
  SRCS	= smtpd.c smtpd_token.c smtpd_check.c smtpd_chat.c smtpd_state.c \
@@ -65,7 +84,7 @@
  TESTSRC	=
  DEFS	= -I. -I$(INC_DIR) -D$(SYSTYPE)
  CFLAGS	= $(DEBUG) $(OPT) $(DEFS)
---- src/smtpd/pfilter.c.orig	2025-07-11 20:30:00 UTC
+--- src/smtpd/pfilter.c.orig	2026-11-01 15:36:59 UTC
 +++ src/smtpd/pfilter.c
 @@ -0,0 +1,19 @@
 +#include "pfilter.h"
@@ -87,13 +106,21 @@
 +		blstate = NULL;
 +	}
 +}
---- src/smtpd/pfilter.h.orig	2025-07-11 20:30:00 UTC
+--- src/smtpd/pfilter.h.orig	2026-11-01 15:36:59 UTC
 +++ src/smtpd/pfilter.h
 @@ -0,0 +1 @@
 +void pfilter_notify(int, int);
---- src/smtpd/smtpd_check.c.orig	2025-07-11 20:34:19 UTC
+--- src/smtpd/smtpd_check.c.orig	2026-07-16 18:18:58 UTC
 +++ src/smtpd/smtpd_check.c
-@@ -1767,6 +1767,7 @@ static int reject_unauth_destination(SMTPD_STATE *stat
+@@ -273,6 +273,7 @@
+ #include "smtpd_dsn_fix.h"
+ #include "smtpd_resolve.h"
+ #include "smtpd_expand.h"
++#include "pfilter.h" /* for blocklistd(8) */
+ 
+  /*
+   * Eject seat in case of parsing problems.
+@@ -1767,6 +1768,7 @@ static int reject_unauth_destination(SMTPD_STATE *stat
      /*
       * Reject relaying to sites that are not listed in relay_domains.
       */
@@ -101,9 +128,17 @@
      return (smtpd_check_reject(state, MAIL_ERROR_POLICY,
  			       reply_code, reply_dsn,
  			       "<%s>: Relay access denied",
---- src/smtpd/smtpd_milter.c.orig	2025-07-11 20:33:21 UTC
+--- src/smtpd/smtpd_milter.c.orig	2026-09-15 17:19:02 UTC
 +++ src/smtpd/smtpd_milter.c
-@@ -193,6 +193,7 @@ const char *smtpd_milter_eval(const char *name, void *
+@@ -59,6 +59,7 @@
+ #include <smtpd_sasl_glue.h>
+ #include <smtpd_resolve.h>
+ #include <smtpd_milter.h>
++#include "pfilter.h" /* for blocklistd(8) */
+ 
+  /*
+   * SLMs.
+@@ -198,6 +199,7 @@ const char *smtpd_milter_eval(const char *name, void *
  	    return ("");
  	if (state->milter_reject_text) {
  	    /* 554 5.7.1 <user@example.com>: Relay access denied */
@@ -111,7 +146,7 @@
  	    vstring_strcpy(state->expand_buf, state->milter_reject_text + 4);
  	    cp = split_at(STR(state->expand_buf), ' ');
  	    return (cp ? split_at(cp, ' ') : cp);
-@@ -210,6 +211,7 @@ const char *smtpd_milter_eval(const char *name, void *
+@@ -215,6 +217,7 @@ const char *smtpd_milter_eval(const char *name, void *
  	    return (0);
  	if (state->milter_reject_text) {
  	    /* 554 5.7.1 <user@example.com>: Relay access denied */
@@ -142,22 +177,3 @@
      /* RFC 4954 Section 6. */
      smtpd_chat_reply(state, "235 2.7.0 Authentication successful");
      if ((sasl_username = xsasl_server_get_username(state->sasl_server)) == 0)
---- src/postscreen/Makefile.in.orig	2026-05-04 15:24:10.810630000 +0200
-+++ src/postscreen/Makefile.in	2026-05-04 15:24:27.809059000 +0200
-@@ -3,13 +3,13 @@
- 	postscreen_early.c postscreen_smtpd.c postscreen_misc.c \
- 	postscreen_state.c postscreen_tests.c postscreen_send.c \
- 	postscreen_starttls.c postscreen_expand.c postscreen_endpt.c \
--	postscreen_haproxy.c postscreen_tls_conf.c
-+	postscreen_haproxy.c postscreen_tls_conf.c pfilter.c
- OBJS	= postscreen.o postscreen_dict.o postscreen_dnsbl.o \
- 	postscreen_early.o postscreen_smtpd.o postscreen_misc.o \
- 	postscreen_state.o postscreen_tests.o postscreen_send.o \
- 	postscreen_starttls.o postscreen_expand.o postscreen_endpt.o \
--	postscreen_haproxy.o postscreen_tls_conf.o
--HDRS	= 
-+	postscreen_haproxy.o postscreen_tls_conf.o pfilter.o
-+HDRS	= pfilter.h
- TESTSRC	= postscreen_dnsbl_test.c
- DEFS	= -I. -I$(INC_DIR) -D$(SYSTYPE)
- CFLAGS	= $(DEBUG) $(OPT) $(DEFS)
