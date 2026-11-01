@@ -22,7 +22,7 @@ PORTSCOUT=	limit:^1\.30\.[0-9]*
 USES=		cpe
 
 CPE_VENDOR=	f5
-CPE_PRODUCT=	nginx
+CPE_PRODUCT=	nginx_open_source
 USE_GITHUB=	nodefault
 
 NGINX_VARDIR?=	/var
