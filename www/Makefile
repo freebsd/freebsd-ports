@@ -567,6 +567,7 @@
     SUBDIR += nginx-module-stream-limit-req
     SUBDIR += nginx-module-sts
     SUBDIR += nginx-module-syslog5424
+    SUBDIR += nginx-module-upload
     SUBDIR += nginx-module-vod
     SUBDIR += nginx-module-websockify
     SUBDIR += nginx-module-zstd
