@@ -1,5 +1,5 @@
 PORTNAME=	django-constance
-DISTVERSION=	4.3.5
+DISTVERSION=	4.5.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	django_constance-${PORTVERSION}
 
 MAINTAINER=	longros@FreeBSD.org
 COMMENT=	Dynamic Django settings
-WWW=		https://github.com/jazzband/django-constance
+WWW=		https://github.com/django-commons/django-constance
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=4.2:www/py-django52@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.10+
 USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
