@@ -11,7 +11,8 @@ WWW=		https://rustup.rs/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	other architectures have no rustup-installable toolchain
 
 LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
 		libbrotlidec.so:archivers/brotli \
