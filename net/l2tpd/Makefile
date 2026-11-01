@@ -1,11 +1,14 @@
 PORTNAME=	l2tpd
 PORTVERSION=	0.69
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/L2TPd/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the layer two tunneling protocol
+
+DEPRECATED=	Upstream project has retired and port is vulnerable since 2004
+EXPIRATION_DATE=2026-12-31
 
 BROKEN_armv6=	fails to link: undefined reference to check_control
 BROKEN_armv7=	fails to link: undefined reference to check_control
