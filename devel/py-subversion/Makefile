@@ -6,14 +6,14 @@ WWW=		https://subversion.apache.org/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/py3c.h:devel/py3c
 
-USES=		python
+USES=		python:patch
 USE_PYTHON=	flavors py3kplist
 
 # There is bug in python bindings Makefile
 MAKE_JOBS_UNSAFE=yes
 
-PORTREVISION_LATEST=	2
-PORTREVISION_LTS=		2
+PORTREVISION_LATEST=	3
+PORTREVISION_LTS=		3
 
 SVN_BUILD_BINDINGS=	yes
 

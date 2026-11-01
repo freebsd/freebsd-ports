@@ -5,7 +5,7 @@ CATEGORIES+=	devel
 MASTER_SITES=	APACHE/subversion
 
 GNU_CONFIGURE=	yes
-USES+=		cpe libtool pathfix pkgconfig shebangfix tar:bzip2
+USES+=		cpe libtool pathfix pkgconfig python:patch,test shebangfix tar:bzip2
 SHEBANG_FILES=	tools/server-side/svnpubsub/rc.d/svnpubsub.solaris \
 		tools/server-side/svnpubsub/rc.d/svnwcsub.solaris
 

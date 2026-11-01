@@ -6,8 +6,8 @@ WWW=		https://subversion.apache.org/
 
 USES=		java:build
 
-PORTREVISION_LATEST=	6
-PORTREVISION_LTS=		6
+PORTREVISION_LATEST=	7
+PORTREVISION_LTS=		7
 
 SVN_BUILD_BINDINGS=	yes
 

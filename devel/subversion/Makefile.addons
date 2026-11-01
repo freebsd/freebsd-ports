@@ -11,6 +11,10 @@ OPTIONS_NAME=		devel_subversion
 MASTERDIR=		${.CURDIR}/../../devel/subversion
 .include		"${MASTERDIR}/Makefile.common"
 .elif ${WITH_SUBVERSION_VER} == LTS
+# !!! DO NOT REMOVE THIS BRANCH WITHOUT COORDINATING WITH THE MAINTAINER !!!
+# See devel/subversion-lts/Makefile for why.
+DEPRECATED=		Upstream no longer maintains a separate LTS release line, use ${PKGNAMEPREFIX}${PORTNAME} package instead
+EXPIRATION_DATE=	2027-01-15
 PKGNAMESUFFIX:=		${PKGNAMESUFFIX}-lts
 CONFLICTS_BUILD+=	${PORTNAME}-1.[0-9][0-9].[0-9]*
 PORTREVISION=		${PORTREVISION_LTS:U0}

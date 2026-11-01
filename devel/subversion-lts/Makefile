@@ -1,4 +1,4 @@
-PORTREVISION=	7
+PORTREVISION=	8
 PKGNAMESUFFIX=	-lts
 
 MAINTAINER=	michaelo@apache.org
@@ -6,6 +6,14 @@ COMMENT=	Apache Subversion is a full-featured version control system (LTS)
 WWW=		https://subversion.apache.org/
 
 CONFLICTS_INSTALL=	subversion
+
+# !!! DO NOT REMOVE THIS PORT WITHOUT COORDINATING WITH THE MAINTAINER !!!
+# Removal is NOT a simple "delete the directory" -- devel/subversion's
+# Makefile.addons, its slave ports' PORTREVISION_LTS, and ~30 unrelated
+# ports with a WITH_SUBVERSION_VER==LTS conditional dependency branch
+# all need matching edits. See the maintainer before touching this.
+DEPRECATED=	Upstream no longer maintains a separate LTS release line, use devel/subversion instead
+EXPIRATION_DATE=2027-01-15
 
 USE_RC_SUBR=	svnserve
 
@@ -28,7 +36,7 @@ SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TOOLS_DESC=		Install several tools
 
-USES+=			shebangfix python:patch,test
+USES+=			shebangfix
 python_OLD_CMD+=	"/bin/env python"
 SHEBANG_REGEX=		./tools/.*
 

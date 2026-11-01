@@ -26,7 +26,7 @@ SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
 SVNSERVE_WRAPPER_DESC=	Enable svnserve wrapper (umask setter)
 TOOLS_DESC=		Install several tools
 
-USES+=			shebangfix python:patch,test
+USES+=			shebangfix
 python_OLD_CMD+=	"/bin/env python"
 SHEBANG_REGEX=		./tools/.*
 
