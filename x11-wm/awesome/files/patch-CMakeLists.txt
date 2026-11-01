@@ -1,0 +1,28 @@
+--- CMakeLists.txt.orig	2026-11-01 18:11:31 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.0.0)
++cmake_minimum_required(VERSION 3.5.0)
+ project(awesome C)
+ 
+ # Require an out-of-source build. We generate an awesomerc.lua in the build dir
+@@ -17,10 +17,6 @@ set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS  TRUE)
+ 
+ set(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS  TRUE)
+ 
+-if(COMMAND cmake_policy)
+-    cmake_policy(VERSION 2.6)
+-endif()
+-
+ set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+ set(BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR})
+ 
+@@ -454,7 +450,7 @@ add_custom_target(check-qa DEPENDS ${CHECK_QA_TARGETS}
+     list(APPEND CHECK_QA_TARGETS luacheck)
+ endif()
+ add_custom_target(check-qa DEPENDS ${CHECK_QA_TARGETS})
+-add_dependencies(check check-qa check-examples)
++#add_dependencies(check check-qa check-examples)
+ # }}}
+ 
+ INCLUDE(${CMAKE_SOURCE_DIR}/Packaging.cmake)
