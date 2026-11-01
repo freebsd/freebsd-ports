@@ -1,5 +1,5 @@
 PORTNAME=	docling-ibm-models
-DISTVERSION=	4.0.3
+DISTVERSION=	4.0.4
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}huggingface-hub>=0.23:misc/py-huggingface-hu
 		${PYTHON_PKGNAMEPREFIX}pillow>=10.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytorch>=2.2.2:misc/py-pytorch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}safetensors>=0.4.3:misc/py-safetensors@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}torchvision>=0:misc/py-torchvision@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}torchvision>0:misc/py-torchvision@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}transformers>=4.42.0:misc/py-transformers@${PY_FLAVOR}
 		# there are also 2 opencv optional dependncies
 
