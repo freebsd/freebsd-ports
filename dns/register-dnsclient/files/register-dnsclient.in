@@ -13,6 +13,8 @@ fi
 clean_exit() {
     local rc=$1
 
+    [ -f "$KRB5CCNAME" ] && %%GSSAPIBASE%%/bin/kdestroy
+
     if [ ! -t 1 ]
     then
         exec 1>&3 3>&-
@@ -32,16 +34,16 @@ clean_exit() {
     fi
 }
 
-export KRB5CCNAME=/tmp/krb5cc_$name
+export KRB5CCNAME="$(mktemp /tmp/krb5cc_${name}.XXXXXXXXXX)"
 KRB5_CLIENT_PRINCIPAL="$(hostname -s)\$"
 
-%%GSSAPIBASE%%/bin/kinit -k $KRB5_CLIENT_PRINCIPAL
+%%GSSAPIBASE%%/bin/kinit -k "$KRB5_CLIENT_PRINCIPAL"
 rc=$?
 if [ $rc -ne 0 ]
 then
-    KRB5_CLIENT_PRINCIPAL="$(hostname -s | tr \"[:lower:]\" \"[:upper:]\")\$"
+    KRB5_CLIENT_PRINCIPAL="$(hostname -s | tr '[:lower:]' '[:upper:]')\$"
     >&2 echo "$name: retrying with $KRB5_CLIENT_PRINCIPAL"
-    %%GSSAPIBASE%%/bin/kinit -k $KRB5_CLIENT_PRINCIPAL
+    %%GSSAPIBASE%%/bin/kinit -k "$KRB5_CLIENT_PRINCIPAL"
     rc=$?
     if [ $rc -ne 0 ]
     then
