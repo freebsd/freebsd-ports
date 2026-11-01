@@ -13,6 +13,11 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl script to load directories into a Subversion repository
 WWW=		https://svn.apache.org/repos/asf/subversion/branches/scons-build-system/www/tools_contrib.html\#svn_load_dirs_pl
 
+DEPRECATED=	Superseded upstream by tools/client-side/svn-vendor.py, which \
+		devel/subversion no longer bundles; fetch it directly from a \
+		release tarball if you need it
+EXPIRATION_DATE=2026-12-31
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 RUN_DEPENDS=	p5-URI>=0:net/p5-URI
