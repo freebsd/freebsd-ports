@@ -91,6 +91,17 @@ share/man/man8/qemu-pr-helper.8.gz
 %%DATADIR%%/firmware/60-edk2-riscv64.json
 %%DATADIR%%/firmware/60-edk2-x86_64.json
 %%DATADIR%%/firmware/50-edk2-x86_64-secure.json
+%%DATADIR%%/hexagon-hypervisor-license.txt
+%%DATADIR%%/hexagon_booter_qcs6490_cdsp
+%%DATADIR%%/hexagon_booter_sa8775p_cdsp
+%%DATADIR%%/hexagon_booter_sa8797p_nsp0
+%%DATADIR%%/hexagon_booter_sc8480xp_nsp0
+%%DATADIR%%/hexagon_booter_sm8975_nsp
+%%DATADIR%%/hexagon_loadlinux_qcs6490_cdsp
+%%DATADIR%%/hexagon_loadlinux_sa8775p_cdsp
+%%DATADIR%%/hexagon_loadlinux_sa8797p_nsp0
+%%DATADIR%%/hexagon_loadlinux_sc8480xp_nsp0
+%%DATADIR%%/hexagon_loadlinux_sm8975_nsp
 %%DATADIR%%/hppa-firmware.img
 %%DATADIR%%/hppa-firmware64.img
 %%DATADIR%%/keymaps/ar
