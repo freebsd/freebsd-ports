@@ -209,7 +209,6 @@
     SUBDIR += mailgraph
     SUBDIR += mailhog
     SUBDIR += mailio
-    SUBDIR += mailman
     SUBDIR += mailman3
     SUBDIR += mailpit
     SUBDIR += mailscanner

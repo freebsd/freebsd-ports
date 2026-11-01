@@ -5788,3 +5788,4 @@ lang/rust188||2026-11-01|Has expired: Old version with several vulnerabilities
 devel/py-importlib-metadata7|devel/py-importlib-metadata8|2026-11-01|Has expired: No consumers left use devel/py-importlib-metadata8
 mail/mailman-exim4||2026-11-01|Has expired: Uses expired lang/python27
 mail/mailman-postfix||2026-11-01|Has expired: Uses expired lang/python27
+mail/mailman||2026-11-01|Has expired: Uses expired lang/python27
