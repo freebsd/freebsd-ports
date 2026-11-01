@@ -15,6 +15,10 @@
 # available; defaults suit a host install.)
 # fjordd answers only to an IP, localhost and this host's own name; behind a
 # reverse proxy, add its name: FJORD_ALLOWED_HOSTS=fjord.example.com
+#
+# Sign-in: the first visit asks for the setup code in
+# /var/db/fjord/setup-code; `fjordd passwd` sets or resets the password (add
+# --stacks-dir if FJORD_STACKS_DIR is set here).
 
 . /etc/rc.subr
 
@@ -26,7 +30,18 @@ rcvar=${name}_enable
 
 command="%%PREFIX%%/sbin/fjordd"
 pidfile="/var/run/${name}.pid"
+supervisor_pidfile="/var/run/${name}.daemon.pid"
 start_cmd="fjordd_start"
+stop_postcmd="fjordd_poststop"
+
+# daemon(8) exits just after fjordd and holds the pidfile until it has: a
+# start before then fails ("process already running") and leaves fjord
+# down, which `service fjordd restart` did on a busy host. Stop waits for it.
+fjordd_poststop()
+{
+    [ -f "${supervisor_pidfile}" ] && wait_for_pids $(cat "${supervisor_pidfile}" 2>/dev/null)
+    return 0
+}
 
 fjordd_start()
 {
@@ -35,7 +50,7 @@ fjordd_start()
     # ${name}_env) and extends rc(8)'s boot PATH, which omits /usr/local --
     # where podman/podman-compose live; without it every engine exec fails
     # after a reboot.
-    /usr/sbin/daemon -o ${fjordd_log} -f -p ${pidfile} \
+    /usr/sbin/daemon -o ${fjordd_log} -f -p ${pidfile} -P ${supervisor_pidfile} \
         /usr/bin/env PATH="${PATH}:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin" ${fjordd_env} \
         ${command} ${fjordd_flags}
 }

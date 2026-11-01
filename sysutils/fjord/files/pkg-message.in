@@ -5,9 +5,13 @@ Quick Start:
   sysrc fjordd_enable=YES
   service fjordd start
 
-  Open http://<host-ip>:3567 in your browser to launch the setup wizard.
-  The wizard and System dashboard automatically check host readiness and
-  provide copyable shell fixes for any missing engine prerequisites.
+  Open http://<host-ip>:3567 in your browser. The first visit asks for the
+  setup code fjord wrote on this host (cat /var/db/fjord/setup-code) and
+  makes the account; after that every page and the API need a sign-in.
+  `fjordd passwd` sets or resets the password; FJORD_AUTH=none in
+  fjordd_env turns sign-in off behind a reverse proxy of your own.
+  The setup wizard and System dashboard check host readiness and provide
+  copyable shell fixes for any missing engine prerequisites.
 
 Host Prerequisites:
   Fjord requires at least one container engine (Podman and/or AppJail).
