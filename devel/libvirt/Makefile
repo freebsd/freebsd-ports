@@ -1,5 +1,5 @@
 PORTNAME=	libvirt
-DISTVERSION=	12.8.0
+DISTVERSION=	12.9.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -86,6 +86,8 @@ MESON_ARGS+=	\
 		-Ddriver_interface=disabled \
 		-Ddriver_libxl=disabled \
 		-Ddriver_lxc=disabled \
+		-Ddriver_nodedev=disabled \
+		-Ddriver_nwfilter=disabled \
 		-Ddriver_openvz=disabled \
 		-Ddriver_remote=enabled \
 		-Ddriver_vz=disabled \
@@ -143,7 +145,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.12008.0
+SHLIB_VER=	0.12009.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 BINARY_ALIAS=	python3=${PYTHON_CMD}
