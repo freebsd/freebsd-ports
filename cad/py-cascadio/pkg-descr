@@ -1,0 +1,6 @@
+A Python library which uses OpenCASCADE to convert STEP files to a GLB file
+which can quickly be loaded by trimesh and other libraries.
+
+This is not intended to be a full binding of OpenCASCADE like OCP or PythonOCC.
+Rather it is intended to be an easy minimal way to load boundary representation
+files into a triangulated scene in Python.

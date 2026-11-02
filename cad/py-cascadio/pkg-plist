@@ -1,0 +1,17 @@
+%%PYTHON_SITELIBDIR%%/cascadio-%%VER%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/cascadio-%%VER%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/cascadio-%%VER%%.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/cascadio-%%VER%%.dist-info/licenses/LICENSE/LICENSE-cascadio.md
+%%PYTHON_SITELIBDIR%%/cascadio/__init__.py
+%%PYTHON_SITELIBDIR%%/cascadio/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/cascadio/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/cascadio/__pycache__/extension%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/cascadio/__pycache__/extension%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/cascadio/__pycache__/primitives%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/cascadio/__pycache__/primitives%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/cascadio/_core.abi3.so
+%%PYTHON_SITELIBDIR%%/cascadio/_core.pyi
+%%PYTHON_SITELIBDIR%%/cascadio/extension.py
+%%PYTHON_SITELIBDIR%%/cascadio/primitives.py
+%%PYTHON_SITELIBDIR%%/cascadio/py.typed
+%%PYTHON_SITELIBDIR%%/cascadio/schema.json

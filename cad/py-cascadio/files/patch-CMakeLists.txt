@@ -1,0 +1,35 @@
+--- CMakeLists.txt.orig	2026-07-28 20:10:56 UTC
++++ CMakeLists.txt
+@@ -81,7 +81,32 @@ if(SYSTEM_OPENCASCADE)
+   find_package(OpenCASCADE CONFIG REQUIRED)
+   # Set path to header files directories
+   target_include_directories(_core PUBLIC "${OpenCASCADE_INCLUDE_DIR}")
++
++  # Does the system RWGltf_CafWriter carry patches/tm_brep_faces.patch?
++  # These patches are not yet applied to the FreeBSD port cad/opencascade
++  # See https://github.com/trimesh/cascadio/issues/36
++  include(CheckCXXSourceCompiles)
++  set(CMAKE_REQUIRED_INCLUDES "${OpenCASCADE_INCLUDE_DIR}")
++  check_cxx_source_compiles("
++    #include <RWGltf_CafWriter.hxx>
++    int main() {
++      RWGltf_CafWriter::JsonPostProcessCallback a;
++      RWGltf_CafWriter::BinaryAppendCallback b;
++      void (RWGltf_CafWriter::*f)(const RWGltf_CafWriter::FaceDataCallback&) =
++        &RWGltf_CafWriter::SetFaceDataCallback;
++      (void)a; (void)b; (void)f;
++      return 0;
++    }" CASCADIO_OCCT_HAS_GLTF_CALLBACKS)
++  unset(CMAKE_REQUIRED_INCLUDES)
++  if(CASCADIO_OCCT_HAS_GLTF_CALLBACKS)
++    target_compile_definitions(_core PRIVATE CASCADIO_HAVE_GLTF_CALLBACKS)
++  else()
++    message(WARNING "System OpenCASCADE lacks the cascadio RWGltf_CafWriter "
++                    "callbacks: include_brep will be unavailable")
++  endif()
+ else()
++  # Bundled OCCT is built with patches/tm_brep_faces.patch
++  target_compile_definitions(_core PRIVATE CASCADIO_HAVE_GLTF_CALLBACKS)
+   # Set path to header files directories
+   target_include_directories(_core PUBLIC
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/upstream/OCCT/include/opencascade>
