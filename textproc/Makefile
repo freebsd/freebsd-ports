@@ -1852,6 +1852,7 @@
     SUBDIR += py-youseedee
     SUBDIR += py-yte
     SUBDIR += py-zensical
+    SUBDIR += py-zensical-ui
     SUBDIR += py-zope.i18nmessageid
     SUBDIR += py-zpt
     SUBDIR += py-zxing-cpp
