@@ -87,6 +87,8 @@
 %%MANPAGES%%share/man/man1/glab-deploy-key-get.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key-list.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-key.1.gz
+%%MANPAGES%%share/man/man1/glab-deploy-token-create.1.gz
+%%MANPAGES%%share/man/man1/glab-deploy-token-get.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-token-list.1.gz
 %%MANPAGES%%share/man/man1/glab-deploy-token.1.gz
 %%MANPAGES%%share/man/man1/glab-duo-cli.1.gz
