@@ -13310,7 +13310,7 @@ record.</li>
 	<p>The Roundcube project reports:</p>
 	<blockquote cite="https://roundcube.net/news/2026/08/09/security-updates-1.6.18-and-1.7.3">
 	  <ul>
-	    <li>>Missing basic validation for content proxied by the css proxy</li>
+	    <li>Missing basic validation for content proxied by the css proxy</li>
 	    <li>SSRF bypass via specific local address URLs using 100.64.0.0/10 and fe80::/10 nets</li>
 	    <li>SSRF filter bypass via various forms of nip.io/sslip.io hostnames evading is_local_url() check</li>
 	    <li>remote content blocking bypass via unclosed url() in a FuncIRI attribute</li>
