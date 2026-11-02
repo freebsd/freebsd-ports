@@ -5332,6 +5332,7 @@
     SUBDIR += py-jschema-to-python
     SUBDIR += py-jschon
     SUBDIR += py-jsmin
+    SUBDIR += py-json-rpc
     SUBDIR += py-json5
     SUBDIR += py-json_tricks
     SUBDIR += py-jsonargparse
