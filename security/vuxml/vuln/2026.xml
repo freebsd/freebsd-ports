@@ -1,3 +1,64 @@
+  <vuln vid="e2cda057-d6a0-11f1-975e-e4434b819e80">
+    <topic>redmine -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redmine70</name>
+	<range><lt>7.0.3</lt></range>
+      </package>
+      <package>
+	<name>redmine61</name>
+	<range><lt>6.1.6</lt></range>
+      </package>
+      <package>
+	<name>redmine60</name>
+	<range><lt>6.0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redmine reports:</p>
+	<blockquote cite="https://www.redmine.org/projects/redmine/wiki/Security_Advisories">
+	  <ul>
+	    <li>High: ReDoS in wiki macro argument parsing (#44657).
+	      Affects 6.0.0 and later; fixed in 7.0.3, 6.1.6 and 6.0.12.</li>
+	    <li>High: OAuth token scope is ignored in
+	      Project.allowed_to_condition (#44625).
+	      Affects 6.1.0 and later; fixed in 7.0.3 and 6.1.6.</li>
+	    <li>High: Private project names and role assignments leaked via
+	      GET /groups/&lt;id&gt;.json?include=memberships (#44468).
+	      Fixed in 7.0.2, 6.1.5 and 6.0.12.</li>
+	    <li>High: Private/invisible issue subjects leaked via REST API
+	      include=children (#44467).
+	      Fixed in 7.0.2, 6.1.5 and 6.0.12.</li>
+	    <li>Moderate: Reflected XSS in attachments#edit_all (unvalidated
+	      back_url) (#44682).
+	      Fixed in 7.0.3, 6.1.6 and 6.0.12.</li>
+	    <li>Moderate: OAuth token scopes are bypassed when creating
+	      projects (#44644).
+	      Affects 6.1.0 and later; fixed in 7.0.3 and 6.1.6.</li>
+	    <li>Low: validate_back_url accepts URLs that browsers resolve to
+	      another host (#44683).
+	      Fixed in 7.0.3, 6.1.6 and 6.0.12.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://www.redmine.org/projects/redmine/wiki/Security_Advisories</url>
+      <url>https://www.redmine.org/issues/44657</url>
+      <url>https://www.redmine.org/issues/44625</url>
+      <url>https://www.redmine.org/issues/44468</url>
+      <url>https://www.redmine.org/issues/44467</url>
+      <url>https://www.redmine.org/issues/44682</url>
+      <url>https://www.redmine.org/issues/44644</url>
+      <url>https://www.redmine.org/issues/44683</url>
+    </references>
+    <dates>
+      <discovery>2026-11-01</discovery>
+      <entry>2026-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7c872fa8-d4ee-11f1-b09c-33a9d17da5dc">
     <topic>qt6-webengine -- multiple vulnerabilities</topic>
     <affects>
