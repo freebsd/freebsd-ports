@@ -1,3 +1,33 @@
+  <vuln vid="4784aba5-d6a9-11f1-8a93-a0369f6e85b8">
+    <topic>freenginx -- TLS session ticket key left uninitialized</topic>
+    <affects>
+      <package>
+	<name>freenginx</name>
+	<range><lt>1.30.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The freenginx project reports:</p>
+	<blockquote cite="https://freenginx.org/en/CHANGES-1.30">
+	  <p>One of the keys was left uninitialized when using automatic
+	    rotation of TLS session ticket keys, making it possible to forge
+	    a session and bypass client certificate verification
+	    (CVE-2026-97629).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-97629</cvename>
+      <url>https://freenginx.org/en/CHANGES-1.30</url>
+      <url>https://freenginx.org/en/CHANGES</url>
+    </references>
+    <dates>
+      <discovery>2026-10-27</discovery>
+      <entry>2026-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e2cda057-d6a0-11f1-975e-e4434b819e80">
     <topic>redmine -- multiple vulnerabilities</topic>
     <affects>
