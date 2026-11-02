@@ -1,3 +1,63 @@
+  <vuln vid="4784d4b8-d6a9-11f1-8a93-a0369f6e85b8">
+    <topic>phpBB -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpbb3</name>
+	<range><lt>3.3.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpBB Team reports:</p>
+	<blockquote cite="https://www.phpbb.com/community/docs/CHANGELOG.html">
+	  <ul>
+	    <li>Resend rate limiting incorrectly updating expiration time
+	      (SECURITY-298)</li>
+	    <li>Attachment comment hijacking by other users
+	      (SECURITY-300)</li>
+	    <li>Reflected XSS via data passed to registration page
+	      (SECURITY-301, CVE-2026-87901)</li>
+	    <li>Hide oauth provider secrets in ACP (SECURITY-302)</li>
+	    <li>Potential stored XSS for string profile fields when allowing
+	      any character (SECURITY-303)</li>
+	    <li>Missing permission type check when applying role based
+	      permissions (SECURITY-305)</li>
+	    <li>Disclosure of hidden or unapproved topic title when emailing
+	      topic (SECURITY-306)</li>
+	    <li>Banned users can email members despite ban status
+	      (SECURITY-307)</li>
+	    <li>Releasing of held private messages missing CSRF protection
+	      (SECURITY-308)</li>
+	    <li>Missing encoding of username in anti abuse header
+	      (SECURITY-309)</li>
+	    <li>MCP topic view mixing access checks for post and topic
+	      (SECURITY-310)</li>
+	    <li>Moderators with f_user_lock permission may close other user's
+	      topics (SECURITY-311)</li>
+	    <li>Unauthenticated SMTP command injection via contact form
+	      (SECURITY-312)</li>
+	    <li>Moderators can close/delete reports outside their forum
+	      permissions (SECURITY-313)</li>
+	    <li>MCP make normal action for topics missing check for
+	      forum-scoped moderators (SECURITY-314)</li>
+	  </ul>
+	</blockquote>
+	<p>The fixes were announced with phpBB 3.3.18, but the 3.3.18
+	  downloads did not contain them, so only 3.3.19 ships the fixed
+	  code.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-87901</cvename>
+      <url>https://www.phpbb.com/community/docs/CHANGELOG.html</url>
+      <url>https://www.phpbb.com/community/viewtopic.php?t=2675305</url>
+    </references>
+    <dates>
+      <discovery>2026-10-23</discovery>
+      <entry>2026-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4784aba5-d6a9-11f1-8a93-a0369f6e85b8">
     <topic>freenginx -- TLS session ticket key left uninitialized</topic>
     <affects>
