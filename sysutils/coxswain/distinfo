@@ -1,4 +1,4 @@
-TIMESTAMP = 1793009463
+TIMESTAMP = 1793526481
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/adobe-cmap-parser-0.4.1.crate) = ae8abfa9a4688de8fc9f42b3f013b6fffec18ed8a554f5f113577e0b9b3212a3
@@ -1689,5 +1689,5 @@ SHA256 (rust/crates/zune-jpeg-0.5.15.crate) = 27bc9d5b815bc103f142aa054f561d9187
 SIZE (rust/crates/zune-jpeg-0.5.15.crate) = 88879
 SHA256 (tauri-apps-tao-d19f4c12a0d881260a436d9ccf3e8f349c58e2a4_GH0.tar.gz) = 10a1382f043e7aa08dc5bd754ca2080affbbf27649cf85d5d766bd80bd3e84e8
 SIZE (tauri-apps-tao-d19f4c12a0d881260a436d9ccf3e8f349c58e2a4_GH0.tar.gz) = 2389894
-SHA256 (mwo-dk-coxswain-v2.34.0_GH0.tar.gz) = ded8a198345c0dbcdf13970f2b35f0a310cdd0a9e212543ee7c3317b50e6f840
-SIZE (mwo-dk-coxswain-v2.34.0_GH0.tar.gz) = 57131860
+SHA256 (mwo-dk-coxswain-v2.35.0_GH0.tar.gz) = 6175283514279ca969d74be640d927064c7d1450d3fc2d9e701b9f7c58155ce6
+SIZE (mwo-dk-coxswain-v2.35.0_GH0.tar.gz) = 63483596

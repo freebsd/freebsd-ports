@@ -1,6 +1,6 @@
 PORTNAME=	coxswain
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.34.0
+DISTVERSION=	2.35.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	michael.w.olesen@gmail.com
