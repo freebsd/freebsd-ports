@@ -1,7 +1,10 @@
 PORTNAME=	spawn-fcgi
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/spawn-fcgi/releases-1.6.x/
+
+PATCH_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spawns fastcgi applications
