@@ -26,7 +26,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 #
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.8<6.1:www/py-django60@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-cors-headers>=4.9.0<5:www/py-dj60-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-django-debug-toolbar>=7.1.1<8:www/py-dj60-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-django-debug-toolbar>=7.1.1<9:www/py-dj60-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-filter>=26.1<27:www/py-dj60-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-htmx>=1.29.0<2:www/py-dj60-django-htmx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-mptt>=0.18.0<0.19:www/py-dj60-django-mptt@${PY_FLAVOR} \
