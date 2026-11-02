@@ -1,6 +1,6 @@
 PORTNAME=	dreamchess
 DISTVERSION=	0.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,6 +14,9 @@ LICENSE_DISTFILES_BSD2CLAUSE=		${DISTFILES:N*music*}
 LICENSE_DISTFILES_BSD3CLAUSE=		${DISTFILES:N*music*}
 LICENSE_DISTFILES_CC-BY-NC-ND-3.0=	${DISTFILES:M*music*:S/:music//}
 LICENSE_DISTFILES_GPLv3+ =		${DISTFILES:N*music*}
+
+DEPRECATED=	Last release 7 years ago, does not build with CMake 4
+EXPIRATION_DATE=2026-11-30
 
 BUILD_DEPENDS=	flex:textproc/flex
 LIB_DEPENDS=	libexpat.so:textproc/expat2
