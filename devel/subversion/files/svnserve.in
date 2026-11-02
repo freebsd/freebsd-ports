@@ -28,7 +28,7 @@ name=svnserve
 rcvar=svnserve_enable
 load_rc_config $name
 command=%%PREFIX%%/bin/svnserve
-procname=%%PREFIX%%/bin/svnserve%%SVNSERVE_PROCNAME_EXT%%
+procname=%%PREFIX%%/bin/svnserve%%SVNSERVE_EXT%%
 command_args="-r ${svnserve_data}"
 
 run_rc_command "$1"
