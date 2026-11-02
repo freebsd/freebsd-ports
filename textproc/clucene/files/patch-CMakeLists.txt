@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2011-03-16 20:21:07.000000000 -0400
-+++ CMakeLists.txt	2013-03-27 15:33:37.000000000 -0400
-@@ -62,14 +62,14 @@
+--- CMakeLists.txt.orig	2011-03-17 00:21:07 UTC
++++ CMakeLists.txt
+@@ -17,7 +17,7 @@ SET(CLUCENE_VERSION "${CLUCENE_VERSION_MAJOR}.${CLUCEN
+ SET(CLUCENE_VERSION "${CLUCENE_VERSION_MAJOR}.${CLUCENE_VERSION_MINOR}.${CLUCENE_VERSION_REVISION}.${CLUCENE_VERSION_PATCH}")
+ 
+ #CMake 2.6+ is recommended to an improved Boost module
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0 FATAL_ERROR)
++CMAKE_MINIMUM_REQUIRED(VERSION 3.5.0 FATAL_ERROR)
+ 
+ if(COMMAND cmake_policy)
+   cmake_policy(SET CMP0003 NEW)
+@@ -62,14 +62,14 @@ SET(ENABLE_ANSI_MODE OFF)
    OFF)
    
  SET(ENABLE_ANSI_MODE OFF)
@@ -17,7 +26,7 @@
  
  OPTION(ENABLE_ANSI_MODE
    "compile with -ansi flag"
-@@ -109,7 +109,7 @@
+@@ -109,7 +109,7 @@ INCLUDE (TestCXXAcceptsFlag)
  
  #check flags...
  INCLUDE (TestCXXAcceptsFlag)
@@ -26,7 +35,7 @@
      CHECK_CXX_ACCEPTS_FLAG(-pg GccFlagPg)
      IF ( GccFlagPg )
          OPTION(ENABLE_GPROF
-@@ -131,7 +131,7 @@
+@@ -131,7 +131,7 @@ IF ( CMAKE_COMPILER_IS_GNUCC )
     IF( ENABLE_ANSI_MODE )
      SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ansi")
     ENDIF ( ENABLE_ANSI_MODE )
@@ -35,7 +44,7 @@
  
  
  #Single output directory for building all executables and libraries.
-@@ -163,7 +163,7 @@
+@@ -163,7 +163,7 @@ IF ( BUILD_CONTRIBS_LIB )
    SET(BUILD_CONTRIBS_LIB 1)
  ENDIF ( BUILD_CONTRIBS )
  IF ( BUILD_CONTRIBS_LIB )
