@@ -1,6 +1,6 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-#PORTREVISION=	8
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=		${PORTNAME}
@@ -16,7 +16,9 @@ BROKEN_i386=    doesn't buld on pkg builder
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
-		${LOCALBASE}/bin/swig:devel/swig
+		glslang>0:graphics/glslang \
+		${LOCALBASE}/bin/swig:devel/swig \
+		vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -32,7 +34,9 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libnng.so:net/nng \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libspnav.so:misc/libspnav \
-		libodbc.so:databases/unixODBC
+		libodbc.so:databases/unixODBC \
+		libshaderc_shared.so:graphics/shaderc \
+		libvulkan.so:graphics/vulkan-loader
 
 CONFLICTS_INSTALL=	kicad # bin/_cvpcb.kiface
 
