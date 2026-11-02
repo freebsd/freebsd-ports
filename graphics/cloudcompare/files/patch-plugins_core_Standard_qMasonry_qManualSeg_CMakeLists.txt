@@ -1,0 +1,8 @@
+--- plugins/core/Standard/qMasonry/qManualSeg/CMakeLists.txt.orig	2023-04-01 12:32:02 UTC
++++ plugins/core/Standard/qMasonry/qManualSeg/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required( VERSION 3.0 )
++cmake_minimum_required( VERSION 3.5 )
+ 
+ # CloudCompare Masonry Manual Segmentation plugin
+ option( PLUGIN_STANDARD_MASONRY_QMANUAL_SEG "Check to install qManualSeg plugin" OFF )
