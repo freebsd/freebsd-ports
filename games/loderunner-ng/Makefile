@@ -1,5 +1,6 @@
 PORTNAME=	loderunner-ng
 DISTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	dsl@FreeBSD.org

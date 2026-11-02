@@ -1,0 +1,112 @@
+--- game.h	2026-11-02 23:09:29 UTC
++++ game.h
+@@ -107,6 +107,7 @@
+ };
+ 
+ struct game *game_init(struct level *lvl);
++void game_abort(struct game *game);
+ bool game_tick(struct game *game, int key);
+ void game_render(struct game *game, SDL_Renderer *renderer);
+ void game_destroy(struct game *game);
+--- game.c	2026-11-02 23:09:29 UTC
++++ game.c
+@@ -500,6 +500,17 @@
+     }
+ 
+     return NULL;
++}
++
++/*
++ * Lose the current man. The level restarts if any lives remain.
++ */
++static void runner_die(struct game *game)
++{
++    game->state = GSTATE_END;
++    game->keyhole = KH_MAX_RADIUS;
++    game->level_score_iter = 0;
++    sound_play(SOUND_DEAD);
+ }
+ 
+ /*
+@@ -527,10 +538,7 @@
+     // Runner's death: walled up in a wall or hit by a guard.
+     struct guard *guard = guard_collision(game, r);
+     if (game_tile_t(game, r->x, r->y, MAP_TILE_BRICK) || guard != NULL) {
+-        game->state = GSTATE_END;
+-        game->keyhole = KH_MAX_RADIUS;
+-        game->level_score_iter = 0;
+-        sound_play(SOUND_DEAD);
++        runner_die(game);
+     }
+ 
+     // Runner has reached top of the screen.
+@@ -543,6 +551,18 @@
+     }
+ }
+ 
++/*
++ * Abort the current man (classic Ctrl-A). Same result as being caught.
++ */
++void game_abort(struct game *game)
++{
++    if (game->state != GSTATE_RUN) {
++        return;
++    }
++
++    runner_die(game);
++}
++
+ static void runner_render(SDL_Renderer *renderer, struct runner *runner)
+ {
+     animation_render(renderer, runner->cura,
+--- main.c	2026-11-02 23:09:29 UTC
++++ main.c
+@@ -239,6 +239,19 @@
+                         pause = !pause;
+                         sound_pause();
+                         break;
++                    case SDLK_a:
++                        if ((event.key.keysym.mod & KMOD_CTRL) != 0) {
++                            if (game->state == GSTATE_RUN) {
++                                if (pause) {
++                                    pause = false;
++                                    sound_pause();
++                                }
++                                game_abort(game);
++                            }
++                            break;
++                        }
++                        key = event.key.keysym.sym;
++                        break;
+                     default:
+                         key = event.key.keysym.sym;
+                         break;
+--- loderunner-ng.1	2026-11-02 23:09:29 UTC
++++ loderunner-ng.1
+@@ -15,7 +15,7 @@
+ .\" You should have received a copy of the GNU General Public License
+ .\" along with loderunner-ng. If not, see <http://www.gnu.org/licenses/>.
+ .\"
+-.Dd July 24, 2025
++.Dd November 2, 2026
+ .Dt LODERUNNER-NG 1
+ .Os
+ .Sh NAME
+@@ -67,6 +67,7 @@
+ .It Li Down Ta move the runner down
+ .It Li X Ta dig hole right to the runner
+ .It Li Z Ta dig hole left to the runner
++.It Li Ctrl-A Ta lose one man and restart the level
+ .It Li P, Escape Ta toggle game pause
+ .It Li Q Ta quit game
+ .It Li Enter Ta start game; skip keyhole animation
+--- README.md	2026-11-02 23:09:29 UTC
++++ README.md
+@@ -24,6 +24,7 @@
+ * `Down` -- move down
+ * `X` -- dig hole right to the runner
+ * `Z` -- dig hole left to the runner
++* `Ctrl-A` -- lose one man and restart the level
+ * `P`, `Escape` -- pause
+ * `Q` -- quit
+ * `Enter` -- start game; skip keyhole animation
