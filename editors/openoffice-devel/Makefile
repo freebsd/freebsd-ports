@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -67,7 +67,6 @@ BUILD_DEPENDS=								\
 		${JAVALIBDIR}/junit.jar:java/junit			\
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		bash:shells/bash					\
-		${JAVALIBDIR}/lucene-core-3.6.2.jar:textproc/lucene	\
 		p5-XML-Parser>=0:textproc/p5-XML-Parser			\
 		p5-libwww>=0:www/p5-libwww				\
 		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https
@@ -312,8 +311,6 @@ CONFIGURE_ARGS+=							\
 			--disable-kde4					\
 			--with-system-libxml				\
 			--with-system-libxslt				\
-			--with-lucene-core-jar=${JAVALIBDIR}/lucene-core-2.9.4.jar \
-			--with-lucene-analyzers-jar=${JAVALIBDIR}/lucene-analyzers-2.9.4.jar \
 			--with-system-mythes				\
 			--with-external-thes-dir=${LOCALBASE}/share/mythes \
 			--with-system-nss				\
@@ -404,14 +401,6 @@ post-patch:
 	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|" \
 		${WRKSRC}/desktop/scripts/soffice.sh
 	${REINPLACE_CMD} -e '/^mkdir -p/,$$d' ${CREATE_TREE}
-
-# Verify that lucene was built with the CONTRIB option instead of
-# failing mysteriously during the build
-pre-configure:
-	@if [ ! -f ${JAVALIBDIR}/lucene-analyzers-3.6.2.jar ]; then \
-		${ECHO} "error: textproc/lucene must be built with the CONTRIB option enabled"; \
-		exit 1; \
-	fi
 
 do-build:
 	${PRINTF} "[repositories]\nmain=active\nextras=active\n" > ${WRKSUBDIR}/source_config
