@@ -752,6 +752,7 @@
     SUBDIR += ssmtp
     SUBDIR += stalwart
     SUBDIR += stalwart-cli
+    SUBDIR += stalwart-migrate
     SUBDIR += surblhost
     SUBDIR += swaks
     SUBDIR += sylpheed
