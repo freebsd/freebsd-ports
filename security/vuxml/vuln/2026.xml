@@ -1,3 +1,37 @@
+  <vuln vid="339bd17a-d6fc-11f1-97dc-40b034429ecf">
+    <topic>hurl -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>hurl</name>
+<range><lt>8.1.0</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hurl project reports:</p>
+	<blockquote cite="https://github.com/Orange-OpenSource/hurl/blob/master/CHANGELOG.md#8.1.0">
+	  <p>Security Issues Fixed:</p>
+      <ul>
+	    <li>Fix CVE-2026-63481 stripping cookie from Cookies section when redirecting to a different host</li>
+	    <li>Fix escaping headers values in HTML report #5228</li>
+	    <li>Fix symlinks escaping file root #5289</li>
+	    <li>Fix credentials leaking using --header and following redirection #5310</li>
+	    <li>Add explicit nesting limit to JSON Body parsing #5317</li>
+	    <li>Fix escaping capture name in HTML report #5346</li>
+      </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-63481</cvename>
+      <url>https://github.com/advisories/GHSA-7w2g-9mf9-324m</url>
+    </references>
+    <dates>
+      <discovery>2026-08-20</discovery>
+      <entry>2026-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4784d4b8-d6a9-11f1-8a93-a0369f6e85b8">
     <topic>phpBB -- multiple vulnerabilities</topic>
     <affects>
