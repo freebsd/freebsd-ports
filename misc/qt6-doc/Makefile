@@ -9,7 +9,7 @@ COMMENT=	Qt 6 module Documentations
 BUILD_DEPENDS=	vulkan-headers>=1.4:graphics/vulkan-headers
 
 USES=		cmake compiler:c++17-lang qt-dist:6
-USE_QT=		base declarative sqldriver-sqlite tools
+USE_QT=		base:build declarative:build sqldriver-sqlite:build tools:build
 
 ALL_TARGET=	docs
 INSTALL_TARGET=	install_docs

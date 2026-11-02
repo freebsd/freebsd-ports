@@ -306,6 +306,7 @@ lib/cmake/Qt6WebEngineWidgetsPrivate/Qt6WebEngineWidgetsPrivateVersionlessTarget
 %%QT_SBOMDIR%%/qtwebengine-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtwebengine-%%FULLVER%%.spdx
 %%QT_SBOMDIR%%/qtwebengine-%%FULLVER%%.spdx.json
+%%QT_SBOMDIR%%/qtwebengine-chromium-webengine-%%FULLVER%%.cdx.json
 %%QT_SBOMDIR%%/qtwebengine-chromium-webengine-%%FULLVER%%.spdx
 %%QT_SBOMDIR%%/qtwebengine-chromium-webengine-%%FULLVER%%.spdx.json
 libdata/pkgconfig/Qt6WebEngineCore.pc

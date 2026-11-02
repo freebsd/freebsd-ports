@@ -46,6 +46,7 @@
 %%QT_INCDIR%%/QtCore5Compat/qregexp.h
 %%QT_INCDIR%%/QtCore5Compat/qstringref.h
 %%QT_INCDIR%%/QtCore5Compat/qtcore5compat-config.h
+%%QT_INCDIR%%/QtCore5Compat/qtcore5compatexports.h
 %%QT_INCDIR%%/QtCore5Compat/qtcore5compatversion.h
 %%QT_INCDIR%%/QtCore5Compat/qtextcodec.h
 %%QT_INCDIR%%/QtCore5Compat/qxml.h

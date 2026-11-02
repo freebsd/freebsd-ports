@@ -2195,6 +2195,7 @@ lib/cmake/Qt6Qml/Qt6QmlTargets.cmake
 lib/cmake/Qt6Qml/Qt6QmlTargetsPrecheck.cmake
 lib/cmake/Qt6Qml/Qt6QmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6Qml/Qt6QmlVersionlessTargets.cmake
+lib/cmake/Qt6Qml/Qt6QmllintEmptyJsonTemplate.json
 lib/cmake/Qt6Qml/Qt6QmltcFileMappingTemplate.qrc.in
 lib/cmake/Qt6Qml/Qt6UpdateQmllsIni.cmake
 lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in

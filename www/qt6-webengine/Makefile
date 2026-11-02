@@ -217,7 +217,13 @@ qtwebengine-create-security-patch:
 	${ECHO_CMD} "====> Determining base qtwebengine-chromium submodule hash from qtwebengine tag v${DISTVERSION}..."; \
 	tmp_repo=$$(${MKTEMP} -d -t qtwebengine_repo); \
 	cd "$${tmp_repo}" && git init --quiet && \
-	git fetch --depth 1 --quiet https://code.qt.io/qt/qtwebengine.git "refs/tags/v${DISTVERSION}:refs/tags/v${DISTVERSION}" && \
+	if ! git fetch --depth 1 --quiet https://code.qt.io/qt/qtwebengine.git "refs/tags/v${DISTVERSION}:refs/tags/v${DISTVERSION}" 2>/dev/null; then \
+	    ${ECHO_CMD} "====> code.qt.io failed. Falling back to GitHub for tag fetch..."; \
+	    if ! git fetch --depth 1 --quiet https://github.com/qt/qtwebengine.git "refs/tags/v${DISTVERSION}:refs/tags/v${DISTVERSION}" 2>/dev/null; then \
+	        ${ECHO_CMD} "ERROR: Could not fetch tag v${DISTVERSION} from code.qt.io or GitHub."; \
+	        cd - >/dev/null; ${RM} -rf "$${tmp_repo}"; exit 1; \
+	    fi; \
+	fi; \
 	base_hash=$$(git ls-tree refs/tags/v${DISTVERSION} src/3rdparty | ${AWK} '{print $$3}'); \
 	cd - >/dev/null; \
 	${RM} -rf "$${tmp_repo}"; \
@@ -227,27 +233,40 @@ qtwebengine-create-security-patch:
 	fi; \
 	${ECHO_CMD} "====> Using qtwebengine-chromium base hash: $${base_hash}"; \
 	${ECHO_CMD} "====> Determining qtwebengine-chromium branch..."; \
-	chromium_major=$$(${FETCH_CMD} -q -o - "https://code.qt.io/cgit/qt/qtwebengine-chromium.git/plain/chromium/chrome/VERSION?id=$${base_hash}" | ${AWK} -F= '/^MAJOR/ {print $$2}' | ${TR} -d '\r'); \
+	chromium_major=$$(${FETCH_CMD} -q -o - "https://code.qt.io/cgit/qt/qtwebengine-chromium.git/plain/chromium/chrome/VERSION?id=$${base_hash}" 2>/dev/null | ${AWK} -F= '/^MAJOR/ {print $$2}' | ${TR} -d '\r'); \
 	if [ -z "$${chromium_major}" ]; then \
-	    ${ECHO_CMD} "ERROR: Could not determine Chromium major version."; \
-	    exit 1; \
+	    ${ECHO_CMD} "====> code.qt.io failed. Falling back to GitHub for VERSION fetch..."; \
+	    chromium_major=$$(${FETCH_CMD} -q -o - "https://raw.githubusercontent.com/qt/qtwebengine-chromium/$${base_hash}/chromium/chrome/VERSION" 2>/dev/null | ${AWK} -F= '/^MAJOR/ {print $$2}' | ${TR} -d '\r'); \
+	    if [ -z "$${chromium_major}" ]; then \
+	        ${ECHO_CMD} "ERROR: Could not determine Chromium major version from code.qt.io or GitHub."; \
+	        exit 1; \
+	    fi; \
 	fi; \
 	chromium_branch="$${chromium_major}-based"; \
 	${ECHO_CMD} "====> Using qtwebengine-chromium branch: $${chromium_branch}"; \
 	${ECHO_CMD} "====> Fetching security rollup patch from $${base_hash} to $${chromium_branch}..."; \
 	tmp_patch=$$(${MKTEMP} -t qt_sec_patch); \
-	if ! ${FETCH_CMD} -o "$${tmp_patch}" "https://code.qt.io/cgit/qt/qtwebengine-chromium.git/rawdiff/?id=$${chromium_branch}&id2=$${base_hash}" >/dev/null 2>&1; then \
-	    ${ECHO_CMD} "ERROR: Could not fetch diff from https://code.qt.io/cgit/."; \
-	    ${RM} -f "$${tmp_patch}"; \
-	    exit 1; \
+	if ! ${FETCH_CMD} -o "$${tmp_patch}" "https://code.qt.io/cgit/qt/qtwebengine-chromium.git/rawdiff/?id=$${chromium_branch}&id2=$${base_hash}" >/dev/null 2>&1 || [ ! -s "$${tmp_patch}" ]; then \
+	    ${ECHO_CMD} "====> code.qt.io failed or returned empty. Falling back to GitHub for diff fetch..."; \
+	    if ! ${FETCH_CMD} -o "$${tmp_patch}" "https://github.com/qt/qtwebengine-chromium/compare/$${base_hash}...$${chromium_branch}.diff" >/dev/null 2>&1 || [ ! -s "$${tmp_patch}" ]; then \
+	        ${ECHO_CMD} "ERROR: Could not fetch diff from code.qt.io or GitHub."; \
+	        ${RM} -f "$${tmp_patch}"; \
+	        exit 1; \
+	    fi; \
 	fi; \
-	${ECHO_CMD} "====> Formatting patch paths and adding header..."; \
+	${ECHO_CMD} "====> Formatting patch..."; \
 	( \
 	    ${PRINTF} "Base-Commit: $${base_hash}\nBranch: $${chromium_branch}\n\n"; \
+	    ${AWK} ' \
+	        /^diff --git a\// { skip = ($$0 ~ /\.(bat|cmd|gitignore|ps1|vcxproj|sln|sln\.tmpl)\r?$$/) ? 1 : 0 } \
+	        { if (!skip) { sub(/\r$$/, ""); print } } \
+	    ' "$${tmp_patch}" | \
 	    ${SED} -E \
 	      -e 's|^(--- )a/|\1src/3rdparty/|' \
 	      -e 's|^(\+\+\+ )b/|\1src/3rdparty/|' \
-	      "$${tmp_patch}" \
+	      -e '/^index [0-9a-f]+\.\.[0-9a-f]+/d' \
+	      -e '/^diff --git /d' \
+	      -e '/^(old|new|deleted file|new file) mode [0-7]+/d' \
 	) > ${.CURDIR}/files/patch-security-rollup; \
 	${RM} -f "$${tmp_patch}"; \
 	${ECHO_CMD} "===> Updated ${FILESDIR}/patch-security-rollup"; \

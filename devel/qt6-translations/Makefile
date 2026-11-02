@@ -12,7 +12,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cyclonedx-python-lib>0:textproc/py-cyclone
 
 USES=		cmake compiler:c++17-lang python:build qt-dist:6
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
-USE_QT=		base tools
+USE_QT=		base:build tools:build
 
 NO_ARCH=	yes
 
