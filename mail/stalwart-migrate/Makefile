@@ -14,6 +14,8 @@ LICENSE_FILE_AGPLv3=	${WRKSRC}/LICENSES/AGPL-3.0-only.txt
 LICENSE_FILE_SELv2=	${WRKSRC}/LICENSES/LicenseRef-SEL.txt
 LICENSE_PERMS_SELv2=	pkg-mirror auto-accept
 
+DEPRECATED=	Stalwart 0.16 is end-of-life; only needed while migrating to Stalwart 1.x
+EXPIRATION_DATE=	2027-11-02
 BROKEN_i386=	rustc-LLVM ERROR: out of memory
 
 # aws-lc-sys has no pregenerated bindings for FreeBSD and runs bindgen
