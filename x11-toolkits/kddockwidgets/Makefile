@@ -1,5 +1,6 @@
 PORTNAME=	kddockwidgets
 DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://github.com/KDAB/KDDockWidgets/releases/download/v${DISTVERSION}/
 
