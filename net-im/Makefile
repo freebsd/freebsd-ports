@@ -144,6 +144,7 @@
     SUBDIR += ssh-chat
     SUBDIR += sshout
     SUBDIR += tdlib
+    SUBDIR += tdlib-purple
     SUBDIR += teams
     SUBDIR += telegram-cli
     SUBDIR += telegram-desktop
