@@ -1,5 +1,5 @@
 PORTNAME=	gssproxy
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/gssapi/gssproxy/releases/download/v${DISTVERSION}/
 

@@ -1,6 +1,6 @@
---- src/gp_init.c.orig	2026-07-21 10:43:49 UTC
+--- src/gp_init.c.orig	2026-10-22 17:00:59 UTC
 +++ src/gp_init.c
-@@ -376,6 +376,7 @@ int init_event_fini(struct gssproxy_ctx *gpctx)
+@@ -396,6 +396,7 @@ int init_event_fini(struct gssproxy_ctx *gpctx)
      return 0;
  }
  
@@ -8,7 +8,7 @@
  static int try_init_proc_nfsd(void)
  {
      char buf[] = "1";
-@@ -476,6 +477,13 @@ out:
+@@ -496,6 +497,13 @@ out:
      }
      return 0;
  }

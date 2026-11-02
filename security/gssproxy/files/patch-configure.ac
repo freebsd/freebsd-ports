@@ -1,4 +1,4 @@
---- configure.ac.orig	2022-07-26 10:17:29 UTC
+--- configure.ac.orig	2026-10-22 17:00:59 UTC
 +++ configure.ac
 @@ -82,7 +82,7 @@ LIBS="$PTHREAD_LIBS $LIBS"
  AX_PTHREAD(,[AC_MSG_ERROR([Could not find Pthreads support])])
@@ -9,7 +9,7 @@
  CC="$PTHREAD_CC"
  
  AC_CHECK_HEADERS([gssapi/gssapi.h],,[AC_MSG_ERROR([Could not find GSSAPI headers])])
-@@ -135,15 +135,31 @@ if test x$only_gss_module != xyes; then
+@@ -139,15 +139,31 @@ if test x$only_gss_module != xyes; then
  if test x$only_gss_module != xyes; then
      WITH_POPT
  
