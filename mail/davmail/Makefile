@@ -1,5 +1,5 @@
 PORTNAME=	davmail
-DISTVERSION=	7.0.0
+DISTVERSION=	7.1.0
 CATEGORIES=	mail java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}-${REVISION}
@@ -15,7 +15,7 @@ USES=		dos2unix java:ant,run tar:tgz
 DOS2UNIX_FILES=	build.xml
 USE_RC_SUBR=	${PORTNAME}
 # 7.0.0
-REVISION=	4403
+REVISION=	4498
 # port build number, same as on DISTNAME
 MAKE_ARGS=	-Drevision=${REVISION}
 MAKE_ENV+=	"ANT_OPTS=-Dfile.encoding=UTF-8"
