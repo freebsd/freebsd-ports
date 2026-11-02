@@ -3945,7 +3945,6 @@ lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/features/unix/x11sm.prf
 %%QT_MKSPECDIR%%/features/unsupported/testserver.prf
 %%QT_MKSPECDIR%%/features/use_c_linker.prf
-%%QT_MKSPECDIR%%/features/vxworks.prf
 %%QT_MKSPECDIR%%/features/warn_off.prf
 %%QT_MKSPECDIR%%/features/warn_on.prf
 %%QT_MKSPECDIR%%/features/wasm/default_pre.prf
@@ -4129,6 +4128,7 @@ lib/cmake/Qt6XmlPrivate/Qt6XmlPrivateVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-dcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-g++/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/vxworks-clang/qmake.conf
 %%QT_MKSPECDIR%%/vxworks-clang/qplatformdefs.h
 %%QT_MKSPECDIR%%/wasm-emscripten-64/qmake.conf
 %%QT_MKSPECDIR%%/wasm-emscripten-64/qplatformdefs.h

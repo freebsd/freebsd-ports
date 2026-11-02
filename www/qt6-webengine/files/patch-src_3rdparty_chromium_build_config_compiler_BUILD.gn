@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2026-08-11 12:42:19 UTC
+--- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2026-10-21 00:29:58 UTC
 +++ src/3rdparty/chromium/build/config/compiler/BUILD.gn
 @@ -200,7 +200,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
@@ -42,8 +42,8 @@
      # CPU architecture. We may or may not be doing a cross compile now, so for
      # simplicity we always explicitly set the architecture.
      if (current_cpu == "x64") {
--      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device) {
-+      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_bsd) {
+-      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_ohos) {
++      if (is_clang && !is_android && !is_fuchsia && !is_chromeos_device && !is_ohos && !is_bsd) {
          cflags += [ "--target=x86_64-unknown-linux-gnu" ]
          ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
        } else {
