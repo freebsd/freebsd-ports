@@ -121,6 +121,7 @@ include/freerdp%%MAJORVERSION%%/freerdp/locale/locale.h
 include/freerdp%%MAJORVERSION%%/freerdp/log.h
 include/freerdp%%MAJORVERSION%%/freerdp/message.h
 include/freerdp%%MAJORVERSION%%/freerdp/metrics.h
+include/freerdp%%MAJORVERSION%%/freerdp/multitransport.h
 include/freerdp%%MAJORVERSION%%/freerdp/peer.h
 include/freerdp%%MAJORVERSION%%/freerdp/pointer.h
 include/freerdp%%MAJORVERSION%%/freerdp/primary.h
@@ -209,6 +210,7 @@ include/winpr%%MAJORVERSION%%/winpr/clipboard.h
 include/winpr%%MAJORVERSION%%/winpr/cmdline.h
 include/winpr%%MAJORVERSION%%/winpr/collections.h
 include/winpr%%MAJORVERSION%%/winpr/comm.h
+include/winpr%%MAJORVERSION%%/winpr/config-readers.h
 include/winpr%%MAJORVERSION%%/winpr/config.h
 include/winpr%%MAJORVERSION%%/winpr/cred.h
 include/winpr%%MAJORVERSION%%/winpr/crt.h
@@ -221,6 +223,7 @@ include/winpr%%MAJORVERSION%%/winpr/environment.h
 include/winpr%%MAJORVERSION%%/winpr/error.h
 include/winpr%%MAJORVERSION%%/winpr/file.h
 include/winpr%%MAJORVERSION%%/winpr/handle.h
+include/winpr%%MAJORVERSION%%/winpr/i18n.h
 include/winpr%%MAJORVERSION%%/winpr/image.h
 include/winpr%%MAJORVERSION%%/winpr/ini.h
 include/winpr%%MAJORVERSION%%/winpr/input.h
@@ -231,6 +234,7 @@ include/winpr%%MAJORVERSION%%/winpr/json.h
 include/winpr%%MAJORVERSION%%/winpr/library.h
 include/winpr%%MAJORVERSION%%/winpr/memory.h
 include/winpr%%MAJORVERSION%%/winpr/ncrypt.h
+include/winpr%%MAJORVERSION%%/winpr/ndr.h
 include/winpr%%MAJORVERSION%%/winpr/nt.h
 include/winpr%%MAJORVERSION%%/winpr/ntlm.h
 include/winpr%%MAJORVERSION%%/winpr/pack.h
