@@ -19,6 +19,7 @@ share/metainfo/xchm.appdata.xml
 %%NLS%%share/locale/fr/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xchm.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xchm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xchm.mo
