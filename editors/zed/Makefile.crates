@@ -9,9 +9,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		adler2-2.0.1 \
 		adler32-1.2.0 \
 		aes-0.8.4 \
-		agent-client-protocol-3.3.0 \
-		agent-client-protocol-derive-3.3.0 \
-		agent-client-protocol-schema-1.11.0 \
+		agent-client-protocol-3.4.0 \
+		agent-client-protocol-derive-3.4.0 \
+		agent-client-protocol-schema-1.12.0 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.3 \
 		aliasable-0.1.3 \
@@ -137,6 +137,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		bon-3.8.2 \
 		bon-macros-3.8.2 \
 		borrow-or-share-0.2.4 \
+		borsh-1.8.1 \
+		borsh-derive-1.8.1 \
 		brush-parser-0.3.0 \
 		bs58-0.5.1 \
 		bstr-1.12.1 \
@@ -223,6 +225,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		core-services-1.0.0 \
 		core-text-21.0.0 \
 		core2-0.4.0 \
+		core_detect-1.0.0 \
 		core_maths-0.1.1 \
 		coreaudio-rs-0.12.1 \
 		coreaudio-rs-0.14.2 \
@@ -300,6 +303,10 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		diff-0.1.13 \
 		diffy-0.4.2 \
 		digest-0.10.7 \
+		dioxus-cli-config-0.7.10 \
+		dioxus-core-0.7.10 \
+		dioxus-core-types-0.7.10 \
+		dioxus-devtools-types-0.7.10 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		dispatch-0.2.0 \
@@ -412,6 +419,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		futures-task-0.3.34 \
 		futures-util-0.3.34 \
 		gaoya-0.2.0 \
+		generational-box-0.7.10 \
 		generator-0.8.9 \
 		generic-array-0.14.7 \
 		gethostname-1.1.0 \
@@ -596,6 +604,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		logos-derive-0.15.1 \
 		logos-derive-0.16.1 \
 		lol_html-3.0.1 \
+		longest-increasing-subsequence-0.1.0 \
 		loom-0.7.2 \
 		loop9-0.1.5 \
 		lru-0.16.4 \
@@ -712,6 +721,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		objc2-quartz-core-0.3.2 \
 		objc2-screen-capture-kit-0.3.2 \
 		objc2-security-0.3.2 \
+		objc2-ui-kit-0.3.2 \
 		objc2-user-notifications-0.3.2 \
 		objc_exception-0.1.2 \
 		objc_id-0.1.1 \
@@ -720,7 +730,6 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		octocrab-0.49.7 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.1 \
-		oo7-0.6.0 \
 		oorandom-11.1.5 \
 		open-5.3.2 \
 		opener-0.7.2 \
@@ -828,7 +837,9 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		profiling-1.0.17 \
 		profiling-procmacros-1.0.17 \
 		prometheus-0.14.0 \
+		proptest-1.12.0 \
 		proptest-derive-0.8.0 \
+		proptest-macro-0.6.0 \
 		prost-0.14.4 \
 		prost-build-0.14.4 \
 		prost-derive-0.14.4 \
@@ -872,7 +883,7 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		rand_core-0.10.1 \
 		rand_pcg-0.3.1 \
 		rand_pcg-0.10.2 \
-		rand_xorshift-0.4.0 \
+		rand_xorshift-0.5.0 \
 		random_choice-0.3.2 \
 		range-alloc-0.1.4 \
 		range-map-0.2.0 \
@@ -1051,6 +1062,8 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		strum-0.28.0 \
 		strum_macros-0.27.2 \
 		strum_macros-0.28.0 \
+		subsecond-0.7.10 \
+		subsecond-types-0.7.10 \
 		subtle-2.6.1 \
 		sval-2.15.0 \
 		sval_buffer-2.15.0 \
@@ -1443,11 +1456,11 @@ CARGO_CRATES=	accesskit-0.24.1 \
 		windows-capture@git+https://github.com/zed-industries/windows-capture.git?rev=f0d6c1b6691db75461b732f6d5ff56eed002eeb9\#f0d6c1b6691db75461b732f6d5ff56eed002eeb9 \
 		khronos-egl@git+https://github.com/zed-industries/khronos-egl?rev=42214b36347b108fd9630ca6254b96dde59e04fe\#42214b36347b108fd9630ca6254b96dde59e04fe \
 		tree-sitter,tree-sitter-language@git+https://github.com/tree-sitter/tree-sitter?rev=43623ec9bf0eaaf7113285c46e8a09018f181b18\#43623ec9bf0eaaf7113285c46e8a09018f181b18 \
+		oo7@git+https://github.com/zed-industries/oo7?rev=731c1215edb6905876c6137ab300428c7b8d7c13\#731c1215edb6905876c6137ab300428c7b8d7c13 \
 		notify,notify-types@git+https://github.com/zed-industries/notify?rev=d842f16b2716bd60f09caf3ae3a894237ab38f54\#d842f16b2716bd60f09caf3ae3a894237ab38f54 \
 		libwebrtc,livekit,livekit-api,livekit-protocol,livekit-runtime,webrtc-sys,webrtc-sys-build@git+https://github.com/zed-industries/livekit-rust-sdks?rev=0a1c519cfce9b365229026b55de9b9dbdb6fed3c\#0a1c519cfce9b365229026b55de9b9dbdb6fed3c \
 		tree-sitter-gomod@git+https://github.com/camdencheek/tree-sitter-go-mod?rev=2e886870578eeba1927a2dc4bd2e2b3f598c5f9a\#2e886870578eeba1927a2dc4bd2e2b3f598c5f9a \
 		async-tar@git+https://github.com/zed-industries/async-tar?rev=bd3ad6f89df9a9da7a8535958756d6bf465936a0\#bd3ad6f89df9a9da7a8535958756d6bf465936a0 \
-		proptest,proptest-macro@git+https://github.com/proptest-rs/proptest?rev=3dca198a8fef1b32e3a66f1e1897c955b4dc5b5b\#3dca198a8fef1b32e3a66f1e1897c955b4dc5b5b \
 		cpal@git+https://github.com/RustAudio/cpal?rev=e1612d5d98152f8dc2a62e1b51ef7cbf4f7f26b7\#e1612d5d98152f8dc2a62e1b51ef7cbf4f7f26b7 \
 		zed-scap@git+https://github.com/zed-industries/scap?rev=4afea48c3b002197176fb19cd0f9b180dd36eaac\#4afea48c3b002197176fb19cd0f9b180dd36eaac \
 		lsp-types@git+https://github.com/zed-industries/lsp-types?rev=f1783e63a7f4eb4397bf51d4148b4895a1f7ab16\#f1783e63a7f4eb4397bf51d4148b4895a1f7ab16 \

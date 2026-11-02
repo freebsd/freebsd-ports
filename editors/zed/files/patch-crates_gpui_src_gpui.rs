@@ -1,6 +1,6 @@
---- crates/gpui/src/gpui.rs.orig	2026-10-07 17:31:55 UTC
+--- crates/gpui/src/gpui.rs.orig	2026-10-28 14:12:11 UTC
 +++ crates/gpui/src/gpui.rs
-@@ -40,6 +40,7 @@ pub mod profiler;
+@@ -42,6 +42,7 @@ pub mod profiler;
      test,
      target_os = "windows",
      target_os = "linux",
@@ -8,7 +8,7 @@
      target_family = "wasm",
      feature = "test-support",
      feature = "bench-support"
-@@ -194,7 +195,7 @@ pub use profiler::*;
+@@ -196,7 +197,7 @@ pub use profiler::*;
  pub use path_builder::*;
  pub use platform::*;
  pub use profiler::*;
