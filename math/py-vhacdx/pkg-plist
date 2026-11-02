@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/vhacdx-%%VER%%.dist-info/LICENSE
+%%PYTHON_SITELIBDIR%%/vhacdx-%%VER%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/vhacdx-%%VER%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/vhacdx-%%VER%%.dist-info/WHEEL
+%%PYTHON_SITELIBDIR%%/vhacdx-%%VER%%.dist-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/vhacdx%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/vhacdx/VHACD.h
+%%PYTHON_SITELIBDIR%%/vhacdx/main.cpp

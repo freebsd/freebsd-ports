@@ -1,0 +1,5 @@
+Python bindings for V-HACD, that is forked from thomwolf/pyVHACD which generates
+an approximate convex decomposition of a triangle mesh.
+
+See also https://github.com/kmammou/v-hacd
+and https://github.com/SarahWeiii/CoACD .

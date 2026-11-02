@@ -1,0 +1,32 @@
+PORTNAME=	vhacdx
+DISTVERSION=	0.1.1
+CATEGORIES=	math cad
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	thierry@FreeBSD.org
+COMMENT=	Python bindings for V-HACD
+WWW=		https://github.com/trimesh/vhacdx
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PY_SETUPTOOLS}	\
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
+BUILD_RUN_DEPENDS=	\
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.26:math/py-numpy@${PY_FLAVOR}
+
+USES=		pytest python
+
+USE_PYTHON=	pep517
+
+.if !defined(WITH_DEBUG)
+LDFLAGS+=	-s
+.endif
+
+TEST_ENV=	PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+
+PLIST_SUB=	VER=${PORTVERSION}
+
+.include <bsd.port.mk>

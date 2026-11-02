@@ -1204,6 +1204,7 @@
     SUBDIR += py-uncertainties
     SUBDIR += py-unyt
     SUBDIR += py-vector
+    SUBDIR += py-vhacdx
     SUBDIR += py-vincenty
     SUBDIR += py-yt
     SUBDIR += py-z3-solver
