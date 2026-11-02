@@ -1,0 +1,13 @@
+Stalwart Proxy is a multi-protocol e-mail migration proxy. It sits in
+front of one or more mail backends and decides, per account, which
+backend a connection belongs to. It terminates IMAP, POP3, ManageSieve,
+SMTP submission, SMTP/LMTP and HTTP (JMAP) sessions, identifies the
+account from the credentials the client already presents, replays the
+authentication to the assigned backend and bridges the session, so no
+client reconfiguration is required.
+
+It is intended for migrating from legacy servers such as Dovecot or
+Cyrus to Stalwart one mailbox at a time, for migrating between Stalwart
+versions, and as a cache-locality router in front of a Stalwart cluster.
+Account mappings can be stored in a flat file, Redis, PostgreSQL, MySQL,
+or SQLite. The proxy is written in Rust.

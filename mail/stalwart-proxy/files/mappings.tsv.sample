@@ -1,0 +1,3 @@
+# identifier<TAB>destination-id, one per line.
+# alice@legacy.example.com	legacy
+# carol@new.example.com	stalwart

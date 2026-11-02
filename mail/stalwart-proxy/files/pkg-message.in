@@ -1,0 +1,38 @@
+[
+{ type: install
+  message: <<EOM
+Stalwart Proxy has been installed as %%PREFIX%%/bin/stalwart-proxy.
+
+1. Edit %%ETCDIR%%/config.toml (destinations, listeners,
+   TLS certificates) and %%ETCDIR%%/mappings.tsv.
+   Additional example configurations are available in
+   %%EXAMPLESDIR%%.
+
+2. Create the admin API token referenced by [admin].bearer_token_file:
+
+     umask 027
+     openssl rand -hex 32 > %%ETCDIR%%/admin.token
+     chgrp %%GROUPS%% %%ETCDIR%%/admin.token
+
+3. The proxy runs as the unprivileged user "%%USERS%%" but the
+   sample configuration listens on privileged ports (< 1024).
+   Either allow this user to bind them with mac_portacl(4):
+
+     sysrc kld_list+=mac_portacl
+     kldload mac_portacl
+     sysctl net.inet.ip.portrange.reservedlow=0
+     sysctl net.inet.ip.portrange.reservedhigh=0
+     sysctl security.mac.portacl.rules=uid:485:tcp:25,uid:485:tcp:110,uid:485:tcp:143,uid:485:tcp:443,uid:485:tcp:465,uid:485:tcp:587,uid:485:tcp:993,uid:485:tcp:995
+
+   (add the sysctls to /etc/sysctl.conf to make them persistent),
+   or run the proxy as root with stalwart_proxy_user="root".
+
+4. Enable and start the service:
+
+     sysrc stalwart_proxy_enable=YES
+     service stalwart_proxy start
+
+The proxy logs to /var/log/stalwart-proxy.log by default.
+EOM
+}
+]
