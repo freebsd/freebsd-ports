@@ -198,7 +198,6 @@
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
     SUBDIR += orage
-    SUBDIR += owncloudclient
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Data-ICal-DateTime
     SUBDIR += pal
