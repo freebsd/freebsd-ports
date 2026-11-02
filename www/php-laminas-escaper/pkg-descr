@@ -1,0 +1,3 @@
+laminas-escaper securely and safely escapes HTML, HTML attributes,
+JavaScript, CSS, and URLs, following the OWASP recommendations for each
+output context.
