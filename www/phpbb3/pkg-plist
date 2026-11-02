@@ -260,6 +260,7 @@
 %%PHPBBDIR%%/download/file.php
 %%PHPBBDIR%%/download/index.htm
 %%PHPBBDIR%%/ext/index.htm
+%%PHPBBDIR%%/ext/phpbb/viglink/.github/codecov.yml
 %%PHPBBDIR%%/ext/phpbb/viglink/.github/workflows/tests.yml
 %%PHPBBDIR%%/ext/phpbb/viglink/.gitignore
 %%PHPBBDIR%%/ext/phpbb/viglink/acp/viglink_helper.php
@@ -275,6 +276,7 @@
 %%PHPBBDIR%%/ext/phpbb/viglink/event/listener.php
 %%PHPBBDIR%%/ext/phpbb/viglink/ext.php
 %%PHPBBDIR%%/ext/phpbb/viglink/language/en/info_acp_viglink.php
+%%PHPBBDIR%%/ext/phpbb/viglink/language/en/viglink_common.php
 %%PHPBBDIR%%/ext/phpbb/viglink/language/en/viglink_module_acp.php
 %%PHPBBDIR%%/ext/phpbb/viglink/license.txt
 %%PHPBBDIR%%/ext/phpbb/viglink/migrations/viglink_ask_admin_wait.php
@@ -615,6 +617,9 @@
 %%PHPBBDIR%%/language/en/email/topic_disapproved.txt
 %%PHPBBDIR%%/language/en/email/topic_in_queue.txt
 %%PHPBBDIR%%/language/en/email/topic_notify.txt
+%%PHPBBDIR%%/language/en/email/update_critical.txt
+%%PHPBBDIR%%/language/en/email/update_maintenance.txt
+%%PHPBBDIR%%/language/en/email/update_security.txt
 %%PHPBBDIR%%/language/en/email/user_activate_inactive.txt
 %%PHPBBDIR%%/language/en/email/user_activate.txt
 %%PHPBBDIR%%/language/en/email/user_forgot_password.txt
@@ -752,11 +757,13 @@
 %%PHPBBDIR%%/phpbb/cron/task/core/queue.php
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_cache.php
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_database.php
+%%PHPBBDIR%%/phpbb/cron/task/core/tidy_guest_sessions.php
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_plupload.php
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_search.php
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_sessions.php
 %%PHPBBDIR%%/phpbb/cron/task/core/tidy_warnings.php
 %%PHPBBDIR%%/phpbb/cron/task/core/update_hashes.php
+%%PHPBBDIR%%/phpbb/cron/task/core/version_check.php
 %%PHPBBDIR%%/phpbb/cron/task/parametrized.php
 %%PHPBBDIR%%/phpbb/cron/task/task.php
 %%PHPBBDIR%%/phpbb/cron/task/text_reparser/reparser.php
@@ -1051,10 +1058,13 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v330/v330b1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v330/v330b2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v330/v330rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_ai_crawlers_group.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_notification_emails_table.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_oauth_state_time.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_resend_activation_expiration.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_user_last_active.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/add_version_check_cron.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/ai_crawler_bots.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/bot_update_v2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/bot_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/default_search_return_chars.php
@@ -1063,12 +1073,14 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/font_awesome_5_rollback.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/font_awesome_5_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/google_recaptcha_v3.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/guest_session_config.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/jquery_update_v2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/jquery_update_v3.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/jquery_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/profilefield_cleanup.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/profilefield_youtube_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/profilefields_update.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/profilefields_x_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/remove_orphaned_roles.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/remove_profilefield_aol.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/topic_views_update.php
@@ -1087,6 +1099,8 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3316.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3316rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3317.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3318.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v3319.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v331rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v332.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v332rc1.php
@@ -1255,6 +1269,7 @@
 %%PHPBBDIR%%/phpbb/install/installer_configuration.php
 %%PHPBBDIR%%/phpbb/install/installer.php
 %%PHPBBDIR%%/phpbb/install/module/install_data/module.php
+%%PHPBBDIR%%/phpbb/install/module/install_data/task/add_ai_crawlers.php
 %%PHPBBDIR%%/phpbb/install/module/install_data/task/add_bots.php
 %%PHPBBDIR%%/phpbb/install/module/install_data/task/add_languages.php
 %%PHPBBDIR%%/phpbb/install/module/install_data/task/add_modules.php
@@ -1357,6 +1372,7 @@
 %%PHPBBDIR%%/phpbb/notification/type/topic_in_queue.php
 %%PHPBBDIR%%/phpbb/notification/type/topic.php
 %%PHPBBDIR%%/phpbb/notification/type/type_interface.php
+%%PHPBBDIR%%/phpbb/notification/type/update_maintenance.php
 %%PHPBBDIR%%/phpbb/pagination.php
 %%PHPBBDIR%%/phpbb/passwords/driver/argon2i.php
 %%PHPBBDIR%%/phpbb/passwords/driver/argon2id.php
