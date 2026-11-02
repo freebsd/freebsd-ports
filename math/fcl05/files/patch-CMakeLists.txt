@@ -1,6 +1,12 @@
 --- CMakeLists.txt.orig	2016-07-20 03:11:04 UTC
 +++ CMakeLists.txt
-@@ -7,7 +7,7 @@ if(POLICY CMP0042)
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8.12)
++cmake_minimum_required(VERSION 3.5)
+ 
+ # Use MACOSX_RPATH by default on OS X. This was added in CMake 2.8.12 and
+ # became default in CMake 3.0. Explicitly setting this policy is necessary to
+@@ -7,7 +7,7 @@ endif()
    cmake_policy(SET CMP0042 NEW)
  endif()
  
@@ -9,7 +15,7 @@
  
  # set the default build type
  if (NOT CMAKE_BUILD_TYPE)
-@@ -33,12 +33,14 @@ if(MSVC OR MSVC90 OR MSVC10)
+@@ -33,12 +33,14 @@ endif (MSVC OR MSVC90 OR MSVC10)
      set(MSVC ON)
  endif (MSVC OR MSVC90 OR MSVC10)
  
@@ -25,7 +31,7 @@
  if(MSVC OR IS_ICPC)
    option(FCL_STATIC_LIBRARY "Whether the FCL library should be static rather than shared" ON)
  else()
-@@ -143,7 +145,7 @@ add_subdirectory(include/fcl)
+@@ -143,7 +145,7 @@ set(pkg_conf_file_in "${CMAKE_CURRENT_SOURCE_DIR}/fcl.
  add_subdirectory(src)
  
  set(pkg_conf_file_in "${CMAKE_CURRENT_SOURCE_DIR}/fcl.pc.in")
