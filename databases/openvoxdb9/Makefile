@@ -1,5 +1,5 @@
 PORTNAME=	openvoxdb
-DISTVERSION=	9.1.0
+DISTVERSION=	9.1.1
 CATEGORIES=	databases java
 MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${DISTVERSION:S/-/~/}/
 PKGNAMESUFFIX=	9
