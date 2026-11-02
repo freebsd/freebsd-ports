@@ -1,6 +1,6 @@
---- main.pro.orig	2026-09-03 10:18:30 UTC
+--- main.pro.orig	2026-09-17 12:05:47 UTC
 +++ main.pro
-@@ -183,8 +183,8 @@ win32 {
+@@ -184,8 +184,8 @@ win32 {
  !win32 {
     # Flags for g++ or clang (in g++ emulation mode on linux)
     OPTFLAGS_OFF = -O2
