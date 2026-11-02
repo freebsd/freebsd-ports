@@ -1,7 +1,6 @@
 PORTNAME=	kividb
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	databases
 
 PATCH_SITES=	https://github.com/kividbio/kividb/commit/
