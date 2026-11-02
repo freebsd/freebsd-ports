@@ -1,0 +1,4 @@
+laminas-stdlib is a set of useful classes and helpers for PHP:
+extensions to SPL data structures, array and string utilities, hydration
+interfaces, and similar general-purpose code used by the other Laminas
+components.

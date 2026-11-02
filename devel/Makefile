@@ -4343,6 +4343,7 @@
     SUBDIR += php-composer
     SUBDIR += php-grpc
     SUBDIR += php-ice37
+    SUBDIR += php-laminas-stdlib
     SUBDIR += php-libawl
     SUBDIR += php-maxminddb
     SUBDIR += php-mustache
