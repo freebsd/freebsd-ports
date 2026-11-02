@@ -1,6 +1,5 @@
 PORTNAME=	docling-serve
-DISTVERSION=	1.36.0
-PORTREVISION=	1
+DISTVERSION=	1.38.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,11 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.79.0:textproc/py-docling-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-jobkit>=3.8.0:textproc/py-docling-jobkit@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.103.0:textproc/py-docling-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-ibm-models>0:textproc/py-docling-ibm-models@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-jobkit>=3.9.1:textproc/py-docling-jobkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docling-mcp>=1.0.0:textproc/py-docling-mcp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docling-parse>=7.22.1:textproc/py-docling-parse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docling-slim>=2.129.0:textproc/py-docling-slim@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docling-slim>=2.140.0:textproc/py-docling-slim@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>=0.138.0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.28:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}odfdo>=3.22.0:textproc/py-odfdo@${PY_FLAVOR} \
@@ -32,9 +32,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docling-core>=2.79.0:textproc/py-docling-cor
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.10:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic-settings>=2.4:devel/py-pydantic-settings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.14:www/py-python-multipart@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rq>=2.4:devel/py-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scalar-fastapi>=1.0.3:www/py-scalar-fastapi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tree-sitter>=0:devel/py-tree-sitter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tritonclient>=2.65.0:misc/py-tritonclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.12:devel/py-typer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.29.0:www/py-uvicorn@${PY_FLAVOR} \
