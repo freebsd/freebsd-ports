@@ -1,7 +1,16 @@
 - workaround for https://github.com/libfann/fann/issues/142 and https://github.com/libfann/fann/issues/143
 
---- CMakeLists.txt.orig	2023-03-16 17:26:18 UTC
+--- CMakeLists.txt.orig	2026-11-02 12:50:32 UTC
 +++ CMakeLists.txt
+@@ -38,7 +38,7 @@ ELSE()
+ 	  ENDIF()
+ 	ENDIF()
+ ELSE()
+-cmake_minimum_required (VERSION 2.8)
++cmake_minimum_required (VERSION 3.5)
+ 
+ if (NOT DEFINED CMAKE_BUILD_TYPE)
+     set (CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
 @@ -156,10 +156,10 @@ install (FILES
  
  ################# compile tests ################
