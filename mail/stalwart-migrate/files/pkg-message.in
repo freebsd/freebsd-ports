@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+stalwart-migrate must match the Stalwart v1 server that will open the
+migrated store:
+
+- Without the ENTERPRISE option (the default, as in mail/stalwart),
+  the tool writes a store that only a Stalwart server built without
+  the enterprise feature can open.
+- The official Stalwart binaries, with or without an Enterprise
+  license, need a stalwart-migrate built with the ENTERPRISE option.
+
+The source must run Stalwart v0.16.27; upgrade earlier 0.16 releases
+first. The tool only supports the backends selected when it was built.
+FoundationDB is not supported by this port.
+
+The manual is the upstream README.md (installed in
+%%DOCSDIR%% with the DOCS option) and
+https://github.com/stalwartlabs/stalwart-migrate
+EOM
+}
+]

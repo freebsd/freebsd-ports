@@ -1,0 +1,11 @@
+stalwart-migrate moves the data of a Stalwart Mail and Collaboration
+Server v0.16.27 deployment to Stalwart v1, and can move it back again
+if the upgrade has to be reverted.
+
+Stalwart v1 changes the on-disk layout of the data store, so a v0.16
+store cannot be upgraded in place. The tool copies every account,
+message, calendar, address book, file and setting from the running
+v0.16 store into a new, empty v1 store, converting each object with the
+v1 code as it goes. The copy can be repeated while v0.16 keeps serving
+users; each repetition transfers only what changed, so the final switch
+needs only a short downtime window.
