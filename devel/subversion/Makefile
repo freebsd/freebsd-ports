@@ -1,3 +1,5 @@
+PORTREVISION=	1
+
 MAINTAINER=	michaelo@apache.org
 COMMENT=	Apache Subversion is a full-featured version control system
 WWW=		https://subversion.apache.org/
@@ -49,9 +51,11 @@ TEST_TARGET=	check
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
 BINS_TO_STRIP=	svn svnadmin svnauthz svnauthz-validate svnbench svndumpfilter \
 		svnfsfs svnlook svnmucc svnrdump svnserve.bin svnsync svnversion
+SUB_LIST+=	SVNSERVE_PROCNAME_EXT=".bin"
 .else
 BINS_TO_STRIP=	svn svnadmin svnauthz svnauthz-validate svnbench svndumpfilter \
 		svnfsfs svnlook svnmucc svnrdump svnserve svnsync svnversion
+SUB_LIST+=	SVNSERVE_PROCNAME_EXT=""
 .endif
 
 TOOLS_TO_STRIP=	svn-mergeinfo-normalizer svn-populate-node-origins-index \
