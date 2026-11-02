@@ -15,6 +15,7 @@ LICENSE_DISTFILES_BSD3CLAUSE=		${DISTFILES:N*music*}
 LICENSE_DISTFILES_CC-BY-NC-ND-3.0=	${DISTFILES:M*music*:S/:music//}
 LICENSE_DISTFILES_GPLv3+ =		${DISTFILES:N*music*}
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Last release 7 years ago, does not build with CMake 4
 EXPIRATION_DATE=2026-11-30
 
