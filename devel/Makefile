@@ -4500,6 +4500,7 @@
     SUBDIR += py-aioice
     SUBDIR += py-aioitertools
     SUBDIR += py-aiologger
+    SUBDIR += py-aiologic
     SUBDIR += py-aiomisc
     SUBDIR += py-aiomisc-pytest
     SUBDIR += py-aiorpcX
