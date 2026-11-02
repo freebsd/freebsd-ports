@@ -27,7 +27,7 @@ USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \
 		gapi grantleetheme identitymanagement imap kontactinterface \
 		ldap libkdepim mailtransport mbox mime pimcommon pimtextedit \
 		syndication
-USE_QT=		base networkauth
+USE_QT=		base networkauth webengine
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

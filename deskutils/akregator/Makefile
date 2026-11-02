@@ -27,7 +27,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 USE_KDE+=	akonadi akonadimime contacts grantleetheme kontactinterface \
 		ktextaddons libkdepim libkleo messagelib mime pimcommon \
 		pimtextedit syndication
-USE_QT=		base
+USE_QT=		base webengine
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 

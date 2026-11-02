@@ -31,7 +31,7 @@ USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadiimportwizard \
 		kitinerary kontactinterface kpkpass libkdepim libkleo \
 		libksieve mailcommon mailimporter mailtransport messagelib \
 		mime pimcommon pimtextedit tnef
-USE_QT=		base
+USE_QT=		base webengine
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
