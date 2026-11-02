@@ -1019,6 +1019,7 @@
     SUBDIR += py-evalidate
     SUBDIR += py-fairlearn
     SUBDIR += py-faiss
+    SUBDIR += py-fast-simplification
     SUBDIR += py-fastcluster
     SUBDIR += py-fdasrsf
     SUBDIR += py-fenics-basix

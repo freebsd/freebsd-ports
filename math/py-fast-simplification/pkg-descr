@@ -1,0 +1,6 @@
+This is a python wrapping of the Fast-Quadric-Mesh-Simplification Library.
+Having arrived at the same problem as the original author, but needing a Python
+library, this project seeks to extend the work of the original library while
+adding integration to Python and the PyVista project.
+
+See also https://github.com/sp4cerat/Fast-Quadric-Mesh-Simplification/
