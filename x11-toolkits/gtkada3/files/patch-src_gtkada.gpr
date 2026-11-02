@@ -1,0 +1,24 @@
+--- src/gtkada.gpr.orig	2026-11-01 23:59:47 UTC
++++ src/gtkada.gpr
+@@ -78,13 +78,13 @@ library project GtkAda is
+       for Linker_Options use GtkAda_Shared.Gtk_Libs;
+    end Linker;
+ 
+-   package Install is
+-      for Artifacts ("share/gps/plug-ins") use ("../xml/gtkada.xml");
+-      for Artifacts ("share/doc/gtkada/gtkada_ug") use
+-        ("../docs/gtkada_ug/_build/html/*",
+-         "../docs/gtkada_ug/_build/latex/GtkAda.pdf");
+-      for Artifacts ("share/doc/gtkada") use
+-        ("../docs/gtkada_rm/gtkada_rm");
+-   end Install;
++--   package Install is
++--      for Artifacts ("share/gps/plug-ins") use ("../xml/gtkada.xml");
++--      for Artifacts ("share/doc/gtkada/gtkada_ug") use
++--        ("../docs/gtkada_ug/_build/html/*",
++--         "../docs/gtkada_ug/_build/latex/GtkAda.pdf");
++--      for Artifacts ("share/doc/gtkada") use
++--        ("../docs/gtkada_rm/gtkada_rm");
++--   end Install;
+ 
+ end GtkAda;

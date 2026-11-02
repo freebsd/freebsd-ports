@@ -1,5 +1,4 @@
 PORTNAME=	gtkada
-DISTVERSIONPREFIX=	v
 DISTVERSION=	26.2
 CATEGORIES=	x11-toolkits devel
 PKGNAMESUFFIX=	3
@@ -28,8 +27,8 @@ NO_SHLIB_REQUIRES_GLOB=	libgnat-${_ada_version}.so
 
 EXTRACT_AFTER_ARGS=	${_DIST_EXCLUDES:S,^,--exclude ,}
 
-PLIST_SUB=	SO_RELEASE=${_SO_RELEASE} \
-		SO_VERSION=${_SO_VERSION}
+PLIST_SUB=	SO_VERSION=${_SO_VERSION} \
+		SO_VERSION_MAJOR=${_SO_VERSION_MAJOR}
 
 OPTIONS_DEFINE=	NLS
 NLS_USES=	gettext
@@ -43,14 +42,16 @@ _GPRINSTALL_ARGS=	${_GPR_PROJECT_ARGS} --no-manifest \
 _GPR_LIBRARY_TYPES=	relocatable static static-pic
 _GPR_PROJECT_ARGS=	-XBUILD_TYPE=${WITH_DEBUG:UProduction:DDebug} \
 			-XGTK_PREFIX=${LOCALBASE}
-_SO_RELEASE=		${DISTVERSION:R}
+_GPR_SUBDIR=		${PORTNAME}${PKGNAMESUFFIX}
+_PKGCONF_GTK=		${GTK3_VERSION:R}
 _SO_VERSION=		${DISTVERSION}
+_SO_VERSION_MAJOR=	${DISTVERSION:R}
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/pkgconf)
-_GTK_CFLAGS!=	(pkgconf --cflags gtk+-3.0)
-_GTK_LIBS!=	(pkgconf --libs gtk+-3.0)
+.if exists(${LOCALBASE}/libdata/pkgconfig/gtk+-${_PKGCONF_GTK}.pc)
+_GTK_CFLAGS!=	(pkgconf --cflags gtk+-${_PKGCONF_GTK})
+_GTK_LIBS!=	(pkgconf --libs gtk+-${_PKGCONF_GTK})
 .endif
 
 pre-configure:
@@ -85,9 +86,9 @@ do-build:
 do-install:
 .  for _library_type in ${_GPR_LIBRARY_TYPES}
 	(cd ${WRKSRC}/src && \
-		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --ali-subdir=libdata/${PORTNAME}/${_library_type} \
+		${SETENV} ${MAKE_ENV} gprinstall ${_GPRINSTALL_ARGS} --ali-subdir=libdata/${_GPR_SUBDIR}/${_library_type} \
 		--build-name=${_library_type} --build-var=${_library_type} \
-		--lib-subdir=lib/${PORTNAME}/${_library_type} --sources-subdir=include/${PORTNAME} \
+		--lib-subdir=lib/${_GPR_SUBDIR}/${_library_type} --sources-subdir=include/${_GPR_SUBDIR} \
 		-XLIBRARY_TYPE=${_library_type} -P ${PORTNAME})
 .  endfor
 
