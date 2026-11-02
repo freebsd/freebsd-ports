@@ -282,6 +282,7 @@
     SUBDIR += nerd-fonts-victormono
     SUBDIR += nerd-fonts-zedmono
     SUBDIR += nexfontsel
+    SUBDIR += nordwand-mono-ttf
     SUBDIR += noto
     SUBDIR += noto-basic
     SUBDIR += noto-emoji
