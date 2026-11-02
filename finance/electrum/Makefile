@@ -1,12 +1,12 @@
 PORTNAME=	electrum
-DISTVERSION=	4.8.1
+DISTVERSION=	4.8.2
 CATEGORIES=	finance python
 MASTER_SITES=	https://download.electrum.org/${PORTVERSION}/ \
 		http://download.electrum.org/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Electrum-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mail@vchimishuk.org
 COMMENT=	Easy to use Bitcoin client
 WWW=		https://electrum.org/
 
