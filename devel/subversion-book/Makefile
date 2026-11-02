@@ -15,6 +15,9 @@ WWW=		https://svnbook.red-bean.com/
 # http://svnbook.red-bean.com/en/1.7/svn.copyright.html
 LICENSE=	CDDL
 
+DEPRECATED=	Horribly out of date, documents Subversion 1.7 only
+EXPIRATION_DATE=2026-12-31
+
 USES=	tar:bzip2
 NO_BUILD=	yes
 
