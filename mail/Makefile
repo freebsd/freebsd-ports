@@ -749,10 +749,10 @@
     SUBDIR += squirrelmail-wetteronline-plugin
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
-    SUBDIR += stalwart
     SUBDIR += stalwart-cli
     SUBDIR += stalwart-migrate
     SUBDIR += stalwart-proxy
+    SUBDIR += stalwart016
     SUBDIR += surblhost
     SUBDIR += swaks
     SUBDIR += sylpheed

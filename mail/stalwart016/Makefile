@@ -1,8 +1,8 @@
 PORTNAME=	stalwart
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.25
-PORTREVISION=	1
+DISTVERSION=	0.16.27
 CATEGORIES=	mail
+PKGNAMESUFFIX=	016
 
 MAINTAINER=	orville@anislet.dev
 COMMENT=	Stalwart Mail Server
@@ -15,6 +15,8 @@ LICENSE_FILE_AGPLv3=	${WRKSRC}/LICENSES/AGPL-3.0-only.txt
 LICENSE_FILE_SELv2=	${WRKSRC}/LICENSES/LicenseRef-SEL.txt
 LICENSE_PERMS_SELv2=	pkg-mirror auto-accept
 
+DEPRECATED=	Stalwart 0.16 is end-of-life; migrate to Stalwart 1.x
+EXPIRATION_DATE=	2027-11-02
 BROKEN_i386=	rustc-LLVM ERROR: out of memory
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
@@ -24,6 +26,8 @@ CPE_VENDOR=	stalw
 USE_GITHUB=	yes
 GH_ACCOUNT=	stalwartlabs
 USE_RC_SUBR=	stalwart
+
+CONFLICTS_INSTALL=	stalwart
 
 SUB_LIST=	USERS=${USERS} \
 		GROUPS=${GROUPS}
