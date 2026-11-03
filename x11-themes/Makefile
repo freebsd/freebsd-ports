@@ -169,6 +169,7 @@
     SUBDIR += slim-themes
     SUBDIR += tela-icon-theme
     SUBDIR += thewidgetfactory
+    SUBDIR += ventanas-10
     SUBDIR += wallpapers-freebsd-kde
     SUBDIR += win98se-icon-theme
     SUBDIR += wpgtk

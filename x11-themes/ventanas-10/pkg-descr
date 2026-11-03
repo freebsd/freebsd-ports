@@ -1,0 +1,9 @@
+Ventanas-10 is a fork of the B00merang-Project's Windows-10 theme,
+but with the following differences:
+
+- The minimize, close, and maximize buttons change color when you
+  hover over them.
+- Dark mode only.
+- For Openbox only.
+- The max_toggled.xbm image has been implemented to give it a look
+  similar to Windows 10.
