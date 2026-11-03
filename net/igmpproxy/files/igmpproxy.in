@@ -13,17 +13,20 @@
 
 . /etc/rc.subr
 
-name="igmpproxy"
+name=igmpproxy
+desc="Multicast forwarding IGMP proxy"
 rcvar=igmpproxy_enable
-procname="%%PREFIX%%/sbin/${name}"
-command=/usr/sbin/daemon
-required_files="%%PREFIX%%/etc/igmpproxy.conf"
 
 load_rc_config $name
 
-igmpproxy_enable=${igmpproxy_enable-"NO"}
-igmpproxy_conf=${igmpproxy_config-"%%PREFIX%%/etc/igmpproxy.conf"}
+# igmpproxy_config was the only name honoured before igmpproxy_conf
+# started working, keep it as a fallback.
+: ${igmpproxy_enable:=NO}
+: ${igmpproxy_conf=${igmpproxy_config-%%PREFIX%%/etc/igmpproxy.conf}}
 
-command_args=" -cf $procname $igmpproxy_conf"
+procname=%%PREFIX%%/sbin/${name}
+command=/usr/sbin/daemon
+command_args="-cf ${procname} ${igmpproxy_conf}"
+required_files=${igmpproxy_conf}
 
 run_rc_command "$1"
