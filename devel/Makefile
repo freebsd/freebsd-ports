@@ -9019,6 +9019,7 @@
     SUBDIR += yajl-tcl
     SUBDIR += yaml-cpp
     SUBDIR += yaml2argdata
+    SUBDIR += yascreen
     SUBDIR += yasm
     SUBDIR += yder
     SUBDIR += youcompleteme
