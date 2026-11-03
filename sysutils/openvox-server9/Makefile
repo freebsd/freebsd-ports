@@ -1,5 +1,5 @@
 PORTNAME=	openvox-server
-DISTVERSION=	9.1.1
+DISTVERSION=	9.2.0
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.voxpupuli.org/${PORTNAME}/${DISTVERSION:S/-/~/}/ RG:gem
 PKGNAMESUFFIX=	9
