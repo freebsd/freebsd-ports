@@ -11,6 +11,7 @@
     SUBDIR += fastest_pkg
     SUBDIR += freebsd-bugzilla-cli
     SUBDIR += genpatch
+    SUBDIR += git-proxy
     SUBDIR += hs-cabal2tuple
     SUBDIR += hs-panopticum
     SUBDIR += jailaudit

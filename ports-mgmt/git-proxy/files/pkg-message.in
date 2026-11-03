@@ -1,0 +1,86 @@
+[
+{ type: install
+  message: <<EOM
+git-proxy caches FreeBSD pkg repositories (and many other package
+registries) for the hosts on your network.
+
+1. Set up the proxy
+
+  cp %%ETCDIR%%/config.yaml.sample %%ETCDIR%%/config.yaml
+
+  Set base_url to the URL your clients will use, e.g.
+  "http://pkgproxy.example.org:8080", then:
+
+  sysrc git_proxy_enable=YES
+  service git_proxy start
+
+  Cached data lives in %%GIT_PROXY_DBDIR%%. The dashboard at base_url
+  shows hit rates and setup snippets.
+
+2. Point pkg(8) at the proxy
+
+  Each repository URL in /etc/pkg/FreeBSD.conf is made of an upstream
+  base and a path:
+
+    pkg+https://pkg.FreeBSD.org/${ABI}/quarterly
+    \__________________________/\______________/
+          upstream base              path
+
+  To go through the proxy, keep the path and replace the upstream base
+  with <base_url>/freebsd/trusted:
+
+    http://pkgproxy.example.org:8080/freebsd/trusted/${ABI}/quarterly
+
+  Drop the pkg+ prefix and set mirror_type to "none", since there are
+  no SRV records for the proxy. Leave signature_type and fingerprints
+  alone: catalogues are passed through unchanged and pkg still verifies
+  them.
+
+  On each client, create /usr/local/etc/pkg/repos/FreeBSD.conf:
+
+    FreeBSD-ports: {
+      url: "http://pkgproxy.example.org:8080/freebsd/trusted/${ABI}/quarterly",
+      mirror_type: "none"
+    }
+    FreeBSD-ports-kmods: {
+      url: "http://pkgproxy.example.org:8080/freebsd/trusted/${ABI}/kmods_quarterly_${VERSION_MINOR}",
+      mirror_type: "none"
+    }
+    FreeBSD-base: {
+      url: "http://pkgproxy.example.org:8080/freebsd/trusted/${ABI}/base_release_${VERSION_MINOR}",
+      mirror_type: "none"
+    }
+
+  pkg fills in ${ABI} (e.g. FreeBSD:15:amd64, FreeBSD:16:aarch64) and
+  ${VERSION_MINOR}, so the same file works on every host. Any set on
+  pkg.FreeBSD.org works the same way: latest, release_N, kmods_latest,
+  base_latest, base_weekly, and so on.
+
+  Then run: pkg update -f
+
+3. Other pkg repositories
+
+  For a repository that is not on pkg.FreeBSD.org, split its URL into
+  an upstream base and a path, give the base a name in
+  %%ETCDIR%%/config.yaml, and restart git_proxy:
+
+    url: "https://pkg.example.com/packages/150amd64-default"
+          \______________________________/\_______________/
+                  upstream base                 path
+
+    upstream:
+      freebsd:
+        trusted: "https://pkg.freebsd.org"
+        poudriere: "https://pkg.example.com/packages"
+
+  Clients then use <base_url>/freebsd/<name>/<path>:
+
+    url: "http://pkgproxy.example.org:8080/freebsd/poudriere/150amd64-default"
+
+  Names are arbitrary labels. Keep the trusted entry: listing any
+  repository replaces the built-in default. Only packages under
+  Hashed/ are cached, so build such repositories with PKG_HASH=yes in
+  poudriere.conf (pkg repo --hash).
+EOM
+}
+]
