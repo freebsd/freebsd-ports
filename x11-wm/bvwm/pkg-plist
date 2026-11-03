@@ -1,5 +1,6 @@
 bin/bhotkeys-bvwm-run
 bin/fvwm-tile
+bin/fvwm-xterm
 bin/super-menu-arm
 bin/super-menu-open
 bin/super-menu-release
@@ -450,12 +451,15 @@ share/bhotkeys/plugins.d/bvwm-tile-close
 share/bhotkeys/plugins.d/bvwm-tile-down
 share/bhotkeys/plugins.d/bvwm-tile-insert
 share/bhotkeys/plugins.d/bvwm-tile-left
+share/bhotkeys/plugins.d/bvwm-tile-mon-next
+share/bhotkeys/plugins.d/bvwm-tile-mon-prev
 share/bhotkeys/plugins.d/bvwm-tile-right
 share/bhotkeys/plugins.d/bvwm-tile-rotate
 share/bhotkeys/plugins.d/bvwm-tile-top
 share/bhotkeys/plugins.d/bvwm-tile-top-left
 share/bhotkeys/plugins.d/bvwm-tile-top-right
 share/bhotkeys/plugins.d/bvwm-tile-up
+share/bhotkeys/plugins.d/bvwm-xterm
 %%NLS%%share/locale/ar/LC_MESSAGES/bvwm.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bvwm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bvwm.mo
