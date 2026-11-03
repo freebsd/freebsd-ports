@@ -10,14 +10,17 @@ share/aclocal/mfmod.m4
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/mfl-mode.el
 %%EMACS%%%%EMACS_SITE_LISPDIR%%/obfemail-mode.el
 %%NLS%%share/locale/da/LC_MESSAGES/mailfromd.mo
+%%NLS%%share/locale/de/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/id/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/mailfromd.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/mailfromd.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/mailfromd.mo
 %%DATADIR%%/%%VERSION%%/_register.mfl
 %%DATADIR%%/%%VERSION%%/callout.mfl
 %%DATADIR%%/%%VERSION%%/cdb.mfl
