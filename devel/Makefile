@@ -891,6 +891,7 @@
     SUBDIR += gitaly
     SUBDIR += gitea-act_runner
     SUBDIR += gitg
+    SUBDIR += github-act-runner
     SUBDIR += github-backup-utils
     SUBDIR += gitid
     SUBDIR += gitinspector
