@@ -9,6 +9,7 @@ MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Additive Image Synthesizer (convert audio to images, images to audio)
 WWW=		https://arss.sourceforge.net/
 
+BROKEN=		Fails to build with CMake 4
 DEPRECATED=	Abandoned upstream, does not build with CMake 4
 EXPIRATION_DATE=2026-11-30
 
