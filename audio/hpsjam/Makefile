@@ -1,6 +1,7 @@
 PORTNAME=	hpsjam
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,12 +12,12 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		compiler:c++11-lang gl qmake qt:5 tar:bzip2
+USES=		compiler:c++17-lang gl qmake qt:6 tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
 GH_TUPLE=	mborgerding:kissfft:131.1.0:a/kissfft
 USE_GL=		gl
-USE_QT=		core gui svg widgets buildtools:build
+USE_QT=		base svg
 USE_RC_SUBR=	${PORTNAME}_server
 
 USER=		nobody
