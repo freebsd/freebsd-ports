@@ -1,0 +1,6 @@
+Newt is a userspace WireGuard tunnel client and TCP/UDP proxy for Pangolin.
+It connects private resources to a Pangolin server without requiring
+inbound ports on the connector's network.
+
+This package provides the Newt executable. Service configuration and
+startup integration are supplied separately, for example by os-newt.
