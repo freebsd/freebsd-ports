@@ -1,5 +1,5 @@
 PORTNAME=	libmt32emu
-DISTVERSION=	2_8_3
+DISTVERSION=	2_8_5
 CATEGORIES=	emulators
 
 MAINTAINER=	bsdcode@disroot.org
