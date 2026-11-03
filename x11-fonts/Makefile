@@ -399,6 +399,7 @@
     SUBDIR += py-vfblib
     SUBDIR += raleway
     SUBDIR += roboto-fonts-ttf
+    SUBDIR += selawik
     SUBDIR += sgifonts
     SUBDIR += sharefonts
     SUBDIR += showfont

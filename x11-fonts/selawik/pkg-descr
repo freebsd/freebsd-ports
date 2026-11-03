@@ -1,0 +1,4 @@
+Selawik is an open source replacement for Segoe UI, the default
+system font used in Windows. It is metrically compatible with Segoe UI,
+which means that switching between the two fonts will not alter the
+layout of documents or interfaces.
