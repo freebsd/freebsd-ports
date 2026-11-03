@@ -1,6 +1,6 @@
 PORTNAME=	openfhe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
+DISTVERSION=	1.6.1
 CATEGORIES=	security math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openfheorg
 GH_PROJECT=	openfhe-development
 GH_TUPLE=	openfheorg:cereal:984e3f1:cereal/third-party/cereal \
-		google:googletest:8b4817e:google_test/third-party/google-test
+		google:googletest:52eb810:google_test/third-party/google-test
 
 LDFLAGS+=	-pthread
 
@@ -53,9 +53,6 @@ OPTIONS_DEFAULT+=	OPENMP
 OPENMP_BROKEN=		OpenMP isn't enabled on this architecture
 .endif
 
-post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/include/openfhe/core/math/hal/intnat/ubintnat.h.orig
-
-# tests as of 1.5.1: End 78 cases 78 passed 0 failed
+# tests as of 1.6.1: End 78 cases 78 passed 0 failed
 
 .include <bsd.port.mk>
