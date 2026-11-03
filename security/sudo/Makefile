@@ -1,6 +1,6 @@
 PORTNAME=	sudo
 PORTVERSION=	1.9.17p2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man \
 		--with-logincap \
 		--with-long-otp-prompt \
 		--with-rundir=/var/run/sudo \
+		--with-secure-path-value=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin \
 		--with-tty-tickets
 LDFLAGS+=	-lgcc
 
