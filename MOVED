@@ -5795,3 +5795,4 @@ lang/tcl90|lang/tcl|2026-11-02|Tcl 9.x will be provided as a single port
 x11-toolkits/tk90|x11-toolkits/tk|2026-11-02|Tk 9.x will be provided as single port
 deskutils/owncloudclient||2026-11-02|Has expired: Outdated, depends on deprecated Qt5 qtkeychain
 sysutils/dekit||2026-11-03|Has expired: Cannot upgrade due to linuxisms
+textproc/lucene|textproc/lucene9|2026-11-03|Has expired: Release from 2013. Unsupported upstream. Lucene is now at version 10.X. Superseded in ports by textproc/lucene9

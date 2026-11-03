@@ -476,7 +476,6 @@
     SUBDIR += lua-icu-utils
     SUBDIR += lua-luaexpat
     SUBDIR += lua-lyaml
-    SUBDIR += lucene
     SUBDIR += lucene9
     SUBDIR += luceneplusplus
     SUBDIR += lv-aspell
