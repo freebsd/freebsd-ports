@@ -1,5 +1,5 @@
 PORTNAME=	dwave-optimization
-DISTVERSION=	0.7.3
+DISTVERSION=	0.8.0
 CATEGORIES=	science python # quantum-computing
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=3.2.0:lang/cython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}meson-python>=0.18.0:devel/meson-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ninja>=1.13.0:devel/py-ninja@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=2:math/py-numpy@${PY_FLAVOR} \
 		meson>=1.10.2:devel/meson \
 		ninja>=1.13.0:devel/ninja
@@ -41,7 +42,7 @@ pre-test:
 	@cd ${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/optimization && \
 		${FIND} . -name '*.so' -exec ${CP} {} ${WRKSRC}/dwave/optimization/{} \;
 
-# tests as of 0.7.3: 870 passed, 4 skipped, 5 deselected, 528 subtests passed in 11.93s
+# tests as of 0.8.0: 729 passed, 5 deselected, 539 subtests passed in 2.72s
 
 # all C++ patches are workaround for https://github.com/dwavesystems/dwave-optimization/issues/595
 
