@@ -10,7 +10,6 @@ WWW=		https://www.graphviz.org/
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	tclsh${TCL_VER}:lang/tcl${_TCLTK_WANTED_VERSION}
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libpng.so:graphics/png \
 		libwebp.so:graphics/webp \
