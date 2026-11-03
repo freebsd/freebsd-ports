@@ -1,5 +1,5 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	4.3.7
+DISTVERSION=	4.4.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-server/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-server-generic-unix-${DISTVERSION}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ
 
 RUN_DEPENDS=	erlang-runtime${_ERLANG_VER}>=${_ERLANG_VER}:lang/erlang-runtime${_ERLANG_VER}
 
-FLAVORS=	er27 er28
+FLAVORS=	er28 er29 er27
 FLAVOR?=	${FLAVORS:[1]}
 ${FLAVOR}_PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C|(.+)|-\1|}
 
