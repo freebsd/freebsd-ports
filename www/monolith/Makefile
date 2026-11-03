@@ -1,9 +1,9 @@
 PORTNAME=	monolith
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.5
+DISTVERSION=	2.11.6
 CATEGORIES=	www
 
-MAINTAINER=	lcook@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	CLI tool for saving complete web pages as a single HTML file
 WWW=		https://github.com/Y2Z/monolith
 
