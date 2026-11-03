@@ -6,6 +6,11 @@ MASTER_SITES=	https://github.com/artpixls/ART/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-raw-image-editor
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
+PATCH_SITES=	https://github.com/artpixls/ART/commit/
+# https://github.com/artpixls/ART/pull/541
+# "Fix build on non-SIMD: duplicate declaration"
+PATCHFILES=	4d7eeb9cf232f424e97b4547a5be6f8daa0b4c74.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Raw image processing program
 WWW=		https://art.pixls.us/ \
