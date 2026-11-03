@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2026-10-15 15:12:55 UTC
++++ src/CMakeLists.txt
+@@ -147,7 +147,7 @@ target_include_directories(raylib
+ # Registering include directories
+ target_include_directories(raylib
+                            PUBLIC
+-                           $<INSTALL_INTERFACE:include>
++                           $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+                            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+                            PRIVATE
+                            ${CMAKE_CURRENT_SOURCE_DIR}
