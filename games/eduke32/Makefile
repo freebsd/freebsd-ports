@@ -1,6 +1,7 @@
 PORTNAME=	eduke32
 DISTVERSION=	20260807
 DISTVERSIONSUFFIX=	-10669-ec5824db8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${DISTVERSIONFULL}/:eduke32 \
 		LOCAL/pkubaj/:erp \

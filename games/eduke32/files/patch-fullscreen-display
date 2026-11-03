@@ -1,0 +1,39 @@
+--- source/build/src/sdlayer.cpp	2026-08-18 21:34:41 UTC
++++ source/build/src/sdlayer.cpp
+@@ -2755,17 +2755,32 @@
+ 
+                     case SDL_WINDOWEVENT_MOVED:
+                     {
+-                        if (fullscreen) break;
+-                        g_windowPos = { ev.window.data1, ev.window.data2 };
+-                        g_windowPosValid = true;
+-
+                         int displayindex = SDL_GetWindowDisplayIndex(sdl_window);
+ 
++                        if (!fullscreen)
++                        {
++                            g_windowPos = { ev.window.data1, ev.window.data2 };
++                            g_windowPosValid = true;
++                        }
++
+                         if (r_displayindex != displayindex || !modeschecked)
+                         {
++                            int const newdisplay = (fullscreen && displayindex >= 0 &&
++                                r_displayindex != displayindex);
++
+                             r_displayindex = displayindex;
+                             modeschecked = 0;
+                             videoGetModes();
++                            // Fullscreen drops RESIZED. A move onto another
++                            // display takes the windowed resize path at that
++                            // display's desktop size.
++                            if (newdisplay)
++                            {
++                                SDL_DisplayMode desktopmode;
++
++                                if (SDL_GetDesktopDisplayMode(displayindex, &desktopmode) == 0)
++                                    sdl_resize = { desktopmode.w & ~1, desktopmode.h & ~1 };
++                            }
+                         }
+                         break;
+                     }
