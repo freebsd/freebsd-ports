@@ -1,7 +1,7 @@
 PORTNAME=	qaudiosonar
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,9 +12,9 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		compiler:c++11-lang gl qmake qt:5 tar:bzip2
+USES=		compiler:c++17-lang gl qmake qt:6 tar:bzip2
 USE_GL=		gl
-USE_QT=		buildtools:build core gui widgets
+USE_QT=		base
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
