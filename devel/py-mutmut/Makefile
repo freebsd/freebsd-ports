@@ -1,5 +1,5 @@
 PORTNAME=	mutmut
-DISTVERSION=	3.8.0
+DISTVERSION=	3.8.1
 CATEGORIES=	devel
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +12,9 @@ WWW=		https://mutmut.readthedocs.io/en/latest/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.12.3:devel/py-uv-build@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.3.1:devel/py-click@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.12.3:devel/py-uv-build@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.4.2:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>=7.3.0:devel/py-coverage@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hammett>0:devel/py-hammett@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libcst>=1.9.0:devel/py-libcst@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=6.2.5:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>=1.3.7:devel/py-setproctitle@${PY_FLAVOR} \
@@ -44,6 +42,6 @@ TEST_ARGS=	--disable-plugin-autoload \
 		--ignore=tests/e2e \
 		--deselect tests/test_code_coverage.py::test_excluded_lines_reports_only_the_first_line_of_each_statement
 
-# tests as of 3.8.0: 442 passed, 3 skipped, 1 deselected
+# tests as of 3.8.1: 462 passed, 3 skipped, 1 deselected, 5 warnings in 3.08s
 
 .include <bsd.port.mk>
