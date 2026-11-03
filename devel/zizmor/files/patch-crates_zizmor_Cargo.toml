@@ -1,6 +1,6 @@
---- crates/zizmor/Cargo.toml.orig	2026-10-15 22:59:33 UTC
+--- crates/zizmor/Cargo.toml.orig	2026-11-02 23:13:06 UTC
 +++ crates/zizmor/Cargo.toml
-@@ -73,7 +73,7 @@ fst.workspace = true
+@@ -74,7 +74,7 @@ fst.workspace = true
  csv.workspace = true
  fst.workspace = true
  
