@@ -186,5 +186,5 @@ include/cglm/vec4.h
 include/cglm/version.h
 lib/libcglm.so
 lib/libcglm.so.0
-lib/libcglm.so.0.9.6
+lib/libcglm.so.0.9.7
 libdata/pkgconfig/cglm.pc
