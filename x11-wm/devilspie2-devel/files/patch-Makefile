@@ -1,0 +1,11 @@
+--- Makefile.orig	2026-11-01 16:39:42 UTC
++++ Makefile
+@@ -29,7 +29,7 @@ ifndef LUA
+ BIN=bin
+ 
+ ifndef LUA
+-	LUA=lua5.3
++	LUA=lua-5.3
+ endif
+ 
+ # Some hardening by default.

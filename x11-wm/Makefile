@@ -27,6 +27,7 @@
     SUBDIR += deforaos-panel
     SUBDIR += devilspie
     SUBDIR += devilspie2
+    SUBDIR += devilspie2-devel
     SUBDIR += durden
     SUBDIR += dwl
     SUBDIR += dwm
