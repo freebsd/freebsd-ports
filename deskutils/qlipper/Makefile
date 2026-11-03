@@ -1,5 +1,6 @@
 PORTNAME=	qlipper
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	lxqt@FreeBSD.org
@@ -25,7 +26,7 @@ LXQTAUTOSTART_CMAKE_BOOL=	ENABLE_LXQT_AUTOSTART
 USE_PERL5=	build
 USE_KDE=	guiaddons
 USE_XORG=	x11 xcb
-USE_QT=		base translations
+USE_QT=		base translations tools:build
 USE_GL=		opengl
 
 USE_XORG=	x11
