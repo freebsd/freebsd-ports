@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}${AOORCN:?.p${AOORCN}:}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors java
 #MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}${AOORCN:?-RC${AOORCN}:}/source/
 MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
@@ -49,9 +49,6 @@ LICENSE_PERMS_ICU=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Depends on expired java/apache-commons-lang
-EXPIRATION_DATE=2026-12-31
-
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=								\
@@ -65,7 +62,7 @@ BUILD_DEPENDS=								\
 		libunwind>=20211201_1:devel/libunwind			\
 		gpatch:devel/patch					\
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends	\
-		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \
+		${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 		${JAVALIBDIR}/junit.jar:java/junit			\
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		bash:shells/bash					\
@@ -102,7 +99,7 @@ LIB_DEPENDS=								\
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
-		${JAVALIBDIR}/commons-lang.jar:java/apache-commons-lang \
+		${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
@@ -269,7 +266,7 @@ CONFIGURE_ARGS+=							\
 			--with-alloc=system				\
 			--with-ant-home=${LOCALBASE}/share/java/apache-ant \
 			--with-system-apache-commons=yes		\
-			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar \
+			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang3.jar \
 			--with-system-apr				\
 			--with-system-apr-util				\
 			--with-system-beanshell				\
