@@ -14,7 +14,7 @@ WWW=		https://github.com/yt-dlp/yt-dlp-ejs
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	distinfo was only generated for these architectures # feel free to add more architectures
 
 FETCH_DEPENDS=	npm:www/npm-node${NPM_VER} \
@@ -43,11 +43,13 @@ DD=		${DISTDIR}/${DIST_SUBDIR}
 DIST_SUBDIR=	${PORTNAME}/${ARCH}
 DISTINFO_FILE=	${.CURDIR}/distinfo.${ARCH}
 
-# rollup has no native binding for FreeBSD/powerpc64le (https://github.com/rollup/rollup/pull/6398),
-# fetch its WASM build (a drop-in replacement) there instead via the npm alias rollup -> @rollup/wasm-node
-# (powerpc64 would also need rollup/rollup#5354 fixed: the WASM build misreads its AST buffer on big-endian hosts)
+# rollup has no native binding for FreeBSD/powerpc64* (https://github.com/rollup/rollup/pull/6398),
+# fetch its WASM build (a drop-in replacement) there instead via the npm alias rollup -> @rollup/wasm-node.
+# On big-endian powerpc64 the WASM build needs rollup/rollup#6559 (4.64.4), newer than upstream's pin.
 .if ${ARCH} == powerpc64le
 NPM_INSTALL_CMD=	npm install --save-exact --save-dev rollup@npm:@rollup/wasm-node@$$(npm pkg get devDependencies.rollup | ${TR} -d '"')
+.elif ${ARCH} == powerpc64
+NPM_INSTALL_CMD=	npm install --save-exact --save-dev rollup@npm:@rollup/wasm-node@4.64.4
 .else
 NPM_INSTALL_CMD=	npm ci
 .endif
