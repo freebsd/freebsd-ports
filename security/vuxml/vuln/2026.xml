@@ -1,10 +1,10 @@
   <vuln vid="339bd17a-d6fc-11f1-97dc-40b034429ecf">
     <topic>hurl -- multiple vulnerabilities</topic>
     <affects>
-<package>
-<name>hurl</name>
-<range><lt>8.1.0</lt></range>
-</package>
+      <package>
+	<name>hurl</name>
+	<range><lt>8.1.0</lt></range>
+      </package>
     </affects>
     <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
@@ -932,7 +932,7 @@
       <package>
 	<name>libressl</name>
 	<name>libressl-devel</name>
-	<range><le>4.4.0_1</le></range>
+	<range><lt>4.4.0_1</lt></range>
       </package>
     </affects>
     <description>
