@@ -1,9 +1,8 @@
 PORTNAME=	bx-python
-DISTVERSION=	0.15.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.16.0
 CATEGORIES=	biology python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for reading, manipulating and writing genomic data sets
@@ -20,7 +19,10 @@ RUN_DEPENDS=	${PY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}
 
 USES=		compiler python
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist cython pep517
+
+GH_ACCOUNT=	bxlab
 
 post-patch:
 	# force cythonization, compilation fails otherwise for some reason
