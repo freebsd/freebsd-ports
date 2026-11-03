@@ -1,7 +1,8 @@
 PORTNAME=	eduke32
-PORTVERSION=	20260807
+DISTVERSION=	20260807
+DISTVERSIONSUFFIX=	-10669-ec5824db8
 CATEGORIES=	games
-MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISION}/:eduke32 \
+MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${DISTVERSIONFULL}/:eduke32 \
 		LOCAL/pkubaj/:erp \
 		http://www.duke4.org/files/nightfright/related/:related \
 		http://dukeworld.com/classic%20dukeworld/share/:shareware \
@@ -9,8 +10,8 @@ MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISIO
 		https://www.quaddicted.com/files/idgames2/planetquake/planetduke/:shareware \
 		https://ftp.swin.edu.au/gentoo/distfiles/:shareware \
 		ftp://ftp.3drealms.com/share/:shareware
-DISTFILES=	${PORTNAME}_src_${PORTVERSION}-${GITREVISION}${EXTRACT_SUFX}:eduke32
-EXTRACT_ONLY=	${PORTNAME}_src_${PORTVERSION}-${GITREVISION}${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}_src_${DISTVERSIONFULL}${EXTRACT_SUFX}:eduke32
+EXTRACT_ONLY=	${PORTNAME}_src_${DISTVERSIONFULL}${EXTRACT_SUFX}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
@@ -31,8 +32,6 @@ USES=		compiler:c11 dos2unix gl gmake gnome localbase pkgconfig sdl \
 USE_GL=		gl glu
 USE_GNOME=	gdkpixbufextra gtk20
 USE_SDL=	sdl2
-GITREVISION=	10669-ec5824db8
-
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	CC=${CC} \
 		CLANG=1 \
@@ -44,7 +43,7 @@ ALL_TARGET=	duke3d
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${GITREVISION}
+WRKSRC=		${WRKDIR}/${PORTNAME}_${DISTVERSIONFULL}
 
 PLIST_FILES=	bin/eduke32 \
 		bin/mapster32
