@@ -1,6 +1,6 @@
 PORTNAME=	fcitx
 DISTVERSION=	4.2.9.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/fcitx/:fcitx \
 		http://download.fcitx-im.org/data/:data
@@ -18,6 +18,9 @@ COMMENT=	Flexible Input Method Framework
 WWW=		https://fcitx-im.org/wiki/Fcitx
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Abandoned, migrate to textproc/fcitx5
+EXPIRATION_DATE=2027-01-18
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		bash:shells/bash \
