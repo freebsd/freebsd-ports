@@ -1,3 +1,40 @@
+  <vuln vid="07fc222f-d798-11f1-934c-3c7c3fba4204">
+    <topic>Krill -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>krill</name>
+	  <range><lt>0.16.1</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs reports:</p>
+	<blockquote cite="https://github.com/NLnetLabs/krill/releases/tag/v0.16.1">
+	  <ul>
+	    <li>CVE-2026-109140: Krill login-session tokens reuse their encryption nonce across restarts,
+		so any user who can log in can forge an "admin" token.</li>
+	    <li>CVE-2026-109141: Krill users restricted to one CA can make any other CA delegate its prefixes
+		and publish ROAs for them via bulk import.</li>
+	    <li>CVE-2026-109142: Krill treats a "local parent" as already-authenticated, letting a CA
+		operator act as any child of any CA on the same server.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-109140</cvename>
+      <cvename>CVE-2026-109141</cvename>
+      <cvename>CVE-2026-109142</cvename>
+      <url>https://www.nlnetlabs.nl/downloads/krill/CVE-2026-109140.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/krill/CVE-2026-109141.txt</url>
+      <url>https://www.nlnetlabs.nl/downloads/krill/CVE-2026-109142.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-11-02</discovery>
+      <entry>2026-11-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="339bd17a-d6fc-11f1-97dc-40b034429ecf">
     <topic>hurl -- multiple vulnerabilities</topic>
     <affects>
