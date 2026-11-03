@@ -6179,6 +6179,7 @@
     SUBDIR += py-rfc3339
     SUBDIR += py-rfc3339-validator
     SUBDIR += py-rfc3986-validator
+    SUBDIR += py-rfc8785
     SUBDIR += py-rich-click
     SUBDIR += py-rich-toolkit
     SUBDIR += py-riot
