@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	version from 2013, 13 years behind on upstream, no users in the ports tree, not actively maintained, please email the maintainer if you use this
-EXPIRATION_DATE=	2026-01-17
+EXPIRATION_DATE=	2027-01-17
 
 LIB_DEPENDS=	libjogl.so:graphics/jogl
 
