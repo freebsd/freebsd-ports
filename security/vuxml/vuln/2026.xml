@@ -1,3 +1,37 @@
+  <vuln vid="c70f21b6-d7b4-11f1-bae2-3497f65b111b">
+    <topic>net/rsync -- denial of service</topic>
+    <affects>
+      <package>
+	<name>rsync</name>
+	<range><lt>3.5.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VulnCheck reports:</p>
+	<blockquote cite="https://www.vulncheck.com/advisories/rsync-through-3.5.1-denial-of-service-via-hash-search-checksum-collisions">
+	  <p>rsync through 3.5.1 contains a denial of service vulnerability
+	    in the delta-transfer sender's hash_search() in match.c that
+	    allows malicious receivers to trigger unbounded strong-checksum
+	    work at consecutive offsets.  Unauthenticated attackers pulling
+	    from a public daemon module can supply weak checksums colliding
+	    with consecutive rolling windows plus non-matching strong
+	    checksums, exhausting sender CPU across concurrent
+	    connections.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-119741</cvename>
+      <url>https://www.vulncheck.com/advisories/rsync-through-3.5.1-denial-of-service-via-hash-search-checksum-collisions</url>
+      <url>https://github.com/RsyncProject/rsync/commit/a7404a9a633cff28ee1602f328b9c3fa69cdbd04</url>
+    </references>
+    <dates>
+      <discovery>2026-11-03</discovery>
+      <entry>2026-11-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07fc222f-d798-11f1-934c-3c7c3fba4204">
     <topic>Krill -- multiple vulnerabilities</topic>
     <affects>
