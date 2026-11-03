@@ -1,6 +1,7 @@
 PORTNAME=	codequery
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -14,7 +15,7 @@ USES=		cmake gl qt:6 sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	ruben2020
 USE_GL=		opengl
-USE_QT=		5compat base translations
+USE_QT=		5compat base tools:build translations:build
 
 DESKTOP_ENTRIES=	"CodeQuery" \
 			"" \
