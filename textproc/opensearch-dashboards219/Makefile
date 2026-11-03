@@ -12,7 +12,7 @@ WWW=		https://opensearch.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 CONFLICTS=	opensearch-dashboards opensearch-dashboards210 opensearch-dashboards213 \
 		opensearch-dashboards216
