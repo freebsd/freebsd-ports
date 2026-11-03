@@ -1,4 +1,4 @@
---- code/graphics/opengl/gropengl.cpp.orig	2025-11-04 13:17:51 UTC
+--- code/graphics/opengl/gropengl.cpp.orig	2026-11-03 01:27:32 UTC
 +++ code/graphics/opengl/gropengl.cpp
 @@ -6,7 +6,7 @@
  #include <direct.h>
@@ -9,7 +9,7 @@
  #include<glad/glad_glx.h>
  //Required because X defines none and always, which is used later
  #undef None
-@@ -1268,7 +1268,7 @@ bool gr_opengl_init(std::unique_ptr<os::GraphicsOperat
+@@ -1394,7 +1394,7 @@ bool gr_opengl_init(std::unique_ptr<os::GraphicsOperat
  		Error(LOCATION, "Failed to load OpenGL!");
  	}
  
