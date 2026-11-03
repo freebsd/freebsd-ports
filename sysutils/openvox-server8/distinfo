@@ -1,5 +1,5 @@
-TIMESTAMP = 1793442301
-SHA256 (openvox-server-8.17.1.tar.gz) = 74f10fdc5c823f8de3506aa4716458ce145144f929783c39d804cdb41bfc69ad
-SIZE (openvox-server-8.17.1.tar.gz) = 66178033
+TIMESTAMP = 1793736619
+SHA256 (openvox-server-8.18.0.tar.gz) = 3411a19019c19d3edb10d1db8571e586872e226e4dd9ff05c6c6118d4a1a9ec8
+SIZE (openvox-server-8.18.0.tar.gz) = 66169081
 SHA256 (json-2.21.2-java.gem) = f01521cd90639cc26b63040fb00d2b949f18f41ecaab5c82b02fb31d0b8b736c
 SIZE (json-2.21.2-java.gem) = 143360
