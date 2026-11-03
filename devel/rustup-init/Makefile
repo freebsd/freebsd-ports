@@ -1,6 +1,5 @@
 PORTNAME=	rustup-init
-DISTVERSION=	1.29.1
-PORTREVISION=	1
+DISTVERSION=	1.29.3
 CATEGORIES=	devel
 DISTNAME=	rustup
 
@@ -29,14 +28,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang
 GH_PROJECT=	rustup
 
-TESTING_UNSAFE=	yes
-
 .if make(test)
 CARGO_FEATURES=		test
 CARGO_TEST_ARGS=	-- --skip test_bonanza
 .endif
 
 CARGO_ENV=	OPENSSL_NO_VENDOR=1
+
+TESTING_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
