@@ -1,0 +1,6 @@
+A MAC framework policy that allows net/igmpproxy to run as an
+unprivileged user.
+
+It does so by granting the multicast routing privilege to a single
+configurable UID, so igmpproxy can drop root after setting up its
+sockets.
