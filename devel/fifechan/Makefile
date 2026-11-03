@@ -1,5 +1,5 @@
 PORTNAME=	fifechan
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.5	# 0.2.0 is not compatible with `games/py-fife' 0.4.3
 PORTREVISION=	2
 CATEGORIES=	devel games
 
@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cmake
 USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	fifengine
 
@@ -21,15 +20,14 @@ CMAKE_ON=	BUILD_FIFECHAN_ALLEGRO_SHARED BUILD_FIFECHAN_IRRLICHT_SHARED
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	ALLEGRO IRRLICHT OPENGL SDL SDL_CONTRIB
+OPTIONS_DEFAULT=	OPENGL SDL
+OPTIONS_SUB=	yes
+
 ALLEGRO_DESC=	Allegro extension
 IRRLICHT_DESC=	Irrlicht extension
-OPENGL_DESC=	OpenGL extension (need for FIFE)
-SDL_DESC=	SDL extension (need for FIFE)
-SDL_CONTRIB_DESC=	SDL contrib extension (need SDL)
-
-OPTIONS_DEFAULT=	OPENGL SDL
-
-OPTIONS_SUB=		yes
+OPENGL_DESC=	OpenGL extension (needed for FIFE)
+SDL_DESC=	SDL extension (needed for FIFE)
+SDL_CONTRIB_DESC=	SDL contrib extension (needs SDL)
 
 ALLEGRO_CMAKE_BOOL=	ENABLE_ALLEGRO
 ALLEGRO_LIB_DEPENDS=	liballeg.so:devel/allegro

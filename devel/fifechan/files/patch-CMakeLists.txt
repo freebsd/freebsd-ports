@@ -1,5 +1,14 @@
 --- CMakeLists.txt.orig	2019-01-11 01:31:25 UTC
 +++ CMakeLists.txt
+@@ -2,7 +2,7 @@
+ #                                 FifeChan / FifeGUI
+ #------------------------------------------------------------------------------
+ 
+-CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0)
++CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0...9.9.9)
+ 
+ PROJECT(fifechan)
+ 
 @@ -453,7 +453,7 @@ IF(ENABLE_SDL AND SDL2_FOUND AND SDL2_IMAGE_FOUND)  
        TARGET_LINK_LIBRARIES(${PROJECT_NAME}_sdl ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${SDL_TTF_LIBRARY} ${PROJECT_NAME})
      ENDIF(MINGW)
