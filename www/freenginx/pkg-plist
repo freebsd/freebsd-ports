@@ -45,7 +45,6 @@
 %%DSO%%%%HTTP_PUSH_STREAM%%libexec/freenginx/ngx_http_push_stream_module.so
 %%DSO%%%%HTTP_PUSH%%libexec/freenginx/ngx_nchan_module.so
 %%DSO%%%%HTTP_REDIS%%libexec/freenginx/ngx_http_redis_module.so
-%%DSO%%%%HTTP_SUBS_FILTER%%libexec/freenginx/ngx_http_subs_filter_module.so
 %%DSO%%%%HTTP_TARANTOOL%%libexec/freenginx/ngx_http_tnt_module.so
 %%DSO%%%%HTTP_UPLOAD_PROGRESS%%libexec/freenginx/ngx_http_uploadprogress_module.so
 %%DSO%%%%HTTP_UPLOAD%%libexec/freenginx/ngx_http_upload_module.so
