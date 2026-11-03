@@ -7,7 +7,7 @@ MAINTAINER=	xlibre@FreeBSD.org
 COMMENT=	XLibre ASPEED display driver
 WWW=		https://github.com/X11Libre/xf86-video-ast/
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64le
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
