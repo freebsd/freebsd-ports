@@ -286,7 +286,6 @@
     SUBDIR += ddrescueview
     SUBDIR += debhelper
     SUBDIR += debootstrap
-    SUBDIR += dekit
     SUBDIR += deltarpm
     SUBDIR += deltup
     SUBDIR += deskflow
