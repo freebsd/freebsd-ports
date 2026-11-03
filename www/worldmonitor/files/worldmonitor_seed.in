@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# PROVIDE: worldmonitor_seed
+# REQUIRE: LOGIN NETWORKING worldmonitor_redis_rest
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable worldmonitor_seed:
+#
+# worldmonitor_seed_enable (bool):	Set to NO by default.
+# worldmonitor_seed_user (str):		Set to www by default.
+# worldmonitor_seed_env_file (str):	Set to %%PREFIX%%/etc/worldmonitor.env by default.
+# worldmonitor_seed_log (str):		Set to /var/log/worldmonitor_seed.log by default.
+# worldmonitor_seed_interval (int):	Pause between two runs in seconds.  Set to 900 by default.
+# worldmonitor_seed_parallel (int):	Seeders run at the same time.  Set to 6 by default.
+
+. /etc/rc.subr
+
+name=worldmonitor_seed
+rcvar=worldmonitor_seed_enable
+
+load_rc_config $name
+
+: ${worldmonitor_seed_enable:=NO}
+: ${worldmonitor_seed_user:=www}
+: ${worldmonitor_seed_env_file:=%%PREFIX%%/etc/worldmonitor.env}
+: ${worldmonitor_seed_log:=/var/log/worldmonitor_seed.log}
+: ${worldmonitor_seed_interval:=900}
+: ${worldmonitor_seed_parallel:=6}
+
+pidfile=/var/run/worldmonitor_seed.pid
+procname=daemon
+command=/usr/sbin/daemon
+command_args="-H -P ${pidfile} -o ${worldmonitor_seed_log} -- %%WWWDIR%%/seed/worldmonitor-seed"
+start_precmd=worldmonitor_seed_prestart
+stop_postcmd=worldmonitor_seed_poststop
+
+worldmonitor_seed_prestart()
+{
+	if [ ! -r "${worldmonitor_seed_env_file}" ]; then
+		err 1 "${worldmonitor_seed_env_file} is not readable"
+	fi
+	[ -e "${worldmonitor_seed_log}" ] || install -m 0640 -o ${worldmonitor_seed_user} /dev/null "${worldmonitor_seed_log}"
+	touch "${pidfile}"
+	chown ${worldmonitor_seed_user} "${pidfile}"
+	set -a
+	. "${worldmonitor_seed_env_file}"
+	set +a
+	case "${UPSTASH_REDIS_REST_TOKEN}" in
+	""|change-me*) err 1 "UPSTASH_REDIS_REST_TOKEN in ${worldmonitor_seed_env_file} is empty or still has its example value" ;;
+	esac
+	export WM_SEED_INTERVAL="${worldmonitor_seed_interval}"
+	export WM_SEED_PARALLEL="${worldmonitor_seed_parallel}"
+}
+
+worldmonitor_seed_poststop()
+{
+	pkill -U ${worldmonitor_seed_user} -f "xargs -n 1 -P ${worldmonitor_seed_parallel}" || :
+	pkill -U ${worldmonitor_seed_user} -f "%%WWWDIR%%/seed/scripts/seed-" || :
+	pkill -U ${worldmonitor_seed_user} -f "fetch-osm-bases.mjs" || :
+	pkill -U ${worldmonitor_seed_user} -f "build-military-bases-final.mjs" || :
+}
+
+run_rc_command "$1"

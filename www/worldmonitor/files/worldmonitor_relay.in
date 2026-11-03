@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# PROVIDE: worldmonitor_relay
+# REQUIRE: LOGIN NETWORKING worldmonitor_redis_rest
+# BEFORE: worldmonitor
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable worldmonitor_relay:
+#
+# worldmonitor_relay_enable (bool):	Set to NO by default.
+# worldmonitor_relay_user (str):	Set to www by default.
+# worldmonitor_relay_env_file (str):	Set to %%PREFIX%%/etc/worldmonitor.env by default.
+# worldmonitor_relay_log (str):		Set to /var/log/worldmonitor_relay.log by default.
+# worldmonitor_relay_port (int):	Set to 3004 by default.
+
+. /etc/rc.subr
+
+name=worldmonitor_relay
+rcvar=worldmonitor_relay_enable
+
+load_rc_config $name
+
+: ${worldmonitor_relay_enable:=NO}
+: ${worldmonitor_relay_user:=www}
+: ${worldmonitor_relay_env_file:=%%PREFIX%%/etc/worldmonitor.env}
+: ${worldmonitor_relay_log:=/var/log/worldmonitor_relay.log}
+: ${worldmonitor_relay_port:=3004}
+
+pidfile=/var/run/worldmonitor_relay.pid
+procname=%%LOCALBASE%%/bin/node
+command=/usr/sbin/daemon
+command_args="-H -P ${pidfile%.pid}_daemon.pid -p ${pidfile} -o ${worldmonitor_relay_log} -- ${procname} %%WWWDIR%%/seed/scripts/ais-relay.cjs"
+start_precmd=worldmonitor_relay_prestart
+
+worldmonitor_relay_prestart()
+{
+	if [ ! -r "${worldmonitor_relay_env_file}" ]; then
+		err 1 "${worldmonitor_relay_env_file} is not readable"
+	fi
+	[ -e "${worldmonitor_relay_log}" ] || install -m 0640 -o ${worldmonitor_relay_user} /dev/null "${worldmonitor_relay_log}"
+	touch "${pidfile}" "${pidfile%.pid}_daemon.pid"
+	chown ${worldmonitor_relay_user} "${pidfile}" "${pidfile%.pid}_daemon.pid"
+	set -a
+	. "${worldmonitor_relay_env_file}"
+	set +a
+	case "${RELAY_SHARED_SECRET}" in
+	""|change-me*) err 1 "RELAY_SHARED_SECRET in ${worldmonitor_relay_env_file} is empty or still has its example value" ;;
+	esac
+	export PORT="${worldmonitor_relay_port}"
+	export UPSTASH_ALLOW_INSECURE_HTTP=true
+}
+
+run_rc_command "$1"

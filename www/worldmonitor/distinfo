@@ -1,0 +1,9 @@
+TIMESTAMP = 1793724062
+SHA256 (worldmonitor-buildkit-2.11.6.tar.xz) = dfddf1eef09a4f4e937b7f186766e381ea5956e68b66ea64420168b7f37c3421
+SIZE (worldmonitor-buildkit-2.11.6.tar.xz) = 303430948
+SHA256 (worldmonitor-redis-rest-2.11.6.tar.xz) = d1ff80a814d400e58822e142c313c385fefb6ac760201b9f9b6a452823a08b2f
+SIZE (worldmonitor-redis-rest-2.11.6.tar.xz) = 138644
+SHA256 (worldmonitor-seed-2.11.6.tar.xz) = 62c49d7630c2b44ae9e0797721e48975f38a8b99ab44c815e55513992e90e1da
+SIZE (worldmonitor-seed-2.11.6.tar.xz) = 13868336
+SHA256 (koala73-worldmonitor-v2.11.6_GH0.tar.gz) = 617fdca969298e53554712d309efb082f928d4816ced7927f411323743a9bfe7
+SIZE (koala73-worldmonitor-v2.11.6_GH0.tar.gz) = 67733559

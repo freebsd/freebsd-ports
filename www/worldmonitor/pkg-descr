@@ -1,0 +1,23 @@
+World Monitor is a dashboard that brings together news and geopolitical,
+infrastructure and market data on one page in the browser.
+
+This port installs the self-hosted web application: the built frontend, the
+API handlers, the local API server that runs them, a Redis REST proxy, a
+relay service for aircraft, ship, siren and Telegram data, and a seed
+service that keeps the data in Redis up to date.  A web server such as nginx
+serves the frontend and forwards requests below /api/ to the local API
+server.  Redis is required and installed as a dependency.
+
+At least 4 GB of memory are recommended, both for building the port and for
+running all its services.
+
+The command-line client is a separate port, www/worldmonitor-cli.  It is not
+needed for the dashboard.
+
+Many panels need API keys of the data providers; most of them are free and go
+into the configuration file.  Panels without a key stay empty.
+
+The Pro panels do not work in this port.  Pro is a paid service of
+worldmonitor.app that a self-hosted installation cannot reach.  The sign-in
+buttons work when the port is built with a Clerk publishable key of your own,
+but they do not unlock the Pro panels.
