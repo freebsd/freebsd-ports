@@ -1,6 +1,5 @@
 PORTNAME=	jellyfin-ffmpeg
-PORTVERSION=	8.1.3.1
-PORTREVISION=	4
+PORTVERSION=	8.1.3.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	ahze@FreeBSD.org
@@ -70,7 +69,7 @@ JFFMPEG_DIR=	${PREFIX}/lib/jellyfin-ffmpeg8
 
 post-patch:
 	cd ${WRKSRC} && QUILT_PATCHES=debian/patches quilt push -a || \
-	    QUILT_PATCHES=debian/patches quilt applied | ${GREP} -q 0098
+	    QUILT_PATCHES=debian/patches quilt applied | ${GREP} -q 0106
 	cd ${WRKSRC} && ${PATCH} -p0 --forward --quiet \
 	    < ${FILESDIR}/extra-patch-overlay_vulkan-framesync
 
