@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-11-02 13:50:22 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=63"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -8,8 +8,7 @@ requires-python = ">=3.11"
+ description = "Visual Interactive Taskwarrior full-screen terminal interface"
+ readme = "README.md"
+ requires-python = ">=3.11"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = {text="MIT"}
+ authors = [{name = "Chad Phillips", email = "chad@apartmentlines.com"}]
+ keywords = ["taskwarrior", "console", "tui", "text-user-interface"]
+ classifiers = [
