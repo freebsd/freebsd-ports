@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# PROVIDE: sudo_logsrvd
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable sudo_logsrvd:
+#
+# sudo_logsrvd_enable (bool):	Set to "YES" to enable the sudo log server.
+#				Default is "NO".
+# sudo_logsrvd_flags (str):	Extra flags passed to sudo_logsrvd.
+#				Default is "".  See sudo_logsrvd(8).
+# sudo_logsrvd_conf (str):	Path to the configuration file.
+#				Default is "%%PREFIX%%/etc/sudo_logsrvd.conf".
+# sudo_logsrvd_pidfile (str):	Path to the pid file, must match pid_file
+#				in the configuration file.
+#				Default is "/var/run/sudo/sudo_logsrvd.pid".
+
+. /etc/rc.subr
+
+name=sudo_logsrvd
+desc="Sudo I/O log server"
+rcvar=sudo_logsrvd_enable
+
+load_rc_config $name
+
+: ${sudo_logsrvd_enable:=NO}
+: ${sudo_logsrvd_conf=%%PREFIX%%/etc/sudo_logsrvd.conf}
+: ${sudo_logsrvd_pidfile=/var/run/sudo/sudo_logsrvd.pid}
+
+command=%%PREFIX%%/sbin/sudo_logsrvd
+command_args="-f ${sudo_logsrvd_conf}"
+pidfile=${sudo_logsrvd_pidfile}
+required_files=${sudo_logsrvd_conf}
+
+run_rc_command "$1"
