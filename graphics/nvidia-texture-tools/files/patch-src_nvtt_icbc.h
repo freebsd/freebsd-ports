@@ -22,16 +22,34 @@
  }
  
  ICBC_FORCEINLINE VFloat operator+(VFloat a, VFloat b) {
-@@ -1245,7 +1249,7 @@ ICBC_FORCEINLINE VFloat vrcp(VFloat a) {
+@@ -1244,8 +1248,13 @@ ICBC_FORCEINLINE VFloat vrcp(VFloat a) {
+     // one round of Newton-Rhaphson refinement
      vector float diff = vec_nmsub( estimate, v.vec, vec_splats( 1.0f ) );
      return vec_madd(diff, estimate, estimate );
++#elif defined(__VSX__)
++    return vec_div(vec_splats(1.0f), a);
  #else
 -    return vec_div(vec_splats(1),a);
-+    return vec_div(vec_splats(1.0f), a);
++    // AltiVec without VSX has no vector float division.
++    VFloat r;
++    for (int i = 0; i < VEC_SIZE; i++) r.e[i] = 1.0f / a.e[i];
++    return r;
  #endif
  }
  
-@@ -1276,7 +1280,7 @@ ICBC_FORCEINLINE VFloat lane_id() {
+@@ -1255,7 +1264,11 @@ ICBC_FORCEINLINE VFloat vmsub(VFloat a, VFloat b, VFlo
+ }
+ 
+ ICBC_FORCEINLINE VFloat vmsub(VFloat a, VFloat b, VFloat c) {
++#if defined(__VSX__)
+     return vec_msub(a, b, c); // @@ Is this right?
++#else
++    return vec_madd(a, b, -c.v);
++#endif
+ }
+ 
+ ICBC_FORCEINLINE VFloat vm2sub(VFloat a, VFloat b, VFloat c, VFloat d) {
+@@ -1276,7 +1289,7 @@ ICBC_FORCEINLINE VFloat lane_id() {
  }
  
  ICBC_FORCEINLINE VFloat lane_id() {
@@ -40,7 +58,7 @@
  }
  
  ICBC_FORCEINLINE VMask operator> (VFloat A, VFloat B) { return { vec_cmpgt(A, B) }; }
-@@ -1291,6 +1295,23 @@ ICBC_FORCEINLINE VFloat vselect(VMask mask, VFloat a, 
+@@ -1291,6 +1304,23 @@ ICBC_FORCEINLINE VFloat vselect(VMask mask, VFloat a, 
  // mask ? b : a
  ICBC_FORCEINLINE VFloat vselect(VMask mask, VFloat a, VFloat b) {
      return vec_sel(a, b, mask);
