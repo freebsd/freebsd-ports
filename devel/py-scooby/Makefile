@@ -1,5 +1,5 @@
 PORTNAME=	scooby
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,6 +36,6 @@ TEST_ARGS=	--disable-plugin-autoload \
 # package, which is not currently in FreeBSD ports.
 PYTEST_BROKEN_TESTS=	test_get_version test_tracking test_import_os_error
 
-# tests as of 0.12.0: 28 passed, 1 skipped, 3 deselected in 11.54s
+# tests as of 0.12.1: 30 passed, 1 skipped, 3 deselected in 27.64s
 
 .include <bsd.port.mk>
