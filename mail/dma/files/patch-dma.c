@@ -1,6 +1,6 @@
---- dma.c.orig	2020-02-05 10:59:09 UTC
+--- dma.c.orig	2026-08-30 20:07:40 UTC
 +++ dma.c
-@@ -341,7 +341,7 @@ retry:
+@@ -370,7 +370,7 @@ retry:
  			exit(EX_SOFTWARE);
  		}
  		if (gettimeofday(&now, NULL) == 0 &&
@@ -9,7 +9,7 @@
  			snprintf(errmsg, sizeof(errmsg),
  				 "Could not deliver for the last %d seconds. Giving up.",
  				 MAX_TIMEOUT);
-@@ -565,7 +565,7 @@ main(int argc, char **argv)
+@@ -597,7 +597,7 @@ skipopts:
  skipopts:
  	if (logident_base == NULL)
  		logident_base = "dma";
@@ -18,8 +18,8 @@
  
  	act.sa_handler = sighup_handler;
  	act.sa_flags = 0;
-@@ -597,7 +597,7 @@ skipopts:
- 		errlog(EX_SOFTWARE, "could not parse aliases file `%s'", config.aliases);
+@@ -632,7 +632,7 @@ skipopts:
+ 		return(0);
  
  	if ((sender = set_from(&queue, sender)) == NULL)
 -		errlog(EX_SOFTWARE, NULL);

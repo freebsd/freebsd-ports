@@ -1,6 +1,6 @@
---- spool.c.orig	2020-02-05 10:59:09 UTC
+--- spool.c.orig	2026-08-30 20:07:40 UTC
 +++ spool.c
-@@ -419,7 +419,7 @@ flushqueue_since(unsigned int period)
+@@ -421,7 +421,7 @@ flushqueue_since(unsigned int period)
  		return (0);
  
  	/* Did the flush file get touched within the last period seconds? */

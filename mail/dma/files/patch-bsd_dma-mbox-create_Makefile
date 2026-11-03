@@ -1,6 +1,6 @@
---- bsd/dma-mbox-create/Makefile.orig	2016-02-07 12:41:49 UTC
+--- bsd/dma-mbox-create/Makefile.orig	2026-08-30 20:07:40 UTC
 +++ bsd/dma-mbox-create/Makefile
-@@ -17,8 +17,9 @@ PREFIX?=	/usr/local
+@@ -19,8 +19,9 @@ CONFDIR?=	${PREFIX}/etc/dma
  LIBEXEC?=	${PREFIX}/libexec
  CONFDIR?=	${PREFIX}/etc/dma
  

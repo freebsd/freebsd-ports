@@ -1,6 +1,6 @@
---- mail.c.orig	2020-02-05 10:59:09 UTC
+--- mail.c.orig	2026-08-30 20:07:40 UTC
 +++ mail.c
-@@ -335,7 +335,7 @@ newaddr:
+@@ -338,7 +338,7 @@ newaddr:
  	ps->pos = 0;
  	addr = strdup(ps->addr);
  	if (addr == NULL)
