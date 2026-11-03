@@ -2,7 +2,7 @@ PORTNAME=	keychain
 PORTVERSION=	2.9.8
 CATEGORIES=	security
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-friendly front-end to ssh-agent(1)
 WWW=		https://www.funtoo.org/Keychain
 
