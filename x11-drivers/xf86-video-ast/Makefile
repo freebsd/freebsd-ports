@@ -9,8 +9,8 @@ WWW=		https://gitlab.freedesktop.org/xorg/driver/xf86-video-ast
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	Calls into x86-specific xorg/compiler.h functions
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	needs the inb/outb helpers of xorg/compiler.h, which exist only on x86 and powerpc
 
 USES=		xorg-cat:driver
 
