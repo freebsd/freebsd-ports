@@ -1,9 +1,7 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.6
+DISTVERSION=	2.0.0
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/postgres/postgres/archive/refs/tags/:postgres_sources
-DISTFILES=	REL_15_13.tar.gz:postgres_sources
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	In-process SQL OLAP database management system
@@ -18,25 +16,26 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 USES=		cmake:testing compiler:c++11-lang cpe ssl
 USE_GITHUB=	yes
 GH_TUPLE=	\
-		duckdb:duckdb-avro:f9d590297485f0318f480372c70bdd852826e258:avro/extension/avro \
-		duckdb:duckdb-aws:28c853c084a6e3acd36d7b8018c42438bb8c5a33:aws/extension/aws \
-		duckdb:duckdb-azure:003214c96d0caa39d5c3e27a9e1976a0692c7d37:azure/extension/azure \
-		duckdb:ducklake:ac7595b0a1305bea3d4cfaca763b0ce964c763a2:ducklake/extension/ducklake \
-		duckdb:duckdb-encodings:06295e77b13de65842992c82f14289ea679e4730:encodings/extension/encodings \
-		duckdb:duckdb-excel:f4c72b5ef04a03b3a78a95b5a2ee94ba93e3178d:excel/extension/excel \
-		duckdb:duckdb-fts:6814ec9a7d5fd63500176507262b0dbf7cea0095:fts/extension/fts \
-		duckdb:duckdb-httpfs:4bc690dba4496c765777a0269d48fdbaff7cdc11:httpfs/extension/httpfs \
-		duckdb:duckdb-iceberg:890b78a9cfae380396b435b033c27cdbdad04e42:iceberg/extension/iceberg \
+		duckdb:duckdb-avro:758fb6063cbb6da49b2e1c16c4044cfcafefc52f:avro/extension/avro \
+		duckdb:duckdb-aws:16ae9c135300f750478d648c2496f2952a6f2827:aws/extension/aws \
+		duckdb:duckdb-azure:906e92458c33309e5d9413e14a85aad7b4d2275f:azure/extension/azure \
+		duckdb:ducklake:417a9117f590e8141742ac0579d02f6a90162e37:ducklake/extension/ducklake \
+		duckdb:duckdb-encodings:2d1447a890302d9dff23ac7c8119ddce53ee65ff:encodings/extension/encodings \
+		duckdb:duckdb-excel:81bb84b115b97cc4edec4827714cac80da0127e1:excel/extension/excel \
+		duckdb:duckdb-fts:2266e67d01c737cb65114e77c7c672e58869a635:fts/extension/fts \
+		duckdb:duckdb-httpfs:77392a72077a85897db2519fae11e2c0da972b8a:httpfs/extension/httpfs \
+		duckdb:duckdb-iceberg:4c0c0874c48ec82a3e29910554891d04bcc0e988:iceberg/extension/iceberg \
 		duckdb:duckdb-inet:fe7f60bb60245197680fb07ecd1629a1dc3d91c8:inet/extension/inet \
-		duckdb:duckdb-postgres:318dabb2474fc3789b0199301a2e661e19c1b4fc:postgres/extension/postgres_scanner \
-		duckdb:duckdb-mysql:99c2e091b153b7f1cbd449988332232e75684b41:mysql/extension/mysql_scanner \
-		duckdb:odbc-scanner:7ce06c95c94b46a6984968439ca31ce968a2f473:odbc_scanner/extension/odbc_scanner \
-		duckdb:duckdb-quack:7e80f7ffcc98d0b3e81d0e1df8cc1c2da240a64b:quack/extension/quack \
-		duckdb:duckdb-spatial:04270fe7bb4eb412765cce8afde0276a9d81d3ba:spatial/extension/spatial \
-		duckdb:duckdb-sqlite:5274128259f73166c1f37f01190a4601f84c5525:sqlite/extension/sqlite_scanner \
-		duckdb:database-connector:75af617cba87f5fb41a85ee82e2f639e70152c8e:sqlite_db_connector/extension/sqlite_scanner/database-connector \
-		duckdb:duckdb-sqlsmith:e47106c6fef6e019feaf8cedfc2ef737428a386c:sqlsmith/extension/sqlsmith \
-		duckdb:duckdb-vss:b833341c8737fd3f3558c7720cc575ae8fc82598:vss/extension/vss
+		duckdb:duckdb-legacy-parser:bcdf276132fe3a09afcc707c1cdff39096989404:legacy_parser/extension/legacy_parser \
+		duckdb:duckdb-postgres:c0f5a3c0c4b68b02afbf669d36d7f0e503985c88:postgres/extension/postgres_scanner \
+		duckdb:duckdb-mysql:f7fc0d42716534aa5ad48626d21ced9807b33967:mysql/extension/mysql_scanner \
+		duckdb:odbc-scanner:a33698df40f95cc3eb339703dcb085497eabfca3:odbc_scanner/extension/odbc_scanner \
+		duckdb:duckdb-quack:f96420ed46aee9c42064bdb99ddfd1230d6c0086:quack/extension/quack \
+		duckdb:duckdb-spatial:4e066c17e2d1f24625baff4c62430d68ceb4e41f:spatial/extension/spatial \
+		duckdb:duckdb-sqlite:e223dc01493414cef6d5960744f1e048d59fc592:sqlite/extension/sqlite_scanner \
+		duckdb:database-connector:c305670b5729cc6dbda8d395eeb63b4d1487c064:sqlite_db_connector/extension/sqlite_scanner/database-connector \
+		duckdb:duckdb-sqlsmith:00c4e5796c4e3e1f98ff4adec55d87326d2d2f3c:sqlsmith/extension/sqlsmith \
+		duckdb:duckdb-vss:3685131eacaf0d467d430be5c4e5e7d1d483437a:vss/extension/vss
 # the list of out-of-tree extensions is here: .github/config/out_of_tree_extensions.cmake
 
 CXXFLAGS+=	-I${WRKSRC}/extension/inet/src/include
@@ -109,15 +108,13 @@ VSS_CXXFLAGS=			-I${WRKSRC}/extension/vss/src/include # workaround for the heade
 post-extract:
 	# remove the jemalloc extension directory just in case
 	@${RM} -r ${WRKSRC}/extension/jemalloc
-	# create symlink to Postgres sources for the postgres_scanner extension
-	@${LN} -s ${WRKDIR}/postgres-REL_15_13 ${WRKSRC}/extension/postgres_scanner/postgres
 
 post-patch: # remove cmake files of out-of-tree extensions to build them like in-tree extensions (avoid fetching from git)
 	@${RM} ${WRKSRC}/.github/config/extensions/*.cmake
 
 post-test: # run tests
-	@cd ${TEST_WRKSRC} && test/unittest
+	@cd ${TEST_WRKSRC} && test/unittest "test/sql/*" "~*.test_slow"
 
-# tests as of 1.5.6: All tests passed (21 skipped tests, 1036607 assertions in 4607 test cases)
+# tests as of 2.0.0: All tests passed (21 skipped tests, 276555 assertions in 4734 test cases)
 
 .include <bsd.port.mk>
