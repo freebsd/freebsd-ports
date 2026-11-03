@@ -1,5 +1,0 @@
-include/rustls.h
-lib/librustls.a
-lib/librustls.so
-lib/librustls.so.0.15.6
-libdata/pkgconfig/rustls.pc

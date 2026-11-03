@@ -22,6 +22,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rustls
 
+PLIST_FILES=	include/rustls.h \
+		lib/librustls.a \
+		lib/librustls.so \
+		lib/librustls.so.${DISTVERSION} \
+		libdata/pkgconfig/rustls.pc
+
 do-build:
 	@${CARGO_CARGO_RUN} cbuild --verbose --verbose ${CARGO_BUILD_ARGS}
 
