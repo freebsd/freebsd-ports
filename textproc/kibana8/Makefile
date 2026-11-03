@@ -1,5 +1,5 @@
 PORTNAME=	kibana
-DISTVERSION=	8.19.23
+DISTVERSION=	8.19.24
 DISTVERSIONSUFFIX=	-linux-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
@@ -134,6 +134,7 @@ post-install:
 	${ECHO} "@dir(${KIBANAUSER},${KIBANAGROUP}) ${WWWDIR}/data" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/plugins" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/logs" >> ${TMPPLIST}
+	${ECHO} "@dir ${WWWDIR}/src/core/packages" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/analytics" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/kbn-reporting" >> ${TMPPLIST}
 	${ECHO} "@dir ${WWWDIR}/src/platform/packages/private/shared-ux/page" >> ${TMPPLIST}
