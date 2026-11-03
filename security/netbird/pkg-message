@@ -1,0 +1,14 @@
+[
+{ type: upgrade
+  maximum_version: "0.82.0"
+  message: <<EOM
+1) Removal of MySQL store
+The MySQL store engine for management, deprecated in v0.81.0, is removed. A management server configured with the mysql engine refuses to start on v0.82.0 and points to the migration guide.
+Migrate to PostgreSQL before upgrading. The netbird-mysql-migrate tool is no longer part of the release, so run the migration while still on 0.81.x, with the tool from the v0.81.5 release, then upgrade.
+https://docs.netbird.io/selfhosted/migration/mysql-to-postgresql
+
+2) Deprecation of Rosenpass
+Rosenpass support is deprecated. It keeps working for now, but it may be removed in a future release, so avoid making new deployments depend on it. '--enable-rosenpass' and '--rosenpass-permissive' are hidden from 'netbird up --help' and print a deprecation warning whenever they are used, and the desktop app shows a notice under the quantum-resistance toggle in Settings → Security.
+EOM
+}
+]
