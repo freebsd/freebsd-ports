@@ -20,7 +20,7 @@ CONFLICTS+=	screen-devel
 LICENSE=	GPLv3
 
 OPTIONS_DEFINE=		INFO SYSTEM_SCREENRC MULTIUSER \
-			NOSOCKETDIR
+			NOSOCKETDIR UTMPX
 OPTIONS_DEFAULT=	INFO SYSTEM_SCREENRC \
 			NCURSES_DEFAULT
 OPTIONS_SINGLE=		NCURSES
@@ -29,6 +29,8 @@ SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
 MULTIUSER_DESC=		Install setuid-root screen to support multiuser
 MULTIUSER_PLIST_SUB=	MULTISUID="@(,,4555) "
 MULTIUSER_PLIST_SUB_OFF=MULTISUID="@(,,0555) "
+UTMPX_DESC=		Log to utmpx (implies MULTIUSER for setuid-root)
+UTMPX_IMPLIES=		MULTIUSER
 NCURSES_DEFAULT_DESC=	Depend on ncurses (ports if installed, otherwise base)
 NCURSES_BASE_DESC=	Depend on ncurses in base
 NCURSES_PORT_DESC=	Depend on devel/ncurses in ports
@@ -57,6 +59,10 @@ LDFLAGS+=	-L${NCURSESLIB}
 INFO=		screen
 MAKE_ARGS+=	WITH_INFO=1
 USES+=		makeinfo
+.endif
+
+.if ${PORT_OPTIONS:MUTMPX}
+CONFIGURE_ARGS+=--enable-utmp
 .endif
 
 # Enables support for 256 colour xterm.  Note that you may need to
