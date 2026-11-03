@@ -1,7 +1,7 @@
 PORTNAME=	midipp
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,9 +10,9 @@ WWW=		https://github.com/hselasky/midipp
 
 LICENSE=	BSD2CLAUSE
 
-USES=		compiler:c++11-lang gl qmake qt:5 tar:bzip2 desktop-file-utils
+USES=		compiler:c++17-lang desktop-file-utils gl qmake qt:6 tar:bzip2
 USE_GL=		gl
-USE_QT=		buildtools:build core gui network printsupport widgets
+USE_QT=		base
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
