@@ -30,13 +30,16 @@ USES=		compiler:c11 dos2unix gl gmake gnome localbase pkgconfig sdl tar:xz
 USE_GL=		gl glu
 USE_GNOME=	gdkpixbufextra gtk20
 USE_SDL=	sdl2
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${GITREVISION}
 GITREVISION=	10669-ec5824db8
-DATADIR=	${PREFIX}/share/duke3d
-SUB_FILES=	pkg-message
+
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	CC=${CC} CXX=${CXX} CLANG=1 PRETTY_OUTPUT=0 USE_MIMALLOC=0
 ALL_TARGET=	duke3d
+
+DATADIR=	${PREFIX}/share/duke3d
+SUB_FILES=	pkg-message
+
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${GITREVISION}
 
 PLIST_FILES=	bin/eduke32 bin/mapster32
 PORTEXAMPLES=	*
@@ -47,22 +50,23 @@ OPTIONS_RADIO=		GAMEDATA
 OPTIONS_RADIO_GAMEDATA=	SHAREWARE FULL
 
 ERP_DESC=		Install Enhanced Resource Pack
+FULL_DESC=		Install duke3d.grp and duke.rts from $${DISTDIR}/duke3d
+FURY_DESC=		Build Ion Fury engine (game data not included)
+OFFENSIVE_DESC=		Install Full XXX Pack
+SHAREWARE_DESC=		Install shareware game data version 1.3
+SW_DESC=		Build VoidSW (Shadow Warrior) and Wangulator editor
+
 ERP_DISTFILES=		duke-erp-210701.zip:erp
 ERP_PLIST_FILES=	${DATADIR}/duke-erp-210701.zip
-FURY_DESC=		Build Ion Fury engine (game data not included)
+FULL_DISTFILES=		duke3d/duke3d.grp duke3d/duke.rts
+FULL_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
 FURY_PLIST_FILES=	bin/fury
-OFFENSIVE_DESC=		Install Full XXX Pack
 OFFENSIVE_IMPLIES=	ERP
 OFFENSIVE_DISTFILES=	duke3d_xxx.zip:related
 OFFENSIVE_PLIST_FILES=	${DATADIR}/duke3d_xxx.zip
-SHAREWARE_DESC=		Install shareware game data version 1.3
-SHAREWARE_EXTRACT_ONLY=	3dduke13.zip
 SHAREWARE_DISTFILES=	3dduke13.zip:shareware
+SHAREWARE_EXTRACT_ONLY=	3dduke13.zip
 SHAREWARE_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
-FULL_DESC=		Install duke3d.grp and duke.rts from $${DISTDIR}/duke3d
-FULL_DISTFILES=		duke3d/duke3d.grp duke3d/duke.rts
-FULL_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
-SW_DESC=		Build VoidSW (Shadow Warrior) and Wangulator editor
 SW_ALL_TARGET=		sw
 SW_PLIST_FILES=		bin/voidsw bin/wangulator
 
