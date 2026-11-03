@@ -1,6 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.0
+DISTVERSION=	0.20.1
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -581,6 +581,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		schemars_derive-1.2.3 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
+		sctk-adwaita-0.10.1 \
 		security-framework-3.7.0 \
 		security-framework-sys-2.17.0 \
 		self_cell-1.3.0 \
@@ -853,6 +854,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		craft-winprint-gdi@git+https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312\#417ac3c4d14d3da5485a99c7d5ce8f05664ec312 \
 		craft-docpath,craft-fonts-build,craft-i18n,craft-jpeg,craft-print,craft-ui,craft-update@git+https://github.com/storytold/craft-libs?rev=c5a1cbfb5f9049f9270955caffb5bee5997aebf7\#c5a1cbfb5f9049f9270955caffb5bee5997aebf7 \
 		ecolor,eframe,egui,egui-wgpu,egui-winit,egui_extras,egui_glow,egui_kittest,emath,epaint,epaint_default_fonts@git+https://github.com/storytold/egui.git?rev=6d518fc799681571963842f95b55a6b68431b15a\#6d518fc799681571963842f95b55a6b68431b15a \
+		craft-pcraft-format@git+https://github.com/storytold/craft-libs?rev=b8f7d93b00dfb8f172938f3d2d796ae62dcfe123\#b8f7d93b00dfb8f172938f3d2d796ae62dcfe123 \
 		winit@git+https://github.com/storytold/winit.git?rev=a517b3846ee8457d84ee4975110bfda6797c44dc\#a517b3846ee8457d84ee4975110bfda6797c44dc
 
 CARGO_BUILD_ARGS=	-p ${PORTNAME} -p ${PORTNAME}-cli
@@ -871,7 +873,7 @@ AVIF_VARS=	CARGO_FEATURES+=photocraft-codecs/avif
 HEIF_VARS=	CARGO_FEATURES+=heif
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-11-01
+RELEASE_DATE=	2026-11-03
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
