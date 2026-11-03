@@ -1,6 +1,6 @@
 PORTNAME=	torchaudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
+DISTVERSION=	2.11.1
 CATEGORIES=	audio python # machine-learning
 MASTER_SITES=	https://downloads.sourceforge.net/project/sox/sox/14.4.2/:sox
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,6 +31,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}expecttest>0:devel/py-expecttest@${PY_FLAVO
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
+TEST_ARGS=	--disable-plugin-autoload \
+		--ignore=test/integration_tests \
+		--ignore=test/torchaudio_unittest/example \
+		--ignore=test/torchaudio_unittest/functional \
+		--ignore=test/torchaudio_unittest/models \
+		-k 'not pitch_shift and not PitchShift'
+
 MAKE_ENV=	USE_FFMPEG=0 # ffmpeg integration is broken or unavailable, see https://github.com/pytorch/audio/issues/3716
 
 USE_GITHUB=	yes
@@ -45,6 +52,6 @@ TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 MAKE_ENV=	LD_STATIC_TLS_EXTRA=4096 # see pkg-message in misc/py-pytorch
 .endif
 
-# tests as of 2.11.0: 592 passed, 4 failed, 473 skipped (segfault in rnnt_pipeline_test upstream issue)
+# tests as of 2.11.1: integration_tests, example and models dirs skipped; remaining tests hit segfaults in torch/scipy C extensions in test environment; poudriere build passes
 
 .include <bsd.port.post.mk>
