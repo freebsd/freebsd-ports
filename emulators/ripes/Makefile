@@ -1,7 +1,6 @@
 PORTNAME=	ripes
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.6
-PORTREVISION=	1
+DISTVERSION=	2.3.0
 CATEGORIES=	emulators
 
 MAINTAINER=	mclay@astate.edu
@@ -12,22 +11,28 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/include/cereal/cereal.hpp:devel/cereal
 
-USES=		cmake qmake qt:5
-
-USE_QT=		buildtools:build charts concurrent core gui svg testlib widgets
-
-CMAKE_INSTALL_PREFIX=   ${STAGEDIR}${PREFIX}
-
+USES=		cmake gl qmake qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	mortbopet
 GH_PROJECT=	Ripes
-GH_TUPLE=	mortbopet:VSRTL:8fd0bce:VSRTL/external/VSRTL \
-		serge1:ELFIO:79fcd11:ELFIO/external/ELFIO \
-		mortbopet:libelfin:49d1653:libelfin/external/libelfin \
-		yhirose:cpp-mmaplib:c517af7:cpp_mmaplib/external/libelfin/external/cpp-mmaplib \
-		pbhogan:Signals:17881fb:Signals/external/VSRTL/external/Signals \
-		mortbopet:better-enums:52a694b:better_enums/external/VSRTL/external/better-enums
+GH_TUPLE=	mortbopet:VSRTL:8497dd1:vsrtl/external/VSRTL \
+		mortbopet:libelfin:c06ecb0:libelfin/external/libelfin \
+		yhirose:cpp-mmaplib:8cc8551:mmaplib/external/libelfin/external/cpp-mmaplib \
+		USCiLab:cereal:22a1b36:cereal \
+		serge1:ELFIO:79fcd11:elfio \
+		pbhogan:Signals:17881fb:signals \
+		Neargye:magic_enum:7f7c704:magic_enum
+USE_GL=		gl opengl
+USE_QT=		base charts svg
 
-PORTSCOUT=	ignore:continuous-master
+CMAKE_ARGS+=	-DFETCHCONTENT_SOURCE_DIR_CEREAL=${WRKSRC_cereal} \
+		-DFETCHCONTENT_SOURCE_DIR_ELFIO=${WRKSRC_elfio} \
+		-DFETCHCONTENT_SOURCE_DIR_LIBELFIN=${WRKSRC}/external/libelfin \
+		-DFETCHCONTENT_SOURCE_DIR_MAGIC-ENUM=${WRKSRC_magic_enum} \
+		-DFETCHCONTENT_SOURCE_DIR_SIGNALS=${WRKSRC_signals}
+
+CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
+
+PORTSCOUT=	limit:^v?[0-9]
 
 .include <bsd.port.mk>
