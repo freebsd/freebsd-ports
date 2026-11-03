@@ -451,6 +451,7 @@
     SUBDIR += py-SQSnobFit
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
+    SUBDIR += py-a2a-sdk
     SUBDIR += py-accelerate
     SUBDIR += py-ag2
     SUBDIR += py-aistudio-sdk
