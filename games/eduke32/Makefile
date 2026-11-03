@@ -16,7 +16,7 @@ MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 WWW=		https://eduke32.com/
 
-LICENSE=	GPLv2 BUILDLIC
+LICENSE=	BUILDLIC GPLv2
 LICENSE_COMB=	multi
 LICENSE_NAME_BUILDLIC=	BUILD SOURCE CODE LICENSE
 LICENSE_FILE_BUILDLIC=	${WRKSRC}/source/build/buildlic.txt
@@ -26,14 +26,19 @@ LICENSE_PERMS_BUILDLIC=	dist-mirror pkg-mirror auto-accept
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libvpx.so:multimedia/libvpx
 
-USES=		compiler:c11 dos2unix gl gmake gnome localbase pkgconfig sdl tar:xz
+USES=		compiler:c11 dos2unix gl gmake gnome localbase pkgconfig sdl \
+		tar:xz
 USE_GL=		gl glu
 USE_GNOME=	gdkpixbufextra gtk20
 USE_SDL=	sdl2
 GITREVISION=	10669-ec5824db8
 
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	CC=${CC} CXX=${CXX} CLANG=1 PRETTY_OUTPUT=0 USE_MIMALLOC=0
+MAKE_ARGS=	CC=${CC} \
+		CLANG=1 \
+		CXX=${CXX} \
+		PRETTY_OUTPUT=0 \
+		USE_MIMALLOC=0
 ALL_TARGET=	duke3d
 
 DATADIR=	${PREFIX}/share/duke3d
@@ -41,34 +46,39 @@ SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${GITREVISION}
 
-PLIST_FILES=	bin/eduke32 bin/mapster32
+PLIST_FILES=	bin/eduke32 \
+		bin/mapster32
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		ERP EXAMPLES FURY OFFENSIVE SW
 OPTIONS_DEFAULT=	FURY SW
 OPTIONS_RADIO=		GAMEDATA
-OPTIONS_RADIO_GAMEDATA=	SHAREWARE FULL
+OPTIONS_RADIO_GAMEDATA=	FULL SHAREWARE
 
-ERP_DESC=		Install Enhanced Resource Pack
-FULL_DESC=		Install duke3d.grp and duke.rts from $${DISTDIR}/duke3d
-FURY_DESC=		Build Ion Fury engine (game data not included)
-OFFENSIVE_DESC=		Install Full XXX Pack
-SHAREWARE_DESC=		Install shareware game data version 1.3
-SW_DESC=		Build VoidSW (Shadow Warrior) and Wangulator editor
+ERP_DESC=	Install Enhanced Resource Pack
+FULL_DESC=	Install duke3d.grp and duke.rts from $${DISTDIR}/duke3d
+FURY_DESC=	Build Ion Fury engine (game data not included)
+OFFENSIVE_DESC=	Install Full XXX Pack
+SHAREWARE_DESC=	Install shareware game data version 1.3
+SW_DESC=	Build VoidSW (Shadow Warrior) and Wangulator editor
 
 ERP_DISTFILES=		duke-erp-210701.zip:erp
 ERP_PLIST_FILES=	${DATADIR}/duke-erp-210701.zip
-FULL_DISTFILES=		duke3d/duke3d.grp duke3d/duke.rts
-FULL_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
+FULL_DISTFILES=		duke3d/duke3d.grp \
+			duke3d/duke.rts
+FULL_PLIST_FILES=	${DATADIR}/duke.rts \
+			${DATADIR}/duke3d.grp
 FURY_PLIST_FILES=	bin/fury
 OFFENSIVE_IMPLIES=	ERP
 OFFENSIVE_DISTFILES=	duke3d_xxx.zip:related
 OFFENSIVE_PLIST_FILES=	${DATADIR}/duke3d_xxx.zip
 SHAREWARE_DISTFILES=	3dduke13.zip:shareware
 SHAREWARE_EXTRACT_ONLY=	3dduke13.zip
-SHAREWARE_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
+SHAREWARE_PLIST_FILES=	${DATADIR}/duke.rts \
+			${DATADIR}/duke3d.grp
 SW_ALL_TARGET=		sw
-SW_PLIST_FILES=		bin/voidsw bin/wangulator
+SW_PLIST_FILES=		bin/voidsw \
+			bin/wangulator
 
 .include <bsd.port.options.mk>
 
@@ -86,8 +96,9 @@ MAKE_ARGS+=	LTO=0
 # is set.
 _CKSUMFILES=	${ALLFILES:Nduke3d/duke*}
 
-.if !exists(${DISTDIR}/duke3d/duke3d.grp) || !exists(${DISTDIR}/duke3d/duke.rts)
-IGNORE=	option FULL selected, but duke3d.grp or duke.rts not found in ${DISTDIR}/duke3d
+.if !exists(${DISTDIR}/duke3d/duke3d.grp) || \
+	!exists(${DISTDIR}/duke3d/duke.rts)
+IGNORE=		option FULL selected, but duke3d.grp or duke.rts not found in ${DISTDIR}/duke3d
 .endif
 
 .endif
