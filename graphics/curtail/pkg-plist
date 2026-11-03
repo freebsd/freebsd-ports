@@ -58,5 +58,6 @@ share/locale/sv/LC_MESSAGES/curtail.mo
 share/locale/tr/LC_MESSAGES/curtail.mo
 share/locale/uk/LC_MESSAGES/curtail.mo
 share/locale/uz/LC_MESSAGES/curtail.mo
+share/locale/vi/LC_MESSAGES/curtail.mo
 share/locale/zh_CN/LC_MESSAGES/curtail.mo
-share/metainfo/com.github.huluti.Curtail.appdata.xml
+share/metainfo/com.github.huluti.Curtail.metainfo.xml
