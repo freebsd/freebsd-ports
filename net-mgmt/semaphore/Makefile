@@ -1,6 +1,6 @@
 PORTNAME=	semaphore
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.17
+DISTVERSION=	2.19.18
 CATEGORIES=	net-mgmt
 MASTER_SITES+=	https://github.com/joneum/FreeBSD-Semaphore/releases/download/${PORTNAME}-${DISTVERSION}/:webui
 DISTFILES+=	${PORTNAME}-webui-${DISTVERSION}${EXTRACT_SUFX}:webui \
