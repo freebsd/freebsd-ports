@@ -1,6 +1,6 @@
---- ext/litehtml/src/render_item.cpp.orig	2026-10-20 14:15:24 UTC
+--- ext/litehtml/src/render_item.cpp.orig	2026-10-26 10:28:01 UTC
 +++ ext/litehtml/src/render_item.cpp
-@@ -924,6 +924,28 @@ void litehtml::render_item::draw_stacking_context(uint_ptr hdc, pixel_t x, pixel
+@@ -1041,6 +1041,28 @@ void litehtml::render_item::draw_stacking_context(uint
      }
  }
  
@@ -29,7 +29,7 @@
  // Compute absolute document-space bounds for this subtree: each item
  // stores the absolute top of its box and the absolute bottom of its
  // whole subtree (including margins and overflowing children). The
-@@ -1043,6 +1065,19 @@ void litehtml::render_item::draw_children(uint_ptr hdc, pixel_t x, pixel_t y, co
+@@ -1211,6 +1233,19 @@ void litehtml::render_item::draw_children(uint_ptr hdc
                      process = false;
                  }
                  break;
@@ -49,7 +49,7 @@
              case draw_block:
                  if(!el->src_el()->is_inline() && el->src_el()->css().get_float() == float_none &&
                     !el->src_el()->is_positioned())
-@@ -1077,7 +1112,7 @@ void litehtml::render_item::draw_children(uint_ptr hdc, pixel_t x, pixel_t y, co
+@@ -1245,7 +1280,7 @@ void litehtml::render_item::draw_children(uint_ptr hdc
  
              if(process)
              {

@@ -1,6 +1,6 @@
---- ext/litepdf.cpp.orig	2026-10-20 14:15:24 UTC
+--- ext/litepdf.cpp.orig	2026-10-27 15:48:14 UTC
 +++ ext/litepdf.cpp
-@@ -968,6 +968,7 @@ class PdfContainer : public litehtml::document_container
+@@ -970,6 +970,7 @@ class PdfContainer : public litehtml::document_contain
      HPDF_Doc pdf = nullptr;
      std::string base_dir;
      litehtml::pixel_t content_width = 0;
@@ -8,7 +8,7 @@
      bool kdp_embed = false;      // kdp mode: base-14 fonts become embedded TrueTypes
      bool mirror_headers = false; // mirrored running heads: swap header/footer sides on verso pages
      bool dpi_audit = false;      // warn when raster images render below 300 DPI
-@@ -2249,7 +2250,7 @@ class PdfContainer : public litehtml::document_container
+@@ -2282,7 +2283,7 @@ class PdfContainer : public litehtml::document_contain
          viewport.x = 0;
          viewport.y = 0;
          viewport.width = content_width;
@@ -17,7 +17,7 @@
      }
  
      litehtml::element::ptr create_element(const char*, const litehtml::string_map&,
-@@ -3055,6 +3056,18 @@ static int render_pdf(const char* html, const char* css, float page_width_mm, fl
+@@ -3093,6 +3094,18 @@ static int render_pdf(const char* html, const char* cs
          content_width = page_width - margin_gutter_v - std::max(margin_left_v, margin_right_v);
      }
      container.content_width = content_width;
@@ -36,7 +36,7 @@
  
      // Note: render() returns the root's natural width; the laid-out
      // document height is what matters for pagination. A litehtml throw
-@@ -3302,6 +3315,12 @@ static int render_pdf(const char* html, const char* css, float page_width_mm, fl
+@@ -3340,6 +3353,12 @@ static int render_pdf(const char* html, const char* cs
      }
  
      if (getenv("LITEPDF_DEBUG")) { for (auto& w : windows) std::fprintf(stderr, "window %.1f..%.1f\n", w.first, w.second); }
@@ -49,10 +49,12 @@
      DrawContext context;
      context.wide_tables = &container.wide_tables;
      container.active_context = &context;
-@@ -3541,6 +3560,49 @@ static int render_pdf(const char* html, const char* css, float page_width_mm, fl
+@@ -3577,6 +3596,49 @@ static int render_pdf(const char* html, const char* cs
+         {
+             // Pop the pageless scale-down CTM: annotations below are in
              // device space and get scaled explicitly instead.
-             HPDF_Page_GRestore(page);
-         }
++            HPDF_Page_GRestore(page);
++        }
 +        // Fixed-positioned boxes draw once per page, anchored to the page
 +        // bottom (the viewport is one page tall). They live outside the
 +        // window clip, so they are drawn in their own pass: y_offset 0
@@ -94,8 +96,6 @@
 +            context.window_first = prev_window_first;
 +            context.window_second = prev_window_second;
 +            context.paginated = prev_paginated;
-+            HPDF_Page_GRestore(page);
-+        }
+             HPDF_Page_GRestore(page);
+         }
          // Header/footer go in the margins, outside the window clip; a
-         // pageless document has no pages to decorate, and a blank
-         // filler page stays blank.

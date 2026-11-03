@@ -1,6 +1,6 @@
---- ext/litehtml/src/document.cpp.orig	2026-10-20 14:15:24 UTC
+--- ext/litehtml/src/document.cpp.orig	2026-10-26 10:28:01 UTC
 +++ ext/litehtml/src/document.cpp
-@@ -573,6 +573,14 @@ namespace litehtml
+@@ -576,6 +576,14 @@ namespace litehtml
          }
      }
  

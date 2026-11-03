@@ -1,6 +1,6 @@
 PORTNAME=	markterm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	textproc
 
 MAINTAINER=	dch@FreeBSD.org
@@ -51,7 +51,7 @@ GH_TUPLE=	ralsina:markd:490f0bc3129d1e625464b3f4da7336a2a978cffe:markd/deps/mark
 # libtexprintf via TEXMATH, MicroTex for vector math) plus libharu,
 # which ext/build-libharu.sh builds from source with the CID font
 # patch (print/libharu ships unpatched, so it cannot be used).
-GH_TUPLE+=	ralsina:litehtml:bf76f100647e19d1938047d23f7258281586e87b:litehtml/ext/litehtml \
+GH_TUPLE+=	ralsina:litehtml:d908f3f8ab250c653c10547061913a1feb47b0ad:litehtml/ext/litehtml \
 		libharu:libharu:v2.4.6:libharu/ext/build/libharu \
 		NanoMichael:MicroTeX:0e3707f6dafebb121d98b53c64364d16fefe481d:microtex/ext/microtex
 USE_GNOME=	libxml2
