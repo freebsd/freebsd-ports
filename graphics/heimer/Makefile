@@ -1,5 +1,6 @@
 PORTNAME=	heimer
 DISTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/juzzlin/Heimer/releases/download/${DISTVERSION}/
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake:testing gl qt:6
 USE_GL=		opengl
-USE_QT=		base svg translations
+USE_QT=		base svg tools:build translations:build
 
 CMAKE_ON=	BUILD_WITH_QT6
 CMAKE_ARGS=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
