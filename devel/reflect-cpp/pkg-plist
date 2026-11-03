@@ -173,6 +173,7 @@ include/rfl/internal/Fields.hpp
 include/rfl/internal/Getter.hpp
 include/rfl/internal/HasFromReflectionMethod.hpp
 include/rfl/internal/HasValidation.hpp
+include/rfl/internal/MemoryInputBuffer.hpp
 include/rfl/internal/Skip.hpp
 include/rfl/internal/StringLiteral.hpp
 include/rfl/internal/VisitTree.hpp
@@ -182,6 +183,7 @@ include/rfl/internal/all_fields.hpp
 include/rfl/internal/allow_raw_ptrs_v.hpp
 include/rfl/internal/always_inline.hpp
 include/rfl/internal/bind_to_tuple.hpp
+include/rfl/internal/bitset.hpp
 include/rfl/internal/concat_literals.hpp
 include/rfl/internal/copy_flattened_tuple_to_named_tuple.hpp
 include/rfl/internal/copy_from_named_tuple.hpp
@@ -249,6 +251,7 @@ include/rfl/internal/has_to_class_method_v.hpp
 include/rfl/internal/is_array.hpp
 include/rfl/internal/is_attribute.hpp
 include/rfl/internal/is_basic_type.hpp
+include/rfl/internal/is_bitset.hpp
 include/rfl/internal/is_default_val_v.hpp
 include/rfl/internal/is_deprecated.hpp
 include/rfl/internal/is_description.hpp
@@ -312,6 +315,7 @@ include/rfl/internal/variant/result_t.hpp
 include/rfl/internal/wrap_in_fields.hpp
 include/rfl/internal/wrap_in_rfl_array_t.hpp
 include/rfl/io/load_bytes.hpp
+include/rfl/io/load_file.hpp
 include/rfl/io/load_string.hpp
 include/rfl/io/save_bytes.hpp
 include/rfl/io/save_string.hpp
@@ -363,6 +367,7 @@ include/rfl/parsing/ParserArray.hpp
 include/rfl/parsing/ParserAtomic.hpp
 include/rfl/parsing/ParserAtomicFlag.hpp
 include/rfl/parsing/ParserBasicType.hpp
+include/rfl/parsing/ParserBitset.hpp
 include/rfl/parsing/ParserBox.hpp
 include/rfl/parsing/ParserBytestring.hpp
 include/rfl/parsing/ParserCArray.hpp
@@ -399,9 +404,12 @@ include/rfl/parsing/Parser_base.hpp
 include/rfl/parsing/Parser_default.hpp
 include/rfl/parsing/Parser_named_tuple.hpp
 include/rfl/parsing/SupportsTaggedUnions.hpp
+include/rfl/parsing/SupportsTypedMapReader.hpp
+include/rfl/parsing/SupportsTypedMapWriter.hpp
 include/rfl/parsing/TaggedUnionWrapper.hpp
 include/rfl/parsing/TupleParser.hpp
 include/rfl/parsing/TupleReader.hpp
+include/rfl/parsing/TypedMapReader.hpp
 include/rfl/parsing/VariantAlternativeWrapper.hpp
 include/rfl/parsing/VectorParser.hpp
 include/rfl/parsing/VectorReader.hpp
@@ -424,6 +432,7 @@ include/rfl/parsing/is_tagged_union_wrapper.hpp
 include/rfl/parsing/is_vector_like.hpp
 include/rfl/parsing/is_view_reader.hpp
 include/rfl/parsing/make_type_name.hpp
+include/rfl/parsing/read_array_elements.hpp
 include/rfl/parsing/schema/Definition.hpp
 include/rfl/parsing/schema/Type.hpp
 include/rfl/parsing/schema/ValidationType.hpp
@@ -530,4 +539,4 @@ lib/cmake/reflectcpp/reflectcpp-exports-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/reflectcpp/reflectcpp-exports.cmake
 lib/cmake/reflectcpp/reflectcpp-version.cmake
 lib/libreflectcpp.so
-lib/libreflectcpp.so.0.26.2
+lib/libreflectcpp.so.0.27.1
