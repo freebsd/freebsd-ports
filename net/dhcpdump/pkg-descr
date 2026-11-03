@@ -1,2 +1,3 @@
-This command parses the output of tcpdump to display the dhcp-packets
-for easier checking and debugging.
+dhcpdump parses DHCP packets from a network interface or from a pcap
+capture file and displays them in a readable form for easier checking
+and debugging.
