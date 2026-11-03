@@ -1,10 +1,7 @@
 PORTNAME=	kividb
-PORTVERSION=	1.1.3
+DISTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
-
-PATCH_SITES=	https://github.com/kividbio/kividb/commit/
-PATCHFILES=	bda8603b065a8385fe05f623a10183d2069ecec5.patch:-p1
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Fast, multi-threaded Redis and Valkey
@@ -20,6 +17,7 @@ CPE_PRODUCT=	kividb
 USE_GITHUB=	yes
 GH_ACCOUNT=	kividbio
 GH_PROJECT=	kividb
+GH_TAGNAME=	${PORTVERSION}-src
 
 PLIST_FILES=	bin/kividb
 
