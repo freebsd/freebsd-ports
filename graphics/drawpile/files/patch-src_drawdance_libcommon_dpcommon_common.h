@@ -1,3 +1,5 @@
+-- upstreamed: https://github.com/drawpile/Drawpile/pull/1609
+
 --- src/drawdance/libcommon/dpcommon/common.h.orig	2025-11-18 11:26:42 UTC
 +++ src/drawdance/libcommon/dpcommon/common.h
 @@ -44,6 +44,8 @@
