@@ -1,0 +1,12 @@
+include/doctest/doctest.h
+include/doctest/extensions/doctest_mpi.h
+include/doctest/extensions/doctest_util.h
+include/doctest/extensions/mpi_reporter.h
+include/doctest/extensions/mpi_sub_comm.h
+lib/cmake/doctest/doctest.cmake
+lib/cmake/doctest/doctestAddTests.cmake
+lib/cmake/doctest/doctestConfig.cmake
+lib/cmake/doctest/doctestConfigVersion.cmake
+lib/cmake/doctest/doctestTargets.cmake
+lib/libdoctest.a
+libdata/pkgconfig/doctest.pc
