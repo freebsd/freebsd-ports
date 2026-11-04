@@ -2,8 +2,7 @@ PORTNAME=	wmcube
 PORTVERSION=	0.98
 PORTREVISION=	4
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.tucows.com/download/linux/files/x11/dock/	\
-		http://distfiles.macports.org/wmcube/	\
+MASTER_SITES=	http://distfiles.macports.org/wmcube/	\
 		http://ftp.twaren.net/BSD/OpenBSD/distfiles/
 
 MAINTAINER=	garga@FreeBSD.org
