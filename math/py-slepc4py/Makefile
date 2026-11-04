@@ -1,5 +1,5 @@
 PORTNAME=	slepc4py
-DISTVERSION=	3.26.0
+DISTVERSION=	3.26.1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,10 +26,11 @@ MAKE_ENV=	PETSC_DIR=${LOCALBASE} \
 		SLEPC_DIR=${LOCALBASE}
 TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/slepc4py/lib/SLEPc${PYTHON_TAG}.so
 
-# tests as of 3.26.0: 336 passed
+# tests as of 3.26.1: 112 passed in 0.15s
 
 .include <bsd.port.mk>
