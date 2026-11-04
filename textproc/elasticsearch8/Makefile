@@ -77,7 +77,6 @@ GROUPS=		${SEARCHGROUP}
 PORTDOCS=	NOTICE.txt README.asciidoc
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	DOCS
 
 # To rebuild the deps archive:
 # 1. make makesum build DEV_UPDATE_MODE=yes
