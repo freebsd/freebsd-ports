@@ -1,0 +1,4 @@
+Tshock is a server framework and toolbox for Terraria dedicated servers.
+It provides plugin support, group-based permissions, server-side characters,
+anti-cheat tools, item bans, player management commands, and a REST API.
+Tshock is built on top of the Open Terraria API (OTAPI).

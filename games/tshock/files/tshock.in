@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# PROVIDE: tshock
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable tshock:
+# tshock_enable="YES"
+# tshock_user="tshock"
+# tshock_data_dir="/var/db/tshock"
+
+. /etc/rc.subr
+
+name="tshock"
+rcvar=tshock_enable
+
+load_rc_config $name
+
+: ${tshock_enable="NO"}
+: ${tshock_user:="tshock"}
+: ${tshock_data_dir:="/var/db/tshock"}
+
+pidfile="/var/run/${name}_daemon.pid"
+pidfile_child="/var/run/${name}_child.pid"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile_child} -P ${pidfile} -u ${tshock_user} %%DATADIR%%/TShock.Server -worldpath ${tshock_data_dir}"
+start_precmd=tshock_precmd
+
+tshock_precmd(){
+	if [! -d ${tshock_data_dir}]; then
+		install -d -o ${tshock_user} ${tshock_data_dir}
+	fi
+}
+
+run_rc_command "$1"
