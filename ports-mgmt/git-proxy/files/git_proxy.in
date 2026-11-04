@@ -39,15 +39,24 @@ load_rc_config $name
 
 pidfile="/var/run/${name}/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-r -S -T git-proxy -P ${pidfile} \
+command_args="-S -T git-proxy -P ${pidfile} \
 	%%PREFIX%%/bin/git-proxy serve -config ${git_proxy_config}"
+required_dirs="${git_proxy_dbdir}"
 required_files="${git_proxy_config}"
+git_proxy_setup="${name}_mkdirs"
 start_precmd="${name}_prestart"
 
-git_proxy_prestart()
+git_proxy_mkdirs()
 {
 	install -d -o "${git_proxy_user}" -m 0750 "${git_proxy_dbdir}"
 	install -d -o "${git_proxy_user}" -m 0755 "${pidfile%/*}"
+}
+
+git_proxy_prestart()
+{
+	if ! su -m "${git_proxy_user}" -c "test -w '${git_proxy_dbdir}'"; then
+		err 1 "${git_proxy_dbdir} is not writable by ${git_proxy_user}"
+	fi
 }
 
 run_rc_command "$1"
