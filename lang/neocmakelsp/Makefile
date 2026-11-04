@@ -1,6 +1,6 @@
 PORTNAME=	neocmakelsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.2
+DISTVERSION=	0.12.0
 CATEGORIES=	lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,13 +35,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bitflags-2.13.2 \
 		bstr-1.13.1 \
 		bytes-1.12.1 \
-		cc-1.4.6 \
+		cc-1.10.0 \
 		cfg-if-1.0.4 \
-		clap-4.6.6 \
-		clap_builder-4.6.6 \
-		clap_complete-4.6.9 \
-		clap_derive-4.6.4 \
-		clap_lex-1.1.0 \
+		clap-4.6.7 \
+		clap_builder-4.6.7 \
+		clap_complete-4.6.11 \
+		clap_derive-4.6.7 \
+		clap_lex-1.1.1 \
 		cli-table-0.5.0 \
 		cli-table-derive-0.5.0 \
 		colorchoice-1.0.5 \
@@ -69,7 +69,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		errno-0.3.14 \
 		etcetera-0.11.0 \
 		fastrand-2.5.0 \
-		find-msvc-tools-0.1.12 \
+		find-msvc-tools-0.1.15 \
 		flate2-1.1.10 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.2 \
@@ -176,7 +176,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		streaming-iterator-0.1.9 \
 		strsim-0.11.1 \
 		syn-2.0.119 \
-		syn-3.0.5 \
+		syn-3.0.6 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		syntect-5.3.0 \
@@ -207,11 +207,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tracing-core-0.1.36 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.23 \
-		tree-sitter-0.26.13 \
-		tree-sitter-cmake-0.7.5 \
-		tree-sitter-language-0.1.7 \
+		tree-sitter-0.27.0 \
+		tree-sitter-cmake-0.7.6 \
+		tree-sitter-language-0.1.8 \
 		treesitter_kind_collector-0.2.0 \
-		unicode-ident-1.0.24 \
+		unicode-ident-1.0.26 \
 		unicode-segmentation-1.13.3 \
 		unicode-width-0.2.2 \
 		url-2.5.8 \
