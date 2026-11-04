@@ -5,7 +5,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	LOCAL/garga/artwiz/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of free fonts for X11 desktops
 
 NO_BUILD=	yes
