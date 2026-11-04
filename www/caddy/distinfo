@@ -1,5 +1,5 @@
-TIMESTAMP = 1781388840
-SHA256 (go/www_caddy/caddy-v2.11.4/v2.11.4.mod) = 2ce7537aecbdaf5b2fe42bf0cc42f2d7e7ce5e4186aab3586b736a53f5937abd
-SIZE (go/www_caddy/caddy-v2.11.4/v2.11.4.mod) = 8465
-SHA256 (go/www_caddy/caddy-v2.11.4/v2.11.4.zip) = 110eea53c3005d327a092d83fc67ae2a270a08c4a001e52bb2a439a163a872e8
-SIZE (go/www_caddy/caddy-v2.11.4/v2.11.4.zip) = 1234977
+TIMESTAMP = 1793833515
+SHA256 (go/www_caddy/caddy-v2.11.8/v2.11.8.mod) = 61dcb2903f421e6924feaf964fea270f60b249f8422ead77c1ea882b8c9fa648
+SIZE (go/www_caddy/caddy-v2.11.8/v2.11.8.mod) = 8451
+SHA256 (go/www_caddy/caddy-v2.11.8/v2.11.8.zip) = a1e36e967f281ec6eead78f40ace71520e9c53edc5f16c9d13989900c8f08d06
+SIZE (go/www_caddy/caddy-v2.11.8/v2.11.8.zip) = 1696355
