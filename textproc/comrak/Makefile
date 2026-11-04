@@ -1,7 +1,6 @@
 PORTNAME=	comrak
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.56.0
-PORTREVISION=	1
+DISTVERSION=	0.59.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,7 @@ GH_ACCOUNT=	kivikakk
 CARGO_CRATES=	adler2-2.0.1 \
 		aho-corasick-1.1.4 \
 		anstream-1.0.0 \
-		anstyle-1.0.13 \
+		anstyle-1.0.14 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
@@ -42,9 +41,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cc-1.2.53 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.6.1 \
-		clap_builder-4.6.0 \
-		clap_derive-4.6.1 \
+		clap-4.6.3 \
+		clap_builder-4.6.2 \
+		clap_derive-4.6.3 \
 		clap_lex-1.0.0 \
 		codspeed-4.2.1 \
 		codspeed-divan-compat-4.2.1 \
@@ -57,7 +56,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		darling-0.21.3 \
 		darling_core-0.21.3 \
 		darling_macro-0.21.3 \
-		deranged-0.5.5 \
+		deranged-0.5.9 \
 		derive_arbitrary-1.4.2 \
 		deunicode-1.6.2 \
 		diff-0.1.13 \
@@ -96,7 +95,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ntest-0.9.5 \
 		ntest_test_cases-0.9.5 \
 		ntest_timeout-0.9.5 \
-		num-conv-0.1.0 \
+		num-conv-0.2.2 \
 		num-traits-0.2.19 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
@@ -145,20 +144,20 @@ CARGO_CRATES=	adler2-2.0.1 \
 		syn-2.0.119 \
 		syn-3.0.6 \
 		syntect-5.3.0 \
-		terminal_size-0.4.3 \
+		terminal_size-0.4.4 \
 		thiserror-2.0.17 \
 		thiserror-impl-2.0.17 \
-		time-0.3.45 \
-		time-core-0.1.7 \
-		time-macros-0.2.25 \
+		time-0.3.55 \
+		time-core-0.1.9 \
+		time-macros-0.2.32 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
-		toml-1.1.2+spec-1.1.0 \
+		toml-1.1.3+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
 		toml_datetime-1.1.1+spec-1.1.0 \
 		toml_edit-0.23.10+spec-1.0.0 \
 		toml_parser-1.1.2+spec-1.1.0 \
-		toml_writer-1.1.1+spec-1.1.0 \
+		toml_writer-1.1.3+spec-1.1.0 \
 		typed-arena-2.0.2 \
 		unicode-ident-1.0.22 \
 		unicode-normalization-0.1.25 \
@@ -172,26 +171,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
 		windows-sys-0.59.0 \
-		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.1 \
 		winnow-0.7.14 \
 		winnow-1.0.3 \
 		xdg-3.0.0 \
