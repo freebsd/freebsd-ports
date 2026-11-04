@@ -1,6 +1,6 @@
 PORTNAME=	xdg-desktop-portal-hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -12,14 +12,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	hyprland-protocols>0:graphics/hyprland-protocols \
 		hyprwayland-scanner>=0.4.2:devel/hyprwayland-scanner \
-		wayland-protocols>=1.33:graphics/wayland-protocols
+		wayland-protocols>=1.39:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libsdbus-c++.so:devel/sdbus-cpp \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libuuid.so:misc/libuuid \
-		libpipewire-0.3.so:multimedia/pipewire
+		libpipewire-0.3.so:multimedia/pipewire \
+		libhyprtoolkit.so:x11-toolkits/hyprtoolkit
 RUN_DEPENDS=	xdg-desktop-portal>0:deskutils/xdg-desktop-portal \
 		grim:x11/grim \
 		slurp:x11/slurp
