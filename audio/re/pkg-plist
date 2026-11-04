@@ -88,6 +88,6 @@ lib/cmake/libre/libre-targets.cmake
 lib/cmake/re/re-config.cmake
 lib/libre.a
 lib/libre.so
-lib/libre.so.45
-lib/libre.so.45.12.0
+lib/libre.so.46
+lib/libre.so.46.13.0
 libdata/pkgconfig/libre.pc
