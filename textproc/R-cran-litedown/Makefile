@@ -1,5 +1,5 @@
 PORTNAME=	litedown
-DISTVERSION=	0.11
+DISTVERSION=	1.0
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,14 +9,13 @@ COMMENT=	Lightweight Version of R Markdown
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	R-cran-commonmark>=2.0.0:textproc/R-cran-commonmark \
-		R-cran-xfun>=0.55:misc/R-cran-xfun
+RUN_DEPENDS=	R-cran-xfun>=0.62:misc/R-cran-xfun
 TEST_DEPENDS=	R-cran-rbibutils>0:textproc/R-cran-rbibutils \
 		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
 		R-cran-testit>0:devel/R-cran-testit \
 		R-cran-tinytex>0:print/R-cran-tinytex
 
-USES=		cran:auto-plist
+USES=		cran:auto-plist,compiles
 
 do-test:
 	@${FIND} ${WRKSRC} \( -name '*.o' -o -name '*.so' \) -delete
