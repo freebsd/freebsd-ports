@@ -1,7 +1,10 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.165.0
+DISTVERSION=	0.166.0
 CATEGORIES=	misc devel
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTFILE_DEFAULT} \
+		${DISTFILES:M*_cargo_*:C/:.*$//}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Lightweight coding agent that runs in your terminal
@@ -65,6 +68,7 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} \
 		ar=${LOCALBASE}/bin/llvm-ar${LLVM_VERSION} \
 		nm=${LOCALBASE}/bin/llvm-nm${LLVM_VERSION} \
 		ld=${LOCALBASE}/bin/ld.lld${LLVM_VERSION}
+FETCH_CMD=	${SH} ${FILESDIR}/fetch-wrapper.sh
 PORTSCOUT=	limit:^rust-v[0-9]\.
 
 BUILD_WRKSRC=	${WRKSRC}/codex-rs
@@ -83,14 +87,51 @@ COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
 			share/zsh/site-functions/_${PORTNAME}
 
+V8_GH_ACCOUNT=		seanh-oai
+V8_GH_PROJECT=		rusty_v8
+V8_GH_TAGNAME=		350c5a859a9b3c84ab8701b3ad51e3b7699b30c0
+V8_SUBMODULES_TUPLE=	\
+		https://github.com/denoland/chromium_build 2c779f961da7f5632d6836113112179e67938868 build build-2c779f961da7f5632d6836113112179e67938868.tar.gz \
+		https://chromium.googlesource.com/chromium/src/buildtools 0d8a204ff274ee12fa9ace5e3ffd8e5fbcb54926 buildtools buildtools-0d8a204ff274ee12fa9ace5e3ffd8e5fbcb54926.tar.gz \
+		https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp d16e32215c3ab90ba57c2e904a5344d85c7353e4 third_party/abseil-cpp third_party__abseil__cpp-d16e32215c3ab90ba57c2e904a5344d85c7353e4.tar.gz \
+		https://chromium.googlesource.com/external/github.com/jk-jeon/dragonbox beeeef91cf6fef89a4d4ba5e95d47ca64ccb3a44 third_party/dragonbox/src third_party__dragonbox__src-beeeef91cf6fef89a4d4ba5e95d47ca64ccb3a44.tar.gz \
+		https://chromium.googlesource.com/external/github.com/fastfloat/fast_float 34164f547b7df3f5d794ff67e9f885c36819ebfc third_party/fast_float/src third_party__fast_float__src-34164f547b7df3f5d794ff67e9f885c36819ebfc.tar.gz \
+		https://github.com/Maratyszcza/FP16 782eea126dc5c755827be751a099eb01826175cf third_party/fp16/src third_party__fp16__src-782eea126dc5c755827be751a099eb01826175cf.tar.gz \
+		https://chromium.googlesource.com/external/github.com/google/highway 2607d3b5b0113992fe84d3848859eae13b3b52c1 third_party/highway/src third_party__highway__src-2607d3b5b0113992fe84d3848859eae13b3b52c1.tar.gz \
+		https://chromium.googlesource.com/chromium/deps/icu d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738 third_party/icu third_party__icu-d578f2e8b7bd5938e21cfb6bf15c079e0aa5b738.tar.gz \
+		https://chromium.googlesource.com/chromium/src/third_party/jinja2 c3027d884967773057bf74b957e3fea87e5df4d7 third_party/jinja2 third_party__jinja2-c3027d884967773057bf74b957e3fea87e5df4d7.tar.gz \
+		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxx b16984ce99c702355a5b2b4c52574e82cec41fb9 third_party/libc++/src third_party__libc______src-b16984ce99c702355a5b2b4c52574e82cec41fb9.tar.gz \
+		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxxabi 8f11bb1d4438d0239d0dfc1bd9456a9f31629dda third_party/libc++abi/src third_party__libc____abi__src-8f11bb1d4438d0239d0dfc1bd9456a9f31629dda.tar.gz \
+		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libunwind 1fd455816c724182cf8736811182bf0c37b03035 third_party/libunwind/src third_party__libunwind__src-1fd455816c724182cf8736811182bf0c37b03035.tar.gz \
+		https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libc 75ae50cd48c8a9d70f552ccff040029968778da9 third_party/llvm-libc/src third_party__llvm__libc__src-75ae50cd48c8a9d70f552ccff040029968778da9.tar.gz \
+		https://chromium.googlesource.com/chromium/src/third_party/markupsafe 4256084ae14175d38a3ff7d739dca83ae49ccec6 third_party/markupsafe third_party__markupsafe-4256084ae14175d38a3ff7d739dca83ae49ccec6.tar.gz \
+		https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator ff3b8b885b8374cbd3902642d94dc737bda93d5d third_party/partition_alloc third_party__partition_alloc-ff3b8b885b8374cbd3902642d94dc737bda93d5d.tar.gz \
+		https://chromium.googlesource.com/chromium/src/third_party/rust afbc96607d0e659715d803cc099607dd1737fc41 third_party/rust third_party__rust-afbc96607d0e659715d803cc099607dd1737fc41.tar.gz \
+		https://chromium.googlesource.com/chromium/src/third_party/simdutf f7356eed293f8208c40b3c1b344a50bd70971983 third_party/simdutf third_party__simdutf-f7356eed293f8208c40b3c1b344a50bd70971983.tar.gz \
+		https://chromium.googlesource.com/chromium/src/tools/clang 56a7ab321b6840e949e3acf5f4528dadc6cb05bc tools/clang tools__clang-56a7ab321b6840e949e3acf5f4528dadc6cb05bc.tar.gz \
+		https://chromium.googlesource.com/chromium/src/tools/win faefd1b6fa9eeb033ad6fe60368ccb9bf908cbd0 tools/win tools__win-faefd1b6fa9eeb033ad6fe60368ccb9bf908cbd0.tar.gz \
+		https://github.com/denoland/v8 c4ca1eccb90c5464d826b7713dc27178a53b0cfe v8 v8-c4ca1eccb90c5464d826b7713dc27178a53b0cfe.tar.gz
+
+.for url commit_hash path archive in ${V8_SUBMODULES_TUPLE}
+.   if ${url:Mhttps\://github.com/*}
+MASTER_SITES+=	${url:S|$|/archive/${commit_hash}${EXTRACT_SUFX}?dummy=/|}:_v8_submodule_${path:C|[^a-zA-Z0-9_]|__|g}
+.   elif ${url:Mhttps\://*googlesource.com/*}
+MASTER_SITES+=	${url:S|$|/+archive/${commit_hash}${EXTRACT_SUFX}?dummy=/|}:_v8_submodule_${path:C|[^a-zA-Z0-9_]|__|g}
+.   endif
+DISTFILES+=	${archive}:_v8_submodule_${path:C|[^a-zA-Z0-9_]|__|g}
+.endfor
+
 post-extract:
-	@${MKDIR} ${WRKSRC_crate_v8}/third_party/icu/common
-	@${CP} ${WRKSRC_crate_deno_core_icudata}/src/icudtl.dat \
-		${WRKSRC_crate_v8}/third_party/icu/common
+.for _ _ path archive in ${V8_SUBMODULES_TUPLE}
+	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${archive} \
+		${EXTRACT_AFTER_ARGS} -C ${WRKSRC_crate_v8}/${path}
+.endfor
 
 post-patch:
 	@${BSDMAKE} PATCHDIR=${PATCHDIR}/mxc-sdk \
 		WRKSRC=${WRKSRC_crate_mxc-sdk} do-patch
+	@${BSDMAKE} PATCHDIR=${PATCHDIR}/rusty_v8 \
+		WRKSRC=${WRKSRC_crate_v8} do-patch
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/environment_info.rs \
 		${BUILD_WRKSRC}/cli/src/debug_sandbox/pid_tracker.rs \
@@ -159,6 +200,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/guardian_mcp_elicitation.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks.rs \
+		${BUILD_WRKSRC}/core/tests/suite/hooks_cwd_tests.rs \
 		${BUILD_WRKSRC}/core/tests/suite/hooks_mcp.rs \
 		${BUILD_WRKSRC}/core/tests/suite/interrupt_hooks.rs \
 		${BUILD_WRKSRC}/core/tests/suite/mcp_subagent_elicitation.rs \
@@ -232,5 +274,12 @@ fast-build: configure
 		--offline --release -p ${crate} --bin ${bin} -- \
 		-C lto=thin -C codegen-units=16
 .endfor
+
+#
+# target for port maintainer(s)
+#
+generate-v8-submodules-tuple:
+	@${SH} ${FILESDIR}/generate-submodules-tuple.sh \
+		${V8_GH_ACCOUNT} ${V8_GH_PROJECT} ${V8_GH_TAGNAME}
 
 .include <bsd.port.mk>

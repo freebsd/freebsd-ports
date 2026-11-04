@@ -1,6 +1,6 @@
---- codex-rs/tui/src/clipboard_copy.rs.orig	2026-10-15 18:57:07 UTC
+--- codex-rs/tui/src/clipboard_copy.rs.orig	1970-01-01 00:00:00 UTC
 +++ codex-rs/tui/src/clipboard_copy.rs
-@@ -8,7 +8,7 @@
+@@ -9,7 +9,7 @@
  //! suppress native copying. Both the host and attached client's clipboards may
  //! change. Outside tmux, Herdr, and SSH, use OSC 52 only if native copying fails.
  //!
@@ -9,7 +9,7 @@
  //! clipboard to keep its handle open. `ClipboardLease` wraps the `arboard::Clipboard`
  //! so the copy worker can retain it for the lifetime of the TUI. On other platforms the lease
  //! is always `None`.
-@@ -138,19 +138,19 @@ fn copy_to_clipboard(
+@@ -142,19 +142,19 @@ fn copy_to_clipboard(
  
  /// Keeps a platform clipboard owner alive when the backend requires one.
  ///
@@ -33,7 +33,7 @@
      fn native_linux(clipboard: arboard::Clipboard) -> Self {
          Self {
              _clipboard: Some(clipboard),
-@@ -160,7 +160,7 @@ impl ClipboardLease {
+@@ -164,7 +164,7 @@ impl ClipboardLease {
      #[cfg(test)]
      pub(crate) fn test() -> Self {
          Self {
@@ -42,7 +42,7 @@
              _clipboard: None,
          }
      }
-@@ -279,12 +279,12 @@ fn arboard_copy(
+@@ -284,12 +284,12 @@ fn arboard_copy(
          None => clipboard.set_text(text),
      }
      .map_err(|e| format!("failed to set clipboard text: {e}"))?;

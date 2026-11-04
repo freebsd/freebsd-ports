@@ -1,4 +1,4 @@
---- codex-rs/core/src/tools/runtimes/apply_patch.rs.orig	2026-10-15 18:57:07 UTC
+--- codex-rs/core/src/tools/runtimes/apply_patch.rs.orig	1970-01-01 00:00:00 UTC
 +++ codex-rs/core/src/tools/runtimes/apply_patch.rs
 @@ -5,6 +5,7 @@ use crate::session::turn_context::TurnEnvironment;
  //! sandboxing enforced by the explicit filesystem sandbox context.
@@ -8,7 +8,7 @@
  use crate::tools::sandboxing::Approvable;
  use crate::tools::sandboxing::ApprovalAction;
  use crate::tools::sandboxing::ExecApprovalRequirement;
-@@ -176,6 +177,7 @@ impl ToolRuntime<ApplyPatchRequest, ApplyPatchRuntimeO
+@@ -178,6 +179,7 @@ impl ToolRuntime<ApplyPatchRequest, ApplyPatchRuntimeO
          let started_at = Instant::now();
          let fs = req.turn_environment.environment.get_filesystem();
          let sandbox = Self::file_system_sandbox_context_for_attempt(req, attempt);
@@ -16,7 +16,7 @@
          let mut stdout = Vec::new();
          let mut stderr = Vec::new();
          let result = codex_apply_patch::apply_patch_with_options(
-@@ -194,7 +196,7 @@ impl ToolRuntime<ApplyPatchRequest, ApplyPatchRuntimeO
+@@ -196,7 +198,7 @@ impl ToolRuntime<ApplyPatchRequest, ApplyPatchRuntimeO
              &mut stdout,
              &mut stderr,
              fs.as_ref(),
