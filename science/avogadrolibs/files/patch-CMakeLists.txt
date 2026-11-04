@@ -1,6 +1,6 @@
 - git is only needed when 'molecules' and 'crystals' aren't supplied by the caller
 
---- CMakeLists.txt.orig	2024-02-10 14:49:49 UTC
+--- CMakeLists.txt.orig	2026-10-23 12:26:15 UTC
 +++ CMakeLists.txt
 @@ -26,8 +26,8 @@ set(AvogadroLibs_VERSION
  set(AvogadroLibs_VERSION_PATCH   "0")
@@ -11,5 +11,5 @@
 +#find_package(Git)
 +#determine_version(${AvogadroLibs_SOURCE_DIR} ${GIT_EXECUTABLE} "AvogadroLibs")
  
- option(BUILD_SHARED_LIBS "Build with shared libraries" ON)
- 
+ # path for data / fragment files which could be overridden by package maintainers
+ # by default we assume we're using the openchemistry superbuild layout

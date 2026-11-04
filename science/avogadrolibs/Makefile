@@ -1,6 +1,5 @@
 PORTNAME=	avogadrolibs
-DISTVERSION=	2.0.0
-PORTREVISION=	2
+DISTVERSION=	2.1.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	OpenChemistry
 GH_TUPLE=	OpenChemistry:molecules:8a37883:molecules/../molecules \
 		OpenChemistry:crystals:7adea78:crystals/../crystals \
-		OpenChemistry:fragments:2e29d17:fragments/../fragments
+		OpenChemistry:fragments:7d842f4:fragments/../fragments \
+		OpenChemistry:avogadrodata:4a1de2f:avogadrodata/../avogadrodata
 
 CMAKE_ON=		BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	ENABLE_TESTING
@@ -75,7 +75,7 @@ VTK_IMPLIES=		QT
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
 
-# tests as of 1.100.0: 100% tests passed, 0 tests failed out of 27
+# tests as of 2.1.0: 100% tests passed, 0 tests failed out of 130
 
 .include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>
