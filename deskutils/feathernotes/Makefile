@@ -11,7 +11,7 @@ WWW=		https://github.com/tsujan/FeatherNotes
 LICENSE=	GPLv3+
 
 USES=		cmake desktop-file-utils qt:6 shared-mime-info tar:xz xorg
-USE_QT=		base svg translations
+USE_QT=		base svg tools:build
 USE_XORG=	ice sm x11 xext
 
 OPTIONS_DEFINE=	HUNSPELL
