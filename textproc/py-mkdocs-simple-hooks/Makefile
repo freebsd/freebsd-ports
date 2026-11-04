@@ -1,7 +1,7 @@
 PORTNAME=	mkdocs-simple-hooks
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +11,9 @@ WWW=		https://github.com/aklajnert/mkdocs-simple-hooks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Deprecated upstream, mkdocs 1.4+ has hooks built in
+EXPIRATION_DATE=2026-11-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs>=1.2.0:textproc/py-mkdocs@${PY_FLAVOR}
 
