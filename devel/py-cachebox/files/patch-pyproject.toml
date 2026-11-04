@@ -11,3 +11,12 @@
  ]
  test = [
    "hypothesis >= 6.165.0",
+@@ -68,7 +68,7 @@ zizmor = ["zizmor >= 1.29.0"]
+ zizmor = ["zizmor >= 1.29.0"]
+ 
+ [build-system]
+-requires = ["maturin == 1.15.0"]
++requires = ["maturin"]
+ build-backend = "maturin"
+ 
+ [tool.maturin]
