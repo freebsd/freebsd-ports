@@ -5797,3 +5797,4 @@ deskutils/owncloudclient||2026-11-02|Has expired: Outdated, depends on deprecate
 sysutils/dekit||2026-11-03|Has expired: Cannot upgrade due to linuxisms
 textproc/lucene|textproc/lucene9|2026-11-03|Has expired: Release from 2013. Unsupported upstream. Lucene is now at version 10.X. Superseded in ports by textproc/lucene9
 java/apache-commons-lang|java/apache-commons-lang3|2026-11-03|Has expired: Unpatched CVE, last release in 2011, does not compile with Java 11+, not actively maintained. Superseded by port java/apache-commons-lang3
+mail/php80-mailparse||2026-11-04|No longer required in the cluster
