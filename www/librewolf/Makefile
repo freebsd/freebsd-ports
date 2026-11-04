@@ -25,10 +25,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		v4l_compat>0:multimedia/v4l_compat \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
-		zip:archivers/zip \
-		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
-		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc.a:devel/wasi-libc@${LLVM_VERSION} \
-		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
+		zip:archivers/zip
 
 USE_GECKO=	gecko
 USE_MOZILLA=	-icu -sqlite
@@ -51,7 +48,6 @@ MOZ_EXPORT=	MOZ_TELEMETRY_REPORTING="" \
 		MOZ_APP_NAME="${MOZILLA}"
 
 MOZ_OPTIONS=	--enable-application=browser \
-		--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot \
 		--allow-addon-sideload \
 		--disable-crashreporter \
 		--disable-debug \
@@ -72,6 +68,13 @@ MOZ_OPTIONS=	--enable-application=browser \
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} != powerpc64
+BUILD_DEPENDS+=	${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
+		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc.a:devel/wasi-libc@${LLVM_VERSION} \
+		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
+MOZ_OPTIONS+=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
+.endif
 
 .if ${ARCH} == i386 && ${MACHINE_CPU:Msse2}
 # is not enabled on i386 by default
