@@ -1,9 +1,8 @@
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit set PORTVERSION=0, comment PORTREVISION (if present)
 # and set PKGNAMESUFFIX.
-PORTVERSION=	26.06.9
+PORTVERSION=	26.06.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 #PKGNAMESUFFIX=	-git-f8d8348c
 CATEGORIES=	net-p2p finance
 
