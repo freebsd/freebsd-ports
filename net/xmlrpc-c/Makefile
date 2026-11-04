@@ -7,26 +7,29 @@ DISTNAME=	xmlrpc-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
-WWW=		https://xmlrpc-c.sourceforge.net/
+WWW=		https://xmlrpc-c.sourceforge.io/
 
 LICENSE=	BSD3CLAUSE
 
 USES=		gmake pkgconfig ssl tar:tgz
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 
 MAKEFILE=	GNUmakefile
+
+MAKE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+		INSTALL_SHLIB="${INSTALL_LIB}"
 MAKE_JOBS_UNSAFE=	yes
-MAKE_ENV+=	INSTALL_SHLIB="${INSTALL_LIB}" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB} -lm
 
 CONFLICTS=	xmlrpc-epi-0.*
 
-OPTIONS_DEFINE=	DEBUG CURL LIBWWW CPLUSPLUS
-OPTIONS_DEFAULT=CURL LIBWWW CPLUSPLUS
+OPTIONS_DEFINE=	CPLUSPLUS CURL DEBUG LIBWWW
+OPTIONS_DEFAULT=	CPLUSPLUS CURL LIBWWW
 OPTIONS_SUB=	yes
 
 CPLUSPLUS_DESC=	Build xmlrpc-c C++ wrapper classes and tools
@@ -36,10 +39,10 @@ LIBWWW_DESC=	Build the libwww client transport
 CPLUSPLUS_CONFIGURE_ENABLE=	cplusplus
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ENABLE=	curl-client
-DEBUG_CFLAGS=		-DNDEBUG
-LIBWWW_LIB_DEPENDS=	libwwwcore.so:www/libwww \
-			libexpat.so:textproc/expat2
-LIBWWW_CONFIGURE_ENABLE=libwww-client
+DEBUG_CFLAGS=	-DNDEBUG
+LIBWWW_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+			libwwwcore.so:www/libwww
+LIBWWW_CONFIGURE_ENABLE=	libwww-client
 LIBWWW_CONFIGURE_WITH=	libwww-ssl
 
 post-patch:
