@@ -15,7 +15,7 @@ USES=		cmake gl qt:6 sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	ruben2020
 USE_GL=		opengl
-USE_QT=		5compat base tools:build translations:build
+USE_QT=		5compat base tools:build
 
 DESKTOP_ENTRIES=	"CodeQuery" \
 			"" \
