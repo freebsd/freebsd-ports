@@ -1,5 +1,6 @@
 PORTNAME=	crqt-ng
 DISTVERSION=	1.0.15
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	kenrap@FreeBSD.org
@@ -16,7 +17,7 @@ USES=		qt:6 cmake desktop-file-utils pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	coolreader-ng
 
-USE_QT=		base translations
+USE_QT=		base tools:build
 
 CMAKE_ARGS=	-D DOC_DATA_COMPRESSION_LEVEL=3 \
 		-D USE_QT=QT6 \
