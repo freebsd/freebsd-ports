@@ -699,6 +699,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex104.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex105.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex106.c
+%%DATADIR%%/examples/src/dm/impls/plex/tests/ex107.c
+%%DATADIR%%/examples/src/dm/impls/plex/tests/ex108.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex11.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex12.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex13.c
@@ -828,6 +830,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex106_empty_ranks.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex106_sample_overflow.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex106_skewed_input.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex107_1.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex108_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex10_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex10_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex10_2.out
@@ -3713,6 +3717,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/utils/lmvm/tests/ex1.c
 %%DATADIR%%/examples/src/ksp/ksp/utils/lmvm/tests/ex2.c
 %%DATADIR%%/examples/src/ksp/ksp/utils/lmvm/tests/ex3.c
+%%DATADIR%%/examples/src/ksp/ksp/utils/lmvm/tests/ex4.c
 %%DATADIR%%/examples/src/ksp/ksp/utils/lmvm/tests/lmvm_copy_test.c
 %%DATADIR%%/examples/src/ksp/ksp/utils/lmvm/tests/lmvm_test.c
 %%DATADIR%%/examples/src/ksp/ksp/utils/lmvm/tests/makefile
@@ -3722,6 +3727,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/utils/lmvm/tests/solve_performance.c
 %%DATADIR%%/examples/src/ksp/pc/impls/bddc/tests/ex1.c
 %%DATADIR%%/examples/src/ksp/pc/impls/bddc/tests/ex2.c
+%%DATADIR%%/examples/src/ksp/pc/impls/bddc/tests/ex4.c
+%%DATADIR%%/examples/src/ksp/pc/impls/bddc/tests/ex5.c
 %%DATADIR%%/examples/src/ksp/pc/impls/bddc/tests/makefile
 %%DATADIR%%/examples/src/ksp/pc/impls/bddc/tests/output/empty.out
 %%DATADIR%%/examples/src/ksp/pc/impls/bddc/tests/output/ex1.out
@@ -3735,6 +3742,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/pc/tests/ex12.c
 %%DATADIR%%/examples/src/ksp/pc/tests/ex13.c
 %%DATADIR%%/examples/src/ksp/pc/tests/ex13f.F90
+%%DATADIR%%/examples/src/ksp/pc/tests/ex14.c
+%%DATADIR%%/examples/src/ksp/pc/tests/ex15.c
 %%DATADIR%%/examples/src/ksp/pc/tests/ex2.c
 %%DATADIR%%/examples/src/ksp/pc/tests/ex3.c
 %%DATADIR%%/examples/src/ksp/pc/tests/ex4.c
@@ -3748,6 +3757,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/pc/tests/output/empty.out
 %%DATADIR%%/examples/src/ksp/pc/tests/output/ex10_1.out
 %%DATADIR%%/examples/src/ksp/pc/tests/output/ex12_2.out
+%%DATADIR%%/examples/src/ksp/pc/tests/output/ex14_1.out
 %%DATADIR%%/examples/src/ksp/pc/tests/output/ex2_1.out
 %%DATADIR%%/examples/src/ksp/pc/tests/output/ex3_1.out
 %%DATADIR%%/examples/src/ksp/pc/tests/output/ex4_1.out
@@ -4000,6 +4010,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/ex320.c
 %%DATADIR%%/examples/src/mat/tests/ex321.c
 %%DATADIR%%/examples/src/mat/tests/ex322.c
+%%DATADIR%%/examples/src/mat/tests/ex324.c
 %%DATADIR%%/examples/src/mat/tests/ex33.c
 %%DATADIR%%/examples/src/mat/tests/ex34.c
 %%DATADIR%%/examples/src/mat/tests/ex35.c
@@ -4529,6 +4540,8 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/mat/tests/output/ex26_2.out
 %%DATADIR%%/examples/src/mat/tests/output/ex270_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex270_2.out
+%%DATADIR%%/examples/src/mat/tests/output/ex270_convert.out
+%%DATADIR%%/examples/src/mat/tests/output/ex270_coo.out
 %%DATADIR%%/examples/src/mat/tests/output/ex271_seq.out
 %%DATADIR%%/examples/src/mat/tests/output/ex275_1.out
 %%DATADIR%%/examples/src/mat/tests/output/ex28_1.out
@@ -7930,6 +7943,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/vec/vec/tests/ex66f.F90
 %%DATADIR%%/examples/src/vec/vec/tests/ex67.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex67f.F90
+%%DATADIR%%/examples/src/vec/vec/tests/ex69.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex7.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex8.c
 %%DATADIR%%/examples/src/vec/vec/tests/ex9.c
