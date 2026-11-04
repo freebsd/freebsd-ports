@@ -1,5 +1,6 @@
 PORTNAME=	kicad
 DISTVERSION=	10.0.8
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	cad
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libboost_locale.so:devel/boost-libs	\
 		libabsl_log_internal_check_op.so:devel/abseil		\
 		libgit2.so:devel/libgit2		\
 		libprotobuf.so:devel/protobuf		\
-		libnng.so:net/nng			\
+		libnng.so:net/nng1			\
 		libharfbuzz.so:print/harfbuzz		\
 		libngspice.so:cad/ngspice_rework@shlib	\
 		libTKernel.so:cad/opencascade		\

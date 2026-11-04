@@ -1,6 +1,6 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=		${PORTNAME}
@@ -31,7 +31,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libprotobuf.so:devel/protobuf \
 		libcurl.so:ftp/curl \
 		libGLEW-wayland.so:graphics/glew-wayland \
-		libnng.so:net/nng \
+		libnng.so:net/nng1 \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libspnav.so:misc/libspnav \
 		libodbc.so:databases/unixODBC \
@@ -47,7 +47,7 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 
 USES=		cmake:noninja compiler:c++20-lang cpe desktop-file-utils gl \
 		gettext gnome pkgconfig python shared-mime-info shebangfix ssl \
-		tar:bzip2 xorg 
+		tar:bzip2 xorg
 CPE_VENDOR=	kicad
 CPE_PRODUCT=	eda
 USE_GITLAB=	yes
