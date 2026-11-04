@@ -1,6 +1,6 @@
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2026_03_6
+DISTVERSION=	2026_09_1
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/schrodinger/maeparser/archive/:maeparser \
 		https://github.com/schrodinger/coordgenlibs/archive/:coordgen \
@@ -21,7 +21,7 @@ WWW=		https://www.rdkit.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BUILD_DEPENDS=	catch>0:devel/catch \
+BUILD_DEPENDS=	catch2>0:devel/catch2 \
 		flex:textproc/flex
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
@@ -118,6 +118,7 @@ post-install-PGSQL-on:
 # tests as of 2025_09_1: 65% tests passed, 24 tests failed out of 68
 # tests as of 2025_09_2: 63% tests passed, 26 tests failed out of 70
 # tests as of 2026_03_6: 89% tests passed, 8 tests failed out of 73
+# tests as of 2026_09_1: 88% tests passed, 9 tests failed out of 74
 
 # RDKit has a lot of issues with tests - many typeinfo objects are
 # duplicated in different shared libraries which causes mis-matches
