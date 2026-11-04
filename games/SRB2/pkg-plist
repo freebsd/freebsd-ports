@@ -1,7 +1,6 @@
 bin/srb2
+%%DATADIR%%/characters.pk3
 %%DATADIR%%/models.dat
-%%DATADIR%%/music.dta
-%%DATADIR%%/patch.pk3
-%%DATADIR%%/player.dta
+%%DATADIR%%/music.pk3
 %%DATADIR%%/srb2.pk3
 %%DATADIR%%/zones.pk3
