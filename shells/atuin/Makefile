@@ -1,6 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.24.4
+DISTVERSION=	18.24.5
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -439,7 +439,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		prost-types-0.14.3 \
 		protox-0.9.1 \
 		protox-parse-0.9.0 \
-		pulldown-cmark-0.13.5 \
+		pulldown-cmark-0.13.6 \
 		pulldown-cmark-escape-0.11.0 \
 		pulldown-cmark-to-cmark-22.0.0 \
 		pxfm-0.1.30 \
@@ -607,6 +607,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tonic-build-0.14.6 \
 		tonic-prost-0.14.6 \
 		tonic-prost-build-0.14.6 \
+		tonic-types-0.14.6 \
 		tower-0.5.3 \
 		tower-http-0.6.11 \
 		tower-layer-0.3.3 \
