@@ -1,0 +1,6 @@
+World Monitor is a dashboard for real-time global intelligence. This is
+its official Ruby client for the World Monitor API. It gives access to
+country briefs, risk scores, conflict, cyber, market and news feeds and
+to the MCP tools, without writing an HTTP integration by hand.
+
+The gem has no dependencies beyond the Ruby standard library.

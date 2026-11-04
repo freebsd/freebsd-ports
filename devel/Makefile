@@ -8645,6 +8645,7 @@
     SUBDIR += rubygem-with_advisory_lock81
     SUBDIR += rubygem-with_env
     SUBDIR += rubygem-wmi-lite
+    SUBDIR += rubygem-worldmonitor
     SUBDIR += rubygem-xdg
     SUBDIR += rubygem-xdg9
     SUBDIR += rubygem-xorcist
