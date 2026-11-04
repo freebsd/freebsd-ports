@@ -1,5 +1,5 @@
 PORTNAME=	slepc
-DISTVERSION=	3.26.0
+DISTVERSION=	3.26.1
 CATEGORIES=	math devel
 MASTER_SITES=	http://slepc.upv.es/download/distrib/
 
@@ -12,10 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		libblis.so:math/blis \
+		libHYPRE.so:science/hypre \
 		liblapack.so:math/lapack \
 		libmetis.so:math/metis \
 		libmpich.so:net/mpich \
-		libpetsc.so:science/PETSc
+		libopenblas.so:math/openblas \
+		libpetsc.so:science/PETSc \
+		libsuperlu.so:math/superlu
 
 USES=		gmake fortran python shebangfix xorg
 USE_XORG=	x11 # not really needed, but is inherited from the PETSc setup
