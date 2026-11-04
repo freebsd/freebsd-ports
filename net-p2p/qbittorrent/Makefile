@@ -1,6 +1,5 @@
 PORTNAME=	qbittorrent
-DISTVERSION=	5.2.4
-PORTREVISION=	2
+DISTVERSION=	5.3.0
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +20,7 @@ nox_PKGNAMESUFFIX=	-nox
 nox_PLIST=		${MASTERDIR}/pkg-plist-nox
 
 USES=			compiler:c++14-lang cpe pkgconfig cmake localbase qt:6 ssl tar:xz
-USE_QT=			base translations
+USE_QT=			base translations tools:build
 USE_CXXSTD=		c++17 # prevent boost-related SEGV, see bug#264278
 
 USE_GITHUB=		nodefault
