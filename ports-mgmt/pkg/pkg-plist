@@ -10,6 +10,7 @@ etc/periodic/weekly/400.status-pkg
 include/pkg.h
 include/pkg/audit.h
 include/pkg/checksum.h
+include/pkg/sb.h
 include/pkg/vec.h
 lib/libpkg.a
 lib/libpkg.so
