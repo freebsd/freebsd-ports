@@ -1,6 +1,5 @@
 PORTNAME=	iprange
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/firehol/iprange/releases/download/v${PORTVERSION}/
 
