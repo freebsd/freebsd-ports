@@ -1,6 +1,5 @@
 PORTNAME=	urbackup-server
-DISTVERSION=	2.5.37
-PORTREVISION=	1
+DISTVERSION=	2.5.38
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
@@ -50,8 +49,8 @@ post-patch:
 		urbackupserver/dllmain.cpp \
 		snapshot_helper/main.cpp \
 	)
-	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} \
-		-e 's|auto_ptr|unique_ptr|g' {} +
+	${FIND} ${WRKSRC} -type f '(' -name '*.cpp' -o -name '*.h' ')' -exec \
+		${REINPLACE_CMD} -i '' -e 's|auto_ptr|unique_ptr|g' {} +
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/urbackup \
