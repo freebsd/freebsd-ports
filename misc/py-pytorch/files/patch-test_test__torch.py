@@ -1,6 +1,6 @@
---- test/test_torch.py.orig	2026-07-08 17:44:28 UTC
+--- test/test_torch.py.orig	2026-10-28 18:13:32 UTC
 +++ test/test_torch.py
-@@ -9611,7 +9611,8 @@ tensor([[[1.+1.j, 1.+1.j, 1.+1.j,  ..., 1.+1.j, 1.+1.j
+@@ -10080,7 +10080,8 @@ tensor([[[1.+1.j, 1.+1.j, 1.+1.j,  ..., 1.+1.j, 1.+1.j
              torch.backends.quantized.engine = qe
              if torch.backends.quantized.engine != qe:
                  raise AssertionError(f"qengine not set successfully: expected {qe}, got {torch.backends.quantized.engine}")

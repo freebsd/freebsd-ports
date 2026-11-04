@@ -7,12 +7,12 @@
 -- scikit-build-core and setup.py is a pip-forwarding shim, so the install_requires list
 -- it used to patch now lives here.
 -- see https://github.com/pytorch/pytorch/issues/152276 for the build-system migration
---- tools/metadata/dependencies.py.orig	2026-09-02 17:44:01 UTC
+--- tools/metadata/dependencies.py.orig	2026-10-28 18:16:03 UTC
 +++ tools/metadata/dependencies.py
-@@ -27,7 +27,7 @@ BASE_DEPENDENCIES = [
+@@ -29,7 +29,7 @@ BASE_DEPENDENCIES = [
  BASE_DEPENDENCIES = [
      "filelock",
-     "typing-extensions>=4.10.0",
+     "typing-extensions>=4.13.0",
 -    "setuptools>=77.0.3",
 +    "setuptools",
      "sympy>=1.13.3",

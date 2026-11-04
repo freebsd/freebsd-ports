@@ -1,6 +1,6 @@
---- torch/csrc/jit/ir/ir.h.orig	2026-07-08 17:44:38 UTC
+--- torch/csrc/jit/ir/ir.h.orig	2026-10-28 18:16:03 UTC
 +++ torch/csrc/jit/ir/ir.h
-@@ -959,11 +959,22 @@ struct TORCH_API Node {
+@@ -959,13 +959,24 @@ struct TORCH_API Node {
    typename T::ValueType& getAttr(Symbol name) const {
      AT_ASSERT(name.is_attr());
      auto it = findAttr(name, true);
@@ -16,9 +16,11 @@
 +    return static_cast<T*>(base)->value();
 +#else
 +    auto* child = dynamic_cast<T*>(base);
-     if (child == nullptr) {
-       throw IRAttributeError(name, true);
-     }
+     TORCH_CHECK(
+         child != nullptr,
+         "required keyword attribute '",
+         name.toUnqualString(),
+         "' has the wrong type");
      return child->value();
 +#endif
    }
