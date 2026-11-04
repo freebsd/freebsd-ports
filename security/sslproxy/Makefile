@@ -1,6 +1,6 @@
 PORTNAME=	sslproxy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.11
+DISTVERSION=	0.10.0
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -11,7 +11,8 @@ WWW=		https://github.com/sonertari/SSLproxy
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
-		libnet.so:net/libnet
+		libnet.so:net/libnet \
+		libnghttp2.so:www/libnghttp2
 
 USES=		gmake pkgconfig sqlite ssl uidfix
 USE_GITHUB=	yes
