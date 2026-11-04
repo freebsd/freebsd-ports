@@ -1,8 +1,7 @@
 PORTNAME=	ncbi-cxx-toolkit
 DISTVERSIONPREFIX=	release/
-DISTVERSION=	30.8.0
+DISTVERSION=	30.9.0
 CATEGORIES=	biology science devel
-PORTREVISION=	1
 CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
 LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
