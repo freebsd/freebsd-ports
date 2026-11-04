@@ -1,0 +1,14 @@
+sbom-generator creates SPDX documents for installed packages.
+
+Each package installs an SBOM file in the share/sbom/pc directory.
+The file uses the pc(5) format.
+sbom-generator reads these files.
+For each file, it creates two documents:
+
+- An SPDX 2.2 document (.spdx) in the share/sbom/spdx-2.2 directory.
+  It uses bomtool.
+- An SPDX 3.0.1 document (.jsonld) in the share/sbom/spdx-3.0.1 directory.
+  It uses spdxtool.
+
+Each document includes the dependencies of the package.
+It also includes the dependencies of each dependency.

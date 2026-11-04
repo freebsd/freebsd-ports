@@ -80,6 +80,7 @@
     SUBDIR += py-skog
     SUBDIR += rc-subr-jail
     SUBDIR += reprise
+    SUBDIR += sbom-generator
     SUBDIR += sccache-overlay
     SUBDIR += submodules2tuple
     SUBDIR += synth

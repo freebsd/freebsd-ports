@@ -1,0 +1,139 @@
+.Dd November 4, 2026
+.Dt SBOM-GENERATOR 1
+.Os
+.Sh NAME
+.Nm sbom-generator
+.Nd generate SPDX documents from installed package SBOM files
+.Sh SYNOPSIS
+.Nm
+.Op Fl c
+.Op Ar package ...
+.Sh DESCRIPTION
+The
+.Nm
+utility reads the SBOM files that each package installs.
+It creates two SPDX documents for each SBOM file.
+.Pp
+Each SBOM file is a
+.Xr pc 5
+file in the
+.Pa share/sbom/pc
+directory.
+The name of the file is the name of the package or subpackage, followed by
+.Dq .pc .
+.Pp
+.Nm
+reads the
+.Dq Requires
+field of each file.
+It adds all dependencies to the document.
+It adds the dependencies of each dependency, and so on.
+.Pp
+If you give no
+.Ar package ,
+.Nm
+processes all SBOM files in the
+.Pa share/sbom/pc
+directory.
+If you give one or more
+.Ar package
+names, it processes only those packages.
+.Pp
+.Nm
+creates these files for each package:
+.Bl -tag -width ".Pa spdx-3.0.1/package.jsonld"
+.It Pa spdx-2.2/package.spdx
+An SPDX 2.2 document in tag-value format.
+.Nm
+uses
+.Xr bomtool 1
+to create it.
+.It Pa spdx-3.0.1/package.jsonld
+An SPDX 3.0.1 document in JSON-LD format.
+.Nm
+uses
+.Xr spdxtool 1
+to create it.
+.El
+.Pp
+.Nm
+replaces a document only after it creates the new document without error.
+.Pp
+The options are as follows:
+.Bl -tag -width indent
+.It Fl c
+Remove the documents that have no SBOM file.
+This removes the documents of packages that you removed.
+.El
+.Sh ENVIRONMENT
+.Bl -tag -width ".Ev SOURCE_DATE_EPOCH"
+.It Ev LOCALBASE
+The base directory of installed packages.
+The port build sets the default value.
+.It Ev SOURCE_DATE_EPOCH
+If set,
+.Xr bomtool 1
+and
+.Xr spdxtool 1
+use this UNIX timestamp as the creation time of the documents.
+Two runs with the same SBOM files and the same value then create the
+same documents.
+.El
+.Pp
+.Nm
+sets
+.Ev PKG_CONFIG_LIBDIR
+to the
+.Pa share/sbom/pc
+directory and unsets
+.Ev PKG_CONFIG_PATH
+and
+.Ev PKG_CONFIG_PRELOADED_FILES .
+The tools then find SBOM files only.
+They do not find the regular
+.Xr pkgconf 1
+modules.
+.Sh FILES
+.Bl -tag -width ".Pa ${LOCALBASE}/share/sbom/spdx-3.0.1/"
+.It Pa ${LOCALBASE}/share/sbom/pc/
+The SBOM files that the packages install.
+.It Pa ${LOCALBASE}/share/sbom/spdx-2.2/
+The SPDX 2.2 documents.
+.It Pa ${LOCALBASE}/share/sbom/spdx-3.0.1/
+The SPDX 3.0.1 documents.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Pp
+.Nm
+writes a message to standard error if it cannot create a document.
+Then it continues with the next package.
+This can occur when an SBOM file lists a dependency that has no SBOM file.
+At the end,
+.Nm
+exits with a value of 1.
+.Sh EXAMPLES
+Create the documents for all installed packages:
+.Pp
+.Dl # sbom-generator
+.Pp
+Create the documents for the
+.Dq curl
+package only:
+.Pp
+.Dl # sbom-generator curl
+.Pp
+Create all documents again and remove the documents of packages that you removed:
+.Pp
+.Dl # sbom-generator -c
+.Pp
+Create documents that are the same each time:
+.Pp
+.Dl # SOURCE_DATE_EPOCH=0 sbom-generator
+.Sh SEE ALSO
+.Xr bomtool 1 ,
+.Xr pkgconf 1 ,
+.Xr spdxtool 1 ,
+.Xr pc 5
+.Sh AUTHORS
+.An Mathieu Arnold Aq Mt mat@FreeBSD.org
