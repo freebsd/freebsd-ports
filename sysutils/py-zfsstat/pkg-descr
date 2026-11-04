@@ -1,0 +1,3 @@
+Python utilities from OpenZFS.
+
+These are not included in FreeBSD base as they depend on Python.
