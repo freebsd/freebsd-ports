@@ -1,0 +1,4 @@
+A fast implementation of Random Forests, particularly suited for
+high dimensional data. Ensembles of classification, regression,
+survival and probability prediction trees are supported. Sparse
+matrices of class dgCMatrix can be analyzed directly.
