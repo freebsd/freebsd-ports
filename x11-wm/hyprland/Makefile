@@ -1,7 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.56.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	source-${DISTVERSIONFULL}
