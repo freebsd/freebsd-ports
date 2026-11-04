@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake gl kde:6 pkgconfig qt:6 xorg
 USE_GL=		opengl
 USE_KDE=	guiaddons notifications statusnotifieritem ecm:build
-USE_QT=		base declarative svg translations:build
+USE_QT=		base declarative svg
 USE_XORG=	ice sm x11 xext xfixes xtst
 
 PORTSCOUT=	limit:^d\.d\.
