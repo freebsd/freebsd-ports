@@ -1,5 +1,5 @@
 PORTNAME=	pspg
-DISTVERSION=	5.9.0
+DISTVERSION=	5.9.1
 CATEGORIES=	databases
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -32,7 +32,6 @@ INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 # configure script doesn't understand --with-inotify
 INOTIFY_CONFIGURE_OFF=	--without-inotify
 INOTIFY_LDFLAGS=	-linotify
-
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	postgresql=yes
 PGSQL_VARS=		WANT_PGSQL=client
