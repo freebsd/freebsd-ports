@@ -1,7 +1,6 @@
 PORTNAME=	hyprpaper
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.4
-PORTREVISION=	3
+DISTVERSION=	0.8.5
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -19,17 +18,19 @@ LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprgraphics.so:graphics/hyprgraphics \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
-		libwebp.so:graphics/webp \
+		libharfbuzz.so:print/harfbuzz \
+		libaquamarine.so:x11-toolkits/aquamarine \
 		libhyprtoolkit.so:x11-toolkits/hyprtoolkit
 
-USES=		compiler:c++11-lib cmake gnome jpeg localbase:ldflags \
-		pkgconfig xorg
+USES=		compiler:c++11-lib cmake gettext-runtime gl gnome \
+		localbase:ldflags pkgconfig xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
 
 USE_XORG=	pixman
-USE_GNOME=	cairo
+USE_GL=		glesv2
+USE_GNOME=	cairo glib20 pango
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
