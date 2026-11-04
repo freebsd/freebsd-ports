@@ -1,6 +1,6 @@
 PORTNAME=	pffft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	math
 
@@ -32,6 +32,6 @@ CFLAGS+=	-msse2
 CXXFLAGS+=	-msse2 # fixes error: always_inline function '_mm_unpacklo_ps' requires target feature 'sse', but would be inlined into function 'pffft_zreorder' that is compiled without support for 'sse'
 .endif
 
-# tests as of 1.1.0: 100% tests passed, 0 tests failed out of 9
+# tests as of 1.2.0: 100% tests passed out of 15
 
 .include <bsd.port.mk>
