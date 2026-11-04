@@ -1,10 +1,6 @@
 PORTNAME=	urbackup-server
-DISTVERSION=	2.5.37
-PORTREVISION=	2
+DISTVERSION=	2.5.38
 CATEGORIES=	archivers
-CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
-LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
 MAINTAINER=	ek@purplehat.org
@@ -31,6 +27,9 @@ CONFIGURE_ARGS=	--enable-packaging \
 		--without-embedded-lmdb \
 		--without-embedded-lua \
 		--without-embedded-sqlite3
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lmdb0/libdata/pkgconfig
+CPPFLAGS+=	-I${LOCALBASE}/lmdb0/include
+LDFLAGS+=	-L${LOCALBASE}/lmdb0/lib
 
 .include <bsd.port.options.mk>
 
@@ -53,8 +52,8 @@ post-patch:
 		urbackupserver/dllmain.cpp \
 		snapshot_helper/main.cpp \
 	)
-	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} \
-		-e 's|auto_ptr|unique_ptr|g' {} +
+	${FIND} ${WRKSRC} -type f '(' -name '*.cpp' -o -name '*.h' ')' -exec \
+		${REINPLACE_CMD} -i '' -e 's|auto_ptr|unique_ptr|g' {} +
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/urbackup \
