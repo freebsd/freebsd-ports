@@ -1,0 +1,29 @@
+--- distribution/build.gradle.orig	2026-10-28 21:29:53 UTC
++++ distribution/build.gradle
+@@ -270,7 +270,7 @@ configure(subprojects.findAll { ['archives', 'packages
+     String preReleaseVersionString = String.format("%d-%s+%d", runtimeJavaMajorVersion, preReleaseType, buildNumber);
+ 
+     project.jdks {
+-      ['darwin', 'windows', 'linux'].each { platform ->
++      ['darwin', 'windows', 'linux', 'freebsd'].each { platform ->
+         architecturesFor(platform).each { architecture ->
+           "bundled_${platform}_${architecture}" {
+             it.version = preReleaseVersionString;
+@@ -285,7 +285,7 @@ configure(subprojects.findAll { ['archives', 'packages
+   } else {
+     // Setup all required JDKs
+     project.jdks {
+-      ['darwin', 'windows', 'linux'].each { platform ->
++      ['darwin', 'windows', 'linux', 'freebsd'].each { platform ->
+         architecturesFor(platform).each { architecture ->
+           "bundled_${platform}_${architecture}" {
+             it.platform = platform
+@@ -421,7 +421,7 @@ configure(subprojects.findAll { ['archives', 'packages
+             it.permissions.unix(0644)
+           }
+         }
+-        List excludePlatforms = ['linux-x86_64', 'linux-aarch64', 'windows-x86_64', 'darwin-x86_64', 'darwin-aarch64']
++        List excludePlatforms = ['linux-x86_64', 'linux-aarch64', 'windows-x86_64', 'darwin-x86_64', 'darwin-aarch64', 'freebsd-x86_64']
+         if (os != null) {
+           String platform = os + '-' + architecture
+           if (architecture == 'x64') {

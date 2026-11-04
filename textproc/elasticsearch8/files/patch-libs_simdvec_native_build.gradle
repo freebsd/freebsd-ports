@@ -1,0 +1,27 @@
+--- libs/simdvec/native/build.gradle.orig	2026-10-28 21:29:53 UTC
++++ libs/simdvec/native/build.gradle
+@@ -10,6 +10,7 @@ var os = org.gradle.internal.os.OperatingSystem.curren
+ apply plugin: 'cpp'
+ 
+ var os = org.gradle.internal.os.OperatingSystem.current()
++var isFreeBSD = System.getProperty("os.name", "").startsWith("FreeBSD")
+ 
+ // To update this library run publish_vec_binaries.sh  ( or ./gradlew buildSharedLibrary )
+ // Or
+@@ -47,13 +48,13 @@ model {
+   toolChains {
+     gcc(Gcc) {
+       target("aarch64") {
+-        cCompiler.executable = "/usr/bin/gcc"
++        if (!isFreeBSD) cCompiler.executable = "/usr/bin/gcc"
+         cCompiler.withArguments { args -> args.addAll(["-O3", "-std=c99", "-march=armv8-a"]) }
+       }
+       target("amd64") {
+-        cCompiler.executable = "/usr/bin/gcc"
++        if (!isFreeBSD) cCompiler.executable = "/usr/bin/gcc"
+         cCompiler.withArguments { args -> args.addAll(["-O3", "-std=c99", "-march=core-avx2", "-Wno-incompatible-pointer-types"]) }
+-        cppCompiler.executable = "/usr/bin/g++"
++        if (!isFreeBSD) cppCompiler.executable = "/usr/bin/g++"
+         cppCompiler.withArguments { args -> args.addAll(["-O3", "-march=core-avx2"]) }
+       }
+     }
