@@ -1,5 +1,5 @@
-TIMESTAMP = 1793411596
-SHA256 (antigravity-cli-1.4.12/cli_linux_x64.tar.gz) = 3368d1923fc869f21ec8fce83252a8c96c89283aac9393958ac91fbf7a3949e4
-SIZE (antigravity-cli-1.4.12/cli_linux_x64.tar.gz) = 68051214
-SHA256 (antigravity-cli-1.4.12/cli_linux_arm64.tar.gz) = 30dd61ebe1f0a8829057ea2de29dad08c710dd972ce4c02949f51e632135a86b
-SIZE (antigravity-cli-1.4.12/cli_linux_arm64.tar.gz) = 64371567
+TIMESTAMP = 1793816885
+SHA256 (antigravity-cli-1.5.0/cli_linux_x64.tar.gz) = f65e365a67be49abdaf92f5669c3157bd4b9c569f6b9f448340b00ca261b0f01
+SIZE (antigravity-cli-1.5.0/cli_linux_x64.tar.gz) = 69781910
+SHA256 (antigravity-cli-1.5.0/cli_linux_arm64.tar.gz) = 87e73a5ab4ecb3a9668660d259dafd13f5443149da0113664d59129a21a62ba4
+SIZE (antigravity-cli-1.5.0/cli_linux_arm64.tar.gz) = 66011999
