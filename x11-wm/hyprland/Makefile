@@ -1,7 +1,6 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.56.2
-PORTREVISION=	4
+DISTVERSION=	0.57.1
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	source-${DISTVERSIONFULL}
@@ -15,12 +14,13 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		glaze>=7.2.0:devel/glaze \
+		glaze>0:devel/glaze \
 		hyprwayland-scanner>=0.3.10:devel/hyprwayland-scanner \
 		glslang>0:graphics/glslang \
 		hyprland-protocols>=0.6.4:graphics/hyprland-protocols \
 		wayland-protocols>=1.49:graphics/wayland-protocols
-LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
+LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
+		libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libhyprwire.so:devel/hyprwire \
 		libre2.so:devel/re2 \
@@ -49,6 +49,7 @@ USE_XORG=	pixman xcursor
 CMAKE_ON=	NO_SYSTEMD
 CMAKE_OFF=	CMAKE_CXX_SCAN_FOR_MODULES # avoid devel/llvm*
 
+CXXFLAGS+=	-fexperimental-library # std::jthread
 LDFLAGS+=	-Wl,--as-needed # GL, pango deps
 LDFLAGS+=	-pthread
 
@@ -77,13 +78,12 @@ post-patch:
 		${WRKSRC}/src/Compositor.cpp
 # Respect PREFIX for wallpapers
 	@${REINPLACE_CMD} 's|/usr/share|${DATADIR:H}|' \
-		${WRKSRC}/src/render/OpenGL.cpp
+		${WRKSRC}/src/render/types.hpp
 # XXX Replace linprocfs(4) with sysctl(3)
 	@${REINPLACE_CMD} -e 's|/proc|${LINUXBASE}&|g' \
 		${WRKSRC}/hyprtester/src/tests/main/exec.cpp \
-		${WRKSRC}/src/debug/HyprCtl.cpp \
 		${WRKSRC}/src/debug/crash/CrashReporter.cpp \
-		${WRKSRC}/src/desktop/view/Window.cpp \
+		${WRKSRC}/src/desktop/view/window/Window.cpp \
 		${WRKSRC}/src/helpers/MiscFunctions.cpp \
 		${WRKSRC}/src/plugins/HookSystem.cpp \
 		${WRKSRC}/src/plugins/PluginAPI.cpp
