@@ -1,6 +1,5 @@
 PORTNAME=	py-spy # despite its name this is NOT a Python package, but a Rust-based profiler for Python program
-PORTVERSION=	0.4.2
-PORTREVISION=	5
+DISTVERSION=	0.4.3
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_PYPI}
 MASTER_SITE_SUBDIR=	source/p/py_spy
@@ -19,7 +18,7 @@ USES=		cargo llvm
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}-${DISTVERSION}
 
-CARGO_CRATES=	addr2line-0.26.1 \
+CARGO_CRATES=	addr2line-0.27.1 \
 		adler2-2.0.1 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.4 \
@@ -30,10 +29,9 @@ CARGO_CRATES=	addr2line-0.26.1 \
 		anstyle-parse-1.0.0 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.102 \
+		anyhow-1.0.104 \
 		arrayvec-0.7.6 \
 		autocfg-1.5.0 \
-		bindgen-0.70.1 \
 		bindgen-0.72.1 \
 		bitflags-2.11.1 \
 		block2-0.6.2 \
@@ -74,9 +72,9 @@ CARGO_CRATES=	addr2line-0.26.1 \
 		foldhash-0.2.0 \
 		getrandom-0.3.4 \
 		getrandom-0.4.2 \
-		gimli-0.33.0 \
+		gimli-0.34.0 \
 		glob-0.3.3 \
-		goblin-0.10.5 \
+		goblin-0.10.7 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
 		hashbrown-0.17.0 \
@@ -95,7 +93,7 @@ CARGO_CRATES=	addr2line-0.26.1 \
 		js-sys-0.3.95 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.185 \
+		libc-0.2.190 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		libproc-0.14.11 \
@@ -104,7 +102,8 @@ CARGO_CRATES=	addr2line-0.26.1 \
 		log-0.4.29 \
 		lru-0.17.0 \
 		mach-0.3.2 \
-		mach2-0.4.3 \
+		mach2-0.6.0 \
+		mach2-0.7.0 \
 		mach_o_sys-0.1.1 \
 		memchr-2.8.0 \
 		memmap2-0.9.10 \
@@ -116,7 +115,7 @@ CARGO_CRATES=	addr2line-0.26.1 \
 		num-traits-0.2.19 \
 		objc2-0.6.4 \
 		objc2-encode-4.1.0 \
-		object-0.39.1 \
+		object-0.40.0 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
 		page_size-0.6.0 \
@@ -127,7 +126,7 @@ CARGO_CRATES=	addr2line-0.26.1 \
 		ppv-lite86-0.2.21 \
 		prettyplease-0.2.37 \
 		proc-macro2-1.0.106 \
-		proc-maps-0.4.0 \
+		proc-maps-0.5.0 \
 		py-spy-testdata-0.1.0 \
 		quick-xml-0.39.2 \
 		quote-1.0.45 \
@@ -137,19 +136,18 @@ CARGO_CRATES=	addr2line-0.26.1 \
 		rand_chacha-0.9.0 \
 		rand_core-0.9.5 \
 		rand_distr-0.5.1 \
-		read-process-memory-0.1.6 \
+		read-process-memory-0.3.0 \
 		redox_syscall-0.5.18 \
 		regex-1.12.3 \
 		regex-automata-0.4.14 \
 		regex-syntax-0.8.10 \
-		remoteprocess-0.5.2 \
+		remoteprocess-0.5.5 \
 		rgb-0.8.53 \
 		rustc-demangle-0.1.27 \
-		rustc-hash-1.1.0 \
 		rustc-hash-2.1.2 \
 		rustix-1.1.4 \
 		rustversion-1.0.22 \
-		ruzstd-0.8.2 \
+		ruzstd-0.9.1 \
 		scopeguard-1.2.0 \
 		scroll-0.13.0 \
 		scroll_derive-0.13.1 \
