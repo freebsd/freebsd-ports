@@ -1,6 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.150
+DISTVERSION=	0.9.151
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -76,7 +76,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cargo-platform-0.3.0 \
 		cargo_metadata-0.23.1 \
 		cc-1.2.30 \
-		cfg-expr-0.20.9 \
+		cfg-expr-0.20.10 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.2 \
@@ -175,7 +175,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		fraction-0.17.0 \
 		fs-err-3.3.2 \
 		fs_extra-1.3.0 \
-		future-queue-0.4.0 \
+		future-queue-0.4.1 \
 		futures-0.3.34 \
 		futures-channel-0.3.34 \
 		futures-core-0.3.34 \
@@ -337,7 +337,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		prost-0.14.1 \
 		prost-derive-0.14.1 \
 		prost-types-0.14.1 \
-		pulldown-cmark-0.13.4 \
+		pulldown-cmark-0.13.5 \
 		quick-error-1.2.3 \
 		quick-junit-0.8.0 \
 		quick-xml-0.38.4 \
@@ -399,7 +399,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde_ignored-0.1.14 \
 		serde_json-1.0.154 \
 		serde_path_to_error-0.1.20 \
-		serde_spanned-1.1.1 \
+		serde_spanned-1.1.2 \
 		serde_tokenstream-0.2.2 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
@@ -417,8 +417,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		similar-2.7.0 \
 		siphasher-1.0.1 \
 		slab-0.4.11 \
-		smallvec-1.16.2 \
-		smol_str-0.3.2 \
+		smallvec-1.16.4 \
+		smol_str-0.3.7 \
 		socket2-0.5.10 \
 		socket2-0.6.3 \
 		socks-0.3.4 \
@@ -442,7 +442,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		synoptic-2.2.9 \
 		tar-0.4.46 \
 		target-lexicon-0.13.5 \
-		target-spec-3.7.0 \
+		target-spec-3.8.0 \
 		target-spec-miette-0.4.8 \
 		tempfile-3.20.0 \
 		terminal_size-0.4.4 \
@@ -455,9 +455,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		test-strategy-0.4.5 \
 		textwrap-0.16.2 \
 		thiserror-1.0.69 \
-		thiserror-2.0.20 \
+		thiserror-2.0.21 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.20 \
+		thiserror-impl-2.0.21 \
 		thread-id-5.0.0 \
 		thread_local-1.1.8 \
 		time-0.3.47 \
@@ -470,11 +470,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.19 \
 		tokio-util-0.7.15 \
-		toml-1.1.6+spec-1.1.0 \
-		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.15+spec-1.1.0 \
-		toml_parser-1.1.3+spec-1.1.0 \
-		toml_writer-1.1.2+spec-1.1.0 \
+		toml-1.1.8+spec-1.1.0 \
+		toml_datetime-1.1.2+spec-1.1.0 \
+		toml_edit-0.25.17+spec-1.1.0 \
+		toml_parser-1.1.5+spec-1.1.0 \
+		toml_writer-1.1.3+spec-1.1.0 \
 		tonic-0.14.2 \
 		tonic-prost-0.14.2 \
 		tower-0.5.2 \
