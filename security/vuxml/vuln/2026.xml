@@ -1,3 +1,55 @@
+  <vuln vid="61a6b109-d852-11f1-bae2-3497f65b111b">
+    <topic>security/wolfssh -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wolfssh</name>
+	<range><lt>1.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>wolfSSL reports:</p>
+	<blockquote cite="https://github.com/wolfSSL/wolfssh/releases/tag/v1.6.0-stable">
+	  <ul>
+	    <li>CVE-2026-16516 (Critical): wolfSSH did not check that the ECDSA
+	      curve in a server's host key blob matched the negotiated
+	      algorithm, so a man-in-the-middle could substitute a key on
+	      another curve and pass verification with a private key of its own.
+	      Also requires a lax public key check callback.</li>
+	    <li>CVE-2026-83540 (High): wolfSSHd on Windows shared one
+	      authentication context, and the logon token stored in it, across
+	      concurrent connections, so a user with a valid account could end
+	      up logged in as another, more privileged user.</li>
+	    <li>CVE-2026-84897 (Medium): A wolfSSH server accepted the DH group
+	      exchange messages only a server sends from an unauthenticated
+	      client, which made the server run the client-side handler and
+	      primality-test an attacker-chosen group of up to 8192 bits.</li>
+	    <li>CVE-2026-81535 (Medium): With --enable-fwd, forwarded-tcpip
+	      channel opens were admitted without consulting the forwarding
+	      policy callback, so a peer could make an endpoint allocate buffers
+	      for forwarding channels the application never authorized.</li>
+	    <li>CVE-2026-83742 (Medium): wolfSSH_RealPath() bounded each path
+	      component by the space left in the output buffer rather than by
+	      the buffer's size, so a crafted SFTP path could write a single
+	      terminating NUL one byte past the end of a stack buffer.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-16516</cvename>
+      <cvename>CVE-2026-81535</cvename>
+      <cvename>CVE-2026-83540</cvename>
+      <cvename>CVE-2026-83742</cvename>
+      <cvename>CVE-2026-84897</cvename>
+      <url>https://github.com/wolfSSL/wolfssh/releases/tag/v1.6.0-stable</url>
+    </references>
+    <dates>
+      <discovery>2026-10-07</discovery>
+      <entry>2026-11-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="380c9ad2-d81f-11f1-a214-a0369f7f7be0">
     <topic>chromium -- security fixes</topic>
     <affects>
