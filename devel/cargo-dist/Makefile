@@ -1,7 +1,6 @@
 PORTNAME=	cargo-dist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.1
-PORTREVISION=	0
+DISTVERSION=	0.34.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,11 +38,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		autocfg-1.3.0 \
 		aws-lc-rs-1.18.2 \
 		aws-lc-sys-0.46.0 \
-		axoasset-2.0.1 \
+		axoasset-2.0.2 \
 		axocli-0.3.0 \
 		axoprocess-0.2.1 \
 		axotag-0.3.0 \
-		axoupdater-0.10.2 \
+		axoupdater-0.10.3 \
 		backtrace-0.3.76 \
 		backtrace-ext-0.2.1 \
 		base64-0.22.1 \
@@ -60,7 +59,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		byteorder-lite-0.1.0 \
 		bytes-1.11.1 \
 		bzip2-0.6.0 \
-		camino-1.2.5 \
+		camino-1.2.6 \
 		cargo-platform-0.1.8 \
 		cargo-platform-0.3.1 \
 		cargo-wix-0.3.9 \
@@ -85,9 +84,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		combine-4.6.7 \
 		comfy-table-8.0.0 \
 		console-0.15.10 \
-		console-0.16.4 \
+		console-0.16.6 \
 		const-oid-0.10.2 \
-		constant_time_eq-0.4.2 \
+		constant_time_eq-0.6.1 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		cpubits-0.1.1 \
@@ -216,7 +215,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		miette-derive-5.10.0 \
 		miette-derive-7.6.0 \
 		mime-0.3.17 \
-		minijinja-2.19.0 \
+		minijinja-2.24.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.2.0 \
@@ -224,6 +223,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		nested-0.1.1 \
 		newline-converter-0.3.0 \
 		nix-0.29.0 \
+		nix-0.31.3 \
 		node-semver-2.2.0 \
 		nom-7.1.3 \
 		nu-ansi-term-0.50.1 \
@@ -298,7 +298,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
 		serde_derive_internals-0.30.0 \
-		serde_json-1.0.151 \
+		serde_json-1.0.154 \
 		serde_spanned-1.0.4 \
 		serde_yaml_bw-2.5.1 \
 		sha1-0.11.0 \
@@ -342,9 +342,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		terminal_size-0.4.1 \
 		textwrap-0.16.1 \
 		thiserror-1.0.69 \
-		thiserror-2.0.20 \
+		thiserror-2.0.21 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.20 \
+		thiserror-impl-2.0.21 \
 		thread_local-1.1.8 \
 		time-0.3.47 \
 		time-core-0.1.8 \
@@ -352,7 +352,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tinystr-0.7.6 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.53.1 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.0 \
 		tokio-rustls-0.26.0 \
 		toml-1.0.3+spec-1.1.0 \
@@ -385,7 +385,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		utf16_iter-1.0.5 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.26.0 \
+		uuid-1.28.0 \
 		valuable-0.1.0 \
 		version_check-0.9.4 \
 		walkdir-2.5.0 \
@@ -450,13 +450,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		zeroize-1.8.1 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
-		zip-8.6.0 \
+		zip-9.0.5 \
 		zlib-rs-0.6.0 \
 		zmij-1.0.12 \
 		zopfli-0.8.3 \
-		zstd-0.13.3 \
-		zstd-safe-7.1.0 \
-		zstd-sys-2.0.10+zstd.1.5.6
+		zstd-0.14.3 \
+		zstd-safe-8.2.0 \
+		zstd-sys-2.1.2+zstd.1.5.7
 
 PLIST_FILES=	bin/dist
 
