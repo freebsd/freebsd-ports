@@ -1,0 +1,10 @@
+--- settings.gradle.orig	2026-10-28 21:29:53 UTC
++++ settings.gradle
+@@ -66,6 +66,7 @@ List projects = [
+   'distribution:archives:darwin-aarch64-tar',
+   'distribution:archives:linux-aarch64-tar',
+   'distribution:archives:linux-tar',
++  'distribution:archives:freebsd-tar',
+   'distribution:docker',
+   'distribution:docker:cloud-ess-docker-export',
+   'distribution:docker:cloud-ess-docker-aarch64-export',
