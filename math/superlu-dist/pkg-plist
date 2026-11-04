@@ -52,13 +52,13 @@ lib/PYTHON/pddrive_worker.py
 lib/libsuperlu_dist.a
 lib/libsuperlu_dist.so
 lib/libsuperlu_dist.so.9
-lib/libsuperlu_dist.so.9.3.0
+lib/libsuperlu_dist.so.9.3.2
 lib/libsuperlu_dist_fortran.a
 lib/libsuperlu_dist_fortran.so
 lib/libsuperlu_dist_fortran.so.9
-lib/libsuperlu_dist_fortran.so.9.3.0
+lib/libsuperlu_dist_fortran.so.9.3.2
 lib/libsuperlu_dist_python.so
 lib/libsuperlu_dist_python.so.9
-lib/libsuperlu_dist_python.so.9.3.0
+lib/libsuperlu_dist_python.so.9.3.2
 libdata/pkgconfig/superlu_dist.pc
 %%PORTDOCS%%%%DOCSDIR%%/ug.pdf
