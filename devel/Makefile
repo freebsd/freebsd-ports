@@ -6550,6 +6550,7 @@
     SUBDIR += py-wirerope
     SUBDIR += py-wlc
     SUBDIR += py-woops
+    SUBDIR += py-worldmonitor-sdk
     SUBDIR += py-wrapt
     SUBDIR += py-wrapt1
     SUBDIR += py-wsgi-intercept

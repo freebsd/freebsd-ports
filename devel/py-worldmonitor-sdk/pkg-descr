@@ -1,0 +1,8 @@
+World Monitor is a dashboard for real-time global intelligence. This is
+its official Python client for the World Monitor API. It gives access to
+country briefs, risk scores, conflict, cyber, market and news feeds and
+to the MCP tools, without writing an HTTP integration by hand.
+
+The module has no dependencies beyond the Python standard library.
+
+WWW: https://www.worldmonitor.app/docs/sdks
