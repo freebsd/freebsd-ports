@@ -1,7 +1,6 @@
 PORTNAME=	smith
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
-PORTREVISION=	1
+DISTVERSION=	0.2.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,9 @@ LIB_DEPENDS=	libaxom_core.so:science/axom \
 		libmetis.so:math/metis \
 		libmfem.so:math/mfem \
 		libopenblas.so:math/openblas \
-		libsiloh5.so:science/silo
+		libRAJA.so:misc/raja \
+		libsiloh5.so:science/silo \
+		libumpire.so:devel/umpire
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags lua
 USE_LDCONFIG=	yes
@@ -58,6 +59,10 @@ OPENMPI_CMAKE_ON=	-DENABLE_MPI=ON \
 			-DMPI_CXX_COMPILER=${MPICXX}
 OPENMPI_BROKEN=		mixes OpenMPI and MPICH when both are installed, see https://github.com/LLNL/serac/issues/787
 
+post-install: # remove stray example files, see https://github.com/llnl/smith/issues/1701
+	@${RM} -r ${STAGEDIR}${PREFIX}/examples
+
 # tests as of 0.1.0: 72% tests passed, 27 tests failed out of 95 (most/all failures are SEGVs caused by the bug in math/superlu-dist, I narrowed it to this: https://github.com/xiaoyeli/superlu_dist/issues/227)
+# tests as of 0.2.0: 70% tests passed, 33 tests failed out of 111 (some failures are due to vector OOB access, see https://github.com/llnl/smith/issues/1702)
 
 .include <bsd.port.mk>
