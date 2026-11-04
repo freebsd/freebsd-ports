@@ -1,0 +1,37 @@
+--- CMakeLists.txt.orig	2025-09-11 12:24:45 UTC
++++ CMakeLists.txt
+@@ -23,6 +23,8 @@ DESCRIPTION "CDF is a set of software libraries and ma
+ DESCRIPTION "CDF is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of scientific data."
+ )
+ 
++include(CTest)
++
+ set(PACKAGE "CDF" CACHE STRING "")
+ # as PACKAGE:STRING=CDF in CMakeCache.txt (in alphabatic order)
+ 
+@@ -302,10 +304,7 @@ macro(print_conf_summary)
+   endif()
+   message("")
+ 
+-  message("Tests Enabled:              ${ENABLE_TESTS}")
+-  if(ENABLE_TESTS)
+-    message(STATUS "Unit Tests:        ${ENABLE_UNIT_TESTS}")
+-  endif()
++  message(STATUS "Tests Enabled:              ${BUILD_TESTING}")
+ 
+   message("")
+   message("Compiler:")
+@@ -356,10 +355,9 @@ endif()
+ endif()
+ 
+ # Option to build test programs
+-option(BUILD_TESTS "Build cdf tests programs, e.g., qst2ic,qst2c, qst2icTT2000,etc." ON)
+-
+-enable_testing()
+-add_subdirectory(cdf_tests)
++if(BUILD_TESTING)
++  add_subdirectory(cdf_tests)
++endif()
+ 
+ if(NOT WITH_UNALIGNED)
+   add_definitions(-DNO_UNALIGNED)
