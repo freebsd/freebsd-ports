@@ -1,5 +1,5 @@
 PORTNAME=	minorminer
-DISTVERSION=	0.2.22
+DISTVERSION=	0.2.23
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -35,6 +35,7 @@ GH_TUPLE=	boothby:glasgow-subgraph-solver:e544b549c0e6:glasgow_subgraph_solver/e
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ARGS=	--disable-plugin-autoload
 
 pre-test:
 	@${CP} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/minorminer/_extern/rpack/_core${PYTHON_TAG}.so \
@@ -53,6 +54,6 @@ post-install:
 		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/busclique${PYTHON_TAG}.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/subgraph${PYTHON_TAG}.so
 
-# tests as of 0.2.22: 200 passed, 1 skipped, 392 warnings in 136.24s
+# tests as of 0.2.23: 322 passed, 1 skipped, 390 warnings, 415 subtests passed in 92.19s (0:01:32)
 
 .include <bsd.port.mk>

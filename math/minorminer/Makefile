@@ -1,5 +1,5 @@
 PORTNAME=	minorminer
-DISTVERSION=	0.2.22
+DISTVERSION=	0.2.23
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ GH_ACCOUNT=	dwavesystems
 
 CMAKE_TESTING_ON=	MINORMINER_BUILD_TESTS
 CMAKE_TESTING_TARGET=	${ALL_TARGET}
-CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility
+CMAKE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 # CMake 4.5 compatibility, see https://github.com/dwavesystems/minorminer/issues/298
 
 NO_ARCH=	yes
 
