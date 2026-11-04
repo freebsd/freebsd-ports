@@ -1,0 +1,11 @@
+--- po/SConscript.orig	2026-11-01 23:30:58 UTC
++++ po/SConscript
+@@ -10,7 +10,7 @@
+ from SCons.Errors import BuildError
+ 
+ 
+-if env['HAVE_MSGFMT']:
++if env['HAVE_GETTEXT']:
+     for src in env.Glob('*.po'):
+         lang = os.path.basename(src.get_abspath())[:-3]
+         mo = env.Command(f'{lang}.mo', src, 'msgfmt $SOURCE -o $TARGET')

@@ -1,0 +1,8 @@
+bin/rmlint
+share/man/man1/rmlint.1.gz
+%%NLS%%share/locale/de/LC_MESSAGES/rmlint.mo
+%%NLS%%share/locale/es/LC_MESSAGES/rmlint.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/rmlint.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/rmlint.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/rmlint.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/rmlint.mo
