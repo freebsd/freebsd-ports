@@ -1,6 +1,6 @@
 PORTNAME=	worldmonitor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.6
+DISTVERSION=	2.11.7
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -46,7 +46,7 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node docker/build-handlers.mjs
 	cd ${WRKSRC}/pro-test && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node node_modules/vite/bin/vite.js build
 	cd ${WRKSRC}/pro-test && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node prerender.mjs
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node node_modules/typescript/bin/tsc
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node node_modules/@typescript/native/bin/tsc
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node node_modules/vite/bin/vite.js build
 
 do-install:

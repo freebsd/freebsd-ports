@@ -46,6 +46,7 @@ worldmonitor_relay_prestart()
 	case "${RELAY_SHARED_SECRET}" in
 	""|change-me*) err 1 "RELAY_SHARED_SECRET in ${worldmonitor_relay_env_file} is empty or still has its example value" ;;
 	esac
+	export PATH="${PATH}:%%LOCALBASE%%/bin"
 	export PORT="${worldmonitor_relay_port}"
 	export UPSTASH_ALLOW_INSECURE_HTTP=true
 }
