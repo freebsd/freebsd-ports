@@ -1,3 +1,464 @@
+  <vuln vid="380c9ad2-d81f-11f1-a214-a0369f7f7be0">
+    <topic>chromium -- security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>157.0.8103.38</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>157.0.8103.38</lt></range>
+      </package>
+      <package>
+       <name>linux-chrome</name>
+       <range><lt>157.0.8103.38</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html">
+	 <p>This update includes 213 security fixes:</p>
+	 <ul>
+	    <li>Critical CVE-2026-121156: Buffer overflow in Dawn.</li>
+	    <li>Critical CVE-2026-121229: Memory corruption in ANGLE.</li>
+	    <li>Critical CVE-2026-121246: Use after free in WebGL.</li>
+	    <li>Critical CVE-2026-121035: Use after free in Prerender.</li>
+	    <li>Critical CVE-2026-121247: Buffer overflow in Dawn.</li>
+	    <li>Critical CVE-2026-121203: Use after free in Geometry.</li>
+	    <li>Critical CVE-2026-121126: Use after free in Core.</li>
+	    <li>High CVE-2026-121107: Incorrect authorization in BackgroundFetch.</li>
+	    <li>High CVE-2026-121197: Out of bounds read in ANGLE.</li>
+	    <li>High CVE-2026-121112: Out of bounds read in Permissions.</li>
+	    <li>High CVE-2026-121174: Missing authorization in BackgroundFetch.</li>
+	    <li>High CVE-2026-121098: Improper state validation in GPU.</li>
+	    <li>High CVE-2026-121074: Memory corruption in GPU.</li>
+	    <li>High CVE-2026-121173: Uninitialized resource in WebGL.</li>
+	    <li>High CVE-2026-121233: Type confusion in CacheStorage.</li>
+	    <li>High CVE-2026-121140: Out of bounds read in Internals.</li>
+	    <li>High CVE-2026-121095: Uninitialized resource in WebGL.</li>
+	    <li>High CVE-2026-121071: Incorrect authorization in FileSystem.</li>
+	    <li>High CVE-2026-121207: Uninitialized resource in Dawn.</li>
+	    <li>High CVE-2026-121185: Use after free in PictureInPicture.</li>
+	    <li>High CVE-2026-121166: Type confusion in PDFium.</li>
+	    <li>High CVE-2026-121047: Buffer overflow in Media.</li>
+	    <li>High CVE-2026-121124: Improper adherence to coding standards in XML.</li>
+	    <li>High CVE-2026-121118: Use after free in SVG.</li>
+	    <li>High CVE-2026-121188: Use after free in PerformanceAPIs.</li>
+	    <li>High CVE-2026-121113: Buffer overflow in PDFium.</li>
+	    <li>High CVE-2026-121082: Type confusion in V8.</li>
+	    <li>High CVE-2026-121083: Use after free in Compositing.</li>
+	    <li>High CVE-2026-121179: Use after free in PDFium.</li>
+	    <li>High CVE-2026-121180: Buffer overflow in Media.</li>
+	    <li>High CVE-2026-121181: Use after free in Editing.</li>
+	    <li>High CVE-2026-121228: Type confusion in V8.</li>
+	    <li>High CVE-2026-121080: Use after free in Codecs.</li>
+	    <li>High CVE-2026-121044: Use after free in Layout.</li>
+	    <li>High CVE-2026-121051: UI misrepresentation in iOSWeb.</li>
+	    <li>High CVE-2026-121038: Information leak in Compositing.</li>
+	    <li>High CVE-2026-121090: Improper privilege management in Navigation.</li>
+	    <li>High CVE-2026-121052: Use after free in GPU.</li>
+	    <li>High CVE-2026-121037: Out of bounds write in ANGLE.</li>
+	    <li>High CVE-2026-121086: Buffer overflow in Skia.</li>
+	    <li>High CVE-2026-121131: Use after free in Mobile.</li>
+	    <li>High CVE-2026-121087: Improper input validation in Mobile.</li>
+	    <li>High CVE-2026-121178: Use after free in Aura.</li>
+	    <li>High CVE-2026-121100: Use after free in DOM.</li>
+	    <li>High CVE-2026-121148: Use after free in ANGLE.</li>
+	    <li>High CVE-2026-121089: Use after free in WebGPU.</li>
+	    <li>High CVE-2026-121250: Use after free in Extensions.</li>
+	    <li>High CVE-2026-121032: Out of bounds read in Skia.</li>
+	    <li>High CVE-2026-121114: Use after free in TabStrip.</li>
+	    <li>High CVE-2026-121127: Use after free in WebAudio.</li>
+	    <li>High CVE-2026-121210: Type confusion in V8.</li>
+	    <li>High CVE-2026-121057: Type confusion in V8.</li>
+	    <li>High CVE-2026-121201: Use after free in Animation.</li>
+	    <li>High CVE-2026-121084: Out of bounds read in Skia.</li>
+	    <li>High CVE-2026-121094: Type confusion in V8.</li>
+	    <li>High CVE-2026-121079: Race condition in V8.</li>
+	    <li>High CVE-2026-121143: Uninitialized resource in GPU.</li>
+	    <li>High CVE-2026-121097: Use after free in Printing.</li>
+	    <li>High CVE-2026-121214: Use after free in Passwords.</li>
+	    <li>High CVE-2026-121133: Incorrect reference resolution in Images.</li>
+	    <li>High CVE-2026-121249: Buffer overflow in ANGLE.</li>
+	    <li>High CVE-2026-121213: Uninitialized resource in Images.</li>
+	    <li>High CVE-2026-121241: Use after free in Navigation.</li>
+	    <li>High CVE-2026-121224: Security issue in Desktop.</li>
+	    <li>High CVE-2026-121117: Use after free in Paint.</li>
+	    <li>High CVE-2026-121123: Use after free in Canvas.</li>
+	    <li>High CVE-2026-121182: Use after free in DOM.</li>
+	    <li>High CVE-2026-121061: Use after free in Modularization.</li>
+	    <li>High CVE-2026-121227: Uninitialized resource in Skia.</li>
+	    <li>High CVE-2026-121226: Type confusion in V8.</li>
+	    <li>High CVE-2026-121068: Type confusion in V8.</li>
+	    <li>High CVE-2026-121137: Type confusion in DevTools.</li>
+	    <li>High CVE-2026-121160: Out of bounds read in Skia.</li>
+	    <li>High CVE-2026-121036: Use after free in CSS.</li>
+	    <li>High CVE-2026-121104: Incorrect authorization in FileSystem.</li>
+	    <li>High CVE-2026-121034: Use after free in Views.</li>
+	    <li>High CVE-2026-121208: Out of bounds read in Media.</li>
+	    <li>High CVE-2026-121129: Use after free in WebRTC.</li>
+	    <li>High CVE-2026-121211: Use after free in PowerBookmarks.</li>
+	    <li>High CVE-2026-121078: Type confusion in V8.</li>
+	    <li>High CVE-2026-121060: Incorrect authorization in FileSystem.</li>
+	    <li>High CVE-2026-121076: Use after free in WebXR.</li>
+	    <li>High CVE-2026-121221: Type confusion in V8.</li>
+	    <li>High CVE-2026-121119: Use after free in Controls.</li>
+	    <li>Medium CVE-2026-121244: UI misrepresentation in FileAPI.</li>
+	    <li>Medium CVE-2026-121242: Improper input validation in WebPackaging.</li>
+	    <li>Medium CVE-2026-121105: Information leak in Network.</li>
+	    <li>Medium CVE-2026-121237: Improper state validation in FileSystem.</li>
+	    <li>Medium CVE-2026-121102: Missing authorization in BackgroundFetch.</li>
+	    <li>Medium CVE-2026-121120: Improper input validation in Prerender.</li>
+	    <li>Medium CVE-2026-121161: Information leak in BackgroundFetch.</li>
+	    <li>Medium CVE-2026-121062: Incorrect authorization in API.</li>
+	    <li>Medium CVE-2026-121031: Missing authorization in PDF.</li>
+	    <li>Medium CVE-2026-121063: Incorrect authorization in CacheStorage.</li>
+	    <li>Medium CVE-2026-121108: Confused deputy in BackgroundFetch.</li>
+	    <li>Medium CVE-2026-121199: Missing authorization in Chromoting.</li>
+	    <li>Medium CVE-2026-121099: Information leak in PrivateTokens.</li>
+	    <li>Medium CVE-2026-121196: Privilege elevation in Mobile.</li>
+	    <li>Medium CVE-2026-121066: Incorrect authorization in Extensions.</li>
+	    <li>Medium CVE-2026-121256: Use of released resource in GPU.</li>
+	    <li>Medium CVE-2026-121115: Improper input validation in Shopping.</li>
+	    <li>Medium CVE-2026-121234: Privilege elevation in Contacts.</li>
+	    <li>Medium CVE-2026-121177: UI misrepresentation in PageInfo.</li>
+	    <li>Medium CVE-2026-121193: Incorrect authorization in Extensions.</li>
+	    <li>Medium CVE-2026-121248: Incorrect authorization in API.</li>
+	    <li>Medium CVE-2026-121106: Information leak in Omnibox.</li>
+	    <li>Medium CVE-2026-121200: Incorrect reference resolution in DevTools.</li>
+	    <li>Medium CVE-2026-121039: Incorrect authorization in Proxy Auth.</li>
+	    <li>Medium CVE-2026-121122: UI misrepresentation in Prompts.</li>
+	    <li>Medium CVE-2026-121219: Integer overflow in GPU.</li>
+	    <li>Medium CVE-2026-121255: Incorrect authorization in Autofill AI.</li>
+	    <li>Medium CVE-2026-121231: Incorrect authorization in DevTools.</li>
+	    <li>Medium CVE-2026-121183: Incorrect authorization in Extensions.</li>
+	    <li>Medium CVE-2026-121072: Uninitialized resource in Skia.</li>
+	    <li>Medium CVE-2026-121103: Incorrect authorization in Extensions.</li>
+	    <li>Medium CVE-2026-121136: Missing authorization in DevTools.</li>
+	    <li>Medium CVE-2026-121040: Incorrect authorization in Core.</li>
+	    <li>Medium CVE-2026-121030: Incorrect authorization in DevTools.</li>
+	    <li>Medium CVE-2026-121075: Missing authorization in DevTools.</li>
+	    <li>Medium CVE-2026-121220: Incorrect authorization in Core.</li>
+	    <li>Medium CVE-2026-121170: Improper resource control in WebCodecs.</li>
+	    <li>Medium CVE-2026-121059: Information leak in Core.</li>
+	    <li>Medium CVE-2026-121163: Improper input validation in Browser.</li>
+	    <li>Medium CVE-2026-121088: Missing authorization in PerformanceAPIs.</li>
+	    <li>Medium CVE-2026-121033: Uninitialized resource in GPU.</li>
+	    <li>Medium CVE-2026-121254: Information leak in Select.</li>
+	    <li>Medium CVE-2026-121065: Incorrect authorization in DevTools.</li>
+	    <li>Medium CVE-2026-121171: Confused deputy in DevTools.</li>
+	    <li>Medium CVE-2026-121116: Missing authorization in WebView.</li>
+	    <li>Medium CVE-2026-121239: Information leak in Core.</li>
+	    <li>Medium CVE-2026-121187: Observable discrepancy in Paint.</li>
+	    <li>Medium CVE-2026-121132: Information leak in V8.</li>
+	    <li>Medium CVE-2026-121067: UI misrepresentation in PermissionElement.</li>
+	    <li>Medium CVE-2026-121096: Incomplete cleanup in V8.</li>
+	    <li>Medium CVE-2026-121184: Out of bounds read in Media.</li>
+	    <li>Medium CVE-2026-121215: UI misrepresentation in Bluetooth.</li>
+	    <li>Medium CVE-2026-121212: Incorrect authorization in Core.</li>
+	    <li>Medium CVE-2026-121194: Missing authorization in SiteIsolation.</li>
+	    <li>Medium CVE-2026-121202: Use after free in Autofill.</li>
+	    <li>Medium CVE-2026-121048: Race condition in V8.</li>
+	    <li>Medium CVE-2026-121070: Use after free in WTF.</li>
+	    <li>Medium CVE-2026-121257: Use after free in TabStrip.</li>
+	    <li>Medium CVE-2026-121218: Type confusion in V8.</li>
+	    <li>Medium CVE-2026-121164: Incorrect authorization in Views.</li>
+	    <li>Medium CVE-2026-121223: Observable discrepancy in Media.</li>
+	    <li>Medium CVE-2026-121186: UI misrepresentation in Passwords.</li>
+	    <li>Medium CVE-2026-121176: Uninitialized resource in Media.</li>
+	    <li>Medium CVE-2026-121128: Use after free in Scheduling.</li>
+	    <li>Medium CVE-2026-121216: UI misrepresentation in UI.</li>
+	    <li>Medium CVE-2026-121158: Information leak in Paint.</li>
+	    <li>Medium CVE-2026-121110: UI misrepresentation in Shopping.</li>
+	    <li>Medium CVE-2026-121042: Incorrect authorization in Permissions.</li>
+	    <li>Medium CVE-2026-121238: Use after free in Source.</li>
+	    <li>Medium CVE-2026-121077: Use after free in Mobile.</li>
+	    <li>Medium CVE-2026-121245: Race condition in Autofill.</li>
+	    <li>Medium CVE-2026-121049: Out of bounds read in V8.</li>
+	    <li>Medium CVE-2026-121091: Incorrect authorization in Permissions.</li>
+	    <li>Medium CVE-2026-121167: Incorrect authorization in Permissions.</li>
+	    <li>Medium CVE-2026-121135: Security issue in Platform.</li>
+	    <li>Low CVE-2026-121209: UI misrepresentation in Input.</li>
+	    <li>Low CVE-2026-121134: Information loss in BackgroundFetch.</li>
+	    <li>Low CVE-2026-121217: Use after free in Streaming.</li>
+	    <li>Low CVE-2026-121109: Inadequate encryption strength in SSL.</li>
+	    <li>Low CVE-2026-121243: Information leak in Frames.</li>
+	    <li>Low CVE-2026-121053: UI misrepresentation in Transactions Platform.</li>
+	    <li>Low CVE-2026-121190: UI misrepresentation in Extensions.</li>
+	    <li>Low CVE-2026-121125: Information leak in ServiceWorker.</li>
+	    <li>Low CVE-2026-121046: Incorrect authorization in WebAppInstalls.</li>
+	    <li>Low CVE-2026-121222: Incorrect authorization in Forms.</li>
+	    <li>Low CVE-2026-121157: Incorrect authorization in Chromoting.</li>
+	    <li>Low CVE-2026-121235: Information leak in Paint.</li>
+	    <li>Low CVE-2026-121252: Incorrect authorization in Core.</li>
+	    <li>Low CVE-2026-121168: Improper resource exposure in DevTools.</li>
+	    <li>Low CVE-2026-121043: UI misrepresentation in Payments.</li>
+	    <li>Low CVE-2026-121111: Incorrect authorization in HID.</li>
+	    <li>Low CVE-2026-121138: Observable discrepancy in CORS.</li>
+	    <li>Low CVE-2026-121055: Incomplete cleanup in DevTools.</li>
+	    <li>Low CVE-2026-121101: Missing authorization in DevTools.</li>
+	    <li>Low CVE-2026-121236: Improper input validation in Network.</li>
+	    <li>Low CVE-2026-121165: UI misrepresentation in Mobile.</li>
+	    <li>Low CVE-2026-121253: Missing authorization in DevTools.</li>
+	    <li>Low CVE-2026-121172: Incorrect authorization in Isolated.</li>
+	    <li>Low CVE-2026-121206: UI misrepresentation in Isolated.</li>
+	    <li>Low CVE-2026-121189: Use after free in Browser.</li>
+	    <li>Low CVE-2026-121121: UI misrepresentation in PageInfo.</li>
+	    <li>Low CVE-2026-121130: Observable discrepancy in Forms.</li>
+	    <li>Low CVE-2026-121251: Missing authorization in V8.</li>
+	    <li>Low CVE-2026-121085: Incorrect authorization in WebUI.</li>
+	    <li>Low CVE-2026-121159: Incorrect authorization in History.</li>
+	    <li>Low CVE-2026-121204: Incomplete cleanup in DevTools.</li>
+	    <li>Low CVE-2026-121205: Incorrect authorization in CORS.</li>
+	    <li>Low CVE-2026-121050: Race condition in Mobile.</li>
+	    <li>Low CVE-2026-121081: UI misrepresentation in Passwords.</li>
+	    <li>Low CVE-2026-121240: Improper input validation in Variations.</li>
+	    <li>Low CVE-2026-121198: Confused deputy in WebUI.</li>
+	    <li>Low CVE-2026-121225: Incorrect authorization in Permissions.</li>
+	    <li>Low CVE-2026-121162: UI misrepresentation in Notifications.</li>
+	    <li>Low CVE-2026-121045: UI misrepresentation in Browser.</li>
+	    <li>Low CVE-2026-121029: Incorrect authorization in ORB.</li>
+	    <li>Low CVE-2026-121054: Improper state validation in XML.</li>
+	    <li>Low CVE-2026-121175: Improper resource exposure in ORB.</li>
+	    <li>Low CVE-2026-121092: Uncontrolled recursion in SVG.</li>
+	    <li>Low CVE-2026-121073: Use after free in Network.</li>
+	    <li>Low CVE-2026-121230: Race condition in ANGLE.</li>
+	    <li>Low CVE-2026-121093: Out of bounds read in Animation.</li>
+	    <li>Low CVE-2026-121041: Missing authorization in Input.</li>
+	    <li>Low CVE-2026-121232: Incorrect authorization in Core.</li>
+	    <li>Low CVE-2026-121142: Incorrect authorization in Network.</li>
+	    <li>Low CVE-2026-121069: Use after free in Track.</li>
+	    <li>Low CVE-2026-121169: Missing authorization in DevTools.</li>
+	    <li>Low CVE-2026-121064: Improper input validation in Performance.</li>
+	    <li>Low CVE-2026-121195: Incorrect authorization in TrustedTypes.</li>
+	    <li>Low CVE-2026-121141: Improper input validation in Editing.</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-121156</cvename>
+      <cvename>CVE-2026-121229</cvename>
+      <cvename>CVE-2026-121246</cvename>
+      <cvename>CVE-2026-121035</cvename>
+      <cvename>CVE-2026-121247</cvename>
+      <cvename>CVE-2026-121203</cvename>
+      <cvename>CVE-2026-121126</cvename>
+      <cvename>CVE-2026-121107</cvename>
+      <cvename>CVE-2026-121197</cvename>
+      <cvename>CVE-2026-121112</cvename>
+      <cvename>CVE-2026-121174</cvename>
+      <cvename>CVE-2026-121098</cvename>
+      <cvename>CVE-2026-121074</cvename>
+      <cvename>CVE-2026-121173</cvename>
+      <cvename>CVE-2026-121233</cvename>
+      <cvename>CVE-2026-121140</cvename>
+      <cvename>CVE-2026-121095</cvename>
+      <cvename>CVE-2026-121071</cvename>
+      <cvename>CVE-2026-121207</cvename>
+      <cvename>CVE-2026-121185</cvename>
+      <cvename>CVE-2026-121166</cvename>
+      <cvename>CVE-2026-121047</cvename>
+      <cvename>CVE-2026-121124</cvename>
+      <cvename>CVE-2026-121118</cvename>
+      <cvename>CVE-2026-121188</cvename>
+      <cvename>CVE-2026-121113</cvename>
+      <cvename>CVE-2026-121082</cvename>
+      <cvename>CVE-2026-121083</cvename>
+      <cvename>CVE-2026-121179</cvename>
+      <cvename>CVE-2026-121180</cvename>
+      <cvename>CVE-2026-121181</cvename>
+      <cvename>CVE-2026-121228</cvename>
+      <cvename>CVE-2026-121080</cvename>
+      <cvename>CVE-2026-121044</cvename>
+      <cvename>CVE-2026-121051</cvename>
+      <cvename>CVE-2026-121038</cvename>
+      <cvename>CVE-2026-121090</cvename>
+      <cvename>CVE-2026-121052</cvename>
+      <cvename>CVE-2026-121037</cvename>
+      <cvename>CVE-2026-121086</cvename>
+      <cvename>CVE-2026-121131</cvename>
+      <cvename>CVE-2026-121087</cvename>
+      <cvename>CVE-2026-121178</cvename>
+      <cvename>CVE-2026-121100</cvename>
+      <cvename>CVE-2026-121148</cvename>
+      <cvename>CVE-2026-121089</cvename>
+      <cvename>CVE-2026-121250</cvename>
+      <cvename>CVE-2026-121032</cvename>
+      <cvename>CVE-2026-121114</cvename>
+      <cvename>CVE-2026-121127</cvename>
+      <cvename>CVE-2026-121210</cvename>
+      <cvename>CVE-2026-121057</cvename>
+      <cvename>CVE-2026-121201</cvename>
+      <cvename>CVE-2026-121084</cvename>
+      <cvename>CVE-2026-121094</cvename>
+      <cvename>CVE-2026-121079</cvename>
+      <cvename>CVE-2026-121143</cvename>
+      <cvename>CVE-2026-121097</cvename>
+      <cvename>CVE-2026-121214</cvename>
+      <cvename>CVE-2026-121133</cvename>
+      <cvename>CVE-2026-121249</cvename>
+      <cvename>CVE-2026-121213</cvename>
+      <cvename>CVE-2026-121241</cvename>
+      <cvename>CVE-2026-121224</cvename>
+      <cvename>CVE-2026-121117</cvename>
+      <cvename>CVE-2026-121123</cvename>
+      <cvename>CVE-2026-121182</cvename>
+      <cvename>CVE-2026-121061</cvename>
+      <cvename>CVE-2026-121227</cvename>
+      <cvename>CVE-2026-121226</cvename>
+      <cvename>CVE-2026-121068</cvename>
+      <cvename>CVE-2026-121137</cvename>
+      <cvename>CVE-2026-121160</cvename>
+      <cvename>CVE-2026-121036</cvename>
+      <cvename>CVE-2026-121104</cvename>
+      <cvename>CVE-2026-121034</cvename>
+      <cvename>CVE-2026-121208</cvename>
+      <cvename>CVE-2026-121129</cvename>
+      <cvename>CVE-2026-121211</cvename>
+      <cvename>CVE-2026-121078</cvename>
+      <cvename>CVE-2026-121060</cvename>
+      <cvename>CVE-2026-121076</cvename>
+      <cvename>CVE-2026-121221</cvename>
+      <cvename>CVE-2026-121119</cvename>
+      <cvename>CVE-2026-121244</cvename>
+      <cvename>CVE-2026-121242</cvename>
+      <cvename>CVE-2026-121105</cvename>
+      <cvename>CVE-2026-121237</cvename>
+      <cvename>CVE-2026-121102</cvename>
+      <cvename>CVE-2026-121120</cvename>
+      <cvename>CVE-2026-121161</cvename>
+      <cvename>CVE-2026-121062</cvename>
+      <cvename>CVE-2026-121031</cvename>
+      <cvename>CVE-2026-121063</cvename>
+      <cvename>CVE-2026-121108</cvename>
+      <cvename>CVE-2026-121199</cvename>
+      <cvename>CVE-2026-121099</cvename>
+      <cvename>CVE-2026-121196</cvename>
+      <cvename>CVE-2026-121066</cvename>
+      <cvename>CVE-2026-121256</cvename>
+      <cvename>CVE-2026-121115</cvename>
+      <cvename>CVE-2026-121234</cvename>
+      <cvename>CVE-2026-121177</cvename>
+      <cvename>CVE-2026-121193</cvename>
+      <cvename>CVE-2026-121248</cvename>
+      <cvename>CVE-2026-121106</cvename>
+      <cvename>CVE-2026-121200</cvename>
+      <cvename>CVE-2026-121039</cvename>
+      <cvename>CVE-2026-121122</cvename>
+      <cvename>CVE-2026-121219</cvename>
+      <cvename>CVE-2026-121255</cvename>
+      <cvename>CVE-2026-121231</cvename>
+      <cvename>CVE-2026-121183</cvename>
+      <cvename>CVE-2026-121072</cvename>
+      <cvename>CVE-2026-121103</cvename>
+      <cvename>CVE-2026-121136</cvename>
+      <cvename>CVE-2026-121040</cvename>
+      <cvename>CVE-2026-121030</cvename>
+      <cvename>CVE-2026-121075</cvename>
+      <cvename>CVE-2026-121220</cvename>
+      <cvename>CVE-2026-121170</cvename>
+      <cvename>CVE-2026-121059</cvename>
+      <cvename>CVE-2026-121163</cvename>
+      <cvename>CVE-2026-121088</cvename>
+      <cvename>CVE-2026-121033</cvename>
+      <cvename>CVE-2026-121254</cvename>
+      <cvename>CVE-2026-121065</cvename>
+      <cvename>CVE-2026-121171</cvename>
+      <cvename>CVE-2026-121116</cvename>
+      <cvename>CVE-2026-121239</cvename>
+      <cvename>CVE-2026-121187</cvename>
+      <cvename>CVE-2026-121132</cvename>
+      <cvename>CVE-2026-121067</cvename>
+      <cvename>CVE-2026-121096</cvename>
+      <cvename>CVE-2026-121184</cvename>
+      <cvename>CVE-2026-121215</cvename>
+      <cvename>CVE-2026-121212</cvename>
+      <cvename>CVE-2026-121194</cvename>
+      <cvename>CVE-2026-121202</cvename>
+      <cvename>CVE-2026-121048</cvename>
+      <cvename>CVE-2026-121070</cvename>
+      <cvename>CVE-2026-121257</cvename>
+      <cvename>CVE-2026-121218</cvename>
+      <cvename>CVE-2026-121164</cvename>
+      <cvename>CVE-2026-121223</cvename>
+      <cvename>CVE-2026-121186</cvename>
+      <cvename>CVE-2026-121176</cvename>
+      <cvename>CVE-2026-121128</cvename>
+      <cvename>CVE-2026-121216</cvename>
+      <cvename>CVE-2026-121158</cvename>
+      <cvename>CVE-2026-121110</cvename>
+      <cvename>CVE-2026-121042</cvename>
+      <cvename>CVE-2026-121238</cvename>
+      <cvename>CVE-2026-121077</cvename>
+      <cvename>CVE-2026-121245</cvename>
+      <cvename>CVE-2026-121049</cvename>
+      <cvename>CVE-2026-121091</cvename>
+      <cvename>CVE-2026-121167</cvename>
+      <cvename>CVE-2026-121135</cvename>
+      <cvename>CVE-2026-121209</cvename>
+      <cvename>CVE-2026-121134</cvename>
+      <cvename>CVE-2026-121217</cvename>
+      <cvename>CVE-2026-121109</cvename>
+      <cvename>CVE-2026-121243</cvename>
+      <cvename>CVE-2026-121053</cvename>
+      <cvename>CVE-2026-121190</cvename>
+      <cvename>CVE-2026-121125</cvename>
+      <cvename>CVE-2026-121046</cvename>
+      <cvename>CVE-2026-121222</cvename>
+      <cvename>CVE-2026-121157</cvename>
+      <cvename>CVE-2026-121235</cvename>
+      <cvename>CVE-2026-121252</cvename>
+      <cvename>CVE-2026-121168</cvename>
+      <cvename>CVE-2026-121043</cvename>
+      <cvename>CVE-2026-121111</cvename>
+      <cvename>CVE-2026-121138</cvename>
+      <cvename>CVE-2026-121055</cvename>
+      <cvename>CVE-2026-121101</cvename>
+      <cvename>CVE-2026-121236</cvename>
+      <cvename>CVE-2026-121165</cvename>
+      <cvename>CVE-2026-121253</cvename>
+      <cvename>CVE-2026-121172</cvename>
+      <cvename>CVE-2026-121206</cvename>
+      <cvename>CVE-2026-121189</cvename>
+      <cvename>CVE-2026-121121</cvename>
+      <cvename>CVE-2026-121130</cvename>
+      <cvename>CVE-2026-121251</cvename>
+      <cvename>CVE-2026-121085</cvename>
+      <cvename>CVE-2026-121159</cvename>
+      <cvename>CVE-2026-121204</cvename>
+      <cvename>CVE-2026-121205</cvename>
+      <cvename>CVE-2026-121050</cvename>
+      <cvename>CVE-2026-121081</cvename>
+      <cvename>CVE-2026-121240</cvename>
+      <cvename>CVE-2026-121198</cvename>
+      <cvename>CVE-2026-121225</cvename>
+      <cvename>CVE-2026-121162</cvename>
+      <cvename>CVE-2026-121045</cvename>
+      <cvename>CVE-2026-121029</cvename>
+      <cvename>CVE-2026-121054</cvename>
+      <cvename>CVE-2026-121175</cvename>
+      <cvename>CVE-2026-121092</cvename>
+      <cvename>CVE-2026-121073</cvename>
+      <cvename>CVE-2026-121230</cvename>
+      <cvename>CVE-2026-121093</cvename>
+      <cvename>CVE-2026-121041</cvename>
+      <cvename>CVE-2026-121232</cvename>
+      <cvename>CVE-2026-121142</cvename>
+      <cvename>CVE-2026-121069</cvename>
+      <cvename>CVE-2026-121169</cvename>
+      <cvename>CVE-2026-121064</cvename>
+      <cvename>CVE-2026-121195</cvename>
+      <cvename>CVE-2026-121141</cvename>
+      <url>https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-03</discovery>
+      <entry>2026-11-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c70f21b6-d7b4-11f1-bae2-3497f65b111b">
     <topic>net/rsync -- denial of service</topic>
     <affects>
@@ -453,6 +914,10 @@
        <name>ungoogled-chromium</name>
        <range><lt>156.0.8078.79</lt></range>
       </package>
+      <package>
+       <name>linux-chrome</name>
+       <range><lt>156.0.8078.79</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -512,6 +977,7 @@
     <dates>
       <discovery>2026-10-29</discovery>
       <entry>2026-11-01</entry>
+      <modified>2026-11-04</modified>
     </dates>
   </vuln>
 
@@ -524,6 +990,10 @@
       </package>
       <package>
        <name>ungoogled-chromium</name>
+       <range><lt>156.0.8078.73</lt></range>
+      </package>
+      <package>
+       <name>linux-chrome</name>
        <range><lt>156.0.8078.73</lt></range>
       </package>
     </affects>
@@ -647,6 +1117,7 @@
     <dates>
       <discovery>2026-10-27</discovery>
       <entry>2026-11-01</entry>
+      <modified>2026-11-04</modified>
     </dates>
   </vuln>
 
