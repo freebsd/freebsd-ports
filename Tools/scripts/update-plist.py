@@ -175,6 +175,7 @@ def process_log(log_path, ports_tree_root, extended=False):
     sub_map = extract_plist_sub(log_content)
     orphans = re.findall(r"Error: Orphaned: (.*)", log_content)
     missing_from_log = set(re.findall(r"Error: Missing: (.*)", log_content))
+    option_missing_from_log = {re.sub(r"%%.*?%%", "", m).strip().lstrip('/') for m in missing_from_log}
 
     removed_count = 0
     added_count = 0
@@ -189,7 +190,7 @@ def process_log(log_path, ports_tree_root, extended=False):
             new_lines = []
             for line in lines:
                 clean_line = re.sub(r"%%.*?%%", "", line).strip().lstrip('/')
-                if line in missing_from_log or clean_line in missing_from_log:
+                if line in missing_from_log or clean_line in missing_from_log or clean_line in option_missing_from_log:
                     removed_count += 1
                     continue
                 new_lines.append(line)
