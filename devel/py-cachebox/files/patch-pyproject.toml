@@ -1,9 +1,13 @@
---- pyproject.toml.orig	2026-09-06 04:26:30 UTC
+--- pyproject.toml.orig	2006-07-24 01:21:28 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
- [build-system]
--requires = ["maturin == 1.14.1"]
-+requires = ["maturin >= 1.14.1"]
- build-backend = "maturin"
- 
- [tool.maturin]
+@@ -55,8 +55,8 @@ maturin = [
+   "ruff>=0.16.9",
+ ]
+ maturin = [
+-  "maturin == 1.15.0 ; sys_platform != 'linux'",
+-  "maturin[patchelf] == 1.15.0 ; sys_platform == 'linux'",
++  "maturin; sys_platform != 'linux'",
++  "maturin[patchelf] ; sys_platform == 'linux'",
+ ]
+ test = [
+   "hypothesis >= 6.165.0",
