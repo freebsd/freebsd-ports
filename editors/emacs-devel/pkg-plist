@@ -3790,6 +3790,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ps-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/python.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/python.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/refactor.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/refactor.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ruby-ts-mode.el.gz
@@ -3948,6 +3950,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/internal.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/iris-ansi.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/iris-ansi.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/kitty-kbd-proto.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/term/kitty-kbd-proto.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/kmscon.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/kmscon.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/term/konsole.el.gz
