@@ -1,16 +1,19 @@
 PORTNAME=	opencyc
-PORTVERSION=	0.7.0
-PORTREVISION=	3
+DISTVERSION=	0.7.0
+PORTREVISION=	4
 CATEGORIES=	misc linux
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General knowledge base and commonsense reasoning engine
 WWW=		http://www.opencyc.org
 
-USES=		linux
+DEPRECATED=	Upstream abandoned in 2017
+EXPIRATION_DATE=	2026-12-04
+
+USES=		linux tar:tgz
 USE_LINUX=	xorglibs
+
 NO_BUILD=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
