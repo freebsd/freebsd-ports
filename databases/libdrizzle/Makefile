@@ -11,13 +11,11 @@ WWW=		https://launchpad.net/libdrizzle
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES
 OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool
+USES=		gmake libtool sqlite
 CONFIGURE_ARGS+=--enable-libsqlite3
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

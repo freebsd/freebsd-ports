@@ -180,7 +180,7 @@ ISO9660_LIB_DEPENDS=	libiso9660.so:sysutils/libcdio
 
 # Database plugins
 SQLITE3_MESON_ENABLED=	sqlite
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+SQLITE3_USES=		sqlite
 PROXYDB_MESON_ENABLED=	libmpdclient
 PROXYDB_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 

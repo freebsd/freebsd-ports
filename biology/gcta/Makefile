@@ -15,10 +15,9 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		spectra>0:math/spectra
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libopenblas.so:math/openblas \
-		libsqlite3.so:databases/sqlite3 \
 		libzstd.so:archivers/zstd
 
-USES=		cmake eigen:3 localbase:ldflags
+USES=		cmake eigen:3 localbase:ldflags sqlite
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	jianyangqt

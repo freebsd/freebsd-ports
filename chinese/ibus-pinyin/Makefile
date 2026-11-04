@@ -12,11 +12,10 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxdg>0:devel/py-pyxdg@${PY_FLAVOR} \
 		${LOCALBASE}/share/gir-1.0/IBus-1.0.gir:textproc/ibus
 LIB_DEPENDS=	libpyzy-1.0.so:chinese/pyzy \
-		libibus-1.0.so:textproc/ibus \
-		libsqlite3.so:databases/sqlite3
+		libibus-1.0.so:textproc/ibus
 
 USES=		autoreconf compiler:c++11-lib gettext gmake gnome libtool \
-		pkgconfig python
+		pkgconfig python sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	ibus
 USE_GNOME=	glib20 intltool

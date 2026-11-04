@@ -26,13 +26,13 @@ LIB_DEPENDS=	libdw.so:devel/elfutils \
 		liblzo2.so:archivers/lzo2 \
 		libnghttp2.so:www/libnghttp2 \
 		libpcre2-8.so:devel/pcre2 \
-		libsqlite3.so:databases/sqlite3 \
 		libuv.so:devel/libuv \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-JSON>=0:converters/p5-JSON
 
-USES=		compiler:c++14-lang gmake localbase:ldflags perl5 python shebangfix
+USES=		compiler:c++14-lang gmake localbase:ldflags perl5 python \
+		shebangfix sqlite
 USE_LDCONFIG=	${PREFIX}/lib/ncbi-tools++
 
 SHEBANG_FILES=	src/app/blast/cleanup-blastdb-volumes.py \

@@ -46,7 +46,7 @@ OPENSSL_USES=	ssl
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+SQLITE_USES=		sqlite
 XMLRPC_LIB_DEPENDS=	libxmlrpc.so:net/xmlrpc-c
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2

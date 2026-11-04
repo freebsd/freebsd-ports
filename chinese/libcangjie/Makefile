@@ -11,11 +11,10 @@ WWW=		https://github.com/Cangjians/libcangjie
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3		\
-		libfreetype.so:print/freetype2          \
+LIB_DEPENDS=	libfreetype.so:print/freetype2          \
 		libdbus-1.so:devel/dbus
 
-USES=		autoreconf gmake libtool localbase pkgconfig sqlite xorg
+USES=		autoreconf gmake libtool localbase pkgconfig sqlite xorg sqlite
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xi

@@ -18,14 +18,13 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libmp++.so:math/mppp \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
-		libsqlite3.so:databases/sqlite3 \
 		libtbb.so:devel/onetbb \
 		libsleef.so:math/sleef \
 		libspdlog.so:devel/spdlog
 TEST_DEPENDS=	xtensor>0:math/xtensor \
 		xtensor-blas>0:math/xtensor-blas
 
-USES=		cmake:testing compiler:c++20-lang llvm:min=18,build,run ssl
+USES=		cmake:testing compiler:c++20-lang llvm:min=18,build,run sqlite ssl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

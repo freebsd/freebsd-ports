@@ -11,9 +11,7 @@ WWW=		https://www.sqlite.org/
 
 LICENSE=	PD
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-
-USES=		tcl:tea
+USES=		sqlite tcl:tea
 
 MAKE_ENV+=	STRIPPROG=${STRIP_CMD}
 

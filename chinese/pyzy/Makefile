@@ -9,10 +9,8 @@ WWW=		https://github.com/pyzy/pyzy
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-
 USES=		autoreconf compiler:c++11-lang gettext-runtime gmake gnome \
-		libtool pkgconfig python:build shebangfix
+		libtool pkgconfig python:build shebangfix sqlite
 SHEBANG_FILES=	data/db/android/create_db.py
 USE_GITHUB=	yes
 GH_TAGNAME=	6d9c3cd

@@ -69,7 +69,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:databases/libdbi-drivers
 CONFIGURE_ARGS+=	--with-db-server=pgsql
 
 .elif ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
+USES+=			sqlite
 # If libdbi-drivers has been built without SQLite driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdsqlite3.so)
 IGNORE=		rebuild databases/libdbi-drivers with SQLite support

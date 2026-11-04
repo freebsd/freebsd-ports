@@ -13,9 +13,7 @@ LICENSE=	APACHE20 BSD3CLAUSE NCSA
 LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-
-USES=		cmake
+USES=		cmake sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple

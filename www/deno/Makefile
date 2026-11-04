@@ -19,11 +19,10 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdeflate.so:archivers/libdeflate \
 		libffi.so:devel/libffi \
 		liblcms2.so:graphics/lcms2 \
-		libsqlite3.so:databases/sqlite3 \
 		libzstd.so:archivers/zstd
 
 USES=		cargo cpe gmake llvm:min=21,build localbase:ldflags ninja:build \
-		pkgconfig python:build
+		pkgconfig python:build sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 GH_TUPLE=	denoland:deno_lsp_benchdata:a787434:denolsp/tests/bench/testdata/lsp_benchdata \

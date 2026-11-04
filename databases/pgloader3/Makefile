@@ -143,11 +143,10 @@ WWW=		https://pgloader.io
 LICENSE=	PostgreSQL
 
 BUILD_DEPENDS=	sbcl:lang/sbcl
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
-		libtdsodbc.so:databases/freetds \
+LIB_DEPENDS=	libtdsodbc.so:databases/freetds \
 		libzstd.so:archivers/zstd
 
-USES=		gmake
+USES=		gmake sqlite
 MY_QLB_VER=	version-2015-01-28
 MY_QL_VER=	version-2021-02-13
 MY_QL_SW=	build/quicklisp/dists/quicklisp/software

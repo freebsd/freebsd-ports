@@ -11,10 +11,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
-		librsync.so:net/librsync \
-		libsqlite3.so:databases/sqlite3
+		librsync.so:net/librsync
 
-USES=		autoreconf cpe pkgconfig shebangfix
+USES=		autoreconf cpe pkgconfig shebangfix sqlite
 CPE_VENDOR=	linbit
 USE_GITHUB=	yes
 GH_ACCOUNT=	LINBIT

@@ -102,8 +102,8 @@ ORACLE_CONFIGURE_ENABLE=	oracle
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE3}
-LIB_DEPENDS+=		libgdbm.so:databases/gdbm \
-			libsqlite3.so:databases/sqlite3
+LIB_DEPENDS+=		libgdbm.so:databases/gdbm
+USES+=			sqlite
 CONFIGURE_ARGS+=	--with-gdbm-prefix="${LOCALBASE}" \
 			--with-sqlite-prefix="${LOCALBASE}"
 TOSTRIP+=		libexec/sqlrelay/sqlrconnection_sqlite.so

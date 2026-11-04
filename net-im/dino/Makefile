@@ -21,12 +21,11 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 		libharfbuzz.so:print/harfbuzz \
 		libicuuc.so:devel/icu \
 		libsoup-3.0.so:devel/libsoup3 \
-		libsqlite3.so:databases/sqlite3 \
 		libsrtp2.so:net/libsrtp2 \
 		libvulkan.so:graphics/vulkan-loader
 
 USES=		meson cpe desktop-file-utils gettext-tools gnome localbase \
-		ninja pkgconfig vala:build
+		ninja pkgconfig sqlite vala:build
 
 USE_GITHUB=	yes
 

@@ -10,10 +10,9 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgd.so:graphics/gd \
-		libsqlite3.so:databases/sqlite3 \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c11 pkgconfig
+USES=		cmake compiler:c11 pkgconfig sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	minetest
 

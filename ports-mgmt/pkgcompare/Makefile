@@ -10,8 +10,9 @@ WWW=		https://github.com/waitman/pkg-compare
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN} \
-		libsqlite3.so:databases/sqlite3
+LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
+
+USES=		sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman

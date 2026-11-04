@@ -20,9 +20,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/bin/npm:www/npm \
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		esbuild:devel/esbuild
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-USES=		gmake nodejs:lts,build,run python:build
+USES=		gmake nodejs:lts,build,run python:build sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	louislam
 USE_RC_SUBR=	uptimekuma

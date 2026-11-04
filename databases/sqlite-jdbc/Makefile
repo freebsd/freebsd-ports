@@ -13,9 +13,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${JAVAJARDIR}/slf4j-api.jar:devel/slf4j
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-USES=		gmake java:build
+USES=		gmake java:build sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	xerial
 

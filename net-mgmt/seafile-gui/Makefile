@@ -13,12 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libseafile.so:net-mgmt/seafile-client \
-		libsqlite3.so:databases/sqlite3 \
 		libjansson.so:devel/jansson \
 		libevent.so:devel/libevent \
 		libuuid.so:misc/libuuid
 
-USES=		compiler:c++11-lang cmake gl gnome pkgconfig qt:6 shebangfix ssl
+USES=		compiler:c++11-lang cmake gl gnome pkgconfig qt:6 shebangfix \
+		sqlite ssl
 SHEBANG_FILES=	extensions/*.sh scripts/*.sh fsplugin/*.sh \
 		scripts/*.py
 

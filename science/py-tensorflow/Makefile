@@ -30,7 +30,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grpcio-tools>=1.22.0:devel/py-grpcio-tools
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libsnappy.so:archivers/snappy \
 		libabsl_base.so:devel/abseil \
-		libsqlite3.so:databases/sqlite3 \
 		libicuio.so:devel/icu \
 		libjsoncpp.so:devel/jsoncpp \
 		libprotobuf.so:devel/protobuf \
@@ -57,7 +56,7 @@ RUN_DEPENDS=	pybind11>=2.6.2:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0.3.1:math/py-ml-dtypes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opt-einsum>=3.3.0:math/py-opt-einsum@${PY_FLAVOR}
 
-USES=		java jpeg perl5 python shebangfix ssl
+USES=		java jpeg perl5 python shebangfix sqlite ssl
 JAVA_VERSION=	21
 JAVA_VENDOR=	openjdk
 USE_CXXSTD=	c++17

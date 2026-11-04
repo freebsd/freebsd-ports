@@ -152,7 +152,7 @@ CONFIGURE_ARGS+=--disable-idn
 .endif
 
 .if ${PORT_OPTIONS:MCAP}
-LIB_DEPENDS+=	libsqlite3.so:databases/sqlite3
+USES+=		sqlite
 CONFIGURE_ARGS+=--enable-cap
 PLIST_SUB+=	CAP=""
 .else

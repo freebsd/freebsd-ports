@@ -10,11 +10,10 @@ WWW=		https://firefox-source-docs.mozilla.org/security/nss/index.html
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libnspr4.so:devel/nspr \
-		libsqlite3.so:databases/sqlite3
+LIB_DEPENDS=	libnspr4.so:devel/nspr
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cpe gmake perl5
+USES=		cpe gmake perl5 sqlite
 
 WRKSRC_SUBDIR=	nss
 

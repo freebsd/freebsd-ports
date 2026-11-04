@@ -18,8 +18,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 BUILD_DEPENDS=	gdiff:textproc/diffutils \
 		doxygen:devel/doxygen \
 		erlang>=21.3:lang/erlang
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libavformat.so:multimedia/ffmpeg \
 		libpcre2-8.so:devel/pcre2 \
 		libspeexdsp.so:audio/speexdsp \
@@ -39,7 +38,8 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 RUN_DEPENDS=	erlang>=21.3:lang/erlang
 
 USES=		compiler:c11 cpe gmake iconv jpeg libedit autoreconf \
-		libtool lua:53 openal perl5 pkgconfig shebangfix ssl tar:xz
+		libtool lua:53 openal perl5 pkgconfig shebangfix ssl \
+		sqlite tar:xz
 JAVA_VERSION=	11
 
 USE_LDCONFIG=	yes

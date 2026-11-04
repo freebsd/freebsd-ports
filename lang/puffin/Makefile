@@ -13,10 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/nim/bin/nim:lang/nim
 LIB_DEPENDS=	libsodium.so:security/libsodium \
-		libsqlite3.so:databases/sqlite3 \
 		libzstd.so:archivers/zstd
 
-USES=		gmake pkgconfig ssl
+USES=		gmake pkgconfig ssl sqlite
 
 MAKE_ARGS=	AWKTUA_WITH_TRACE=1 \
 		MANDIR=${PREFIX}/share/man \

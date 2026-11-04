@@ -29,14 +29,14 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libsndfile.so:audio/libsndfile \
 		libsord-0.so:devel/sord \
 		libsoxr.so:audio/libsoxr \
-		libsqlite3.so:databases/sqlite3 \
 		libsratom-0.so:audio/sratom \
 		libsuil-0.so:audio/suil \
 		libuuid.so:misc/libuuid \
 		libwavpack.so:audio/wavpack
 
 USES=		cmake compiler:c++20-lang cpe desktop-file-utils \
-		gettext-runtime gnome python:build pkgconfig shared-mime-info
+		gettext-runtime gnome python:build pkgconfig shared-mime-info \
+		sqlite
 CPE_VENDOR=	audacityteam
 
 USE_GITHUB=	yes

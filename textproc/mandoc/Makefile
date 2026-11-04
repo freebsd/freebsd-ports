@@ -12,7 +12,7 @@ WWW=		https://mandoc.bsd.lv/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+USES=		sqlite
 
 EXAMPLESDIR=	${PREFIX}/share/examples/mandoc
 
