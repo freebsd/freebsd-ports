@@ -335,6 +335,8 @@ FreeCAD/Mod/BIM/bimtests/TestArchWallGui.py
 FreeCAD/Mod/BIM/bimtests/TestArchWindow.py
 FreeCAD/Mod/BIM/bimtests/TestArchWindowGui.py
 FreeCAD/Mod/BIM/bimtests/TestBimTrimexGui.py
+FreeCAD/Mod/BIM/bimtests/TestNativeIfc.py
+FreeCAD/Mod/BIM/bimtests/TestNativeIfcGui.py
 FreeCAD/Mod/BIM/bimtests/TestWebGLExport.py
 FreeCAD/Mod/BIM/bimtests/TestWebGLExportGui.py
 FreeCAD/Mod/BIM/bimtests/fixtures/BimFixtures.py
@@ -376,7 +378,6 @@ FreeCAD/Mod/BIM/nativeifc/ifc_observer.py
 FreeCAD/Mod/BIM/nativeifc/ifc_openshell.py
 FreeCAD/Mod/BIM/nativeifc/ifc_performance_test.py
 FreeCAD/Mod/BIM/nativeifc/ifc_psets.py
-FreeCAD/Mod/BIM/nativeifc/ifc_selftest.py
 FreeCAD/Mod/BIM/nativeifc/ifc_status.py
 FreeCAD/Mod/BIM/nativeifc/ifc_tools.py
 FreeCAD/Mod/BIM/nativeifc/ifc_tree.py
@@ -412,7 +413,6 @@ FreeCAD/Mod/CAM/CAMTests/TestFanucPost.py
 FreeCAD/Mod/CAM/CAMTests/TestFeedsSpeedsResolver.py
 FreeCAD/Mod/CAM/CAMTests/TestFeedsSpeedsToolBitPresets.py
 FreeCAD/Mod/CAM/CAMTests/TestFeedsSpeedsToolController.py
-FreeCAD/Mod/CAM/CAMTests/TestGcodeProcessingUtils.py
 FreeCAD/Mod/CAM/CAMTests/TestGenericPost.py
 FreeCAD/Mod/CAM/CAMTests/TestGenericSheetCutting.py
 FreeCAD/Mod/CAM/CAMTests/TestGrblLegacyPost.py
@@ -730,7 +730,6 @@ FreeCAD/Mod/CAM/Path/Op/__init__.py
 FreeCAD/Mod/CAM/Path/Post/CAMErrors.py
 FreeCAD/Mod/CAM/Path/Post/Command.py
 FreeCAD/Mod/CAM/Path/Post/DrillCycleExpander.py
-FreeCAD/Mod/CAM/Path/Post/GcodeProcessingUtils.py
 FreeCAD/Mod/CAM/Path/Post/Gui/DlgPostProcess.py
 FreeCAD/Mod/CAM/Path/Post/Gui/__init__.py
 FreeCAD/Mod/CAM/Path/Post/PathOptimizationUtils.py
@@ -1855,7 +1854,16 @@ FreeCAD/Mod/Help/default.css
 FreeCAD/Mod/Help/dlgPreferencesHelp.ui
 FreeCAD/Mod/Import/Init.py
 FreeCAD/Mod/Import/InitGui.py
+FreeCAD/Mod/Import/TestImport.py
 FreeCAD/Mod/Import/TestImportGui.py
+FreeCAD/Mod/Import/importtests/TestImportBase.py
+FreeCAD/Mod/Import/importtests/TestImportBaseGui.py
+FreeCAD/Mod/Import/importtests/TestImportDXF.py
+FreeCAD/Mod/Import/importtests/TestImportStepGui.py
+FreeCAD/Mod/Import/importtests/__init__.py
+FreeCAD/Mod/Import/importtests/fixtures/README.md
+FreeCAD/Mod/Import/importtests/fixtures/__init__.py
+FreeCAD/Mod/Import/importtests/fixtures/rectangle_lines.dxf
 FreeCAD/Mod/Import/stepZ.py
 FreeCAD/Mod/Inspection/Init.py
 FreeCAD/Mod/Inspection/InitGui.py
@@ -2085,6 +2093,7 @@ FreeCAD/Mod/Sketcher/ProfileLib/__init__.py
 FreeCAD/Mod/Sketcher/Profiles.py
 FreeCAD/Mod/Sketcher/SketcherExample.py
 FreeCAD/Mod/Sketcher/SketcherTests/GuiTestCase.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestCarbonCopyModelTreeDragging.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestCoincidentCommandGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestConstraintCommandsGui.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestConstraintPreselectionGui.py
@@ -3735,11 +3744,6 @@ FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/de/A2_Landscape_ISO7200_DE.sv
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/de/A3_Landscape_ISO7200_DE.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/de/A4_Landscape_ISO7200_DE.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/de/A4_Portrait_ISO7200_DE.svg
-FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/es-AR/A0.svg
-FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/es-AR/A1.svg
-FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/es-AR/A2.svg
-FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/es-AR/A3.svg
-FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/es-AR/A4.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/fi/A3_Landscape_SFS_ISO.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/fi/A4_Landscape_SFS_ISO.svg
 FreeCAD/share/Mod/TechDraw/Templates/ISO/localized/fi/A4_Portrait_SFS_ISO.svg
