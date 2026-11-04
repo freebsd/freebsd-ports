@@ -1,6 +1,6 @@
 PORTNAME=	hypre
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,12 +56,6 @@ OPENMPI_BROKEN=		doesn't switch to openmpi in cmake build, see https://github.co
 
 PORTDOCS=	*
 
-xpost-install:
-	${MV} ${STAGEDIR}${PREFIX}/lib/libHYPRE.so	\
-		${STAGEDIR}${PREFIX}/lib/libHYPRE.so.0
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libHYPRE.so.0	\
-		${STAGEDIR}${PREFIX}/lib/libHYPRE.so
-
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} usr-manual ${STAGEDIR}${DOCSDIR}
@@ -85,6 +79,6 @@ post-test: # run tests; unclear how to run tests, see https://github.com/hypre-s
 # it invokes shell scripts with a hardcoded #!/bin/bash shebang, a path that
 # does not exist on FreeBSD (bash is installed under ${LOCALBASE}/bin).
 
-# tests as of 3.2.0: ij -solver 2 (DS-PCG) completes successfully
+# tests as of 3.2.1: ij -solver 2 (DS-PCG) completes successfully
 
 .include <bsd.port.mk>
