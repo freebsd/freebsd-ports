@@ -21,6 +21,8 @@ libdata/pkgconfig/bosd.pc
 %%DATADIR%%/tile-bottom-left.png
 %%DATADIR%%/tile-bottom.png
 %%DATADIR%%/tile-bottom-right.png
+%%DATADIR%%/tile-desk-next.png
+%%DATADIR%%/tile-desk-prev.png
 %%DATADIR%%/tile-down.png
 %%DATADIR%%/tile-float.png
 %%DATADIR%%/tile-insert.png
