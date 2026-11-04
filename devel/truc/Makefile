@@ -1,6 +1,6 @@
 PORTNAME=	truc
 PORTVERSION=	0.12.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TRUC%20Testing%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -8,6 +8,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	jsi@jules.de
 COMMENT=	Web-based tool for requirement and use case tracking
 WWW=		https://sourceforge.net/projects/truc/
+
+DEPRECATED=	Abandoned upstream, no longer developed
+EXPIRATION_DATE=	2027-02-28
 
 NO_BUILD=	yes
 USE_PHP=	mysqli gd
