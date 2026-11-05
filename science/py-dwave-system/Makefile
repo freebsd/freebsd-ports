@@ -1,5 +1,5 @@
 PORTNAME=	dwave-system
-DISTVERSION=	1.36.0
+DISTVERSION=	1.37.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.20:science/py-dimod@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dwave-cloud-client>=0.12.0:science/py-dwave-cloud-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dwave-cloud-client>=0.14.1:science/py-dwave-cloud-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-graphs>=1.0.0:science/py-dwave-graphs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-optimization>=0.6.6:science/py-dwave-optimization@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dwave-preprocessing>=0.5.0:science/py-dwave-preprocessing@${PY_FLAVOR} \
@@ -45,6 +45,6 @@ post-install:
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__init__.py \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__pycache__
 
-# tests as of 1.36.0: 498 tests, OK (skipped=31) in 7.12s
+# tests as of 1.37.0: 516 tests, OK (skipped=32) in 7.73s
 
 .include <bsd.port.mk>
