@@ -1,3 +1,30 @@
+  <vuln vid="117b053d-d8e3-11f1-985e-901b0edee044">
+    <topic>anki -- Malicious APKG can lead to arbitrary code execution via iframes</topic>
+    <affects>
+    <package>
+      <name>anki</name>
+      <range><lt>26.09.4</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Anki developers reports:</p>
+	<blockquote cite="https://github.com/ankitects/anki/security/advisories/GHSA-j9v5-m549-cg6c">
+	<p>On Anki Desktop, a crafted APKG can execute an arbitrary executable
+	after either clicking Show in the import result, opening the imported deck or
+	viewing a note in the editor.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/ankitects/anki/security/advisories/GHSA-j9v5-m549-cg6c</url>
+    </references>
+    <dates>
+      <discovery>2026-11-04</discovery>
+      <entry>2026-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="923b5da5-d8db-11f1-8d43-18cf5efc6bb4">
     <topic>openvox -- Authenticated RCE on OpenVox server via Event Deserialization</topic>
     <affects>
