@@ -4,7 +4,7 @@
                  if (result.getResult().get().getExitValue() == 0 && stdout.isEmpty() == false) {
                      _defaultParallel = Integer.parseInt(stdout);
                  }
-+            }  else if (isFreeBSD(project.getProviders())) {
++            } else if (isFreeBSD(project.getProviders())) {
 +                var result = project.getProviders().exec(execSpec -> {
 +                    execSpec.commandLine("sysctl", "-n", "kern.smp.cores");
 +                    execSpec.setIgnoreExitValue(true);
