@@ -1,5 +1,5 @@
 PORTNAME=	pysubs2
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,6 @@ NO_ARCH=	yes
 
 TEST_ARGS=	--disable-plugin-autoload
 
-# tests as of 1.9.0: 144 passed, 3 warnings in 0.32s
+# tests as of 1.9.1: 145 passed, 3 warnings in 0.50s
 
 .include <bsd.port.mk>
