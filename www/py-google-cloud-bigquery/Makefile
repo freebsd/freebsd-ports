@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-bigquery
-DISTVERSION=	3.46.1
+DISTVERSION=	3.47.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,6 +31,6 @@ NO_ARCH=	yes
 TEST_WRKSRC=	${WRKSRC}/tests/unit
 TEST_ARGS=	--disable-plugin-autoload
 
-# tests as of 3.46.1: 1 skipped, 3 errors in 1.99s (pyarrow import fails: /usr/local/lib/libaws-c-s3.so.1.3: Undefined symbol "aws_file_close_fd")
+# tests as of 3.47.0: 41 failed, 2722 passed, 113 skipped in 57.70s (pyarrow/pandas integration failures)
 
 .include <bsd.port.mk>
