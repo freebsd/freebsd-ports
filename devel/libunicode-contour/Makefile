@@ -1,6 +1,6 @@
 PORTNAME=	libunicode
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.4
+DISTVERSION=	0.9.5
 CATEGORIES=	devel
 MASTER_SITES=	https://www.unicode.org/Public/${UCD_VERSION}/ucd/
 PKGNAMESUFFIX=	-contour
