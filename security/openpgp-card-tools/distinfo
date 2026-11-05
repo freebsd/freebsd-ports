@@ -1,6 +1,4 @@
-TIMESTAMP = 1793034983
-SHA256 (openpgp-card-tools-v0.11.13.tar.gz) = bf39f8fd527ed99b361c173833811efa8e843032f4ca974f9e7c441b7f21edd1
-SIZE (openpgp-card-tools-v0.11.13.tar.gz) = 99074
+TIMESTAMP = 1793837960
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aead-0.5.2.crate) = d122413f284cf2d62fb1b7db97e02edb8cda96d769b16e443a4f6195e35662b0
@@ -739,3 +737,5 @@ SHA256 (rust/crates/zlib-rs-0.6.6.crate) = b142a20ec14a91d5bc708c1dc21b080c55011
 SIZE (rust/crates/zlib-rs-0.6.6.crate) = 215496
 SHA256 (rust/crates/zmij-1.0.23.crate) = 29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b
 SIZE (rust/crates/zmij-1.0.23.crate) = 28612
+SHA256 (openpgp-card-openpgp-card-tools-v0.11.13_FJ0.tar.gz) = bf39f8fd527ed99b361c173833811efa8e843032f4ca974f9e7c441b7f21edd1
+SIZE (openpgp-card-openpgp-card-tools-v0.11.13_FJ0.tar.gz) = 99074

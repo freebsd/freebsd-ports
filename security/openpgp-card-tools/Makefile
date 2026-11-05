@@ -2,9 +2,6 @@ PORTNAME=	openpgp-card-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.13
 CATEGORIES=	security
-MASTER_SITES=	https://codeberg.org/openpgp-card/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
-# XXX Teach USES=cargo to not override default DISTFILES
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	christian@hofstede.de
 COMMENT=	CLI tool for interacting with OpenPGP cards
@@ -18,8 +15,8 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=		cargo pkgconfig
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_FORGEJO=	yes
+FJ_ACCOUNT=	openpgp-card
 
 PORTDOCS=	README.md scripting.md
 
