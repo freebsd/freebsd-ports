@@ -33,6 +33,9 @@ post-patch:
 		-e 's,"2\.4" "2\.3" "2\.2" "2\.1",${PYTHON_VERSION:S/^python//},g;' \
 			${WRKSRC}/configure
 
+pre-configure:
+	${CP} ${TEMPLATES}/config.guess ${TEMPLATES}/config.sub ${WRKSRC}
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/SQLRelay/CSQLRelay*.so
 
