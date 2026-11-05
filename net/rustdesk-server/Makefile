@@ -10,6 +10,8 @@ WWW=		https://rustdesk.com/server/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libzstd.so:archivers/zstd
+
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	rustdesk
