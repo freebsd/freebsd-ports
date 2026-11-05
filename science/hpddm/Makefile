@@ -1,7 +1,7 @@
 PORTNAME=	HPDDM
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,7 +19,7 @@ PY_DEPENDS=	${MPI4PY}	\
 		${PYTHON_PKGNAMEPREFIX}numpy>=2:math/py-numpy@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 
-USES=		blaslapack:openblas fortran gmake mpi:openmpi python shebangfix
+USES=		blaslapack:openblas fortran gmake mpi python shebangfix
 SHEBANG_FILES=	examples/payload.sh
 SHEBANG_GLOB=	*.py
 
@@ -28,8 +28,9 @@ GH_ACCOUNT=	${PORTNAME:tl}
 GH_PROJECT=	${GH_ACCOUNT}
 
 # HPDDM.hpp assumes ESSL-style Fortran symbols (no underscore) on PowerPC
-CXXFLAGS+=	-std=c++11 -fPIC -DAdd_
-CFLAGS+=	-std=c99
+CXXFLAGS+=	-std=c++11 -fPIC -DAdd_ -I${MPI_HOME}/include
+CFLAGS+=	-std=c99 -I${MPI_HOME}/include
+LDFLAGS+=	-L${MPI_HOME}/lib
 USE_LDCONFIG=	yes
 
 # Remark: set OMPI_FC for OpenMPI or MPICH_F90 for MPICH
@@ -50,9 +51,9 @@ OPTIONS_RADIO=	SOLVER
 OPTIONS_RADIO_SOLVER=	MUMPS SUITESPARSE
 OPTIONS_DEFAULT=	MUMPS
 
-MUMPS_DESC=	Use MUMPS as the direct solver
-MUMPS_LIB_DEPENDS=	libcmumps.so:math/mumps-edf
-MUMPS_MAKE_ENV=	SOLVER=MUMPS SUBSOLVER=MUMPS
+MUMPS_DESC=		Use MUMPS as the direct solver
+MUMPS_LIB_DEPENDS=	libcmumps.so:math/mumps
+MUMPS_MAKE_ENV=		SOLVER=MUMPS SUBSOLVER=MUMPS
 
 SUITESPARSE_DESC=	Prefer MFPACK of SuiteSparse
 SUITESPARSE_LIB_DEPENDS=libumfpack.so:math/suitesparse-umfpack
