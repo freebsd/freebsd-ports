@@ -488,6 +488,7 @@
     SUBDIR += cmph
     SUBDIR += coccinelle
     SUBDIR += cocogitto
+    SUBDIR += codeaster_devtools
     SUBDIR += codebase-memory-mcp
     SUBDIR += codeblocks
     SUBDIR += codemark

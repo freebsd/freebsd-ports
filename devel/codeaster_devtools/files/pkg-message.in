@@ -1,0 +1,6 @@
+This port has been installed under %%INSTDIR%%.
+
+Add these values to your environment (for example in your ``~/.bahsrc``):
+
+    export PATH=%%INSTDIR%%/bin:$PATH
+    export LD_LIBRARY_PATH=%%INSTDIR%%/lib:$LD_LIBRARY_PATH
