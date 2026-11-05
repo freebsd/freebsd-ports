@@ -384,7 +384,6 @@ include/code_saturne/cs_sles_default.h
 include/code_saturne/cs_sles_hypre.h
 include/code_saturne/cs_sles_it.h
 include/code_saturne/cs_sles_it_priv.h
-include/code_saturne/cs_sles_mumps.h
 include/code_saturne/cs_sles_pc.h
 include/code_saturne/cs_sles_pc_priv.h
 include/code_saturne/cs_sles_petsc.h

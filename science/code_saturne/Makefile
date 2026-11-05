@@ -1,6 +1,6 @@
 PORTNAME=	code_saturne
 PORTVERSION=	8.1.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	science parallel
 MASTER_SITES=	https://www.code-saturne.org/releases/
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 		xterm:x11/xterm
 
 USES=		autoreconf bison blaslapack compiler:c11 fortran gettext gnome gmake \
-		iconv localbase libtool mpi:openmpi pyqt:5 python shebangfix xorg
+		iconv localbase libtool mpi pyqt:5 python shebangfix xorg
 USE_GNOME=	libxml2
 USE_PYQT=	pyqt5
 USE_XORG=	x11
