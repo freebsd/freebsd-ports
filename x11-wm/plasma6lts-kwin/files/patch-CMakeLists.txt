@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2026-03-03 09:32:10 UTC
++++ CMakeLists.txt
+@@ -385,6 +385,12 @@ add_feature_info(libevdev libevdev_FOUND "Required for
+ pkg_check_modules(libevdev IMPORTED_TARGET libevdev)
+ add_feature_info(libevdev libevdev_FOUND "Required for game controller support")
+ 
++find_package(Inotify)
++set_package_properties(Inotify PROPERTIES
++    TYPE REQUIRED
++    PURPOSE "Required for game controller support"
++)
++
+ ecm_find_qmlmodule(QtQuick 2.3)
+ ecm_find_qmlmodule(QtQuick.Controls 2.15)
+ ecm_find_qmlmodule(QtQuick.Layouts 1.3)
