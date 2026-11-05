@@ -81,13 +81,15 @@ def extract_plist_sub(log_content):
     return sub_map
 
 def get_expanded_key(line, sub_map):
-    expanded = line.strip()
+    clean = line.strip()
+    
     for macro in sorted(sub_map.keys(), key=len, reverse=True):
-        if macro in expanded:
-            expanded = expanded.replace(macro, sub_map[macro]).replace("//", "/")
-    clean = re.sub(r"%%.*?%%", "", expanded)
+        if sub_map[macro] == "":
+            clean = clean.replace(macro, "")
+            
+    clean = clean.replace("%%", "~")
     clean = re.sub(r"@\w+\s+", "", clean)
-    return clean.strip().lstrip('/')
+    return clean.lstrip('/')
 
 def get_plist_paths(ports_tree_root, origin):
     """Uses make to resolve all PLIST paths, handling multiple space-separated plists."""
