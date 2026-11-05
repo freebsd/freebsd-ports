@@ -60,6 +60,7 @@
     SUBDIR += R-cran-filelock
     SUBDIR += R-cran-fontawesome
     SUBDIR += R-cran-foreach
+    SUBDIR += R-cran-furrr
     SUBDIR += R-cran-future
     SUBDIR += R-cran-future.apply
     SUBDIR += R-cran-gargle
