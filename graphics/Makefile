@@ -873,6 +873,7 @@
     SUBDIR += plantuml
     SUBDIR += plasma-kmod
     SUBDIR += plasma6-spectacle
+    SUBDIR += plasma6lts-spectacle
     SUBDIR += plotutils
     SUBDIR += plutosvg
     SUBDIR += plutovg

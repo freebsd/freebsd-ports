@@ -610,6 +610,9 @@
     SUBDIR += plasma6-ocean-sound-theme
     SUBDIR += plasma6-oxygen-sounds
     SUBDIR += plasma6-plasma-pa
+    SUBDIR += plasma6lts-kpipewire
+    SUBDIR += plasma6lts-ocean-sound-theme
+    SUBDIR += plasma6lts-plasma-pa
     SUBDIR += playgsf
     SUBDIR += playmidi
     SUBDIR += playumidi

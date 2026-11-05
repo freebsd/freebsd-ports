@@ -160,6 +160,7 @@
     SUBDIR += pkfonts400
     SUBDIR += pkfonts600
     SUBDIR += plasma6-print-manager
+    SUBDIR += plasma6lts-print-manager
     SUBDIR += plutobook
     SUBDIR += pnm2ppa
     SUBDIR += posterazor

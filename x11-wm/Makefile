@@ -95,6 +95,9 @@
     SUBDIR += plasma6-kdecoration
     SUBDIR += plasma6-kwin
     SUBDIR += plasma6-kwin-x11
+    SUBDIR += plasma6lts-kdecoration
+    SUBDIR += plasma6lts-kwin
+    SUBDIR += plasma6lts-kwin-x11
     SUBDIR += pwm
     SUBDIR += qtile
     SUBDIR += ratpoison

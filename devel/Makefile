@@ -4427,6 +4427,9 @@
     SUBDIR += plasma6-kwrited
     SUBDIR += plasma6-plasma-sdk
     SUBDIR += plasma6-plasma5support
+    SUBDIR += plasma6lts-kwrited
+    SUBDIR += plasma6lts-plasma-sdk
+    SUBDIR += plasma6lts-plasma5support
     SUBDIR += please
     SUBDIR += pmccabe
     SUBDIR += pmd
