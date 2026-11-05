@@ -1,6 +1,6 @@
 PORTNAME=	pastix
 PORTVERSION=	6.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	https://gitlab.inria.fr/solverstack/pastix/uploads/${GL_TAG}/
 
