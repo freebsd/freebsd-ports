@@ -1,7 +1,6 @@
 PORTNAME=	lean-ctx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.12.0
-PORTREVISION=	0
+DISTVERSION=	3.12.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +29,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yvgude
 
 WRKSRC_SUBDIR=	rust
+CARGO_INSTALL_PATH=	crates/lean-ctx
 
 CARGO_CRATES=	adler2-2.0.1 \
 		adobe-cmap-parser-0.4.1 \
@@ -87,7 +87,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		chacha20-0.10.2 \
 		chacha20poly1305-0.10.1 \
 		chrono-0.4.45 \
-		chrono-tz-0.10.4 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -320,8 +319,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pbkdf2-0.13.0 \
 		pdf-extract-0.12.0 \
 		percent-encoding-2.3.2 \
-		phf-0.12.1 \
-		phf_shared-0.12.1 \
 		pin-project-lite-0.2.17 \
 		pkcs8-0.10.2 \
 		pkcs8-0.11.0 \
@@ -430,7 +427,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		simdutf8-0.1.5 \
 		similar-2.7.0 \
 		similar-3.1.2 \
-		siphasher-1.0.4 \
 		slab-0.4.12 \
 		smallvec-1.15.2 \
 		socket2-0.6.5 \
