@@ -9,6 +9,7 @@ lib/libplasma-volume.so.%%KDE_PLASMA_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/private/volume/plasma-volume-declarative.qmltypes
 %%QT_QMLDIR%%/org/kde/plasma/private/volume/qmldir
 share/applications/kcm_pulseaudio.desktop
+share/config.kcfg/plasmapa.kcfg
 share/doc/HTML/ca/kcontrol/plasma-pa/index.cache.bz2
 share/doc/HTML/ca/kcontrol/plasma-pa/index.docbook
 share/doc/HTML/de/kcontrol/plasma-pa/index.cache.bz2
@@ -140,6 +141,8 @@ share/locale/ta/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/tr/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
+share/locale/ug/LC_MESSAGES/kcm_pulseaudio.mo
+share/locale/ug/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/uk/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_pulseaudio.mo

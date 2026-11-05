@@ -1,6 +1,5 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 COMMENT=	Easy to use, but flexible, Wayland Compositor
@@ -41,7 +40,6 @@ USE_KDE=	auth colorscheme config \
 USE_QT=		base declarative multimedia sensors tools wayland
 USE_XORG=	ice sm x11 xcb xext xi
 
-DATADIR=	${PREFIX}/share/kwin-wayland
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 SHEBANG_FILES=	src/plugins/strip-effect-metadata.py
 

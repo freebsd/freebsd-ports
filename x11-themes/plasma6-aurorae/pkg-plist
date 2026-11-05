@@ -59,8 +59,13 @@ share/locale/ro/LC_MESSAGES/aurorae.mo
 share/locale/ru/LC_MESSAGES/aurorae.mo
 share/locale/sk/LC_MESSAGES/aurorae.mo
 share/locale/sl/LC_MESSAGES/aurorae.mo
+share/locale/sr/LC_MESSAGES/aurorae.mo
+share/locale/sr@ijekavian/LC_MESSAGES/aurorae.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/aurorae.mo
+share/locale/sr@latin/LC_MESSAGES/aurorae.mo
 share/locale/sv/LC_MESSAGES/aurorae.mo
 share/locale/tr/LC_MESSAGES/aurorae.mo
+share/locale/ug/LC_MESSAGES/aurorae.mo
 share/locale/uk/LC_MESSAGES/aurorae.mo
 share/locale/zh_CN/LC_MESSAGES/aurorae.mo
 share/locale/zh_TW/LC_MESSAGES/aurorae.mo

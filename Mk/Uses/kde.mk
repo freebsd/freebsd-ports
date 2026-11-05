@@ -120,7 +120,7 @@ KDE_APPLICATIONS_VERSION?=	${KDE_APPLICATIONS6_VERSION}
 KDE_PIM_SHLIB_VER?=		${KDE_PIM6_SHLIB_VER}
 
 # Current KDE Plasma desktop.
-KDE_PLASMA6_VERSION?=		6.7.5
+KDE_PLASMA6_VERSION?=		6.8.2
 KDE_PLASMA6_BRANCH?=		stable
 
 # KDE Plasma 6 LTS
@@ -347,10 +347,10 @@ _USE_FRAMEWORKS_ALL=	${_USE_FRAMEWORKS${_KDE_VERSION}_ALL}
 _USE_PLASMA6_ALL=	activities activities-stats activitymanagerd \
 			aurorae breeze breeze-gtk decoration discover \
 			globalacceld infocenter kde-cli-tools \
-			kde-gtk-config kdeplasma-addons kgamma kmenuedit \
+			kde-gtk-config kdeplasma-addons kmenuedit \
 			knighttime \
 			kpipewire kscreen kscreenlocker ksshaskpass \
-			ksystemstats kwallet-pam kwin kwin-x11 kwrited \
+			ksystemstats kwallet-pam kwin kwrited \
 			layer-shell-qt libkscreen libksysguard libplasma \
 			milou ocean-sound-theme oxygen oxygen-sounds \
 			plasma-browser-integration plasma-desktop \
@@ -866,7 +866,7 @@ kde-kirigami-addons_PORT=	x11-toolkits/kirigami-addons-qt${_KDE_VERSION}
 kde-kirigami-addons_PATH=	${QT_QMLDIR}/org/kde/kirigamiaddons/components/libcomponentsplugin.so
 
 kde-globalacceld_PORT=		x11/plasma${_PLASMA_VER}-kglobalacceld
-kde-globalacceld_PATH=		${QT_PLUGINDIR}/org.kde.kglobalacceld.platforms/KGlobalAccelDXcb.so
+kde-globalacceld_PATH=		${KDE_PREFIX}/lib/libKGlobalAccelD.so.0
 
 kde-libplasma_PORT=		x11/plasma${_PLASMA_VER}-libplasma
 kde-libplasma_LIB=		libPlasma.so

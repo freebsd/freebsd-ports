@@ -1,6 +1,5 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	Various components for Plasma-based environment
@@ -19,13 +18,10 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \
 		libQCoro6Core.so:devel/qcoro
-RUN_DEPENDS=	kio-extras>=24.12.3:devel/kio-extras \
+RUN_DEPENDS=	accountsservice>0:sysutils/accountsservice \
+		kio-extras>=24.12.3:devel/kio-extras \
 		kio-fuse>=5.1.0_1:filesystems/kio-fuse \
-		mkfontscale:x11-fonts/mkfontscale \
 		oxygen-icons>=0:x11-themes/oxygen-icons \
-		xmessage:x11/xmessage \
-		xrdb:x11/xrdb \
-		xset:x11/xset
 
 USES=		cmake desktop-file-utils gettext gl kde:6 pkgconfig python \
 		qt:6 shebangfix tar:xz xorg
@@ -40,7 +36,7 @@ USE_KDE=	activities activities-stats archive attica auth baloo \
 		newstuff notifications package parts \
 		prison runner service solid sonnet \
 		statusnotifieritem svg syntaxhighlighting texteditor \
-		textwidgets userfeedback wallet wayland \
+		textwidgets union userfeedback wallet wayland \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build plasma-wayland-protocols:build
 USE_QT=		5compat base declarative location svg wayland

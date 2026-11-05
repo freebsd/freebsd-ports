@@ -12,6 +12,8 @@ share/applications/kcm_breezedecoration.desktop
 share/color-schemes/BreezeClassic.colors
 share/color-schemes/BreezeDark.colors
 share/color-schemes/BreezeLight.colors
+share/config.kcfg/breeze-decoration.kcfg
+share/config.kcfg/breeze.kcfg
 share/icons/Breeze_Light/cursors/00000000000000020006000e7e9ffc3f
 share/icons/Breeze_Light/cursors/00008160000006810000408080010102
 share/icons/Breeze_Light/cursors/03b6e0fcb3499374a867c041f52298f0
@@ -768,6 +770,8 @@ share/locale/tg/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/tg/LC_MESSAGES/breeze_style_config.mo
 share/locale/tr/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/tr/LC_MESSAGES/breeze_style_config.mo
+share/locale/ug/LC_MESSAGES/breeze_kwin_deco.mo
+share/locale/ug/LC_MESSAGES/breeze_style_config.mo
 share/locale/uk/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/uk/LC_MESSAGES/breeze_style_config.mo
 share/locale/zh_CN/LC_MESSAGES/breeze_kwin_deco.mo

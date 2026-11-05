@@ -6,14 +6,11 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library and components for secure lock screen architecture
 
 BUILD_DEPENDS=	ck-list-sessions:sysutils/consolekit2
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
-		libxcb-keysyms.so:x11/xcb-util-keysyms \
-		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	ck-list-sessions:sysutils/consolekit2 \
 		dbus-send:devel/dbus \
 		unix-selfauth-helper>=1.0:security/unix-selfauth-helper
 
-USES=		cmake gettext gl kde:6 pkgconfig qt:6 tar:xz xorg
+USES=		cmake gettext gl kde:6 pkgconfig qt:6 tar:xz
 USE_KDE=	colorscheme config configwidgets coreaddons crash globalaccel \
 		i18n idletime kcmutils kio layer-shell-qt libkscreen libplasma \
 		notifications package solid svg widgetsaddons windowsystem \
@@ -21,7 +18,6 @@ USE_KDE=	colorscheme config configwidgets coreaddons crash globalaccel \
 		ecm:build
 USE_GL=		gl opengl
 USE_QT=		base declarative
-USE_XORG=	x11 xcb xext xi
 
 SUB_FILES=	kde.pam
 

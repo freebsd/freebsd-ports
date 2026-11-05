@@ -47,7 +47,7 @@ PLIST_FILES=	${QT_PLUGINDIR}/styles/breeze5.so
 post-patch:
 # Avoid clash with Qt6 flavor
 	${REINPLACE_CMD} '/^build_colors_and_cursors/d' ${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD}  '/^install(FILES breeze.themerc/d' ${WRKSRC}/kstyle/CMakeLists.txt
+	${REINPLACE_CMD} '/^install(FILES breeze./d' ${WRKSRC}/kstyle/CMakeLists.txt
 .endif
 
 .include <bsd.port.mk>

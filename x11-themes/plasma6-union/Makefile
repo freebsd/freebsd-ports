@@ -1,6 +1,5 @@
 PORTNAME=	union
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,8 +12,6 @@ USE_GL=		gl opengl
 USE_KDE=	colorscheme config coreaddons \
 		guiaddons iconthemes kirigami2 \
 		ecm:build
-# Plasma components
-USE_KDE+=	breeze
 USE_QT=		base declarative shadertools
 
 .include <bsd.port.mk>

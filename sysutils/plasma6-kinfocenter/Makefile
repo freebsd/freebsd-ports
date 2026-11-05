@@ -16,7 +16,7 @@ USE_KDE=	auth colorscheme completion config configwidgets coreaddons \
 		widgetsaddons \
 		ecm:build \
 		kirigami2:run systemsettings:run
-USE_QT=		base declarative
+USE_QT=		base declarative graphs
 
 OPTIONS_DEFINE=		AUX_UTILS
 OPTIONS_DEFAULT=	AUX_UTILS
@@ -28,6 +28,7 @@ AUX_UTILS_RUN_DEPENDS=	clinfo:devel/clinfo \
 			lscpu:sysutils/lscpu \
 			pactl:audio/pulseaudio \
 			sensors:sysutils/sensors \
+			vainfo:multimedia/libva-utils \
 			vulkaninfo:graphics/vulkan-tools \
 			wayland-info:graphics/wayland-utils \
 			xdpyinfo:x11/xdpyinfo \

@@ -5,18 +5,13 @@ CATEGORIES=	x11 kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Plasma shell for desktop form factor
 
-BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
-		xf86-input-libinput>0:x11-drivers/xf86-input-libinput \
-		libinput>0:x11/libinput
+BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libicuuc.so:devel/icu \
 		libkaccounts6.so:net-im/kaccounts-integration \
 		liboauth2plugin.so:sysutils/signon-plugin-oauth2 \
 		libpackagekitqt6.so:ports-mgmt/packagekit-qt \
-		libwayland-client.so:graphics/wayland \
-		libxcb-util.so:x11/xcb-util \
-		libxkbcommon.so:x11/libxkbcommon \
-		libxkbfile.so:x11/libxkbfile
+		libwayland-client.so:graphics/wayland
 RUN_DEPENDS=	noto-emoji>0:x11-fonts/noto-emoji \
 		xdg-user-dir:devel/xdg-user-dirs
 
@@ -34,10 +29,9 @@ USE_KDE=	activities activities-stats attica baloo bookmarks \
 		kirigami-addons:run kirigami2:run kpipewire:run \
 		qqc2-desktop-style:run
 USE_QT=		5compat base declarative svg wayland
-USE_XORG=	x11 xcb xcursor xext xfixes xi xrender
+USE_XORG=	x11 xcb
 
-OPTIONS_DEFINE=		SDL X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=		SDL
 OPTIONS_GROUP=		IM
 IM_DESC=		Input Method Support
 OPTIONS_GROUP_IM=	IBUS SCIM
@@ -55,7 +49,5 @@ SDL_DESC=		Enable gamecontroller System Settings module
 SDL_USES=		sdl
 SDL_USE=		sdl=sdl2
 SDL_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_SDL2
-
-X11_RUN_DEPENDS=	xf86-input-libinput>0:x11-drivers/xf86-input-libinput
 
 .include <bsd.port.mk>

@@ -399,6 +399,11 @@ share/locale/tr/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
 share/locale/tr/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/tr/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/tr/LC_MESSAGES/plasmoidviewer.mo
+share/locale/ug/LC_MESSAGES/cuttlefish_editorplugin.mo
+share/locale/ug/LC_MESSAGES/iconexplorer.mo
+share/locale/ug/LC_MESSAGES/org.kde.plasma.lookandfeelexplorer.mo
+share/locale/ug/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
+share/locale/ug/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/ug/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/ug/LC_MESSAGES/plasmoidviewer.mo
 share/locale/uk/LC_MESSAGES/cuttlefish_editorplugin.mo
@@ -454,6 +459,7 @@ share/man/pt/man1/plasmoidviewer.1.gz
 share/man/pt_BR/man1/kqml.1.gz
 share/man/pt_BR/man1/plasmaengineexplorer.1.gz
 share/man/pt_BR/man1/plasmoidviewer.1.gz
+share/man/ru/man1/kqml.1.gz
 share/man/ru/man1/plasmaengineexplorer.1.gz
 share/man/ru/man1/plasmoidviewer.1.gz
 share/man/sl/man1/plasmaengineexplorer.1.gz
