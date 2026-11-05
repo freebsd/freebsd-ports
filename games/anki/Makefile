@@ -1,5 +1,5 @@
 PORTNAME=	anki
-DISTVERSION=	26.09.3
+DISTVERSION=	26.09.4
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 
@@ -120,7 +120,7 @@ NPM_CACHE_SETUP_CMD=	${SH} -c "${NPM_CMDNAME} config set enableGlobalCache false
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH=	29bb700b
+_MY_BUILDHASH=	c06370ff
 # Remove ${CARGO_BUILD_TARGET} from ${CARGO_ENV} to avoid problems with
 # hardcoded paths as the "runner" build system expects its components
 # in ${WRKSRC}/out/rust/debug
