@@ -27,6 +27,14 @@ PLIST_FILES=	bin/schemesh \
 		bin/countdown \
 		lib/schemesh/libschemesh_${DISTVERSION}.so
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+# lang/chez-scheme is the libffi-enabled portable bytecode variant there
+LIB_DEPENDS+=	libffi.so:devel/libffi
+LDFLAGS+=	-lffi
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,chezscheme,chez-scheme,' \
 		${WRKSRC}/utils/find_chez_scheme_dir.sh
