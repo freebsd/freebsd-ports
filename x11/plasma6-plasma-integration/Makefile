@@ -27,11 +27,6 @@ CMAKE_OFF=	${${FLAVOR}_CMAKE_OFF}
 
 PLIST=		${.CURDIR}/pkg-plist.${FLAVOR}
 
-# Sync Qt5 flavor with Qt6
-KDE_PLASMA_VERSION=	${KDE_PLASMA6_VERSION}
-PKGNAMEPREFIX?=		plasma6-
-DESCR=		${.CURDIR:H:H}/x11/plasma6-plasma/pkg-descr
-
 # Qt6 flavor
 qt6_USES=	kde:6 qt:6
 qt6_USE_KDE=	bookmarks breeze colorscheme completion config \
