@@ -1,14 +1,6 @@
---- plugins/obs-browser/cmake/os-linux.cmake.orig	2026-08-14 22:07:07 UTC
+--- plugins/obs-browser/cmake/os-linux.cmake.orig	2026-10-29 21:06:38 UTC
 +++ plugins/obs-browser/cmake/os-linux.cmake
-@@ -20,6 +20,7 @@ target_include_directories(browser-helpe
-                                                   "${CMAKE_CURRENT_SOURCE_DIR}/obs-browser-page")
- 
- target_link_libraries(browser-helper PRIVATE CEF::Wrapper CEF::Library)
-+target_compile_features(browser-helper PRIVATE cxx_std_20)
- 
- target_sources(obs-browser PRIVATE deps/ip-string-posix.cpp)
- 
-@@ -34,3 +35,11 @@ set_target_properties_obs(
+@@ -36,3 +36,11 @@ set_target_properties_obs(
               PREFIX ""
               OUTPUT_NAME obs-browser-page)
  # cmake-format: on

@@ -1,6 +1,6 @@
---- plugins/obs-browser/panel/browser-panel.cpp.orig	2026-08-14 22:07:07 UTC
+--- plugins/obs-browser/panel/browser-panel.cpp.orig	2026-10-29 21:06:38 UTC
 +++ plugins/obs-browser/panel/browser-panel.cpp
-@@ -233,7 +233,7 @@ void QCefWidgetInternal::closeBrowser()
+@@ -238,7 +238,7 @@ void QCefWidgetInternal::closeBrowser()
  	cefBrowser = nullptr;
  }
  
@@ -9,7 +9,7 @@
  static bool XWindowHasAtom(Display *display, Window w, Atom a)
  {
  	Atom type;
-@@ -341,7 +341,7 @@ void QCefWidgetInternal::Init()
+@@ -353,7 +353,7 @@ void QCefWidgetInternal::Init()
  								       cefBrowserSettings,
  								       CefRefPtr<CefDictionaryValue>(), rqc);
  

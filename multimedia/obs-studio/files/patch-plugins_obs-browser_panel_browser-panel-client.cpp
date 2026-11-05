@@ -1,6 +1,6 @@
---- plugins/obs-browser/panel/browser-panel-client.cpp.orig	2026-08-14 22:07:07 UTC
+--- plugins/obs-browser/panel/browser-panel-client.cpp.orig	2026-10-29 21:06:38 UTC
 +++ plugins/obs-browser/panel/browser-panel-client.cpp
-@@ -87,7 +87,7 @@ void QCefBrowserClient::OnTitleChange(Ce
+@@ -121,7 +121,7 @@ void QCefBrowserClient::OnTitleChange(CefRefPtr<CefBro
  		CefWindowHandle handl = browser->GetHost()->GetWindowHandle();
  		std::wstring str_title = newTitle;
  		SetWindowTextW((HWND)handl, str_title.c_str());

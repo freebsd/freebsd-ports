@@ -1,6 +1,6 @@
---- plugins/obs-browser/obs-browser-plugin.cpp.orig	2026-08-14 22:07:07 UTC
+--- plugins/obs-browser/obs-browser-plugin.cpp.orig	2026-10-29 21:06:38 UTC
 +++ plugins/obs-browser/obs-browser-plugin.cpp
-@@ -315,7 +315,7 @@ static void BrowserInit(void)
+@@ -333,7 +333,7 @@ static void BrowserInit(void)
  	settings.multi_threaded_message_loop = false;
  #endif
  
@@ -9,7 +9,7 @@
  	// Override locale path from OBS binary path to plugin binary path
  	string locales = obs_get_module_binary_path(obs_current_module());
  	locales = locales.substr(0, locales.find_last_of('/') + 1);
-@@ -686,7 +686,7 @@ static void check_hwaccel_support(void)
+@@ -716,7 +716,7 @@ static void check_hwaccel_support(void)
  		}
  	}
  }
