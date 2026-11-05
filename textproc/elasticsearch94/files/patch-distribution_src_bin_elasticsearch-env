@@ -1,0 +1,12 @@
+--- distribution/src/bin/elasticsearch-env.orig	2026-08-26 20:47:40 UTC
++++ distribution/src/bin/elasticsearch-env
+@@ -49,6 +49,9 @@ else
+   if [ "$(uname -s)" = "Darwin" ]; then
+     # macOS has a different structure
+     JAVA="$ES_HOME/jdk.app/Contents/Home/bin/java"
++  elif [ "$(uname -s)" = "FreeBSD" ]; then
++    LOCALBASE="$(sysctl -n user.localbase)"
++    JAVA="${LOCALBASE}/bin/java"
+   else
+     JAVA="$ES_HOME/jdk/bin/java"
+   fi
