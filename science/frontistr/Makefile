@@ -1,6 +1,6 @@
 PORTNAME=	FrontISTR
 PORTVERSION=	5.2
-PORTREVISION=	8
+PORTREVISION=	9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science cad
 
@@ -11,8 +11,8 @@ WWW=		https://gitlab.com/FrontISTR-Commons/FrontISTR
 LICENSE=	MIT
 
 LIB_DEPENDS=	libmetis.so:math/metis		\
-		libscotch.so:cad/scotch-edf		\
-		libcmumps.so.5:math/mumps-edf	\
+		libscotch.so:cad/scotch		\
+		libcmumps.so.5:math/mumps	\
 		libscalapack.so:math/scalapack
 TEST_DEPENDS=	bash:shells/bash	\
 		gawk:lang/gawk
