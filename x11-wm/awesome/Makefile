@@ -1,11 +1,11 @@
 PORTNAME=	awesome
 PORTVERSION=	4.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Highly configurable, next generation framework window manager
 WWW=		https://awesomewm.org/
 
