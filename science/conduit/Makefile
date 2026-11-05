@@ -1,7 +1,6 @@
 PORTNAME=	conduit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.9
-PORTREVISION=	1
+DISTVERSION=	0.9.10
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,6 +49,6 @@ OPENMPI_CMAKE_ON+=	-DMPI_C_COMPILER:PATH=${MPICC} \
 			-DMPI_CXX_COMPILER:PATH=${MPICXX} \
 			-DMPI_CXX_HEADER_DIR:PATH=${MPI_HOME}/include
 
-# tests as of 0.9.9: 100% tests passed, 0 tests failed out of 3
+# tests as of 0.9.10: 100% tests passed, 0 tests failed out of 3
 
 .include <bsd.port.mk>
