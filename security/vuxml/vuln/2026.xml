@@ -1,3 +1,51 @@
+  <vuln vid="1faea94f-d8fc-11f1-9968-3c7c3fba4204">
+    <topic>OpenEXR -- 3.4.17 fixes multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>openexr</name>
+	  <range><lt>3.4.17</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Cary Phillips reports:</p>
+	<blockquote cite="https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.17">
+	  <p>This version also addresses a regression introduced in v3.4.14 in reading deep images on
+	     big-endian hosts, due to a byte-order bug in the deep sample count table.
+	     Little-endian hosts are unaffected.</p>
+	  <ul>
+	    <li>CVE Pending (GHSA-WHF5-29MJ-GP53): Heap Out-of-Bounds Write via Signed Integer Overflow in DWAA/DWAB 'LossyDctDecoder.</li>
+	    <li>CVE Pending (GHSA-VP77-HHRC-M2C3): Subsampled chunk-height miscount: heap overflow in B44 encoder, NULL dereference in DWA decoder/encoder.</li>
+	    <li>CVE Pending (GHSA-RXWG-X3WX-PGFH): Heap out-of-bounds write via 32-bit tile-area integer overflow in 'DeepTiledOutputFile' (deep-image re-save path) — possible incomplete fix of PR #939.</li>
+	    <li>CVE Pending (GHSA-RJG8-982X-JHC2): Uninitialized Heap Memory Disclosure in DWA Decompression via Short zlib Stream Mapped to Success.</li>
+	    <li>CVE Pending (GHSA-J76P-H7GW-VMPF): Heap buffer overflow in the OpenEXR Python bindings when two RGB channel groups coalesce to the same key.</li>
+	    <li>CVE Pending (GHSA-G248-596F-9995): Unvalidated extra 'chlist' header attributes merged into 'Header::channels()' cause a heap overflow in 'run_fill'.</li>
+	    <li>CVE Pending (GHSA-FRX8-5P4H-J8M7): Heap OOB Write via Integer Overflow in B44 Chunk Unpacked-Size Computation — Remote Code Execution in OpenEXRCore.</li>
+	    <li>CVE Pending (GHSA-638X-X7MR-89XC): Out-of-bounds write at an attacker-chosen displacement in legacy Python 'InputFile.channel()'.</li>
+	    <li>CVE Pending (GHSA-3CP4-779M-H837): Use-after-free in OpenEXRCore 'exr_copy_unset_attributes()' when a channel name exceeds 31 bytes.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-WHF5-29MJ-GP53</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-VP77-HHRC-M2C3</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-RXWG-X3WX-PGFH</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-RJG8-982X-JHC2</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-J76P-H7GW-VMPF</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-G248-596F-9995</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-FRX8-5P4H-J8M7</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-638X-X7MR-89XC</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-3CP4-779M-H837</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.4.17</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/blob/v3.4.17/CHANGES.md#version-3417-october-30-2026</url>
+    </references>
+    <dates>
+      <discovery>2026-10-31</discovery>
+      <entry>2026-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2053672c-d8f6-11f1-9968-3c7c3fba4204">
     <topic>Gitea -- multiple vulnerabilities</topic>
     <affects>
