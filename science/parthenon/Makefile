@@ -1,7 +1,6 @@
 PORTNAME=	parthenon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	25.12-700 # includes latest kokkos release support
-DISTVERSIONSUFFIX=	-g2ddc3e3c3
+DISTVERSION=	26.10
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -58,5 +57,6 @@ HDF5_BROKEN=		configure fails: Both MPI and HDF5 are enabled but only a serial v
 # command-line argument parsing issue in this parthenon release)
 
 # tests as of 25.12-700: 95% tests passed, 6 tests failed out of 121 (2 tests timed out, others failed due to wrong kokkos argument, and missing HDF5 parallel support)
+# tests as of 26.10: ~96% tests passed, ~5 tests failed out of 141 (regression tests similar to 25.12-700)
 
 .include <bsd.port.mk>

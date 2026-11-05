@@ -165,5 +165,5 @@ lib/cmake/parthenon/parthenonConfig.cmake
 lib/cmake/parthenon/parthenonTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/parthenon/parthenonTargets.cmake
 lib/libparthenon.so
-lib/libparthenon.so.25.12
+lib/libparthenon.so.26.10
 @dir include/parthenon/pgen
