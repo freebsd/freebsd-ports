@@ -1,0 +1,13 @@
+--- Makefile.orig	2025-03-24 13:58:03 UTC
++++ Makefile
+@@ -14,8 +14,8 @@ EXTRALIBS = `$(CONFIG) --use-images --ldflags` -ldl -l
+ 
+ EXTRALIBS = `$(CONFIG) --use-images --ldflags` -ldl -lpthread -lz
+ 
+-CC = cc
+-CXX = c++
++CC ?= cc
++CXX ?= c++
+ CSRC = csrc
+ 
+ #DEBUG = -g

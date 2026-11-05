@@ -1,11 +1,24 @@
-SeaView is a multiple sequence alignment editor.
+SeaView is a multi-platform GUI for multiple sequence alignment and molecular
+phylogeny. You can align DNA/protein sequences from several organisms, and find
+out their relative positions in phylogenic tree.
 
-You can align DNA/protein sequences from several organisms, and find
-out their relative postions in phylogenic tree.
+* Reads and writes various file formats (NEXUS, MSF, CLUSTAL, FASTA, PHYLIP,
+  MASE, Newick) of DNA and protein sequences and of phylogenetic trees.
+* drives programs muscle or Clustal Omega for multiple sequence alignment, and
+  also allows to use any external alignment algorithm able to read and write
+  FASTA-formatted files.
+* Drives the Gblocks program to select blocks of evolutionarily conserved sites.
+* Computes phylogenetic trees by
+  - parsimony, using PHYLIP's dnapars/protpars algorithm
+  - distance, with NJ or BioNJ algorithms on a variety of evolutionary distances
+  - maximum likelihood, driving program PhyML 3.1
+* Can use the Transfer Bootstrap Expectation method to compute the bootstrap
+  support of PhyML and distance trees.
+* Uses the Treerecs method to reconcile gene and species trees.
+* Prints and draws phylogenetic trees on screen, SVG, PDF or PostScript files.
+* Allows to download sequences from EMBL/GenBank/UniProt using the Internet.
 
-Once SeaView is installed, you can open the on-line help window through
-the 'Help' button to learn how to use SeaView.
+Once SeaView is installed, you can open the on-line help window through the
+'Help' button to learn how to use SeaView.
 
-Example mase files can be found at:
-
-	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/
+Example MASE files are here: ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/
