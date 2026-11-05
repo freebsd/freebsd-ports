@@ -1,0 +1,16 @@
+--- catalo/wscript.orig	2026-09-11 16:05:37 UTC
++++ catalo/wscript
+@@ -156,6 +156,13 @@ def build_cata_ele(self, ojb, elem1, install_path):
+             for_catalo=True,
+         )
+ 
++    # Fix destdir
++    from waflib import Options
++    install_path = Utils.subst_vars(install_path, self.env)
++    destdir = getattr(Options.options, "destdir", None)
++    if destdir:
++        install_path = destdir + install_path
++    os.makedirs(install_path, exist_ok=True)
+     dest = osp.join(install_path, osp.basename(elem1.name))
+     shutil.copy(elem1path, dest)
+     os.chmod(dest, Utils.O644)

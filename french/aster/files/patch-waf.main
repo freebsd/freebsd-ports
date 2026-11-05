@@ -1,0 +1,20 @@
+--- waf.main.orig	2026-10-11 16:46:22 UTC
++++ waf.main
+@@ -108,12 +108,14 @@ detect_host()
+         printf cirrus
+     elif [ -f /projets/simumeca/gaia ]; then
+         printf gaia
+-    elif egrep -q "Scibian 10.0" /etc/issue; then
++    elif egrep -q "Scibian 10.0" /etc/issue 2>/dev/null; then
+         printf scibian10
+-    elif egrep -q "Scibian 9.0" /etc/issue; then
++    elif egrep -q "Scibian 9.0" /etc/issue 2>/dev/null; then
+         printf scibian9
+-    elif egrep -q "Calibre 9|Debian GNU/Linux 8" /etc/issue; then
++    elif egrep -q "Calibre 9|Debian GNU/Linux 8" /etc/issue 2>/dev/null; then
+         printf calibre9
++    else
++        printf %%opsys-arch%%
+     fi
+     printf ""
+ }

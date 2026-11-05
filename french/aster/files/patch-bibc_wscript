@@ -1,0 +1,14 @@
+--- bibc/wscript.orig	2026-09-11 16:05:37 UTC
++++ bibc/wscript
+@@ -143,6 +143,11 @@ def post_install_links(ctx):
+         return
+ 
+     asterlibdir = Path(ctx.env.ASTERLIBDIR)
++    # Fix destdir
++    from waflib import Options
++    destdir = getattr(Options.options, "destdir", None)
++    if destdir:
++        asterlibdir = Path(destdir + str(asterlibdir))
+ 
+     extlib = "so"
+     mods = ["aster", "aster_core", "aster_fonctions"]
