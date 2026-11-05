@@ -60,6 +60,7 @@
     SUBDIR += clhep
     SUBDIR += clipper
     SUBDIR += code_saturne
+    SUBDIR += codeaster-frontend
     SUBDIR += conduit
     SUBDIR += coordgenlibs
     SUBDIR += cp2k

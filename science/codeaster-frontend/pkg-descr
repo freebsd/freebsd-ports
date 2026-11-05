@@ -1,0 +1,5 @@
+This port provides the legacy code_aster frontend, named ASTK and the backend
+asrun used by astk and asterstudy.
+
+NB: If you want to call code_aster from scripts, you should use run_aster from
+your code_aster installation instead of asrun.
