@@ -5,6 +5,7 @@
     SUBDIR += amiwm
     SUBDIR += aphelia
     SUBDIR += awesome
+    SUBDIR += awesome-devel
     SUBDIR += awesome-vicious
     SUBDIR += bbkeys
     SUBDIR += bbpager
