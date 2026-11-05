@@ -11,6 +11,9 @@ MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	Wayland and X11 compositor for KDE Plasma Desktop
 WWW=		https://github.com/winft/theseus-ship
 
+DEPRECATED=	Depends on broken x11-toolkits/como
+EXPIRATION_DATE=	2026-11-30
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
