@@ -193,6 +193,7 @@
     SUBDIR += metaphysicl
     SUBDIR += mgis
     SUBDIR += minc-tools
+    SUBDIR += miss3d
     SUBDIR += mmdb2
     SUBDIR += mmg
     SUBDIR += mmtf-cpp
