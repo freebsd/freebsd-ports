@@ -1,0 +1,22 @@
+--- src/INTERP_KERNELTest/CMakeLists.txt.orig	2025-10-15 11:21:58 UTC
++++ src/INTERP_KERNELTest/CMakeLists.txt
+@@ -70,8 +70,7 @@ if(NOT MEDCOUPLING_MICROMED)
+ 
+   set(PerfTest_SOURCES PerfTest.cxx)
+   add_executable(PerfTest ${PerfTest_SOURCES})
+-  target_link_libraries(PerfTest InterpKernelTest ${CPPUNIT_LIBRARIES}
+-                        ${PLATFORM_LIBS})
++  target_link_libraries(PerfTest medcouplingcpp InterpKernelTest InterpKernelTestUtils ${CPPUNIT_LIBRARIES} ${PLATFORM_LIBS})
+   install(TARGETS PerfTest DESTINATION ${MEDCOUPLING_INSTALL_BINS})
+ endif(NOT MEDCOUPLING_MICROMED)
+ 
+@@ -87,8 +86,7 @@ add_executable(TestINTERP_KERNEL ${TestINTERP_KERNEL_S
+                       InterpKernelTestUtils)
+ 
+ add_executable(TestINTERP_KERNEL ${TestINTERP_KERNEL_SOURCES})
+-target_link_libraries(TestINTERP_KERNEL InterpKernelTest ${CPPUNIT_LIBRARIES}
+-                      ${PLATFORM_LIBS})
++target_link_libraries(TestINTERP_KERNEL medcouplingcpp InterpKernelTest InterpKernelTestUtils ${CPPUNIT_LIBRARIES} ${PLATFORM_LIBS})
+ add_test(TestINTERP_KERNEL TestINTERP_KERNEL)
+ salome_generate_tests_environment(tests_env)
+ set_tests_properties(TestINTERP_KERNEL PROPERTIES ENVIRONMENT "${tests_env}")

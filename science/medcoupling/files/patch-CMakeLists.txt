@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2025-10-15 11:21:58 UTC
++++ CMakeLists.txt
+@@ -18,7 +18,7 @@
+ # webmaster.salome@opencascade.com
+ #
+ 
+-cmake_minimum_required(VERSION 2.8.11 FATAL_ERROR)
++cmake_minimum_required(VERSION 3.5.0 FATAL_ERROR)
+ 
+ # Project name
+ # ============

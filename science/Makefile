@@ -187,6 +187,7 @@
     SUBDIR += mcxtrace
     SUBDIR += mcxtrace-comps
     SUBDIR += mdynamix
+    SUBDIR += medcoupling
     SUBDIR += medit
     SUBDIR += meep
     SUBDIR += metaphysicl

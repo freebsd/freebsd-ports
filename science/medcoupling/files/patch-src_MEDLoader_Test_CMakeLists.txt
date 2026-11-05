@@ -1,0 +1,11 @@
+--- src/MEDLoader/Test/CMakeLists.txt.orig	2025-10-15 11:21:58 UTC
++++ src/MEDLoader/Test/CMakeLists.txt
+@@ -39,7 +39,7 @@ add_executable(TestMEDLoader ${TestMEDLoader_SOURCES})
+ salome_generate_tests_environment(tests_env)
+ 
+ add_executable(TestMEDLoader ${TestMEDLoader_SOURCES})
+-target_link_libraries(TestMEDLoader medloader InterpKernelTestUtils
++target_link_libraries(TestMEDLoader medloader %%BUILDDIR%%/src/INTERP_KERNEL/libinterpkernel.so medloader InterpKernelTestUtils
+                       ${CPPUNIT_LIBRARIES} ${PLATFORM_LIBS})
+ 
+ install(TARGETS TestMEDLoader DESTINATION ${MEDCOUPLING_INSTALL_BINS})
