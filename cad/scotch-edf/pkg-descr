@@ -9,6 +9,3 @@ structural mechanics to operating systems or bio-chemistry.
 The SCOTCH distribution is a set of programs and libraries which implement the
 static mapping and sparse matrix reordering algorithms developed within the
 SCOTCH project.
-
-Note: this port does not follow upstream releases, it is indented to be used for
-Code_Aster.
