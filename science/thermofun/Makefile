@@ -1,11 +1,12 @@
 PORTNAME=	thermofun
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.3
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Code for calculating thermodynamic properties of materials
-WWW=		https://github.com/thermohub/thermofun/
+WWW=		https://thermohub.org/thermofun/thermofun/ \
+		https://github.com/thermohub/thermofun/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -30,7 +31,6 @@ OPTIONS_SUB=		yes
 PYTHON_USES=		python
 PYTHON_USE=		PYTHON=pytest
 PYTHON_CMAKE_BOOL=	TFUN_BUILD_PYTHON
-PYTHON_CMAKE_ON=	-DFREEBSD_PREFIX=${PREFIX}
 PYTHON_BUILD_DEPENDS=	pybind11>0:devel/pybind11
 
 TEST_ENV=	${MAKE_ENV} \
@@ -38,6 +38,6 @@ TEST_ENV=	${MAKE_ENV} \
 		LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib:${STAGEDIR}${LOCALBASE}/lib
 TEST_ARGS=	--disable-plugin-autoload
 
-# tests as of 0.7.1: 53 passed, 53 skipped in 0.48s
+# tests as of 0.7.3: 59 passed, 53 skipped in 0.66s
 
 .include <bsd.port.mk>

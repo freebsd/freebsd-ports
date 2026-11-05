@@ -1,6 +1,9 @@
---- python/CMakeLists.txt.orig	2026-10-05 10:38:56 UTC
+-- Patch python/CMakeLists.txt to install the Python module directly via CMake
+-- instead of invoking `pip install` during the install phase. This avoids
+-- downloading setuptools/wheel .whl files from PyPI during the FreeBSD build.
+--- python/CMakeLists.txt.orig	2026-11-05 00:44:12 UTC
 +++ python/CMakeLists.txt
-@@ -7,47 +7,16 @@ if(NOT DEFINED THERMOFUN_PYTHON_INSTALL_PREFIX)
+@@ -7,49 +7,16 @@ if(NOT DEFINED THERMOFUN_PYTHON_INSTALL_PREFIX)
  
  # Install where the python package is installed to CMAKE_INSTALL_PREFIX if not given
  if(NOT DEFINED THERMOFUN_PYTHON_INSTALL_PREFIX)
@@ -21,11 +24,12 @@
 -        COMMAND ${Python3_EXECUTABLE} -m pip install ${CMAKE_CURRENT_BINARY_DIR} -vv
 -        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 -"
+-COMPONENT Python
 +# Just install the shared object library built by pybind11 natively
 +install(TARGETS PyThermoFun
 +    DESTINATION "${THERMOFUN_PYTHON_INSTALL_PREFIX}/lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages/thermofun"
  )
--
+ 
 -else()
 -
 -# If the path is already in Windows format (with backslashes), it can't be added directly
@@ -49,8 +53,8 @@
 -        COMMAND ${Python3_EXECUTABLE} -m pip install --prefix \${THERMOFUN_PYTHON_INSTALL_PREFIX_NATIVE} ${CMAKE_CURRENT_BINARY_DIR} -vv
 -        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 -"
-+ 
-+# Install the Python source wrapper files natively 
+-COMPONENT Python
++# Install the Python source wrapper files natively
 +install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/thermofun/
 +        DESTINATION "${THERMOFUN_PYTHON_INSTALL_PREFIX}/lib/python${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}/site-packages/thermofun"
 +        FILES_MATCHING PATTERN "*.py"
