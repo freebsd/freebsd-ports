@@ -1,6 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.1
+DISTVERSION=	0.20.2
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -319,7 +319,6 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		is-docker-0.2.0 \
 		is-wsl-0.4.0 \
 		is_terminal_polyfill-1.70.2 \
-		itertools-0.10.5 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itertools-0.15.0 \
@@ -372,6 +371,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		log-0.4.34 \
 		loop9-0.1.5 \
 		lru-slab-0.1.3 \
+		lz4_flex-0.11.6 \
 		maybe-owned-0.3.4 \
 		maybe-rayon-0.1.1 \
 		memchr-2.8.3 \
@@ -398,6 +398,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		noop_proc_macro-0.3.0 \
+		ntapi-0.4.3 \
 		num-bigint-0.4.8 \
 		num-complex-0.4.6 \
 		num-conv-0.2.2 \
@@ -433,6 +434,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		objc2-foundation-0.2.2 \
 		objc2-foundation-0.3.2 \
 		objc2-image-io-0.3.2 \
+		objc2-io-kit-0.3.2 \
 		objc2-io-surface-0.3.2 \
 		objc2-link-presentation-0.2.2 \
 		objc2-media-toolbox-0.3.2 \
@@ -644,6 +646,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.14.0 \
 		sys-locale-0.3.2 \
+		sysinfo-0.40.1 \
 		system-configuration-0.7.0 \
 		system-configuration-sys-0.6.0 \
 		system-deps-7.0.8 \
@@ -873,7 +876,7 @@ AVIF_VARS=	CARGO_FEATURES+=photocraft-codecs/avif
 HEIF_VARS=	CARGO_FEATURES+=heif
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-11-03
+RELEASE_DATE=	2026-11-05
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
