@@ -176,6 +176,34 @@
     </dates>
   </vuln>
 
+  <vuln vid="7830ba05-0215-40b0-9d9b-e4e4829d9b3c">
+    <topic>uptime-kuma -- unauthenticated administrator account creation</topic>
+    <affects>
+      <package>
+	<name>uptime-kuma</name>
+	<range><le>2.5.8</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE-2026-119552: Uptime Kuma through 2.5.8 contains a race condition
+	  in the Socket.IO first-run setup handler that allows unauthenticated
+	  attackers to create an additional administrator account. Attackers can
+	  send concurrent setup requests during the bcrypt hashing window to
+	  bypass the empty user table check, then modify monitors, API keys, and
+	  enable disableAuth.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-119552</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-119552</url>
+    </references>
+    <dates>
+      <discovery>2026-10-30</discovery>
+      <entry>2026-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="923b5da5-d8db-11f1-8d43-18cf5efc6bb4">
     <topic>openvox -- Authenticated RCE on OpenVox server via Event Deserialization</topic>
     <affects>
