@@ -6,7 +6,7 @@ registries) for the hosts on your network.
 
 1. Set up the proxy
 
-  cp %%ETCDIR%%/config.yaml.sample %%ETCDIR%%/config.yaml
+  edit %%ETCDIR%%/config.yaml
 
   Set base_url to the URL your clients will use, e.g.
   "http://pkgproxy.example.org:8080", then:
