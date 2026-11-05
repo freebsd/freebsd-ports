@@ -1,3 +1,107 @@
+  <vuln vid="923b5da5-d8db-11f1-8d43-18cf5efc6bb4">
+    <topic>openvox -- Authenticated RCE on OpenVox server via Event Deserialization</topic>
+    <affects>
+      <package>
+	<name>openvox-agent8</name>
+	<range><lt>8.32.0</lt></range>
+      </package>
+      <package>
+	<name>openvox-agent9</name>
+	<range><lt>9.3.0</lt></range>
+      </package>
+      <package>
+	<name>openvox-server8</name>
+	<range><lt>8.18.0</lt></range>
+      </package>
+      <package>
+	<name>openvox-server9</name>
+	<range><lt>9.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenVoxProject reports:</p>
+	<blockquote cite="https://voxpupuli.org/blog/2026/11/03/critical-cve-updates/">
+	  <p>The Puppet/OpenVox report is a JSON document the agent sends to the
+	    server after each enforcement run. It details what changes were
+	    made, any warnings or error messages, and any resources that failed
+	    to apply correctly. It also contains a full list of all events that
+	    happened, where an event might be “content &lt;foo&gt; changed to
+	    &lt;bar&gt;” or the like. In some circumstances involving custom
+	    resource types, an event might include a serialized Ruby object
+	    (programming code turned into text) instead of just plain JSON. When
+	    the report is processed, these objects are deserialized back into
+	    something the compiler can use. Unfortunately a malicious event
+	    object can be constructed in such a way that code executes on the
+	    server when this happens.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-115731</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-115731</url>
+      <url>https://github.com/OpenVoxProject/openvox/security/advisories/GHSA-ffr6-rwpm-p5wq</url>
+      <url>https://portal.perforce.com/s/cve/a91Qi000003IaHpIAK/report-deserialization-code-execution</url>
+    </references>
+    <dates>
+      <discovery>2026-11-03</discovery>
+      <entry>2026-11-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6cd47e21-d8db-11f1-8d43-18cf5efc6bb4">
+    <topic>openvox -- Flawed Hostname Check allows Puppet Client Impersonation</topic>
+    <affects>
+      <package>
+	<name>openvoxdb8</name>
+	<range><lt>8.18.0</lt></range>
+      </package>
+      <package>
+	<name>openvoxdb9</name>
+	<range><lt>9.2.0</lt></range>
+      </package>
+      <package>
+	<name>openvox-server8</name>
+	<range><lt>8.18.0</lt></range>
+      </package>
+      <package>
+	<name>openvox-server9</name>
+	<range><lt>9.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenVoxProject reports:</p>
+	<blockquote cite="https://voxpupuli.org/blog/2026/11/03/critical-cve-updates/">
+	  <p>Trapperkeeper is the framework we use for running our Clojure based
+	  applications and <code>trapperkeeper-authorization</code> is the shared
+	  authentication library that parses OpenVox’s <code>auth.conf</code> file and
+	  such. This file allows authentication rules to be specified in
+	  multiple ways, including plain strings (<code>foo.example.com</code>), wildcards
+	  (<code>*.example.com</code>), or regular expressions (<code>/lab-\d{3}.example.com/</code>).
+	  Plain strings and wildcard matches were handled by the same logic
+	  and this resulted in wildcard behavior incorrectly showing up in all
+	  non-regex rules. The end result of this meant that a certificate
+	  name of <code>evil.target.example.com</code> would be allowed to impersonate
+	  <code>target.example.com</code> and access information or perform actions as the
+	  target certname. In some non-default configurations, this could even
+	  inject exported resources into arbitrary agent catalogs across the
+	    infrastructure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-115732</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-115732</url>
+      <url>https://github.com/OpenVoxProject/trapperkeeper-authorization/security/advisories/GHSA-q4hm-33rc-572g</url>
+      <url>https://portal.perforce.com/s/cve/a91Qi000003IaJRIA0/certificate-name-authorization-bypass</url>
+    </references>
+    <dates>
+      <discovery>2026-11-03</discovery>
+      <entry>2026-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="61a6b109-d852-11f1-bae2-3497f65b111b">
     <topic>security/wolfssh -- multiple vulnerabilities</topic>
     <affects>
