@@ -1,6 +1,6 @@
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
-DISTVERSION=	28.2.0
+DISTVERSION=	28.3.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/go-gitea/gitea/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/ \
 		https://dl.gitea.io/gitea/${DISTVERSION}/
@@ -55,8 +55,8 @@ DAEMONARGS=	-f
 SUB_LIST+=	DAEMONARGS="${DAEMONARGS}"
 
 SSP_UNSAFE=	true
-LDFLAGS+=	"'-X "code.gitea.io/gitea/modules/setting.CustomPath=${PREFIX}/etc/gitea"'"
-LDFLAGS+=	"'-X "code.gitea.io/gitea/modules/setting.AppWorkPath=${PREFIX}/share/gitea"'"
+LDFLAGS+=	"'-X "code.gitea.io/gitea/modules/setting.CustomPath=${ETCDIR}"'"
+LDFLAGS+=	"'-X "code.gitea.io/gitea/modules/setting.AppWorkPath=${DATADIR}"'"
 MAKE_ARGS=	GOPATH=${WRKDIR} TAGS="${GO_TAGS}" GOFLAGS="-buildvcs=false"
 ALL_TARGET=	backend
 MAKE_JOBS_UNSAFE=	yes
