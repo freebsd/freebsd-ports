@@ -1,6 +1,6 @@
 PORTNAME=	chrono
 DISTVERSION=	9.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science devel
 PKGNAMESUFFIX=	-physics-simulation-engine
 
@@ -15,19 +15,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	use of overloaded operator '[]' is ambiguous (with operand types 'chrono::quaternion' and 'int'): https://github.com/projectchrono/chrono/issues/158
 BROKEN_aarch64=	cannot find -lFALSE, see https://github.com/projectchrono/chrono/issues/389
 
-BUILD_DEPENDS=	openmpi>0:net/openmpi
-LIB_DEPENDS=	libblas.so:math/blas \
-		libepoll-shim.so:devel/libepoll-shim \
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libfabric.so:net/libfabric \
 		libhwloc.so:devel/hwloc2 \
 		libjson-c.so:devel/json-c \
 		libmetis.so:math/metis \
 		libpciaccess.so:devel/libpciaccess \
 		libpng16.so:graphics/png \
-		libscotch.so:cad/scotch-edf \
+		libscotch.so:cad/scotch \
 		libze_loader.so:devel/level-zero
 
-USES=		cmake compiler:c++14-lang eigen:3 fortran gnome jpeg xorg
+USES=		blaslapack:openblas cmake compiler:c++14-lang eigen:3 fortran gnome jpeg xorg
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 USE_XORG=	x11 xau xcb xdmcp xext xxf86vm
@@ -35,7 +33,7 @@ USE_XORG=	x11 xau xcb xdmcp xext xxf86vm
 USE_GITHUB=	yes
 GH_ACCOUNT=	project${PORTNAME}
 
-ALL_MODULES=		Cascade Cosimulation Distributed FSI Irrlicht Multicore MUMPS OpenGL Pardiso_Project Postprocess Sensor SynChrono Vehicle
+ALL_MODULES=		Cosimulation Distributed FSI Irrlicht Multicore MUMPS OpenGL Pardiso_Project Postprocess Sensor SynChrono Vehicle
 # module names in a human readable case; for the list of available modules: grep -r "option(ENABLE_MODULE" work
 
 OPTIONS_DEFINE=			HDF5 DEMOS
@@ -52,7 +50,10 @@ DEMOS_DESC=			Build and install demo programs
 DEMOS_CMAKE_BOOL=		BUILD_DEMOS
 DEMOS_BROKEN=			/usr/local/lib/libdmumps.so: undefined reference to `mpi_pack_' # '
 
-CASCADE_CMAKE_ON=		-DCASCADE_INCLUDE_DIR:STRING=${LOCALBASE}/include/OpenCASCADE -DCASCADE_LIBDIR:STRING=${LOCALBASE}/lib
+CASCADE_BROKEN=			opencascade740 not found
+CASCADE_CMAKE_ON=		-DCASCADE_INCLUDE_DIR:PATH=${LOCALBASE}/include/OpenCASCADE \
+				-DCASCADE_LIBDIR:PATH=${LOCALBASE}/lib \
+				-DOpenCASCADE_DIR:PATH=${LOCALBASE}/lib/cmake
 CASCADE_LIB_DEPENDS=		libTKernel.so:cad/opencascade740
 
 DISTRIBUTED_BROKEN=		requires cuda_runtime_api.h in thrust package which is missing for some reason
@@ -66,8 +67,9 @@ MULTICORE_BUILD_DEPENDS=	blaze>0:math/blaze \
 				thrust>0:devel/thrust
 
 MUMPS_CMAKE_ON=			-DMUMPS_ROOT:STRING=${LOCALBASE}
-MUMPS_LIB_DEPENDS=		libdmumps.so:math/mumps-edf \
-				libopenblas.so:math/openblas
+MUMPS_CMAKE_BOOL=		MUMPS_USE_MPI MUMPS_IS_SHARED_LIB
+MUMPS_LIB_DEPENDS=		libdmumps.so:math/mumps
+MUMPS_USES=			mpi
 
 PARDISO_PROJECT_BROKEN=		Not available for FreeBSD; License is restrictive
 
@@ -75,7 +77,7 @@ SENSOR_BROKEN=			requires CUDA
 
 SYNCHRONO_USES=			localbase
 SYNCHRONO_BUILD_DEPENDS=	flatc:devel/flatbuffers # until https://github.com/projectchrono/chrono/issues/391 is fixed
-SYNCHRONO_LIB_DEPENDS=		libmpi.so:net/mpich
+SYNCHRONO_USES=			mpi
 SYNCHRONO_IMPLIES=		VEHICLE
 SYNCHRONO_BROKEN=		fails with the modern flatbuffers versions, see https://github.com/projectchrono/chrono/issues/391
 
@@ -84,8 +86,8 @@ OPENGL_USE=			GL=gl,glu,glew
 OPENGL_BUILD_DEPENDS=		${LOCALBASE}/include/glm/glm.hpp:math/glm
 OPENGL_LIB_DEPENDS=		libglfw.so:graphics/glfw
 
-VEHICLE_LIB_DEPENDS=		libsz.so:science/libaec \
-				libmpi.so:net/openmpi
+VEHICLE_LIB_DEPENDS=		libsz.so:science/libaec
+VEHICLE_USES=			mpi
 
 .for module in ${ALL_MODULES}
 ${module:tu}_DESC=		Chrono ${module} module
