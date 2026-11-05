@@ -372,7 +372,6 @@
     SUBDIR += plank
     SUBDIR += plasma-wayland-protocols
     SUBDIR += plasma6-kactivitymanagerd
-    SUBDIR += plasma6-kgamma
     SUBDIR += plasma6-kglobalacceld
     SUBDIR += plasma6-kscreen
     SUBDIR += plasma6-kwayland
