@@ -191,6 +191,7 @@
     SUBDIR += medit
     SUBDIR += meep
     SUBDIR += metaphysicl
+    SUBDIR += mgis
     SUBDIR += minc-tools
     SUBDIR += mmdb2
     SUBDIR += mmg
