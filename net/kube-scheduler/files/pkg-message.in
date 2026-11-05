@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Adapt %%PREFIX%%/etc/kubernetes/scheduler.yaml and point it at a valid
+kubeconfig for the scheduler to start.
+EOM
+}
+]
