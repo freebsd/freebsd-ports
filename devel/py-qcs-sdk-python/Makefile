@@ -1,5 +1,5 @@
 PORTNAME=	qcs-sdk-python
-DISTVERSION=	0.31.1
+DISTVERSION=	0.31.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -287,7 +287,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		opentelemetry-proto-0.32.0 \
 		opentelemetry_sdk-0.32.1 \
 		optipy-0.1.4 \
-		optipy-0.2.2 \
+		optipy-0.2.3 \
 		ordered-float-5.3.0 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
@@ -334,7 +334,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		prost-types-0.14.3 \
 		psl-types-2.0.11 \
 		publicsuffix-2.3.0 \
-		pulldown-cmark-0.13.3 \
+		pulldown-cmark-0.13.6 \
 		pulldown-cmark-to-cmark-22.0.0 \
 		pyo3-0.29.2 \
 		pyo3-async-runtimes-0.29.0 \
@@ -344,17 +344,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pyo3-log-0.13.4 \
 		pyo3-macros-0.29.2 \
 		pyo3-macros-backend-0.29.2 \
-		pyo3-opentelemetry-0.11.1 \
-		pyo3-opentelemetry-macros-0.11.1 \
+		pyo3-opentelemetry-0.11.2 \
+		pyo3-opentelemetry-macros-0.11.2 \
 		pyo3-stub-gen-0.23.0 \
 		pyo3-stub-gen-derive-0.23.0 \
-		pyo3-tracing-subscriber-0.9.2 \
-		pyo3-tracing-subscriber-build-0.9.2 \
-		qcs-api-client-common-0.27.0 \
+		pyo3-tracing-subscriber-0.9.3 \
+		pyo3-tracing-subscriber-build-0.9.3 \
+		qcs-api-client-common-0.27.2 \
 		qcs-api-client-grpc-0.27.0 \
 		qcs-api-client-openapi-0.28.0 \
 		qcs-dependencies-client-0.6.0 \
-		quil-rs-0.37.2 \
+		quil-rs-0.37.3 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.13 \
 		quinn-udp-0.5.14 \
@@ -385,7 +385,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		reqwest-middleware-0.5.1 \
 		reqwest-tracing-0.7.1 \
 		rigetti-hyper-proxy-1.1.1 \
-		rigetti-pyo3-0.8.3 \
+		rigetti-pyo3-0.8.4 \
 		ring-0.17.14 \
 		rmp-0.8.15 \
 		rmp-serde-1.3.1 \
@@ -401,7 +401,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustls-pki-types-1.14.0 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.15 \
+		rustls-webpki-0.103.16 \
 		rustpython-ast-0.4.0 \
 		rustpython-parser-0.4.0 \
 		rustpython-parser-core-0.4.0 \
@@ -483,7 +483,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tinystr-0.8.2 \
 		tinyvec-1.10.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.52.3 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.4 \
@@ -563,7 +563,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		web-time-1.1.0 \
 		webbrowser-1.2.4 \
 		webpki-root-certs-1.0.7 \
-		webpki-roots-1.0.6 \
+		webpki-roots-1.0.11 \
 		wide-1.6.1 \
 		winapi-util-0.1.11 \
 		windows-core-0.62.2 \
@@ -631,6 +631,6 @@ OPENSSLLIB=	/usr/lib
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-# tests as of 0.31.1: 30 passed, 16 skipped, 5 deselected in 0.22s (tests requiring quilc/qvm servers and network are excluded)
+# tests as of 0.31.3: 30 passed, 16 skipped, 5 deselected in 0.13s (tests requiring quilc/qvm servers and network are excluded)
 
 .include <bsd.port.mk>
