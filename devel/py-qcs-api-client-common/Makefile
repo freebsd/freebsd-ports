@@ -1,5 +1,5 @@
 PORTNAME=	qcs-api-client-common
-DISTVERSION=	0.27.0
+DISTVERSION=	0.27.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,10 +36,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		async-attributes-1.1.2 \
 		async-channel-1.9.0 \
 		async-channel-2.5.0 \
-		async-executor-1.14.0 \
+		async-executor-1.14.1 \
 		async-global-executor-2.4.1 \
 		async-io-2.6.0 \
-		async-lock-3.4.2 \
+		async-lock-3.5.0 \
 		async-object-pool-0.2.0 \
 		async-socks5-0.6.0 \
 		async-std-1.13.2 \
@@ -49,8 +49,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		atomic-0.6.1 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.1 \
-		aws-lc-rs-1.18.2 \
-		aws-lc-sys-0.46.0 \
+		aws-lc-rs-1.19.0 \
+		aws-lc-sys-0.47.0 \
 		axum-0.8.9 \
 		axum-core-0.5.6 \
 		backon-1.6.0 \
@@ -65,7 +65,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bumpalo-3.20.3 \
 		bytemuck-1.25.2 \
 		bytes-1.12.1 \
-		cc-1.8.0 \
+		cc-1.11.0 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
 		chacha20-0.10.2 \
@@ -78,7 +78,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cmake-0.1.58 \
 		colorchoice-1.0.5 \
 		colored-3.1.1 \
-		combine-4.6.8 \
+		combine-4.6.9 \
 		concurrent-queue-2.5.0 \
 		const-hex-1.19.3 \
 		const-oid-0.9.6 \
@@ -90,7 +90,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		core_detect-1.0.0 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.1 \
-		crc32fast-1.5.2 \
+		crc32fast-1.5.4 \
 		crossbeam-utils-0.8.23 \
 		crunchy-0.2.4 \
 		crypto-common-0.1.7 \
@@ -100,9 +100,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		darling_core-0.24.1 \
 		darling_macro-0.20.11 \
 		darling_macro-0.24.1 \
-		defmt-1.1.1 \
-		defmt-macros-1.1.1 \
-		defmt-parser-1.0.0 \
+		defmt-1.2.0 \
+		defmt-macros-1.2.0 \
+		defmt-parser-1.1.0 \
 		der-0.7.10 \
 		deranged-0.5.9 \
 		derive_builder-0.20.2 \
@@ -116,16 +116,16 @@ CARGO_CRATES=	adler2-2.0.1 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
 		either-1.19.0 \
-		encoding_rs-0.8.42 \
+		encoding_rs-0.8.44 \
 		envy-0.4.2 \
-		equivalent-1.0.2 \
+		equivalent-1.0.3 \
 		errno-0.3.14 \
 		event-listener-2.5.3 \
 		event-listener-5.4.2 \
 		event-listener-strategy-0.5.4 \
 		fastrand-2.5.0 \
 		figment-0.10.19 \
-		find-msvc-tools-0.1.14 \
+		find-msvc-tools-0.1.15 \
 		fixedbitset-0.5.7 \
 		flate2-1.1.10 \
 		fnv-1.0.7 \
@@ -176,13 +176,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hyper-util-0.1.21 \
 		iana-time-zone-0.1.65 \
 		iana-time-zone-haiku-0.1.2 \
-		icu_collections-2.3.0 \
-		icu_locale_core-2.3.0 \
-		icu_normalizer-2.3.0 \
-		icu_normalizer_data-2.3.0 \
-		icu_properties-2.3.0 \
-		icu_properties_data-2.3.0 \
-		icu_provider-2.3.1 \
+		icu_collections-2.4.0 \
+		icu_locale_core-2.4.0 \
+		icu_normalizer-2.4.0 \
+		icu_normalizer_data-2.4.0 \
+		icu_properties-2.4.0 \
+		icu_properties_data-2.4.0 \
+		icu_provider-2.4.0 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.2 \
@@ -197,9 +197,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		itertools-0.14.0 \
 		itertools-0.15.0 \
 		itoa-1.0.18 \
-		jiff-0.2.38 \
-		jiff-core-0.1.1 \
-		jiff-static-0.2.38 \
+		jiff-0.2.39 \
+		jiff-core-0.1.2 \
+		jiff-static-0.2.39 \
 		jiff-tzdb-0.1.9 \
 		jiff-tzdb-platform-0.1.3 \
 		jni-0.22.4 \
@@ -207,19 +207,19 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.35 \
-		js-sys-0.3.106 \
+		js-sys-0.3.107 \
 		jsonwebtoken-9.3.1 \
 		jsonwebtoken-10.4.0 \
 		kv-log-macro-1.0.7 \
 		lalrpop-util-0.20.2 \
 		lazy_static-1.5.1 \
-		libc-0.2.190 \
+		libc-0.2.191 \
 		libm-0.2.16 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.3 \
 		litrs-1.0.1 \
 		lock_api-0.4.14 \
-		log-0.4.34 \
+		log-0.4.35 \
 		lru-slab-0.1.3 \
 		maplit-1.0.2 \
 		matchers-0.2.0 \
@@ -255,18 +255,18 @@ CARGO_CRATES=	adler2-2.0.1 \
 		objc2-foundation-0.3.2 \
 		once_cell-1.21.4 \
 		once_cell_polyfill-1.70.2 \
-		openssl-0.10.81 \
+		openssl-0.10.82 \
 		openssl-macros-0.1.1 \
-		openssl-probe-0.2.1 \
-		openssl-sys-0.9.117 \
+		openssl-probe-0.2.2 \
+		openssl-sys-0.9.118 \
 		opentelemetry-0.32.0 \
 		opentelemetry-http-0.32.0 \
 		opentelemetry-otlp-0.32.0 \
 		opentelemetry-proto-0.32.0 \
 		opentelemetry_sdk-0.32.1 \
 		optipy-0.1.4 \
-		optipy-0.2.2 \
-		ordered-float-5.5.0 \
+		optipy-0.2.3 \
+		ordered-float-5.5.1 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
@@ -310,7 +310,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		prost-types-0.14.4 \
 		psl-types-2.0.11 \
 		publicsuffix-2.3.0 \
-		pulldown-cmark-0.13.4 \
+		pulldown-cmark-0.13.6 \
 		pulldown-cmark-to-cmark-22.0.3 \
 		pyo3-0.29.3 \
 		pyo3-async-runtimes-0.29.0 \
@@ -318,8 +318,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pyo3-ffi-0.29.3 \
 		pyo3-macros-0.29.3 \
 		pyo3-macros-backend-0.29.3 \
-		pyo3-stub-gen-0.23.1 \
-		pyo3-stub-gen-derive-0.23.1 \
+		pyo3-stub-gen-0.23.2 \
+		pyo3-stub-gen-derive-0.23.2 \
 		qcs-dependencies-client-0.6.0 \
 		quinn-0.11.12 \
 		quinn-proto-0.11.19 \
@@ -350,7 +350,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		reqwest-middleware-0.5.2 \
 		reqwest-tracing-0.7.1 \
 		rigetti-hyper-proxy-1.1.1 \
-		rigetti-pyo3-0.8.3 \
+		rigetti-pyo3-0.8.4 \
 		ring-0.17.14 \
 		rsa-0.9.10 \
 		rstest-0.26.1 \
@@ -358,13 +358,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustc-hash-1.1.0 \
 		rustc-hash-2.1.3 \
 		rustc_version-0.4.1 \
-		rustix-1.1.5 \
-		rustls-0.23.45 \
+		rustix-1.1.6 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.5 \
 		rustls-pki-types-1.15.1 \
 		rustls-platform-verifier-0.7.1 \
 		rustls-platform-verifier-android-0.2.0 \
-		rustls-webpki-0.103.15 \
+		rustls-webpki-0.103.16 \
 		rustpython-ast-0.4.0 \
 		rustpython-parser-0.4.0 \
 		rustpython-parser-core-0.4.0 \
@@ -372,7 +372,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustversion-1.0.23 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
-		schannel-0.1.29 \
+		schannel-0.1.30 \
 		schemars-0.9.0 \
 		schemars-1.2.3 \
 		scopeguard-1.2.0 \
@@ -406,7 +406,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		simple_asn1-0.6.4 \
 		siphasher-1.0.4 \
 		slab-0.4.12 \
-		smallvec-1.16.3 \
+		smallvec-1.16.4 \
 		socket2-0.6.5 \
 		spin-0.9.9 \
 		spki-0.7.3 \
@@ -434,9 +434,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		time-core-0.1.9 \
 		time-macros-0.2.32 \
 		tiny-keccak-2.0.2 \
-		tinystr-0.8.4 \
+		tinystr-0.8.5 \
 		tinyvec-1.13.3 \
-		tokio-1.53.3 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.2 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.6 \
@@ -444,22 +444,22 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tokio-util-0.7.20 \
 		toml-0.8.23 \
 		toml-0.9.12+spec-1.1.0 \
-		toml-1.1.8+spec-1.1.0 \
+		toml-1.2.0+spec-1.1.0 \
 		toml_datetime-0.6.11 \
 		toml_datetime-0.7.5+spec-1.1.0 \
 		toml_datetime-1.1.2+spec-1.1.0 \
 		toml_edit-0.22.27 \
 		toml_edit-0.23.10+spec-1.0.0 \
-		toml_edit-0.25.17+spec-1.1.0 \
+		toml_edit-0.25.18+spec-1.1.0 \
 		toml_parser-1.1.5+spec-1.1.0 \
 		toml_write-0.1.2 \
-		toml_writer-1.1.3+spec-1.1.0 \
-		tonic-0.14.6 \
-		tonic-build-0.14.6 \
-		tonic-health-0.14.6 \
-		tonic-prost-0.14.6 \
-		tonic-prost-build-0.14.6 \
-		tonic-web-0.14.6 \
+		toml_writer-1.2.0+spec-1.1.0 \
+		tonic-0.14.9 \
+		tonic-build-0.14.9 \
+		tonic-health-0.14.9 \
+		tonic-prost-0.14.9 \
+		tonic-prost-build-0.14.9 \
+		tonic-web-0.14.9 \
 		tower-0.5.3 \
 		tower-http-0.5.2 \
 		tower-http-0.6.11 \
@@ -484,7 +484,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicase-2.10.0 \
 		unicode-ident-1.0.27 \
 		unicode-width-0.1.14 \
-		unicode-width-0.2.2 \
+		unicode-width-0.2.3 \
 		unicode_names2-1.3.0 \
 		unicode_names2_generator-1.3.0 \
 		unsafe-libyaml-0.2.11 \
@@ -492,9 +492,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		untrusted-0.9.0 \
 		url-2.5.8 \
 		urlpattern-0.6.0 \
-		utf8_iter-1.0.4 \
+		utf8_iter-1.1.0 \
 		utf8parse-0.2.2 \
-		uuid-1.28.0 \
+		utf_types-1.0.0 \
+		uuid-1.29.0 \
 		valuable-0.1.1 \
 		value-bag-1.14.1 \
 		vcpkg-0.2.15 \
@@ -503,17 +504,17 @@ CARGO_CRATES=	adler2-2.0.1 \
 		want-0.3.2 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.4+wasi-0.2.12 \
-		wasm-bindgen-0.2.129 \
-		wasm-bindgen-futures-0.4.79 \
-		wasm-bindgen-macro-0.2.129 \
-		wasm-bindgen-macro-support-0.2.129 \
-		wasm-bindgen-shared-0.2.129 \
+		wasm-bindgen-0.2.130 \
+		wasm-bindgen-futures-0.4.80 \
+		wasm-bindgen-macro-0.2.130 \
+		wasm-bindgen-macro-support-0.2.130 \
+		wasm-bindgen-shared-0.2.130 \
 		wasm-streams-0.4.2 \
-		web-sys-0.3.106 \
+		web-sys-0.3.107 \
 		web-time-1.1.0 \
-		webbrowser-1.2.4 \
-		webpki-root-certs-1.0.9 \
-		webpki-roots-1.0.9 \
+		webbrowser-1.2.6 \
+		webpki-root-certs-1.0.11 \
+		webpki-roots-1.0.11 \
 		winapi-util-0.1.11 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
@@ -538,7 +539,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wit-bindgen-0.57.1 \
 		writeable-0.6.4 \
 		yansi-1.0.1 \
-		yoke-0.8.3 \
+		yoke-0.8.4 \
 		yoke-derive-0.8.4 \
 		zerocopy-0.8.63 \
 		zerocopy-derive-0.8.63 \
@@ -547,8 +548,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zeroize-1.9.1 \
 		zeroize_derive-1.5.0 \
 		zerotrie-0.2.5 \
-		zerovec-0.11.8 \
-		zerovec-derive-0.11.6 \
+		zerovec-0.11.9 \
+		zerovec-derive-0.11.7 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23
 
@@ -562,6 +563,6 @@ TEST_WRKSRC=	${WRKSRC}/qcs-api-client-common
 TEST_ARGS=	--disable-plugin-autoload -p pytest_asyncio.plugin -p pytest_mock -p syrupy tests_py \
 		-k 'not test_refresh_interceptor and not test_sync_method_from_async_context'
 
-# tests as of 0.27.0: 20 passed, 2 deselected in 0.13s (2 tests needing a user QCS config are excluded)
+# tests as of 0.27.3: 23 passed, 2 deselected in 0.23s (2 tests needing a user QCS config are excluded)
 
 .include <bsd.port.mk>
