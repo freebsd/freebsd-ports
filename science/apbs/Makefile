@@ -1,6 +1,6 @@
 PORTNAME=	apbs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.1
+DISTVERSION=	3.5.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,6 +50,9 @@ post-extract:
 
 do-test: # run one example as a test to verify the build
 	@cd ${WRKSRC}/examples/born && \
+		LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib:${STAGEDIR}${LOCALBASE}/lib \
 		${STAGEDIR}${PREFIX}/bin/apbs apbs-mol-auto.in
+
+# tests as of 3.5.0: example born test completes successfully
 
 .include <bsd.port.mk>
