@@ -26,8 +26,8 @@ CMAKE_ON=	USE_SYSTEM_SRTP NO_EXAMPLES NO_TESTS
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
-CFLAGS+=       -Wno-error=unused-but-set-variable \
-			   -Wno-error=strict-prototypes
+CFLAGS+=	-Wno-error=unused-but-set-variable \
+		-Wno-error=strict-prototypes
 .endif
 
 do-test: # tests require dual stack to be enabled with 'sysctl net.inet6.ip6.v6only=0', at least one test is known to fail
