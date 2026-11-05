@@ -1,6 +1,6 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.052
+DISTVERSION=	5.054
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -68,5 +68,7 @@ post-install-INSTALL_DBG_EXECUTABLES-off:
 		${STAGEDIR}${PREFIX}/bin/verilator_coverage_bin_dbg \
 		${STAGEDIR}${PREFIX}/share/verilator/bin/verilator_bin_dbg \
 		${STAGEDIR}${PREFIX}/share/verilator/bin/verilator_coverage_bin_dbg
+
+# tests as of 5.054: Tests passed! (Passed 1 Failed 0)
 
 .include <bsd.port.mk>
