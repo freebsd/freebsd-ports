@@ -1,5 +1,5 @@
 PORTNAME=	giada
-DISTVERSION=	1.5.0
+DISTVERSION=	1.6.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libatk-1.0.so:accessibility/at-spi2-core \
 		libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
+		libdecor-0.so:x11-toolkits/libdecor \
+		libfftw3.so:math/fftw3 \
 		libfmt.so:devel/libfmt \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -24,6 +26,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libjack.so:audio/jack \
 		libpng16.so:graphics/png \
 		libpulse.so:audio/pulseaudio \
+		librubberband.so:audio/rubberband \
 		librtmidi.so:audio/rtmidi \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
@@ -39,9 +42,10 @@ GH_TUPLE=	cameron314:concurrentqueue:6dd38b8:concurrentqueue/src/deps/concurrent
 		juce-framework:JUCE:29396c2:juce/src/deps/juce \
 		monocasual:geompp:b7ef442:geompp/src/deps/geompp \
 		monocasual:mcl-atomic-swapper:4aa864c:mclatomicswapper/src/deps/mcl-atomic-swapper \
-		monocasual:mcl-audio-buffer:e6b00c8:mclaudiobuffer/src/deps/mcl-audio-buffer \
+		monocasual:mcl-audio-buffer:de184d0:mclaudiobuffer/src/deps/mcl-audio-buffer \
 		monocasual:mcl-utils:ea5b1b5:mclutils/src/deps/mcl-utils \
-		monocasual:rtaudio:0f18dfd:rtaudio/src/deps/rtaudio
+		monocasual:rtaudio:0f18dfd:rtaudio/src/deps/rtaudio \
+		steinbergmedia:vst3sdk:cc2adc9:vst3sdk/src/deps/vst3sdk
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 pango
 USE_GL=		egl
 USE_XORG=	ice sm x11 xcursor xext xfixes xft xinerama xpm xrender
