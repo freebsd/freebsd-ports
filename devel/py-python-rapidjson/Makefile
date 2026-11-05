@@ -1,5 +1,5 @@
 PORTNAME=	python-rapidjson
-DISTVERSION=	1.25
+DISTVERSION=	1.26
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,10 +20,11 @@ USE_PYTHON=	distutils autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests
+TEST_ARGS=	--disable-plugin-autoload
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rapidjson${PYTHON_TAG}.so
 
-# tests as of 1.25: 931 passed 2 xfailed 17 skipped
+# tests as of 1.26: 1410 passed, 19 skipped, 2 xfailed
 
 .include <bsd.port.mk>
