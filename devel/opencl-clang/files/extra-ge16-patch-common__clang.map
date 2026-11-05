@@ -1,0 +1,13 @@
+--- opencl_clang.map.orig	2026-02-25 03:50:17.479992000 -0500
++++ opencl_clang.map	2026-02-25 03:51:28.165351000 -0500
+@@ -2,10 +2,7 @@
+ global:
+  extern "C" {
+    CheckCompileOptions;
+-   CheckLinkOptions;
+    Compile;
+-   Link;
+-   GetKernelArgInfo;
+    PCM_OPENCL_C_H*;
+    PCM_OPENCL_C_BASE_H*;
+    PCM_OPENCL_C_12_SPIR_PCM*;
