@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-mboct-fem-pkg
 DISTVERSION=	0.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,7 +14,7 @@ USES=		octave autoreconf
 
 LIB_DEPENDS+=	libgtest.so:devel/googletest \
 		libmetis.so:math/metis \
-		libmumps_common_seq.so:math/mumps-edf \
+		libmumps_common.so:math/mumps \
 		libnlopt.so:math/nlopt
 
 RUN_DEPENDS+=	${OCTAVE_TARBALLS_DIR}/mboct-octave-pkg.tar.gz:math/octave-forge-mboct-octave-pkg \
