@@ -1,6 +1,5 @@
 PORTNAME=	tfel
-DISTVERSION=	3.2.1-1
-PORTREVISION=	12
+DISTVERSION=	5.0.1
 CATEGORIES=	science
 PKGNAMESUFFIX=	-mfront-edf
 
@@ -19,16 +18,19 @@ RUN_DEPENDS=	gnuplot:math/gnuplot	\
 
 USES=		cmake compiler:c++0x fortran localbase python
 
-CONFLICTS=	tfel-mfront-3.*
+CONFLICTS=	tfel-mfront-5.*
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 OPTIONS_SUB=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+CXXFLAGS+=	-I${PYTHON_SITELIBDIR}/numpy/_core/include
 CMAKE_ON=	enable-aster enable-calculix enable-fortran	\
 		enable-python enable-python-bindings
 CMAKE_ARGS+=	-DCOMPILER_CXXFLAGS="${CXXFLAGS}" -DCOMPILER_FLAGS="${CFLAGS}"
+FCFLAGS+=	-fallow-argument-mismatch
+
+TAGNAME=	f44363139f5f9eb774166fa1c6b0ccb66641bbe3
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME:tu}-${PORTVERSION}-${TAGNAME}
 USE_LDCONFIG=	yes
 
 .ifdef PACKAGE_BUILDING
@@ -37,12 +39,18 @@ CMAKE_ON+=	enable-portable-build
 
 TEST_TARGET=	check
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../french/aster/bsd.aster.mk"
+.include <bsd.port.pre.mk>
 
-.if ${FORTRAN_DEFAULT} == gfortran && ${GCC_DEFAULT} >= 10
-FCFLAGS+=	-fallow-argument-mismatch
+_PYVER=		${PYTHON_VER:C|\.||}
+_PYBOOSTLIB=	${LOCALBASE}/lib/libboost_python${_PYVER}.so
+.if exists(${_PYBOOSTLIB})
+PY_BOOST_VER!=	make -V PORTVERSION -C ${.CURDIR}/../../devel/boost-python-libs
 .endif
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|1.36.0|${PY_BOOST_VER}|'	\
+		${WRKSRC}/cmake/modules/boost-python.cmake
 
 post-install:
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
