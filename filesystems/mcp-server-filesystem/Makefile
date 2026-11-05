@@ -1,5 +1,6 @@
 PORTNAME=	mcp-server-filesystem
-DISTVERSION=	2026.1.14
+DISTVERSION=	2.2.0
+PORTEPOCH=	1
 CATEGORIES=	filesystems # machine-learning
 DIST_SUBDIR=	${PORTNAME}
 
