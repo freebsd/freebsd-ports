@@ -1,5 +1,5 @@
 PORTNAME=	numkong # successor of simsimd
-DISTVERSION=	7.8.5
+DISTVERSION=	7.8.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,6 @@ TEST_ARGS=	--disable-plugin-autoload \
 		-p pytest_randomly \
 		-p pytest_repeat
 
-# tests as of 7.8.5: 240080 passed, 21322 skipped in 396.25s (0:06:36)
+# tests as of 7.8.7: 240108 passed, 21298 skipped in 1082.32s (0:18:02)
 
 .include <bsd.port.mk>
