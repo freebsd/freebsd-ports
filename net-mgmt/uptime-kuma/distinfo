@@ -1,7 +1,7 @@
-TIMESTAMP = 1790525360
-SHA256 (uptime-kuma/uptime-kuma-npm-cache-2.5.5.tar.gz) = 507b1090ef03315e5e60d7f5b388ab456a57bae092b8b3ef57849243ac7c3e17
-SIZE (uptime-kuma/uptime-kuma-npm-cache-2.5.5.tar.gz) = 90889368
-SHA256 (uptime-kuma/dist.tar.gz) = 015ebb4df74b72bd8c303bdc41b71e2de8bdc72862ddc2d65db69a92316df835
-SIZE (uptime-kuma/dist.tar.gz) = 7059039
-SHA256 (uptime-kuma/louislam-uptime-kuma-2.5.5_GH0.tar.gz) = ce47ce2d70049fa4ee2da67303fd3f35a3a68522bba17f046b29bcfe38d8d0c0
-SIZE (uptime-kuma/louislam-uptime-kuma-2.5.5_GH0.tar.gz) = 2235736
+TIMESTAMP = 1793883480
+SHA256 (uptime-kuma/uptime-kuma-npm-cache-2.5.9.tar.gz) = 18755deaada528e113e39c7849ffbf787f37d4c68c50d51932651b2e50da7a91
+SIZE (uptime-kuma/uptime-kuma-npm-cache-2.5.9.tar.gz) = 91260389
+SHA256 (uptime-kuma/dist.tar.gz) = f979084bbc74dc80a142d91d09b807f0a4ed52c06830c0e44c36adc9e77c064b
+SIZE (uptime-kuma/dist.tar.gz) = 7557888
+SHA256 (uptime-kuma/louislam-uptime-kuma-2.5.9_GH0.tar.gz) = ec8f96ca282f958c26b99a8001d7cb469b4ab7b00765458d062920aae6010527
+SIZE (uptime-kuma/louislam-uptime-kuma-2.5.9_GH0.tar.gz) = 2233838

@@ -1,6 +1,5 @@
 PORTNAME=	uptime-kuma
-DISTVERSION=	2.5.5
-PORTREVISION=	1
+DISTVERSION=	2.5.9
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	LOCAL/dch/${PORTNAME}/:npmcache \
 		https://github.com/louislam/${PORTNAME}/releases/download/${DISTVERSION}/:dist
@@ -245,7 +244,7 @@ _fetch-src:
 _npm-populate:
 	(cd ${WRKSRC} && \
 		${SETENV} HOME=${WRKDIR} npm_config_cache=${_NPM_CACHE} \
-		npm ci --legacy-peer-deps --no-audit --no-fund)
+		npm ci --ignore-scripts --legacy-peer-deps --no-audit --no-fund)
 
 _npm-cache:
 	(cd ${WRKDIR} && \
