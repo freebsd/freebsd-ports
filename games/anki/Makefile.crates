@@ -358,7 +358,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustls-native-certs-0.8.1 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.12.0 \
-		rustls-webpki-0.103.15 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
@@ -510,7 +510,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
 		web_atoms-0.2.5 \
-		webpki-roots-1.0.2 \
+		webpki-roots-1.0.10 \
 		which-8.0.0 \
 		winapi-util-0.1.10 \
 		windows-0.61.3 \
