@@ -1,5 +1,5 @@
 PORTNAME=	yq
-DISTVERSION=	4.2.0
+DISTVERSION=	4.4.5
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 
@@ -38,6 +38,6 @@ NO_ARCH=	yes
 do-test:
 	@cd ${WRKSRC}/test && ${SETENV} ${TEST_ENV} ./test.py
 
-# tests as of 4.2.0: Ran 40 tests in 0.874s OK
+# tests as of 4.4.5: 178 tests, 12 failures due to /dev/fd limitations on FreeBSD without fdescfs
 
 .include <bsd.port.mk>
