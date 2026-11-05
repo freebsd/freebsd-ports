@@ -1,10 +1,10 @@
---- pyproject.toml.orig	2026-10-10 05:24:30 UTC
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
 +++ pyproject.toml
 @@ -38,7 +38,7 @@ dev = [
  ]
  
  [build-system]
--requires = ["uv_build>=0.7.19,<0.13"]
+-requires = ["uv_build>=0.7.19,<0.14"]
 +requires = ["uv_build>=0.7.19"]
  build-backend = "uv_build"
  
