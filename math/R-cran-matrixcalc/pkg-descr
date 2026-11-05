@@ -1,0 +1,4 @@
+A collection of functions to support matrix calculations
+for probability, econometric and numerical analysis. There are
+additional functions that are comparable to APL functions which
+are useful for actuarial models such as pension mathematics.

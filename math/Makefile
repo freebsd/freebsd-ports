@@ -99,6 +99,7 @@
     SUBDIR += R-cran-maps
     SUBDIR += R-cran-mathjaxr
     SUBDIR += R-cran-matrixStats
+    SUBDIR += R-cran-matrixcalc
     SUBDIR += R-cran-maxLik
     SUBDIR += R-cran-mclust
     SUBDIR += R-cran-mcmc
