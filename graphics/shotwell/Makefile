@@ -1,5 +1,5 @@
 PORTNAME=	shotwell
-DISTVERSION=	33.0
+DISTVERSION=	33.2
 CATEGORIES=	graphics gnome
 # having full DISTVERSION in the path does not play with MASTER_SITE_GNOME
 MASTER_SITES=	https://download.gnome.org/sources/${PORTNAME}/${DISTVERSION}/
