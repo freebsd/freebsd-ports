@@ -1,3 +1,106 @@
+  <vuln vid="2053672c-d8f6-11f1-9968-3c7c3fba4204">
+    <topic>Gitea -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>gitea</name>
+	  <range><lt>28.3.0</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitea reports:</p>
+	<blockquote cite="https://blog.gitea.com/release-of-28.3.0/">
+	  <ul>
+	    <li>CVE-2026-120263: With 'ACCOUNT_LINKING = auto' and open registration, the link-account
+		sign-up form let a user who signed in through an OAuth2 provider enter the user name
+		or email address of an existing account, which was then linked to the external identity
+		and signed in without a password.</li>
+	    <li>CVE-2026-118386: A user with read access could submit a pull request review whose commit_id
+		named their own commit, on a pull request whose head branch is in the same repository.</li>
+	    <li>CVE-2026-117635: The 'public-only' token restriction was not applied to the admin API,
+		so a 'public-only' token of a site administrator could list the email addresses of all users,
+		create private organizations and runner registration tokens, and create new administrators.</li>
+	    <li>CVE-2026-119441: 'DELETE /api/v1/orgs/{org}/repos' did not reject 'public-only' tokens, so
+		such a token of an organization owner could delete all repositories of the organization,
+		private ones included.</li>
+	    <li>CVE-2026-116296: The release, milestone and label API routes did not reject changes to
+		archived repositories, so a user with write access could replace release assets, delete
+		releases, and change milestones and labels of an archived repository.</li>
+	    <li>CVE-2026-117685: The OCI cross-repository blob mount checked access to the source blob
+		with the user’s full permissions instead of the token’s, so a 'public-only' package token
+		could mount a private blob into a public package and read it.</li>
+	    <li>CVE-2026-113429: The legacy Actions artifact upload stored the 'Content-Encoding' request
+		header without a check and served it back as the 'Content-Type' of the download, so a
+		workflow could upload an artifact that is rendered as HTML on the Gitea origin (stored XSS)
+		when a victim opens its download link. The header is no longer stored.</li>
+	    <li>CVE-2026-118394: The OIDC userinfo endpoint read the token scope only from the 'Authorization'
+		header, so a 'public-only' token sent as a query parameter received the user’s private
+		organizations and teams in the 'groups' claim.</li>
+	    <li>CVE-2026-119625: '/{username}' accepted a token sent as HTTP Basic without checking its scope,
+		so a token with an unrelated scope could read the owner’s private activity through the user feed
+		('.rss' / '.atom'), and a 'public-only' token could see private repositories and organizations on the
+		profile pages.</li>
+	    <li>CVE-2026-119627: The web profile pages and RSS/Atom feeds of users and organizations with
+		limited visibility were shown to 'public-only' tokens.</li>
+	    <li>CVE-2026-112887: Actions task tokens carry no token scope, and repository filters treated
+		the negative ID of the Actions system user as “no owner filter”, so a job’s 'GITEA_TOKEN'
+		could list every private repository of the instance through 'GET /api/v1/user/repos'.</li>
+	    <li>CVE-2026-116474: A job’s 'GITEA_TOKEN' could add an email address and a GPG key to the
+		'gitea-actions' system user, so commits signed with that key were shown as signed by
+		the instance. Only the displayed signature status was affected.</li>
+	    <li>CVE-2026-116289: A 'public-only' token with 'write:organization' of an organization owner
+		could create an organization runner registration token. A runner registered with it then
+		received jobs, including their secrets, from the organization’s private repositories.</li>
+	    <li>CVE-2026-117646: The repositories, stars and watching tabs of user profiles and the
+		organization home page showed private repositories to 'public-only' tokens.</li>
+	    <li>CVE-2026-118395: The deprecated 'POST /api/v1/org/{org}/repos' route did not reject
+		'public-only' tokens, so such a token could create private repositories in an organization.</li>
+	    <li>CVE-2026-114199: 'GET /api/v1/users/{username}/heatmap' counted contributions to private
+		repositories for 'public-only' tokens.</li>
+	    <li>CVE-2026-117649: The issue timeline showed private issues that were linked as dependencies
+		to users who could not read them: the web page showed their title, and the API returned the
+		full issue including its body.</li>
+	    <li>CVE-2026-119533: Project boards showed the title, number, state and repository of private
+		pull requests that referenced an issue on the board to visitors who could not read them.</li>
+	    <li>CVE-2026-118504: Several issue API routes did not reject changes to archived repositories,
+		so a user with write access could still change deadlines, tracked times, stopwatches,
+		reactions, pins and blocking issues in an archived repository.</li>
+	    <li>CVE-2026-117677: The Helm chart upload inflated the whole archive before the package size
+		quota was checked, without a size limit, so a user with package write access could tie up
+		the server with a small, highly compressed upload. The amount of data inflated is now bounded.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-120263</cvename>
+      <cvename>CVE-2026-118386</cvename>
+      <cvename>CVE-2026-117635</cvename>
+      <cvename>CVE-2026-119441</cvename>
+      <cvename>CVE-2026-116296</cvename>
+      <cvename>CVE-2026-117685</cvename>
+      <cvename>CVE-2026-113429</cvename>
+      <cvename>CVE-2026-118394</cvename>
+      <cvename>CVE-2026-119625</cvename>
+      <cvename>CVE-2026-119627</cvename>
+      <cvename>CVE-2026-112887</cvename>
+      <cvename>CVE-2026-116474</cvename>
+      <cvename>CVE-2026-116289</cvename>
+      <cvename>CVE-2026-117646</cvename>
+      <cvename>CVE-2026-118395</cvename>
+      <cvename>CVE-2026-114199</cvename>
+      <cvename>CVE-2026-117649</cvename>
+      <cvename>CVE-2026-119533</cvename>
+      <cvename>CVE-2026-118504</cvename>
+      <cvename>CVE-2026-117677</cvename>
+      <url>https://blog.gitea.com/release-of-28.3.0/</url>
+    </references>
+    <dates>
+      <discovery>2026-11-01</discovery>
+      <entry>2026-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="117b053d-d8e3-11f1-985e-901b0edee044">
     <topic>anki -- Malicious APKG can lead to arbitrary code execution via iframes</topic>
     <affects>
