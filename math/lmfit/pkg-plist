@@ -11,7 +11,7 @@ lib/cmake/lmfit/lmfitTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/lmfit/lmfitTargets.cmake
 lib/liblmfit.so
 lib/liblmfit.so.11
-lib/liblmfit.so.11.0.0
+lib/liblmfit.so.11.0.1
 libdata/pkgconfig/lmfit.pc
 share/man/man3/lmcurve.3.gz
 share/man/man3/lmcurve2.3.gz
