@@ -21,7 +21,6 @@ etc/bash_completion.d/jj
 %%PORTDOCS%%%%DOCSDIR%%/design/run.md
 %%PORTDOCS%%%%DOCSDIR%%/design/secure-config.md
 %%PORTDOCS%%%%DOCSDIR%%/design/sparse-v2.md
-%%PORTDOCS%%%%DOCSDIR%%/design/tracking-branches.md
 %%PORTDOCS%%%%DOCSDIR%%/design_doc_blueprint.md
 %%PORTDOCS%%%%DOCSDIR%%/design_docs.md
 %%PORTDOCS%%%%DOCSDIR%%/filesets.md
