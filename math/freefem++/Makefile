@@ -1,7 +1,7 @@
 PORTNAME=	freefem++
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,24 +15,26 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gmm++>0:math/gmm++ \
 		pipe:misc/pipe \
 		tetgen:math/tetgen
-LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+LIB_DEPENDS=	libarpack.so:math/arpack-ng@nompi \
 		libhdf5.so:science/hdf5	\
 		libamd.so:math/suitesparse-amd \
+		libcblas.so:math/cblas \
 		libcholmod.so:math/suitesparse-cholmod \
 		libcolamd.so:math/suitesparse-colamd \
 		libumfpack.so:math/suitesparse-umfpack \
 		libfftw3.so:math/fftw3 \
 		libgsl.so:math/gsl \
 		libmetis.so:math/metis \
-		libmumps_common.so:math/mumps-edf \
-		libscotch.so:cad/scotch-edf \
+		libmumps_common.so:math/mumps \
+		libscotch.so:cad/scotch \
 		libnlopt.so:math/nlopt \
+		libscalapack.so:math/scalapack \
 		libsuperlu.so:math/superlu
 RUN_DEPENDS=	bash:shells/bash \
 		pipe:misc/pipe
 
 USES=		autoreconf bison blaslapack:openblas compiler:c++14-lang fortran \
-		gl gmake localbase perl5 pkgconfig shebangfix xorg
+		gl gmake libtool localbase mpi perl5 pkgconfig shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeFem
@@ -53,8 +55,9 @@ LDFLAGS+=	-pthread # workaround for https://github.com/FreeFem/FreeFem-sources/i
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CNOFLAGS="${CFLAGS}" LIBS=-lz
 CONFIGURE_ARGS=	--disable-download \
-		--without-mpi \
 		--with-blas=${BLASLIB} \
+		--without-hpddm \
+		--without-petsc \
 		--with-lapack=${LAPACKLIB}
 
 USE_GL=		gl glu glut
