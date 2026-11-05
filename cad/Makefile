@@ -11,8 +11,6 @@
     SUBDIR += apio
     SUBDIR += appcsxcad
     SUBDIR += archimedes
-    SUBDIR += astk-client
-    SUBDIR += astk-serveur
     SUBDIR += atlc
     SUBDIR += brlcad
     SUBDIR += calculix
