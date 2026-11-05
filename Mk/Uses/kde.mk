@@ -20,9 +20,10 @@
 # To simplify the ports, also:
 # CATEGORIES	If the port is part of one of the KDE Software distribution,
 #		it can add, in addition to 'kde' one of the following:
-#			kde-applications:	part of applications release
-#			kde-frameworks:		part of frameworks release
-#			kde-plasma:		part of plasma release
+#			kde-applications:	part of Gear release
+#			kde-frameworks:		part of Frameworks release
+#			kde-plasma:		part of Plasma 6 release
+#			kde-plasma6lts:		part of Plasma 6 LTS release
 #		this will then set default values for MASTER_SITES and DIST_SUBDIR
 #		as well as CPE_VENDOR and LICENSE.
 #
@@ -57,9 +58,11 @@ _INCLUDE_USES_KDE_MK=	yes
 # The first value must be the latest stable version of KDE Frameworks.
 _KDE_SUPPORTED=		6 5
 
-# List of shared components. The latest stable version will be used
-# if KDE Frameworks version is not specified.
-_USE_KDE_LATEST=	apidox breeze-icons ecm oxygen-sounds
+# List of shared components among KF6- and KF5-bases modules. The latest stable
+# version will be used if KDE Frameworks version is not specified.
+_USE_KDE_LATEST=	${_USE_FRAMEWORKS_LATEST} ${_USE_PLASMA_LATEST}
+_USE_FRAMEWORKS_LATEST=	apidox breeze-icons ecm
+_USE_PLASMA_LATEST=	oxygen-sounds
 
 .  for ver in ${_KDE_SUPPORTED:O:u}
 .    if ${kde_ARGS:M${ver}}
@@ -84,9 +87,30 @@ _KDE_VERSION=	${_KDE_SUPPORTED:[1]}
 
 _KDE_RELNAME=		KDE${_KDE_VERSION}
 
+# === USES=plasma[:ver] surrogate ==============================================
+# Supported releases for KF6-based Plasma. The default version is used for
+# building third-party Plasma consumers.
+_PLASMA_SUPPORTED=	6 6lts
+_PLASMA_VER?=		${KDE_PLASMA_DEFAULT}
+
+.  if ${CATEGORIES:Mkde-plasma6lts}
+_PLASMA_VER=		6lts
+CONFLICTS_INSTALL+=	plasma6-${PORTNAME}-6.*
+.  elif ${CATEGORIES:Mkde-plasma}
+_PLASMA_VER=		6
+CONFLICTS_INSTALL+=	plasma6lts-${PORTNAME}-6.*
+.     if ${KDE_PLASMA_DEFAULT} != 6 && empty(_USE_PLASMA_LATEST:M${PORTNAME})
+IGNORE=		cannot be installed: Plasma 6 LTS is set a as default distribution
+.     endif
+.  endif
+
+.  if !${_PLASMA_SUPPORTED:M${_PLASMA_VER}}
+IGNORE=		unknown KDE Plasma version: ${_PLASMA_VER}
+.  endif
+
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
-KDE_PLASMA_VERSION?=		${KDE_PLASMA${_KDE_VERSION}_VERSION}
-KDE_PLASMA_BRANCH?=		${KDE_PLASMA${_KDE_VERSION}_BRANCH}
+KDE_PLASMA_VERSION?=		${KDE_PLASMA${_PLASMA_VER}_VERSION}
+KDE_PLASMA_BRANCH?=		${KDE_PLASMA${_PLASMA_VER}_BRANCH}
 
 KDE_FRAMEWORKS_VERSION?=	${KDE_FRAMEWORKS${_KDE_VERSION}_VERSION}
 KDE_FRAMEWORKS_BRANCH?=		${KDE_FRAMEWORKS${_KDE_VERSION}_BRANCH}
@@ -98,6 +122,10 @@ KDE_PIM_SHLIB_VER?=		${KDE_PIM6_SHLIB_VER}
 # Current KDE Plasma desktop.
 KDE_PLASMA6_VERSION?=		6.7.5
 KDE_PLASMA6_BRANCH?=		stable
+
+# KDE Plasma 6 LTS
+KDE_PLASMA6lts_VERSION?=	6.6.6
+KDE_PLASMA6lts_BRANCH?=		stable
 
 # Legacy KDE frameworks (Qt5 based).
 KDE_FRAMEWORKS5_VERSION?=	5.116.0
@@ -137,7 +165,7 @@ KDE_PREFIX=	${LOCALBASE}
 
 # === CATEGORIES HANDLING -- SETTING DEFAULT VALUES ============================
 # Doing MASTER_SITES magic based on the category of the port
-_KDE_CATEGORIES_SUPPORTED=	kde-applications kde-frameworks kde-plasma kde-devel
+_KDE_CATEGORIES_SUPPORTED=	kde-applications kde-frameworks kde-plasma kde-plasma6lts kde-devel
 .  for cat in ${_KDE_CATEGORIES_SUPPORTED:Nkde-devel}
 .    if ${CATEGORIES:M${cat}}
 .      if !defined(_KDE_CATEGORY)
@@ -204,15 +232,13 @@ PLIST_SUB+=		KDE_PIM_SHLIB_VER=${KDE_PIM_SHLIB_VER} \
 PLIST_SUB+=		SHLIB_VER_LONG=${_${PORTNAME}_PROJECT_VERSION}.${KDE_APPS_BASED_PATCHLEVEL}
 .      endif
 DIST_SUBDIR?=		KDE/release-service/${KDE_APPLICATIONS_VERSION}
-.    elif ${_KDE_CATEGORY:Mkde-plasma}
+.    elif ${_KDE_CATEGORY:Mkde-plasma} || ${_KDE_CATEGORY:Mkde-plasma6lts}
 PORTVERSION?=		${KDE_PLASMA_VERSION}
-PKGNAMEPREFIX?=		plasma${_KDE_VERSION}-
+PKGNAMEPREFIX?=		plasma${_PLASMA_VER}-
 MASTER_SITES?=		KDE/${KDE_PLASMA_BRANCH}/plasma/${KDE_PLASMA_VERSION}
 DIST_SUBDIR?=		KDE/plasma/${KDE_PLASMA_VERSION}
 WWW?=			https://kde.org/plasma-desktop/
-.      if ${_KDE_VERSION:M6}
-DESCR=			${.CURDIR:H:H}/x11/plasma6-plasma/pkg-descr
-.      endif
+DESCR=			${.CURDIR:H:H}/x11/plasma${_PLASMA_VER}-plasma/pkg-descr
 .    elif ${_KDE_CATEGORY:Mkde-frameworks}
 PORTVERSION?=		${KDE_FRAMEWORKS_VERSION}
 PKGNAMEPREFIX?=		kf${_KDE_VERSION}-
@@ -334,7 +360,22 @@ _USE_PLASMA6_ALL=	activities activities-stats activitymanagerd \
 			polkit-kde-agent-1 powerdevil print-manager \
 			qqc2-breeze-style sddm-kcm spectacle systemmonitor \
 			systemsettings union wayland xdg-desktop-portal-kde
-_USE_PLASMA_ALL=	${_USE_PLASMA${_KDE_VERSION}_ALL}
+_USE_PLASMA6lts_ALL=	activities activities-stats activitymanagerd \
+			aurorae breeze breeze-gtk decoration discover \
+			globalacceld infocenter kde-cli-tools \
+			kde-gtk-config kdeplasma-addons kgamma kmenuedit \
+			knighttime kpipewire kscreen kscreenlocker \
+			ksshaskpass ksystemstats kwallet-pam kwin kwin-x11 \
+			kwrited layer-shell-qt libkscreen libksysguard \
+			libplasma milou ocean-sound-theme oxygen \
+			oxygen-sounds plasma-browser-integration \
+			plasma-desktop plasma-disks plasma-integration \
+			plasma-pa plasma-sdk plasma-workspace \
+			plasma-workspace-wallpapers plasma5support \
+			polkit-kde-agent-1 powerdevil print-manager \
+			qqc2-breeze-style sddm-kcm spectacle systemmonitor \
+			systemsettings wayland xdg-desktop-portal-kde
+_USE_PLASMA_ALL=	${_USE_PLASMA${_PLASMA_VER}_ALL}
 
 # List of frequently used components of the KDE Gears distribution.
 _USE_GEAR6_ALL=		baloo-widgets kosm kpublictransport \
@@ -376,15 +417,17 @@ _USE_KDE6_ALL=		${_USE_FRAMEWORKS_ALL}  \
 			${_USE_KDE_EXTRA_ALL}
 
 # ====================== frameworks components =================================
+# Use latest Plasma 6 port for Plasma 6 LTS
 kde-activities_PORT5=		x11/kf${_KDE_VERSION}-kactivities
-kde-activities_PORT6=		x11/plasma${_KDE_VERSION}-plasma-activities
+kde-activities_PORT6=		x11/plasma${KDE_PLASMA_DEFAULT}-plasma-activities
 kde-activities_PORT=		${kde-activities_PORT${_KDE_VERSION}}
 kde-activities_LIB5=		libKF${_KDE_VERSION}Activities.so
 kde-activities_LIB6=		libPlasmaActivities.so
 kde-activities_LIB=		${kde-activities_LIB${_KDE_VERSION}}
 
+# Use latest Plasma 6 port for Plasma 6 LTS
 kde-activities-stats_PORT5=	x11/kf${_KDE_VERSION}-kactivities-stats
-kde-activities-stats_PORT6=	x11/plasma${_KDE_VERSION}-plasma-activities-stats
+kde-activities-stats_PORT6=	x11/plasma${KDE_PLASMA_DEFAULT}-plasma-activities-stats
 kde-activities-stats_PORT=	${kde-activities-stats_PORT${_KDE_VERSION}}
 kde-activities-stats_LIB5=	libKF${_KDE_VERSION}ActivitiesStats.so
 kde-activities-stats_LIB6=	libPlasmaActivitiesStats.so
@@ -536,7 +579,8 @@ kde-kquickcharts_PATH=		${kde-kquickcharts_PATH${_KDE_VERSION}}
 kde-kross_PORT=			lang/kf${_KDE_VERSION}-kross
 kde-kross_LIB=			libKF${_KDE_VERSION}KrossCore.so
 
-kde-layer-shell-qt_PORT=	x11/plasma${_KDE_VERSION}-layer-shell-qt
+# Use latest Plasma 6 port for Plasma 6 LTS
+kde-layer-shell-qt_PORT=	x11/plasma${KDE_PLASMA_DEFAULT}-layer-shell-qt
 kde-layer-shell-qt_LIB=		libLayerShellQtInterface.so
 
 kde-mediaplayer_PORT=		multimedia/kf${_KDE_VERSION}-kmediaplayer
@@ -631,7 +675,7 @@ kde-wallet_PORT=		sysutils/kf${_KDE_VERSION}-kwallet
 kde-wallet_LIB=			libKF${_KDE_VERSION}Wallet.so
 
 kde-wayland_PORT5=		x11/kf${_KDE_VERSION}-kwayland
-kde-wayland_PORT6=		x11/plasma${_KDE_VERSION}-kwayland
+kde-wayland_PORT6=		x11/plasma${_PLASMA_VER}-kwayland
 kde-wayland_PORT=		${kde-wayland_PORT${_KDE_VERSION}}
 kde-wayland_LIB5=		libKF${_KDE_VERSION}WaylandClient.so
 kde-wayland_LIB6=		libKWaylandClient.so
@@ -673,158 +717,158 @@ kde-userfeedback_LIB=		libKF${_KDE_VERSION}UserFeedbackCore.so
 # ====================== end of frameworks components ==========================
 
 # ====================== plasma components =====================================
-kde-kpipewire_PORT=		audio/plasma${_KDE_VERSION}-kpipewire
+kde-kpipewire_PORT=		audio/plasma${_PLASMA_VER}-kpipewire
 kde-kpipewire_LIB=		libKPipeWire.so
 
-kde-activitymanagerd_PORT=	x11/plasma${_KDE_VERSION}-kactivitymanagerd
+kde-activitymanagerd_PORT=	x11/plasma${_PLASMA_VER}-kactivitymanagerd
 kde-activitymanagerd_LIB=	libkactivitymanagerd_plugin.so
 
-kde-aurorae_PORT=		x11-themes/plasma${_KDE_VERSION}-aurorae
+kde-aurorae_PORT=		x11-themes/plasma${_PLASMA_VER}-aurorae
 kde-aurorae_PATH=		${KDE_PREFIX}/lib/libexec/plasma-apply-aurorae
 
-kde-breeze_PORT=		x11-themes/plasma${_KDE_VERSION}-breeze
+kde-breeze_PORT=		x11-themes/plasma${_PLASMA_VER}-breeze
 kde-breeze_PATH=		${KDE_PREFIX}/share/QtCurve/Breeze.qtcurve
 
-kde-breeze-gtk_PORT=		x11-themes/plasma${_KDE_VERSION}-breeze-gtk
+kde-breeze-gtk_PORT=		x11-themes/plasma${_PLASMA_VER}-breeze-gtk
 kde-breeze-gtk_PATH=		${KDE_PREFIX}/share/themes/Breeze/gtk-2.0/gtkrc
 
-kde-decoration_PORT=		x11-wm/plasma${_KDE_VERSION}-kdecoration
+kde-decoration_PORT=		x11-wm/plasma${_PLASMA_VER}-kdecoration
 kde-decoration_LIB=		libkdecorations3.so
 
-kde-discover_PORT=		sysutils/plasma${_KDE_VERSION}-discover
+kde-discover_PORT=		sysutils/plasma${_PLASMA_VER}-discover
 kde-discover_PATH=		${KDE_PREFIX}/bin/plasma-discover
 
-kde-infocenter_PORT=		sysutils/plasma${_KDE_VERSION}-kinfocenter
+kde-infocenter_PORT=		sysutils/plasma${_PLASMA_VER}-kinfocenter
 kde-infocenter_PATH=		${KDE_PREFIX}/bin/kinfocenter
 
-kde-kde-cli-tools_PORT=		sysutils/plasma${_KDE_VERSION}-kde-cli-tools
+kde-kde-cli-tools_PORT=		sysutils/plasma${_PLASMA_VER}-kde-cli-tools
 kde-kde-cli-tools_PATH=		${KDE_PREFIX}/bin/kde-open
 
-kde-kde-gtk-config_PORT=	x11-themes/plasma${_KDE_VERSION}-kde-gtk-config
+kde-kde-gtk-config_PORT=	x11-themes/plasma${_PLASMA_VER}-kde-gtk-config
 kde-kde-gtk-config_PATH=	${KDE_PREFIX}/lib/kconf_update_bin/gtk_theme
 
-kde-kdeplasma-addons_PORT=	x11-toolkits/plasma${_KDE_VERSION}-kdeplasma-addons
+kde-kdeplasma-addons_PORT=	x11-toolkits/plasma${_PLASMA_VER}-kdeplasma-addons
 kde-kdeplasma-addons_LIB=	libplasmapotdprovidercore.so
 
-kde-kgamma_PORT=		x11/plasma${_KDE_VERSION}-kgamma
+kde-kgamma_PORT=		x11/plasma${_PLASMA_VER}-kgamma
 kde-kgamma_PATH=		${QT_PLUGINDIR}/plasma/kcms/systemsettings_qwidgets/kcm_kgamma.so
 
-kde-kmenuedit_PORT=		sysutils/plasma${_KDE_VERSION}-kmenuedit
+kde-kmenuedit_PORT=		sysutils/plasma${_PLASMA_VER}-kmenuedit
 kde-kmenuedit_PATH=		${KDE_PREFIX}/bin/kmenuedit
 
-kde-knighttime_PORT=		sysutils/plasma${_KDE_VERSION}-knighttime
+kde-knighttime_PORT=		sysutils/plasma${_PLASMA_VER}-knighttime
 kde-knighttime_LIB=		libKNightTime.so
 
-kde-kscreen_PORT=		x11/plasma${_KDE_VERSION}-kscreen
+kde-kscreen_PORT=		x11/plasma${_PLASMA_VER}-kscreen
 kde-kscreen_PATH=		${KDE_PREFIX}/bin/kscreen-console
 
-kde-kscreenlocker_PORT=		security/plasma${_KDE_VERSION}-kscreenlocker
+kde-kscreenlocker_PORT=		security/plasma${_PLASMA_VER}-kscreenlocker
 kde-kscreenlocker_LIB=		libKScreenLocker.so
 
-kde-ksshaskpass_PORT=		security/plasma${_KDE_VERSION}-ksshaskpass
+kde-ksshaskpass_PORT=		security/plasma${_PLASMA_VER}-ksshaskpass
 kde-ksshaskpass_PATH=		${KDE_PREFIX}/bin/ksshaskpass
 
-kde-ksystemstats_PORT=		sysutils/plasma${_KDE_VERSION}-ksystemstats
+kde-ksystemstats_PORT=		sysutils/plasma${_PLASMA_VER}-ksystemstats
 kde-ksystemstats_PATH=		${KDE_PREFIX}/bin/ksystemstats
 
-kde-kwallet-pam_PORT=		security/plasma${_KDE_VERSION}-kwallet-pam
+kde-kwallet-pam_PORT=		security/plasma${_PLASMA_VER}-kwallet-pam
 kde-kwallet-pam_PATH=		${KDE_PREFIX}/lib/pam_kwallet5.so
 
-kde-kwin_PORT=			x11-wm/plasma${_KDE_VERSION}-kwin
+kde-kwin_PORT=			x11-wm/plasma${_PLASMA_VER}-kwin
 kde-kwin_PATH=			${KDE_PREFIX}/bin/kwin_wayland
 
-kde-kwin-x11_PORT=		x11-wm/plasma${_KDE_VERSION}-kwin-x11
+kde-kwin-x11_PORT=		x11-wm/plasma${_PLASMA_VER}-kwin-x11
 kde-kwin-x11_PATH=		${KDE_PREFIX}/bin/kwin_x11
 
-kde-kwrited_PORT=		devel/plasma${_KDE_VERSION}-kwrited
+kde-kwrited_PORT=		devel/plasma${_PLASMA_VER}-kwrited
 kde-kwrited_PATH=		${QT_PLUGINDIR}/kf${_KDE_VERSION}/kded/kwrited.so
 
-kde-libkscreen_PORT=		x11/plasma${_KDE_VERSION}-libkscreen
+kde-libkscreen_PORT=		x11/plasma${_PLASMA_VER}-libkscreen
 kde-libkscreen_LIB=		libKF${_KDE_VERSION}Screen.so
 
-kde-libksysguard_PORT=		sysutils/plasma${_KDE_VERSION}-libksysguard
+kde-libksysguard_PORT=		sysutils/plasma${_PLASMA_VER}-libksysguard
 kde-libksysguard_LIB5=		libksgrd.so
 kde-libksysguard_LIB6=		libKSysGuardSystemStats.so
 kde-libksysguard_LIB=		${kde-libksysguard_LIB${_KDE_VERSION}}
 
-kde-milou_PORT=			deskutils/plasma${_KDE_VERSION}-milou
+kde-milou_PORT=			deskutils/plasma${_PLASMA_VER}-milou
 kde-milou_PATH=		${QT_QMLDIR}/org/kde/milou/libmilou.so
 
-kde-ocean-sound-theme_PORT=	audio/plasma${_KDE_VERSION}-ocean-sound-theme
+kde-ocean-sound-theme_PORT=	audio/plasma${_PLASMA_VER}-ocean-sound-theme
 kde-ocean-sound-theme_PATH=	${KDE_PREFIX}/share/sounds/ocean/index.theme
 kde-ocean-sound-theme_TYPE=	run
 
-kde-oxygen_PORT=		x11-themes/plasma${_KDE_VERSION}-oxygen
+kde-oxygen_PORT=		x11-themes/plasma${_PLASMA_VER}-oxygen
 kde-oxygen_PATH=		${QT_PLUGINDIR}/kstyle_config/kstyle_oxygen_config.so
 
-kde-plasma-browser-integration_PORT=	www/plasma${_KDE_VERSION}-plasma-browser-integration
+kde-plasma-browser-integration_PORT=	www/plasma${_PLASMA_VER}-plasma-browser-integration
 kde-plasma-browser-integration_PATH=	${KDE_PREFIX}/bin/plasma-browser-integration-host
 
-kde-plasma-desktop_PORT=	x11/plasma${_KDE_VERSION}-plasma-desktop
+kde-plasma-desktop_PORT=	x11/plasma${_PLASMA_VER}-plasma-desktop
 kde-plasma-desktop_PATH=	${KDE_PREFIX}/bin/kaccess
 
-kde-plasma-disks_PORT=		sysutils/plasma${_KDE_VERSION}-plasma-disks
+kde-plasma-disks_PORT=		sysutils/plasma${_PLASMA_VER}-plasma-disks
 kde-plasma-disks_PATH=		${KDE_PREFIX}/lib/libexec/kf6/kauth/kded-smart-helper
 
-kde-plasma-integration_PORT=	x11/plasma${_KDE_VERSION}-plasma-integration
+kde-plasma-integration_PORT=	x11/plasma${_PLASMA_VER}-plasma-integration
 kde-plasma-integration_PATH=	${QT_PLUGINDIR}/platformthemes/KDEPlasmaPlatformTheme6.so
 
-kde-plasma-pa_PORT=		audio/plasma${_KDE_VERSION}-plasma-pa
+kde-plasma-pa_PORT=		audio/plasma${_PLASMA_VER}-plasma-pa
 kde-plasma-pa_PATH=		${QT_PLUGINDIR}/plasma/kcms/systemsettings/kcm_pulseaudio.so
 
-kde-plasma-sdk_PORT=		devel/plasma${_KDE_VERSION}-plasma-sdk
+kde-plasma-sdk_PORT=		devel/plasma${_PLASMA_VER}-plasma-sdk
 kde-plasma-sdk_PATH=		${KDE_PREFIX}/bin/plasmoidviewer
 
-kde-plasma-workspace_PORT=	x11/plasma${_KDE_VERSION}-plasma-workspace
+kde-plasma-workspace_PORT=	x11/plasma${_PLASMA_VER}-plasma-workspace
 kde-plasma-workspace_LIB=	libkworkspace${_KDE_VERSION}.so
 
-kde-plasma-workspace-wallpapers_PORT=	x11-themes/plasma${_KDE_VERSION}-plasma-workspace-wallpapers
+kde-plasma-workspace-wallpapers_PORT=	x11-themes/plasma${_PLASMA_VER}-plasma-workspace-wallpapers
 kde-plasma-workspace-wallpapers_PATH=	${KDE_PREFIX}/share/wallpapers/Autumn/contents/images/1280x1024.jpg
 
-kde-polkit-kde-agent-1_PORT=	sysutils/plasma${_KDE_VERSION}-polkit-kde-agent-1
+kde-polkit-kde-agent-1_PORT=	sysutils/plasma${_PLASMA_VER}-polkit-kde-agent-1
 kde-polkit-kde-agent-1_PATH=	${KDE_PREFIX}/lib/libexec/polkit-kde-authentication-agent-1
 
-kde-powerdevil_PORT=		sysutils/plasma${_KDE_VERSION}-powerdevil
+kde-powerdevil_PORT=		sysutils/plasma${_PLASMA_VER}-powerdevil
 kde-powerdevil_LIB=		libpowerdevilcore.so
 
-kde-print-manager_PORT=		print/plasma${_KDE_VERSION}-print-manager
-kde-print-manager_PATH=		${KDE_PREFIX}/bin/plasma-print-queue
+kde-print-manager_PORT=		print/plasma${_PLASMA_VER}-print-manager
+kde-print-manager_PATH=		${KDE_PREFIX}/bin/configure-printer
 kde-print-manager_TYPE=		run
 
-kde-spectacle_PORT=		graphics/plasma${_KDE_VERSION}-spectacle
+kde-spectacle_PORT=		graphics/plasma${_PLASMA_VER}-spectacle
 kde-spectacle_PATH=		${KDE_PREFIX}/bin/spectacle
 kde-spectacle_TYPE=		run
 
-kde-systemmonitor_PORT=		sysutils/plasma${_KDE_VERSION}-plasma-systemmonitor
+kde-systemmonitor_PORT=		sysutils/plasma${_PLASMA_VER}-plasma-systemmonitor
 kde-systemmonitor_PATH=		${KDE_PREFIX}/bin/plasma-systemmonitor
 kde-systemmonitor_TYPE=		run
 
-kde-systemsettings_PORT=	sysutils/plasma${_KDE_VERSION}-systemsettings
+kde-systemsettings_PORT=	sysutils/plasma${_PLASMA_VER}-systemsettings
 kde-systemsettings_PATH=	${KDE_PREFIX}/bin/systemsettings
 
-kde-union_PORT=			x11-themes/plasma${_KDE_VERSION}-union
+kde-union_PORT=			x11-themes/plasma${_PLASMA_VER}-union
 kde-union_LIB=			libUnion.so
 
-kde-xdg-desktop-portal-kde_PORT=	deskutils/plasma${_KDE_VERSION}-xdg-desktop-portal-kde
+kde-xdg-desktop-portal-kde_PORT=	deskutils/plasma${_PLASMA_VER}-xdg-desktop-portal-kde
 kde-xdg-desktop-portal-kde_PATH=	${KDE_PREFIX}/lib/libexec/xdg-desktop-portal-kde
 
-kde-plasma5support_PORT=	devel/plasma${_KDE_VERSION}-plasma5support
+kde-plasma5support_PORT=	devel/plasma${_PLASMA_VER}-plasma5support
 kde-plasma5support_LIB=		libPlasma5Support.so
 
-kde-qqc2-breeze-style_PORT=	x11-themes/plasma${_KDE_VERSION}-qqc2-breeze-style
+kde-qqc2-breeze-style_PORT=	x11-themes/plasma${_PLASMA_VER}-qqc2-breeze-style
 kde-qqc2-breeze-style_PATH=	${QT_PLUGINDIR}/kf${_KDE_VERSION}/kirigami/platform/org.kde.breeze.so
 
-kde-sddm-kcm_PORT=		deskutils/plasma${_KDE_VERSION}-sddm-kcm
+kde-sddm-kcm_PORT=		deskutils/plasma${_PLASMA_VER}-sddm-kcm
 kde-sddm-kcm_PATH=		${QT_PLUGINDIR}/plasma/kcms/systemsettings/kcm_sddm.so
 kde-sddm-kcm_TYPE=		run
 
 kde-kirigami-addons_PORT=	x11-toolkits/kirigami-addons-qt${_KDE_VERSION}
 kde-kirigami-addons_PATH=	${QT_QMLDIR}/org/kde/kirigamiaddons/components/libcomponentsplugin.so
 
-kde-globalacceld_PORT=		x11/plasma${_KDE_VERSION}-kglobalacceld
+kde-globalacceld_PORT=		x11/plasma${_PLASMA_VER}-kglobalacceld
 kde-globalacceld_PATH=		${QT_PLUGINDIR}/org.kde.kglobalacceld.platforms/KGlobalAccelDXcb.so
 
-kde-libplasma_PORT=		x11/plasma${_KDE_VERSION}-libplasma
+kde-libplasma_PORT=		x11/plasma${_PLASMA_VER}-libplasma
 kde-libplasma_LIB=		libPlasma.so
 # ====================== end of plasma components ==============================
 
