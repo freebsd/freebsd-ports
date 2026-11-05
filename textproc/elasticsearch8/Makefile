@@ -84,7 +84,7 @@ OPTIONS_DEFINE=		DOCS
 # 3. make clean makesum
 DEV_UPDATE_MODE?=	no
 .if (${DEV_UPDATE_MODE} == "no")
-MASTER_SITES+=	LOCAL/vvd/elastic/${PORTNAME}:deps
+MASTER_SITES+=	LOCAL/vvd/elastic:deps
 DISTFILES+=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:deps
 GRADLE_ARGS=	--offline
 .endif
