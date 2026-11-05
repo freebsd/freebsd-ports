@@ -1,3 +1,94 @@
+  <vuln vid="06eeb817-d93d-11f1-908f-3c7c3fba4204">
+    <topic>Keycloak -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>keycloak</name>
+	  <range><lt>26.8.2</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Keycloak Team reports:</p>
+	<blockquote cite="https://github.com/keycloak/keycloak/releases/tag/26.8.2">
+	  <ul>
+	    <li>CVE-2026-92358: Cross-browser fallback proof survives successful account linking and self-service unlink organizations</li>
+	    <li>CVE-2026-105305: Device Authorization Grant bypasses per-client minimum.acr.value enforcement authentication</li>
+	    <li>CVE-2026-107623: OIDC DCR read-modify-write silently disables offline token revocation on backchannel logout oidc</li>
+	    <li>CVE-2026-107889: Stored XSS on the login page via kcSanitize bypass authentication</li>
+	    <li>CVE-2026-112201: Login-failure upsert trusts MySQL/MariaDB affected-row count</li>
+	    <li>CVE-2026-112208: Account takeover via stale SSO_AUTH note in Organization identity-first login (reproduced on 26.8.1) </li>
+	    <li>CVE-2026-110932: Keycloak &lt;= 26.8.0 : Unauthenticated persistent disk exhaustion (theme gzip cache) </li>
+	    <li>CVE-2026-107123: Unauthenticated DoS in Keycloak SAML endpoint</li>
+	    <li>CVE-2026-107124: Session takeover by victim logout with injected id_token_hint</li>
+	    <li>CVE-2026-107602: Unauthenticated CPU and worker-pool exhaustion (restart required) via SAML 1.1 KeyInfo parser loop on a legal ds:KeyName</li>
+	    <li>CVE-2026-110931: Unauthenticated single-request JVM termination (OutOfMemoryError) via SAML 1.1 AuthorityBinding parser loop, incomplete fix of CVE-2026-7307</li>
+	    <li>CVE-2026-97367: DCR azp+sid claim substitution via User Property mappers allows Account REST victim session takeover — #YWH-PGM40475-313</li>
+	    <li>CVE-2026-97174: CIBA sub parameter injection causes attacker authentication to issue victim tokens — #YWH-PGM40475-289</li>
+	    <li>CVE-2026-114232: UMA user-managed permission resourceType field not validated — cross-owner resource access — #YWH-PGM40475-306</li>
+	    <li>CVE-2026-97847: Client manager can replace a sessionless token principal and take over the realm — #YWH-PGM40475-292</li>
+	    <li>CVE-2026-96547: DCR registration-time claim-path gap: attribute mappers forge realm_access.roles from user-editable fields</li>
+	    <li>CVE-2026-96457: Group-admin DENY bypass via top-level move (GroupsResource, CVE-2026-9099 regression)</li>
+	    <li>CVE-2026-96460: Token from token exchange can have unlimited expiration</li>
+	    <li>CVE-2026-97848: [SECURITY] Protocol mapper with jsonType=JSON bypasses CVE-2026-16102 fix — duplicate resource_access claim in access token;
+		forged resource_access in ID token, userinfo and introspection response</li>
+	    <li>CVE-2026-109081: Principal with only create-client can inject a role into the realm default-roles — #YWH-PGM40475-290</li>
+	    <li>CVE-2026-93998: SAML adapter accepts assertions from the wrong configured issuer</li>
+	    <li>CVE-2026-96453: kcadm custom truststores trust arbitrary self-signed certificates</li>
+	    <li>CVE-2026-92857: Identity spoofing: a default-allowed DCR protocol mapper writes the reserved sub and aud claims</li>
+	    <li>CVE-2026-103112: Account Takeover via Authentication Race</li>
+	    <li>CVE-2026-97175: Unverified IdP email auto-linking enables account takeover</li>
+	    <li>CVE-2026-96447: Stateless token preferred_username fallback enables identity rebinding after client recreation</li>
+	    <li>CVE-2026-82965: SAML SOAP endpoint DoS via unbounded XML parsing on /realms/{realm}/protocol/saml/resolve</li>
+	    <li>CVE-2026-96448: FGAP v2 composite-blind role mapping lets manage-users assign a wrapper containing realm-admin — #YWH-PGM40475-256</li>
+	    <li>CVE-2026-92855: Keycloak SAML Broker Accepts Holder-of-Key Assertions Without Proof of Key Possession</li>
+	    <li>CVE-2026-92856: Keycloak SAML Identity Broker Ignores `ProxyRestriction`, Allowing Forbidden Downstream Assertion Issuance</li>
+	    <li>CVE-2026-19688: Admin API missing audience check</li>
+	    <li>CVE-2026-117691: SAML redirect binding signature bypass via percent-encoded parameter name (%53AMLResponse) — broker login as any user</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-92358</cvename>
+      <cvename>CVE-2026-105305</cvename>
+      <cvename>CVE-2026-107623</cvename>
+      <cvename>CVE-2026-107889</cvename>
+      <cvename>CVE-2026-112201</cvename>
+      <cvename>CVE-2026-112208</cvename>
+      <cvename>CVE-2026-110932</cvename>
+      <cvename>CVE-2026-107123</cvename>
+      <cvename>CVE-2026-107124</cvename>
+      <cvename>CVE-2026-107602</cvename>
+      <cvename>CVE-2026-110931</cvename>
+      <cvename>CVE-2026-97367</cvename>
+      <cvename>CVE-2026-97174</cvename>
+      <cvename>CVE-2026-114232</cvename>
+      <cvename>CVE-2026-97847</cvename>
+      <cvename>CVE-2026-96547</cvename>
+      <cvename>CVE-2026-96457</cvename>
+      <cvename>CVE-2026-96460</cvename>
+      <cvename>CVE-2026-97848</cvename>
+      <cvename>CVE-2026-109081</cvename>
+      <cvename>CVE-2026-93998</cvename>
+      <cvename>CVE-2026-96453</cvename>
+      <cvename>CVE-2026-92857</cvename>
+      <cvename>CVE-2026-103112</cvename>
+      <cvename>CVE-2026-97175</cvename>
+      <cvename>CVE-2026-96447</cvename>
+      <cvename>CVE-2026-82965</cvename>
+      <cvename>CVE-2026-96448</cvename>
+      <cvename>CVE-2026-92855</cvename>
+      <cvename>CVE-2026-92856</cvename>
+      <cvename>CVE-2026-19688</cvename>
+      <cvename>CVE-2026-117691</cvename>
+      <url>https://github.com/keycloak/keycloak/releases/tag/26.8.2</url>
+    </references>
+    <dates>
+      <discovery>2026-11-05</discovery>
+      <entry>2026-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3ef78a27-f164-47ab-99b7-30c3e675d70c">
     <topic>Elixir -- Mix deps.partition configuration not validated on multi-user systems</topic>
     <affects>
