@@ -1,6 +1,6 @@
---- server/src/main/java/org/elasticsearch/monitor/os/OsProbe.java.orig	2026-10-28 21:29:53 UTC
+--- server/src/main/java/org/elasticsearch/monitor/os/OsProbe.java.orig	2026-10-28 20:24:18 UTC
 +++ server/src/main/java/org/elasticsearch/monitor/os/OsProbe.java
-@@ -229,7 +229,7 @@ public class OsProbe {
+@@ -273,7 +273,7 @@ public class OsProbe {
                  return null;
              }
          } else {

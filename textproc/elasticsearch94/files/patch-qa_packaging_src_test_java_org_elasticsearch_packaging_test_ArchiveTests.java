@@ -1,20 +1,17 @@
---- qa/packaging/src/test/java/org/elasticsearch/packaging/test/ArchiveTests.java.orig	2026-10-28 21:29:53 UTC
+--- qa/packaging/src/test/java/org/elasticsearch/packaging/test/ArchiveTests.java.orig	2026-10-28 20:24:18 UTC
 +++ qa/packaging/src/test/java/org/elasticsearch/packaging/test/ArchiveTests.java
-@@ -178,7 +178,12 @@ public class ArchiveTests extends PackagingTestCase {
-                 )
-             );
+@@ -183,6 +183,10 @@ public class ArchiveTests extends PackagingTestCase {
+             createKeystoreIfMissing();
+             sh.run("chmod u-w " + installation.config);
          });
--        Platforms.onLinux(() -> { sh.run("chmod u-w " + installation.config); });
-+        Platforms.onLinux(() -> {
-+            sh.run("chmod u-w " + installation.config);
-+        });
 +        Platforms.onFreeBSD(() -> {
++            createKeystoreIfMissing();
 +            sh.run("chmod u-w " + installation.config);
 +        });
          try {
              startElasticsearch();
              verifySecurityNotAutoConfigured(installation);
-@@ -202,6 +207,7 @@ public class ArchiveTests extends PackagingTestCase {
+@@ -206,6 +210,7 @@ public class ArchiveTests extends PackagingTestCase {
                  sh.chown(installation.config);
              });
              Platforms.onLinux(() -> { sh.run("chmod u+w " + installation.config); });
@@ -22,15 +19,18 @@
              FileUtils.rm(installation.data);
          }
      }
-@@ -232,6 +238,7 @@ public class ArchiveTests extends PackagingTestCase {
-         final Installation.Executables bin = installation.executables();
-         final String password = "some-keystore-password";
-         Platforms.onLinux(() -> bin.keystoreTool.run("passwd", password + "\n" + password + "\n"));
-+        Platforms.onFreeBSD(() -> { bin.keystoreTool.run("passwd", password + "\n" + password + "\n"); });
-         Platforms.onWindows(() -> {
-             sh.run("Invoke-Command -ScriptBlock {echo '" + password + "'; echo '" + password + "'} | " + bin.keystoreTool + " passwd");
+@@ -246,6 +251,10 @@ public class ArchiveTests extends PackagingTestCase {
+             createKeystoreIfMissing();
+             bin.keystoreTool.run("passwd", password + "\n" + password + "\n");
          });
-@@ -248,6 +255,7 @@ public class ArchiveTests extends PackagingTestCase {
++        Platforms.onFreeBSD(() -> {
++            createKeystoreIfMissing();
++            bin.keystoreTool.run("passwd", password + "\n" + password + "\n");
++        });
+         Platforms.onWindows(() -> {
+             createKeystoreIfMissing();
+             sh.run("Invoke-Command -ScriptBlock {echo '" + password + "'; echo '" + password + "'} | " + bin.keystoreTool + " passwd");
+@@ -263,6 +272,7 @@ public class ArchiveTests extends PackagingTestCase {
  
          // Revert to an empty password for the rest of the tests
          Platforms.onLinux(() -> bin.keystoreTool.run("passwd", password + "\n" + "" + "\n"));
@@ -38,7 +38,7 @@
          Platforms.onWindows(
              () -> sh.run("Invoke-Command -ScriptBlock {echo '" + password + "'; echo '" + "" + "'} | " + bin.keystoreTool + " passwd")
          );
-@@ -281,6 +289,10 @@ public class ArchiveTests extends PackagingTestCase {
+@@ -296,6 +306,10 @@ public class ArchiveTests extends PackagingTestCase {
              String systemJavaHome1 = sh.run("echo $SYSTEM_JAVA_HOME").stdout().trim();
              sh.getEnv().put("ES_JAVA_HOME", systemJavaHome1);
          });
@@ -49,7 +49,7 @@
          Platforms.onWindows(() -> {
              final String systemJavaHome1 = sh.run("$Env:SYSTEM_JAVA_HOME").stdout().trim();
              sh.getEnv().put("ES_JAVA_HOME", systemJavaHome1);
-@@ -302,6 +314,12 @@ public class ArchiveTests extends PackagingTestCase {
+@@ -317,6 +331,12 @@ public class ArchiveTests extends PackagingTestCase {
              // ensure that ES_JAVA_HOME is not set for the test
              sh.getEnv().remove("ES_JAVA_HOME");
          });
@@ -62,7 +62,7 @@
          Platforms.onWindows(() -> {
              final String systemJavaHome1 = sh.run("$Env:SYSTEM_JAVA_HOME").stdout().trim();
              sh.getEnv().put("JAVA_HOME", systemJavaHome1);
-@@ -332,6 +350,10 @@ public class ArchiveTests extends PackagingTestCase {
+@@ -347,6 +367,10 @@ public class ArchiveTests extends PackagingTestCase {
                  String systemJavaHome1 = sh.run("echo $SYSTEM_JAVA_HOME").stdout().trim();
                  sh.getEnv().put("ES_JAVA_HOME", systemJavaHome1);
              });
@@ -73,7 +73,7 @@
              Platforms.onWindows(() -> {
                  final String systemJavaHome1 = sh.run("$Env:SYSTEM_JAVA_HOME").stdout().trim();
                  sh.getEnv().put("ES_JAVA_HOME", systemJavaHome1);
-@@ -394,6 +416,27 @@ public class ArchiveTests extends PackagingTestCase {
+@@ -409,6 +433,27 @@ public class ArchiveTests extends PackagingTestCase {
                  FileUtils.rm(Paths.get(testJavaHome));
              }
          });
@@ -101,7 +101,7 @@
      }
  
      public void test65ForceBundledJdkEmptyJavaHome() throws Exception {
-@@ -543,6 +586,7 @@ public class ArchiveTests extends PackagingTestCase {
+@@ -558,6 +603,7 @@ public class ArchiveTests extends PackagingTestCase {
              assertThat(result.stderr(), containsString("Unknown command [invalid-command]"));
          };
          Platforms.onLinux(action);
@@ -109,7 +109,7 @@
          Platforms.onWindows(action);
      }
  
-@@ -555,6 +599,7 @@ public class ArchiveTests extends PackagingTestCase {
+@@ -570,6 +616,7 @@ public class ArchiveTests extends PackagingTestCase {
          };
  
          Platforms.onLinux(action);
@@ -117,7 +117,7 @@
          Platforms.onWindows(action);
      }
  
-@@ -567,6 +612,7 @@ public class ArchiveTests extends PackagingTestCase {
+@@ -582,6 +629,7 @@ public class ArchiveTests extends PackagingTestCase {
          };
  
          Platforms.onLinux(action);
@@ -125,7 +125,7 @@
          Platforms.onWindows(action);
      }
  
-@@ -606,6 +652,7 @@ public class ArchiveTests extends PackagingTestCase {
+@@ -621,6 +669,7 @@ public class ArchiveTests extends PackagingTestCase {
          };
  
          Platforms.onLinux(action);

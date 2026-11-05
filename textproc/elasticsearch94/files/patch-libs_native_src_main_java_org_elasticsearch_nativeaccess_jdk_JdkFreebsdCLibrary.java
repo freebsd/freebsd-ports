@@ -1,5 +1,5 @@
---- libs/native/src/main21/java/org/elasticsearch/nativeaccess/jdk/JdkFreebsdCLibrary.java.orig	2026-11-03 20:05:23 UTC
-+++ libs/native/src/main21/java/org/elasticsearch/nativeaccess/jdk/JdkFreebsdCLibrary.java
+--- libs/native/src/main/java/org/elasticsearch/nativeaccess/jdk/JdkFreebsdCLibrary.java.orig	2026-11-04 18:59:19 UTC
++++ libs/native/src/main/java/org/elasticsearch/nativeaccess/jdk/JdkFreebsdCLibrary.java
 @@ -0,0 +1,39 @@
 +/*
 + * Copyright Elasticsearch B.V. and/or licensed to Elasticsearch B.V. under one
@@ -22,7 +22,7 @@
 +import static org.elasticsearch.nativeaccess.jdk.JdkPosixCLibrary.downcallHandleWithErrno;
 +import static org.elasticsearch.nativeaccess.jdk.JdkPosixCLibrary.errnoState;
 +
-+public class JdkFreebsdCLibrary implements FreebsdCLibrary {
++class JdkFreebsdCLibrary implements FreebsdCLibrary {
 +
 +    private static final MethodHandle posix_fallocate$mh = downcallHandleWithErrno(
 +        "posix_fallocate",

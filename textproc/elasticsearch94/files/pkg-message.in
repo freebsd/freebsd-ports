@@ -38,24 +38,4 @@ chown -R %%SEARCHUSER%%:%%SEARCHUSER%% %%ETCDIR%%/plugin
 !!! PLUGINS NOTICE !!!
 EOM
 }
-{
-  type: upgrade
-  maximum_version: "8.19.0"
-  message: <<EOM
-If you are upgrading Elasticsearch from a version prior to 8.19,
-you will need to add the following to your jvm.options:
-
-  -Des.nativelibs.path=%%LOCALBASE%%/lib
-
-If you enabled (or disabled) the native access library, you will also need
-to add the following:
-
-  -Dorg.elasticsearch.nativeaccess.enableVectorLibrary=true (or false)
-
-Also, don't forget to update elasticsearch_java_home in /etc/rc.conf:
-
-  sysrc elasticsearch_java_home="%%JAVA_HOME%%"
-
-EOM
-}
 ]

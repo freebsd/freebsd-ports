@@ -1,4 +1,4 @@
---- libs/native/src/main/java/org/elasticsearch/nativeaccess/FreebsdNativeAccess.java.orig	2026-11-03 20:05:23 UTC
+--- libs/native/src/main/java/org/elasticsearch/nativeaccess/FreebsdNativeAccess.java.orig	2026-11-04 18:59:19 UTC
 +++ libs/native/src/main/java/org/elasticsearch/nativeaccess/FreebsdNativeAccess.java
 @@ -0,0 +1,71 @@
 +/*
@@ -14,9 +14,9 @@
 +
 +import org.elasticsearch.nativeaccess.lib.FreebsdCLibrary;
 +import org.elasticsearch.nativeaccess.lib.NativeLibraryProvider;
-+import org.elasticsearch.nativeaccess.lib.PosixCLibrary.RLimit;
++import org.elasticsearch.nativeaccess.lib.PosixCLibrary;
 +
-+public class FreebsdNativeAccess extends PosixNativeAccess {
++class FreebsdNativeAccess extends PosixNativeAccess {
 +
 +    private final FreebsdCLibrary bsdLibc;
 +    static final int RLIMIT_NPROC = 7;
@@ -60,7 +60,7 @@
 +    // https://github.com/elastic/elasticsearch/blob/v8.15.5/server/src/main/java/org/elasticsearch/bootstrap/SystemCallFilter.java#L556
 +    @Override
 +    public void tryInstallExecSandbox() {
-+        RLimit limit = libc.newRLimit();
++        PosixCLibrary.RLimit limit = libc.newRLimit();
 +        limit.rlim_cur(0);
 +        limit.rlim_max(0);
 +        if (libc.setrlimit(RLIMIT_NPROC, limit) != 0) {

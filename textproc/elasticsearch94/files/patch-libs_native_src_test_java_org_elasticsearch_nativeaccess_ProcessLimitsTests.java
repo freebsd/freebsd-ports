@@ -1,29 +1,24 @@
---- libs/native/src/test/java/org/elasticsearch/nativeaccess/ProcessLimitsTests.java.orig	2026-10-28 21:29:53 UTC
+--- libs/native/src/test/java/org/elasticsearch/nativeaccess/ProcessLimitsTests.java.orig	2026-10-28 20:24:18 UTC
 +++ libs/native/src/test/java/org/elasticsearch/nativeaccess/ProcessLimitsTests.java
-@@ -36,6 +36,22 @@ public class ProcessLimitsTests extends ESTestCase {
+@@ -36,6 +36,17 @@ public class ProcessLimitsTests extends ESTestCase {
                  }
              }
              fail("should have read max processes from /proc/self/limits");
 +        } else if (Constants.FREE_BSD) {
-+            return;
-+            // -sg: todo: redo this test: 'sysctl -n kern.maxthread'?
-+            /*final List<String> lines = Files.readAllLines(PathUtils.get("/proc/curproc/rlimit"));
++            final List<String> lines = Files.readAllLines(PathUtils.get("/proc/curproc/rlimit"));
 +            for (final String line : lines) {
-+                // System.out.printf("Line : '%s'\n", line);
 +                if (line != null && line.startsWith("nproc")) {
 +                    final String[] fields = line.split("\\s+");
 +                    final long limit = Long.parseLong(fields[1]);
-+                    // System.out.printf("Max  : %d\n", nativeAccess.getProcessLimits().maxThreads()); // Good
-+                    // System.out.printf("Limit: %d\n", limit);
 +                    assertThat(nativeAccess.getProcessLimits().maxThreads(), equalTo(limit));
 +                    return;
 +                }
 +            }
-+            fail("should have read max processes from /proc/curproc/rlimit (is /proc mounted?)");*/
++            fail("should have read max processes from /proc/curproc/rlimit (is /proc mounted?)");
          } else {
              assertThat(nativeAccess.getProcessLimits().maxThreads(), equalTo(-1L));
          }
-@@ -53,6 +69,17 @@ public class ProcessLimitsTests extends ESTestCase {
+@@ -53,6 +64,17 @@ public class ProcessLimitsTests extends ESTestCase {
                  }
              }
              fail("should have read max size virtual memory from /proc/self/limits");
@@ -41,7 +36,7 @@
          } else if (Constants.MAC_OS_X) {
              assertThat(nativeAccess.getProcessLimits().maxVirtualMemorySize(), greaterThanOrEqualTo(0L));
          } else {
-@@ -72,6 +99,17 @@ public class ProcessLimitsTests extends ESTestCase {
+@@ -72,6 +94,17 @@ public class ProcessLimitsTests extends ESTestCase {
                  }
              }
              fail("should have read max file size from /proc/self/limits");

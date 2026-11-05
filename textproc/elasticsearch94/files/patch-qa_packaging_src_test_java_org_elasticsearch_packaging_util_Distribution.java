@@ -1,6 +1,6 @@
---- qa/packaging/src/test/java/org/elasticsearch/packaging/util/Distribution.java.orig	2026-10-28 21:29:53 UTC
+--- qa/packaging/src/test/java/org/elasticsearch/packaging/util/Distribution.java.orig	2026-10-28 20:24:18 UTC
 +++ qa/packaging/src/test/java/org/elasticsearch/packaging/util/Distribution.java
-@@ -42,8 +42,10 @@ public class Distribution {
+@@ -40,8 +40,10 @@ public class Distribution {
              this.packaging = Packaging.valueOf(filename.substring(lastDot + 1).toUpperCase(Locale.ROOT));
          }
  
@@ -13,7 +13,7 @@
          this.baseVersion = filename.split("-", 3)[1];
          this.version = filename.contains("-SNAPSHOT") ? this.baseVersion + "-SNAPSHOT" : this.baseVersion;
      }
-@@ -68,7 +70,7 @@ public class Distribution {
+@@ -66,7 +68,7 @@ public class Distribution {
  
      public enum Packaging {
  
@@ -22,7 +22,7 @@
          ZIP(".zip", Platforms.WINDOWS),
          DEB(".deb", Platforms.isDPKG()),
          RPM(".rpm", Platforms.isRPM()),
-@@ -93,7 +95,8 @@ public class Distribution {
+@@ -90,7 +92,8 @@ public class Distribution {
      public enum Platform {
          LINUX,
          WINDOWS,

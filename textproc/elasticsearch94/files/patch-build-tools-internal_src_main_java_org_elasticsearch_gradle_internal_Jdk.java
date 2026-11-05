@@ -1,6 +1,6 @@
---- build-tools-internal/src/main/java/org/elasticsearch/gradle/internal/Jdk.java.orig	2026-10-28 21:29:53 UTC
+--- build-tools-internal/src/main/java/org/elasticsearch/gradle/internal/Jdk.java.orig	2026-10-28 20:24:18 UTC
 +++ build-tools-internal/src/main/java/org/elasticsearch/gradle/internal/Jdk.java
-@@ -26,7 +26,7 @@ public class Jdk implements Buildable, Iterable<File> 
+@@ -27,7 +27,7 @@ public class Jdk implements Buildable, Iterable<File> 
  
      private static final List<String> ALLOWED_ARCHITECTURES = List.of("aarch64", "x64");
      private static final List<String> ALLOWED_VENDORS = List.of("adoptium", "openjdk", "zulu");

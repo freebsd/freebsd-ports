@@ -1,8 +1,8 @@
 PORTNAME=	elasticsearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.19.24
+DISTVERSION=	9.4.9
 CATEGORIES=	textproc java devel
-PKGNAMESUFFIX=	${DISTVERSION:R:R}
+PKGNAMESUFFIX=	${DISTVERSION:R:S|.||}
 
 MAINTAINER=	elastic@FreeBSD.org
 COMMENT=	Distributed, RESTful search and analytics engine (${DISTVERSION:R:R} version)
@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_RUN_DEPENDS=	jna>0:devel/jna
 BUILD_DEPENDS=		gradle>=9.7.1:devel/gradle \
-			${LOCALBASE}/openjdk17/bin/java:java/openjdk17 \
+			protobuf>=29.6:devel/protobuf \
 			${LOCALBASE}/openjdk21/bin/java:java/openjdk21
 RUN_DEPENDS=		bash:shells/bash
 
@@ -57,7 +57,7 @@ SHEBANG_FILES=	distribution/src/bin/elasticsearch \
 
 CONFLICTS=	${PORTNAME}*
 
-PORTSCOUT=	limit:^${DISTVERSION:R:R}\.
+PORTSCOUT=	limit:^${DISTVERSION:R:S|.|\.|}\.
 SUB_FILES=	pkg-message
 SUB_LIST=	ETCDIR=${ETCDIR} \
 		JAVA_HOME=${JAVA_HOME} \
@@ -76,7 +76,13 @@ GROUPS=		${SEARCHGROUP}
 
 PORTDOCS=	NOTICE.txt README.asciidoc
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=		DOCS LIBVEC
+OPTIONS_DEFAULT=	LIBVEC
+
+LIBVEC_DESC=		Build vector library (libvec.so)
+LIBVEC_USES=		compiler:c++17-lang gmake
+LIBVEC_VARS=		LIBVEC_BOOL=true
+LIBVEC_VARS_OFF=	LIBVEC_BOOL=false
 
 # To rebuild the deps archive:
 # 1. make makesum build DEV_UPDATE_MODE=yes
@@ -121,14 +127,10 @@ post-extract:
 
 post-patch:
 	${RM} -r ${WRKSRC}/gradle/gradle-daemon-jvm.properties \
-		${WRKSRC}/libs/entitlement/src/main19 \
-		${WRKSRC}/libs/entitlement/src/main20 \
 		${WRKSRC}/libs/entitlement/src/main26 \
 		${WRKSRC}/libs/entitlement/src/main27 \
-		${WRKSRC}/libs/entitlement/qa/entitlement-test-plugin/src/main18 \
-		${WRKSRC}/libs/entitlement/qa/entitlement-test-plugin/src/main19 \
-		${WRKSRC}/libs/entitlement/qa/entitlement-test-plugin/src/main20 \
-		${WRKSRC}/libs/entitlement/qa/entitlement-test-plugin/src/main26
+		${WRKSRC}/libs/entitlement/qa/entitlement-test-plugin/src/main26 \
+		${WRKSRC}/libs/entitlement/qa/entitlement-test-plugin/src/main27
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
 			 -e 's|%%DOCSDIR%%|${DOCSDIR}|' \
 			 -e 's|%%ETCDIR%%|${ETCDIR}|' \
@@ -140,7 +142,7 @@ post-patch:
 do-configure:
 	@${MKDIR} ${WRKDIR}/gradle-${PORTNAME}
 	@${ECHO_CMD} \
-		"org.gradle.java.installations.paths=${LOCALBASE}/openjdk17,${LOCALBASE}/openjdk21,${LOCALBASE}/openjdk25" \
+		"org.gradle.java.installations.paths=${LOCALBASE}/openjdk21,${LOCALBASE}/openjdk25" \
 		> ${WRKDIR}/gradle-${PORTNAME}/gradle.properties
 	@${ECHO_CMD} "org.gradle.java.installations.auto-download=false" >> \
 		${WRKDIR}/gradle-${PORTNAME}/gradle.properties
@@ -153,16 +155,16 @@ do-configure:
 do-build:
 	(cd ${WRKSRC} && ${_GRADLE_RUN} ${GRADLE_ARGS} localDistro \
 		-Dbuild.snapshot=false -Dlicense.key=public.key \
-		-Dfreebsd.build.override-jdk=true -Dfreebsd.build.fromPorts=true)
+		-Dfreebsd.build.override-jdk=true -Dfreebsd.build.fromPorts=true \
+		-Dfreebsd.build.libvec=${LIBVEC_BOOL})
 
 post-build:
-	${RM} ${_LOCALDIST}/modules/repository-azure/jna-5*.jar
+	${RM} ${_LOCALDIST}/modules/repository-azure/jna-5*.jar \
+		${_LOCALDIST}/modules/x-pack-inference/jna-5*.jar
 	${REINPLACE_CMD} -e 's|hs_err_pid%p.log|$${ES_TMPDIR}/hs_err_pid%p.log|g' \
 		-e 's|gc.log|$${ES_TMPDIR}/gc.log|g' \
 		${_LOCALDIST}/config/jvm.options
 	@${PRINTF} "\n## Path to native libraries\n-Des.nativelibs.path=${LOCALBASE}/lib\n" >> \
-		${_LOCALDIST}/config/jvm.options
-	@${PRINTF} "\n-Dorg.elasticsearch.nativeaccess.enableVectorLibrary=false\n" >> \
 		${_LOCALDIST}/config/jvm.options
 	${REINPLACE_CMD} -e 's|#path.data: /path/to/data|path.data: /var/db/elasticsearch|g' \
 		-e 's|#path.logs: /path/to/logs|path.logs: /var/log/elasticsearch|g' \
@@ -177,6 +179,14 @@ post-build:
 			gradle-${PORTNAME}/caches/modules-2/metadata-2.107)
 	@${ECHO} "(!!!) Please upload the deps archive: ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}"
 .endif
+
+post-build-LIBVEC-on:
+	@${PRINTF} "\n-Dorg.elasticsearch.nativeaccess.enableVectorLibrary=true\n" \
+		>> ${_LOCALDIST}/config/jvm.options
+
+post-build-LIBVEC-off:
+	@${PRINTF} "\n-Dorg.elasticsearch.nativeaccess.enableVectorLibrary=false\n" \
+		>> ${_LOCALDIST}/config/jvm.options
 
 do-install:
 	${INSTALL} -d -m 0750 ${STAGEDIR}${ETCDIR}
@@ -202,6 +212,11 @@ do-install:
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+do-install-LIBVEC-on:
+	${INSTALL_LIB} ${WRKSRC}/libs/simdvec/native/build/libs/vec/freebsd/amd64/libvec.so \
+		${STAGEDIR}${PREFIX}/lib
+	${ECHO} "${PREFIX}/lib/libvec.so" >> ${TMPPLIST}
 
 post-install:
 	${FIND} -s ${STAGEDIR}${PREFIX}/lib/elasticsearch -not -type d | ${SORT} | \

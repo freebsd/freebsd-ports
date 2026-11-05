@@ -1,6 +1,6 @@
---- libs/native/src/main/java/org/elasticsearch/nativeaccess/PosixNativeAccess.java.orig	2026-10-28 21:29:53 UTC
+--- libs/native/src/main/java/org/elasticsearch/nativeaccess/PosixNativeAccess.java.orig	2026-10-28 20:24:18 UTC
 +++ libs/native/src/main/java/org/elasticsearch/nativeaccess/PosixNativeAccess.java
-@@ -146,7 +146,15 @@ public abstract class PosixNativeAccess extends Abstra
+@@ -149,7 +149,15 @@ public abstract class PosixNativeAccess extends Abstra
          if (libc.close(fd) != 0) {
              logger.warn("Failed to close file [" + path + "] after getting stats: " + libc.strerror(libc.errno()));
          }
@@ -17,7 +17,7 @@
      }
  
      @SuppressForbidden(reason = "Using mkdirs")
-@@ -200,7 +208,8 @@ public abstract class PosixNativeAccess extends Abstra
+@@ -208,7 +216,8 @@ public abstract class PosixNativeAccess extends Abstra
      }
  
      static boolean isNativeVectorLibSupported() {
@@ -27,7 +27,7 @@
      }
  
      /**
-@@ -215,6 +224,12 @@ public abstract class PosixNativeAccess extends Abstra
+@@ -223,6 +232,12 @@ public abstract class PosixNativeAccess extends Abstra
      static boolean isMacOrLinuxAarch64() {
          String name = System.getProperty("os.name");
          return (name.startsWith("Mac") || name.startsWith("Linux")) && System.getProperty("os.arch").equals("aarch64");

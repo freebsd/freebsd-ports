@@ -1,6 +1,6 @@
---- libs/native/src/test/java/org/elasticsearch/nativeaccess/VectorSimilarityFunctionsTests.java.orig	2026-10-28 21:29:53 UTC
+--- libs/native/src/test/java/org/elasticsearch/nativeaccess/VectorSimilarityFunctionsTests.java.orig	2026-10-28 20:24:18 UTC
 +++ libs/native/src/test/java/org/elasticsearch/nativeaccess/VectorSimilarityFunctionsTests.java
-@@ -47,7 +47,7 @@ public class VectorSimilarityFunctionsTests extends ES
+@@ -83,7 +83,7 @@ public abstract class VectorSimilarityFunctionsTests e
  
          if (jdkVersion >= 21
              && ((arch.equals("aarch64") && (osName.startsWith("Mac") || osName.equals("Linux")))

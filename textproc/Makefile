@@ -185,6 +185,7 @@
     SUBDIR += el-hyphen
     SUBDIR += elasticsearch-plugin-head
     SUBDIR += elasticsearch8
+    SUBDIR += elasticsearch94
     SUBDIR += en-aspell
     SUBDIR += en-hunspell
     SUBDIR += en-mythes

@@ -1,0 +1,18 @@
+--- x-pack/plugin/otel-data/build.gradle.orig	2026-10-28 20:24:18 UTC
++++ x-pack/plugin/otel-data/build.gradle
+@@ -100,8 +100,13 @@ protobuf {
+ 
+ protobuf {
+   protoc {
+-    // The artifact spec for the Protobuf Compiler
+-    artifact = "com.google.protobuf:protoc:${protobufVersion}"
++    if (System.getProperty("os.name", "").startsWith("FreeBSD")) {
++      // Requires devel/protobuf to be installed
++      path = '/usr/local/bin/protoc'
++    } else {
++      // The artifact spec for the Protobuf Compiler
++      artifact = "com.google.protobuf:protoc:${protobufVersion}"
++    }
+   }
+ }
+ 

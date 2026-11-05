@@ -1,4 +1,4 @@
---- qa/packaging/src/test/java/org/elasticsearch/packaging/util/Archives.java.orig	2026-10-28 21:29:53 UTC
+--- qa/packaging/src/test/java/org/elasticsearch/packaging/util/Archives.java.orig	2026-10-28 20:24:18 UTC
 +++ qa/packaging/src/test/java/org/elasticsearch/packaging/util/Archives.java
 @@ -108,6 +108,7 @@ public class Archives {
          }
@@ -27,7 +27,7 @@
      public static void verifyArchiveInstallation(Installation installation, Distribution distribution) {
          verifyOssInstallation(installation, distribution, ARCHIVE_OWNER);
          verifyDefaultInstallation(installation, distribution, ARCHIVE_OWNER);
-@@ -366,6 +379,7 @@ public class Archives {
+@@ -373,6 +386,7 @@ public class Archives {
  
          final Shell sh = new Shell();
          Platforms.onLinux(() -> sh.run("kill -SIGTERM " + pid + " && tail --pid=" + pid + " -f /dev/null"));
