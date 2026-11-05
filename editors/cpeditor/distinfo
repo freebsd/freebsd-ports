@@ -1,6 +1,6 @@
-TIMESTAMP = 1791788567
-SHA256 (cpeditor-cpeditor-7.1.1-45-ge836127_GH0.tar.gz) = cd774395f3371fa55c819efdaf256d301862a016e9b086a4fa73b915424858d1
-SIZE (cpeditor-cpeditor-7.1.1-45-ge836127_GH0.tar.gz) = 1288480
+TIMESTAMP = 1793901691
+SHA256 (cpeditor-cpeditor-7.2.1_GH0.tar.gz) = 336474cefbaab9797f7f0f284d4155882f6a28ab71eba92e96db0fde27c6f162
+SIZE (cpeditor-cpeditor-7.2.1_GH0.tar.gz) = 1289565
 SHA256 (cpeditor-FakeVim-50b62ce_GH0.tar.gz) = 0e2bb650552875b378b08dc2bc90bb2190a4be74be2e4e0c7dfbbc8ec8dcedda
 SIZE (cpeditor-FakeVim-50b62ce_GH0.tar.gz) = 121648
 SHA256 (itay-grudev-SingleApplication-a218603_GH0.tar.gz) = b650278c39776568d3c1b3732ce7d47788c8026f13c8f08b95bdfea1123498a9
