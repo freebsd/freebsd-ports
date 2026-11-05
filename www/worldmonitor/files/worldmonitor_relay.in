@@ -43,6 +43,7 @@ worldmonitor_relay_prestart()
 	set -a
 	. "${worldmonitor_relay_env_file}"
 	set +a
+	export RELAY_BIND_HOST="${RELAY_BIND_HOST:-127.0.0.1}"
 	case "${RELAY_SHARED_SECRET}" in
 	""|change-me*) err 1 "RELAY_SHARED_SECRET in ${worldmonitor_relay_env_file} is empty or still has its example value" ;;
 	esac

@@ -17,7 +17,8 @@ needed for the dashboard.
 Many panels need API keys of the data providers; most of them are free and go
 into the configuration file.  Panels without a key stay empty.
 
-The Pro panels do not work in this port.  Pro is a paid service of
-worldmonitor.app that a self-hosted installation cannot reach.  The sign-in
-buttons work when the port is built with a Clerk publishable key of your own,
-but they do not unlock the Pro panels.
+A Pro subscriber of worldmonitor.app unlocks the Pro panels on this
+installation with a desktop key, which is entered in the Settings of the
+dashboard.  The installation checks the key with World Monitor and forwards
+the Pro requests of that browser to World Monitor.  See
+https://www.worldmonitor.app/docs/self-hosting for the details.

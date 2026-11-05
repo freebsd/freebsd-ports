@@ -1,6 +1,6 @@
 PORTNAME=	worldmonitor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.7
+DISTVERSION=	2.11.8
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -38,9 +38,6 @@ post-extract:
 	${MV} ${WRKDIR}/node_modules ${WRKSRC}/node_modules
 	${MV} ${WRKDIR}/pro-test/node_modules ${WRKSRC}/pro-test/node_modules
 
-pre-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/node ${FILESDIR}/extract-eval-scripts.mjs scripts/seed-military-bases.mjs > docker/military-eval-scripts.json
-
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node scripts/generate-inventory-facts.mjs
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/node docker/build-handlers.mjs
@@ -55,14 +52,13 @@ do-install:
 	${RM} ${STAGEDIR}${WWWDIR}/dist/.well-known/mcp-registry-auth ${STAGEDIR}${WWWDIR}/dist/.well-known/openai-apps-challenge
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "api data" ${STAGEDIR}${WWWDIR}
 	${FIND} ${STAGEDIR}${WWWDIR}/api \( -name "*.ts" -o -name "*.test.*" \) -delete
-	${INSTALL_DATA} ${WRKSRC}/shared/llm-health-providers.js ${STAGEDIR}${WWWDIR}/shared
+	cd ${WRKSRC}/shared && ${INSTALL_DATA} llm-health-providers.js selfhost-relay-paths.js ${STAGEDIR}${WWWDIR}/shared
 	${INSTALL_DATA} ${WRKSRC}/src-tauri/sidecar/local-api-server.mjs ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/src-tauri/sidecar/package.json ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/docker/validate-session-secret.mjs ${STAGEDIR}${WWWDIR}
 	cd ${WRKDIR}/runtime-node_modules && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/node_modules
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/redis-rest
 	${INSTALL_DATA} ${WRKSRC}/docker/redis-rest-proxy.mjs ${STAGEDIR}${WWWDIR}/redis-rest
-	${INSTALL_DATA} ${WRKSRC}/docker/military-eval-scripts.json ${STAGEDIR}${WWWDIR}/redis-rest
 	cd ${WRKDIR}/redis-rest-node_modules && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/redis-rest/node_modules
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/seed/api ${STAGEDIR}${WWWDIR}/seed/server
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "scripts shared data" ${STAGEDIR}${WWWDIR}/seed

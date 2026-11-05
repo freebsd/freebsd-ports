@@ -54,15 +54,12 @@ World Monitor is installed in %%WWWDIR%%.
 5. Redis listens on 127.0.0.1 without a password and without a memory limit,
    so every local user can read it.  All services run as user www.
 
-6. The Pro panels do not work in this port, see the description in
-   "pkg info worldmonitor".  To get the
-   sign-in buttons, build the port with your own Clerk publishable key:
-
-     echo 'WORLDMONITOR_CLERK_PUBLISHABLE_KEY=pk_test_...' >> /etc/make.conf
-
-   You must also set CLERK_JWT_ISSUER_DOMAIN in
-   %%PREFIX%%/etc/worldmonitor.env.  This only adds a login, the Pro panels
-   stay locked.
+6. A Pro subscriber unlocks the Pro panels with a desktop key.  The key is
+   created at worldmonitor.app under Settings, API Keys, and entered in the
+   Settings of the dashboard.  The installation then forwards the Pro
+   requests of that browser to World Monitor.  To switch this off set
+   WORLDMONITOR_SELFHOST_RELAY=off in %%PREFIX%%/etc/worldmonitor.env.
+   See https://www.worldmonitor.app/docs/self-hosting for the details.
 EOM
 },
 { type: upgrade

@@ -45,6 +45,7 @@ worldmonitor_redis_rest_prestart()
 	set -a
 	. "${worldmonitor_redis_rest_env_file}"
 	set +a
+	export SRH_BIND_HOST="${SRH_BIND_HOST:-127.0.0.1}"
 	case "${UPSTASH_REDIS_REST_TOKEN}" in
 	""|change-me*) err 1 "UPSTASH_REDIS_REST_TOKEN in ${worldmonitor_redis_rest_env_file} is empty or still has its example value" ;;
 	esac
