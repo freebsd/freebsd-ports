@@ -1,5 +1,5 @@
 PORTNAME=	numdifftools
-DISTVERSION=	0.11.1
+DISTVERSION=	0.11.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,8 @@ USE_PYTHON=	autoplist pep517 pytest
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} MPLBACKEND=Agg PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_ARGS=	--override-ini=addopts= src/numdifftools/tests/
+TEST_ARGS=	--disable-plugin-autoload --override-ini=addopts= src/numdifftools/tests/
 
-# tests as of 0.11.1: 109 passed, 25 skipped, 276 warnings in 12.14s
+# tests as of 0.11.2: 136 passed, 23 skipped, 252 warnings in 14.49s
 
 .include <bsd.port.mk>
