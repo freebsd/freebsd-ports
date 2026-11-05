@@ -6,6 +6,7 @@ include/dmumps_root.h
 include/dmumps_struc.h
 include/mumps_c_types.h
 include/mumps_compat.h
+include/mumps_int_def.h
 %%WITH_LIBSEQ%%include/mumps_seq/mpi.h
 include/smumps_c.h
 include/smumps_root.h
@@ -60,14 +61,19 @@ lib/libzmumps.so.%%VE%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c_example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c_example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c_example_save_restore.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csimpletest
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csimpletest.F
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csimpletest_save_restore.F
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dsimpletest
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dsimpletest.F
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dsimpletest_save_restore.F
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/input_simpletest_cmplx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/input_simpletest_real
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multiple_arithmetics_example.F
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssimpletest
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssimpletest.F
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssimpletest_save_restore.F
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zsimpletest
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zsimpletest.F
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zsimpletest_save_restore.F

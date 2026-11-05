@@ -14,3 +14,6 @@ format; elemental format.
 - Several orderings interfaced : AMD, AMF, PORD, METIS
 
 When MPI is disabled, libseq is installed.
+
+Note: this port does not follow upstream releases, it is specially crafted for
+Code_Aster.
