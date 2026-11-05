@@ -1,5 +1,5 @@
 PORTNAME=		openvpn
-DISTVERSION=		2.7.8
+DISTVERSION=		2.7.9
 PORTREVISION=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
@@ -157,9 +157,12 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-.for i in AUTHORS ChangeLog Changes.rst CONTRIBUTING.rst PORTS README README.ec
+.for i in AUTHORS ChangeLog Changes.md CONTRIBUTING.rst PORTS README README.ec
 	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
+	( for i in ${WRKSRC}/doc/*.rst ${WRKSRC}/doc/[b-z]*.txt ${WRKSRC}/doc/README.plugins ; do \
+		${INSTALL_MAN} $${i} ${STAGEDIR}${DOCSDIR}/ || exit 1 ; \
+	done )
 .if !empty(PORT_OPTIONS:MDCO)
 	${INSTALL_MAN} ${WRKSRC}/README.dco.md ${STAGEDIR}${DOCSDIR}/
 .endif
