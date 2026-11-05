@@ -1,10 +1,10 @@
---- pyproject.toml.orig	2026-02-28 11:27:42 UTC
+--- pyproject.toml.orig	2026-10-25 20:31:14 UTC
 +++ pyproject.toml
 @@ -3,7 +3,6 @@ readme = "README.md"
- version = "3.3.2"
+ version = "3.6.0"
  description = "SSE plugin for Starlette"
  readme = "README.md"
 -license = "BSD-3-Clause"
- requires-python = ">=3.10"
+ requires-python = ">=3.11"
  authors = [
      { name = "sysid", email = "sysid@gmx.de" },
