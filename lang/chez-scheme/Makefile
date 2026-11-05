@@ -57,8 +57,10 @@ CHEZ_ARCH=	tarm32fb
 CHEZ_ARCH=	tppc32fb
 .elif ${ARCH:Mpowerpc64*}
 # no native backend, build the portable bytecode variant
+# pb needs libffi for foreign procedures not used by the kernel itself
 CHEZ_ARCH=	tpb64${ARCH:S/powerpc64le/l/:S/powerpc64/b/}
-CONFIGURE_ARGS+=	--pbarch
+CONFIGURE_ARGS+=	--enable-libffi --pbarch
+LIB_DEPENDS+=	libffi.so:devel/libffi
 .endif
 
 .if defined(NCURSES_RPATH)
