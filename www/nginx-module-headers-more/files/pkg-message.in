@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the headers_more module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use headers_more, build
+www/nginx, www/nginx-devel or www/freenginx with the HEADERS_MORE option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-headers-more and produce
+ngx_http_headers_more_filter_module.so.
+EOM
+}
+]
