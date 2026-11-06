@@ -569,6 +569,7 @@
     SUBDIR += nginx-module-passenger
     SUBDIR += nginx-module-postgres
     SUBDIR += nginx-module-rds-csv
+    SUBDIR += nginx-module-rds-json
     SUBDIR += nginx-module-redis2
     SUBDIR += nginx-module-sflow
     SUBDIR += nginx-module-slowfs-cache

@@ -1,0 +1,6 @@
+The rds_json filter turns the resty-dbd-stream output of the drizzle and
+postgres modules into JSON, so a database query can be served directly as
+a JSON response.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their RDS_JSON option is enabled.
