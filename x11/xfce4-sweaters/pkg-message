@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+Just in case you want maximized windows to work properly:
+
+1. Set 'hide_maximized' to 'false' in your
+   ~/.config/xfce4-sweaters/config.json file.
+2. Open 'xfwm4-tweaks-settings' and uncheck the
+   "Hide frame of windows when maximized" option in the Accessibility section.
+3. Open 'xfwm4-workspace-settings' and adjust the margins in the Margins
+   section.
+
+Remember that this project requires the compositor to be enabled.
+EOM
+}
+]
