@@ -9,6 +9,7 @@ bin/u2spewfoo
 %%ETCDIR%%/file_magic.rules
 %%ETCDIR%%/inline.lua
 %%ETCDIR%%/max_detect.lua
+%%ETCDIR%%/sandbox.lua
 %%ETCDIR%%/security.lua
 %%ETCDIR%%/sensitive_data.rules
 %%ETCDIR%%/snort.lua
@@ -79,15 +80,17 @@ include/snort/hash/lru_cache_local.h
 include/snort/hash/lru_cache_shared.h
 include/snort/hash/lru_segmented_cache_shared.h
 include/snort/hash/xhash.h
+include/snort/helpers/backtrace.h
 include/snort/helpers/base64_encoder.h
 include/snort/helpers/ber.h
 include/snort/helpers/bitop.h
 include/snort/helpers/boyer_moore.h
 include/snort/helpers/boyer_moore_search.h
 include/snort/helpers/buffer_data.h
+include/snort/helpers/challenge_response_auth.h
 include/snort/helpers/event_gen.h
-%%HYPERSCAN%%include/snort/helpers/hyper_scratch_allocator.h
-%%HYPERSCAN%%include/snort/helpers/hyper_search.h
+include/snort/helpers/hyper_scratch_allocator.h
+include/snort/helpers/hyper_search.h
 include/snort/helpers/infractions.h
 include/snort/helpers/json_stream.h
 include/snort/helpers/literal_search.h
@@ -129,6 +132,7 @@ include/snort/mime/file_mime_form_data.h
 include/snort/mime/file_mime_log.h
 include/snort/mime/file_mime_paf.h
 include/snort/mime/file_mime_process.h
+include/snort/mitigator/mitigator_api.h
 include/snort/network_inspectors/appid/appid_api.h
 include/snort/network_inspectors/appid/appid_app_descriptor.h
 include/snort/network_inspectors/appid/appid_debug.h
@@ -144,6 +148,7 @@ include/snort/network_inspectors/appid/tp_appid_session_api.h
 include/snort/network_inspectors/appid/tp_appid_types.h
 include/snort/network_inspectors/extractor/extractor_enums.h
 include/snort/network_inspectors/reputation/reputation_common.h
+include/snort/network_inspectors/rna/deviceinfo_stash.h
 include/snort/network_inspectors/rna/rna_cpe_os.h
 include/snort/network_inspectors/rna/rna_fingerprint.h
 include/snort/network_inspectors/rna/rna_fingerprint_deviceinfo.h
@@ -206,10 +211,10 @@ include/snort/pub_sub/data_decrypt_event.h
 include/snort/pub_sub/dcerpc_events.h
 include/snort/pub_sub/detection_events.h
 include/snort/pub_sub/deviceinfo_events.h
-include/snort/pub_sub/domain_fronting.h
 include/snort/pub_sub/dhcp_events.h
 include/snort/pub_sub/dns_events.h
 include/snort/pub_sub/dns_payload_event.h
+include/snort/pub_sub/domain_fronting.h
 include/snort/pub_sub/eof_event.h
 include/snort/pub_sub/eve_process_event.h
 include/snort/pub_sub/expect_events.h
@@ -226,6 +231,7 @@ include/snort/pub_sub/http_publish_length_event.h
 include/snort/pub_sub/http_request_body_event.h
 include/snort/pub_sub/http_transaction_end_event.h
 include/snort/pub_sub/intrinsic_event_ids.h
+include/snort/pub_sub/mcp_detection_event.h
 include/snort/pub_sub/netflow_event.h
 include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/packet_events.h
@@ -251,6 +257,7 @@ include/snort/service_inspectors/http2_inspect/http2_varlen_int_decode_impl.h
 include/snort/service_inspectors/http2_inspect/http2_varlen_string_decode.h
 include/snort/service_inspectors/http2_inspect/http2_varlen_string_decode_impl.h
 include/snort/service_inspectors/http_inspect/http_common.h
+include/snort/service_inspectors/http_inspect/http_enum.h
 include/snort/service_inspectors/http_inspect/http_field.h
 include/snort/service_inspectors/http_inspect/http_field_buffer.h
 include/snort/service_inspectors/http_inspect/http_inspect_base.h
@@ -280,6 +287,7 @@ include/snort/utils/bits.h
 include/snort/utils/cpp_macros.h
 include/snort/utils/endian.h
 include/snort/utils/safec.h
+include/snort/utils/stats/snapshot.h
 include/snort/utils/util.h
 include/snort/utils/util_cstring.h
 include/snort/utils/util_unfold.h
@@ -325,6 +333,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/perf_monitor.txt
 %%PORTDOCS%%%%DOCSDIR%%/pop_imap.txt
 %%PORTDOCS%%%%DOCSDIR%%/port_scan.txt
+%%PORTDOCS%%%%DOCSDIR%%/security.txt
 %%PORTDOCS%%%%DOCSDIR%%/sensitive_data.txt
 %%PORTDOCS%%%%DOCSDIR%%/side_channel.txt
 %%PORTDOCS%%%%DOCSDIR%%/smtp.txt
@@ -339,6 +348,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/snort_user.text
 %%PORTDOCS%%%%DOCSDIR%%/snort_user.txt
 %%PORTDOCS%%%%DOCSDIR%%/snorty.png
+%%PORTDOCS%%%%DOCSDIR%%/stream_allowlist.txt
 %%PORTDOCS%%%%DOCSDIR%%/style.txt
 %%PORTDOCS%%%%DOCSDIR%%/telnet.txt
 %%PORTDOCS%%%%DOCSDIR%%/terms.txt
