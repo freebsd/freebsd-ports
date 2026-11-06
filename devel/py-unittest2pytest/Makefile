@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert unittest test-cases to pytest
 WWW=		https://pypi.org/project/unittest2pytest/ \
 		https://github.com/pytest-dev/unittest2pytest
@@ -17,4 +17,10 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 31300
+BROKEN=		broken with Python 3.13+ because of lib2to3 removal
+.endif
+
+.include <bsd.port.post.mk>
