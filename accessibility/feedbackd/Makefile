@@ -1,6 +1,6 @@
 PORTNAME=	feedbackd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.11
 CATEGORIES=	accessibility
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,13 +12,12 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 
-USES=		compiler:c11 gnome meson pkgconfig python:build shebangfix
+USES=		compiler:c11 gnome meson pkgconfig
 USE_GITLAB=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_TUPLE=	https://gitlab.gnome.org:World/Phosh:gmobile:v0.1.0:gmobile/subprojects/gmobile
-SHEBANG_FILES=	build-aux/post_install.py
 MESON_FALSE=	tests
 GLIB_SCHEMAS=	org.sigxcpu.feedbackd.gschema.xml
 

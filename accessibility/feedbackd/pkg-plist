@@ -3,12 +3,14 @@ bin/fbcli
 include/libfeedback-0.0/lfb-enums.h
 include/libfeedback-0.0/lfb-event.h
 include/libfeedback-0.0/lfb-gdbus.h
+include/libfeedback-0.0/lfb-main.h
 include/libfeedback-0.0/libfeedback.h
 %%GIR%%lib/girepository-1.0/Lfb-0.0.typelib
 lib/libfeedback-0.0.so
 lib/libfeedback-0.0.so.0
 %%DAEMON%%lib/systemd/user/fbd-alert-slider.service
-%%DAEMON%%lib/udev/rules.d/90-feedbackd.rules
+%%DAEMON%%lib/sysusers.d/feedbackd.conf
+%%DAEMON%%lib/udev/rules.d/72-feedbackd.rules
 libdata/pkgconfig/libfeedback-0.0.pc
 %%DAEMON%%libexec/fbd-alert-slider
 %%DAEMON%%libexec/fbd-ledctrl
@@ -162,4 +164,3 @@ share/dbus-1/interfaces/org.sigxcpu.Feedback.xml
 %%GIR%%share/gir-1.0/Lfb-0.0.gir
 %%VAPI%%share/vala/vapi/libfeedback-0.0.deps
 %%VAPI%%share/vala/vapi/libfeedback-0.0.vapi
-

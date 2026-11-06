@@ -1,19 +1,16 @@
-tests/meson.build:3:15: ERROR: Dependency "umockdev-1.0" not found, tried pkgconfig
+tests/meson.build:3:17: ERROR: Dependency "umockdev-1.0" not found (tried pkg-config)
 
---- tests/meson.build.orig	2024-06-23 07:01:00 UTC
+--- tests/meson.build.orig	2026-11-06 13:24:15 UTC
 +++ tests/meson.build
-@@ -1,11 +1,13 @@ if get_option('tests')
+@@ -1,8 +1,10 @@ if get_option('tests')
  if get_option('tests')
  
--umockdev_dep = dependency('umockdev-1.0')
-+umockdev_dep = dependency('umockdev-1.0', required: false, disabler: true)
+-  umockdev_dep = dependency('umockdev-1.0')
++  umockdev_dep = dependency('umockdev-1.0', required: false, disabler: true)
  
-+if umockdev_dep.found()
- add_test_setup ('umockdev',
-   exe_wrapper: 'umockdev-wrapper',
-   is_default: true
- )
-+endif
++  if umockdev_dep.found()
+   add_test_setup('umockdev', exe_wrapper: 'umockdev-wrapper', is_default: true)
++  endif
  
- test_env = environment()
- test_env.set('G_TEST_SRCDIR', meson.current_source_dir())
+   test_env = environment()
+   test_env.set('G_TEST_SRCDIR', meson.current_source_dir())
