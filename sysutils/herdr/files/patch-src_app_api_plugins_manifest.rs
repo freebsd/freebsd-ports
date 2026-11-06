@@ -1,6 +1,6 @@
---- src/app/api/plugins/manifest.rs.orig	2026-09-29 14:11:38 UTC
+--- src/app/api/plugins/manifest.rs.orig	2026-10-14 15:56:41 UTC
 +++ src/app/api/plugins/manifest.rs
-@@ -506,7 +506,8 @@ fn current_platform() -> PluginPlatform {
+@@ -515,7 +515,8 @@ fn current_platform() -> PluginPlatform {
  
  /// Returns the platform the current binary was compiled for.
  fn current_platform() -> PluginPlatform {

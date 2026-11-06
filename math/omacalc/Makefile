@@ -1,6 +1,6 @@
 PORTNAME=	omacalc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	0.3.1
 CATEGORIES=	math
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -26,10 +26,10 @@ PLIST_FILES=	bin/omacalc \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/omacalc ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${FILESDIR}/omacalc.desktop \
+	${INSTALL_DATA} ${WRKSRC}/pkgbuild/omacalc.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${FILESDIR}/omacalc.svg \
+	${INSTALL_DATA} ${WRKSRC}/pkgbuild/omacalc.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 
 do-test:
