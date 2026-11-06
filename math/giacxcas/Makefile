@@ -1,5 +1,5 @@
 PORTNAME=	giacxcas
-DISTVERSION=	2.0.0-21
+DISTVERSION=	2.1.0-1
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.univ-grenoble-alpes.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://cocoa.dima.unige.it/cocoa/cocoalib/tgz/:cocoa \
