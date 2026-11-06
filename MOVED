@@ -5801,3 +5801,5 @@ x11/plasma6-kgamma||2026-11-05|Removed: no longer shipped with KDE Plasma
 x11-wm/plasma6-kwin-x11||2026-11-05|Removed: no longer shipped with KDE Plasma
 cad/astk-client||2026-11-06|Superseded by science/codeaster-frontend
 cad/astk-serveur||2026-11-06|Superseded by science/codeaster-frontend
+databases/mysql267-client|databases/mysql2610-client|2026-11-06|Has expired: EOLed upstream with unfixed vulnerabilities, use databases/mysql2610-server
+databases/mysql267-server|databases/mysql2610-server|2026-11-06|Has expired: EOLed upstream with unfixed vulnerabilities, use databases/mysql2610-server
