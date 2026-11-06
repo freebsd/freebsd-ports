@@ -1,3 +1,3 @@
-TIMESTAMP = 1737476969
-SHA256 (edenhill-librdkafka-v2.8.0_GH0.tar.gz) = 5bd1c46f63265f31c6bfcedcde78703f77d28238eadf23821c2b43fc30be3e25
-SIZE (edenhill-librdkafka-v2.8.0_GH0.tar.gz) = 4780448
+TIMESTAMP = 1793469501
+SHA256 (confluentinc-librdkafka-v2.16.0_GH0.tar.gz) = e6b61de61d3282879a88e4ee3d9f634a8b05bf78a9198dfc25c4820c0c9ed231
+SIZE (confluentinc-librdkafka-v2.16.0_GH0.tar.gz) = 5358616

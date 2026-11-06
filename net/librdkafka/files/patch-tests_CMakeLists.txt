@@ -1,0 +1,16 @@
+--- tests/CMakeLists.txt.orig	2026-10-02 17:37:52 UTC
++++ tests/CMakeLists.txt
+@@ -182,7 +182,13 @@ endif()
+     list(APPEND sources ../src/tinycthread.c ../src/tinycthread_extra.c)
+ endif()
+ 
++if(NOT CMAKE_CURRENT_BINARY_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
++    file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/fixtures
++	  DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
++endif()
++
+ add_executable(test-runner ${sources})
++set_target_properties(test-runner PROPERTIES ENABLE_EXPORTS ON)
+ target_link_libraries(test-runner PUBLIC rdkafka++)
+ 
+ add_test(NAME RdKafkaTestInParallel COMMAND test-runner -p5)
