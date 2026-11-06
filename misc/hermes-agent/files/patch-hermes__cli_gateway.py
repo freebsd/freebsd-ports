@@ -1,6 +1,6 @@
---- hermes_cli/gateway.py.orig	2026-10-26 16:08:51 UTC
+--- hermes_cli/gateway.py.orig	2026-11-06 16:56:46 UTC
 +++ hermes_cli/gateway.py
-@@ -3921,6 +3921,29 @@
+@@ -3914,6 +3914,29 @@ def systemd_status(deep: bool = False, system: bool = 
  
  
  # =============================================================================
@@ -30,7 +30,7 @@
  # Launchd (macOS)
  # =============================================================================
  
-@@ -4807,6 +4830,8 @@
+@@ -4799,6 +4822,8 @@ def _service_backend(*, windows: bool = True) -> str |
      predicate order every subcommand routes on. ``windows=False`` never probes ``is_windows()``."""
      if supports_systemd_services():
          return "systemd"
@@ -39,7 +39,7 @@
      if is_macos():
          return "launchd"
      if windows and is_windows():
-@@ -4820,6 +4845,8 @@
+@@ -4812,6 +4837,8 @@ def _service_call(backend: str, verb: str, system: boo
      Each systemd/launchd verb refuses a definition pinning another HERMES_HOME itself."""
      if backend == "windows":
          return getattr(_gw_windows(), verb)()
@@ -48,7 +48,7 @@
      if backend == "launchd":
          return globals()[f"launchd_{verb}"]()
      fn = globals()[f"systemd_{verb}"]
-@@ -4997,6 +5024,8 @@
+@@ -4989,6 +5016,8 @@ def _installed_service_kind_for(windows) -> str | None
      (a thunk so it runs last, like every caller's original ladder), else None."""
      if _systemd_unit_installed():
          return "systemd"

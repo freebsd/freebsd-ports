@@ -1,4 +1,4 @@
---- agent/anthropic_adapter.py.orig	2026-10-23 02:24:27 UTC
+--- agent/anthropic_adapter.py.orig	2026-11-06 16:56:46 UTC
 +++ agent/anthropic_adapter.py
 @@ -375,9 +375,37 @@ def _attribution_headers() -> dict[str, str]:
      }

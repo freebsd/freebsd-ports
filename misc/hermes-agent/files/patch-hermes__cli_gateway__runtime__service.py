@@ -1,4 +1,4 @@
---- hermes_cli/gateway_runtime_service.py.orig	2026-10-26 21:50:19 UTC
+--- hermes_cli/gateway_runtime_service.py.orig	2026-11-06 16:56:46 UTC
 +++ hermes_cli/gateway_runtime_service.py
 @@ -261,8 +261,10 @@ def discover_existing_gateway_service(home: Path, *, d
  def discover_existing_gateway_service(home: Path, *, deadline: float) -> ExistingService | None:

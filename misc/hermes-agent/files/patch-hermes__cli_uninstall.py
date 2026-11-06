@@ -1,4 +1,4 @@
---- hermes_cli/uninstall.py.orig	2026-10-23 02:24:27 UTC
+--- hermes_cli/uninstall.py.orig	2026-11-06 16:56:46 UTC
 +++ hermes_cli/uninstall.py
 @@ -334,6 +334,16 @@ def _remove_launchd_gateway() -> bool:
      return bool(plists)

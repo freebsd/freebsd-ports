@@ -1,4 +1,4 @@
---- hermes_cli/setup_platforms.py.orig	2026-10-23 02:24:27 UTC
+--- hermes_cli/setup_platforms.py.orig	2026-11-06 16:56:46 UTC
 +++ hermes_cli/setup_platforms.py
 @@ -258,6 +258,7 @@ def _restart_running_gateway(any_messaging: bool, supp
      from hermes_cli.gateway import (

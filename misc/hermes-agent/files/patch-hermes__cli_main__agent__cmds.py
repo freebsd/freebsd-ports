@@ -1,4 +1,4 @@
---- hermes_cli/main_agent_cmds.py.orig	2026-10-23 02:24:27 UTC
+--- hermes_cli/main_agent_cmds.py.orig	2026-11-06 16:56:46 UTC
 +++ hermes_cli/main_agent_cmds.py
 @@ -186,6 +186,15 @@ def cmd_skills(args):
  

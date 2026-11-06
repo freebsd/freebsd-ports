@@ -1,6 +1,6 @@
---- agent/azure_identity_adapter.py.orig	2026-10-26 16:08:51 UTC
+--- agent/azure_identity_adapter.py.orig	2026-11-06 16:56:46 UTC
 +++ agent/azure_identity_adapter.py
-@@ -311,16 +311,23 @@
+@@ -311,16 +311,23 @@ def build_bearer_http_client(
  
  
  def build_bearer_http_client(

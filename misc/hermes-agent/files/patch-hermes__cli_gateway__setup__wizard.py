@@ -1,6 +1,6 @@
---- hermes_cli/gateway_setup_wizard.py.orig	2026-10-23 02:24:27 UTC
+--- hermes_cli/gateway_setup_wizard.py.orig	2026-11-06 16:56:46 UTC
 +++ hermes_cli/gateway_setup_wizard.py
-@@ -392,7 +392,7 @@ _WIZARD_BANNER = (
+@@ -396,7 +396,7 @@ _WIZARD_BANNER = (
  )
  
  

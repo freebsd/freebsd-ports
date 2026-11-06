@@ -1,4 +1,4 @@
---- hermes_cli/gateway_runtime_discovery.py.orig	2026-10-26 21:56:11 UTC
+--- hermes_cli/gateway_runtime_discovery.py.orig	2026-11-06 16:56:46 UTC
 +++ hermes_cli/gateway_runtime_discovery.py
 @@ -109,7 +109,8 @@ def socket_peer_uid(sock: socket.socket) -> int | None
      if hasattr(socket, "SO_PEERCRED"):

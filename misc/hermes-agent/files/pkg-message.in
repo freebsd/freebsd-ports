@@ -20,6 +20,11 @@ sysrc hermes_dashboard_user="<account whose ~/.hermes is used>"
 
 See %%PREFIX%%/etc/rc.d/hermes_gateway and hermes_dashboard for all
 tunables (host, port, profile, extra flags).
+
+`hermes --tui` and the dashboard Chat tab need the terminal UI, packaged
+separately because it requires Node.js:
+
+  pkg install hermes-tui
 EOM
 }
 ]

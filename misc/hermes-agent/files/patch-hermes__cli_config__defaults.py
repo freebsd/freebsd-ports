@@ -1,16 +1,15 @@
---- hermes_cli/config_defaults.py.orig	2026-10-23 02:24:27 UTC
+--- hermes_cli/config_defaults.py.orig	2026-11-06 16:56:46 UTC
 +++ hermes_cli/config_defaults.py
-@@ -4,7 +4,9 @@ Pure-data leaf module — must not import from hermes_cl
+@@ -4,6 +4,8 @@ docs of config.yaml.
  docs of config.yaml.
  """
  
 +import sys
- 
 +
+ from hermes_cli.config_defaults_auxiliary import _aux
+ 
  #: Image every container terminal backend (docker/modal/daytona, the singularity plugin) uses unless the
- #: user pins one. LEGACY_SANDBOX_IMAGES are the plain defaults that preceded the desktop stack
- #: (the 3.14 pin shipped between the two without a migration); a saved config still holding one
-@@ -1807,8 +1809,10 @@ DEFAULT_CONFIG = {
+@@ -1776,8 +1778,10 @@ DEFAULT_CONFIG = {
          "acked_advisories": [],
          # Lazy-install opt-in backend packages from PyPI when a backend that needs them is first
          # enabled (e.g. `elevenlabs`). False = require explicit pip install for everything beyond

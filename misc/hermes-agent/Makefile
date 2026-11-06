@@ -1,5 +1,5 @@
 PORTNAME=	hermes-agent
-PORTVERSION=	0.22.5
+PORTVERSION=	${HERMES_VERSION}
 CATEGORIES=	misc python
 MASTER_SITES+=	LOCAL/olivier:webdist
 DISTFILES+=	${PORTNAME}-web-dist-${PORTVERSION}${EXTRACT_SUFX}:webdist
@@ -71,7 +71,7 @@ USES=		python:3.11+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	NousResearch
 GH_PROJECT=	hermes-agent
-GH_TAGNAME=	v0.22.5
+GH_TAGNAME=	v${PORTVERSION}
 
 USE_RC_SUBR=	hermes_dashboard hermes_gateway
 
@@ -114,15 +114,11 @@ PLIST_SUB+=	HERMES_LIBDIR=${HERMES_LIBDIR:S,^${PREFIX}/,,}
 #      electron downloads that the dashboard does not need -- bun works too:
 #      `bun install --ignore-scripts` + `(cd web && bun run build)` with a
 #      node->bun PATH shim, since the build script spawns node):
-#        npm install --ignore-scripts --no-audit --no-fund
-#        npm run build -w web
+#        npm install --ignore-scripts --no-audit --no-fund --engine-strict=false
+#        npm run build -w web --engine-strict=false
 #      This writes the bundle to ../hermes_cli/web_dist/.
-#      (web/package-lock.json is gone but the root lockfile is back as of
-#      0.22.5.  The build also trips TS18048 in web/vite.config.ts under the
-#      pinned typescript 6 (.filter is typed optional though populated at
-#      runtime): rewrite `preset.rolldown.filter.code = /re/;` as
-#      `preset.rolldown.filter = { ...preset.rolldown.filter, code: /re/ };`
-#      (build-only, behaviour-identical).  update-hermes.sh applies this.)
+#      (0.23.0 pins engines.node >=26 with engine-strict in .npmrc; the pin
+#      is policy only, node 24 builds the same bundle.)
 #   3. Repackage with a top-level dir whose name matches the distfile:
 #        cp -a ../hermes_cli/web_dist /tmp/${PORTNAME}-web-dist-${PORTVERSION}
 #        cd /tmp && tar --no-acls --no-xattrs --no-fflags --uid=0 --gid=0 \
@@ -131,6 +127,10 @@ PLIST_SUB+=	HERMES_LIBDIR=${HERMES_LIBDIR:S,^${PREFIX}/,,}
 #   4. Upload to LOCAL/<committer>'s distcache directory and drop a copy
 #      into ${DISTDIR} so `make makesum` picks it up locally.
 #   5. cd ${.CURDIR} && make makesum
+
+# The Ink TUI (`hermes --tui`, also the dashboard Chat tab) is packaged
+# separately as misc/hermes-tui so this port does not pull in node.  Both
+# read HERMES_VERSION from Makefile.version: bump them together.
 
 # Python packages that constitute the runtime app.  The bare top-level
 # modules (cli.py, run_agent.py, registration_lifecycle.py, ...) are not
@@ -185,18 +185,21 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${SED} -e 's|%%HERMES_LIBDIR%%|${HERMES_LIBDIR}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		-e 's|%%ENTRY_MODULE%%|hermes_cli.main|g' \
 		-e 's|%%ENTRY_FUNC%%|main|g' \
 		${FILESDIR}/wrapper.in > ${STAGEDIR}${PREFIX}/bin/hermes
 	${SED} -e 's|%%HERMES_LIBDIR%%|${HERMES_LIBDIR}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		-e 's|%%ENTRY_MODULE%%|run_agent|g' \
 		-e 's|%%ENTRY_FUNC%%|main|g' \
 		${FILESDIR}/wrapper.in > ${STAGEDIR}${PREFIX}/bin/hermes-agent
 	${SED} -e 's|%%HERMES_LIBDIR%%|${HERMES_LIBDIR}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		-e 's|%%ENTRY_MODULE%%|acp_adapter.entry|g' \
 		-e 's|%%ENTRY_FUNC%%|main|g' \
@@ -228,4 +231,5 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
+.include "Makefile.version"
 .include <bsd.port.mk>
