@@ -16,9 +16,6 @@ and the keyboard shortcut to launch a terminal
 
 (replace foot with your preferred terminal emulator).
 
-N.B. If you use x11/waybar, version 0.15.0, you have to consider (temporarily)
-other alternatives like x11/sfwbar or x11/mangobar, because that version is not
-compatible with the current version of Mango.
 EOM
 }
 { type: upgrade
