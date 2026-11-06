@@ -1,0 +1,6 @@
+The xss filter wraps resty-dbd-stream or JSON output in a JavaScript
+callback for JSONP style responses, controlled by the xss_get and
+xss_callback_arg directives.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their XSS option is enabled.

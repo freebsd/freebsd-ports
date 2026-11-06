@@ -582,6 +582,7 @@
     SUBDIR += nginx-module-upload
     SUBDIR += nginx-module-vod
     SUBDIR += nginx-module-websockify
+    SUBDIR += nginx-module-xss
     SUBDIR += nginx-module-zstd
     SUBDIR += nginx-naxsi
     SUBDIR += nginx-prometheus-exporter
