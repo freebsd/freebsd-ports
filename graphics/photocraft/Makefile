@@ -1,6 +1,6 @@
 PORTNAME=	photocraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.2
+DISTVERSION=	0.21.0
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -31,6 +31,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		accesskit_windows-0.35.1 \
 		accesskit_winit-0.34.1 \
 		adler2-2.0.1 \
+		aes-0.8.4 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.5 \
 		aligned-0.4.3 \
@@ -94,6 +95,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		blake3-1.8.7 \
 		block-0.1.6 \
 		block-buffer-0.10.4 \
+		block-padding-0.3.3 \
 		block2-0.5.1 \
 		block2-0.6.2 \
 		blocking-1.7.0 \
@@ -102,6 +104,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		brotli-decompressor-5.0.3 \
 		built-0.8.1 \
 		bumpalo-3.20.3 \
+		bytecount-0.6.9 \
 		bytemuck-1.25.2 \
 		bytemuck_derive-1.12.1 \
 		byteorder-lite-0.1.0 \
@@ -113,6 +116,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		cap-primitives-4.0.3 \
 		cap-std-4.0.3 \
 		cast-0.3.0 \
+		cbc-0.1.2 \
 		cc-1.5.1 \
 		cexpr-0.6.0 \
 		cfg-expr-0.20.10 \
@@ -124,6 +128,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
+		cipher-0.4.4 \
 		clang-sys-1.9.1 \
 		clap-4.6.7 \
 		clap_builder-4.6.7 \
@@ -190,6 +195,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		drm-sys-0.8.1 \
 		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
+		ecb-0.1.2 \
 		either-1.18.0 \
 		encoding_rs-0.8.42 \
 		endi-1.1.1 \
@@ -311,6 +317,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		imagesize-0.13.0 \
 		imgref-1.12.3 \
 		indexmap-2.14.2 \
+		inout-0.1.4 \
 		interpolate_name-0.2.4 \
 		io-extras-0.19.0 \
 		io-lifetimes-2.0.4 \
@@ -370,10 +377,12 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		lock_api-0.4.14 \
 		log-0.4.34 \
 		loop9-0.1.5 \
+		lopdf-0.38.0 \
 		lru-slab-0.1.3 \
 		lz4_flex-0.11.6 \
 		maybe-owned-0.3.4 \
 		maybe-rayon-0.1.1 \
+		md-5-0.10.6 \
 		memchr-2.8.3 \
 		memmap2-0.9.11 \
 		memoffset-0.9.1 \
@@ -397,6 +406,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		nohash-hasher-0.2.0 \
 		nom-7.1.3 \
 		nom-8.0.0 \
+		nom_locate-5.0.0 \
 		noop_proc_macro-0.3.0 \
 		ntapi-0.4.3 \
 		num-bigint-0.4.8 \
@@ -529,6 +539,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		rand_pcg-0.10.2 \
 		rand_xorshift-0.5.0 \
 		range-alloc-0.1.5 \
+		rangemap-1.8.0 \
 		rav1e-0.8.1 \
 		ravif-0.13.0 \
 		raw-cpuid-11.6.0 \
@@ -635,6 +646,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		strength_reduce-0.2.4 \
 		strict-num-0.1.1 \
 		string-interner-0.19.0 \
+		stringprep-0.1.5 \
 		strsim-0.11.1 \
 		strum-0.28.0 \
 		strum_macros-0.28.0 \
@@ -702,6 +714,7 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		unicode-ccc-0.4.0 \
 		unicode-general-category-1.1.0 \
 		unicode-ident-1.0.26 \
+		unicode-normalization-0.1.26 \
 		unicode-properties-0.1.4 \
 		unicode-script-0.5.8 \
 		unicode-segmentation-1.13.3 \
@@ -801,6 +814,8 @@ CARGO_CRATES=	accesskit-0.25.1 \
 		winreg-0.55.0 \
 		winresource-0.1.34 \
 		winsafe-0.0.29 \
+		wintab-0.1.1 \
+		wintab-sys-0.1.0 \
 		winx-0.36.4 \
 		wit-bindgen-0.57.1 \
 		wl-clipboard-rs-0.9.4 \
@@ -876,7 +891,7 @@ AVIF_VARS=	CARGO_FEATURES+=photocraft-codecs/avif
 HEIF_VARS=	CARGO_FEATURES+=heif
 
 APP_ID=		ai.storyteller.photocraft
-RELEASE_DATE=	2026-11-05
+RELEASE_DATE=	2026-11-06
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@VERSION@|${DISTVERSION}|; s|@DATE@|${RELEASE_DATE}|' \
