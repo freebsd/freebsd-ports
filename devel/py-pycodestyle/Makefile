@@ -3,7 +3,7 @@ PORTVERSION=	2.14.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python style guide checker
 WWW=		https://pycodestyle.readthedocs.io/en/latest/ \
 		https://pypi.org/project/pycodestyle/ \

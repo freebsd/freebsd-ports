@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate HTML or XML in a pythonic way
 WWW=		https://www.yattag.org/ \
 		https://github.com/leforestier/yattag

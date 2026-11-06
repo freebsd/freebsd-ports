@@ -3,7 +3,7 @@ PORTVERSION=	7.3.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code checking using pep8 and pyflakes
 WWW=		https://pypi.org/project/flake8/ \
 		https://github.com/PyCQA/flake8

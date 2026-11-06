@@ -6,7 +6,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:C/-/_/}-${PORTVERSION}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension for flake8 which uses pydocstyle to check docstrings
 WWW=		https://pypi.org/project/flake8-docstrings/ \
 		https://github.com/pycqa/flake8-docstrings

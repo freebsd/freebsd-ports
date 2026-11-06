@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:C/-/_/}-${PORTVERSION}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	pytest plugin for test data directories and files
 WWW=		https://pypi.org/project/pytest-datadir/ \
 		https://github.com/gabrielcnr/pytest-datadir

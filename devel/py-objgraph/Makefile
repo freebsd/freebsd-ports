@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draws Python object reference graphs with graphviz
 WWW=		https://mg.pov.lt/objgraph/ \
 		https://pypi.org/project/objgraph/ \

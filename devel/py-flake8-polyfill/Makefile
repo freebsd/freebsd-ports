@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Polyfill package for Flake8 plugins
 WWW=		https://pypi.org/project/flake8-polyfill/
 

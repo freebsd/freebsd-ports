@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	S-expression parser for Python
 WWW=		https://pypi.org/project/sexpdata/ \
 		https://github.com/jd-boyd/sexpdata

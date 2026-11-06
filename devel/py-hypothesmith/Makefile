@@ -4,7 +4,7 @@ CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hypothesis strategies for generating Python programs
 WWW=		https://github.com/Zac-HD/hypothesmith
 

@@ -5,7 +5,7 @@ CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Top quality TLS certs while you wait, for the discerning tester
 WWW=		https://github.com/python-trio/trustme
 

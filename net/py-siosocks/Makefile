@@ -5,7 +5,7 @@ CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sans-io socks proxy client/server library/framework
 WWW=		https://pypi.python.org/pypi/siosocks
 

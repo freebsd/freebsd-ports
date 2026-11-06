@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python docstring style checker
 WWW=		https://www.pydocstyle.org/ \
 		https://pypi.org/project/pydocstyle/ \

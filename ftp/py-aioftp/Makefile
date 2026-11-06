@@ -4,7 +4,7 @@ CATEGORIES=	ftp python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP client/server for asyncio
 WWW=		https://pypi.org/project/aioftp/ \
 		https://aioftp.readthedocs.io/ \

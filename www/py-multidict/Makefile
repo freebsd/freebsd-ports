@@ -4,7 +4,7 @@ CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multidict implementation
 WWW=		https://pypi.org/project/multidict/ \
 		https://github.com/aio-libs/multidict

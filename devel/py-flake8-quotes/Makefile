@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flake8 lint for quotes
 WWW=		https://pypi.org/project/flake8-quotes/ \
 		https://github.com/zheller/flake8-quotes/

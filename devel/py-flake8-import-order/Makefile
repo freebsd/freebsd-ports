@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:C/-/_/g}-${PORTVERSION}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flake8 and pylama plugin that checks the ordering of import statements
 WWW=		https://pypi.org/project/flake8-import-order/ \
 		https://github.com/PyCQA/flake8-import-order

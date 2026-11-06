@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 DISTNAME=	${PORTNAME:C/-/_/}-${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check PEP-8 naming conventions, plugin for flake8
 WWW=		https://pypi.org/project/pep8-naming/
 
