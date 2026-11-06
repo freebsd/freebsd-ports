@@ -40,7 +40,7 @@ DISTFILES=	\
 		v20260916.214021.zip:dawn \
 		1.721.3-preview:dawn_agility_sdk \
 		v1.30.0.tar.gz:kleidiai \
-		2f10c9a8d32f81ffeeb6d4885a29cc35d2b0da87.zip:kleidiai-qmx \
+		2f10c9a8d32f81ffeeb6d4885a29cc35d2b0da87.zip:kleidiai_qmx \
 		v1.4.344:vulkan_headers \
 		v3.10.279.1.zip:cpp_client_telemetry \
 		curl-8.21.0.tar.xz:curl \

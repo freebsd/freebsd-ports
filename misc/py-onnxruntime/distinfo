@@ -1,4 +1,4 @@
-TIMESTAMP = 1792307624
+TIMESTAMP = 1793929115
 SHA256 (onnxruntime/20250814.0.zip) = b2bdcf6682d8cb53df365bcc5d6c318a22e55821d9978a10fdb61404c026daff
 SIZE (onnxruntime/20250814.0.zip) = 3194036
 SHA256 (onnxruntime/9.0.zip) = 326b5ee99dae22fb294a40d04096174b1ee287f9193bd9fbeb23deae60a126c7
@@ -91,8 +91,8 @@ SHA256 (onnxruntime/curl-8.21.0.tar.xz) = aa1b66a70eace83dc624508745646c08ae561d
 SIZE (onnxruntime/curl-8.21.0.tar.xz) = 2882336
 SHA256 (onnxruntime/mbedtls-3.6.7.tar.bz2) = a7e8bcbec0e6f761b4af24f25677626b35f762f68eef79c08677a363212d11f6
 SIZE (onnxruntime/mbedtls-3.6.7.tar.bz2) = 5473689
-SHA256 (onnxruntime/microsoft-onnxruntime-v1.31.0_GH0.tar.gz) = a7e84230b5d509e48fbd6b73c2453a56345ccb22da34a46dac1f0cb4a2d6507b
-SIZE (onnxruntime/microsoft-onnxruntime-v1.31.0_GH0.tar.gz) = 280355422
+SHA256 (onnxruntime/microsoft-onnxruntime-v1.31.1_GH0.tar.gz) = 92ffbf8b97872fd1e73c9eebdf3319d9a3b24919ae438d27db903b72ee08939e
+SIZE (onnxruntime/microsoft-onnxruntime-v1.31.1_GH0.tar.gz) = 280354523
 SHA256 (onnxruntime/emscripten-core-emsdk-0742117_GH0.tar.gz) = ebd5a51e31742e6ae1d11271bd5d84c2083623b746b98ef5b32adf6e223d48b8
 SIZE (onnxruntime/emscripten-core-emsdk-0742117_GH0.tar.gz) = 114343
 SHA256 (onnxruntime/google-libprotobuf-mutator-7a2ed51a6b682a83e345ff49fc4cfd7ca47550db_GH0.tar.gz) = d51365191580c4bf5e9ff104eebcfe34f7ff5f471006d7a460c15dcb3657501c
