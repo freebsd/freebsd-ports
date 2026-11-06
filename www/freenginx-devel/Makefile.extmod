@@ -44,7 +44,7 @@ ECHO_GH_TUPLE=		openresty:echo-nginx-module:ebed47c:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
 
 DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:3b4cb3d:drizzle
-DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
+DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include/libdrizzle-1.0 \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
 DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle

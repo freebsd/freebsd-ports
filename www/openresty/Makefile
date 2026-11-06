@@ -1,5 +1,6 @@
 PORTNAME=	openresty
 PORTVERSION=	1.31.8.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://openresty.org/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

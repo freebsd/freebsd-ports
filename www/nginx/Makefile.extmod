@@ -47,7 +47,7 @@ WRKSRC_echo=		${WRKDIR}/echo-nginx-module
 ECHO_VARS=		DSO_EXTMODS+=echo
 
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
-DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
+DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include/libdrizzle-1.0 \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
 DRIZZLE_BUILD_DEPENDS=	nginx-module-drizzle>0:www/nginx-module-drizzle
 WRKSRC_drizzle=		${WRKDIR}/drizzle-nginx-module

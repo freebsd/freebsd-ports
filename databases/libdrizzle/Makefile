@@ -1,53 +1,47 @@
 PORTNAME=	libdrizzle
-PORTVERSION=	0.8
-PORTREVISION=	8
+PORTVERSION=	1.0
 CATEGORIES=	databases
-MASTER_SITES=	http://launchpadlibrarian.net/41155299/ \
-		LOCAL/bdrewery/${PORTNAME}/
+MASTER_SITES=	https://launchpadlibrarian.net/74651825/
+DISTNAME=	drizzle7-2011.07.21
+PORTSCOUT=	limit:^1\.
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Client and protocol library for the Drizzle database
-WWW=		https://launchpad.net/libdrizzle
+WWW=		https://launchpad.net/drizzle
 
 LICENSE=	BSD3CLAUSE
 
-OPTIONS_DEFINE=	DOXYGEN EXAMPLES
-OPTIONS_SUB=	yes
-
 GNU_CONFIGURE=	yes
-USES=		gmake libtool sqlite
-CONFIGURE_ARGS+=--enable-libsqlite3
+USES=		gmake libtool ssl
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
+
+CONFIGURE_ARGS=	--without-server \
+		--disable-boost \
+		--disable-dtrace \
+		--disable-libcurl \
+		--disable-libldap \
+		--disable-libsqlite3 \
+		--disable-nls
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+
+ALL_TARGET=	libdrizzle-1.0
+INSTALL_TARGET=	install-libdrizzle-1.0
+MAKE_ARGS=	LIBS=-lcrypto \
+		INSTALL_STRIP_FLAG=-s \
+		oldlibdrizzlepkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 CONFLICTS_INSTALL=	libdrizzle-redux # lib/libdrizzle.so
 
-SAMPLE_PROGS=	client pipe_query proxy server simple \
-		simple_multi sqlite_server
-
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOXYGEN}
-BUILD_DEPENDS+=	doxygen>=0:devel/doxygen
-ALL_TARGET=	all doxygen
-.endif
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=--disable-64bit
-.elif ${ARCH:Mpowerpc*}
-USES+=		compiler:gcc-c++11-lib
 .endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOXYGEN}
-	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
-.for i in ${SAMPLE_PROGS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/examples/.libs/${i} ${STAGEDIR}${EXAMPLESDIR}
-.endfor
-.endif
+post-configure:
+	@${TOUCH} ${WRKSRC}/.plugin.scan \
+		${WRKSRC}/config/pandora-plugin.list \
+		${WRKSRC}/config/pandora-plugin.am
 
 .include <bsd.port.mk>
