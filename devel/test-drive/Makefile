@@ -1,6 +1,6 @@
 PORTNAME=	test-drive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,5 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fortran-lang
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+
+# tests as od 0.6.1: 100% tests passed out of 3
 
 .include <bsd.port.mk>
