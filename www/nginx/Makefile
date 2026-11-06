@@ -1,7 +1,7 @@
 PORTNAME=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -298,8 +298,6 @@ post-patch:
 post-patch-BROTLI-on:
 	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_brotli}/filter/config
 
-post-patch-DRIZZLE-on:
-	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_drizzle}/config
 
 post-patch-FASTDFS-on:
 	@${REINPLACE_CMD} \
@@ -347,6 +345,16 @@ pre-configure-DEVEL_KIT-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-ndk ${WRKSRC_devel_kit}
 	@${CHMOD} -R u+w ${WRKSRC_devel_kit}
 
+pre-configure-DRIZZLE-on:
+	@${RM} -rf ${WRKSRC_drizzle}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-drizzle ${WRKSRC_drizzle}
+	@${CHMOD} -R u+w ${WRKSRC_drizzle}
+
+pre-configure-ECHO-on:
+	@${RM} -rf ${WRKSRC_echo}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-echo ${WRKSRC_echo}
+	@${CHMOD} -R u+w ${WRKSRC_echo}
+
 pre-configure-FIPS_CHECK-on:
 	@${RM} -rf ${WRKSRC_fipscheck}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-fips-check ${WRKSRC_fipscheck}
@@ -362,10 +370,20 @@ pre-configure-GRIDFS-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-gridfs ${WRKSRC_gridfs}
 	@${CHMOD} -R u+w ${WRKSRC_gridfs}
 
+pre-configure-HEADERS_MORE-on:
+	@${RM} -rf ${WRKSRC_headers_more}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-headers-more ${WRKSRC_headers_more}
+	@${CHMOD} -R u+w ${WRKSRC_headers_more}
+
 pre-configure-HTTP_ACCEPT_LANGUAGE-on:
 	@${RM} -rf ${WRKSRC_accept_language}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-accept-language ${WRKSRC_accept_language}
 	@${CHMOD} -R u+w ${WRKSRC_accept_language}
+
+pre-configure-HTTP_EVAL-on:
+	@${RM} -rf ${WRKSRC_eval}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-eval ${WRKSRC_eval}
+	@${CHMOD} -R u+w ${WRKSRC_eval}
 
 pre-configure-HTTP_FOOTER-on:
 	@${RM} -rf ${WRKSRC_footer}
@@ -479,10 +497,25 @@ pre-configure-POSTGRES-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-postgres ${WRKSRC_postgres}
 	@${CHMOD} -R u+w ${WRKSRC_postgres}
 
+pre-configure-RDS_CSV-on:
+	@${RM} -rf ${WRKSRC_rdscsv}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-rds-csv ${WRKSRC_rdscsv}
+	@${CHMOD} -R u+w ${WRKSRC_rdscsv}
+
+pre-configure-RDS_JSON-on:
+	@${RM} -rf ${WRKSRC_rdsjson}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-rds-json ${WRKSRC_rdsjson}
+	@${CHMOD} -R u+w ${WRKSRC_rdsjson}
+
 pre-configure-REDIS2-on:
 	@${RM} -rf ${WRKSRC_redis2}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-redis2 ${WRKSRC_redis2}
 	@${CHMOD} -R u+w ${WRKSRC_redis2}
+
+pre-configure-SET_MISC-on:
+	@${RM} -rf ${WRKSRC_setmisc}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-set-misc ${WRKSRC_setmisc}
+	@${CHMOD} -R u+w ${WRKSRC_setmisc}
 
 pre-configure-SFLOW-on:
 	@${RM} -rf ${WRKSRC_sflow}
@@ -495,6 +528,11 @@ pre-configure-SLOWFS_CACHE-on:
 	@${RM} -rf ${WRKSRC_slowfs_cache}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-slowfs-cache ${WRKSRC_slowfs_cache}
 	@${CHMOD} -R u+w ${WRKSRC_slowfs_cache}
+
+pre-configure-SRCACHE-on:
+	@${RM} -rf ${WRKSRC_srcache}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-srcache ${WRKSRC_srcache}
+	@${CHMOD} -R u+w ${WRKSRC_srcache}
 
 pre-configure-PASSENGER-on:
 	@${RM} -rf ${WRKSRC_passenger}
@@ -526,6 +564,11 @@ pre-configure-WEBSOCKIFY-on:
 	@${RM} -rf ${WRKSRC_websockify}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-websockify ${WRKSRC_websockify}
 	@${CHMOD} -R u+w ${WRKSRC_websockify}
+
+pre-configure-XSS-on:
+	@${RM} -rf ${WRKSRC_xss}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-xss ${WRKSRC_xss}
+	@${CHMOD} -R u+w ${WRKSRC_xss}
 
 pre-configure-ZSTD-on:
 	@${RM} -rf ${WRKSRC_zstd}

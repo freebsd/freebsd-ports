@@ -42,14 +42,15 @@ CERT_EXPIRY_BUILD_DEPENDS=	nginx-module-cert-expiry>0:www/nginx-module-cert-expi
 WRKSRC_cert_expiry=		${WRKDIR}/nginx-cert-expiry-module
 CERT_EXPIRY_VARS=		DSO_EXTMODS+=cert_expiry
 
-ECHO_GH_TUPLE=		openresty:echo-nginx-module:5a402aa:echo
+ECHO_BUILD_DEPENDS=	nginx-module-echo>0:www/nginx-module-echo
+WRKSRC_echo=		${WRKDIR}/echo-nginx-module
 ECHO_VARS=		DSO_EXTMODS+=echo
 
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
 DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
 			LIBDRIZZLE_LIB=${LOCALBASE}/lib
-DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:v0.1.14:drizzle
-DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
+DRIZZLE_BUILD_DEPENDS=	nginx-module-drizzle>0:www/nginx-module-drizzle
+WRKSRC_drizzle=		${WRKDIR}/drizzle-nginx-module
 DRIZZLE_VARS=		DSO_EXTMODS+=drizzle
 
 DYNAMIC_UPSTREAM_IMPLIES=	STREAM
@@ -82,7 +83,8 @@ GRIDFS_BUILD_DEPENDS=	nginx-module-gridfs>0:www/nginx-module-gridfs
 WRKSRC_gridfs=		${WRKDIR}/nginx-gridfs-module
 GRIDFS_VARS=		DSO_EXTMODS+=gridfs
 
-HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:06dc0be:headers_more
+HEADERS_MORE_BUILD_DEPENDS=	nginx-module-headers-more>0:www/nginx-module-headers-more
+WRKSRC_headers_more=	${WRKDIR}/headers-more-nginx-module
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
 
 HTTP_ACCEPT_LANGUAGE_BUILD_DEPENDS=	nginx-module-accept-language>0:www/nginx-module-accept-language
@@ -113,7 +115,8 @@ HTTP_DAV_EXT_BUILD_DEPENDS=	nginx-module-dav-ext>0:www/nginx-module-dav-ext
 WRKSRC_dav_ext=		${WRKDIR}/nginx-module-dav-ext
 HTTP_DAV_EXT_VARS=		DSO_EXTMODS+=dav_ext
 
-HTTP_EVAL_GH_TUPLE=		openresty:nginx-eval-module:582bd25:eval
+HTTP_EVAL_BUILD_DEPENDS=	nginx-module-eval>0:www/nginx-module-eval
+WRKSRC_eval=		${WRKDIR}/nginx-eval-module
 HTTP_EVAL_VARS=			DSO_EXTMODS+=eval
 
 HTTP_FANCYINDEX_BUILD_DEPENDS=	nginx-module-fancyindex>0:www/nginx-module-fancyindex
@@ -308,12 +311,12 @@ POSTGRES_BUILD_DEPENDS=	nginx-module-postgres>0:www/nginx-module-postgres
 WRKSRC_postgres=	${WRKDIR}/nginx-postgres-module
 POSTGRES_VARS=		DSO_EXTMODS+=postgres
 
-RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:v0.09:rdscsv
-RDS_CSV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rds-csv-nginx-module-config
+RDS_CSV_BUILD_DEPENDS=	nginx-module-rds-csv>0:www/nginx-module-rds-csv
+WRKSRC_rdscsv=		${WRKDIR}/rds-csv-nginx-module
 RDS_CSV_VARS=		DSO_EXTMODS+=rdscsv
 
-RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:v0.15:rdsjson
-RDS_JSON_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rds-json-nginx-module-config
+RDS_JSON_BUILD_DEPENDS=	nginx-module-rds-json>0:www/nginx-module-rds-json
+WRKSRC_rdsjson=		${WRKDIR}/rds-json-nginx-module
 RDS_JSON_VARS=		DSO_EXTMODS+=rdsjson
 
 REDIS2_BUILD_DEPENDS=	nginx-module-redis2>0:www/nginx-module-redis2
@@ -324,7 +327,8 @@ RTMP_GH_TUPLE=		arut:nginx-rtmp-module:v1.2.2:rtmp
 RTMP_VARS=		DSO_EXTMODS+=rtmp
 
 SET_MISC_IMPLIES=	DEVEL_KIT
-SET_MISC_GH_TUPLE=	openresty:set-misc-nginx-module:3937e7b:setmisc
+SET_MISC_BUILD_DEPENDS=	nginx-module-set-misc>0:www/nginx-module-set-misc
+WRKSRC_setmisc=		${WRKDIR}/set-misc-nginx-module
 SET_MISC_VARS=		DSO_EXTMODS+=setmisc
 
 SFLOW_BUILD_DEPENDS=	nginx-module-sflow>0:www/nginx-module-sflow
@@ -338,7 +342,8 @@ SLOWFS_CACHE_BUILD_DEPENDS=	nginx-module-slowfs-cache>0:www/nginx-module-slowfs-
 WRKSRC_slowfs_cache=	${WRKDIR}/nginx-slowfs-cache-module
 SLOWFS_CACHE_VARS=	DSO_EXTMODS+=slowfs_cache
 
-SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:be22ac0:srcache
+SRCACHE_BUILD_DEPENDS=	nginx-module-srcache>0:www/nginx-module-srcache
+WRKSRC_srcache=		${WRKDIR}/srcache-nginx-module
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
 STREAM_LIMIT_REQ_IMPLIES=	STREAM
@@ -365,9 +370,9 @@ VOD_VARS=		DSO_EXTMODS+=vod
 VTS_GH_TUPLE=		vozlt:nginx-module-vts:bf64dbf:vts
 VTS_VARS=		DSO_EXTMODS+=vts
 
-XSS_GH_TUPLE=		openresty:xss-nginx-module:v0.06:xss
+XSS_BUILD_DEPENDS=	nginx-module-xss>0:www/nginx-module-xss
+WRKSRC_xss=		${WRKDIR}/xss-nginx-module
 XSS_VARS=		DSO_EXTMODS+=xss
-XSS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-xss-nginx-module-config
 
 WEBSOCKIFY_BUILD_DEPENDS=	nginx-module-websockify>0:www/nginx-module-websockify
 WRKSRC_websockify=	${WRKDIR}/nginx-websockify-module
