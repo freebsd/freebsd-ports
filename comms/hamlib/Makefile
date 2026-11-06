@@ -35,7 +35,6 @@ CONFIGURE_ENV=	cf_with_cxx=yes \
 
 INSTALL_TARGET=	install-strip
 
-PLIST_SUB=	TCL_VER=${TCL_VER}
 PORTDOCS=	AUTHORS COPYING* ChangeLog INSTALL LICENSE NEWS PLAN README* THANKS
 
 OPTIONS_DEFINE=	DOCS STATIC
@@ -58,4 +57,12 @@ post-install-DOCS-off:
 # so we need to remove the whole ${STAGEDIR}${DOCSDIR} explicitly.
 	${RM} -r ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${TCL_VER} < 9
+PLIST_SUB+=	TCL_VER=${TCL_VER}
+.else
+PLIST_SUB+=	TCL_VER=
+.endif
+
+.include <bsd.port.post.mk>
