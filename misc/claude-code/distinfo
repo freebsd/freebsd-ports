@@ -1,7 +1,7 @@
-TIMESTAMP = 1793758796
-SHA256 (claude-code-linux-x64-2.1.318.tgz) = 2a4d5e3bd0f5bd2959bb1955bd99ea97f57af162681991dcae00fee82f9d554f
-SIZE (claude-code-linux-x64-2.1.318.tgz) = 157335063
-SHA256 (claude-code-2.1.318-node-modules.tar.gz) = ecf3f7880178d2696ebe00ff9c47c4ead90bb2a40fd77ac52878e5e8a72ed0f2
-SIZE (claude-code-2.1.318-node-modules.tar.gz) = 817003
+TIMESTAMP = 1793999503
+SHA256 (claude-code-linux-x64-2.1.319.tgz) = 9b7b53954b8ffb886fafeefe9ef1e0e9e5c15e8aaf2f54d65ba64d0cca795dc7
+SIZE (claude-code-linux-x64-2.1.319.tgz) = 158448451
+SHA256 (claude-code-2.1.319-node-modules.tar.gz) = ecf3f7880178d2696ebe00ff9c47c4ead90bb2a40fd77ac52878e5e8a72ed0f2
+SIZE (claude-code-2.1.319-node-modules.tar.gz) = 817003
 SHA256 (0Chencc-clawgod-f9d2dcde3d2977f9015c9a7002b427b8453e8536_GH0.tar.gz) = 6a11c14af684944142073f45cc727fae7ed1cda0f9d0e0df248f5cc9f7b7d430
 SIZE (0Chencc-clawgod-f9d2dcde3d2977f9015c9a7002b427b8453e8536_GH0.tar.gz) = 405102
