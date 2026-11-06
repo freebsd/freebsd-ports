@@ -95,6 +95,8 @@ CONFLICTS_INSTALL=	publisher-devel
 EXTRACT_AFTER_ARGS=	--exclude lib \
 			--no-same-owner --no-same-permissions
 
+PORTSCOUT=		limit:^5\.8\.
+
 # Optional Java helper tools (Saxon for XSLT, Jing for RNG validation,
 # Trang for schema conversion). Default ON; turn OFF to manage JARs
 # manually (see pkg-help).
