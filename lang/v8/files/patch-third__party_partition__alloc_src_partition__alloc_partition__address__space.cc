@@ -1,6 +1,6 @@
---- third_party/partition_alloc/src/partition_alloc/partition_address_space.cc.orig	2026-09-18 16:27:42 UTC
+--- third_party/partition_alloc/src/partition_alloc/partition_address_space.cc.orig	2026-10-08 04:32:34 UTC
 +++ third_party/partition_alloc/src/partition_alloc/partition_address_space.cc
-@@ -36,6 +36,10 @@
+@@ -37,6 +37,10 @@
  #include <windows.h>
  #endif  // PA_BUILDFLAG(IS_WIN)
  
@@ -11,7 +11,7 @@
  #if PA_BUILDFLAG(ENABLE_THREAD_ISOLATION)
  #include <sys/mman.h>
  #endif
-@@ -263,6 +267,13 @@ void PartitionAddressSpace::InitZeroSegment() {
+@@ -264,6 +268,13 @@ void PartitionAddressSpace::InitZeroSegment() {
    // failure. Previously reserved regions are intentionally leaked allowing for
    // partial user space segment.
    const auto reserve_region = [](uintptr_t address, size_t size) -> bool {
@@ -25,7 +25,7 @@
      const uintptr_t allocated_base =
          AllocPages(address, size, PageAllocationGranularity(),
                     PageAccessibilityConfiguration(
-@@ -275,6 +286,7 @@ void PartitionAddressSpace::InitZeroSegment() {
+@@ -276,6 +287,7 @@ void PartitionAddressSpace::InitZeroSegment() {
        FreePages(allocated_base, size);
      }
      return false;

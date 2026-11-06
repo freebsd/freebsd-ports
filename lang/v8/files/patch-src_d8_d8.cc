@@ -1,6 +1,6 @@
---- src/d8/d8.cc.orig	2026-10-06 18:33:12 UTC
+--- src/d8/d8.cc.orig	2026-10-12 21:12:54 UTC
 +++ src/d8/d8.cc
-@@ -110,6 +110,11 @@
+@@ -111,6 +111,11 @@
  #include <signal.h>
  #endif  // V8_OS_POSIX
  
@@ -12,7 +12,7 @@
  #ifdef V8_FUZZILLI
  // gn check complains when not using the v8_fuzzilli arg since the public dep.
  // is added conditionally
-@@ -8031,7 +8036,17 @@ int Shell::Main(int argc, char* argv[]) {
+@@ -8196,7 +8201,17 @@ int Shell::Main(int argc, char* argv[]) {
    // TODO(40925855): Enable this more broadly outside of d8.
  #if defined(V8_ENABLE_PARTITION_ALLOC)
  #if PA_BUILDFLAG(ENABLE_USER_SPACE_ZERO_SEGMENT)

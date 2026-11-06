@@ -1,4 +1,4 @@
---- third_party/partition_alloc/partition_alloc.gni.orig	2026-09-18 16:27:42 UTC
+--- third_party/partition_alloc/partition_alloc.gni.orig	2026-10-08 04:32:34 UTC
 +++ third_party/partition_alloc/partition_alloc.gni
 @@ -110,8 +110,8 @@ use_large_empty_slot_span_ring = true
  # TODO(crbug.com/329199197): Clean this up when experiments are complete.
@@ -11,7 +11,7 @@
  
  declare_args() {
    # Whether PartitionAlloc is built in official mode.
-@@ -540,7 +540,8 @@ is_pkeys_available =
+@@ -546,7 +546,8 @@ is_pkeys_available =
  # dependencies that use partition_allocator are compiled in AOSP against a
  # version of glibc that does not include pkeys syscall numbers.
  is_pkeys_available =
