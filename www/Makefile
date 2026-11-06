@@ -544,6 +544,7 @@
     SUBDIR += nginx-module-cache-purge
     SUBDIR += nginx-module-cert-expiry
     SUBDIR += nginx-module-dav-ext
+    SUBDIR += nginx-module-drizzle
     SUBDIR += nginx-module-encrypted-session
     SUBDIR += nginx-module-fancyindex
     SUBDIR += nginx-module-fips-check
