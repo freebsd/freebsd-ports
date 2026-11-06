@@ -48,11 +48,11 @@ lib/libhamlib.so.4.0.7
 %%PYTHON_SITELIBDIR%%/__pycache__/Hamlib%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/__pycache__/Hamlib%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_SITELIBDIR%%/__pycache__/Hamlib%%PYTHON_TAG%%.pyc
-lib/tcl/Hamlib/hamlibtcl-4.7.so
-%%STATIC%%lib/tcl/Hamlib/hamlibtcl.a
-lib/tcl/Hamlib/hamlibtcl.la
-lib/tcl/Hamlib/hamlibtcl.so
-lib/tcl/Hamlib/pkgIndex.tcl
+lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl-4.7.so
+%%STATIC%%lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl.a
+lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl.la
+lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl.so
+lib/tcl%%TCL_VER%%/Hamlib/pkgIndex.tcl
 libdata/pkgconfig/hamlib.pc
 share/aclocal/hamlib.m4
 %%PORTDOCS%%%%DOCSDIR%%/examples/perltest.pl
