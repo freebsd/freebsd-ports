@@ -1,0 +1,13 @@
+--- data/icons/meson.build.orig	2026-11-01 17:00:20 UTC
++++ data/icons/meson.build
+@@ -9,10 +9,3 @@ install_subdir(
+   install_dir: join_paths(get_option('datadir'), 'icons')
+ )
+ 
+-install_data(
+-  'fallback/README.md',
+-  'fallback/COPYING.Adwaita',
+-  'fallback/COPYING.LGPL-3',
+-  'fallback/COPYING.GPL-3',
+-  install_dir: get_option('datadir') / 'doc' / 'geeqie' / 'icon-fallbacks',
+-)
