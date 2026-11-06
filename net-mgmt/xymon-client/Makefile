@@ -1,16 +1,16 @@
 PORTNAME=	xymon
-PORTVERSION=	4.3.30
-PORTREVISION=	1
+PORTVERSION=	4.3.31
+PORTREVISION=	0
 CATEGORIES=	net-mgmt www
-MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
-PKGNAMESUFFIX=	-client${PKGNAMESUFFIX2}
-DIST_SUBDIR=	repacked
+PKGNAMESUFFIX=	-client
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	System for monitoring servers and networks - Client
-WWW=		http://xymon.sourceforge.net/
+WWW=		https://github.com/xymon-monitoring/xymon
 
 LICENSE=	GPLv2
+
+USES=		cpe gmake
 
 USERS=	xymon
 GROUPS=	xymon
@@ -22,8 +22,7 @@ XYMONHOSTIP?=	127.0.0.1
 SUB_LIST+=	XYMONUSER="${XYMONUSER}"
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		cpe gmake
-CONFIGURE_ENV=	MAKE=${MAKE_CMD}
+CONFIGURE_ENV=	MAKE=${MAKE_CMD} XYMONTOPDIR=${WWWDIR}/client MANROOT=${PREFIX}/share/man
 MAKE_ENV+=	XYMONUSER="${XYMONUSER}"
 MAKE_ENV+=	XYMONHOSTIP="${XYMONHOSTIP}"
 MAKE_ENV+=	INSTALLROOT="${STAGEDIR}"
@@ -33,13 +32,17 @@ USE_RC_SUBR=	xymon-client
 PLIST_SUB+=	XYMONUSER="${XYMONUSER}"
 CONFIG_FILES=	clientlaunch.cfg xymonclient.cfg localclient.cfg
 
-# Configure script is interactive
-do-configure:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
+USE_GITHUB=	yes
+GH_ACCOUNT=	xymon-monitoring
+GH_PROJECT=	xymon
+GH_TAGNAME=	rel-${PORTVERSION}
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--client
 
 post-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/client/ext
-	${MKDIR} ${STAGEDIR}${WWWDIR}/client/logs
-	${MKDIR} ${STAGEDIR}${WWWDIR}/client/tmp
+	${INSTALL_DATA} ${WRKSRC}/client/clientlaunch.cfg ${STAGEDIR}${WWWDIR}/client/etc/clientlaunch.cfg.sample
+	${INSTALL_DATA} ${WRKSRC}/client/localclient.cfg ${STAGEDIR}${WWWDIR}/client/etc/localclient.cfg.sample
+	${INSTALL_DATA} ${WRKSRC}/client/xymonclient.cfg ${STAGEDIR}${WWWDIR}/client/etc/xymonclient.cfg.sample
 
 .include <bsd.port.mk>
