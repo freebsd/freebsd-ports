@@ -1,12 +1,14 @@
 PORTNAME=	wsjtz
-DISTVERSION=	2.7.0-rc7-1.48
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.19
+PORTEPOCH=	1
+#PORTREVISION=	1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/wsjt-z/Source
+#MASTER_SITES=	SF/wsjt-z/Source
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Clone of WSJT-X software with additional features
-WWW=		https://sourceforge.net/projects/wsjt-z/
+WWW=		https://github.com/sq9fve/wsjt-z
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -23,13 +25,27 @@ LIB_DEPENDS=	libboost_log_setup.so:devel/boost-libs \
 		libhamlib.so:comms/hamlib \
 		libreadline.so:devel/readline
 
-USES=		cmake compiler:c++14-lang fortran makeinfo pkgconfig qt:5 zip
-USE_QT=		concurrent core gui multimedia network printsupport serialport \
-		sql sql-sqlite3 testlib widgets buildtools:build \
-		linguisttools:build qmake:build
+USES=		cmake compiler:c++14-lang fortran makeinfo pkgconfig qt:5
+USE_QT=         buildtools:build concurrent core gui linguisttools:build \
+		multimedia network printsupport qmake:build serialport sql \
+		sql-sqlite3 testlib websockets widgets
 
-CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH+=${LOCALBASE}/${PORTNAME:S/z/x/}/lib \
-		-DLOCALBASE::STRING="${LOCALBASE}"
+USE_GITHUB=	yes
+GH_ACCOUNT=	sq9fve
+GH_PROJECT=	wsjt-z
+
+CMAKE_ARGS+=    -DCMAKE_PREFIX_PATH+=${LOCALBASE}/${PORTNAME:S/z/x/}/lib \
+		-DLOCALBASE::STRING="${LOCALBASE}" \
+		-DUsb_LIBRARY=/usr/lib/libusb.so \
+		-DOpenMP_Fortran_FLAGS=-fopenmp \
+		-DOpenMP_Fortran_LIB_NAMES=gomp \
+		-DHAVE_MATH=FALSE \
+		-DLIBM_LIBRARIES=m
+
+#                -DCAMKE_INSTALL_DATAROOTDIR="${DOCSDIR_REL}"
+FFLAGS+=        -fallow-argument-mismatch -fopenmp
+FCFLAGS=        -fopenmp
+
 # for detailed debugging uncomment the next line
 #CMAKE_ARGS+=   --debug-output --trace
 
@@ -38,7 +54,7 @@ CONFLICTS=	wsjtx
 DATADIR=	${PREFIX}/share/${PORTNAME:S/z/x/}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/z/x/}
 
-WRKSRC=		${WRKDIR}/${PORTNAME:S/z/x/}
+#WRKSRC=		${WRKDIR}/${PORTNAME:S/z/x/}
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
