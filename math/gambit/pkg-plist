@@ -9,5 +9,3 @@ bin/gambit-liap
 bin/gambit-logit
 bin/gambit-lp
 bin/gambit-simpdiv
-share/applications/gambit.desktop
-share/pixmaps/gambit.xpm
