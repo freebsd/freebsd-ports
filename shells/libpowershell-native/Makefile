@@ -1,6 +1,6 @@
 PORTNAME=	libpowershell-native
 DISTVERSIONPREFIX=v
-DISTVERSION=	7.4.0
+DISTVERSION=	700.0.1
 CATEGORIES=	shells devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -16,7 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PowerShell
 GH_PROJECT=	PowerShell-Native
 
-CMAKE_ARGS=		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 CMAKE_SOURCE_PATH=	${WRKSRC}/src/libpsl-native
 
 PLIST_FILES=	lib/powershell/libpsl-native.so
