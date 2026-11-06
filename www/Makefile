@@ -2094,6 +2094,7 @@
     SUBDIR += py-woob
     SUBDIR += py-woob-qt
     SUBDIR += py-wsgidav
+    SUBDIR += py-wsgiproxy2
     SUBDIR += py-xandikos
     SUBDIR += py-xyzservices
     SUBDIR += py-yarl

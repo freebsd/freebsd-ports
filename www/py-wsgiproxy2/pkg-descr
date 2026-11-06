@@ -1,0 +1,4 @@
+WSGIProxy2 is a WSGI application that forwards requests to another HTTP
+server, using http.client or an optional backend (urllib3, requests,
+restkit). It is used by WebTest and zope.testbrowser to run tests
+against a live server.
