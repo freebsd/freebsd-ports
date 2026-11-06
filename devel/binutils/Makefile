@@ -1,10 +1,14 @@
 PORTNAME=	binutils
 DISTVERSION=	2.44
+PORTREVISION=	1
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	GNU \
 		SOURCEWARE/binutils/releases
 DISTNAME=	${PORTNAME}-with-gold-${DISTVERSION}${DISTVERSIONSUFFIX}
+
+PATCH_SITES=	https://sourceware.org/git/?p=binutils-gdb.git;a=patch;h=686652a12e6d5042a11b5b2a2bf6a15fae361e80;dummy=/
+PATCHFILES=	686652a12e6d5042a11b5b2a2bf6a15fae361e80.patch:-p1
 
 MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	GNU binary tools
