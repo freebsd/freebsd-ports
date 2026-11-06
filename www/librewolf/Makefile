@@ -1,5 +1,5 @@
 PORTNAME=	librewolf
-DISTVERSION=	159.0
+DISTVERSION=	159.0.1
 LWPATCH=	-1
 DISTVERSIONSUFFIX=	${LWPATCH}.source
 CATEGORIES=	www wayland
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.131:security/nss \
-		icu>=76.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=10.1.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
@@ -32,7 +31,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
 
 USE_GECKO=	gecko
-USE_MOZILLA=	-sqlite
+USE_MOZILLA=	-icu -sqlite
 # work around bindgen not finding ICU, e.g.
 # dist/include/mozilla/intl/ICU4CGlue.h:8:10: fatal error: 'unicode/uenum.h' file not found, err: true
 CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
