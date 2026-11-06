@@ -1,0 +1,6 @@
+Terminal user interface for Hermes, the AI agent from Nous Research.
+It provides `hermes --tui` and the Chat tab of the Hermes web dashboard,
+built on Ink (React for the terminal) and run with Node.js.
+
+This port installs upstream's prebuilt TUI bundle into the hermes-agent
+installation; the agent itself comes from misc/hermes-agent.

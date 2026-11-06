@@ -212,6 +212,7 @@
     SUBDIR += hello
     SUBDIR += help2man
     SUBDIR += hermes-agent
+    SUBDIR += hermes-tui
     SUBDIR += heyu2
     SUBDIR += hicolor-icon-theme
     SUBDIR += histring
