@@ -1,6 +1,5 @@
 PORTNAME=	gajim
-DISTVERSION=	2.6.0
-PORTREVISION=	1
+DISTVERSION=	2.7.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -18,9 +17,9 @@ LIB_DEPENDS=	libgsound.so:audio/gsound \
 		libsoup-3.0.so:devel/libsoup3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}css-parser>0:www/py-css-parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}emoji>=2.6.0:misc/py-emoji@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpx>=0.28.1:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx2>=0:www/py-httpx2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nbxmpp>=7.4.0:net-im/py-nbxmpp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nbxmpp>=7.5.0:net-im/py-nbxmpp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}omemo-dr>=1.2.0:security/py-omemo-dr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=9.1.0:graphics/py-pillow@${PY_FLAVOR} \

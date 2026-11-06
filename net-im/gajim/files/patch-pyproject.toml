@@ -12,7 +12,7 @@
  description = "A GTK XMPP Client"
  readme = "README.md"
  requires-python = ">=3.12"
--license = "GPL-3.0-or-later"
+-license = "GPL-3.0-only"
 +license = {text = "GPL-3.0-or-later"}
  authors = [
    {name = "Philipp Hörist", email = "philipp@hoerist.com"},
