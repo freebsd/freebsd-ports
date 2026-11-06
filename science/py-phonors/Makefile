@@ -1,6 +1,5 @@
 PORTNAME=	phonors
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.8.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,7 +37,7 @@ CARGO_CRATES=	autocfg-1.5.1 \
 		defer-0.2.1 \
 		dyn-stack-0.13.2 \
 		dyn-stack-macros-0.1.3 \
-		either-1.18.0 \
+		either-1.19.0 \
 		enum-as-inner-0.6.1 \
 		equator-0.2.2 \
 		equator-0.6.0 \
@@ -58,7 +57,7 @@ CARGO_CRATES=	autocfg-1.5.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.3 \
 		interpol-0.2.1 \
-		libc-0.2.189 \
+		libc-0.2.191 \
 		libm-0.2.16 \
 		matrixmultiply-0.3.11 \
 		nano-gemm-0.2.2 \
@@ -78,7 +77,7 @@ CARGO_CRATES=	autocfg-1.5.1 \
 		paste-1.0.15 \
 		portable-atomic-1.15.0 \
 		portable-atomic-util-0.2.8 \
-		private-gemm-x86-0.1.20 \
+		private-gemm-x86-0.1.22 \
 		proc-macro2-1.0.107 \
 		pulp-0.22.3 \
 		pulp-wasm-simd-flag-0.1.1 \
@@ -99,18 +98,18 @@ CARGO_CRATES=	autocfg-1.5.1 \
 		seq-macro-0.3.6 \
 		syn-1.0.109 \
 		syn-2.0.119 \
-		syn-3.0.6 \
+		syn-3.0.9 \
 		sysctl-0.6.0 \
 		target-lexicon-0.13.5 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
-		unicode-ident-1.0.26 \
+		unicode-ident-1.0.27 \
 		version_check-0.9.5 \
 		walkdir-2.5.0 \
 		winapi-util-0.1.11 \
 		windows-link-0.2.1 \
 		windows-sys-0.61.2 \
-		zerocopy-0.8.59 \
-		zerocopy-derive-0.8.59
+		zerocopy-0.8.63 \
+		zerocopy-derive-0.8.63
 
 .include <bsd.port.mk>
