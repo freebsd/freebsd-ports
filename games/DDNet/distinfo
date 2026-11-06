@@ -1,6 +1,6 @@
-TIMESTAMP = 1788548103
-SHA256 (DDNet-20.0.tar.xz) = 45bbbdbb3ca843dc7315980e097d392b19abb734575213d56474ce8ef72d7edb
-SIZE (DDNet-20.0.tar.xz) = 37929260
+TIMESTAMP = 1793997246
+SHA256 (DDNet-20.2.1.tar.xz) = e0bd3b9c4216764f6516db4800a639f477af44a7351808132101afa7bb11da50
+SIZE (DDNet-20.2.1.tar.xz) = 37993116
 SHA256 (rust/crates/anstyle-1.0.14.crate) = 940b3a0ca603d1eade50a4846a2afffd5ef57a9feac2c0e2ec2e14f9ead76000
 SIZE (rust/crates/anstyle-1.0.14.crate) = 17787
 SHA256 (rust/crates/cc-1.2.29.crate) = 5c1599538de2394445747c8cf7935946e3cc27e9625f889d979bfb2aaf569362
