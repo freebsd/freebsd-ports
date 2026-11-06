@@ -571,6 +571,7 @@
     SUBDIR += nginx-module-rds-csv
     SUBDIR += nginx-module-rds-json
     SUBDIR += nginx-module-redis2
+    SUBDIR += nginx-module-set-misc
     SUBDIR += nginx-module-sflow
     SUBDIR += nginx-module-slowfs-cache
     SUBDIR += nginx-module-stream-limit-req
