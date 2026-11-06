@@ -1,10 +1,10 @@
 # We follow the beta channel on https://chromiumdash.appspot.com/releases?platform=Linux
 # Latest beta version API: https://chromiumdash.appspot.com/fetch_releases?channel=Beta&platform=Linux&num=1&offset=0
 # V8 is mirrored at https://github.com/v8/v8 (use a specific release tag, not lkgr which is a dynamic ref)
-# Browse current beta branch: https://chromium.googlesource.com/v8/v8/+/refs/heads/15.7-lkgr
+# Browse current beta branch: https://chromium.googlesource.com/v8/v8/+/refs/heads/15.8-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	15.7.112.9
+PORTVERSION=	15.8.62.9
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-beta
 
@@ -90,10 +90,10 @@ TEMPORAL_CAPI_DIR=	${CARGO_VENDOR_DIR}/${CARGO_CRATES:Mtemporal_capi-[0-9]*}
 TEMPORAL_CAPI_LIB=	${WRKDIR}/libv8_temporal.a
 
 # Sub-dependency commit hashes from DEPS at tag ${PORTVERSION}
-ABSL_REV=			9aa0c314d9bd021e48f0193f0af3316a7e8bec63
-BUILD_REV=			aa268127b8cc571ebc60f200d052a09d27231843
-BUILDTOOLS_REV=			8790f824690e131a78f36e80ecc05a9272f061c8
-CLANG_REV=			47fbf574c4f14e7288da3e51ff6eca0990183377
+ABSL_REV=			9a0a43cbad88a77703bd73093011a62bbe0a6740
+BUILD_REV=			0c1bea50d7016e2c9ca0c736765025d8f2284898
+BUILDTOOLS_REV=			2f41b66d4857c8efbfcb2a350f159944f71dbf7e
+CLANG_REV=			cc704f55000e327592594bc295abca5fa004ea99
 CPU_FEATURES_CHROMIUM_REV=	4974e2063946d9dd2a417c27db139fd982ff447a
 CPU_FEATURES_REV=		81d13c49649f0714dd41fb56bb246398b6584085
 DISARM_REV=			2d960dae4b4fb29dba05cfc48210fbed423f3d2c
@@ -101,22 +101,22 @@ DRAGONBOX_REV=			beeeef91cf6fef89a4d4ba5e95d47ca64ccb3a44
 FADEC_REV=			c9f78f532b9004de278489019ab2c6c28ae9746e
 FAST_FLOAT_REV=			42f254836ee416ffcf2f4e6576260003ac33d48c
 FP16_REV=			782eea126dc5c755827be751a099eb01826175cf
-FUZZTEST_REV=			4b524d48590b3433597a557d1a8abc134a86b611
-FUZZTEST_SRC_REV=		a8861f3aa71443dabaf42dc9cba78b3982524a51
-GOOGLETEST_REV=			4fe3307fb2d9f86d19777c7eb0e4809e9694dde7
+FUZZTEST_REV=			0c2febf9c1f0b11df71c537cb75a2918f9a6ddc6
+FUZZTEST_SRC_REV=		a2d3cb097f07a91dd26768db7d9f0898cd42b0f0
+GOOGLETEST_REV=			0b656495436f57212be8700794a3d5fb14000c5f
 HIGHWAY_REV=			2607d3b5b0113992fe84d3848859eae13b3b52c1
-ICU_REV=			19dfb44a62ae60ce6b0060de8c0cef5d5c527177
+ICU_REV=			2a51536dfb3b448bdf3dae70c782ea2879c90904
 JSONCPP_REV=			3347a4b86bb914cb565f0cbda19c06e109513300
-LIBCXX_REV=			97b436da4c33663581d394f4ee0a5977fc38c2f4
-LIBCXXABI_REV=			0e691bb69ac90450d8d53bc8ee5968c62f9c15a7
-LIBUNWIND_REV=			c4438dd4178c627697459a12c54eb1f7f8eefd12
-LLVM_LIBC_REV=			97e60a1e7f7180965cc84e22ddde9f1d4ffd640f
-PARTITION_ALLOC_REV=		1b65ca87736e9edb51911e15915573bf4cda7245
-PROTOBUF_REV=			9fbbf0b210753390b790e4f1e74ddff5d7d97bbf
-PROTOC_WRAPPER_REV=		e9dbe1bf6a2a5d2d4973725874259eed587cf18d
+LIBCXX_REV=			9ba7713d3a0f1e179904c984bb626748b15e57d6
+LIBCXXABI_REV=			440f88852530ac197479edb1463dda1916692cce
+LIBUNWIND_REV=			9e44ea2ff4f53a60c2a3d2b6f511d7bab9ab12f0
+LLVM_LIBC_REV=			631cc29c6dde5bafcf4b22674af6ecad67147977
+PARTITION_ALLOC_REV=		566ebad54d97777c36615883259a9f9d2c106d37
+PROTOBUF_REV=			11b91b7d1a7cb96bb449c9085f338624d1825458
+PROTOC_WRAPPER_REV=		5c77c0c9fdebb2d87378bcea183e4c6937fd8c53
 RE2_REV=			2da0056814cf180480a19f5cf811e7e1c054bf6d
 SIMDUTF_REV=			f7356eed293f8208c40b3c1b344a50bd70971983
-ZLIB_REV=			456ae730017b9b4bd3371927abc82627fd51feef
+ZLIB_REV=			9f9f52c60a14e8e772fb561029ae0a121fef7609
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
@@ -138,6 +138,7 @@ GN_ARGS+=	clang_base_path="${LLVM_PREFIX}" \
 		use_lld=true \
 		use_custom_libcxx=false \
 		use_custom_libcxx_for_host=false \
+		v8_enable_ecma402_icu4x=false \
 		v8_enable_temporal_systemicu=true \
 		v8_metagen_libclang_bindings_dir="${LLVM_PREFIX}/lib/${PYTHON_VERSION}/site-packages" \
 		v8_metagen_libclang_so="${LLVM_PREFIX}/lib/libclang.so" \

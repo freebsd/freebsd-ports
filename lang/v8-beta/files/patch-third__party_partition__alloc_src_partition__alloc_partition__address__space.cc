@@ -1,6 +1,6 @@
---- third_party/partition_alloc/src/partition_alloc/partition_address_space.cc.orig	2026-10-08 04:32:34 UTC
+--- third_party/partition_alloc/src/partition_alloc/partition_address_space.cc.orig	2026-10-24 04:22:31 UTC
 +++ third_party/partition_alloc/src/partition_alloc/partition_address_space.cc
-@@ -37,6 +37,10 @@
+@@ -38,6 +38,10 @@
  #include <windows.h>
  #endif  // PA_BUILDFLAG(IS_WIN)
  
@@ -11,10 +11,10 @@
  #if PA_BUILDFLAG(ENABLE_THREAD_ISOLATION)
  #include <sys/mman.h>
  #endif
-@@ -264,6 +268,13 @@ void PartitionAddressSpace::InitZeroSegment() {
-   // failure. Previously reserved regions are intentionally leaked allowing for
+@@ -271,6 +275,13 @@ void PartitionAddressSpace::InitZeroSegment() {
    // partial user space segment.
    const auto reserve_region = [](uintptr_t address, size_t size) -> bool {
+     PA_DCHECK(address != 0);
 +#if PA_BUILDFLAG(IS_FREEBSD)
 +    // With ASLR enabled, FreeBSD does not honor mmap() hints. Reserve the
 +    // exact range with a guard mapping instead, which fails (rather than
@@ -23,9 +23,9 @@
 +                MAP_GUARD | MAP_FIXED | MAP_EXCL, -1, 0) != MAP_FAILED;
 +#else
      const uintptr_t allocated_base =
-         AllocPages(address, size, PageAllocationGranularity(),
-                    PageAccessibilityConfiguration(
-@@ -276,6 +287,7 @@ void PartitionAddressSpace::InitZeroSegment() {
+         SystemAllocPages(address, size,
+                          PageAccessibilityConfiguration(
+@@ -283,6 +294,7 @@ void PartitionAddressSpace::InitZeroSegment() {
        FreePages(allocated_base, size);
      }
      return false;

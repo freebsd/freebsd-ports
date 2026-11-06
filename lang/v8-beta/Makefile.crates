@@ -2,17 +2,16 @@ CARGO_CRATES=	autocfg-1.5.1 \
 		calendrical_calculations-0.2.4 \
 		core_maths-0.1.1 \
 		diplomat-0.16.1 \
-		diplomat-runtime-0.15.2 \
+		diplomat-runtime-0.16.1 \
 		diplomat_core-0.16.1 \
 		displaydoc-0.2.7 \
-		icu_calendar-2.2.1 \
-		icu_calendar_data-2.2.0 \
-		icu_collections-2.2.0 \
-		icu_locale-2.2.0 \
-		icu_locale_core-2.3.0 \
-		icu_locale_data-2.2.0 \
-		icu_provider-2.3.1 \
-		ixdtf-0.6.6 \
+		icu_calendar-2.4.0 \
+		icu_calendar_data-2.4.0 \
+		icu_locale_core-2.4.0 \
+		icu_locale_fallback-2.4.0 \
+		icu_locale_fallback_data-2.4.0 \
+		icu_provider-2.4.0 \
+		ixdtf-0.6.7 \
 		libm-0.2.16 \
 		litemap-0.8.3 \
 		num-traits-0.2.19 \
@@ -31,15 +30,14 @@ CARGO_CRATES=	autocfg-1.5.1 \
 		temporal_capi-0.2.6 \
 		temporal_rs-0.2.6 \
 		timezone_provider-0.2.6 \
-		tinystr-0.8.4 \
+		tinystr-0.8.5 \
 		unicode-ident-1.0.26 \
-		utf8_iter-1.0.4 \
 		writeable-0.6.4 \
-		yoke-0.8.3 \
+		yoke-0.8.4 \
 		yoke-derive-0.8.4 \
 		zerofrom-0.1.8 \
 		zerofrom-derive-0.1.8 \
 		zerotrie-0.2.5 \
-		zerovec-0.11.8 \
-		zerovec-derive-0.11.6 \
+		zerovec-0.11.9 \
+		zerovec-derive-0.11.7 \
 		zoneinfo64-0.3.0
