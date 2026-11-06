@@ -1,6 +1,5 @@
 PORTNAME=	riffdiff
-DISTVERSION=	3.6.2
-PORTREVISION=	3
+DISTVERSION=	3.7.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +29,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		autocfg-1.0.1 \
 		backtrace-0.3.54 \
 		base64-0.22.1 \
-		bitflags-1.3.2 \
+		bitflags-2.10.0 \
 		bytecount-0.6.2 \
 		cfg-if-1.0.0 \
 		clap-4.5.26 \
@@ -42,9 +41,10 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		difference-2.0.0 \
 		displaydoc-0.2.5 \
 		either-1.6.1 \
-		errno-0.3.5 \
-		fastrand-1.9.0 \
+		errno-0.3.14 \
+		fastrand-2.3.0 \
 		form_urlencoded-1.2.1 \
+		getrandom-0.3.4 \
 		gimli-0.23.0 \
 		git-version-0.3.4 \
 		git-version-macro-0.3.4 \
@@ -59,12 +59,10 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		icu_provider-2.0.0 \
 		idna-1.0.3 \
 		idna_adapter-1.2.1 \
-		instant-0.1.12 \
-		io-lifetimes-1.0.6 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.10.1 \
-		libc-0.2.186 \
-		linux-raw-sys-0.1.4 \
+		libc-0.2.180 \
+		linux-raw-sys-0.11.0 \
 		litemap-0.8.0 \
 		log-0.4.21 \
 		memchr-2.5.0 \
@@ -79,11 +77,11 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.93 \
 		quote-1.0.33 \
-		redox_syscall-0.2.10 \
+		r-efi-5.3.0 \
 		regex-1.5.5 \
 		regex-syntax-0.6.26 \
 		rustc-demangle-0.1.18 \
-		rustix-0.36.16 \
+		rustix-1.1.3 \
 		rustversion-1.0.18 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
@@ -94,7 +92,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		syn-1.0.48 \
 		syn-2.0.30 \
 		synstructure-0.13.2 \
-		tempfile-3.4.0 \
+		tempfile-3.24.0 \
 		threadpool-1.8.1 \
 		tinystr-0.8.1 \
 		unicode-ident-1.0.11 \
@@ -102,38 +100,30 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		url-2.5.4 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.1 \
+		wasip2-1.0.2+wasi-0.2.9 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.42.0 \
-		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-sys-0.59.0 \
-		windows-targets-0.42.1 \
 		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.42.1 \
 		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.42.1 \
 		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.42.1 \
 		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.42.1 \
 		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.42.1 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.42.1 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.42.1 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
+		wit-bindgen-0.51.0 \
 		writeable-0.6.1 \
 		yoke-0.8.0 \
 		yoke-derive-0.8.0 \
