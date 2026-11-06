@@ -1,5 +1,5 @@
 PORTNAME=	klayout
-DISTVERSION=	0.30.12
+DISTVERSION=	0.30.13
 CATEGORIES=	cad
 MASTER_SITES=	https://www.klayout.org/downloads/source/
 
@@ -7,7 +7,8 @@ MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Qt-based chip mask layout viewing and editing tool
 WWW=		https://www.klayout.de/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BROKEN_i386=	type 'hash<long long>' does not provide a call operator
 BROKEN_powerpc=	type 'hash<long long>' does not provide a call operator
