@@ -1,5 +1,5 @@
 PORTNAME=	qwen-code
-DISTVERSION=	0.26.0
+DISTVERSION=	0.26.8
 CATEGORIES=	misc
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -43,6 +43,9 @@ do-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/sandbox-macos-*.sb
 	# Linux-only Landlock sandbox runner; landlockRunnerPath() throws off linux
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/vendor/landlock-run
+	# OpenTUI native libs exist for linux/darwin only; freebsd falls back to Ink
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/opentui-assets/@opentui/core-darwin-* \
+		${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/opentui-assets/@opentui/core-linux-*
 	# audio-capture ships linux/darwin/win32 prebuilds only; its platform
 	# check throws on freebsd before loading one, so drop the dead binaries.
 	# It is an optional dep that npm may skip entirely, hence -f
