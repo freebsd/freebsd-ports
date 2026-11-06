@@ -12,6 +12,7 @@ rcvar=xymon_server_enable
 load_rc_config "$name"
 : ${xymon_server_enable:=NO}
 : ${xymon_server_user:=%%XYMONUSER%%}
+: ${xymon_server_umask:=022}
 
 command="%%WWWDIR%%/server/xymon.sh"
 command_args=start
