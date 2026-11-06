@@ -1,0 +1,6 @@
+The rds_csv filter turns the resty-dbd-stream output of the drizzle and
+postgres modules into CSV, so a database query can be served directly as a
+CSV response.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their RDS_CSV option is enabled.
