@@ -1,34 +1,31 @@
 PORTNAME=	QComicBook
-PORTVERSION=	0.9.1
-PORTREVISION=	55
+PORTVERSION=	0.10.0
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kenrap@FreeBSD.org
 COMMENT=	Qt-based comic book archive viewer
 WWW=		https://github.com/stolowski/QComicBook
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Abandoned upstream, does not build with CMake 4
-EXPIRATION_DATE=2026-11-30
+LIB_DEPENDS=	libpoppler-qt6.so:graphics/poppler-qt6
 
-LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
+USES=		cmake compiler:c++17-lang desktop-file-utils pkgconfig qt:6
 
-USES=		cmake compiler:c++11-lang pkgconfig qt:5
 USE_GITHUB=	yes
-GH_ACCOUNT=	stolowski
-USE_QT=		core gui printsupport widgets x11extras\
-		buildtools:build linguisttools:build qmake:build
+GH_ACCOUNT=	valepert
+
+USE_QT=		base tools:build
 
 OPTIONS_DEFINE=	7ZIP ACE RAR
 
-7ZIP_DESC=	7-Zip (.cb7) comic book archives support
+7ZIP_DESC=		7-Zip (.cb7) comic book archives support
 7ZIP_RUN_DEPENDS=	7zz:archivers/7-zip
 
-ACE_DESC=	ACE (.cba) comic book archives support
+ACE_DESC=		ACE (.cba) comic book archives support
 ACE_RUN_DEPENDS=	unace:archivers/unace
 
-RAR_DESC=	Rar (.cbr) comic book archives support
+RAR_DESC=		Rar (.cbr) comic book archives support
 RAR_RUN_DEPENDS=	unrar:archivers/unrar
 
 .include <bsd.port.mk>
