@@ -1,0 +1,15 @@
+Vandelay is a one-shot account migration utility for JMAP, similar to
+imapsync but covering every JMAP data type: mail, contacts, calendars,
+identities, sieve scripts and file storage. It is developed by Stalwart
+Labs, the authors of mail/stalwart.
+
+An account is first imported into a self-contained local SQLite archive
+from JMAP, IMAP, CalDAV, CardDAV, WebDAV, ManageSieve, Maildir++, a
+Google Takeout export, Microsoft Exchange Server (EWS) or Exchange
+Online (Microsoft Graph). The archive is then exported into a target
+JMAP server. Both steps can be interrupted and re-run and pick up where
+they left off.
+
+Because one archive fully describes one account, Vandelay also serves
+as a per-account backup tool: periodic imports refresh the snapshot and
+an export restores it.
