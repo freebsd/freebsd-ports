@@ -81,9 +81,7 @@ bin/languagetool-gui
 %%DATADIR%%/libs/asturian-pos-dict.jar
 %%DATADIR%%/libs/bcrypt.jar
 %%DATADIR%%/libs/bytes.jar
-%%DATADIR%%/libs/caffeine.jar
 %%DATADIR%%/libs/catalan-pos-dict.jar
-%%DATADIR%%/libs/checker-qual.jar
 %%DATADIR%%/libs/commons-cli.jar
 %%DATADIR%%/libs/commons-codec.jar
 %%DATADIR%%/libs/commons-collections4.jar
@@ -134,7 +132,6 @@ bin/languagetool-gui
 %%DATADIR%%/libs/jaxb-impl.jar
 %%DATADIR%%/libs/jaxb-runtime.jar
 %%DATADIR%%/libs/jcip-annotations.jar
-%%DATADIR%%/libs/jcl-over-slf4j.jar
 %%DATADIR%%/libs/jcommander.jar
 %%DATADIR%%/libs/jna-platform.jar
 %%DATADIR%%/libs/jna.jar
@@ -224,7 +221,6 @@ bin/languagetool-gui
 %%DATADIR%%/libs/uom-lib-common.jar
 %%DATADIR%%/libs/vavr-match.jar
 %%DATADIR%%/libs/vavr.jar
-%%DATADIR%%/libs/waffle-jna.jar
 %%DATADIR%%/org/languagetool/MessagesBundle_ar.properties
 %%DATADIR%%/org/languagetool/MessagesBundle_ast.properties
 %%DATADIR%%/org/languagetool/MessagesBundle_be.properties

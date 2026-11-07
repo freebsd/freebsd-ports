@@ -1,5 +1,5 @@
 PORTNAME=	languagetool
-DISTVERSION=	20261010
+DISTVERSION=	20261106
 DISTVERSIONSUFFIX=	-snapshot
 PORTEPOCH=	1
 CATEGORIES=	textproc java
@@ -25,7 +25,10 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+PORTSCOUT=	ignore:1
+
 SUB_FILES=	languagetool-cli languagetool-gui pkg-message
+WRKSRC=		${WRKDIR}/LanguageTool-6.9-SNAPSHOT
 
 USERS=		languagetool
 GROUPS=		languagetool
@@ -33,8 +36,6 @@ GROUPS=		languagetool
 PORTDOCS=	CHANGES.md CHANGES.txt README.md
 
 OPTIONS_DEFINE=	DOCS
-
-WRKSRC=		${WRKDIR}/LanguageTool-6.9-SNAPSHOT
 
 post-extract:
 	@${RM} ${WRKSRC}/testrules.bat ${WRKSRC}/testrules.sh
