@@ -1,16 +1,13 @@
 include/box2d/base.h
 include/box2d/box2d.h
 include/box2d/collision.h
-include/box2d/config.h
-include/box2d/constants.h
 include/box2d/id.h
 include/box2d/math_functions.h
-include/box2d/math_types.h
 include/box2d/types.h
 lib/cmake/box2d/box2dConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/box2d/box2dConfig.cmake
 lib/cmake/box2d/box2dConfigVersion.cmake
 lib/libbox2d.so
 lib/libbox2d.so.3
-lib/libbox2d.so.3.2.0
+lib/libbox2d.so.3.1.1
 libdata/pkgconfig/box2d.pc
