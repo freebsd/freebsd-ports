@@ -18,7 +18,7 @@ USE_XORG=	x11 xcb
 
 USE_LDCONFIG=	yes
 
-CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_PySide2
+CMAKE_OFF=	BUILD_PYTHON_SUPPORT
 
 FLAVORS=	kf6 qt6
 FLAVOR?=	kf6
@@ -28,12 +28,10 @@ qt6_PKGNAMESUFFIX=		-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
 .if ${FLAVOR} != qt6
-CMAKE_ON+=	ENABLE_KDE_FRAMEWORKS_INTEGRATION_PLUGIN
-USE_KDE+=	completion config coreaddons crash jobwidgets kio purpose \
-		service solid wallet widgetsaddons windowsystem
+USE_KDE+=	coreaddons crash jobwidgets kio purpose wallet
 PLIST_SUB=	KDEINTEGRATION=""
 .else
-USE_QT+=	5compat
+CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_KF6CoreAddons
 PLIST_SUB=	KDEINTEGRATION="@comment "
 COMMENT=	Web browser based on WebEngine (no integration with KDE Plasma)
 .endif
