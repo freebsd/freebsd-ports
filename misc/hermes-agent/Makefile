@@ -1,5 +1,6 @@
 PORTNAME=	hermes-agent
 PORTVERSION=	${HERMES_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES+=	LOCAL/olivier:webdist
 DISTFILES+=	${PORTNAME}-web-dist-${PORTVERSION}${EXTRACT_SUFX}:webdist
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # Upstream splits deps into a small `dependencies` core plus optional extras
 # prepared by the bundled `pm` package manager (pm/, uv-backed; the old
 # tools/lazy_deps.py pip path is a retired shim).  The port ships the
-# provider-specific extras (anthropic, edge-tts, exa-py, fal-client,
+# provider-specific extras (acp, anthropic, edge-tts, exa-py, fal-client,
 # firecrawl-py, parallel-web) as hard RUN_DEPENDS because
 # patch-pm_install.py turns lazy installs off by default on FreeBSD -- pkg
 # owns site-packages, so there is no runtime pip/uv fallback.
@@ -24,7 +25,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # guards the import and
 # emits a teaching error naming the pip fallback, so the legacy-Office /
 # ODF / EPUB read_file paths degrade instead of breaking the install.
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anthropic>=0.87.0:misc/py-anthropic@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agent-client-protocol>=0.9.0:devel/py-agent-client-protocol@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}anthropic>=0.87.0:misc/py-anthropic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2026.5.20:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}croniter>=6.0.0:sysutils/py-croniter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=50.0.1:security/py-cryptography@${PY_FLAVOR} \
