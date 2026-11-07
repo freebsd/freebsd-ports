@@ -1,106 +1,11 @@
---- CMakeLists.txt.orig	2026-05-03 18:28:33 UTC
+--- CMakeLists.txt.orig	2026-06-18 16:22:52 UTC
 +++ CMakeLists.txt
-@@ -1008,13 +1008,17 @@ if (HAVE_MATH)
- set (LIBM_TEST_SOURCE "#include<math.h>\nfloat f; int main(){sqrt(f);return 0;}")
- check_c_source_compiles ("${LIBM_TEST_SOURCE}" HAVE_MATH)
- if (HAVE_MATH)
--  set (LIBM_LIBRARIES)
-+  if (BSD)
-+    set (LIBM_LIBRARIES m)
-+  else ()
-+    set (LIBM_LIBRARIES)
-+  endif()
+@@ -1937,7 +1937,7 @@ install (DIRECTORY
+   #COMPONENT runtime
+   )
+ 
+-if (APPLE)
++if (APPLE OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+   set (WSJT_SOUND_DESTINATION ${CMAKE_INSTALL_DATAROOTDIR})
  else ()
-   set (CMAKE_REQUIRED_LIBRARIES m)
-   check_c_source_compiles ("${LIBM_TEST_SOURCE}" HAVE_LIBM_MATH)
--  unset (CMAKE_REQUIRED_LIBRARIES)
--  if (NOT HAVE_LIBM_MATH)
--    message (FATAL_ERROR "Unable to use C math library functions")
-+ unset (CMAKE_REQUIRED_LIBRARIES)
-+ if (NOT HAVE_LIBM_MATH)
-+   message (FATAL_ERROR "Unable to use C math library functions")
-   endif ()
-   set (LIBM_LIBRARIES m)
- endif ()
-@@ -1099,8 +1103,14 @@ if (NOT APPLE)
-   set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-pragmas")
-   if (${OPENMP_FOUND})
-     if (OpenMP_C_FLAGS)
--      set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_C_FLAGS}")
--      set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
-+      if (BSD)
-+        set (OpenMP_C_FLAGS "-fopenmp")
-+      else ()
-+        set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_C_FLAGS}")
-+        set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
-+      endif()
-+      set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
-+      set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fopenmp")
-     endif ()
-   endif ()
-   set (CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -fdata-sections -ffunction-sections")
-@@ -1611,11 +1621,19 @@ if (${OPENMP_FOUND} OR APPLE)
-       )
-   else (APPLE)
-     if (OpenMP_C_FLAGS)
--      set_target_properties (jt9
--        PROPERTIES
--        COMPILE_FLAGS "${OpenMP_C_FLAGS}"
--        LINK_FLAGS "${OpenMP_C_FLAGS}"
--        )
-+      if (BSD)
-+        set_target_properties (jt9
-+          PROPERTIES
-+          COMPILE_FLAGS "${OpenMP_C_FLAGS}"
-+          LINK_FLAGS "${OpenMP_C_FLAGS} -z execstack"
-+          )
-+      else()
-+        set_target_properties (jt9
-+          PROPERTIES
-+          COMPILE_FLAGS "${OpenMP_C_FLAGS}"
-+          LINK_FLAGS "${OpenMP_C_FLAGS}"
-+          )
-+      endif()
-     endif ()
-     set_target_properties (jt9
-       PROPERTIES
-@@ -1876,11 +1894,19 @@ install (FILES
-   #COMPONENT runtime
-   )
- 
-+if (BSD)
- install (FILES
-   ALLCALL7.TXT
-+  DESTINATION ${CMAKE_INSTALL_DATADIR}/${CMAKE_PROJECT_NAME}
-+  #COMPONENT runtime
-+  )
-+else ()
-+install (FILES
-+  ALLCALL7.TXT
-   DESTINATION ${CMAKE_INSTALL_BINDIR}
-   #COMPONENT runtime
-   )
-+endif()
- 
- install (DIRECTORY
-   example_log_configurations
-@@ -1889,11 +1915,19 @@ install (DIRECTORY
-   #COMPONENT runtime
-   )
- 
-+if (BSD)
- install (DIRECTORY
-   ${PROJECT_SOURCE_DIR}/sounds
-+  DESTINATION ${CMAKE_INSTALL_DATADIR}/${CMAKE_PROJECT_NAME}
-+  #COMPONENT runtime
-+  )
-+else()
-+install (DIRECTORY
-+  ${PROJECT_SOURCE_DIR}/sounds
-   DESTINATION ${CMAKE_INSTALL_BINDIR}
-   #COMPONENT runtime
-   )
-+endif()
- 
- if (WIN32)
-   install (FILES
+   set (WSJT_SOUND_DESTINATION ${CMAKE_INSTALL_BINDIR})
