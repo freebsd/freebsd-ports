@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# PROVIDE: stalwart
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="stalwart"
+rcvar="stalwart_enable"
+
+load_rc_config stalwart
+
+: ${stalwart_enable:="NO"}
+: ${stalwart_user:="%%USERS%%"}
+: ${stalwart_group:="%%GROUPS%%"}
+: ${stalwart_config:="%%ETCDIR%%/config.json"}
+: ${stalwart_log:="/var/log/stalwart.log"}
+: ${stalwart_path:="/var/db/stalwart"}
+
+pidfile="/var/run/stalwart/server.pid"
+procname="%%LOCALBASE%%/bin/stalwart"
+start_cmd="stalwart_start"
+start_precmd="stalwart_prestart"
+
+stalwart_env="STALWART_PATH=${stalwart_path} RUN_AS_USER=${stalwart_user} RUN_AS_GROUP=${stalwart_group}"
+
+stalwart_prestart() {
+    if [ ! -f "${stalwart_log}" ]; then
+        install -o ${stalwart_user} -g ${stalwart_group} -m 0640 /dev/null ${stalwart_log}
+    fi
+
+    if [ ! -d "/var/run/stalwart" ] ; then
+        install -d -o ${stalwart_user} -g ${stalwart_group} "/var/run/stalwart"
+    fi
+}
+
+stalwart_start()
+{
+    echo -n "Starting Stalwart: "
+
+    /usr/sbin/daemon -p ${pidfile} \
+        -T ${name} \
+        -o ${stalwart_log} \
+        ${procname} --config ${stalwart_config} \
+        ${stalwart_flags}
+
+    echo "done."
+}
+
+run_rc_command "$1"

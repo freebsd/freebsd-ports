@@ -749,6 +749,7 @@
     SUBDIR += squirrelmail-wetteronline-plugin
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
+    SUBDIR += stalwart
     SUBDIR += stalwart-cli
     SUBDIR += stalwart-migrate
     SUBDIR += stalwart-proxy
