@@ -1930,6 +1930,7 @@
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/v2/state/CompletedStateV2.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/v2/state/FailedStateV2.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/v2/state/MFAVerificationRequiredStateV2.mjs
+%%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/core/auth_flow/v2/state/PasswordRequiredStateV2.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/core/error/CustomAuthApiError.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/core/error/CustomAuthError.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/core/error/HttpError.mjs
@@ -2004,6 +2005,7 @@
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/reset_password/auth_flow/state/ResetPasswordPasswordRequiredState.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/reset_password/auth_flow/state/ResetPasswordState.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/reset_password/auth_flow/v2/state/NewPasswordRequiredStateV2.mjs
+%%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/reset_password/auth_flow/v2/state/ResetPasswordStateTransitionHandlerV2.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/reset_password/interaction_client/ResetPasswordClient.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_in/auth_flow/error_type/SignInError.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_in/auth_flow/result/SignInResendCodeResult.mjs
@@ -2017,7 +2019,6 @@
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_in/auth_flow/state/SignInFailedState.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_in/auth_flow/state/SignInPasswordRequiredState.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_in/auth_flow/state/SignInState.mjs
-%%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_in/auth_flow/v2/state/PasswordRequiredStateV2.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_in/auth_flow/v2/state/SignInContinuationStateV2.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_in/auth_flow/v2/state/SignInStateTransitionHandlerV2.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_in/interaction_client/result/SignInActionResult.mjs
@@ -2035,8 +2036,9 @@
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/auth_flow/state/SignUpPasswordRequiredState.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/auth_flow/state/SignUpState.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/auth_flow/v2/state/AttributesRequiredStateV2.mjs
-%%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/auth_flow/v2/state/SignUpAttributesRequiredStateBaseV2.mjs
-%%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/auth_flow/v2/state/SignUpPasswordRequiredStateV2.mjs
+%%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/auth_flow/v2/state/ExistingAccountCodeRequiredStateV2.mjs
+%%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/auth_flow/v2/state/ExistingAccountPasswordRequiredStateV2.mjs
+%%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/auth_flow/v2/state/ExistingAccountStateTransitionHelperV2.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/auth_flow/v2/state/SignUpStateTransitionHandlerV2.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/interaction_client/result/SignUpActionResult.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-browser/dist/custom_auth/sign_up/interaction_client/SignUpClient.mjs
@@ -2266,7 +2268,7 @@
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-common/dist/utils/TimeUtils.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-common/dist/utils/UrlUtils.mjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-common/lib/index-browser.cjs
-%%DATADIR%%/lib/vscode/node_modules/@azure/msal-common/lib/index-node-C1QI6fAD.js
+%%DATADIR%%/lib/vscode/node_modules/@azure/msal-common/lib/index-node-CLM4E-dZ.js
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-common/lib/index-node.cjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-common/lib/index.cjs
 %%DATADIR%%/lib/vscode/node_modules/@azure/msal-common/lib/package.json
