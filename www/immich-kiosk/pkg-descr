@@ -1,0 +1,6 @@
+Immich Kiosk turns an Immich library into a slideshow that any browser or
+picture frame can display. It talks to the Immich API and serves the pictures
+itself, so the devices showing them need nothing but a browser.
+
+Albums, people, tags or a date range decide which assets are shown. Layout,
+transitions and the clock and weather overlays are configurable.

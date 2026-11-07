@@ -316,6 +316,7 @@
     SUBDIR += immich-cli
     SUBDIR += immich-folder-album-creator
     SUBDIR += immich-go
+    SUBDIR += immich-kiosk
     SUBDIR += immich-ml
     SUBDIR += immich-public-proxy
     SUBDIR += iocaine
