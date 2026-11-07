@@ -18,7 +18,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_EL20=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64le
 
 BUILD_RUN_DEPENDS=	jna>0:devel/jna
 BUILD_DEPENDS=		gradle>=9.7.1:devel/gradle \
@@ -77,6 +77,8 @@ GROUPS=		${SEARCHGROUP}
 PORTDOCS=	NOTICE.txt README.asciidoc
 
 OPTIONS_DEFINE=		DOCS
+
+.include <bsd.port.options.mk>
 
 # To rebuild the deps archive:
 # 1. make makesum build DEV_UPDATE_MODE=yes
@@ -162,6 +164,9 @@ post-build:
 		${_LOCALDIST}/config/jvm.options
 	@${PRINTF} "\n## Path to native libraries\n-Des.nativelibs.path=${LOCALBASE}/lib\n" >> \
 		${_LOCALDIST}/config/jvm.options
+.if ${ARCH} == powerpc64le
+	@${PRINTF} "\n-Djdk.internal.foreign.CABI=LINUX_PPC_64_LE\n" >> ${_LOCALDIST}/config/jvm.options
+.endif
 	@${PRINTF} "\n-Dorg.elasticsearch.nativeaccess.enableVectorLibrary=false\n" >> \
 		${_LOCALDIST}/config/jvm.options
 	${REINPLACE_CMD} -e 's|#path.data: /path/to/data|path.data: /var/db/elasticsearch|g' \
