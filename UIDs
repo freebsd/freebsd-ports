@@ -264,7 +264,7 @@ lavinmq:*:315:315::0:0:LavinMQ user:/nonexistent:/usr/sbin/nologin
 nut:*:316:316::0:0:Network UPS Tools user:/nonexistent:/usr/sbin/nologin
 hedgedoc:*:317:317::0:0:HedgeDoc user:/nonexistent:/usr/sbin/nologin
 icingadirector:*:318:183::0:0:icingadirector user:/nonexistent:/usr/sbin/nologin
-rustdesk:*:319:319::0:0:rustdesk-server user:/nonexistent:/usr/sbin/nologin
+rustdesk:*:319:319::0:0:rustdesk-server user:/var/db/rustdesk-server:/usr/sbin/nologin
 teleirc:*:320:320::0:0:Telegram and IRC bridge:/nonexistent:/usr/sbin/nologin
 caldera:*:321:321::0:0:Caldera Mitre user:/nonexistent:/usr/sbin/nologin
 tlsc:*:322:322::0:0:TLS connect daemon:/nonexistent:/usr/sbin/nologin

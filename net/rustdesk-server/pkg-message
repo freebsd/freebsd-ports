@@ -9,5 +9,15 @@ If you want to preserve the old data, please move it over.
 
 The old /var/run/rustdesk-server should be removed afterwards.
 EOM
+},
+{ type: upgrade
+  maximum_version: "1.1.16_4"
+  message: <<EOM
+The server does access data in $HOME, but the port was distributed
+without an home set for the default user.
+
+Please edit your passwd file and verify the rustdesk user has home
+directory set to "/var/db/rustdesk-server"
+EOM
 }
 ]

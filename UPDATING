@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20261107:
+  AFFECTS: users of net/rustdesk-server
+  AUTHOR: madpilot@madpilot.net
+
+  Rustdesk-server requires the HOME environment variable to point to its
+  DB directory to store configuration.
+  In port versions lower than 1.1.16_4 the user created by the port was
+  missing such home directory setting.
+  If you install the port with no existing rustdesk user, now the user
+  will be created with the appropriate setting.
+  If you are updating or installing on a system where the rustdesk user
+  already exists, please modify your passwd file and add
+  "/var/db/rustdesk-server" as the home directory for the user.
+
+20261107:
   AFFECTS: users of mail/stalwart
   AUTHOR: samm@os2.kiev.ua
 
