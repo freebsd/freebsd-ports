@@ -136,7 +136,10 @@ lib/cmake/libwebsockets/LibwebsocketsTargets.cmake
 lib/cmake/libwebsockets/LwsCheckRequirements.cmake
 lib/cmake/libwebsockets/libwebsockets-config-version.cmake
 lib/cmake/libwebsockets/libwebsockets-config.cmake
-lib/libwebsockets-evlib_uv.so
+%%LIBUV%%lib/libwebsockets-evlib_uv.so
+%%LIBEVENT%%lib/libwebsockets-evlib_event.so
+%%LIBEV%%lib/libwebsockets-evlib_ev.so
+%%GLIB%%lib/libwebsockets-evlib_glib.so
 lib/libwebsockets.a
 lib/libwebsockets.so
 lib/libwebsockets.so.23
