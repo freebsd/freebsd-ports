@@ -1,0 +1,5 @@
+#!/bin/sh
+: ${IMMICHFRAME_CONFIG_PATH:=%%DBDIR%%}
+export IMMICHFRAME_CONFIG_PATH
+exec %%DOTNET%% %%DATADIR%%/ImmichFrame.WebApi.dll \
+	--contentRoot %%DATADIR%% "$@"

@@ -319,6 +319,7 @@
     SUBDIR += immich-kiosk
     SUBDIR += immich-ml
     SUBDIR += immich-public-proxy
+    SUBDIR += immichframe
     SUBDIR += iocaine
     SUBDIR += iridium
     SUBDIR += janus

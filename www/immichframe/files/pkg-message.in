@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+Set IMMICHFRAME_ADMIN_PASSWORD in %%PREFIX%%/etc/immichframe.env before
+the first start. As long as no password is set, /admin hands one to
+whoever asks first.
+
+Everything else is configured in that admin interface and kept in
+%%DBDIR%%/immichframe.db. The service listens on 127.0.0.1:8080; widen
+that with immichframe_urls once a web server with its own authentication
+sits in front.
+EOM
+}
+]

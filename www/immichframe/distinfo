@@ -1,0 +1,7 @@
+TIMESTAMP = 1794046115
+SHA256 (immichframe-freebsd-buildkit-1.0.39.0.tar.gz) = 9539ecd95a795bef98af056722bdbd8dc2003ed4405a2fa9e4e67562a1cc27a8
+SIZE (immichframe-freebsd-buildkit-1.0.39.0.tar.gz) = 199220056
+SHA256 (immichframe-mk-buildkit.sh) = 94ac83cfb8bb3f39b6b806289d196464f122d8bb9f183e7fc95cd71e4c3f8bab
+SIZE (immichframe-mk-buildkit.sh) = 1014
+SHA256 (immichFrame-ImmichFrame-v1.0.39.0_GH0.tar.gz) = c9e23b7eb040986c289f7f5eb191c781558860120ee42ce32ce9ac53ec39bb8f
+SIZE (immichFrame-ImmichFrame-v1.0.39.0_GH0.tar.gz) = 6096173
