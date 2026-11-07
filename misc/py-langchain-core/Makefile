@@ -1,5 +1,5 @@
 PORTNAME=	langchain-core
-DISTVERSION=	1.6.9
+DISTVERSION=	1.7.6
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,11 @@ WWW=		https://python.langchain.com/docs/introduction/ \
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2026.7.22:security/py-certifi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpatch>=1.33.0:devel/py-jsonpatch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.19:misc/py-langchain-protocol@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langsmith>=0.3.45:misc/py-langsmith@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.20:misc/py-langchain-protocol@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langsmith>=0.14.9:misc/py-langsmith@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.2.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.7.4:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3.0:devel/py-pyyaml@${PY_FLAVOR} \
@@ -43,6 +44,8 @@ USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+
+# upstream requires certifi>=2026.10.19, but security/py-certifi is at 2026.7.22
 
 # tests fail with: INTERNALERROR> ValueError: no option named 'only_extended'
 # Deselect tests that require network access, DNS resolution, blocking calls,
@@ -105,6 +108,6 @@ TEST_ARGS=	--ignore=${WRKSRC}/tests/unit_tests/test_ssrf_policy_transport.py \
 		--snapshot-warn-unused
 # failures in deselected tets reported upstream: https://github.com/langchain-ai/langchain/issues/40852
 
-# tests as of 1.6.9: 2257 passed, 12 skipped, 36 deselected, 9 xfailed, 5 warnings
+# tests as of 1.7.6: 2450 passed, 12 skipped, 36 deselected, 9 xfailed, 5 warnings
 
 .include <bsd.port.mk>
