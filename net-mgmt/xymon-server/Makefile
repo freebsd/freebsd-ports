@@ -1,6 +1,6 @@
 PORTNAME=	xymon
 PORTVERSION=	4.3.31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
 
@@ -39,7 +39,8 @@ MAKE_ENV+=	MANPREFIX="${STAGEDIR}${PREFIX}/share"
 MAKE_ARGS+=	PKGBUILD="true"
 USE_RC_SUBR=	xymon-server
 SUB_LIST+=	XYMONUSER="${XYMONUSER}"
-PLIST_SUB+=	XYMONUSER="${XYMONUSER}"
+PLIST_SUB+=	XYMONUSER="${XYMONUSER}" \
+		WWWGRP="${WWWGRP}"
 
 CONFIG_FILES=	critical.cfg cgioptions.cfg client-local.cfg \
 		columndoc.csv graphs.cfg protocols.cfg \

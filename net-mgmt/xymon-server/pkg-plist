@@ -459,8 +459,8 @@ share/man/man8/xymonproxy.8.gz
 @dir %%WWWDIR%%/server/www
 @dir %%WWWDIR%%/server/www/html
 @dir %%WWWDIR%%/server/www/notes
-@dir %%WWWDIR%%/server/www/rep
-@dir %%WWWDIR%%/server/www/snap
 @dir %%WWWDIR%%/server/www/wml
 @dir /var/log/%%XYMONUSER%%
 @owner
+@dir(%%XYMONUSER%%,%%WWWGRP%%,775) %%WWWDIR%%/server/www/rep
+@dir(%%XYMONUSER%%,%%WWWGRP%%,775) %%WWWDIR%%/server/www/snap
