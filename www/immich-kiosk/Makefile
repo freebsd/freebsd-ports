@@ -1,6 +1,7 @@
 PORTNAME=	immich-kiosk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.47.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://registry.npmjs.org/choices.js/-/:choices \
 		https://registry.npmjs.org/date-fns/-/:datefns \
@@ -74,6 +75,10 @@ pre-build:
 		--format=iife --global-name=urlBuilder --target=es6 \
 		src/ts/url-builder.ts --outfile=./public/assets/js/url-builder.js
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} tool templ generate
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^kiosk:/,/^[a-z]/s/^  port: 3000/  port: 3001/' \
+		${WRKSRC}/config.example.yaml
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${DBDIR} \

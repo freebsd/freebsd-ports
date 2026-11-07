@@ -12,10 +12,10 @@ Configuration:
 
 3. sysrc immich_kiosk_enable=YES && service immich_kiosk start
 
-The server answers on every address on port 3000, which
-www/immich-power-tools uses as well. Change kiosk.port in config.yaml
-if both run here, and keep the port off untrusted networks, it has no
-authentication unless a password is set.
+Upstream listens on port 3000, which www/immich-public-proxy already
+uses; this port starts on 3001 instead, set with immich_kiosk_port.
+It answers on every address and has no authentication unless a password
+is set, so keep it off untrusted networks.
 EOM
 }
 ]

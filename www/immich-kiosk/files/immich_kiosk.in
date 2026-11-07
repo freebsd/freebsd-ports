@@ -11,6 +11,7 @@
 #				Set it to YES to enable the kiosk.
 # immich_kiosk_config (str):	Directory holding config.yaml.
 #				Default: %%ETCDIR%%
+# immich_kiosk_port (int):	Listen port. Default: 3001
 # immich_kiosk_chdir (str):	Directory the server writes to.
 #				Default: %%DBDIR%%
 # immich_kiosk_env (str):	Further settings, among them
@@ -29,6 +30,8 @@ load_rc_config $name
 : ${immich_kiosk_user:=immich}
 : ${immich_kiosk_group:=immich}
 : ${immich_kiosk_config:=%%ETCDIR%%}
+: ${immich_kiosk_port:=3001}
+: ${immich_kiosk_env:="KIOSK_PORT=${immich_kiosk_port}"}
 : ${immich_kiosk_chdir:=%%DBDIR%%}
 
 pidfile=/var/run/immich/${name}.pid
