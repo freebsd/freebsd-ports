@@ -1,0 +1,4 @@
+Python SDK for the Agent Client Protocol (ACP), the JSON-RPC protocol created
+by Zed Industries that lets code editors drive AI coding agents over stdio.
+It provides pydantic models for the protocol schema and asyncio helpers to
+write ACP agents and clients.
