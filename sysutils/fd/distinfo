@@ -1,4 +1,4 @@
-TIMESTAMP = 1793815285
+TIMESTAMP = 1794077838
 SHA256 (rust/crates/aho-corasick-1.1.5.crate) = c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
 SIZE (rust/crates/aho-corasick-1.1.5.crate) = 184315
 SHA256 (rust/crates/anstream-1.0.0.crate) = 824a212faf96e9acacdbd09febd34438f8f711fb84e09a8916013cd7815ca28d
@@ -187,5 +187,5 @@ SHA256 (rust/crates/windows-link-0.2.1.crate) = f0805222e57f7521d6a62e36fa9163bc
 SIZE (rust/crates/windows-link-0.2.1.crate) = 6133
 SHA256 (rust/crates/windows-sys-0.61.2.crate) = ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc
 SIZE (rust/crates/windows-sys-0.61.2.crate) = 2517186
-SHA256 (sharkdp-fd-v10.5.1_GH0.tar.gz) = 3ea70c258d3390a601b436b6f4c545e3a944ff3de44c8ee5542c05588e337032
-SIZE (sharkdp-fd-v10.5.1_GH0.tar.gz) = 143524
+SHA256 (sharkdp-fd-v10.5.2_GH0.tar.gz) = 8991b6504cac33c00528050622dfe3f2a0db1be1a6faf99f69b46d1a8f737dc5
+SIZE (sharkdp-fd-v10.5.2_GH0.tar.gz) = 143968
