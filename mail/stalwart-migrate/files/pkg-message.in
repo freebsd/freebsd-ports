@@ -11,8 +11,9 @@ migrated store:
   license, need a stalwart-migrate built with the ENTERPRISE option.
 
 The source must run Stalwart v0.16.27; upgrade earlier 0.16 releases
-first. The tool only supports the backends selected when it was built.
-FoundationDB is not supported by this port.
+first. The target must run Stalwart v1.0.3 or later. The tool only
+supports the backends selected when it was built. FoundationDB is not
+supported by this port.
 
 The manual is the upstream README.md (installed in
 %%DOCSDIR%% with the DOCS option) and
