@@ -314,6 +314,7 @@
     SUBDIR += imaginary
     SUBDIR += immich
     SUBDIR += immich-cli
+    SUBDIR += immich-folder-album-creator
     SUBDIR += immich-go
     SUBDIR += immich-ml
     SUBDIR += immich-public-proxy
