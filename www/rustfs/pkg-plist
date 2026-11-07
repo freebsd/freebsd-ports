@@ -1,0 +1,3 @@
+bin/rustfs
+bin/rustfs-cli
+@dir(%%USER%%,%%GROUP%%,0750) %%DBDIR%%

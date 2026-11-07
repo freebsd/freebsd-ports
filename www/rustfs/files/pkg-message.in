@@ -1,0 +1,29 @@
+[
+{ type: install
+  message: <<EOM
+RustFS is configured through rc.conf(5) variables, see
+%%PREFIX%%/etc/rc.d/rustfs, and optionally RUSTFS_* environment
+variables in %%PREFIX%%/etc/rustfs.env.
+
+Change the default credentials immediately: set unique access key and
+secret key values. Do not use the well-known rustfsadmin value for either
+credential. Use a unique access key and a strong, random secret (e.g.
+openssl rand -base64 24):
+
+  sysrc rustfs_access_key="your-access-key"
+  sysrc rustfs_secret_key="your-secret-key"
+
+Restart the service with "service rustfs restart" after changing them.
+
+In Single Node Single Disk (SNSD) mode, one server stores all data on a
+single data disk. A single drive offers no redundancy. If the drive fails,
+data is lost. This is the default, with the data in %%DBDIR%%.
+
+In Single Node Multiple Disk (SNMD) mode, one server shards data across
+multiple data disks. Mount each disk separately and list the mount points
+in rustfs_volumes. Local erasure endpoints must use distinct physical disks.
+
+Open the Console: in a browser, go to http://<server-ip>:9001.
+EOM
+}
+]

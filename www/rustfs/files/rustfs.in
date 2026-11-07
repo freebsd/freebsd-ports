@@ -1,0 +1,81 @@
+#!/bin/sh
+
+# PROVIDE: rustfs
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable rustfs:
+#
+# rustfs_enable (bool):         Set to "NO" by default.
+#                               Set it to "YES" to enable rustfs
+# rustfs_volumes (str):         Set to "%%DBDIR%%" by default.
+#                               Set it to the data volumes, one per disk
+# rustfs_address (str):         Set to ":9000" by default.
+#                               Set it to address for the S3 API to listen on
+# rustfs_console_address (str): Set to ":9001" by default.
+#                               Set it to address for the Console to listen on
+# rustfs_access_key (str):      Not set by default (RustFS uses "rustfsadmin").
+#                               Set the access key
+# rustfs_secret_key (str):      Not set by default (RustFS uses "rustfsadmin").
+#                               Set the secret key
+# rustfs_env_file (path):       Set to "%%PREFIX%%/etc/rustfs.env" by default.
+#                               Set it to a file of RUSTFS_* variables, which
+#                               override the settings above
+# rustfs_user (str):            Set to "%%USER%%" by default.
+#                               Set it to user to run rustfs under
+# rustfs_group (str):           Set to "%%GROUP%%" by default.
+#                               Set it to group to run rustfs under
+# rustfs_logfile (str):         Set to "/var/log/rustfs.log" by default.
+#                               Set it to file where stdout/stderr are logged.
+#
+
+. /etc/rc.subr
+
+name=rustfs
+rcvar=rustfs_enable
+
+load_rc_config ${name}
+
+: ${rustfs_enable:="NO"}
+: ${rustfs_volumes:="%%DBDIR%%"}
+: ${rustfs_address:=":9000"}
+: ${rustfs_console_address:=":9001"}
+: ${rustfs_env_file:="%%PREFIX%%/etc/rustfs.env"}
+: ${rustfs_user:="%%USER%%"}
+: ${rustfs_group:="%%GROUP%%"}
+: ${rustfs_logfile:="/var/log/rustfs.log"}
+
+export RUSTFS_VOLUMES="${rustfs_volumes}"
+export RUSTFS_ADDRESS="${rustfs_address}"
+export RUSTFS_CONSOLE_ADDRESS="${rustfs_console_address}"
+[ -n "${rustfs_access_key}" ] && export RUSTFS_ACCESS_KEY="${rustfs_access_key}"
+[ -n "${rustfs_secret_key}" ] && export RUSTFS_SECRET_KEY="${rustfs_secret_key}"
+
+start_precmd="rustfs_start_precmd"
+
+pidfile="/var/run/${name}.pid"
+procname="%%PREFIX%%/bin/rustfs"
+command="/usr/sbin/daemon"
+command_args="-f -H -t ${name} -o ${rustfs_logfile} -p ${pidfile} ${procname} server"
+
+rustfs_start_precmd()
+{
+    if [ ! -e "${pidfile}" ]; then
+        install -m 0600 -o "${rustfs_user}" -g "${rustfs_group}" /dev/null "${pidfile}"
+    fi
+
+    if echo "${rustfs_volumes}" | egrep -q -v '^[^/]|\.{3}'; then
+        for volume in ${rustfs_volumes}; do
+            if [ ! -d "${volume}" ]; then
+                install -d -m 0750 -o "${rustfs_user}" -g "${rustfs_group}" "${volume}"
+            fi
+        done
+    fi
+
+    if [ ! -e "${rustfs_logfile}" ]; then
+        install -m 0640 -o "${rustfs_user}" -g "${rustfs_group}" /dev/null "${rustfs_logfile}"
+    fi
+}
+
+run_rc_command "$1"

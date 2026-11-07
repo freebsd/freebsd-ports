@@ -1,0 +1,7 @@
+RustFS is a high-performance, distributed object storage system built in
+Rust. RustFS combines the simplicity of MinIO with the memory safety and
+raw performance of Rust. It offers broad S3 API compatibility for
+supported features, is completely open-source, and is optimized for data
+lakes, AI, and big data workloads.
+
+The Console, a web management console for RustFS, is included.
