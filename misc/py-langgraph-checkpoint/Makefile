@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-checkpoint
-DISTVERSION=	4.3.0
+DISTVERSION=	4.3.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.2:misc/py-langchain-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=0.2.38:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ormsgpack>=1.12.0:devel/py-ormsgpack@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dataclasses-json>0:devel/py-dataclasses-json@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.16:math/py-numpy@${PY_FLAVOR} \
@@ -38,6 +38,6 @@ TEST_ARGS=	--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_datafra
 		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_dataframe[df16] \
 		--deselect=tests/test_jsonplus.py::test_serde_jsonplus_pandas_series[series9]
 
-# tests as of 4.3.0: 227 passed, 16 skipped, 4 deselected in 146.18s (0:02:26)
+# tests as of 4.3.1: 248 passed, 16 skipped, 4 deselected
 
 .include <bsd.port.mk>
