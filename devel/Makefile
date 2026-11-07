@@ -8823,6 +8823,7 @@
     SUBDIR += stdx-allocator
     SUBDIR += stfl
     SUBDIR += stgit
+    SUBDIR += stirmake
     SUBDIR += stlfilt
     SUBDIR += stlink
     SUBDIR += str

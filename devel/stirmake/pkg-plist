@@ -1,0 +1,8 @@
+bin/smka
+bin/smkp
+bin/smkt
+bin/stirmake
+share/man/man1/smka.1.gz
+share/man/man1/smkp.1.gz
+share/man/man1/smkt.1.gz
+share/man/man1/stirmake.1.gz

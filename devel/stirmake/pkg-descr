@@ -1,0 +1,6 @@
+Stirmake is a fast build tool intended to allow easily developing
+correct build systems with one global directed acyclic graph for
+projects spanning multiple directories and potentially including Git
+submodules. It is fully programmable in the embedded Amyplan
+programming language. The intention is that with Stirmake, one never
+has to type the equivalent of "make clean" to fix a build.
