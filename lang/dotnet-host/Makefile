@@ -1,6 +1,6 @@
 PORTNAME=	dotnet-host
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.0.10
+DISTVERSION=	10.0.12
 CATEGORIES=	lang devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -25,7 +25,8 @@ DATADIR=	${PREFIX}/share/dotnet
 PLIST_FILES=	bin/dotnet \
 		share/dotnet/LICENSE.TXT \
 		share/dotnet/THIRD-PARTY-NOTICES.TXT \
-		share/dotnet/dotnet
+		share/dotnet/dotnet \
+		share/dotnet/host/fxr/${DISTVERSION}/libhostfxr.so
 
 DOTNET_ARCH=	${ARCH:S|amd64|x64|:C|aarch64|arm64|}
 
@@ -42,9 +43,11 @@ post-build:
 	${ELFCTL} -e +noaslr ${WRKSRC}/artifacts/bin/freebsd-${DOTNET_ARCH}.${BUILD_TYPE}/corehost/dotnet
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/host/fxr/${DISTVERSION}
 	${INSTALL_PROGRAM} ${WRKSRC}/artifacts/bin/freebsd-${DOTNET_ARCH}.${BUILD_TYPE}/corehost/dotnet \
 		${STAGEDIR}${DATADIR}/
+	${INSTALL_LIB} ${WRKSRC}/artifacts/bin/freebsd-${DOTNET_ARCH}.${BUILD_TYPE}/corehost/libhostfxr.so \
+		${STAGEDIR}${DATADIR}/host/fxr/${DISTVERSION}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.TXT ${WRKSRC}/THIRD-PARTY-NOTICES.TXT \
 		${STAGEDIR}${DATADIR}
 	${RLN} ${STAGEDIR}${DATADIR}/dotnet ${STAGEDIR}${PREFIX}/bin/dotnet

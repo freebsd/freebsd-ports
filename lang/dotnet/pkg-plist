@@ -2,7 +2,7 @@
 @comment %%DATADIR%%/ThirdPartyNotices.txt
 @comment %%DATADIR%%/dnx
 @comment %%DATADIR%%/dotnet
-%%DATADIR%%/host/fxr/%%FULL_DOTNETVERSION%%/libhostfxr.so
+@comment %%DATADIR%%/host/fxr/%%FULL_DOTNETVERSION%%/libhostfxr.so
 %%DATADIR%%/library-packs/Microsoft.AspNetCore.App.Runtime.%%SDK_RID%%.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/Microsoft.DotNet.ILCompiler.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/Microsoft.NET.ILLink.Tasks.%%FULL_DOTNETVERSION%%.nupkg
@@ -16,7 +16,7 @@
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.DotNetAppHost.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILAsm.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.ILDAsm.%%FULL_DOTNETVERSION%%.nupkg
-@comment %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.TestHost.%%FULL_DOTNETVERSION%%-servicing.26326.116.nupkg
+@comment %%DATADIR%%/library-packs/runtime.%%SDK_RID%%.Microsoft.NETCore.TestHost.%%FULL_DOTNETVERSION%%%%SDKVERSIONSUFFIX%%.nupkg
 %%DATADIR%%/metadata/workloads/%%MANIFESTSUFFIX%%/userlocal
 %%DATADIR%%/packs/Microsoft.AspNetCore.App.Ref/%%FULL_DOTNETVERSION%%/analyzers/dotnet/cs/Microsoft.AspNetCore.App.Analyzers.dll
 %%DATADIR%%/packs/Microsoft.AspNetCore.App.Ref/%%FULL_DOTNETVERSION%%/analyzers/dotnet/cs/Microsoft.AspNetCore.App.CodeFixes.dll
@@ -1913,6 +1913,7 @@
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/zh-Hant/System.CommandLine.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-format/zh-Hant/dotnet-format.resources.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-user-jwts/%%FULL_DOTNETVERSION%%%%SDKVERSIONSUFFIX%%/tools/net%%DOTNETVERSION%%/any/DotnetToolSettings.xml
+%%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-user-jwts/%%FULL_DOTNETVERSION%%%%SDKVERSIONSUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.Bcl.Cryptography.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-user-jwts/%%FULL_DOTNETVERSION%%%%SDKVERSIONSUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.Extensions.Configuration.Abstractions.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-user-jwts/%%FULL_DOTNETVERSION%%%%SDKVERSIONSUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.Extensions.Configuration.Binder.dll
 %%DATADIR%%/sdk/%%SDKVERSION%%/DotnetTools/dotnet-user-jwts/%%FULL_DOTNETVERSION%%%%SDKVERSIONSUFFIX%%/tools/net%%DOTNETVERSION%%/any/Microsoft.Extensions.Configuration.FileExtensions.dll
@@ -5125,8 +5126,8 @@
 %%DATADIR%%/shared/Microsoft.NETCore.App/%%FULL_DOTNETVERSION%%/netstandard.dll
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.common.itemtemplates.%%SDKVERSION%%.nupkg
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.common.projecttemplates.%%DOTNETVERSION%%.%%SDKVERSION%%.nupkg
-%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.itemtemplates.%%FULL_DOTNETVERSION%%.0.10.nupkg
-%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.projecttemplates.%%FULL_DOTNETVERSION%%.0.10.nupkg
+%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.itemtemplates.%%DOTNETVERSION%%.%%FULL_DOTNETVERSION%%.nupkg
+%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.web.projecttemplates.%%DOTNETVERSION%%.%%FULL_DOTNETVERSION%%.nupkg
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.winforms.projecttemplates.%%FULL_DOTNETVERSION%%%%SDKVERSIONSUFFIX%%.nupkg
 %%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.dotnet.wpf.projecttemplates.%%FULL_DOTNETVERSION%%%%SDKVERSIONSUFFIX%%.nupkg
-%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.mcpserver.projecttemplates.%%FULL_DOTNETVERSION%%.0.10.nupkg
+%%DATADIR%%/templates/%%FULL_DOTNETVERSION%%/microsoft.mcpserver.projecttemplates.%%DOTNETVERSION%%.%%FULL_DOTNETVERSION%%.nupkg
