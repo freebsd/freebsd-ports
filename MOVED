@@ -5804,3 +5804,4 @@ cad/astk-serveur||2026-11-06|Superseded by science/codeaster-frontend
 databases/mysql267-client|databases/mysql2610-client|2026-11-06|Has expired: EOLed upstream with unfixed vulnerabilities, use databases/mysql2610-server
 databases/mysql267-server|databases/mysql2610-server|2026-11-06|Has expired: EOLed upstream with unfixed vulnerabilities, use databases/mysql2610-server
 devel/php80-APCu||2026-11-06|No longer required in the cluster
+devel/php80-arcanist||2026-11-07|No longer required in the cluster
