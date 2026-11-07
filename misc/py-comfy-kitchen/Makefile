@@ -1,6 +1,6 @@
 PORTNAME=	comfy-kitchen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.37
+DISTVERSION=	0.2.41
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,12 +27,17 @@ NO_ARCH=	yes # it would have binaries when CUDA would be enabled
 # CUDA is not available on FreeBSD
 MAKE_ENV+=	COMFY_KITCHEN_NO_CUDA=1
 
-TEST_ARGS=	--disable-plugin-autoload -p no:black -p no:ruff -p no:mypy
+# importing torch fails with 'No space available for static Thread Local Storage' unless libc10 is preloaded
+TEST_ENV+=	LD_PRELOAD=${PYTHON_SITELIBDIR}/torch/lib/libc10.so
+
+# HIP/CUDA build-configuration tests are not applicable on FreeBSD
+TEST_ARGS=	--disable-plugin-autoload -p no:black -p no:ruff -p no:mypy \
+		--ignore=${WRKSRC}/tests/test_hip_dispatch.py
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs \
 		${TEST_ARGS}
 
-# tests as of 0.2.33: TBD
+# tests as of 0.2.41: 724 passed, 3667 skipped, 1 warning
 
 .include <bsd.port.mk>
