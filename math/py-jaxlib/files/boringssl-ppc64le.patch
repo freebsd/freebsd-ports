@@ -1,0 +1,11 @@
+--- a/include/openssl/target.h
++++ b/include/openssl/target.h
+@@ -45,6 +45,8 @@
+ #define OPENSSL_RISCV64
+ #elif defined(__riscv) && __SIZEOF_POINTER__ == 4
+ #define OPENSSL_32_BIT
++#elif defined(__powerpc64__) && __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
++#define OPENSSL_64_BIT
+ #elif defined(__pnacl__)
+ #define OPENSSL_32_BIT
+ #define OPENSSL_PNACL

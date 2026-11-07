@@ -1,0 +1,12 @@
+--- a/BUILD
++++ b/BUILD
+@@ -194,6 +194,9 @@
+     }) + select({
+         "@platforms//cpu:riscv64": ["hwy/ops/rvv-inl.h"],
+         "//conditions:default": [],
++    }) + select({
++        "@platforms//cpu:ppc64le": ["hwy/ops/ppc_vsx-inl.h"],
++        "//conditions:default": [],
+     }),
+ )
+

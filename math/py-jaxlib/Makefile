@@ -72,6 +72,10 @@ post-patch:
 		${WRKSRC}/third_party/protobuf/freebsd_upb.patch
 	@${CP} ${FILESDIR}/curl-freebsd.patch \
 		${WRKSRC}/third_party/protobuf/curl_freebsd.patch
+	@${CP} ${FILESDIR}/boringssl-ppc64le.patch \
+		${WRKSRC}/third_party/protobuf/boringssl_ppc64le.patch
+	@${CP} ${FILESDIR}/highway-ppc64le.patch \
+		${WRKSRC}/third_party/protobuf/highway_ppc64le.patch
 	@${REINPLACE_CMD} -e 's|%%PYPI_STUB%%|${PYPI_STUB}|' \
 		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
 		${WRKSRC}/MODULE.bazel ${XLA_DIR}/MODULE.bazel ${RMT_DIR}/MODULE.bazel

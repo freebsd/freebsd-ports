@@ -1,4 +1,4 @@
--- Use the system Python and a stub pypi repo instead of pip, and patch protobuf and curl for FreeBSD. FreeBSD is not supported upstream; bazel cannot download wheels offline.
+-- Use the system Python and a stub pypi repo instead of pip, and patch protobuf and curl for FreeBSD and boringssl and highway for powerpc64le. FreeBSD is not supported upstream; bazel cannot download wheels offline.
 --- MODULE.bazel.orig	2026-10-20 13:31:57 UTC
 +++ MODULE.bazel
 @@ -136,6 +136,7 @@ single_version_override(
@@ -98,7 +98,7 @@
  )
  
  ### Pybind
-@@ -383,4 +354,11 @@ external_deps_repository(
+@@ -383,4 +354,23 @@ external_deps_repository(
          "@rocm_wheels//:rocm_pjrt_py_import",
          "@rocm_wheels//:rocm_plugin_py_import",
      ],
@@ -109,4 +109,16 @@
 +    patch_strip = 1,
 +    patches = ["//third_party/protobuf:curl_freebsd.patch"],
 +    version = "8.22.0",
++)
++
++single_version_override(
++    module_name = "boringssl",
++    patch_strip = 1,
++    patches = ["//third_party/protobuf:boringssl_ppc64le.patch"],
++)
++
++single_version_override(
++    module_name = "highway",
++    patch_strip = 1,
++    patches = ["//third_party/protobuf:highway_ppc64le.patch"],
  )

@@ -1,6 +1,12 @@
 -- Port XLA to FreeBSD/aarch64: replace the pip hub with a local stub, add a cpuinfo
 -- FreeBSD arm64 backend, select the AArch64 LLVM native target, define
 -- XLA_LLVM_AARCH64_AVAILABLE, and implement getauxval() with elf_aux_info().
+-- On FreeBSD/powerpc64le, build cpuinfo's portable sources, select the PowerPC
+-- LLVM native target, define XLA_LLVM_POWERPC_AVAILABLE and give IrCompiler a
+-- PowerPC device type (it aborts on any CPU but x86, ARM and SystemZ) that
+-- links the cpp-gen intrinsic libraries (expm1 always calls into them),
+-- build the expm1 library without _Float16, which clang lacks on PowerPC
+-- (upstream 3af77b5776fb), and give the JIT the F16 conversion libcalls.
 -- XLA has no FreeBSD support upstream; applied to the xla override module.
 diff --git a/MODULE.bazel b/MODULE.bazel
 index 293c64e..991a852 100644
@@ -51,7 +57,7 @@ new file mode 100644
 index 0000000..7d67077
 --- /dev/null
 +++ b/third_party/cpuinfo/freebsd_arm64.patch
-@@ -0,0 +1,264 @@
+@@ -0,0 +1,273 @@
 +diff --git a/BUILD.bazel b/BUILD.bazel
 +index 100ec80..78d6fdf 100755
 +--- a/BUILD.bazel
@@ -59,7 +65,7 @@ index 0000000..7d67077
 +@@ -84,6 +84,10 @@ FREEBSD_SRCS = [
 +     "src/freebsd/topology.c",
 + ]
-+ 
++
 ++FREEBSD_ARM64_SRCS = [
 ++    "src/arm/freebsd/init.c",
 ++]
@@ -67,15 +73,16 @@ index 0000000..7d67077
 + EMSCRIPTEN_SRCS = [
 +     "src/emscripten/init.c",
 + ]
-+@@ -159,6 +163,7 @@ cc_library(
++@@ -159,6 +163,8 @@ cc_library(
 +         ":macos_x86_64_legacy": COMMON_SRCS + X86_SRCS + MACH_SRCS + MACH_X86_SRCS,
 +         ":macos_arm64": COMMON_SRCS + MACH_SRCS + MACH_ARM_SRCS,
 +         ":freebsd_x86_64": COMMON_SRCS + X86_SRCS + FREEBSD_SRCS + FREEBSD_X86_SRCS,
 ++        ":freebsd_aarch64": COMMON_SRCS + ARM_SRCS + FREEBSD_ARM64_SRCS,
+++        ":freebsd_ppc64le": COMMON_SRCS + FREEBSD_SRCS,
 +         ":windows_x86_64": COMMON_SRCS + X86_SRCS + WINDOWS_X86_SRCS,
 +         ":windows_arm64": COMMON_SRCS + ARM_SRCS + WINDOWS_ARM_SRCS,
 +         ":android_armv7": COMMON_SRCS + ARM_SRCS + LINUX_SRCS + LINUX_ARM32_SRCS + ANDROID_ARM_SRCS,
-+@@ -536,3 +541,11 @@ config_setting(
++@@ -536,3 +542,19 @@ config_setting(
 +         "@platforms//os:freebsd",
 +     ],
 + )
@@ -84,6 +91,14 @@ index 0000000..7d67077
 ++    name = "freebsd_aarch64",
 ++    constraint_values = [
 ++        "@platforms//cpu:aarch64",
+++        "@platforms//os:freebsd",
+++    ],
+++)
+++
+++config_setting(
+++    name = "freebsd_ppc64le",
+++    constraint_values = [
+++        "@platforms//cpu:ppc64le",
 ++        "@platforms//os:freebsd",
 ++    ],
 ++)
@@ -331,20 +346,29 @@ new file mode 100644
 index 0000000..680745d
 --- /dev/null
 +++ b/third_party/llvm/freebsd_native_arch.patch
-@@ -0,0 +1,32 @@
+@@ -0,0 +1,42 @@
 +diff --git a/utils/bazel/llvm-project-overlay/llvm/BUILD.bazel b/utils/bazel/llvm-project-overlay/llvm/BUILD.bazel
 +index 10cf3df..94fd70a 100644
 +--- a/utils/bazel/llvm-project-overlay/llvm/BUILD.bazel
 ++++ b/utils/bazel/llvm-project-overlay/llvm/BUILD.bazel
-+@@ -120,6 +120,15 @@ config_setting(
++@@ -120,6 +120,24 @@ config_setting(
 +     visibility = ["//visibility:public"],
 + )
-+ 
++
 ++config_setting(
 ++    name = "freebsd_aarch64",
 ++    constraint_values = [
 ++        "@platforms//os:freebsd",
 ++        "@platforms//cpu:aarch64",
+++    ],
+++    visibility = ["//visibility:public"],
+++)
+++
+++config_setting(
+++    name = "freebsd_ppc64le",
+++    constraint_values = [
+++        "@platforms//os:freebsd",
+++        "@platforms//cpu:ppc64le",
 ++    ],
 ++    visibility = ["//visibility:public"],
 ++)
@@ -356,11 +380,12 @@ index 0000000..680745d
 +index d2050f3..e106754 100644
 +--- a/utils/bazel/llvm-project-overlay/llvm/config.bzl
 ++++ b/utils/bazel/llvm-project-overlay/llvm/config.bzl
-+@@ -155,6 +155,7 @@ llvm_config_defines = os_defines + builtin_thread_pointer + windows_prefer_forwa
++@@ -155,6 +155,8 @@ llvm_config_defines = os_defines + builtin_thread_pointer + windows_prefer_forwa
 +     Label("//llvm:macos_arm64"): native_arch_defines("AArch64", "arm64-apple-darwin"),
 +     Label("//llvm:macos_x86_64"): native_arch_defines("X86", "x86_64-unknown-darwin"),
 +     Label("//llvm:macos_x86_64_default"): native_arch_defines("X86", "x86_64-unknown-darwin"),
 ++    Label("//llvm:freebsd_aarch64"): native_arch_defines("AArch64", "aarch64-unknown-freebsd"),
+++    Label("//llvm:freebsd_ppc64le"): native_arch_defines("PowerPC", "powerpc64le-unknown-freebsd"),
 +     Label("//llvm:linux_aarch64"): native_arch_defines("AArch64", "aarch64-unknown-linux-gnu"),
 +     Label("//llvm:linux_armv7"): native_arch_defines("ARM", "armv7-linux-gnueabihf"),
 +     Label("//llvm:linux_ppc64le"): native_arch_defines("PowerPC", "powerpc64le-unknown-linux-gnu"),
@@ -399,6 +424,72 @@ index 06e4d87..abfd783 100644
  #ifndef HWCAP_CPUID
  #define HWCAP_CPUID (1 << 11)
  #endif
+diff --git a/xla/backends/cpu/codegen/builtin_definition_generator.cc b/xla/backends/cpu/codegen/builtin_definition_generator.cc
+--- a/xla/backends/cpu/codegen/builtin_definition_generator.cc
++++ b/xla/backends/cpu/codegen/builtin_definition_generator.cc
+@@ -243,6 +243,11 @@
+ #if defined(__APPLE__) || defined(__s390x__)
+   registry["__truncsfhf2"] = SymbolDef(__truncsfhf2);
+   registry["__extendhfsf2"] = SymbolDef(__extendhfsf2);
++#elif defined(__powerpc__)
++  // LLVM lowers F16 conversions on PowerPC to these libcalls, which use the
++  // same uint16_t ABI as __gnu_f2h_ieee and __gnu_h2f_ieee.
++  registry["__truncsfhf2"] = SymbolDef(__gnu_f2h_ieee);
++  registry["__extendhfsf2"] = SymbolDef(__gnu_h2f_ieee);
+ #endif
+ 
+ #ifdef __APPLE__
+diff --git a/xla/backends/cpu/codegen/ir_compiler.cc b/xla/backends/cpu/codegen/ir_compiler.cc
+--- a/xla/backends/cpu/codegen/ir_compiler.cc
++++ b/xla/backends/cpu/codegen/ir_compiler.cc
+@@ -419,6 +419,8 @@
+     device_type = xla::codegen::intrinsics::DeviceType::kArmCpu;
+   } else if (target_triple.isSystemZ()) {
+     device_type = xla::codegen::intrinsics::DeviceType::kSystemZCpu;
++  } else if (target_triple.isPPC()) {
++    device_type = xla::codegen::intrinsics::DeviceType::kPowerPcCpu;
+   } else {
+     LOG(FATAL) << "Unsupported CPU type: " << target_triple.str();
+   }
+diff --git a/xla/codegen/intrinsic/cpp/cpp_gen_intrinsics.cc b/xla/codegen/intrinsic/cpp/cpp_gen_intrinsics.cc
+--- a/xla/codegen/intrinsic/cpp/cpp_gen_intrinsics.cc
++++ b/xla/codegen/intrinsic/cpp/cpp_gen_intrinsics.cc
+@@ -97,7 +97,8 @@
+   std::vector<CppGenIntrinsicLibrary> libraries;
+   if (options.device_type != intrinsics::DeviceType::kIntelCpu &&
+       options.device_type != intrinsics::DeviceType::kAmdCpu &&
+-      options.device_type != intrinsics::DeviceType::kArmCpu) {
++      options.device_type != intrinsics::DeviceType::kArmCpu &&
++      options.device_type != intrinsics::DeviceType::kPowerPcCpu) {
+     return libraries;
+   }
+   const std::string& eigen_ir = GetCppGenIrString(options);
+diff --git a/xla/codegen/intrinsic/cpp/expm1.cc b/xla/codegen/intrinsic/cpp/expm1.cc
+--- a/xla/codegen/intrinsic/cpp/expm1.cc
++++ b/xla/codegen/intrinsic/cpp/expm1.cc
+@@ -13,9 +13,8 @@
+ limitations under the License.
+ ==============================================================================*/
+ 
+-#if defined(__FLT16_MANT_DIG__) && defined(__has_attribute) &&    \
+-    __has_attribute(ext_vector_type) && defined(__has_builtin) && \
+-    __has_builtin(__builtin_vectorelements)
++#if defined(__has_attribute) && __has_attribute(ext_vector_type) && \
++    defined(__has_builtin) && __has_builtin(__builtin_vectorelements)
+ 
+ #include "xla/codegen/intrinsic/cpp/expm1.h"
+ 
+diff --git a/xla/codegen/intrinsic/intrinsic.h b/xla/codegen/intrinsic/intrinsic.h
+--- a/xla/codegen/intrinsic/intrinsic.h
++++ b/xla/codegen/intrinsic/intrinsic.h
+@@ -44,6 +44,7 @@
+   kIntelGpu,
+   kArmCpu,
+   kSystemZCpu,
++  kPowerPcCpu,
+   kNvidiaGpu,
+   kAmdGpu,
+ };
 diff --git a/xla/tsl/BUILD b/xla/tsl/BUILD
 index 4dc5022..024b2fa 100644
 --- a/xla/tsl/BUILD
@@ -435,7 +526,23 @@ index 4dc5022..024b2fa 100644
      name = "linux_x86_64",
      constraint_values =
          [
-@@ -365,6 +383,7 @@ selects.config_setting_group(
+@@ -313,6 +331,15 @@ config_setting(
+     visibility = ["//visibility:public"],
+ )
+
++config_setting(
++    name = "freebsd_ppc64le",
++    constraint_values = [
++        "@platforms//cpu:ppc64le",
++        "@platforms//os:freebsd",
++    ],
++    visibility = ["//visibility:public"],
++)
++
+ config_setting(
+     name = "linux_ppc64le",
+     constraint_values =
+@@ -365,6 +392,7 @@ selects.config_setting_group(
  selects.config_setting_group(
      name = "aarch64_or_cross",
      match_any = [
@@ -443,7 +550,15 @@ index 4dc5022..024b2fa 100644
          ":linux_aarch64",
          ":macos_arm64",
          ":windows_aarch64",
-@@ -415,6 +434,7 @@ selects.config_setting_group(
+@@ -388,6 +416,7 @@ selects.config_setting_group(
+ selects.config_setting_group(
+     name = "ppc64le_or_cross",
+     match_any = [
++        ":freebsd_ppc64le",
+         ":linux_ppc64le",
+         ":with_cross_compiler_support",
+     ],
+@@ -415,6 +444,7 @@ selects.config_setting_group(
  selects.config_setting_group(
      name = "x86_or_cross",
      match_any = [
@@ -454,19 +569,21 @@ index 4dc5022..024b2fa 100644
 diff --git a/xla/tsl/framework/contraction/BUILD b/xla/tsl/framework/contraction/BUILD
 --- a/xla/tsl/framework/contraction/BUILD
 +++ b/xla/tsl/framework/contraction/BUILD
-@@ -126,6 +126,7 @@ cc_library(
+@@ -126,6 +126,8 @@ cc_library(
          "//xla/tsl:arm_any": [
              "TENSORFLOW_USE_CUSTOM_CONTRACTION_KERNEL",
          ],
 +        "//xla/tsl:freebsd": [],
++        "//xla/tsl:freebsd_ppc64le": [],
          "//xla/tsl:fuchsia_x86_64": [],
          "//xla/tsl:ios": [],
          "//xla/tsl:linux_ppc64le": [],
-@@ -149,6 +150,7 @@ cc_library(
+@@ -149,6 +151,8 @@ cc_library(
          ":disable_onednn_contraction_kernel_config": [],
          "//xla/tsl:android_x86": [],
          "//xla/tsl:arm_any": [],
 +        "//xla/tsl:freebsd": [],
++        "//xla/tsl:freebsd_ppc64le": [],
          "//xla/tsl:fuchsia_x86_64": [],
          "//xla/tsl:ios": [],
          "//xla/tsl:linux_ppc64le": [],
