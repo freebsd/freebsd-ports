@@ -1,6 +1,6 @@
 PORTNAME=	comfy-aimdo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.6
+DISTVERSION=	0.6.0
 CATEGORIES=	misc python # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,5 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Comfy-Org
 
 MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${DISTVERSION}
+
+# tests as of 0.6.0: not run - the upstream tests are scripts that require CUDA
 
 .include <bsd.port.mk>
