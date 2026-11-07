@@ -19,7 +19,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_EL20=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64le
 
 BUILD_RUN_DEPENDS=	jna>0:devel/jna
 BUILD_DEPENDS=		gradle>=9.7.1:devel/gradle \
@@ -79,11 +79,14 @@ PORTDOCS=	NOTICE.txt README.asciidoc
 
 OPTIONS_DEFINE=		DOCS LIBVEC
 OPTIONS_DEFAULT=	LIBVEC
+OPTIONS_EXCLUDE_powerpc64le=	LIBVEC
 
 LIBVEC_DESC=		Build vector library (libvec.so)
 LIBVEC_USES=		compiler:c++17-lang gmake
 LIBVEC_VARS=		LIBVEC_BOOL=true
 LIBVEC_VARS_OFF=	LIBVEC_BOOL=false
+
+.include <bsd.port.options.mk>
 
 # To rebuild the deps archive:
 # 1. make makesum build DEV_UPDATE_MODE=yes
@@ -169,6 +172,9 @@ post-build:
 		${_LOCALDIST}/config/jvm.options
 	@${PRINTF} "\n## Path to native libraries\n-Des.nativelibs.path=${LOCALBASE}/lib\n" >> \
 		${_LOCALDIST}/config/jvm.options
+.if ${ARCH} == powerpc64le
+	@${PRINTF} "\n-Djdk.internal.foreign.CABI=LINUX_PPC_64_LE\n" >> ${_LOCALDIST}/config/jvm.options
+.endif
 	${REINPLACE_CMD} -e 's|#path.data: /path/to/data|path.data: /var/db/elasticsearch|g' \
 		-e 's|#path.logs: /path/to/logs|path.logs: /var/log/elasticsearch|g' \
 		${_LOCALDIST}/config/elasticsearch.yml
