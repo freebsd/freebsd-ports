@@ -1,5 +1,5 @@
 PORTNAME=	phono3py
-DISTVERSION=	4.8.2
+DISTVERSION=	4.10.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,9 +25,10 @@ USE_PYTHON=	pep517 cython autoplist pytest
 CFLAGS+=	-fPIC
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ARGS=	--disable-plugin-autoload
 TEST_WRKSRC=	${WRKSRC}/test
 PYTEST_BROKEN_TESTS=	test_reciprocal_to_normal_vs_c
 
-# tests as of 4.8.2: 231 passed, 11 skipped, 1 deselected
+# tests as of 4.10.0: 533 passed, 11 skipped, 1 deselected, 27 warnings in 186.32s (0:03:06)
 
 .include <bsd.port.mk>
