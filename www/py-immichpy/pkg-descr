@@ -1,0 +1,7 @@
+immichpy is a typed client library for the Immich API. It wraps every
+endpoint of a given Immich server release in generated models and offers
+an asynchronous client, so scripts and integrations need no hand-written
+HTTP calls. A command line interface is included.
+
+Each release is generated from one Immich server version and states the
+oldest server it still supports.

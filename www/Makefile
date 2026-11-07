@@ -1918,6 +1918,7 @@
     SUBDIR += py-hyperframe
     SUBDIR += py-hyperkitty
     SUBDIR += py-hyperlink
+    SUBDIR += py-immichpy
     SUBDIR += py-inlinestyler
     SUBDIR += py-internetarchive
     SUBDIR += py-jh2
