@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-prebuilt
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 1.1.0: not run - fails with ModuleNotFoundError: langgraph.checkpoint.postgres
+# tests as of 1.1.1: not run - fails with ModuleNotFoundError: langgraph.checkpoint.postgres
 # (langgraph-checkpoint-sqlite, langgraph-checkpoint-postgres and psycopg-binary are not ported)
 
 .include <bsd.port.mk>
