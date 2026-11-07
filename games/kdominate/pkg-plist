@@ -24,8 +24,13 @@ share/locale/ko/LC_MESSAGES/kdominate.mo
 share/locale/lt/LC_MESSAGES/kdominate.mo
 share/locale/nl/LC_MESSAGES/kdominate.mo
 share/locale/pt_BR/LC_MESSAGES/kdominate.mo
+share/locale/ru/LC_MESSAGES/kdominate.mo
 share/locale/sk/LC_MESSAGES/kdominate.mo
 share/locale/sl/LC_MESSAGES/kdominate.mo
+share/locale/sr/LC_MESSAGES/kdominate.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kdominate.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kdominate.mo
+share/locale/sr@latin/LC_MESSAGES/kdominate.mo
 share/locale/tr/LC_MESSAGES/kdominate.mo
 share/locale/ug/LC_MESSAGES/kdominate.mo
 share/locale/uk/LC_MESSAGES/kdominate.mo

@@ -2873,6 +2873,7 @@ share/locale/ru/LC_MESSAGES/kdevcustomdefinesandincludes.mo
 share/locale/ru/LC_MESSAGES/kdevcustommake.mo
 share/locale/ru/LC_MESSAGES/kdevcustomscript.mo
 share/locale/ru/LC_MESSAGES/kdevdebuggercommon.mo
+share/locale/ru/LC_MESSAGES/kdevdocker.mo
 share/locale/ru/LC_MESSAGES/kdevdocumentswitcher.mo
 share/locale/ru/LC_MESSAGES/kdevdocumentview.mo
 share/locale/ru/LC_MESSAGES/kdevelop.mo
@@ -2882,6 +2883,7 @@ share/locale/ru/LC_MESSAGES/kdevexecutescript.mo
 share/locale/ru/LC_MESSAGES/kdevexternalscript.mo
 share/locale/ru/LC_MESSAGES/kdevfilemanager.mo
 share/locale/ru/LC_MESSAGES/kdevfiletemplates.mo
+share/locale/ru/LC_MESSAGES/kdevflatpak.mo
 share/locale/ru/LC_MESSAGES/kdevgdb.mo
 share/locale/ru/LC_MESSAGES/kdevghprovider.mo
 share/locale/ru/LC_MESSAGES/kdevgit.mo
@@ -2908,6 +2910,7 @@ share/locale/ru/LC_MESSAGES/kdevqmljs.mo
 share/locale/ru/LC_MESSAGES/kdevqthelp.mo
 share/locale/ru/LC_MESSAGES/kdevquickopen.mo
 share/locale/ru/LC_MESSAGES/kdevscratchpad.mo
+share/locale/ru/LC_MESSAGES/kdevsourceformatter.mo
 share/locale/ru/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/ru/LC_MESSAGES/kdevsubversion.mo
 share/locale/ru/LC_MESSAGES/kdevswitchtobuddy.mo

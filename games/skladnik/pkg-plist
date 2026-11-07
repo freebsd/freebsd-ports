@@ -43,6 +43,10 @@ share/locale/ru/LC_MESSAGES/skladnik.mo
 share/locale/sa/LC_MESSAGES/skladnik.mo
 share/locale/sk/LC_MESSAGES/skladnik.mo
 share/locale/sl/LC_MESSAGES/skladnik.mo
+share/locale/sr/LC_MESSAGES/skladnik.mo
+share/locale/sr@ijekavian/LC_MESSAGES/skladnik.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/skladnik.mo
+share/locale/sr@latin/LC_MESSAGES/skladnik.mo
 share/locale/sv/LC_MESSAGES/skladnik.mo
 share/locale/tr/LC_MESSAGES/skladnik.mo
 share/locale/ug/LC_MESSAGES/skladnik.mo
