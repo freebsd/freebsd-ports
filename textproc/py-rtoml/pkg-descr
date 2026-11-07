@@ -1,0 +1,3 @@
+rtoml reads and writes TOML from Python. Parsing and serialization are done by
+the Rust toml crate, which makes it considerably faster than the pure Python
+implementations while keeping an interface close to that of the json module.
