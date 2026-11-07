@@ -1,5 +1,5 @@
 PORTNAME=	zlib-ng
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}setuptools-scm>=8:devel/py-setuptools-scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		cmake:indirect python
+USES=		cmake:indirect python:3.11+
 USE_PYTHON=	autoplist pep517
 
 OPTIONS_DEFINE=			SYSTEM_ZLIB_NG
