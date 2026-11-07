@@ -125,7 +125,7 @@ LUAJIT_DEFAULT?=	luajit
 .  endif
 # Possible values: 5.10, 5.20, 6.8
 MONO_DEFAULT?=		5.20
-# Possible values: 8.0, 8.4, 9.7, 26.10, 10.11m, 11.4m, 11.8m
+# Possible values: 8.0, 8.4, 9.7, 26.10, 10.11m, 11.4m, 11.8m, 12.3m
 MYSQL_DEFAULT?=		8.4
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
