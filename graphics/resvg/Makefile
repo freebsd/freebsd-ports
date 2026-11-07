@@ -1,14 +1,15 @@
 PORTNAME=	resvg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.49.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SVG rendering library
 WWW=		https://github.com/RazrFalcon/resvg
 
-LICENSE=		MIT APACHE20
-LICENSE_COMB=		dual
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
@@ -17,7 +18,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	RazrFalcon
 
-WRKSRC_SUBDIR=	crates/resvg
+CARGO_INSTALL_PATH=	crates/resvg crates/usvg
 
 CARGO_CRATES=	adler2-2.0.1 \
 		arrayref-0.3.9 \
@@ -108,6 +109,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zune-core-0.5.1 \
 		zune-jpeg-0.5.15
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/usvg
 
 .include <bsd.port.mk>
