@@ -314,6 +314,7 @@
     SUBDIR += imaginary
     SUBDIR += immich
     SUBDIR += immich-cli
+    SUBDIR += immich-deduper
     SUBDIR += immich-folder-album-creator
     SUBDIR += immich-go
     SUBDIR += immich-kiosk

@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+Copy %%ETCDIR%%/deduper.env.sample to %%ETCDIR%%/deduper.env and fill in
+IMMICH_PATH, the PSQL_* credentials of the Immich database and
+QDRANT_URL. Qdrant keeps the image vectors and is available as
+databases/qdrant.
+
+The web interface has no authentication and binds to every address. It
+serves the originals of the library and deletes them on request, so keep
+DEDUP_PORT, 8086 by default, away from untrusted networks.
+
+Cache, models and log go to %%DBDIR%%. The first scan downloads some
+230 MB of model data.
+EOM
+}
+]
