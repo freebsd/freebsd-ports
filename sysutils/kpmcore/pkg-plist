@@ -176,9 +176,13 @@ share/locale/sk/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sk/LC_MESSAGES/kpmcore.mo
 share/locale/sl/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sl/LC_MESSAGES/kpmcore.mo
+share/locale/sr/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sr/LC_MESSAGES/kpmcore.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kpmcore.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kpmcore.mo
+share/locale/sr@latin/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sr@latin/LC_MESSAGES/kpmcore.mo
 share/locale/sv/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sv/LC_MESSAGES/kpmcore.mo
