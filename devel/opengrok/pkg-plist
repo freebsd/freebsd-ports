@@ -165,7 +165,7 @@
 %%T%%/webapps/opengrok/WEB-INF/lib/micrometer-registry-statsd-1.14.1.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/modelmapper-3.1.1.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/mxparser-1.2.2.jar
-%%T%%/webapps/opengrok/WEB-INF/lib/opengrok-1.14.19.jar
+%%T%%/webapps/opengrok/WEB-INF/lib/opengrok-1.14.21.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/org.eclipse.jgit-7.2.1.202505142326-r.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/org.suigeneris.jrcs.diff-0.4.2.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/org.suigeneris.jrcs.rcs-0.4.2.jar
@@ -180,7 +180,7 @@
 %%T%%/webapps/opengrok/WEB-INF/lib/slf4j-api-2.0.13.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/slf4j-nop-1.7.30.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/snakeyaml-2.2.jar
-%%T%%/webapps/opengrok/WEB-INF/lib/suggester-1.14.19.jar
+%%T%%/webapps/opengrok/WEB-INF/lib/suggester-1.14.21.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/tablesorter-2.31.3.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/txw2-3.0.2.jar
 %%T%%/webapps/opengrok/WEB-INF/lib/versioncompare-1.5.0.jar
