@@ -97,6 +97,8 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/__init__%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/crop%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/crop%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/importhocr%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/importhocr%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/pagecontrols%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/pagecontrols%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/paperlist%%PYTHON_TAG%%.opt-1.pyc
@@ -109,13 +111,17 @@ bin/scantpaper
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/save%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/scan%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/scan%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/tesseractparams%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/scantpaper/dialog/__pycache__/tesseractparams%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/crop.py
+%%PYTHON_SITELIBDIR%%/scantpaper/dialog/importhocr.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/pagecontrols.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/paperlist.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/preferences.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/sane.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/save.py
 %%PYTHON_SITELIBDIR%%/scantpaper/dialog/scan.py
+%%PYTHON_SITELIBDIR%%/scantpaper/dialog/tesseractparams.py
 %%PYTHON_SITELIBDIR%%/scantpaper/docthread.py
 %%PYTHON_SITELIBDIR%%/scantpaper/document.py
 %%PYTHON_SITELIBDIR%%/scantpaper/edit_menu_mixins.py
