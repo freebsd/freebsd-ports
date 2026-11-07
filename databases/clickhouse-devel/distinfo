@@ -1,6 +1,6 @@
-TIMESTAMP = 1793988250
-SHA256 (clickhouse/ClickHouse-ClickHouse-v26.9.5.2-stable_GH0.tar.gz) = 28a41ec277b7fb7d259efed8bc4f3b902dac5e0dc77524f89ed34c4361bf9308
-SIZE (clickhouse/ClickHouse-ClickHouse-v26.9.5.2-stable_GH0.tar.gz) = 352752522
+TIMESTAMP = 1794004897
+SHA256 (clickhouse/ClickHouse-ClickHouse-v26.9.6.6-stable_GH0.tar.gz) = ecebaa74d113f35495e763cb1ef6ef0b47fb5df3ce0a1bc229feda52912725a2
+SIZE (clickhouse/ClickHouse-ClickHouse-v26.9.6.6-stable_GH0.tar.gz) = 352758828
 SHA256 (clickhouse/ClickHouse-AMQP-CPP-4fccd7f8_GH0.tar.gz) = fbde4b1d0740cc108c8f9399b7380f4e119209d7d92fdfbbc065feba90c18b9a
 SIZE (clickhouse/ClickHouse-AMQP-CPP-4fccd7f8_GH0.tar.gz) = 162040
 SHA256 (clickhouse/Maratyszcza-FP16-0a92994d_GH0.tar.gz) = 72c55523880227b72fc97cee52d0082f44ec8d57d09a385cd6db22cfcb4a1d15
@@ -305,5 +305,5 @@ SHA256 (clickhouse/vitaut-zmij-b490231a_GH0.tar.gz) = ed945e307de6ec6763f5153e7c
 SIZE (clickhouse/vitaut-zmij-b490231a_GH0.tar.gz) = 557170
 SHA256 (clickhouse/ClickHouse-zstd-5b3e9e8f_GH0.tar.gz) = a6a458a4027086cb9c4a929c130f2b53e79df14e590502c76ef9df345aba51ac
 SIZE (clickhouse/ClickHouse-zstd-5b3e9e8f_GH0.tar.gz) = 2468388
-SHA256 (clickhouse/ClickHouse-zxc-b9890cfe_GH0.tar.gz) = 8860d269ddfbceff6bb2460c7d17173167fc9a9a5e812474e31579fefd6e0ec3
-SIZE (clickhouse/ClickHouse-zxc-b9890cfe_GH0.tar.gz) = 932480
+SHA256 (clickhouse/hellobertrand-zxc-e568d196_GH0.tar.gz) = 3a5564414a0374c0b5edda5ea5b08babf82e22391480e6b83e3088a04d6c7528
+SIZE (clickhouse/hellobertrand-zxc-e568d196_GH0.tar.gz) = 829575

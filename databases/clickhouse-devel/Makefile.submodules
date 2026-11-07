@@ -150,4 +150,4 @@ GH_TUPLE+=	ClickHouse:yaml-cpp:acf41867:ClickHouse_yaml_cpp/contrib/yaml-cpp
 GH_TUPLE+=	ClickHouse:zlib-ng:a2fbeffd:ClickHouse_zlib_ng/contrib/zlib-ng
 GH_TUPLE+=	vitaut:zmij:b490231a:vitaut_zmij/contrib/zmij
 GH_TUPLE+=	ClickHouse:zstd:5b3e9e8f:ClickHouse_zstd/contrib/zstd
-GH_TUPLE+=	ClickHouse:zxc:b9890cfe:ClickHouse_zxc/contrib/zxc
+GH_TUPLE+=	hellobertrand:zxc:e568d196:hellobertrand_zxc/contrib/zxc
