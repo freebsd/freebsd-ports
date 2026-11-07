@@ -1,6 +1,6 @@
---- crates/gpui_linux/src/linux/platform.rs.orig	2026-10-23 12:50:45 UTC
+--- crates/gpui_linux/src/linux/platform.rs.orig	2026-11-04 15:12:45 UTC
 +++ crates/gpui_linux/src/linux/platform.rs
-@@ -99,7 +99,7 @@ pub(crate) struct LinuxCommon {
+@@ -100,7 +100,7 @@ pub(crate) struct LinuxCommon {
      app_name: Option<String>,
      system_notifications: crate::linux::system_notifications::SystemNotificationState,
      #[cfg_attr(
