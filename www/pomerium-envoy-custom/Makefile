@@ -1,6 +1,6 @@
 PORTNAME=	pomerium-envoy-custom
 DISTVERSIONPREFIX=
-DISTVERSION=	1.37.0.20261026
+DISTVERSION=	1.37.0.20261102
 CATEGORIES=	www
 MASTER_SITES+=	https://github.com/envoyproxy/envoy/archive/:envoy_src \
 		https://github.com/openssh/openssh-portable/archive/:openssh_portable \
@@ -64,12 +64,12 @@ USES=		cmake:indirect compiler:c++20-lang gmake go:no_targets \
 		java:build ninja:build python:build
 USE_GITHUB=	yes
 
-ENVOY_SRC_COMMIT=	d098c69f64497010931e92fb6f580ee67638fa51
+ENVOY_SRC_COMMIT=	17e27840396c1fa3196f184fcb5db1ab13850504
 ZLIBBASE=		${LOCALBASE:H}
 
 GH_ACCOUNT=	pomerium
 GH_PROJECT=	envoy-custom
-GH_TAGNAME=	30d955cf07bd68f148c4f4fcaa4a82b1ff2709de
+GH_TAGNAME=	e7b75c3a606de275146897f0f787fe3cf80ead22
 
 # Bazel-managed dependencies (GitHub archive format).
 # These are fetched by Bazel as http_archive during the build, sourced from
@@ -523,6 +523,7 @@ pre-build:
 	    0011-integration-tcp-client-write.patch \
 	    0012-generic-proxy-trace-logs.patch \
 	    0013-fuzz-toolchain-path.patch \
+	    0014-disable-coverage-report-rounding.patch \
 	    fix-allow-dev-shm.patch \
 	    fix-antlr4-cpp-runtime.patch \
 	    fix-integration-test-server-exit.patch \
