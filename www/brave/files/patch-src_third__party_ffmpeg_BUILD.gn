@@ -1,0 +1,10 @@
+--- src/third_party/ffmpeg/BUILD.gn.orig	2026-09-25 15:26:43 UTC
++++ src/third_party/ffmpeg/BUILD.gn
+@@ -389,7 +389,6 @@ target(link_target_type, "ffmpeg_internal") {
+       libs += [
+         "m",
+         "z",
+-        "rt",
+       ]
+     }
+     if (is_component_ffmpeg) {

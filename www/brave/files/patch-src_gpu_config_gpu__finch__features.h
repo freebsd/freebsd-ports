@@ -1,0 +1,11 @@
+--- src/gpu/config/gpu_finch_features.h.orig	2026-09-25 15:26:43 UTC
++++ src/gpu/config/gpu_finch_features.h
+@@ -196,7 +196,7 @@ GPU_CONFIG_EXPORT BASE_DECLARE_FEATURE(kPruneOldTransf
+ 
+ GPU_CONFIG_EXPORT BASE_DECLARE_FEATURE(kRemoveGPULegacyIPC);
+ 
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ GPU_CONFIG_EXPORT BASE_DECLARE_FEATURE(kSharedImageStubHighPriority);
+ #endif
+ 

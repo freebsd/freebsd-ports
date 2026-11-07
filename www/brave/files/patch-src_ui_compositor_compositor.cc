@@ -1,0 +1,11 @@
+--- src/ui/compositor/compositor.cc.orig	2026-09-25 15:26:43 UTC
++++ src/ui/compositor/compositor.cc
+@@ -982,7 +982,7 @@ void Compositor::OnResume() {
+     obs.ResetIfActive();
+ }
+ 
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(SUPPORTS_OZONE_X11)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(SUPPORTS_OZONE_X11)
+ void Compositor::OnCompleteSwapWithNewSize(const gfx::Size& size) {
+   observer_list_.Notify(
+       &CompositorObserver::OnCompositingCompleteSwapWithNewSize, this, size);

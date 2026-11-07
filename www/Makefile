@@ -87,6 +87,7 @@
     SUBDIR += bluefish
     SUBDIR += bombadillo
     SUBDIR += bozohttpd
+    SUBDIR += brave
     SUBDIR += browsh
     SUBDIR += bugzilla2atom
     SUBDIR += buku

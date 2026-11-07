@@ -1,0 +1,20 @@
+--- src/brave/build/linux/BUILD.gn.orig	2026-06-01 00:00:00 UTC
++++ src/brave/build/linux/BUILD.gn
+@@ -8,10 +8,13 @@
+ assert(is_linux)
+ 
+ group("brave") {
+-  public_deps = [
+-    ":copy_exe",
+-    ":copy_sandbox",
+-  ]
++  public_deps = [ ":copy_exe" ]
++
++  # The SUID sandbox helper is Linux only: the FreeBSD Chromium port turns off
++  # compile_suid_client, so //sandbox/linux:chrome_sandbox has nothing to build.
++  if (!is_bsd) {
++    public_deps += [ ":copy_sandbox" ]
++  }
+ }
+ 
+ copy("copy_exe") {

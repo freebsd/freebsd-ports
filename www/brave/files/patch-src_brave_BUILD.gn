@@ -1,0 +1,81 @@
+--- src/brave/BUILD.gn.orig	2026-06-01 00:00:00 UTC
++++ src/brave/BUILD.gn
+@@ -18,6 +18,19 @@
+ import("//tools/v8_context_snapshot/v8_context_snapshot.gni")
+ import("//ui/base/ui_features.gni")
+ 
++# FreeBSD is built with the Chromium Linux configuration and reuses the Linux
++# targets: brave has neither a build/freebsd nor an app/freebsd directory.
++if (target_os == "freebsd") {
++  brave_platform_build_dir = "build/linux"
++} else {
++  brave_platform_build_dir = "build/$target_os"
++}
++if (current_os == "freebsd") {
++  brave_platform_app_dir = "app/linux"
++} else {
++  brave_platform_app_dir = "app/$current_os"
++}
++
+ if (enable_brave_vpn_v1) {
+   import(
+       "//brave/browser/brave_vpn/win/brave_vpn_wireguard_service/allowlist.gni")
+@@ -280,7 +293,7 @@
+ }
+ 
+ group("brave") {
+-  deps = [ "build/$target_os:brave" ]
++  deps = [ "$brave_platform_build_dir:brave" ]
+   if (!is_android && !is_ios) {
+     deps += [
+       "//brave/components/version_info:generate_version",
+@@ -472,8 +485,12 @@
+     deps += [
+       ":theme_files",
+       "//brave/app/linux:dist_resources",
+-      "//chrome/installer/linux:$linux_channel",
+     ]
++    if (!is_bsd) {
++      # There is no deb/rpm packaging on the BSDs, and //chrome/installer/linux
++      # insists on a sysroot, which this build does not use.
++      deps += [ "//chrome/installer/linux:$linux_channel" ]
++    }
+   }
+ }
+ 
+@@ -528,7 +545,7 @@
+       ":brave",
+       ":brave_license_dist_resources",
+       ":packed_resources",
+-      "build/$target_os:brave",
++      "$brave_platform_build_dir:brave",
+       "//brave/components/version_info:generate_version",
+       "//chrome:packed_resources",
+       "//third_party/icu:icudata",
+@@ -611,7 +628,7 @@
+       output = "$brave_dist_dir/$brave_dist_name-v$brave_version-$brave_platform-$target_arch-symbols.zip"
+     }
+ 
+-    deps = [ "//brave/app/$current_os:symbol_dist_resources" ]
++    deps = [ "//brave/$brave_platform_app_dir:symbol_dist_resources" ]
+ 
+     if (is_win) {
+       dir_inputs = [ "$brave_product_name.syms" ]
+@@ -636,7 +653,7 @@
+ group("create_symbols_dist") {
+   # Currently on some platforms (Android, Linux) this target generate more
+   # than just symbols, so always depend on it.
+-  public_deps = [ "//brave/app/$current_os:symbol_dist_resources" ]
++  public_deps = [ "//brave/$brave_platform_app_dir:symbol_dist_resources" ]
+ 
+   if (should_generate_symbols) {
+     public_deps += [
+@@ -670,7 +687,7 @@
+     script = "//brave/script/create-dist.py"
+ 
+     inputs = []
+-    deps = [ "app/$current_os:dist_resources" ]
++    deps = [ "$brave_platform_app_dir:dist_resources" ]
+ 
+     if (!is_mac) {
+       inputs += get_target_outputs(":brave_license_dist_resources")

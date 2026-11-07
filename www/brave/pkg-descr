@@ -1,0 +1,9 @@
+Brave is a Chromium based web browser that blocks ads and trackers by
+default.  It ships with a built-in ad blocker, HTTPS upgrading, fingerprinting
+protection, a Tor enabled private window and an optional cryptocurrency
+wallet.
+
+This port builds Brave natively on FreeBSD: neither depot_tools nor gclient
+are used, the sources come from the official Chromium release tarball plus
+brave-core, and the browser is built with the compiler and the libraries from
+the ports tree.

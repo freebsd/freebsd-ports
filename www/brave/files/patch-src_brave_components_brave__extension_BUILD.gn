@@ -1,0 +1,13 @@
+--- src/brave/components/brave_extension/BUILD.gn.orig	2026-06-01 00:00:00 UTC
++++ src/brave/components/brave_extension/BUILD.gn
+@@ -31,7 +31,9 @@
+     # TODO(petemill): Have WDP use webpack (or another way) to spit out
+     # a depfile which automatically lists all the input files used to generate
+     # the WDP build.
+-    "//brave/vendor/web-discovery-project/.git/HEAD",
++    #
++    # .git/HEAD was dropped from here: this tree comes from release tarballs,
++    # which have no git metadata for it to point at.
+     "//brave/vendor/web-discovery-project/package.json",
+   ]
+ 

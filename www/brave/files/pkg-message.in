@@ -1,0 +1,62 @@
+[
+{ type: install
+  message: <<EOM
+## Shared memory
+
+Brave, like Chromium, unlinks shared memory segments while they are still
+mapped, which FreeBSD only allows with
+
+	sysctl kern.ipc.shm_allow_removed=1
+
+The %%PREFIX%%/bin/brave wrapper checks that sysctl and refuses to start the
+browser without it.  To keep the setting across reboots, add
+
+	kern.ipc.shm_allow_removed=1
+
+to /etc/sysctl.conf.
+
+## Screen sharing under Wayland
+
+Choosing a screen or a window under Wayland goes through the ScreenCast
+portal, which the PIPEWIRE option, on by default, talks to.  That portal only
+answers if xdg-desktop-portal has a backend for the desktop in use.  On GNOME,
+Xfce, MATE and Cinnamon that is
+
+	deskutils/xdg-desktop-portal-gtk
+
+while KDE Plasma and the wlroots compositors ship their own.  None of them is
+a dependency of this package, since only the matching one is of any use.
+Without a backend the picker stays empty and nothing is shared; under X11 no
+portal is involved.
+
+## DRM protected media
+
+Playing DRM protected media needs the Widevine CDM, which this package does
+not contain.  With the WIDEVINE option on, the default, the support for it is
+compiled in and www/foreign-cdm, which came with this package, provides the
+shim that runs the module, but the module itself comes from Google under
+their own licence and has to be installed separately:
+
+	cd /usr/ports/www/linux-widevine-cdm && make install clean
+
+Brave reads the module through %%DATADIR%%/WidevineCdm, which this package
+links to the directory www/foreign-cdm installs it into.
+
+It runs under the Linuxulator, so that has to be loaded as well:
+
+	service linux enable && service linux start
+
+The first protected page fails to play even when everything is in place, and
+the CDM is only registered after the browser is restarted once -- a quirk of
+foreign-cdm, documented in its own README.
+
+Without it Brave says nothing: DRM protected pages simply fail to play,
+brave://components leaves Widevine at 0.0.0.0, and the reason is only
+visible with
+
+	brave --enable-logging=stderr --vmodule='*cdm_registration*=1'
+
+which then reports "Widevine enabled but no library found".
+EOM
+}
+]

@@ -1,0 +1,11 @@
+--- src/chrome/browser/web_applications/os_integration/os_integration_manager.cc.orig	2026-09-25 15:26:43 UTC
++++ src/chrome/browser/web_applications/os_integration/os_integration_manager.cc
+@@ -687,7 +687,7 @@ std::unique_ptr<ShortcutInfo> OsIntegrationManager::Bu
+     }
+   }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   const std::vector<WebAppShortcutsMenuItemInfo>& shortcuts_menu_item_infos =
+       app->shortcuts_menu_item_infos();
+   DCHECK_LE(shortcuts_menu_item_infos.size(), kMaxApplicationDockMenuItems);

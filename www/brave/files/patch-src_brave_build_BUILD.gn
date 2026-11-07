@@ -1,0 +1,15 @@
+--- src/brave/build/BUILD.gn.orig	2026-06-01 00:00:00 UTC
++++ src/brave/build/BUILD.gn
+@@ -39,6 +39,12 @@
+       "BRAVE_GET_TARGET_FOR_DEFAULT_APP_SETTINGS=",
+       "BRAVE_HISTOGRAM_FUNCTIONS_UMA_HISTOGRAM_ENUMERATION=",
+       "BRAVE_SCOPED_ALLOW_BASE_SYNC_PRIMITIVES_H=",
++
++      # The three defines above are not enough to build //base out of a patched
++      # tree: Brave's patches for base also reach for code that only exists in
++      # the chromium_src overrides, which this build cannot use.  Mark the
++      # build so those few places can fall back to upstream's own code.
++      "BRAVE_REDIRECT_CC_BUILD",
+     ]
+   }
+ }
