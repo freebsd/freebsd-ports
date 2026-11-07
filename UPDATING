@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20261107:
+  AFFECTS: users of mail/stalwart
+  AUTHOR: samm@os2.kiev.ua
+
+  mail/stalwart has been updated to 1.0.3.  The 1.0 data store layout is
+  not compatible with 0.16 and cannot be upgraded in place.  Users of
+  0.16 must migrate their data to a new 1.x store with
+  mail/stalwart-migrate; the previous 0.16.27 version is available as
+  mail/stalwart016.  Keep mail/stalwart016 installed until the migration
+  is complete.  mail/stalwart016 is deprecated and scheduled for removal
+  on 2027-11-02.
+
 20261101:
   AFFECTS: users of devel/subversion
   AUTHOR: michaelo@apache.org
