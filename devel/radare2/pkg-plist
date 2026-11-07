@@ -124,11 +124,11 @@ include/libr/r_util/r_signal.h
 include/libr/r_util/r_spaces.h
 include/libr/r_util/r_stack.h
 include/libr/r_util/r_str.h
+include/libr/r_util/r_str_any.h
 include/libr/r_util/r_str_constpool.h
 include/libr/r_util/r_str_util.h
 include/libr/r_util/r_strbuf.h
 include/libr/r_util/r_strpool.h
-include/libr/r_util/r_str_any.h
 include/libr/r_util/r_strs.h
 include/libr/r_util/r_strs_store.h
 include/libr/r_util/r_sys.h
@@ -276,6 +276,8 @@ libdata/pkgconfig/sdb.pc
 %%PORTDOCS%%%%DOCSDIR%%/arm-endian.md
 %%PORTDOCS%%%%DOCSDIR%%/avr.md
 %%PORTDOCS%%%%DOCSDIR%%/bash_autocompletion.sh
+%%PORTDOCS%%%%DOCSDIR%%/bits.md
+%%PORTDOCS%%%%DOCSDIR%%/borrow.md
 %%PORTDOCS%%%%DOCSDIR%%/brainfuck.md
 %%PORTDOCS%%%%DOCSDIR%%/calling-conventions.md
 %%PORTDOCS%%%%DOCSDIR%%/capstone.md
@@ -322,6 +324,7 @@ libdata/pkgconfig/sdb.pc
 %%PORTDOCS%%%%DOCSDIR%%/repo
 %%PORTDOCS%%%%DOCSDIR%%/rgraph.md
 %%PORTDOCS%%%%DOCSDIR%%/sdb_ordinal.md
+%%PORTDOCS%%%%DOCSDIR%%/search.md
 %%PORTDOCS%%%%DOCSDIR%%/siol.md
 %%PORTDOCS%%%%DOCSDIR%%/slides.r2.md
 %%PORTDOCS%%%%DOCSDIR%%/snap.md
@@ -441,7 +444,13 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-16.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-arm-ios-64.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-darwin-32.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-darwin-64.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-darwin.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-gio.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-glib.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-gobject.sdb
+%%DATADIR%%/%%PORTVERSION%%/fcnsign/types-index.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-iokit.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-jni.sdb
 %%DATADIR%%/%%PORTVERSION%%/fcnsign/types-linux.sdb
@@ -672,6 +681,7 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/opcodes/chip8.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/cosmac.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/dalvik.sdb
+%%DATADIR%%/%%PORTVERSION%%/opcodes/e0c62.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/evm.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/gb.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/i4004.sdb
@@ -767,7 +777,6 @@ share/man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/www/m/main.min.js
 %%DATADIR%%/%%PORTVERSION%%/www/m/r2.js
 %%DATADIR%%/%%PORTVERSION%%/www/m/stylesheet.css
-%%DATADIR%%/%%PORTVERSION%%/www/m/tools.legacy.js
 %%DATADIR%%/%%PORTVERSION%%/www/m/vendors/material.min.css
 %%DATADIR%%/%%PORTVERSION%%/www/m/vendors/material.min.js
 %%DATADIR%%/%%PORTVERSION%%/www/old/index.html
