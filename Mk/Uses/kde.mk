@@ -96,6 +96,7 @@ _PLASMA_VER?=		${KDE_PLASMA_DEFAULT}
 .  if ${CATEGORIES:Mkde-plasma6lts}
 _PLASMA_VER=		6lts
 CONFLICTS_INSTALL+=	plasma6-${PORTNAME}-6.*
+PORTSCOUT=		limit:^6\.6\.
 .  elif ${CATEGORIES:Mkde-plasma}
 _PLASMA_VER=		6
 CONFLICTS_INSTALL+=	plasma6lts-${PORTNAME}-6.*
