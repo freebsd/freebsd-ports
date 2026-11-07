@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-sweaters
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.1
+DISTVERSION=	0.1.0
 CATEGORIES=	x11 xfce
 
 MAINTAINER=	dtxdf@FreeBSD.org
@@ -18,20 +18,25 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 
 USES=		desktop-file-utils gnome python
 USE_GITHUB=	yes
-GH_ACCOUNT=	yumiaura
+GH_ACCOUNT=	DtxdF
 USE_GNOME=	gtk30 introspection
 USE_PYTHON=	autoplist pep517
-
-PLIST_FILES=	etc/xdg/autostart/${PORTNAME}.desktop \
-		share/applications/${PORTNAME}.desktop
 
 NO_ARCH=	yes
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/debian/applications/${PORTNAME}.desktop \
-	    ${STAGEDIR}${PREFIX}/share/applications/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+		${INSTALL_DATA} ${WRKSRC}/xdg/icon.svg \
+			${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}.svg
+.for s in 16 22 24 32 48 64 128 256
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	${INSTALL_DATA} ${WRKSRC}/icons/hicolor/${s}x${s}/apps/xfce4-sweaters.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/xdg/application.desktop \
+	    ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
-	${INSTALL_DATA} ${WRKSRC}/debian/autostart/${PORTNAME}.desktop \
-	    ${STAGEDIR}${PREFIX}/etc/xdg/autostart/
+	${INSTALL_DATA} ${WRKSRC}/xdg/autostart.desktop \
+	    ${STAGEDIR}${PREFIX}/etc/xdg/autostart/${PORTNAME}.desktop
 
 .include <bsd.port.mk>
