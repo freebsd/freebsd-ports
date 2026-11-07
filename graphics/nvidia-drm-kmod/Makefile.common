@@ -35,6 +35,12 @@ MAKE_ENV+=	DEBUG_FLAGS=${DEBUG_FLAGS} \
 WRKSRC=		${WRKDIR}/NVIDIA-FreeBSD-${ARCH_SUFX}-${NVIDIA_DISTVERSION}/
 WRKSRC_SUBDIR=	src/nvidia-drm/
 
+.if ${NVVERSION} < 620.00000
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-gem-nvkms-memory.c \
+		${FILESDIR}/extra-patch-nvidia-drm-gem-user-memory.c \
+		${FILESDIR}/extra-patch-nvidia-drm-helper.h
+.endif
+
 .if (${NVVERSION} < 580.17302 || ${NVVERSION} >= 590.00000 && ${NVVERSION} < 595.07105) && empty(.CURDIR:M*graphics/nvidia-drm-5*)
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-nvidia-drm-freebsd-lkpi.c-20250918-01
 .endif
@@ -111,8 +117,34 @@ post-patch:
 	# /usr/ports/graphics/nvidia-drm-612-kmod-devel/work/drm-kmod-drm_v6.12.85_3//include/drm/drm_print.h:697:29: note: expanded from macro 'DRM_ERROR'
 	#   697 |         __drm_err(__func__, fmt, ##__VA_ARGS__)
 	#       |                             ~~~    ^~~~~~~~~~~
-.if ${NVVERSION} >= 615.00000
+.if ${NVVERSION} >= 615.00000 && ${NVVERSION} < 620.00000
 	${REINPLACE_CMD} -e 's/%llu\"/%lu\"/'	${WRKSRC}/nvidia-drm-fence.c
+.endif
+	# Workaround for build failure on 620.70.06. There are no other "%llu" in this file.
+	# --- nvidia-drm-connector.o ---
+	# nvidia-drm-connector.c:475:17: error: format specifies type 'unsigned long long' but the argument has type 'uint64_t' (aka 'unsigned long') [-Werror,-Wformat]
+	#   474 |                 "allmMode=%llu requires allm capability. Display is not ALLM-capable",
+	#       |                           ~~~~
+	#       |                           %lu
+	#   475 |                 val);
+	#       |                 ^~~
+	# ./nvidia-drm-priv.h:67:73: note: expanded from macro 'NV_DRM_DEV_LOG_INFO'
+	#    67 |     NV_DRM_LOG_INFO("[GPU ID 0x%08x] " __fmt, __dev->gpu_info.gpu_id, ##__VA_ARGS__)
+	#       |                                        ~~~~~                            ^~~~~~~~~~~
+	# ./nvidia-drm-priv.h:64:44: note: expanded from macro 'NV_DRM_LOG_INFO'
+	#    64 |     DRM_INFO("[nvidia-drm] " __fmt "\n", ##__VA_ARGS__)
+	#       |                              ~~~~~         ^~~~~~~~~~~
+	# /usr/ports/graphics/nvidia-drm-612-kmod-devel/work/drm-kmod-drm_v6.12.110_1//include/drm/drm_print.h:673:29: note: expanded from macro 'DRM_INFO'
+	#   673 |         _DRM_PRINTK(, INFO, fmt, ##__VA_ARGS__)
+	#       |                             ~~~    ^~~~~~~~~~~
+	# /usr/ports/graphics/nvidia-drm-612-kmod-devel/work/drm-kmod-drm_v6.12.110_1//include/drm/drm_print.h:669:53: note: expanded from macro '_DRM_PRINTK'
+	#   669 |         printk##once(KERN_##level "[" DRM_NAME "] " fmt, ##__VA_ARGS__)
+	#       |                                                     ~~~    ^~~~~~~~~~~
+	# /usr/src/sys/compat/linuxkpi/common/include/linux/kernel.h:138:29: note: expanded from macro 'printk'
+	#   138 | #define printk(...)             printf(__VA_ARGS__)
+	#       |                                        ^~~~~~~~~~~
+.if ${NVVERSION} >= 620.00000
+	${REINPLACE_CMD} -e 's/%llu\ /%lu\ /'	${WRKSRC}/nvidia-drm-connector.c
 .endif
 	# Workaround for build failure on graphics/nvidia-drm-515-kmod*,
 	# as struct dma_buf_map was renamed to struct iosys_map at Linux 5.18 (DRM5.18).
