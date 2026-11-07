@@ -1,5 +1,5 @@
 PORTNAME=	unreal
-DISTVERSION=	6.2.6
+DISTVERSION=	6.2.7.1
 CATEGORIES=	irc
 MASTER_SITES=	https://www.unrealircd.org/downloads/
 DISTNAME=	${PORTNAME}ircd-${DISTVERSION}
