@@ -25083,8 +25083,11 @@ vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
 <package>
 <name>expat</name>
 <name>linux-c7-expat</name>
-<name>linux-rl9-expat</name>
 <range><lt>2.8.1</lt></range>
+</package>
+<package>
+<name>linux-rl9-expat</name>
+<range><lt>2.5.0_9</lt></range>
 </package>
     </affects>
     <description>
@@ -25103,6 +25106,7 @@ vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
     <dates>
       <discovery>2025-10-01</discovery>
       <entry>2026-05-11</entry>
+      <modified>2026-11-05</modified>
     </dates>
   </vuln>
 
