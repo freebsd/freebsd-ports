@@ -1,0 +1,5 @@
+NETINT's GStreamer plugin (niquadra) for the NETINT Quadra video
+processing units, through libxcoder. Its elements decode (H.264, H.265,
+VP9, JPEG), encode (H.264, H.265, AV1, JPEG), and scale, crop, pad,
+overlay, stack, rotate and run AI pre-processing on video in the card,
+e.g. niquadrah264dec, niquadrah265enc, niquadrascale.
