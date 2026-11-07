@@ -1,6 +1,6 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40.14
+DISTVERSION=	0.40.15
 CATEGORIES=	misc # machine-learning
 
 ## Q: Why does misc/ollama use the fork yurivict/ollama ?
@@ -40,10 +40,10 @@ GO_MODULE=	github.com/yurivict/${PORTNAME} # fork with FreeBSD patches
 GO_TARGET=	.
 GO_ENV+=	CGO_CXXFLAGS="${CXXFLAGS}"
 
-LLAMA_CPP_VERSION=	b11963	# from the LLAMA_CPP_VERSION file in the llama.cpp repo
+LLAMA_CPP_VERSION=	b12111	# from the LLAMA_CPP_VERSION file in the llama.cpp repo
 LLAMA_CPP_UI_VERSION=	b11738
-LLAMA_CPP_SO_VERSION=	0.8.0
-GGML_SO_VERSION=	0.28.0
+LLAMA_CPP_SO_VERSION=	0.9.0
+GGML_SO_VERSION=	0.29.0
 MLX_CORE_VERSION=	0.31.2
 MLX_C_VERSION=		fba4470b89073180056c9ea46c443051375f7399
 JSON_VERSION=		3.11.3
@@ -157,6 +157,9 @@ post-patch:
 	# expand WRKSRC in cmake/mlx/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|g' \
 		${WRKSRC}/cmake/mlx/CMakeLists.txt
+	# patch llama.cpp for F_DUPFD_CLOEXEC, see https://github.com/ggml-org/ggml/issues/1683
+	@${REINPLACE_CMD} -e 's/CMAKE_SYSTEM_NAME MATCHES "OpenBSD"/CMAKE_SYSTEM_NAME MATCHES "OpenBSD|FreeBSD"/' \
+		${WRKDIR}/llama.cpp-${LLAMA_CPP_VERSION}/ggml/src/CMakeLists.txt
 
 pre-build-CPU-on:
 	@${MKDIR} ${WRKSRC}/build && \
