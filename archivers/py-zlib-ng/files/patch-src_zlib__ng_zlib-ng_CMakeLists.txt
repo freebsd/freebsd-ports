@@ -1,13 +1,21 @@
---- src/zlib_ng/zlib-ng/CMakeLists.txt.orig	2025-09-10 11:41:03 UTC
+--- src/zlib_ng/zlib-ng/CMakeLists.txt.orig	2026-11-07 11:03:29 UTC
 +++ src/zlib_ng/zlib-ng/CMakeLists.txt
-@@ -86,8 +86,8 @@ option(ZLIB_COMPAT "Compile with zlib compatible API" 
- #
- option(WITH_GZFILEOP "Compile with support for gzFile related functions" ON)
- option(ZLIB_COMPAT "Compile with zlib compatible API" OFF)
--option(ZLIB_ENABLE_TESTS "Build test binaries" ON)
--option(ZLIBNG_ENABLE_TESTS "Test zlib-ng specific API" ON)
-+option(ZLIB_ENABLE_TESTS "Build test binaries" OFF)
-+option(ZLIBNG_ENABLE_TESTS "Test zlib-ng specific API" OFF)
- option(WITH_BENCHMARK_APPS "Build application benchmarks" OFF)
- option(WITH_OPTIM "Build with optimisation" ON)
- option(WITH_REDUCED_MEM "Reduced memory usage for special cases (reduces performance)" OFF)
+@@ -49,17 +49,13 @@ include(FeatureSummary)
+ include(FeatureSummary)
+ 
+ # We need to enable C++ before trying to check for coverage
+-option(BUILD_TESTING "Build test binaries." ON) # Depends on CMP0077 (3.13)
++option(BUILD_TESTING "Build test binaries." OFF) # Depends on CMP0077 (3.13)
+ if (DEFINED ZLIB_ENABLE_TESTS)
+     message(DEPRECATION "ZLIB_ENABLE_TESTS is deprecated. Please use BUILD_TESTING instead.")
+     if (NOT ZLIB_ENABLE_TESTS)
+         set(BUILD_TESTING OFF)
+     endif()
+ endif()
+-cmake_dependent_option(WITH_GTEST "Build gtest_zlib" ON "BUILD_TESTING" OFF)
+-cmake_dependent_option(WITH_FUZZERS "Build test/fuzz" OFF "BUILD_TESTING" OFF)
+-cmake_dependent_option(WITH_BENCHMARKS "Build test/benchmarks" OFF "BUILD_TESTING" OFF)
+-cmake_dependent_option(WITH_BENCHMARK_APPS "Build application benchmarks" OFF "BUILD_TESTING" OFF)
+ 
+ if(WITH_GTEST OR WITH_FUZZERS OR WITH_BENCHMARKS)
+   enable_language(CXX)
