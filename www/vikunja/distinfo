@@ -1,7 +1,7 @@
-TIMESTAMP = 1792851255
-SHA256 (go/www_vikunja/go-vikunja-vikunja-v2.7.1_GH0/vikunja-frontend-2.7.1.tar.gz) = ecccd90d5b9a2212bf01adb404c85521d761ba57486179b5e5317771c300ab99
-SIZE (go/www_vikunja/go-vikunja-vikunja-v2.7.1_GH0/vikunja-frontend-2.7.1.tar.gz) = 2627730
-SHA256 (go/www_vikunja/go-vikunja-vikunja-v2.7.1_GH0/go.mod) = b67a994c448743e09d26fe91c69ae409eea88c518569e4205cc630b6030d3ff3
-SIZE (go/www_vikunja/go-vikunja-vikunja-v2.7.1_GH0/go.mod) = 10408
-SHA256 (go/www_vikunja/go-vikunja-vikunja-v2.7.1_GH0/go-vikunja-vikunja-v2.7.1_GH0.tar.gz) = 0802c517415a59753250a93e729f2481bb81f6bd1e4fc67796e0695668b83988
-SIZE (go/www_vikunja/go-vikunja-vikunja-v2.7.1_GH0/go-vikunja-vikunja-v2.7.1_GH0.tar.gz) = 11468583
+TIMESTAMP = 1794076254
+SHA256 (go/www_vikunja/go-vikunja-vikunja-v2.8.0_GH0/vikunja-frontend-2.8.0.tar.gz) = f40abc52cbfb7362b0f5b39b8a3b2736010fc72e09509d93a0635a16e7d42a25
+SIZE (go/www_vikunja/go-vikunja-vikunja-v2.8.0_GH0/vikunja-frontend-2.8.0.tar.gz) = 2665927
+SHA256 (go/www_vikunja/go-vikunja-vikunja-v2.8.0_GH0/go.mod) = ecd74da99ac0fd40743ef7c528fef79b961ce18052557628860c8e95ac36b8ae
+SIZE (go/www_vikunja/go-vikunja-vikunja-v2.8.0_GH0/go.mod) = 10398
+SHA256 (go/www_vikunja/go-vikunja-vikunja-v2.8.0_GH0/go-vikunja-vikunja-v2.8.0_GH0.tar.gz) = c7bfb1c4d4f577b3cbad62e2e77abb85802709fdeff7f1d366b90badc5fc7f94
+SIZE (go/www_vikunja/go-vikunja-vikunja-v2.8.0_GH0/go-vikunja-vikunja-v2.8.0_GH0.tar.gz) = 11674244
