@@ -29,9 +29,7 @@ USE_KDE=	activities attica auth baloo baloo-widgets bookmarks codecs \
 USE_QT=		base imageformats:run
 USE_XORG=	x11
 
-SHLIB_VER=	6.0.0
-PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}" \
-		SHLIB_SHVER="${SHLIB_VER:R:R}"
+PLIST_SUB+=	SHLIB_SHVER=6
 
 OPTIONS_DEFINE=	DOCS
 
