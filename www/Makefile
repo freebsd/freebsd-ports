@@ -318,6 +318,7 @@
     SUBDIR += immich-go
     SUBDIR += immich-kiosk
     SUBDIR += immich-ml
+    SUBDIR += immich-power-tools
     SUBDIR += immich-public-proxy
     SUBDIR += immichframe
     SUBDIR += iocaine
