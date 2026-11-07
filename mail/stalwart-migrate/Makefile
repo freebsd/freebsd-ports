@@ -81,6 +81,16 @@ ROCKSDB_VARS=		CARGO_FEATURES+=rocks
 S3_VARS=		CARGO_FEATURES+=s3
 SQLITE_VARS=		CARGO_FEATURES+=sqlite
 
+.include <bsd.port.options.mk>
+
+# The enterprise feature compiles code that is only available under the
+# SELv2, which grants no redistribution rights and requires acceptance.
+.if ${PORT_OPTIONS:MENTERPRISE}
+LICENSE_COMB=		multi
+LICENSE_PERMS_SELv2=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell \
+			no-auto-accept
+.endif
+
 # librocksdb-sys comes from a git snapshot without the bundled RocksDB
 # submodule.  Its build script runs "git submodule update" unless it
 # finds rocksdb/AUTHORS; the port links against databases/rocksdb, so
