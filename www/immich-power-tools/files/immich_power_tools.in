@@ -10,7 +10,7 @@
 # immich_power_tools_enable (bool):	Set to NO by default.
 #					Set it to YES to enable the tools.
 # immich_power_tools_host (str):	Listen address. Default: 127.0.0.1
-# immich_power_tools_port (int):	Listen port. Default: 3000
+# immich_power_tools_port (int):	Listen port. Default: 3002
 # immich_power_tools_db (str):		Settings database.
 #					Default: %%DBDIR%%/app.db
 # immich_power_tools_env_file (str):	Environment file with IMMICH_URL,
@@ -30,7 +30,7 @@ load_rc_config $name
 : ${immich_power_tools_user:=immich}
 : ${immich_power_tools_group:=immich}
 : ${immich_power_tools_host:=127.0.0.1}
-: ${immich_power_tools_port:=3000}
+: ${immich_power_tools_port:=3002}
 : ${immich_power_tools_db:=%%DBDIR%%/app.db}
 : ${immich_power_tools_env_file:=%%PREFIX%%/etc/immich-power-tools.env}
 : ${immich_power_tools_env:="HOSTNAME=${immich_power_tools_host} \

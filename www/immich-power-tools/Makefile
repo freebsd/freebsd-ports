@@ -1,6 +1,7 @@
 PORTNAME=	immich-power-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.25.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/joneum/FreeBSD-Immich/releases/download/ipt-v${DISTVERSION}/:buildkit
 DISTFILES=	immich-power-tools-freebsd-buildkit-${DISTVERSION}${EXTRACT_SUFX}:buildkit \
