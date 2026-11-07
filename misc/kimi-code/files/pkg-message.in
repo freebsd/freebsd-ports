@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+This package turns two upstream defaults around.
+
+Telemetry is off. Left alone, kimi-code reports usage, crashes and a first
+launch event to Moonshot AI without asking. Put telemetry = true in
+~/.kimi-code/config.toml if you want it back.
+
+The built-in updater is inert, because these files belong to pkg. Use
+pkg upgrade kimi-code for a newer version.
+
+kimi calls git for its status line and diffs and rg for searching the
+tree; both come in as dependencies.
+EOM
+}
+]

@@ -245,6 +245,7 @@
     SUBDIR += kf5-purpose
     SUBDIR += kf6-purpose
     SUBDIR += kgeography
+    SUBDIR += kimi-code
     SUBDIR += klettres
     SUBDIR += koboldcpp
     SUBDIR += kookbook
