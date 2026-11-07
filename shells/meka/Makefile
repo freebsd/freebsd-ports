@@ -1,5 +1,5 @@
 PORTNAME=	meka
-DISTVERSION=	0.85.0
+DISTVERSION=	0.90.0
 CATEGORIES=	shells # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -101,7 +101,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		convert_case-0.10.0 \
 		cookie-0.18.2 \
 		cookie_store-0.22.1 \
-		coolor-1.1.0 \
 		core-foundation-0.9.4 \
 		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
@@ -110,14 +109,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cpufeatures-0.3.1 \
 		crc32fast-1.5.2 \
 		critical-section-1.2.0 \
-		crokey-1.5.0 \
-		crokey-proc_macros-1.5.0 \
 		croner-4.0.1 \
-		crossbeam-0.8.5 \
 		crossbeam-channel-0.5.17 \
-		crossbeam-deque-0.8.8 \
-		crossbeam-epoch-0.9.21 \
-		crossbeam-queue-0.3.14 \
 		crossbeam-utils-0.8.23 \
 		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
@@ -265,8 +258,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jsonwebtoken-11.1.0 \
 		kasuari-0.4.12 \
 		lab-0.11.0 \
-		lazy-regex-3.6.2 \
-		lazy-regex-proc_macros-3.6.2 \
 		lazy_static-1.5.1 \
 		lebe-0.5.3 \
 		libc-0.2.190 \
@@ -291,7 +282,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		memmem-0.1.1 \
 		memoffset-0.9.1 \
 		mime-0.3.17 \
-		minimad-0.14.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		miniz_oxide-0.9.1 \
@@ -367,7 +357,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		psl-types-2.0.11 \
 		psm-0.1.24 \
 		publicsuffix-2.3.0 \
-		pulldown-cmark-0.13.4 \
+		pulldown-cmark-0.13.6 \
 		pulp-0.22.3 \
 		pulp-wasm-simd-flag-0.1.1 \
 		pxfm-0.1.30 \
@@ -394,7 +384,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ratatui-termwiz-0.1.2 \
 		ratatui-textarea-0.9.3 \
 		ratatui-widgets-0.3.2 \
-		ratskin-0.3.1 \
 		raw-cpuid-11.6.0 \
 		reborrow-0.5.5 \
 		redox_syscall-0.5.18 \
@@ -464,7 +453,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		stable_deref_trait-1.2.1 \
 		stacker-0.1.25 \
 		static_assertions-1.1.0 \
-		strict-0.2.0 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
 		strum-0.28.0 \
@@ -480,7 +468,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		system-configuration-0.7.0 \
 		system-configuration-sys-0.6.0 \
 		tempfile-3.27.0 \
-		termimad-0.34.1 \
 		termina-0.3.3 \
 		terminal_size-0.4.4 \
 		terminfo-0.9.0 \
@@ -525,9 +512,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ucd-trie-0.1.7 \
 		unicase-2.10.0 \
 		unicode-ident-1.0.26 \
+		unicode-linebreak-0.1.5 \
 		unicode-segmentation-1.13.3 \
 		unicode-truncate-2.0.1 \
-		unicode-width-0.1.14 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		untrusted-0.7.1 \
