@@ -2,12 +2,10 @@ bin/nngcat
 include/nng/args.h
 include/nng/http.h
 include/nng/nng.h
-lib/cmake/nng/FindMbedTLS.cmake
-lib/cmake/nng/FindwolfSSL.cmake
 lib/cmake/nng/nng-config.cmake
 lib/cmake/nng/nng-config-version.cmake
 lib/cmake/nng/nng-targets.cmake
 lib/cmake/nng/nng-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/libnng.so
 lib/libnng.so.%%PORTMAJ%%
-lib/libnng.so.%%PORTMAJ%%.0.0
+lib/libnng.so.%%PORTMAJ%%.1.0
