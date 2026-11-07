@@ -1,6 +1,6 @@
 PORTNAME=	yelp-tools
 PORTVERSION=	42.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -11,6 +11,7 @@ WWW=		https://gitlab.gnome.org/GNOME/yelp-tools
 
 LICENSE=	GPLv2+
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		itstool:textproc/itstool \
 		yelp-xsl>=0:textproc/yelp-xsl
