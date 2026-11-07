@@ -1,3 +1,3 @@
-TIMESTAMP = 1792336659
-SHA256 (langgraph_checkpoint_sqlite-3.1.2.tar.gz) = 4e3f376fa6f192d6ad2a1a4643b039986f1593552ef870e9e45281575de6fbf2
-SIZE (langgraph_checkpoint_sqlite-3.1.2.tar.gz) = 151160
+TIMESTAMP = 1793997207
+SHA256 (langgraph_checkpoint_sqlite-3.1.3.tar.gz) = df305e347e66d97375e680bc4a5337e4d37d5a4996b3c24f49a942c515caa7d7
+SIZE (langgraph_checkpoint_sqlite-3.1.3.tar.gz) = 151241
