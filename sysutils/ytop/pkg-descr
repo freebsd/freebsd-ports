@@ -1,9 +1,4 @@
-ytop is a minimal interactive process monitor for FreeBSD, designed for
-monitoring CPU-bound server applications. Its process list shows CPU usage,
-virtual and resident memory sizes, accumulated CPU time, thread counts, and
-host or jail domains.
+ytop is a minimal interactive process monitor for FreeBSD.
 
-Select a process to view its threads, including user and system CPU usage,
-scheduling priorities, thread states, CPU affinity, and context-switch counts
-and rates. Keyboard and mouse controls support row selection, scrolling, and
-switching between process and thread lists, with an optional per-CPU grid.
+Keyboard and mouse controls support row selection, scrolling, and switching
+between process and thread lists.
