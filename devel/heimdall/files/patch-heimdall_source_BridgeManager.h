@@ -1,4 +1,4 @@
---- heimdall/source/BridgeManager.h.orig	2017-05-11 18:34:25 UTC
+--- heimdall/source/BridgeManager.h.orig	2026-11-06 00:00:00 UTC
 +++ heimdall/source/BridgeManager.h
 @@ -82,7 +82,7 @@ namespace Heimdall
  			{

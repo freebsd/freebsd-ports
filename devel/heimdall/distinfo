@@ -1,3 +1,5 @@
-TIMESTAMP = 1523305221
-SHA256 (Benjamin-Dobell-Heimdall-v1.4.2_GH0.tar.gz) = 589bef88f2597c8a84fe6fafbe928ddc9687438b5b54edd917d7df48c7e3eff8
-SIZE (Benjamin-Dobell-Heimdall-v1.4.2_GH0.tar.gz) = 5486693
+TIMESTAMP = 1794026037
+SHA256 (heimdall-v2.2.2.tar.gz) = 7d01dd8bf9c2f93ea016ae8b059110c50cea49e78670e8a1333ebd5899cdaaa3
+SIZE (heimdall-v2.2.2.tar.gz) = 68059
+SHA256 (72fe7627eb02.patch) = 47db9c21c3e1a81cb9066c96e4ff21bec21ec8648e67163c2d401fd854ad1d9c
+SIZE (72fe7627eb02.patch) = 2651

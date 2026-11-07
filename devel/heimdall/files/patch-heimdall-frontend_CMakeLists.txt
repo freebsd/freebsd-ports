@@ -1,0 +1,11 @@
+--- heimdall-frontend/CMakeLists.txt.orig	2026-11-06 00:00:00 UTC
++++ heimdall-frontend/CMakeLists.txt
+@@ -41,7 +41,7 @@
+     ${HEIMDALL_FRONTEND_FORMS}
+     ${HEIMDALL_FRONTEND_RESOURCES})
+ 
+-target_compile_features(heimdall-frontend PRIVATE cxx_std_11)
++target_compile_features(heimdall-frontend PRIVATE cxx_std_17)
+ 
+ include(CheckSymbolExists)
+ 
