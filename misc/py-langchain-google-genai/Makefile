@@ -1,5 +1,5 @@
 PORTNAME=	langchain-google-genai
-DISTVERSION=	4.4.1
+DISTVERSION=	4.4.3
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filetype>=1.2.0:devel/py-filetype@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-genai>=2.20.0:misc/py-google-genai@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.9:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.7.5:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2:devel/py-pydantic2@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=1.5.0:devel/py-freezegun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-tests>=1.1.4:misc/py-langchain-tests@${PY_FLAVOR} \
@@ -54,6 +54,6 @@ TEST_ARGS=	--ignore=${WRKSRC}/tests/integration_tests \
 		-p xdist \
 		-p syrupy
 
-# tests as of 4.4.1: 531 passed, 3 warnings
+# tests as of 4.4.3: 545 passed, 3 warnings
 
 .include <bsd.port.mk>
