@@ -200,6 +200,7 @@
     SUBDIR += libvpx
     SUBDIR += libwebm
     SUBDIR += libx264
+    SUBDIR += libxcoder
     SUBDIR += libxine
     SUBDIR += libxspf
     SUBDIR += libzen

@@ -1,0 +1,8 @@
+libxcoder is the userland library of the NETINT Quadra video processing
+units (VPU), a family of PCIe cards that decode, encode (H.264, H.265, AV1,
+JPEG), scale and run AI inference on video in hardware. FFmpeg and GStreamer
+plugins use it to drive the card.
+
+The card is a standard NVMe device: libxcoder sends its commands through
+the Linux-compatible passthrough ioctls of nvme(4). No extra kernel driver
+is needed.

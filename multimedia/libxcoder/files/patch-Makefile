@@ -1,0 +1,12 @@
+--- Makefile.orig	2026-10-17 00:01:03 UTC
++++ Makefile
+@@ -120,6 +120,9 @@ ifeq ($(WINDOWS), FALSE)
+ ifeq ($(WINDOWS), FALSE)
+ 	ifeq ($(UNAME), Darwin)
+ 		LDFLAGS += -lpthread -lm
++	else ifeq ($(UNAME), FreeBSD)
++		# librt and libdl are part of libc on FreeBSD; backtrace() is in libexecinfo
++		LDFLAGS += -lpthread -lm -lexecinfo
+ 	else
+ 		LDFLAGS += -lpthread -lrt -lm -ldl
+ 		ifeq ($(HAVE_MCTF), TRUE)
