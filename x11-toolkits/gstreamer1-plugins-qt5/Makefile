@@ -3,6 +3,9 @@ CATEGORIES=	x11-toolkits
 
 COMMENT=	GStreamer Qt5 QML videosink plugin
 
+DEPRECATED=	Qt5 is EOL and this port has no known consumers
+EXPIRATION_DATE=	2026-12-07
+
 USES=		compiler:c++11-lang qt:5
 USE_GSTREAMER=	gl
 USE_QT=		core gui declarative \
