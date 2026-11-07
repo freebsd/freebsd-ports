@@ -116,7 +116,7 @@
 -    if test "$BOX2D_MAJOR" -eq "2"; then
 -        if test "$BOX2D_MINOR" -eq "4"; then
 +    if test "$BOX2D_MAJOR" -eq "3"; then
-+        if test "$BOX2D_MINOR" -eq "2"; then
++        if test "$BOX2D_MINOR" -eq "1"; then
              _BOX2D_LIB=box2d
              printf "%s\n" "#define BOX2D_HEADER <box2d/box2d.h>" >>confdefs.h
  
