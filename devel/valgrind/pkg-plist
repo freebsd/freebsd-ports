@@ -21,6 +21,7 @@ include/valgrind/libvex_emnote.h
 include/valgrind/libvex_guest_amd64.h
 include/valgrind/libvex_guest_arm.h
 include/valgrind/libvex_guest_arm64.h
+include/valgrind/libvex_guest_arm64_sysregs.h
 include/valgrind/libvex_guest_mips32.h
 include/valgrind/libvex_guest_mips64.h
 include/valgrind/libvex_guest_offsets.h
