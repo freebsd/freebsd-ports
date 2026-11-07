@@ -54,7 +54,7 @@ procname="/usr/sbin/daemon"
 moonshine_bin="%%PREFIX%%/bin/moonshine"
 command="/usr/sbin/daemon"
 command_args="-f -R 5 -P ${pidfile} -p ${child_pidfile} -o ${moonshine_log_file} \
-	/usr/bin/env PATH=%%LOCALBASE%%/bin:/usr/bin:/bin \
+	/usr/bin/env PATH=/sbin:/bin:/usr/sbin:/usr/bin:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin \
 	HOME=${moonshine_home} XDG_RUNTIME_DIR=${moonshine_runtime} \
 	MOONSHINE_LOG=${moonshine_log_level} \
 	${moonshine_bin} ${moonshine_config} ${moonshine_args}"

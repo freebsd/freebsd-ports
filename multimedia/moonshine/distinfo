@@ -1,4 +1,4 @@
-TIMESTAMP = 1789431056
+TIMESTAMP = 1794064989
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aead-0.5.2.crate) = d122413f284cf2d62fb1b7db97e02edb8cda96d769b16e443a4f6195e35662b0
@@ -1027,5 +1027,5 @@ SHA256 (rust/crates/zvariant_derive-5.15.0.crate) = 864155e69b4352db0c7f374917bf
 SIZE (rust/crates/zvariant_derive-5.15.0.crate) = 10697
 SHA256 (rust/crates/zvariant_utils-4.2.0.crate) = bad0294361a320b694a328460dc73add56c306150f5cb6bfafc44446120008a3
 SIZE (rust/crates/zvariant_utils-4.2.0.crate) = 25869
-SHA256 (ocochard-moonshine-v0.16.0-freebsd3_GH0.tar.gz) = ffd7d1f017a72abd2998f3121eb67cd9bcc876185ad71d6c5f1ce53790d56d5e
-SIZE (ocochard-moonshine-v0.16.0-freebsd3_GH0.tar.gz) = 2041773
+SHA256 (ocochard-moonshine-v0.16.1-freebsd3_GH0.tar.gz) = e1ee36831794f945f64e81681abd1b3a65146c8a940699458b0f37cba27f2459
+SIZE (ocochard-moonshine-v0.16.1-freebsd3_GH0.tar.gz) = 2060678
