@@ -1,3 +1,53 @@
+  <vuln vid="de74d92b-4f87-4334-973b-5d24a7c4528a">
+    <topic>gstreamer1 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gstreamer1-plugins-bad</name>
+	<name>gstreamer1-plugins-good</name>
+	<range><lt>1.28.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer project reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/">
+	  <p>Multiple security issues were identified and fixed in the GStreamer framework.</p>
+	  <ul>
+	    <li>GStreamer-SA-2026-0093: Out-of-bounds read in MXF demuxer</li>
+	    <li>GStreamer-SA-2026-0094: Use of uninitialized memory in H.265 bitstream parser</li>
+	    <li>GStreamer-SA-2026-0095: Out-of-bounds read in H.264 RTP depayloader</li>
+	    <li>GStreamer-SA-2026-0096: Multiple out-of-bounds reads, null pointer write and denial of service in the VMnc video decoder</li>
+	    <li>GStreamer-SA-2026-0097: Local file disclosure via manifest references in adaptive streaming (HLS/DASH) demuxers</li>
+	    <li>GStreamer-SA-2026-0098: Out-of-bounds write and infinite loop when reading responses from a Festival speech synthesis server</li>
+	    <li>GStreamer-SA-2026-0099: Out-of-bounds read when parsing DVB short event descriptors</li>
+	    <li>GStreamer-SA-2026-0100: Out-of-bounds write in the RTP raw video depayloader with crafted stream dimensions</li>
+	    <li>GStreamer-SA-2026-0101: Out-of-bounds write in the ASF muxer when writing metadata with certain Unicode characters</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-116611</cvename>
+      <cvename>CVE-2026-119610</cvename>
+      <cvename>CVE-2026-121601</cvename>
+      <cvename>CVE-2026-121611</cvename>
+      <cvename>CVE-2026-121629</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0093.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0094.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0095.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0096.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0097.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0098.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0099.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0100.html</url>
+      <url>https://gstreamer.freedesktop.org/security/sa-2026-0101.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-06</discovery>
+      <entry>2026-11-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06eeb817-d93d-11f1-908f-3c7c3fba4204">
     <topic>Keycloak -- multiple vulnerabilities</topic>
     <affects>
