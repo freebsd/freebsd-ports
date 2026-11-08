@@ -1,5 +1,5 @@
 PORTNAME=	waterfox
-DISTVERSION=	6.7.7
+DISTVERSION=	6.7.8
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.125.0:security/nss \
-		icu>=76.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=10.1.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
@@ -34,8 +33,8 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 USE_GECKO=	gecko
 USE_GITHUB=	yes
 GH_ACCOUNT=	BrowserWorks
-GH_TUPLE=	BrowserWorks:l10n:2831b9f:l10n/waterfox/browser/locales
-USE_MOZILLA=	-sqlite
+GH_TUPLE=	BrowserWorks:l10n:b38d767:l10n/waterfox/browser/locales
+USE_MOZILLA=	-icu -sqlite
 # work around bindgen not finding ICU, e.g.
 # dist/include/mozilla/intl/ICU4CGlue.h:8:10: fatal error: 'unicode/uenum.h' file not found, err: true
 CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
