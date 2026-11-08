@@ -1,5 +1,5 @@
 PORTNAME=	pgbackrest
-DISTVERSION=	2.59.1
+DISTVERSION=	2.60.0
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/pgbackrest/pgbackrest/releases/download/release/${DISTVERSION}/
 
