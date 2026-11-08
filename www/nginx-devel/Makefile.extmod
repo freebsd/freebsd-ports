@@ -167,7 +167,8 @@ HTTP_PUSH_VARS=			DSO_EXTMODS+=push
 HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:0.6.0:pushstream
 HTTP_PUSH_STREAM_VARS=		DSO_EXTMODS+=pushstream
 
-HTTP_REDIS_GH_TUPLE=		osokin:ngx_http_redis:0.4.0:redis
+HTTP_REDIS_BUILD_DEPENDS=	nginx-module-redis>0:www/nginx-module-redis
+WRKSRC_redis=		${WRKDIR}/nginx-redis-module
 HTTP_REDIS_VARS=		DSO_EXTMODS+=redis
 
 HTTP_SLICE_AHEAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_http_modules_ngx_http_slice_read_ahead.c
@@ -290,16 +291,19 @@ NJS_XML_IMPLIES=	HTTP NJS
 NJS_XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 			libxslt.so:textproc/libxslt
 
-OTEL_GH_TUPLE=		osokin:nginx-otel:3a655df:otel
-OTEL_VARS=		DSO_EXTMODS+=otel OTEL_SUBDIR=/
+OTEL_BUILD_DEPENDS=	cmake:devel/cmake-core \
+			nginx-module-otel>0:www/nginx-module-otel \
+			${LOCALBASE}/include/opentelemetry/proto/common/v1/common.proto:devel/opentelemetry-proto
 OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 			libcares.so:dns/c-ares \
 			libgrpc.so:devel/grpc \
 			libopentelemetry_common.so:devel/opentelemetry-cpp \
 			libprotobuf.so:devel/protobuf \
 			libre2.so:devel/re2
-OTEL_BUILD_DEPENDS=	${LOCALBASE}/include/opentelemetry/proto/common/v1/common.proto:devel/opentelemetry-proto
-OTEL_CONFIGURE_ENV+=	NGX_OTEL_PROTO_DIR=${PREFIX}/include
+OTEL_USES=		pkgconfig
+WRKSRC_otel=		${WRKDIR}/nginx-otel
+OTEL_VARS=		DSO_EXTMODS+=otel
+OTEL_CONFIGURE_ENV=	NGX_OTEL_CMAKE_OPTS="-D NGX_OTEL_GRPC=package -D NGX_OTEL_SDK=package -D NGX_OTEL_PROTO_DIR=${LOCALBASE}/include"
 
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake \
 			nginx-module-passenger>0:www/nginx-module-passenger

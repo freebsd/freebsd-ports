@@ -1,7 +1,7 @@
 PORTNAME?=	nginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/
 PKGNAMESUFFIX?=	-devel
@@ -416,6 +416,11 @@ pre-configure-HTTP_AUTH_DIGEST-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-auth-digest ${WRKSRC_auth_digest}
 	@${CHMOD} -R u+w ${WRKSRC_auth_digest}
 
+pre-configure-HTTP_REDIS-on:
+	@${RM} -rf ${WRKSRC_redis}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-redis ${WRKSRC_redis}
+	@${CHMOD} -R u+w ${WRKSRC_redis}
+
 pre-configure-HTTP_SUBS_FILTER-on:
 	@${RM} -rf ${WRKSRC_subs_filter}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-subs-filter ${WRKSRC_subs_filter}
@@ -502,6 +507,11 @@ pre-configure-NJS-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-njs ${WRKSRC_njs}
 	@${CHMOD} -R u+w ${WRKSRC_njs}
 	@${CHMOD} u+x ${WRKSRC_njs}/configure
+
+pre-configure-OTEL-on:
+	@${RM} -rf ${WRKSRC_otel}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-otel ${WRKSRC_otel}
+	@${CHMOD} -R u+w ${WRKSRC_otel}
 
 pre-configure-POSTGRES-on:
 	@${RM} -rf ${WRKSRC_postgres}
