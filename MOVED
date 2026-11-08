@@ -5805,3 +5805,4 @@ databases/mysql267-client|databases/mysql2610-client|2026-11-06|Has expired: EOL
 databases/mysql267-server|databases/mysql2610-server|2026-11-06|Has expired: EOLed upstream with unfixed vulnerabilities, use databases/mysql2610-server
 devel/php80-APCu||2026-11-06|No longer required in the cluster
 devel/php80-arcanist||2026-11-07|No longer required in the cluster
+www/filebrowser||2026-11-08|Has expired: Upstream repo archived on Aug 31, 2026

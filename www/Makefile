@@ -197,7 +197,6 @@
     SUBDIR += feroxbuster
     SUBDIR += ffproxy
     SUBDIR += fgallery
-    SUBDIR += filebrowser
     SUBDIR += filebrowser-quantum
     SUBDIR += filepizza
     SUBDIR += fileserv

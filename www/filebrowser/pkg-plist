@@ -1,4 +1,0 @@
-@dir(%%USER%%,%%GROUP%%,0700) /var/db/filebrowser
-@dir(%%USER%%,%%GROUP%%,0700) /var/log/filebrowser
-@dir(%%USER%%,%%GROUP%%,0700) /var/run/filebrowser
-bin/filebrowser
