@@ -1,6 +1,7 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -42,7 +43,7 @@ CXXFLAGS+=	-I${WRKSRC}/extension/inet/src/include
 CXXFLAGS+=	-I${WRKSRC}/extension/sqlsmith/src/include # https://github.com/duckdb/duckdb/issues/13971
 CXXFLAGS+=	-I${WRKSRC}/extension/fts/extension/fts/include # --""--
 CXXFLAGS+=	-I${WRKSRC}/extension/httpfs/extension/httpfs/include # --""--
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS LINK_CORE_EXTENSIONS # since 2.0 BUILD_EXTENSIONS alone only builds the extensions, without linking them into libduckdb
 CMAKE_OFF=	BUILD_UNITTESTS
 CMAKE_ARGS=	-DOVERRIDE_GIT_DESCRIBE=v${DISTVERSION}-0-g0000000000
 CMAKE_TESTING_ON=	BUILD_UNITTESTS # 1 test fails, Signal 11 during tests, see https://github.com/duckdb/duckdb/issues/13972
@@ -57,14 +58,11 @@ OPTIONS_GROUP_EXTENSIONS=	AUTOCOMPLETE DELTA ICU JSON PARQUET TPCDS TPCH # in-tr
 OPTIONS_GROUP_EXTENSIONS+=	${GH_TUPLE:C/.*extension\///:tu:N*/*} # out-of-tree extensions (from GH_TUPLE, excluding submodules)
 
 DELTA_BROKEN=			Fetches from git during build
-SPATIAL_BROKEN=			Build requires unofficial-sqlite3 dependency
 EXCEL_BROKEN=			https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=292757
 MYSQL_SCANNER_BROKEN=		https://github.com/duckdb/duckdb-mysql/issues/207
-POSTGRES_SCANNER_BROKEN=	https://github.com/duckdb/duckdb-postgres/issues/401
 SQLSMITH_BROKEN=		https://github.com/duckdb/duckdb-sqlsmith/issues/66
 AZURE_BROKEN=			Broken because of missing Azure C++ SDK in ports
 ICEBERG_BROKEN=			Broken because of missing roaring dependency
-DUCKLAKE_BROKEN=		Broken because of missing roaring dependency
 QUACK_BROKEN=			Need to investigate
 
 AVRO_LIB_DEPENDS=		libavro.so:devel/avro-c \
@@ -96,9 +94,17 @@ CMAKE_ARGS+=	-DSKIP_EXTENSIONS=jemalloc # temporary? see https://github.com/duck
 SQLITE_SCANNER_CXXFLAGS=	-I${WRKSRC}/extension/sqlite_scanner/src/include # workaround for the header not being found
 ENCODINGS_CXXFLAGS=		-I${WRKSRC}/extension/encodings/src/include # workaround for the header not being found
 HTTPFS_CXXFLAGS=		-I${WRKSRC}/extension/httpfs/src/include # workaround for the header not being found
-POSTGRES_SCANNER_USES=		localbase
+POSTGRES_SCANNER_USES=		localbase pgsql:18+
 POSTGRES_SCANNER_CXXFLAGS=	-I${WRKSRC}/extension/postgres_scanner/src/include # workaround for the header not being found
+POSTGRES_SCANNER_LDFLAGS=		-L${LOCALBASE}/lib -lpq # the static extension does not carry its libraries into the link
 MYSQL_SCANNER_USES=		mysql:client
+SPATIAL_LIB_DEPENDS=		libgdal.so:graphics/gdal \
+				libproj.so:graphics/proj \
+				libgeos_c.so:graphics/geos \
+				libexpat.so:textproc/expat2 \
+				libsqlite3.so:databases/sqlite3
+SPATIAL_LDFLAGS=			-L${LOCALBASE}/lib -lgdal -lproj -lgeos_c -lgeos -lexpat -lsqlite3
+DUCKLAKE_LIB_DEPENDS=			libroaring.so:devel/croaring
 
 TPCE_DESC=			Enable building of the TPC-E tool
 TPCE_CMAKE_BOOL=		BUILD_TPCE
@@ -108,6 +114,9 @@ VSS_CXXFLAGS=			-I${WRKSRC}/extension/vss/src/include # workaround for the heade
 post-extract:
 	# remove the jemalloc extension directory just in case
 	@${RM} -r ${WRKSRC}/extension/jemalloc
+
+post-extract-POSTGRES_SCANNER-on: # the git submodule database-connector is not in the GitHub tarball; same commit as for sqlite_scanner
+	@${CP} -R ${WRKSRC}/extension/sqlite_scanner/database-connector/. ${WRKSRC}/extension/postgres_scanner/database-connector
 
 post-patch: # remove cmake files of out-of-tree extensions to build them like in-tree extensions (avoid fetching from git)
 	@${RM} ${WRKSRC}/.github/config/extensions/*.cmake
