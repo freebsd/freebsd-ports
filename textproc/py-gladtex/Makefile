@@ -1,10 +1,11 @@
 PORTNAME=	gladtex
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	textproc python math www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	alven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX formula preprocessor for HTML files
 WWW=		https://humenda.github.io/GladTeX/ \
 		https://github.com/humenda/GladTeX/

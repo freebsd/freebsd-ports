@@ -1,9 +1,10 @@
 PORTNAME=	gladtex
 DISTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	textproc math www
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	alven@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to replace LaTeX formulas in HTML files with images
 WWW=		https://gladtex.sourceforge.net/
 
