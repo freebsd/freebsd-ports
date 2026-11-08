@@ -1,0 +1,11 @@
+Sources of the redis module for the NGINX ports.
+
+This port installs the sources only.  It does not build a loadable module
+by itself; www/nginx, www/nginx-devel and www/freenginx pick the sources up
+and build ngx_http_redis_module.so when their HTTP_REDIS option is enabled.
+
+The module is an HTTP content handler that reads one key from a Redis server
+with a single GET and serves the value as the response body, the way the
+memcached module bundled with nginx serves a memcached value.  The key comes
+from the $redis_key variable, a nil reply is a 404, and the value is streamed
+back untouched.

@@ -576,6 +576,7 @@
     SUBDIR += nginx-module-postgres
     SUBDIR += nginx-module-rds-csv
     SUBDIR += nginx-module-rds-json
+    SUBDIR += nginx-module-redis
     SUBDIR += nginx-module-redis2
     SUBDIR += nginx-module-set-misc
     SUBDIR += nginx-module-sflow
