@@ -269,6 +269,7 @@
     SUBDIR += semi
     SUBDIR += setzer
     SUBDIR += shed
+    SUBDIR += shrink-path.el
     SUBDIR += slime
     SUBDIR += sly
     SUBDIR += sly-asdf
