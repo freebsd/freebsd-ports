@@ -1,0 +1,15 @@
+[
+{ type: upgrade
+  maximum_version: "14.0"
+  message: <<EOM
+AUCTeX now loads automatically.  Remove any lines like these from your
+Emacs init file:
+
+  (load "auctex.el" nil t t)
+  (load "preview-latex.el" nil t t)
+
+preview-latex.el no longer exists, so the second line stops Emacs from
+loading the rest of your init file.
+EOM
+}
+]

@@ -1,8 +1,7 @@
 PORTNAME=	auctex
-DISTVERSION=	13.3
-PORTREVISION=	3
+DISTVERSION=	14.2.0
 CATEGORIES=	print elisp
-MASTER_SITES=	GNU
+MASTER_SITES=	https://elpa.gnu.org/packages/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
@@ -11,30 +10,36 @@ WWW=		https://www.gnu.org/software/auctex/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		emacs:build ghostscript gmake tex
-USE_TEX=	latex texhash
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR} \
-	--with-auto-dir=${PREFIX}/${EMACS_SITE_LISPDIR}/auctex/auto \
-	--with-texmf-dir=${PREFIX}/${TEXMFDIR}
+USES=		emacs:build ghostscript:run tar:lz tex
+USE_TEX=	latex:run
 
 CONFLICTS_INSTALL=	auctex-emacs_*
 
 NO_ARCH=	yes
-SUB_FILES=	pkg-message
 
 INFO=		auctex preview-latex
-PORTDOCS=	tex-ref.pdf
+PORTDOCS=	NEWS.org README tex-ref.pdf
 
 OPTIONS_DEFINE=	DOCS
-DOCS_CONFIGURE_ON=	--docdir=${DOCSDIR}
-DOCS_CONFIGURE_OFF=	WITHOUT_AUCTEX_DOCSDIR=yes
 
-TEXHASHDIRS=	${TEXMFDIR}
+ELISPDIR=	${EMACS_SITE_LISPDIR}/${PORTNAME}
 
-post-install:
-	@${FIND} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/auctex \
-		-name "*.elc" -delete
+do-build:
+	${EMACS_CMD} -q --batch -f loaddefs-generate-batch \
+		${WRKSRC}/auctex-autoloads.el ${WRKSRC}
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}/latex \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*.el etc images style" \
+		${STAGEDIR}${PREFIX}/${ELISPDIR})
+	${INSTALL_DATA} ${WRKSRC}/latex/*.cfg ${WRKSRC}/latex/*.def \
+		${WRKSRC}/latex/*.sty ${STAGEDIR}${PREFIX}/${ELISPDIR}/latex
+	${INSTALL_DATA} ${WRKSRC}/*.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS.org ${WRKSRC}/README \
+		${WRKSRC}/doc/tex-ref.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
