@@ -1753,7 +1753,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_bundled/pip-26.2.1-py3-none-any.whl
+%%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_bundled/pip-26.2.2-py3-none-any.whl
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_uninstall.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/enum.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/filecmp.py
@@ -4145,6 +4145,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/certdata/capath/b1930218.0
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/certdata/capath/ceff1710.0
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/certdata/cert3.pem
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/certdata/distrusted.zip
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/certdata/ffdh3072.pem
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/certdata/idnsans.pem
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/certdata/keycert.passwd.pem
