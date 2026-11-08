@@ -31,6 +31,7 @@
     SUBDIR += diakonos
     SUBDIR += diamond
     SUBDIR += dkns
+    SUBDIR += doom-modeline
     SUBDIR += drjava
     SUBDIR += dte
     SUBDIR += dz6

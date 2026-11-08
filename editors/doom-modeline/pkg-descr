@@ -1,0 +1,8 @@
+doom-modeline is a fancy and fast Emacs mode line with a minimalist
+design, originally written for Doom Emacs.  It shows file and buffer
+state, version control status, error and warning counts from flymake
+and flycheck, the current major mode with icons from nerd-icons, and
+optional segments for modal editing state, LSP and debugger status,
+window and workspace numbers, input method, battery, remote host, and
+notifications from GitHub, mail and IRC.  Nearly every segment can be
+toggled or customized, and the mode line height is configurable.
