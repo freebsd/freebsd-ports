@@ -1,5 +1,5 @@
 PORTNAME=	mattermost
-DISTVERSION=	11.7.14
+DISTVERSION=	11.7.15
 CATEGORIES=	www
 MASTER_SITES=	https://releases.mattermost.com/${DISTVERSION}/
 PKGNAMESUFFIX=	-webapp
