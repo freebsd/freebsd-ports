@@ -22,6 +22,7 @@ share/icons/hicolor/scalable/apps/io.github.totoshko88.RustConn.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/uz/LC_MESSAGES/rustconn.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/rustconn.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/rustconn.mo
 share/mime/packages/io.github.totoshko88.RustConn-rdp.xml
 share/mime/packages/io.github.totoshko88.RustConn-vv.xml

@@ -1,9 +1,8 @@
-CARGO_CRATES=	addchain-0.2.1 \
-		adler2-2.0.1 \
+CARGO_CRATES=	adler2-2.0.1 \
 		aead-0.6.1 \
 		aes-0.8.4 \
-		aes-0.9.3 \
-		aes-gcm-0.11.0-rc.4 \
+		aes-0.9.4 \
+		aes-gcm-0.11.1 \
 		aes-kw-0.3.1 \
 		aho-corasick-1.1.5 \
 		alloca-0.4.0 \
@@ -17,7 +16,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
 		ar-0.9.0 \
-		arc-swap-1.9.3 \
+		arc-swap-1.9.4 \
 		argon2-0.6.0 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.8 \
@@ -67,7 +66,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		cast-0.3.0 \
 		cbc-0.1.2 \
 		cbc-0.2.1 \
-		cc-1.10.0 \
+		cc-1.11.1 \
 		cfg-expr-0.20.10 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.2 \
@@ -102,7 +101,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		cpubits-0.1.1 \
 		cpufeatures-0.2.17 \
 		cpufeatures-0.3.1 \
-		crc32fast-1.5.3 \
+		crc32fast-1.5.4 \
 		criterion-0.8.2 \
 		criterion-plot-0.8.2 \
 		critical-section-1.2.0 \
@@ -122,8 +121,8 @@ CARGO_CRATES=	addchain-0.2.1 \
 		csv-1.4.0 \
 		csv-core-0.1.13 \
 		ctr-0.10.1 \
-		ctutils-0.4.6 \
-		curve25519-dalek-5.0.0-rc.1 \
+		ctutils-0.4.8 \
+		curve25519-dalek-5.0.0 \
 		curve25519-dalek-derive-0.1.1 \
 		dasp_sample-0.11.0 \
 		data-encoding-2.11.1 \
@@ -132,7 +131,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		der-0.7.10 \
 		der-0.8.3 \
 		der-parser-10.0.0 \
-		der_derive-0.7.3 \
+		der_derive-0.8.0 \
 		deranged-0.5.9 \
 		des-0.9.0 \
 		deunicode-1.6.2 \
@@ -145,9 +144,9 @@ CARGO_CRATES=	addchain-0.2.1 \
 		displaydoc-0.2.7 \
 		dpi-0.1.2 \
 		dunce-1.0.5 \
-		ecdsa-0.17.0-rc.22 \
+		ecdsa-0.17.0 \
 		ed25519-3.0.0 \
-		ed25519-dalek-3.0.0-rc.1 \
+		ed25519-dalek-3.0.0 \
 		either-1.19.0 \
 		elliptic-curve-0.14.3 \
 		endi-1.1.1 \
@@ -166,7 +165,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		filetime-0.2.29 \
 		find-msvc-tools-0.1.15 \
 		flagset-0.4.7 \
-		flate2-1.1.10 \
+		flate2-1.1.11 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		font-types-0.12.7 \
@@ -256,32 +255,31 @@ CARGO_CRATES=	addchain-0.2.1 \
 		inotify-0.11.5 \
 		inotify-sys-0.1.8 \
 		inout-0.1.4 \
-		inout-0.2.5 \
+		inout-0.2.6 \
 		io-lifetimes-2.0.4 \
 		ipnet-2.12.2 \
-		ironrdp-0.17.0 \
-		ironrdp-async-0.10.0 \
-		ironrdp-bulk-0.1.1 \
-		ironrdp-cliprdr-0.7.0 \
-		ironrdp-connector-0.10.0 \
-		ironrdp-core-0.2.1 \
-		ironrdp-displaycontrol-0.8.0 \
-		ironrdp-dvc-0.8.0 \
-		ironrdp-echo-0.4.0 \
-		ironrdp-egfx-0.3.0 \
+		ironrdp-async-0.12.0 \
+		ironrdp-bulk-0.2.0 \
+		ironrdp-cliprdr-0.9.0 \
+		ironrdp-connector-0.12.0 \
+		ironrdp-core-0.3.1 \
+		ironrdp-displaycontrol-0.10.0 \
+		ironrdp-dvc-0.10.0 \
+		ironrdp-echo-0.6.0 \
+		ironrdp-egfx-0.5.0 \
 		ironrdp-error-0.2.1 \
-		ironrdp-graphics-0.9.0 \
-		ironrdp-input-0.7.0 \
-		ironrdp-mstsgu-0.0.1 \
-		ironrdp-pdu-0.9.0 \
-		ironrdp-rdpdr-0.7.0 \
-		ironrdp-rdpsnd-0.9.0 \
-		ironrdp-session-0.11.0 \
-		ironrdp-svc-0.8.0 \
-		ironrdp-tls-0.2.2 \
-		ironrdp-tokio-0.10.0 \
-		is-docker-0.2.0 \
-		is-wsl-0.4.0 \
+		ironrdp-graphics-0.11.0 \
+		ironrdp-input-0.9.0 \
+		ironrdp-mstsgu-0.1.0 \
+		ironrdp-pdu-0.11.0 \
+		ironrdp-rdpdr-0.9.0 \
+		ironrdp-rdpeai-0.2.0 \
+		ironrdp-rdpei-0.3.0 \
+		ironrdp-rdpsnd-0.11.0 \
+		ironrdp-session-0.13.0 \
+		ironrdp-svc-0.10.0 \
+		ironrdp-tls-0.3.0 \
+		ironrdp-tokio-0.12.0 \
 		is_terminal_polyfill-1.70.2 \
 		iso7816-0.1.4 \
 		iso7816-tlv-0.4.4 \
@@ -295,7 +293,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		jni-sys-0.4.1 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.35 \
-		js-sys-0.3.106 \
+		js-sys-0.3.107 \
 		keccak-0.2.2 \
 		keyboard-types-0.8.3 \
 		kqueue-1.2.1 \
@@ -305,24 +303,24 @@ CARGO_CRATES=	addchain-0.2.1 \
 		lazy_static-1.5.1 \
 		libadwaita-0.9.2 \
 		libadwaita-sys-0.9.2 \
-		libbz2-rs-sys-0.2.5 \
+		libbz2-rs-sys-0.2.6 \
 		libc-0.2.191 \
 		libloading-0.8.9 \
 		libm-0.2.16 \
 		libredox-0.1.25 \
-		libz-sys-1.1.31 \
+		libz-sys-1.1.32 \
 		linux-raw-sys-0.12.1 \
 		litemap-0.8.3 \
 		locale_config-0.3.0 \
 		lock_api-0.4.14 \
-		log-0.4.34 \
-		lzma-rust2-0.23.0 \
+		log-0.4.35 \
+		lzma-rust2-0.25.0 \
 		mach2-0.6.0 \
 		malloc_buf-0.0.6 \
 		matchers-0.2.0 \
 		md-5-0.10.6 \
 		md-5-0.11.0 \
-		md4-0.10.2 \
+		md4-0.11.0 \
 		memchr-2.8.3 \
 		memmap2-0.9.12 \
 		memoffset-0.9.1 \
@@ -341,12 +339,12 @@ CARGO_CRATES=	addchain-0.2.1 \
 		notify-types-2.2.0 \
 		nu-ansi-term-0.50.3 \
 		num-0.4.3 \
-		num-bigint-0.3.3 \
 		num-bigint-0.4.8 \
 		num-bigint-dig-0.9.1 \
 		num-complex-0.4.6 \
 		num-conv-0.2.2 \
 		num-derive-0.4.2 \
+		num-derive-0.5.1 \
 		num-integer-0.1.47 \
 		num-iter-0.1.46 \
 		num-rational-0.4.2 \
@@ -372,18 +370,17 @@ CARGO_CRATES=	addchain-0.2.1 \
 		once_cell_polyfill-1.70.2 \
 		oo7-0.6.0 \
 		oorandom-11.1.5 \
-		open-5.4.5 \
 		openh264-0.9.9 \
 		openh264-sys2-0.9.9 \
-		openssl-0.10.81 \
+		openssl-0.10.82 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.2.2 \
-		openssl-sys-0.9.117 \
+		openssl-sys-0.9.118 \
 		option-ext-0.2.0 \
 		ordered-stream-0.2.0 \
-		p256-0.14.0-rc.14 \
-		p384-0.14.0-rc.14 \
-		p521-0.14.0-rc.14 \
+		p256-0.14.0 \
+		p384-0.14.0 \
+		p521-0.14.0 \
 		page_size-0.6.0 \
 		pango-0.22.9 \
 		pango-sys-0.22.9 \
@@ -394,11 +391,10 @@ CARGO_CRATES=	addchain-0.2.1 \
 		pastey-0.2.3 \
 		pbkdf2-0.12.2 \
 		pbkdf2-0.13.0 \
-		pem-rfc7468-0.7.0 \
 		pem-rfc7468-1.0.0 \
 		percent-encoding-2.3.2 \
 		phc-0.6.1 \
-		picky-7.0.0-rc.25 \
+		picky-7.0.0-rc.26 \
 		picky-asn1-0.10.2 \
 		picky-asn1-der-0.5.7 \
 		picky-asn1-x509-0.15.6 \
@@ -408,6 +404,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		pin-utils-0.1.1 \
 		pkcs1-0.7.5 \
 		pkcs1-0.8.0-rc.4 \
+		pkcs8-0.10.2 \
 		pkcs8-0.11.0 \
 		pkg-config-0.3.34 \
 		plotters-0.3.7 \
@@ -416,12 +413,13 @@ CARGO_CRATES=	addchain-0.2.1 \
 		png-0.18.1 \
 		polycool-0.4.0 \
 		polyval-0.7.3 \
+		portpicker-0.1.1 \
 		potential_utf-0.1.6 \
 		powerfmt-0.2.1 \
 		ppmd-rust-1.5.2 \
 		ppv-lite86-0.2.21 \
 		primefield-0.14.0 \
-		primeorder-0.14.0-rc.14 \
+		primeorder-0.14.0 \
 		proc-macro-crate-3.5.0 \
 		proc-macro2-1.0.107 \
 		proptest-1.12.0 \
@@ -432,9 +430,12 @@ CARGO_CRATES=	addchain-0.2.1 \
 		r-efi-5.3.0 \
 		r-efi-6.0.0 \
 		radium-0.7.0 \
+		rand-0.8.8 \
 		rand-0.9.5 \
 		rand-0.10.3 \
+		rand_chacha-0.3.1 \
 		rand_chacha-0.9.0 \
+		rand_core-0.6.4 \
 		rand_core-0.9.5 \
 		rand_core-0.10.1 \
 		rand_xorshift-0.5.0 \
@@ -450,7 +451,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		reqwest-0.12.28 \
 		reqwest-0.13.5 \
 		resvg-0.48.1 \
-		rfc6979-0.6.0-pre.0 \
+		rfc6979-0.6.0 \
 		rgb-0.8.53 \
 		ring-0.17.14 \
 		roff-1.1.1 \
@@ -460,17 +461,16 @@ CARGO_CRATES=	addchain-0.2.1 \
 		rsa-0.10.0-rc.18 \
 		rtoolbox-0.0.6 \
 		rustc_version-0.4.1 \
-		rustcrypto-ff-0.14.0-rc.1 \
-		rustcrypto-ff_derive-0.14.0-rc.0 \
-		rustcrypto-group-0.14.0-rc.1 \
 		rusticata-macros-4.1.0 \
 		rustix-1.1.6 \
 		rustls-0.23.46 \
+		rustls-native-certs-0.8.5 \
 		rustls-pki-types-1.15.1 \
 		rustls-webpki-0.103.16 \
 		rustversion-1.0.23 \
 		rusty-fork-0.3.1 \
 		ryu-1.0.23 \
+		safe_arch-0.7.4 \
 		safe_arch-1.2.0 \
 		same-file-1.0.6 \
 		schannel-0.1.30 \
@@ -486,7 +486,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		serde_derive-1.0.229 \
 		serde_json-1.0.154 \
 		serde_repr-0.1.21 \
-		serde_spanned-1.1.2 \
+		serde_spanned-1.1.3 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml_ng-0.10.0 \
 		serdect-0.4.3 \
@@ -511,7 +511,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		slab-0.4.12 \
 		slotmap-1.1.1 \
 		slug-0.1.6 \
-		smallvec-1.16.4 \
+		smallvec-1.16.5 \
 		socket2-0.6.5 \
 		soup3-0.9.0 \
 		soup3-sys-0.9.0 \
@@ -519,13 +519,12 @@ CARGO_CRATES=	addchain-0.2.1 \
 		spki-0.7.3 \
 		spki-0.8.1 \
 		sponge-cursor-0.1.0 \
-		sspi-0.21.3 \
+		sspi-0.23.0 \
 		stable_deref_trait-1.2.1 \
 		strict-num-0.1.1 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		svgtypes-0.16.1 \
-		syn-1.0.109 \
+		svgtypes-0.16.2 \
 		syn-2.0.119 \
 		syn-3.0.9 \
 		sync_wrapper-1.0.2 \
@@ -559,14 +558,15 @@ CARGO_CRATES=	addchain-0.2.1 \
 		tokio-macros-2.7.2 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.6 \
+		tokio-socks-0.5.3 \
 		tokio-stream-0.1.19 \
 		tokio-tungstenite-0.29.0 \
 		tokio-util-0.7.20 \
-		toml-1.1.8+spec-1.1.0 \
-		toml_datetime-1.1.2+spec-1.1.0 \
-		toml_edit-0.25.17+spec-1.1.0 \
+		toml-1.2.1+spec-1.1.0 \
+		toml_datetime-1.1.3+spec-1.1.0 \
+		toml_edit-0.25.19+spec-1.1.0 \
 		toml_parser-1.1.5+spec-1.1.0 \
-		toml_writer-1.1.3+spec-1.1.0 \
+		toml_writer-1.2.0+spec-1.1.0 \
 		tower-0.5.3 \
 		tower-http-0.6.11 \
 		tower-layer-0.3.3 \
@@ -585,7 +585,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		unarray-0.1.4 \
 		unicode-bidi-0.3.18 \
 		unicode-ident-1.0.27 \
-		unicode-script-0.5.8 \
+		unicode-script-0.5.9 \
 		unicode-segmentation-1.13.3 \
 		unicode-vo-0.1.0 \
 		universal-hash-0.6.1 \
@@ -593,9 +593,10 @@ CARGO_CRATES=	addchain-0.2.1 \
 		untrusted-0.9.0 \
 		url-2.5.8 \
 		usvg-0.48.1 \
-		utf8_iter-1.0.4 \
+		utf8_iter-1.1.0 \
 		utf8parse-0.2.2 \
-		uuid-1.29.0 \
+		utf_types-1.0.0 \
+		uuid-1.29.1 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version-compare-0.2.1 \
@@ -608,16 +609,18 @@ CARGO_CRATES=	addchain-0.2.1 \
 		want-0.3.2 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.4+wasi-0.2.12 \
-		wasm-bindgen-0.2.129 \
-		wasm-bindgen-futures-0.4.79 \
-		wasm-bindgen-macro-0.2.129 \
-		wasm-bindgen-macro-support-0.2.129 \
-		wasm-bindgen-shared-0.2.129 \
+		wasm-bindgen-0.2.130 \
+		wasm-bindgen-futures-0.4.80 \
+		wasm-bindgen-macro-0.2.130 \
+		wasm-bindgen-macro-support-0.2.130 \
+		wasm-bindgen-shared-0.2.130 \
 		wasm-streams-0.5.0 \
-		web-sys-0.3.106 \
+		web-sys-0.3.107 \
+		web-time-1.1.0 \
 		webkit6-0.6.1 \
 		webkit6-sys-0.6.0 \
 		weezl-0.1.12 \
+		wide-0.7.33 \
 		wide-1.7.1 \
 		widestring-1.2.1 \
 		winapi-0.3.9 \
@@ -647,22 +650,23 @@ CARGO_CRATES=	addchain-0.2.1 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_msvc-0.52.6 \
-		winnow-1.0.4 \
-		winscard-0.3.3 \
+		winnow-1.0.5 \
+		winscard-0.4.0 \
 		wit-bindgen-0.57.1 \
+		wnaf-0.14.1 \
 		writeable-0.6.4 \
 		wyz-0.5.1 \
-		x25519-dalek-3.0.0-rc.1 \
-		x509-cert-0.2.5 \
+		x25519-dalek-3.0.0 \
+		x509-cert-0.3.0 \
 		xattr-1.7.0 \
 		xmlwriter-0.1.0 \
 		yoke-0.8.4 \
 		yoke-derive-0.8.4 \
-		yuv-0.8.19 \
+		yuv-0.8.20 \
 		zbus-5.19.0 \
 		zbus_macros-5.19.0 \
 		zbus_names-4.3.5 \
-		zcheapstr-1.1.0 \
+		zcheapstr-1.2.0 \
 		zerocopy-0.8.63 \
 		zerocopy-derive-0.8.63 \
 		zerofrom-0.1.8 \
@@ -672,7 +676,7 @@ CARGO_CRATES=	addchain-0.2.1 \
 		zerotrie-0.2.5 \
 		zerovec-0.11.9 \
 		zerovec-derive-0.11.7 \
-		zip-9.1.3 \
+		zip-9.4.2 \
 		zlib-rs-0.6.8 \
 		zmij-1.0.23 \
 		zopfli-0.8.4 \
