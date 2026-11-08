@@ -571,6 +571,7 @@
     SUBDIR += nginx-module-modsecurity3
     SUBDIR += nginx-module-ndk
     SUBDIR += nginx-module-njs
+    SUBDIR += nginx-module-otel
     SUBDIR += nginx-module-passenger
     SUBDIR += nginx-module-postgres
     SUBDIR += nginx-module-rds-csv

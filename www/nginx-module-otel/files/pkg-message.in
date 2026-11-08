@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+This package contains the sources of the otel module only.  It does not
+install a loadable module.
+
+The module itself is built by the nginx ports.  To use otel, build
+www/nginx, www/nginx-devel or www/freenginx with the OTEL option enabled.
+Those ports pick the sources up from
+%%PREFIX%%/share/nginx/modules/nginx-module-otel and produce
+ngx_otel_module.so.
+EOM
+}
+]

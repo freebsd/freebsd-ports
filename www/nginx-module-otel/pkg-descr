@@ -1,0 +1,6 @@
+The nginx-otel module adds OpenTelemetry distributed tracing to nginx.
+It exports spans over OTLP/gRPC and supports W3C trace context
+propagation, variable-based span attributes and trace sampling.
+
+This port only installs the module sources.  The module itself is built
+by the nginx ports when their OTEL option is enabled.
