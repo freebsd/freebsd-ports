@@ -4954,6 +4954,7 @@ lib/libpython%%PYTHON_VER%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_LIBDIR%%/test/certdata/capath/99d0fa06.0
 %%PYTHON_LIBDIR%%/test/certdata/capath/b1930218.0
 %%PYTHON_LIBDIR%%/test/certdata/capath/ceff1710.0
+%%PYTHON_LIBDIR%%/test/certdata/distrusted.zip
 %%PYTHON_LIBDIR%%/test/certdata/ffdh3072.pem
 %%PYTHON_LIBDIR%%/test/certdata/idnsans.pem
 %%PYTHON_LIBDIR%%/test/certdata/keycert.passwd.pem
